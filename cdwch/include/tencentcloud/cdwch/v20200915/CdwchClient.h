@@ -49,6 +49,8 @@
 #include <tencentcloud/cdwch/v20200915/model/DescribeInstanceClustersResponse.h>
 #include <tencentcloud/cdwch/v20200915/model/DescribeInstanceKeyValConfigsRequest.h>
 #include <tencentcloud/cdwch/v20200915/model/DescribeInstanceKeyValConfigsResponse.h>
+#include <tencentcloud/cdwch/v20200915/model/DescribeInstanceNodesRequest.h>
+#include <tencentcloud/cdwch/v20200915/model/DescribeInstanceNodesResponse.h>
 #include <tencentcloud/cdwch/v20200915/model/DescribeInstanceShardsRequest.h>
 #include <tencentcloud/cdwch/v20200915/model/DescribeInstanceShardsResponse.h>
 #include <tencentcloud/cdwch/v20200915/model/DescribeInstanceStateRequest.h>
@@ -128,6 +130,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeInstanceKeyValConfigsResponse> DescribeInstanceKeyValConfigsOutcome;
                 typedef std::future<DescribeInstanceKeyValConfigsOutcome> DescribeInstanceKeyValConfigsOutcomeCallable;
                 typedef std::function<void(const CdwchClient*, const Model::DescribeInstanceKeyValConfigsRequest&, DescribeInstanceKeyValConfigsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeInstanceKeyValConfigsAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeInstanceNodesResponse> DescribeInstanceNodesOutcome;
+                typedef std::future<DescribeInstanceNodesOutcome> DescribeInstanceNodesOutcomeCallable;
+                typedef std::function<void(const CdwchClient*, const Model::DescribeInstanceNodesRequest&, DescribeInstanceNodesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeInstanceNodesAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeInstanceShardsResponse> DescribeInstanceShardsOutcome;
                 typedef std::future<DescribeInstanceShardsOutcome> DescribeInstanceShardsOutcomeCallable;
                 typedef std::function<void(const CdwchClient*, const Model::DescribeInstanceShardsRequest&, DescribeInstanceShardsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeInstanceShardsAsyncHandler;
@@ -286,6 +291,15 @@ namespace TencentCloud
                 DescribeInstanceKeyValConfigsOutcome DescribeInstanceKeyValConfigs(const Model::DescribeInstanceKeyValConfigsRequest &request);
                 void DescribeInstanceKeyValConfigsAsync(const Model::DescribeInstanceKeyValConfigsRequest& request, const DescribeInstanceKeyValConfigsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DescribeInstanceKeyValConfigsOutcomeCallable DescribeInstanceKeyValConfigsCallable(const Model::DescribeInstanceKeyValConfigsRequest& request);
+
+                /**
+                 *获取实例节点信息列表
+                 * @param req DescribeInstanceNodesRequest
+                 * @return DescribeInstanceNodesOutcome
+                 */
+                DescribeInstanceNodesOutcome DescribeInstanceNodes(const Model::DescribeInstanceNodesRequest &request);
+                void DescribeInstanceNodesAsync(const Model::DescribeInstanceNodesRequest& request, const DescribeInstanceNodesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeInstanceNodesOutcomeCallable DescribeInstanceNodesCallable(const Model::DescribeInstanceNodesRequest& request);
 
                 /**
                  *获取实例shard信息列表

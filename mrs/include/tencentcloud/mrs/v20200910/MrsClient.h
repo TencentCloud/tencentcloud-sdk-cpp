@@ -25,6 +25,10 @@
 #include <tencentcloud/core/AsyncCallerContext.h>
 #include <tencentcloud/mrs/v20200910/model/ImageMaskRequest.h>
 #include <tencentcloud/mrs/v20200910/model/ImageMaskResponse.h>
+#include <tencentcloud/mrs/v20200910/model/ImageMaskAsyncRequest.h>
+#include <tencentcloud/mrs/v20200910/model/ImageMaskAsyncResponse.h>
+#include <tencentcloud/mrs/v20200910/model/ImageMaskAsyncGetResultRequest.h>
+#include <tencentcloud/mrs/v20200910/model/ImageMaskAsyncGetResultResponse.h>
 #include <tencentcloud/mrs/v20200910/model/ImageToClassRequest.h>
 #include <tencentcloud/mrs/v20200910/model/ImageToClassResponse.h>
 #include <tencentcloud/mrs/v20200910/model/ImageToObjectRequest.h>
@@ -56,6 +60,12 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::ImageMaskResponse> ImageMaskOutcome;
                 typedef std::future<ImageMaskOutcome> ImageMaskOutcomeCallable;
                 typedef std::function<void(const MrsClient*, const Model::ImageMaskRequest&, ImageMaskOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ImageMaskAsyncHandler;
+                typedef Outcome<Core::Error, Model::ImageMaskAsyncResponse> ImageMaskAsyncOutcome;
+                typedef std::future<ImageMaskAsyncOutcome> ImageMaskAsyncOutcomeCallable;
+                typedef std::function<void(const MrsClient*, const Model::ImageMaskAsyncRequest&, ImageMaskAsyncOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ImageMaskAsyncAsyncHandler;
+                typedef Outcome<Core::Error, Model::ImageMaskAsyncGetResultResponse> ImageMaskAsyncGetResultOutcome;
+                typedef std::future<ImageMaskAsyncGetResultOutcome> ImageMaskAsyncGetResultOutcomeCallable;
+                typedef std::function<void(const MrsClient*, const Model::ImageMaskAsyncGetResultRequest&, ImageMaskAsyncGetResultOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ImageMaskAsyncGetResultAsyncHandler;
                 typedef Outcome<Core::Error, Model::ImageToClassResponse> ImageToClassOutcome;
                 typedef std::future<ImageToClassOutcome> ImageToClassOutcomeCallable;
                 typedef std::function<void(const MrsClient*, const Model::ImageToClassRequest&, ImageToClassOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ImageToClassAsyncHandler;
@@ -88,6 +98,24 @@ namespace TencentCloud
                 ImageMaskOutcome ImageMask(const Model::ImageMaskRequest &request);
                 void ImageMaskAsync(const Model::ImageMaskRequest& request, const ImageMaskAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 ImageMaskOutcomeCallable ImageMaskCallable(const Model::ImageMaskRequest& request);
+
+                /**
+                 *图片脱敏-异步接口
+                 * @param req ImageMaskAsyncRequest
+                 * @return ImageMaskAsyncOutcome
+                 */
+                ImageMaskAsyncOutcome ImageMaskAsync(const Model::ImageMaskAsyncRequest &request);
+                void ImageMaskAsyncAsync(const Model::ImageMaskAsyncRequest& request, const ImageMaskAsyncAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                ImageMaskAsyncOutcomeCallable ImageMaskAsyncCallable(const Model::ImageMaskAsyncRequest& request);
+
+                /**
+                 *图片脱敏-异步获取结果接口
+                 * @param req ImageMaskAsyncGetResultRequest
+                 * @return ImageMaskAsyncGetResultOutcome
+                 */
+                ImageMaskAsyncGetResultOutcome ImageMaskAsyncGetResult(const Model::ImageMaskAsyncGetResultRequest &request);
+                void ImageMaskAsyncGetResultAsync(const Model::ImageMaskAsyncGetResultRequest& request, const ImageMaskAsyncGetResultAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                ImageMaskAsyncGetResultOutcomeCallable ImageMaskAsyncGetResultCallable(const Model::ImageMaskAsyncGetResultRequest& request);
 
                 /**
                  *图片分类

@@ -43,9 +43,9 @@ set(mrs_public_header_model
   include/tencentcloud/mrs/v20200910/model/PTNM.h
   include/tencentcloud/mrs/v20200910/model/TableIndicators.h
   include/tencentcloud/mrs/v20200910/model/BlockInfoV2.h
-  include/tencentcloud/mrs/v20200910/model/NormPart.h
+  include/tencentcloud/mrs/v20200910/model/ImageMaskAsyncGetResultResponse.h
   include/tencentcloud/mrs/v20200910/model/Lymph.h
-  include/tencentcloud/mrs/v20200910/model/StomatologyBaseItem.h
+  include/tencentcloud/mrs/v20200910/model/ImageMaskAsyncRequest.h
   include/tencentcloud/mrs/v20200910/model/BaseItem.h
   include/tencentcloud/mrs/v20200910/model/OtolaryngologyBaseItem.h
   include/tencentcloud/mrs/v20200910/model/Fp2NdItem.h
@@ -149,6 +149,7 @@ set(mrs_public_header_model
   include/tencentcloud/mrs/v20200910/model/AdmissionDiagnosisBlock.h
   include/tencentcloud/mrs/v20200910/model/TreatmentRecordBlock.h
   include/tencentcloud/mrs/v20200910/model/Elastic.h
+  include/tencentcloud/mrs/v20200910/model/ImageMaskAsyncGetResultRequest.h
   include/tencentcloud/mrs/v20200910/model/ChestCircumferenceItem.h
   include/tencentcloud/mrs/v20200910/model/SurgeryAnorectal.h
   include/tencentcloud/mrs/v20200910/model/IHCInfo.h
@@ -158,6 +159,7 @@ set(mrs_public_header_model
   include/tencentcloud/mrs/v20200910/model/NeglistBlock.h
   include/tencentcloud/mrs/v20200910/model/Medicine.h
   include/tencentcloud/mrs/v20200910/model/PathologicalDiagnosisBlock.h
+  include/tencentcloud/mrs/v20200910/model/StomatologyBaseItem.h
   include/tencentcloud/mrs/v20200910/model/ReportTypeVersion.h
   include/tencentcloud/mrs/v20200910/model/Rectangle.h
   include/tencentcloud/mrs/v20200910/model/IHCV2.h
@@ -171,6 +173,7 @@ set(mrs_public_header_model
   include/tencentcloud/mrs/v20200910/model/ParagraphBlock.h
   include/tencentcloud/mrs/v20200910/model/RelativeHistoryDetailBlock.h
   include/tencentcloud/mrs/v20200910/model/PoslistBlock.h
+  include/tencentcloud/mrs/v20200910/model/NormPart.h
   include/tencentcloud/mrs/v20200910/model/GynaecologyMenstrualHistory.h
   include/tencentcloud/mrs/v20200910/model/ImageMaskRequest.h
   include/tencentcloud/mrs/v20200910/model/Endoscopy.h
@@ -196,6 +199,7 @@ set(mrs_public_header_model
   include/tencentcloud/mrs/v20200910/model/InternalMedicineRespiratorySystem.h
   include/tencentcloud/mrs/v20200910/model/TurnPDFToObjectAsyncGetResultRequest.h
   include/tencentcloud/mrs/v20200910/model/BloodPressureItem.h
+  include/tencentcloud/mrs/v20200910/model/SymptomInfo.h
   include/tencentcloud/mrs/v20200910/model/TextToClassRequest.h
   include/tencentcloud/mrs/v20200910/model/TextTypeListBlock.h
   include/tencentcloud/mrs/v20200910/model/ObstetricalHistoryBlock.h
@@ -211,7 +215,7 @@ set(mrs_public_header_model
   include/tencentcloud/mrs/v20200910/model/OphthalmologyFundoscopy.h
   include/tencentcloud/mrs/v20200910/model/SurgeryBreast.h
   include/tencentcloud/mrs/v20200910/model/InternalMedicineBriefSummary.h
-  include/tencentcloud/mrs/v20200910/model/SymptomInfo.h
+  include/tencentcloud/mrs/v20200910/model/ImageMaskAsyncResponse.h
   include/tencentcloud/mrs/v20200910/model/DeathDateBlock.h
   include/tencentcloud/mrs/v20200910/model/BirthCert.h
   include/tencentcloud/mrs/v20200910/model/KeyValueItem.h
@@ -284,9 +288,9 @@ set(mrs_src
   src/v20200910/model/PTNM.cpp
   src/v20200910/model/TableIndicators.cpp
   src/v20200910/model/BlockInfoV2.cpp
-  src/v20200910/model/NormPart.cpp
+  src/v20200910/model/ImageMaskAsyncGetResultResponse.cpp
   src/v20200910/model/Lymph.cpp
-  src/v20200910/model/StomatologyBaseItem.cpp
+  src/v20200910/model/ImageMaskAsyncRequest.cpp
   src/v20200910/model/BaseItem.cpp
   src/v20200910/model/OtolaryngologyBaseItem.cpp
   src/v20200910/model/Fp2NdItem.cpp
@@ -390,6 +394,7 @@ set(mrs_src
   src/v20200910/model/AdmissionDiagnosisBlock.cpp
   src/v20200910/model/TreatmentRecordBlock.cpp
   src/v20200910/model/Elastic.cpp
+  src/v20200910/model/ImageMaskAsyncGetResultRequest.cpp
   src/v20200910/model/ChestCircumferenceItem.cpp
   src/v20200910/model/SurgeryAnorectal.cpp
   src/v20200910/model/IHCInfo.cpp
@@ -399,6 +404,7 @@ set(mrs_src
   src/v20200910/model/NeglistBlock.cpp
   src/v20200910/model/Medicine.cpp
   src/v20200910/model/PathologicalDiagnosisBlock.cpp
+  src/v20200910/model/StomatologyBaseItem.cpp
   src/v20200910/model/ReportTypeVersion.cpp
   src/v20200910/model/Rectangle.cpp
   src/v20200910/model/IHCV2.cpp
@@ -412,6 +418,7 @@ set(mrs_src
   src/v20200910/model/ParagraphBlock.cpp
   src/v20200910/model/RelativeHistoryDetailBlock.cpp
   src/v20200910/model/PoslistBlock.cpp
+  src/v20200910/model/NormPart.cpp
   src/v20200910/model/GynaecologyMenstrualHistory.cpp
   src/v20200910/model/ImageMaskRequest.cpp
   src/v20200910/model/Endoscopy.cpp
@@ -437,6 +444,7 @@ set(mrs_src
   src/v20200910/model/InternalMedicineRespiratorySystem.cpp
   src/v20200910/model/TurnPDFToObjectAsyncGetResultRequest.cpp
   src/v20200910/model/BloodPressureItem.cpp
+  src/v20200910/model/SymptomInfo.cpp
   src/v20200910/model/TextToClassRequest.cpp
   src/v20200910/model/TextTypeListBlock.cpp
   src/v20200910/model/ObstetricalHistoryBlock.cpp
@@ -452,7 +460,7 @@ set(mrs_src
   src/v20200910/model/OphthalmologyFundoscopy.cpp
   src/v20200910/model/SurgeryBreast.cpp
   src/v20200910/model/InternalMedicineBriefSummary.cpp
-  src/v20200910/model/SymptomInfo.cpp
+  src/v20200910/model/ImageMaskAsyncResponse.cpp
   src/v20200910/model/DeathDateBlock.cpp
   src/v20200910/model/BirthCert.cpp
   src/v20200910/model/KeyValueItem.cpp

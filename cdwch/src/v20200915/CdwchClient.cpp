@@ -599,6 +599,49 @@ CdwchClient::DescribeInstanceKeyValConfigsOutcomeCallable CdwchClient::DescribeI
     return task->get_future();
 }
 
+CdwchClient::DescribeInstanceNodesOutcome CdwchClient::DescribeInstanceNodes(const DescribeInstanceNodesRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeInstanceNodes");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeInstanceNodesResponse rsp = DescribeInstanceNodesResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeInstanceNodesOutcome(rsp);
+        else
+            return DescribeInstanceNodesOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeInstanceNodesOutcome(outcome.GetError());
+    }
+}
+
+void CdwchClient::DescribeInstanceNodesAsync(const DescribeInstanceNodesRequest& request, const DescribeInstanceNodesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeInstanceNodes(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+CdwchClient::DescribeInstanceNodesOutcomeCallable CdwchClient::DescribeInstanceNodesCallable(const DescribeInstanceNodesRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeInstanceNodesOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeInstanceNodes(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 CdwchClient::DescribeInstanceShardsOutcome CdwchClient::DescribeInstanceShards(const DescribeInstanceShardsRequest &request)
 {
     auto outcome = MakeRequest(request, "DescribeInstanceShards");

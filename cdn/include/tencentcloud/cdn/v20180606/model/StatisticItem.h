@@ -122,18 +122,18 @@ namespace TencentCloud
                     bool BpsThresholdHasBeenSet() const;
 
                     /**
-                     * 获取关闭方式 返回404:RETURN_404, dns回源：RESOLVE_DNS_TO_ORIGIN
+                     * 获取关闭方式 返回404:RETURN_404
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return CounterMeasure 关闭方式 返回404:RETURN_404, dns回源：RESOLVE_DNS_TO_ORIGIN
+                     * @return CounterMeasure 关闭方式 返回404:RETURN_404
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetCounterMeasure() const;
 
                     /**
-                     * 设置关闭方式 返回404:RETURN_404, dns回源：RESOLVE_DNS_TO_ORIGIN
+                     * 设置关闭方式 返回404:RETURN_404
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _counterMeasure 关闭方式 返回404:RETURN_404, dns回源：RESOLVE_DNS_TO_ORIGIN
+                     * @param _counterMeasure 关闭方式 返回404:RETURN_404
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -311,7 +311,7 @@ off：关闭
                     bool m_bpsThresholdHasBeenSet;
 
                     /**
-                     * 关闭方式 返回404:RETURN_404, dns回源：RESOLVE_DNS_TO_ORIGIN
+                     * 关闭方式 返回404:RETURN_404
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_counterMeasure;

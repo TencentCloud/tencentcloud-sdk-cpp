@@ -58,8 +58,8 @@ namespace TencentCloud
                     bool SerialIdHasBeenSet() const;
 
                     /**
-                     * 获取Catalog名
-                     * @return Catalog Catalog名
+                     * 获取目录名
+                     * @return Catalog 目录名
                      * 
                      */
                     std::string GetCatalog() const;
@@ -72,8 +72,8 @@ namespace TencentCloud
                     bool CatalogHasBeenSet() const;
 
                     /**
-                     * 获取Database名
-                     * @return Database Database名
+                     * 获取库名
+                     * @return Database 库名
                      * 
                      */
                     std::string GetDatabase() const;
@@ -86,8 +86,8 @@ namespace TencentCloud
                     bool DatabaseHasBeenSet() const;
 
                     /**
-                     * 获取Table名
-                     * @return Table Table名
+                     * 获取表名
+                     * @return Table 表名
                      * 
                      */
                     std::string GetTable() const;
@@ -118,8 +118,8 @@ Q1JFQVRFIFRBQkxFIGRhdGFnZW5fc291cmNlX3RhYmxlICggCiAgICBpZCBJTlQsIAogICAgbmFtZSBT
                     bool DDLHasBeenSet() const;
 
                     /**
-                     * 获取场景时间
-                     * @return CreateTime 场景时间
+                     * 获取创建时间
+                     * @return CreateTime 创建时间
                      * 
                      */
                     std::string GetCreateTime() const;
@@ -140,19 +140,19 @@ Q1JFQVRFIFRBQkxFIGRhdGFnZW5fc291cmNlX3RhYmxlICggCiAgICBpZCBJTlQsIAogICAgbmFtZSBT
                     bool m_serialIdHasBeenSet;
 
                     /**
-                     * Catalog名
+                     * 目录名
                      */
                     std::string m_catalog;
                     bool m_catalogHasBeenSet;
 
                     /**
-                     * Database名
+                     * 库名
                      */
                     std::string m_database;
                     bool m_databaseHasBeenSet;
 
                     /**
-                     * Table名
+                     * 表名
                      */
                     std::string m_table;
                     bool m_tableHasBeenSet;
@@ -166,7 +166,7 @@ Q1JFQVRFIFRBQkxFIGRhdGFnZW5fc291cmNlX3RhYmxlICggCiAgICBpZCBJTlQsIAogICAgbmFtZSBT
                     bool m_dDLHasBeenSet;
 
                     /**
-                     * 场景时间
+                     * 创建时间
                      */
                     std::string m_createTime;
                     bool m_createTimeHasBeenSet;

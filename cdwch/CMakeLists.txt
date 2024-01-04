@@ -22,10 +22,10 @@ set(cdwch_public_header_model
   include/tencentcloud/cdwch/v20200915/model/DescribeInstanceShardsRequest.h
   include/tencentcloud/cdwch/v20200915/model/ScaleOutInstanceRequest.h
   include/tencentcloud/cdwch/v20200915/model/ScaleOutInstanceResponse.h
-  include/tencentcloud/cdwch/v20200915/model/ResizeDiskRequest.h
+  include/tencentcloud/cdwch/v20200915/model/DescribeInstancesNewResponse.h
   include/tencentcloud/cdwch/v20200915/model/DatabasePrivilegeInfo.h
   include/tencentcloud/cdwch/v20200915/model/DescribeInstanceKeyValConfigsRequest.h
-  include/tencentcloud/cdwch/v20200915/model/OpenBackUpResponse.h
+  include/tencentcloud/cdwch/v20200915/model/DescribeInstanceNodesRequest.h
   include/tencentcloud/cdwch/v20200915/model/Charge.h
   include/tencentcloud/cdwch/v20200915/model/DescribeClusterConfigsResponse.h
   include/tencentcloud/cdwch/v20200915/model/ActionAlterCkUserRequest.h
@@ -42,6 +42,7 @@ set(cdwch_public_header_model
   include/tencentcloud/cdwch/v20200915/model/OpenBackUpRequest.h
   include/tencentcloud/cdwch/v20200915/model/ModifyInstanceKeyValConfigsResponse.h
   include/tencentcloud/cdwch/v20200915/model/BackupTableContent.h
+  include/tencentcloud/cdwch/v20200915/model/OpenBackUpResponse.h
   include/tencentcloud/cdwch/v20200915/model/CreateInstanceNewResponse.h
   include/tencentcloud/cdwch/v20200915/model/ConfigSubmitContext.h
   include/tencentcloud/cdwch/v20200915/model/InstanceStateInfo.h
@@ -53,6 +54,7 @@ set(cdwch_public_header_model
   include/tencentcloud/cdwch/v20200915/model/DescribeBackUpJobDetailResponse.h
   include/tencentcloud/cdwch/v20200915/model/ModifyClusterConfigsRequest.h
   include/tencentcloud/cdwch/v20200915/model/ScaleUpInstanceRequest.h
+  include/tencentcloud/cdwch/v20200915/model/GroupInfo.h
   include/tencentcloud/cdwch/v20200915/model/DescribeInstanceKeyValConfigsResponse.h
   include/tencentcloud/cdwch/v20200915/model/ServiceInfo.h
   include/tencentcloud/cdwch/v20200915/model/MapConfigItem.h
@@ -62,7 +64,7 @@ set(cdwch_public_header_model
   include/tencentcloud/cdwch/v20200915/model/DescribeInstancesNewRequest.h
   include/tencentcloud/cdwch/v20200915/model/DeleteBackUpDataResponse.h
   include/tencentcloud/cdwch/v20200915/model/ModifyInstanceKeyValConfigsRequest.h
-  include/tencentcloud/cdwch/v20200915/model/DescribeInstancesNewResponse.h
+  include/tencentcloud/cdwch/v20200915/model/DescribeInstanceNodesResponse.h
   include/tencentcloud/cdwch/v20200915/model/Tag.h
   include/tencentcloud/cdwch/v20200915/model/BackUpJobDisplay.h
   include/tencentcloud/cdwch/v20200915/model/DescribeClusterConfigsRequest.h
@@ -74,9 +76,11 @@ set(cdwch_public_header_model
   include/tencentcloud/cdwch/v20200915/model/DescribeInstanceResponse.h
   include/tencentcloud/cdwch/v20200915/model/DescribeBackUpJobResponse.h
   include/tencentcloud/cdwch/v20200915/model/DescribeInstanceClustersRequest.h
+  include/tencentcloud/cdwch/v20200915/model/ResizeDiskRequest.h
   include/tencentcloud/cdwch/v20200915/model/DescribeInstanceStateRequest.h
   include/tencentcloud/cdwch/v20200915/model/NodesSummary.h
   include/tencentcloud/cdwch/v20200915/model/DescribeInstanceShardsResponse.h
+  include/tencentcloud/cdwch/v20200915/model/InstanceNode.h
   include/tencentcloud/cdwch/v20200915/model/InstanceConfigInfo.h
   include/tencentcloud/cdwch/v20200915/model/DescribeBackUpJobDetailRequest.h
   include/tencentcloud/cdwch/v20200915/model/CreateBackUpScheduleRequest.h
@@ -101,10 +105,10 @@ set(cdwch_src
   src/v20200915/model/DescribeInstanceShardsRequest.cpp
   src/v20200915/model/ScaleOutInstanceRequest.cpp
   src/v20200915/model/ScaleOutInstanceResponse.cpp
-  src/v20200915/model/ResizeDiskRequest.cpp
+  src/v20200915/model/DescribeInstancesNewResponse.cpp
   src/v20200915/model/DatabasePrivilegeInfo.cpp
   src/v20200915/model/DescribeInstanceKeyValConfigsRequest.cpp
-  src/v20200915/model/OpenBackUpResponse.cpp
+  src/v20200915/model/DescribeInstanceNodesRequest.cpp
   src/v20200915/model/Charge.cpp
   src/v20200915/model/DescribeClusterConfigsResponse.cpp
   src/v20200915/model/ActionAlterCkUserRequest.cpp
@@ -121,6 +125,7 @@ set(cdwch_src
   src/v20200915/model/OpenBackUpRequest.cpp
   src/v20200915/model/ModifyInstanceKeyValConfigsResponse.cpp
   src/v20200915/model/BackupTableContent.cpp
+  src/v20200915/model/OpenBackUpResponse.cpp
   src/v20200915/model/CreateInstanceNewResponse.cpp
   src/v20200915/model/ConfigSubmitContext.cpp
   src/v20200915/model/InstanceStateInfo.cpp
@@ -132,6 +137,7 @@ set(cdwch_src
   src/v20200915/model/DescribeBackUpJobDetailResponse.cpp
   src/v20200915/model/ModifyClusterConfigsRequest.cpp
   src/v20200915/model/ScaleUpInstanceRequest.cpp
+  src/v20200915/model/GroupInfo.cpp
   src/v20200915/model/DescribeInstanceKeyValConfigsResponse.cpp
   src/v20200915/model/ServiceInfo.cpp
   src/v20200915/model/MapConfigItem.cpp
@@ -141,7 +147,7 @@ set(cdwch_src
   src/v20200915/model/DescribeInstancesNewRequest.cpp
   src/v20200915/model/DeleteBackUpDataResponse.cpp
   src/v20200915/model/ModifyInstanceKeyValConfigsRequest.cpp
-  src/v20200915/model/DescribeInstancesNewResponse.cpp
+  src/v20200915/model/DescribeInstanceNodesResponse.cpp
   src/v20200915/model/Tag.cpp
   src/v20200915/model/BackUpJobDisplay.cpp
   src/v20200915/model/DescribeClusterConfigsRequest.cpp
@@ -153,9 +159,11 @@ set(cdwch_src
   src/v20200915/model/DescribeInstanceResponse.cpp
   src/v20200915/model/DescribeBackUpJobResponse.cpp
   src/v20200915/model/DescribeInstanceClustersRequest.cpp
+  src/v20200915/model/ResizeDiskRequest.cpp
   src/v20200915/model/DescribeInstanceStateRequest.cpp
   src/v20200915/model/NodesSummary.cpp
   src/v20200915/model/DescribeInstanceShardsResponse.cpp
+  src/v20200915/model/InstanceNode.cpp
   src/v20200915/model/InstanceConfigInfo.cpp
   src/v20200915/model/DescribeBackUpJobDetailRequest.cpp
   src/v20200915/model/CreateBackUpScheduleRequest.cpp
