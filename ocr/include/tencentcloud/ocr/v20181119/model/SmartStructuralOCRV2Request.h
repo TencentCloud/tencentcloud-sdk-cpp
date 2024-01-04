@@ -221,6 +221,8 @@ RideHailingTransportLicense -- 网约车运输证
 WayBill -- 快递运单
 AccountOpeningPermit -- 银行开户许可证
 InvoiceEng -- 海外发票模版
+Coin --钱币识别模板
+OnboardingDocuments -- 入职材料识别
                      * @return ConfigId 配置id支持：
 General -- 通用场景
 OnlineTaxiItinerary -- 网约车行程单
@@ -229,6 +231,8 @@ RideHailingTransportLicense -- 网约车运输证
 WayBill -- 快递运单
 AccountOpeningPermit -- 银行开户许可证
 InvoiceEng -- 海外发票模版
+Coin --钱币识别模板
+OnboardingDocuments -- 入职材料识别
                      * 
                      */
                     std::string GetConfigId() const;
@@ -242,6 +246,8 @@ RideHailingTransportLicense -- 网约车运输证
 WayBill -- 快递运单
 AccountOpeningPermit -- 银行开户许可证
 InvoiceEng -- 海外发票模版
+Coin --钱币识别模板
+OnboardingDocuments -- 入职材料识别
                      * @param _configId 配置id支持：
 General -- 通用场景
 OnlineTaxiItinerary -- 网约车行程单
@@ -250,6 +256,8 @@ RideHailingTransportLicense -- 网约车运输证
 WayBill -- 快递运单
 AccountOpeningPermit -- 银行开户许可证
 InvoiceEng -- 海外发票模版
+Coin --钱币识别模板
+OnboardingDocuments -- 入职材料识别
                      * 
                      */
                     void SetConfigId(const std::string& _configId);
@@ -260,6 +268,27 @@ InvoiceEng -- 海外发票模版
                      * 
                      */
                     bool ConfigIdHasBeenSet() const;
+
+                    /**
+                     * 获取是否打开印章识别
+                     * @return EnableSealRecognize 是否打开印章识别
+                     * 
+                     */
+                    bool GetEnableSealRecognize() const;
+
+                    /**
+                     * 设置是否打开印章识别
+                     * @param _enableSealRecognize 是否打开印章识别
+                     * 
+                     */
+                    void SetEnableSealRecognize(const bool& _enableSealRecognize);
+
+                    /**
+                     * 判断参数 EnableSealRecognize 是否已赋值
+                     * @return EnableSealRecognize 是否已赋值
+                     * 
+                     */
+                    bool EnableSealRecognizeHasBeenSet() const;
 
                 private:
 
@@ -319,9 +348,17 @@ RideHailingTransportLicense -- 网约车运输证
 WayBill -- 快递运单
 AccountOpeningPermit -- 银行开户许可证
 InvoiceEng -- 海外发票模版
+Coin --钱币识别模板
+OnboardingDocuments -- 入职材料识别
                      */
                     std::string m_configId;
                     bool m_configIdHasBeenSet;
+
+                    /**
+                     * 是否打开印章识别
+                     */
+                    bool m_enableSealRecognize;
+                    bool m_enableSealRecognizeHasBeenSet;
 
                 };
             }

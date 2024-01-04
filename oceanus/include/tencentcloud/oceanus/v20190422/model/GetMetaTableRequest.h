@@ -43,15 +43,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取Catalog名
-                     * @return Catalog Catalog名
+                     * 获取目录名
+                     * @return Catalog 目录名
                      * 
                      */
                     std::string GetCatalog() const;
 
                     /**
-                     * 设置Catalog名
-                     * @param _catalog Catalog名
+                     * 设置目录名
+                     * @param _catalog 目录名
                      * 
                      */
                     void SetCatalog(const std::string& _catalog);
@@ -64,15 +64,15 @@ namespace TencentCloud
                     bool CatalogHasBeenSet() const;
 
                     /**
-                     * 获取Database名
-                     * @return Database Database名
+                     * 获取库名
+                     * @return Database 库名
                      * 
                      */
                     std::string GetDatabase() const;
 
                     /**
-                     * 设置Database名
-                     * @param _database Database名
+                     * 设置库名
+                     * @param _database 库名
                      * 
                      */
                     void SetDatabase(const std::string& _database);
@@ -85,15 +85,15 @@ namespace TencentCloud
                     bool DatabaseHasBeenSet() const;
 
                     /**
-                     * 获取Table名
-                     * @return Table Table名
+                     * 获取表名
+                     * @return Table 表名
                      * 
                      */
                     std::string GetTable() const;
 
                     /**
-                     * 设置Table名
-                     * @param _table Table名
+                     * 设置表名
+                     * @param _table 表名
                      * 
                      */
                     void SetTable(const std::string& _table);
@@ -129,19 +129,19 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * Catalog名
+                     * 目录名
                      */
                     std::string m_catalog;
                     bool m_catalogHasBeenSet;
 
                     /**
-                     * Database名
+                     * 库名
                      */
                     std::string m_database;
                     bool m_databaseHasBeenSet;
 
                     /**
-                     * Table名
+                     * 表名
                      */
                     std::string m_table;
                     bool m_tableHasBeenSet;

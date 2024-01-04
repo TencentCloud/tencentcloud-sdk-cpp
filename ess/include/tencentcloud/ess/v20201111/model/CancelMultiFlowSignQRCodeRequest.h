@@ -70,15 +70,15 @@ namespace TencentCloud
                     bool OperatorHasBeenSet() const;
 
                     /**
-                     * 获取二维码ID，为32位字符串。
-                     * @return QrCodeId 二维码ID，为32位字符串。
+                     * 获取需要取消的签署码ID，为32位字符串。由[创建一码多签签署码](https://qian.tencent.com/developers/companyApis/startFlows/CreateMultiFlowSignQRCode/)返回
+                     * @return QrCodeId 需要取消的签署码ID，为32位字符串。由[创建一码多签签署码](https://qian.tencent.com/developers/companyApis/startFlows/CreateMultiFlowSignQRCode/)返回
                      * 
                      */
                     std::string GetQrCodeId() const;
 
                     /**
-                     * 设置二维码ID，为32位字符串。
-                     * @param _qrCodeId 二维码ID，为32位字符串。
+                     * 设置需要取消的签署码ID，为32位字符串。由[创建一码多签签署码](https://qian.tencent.com/developers/companyApis/startFlows/CreateMultiFlowSignQRCode/)返回
+                     * @param _qrCodeId 需要取消的签署码ID，为32位字符串。由[创建一码多签签署码](https://qian.tencent.com/developers/companyApis/startFlows/CreateMultiFlowSignQRCode/)返回
                      * 
                      */
                     void SetQrCodeId(const std::string& _qrCodeId);
@@ -125,7 +125,7 @@ namespace TencentCloud
                     bool m_operatorHasBeenSet;
 
                     /**
-                     * 二维码ID，为32位字符串。
+                     * 需要取消的签署码ID，为32位字符串。由[创建一码多签签署码](https://qian.tencent.com/developers/companyApis/startFlows/CreateMultiFlowSignQRCode/)返回
                      */
                     std::string m_qrCodeId;
                     bool m_qrCodeIdHasBeenSet;

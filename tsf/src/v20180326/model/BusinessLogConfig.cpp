@@ -30,7 +30,8 @@ BusinessLogConfig::BusinessLogConfig() :
     m_configCreateTimeHasBeenSet(false),
     m_configUpdateTimeHasBeenSet(false),
     m_configSchemaHasBeenSet(false),
-    m_configAssociatedGroupsHasBeenSet(false)
+    m_configAssociatedGroupsHasBeenSet(false),
+    m_configAssociatedGroupListHasBeenSet(false)
 {
 }
 
@@ -156,6 +157,26 @@ CoreInternalOutcome BusinessLogConfig::Deserialize(const rapidjson::Value &value
         m_configAssociatedGroupsHasBeenSet = true;
     }
 
+    if (value.HasMember("ConfigAssociatedGroupList") && !value["ConfigAssociatedGroupList"].IsNull())
+    {
+        if (!value["ConfigAssociatedGroupList"].IsArray())
+            return CoreInternalOutcome(Core::Error("response `BusinessLogConfig.ConfigAssociatedGroupList` is not array type"));
+
+        const rapidjson::Value &tmpValue = value["ConfigAssociatedGroupList"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            BusinessLogConfigAssociatedGroup item;
+            CoreInternalOutcome outcome = item.Deserialize(*itr);
+            if (!outcome.IsSuccess())
+            {
+                outcome.GetError().SetRequestId(requestId);
+                return outcome;
+            }
+            m_configAssociatedGroupList.push_back(item);
+        }
+        m_configAssociatedGroupListHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -245,6 +266,21 @@ void BusinessLogConfig::ToJsonObject(rapidjson::Value &value, rapidjson::Documen
 
         int i=0;
         for (auto itr = m_configAssociatedGroups.begin(); itr != m_configAssociatedGroups.end(); ++itr, ++i)
+        {
+            value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(value[key.c_str()][i], allocator);
+        }
+    }
+
+    if (m_configAssociatedGroupListHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ConfigAssociatedGroupList";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_configAssociatedGroupList.begin(); itr != m_configAssociatedGroupList.end(); ++itr, ++i)
         {
             value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
             (*itr).ToJsonObject(value[key.c_str()][i], allocator);
@@ -412,5 +448,21 @@ void BusinessLogConfig::SetConfigAssociatedGroups(const vector<BusinesLogConfigA
 bool BusinessLogConfig::ConfigAssociatedGroupsHasBeenSet() const
 {
     return m_configAssociatedGroupsHasBeenSet;
+}
+
+vector<BusinessLogConfigAssociatedGroup> BusinessLogConfig::GetConfigAssociatedGroupList() const
+{
+    return m_configAssociatedGroupList;
+}
+
+void BusinessLogConfig::SetConfigAssociatedGroupList(const vector<BusinessLogConfigAssociatedGroup>& _configAssociatedGroupList)
+{
+    m_configAssociatedGroupList = _configAssociatedGroupList;
+    m_configAssociatedGroupListHasBeenSet = true;
+}
+
+bool BusinessLogConfig::ConfigAssociatedGroupListHasBeenSet() const
+{
+    return m_configAssociatedGroupListHasBeenSet;
 }
 

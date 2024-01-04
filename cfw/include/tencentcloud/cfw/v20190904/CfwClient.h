@@ -201,8 +201,6 @@
 #include <tencentcloud/cfw/v20190904/model/ModifyNatInstanceResponse.h>
 #include <tencentcloud/cfw/v20190904/model/ModifyNatSequenceRulesRequest.h>
 #include <tencentcloud/cfw/v20190904/model/ModifyNatSequenceRulesResponse.h>
-#include <tencentcloud/cfw/v20190904/model/ModifyPublicIPSwitchStatusRequest.h>
-#include <tencentcloud/cfw/v20190904/model/ModifyPublicIPSwitchStatusResponse.h>
 #include <tencentcloud/cfw/v20190904/model/ModifyResourceGroupRequest.h>
 #include <tencentcloud/cfw/v20190904/model/ModifyResourceGroupResponse.h>
 #include <tencentcloud/cfw/v20190904/model/ModifyRunSyncAssetRequest.h>
@@ -526,9 +524,6 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::ModifyNatSequenceRulesResponse> ModifyNatSequenceRulesOutcome;
                 typedef std::future<ModifyNatSequenceRulesOutcome> ModifyNatSequenceRulesOutcomeCallable;
                 typedef std::function<void(const CfwClient*, const Model::ModifyNatSequenceRulesRequest&, ModifyNatSequenceRulesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyNatSequenceRulesAsyncHandler;
-                typedef Outcome<Core::Error, Model::ModifyPublicIPSwitchStatusResponse> ModifyPublicIPSwitchStatusOutcome;
-                typedef std::future<ModifyPublicIPSwitchStatusOutcome> ModifyPublicIPSwitchStatusOutcomeCallable;
-                typedef std::function<void(const CfwClient*, const Model::ModifyPublicIPSwitchStatusRequest&, ModifyPublicIPSwitchStatusOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyPublicIPSwitchStatusAsyncHandler;
                 typedef Outcome<Core::Error, Model::ModifyResourceGroupResponse> ModifyResourceGroupOutcome;
                 typedef std::future<ModifyResourceGroupOutcome> ModifyResourceGroupOutcomeCallable;
                 typedef std::function<void(const CfwClient*, const Model::ModifyResourceGroupRequest&, ModifyResourceGroupOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyResourceGroupAsyncHandler;
@@ -1403,17 +1398,6 @@ VPC间规则需指定EdgeId。Nat边界规则需指定地域Region与Direction�
                 ModifyNatSequenceRulesOutcome ModifyNatSequenceRules(const Model::ModifyNatSequenceRulesRequest &request);
                 void ModifyNatSequenceRulesAsync(const Model::ModifyNatSequenceRulesRequest& request, const ModifyNatSequenceRulesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 ModifyNatSequenceRulesOutcomeCallable ModifyNatSequenceRulesCallable(const Model::ModifyNatSequenceRulesRequest& request);
-
-                /**
-                 *已上新接口，支持串行
-
-单个修改互联网边界防火墙开关
-                 * @param req ModifyPublicIPSwitchStatusRequest
-                 * @return ModifyPublicIPSwitchStatusOutcome
-                 */
-                ModifyPublicIPSwitchStatusOutcome ModifyPublicIPSwitchStatus(const Model::ModifyPublicIPSwitchStatusRequest &request);
-                void ModifyPublicIPSwitchStatusAsync(const Model::ModifyPublicIPSwitchStatusRequest& request, const ModifyPublicIPSwitchStatusAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
-                ModifyPublicIPSwitchStatusOutcomeCallable ModifyPublicIPSwitchStatusCallable(const Model::ModifyPublicIPSwitchStatusRequest& request);
 
                 /**
                  *ModifyResourceGroup-资产中心资产组信息修改

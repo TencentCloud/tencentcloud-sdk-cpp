@@ -462,6 +462,7 @@ set(tsf_public_header_model
   include/tencentcloud/tsf/v20180326/model/DescribeTaskLastStatusResponse.h
   include/tencentcloud/tsf/v20180326/model/DescribePublicConfigsRequest.h
   include/tencentcloud/tsf/v20180326/model/GatewayGroupApiVo.h
+  include/tencentcloud/tsf/v20180326/model/BusinessLogConfigAssociatedGroup.h
   include/tencentcloud/tsf/v20180326/model/DescribeApplicationsRequest.h
   include/tencentcloud/tsf/v20180326/model/DescribeTaskDetailRequest.h
   include/tencentcloud/tsf/v20180326/model/MultiValue.h
@@ -1084,6 +1085,7 @@ set(tsf_src
   src/v20180326/model/DescribeTaskLastStatusResponse.cpp
   src/v20180326/model/DescribePublicConfigsRequest.cpp
   src/v20180326/model/GatewayGroupApiVo.cpp
+  src/v20180326/model/BusinessLogConfigAssociatedGroup.cpp
   src/v20180326/model/DescribeApplicationsRequest.cpp
   src/v20180326/model/DescribeTaskDetailRequest.cpp
   src/v20180326/model/MultiValue.cpp

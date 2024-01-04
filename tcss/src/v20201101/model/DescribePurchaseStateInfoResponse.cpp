@@ -34,7 +34,8 @@ DescribePurchaseStateInfoResponse::DescribePurchaseStateInfoResponse() :
     m_automaticRenewalHasBeenSet(false),
     m_givenAuthorizedCntHasBeenSet(false),
     m_beginTimeHasBeenSet(false),
-    m_subStateHasBeenSet(false)
+    m_subStateHasBeenSet(false),
+    m_inquireKeyHasBeenSet(false)
 {
 }
 
@@ -182,6 +183,16 @@ CoreInternalOutcome DescribePurchaseStateInfoResponse::Deserialize(const string 
         m_subStateHasBeenSet = true;
     }
 
+    if (rsp.HasMember("InquireKey") && !rsp["InquireKey"].IsNull())
+    {
+        if (!rsp["InquireKey"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `InquireKey` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_inquireKey = string(rsp["InquireKey"].GetString());
+        m_inquireKeyHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -278,6 +289,14 @@ string DescribePurchaseStateInfoResponse::ToJsonString() const
         string key = "SubState";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_subState.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_inquireKeyHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "InquireKey";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_inquireKey.c_str(), allocator).Move(), allocator);
     }
 
     rapidjson::Value iKey(rapidjson::kStringType);
@@ -400,6 +419,16 @@ string DescribePurchaseStateInfoResponse::GetSubState() const
 bool DescribePurchaseStateInfoResponse::SubStateHasBeenSet() const
 {
     return m_subStateHasBeenSet;
+}
+
+string DescribePurchaseStateInfoResponse::GetInquireKey() const
+{
+    return m_inquireKey;
+}
+
+bool DescribePurchaseStateInfoResponse::InquireKeyHasBeenSet() const
+{
+    return m_inquireKeyHasBeenSet;
 }
 
 

@@ -219,6 +219,22 @@ State为4时，有效值为: ISOLATE(隔离) DESTROED(已销毁)
                      */
                     bool SubStateHasBeenSet() const;
 
+                    /**
+                     * 获取计费key
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return InquireKey 计费key
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::string GetInquireKey() const;
+
+                    /**
+                     * 判断参数 InquireKey 是否已赋值
+                     * @return InquireKey 是否已赋值
+                     * 
+                     */
+                    bool InquireKeyHasBeenSet() const;
+
                 private:
 
                     /**
@@ -297,6 +313,13 @@ State为4时，有效值为: ISOLATE(隔离) DESTROED(已销毁)
                      */
                     std::string m_subState;
                     bool m_subStateHasBeenSet;
+
+                    /**
+                     * 计费key
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_inquireKey;
+                    bool m_inquireKeyHasBeenSet;
 
                 };
             }

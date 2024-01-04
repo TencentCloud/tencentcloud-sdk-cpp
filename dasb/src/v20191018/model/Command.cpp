@@ -36,7 +36,8 @@ Command::Command() :
     m_userDepartmentIdHasBeenSet(false),
     m_userDepartmentNameHasBeenSet(false),
     m_deviceDepartmentIdHasBeenSet(false),
-    m_deviceDepartmentNameHasBeenSet(false)
+    m_deviceDepartmentNameHasBeenSet(false),
+    m_sizeHasBeenSet(false)
 {
 }
 
@@ -205,6 +206,16 @@ CoreInternalOutcome Command::Deserialize(const rapidjson::Value &value)
         m_deviceDepartmentNameHasBeenSet = true;
     }
 
+    if (value.HasMember("Size") && !value["Size"].IsNull())
+    {
+        if (!value["Size"].IsUint64())
+        {
+            return CoreInternalOutcome(Core::Error("response `Command.Size` IsUint64=false incorrectly").SetRequestId(requestId));
+        }
+        m_size = value["Size"].GetUint64();
+        m_sizeHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -338,6 +349,14 @@ void Command::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Allocat
         string key = "DeviceDepartmentName";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_deviceDepartmentName.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_sizeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Size";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_size, allocator);
     }
 
 }
@@ -597,5 +616,21 @@ void Command::SetDeviceDepartmentName(const string& _deviceDepartmentName)
 bool Command::DeviceDepartmentNameHasBeenSet() const
 {
     return m_deviceDepartmentNameHasBeenSet;
+}
+
+uint64_t Command::GetSize() const
+{
+    return m_size;
+}
+
+void Command::SetSize(const uint64_t& _size)
+{
+    m_size = _size;
+    m_sizeHasBeenSet = true;
+}
+
+bool Command::SizeHasBeenSet() const
+{
+    return m_sizeHasBeenSet;
 }
 

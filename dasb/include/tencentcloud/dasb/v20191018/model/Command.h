@@ -430,6 +430,31 @@ namespace TencentCloud
                      */
                     bool DeviceDepartmentNameHasBeenSet() const;
 
+                    /**
+                     * 获取会话大小
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return Size 会话大小
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    uint64_t GetSize() const;
+
+                    /**
+                     * 设置会话大小
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _size 会话大小
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetSize(const uint64_t& _size);
+
+                    /**
+                     * 判断参数 Size 是否已赋值
+                     * @return Size 是否已赋值
+                     * 
+                     */
+                    bool SizeHasBeenSet() const;
+
                 private:
 
                     /**
@@ -539,6 +564,13 @@ namespace TencentCloud
                      */
                     std::string m_deviceDepartmentName;
                     bool m_deviceDepartmentNameHasBeenSet;
+
+                    /**
+                     * 会话大小
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    uint64_t m_size;
+                    bool m_sizeHasBeenSet;
 
                 };
             }

@@ -46,8 +46,8 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取签署二维码的基本信息，用于创建二维码，用户可扫描该二维码进行签署操作。
-                     * @return QrCode 签署二维码的基本信息，用于创建二维码，用户可扫描该二维码进行签署操作。
+                     * 获取一码多签签署码的基本信息，用户可扫描该二维码进行签署操作。
+                     * @return QrCode 一码多签签署码的基本信息，用户可扫描该二维码进行签署操作。
                      * 
                      */
                     SignQrCode GetQrCode() const;
@@ -60,8 +60,8 @@ namespace TencentCloud
                     bool QrCodeHasBeenSet() const;
 
                     /**
-                     * 获取流程签署二维码的签署信息，适用于客户系统整合二维码功能。通过链接，用户可直接访问电子签名小程序并签署合同。
-                     * @return SignUrls 流程签署二维码的签署信息，适用于客户系统整合二维码功能。通过链接，用户可直接访问电子签名小程序并签署合同。
+                     * 获取一码多签签署码的链接信息，适用于客户系统整合二维码功能。通过链接，用户可直接访问电子签名小程序并签署合同。
+                     * @return SignUrls 一码多签签署码的链接信息，适用于客户系统整合二维码功能。通过链接，用户可直接访问电子签名小程序并签署合同。
                      * 
                      */
                     SignUrl GetSignUrls() const;
@@ -76,13 +76,13 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 签署二维码的基本信息，用于创建二维码，用户可扫描该二维码进行签署操作。
+                     * 一码多签签署码的基本信息，用户可扫描该二维码进行签署操作。
                      */
                     SignQrCode m_qrCode;
                     bool m_qrCodeHasBeenSet;
 
                     /**
-                     * 流程签署二维码的签署信息，适用于客户系统整合二维码功能。通过链接，用户可直接访问电子签名小程序并签署合同。
+                     * 一码多签签署码的链接信息，适用于客户系统整合二维码功能。通过链接，用户可直接访问电子签名小程序并签署合同。
                      */
                     SignUrl m_signUrls;
                     bool m_signUrlsHasBeenSet;

@@ -37,7 +37,6 @@ set(cfw_public_header_model
   include/tencentcloud/cfw/v20190904/model/SyncFwOperateResponse.h
   include/tencentcloud/cfw/v20190904/model/DescribeNatAcRuleResponse.h
   include/tencentcloud/cfw/v20190904/model/ModifyBlockTopRequest.h
-  include/tencentcloud/cfw/v20190904/model/ModifyPublicIPSwitchStatusResponse.h
   include/tencentcloud/cfw/v20190904/model/AddAclRuleRequest.h
   include/tencentcloud/cfw/v20190904/model/DescribeVpcFwGroupSwitchRequest.h
   include/tencentcloud/cfw/v20190904/model/FwDeploy.h
@@ -105,7 +104,6 @@ set(cfw_public_header_model
   include/tencentcloud/cfw/v20190904/model/NatInstanceInfo.h
   include/tencentcloud/cfw/v20190904/model/SetNatFwEipResponse.h
   include/tencentcloud/cfw/v20190904/model/DeleteSecurityGroupRuleResponse.h
-  include/tencentcloud/cfw/v20190904/model/ModifyPublicIPSwitchStatusRequest.h
   include/tencentcloud/cfw/v20190904/model/CreateNatRuleItem.h
   include/tencentcloud/cfw/v20190904/model/ModifyStorageSettingResponse.h
   include/tencentcloud/cfw/v20190904/model/AcListsData.h
@@ -320,7 +318,6 @@ set(cfw_src
   src/v20190904/model/SyncFwOperateResponse.cpp
   src/v20190904/model/DescribeNatAcRuleResponse.cpp
   src/v20190904/model/ModifyBlockTopRequest.cpp
-  src/v20190904/model/ModifyPublicIPSwitchStatusResponse.cpp
   src/v20190904/model/AddAclRuleRequest.cpp
   src/v20190904/model/DescribeVpcFwGroupSwitchRequest.cpp
   src/v20190904/model/FwDeploy.cpp
@@ -388,7 +385,6 @@ set(cfw_src
   src/v20190904/model/NatInstanceInfo.cpp
   src/v20190904/model/SetNatFwEipResponse.cpp
   src/v20190904/model/DeleteSecurityGroupRuleResponse.cpp
-  src/v20190904/model/ModifyPublicIPSwitchStatusRequest.cpp
   src/v20190904/model/CreateNatRuleItem.cpp
   src/v20190904/model/ModifyStorageSettingResponse.cpp
   src/v20190904/model/AcListsData.cpp

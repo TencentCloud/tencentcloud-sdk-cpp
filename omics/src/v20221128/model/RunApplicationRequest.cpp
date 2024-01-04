@@ -24,16 +24,17 @@ using namespace std;
 
 RunApplicationRequest::RunApplicationRequest() :
     m_applicationIdHasBeenSet(false),
-    m_projectIdHasBeenSet(false),
     m_nameHasBeenSet(false),
     m_environmentIdHasBeenSet(false),
     m_inputBase64HasBeenSet(false),
     m_cacheClearDelayHasBeenSet(false),
-    m_optionHasBeenSet(false),
+    m_projectIdHasBeenSet(false),
     m_descriptionHasBeenSet(false),
     m_tableIdHasBeenSet(false),
     m_tableRowUuidsHasBeenSet(false),
-    m_applicationVersionIdHasBeenSet(false)
+    m_applicationVersionIdHasBeenSet(false),
+    m_optionHasBeenSet(false),
+    m_nFOptionHasBeenSet(false)
 {
 }
 
@@ -50,14 +51,6 @@ string RunApplicationRequest::ToJsonString() const
         string key = "ApplicationId";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_applicationId.c_str(), allocator).Move(), allocator);
-    }
-
-    if (m_projectIdHasBeenSet)
-    {
-        rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "ProjectId";
-        iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, rapidjson::Value(m_projectId.c_str(), allocator).Move(), allocator);
     }
 
     if (m_nameHasBeenSet)
@@ -92,13 +85,12 @@ string RunApplicationRequest::ToJsonString() const
         d.AddMember(iKey, m_cacheClearDelay, allocator);
     }
 
-    if (m_optionHasBeenSet)
+    if (m_projectIdHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "Option";
+        string key = "ProjectId";
         iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
-        m_option.ToJsonObject(d[key.c_str()], allocator);
+        d.AddMember(iKey, rapidjson::Value(m_projectId.c_str(), allocator).Move(), allocator);
     }
 
     if (m_descriptionHasBeenSet)
@@ -138,6 +130,24 @@ string RunApplicationRequest::ToJsonString() const
         d.AddMember(iKey, rapidjson::Value(m_applicationVersionId.c_str(), allocator).Move(), allocator);
     }
 
+    if (m_optionHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Option";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_option.ToJsonObject(d[key.c_str()], allocator);
+    }
+
+    if (m_nFOptionHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "NFOption";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_nFOption.ToJsonObject(d[key.c_str()], allocator);
+    }
+
 
     rapidjson::StringBuffer buffer;
     rapidjson::Writer<rapidjson::StringBuffer> writer(buffer);
@@ -160,22 +170,6 @@ void RunApplicationRequest::SetApplicationId(const string& _applicationId)
 bool RunApplicationRequest::ApplicationIdHasBeenSet() const
 {
     return m_applicationIdHasBeenSet;
-}
-
-string RunApplicationRequest::GetProjectId() const
-{
-    return m_projectId;
-}
-
-void RunApplicationRequest::SetProjectId(const string& _projectId)
-{
-    m_projectId = _projectId;
-    m_projectIdHasBeenSet = true;
-}
-
-bool RunApplicationRequest::ProjectIdHasBeenSet() const
-{
-    return m_projectIdHasBeenSet;
 }
 
 string RunApplicationRequest::GetName() const
@@ -242,20 +236,20 @@ bool RunApplicationRequest::CacheClearDelayHasBeenSet() const
     return m_cacheClearDelayHasBeenSet;
 }
 
-RunOption RunApplicationRequest::GetOption() const
+string RunApplicationRequest::GetProjectId() const
 {
-    return m_option;
+    return m_projectId;
 }
 
-void RunApplicationRequest::SetOption(const RunOption& _option)
+void RunApplicationRequest::SetProjectId(const string& _projectId)
 {
-    m_option = _option;
-    m_optionHasBeenSet = true;
+    m_projectId = _projectId;
+    m_projectIdHasBeenSet = true;
 }
 
-bool RunApplicationRequest::OptionHasBeenSet() const
+bool RunApplicationRequest::ProjectIdHasBeenSet() const
 {
-    return m_optionHasBeenSet;
+    return m_projectIdHasBeenSet;
 }
 
 string RunApplicationRequest::GetDescription() const
@@ -320,6 +314,38 @@ void RunApplicationRequest::SetApplicationVersionId(const string& _applicationVe
 bool RunApplicationRequest::ApplicationVersionIdHasBeenSet() const
 {
     return m_applicationVersionIdHasBeenSet;
+}
+
+RunOption RunApplicationRequest::GetOption() const
+{
+    return m_option;
+}
+
+void RunApplicationRequest::SetOption(const RunOption& _option)
+{
+    m_option = _option;
+    m_optionHasBeenSet = true;
+}
+
+bool RunApplicationRequest::OptionHasBeenSet() const
+{
+    return m_optionHasBeenSet;
+}
+
+NFOption RunApplicationRequest::GetNFOption() const
+{
+    return m_nFOption;
+}
+
+void RunApplicationRequest::SetNFOption(const NFOption& _nFOption)
+{
+    m_nFOption = _nFOption;
+    m_nFOptionHasBeenSet = true;
+}
+
+bool RunApplicationRequest::NFOptionHasBeenSet() const
+{
+    return m_nFOptionHasBeenSet;
 }
 
 

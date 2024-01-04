@@ -643,6 +643,31 @@ namespace TencentCloud
                      */
                     bool RiskLevelHasBeenSet() const;
 
+                    /**
+                     * 获取事件来源：0--阻断规则，1--威胁情报
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return DataFrom 事件来源：0--阻断规则，1--威胁情报
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    int64_t GetDataFrom() const;
+
+                    /**
+                     * 设置事件来源：0--阻断规则，1--威胁情报
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _dataFrom 事件来源：0--阻断规则，1--威胁情报
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetDataFrom(const int64_t& _dataFrom);
+
+                    /**
+                     * 判断参数 DataFrom 是否已赋值
+                     * @return DataFrom 是否已赋值
+                     * 
+                     */
+                    bool DataFromHasBeenSet() const;
+
                 private:
 
                     /**
@@ -811,6 +836,13 @@ namespace TencentCloud
                      */
                     uint64_t m_riskLevel;
                     bool m_riskLevelHasBeenSet;
+
+                    /**
+                     * 事件来源：0--阻断规则，1--威胁情报
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    int64_t m_dataFrom;
+                    bool m_dataFromHasBeenSet;
 
                 };
             }

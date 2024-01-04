@@ -89,15 +89,15 @@ namespace TencentCloud
                     bool NameHasBeenSet() const;
 
                     /**
-                     * 获取IP 组内容，可以填入 IP 及 IP 掩码。
-                     * @return Content IP 组内容，可以填入 IP 及 IP 掩码。
+                     * 获取IP 组内容，仅支持 IP 及 IP 掩码。
+                     * @return Content IP 组内容，仅支持 IP 及 IP 掩码。
                      * 
                      */
                     std::vector<std::string> GetContent() const;
 
                     /**
-                     * 设置IP 组内容，可以填入 IP 及 IP 掩码。
-                     * @param _content IP 组内容，可以填入 IP 及 IP 掩码。
+                     * 设置IP 组内容，仅支持 IP 及 IP 掩码。
+                     * @param _content IP 组内容，仅支持 IP 及 IP 掩码。
                      * 
                      */
                     void SetContent(const std::vector<std::string>& _content);
@@ -124,7 +124,7 @@ namespace TencentCloud
                     bool m_nameHasBeenSet;
 
                     /**
-                     * IP 组内容，可以填入 IP 及 IP 掩码。
+                     * IP 组内容，仅支持 IP 及 IP 掩码。
                      */
                     std::vector<std::string> m_content;
                     bool m_contentHasBeenSet;

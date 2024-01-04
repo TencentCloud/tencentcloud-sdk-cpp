@@ -26,6 +26,7 @@
 #include <tencentcloud/core/AbstractModel.h>
 #include <tencentcloud/tsf/v20180326/model/BusinessLogConfigSchema.h>
 #include <tencentcloud/tsf/v20180326/model/BusinesLogConfigAssociatedGroup.h>
+#include <tencentcloud/tsf/v20180326/model/BusinessLogConfigAssociatedGroup.h>
 
 
 namespace TencentCloud
@@ -270,7 +271,7 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return ConfigAssociatedGroups 配置项关联部署组
 注意：此字段可能返回 null，表示取不到有效值。
-                     * 
+                     * @deprecated
                      */
                     std::vector<BusinesLogConfigAssociatedGroup> GetConfigAssociatedGroups() const;
 
@@ -279,16 +280,41 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @param _configAssociatedGroups 配置项关联部署组
 注意：此字段可能返回 null，表示取不到有效值。
-                     * 
+                     * @deprecated
                      */
                     void SetConfigAssociatedGroups(const std::vector<BusinesLogConfigAssociatedGroup>& _configAssociatedGroups);
 
                     /**
                      * 判断参数 ConfigAssociatedGroups 是否已赋值
                      * @return ConfigAssociatedGroups 是否已赋值
-                     * 
+                     * @deprecated
                      */
                     bool ConfigAssociatedGroupsHasBeenSet() const;
+
+                    /**
+                     * 获取配置项关联部署组
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return ConfigAssociatedGroupList 配置项关联部署组
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::vector<BusinessLogConfigAssociatedGroup> GetConfigAssociatedGroupList() const;
+
+                    /**
+                     * 设置配置项关联部署组
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _configAssociatedGroupList 配置项关联部署组
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetConfigAssociatedGroupList(const std::vector<BusinessLogConfigAssociatedGroup>& _configAssociatedGroupList);
+
+                    /**
+                     * 判断参数 ConfigAssociatedGroupList 是否已赋值
+                     * @return ConfigAssociatedGroupList 是否已赋值
+                     * 
+                     */
+                    bool ConfigAssociatedGroupListHasBeenSet() const;
 
                 private:
 
@@ -359,6 +385,13 @@ namespace TencentCloud
                      */
                     std::vector<BusinesLogConfigAssociatedGroup> m_configAssociatedGroups;
                     bool m_configAssociatedGroupsHasBeenSet;
+
+                    /**
+                     * 配置项关联部署组
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::vector<BusinessLogConfigAssociatedGroup> m_configAssociatedGroupList;
+                    bool m_configAssociatedGroupListHasBeenSet;
 
                 };
             }

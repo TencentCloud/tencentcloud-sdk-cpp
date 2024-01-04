@@ -43,15 +43,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取审计规则模版ID。
-                     * @return RuleTemplateIds 审计规则模版ID。
+                     * 获取审计规则模板ID。
+                     * @return RuleTemplateIds 审计规则模板ID。
                      * 
                      */
                     std::vector<std::string> GetRuleTemplateIds() const;
 
                     /**
-                     * 设置审计规则模版ID。
-                     * @param _ruleTemplateIds 审计规则模版ID。
+                     * 设置审计规则模板ID。
+                     * @param _ruleTemplateIds 审计规则模板ID。
                      * 
                      */
                     void SetRuleTemplateIds(const std::vector<std::string>& _ruleTemplateIds);
@@ -66,7 +66,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 审计规则模版ID。
+                     * 审计规则模板ID。
                      */
                     std::vector<std::string> m_ruleTemplateIds;
                     bool m_ruleTemplateIdsHasBeenSet;

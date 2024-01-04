@@ -27,6 +27,8 @@
 #include <tencentcloud/hunyuan/v20230901/model/ChatProResponse.h>
 #include <tencentcloud/hunyuan/v20230901/model/ChatStdRequest.h>
 #include <tencentcloud/hunyuan/v20230901/model/ChatStdResponse.h>
+#include <tencentcloud/hunyuan/v20230901/model/GetEmbeddingRequest.h>
+#include <tencentcloud/hunyuan/v20230901/model/GetEmbeddingResponse.h>
 #include <tencentcloud/hunyuan/v20230901/model/GetTokenCountRequest.h>
 #include <tencentcloud/hunyuan/v20230901/model/GetTokenCountResponse.h>
 
@@ -49,6 +51,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::ChatStdResponse> ChatStdOutcome;
                 typedef std::future<ChatStdOutcome> ChatStdOutcomeCallable;
                 typedef std::function<void(const HunyuanClient*, const Model::ChatStdRequest&, ChatStdOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ChatStdAsyncHandler;
+                typedef Outcome<Core::Error, Model::GetEmbeddingResponse> GetEmbeddingOutcome;
+                typedef std::future<GetEmbeddingOutcome> GetEmbeddingOutcomeCallable;
+                typedef std::function<void(const HunyuanClient*, const Model::GetEmbeddingRequest&, GetEmbeddingOutcome, const std::shared_ptr<const AsyncCallerContext>&)> GetEmbeddingAsyncHandler;
                 typedef Outcome<Core::Error, Model::GetTokenCountResponse> GetTokenCountOutcome;
                 typedef std::future<GetTokenCountOutcome> GetTokenCountOutcomeCallable;
                 typedef std::function<void(const HunyuanClient*, const Model::GetTokenCountRequest&, GetTokenCountOutcome, const std::shared_ptr<const AsyncCallerContext>&)> GetTokenCountAsyncHandler;
@@ -80,6 +85,15 @@ namespace TencentCloud
                 ChatStdOutcome ChatStd(const Model::ChatStdRequest &request);
                 void ChatStdAsync(const Model::ChatStdRequest& request, const ChatStdAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 ChatStdOutcomeCallable ChatStdCallable(const Model::ChatStdRequest& request);
+
+                /**
+                 *腾讯混元-Embedding接口，可以将文本转化为高质量的向量数据。
+                 * @param req GetEmbeddingRequest
+                 * @return GetEmbeddingOutcome
+                 */
+                GetEmbeddingOutcome GetEmbedding(const Model::GetEmbeddingRequest &request);
+                void GetEmbeddingAsync(const Model::GetEmbeddingRequest& request, const GetEmbeddingAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                GetEmbeddingOutcomeCallable GetEmbeddingCallable(const Model::GetEmbeddingRequest& request);
 
                 /**
                  *该接口用于计算文本对应Token数、字符数。

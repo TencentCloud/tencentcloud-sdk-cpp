@@ -22,6 +22,7 @@
 #include <map>
 #include <tencentcloud/core/AbstractModel.h>
 #include <tencentcloud/omics/v20221128/model/RunOption.h>
+#include <tencentcloud/omics/v20221128/model/NFOption.h>
 
 
 namespace TencentCloud
@@ -63,27 +64,6 @@ namespace TencentCloud
                      * 
                      */
                     bool ApplicationIdHasBeenSet() const;
-
-                    /**
-                     * 获取项目ID。
-                     * @return ProjectId 项目ID。
-                     * 
-                     */
-                    std::string GetProjectId() const;
-
-                    /**
-                     * 设置项目ID。
-                     * @param _projectId 项目ID。
-                     * 
-                     */
-                    void SetProjectId(const std::string& _projectId);
-
-                    /**
-                     * 判断参数 ProjectId 是否已赋值
-                     * @return ProjectId 是否已赋值
-                     * 
-                     */
-                    bool ProjectIdHasBeenSet() const;
 
                     /**
                      * 获取任务批次名称。
@@ -170,25 +150,25 @@ namespace TencentCloud
                     bool CacheClearDelayHasBeenSet() const;
 
                     /**
-                     * 获取运行选项。
-                     * @return Option 运行选项。
+                     * 获取项目ID。（不填使用指定地域下的默认项目）
+                     * @return ProjectId 项目ID。（不填使用指定地域下的默认项目）
                      * 
                      */
-                    RunOption GetOption() const;
+                    std::string GetProjectId() const;
 
                     /**
-                     * 设置运行选项。
-                     * @param _option 运行选项。
+                     * 设置项目ID。（不填使用指定地域下的默认项目）
+                     * @param _projectId 项目ID。（不填使用指定地域下的默认项目）
                      * 
                      */
-                    void SetOption(const RunOption& _option);
+                    void SetProjectId(const std::string& _projectId);
 
                     /**
-                     * 判断参数 Option 是否已赋值
-                     * @return Option 是否已赋值
+                     * 判断参数 ProjectId 是否已赋值
+                     * @return ProjectId 是否已赋值
                      * 
                      */
-                    bool OptionHasBeenSet() const;
+                    bool ProjectIdHasBeenSet() const;
 
                     /**
                      * 获取任务批次描述。
@@ -274,6 +254,48 @@ namespace TencentCloud
                      */
                     bool ApplicationVersionIdHasBeenSet() const;
 
+                    /**
+                     * 获取WDL运行选项。
+                     * @return Option WDL运行选项。
+                     * 
+                     */
+                    RunOption GetOption() const;
+
+                    /**
+                     * 设置WDL运行选项。
+                     * @param _option WDL运行选项。
+                     * 
+                     */
+                    void SetOption(const RunOption& _option);
+
+                    /**
+                     * 判断参数 Option 是否已赋值
+                     * @return Option 是否已赋值
+                     * 
+                     */
+                    bool OptionHasBeenSet() const;
+
+                    /**
+                     * 获取Nextflow运行选项。
+                     * @return NFOption Nextflow运行选项。
+                     * 
+                     */
+                    NFOption GetNFOption() const;
+
+                    /**
+                     * 设置Nextflow运行选项。
+                     * @param _nFOption Nextflow运行选项。
+                     * 
+                     */
+                    void SetNFOption(const NFOption& _nFOption);
+
+                    /**
+                     * 判断参数 NFOption 是否已赋值
+                     * @return NFOption 是否已赋值
+                     * 
+                     */
+                    bool NFOptionHasBeenSet() const;
+
                 private:
 
                     /**
@@ -281,12 +303,6 @@ namespace TencentCloud
                      */
                     std::string m_applicationId;
                     bool m_applicationIdHasBeenSet;
-
-                    /**
-                     * 项目ID。
-                     */
-                    std::string m_projectId;
-                    bool m_projectIdHasBeenSet;
 
                     /**
                      * 任务批次名称。
@@ -313,10 +329,10 @@ namespace TencentCloud
                     bool m_cacheClearDelayHasBeenSet;
 
                     /**
-                     * 运行选项。
+                     * 项目ID。（不填使用指定地域下的默认项目）
                      */
-                    RunOption m_option;
-                    bool m_optionHasBeenSet;
+                    std::string m_projectId;
+                    bool m_projectIdHasBeenSet;
 
                     /**
                      * 任务批次描述。
@@ -341,6 +357,18 @@ namespace TencentCloud
                      */
                     std::string m_applicationVersionId;
                     bool m_applicationVersionIdHasBeenSet;
+
+                    /**
+                     * WDL运行选项。
+                     */
+                    RunOption m_option;
+                    bool m_optionHasBeenSet;
+
+                    /**
+                     * Nextflow运行选项。
+                     */
+                    NFOption m_nFOption;
+                    bool m_nFOptionHasBeenSet;
 
                 };
             }

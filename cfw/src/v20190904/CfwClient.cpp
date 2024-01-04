@@ -3867,49 +3867,6 @@ CfwClient::ModifyNatSequenceRulesOutcomeCallable CfwClient::ModifyNatSequenceRul
     return task->get_future();
 }
 
-CfwClient::ModifyPublicIPSwitchStatusOutcome CfwClient::ModifyPublicIPSwitchStatus(const ModifyPublicIPSwitchStatusRequest &request)
-{
-    auto outcome = MakeRequest(request, "ModifyPublicIPSwitchStatus");
-    if (outcome.IsSuccess())
-    {
-        auto r = outcome.GetResult();
-        string payload = string(r.Body(), r.BodySize());
-        ModifyPublicIPSwitchStatusResponse rsp = ModifyPublicIPSwitchStatusResponse();
-        auto o = rsp.Deserialize(payload);
-        if (o.IsSuccess())
-            return ModifyPublicIPSwitchStatusOutcome(rsp);
-        else
-            return ModifyPublicIPSwitchStatusOutcome(o.GetError());
-    }
-    else
-    {
-        return ModifyPublicIPSwitchStatusOutcome(outcome.GetError());
-    }
-}
-
-void CfwClient::ModifyPublicIPSwitchStatusAsync(const ModifyPublicIPSwitchStatusRequest& request, const ModifyPublicIPSwitchStatusAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
-{
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->ModifyPublicIPSwitchStatus(request), context);
-    };
-
-    Executor::GetInstance()->Submit(new Runnable(fn));
-}
-
-CfwClient::ModifyPublicIPSwitchStatusOutcomeCallable CfwClient::ModifyPublicIPSwitchStatusCallable(const ModifyPublicIPSwitchStatusRequest &request)
-{
-    auto task = std::make_shared<std::packaged_task<ModifyPublicIPSwitchStatusOutcome()>>(
-        [this, request]()
-        {
-            return this->ModifyPublicIPSwitchStatus(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
-}
-
 CfwClient::ModifyResourceGroupOutcome CfwClient::ModifyResourceGroup(const ModifyResourceGroupRequest &request)
 {
     auto outcome = MakeRequest(request, "ModifyResourceGroup");

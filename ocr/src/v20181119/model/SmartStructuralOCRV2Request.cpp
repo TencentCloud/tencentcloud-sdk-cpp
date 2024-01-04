@@ -29,7 +29,8 @@ SmartStructuralOCRV2Request::SmartStructuralOCRV2Request() :
     m_pdfPageNumberHasBeenSet(false),
     m_itemNamesHasBeenSet(false),
     m_returnFullTextHasBeenSet(false),
-    m_configIdHasBeenSet(false)
+    m_configIdHasBeenSet(false),
+    m_enableSealRecognizeHasBeenSet(false)
 {
 }
 
@@ -99,6 +100,14 @@ string SmartStructuralOCRV2Request::ToJsonString() const
         string key = "ConfigId";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_configId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_enableSealRecognizeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "EnableSealRecognize";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_enableSealRecognize, allocator);
     }
 
 
@@ -219,6 +228,22 @@ void SmartStructuralOCRV2Request::SetConfigId(const string& _configId)
 bool SmartStructuralOCRV2Request::ConfigIdHasBeenSet() const
 {
     return m_configIdHasBeenSet;
+}
+
+bool SmartStructuralOCRV2Request::GetEnableSealRecognize() const
+{
+    return m_enableSealRecognize;
+}
+
+void SmartStructuralOCRV2Request::SetEnableSealRecognize(const bool& _enableSealRecognize)
+{
+    m_enableSealRecognize = _enableSealRecognize;
+    m_enableSealRecognizeHasBeenSet = true;
+}
+
+bool SmartStructuralOCRV2Request::EnableSealRecognizeHasBeenSet() const
+{
+    return m_enableSealRecognizeHasBeenSet;
 }
 
 

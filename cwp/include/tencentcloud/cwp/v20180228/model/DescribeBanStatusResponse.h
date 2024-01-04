@@ -44,8 +44,14 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取阻断开关状态 0:关闭 1:开启
-                     * @return Status 阻断开关状态 0:关闭 1:开启
+                     * 获取阻断开关状态:
+ 0 -- 关闭 
+ 1 -- 高级阻断
+ 2 -- 基础阻断(只阻断情报库黑ip)
+                     * @return Status 阻断开关状态:
+ 0 -- 关闭 
+ 1 -- 高级阻断
+ 2 -- 基础阻断(只阻断情报库黑ip)
                      * 
                      */
                     uint64_t GetStatus() const;
@@ -74,7 +80,10 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 阻断开关状态 0:关闭 1:开启
+                     * 阻断开关状态:
+ 0 -- 关闭 
+ 1 -- 高级阻断
+ 2 -- 基础阻断(只阻断情报库黑ip)
                      */
                     uint64_t m_status;
                     bool m_statusHasBeenSet;

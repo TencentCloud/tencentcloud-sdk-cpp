@@ -20,11 +20,15 @@ set(hunyuan_public_header
 
 set(hunyuan_public_header_model
   include/tencentcloud/hunyuan/v20230901/model/GetTokenCountResponse.h
+  include/tencentcloud/hunyuan/v20230901/model/GetEmbeddingResponse.h
   include/tencentcloud/hunyuan/v20230901/model/ErrorMsg.h
   include/tencentcloud/hunyuan/v20230901/model/ChatStdResponse.h
+  include/tencentcloud/hunyuan/v20230901/model/GetEmbeddingRequest.h
   include/tencentcloud/hunyuan/v20230901/model/ChatProResponse.h
   include/tencentcloud/hunyuan/v20230901/model/Choice.h
   include/tencentcloud/hunyuan/v20230901/model/ChatProRequest.h
+  include/tencentcloud/hunyuan/v20230901/model/EmbeddingData.h
+  include/tencentcloud/hunyuan/v20230901/model/EmbeddingUsage.h
   include/tencentcloud/hunyuan/v20230901/model/Delta.h
   include/tencentcloud/hunyuan/v20230901/model/Usage.h
   include/tencentcloud/hunyuan/v20230901/model/Message.h
@@ -35,11 +39,15 @@ set(hunyuan_public_header_model
 set(hunyuan_src
   src/v20230901/HunyuanClient.cpp
   src/v20230901/model/GetTokenCountResponse.cpp
+  src/v20230901/model/GetEmbeddingResponse.cpp
   src/v20230901/model/ErrorMsg.cpp
   src/v20230901/model/ChatStdResponse.cpp
+  src/v20230901/model/GetEmbeddingRequest.cpp
   src/v20230901/model/ChatProResponse.cpp
   src/v20230901/model/Choice.cpp
   src/v20230901/model/ChatProRequest.cpp
+  src/v20230901/model/EmbeddingData.cpp
+  src/v20230901/model/EmbeddingUsage.cpp
   src/v20230901/model/Delta.cpp
   src/v20230901/model/Usage.cpp
   src/v20230901/model/Message.cpp
