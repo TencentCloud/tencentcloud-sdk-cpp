@@ -125,6 +125,43 @@ namespace TencentCloud
                      */
                     bool ChangeTypeHasBeenSet() const;
 
+                    /**
+                     * 获取变更链接类型：
+<ul>
+<li>**WEIXINAPP** : 创建变更短链。需要在移动端打开，会跳转到微信腾讯电子签小程序进行更换。（默认）</li>
+<li>**APP** : 创建变更小程序链接，可从第三方APP跳转到微信腾讯电子签小程序进行更换。</li>
+</ul>
+                     * @return Endpoint 变更链接类型：
+<ul>
+<li>**WEIXINAPP** : 创建变更短链。需要在移动端打开，会跳转到微信腾讯电子签小程序进行更换。（默认）</li>
+<li>**APP** : 创建变更小程序链接，可从第三方APP跳转到微信腾讯电子签小程序进行更换。</li>
+</ul>
+                     * 
+                     */
+                    std::string GetEndpoint() const;
+
+                    /**
+                     * 设置变更链接类型：
+<ul>
+<li>**WEIXINAPP** : 创建变更短链。需要在移动端打开，会跳转到微信腾讯电子签小程序进行更换。（默认）</li>
+<li>**APP** : 创建变更小程序链接，可从第三方APP跳转到微信腾讯电子签小程序进行更换。</li>
+</ul>
+                     * @param _endpoint 变更链接类型：
+<ul>
+<li>**WEIXINAPP** : 创建变更短链。需要在移动端打开，会跳转到微信腾讯电子签小程序进行更换。（默认）</li>
+<li>**APP** : 创建变更小程序链接，可从第三方APP跳转到微信腾讯电子签小程序进行更换。</li>
+</ul>
+                     * 
+                     */
+                    void SetEndpoint(const std::string& _endpoint);
+
+                    /**
+                     * 判断参数 Endpoint 是否已赋值
+                     * @return Endpoint 是否已赋值
+                     * 
+                     */
+                    bool EndpointHasBeenSet() const;
+
                 private:
 
                     /**
@@ -148,6 +185,16 @@ namespace TencentCloud
                      */
                     uint64_t m_changeType;
                     bool m_changeTypeHasBeenSet;
+
+                    /**
+                     * 变更链接类型：
+<ul>
+<li>**WEIXINAPP** : 创建变更短链。需要在移动端打开，会跳转到微信腾讯电子签小程序进行更换。（默认）</li>
+<li>**APP** : 创建变更小程序链接，可从第三方APP跳转到微信腾讯电子签小程序进行更换。</li>
+</ul>
+                     */
+                    std::string m_endpoint;
+                    bool m_endpointHasBeenSet;
 
                 };
             }

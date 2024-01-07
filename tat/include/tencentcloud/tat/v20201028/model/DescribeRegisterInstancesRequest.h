@@ -90,6 +90,8 @@ namespace TencentCloud
 按照【操作系统类型】进行过滤，取值：Linux | Windows。
 类型：String
 必选：否
+
+
                      * @return Filters 过滤器列表。
 
 - instance-name
@@ -115,6 +117,8 @@ namespace TencentCloud
 按照【操作系统类型】进行过滤，取值：Linux | Windows。
 类型：String
 必选：否
+
+
                      * 
                      */
                     std::vector<Filter> GetFilters() const;
@@ -145,6 +149,8 @@ namespace TencentCloud
 按照【操作系统类型】进行过滤，取值：Linux | Windows。
 类型：String
 必选：否
+
+
                      * @param _filters 过滤器列表。
 
 - instance-name
@@ -170,6 +176,8 @@ namespace TencentCloud
 按照【操作系统类型】进行过滤，取值：Linux | Windows。
 类型：String
 必选：否
+
+
                      * 
                      */
                     void SetFilters(const std::vector<Filter>& _filters);
@@ -257,6 +265,8 @@ namespace TencentCloud
 按照【操作系统类型】进行过滤，取值：Linux | Windows。
 类型：String
 必选：否
+
+
                      */
                     std::vector<Filter> m_filters;
                     bool m_filtersHasBeenSet;

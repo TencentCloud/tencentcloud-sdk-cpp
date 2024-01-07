@@ -57,18 +57,18 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取托管规则。如果为null，默认使用历史配置。
+                     * 获取托管规则。如果入参为空或不填，默认使用历史配置。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return WafConfig 托管规则。如果为null，默认使用历史配置。
+                     * @return WafConfig 托管规则。如果入参为空或不填，默认使用历史配置。
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     WafConfig GetWafConfig() const;
 
                     /**
-                     * 设置托管规则。如果为null，默认使用历史配置。
+                     * 设置托管规则。如果入参为空或不填，默认使用历史配置。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _wafConfig 托管规则。如果为null，默认使用历史配置。
+                     * @param _wafConfig 托管规则。如果入参为空或不填，默认使用历史配置。
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -82,18 +82,18 @@ namespace TencentCloud
                     bool WafConfigHasBeenSet() const;
 
                     /**
-                     * 获取速率限制。如果为null，默认使用历史配置。
+                     * 获取速率限制。如果入参为空或不填，默认使用历史配置。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return RateLimitConfig 速率限制。如果为null，默认使用历史配置。
+                     * @return RateLimitConfig 速率限制。如果入参为空或不填，默认使用历史配置。
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     RateLimitConfig GetRateLimitConfig() const;
 
                     /**
-                     * 设置速率限制。如果为null，默认使用历史配置。
+                     * 设置速率限制。如果入参为空或不填，默认使用历史配置。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _rateLimitConfig 速率限制。如果为null，默认使用历史配置。
+                     * @param _rateLimitConfig 速率限制。如果入参为空或不填，默认使用历史配置。
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -107,18 +107,18 @@ namespace TencentCloud
                     bool RateLimitConfigHasBeenSet() const;
 
                     /**
-                     * 获取自定义规则。如果为null，默认使用历史配置。
+                     * 获取自定义规则。如果入参为空或不填，默认使用历史配置。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return AclConfig 自定义规则。如果为null，默认使用历史配置。
+                     * @return AclConfig 自定义规则。如果入参为空或不填，默认使用历史配置。
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     AclConfig GetAclConfig() const;
 
                     /**
-                     * 设置自定义规则。如果为null，默认使用历史配置。
+                     * 设置自定义规则。如果入参为空或不填，默认使用历史配置。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _aclConfig 自定义规则。如果为null，默认使用历史配置。
+                     * @param _aclConfig 自定义规则。如果入参为空或不填，默认使用历史配置。
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -132,18 +132,18 @@ namespace TencentCloud
                     bool AclConfigHasBeenSet() const;
 
                     /**
-                     * 获取Bot配置。如果为null，默认使用历史配置。
+                     * 获取Bot配置。如果入参为空或不填，默认使用历史配置。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return BotConfig Bot配置。如果为null，默认使用历史配置。
+                     * @return BotConfig Bot配置。如果入参为空或不填，默认使用历史配置。
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     BotConfig GetBotConfig() const;
 
                     /**
-                     * 设置Bot配置。如果为null，默认使用历史配置。
+                     * 设置Bot配置。如果入参为空或不填，默认使用历史配置。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _botConfig Bot配置。如果为null，默认使用历史配置。
+                     * @param _botConfig Bot配置。如果入参为空或不填，默认使用历史配置。
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -157,18 +157,18 @@ namespace TencentCloud
                     bool BotConfigHasBeenSet() const;
 
                     /**
-                     * 获取七层防护总开关。如果为null，默认使用历史配置。
+                     * 获取七层防护总开关。如果入参为空或不填，默认使用历史配置。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return SwitchConfig 七层防护总开关。如果为null，默认使用历史配置。
+                     * @return SwitchConfig 七层防护总开关。如果入参为空或不填，默认使用历史配置。
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     SwitchConfig GetSwitchConfig() const;
 
                     /**
-                     * 设置七层防护总开关。如果为null，默认使用历史配置。
+                     * 设置七层防护总开关。如果入参为空或不填，默认使用历史配置。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _switchConfig 七层防护总开关。如果为null，默认使用历史配置。
+                     * @param _switchConfig 七层防护总开关。如果入参为空或不填，默认使用历史配置。
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -182,18 +182,18 @@ namespace TencentCloud
                     bool SwitchConfigHasBeenSet() const;
 
                     /**
-                     * 获取基础访问管控。如果为null，默认使用历史配置。
+                     * 获取基础访问管控。如果入参为空或不填，默认使用历史配置。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return IpTableConfig 基础访问管控。如果为null，默认使用历史配置。
+                     * @return IpTableConfig 基础访问管控。如果入参为空或不填，默认使用历史配置。
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     IpTableConfig GetIpTableConfig() const;
 
                     /**
-                     * 设置基础访问管控。如果为null，默认使用历史配置。
+                     * 设置基础访问管控。如果入参为空或不填，默认使用历史配置。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _ipTableConfig 基础访问管控。如果为null，默认使用历史配置。
+                     * @param _ipTableConfig 基础访问管控。如果入参为空或不填，默认使用历史配置。
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -207,18 +207,18 @@ namespace TencentCloud
                     bool IpTableConfigHasBeenSet() const;
 
                     /**
-                     * 获取例外规则配置。如果为null，默认使用历史配置。
+                     * 获取例外规则配置。如果入参为空或不填，默认使用历史配置。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return ExceptConfig 例外规则配置。如果为null，默认使用历史配置。
+                     * @return ExceptConfig 例外规则配置。如果入参为空或不填，默认使用历史配置。
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     ExceptConfig GetExceptConfig() const;
 
                     /**
-                     * 设置例外规则配置。如果为null，默认使用历史配置。
+                     * 设置例外规则配置。如果入参为空或不填，默认使用历史配置。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _exceptConfig 例外规则配置。如果为null，默认使用历史配置。
+                     * @param _exceptConfig 例外规则配置。如果入参为空或不填，默认使用历史配置。
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -232,18 +232,18 @@ namespace TencentCloud
                     bool ExceptConfigHasBeenSet() const;
 
                     /**
-                     * 获取自定义拦截页面配置。如果为null，默认使用历史配置。
+                     * 获取自定义拦截页面配置。如果入参为空或不填，默认使用历史配置。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return DropPageConfig 自定义拦截页面配置。如果为null，默认使用历史配置。
+                     * @return DropPageConfig 自定义拦截页面配置。如果入参为空或不填，默认使用历史配置。
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     DropPageConfig GetDropPageConfig() const;
 
                     /**
-                     * 设置自定义拦截页面配置。如果为null，默认使用历史配置。
+                     * 设置自定义拦截页面配置。如果入参为空或不填，默认使用历史配置。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _dropPageConfig 自定义拦截页面配置。如果为null，默认使用历史配置。
+                     * @param _dropPageConfig 自定义拦截页面配置。如果入参为空或不填，默认使用历史配置。
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -282,18 +282,18 @@ namespace TencentCloud
                     bool TemplateConfigHasBeenSet() const;
 
                     /**
-                     * 获取慢速攻击配置。如果为null，默认使用历史配置。
+                     * 获取慢速攻击配置。如果入参为空或不填，默认使用历史配置。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return SlowPostConfig 慢速攻击配置。如果为null，默认使用历史配置。
+                     * @return SlowPostConfig 慢速攻击配置。如果入参为空或不填，默认使用历史配置。
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     SlowPostConfig GetSlowPostConfig() const;
 
                     /**
-                     * 设置慢速攻击配置。如果为null，默认使用历史配置。
+                     * 设置慢速攻击配置。如果入参为空或不填，默认使用历史配置。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _slowPostConfig 慢速攻击配置。如果为null，默认使用历史配置。
+                     * @param _slowPostConfig 慢速攻击配置。如果入参为空或不填，默认使用历史配置。
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -309,56 +309,56 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 托管规则。如果为null，默认使用历史配置。
+                     * 托管规则。如果入参为空或不填，默认使用历史配置。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     WafConfig m_wafConfig;
                     bool m_wafConfigHasBeenSet;
 
                     /**
-                     * 速率限制。如果为null，默认使用历史配置。
+                     * 速率限制。如果入参为空或不填，默认使用历史配置。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     RateLimitConfig m_rateLimitConfig;
                     bool m_rateLimitConfigHasBeenSet;
 
                     /**
-                     * 自定义规则。如果为null，默认使用历史配置。
+                     * 自定义规则。如果入参为空或不填，默认使用历史配置。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     AclConfig m_aclConfig;
                     bool m_aclConfigHasBeenSet;
 
                     /**
-                     * Bot配置。如果为null，默认使用历史配置。
+                     * Bot配置。如果入参为空或不填，默认使用历史配置。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     BotConfig m_botConfig;
                     bool m_botConfigHasBeenSet;
 
                     /**
-                     * 七层防护总开关。如果为null，默认使用历史配置。
+                     * 七层防护总开关。如果入参为空或不填，默认使用历史配置。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     SwitchConfig m_switchConfig;
                     bool m_switchConfigHasBeenSet;
 
                     /**
-                     * 基础访问管控。如果为null，默认使用历史配置。
+                     * 基础访问管控。如果入参为空或不填，默认使用历史配置。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     IpTableConfig m_ipTableConfig;
                     bool m_ipTableConfigHasBeenSet;
 
                     /**
-                     * 例外规则配置。如果为null，默认使用历史配置。
+                     * 例外规则配置。如果入参为空或不填，默认使用历史配置。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     ExceptConfig m_exceptConfig;
                     bool m_exceptConfigHasBeenSet;
 
                     /**
-                     * 自定义拦截页面配置。如果为null，默认使用历史配置。
+                     * 自定义拦截页面配置。如果入参为空或不填，默认使用历史配置。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     DropPageConfig m_dropPageConfig;
@@ -372,7 +372,7 @@ namespace TencentCloud
                     bool m_templateConfigHasBeenSet;
 
                     /**
-                     * 慢速攻击配置。如果为null，默认使用历史配置。
+                     * 慢速攻击配置。如果入参为空或不填，默认使用历史配置。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     SlowPostConfig m_slowPostConfig;

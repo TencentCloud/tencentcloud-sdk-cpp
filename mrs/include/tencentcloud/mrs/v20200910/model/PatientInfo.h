@@ -472,27 +472,27 @@ namespace TencentCloud
                     bool AgeNormHasBeenSet() const;
 
                     /**
-                     * 获取民族
+                     * 获取民族。该字段已不再使用，请从Ethnicity取值
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return Nation 民族
+                     * @return Nation 民族。该字段已不再使用，请从Ethnicity取值
 注意：此字段可能返回 null，表示取不到有效值。
-                     * 
+                     * @deprecated
                      */
                     std::string GetNation() const;
 
                     /**
-                     * 设置民族
+                     * 设置民族。该字段已不再使用，请从Ethnicity取值
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _nation 民族
+                     * @param _nation 民族。该字段已不再使用，请从Ethnicity取值
 注意：此字段可能返回 null，表示取不到有效值。
-                     * 
+                     * @deprecated
                      */
                     void SetNation(const std::string& _nation);
 
                     /**
                      * 判断参数 Nation 是否已赋值
                      * @return Nation 是否已赋值
-                     * 
+                     * @deprecated
                      */
                     bool NationHasBeenSet() const;
 
@@ -718,7 +718,7 @@ namespace TencentCloud
                     bool m_ageNormHasBeenSet;
 
                     /**
-                     * 民族
+                     * 民族。该字段已不再使用，请从Ethnicity取值
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_nation;

@@ -31,7 +31,8 @@ StartStreamIngestRequest::StartStreamIngestRequest() :
     m_sourceUrlHasBeenSet(false),
     m_privateMapKeyHasBeenSet(false),
     m_videoEncodeParamsHasBeenSet(false),
-    m_audioEncodeParamsHasBeenSet(false)
+    m_audioEncodeParamsHasBeenSet(false),
+    m_streamUrlHasBeenSet(false)
 {
 }
 
@@ -119,6 +120,14 @@ string StartStreamIngestRequest::ToJsonString() const
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
         m_audioEncodeParams.ToJsonObject(d[key.c_str()], allocator);
+    }
+
+    if (m_streamUrlHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "StreamUrl";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_streamUrl.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -271,6 +280,22 @@ void StartStreamIngestRequest::SetAudioEncodeParams(const AudioEncodeParams& _au
 bool StartStreamIngestRequest::AudioEncodeParamsHasBeenSet() const
 {
     return m_audioEncodeParamsHasBeenSet;
+}
+
+string StartStreamIngestRequest::GetStreamUrl() const
+{
+    return m_streamUrl;
+}
+
+void StartStreamIngestRequest::SetStreamUrl(const string& _streamUrl)
+{
+    m_streamUrl = _streamUrl;
+    m_streamUrlHasBeenSet = true;
+}
+
+bool StartStreamIngestRequest::StreamUrlHasBeenSet() const
+{
+    return m_streamUrlHasBeenSet;
 }
 
 

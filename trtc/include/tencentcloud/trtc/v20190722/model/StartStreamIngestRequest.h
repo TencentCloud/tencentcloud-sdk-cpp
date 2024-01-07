@@ -45,15 +45,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取TRTC的[SdkAppId](https://cloud.tencent.com/document/product/647/46351#sdkappid)，和录制的房间所对应的SdkAppId相同。
-                     * @return SdkAppId TRTC的[SdkAppId](https://cloud.tencent.com/document/product/647/46351#sdkappid)，和录制的房间所对应的SdkAppId相同。
+                     * 获取TRTC的[SdkAppId](https://cloud.tencent.com/document/product/647/46351#sdkappid)，和TRTC的房间所对应的SdkAppId相同。
+                     * @return SdkAppId TRTC的[SdkAppId](https://cloud.tencent.com/document/product/647/46351#sdkappid)，和TRTC的房间所对应的SdkAppId相同。
                      * 
                      */
                     uint64_t GetSdkAppId() const;
 
                     /**
-                     * 设置TRTC的[SdkAppId](https://cloud.tencent.com/document/product/647/46351#sdkappid)，和录制的房间所对应的SdkAppId相同。
-                     * @param _sdkAppId TRTC的[SdkAppId](https://cloud.tencent.com/document/product/647/46351#sdkappid)，和录制的房间所对应的SdkAppId相同。
+                     * 设置TRTC的[SdkAppId](https://cloud.tencent.com/document/product/647/46351#sdkappid)，和TRTC的房间所对应的SdkAppId相同。
+                     * @param _sdkAppId TRTC的[SdkAppId](https://cloud.tencent.com/document/product/647/46351#sdkappid)，和TRTC的房间所对应的SdkAppId相同。
                      * 
                      */
                     void SetSdkAppId(const uint64_t& _sdkAppId);
@@ -162,15 +162,15 @@ namespace TencentCloud
                     bool UserSigHasBeenSet() const;
 
                     /**
-                     * 获取源流URL。示例值：https://a.b/test.mp4
-                     * @return SourceUrl 源流URL。示例值：https://a.b/test.mp4
+                     * 获取【本字段已废弃，请使用 StreamUrl 字段】源流URL，支持一个地址。
+                     * @return SourceUrl 【本字段已废弃，请使用 StreamUrl 字段】源流URL，支持一个地址。
                      * 
                      */
                     std::vector<std::string> GetSourceUrl() const;
 
                     /**
-                     * 设置源流URL。示例值：https://a.b/test.mp4
-                     * @param _sourceUrl 源流URL。示例值：https://a.b/test.mp4
+                     * 设置【本字段已废弃，请使用 StreamUrl 字段】源流URL，支持一个地址。
+                     * @param _sourceUrl 【本字段已废弃，请使用 StreamUrl 字段】源流URL，支持一个地址。
                      * 
                      */
                     void SetSourceUrl(const std::vector<std::string>& _sourceUrl);
@@ -245,10 +245,31 @@ namespace TencentCloud
                      */
                     bool AudioEncodeParamsHasBeenSet() const;
 
+                    /**
+                     * 获取源流URL。历史原因本字段【必填】。
+                     * @return StreamUrl 源流URL。历史原因本字段【必填】。
+                     * 
+                     */
+                    std::string GetStreamUrl() const;
+
+                    /**
+                     * 设置源流URL。历史原因本字段【必填】。
+                     * @param _streamUrl 源流URL。历史原因本字段【必填】。
+                     * 
+                     */
+                    void SetStreamUrl(const std::string& _streamUrl);
+
+                    /**
+                     * 判断参数 StreamUrl 是否已赋值
+                     * @return StreamUrl 是否已赋值
+                     * 
+                     */
+                    bool StreamUrlHasBeenSet() const;
+
                 private:
 
                     /**
-                     * TRTC的[SdkAppId](https://cloud.tencent.com/document/product/647/46351#sdkappid)，和录制的房间所对应的SdkAppId相同。
+                     * TRTC的[SdkAppId](https://cloud.tencent.com/document/product/647/46351#sdkappid)，和TRTC的房间所对应的SdkAppId相同。
                      */
                     uint64_t m_sdkAppId;
                     bool m_sdkAppIdHasBeenSet;
@@ -281,7 +302,7 @@ namespace TencentCloud
                     bool m_userSigHasBeenSet;
 
                     /**
-                     * 源流URL。示例值：https://a.b/test.mp4
+                     * 【本字段已废弃，请使用 StreamUrl 字段】源流URL，支持一个地址。
                      */
                     std::vector<std::string> m_sourceUrl;
                     bool m_sourceUrlHasBeenSet;
@@ -303,6 +324,12 @@ namespace TencentCloud
                      */
                     AudioEncodeParams m_audioEncodeParams;
                     bool m_audioEncodeParamsHasBeenSet;
+
+                    /**
+                     * 源流URL。历史原因本字段【必填】。
+                     */
+                    std::string m_streamUrl;
+                    bool m_streamUrlHasBeenSet;
 
                 };
             }

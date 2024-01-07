@@ -24,7 +24,8 @@ using namespace std;
 
 CreateChannelOrganizationInfoChangeUrlRequest::CreateChannelOrganizationInfoChangeUrlRequest() :
     m_agentHasBeenSet(false),
-    m_changeTypeHasBeenSet(false)
+    m_changeTypeHasBeenSet(false),
+    m_endpointHasBeenSet(false)
 {
 }
 
@@ -50,6 +51,14 @@ string CreateChannelOrganizationInfoChangeUrlRequest::ToJsonString() const
         string key = "ChangeType";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_changeType, allocator);
+    }
+
+    if (m_endpointHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Endpoint";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_endpoint.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -90,6 +99,22 @@ void CreateChannelOrganizationInfoChangeUrlRequest::SetChangeType(const uint64_t
 bool CreateChannelOrganizationInfoChangeUrlRequest::ChangeTypeHasBeenSet() const
 {
     return m_changeTypeHasBeenSet;
+}
+
+string CreateChannelOrganizationInfoChangeUrlRequest::GetEndpoint() const
+{
+    return m_endpoint;
+}
+
+void CreateChannelOrganizationInfoChangeUrlRequest::SetEndpoint(const string& _endpoint)
+{
+    m_endpoint = _endpoint;
+    m_endpointHasBeenSet = true;
+}
+
+bool CreateChannelOrganizationInfoChangeUrlRequest::EndpointHasBeenSet() const
+{
+    return m_endpointHasBeenSet;
 }
 
 
