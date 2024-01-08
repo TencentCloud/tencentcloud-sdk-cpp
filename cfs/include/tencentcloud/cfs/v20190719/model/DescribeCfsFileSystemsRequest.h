@@ -147,6 +147,27 @@ namespace TencentCloud
                      */
                     bool LimitHasBeenSet() const;
 
+                    /**
+                     * 获取用户自定义名称
+                     * @return CreationToken 用户自定义名称
+                     * 
+                     */
+                    std::string GetCreationToken() const;
+
+                    /**
+                     * 设置用户自定义名称
+                     * @param _creationToken 用户自定义名称
+                     * 
+                     */
+                    void SetCreationToken(const std::string& _creationToken);
+
+                    /**
+                     * 判断参数 CreationToken 是否已赋值
+                     * @return CreationToken 是否已赋值
+                     * 
+                     */
+                    bool CreationTokenHasBeenSet() const;
+
                 private:
 
                     /**
@@ -178,6 +199,12 @@ namespace TencentCloud
                      */
                     uint64_t m_limit;
                     bool m_limitHasBeenSet;
+
+                    /**
+                     * 用户自定义名称
+                     */
+                    std::string m_creationToken;
+                    bool m_creationTokenHasBeenSet;
 
                 };
             }

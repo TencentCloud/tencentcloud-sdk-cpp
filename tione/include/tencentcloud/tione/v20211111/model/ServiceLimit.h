@@ -88,6 +88,48 @@ namespace TencentCloud
                      */
                     bool InstanceRpsLimitHasBeenSet() const;
 
+                    /**
+                     * 获取是否开启单实例最大并发数限制，true or false。true 则 InstanceReqLimit 必填， false 则 InstanceReqLimit 不生效
+                     * @return EnableInstanceReqLimit 是否开启单实例最大并发数限制，true or false。true 则 InstanceReqLimit 必填， false 则 InstanceReqLimit 不生效
+                     * 
+                     */
+                    bool GetEnableInstanceReqLimit() const;
+
+                    /**
+                     * 设置是否开启单实例最大并发数限制，true or false。true 则 InstanceReqLimit 必填， false 则 InstanceReqLimit 不生效
+                     * @param _enableInstanceReqLimit 是否开启单实例最大并发数限制，true or false。true 则 InstanceReqLimit 必填， false 则 InstanceReqLimit 不生效
+                     * 
+                     */
+                    void SetEnableInstanceReqLimit(const bool& _enableInstanceReqLimit);
+
+                    /**
+                     * 判断参数 EnableInstanceReqLimit 是否已赋值
+                     * @return EnableInstanceReqLimit 是否已赋值
+                     * 
+                     */
+                    bool EnableInstanceReqLimitHasBeenSet() const;
+
+                    /**
+                     * 获取每个服务实例的最大并发
+                     * @return InstanceReqLimit 每个服务实例的最大并发
+                     * 
+                     */
+                    int64_t GetInstanceReqLimit() const;
+
+                    /**
+                     * 设置每个服务实例的最大并发
+                     * @param _instanceReqLimit 每个服务实例的最大并发
+                     * 
+                     */
+                    void SetInstanceReqLimit(const int64_t& _instanceReqLimit);
+
+                    /**
+                     * 判断参数 InstanceReqLimit 是否已赋值
+                     * @return InstanceReqLimit 是否已赋值
+                     * 
+                     */
+                    bool InstanceReqLimitHasBeenSet() const;
+
                 private:
 
                     /**
@@ -101,6 +143,18 @@ namespace TencentCloud
                      */
                     int64_t m_instanceRpsLimit;
                     bool m_instanceRpsLimitHasBeenSet;
+
+                    /**
+                     * 是否开启单实例最大并发数限制，true or false。true 则 InstanceReqLimit 必填， false 则 InstanceReqLimit 不生效
+                     */
+                    bool m_enableInstanceReqLimit;
+                    bool m_enableInstanceReqLimitHasBeenSet;
+
+                    /**
+                     * 每个服务实例的最大并发
+                     */
+                    int64_t m_instanceReqLimit;
+                    bool m_instanceReqLimitHasBeenSet;
 
                 };
             }

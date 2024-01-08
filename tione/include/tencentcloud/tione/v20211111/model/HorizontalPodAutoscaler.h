@@ -98,18 +98,26 @@ namespace TencentCloud
                     bool MaxReplicasHasBeenSet() const;
 
                     /**
-                     * 获取扩缩容指标
+                     * 获取支持：
+"gpu-util": GPU利用率。范围{10, 100}      "cpu-util": CPU利用率。范围{10, 100}	      "memory-util": 内存利用率。范围{10, 100}      "service-qps": 单个实例QPS值。范围{1, 5000}
+"concurrency-util":单个实例请求数量值。范围{1,100000}
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return HpaMetrics 扩缩容指标
+                     * @return HpaMetrics 支持：
+"gpu-util": GPU利用率。范围{10, 100}      "cpu-util": CPU利用率。范围{10, 100}	      "memory-util": 内存利用率。范围{10, 100}      "service-qps": 单个实例QPS值。范围{1, 5000}
+"concurrency-util":单个实例请求数量值。范围{1,100000}
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<Option> GetHpaMetrics() const;
 
                     /**
-                     * 设置扩缩容指标
+                     * 设置支持：
+"gpu-util": GPU利用率。范围{10, 100}      "cpu-util": CPU利用率。范围{10, 100}	      "memory-util": 内存利用率。范围{10, 100}      "service-qps": 单个实例QPS值。范围{1, 5000}
+"concurrency-util":单个实例请求数量值。范围{1,100000}
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _hpaMetrics 扩缩容指标
+                     * @param _hpaMetrics 支持：
+"gpu-util": GPU利用率。范围{10, 100}      "cpu-util": CPU利用率。范围{10, 100}	      "memory-util": 内存利用率。范围{10, 100}      "service-qps": 单个实例QPS值。范围{1, 5000}
+"concurrency-util":单个实例请求数量值。范围{1,100000}
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -139,7 +147,9 @@ namespace TencentCloud
                     bool m_maxReplicasHasBeenSet;
 
                     /**
-                     * 扩缩容指标
+                     * 支持：
+"gpu-util": GPU利用率。范围{10, 100}      "cpu-util": CPU利用率。范围{10, 100}	      "memory-util": 内存利用率。范围{10, 100}      "service-qps": 单个实例QPS值。范围{1, 5000}
+"concurrency-util":单个实例请求数量值。范围{1,100000}
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<Option> m_hpaMetrics;

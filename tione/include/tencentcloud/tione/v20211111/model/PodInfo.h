@@ -98,18 +98,18 @@ namespace TencentCloud
                     bool IPHasBeenSet() const;
 
                     /**
-                     * 获取pod状态
+                     * 获取pod状态。eg：SUBMITTING提交中、PENDING排队中、RUNNING运行中、SUCCEEDED已完成、FAILED异常、TERMINATING停止中、TERMINATED已停止
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return Status pod状态
+                     * @return Status pod状态。eg：SUBMITTING提交中、PENDING排队中、RUNNING运行中、SUCCEEDED已完成、FAILED异常、TERMINATING停止中、TERMINATED已停止
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetStatus() const;
 
                     /**
-                     * 设置pod状态
+                     * 设置pod状态。eg：SUBMITTING提交中、PENDING排队中、RUNNING运行中、SUCCEEDED已完成、FAILED异常、TERMINATING停止中、TERMINATED已停止
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _status pod状态
+                     * @param _status pod状态。eg：SUBMITTING提交中、PENDING排队中、RUNNING运行中、SUCCEEDED已完成、FAILED异常、TERMINATING停止中、TERMINATED已停止
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -214,7 +214,7 @@ namespace TencentCloud
                     bool m_iPHasBeenSet;
 
                     /**
-                     * pod状态
+                     * pod状态。eg：SUBMITTING提交中、PENDING排队中、RUNNING运行中、SUCCEEDED已完成、FAILED异常、TERMINATING停止中、TERMINATED已停止
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_status;

@@ -22,7 +22,8 @@ using namespace std;
 
 ComposeVideoStream::ComposeVideoStream() :
     m_codecHasBeenSet(false),
-    m_fpsHasBeenSet(false)
+    m_fpsHasBeenSet(false),
+    m_bitrateHasBeenSet(false)
 {
 }
 
@@ -51,6 +52,16 @@ CoreInternalOutcome ComposeVideoStream::Deserialize(const rapidjson::Value &valu
         m_fpsHasBeenSet = true;
     }
 
+    if (value.HasMember("Bitrate") && !value["Bitrate"].IsNull())
+    {
+        if (!value["Bitrate"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `ComposeVideoStream.Bitrate` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_bitrate = value["Bitrate"].GetInt64();
+        m_bitrateHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -72,6 +83,14 @@ void ComposeVideoStream::ToJsonObject(rapidjson::Value &value, rapidjson::Docume
         string key = "Fps";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_fps, allocator);
+    }
+
+    if (m_bitrateHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Bitrate";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_bitrate, allocator);
     }
 
 }
@@ -107,5 +126,21 @@ void ComposeVideoStream::SetFps(const int64_t& _fps)
 bool ComposeVideoStream::FpsHasBeenSet() const
 {
     return m_fpsHasBeenSet;
+}
+
+int64_t ComposeVideoStream::GetBitrate() const
+{
+    return m_bitrate;
+}
+
+void ComposeVideoStream::SetBitrate(const int64_t& _bitrate)
+{
+    m_bitrate = _bitrate;
+    m_bitrateHasBeenSet = true;
+}
+
+bool ComposeVideoStream::BitrateHasBeenSet() const
+{
+    return m_bitrateHasBeenSet;
 }
 

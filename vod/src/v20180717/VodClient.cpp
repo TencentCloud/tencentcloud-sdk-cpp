@@ -427,6 +427,92 @@ VodClient::CreateAnimatedGraphicsTemplateOutcomeCallable VodClient::CreateAnimat
     return task->get_future();
 }
 
+VodClient::CreateCLSLogsetOutcome VodClient::CreateCLSLogset(const CreateCLSLogsetRequest &request)
+{
+    auto outcome = MakeRequest(request, "CreateCLSLogset");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        CreateCLSLogsetResponse rsp = CreateCLSLogsetResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return CreateCLSLogsetOutcome(rsp);
+        else
+            return CreateCLSLogsetOutcome(o.GetError());
+    }
+    else
+    {
+        return CreateCLSLogsetOutcome(outcome.GetError());
+    }
+}
+
+void VodClient::CreateCLSLogsetAsync(const CreateCLSLogsetRequest& request, const CreateCLSLogsetAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->CreateCLSLogset(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+VodClient::CreateCLSLogsetOutcomeCallable VodClient::CreateCLSLogsetCallable(const CreateCLSLogsetRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<CreateCLSLogsetOutcome()>>(
+        [this, request]()
+        {
+            return this->CreateCLSLogset(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+VodClient::CreateCLSTopicOutcome VodClient::CreateCLSTopic(const CreateCLSTopicRequest &request)
+{
+    auto outcome = MakeRequest(request, "CreateCLSTopic");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        CreateCLSTopicResponse rsp = CreateCLSTopicResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return CreateCLSTopicOutcome(rsp);
+        else
+            return CreateCLSTopicOutcome(o.GetError());
+    }
+    else
+    {
+        return CreateCLSTopicOutcome(outcome.GetError());
+    }
+}
+
+void VodClient::CreateCLSTopicAsync(const CreateCLSTopicRequest& request, const CreateCLSTopicAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->CreateCLSTopic(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+VodClient::CreateCLSTopicOutcomeCallable VodClient::CreateCLSTopicCallable(const CreateCLSTopicRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<CreateCLSTopicOutcome()>>(
+        [this, request]()
+        {
+            return this->CreateCLSTopic(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 VodClient::CreateClassOutcome VodClient::CreateClass(const CreateClassRequest &request)
 {
     auto outcome = MakeRequest(request, "CreateClass");
@@ -1581,6 +1667,49 @@ VodClient::DeleteAnimatedGraphicsTemplateOutcomeCallable VodClient::DeleteAnimat
         [this, request]()
         {
             return this->DeleteAnimatedGraphicsTemplate(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+VodClient::DeleteCLSTopicOutcome VodClient::DeleteCLSTopic(const DeleteCLSTopicRequest &request)
+{
+    auto outcome = MakeRequest(request, "DeleteCLSTopic");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DeleteCLSTopicResponse rsp = DeleteCLSTopicResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DeleteCLSTopicOutcome(rsp);
+        else
+            return DeleteCLSTopicOutcome(o.GetError());
+    }
+    else
+    {
+        return DeleteCLSTopicOutcome(outcome.GetError());
+    }
+}
+
+void VodClient::DeleteCLSTopicAsync(const DeleteCLSTopicRequest& request, const DeleteCLSTopicAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DeleteCLSTopic(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+VodClient::DeleteCLSTopicOutcomeCallable VodClient::DeleteCLSTopicCallable(const DeleteCLSTopicRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DeleteCLSTopicOutcome()>>(
+        [this, request]()
+        {
+            return this->DeleteCLSTopic(request);
         }
     );
 
@@ -2785,6 +2914,135 @@ VodClient::DescribeCDNUsageDataOutcomeCallable VodClient::DescribeCDNUsageDataCa
         [this, request]()
         {
             return this->DescribeCDNUsageData(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+VodClient::DescribeCLSLogsetsOutcome VodClient::DescribeCLSLogsets(const DescribeCLSLogsetsRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeCLSLogsets");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeCLSLogsetsResponse rsp = DescribeCLSLogsetsResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeCLSLogsetsOutcome(rsp);
+        else
+            return DescribeCLSLogsetsOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeCLSLogsetsOutcome(outcome.GetError());
+    }
+}
+
+void VodClient::DescribeCLSLogsetsAsync(const DescribeCLSLogsetsRequest& request, const DescribeCLSLogsetsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeCLSLogsets(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+VodClient::DescribeCLSLogsetsOutcomeCallable VodClient::DescribeCLSLogsetsCallable(const DescribeCLSLogsetsRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeCLSLogsetsOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeCLSLogsets(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+VodClient::DescribeCLSPushTargetsOutcome VodClient::DescribeCLSPushTargets(const DescribeCLSPushTargetsRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeCLSPushTargets");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeCLSPushTargetsResponse rsp = DescribeCLSPushTargetsResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeCLSPushTargetsOutcome(rsp);
+        else
+            return DescribeCLSPushTargetsOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeCLSPushTargetsOutcome(outcome.GetError());
+    }
+}
+
+void VodClient::DescribeCLSPushTargetsAsync(const DescribeCLSPushTargetsRequest& request, const DescribeCLSPushTargetsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeCLSPushTargets(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+VodClient::DescribeCLSPushTargetsOutcomeCallable VodClient::DescribeCLSPushTargetsCallable(const DescribeCLSPushTargetsRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeCLSPushTargetsOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeCLSPushTargets(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+VodClient::DescribeCLSTopicsOutcome VodClient::DescribeCLSTopics(const DescribeCLSTopicsRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeCLSTopics");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeCLSTopicsResponse rsp = DescribeCLSTopicsResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeCLSTopicsOutcome(rsp);
+        else
+            return DescribeCLSTopicsOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeCLSTopicsOutcome(outcome.GetError());
+    }
+}
+
+void VodClient::DescribeCLSTopicsAsync(const DescribeCLSTopicsRequest& request, const DescribeCLSTopicsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeCLSTopics(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+VodClient::DescribeCLSTopicsOutcomeCallable VodClient::DescribeCLSTopicsCallable(const DescribeCLSTopicsRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeCLSTopicsOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeCLSTopics(request);
         }
     );
 
@@ -6999,6 +7257,49 @@ VodClient::SearchMediaOutcomeCallable VodClient::SearchMediaCallable(const Searc
         [this, request]()
         {
             return this->SearchMedia(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+VodClient::SetCLSPushTargetOutcome VodClient::SetCLSPushTarget(const SetCLSPushTargetRequest &request)
+{
+    auto outcome = MakeRequest(request, "SetCLSPushTarget");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        SetCLSPushTargetResponse rsp = SetCLSPushTargetResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return SetCLSPushTargetOutcome(rsp);
+        else
+            return SetCLSPushTargetOutcome(o.GetError());
+    }
+    else
+    {
+        return SetCLSPushTargetOutcome(outcome.GetError());
+    }
+}
+
+void VodClient::SetCLSPushTargetAsync(const SetCLSPushTargetRequest& request, const SetCLSPushTargetAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->SetCLSPushTarget(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+VodClient::SetCLSPushTargetOutcomeCallable VodClient::SetCLSPushTargetCallable(const SetCLSPushTargetRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<SetCLSPushTargetOutcome()>>(
+        [this, request]()
+        {
+            return this->SetCLSPushTarget(request);
         }
     );
 

@@ -21,6 +21,7 @@
 #include <vector>
 #include <map>
 #include <tencentcloud/core/AbstractModel.h>
+#include <tencentcloud/cfw/v20190904/model/IdsWhiteInfo.h>
 
 
 namespace TencentCloud
@@ -58,6 +59,20 @@ namespace TencentCloud
                     bool TotalHasBeenSet() const;
 
                     /**
+                     * 获取规则详情
+                     * @return Data 规则详情
+                     * 
+                     */
+                    std::vector<IdsWhiteInfo> GetData() const;
+
+                    /**
+                     * 判断参数 Data 是否已赋值
+                     * @return Data 是否已赋值
+                     * 
+                     */
+                    bool DataHasBeenSet() const;
+
+                    /**
                      * 获取返回状态码 0 成功 非0不成功
                      * @return ReturnCode 返回状态码 0 成功 非0不成功
                      * 
@@ -92,6 +107,12 @@ namespace TencentCloud
                      */
                     uint64_t m_total;
                     bool m_totalHasBeenSet;
+
+                    /**
+                     * 规则详情
+                     */
+                    std::vector<IdsWhiteInfo> m_data;
+                    bool m_dataHasBeenSet;
 
                     /**
                      * 返回状态码 0 成功 非0不成功

@@ -71,15 +71,15 @@ namespace TencentCloud
                     bool IdHasBeenSet() const;
 
                     /**
-                     * 获取名称
-                     * @return Name 名称
+                     * 获取名称。不超过60个字符，仅支持中英文、数字、下划线"_"、短横"-"，只能以中英文、数字开头
+                     * @return Name 名称。不超过60个字符，仅支持中英文、数字、下划线"_"、短横"-"，只能以中英文、数字开头
                      * 
                      */
                     std::string GetName() const;
 
                     /**
-                     * 设置名称
-                     * @param _name 名称
+                     * 设置名称。不超过60个字符，仅支持中英文、数字、下划线"_"、短横"-"，只能以中英文、数字开头
+                     * @param _name 名称。不超过60个字符，仅支持中英文、数字、下划线"_"、短横"-"，只能以中英文、数字开头
                      * 
                      */
                     void SetName(const std::string& _name);
@@ -92,10 +92,10 @@ namespace TencentCloud
                     bool NameHasBeenSet() const;
 
                     /**
-                     * 获取计算资源付费模式 ，可选值为：
+                     * 获取（不允许修改）计算资源付费模式 ，可选值为：
 PREPAID：预付费，即包年包月
 POSTPAID_BY_HOUR：按小时后付费
-                     * @return ChargeType 计算资源付费模式 ，可选值为：
+                     * @return ChargeType （不允许修改）计算资源付费模式 ，可选值为：
 PREPAID：预付费，即包年包月
 POSTPAID_BY_HOUR：按小时后付费
                      * 
@@ -103,10 +103,10 @@ POSTPAID_BY_HOUR：按小时后付费
                     std::string GetChargeType() const;
 
                     /**
-                     * 设置计算资源付费模式 ，可选值为：
+                     * 设置（不允许修改）计算资源付费模式 ，可选值为：
 PREPAID：预付费，即包年包月
 POSTPAID_BY_HOUR：按小时后付费
-                     * @param _chargeType 计算资源付费模式 ，可选值为：
+                     * @param _chargeType （不允许修改）计算资源付费模式 ，可选值为：
 PREPAID：预付费，即包年包月
 POSTPAID_BY_HOUR：按小时后付费
                      * 
@@ -247,15 +247,15 @@ POSTPAID_BY_HOUR：按小时后付费
                     bool ResourceGroupIdHasBeenSet() const;
 
                     /**
-                     * 获取Vpc-Id
-                     * @return VpcId Vpc-Id
+                     * 获取（不允许修改）Vpc-Id
+                     * @return VpcId （不允许修改）Vpc-Id
                      * 
                      */
                     std::string GetVpcId() const;
 
                     /**
-                     * 设置Vpc-Id
-                     * @param _vpcId Vpc-Id
+                     * 设置（不允许修改）Vpc-Id
+                     * @param _vpcId （不允许修改）Vpc-Id
                      * 
                      */
                     void SetVpcId(const std::string& _vpcId);
@@ -268,15 +268,15 @@ POSTPAID_BY_HOUR：按小时后付费
                     bool VpcIdHasBeenSet() const;
 
                     /**
-                     * 获取子网Id
-                     * @return SubnetId 子网Id
+                     * 获取（不允许修改）子网Id
+                     * @return SubnetId （不允许修改）子网Id
                      * 
                      */
                     std::string GetSubnetId() const;
 
                     /**
-                     * 设置子网Id
-                     * @param _subnetId 子网Id
+                     * 设置（不允许修改）子网Id
+                     * @param _subnetId （不允许修改）子网Id
                      * 
                      */
                     void SetSubnetId(const std::string& _subnetId);
@@ -310,12 +310,12 @@ POSTPAID_BY_HOUR：按小时后付费
                     bool VolumeSizeInGBHasBeenSet() const;
 
                     /**
-                     * 获取存储的类型。取值包含： 
+                     * 获取（不允许修改）存储的类型。取值包含： 
     FREE:    预付费的免费存储
     CLOUD_PREMIUM： 高性能云硬盘
     CLOUD_SSD： SSD云硬盘
     CFS:     CFS存储，包含NFS和turbo
-                     * @return VolumeSourceType 存储的类型。取值包含： 
+                     * @return VolumeSourceType （不允许修改）存储的类型。取值包含： 
     FREE:    预付费的免费存储
     CLOUD_PREMIUM： 高性能云硬盘
     CLOUD_SSD： SSD云硬盘
@@ -325,12 +325,12 @@ POSTPAID_BY_HOUR：按小时后付费
                     std::string GetVolumeSourceType() const;
 
                     /**
-                     * 设置存储的类型。取值包含： 
+                     * 设置（不允许修改）存储的类型。取值包含： 
     FREE:    预付费的免费存储
     CLOUD_PREMIUM： 高性能云硬盘
     CLOUD_SSD： SSD云硬盘
     CFS:     CFS存储，包含NFS和turbo
-                     * @param _volumeSourceType 存储的类型。取值包含： 
+                     * @param _volumeSourceType （不允许修改）存储的类型。取值包含： 
     FREE:    预付费的免费存储
     CLOUD_PREMIUM： 高性能云硬盘
     CLOUD_SSD： SSD云硬盘
@@ -347,15 +347,15 @@ POSTPAID_BY_HOUR：按小时后付费
                     bool VolumeSourceTypeHasBeenSet() const;
 
                     /**
-                     * 获取CFS存储的配置
-                     * @return VolumeSourceCFS CFS存储的配置
+                     * 获取（不允许修改）CFS存储的配置
+                     * @return VolumeSourceCFS （不允许修改）CFS存储的配置
                      * 
                      */
                     CFSConfig GetVolumeSourceCFS() const;
 
                     /**
-                     * 设置CFS存储的配置
-                     * @param _volumeSourceCFS CFS存储的配置
+                     * 设置（不允许修改）CFS存储的配置
+                     * @param _volumeSourceCFS （不允许修改）CFS存储的配置
                      * 
                      */
                     void SetVolumeSourceCFS(const CFSConfig& _volumeSourceCFS);
@@ -494,15 +494,15 @@ POSTPAID_BY_HOUR：按小时后付费
                     bool TagsHasBeenSet() const;
 
                     /**
-                     * 获取数据配置
-                     * @return DataConfigs 数据配置
+                     * 获取数据配置，只支持WEDATA_HDFS
+                     * @return DataConfigs 数据配置，只支持WEDATA_HDFS
                      * 
                      */
                     std::vector<DataConfig> GetDataConfigs() const;
 
                     /**
-                     * 设置数据配置
-                     * @param _dataConfigs 数据配置
+                     * 设置数据配置，只支持WEDATA_HDFS
+                     * @param _dataConfigs 数据配置，只支持WEDATA_HDFS
                      * 
                      */
                     void SetDataConfigs(const std::vector<DataConfig>& _dataConfigs);
@@ -536,15 +536,15 @@ POSTPAID_BY_HOUR：按小时后付费
                     bool ImageInfoHasBeenSet() const;
 
                     /**
-                     * 获取镜像类型
-                     * @return ImageType 镜像类型
+                     * 获取镜像类型，包括SYSTEM、TCR、CCR
+                     * @return ImageType 镜像类型，包括SYSTEM、TCR、CCR
                      * 
                      */
                     std::string GetImageType() const;
 
                     /**
-                     * 设置镜像类型
-                     * @param _imageType 镜像类型
+                     * 设置镜像类型，包括SYSTEM、TCR、CCR
+                     * @param _imageType 镜像类型，包括SYSTEM、TCR、CCR
                      * 
                      */
                     void SetImageType(const std::string& _imageType);
@@ -586,13 +586,13 @@ POSTPAID_BY_HOUR：按小时后付费
                     bool m_idHasBeenSet;
 
                     /**
-                     * 名称
+                     * 名称。不超过60个字符，仅支持中英文、数字、下划线"_"、短横"-"，只能以中英文、数字开头
                      */
                     std::string m_name;
                     bool m_nameHasBeenSet;
 
                     /**
-                     * 计算资源付费模式 ，可选值为：
+                     * （不允许修改）计算资源付费模式 ，可选值为：
 PREPAID：预付费，即包年包月
 POSTPAID_BY_HOUR：按小时后付费
                      */
@@ -636,13 +636,13 @@ POSTPAID_BY_HOUR：按小时后付费
                     bool m_resourceGroupIdHasBeenSet;
 
                     /**
-                     * Vpc-Id
+                     * （不允许修改）Vpc-Id
                      */
                     std::string m_vpcId;
                     bool m_vpcIdHasBeenSet;
 
                     /**
-                     * 子网Id
+                     * （不允许修改）子网Id
                      */
                     std::string m_subnetId;
                     bool m_subnetIdHasBeenSet;
@@ -654,7 +654,7 @@ POSTPAID_BY_HOUR：按小时后付费
                     bool m_volumeSizeInGBHasBeenSet;
 
                     /**
-                     * 存储的类型。取值包含： 
+                     * （不允许修改）存储的类型。取值包含： 
     FREE:    预付费的免费存储
     CLOUD_PREMIUM： 高性能云硬盘
     CLOUD_SSD： SSD云硬盘
@@ -664,7 +664,7 @@ POSTPAID_BY_HOUR：按小时后付费
                     bool m_volumeSourceTypeHasBeenSet;
 
                     /**
-                     * CFS存储的配置
+                     * （不允许修改）CFS存储的配置
                      */
                     CFSConfig m_volumeSourceCFS;
                     bool m_volumeSourceCFSHasBeenSet;
@@ -706,7 +706,7 @@ POSTPAID_BY_HOUR：按小时后付费
                     bool m_tagsHasBeenSet;
 
                     /**
-                     * 数据配置
+                     * 数据配置，只支持WEDATA_HDFS
                      */
                     std::vector<DataConfig> m_dataConfigs;
                     bool m_dataConfigsHasBeenSet;
@@ -718,7 +718,7 @@ POSTPAID_BY_HOUR：按小时后付费
                     bool m_imageInfoHasBeenSet;
 
                     /**
-                     * 镜像类型
+                     * 镜像类型，包括SYSTEM、TCR、CCR
                      */
                     std::string m_imageType;
                     bool m_imageTypeHasBeenSet;

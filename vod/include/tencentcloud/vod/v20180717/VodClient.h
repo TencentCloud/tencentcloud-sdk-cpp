@@ -41,6 +41,10 @@
 #include <tencentcloud/vod/v20180717/model/CreateAdaptiveDynamicStreamingTemplateResponse.h>
 #include <tencentcloud/vod/v20180717/model/CreateAnimatedGraphicsTemplateRequest.h>
 #include <tencentcloud/vod/v20180717/model/CreateAnimatedGraphicsTemplateResponse.h>
+#include <tencentcloud/vod/v20180717/model/CreateCLSLogsetRequest.h>
+#include <tencentcloud/vod/v20180717/model/CreateCLSLogsetResponse.h>
+#include <tencentcloud/vod/v20180717/model/CreateCLSTopicRequest.h>
+#include <tencentcloud/vod/v20180717/model/CreateCLSTopicResponse.h>
 #include <tencentcloud/vod/v20180717/model/CreateClassRequest.h>
 #include <tencentcloud/vod/v20180717/model/CreateClassResponse.h>
 #include <tencentcloud/vod/v20180717/model/CreateContentReviewTemplateRequest.h>
@@ -95,6 +99,8 @@
 #include <tencentcloud/vod/v20180717/model/DeleteAdaptiveDynamicStreamingTemplateResponse.h>
 #include <tencentcloud/vod/v20180717/model/DeleteAnimatedGraphicsTemplateRequest.h>
 #include <tencentcloud/vod/v20180717/model/DeleteAnimatedGraphicsTemplateResponse.h>
+#include <tencentcloud/vod/v20180717/model/DeleteCLSTopicRequest.h>
+#include <tencentcloud/vod/v20180717/model/DeleteCLSTopicResponse.h>
 #include <tencentcloud/vod/v20180717/model/DeleteClassRequest.h>
 #include <tencentcloud/vod/v20180717/model/DeleteClassResponse.h>
 #include <tencentcloud/vod/v20180717/model/DeleteContentReviewTemplateRequest.h>
@@ -151,6 +157,12 @@
 #include <tencentcloud/vod/v20180717/model/DescribeCDNStatDetailsResponse.h>
 #include <tencentcloud/vod/v20180717/model/DescribeCDNUsageDataRequest.h>
 #include <tencentcloud/vod/v20180717/model/DescribeCDNUsageDataResponse.h>
+#include <tencentcloud/vod/v20180717/model/DescribeCLSLogsetsRequest.h>
+#include <tencentcloud/vod/v20180717/model/DescribeCLSLogsetsResponse.h>
+#include <tencentcloud/vod/v20180717/model/DescribeCLSPushTargetsRequest.h>
+#include <tencentcloud/vod/v20180717/model/DescribeCLSPushTargetsResponse.h>
+#include <tencentcloud/vod/v20180717/model/DescribeCLSTopicsRequest.h>
+#include <tencentcloud/vod/v20180717/model/DescribeCLSTopicsResponse.h>
 #include <tencentcloud/vod/v20180717/model/DescribeCdnLogsRequest.h>
 #include <tencentcloud/vod/v20180717/model/DescribeCdnLogsResponse.h>
 #include <tencentcloud/vod/v20180717/model/DescribeClientUploadAccelerationUsageDataRequest.h>
@@ -347,6 +359,8 @@
 #include <tencentcloud/vod/v20180717/model/ReviewImageResponse.h>
 #include <tencentcloud/vod/v20180717/model/SearchMediaRequest.h>
 #include <tencentcloud/vod/v20180717/model/SearchMediaResponse.h>
+#include <tencentcloud/vod/v20180717/model/SetCLSPushTargetRequest.h>
+#include <tencentcloud/vod/v20180717/model/SetCLSPushTargetResponse.h>
 #include <tencentcloud/vod/v20180717/model/SetDrmKeyProviderInfoRequest.h>
 #include <tencentcloud/vod/v20180717/model/SetDrmKeyProviderInfoResponse.h>
 #include <tencentcloud/vod/v20180717/model/SetVodDomainCertificateRequest.h>
@@ -400,6 +414,12 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::CreateAnimatedGraphicsTemplateResponse> CreateAnimatedGraphicsTemplateOutcome;
                 typedef std::future<CreateAnimatedGraphicsTemplateOutcome> CreateAnimatedGraphicsTemplateOutcomeCallable;
                 typedef std::function<void(const VodClient*, const Model::CreateAnimatedGraphicsTemplateRequest&, CreateAnimatedGraphicsTemplateOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateAnimatedGraphicsTemplateAsyncHandler;
+                typedef Outcome<Core::Error, Model::CreateCLSLogsetResponse> CreateCLSLogsetOutcome;
+                typedef std::future<CreateCLSLogsetOutcome> CreateCLSLogsetOutcomeCallable;
+                typedef std::function<void(const VodClient*, const Model::CreateCLSLogsetRequest&, CreateCLSLogsetOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateCLSLogsetAsyncHandler;
+                typedef Outcome<Core::Error, Model::CreateCLSTopicResponse> CreateCLSTopicOutcome;
+                typedef std::future<CreateCLSTopicOutcome> CreateCLSTopicOutcomeCallable;
+                typedef std::function<void(const VodClient*, const Model::CreateCLSTopicRequest&, CreateCLSTopicOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateCLSTopicAsyncHandler;
                 typedef Outcome<Core::Error, Model::CreateClassResponse> CreateClassOutcome;
                 typedef std::future<CreateClassOutcome> CreateClassOutcomeCallable;
                 typedef std::function<void(const VodClient*, const Model::CreateClassRequest&, CreateClassOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateClassAsyncHandler;
@@ -481,6 +501,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DeleteAnimatedGraphicsTemplateResponse> DeleteAnimatedGraphicsTemplateOutcome;
                 typedef std::future<DeleteAnimatedGraphicsTemplateOutcome> DeleteAnimatedGraphicsTemplateOutcomeCallable;
                 typedef std::function<void(const VodClient*, const Model::DeleteAnimatedGraphicsTemplateRequest&, DeleteAnimatedGraphicsTemplateOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteAnimatedGraphicsTemplateAsyncHandler;
+                typedef Outcome<Core::Error, Model::DeleteCLSTopicResponse> DeleteCLSTopicOutcome;
+                typedef std::future<DeleteCLSTopicOutcome> DeleteCLSTopicOutcomeCallable;
+                typedef std::function<void(const VodClient*, const Model::DeleteCLSTopicRequest&, DeleteCLSTopicOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteCLSTopicAsyncHandler;
                 typedef Outcome<Core::Error, Model::DeleteClassResponse> DeleteClassOutcome;
                 typedef std::future<DeleteClassOutcome> DeleteClassOutcomeCallable;
                 typedef std::function<void(const VodClient*, const Model::DeleteClassRequest&, DeleteClassOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteClassAsyncHandler;
@@ -565,6 +588,15 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeCDNUsageDataResponse> DescribeCDNUsageDataOutcome;
                 typedef std::future<DescribeCDNUsageDataOutcome> DescribeCDNUsageDataOutcomeCallable;
                 typedef std::function<void(const VodClient*, const Model::DescribeCDNUsageDataRequest&, DescribeCDNUsageDataOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeCDNUsageDataAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeCLSLogsetsResponse> DescribeCLSLogsetsOutcome;
+                typedef std::future<DescribeCLSLogsetsOutcome> DescribeCLSLogsetsOutcomeCallable;
+                typedef std::function<void(const VodClient*, const Model::DescribeCLSLogsetsRequest&, DescribeCLSLogsetsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeCLSLogsetsAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeCLSPushTargetsResponse> DescribeCLSPushTargetsOutcome;
+                typedef std::future<DescribeCLSPushTargetsOutcome> DescribeCLSPushTargetsOutcomeCallable;
+                typedef std::function<void(const VodClient*, const Model::DescribeCLSPushTargetsRequest&, DescribeCLSPushTargetsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeCLSPushTargetsAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeCLSTopicsResponse> DescribeCLSTopicsOutcome;
+                typedef std::future<DescribeCLSTopicsOutcome> DescribeCLSTopicsOutcomeCallable;
+                typedef std::function<void(const VodClient*, const Model::DescribeCLSTopicsRequest&, DescribeCLSTopicsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeCLSTopicsAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeCdnLogsResponse> DescribeCdnLogsOutcome;
                 typedef std::future<DescribeCdnLogsOutcome> DescribeCdnLogsOutcomeCallable;
                 typedef std::function<void(const VodClient*, const Model::DescribeCdnLogsRequest&, DescribeCdnLogsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeCdnLogsAsyncHandler;
@@ -859,6 +891,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::SearchMediaResponse> SearchMediaOutcome;
                 typedef std::future<SearchMediaOutcome> SearchMediaOutcomeCallable;
                 typedef std::function<void(const VodClient*, const Model::SearchMediaRequest&, SearchMediaOutcome, const std::shared_ptr<const AsyncCallerContext>&)> SearchMediaAsyncHandler;
+                typedef Outcome<Core::Error, Model::SetCLSPushTargetResponse> SetCLSPushTargetOutcome;
+                typedef std::future<SetCLSPushTargetOutcome> SetCLSPushTargetOutcomeCallable;
+                typedef std::function<void(const VodClient*, const Model::SetCLSPushTargetRequest&, SetCLSPushTargetOutcome, const std::shared_ptr<const AsyncCallerContext>&)> SetCLSPushTargetAsyncHandler;
                 typedef Outcome<Core::Error, Model::SetDrmKeyProviderInfoResponse> SetDrmKeyProviderInfoOutcome;
                 typedef std::future<SetDrmKeyProviderInfoOutcome> SetDrmKeyProviderInfoOutcomeCallable;
                 typedef std::function<void(const VodClient*, const Model::SetDrmKeyProviderInfoRequest&, SetDrmKeyProviderInfoOutcome, const std::shared_ptr<const AsyncCallerContext>&)> SetDrmKeyProviderInfoAsyncHandler;
@@ -975,6 +1010,24 @@ namespace TencentCloud
                 CreateAnimatedGraphicsTemplateOutcome CreateAnimatedGraphicsTemplate(const Model::CreateAnimatedGraphicsTemplateRequest &request);
                 void CreateAnimatedGraphicsTemplateAsync(const Model::CreateAnimatedGraphicsTemplateRequest& request, const CreateAnimatedGraphicsTemplateAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 CreateAnimatedGraphicsTemplateOutcomeCallable CreateAnimatedGraphicsTemplateCallable(const Model::CreateAnimatedGraphicsTemplateRequest& request);
+
+                /**
+                 *由 VOD 创建新的日志集。
+                 * @param req CreateCLSLogsetRequest
+                 * @return CreateCLSLogsetOutcome
+                 */
+                CreateCLSLogsetOutcome CreateCLSLogset(const Model::CreateCLSLogsetRequest &request);
+                void CreateCLSLogsetAsync(const Model::CreateCLSLogsetRequest& request, const CreateCLSLogsetAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                CreateCLSLogsetOutcomeCallable CreateCLSLogsetCallable(const Model::CreateCLSLogsetRequest& request);
+
+                /**
+                 *创建 VOD 下新的 CLS 日志主题
+                 * @param req CreateCLSTopicRequest
+                 * @return CreateCLSTopicOutcome
+                 */
+                CreateCLSTopicOutcome CreateCLSTopic(const Model::CreateCLSTopicRequest &request);
+                void CreateCLSTopicAsync(const Model::CreateCLSTopicRequest& request, const CreateCLSTopicAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                CreateCLSTopicOutcomeCallable CreateCLSTopicCallable(const Model::CreateCLSTopicRequest& request);
 
                 /**
                  ** 用于对媒体进行分类管理；
@@ -1234,6 +1287,15 @@ namespace TencentCloud
                 DeleteAnimatedGraphicsTemplateOutcome DeleteAnimatedGraphicsTemplate(const Model::DeleteAnimatedGraphicsTemplateRequest &request);
                 void DeleteAnimatedGraphicsTemplateAsync(const Model::DeleteAnimatedGraphicsTemplateRequest& request, const DeleteAnimatedGraphicsTemplateAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DeleteAnimatedGraphicsTemplateOutcomeCallable DeleteAnimatedGraphicsTemplateCallable(const Model::DeleteAnimatedGraphicsTemplateRequest& request);
+
+                /**
+                 *删除点播开通的日志主题。
+                 * @param req DeleteCLSTopicRequest
+                 * @return DeleteCLSTopicOutcome
+                 */
+                DeleteCLSTopicOutcome DeleteCLSTopic(const Model::DeleteCLSTopicRequest &request);
+                void DeleteCLSTopicAsync(const Model::DeleteCLSTopicRequest& request, const DeleteCLSTopicAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DeleteCLSTopicOutcomeCallable DeleteCLSTopicCallable(const Model::DeleteCLSTopicRequest& request);
 
                 /**
                  ** 仅当待删分类无子分类且无媒体关联情况下，可删除分类；
@@ -1503,6 +1565,33 @@ namespace TencentCloud
                 DescribeCDNUsageDataOutcome DescribeCDNUsageData(const Model::DescribeCDNUsageDataRequest &request);
                 void DescribeCDNUsageDataAsync(const Model::DescribeCDNUsageDataRequest& request, const DescribeCDNUsageDataAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DescribeCDNUsageDataOutcomeCallable DescribeCDNUsageDataCallable(const Model::DescribeCDNUsageDataRequest& request);
+
+                /**
+                 *查询 VOD 创建的 CLS 日志集。
+                 * @param req DescribeCLSLogsetsRequest
+                 * @return DescribeCLSLogsetsOutcome
+                 */
+                DescribeCLSLogsetsOutcome DescribeCLSLogsets(const Model::DescribeCLSLogsetsRequest &request);
+                void DescribeCLSLogsetsAsync(const Model::DescribeCLSLogsetsRequest& request, const DescribeCLSLogsetsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeCLSLogsetsOutcomeCallable DescribeCLSLogsetsCallable(const Model::DescribeCLSLogsetsRequest& request);
+
+                /**
+                 *查询点播域名下日志投递的目标主题。
+                 * @param req DescribeCLSPushTargetsRequest
+                 * @return DescribeCLSPushTargetsOutcome
+                 */
+                DescribeCLSPushTargetsOutcome DescribeCLSPushTargets(const Model::DescribeCLSPushTargetsRequest &request);
+                void DescribeCLSPushTargetsAsync(const Model::DescribeCLSPushTargetsRequest& request, const DescribeCLSPushTargetsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeCLSPushTargetsOutcomeCallable DescribeCLSPushTargetsCallable(const Model::DescribeCLSPushTargetsRequest& request);
+
+                /**
+                 *查询 VOD 创建的 CLS 日志主题列表。
+                 * @param req DescribeCLSTopicsRequest
+                 * @return DescribeCLSTopicsOutcome
+                 */
+                DescribeCLSTopicsOutcome DescribeCLSTopics(const Model::DescribeCLSTopicsRequest &request);
+                void DescribeCLSTopicsAsync(const Model::DescribeCLSTopicsRequest& request, const DescribeCLSTopicsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeCLSTopicsOutcomeCallable DescribeCLSTopicsCallable(const Model::DescribeCLSTopicsRequest& request);
 
                 /**
                  *查询点播域名的 CDN 访问日志的下载链接。
@@ -2605,6 +2694,15 @@ namespace TencentCloud
                 SearchMediaOutcome SearchMedia(const Model::SearchMediaRequest &request);
                 void SearchMediaAsync(const Model::SearchMediaRequest& request, const SearchMediaAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 SearchMediaOutcomeCallable SearchMediaCallable(const Model::SearchMediaRequest& request);
+
+                /**
+                 *为点播域名设置投递 CLS 的目标。
+                 * @param req SetCLSPushTargetRequest
+                 * @return SetCLSPushTargetOutcome
+                 */
+                SetCLSPushTargetOutcome SetCLSPushTarget(const Model::SetCLSPushTargetRequest &request);
+                void SetCLSPushTargetAsync(const Model::SetCLSPushTargetRequest& request, const SetCLSPushTargetAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                SetCLSPushTargetOutcomeCallable SetCLSPushTargetCallable(const Model::SetCLSPushTargetRequest& request);
 
                 /**
                  *设置 DRM 密钥提供商信息。

@@ -1115,6 +1115,49 @@ BillingClient::DescribeDosageDetailByDateOutcomeCallable BillingClient::Describe
     return task->get_future();
 }
 
+BillingClient::DescribeDosageDetailListOutcome BillingClient::DescribeDosageDetailList(const DescribeDosageDetailListRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeDosageDetailList");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeDosageDetailListResponse rsp = DescribeDosageDetailListResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeDosageDetailListOutcome(rsp);
+        else
+            return DescribeDosageDetailListOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeDosageDetailListOutcome(outcome.GetError());
+    }
+}
+
+void BillingClient::DescribeDosageDetailListAsync(const DescribeDosageDetailListRequest& request, const DescribeDosageDetailListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeDosageDetailList(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+BillingClient::DescribeDosageDetailListOutcomeCallable BillingClient::DescribeDosageDetailListCallable(const DescribeDosageDetailListRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeDosageDetailListOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeDosageDetailList(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 BillingClient::DescribeSavingPlanCoverageOutcome BillingClient::DescribeSavingPlanCoverage(const DescribeSavingPlanCoverageRequest &request)
 {
     auto outcome = MakeRequest(request, "DescribeSavingPlanCoverage");

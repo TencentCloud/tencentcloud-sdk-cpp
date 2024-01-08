@@ -48,6 +48,8 @@ namespace TencentCloud
 
                     /**
                      * 获取音频流的编码格式。
+当不需要对音频进行转码时，可选值为：
+<li>copy。</li>
 当外层参数 Container 为 mp3 时，可选值为：
 <li>libmp3lame。</li>
 当外层参数 Container 为 ogg 或 flac 时，可选值为：
@@ -65,6 +67,8 @@ namespace TencentCloud
 <li>libmp3lame。</li>
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Codec 音频流的编码格式。
+当不需要对音频进行转码时，可选值为：
+<li>copy。</li>
 当外层参数 Container 为 mp3 时，可选值为：
 <li>libmp3lame。</li>
 当外层参数 Container 为 ogg 或 flac 时，可选值为：
@@ -87,6 +91,8 @@ namespace TencentCloud
 
                     /**
                      * 设置音频流的编码格式。
+当不需要对音频进行转码时，可选值为：
+<li>copy。</li>
 当外层参数 Container 为 mp3 时，可选值为：
 <li>libmp3lame。</li>
 当外层参数 Container 为 ogg 或 flac 时，可选值为：
@@ -104,6 +110,8 @@ namespace TencentCloud
 <li>libmp3lame。</li>
 注意：此字段可能返回 null，表示取不到有效值。
                      * @param _codec 音频流的编码格式。
+当不需要对音频进行转码时，可选值为：
+<li>copy。</li>
 当外层参数 Container 为 mp3 时，可选值为：
 <li>libmp3lame。</li>
 当外层参数 Container 为 ogg 或 flac 时，可选值为：
@@ -267,6 +275,8 @@ namespace TencentCloud
 
                     /**
                      * 音频流的编码格式。
+当不需要对音频进行转码时，可选值为：
+<li>copy。</li>
 当外层参数 Container 为 mp3 时，可选值为：
 <li>libmp3lame。</li>
 当外层参数 Container 为 ogg 或 flac 时，可选值为：

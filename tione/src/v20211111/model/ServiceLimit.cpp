@@ -22,7 +22,9 @@ using namespace std;
 
 ServiceLimit::ServiceLimit() :
     m_enableInstanceRpsLimitHasBeenSet(false),
-    m_instanceRpsLimitHasBeenSet(false)
+    m_instanceRpsLimitHasBeenSet(false),
+    m_enableInstanceReqLimitHasBeenSet(false),
+    m_instanceReqLimitHasBeenSet(false)
 {
 }
 
@@ -51,6 +53,26 @@ CoreInternalOutcome ServiceLimit::Deserialize(const rapidjson::Value &value)
         m_instanceRpsLimitHasBeenSet = true;
     }
 
+    if (value.HasMember("EnableInstanceReqLimit") && !value["EnableInstanceReqLimit"].IsNull())
+    {
+        if (!value["EnableInstanceReqLimit"].IsBool())
+        {
+            return CoreInternalOutcome(Core::Error("response `ServiceLimit.EnableInstanceReqLimit` IsBool=false incorrectly").SetRequestId(requestId));
+        }
+        m_enableInstanceReqLimit = value["EnableInstanceReqLimit"].GetBool();
+        m_enableInstanceReqLimitHasBeenSet = true;
+    }
+
+    if (value.HasMember("InstanceReqLimit") && !value["InstanceReqLimit"].IsNull())
+    {
+        if (!value["InstanceReqLimit"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `ServiceLimit.InstanceReqLimit` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_instanceReqLimit = value["InstanceReqLimit"].GetInt64();
+        m_instanceReqLimitHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -72,6 +94,22 @@ void ServiceLimit::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Al
         string key = "InstanceRpsLimit";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_instanceRpsLimit, allocator);
+    }
+
+    if (m_enableInstanceReqLimitHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "EnableInstanceReqLimit";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_enableInstanceReqLimit, allocator);
+    }
+
+    if (m_instanceReqLimitHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "InstanceReqLimit";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_instanceReqLimit, allocator);
     }
 
 }
@@ -107,5 +145,37 @@ void ServiceLimit::SetInstanceRpsLimit(const int64_t& _instanceRpsLimit)
 bool ServiceLimit::InstanceRpsLimitHasBeenSet() const
 {
     return m_instanceRpsLimitHasBeenSet;
+}
+
+bool ServiceLimit::GetEnableInstanceReqLimit() const
+{
+    return m_enableInstanceReqLimit;
+}
+
+void ServiceLimit::SetEnableInstanceReqLimit(const bool& _enableInstanceReqLimit)
+{
+    m_enableInstanceReqLimit = _enableInstanceReqLimit;
+    m_enableInstanceReqLimitHasBeenSet = true;
+}
+
+bool ServiceLimit::EnableInstanceReqLimitHasBeenSet() const
+{
+    return m_enableInstanceReqLimitHasBeenSet;
+}
+
+int64_t ServiceLimit::GetInstanceReqLimit() const
+{
+    return m_instanceReqLimit;
+}
+
+void ServiceLimit::SetInstanceReqLimit(const int64_t& _instanceReqLimit)
+{
+    m_instanceReqLimit = _instanceReqLimit;
+    m_instanceReqLimitHasBeenSet = true;
+}
+
+bool ServiceLimit::InstanceReqLimitHasBeenSet() const
+{
+    return m_instanceReqLimitHasBeenSet;
 }
 

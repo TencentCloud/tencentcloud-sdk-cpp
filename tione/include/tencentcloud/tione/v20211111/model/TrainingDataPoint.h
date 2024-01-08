@@ -46,7 +46,71 @@ namespace TencentCloud
                     CoreInternalOutcome Deserialize(const rapidjson::Value &value);
 
 
+                    /**
+                     * 获取时间戳
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return Timestamp 时间戳
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    uint64_t GetTimestamp() const;
+
+                    /**
+                     * 设置时间戳
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _timestamp 时间戳
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetTimestamp(const uint64_t& _timestamp);
+
+                    /**
+                     * 判断参数 Timestamp 是否已赋值
+                     * @return Timestamp 是否已赋值
+                     * 
+                     */
+                    bool TimestampHasBeenSet() const;
+
+                    /**
+                     * 获取训练上报的值。可以为训练指标（双精度浮点数，也可以为Epoch/Step（两者皆保证是整数）
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return Value 训练上报的值。可以为训练指标（双精度浮点数，也可以为Epoch/Step（两者皆保证是整数）
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    double GetValue() const;
+
+                    /**
+                     * 设置训练上报的值。可以为训练指标（双精度浮点数，也可以为Epoch/Step（两者皆保证是整数）
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _value 训练上报的值。可以为训练指标（双精度浮点数，也可以为Epoch/Step（两者皆保证是整数）
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetValue(const double& _value);
+
+                    /**
+                     * 判断参数 Value 是否已赋值
+                     * @return Value 是否已赋值
+                     * 
+                     */
+                    bool ValueHasBeenSet() const;
+
                 private:
+
+                    /**
+                     * 时间戳
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    uint64_t m_timestamp;
+                    bool m_timestampHasBeenSet;
+
+                    /**
+                     * 训练上报的值。可以为训练指标（双精度浮点数，也可以为Epoch/Step（两者皆保证是整数）
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    double m_value;
+                    bool m_valueHasBeenSet;
 
                 };
             }

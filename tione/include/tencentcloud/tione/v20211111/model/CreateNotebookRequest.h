@@ -28,6 +28,7 @@
 #include <tencentcloud/tione/v20211111/model/DataConfig.h>
 #include <tencentcloud/tione/v20211111/model/ImageInfo.h>
 #include <tencentcloud/tione/v20211111/model/SSHConfig.h>
+#include <tencentcloud/tione/v20211111/model/GooseFS.h>
 
 
 namespace TencentCloud
@@ -269,30 +270,38 @@ POSTPAID_BY_HOUR：按小时后付费
 
                     /**
                      * 获取存储的类型。取值包含： 
-    FREE:    预付费的免费存储
-    CLOUD_PREMIUM： 高性能云硬盘
-    CLOUD_SSD： SSD云硬盘
-    CFS:     CFS存储，包含NFS和turbo
+FREE：预付费的免费存储
+CLOUD_PREMIUM：高性能云硬盘
+CLOUD_SSD：SSD云硬盘
+CFS：CFS存储
+CFS_TURBO：CFS Turbo存储
+GooseFSx：GooseFSx存储
                      * @return VolumeSourceType 存储的类型。取值包含： 
-    FREE:    预付费的免费存储
-    CLOUD_PREMIUM： 高性能云硬盘
-    CLOUD_SSD： SSD云硬盘
-    CFS:     CFS存储，包含NFS和turbo
+FREE：预付费的免费存储
+CLOUD_PREMIUM：高性能云硬盘
+CLOUD_SSD：SSD云硬盘
+CFS：CFS存储
+CFS_TURBO：CFS Turbo存储
+GooseFSx：GooseFSx存储
                      * 
                      */
                     std::string GetVolumeSourceType() const;
 
                     /**
                      * 设置存储的类型。取值包含： 
-    FREE:    预付费的免费存储
-    CLOUD_PREMIUM： 高性能云硬盘
-    CLOUD_SSD： SSD云硬盘
-    CFS:     CFS存储，包含NFS和turbo
+FREE：预付费的免费存储
+CLOUD_PREMIUM：高性能云硬盘
+CLOUD_SSD：SSD云硬盘
+CFS：CFS存储
+CFS_TURBO：CFS Turbo存储
+GooseFSx：GooseFSx存储
                      * @param _volumeSourceType 存储的类型。取值包含： 
-    FREE:    预付费的免费存储
-    CLOUD_PREMIUM： 高性能云硬盘
-    CLOUD_SSD： SSD云硬盘
-    CFS:     CFS存储，包含NFS和turbo
+FREE：预付费的免费存储
+CLOUD_PREMIUM：高性能云硬盘
+CLOUD_SSD：SSD云硬盘
+CFS：CFS存储
+CFS_TURBO：CFS Turbo存储
+GooseFSx：GooseFSx存储
                      * 
                      */
                     void SetVolumeSourceType(const std::string& _volumeSourceType);
@@ -305,15 +314,15 @@ POSTPAID_BY_HOUR：按小时后付费
                     bool VolumeSourceTypeHasBeenSet() const;
 
                     /**
-                     * 获取存储卷大小，单位GB
-                     * @return VolumeSizeInGB 存储卷大小，单位GB
+                     * 获取云硬盘存储卷大小，单位GB
+                     * @return VolumeSizeInGB 云硬盘存储卷大小，单位GB
                      * 
                      */
                     uint64_t GetVolumeSizeInGB() const;
 
                     /**
-                     * 设置存储卷大小，单位GB
-                     * @param _volumeSizeInGB 存储卷大小，单位GB
+                     * 设置云硬盘存储卷大小，单位GB
+                     * @param _volumeSizeInGB 云硬盘存储卷大小，单位GB
                      * 
                      */
                     void SetVolumeSizeInGB(const uint64_t& _volumeSizeInGB);
@@ -473,15 +482,15 @@ POSTPAID_BY_HOUR：按小时后付费
                     bool TagsHasBeenSet() const;
 
                     /**
-                     * 获取数据配置
-                     * @return DataConfigs 数据配置
+                     * 获取数据配置，只支持WEDATA_HDFS存储类型
+                     * @return DataConfigs 数据配置，只支持WEDATA_HDFS存储类型
                      * 
                      */
                     std::vector<DataConfig> GetDataConfigs() const;
 
                     /**
-                     * 设置数据配置
-                     * @param _dataConfigs 数据配置
+                     * 设置数据配置，只支持WEDATA_HDFS存储类型
+                     * @param _dataConfigs 数据配置，只支持WEDATA_HDFS存储类型
                      * 
                      */
                     void SetDataConfigs(const std::vector<DataConfig>& _dataConfigs);
@@ -515,15 +524,15 @@ POSTPAID_BY_HOUR：按小时后付费
                     bool ImageInfoHasBeenSet() const;
 
                     /**
-                     * 获取镜像类型
-                     * @return ImageType 镜像类型
+                     * 获取镜像类型，包括SYSTEM、TCR、CCR
+                     * @return ImageType 镜像类型，包括SYSTEM、TCR、CCR
                      * 
                      */
                     std::string GetImageType() const;
 
                     /**
-                     * 设置镜像类型
-                     * @param _imageType 镜像类型
+                     * 设置镜像类型，包括SYSTEM、TCR、CCR
+                     * @param _imageType 镜像类型，包括SYSTEM、TCR、CCR
                      * 
                      */
                     void SetImageType(const std::string& _imageType);
@@ -555,6 +564,27 @@ POSTPAID_BY_HOUR：按小时后付费
                      * 
                      */
                     bool SSHConfigHasBeenSet() const;
+
+                    /**
+                     * 获取GooseFS存储配置
+                     * @return VolumeSourceGooseFS GooseFS存储配置
+                     * 
+                     */
+                    GooseFS GetVolumeSourceGooseFS() const;
+
+                    /**
+                     * 设置GooseFS存储配置
+                     * @param _volumeSourceGooseFS GooseFS存储配置
+                     * 
+                     */
+                    void SetVolumeSourceGooseFS(const GooseFS& _volumeSourceGooseFS);
+
+                    /**
+                     * 判断参数 VolumeSourceGooseFS 是否已赋值
+                     * @return VolumeSourceGooseFS 是否已赋值
+                     * 
+                     */
+                    bool VolumeSourceGooseFSHasBeenSet() const;
 
                 private:
 
@@ -622,16 +652,18 @@ POSTPAID_BY_HOUR：按小时后付费
 
                     /**
                      * 存储的类型。取值包含： 
-    FREE:    预付费的免费存储
-    CLOUD_PREMIUM： 高性能云硬盘
-    CLOUD_SSD： SSD云硬盘
-    CFS:     CFS存储，包含NFS和turbo
+FREE：预付费的免费存储
+CLOUD_PREMIUM：高性能云硬盘
+CLOUD_SSD：SSD云硬盘
+CFS：CFS存储
+CFS_TURBO：CFS Turbo存储
+GooseFSx：GooseFSx存储
                      */
                     std::string m_volumeSourceType;
                     bool m_volumeSourceTypeHasBeenSet;
 
                     /**
-                     * 存储卷大小，单位GB
+                     * 云硬盘存储卷大小，单位GB
                      */
                     uint64_t m_volumeSizeInGB;
                     bool m_volumeSizeInGBHasBeenSet;
@@ -679,7 +711,7 @@ POSTPAID_BY_HOUR：按小时后付费
                     bool m_tagsHasBeenSet;
 
                     /**
-                     * 数据配置
+                     * 数据配置，只支持WEDATA_HDFS存储类型
                      */
                     std::vector<DataConfig> m_dataConfigs;
                     bool m_dataConfigsHasBeenSet;
@@ -691,7 +723,7 @@ POSTPAID_BY_HOUR：按小时后付费
                     bool m_imageInfoHasBeenSet;
 
                     /**
-                     * 镜像类型
+                     * 镜像类型，包括SYSTEM、TCR、CCR
                      */
                     std::string m_imageType;
                     bool m_imageTypeHasBeenSet;
@@ -701,6 +733,12 @@ POSTPAID_BY_HOUR：按小时后付费
                      */
                     SSHConfig m_sSHConfig;
                     bool m_sSHConfigHasBeenSet;
+
+                    /**
+                     * GooseFS存储配置
+                     */
+                    GooseFS m_volumeSourceGooseFS;
+                    bool m_volumeSourceGooseFSHasBeenSet;
 
                 };
             }

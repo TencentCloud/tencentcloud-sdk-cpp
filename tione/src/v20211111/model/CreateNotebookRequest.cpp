@@ -45,7 +45,8 @@ CreateNotebookRequest::CreateNotebookRequest() :
     m_dataConfigsHasBeenSet(false),
     m_imageInfoHasBeenSet(false),
     m_imageTypeHasBeenSet(false),
-    m_sSHConfigHasBeenSet(false)
+    m_sSHConfigHasBeenSet(false),
+    m_volumeSourceGooseFSHasBeenSet(false)
 {
 }
 
@@ -262,6 +263,15 @@ string CreateNotebookRequest::ToJsonString() const
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
         m_sSHConfig.ToJsonObject(d[key.c_str()], allocator);
+    }
+
+    if (m_volumeSourceGooseFSHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "VolumeSourceGooseFS";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_volumeSourceGooseFS.ToJsonObject(d[key.c_str()], allocator);
     }
 
 
@@ -638,6 +648,22 @@ void CreateNotebookRequest::SetSSHConfig(const SSHConfig& _sSHConfig)
 bool CreateNotebookRequest::SSHConfigHasBeenSet() const
 {
     return m_sSHConfigHasBeenSet;
+}
+
+GooseFS CreateNotebookRequest::GetVolumeSourceGooseFS() const
+{
+    return m_volumeSourceGooseFS;
+}
+
+void CreateNotebookRequest::SetVolumeSourceGooseFS(const GooseFS& _volumeSourceGooseFS)
+{
+    m_volumeSourceGooseFS = _volumeSourceGooseFS;
+    m_volumeSourceGooseFSHasBeenSet = true;
+}
+
+bool CreateNotebookRequest::VolumeSourceGooseFSHasBeenSet() const
+{
+    return m_volumeSourceGooseFSHasBeenSet;
 }
 
 

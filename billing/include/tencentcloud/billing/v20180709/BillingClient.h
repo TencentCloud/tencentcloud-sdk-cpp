@@ -73,6 +73,8 @@
 #include <tencentcloud/billing/v20180709/model/DescribeDosageCosDetailByDateResponse.h>
 #include <tencentcloud/billing/v20180709/model/DescribeDosageDetailByDateRequest.h>
 #include <tencentcloud/billing/v20180709/model/DescribeDosageDetailByDateResponse.h>
+#include <tencentcloud/billing/v20180709/model/DescribeDosageDetailListRequest.h>
+#include <tencentcloud/billing/v20180709/model/DescribeDosageDetailListResponse.h>
 #include <tencentcloud/billing/v20180709/model/DescribeSavingPlanCoverageRequest.h>
 #include <tencentcloud/billing/v20180709/model/DescribeSavingPlanCoverageResponse.h>
 #include <tencentcloud/billing/v20180709/model/DescribeSavingPlanOverviewRequest.h>
@@ -176,6 +178,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeDosageDetailByDateResponse> DescribeDosageDetailByDateOutcome;
                 typedef std::future<DescribeDosageDetailByDateOutcome> DescribeDosageDetailByDateOutcomeCallable;
                 typedef std::function<void(const BillingClient*, const Model::DescribeDosageDetailByDateRequest&, DescribeDosageDetailByDateOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeDosageDetailByDateAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeDosageDetailListResponse> DescribeDosageDetailListOutcome;
+                typedef std::future<DescribeDosageDetailListOutcome> DescribeDosageDetailListOutcomeCallable;
+                typedef std::function<void(const BillingClient*, const Model::DescribeDosageDetailListRequest&, DescribeDosageDetailListOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeDosageDetailListAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeSavingPlanCoverageResponse> DescribeSavingPlanCoverageOutcome;
                 typedef std::future<DescribeSavingPlanCoverageOutcome> DescribeSavingPlanCoverageOutcomeCallable;
                 typedef std::function<void(const BillingClient*, const Model::DescribeSavingPlanCoverageRequest&, DescribeSavingPlanCoverageOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeSavingPlanCoverageAsyncHandler;
@@ -428,6 +433,15 @@ namespace TencentCloud
                 DescribeDosageDetailByDateOutcome DescribeDosageDetailByDate(const Model::DescribeDosageDetailByDateRequest &request);
                 void DescribeDosageDetailByDateAsync(const Model::DescribeDosageDetailByDateRequest& request, const DescribeDosageDetailByDateAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DescribeDosageDetailByDateOutcomeCallable DescribeDosageDetailByDateCallable(const Model::DescribeDosageDetailByDateRequest& request);
+
+                /**
+                 *获取已接入标准用量明细模板产品的用量明细数据，目前已接入并支持查询的产品包括：云联络中心、实时音视频、实时音视频、智能媒资托管、CODING DevOps、全球IP应用加速
+                 * @param req DescribeDosageDetailListRequest
+                 * @return DescribeDosageDetailListOutcome
+                 */
+                DescribeDosageDetailListOutcome DescribeDosageDetailList(const Model::DescribeDosageDetailListRequest &request);
+                void DescribeDosageDetailListAsync(const Model::DescribeDosageDetailListRequest& request, const DescribeDosageDetailListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeDosageDetailListOutcomeCallable DescribeDosageDetailListCallable(const Model::DescribeDosageDetailListRequest& request);
 
                 /**
                  *查询当前用户节省计划覆盖率明细数据，如无特别说明，金额单位均为元（国内站）或者美元（国际站）。

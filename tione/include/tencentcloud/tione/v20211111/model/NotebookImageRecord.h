@@ -97,18 +97,18 @@ namespace TencentCloud
                     bool ImageUrlHasBeenSet() const;
 
                     /**
-                     * 获取状态
+                     * 获取状态。eg：creating导出中/success已完成/stopped已停止/fail异常
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return Status 状态
+                     * @return Status 状态。eg：creating导出中/success已完成/stopped已停止/fail异常
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetStatus() const;
 
                     /**
-                     * 设置状态
+                     * 设置状态。eg：creating导出中/success已完成/stopped已停止/fail异常
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _status 状态
+                     * @param _status 状态。eg：creating导出中/success已完成/stopped已停止/fail异常
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -238,7 +238,7 @@ namespace TencentCloud
                     bool m_imageUrlHasBeenSet;
 
                     /**
-                     * 状态
+                     * 状态。eg：creating导出中/success已完成/stopped已停止/fail异常
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_status;

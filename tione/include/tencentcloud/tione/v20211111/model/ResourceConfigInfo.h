@@ -69,15 +69,15 @@ namespace TencentCloud
                     bool RoleHasBeenSet() const;
 
                     /**
-                     * 获取cpu核数，1000=1核
-                     * @return Cpu cpu核数，1000=1核
+                     * 获取cpu核数，使用资源组时需配置。单位：1/1000，即1000=1核
+                     * @return Cpu cpu核数，使用资源组时需配置。单位：1/1000，即1000=1核
                      * 
                      */
                     uint64_t GetCpu() const;
 
                     /**
-                     * 设置cpu核数，1000=1核
-                     * @param _cpu cpu核数，1000=1核
+                     * 设置cpu核数，使用资源组时需配置。单位：1/1000，即1000=1核
+                     * @param _cpu cpu核数，使用资源组时需配置。单位：1/1000，即1000=1核
                      * 
                      */
                     void SetCpu(const uint64_t& _cpu);
@@ -90,15 +90,15 @@ namespace TencentCloud
                     bool CpuHasBeenSet() const;
 
                     /**
-                     * 获取内存，单位为MB
-                     * @return Memory 内存，单位为MB
+                     * 获取内存，使用资源组时需配置。单位为MB
+                     * @return Memory 内存，使用资源组时需配置。单位为MB
                      * 
                      */
                     uint64_t GetMemory() const;
 
                     /**
-                     * 设置内存，单位为MB
-                     * @param _memory 内存，单位为MB
+                     * 设置内存，使用资源组时需配置。单位为MB
+                     * @param _memory 内存，使用资源组时需配置。单位为MB
                      * 
                      */
                     void SetMemory(const uint64_t& _memory);
@@ -111,15 +111,15 @@ namespace TencentCloud
                     bool MemoryHasBeenSet() const;
 
                     /**
-                     * 获取gpu卡类型
-                     * @return GpuType gpu卡类型
+                     * 获取gpu卡类型，使用资源组时需配置
+                     * @return GpuType gpu卡类型，使用资源组时需配置
                      * 
                      */
                     std::string GetGpuType() const;
 
                     /**
-                     * 设置gpu卡类型
-                     * @param _gpuType gpu卡类型
+                     * 设置gpu卡类型，使用资源组时需配置
+                     * @param _gpuType gpu卡类型，使用资源组时需配置
                      * 
                      */
                     void SetGpuType(const std::string& _gpuType);
@@ -132,15 +132,15 @@ namespace TencentCloud
                     bool GpuTypeHasBeenSet() const;
 
                     /**
-                     * 获取gpu数
-                     * @return Gpu gpu数
+                     * 获取gpu卡数，使用资源组时需配置。单位：1/100，即100=1卡
+                     * @return Gpu gpu卡数，使用资源组时需配置。单位：1/100，即100=1卡
                      * 
                      */
                     uint64_t GetGpu() const;
 
                     /**
-                     * 设置gpu数
-                     * @param _gpu gpu数
+                     * 设置gpu卡数，使用资源组时需配置。单位：1/100，即100=1卡
+                     * @param _gpu gpu卡数，使用资源组时需配置。单位：1/100，即100=1卡
                      * 
                      */
                     void SetGpu(const uint64_t& _gpu);
@@ -385,25 +385,25 @@ TI.GN7.20XLARGE320.POST: 80C32
                     bool m_roleHasBeenSet;
 
                     /**
-                     * cpu核数，1000=1核
+                     * cpu核数，使用资源组时需配置。单位：1/1000，即1000=1核
                      */
                     uint64_t m_cpu;
                     bool m_cpuHasBeenSet;
 
                     /**
-                     * 内存，单位为MB
+                     * 内存，使用资源组时需配置。单位为MB
                      */
                     uint64_t m_memory;
                     bool m_memoryHasBeenSet;
 
                     /**
-                     * gpu卡类型
+                     * gpu卡类型，使用资源组时需配置
                      */
                     std::string m_gpuType;
                     bool m_gpuTypeHasBeenSet;
 
                     /**
-                     * gpu数
+                     * gpu卡数，使用资源组时需配置。单位：1/100，即100=1卡
                      */
                     uint64_t m_gpu;
                     bool m_gpuHasBeenSet;

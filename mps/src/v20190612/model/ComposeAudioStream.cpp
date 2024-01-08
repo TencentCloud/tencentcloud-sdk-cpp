@@ -23,7 +23,8 @@ using namespace std;
 ComposeAudioStream::ComposeAudioStream() :
     m_codecHasBeenSet(false),
     m_sampleRateHasBeenSet(false),
-    m_audioChannelHasBeenSet(false)
+    m_audioChannelHasBeenSet(false),
+    m_bitrateHasBeenSet(false)
 {
 }
 
@@ -62,6 +63,16 @@ CoreInternalOutcome ComposeAudioStream::Deserialize(const rapidjson::Value &valu
         m_audioChannelHasBeenSet = true;
     }
 
+    if (value.HasMember("Bitrate") && !value["Bitrate"].IsNull())
+    {
+        if (!value["Bitrate"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `ComposeAudioStream.Bitrate` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_bitrate = value["Bitrate"].GetInt64();
+        m_bitrateHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -91,6 +102,14 @@ void ComposeAudioStream::ToJsonObject(rapidjson::Value &value, rapidjson::Docume
         string key = "AudioChannel";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_audioChannel, allocator);
+    }
+
+    if (m_bitrateHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Bitrate";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_bitrate, allocator);
     }
 
 }
@@ -142,5 +161,21 @@ void ComposeAudioStream::SetAudioChannel(const int64_t& _audioChannel)
 bool ComposeAudioStream::AudioChannelHasBeenSet() const
 {
     return m_audioChannelHasBeenSet;
+}
+
+int64_t ComposeAudioStream::GetBitrate() const
+{
+    return m_bitrate;
+}
+
+void ComposeAudioStream::SetBitrate(const int64_t& _bitrate)
+{
+    m_bitrate = _bitrate;
+    m_bitrateHasBeenSet = true;
+}
+
+bool ComposeAudioStream::BitrateHasBeenSet() const
+{
+    return m_bitrateHasBeenSet;
 }
 

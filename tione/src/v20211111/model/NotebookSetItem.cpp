@@ -46,7 +46,8 @@ NotebookSetItem::NotebookSetItem() :
     m_volumeSourceCFSHasBeenSet(false),
     m_messageHasBeenSet(false),
     m_userTypesHasBeenSet(false),
-    m_sSHConfigHasBeenSet(false)
+    m_sSHConfigHasBeenSet(false),
+    m_volumeSourceGooseFSHasBeenSet(false)
 {
 }
 
@@ -352,6 +353,23 @@ CoreInternalOutcome NotebookSetItem::Deserialize(const rapidjson::Value &value)
         m_sSHConfigHasBeenSet = true;
     }
 
+    if (value.HasMember("VolumeSourceGooseFS") && !value["VolumeSourceGooseFS"].IsNull())
+    {
+        if (!value["VolumeSourceGooseFS"].IsObject())
+        {
+            return CoreInternalOutcome(Core::Error("response `NotebookSetItem.VolumeSourceGooseFS` is not object type").SetRequestId(requestId));
+        }
+
+        CoreInternalOutcome outcome = m_volumeSourceGooseFS.Deserialize(value["VolumeSourceGooseFS"]);
+        if (!outcome.IsSuccess())
+        {
+            outcome.GetError().SetRequestId(requestId);
+            return outcome;
+        }
+
+        m_volumeSourceGooseFSHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -585,6 +603,15 @@ void NotebookSetItem::ToJsonObject(rapidjson::Value &value, rapidjson::Document:
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
         m_sSHConfig.ToJsonObject(value[key.c_str()], allocator);
+    }
+
+    if (m_volumeSourceGooseFSHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "VolumeSourceGooseFS";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_volumeSourceGooseFS.ToJsonObject(value[key.c_str()], allocator);
     }
 
 }
@@ -1004,5 +1031,21 @@ void NotebookSetItem::SetSSHConfig(const SSHConfig& _sSHConfig)
 bool NotebookSetItem::SSHConfigHasBeenSet() const
 {
     return m_sSHConfigHasBeenSet;
+}
+
+GooseFS NotebookSetItem::GetVolumeSourceGooseFS() const
+{
+    return m_volumeSourceGooseFS;
+}
+
+void NotebookSetItem::SetVolumeSourceGooseFS(const GooseFS& _volumeSourceGooseFS)
+{
+    m_volumeSourceGooseFS = _volumeSourceGooseFS;
+    m_volumeSourceGooseFSHasBeenSet = true;
+}
+
+bool NotebookSetItem::VolumeSourceGooseFSHasBeenSet() const
+{
+    return m_volumeSourceGooseFSHasBeenSet;
 }
 

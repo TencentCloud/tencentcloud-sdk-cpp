@@ -21,7 +21,9 @@ using namespace TencentCloud::Tione::V20211111::Model;
 using namespace std;
 
 GooseFS::GooseFS() :
-    m_idHasBeenSet(false)
+    m_idHasBeenSet(false),
+    m_typeHasBeenSet(false),
+    m_pathHasBeenSet(false)
 {
 }
 
@@ -40,6 +42,26 @@ CoreInternalOutcome GooseFS::Deserialize(const rapidjson::Value &value)
         m_idHasBeenSet = true;
     }
 
+    if (value.HasMember("Type") && !value["Type"].IsNull())
+    {
+        if (!value["Type"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `GooseFS.Type` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_type = string(value["Type"].GetString());
+        m_typeHasBeenSet = true;
+    }
+
+    if (value.HasMember("Path") && !value["Path"].IsNull())
+    {
+        if (!value["Path"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `GooseFS.Path` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_path = string(value["Path"].GetString());
+        m_pathHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -53,6 +75,22 @@ void GooseFS::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Allocat
         string key = "Id";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_id.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_typeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Type";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_type.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_pathHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Path";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_path.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -72,5 +110,37 @@ void GooseFS::SetId(const string& _id)
 bool GooseFS::IdHasBeenSet() const
 {
     return m_idHasBeenSet;
+}
+
+string GooseFS::GetType() const
+{
+    return m_type;
+}
+
+void GooseFS::SetType(const string& _type)
+{
+    m_type = _type;
+    m_typeHasBeenSet = true;
+}
+
+bool GooseFS::TypeHasBeenSet() const
+{
+    return m_typeHasBeenSet;
+}
+
+string GooseFS::GetPath() const
+{
+    return m_path;
+}
+
+void GooseFS::SetPath(const string& _path)
+{
+    m_path = _path;
+    m_pathHasBeenSet = true;
+}
+
+bool GooseFS::PathHasBeenSet() const
+{
+    return m_pathHasBeenSet;
 }
 

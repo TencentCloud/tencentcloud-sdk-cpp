@@ -97,18 +97,18 @@ namespace TencentCloud
                     bool MemoryHasBeenSet() const;
 
                     /**
-                     * 获取gpu Gpu卡资源，单位为1单位的GpuType，例如GpuType=T4时，1 Gpu = 1/100 T4卡，GpuType=vcuda时，1 Gpu = 1/100 vcuda-core (for预付费)
+                     * 获取gpu Gpu卡资源，单位为1/100卡，例如GpuType=T4时，1 Gpu = 1/100 T4卡 (for预付费)
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return Gpu gpu Gpu卡资源，单位为1单位的GpuType，例如GpuType=T4时，1 Gpu = 1/100 T4卡，GpuType=vcuda时，1 Gpu = 1/100 vcuda-core (for预付费)
+                     * @return Gpu gpu Gpu卡资源，单位为1/100卡，例如GpuType=T4时，1 Gpu = 1/100 T4卡 (for预付费)
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     uint64_t GetGpu() const;
 
                     /**
-                     * 设置gpu Gpu卡资源，单位为1单位的GpuType，例如GpuType=T4时，1 Gpu = 1/100 T4卡，GpuType=vcuda时，1 Gpu = 1/100 vcuda-core (for预付费)
+                     * 设置gpu Gpu卡资源，单位为1/100卡，例如GpuType=T4时，1 Gpu = 1/100 T4卡 (for预付费)
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _gpu gpu Gpu卡资源，单位为1单位的GpuType，例如GpuType=T4时，1 Gpu = 1/100 T4卡，GpuType=vcuda时，1 Gpu = 1/100 vcuda-core (for预付费)
+                     * @param _gpu gpu Gpu卡资源，单位为1/100卡，例如GpuType=T4时，1 Gpu = 1/100 T4卡 (for预付费)
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -122,18 +122,18 @@ namespace TencentCloud
                     bool GpuHasBeenSet() const;
 
                     /**
-                     * 获取GpuType 卡类型 vcuda, T4,P4,V100等 (for预付费)
+                     * 获取GpuType 卡类型，参考资源组上对应的卡类型。eg: H800,A800,A100,T4,P4,V100等 (for预付费)
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return GpuType GpuType 卡类型 vcuda, T4,P4,V100等 (for预付费)
+                     * @return GpuType GpuType 卡类型，参考资源组上对应的卡类型。eg: H800,A800,A100,T4,P4,V100等 (for预付费)
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetGpuType() const;
 
                     /**
-                     * 设置GpuType 卡类型 vcuda, T4,P4,V100等 (for预付费)
+                     * 设置GpuType 卡类型，参考资源组上对应的卡类型。eg: H800,A800,A100,T4,P4,V100等 (for预付费)
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _gpuType GpuType 卡类型 vcuda, T4,P4,V100等 (for预付费)
+                     * @param _gpuType GpuType 卡类型，参考资源组上对应的卡类型。eg: H800,A800,A100,T4,P4,V100等 (for预付费)
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -252,14 +252,14 @@ TI.GN7.20XLARGE320.POST: 80C320G T4*4
                     bool m_memoryHasBeenSet;
 
                     /**
-                     * gpu Gpu卡资源，单位为1单位的GpuType，例如GpuType=T4时，1 Gpu = 1/100 T4卡，GpuType=vcuda时，1 Gpu = 1/100 vcuda-core (for预付费)
+                     * gpu Gpu卡资源，单位为1/100卡，例如GpuType=T4时，1 Gpu = 1/100 T4卡 (for预付费)
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     uint64_t m_gpu;
                     bool m_gpuHasBeenSet;
 
                     /**
-                     * GpuType 卡类型 vcuda, T4,P4,V100等 (for预付费)
+                     * GpuType 卡类型，参考资源组上对应的卡类型。eg: H800,A800,A100,T4,P4,V100等 (for预付费)
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_gpuType;

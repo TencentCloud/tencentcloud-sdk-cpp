@@ -96,6 +96,35 @@ namespace TencentCloud
                      */
                     bool FpsHasBeenSet() const;
 
+                    /**
+                     * 获取参考码率，单位 kbps，范围：50~35000。
+如果设置，编码时会尽量按该码率进行编码。
+如果不设置，服务将通过画面复杂度自动采用合适的码率。
+                     * @return Bitrate 参考码率，单位 kbps，范围：50~35000。
+如果设置，编码时会尽量按该码率进行编码。
+如果不设置，服务将通过画面复杂度自动采用合适的码率。
+                     * 
+                     */
+                    int64_t GetBitrate() const;
+
+                    /**
+                     * 设置参考码率，单位 kbps，范围：50~35000。
+如果设置，编码时会尽量按该码率进行编码。
+如果不设置，服务将通过画面复杂度自动采用合适的码率。
+                     * @param _bitrate 参考码率，单位 kbps，范围：50~35000。
+如果设置，编码时会尽量按该码率进行编码。
+如果不设置，服务将通过画面复杂度自动采用合适的码率。
+                     * 
+                     */
+                    void SetBitrate(const int64_t& _bitrate);
+
+                    /**
+                     * 判断参数 Bitrate 是否已赋值
+                     * @return Bitrate 是否已赋值
+                     * 
+                     */
+                    bool BitrateHasBeenSet() const;
+
                 private:
 
                     /**
@@ -111,6 +140,14 @@ namespace TencentCloud
                      */
                     int64_t m_fps;
                     bool m_fpsHasBeenSet;
+
+                    /**
+                     * 参考码率，单位 kbps，范围：50~35000。
+如果设置，编码时会尽量按该码率进行编码。
+如果不设置，服务将通过画面复杂度自动采用合适的码率。
+                     */
+                    int64_t m_bitrate;
+                    bool m_bitrateHasBeenSet;
 
                 };
             }

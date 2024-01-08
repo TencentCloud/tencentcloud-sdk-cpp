@@ -57,7 +57,9 @@ NotebookDetail::NotebookDetail() :
     m_messageHasBeenSet(false),
     m_dataSourceHasBeenSet(false),
     m_imageInfoHasBeenSet(false),
-    m_imageTypeHasBeenSet(false)
+    m_imageTypeHasBeenSet(false),
+    m_sSHConfigHasBeenSet(false),
+    m_volumeSourceGooseFSHasBeenSet(false)
 {
 }
 
@@ -490,6 +492,40 @@ CoreInternalOutcome NotebookDetail::Deserialize(const rapidjson::Value &value)
         m_imageTypeHasBeenSet = true;
     }
 
+    if (value.HasMember("SSHConfig") && !value["SSHConfig"].IsNull())
+    {
+        if (!value["SSHConfig"].IsObject())
+        {
+            return CoreInternalOutcome(Core::Error("response `NotebookDetail.SSHConfig` is not object type").SetRequestId(requestId));
+        }
+
+        CoreInternalOutcome outcome = m_sSHConfig.Deserialize(value["SSHConfig"]);
+        if (!outcome.IsSuccess())
+        {
+            outcome.GetError().SetRequestId(requestId);
+            return outcome;
+        }
+
+        m_sSHConfigHasBeenSet = true;
+    }
+
+    if (value.HasMember("VolumeSourceGooseFS") && !value["VolumeSourceGooseFS"].IsNull())
+    {
+        if (!value["VolumeSourceGooseFS"].IsObject())
+        {
+            return CoreInternalOutcome(Core::Error("response `NotebookDetail.VolumeSourceGooseFS` is not object type").SetRequestId(requestId));
+        }
+
+        CoreInternalOutcome outcome = m_volumeSourceGooseFS.Deserialize(value["VolumeSourceGooseFS"]);
+        if (!outcome.IsSuccess())
+        {
+            outcome.GetError().SetRequestId(requestId);
+            return outcome;
+        }
+
+        m_volumeSourceGooseFSHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -819,6 +855,24 @@ void NotebookDetail::ToJsonObject(rapidjson::Value &value, rapidjson::Document::
         string key = "ImageType";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_imageType.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_sSHConfigHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "SSHConfig";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_sSHConfig.ToJsonObject(value[key.c_str()], allocator);
+    }
+
+    if (m_volumeSourceGooseFSHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "VolumeSourceGooseFS";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_volumeSourceGooseFS.ToJsonObject(value[key.c_str()], allocator);
     }
 
 }
@@ -1414,5 +1468,37 @@ void NotebookDetail::SetImageType(const string& _imageType)
 bool NotebookDetail::ImageTypeHasBeenSet() const
 {
     return m_imageTypeHasBeenSet;
+}
+
+SSHConfig NotebookDetail::GetSSHConfig() const
+{
+    return m_sSHConfig;
+}
+
+void NotebookDetail::SetSSHConfig(const SSHConfig& _sSHConfig)
+{
+    m_sSHConfig = _sSHConfig;
+    m_sSHConfigHasBeenSet = true;
+}
+
+bool NotebookDetail::SSHConfigHasBeenSet() const
+{
+    return m_sSHConfigHasBeenSet;
+}
+
+GooseFS NotebookDetail::GetVolumeSourceGooseFS() const
+{
+    return m_volumeSourceGooseFS;
+}
+
+void NotebookDetail::SetVolumeSourceGooseFS(const GooseFS& _volumeSourceGooseFS)
+{
+    m_volumeSourceGooseFS = _volumeSourceGooseFS;
+    m_volumeSourceGooseFSHasBeenSet = true;
+}
+
+bool NotebookDetail::VolumeSourceGooseFSHasBeenSet() const
+{
+    return m_volumeSourceGooseFSHasBeenSet;
 }
 

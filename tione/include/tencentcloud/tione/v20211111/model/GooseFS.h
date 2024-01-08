@@ -71,6 +71,56 @@ namespace TencentCloud
                      */
                     bool IdHasBeenSet() const;
 
+                    /**
+                     * 获取GooseFS类型，包括GooseFS和GooseFSx
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return Type GooseFS类型，包括GooseFS和GooseFSx
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::string GetType() const;
+
+                    /**
+                     * 设置GooseFS类型，包括GooseFS和GooseFSx
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _type GooseFS类型，包括GooseFS和GooseFSx
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetType(const std::string& _type);
+
+                    /**
+                     * 判断参数 Type 是否已赋值
+                     * @return Type 是否已赋值
+                     * 
+                     */
+                    bool TypeHasBeenSet() const;
+
+                    /**
+                     * 获取GooseFSx实例需要挂载的路径
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return Path GooseFSx实例需要挂载的路径
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::string GetPath() const;
+
+                    /**
+                     * 设置GooseFSx实例需要挂载的路径
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _path GooseFSx实例需要挂载的路径
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetPath(const std::string& _path);
+
+                    /**
+                     * 判断参数 Path 是否已赋值
+                     * @return Path 是否已赋值
+                     * 
+                     */
+                    bool PathHasBeenSet() const;
+
                 private:
 
                     /**
@@ -79,6 +129,20 @@ namespace TencentCloud
                      */
                     std::string m_id;
                     bool m_idHasBeenSet;
+
+                    /**
+                     * GooseFS类型，包括GooseFS和GooseFSx
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_type;
+                    bool m_typeHasBeenSet;
+
+                    /**
+                     * GooseFSx实例需要挂载的路径
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_path;
+                    bool m_pathHasBeenSet;
 
                 };
             }

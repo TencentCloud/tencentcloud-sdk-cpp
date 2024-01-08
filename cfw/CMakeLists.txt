@@ -204,6 +204,7 @@ set(cfw_public_header_model
   include/tencentcloud/cfw/v20190904/model/DescribeRuleOverviewRequest.h
   include/tencentcloud/cfw/v20190904/model/DescribeDefenseSwitchResponse.h
   include/tencentcloud/cfw/v20190904/model/DescribeAcListsRequest.h
+  include/tencentcloud/cfw/v20190904/model/IdsWhiteInfo.h
   include/tencentcloud/cfw/v20190904/model/DescribeGuideScanInfoRequest.h
   include/tencentcloud/cfw/v20190904/model/SyncFwOperateRequest.h
   include/tencentcloud/cfw/v20190904/model/UnHandleEvent.h
@@ -485,6 +486,7 @@ set(cfw_src
   src/v20190904/model/DescribeRuleOverviewRequest.cpp
   src/v20190904/model/DescribeDefenseSwitchResponse.cpp
   src/v20190904/model/DescribeAcListsRequest.cpp
+  src/v20190904/model/IdsWhiteInfo.cpp
   src/v20190904/model/DescribeGuideScanInfoRequest.cpp
   src/v20190904/model/SyncFwOperateRequest.cpp
   src/v20190904/model/UnHandleEvent.cpp

@@ -48,14 +48,18 @@ namespace TencentCloud
 
                     /**
                      * 获取水印图片URL地址，支持png、jpg、jpeg格式。图片大小限制不超过5MB。
+注：您需要确保图片链接的可访问性，后台单次下载超时时间为10秒，最多重试3次，若最终图片下载失败，水印图片将不会生效。
                      * @return WaterMarkUrl 水印图片URL地址，支持png、jpg、jpeg格式。图片大小限制不超过5MB。
+注：您需要确保图片链接的可访问性，后台单次下载超时时间为10秒，最多重试3次，若最终图片下载失败，水印图片将不会生效。
                      * 
                      */
                     std::string GetWaterMarkUrl() const;
 
                     /**
                      * 设置水印图片URL地址，支持png、jpg、jpeg格式。图片大小限制不超过5MB。
+注：您需要确保图片链接的可访问性，后台单次下载超时时间为10秒，最多重试3次，若最终图片下载失败，水印图片将不会生效。
                      * @param _waterMarkUrl 水印图片URL地址，支持png、jpg、jpeg格式。图片大小限制不超过5MB。
+注：您需要确保图片链接的可访问性，后台单次下载超时时间为10秒，最多重试3次，若最终图片下载失败，水印图片将不会生效。
                      * 
                      */
                     void SetWaterMarkUrl(const std::string& _waterMarkUrl);
@@ -197,6 +201,7 @@ namespace TencentCloud
 
                     /**
                      * 水印图片URL地址，支持png、jpg、jpeg格式。图片大小限制不超过5MB。
+注：您需要确保图片链接的可访问性，后台单次下载超时时间为10秒，最多重试3次，若最终图片下载失败，水印图片将不会生效。
                      */
                     std::string m_waterMarkUrl;
                     bool m_waterMarkUrlHasBeenSet;

@@ -25,6 +25,7 @@ using namespace std;
 
 DescribeIdsWhiteRuleResponse::DescribeIdsWhiteRuleResponse() :
     m_totalHasBeenSet(false),
+    m_dataHasBeenSet(false),
     m_returnCodeHasBeenSet(false),
     m_returnMsgHasBeenSet(false)
 {
@@ -74,6 +75,26 @@ CoreInternalOutcome DescribeIdsWhiteRuleResponse::Deserialize(const string &payl
         m_totalHasBeenSet = true;
     }
 
+    if (rsp.HasMember("Data") && !rsp["Data"].IsNull())
+    {
+        if (!rsp["Data"].IsArray())
+            return CoreInternalOutcome(Core::Error("response `Data` is not array type"));
+
+        const rapidjson::Value &tmpValue = rsp["Data"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            IdsWhiteInfo item;
+            CoreInternalOutcome outcome = item.Deserialize(*itr);
+            if (!outcome.IsSuccess())
+            {
+                outcome.GetError().SetRequestId(requestId);
+                return outcome;
+            }
+            m_data.push_back(item);
+        }
+        m_dataHasBeenSet = true;
+    }
+
     if (rsp.HasMember("ReturnCode") && !rsp["ReturnCode"].IsNull())
     {
         if (!rsp["ReturnCode"].IsInt64())
@@ -112,6 +133,21 @@ string DescribeIdsWhiteRuleResponse::ToJsonString() const
         value.AddMember(iKey, m_total, allocator);
     }
 
+    if (m_dataHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Data";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_data.begin(); itr != m_data.end(); ++itr, ++i)
+        {
+            value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(value[key.c_str()][i], allocator);
+        }
+    }
+
     if (m_returnCodeHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
@@ -148,6 +184,16 @@ uint64_t DescribeIdsWhiteRuleResponse::GetTotal() const
 bool DescribeIdsWhiteRuleResponse::TotalHasBeenSet() const
 {
     return m_totalHasBeenSet;
+}
+
+vector<IdsWhiteInfo> DescribeIdsWhiteRuleResponse::GetData() const
+{
+    return m_data;
+}
+
+bool DescribeIdsWhiteRuleResponse::DataHasBeenSet() const
+{
+    return m_dataHasBeenSet;
 }
 
 int64_t DescribeIdsWhiteRuleResponse::GetReturnCode() const

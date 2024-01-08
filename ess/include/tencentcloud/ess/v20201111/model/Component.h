@@ -554,6 +554,12 @@ https://cloud.tencent.com/document/product/1323/78346#component-.E4.B8.89.E7.A7.
 <font color="red">ComponentType为SIGN_SEAL类型时</font>，支持以下参数：
 <ul><li> <b>PageRanges</b> :PageRange的数组，通过PageRanges属性设置该印章在PDF所有页面上盖章（适用于标书在所有页面盖章的情况）</li></ul>
 <b>参数样例</b>：` "{"PageRange":[{"BeginPage":1,"EndPage":-1}]}"`
+
+
+<font color="red">关键字模式下支持关键字找不到的情况下不进行报错的设置</font>
+<ul><li> <b>IgnoreKeywordError</b> :1-关键字查找不到时不进行报错</li></ul>
+场景说明：如果使用关键字进行定位，但是指定的PDF文件中又没有设置的关键字时，发起合同会进行关键字是否存在的校验，如果关键字不存在，会进行报错返回。如果不希望进行报错，可以设置"IgnoreKeywordError"来忽略错误。请注意，如果关键字签署控件对应的签署方在整个PDF文件中一个签署控件都没有，还是会触发报错逻辑。
+<b>参数样例</b>：` "{"IgnoreKeywordError":1}"`
                      * @return ComponentExtra **在所有的定位方式下**，控件的扩展参数，为<font color="red">JSON格式</font>，不同类型的控件会有部分非通用参数。
 
 <font color="red">ComponentType为TEXT、MULTI_LINE_TEXT时</font>，支持以下参数：
@@ -590,6 +596,12 @@ https://cloud.tencent.com/document/product/1323/78346#component-.E4.B8.89.E7.A7.
 <font color="red">ComponentType为SIGN_SEAL类型时</font>，支持以下参数：
 <ul><li> <b>PageRanges</b> :PageRange的数组，通过PageRanges属性设置该印章在PDF所有页面上盖章（适用于标书在所有页面盖章的情况）</li></ul>
 <b>参数样例</b>：` "{"PageRange":[{"BeginPage":1,"EndPage":-1}]}"`
+
+
+<font color="red">关键字模式下支持关键字找不到的情况下不进行报错的设置</font>
+<ul><li> <b>IgnoreKeywordError</b> :1-关键字查找不到时不进行报错</li></ul>
+场景说明：如果使用关键字进行定位，但是指定的PDF文件中又没有设置的关键字时，发起合同会进行关键字是否存在的校验，如果关键字不存在，会进行报错返回。如果不希望进行报错，可以设置"IgnoreKeywordError"来忽略错误。请注意，如果关键字签署控件对应的签署方在整个PDF文件中一个签署控件都没有，还是会触发报错逻辑。
+<b>参数样例</b>：` "{"IgnoreKeywordError":1}"`
                      * 
                      */
                     std::string GetComponentExtra() const;
@@ -631,6 +643,12 @@ https://cloud.tencent.com/document/product/1323/78346#component-.E4.B8.89.E7.A7.
 <font color="red">ComponentType为SIGN_SEAL类型时</font>，支持以下参数：
 <ul><li> <b>PageRanges</b> :PageRange的数组，通过PageRanges属性设置该印章在PDF所有页面上盖章（适用于标书在所有页面盖章的情况）</li></ul>
 <b>参数样例</b>：` "{"PageRange":[{"BeginPage":1,"EndPage":-1}]}"`
+
+
+<font color="red">关键字模式下支持关键字找不到的情况下不进行报错的设置</font>
+<ul><li> <b>IgnoreKeywordError</b> :1-关键字查找不到时不进行报错</li></ul>
+场景说明：如果使用关键字进行定位，但是指定的PDF文件中又没有设置的关键字时，发起合同会进行关键字是否存在的校验，如果关键字不存在，会进行报错返回。如果不希望进行报错，可以设置"IgnoreKeywordError"来忽略错误。请注意，如果关键字签署控件对应的签署方在整个PDF文件中一个签署控件都没有，还是会触发报错逻辑。
+<b>参数样例</b>：` "{"IgnoreKeywordError":1}"`
                      * @param _componentExtra **在所有的定位方式下**，控件的扩展参数，为<font color="red">JSON格式</font>，不同类型的控件会有部分非通用参数。
 
 <font color="red">ComponentType为TEXT、MULTI_LINE_TEXT时</font>，支持以下参数：
@@ -667,6 +685,12 @@ https://cloud.tencent.com/document/product/1323/78346#component-.E4.B8.89.E7.A7.
 <font color="red">ComponentType为SIGN_SEAL类型时</font>，支持以下参数：
 <ul><li> <b>PageRanges</b> :PageRange的数组，通过PageRanges属性设置该印章在PDF所有页面上盖章（适用于标书在所有页面盖章的情况）</li></ul>
 <b>参数样例</b>：` "{"PageRange":[{"BeginPage":1,"EndPage":-1}]}"`
+
+
+<font color="red">关键字模式下支持关键字找不到的情况下不进行报错的设置</font>
+<ul><li> <b>IgnoreKeywordError</b> :1-关键字查找不到时不进行报错</li></ul>
+场景说明：如果使用关键字进行定位，但是指定的PDF文件中又没有设置的关键字时，发起合同会进行关键字是否存在的校验，如果关键字不存在，会进行报错返回。如果不希望进行报错，可以设置"IgnoreKeywordError"来忽略错误。请注意，如果关键字签署控件对应的签署方在整个PDF文件中一个签署控件都没有，还是会触发报错逻辑。
+<b>参数样例</b>：` "{"IgnoreKeywordError":1}"`
                      * 
                      */
                     void SetComponentExtra(const std::string& _componentExtra);
@@ -1271,6 +1295,12 @@ https://cloud.tencent.com/document/product/1323/78346#component-.E4.B8.89.E7.A7.
 <font color="red">ComponentType为SIGN_SEAL类型时</font>，支持以下参数：
 <ul><li> <b>PageRanges</b> :PageRange的数组，通过PageRanges属性设置该印章在PDF所有页面上盖章（适用于标书在所有页面盖章的情况）</li></ul>
 <b>参数样例</b>：` "{"PageRange":[{"BeginPage":1,"EndPage":-1}]}"`
+
+
+<font color="red">关键字模式下支持关键字找不到的情况下不进行报错的设置</font>
+<ul><li> <b>IgnoreKeywordError</b> :1-关键字查找不到时不进行报错</li></ul>
+场景说明：如果使用关键字进行定位，但是指定的PDF文件中又没有设置的关键字时，发起合同会进行关键字是否存在的校验，如果关键字不存在，会进行报错返回。如果不希望进行报错，可以设置"IgnoreKeywordError"来忽略错误。请注意，如果关键字签署控件对应的签署方在整个PDF文件中一个签署控件都没有，还是会触发报错逻辑。
+<b>参数样例</b>：` "{"IgnoreKeywordError":1}"`
                      */
                     std::string m_componentExtra;
                     bool m_componentExtraHasBeenSet;

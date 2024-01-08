@@ -178,6 +178,31 @@ namespace TencentCloud
                      */
                     bool OutputHasBeenSet() const;
 
+                    /**
+                     * 获取任务进度。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return Progress 任务进度。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    uint64_t GetProgress() const;
+
+                    /**
+                     * 设置任务进度。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _progress 任务进度。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetProgress(const uint64_t& _progress);
+
+                    /**
+                     * 判断参数 Progress 是否已赋值
+                     * @return Progress 是否已赋值
+                     * 
+                     */
+                    bool ProgressHasBeenSet() const;
+
                 private:
 
                     /**
@@ -216,6 +241,13 @@ namespace TencentCloud
                      */
                     AiRecognitionTaskAsrFullTextResultOutput m_output;
                     bool m_outputHasBeenSet;
+
+                    /**
+                     * 任务进度。
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    uint64_t m_progress;
+                    bool m_progressHasBeenSet;
 
                 };
             }

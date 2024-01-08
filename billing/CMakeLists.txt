@@ -43,11 +43,13 @@ set(billing_public_header_model
   include/tencentcloud/billing/v20180709/model/DescribeSavingPlanOverviewResponse.h
   include/tencentcloud/billing/v20180709/model/BillDistributionResourceSummary.h
   include/tencentcloud/billing/v20180709/model/BusinessSummaryInfo.h
+  include/tencentcloud/billing/v20180709/model/DescribeDosageDetailListResponse.h
   include/tencentcloud/billing/v20180709/model/DescribeBillSummaryByProductRequest.h
   include/tencentcloud/billing/v20180709/model/DescribeVoucherUsageDetailsResponse.h
   include/tencentcloud/billing/v20180709/model/ConsumptionSummaryTotal.h
   include/tencentcloud/billing/v20180709/model/SavingPlanCoverageDetail.h
   include/tencentcloud/billing/v20180709/model/DescribeCostDetailResponse.h
+  include/tencentcloud/billing/v20180709/model/UsageRecords.h
   include/tencentcloud/billing/v20180709/model/VoucherInfos.h
   include/tencentcloud/billing/v20180709/model/DescribeCostSummaryByProjectResponse.h
   include/tencentcloud/billing/v20180709/model/DescribeBillSummaryByTagResponse.h
@@ -77,6 +79,7 @@ set(billing_public_header_model
   include/tencentcloud/billing/v20180709/model/SummaryTotal.h
   include/tencentcloud/billing/v20180709/model/BusinessSummaryTotal.h
   include/tencentcloud/billing/v20180709/model/CostComponentSet.h
+  include/tencentcloud/billing/v20180709/model/JsonObject.h
   include/tencentcloud/billing/v20180709/model/DetailPoint.h
   include/tencentcloud/billing/v20180709/model/DescribeBillSummaryResponse.h
   include/tencentcloud/billing/v20180709/model/BillResourceSummary.h
@@ -119,7 +122,7 @@ set(billing_public_header_model
   include/tencentcloud/billing/v20180709/model/DescribeAccountBalanceResponse.h
   include/tencentcloud/billing/v20180709/model/BusinessSummaryOverviewItem.h
   include/tencentcloud/billing/v20180709/model/DescribeSavingPlanUsageResponse.h
-  include/tencentcloud/billing/v20180709/model/UsageRecords.h
+  include/tencentcloud/billing/v20180709/model/DescribeDosageDetailListRequest.h
   include/tencentcloud/billing/v20180709/model/DescribeSavingPlanCoverageResponse.h
   include/tencentcloud/billing/v20180709/model/DescribeVoucherInfoRequest.h
   include/tencentcloud/billing/v20180709/model/DescribeSavingPlanUsageRequest.h
@@ -129,6 +132,7 @@ set(billing_public_header_model
   include/tencentcloud/billing/v20180709/model/ConditionProject.h
   include/tencentcloud/billing/v20180709/model/DescribeTagListResponse.h
   include/tencentcloud/billing/v20180709/model/CosDetailSets.h
+  include/tencentcloud/billing/v20180709/model/DescribeDosageDetail.h
   include/tencentcloud/billing/v20180709/model/ProjectSummaryOverviewItem.h
   include/tencentcloud/billing/v20180709/model/DescribeCostSummaryByRegionResponse.h
   )
@@ -159,11 +163,13 @@ set(billing_src
   src/v20180709/model/DescribeSavingPlanOverviewResponse.cpp
   src/v20180709/model/BillDistributionResourceSummary.cpp
   src/v20180709/model/BusinessSummaryInfo.cpp
+  src/v20180709/model/DescribeDosageDetailListResponse.cpp
   src/v20180709/model/DescribeBillSummaryByProductRequest.cpp
   src/v20180709/model/DescribeVoucherUsageDetailsResponse.cpp
   src/v20180709/model/ConsumptionSummaryTotal.cpp
   src/v20180709/model/SavingPlanCoverageDetail.cpp
   src/v20180709/model/DescribeCostDetailResponse.cpp
+  src/v20180709/model/UsageRecords.cpp
   src/v20180709/model/VoucherInfos.cpp
   src/v20180709/model/DescribeCostSummaryByProjectResponse.cpp
   src/v20180709/model/DescribeBillSummaryByTagResponse.cpp
@@ -193,6 +199,7 @@ set(billing_src
   src/v20180709/model/SummaryTotal.cpp
   src/v20180709/model/BusinessSummaryTotal.cpp
   src/v20180709/model/CostComponentSet.cpp
+  src/v20180709/model/JsonObject.cpp
   src/v20180709/model/DetailPoint.cpp
   src/v20180709/model/DescribeBillSummaryResponse.cpp
   src/v20180709/model/BillResourceSummary.cpp
@@ -235,7 +242,7 @@ set(billing_src
   src/v20180709/model/DescribeAccountBalanceResponse.cpp
   src/v20180709/model/BusinessSummaryOverviewItem.cpp
   src/v20180709/model/DescribeSavingPlanUsageResponse.cpp
-  src/v20180709/model/UsageRecords.cpp
+  src/v20180709/model/DescribeDosageDetailListRequest.cpp
   src/v20180709/model/DescribeSavingPlanCoverageResponse.cpp
   src/v20180709/model/DescribeVoucherInfoRequest.cpp
   src/v20180709/model/DescribeSavingPlanUsageRequest.cpp
@@ -245,6 +252,7 @@ set(billing_src
   src/v20180709/model/ConditionProject.cpp
   src/v20180709/model/DescribeTagListResponse.cpp
   src/v20180709/model/CosDetailSets.cpp
+  src/v20180709/model/DescribeDosageDetail.cpp
   src/v20180709/model/ProjectSummaryOverviewItem.cpp
   src/v20180709/model/DescribeCostSummaryByRegionResponse.cpp
   )

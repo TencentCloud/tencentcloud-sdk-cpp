@@ -307,15 +307,15 @@ POSTPAID_BY_HOUR 按量计费
                     bool TrainingModeHasBeenSet() const;
 
                     /**
-                     * 获取数据配置，依赖DataSource字段
-                     * @return DataConfigs 数据配置，依赖DataSource字段
+                     * 获取数据配置，依赖DataSource字段，数量不超过10个
+                     * @return DataConfigs 数据配置，依赖DataSource字段，数量不超过10个
                      * 
                      */
                     std::vector<DataConfig> GetDataConfigs() const;
 
                     /**
-                     * 设置数据配置，依赖DataSource字段
-                     * @param _dataConfigs 数据配置，依赖DataSource字段
+                     * 设置数据配置，依赖DataSource字段，数量不超过10个
+                     * @param _dataConfigs 数据配置，依赖DataSource字段，数量不超过10个
                      * 
                      */
                     void SetDataConfigs(const std::vector<DataConfig>& _dataConfigs);
@@ -412,15 +412,15 @@ POSTPAID_BY_HOUR 按量计费
                     bool LogConfigHasBeenSet() const;
 
                     /**
-                     * 获取调优参数
-                     * @return TuningParameters 调优参数
+                     * 获取调优参数，不超过2048个字符
+                     * @return TuningParameters 调优参数，不超过2048个字符
                      * 
                      */
                     std::string GetTuningParameters() const;
 
                     /**
-                     * 设置调优参数
-                     * @param _tuningParameters 调优参数
+                     * 设置调优参数，不超过2048个字符
+                     * @param _tuningParameters 调优参数，不超过2048个字符
                      * 
                      */
                     void SetTuningParameters(const std::string& _tuningParameters);
@@ -454,15 +454,15 @@ POSTPAID_BY_HOUR 按量计费
                     bool LogEnableHasBeenSet() const;
 
                     /**
-                     * 获取备注，最多500个字
-                     * @return Remark 备注，最多500个字
+                     * 获取备注，不超过1024个字符
+                     * @return Remark 备注，不超过1024个字符
                      * 
                      */
                     std::string GetRemark() const;
 
                     /**
-                     * 设置备注，最多500个字
-                     * @param _remark 备注，最多500个字
+                     * 设置备注，不超过1024个字符
+                     * @param _remark 备注，不超过1024个字符
                      * 
                      */
                     void SetRemark(const std::string& _remark);
@@ -475,15 +475,15 @@ POSTPAID_BY_HOUR 按量计费
                     bool RemarkHasBeenSet() const;
 
                     /**
-                     * 获取数据来源，eg：DATASET、COS、CFS、HDFS
-                     * @return DataSource 数据来源，eg：DATASET、COS、CFS、HDFS
+                     * 获取数据来源，eg：DATASET、COS、CFS、CFSTurbo、HDFS、GooseFSx
+                     * @return DataSource 数据来源，eg：DATASET、COS、CFS、CFSTurbo、HDFS、GooseFSx
                      * 
                      */
                     std::string GetDataSource() const;
 
                     /**
-                     * 设置数据来源，eg：DATASET、COS、CFS、HDFS
-                     * @param _dataSource 数据来源，eg：DATASET、COS、CFS、HDFS
+                     * 设置数据来源，eg：DATASET、COS、CFS、CFSTurbo、HDFS、GooseFSx
+                     * @param _dataSource 数据来源，eg：DATASET、COS、CFS、CFSTurbo、HDFS、GooseFSx
                      * 
                      */
                     void SetDataSource(const std::string& _dataSource);
@@ -613,7 +613,7 @@ POSTPAID_BY_HOUR 按量计费
                     bool m_trainingModeHasBeenSet;
 
                     /**
-                     * 数据配置，依赖DataSource字段
+                     * 数据配置，依赖DataSource字段，数量不超过10个
                      */
                     std::vector<DataConfig> m_dataConfigs;
                     bool m_dataConfigsHasBeenSet;
@@ -643,7 +643,7 @@ POSTPAID_BY_HOUR 按量计费
                     bool m_logConfigHasBeenSet;
 
                     /**
-                     * 调优参数
+                     * 调优参数，不超过2048个字符
                      */
                     std::string m_tuningParameters;
                     bool m_tuningParametersHasBeenSet;
@@ -655,13 +655,13 @@ POSTPAID_BY_HOUR 按量计费
                     bool m_logEnableHasBeenSet;
 
                     /**
-                     * 备注，最多500个字
+                     * 备注，不超过1024个字符
                      */
                     std::string m_remark;
                     bool m_remarkHasBeenSet;
 
                     /**
-                     * 数据来源，eg：DATASET、COS、CFS、HDFS
+                     * 数据来源，eg：DATASET、COS、CFS、CFSTurbo、HDFS、GooseFSx
                      */
                     std::string m_dataSource;
                     bool m_dataSourceHasBeenSet;

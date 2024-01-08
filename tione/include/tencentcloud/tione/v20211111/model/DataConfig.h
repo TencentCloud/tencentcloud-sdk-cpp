@@ -74,18 +74,18 @@ namespace TencentCloud
                     bool MappingPathHasBeenSet() const;
 
                     /**
-                     * 获取DATASET、COS、CFS、HDFS、WEDATA_HDFS
+                     * 获取DATASET、COS、CFS、CFSTurbo、GooseFSx、HDFS、WEDATA_HDFS
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return DataSourceType DATASET、COS、CFS、HDFS、WEDATA_HDFS
+                     * @return DataSourceType DATASET、COS、CFS、CFSTurbo、GooseFSx、HDFS、WEDATA_HDFS
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetDataSourceType() const;
 
                     /**
-                     * 设置DATASET、COS、CFS、HDFS、WEDATA_HDFS
+                     * 设置DATASET、COS、CFS、CFSTurbo、GooseFSx、HDFS、WEDATA_HDFS
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _dataSourceType DATASET、COS、CFS、HDFS、WEDATA_HDFS
+                     * @param _dataSourceType DATASET、COS、CFS、CFSTurbo、GooseFSx、HDFS、WEDATA_HDFS
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -257,7 +257,7 @@ namespace TencentCloud
                     bool m_mappingPathHasBeenSet;
 
                     /**
-                     * DATASET、COS、CFS、HDFS、WEDATA_HDFS
+                     * DATASET、COS、CFS、CFSTurbo、GooseFSx、HDFS、WEDATA_HDFS
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_dataSourceType;

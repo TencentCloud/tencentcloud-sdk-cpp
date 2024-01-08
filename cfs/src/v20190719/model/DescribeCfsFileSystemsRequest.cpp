@@ -27,7 +27,8 @@ DescribeCfsFileSystemsRequest::DescribeCfsFileSystemsRequest() :
     m_vpcIdHasBeenSet(false),
     m_subnetIdHasBeenSet(false),
     m_offsetHasBeenSet(false),
-    m_limitHasBeenSet(false)
+    m_limitHasBeenSet(false),
+    m_creationTokenHasBeenSet(false)
 {
 }
 
@@ -76,6 +77,14 @@ string DescribeCfsFileSystemsRequest::ToJsonString() const
         string key = "Limit";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_limit, allocator);
+    }
+
+    if (m_creationTokenHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "CreationToken";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_creationToken.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -164,6 +173,22 @@ void DescribeCfsFileSystemsRequest::SetLimit(const uint64_t& _limit)
 bool DescribeCfsFileSystemsRequest::LimitHasBeenSet() const
 {
     return m_limitHasBeenSet;
+}
+
+string DescribeCfsFileSystemsRequest::GetCreationToken() const
+{
+    return m_creationToken;
+}
+
+void DescribeCfsFileSystemsRequest::SetCreationToken(const string& _creationToken)
+{
+    m_creationToken = _creationToken;
+    m_creationTokenHasBeenSet = true;
+}
+
+bool DescribeCfsFileSystemsRequest::CreationTokenHasBeenSet() const
+{
+    return m_creationTokenHasBeenSet;
 }
 
 
