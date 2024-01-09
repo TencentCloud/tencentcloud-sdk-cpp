@@ -84,6 +84,48 @@ namespace TencentCloud
                      */
                     bool DbTypeHasBeenSet() const;
 
+                    /**
+                     * 获取实例退还原因类型
+                     * @return IsolateReasonTypes 实例退还原因类型
+                     * 
+                     */
+                    std::vector<int64_t> GetIsolateReasonTypes() const;
+
+                    /**
+                     * 设置实例退还原因类型
+                     * @param _isolateReasonTypes 实例退还原因类型
+                     * 
+                     */
+                    void SetIsolateReasonTypes(const std::vector<int64_t>& _isolateReasonTypes);
+
+                    /**
+                     * 判断参数 IsolateReasonTypes 是否已赋值
+                     * @return IsolateReasonTypes 是否已赋值
+                     * 
+                     */
+                    bool IsolateReasonTypesHasBeenSet() const;
+
+                    /**
+                     * 获取实例退还原因补充
+                     * @return IsolateReason 实例退还原因补充
+                     * 
+                     */
+                    std::string GetIsolateReason() const;
+
+                    /**
+                     * 设置实例退还原因补充
+                     * @param _isolateReason 实例退还原因补充
+                     * 
+                     */
+                    void SetIsolateReason(const std::string& _isolateReason);
+
+                    /**
+                     * 判断参数 IsolateReason 是否已赋值
+                     * @return IsolateReason 是否已赋值
+                     * 
+                     */
+                    bool IsolateReasonHasBeenSet() const;
+
                 private:
 
                     /**
@@ -97,6 +139,18 @@ namespace TencentCloud
                      */
                     std::string m_dbType;
                     bool m_dbTypeHasBeenSet;
+
+                    /**
+                     * 实例退还原因类型
+                     */
+                    std::vector<int64_t> m_isolateReasonTypes;
+                    bool m_isolateReasonTypesHasBeenSet;
+
+                    /**
+                     * 实例退还原因补充
+                     */
+                    std::string m_isolateReason;
+                    bool m_isolateReasonHasBeenSet;
 
                 };
             }

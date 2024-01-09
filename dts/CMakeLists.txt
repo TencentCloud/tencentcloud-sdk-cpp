@@ -23,44 +23,60 @@ set(dts_public_header_model
   include/tencentcloud/dts/v20211206/model/ModifyCompareTaskResponse.h
   include/tencentcloud/dts/v20211206/model/DescribeSyncJobsResponse.h
   include/tencentcloud/dts/v20211206/model/ModifyMigrationJobResponse.h
+  include/tencentcloud/dts/v20211206/model/ResetConsumerGroupOffsetResponse.h
   include/tencentcloud/dts/v20211206/model/ModifyMigrateRateLimitResponse.h
+  include/tencentcloud/dts/v20211206/model/IsolateMigrateJobResponse.h
   include/tencentcloud/dts/v20211206/model/ModifyMigrateJobSpecRequest.h
-  include/tencentcloud/dts/v20211206/model/StartMigrateJobRequest.h
+  include/tencentcloud/dts/v20211206/model/IsolateSubscribeResponse.h
+  include/tencentcloud/dts/v20211206/model/ModifyConsumerGroupPasswordRequest.h
   include/tencentcloud/dts/v20211206/model/StepTip.h
   include/tencentcloud/dts/v20211206/model/ModifySyncRateLimitResponse.h
   include/tencentcloud/dts/v20211206/model/DestroyMigrateJobRequest.h
+  include/tencentcloud/dts/v20211206/model/ModifySubscribeNameRequest.h
+  include/tencentcloud/dts/v20211206/model/OffsetTimeMap.h
   include/tencentcloud/dts/v20211206/model/SkipCheckItemResponse.h
-  include/tencentcloud/dts/v20211206/model/IsolateMigrateJobRequest.h
+  include/tencentcloud/dts/v20211206/model/ResumeSyncJobRequest.h
+  include/tencentcloud/dts/v20211206/model/PartitionAssignment.h
   include/tencentcloud/dts/v20211206/model/ResizeSyncJobResponse.h
+  include/tencentcloud/dts/v20211206/model/CreateSubscribeCheckJobRequest.h
   include/tencentcloud/dts/v20211206/model/ResumeMigrateJobResponse.h
   include/tencentcloud/dts/v20211206/model/DifferenceItem.h
   include/tencentcloud/dts/v20211206/model/CreateModifyCheckSyncJobRequest.h
   include/tencentcloud/dts/v20211206/model/IsolateSyncJobRequest.h
   include/tencentcloud/dts/v20211206/model/PauseMigrateJobRequest.h
   include/tencentcloud/dts/v20211206/model/ContinueMigrateJobRequest.h
+  include/tencentcloud/dts/v20211206/model/ResetConsumerGroupOffsetRequest.h
   include/tencentcloud/dts/v20211206/model/ModifySyncRateLimitRequest.h
   include/tencentcloud/dts/v20211206/model/DescribeCheckSyncJobResultRequest.h
+  include/tencentcloud/dts/v20211206/model/ModifySubscribeAutoRenewFlagResponse.h
   include/tencentcloud/dts/v20211206/model/DestroySyncJobResponse.h
-  include/tencentcloud/dts/v20211206/model/DescribeCompareReportResponse.h
-  include/tencentcloud/dts/v20211206/model/Endpoint.h
+  include/tencentcloud/dts/v20211206/model/ErrorInfoItem.h
+  include/tencentcloud/dts/v20211206/model/IsolateMigrateJobRequest.h
   include/tencentcloud/dts/v20211206/model/StopMigrateJobResponse.h
   include/tencentcloud/dts/v20211206/model/TableItem.h
+  include/tencentcloud/dts/v20211206/model/SubscribeInfo.h
   include/tencentcloud/dts/v20211206/model/ModifyCompareTaskNameRequest.h
   include/tencentcloud/dts/v20211206/model/CompleteMigrateJobResponse.h
   include/tencentcloud/dts/v20211206/model/DescribeMigrateDBInstancesResponse.h
   include/tencentcloud/dts/v20211206/model/KeyValuePairOption.h
   include/tencentcloud/dts/v20211206/model/CreateCheckSyncJobRequest.h
   include/tencentcloud/dts/v20211206/model/DescribeModifyCheckSyncJobResultResponse.h
-  include/tencentcloud/dts/v20211206/model/StopSyncJobRequest.h
+  include/tencentcloud/dts/v20211206/model/StartSubscribeResponse.h
+  include/tencentcloud/dts/v20211206/model/DescribeSubscribeReturnableRequest.h
   include/tencentcloud/dts/v20211206/model/DescribeMigrationDetailRequest.h
-  include/tencentcloud/dts/v20211206/model/DestroySyncJobRequest.h
+  include/tencentcloud/dts/v20211206/model/CreateConsumerGroupRequest.h
   include/tencentcloud/dts/v20211206/model/ResizeSyncJobRequest.h
+  include/tencentcloud/dts/v20211206/model/ModifySubscribeNameResponse.h
   include/tencentcloud/dts/v20211206/model/DdlOption.h
   include/tencentcloud/dts/v20211206/model/ConflictHandleOption.h
+  include/tencentcloud/dts/v20211206/model/PipelineInfo.h
   include/tencentcloud/dts/v20211206/model/ResumeSyncJobResponse.h
+  include/tencentcloud/dts/v20211206/model/RecoverMigrateJobResponse.h
   include/tencentcloud/dts/v20211206/model/ModifyCompareTaskNameResponse.h
   include/tencentcloud/dts/v20211206/model/StartSyncJobRequest.h
+  include/tencentcloud/dts/v20211206/model/StartSubscribeRequest.h
   include/tencentcloud/dts/v20211206/model/ModifyMigrateRuntimeAttributeResponse.h
+  include/tencentcloud/dts/v20211206/model/DescribeOffsetByTimeResponse.h
   include/tencentcloud/dts/v20211206/model/PauseSyncJobRequest.h
   include/tencentcloud/dts/v20211206/model/CreateMigrateCheckJobResponse.h
   include/tencentcloud/dts/v20211206/model/ModifySyncJobConfigRequest.h
@@ -68,24 +84,39 @@ set(dts_public_header_model
   include/tencentcloud/dts/v20211206/model/CreateMigrationServiceRequest.h
   include/tencentcloud/dts/v20211206/model/DetailCheckItem.h
   include/tencentcloud/dts/v20211206/model/DescribeCompareTasksRequest.h
+  include/tencentcloud/dts/v20211206/model/DestroyIsolatedSubscribeRequest.h
+  include/tencentcloud/dts/v20211206/model/ResetSubscribeResponse.h
   include/tencentcloud/dts/v20211206/model/CompareObject.h
-  include/tencentcloud/dts/v20211206/model/ErrorInfoItem.h
+  include/tencentcloud/dts/v20211206/model/DescribeCompareReportResponse.h
   include/tencentcloud/dts/v20211206/model/RecoverSyncJobResponse.h
   include/tencentcloud/dts/v20211206/model/MigrateAction.h
+  include/tencentcloud/dts/v20211206/model/ConfigureSubscribeJobResponse.h
+  include/tencentcloud/dts/v20211206/model/DescribeConsumerGroupsRequest.h
+  include/tencentcloud/dts/v20211206/model/GroupInfo.h
   include/tencentcloud/dts/v20211206/model/DeleteCompareTaskResponse.h
   include/tencentcloud/dts/v20211206/model/DBEndpointInfo.h
+  include/tencentcloud/dts/v20211206/model/ResumeSubscribeRequest.h
+  include/tencentcloud/dts/v20211206/model/ModifySyncJobConfigResponse.h
   include/tencentcloud/dts/v20211206/model/CompareColumnItem.h
+  include/tencentcloud/dts/v20211206/model/DescribeSubscribeDetailResponse.h
   include/tencentcloud/dts/v20211206/model/ContinueSyncJobResponse.h
+  include/tencentcloud/dts/v20211206/model/TradeInfo.h
   include/tencentcloud/dts/v20211206/model/Options.h
+  include/tencentcloud/dts/v20211206/model/DeleteConsumerGroupRequest.h
+  include/tencentcloud/dts/v20211206/model/ModifySubscribeAutoRenewFlagRequest.h
   include/tencentcloud/dts/v20211206/model/CompleteMigrateJobRequest.h
-  include/tencentcloud/dts/v20211206/model/DescribeCompareTasksResponse.h
+  include/tencentcloud/dts/v20211206/model/CreateConsumerGroupResponse.h
   include/tencentcloud/dts/v20211206/model/StopCompareRequest.h
   include/tencentcloud/dts/v20211206/model/SyncDBEndpointInfos.h
   include/tencentcloud/dts/v20211206/model/StartModifySyncJobRequest.h
   include/tencentcloud/dts/v20211206/model/DescribeCheckSyncJobResultResponse.h
   include/tencentcloud/dts/v20211206/model/StopSyncJobResponse.h
-  include/tencentcloud/dts/v20211206/model/SkippedDetail.h
   include/tencentcloud/dts/v20211206/model/MigrateOption.h
+  include/tencentcloud/dts/v20211206/model/DescribeSubscribeDetailRequest.h
+  include/tencentcloud/dts/v20211206/model/SkippedDetail.h
+  include/tencentcloud/dts/v20211206/model/SubsErr.h
+  include/tencentcloud/dts/v20211206/model/CreateSubscribeResponse.h
+  include/tencentcloud/dts/v20211206/model/CompareOptions.h
   include/tencentcloud/dts/v20211206/model/ModifyMigrateNameResponse.h
   include/tencentcloud/dts/v20211206/model/DescribeMigrationJobsResponse.h
   include/tencentcloud/dts/v20211206/model/ModifyMigrationJobRequest.h
@@ -97,19 +128,28 @@ set(dts_public_header_model
   include/tencentcloud/dts/v20211206/model/SkipSyncCheckItemResponse.h
   include/tencentcloud/dts/v20211206/model/IsolateSyncJobResponse.h
   include/tencentcloud/dts/v20211206/model/CreateMigrateCheckJobRequest.h
+  include/tencentcloud/dts/v20211206/model/ModifyConsumerGroupPasswordResponse.h
   include/tencentcloud/dts/v20211206/model/DescribeMigrationJobsRequest.h
   include/tencentcloud/dts/v20211206/model/CompareTaskInfo.h
+  include/tencentcloud/dts/v20211206/model/ModifyConsumerGroupDescriptionRequest.h
   include/tencentcloud/dts/v20211206/model/ContinueSyncJobRequest.h
+  include/tencentcloud/dts/v20211206/model/ModifySubscribeObjectsResponse.h
   include/tencentcloud/dts/v20211206/model/CreateMigrationServiceResponse.h
   include/tencentcloud/dts/v20211206/model/KafkaOption.h
   include/tencentcloud/dts/v20211206/model/DescribeMigrationCheckJobResponse.h
+  include/tencentcloud/dts/v20211206/model/StopSyncJobRequest.h
+  include/tencentcloud/dts/v20211206/model/DifferenceDetail.h
   include/tencentcloud/dts/v20211206/model/DBInfo.h
   include/tencentcloud/dts/v20211206/model/TopicRule.h
-  include/tencentcloud/dts/v20211206/model/DifferenceDetail.h
+  include/tencentcloud/dts/v20211206/model/DestroySyncJobRequest.h
+  include/tencentcloud/dts/v20211206/model/ViewItem.h
   include/tencentcloud/dts/v20211206/model/CreateCheckSyncJobResponse.h
+  include/tencentcloud/dts/v20211206/model/CreateSubscribeCheckJobResponse.h
+  include/tencentcloud/dts/v20211206/model/ModifyConsumerGroupDescriptionResponse.h
   include/tencentcloud/dts/v20211206/model/CompareObjectItem.h
   include/tencentcloud/dts/v20211206/model/ConfigureSyncJobRequest.h
   include/tencentcloud/dts/v20211206/model/StartModifySyncJobResponse.h
+  include/tencentcloud/dts/v20211206/model/SubscribeCheckStepInfo.h
   include/tencentcloud/dts/v20211206/model/MigrateDBItem.h
   include/tencentcloud/dts/v20211206/model/DescribeMigrateDBInstancesRequest.h
   include/tencentcloud/dts/v20211206/model/CheckStepInfo.h
@@ -119,17 +159,26 @@ set(dts_public_header_model
   include/tencentcloud/dts/v20211206/model/Database.h
   include/tencentcloud/dts/v20211206/model/Column.h
   include/tencentcloud/dts/v20211206/model/JobItem.h
+  include/tencentcloud/dts/v20211206/model/DestroyIsolatedSubscribeResponse.h
+  include/tencentcloud/dts/v20211206/model/ModifiedSubscribeObject.h
+  include/tencentcloud/dts/v20211206/model/DescribeCompareTasksResponse.h
+  include/tencentcloud/dts/v20211206/model/ResumeSubscribeResponse.h
   include/tencentcloud/dts/v20211206/model/DescribeSyncJobsRequest.h
   include/tencentcloud/dts/v20211206/model/SyncDetailInfo.h
-  include/tencentcloud/dts/v20211206/model/ResumeSyncJobRequest.h
+  include/tencentcloud/dts/v20211206/model/DescribeConsumerGroupsResponse.h
   include/tencentcloud/dts/v20211206/model/ModifyMigrateRateLimitRequest.h
   include/tencentcloud/dts/v20211206/model/CompareTableItem.h
   include/tencentcloud/dts/v20211206/model/ConfigureSyncJobResponse.h
   include/tencentcloud/dts/v20211206/model/CompareViewItem.h
   include/tencentcloud/dts/v20211206/model/StepInfo.h
+  include/tencentcloud/dts/v20211206/model/SubscribeObject.h
   include/tencentcloud/dts/v20211206/model/ResumeMigrateJobRequest.h
   include/tencentcloud/dts/v20211206/model/PauseSyncJobResponse.h
-  include/tencentcloud/dts/v20211206/model/TradeInfo.h
+  include/tencentcloud/dts/v20211206/model/DescribeSubscribeCheckJobRequest.h
+  include/tencentcloud/dts/v20211206/model/ModifySubscribeObjectsRequest.h
+  include/tencentcloud/dts/v20211206/model/View.h
+  include/tencentcloud/dts/v20211206/model/MonitorInfo.h
+  include/tencentcloud/dts/v20211206/model/DescribeOffsetByTimeRequest.h
   include/tencentcloud/dts/v20211206/model/StartCompareResponse.h
   include/tencentcloud/dts/v20211206/model/DynamicOptions.h
   include/tencentcloud/dts/v20211206/model/CreateCompareTaskResponse.h
@@ -143,37 +192,46 @@ set(dts_public_header_model
   include/tencentcloud/dts/v20211206/model/CreateCompareTaskRequest.h
   include/tencentcloud/dts/v20211206/model/ErrInfo.h
   include/tencentcloud/dts/v20211206/model/StartCompareRequest.h
+  include/tencentcloud/dts/v20211206/model/EndpointItem.h
   include/tencentcloud/dts/v20211206/model/DescribeMigrationCheckJobRequest.h
   include/tencentcloud/dts/v20211206/model/DescribeMigrationDetailResponse.h
   include/tencentcloud/dts/v20211206/model/CreateModifyCheckSyncJobResponse.h
   include/tencentcloud/dts/v20211206/model/ModifyMigrateNameRequest.h
+  include/tencentcloud/dts/v20211206/model/CreateSubscribeRequest.h
   include/tencentcloud/dts/v20211206/model/StartSyncJobResponse.h
+  include/tencentcloud/dts/v20211206/model/StartMigrateJobRequest.h
+  include/tencentcloud/dts/v20211206/model/DistributeRule.h
   include/tencentcloud/dts/v20211206/model/Objects.h
-  include/tencentcloud/dts/v20211206/model/RecoverMigrateJobResponse.h
+  include/tencentcloud/dts/v20211206/model/DeleteConsumerGroupResponse.h
   include/tencentcloud/dts/v20211206/model/DBItem.h
   include/tencentcloud/dts/v20211206/model/DeleteCompareTaskRequest.h
   include/tencentcloud/dts/v20211206/model/MigrateDetailInfo.h
   include/tencentcloud/dts/v20211206/model/StopMigrateJobRequest.h
-  include/tencentcloud/dts/v20211206/model/IsolateMigrateJobResponse.h
+  include/tencentcloud/dts/v20211206/model/Endpoint.h
+  include/tencentcloud/dts/v20211206/model/ConfigureSubscribeJobRequest.h
   include/tencentcloud/dts/v20211206/model/SyncJobInfo.h
-  include/tencentcloud/dts/v20211206/model/CompareOptions.h
-  include/tencentcloud/dts/v20211206/model/ModifySyncJobConfigResponse.h
+  include/tencentcloud/dts/v20211206/model/DescribeSubscribeCheckJobResponse.h
   include/tencentcloud/dts/v20211206/model/RoleItem.h
   include/tencentcloud/dts/v20211206/model/TagFilter.h
   include/tencentcloud/dts/v20211206/model/StepDetailInfo.h
   include/tencentcloud/dts/v20211206/model/CreateSyncJobRequest.h
-  include/tencentcloud/dts/v20211206/model/ViewItem.h
+  include/tencentcloud/dts/v20211206/model/SubscribeKafkaConfig.h
   include/tencentcloud/dts/v20211206/model/DescribeCompareReportRequest.h
   include/tencentcloud/dts/v20211206/model/SkippedItem.h
-  include/tencentcloud/dts/v20211206/model/View.h
+  include/tencentcloud/dts/v20211206/model/IsolateSubscribeRequest.h
+  include/tencentcloud/dts/v20211206/model/DescribeSubscribeReturnableResponse.h
   include/tencentcloud/dts/v20211206/model/TagItem.h
   include/tencentcloud/dts/v20211206/model/RecoverMigrateJobRequest.h
   include/tencentcloud/dts/v20211206/model/OnlineDDL.h
+  include/tencentcloud/dts/v20211206/model/DescribeSubscribeJobsResponse.h
+  include/tencentcloud/dts/v20211206/model/ResetSubscribeRequest.h
   include/tencentcloud/dts/v20211206/model/DatabaseTableObject.h
   include/tencentcloud/dts/v20211206/model/ModifyMigrateRuntimeAttributeRequest.h
   include/tencentcloud/dts/v20211206/model/PauseMigrateJobResponse.h
   include/tencentcloud/dts/v20211206/model/Table.h
+  include/tencentcloud/dts/v20211206/model/SubscribeCheckStepTip.h
   include/tencentcloud/dts/v20211206/model/CompareDetailInfo.h
+  include/tencentcloud/dts/v20211206/model/DescribeSubscribeJobsRequest.h
   include/tencentcloud/dts/v20211206/model/StartMigrateJobResponse.h
   include/tencentcloud/dts/v20211206/model/ConsistencyOption.h
   include/tencentcloud/dts/v20180330/model/DescribeMigrateJobsResponse.h
@@ -244,44 +302,60 @@ set(dts_src
   src/v20211206/model/ModifyCompareTaskResponse.cpp
   src/v20211206/model/DescribeSyncJobsResponse.cpp
   src/v20211206/model/ModifyMigrationJobResponse.cpp
+  src/v20211206/model/ResetConsumerGroupOffsetResponse.cpp
   src/v20211206/model/ModifyMigrateRateLimitResponse.cpp
+  src/v20211206/model/IsolateMigrateJobResponse.cpp
   src/v20211206/model/ModifyMigrateJobSpecRequest.cpp
-  src/v20211206/model/StartMigrateJobRequest.cpp
+  src/v20211206/model/IsolateSubscribeResponse.cpp
+  src/v20211206/model/ModifyConsumerGroupPasswordRequest.cpp
   src/v20211206/model/StepTip.cpp
   src/v20211206/model/ModifySyncRateLimitResponse.cpp
   src/v20211206/model/DestroyMigrateJobRequest.cpp
+  src/v20211206/model/ModifySubscribeNameRequest.cpp
+  src/v20211206/model/OffsetTimeMap.cpp
   src/v20211206/model/SkipCheckItemResponse.cpp
-  src/v20211206/model/IsolateMigrateJobRequest.cpp
+  src/v20211206/model/ResumeSyncJobRequest.cpp
+  src/v20211206/model/PartitionAssignment.cpp
   src/v20211206/model/ResizeSyncJobResponse.cpp
+  src/v20211206/model/CreateSubscribeCheckJobRequest.cpp
   src/v20211206/model/ResumeMigrateJobResponse.cpp
   src/v20211206/model/DifferenceItem.cpp
   src/v20211206/model/CreateModifyCheckSyncJobRequest.cpp
   src/v20211206/model/IsolateSyncJobRequest.cpp
   src/v20211206/model/PauseMigrateJobRequest.cpp
   src/v20211206/model/ContinueMigrateJobRequest.cpp
+  src/v20211206/model/ResetConsumerGroupOffsetRequest.cpp
   src/v20211206/model/ModifySyncRateLimitRequest.cpp
   src/v20211206/model/DescribeCheckSyncJobResultRequest.cpp
+  src/v20211206/model/ModifySubscribeAutoRenewFlagResponse.cpp
   src/v20211206/model/DestroySyncJobResponse.cpp
-  src/v20211206/model/DescribeCompareReportResponse.cpp
-  src/v20211206/model/Endpoint.cpp
+  src/v20211206/model/ErrorInfoItem.cpp
+  src/v20211206/model/IsolateMigrateJobRequest.cpp
   src/v20211206/model/StopMigrateJobResponse.cpp
   src/v20211206/model/TableItem.cpp
+  src/v20211206/model/SubscribeInfo.cpp
   src/v20211206/model/ModifyCompareTaskNameRequest.cpp
   src/v20211206/model/CompleteMigrateJobResponse.cpp
   src/v20211206/model/DescribeMigrateDBInstancesResponse.cpp
   src/v20211206/model/KeyValuePairOption.cpp
   src/v20211206/model/CreateCheckSyncJobRequest.cpp
   src/v20211206/model/DescribeModifyCheckSyncJobResultResponse.cpp
-  src/v20211206/model/StopSyncJobRequest.cpp
+  src/v20211206/model/StartSubscribeResponse.cpp
+  src/v20211206/model/DescribeSubscribeReturnableRequest.cpp
   src/v20211206/model/DescribeMigrationDetailRequest.cpp
-  src/v20211206/model/DestroySyncJobRequest.cpp
+  src/v20211206/model/CreateConsumerGroupRequest.cpp
   src/v20211206/model/ResizeSyncJobRequest.cpp
+  src/v20211206/model/ModifySubscribeNameResponse.cpp
   src/v20211206/model/DdlOption.cpp
   src/v20211206/model/ConflictHandleOption.cpp
+  src/v20211206/model/PipelineInfo.cpp
   src/v20211206/model/ResumeSyncJobResponse.cpp
+  src/v20211206/model/RecoverMigrateJobResponse.cpp
   src/v20211206/model/ModifyCompareTaskNameResponse.cpp
   src/v20211206/model/StartSyncJobRequest.cpp
+  src/v20211206/model/StartSubscribeRequest.cpp
   src/v20211206/model/ModifyMigrateRuntimeAttributeResponse.cpp
+  src/v20211206/model/DescribeOffsetByTimeResponse.cpp
   src/v20211206/model/PauseSyncJobRequest.cpp
   src/v20211206/model/CreateMigrateCheckJobResponse.cpp
   src/v20211206/model/ModifySyncJobConfigRequest.cpp
@@ -289,24 +363,39 @@ set(dts_src
   src/v20211206/model/CreateMigrationServiceRequest.cpp
   src/v20211206/model/DetailCheckItem.cpp
   src/v20211206/model/DescribeCompareTasksRequest.cpp
+  src/v20211206/model/DestroyIsolatedSubscribeRequest.cpp
+  src/v20211206/model/ResetSubscribeResponse.cpp
   src/v20211206/model/CompareObject.cpp
-  src/v20211206/model/ErrorInfoItem.cpp
+  src/v20211206/model/DescribeCompareReportResponse.cpp
   src/v20211206/model/RecoverSyncJobResponse.cpp
   src/v20211206/model/MigrateAction.cpp
+  src/v20211206/model/ConfigureSubscribeJobResponse.cpp
+  src/v20211206/model/DescribeConsumerGroupsRequest.cpp
+  src/v20211206/model/GroupInfo.cpp
   src/v20211206/model/DeleteCompareTaskResponse.cpp
   src/v20211206/model/DBEndpointInfo.cpp
+  src/v20211206/model/ResumeSubscribeRequest.cpp
+  src/v20211206/model/ModifySyncJobConfigResponse.cpp
   src/v20211206/model/CompareColumnItem.cpp
+  src/v20211206/model/DescribeSubscribeDetailResponse.cpp
   src/v20211206/model/ContinueSyncJobResponse.cpp
+  src/v20211206/model/TradeInfo.cpp
   src/v20211206/model/Options.cpp
+  src/v20211206/model/DeleteConsumerGroupRequest.cpp
+  src/v20211206/model/ModifySubscribeAutoRenewFlagRequest.cpp
   src/v20211206/model/CompleteMigrateJobRequest.cpp
-  src/v20211206/model/DescribeCompareTasksResponse.cpp
+  src/v20211206/model/CreateConsumerGroupResponse.cpp
   src/v20211206/model/StopCompareRequest.cpp
   src/v20211206/model/SyncDBEndpointInfos.cpp
   src/v20211206/model/StartModifySyncJobRequest.cpp
   src/v20211206/model/DescribeCheckSyncJobResultResponse.cpp
   src/v20211206/model/StopSyncJobResponse.cpp
-  src/v20211206/model/SkippedDetail.cpp
   src/v20211206/model/MigrateOption.cpp
+  src/v20211206/model/DescribeSubscribeDetailRequest.cpp
+  src/v20211206/model/SkippedDetail.cpp
+  src/v20211206/model/SubsErr.cpp
+  src/v20211206/model/CreateSubscribeResponse.cpp
+  src/v20211206/model/CompareOptions.cpp
   src/v20211206/model/ModifyMigrateNameResponse.cpp
   src/v20211206/model/DescribeMigrationJobsResponse.cpp
   src/v20211206/model/ModifyMigrationJobRequest.cpp
@@ -318,19 +407,28 @@ set(dts_src
   src/v20211206/model/SkipSyncCheckItemResponse.cpp
   src/v20211206/model/IsolateSyncJobResponse.cpp
   src/v20211206/model/CreateMigrateCheckJobRequest.cpp
+  src/v20211206/model/ModifyConsumerGroupPasswordResponse.cpp
   src/v20211206/model/DescribeMigrationJobsRequest.cpp
   src/v20211206/model/CompareTaskInfo.cpp
+  src/v20211206/model/ModifyConsumerGroupDescriptionRequest.cpp
   src/v20211206/model/ContinueSyncJobRequest.cpp
+  src/v20211206/model/ModifySubscribeObjectsResponse.cpp
   src/v20211206/model/CreateMigrationServiceResponse.cpp
   src/v20211206/model/KafkaOption.cpp
   src/v20211206/model/DescribeMigrationCheckJobResponse.cpp
+  src/v20211206/model/StopSyncJobRequest.cpp
+  src/v20211206/model/DifferenceDetail.cpp
   src/v20211206/model/DBInfo.cpp
   src/v20211206/model/TopicRule.cpp
-  src/v20211206/model/DifferenceDetail.cpp
+  src/v20211206/model/DestroySyncJobRequest.cpp
+  src/v20211206/model/ViewItem.cpp
   src/v20211206/model/CreateCheckSyncJobResponse.cpp
+  src/v20211206/model/CreateSubscribeCheckJobResponse.cpp
+  src/v20211206/model/ModifyConsumerGroupDescriptionResponse.cpp
   src/v20211206/model/CompareObjectItem.cpp
   src/v20211206/model/ConfigureSyncJobRequest.cpp
   src/v20211206/model/StartModifySyncJobResponse.cpp
+  src/v20211206/model/SubscribeCheckStepInfo.cpp
   src/v20211206/model/MigrateDBItem.cpp
   src/v20211206/model/DescribeMigrateDBInstancesRequest.cpp
   src/v20211206/model/CheckStepInfo.cpp
@@ -340,17 +438,26 @@ set(dts_src
   src/v20211206/model/Database.cpp
   src/v20211206/model/Column.cpp
   src/v20211206/model/JobItem.cpp
+  src/v20211206/model/DestroyIsolatedSubscribeResponse.cpp
+  src/v20211206/model/ModifiedSubscribeObject.cpp
+  src/v20211206/model/DescribeCompareTasksResponse.cpp
+  src/v20211206/model/ResumeSubscribeResponse.cpp
   src/v20211206/model/DescribeSyncJobsRequest.cpp
   src/v20211206/model/SyncDetailInfo.cpp
-  src/v20211206/model/ResumeSyncJobRequest.cpp
+  src/v20211206/model/DescribeConsumerGroupsResponse.cpp
   src/v20211206/model/ModifyMigrateRateLimitRequest.cpp
   src/v20211206/model/CompareTableItem.cpp
   src/v20211206/model/ConfigureSyncJobResponse.cpp
   src/v20211206/model/CompareViewItem.cpp
   src/v20211206/model/StepInfo.cpp
+  src/v20211206/model/SubscribeObject.cpp
   src/v20211206/model/ResumeMigrateJobRequest.cpp
   src/v20211206/model/PauseSyncJobResponse.cpp
-  src/v20211206/model/TradeInfo.cpp
+  src/v20211206/model/DescribeSubscribeCheckJobRequest.cpp
+  src/v20211206/model/ModifySubscribeObjectsRequest.cpp
+  src/v20211206/model/View.cpp
+  src/v20211206/model/MonitorInfo.cpp
+  src/v20211206/model/DescribeOffsetByTimeRequest.cpp
   src/v20211206/model/StartCompareResponse.cpp
   src/v20211206/model/DynamicOptions.cpp
   src/v20211206/model/CreateCompareTaskResponse.cpp
@@ -364,37 +471,46 @@ set(dts_src
   src/v20211206/model/CreateCompareTaskRequest.cpp
   src/v20211206/model/ErrInfo.cpp
   src/v20211206/model/StartCompareRequest.cpp
+  src/v20211206/model/EndpointItem.cpp
   src/v20211206/model/DescribeMigrationCheckJobRequest.cpp
   src/v20211206/model/DescribeMigrationDetailResponse.cpp
   src/v20211206/model/CreateModifyCheckSyncJobResponse.cpp
   src/v20211206/model/ModifyMigrateNameRequest.cpp
+  src/v20211206/model/CreateSubscribeRequest.cpp
   src/v20211206/model/StartSyncJobResponse.cpp
+  src/v20211206/model/StartMigrateJobRequest.cpp
+  src/v20211206/model/DistributeRule.cpp
   src/v20211206/model/Objects.cpp
-  src/v20211206/model/RecoverMigrateJobResponse.cpp
+  src/v20211206/model/DeleteConsumerGroupResponse.cpp
   src/v20211206/model/DBItem.cpp
   src/v20211206/model/DeleteCompareTaskRequest.cpp
   src/v20211206/model/MigrateDetailInfo.cpp
   src/v20211206/model/StopMigrateJobRequest.cpp
-  src/v20211206/model/IsolateMigrateJobResponse.cpp
+  src/v20211206/model/Endpoint.cpp
+  src/v20211206/model/ConfigureSubscribeJobRequest.cpp
   src/v20211206/model/SyncJobInfo.cpp
-  src/v20211206/model/CompareOptions.cpp
-  src/v20211206/model/ModifySyncJobConfigResponse.cpp
+  src/v20211206/model/DescribeSubscribeCheckJobResponse.cpp
   src/v20211206/model/RoleItem.cpp
   src/v20211206/model/TagFilter.cpp
   src/v20211206/model/StepDetailInfo.cpp
   src/v20211206/model/CreateSyncJobRequest.cpp
-  src/v20211206/model/ViewItem.cpp
+  src/v20211206/model/SubscribeKafkaConfig.cpp
   src/v20211206/model/DescribeCompareReportRequest.cpp
   src/v20211206/model/SkippedItem.cpp
-  src/v20211206/model/View.cpp
+  src/v20211206/model/IsolateSubscribeRequest.cpp
+  src/v20211206/model/DescribeSubscribeReturnableResponse.cpp
   src/v20211206/model/TagItem.cpp
   src/v20211206/model/RecoverMigrateJobRequest.cpp
   src/v20211206/model/OnlineDDL.cpp
+  src/v20211206/model/DescribeSubscribeJobsResponse.cpp
+  src/v20211206/model/ResetSubscribeRequest.cpp
   src/v20211206/model/DatabaseTableObject.cpp
   src/v20211206/model/ModifyMigrateRuntimeAttributeRequest.cpp
   src/v20211206/model/PauseMigrateJobResponse.cpp
   src/v20211206/model/Table.cpp
+  src/v20211206/model/SubscribeCheckStepTip.cpp
   src/v20211206/model/CompareDetailInfo.cpp
+  src/v20211206/model/DescribeSubscribeJobsRequest.cpp
   src/v20211206/model/StartMigrateJobResponse.cpp
   src/v20211206/model/ConsistencyOption.cpp
   src/v20180330/model/DescribeMigrateJobsResponse.cpp

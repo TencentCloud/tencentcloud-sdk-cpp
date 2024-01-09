@@ -28,6 +28,7 @@
 #include <tencentcloud/cynosdb/v20190107/model/Tag.h>
 #include <tencentcloud/cynosdb/v20190107/model/InstanceNetInfo.h>
 #include <tencentcloud/cynosdb/v20190107/model/ResourcePackage.h>
+#include <tencentcloud/cynosdb/v20190107/model/InstanceAbility.h>
 
 
 namespace TencentCloud
@@ -1211,6 +1212,31 @@ pause
                      */
                     bool InstanceIndexModeHasBeenSet() const;
 
+                    /**
+                     * 获取当前实例支持的能力
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return InstanceAbility 当前实例支持的能力
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    InstanceAbility GetInstanceAbility() const;
+
+                    /**
+                     * 设置当前实例支持的能力
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _instanceAbility 当前实例支持的能力
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetInstanceAbility(const InstanceAbility& _instanceAbility);
+
+                    /**
+                     * 判断参数 InstanceAbility 是否已赋值
+                     * @return InstanceAbility 是否已赋值
+                     * 
+                     */
+                    bool InstanceAbilityHasBeenSet() const;
+
                 private:
 
                     /**
@@ -1542,6 +1568,13 @@ pause
                      */
                     std::string m_instanceIndexMode;
                     bool m_instanceIndexModeHasBeenSet;
+
+                    /**
+                     * 当前实例支持的能力
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    InstanceAbility m_instanceAbility;
+                    bool m_instanceAbilityHasBeenSet;
 
                 };
             }

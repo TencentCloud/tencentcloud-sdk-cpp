@@ -294,6 +294,27 @@ namespace TencentCloud
                      */
                     bool StatusHasBeenSet() const;
 
+                    /**
+                     * 获取记录的备注信息。传空删除备注。
+                     * @return Remark 记录的备注信息。传空删除备注。
+                     * 
+                     */
+                    std::string GetRemark() const;
+
+                    /**
+                     * 设置记录的备注信息。传空删除备注。
+                     * @param _remark 记录的备注信息。传空删除备注。
+                     * 
+                     */
+                    void SetRemark(const std::string& _remark);
+
+                    /**
+                     * 判断参数 Remark 是否已赋值
+                     * @return Remark 是否已赋值
+                     * 
+                     */
+                    bool RemarkHasBeenSet() const;
+
                 private:
 
                     /**
@@ -367,6 +388,12 @@ namespace TencentCloud
                      */
                     std::string m_status;
                     bool m_statusHasBeenSet;
+
+                    /**
+                     * 记录的备注信息。传空删除备注。
+                     */
+                    std::string m_remark;
+                    bool m_remarkHasBeenSet;
 
                 };
             }

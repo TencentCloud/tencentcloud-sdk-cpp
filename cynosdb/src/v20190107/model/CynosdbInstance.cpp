@@ -73,7 +73,8 @@ CynosdbInstance::CynosdbInstance() :
     m_slaveZonesHasBeenSet(false),
     m_instanceNetInfoHasBeenSet(false),
     m_resourcePackagesHasBeenSet(false),
-    m_instanceIndexModeHasBeenSet(false)
+    m_instanceIndexModeHasBeenSet(false),
+    m_instanceAbilityHasBeenSet(false)
 {
 }
 
@@ -655,6 +656,23 @@ CoreInternalOutcome CynosdbInstance::Deserialize(const rapidjson::Value &value)
         m_instanceIndexModeHasBeenSet = true;
     }
 
+    if (value.HasMember("InstanceAbility") && !value["InstanceAbility"].IsNull())
+    {
+        if (!value["InstanceAbility"].IsObject())
+        {
+            return CoreInternalOutcome(Core::Error("response `CynosdbInstance.InstanceAbility` is not object type").SetRequestId(requestId));
+        }
+
+        CoreInternalOutcome outcome = m_instanceAbility.Deserialize(value["InstanceAbility"]);
+        if (!outcome.IsSuccess())
+        {
+            outcome.GetError().SetRequestId(requestId);
+            return outcome;
+        }
+
+        m_instanceAbilityHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -1117,6 +1135,15 @@ void CynosdbInstance::ToJsonObject(rapidjson::Value &value, rapidjson::Document:
         string key = "InstanceIndexMode";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_instanceIndexMode.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_instanceAbilityHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "InstanceAbility";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_instanceAbility.ToJsonObject(value[key.c_str()], allocator);
     }
 
 }
@@ -1968,5 +1995,21 @@ void CynosdbInstance::SetInstanceIndexMode(const string& _instanceIndexMode)
 bool CynosdbInstance::InstanceIndexModeHasBeenSet() const
 {
     return m_instanceIndexModeHasBeenSet;
+}
+
+InstanceAbility CynosdbInstance::GetInstanceAbility() const
+{
+    return m_instanceAbility;
+}
+
+void CynosdbInstance::SetInstanceAbility(const InstanceAbility& _instanceAbility)
+{
+    m_instanceAbility = _instanceAbility;
+    m_instanceAbilityHasBeenSet = true;
+}
+
+bool CynosdbInstance::InstanceAbilityHasBeenSet() const
+{
+    return m_instanceAbilityHasBeenSet;
 }
 

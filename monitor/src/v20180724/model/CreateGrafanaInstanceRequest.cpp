@@ -28,7 +28,8 @@ CreateGrafanaInstanceRequest::CreateGrafanaInstanceRequest() :
     m_subnetIdsHasBeenSet(false),
     m_enableInternetHasBeenSet(false),
     m_grafanaInitPasswordHasBeenSet(false),
-    m_tagSpecificationHasBeenSet(false)
+    m_tagSpecificationHasBeenSet(false),
+    m_autoVoucherHasBeenSet(false)
 {
 }
 
@@ -97,6 +98,14 @@ string CreateGrafanaInstanceRequest::ToJsonString() const
             d[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
             (*itr).ToJsonObject(d[key.c_str()][i], allocator);
         }
+    }
+
+    if (m_autoVoucherHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "AutoVoucher";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_autoVoucher, allocator);
     }
 
 
@@ -201,6 +210,22 @@ void CreateGrafanaInstanceRequest::SetTagSpecification(const vector<PrometheusTa
 bool CreateGrafanaInstanceRequest::TagSpecificationHasBeenSet() const
 {
     return m_tagSpecificationHasBeenSet;
+}
+
+bool CreateGrafanaInstanceRequest::GetAutoVoucher() const
+{
+    return m_autoVoucher;
+}
+
+void CreateGrafanaInstanceRequest::SetAutoVoucher(const bool& _autoVoucher)
+{
+    m_autoVoucher = _autoVoucher;
+    m_autoVoucherHasBeenSet = true;
+}
+
+bool CreateGrafanaInstanceRequest::AutoVoucherHasBeenSet() const
+{
+    return m_autoVoucherHasBeenSet;
 }
 
 

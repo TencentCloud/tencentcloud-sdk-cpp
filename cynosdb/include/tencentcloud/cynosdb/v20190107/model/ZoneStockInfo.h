@@ -24,6 +24,7 @@
 #include <tencentcloud/core/utils/rapidjson/writer.h>
 #include <tencentcloud/core/utils/rapidjson/stringbuffer.h>
 #include <tencentcloud/core/AbstractModel.h>
+#include <tencentcloud/cynosdb/v20190107/model/SlaveZoneStockInfo.h>
 
 
 namespace TencentCloud
@@ -109,6 +110,31 @@ namespace TencentCloud
                      */
                     bool StockCountHasBeenSet() const;
 
+                    /**
+                     * 获取备可用区库存信息
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return SlaveZoneStockInfos 备可用区库存信息
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::vector<SlaveZoneStockInfo> GetSlaveZoneStockInfos() const;
+
+                    /**
+                     * 设置备可用区库存信息
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _slaveZoneStockInfos 备可用区库存信息
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetSlaveZoneStockInfos(const std::vector<SlaveZoneStockInfo>& _slaveZoneStockInfos);
+
+                    /**
+                     * 判断参数 SlaveZoneStockInfos 是否已赋值
+                     * @return SlaveZoneStockInfos 是否已赋值
+                     * 
+                     */
+                    bool SlaveZoneStockInfosHasBeenSet() const;
+
                 private:
 
                     /**
@@ -128,6 +154,13 @@ namespace TencentCloud
                      */
                     int64_t m_stockCount;
                     bool m_stockCountHasBeenSet;
+
+                    /**
+                     * 备可用区库存信息
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::vector<SlaveZoneStockInfo> m_slaveZoneStockInfos;
+                    bool m_slaveZoneStockInfosHasBeenSet;
 
                 };
             }

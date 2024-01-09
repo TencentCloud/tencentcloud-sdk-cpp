@@ -26,13 +26,13 @@ CreatePrepareFlowRequest::CreatePrepareFlowRequest() :
     m_operatorHasBeenSet(false),
     m_resourceIdHasBeenSet(false),
     m_flowNameHasBeenSet(false),
+    m_resourceTypeHasBeenSet(false),
     m_unorderedHasBeenSet(false),
     m_deadlineHasBeenSet(false),
     m_userFlowTypeIdHasBeenSet(false),
     m_flowTypeHasBeenSet(false),
     m_approversHasBeenSet(false),
     m_intelligentStatusHasBeenSet(false),
-    m_resourceTypeHasBeenSet(false),
     m_componentsHasBeenSet(false),
     m_flowOptionHasBeenSet(false),
     m_needSignReviewHasBeenSet(false),
@@ -75,6 +75,14 @@ string CreatePrepareFlowRequest::ToJsonString() const
         string key = "FlowName";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_flowName.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_resourceTypeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ResourceType";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_resourceType, allocator);
     }
 
     if (m_unorderedHasBeenSet)
@@ -130,14 +138,6 @@ string CreatePrepareFlowRequest::ToJsonString() const
         string key = "IntelligentStatus";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_intelligentStatus.c_str(), allocator).Move(), allocator);
-    }
-
-    if (m_resourceTypeHasBeenSet)
-    {
-        rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "ResourceType";
-        iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, m_resourceType, allocator);
     }
 
     if (m_componentsHasBeenSet)
@@ -279,6 +279,22 @@ bool CreatePrepareFlowRequest::FlowNameHasBeenSet() const
     return m_flowNameHasBeenSet;
 }
 
+int64_t CreatePrepareFlowRequest::GetResourceType() const
+{
+    return m_resourceType;
+}
+
+void CreatePrepareFlowRequest::SetResourceType(const int64_t& _resourceType)
+{
+    m_resourceType = _resourceType;
+    m_resourceTypeHasBeenSet = true;
+}
+
+bool CreatePrepareFlowRequest::ResourceTypeHasBeenSet() const
+{
+    return m_resourceTypeHasBeenSet;
+}
+
 bool CreatePrepareFlowRequest::GetUnordered() const
 {
     return m_unordered;
@@ -373,22 +389,6 @@ void CreatePrepareFlowRequest::SetIntelligentStatus(const string& _intelligentSt
 bool CreatePrepareFlowRequest::IntelligentStatusHasBeenSet() const
 {
     return m_intelligentStatusHasBeenSet;
-}
-
-int64_t CreatePrepareFlowRequest::GetResourceType() const
-{
-    return m_resourceType;
-}
-
-void CreatePrepareFlowRequest::SetResourceType(const int64_t& _resourceType)
-{
-    m_resourceType = _resourceType;
-    m_resourceTypeHasBeenSet = true;
-}
-
-bool CreatePrepareFlowRequest::ResourceTypeHasBeenSet() const
-{
-    return m_resourceTypeHasBeenSet;
 }
 
 Component CreatePrepareFlowRequest::GetComponents() const

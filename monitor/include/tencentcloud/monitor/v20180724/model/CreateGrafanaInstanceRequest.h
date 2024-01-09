@@ -169,6 +169,27 @@ namespace TencentCloud
                      */
                     bool TagSpecificationHasBeenSet() const;
 
+                    /**
+                     * 获取是否自动选择代金券，默认为 false
+                     * @return AutoVoucher 是否自动选择代金券，默认为 false
+                     * 
+                     */
+                    bool GetAutoVoucher() const;
+
+                    /**
+                     * 设置是否自动选择代金券，默认为 false
+                     * @param _autoVoucher 是否自动选择代金券，默认为 false
+                     * 
+                     */
+                    void SetAutoVoucher(const bool& _autoVoucher);
+
+                    /**
+                     * 判断参数 AutoVoucher 是否已赋值
+                     * @return AutoVoucher 是否已赋值
+                     * 
+                     */
+                    bool AutoVoucherHasBeenSet() const;
+
                 private:
 
                     /**
@@ -206,6 +227,12 @@ namespace TencentCloud
                      */
                     std::vector<PrometheusTag> m_tagSpecification;
                     bool m_tagSpecificationHasBeenSet;
+
+                    /**
+                     * 是否自动选择代金券，默认为 false
+                     */
+                    bool m_autoVoucher;
+                    bool m_autoVoucherHasBeenSet;
 
                 };
             }

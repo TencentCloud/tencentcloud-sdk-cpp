@@ -85,13 +85,15 @@ namespace TencentCloud
                      * 获取资源id，与ResourceType相对应，取值范围：
 <ul>
 <li>文件Id（通过UploadFiles获取文件资源Id）</li>
-<li>模板Id</li>
+<li>模板Id（通过控制台创建模板后获取模板Id）</li>
 </ul>
+注意：需要同时设置 ResourceType 参数指定资源类型
                      * @return ResourceId 资源id，与ResourceType相对应，取值范围：
 <ul>
 <li>文件Id（通过UploadFiles获取文件资源Id）</li>
-<li>模板Id</li>
+<li>模板Id（通过控制台创建模板后获取模板Id）</li>
 </ul>
+注意：需要同时设置 ResourceType 参数指定资源类型
                      * 
                      */
                     std::string GetResourceId() const;
@@ -100,13 +102,15 @@ namespace TencentCloud
                      * 设置资源id，与ResourceType相对应，取值范围：
 <ul>
 <li>文件Id（通过UploadFiles获取文件资源Id）</li>
-<li>模板Id</li>
+<li>模板Id（通过控制台创建模板后获取模板Id）</li>
 </ul>
+注意：需要同时设置 ResourceType 参数指定资源类型
                      * @param _resourceId 资源id，与ResourceType相对应，取值范围：
 <ul>
 <li>文件Id（通过UploadFiles获取文件资源Id）</li>
-<li>模板Id</li>
+<li>模板Id（通过控制台创建模板后获取模板Id）</li>
 </ul>
+注意：需要同时设置 ResourceType 参数指定资源类型
                      * 
                      */
                     void SetResourceId(const std::string& _resourceId);
@@ -142,6 +146,35 @@ namespace TencentCloud
                      * 
                      */
                     bool FlowNameHasBeenSet() const;
+
+                    /**
+                     * 获取资源类型，取值有：
+<ul><li> **1**：模板</li>
+<li> **2**：文件（默认值）</li></ul>
+                     * @return ResourceType 资源类型，取值有：
+<ul><li> **1**：模板</li>
+<li> **2**：文件（默认值）</li></ul>
+                     * 
+                     */
+                    int64_t GetResourceType() const;
+
+                    /**
+                     * 设置资源类型，取值有：
+<ul><li> **1**：模板</li>
+<li> **2**：文件（默认值）</li></ul>
+                     * @param _resourceType 资源类型，取值有：
+<ul><li> **1**：模板</li>
+<li> **2**：文件（默认值）</li></ul>
+                     * 
+                     */
+                    void SetResourceType(const int64_t& _resourceType);
+
+                    /**
+                     * 判断参数 ResourceType 是否已赋值
+                     * @return ResourceType 是否已赋值
+                     * 
+                     */
+                    bool ResourceTypeHasBeenSet() const;
 
                     /**
                      * 获取合同流程的签署顺序类型：
@@ -308,35 +341,6 @@ namespace TencentCloud
                      * 
                      */
                     bool IntelligentStatusHasBeenSet() const;
-
-                    /**
-                     * 获取资源类型，取值有：
-<ul><li> **1**：模板</li>
-<li> **2**：文件（默认值）</li></ul>
-                     * @return ResourceType 资源类型，取值有：
-<ul><li> **1**：模板</li>
-<li> **2**：文件（默认值）</li></ul>
-                     * 
-                     */
-                    int64_t GetResourceType() const;
-
-                    /**
-                     * 设置资源类型，取值有：
-<ul><li> **1**：模板</li>
-<li> **2**：文件（默认值）</li></ul>
-                     * @param _resourceType 资源类型，取值有：
-<ul><li> **1**：模板</li>
-<li> **2**：文件（默认值）</li></ul>
-                     * 
-                     */
-                    void SetResourceType(const int64_t& _resourceType);
-
-                    /**
-                     * 判断参数 ResourceType 是否已赋值
-                     * @return ResourceType 是否已赋值
-                     * 
-                     */
-                    bool ResourceTypeHasBeenSet() const;
 
                     /**
                      * 获取该字段已废弃，请使用InitiatorComponents
@@ -614,8 +618,9 @@ namespace TencentCloud
                      * 资源id，与ResourceType相对应，取值范围：
 <ul>
 <li>文件Id（通过UploadFiles获取文件资源Id）</li>
-<li>模板Id</li>
+<li>模板Id（通过控制台创建模板后获取模板Id）</li>
 </ul>
+注意：需要同时设置 ResourceType 参数指定资源类型
                      */
                     std::string m_resourceId;
                     bool m_resourceIdHasBeenSet;
@@ -626,6 +631,14 @@ namespace TencentCloud
                      */
                     std::string m_flowName;
                     bool m_flowNameHasBeenSet;
+
+                    /**
+                     * 资源类型，取值有：
+<ul><li> **1**：模板</li>
+<li> **2**：文件（默认值）</li></ul>
+                     */
+                    int64_t m_resourceType;
+                    bool m_resourceTypeHasBeenSet;
 
                     /**
                      * 合同流程的签署顺序类型：
@@ -672,14 +685,6 @@ namespace TencentCloud
                      */
                     std::string m_intelligentStatus;
                     bool m_intelligentStatusHasBeenSet;
-
-                    /**
-                     * 资源类型，取值有：
-<ul><li> **1**：模板</li>
-<li> **2**：文件（默认值）</li></ul>
-                     */
-                    int64_t m_resourceType;
-                    bool m_resourceTypeHasBeenSet;
 
                     /**
                      * 该字段已废弃，请使用InitiatorComponents

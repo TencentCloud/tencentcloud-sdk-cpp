@@ -23,7 +23,8 @@ using namespace std;
 ZoneStockInfo::ZoneStockInfo() :
     m_zoneHasBeenSet(false),
     m_hasStockHasBeenSet(false),
-    m_stockCountHasBeenSet(false)
+    m_stockCountHasBeenSet(false),
+    m_slaveZoneStockInfosHasBeenSet(false)
 {
 }
 
@@ -62,6 +63,26 @@ CoreInternalOutcome ZoneStockInfo::Deserialize(const rapidjson::Value &value)
         m_stockCountHasBeenSet = true;
     }
 
+    if (value.HasMember("SlaveZoneStockInfos") && !value["SlaveZoneStockInfos"].IsNull())
+    {
+        if (!value["SlaveZoneStockInfos"].IsArray())
+            return CoreInternalOutcome(Core::Error("response `ZoneStockInfo.SlaveZoneStockInfos` is not array type"));
+
+        const rapidjson::Value &tmpValue = value["SlaveZoneStockInfos"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            SlaveZoneStockInfo item;
+            CoreInternalOutcome outcome = item.Deserialize(*itr);
+            if (!outcome.IsSuccess())
+            {
+                outcome.GetError().SetRequestId(requestId);
+                return outcome;
+            }
+            m_slaveZoneStockInfos.push_back(item);
+        }
+        m_slaveZoneStockInfosHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -91,6 +112,21 @@ void ZoneStockInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Document::A
         string key = "StockCount";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_stockCount, allocator);
+    }
+
+    if (m_slaveZoneStockInfosHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "SlaveZoneStockInfos";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_slaveZoneStockInfos.begin(); itr != m_slaveZoneStockInfos.end(); ++itr, ++i)
+        {
+            value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(value[key.c_str()][i], allocator);
+        }
     }
 
 }
@@ -142,5 +178,21 @@ void ZoneStockInfo::SetStockCount(const int64_t& _stockCount)
 bool ZoneStockInfo::StockCountHasBeenSet() const
 {
     return m_stockCountHasBeenSet;
+}
+
+vector<SlaveZoneStockInfo> ZoneStockInfo::GetSlaveZoneStockInfos() const
+{
+    return m_slaveZoneStockInfos;
+}
+
+void ZoneStockInfo::SetSlaveZoneStockInfos(const vector<SlaveZoneStockInfo>& _slaveZoneStockInfos)
+{
+    m_slaveZoneStockInfos = _slaveZoneStockInfos;
+    m_slaveZoneStockInfosHasBeenSet = true;
+}
+
+bool ZoneStockInfo::SlaveZoneStockInfosHasBeenSet() const
+{
+    return m_slaveZoneStockInfosHasBeenSet;
 }
 

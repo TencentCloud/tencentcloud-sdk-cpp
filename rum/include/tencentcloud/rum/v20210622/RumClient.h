@@ -25,8 +25,6 @@
 #include <tencentcloud/core/AsyncCallerContext.h>
 #include <tencentcloud/rum/v20210622/model/CreateLogExportRequest.h>
 #include <tencentcloud/rum/v20210622/model/CreateLogExportResponse.h>
-#include <tencentcloud/rum/v20210622/model/CreateOfflineLogConfigRequest.h>
-#include <tencentcloud/rum/v20210622/model/CreateOfflineLogConfigResponse.h>
 #include <tencentcloud/rum/v20210622/model/CreateProjectRequest.h>
 #include <tencentcloud/rum/v20210622/model/CreateProjectResponse.h>
 #include <tencentcloud/rum/v20210622/model/CreateReleaseFileRequest.h>
@@ -105,10 +103,6 @@
 #include <tencentcloud/rum/v20210622/model/DescribeLogListResponse.h>
 #include <tencentcloud/rum/v20210622/model/DescribeOfflineLogConfigsRequest.h>
 #include <tencentcloud/rum/v20210622/model/DescribeOfflineLogConfigsResponse.h>
-#include <tencentcloud/rum/v20210622/model/DescribeOfflineLogRecordsRequest.h>
-#include <tencentcloud/rum/v20210622/model/DescribeOfflineLogRecordsResponse.h>
-#include <tencentcloud/rum/v20210622/model/DescribeOfflineLogsRequest.h>
-#include <tencentcloud/rum/v20210622/model/DescribeOfflineLogsResponse.h>
 #include <tencentcloud/rum/v20210622/model/DescribeProjectLimitsRequest.h>
 #include <tencentcloud/rum/v20210622/model/DescribeProjectLimitsResponse.h>
 #include <tencentcloud/rum/v20210622/model/DescribeProjectsRequest.h>
@@ -170,9 +164,6 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::CreateLogExportResponse> CreateLogExportOutcome;
                 typedef std::future<CreateLogExportOutcome> CreateLogExportOutcomeCallable;
                 typedef std::function<void(const RumClient*, const Model::CreateLogExportRequest&, CreateLogExportOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateLogExportAsyncHandler;
-                typedef Outcome<Core::Error, Model::CreateOfflineLogConfigResponse> CreateOfflineLogConfigOutcome;
-                typedef std::future<CreateOfflineLogConfigOutcome> CreateOfflineLogConfigOutcomeCallable;
-                typedef std::function<void(const RumClient*, const Model::CreateOfflineLogConfigRequest&, CreateOfflineLogConfigOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateOfflineLogConfigAsyncHandler;
                 typedef Outcome<Core::Error, Model::CreateProjectResponse> CreateProjectOutcome;
                 typedef std::future<CreateProjectOutcome> CreateProjectOutcomeCallable;
                 typedef std::function<void(const RumClient*, const Model::CreateProjectRequest&, CreateProjectOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateProjectAsyncHandler;
@@ -290,12 +281,6 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeOfflineLogConfigsResponse> DescribeOfflineLogConfigsOutcome;
                 typedef std::future<DescribeOfflineLogConfigsOutcome> DescribeOfflineLogConfigsOutcomeCallable;
                 typedef std::function<void(const RumClient*, const Model::DescribeOfflineLogConfigsRequest&, DescribeOfflineLogConfigsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeOfflineLogConfigsAsyncHandler;
-                typedef Outcome<Core::Error, Model::DescribeOfflineLogRecordsResponse> DescribeOfflineLogRecordsOutcome;
-                typedef std::future<DescribeOfflineLogRecordsOutcome> DescribeOfflineLogRecordsOutcomeCallable;
-                typedef std::function<void(const RumClient*, const Model::DescribeOfflineLogRecordsRequest&, DescribeOfflineLogRecordsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeOfflineLogRecordsAsyncHandler;
-                typedef Outcome<Core::Error, Model::DescribeOfflineLogsResponse> DescribeOfflineLogsOutcome;
-                typedef std::future<DescribeOfflineLogsOutcome> DescribeOfflineLogsOutcomeCallable;
-                typedef std::function<void(const RumClient*, const Model::DescribeOfflineLogsRequest&, DescribeOfflineLogsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeOfflineLogsAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeProjectLimitsResponse> DescribeProjectLimitsOutcome;
                 typedef std::future<DescribeProjectLimitsOutcome> DescribeProjectLimitsOutcomeCallable;
                 typedef std::function<void(const RumClient*, const Model::DescribeProjectLimitsRequest&, DescribeProjectLimitsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeProjectLimitsAsyncHandler;
@@ -377,15 +362,6 @@ namespace TencentCloud
                 CreateLogExportOutcome CreateLogExport(const Model::CreateLogExportRequest &request);
                 void CreateLogExportAsync(const Model::CreateLogExportRequest& request, const CreateLogExportAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 CreateLogExportOutcomeCallable CreateLogExportCallable(const Model::CreateLogExportRequest& request);
-
-                /**
-                 *创建离线日志监听，对应用户的离线日志将上报
-                 * @param req CreateOfflineLogConfigRequest
-                 * @return CreateOfflineLogConfigOutcome
-                 */
-                CreateOfflineLogConfigOutcome CreateOfflineLogConfig(const Model::CreateOfflineLogConfigRequest &request);
-                void CreateOfflineLogConfigAsync(const Model::CreateOfflineLogConfigRequest& request, const CreateOfflineLogConfigAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
-                CreateOfflineLogConfigOutcomeCallable CreateOfflineLogConfigCallable(const Model::CreateOfflineLogConfigRequest& request);
 
                 /**
                  *创建 RUM 应用（归属于某个团队）
@@ -746,24 +722,6 @@ namespace TencentCloud
                 DescribeOfflineLogConfigsOutcome DescribeOfflineLogConfigs(const Model::DescribeOfflineLogConfigsRequest &request);
                 void DescribeOfflineLogConfigsAsync(const Model::DescribeOfflineLogConfigsRequest& request, const DescribeOfflineLogConfigsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DescribeOfflineLogConfigsOutcomeCallable DescribeOfflineLogConfigsCallable(const Model::DescribeOfflineLogConfigsRequest& request);
-
-                /**
-                 *获取所有离线日志记录(最多100条)
-                 * @param req DescribeOfflineLogRecordsRequest
-                 * @return DescribeOfflineLogRecordsOutcome
-                 */
-                DescribeOfflineLogRecordsOutcome DescribeOfflineLogRecords(const Model::DescribeOfflineLogRecordsRequest &request);
-                void DescribeOfflineLogRecordsAsync(const Model::DescribeOfflineLogRecordsRequest& request, const DescribeOfflineLogRecordsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
-                DescribeOfflineLogRecordsOutcomeCallable DescribeOfflineLogRecordsCallable(const Model::DescribeOfflineLogRecordsRequest& request);
-
-                /**
-                 *获取对应离线日志
-                 * @param req DescribeOfflineLogsRequest
-                 * @return DescribeOfflineLogsOutcome
-                 */
-                DescribeOfflineLogsOutcome DescribeOfflineLogs(const Model::DescribeOfflineLogsRequest &request);
-                void DescribeOfflineLogsAsync(const Model::DescribeOfflineLogsRequest& request, const DescribeOfflineLogsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
-                DescribeOfflineLogsOutcomeCallable DescribeOfflineLogsCallable(const Model::DescribeOfflineLogsRequest& request);
 
                 /**
                  *获取应用上报抽样信息

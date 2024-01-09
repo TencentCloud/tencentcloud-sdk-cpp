@@ -83,6 +83,49 @@ DtsClient::CompleteMigrateJobOutcomeCallable DtsClient::CompleteMigrateJobCallab
     return task->get_future();
 }
 
+DtsClient::ConfigureSubscribeJobOutcome DtsClient::ConfigureSubscribeJob(const ConfigureSubscribeJobRequest &request)
+{
+    auto outcome = MakeRequest(request, "ConfigureSubscribeJob");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ConfigureSubscribeJobResponse rsp = ConfigureSubscribeJobResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ConfigureSubscribeJobOutcome(rsp);
+        else
+            return ConfigureSubscribeJobOutcome(o.GetError());
+    }
+    else
+    {
+        return ConfigureSubscribeJobOutcome(outcome.GetError());
+    }
+}
+
+void DtsClient::ConfigureSubscribeJobAsync(const ConfigureSubscribeJobRequest& request, const ConfigureSubscribeJobAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->ConfigureSubscribeJob(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+DtsClient::ConfigureSubscribeJobOutcomeCallable DtsClient::ConfigureSubscribeJobCallable(const ConfigureSubscribeJobRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<ConfigureSubscribeJobOutcome()>>(
+        [this, request]()
+        {
+            return this->ConfigureSubscribeJob(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 DtsClient::ConfigureSyncJobOutcome DtsClient::ConfigureSyncJob(const ConfigureSyncJobRequest &request)
 {
     auto outcome = MakeRequest(request, "ConfigureSyncJob");
@@ -298,6 +341,49 @@ DtsClient::CreateCompareTaskOutcomeCallable DtsClient::CreateCompareTaskCallable
     return task->get_future();
 }
 
+DtsClient::CreateConsumerGroupOutcome DtsClient::CreateConsumerGroup(const CreateConsumerGroupRequest &request)
+{
+    auto outcome = MakeRequest(request, "CreateConsumerGroup");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        CreateConsumerGroupResponse rsp = CreateConsumerGroupResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return CreateConsumerGroupOutcome(rsp);
+        else
+            return CreateConsumerGroupOutcome(o.GetError());
+    }
+    else
+    {
+        return CreateConsumerGroupOutcome(outcome.GetError());
+    }
+}
+
+void DtsClient::CreateConsumerGroupAsync(const CreateConsumerGroupRequest& request, const CreateConsumerGroupAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->CreateConsumerGroup(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+DtsClient::CreateConsumerGroupOutcomeCallable DtsClient::CreateConsumerGroupCallable(const CreateConsumerGroupRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<CreateConsumerGroupOutcome()>>(
+        [this, request]()
+        {
+            return this->CreateConsumerGroup(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 DtsClient::CreateMigrateCheckJobOutcome DtsClient::CreateMigrateCheckJob(const CreateMigrateCheckJobRequest &request)
 {
     auto outcome = MakeRequest(request, "CreateMigrateCheckJob");
@@ -427,6 +513,92 @@ DtsClient::CreateModifyCheckSyncJobOutcomeCallable DtsClient::CreateModifyCheckS
     return task->get_future();
 }
 
+DtsClient::CreateSubscribeOutcome DtsClient::CreateSubscribe(const CreateSubscribeRequest &request)
+{
+    auto outcome = MakeRequest(request, "CreateSubscribe");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        CreateSubscribeResponse rsp = CreateSubscribeResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return CreateSubscribeOutcome(rsp);
+        else
+            return CreateSubscribeOutcome(o.GetError());
+    }
+    else
+    {
+        return CreateSubscribeOutcome(outcome.GetError());
+    }
+}
+
+void DtsClient::CreateSubscribeAsync(const CreateSubscribeRequest& request, const CreateSubscribeAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->CreateSubscribe(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+DtsClient::CreateSubscribeOutcomeCallable DtsClient::CreateSubscribeCallable(const CreateSubscribeRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<CreateSubscribeOutcome()>>(
+        [this, request]()
+        {
+            return this->CreateSubscribe(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+DtsClient::CreateSubscribeCheckJobOutcome DtsClient::CreateSubscribeCheckJob(const CreateSubscribeCheckJobRequest &request)
+{
+    auto outcome = MakeRequest(request, "CreateSubscribeCheckJob");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        CreateSubscribeCheckJobResponse rsp = CreateSubscribeCheckJobResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return CreateSubscribeCheckJobOutcome(rsp);
+        else
+            return CreateSubscribeCheckJobOutcome(o.GetError());
+    }
+    else
+    {
+        return CreateSubscribeCheckJobOutcome(outcome.GetError());
+    }
+}
+
+void DtsClient::CreateSubscribeCheckJobAsync(const CreateSubscribeCheckJobRequest& request, const CreateSubscribeCheckJobAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->CreateSubscribeCheckJob(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+DtsClient::CreateSubscribeCheckJobOutcomeCallable DtsClient::CreateSubscribeCheckJobCallable(const CreateSubscribeCheckJobRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<CreateSubscribeCheckJobOutcome()>>(
+        [this, request]()
+        {
+            return this->CreateSubscribeCheckJob(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 DtsClient::CreateSyncJobOutcome DtsClient::CreateSyncJob(const CreateSyncJobRequest &request)
 {
     auto outcome = MakeRequest(request, "CreateSyncJob");
@@ -506,6 +678,49 @@ DtsClient::DeleteCompareTaskOutcomeCallable DtsClient::DeleteCompareTaskCallable
         [this, request]()
         {
             return this->DeleteCompareTask(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+DtsClient::DeleteConsumerGroupOutcome DtsClient::DeleteConsumerGroup(const DeleteConsumerGroupRequest &request)
+{
+    auto outcome = MakeRequest(request, "DeleteConsumerGroup");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DeleteConsumerGroupResponse rsp = DeleteConsumerGroupResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DeleteConsumerGroupOutcome(rsp);
+        else
+            return DeleteConsumerGroupOutcome(o.GetError());
+    }
+    else
+    {
+        return DeleteConsumerGroupOutcome(outcome.GetError());
+    }
+}
+
+void DtsClient::DeleteConsumerGroupAsync(const DeleteConsumerGroupRequest& request, const DeleteConsumerGroupAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DeleteConsumerGroup(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+DtsClient::DeleteConsumerGroupOutcomeCallable DtsClient::DeleteConsumerGroupCallable(const DeleteConsumerGroupRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DeleteConsumerGroupOutcome()>>(
+        [this, request]()
+        {
+            return this->DeleteConsumerGroup(request);
         }
     );
 
@@ -635,6 +850,49 @@ DtsClient::DescribeCompareTasksOutcomeCallable DtsClient::DescribeCompareTasksCa
         [this, request]()
         {
             return this->DescribeCompareTasks(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+DtsClient::DescribeConsumerGroupsOutcome DtsClient::DescribeConsumerGroups(const DescribeConsumerGroupsRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeConsumerGroups");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeConsumerGroupsResponse rsp = DescribeConsumerGroupsResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeConsumerGroupsOutcome(rsp);
+        else
+            return DescribeConsumerGroupsOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeConsumerGroupsOutcome(outcome.GetError());
+    }
+}
+
+void DtsClient::DescribeConsumerGroupsAsync(const DescribeConsumerGroupsRequest& request, const DescribeConsumerGroupsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeConsumerGroups(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+DtsClient::DescribeConsumerGroupsOutcomeCallable DtsClient::DescribeConsumerGroupsCallable(const DescribeConsumerGroupsRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeConsumerGroupsOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeConsumerGroups(request);
         }
     );
 
@@ -857,6 +1115,221 @@ DtsClient::DescribeModifyCheckSyncJobResultOutcomeCallable DtsClient::DescribeMo
     return task->get_future();
 }
 
+DtsClient::DescribeOffsetByTimeOutcome DtsClient::DescribeOffsetByTime(const DescribeOffsetByTimeRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeOffsetByTime");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeOffsetByTimeResponse rsp = DescribeOffsetByTimeResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeOffsetByTimeOutcome(rsp);
+        else
+            return DescribeOffsetByTimeOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeOffsetByTimeOutcome(outcome.GetError());
+    }
+}
+
+void DtsClient::DescribeOffsetByTimeAsync(const DescribeOffsetByTimeRequest& request, const DescribeOffsetByTimeAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeOffsetByTime(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+DtsClient::DescribeOffsetByTimeOutcomeCallable DtsClient::DescribeOffsetByTimeCallable(const DescribeOffsetByTimeRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeOffsetByTimeOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeOffsetByTime(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+DtsClient::DescribeSubscribeCheckJobOutcome DtsClient::DescribeSubscribeCheckJob(const DescribeSubscribeCheckJobRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeSubscribeCheckJob");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeSubscribeCheckJobResponse rsp = DescribeSubscribeCheckJobResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeSubscribeCheckJobOutcome(rsp);
+        else
+            return DescribeSubscribeCheckJobOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeSubscribeCheckJobOutcome(outcome.GetError());
+    }
+}
+
+void DtsClient::DescribeSubscribeCheckJobAsync(const DescribeSubscribeCheckJobRequest& request, const DescribeSubscribeCheckJobAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeSubscribeCheckJob(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+DtsClient::DescribeSubscribeCheckJobOutcomeCallable DtsClient::DescribeSubscribeCheckJobCallable(const DescribeSubscribeCheckJobRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeSubscribeCheckJobOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeSubscribeCheckJob(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+DtsClient::DescribeSubscribeDetailOutcome DtsClient::DescribeSubscribeDetail(const DescribeSubscribeDetailRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeSubscribeDetail");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeSubscribeDetailResponse rsp = DescribeSubscribeDetailResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeSubscribeDetailOutcome(rsp);
+        else
+            return DescribeSubscribeDetailOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeSubscribeDetailOutcome(outcome.GetError());
+    }
+}
+
+void DtsClient::DescribeSubscribeDetailAsync(const DescribeSubscribeDetailRequest& request, const DescribeSubscribeDetailAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeSubscribeDetail(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+DtsClient::DescribeSubscribeDetailOutcomeCallable DtsClient::DescribeSubscribeDetailCallable(const DescribeSubscribeDetailRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeSubscribeDetailOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeSubscribeDetail(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+DtsClient::DescribeSubscribeJobsOutcome DtsClient::DescribeSubscribeJobs(const DescribeSubscribeJobsRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeSubscribeJobs");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeSubscribeJobsResponse rsp = DescribeSubscribeJobsResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeSubscribeJobsOutcome(rsp);
+        else
+            return DescribeSubscribeJobsOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeSubscribeJobsOutcome(outcome.GetError());
+    }
+}
+
+void DtsClient::DescribeSubscribeJobsAsync(const DescribeSubscribeJobsRequest& request, const DescribeSubscribeJobsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeSubscribeJobs(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+DtsClient::DescribeSubscribeJobsOutcomeCallable DtsClient::DescribeSubscribeJobsCallable(const DescribeSubscribeJobsRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeSubscribeJobsOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeSubscribeJobs(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+DtsClient::DescribeSubscribeReturnableOutcome DtsClient::DescribeSubscribeReturnable(const DescribeSubscribeReturnableRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeSubscribeReturnable");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeSubscribeReturnableResponse rsp = DescribeSubscribeReturnableResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeSubscribeReturnableOutcome(rsp);
+        else
+            return DescribeSubscribeReturnableOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeSubscribeReturnableOutcome(outcome.GetError());
+    }
+}
+
+void DtsClient::DescribeSubscribeReturnableAsync(const DescribeSubscribeReturnableRequest& request, const DescribeSubscribeReturnableAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeSubscribeReturnable(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+DtsClient::DescribeSubscribeReturnableOutcomeCallable DtsClient::DescribeSubscribeReturnableCallable(const DescribeSubscribeReturnableRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeSubscribeReturnableOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeSubscribeReturnable(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 DtsClient::DescribeSyncJobsOutcome DtsClient::DescribeSyncJobs(const DescribeSyncJobsRequest &request)
 {
     auto outcome = MakeRequest(request, "DescribeSyncJobs");
@@ -893,6 +1366,49 @@ DtsClient::DescribeSyncJobsOutcomeCallable DtsClient::DescribeSyncJobsCallable(c
         [this, request]()
         {
             return this->DescribeSyncJobs(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+DtsClient::DestroyIsolatedSubscribeOutcome DtsClient::DestroyIsolatedSubscribe(const DestroyIsolatedSubscribeRequest &request)
+{
+    auto outcome = MakeRequest(request, "DestroyIsolatedSubscribe");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DestroyIsolatedSubscribeResponse rsp = DestroyIsolatedSubscribeResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DestroyIsolatedSubscribeOutcome(rsp);
+        else
+            return DestroyIsolatedSubscribeOutcome(o.GetError());
+    }
+    else
+    {
+        return DestroyIsolatedSubscribeOutcome(outcome.GetError());
+    }
+}
+
+void DtsClient::DestroyIsolatedSubscribeAsync(const DestroyIsolatedSubscribeRequest& request, const DestroyIsolatedSubscribeAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DestroyIsolatedSubscribe(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+DtsClient::DestroyIsolatedSubscribeOutcomeCallable DtsClient::DestroyIsolatedSubscribeCallable(const DestroyIsolatedSubscribeRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DestroyIsolatedSubscribeOutcome()>>(
+        [this, request]()
+        {
+            return this->DestroyIsolatedSubscribe(request);
         }
     );
 
@@ -1029,6 +1545,49 @@ DtsClient::IsolateMigrateJobOutcomeCallable DtsClient::IsolateMigrateJobCallable
     return task->get_future();
 }
 
+DtsClient::IsolateSubscribeOutcome DtsClient::IsolateSubscribe(const IsolateSubscribeRequest &request)
+{
+    auto outcome = MakeRequest(request, "IsolateSubscribe");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        IsolateSubscribeResponse rsp = IsolateSubscribeResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return IsolateSubscribeOutcome(rsp);
+        else
+            return IsolateSubscribeOutcome(o.GetError());
+    }
+    else
+    {
+        return IsolateSubscribeOutcome(outcome.GetError());
+    }
+}
+
+void DtsClient::IsolateSubscribeAsync(const IsolateSubscribeRequest& request, const IsolateSubscribeAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->IsolateSubscribe(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+DtsClient::IsolateSubscribeOutcomeCallable DtsClient::IsolateSubscribeCallable(const IsolateSubscribeRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<IsolateSubscribeOutcome()>>(
+        [this, request]()
+        {
+            return this->IsolateSubscribe(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 DtsClient::IsolateSyncJobOutcome DtsClient::IsolateSyncJob(const IsolateSyncJobRequest &request)
 {
     auto outcome = MakeRequest(request, "IsolateSyncJob");
@@ -1151,6 +1710,92 @@ DtsClient::ModifyCompareTaskNameOutcomeCallable DtsClient::ModifyCompareTaskName
         [this, request]()
         {
             return this->ModifyCompareTaskName(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+DtsClient::ModifyConsumerGroupDescriptionOutcome DtsClient::ModifyConsumerGroupDescription(const ModifyConsumerGroupDescriptionRequest &request)
+{
+    auto outcome = MakeRequest(request, "ModifyConsumerGroupDescription");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ModifyConsumerGroupDescriptionResponse rsp = ModifyConsumerGroupDescriptionResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ModifyConsumerGroupDescriptionOutcome(rsp);
+        else
+            return ModifyConsumerGroupDescriptionOutcome(o.GetError());
+    }
+    else
+    {
+        return ModifyConsumerGroupDescriptionOutcome(outcome.GetError());
+    }
+}
+
+void DtsClient::ModifyConsumerGroupDescriptionAsync(const ModifyConsumerGroupDescriptionRequest& request, const ModifyConsumerGroupDescriptionAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->ModifyConsumerGroupDescription(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+DtsClient::ModifyConsumerGroupDescriptionOutcomeCallable DtsClient::ModifyConsumerGroupDescriptionCallable(const ModifyConsumerGroupDescriptionRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<ModifyConsumerGroupDescriptionOutcome()>>(
+        [this, request]()
+        {
+            return this->ModifyConsumerGroupDescription(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+DtsClient::ModifyConsumerGroupPasswordOutcome DtsClient::ModifyConsumerGroupPassword(const ModifyConsumerGroupPasswordRequest &request)
+{
+    auto outcome = MakeRequest(request, "ModifyConsumerGroupPassword");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ModifyConsumerGroupPasswordResponse rsp = ModifyConsumerGroupPasswordResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ModifyConsumerGroupPasswordOutcome(rsp);
+        else
+            return ModifyConsumerGroupPasswordOutcome(o.GetError());
+    }
+    else
+    {
+        return ModifyConsumerGroupPasswordOutcome(outcome.GetError());
+    }
+}
+
+void DtsClient::ModifyConsumerGroupPasswordAsync(const ModifyConsumerGroupPasswordRequest& request, const ModifyConsumerGroupPasswordAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->ModifyConsumerGroupPassword(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+DtsClient::ModifyConsumerGroupPasswordOutcomeCallable DtsClient::ModifyConsumerGroupPasswordCallable(const ModifyConsumerGroupPasswordRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<ModifyConsumerGroupPasswordOutcome()>>(
+        [this, request]()
+        {
+            return this->ModifyConsumerGroupPassword(request);
         }
     );
 
@@ -1366,6 +2011,135 @@ DtsClient::ModifyMigrationJobOutcomeCallable DtsClient::ModifyMigrationJobCallab
         [this, request]()
         {
             return this->ModifyMigrationJob(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+DtsClient::ModifySubscribeAutoRenewFlagOutcome DtsClient::ModifySubscribeAutoRenewFlag(const ModifySubscribeAutoRenewFlagRequest &request)
+{
+    auto outcome = MakeRequest(request, "ModifySubscribeAutoRenewFlag");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ModifySubscribeAutoRenewFlagResponse rsp = ModifySubscribeAutoRenewFlagResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ModifySubscribeAutoRenewFlagOutcome(rsp);
+        else
+            return ModifySubscribeAutoRenewFlagOutcome(o.GetError());
+    }
+    else
+    {
+        return ModifySubscribeAutoRenewFlagOutcome(outcome.GetError());
+    }
+}
+
+void DtsClient::ModifySubscribeAutoRenewFlagAsync(const ModifySubscribeAutoRenewFlagRequest& request, const ModifySubscribeAutoRenewFlagAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->ModifySubscribeAutoRenewFlag(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+DtsClient::ModifySubscribeAutoRenewFlagOutcomeCallable DtsClient::ModifySubscribeAutoRenewFlagCallable(const ModifySubscribeAutoRenewFlagRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<ModifySubscribeAutoRenewFlagOutcome()>>(
+        [this, request]()
+        {
+            return this->ModifySubscribeAutoRenewFlag(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+DtsClient::ModifySubscribeNameOutcome DtsClient::ModifySubscribeName(const ModifySubscribeNameRequest &request)
+{
+    auto outcome = MakeRequest(request, "ModifySubscribeName");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ModifySubscribeNameResponse rsp = ModifySubscribeNameResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ModifySubscribeNameOutcome(rsp);
+        else
+            return ModifySubscribeNameOutcome(o.GetError());
+    }
+    else
+    {
+        return ModifySubscribeNameOutcome(outcome.GetError());
+    }
+}
+
+void DtsClient::ModifySubscribeNameAsync(const ModifySubscribeNameRequest& request, const ModifySubscribeNameAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->ModifySubscribeName(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+DtsClient::ModifySubscribeNameOutcomeCallable DtsClient::ModifySubscribeNameCallable(const ModifySubscribeNameRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<ModifySubscribeNameOutcome()>>(
+        [this, request]()
+        {
+            return this->ModifySubscribeName(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+DtsClient::ModifySubscribeObjectsOutcome DtsClient::ModifySubscribeObjects(const ModifySubscribeObjectsRequest &request)
+{
+    auto outcome = MakeRequest(request, "ModifySubscribeObjects");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ModifySubscribeObjectsResponse rsp = ModifySubscribeObjectsResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ModifySubscribeObjectsOutcome(rsp);
+        else
+            return ModifySubscribeObjectsOutcome(o.GetError());
+    }
+    else
+    {
+        return ModifySubscribeObjectsOutcome(outcome.GetError());
+    }
+}
+
+void DtsClient::ModifySubscribeObjectsAsync(const ModifySubscribeObjectsRequest& request, const ModifySubscribeObjectsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->ModifySubscribeObjects(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+DtsClient::ModifySubscribeObjectsOutcomeCallable DtsClient::ModifySubscribeObjectsCallable(const ModifySubscribeObjectsRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<ModifySubscribeObjectsOutcome()>>(
+        [this, request]()
+        {
+            return this->ModifySubscribeObjects(request);
         }
     );
 
@@ -1631,6 +2405,92 @@ DtsClient::RecoverSyncJobOutcomeCallable DtsClient::RecoverSyncJobCallable(const
     return task->get_future();
 }
 
+DtsClient::ResetConsumerGroupOffsetOutcome DtsClient::ResetConsumerGroupOffset(const ResetConsumerGroupOffsetRequest &request)
+{
+    auto outcome = MakeRequest(request, "ResetConsumerGroupOffset");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ResetConsumerGroupOffsetResponse rsp = ResetConsumerGroupOffsetResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ResetConsumerGroupOffsetOutcome(rsp);
+        else
+            return ResetConsumerGroupOffsetOutcome(o.GetError());
+    }
+    else
+    {
+        return ResetConsumerGroupOffsetOutcome(outcome.GetError());
+    }
+}
+
+void DtsClient::ResetConsumerGroupOffsetAsync(const ResetConsumerGroupOffsetRequest& request, const ResetConsumerGroupOffsetAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->ResetConsumerGroupOffset(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+DtsClient::ResetConsumerGroupOffsetOutcomeCallable DtsClient::ResetConsumerGroupOffsetCallable(const ResetConsumerGroupOffsetRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<ResetConsumerGroupOffsetOutcome()>>(
+        [this, request]()
+        {
+            return this->ResetConsumerGroupOffset(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+DtsClient::ResetSubscribeOutcome DtsClient::ResetSubscribe(const ResetSubscribeRequest &request)
+{
+    auto outcome = MakeRequest(request, "ResetSubscribe");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ResetSubscribeResponse rsp = ResetSubscribeResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ResetSubscribeOutcome(rsp);
+        else
+            return ResetSubscribeOutcome(o.GetError());
+    }
+    else
+    {
+        return ResetSubscribeOutcome(outcome.GetError());
+    }
+}
+
+void DtsClient::ResetSubscribeAsync(const ResetSubscribeRequest& request, const ResetSubscribeAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->ResetSubscribe(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+DtsClient::ResetSubscribeOutcomeCallable DtsClient::ResetSubscribeCallable(const ResetSubscribeRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<ResetSubscribeOutcome()>>(
+        [this, request]()
+        {
+            return this->ResetSubscribe(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 DtsClient::ResizeSyncJobOutcome DtsClient::ResizeSyncJob(const ResizeSyncJobRequest &request)
 {
     auto outcome = MakeRequest(request, "ResizeSyncJob");
@@ -1710,6 +2570,49 @@ DtsClient::ResumeMigrateJobOutcomeCallable DtsClient::ResumeMigrateJobCallable(c
         [this, request]()
         {
             return this->ResumeMigrateJob(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+DtsClient::ResumeSubscribeOutcome DtsClient::ResumeSubscribe(const ResumeSubscribeRequest &request)
+{
+    auto outcome = MakeRequest(request, "ResumeSubscribe");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ResumeSubscribeResponse rsp = ResumeSubscribeResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ResumeSubscribeOutcome(rsp);
+        else
+            return ResumeSubscribeOutcome(o.GetError());
+    }
+    else
+    {
+        return ResumeSubscribeOutcome(outcome.GetError());
+    }
+}
+
+void DtsClient::ResumeSubscribeAsync(const ResumeSubscribeRequest& request, const ResumeSubscribeAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->ResumeSubscribe(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+DtsClient::ResumeSubscribeOutcomeCallable DtsClient::ResumeSubscribeCallable(const ResumeSubscribeRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<ResumeSubscribeOutcome()>>(
+        [this, request]()
+        {
+            return this->ResumeSubscribe(request);
         }
     );
 
@@ -1968,6 +2871,49 @@ DtsClient::StartModifySyncJobOutcomeCallable DtsClient::StartModifySyncJobCallab
         [this, request]()
         {
             return this->StartModifySyncJob(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+DtsClient::StartSubscribeOutcome DtsClient::StartSubscribe(const StartSubscribeRequest &request)
+{
+    auto outcome = MakeRequest(request, "StartSubscribe");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        StartSubscribeResponse rsp = StartSubscribeResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return StartSubscribeOutcome(rsp);
+        else
+            return StartSubscribeOutcome(o.GetError());
+    }
+    else
+    {
+        return StartSubscribeOutcome(outcome.GetError());
+    }
+}
+
+void DtsClient::StartSubscribeAsync(const StartSubscribeRequest& request, const StartSubscribeAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->StartSubscribe(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+DtsClient::StartSubscribeOutcomeCallable DtsClient::StartSubscribeCallable(const StartSubscribeRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<StartSubscribeOutcome()>>(
+        [this, request]()
+        {
+            return this->StartSubscribe(request);
         }
     );
 

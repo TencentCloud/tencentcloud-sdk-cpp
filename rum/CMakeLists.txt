@@ -25,9 +25,7 @@ set(rum_public_header_model
   include/tencentcloud/rum/v20210622/model/CreateTawInstanceResponse.h
   include/tencentcloud/rum/v20210622/model/DeleteProjectRequest.h
   include/tencentcloud/rum/v20210622/model/DescribeProjectLimitsResponse.h
-  include/tencentcloud/rum/v20210622/model/DescribeTawInstancesRequest.h
   include/tencentcloud/rum/v20210622/model/DeleteOfflineLogConfigResponse.h
-  include/tencentcloud/rum/v20210622/model/ResumeProjectResponse.h
   include/tencentcloud/rum/v20210622/model/DescribeRumLogListResponse.h
   include/tencentcloud/rum/v20210622/model/DescribeAppMetricsDataRequest.h
   include/tencentcloud/rum/v20210622/model/DescribeDataPvUrlInfoResponse.h
@@ -44,7 +42,6 @@ set(rum_public_header_model
   include/tencentcloud/rum/v20210622/model/CreateLogExportRequest.h
   include/tencentcloud/rum/v20210622/model/DescribePvListResponse.h
   include/tencentcloud/rum/v20210622/model/RumUvInfo.h
-  include/tencentcloud/rum/v20210622/model/DescribeOfflineLogsRequest.h
   include/tencentcloud/rum/v20210622/model/DescribeScoresRequest.h
   include/tencentcloud/rum/v20210622/model/DescribeDataReportCountRequest.h
   include/tencentcloud/rum/v20210622/model/DeleteOfflineLogRecordRequest.h
@@ -57,7 +54,6 @@ set(rum_public_header_model
   include/tencentcloud/rum/v20210622/model/CreateProjectRequest.h
   include/tencentcloud/rum/v20210622/model/DescribeDataStaticUrlRequest.h
   include/tencentcloud/rum/v20210622/model/ModifyInstanceResponse.h
-  include/tencentcloud/rum/v20210622/model/DescribeOfflineLogRecordsResponse.h
   include/tencentcloud/rum/v20210622/model/DeleteStarProjectRequest.h
   include/tencentcloud/rum/v20210622/model/DescribeWhitelistsRequest.h
   include/tencentcloud/rum/v20210622/model/DescribeLogExportsResponse.h
@@ -65,7 +61,7 @@ set(rum_public_header_model
   include/tencentcloud/rum/v20210622/model/DescribeTawAreasResponse.h
   include/tencentcloud/rum/v20210622/model/DescribeDataRequest.h
   include/tencentcloud/rum/v20210622/model/StopProjectRequest.h
-  include/tencentcloud/rum/v20210622/model/CreateOfflineLogConfigResponse.h
+  include/tencentcloud/rum/v20210622/model/ResumeProjectResponse.h
   include/tencentcloud/rum/v20210622/model/ModifyProjectLimitRequest.h
   include/tencentcloud/rum/v20210622/model/DeleteInstanceResponse.h
   include/tencentcloud/rum/v20210622/model/DescribeAppSingleCaseListResponse.h
@@ -77,10 +73,9 @@ set(rum_public_header_model
   include/tencentcloud/rum/v20210622/model/DescribeDataLogUrlStatisticsResponse.h
   include/tencentcloud/rum/v20210622/model/CreateProjectResponse.h
   include/tencentcloud/rum/v20210622/model/StopInstanceResponse.h
-  include/tencentcloud/rum/v20210622/model/DescribeDataCustomUrlResponse.h
+  include/tencentcloud/rum/v20210622/model/DescribeProjectLimitsRequest.h
   include/tencentcloud/rum/v20210622/model/CreateStarProjectResponse.h
   include/tencentcloud/rum/v20210622/model/DeleteProjectResponse.h
-  include/tencentcloud/rum/v20210622/model/DescribeOfflineLogRecordsRequest.h
   include/tencentcloud/rum/v20210622/model/DescribeDataPvUrlStatisticsRequest.h
   include/tencentcloud/rum/v20210622/model/ReleaseFile.h
   include/tencentcloud/rum/v20210622/model/ModifyProjectLimitResponse.h
@@ -95,7 +90,7 @@ set(rum_public_header_model
   include/tencentcloud/rum/v20210622/model/CreateWhitelistRequest.h
   include/tencentcloud/rum/v20210622/model/DescribeDataPvUrlStatisticsResponse.h
   include/tencentcloud/rum/v20210622/model/DescribeDataLogUrlInfoRequest.h
-  include/tencentcloud/rum/v20210622/model/DescribeProjectLimitsRequest.h
+  include/tencentcloud/rum/v20210622/model/DescribeDataCustomUrlResponse.h
   include/tencentcloud/rum/v20210622/model/RumAreaInfo.h
   include/tencentcloud/rum/v20210622/model/DescribeDataSetUrlStatisticsRequest.h
   include/tencentcloud/rum/v20210622/model/DescribeDataPerformanceProjectResponse.h
@@ -113,7 +108,7 @@ set(rum_public_header_model
   include/tencentcloud/rum/v20210622/model/DescribeOfflineLogConfigsResponse.h
   include/tencentcloud/rum/v20210622/model/DeleteLogExportResponse.h
   include/tencentcloud/rum/v20210622/model/DescribeReleaseFileSignResponse.h
-  include/tencentcloud/rum/v20210622/model/DescribeOfflineLogsResponse.h
+  include/tencentcloud/rum/v20210622/model/DescribeTawInstancesRequest.h
   include/tencentcloud/rum/v20210622/model/DescribeTawAreasRequest.h
   include/tencentcloud/rum/v20210622/model/Filter.h
   include/tencentcloud/rum/v20210622/model/DescribeDataLogUrlStatisticsRequest.h
@@ -127,7 +122,6 @@ set(rum_public_header_model
   include/tencentcloud/rum/v20210622/model/DescribeDataFetchUrlInfoRequest.h
   include/tencentcloud/rum/v20210622/model/DescribeLogListResponse.h
   include/tencentcloud/rum/v20210622/model/DescribeReleaseFilesResponse.h
-  include/tencentcloud/rum/v20210622/model/CreateOfflineLogConfigRequest.h
   include/tencentcloud/rum/v20210622/model/DescribeDataStaticUrlResponse.h
   include/tencentcloud/rum/v20210622/model/CreateWhitelistResponse.h
   include/tencentcloud/rum/v20210622/model/ScoreInfo.h
@@ -171,9 +165,7 @@ set(rum_src
   src/v20210622/model/CreateTawInstanceResponse.cpp
   src/v20210622/model/DeleteProjectRequest.cpp
   src/v20210622/model/DescribeProjectLimitsResponse.cpp
-  src/v20210622/model/DescribeTawInstancesRequest.cpp
   src/v20210622/model/DeleteOfflineLogConfigResponse.cpp
-  src/v20210622/model/ResumeProjectResponse.cpp
   src/v20210622/model/DescribeRumLogListResponse.cpp
   src/v20210622/model/DescribeAppMetricsDataRequest.cpp
   src/v20210622/model/DescribeDataPvUrlInfoResponse.cpp
@@ -190,7 +182,6 @@ set(rum_src
   src/v20210622/model/CreateLogExportRequest.cpp
   src/v20210622/model/DescribePvListResponse.cpp
   src/v20210622/model/RumUvInfo.cpp
-  src/v20210622/model/DescribeOfflineLogsRequest.cpp
   src/v20210622/model/DescribeScoresRequest.cpp
   src/v20210622/model/DescribeDataReportCountRequest.cpp
   src/v20210622/model/DeleteOfflineLogRecordRequest.cpp
@@ -203,7 +194,6 @@ set(rum_src
   src/v20210622/model/CreateProjectRequest.cpp
   src/v20210622/model/DescribeDataStaticUrlRequest.cpp
   src/v20210622/model/ModifyInstanceResponse.cpp
-  src/v20210622/model/DescribeOfflineLogRecordsResponse.cpp
   src/v20210622/model/DeleteStarProjectRequest.cpp
   src/v20210622/model/DescribeWhitelistsRequest.cpp
   src/v20210622/model/DescribeLogExportsResponse.cpp
@@ -211,7 +201,7 @@ set(rum_src
   src/v20210622/model/DescribeTawAreasResponse.cpp
   src/v20210622/model/DescribeDataRequest.cpp
   src/v20210622/model/StopProjectRequest.cpp
-  src/v20210622/model/CreateOfflineLogConfigResponse.cpp
+  src/v20210622/model/ResumeProjectResponse.cpp
   src/v20210622/model/ModifyProjectLimitRequest.cpp
   src/v20210622/model/DeleteInstanceResponse.cpp
   src/v20210622/model/DescribeAppSingleCaseListResponse.cpp
@@ -223,10 +213,9 @@ set(rum_src
   src/v20210622/model/DescribeDataLogUrlStatisticsResponse.cpp
   src/v20210622/model/CreateProjectResponse.cpp
   src/v20210622/model/StopInstanceResponse.cpp
-  src/v20210622/model/DescribeDataCustomUrlResponse.cpp
+  src/v20210622/model/DescribeProjectLimitsRequest.cpp
   src/v20210622/model/CreateStarProjectResponse.cpp
   src/v20210622/model/DeleteProjectResponse.cpp
-  src/v20210622/model/DescribeOfflineLogRecordsRequest.cpp
   src/v20210622/model/DescribeDataPvUrlStatisticsRequest.cpp
   src/v20210622/model/ReleaseFile.cpp
   src/v20210622/model/ModifyProjectLimitResponse.cpp
@@ -241,7 +230,7 @@ set(rum_src
   src/v20210622/model/CreateWhitelistRequest.cpp
   src/v20210622/model/DescribeDataPvUrlStatisticsResponse.cpp
   src/v20210622/model/DescribeDataLogUrlInfoRequest.cpp
-  src/v20210622/model/DescribeProjectLimitsRequest.cpp
+  src/v20210622/model/DescribeDataCustomUrlResponse.cpp
   src/v20210622/model/RumAreaInfo.cpp
   src/v20210622/model/DescribeDataSetUrlStatisticsRequest.cpp
   src/v20210622/model/DescribeDataPerformanceProjectResponse.cpp
@@ -259,7 +248,7 @@ set(rum_src
   src/v20210622/model/DescribeOfflineLogConfigsResponse.cpp
   src/v20210622/model/DeleteLogExportResponse.cpp
   src/v20210622/model/DescribeReleaseFileSignResponse.cpp
-  src/v20210622/model/DescribeOfflineLogsResponse.cpp
+  src/v20210622/model/DescribeTawInstancesRequest.cpp
   src/v20210622/model/DescribeTawAreasRequest.cpp
   src/v20210622/model/Filter.cpp
   src/v20210622/model/DescribeDataLogUrlStatisticsRequest.cpp
@@ -273,7 +262,6 @@ set(rum_src
   src/v20210622/model/DescribeDataFetchUrlInfoRequest.cpp
   src/v20210622/model/DescribeLogListResponse.cpp
   src/v20210622/model/DescribeReleaseFilesResponse.cpp
-  src/v20210622/model/CreateOfflineLogConfigRequest.cpp
   src/v20210622/model/DescribeDataStaticUrlResponse.cpp
   src/v20210622/model/CreateWhitelistResponse.cpp
   src/v20210622/model/ScoreInfo.cpp

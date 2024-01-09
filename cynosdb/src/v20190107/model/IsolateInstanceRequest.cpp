@@ -25,7 +25,9 @@ using namespace std;
 IsolateInstanceRequest::IsolateInstanceRequest() :
     m_clusterIdHasBeenSet(false),
     m_instanceIdListHasBeenSet(false),
-    m_dbTypeHasBeenSet(false)
+    m_dbTypeHasBeenSet(false),
+    m_isolateReasonTypesHasBeenSet(false),
+    m_isolateReasonHasBeenSet(false)
 {
 }
 
@@ -63,6 +65,27 @@ string IsolateInstanceRequest::ToJsonString() const
         string key = "DbType";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_dbType.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_isolateReasonTypesHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "IsolateReasonTypes";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        for (auto itr = m_isolateReasonTypes.begin(); itr != m_isolateReasonTypes.end(); ++itr)
+        {
+            d[key.c_str()].PushBack(rapidjson::Value().SetInt64(*itr), allocator);
+        }
+    }
+
+    if (m_isolateReasonHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "IsolateReason";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_isolateReason.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -119,6 +142,38 @@ void IsolateInstanceRequest::SetDbType(const string& _dbType)
 bool IsolateInstanceRequest::DbTypeHasBeenSet() const
 {
     return m_dbTypeHasBeenSet;
+}
+
+vector<int64_t> IsolateInstanceRequest::GetIsolateReasonTypes() const
+{
+    return m_isolateReasonTypes;
+}
+
+void IsolateInstanceRequest::SetIsolateReasonTypes(const vector<int64_t>& _isolateReasonTypes)
+{
+    m_isolateReasonTypes = _isolateReasonTypes;
+    m_isolateReasonTypesHasBeenSet = true;
+}
+
+bool IsolateInstanceRequest::IsolateReasonTypesHasBeenSet() const
+{
+    return m_isolateReasonTypesHasBeenSet;
+}
+
+string IsolateInstanceRequest::GetIsolateReason() const
+{
+    return m_isolateReason;
+}
+
+void IsolateInstanceRequest::SetIsolateReason(const string& _isolateReason)
+{
+    m_isolateReason = _isolateReason;
+    m_isolateReasonHasBeenSet = true;
+}
+
+bool IsolateInstanceRequest::IsolateReasonHasBeenSet() const
+{
+    return m_isolateReasonHasBeenSet;
 }
 
 
