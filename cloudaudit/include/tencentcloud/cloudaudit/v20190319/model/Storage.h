@@ -130,6 +130,56 @@ namespace TencentCloud
                      */
                     bool StoragePrefixHasBeenSet() const;
 
+                    /**
+                     * 获取被指定存储用户ID
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return StorageAccountId 被指定存储用户ID
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::string GetStorageAccountId() const;
+
+                    /**
+                     * 设置被指定存储用户ID
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _storageAccountId 被指定存储用户ID
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetStorageAccountId(const std::string& _storageAccountId);
+
+                    /**
+                     * 判断参数 StorageAccountId 是否已赋值
+                     * @return StorageAccountId 是否已赋值
+                     * 
+                     */
+                    bool StorageAccountIdHasBeenSet() const;
+
+                    /**
+                     * 获取被指定存储用户appid
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return StorageAppId 被指定存储用户appid
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::string GetStorageAppId() const;
+
+                    /**
+                     * 设置被指定存储用户appid
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _storageAppId 被指定存储用户appid
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetStorageAppId(const std::string& _storageAppId);
+
+                    /**
+                     * 判断参数 StorageAppId 是否已赋值
+                     * @return StorageAppId 是否已赋值
+                     * 
+                     */
+                    bool StorageAppIdHasBeenSet() const;
+
                 private:
 
                     /**
@@ -155,6 +205,20 @@ namespace TencentCloud
                      */
                     std::string m_storagePrefix;
                     bool m_storagePrefixHasBeenSet;
+
+                    /**
+                     * 被指定存储用户ID
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_storageAccountId;
+                    bool m_storageAccountIdHasBeenSet;
+
+                    /**
+                     * 被指定存储用户appid
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_storageAppId;
+                    bool m_storageAppIdHasBeenSet;
 
                 };
             }

@@ -47,15 +47,19 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取CDN转推URL。注：若更新转推时，URL有任何变化，都会断流重推。
-                     * @return PublishCdnUrl CDN转推URL。注：若更新转推时，URL有任何变化，都会断流重推。
+                     * 获取CDN转推URL，只支持rtmp链接。
+注：若更新转推时，URL有任何变化，都会断流重推。
+                     * @return PublishCdnUrl CDN转推URL，只支持rtmp链接。
+注：若更新转推时，URL有任何变化，都会断流重推。
                      * 
                      */
                     std::string GetPublishCdnUrl() const;
 
                     /**
-                     * 设置CDN转推URL。注：若更新转推时，URL有任何变化，都会断流重推。
-                     * @param _publishCdnUrl CDN转推URL。注：若更新转推时，URL有任何变化，都会断流重推。
+                     * 设置CDN转推URL，只支持rtmp链接。
+注：若更新转推时，URL有任何变化，都会断流重推。
+                     * @param _publishCdnUrl CDN转推URL，只支持rtmp链接。
+注：若更新转推时，URL有任何变化，都会断流重推。
                      * 
                      */
                     void SetPublishCdnUrl(const std::string& _publishCdnUrl);
@@ -91,7 +95,8 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * CDN转推URL。注：若更新转推时，URL有任何变化，都会断流重推。
+                     * CDN转推URL，只支持rtmp链接。
+注：若更新转推时，URL有任何变化，都会断流重推。
                      */
                     std::string m_publishCdnUrl;
                     bool m_publishCdnUrlHasBeenSet;

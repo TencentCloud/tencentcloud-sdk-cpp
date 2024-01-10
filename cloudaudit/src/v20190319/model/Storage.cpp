@@ -24,7 +24,9 @@ Storage::Storage() :
     m_storageTypeHasBeenSet(false),
     m_storageRegionHasBeenSet(false),
     m_storageNameHasBeenSet(false),
-    m_storagePrefixHasBeenSet(false)
+    m_storagePrefixHasBeenSet(false),
+    m_storageAccountIdHasBeenSet(false),
+    m_storageAppIdHasBeenSet(false)
 {
 }
 
@@ -73,6 +75,26 @@ CoreInternalOutcome Storage::Deserialize(const rapidjson::Value &value)
         m_storagePrefixHasBeenSet = true;
     }
 
+    if (value.HasMember("StorageAccountId") && !value["StorageAccountId"].IsNull())
+    {
+        if (!value["StorageAccountId"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `Storage.StorageAccountId` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_storageAccountId = string(value["StorageAccountId"].GetString());
+        m_storageAccountIdHasBeenSet = true;
+    }
+
+    if (value.HasMember("StorageAppId") && !value["StorageAppId"].IsNull())
+    {
+        if (!value["StorageAppId"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `Storage.StorageAppId` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_storageAppId = string(value["StorageAppId"].GetString());
+        m_storageAppIdHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -110,6 +132,22 @@ void Storage::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Allocat
         string key = "StoragePrefix";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_storagePrefix.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_storageAccountIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "StorageAccountId";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_storageAccountId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_storageAppIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "StorageAppId";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_storageAppId.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -177,5 +215,37 @@ void Storage::SetStoragePrefix(const string& _storagePrefix)
 bool Storage::StoragePrefixHasBeenSet() const
 {
     return m_storagePrefixHasBeenSet;
+}
+
+string Storage::GetStorageAccountId() const
+{
+    return m_storageAccountId;
+}
+
+void Storage::SetStorageAccountId(const string& _storageAccountId)
+{
+    m_storageAccountId = _storageAccountId;
+    m_storageAccountIdHasBeenSet = true;
+}
+
+bool Storage::StorageAccountIdHasBeenSet() const
+{
+    return m_storageAccountIdHasBeenSet;
+}
+
+string Storage::GetStorageAppId() const
+{
+    return m_storageAppId;
+}
+
+void Storage::SetStorageAppId(const string& _storageAppId)
+{
+    m_storageAppId = _storageAppId;
+    m_storageAppIdHasBeenSet = true;
+}
+
+bool Storage::StorageAppIdHasBeenSet() const
+{
+    return m_storageAppIdHasBeenSet;
 }
 

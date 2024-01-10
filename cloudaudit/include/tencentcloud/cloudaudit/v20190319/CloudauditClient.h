@@ -149,7 +149,7 @@ namespace TencentCloud
                 CreateAuditOutcomeCallable CreateAuditCallable(const Model::CreateAuditRequest& request);
 
                 /**
-                 *创建跟踪集
+                 *创建操作审计跟踪集
                  * @param req CreateAuditTrackRequest
                  * @return CreateAuditTrackOutcome
                  */
@@ -167,7 +167,7 @@ namespace TencentCloud
                 DeleteAuditOutcomeCallable DeleteAuditCallable(const Model::DeleteAuditRequest& request);
 
                 /**
-                 *删除云审计跟踪集
+                 *删除操作审计跟踪集
                  * @param req DeleteAuditTrackRequest
                  * @return DeleteAuditTrackOutcome
                  */
@@ -185,7 +185,7 @@ namespace TencentCloud
                 DescribeAuditOutcomeCallable DescribeAuditCallable(const Model::DescribeAuditRequest& request);
 
                 /**
-                 *查询云审计跟踪集详情
+                 *查询操作审计跟踪集详情
                  * @param req DescribeAuditTrackRequest
                  * @return DescribeAuditTrackOutcome
                  */
@@ -194,7 +194,7 @@ namespace TencentCloud
                 DescribeAuditTrackOutcomeCallable DescribeAuditTrackCallable(const Model::DescribeAuditTrackRequest& request);
 
                 /**
-                 *查询云审计跟踪集列表
+                 *查询操作审计跟踪集列表
                  * @param req DescribeAuditTracksRequest
                  * @return DescribeAuditTracksOutcome
                  */
@@ -203,7 +203,7 @@ namespace TencentCloud
                 DescribeAuditTracksOutcomeCallable DescribeAuditTracksCallable(const Model::DescribeAuditTracksRequest& request);
 
                 /**
-                 *查询云审计日志
+                 *查询操作审计日志
                  * @param req DescribeEventsRequest
                  * @return DescribeEventsOutcome
                  */
@@ -275,7 +275,7 @@ namespace TencentCloud
                 LookUpEventsOutcomeCallable LookUpEventsCallable(const Model::LookUpEventsRequest& request);
 
                 /**
-                 *修改云审计跟踪
+                 *修改操作审计跟踪集
                  * @param req ModifyAuditTrackRequest
                  * @return ModifyAuditTrackOutcome
                  */
