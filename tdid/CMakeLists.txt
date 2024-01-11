@@ -19,72 +19,52 @@ set(tdid_public_header
   )
 
 set(tdid_public_header_model
-  include/tencentcloud/tdid/v20210519/model/CredentialStatus.h
-  include/tencentcloud/tdid/v20210519/model/CreateTDidRequest.h
-  include/tencentcloud/tdid/v20210519/model/CreateSelectiveCredentialRequest.h
-  include/tencentcloud/tdid/v20210519/model/CreateTDidByPrivateKeyResponse.h
-  include/tencentcloud/tdid/v20210519/model/CheckChainResponse.h
-  include/tencentcloud/tdid/v20210519/model/CreateTDidByPublicKeyRequest.h
-  include/tencentcloud/tdid/v20210519/model/CreateCredentialResponse.h
-  include/tencentcloud/tdid/v20210519/model/GetAuthorityIssuerRequest.h
-  include/tencentcloud/tdid/v20210519/model/CreateCredentialRequest.h
-  include/tencentcloud/tdid/v20210519/model/GetDidDocumentRequest.h
-  include/tencentcloud/tdid/v20210519/model/GetCredentialStatusRequest.h
-  include/tencentcloud/tdid/v20210519/model/VerifyCredentialResponse.h
-  include/tencentcloud/tdid/v20210519/model/SetCredentialStatusResponse.h
-  include/tencentcloud/tdid/v20210519/model/GetCptInfoResponse.h
-  include/tencentcloud/tdid/v20210519/model/TransactionArg.h
-  include/tencentcloud/tdid/v20210519/model/CheckChainRequest.h
-  include/tencentcloud/tdid/v20210519/model/GetAuthorityIssuerResponse.h
-  include/tencentcloud/tdid/v20210519/model/GetDidDocumentResponse.h
-  include/tencentcloud/tdid/v20210519/model/CreateTDidResponse.h
-  include/tencentcloud/tdid/v20210519/model/CreateSelectiveCredentialResponse.h
-  include/tencentcloud/tdid/v20210519/model/RegisterCptRequest.h
-  include/tencentcloud/tdid/v20210519/model/CreateTDidByPublicKeyResponse.h
-  include/tencentcloud/tdid/v20210519/model/Proof.h
-  include/tencentcloud/tdid/v20210519/model/VerifyFunctionArg.h
-  include/tencentcloud/tdid/v20210519/model/FunctionArg.h
-  include/tencentcloud/tdid/v20210519/model/CreateTDidByPrivateKeyRequest.h
-  include/tencentcloud/tdid/v20210519/model/VerifyCredentialRequest.h
-  include/tencentcloud/tdid/v20210519/model/SetCredentialStatusRequest.h
-  include/tencentcloud/tdid/v20210519/model/GetCptInfoRequest.h
-  include/tencentcloud/tdid/v20210519/model/GetCredentialStatusResponse.h
-  include/tencentcloud/tdid/v20210519/model/RegisterCptResponse.h
+  include/tencentcloud/tdid/v20210519/model/CreateTDidByPubKeyResponse.h
+  include/tencentcloud/tdid/v20210519/model/GetTDidDocumentResponse.h
+  include/tencentcloud/tdid/v20210519/model/GetCredentialStateRequest.h
+  include/tencentcloud/tdid/v20210519/model/CheckNewPurchaseRequest.h
+  include/tencentcloud/tdid/v20210519/model/VerifyCredentialsRequest.h
+  include/tencentcloud/tdid/v20210519/model/CRDLArg.h
+  include/tencentcloud/tdid/v20210519/model/GetTDidDocumentRequest.h
+  include/tencentcloud/tdid/v20210519/model/IssueCredentialResponse.h
+  include/tencentcloud/tdid/v20210519/model/GetCredentialStateResponse.h
+  include/tencentcloud/tdid/v20210519/model/CreateTDidByHostRequest.h
+  include/tencentcloud/tdid/v20210519/model/IssueCredentialRequest.h
+  include/tencentcloud/tdid/v20210519/model/VerifyCredentialsResponse.h
+  include/tencentcloud/tdid/v20210519/model/UpdateCredentialStateRequest.h
+  include/tencentcloud/tdid/v20210519/model/CredentialState.h
+  include/tencentcloud/tdid/v20210519/model/CreateTDidByPubKeyRequest.h
+  include/tencentcloud/tdid/v20210519/model/DeactivateTDidRequest.h
+  include/tencentcloud/tdid/v20210519/model/CheckNewPurchaseResponse.h
+  include/tencentcloud/tdid/v20210519/model/UpdateCredentialStateResponse.h
+  include/tencentcloud/tdid/v20210519/model/ChainTransaction.h
+  include/tencentcloud/tdid/v20210519/model/DeactivateTDidResponse.h
+  include/tencentcloud/tdid/v20210519/model/CreateTDidByHostResponse.h
   )
 
 set(tdid_src
   src/v20210519/TdidClient.cpp
-  src/v20210519/model/CredentialStatus.cpp
-  src/v20210519/model/CreateTDidRequest.cpp
-  src/v20210519/model/CreateSelectiveCredentialRequest.cpp
-  src/v20210519/model/CreateTDidByPrivateKeyResponse.cpp
-  src/v20210519/model/CheckChainResponse.cpp
-  src/v20210519/model/CreateTDidByPublicKeyRequest.cpp
-  src/v20210519/model/CreateCredentialResponse.cpp
-  src/v20210519/model/GetAuthorityIssuerRequest.cpp
-  src/v20210519/model/CreateCredentialRequest.cpp
-  src/v20210519/model/GetDidDocumentRequest.cpp
-  src/v20210519/model/GetCredentialStatusRequest.cpp
-  src/v20210519/model/VerifyCredentialResponse.cpp
-  src/v20210519/model/SetCredentialStatusResponse.cpp
-  src/v20210519/model/GetCptInfoResponse.cpp
-  src/v20210519/model/TransactionArg.cpp
-  src/v20210519/model/CheckChainRequest.cpp
-  src/v20210519/model/GetAuthorityIssuerResponse.cpp
-  src/v20210519/model/GetDidDocumentResponse.cpp
-  src/v20210519/model/CreateTDidResponse.cpp
-  src/v20210519/model/CreateSelectiveCredentialResponse.cpp
-  src/v20210519/model/RegisterCptRequest.cpp
-  src/v20210519/model/CreateTDidByPublicKeyResponse.cpp
-  src/v20210519/model/Proof.cpp
-  src/v20210519/model/VerifyFunctionArg.cpp
-  src/v20210519/model/FunctionArg.cpp
-  src/v20210519/model/CreateTDidByPrivateKeyRequest.cpp
-  src/v20210519/model/VerifyCredentialRequest.cpp
-  src/v20210519/model/SetCredentialStatusRequest.cpp
-  src/v20210519/model/GetCptInfoRequest.cpp
-  src/v20210519/model/GetCredentialStatusResponse.cpp
-  src/v20210519/model/RegisterCptResponse.cpp
+  src/v20210519/model/CreateTDidByPubKeyResponse.cpp
+  src/v20210519/model/GetTDidDocumentResponse.cpp
+  src/v20210519/model/GetCredentialStateRequest.cpp
+  src/v20210519/model/CheckNewPurchaseRequest.cpp
+  src/v20210519/model/VerifyCredentialsRequest.cpp
+  src/v20210519/model/CRDLArg.cpp
+  src/v20210519/model/GetTDidDocumentRequest.cpp
+  src/v20210519/model/IssueCredentialResponse.cpp
+  src/v20210519/model/GetCredentialStateResponse.cpp
+  src/v20210519/model/CreateTDidByHostRequest.cpp
+  src/v20210519/model/IssueCredentialRequest.cpp
+  src/v20210519/model/VerifyCredentialsResponse.cpp
+  src/v20210519/model/UpdateCredentialStateRequest.cpp
+  src/v20210519/model/CredentialState.cpp
+  src/v20210519/model/CreateTDidByPubKeyRequest.cpp
+  src/v20210519/model/DeactivateTDidRequest.cpp
+  src/v20210519/model/CheckNewPurchaseResponse.cpp
+  src/v20210519/model/UpdateCredentialStateResponse.cpp
+  src/v20210519/model/ChainTransaction.cpp
+  src/v20210519/model/DeactivateTDidResponse.cpp
+  src/v20210519/model/CreateTDidByHostResponse.cpp
   )
 
 set(tdid_include
