@@ -113,6 +113,48 @@ namespace TencentCloud
                      */
                     bool BestFramesCountHasBeenSet() const;
 
+                    /**
+                     * 获取是否对身份证照片进行裁边。默认为false。（InfoType需要包含2）
+                     * @return IsCutIdCardImage 是否对身份证照片进行裁边。默认为false。（InfoType需要包含2）
+                     * 
+                     */
+                    bool GetIsCutIdCardImage() const;
+
+                    /**
+                     * 设置是否对身份证照片进行裁边。默认为false。（InfoType需要包含2）
+                     * @param _isCutIdCardImage 是否对身份证照片进行裁边。默认为false。（InfoType需要包含2）
+                     * 
+                     */
+                    void SetIsCutIdCardImage(const bool& _isCutIdCardImage);
+
+                    /**
+                     * 判断参数 IsCutIdCardImage 是否已赋值
+                     * @return IsCutIdCardImage 是否已赋值
+                     * 
+                     */
+                    bool IsCutIdCardImageHasBeenSet() const;
+
+                    /**
+                     * 获取是否需要从身份证中抠出头像。默认为false。（InfoType需要包含2）
+                     * @return IsNeedIdCardAvatar 是否需要从身份证中抠出头像。默认为false。（InfoType需要包含2）
+                     * 
+                     */
+                    bool GetIsNeedIdCardAvatar() const;
+
+                    /**
+                     * 设置是否需要从身份证中抠出头像。默认为false。（InfoType需要包含2）
+                     * @param _isNeedIdCardAvatar 是否需要从身份证中抠出头像。默认为false。（InfoType需要包含2）
+                     * 
+                     */
+                    void SetIsNeedIdCardAvatar(const bool& _isNeedIdCardAvatar);
+
+                    /**
+                     * 判断参数 IsNeedIdCardAvatar 是否已赋值
+                     * @return IsNeedIdCardAvatar 是否已赋值
+                     * 
+                     */
+                    bool IsNeedIdCardAvatarHasBeenSet() const;
+
                 private:
 
                     /**
@@ -134,6 +176,18 @@ namespace TencentCloud
                      */
                     uint64_t m_bestFramesCount;
                     bool m_bestFramesCountHasBeenSet;
+
+                    /**
+                     * 是否对身份证照片进行裁边。默认为false。（InfoType需要包含2）
+                     */
+                    bool m_isCutIdCardImage;
+                    bool m_isCutIdCardImageHasBeenSet;
+
+                    /**
+                     * 是否需要从身份证中抠出头像。默认为false。（InfoType需要包含2）
+                     */
+                    bool m_isNeedIdCardAvatar;
+                    bool m_isNeedIdCardAvatarHasBeenSet;
 
                 };
             }

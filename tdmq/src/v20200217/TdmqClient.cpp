@@ -4082,6 +4082,49 @@ TdmqClient::DescribeTopicsOutcomeCallable TdmqClient::DescribeTopicsCallable(con
     return task->get_future();
 }
 
+TdmqClient::ExportRocketMQMessageDetailOutcome TdmqClient::ExportRocketMQMessageDetail(const ExportRocketMQMessageDetailRequest &request)
+{
+    auto outcome = MakeRequest(request, "ExportRocketMQMessageDetail");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ExportRocketMQMessageDetailResponse rsp = ExportRocketMQMessageDetailResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ExportRocketMQMessageDetailOutcome(rsp);
+        else
+            return ExportRocketMQMessageDetailOutcome(o.GetError());
+    }
+    else
+    {
+        return ExportRocketMQMessageDetailOutcome(outcome.GetError());
+    }
+}
+
+void TdmqClient::ExportRocketMQMessageDetailAsync(const ExportRocketMQMessageDetailRequest& request, const ExportRocketMQMessageDetailAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->ExportRocketMQMessageDetail(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+TdmqClient::ExportRocketMQMessageDetailOutcomeCallable TdmqClient::ExportRocketMQMessageDetailCallable(const ExportRocketMQMessageDetailRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<ExportRocketMQMessageDetailOutcome()>>(
+        [this, request]()
+        {
+            return this->ExportRocketMQMessageDetail(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 TdmqClient::ImportRocketMQConsumerGroupsOutcome TdmqClient::ImportRocketMQConsumerGroups(const ImportRocketMQConsumerGroupsRequest &request)
 {
     auto outcome = MakeRequest(request, "ImportRocketMQConsumerGroups");

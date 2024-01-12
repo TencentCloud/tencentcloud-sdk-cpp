@@ -41,7 +41,8 @@ DescribeListBGPInstancesRequest::DescribeListBGPInstancesRequest() :
     m_filterConvoyHasBeenSet(false),
     m_excludeAdvancedInfoHasBeenSet(false),
     m_filterAssetIpListHasBeenSet(false),
-    m_filterBasicPlusFlagHasBeenSet(false)
+    m_filterBasicPlusFlagHasBeenSet(false),
+    m_filterPlanCntFlagHasBeenSet(false)
 {
 }
 
@@ -213,6 +214,14 @@ string DescribeListBGPInstancesRequest::ToJsonString() const
         string key = "FilterBasicPlusFlag";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_filterBasicPlusFlag, allocator);
+    }
+
+    if (m_filterPlanCntFlagHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "FilterPlanCntFlag";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_filterPlanCntFlag, allocator);
     }
 
 
@@ -525,6 +534,22 @@ void DescribeListBGPInstancesRequest::SetFilterBasicPlusFlag(const uint64_t& _fi
 bool DescribeListBGPInstancesRequest::FilterBasicPlusFlagHasBeenSet() const
 {
     return m_filterBasicPlusFlagHasBeenSet;
+}
+
+uint64_t DescribeListBGPInstancesRequest::GetFilterPlanCntFlag() const
+{
+    return m_filterPlanCntFlag;
+}
+
+void DescribeListBGPInstancesRequest::SetFilterPlanCntFlag(const uint64_t& _filterPlanCntFlag)
+{
+    m_filterPlanCntFlag = _filterPlanCntFlag;
+    m_filterPlanCntFlagHasBeenSet = true;
+}
+
+bool DescribeListBGPInstancesRequest::FilterPlanCntFlagHasBeenSet() const
+{
+    return m_filterPlanCntFlagHasBeenSet;
 }
 
 

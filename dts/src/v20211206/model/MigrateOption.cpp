@@ -27,7 +27,8 @@ MigrateOption::MigrateOption() :
     m_isMigrateAccountHasBeenSet(false),
     m_isOverrideRootHasBeenSet(false),
     m_isDstReadOnlyHasBeenSet(false),
-    m_extraAttrHasBeenSet(false)
+    m_extraAttrHasBeenSet(false),
+    m_migrateWayHasBeenSet(false)
 {
 }
 
@@ -130,6 +131,16 @@ CoreInternalOutcome MigrateOption::Deserialize(const rapidjson::Value &value)
         m_extraAttrHasBeenSet = true;
     }
 
+    if (value.HasMember("MigrateWay") && !value["MigrateWay"].IsNull())
+    {
+        if (!value["MigrateWay"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `MigrateOption.MigrateWay` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_migrateWay = string(value["MigrateWay"].GetString());
+        m_migrateWayHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -200,6 +211,14 @@ void MigrateOption::ToJsonObject(rapidjson::Value &value, rapidjson::Document::A
             value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
             (*itr).ToJsonObject(value[key.c_str()][i], allocator);
         }
+    }
+
+    if (m_migrateWayHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "MigrateWay";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_migrateWay.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -315,5 +334,21 @@ void MigrateOption::SetExtraAttr(const vector<KeyValuePairOption>& _extraAttr)
 bool MigrateOption::ExtraAttrHasBeenSet() const
 {
     return m_extraAttrHasBeenSet;
+}
+
+string MigrateOption::GetMigrateWay() const
+{
+    return m_migrateWay;
+}
+
+void MigrateOption::SetMigrateWay(const string& _migrateWay)
+{
+    m_migrateWay = _migrateWay;
+    m_migrateWayHasBeenSet = true;
+}
+
+bool MigrateOption::MigrateWayHasBeenSet() const
+{
+    return m_migrateWayHasBeenSet;
 }
 

@@ -642,6 +642,49 @@ MonitorClient::CreatePrometheusAgentOutcomeCallable MonitorClient::CreatePrometh
     return task->get_future();
 }
 
+MonitorClient::CreatePrometheusAlertGroupOutcome MonitorClient::CreatePrometheusAlertGroup(const CreatePrometheusAlertGroupRequest &request)
+{
+    auto outcome = MakeRequest(request, "CreatePrometheusAlertGroup");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        CreatePrometheusAlertGroupResponse rsp = CreatePrometheusAlertGroupResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return CreatePrometheusAlertGroupOutcome(rsp);
+        else
+            return CreatePrometheusAlertGroupOutcome(o.GetError());
+    }
+    else
+    {
+        return CreatePrometheusAlertGroupOutcome(outcome.GetError());
+    }
+}
+
+void MonitorClient::CreatePrometheusAlertGroupAsync(const CreatePrometheusAlertGroupRequest& request, const CreatePrometheusAlertGroupAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->CreatePrometheusAlertGroup(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+MonitorClient::CreatePrometheusAlertGroupOutcomeCallable MonitorClient::CreatePrometheusAlertGroupCallable(const CreatePrometheusAlertGroupRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<CreatePrometheusAlertGroupOutcome()>>(
+        [this, request]()
+        {
+            return this->CreatePrometheusAlertGroup(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 MonitorClient::CreatePrometheusAlertPolicyOutcome MonitorClient::CreatePrometheusAlertPolicy(const CreatePrometheusAlertPolicyRequest &request)
 {
     auto outcome = MakeRequest(request, "CreatePrometheusAlertPolicy");
@@ -1452,6 +1495,49 @@ MonitorClient::DeletePolicyGroupOutcomeCallable MonitorClient::DeletePolicyGroup
         [this, request]()
         {
             return this->DeletePolicyGroup(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+MonitorClient::DeletePrometheusAlertGroupsOutcome MonitorClient::DeletePrometheusAlertGroups(const DeletePrometheusAlertGroupsRequest &request)
+{
+    auto outcome = MakeRequest(request, "DeletePrometheusAlertGroups");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DeletePrometheusAlertGroupsResponse rsp = DeletePrometheusAlertGroupsResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DeletePrometheusAlertGroupsOutcome(rsp);
+        else
+            return DeletePrometheusAlertGroupsOutcome(o.GetError());
+    }
+    else
+    {
+        return DeletePrometheusAlertGroupsOutcome(outcome.GetError());
+    }
+}
+
+void MonitorClient::DeletePrometheusAlertGroupsAsync(const DeletePrometheusAlertGroupsRequest& request, const DeletePrometheusAlertGroupsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DeletePrometheusAlertGroups(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+MonitorClient::DeletePrometheusAlertGroupsOutcomeCallable MonitorClient::DeletePrometheusAlertGroupsCallable(const DeletePrometheusAlertGroupsRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DeletePrometheusAlertGroupsOutcome()>>(
+        [this, request]()
+        {
+            return this->DeletePrometheusAlertGroups(request);
         }
     );
 
@@ -3387,6 +3473,49 @@ MonitorClient::DescribePrometheusAgentsOutcomeCallable MonitorClient::DescribePr
         [this, request]()
         {
             return this->DescribePrometheusAgents(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+MonitorClient::DescribePrometheusAlertGroupsOutcome MonitorClient::DescribePrometheusAlertGroups(const DescribePrometheusAlertGroupsRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribePrometheusAlertGroups");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribePrometheusAlertGroupsResponse rsp = DescribePrometheusAlertGroupsResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribePrometheusAlertGroupsOutcome(rsp);
+        else
+            return DescribePrometheusAlertGroupsOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribePrometheusAlertGroupsOutcome(outcome.GetError());
+    }
+}
+
+void MonitorClient::DescribePrometheusAlertGroupsAsync(const DescribePrometheusAlertGroupsRequest& request, const DescribePrometheusAlertGroupsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribePrometheusAlertGroups(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+MonitorClient::DescribePrometheusAlertGroupsOutcomeCallable MonitorClient::DescribePrometheusAlertGroupsCallable(const DescribePrometheusAlertGroupsRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribePrometheusAlertGroupsOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribePrometheusAlertGroups(request);
         }
     );
 
@@ -6225,6 +6354,92 @@ MonitorClient::UpdatePrometheusAgentStatusOutcomeCallable MonitorClient::UpdateP
         [this, request]()
         {
             return this->UpdatePrometheusAgentStatus(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+MonitorClient::UpdatePrometheusAlertGroupOutcome MonitorClient::UpdatePrometheusAlertGroup(const UpdatePrometheusAlertGroupRequest &request)
+{
+    auto outcome = MakeRequest(request, "UpdatePrometheusAlertGroup");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        UpdatePrometheusAlertGroupResponse rsp = UpdatePrometheusAlertGroupResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return UpdatePrometheusAlertGroupOutcome(rsp);
+        else
+            return UpdatePrometheusAlertGroupOutcome(o.GetError());
+    }
+    else
+    {
+        return UpdatePrometheusAlertGroupOutcome(outcome.GetError());
+    }
+}
+
+void MonitorClient::UpdatePrometheusAlertGroupAsync(const UpdatePrometheusAlertGroupRequest& request, const UpdatePrometheusAlertGroupAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->UpdatePrometheusAlertGroup(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+MonitorClient::UpdatePrometheusAlertGroupOutcomeCallable MonitorClient::UpdatePrometheusAlertGroupCallable(const UpdatePrometheusAlertGroupRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<UpdatePrometheusAlertGroupOutcome()>>(
+        [this, request]()
+        {
+            return this->UpdatePrometheusAlertGroup(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+MonitorClient::UpdatePrometheusAlertGroupStateOutcome MonitorClient::UpdatePrometheusAlertGroupState(const UpdatePrometheusAlertGroupStateRequest &request)
+{
+    auto outcome = MakeRequest(request, "UpdatePrometheusAlertGroupState");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        UpdatePrometheusAlertGroupStateResponse rsp = UpdatePrometheusAlertGroupStateResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return UpdatePrometheusAlertGroupStateOutcome(rsp);
+        else
+            return UpdatePrometheusAlertGroupStateOutcome(o.GetError());
+    }
+    else
+    {
+        return UpdatePrometheusAlertGroupStateOutcome(outcome.GetError());
+    }
+}
+
+void MonitorClient::UpdatePrometheusAlertGroupStateAsync(const UpdatePrometheusAlertGroupStateRequest& request, const UpdatePrometheusAlertGroupStateAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->UpdatePrometheusAlertGroupState(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+MonitorClient::UpdatePrometheusAlertGroupStateOutcomeCallable MonitorClient::UpdatePrometheusAlertGroupStateCallable(const UpdatePrometheusAlertGroupStateRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<UpdatePrometheusAlertGroupStateOutcome()>>(
+        [this, request]()
+        {
+            return this->UpdatePrometheusAlertGroupState(request);
         }
     );
 

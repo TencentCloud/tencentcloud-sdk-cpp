@@ -92,6 +92,48 @@ namespace TencentCloud
                      */
                     bool ImageUrlHasBeenSet() const;
 
+                    /**
+                     * 获取是否开启PDF识别，默认值为true，开启后可同时支持图片和PDF的识别。
+                     * @return EnablePdf 是否开启PDF识别，默认值为true，开启后可同时支持图片和PDF的识别。
+                     * 
+                     */
+                    bool GetEnablePdf() const;
+
+                    /**
+                     * 设置是否开启PDF识别，默认值为true，开启后可同时支持图片和PDF的识别。
+                     * @param _enablePdf 是否开启PDF识别，默认值为true，开启后可同时支持图片和PDF的识别。
+                     * 
+                     */
+                    void SetEnablePdf(const bool& _enablePdf);
+
+                    /**
+                     * 判断参数 EnablePdf 是否已赋值
+                     * @return EnablePdf 是否已赋值
+                     * 
+                     */
+                    bool EnablePdfHasBeenSet() const;
+
+                    /**
+                     * 获取需要识别的PDF页面的对应页码，传入时仅支持PDF单页识别，当上传文件为PDF且EnablePdf参数值为true时有效，默认值为1。
+                     * @return PdfPageNumber 需要识别的PDF页面的对应页码，传入时仅支持PDF单页识别，当上传文件为PDF且EnablePdf参数值为true时有效，默认值为1。
+                     * 
+                     */
+                    int64_t GetPdfPageNumber() const;
+
+                    /**
+                     * 设置需要识别的PDF页面的对应页码，传入时仅支持PDF单页识别，当上传文件为PDF且EnablePdf参数值为true时有效，默认值为1。
+                     * @param _pdfPageNumber 需要识别的PDF页面的对应页码，传入时仅支持PDF单页识别，当上传文件为PDF且EnablePdf参数值为true时有效，默认值为1。
+                     * 
+                     */
+                    void SetPdfPageNumber(const int64_t& _pdfPageNumber);
+
+                    /**
+                     * 判断参数 PdfPageNumber 是否已赋值
+                     * @return PdfPageNumber 是否已赋值
+                     * 
+                     */
+                    bool PdfPageNumberHasBeenSet() const;
+
                 private:
 
                     /**
@@ -107,6 +149,18 @@ namespace TencentCloud
                      */
                     std::string m_imageUrl;
                     bool m_imageUrlHasBeenSet;
+
+                    /**
+                     * 是否开启PDF识别，默认值为true，开启后可同时支持图片和PDF的识别。
+                     */
+                    bool m_enablePdf;
+                    bool m_enablePdfHasBeenSet;
+
+                    /**
+                     * 需要识别的PDF页面的对应页码，传入时仅支持PDF单页识别，当上传文件为PDF且EnablePdf参数值为true时有效，默认值为1。
+                     */
+                    int64_t m_pdfPageNumber;
+                    bool m_pdfPageNumberHasBeenSet;
 
                 };
             }

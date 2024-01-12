@@ -25,7 +25,9 @@ using namespace std;
 GetEidResultRequest::GetEidResultRequest() :
     m_eidTokenHasBeenSet(false),
     m_infoTypeHasBeenSet(false),
-    m_bestFramesCountHasBeenSet(false)
+    m_bestFramesCountHasBeenSet(false),
+    m_isCutIdCardImageHasBeenSet(false),
+    m_isNeedIdCardAvatarHasBeenSet(false)
 {
 }
 
@@ -58,6 +60,22 @@ string GetEidResultRequest::ToJsonString() const
         string key = "BestFramesCount";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_bestFramesCount, allocator);
+    }
+
+    if (m_isCutIdCardImageHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "IsCutIdCardImage";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_isCutIdCardImage, allocator);
+    }
+
+    if (m_isNeedIdCardAvatarHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "IsNeedIdCardAvatar";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_isNeedIdCardAvatar, allocator);
     }
 
 
@@ -114,6 +132,38 @@ void GetEidResultRequest::SetBestFramesCount(const uint64_t& _bestFramesCount)
 bool GetEidResultRequest::BestFramesCountHasBeenSet() const
 {
     return m_bestFramesCountHasBeenSet;
+}
+
+bool GetEidResultRequest::GetIsCutIdCardImage() const
+{
+    return m_isCutIdCardImage;
+}
+
+void GetEidResultRequest::SetIsCutIdCardImage(const bool& _isCutIdCardImage)
+{
+    m_isCutIdCardImage = _isCutIdCardImage;
+    m_isCutIdCardImageHasBeenSet = true;
+}
+
+bool GetEidResultRequest::IsCutIdCardImageHasBeenSet() const
+{
+    return m_isCutIdCardImageHasBeenSet;
+}
+
+bool GetEidResultRequest::GetIsNeedIdCardAvatar() const
+{
+    return m_isNeedIdCardAvatar;
+}
+
+void GetEidResultRequest::SetIsNeedIdCardAvatar(const bool& _isNeedIdCardAvatar)
+{
+    m_isNeedIdCardAvatar = _isNeedIdCardAvatar;
+    m_isNeedIdCardAvatarHasBeenSet = true;
+}
+
+bool GetEidResultRequest::IsNeedIdCardAvatarHasBeenSet() const
+{
+    return m_isNeedIdCardAvatarHasBeenSet;
 }
 
 

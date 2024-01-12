@@ -51,6 +51,8 @@
 #include <tencentcloud/monitor/v20180724/model/CreatePolicyGroupResponse.h>
 #include <tencentcloud/monitor/v20180724/model/CreatePrometheusAgentRequest.h>
 #include <tencentcloud/monitor/v20180724/model/CreatePrometheusAgentResponse.h>
+#include <tencentcloud/monitor/v20180724/model/CreatePrometheusAlertGroupRequest.h>
+#include <tencentcloud/monitor/v20180724/model/CreatePrometheusAlertGroupResponse.h>
 #include <tencentcloud/monitor/v20180724/model/CreatePrometheusAlertPolicyRequest.h>
 #include <tencentcloud/monitor/v20180724/model/CreatePrometheusAlertPolicyResponse.h>
 #include <tencentcloud/monitor/v20180724/model/CreatePrometheusClusterAgentRequest.h>
@@ -89,6 +91,8 @@
 #include <tencentcloud/monitor/v20180724/model/DeleteGrafanaNotificationChannelResponse.h>
 #include <tencentcloud/monitor/v20180724/model/DeletePolicyGroupRequest.h>
 #include <tencentcloud/monitor/v20180724/model/DeletePolicyGroupResponse.h>
+#include <tencentcloud/monitor/v20180724/model/DeletePrometheusAlertGroupsRequest.h>
+#include <tencentcloud/monitor/v20180724/model/DeletePrometheusAlertGroupsResponse.h>
 #include <tencentcloud/monitor/v20180724/model/DeletePrometheusAlertPolicyRequest.h>
 #include <tencentcloud/monitor/v20180724/model/DeletePrometheusAlertPolicyResponse.h>
 #include <tencentcloud/monitor/v20180724/model/DeletePrometheusClusterAgentRequest.h>
@@ -179,6 +183,8 @@
 #include <tencentcloud/monitor/v20180724/model/DescribePrometheusAgentInstancesResponse.h>
 #include <tencentcloud/monitor/v20180724/model/DescribePrometheusAgentsRequest.h>
 #include <tencentcloud/monitor/v20180724/model/DescribePrometheusAgentsResponse.h>
+#include <tencentcloud/monitor/v20180724/model/DescribePrometheusAlertGroupsRequest.h>
+#include <tencentcloud/monitor/v20180724/model/DescribePrometheusAlertGroupsResponse.h>
 #include <tencentcloud/monitor/v20180724/model/DescribePrometheusAlertPolicyRequest.h>
 #include <tencentcloud/monitor/v20180724/model/DescribePrometheusAlertPolicyResponse.h>
 #include <tencentcloud/monitor/v20180724/model/DescribePrometheusClusterAgentsRequest.h>
@@ -311,6 +317,10 @@
 #include <tencentcloud/monitor/v20180724/model/UpdateGrafanaWhiteListResponse.h>
 #include <tencentcloud/monitor/v20180724/model/UpdatePrometheusAgentStatusRequest.h>
 #include <tencentcloud/monitor/v20180724/model/UpdatePrometheusAgentStatusResponse.h>
+#include <tencentcloud/monitor/v20180724/model/UpdatePrometheusAlertGroupRequest.h>
+#include <tencentcloud/monitor/v20180724/model/UpdatePrometheusAlertGroupResponse.h>
+#include <tencentcloud/monitor/v20180724/model/UpdatePrometheusAlertGroupStateRequest.h>
+#include <tencentcloud/monitor/v20180724/model/UpdatePrometheusAlertGroupStateResponse.h>
 #include <tencentcloud/monitor/v20180724/model/UpdatePrometheusScrapeJobRequest.h>
 #include <tencentcloud/monitor/v20180724/model/UpdatePrometheusScrapeJobResponse.h>
 #include <tencentcloud/monitor/v20180724/model/UpdateRecordingRuleRequest.h>
@@ -379,6 +389,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::CreatePrometheusAgentResponse> CreatePrometheusAgentOutcome;
                 typedef std::future<CreatePrometheusAgentOutcome> CreatePrometheusAgentOutcomeCallable;
                 typedef std::function<void(const MonitorClient*, const Model::CreatePrometheusAgentRequest&, CreatePrometheusAgentOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreatePrometheusAgentAsyncHandler;
+                typedef Outcome<Core::Error, Model::CreatePrometheusAlertGroupResponse> CreatePrometheusAlertGroupOutcome;
+                typedef std::future<CreatePrometheusAlertGroupOutcome> CreatePrometheusAlertGroupOutcomeCallable;
+                typedef std::function<void(const MonitorClient*, const Model::CreatePrometheusAlertGroupRequest&, CreatePrometheusAlertGroupOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreatePrometheusAlertGroupAsyncHandler;
                 typedef Outcome<Core::Error, Model::CreatePrometheusAlertPolicyResponse> CreatePrometheusAlertPolicyOutcome;
                 typedef std::future<CreatePrometheusAlertPolicyOutcome> CreatePrometheusAlertPolicyOutcomeCallable;
                 typedef std::function<void(const MonitorClient*, const Model::CreatePrometheusAlertPolicyRequest&, CreatePrometheusAlertPolicyOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreatePrometheusAlertPolicyAsyncHandler;
@@ -436,6 +449,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DeletePolicyGroupResponse> DeletePolicyGroupOutcome;
                 typedef std::future<DeletePolicyGroupOutcome> DeletePolicyGroupOutcomeCallable;
                 typedef std::function<void(const MonitorClient*, const Model::DeletePolicyGroupRequest&, DeletePolicyGroupOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeletePolicyGroupAsyncHandler;
+                typedef Outcome<Core::Error, Model::DeletePrometheusAlertGroupsResponse> DeletePrometheusAlertGroupsOutcome;
+                typedef std::future<DeletePrometheusAlertGroupsOutcome> DeletePrometheusAlertGroupsOutcomeCallable;
+                typedef std::function<void(const MonitorClient*, const Model::DeletePrometheusAlertGroupsRequest&, DeletePrometheusAlertGroupsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeletePrometheusAlertGroupsAsyncHandler;
                 typedef Outcome<Core::Error, Model::DeletePrometheusAlertPolicyResponse> DeletePrometheusAlertPolicyOutcome;
                 typedef std::future<DeletePrometheusAlertPolicyOutcome> DeletePrometheusAlertPolicyOutcomeCallable;
                 typedef std::function<void(const MonitorClient*, const Model::DeletePrometheusAlertPolicyRequest&, DeletePrometheusAlertPolicyOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeletePrometheusAlertPolicyAsyncHandler;
@@ -571,6 +587,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribePrometheusAgentsResponse> DescribePrometheusAgentsOutcome;
                 typedef std::future<DescribePrometheusAgentsOutcome> DescribePrometheusAgentsOutcomeCallable;
                 typedef std::function<void(const MonitorClient*, const Model::DescribePrometheusAgentsRequest&, DescribePrometheusAgentsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribePrometheusAgentsAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribePrometheusAlertGroupsResponse> DescribePrometheusAlertGroupsOutcome;
+                typedef std::future<DescribePrometheusAlertGroupsOutcome> DescribePrometheusAlertGroupsOutcomeCallable;
+                typedef std::function<void(const MonitorClient*, const Model::DescribePrometheusAlertGroupsRequest&, DescribePrometheusAlertGroupsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribePrometheusAlertGroupsAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribePrometheusAlertPolicyResponse> DescribePrometheusAlertPolicyOutcome;
                 typedef std::future<DescribePrometheusAlertPolicyOutcome> DescribePrometheusAlertPolicyOutcomeCallable;
                 typedef std::function<void(const MonitorClient*, const Model::DescribePrometheusAlertPolicyRequest&, DescribePrometheusAlertPolicyOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribePrometheusAlertPolicyAsyncHandler;
@@ -769,6 +788,12 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::UpdatePrometheusAgentStatusResponse> UpdatePrometheusAgentStatusOutcome;
                 typedef std::future<UpdatePrometheusAgentStatusOutcome> UpdatePrometheusAgentStatusOutcomeCallable;
                 typedef std::function<void(const MonitorClient*, const Model::UpdatePrometheusAgentStatusRequest&, UpdatePrometheusAgentStatusOutcome, const std::shared_ptr<const AsyncCallerContext>&)> UpdatePrometheusAgentStatusAsyncHandler;
+                typedef Outcome<Core::Error, Model::UpdatePrometheusAlertGroupResponse> UpdatePrometheusAlertGroupOutcome;
+                typedef std::future<UpdatePrometheusAlertGroupOutcome> UpdatePrometheusAlertGroupOutcomeCallable;
+                typedef std::function<void(const MonitorClient*, const Model::UpdatePrometheusAlertGroupRequest&, UpdatePrometheusAlertGroupOutcome, const std::shared_ptr<const AsyncCallerContext>&)> UpdatePrometheusAlertGroupAsyncHandler;
+                typedef Outcome<Core::Error, Model::UpdatePrometheusAlertGroupStateResponse> UpdatePrometheusAlertGroupStateOutcome;
+                typedef std::future<UpdatePrometheusAlertGroupStateOutcome> UpdatePrometheusAlertGroupStateOutcomeCallable;
+                typedef std::function<void(const MonitorClient*, const Model::UpdatePrometheusAlertGroupStateRequest&, UpdatePrometheusAlertGroupStateOutcome, const std::shared_ptr<const AsyncCallerContext>&)> UpdatePrometheusAlertGroupStateAsyncHandler;
                 typedef Outcome<Core::Error, Model::UpdatePrometheusScrapeJobResponse> UpdatePrometheusScrapeJobOutcome;
                 typedef std::future<UpdatePrometheusScrapeJobOutcome> UpdatePrometheusScrapeJobOutcomeCallable;
                 typedef std::function<void(const MonitorClient*, const Model::UpdatePrometheusScrapeJobRequest&, UpdatePrometheusScrapeJobOutcome, const std::shared_ptr<const AsyncCallerContext>&)> UpdatePrometheusScrapeJobAsyncHandler;
@@ -917,6 +942,18 @@ namespace TencentCloud
                 CreatePrometheusAgentOutcome CreatePrometheusAgent(const Model::CreatePrometheusAgentRequest &request);
                 void CreatePrometheusAgentAsync(const Model::CreatePrometheusAgentRequest& request, const CreatePrometheusAgentAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 CreatePrometheusAgentOutcomeCallable CreatePrometheusAgentCallable(const Model::CreatePrometheusAgentRequest& request);
+
+                /**
+                 *创建Prometheus告警规则分组
+
+告警分组中可包含多条告警规则，分组内告警消息通过告警分组的通知模板发送。
+支持单个告警分组下分别创建启用/禁用的告警规则。
+                 * @param req CreatePrometheusAlertGroupRequest
+                 * @return CreatePrometheusAlertGroupOutcome
+                 */
+                CreatePrometheusAlertGroupOutcome CreatePrometheusAlertGroup(const Model::CreatePrometheusAlertGroupRequest &request);
+                void CreatePrometheusAlertGroupAsync(const Model::CreatePrometheusAlertGroupRequest& request, const CreatePrometheusAlertGroupAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                CreatePrometheusAlertGroupOutcomeCallable CreatePrometheusAlertGroupCallable(const Model::CreatePrometheusAlertGroupRequest& request);
 
                 /**
                  *创建 Prometheus 告警策略(将逐步废弃，建议使用 CreatePrometheusAlertGroup 创建告警策略)
@@ -1090,6 +1127,15 @@ namespace TencentCloud
                 DeletePolicyGroupOutcome DeletePolicyGroup(const Model::DeletePolicyGroupRequest &request);
                 void DeletePolicyGroupAsync(const Model::DeletePolicyGroupRequest& request, const DeletePolicyGroupAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DeletePolicyGroupOutcomeCallable DeletePolicyGroupCallable(const Model::DeletePolicyGroupRequest& request);
+
+                /**
+                 *删除Prometheus告警规则分组
+                 * @param req DeletePrometheusAlertGroupsRequest
+                 * @return DeletePrometheusAlertGroupsOutcome
+                 */
+                DeletePrometheusAlertGroupsOutcome DeletePrometheusAlertGroups(const Model::DeletePrometheusAlertGroupsRequest &request);
+                void DeletePrometheusAlertGroupsAsync(const Model::DeletePrometheusAlertGroupsRequest& request, const DeletePrometheusAlertGroupsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DeletePrometheusAlertGroupsOutcomeCallable DeletePrometheusAlertGroupsCallable(const Model::DeletePrometheusAlertGroupsRequest& request);
 
                 /**
                  *删除2.0实例告警策略
@@ -1499,6 +1545,15 @@ namespace TencentCloud
                 DescribePrometheusAgentsOutcome DescribePrometheusAgents(const Model::DescribePrometheusAgentsRequest &request);
                 void DescribePrometheusAgentsAsync(const Model::DescribePrometheusAgentsRequest& request, const DescribePrometheusAgentsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DescribePrometheusAgentsOutcomeCallable DescribePrometheusAgentsCallable(const Model::DescribePrometheusAgentsRequest& request);
+
+                /**
+                 *查询给定prometheus下的告警分组
+                 * @param req DescribePrometheusAlertGroupsRequest
+                 * @return DescribePrometheusAlertGroupsOutcome
+                 */
+                DescribePrometheusAlertGroupsOutcome DescribePrometheusAlertGroups(const Model::DescribePrometheusAlertGroupsRequest &request);
+                void DescribePrometheusAlertGroupsAsync(const Model::DescribePrometheusAlertGroupsRequest& request, const DescribePrometheusAlertGroupsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribePrometheusAlertGroupsOutcomeCallable DescribePrometheusAlertGroupsCallable(const Model::DescribePrometheusAlertGroupsRequest& request);
 
                 /**
                  *获取2.0实例告警策略列表
@@ -2108,6 +2163,24 @@ namespace TencentCloud
                 UpdatePrometheusAgentStatusOutcome UpdatePrometheusAgentStatus(const Model::UpdatePrometheusAgentStatusRequest &request);
                 void UpdatePrometheusAgentStatusAsync(const Model::UpdatePrometheusAgentStatusRequest& request, const UpdatePrometheusAgentStatusAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 UpdatePrometheusAgentStatusOutcomeCallable UpdatePrometheusAgentStatusCallable(const Model::UpdatePrometheusAgentStatusRequest& request);
+
+                /**
+                 *更新Prometheus告警规则分组
+                 * @param req UpdatePrometheusAlertGroupRequest
+                 * @return UpdatePrometheusAlertGroupOutcome
+                 */
+                UpdatePrometheusAlertGroupOutcome UpdatePrometheusAlertGroup(const Model::UpdatePrometheusAlertGroupRequest &request);
+                void UpdatePrometheusAlertGroupAsync(const Model::UpdatePrometheusAlertGroupRequest& request, const UpdatePrometheusAlertGroupAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                UpdatePrometheusAlertGroupOutcomeCallable UpdatePrometheusAlertGroupCallable(const Model::UpdatePrometheusAlertGroupRequest& request);
+
+                /**
+                 *批量更新告警分组状态，将分组中全部告警规则更新为目标状态
+                 * @param req UpdatePrometheusAlertGroupStateRequest
+                 * @return UpdatePrometheusAlertGroupStateOutcome
+                 */
+                UpdatePrometheusAlertGroupStateOutcome UpdatePrometheusAlertGroupState(const Model::UpdatePrometheusAlertGroupStateRequest &request);
+                void UpdatePrometheusAlertGroupStateAsync(const Model::UpdatePrometheusAlertGroupStateRequest& request, const UpdatePrometheusAlertGroupStateAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                UpdatePrometheusAlertGroupStateOutcomeCallable UpdatePrometheusAlertGroupStateCallable(const Model::UpdatePrometheusAlertGroupStateRequest& request);
 
                 /**
                  *更新 Prometheus Agent 抓取任务

@@ -47,18 +47,18 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取高防弹性公网IP绑定的实例地区，例如hk代表香港
+                     * 获取高防弹性公网IP绑定的实例地区，例如hk代表中国香港
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return EipAddressRegion 高防弹性公网IP绑定的实例地区，例如hk代表香港
+                     * @return EipAddressRegion 高防弹性公网IP绑定的实例地区，例如hk代表中国香港
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetEipAddressRegion() const;
 
                     /**
-                     * 设置高防弹性公网IP绑定的实例地区，例如hk代表香港
+                     * 设置高防弹性公网IP绑定的实例地区，例如hk代表中国香港
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _eipAddressRegion 高防弹性公网IP绑定的实例地区，例如hk代表香港
+                     * @param _eipAddressRegion 高防弹性公网IP绑定的实例地区，例如hk代表中国香港
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -174,7 +174,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 高防弹性公网IP绑定的实例地区，例如hk代表香港
+                     * 高防弹性公网IP绑定的实例地区，例如hk代表中国香港
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_eipAddressRegion;

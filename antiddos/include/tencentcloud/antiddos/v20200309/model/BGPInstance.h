@@ -579,6 +579,31 @@ namespace TencentCloud
                      */
                     bool BasicPlusFlagHasBeenSet() const;
 
+                    /**
+                     * 获取是否是商业模式优化-普惠版
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return PlanCntFlag 是否是商业模式优化-普惠版
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    uint64_t GetPlanCntFlag() const;
+
+                    /**
+                     * 设置是否是商业模式优化-普惠版
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _planCntFlag 是否是商业模式优化-普惠版
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetPlanCntFlag(const uint64_t& _planCntFlag);
+
+                    /**
+                     * 判断参数 PlanCntFlag 是否已赋值
+                     * @return PlanCntFlag 是否已赋值
+                     * 
+                     */
+                    bool PlanCntFlagHasBeenSet() const;
+
                 private:
 
                     /**
@@ -728,6 +753,13 @@ namespace TencentCloud
                      */
                     uint64_t m_basicPlusFlag;
                     bool m_basicPlusFlagHasBeenSet;
+
+                    /**
+                     * 是否是商业模式优化-普惠版
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    uint64_t m_planCntFlag;
+                    bool m_planCntFlagHasBeenSet;
 
                 };
             }

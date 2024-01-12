@@ -43,15 +43,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取站点ID。
-                     * @return ZoneId 站点ID。
+                     * 获取站点 ID
+                     * @return ZoneId 站点 ID
                      * 
                      */
                     std::string GetZoneId() const;
 
                     /**
-                     * 设置站点ID。
-                     * @param _zoneId 站点ID。
+                     * 设置站点 ID
+                     * @param _zoneId 站点 ID
                      * 
                      */
                     void SetZoneId(const std::string& _zoneId);
@@ -64,15 +64,15 @@ namespace TencentCloud
                     bool ZoneIdHasBeenSet() const;
 
                     /**
-                     * 获取源站组ID，此参数必填。
-                     * @return GroupId 源站组ID，此参数必填。
+                     * 获取源站组 ID，此参数必填。
+                     * @return GroupId 源站组 ID，此参数必填。
                      * 
                      */
                     std::string GetGroupId() const;
 
                     /**
-                     * 设置源站组ID，此参数必填。
-                     * @param _groupId 源站组ID，此参数必填。
+                     * 设置源站组 ID，此参数必填。
+                     * @param _groupId 源站组 ID，此参数必填。
                      * 
                      */
                     void SetGroupId(const std::string& _groupId);
@@ -87,13 +87,13 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 站点ID。
+                     * 站点 ID
                      */
                     std::string m_zoneId;
                     bool m_zoneIdHasBeenSet;
 
                     /**
-                     * 源站组ID，此参数必填。
+                     * 源站组 ID，此参数必填。
                      */
                     std::string m_groupId;
                     bool m_groupIdHasBeenSet;

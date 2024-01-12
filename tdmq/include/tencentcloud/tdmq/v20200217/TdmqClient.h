@@ -211,6 +211,8 @@
 #include <tencentcloud/tdmq/v20200217/model/DescribeTopicMsgsResponse.h>
 #include <tencentcloud/tdmq/v20200217/model/DescribeTopicsRequest.h>
 #include <tencentcloud/tdmq/v20200217/model/DescribeTopicsResponse.h>
+#include <tencentcloud/tdmq/v20200217/model/ExportRocketMQMessageDetailRequest.h>
+#include <tencentcloud/tdmq/v20200217/model/ExportRocketMQMessageDetailResponse.h>
 #include <tencentcloud/tdmq/v20200217/model/ImportRocketMQConsumerGroupsRequest.h>
 #include <tencentcloud/tdmq/v20200217/model/ImportRocketMQConsumerGroupsResponse.h>
 #include <tencentcloud/tdmq/v20200217/model/ImportRocketMQTopicsRequest.h>
@@ -573,6 +575,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeTopicsResponse> DescribeTopicsOutcome;
                 typedef std::future<DescribeTopicsOutcome> DescribeTopicsOutcomeCallable;
                 typedef std::function<void(const TdmqClient*, const Model::DescribeTopicsRequest&, DescribeTopicsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeTopicsAsyncHandler;
+                typedef Outcome<Core::Error, Model::ExportRocketMQMessageDetailResponse> ExportRocketMQMessageDetailOutcome;
+                typedef std::future<ExportRocketMQMessageDetailOutcome> ExportRocketMQMessageDetailOutcomeCallable;
+                typedef std::function<void(const TdmqClient*, const Model::ExportRocketMQMessageDetailRequest&, ExportRocketMQMessageDetailOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ExportRocketMQMessageDetailAsyncHandler;
                 typedef Outcome<Core::Error, Model::ImportRocketMQConsumerGroupsResponse> ImportRocketMQConsumerGroupsOutcome;
                 typedef std::future<ImportRocketMQConsumerGroupsOutcome> ImportRocketMQConsumerGroupsOutcomeCallable;
                 typedef std::function<void(const TdmqClient*, const Model::ImportRocketMQConsumerGroupsRequest&, ImportRocketMQConsumerGroupsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ImportRocketMQConsumerGroupsAsyncHandler;
@@ -1522,6 +1527,15 @@ namespace TencentCloud
                 DescribeTopicsOutcome DescribeTopics(const Model::DescribeTopicsRequest &request);
                 void DescribeTopicsAsync(const Model::DescribeTopicsRequest& request, const DescribeTopicsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DescribeTopicsOutcomeCallable DescribeTopicsCallable(const Model::DescribeTopicsRequest& request);
+
+                /**
+                 *导出RocketMQ消息详情
+                 * @param req ExportRocketMQMessageDetailRequest
+                 * @return ExportRocketMQMessageDetailOutcome
+                 */
+                ExportRocketMQMessageDetailOutcome ExportRocketMQMessageDetail(const Model::ExportRocketMQMessageDetailRequest &request);
+                void ExportRocketMQMessageDetailAsync(const Model::ExportRocketMQMessageDetailRequest& request, const ExportRocketMQMessageDetailAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                ExportRocketMQMessageDetailOutcomeCallable ExportRocketMQMessageDetailCallable(const Model::ExportRocketMQMessageDetailRequest& request);
 
                 /**
                  *输入迁移任务id和要导入的Group，导入后台

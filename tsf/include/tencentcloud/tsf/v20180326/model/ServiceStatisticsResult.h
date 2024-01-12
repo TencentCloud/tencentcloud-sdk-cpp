@@ -48,18 +48,18 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取请求模版路径:type为接口时返回，服务时不返回
+                     * 获取请求模板路径:type为接口时返回，服务时不返回
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return Path 请求模版路径:type为接口时返回，服务时不返回
+                     * @return Path 请求模板路径:type为接口时返回，服务时不返回
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetPath() const;
 
                     /**
-                     * 设置请求模版路径:type为接口时返回，服务时不返回
+                     * 设置请求模板路径:type为接口时返回，服务时不返回
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _path 请求模版路径:type为接口时返回，服务时不返回
+                     * @param _path 请求模板路径:type为接口时返回，服务时不返回
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -776,7 +776,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 请求模版路径:type为接口时返回，服务时不返回
+                     * 请求模板路径:type为接口时返回，服务时不返回
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_path;

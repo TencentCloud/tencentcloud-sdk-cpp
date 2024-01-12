@@ -49,14 +49,18 @@ namespace TencentCloud
 
                     /**
                      * 获取资源名
+注意：此字段可能返回 null，表示取不到有效值。
                      * @return Name 资源名
+注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetName() const;
 
                     /**
                      * 设置资源名
+注意：此字段可能返回 null，表示取不到有效值。
                      * @param _name 资源名
+注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetName(const std::string& _name);
@@ -70,14 +74,18 @@ namespace TencentCloud
 
                     /**
                      * 获取挂载路径
+注意：此字段可能返回 null，表示取不到有效值。
                      * @return MountPath 挂载路径
+注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetMountPath() const;
 
                     /**
                      * 设置挂载路径
+注意：此字段可能返回 null，表示取不到有效值。
                      * @param _mountPath 挂载路径
+注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetMountPath(const std::string& _mountPath);
@@ -91,14 +99,18 @@ namespace TencentCloud
 
                     /**
                      * 获取是否只读
+注意：此字段可能返回 null，表示取不到有效值。
                      * @return ReadOnly 是否只读
+注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     bool GetReadOnly() const;
 
                     /**
                      * 设置是否只读
+注意：此字段可能返回 null，表示取不到有效值。
                      * @param _readOnly 是否只读
+注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetReadOnly(const bool& _readOnly);
@@ -112,14 +124,18 @@ namespace TencentCloud
 
                     /**
                      * 获取Nfs挂载信息
+注意：此字段可能返回 null，表示取不到有效值。
                      * @return NfsVolumes Nfs挂载信息
+注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<CloudBaseRunNfsVolumeSource> GetNfsVolumes() const;
 
                     /**
                      * 设置Nfs挂载信息
+注意：此字段可能返回 null，表示取不到有效值。
                      * @param _nfsVolumes Nfs挂载信息
+注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetNfsVolumes(const std::vector<CloudBaseRunNfsVolumeSource>& _nfsVolumes);
@@ -135,24 +151,28 @@ namespace TencentCloud
 
                     /**
                      * 资源名
+注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_name;
                     bool m_nameHasBeenSet;
 
                     /**
                      * 挂载路径
+注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_mountPath;
                     bool m_mountPathHasBeenSet;
 
                     /**
                      * 是否只读
+注意：此字段可能返回 null，表示取不到有效值。
                      */
                     bool m_readOnly;
                     bool m_readOnlyHasBeenSet;
 
                     /**
                      * Nfs挂载信息
+注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<CloudBaseRunNfsVolumeSource> m_nfsVolumes;
                     bool m_nfsVolumesHasBeenSet;

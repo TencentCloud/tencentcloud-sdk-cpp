@@ -24,7 +24,9 @@ using namespace std;
 
 SealOCRRequest::SealOCRRequest() :
     m_imageBase64HasBeenSet(false),
-    m_imageUrlHasBeenSet(false)
+    m_imageUrlHasBeenSet(false),
+    m_enablePdfHasBeenSet(false),
+    m_pdfPageNumberHasBeenSet(false)
 {
 }
 
@@ -49,6 +51,22 @@ string SealOCRRequest::ToJsonString() const
         string key = "ImageUrl";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_imageUrl.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_enablePdfHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "EnablePdf";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_enablePdf, allocator);
+    }
+
+    if (m_pdfPageNumberHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "PdfPageNumber";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_pdfPageNumber, allocator);
     }
 
 
@@ -89,6 +107,38 @@ void SealOCRRequest::SetImageUrl(const string& _imageUrl)
 bool SealOCRRequest::ImageUrlHasBeenSet() const
 {
     return m_imageUrlHasBeenSet;
+}
+
+bool SealOCRRequest::GetEnablePdf() const
+{
+    return m_enablePdf;
+}
+
+void SealOCRRequest::SetEnablePdf(const bool& _enablePdf)
+{
+    m_enablePdf = _enablePdf;
+    m_enablePdfHasBeenSet = true;
+}
+
+bool SealOCRRequest::EnablePdfHasBeenSet() const
+{
+    return m_enablePdfHasBeenSet;
+}
+
+int64_t SealOCRRequest::GetPdfPageNumber() const
+{
+    return m_pdfPageNumber;
+}
+
+void SealOCRRequest::SetPdfPageNumber(const int64_t& _pdfPageNumber)
+{
+    m_pdfPageNumber = _pdfPageNumber;
+    m_pdfPageNumberHasBeenSet = true;
+}
+
+bool SealOCRRequest::PdfPageNumberHasBeenSet() const
+{
+    return m_pdfPageNumberHasBeenSet;
 }
 
 
