@@ -28,7 +28,8 @@ LaneInfo::LaneInfo() :
     m_updateTimeHasBeenSet(false),
     m_laneGroupListHasBeenSet(false),
     m_entranceHasBeenSet(false),
-    m_namespaceIdListHasBeenSet(false)
+    m_namespaceIdListHasBeenSet(false),
+    m_laneGroupIdHasBeenSet(false)
 {
 }
 
@@ -130,6 +131,16 @@ CoreInternalOutcome LaneInfo::Deserialize(const rapidjson::Value &value)
         m_namespaceIdListHasBeenSet = true;
     }
 
+    if (value.HasMember("LaneGroupId") && !value["LaneGroupId"].IsNull())
+    {
+        if (!value["LaneGroupId"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `LaneInfo.LaneGroupId` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_laneGroupId = string(value["LaneGroupId"].GetString());
+        m_laneGroupIdHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -211,6 +222,14 @@ void LaneInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Alloca
         {
             value[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
         }
+    }
+
+    if (m_laneGroupIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "LaneGroupId";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_laneGroupId.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -342,5 +361,21 @@ void LaneInfo::SetNamespaceIdList(const vector<string>& _namespaceIdList)
 bool LaneInfo::NamespaceIdListHasBeenSet() const
 {
     return m_namespaceIdListHasBeenSet;
+}
+
+string LaneInfo::GetLaneGroupId() const
+{
+    return m_laneGroupId;
+}
+
+void LaneInfo::SetLaneGroupId(const string& _laneGroupId)
+{
+    m_laneGroupId = _laneGroupId;
+    m_laneGroupIdHasBeenSet = true;
+}
+
+bool LaneInfo::LaneGroupIdHasBeenSet() const
+{
+    return m_laneGroupIdHasBeenSet;
 }
 

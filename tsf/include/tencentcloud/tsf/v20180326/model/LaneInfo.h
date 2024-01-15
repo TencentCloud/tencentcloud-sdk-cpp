@@ -247,6 +247,31 @@ namespace TencentCloud
                      */
                     bool NamespaceIdListHasBeenSet() const;
 
+                    /**
+                     * 获取泳道部署组ID
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return LaneGroupId 泳道部署组ID
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::string GetLaneGroupId() const;
+
+                    /**
+                     * 设置泳道部署组ID
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _laneGroupId 泳道部署组ID
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetLaneGroupId(const std::string& _laneGroupId);
+
+                    /**
+                     * 判断参数 LaneGroupId 是否已赋值
+                     * @return LaneGroupId 是否已赋值
+                     * 
+                     */
+                    bool LaneGroupIdHasBeenSet() const;
+
                 private:
 
                     /**
@@ -304,6 +329,13 @@ namespace TencentCloud
                      */
                     std::vector<std::string> m_namespaceIdList;
                     bool m_namespaceIdListHasBeenSet;
+
+                    /**
+                     * 泳道部署组ID
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_laneGroupId;
+                    bool m_laneGroupIdHasBeenSet;
 
                 };
             }

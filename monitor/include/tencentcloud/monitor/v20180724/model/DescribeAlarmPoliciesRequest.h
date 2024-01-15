@@ -129,15 +129,15 @@ namespace TencentCloud
                     bool PolicyNameHasBeenSet() const;
 
                     /**
-                     * 获取根据监控类型过滤 不选默认查所有类型 "MT_QCE"=云产品监控
-                     * @return MonitorTypes 根据监控类型过滤 不选默认查所有类型 "MT_QCE"=云产品监控
+                     * 获取根据监控类型过滤 不选默认查所有类型 "MT_QCE"=云产品监控,当Dimension不为空时，该项为必填项
+                     * @return MonitorTypes 根据监控类型过滤 不选默认查所有类型 "MT_QCE"=云产品监控,当Dimension不为空时，该项为必填项
                      * 
                      */
                     std::vector<std::string> GetMonitorTypes() const;
 
                     /**
-                     * 设置根据监控类型过滤 不选默认查所有类型 "MT_QCE"=云产品监控
-                     * @param _monitorTypes 根据监控类型过滤 不选默认查所有类型 "MT_QCE"=云产品监控
+                     * 设置根据监控类型过滤 不选默认查所有类型 "MT_QCE"=云产品监控,当Dimension不为空时，该项为必填项
+                     * @param _monitorTypes 根据监控类型过滤 不选默认查所有类型 "MT_QCE"=云产品监控,当Dimension不为空时，该项为必填项
                      * 
                      */
                     void SetMonitorTypes(const std::vector<std::string>& _monitorTypes);
@@ -151,18 +151,18 @@ namespace TencentCloud
 
                     /**
                      * 获取根据命名空间过滤，不同策略类型的值详见
-[策略类型列表](https://cloud.tencent.com/document/product/248/50397)
+[策略类型列表](https://cloud.tencent.com/document/product/248/50397)当Dimension不为空时，该项为必填项
                      * @return Namespaces 根据命名空间过滤，不同策略类型的值详见
-[策略类型列表](https://cloud.tencent.com/document/product/248/50397)
+[策略类型列表](https://cloud.tencent.com/document/product/248/50397)当Dimension不为空时，该项为必填项
                      * 
                      */
                     std::vector<std::string> GetNamespaces() const;
 
                     /**
                      * 设置根据命名空间过滤，不同策略类型的值详见
-[策略类型列表](https://cloud.tencent.com/document/product/248/50397)
+[策略类型列表](https://cloud.tencent.com/document/product/248/50397)当Dimension不为空时，该项为必填项
                      * @param _namespaces 根据命名空间过滤，不同策略类型的值详见
-[策略类型列表](https://cloud.tencent.com/document/product/248/50397)
+[策略类型列表](https://cloud.tencent.com/document/product/248/50397)当Dimension不为空时，该项为必填项
                      * 
                      */
                     void SetNamespaces(const std::vector<std::string>& _namespaces);
@@ -653,14 +653,14 @@ namespace TencentCloud
                     bool m_policyNameHasBeenSet;
 
                     /**
-                     * 根据监控类型过滤 不选默认查所有类型 "MT_QCE"=云产品监控
+                     * 根据监控类型过滤 不选默认查所有类型 "MT_QCE"=云产品监控,当Dimension不为空时，该项为必填项
                      */
                     std::vector<std::string> m_monitorTypes;
                     bool m_monitorTypesHasBeenSet;
 
                     /**
                      * 根据命名空间过滤，不同策略类型的值详见
-[策略类型列表](https://cloud.tencent.com/document/product/248/50397)
+[策略类型列表](https://cloud.tencent.com/document/product/248/50397)当Dimension不为空时，该项为必填项
                      */
                     std::vector<std::string> m_namespaces;
                     bool m_namespacesHasBeenSet;

@@ -111,9 +111,11 @@ namespace TencentCloud
                     /**
                      * 获取源站类型，取值有：
 <li>custom：手动添加；</li>
+<li>loadbalancer：负载均衡；</li>
 <li>origins：源站组。</li>
                      * @return OriginType 源站类型，取值有：
 <li>custom：手动添加；</li>
+<li>loadbalancer：负载均衡；</li>
 <li>origins：源站组。</li>
                      * 
                      */
@@ -122,9 +124,11 @@ namespace TencentCloud
                     /**
                      * 设置源站类型，取值有：
 <li>custom：手动添加；</li>
+<li>loadbalancer：负载均衡；</li>
 <li>origins：源站组。</li>
                      * @param _originType 源站类型，取值有：
 <li>custom：手动添加；</li>
+<li>loadbalancer：负载均衡；</li>
 <li>origins：源站组。</li>
                      * 
                      */
@@ -140,9 +144,11 @@ namespace TencentCloud
                     /**
                      * 获取源站信息：
 <li>当 OriginType 为 custom 时，表示一个或多个源站，如`["8.8.8.8","9.9.9.9"]` 或 `OriginValue=["test.com"]`；</li>
+<li>当 OriginType 为 loadbalancer 时，表示一个负载均衡，如`["lb-xdffsfasdfs"]`；</li>
 <li>当 OriginType 为 origins 时，要求有且仅有一个元素，表示源站组ID，如`["origin-537f5b41-162a-11ed-abaa-525400c5da15"]`。</li>
                      * @return OriginValue 源站信息：
 <li>当 OriginType 为 custom 时，表示一个或多个源站，如`["8.8.8.8","9.9.9.9"]` 或 `OriginValue=["test.com"]`；</li>
+<li>当 OriginType 为 loadbalancer 时，表示一个负载均衡，如`["lb-xdffsfasdfs"]`；</li>
 <li>当 OriginType 为 origins 时，要求有且仅有一个元素，表示源站组ID，如`["origin-537f5b41-162a-11ed-abaa-525400c5da15"]`。</li>
                      * 
                      */
@@ -151,9 +157,11 @@ namespace TencentCloud
                     /**
                      * 设置源站信息：
 <li>当 OriginType 为 custom 时，表示一个或多个源站，如`["8.8.8.8","9.9.9.9"]` 或 `OriginValue=["test.com"]`；</li>
+<li>当 OriginType 为 loadbalancer 时，表示一个负载均衡，如`["lb-xdffsfasdfs"]`；</li>
 <li>当 OriginType 为 origins 时，要求有且仅有一个元素，表示源站组ID，如`["origin-537f5b41-162a-11ed-abaa-525400c5da15"]`。</li>
                      * @param _originValue 源站信息：
 <li>当 OriginType 为 custom 时，表示一个或多个源站，如`["8.8.8.8","9.9.9.9"]` 或 `OriginValue=["test.com"]`；</li>
+<li>当 OriginType 为 loadbalancer 时，表示一个负载均衡，如`["lb-xdffsfasdfs"]`；</li>
 <li>当 OriginType 为 origins 时，要求有且仅有一个元素，表示源站组ID，如`["origin-537f5b41-162a-11ed-abaa-525400c5da15"]`。</li>
                      * 
                      */
@@ -395,6 +403,7 @@ namespace TencentCloud
                     /**
                      * 源站类型，取值有：
 <li>custom：手动添加；</li>
+<li>loadbalancer：负载均衡；</li>
 <li>origins：源站组。</li>
                      */
                     std::string m_originType;
@@ -403,6 +412,7 @@ namespace TencentCloud
                     /**
                      * 源站信息：
 <li>当 OriginType 为 custom 时，表示一个或多个源站，如`["8.8.8.8","9.9.9.9"]` 或 `OriginValue=["test.com"]`；</li>
+<li>当 OriginType 为 loadbalancer 时，表示一个负载均衡，如`["lb-xdffsfasdfs"]`；</li>
 <li>当 OriginType 为 origins 时，要求有且仅有一个元素，表示源站组ID，如`["origin-537f5b41-162a-11ed-abaa-525400c5da15"]`。</li>
                      */
                     std::vector<std::string> m_originValue;
