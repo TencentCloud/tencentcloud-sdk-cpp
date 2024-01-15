@@ -6576,49 +6576,6 @@ WedataClient::DescribeIntegrationVersionNodesInfoOutcomeCallable WedataClient::D
     return task->get_future();
 }
 
-WedataClient::DescribeKafkaTopicInfoOutcome WedataClient::DescribeKafkaTopicInfo(const DescribeKafkaTopicInfoRequest &request)
-{
-    auto outcome = MakeRequest(request, "DescribeKafkaTopicInfo");
-    if (outcome.IsSuccess())
-    {
-        auto r = outcome.GetResult();
-        string payload = string(r.Body(), r.BodySize());
-        DescribeKafkaTopicInfoResponse rsp = DescribeKafkaTopicInfoResponse();
-        auto o = rsp.Deserialize(payload);
-        if (o.IsSuccess())
-            return DescribeKafkaTopicInfoOutcome(rsp);
-        else
-            return DescribeKafkaTopicInfoOutcome(o.GetError());
-    }
-    else
-    {
-        return DescribeKafkaTopicInfoOutcome(outcome.GetError());
-    }
-}
-
-void WedataClient::DescribeKafkaTopicInfoAsync(const DescribeKafkaTopicInfoRequest& request, const DescribeKafkaTopicInfoAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
-{
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeKafkaTopicInfo(request), context);
-    };
-
-    Executor::GetInstance()->Submit(new Runnable(fn));
-}
-
-WedataClient::DescribeKafkaTopicInfoOutcomeCallable WedataClient::DescribeKafkaTopicInfoCallable(const DescribeKafkaTopicInfoRequest &request)
-{
-    auto task = std::make_shared<std::packaged_task<DescribeKafkaTopicInfoOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeKafkaTopicInfo(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
-}
-
 WedataClient::DescribeMonitorsByPageOutcome WedataClient::DescribeMonitorsByPage(const DescribeMonitorsByPageRequest &request)
 {
     auto outcome = MakeRequest(request, "DescribeMonitorsByPage");

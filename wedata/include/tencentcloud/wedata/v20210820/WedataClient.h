@@ -327,8 +327,6 @@
 #include <tencentcloud/wedata/v20210820/model/DescribeIntegrationTasksResponse.h>
 #include <tencentcloud/wedata/v20210820/model/DescribeIntegrationVersionNodesInfoRequest.h>
 #include <tencentcloud/wedata/v20210820/model/DescribeIntegrationVersionNodesInfoResponse.h>
-#include <tencentcloud/wedata/v20210820/model/DescribeKafkaTopicInfoRequest.h>
-#include <tencentcloud/wedata/v20210820/model/DescribeKafkaTopicInfoResponse.h>
 #include <tencentcloud/wedata/v20210820/model/DescribeMonitorsByPageRequest.h>
 #include <tencentcloud/wedata/v20210820/model/DescribeMonitorsByPageResponse.h>
 #include <tencentcloud/wedata/v20210820/model/DescribeOfflineTaskTokenRequest.h>
@@ -1129,9 +1127,6 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeIntegrationVersionNodesInfoResponse> DescribeIntegrationVersionNodesInfoOutcome;
                 typedef std::future<DescribeIntegrationVersionNodesInfoOutcome> DescribeIntegrationVersionNodesInfoOutcomeCallable;
                 typedef std::function<void(const WedataClient*, const Model::DescribeIntegrationVersionNodesInfoRequest&, DescribeIntegrationVersionNodesInfoOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeIntegrationVersionNodesInfoAsyncHandler;
-                typedef Outcome<Core::Error, Model::DescribeKafkaTopicInfoResponse> DescribeKafkaTopicInfoOutcome;
-                typedef std::future<DescribeKafkaTopicInfoOutcome> DescribeKafkaTopicInfoOutcomeCallable;
-                typedef std::function<void(const WedataClient*, const Model::DescribeKafkaTopicInfoRequest&, DescribeKafkaTopicInfoOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeKafkaTopicInfoAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeMonitorsByPageResponse> DescribeMonitorsByPageOutcome;
                 typedef std::future<DescribeMonitorsByPageOutcome> DescribeMonitorsByPageOutcomeCallable;
                 typedef std::function<void(const WedataClient*, const Model::DescribeMonitorsByPageRequest&, DescribeMonitorsByPageOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeMonitorsByPageAsyncHandler;
@@ -3015,17 +3010,6 @@ namespace TencentCloud
                 DescribeIntegrationVersionNodesInfoOutcome DescribeIntegrationVersionNodesInfo(const Model::DescribeIntegrationVersionNodesInfoRequest &request);
                 void DescribeIntegrationVersionNodesInfoAsync(const Model::DescribeIntegrationVersionNodesInfoRequest& request, const DescribeIntegrationVersionNodesInfoAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DescribeIntegrationVersionNodesInfoOutcomeCallable DescribeIntegrationVersionNodesInfoCallable(const Model::DescribeIntegrationVersionNodesInfoRequest& request);
-
-                /**
-                 *没用到
-
-获取kafka的topic信息
-                 * @param req DescribeKafkaTopicInfoRequest
-                 * @return DescribeKafkaTopicInfoOutcome
-                 */
-                DescribeKafkaTopicInfoOutcome DescribeKafkaTopicInfo(const Model::DescribeKafkaTopicInfoRequest &request);
-                void DescribeKafkaTopicInfoAsync(const Model::DescribeKafkaTopicInfoRequest& request, const DescribeKafkaTopicInfoAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
-                DescribeKafkaTopicInfoOutcomeCallable DescribeKafkaTopicInfoCallable(const Model::DescribeKafkaTopicInfoRequest& request);
 
                 /**
                  *分页查询质量监控组

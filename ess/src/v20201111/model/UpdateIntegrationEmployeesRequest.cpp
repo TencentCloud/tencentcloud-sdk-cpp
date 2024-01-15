@@ -25,7 +25,9 @@ using namespace std;
 UpdateIntegrationEmployeesRequest::UpdateIntegrationEmployeesRequest() :
     m_operatorHasBeenSet(false),
     m_employeesHasBeenSet(false),
-    m_agentHasBeenSet(false)
+    m_agentHasBeenSet(false),
+    m_invitationNotifyTypeHasBeenSet(false),
+    m_jumpUrlHasBeenSet(false)
 {
 }
 
@@ -67,6 +69,22 @@ string UpdateIntegrationEmployeesRequest::ToJsonString() const
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
         m_agent.ToJsonObject(d[key.c_str()], allocator);
+    }
+
+    if (m_invitationNotifyTypeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "InvitationNotifyType";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_invitationNotifyType.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_jumpUrlHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "JumpUrl";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_jumpUrl.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -123,6 +141,38 @@ void UpdateIntegrationEmployeesRequest::SetAgent(const Agent& _agent)
 bool UpdateIntegrationEmployeesRequest::AgentHasBeenSet() const
 {
     return m_agentHasBeenSet;
+}
+
+string UpdateIntegrationEmployeesRequest::GetInvitationNotifyType() const
+{
+    return m_invitationNotifyType;
+}
+
+void UpdateIntegrationEmployeesRequest::SetInvitationNotifyType(const string& _invitationNotifyType)
+{
+    m_invitationNotifyType = _invitationNotifyType;
+    m_invitationNotifyTypeHasBeenSet = true;
+}
+
+bool UpdateIntegrationEmployeesRequest::InvitationNotifyTypeHasBeenSet() const
+{
+    return m_invitationNotifyTypeHasBeenSet;
+}
+
+string UpdateIntegrationEmployeesRequest::GetJumpUrl() const
+{
+    return m_jumpUrl;
+}
+
+void UpdateIntegrationEmployeesRequest::SetJumpUrl(const string& _jumpUrl)
+{
+    m_jumpUrl = _jumpUrl;
+    m_jumpUrlHasBeenSet = true;
+}
+
+bool UpdateIntegrationEmployeesRequest::JumpUrlHasBeenSet() const
+{
+    return m_jumpUrlHasBeenSet;
 }
 
 

@@ -113,6 +113,31 @@ namespace TencentCloud
                      */
                     bool KeyDelimitersHasBeenSet() const;
 
+                    /**
+                     * 获取分片节点数量。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return ShardNum 分片节点数量。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::string GetShardNum() const;
+
+                    /**
+                     * 设置分片节点数量。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _shardNum 分片节点数量。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetShardNum(const std::string& _shardNum);
+
+                    /**
+                     * 判断参数 ShardNum 是否已赋值
+                     * @return ShardNum 是否已赋值
+                     * 
+                     */
+                    bool ShardNumHasBeenSet() const;
+
                 private:
 
                     /**
@@ -133,6 +158,13 @@ namespace TencentCloud
                      */
                     std::vector<std::string> m_keyDelimiters;
                     bool m_keyDelimitersHasBeenSet;
+
+                    /**
+                     * 分片节点数量。
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_shardNum;
+                    bool m_shardNumHasBeenSet;
 
                 };
             }

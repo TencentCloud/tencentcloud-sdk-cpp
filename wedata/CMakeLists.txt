@@ -132,7 +132,6 @@ set(wedata_public_header_model
   include/tencentcloud/wedata/v20210820/model/CreateInLongAgentResponse.h
   include/tencentcloud/wedata/v20210820/model/RuleGroupTable.h
   include/tencentcloud/wedata/v20210820/model/DescribeInstanceLogRequest.h
-  include/tencentcloud/wedata/v20210820/model/DescribeKafkaTopicInfoRequest.h
   include/tencentcloud/wedata/v20210820/model/DescribeRuleGroupSubscriptionResponse.h
   include/tencentcloud/wedata/v20210820/model/DescribeIntegrationStatisticsTaskStatusTrendResponse.h
   include/tencentcloud/wedata/v20210820/model/DeleteResourceFileRequest.h
@@ -233,7 +232,6 @@ set(wedata_public_header_model
   include/tencentcloud/wedata/v20210820/model/DescribeColumnsMetaRequest.h
   include/tencentcloud/wedata/v20210820/model/DescribeOrganizationalFunctionsRequest.h
   include/tencentcloud/wedata/v20210820/model/DescribeRuleTemplateResponse.h
-  include/tencentcloud/wedata/v20210820/model/DescribeKafkaTopicInfoResponse.h
   include/tencentcloud/wedata/v20210820/model/OpsTaskCanvasInfoList.h
   include/tencentcloud/wedata/v20210820/model/DescribeDependTaskListsRequest.h
   include/tencentcloud/wedata/v20210820/model/DatabaseMeta.h
@@ -1057,7 +1055,6 @@ set(wedata_src
   src/v20210820/model/CreateInLongAgentResponse.cpp
   src/v20210820/model/RuleGroupTable.cpp
   src/v20210820/model/DescribeInstanceLogRequest.cpp
-  src/v20210820/model/DescribeKafkaTopicInfoRequest.cpp
   src/v20210820/model/DescribeRuleGroupSubscriptionResponse.cpp
   src/v20210820/model/DescribeIntegrationStatisticsTaskStatusTrendResponse.cpp
   src/v20210820/model/DeleteResourceFileRequest.cpp
@@ -1158,7 +1155,6 @@ set(wedata_src
   src/v20210820/model/DescribeColumnsMetaRequest.cpp
   src/v20210820/model/DescribeOrganizationalFunctionsRequest.cpp
   src/v20210820/model/DescribeRuleTemplateResponse.cpp
-  src/v20210820/model/DescribeKafkaTopicInfoResponse.cpp
   src/v20210820/model/OpsTaskCanvasInfoList.cpp
   src/v20210820/model/DescribeDependTaskListsRequest.cpp
   src/v20210820/model/DatabaseMeta.cpp

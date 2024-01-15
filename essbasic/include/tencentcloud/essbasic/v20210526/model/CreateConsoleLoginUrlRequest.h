@@ -328,12 +328,16 @@ namespace TencentCloud
 <ul><li>**PC**：(默认)<font color="red">web控制台</font>链接, 需要在PC浏览器中打开</li>
 <li>**CHANNEL**：H5跳转到电子签小程序链接, 一般用于发送短信中带的链接, 打开后进入腾讯电子签小程序</li>
 <li>**SHORT_URL**：<font color="red">H5</font>跳转到电子签小程序链接的短链形式, 一般用于发送短信中带的链接, 打开后进入腾讯电子签小程序</li>
-<li>**APP**：<font color="red">APP或小程序</font>跳转电子签小程序链接, 一般用于贵方小程序或者APP跳转过来,  打开后进入腾讯电子签小程序</li></ul>
+<li>**APP**：<font color="red">APP或小程序</font>跳转电子签小程序链接, 一般用于贵方小程序或者APP跳转过来,  打开后进入腾讯电子签小程序</li>
+<li>**H5**：<font color="red">H5长链接</font>跳转H5链接, 一般用于贵方H5跳转过来,  打开后进入腾讯电子签H5页面</li>
+<li>**SHORT_H5**：<font color="red">H5短链</font>跳转H5的短链形式, 一般用于发送短信中带的链接, 打开后进入腾讯电子签H5页面</li></ul>
                      * @return Endpoint 生成链接的类型：
 <ul><li>**PC**：(默认)<font color="red">web控制台</font>链接, 需要在PC浏览器中打开</li>
 <li>**CHANNEL**：H5跳转到电子签小程序链接, 一般用于发送短信中带的链接, 打开后进入腾讯电子签小程序</li>
 <li>**SHORT_URL**：<font color="red">H5</font>跳转到电子签小程序链接的短链形式, 一般用于发送短信中带的链接, 打开后进入腾讯电子签小程序</li>
-<li>**APP**：<font color="red">APP或小程序</font>跳转电子签小程序链接, 一般用于贵方小程序或者APP跳转过来,  打开后进入腾讯电子签小程序</li></ul>
+<li>**APP**：<font color="red">APP或小程序</font>跳转电子签小程序链接, 一般用于贵方小程序或者APP跳转过来,  打开后进入腾讯电子签小程序</li>
+<li>**H5**：<font color="red">H5长链接</font>跳转H5链接, 一般用于贵方H5跳转过来,  打开后进入腾讯电子签H5页面</li>
+<li>**SHORT_H5**：<font color="red">H5短链</font>跳转H5的短链形式, 一般用于发送短信中带的链接, 打开后进入腾讯电子签H5页面</li></ul>
                      * 
                      */
                     std::string GetEndpoint() const;
@@ -343,12 +347,16 @@ namespace TencentCloud
 <ul><li>**PC**：(默认)<font color="red">web控制台</font>链接, 需要在PC浏览器中打开</li>
 <li>**CHANNEL**：H5跳转到电子签小程序链接, 一般用于发送短信中带的链接, 打开后进入腾讯电子签小程序</li>
 <li>**SHORT_URL**：<font color="red">H5</font>跳转到电子签小程序链接的短链形式, 一般用于发送短信中带的链接, 打开后进入腾讯电子签小程序</li>
-<li>**APP**：<font color="red">APP或小程序</font>跳转电子签小程序链接, 一般用于贵方小程序或者APP跳转过来,  打开后进入腾讯电子签小程序</li></ul>
+<li>**APP**：<font color="red">APP或小程序</font>跳转电子签小程序链接, 一般用于贵方小程序或者APP跳转过来,  打开后进入腾讯电子签小程序</li>
+<li>**H5**：<font color="red">H5长链接</font>跳转H5链接, 一般用于贵方H5跳转过来,  打开后进入腾讯电子签H5页面</li>
+<li>**SHORT_H5**：<font color="red">H5短链</font>跳转H5的短链形式, 一般用于发送短信中带的链接, 打开后进入腾讯电子签H5页面</li></ul>
                      * @param _endpoint 生成链接的类型：
 <ul><li>**PC**：(默认)<font color="red">web控制台</font>链接, 需要在PC浏览器中打开</li>
 <li>**CHANNEL**：H5跳转到电子签小程序链接, 一般用于发送短信中带的链接, 打开后进入腾讯电子签小程序</li>
 <li>**SHORT_URL**：<font color="red">H5</font>跳转到电子签小程序链接的短链形式, 一般用于发送短信中带的链接, 打开后进入腾讯电子签小程序</li>
-<li>**APP**：<font color="red">APP或小程序</font>跳转电子签小程序链接, 一般用于贵方小程序或者APP跳转过来,  打开后进入腾讯电子签小程序</li></ul>
+<li>**APP**：<font color="red">APP或小程序</font>跳转电子签小程序链接, 一般用于贵方小程序或者APP跳转过来,  打开后进入腾讯电子签小程序</li>
+<li>**H5**：<font color="red">H5长链接</font>跳转H5链接, 一般用于贵方H5跳转过来,  打开后进入腾讯电子签H5页面</li>
+<li>**SHORT_H5**：<font color="red">H5短链</font>跳转H5的短链形式, 一般用于发送短信中带的链接, 打开后进入腾讯电子签H5页面</li></ul>
                      * 
                      */
                     void SetEndpoint(const std::string& _endpoint);
@@ -459,6 +467,56 @@ namespace TencentCloud
                      */
                     bool OperatorHasBeenSet() const;
 
+                    /**
+                     * 获取子客经办人身份证
+注意：`如果已同步，这里非空会更新同步的经办人身份证号，暂时只支持居民身份证类型`。
+                     * @return ProxyOperatorIdCardNumber 子客经办人身份证
+注意：`如果已同步，这里非空会更新同步的经办人身份证号，暂时只支持居民身份证类型`。
+                     * 
+                     */
+                    std::string GetProxyOperatorIdCardNumber() const;
+
+                    /**
+                     * 设置子客经办人身份证
+注意：`如果已同步，这里非空会更新同步的经办人身份证号，暂时只支持居民身份证类型`。
+                     * @param _proxyOperatorIdCardNumber 子客经办人身份证
+注意：`如果已同步，这里非空会更新同步的经办人身份证号，暂时只支持居民身份证类型`。
+                     * 
+                     */
+                    void SetProxyOperatorIdCardNumber(const std::string& _proxyOperatorIdCardNumber);
+
+                    /**
+                     * 判断参数 ProxyOperatorIdCardNumber 是否已赋值
+                     * @return ProxyOperatorIdCardNumber 是否已赋值
+                     * 
+                     */
+                    bool ProxyOperatorIdCardNumberHasBeenSet() const;
+
+                    /**
+                     * 获取认证完成跳转链接
+注意：`只在H5生效，域名需要联系我们开白`。
+                     * @return AutoJumpUrl 认证完成跳转链接
+注意：`只在H5生效，域名需要联系我们开白`。
+                     * 
+                     */
+                    std::string GetAutoJumpUrl() const;
+
+                    /**
+                     * 设置认证完成跳转链接
+注意：`只在H5生效，域名需要联系我们开白`。
+                     * @param _autoJumpUrl 认证完成跳转链接
+注意：`只在H5生效，域名需要联系我们开白`。
+                     * 
+                     */
+                    void SetAutoJumpUrl(const std::string& _autoJumpUrl);
+
+                    /**
+                     * 判断参数 AutoJumpUrl 是否已赋值
+                     * @return AutoJumpUrl 是否已赋值
+                     * 
+                     */
+                    bool AutoJumpUrlHasBeenSet() const;
+
                 private:
 
                     /**
@@ -541,7 +599,9 @@ namespace TencentCloud
 <ul><li>**PC**：(默认)<font color="red">web控制台</font>链接, 需要在PC浏览器中打开</li>
 <li>**CHANNEL**：H5跳转到电子签小程序链接, 一般用于发送短信中带的链接, 打开后进入腾讯电子签小程序</li>
 <li>**SHORT_URL**：<font color="red">H5</font>跳转到电子签小程序链接的短链形式, 一般用于发送短信中带的链接, 打开后进入腾讯电子签小程序</li>
-<li>**APP**：<font color="red">APP或小程序</font>跳转电子签小程序链接, 一般用于贵方小程序或者APP跳转过来,  打开后进入腾讯电子签小程序</li></ul>
+<li>**APP**：<font color="red">APP或小程序</font>跳转电子签小程序链接, 一般用于贵方小程序或者APP跳转过来,  打开后进入腾讯电子签小程序</li>
+<li>**H5**：<font color="red">H5长链接</font>跳转H5链接, 一般用于贵方H5跳转过来,  打开后进入腾讯电子签H5页面</li>
+<li>**SHORT_H5**：<font color="red">H5短链</font>跳转H5的短链形式, 一般用于发送短信中带的链接, 打开后进入腾讯电子签H5页面</li></ul>
                      */
                     std::string m_endpoint;
                     bool m_endpointHasBeenSet;
@@ -572,6 +632,20 @@ namespace TencentCloud
                      */
                     UserInfo m_operator;
                     bool m_operatorHasBeenSet;
+
+                    /**
+                     * 子客经办人身份证
+注意：`如果已同步，这里非空会更新同步的经办人身份证号，暂时只支持居民身份证类型`。
+                     */
+                    std::string m_proxyOperatorIdCardNumber;
+                    bool m_proxyOperatorIdCardNumberHasBeenSet;
+
+                    /**
+                     * 认证完成跳转链接
+注意：`只在H5生效，域名需要联系我们开白`。
+                     */
+                    std::string m_autoJumpUrl;
+                    bool m_autoJumpUrlHasBeenSet;
 
                 };
             }

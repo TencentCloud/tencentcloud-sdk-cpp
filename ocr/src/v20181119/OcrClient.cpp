@@ -2018,6 +2018,49 @@ OcrClient::RecognizeContainerOCROutcomeCallable OcrClient::RecognizeContainerOCR
     return task->get_future();
 }
 
+OcrClient::RecognizeForeignPermanentResidentIdCardOutcome OcrClient::RecognizeForeignPermanentResidentIdCard(const RecognizeForeignPermanentResidentIdCardRequest &request)
+{
+    auto outcome = MakeRequest(request, "RecognizeForeignPermanentResidentIdCard");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        RecognizeForeignPermanentResidentIdCardResponse rsp = RecognizeForeignPermanentResidentIdCardResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return RecognizeForeignPermanentResidentIdCardOutcome(rsp);
+        else
+            return RecognizeForeignPermanentResidentIdCardOutcome(o.GetError());
+    }
+    else
+    {
+        return RecognizeForeignPermanentResidentIdCardOutcome(outcome.GetError());
+    }
+}
+
+void OcrClient::RecognizeForeignPermanentResidentIdCardAsync(const RecognizeForeignPermanentResidentIdCardRequest& request, const RecognizeForeignPermanentResidentIdCardAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->RecognizeForeignPermanentResidentIdCard(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+OcrClient::RecognizeForeignPermanentResidentIdCardOutcomeCallable OcrClient::RecognizeForeignPermanentResidentIdCardCallable(const RecognizeForeignPermanentResidentIdCardRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<RecognizeForeignPermanentResidentIdCardOutcome()>>(
+        [this, request]()
+        {
+            return this->RecognizeForeignPermanentResidentIdCard(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 OcrClient::RecognizeGeneralInvoiceOutcome OcrClient::RecognizeGeneralInvoice(const RecognizeGeneralInvoiceRequest &request)
 {
     auto outcome = MakeRequest(request, "RecognizeGeneralInvoice");

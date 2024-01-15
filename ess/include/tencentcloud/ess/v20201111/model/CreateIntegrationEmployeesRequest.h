@@ -124,6 +124,68 @@ namespace TencentCloud
                      */
                     bool AgentHasBeenSet() const;
 
+                    /**
+                     * 获取员工邀请方式
+如果是来自H5的，参数需要传递H5
+短信或者企微 请传递SMS，或者不传递
+                     * @return InvitationNotifyType 员工邀请方式
+如果是来自H5的，参数需要传递H5
+短信或者企微 请传递SMS，或者不传递
+                     * 
+                     */
+                    std::string GetInvitationNotifyType() const;
+
+                    /**
+                     * 设置员工邀请方式
+如果是来自H5的，参数需要传递H5
+短信或者企微 请传递SMS，或者不传递
+                     * @param _invitationNotifyType 员工邀请方式
+如果是来自H5的，参数需要传递H5
+短信或者企微 请传递SMS，或者不传递
+                     * 
+                     */
+                    void SetInvitationNotifyType(const std::string& _invitationNotifyType);
+
+                    /**
+                     * 判断参数 InvitationNotifyType 是否已赋值
+                     * @return InvitationNotifyType 是否已赋值
+                     * 
+                     */
+                    bool InvitationNotifyTypeHasBeenSet() const;
+
+                    /**
+                     * 获取回跳地址，
+在认证成功之后，进行回跳，请保证回跳地址的可用性。
+使用前请联系对接的客户经理沟通，提供回跳地址的域名，进行域名配置
+
+                     * @return JumpUrl 回跳地址，
+在认证成功之后，进行回跳，请保证回跳地址的可用性。
+使用前请联系对接的客户经理沟通，提供回跳地址的域名，进行域名配置
+
+                     * 
+                     */
+                    std::string GetJumpUrl() const;
+
+                    /**
+                     * 设置回跳地址，
+在认证成功之后，进行回跳，请保证回跳地址的可用性。
+使用前请联系对接的客户经理沟通，提供回跳地址的域名，进行域名配置
+
+                     * @param _jumpUrl 回跳地址，
+在认证成功之后，进行回跳，请保证回跳地址的可用性。
+使用前请联系对接的客户经理沟通，提供回跳地址的域名，进行域名配置
+
+                     * 
+                     */
+                    void SetJumpUrl(const std::string& _jumpUrl);
+
+                    /**
+                     * 判断参数 JumpUrl 是否已赋值
+                     * @return JumpUrl 是否已赋值
+                     * 
+                     */
+                    bool JumpUrlHasBeenSet() const;
+
                 private:
 
                     /**
@@ -147,6 +209,23 @@ namespace TencentCloud
                      */
                     Agent m_agent;
                     bool m_agentHasBeenSet;
+
+                    /**
+                     * 员工邀请方式
+如果是来自H5的，参数需要传递H5
+短信或者企微 请传递SMS，或者不传递
+                     */
+                    std::string m_invitationNotifyType;
+                    bool m_invitationNotifyTypeHasBeenSet;
+
+                    /**
+                     * 回跳地址，
+在认证成功之后，进行回跳，请保证回跳地址的可用性。
+使用前请联系对接的客户经理沟通，提供回跳地址的域名，进行域名配置
+
+                     */
+                    std::string m_jumpUrl;
+                    bool m_jumpUrlHasBeenSet;
 
                 };
             }

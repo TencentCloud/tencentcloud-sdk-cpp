@@ -28,7 +28,9 @@ DescribeRedisTopBigKeysRequest::DescribeRedisTopBigKeysRequest() :
     m_productHasBeenSet(false),
     m_sortByHasBeenSet(false),
     m_keyTypeHasBeenSet(false),
-    m_limitHasBeenSet(false)
+    m_limitHasBeenSet(false),
+    m_asyncRequestIdHasBeenSet(false),
+    m_shardIdsHasBeenSet(false)
 {
 }
 
@@ -85,6 +87,27 @@ string DescribeRedisTopBigKeysRequest::ToJsonString() const
         string key = "Limit";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_limit, allocator);
+    }
+
+    if (m_asyncRequestIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "AsyncRequestId";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_asyncRequestId, allocator);
+    }
+
+    if (m_shardIdsHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ShardIds";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        for (auto itr = m_shardIds.begin(); itr != m_shardIds.end(); ++itr)
+        {
+            d[key.c_str()].PushBack(rapidjson::Value().SetInt64(*itr), allocator);
+        }
     }
 
 
@@ -189,6 +212,38 @@ void DescribeRedisTopBigKeysRequest::SetLimit(const int64_t& _limit)
 bool DescribeRedisTopBigKeysRequest::LimitHasBeenSet() const
 {
     return m_limitHasBeenSet;
+}
+
+int64_t DescribeRedisTopBigKeysRequest::GetAsyncRequestId() const
+{
+    return m_asyncRequestId;
+}
+
+void DescribeRedisTopBigKeysRequest::SetAsyncRequestId(const int64_t& _asyncRequestId)
+{
+    m_asyncRequestId = _asyncRequestId;
+    m_asyncRequestIdHasBeenSet = true;
+}
+
+bool DescribeRedisTopBigKeysRequest::AsyncRequestIdHasBeenSet() const
+{
+    return m_asyncRequestIdHasBeenSet;
+}
+
+vector<int64_t> DescribeRedisTopBigKeysRequest::GetShardIds() const
+{
+    return m_shardIds;
+}
+
+void DescribeRedisTopBigKeysRequest::SetShardIds(const vector<int64_t>& _shardIds)
+{
+    m_shardIds = _shardIds;
+    m_shardIdsHasBeenSet = true;
+}
+
+bool DescribeRedisTopBigKeysRequest::ShardIdsHasBeenSet() const
+{
+    return m_shardIdsHasBeenSet;
 }
 
 

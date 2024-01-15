@@ -23,7 +23,8 @@ using namespace std;
 InstanceConfs::InstanceConfs() :
     m_dailyInspectionHasBeenSet(false),
     m_overviewDisplayHasBeenSet(false),
-    m_keyDelimitersHasBeenSet(false)
+    m_keyDelimitersHasBeenSet(false),
+    m_shardNumHasBeenSet(false)
 {
 }
 
@@ -65,6 +66,16 @@ CoreInternalOutcome InstanceConfs::Deserialize(const rapidjson::Value &value)
         m_keyDelimitersHasBeenSet = true;
     }
 
+    if (value.HasMember("ShardNum") && !value["ShardNum"].IsNull())
+    {
+        if (!value["ShardNum"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `InstanceConfs.ShardNum` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_shardNum = string(value["ShardNum"].GetString());
+        m_shardNumHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -99,6 +110,14 @@ void InstanceConfs::ToJsonObject(rapidjson::Value &value, rapidjson::Document::A
         {
             value[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
         }
+    }
+
+    if (m_shardNumHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ShardNum";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_shardNum.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -150,5 +169,21 @@ void InstanceConfs::SetKeyDelimiters(const vector<string>& _keyDelimiters)
 bool InstanceConfs::KeyDelimitersHasBeenSet() const
 {
     return m_keyDelimitersHasBeenSet;
+}
+
+string InstanceConfs::GetShardNum() const
+{
+    return m_shardNum;
+}
+
+void InstanceConfs::SetShardNum(const string& _shardNum)
+{
+    m_shardNum = _shardNum;
+    m_shardNumHasBeenSet = true;
+}
+
+bool InstanceConfs::ShardNumHasBeenSet() const
+{
+    return m_shardNumHasBeenSet;
 }
 

@@ -254,6 +254,7 @@ set(ocr_public_header_model
   include/tencentcloud/ocr/v20181119/model/MLIDCardOCRRequest.h
   include/tencentcloud/ocr/v20181119/model/TaxiTicket.h
   include/tencentcloud/ocr/v20181119/model/EnglishOCRResponse.h
+  include/tencentcloud/ocr/v20181119/model/RecognizeForeignPermanentResidentIdCardResponse.h
   include/tencentcloud/ocr/v20181119/model/BusInvoiceOCRRequest.h
   include/tencentcloud/ocr/v20181119/model/OrgCodeCertOCRResponse.h
   include/tencentcloud/ocr/v20181119/model/RideHailingTransportLicenseOCRResponse.h
@@ -291,6 +292,7 @@ set(ocr_public_header_model
   include/tencentcloud/ocr/v20181119/model/FinanBillOCRRequest.h
   include/tencentcloud/ocr/v20181119/model/QuotaInvoiceOCRResponse.h
   include/tencentcloud/ocr/v20181119/model/UsedCarPurchaseInvoice.h
+  include/tencentcloud/ocr/v20181119/model/RecognizeForeignPermanentResidentIdCardRequest.h
   include/tencentcloud/ocr/v20181119/model/GeneralFastOCRResponse.h
   include/tencentcloud/ocr/v20181119/model/QrcodePositionObj.h
   )
@@ -532,6 +534,7 @@ set(ocr_src
   src/v20181119/model/MLIDCardOCRRequest.cpp
   src/v20181119/model/TaxiTicket.cpp
   src/v20181119/model/EnglishOCRResponse.cpp
+  src/v20181119/model/RecognizeForeignPermanentResidentIdCardResponse.cpp
   src/v20181119/model/BusInvoiceOCRRequest.cpp
   src/v20181119/model/OrgCodeCertOCRResponse.cpp
   src/v20181119/model/RideHailingTransportLicenseOCRResponse.cpp
@@ -569,6 +572,7 @@ set(ocr_src
   src/v20181119/model/FinanBillOCRRequest.cpp
   src/v20181119/model/QuotaInvoiceOCRResponse.cpp
   src/v20181119/model/UsedCarPurchaseInvoice.cpp
+  src/v20181119/model/RecognizeForeignPermanentResidentIdCardRequest.cpp
   src/v20181119/model/GeneralFastOCRResponse.cpp
   src/v20181119/model/QrcodePositionObj.cpp
   )

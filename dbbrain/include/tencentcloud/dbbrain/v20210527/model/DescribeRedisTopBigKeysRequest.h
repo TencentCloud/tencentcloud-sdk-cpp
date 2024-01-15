@@ -168,6 +168,48 @@ namespace TencentCloud
                      */
                     bool LimitHasBeenSet() const;
 
+                    /**
+                     * 获取异步任务ID。当为空时，选择最近任务的ID。
+                     * @return AsyncRequestId 异步任务ID。当为空时，选择最近任务的ID。
+                     * 
+                     */
+                    int64_t GetAsyncRequestId() const;
+
+                    /**
+                     * 设置异步任务ID。当为空时，选择最近任务的ID。
+                     * @param _asyncRequestId 异步任务ID。当为空时，选择最近任务的ID。
+                     * 
+                     */
+                    void SetAsyncRequestId(const int64_t& _asyncRequestId);
+
+                    /**
+                     * 判断参数 AsyncRequestId 是否已赋值
+                     * @return AsyncRequestId 是否已赋值
+                     * 
+                     */
+                    bool AsyncRequestIdHasBeenSet() const;
+
+                    /**
+                     * 获取分片节点序号列表。当列表为空时，选择所有分片节点。
+                     * @return ShardIds 分片节点序号列表。当列表为空时，选择所有分片节点。
+                     * 
+                     */
+                    std::vector<int64_t> GetShardIds() const;
+
+                    /**
+                     * 设置分片节点序号列表。当列表为空时，选择所有分片节点。
+                     * @param _shardIds 分片节点序号列表。当列表为空时，选择所有分片节点。
+                     * 
+                     */
+                    void SetShardIds(const std::vector<int64_t>& _shardIds);
+
+                    /**
+                     * 判断参数 ShardIds 是否已赋值
+                     * @return ShardIds 是否已赋值
+                     * 
+                     */
+                    bool ShardIdsHasBeenSet() const;
+
                 private:
 
                     /**
@@ -205,6 +247,18 @@ namespace TencentCloud
                      */
                     int64_t m_limit;
                     bool m_limitHasBeenSet;
+
+                    /**
+                     * 异步任务ID。当为空时，选择最近任务的ID。
+                     */
+                    int64_t m_asyncRequestId;
+                    bool m_asyncRequestIdHasBeenSet;
+
+                    /**
+                     * 分片节点序号列表。当列表为空时，选择所有分片节点。
+                     */
+                    std::vector<int64_t> m_shardIds;
+                    bool m_shardIdsHasBeenSet;
 
                 };
             }

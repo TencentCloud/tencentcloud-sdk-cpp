@@ -35,7 +35,9 @@ namespace TencentCloud
             namespace Model
             {
                 /**
-                * 更新员工信息成功返回的数据信息
+                * 更新员工信息成功返回的数据信息， 仅支持未实名的用户进行更新
+会通过短信、企微消息或者H5Url 链接
+如果是通过H5邀请加入的方式，会返回H5 链接
                 */
                 class SuccessUpdateStaffData : public AbstractModel
                 {
@@ -113,6 +115,35 @@ namespace TencentCloud
                      */
                     bool UserIdHasBeenSet() const;
 
+                    /**
+                     * 获取H5端员工实名链接
+
+只有入参 InvitationNotifyType = H5的时候才会进行返回。
+                     * @return Url H5端员工实名链接
+
+只有入参 InvitationNotifyType = H5的时候才会进行返回。
+                     * 
+                     */
+                    std::string GetUrl() const;
+
+                    /**
+                     * 设置H5端员工实名链接
+
+只有入参 InvitationNotifyType = H5的时候才会进行返回。
+                     * @param _url H5端员工实名链接
+
+只有入参 InvitationNotifyType = H5的时候才会进行返回。
+                     * 
+                     */
+                    void SetUrl(const std::string& _url);
+
+                    /**
+                     * 判断参数 Url 是否已赋值
+                     * @return Url 是否已赋值
+                     * 
+                     */
+                    bool UrlHasBeenSet() const;
+
                 private:
 
                     /**
@@ -133,6 +164,14 @@ namespace TencentCloud
                      */
                     std::string m_userId;
                     bool m_userIdHasBeenSet;
+
+                    /**
+                     * H5端员工实名链接
+
+只有入参 InvitationNotifyType = H5的时候才会进行返回。
+                     */
+                    std::string m_url;
+                    bool m_urlHasBeenSet;
 
                 };
             }

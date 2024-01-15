@@ -299,6 +299,64 @@ namespace TencentCloud
                      */
                     bool AuthorizationTypesHasBeenSet() const;
 
+                    /**
+                     * 获取经办人的证件类型，支持以下类型
+<ul><li>ID_CARD : 居民身份证  (默认值)</li>
+<li>HONGKONG_AND_MACAO : 港澳居民来往内地通行证</li>
+<li>HONGKONG_MACAO_AND_TAIWAN : 港澳台居民居住证(格式同居民身份证)</li></ul>
+
+                     * @return AdminIdCardType 经办人的证件类型，支持以下类型
+<ul><li>ID_CARD : 居民身份证  (默认值)</li>
+<li>HONGKONG_AND_MACAO : 港澳居民来往内地通行证</li>
+<li>HONGKONG_MACAO_AND_TAIWAN : 港澳台居民居住证(格式同居民身份证)</li></ul>
+
+                     * 
+                     */
+                    std::string GetAdminIdCardType() const;
+
+                    /**
+                     * 设置经办人的证件类型，支持以下类型
+<ul><li>ID_CARD : 居民身份证  (默认值)</li>
+<li>HONGKONG_AND_MACAO : 港澳居民来往内地通行证</li>
+<li>HONGKONG_MACAO_AND_TAIWAN : 港澳台居民居住证(格式同居民身份证)</li></ul>
+
+                     * @param _adminIdCardType 经办人的证件类型，支持以下类型
+<ul><li>ID_CARD : 居民身份证  (默认值)</li>
+<li>HONGKONG_AND_MACAO : 港澳居民来往内地通行证</li>
+<li>HONGKONG_MACAO_AND_TAIWAN : 港澳台居民居住证(格式同居民身份证)</li></ul>
+
+                     * 
+                     */
+                    void SetAdminIdCardType(const std::string& _adminIdCardType);
+
+                    /**
+                     * 判断参数 AdminIdCardType 是否已赋值
+                     * @return AdminIdCardType 是否已赋值
+                     * 
+                     */
+                    bool AdminIdCardTypeHasBeenSet() const;
+
+                    /**
+                     * 获取经办人的证件号
+                     * @return AdminIdCardNumber 经办人的证件号
+                     * 
+                     */
+                    std::string GetAdminIdCardNumber() const;
+
+                    /**
+                     * 设置经办人的证件号
+                     * @param _adminIdCardNumber 经办人的证件号
+                     * 
+                     */
+                    void SetAdminIdCardNumber(const std::string& _adminIdCardNumber);
+
+                    /**
+                     * 判断参数 AdminIdCardNumber 是否已赋值
+                     * @return AdminIdCardNumber 是否已赋值
+                     * 
+                     */
+                    bool AdminIdCardNumberHasBeenSet() const;
+
                 private:
 
                     /**
@@ -370,6 +428,22 @@ namespace TencentCloud
                      */
                     std::vector<uint64_t> m_authorizationTypes;
                     bool m_authorizationTypesHasBeenSet;
+
+                    /**
+                     * 经办人的证件类型，支持以下类型
+<ul><li>ID_CARD : 居民身份证  (默认值)</li>
+<li>HONGKONG_AND_MACAO : 港澳居民来往内地通行证</li>
+<li>HONGKONG_MACAO_AND_TAIWAN : 港澳台居民居住证(格式同居民身份证)</li></ul>
+
+                     */
+                    std::string m_adminIdCardType;
+                    bool m_adminIdCardTypeHasBeenSet;
+
+                    /**
+                     * 经办人的证件号
+                     */
+                    std::string m_adminIdCardNumber;
+                    bool m_adminIdCardNumberHasBeenSet;
 
                 };
             }

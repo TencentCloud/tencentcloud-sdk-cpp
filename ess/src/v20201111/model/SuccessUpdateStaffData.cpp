@@ -23,7 +23,8 @@ using namespace std;
 SuccessUpdateStaffData::SuccessUpdateStaffData() :
     m_displayNameHasBeenSet(false),
     m_mobileHasBeenSet(false),
-    m_userIdHasBeenSet(false)
+    m_userIdHasBeenSet(false),
+    m_urlHasBeenSet(false)
 {
 }
 
@@ -62,6 +63,16 @@ CoreInternalOutcome SuccessUpdateStaffData::Deserialize(const rapidjson::Value &
         m_userIdHasBeenSet = true;
     }
 
+    if (value.HasMember("Url") && !value["Url"].IsNull())
+    {
+        if (!value["Url"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `SuccessUpdateStaffData.Url` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_url = string(value["Url"].GetString());
+        m_urlHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -91,6 +102,14 @@ void SuccessUpdateStaffData::ToJsonObject(rapidjson::Value &value, rapidjson::Do
         string key = "UserId";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_userId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_urlHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Url";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_url.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -142,5 +161,21 @@ void SuccessUpdateStaffData::SetUserId(const string& _userId)
 bool SuccessUpdateStaffData::UserIdHasBeenSet() const
 {
     return m_userIdHasBeenSet;
+}
+
+string SuccessUpdateStaffData::GetUrl() const
+{
+    return m_url;
+}
+
+void SuccessUpdateStaffData::SetUrl(const string& _url)
+{
+    m_url = _url;
+    m_urlHasBeenSet = true;
+}
+
+bool SuccessUpdateStaffData::UrlHasBeenSet() const
+{
+    return m_urlHasBeenSet;
 }
 

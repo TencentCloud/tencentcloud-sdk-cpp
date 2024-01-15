@@ -35,7 +35,8 @@ namespace TencentCloud
             namespace Model
             {
                 /**
-                * 创建员工的成功数据
+                * 创建员工成功返回的信息
+支持saas/企微/H5端进行加入。
                 */
                 class SuccessCreateStaffData : public AbstractModel
                 {
@@ -155,6 +156,35 @@ namespace TencentCloud
                      */
                     bool WeworkOpenIdHasBeenSet() const;
 
+                    /**
+                     * 获取H5端员工加入\实名链接
+
+只有入参 InvitationNotifyType = H5的时候才会进行返回。
+                     * @return Url H5端员工加入\实名链接
+
+只有入参 InvitationNotifyType = H5的时候才会进行返回。
+                     * 
+                     */
+                    std::string GetUrl() const;
+
+                    /**
+                     * 设置H5端员工加入\实名链接
+
+只有入参 InvitationNotifyType = H5的时候才会进行返回。
+                     * @param _url H5端员工加入\实名链接
+
+只有入参 InvitationNotifyType = H5的时候才会进行返回。
+                     * 
+                     */
+                    void SetUrl(const std::string& _url);
+
+                    /**
+                     * 判断参数 Url 是否已赋值
+                     * @return Url 是否已赋值
+                     * 
+                     */
+                    bool UrlHasBeenSet() const;
+
                 private:
 
                     /**
@@ -187,6 +217,14 @@ namespace TencentCloud
                      */
                     std::string m_weworkOpenId;
                     bool m_weworkOpenIdHasBeenSet;
+
+                    /**
+                     * H5端员工加入\实名链接
+
+只有入参 InvitationNotifyType = H5的时候才会进行返回。
+                     */
+                    std::string m_url;
+                    bool m_urlHasBeenSet;
 
                 };
             }

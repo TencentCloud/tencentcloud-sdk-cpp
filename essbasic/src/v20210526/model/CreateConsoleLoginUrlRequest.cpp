@@ -33,7 +33,9 @@ CreateConsoleLoginUrlRequest::CreateConsoleLoginUrlRequest() :
     m_endpointHasBeenSet(false),
     m_autoJumpBackEventHasBeenSet(false),
     m_authorizationTypesHasBeenSet(false),
-    m_operatorHasBeenSet(false)
+    m_operatorHasBeenSet(false),
+    m_proxyOperatorIdCardNumberHasBeenSet(false),
+    m_autoJumpUrlHasBeenSet(false)
 {
 }
 
@@ -137,6 +139,22 @@ string CreateConsoleLoginUrlRequest::ToJsonString() const
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
         m_operator.ToJsonObject(d[key.c_str()], allocator);
+    }
+
+    if (m_proxyOperatorIdCardNumberHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ProxyOperatorIdCardNumber";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_proxyOperatorIdCardNumber.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_autoJumpUrlHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "AutoJumpUrl";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_autoJumpUrl.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -321,6 +339,38 @@ void CreateConsoleLoginUrlRequest::SetOperator(const UserInfo& _operator)
 bool CreateConsoleLoginUrlRequest::OperatorHasBeenSet() const
 {
     return m_operatorHasBeenSet;
+}
+
+string CreateConsoleLoginUrlRequest::GetProxyOperatorIdCardNumber() const
+{
+    return m_proxyOperatorIdCardNumber;
+}
+
+void CreateConsoleLoginUrlRequest::SetProxyOperatorIdCardNumber(const string& _proxyOperatorIdCardNumber)
+{
+    m_proxyOperatorIdCardNumber = _proxyOperatorIdCardNumber;
+    m_proxyOperatorIdCardNumberHasBeenSet = true;
+}
+
+bool CreateConsoleLoginUrlRequest::ProxyOperatorIdCardNumberHasBeenSet() const
+{
+    return m_proxyOperatorIdCardNumberHasBeenSet;
+}
+
+string CreateConsoleLoginUrlRequest::GetAutoJumpUrl() const
+{
+    return m_autoJumpUrl;
+}
+
+void CreateConsoleLoginUrlRequest::SetAutoJumpUrl(const string& _autoJumpUrl)
+{
+    m_autoJumpUrl = _autoJumpUrl;
+    m_autoJumpUrlHasBeenSet = true;
+}
+
+bool CreateConsoleLoginUrlRequest::AutoJumpUrlHasBeenSet() const
+{
+    return m_autoJumpUrlHasBeenSet;
 }
 
 

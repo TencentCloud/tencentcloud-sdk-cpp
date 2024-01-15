@@ -29,7 +29,9 @@ RegistrationOrganizationInfo::RegistrationOrganizationInfo() :
     m_addressHasBeenSet(false),
     m_adminNameHasBeenSet(false),
     m_adminMobileHasBeenSet(false),
-    m_authorizationTypesHasBeenSet(false)
+    m_authorizationTypesHasBeenSet(false),
+    m_adminIdCardTypeHasBeenSet(false),
+    m_adminIdCardNumberHasBeenSet(false)
 {
 }
 
@@ -131,6 +133,26 @@ CoreInternalOutcome RegistrationOrganizationInfo::Deserialize(const rapidjson::V
         m_authorizationTypesHasBeenSet = true;
     }
 
+    if (value.HasMember("AdminIdCardType") && !value["AdminIdCardType"].IsNull())
+    {
+        if (!value["AdminIdCardType"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `RegistrationOrganizationInfo.AdminIdCardType` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_adminIdCardType = string(value["AdminIdCardType"].GetString());
+        m_adminIdCardTypeHasBeenSet = true;
+    }
+
+    if (value.HasMember("AdminIdCardNumber") && !value["AdminIdCardNumber"].IsNull())
+    {
+        if (!value["AdminIdCardNumber"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `RegistrationOrganizationInfo.AdminIdCardNumber` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_adminIdCardNumber = string(value["AdminIdCardNumber"].GetString());
+        m_adminIdCardNumberHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -213,6 +235,22 @@ void RegistrationOrganizationInfo::ToJsonObject(rapidjson::Value &value, rapidjs
         {
             value[key.c_str()].PushBack(rapidjson::Value().SetUint64(*itr), allocator);
         }
+    }
+
+    if (m_adminIdCardTypeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "AdminIdCardType";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_adminIdCardType.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_adminIdCardNumberHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "AdminIdCardNumber";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_adminIdCardNumber.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -360,5 +398,37 @@ void RegistrationOrganizationInfo::SetAuthorizationTypes(const vector<uint64_t>&
 bool RegistrationOrganizationInfo::AuthorizationTypesHasBeenSet() const
 {
     return m_authorizationTypesHasBeenSet;
+}
+
+string RegistrationOrganizationInfo::GetAdminIdCardType() const
+{
+    return m_adminIdCardType;
+}
+
+void RegistrationOrganizationInfo::SetAdminIdCardType(const string& _adminIdCardType)
+{
+    m_adminIdCardType = _adminIdCardType;
+    m_adminIdCardTypeHasBeenSet = true;
+}
+
+bool RegistrationOrganizationInfo::AdminIdCardTypeHasBeenSet() const
+{
+    return m_adminIdCardTypeHasBeenSet;
+}
+
+string RegistrationOrganizationInfo::GetAdminIdCardNumber() const
+{
+    return m_adminIdCardNumber;
+}
+
+void RegistrationOrganizationInfo::SetAdminIdCardNumber(const string& _adminIdCardNumber)
+{
+    m_adminIdCardNumber = _adminIdCardNumber;
+    m_adminIdCardNumberHasBeenSet = true;
+}
+
+bool RegistrationOrganizationInfo::AdminIdCardNumberHasBeenSet() const
+{
+    return m_adminIdCardNumberHasBeenSet;
 }
 

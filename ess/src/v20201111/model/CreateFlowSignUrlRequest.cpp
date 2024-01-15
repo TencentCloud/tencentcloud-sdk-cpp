@@ -24,11 +24,12 @@ using namespace std;
 
 CreateFlowSignUrlRequest::CreateFlowSignUrlRequest() :
     m_flowIdHasBeenSet(false),
-    m_flowApproverInfosHasBeenSet(false),
     m_operatorHasBeenSet(false),
     m_agentHasBeenSet(false),
+    m_flowApproverInfosHasBeenSet(false),
     m_organizationHasBeenSet(false),
-    m_jumpUrlHasBeenSet(false)
+    m_jumpUrlHasBeenSet(false),
+    m_urlTypeHasBeenSet(false)
 {
 }
 
@@ -45,21 +46,6 @@ string CreateFlowSignUrlRequest::ToJsonString() const
         string key = "FlowId";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_flowId.c_str(), allocator).Move(), allocator);
-    }
-
-    if (m_flowApproverInfosHasBeenSet)
-    {
-        rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "FlowApproverInfos";
-        iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
-
-        int i=0;
-        for (auto itr = m_flowApproverInfos.begin(); itr != m_flowApproverInfos.end(); ++itr, ++i)
-        {
-            d[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
-            (*itr).ToJsonObject(d[key.c_str()][i], allocator);
-        }
     }
 
     if (m_operatorHasBeenSet)
@@ -80,6 +66,21 @@ string CreateFlowSignUrlRequest::ToJsonString() const
         m_agent.ToJsonObject(d[key.c_str()], allocator);
     }
 
+    if (m_flowApproverInfosHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "FlowApproverInfos";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_flowApproverInfos.begin(); itr != m_flowApproverInfos.end(); ++itr, ++i)
+        {
+            d[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(d[key.c_str()][i], allocator);
+        }
+    }
+
     if (m_organizationHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
@@ -95,6 +96,14 @@ string CreateFlowSignUrlRequest::ToJsonString() const
         string key = "JumpUrl";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_jumpUrl.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_urlTypeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "UrlType";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_urlType, allocator);
     }
 
 
@@ -119,22 +128,6 @@ void CreateFlowSignUrlRequest::SetFlowId(const string& _flowId)
 bool CreateFlowSignUrlRequest::FlowIdHasBeenSet() const
 {
     return m_flowIdHasBeenSet;
-}
-
-vector<FlowCreateApprover> CreateFlowSignUrlRequest::GetFlowApproverInfos() const
-{
-    return m_flowApproverInfos;
-}
-
-void CreateFlowSignUrlRequest::SetFlowApproverInfos(const vector<FlowCreateApprover>& _flowApproverInfos)
-{
-    m_flowApproverInfos = _flowApproverInfos;
-    m_flowApproverInfosHasBeenSet = true;
-}
-
-bool CreateFlowSignUrlRequest::FlowApproverInfosHasBeenSet() const
-{
-    return m_flowApproverInfosHasBeenSet;
 }
 
 UserInfo CreateFlowSignUrlRequest::GetOperator() const
@@ -169,6 +162,22 @@ bool CreateFlowSignUrlRequest::AgentHasBeenSet() const
     return m_agentHasBeenSet;
 }
 
+vector<FlowCreateApprover> CreateFlowSignUrlRequest::GetFlowApproverInfos() const
+{
+    return m_flowApproverInfos;
+}
+
+void CreateFlowSignUrlRequest::SetFlowApproverInfos(const vector<FlowCreateApprover>& _flowApproverInfos)
+{
+    m_flowApproverInfos = _flowApproverInfos;
+    m_flowApproverInfosHasBeenSet = true;
+}
+
+bool CreateFlowSignUrlRequest::FlowApproverInfosHasBeenSet() const
+{
+    return m_flowApproverInfosHasBeenSet;
+}
+
 OrganizationInfo CreateFlowSignUrlRequest::GetOrganization() const
 {
     return m_organization;
@@ -199,6 +208,22 @@ void CreateFlowSignUrlRequest::SetJumpUrl(const string& _jumpUrl)
 bool CreateFlowSignUrlRequest::JumpUrlHasBeenSet() const
 {
     return m_jumpUrlHasBeenSet;
+}
+
+int64_t CreateFlowSignUrlRequest::GetUrlType() const
+{
+    return m_urlType;
+}
+
+void CreateFlowSignUrlRequest::SetUrlType(const int64_t& _urlType)
+{
+    m_urlType = _urlType;
+    m_urlTypeHasBeenSet = true;
+}
+
+bool CreateFlowSignUrlRequest::UrlTypeHasBeenSet() const
+{
+    return m_urlTypeHasBeenSet;
 }
 
 
