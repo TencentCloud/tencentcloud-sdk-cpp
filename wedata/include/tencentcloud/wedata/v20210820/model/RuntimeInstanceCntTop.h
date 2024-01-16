@@ -221,6 +221,31 @@ namespace TencentCloud
                      */
                     bool CurRunTimeHasBeenSet() const;
 
+                    /**
+                     * 获取等待调度耗时
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return WaitScheduleTime 等待调度耗时
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    uint64_t GetWaitScheduleTime() const;
+
+                    /**
+                     * 设置等待调度耗时
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _waitScheduleTime 等待调度耗时
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetWaitScheduleTime(const uint64_t& _waitScheduleTime);
+
+                    /**
+                     * 判断参数 WaitScheduleTime 是否已赋值
+                     * @return WaitScheduleTime 是否已赋值
+                     * 
+                     */
+                    bool WaitScheduleTimeHasBeenSet() const;
+
                 private:
 
                     /**
@@ -271,6 +296,13 @@ namespace TencentCloud
                      */
                     std::string m_curRunTime;
                     bool m_curRunTimeHasBeenSet;
+
+                    /**
+                     * 等待调度耗时
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    uint64_t m_waitScheduleTime;
+                    bool m_waitScheduleTimeHasBeenSet;
 
                 };
             }

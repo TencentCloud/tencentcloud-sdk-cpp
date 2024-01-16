@@ -24,7 +24,8 @@ using namespace std;
 
 DescribeBaselineAllTaskDagRequest::DescribeBaselineAllTaskDagRequest() :
     m_baselineIdHasBeenSet(false),
-    m_projectIdHasBeenSet(false)
+    m_projectIdHasBeenSet(false),
+    m_baselineTaskIdHasBeenSet(false)
 {
 }
 
@@ -49,6 +50,14 @@ string DescribeBaselineAllTaskDagRequest::ToJsonString() const
         string key = "ProjectId";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_projectId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_baselineTaskIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "BaselineTaskId";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_baselineTaskId.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -89,6 +98,22 @@ void DescribeBaselineAllTaskDagRequest::SetProjectId(const string& _projectId)
 bool DescribeBaselineAllTaskDagRequest::ProjectIdHasBeenSet() const
 {
     return m_projectIdHasBeenSet;
+}
+
+string DescribeBaselineAllTaskDagRequest::GetBaselineTaskId() const
+{
+    return m_baselineTaskId;
+}
+
+void DescribeBaselineAllTaskDagRequest::SetBaselineTaskId(const string& _baselineTaskId)
+{
+    m_baselineTaskId = _baselineTaskId;
+    m_baselineTaskIdHasBeenSet = true;
+}
+
+bool DescribeBaselineAllTaskDagRequest::BaselineTaskIdHasBeenSet() const
+{
+    return m_baselineTaskIdHasBeenSet;
 }
 
 

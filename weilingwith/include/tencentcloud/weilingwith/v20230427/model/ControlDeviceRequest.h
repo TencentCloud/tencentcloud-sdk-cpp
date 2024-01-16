@@ -126,6 +126,27 @@ namespace TencentCloud
                      */
                     bool ApplicationTokenHasBeenSet() const;
 
+                    /**
+                     * 获取是否同步返回设备下控ack结果
+                     * @return IsSynchronized 是否同步返回设备下控ack结果
+                     * 
+                     */
+                    bool GetIsSynchronized() const;
+
+                    /**
+                     * 设置是否同步返回设备下控ack结果
+                     * @param _isSynchronized 是否同步返回设备下控ack结果
+                     * 
+                     */
+                    void SetIsSynchronized(const bool& _isSynchronized);
+
+                    /**
+                     * 判断参数 IsSynchronized 是否已赋值
+                     * @return IsSynchronized 是否已赋值
+                     * 
+                     */
+                    bool IsSynchronizedHasBeenSet() const;
+
                 private:
 
                     /**
@@ -151,6 +172,12 @@ namespace TencentCloud
                      */
                     std::string m_applicationToken;
                     bool m_applicationTokenHasBeenSet;
+
+                    /**
+                     * 是否同步返回设备下控ack结果
+                     */
+                    bool m_isSynchronized;
+                    bool m_isSynchronizedHasBeenSet;
 
                 };
             }

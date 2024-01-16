@@ -45,9 +45,9 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取日志总数
+                     * 获取事件总数
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return Total 日志总数
+                     * @return Total 事件总数
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -61,9 +61,9 @@ namespace TencentCloud
                     bool TotalHasBeenSet() const;
 
                     /**
-                     * 获取每页日志条数
+                     * 获取每页事件条数
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return Limit 每页日志条数
+                     * @return Limit 每页事件条数
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -93,9 +93,9 @@ namespace TencentCloud
                     bool PageHasBeenSet() const;
 
                     /**
-                     * 获取日志检索结果
+                     * 获取事件查询结果
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return Results 日志检索结果
+                     * @return Results 事件查询结果
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -111,14 +111,14 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 日志总数
+                     * 事件总数
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_total;
                     bool m_totalHasBeenSet;
 
                     /**
-                     * 每页日志条数
+                     * 每页事件条数
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_limit;
@@ -132,7 +132,7 @@ namespace TencentCloud
                     bool m_pageHasBeenSet;
 
                     /**
-                     * 日志检索结果
+                     * 事件查询结果
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<SearchLogResult> m_results;

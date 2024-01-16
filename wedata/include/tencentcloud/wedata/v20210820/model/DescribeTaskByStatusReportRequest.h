@@ -252,6 +252,27 @@ namespace TencentCloud
                      */
                     bool InChargeHasBeenSet() const;
 
+                    /**
+                     * 获取工作流ID
+                     * @return WorkflowId 工作流ID
+                     * 
+                     */
+                    std::string GetWorkflowId() const;
+
+                    /**
+                     * 设置工作流ID
+                     * @param _workflowId 工作流ID
+                     * 
+                     */
+                    void SetWorkflowId(const std::string& _workflowId);
+
+                    /**
+                     * 判断参数 WorkflowId 是否已赋值
+                     * @return WorkflowId 是否已赋值
+                     * 
+                     */
+                    bool WorkflowIdHasBeenSet() const;
+
                 private:
 
                     /**
@@ -313,6 +334,12 @@ namespace TencentCloud
                      */
                     std::string m_inCharge;
                     bool m_inChargeHasBeenSet;
+
+                    /**
+                     * 工作流ID
+                     */
+                    std::string m_workflowId;
+                    bool m_workflowIdHasBeenSet;
 
                 };
             }

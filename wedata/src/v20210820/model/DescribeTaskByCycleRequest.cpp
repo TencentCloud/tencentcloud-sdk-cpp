@@ -24,7 +24,8 @@ using namespace std;
 
 DescribeTaskByCycleRequest::DescribeTaskByCycleRequest() :
     m_projectIdHasBeenSet(false),
-    m_inChargeHasBeenSet(false)
+    m_inChargeHasBeenSet(false),
+    m_workflowIdHasBeenSet(false)
 {
 }
 
@@ -49,6 +50,14 @@ string DescribeTaskByCycleRequest::ToJsonString() const
         string key = "InCharge";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_inCharge.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_workflowIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "WorkflowId";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_workflowId.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -89,6 +98,22 @@ void DescribeTaskByCycleRequest::SetInCharge(const string& _inCharge)
 bool DescribeTaskByCycleRequest::InChargeHasBeenSet() const
 {
     return m_inChargeHasBeenSet;
+}
+
+string DescribeTaskByCycleRequest::GetWorkflowId() const
+{
+    return m_workflowId;
+}
+
+void DescribeTaskByCycleRequest::SetWorkflowId(const string& _workflowId)
+{
+    m_workflowId = _workflowId;
+    m_workflowIdHasBeenSet = true;
+}
+
+bool DescribeTaskByCycleRequest::WorkflowIdHasBeenSet() const
+{
+    return m_workflowIdHasBeenSet;
 }
 
 

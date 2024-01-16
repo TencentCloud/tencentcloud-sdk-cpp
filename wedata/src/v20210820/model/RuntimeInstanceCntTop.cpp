@@ -27,7 +27,8 @@ RuntimeInstanceCntTop::RuntimeInstanceCntTop() :
     m_cycleUnitHasBeenSet(false),
     m_stateHasBeenSet(false),
     m_runTimeHasBeenSet(false),
-    m_curRunTimeHasBeenSet(false)
+    m_curRunTimeHasBeenSet(false),
+    m_waitScheduleTimeHasBeenSet(false)
 {
 }
 
@@ -106,6 +107,16 @@ CoreInternalOutcome RuntimeInstanceCntTop::Deserialize(const rapidjson::Value &v
         m_curRunTimeHasBeenSet = true;
     }
 
+    if (value.HasMember("WaitScheduleTime") && !value["WaitScheduleTime"].IsNull())
+    {
+        if (!value["WaitScheduleTime"].IsUint64())
+        {
+            return CoreInternalOutcome(Core::Error("response `RuntimeInstanceCntTop.WaitScheduleTime` IsUint64=false incorrectly").SetRequestId(requestId));
+        }
+        m_waitScheduleTime = value["WaitScheduleTime"].GetUint64();
+        m_waitScheduleTimeHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -167,6 +178,14 @@ void RuntimeInstanceCntTop::ToJsonObject(rapidjson::Value &value, rapidjson::Doc
         string key = "CurRunTime";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_curRunTime.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_waitScheduleTimeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "WaitScheduleTime";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_waitScheduleTime, allocator);
     }
 
 }
@@ -282,5 +301,21 @@ void RuntimeInstanceCntTop::SetCurRunTime(const string& _curRunTime)
 bool RuntimeInstanceCntTop::CurRunTimeHasBeenSet() const
 {
     return m_curRunTimeHasBeenSet;
+}
+
+uint64_t RuntimeInstanceCntTop::GetWaitScheduleTime() const
+{
+    return m_waitScheduleTime;
+}
+
+void RuntimeInstanceCntTop::SetWaitScheduleTime(const uint64_t& _waitScheduleTime)
+{
+    m_waitScheduleTime = _waitScheduleTime;
+    m_waitScheduleTimeHasBeenSet = true;
+}
+
+bool RuntimeInstanceCntTop::WaitScheduleTimeHasBeenSet() const
+{
+    return m_waitScheduleTimeHasBeenSet;
 }
 

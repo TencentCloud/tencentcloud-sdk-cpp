@@ -84,6 +84,27 @@ namespace TencentCloud
                      */
                     bool ProjectIdHasBeenSet() const;
 
+                    /**
+                     * 获取保障任务id
+                     * @return PromiseTaskId 保障任务id
+                     * 
+                     */
+                    std::string GetPromiseTaskId() const;
+
+                    /**
+                     * 设置保障任务id
+                     * @param _promiseTaskId 保障任务id
+                     * 
+                     */
+                    void SetPromiseTaskId(const std::string& _promiseTaskId);
+
+                    /**
+                     * 判断参数 PromiseTaskId 是否已赋值
+                     * @return PromiseTaskId 是否已赋值
+                     * 
+                     */
+                    bool PromiseTaskIdHasBeenSet() const;
+
                 private:
 
                     /**
@@ -97,6 +118,12 @@ namespace TencentCloud
                      */
                     std::string m_projectId;
                     bool m_projectIdHasBeenSet;
+
+                    /**
+                     * 保障任务id
+                     */
+                    std::string m_promiseTaskId;
+                    bool m_promiseTaskIdHasBeenSet;
 
                 };
             }

@@ -44,9 +44,9 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取索引检索维度值
+                     * 获取事件查询维度值结果
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return Results 索引检索维度值
+                     * @return Results 事件查询维度值结果
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -62,7 +62,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 索引检索维度值
+                     * 事件查询维度值结果
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<std::string> m_results;

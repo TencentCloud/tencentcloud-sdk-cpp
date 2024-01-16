@@ -110,6 +110,81 @@ namespace TencentCloud
                      */
                     bool ValuesHasBeenSet() const;
 
+                    /**
+                     * 获取监控值数组，该数组和Timestamps一一对应
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return MaxValues 监控值数组，该数组和Timestamps一一对应
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::vector<double> GetMaxValues() const;
+
+                    /**
+                     * 设置监控值数组，该数组和Timestamps一一对应
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _maxValues 监控值数组，该数组和Timestamps一一对应
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetMaxValues(const std::vector<double>& _maxValues);
+
+                    /**
+                     * 判断参数 MaxValues 是否已赋值
+                     * @return MaxValues 是否已赋值
+                     * 
+                     */
+                    bool MaxValuesHasBeenSet() const;
+
+                    /**
+                     * 获取监控值数组，该数组和Timestamps一一对应
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return MinValues 监控值数组，该数组和Timestamps一一对应
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::vector<double> GetMinValues() const;
+
+                    /**
+                     * 设置监控值数组，该数组和Timestamps一一对应
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _minValues 监控值数组，该数组和Timestamps一一对应
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetMinValues(const std::vector<double>& _minValues);
+
+                    /**
+                     * 判断参数 MinValues 是否已赋值
+                     * @return MinValues 是否已赋值
+                     * 
+                     */
+                    bool MinValuesHasBeenSet() const;
+
+                    /**
+                     * 获取监控值数组，该数组和Timestamps一一对应
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return AvgValues 监控值数组，该数组和Timestamps一一对应
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::vector<double> GetAvgValues() const;
+
+                    /**
+                     * 设置监控值数组，该数组和Timestamps一一对应
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _avgValues 监控值数组，该数组和Timestamps一一对应
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetAvgValues(const std::vector<double>& _avgValues);
+
+                    /**
+                     * 判断参数 AvgValues 是否已赋值
+                     * @return AvgValues 是否已赋值
+                     * 
+                     */
+                    bool AvgValuesHasBeenSet() const;
+
                 private:
 
                     /**
@@ -129,6 +204,27 @@ namespace TencentCloud
                      */
                     std::vector<double> m_values;
                     bool m_valuesHasBeenSet;
+
+                    /**
+                     * 监控值数组，该数组和Timestamps一一对应
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::vector<double> m_maxValues;
+                    bool m_maxValuesHasBeenSet;
+
+                    /**
+                     * 监控值数组，该数组和Timestamps一一对应
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::vector<double> m_minValues;
+                    bool m_minValuesHasBeenSet;
+
+                    /**
+                     * 监控值数组，该数组和Timestamps一一对应
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::vector<double> m_avgValues;
+                    bool m_avgValuesHasBeenSet;
 
                 };
             }

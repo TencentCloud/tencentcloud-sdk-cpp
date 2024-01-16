@@ -26,7 +26,8 @@ ControlDeviceRequest::ControlDeviceRequest() :
     m_workspaceIdHasBeenSet(false),
     m_wIDSetHasBeenSet(false),
     m_controlDataHasBeenSet(false),
-    m_applicationTokenHasBeenSet(false)
+    m_applicationTokenHasBeenSet(false),
+    m_isSynchronizedHasBeenSet(false)
 {
 }
 
@@ -72,6 +73,14 @@ string ControlDeviceRequest::ToJsonString() const
         string key = "ApplicationToken";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_applicationToken.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_isSynchronizedHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "IsSynchronized";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_isSynchronized, allocator);
     }
 
 
@@ -144,6 +153,22 @@ void ControlDeviceRequest::SetApplicationToken(const string& _applicationToken)
 bool ControlDeviceRequest::ApplicationTokenHasBeenSet() const
 {
     return m_applicationTokenHasBeenSet;
+}
+
+bool ControlDeviceRequest::GetIsSynchronized() const
+{
+    return m_isSynchronized;
+}
+
+void ControlDeviceRequest::SetIsSynchronized(const bool& _isSynchronized)
+{
+    m_isSynchronized = _isSynchronized;
+    m_isSynchronizedHasBeenSet = true;
+}
+
+bool ControlDeviceRequest::IsSynchronizedHasBeenSet() const
+{
+    return m_isSynchronizedHasBeenSet;
 }
 
 

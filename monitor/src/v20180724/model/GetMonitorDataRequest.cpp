@@ -28,7 +28,8 @@ GetMonitorDataRequest::GetMonitorDataRequest() :
     m_instancesHasBeenSet(false),
     m_periodHasBeenSet(false),
     m_startTimeHasBeenSet(false),
-    m_endTimeHasBeenSet(false)
+    m_endTimeHasBeenSet(false),
+    m_specifyStatisticsHasBeenSet(false)
 {
 }
 
@@ -92,6 +93,14 @@ string GetMonitorDataRequest::ToJsonString() const
         string key = "EndTime";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_endTime.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_specifyStatisticsHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "SpecifyStatistics";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_specifyStatistics, allocator);
     }
 
 
@@ -196,6 +205,22 @@ void GetMonitorDataRequest::SetEndTime(const string& _endTime)
 bool GetMonitorDataRequest::EndTimeHasBeenSet() const
 {
     return m_endTimeHasBeenSet;
+}
+
+int64_t GetMonitorDataRequest::GetSpecifyStatistics() const
+{
+    return m_specifyStatistics;
+}
+
+void GetMonitorDataRequest::SetSpecifyStatistics(const int64_t& _specifyStatistics)
+{
+    m_specifyStatistics = _specifyStatistics;
+    m_specifyStatisticsHasBeenSet = true;
+}
+
+bool GetMonitorDataRequest::SpecifyStatisticsHasBeenSet() const
+{
+    return m_specifyStatisticsHasBeenSet;
 }
 
 

@@ -22,7 +22,6 @@ using namespace std;
 
 ColumnLineageInfo::ColumnLineageInfo() :
     m_idHasBeenSet(false),
-    m_prefixPathHasBeenSet(false),
     m_datasourceIdHasBeenSet(false),
     m_tableIdHasBeenSet(false),
     m_columnNameHasBeenSet(false),
@@ -38,6 +37,7 @@ ColumnLineageInfo::ColumnLineageInfo() :
     m_downStreamCountHasBeenSet(false),
     m_upStreamCountHasBeenSet(false),
     m_descriptionHasBeenSet(false),
+    m_prefixPathHasBeenSet(false),
     m_createTimeHasBeenSet(false),
     m_modifyTimeHasBeenSet(false),
     m_tasksHasBeenSet(false),
@@ -60,16 +60,6 @@ CoreInternalOutcome ColumnLineageInfo::Deserialize(const rapidjson::Value &value
         }
         m_id = string(value["Id"].GetString());
         m_idHasBeenSet = true;
-    }
-
-    if (value.HasMember("PrefixPath") && !value["PrefixPath"].IsNull())
-    {
-        if (!value["PrefixPath"].IsString())
-        {
-            return CoreInternalOutcome(Core::Error("response `ColumnLineageInfo.PrefixPath` IsString=false incorrectly").SetRequestId(requestId));
-        }
-        m_prefixPath = string(value["PrefixPath"].GetString());
-        m_prefixPathHasBeenSet = true;
     }
 
     if (value.HasMember("DatasourceId") && !value["DatasourceId"].IsNull())
@@ -222,6 +212,16 @@ CoreInternalOutcome ColumnLineageInfo::Deserialize(const rapidjson::Value &value
         m_descriptionHasBeenSet = true;
     }
 
+    if (value.HasMember("PrefixPath") && !value["PrefixPath"].IsNull())
+    {
+        if (!value["PrefixPath"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `ColumnLineageInfo.PrefixPath` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_prefixPath = string(value["PrefixPath"].GetString());
+        m_prefixPathHasBeenSet = true;
+    }
+
     if (value.HasMember("CreateTime") && !value["CreateTime"].IsNull())
     {
         if (!value["CreateTime"].IsString())
@@ -308,14 +308,6 @@ void ColumnLineageInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Documen
         string key = "Id";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_id.c_str(), allocator).Move(), allocator);
-    }
-
-    if (m_prefixPathHasBeenSet)
-    {
-        rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "PrefixPath";
-        iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, rapidjson::Value(m_prefixPath.c_str(), allocator).Move(), allocator);
     }
 
     if (m_datasourceIdHasBeenSet)
@@ -438,6 +430,14 @@ void ColumnLineageInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Documen
         value.AddMember(iKey, rapidjson::Value(m_description.c_str(), allocator).Move(), allocator);
     }
 
+    if (m_prefixPathHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "PrefixPath";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_prefixPath.c_str(), allocator).Move(), allocator);
+    }
+
     if (m_createTimeHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
@@ -515,22 +515,6 @@ void ColumnLineageInfo::SetId(const string& _id)
 bool ColumnLineageInfo::IdHasBeenSet() const
 {
     return m_idHasBeenSet;
-}
-
-string ColumnLineageInfo::GetPrefixPath() const
-{
-    return m_prefixPath;
-}
-
-void ColumnLineageInfo::SetPrefixPath(const string& _prefixPath)
-{
-    m_prefixPath = _prefixPath;
-    m_prefixPathHasBeenSet = true;
-}
-
-bool ColumnLineageInfo::PrefixPathHasBeenSet() const
-{
-    return m_prefixPathHasBeenSet;
 }
 
 string ColumnLineageInfo::GetDatasourceId() const
@@ -771,6 +755,22 @@ void ColumnLineageInfo::SetDescription(const string& _description)
 bool ColumnLineageInfo::DescriptionHasBeenSet() const
 {
     return m_descriptionHasBeenSet;
+}
+
+string ColumnLineageInfo::GetPrefixPath() const
+{
+    return m_prefixPath;
+}
+
+void ColumnLineageInfo::SetPrefixPath(const string& _prefixPath)
+{
+    m_prefixPath = _prefixPath;
+    m_prefixPathHasBeenSet = true;
+}
+
+bool ColumnLineageInfo::PrefixPathHasBeenSet() const
+{
+    return m_prefixPathHasBeenSet;
 }
 
 string ColumnLineageInfo::GetCreateTime() const

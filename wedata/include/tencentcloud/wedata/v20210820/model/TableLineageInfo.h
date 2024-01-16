@@ -74,31 +74,6 @@ namespace TencentCloud
                     bool MetastoreTypeHasBeenSet() const;
 
                     /**
-                     * 获取由中心节点到该节点的路径
-注意：此字段可能返回 null，表示取不到有效值。
-                     * @return PrefixPath 由中心节点到该节点的路径
-注意：此字段可能返回 null，表示取不到有效值。
-                     * 
-                     */
-                    std::string GetPrefixPath() const;
-
-                    /**
-                     * 设置由中心节点到该节点的路径
-注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _prefixPath 由中心节点到该节点的路径
-注意：此字段可能返回 null，表示取不到有效值。
-                     * 
-                     */
-                    void SetPrefixPath(const std::string& _prefixPath);
-
-                    /**
-                     * 判断参数 PrefixPath 是否已赋值
-                     * @return PrefixPath 是否已赋值
-                     * 
-                     */
-                    bool PrefixPathHasBeenSet() const;
-
-                    /**
                      * 获取空间id
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return ProjectId 空间id
@@ -449,6 +424,31 @@ namespace TencentCloud
                     bool DescriptionHasBeenSet() const;
 
                     /**
+                     * 获取由中心节点到该节点的路径
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return PrefixPath 由中心节点到该节点的路径
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::string GetPrefixPath() const;
+
+                    /**
+                     * 设置由中心节点到该节点的路径
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _prefixPath 由中心节点到该节点的路径
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetPrefixPath(const std::string& _prefixPath);
+
+                    /**
+                     * 判断参数 PrefixPath 是否已赋值
+                     * @return PrefixPath 是否已赋值
+                     * 
+                     */
+                    bool PrefixPathHasBeenSet() const;
+
+                    /**
                      * 获取血缘创建时间
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return CreateTime 血缘创建时间
@@ -523,6 +523,31 @@ namespace TencentCloud
                      */
                     bool TasksHasBeenSet() const;
 
+                    /**
+                     * 获取模块/应用类型
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return ChannelType 模块/应用类型
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::string GetChannelType() const;
+
+                    /**
+                     * 设置模块/应用类型
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _channelType 模块/应用类型
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetChannelType(const std::string& _channelType);
+
+                    /**
+                     * 判断参数 ChannelType 是否已赋值
+                     * @return ChannelType 是否已赋值
+                     * 
+                     */
+                    bool ChannelTypeHasBeenSet() const;
+
                 private:
 
                     /**
@@ -531,13 +556,6 @@ namespace TencentCloud
                      */
                     std::string m_metastoreType;
                     bool m_metastoreTypeHasBeenSet;
-
-                    /**
-                     * 由中心节点到该节点的路径
-注意：此字段可能返回 null，表示取不到有效值。
-                     */
-                    std::string m_prefixPath;
-                    bool m_prefixPathHasBeenSet;
 
                     /**
                      * 空间id
@@ -638,6 +656,13 @@ namespace TencentCloud
                     bool m_descriptionHasBeenSet;
 
                     /**
+                     * 由中心节点到该节点的路径
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_prefixPath;
+                    bool m_prefixPathHasBeenSet;
+
+                    /**
                      * 血缘创建时间
 注意：此字段可能返回 null，表示取不到有效值。
                      */
@@ -657,6 +682,13 @@ namespace TencentCloud
                      */
                     std::vector<std::string> m_tasks;
                     bool m_tasksHasBeenSet;
+
+                    /**
+                     * 模块/应用类型
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_channelType;
+                    bool m_channelTypeHasBeenSet;
 
                 };
             }

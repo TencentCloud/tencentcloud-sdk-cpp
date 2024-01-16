@@ -26,6 +26,7 @@ DescribeUsedIpAddressRequest::DescribeUsedIpAddressRequest() :
     m_vpcIdHasBeenSet(false),
     m_subnetIdHasBeenSet(false),
     m_ipAddressesHasBeenSet(false),
+    m_filtersHasBeenSet(false),
     m_offsetHasBeenSet(false),
     m_limitHasBeenSet(false)
 {
@@ -64,6 +65,21 @@ string DescribeUsedIpAddressRequest::ToJsonString() const
         for (auto itr = m_ipAddresses.begin(); itr != m_ipAddresses.end(); ++itr)
         {
             d[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
+        }
+    }
+
+    if (m_filtersHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Filters";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_filters.begin(); itr != m_filters.end(); ++itr, ++i)
+        {
+            d[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(d[key.c_str()][i], allocator);
         }
     }
 
@@ -137,6 +153,22 @@ void DescribeUsedIpAddressRequest::SetIpAddresses(const vector<string>& _ipAddre
 bool DescribeUsedIpAddressRequest::IpAddressesHasBeenSet() const
 {
     return m_ipAddressesHasBeenSet;
+}
+
+vector<Filter> DescribeUsedIpAddressRequest::GetFilters() const
+{
+    return m_filters;
+}
+
+void DescribeUsedIpAddressRequest::SetFilters(const vector<Filter>& _filters)
+{
+    m_filters = _filters;
+    m_filtersHasBeenSet = true;
+}
+
+bool DescribeUsedIpAddressRequest::FiltersHasBeenSet() const
+{
+    return m_filtersHasBeenSet;
 }
 
 uint64_t DescribeUsedIpAddressRequest::GetOffset() const

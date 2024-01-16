@@ -231,6 +231,27 @@ namespace TencentCloud
                      */
                     bool SubnetNameHasBeenSet() const;
 
+                    /**
+                     * 获取需要开通实例所属的CDC集群ID
+                     * @return CdcClusterId 需要开通实例所属的CDC集群ID
+                     * 
+                     */
+                    std::string GetCdcClusterId() const;
+
+                    /**
+                     * 设置需要开通实例所属的CDC集群ID
+                     * @param _cdcClusterId 需要开通实例所属的CDC集群ID
+                     * 
+                     */
+                    void SetCdcClusterId(const std::string& _cdcClusterId);
+
+                    /**
+                     * 判断参数 CdcClusterId 是否已赋值
+                     * @return CdcClusterId 是否已赋值
+                     * 
+                     */
+                    bool CdcClusterIdHasBeenSet() const;
+
                 private:
 
                     /**
@@ -286,6 +307,12 @@ namespace TencentCloud
                      */
                     std::string m_subnetName;
                     bool m_subnetNameHasBeenSet;
+
+                    /**
+                     * 需要开通实例所属的CDC集群ID
+                     */
+                    std::string m_cdcClusterId;
+                    bool m_cdcClusterIdHasBeenSet;
 
                 };
             }

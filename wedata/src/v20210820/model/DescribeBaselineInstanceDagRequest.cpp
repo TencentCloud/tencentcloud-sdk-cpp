@@ -26,7 +26,8 @@ DescribeBaselineInstanceDagRequest::DescribeBaselineInstanceDagRequest() :
     m_baselineInstanceIdHasBeenSet(false),
     m_projectIdHasBeenSet(false),
     m_upstreamInstanceIdsHasBeenSet(false),
-    m_levelHasBeenSet(false)
+    m_levelHasBeenSet(false),
+    m_promiseTaskIdHasBeenSet(false)
 {
 }
 
@@ -67,6 +68,14 @@ string DescribeBaselineInstanceDagRequest::ToJsonString() const
         string key = "Level";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_level, allocator);
+    }
+
+    if (m_promiseTaskIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "PromiseTaskId";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_promiseTaskId.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -139,6 +148,22 @@ void DescribeBaselineInstanceDagRequest::SetLevel(const int64_t& _level)
 bool DescribeBaselineInstanceDagRequest::LevelHasBeenSet() const
 {
     return m_levelHasBeenSet;
+}
+
+string DescribeBaselineInstanceDagRequest::GetPromiseTaskId() const
+{
+    return m_promiseTaskId;
+}
+
+void DescribeBaselineInstanceDagRequest::SetPromiseTaskId(const string& _promiseTaskId)
+{
+    m_promiseTaskId = _promiseTaskId;
+    m_promiseTaskIdHasBeenSet = true;
+}
+
+bool DescribeBaselineInstanceDagRequest::PromiseTaskIdHasBeenSet() const
+{
+    return m_promiseTaskIdHasBeenSet;
 }
 
 

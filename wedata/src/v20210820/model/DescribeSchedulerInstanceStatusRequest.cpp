@@ -29,7 +29,8 @@ DescribeSchedulerInstanceStatusRequest::DescribeSchedulerInstanceStatusRequest()
     m_executionGroupNameHasBeenSet(false),
     m_startTimeHasBeenSet(false),
     m_endTimeHasBeenSet(false),
-    m_inChargeHasBeenSet(false)
+    m_inChargeHasBeenSet(false),
+    m_workflowIdHasBeenSet(false)
 {
 }
 
@@ -94,6 +95,14 @@ string DescribeSchedulerInstanceStatusRequest::ToJsonString() const
         string key = "InCharge";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_inCharge.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_workflowIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "WorkflowId";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_workflowId.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -214,6 +223,22 @@ void DescribeSchedulerInstanceStatusRequest::SetInCharge(const string& _inCharge
 bool DescribeSchedulerInstanceStatusRequest::InChargeHasBeenSet() const
 {
     return m_inChargeHasBeenSet;
+}
+
+string DescribeSchedulerInstanceStatusRequest::GetWorkflowId() const
+{
+    return m_workflowId;
+}
+
+void DescribeSchedulerInstanceStatusRequest::SetWorkflowId(const string& _workflowId)
+{
+    m_workflowId = _workflowId;
+    m_workflowIdHasBeenSet = true;
+}
+
+bool DescribeSchedulerInstanceStatusRequest::WorkflowIdHasBeenSet() const
+{
+    return m_workflowIdHasBeenSet;
 }
 
 

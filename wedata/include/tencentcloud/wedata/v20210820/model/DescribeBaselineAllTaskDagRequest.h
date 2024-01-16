@@ -84,6 +84,27 @@ namespace TencentCloud
                      */
                     bool ProjectIdHasBeenSet() const;
 
+                    /**
+                     * 获取1
+                     * @return BaselineTaskId 1
+                     * 
+                     */
+                    std::string GetBaselineTaskId() const;
+
+                    /**
+                     * 设置1
+                     * @param _baselineTaskId 1
+                     * 
+                     */
+                    void SetBaselineTaskId(const std::string& _baselineTaskId);
+
+                    /**
+                     * 判断参数 BaselineTaskId 是否已赋值
+                     * @return BaselineTaskId 是否已赋值
+                     * 
+                     */
+                    bool BaselineTaskIdHasBeenSet() const;
+
                 private:
 
                     /**
@@ -97,6 +118,12 @@ namespace TencentCloud
                      */
                     std::string m_projectId;
                     bool m_projectIdHasBeenSet;
+
+                    /**
+                     * 1
+                     */
+                    std::string m_baselineTaskId;
+                    bool m_baselineTaskIdHasBeenSet;
 
                 };
             }

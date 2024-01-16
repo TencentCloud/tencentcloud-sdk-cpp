@@ -47,7 +47,8 @@ BaselineTaskInstanceDto::BaselineTaskInstanceDto() :
     m_updateTimeHasBeenSet(false),
     m_userUinHasBeenSet(false),
     m_ownerUinHasBeenSet(false),
-    m_appIdHasBeenSet(false)
+    m_appIdHasBeenSet(false),
+    m_criticalDependencyHasBeenSet(false)
 {
 }
 
@@ -326,6 +327,16 @@ CoreInternalOutcome BaselineTaskInstanceDto::Deserialize(const rapidjson::Value 
         m_appIdHasBeenSet = true;
     }
 
+    if (value.HasMember("CriticalDependency") && !value["CriticalDependency"].IsNull())
+    {
+        if (!value["CriticalDependency"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `BaselineTaskInstanceDto.CriticalDependency` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_criticalDependency = string(value["CriticalDependency"].GetString());
+        m_criticalDependencyHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -547,6 +558,14 @@ void BaselineTaskInstanceDto::ToJsonObject(rapidjson::Value &value, rapidjson::D
         string key = "AppId";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_appId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_criticalDependencyHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "CriticalDependency";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_criticalDependency.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -982,5 +1001,21 @@ void BaselineTaskInstanceDto::SetAppId(const string& _appId)
 bool BaselineTaskInstanceDto::AppIdHasBeenSet() const
 {
     return m_appIdHasBeenSet;
+}
+
+string BaselineTaskInstanceDto::GetCriticalDependency() const
+{
+    return m_criticalDependency;
+}
+
+void BaselineTaskInstanceDto::SetCriticalDependency(const string& _criticalDependency)
+{
+    m_criticalDependency = _criticalDependency;
+    m_criticalDependencyHasBeenSet = true;
+}
+
+bool BaselineTaskInstanceDto::CriticalDependencyHasBeenSet() const
+{
+    return m_criticalDependencyHasBeenSet;
 }
 

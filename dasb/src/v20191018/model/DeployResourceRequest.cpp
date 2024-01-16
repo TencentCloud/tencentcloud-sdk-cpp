@@ -31,7 +31,8 @@ DeployResourceRequest::DeployResourceRequest() :
     m_cidrBlockHasBeenSet(false),
     m_vpcNameHasBeenSet(false),
     m_vpcCidrBlockHasBeenSet(false),
-    m_subnetNameHasBeenSet(false)
+    m_subnetNameHasBeenSet(false),
+    m_cdcClusterIdHasBeenSet(false)
 {
 }
 
@@ -112,6 +113,14 @@ string DeployResourceRequest::ToJsonString() const
         string key = "SubnetName";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_subnetName.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_cdcClusterIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "CdcClusterId";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_cdcClusterId.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -264,6 +273,22 @@ void DeployResourceRequest::SetSubnetName(const string& _subnetName)
 bool DeployResourceRequest::SubnetNameHasBeenSet() const
 {
     return m_subnetNameHasBeenSet;
+}
+
+string DeployResourceRequest::GetCdcClusterId() const
+{
+    return m_cdcClusterId;
+}
+
+void DeployResourceRequest::SetCdcClusterId(const string& _cdcClusterId)
+{
+    m_cdcClusterId = _cdcClusterId;
+    m_cdcClusterIdHasBeenSet = true;
+}
+
+bool DeployResourceRequest::CdcClusterIdHasBeenSet() const
+{
+    return m_cdcClusterIdHasBeenSet;
 }
 
 

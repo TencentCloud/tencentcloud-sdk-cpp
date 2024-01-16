@@ -189,6 +189,69 @@ namespace TencentCloud
                      */
                     bool InChargeHasBeenSet() const;
 
+                    /**
+                     * 获取工作流ID
+                     * @return WorkflowId 工作流ID
+                     * 
+                     */
+                    std::string GetWorkflowId() const;
+
+                    /**
+                     * 设置工作流ID
+                     * @param _workflowId 工作流ID
+                     * 
+                     */
+                    void SetWorkflowId(const std::string& _workflowId);
+
+                    /**
+                     * 判断参数 WorkflowId 是否已赋值
+                     * @return WorkflowId 是否已赋值
+                     * 
+                     */
+                    bool WorkflowIdHasBeenSet() const;
+
+                    /**
+                     * 获取排序字段
+                     * @return SortItem 排序字段
+                     * 
+                     */
+                    std::string GetSortItem() const;
+
+                    /**
+                     * 设置排序字段
+                     * @param _sortItem 排序字段
+                     * 
+                     */
+                    void SetSortItem(const std::string& _sortItem);
+
+                    /**
+                     * 判断参数 SortItem 是否已赋值
+                     * @return SortItem 是否已赋值
+                     * 
+                     */
+                    bool SortItemHasBeenSet() const;
+
+                    /**
+                     * 获取升序降序
+                     * @return SortType 升序降序
+                     * 
+                     */
+                    std::string GetSortType() const;
+
+                    /**
+                     * 设置升序降序
+                     * @param _sortType 升序降序
+                     * 
+                     */
+                    void SetSortType(const std::string& _sortType);
+
+                    /**
+                     * 判断参数 SortType 是否已赋值
+                     * @return SortType 是否已赋值
+                     * 
+                     */
+                    bool SortTypeHasBeenSet() const;
+
                 private:
 
                     /**
@@ -232,6 +295,24 @@ namespace TencentCloud
                      */
                     std::string m_inCharge;
                     bool m_inChargeHasBeenSet;
+
+                    /**
+                     * 工作流ID
+                     */
+                    std::string m_workflowId;
+                    bool m_workflowIdHasBeenSet;
+
+                    /**
+                     * 排序字段
+                     */
+                    std::string m_sortItem;
+                    bool m_sortItemHasBeenSet;
+
+                    /**
+                     * 升序降序
+                     */
+                    std::string m_sortType;
+                    bool m_sortTypeHasBeenSet;
 
                 };
             }

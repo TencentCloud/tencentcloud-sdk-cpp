@@ -73,31 +73,6 @@ namespace TencentCloud
                     bool IdHasBeenSet() const;
 
                     /**
-                     * 获取由中心节点出发的路径信息
-注意：此字段可能返回 null，表示取不到有效值。
-                     * @return PrefixPath 由中心节点出发的路径信息
-注意：此字段可能返回 null，表示取不到有效值。
-                     * 
-                     */
-                    std::string GetPrefixPath() const;
-
-                    /**
-                     * 设置由中心节点出发的路径信息
-注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _prefixPath 由中心节点出发的路径信息
-注意：此字段可能返回 null，表示取不到有效值。
-                     * 
-                     */
-                    void SetPrefixPath(const std::string& _prefixPath);
-
-                    /**
-                     * 判断参数 PrefixPath 是否已赋值
-                     * @return PrefixPath 是否已赋值
-                     * 
-                     */
-                    bool PrefixPathHasBeenSet() const;
-
-                    /**
                      * 获取数据源ID
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return DatasourceId 数据源ID
@@ -473,6 +448,31 @@ namespace TencentCloud
                     bool DescriptionHasBeenSet() const;
 
                     /**
+                     * 获取由中心节点出发的路径信息
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return PrefixPath 由中心节点出发的路径信息
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::string GetPrefixPath() const;
+
+                    /**
+                     * 设置由中心节点出发的路径信息
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _prefixPath 由中心节点出发的路径信息
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetPrefixPath(const std::string& _prefixPath);
+
+                    /**
+                     * 判断参数 PrefixPath 是否已赋值
+                     * @return PrefixPath 是否已赋值
+                     * 
+                     */
+                    bool PrefixPathHasBeenSet() const;
+
+                    /**
                      * 获取创建时间
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return CreateTime 创建时间
@@ -632,13 +632,6 @@ namespace TencentCloud
                     bool m_idHasBeenSet;
 
                     /**
-                     * 由中心节点出发的路径信息
-注意：此字段可能返回 null，表示取不到有效值。
-                     */
-                    std::string m_prefixPath;
-                    bool m_prefixPathHasBeenSet;
-
-                    /**
                      * 数据源ID
 注意：此字段可能返回 null，表示取不到有效值。
                      */
@@ -742,6 +735,13 @@ namespace TencentCloud
                      */
                     std::string m_description;
                     bool m_descriptionHasBeenSet;
+
+                    /**
+                     * 由中心节点出发的路径信息
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_prefixPath;
+                    bool m_prefixPathHasBeenSet;
 
                     /**
                      * 创建时间

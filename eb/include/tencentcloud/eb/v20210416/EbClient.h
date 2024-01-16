@@ -309,7 +309,7 @@ namespace TencentCloud
                 DeleteTransformationOutcomeCallable DeleteTransformationCallable(const Model::DeleteTransformationRequest& request);
 
                 /**
-                 *查询日志索引维度值
+                 *前置条件：需开启事件存储；事件查询维度值
                  * @param req DescribeLogTagValueRequest
                  * @return DescribeLogTagValueOutcome
                  */
@@ -435,7 +435,7 @@ namespace TencentCloud
                 PutEventsOutcomeCallable PutEventsCallable(const Model::PutEventsRequest& request);
 
                 /**
-                 *日志检索
+                 *前置条件：开启事件存储；查询历史推送事件
                  * @param req SearchLogRequest
                  * @return SearchLogOutcome
                  */

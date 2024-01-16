@@ -35,7 +35,8 @@ DescribeStatisticInstanceStatusTrendOpsRequest::DescribeStatisticInstanceStatusT
     m_taskTypeHasBeenSet(false),
     m_stateListHasBeenSet(false),
     m_aggregationUnitHasBeenSet(false),
-    m_averageWindowSizeHasBeenSet(false)
+    m_averageWindowSizeHasBeenSet(false),
+    m_workflowIdHasBeenSet(false)
 {
 }
 
@@ -153,6 +154,14 @@ string DescribeStatisticInstanceStatusTrendOpsRequest::ToJsonString() const
         string key = "AverageWindowSize";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_averageWindowSize, allocator);
+    }
+
+    if (m_workflowIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "WorkflowId";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_workflowId.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -369,6 +378,22 @@ void DescribeStatisticInstanceStatusTrendOpsRequest::SetAverageWindowSize(const 
 bool DescribeStatisticInstanceStatusTrendOpsRequest::AverageWindowSizeHasBeenSet() const
 {
     return m_averageWindowSizeHasBeenSet;
+}
+
+string DescribeStatisticInstanceStatusTrendOpsRequest::GetWorkflowId() const
+{
+    return m_workflowId;
+}
+
+void DescribeStatisticInstanceStatusTrendOpsRequest::SetWorkflowId(const string& _workflowId)
+{
+    m_workflowId = _workflowId;
+    m_workflowIdHasBeenSet = true;
+}
+
+bool DescribeStatisticInstanceStatusTrendOpsRequest::WorkflowIdHasBeenSet() const
+{
+    return m_workflowIdHasBeenSet;
 }
 
 

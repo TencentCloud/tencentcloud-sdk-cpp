@@ -169,6 +169,27 @@ namespace TencentCloud
                      */
                     bool EndTimeHasBeenSet() const;
 
+                    /**
+                     * 获取返回多种统计方式数据。avg, max, min (1,2,4)可以自由组合
+                     * @return SpecifyStatistics 返回多种统计方式数据。avg, max, min (1,2,4)可以自由组合
+                     * 
+                     */
+                    int64_t GetSpecifyStatistics() const;
+
+                    /**
+                     * 设置返回多种统计方式数据。avg, max, min (1,2,4)可以自由组合
+                     * @param _specifyStatistics 返回多种统计方式数据。avg, max, min (1,2,4)可以自由组合
+                     * 
+                     */
+                    void SetSpecifyStatistics(const int64_t& _specifyStatistics);
+
+                    /**
+                     * 判断参数 SpecifyStatistics 是否已赋值
+                     * @return SpecifyStatistics 是否已赋值
+                     * 
+                     */
+                    bool SpecifyStatisticsHasBeenSet() const;
+
                 private:
 
                     /**
@@ -206,6 +227,12 @@ namespace TencentCloud
                      */
                     std::string m_endTime;
                     bool m_endTimeHasBeenSet;
+
+                    /**
+                     * 返回多种统计方式数据。avg, max, min (1,2,4)可以自由组合
+                     */
+                    int64_t m_specifyStatistics;
+                    bool m_specifyStatisticsHasBeenSet;
 
                 };
             }

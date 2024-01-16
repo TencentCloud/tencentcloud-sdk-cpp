@@ -725,6 +725,31 @@ WAITINT_TO_RUN:等待运行 / RUNNING: 正在运行 / COMPLETED: 执行成功 / 
                      */
                     bool AppIdHasBeenSet() const;
 
+                    /**
+                     * 获取关键路径依赖
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return CriticalDependency 关键路径依赖
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::string GetCriticalDependency() const;
+
+                    /**
+                     * 设置关键路径依赖
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _criticalDependency 关键路径依赖
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetCriticalDependency(const std::string& _criticalDependency);
+
+                    /**
+                     * 判断参数 CriticalDependency 是否已赋值
+                     * @return CriticalDependency 是否已赋值
+                     * 
+                     */
+                    bool CriticalDependencyHasBeenSet() const;
+
                 private:
 
                     /**
@@ -916,6 +941,13 @@ WAITINT_TO_RUN:等待运行 / RUNNING: 正在运行 / COMPLETED: 执行成功 / 
                      */
                     std::string m_appId;
                     bool m_appIdHasBeenSet;
+
+                    /**
+                     * 关键路径依赖
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_criticalDependency;
+                    bool m_criticalDependencyHasBeenSet;
 
                 };
             }

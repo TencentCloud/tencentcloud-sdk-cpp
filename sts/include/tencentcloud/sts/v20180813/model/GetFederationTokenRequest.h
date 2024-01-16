@@ -64,31 +64,27 @@ namespace TencentCloud
                     bool NameHasBeenSet() const;
 
                     /**
-                     * 获取授予该临时访问凭证权限的CAM策略
-注意：
+                     * 获取注意：
 1、策略语法参照[ CAM 策略语法](https://cloud.tencent.com/document/product/598/10603)。
 2、策略中不能包含 principal 元素。
-3、该参数需要做urlencode。
-                     * @return Policy 授予该临时访问凭证权限的CAM策略
-注意：
+3、该参数需要做urlencode，服务端会对该字段做urldecode， 并按处理后Policy授予临时访问凭证权限，请按规范传入参数。
+                     * @return Policy 注意：
 1、策略语法参照[ CAM 策略语法](https://cloud.tencent.com/document/product/598/10603)。
 2、策略中不能包含 principal 元素。
-3、该参数需要做urlencode。
+3、该参数需要做urlencode，服务端会对该字段做urldecode， 并按处理后Policy授予临时访问凭证权限，请按规范传入参数。
                      * 
                      */
                     std::string GetPolicy() const;
 
                     /**
-                     * 设置授予该临时访问凭证权限的CAM策略
-注意：
+                     * 设置注意：
 1、策略语法参照[ CAM 策略语法](https://cloud.tencent.com/document/product/598/10603)。
 2、策略中不能包含 principal 元素。
-3、该参数需要做urlencode。
-                     * @param _policy 授予该临时访问凭证权限的CAM策略
-注意：
+3、该参数需要做urlencode，服务端会对该字段做urldecode， 并按处理后Policy授予临时访问凭证权限，请按规范传入参数。
+                     * @param _policy 注意：
 1、策略语法参照[ CAM 策略语法](https://cloud.tencent.com/document/product/598/10603)。
 2、策略中不能包含 principal 元素。
-3、该参数需要做urlencode。
+3、该参数需要做urlencode，服务端会对该字段做urldecode， 并按处理后Policy授予临时访问凭证权限，请按规范传入参数。
                      * 
                      */
                     void SetPolicy(const std::string& _policy);
@@ -130,11 +126,10 @@ namespace TencentCloud
                     bool m_nameHasBeenSet;
 
                     /**
-                     * 授予该临时访问凭证权限的CAM策略
-注意：
+                     * 注意：
 1、策略语法参照[ CAM 策略语法](https://cloud.tencent.com/document/product/598/10603)。
 2、策略中不能包含 principal 元素。
-3、该参数需要做urlencode。
+3、该参数需要做urlencode，服务端会对该字段做urldecode， 并按处理后Policy授予临时访问凭证权限，请按规范传入参数。
                      */
                     std::string m_policy;
                     bool m_policyHasBeenSet;

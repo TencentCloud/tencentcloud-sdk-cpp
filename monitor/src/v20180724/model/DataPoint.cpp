@@ -23,7 +23,10 @@ using namespace std;
 DataPoint::DataPoint() :
     m_dimensionsHasBeenSet(false),
     m_timestampsHasBeenSet(false),
-    m_valuesHasBeenSet(false)
+    m_valuesHasBeenSet(false),
+    m_maxValuesHasBeenSet(false),
+    m_minValuesHasBeenSet(false),
+    m_avgValuesHasBeenSet(false)
 {
 }
 
@@ -78,6 +81,45 @@ CoreInternalOutcome DataPoint::Deserialize(const rapidjson::Value &value)
         m_valuesHasBeenSet = true;
     }
 
+    if (value.HasMember("MaxValues") && !value["MaxValues"].IsNull())
+    {
+        if (!value["MaxValues"].IsArray())
+            return CoreInternalOutcome(Core::Error("response `DataPoint.MaxValues` is not array type"));
+
+        const rapidjson::Value &tmpValue = value["MaxValues"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            m_maxValues.push_back((*itr).GetDouble());
+        }
+        m_maxValuesHasBeenSet = true;
+    }
+
+    if (value.HasMember("MinValues") && !value["MinValues"].IsNull())
+    {
+        if (!value["MinValues"].IsArray())
+            return CoreInternalOutcome(Core::Error("response `DataPoint.MinValues` is not array type"));
+
+        const rapidjson::Value &tmpValue = value["MinValues"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            m_minValues.push_back((*itr).GetDouble());
+        }
+        m_minValuesHasBeenSet = true;
+    }
+
+    if (value.HasMember("AvgValues") && !value["AvgValues"].IsNull())
+    {
+        if (!value["AvgValues"].IsArray())
+            return CoreInternalOutcome(Core::Error("response `DataPoint.AvgValues` is not array type"));
+
+        const rapidjson::Value &tmpValue = value["AvgValues"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            m_avgValues.push_back((*itr).GetDouble());
+        }
+        m_avgValuesHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -121,6 +163,45 @@ void DataPoint::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Alloc
         value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
 
         for (auto itr = m_values.begin(); itr != m_values.end(); ++itr)
+        {
+            value[key.c_str()].PushBack(rapidjson::Value().SetDouble(*itr), allocator);
+        }
+    }
+
+    if (m_maxValuesHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "MaxValues";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        for (auto itr = m_maxValues.begin(); itr != m_maxValues.end(); ++itr)
+        {
+            value[key.c_str()].PushBack(rapidjson::Value().SetDouble(*itr), allocator);
+        }
+    }
+
+    if (m_minValuesHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "MinValues";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        for (auto itr = m_minValues.begin(); itr != m_minValues.end(); ++itr)
+        {
+            value[key.c_str()].PushBack(rapidjson::Value().SetDouble(*itr), allocator);
+        }
+    }
+
+    if (m_avgValuesHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "AvgValues";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        for (auto itr = m_avgValues.begin(); itr != m_avgValues.end(); ++itr)
         {
             value[key.c_str()].PushBack(rapidjson::Value().SetDouble(*itr), allocator);
         }
@@ -175,5 +256,53 @@ void DataPoint::SetValues(const vector<double>& _values)
 bool DataPoint::ValuesHasBeenSet() const
 {
     return m_valuesHasBeenSet;
+}
+
+vector<double> DataPoint::GetMaxValues() const
+{
+    return m_maxValues;
+}
+
+void DataPoint::SetMaxValues(const vector<double>& _maxValues)
+{
+    m_maxValues = _maxValues;
+    m_maxValuesHasBeenSet = true;
+}
+
+bool DataPoint::MaxValuesHasBeenSet() const
+{
+    return m_maxValuesHasBeenSet;
+}
+
+vector<double> DataPoint::GetMinValues() const
+{
+    return m_minValues;
+}
+
+void DataPoint::SetMinValues(const vector<double>& _minValues)
+{
+    m_minValues = _minValues;
+    m_minValuesHasBeenSet = true;
+}
+
+bool DataPoint::MinValuesHasBeenSet() const
+{
+    return m_minValuesHasBeenSet;
+}
+
+vector<double> DataPoint::GetAvgValues() const
+{
+    return m_avgValues;
+}
+
+void DataPoint::SetAvgValues(const vector<double>& _avgValues)
+{
+    m_avgValues = _avgValues;
+    m_avgValuesHasBeenSet = true;
+}
+
+bool DataPoint::AvgValuesHasBeenSet() const
+{
+    return m_avgValuesHasBeenSet;
 }
 

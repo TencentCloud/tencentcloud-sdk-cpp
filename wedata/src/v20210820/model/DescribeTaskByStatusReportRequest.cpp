@@ -32,7 +32,8 @@ DescribeTaskByStatusReportRequest::DescribeTaskByStatusReportRequest() :
     m_aggregationUnitHasBeenSet(false),
     m_cycleUnitHasBeenSet(false),
     m_statusHasBeenSet(false),
-    m_inChargeHasBeenSet(false)
+    m_inChargeHasBeenSet(false),
+    m_workflowIdHasBeenSet(false)
 {
 }
 
@@ -121,6 +122,14 @@ string DescribeTaskByStatusReportRequest::ToJsonString() const
         string key = "InCharge";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_inCharge.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_workflowIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "WorkflowId";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_workflowId.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -289,6 +298,22 @@ void DescribeTaskByStatusReportRequest::SetInCharge(const string& _inCharge)
 bool DescribeTaskByStatusReportRequest::InChargeHasBeenSet() const
 {
     return m_inChargeHasBeenSet;
+}
+
+string DescribeTaskByStatusReportRequest::GetWorkflowId() const
+{
+    return m_workflowId;
+}
+
+void DescribeTaskByStatusReportRequest::SetWorkflowId(const string& _workflowId)
+{
+    m_workflowId = _workflowId;
+    m_workflowIdHasBeenSet = true;
+}
+
+bool DescribeTaskByStatusReportRequest::WorkflowIdHasBeenSet() const
+{
+    return m_workflowIdHasBeenSet;
 }
 
 

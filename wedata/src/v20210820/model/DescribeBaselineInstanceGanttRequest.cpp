@@ -24,7 +24,8 @@ using namespace std;
 
 DescribeBaselineInstanceGanttRequest::DescribeBaselineInstanceGanttRequest() :
     m_baselineInstanceIdHasBeenSet(false),
-    m_projectIdHasBeenSet(false)
+    m_projectIdHasBeenSet(false),
+    m_promiseTaskIdHasBeenSet(false)
 {
 }
 
@@ -49,6 +50,14 @@ string DescribeBaselineInstanceGanttRequest::ToJsonString() const
         string key = "ProjectId";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_projectId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_promiseTaskIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "PromiseTaskId";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_promiseTaskId.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -89,6 +98,22 @@ void DescribeBaselineInstanceGanttRequest::SetProjectId(const string& _projectId
 bool DescribeBaselineInstanceGanttRequest::ProjectIdHasBeenSet() const
 {
     return m_projectIdHasBeenSet;
+}
+
+string DescribeBaselineInstanceGanttRequest::GetPromiseTaskId() const
+{
+    return m_promiseTaskId;
+}
+
+void DescribeBaselineInstanceGanttRequest::SetPromiseTaskId(const string& _promiseTaskId)
+{
+    m_promiseTaskId = _promiseTaskId;
+    m_promiseTaskIdHasBeenSet = true;
+}
+
+bool DescribeBaselineInstanceGanttRequest::PromiseTaskIdHasBeenSet() const
+{
+    return m_promiseTaskIdHasBeenSet;
 }
 
 

@@ -22,7 +22,6 @@ using namespace std;
 
 TableLineageInfo::TableLineageInfo() :
     m_metastoreTypeHasBeenSet(false),
-    m_prefixPathHasBeenSet(false),
     m_projectIdHasBeenSet(false),
     m_datasourceIdHasBeenSet(false),
     m_tableIdHasBeenSet(false),
@@ -37,9 +36,11 @@ TableLineageInfo::TableLineageInfo() :
     m_downStreamCountHasBeenSet(false),
     m_upStreamCountHasBeenSet(false),
     m_descriptionHasBeenSet(false),
+    m_prefixPathHasBeenSet(false),
     m_createTimeHasBeenSet(false),
     m_modifyTimeHasBeenSet(false),
-    m_tasksHasBeenSet(false)
+    m_tasksHasBeenSet(false),
+    m_channelTypeHasBeenSet(false)
 {
 }
 
@@ -56,16 +57,6 @@ CoreInternalOutcome TableLineageInfo::Deserialize(const rapidjson::Value &value)
         }
         m_metastoreType = string(value["MetastoreType"].GetString());
         m_metastoreTypeHasBeenSet = true;
-    }
-
-    if (value.HasMember("PrefixPath") && !value["PrefixPath"].IsNull())
-    {
-        if (!value["PrefixPath"].IsString())
-        {
-            return CoreInternalOutcome(Core::Error("response `TableLineageInfo.PrefixPath` IsString=false incorrectly").SetRequestId(requestId));
-        }
-        m_prefixPath = string(value["PrefixPath"].GetString());
-        m_prefixPathHasBeenSet = true;
     }
 
     if (value.HasMember("ProjectId") && !value["ProjectId"].IsNull())
@@ -228,6 +219,16 @@ CoreInternalOutcome TableLineageInfo::Deserialize(const rapidjson::Value &value)
         m_descriptionHasBeenSet = true;
     }
 
+    if (value.HasMember("PrefixPath") && !value["PrefixPath"].IsNull())
+    {
+        if (!value["PrefixPath"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `TableLineageInfo.PrefixPath` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_prefixPath = string(value["PrefixPath"].GetString());
+        m_prefixPathHasBeenSet = true;
+    }
+
     if (value.HasMember("CreateTime") && !value["CreateTime"].IsNull())
     {
         if (!value["CreateTime"].IsString())
@@ -261,6 +262,16 @@ CoreInternalOutcome TableLineageInfo::Deserialize(const rapidjson::Value &value)
         m_tasksHasBeenSet = true;
     }
 
+    if (value.HasMember("ChannelType") && !value["ChannelType"].IsNull())
+    {
+        if (!value["ChannelType"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `TableLineageInfo.ChannelType` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_channelType = string(value["ChannelType"].GetString());
+        m_channelTypeHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -274,14 +285,6 @@ void TableLineageInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Document
         string key = "MetastoreType";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_metastoreType.c_str(), allocator).Move(), allocator);
-    }
-
-    if (m_prefixPathHasBeenSet)
-    {
-        rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "PrefixPath";
-        iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, rapidjson::Value(m_prefixPath.c_str(), allocator).Move(), allocator);
     }
 
     if (m_projectIdHasBeenSet)
@@ -410,6 +413,14 @@ void TableLineageInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Document
         value.AddMember(iKey, rapidjson::Value(m_description.c_str(), allocator).Move(), allocator);
     }
 
+    if (m_prefixPathHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "PrefixPath";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_prefixPath.c_str(), allocator).Move(), allocator);
+    }
+
     if (m_createTimeHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
@@ -439,6 +450,14 @@ void TableLineageInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Document
         }
     }
 
+    if (m_channelTypeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ChannelType";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_channelType.c_str(), allocator).Move(), allocator);
+    }
+
 }
 
 
@@ -456,22 +475,6 @@ void TableLineageInfo::SetMetastoreType(const string& _metastoreType)
 bool TableLineageInfo::MetastoreTypeHasBeenSet() const
 {
     return m_metastoreTypeHasBeenSet;
-}
-
-string TableLineageInfo::GetPrefixPath() const
-{
-    return m_prefixPath;
-}
-
-void TableLineageInfo::SetPrefixPath(const string& _prefixPath)
-{
-    m_prefixPath = _prefixPath;
-    m_prefixPathHasBeenSet = true;
-}
-
-bool TableLineageInfo::PrefixPathHasBeenSet() const
-{
-    return m_prefixPathHasBeenSet;
 }
 
 string TableLineageInfo::GetProjectId() const
@@ -698,6 +701,22 @@ bool TableLineageInfo::DescriptionHasBeenSet() const
     return m_descriptionHasBeenSet;
 }
 
+string TableLineageInfo::GetPrefixPath() const
+{
+    return m_prefixPath;
+}
+
+void TableLineageInfo::SetPrefixPath(const string& _prefixPath)
+{
+    m_prefixPath = _prefixPath;
+    m_prefixPathHasBeenSet = true;
+}
+
+bool TableLineageInfo::PrefixPathHasBeenSet() const
+{
+    return m_prefixPathHasBeenSet;
+}
+
 string TableLineageInfo::GetCreateTime() const
 {
     return m_createTime;
@@ -744,5 +763,21 @@ void TableLineageInfo::SetTasks(const vector<string>& _tasks)
 bool TableLineageInfo::TasksHasBeenSet() const
 {
     return m_tasksHasBeenSet;
+}
+
+string TableLineageInfo::GetChannelType() const
+{
+    return m_channelType;
+}
+
+void TableLineageInfo::SetChannelType(const string& _channelType)
+{
+    m_channelType = _channelType;
+    m_channelTypeHasBeenSet = true;
+}
+
+bool TableLineageInfo::ChannelTypeHasBeenSet() const
+{
+    return m_channelTypeHasBeenSet;
 }
 

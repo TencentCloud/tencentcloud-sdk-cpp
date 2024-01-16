@@ -39,7 +39,8 @@ CreateDataSourceRequest::CreateDataSourceRequest() :
     m_clusterIdHasBeenSet(false),
     m_collectHasBeenSet(false),
     m_cOSBucketHasBeenSet(false),
-    m_cOSRegionHasBeenSet(false)
+    m_cOSRegionHasBeenSet(false),
+    m_connectResultHasBeenSet(false)
 {
 }
 
@@ -184,6 +185,14 @@ string CreateDataSourceRequest::ToJsonString() const
         string key = "COSRegion";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_cOSRegion.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_connectResultHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ConnectResult";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_connectResult.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -464,6 +473,22 @@ void CreateDataSourceRequest::SetCOSRegion(const string& _cOSRegion)
 bool CreateDataSourceRequest::COSRegionHasBeenSet() const
 {
     return m_cOSRegionHasBeenSet;
+}
+
+string CreateDataSourceRequest::GetConnectResult() const
+{
+    return m_connectResult;
+}
+
+void CreateDataSourceRequest::SetConnectResult(const string& _connectResult)
+{
+    m_connectResult = _connectResult;
+    m_connectResultHasBeenSet = true;
+}
+
+bool CreateDataSourceRequest::ConnectResultHasBeenSet() const
+{
+    return m_connectResultHasBeenSet;
 }
 
 

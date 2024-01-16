@@ -29,7 +29,10 @@ DescribeSchedulerRunTimeInstanceCntByStatusRequest::DescribeSchedulerRunTimeInst
     m_startTimeHasBeenSet(false),
     m_endTimeHasBeenSet(false),
     m_taskTypeHasBeenSet(false),
-    m_inChargeHasBeenSet(false)
+    m_inChargeHasBeenSet(false),
+    m_workflowIdHasBeenSet(false),
+    m_sortItemHasBeenSet(false),
+    m_sortTypeHasBeenSet(false)
 {
 }
 
@@ -94,6 +97,30 @@ string DescribeSchedulerRunTimeInstanceCntByStatusRequest::ToJsonString() const
         string key = "InCharge";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_inCharge.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_workflowIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "WorkflowId";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_workflowId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_sortItemHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "SortItem";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_sortItem.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_sortTypeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "SortType";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_sortType.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -214,6 +241,54 @@ void DescribeSchedulerRunTimeInstanceCntByStatusRequest::SetInCharge(const strin
 bool DescribeSchedulerRunTimeInstanceCntByStatusRequest::InChargeHasBeenSet() const
 {
     return m_inChargeHasBeenSet;
+}
+
+string DescribeSchedulerRunTimeInstanceCntByStatusRequest::GetWorkflowId() const
+{
+    return m_workflowId;
+}
+
+void DescribeSchedulerRunTimeInstanceCntByStatusRequest::SetWorkflowId(const string& _workflowId)
+{
+    m_workflowId = _workflowId;
+    m_workflowIdHasBeenSet = true;
+}
+
+bool DescribeSchedulerRunTimeInstanceCntByStatusRequest::WorkflowIdHasBeenSet() const
+{
+    return m_workflowIdHasBeenSet;
+}
+
+string DescribeSchedulerRunTimeInstanceCntByStatusRequest::GetSortItem() const
+{
+    return m_sortItem;
+}
+
+void DescribeSchedulerRunTimeInstanceCntByStatusRequest::SetSortItem(const string& _sortItem)
+{
+    m_sortItem = _sortItem;
+    m_sortItemHasBeenSet = true;
+}
+
+bool DescribeSchedulerRunTimeInstanceCntByStatusRequest::SortItemHasBeenSet() const
+{
+    return m_sortItemHasBeenSet;
+}
+
+string DescribeSchedulerRunTimeInstanceCntByStatusRequest::GetSortType() const
+{
+    return m_sortType;
+}
+
+void DescribeSchedulerRunTimeInstanceCntByStatusRequest::SetSortType(const string& _sortType)
+{
+    m_sortType = _sortType;
+    m_sortTypeHasBeenSet = true;
+}
+
+bool DescribeSchedulerRunTimeInstanceCntByStatusRequest::SortTypeHasBeenSet() const
+{
+    return m_sortTypeHasBeenSet;
 }
 
 

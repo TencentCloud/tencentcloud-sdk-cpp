@@ -399,6 +399,27 @@ namespace TencentCloud
                      */
                     bool COSRegionHasBeenSet() const;
 
+                    /**
+                     * 获取连接测试结果
+                     * @return ConnectResult 连接测试结果
+                     * 
+                     */
+                    std::string GetConnectResult() const;
+
+                    /**
+                     * 设置连接测试结果
+                     * @param _connectResult 连接测试结果
+                     * 
+                     */
+                    void SetConnectResult(const std::string& _connectResult);
+
+                    /**
+                     * 判断参数 ConnectResult 是否已赋值
+                     * @return ConnectResult 是否已赋值
+                     * 
+                     */
+                    bool ConnectResultHasBeenSet() const;
+
                 private:
 
                     /**
@@ -502,6 +523,12 @@ namespace TencentCloud
                      */
                     std::string m_cOSRegion;
                     bool m_cOSRegionHasBeenSet;
+
+                    /**
+                     * 连接测试结果
+                     */
+                    std::string m_connectResult;
+                    bool m_connectResultHasBeenSet;
 
                 };
             }
