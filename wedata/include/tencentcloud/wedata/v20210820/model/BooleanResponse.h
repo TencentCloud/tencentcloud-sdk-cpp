@@ -117,6 +117,31 @@ namespace TencentCloud
                      */
                     bool BaselineIdHasBeenSet() const;
 
+                    /**
+                     * 获取错误码
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return Code 错误码
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::string GetCode() const;
+
+                    /**
+                     * 设置错误码
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _code 错误码
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetCode(const std::string& _code);
+
+                    /**
+                     * 判断参数 Code 是否已赋值
+                     * @return Code 是否已赋值
+                     * 
+                     */
+                    bool CodeHasBeenSet() const;
+
                 private:
 
                     /**
@@ -138,6 +163,13 @@ namespace TencentCloud
                      */
                     int64_t m_baselineId;
                     bool m_baselineIdHasBeenSet;
+
+                    /**
+                     * 错误码
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_code;
+                    bool m_codeHasBeenSet;
 
                 };
             }

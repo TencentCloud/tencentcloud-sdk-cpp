@@ -34,7 +34,9 @@ RuleGroupExecStrategy::RuleGroupExecStrategy() :
     m_cycleStepHasBeenSet(false),
     m_taskActionHasBeenSet(false),
     m_execEngineTypeHasBeenSet(false),
-    m_execPlanHasBeenSet(false)
+    m_execPlanHasBeenSet(false),
+    m_ruleIdHasBeenSet(false),
+    m_ruleNameHasBeenSet(false)
 {
 }
 
@@ -193,6 +195,26 @@ CoreInternalOutcome RuleGroupExecStrategy::Deserialize(const rapidjson::Value &v
         m_execPlanHasBeenSet = true;
     }
 
+    if (value.HasMember("RuleId") && !value["RuleId"].IsNull())
+    {
+        if (!value["RuleId"].IsUint64())
+        {
+            return CoreInternalOutcome(Core::Error("response `RuleGroupExecStrategy.RuleId` IsUint64=false incorrectly").SetRequestId(requestId));
+        }
+        m_ruleId = value["RuleId"].GetUint64();
+        m_ruleIdHasBeenSet = true;
+    }
+
+    if (value.HasMember("RuleName") && !value["RuleName"].IsNull())
+    {
+        if (!value["RuleName"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `RuleGroupExecStrategy.RuleName` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_ruleName = string(value["RuleName"].GetString());
+        m_ruleNameHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -317,6 +339,22 @@ void RuleGroupExecStrategy::ToJsonObject(rapidjson::Value &value, rapidjson::Doc
         string key = "ExecPlan";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_execPlan.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_ruleIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "RuleId";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_ruleId, allocator);
+    }
+
+    if (m_ruleNameHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "RuleName";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_ruleName.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -544,5 +582,37 @@ void RuleGroupExecStrategy::SetExecPlan(const string& _execPlan)
 bool RuleGroupExecStrategy::ExecPlanHasBeenSet() const
 {
     return m_execPlanHasBeenSet;
+}
+
+uint64_t RuleGroupExecStrategy::GetRuleId() const
+{
+    return m_ruleId;
+}
+
+void RuleGroupExecStrategy::SetRuleId(const uint64_t& _ruleId)
+{
+    m_ruleId = _ruleId;
+    m_ruleIdHasBeenSet = true;
+}
+
+bool RuleGroupExecStrategy::RuleIdHasBeenSet() const
+{
+    return m_ruleIdHasBeenSet;
+}
+
+string RuleGroupExecStrategy::GetRuleName() const
+{
+    return m_ruleName;
+}
+
+void RuleGroupExecStrategy::SetRuleName(const string& _ruleName)
+{
+    m_ruleName = _ruleName;
+    m_ruleNameHasBeenSet = true;
+}
+
+bool RuleGroupExecStrategy::RuleNameHasBeenSet() const
+{
+    return m_ruleNameHasBeenSet;
 }
 

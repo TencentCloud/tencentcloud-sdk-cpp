@@ -386,6 +386,8 @@ https://cloud.tencent.com/document/product/1323/78346#component-.E4.B8.89.E7.A7.
 
 注：`控件ID可以在一个PDF中不可重复`
 
+<a href="https://qcloudimg.tencent-cloud.cn/raw/93178569d07b4d7dbbe0967ae679e35c.png" target="_blank">点击查看ComponentId在模板编辑页面的位置</a>
+
                      * @return ComponentId 控件唯一ID。
 
 **在绝对定位方式方式下**，ComponentId为控件的ID，长度不能超过30，只能由中文、字母、数字和下划线组成，可以在后续的操作中使用该名称来引用控件。
@@ -401,6 +403,8 @@ https://cloud.tencent.com/document/product/1323/78346#component-.E4.B8.89.E7.A7.
 
 
 注：`控件ID可以在一个PDF中不可重复`
+
+<a href="https://qcloudimg.tencent-cloud.cn/raw/93178569d07b4d7dbbe0967ae679e35c.png" target="_blank">点击查看ComponentId在模板编辑页面的位置</a>
 
                      * 
                      */
@@ -423,6 +427,8 @@ https://cloud.tencent.com/document/product/1323/78346#component-.E4.B8.89.E7.A7.
 
 注：`控件ID可以在一个PDF中不可重复`
 
+<a href="https://qcloudimg.tencent-cloud.cn/raw/93178569d07b4d7dbbe0967ae679e35c.png" target="_blank">点击查看ComponentId在模板编辑页面的位置</a>
+
                      * @param _componentId 控件唯一ID。
 
 **在绝对定位方式方式下**，ComponentId为控件的ID，长度不能超过30，只能由中文、字母、数字和下划线组成，可以在后续的操作中使用该名称来引用控件。
@@ -438,6 +444,8 @@ https://cloud.tencent.com/document/product/1323/78346#component-.E4.B8.89.E7.A7.
 
 
 注：`控件ID可以在一个PDF中不可重复`
+
+<a href="https://qcloudimg.tencent-cloud.cn/raw/93178569d07b4d7dbbe0967ae679e35c.png" target="_blank">点击查看ComponentId在模板编辑页面的位置</a>
 
                      * 
                      */
@@ -457,12 +465,14 @@ https://cloud.tencent.com/document/product/1323/78346#component-.E4.B8.89.E7.A7.
 
 注：`控件名可以在一个PDF中可以重复`
 
+<a href="https://qcloudimg.tencent-cloud.cn/raw/93178569d07b4d7dbbe0967ae679e35c.png" target="_blank">点击查看ComponentName在模板页面的位置</a>
                      * @return ComponentName **在绝对定位方式方式下**，ComponentName为控件名，长度不能超过20，只能由中文、字母、数字和下划线组成，可以在后续的操作中使用该名称来引用控件。
 
 **在表单域定位方式下**，ComponentName不仅为控件名，也是表单域名称。
 
 注：`控件名可以在一个PDF中可以重复`
 
+<a href="https://qcloudimg.tencent-cloud.cn/raw/93178569d07b4d7dbbe0967ae679e35c.png" target="_blank">点击查看ComponentName在模板页面的位置</a>
                      * 
                      */
                     std::string GetComponentName() const;
@@ -474,12 +484,14 @@ https://cloud.tencent.com/document/product/1323/78346#component-.E4.B8.89.E7.A7.
 
 注：`控件名可以在一个PDF中可以重复`
 
+<a href="https://qcloudimg.tencent-cloud.cn/raw/93178569d07b4d7dbbe0967ae679e35c.png" target="_blank">点击查看ComponentName在模板页面的位置</a>
                      * @param _componentName **在绝对定位方式方式下**，ComponentName为控件名，长度不能超过20，只能由中文、字母、数字和下划线组成，可以在后续的操作中使用该名称来引用控件。
 
 **在表单域定位方式下**，ComponentName不仅为控件名，也是表单域名称。
 
 注：`控件名可以在一个PDF中可以重复`
 
+<a href="https://qcloudimg.tencent-cloud.cn/raw/93178569d07b4d7dbbe0967ae679e35c.png" target="_blank">点击查看ComponentName在模板页面的位置</a>
                      * 
                      */
                     void SetComponentName(const std::string& _componentName);
@@ -1263,6 +1275,8 @@ https://cloud.tencent.com/document/product/1323/78346#component-.E4.B8.89.E7.A7.
 
 注：`控件ID可以在一个PDF中不可重复`
 
+<a href="https://qcloudimg.tencent-cloud.cn/raw/93178569d07b4d7dbbe0967ae679e35c.png" target="_blank">点击查看ComponentId在模板编辑页面的位置</a>
+
                      */
                     std::string m_componentId;
                     bool m_componentIdHasBeenSet;
@@ -1274,6 +1288,7 @@ https://cloud.tencent.com/document/product/1323/78346#component-.E4.B8.89.E7.A7.
 
 注：`控件名可以在一个PDF中可以重复`
 
+<a href="https://qcloudimg.tencent-cloud.cn/raw/93178569d07b4d7dbbe0967ae679e35c.png" target="_blank">点击查看ComponentName在模板页面的位置</a>
                      */
                     std::string m_componentName;
                     bool m_componentNameHasBeenSet;

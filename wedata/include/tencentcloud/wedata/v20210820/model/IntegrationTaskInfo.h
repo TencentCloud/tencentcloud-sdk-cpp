@@ -1213,6 +1213,56 @@ namespace TencentCloud
                      */
                     bool InstanceVersionHasBeenSet() const;
 
+                    /**
+                     * 获取离线任务导入到编排空间的任务id
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return ArrangeSpaceTaskId 离线任务导入到编排空间的任务id
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::string GetArrangeSpaceTaskId() const;
+
+                    /**
+                     * 设置离线任务导入到编排空间的任务id
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _arrangeSpaceTaskId 离线任务导入到编排空间的任务id
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetArrangeSpaceTaskId(const std::string& _arrangeSpaceTaskId);
+
+                    /**
+                     * 判断参数 ArrangeSpaceTaskId 是否已赋值
+                     * @return ArrangeSpaceTaskId 是否已赋值
+                     * 
+                     */
+                    bool ArrangeSpaceTaskIdHasBeenSet() const;
+
+                    /**
+                     * 获取离线任务状态区分1.未提交2.已提交3.已导出
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return OfflineTaskStatus 离线任务状态区分1.未提交2.已提交3.已导出
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    int64_t GetOfflineTaskStatus() const;
+
+                    /**
+                     * 设置离线任务状态区分1.未提交2.已提交3.已导出
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _offlineTaskStatus 离线任务状态区分1.未提交2.已提交3.已导出
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetOfflineTaskStatus(const int64_t& _offlineTaskStatus);
+
+                    /**
+                     * 判断参数 OfflineTaskStatus 是否已赋值
+                     * @return OfflineTaskStatus 是否已赋值
+                     * 
+                     */
+                    bool OfflineTaskStatusHasBeenSet() const;
+
                 private:
 
                     /**
@@ -1540,6 +1590,20 @@ namespace TencentCloud
                      */
                     int64_t m_instanceVersion;
                     bool m_instanceVersionHasBeenSet;
+
+                    /**
+                     * 离线任务导入到编排空间的任务id
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_arrangeSpaceTaskId;
+                    bool m_arrangeSpaceTaskIdHasBeenSet;
+
+                    /**
+                     * 离线任务状态区分1.未提交2.已提交3.已导出
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    int64_t m_offlineTaskStatus;
+                    bool m_offlineTaskStatusHasBeenSet;
 
                 };
             }

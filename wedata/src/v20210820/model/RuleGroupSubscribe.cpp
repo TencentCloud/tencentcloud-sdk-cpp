@@ -24,7 +24,9 @@ RuleGroupSubscribe::RuleGroupSubscribe() :
     m_ruleGroupIdHasBeenSet(false),
     m_receiversHasBeenSet(false),
     m_subscribeTypeHasBeenSet(false),
-    m_webHooksHasBeenSet(false)
+    m_webHooksHasBeenSet(false),
+    m_ruleIdHasBeenSet(false),
+    m_ruleNameHasBeenSet(false)
 {
 }
 
@@ -96,6 +98,26 @@ CoreInternalOutcome RuleGroupSubscribe::Deserialize(const rapidjson::Value &valu
         m_webHooksHasBeenSet = true;
     }
 
+    if (value.HasMember("RuleId") && !value["RuleId"].IsNull())
+    {
+        if (!value["RuleId"].IsUint64())
+        {
+            return CoreInternalOutcome(Core::Error("response `RuleGroupSubscribe.RuleId` IsUint64=false incorrectly").SetRequestId(requestId));
+        }
+        m_ruleId = value["RuleId"].GetUint64();
+        m_ruleIdHasBeenSet = true;
+    }
+
+    if (value.HasMember("RuleName") && !value["RuleName"].IsNull())
+    {
+        if (!value["RuleName"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `RuleGroupSubscribe.RuleName` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_ruleName = string(value["RuleName"].GetString());
+        m_ruleNameHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -152,6 +174,22 @@ void RuleGroupSubscribe::ToJsonObject(rapidjson::Value &value, rapidjson::Docume
             value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
             (*itr).ToJsonObject(value[key.c_str()][i], allocator);
         }
+    }
+
+    if (m_ruleIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "RuleId";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_ruleId, allocator);
+    }
+
+    if (m_ruleNameHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "RuleName";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_ruleName.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -219,5 +257,37 @@ void RuleGroupSubscribe::SetWebHooks(const vector<SubscribeWebHook>& _webHooks)
 bool RuleGroupSubscribe::WebHooksHasBeenSet() const
 {
     return m_webHooksHasBeenSet;
+}
+
+uint64_t RuleGroupSubscribe::GetRuleId() const
+{
+    return m_ruleId;
+}
+
+void RuleGroupSubscribe::SetRuleId(const uint64_t& _ruleId)
+{
+    m_ruleId = _ruleId;
+    m_ruleIdHasBeenSet = true;
+}
+
+bool RuleGroupSubscribe::RuleIdHasBeenSet() const
+{
+    return m_ruleIdHasBeenSet;
+}
+
+string RuleGroupSubscribe::GetRuleName() const
+{
+    return m_ruleName;
+}
+
+void RuleGroupSubscribe::SetRuleName(const string& _ruleName)
+{
+    m_ruleName = _ruleName;
+    m_ruleNameHasBeenSet = true;
+}
+
+bool RuleGroupSubscribe::RuleNameHasBeenSet() const
+{
+    return m_ruleNameHasBeenSet;
 }
 

@@ -193,6 +193,31 @@ namespace TencentCloud
                      */
                     bool TotalErrorRecordsHasBeenSet() const;
 
+                    /**
+                     * 获取等待数据发送到下游的时间
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return WaitWriterTime 等待数据发送到下游的时间
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    double GetWaitWriterTime() const;
+
+                    /**
+                     * 设置等待数据发送到下游的时间
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _waitWriterTime 等待数据发送到下游的时间
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetWaitWriterTime(const double& _waitWriterTime);
+
+                    /**
+                     * 判断参数 WaitWriterTime 是否已赋值
+                     * @return WaitWriterTime 是否已赋值
+                     * 
+                     */
+                    bool WaitWriterTimeHasBeenSet() const;
+
                 private:
 
                     /**
@@ -236,6 +261,13 @@ namespace TencentCloud
                      */
                     uint64_t m_totalErrorRecords;
                     bool m_totalErrorRecordsHasBeenSet;
+
+                    /**
+                     * 等待数据发送到下游的时间
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    double m_waitWriterTime;
+                    bool m_waitWriterTimeHasBeenSet;
 
                 };
             }

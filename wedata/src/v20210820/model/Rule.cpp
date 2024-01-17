@@ -55,7 +55,15 @@ Rule::Rule() :
     m_targetObjectDataTypeHasBeenSet(false),
     m_targetObjectDataTypeNameHasBeenSet(false),
     m_targetObjectValueHasBeenSet(false),
-    m_sourceEngineTypesHasBeenSet(false)
+    m_sourceEngineTypesHasBeenSet(false),
+    m_tableNameHasBeenSet(false),
+    m_tableOwnerNameHasBeenSet(false),
+    m_execStrategyHasBeenSet(false),
+    m_subscriptionHasBeenSet(false),
+    m_createTimeHasBeenSet(false),
+    m_datasourceIdHasBeenSet(false),
+    m_databaseIdHasBeenSet(false),
+    m_monitorStatusHasBeenSet(false)
 {
 }
 
@@ -431,6 +439,100 @@ CoreInternalOutcome Rule::Deserialize(const rapidjson::Value &value)
         m_sourceEngineTypesHasBeenSet = true;
     }
 
+    if (value.HasMember("TableName") && !value["TableName"].IsNull())
+    {
+        if (!value["TableName"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `Rule.TableName` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_tableName = string(value["TableName"].GetString());
+        m_tableNameHasBeenSet = true;
+    }
+
+    if (value.HasMember("TableOwnerName") && !value["TableOwnerName"].IsNull())
+    {
+        if (!value["TableOwnerName"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `Rule.TableOwnerName` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_tableOwnerName = string(value["TableOwnerName"].GetString());
+        m_tableOwnerNameHasBeenSet = true;
+    }
+
+    if (value.HasMember("ExecStrategy") && !value["ExecStrategy"].IsNull())
+    {
+        if (!value["ExecStrategy"].IsObject())
+        {
+            return CoreInternalOutcome(Core::Error("response `Rule.ExecStrategy` is not object type").SetRequestId(requestId));
+        }
+
+        CoreInternalOutcome outcome = m_execStrategy.Deserialize(value["ExecStrategy"]);
+        if (!outcome.IsSuccess())
+        {
+            outcome.GetError().SetRequestId(requestId);
+            return outcome;
+        }
+
+        m_execStrategyHasBeenSet = true;
+    }
+
+    if (value.HasMember("Subscription") && !value["Subscription"].IsNull())
+    {
+        if (!value["Subscription"].IsObject())
+        {
+            return CoreInternalOutcome(Core::Error("response `Rule.Subscription` is not object type").SetRequestId(requestId));
+        }
+
+        CoreInternalOutcome outcome = m_subscription.Deserialize(value["Subscription"]);
+        if (!outcome.IsSuccess())
+        {
+            outcome.GetError().SetRequestId(requestId);
+            return outcome;
+        }
+
+        m_subscriptionHasBeenSet = true;
+    }
+
+    if (value.HasMember("CreateTime") && !value["CreateTime"].IsNull())
+    {
+        if (!value["CreateTime"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `Rule.CreateTime` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_createTime = string(value["CreateTime"].GetString());
+        m_createTimeHasBeenSet = true;
+    }
+
+    if (value.HasMember("DatasourceId") && !value["DatasourceId"].IsNull())
+    {
+        if (!value["DatasourceId"].IsUint64())
+        {
+            return CoreInternalOutcome(Core::Error("response `Rule.DatasourceId` IsUint64=false incorrectly").SetRequestId(requestId));
+        }
+        m_datasourceId = value["DatasourceId"].GetUint64();
+        m_datasourceIdHasBeenSet = true;
+    }
+
+    if (value.HasMember("DatabaseId") && !value["DatabaseId"].IsNull())
+    {
+        if (!value["DatabaseId"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `Rule.DatabaseId` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_databaseId = string(value["DatabaseId"].GetString());
+        m_databaseIdHasBeenSet = true;
+    }
+
+    if (value.HasMember("MonitorStatus") && !value["MonitorStatus"].IsNull())
+    {
+        if (!value["MonitorStatus"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `Rule.MonitorStatus` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_monitorStatus = value["MonitorStatus"].GetInt64();
+        m_monitorStatusHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -723,6 +825,72 @@ void Rule::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorT
         {
             value[key.c_str()].PushBack(rapidjson::Value().SetUint64(*itr), allocator);
         }
+    }
+
+    if (m_tableNameHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "TableName";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_tableName.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_tableOwnerNameHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "TableOwnerName";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_tableOwnerName.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_execStrategyHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ExecStrategy";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_execStrategy.ToJsonObject(value[key.c_str()], allocator);
+    }
+
+    if (m_subscriptionHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Subscription";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_subscription.ToJsonObject(value[key.c_str()], allocator);
+    }
+
+    if (m_createTimeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "CreateTime";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_createTime.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_datasourceIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "DatasourceId";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_datasourceId, allocator);
+    }
+
+    if (m_databaseIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "DatabaseId";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_databaseId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_monitorStatusHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "MonitorStatus";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_monitorStatus, allocator);
     }
 
 }
@@ -1286,5 +1454,133 @@ void Rule::SetSourceEngineTypes(const vector<uint64_t>& _sourceEngineTypes)
 bool Rule::SourceEngineTypesHasBeenSet() const
 {
     return m_sourceEngineTypesHasBeenSet;
+}
+
+string Rule::GetTableName() const
+{
+    return m_tableName;
+}
+
+void Rule::SetTableName(const string& _tableName)
+{
+    m_tableName = _tableName;
+    m_tableNameHasBeenSet = true;
+}
+
+bool Rule::TableNameHasBeenSet() const
+{
+    return m_tableNameHasBeenSet;
+}
+
+string Rule::GetTableOwnerName() const
+{
+    return m_tableOwnerName;
+}
+
+void Rule::SetTableOwnerName(const string& _tableOwnerName)
+{
+    m_tableOwnerName = _tableOwnerName;
+    m_tableOwnerNameHasBeenSet = true;
+}
+
+bool Rule::TableOwnerNameHasBeenSet() const
+{
+    return m_tableOwnerNameHasBeenSet;
+}
+
+RuleGroupExecStrategy Rule::GetExecStrategy() const
+{
+    return m_execStrategy;
+}
+
+void Rule::SetExecStrategy(const RuleGroupExecStrategy& _execStrategy)
+{
+    m_execStrategy = _execStrategy;
+    m_execStrategyHasBeenSet = true;
+}
+
+bool Rule::ExecStrategyHasBeenSet() const
+{
+    return m_execStrategyHasBeenSet;
+}
+
+RuleGroupSubscribe Rule::GetSubscription() const
+{
+    return m_subscription;
+}
+
+void Rule::SetSubscription(const RuleGroupSubscribe& _subscription)
+{
+    m_subscription = _subscription;
+    m_subscriptionHasBeenSet = true;
+}
+
+bool Rule::SubscriptionHasBeenSet() const
+{
+    return m_subscriptionHasBeenSet;
+}
+
+string Rule::GetCreateTime() const
+{
+    return m_createTime;
+}
+
+void Rule::SetCreateTime(const string& _createTime)
+{
+    m_createTime = _createTime;
+    m_createTimeHasBeenSet = true;
+}
+
+bool Rule::CreateTimeHasBeenSet() const
+{
+    return m_createTimeHasBeenSet;
+}
+
+uint64_t Rule::GetDatasourceId() const
+{
+    return m_datasourceId;
+}
+
+void Rule::SetDatasourceId(const uint64_t& _datasourceId)
+{
+    m_datasourceId = _datasourceId;
+    m_datasourceIdHasBeenSet = true;
+}
+
+bool Rule::DatasourceIdHasBeenSet() const
+{
+    return m_datasourceIdHasBeenSet;
+}
+
+string Rule::GetDatabaseId() const
+{
+    return m_databaseId;
+}
+
+void Rule::SetDatabaseId(const string& _databaseId)
+{
+    m_databaseId = _databaseId;
+    m_databaseIdHasBeenSet = true;
+}
+
+bool Rule::DatabaseIdHasBeenSet() const
+{
+    return m_databaseIdHasBeenSet;
+}
+
+int64_t Rule::GetMonitorStatus() const
+{
+    return m_monitorStatus;
+}
+
+void Rule::SetMonitorStatus(const int64_t& _monitorStatus)
+{
+    m_monitorStatus = _monitorStatus;
+    m_monitorStatusHasBeenSet = true;
+}
+
+bool Rule::MonitorStatusHasBeenSet() const
+{
+    return m_monitorStatusHasBeenSet;
 }
 

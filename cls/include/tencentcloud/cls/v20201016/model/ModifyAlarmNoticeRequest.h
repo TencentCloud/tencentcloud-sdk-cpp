@@ -89,26 +89,26 @@ namespace TencentCloud
 
                     /**
                      * 获取通知类型。可选值：
-<li> Trigger - 告警触发
-<li> Recovery - 告警恢复
-<li> All - 告警触发和告警恢复
+<li> Trigger - 告警触发</li>
+<li> Recovery - 告警恢复</li>
+<li> All - 告警触发和告警恢复</li>
                      * @return Type 通知类型。可选值：
-<li> Trigger - 告警触发
-<li> Recovery - 告警恢复
-<li> All - 告警触发和告警恢复
+<li> Trigger - 告警触发</li>
+<li> Recovery - 告警恢复</li>
+<li> All - 告警触发和告警恢复</li>
                      * 
                      */
                     std::string GetType() const;
 
                     /**
                      * 设置通知类型。可选值：
-<li> Trigger - 告警触发
-<li> Recovery - 告警恢复
-<li> All - 告警触发和告警恢复
+<li> Trigger - 告警触发</li>
+<li> Recovery - 告警恢复</li>
+<li> All - 告警触发和告警恢复</li>
                      * @param _type 通知类型。可选值：
-<li> Trigger - 告警触发
-<li> Recovery - 告警恢复
-<li> All - 告警触发和告警恢复
+<li> Trigger - 告警触发</li>
+<li> Recovery - 告警恢复</li>
+<li> All - 告警触发和告警恢复</li>
                      * 
                      */
                     void SetType(const std::string& _type);
@@ -219,9 +219,9 @@ namespace TencentCloud
 
                     /**
                      * 通知类型。可选值：
-<li> Trigger - 告警触发
-<li> Recovery - 告警恢复
-<li> All - 告警触发和告警恢复
+<li> Trigger - 告警触发</li>
+<li> Recovery - 告警恢复</li>
+<li> All - 告警触发和告警恢复</li>
                      */
                     std::string m_type;
                     bool m_typeHasBeenSet;

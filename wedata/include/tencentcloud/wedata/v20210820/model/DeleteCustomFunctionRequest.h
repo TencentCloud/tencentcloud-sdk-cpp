@@ -105,6 +105,111 @@ namespace TencentCloud
                      */
                     bool ProjectIdHasBeenSet() const;
 
+                    /**
+                     * 获取函数名称
+                     * @return FunctionName 函数名称
+                     * 
+                     */
+                    std::string GetFunctionName() const;
+
+                    /**
+                     * 设置函数名称
+                     * @param _functionName 函数名称
+                     * 
+                     */
+                    void SetFunctionName(const std::string& _functionName);
+
+                    /**
+                     * 判断参数 FunctionName 是否已赋值
+                     * @return FunctionName 是否已赋值
+                     * 
+                     */
+                    bool FunctionNameHasBeenSet() const;
+
+                    /**
+                     * 获取函数类型，HIVE，SPARK，DLC，CDW_POSTGRESQL
+                     * @return FunctionType 函数类型，HIVE，SPARK，DLC，CDW_POSTGRESQL
+                     * 
+                     */
+                    std::string GetFunctionType() const;
+
+                    /**
+                     * 设置函数类型，HIVE，SPARK，DLC，CDW_POSTGRESQL
+                     * @param _functionType 函数类型，HIVE，SPARK，DLC，CDW_POSTGRESQL
+                     * 
+                     */
+                    void SetFunctionType(const std::string& _functionType);
+
+                    /**
+                     * 判断参数 FunctionType 是否已赋值
+                     * @return FunctionType 是否已赋值
+                     * 
+                     */
+                    bool FunctionTypeHasBeenSet() const;
+
+                    /**
+                     * 获取数据库名
+                     * @return DatabaseName 数据库名
+                     * 
+                     */
+                    std::string GetDatabaseName() const;
+
+                    /**
+                     * 设置数据库名
+                     * @param _databaseName 数据库名
+                     * 
+                     */
+                    void SetDatabaseName(const std::string& _databaseName);
+
+                    /**
+                     * 判断参数 DatabaseName 是否已赋值
+                     * @return DatabaseName 是否已赋值
+                     * 
+                     */
+                    bool DatabaseNameHasBeenSet() const;
+
+                    /**
+                     * 获取模式名
+                     * @return SchemaName 模式名
+                     * 
+                     */
+                    std::string GetSchemaName() const;
+
+                    /**
+                     * 设置模式名
+                     * @param _schemaName 模式名
+                     * 
+                     */
+                    void SetSchemaName(const std::string& _schemaName);
+
+                    /**
+                     * 判断参数 SchemaName 是否已赋值
+                     * @return SchemaName 是否已赋值
+                     * 
+                     */
+                    bool SchemaNameHasBeenSet() const;
+
+                    /**
+                     * 获取函数命令格式
+                     * @return CommandFormat 函数命令格式
+                     * 
+                     */
+                    std::string GetCommandFormat() const;
+
+                    /**
+                     * 设置函数命令格式
+                     * @param _commandFormat 函数命令格式
+                     * 
+                     */
+                    void SetCommandFormat(const std::string& _commandFormat);
+
+                    /**
+                     * 判断参数 CommandFormat 是否已赋值
+                     * @return CommandFormat 是否已赋值
+                     * 
+                     */
+                    bool CommandFormatHasBeenSet() const;
+
                 private:
 
                     /**
@@ -124,6 +229,36 @@ namespace TencentCloud
                      */
                     std::string m_projectId;
                     bool m_projectIdHasBeenSet;
+
+                    /**
+                     * 函数名称
+                     */
+                    std::string m_functionName;
+                    bool m_functionNameHasBeenSet;
+
+                    /**
+                     * 函数类型，HIVE，SPARK，DLC，CDW_POSTGRESQL
+                     */
+                    std::string m_functionType;
+                    bool m_functionTypeHasBeenSet;
+
+                    /**
+                     * 数据库名
+                     */
+                    std::string m_databaseName;
+                    bool m_databaseNameHasBeenSet;
+
+                    /**
+                     * 模式名
+                     */
+                    std::string m_schemaName;
+                    bool m_schemaNameHasBeenSet;
+
+                    /**
+                     * 函数命令格式
+                     */
+                    std::string m_commandFormat;
+                    bool m_commandFormatHasBeenSet;
 
                 };
             }

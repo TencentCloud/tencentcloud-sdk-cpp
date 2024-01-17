@@ -50,12 +50,13 @@ set(emr_public_header_model
   include/tencentcloud/emr/v20190103/model/PodNewSpec.h
   include/tencentcloud/emr/v20190103/model/NodeResourceSpec.h
   include/tencentcloud/emr/v20190103/model/ModifyResourceScheduleConfigResponse.h
-  include/tencentcloud/emr/v20190103/model/TopologyInfo.h
+  include/tencentcloud/emr/v20190103/model/InsightResult.h
   include/tencentcloud/emr/v20190103/model/NodeDetailPriceResult.h
   include/tencentcloud/emr/v20190103/model/Tag.h
   include/tencentcloud/emr/v20190103/model/ClusterIDToFlowID.h
   include/tencentcloud/emr/v20190103/model/EmrListInstance.h
   include/tencentcloud/emr/v20190103/model/AddUsersForUserManagerResponse.h
+  include/tencentcloud/emr/v20190103/model/TopologyInfo.h
   include/tencentcloud/emr/v20190103/model/EmrProductConfigOutter.h
   include/tencentcloud/emr/v20190103/model/VPCSettings.h
   include/tencentcloud/emr/v20190103/model/CustomServiceDefine.h
@@ -80,6 +81,7 @@ set(emr_public_header_model
   include/tencentcloud/emr/v20190103/model/AllNodeResourceSpec.h
   include/tencentcloud/emr/v20190103/model/DescribeUsersForUserManagerRequest.h
   include/tencentcloud/emr/v20190103/model/RenewInstancesInfo.h
+  include/tencentcloud/emr/v20190103/model/DescribeInsightListRequest.h
   include/tencentcloud/emr/v20190103/model/RunJobFlowResponse.h
   include/tencentcloud/emr/v20190103/model/StartStopServiceOrMonitorResponse.h
   include/tencentcloud/emr/v20190103/model/DescribeHiveQueriesResponse.h
@@ -101,6 +103,7 @@ set(emr_public_header_model
   include/tencentcloud/emr/v20190103/model/LoginSettings.h
   include/tencentcloud/emr/v20190103/model/RunJobFlowRequest.h
   include/tencentcloud/emr/v20190103/model/PriceResource.h
+  include/tencentcloud/emr/v20190103/model/DescribeInsightListResponse.h
   include/tencentcloud/emr/v20190103/model/DescribeHiveQueriesRequest.h
   include/tencentcloud/emr/v20190103/model/CreateClusterResponse.h
   include/tencentcloud/emr/v20190103/model/DescribeAutoScaleRecordsResponse.h
@@ -211,12 +214,13 @@ set(emr_src
   src/v20190103/model/PodNewSpec.cpp
   src/v20190103/model/NodeResourceSpec.cpp
   src/v20190103/model/ModifyResourceScheduleConfigResponse.cpp
-  src/v20190103/model/TopologyInfo.cpp
+  src/v20190103/model/InsightResult.cpp
   src/v20190103/model/NodeDetailPriceResult.cpp
   src/v20190103/model/Tag.cpp
   src/v20190103/model/ClusterIDToFlowID.cpp
   src/v20190103/model/EmrListInstance.cpp
   src/v20190103/model/AddUsersForUserManagerResponse.cpp
+  src/v20190103/model/TopologyInfo.cpp
   src/v20190103/model/EmrProductConfigOutter.cpp
   src/v20190103/model/VPCSettings.cpp
   src/v20190103/model/CustomServiceDefine.cpp
@@ -241,6 +245,7 @@ set(emr_src
   src/v20190103/model/AllNodeResourceSpec.cpp
   src/v20190103/model/DescribeUsersForUserManagerRequest.cpp
   src/v20190103/model/RenewInstancesInfo.cpp
+  src/v20190103/model/DescribeInsightListRequest.cpp
   src/v20190103/model/RunJobFlowResponse.cpp
   src/v20190103/model/StartStopServiceOrMonitorResponse.cpp
   src/v20190103/model/DescribeHiveQueriesResponse.cpp
@@ -262,6 +267,7 @@ set(emr_src
   src/v20190103/model/LoginSettings.cpp
   src/v20190103/model/RunJobFlowRequest.cpp
   src/v20190103/model/PriceResource.cpp
+  src/v20190103/model/DescribeInsightListResponse.cpp
   src/v20190103/model/DescribeHiveQueriesRequest.cpp
   src/v20190103/model/CreateClusterResponse.cpp
   src/v20190103/model/DescribeAutoScaleRecordsResponse.cpp

@@ -470,6 +470,49 @@ EmrClient::DescribeImpalaQueriesOutcomeCallable EmrClient::DescribeImpalaQueries
     return task->get_future();
 }
 
+EmrClient::DescribeInsightListOutcome EmrClient::DescribeInsightList(const DescribeInsightListRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeInsightList");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeInsightListResponse rsp = DescribeInsightListResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeInsightListOutcome(rsp);
+        else
+            return DescribeInsightListOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeInsightListOutcome(outcome.GetError());
+    }
+}
+
+void EmrClient::DescribeInsightListAsync(const DescribeInsightListRequest& request, const DescribeInsightListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeInsightList(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+EmrClient::DescribeInsightListOutcomeCallable EmrClient::DescribeInsightListCallable(const DescribeInsightListRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeInsightListOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeInsightList(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 EmrClient::DescribeInstanceRenewNodesOutcome EmrClient::DescribeInstanceRenewNodes(const DescribeInstanceRenewNodesRequest &request)
 {
     auto outcome = MakeRequest(request, "DescribeInstanceRenewNodes");

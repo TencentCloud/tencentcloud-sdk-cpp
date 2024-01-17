@@ -23,7 +23,8 @@ using namespace std;
 BooleanResponse::BooleanResponse() :
     m_successHasBeenSet(false),
     m_messageHasBeenSet(false),
-    m_baselineIdHasBeenSet(false)
+    m_baselineIdHasBeenSet(false),
+    m_codeHasBeenSet(false)
 {
 }
 
@@ -62,6 +63,16 @@ CoreInternalOutcome BooleanResponse::Deserialize(const rapidjson::Value &value)
         m_baselineIdHasBeenSet = true;
     }
 
+    if (value.HasMember("Code") && !value["Code"].IsNull())
+    {
+        if (!value["Code"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `BooleanResponse.Code` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_code = string(value["Code"].GetString());
+        m_codeHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -91,6 +102,14 @@ void BooleanResponse::ToJsonObject(rapidjson::Value &value, rapidjson::Document:
         string key = "BaselineId";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_baselineId, allocator);
+    }
+
+    if (m_codeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Code";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_code.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -142,5 +161,21 @@ void BooleanResponse::SetBaselineId(const int64_t& _baselineId)
 bool BooleanResponse::BaselineIdHasBeenSet() const
 {
     return m_baselineIdHasBeenSet;
+}
+
+string BooleanResponse::GetCode() const
+{
+    return m_code;
+}
+
+void BooleanResponse::SetCode(const string& _code)
+{
+    m_code = _code;
+    m_codeHasBeenSet = true;
+}
+
+bool BooleanResponse::CodeHasBeenSet() const
+{
+    return m_codeHasBeenSet;
 }
 

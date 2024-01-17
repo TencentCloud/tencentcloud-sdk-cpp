@@ -67,7 +67,9 @@ IntegrationTaskInfo::IntegrationTaskInfo() :
     m_taskAlarmRegularListHasBeenSet(false),
     m_switchResourceHasBeenSet(false),
     m_readPhaseHasBeenSet(false),
-    m_instanceVersionHasBeenSet(false)
+    m_instanceVersionHasBeenSet(false),
+    m_arrangeSpaceTaskIdHasBeenSet(false),
+    m_offlineTaskStatusHasBeenSet(false)
 {
 }
 
@@ -609,6 +611,26 @@ CoreInternalOutcome IntegrationTaskInfo::Deserialize(const rapidjson::Value &val
         m_instanceVersionHasBeenSet = true;
     }
 
+    if (value.HasMember("ArrangeSpaceTaskId") && !value["ArrangeSpaceTaskId"].IsNull())
+    {
+        if (!value["ArrangeSpaceTaskId"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `IntegrationTaskInfo.ArrangeSpaceTaskId` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_arrangeSpaceTaskId = string(value["ArrangeSpaceTaskId"].GetString());
+        m_arrangeSpaceTaskIdHasBeenSet = true;
+    }
+
+    if (value.HasMember("OfflineTaskStatus") && !value["OfflineTaskStatus"].IsNull())
+    {
+        if (!value["OfflineTaskStatus"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `IntegrationTaskInfo.OfflineTaskStatus` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_offlineTaskStatus = value["OfflineTaskStatus"].GetInt64();
+        m_offlineTaskStatusHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -1036,6 +1058,22 @@ void IntegrationTaskInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Docum
         string key = "InstanceVersion";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_instanceVersion, allocator);
+    }
+
+    if (m_arrangeSpaceTaskIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ArrangeSpaceTaskId";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_arrangeSpaceTaskId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_offlineTaskStatusHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "OfflineTaskStatus";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_offlineTaskStatus, allocator);
     }
 
 }
@@ -1791,5 +1829,37 @@ void IntegrationTaskInfo::SetInstanceVersion(const int64_t& _instanceVersion)
 bool IntegrationTaskInfo::InstanceVersionHasBeenSet() const
 {
     return m_instanceVersionHasBeenSet;
+}
+
+string IntegrationTaskInfo::GetArrangeSpaceTaskId() const
+{
+    return m_arrangeSpaceTaskId;
+}
+
+void IntegrationTaskInfo::SetArrangeSpaceTaskId(const string& _arrangeSpaceTaskId)
+{
+    m_arrangeSpaceTaskId = _arrangeSpaceTaskId;
+    m_arrangeSpaceTaskIdHasBeenSet = true;
+}
+
+bool IntegrationTaskInfo::ArrangeSpaceTaskIdHasBeenSet() const
+{
+    return m_arrangeSpaceTaskIdHasBeenSet;
+}
+
+int64_t IntegrationTaskInfo::GetOfflineTaskStatus() const
+{
+    return m_offlineTaskStatus;
+}
+
+void IntegrationTaskInfo::SetOfflineTaskStatus(const int64_t& _offlineTaskStatus)
+{
+    m_offlineTaskStatus = _offlineTaskStatus;
+    m_offlineTaskStatusHasBeenSet = true;
+}
+
+bool IntegrationTaskInfo::OfflineTaskStatusHasBeenSet() const
+{
+    return m_offlineTaskStatusHasBeenSet;
 }
 

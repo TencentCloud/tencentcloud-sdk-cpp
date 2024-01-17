@@ -25,7 +25,12 @@ using namespace std;
 DeleteCustomFunctionRequest::DeleteCustomFunctionRequest() :
     m_clusterIdentifierHasBeenSet(false),
     m_functionIdHasBeenSet(false),
-    m_projectIdHasBeenSet(false)
+    m_projectIdHasBeenSet(false),
+    m_functionNameHasBeenSet(false),
+    m_functionTypeHasBeenSet(false),
+    m_databaseNameHasBeenSet(false),
+    m_schemaNameHasBeenSet(false),
+    m_commandFormatHasBeenSet(false)
 {
 }
 
@@ -58,6 +63,46 @@ string DeleteCustomFunctionRequest::ToJsonString() const
         string key = "ProjectId";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_projectId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_functionNameHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "FunctionName";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_functionName.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_functionTypeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "FunctionType";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_functionType.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_databaseNameHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "DatabaseName";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_databaseName.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_schemaNameHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "SchemaName";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_schemaName.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_commandFormatHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "CommandFormat";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_commandFormat.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -114,6 +159,86 @@ void DeleteCustomFunctionRequest::SetProjectId(const string& _projectId)
 bool DeleteCustomFunctionRequest::ProjectIdHasBeenSet() const
 {
     return m_projectIdHasBeenSet;
+}
+
+string DeleteCustomFunctionRequest::GetFunctionName() const
+{
+    return m_functionName;
+}
+
+void DeleteCustomFunctionRequest::SetFunctionName(const string& _functionName)
+{
+    m_functionName = _functionName;
+    m_functionNameHasBeenSet = true;
+}
+
+bool DeleteCustomFunctionRequest::FunctionNameHasBeenSet() const
+{
+    return m_functionNameHasBeenSet;
+}
+
+string DeleteCustomFunctionRequest::GetFunctionType() const
+{
+    return m_functionType;
+}
+
+void DeleteCustomFunctionRequest::SetFunctionType(const string& _functionType)
+{
+    m_functionType = _functionType;
+    m_functionTypeHasBeenSet = true;
+}
+
+bool DeleteCustomFunctionRequest::FunctionTypeHasBeenSet() const
+{
+    return m_functionTypeHasBeenSet;
+}
+
+string DeleteCustomFunctionRequest::GetDatabaseName() const
+{
+    return m_databaseName;
+}
+
+void DeleteCustomFunctionRequest::SetDatabaseName(const string& _databaseName)
+{
+    m_databaseName = _databaseName;
+    m_databaseNameHasBeenSet = true;
+}
+
+bool DeleteCustomFunctionRequest::DatabaseNameHasBeenSet() const
+{
+    return m_databaseNameHasBeenSet;
+}
+
+string DeleteCustomFunctionRequest::GetSchemaName() const
+{
+    return m_schemaName;
+}
+
+void DeleteCustomFunctionRequest::SetSchemaName(const string& _schemaName)
+{
+    m_schemaName = _schemaName;
+    m_schemaNameHasBeenSet = true;
+}
+
+bool DeleteCustomFunctionRequest::SchemaNameHasBeenSet() const
+{
+    return m_schemaNameHasBeenSet;
+}
+
+string DeleteCustomFunctionRequest::GetCommandFormat() const
+{
+    return m_commandFormat;
+}
+
+void DeleteCustomFunctionRequest::SetCommandFormat(const string& _commandFormat)
+{
+    m_commandFormat = _commandFormat;
+    m_commandFormatHasBeenSet = true;
+}
+
+bool DeleteCustomFunctionRequest::CommandFormatHasBeenSet() const
+{
+    return m_commandFormatHasBeenSet;
 }
 
 

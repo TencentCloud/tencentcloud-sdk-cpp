@@ -116,6 +116,7 @@ set(billing_public_header_model
   include/tencentcloud/billing/v20180709/model/ConsumptionResourceSummaryDataItem.h
   include/tencentcloud/billing/v20180709/model/DescribeAccountBalanceRequest.h
   include/tencentcloud/billing/v20180709/model/DescribeBillDetailRequest.h
+  include/tencentcloud/billing/v20180709/model/DescribeSavingPlanResourceInfoRequest.h
   include/tencentcloud/billing/v20180709/model/DescribeVoucherInfoResponse.h
   include/tencentcloud/billing/v20180709/model/BillDetailAssociatedOrder.h
   include/tencentcloud/billing/v20180709/model/DescribeBillListResponse.h
@@ -126,6 +127,7 @@ set(billing_public_header_model
   include/tencentcloud/billing/v20180709/model/DescribeSavingPlanCoverageResponse.h
   include/tencentcloud/billing/v20180709/model/DescribeVoucherInfoRequest.h
   include/tencentcloud/billing/v20180709/model/DescribeSavingPlanUsageRequest.h
+  include/tencentcloud/billing/v20180709/model/DescribeSavingPlanResourceInfoResponse.h
   include/tencentcloud/billing/v20180709/model/DescribeDealsByCondRequest.h
   include/tencentcloud/billing/v20180709/model/DescribeDosageCosDetailByDateResponse.h
   include/tencentcloud/billing/v20180709/model/DescribeBillSummaryForOrganizationResponse.h
@@ -236,6 +238,7 @@ set(billing_src
   src/v20180709/model/ConsumptionResourceSummaryDataItem.cpp
   src/v20180709/model/DescribeAccountBalanceRequest.cpp
   src/v20180709/model/DescribeBillDetailRequest.cpp
+  src/v20180709/model/DescribeSavingPlanResourceInfoRequest.cpp
   src/v20180709/model/DescribeVoucherInfoResponse.cpp
   src/v20180709/model/BillDetailAssociatedOrder.cpp
   src/v20180709/model/DescribeBillListResponse.cpp
@@ -246,6 +249,7 @@ set(billing_src
   src/v20180709/model/DescribeSavingPlanCoverageResponse.cpp
   src/v20180709/model/DescribeVoucherInfoRequest.cpp
   src/v20180709/model/DescribeSavingPlanUsageRequest.cpp
+  src/v20180709/model/DescribeSavingPlanResourceInfoResponse.cpp
   src/v20180709/model/DescribeDealsByCondRequest.cpp
   src/v20180709/model/DescribeDosageCosDetailByDateResponse.cpp
   src/v20180709/model/DescribeBillSummaryForOrganizationResponse.cpp

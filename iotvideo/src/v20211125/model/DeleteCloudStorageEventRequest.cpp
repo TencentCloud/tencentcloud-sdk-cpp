@@ -28,7 +28,8 @@ DeleteCloudStorageEventRequest::DeleteCloudStorageEventRequest() :
     m_eventIdHasBeenSet(false),
     m_startTimeHasBeenSet(false),
     m_endTimeHasBeenSet(false),
-    m_userIdHasBeenSet(false)
+    m_userIdHasBeenSet(false),
+    m_channelIdHasBeenSet(false)
 {
 }
 
@@ -85,6 +86,14 @@ string DeleteCloudStorageEventRequest::ToJsonString() const
         string key = "UserId";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_userId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_channelIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ChannelId";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_channelId, allocator);
     }
 
 
@@ -189,6 +198,22 @@ void DeleteCloudStorageEventRequest::SetUserId(const string& _userId)
 bool DeleteCloudStorageEventRequest::UserIdHasBeenSet() const
 {
     return m_userIdHasBeenSet;
+}
+
+uint64_t DeleteCloudStorageEventRequest::GetChannelId() const
+{
+    return m_channelId;
+}
+
+void DeleteCloudStorageEventRequest::SetChannelId(const uint64_t& _channelId)
+{
+    m_channelId = _channelId;
+    m_channelIdHasBeenSet = true;
+}
+
+bool DeleteCloudStorageEventRequest::ChannelIdHasBeenSet() const
+{
+    return m_channelIdHasBeenSet;
 }
 
 

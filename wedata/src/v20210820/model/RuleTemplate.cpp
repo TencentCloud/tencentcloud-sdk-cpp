@@ -38,7 +38,9 @@ RuleTemplate::RuleTemplate() :
     m_whereFlagHasBeenSet(false),
     m_multiSourceFlagHasBeenSet(false),
     m_sqlExpressionHasBeenSet(false),
-    m_subQualityDimHasBeenSet(false)
+    m_subQualityDimHasBeenSet(false),
+    m_resolvedSqlExpressionHasBeenSet(false),
+    m_datasourceTypesHasBeenSet(false)
 {
 }
 
@@ -230,6 +232,36 @@ CoreInternalOutcome RuleTemplate::Deserialize(const rapidjson::Value &value)
         m_subQualityDimHasBeenSet = true;
     }
 
+    if (value.HasMember("ResolvedSqlExpression") && !value["ResolvedSqlExpression"].IsNull())
+    {
+        if (!value["ResolvedSqlExpression"].IsObject())
+        {
+            return CoreInternalOutcome(Core::Error("response `RuleTemplate.ResolvedSqlExpression` is not object type").SetRequestId(requestId));
+        }
+
+        CoreInternalOutcome outcome = m_resolvedSqlExpression.Deserialize(value["ResolvedSqlExpression"]);
+        if (!outcome.IsSuccess())
+        {
+            outcome.GetError().SetRequestId(requestId);
+            return outcome;
+        }
+
+        m_resolvedSqlExpressionHasBeenSet = true;
+    }
+
+    if (value.HasMember("DatasourceTypes") && !value["DatasourceTypes"].IsNull())
+    {
+        if (!value["DatasourceTypes"].IsArray())
+            return CoreInternalOutcome(Core::Error("response `RuleTemplate.DatasourceTypes` is not array type"));
+
+        const rapidjson::Value &tmpValue = value["DatasourceTypes"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            m_datasourceTypes.push_back((*itr).GetInt64());
+        }
+        m_datasourceTypesHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -384,6 +416,28 @@ void RuleTemplate::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Al
         string key = "SubQualityDim";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_subQualityDim, allocator);
+    }
+
+    if (m_resolvedSqlExpressionHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ResolvedSqlExpression";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_resolvedSqlExpression.ToJsonObject(value[key.c_str()], allocator);
+    }
+
+    if (m_datasourceTypesHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "DatasourceTypes";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        for (auto itr = m_datasourceTypes.begin(); itr != m_datasourceTypes.end(); ++itr)
+        {
+            value[key.c_str()].PushBack(rapidjson::Value().SetInt64(*itr), allocator);
+        }
     }
 
 }
@@ -675,5 +729,37 @@ void RuleTemplate::SetSubQualityDim(const uint64_t& _subQualityDim)
 bool RuleTemplate::SubQualityDimHasBeenSet() const
 {
     return m_subQualityDimHasBeenSet;
+}
+
+SqlExpression RuleTemplate::GetResolvedSqlExpression() const
+{
+    return m_resolvedSqlExpression;
+}
+
+void RuleTemplate::SetResolvedSqlExpression(const SqlExpression& _resolvedSqlExpression)
+{
+    m_resolvedSqlExpression = _resolvedSqlExpression;
+    m_resolvedSqlExpressionHasBeenSet = true;
+}
+
+bool RuleTemplate::ResolvedSqlExpressionHasBeenSet() const
+{
+    return m_resolvedSqlExpressionHasBeenSet;
+}
+
+vector<int64_t> RuleTemplate::GetDatasourceTypes() const
+{
+    return m_datasourceTypes;
+}
+
+void RuleTemplate::SetDatasourceTypes(const vector<int64_t>& _datasourceTypes)
+{
+    m_datasourceTypes = _datasourceTypes;
+    m_datasourceTypesHasBeenSet = true;
+}
+
+bool RuleTemplate::DatasourceTypesHasBeenSet() const
+{
+    return m_datasourceTypesHasBeenSet;
 }
 

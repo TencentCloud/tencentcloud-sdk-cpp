@@ -79,6 +79,8 @@
 #include <tencentcloud/billing/v20180709/model/DescribeSavingPlanCoverageResponse.h>
 #include <tencentcloud/billing/v20180709/model/DescribeSavingPlanOverviewRequest.h>
 #include <tencentcloud/billing/v20180709/model/DescribeSavingPlanOverviewResponse.h>
+#include <tencentcloud/billing/v20180709/model/DescribeSavingPlanResourceInfoRequest.h>
+#include <tencentcloud/billing/v20180709/model/DescribeSavingPlanResourceInfoResponse.h>
 #include <tencentcloud/billing/v20180709/model/DescribeSavingPlanUsageRequest.h>
 #include <tencentcloud/billing/v20180709/model/DescribeSavingPlanUsageResponse.h>
 #include <tencentcloud/billing/v20180709/model/DescribeTagListRequest.h>
@@ -187,6 +189,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeSavingPlanOverviewResponse> DescribeSavingPlanOverviewOutcome;
                 typedef std::future<DescribeSavingPlanOverviewOutcome> DescribeSavingPlanOverviewOutcomeCallable;
                 typedef std::function<void(const BillingClient*, const Model::DescribeSavingPlanOverviewRequest&, DescribeSavingPlanOverviewOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeSavingPlanOverviewAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeSavingPlanResourceInfoResponse> DescribeSavingPlanResourceInfoOutcome;
+                typedef std::future<DescribeSavingPlanResourceInfoOutcome> DescribeSavingPlanResourceInfoOutcomeCallable;
+                typedef std::function<void(const BillingClient*, const Model::DescribeSavingPlanResourceInfoRequest&, DescribeSavingPlanResourceInfoOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeSavingPlanResourceInfoAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeSavingPlanUsageResponse> DescribeSavingPlanUsageOutcome;
                 typedef std::future<DescribeSavingPlanUsageOutcome> DescribeSavingPlanUsageOutcomeCallable;
                 typedef std::function<void(const BillingClient*, const Model::DescribeSavingPlanUsageRequest&, DescribeSavingPlanUsageOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeSavingPlanUsageAsyncHandler;
@@ -460,6 +465,15 @@ namespace TencentCloud
                 DescribeSavingPlanOverviewOutcome DescribeSavingPlanOverview(const Model::DescribeSavingPlanOverviewRequest &request);
                 void DescribeSavingPlanOverviewAsync(const Model::DescribeSavingPlanOverviewRequest& request, const DescribeSavingPlanOverviewAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DescribeSavingPlanOverviewOutcomeCallable DescribeSavingPlanOverviewCallable(const Model::DescribeSavingPlanOverviewRequest& request);
+
+                /**
+                 *查询节省计划详情
+                 * @param req DescribeSavingPlanResourceInfoRequest
+                 * @return DescribeSavingPlanResourceInfoOutcome
+                 */
+                DescribeSavingPlanResourceInfoOutcome DescribeSavingPlanResourceInfo(const Model::DescribeSavingPlanResourceInfoRequest &request);
+                void DescribeSavingPlanResourceInfoAsync(const Model::DescribeSavingPlanResourceInfoRequest& request, const DescribeSavingPlanResourceInfoAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeSavingPlanResourceInfoOutcomeCallable DescribeSavingPlanResourceInfoCallable(const Model::DescribeSavingPlanResourceInfoRequest& request);
 
                 /**
                  *查用当前用户明细节省计划查询时段内的使用情况

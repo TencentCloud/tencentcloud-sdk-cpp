@@ -335,6 +335,7 @@ set(wedata_public_header_model
   include/tencentcloud/wedata/v20210820/model/DescribeBaselinesResponse.h
   include/tencentcloud/wedata/v20210820/model/DescribeTaskInstancesData.h
   include/tencentcloud/wedata/v20210820/model/DescribeIntegrationStatisticsAgentStatusRequest.h
+  include/tencentcloud/wedata/v20210820/model/SqlExpressionTable.h
   include/tencentcloud/wedata/v20210820/model/MakePlanInstanceOpsDtoCollection.h
   include/tencentcloud/wedata/v20210820/model/OrderFieldOptional.h
   include/tencentcloud/wedata/v20210820/model/DryRunDIOfflineTaskRequest.h
@@ -846,6 +847,7 @@ set(wedata_public_header_model
   include/tencentcloud/wedata/v20210820/model/DescribeDependOpsTasksResponse.h
   include/tencentcloud/wedata/v20210820/model/DeleteRuleTemplateResponse.h
   include/tencentcloud/wedata/v20210820/model/DescribeRuleTemplateRequest.h
+  include/tencentcloud/wedata/v20210820/model/SqlExpression.h
   include/tencentcloud/wedata/v20210820/model/DescribeTaskByCycleRequest.h
   include/tencentcloud/wedata/v20210820/model/TriggerDsEventRequest.h
   include/tencentcloud/wedata/v20210820/model/CommonId.h
@@ -1258,6 +1260,7 @@ set(wedata_src
   src/v20210820/model/DescribeBaselinesResponse.cpp
   src/v20210820/model/DescribeTaskInstancesData.cpp
   src/v20210820/model/DescribeIntegrationStatisticsAgentStatusRequest.cpp
+  src/v20210820/model/SqlExpressionTable.cpp
   src/v20210820/model/MakePlanInstanceOpsDtoCollection.cpp
   src/v20210820/model/OrderFieldOptional.cpp
   src/v20210820/model/DryRunDIOfflineTaskRequest.cpp
@@ -1769,6 +1772,7 @@ set(wedata_src
   src/v20210820/model/DescribeDependOpsTasksResponse.cpp
   src/v20210820/model/DeleteRuleTemplateResponse.cpp
   src/v20210820/model/DescribeRuleTemplateRequest.cpp
+  src/v20210820/model/SqlExpression.cpp
   src/v20210820/model/DescribeTaskByCycleRequest.cpp
   src/v20210820/model/TriggerDsEventRequest.cpp
   src/v20210820/model/CommonId.cpp

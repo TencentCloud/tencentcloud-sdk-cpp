@@ -24,6 +24,7 @@
 #include <tencentcloud/core/utils/rapidjson/writer.h>
 #include <tencentcloud/core/utils/rapidjson/stringbuffer.h>
 #include <tencentcloud/core/AbstractModel.h>
+#include <tencentcloud/wedata/v20210820/model/SqlExpression.h>
 
 
 namespace TencentCloud
@@ -472,6 +473,56 @@ namespace TencentCloud
                      */
                     bool SubQualityDimHasBeenSet() const;
 
+                    /**
+                     * 获取sql表达式解析对象
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return ResolvedSqlExpression sql表达式解析对象
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    SqlExpression GetResolvedSqlExpression() const;
+
+                    /**
+                     * 设置sql表达式解析对象
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _resolvedSqlExpression sql表达式解析对象
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetResolvedSqlExpression(const SqlExpression& _resolvedSqlExpression);
+
+                    /**
+                     * 判断参数 ResolvedSqlExpression 是否已赋值
+                     * @return ResolvedSqlExpression 是否已赋值
+                     * 
+                     */
+                    bool ResolvedSqlExpressionHasBeenSet() const;
+
+                    /**
+                     * 获取支持的数据源类型
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return DatasourceTypes 支持的数据源类型
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::vector<int64_t> GetDatasourceTypes() const;
+
+                    /**
+                     * 设置支持的数据源类型
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _datasourceTypes 支持的数据源类型
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetDatasourceTypes(const std::vector<int64_t>& _datasourceTypes);
+
+                    /**
+                     * 判断参数 DatasourceTypes 是否已赋值
+                     * @return DatasourceTypes 是否已赋值
+                     * 
+                     */
+                    bool DatasourceTypesHasBeenSet() const;
+
                 private:
 
                     /**
@@ -593,6 +644,20 @@ namespace TencentCloud
                      */
                     uint64_t m_subQualityDim;
                     bool m_subQualityDimHasBeenSet;
+
+                    /**
+                     * sql表达式解析对象
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    SqlExpression m_resolvedSqlExpression;
+                    bool m_resolvedSqlExpressionHasBeenSet;
+
+                    /**
+                     * 支持的数据源类型
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::vector<int64_t> m_datasourceTypes;
+                    bool m_datasourceTypesHasBeenSet;
 
                 };
             }

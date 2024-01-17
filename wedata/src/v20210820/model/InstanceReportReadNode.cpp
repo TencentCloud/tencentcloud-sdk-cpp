@@ -27,7 +27,8 @@ InstanceReportReadNode::InstanceReportReadNode() :
     m_totalReadBytesHasBeenSet(false),
     m_recordSpeedHasBeenSet(false),
     m_byteSpeedHasBeenSet(false),
-    m_totalErrorRecordsHasBeenSet(false)
+    m_totalErrorRecordsHasBeenSet(false),
+    m_waitWriterTimeHasBeenSet(false)
 {
 }
 
@@ -106,6 +107,16 @@ CoreInternalOutcome InstanceReportReadNode::Deserialize(const rapidjson::Value &
         m_totalErrorRecordsHasBeenSet = true;
     }
 
+    if (value.HasMember("WaitWriterTime") && !value["WaitWriterTime"].IsNull())
+    {
+        if (!value["WaitWriterTime"].IsLosslessDouble())
+        {
+            return CoreInternalOutcome(Core::Error("response `InstanceReportReadNode.WaitWriterTime` IsLosslessDouble=false incorrectly").SetRequestId(requestId));
+        }
+        m_waitWriterTime = value["WaitWriterTime"].GetDouble();
+        m_waitWriterTimeHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -167,6 +178,14 @@ void InstanceReportReadNode::ToJsonObject(rapidjson::Value &value, rapidjson::Do
         string key = "TotalErrorRecords";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_totalErrorRecords, allocator);
+    }
+
+    if (m_waitWriterTimeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "WaitWriterTime";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_waitWriterTime, allocator);
     }
 
 }
@@ -282,5 +301,21 @@ void InstanceReportReadNode::SetTotalErrorRecords(const uint64_t& _totalErrorRec
 bool InstanceReportReadNode::TotalErrorRecordsHasBeenSet() const
 {
     return m_totalErrorRecordsHasBeenSet;
+}
+
+double InstanceReportReadNode::GetWaitWriterTime() const
+{
+    return m_waitWriterTime;
+}
+
+void InstanceReportReadNode::SetWaitWriterTime(const double& _waitWriterTime)
+{
+    m_waitWriterTime = _waitWriterTime;
+    m_waitWriterTimeHasBeenSet = true;
+}
+
+bool InstanceReportReadNode::WaitWriterTimeHasBeenSet() const
+{
+    return m_waitWriterTimeHasBeenSet;
 }
 

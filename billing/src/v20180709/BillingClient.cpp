@@ -1244,6 +1244,49 @@ BillingClient::DescribeSavingPlanOverviewOutcomeCallable BillingClient::Describe
     return task->get_future();
 }
 
+BillingClient::DescribeSavingPlanResourceInfoOutcome BillingClient::DescribeSavingPlanResourceInfo(const DescribeSavingPlanResourceInfoRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeSavingPlanResourceInfo");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeSavingPlanResourceInfoResponse rsp = DescribeSavingPlanResourceInfoResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeSavingPlanResourceInfoOutcome(rsp);
+        else
+            return DescribeSavingPlanResourceInfoOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeSavingPlanResourceInfoOutcome(outcome.GetError());
+    }
+}
+
+void BillingClient::DescribeSavingPlanResourceInfoAsync(const DescribeSavingPlanResourceInfoRequest& request, const DescribeSavingPlanResourceInfoAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeSavingPlanResourceInfo(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+BillingClient::DescribeSavingPlanResourceInfoOutcomeCallable BillingClient::DescribeSavingPlanResourceInfoCallable(const DescribeSavingPlanResourceInfoRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeSavingPlanResourceInfoOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeSavingPlanResourceInfo(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 BillingClient::DescribeSavingPlanUsageOutcome BillingClient::DescribeSavingPlanUsage(const DescribeSavingPlanUsageRequest &request)
 {
     auto outcome = MakeRequest(request, "DescribeSavingPlanUsage");

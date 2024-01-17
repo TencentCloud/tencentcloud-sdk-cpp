@@ -397,6 +397,56 @@ namespace TencentCloud
                      */
                     bool ExecPlanHasBeenSet() const;
 
+                    /**
+                     * 获取规则id
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return RuleId 规则id
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    uint64_t GetRuleId() const;
+
+                    /**
+                     * 设置规则id
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _ruleId 规则id
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetRuleId(const uint64_t& _ruleId);
+
+                    /**
+                     * 判断参数 RuleId 是否已赋值
+                     * @return RuleId 是否已赋值
+                     * 
+                     */
+                    bool RuleIdHasBeenSet() const;
+
+                    /**
+                     * 获取规则名称
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return RuleName 规则名称
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::string GetRuleName() const;
+
+                    /**
+                     * 设置规则名称
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _ruleName 规则名称
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetRuleName(const std::string& _ruleName);
+
+                    /**
+                     * 判断参数 RuleName 是否已赋值
+                     * @return RuleName 是否已赋值
+                     * 
+                     */
+                    bool RuleNameHasBeenSet() const;
+
                 private:
 
                     /**
@@ -496,6 +546,20 @@ namespace TencentCloud
                      */
                     std::string m_execPlan;
                     bool m_execPlanHasBeenSet;
+
+                    /**
+                     * 规则id
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    uint64_t m_ruleId;
+                    bool m_ruleIdHasBeenSet;
+
+                    /**
+                     * 规则名称
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_ruleName;
+                    bool m_ruleNameHasBeenSet;
 
                 };
             }

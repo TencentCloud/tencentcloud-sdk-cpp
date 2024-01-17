@@ -27,7 +27,8 @@ DescribeCloudStorageOrderResponse::DescribeCloudStorageOrderResponse() :
     m_startTimeHasBeenSet(false),
     m_expireTimeHasBeenSet(false),
     m_packageIdHasBeenSet(false),
-    m_statusHasBeenSet(false)
+    m_statusHasBeenSet(false),
+    m_channelIdHasBeenSet(false)
 {
 }
 
@@ -105,6 +106,16 @@ CoreInternalOutcome DescribeCloudStorageOrderResponse::Deserialize(const string 
         m_statusHasBeenSet = true;
     }
 
+    if (rsp.HasMember("ChannelId") && !rsp["ChannelId"].IsNull())
+    {
+        if (!rsp["ChannelId"].IsUint64())
+        {
+            return CoreInternalOutcome(Core::Error("response `ChannelId` IsUint64=false incorrectly").SetRequestId(requestId));
+        }
+        m_channelId = rsp["ChannelId"].GetUint64();
+        m_channelIdHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -145,6 +156,14 @@ string DescribeCloudStorageOrderResponse::ToJsonString() const
         string key = "Status";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_status, allocator);
+    }
+
+    if (m_channelIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ChannelId";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_channelId, allocator);
     }
 
     rapidjson::Value iKey(rapidjson::kStringType);
@@ -197,6 +216,16 @@ uint64_t DescribeCloudStorageOrderResponse::GetStatus() const
 bool DescribeCloudStorageOrderResponse::StatusHasBeenSet() const
 {
     return m_statusHasBeenSet;
+}
+
+uint64_t DescribeCloudStorageOrderResponse::GetChannelId() const
+{
+    return m_channelId;
+}
+
+bool DescribeCloudStorageOrderResponse::ChannelIdHasBeenSet() const
+{
+    return m_channelIdHasBeenSet;
 }
 
 

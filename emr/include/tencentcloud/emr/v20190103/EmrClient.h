@@ -43,6 +43,8 @@
 #include <tencentcloud/emr/v20190103/model/DescribeHiveQueriesResponse.h>
 #include <tencentcloud/emr/v20190103/model/DescribeImpalaQueriesRequest.h>
 #include <tencentcloud/emr/v20190103/model/DescribeImpalaQueriesResponse.h>
+#include <tencentcloud/emr/v20190103/model/DescribeInsightListRequest.h>
+#include <tencentcloud/emr/v20190103/model/DescribeInsightListResponse.h>
 #include <tencentcloud/emr/v20190103/model/DescribeInstanceRenewNodesRequest.h>
 #include <tencentcloud/emr/v20190103/model/DescribeInstanceRenewNodesResponse.h>
 #include <tencentcloud/emr/v20190103/model/DescribeInstancesRequest.h>
@@ -137,6 +139,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeImpalaQueriesResponse> DescribeImpalaQueriesOutcome;
                 typedef std::future<DescribeImpalaQueriesOutcome> DescribeImpalaQueriesOutcomeCallable;
                 typedef std::function<void(const EmrClient*, const Model::DescribeImpalaQueriesRequest&, DescribeImpalaQueriesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeImpalaQueriesAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeInsightListResponse> DescribeInsightListOutcome;
+                typedef std::future<DescribeInsightListOutcome> DescribeInsightListOutcomeCallable;
+                typedef std::function<void(const EmrClient*, const Model::DescribeInsightListRequest&, DescribeInsightListOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeInsightListAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeInstanceRenewNodesResponse> DescribeInstanceRenewNodesOutcome;
                 typedef std::future<DescribeInstanceRenewNodesOutcome> DescribeInstanceRenewNodesOutcomeCallable;
                 typedef std::function<void(const EmrClient*, const Model::DescribeInstanceRenewNodesRequest&, DescribeInstanceRenewNodesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeInstanceRenewNodesAsyncHandler;
@@ -305,6 +310,15 @@ namespace TencentCloud
                 DescribeImpalaQueriesOutcome DescribeImpalaQueries(const Model::DescribeImpalaQueriesRequest &request);
                 void DescribeImpalaQueriesAsync(const Model::DescribeImpalaQueriesRequest& request, const DescribeImpalaQueriesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DescribeImpalaQueriesOutcomeCallable DescribeImpalaQueriesCallable(const Model::DescribeImpalaQueriesRequest& request);
+
+                /**
+                 *获取洞察结果信息
+                 * @param req DescribeInsightListRequest
+                 * @return DescribeInsightListOutcome
+                 */
+                DescribeInsightListOutcome DescribeInsightList(const Model::DescribeInsightListRequest &request);
+                void DescribeInsightListAsync(const Model::DescribeInsightListRequest& request, const DescribeInsightListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeInsightListOutcomeCallable DescribeInsightListCallable(const Model::DescribeInsightListRequest& request);
 
                 /**
                  *查询待续费节点信息

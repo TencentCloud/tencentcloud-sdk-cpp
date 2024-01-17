@@ -26,6 +26,8 @@
 #include <tencentcloud/core/AbstractModel.h>
 #include <tencentcloud/wedata/v20210820/model/CompareRule.h>
 #include <tencentcloud/wedata/v20210820/model/RuleFieldConfig.h>
+#include <tencentcloud/wedata/v20210820/model/RuleGroupExecStrategy.h>
+#include <tencentcloud/wedata/v20210820/model/RuleGroupSubscribe.h>
 
 
 namespace TencentCloud
@@ -923,6 +925,206 @@ namespace TencentCloud
                      */
                     bool SourceEngineTypesHasBeenSet() const;
 
+                    /**
+                     * 获取表名称
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return TableName 表名称
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::string GetTableName() const;
+
+                    /**
+                     * 设置表名称
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _tableName 表名称
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetTableName(const std::string& _tableName);
+
+                    /**
+                     * 判断参数 TableName 是否已赋值
+                     * @return TableName 是否已赋值
+                     * 
+                     */
+                    bool TableNameHasBeenSet() const;
+
+                    /**
+                     * 获取表负责人名称
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return TableOwnerName 表负责人名称
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::string GetTableOwnerName() const;
+
+                    /**
+                     * 设置表负责人名称
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _tableOwnerName 表负责人名称
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetTableOwnerName(const std::string& _tableOwnerName);
+
+                    /**
+                     * 判断参数 TableOwnerName 是否已赋值
+                     * @return TableOwnerName 是否已赋值
+                     * 
+                     */
+                    bool TableOwnerNameHasBeenSet() const;
+
+                    /**
+                     * 获取执行策略信息
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return ExecStrategy 执行策略信息
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    RuleGroupExecStrategy GetExecStrategy() const;
+
+                    /**
+                     * 设置执行策略信息
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _execStrategy 执行策略信息
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetExecStrategy(const RuleGroupExecStrategy& _execStrategy);
+
+                    /**
+                     * 判断参数 ExecStrategy 是否已赋值
+                     * @return ExecStrategy 是否已赋值
+                     * 
+                     */
+                    bool ExecStrategyHasBeenSet() const;
+
+                    /**
+                     * 获取订阅信息
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return Subscription 订阅信息
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    RuleGroupSubscribe GetSubscription() const;
+
+                    /**
+                     * 设置订阅信息
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _subscription 订阅信息
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetSubscription(const RuleGroupSubscribe& _subscription);
+
+                    /**
+                     * 判断参数 Subscription 是否已赋值
+                     * @return Subscription 是否已赋值
+                     * 
+                     */
+                    bool SubscriptionHasBeenSet() const;
+
+                    /**
+                     * 获取创建时间
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return CreateTime 创建时间
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::string GetCreateTime() const;
+
+                    /**
+                     * 设置创建时间
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _createTime 创建时间
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetCreateTime(const std::string& _createTime);
+
+                    /**
+                     * 判断参数 CreateTime 是否已赋值
+                     * @return CreateTime 是否已赋值
+                     * 
+                     */
+                    bool CreateTimeHasBeenSet() const;
+
+                    /**
+                     * 获取数据源 id
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return DatasourceId 数据源 id
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    uint64_t GetDatasourceId() const;
+
+                    /**
+                     * 设置数据源 id
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _datasourceId 数据源 id
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetDatasourceId(const uint64_t& _datasourceId);
+
+                    /**
+                     * 判断参数 DatasourceId 是否已赋值
+                     * @return DatasourceId 是否已赋值
+                     * 
+                     */
+                    bool DatasourceIdHasBeenSet() const;
+
+                    /**
+                     * 获取数据库 id
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return DatabaseId 数据库 id
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::string GetDatabaseId() const;
+
+                    /**
+                     * 设置数据库 id
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _databaseId 数据库 id
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetDatabaseId(const std::string& _databaseId);
+
+                    /**
+                     * 判断参数 DatabaseId 是否已赋值
+                     * @return DatabaseId 是否已赋值
+                     * 
+                     */
+                    bool DatabaseIdHasBeenSet() const;
+
+                    /**
+                     * 获取监控是否开启.0false,1true
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return MonitorStatus 监控是否开启.0false,1true
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    int64_t GetMonitorStatus() const;
+
+                    /**
+                     * 设置监控是否开启.0false,1true
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _monitorStatus 监控是否开启.0false,1true
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetMonitorStatus(const int64_t& _monitorStatus);
+
+                    /**
+                     * 判断参数 MonitorStatus 是否已赋值
+                     * @return MonitorStatus 是否已赋值
+                     * 
+                     */
+                    bool MonitorStatusHasBeenSet() const;
+
                 private:
 
                     /**
@@ -1169,6 +1371,62 @@ namespace TencentCloud
                      */
                     std::vector<uint64_t> m_sourceEngineTypes;
                     bool m_sourceEngineTypesHasBeenSet;
+
+                    /**
+                     * 表名称
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_tableName;
+                    bool m_tableNameHasBeenSet;
+
+                    /**
+                     * 表负责人名称
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_tableOwnerName;
+                    bool m_tableOwnerNameHasBeenSet;
+
+                    /**
+                     * 执行策略信息
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    RuleGroupExecStrategy m_execStrategy;
+                    bool m_execStrategyHasBeenSet;
+
+                    /**
+                     * 订阅信息
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    RuleGroupSubscribe m_subscription;
+                    bool m_subscriptionHasBeenSet;
+
+                    /**
+                     * 创建时间
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_createTime;
+                    bool m_createTimeHasBeenSet;
+
+                    /**
+                     * 数据源 id
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    uint64_t m_datasourceId;
+                    bool m_datasourceIdHasBeenSet;
+
+                    /**
+                     * 数据库 id
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_databaseId;
+                    bool m_databaseIdHasBeenSet;
+
+                    /**
+                     * 监控是否开启.0false,1true
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    int64_t m_monitorStatus;
+                    bool m_monitorStatusHasBeenSet;
 
                 };
             }
