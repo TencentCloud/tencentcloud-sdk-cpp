@@ -24,7 +24,8 @@ Ability::Ability() :
     m_isSupportSlaveZoneHasBeenSet(false),
     m_nonsupportSlaveZoneReasonHasBeenSet(false),
     m_isSupportRoHasBeenSet(false),
-    m_nonsupportRoReasonHasBeenSet(false)
+    m_nonsupportRoReasonHasBeenSet(false),
+    m_isSupportManualSnapshotHasBeenSet(false)
 {
 }
 
@@ -73,6 +74,16 @@ CoreInternalOutcome Ability::Deserialize(const rapidjson::Value &value)
         m_nonsupportRoReasonHasBeenSet = true;
     }
 
+    if (value.HasMember("IsSupportManualSnapshot") && !value["IsSupportManualSnapshot"].IsNull())
+    {
+        if (!value["IsSupportManualSnapshot"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `Ability.IsSupportManualSnapshot` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_isSupportManualSnapshot = string(value["IsSupportManualSnapshot"].GetString());
+        m_isSupportManualSnapshotHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -110,6 +121,14 @@ void Ability::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Allocat
         string key = "NonsupportRoReason";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_nonsupportRoReason.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_isSupportManualSnapshotHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "IsSupportManualSnapshot";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_isSupportManualSnapshot.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -177,5 +196,21 @@ void Ability::SetNonsupportRoReason(const string& _nonsupportRoReason)
 bool Ability::NonsupportRoReasonHasBeenSet() const
 {
     return m_nonsupportRoReasonHasBeenSet;
+}
+
+string Ability::GetIsSupportManualSnapshot() const
+{
+    return m_isSupportManualSnapshot;
+}
+
+void Ability::SetIsSupportManualSnapshot(const string& _isSupportManualSnapshot)
+{
+    m_isSupportManualSnapshot = _isSupportManualSnapshot;
+    m_isSupportManualSnapshotHasBeenSet = true;
+}
+
+bool Ability::IsSupportManualSnapshotHasBeenSet() const
+{
+    return m_isSupportManualSnapshotHasBeenSet;
 }
 

@@ -24,7 +24,8 @@ using namespace std;
 
 DescribeClusterParamsRequest::DescribeClusterParamsRequest() :
     m_clusterIdHasBeenSet(false),
-    m_paramNameHasBeenSet(false)
+    m_paramNameHasBeenSet(false),
+    m_isGlobalHasBeenSet(false)
 {
 }
 
@@ -49,6 +50,14 @@ string DescribeClusterParamsRequest::ToJsonString() const
         string key = "ParamName";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_paramName.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_isGlobalHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "IsGlobal";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_isGlobal.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -89,6 +98,22 @@ void DescribeClusterParamsRequest::SetParamName(const string& _paramName)
 bool DescribeClusterParamsRequest::ParamNameHasBeenSet() const
 {
     return m_paramNameHasBeenSet;
+}
+
+string DescribeClusterParamsRequest::GetIsGlobal() const
+{
+    return m_isGlobal;
+}
+
+void DescribeClusterParamsRequest::SetIsGlobal(const string& _isGlobal)
+{
+    m_isGlobal = _isGlobal;
+    m_isGlobalHasBeenSet = true;
+}
+
+bool DescribeClusterParamsRequest::IsGlobalHasBeenSet() const
+{
+    return m_isGlobalHasBeenSet;
 }
 
 

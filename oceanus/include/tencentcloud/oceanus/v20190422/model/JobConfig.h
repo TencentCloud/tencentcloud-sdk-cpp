@@ -790,6 +790,56 @@ namespace TencentCloud
                      */
                     bool EsServerlessSpaceHasBeenSet() const;
 
+                    /**
+                     * 获取es索引中文
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return IndexName es索引中文
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::string GetIndexName() const;
+
+                    /**
+                     * 设置es索引中文
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _indexName es索引中文
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetIndexName(const std::string& _indexName);
+
+                    /**
+                     * 判断参数 IndexName 是否已赋值
+                     * @return IndexName 是否已赋值
+                     * 
+                     */
+                    bool IndexNameHasBeenSet() const;
+
+                    /**
+                     * 获取es空间中文
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return WorkspaceName es空间中文
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::string GetWorkspaceName() const;
+
+                    /**
+                     * 设置es空间中文
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _workspaceName es空间中文
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetWorkspaceName(const std::string& _workspaceName);
+
+                    /**
+                     * 判断参数 WorkspaceName 是否已赋值
+                     * @return WorkspaceName 是否已赋值
+                     * 
+                     */
+                    bool WorkspaceNameHasBeenSet() const;
+
                 private:
 
                     /**
@@ -998,6 +1048,20 @@ namespace TencentCloud
                      */
                     std::string m_esServerlessSpace;
                     bool m_esServerlessSpaceHasBeenSet;
+
+                    /**
+                     * es索引中文
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_indexName;
+                    bool m_indexNameHasBeenSet;
+
+                    /**
+                     * es空间中文
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_workspaceName;
+                    bool m_workspaceNameHasBeenSet;
 
                 };
             }

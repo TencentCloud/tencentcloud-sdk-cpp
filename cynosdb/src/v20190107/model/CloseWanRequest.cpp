@@ -23,7 +23,9 @@ using namespace TencentCloud::Cynosdb::V20190107::Model;
 using namespace std;
 
 CloseWanRequest::CloseWanRequest() :
-    m_instanceGrpIdHasBeenSet(false)
+    m_instanceGrpIdHasBeenSet(false),
+    m_instanceGroupIdHasBeenSet(false),
+    m_instanceIdHasBeenSet(false)
 {
 }
 
@@ -40,6 +42,22 @@ string CloseWanRequest::ToJsonString() const
         string key = "InstanceGrpId";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_instanceGrpId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_instanceGroupIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "InstanceGroupId";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_instanceGroupId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_instanceIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "InstanceId";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_instanceId.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -64,6 +82,38 @@ void CloseWanRequest::SetInstanceGrpId(const string& _instanceGrpId)
 bool CloseWanRequest::InstanceGrpIdHasBeenSet() const
 {
     return m_instanceGrpIdHasBeenSet;
+}
+
+string CloseWanRequest::GetInstanceGroupId() const
+{
+    return m_instanceGroupId;
+}
+
+void CloseWanRequest::SetInstanceGroupId(const string& _instanceGroupId)
+{
+    m_instanceGroupId = _instanceGroupId;
+    m_instanceGroupIdHasBeenSet = true;
+}
+
+bool CloseWanRequest::InstanceGroupIdHasBeenSet() const
+{
+    return m_instanceGroupIdHasBeenSet;
+}
+
+string CloseWanRequest::GetInstanceId() const
+{
+    return m_instanceId;
+}
+
+void CloseWanRequest::SetInstanceId(const string& _instanceId)
+{
+    m_instanceId = _instanceId;
+    m_instanceIdHasBeenSet = true;
+}
+
+bool CloseWanRequest::InstanceIdHasBeenSet() const
+{
+    return m_instanceIdHasBeenSet;
 }
 
 

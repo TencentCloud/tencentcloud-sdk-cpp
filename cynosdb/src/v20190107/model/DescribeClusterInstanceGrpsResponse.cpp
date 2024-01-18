@@ -25,7 +25,8 @@ using namespace std;
 
 DescribeClusterInstanceGrpsResponse::DescribeClusterInstanceGrpsResponse() :
     m_totalCountHasBeenSet(false),
-    m_instanceGrpInfoListHasBeenSet(false)
+    m_instanceGrpInfoListHasBeenSet(false),
+    m_instanceGroupInfoListHasBeenSet(false)
 {
 }
 
@@ -93,6 +94,26 @@ CoreInternalOutcome DescribeClusterInstanceGrpsResponse::Deserialize(const strin
         m_instanceGrpInfoListHasBeenSet = true;
     }
 
+    if (rsp.HasMember("InstanceGroupInfoList") && !rsp["InstanceGroupInfoList"].IsNull())
+    {
+        if (!rsp["InstanceGroupInfoList"].IsArray())
+            return CoreInternalOutcome(Core::Error("response `InstanceGroupInfoList` is not array type"));
+
+        const rapidjson::Value &tmpValue = rsp["InstanceGroupInfoList"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            CynosdbInstanceGroup item;
+            CoreInternalOutcome outcome = item.Deserialize(*itr);
+            if (!outcome.IsSuccess())
+            {
+                outcome.GetError().SetRequestId(requestId);
+                return outcome;
+            }
+            m_instanceGroupInfoList.push_back(item);
+        }
+        m_instanceGroupInfoListHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -120,6 +141,21 @@ string DescribeClusterInstanceGrpsResponse::ToJsonString() const
 
         int i=0;
         for (auto itr = m_instanceGrpInfoList.begin(); itr != m_instanceGrpInfoList.end(); ++itr, ++i)
+        {
+            value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(value[key.c_str()][i], allocator);
+        }
+    }
+
+    if (m_instanceGroupInfoListHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "InstanceGroupInfoList";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_instanceGroupInfoList.begin(); itr != m_instanceGroupInfoList.end(); ++itr, ++i)
         {
             value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
             (*itr).ToJsonObject(value[key.c_str()][i], allocator);
@@ -156,6 +192,16 @@ vector<CynosdbInstanceGrp> DescribeClusterInstanceGrpsResponse::GetInstanceGrpIn
 bool DescribeClusterInstanceGrpsResponse::InstanceGrpInfoListHasBeenSet() const
 {
     return m_instanceGrpInfoListHasBeenSet;
+}
+
+vector<CynosdbInstanceGroup> DescribeClusterInstanceGrpsResponse::GetInstanceGroupInfoList() const
+{
+    return m_instanceGroupInfoList;
+}
+
+bool DescribeClusterInstanceGrpsResponse::InstanceGroupInfoListHasBeenSet() const
+{
+    return m_instanceGroupInfoListHasBeenSet;
 }
 
 

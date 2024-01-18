@@ -25,6 +25,7 @@ using namespace std;
 ModifyVipVportRequest::ModifyVipVportRequest() :
     m_clusterIdHasBeenSet(false),
     m_instanceGrpIdHasBeenSet(false),
+    m_instanceGroupIdHasBeenSet(false),
     m_vipHasBeenSet(false),
     m_vportHasBeenSet(false),
     m_dbTypeHasBeenSet(false),
@@ -53,6 +54,14 @@ string ModifyVipVportRequest::ToJsonString() const
         string key = "InstanceGrpId";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_instanceGrpId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_instanceGroupIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "InstanceGroupId";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_instanceGroupId.c_str(), allocator).Move(), allocator);
     }
 
     if (m_vipHasBeenSet)
@@ -125,6 +134,22 @@ void ModifyVipVportRequest::SetInstanceGrpId(const string& _instanceGrpId)
 bool ModifyVipVportRequest::InstanceGrpIdHasBeenSet() const
 {
     return m_instanceGrpIdHasBeenSet;
+}
+
+string ModifyVipVportRequest::GetInstanceGroupId() const
+{
+    return m_instanceGroupId;
+}
+
+void ModifyVipVportRequest::SetInstanceGroupId(const string& _instanceGroupId)
+{
+    m_instanceGroupId = _instanceGroupId;
+    m_instanceGroupIdHasBeenSet = true;
+}
+
+bool ModifyVipVportRequest::InstanceGroupIdHasBeenSet() const
+{
+    return m_instanceGroupIdHasBeenSet;
 }
 
 string ModifyVipVportRequest::GetVip() const

@@ -27,6 +27,8 @@
 #include <tencentcloud/trocket/v20230308/model/CreateConsumerGroupResponse.h>
 #include <tencentcloud/trocket/v20230308/model/CreateInstanceRequest.h>
 #include <tencentcloud/trocket/v20230308/model/CreateInstanceResponse.h>
+#include <tencentcloud/trocket/v20230308/model/CreateMQTTInstanceRequest.h>
+#include <tencentcloud/trocket/v20230308/model/CreateMQTTInstanceResponse.h>
 #include <tencentcloud/trocket/v20230308/model/CreateRoleRequest.h>
 #include <tencentcloud/trocket/v20230308/model/CreateRoleResponse.h>
 #include <tencentcloud/trocket/v20230308/model/CreateTopicRequest.h>
@@ -47,6 +49,10 @@
 #include <tencentcloud/trocket/v20230308/model/DescribeInstanceResponse.h>
 #include <tencentcloud/trocket/v20230308/model/DescribeInstanceListRequest.h>
 #include <tencentcloud/trocket/v20230308/model/DescribeInstanceListResponse.h>
+#include <tencentcloud/trocket/v20230308/model/DescribeMQTTInstanceListRequest.h>
+#include <tencentcloud/trocket/v20230308/model/DescribeMQTTInstanceListResponse.h>
+#include <tencentcloud/trocket/v20230308/model/DescribeMQTTProductSKUListRequest.h>
+#include <tencentcloud/trocket/v20230308/model/DescribeMQTTProductSKUListResponse.h>
 #include <tencentcloud/trocket/v20230308/model/DescribeRoleListRequest.h>
 #include <tencentcloud/trocket/v20230308/model/DescribeRoleListResponse.h>
 #include <tencentcloud/trocket/v20230308/model/DescribeTopicRequest.h>
@@ -87,6 +93,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::CreateInstanceResponse> CreateInstanceOutcome;
                 typedef std::future<CreateInstanceOutcome> CreateInstanceOutcomeCallable;
                 typedef std::function<void(const TrocketClient*, const Model::CreateInstanceRequest&, CreateInstanceOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateInstanceAsyncHandler;
+                typedef Outcome<Core::Error, Model::CreateMQTTInstanceResponse> CreateMQTTInstanceOutcome;
+                typedef std::future<CreateMQTTInstanceOutcome> CreateMQTTInstanceOutcomeCallable;
+                typedef std::function<void(const TrocketClient*, const Model::CreateMQTTInstanceRequest&, CreateMQTTInstanceOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateMQTTInstanceAsyncHandler;
                 typedef Outcome<Core::Error, Model::CreateRoleResponse> CreateRoleOutcome;
                 typedef std::future<CreateRoleOutcome> CreateRoleOutcomeCallable;
                 typedef std::function<void(const TrocketClient*, const Model::CreateRoleRequest&, CreateRoleOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateRoleAsyncHandler;
@@ -117,6 +126,12 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeInstanceListResponse> DescribeInstanceListOutcome;
                 typedef std::future<DescribeInstanceListOutcome> DescribeInstanceListOutcomeCallable;
                 typedef std::function<void(const TrocketClient*, const Model::DescribeInstanceListRequest&, DescribeInstanceListOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeInstanceListAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeMQTTInstanceListResponse> DescribeMQTTInstanceListOutcome;
+                typedef std::future<DescribeMQTTInstanceListOutcome> DescribeMQTTInstanceListOutcomeCallable;
+                typedef std::function<void(const TrocketClient*, const Model::DescribeMQTTInstanceListRequest&, DescribeMQTTInstanceListOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeMQTTInstanceListAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeMQTTProductSKUListResponse> DescribeMQTTProductSKUListOutcome;
+                typedef std::future<DescribeMQTTProductSKUListOutcome> DescribeMQTTProductSKUListOutcomeCallable;
+                typedef std::function<void(const TrocketClient*, const Model::DescribeMQTTProductSKUListRequest&, DescribeMQTTProductSKUListOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeMQTTProductSKUListAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeRoleListResponse> DescribeRoleListOutcome;
                 typedef std::future<DescribeRoleListOutcome> DescribeRoleListOutcomeCallable;
                 typedef std::function<void(const TrocketClient*, const Model::DescribeRoleListRequest&, DescribeRoleListOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeRoleListAsyncHandler;
@@ -167,6 +182,15 @@ namespace TencentCloud
                 CreateInstanceOutcome CreateInstance(const Model::CreateInstanceRequest &request);
                 void CreateInstanceAsync(const Model::CreateInstanceRequest& request, const CreateInstanceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 CreateInstanceOutcomeCallable CreateInstanceCallable(const Model::CreateInstanceRequest& request);
+
+                /**
+                 *购买新的MQTT实例
+                 * @param req CreateMQTTInstanceRequest
+                 * @return CreateMQTTInstanceOutcome
+                 */
+                CreateMQTTInstanceOutcome CreateMQTTInstance(const Model::CreateMQTTInstanceRequest &request);
+                void CreateMQTTInstanceAsync(const Model::CreateMQTTInstanceRequest& request, const CreateMQTTInstanceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                CreateMQTTInstanceOutcomeCallable CreateMQTTInstanceCallable(const Model::CreateMQTTInstanceRequest& request);
 
                 /**
                  *添加角色
@@ -266,6 +290,30 @@ namespace TencentCloud
                 DescribeInstanceListOutcome DescribeInstanceList(const Model::DescribeInstanceListRequest &request);
                 void DescribeInstanceListAsync(const Model::DescribeInstanceListRequest& request, const DescribeInstanceListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DescribeInstanceListOutcomeCallable DescribeInstanceListCallable(const Model::DescribeInstanceListRequest& request);
+
+                /**
+                 *获取实例列表，Filters参数使用说明如下：
+1. InstanceName, 名称模糊查询
+2. InstanceId，实例ID查询
+3. InstanceType, 实例类型查询，支持多选
+3. InstanceStatus，实例状态查询，支持多选
+
+当使用TagFilters查询时，Filters参数失效。
+                 * @param req DescribeMQTTInstanceListRequest
+                 * @return DescribeMQTTInstanceListOutcome
+                 */
+                DescribeMQTTInstanceListOutcome DescribeMQTTInstanceList(const Model::DescribeMQTTInstanceListRequest &request);
+                void DescribeMQTTInstanceListAsync(const Model::DescribeMQTTInstanceListRequest& request, const DescribeMQTTInstanceListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeMQTTInstanceListOutcomeCallable DescribeMQTTInstanceListCallable(const Model::DescribeMQTTInstanceListRequest& request);
+
+                /**
+                 *非对外接口，获取产品售卖规格
+                 * @param req DescribeMQTTProductSKUListRequest
+                 * @return DescribeMQTTProductSKUListOutcome
+                 */
+                DescribeMQTTProductSKUListOutcome DescribeMQTTProductSKUList(const Model::DescribeMQTTProductSKUListRequest &request);
+                void DescribeMQTTProductSKUListAsync(const Model::DescribeMQTTProductSKUListRequest& request, const DescribeMQTTProductSKUListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeMQTTProductSKUListOutcomeCallable DescribeMQTTProductSKUListCallable(const Model::DescribeMQTTProductSKUListRequest& request);
 
                 /**
                  *查询角色列表，Filter参数使用说明如下：

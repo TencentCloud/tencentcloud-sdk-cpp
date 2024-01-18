@@ -105,6 +105,27 @@ namespace TencentCloud
                      */
                     bool ParamKeywordHasBeenSet() const;
 
+                    /**
+                     * 获取是否为全局参数
+                     * @return IsGlobal 是否为全局参数
+                     * 
+                     */
+                    std::string GetIsGlobal() const;
+
+                    /**
+                     * 设置是否为全局参数
+                     * @param _isGlobal 是否为全局参数
+                     * 
+                     */
+                    void SetIsGlobal(const std::string& _isGlobal);
+
+                    /**
+                     * 判断参数 IsGlobal 是否已赋值
+                     * @return IsGlobal 是否已赋值
+                     * 
+                     */
+                    bool IsGlobalHasBeenSet() const;
+
                 private:
 
                     /**
@@ -124,6 +145,12 @@ namespace TencentCloud
                      */
                     std::string m_paramKeyword;
                     bool m_paramKeywordHasBeenSet;
+
+                    /**
+                     * 是否为全局参数
+                     */
+                    std::string m_isGlobal;
+                    bool m_isGlobalHasBeenSet;
 
                 };
             }

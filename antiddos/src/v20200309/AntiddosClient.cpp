@@ -1631,6 +1631,49 @@ AntiddosClient::DeleteWaterPrintKeyOutcomeCallable AntiddosClient::DeleteWaterPr
     return task->get_future();
 }
 
+AntiddosClient::DescribeBGPIPL7RulesOutcome AntiddosClient::DescribeBGPIPL7Rules(const DescribeBGPIPL7RulesRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeBGPIPL7Rules");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeBGPIPL7RulesResponse rsp = DescribeBGPIPL7RulesResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeBGPIPL7RulesOutcome(rsp);
+        else
+            return DescribeBGPIPL7RulesOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeBGPIPL7RulesOutcome(outcome.GetError());
+    }
+}
+
+void AntiddosClient::DescribeBGPIPL7RulesAsync(const DescribeBGPIPL7RulesRequest& request, const DescribeBGPIPL7RulesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeBGPIPL7Rules(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+AntiddosClient::DescribeBGPIPL7RulesOutcomeCallable AntiddosClient::DescribeBGPIPL7RulesCallable(const DescribeBGPIPL7RulesRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeBGPIPL7RulesOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeBGPIPL7Rules(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 AntiddosClient::DescribeBasicDeviceStatusOutcome AntiddosClient::DescribeBasicDeviceStatus(const DescribeBasicDeviceStatusRequest &request)
 {
     auto outcome = MakeRequest(request, "DescribeBasicDeviceStatus");

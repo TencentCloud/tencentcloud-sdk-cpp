@@ -222,15 +222,19 @@ namespace TencentCloud
                     bool VpcSetHasBeenSet() const;
 
                     /**
-                     * 获取私有域状态：正常解析：ENABLED, 暂停解析：SUSPEND, 锁定：FROZEN
-                     * @return Status 私有域状态：正常解析：ENABLED, 暂停解析：SUSPEND, 锁定：FROZEN
+                     * 获取私有域绑定VPC状态，未关联vpc：SUSPEND，已关联VPC：ENABLED
+，关联VPC失败：FAILED
+                     * @return Status 私有域绑定VPC状态，未关联vpc：SUSPEND，已关联VPC：ENABLED
+，关联VPC失败：FAILED
                      * 
                      */
                     std::string GetStatus() const;
 
                     /**
-                     * 设置私有域状态：正常解析：ENABLED, 暂停解析：SUSPEND, 锁定：FROZEN
-                     * @param _status 私有域状态：正常解析：ENABLED, 暂停解析：SUSPEND, 锁定：FROZEN
+                     * 设置私有域绑定VPC状态，未关联vpc：SUSPEND，已关联VPC：ENABLED
+，关联VPC失败：FAILED
+                     * @param _status 私有域绑定VPC状态，未关联vpc：SUSPEND，已关联VPC：ENABLED
+，关联VPC失败：FAILED
                      * 
                      */
                     void SetStatus(const std::string& _status);
@@ -455,6 +459,31 @@ namespace TencentCloud
                      */
                     bool EndPointNameHasBeenSet() const;
 
+                    /**
+                     * 获取已删除的vpc
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return DeletedVpcSet 已删除的vpc
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::vector<VpcInfo> GetDeletedVpcSet() const;
+
+                    /**
+                     * 设置已删除的vpc
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _deletedVpcSet 已删除的vpc
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetDeletedVpcSet(const std::vector<VpcInfo>& _deletedVpcSet);
+
+                    /**
+                     * 判断参数 DeletedVpcSet 是否已赋值
+                     * @return DeletedVpcSet 是否已赋值
+                     * 
+                     */
+                    bool DeletedVpcSetHasBeenSet() const;
+
                 private:
 
                     /**
@@ -507,7 +536,8 @@ namespace TencentCloud
                     bool m_vpcSetHasBeenSet;
 
                     /**
-                     * 私有域状态：正常解析：ENABLED, 暂停解析：SUSPEND, 锁定：FROZEN
+                     * 私有域绑定VPC状态，未关联vpc：SUSPEND，已关联VPC：ENABLED
+，关联VPC失败：FAILED
                      */
                     std::string m_status;
                     bool m_statusHasBeenSet;
@@ -571,6 +601,13 @@ namespace TencentCloud
                      */
                     std::string m_endPointName;
                     bool m_endPointNameHasBeenSet;
+
+                    /**
+                     * 已删除的vpc
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::vector<VpcInfo> m_deletedVpcSet;
+                    bool m_deletedVpcSetHasBeenSet;
 
                 };
             }

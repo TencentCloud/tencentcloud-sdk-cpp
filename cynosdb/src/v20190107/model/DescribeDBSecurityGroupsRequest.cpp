@@ -23,7 +23,8 @@ using namespace TencentCloud::Cynosdb::V20190107::Model;
 using namespace std;
 
 DescribeDBSecurityGroupsRequest::DescribeDBSecurityGroupsRequest() :
-    m_instanceIdHasBeenSet(false)
+    m_instanceIdHasBeenSet(false),
+    m_instanceGroupIdHasBeenSet(false)
 {
 }
 
@@ -40,6 +41,14 @@ string DescribeDBSecurityGroupsRequest::ToJsonString() const
         string key = "InstanceId";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_instanceId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_instanceGroupIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "InstanceGroupId";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_instanceGroupId.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -64,6 +73,22 @@ void DescribeDBSecurityGroupsRequest::SetInstanceId(const string& _instanceId)
 bool DescribeDBSecurityGroupsRequest::InstanceIdHasBeenSet() const
 {
     return m_instanceIdHasBeenSet;
+}
+
+string DescribeDBSecurityGroupsRequest::GetInstanceGroupId() const
+{
+    return m_instanceGroupId;
+}
+
+void DescribeDBSecurityGroupsRequest::SetInstanceGroupId(const string& _instanceGroupId)
+{
+    m_instanceGroupId = _instanceGroupId;
+    m_instanceGroupIdHasBeenSet = true;
+}
+
+bool DescribeDBSecurityGroupsRequest::InstanceGroupIdHasBeenSet() const
+{
+    return m_instanceGroupIdHasBeenSet;
 }
 
 

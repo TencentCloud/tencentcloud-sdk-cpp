@@ -43,33 +43,60 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取实例组ID。可以通过接口DescribeClusterInstanceGrps获取。
-                     * @return InstanceId 实例组ID。可以通过接口DescribeClusterInstanceGrps获取。
-                     * 
+                     * 获取实例ID
+                     * @return InstanceId 实例ID
+                     * @deprecated
                      */
                     std::string GetInstanceId() const;
 
                     /**
-                     * 设置实例组ID。可以通过接口DescribeClusterInstanceGrps获取。
-                     * @param _instanceId 实例组ID。可以通过接口DescribeClusterInstanceGrps获取。
-                     * 
+                     * 设置实例ID
+                     * @param _instanceId 实例ID
+                     * @deprecated
                      */
                     void SetInstanceId(const std::string& _instanceId);
 
                     /**
                      * 判断参数 InstanceId 是否已赋值
                      * @return InstanceId 是否已赋值
-                     * 
+                     * @deprecated
                      */
                     bool InstanceIdHasBeenSet() const;
+
+                    /**
+                     * 获取实例组ID
+                     * @return InstanceGroupId 实例组ID
+                     * 
+                     */
+                    std::string GetInstanceGroupId() const;
+
+                    /**
+                     * 设置实例组ID
+                     * @param _instanceGroupId 实例组ID
+                     * 
+                     */
+                    void SetInstanceGroupId(const std::string& _instanceGroupId);
+
+                    /**
+                     * 判断参数 InstanceGroupId 是否已赋值
+                     * @return InstanceGroupId 是否已赋值
+                     * 
+                     */
+                    bool InstanceGroupIdHasBeenSet() const;
 
                 private:
 
                     /**
-                     * 实例组ID。可以通过接口DescribeClusterInstanceGrps获取。
+                     * 实例ID
                      */
                     std::string m_instanceId;
                     bool m_instanceIdHasBeenSet;
+
+                    /**
+                     * 实例组ID
+                     */
+                    std::string m_instanceGroupId;
+                    bool m_instanceGroupIdHasBeenSet;
 
                 };
             }

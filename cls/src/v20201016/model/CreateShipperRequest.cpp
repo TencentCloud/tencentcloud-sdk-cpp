@@ -35,7 +35,8 @@ CreateShipperRequest::CreateShipperRequest() :
     m_contentHasBeenSet(false),
     m_filenameModeHasBeenSet(false),
     m_startTimeHasBeenSet(false),
-    m_endTimeHasBeenSet(false)
+    m_endTimeHasBeenSet(false),
+    m_storageTypeHasBeenSet(false)
 {
 }
 
@@ -157,6 +158,14 @@ string CreateShipperRequest::ToJsonString() const
         string key = "EndTime";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_endTime, allocator);
+    }
+
+    if (m_storageTypeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "StorageType";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_storageType.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -373,6 +382,22 @@ void CreateShipperRequest::SetEndTime(const int64_t& _endTime)
 bool CreateShipperRequest::EndTimeHasBeenSet() const
 {
     return m_endTimeHasBeenSet;
+}
+
+string CreateShipperRequest::GetStorageType() const
+{
+    return m_storageType;
+}
+
+void CreateShipperRequest::SetStorageType(const string& _storageType)
+{
+    m_storageType = _storageType;
+    m_storageTypeHasBeenSet = true;
+}
+
+bool CreateShipperRequest::StorageTypeHasBeenSet() const
+{
+    return m_storageTypeHasBeenSet;
 }
 
 

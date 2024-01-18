@@ -504,6 +504,31 @@ namespace TencentCloud
                      */
                     bool HistoryStatusHasBeenSet() const;
 
+                    /**
+                     * 获取cos桶类型
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return StorageType cos桶类型
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::string GetStorageType() const;
+
+                    /**
+                     * 设置cos桶类型
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _storageType cos桶类型
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetStorageType(const std::string& _storageType);
+
+                    /**
+                     * 判断参数 StorageType 是否已赋值
+                     * @return StorageType 是否已赋值
+                     * 
+                     */
+                    bool StorageTypeHasBeenSet() const;
+
                 private:
 
                     /**
@@ -633,6 +658,13 @@ namespace TencentCloud
                      */
                     int64_t m_historyStatus;
                     bool m_historyStatusHasBeenSet;
+
+                    /**
+                     * cos桶类型
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_storageType;
+                    bool m_storageTypeHasBeenSet;
 
                 };
             }

@@ -43,6 +43,7 @@ set(antiddos_public_header_model
   include/tencentcloud/antiddos/v20200309/model/DescribeListProtocolBlockConfigResponse.h
   include/tencentcloud/antiddos/v20200309/model/DescribeListBGPInstancesRequest.h
   include/tencentcloud/antiddos/v20200309/model/KeyValue.h
+  include/tencentcloud/antiddos/v20200309/model/DescribeBGPIPL7RulesRequest.h
   include/tencentcloud/antiddos/v20200309/model/ModifyCcBlackWhiteIpListRequest.h
   include/tencentcloud/antiddos/v20200309/model/DeleteDDoSSpeedLimitConfigRequest.h
   include/tencentcloud/antiddos/v20200309/model/CreatePacketFilterConfigResponse.h
@@ -153,6 +154,7 @@ set(antiddos_public_header_model
   include/tencentcloud/antiddos/v20200309/model/ConnectLimitRelation.h
   include/tencentcloud/antiddos/v20200309/model/DescribeListBlackWhiteIpListResponse.h
   include/tencentcloud/antiddos/v20200309/model/DDoSAIRelation.h
+  include/tencentcloud/antiddos/v20200309/model/CreateBlackWhiteIpListRequest.h
   include/tencentcloud/antiddos/v20200309/model/DescribeCCReqLimitPolicyListRequest.h
   include/tencentcloud/antiddos/v20200309/model/AclConfigRelation.h
   include/tencentcloud/antiddos/v20200309/model/DescribeListDDoSSpeedLimitConfigResponse.h
@@ -164,6 +166,7 @@ set(antiddos_public_header_model
   include/tencentcloud/antiddos/v20200309/model/EipAddressRelation.h
   include/tencentcloud/antiddos/v20200309/model/DeleteDDoSBlackWhiteIpListRequest.h
   include/tencentcloud/antiddos/v20200309/model/PackInfo.h
+  include/tencentcloud/antiddos/v20200309/model/DescribeBGPIPL7RulesResponse.h
   include/tencentcloud/antiddos/v20200309/model/CreateDDoSConnectLimitResponse.h
   include/tencentcloud/antiddos/v20200309/model/WaterPrintRelation.h
   include/tencentcloud/antiddos/v20200309/model/IPLineInfo.h
@@ -219,7 +222,7 @@ set(antiddos_public_header_model
   include/tencentcloud/antiddos/v20200309/model/AssociateDDoSEipAddressRequest.h
   include/tencentcloud/antiddos/v20200309/model/AssociateDDoSEipLoadBalancerResponse.h
   include/tencentcloud/antiddos/v20200309/model/DescribeCCThresholdListRequest.h
-  include/tencentcloud/antiddos/v20200309/model/CreateBlackWhiteIpListRequest.h
+  include/tencentcloud/antiddos/v20200309/model/BGPIPL7RuleEntry.h
   include/tencentcloud/antiddos/v20200309/model/ModifyDDoSGeoIPBlockConfigRequest.h
   include/tencentcloud/antiddos/v20200309/model/DescribeBizTrendResponse.h
   include/tencentcloud/antiddos/v20200309/model/NewL7RuleEntry.h
@@ -307,6 +310,7 @@ set(antiddos_src
   src/v20200309/model/DescribeListProtocolBlockConfigResponse.cpp
   src/v20200309/model/DescribeListBGPInstancesRequest.cpp
   src/v20200309/model/KeyValue.cpp
+  src/v20200309/model/DescribeBGPIPL7RulesRequest.cpp
   src/v20200309/model/ModifyCcBlackWhiteIpListRequest.cpp
   src/v20200309/model/DeleteDDoSSpeedLimitConfigRequest.cpp
   src/v20200309/model/CreatePacketFilterConfigResponse.cpp
@@ -417,6 +421,7 @@ set(antiddos_src
   src/v20200309/model/ConnectLimitRelation.cpp
   src/v20200309/model/DescribeListBlackWhiteIpListResponse.cpp
   src/v20200309/model/DDoSAIRelation.cpp
+  src/v20200309/model/CreateBlackWhiteIpListRequest.cpp
   src/v20200309/model/DescribeCCReqLimitPolicyListRequest.cpp
   src/v20200309/model/AclConfigRelation.cpp
   src/v20200309/model/DescribeListDDoSSpeedLimitConfigResponse.cpp
@@ -428,6 +433,7 @@ set(antiddos_src
   src/v20200309/model/EipAddressRelation.cpp
   src/v20200309/model/DeleteDDoSBlackWhiteIpListRequest.cpp
   src/v20200309/model/PackInfo.cpp
+  src/v20200309/model/DescribeBGPIPL7RulesResponse.cpp
   src/v20200309/model/CreateDDoSConnectLimitResponse.cpp
   src/v20200309/model/WaterPrintRelation.cpp
   src/v20200309/model/IPLineInfo.cpp
@@ -483,7 +489,7 @@ set(antiddos_src
   src/v20200309/model/AssociateDDoSEipAddressRequest.cpp
   src/v20200309/model/AssociateDDoSEipLoadBalancerResponse.cpp
   src/v20200309/model/DescribeCCThresholdListRequest.cpp
-  src/v20200309/model/CreateBlackWhiteIpListRequest.cpp
+  src/v20200309/model/BGPIPL7RuleEntry.cpp
   src/v20200309/model/ModifyDDoSGeoIPBlockConfigRequest.cpp
   src/v20200309/model/DescribeBizTrendResponse.cpp
   src/v20200309/model/NewL7RuleEntry.cpp

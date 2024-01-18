@@ -126,6 +126,49 @@ TrocketClient::CreateInstanceOutcomeCallable TrocketClient::CreateInstanceCallab
     return task->get_future();
 }
 
+TrocketClient::CreateMQTTInstanceOutcome TrocketClient::CreateMQTTInstance(const CreateMQTTInstanceRequest &request)
+{
+    auto outcome = MakeRequest(request, "CreateMQTTInstance");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        CreateMQTTInstanceResponse rsp = CreateMQTTInstanceResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return CreateMQTTInstanceOutcome(rsp);
+        else
+            return CreateMQTTInstanceOutcome(o.GetError());
+    }
+    else
+    {
+        return CreateMQTTInstanceOutcome(outcome.GetError());
+    }
+}
+
+void TrocketClient::CreateMQTTInstanceAsync(const CreateMQTTInstanceRequest& request, const CreateMQTTInstanceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->CreateMQTTInstance(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+TrocketClient::CreateMQTTInstanceOutcomeCallable TrocketClient::CreateMQTTInstanceCallable(const CreateMQTTInstanceRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<CreateMQTTInstanceOutcome()>>(
+        [this, request]()
+        {
+            return this->CreateMQTTInstance(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 TrocketClient::CreateRoleOutcome TrocketClient::CreateRole(const CreateRoleRequest &request)
 {
     auto outcome = MakeRequest(request, "CreateRole");
@@ -549,6 +592,92 @@ TrocketClient::DescribeInstanceListOutcomeCallable TrocketClient::DescribeInstan
         [this, request]()
         {
             return this->DescribeInstanceList(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+TrocketClient::DescribeMQTTInstanceListOutcome TrocketClient::DescribeMQTTInstanceList(const DescribeMQTTInstanceListRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeMQTTInstanceList");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeMQTTInstanceListResponse rsp = DescribeMQTTInstanceListResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeMQTTInstanceListOutcome(rsp);
+        else
+            return DescribeMQTTInstanceListOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeMQTTInstanceListOutcome(outcome.GetError());
+    }
+}
+
+void TrocketClient::DescribeMQTTInstanceListAsync(const DescribeMQTTInstanceListRequest& request, const DescribeMQTTInstanceListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeMQTTInstanceList(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+TrocketClient::DescribeMQTTInstanceListOutcomeCallable TrocketClient::DescribeMQTTInstanceListCallable(const DescribeMQTTInstanceListRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeMQTTInstanceListOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeMQTTInstanceList(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+TrocketClient::DescribeMQTTProductSKUListOutcome TrocketClient::DescribeMQTTProductSKUList(const DescribeMQTTProductSKUListRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeMQTTProductSKUList");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeMQTTProductSKUListResponse rsp = DescribeMQTTProductSKUListResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeMQTTProductSKUListOutcome(rsp);
+        else
+            return DescribeMQTTProductSKUListOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeMQTTProductSKUListOutcome(outcome.GetError());
+    }
+}
+
+void TrocketClient::DescribeMQTTProductSKUListAsync(const DescribeMQTTProductSKUListRequest& request, const DescribeMQTTProductSKUListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeMQTTProductSKUList(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+TrocketClient::DescribeMQTTProductSKUListOutcomeCallable TrocketClient::DescribeMQTTProductSKUListCallable(const DescribeMQTTProductSKUListRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeMQTTProductSKUListOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeMQTTProductSKUList(request);
         }
     );
 

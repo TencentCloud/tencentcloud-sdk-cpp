@@ -23,6 +23,7 @@ using namespace TencentCloud::Teo::V20220901::Model;
 using namespace std;
 
 DescribeDefaultCertificatesRequest::DescribeDefaultCertificatesRequest() :
+    m_zoneIdHasBeenSet(false),
     m_filtersHasBeenSet(false),
     m_offsetHasBeenSet(false),
     m_limitHasBeenSet(false)
@@ -35,6 +36,14 @@ string DescribeDefaultCertificatesRequest::ToJsonString() const
     d.SetObject();
     rapidjson::Document::AllocatorType& allocator = d.GetAllocator();
 
+
+    if (m_zoneIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ZoneId";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_zoneId.c_str(), allocator).Move(), allocator);
+    }
 
     if (m_filtersHasBeenSet)
     {
@@ -74,6 +83,22 @@ string DescribeDefaultCertificatesRequest::ToJsonString() const
     return buffer.GetString();
 }
 
+
+string DescribeDefaultCertificatesRequest::GetZoneId() const
+{
+    return m_zoneId;
+}
+
+void DescribeDefaultCertificatesRequest::SetZoneId(const string& _zoneId)
+{
+    m_zoneId = _zoneId;
+    m_zoneIdHasBeenSet = true;
+}
+
+bool DescribeDefaultCertificatesRequest::ZoneIdHasBeenSet() const
+{
+    return m_zoneIdHasBeenSet;
+}
 
 vector<Filter> DescribeDefaultCertificatesRequest::GetFilters() const
 {

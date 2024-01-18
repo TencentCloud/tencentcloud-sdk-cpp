@@ -138,6 +138,31 @@ namespace TencentCloud
                      */
                     bool NonsupportRoReasonHasBeenSet() const;
 
+                    /**
+                     * 获取是否支持手动发起快照备份
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return IsSupportManualSnapshot 是否支持手动发起快照备份
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::string GetIsSupportManualSnapshot() const;
+
+                    /**
+                     * 设置是否支持手动发起快照备份
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _isSupportManualSnapshot 是否支持手动发起快照备份
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetIsSupportManualSnapshot(const std::string& _isSupportManualSnapshot);
+
+                    /**
+                     * 判断参数 IsSupportManualSnapshot 是否已赋值
+                     * @return IsSupportManualSnapshot 是否已赋值
+                     * 
+                     */
+                    bool IsSupportManualSnapshotHasBeenSet() const;
+
                 private:
 
                     /**
@@ -165,6 +190,13 @@ namespace TencentCloud
                      */
                     std::string m_nonsupportRoReason;
                     bool m_nonsupportRoReasonHasBeenSet;
+
+                    /**
+                     * 是否支持手动发起快照备份
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_isSupportManualSnapshot;
+                    bool m_isSupportManualSnapshotHasBeenSet;
 
                 };
             }

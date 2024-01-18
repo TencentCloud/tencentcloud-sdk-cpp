@@ -44,15 +44,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取返回数量，默认为 20，最大值为 100
-                     * @return Limit 返回数量，默认为 20，最大值为 100
+                     * 获取返回数量，默认为 20，取值范围为(0,100]
+                     * @return Limit 返回数量，默认为 20，取值范围为(0,100]
                      * 
                      */
                     int64_t GetLimit() const;
 
                     /**
-                     * 设置返回数量，默认为 20，最大值为 100
-                     * @param _limit 返回数量，默认为 20，最大值为 100
+                     * 设置返回数量，默认为 20，取值范围为(0,100]
+                     * @param _limit 返回数量，默认为 20，取值范围为(0,100]
                      * 
                      */
                     void SetLimit(const int64_t& _limit);
@@ -165,15 +165,15 @@ namespace TencentCloud
                     bool FiltersHasBeenSet() const;
 
                     /**
-                     * 获取引擎类型：目前支持“MYSQL”， “POSTGRESQL”
-                     * @return DbType 引擎类型：目前支持“MYSQL”， “POSTGRESQL”
+                     * 获取引擎类型：目前支持“MYSQL”
+                     * @return DbType 引擎类型：目前支持“MYSQL”
                      * 
                      */
                     std::string GetDbType() const;
 
                     /**
-                     * 设置引擎类型：目前支持“MYSQL”， “POSTGRESQL”
-                     * @param _dbType 引擎类型：目前支持“MYSQL”， “POSTGRESQL”
+                     * 设置引擎类型：目前支持“MYSQL”
+                     * @param _dbType 引擎类型：目前支持“MYSQL”
                      * 
                      */
                     void SetDbType(const std::string& _dbType);
@@ -258,7 +258,7 @@ offlined 已下线
                 private:
 
                     /**
-                     * 返回数量，默认为 20，最大值为 100
+                     * 返回数量，默认为 20，取值范围为(0,100]
                      */
                     int64_t m_limit;
                     bool m_limitHasBeenSet;
@@ -292,7 +292,7 @@ offlined 已下线
                     bool m_filtersHasBeenSet;
 
                     /**
-                     * 引擎类型：目前支持“MYSQL”， “POSTGRESQL”
+                     * 引擎类型：目前支持“MYSQL”
                      */
                     std::string m_dbType;
                     bool m_dbTypeHasBeenSet;

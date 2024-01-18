@@ -46,7 +46,34 @@ namespace TencentCloud
                     CoreInternalOutcome Deserialize(const rapidjson::Value &value);
 
 
+                    /**
+                     * 获取参数是否可被修改, 1:可以 0:不可以
+                     * @return IsModifiable 参数是否可被修改, 1:可以 0:不可以
+                     * 
+                     */
+                    int64_t GetIsModifiable() const;
+
+                    /**
+                     * 设置参数是否可被修改, 1:可以 0:不可以
+                     * @param _isModifiable 参数是否可被修改, 1:可以 0:不可以
+                     * 
+                     */
+                    void SetIsModifiable(const int64_t& _isModifiable);
+
+                    /**
+                     * 判断参数 IsModifiable 是否已赋值
+                     * @return IsModifiable 是否已赋值
+                     * 
+                     */
+                    bool IsModifiableHasBeenSet() const;
+
                 private:
+
+                    /**
+                     * 参数是否可被修改, 1:可以 0:不可以
+                     */
+                    int64_t m_isModifiable;
+                    bool m_isModifiableHasBeenSet;
 
                 };
             }

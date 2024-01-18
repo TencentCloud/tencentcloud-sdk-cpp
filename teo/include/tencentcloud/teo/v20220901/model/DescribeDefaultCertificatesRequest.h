@@ -44,6 +44,27 @@ namespace TencentCloud
 
 
                     /**
+                     * 获取站点 ID。
+                     * @return ZoneId 站点 ID。
+                     * 
+                     */
+                    std::string GetZoneId() const;
+
+                    /**
+                     * 设置站点 ID。
+                     * @param _zoneId 站点 ID。
+                     * 
+                     */
+                    void SetZoneId(const std::string& _zoneId);
+
+                    /**
+                     * 判断参数 ZoneId 是否已赋值
+                     * @return ZoneId 是否已赋值
+                     * 
+                     */
+                    bool ZoneIdHasBeenSet() const;
+
+                    /**
                      * 获取过滤条件，Filters.Values的上限为5。详细的过滤条件如下：
 <li>zone-id<br>   按照【<strong>站点ID</strong>】进行过滤。站点ID形如：zone-xxx。<br>   类型：String<br>   必选：是 </li>
                      * @return Filters 过滤条件，Filters.Values的上限为5。详细的过滤条件如下：
@@ -111,6 +132,12 @@ namespace TencentCloud
                     bool LimitHasBeenSet() const;
 
                 private:
+
+                    /**
+                     * 站点 ID。
+                     */
+                    std::string m_zoneId;
+                    bool m_zoneIdHasBeenSet;
 
                     /**
                      * 过滤条件，Filters.Values的上限为5。详细的过滤条件如下：

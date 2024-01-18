@@ -97,6 +97,8 @@
 #include <tencentcloud/antiddos/v20200309/model/DeleteWaterPrintConfigResponse.h>
 #include <tencentcloud/antiddos/v20200309/model/DeleteWaterPrintKeyRequest.h>
 #include <tencentcloud/antiddos/v20200309/model/DeleteWaterPrintKeyResponse.h>
+#include <tencentcloud/antiddos/v20200309/model/DescribeBGPIPL7RulesRequest.h>
+#include <tencentcloud/antiddos/v20200309/model/DescribeBGPIPL7RulesResponse.h>
 #include <tencentcloud/antiddos/v20200309/model/DescribeBasicDeviceStatusRequest.h>
 #include <tencentcloud/antiddos/v20200309/model/DescribeBasicDeviceStatusResponse.h>
 #include <tencentcloud/antiddos/v20200309/model/DescribeBgpBizTrendRequest.h>
@@ -338,6 +340,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DeleteWaterPrintKeyResponse> DeleteWaterPrintKeyOutcome;
                 typedef std::future<DeleteWaterPrintKeyOutcome> DeleteWaterPrintKeyOutcomeCallable;
                 typedef std::function<void(const AntiddosClient*, const Model::DeleteWaterPrintKeyRequest&, DeleteWaterPrintKeyOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteWaterPrintKeyAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeBGPIPL7RulesResponse> DescribeBGPIPL7RulesOutcome;
+                typedef std::future<DescribeBGPIPL7RulesOutcome> DescribeBGPIPL7RulesOutcomeCallable;
+                typedef std::function<void(const AntiddosClient*, const Model::DescribeBGPIPL7RulesRequest&, DescribeBGPIPL7RulesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeBGPIPL7RulesAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeBasicDeviceStatusResponse> DescribeBasicDeviceStatusOutcome;
                 typedef std::future<DescribeBasicDeviceStatusOutcome> DescribeBasicDeviceStatusOutcomeCallable;
                 typedef std::function<void(const AntiddosClient*, const Model::DescribeBasicDeviceStatusRequest&, DescribeBasicDeviceStatusOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeBasicDeviceStatusAsyncHandler;
@@ -847,6 +852,15 @@ namespace TencentCloud
                 DeleteWaterPrintKeyOutcome DeleteWaterPrintKey(const Model::DeleteWaterPrintKeyRequest &request);
                 void DeleteWaterPrintKeyAsync(const Model::DeleteWaterPrintKeyRequest& request, const DeleteWaterPrintKeyAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DeleteWaterPrintKeyOutcomeCallable DeleteWaterPrintKeyCallable(const Model::DeleteWaterPrintKeyRequest& request);
+
+                /**
+                 *高防IP获取7层规则
+                 * @param req DescribeBGPIPL7RulesRequest
+                 * @return DescribeBGPIPL7RulesOutcome
+                 */
+                DescribeBGPIPL7RulesOutcome DescribeBGPIPL7Rules(const Model::DescribeBGPIPL7RulesRequest &request);
+                void DescribeBGPIPL7RulesAsync(const Model::DescribeBGPIPL7RulesRequest& request, const DescribeBGPIPL7RulesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeBGPIPL7RulesOutcomeCallable DescribeBGPIPL7RulesCallable(const Model::DescribeBGPIPL7RulesRequest& request);
 
                 /**
                  *获取基础防护攻击状态

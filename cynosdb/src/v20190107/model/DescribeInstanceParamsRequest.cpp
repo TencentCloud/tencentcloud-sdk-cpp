@@ -25,7 +25,8 @@ using namespace std;
 DescribeInstanceParamsRequest::DescribeInstanceParamsRequest() :
     m_clusterIdHasBeenSet(false),
     m_instanceIdsHasBeenSet(false),
-    m_paramKeywordHasBeenSet(false)
+    m_paramKeywordHasBeenSet(false),
+    m_isGlobalHasBeenSet(false)
 {
 }
 
@@ -63,6 +64,14 @@ string DescribeInstanceParamsRequest::ToJsonString() const
         string key = "ParamKeyword";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_paramKeyword.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_isGlobalHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "IsGlobal";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_isGlobal.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -119,6 +128,22 @@ void DescribeInstanceParamsRequest::SetParamKeyword(const string& _paramKeyword)
 bool DescribeInstanceParamsRequest::ParamKeywordHasBeenSet() const
 {
     return m_paramKeywordHasBeenSet;
+}
+
+string DescribeInstanceParamsRequest::GetIsGlobal() const
+{
+    return m_isGlobal;
+}
+
+void DescribeInstanceParamsRequest::SetIsGlobal(const string& _isGlobal)
+{
+    m_isGlobal = _isGlobal;
+    m_isGlobalHasBeenSet = true;
+}
+
+bool DescribeInstanceParamsRequest::IsGlobalHasBeenSet() const
+{
+    return m_isGlobalHasBeenSet;
 }
 
 

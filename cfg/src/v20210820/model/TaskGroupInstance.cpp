@@ -24,12 +24,12 @@ TaskGroupInstance::TaskGroupInstance() :
     m_taskGroupInstanceIdHasBeenSet(false),
     m_taskGroupInstanceObjectIdHasBeenSet(false),
     m_taskGroupInstanceStatusHasBeenSet(false),
-    m_taskGroupInstanceExecuteLogHasBeenSet(false),
     m_taskGroupInstanceCreateTimeHasBeenSet(false),
     m_taskGroupInstanceUpdateTimeHasBeenSet(false),
     m_taskGroupInstanceStatusTypeHasBeenSet(false),
     m_taskGroupInstanceStartTimeHasBeenSet(false),
     m_taskGroupInstanceEndTimeHasBeenSet(false),
+    m_taskGroupInstanceExecuteLogHasBeenSet(false),
     m_taskGroupInstanceIsRedoHasBeenSet(false),
     m_taskGroupInstanceExecuteTimeHasBeenSet(false)
 {
@@ -68,16 +68,6 @@ CoreInternalOutcome TaskGroupInstance::Deserialize(const rapidjson::Value &value
         }
         m_taskGroupInstanceStatus = value["TaskGroupInstanceStatus"].GetInt64();
         m_taskGroupInstanceStatusHasBeenSet = true;
-    }
-
-    if (value.HasMember("TaskGroupInstanceExecuteLog") && !value["TaskGroupInstanceExecuteLog"].IsNull())
-    {
-        if (!value["TaskGroupInstanceExecuteLog"].IsString())
-        {
-            return CoreInternalOutcome(Core::Error("response `TaskGroupInstance.TaskGroupInstanceExecuteLog` IsString=false incorrectly").SetRequestId(requestId));
-        }
-        m_taskGroupInstanceExecuteLog = string(value["TaskGroupInstanceExecuteLog"].GetString());
-        m_taskGroupInstanceExecuteLogHasBeenSet = true;
     }
 
     if (value.HasMember("TaskGroupInstanceCreateTime") && !value["TaskGroupInstanceCreateTime"].IsNull())
@@ -128,6 +118,16 @@ CoreInternalOutcome TaskGroupInstance::Deserialize(const rapidjson::Value &value
         }
         m_taskGroupInstanceEndTime = string(value["TaskGroupInstanceEndTime"].GetString());
         m_taskGroupInstanceEndTimeHasBeenSet = true;
+    }
+
+    if (value.HasMember("TaskGroupInstanceExecuteLog") && !value["TaskGroupInstanceExecuteLog"].IsNull())
+    {
+        if (!value["TaskGroupInstanceExecuteLog"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `TaskGroupInstance.TaskGroupInstanceExecuteLog` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_taskGroupInstanceExecuteLog = string(value["TaskGroupInstanceExecuteLog"].GetString());
+        m_taskGroupInstanceExecuteLogHasBeenSet = true;
     }
 
     if (value.HasMember("TaskGroupInstanceIsRedo") && !value["TaskGroupInstanceIsRedo"].IsNull())
@@ -181,14 +181,6 @@ void TaskGroupInstance::ToJsonObject(rapidjson::Value &value, rapidjson::Documen
         value.AddMember(iKey, m_taskGroupInstanceStatus, allocator);
     }
 
-    if (m_taskGroupInstanceExecuteLogHasBeenSet)
-    {
-        rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "TaskGroupInstanceExecuteLog";
-        iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, rapidjson::Value(m_taskGroupInstanceExecuteLog.c_str(), allocator).Move(), allocator);
-    }
-
     if (m_taskGroupInstanceCreateTimeHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
@@ -227,6 +219,14 @@ void TaskGroupInstance::ToJsonObject(rapidjson::Value &value, rapidjson::Documen
         string key = "TaskGroupInstanceEndTime";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_taskGroupInstanceEndTime.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_taskGroupInstanceExecuteLogHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "TaskGroupInstanceExecuteLog";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_taskGroupInstanceExecuteLog.c_str(), allocator).Move(), allocator);
     }
 
     if (m_taskGroupInstanceIsRedoHasBeenSet)
@@ -294,22 +294,6 @@ void TaskGroupInstance::SetTaskGroupInstanceStatus(const int64_t& _taskGroupInst
 bool TaskGroupInstance::TaskGroupInstanceStatusHasBeenSet() const
 {
     return m_taskGroupInstanceStatusHasBeenSet;
-}
-
-string TaskGroupInstance::GetTaskGroupInstanceExecuteLog() const
-{
-    return m_taskGroupInstanceExecuteLog;
-}
-
-void TaskGroupInstance::SetTaskGroupInstanceExecuteLog(const string& _taskGroupInstanceExecuteLog)
-{
-    m_taskGroupInstanceExecuteLog = _taskGroupInstanceExecuteLog;
-    m_taskGroupInstanceExecuteLogHasBeenSet = true;
-}
-
-bool TaskGroupInstance::TaskGroupInstanceExecuteLogHasBeenSet() const
-{
-    return m_taskGroupInstanceExecuteLogHasBeenSet;
 }
 
 string TaskGroupInstance::GetTaskGroupInstanceCreateTime() const
@@ -390,6 +374,22 @@ void TaskGroupInstance::SetTaskGroupInstanceEndTime(const string& _taskGroupInst
 bool TaskGroupInstance::TaskGroupInstanceEndTimeHasBeenSet() const
 {
     return m_taskGroupInstanceEndTimeHasBeenSet;
+}
+
+string TaskGroupInstance::GetTaskGroupInstanceExecuteLog() const
+{
+    return m_taskGroupInstanceExecuteLog;
+}
+
+void TaskGroupInstance::SetTaskGroupInstanceExecuteLog(const string& _taskGroupInstanceExecuteLog)
+{
+    m_taskGroupInstanceExecuteLog = _taskGroupInstanceExecuteLog;
+    m_taskGroupInstanceExecuteLogHasBeenSet = true;
+}
+
+bool TaskGroupInstance::TaskGroupInstanceExecuteLogHasBeenSet() const
+{
+    return m_taskGroupInstanceExecuteLogHasBeenSet;
 }
 
 bool TaskGroupInstance::GetTaskGroupInstanceIsRedo() const

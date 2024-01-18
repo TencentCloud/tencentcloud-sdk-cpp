@@ -20,7 +20,8 @@ using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Cynosdb::V20190107::Model;
 using namespace std;
 
-ModifiableInfo::ModifiableInfo()
+ModifiableInfo::ModifiableInfo() :
+    m_isModifiableHasBeenSet(false)
 {
 }
 
@@ -29,6 +30,16 @@ CoreInternalOutcome ModifiableInfo::Deserialize(const rapidjson::Value &value)
     string requestId = "";
 
 
+    if (value.HasMember("IsModifiable") && !value["IsModifiable"].IsNull())
+    {
+        if (!value["IsModifiable"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `ModifiableInfo.IsModifiable` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_isModifiable = value["IsModifiable"].GetInt64();
+        m_isModifiableHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -36,6 +47,30 @@ CoreInternalOutcome ModifiableInfo::Deserialize(const rapidjson::Value &value)
 void ModifiableInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const
 {
 
+    if (m_isModifiableHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "IsModifiable";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_isModifiable, allocator);
+    }
+
 }
 
+
+int64_t ModifiableInfo::GetIsModifiable() const
+{
+    return m_isModifiable;
+}
+
+void ModifiableInfo::SetIsModifiable(const int64_t& _isModifiable)
+{
+    m_isModifiable = _isModifiable;
+    m_isModifiableHasBeenSet = true;
+}
+
+bool ModifiableInfo::IsModifiableHasBeenSet() const
+{
+    return m_isModifiableHasBeenSet;
+}
 

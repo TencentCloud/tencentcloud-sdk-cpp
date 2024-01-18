@@ -50,7 +50,9 @@ JobConfig::JobConfig() :
     m_checkpointRetainedNumHasBeenSet(false),
     m_jobGraphHasBeenSet(false),
     m_esServerlessIndexHasBeenSet(false),
-    m_esServerlessSpaceHasBeenSet(false)
+    m_esServerlessSpaceHasBeenSet(false),
+    m_indexNameHasBeenSet(false),
+    m_workspaceNameHasBeenSet(false)
 {
 }
 
@@ -410,6 +412,26 @@ CoreInternalOutcome JobConfig::Deserialize(const rapidjson::Value &value)
         m_esServerlessSpaceHasBeenSet = true;
     }
 
+    if (value.HasMember("IndexName") && !value["IndexName"].IsNull())
+    {
+        if (!value["IndexName"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `JobConfig.IndexName` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_indexName = string(value["IndexName"].GetString());
+        m_indexNameHasBeenSet = true;
+    }
+
+    if (value.HasMember("WorkspaceName") && !value["WorkspaceName"].IsNull())
+    {
+        if (!value["WorkspaceName"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `JobConfig.WorkspaceName` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_workspaceName = string(value["WorkspaceName"].GetString());
+        m_workspaceNameHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -679,6 +701,22 @@ void JobConfig::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Alloc
         string key = "EsServerlessSpace";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_esServerlessSpace.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_indexNameHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "IndexName";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_indexName.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_workspaceNameHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "WorkspaceName";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_workspaceName.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -1162,5 +1200,37 @@ void JobConfig::SetEsServerlessSpace(const string& _esServerlessSpace)
 bool JobConfig::EsServerlessSpaceHasBeenSet() const
 {
     return m_esServerlessSpaceHasBeenSet;
+}
+
+string JobConfig::GetIndexName() const
+{
+    return m_indexName;
+}
+
+void JobConfig::SetIndexName(const string& _indexName)
+{
+    m_indexName = _indexName;
+    m_indexNameHasBeenSet = true;
+}
+
+bool JobConfig::IndexNameHasBeenSet() const
+{
+    return m_indexNameHasBeenSet;
+}
+
+string JobConfig::GetWorkspaceName() const
+{
+    return m_workspaceName;
+}
+
+void JobConfig::SetWorkspaceName(const string& _workspaceName)
+{
+    m_workspaceName = _workspaceName;
+    m_workspaceNameHasBeenSet = true;
+}
+
+bool JobConfig::WorkspaceNameHasBeenSet() const
+{
+    return m_workspaceNameHasBeenSet;
 }
 

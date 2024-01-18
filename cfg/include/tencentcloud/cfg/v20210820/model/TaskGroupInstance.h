@@ -114,31 +114,6 @@ namespace TencentCloud
                     bool TaskGroupInstanceStatusHasBeenSet() const;
 
                     /**
-                     * 获取实例动作执行日志
-注意：此字段可能返回 null，表示取不到有效值。
-                     * @return TaskGroupInstanceExecuteLog 实例动作执行日志
-注意：此字段可能返回 null，表示取不到有效值。
-                     * 
-                     */
-                    std::string GetTaskGroupInstanceExecuteLog() const;
-
-                    /**
-                     * 设置实例动作执行日志
-注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _taskGroupInstanceExecuteLog 实例动作执行日志
-注意：此字段可能返回 null，表示取不到有效值。
-                     * 
-                     */
-                    void SetTaskGroupInstanceExecuteLog(const std::string& _taskGroupInstanceExecuteLog);
-
-                    /**
-                     * 判断参数 TaskGroupInstanceExecuteLog 是否已赋值
-                     * @return TaskGroupInstanceExecuteLog 是否已赋值
-                     * 
-                     */
-                    bool TaskGroupInstanceExecuteLogHasBeenSet() const;
-
-                    /**
                      * 获取实例创建时间
                      * @return TaskGroupInstanceCreateTime 实例创建时间
                      * 
@@ -252,6 +227,31 @@ namespace TencentCloud
                     bool TaskGroupInstanceEndTimeHasBeenSet() const;
 
                     /**
+                     * 获取实例动作执行日志
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return TaskGroupInstanceExecuteLog 实例动作执行日志
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @deprecated
+                     */
+                    std::string GetTaskGroupInstanceExecuteLog() const;
+
+                    /**
+                     * 设置实例动作执行日志
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _taskGroupInstanceExecuteLog 实例动作执行日志
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @deprecated
+                     */
+                    void SetTaskGroupInstanceExecuteLog(const std::string& _taskGroupInstanceExecuteLog);
+
+                    /**
+                     * 判断参数 TaskGroupInstanceExecuteLog 是否已赋值
+                     * @return TaskGroupInstanceExecuteLog 是否已赋值
+                     * @deprecated
+                     */
+                    bool TaskGroupInstanceExecuteLogHasBeenSet() const;
+
+                    /**
                      * 获取实例是否可重试
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return TaskGroupInstanceIsRedo 实例是否可重试
@@ -323,13 +323,6 @@ namespace TencentCloud
                     bool m_taskGroupInstanceStatusHasBeenSet;
 
                     /**
-                     * 实例动作执行日志
-注意：此字段可能返回 null，表示取不到有效值。
-                     */
-                    std::string m_taskGroupInstanceExecuteLog;
-                    bool m_taskGroupInstanceExecuteLogHasBeenSet;
-
-                    /**
                      * 实例创建时间
                      */
                     std::string m_taskGroupInstanceCreateTime;
@@ -360,6 +353,13 @@ namespace TencentCloud
                      */
                     std::string m_taskGroupInstanceEndTime;
                     bool m_taskGroupInstanceEndTimeHasBeenSet;
+
+                    /**
+                     * 实例动作执行日志
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_taskGroupInstanceExecuteLog;
+                    bool m_taskGroupInstanceExecuteLogHasBeenSet;
 
                     /**
                      * 实例是否可重试

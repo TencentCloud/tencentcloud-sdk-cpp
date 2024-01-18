@@ -38,7 +38,8 @@ PrivateZone::PrivateZone() :
     m_forwardRuleNameHasBeenSet(false),
     m_forwardRuleTypeHasBeenSet(false),
     m_forwardAddressHasBeenSet(false),
-    m_endPointNameHasBeenSet(false)
+    m_endPointNameHasBeenSet(false),
+    m_deletedVpcSetHasBeenSet(false)
 {
 }
 
@@ -257,6 +258,26 @@ CoreInternalOutcome PrivateZone::Deserialize(const rapidjson::Value &value)
         m_endPointNameHasBeenSet = true;
     }
 
+    if (value.HasMember("DeletedVpcSet") && !value["DeletedVpcSet"].IsNull())
+    {
+        if (!value["DeletedVpcSet"].IsArray())
+            return CoreInternalOutcome(Core::Error("response `PrivateZone.DeletedVpcSet` is not array type"));
+
+        const rapidjson::Value &tmpValue = value["DeletedVpcSet"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            VpcInfo item;
+            CoreInternalOutcome outcome = item.Deserialize(*itr);
+            if (!outcome.IsSuccess())
+            {
+                outcome.GetError().SetRequestId(requestId);
+                return outcome;
+            }
+            m_deletedVpcSet.push_back(item);
+        }
+        m_deletedVpcSetHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -427,6 +448,21 @@ void PrivateZone::ToJsonObject(rapidjson::Value &value, rapidjson::Document::All
         string key = "EndPointName";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_endPointName.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_deletedVpcSetHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "DeletedVpcSet";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_deletedVpcSet.begin(); itr != m_deletedVpcSet.end(); ++itr, ++i)
+        {
+            value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(value[key.c_str()][i], allocator);
+        }
     }
 
 }
@@ -718,5 +754,21 @@ void PrivateZone::SetEndPointName(const string& _endPointName)
 bool PrivateZone::EndPointNameHasBeenSet() const
 {
     return m_endPointNameHasBeenSet;
+}
+
+vector<VpcInfo> PrivateZone::GetDeletedVpcSet() const
+{
+    return m_deletedVpcSet;
+}
+
+void PrivateZone::SetDeletedVpcSet(const vector<VpcInfo>& _deletedVpcSet)
+{
+    m_deletedVpcSet = _deletedVpcSet;
+    m_deletedVpcSetHasBeenSet = true;
+}
+
+bool PrivateZone::DeletedVpcSetHasBeenSet() const
+{
+    return m_deletedVpcSetHasBeenSet;
 }
 

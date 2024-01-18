@@ -1416,6 +1416,49 @@ CsipClient::DescribeVpcAssetsOutcomeCallable CsipClient::DescribeVpcAssetsCallab
     return task->get_future();
 }
 
+CsipClient::ModifyOrganizationAccountStatusOutcome CsipClient::ModifyOrganizationAccountStatus(const ModifyOrganizationAccountStatusRequest &request)
+{
+    auto outcome = MakeRequest(request, "ModifyOrganizationAccountStatus");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ModifyOrganizationAccountStatusResponse rsp = ModifyOrganizationAccountStatusResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ModifyOrganizationAccountStatusOutcome(rsp);
+        else
+            return ModifyOrganizationAccountStatusOutcome(o.GetError());
+    }
+    else
+    {
+        return ModifyOrganizationAccountStatusOutcome(outcome.GetError());
+    }
+}
+
+void CsipClient::ModifyOrganizationAccountStatusAsync(const ModifyOrganizationAccountStatusRequest& request, const ModifyOrganizationAccountStatusAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->ModifyOrganizationAccountStatus(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+CsipClient::ModifyOrganizationAccountStatusOutcomeCallable CsipClient::ModifyOrganizationAccountStatusCallable(const ModifyOrganizationAccountStatusRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<ModifyOrganizationAccountStatusOutcome()>>(
+        [this, request]()
+        {
+            return this->ModifyOrganizationAccountStatus(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 CsipClient::ModifyRiskCenterRiskStatusOutcome CsipClient::ModifyRiskCenterRiskStatus(const ModifyRiskCenterRiskStatusRequest &request)
 {
     auto outcome = MakeRequest(request, "ModifyRiskCenterRiskStatus");

@@ -128,23 +128,23 @@ namespace TencentCloud
                     bool ReadOnlyCountHasBeenSet() const;
 
                     /**
-                     * 获取实例组ID，在已有RO组中新增实例时使用，不传则新增RO组。当前版本不建议传输该值。当前版本已废弃。
-                     * @return InstanceGrpId 实例组ID，在已有RO组中新增实例时使用，不传则新增RO组。当前版本不建议传输该值。当前版本已废弃。
-                     * 
+                     * 获取实例组ID，在已有RO组中新增实例时使用，不传则新增RO组。当前版本不建议传输该值。
+                     * @return InstanceGrpId 实例组ID，在已有RO组中新增实例时使用，不传则新增RO组。当前版本不建议传输该值。
+                     * @deprecated
                      */
                     std::string GetInstanceGrpId() const;
 
                     /**
-                     * 设置实例组ID，在已有RO组中新增实例时使用，不传则新增RO组。当前版本不建议传输该值。当前版本已废弃。
-                     * @param _instanceGrpId 实例组ID，在已有RO组中新增实例时使用，不传则新增RO组。当前版本不建议传输该值。当前版本已废弃。
-                     * 
+                     * 设置实例组ID，在已有RO组中新增实例时使用，不传则新增RO组。当前版本不建议传输该值。
+                     * @param _instanceGrpId 实例组ID，在已有RO组中新增实例时使用，不传则新增RO组。当前版本不建议传输该值。
+                     * @deprecated
                      */
                     void SetInstanceGrpId(const std::string& _instanceGrpId);
 
                     /**
                      * 判断参数 InstanceGrpId 是否已赋值
                      * @return InstanceGrpId 是否已赋值
-                     * 
+                     * @deprecated
                      */
                     bool InstanceGrpIdHasBeenSet() const;
 
@@ -410,7 +410,7 @@ namespace TencentCloud
                     bool m_readOnlyCountHasBeenSet;
 
                     /**
-                     * 实例组ID，在已有RO组中新增实例时使用，不传则新增RO组。当前版本不建议传输该值。当前版本已废弃。
+                     * 实例组ID，在已有RO组中新增实例时使用，不传则新增RO组。当前版本不建议传输该值。
                      */
                     std::string m_instanceGrpId;
                     bool m_instanceGrpIdHasBeenSet;

@@ -14,57 +14,56 @@
  * limitations under the License.
  */
 
-#ifndef TENCENTCLOUD_SSL_V20191205_MODEL_HOSTCERTIFICATERESPONSE_H_
-#define TENCENTCLOUD_SSL_V20191205_MODEL_HOSTCERTIFICATERESPONSE_H_
+#ifndef TENCENTCLOUD_TROCKET_V20230308_MODEL_CREATEMQTTINSTANCERESPONSE_H_
+#define TENCENTCLOUD_TROCKET_V20230308_MODEL_CREATEMQTTINSTANCERESPONSE_H_
 
 #include <string>
 #include <vector>
 #include <map>
 #include <tencentcloud/core/AbstractModel.h>
-#include <tencentcloud/ssl/v20191205/model/CertHostingInfo.h>
 
 
 namespace TencentCloud
 {
-    namespace Ssl
+    namespace Trocket
     {
-        namespace V20191205
+        namespace V20230308
         {
             namespace Model
             {
                 /**
-                * HostCertificate返回参数结构体
+                * CreateMQTTInstance返回参数结构体
                 */
-                class HostCertificateResponse : public AbstractModel
+                class CreateMQTTInstanceResponse : public AbstractModel
                 {
                 public:
-                    HostCertificateResponse();
-                    ~HostCertificateResponse() = default;
+                    CreateMQTTInstanceResponse();
+                    ~CreateMQTTInstanceResponse() = default;
                     CoreInternalOutcome Deserialize(const std::string &payload);
                     std::string ToJsonString() const;
 
 
                     /**
-                     * 获取云资源配置详情
-                     * @return CertHostingInfo 云资源配置详情
+                     * 获取实例ID
+                     * @return InstanceId 实例ID
                      * 
                      */
-                    CertHostingInfo GetCertHostingInfo() const;
+                    std::string GetInstanceId() const;
 
                     /**
-                     * 判断参数 CertHostingInfo 是否已赋值
-                     * @return CertHostingInfo 是否已赋值
+                     * 判断参数 InstanceId 是否已赋值
+                     * @return InstanceId 是否已赋值
                      * 
                      */
-                    bool CertHostingInfoHasBeenSet() const;
+                    bool InstanceIdHasBeenSet() const;
 
                 private:
 
                     /**
-                     * 云资源配置详情
+                     * 实例ID
                      */
-                    CertHostingInfo m_certHostingInfo;
-                    bool m_certHostingInfoHasBeenSet;
+                    std::string m_instanceId;
+                    bool m_instanceIdHasBeenSet;
 
                 };
             }
@@ -72,4 +71,4 @@ namespace TencentCloud
     }
 }
 
-#endif // !TENCENTCLOUD_SSL_V20191205_MODEL_HOSTCERTIFICATERESPONSE_H_
+#endif // !TENCENTCLOUD_TROCKET_V20230308_MODEL_CREATEMQTTINSTANCERESPONSE_H_

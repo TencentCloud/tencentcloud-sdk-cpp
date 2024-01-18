@@ -45,23 +45,65 @@ namespace TencentCloud
                     /**
                      * 获取实例组id
                      * @return InstanceGrpId 实例组id
-                     * 
+                     * @deprecated
                      */
                     std::string GetInstanceGrpId() const;
 
                     /**
                      * 设置实例组id
                      * @param _instanceGrpId 实例组id
-                     * 
+                     * @deprecated
                      */
                     void SetInstanceGrpId(const std::string& _instanceGrpId);
 
                     /**
                      * 判断参数 InstanceGrpId 是否已赋值
                      * @return InstanceGrpId 是否已赋值
-                     * 
+                     * @deprecated
                      */
                     bool InstanceGrpIdHasBeenSet() const;
+
+                    /**
+                     * 获取实例ID
+                     * @return InstanceId 实例ID
+                     * 
+                     */
+                    std::string GetInstanceId() const;
+
+                    /**
+                     * 设置实例ID
+                     * @param _instanceId 实例ID
+                     * 
+                     */
+                    void SetInstanceId(const std::string& _instanceId);
+
+                    /**
+                     * 判断参数 InstanceId 是否已赋值
+                     * @return InstanceId 是否已赋值
+                     * 
+                     */
+                    bool InstanceIdHasBeenSet() const;
+
+                    /**
+                     * 获取实例组id
+                     * @return InstanceGroupId 实例组id
+                     * 
+                     */
+                    std::string GetInstanceGroupId() const;
+
+                    /**
+                     * 设置实例组id
+                     * @param _instanceGroupId 实例组id
+                     * 
+                     */
+                    void SetInstanceGroupId(const std::string& _instanceGroupId);
+
+                    /**
+                     * 判断参数 InstanceGroupId 是否已赋值
+                     * @return InstanceGroupId 是否已赋值
+                     * 
+                     */
+                    bool InstanceGroupIdHasBeenSet() const;
 
                 private:
 
@@ -70,6 +112,18 @@ namespace TencentCloud
                      */
                     std::string m_instanceGrpId;
                     bool m_instanceGrpIdHasBeenSet;
+
+                    /**
+                     * 实例ID
+                     */
+                    std::string m_instanceId;
+                    bool m_instanceIdHasBeenSet;
+
+                    /**
+                     * 实例组id
+                     */
+                    std::string m_instanceGroupId;
+                    bool m_instanceGroupIdHasBeenSet;
 
                 };
             }

@@ -1069,7 +1069,7 @@ namespace TencentCloud
                 DescribeClusterDetailDatabasesOutcomeCallable DescribeClusterDetailDatabasesCallable(const Model::DescribeClusterDetailDatabasesRequest& request);
 
                 /**
-                 *本接口（DescribeClusterInstanceGrps）用于查询实例组信息。
+                 *本接口（DescribeClusterInstanceGrps）用于查询实例组信息。 该接口已废弃，推荐使用DescribeClusterInstanceGroups
                  * @param req DescribeClusterInstanceGrpsRequest
                  * @return DescribeClusterInstanceGrpsOutcome
                  */
@@ -1150,7 +1150,7 @@ namespace TencentCloud
                 DescribeInstanceErrorLogsOutcomeCallable DescribeInstanceErrorLogsCallable(const Model::DescribeInstanceErrorLogsRequest& request);
 
                 /**
-                 *该接口(DescribeInstanceParams)查询实例参数
+                 *该接口(DescribeInstanceParams)查询实例参数列表
                  * @param req DescribeInstanceParamsRequest
                  * @return DescribeInstanceParamsOutcome
                  */

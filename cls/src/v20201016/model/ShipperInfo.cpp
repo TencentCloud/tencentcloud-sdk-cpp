@@ -39,7 +39,8 @@ ShipperInfo::ShipperInfo() :
     m_endTimeHasBeenSet(false),
     m_progressHasBeenSet(false),
     m_remainTimeHasBeenSet(false),
-    m_historyStatusHasBeenSet(false)
+    m_historyStatusHasBeenSet(false),
+    m_storageTypeHasBeenSet(false)
 {
 }
 
@@ -262,6 +263,16 @@ CoreInternalOutcome ShipperInfo::Deserialize(const rapidjson::Value &value)
         m_historyStatusHasBeenSet = true;
     }
 
+    if (value.HasMember("StorageType") && !value["StorageType"].IsNull())
+    {
+        if (!value["StorageType"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `ShipperInfo.StorageType` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_storageType = string(value["StorageType"].GetString());
+        m_storageTypeHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -428,6 +439,14 @@ void ShipperInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Document::All
         string key = "HistoryStatus";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_historyStatus, allocator);
+    }
+
+    if (m_storageTypeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "StorageType";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_storageType.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -735,5 +754,21 @@ void ShipperInfo::SetHistoryStatus(const int64_t& _historyStatus)
 bool ShipperInfo::HistoryStatusHasBeenSet() const
 {
     return m_historyStatusHasBeenSet;
+}
+
+string ShipperInfo::GetStorageType() const
+{
+    return m_storageType;
+}
+
+void ShipperInfo::SetStorageType(const string& _storageType)
+{
+    m_storageType = _storageType;
+    m_storageTypeHasBeenSet = true;
+}
+
+bool ShipperInfo::StorageTypeHasBeenSet() const
+{
+    return m_storageTypeHasBeenSet;
 }
 

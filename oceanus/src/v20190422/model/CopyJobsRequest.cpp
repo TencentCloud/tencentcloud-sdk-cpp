@@ -24,7 +24,8 @@ using namespace std;
 
 CopyJobsRequest::CopyJobsRequest() :
     m_jobItemsHasBeenSet(false),
-    m_workSpaceIdHasBeenSet(false)
+    m_workSpaceIdHasBeenSet(false),
+    m_targetWorkspaceIdHasBeenSet(false)
 {
 }
 
@@ -56,6 +57,14 @@ string CopyJobsRequest::ToJsonString() const
         string key = "WorkSpaceId";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_workSpaceId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_targetWorkspaceIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "TargetWorkspaceId";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_targetWorkspaceId.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -96,6 +105,22 @@ void CopyJobsRequest::SetWorkSpaceId(const string& _workSpaceId)
 bool CopyJobsRequest::WorkSpaceIdHasBeenSet() const
 {
     return m_workSpaceIdHasBeenSet;
+}
+
+string CopyJobsRequest::GetTargetWorkspaceId() const
+{
+    return m_targetWorkspaceId;
+}
+
+void CopyJobsRequest::SetTargetWorkspaceId(const string& _targetWorkspaceId)
+{
+    m_targetWorkspaceId = _targetWorkspaceId;
+    m_targetWorkspaceIdHasBeenSet = true;
+}
+
+bool CopyJobsRequest::TargetWorkspaceIdHasBeenSet() const
+{
+    return m_targetWorkspaceIdHasBeenSet;
 }
 
 

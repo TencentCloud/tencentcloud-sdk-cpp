@@ -14,21 +14,21 @@
  * limitations under the License.
  */
 
-#include <tencentcloud/ssl/v20191205/model/HostCertificateResponse.h>
+#include <tencentcloud/trocket/v20230308/model/CreateMQTTInstanceResponse.h>
 #include <tencentcloud/core/utils/rapidjson/document.h>
 #include <tencentcloud/core/utils/rapidjson/writer.h>
 #include <tencentcloud/core/utils/rapidjson/stringbuffer.h>
 
 using TencentCloud::CoreInternalOutcome;
-using namespace TencentCloud::Ssl::V20191205::Model;
+using namespace TencentCloud::Trocket::V20230308::Model;
 using namespace std;
 
-HostCertificateResponse::HostCertificateResponse() :
-    m_certHostingInfoHasBeenSet(false)
+CreateMQTTInstanceResponse::CreateMQTTInstanceResponse() :
+    m_instanceIdHasBeenSet(false)
 {
 }
 
-CoreInternalOutcome HostCertificateResponse::Deserialize(const string &payload)
+CoreInternalOutcome CreateMQTTInstanceResponse::Deserialize(const string &payload)
 {
     rapidjson::Document d;
     d.Parse(payload.c_str());
@@ -62,40 +62,32 @@ CoreInternalOutcome HostCertificateResponse::Deserialize(const string &payload)
     }
 
 
-    if (rsp.HasMember("CertHostingInfo") && !rsp["CertHostingInfo"].IsNull())
+    if (rsp.HasMember("InstanceId") && !rsp["InstanceId"].IsNull())
     {
-        if (!rsp["CertHostingInfo"].IsObject())
+        if (!rsp["InstanceId"].IsString())
         {
-            return CoreInternalOutcome(Core::Error("response `CertHostingInfo` is not object type").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `InstanceId` IsString=false incorrectly").SetRequestId(requestId));
         }
-
-        CoreInternalOutcome outcome = m_certHostingInfo.Deserialize(rsp["CertHostingInfo"]);
-        if (!outcome.IsSuccess())
-        {
-            outcome.GetError().SetRequestId(requestId);
-            return outcome;
-        }
-
-        m_certHostingInfoHasBeenSet = true;
+        m_instanceId = string(rsp["InstanceId"].GetString());
+        m_instanceIdHasBeenSet = true;
     }
 
 
     return CoreInternalOutcome(true);
 }
 
-string HostCertificateResponse::ToJsonString() const
+string CreateMQTTInstanceResponse::ToJsonString() const
 {
     rapidjson::Document value;
     value.SetObject();
     rapidjson::Document::AllocatorType& allocator = value.GetAllocator();
 
-    if (m_certHostingInfoHasBeenSet)
+    if (m_instanceIdHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "CertHostingInfo";
+        string key = "InstanceId";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
-        m_certHostingInfo.ToJsonObject(value[key.c_str()], allocator);
+        value.AddMember(iKey, rapidjson::Value(m_instanceId.c_str(), allocator).Move(), allocator);
     }
 
     rapidjson::Value iKey(rapidjson::kStringType);
@@ -110,14 +102,14 @@ string HostCertificateResponse::ToJsonString() const
 }
 
 
-CertHostingInfo HostCertificateResponse::GetCertHostingInfo() const
+string CreateMQTTInstanceResponse::GetInstanceId() const
 {
-    return m_certHostingInfo;
+    return m_instanceId;
 }
 
-bool HostCertificateResponse::CertHostingInfoHasBeenSet() const
+bool CreateMQTTInstanceResponse::InstanceIdHasBeenSet() const
 {
-    return m_certHostingInfoHasBeenSet;
+    return m_instanceIdHasBeenSet;
 }
 
 
