@@ -22,7 +22,8 @@
 using namespace TencentCloud::Live::V20180801::Model;
 using namespace std;
 
-DescribeLiveTranscodeTemplatesRequest::DescribeLiveTranscodeTemplatesRequest()
+DescribeLiveTranscodeTemplatesRequest::DescribeLiveTranscodeTemplatesRequest() :
+    m_templateTypeHasBeenSet(false)
 {
 }
 
@@ -33,6 +34,14 @@ string DescribeLiveTranscodeTemplatesRequest::ToJsonString() const
     rapidjson::Document::AllocatorType& allocator = d.GetAllocator();
 
 
+    if (m_templateTypeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "TemplateType";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_templateType, allocator);
+    }
+
 
     rapidjson::StringBuffer buffer;
     rapidjson::Writer<rapidjson::StringBuffer> writer(buffer);
@@ -40,5 +49,21 @@ string DescribeLiveTranscodeTemplatesRequest::ToJsonString() const
     return buffer.GetString();
 }
 
+
+int64_t DescribeLiveTranscodeTemplatesRequest::GetTemplateType() const
+{
+    return m_templateType;
+}
+
+void DescribeLiveTranscodeTemplatesRequest::SetTemplateType(const int64_t& _templateType)
+{
+    m_templateType = _templateType;
+    m_templateTypeHasBeenSet = true;
+}
+
+bool DescribeLiveTranscodeTemplatesRequest::TemplateTypeHasBeenSet() const
+{
+    return m_templateTypeHasBeenSet;
+}
 
 

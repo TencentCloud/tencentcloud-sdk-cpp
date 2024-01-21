@@ -409,6 +409,7 @@ set(wedata_public_header_model
   include/tencentcloud/wedata/v20210820/model/DescribeProjectRequest.h
   include/tencentcloud/wedata/v20210820/model/CreateIntegrationTaskResponse.h
   include/tencentcloud/wedata/v20210820/model/DescribeIntegrationTasksResponse.h
+  include/tencentcloud/wedata/v20210820/model/DeleteProjectUsersResponse.h
   include/tencentcloud/wedata/v20210820/model/DescribeAlarmReceiverRequest.h
   include/tencentcloud/wedata/v20210820/model/ColumnMeta.h
   include/tencentcloud/wedata/v20210820/model/SchedulerTaskInstanceInfo.h
@@ -566,6 +567,7 @@ set(wedata_public_header_model
   include/tencentcloud/wedata/v20210820/model/AdhocRecord.h
   include/tencentcloud/wedata/v20210820/model/OperateResult.h
   include/tencentcloud/wedata/v20210820/model/TriggerDsEventResponse.h
+  include/tencentcloud/wedata/v20210820/model/EventBatchCaseDTO.h
   include/tencentcloud/wedata/v20210820/model/CreateTaskRequest.h
   include/tencentcloud/wedata/v20210820/model/DescribeDatabaseMetasRequest.h
   include/tencentcloud/wedata/v20210820/model/SearchColumnDocVO.h
@@ -921,7 +923,7 @@ set(wedata_public_header_model
   include/tencentcloud/wedata/v20210820/model/OrderField.h
   include/tencentcloud/wedata/v20210820/model/TaskTypeDsVO.h
   include/tencentcloud/wedata/v20210820/model/BatchSuspendIntegrationTasksResponse.h
-  include/tencentcloud/wedata/v20210820/model/EventBatchCaseDTO.h
+  include/tencentcloud/wedata/v20210820/model/DeleteProjectUsersRequest.h
   include/tencentcloud/wedata/v20210820/model/DescribeWorkflowExecuteByIdRequest.h
   include/tencentcloud/wedata/v20210820/model/WorkflowExtOpsDtoPage.h
   include/tencentcloud/wedata/v20210820/model/RegisterEventResponse.h
@@ -1334,6 +1336,7 @@ set(wedata_src
   src/v20210820/model/DescribeProjectRequest.cpp
   src/v20210820/model/CreateIntegrationTaskResponse.cpp
   src/v20210820/model/DescribeIntegrationTasksResponse.cpp
+  src/v20210820/model/DeleteProjectUsersResponse.cpp
   src/v20210820/model/DescribeAlarmReceiverRequest.cpp
   src/v20210820/model/ColumnMeta.cpp
   src/v20210820/model/SchedulerTaskInstanceInfo.cpp
@@ -1491,6 +1494,7 @@ set(wedata_src
   src/v20210820/model/AdhocRecord.cpp
   src/v20210820/model/OperateResult.cpp
   src/v20210820/model/TriggerDsEventResponse.cpp
+  src/v20210820/model/EventBatchCaseDTO.cpp
   src/v20210820/model/CreateTaskRequest.cpp
   src/v20210820/model/DescribeDatabaseMetasRequest.cpp
   src/v20210820/model/SearchColumnDocVO.cpp
@@ -1846,7 +1850,7 @@ set(wedata_src
   src/v20210820/model/OrderField.cpp
   src/v20210820/model/TaskTypeDsVO.cpp
   src/v20210820/model/BatchSuspendIntegrationTasksResponse.cpp
-  src/v20210820/model/EventBatchCaseDTO.cpp
+  src/v20210820/model/DeleteProjectUsersRequest.cpp
   src/v20210820/model/DescribeWorkflowExecuteByIdRequest.cpp
   src/v20210820/model/WorkflowExtOpsDtoPage.cpp
   src/v20210820/model/RegisterEventResponse.cpp

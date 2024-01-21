@@ -42,7 +42,44 @@ namespace TencentCloud
                     std::string ToJsonString() const;
 
 
+                    /**
+                     * 获取转码模板类型，默认0。
+0：普通转码模板。
+1：自适应码率转码模板。
+                     * @return TemplateType 转码模板类型，默认0。
+0：普通转码模板。
+1：自适应码率转码模板。
+                     * 
+                     */
+                    int64_t GetTemplateType() const;
+
+                    /**
+                     * 设置转码模板类型，默认0。
+0：普通转码模板。
+1：自适应码率转码模板。
+                     * @param _templateType 转码模板类型，默认0。
+0：普通转码模板。
+1：自适应码率转码模板。
+                     * 
+                     */
+                    void SetTemplateType(const int64_t& _templateType);
+
+                    /**
+                     * 判断参数 TemplateType 是否已赋值
+                     * @return TemplateType 是否已赋值
+                     * 
+                     */
+                    bool TemplateTypeHasBeenSet() const;
+
                 private:
+
+                    /**
+                     * 转码模板类型，默认0。
+0：普通转码模板。
+1：自适应码率转码模板。
+                     */
+                    int64_t m_templateType;
+                    bool m_templateTypeHasBeenSet;
 
                 };
             }

@@ -146,7 +146,9 @@ namespace TencentCloud
                 CreateCameraStateOutcomeCallable CreateCameraStateCallable(const Model::CreateCameraStateRequest& request);
 
                 /**
-                 *场内抓拍上报接口
+                 *优mall产品下线
+
+场内抓拍上报接口
                  * @param req CreateCaptureRequest
                  * @return CreateCaptureOutcome
                  */

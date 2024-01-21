@@ -1,0 +1,194 @@
+/*
+ * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *    http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+
+#include <tencentcloud/trocket/v20230308/model/CreateMQTTUserRequest.h>
+#include <tencentcloud/core/utils/rapidjson/document.h>
+#include <tencentcloud/core/utils/rapidjson/writer.h>
+#include <tencentcloud/core/utils/rapidjson/stringbuffer.h>
+
+using namespace TencentCloud::Trocket::V20230308::Model;
+using namespace std;
+
+CreateMQTTUserRequest::CreateMQTTUserRequest() :
+    m_instanceIdHasBeenSet(false),
+    m_remarkHasBeenSet(false),
+    m_permWriteHasBeenSet(false),
+    m_permReadHasBeenSet(false),
+    m_usernameHasBeenSet(false),
+    m_passwordHasBeenSet(false)
+{
+}
+
+string CreateMQTTUserRequest::ToJsonString() const
+{
+    rapidjson::Document d;
+    d.SetObject();
+    rapidjson::Document::AllocatorType& allocator = d.GetAllocator();
+
+
+    if (m_instanceIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "InstanceId";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_instanceId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_remarkHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Remark";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_remark.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_permWriteHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "PermWrite";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_permWrite, allocator);
+    }
+
+    if (m_permReadHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "PermRead";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_permRead, allocator);
+    }
+
+    if (m_usernameHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Username";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_username.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_passwordHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Password";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_password.c_str(), allocator).Move(), allocator);
+    }
+
+
+    rapidjson::StringBuffer buffer;
+    rapidjson::Writer<rapidjson::StringBuffer> writer(buffer);
+    d.Accept(writer);
+    return buffer.GetString();
+}
+
+
+string CreateMQTTUserRequest::GetInstanceId() const
+{
+    return m_instanceId;
+}
+
+void CreateMQTTUserRequest::SetInstanceId(const string& _instanceId)
+{
+    m_instanceId = _instanceId;
+    m_instanceIdHasBeenSet = true;
+}
+
+bool CreateMQTTUserRequest::InstanceIdHasBeenSet() const
+{
+    return m_instanceIdHasBeenSet;
+}
+
+string CreateMQTTUserRequest::GetRemark() const
+{
+    return m_remark;
+}
+
+void CreateMQTTUserRequest::SetRemark(const string& _remark)
+{
+    m_remark = _remark;
+    m_remarkHasBeenSet = true;
+}
+
+bool CreateMQTTUserRequest::RemarkHasBeenSet() const
+{
+    return m_remarkHasBeenSet;
+}
+
+bool CreateMQTTUserRequest::GetPermWrite() const
+{
+    return m_permWrite;
+}
+
+void CreateMQTTUserRequest::SetPermWrite(const bool& _permWrite)
+{
+    m_permWrite = _permWrite;
+    m_permWriteHasBeenSet = true;
+}
+
+bool CreateMQTTUserRequest::PermWriteHasBeenSet() const
+{
+    return m_permWriteHasBeenSet;
+}
+
+bool CreateMQTTUserRequest::GetPermRead() const
+{
+    return m_permRead;
+}
+
+void CreateMQTTUserRequest::SetPermRead(const bool& _permRead)
+{
+    m_permRead = _permRead;
+    m_permReadHasBeenSet = true;
+}
+
+bool CreateMQTTUserRequest::PermReadHasBeenSet() const
+{
+    return m_permReadHasBeenSet;
+}
+
+string CreateMQTTUserRequest::GetUsername() const
+{
+    return m_username;
+}
+
+void CreateMQTTUserRequest::SetUsername(const string& _username)
+{
+    m_username = _username;
+    m_usernameHasBeenSet = true;
+}
+
+bool CreateMQTTUserRequest::UsernameHasBeenSet() const
+{
+    return m_usernameHasBeenSet;
+}
+
+string CreateMQTTUserRequest::GetPassword() const
+{
+    return m_password;
+}
+
+void CreateMQTTUserRequest::SetPassword(const string& _password)
+{
+    m_password = _password;
+    m_passwordHasBeenSet = true;
+}
+
+bool CreateMQTTUserRequest::PasswordHasBeenSet() const
+{
+    return m_passwordHasBeenSet;
+}
+
+

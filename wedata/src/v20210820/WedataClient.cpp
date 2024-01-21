@@ -2835,6 +2835,49 @@ WedataClient::DeleteProjectParamDsOutcomeCallable WedataClient::DeleteProjectPar
     return task->get_future();
 }
 
+WedataClient::DeleteProjectUsersOutcome WedataClient::DeleteProjectUsers(const DeleteProjectUsersRequest &request)
+{
+    auto outcome = MakeRequest(request, "DeleteProjectUsers");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DeleteProjectUsersResponse rsp = DeleteProjectUsersResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DeleteProjectUsersOutcome(rsp);
+        else
+            return DeleteProjectUsersOutcome(o.GetError());
+    }
+    else
+    {
+        return DeleteProjectUsersOutcome(outcome.GetError());
+    }
+}
+
+void WedataClient::DeleteProjectUsersAsync(const DeleteProjectUsersRequest& request, const DeleteProjectUsersAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DeleteProjectUsers(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+WedataClient::DeleteProjectUsersOutcomeCallable WedataClient::DeleteProjectUsersCallable(const DeleteProjectUsersRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DeleteProjectUsersOutcome()>>(
+        [this, request]()
+        {
+            return this->DeleteProjectUsers(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 WedataClient::DeleteResourceOutcome WedataClient::DeleteResource(const DeleteResourceRequest &request)
 {
     auto outcome = MakeRequest(request, "DeleteResource");

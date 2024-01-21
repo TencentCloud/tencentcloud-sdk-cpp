@@ -1502,6 +1502,49 @@ CsipClient::ModifyRiskCenterRiskStatusOutcomeCallable CsipClient::ModifyRiskCent
     return task->get_future();
 }
 
+CsipClient::ModifyRiskCenterScanTaskOutcome CsipClient::ModifyRiskCenterScanTask(const ModifyRiskCenterScanTaskRequest &request)
+{
+    auto outcome = MakeRequest(request, "ModifyRiskCenterScanTask");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ModifyRiskCenterScanTaskResponse rsp = ModifyRiskCenterScanTaskResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ModifyRiskCenterScanTaskOutcome(rsp);
+        else
+            return ModifyRiskCenterScanTaskOutcome(o.GetError());
+    }
+    else
+    {
+        return ModifyRiskCenterScanTaskOutcome(outcome.GetError());
+    }
+}
+
+void CsipClient::ModifyRiskCenterScanTaskAsync(const ModifyRiskCenterScanTaskRequest& request, const ModifyRiskCenterScanTaskAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->ModifyRiskCenterScanTask(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+CsipClient::ModifyRiskCenterScanTaskOutcomeCallable CsipClient::ModifyRiskCenterScanTaskCallable(const ModifyRiskCenterScanTaskRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<ModifyRiskCenterScanTaskOutcome()>>(
+        [this, request]()
+        {
+            return this->ModifyRiskCenterScanTask(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 CsipClient::StopRiskCenterTaskOutcome CsipClient::StopRiskCenterTask(const StopRiskCenterTaskRequest &request)
 {
     auto outcome = MakeRequest(request, "StopRiskCenterTask");

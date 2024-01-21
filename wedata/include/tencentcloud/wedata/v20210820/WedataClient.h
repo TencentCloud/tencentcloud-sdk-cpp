@@ -153,6 +153,8 @@
 #include <tencentcloud/wedata/v20210820/model/DeleteOfflineTaskResponse.h>
 #include <tencentcloud/wedata/v20210820/model/DeleteProjectParamDsRequest.h>
 #include <tencentcloud/wedata/v20210820/model/DeleteProjectParamDsResponse.h>
+#include <tencentcloud/wedata/v20210820/model/DeleteProjectUsersRequest.h>
+#include <tencentcloud/wedata/v20210820/model/DeleteProjectUsersResponse.h>
 #include <tencentcloud/wedata/v20210820/model/DeleteResourceRequest.h>
 #include <tencentcloud/wedata/v20210820/model/DeleteResourceResponse.h>
 #include <tencentcloud/wedata/v20210820/model/DeleteResourceFileRequest.h>
@@ -866,6 +868,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DeleteProjectParamDsResponse> DeleteProjectParamDsOutcome;
                 typedef std::future<DeleteProjectParamDsOutcome> DeleteProjectParamDsOutcomeCallable;
                 typedef std::function<void(const WedataClient*, const Model::DeleteProjectParamDsRequest&, DeleteProjectParamDsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteProjectParamDsAsyncHandler;
+                typedef Outcome<Core::Error, Model::DeleteProjectUsersResponse> DeleteProjectUsersOutcome;
+                typedef std::future<DeleteProjectUsersOutcome> DeleteProjectUsersOutcomeCallable;
+                typedef std::function<void(const WedataClient*, const Model::DeleteProjectUsersRequest&, DeleteProjectUsersOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteProjectUsersAsyncHandler;
                 typedef Outcome<Core::Error, Model::DeleteResourceResponse> DeleteResourceOutcome;
                 typedef std::future<DeleteResourceOutcome> DeleteResourceOutcomeCallable;
                 typedef std::function<void(const WedataClient*, const Model::DeleteResourceRequest&, DeleteResourceOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteResourceAsyncHandler;
@@ -2219,6 +2224,15 @@ namespace TencentCloud
                 DeleteProjectParamDsOutcome DeleteProjectParamDs(const Model::DeleteProjectParamDsRequest &request);
                 void DeleteProjectParamDsAsync(const Model::DeleteProjectParamDsRequest& request, const DeleteProjectParamDsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DeleteProjectParamDsOutcomeCallable DeleteProjectParamDsCallable(const Model::DeleteProjectParamDsRequest& request);
+
+                /**
+                 *删除项目用户
+                 * @param req DeleteProjectUsersRequest
+                 * @return DeleteProjectUsersOutcome
+                 */
+                DeleteProjectUsersOutcome DeleteProjectUsers(const Model::DeleteProjectUsersRequest &request);
+                void DeleteProjectUsersAsync(const Model::DeleteProjectUsersRequest& request, const DeleteProjectUsersAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DeleteProjectUsersOutcomeCallable DeleteProjectUsersCallable(const Model::DeleteProjectUsersRequest& request);
 
                 /**
                  *资源管理删除资源
