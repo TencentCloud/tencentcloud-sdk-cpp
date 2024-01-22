@@ -59,8 +59,8 @@ namespace TencentCloud
                     bool UploadUrlHasBeenSet() const;
 
                     /**
-                     * 获取上传heder
-                     * @return UploadHeaders 上传heder
+                     * 获取上传header
+                     * @return UploadHeaders 上传header
                      * 
                      */
                     std::vector<KVPair> GetUploadHeaders() const;
@@ -157,7 +157,7 @@ namespace TencentCloud
                     bool m_uploadUrlHasBeenSet;
 
                     /**
-                     * 上传heder
+                     * 上传header
                      */
                     std::vector<KVPair> m_uploadHeaders;
                     bool m_uploadHeadersHasBeenSet;

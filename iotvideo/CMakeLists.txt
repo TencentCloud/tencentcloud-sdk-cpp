@@ -197,6 +197,7 @@ set(iotvideo_public_header_model
   include/tencentcloud/iotvideo/v20211125/model/DescribeAIModelChannelResponse.h
   include/tencentcloud/iotvideo/v20211125/model/DescribeMessageDataStatsResponse.h
   include/tencentcloud/iotvideo/v20211125/model/DescribeDeviceActionHistoryRequest.h
+  include/tencentcloud/iotvideo/v20211125/model/DescribeCloudStorageMultiThumbnailResponse.h
   include/tencentcloud/iotvideo/v20211125/model/ModifyDataForwardRequest.h
   include/tencentcloud/iotvideo/v20211125/model/DescribeCloudStorageThumbnailRequest.h
   include/tencentcloud/iotvideo/v20211125/model/DescribeDevicesResponse.h
@@ -235,6 +236,7 @@ set(iotvideo_public_header_model
   include/tencentcloud/iotvideo/v20211125/model/CreateCOSCredentialsRequest.h
   include/tencentcloud/iotvideo/v20211125/model/DeviceCommLogItem.h
   include/tencentcloud/iotvideo/v20211125/model/DescribeBonusesResponse.h
+  include/tencentcloud/iotvideo/v20211125/model/DescribeCloudStorageMultiThumbnailRequest.h
   include/tencentcloud/iotvideo/v20211125/model/GenSingleDeviceSignatureOfPublicResponse.h
   include/tencentcloud/iotvideo/v20211125/model/DescribeDataForwardListResponse.h
   include/tencentcloud/iotvideo/v20211125/model/DeleteFirmwareResponse.h
@@ -774,6 +776,7 @@ set(iotvideo_src
   src/v20211125/model/DescribeAIModelChannelResponse.cpp
   src/v20211125/model/DescribeMessageDataStatsResponse.cpp
   src/v20211125/model/DescribeDeviceActionHistoryRequest.cpp
+  src/v20211125/model/DescribeCloudStorageMultiThumbnailResponse.cpp
   src/v20211125/model/ModifyDataForwardRequest.cpp
   src/v20211125/model/DescribeCloudStorageThumbnailRequest.cpp
   src/v20211125/model/DescribeDevicesResponse.cpp
@@ -812,6 +815,7 @@ set(iotvideo_src
   src/v20211125/model/CreateCOSCredentialsRequest.cpp
   src/v20211125/model/DeviceCommLogItem.cpp
   src/v20211125/model/DescribeBonusesResponse.cpp
+  src/v20211125/model/DescribeCloudStorageMultiThumbnailRequest.cpp
   src/v20211125/model/GenSingleDeviceSignatureOfPublicResponse.cpp
   src/v20211125/model/DescribeDataForwardListResponse.cpp
   src/v20211125/model/DeleteFirmwareResponse.cpp

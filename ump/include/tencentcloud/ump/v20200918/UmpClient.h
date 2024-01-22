@@ -126,7 +126,9 @@ namespace TencentCloud
 
 
                 /**
-                 *上报相机移动、遮挡等告警信息
+                 *优mall产品启动下线流程
+
+上报相机移动、遮挡等告警信息
 
 
                  * @param req CreateCameraAlertsRequest
@@ -137,7 +139,9 @@ namespace TencentCloud
                 CreateCameraAlertsOutcomeCallable CreateCameraAlertsCallable(const Model::CreateCameraAlertsRequest& request);
 
                 /**
-                 *上报当前场内所有相机的当前状态
+                 *优mall产品启动下线流程
+
+上报当前场内所有相机的当前状态
                  * @param req CreateCameraStateRequest
                  * @return CreateCameraStateOutcome
                  */
@@ -157,7 +161,9 @@ namespace TencentCloud
                 CreateCaptureOutcomeCallable CreateCaptureCallable(const Model::CreateCaptureRequest& request);
 
                 /**
-                 *集团广场的多经点位告警
+                 *优mall产品启动下线流程
+
+集团广场的多经点位告警
                  * @param req CreateMultiBizAlertRequest
                  * @return CreateMultiBizAlertOutcome
                  */
@@ -166,7 +172,9 @@ namespace TencentCloud
                 CreateMultiBizAlertOutcomeCallable CreateMultiBizAlertCallable(const Model::CreateMultiBizAlertRequest& request);
 
                 /**
-                 *上报所有进程监控信息
+                 *优mall产品启动下线流程
+
+上报所有进程监控信息
                  * @param req CreateProgramStateRequest
                  * @return CreateProgramStateOutcome
                  */
@@ -175,7 +183,9 @@ namespace TencentCloud
                 CreateProgramStateOutcomeCallable CreateProgramStateCallable(const Model::CreateProgramStateRequest& request);
 
                 /**
-                 *上报所有服务器硬件监控信息
+                 *优mall产品启动下线流程
+
+上报所有服务器硬件监控信息
                  * @param req CreateServerStateRequest
                  * @return CreateServerStateOutcome
                  */
@@ -184,7 +194,9 @@ namespace TencentCloud
                 CreateServerStateOutcomeCallable CreateServerStateCallable(const Model::CreateServerStateRequest& request);
 
                 /**
-                 *集团广场的多经点位消警
+                 *优mall产品启动下线流程
+
+集团广场的多经点位消警
                  * @param req DeleteMultiBizAlertRequest
                  * @return DeleteMultiBizAlertOutcome
                  */
@@ -193,7 +205,9 @@ namespace TencentCloud
                 DeleteMultiBizAlertOutcomeCallable DeleteMultiBizAlertCallable(const Model::DeleteMultiBizAlertRequest& request);
 
                 /**
-                 *删除集团广场对应的任务
+                 *优mall产品启动下线流程
+
+删除集团广场对应的任务
                  * @param req DeleteTaskRequest
                  * @return DeleteTaskOutcome
                  */
@@ -202,7 +216,9 @@ namespace TencentCloud
                 DeleteTaskOutcomeCallable DeleteTaskCallable(const Model::DeleteTaskRequest& request);
 
                 /**
-                 *获取集团广场对应的摄像头列表
+                 *优mall产品启动下线流程
+
+获取集团广场对应的摄像头列表
                  * @param req DescribeCamerasRequest
                  * @return DescribeCamerasOutcome
                  */
@@ -211,7 +227,9 @@ namespace TencentCloud
                 DescribeCamerasOutcomeCallable DescribeCamerasCallable(const Model::DescribeCamerasRequest& request);
 
                 /**
-                 *获取摄像头配置信息
+                 *优mall产品启动下线流程
+
+获取摄像头配置信息
 mac不为空返回指定相机配置
 mac为空返回对应GroupCode和MallId全量配置
                  * @param req DescribeConfigRequest
@@ -222,7 +240,9 @@ mac为空返回对应GroupCode和MallId全量配置
                 DescribeConfigOutcomeCallable DescribeConfigCallable(const Model::DescribeConfigRequest& request);
 
                 /**
-                 *实时获取底图接口
+                 *优mall产品启动下线流程
+
+实时获取底图接口
                  * @param req DescribeImageRequest
                  * @return DescribeImageOutcome
                  */
@@ -231,7 +251,9 @@ mac为空返回对应GroupCode和MallId全量配置
                 DescribeImageOutcomeCallable DescribeImageCallable(const Model::DescribeImageRequest& request);
 
                 /**
-                 *获取多经点位底图
+                 *优mall产品启动下线流程
+
+获取多经点位底图
                  * @param req DescribeMultiBizBaseImageRequest
                  * @return DescribeMultiBizBaseImageOutcome
                  */
@@ -240,7 +262,9 @@ mac为空返回对应GroupCode和MallId全量配置
                 DescribeMultiBizBaseImageOutcomeCallable DescribeMultiBizBaseImageCallable(const Model::DescribeMultiBizBaseImageRequest& request);
 
                 /**
-                 *查询集团广场对应的任务列表
+                 *优mall产品启动下线流程
+
+查询集团广场对应的任务列表
                  * @param req DescribeTasksRequest
                  * @return DescribeTasksOutcome
                  */
@@ -249,7 +273,9 @@ mac为空返回对应GroupCode和MallId全量配置
                 DescribeTasksOutcomeCallable DescribeTasksCallable(const Model::DescribeTasksRequest& request);
 
                 /**
-                 *获取集团广场的点位列表
+                 *优mall产品启动下线流程
+
+获取集团广场的点位列表
                  * @param req DescribeZonesRequest
                  * @return DescribeZonesOutcome
                  */
@@ -258,7 +284,9 @@ mac为空返回对应GroupCode和MallId全量配置
                 DescribeZonesOutcomeCallable DescribeZonesCallable(const Model::DescribeZonesRequest& request);
 
                 /**
-                 *集团广场的多经点位配置更新
+                 *优mall产品启动下线流程
+
+集团广场的多经点位配置更新
                  * @param req ModifyMultiBizConfigRequest
                  * @return ModifyMultiBizConfigOutcome
                  */
@@ -267,7 +295,9 @@ mac为空返回对应GroupCode和MallId全量配置
                 ModifyMultiBizConfigOutcomeCallable ModifyMultiBizConfigCallable(const Model::ModifyMultiBizConfigRequest& request);
 
                 /**
-                 *上报服务注册自身的服务地址作为回调地址, 用于信息回传。
+                 *优mall产品启动下线流程
+
+上报服务注册自身的服务地址作为回调地址, 用于信息回传。
                  * @param req ReportServiceRegisterRequest
                  * @return ReportServiceRegisterOutcome
                  */
@@ -276,7 +306,9 @@ mac为空返回对应GroupCode和MallId全量配置
                 ReportServiceRegisterOutcomeCallable ReportServiceRegisterCallable(const Model::ReportServiceRegisterRequest& request);
 
                 /**
-                 *以图搜图
+                 *优mall产品启动下线流程
+
+以图搜图
                  * @param req SearchImageRequest
                  * @return SearchImageOutcome
                  */

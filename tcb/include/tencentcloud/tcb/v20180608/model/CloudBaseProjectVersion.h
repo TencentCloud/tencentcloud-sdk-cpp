@@ -634,6 +634,181 @@ namespace TencentCloud
                      */
                     bool BuildPercentHasBeenSet() const;
 
+                    /**
+                     * 获取Uin
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return Uin Uin
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::string GetUin() const;
+
+                    /**
+                     * 设置Uin
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _uin Uin
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetUin(const std::string& _uin);
+
+                    /**
+                     * 判断参数 Uin 是否已赋值
+                     * @return Uin 是否已赋值
+                     * 
+                     */
+                    bool UinHasBeenSet() const;
+
+                    /**
+                     * 获取BuildFinishTime
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return BuildFinishTime BuildFinishTime
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::string GetBuildFinishTime() const;
+
+                    /**
+                     * 设置BuildFinishTime
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _buildFinishTime BuildFinishTime
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetBuildFinishTime(const std::string& _buildFinishTime);
+
+                    /**
+                     * 判断参数 BuildFinishTime 是否已赋值
+                     * @return BuildFinishTime 是否已赋值
+                     * 
+                     */
+                    bool BuildFinishTimeHasBeenSet() const;
+
+                    /**
+                     * 获取DeployFinishTime
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return DeployFinishTime DeployFinishTime
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::string GetDeployFinishTime() const;
+
+                    /**
+                     * 设置DeployFinishTime
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _deployFinishTime DeployFinishTime
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetDeployFinishTime(const std::string& _deployFinishTime);
+
+                    /**
+                     * 判断参数 DeployFinishTime 是否已赋值
+                     * @return DeployFinishTime 是否已赋值
+                     * 
+                     */
+                    bool DeployFinishTimeHasBeenSet() const;
+
+                    /**
+                     * 获取BuildId
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return BuildId BuildId
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::string GetBuildId() const;
+
+                    /**
+                     * 设置BuildId
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _buildId BuildId
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetBuildId(const std::string& _buildId);
+
+                    /**
+                     * 判断参数 BuildId 是否已赋值
+                     * @return BuildId 是否已赋值
+                     * 
+                     */
+                    bool BuildIdHasBeenSet() const;
+
+                    /**
+                     * 获取SourceUrl
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return SourceUrl SourceUrl
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::string GetSourceUrl() const;
+
+                    /**
+                     * 设置SourceUrl
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _sourceUrl SourceUrl
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetSourceUrl(const std::string& _sourceUrl);
+
+                    /**
+                     * 判断参数 SourceUrl 是否已赋值
+                     * @return SourceUrl 是否已赋值
+                     * 
+                     */
+                    bool SourceUrlHasBeenSet() const;
+
+                    /**
+                     * 获取FailReasonShort
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return FailReasonShort FailReasonShort
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::string GetFailReasonShort() const;
+
+                    /**
+                     * 设置FailReasonShort
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _failReasonShort FailReasonShort
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetFailReasonShort(const std::string& _failReasonShort);
+
+                    /**
+                     * 判断参数 FailReasonShort 是否已赋值
+                     * @return FailReasonShort 是否已赋值
+                     * 
+                     */
+                    bool FailReasonShortHasBeenSet() const;
+
+                    /**
+                     * 获取FirstInitRepo
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return FirstInitRepo FirstInitRepo
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::string GetFirstInitRepo() const;
+
+                    /**
+                     * 设置FirstInitRepo
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _firstInitRepo FirstInitRepo
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetFirstInitRepo(const std::string& _firstInitRepo);
+
+                    /**
+                     * 判断参数 FirstInitRepo 是否已赋值
+                     * @return FirstInitRepo 是否已赋值
+                     * 
+                     */
+                    bool FirstInitRepoHasBeenSet() const;
+
                 private:
 
                     /**
@@ -798,6 +973,55 @@ namespace TencentCloud
                      */
                     int64_t m_buildPercent;
                     bool m_buildPercentHasBeenSet;
+
+                    /**
+                     * Uin
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_uin;
+                    bool m_uinHasBeenSet;
+
+                    /**
+                     * BuildFinishTime
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_buildFinishTime;
+                    bool m_buildFinishTimeHasBeenSet;
+
+                    /**
+                     * DeployFinishTime
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_deployFinishTime;
+                    bool m_deployFinishTimeHasBeenSet;
+
+                    /**
+                     * BuildId
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_buildId;
+                    bool m_buildIdHasBeenSet;
+
+                    /**
+                     * SourceUrl
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_sourceUrl;
+                    bool m_sourceUrlHasBeenSet;
+
+                    /**
+                     * FailReasonShort
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_failReasonShort;
+                    bool m_failReasonShortHasBeenSet;
+
+                    /**
+                     * FirstInitRepo
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_firstInitRepo;
+                    bool m_firstInitRepoHasBeenSet;
 
                 };
             }

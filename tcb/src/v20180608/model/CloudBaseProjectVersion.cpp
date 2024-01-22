@@ -42,7 +42,14 @@ CloudBaseProjectVersion::CloudBaseProjectVersion() :
     m_failTypeHasBeenSet(false),
     m_repoUrlHasBeenSet(false),
     m_autoDeployOnCodeChangeHasBeenSet(false),
-    m_buildPercentHasBeenSet(false)
+    m_buildPercentHasBeenSet(false),
+    m_uinHasBeenSet(false),
+    m_buildFinishTimeHasBeenSet(false),
+    m_deployFinishTimeHasBeenSet(false),
+    m_buildIdHasBeenSet(false),
+    m_sourceUrlHasBeenSet(false),
+    m_failReasonShortHasBeenSet(false),
+    m_firstInitRepoHasBeenSet(false)
 {
 }
 
@@ -291,6 +298,76 @@ CoreInternalOutcome CloudBaseProjectVersion::Deserialize(const rapidjson::Value 
         m_buildPercentHasBeenSet = true;
     }
 
+    if (value.HasMember("Uin") && !value["Uin"].IsNull())
+    {
+        if (!value["Uin"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `CloudBaseProjectVersion.Uin` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_uin = string(value["Uin"].GetString());
+        m_uinHasBeenSet = true;
+    }
+
+    if (value.HasMember("BuildFinishTime") && !value["BuildFinishTime"].IsNull())
+    {
+        if (!value["BuildFinishTime"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `CloudBaseProjectVersion.BuildFinishTime` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_buildFinishTime = string(value["BuildFinishTime"].GetString());
+        m_buildFinishTimeHasBeenSet = true;
+    }
+
+    if (value.HasMember("DeployFinishTime") && !value["DeployFinishTime"].IsNull())
+    {
+        if (!value["DeployFinishTime"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `CloudBaseProjectVersion.DeployFinishTime` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_deployFinishTime = string(value["DeployFinishTime"].GetString());
+        m_deployFinishTimeHasBeenSet = true;
+    }
+
+    if (value.HasMember("BuildId") && !value["BuildId"].IsNull())
+    {
+        if (!value["BuildId"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `CloudBaseProjectVersion.BuildId` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_buildId = string(value["BuildId"].GetString());
+        m_buildIdHasBeenSet = true;
+    }
+
+    if (value.HasMember("SourceUrl") && !value["SourceUrl"].IsNull())
+    {
+        if (!value["SourceUrl"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `CloudBaseProjectVersion.SourceUrl` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_sourceUrl = string(value["SourceUrl"].GetString());
+        m_sourceUrlHasBeenSet = true;
+    }
+
+    if (value.HasMember("FailReasonShort") && !value["FailReasonShort"].IsNull())
+    {
+        if (!value["FailReasonShort"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `CloudBaseProjectVersion.FailReasonShort` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_failReasonShort = string(value["FailReasonShort"].GetString());
+        m_failReasonShortHasBeenSet = true;
+    }
+
+    if (value.HasMember("FirstInitRepo") && !value["FirstInitRepo"].IsNull())
+    {
+        if (!value["FirstInitRepo"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `CloudBaseProjectVersion.FirstInitRepo` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_firstInitRepo = string(value["FirstInitRepo"].GetString());
+        m_firstInitRepoHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -485,6 +562,62 @@ void CloudBaseProjectVersion::ToJsonObject(rapidjson::Value &value, rapidjson::D
         string key = "BuildPercent";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_buildPercent, allocator);
+    }
+
+    if (m_uinHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Uin";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_uin.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_buildFinishTimeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "BuildFinishTime";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_buildFinishTime.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_deployFinishTimeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "DeployFinishTime";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_deployFinishTime.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_buildIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "BuildId";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_buildId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_sourceUrlHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "SourceUrl";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_sourceUrl.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_failReasonShortHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "FailReasonShort";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_failReasonShort.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_firstInitRepoHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "FirstInitRepo";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_firstInitRepo.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -840,5 +973,117 @@ void CloudBaseProjectVersion::SetBuildPercent(const int64_t& _buildPercent)
 bool CloudBaseProjectVersion::BuildPercentHasBeenSet() const
 {
     return m_buildPercentHasBeenSet;
+}
+
+string CloudBaseProjectVersion::GetUin() const
+{
+    return m_uin;
+}
+
+void CloudBaseProjectVersion::SetUin(const string& _uin)
+{
+    m_uin = _uin;
+    m_uinHasBeenSet = true;
+}
+
+bool CloudBaseProjectVersion::UinHasBeenSet() const
+{
+    return m_uinHasBeenSet;
+}
+
+string CloudBaseProjectVersion::GetBuildFinishTime() const
+{
+    return m_buildFinishTime;
+}
+
+void CloudBaseProjectVersion::SetBuildFinishTime(const string& _buildFinishTime)
+{
+    m_buildFinishTime = _buildFinishTime;
+    m_buildFinishTimeHasBeenSet = true;
+}
+
+bool CloudBaseProjectVersion::BuildFinishTimeHasBeenSet() const
+{
+    return m_buildFinishTimeHasBeenSet;
+}
+
+string CloudBaseProjectVersion::GetDeployFinishTime() const
+{
+    return m_deployFinishTime;
+}
+
+void CloudBaseProjectVersion::SetDeployFinishTime(const string& _deployFinishTime)
+{
+    m_deployFinishTime = _deployFinishTime;
+    m_deployFinishTimeHasBeenSet = true;
+}
+
+bool CloudBaseProjectVersion::DeployFinishTimeHasBeenSet() const
+{
+    return m_deployFinishTimeHasBeenSet;
+}
+
+string CloudBaseProjectVersion::GetBuildId() const
+{
+    return m_buildId;
+}
+
+void CloudBaseProjectVersion::SetBuildId(const string& _buildId)
+{
+    m_buildId = _buildId;
+    m_buildIdHasBeenSet = true;
+}
+
+bool CloudBaseProjectVersion::BuildIdHasBeenSet() const
+{
+    return m_buildIdHasBeenSet;
+}
+
+string CloudBaseProjectVersion::GetSourceUrl() const
+{
+    return m_sourceUrl;
+}
+
+void CloudBaseProjectVersion::SetSourceUrl(const string& _sourceUrl)
+{
+    m_sourceUrl = _sourceUrl;
+    m_sourceUrlHasBeenSet = true;
+}
+
+bool CloudBaseProjectVersion::SourceUrlHasBeenSet() const
+{
+    return m_sourceUrlHasBeenSet;
+}
+
+string CloudBaseProjectVersion::GetFailReasonShort() const
+{
+    return m_failReasonShort;
+}
+
+void CloudBaseProjectVersion::SetFailReasonShort(const string& _failReasonShort)
+{
+    m_failReasonShort = _failReasonShort;
+    m_failReasonShortHasBeenSet = true;
+}
+
+bool CloudBaseProjectVersion::FailReasonShortHasBeenSet() const
+{
+    return m_failReasonShortHasBeenSet;
+}
+
+string CloudBaseProjectVersion::GetFirstInitRepo() const
+{
+    return m_firstInitRepo;
+}
+
+void CloudBaseProjectVersion::SetFirstInitRepo(const string& _firstInitRepo)
+{
+    m_firstInitRepo = _firstInitRepo;
+    m_firstInitRepoHasBeenSet = true;
+}
+
+bool CloudBaseProjectVersion::FirstInitRepoHasBeenSet() const
+{
+    return m_firstInitRepoHasBeenSet;
 }
 

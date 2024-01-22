@@ -783,6 +783,31 @@ namespace TencentCloud
                      */
                     bool RefundMapHasBeenSet() const;
 
+                    /**
+                     * 获取子产品名称
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return SubGoodsName 子产品名称
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::string GetSubGoodsName() const;
+
+                    /**
+                     * 设置子产品名称
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _subGoodsName 子产品名称
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetSubGoodsName(const std::string& _subGoodsName);
+
+                    /**
+                     * 判断参数 SubGoodsName 是否已赋值
+                     * @return SubGoodsName 是否已赋值
+                     * 
+                     */
+                    bool SubGoodsNameHasBeenSet() const;
+
                 private:
 
                     /**
@@ -990,6 +1015,13 @@ namespace TencentCloud
                      */
                     std::vector<RefundMap> m_refundMap;
                     bool m_refundMapHasBeenSet;
+
+                    /**
+                     * 子产品名称
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_subGoodsName;
+                    bool m_subGoodsNameHasBeenSet;
 
                 };
             }

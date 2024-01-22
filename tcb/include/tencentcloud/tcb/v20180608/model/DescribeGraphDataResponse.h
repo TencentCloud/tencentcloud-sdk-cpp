@@ -100,8 +100,8 @@ namespace TencentCloud
                     bool PeriodHasBeenSet() const;
 
                     /**
-                     * 获取有效的监控数据, 每个有效监控数据的上报时间可以从时间数组中的对应位置上获取到.
-                     * @return Values 有效的监控数据, 每个有效监控数据的上报时间可以从时间数组中的对应位置上获取到.
+                     * 获取有效的监控数据, 每个有效监控数据的上报时间可以从时间数组中的对应位置上获取到。
+                     * @return Values 有效的监控数据, 每个有效监控数据的上报时间可以从时间数组中的对应位置上获取到。
                      * 
                      */
                     std::vector<double> GetValues() const;
@@ -154,7 +154,7 @@ namespace TencentCloud
                     bool m_periodHasBeenSet;
 
                     /**
-                     * 有效的监控数据, 每个有效监控数据的上报时间可以从时间数组中的对应位置上获取到.
+                     * 有效的监控数据, 每个有效监控数据的上报时间可以从时间数组中的对应位置上获取到。
                      */
                     std::vector<double> m_values;
                     bool m_valuesHasBeenSet;

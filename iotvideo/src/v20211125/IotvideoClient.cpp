@@ -1631,6 +1631,49 @@ IotvideoClient::DescribeCloudStorageEventsOutcomeCallable IotvideoClient::Descri
     return task->get_future();
 }
 
+IotvideoClient::DescribeCloudStorageMultiThumbnailOutcome IotvideoClient::DescribeCloudStorageMultiThumbnail(const DescribeCloudStorageMultiThumbnailRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeCloudStorageMultiThumbnail");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeCloudStorageMultiThumbnailResponse rsp = DescribeCloudStorageMultiThumbnailResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeCloudStorageMultiThumbnailOutcome(rsp);
+        else
+            return DescribeCloudStorageMultiThumbnailOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeCloudStorageMultiThumbnailOutcome(outcome.GetError());
+    }
+}
+
+void IotvideoClient::DescribeCloudStorageMultiThumbnailAsync(const DescribeCloudStorageMultiThumbnailRequest& request, const DescribeCloudStorageMultiThumbnailAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeCloudStorageMultiThumbnail(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+IotvideoClient::DescribeCloudStorageMultiThumbnailOutcomeCallable IotvideoClient::DescribeCloudStorageMultiThumbnailCallable(const DescribeCloudStorageMultiThumbnailRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeCloudStorageMultiThumbnailOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeCloudStorageMultiThumbnail(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 IotvideoClient::DescribeCloudStorageOrderOutcome IotvideoClient::DescribeCloudStorageOrder(const DescribeCloudStorageOrderRequest &request)
 {
     auto outcome = MakeRequest(request, "DescribeCloudStorageOrder");

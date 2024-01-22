@@ -50,7 +50,8 @@ AgentDealNewElem::AgentDealNewElem() :
     m_paymentMethodHasBeenSet(false),
     m_updateTimeHasBeenSet(false),
     m_resourceIdsHasBeenSet(false),
-    m_refundMapHasBeenSet(false)
+    m_refundMapHasBeenSet(false),
+    m_subGoodsNameHasBeenSet(false)
 {
 }
 
@@ -389,6 +390,16 @@ CoreInternalOutcome AgentDealNewElem::Deserialize(const rapidjson::Value &value)
         m_refundMapHasBeenSet = true;
     }
 
+    if (value.HasMember("SubGoodsName") && !value["SubGoodsName"].IsNull())
+    {
+        if (!value["SubGoodsName"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `AgentDealNewElem.SubGoodsName` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_subGoodsName = string(value["SubGoodsName"].GetString());
+        m_subGoodsNameHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -654,6 +665,14 @@ void AgentDealNewElem::ToJsonObject(rapidjson::Value &value, rapidjson::Document
             value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
             (*itr).ToJsonObject(value[key.c_str()][i], allocator);
         }
+    }
+
+    if (m_subGoodsNameHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "SubGoodsName";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_subGoodsName.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -1137,5 +1156,21 @@ void AgentDealNewElem::SetRefundMap(const vector<RefundMap>& _refundMap)
 bool AgentDealNewElem::RefundMapHasBeenSet() const
 {
     return m_refundMapHasBeenSet;
+}
+
+string AgentDealNewElem::GetSubGoodsName() const
+{
+    return m_subGoodsName;
+}
+
+void AgentDealNewElem::SetSubGoodsName(const string& _subGoodsName)
+{
+    m_subGoodsName = _subGoodsName;
+    m_subGoodsNameHasBeenSet = true;
+}
+
+bool AgentDealNewElem::SubGoodsNameHasBeenSet() const
+{
+    return m_subGoodsNameHasBeenSet;
 }
 

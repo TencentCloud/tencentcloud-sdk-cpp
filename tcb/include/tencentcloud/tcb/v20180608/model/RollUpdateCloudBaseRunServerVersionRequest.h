@@ -279,14 +279,18 @@ namespace TencentCloud
 
                     /**
                      * 获取策略类型
+cpu/mem
                      * @return PolicyType 策略类型
+cpu/mem
                      * 
                      */
                     std::string GetPolicyType() const;
 
                     /**
                      * 设置策略类型
+cpu/mem
                      * @param _policyType 策略类型
+cpu/mem
                      * 
                      */
                     void SetPolicyType(const std::string& _policyType);
@@ -830,6 +834,7 @@ namespace TencentCloud
 
                     /**
                      * 策略类型
+cpu/mem
                      */
                     std::string m_policyType;
                     bool m_policyTypeHasBeenSet;

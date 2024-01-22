@@ -23,8 +23,6 @@
 #include <tencentcloud/core/Credential.h>
 #include <tencentcloud/core/profile/ClientProfile.h>
 #include <tencentcloud/core/AsyncCallerContext.h>
-#include <tencentcloud/rum/v20210622/model/CreateLogExportRequest.h>
-#include <tencentcloud/rum/v20210622/model/CreateLogExportResponse.h>
 #include <tencentcloud/rum/v20210622/model/CreateProjectRequest.h>
 #include <tencentcloud/rum/v20210622/model/CreateProjectResponse.h>
 #include <tencentcloud/rum/v20210622/model/CreateReleaseFileRequest.h>
@@ -37,8 +35,6 @@
 #include <tencentcloud/rum/v20210622/model/CreateWhitelistResponse.h>
 #include <tencentcloud/rum/v20210622/model/DeleteInstanceRequest.h>
 #include <tencentcloud/rum/v20210622/model/DeleteInstanceResponse.h>
-#include <tencentcloud/rum/v20210622/model/DeleteLogExportRequest.h>
-#include <tencentcloud/rum/v20210622/model/DeleteLogExportResponse.h>
 #include <tencentcloud/rum/v20210622/model/DeleteProjectRequest.h>
 #include <tencentcloud/rum/v20210622/model/DeleteProjectResponse.h>
 #include <tencentcloud/rum/v20210622/model/DeleteReleaseFileRequest.h>
@@ -93,10 +89,6 @@
 #include <tencentcloud/rum/v20210622/model/DescribeDataWebVitalsPageResponse.h>
 #include <tencentcloud/rum/v20210622/model/DescribeErrorRequest.h>
 #include <tencentcloud/rum/v20210622/model/DescribeErrorResponse.h>
-#include <tencentcloud/rum/v20210622/model/DescribeLogExportsRequest.h>
-#include <tencentcloud/rum/v20210622/model/DescribeLogExportsResponse.h>
-#include <tencentcloud/rum/v20210622/model/DescribeLogListRequest.h>
-#include <tencentcloud/rum/v20210622/model/DescribeLogListResponse.h>
 #include <tencentcloud/rum/v20210622/model/DescribeProjectLimitsRequest.h>
 #include <tencentcloud/rum/v20210622/model/DescribeProjectLimitsResponse.h>
 #include <tencentcloud/rum/v20210622/model/DescribeProjectsRequest.h>
@@ -155,9 +147,6 @@ namespace TencentCloud
                 RumClient(const Credential &credential, const std::string &region);
                 RumClient(const Credential &credential, const std::string &region, const ClientProfile &profile);
 
-                typedef Outcome<Core::Error, Model::CreateLogExportResponse> CreateLogExportOutcome;
-                typedef std::future<CreateLogExportOutcome> CreateLogExportOutcomeCallable;
-                typedef std::function<void(const RumClient*, const Model::CreateLogExportRequest&, CreateLogExportOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateLogExportAsyncHandler;
                 typedef Outcome<Core::Error, Model::CreateProjectResponse> CreateProjectOutcome;
                 typedef std::future<CreateProjectOutcome> CreateProjectOutcomeCallable;
                 typedef std::function<void(const RumClient*, const Model::CreateProjectRequest&, CreateProjectOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateProjectAsyncHandler;
@@ -176,9 +165,6 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DeleteInstanceResponse> DeleteInstanceOutcome;
                 typedef std::future<DeleteInstanceOutcome> DeleteInstanceOutcomeCallable;
                 typedef std::function<void(const RumClient*, const Model::DeleteInstanceRequest&, DeleteInstanceOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteInstanceAsyncHandler;
-                typedef Outcome<Core::Error, Model::DeleteLogExportResponse> DeleteLogExportOutcome;
-                typedef std::future<DeleteLogExportOutcome> DeleteLogExportOutcomeCallable;
-                typedef std::function<void(const RumClient*, const Model::DeleteLogExportRequest&, DeleteLogExportOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteLogExportAsyncHandler;
                 typedef Outcome<Core::Error, Model::DeleteProjectResponse> DeleteProjectOutcome;
                 typedef std::future<DeleteProjectOutcome> DeleteProjectOutcomeCallable;
                 typedef std::function<void(const RumClient*, const Model::DeleteProjectRequest&, DeleteProjectOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteProjectAsyncHandler;
@@ -260,12 +246,6 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeErrorResponse> DescribeErrorOutcome;
                 typedef std::future<DescribeErrorOutcome> DescribeErrorOutcomeCallable;
                 typedef std::function<void(const RumClient*, const Model::DescribeErrorRequest&, DescribeErrorOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeErrorAsyncHandler;
-                typedef Outcome<Core::Error, Model::DescribeLogExportsResponse> DescribeLogExportsOutcome;
-                typedef std::future<DescribeLogExportsOutcome> DescribeLogExportsOutcomeCallable;
-                typedef std::function<void(const RumClient*, const Model::DescribeLogExportsRequest&, DescribeLogExportsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeLogExportsAsyncHandler;
-                typedef Outcome<Core::Error, Model::DescribeLogListResponse> DescribeLogListOutcome;
-                typedef std::future<DescribeLogListOutcome> DescribeLogListOutcomeCallable;
-                typedef std::function<void(const RumClient*, const Model::DescribeLogListRequest&, DescribeLogListOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeLogListAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeProjectLimitsResponse> DescribeProjectLimitsOutcome;
                 typedef std::future<DescribeProjectLimitsOutcome> DescribeProjectLimitsOutcomeCallable;
                 typedef std::function<void(const RumClient*, const Model::DescribeProjectLimitsRequest&, DescribeProjectLimitsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeProjectLimitsAsyncHandler;
@@ -336,19 +316,6 @@ namespace TencentCloud
 
 
                 /**
-                 *接口请求域名： rum.tencentcloudapi.com 。
-
-本接口用于创建日志下载任务
-
-默认接口请求频率限制：20次/秒。
-                 * @param req CreateLogExportRequest
-                 * @return CreateLogExportOutcome
-                 */
-                CreateLogExportOutcome CreateLogExport(const Model::CreateLogExportRequest &request);
-                void CreateLogExportAsync(const Model::CreateLogExportRequest& request, const CreateLogExportAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
-                CreateLogExportOutcomeCallable CreateLogExportCallable(const Model::CreateLogExportRequest& request);
-
-                /**
                  *创建 RUM 应用（归属于某个团队）
                  * @param req CreateProjectRequest
                  * @return CreateProjectOutcome
@@ -401,19 +368,6 @@ namespace TencentCloud
                 DeleteInstanceOutcome DeleteInstance(const Model::DeleteInstanceRequest &request);
                 void DeleteInstanceAsync(const Model::DeleteInstanceRequest& request, const DeleteInstanceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DeleteInstanceOutcomeCallable DeleteInstanceCallable(const Model::DeleteInstanceRequest& request);
-
-                /**
-                 *接口请求域名： rum.tencentcloudapi.com 。
-
-本接口用于删除日志下载任务
-
-默认接口请求频率限制：20次/秒。
-                 * @param req DeleteLogExportRequest
-                 * @return DeleteLogExportOutcome
-                 */
-                DeleteLogExportOutcome DeleteLogExport(const Model::DeleteLogExportRequest &request);
-                void DeleteLogExportAsync(const Model::DeleteLogExportRequest& request, const DeleteLogExportAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
-                DeleteLogExportOutcomeCallable DeleteLogExportCallable(const Model::DeleteLogExportRequest& request);
 
                 /**
                  *删除给定的 rum 的项目
@@ -658,28 +612,6 @@ namespace TencentCloud
                 DescribeErrorOutcome DescribeError(const Model::DescribeErrorRequest &request);
                 void DescribeErrorAsync(const Model::DescribeErrorRequest& request, const DescribeErrorAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DescribeErrorOutcomeCallable DescribeErrorCallable(const Model::DescribeErrorRequest& request);
-
-                /**
-                 *接口请求域名： rum.tencentcloudapi.com 。
-
-本接口用于获取日志下载任务列表
-
-默认接口请求频率限制：20次/秒
-                 * @param req DescribeLogExportsRequest
-                 * @return DescribeLogExportsOutcome
-                 */
-                DescribeLogExportsOutcome DescribeLogExports(const Model::DescribeLogExportsRequest &request);
-                void DescribeLogExportsAsync(const Model::DescribeLogExportsRequest& request, const DescribeLogExportsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
-                DescribeLogExportsOutcomeCallable DescribeLogExportsCallable(const Model::DescribeLogExportsRequest& request);
-
-                /**
-                 *(已下线，请用DescribeRumLogList)
-                 * @param req DescribeLogListRequest
-                 * @return DescribeLogListOutcome
-                 */
-                DescribeLogListOutcome DescribeLogList(const Model::DescribeLogListRequest &request);
-                void DescribeLogListAsync(const Model::DescribeLogListRequest& request, const DescribeLogListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
-                DescribeLogListOutcomeCallable DescribeLogListCallable(const Model::DescribeLogListRequest& request);
 
                 /**
                  *获取应用上报抽样信息
