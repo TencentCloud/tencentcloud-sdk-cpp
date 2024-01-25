@@ -27,7 +27,8 @@ DeleteIpAccessControlRequest::DeleteIpAccessControlRequest() :
     m_itemsHasBeenSet(false),
     m_isIdHasBeenSet(false),
     m_deleteAllHasBeenSet(false),
-    m_sourceTypeHasBeenSet(false)
+    m_sourceTypeHasBeenSet(false),
+    m_actionTypeHasBeenSet(false)
 {
 }
 
@@ -81,6 +82,14 @@ string DeleteIpAccessControlRequest::ToJsonString() const
         string key = "SourceType";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_sourceType.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_actionTypeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ActionType";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_actionType, allocator);
     }
 
 
@@ -169,6 +178,22 @@ void DeleteIpAccessControlRequest::SetSourceType(const string& _sourceType)
 bool DeleteIpAccessControlRequest::SourceTypeHasBeenSet() const
 {
     return m_sourceTypeHasBeenSet;
+}
+
+uint64_t DeleteIpAccessControlRequest::GetActionType() const
+{
+    return m_actionType;
+}
+
+void DeleteIpAccessControlRequest::SetActionType(const uint64_t& _actionType)
+{
+    m_actionType = _actionType;
+    m_actionTypeHasBeenSet = true;
+}
+
+bool DeleteIpAccessControlRequest::ActionTypeHasBeenSet() const
+{
+    return m_actionTypeHasBeenSet;
 }
 
 

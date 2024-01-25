@@ -64,15 +64,15 @@ namespace TencentCloud
                     bool KeyIdHasBeenSet() const;
 
                     /**
-                     * 获取使用PublicKey加密的密文，Base64编码。密文长度不能超过256字节。
-                     * @return Ciphertext 使用PublicKey加密的密文，Base64编码。密文长度不能超过256字节。
+                     * 获取使用PublicKey加密的密文，Base64编码，原始密文格式需要为C1C3C2_ASN1。原始密文长度不能超过256字节。
+                     * @return Ciphertext 使用PublicKey加密的密文，Base64编码，原始密文格式需要为C1C3C2_ASN1。原始密文长度不能超过256字节。
                      * 
                      */
                     std::string GetCiphertext() const;
 
                     /**
-                     * 设置使用PublicKey加密的密文，Base64编码。密文长度不能超过256字节。
-                     * @param _ciphertext 使用PublicKey加密的密文，Base64编码。密文长度不能超过256字节。
+                     * 设置使用PublicKey加密的密文，Base64编码，原始密文格式需要为C1C3C2_ASN1。原始密文长度不能超过256字节。
+                     * @param _ciphertext 使用PublicKey加密的密文，Base64编码，原始密文格式需要为C1C3C2_ASN1。原始密文长度不能超过256字节。
                      * 
                      */
                     void SetCiphertext(const std::string& _ciphertext);
@@ -93,7 +93,7 @@ namespace TencentCloud
                     bool m_keyIdHasBeenSet;
 
                     /**
-                     * 使用PublicKey加密的密文，Base64编码。密文长度不能超过256字节。
+                     * 使用PublicKey加密的密文，Base64编码，原始密文格式需要为C1C3C2_ASN1。原始密文长度不能超过256字节。
                      */
                     std::string m_ciphertext;
                     bool m_ciphertextHasBeenSet;

@@ -50,7 +50,11 @@ DomainInfo::DomainInfo() :
     m_albTypeHasBeenSet(false),
     m_sgStateHasBeenSet(false),
     m_sgDetailHasBeenSet(false),
-    m_cloudTypeHasBeenSet(false)
+    m_cloudTypeHasBeenSet(false),
+    m_noteHasBeenSet(false),
+    m_srcListHasBeenSet(false),
+    m_upstreamDomainListHasBeenSet(false),
+    m_sgIDHasBeenSet(false)
 {
 }
 
@@ -385,6 +389,52 @@ CoreInternalOutcome DomainInfo::Deserialize(const rapidjson::Value &value)
         m_cloudTypeHasBeenSet = true;
     }
 
+    if (value.HasMember("Note") && !value["Note"].IsNull())
+    {
+        if (!value["Note"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `DomainInfo.Note` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_note = string(value["Note"].GetString());
+        m_noteHasBeenSet = true;
+    }
+
+    if (value.HasMember("SrcList") && !value["SrcList"].IsNull())
+    {
+        if (!value["SrcList"].IsArray())
+            return CoreInternalOutcome(Core::Error("response `DomainInfo.SrcList` is not array type"));
+
+        const rapidjson::Value &tmpValue = value["SrcList"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            m_srcList.push_back((*itr).GetString());
+        }
+        m_srcListHasBeenSet = true;
+    }
+
+    if (value.HasMember("UpstreamDomainList") && !value["UpstreamDomainList"].IsNull())
+    {
+        if (!value["UpstreamDomainList"].IsArray())
+            return CoreInternalOutcome(Core::Error("response `DomainInfo.UpstreamDomainList` is not array type"));
+
+        const rapidjson::Value &tmpValue = value["UpstreamDomainList"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            m_upstreamDomainList.push_back((*itr).GetString());
+        }
+        m_upstreamDomainListHasBeenSet = true;
+    }
+
+    if (value.HasMember("SgID") && !value["SgID"].IsNull())
+    {
+        if (!value["SgID"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `DomainInfo.SgID` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_sgID = string(value["SgID"].GetString());
+        m_sgIDHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -654,6 +704,48 @@ void DomainInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Allo
         string key = "CloudType";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_cloudType.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_noteHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Note";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_note.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_srcListHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "SrcList";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        for (auto itr = m_srcList.begin(); itr != m_srcList.end(); ++itr)
+        {
+            value[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
+        }
+    }
+
+    if (m_upstreamDomainListHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "UpstreamDomainList";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        for (auto itr = m_upstreamDomainList.begin(); itr != m_upstreamDomainList.end(); ++itr)
+        {
+            value[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
+        }
+    }
+
+    if (m_sgIDHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "SgID";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_sgID.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -1137,5 +1229,69 @@ void DomainInfo::SetCloudType(const string& _cloudType)
 bool DomainInfo::CloudTypeHasBeenSet() const
 {
     return m_cloudTypeHasBeenSet;
+}
+
+string DomainInfo::GetNote() const
+{
+    return m_note;
+}
+
+void DomainInfo::SetNote(const string& _note)
+{
+    m_note = _note;
+    m_noteHasBeenSet = true;
+}
+
+bool DomainInfo::NoteHasBeenSet() const
+{
+    return m_noteHasBeenSet;
+}
+
+vector<string> DomainInfo::GetSrcList() const
+{
+    return m_srcList;
+}
+
+void DomainInfo::SetSrcList(const vector<string>& _srcList)
+{
+    m_srcList = _srcList;
+    m_srcListHasBeenSet = true;
+}
+
+bool DomainInfo::SrcListHasBeenSet() const
+{
+    return m_srcListHasBeenSet;
+}
+
+vector<string> DomainInfo::GetUpstreamDomainList() const
+{
+    return m_upstreamDomainList;
+}
+
+void DomainInfo::SetUpstreamDomainList(const vector<string>& _upstreamDomainList)
+{
+    m_upstreamDomainList = _upstreamDomainList;
+    m_upstreamDomainListHasBeenSet = true;
+}
+
+bool DomainInfo::UpstreamDomainListHasBeenSet() const
+{
+    return m_upstreamDomainListHasBeenSet;
+}
+
+string DomainInfo::GetSgID() const
+{
+    return m_sgID;
+}
+
+void DomainInfo::SetSgID(const string& _sgID)
+{
+    m_sgID = _sgID;
+    m_sgIDHasBeenSet = true;
+}
+
+bool DomainInfo::SgIDHasBeenSet() const
+{
+    return m_sgIDHasBeenSet;
 }
 

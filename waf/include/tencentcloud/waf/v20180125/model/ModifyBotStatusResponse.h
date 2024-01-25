@@ -59,6 +59,52 @@ namespace TencentCloud
                      */
                     bool DataHasBeenSet() const;
 
+                    /**
+                     * 获取未购买BOT的域名列表
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return UnSupportedList 未购买BOT的域名列表
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::vector<std::string> GetUnSupportedList() const;
+
+                    /**
+                     * 判断参数 UnSupportedList 是否已赋值
+                     * @return UnSupportedList 是否已赋值
+                     * 
+                     */
+                    bool UnSupportedListHasBeenSet() const;
+
+                    /**
+                     * 获取已购买但操作失败的域名列表
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return FailDomainList 已购买但操作失败的域名列表
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::vector<std::string> GetFailDomainList() const;
+
+                    /**
+                     * 判断参数 FailDomainList 是否已赋值
+                     * @return FailDomainList 是否已赋值
+                     * 
+                     */
+                    bool FailDomainListHasBeenSet() const;
+
+                    /**
+                     * 获取成功数目
+                     * @return Count 成功数目
+                     * 
+                     */
+                    int64_t GetCount() const;
+
+                    /**
+                     * 判断参数 Count 是否已赋值
+                     * @return Count 是否已赋值
+                     * 
+                     */
+                    bool CountHasBeenSet() const;
+
                 private:
 
                     /**
@@ -67,6 +113,26 @@ namespace TencentCloud
                      */
                     std::string m_data;
                     bool m_dataHasBeenSet;
+
+                    /**
+                     * 未购买BOT的域名列表
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::vector<std::string> m_unSupportedList;
+                    bool m_unSupportedListHasBeenSet;
+
+                    /**
+                     * 已购买但操作失败的域名列表
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::vector<std::string> m_failDomainList;
+                    bool m_failDomainListHasBeenSet;
+
+                    /**
+                     * 成功数目
+                     */
+                    int64_t m_count;
+                    bool m_countHasBeenSet;
 
                 };
             }

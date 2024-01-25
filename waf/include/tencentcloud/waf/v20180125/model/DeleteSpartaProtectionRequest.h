@@ -85,15 +85,15 @@ namespace TencentCloud
                     bool EditionHasBeenSet() const;
 
                     /**
-                     * 获取实例id
-                     * @return InstanceID 实例id
+                     * 获取必填项。域名所属实例ID
+                     * @return InstanceID 必填项。域名所属实例ID
                      * 
                      */
                     std::string GetInstanceID() const;
 
                     /**
-                     * 设置实例id
-                     * @param _instanceID 实例id
+                     * 设置必填项。域名所属实例ID
+                     * @param _instanceID 必填项。域名所属实例ID
                      * 
                      */
                     void SetInstanceID(const std::string& _instanceID);
@@ -120,7 +120,7 @@ namespace TencentCloud
                     bool m_editionHasBeenSet;
 
                     /**
-                     * 实例id
+                     * 必填项。域名所属实例ID
                      */
                     std::string m_instanceID;
                     bool m_instanceIDHasBeenSet;

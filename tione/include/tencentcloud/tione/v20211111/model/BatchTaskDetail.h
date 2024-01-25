@@ -42,7 +42,7 @@ namespace TencentCloud
             namespace Model
             {
                 /**
-                * 跑批任务详情
+                * 批量预测任务详情
                 */
                 class BatchTaskDetail : public AbstractModel
                 {
@@ -54,15 +54,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取跑批任务ID
-                     * @return BatchTaskId 跑批任务ID
+                     * 获取批量预测任务ID
+                     * @return BatchTaskId 批量预测任务ID
                      * 
                      */
                     std::string GetBatchTaskId() const;
 
                     /**
-                     * 设置跑批任务ID
-                     * @param _batchTaskId 跑批任务ID
+                     * 设置批量预测任务ID
+                     * @param _batchTaskId 批量预测任务ID
                      * 
                      */
                     void SetBatchTaskId(const std::string& _batchTaskId);
@@ -75,15 +75,15 @@ namespace TencentCloud
                     bool BatchTaskIdHasBeenSet() const;
 
                     /**
-                     * 获取跑批任务名称
-                     * @return BatchTaskName 跑批任务名称
+                     * 获取批量预测任务名称
+                     * @return BatchTaskName 批量预测任务名称
                      * 
                      */
                     std::string GetBatchTaskName() const;
 
                     /**
-                     * 设置跑批任务名称
-                     * @param _batchTaskName 跑批任务名称
+                     * 设置批量预测任务名称
+                     * @param _batchTaskName 批量预测任务名称
                      * 
                      */
                     void SetBatchTaskName(const std::string& _batchTaskName);
@@ -656,15 +656,35 @@ namespace TencentCloud
                     bool EndTimeHasBeenSet() const;
 
                     /**
-                     * 获取计费状态，eg：BILLING计费中，ARREARS_STOP欠费停止，NOT_BILLING不在计费中
-                     * @return ChargeStatus 计费状态，eg：BILLING计费中，ARREARS_STOP欠费停止，NOT_BILLING不在计费中
+                     * 获取计费状态，取值范围:
+BILLING: 计费中
+NOT_BILLING: 未计费
+WHITELIST_USING: 白名单使用中
+WHITELIST_STOP: 白名单到期
+ARREARS_STOP: 欠费停止
+                     * @return ChargeStatus 计费状态，取值范围:
+BILLING: 计费中
+NOT_BILLING: 未计费
+WHITELIST_USING: 白名单使用中
+WHITELIST_STOP: 白名单到期
+ARREARS_STOP: 欠费停止
                      * 
                      */
                     std::string GetChargeStatus() const;
 
                     /**
-                     * 设置计费状态，eg：BILLING计费中，ARREARS_STOP欠费停止，NOT_BILLING不在计费中
-                     * @param _chargeStatus 计费状态，eg：BILLING计费中，ARREARS_STOP欠费停止，NOT_BILLING不在计费中
+                     * 设置计费状态，取值范围:
+BILLING: 计费中
+NOT_BILLING: 未计费
+WHITELIST_USING: 白名单使用中
+WHITELIST_STOP: 白名单到期
+ARREARS_STOP: 欠费停止
+                     * @param _chargeStatus 计费状态，取值范围:
+BILLING: 计费中
+NOT_BILLING: 未计费
+WHITELIST_USING: 白名单使用中
+WHITELIST_STOP: 白名单到期
+ARREARS_STOP: 欠费停止
                      * 
                      */
                     void SetChargeStatus(const std::string& _chargeStatus);
@@ -829,13 +849,13 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 跑批任务ID
+                     * 批量预测任务ID
                      */
                     std::string m_batchTaskId;
                     bool m_batchTaskIdHasBeenSet;
 
                     /**
-                     * 跑批任务名称
+                     * 批量预测任务名称
                      */
                     std::string m_batchTaskName;
                     bool m_batchTaskNameHasBeenSet;
@@ -999,7 +1019,12 @@ namespace TencentCloud
                     bool m_endTimeHasBeenSet;
 
                     /**
-                     * 计费状态，eg：BILLING计费中，ARREARS_STOP欠费停止，NOT_BILLING不在计费中
+                     * 计费状态，取值范围:
+BILLING: 计费中
+NOT_BILLING: 未计费
+WHITELIST_USING: 白名单使用中
+WHITELIST_STOP: 白名单到期
+ARREARS_STOP: 欠费停止
                      */
                     std::string m_chargeStatus;
                     bool m_chargeStatusHasBeenSet;

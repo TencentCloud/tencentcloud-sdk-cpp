@@ -42,7 +42,9 @@ ImpalaQuery::ImpalaQuery() :
     m_totalInnerBytesSentHasBeenSet(false),
     m_totalScanBytesSentHasBeenSet(false),
     m_estimatedPerHostMemBytesHasBeenSet(false),
-    m_numRowsFetchedFromCacheHasBeenSet(false)
+    m_numRowsFetchedFromCacheHasBeenSet(false),
+    m_sessionIdHasBeenSet(false),
+    m_perNodePeakMemoryBytesSumHasBeenSet(false)
 {
 }
 
@@ -271,6 +273,26 @@ CoreInternalOutcome ImpalaQuery::Deserialize(const rapidjson::Value &value)
         m_numRowsFetchedFromCacheHasBeenSet = true;
     }
 
+    if (value.HasMember("SessionId") && !value["SessionId"].IsNull())
+    {
+        if (!value["SessionId"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `ImpalaQuery.SessionId` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_sessionId = string(value["SessionId"].GetString());
+        m_sessionIdHasBeenSet = true;
+    }
+
+    if (value.HasMember("PerNodePeakMemoryBytesSum") && !value["PerNodePeakMemoryBytesSum"].IsNull())
+    {
+        if (!value["PerNodePeakMemoryBytesSum"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `ImpalaQuery.PerNodePeakMemoryBytesSum` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_perNodePeakMemoryBytesSum = value["PerNodePeakMemoryBytesSum"].GetInt64();
+        m_perNodePeakMemoryBytesSumHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -452,6 +474,22 @@ void ImpalaQuery::ToJsonObject(rapidjson::Value &value, rapidjson::Document::All
         string key = "NumRowsFetchedFromCache";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_numRowsFetchedFromCache, allocator);
+    }
+
+    if (m_sessionIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "SessionId";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_sessionId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_perNodePeakMemoryBytesSumHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "PerNodePeakMemoryBytesSum";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_perNodePeakMemoryBytesSum, allocator);
     }
 
 }
@@ -807,5 +845,37 @@ void ImpalaQuery::SetNumRowsFetchedFromCache(const int64_t& _numRowsFetchedFromC
 bool ImpalaQuery::NumRowsFetchedFromCacheHasBeenSet() const
 {
     return m_numRowsFetchedFromCacheHasBeenSet;
+}
+
+string ImpalaQuery::GetSessionId() const
+{
+    return m_sessionId;
+}
+
+void ImpalaQuery::SetSessionId(const string& _sessionId)
+{
+    m_sessionId = _sessionId;
+    m_sessionIdHasBeenSet = true;
+}
+
+bool ImpalaQuery::SessionIdHasBeenSet() const
+{
+    return m_sessionIdHasBeenSet;
+}
+
+int64_t ImpalaQuery::GetPerNodePeakMemoryBytesSum() const
+{
+    return m_perNodePeakMemoryBytesSum;
+}
+
+void ImpalaQuery::SetPerNodePeakMemoryBytesSum(const int64_t& _perNodePeakMemoryBytesSum)
+{
+    m_perNodePeakMemoryBytesSum = _perNodePeakMemoryBytesSum;
+    m_perNodePeakMemoryBytesSumHasBeenSet = true;
+}
+
+bool ImpalaQuery::PerNodePeakMemoryBytesSumHasBeenSet() const
+{
+    return m_perNodePeakMemoryBytesSumHasBeenSet;
 }
 

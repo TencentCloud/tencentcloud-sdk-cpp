@@ -64,15 +64,15 @@ namespace TencentCloud
                     bool InstanceIdHasBeenSet() const;
 
                     /**
-                     * 获取日志类型：error/slowLog
-                     * @return LogType 日志类型：error/slowLog
+                     * 获取日志类型：error/slowlog
+                     * @return LogType 日志类型：error/slowlog
                      * 
                      */
                     std::string GetLogType() const;
 
                     /**
-                     * 设置日志类型：error/slowLog
-                     * @param _logType 日志类型：error/slowLog
+                     * 设置日志类型：error/slowlog
+                     * @param _logType 日志类型：error/slowlog
                      * 
                      */
                     void SetLogType(const std::string& _logType);
@@ -231,6 +231,27 @@ namespace TencentCloud
                      */
                     bool CreateIndexHasBeenSet() const;
 
+                    /**
+                     * 获取CLS所在地域
+                     * @return ClsRegion CLS所在地域
+                     * 
+                     */
+                    std::string GetClsRegion() const;
+
+                    /**
+                     * 设置CLS所在地域
+                     * @param _clsRegion CLS所在地域
+                     * 
+                     */
+                    void SetClsRegion(const std::string& _clsRegion);
+
+                    /**
+                     * 判断参数 ClsRegion 是否已赋值
+                     * @return ClsRegion 是否已赋值
+                     * 
+                     */
+                    bool ClsRegionHasBeenSet() const;
+
                 private:
 
                     /**
@@ -240,7 +261,7 @@ namespace TencentCloud
                     bool m_instanceIdHasBeenSet;
 
                     /**
-                     * 日志类型：error/slowLog
+                     * 日志类型：error/slowlog
                      */
                     std::string m_logType;
                     bool m_logTypeHasBeenSet;
@@ -286,6 +307,12 @@ namespace TencentCloud
                      */
                     bool m_createIndex;
                     bool m_createIndexHasBeenSet;
+
+                    /**
+                     * CLS所在地域
+                     */
+                    std::string m_clsRegion;
+                    bool m_clsRegionHasBeenSet;
 
                 };
             }

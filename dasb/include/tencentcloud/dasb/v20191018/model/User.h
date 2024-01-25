@@ -391,6 +391,31 @@ namespace TencentCloud
                      */
                     bool StatusHasBeenSet() const;
 
+                    /**
+                     * 获取权限版本
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return AclVersion 权限版本
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    uint64_t GetAclVersion() const;
+
+                    /**
+                     * 设置权限版本
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _aclVersion 权限版本
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetAclVersion(const uint64_t& _aclVersion);
+
+                    /**
+                     * 判断参数 AclVersion 是否已赋值
+                     * @return AclVersion 是否已赋值
+                     * 
+                     */
+                    bool AclVersionHasBeenSet() const;
+
                 private:
 
                     /**
@@ -489,6 +514,13 @@ namespace TencentCloud
                      */
                     std::string m_status;
                     bool m_statusHasBeenSet;
+
+                    /**
+                     * 权限版本
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    uint64_t m_aclVersion;
+                    bool m_aclVersionHasBeenSet;
 
                 };
             }

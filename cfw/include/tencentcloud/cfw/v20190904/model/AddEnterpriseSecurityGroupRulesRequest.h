@@ -107,15 +107,15 @@ namespace TencentCloud
                     bool ClientTokenHasBeenSet() const;
 
                     /**
-                     * 获取是否延迟下发，1则延迟下发，否则立即下发
-                     * @return IsDelay 是否延迟下发，1则延迟下发，否则立即下发
+                     * 获取（IsDelay为老版参数，新版无需输入）是否延迟下发，1则延迟下发，否则立即下发
+                     * @return IsDelay （IsDelay为老版参数，新版无需输入）是否延迟下发，1则延迟下发，否则立即下发
                      * 
                      */
                     uint64_t GetIsDelay() const;
 
                     /**
-                     * 设置是否延迟下发，1则延迟下发，否则立即下发
-                     * @param _isDelay 是否延迟下发，1则延迟下发，否则立即下发
+                     * 设置（IsDelay为老版参数，新版无需输入）是否延迟下发，1则延迟下发，否则立即下发
+                     * @param _isDelay （IsDelay为老版参数，新版无需输入）是否延迟下发，1则延迟下发，否则立即下发
                      * 
                      */
                     void SetIsDelay(const uint64_t& _isDelay);
@@ -126,6 +126,48 @@ namespace TencentCloud
                      * 
                      */
                     bool IsDelayHasBeenSet() const;
+
+                    /**
+                     * 获取来源 默认空 覆盖导入是 batch_import_cover
+                     * @return From 来源 默认空 覆盖导入是 batch_import_cover
+                     * 
+                     */
+                    std::string GetFrom() const;
+
+                    /**
+                     * 设置来源 默认空 覆盖导入是 batch_import_cover
+                     * @param _from 来源 默认空 覆盖导入是 batch_import_cover
+                     * 
+                     */
+                    void SetFrom(const std::string& _from);
+
+                    /**
+                     * 判断参数 From 是否已赋值
+                     * @return From 是否已赋值
+                     * 
+                     */
+                    bool FromHasBeenSet() const;
+
+                    /**
+                     * 获取是否使用id 默认不需要
+                     * @return IsUseId 是否使用id 默认不需要
+                     * 
+                     */
+                    int64_t GetIsUseId() const;
+
+                    /**
+                     * 设置是否使用id 默认不需要
+                     * @param _isUseId 是否使用id 默认不需要
+                     * 
+                     */
+                    void SetIsUseId(const int64_t& _isUseId);
+
+                    /**
+                     * 判断参数 IsUseId 是否已赋值
+                     * @return IsUseId 是否已赋值
+                     * 
+                     */
+                    bool IsUseIdHasBeenSet() const;
 
                 private:
 
@@ -148,10 +190,22 @@ namespace TencentCloud
                     bool m_clientTokenHasBeenSet;
 
                     /**
-                     * 是否延迟下发，1则延迟下发，否则立即下发
+                     * （IsDelay为老版参数，新版无需输入）是否延迟下发，1则延迟下发，否则立即下发
                      */
                     uint64_t m_isDelay;
                     bool m_isDelayHasBeenSet;
+
+                    /**
+                     * 来源 默认空 覆盖导入是 batch_import_cover
+                     */
+                    std::string m_from;
+                    bool m_fromHasBeenSet;
+
+                    /**
+                     * 是否使用id 默认不需要
+                     */
+                    int64_t m_isUseId;
+                    bool m_isUseIdHasBeenSet;
 
                 };
             }

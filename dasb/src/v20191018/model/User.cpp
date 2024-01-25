@@ -35,7 +35,8 @@ User::User() :
     m_departmentIdHasBeenSet(false),
     m_activeStatusHasBeenSet(false),
     m_lockStatusHasBeenSet(false),
-    m_statusHasBeenSet(false)
+    m_statusHasBeenSet(false),
+    m_aclVersionHasBeenSet(false)
 {
 }
 
@@ -211,6 +212,16 @@ CoreInternalOutcome User::Deserialize(const rapidjson::Value &value)
         m_statusHasBeenSet = true;
     }
 
+    if (value.HasMember("AclVersion") && !value["AclVersion"].IsNull())
+    {
+        if (!value["AclVersion"].IsUint64())
+        {
+            return CoreInternalOutcome(Core::Error("response `User.AclVersion` IsUint64=false incorrectly").SetRequestId(requestId));
+        }
+        m_aclVersion = value["AclVersion"].GetUint64();
+        m_aclVersionHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -344,6 +355,14 @@ void User::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorT
         string key = "Status";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_status.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_aclVersionHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "AclVersion";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_aclVersion, allocator);
     }
 
 }
@@ -587,5 +606,21 @@ void User::SetStatus(const string& _status)
 bool User::StatusHasBeenSet() const
 {
     return m_statusHasBeenSet;
+}
+
+uint64_t User::GetAclVersion() const
+{
+    return m_aclVersion;
+}
+
+void User::SetAclVersion(const uint64_t& _aclVersion)
+{
+    m_aclVersion = _aclVersion;
+    m_aclVersionHasBeenSet = true;
+}
+
+bool User::AclVersionHasBeenSet() const
+{
+    return m_aclVersionHasBeenSet;
 }
 

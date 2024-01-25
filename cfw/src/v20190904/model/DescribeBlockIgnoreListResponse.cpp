@@ -28,7 +28,8 @@ DescribeBlockIgnoreListResponse::DescribeBlockIgnoreListResponse() :
     m_totalHasBeenSet(false),
     m_returnCodeHasBeenSet(false),
     m_returnMsgHasBeenSet(false),
-    m_sourceListHasBeenSet(false)
+    m_sourceListHasBeenSet(false),
+    m_ruleTypeDataListHasBeenSet(false)
 {
 }
 
@@ -129,6 +130,19 @@ CoreInternalOutcome DescribeBlockIgnoreListResponse::Deserialize(const string &p
         m_sourceListHasBeenSet = true;
     }
 
+    if (rsp.HasMember("RuleTypeDataList") && !rsp["RuleTypeDataList"].IsNull())
+    {
+        if (!rsp["RuleTypeDataList"].IsArray())
+            return CoreInternalOutcome(Core::Error("response `RuleTypeDataList` is not array type"));
+
+        const rapidjson::Value &tmpValue = rsp["RuleTypeDataList"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            m_ruleTypeDataList.push_back((*itr).GetInt64());
+        }
+        m_ruleTypeDataListHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -188,6 +202,19 @@ string DescribeBlockIgnoreListResponse::ToJsonString() const
         for (auto itr = m_sourceList.begin(); itr != m_sourceList.end(); ++itr)
         {
             value[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
+        }
+    }
+
+    if (m_ruleTypeDataListHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "RuleTypeDataList";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        for (auto itr = m_ruleTypeDataList.begin(); itr != m_ruleTypeDataList.end(); ++itr)
+        {
+            value[key.c_str()].PushBack(rapidjson::Value().SetInt64(*itr), allocator);
         }
     }
 
@@ -251,6 +278,16 @@ vector<string> DescribeBlockIgnoreListResponse::GetSourceList() const
 bool DescribeBlockIgnoreListResponse::SourceListHasBeenSet() const
 {
     return m_sourceListHasBeenSet;
+}
+
+vector<int64_t> DescribeBlockIgnoreListResponse::GetRuleTypeDataList() const
+{
+    return m_ruleTypeDataList;
+}
+
+bool DescribeBlockIgnoreListResponse::RuleTypeDataListHasBeenSet() const
+{
+    return m_ruleTypeDataListHasBeenSet;
 }
 
 

@@ -24,6 +24,7 @@
 #include <tencentcloud/core/utils/rapidjson/writer.h>
 #include <tencentcloud/core/utils/rapidjson/stringbuffer.h>
 #include <tencentcloud/core/AbstractModel.h>
+#include <tencentcloud/cfw/v20190904/model/CustomWhiteRule.h>
 
 
 namespace TencentCloud
@@ -45,6 +46,106 @@ namespace TencentCloud
                     void ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const;
                     CoreInternalOutcome Deserialize(const rapidjson::Value &value);
 
+
+                    /**
+                     * 获取1 封禁 2外部IP 3域名 4情报 5assets 6udf  7入侵防御规则id （2-7属于白名单类型）
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return RuleType 1 封禁 2外部IP 3域名 4情报 5assets 6udf  7入侵防御规则id （2-7属于白名单类型）
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    int64_t GetRuleType() const;
+
+                    /**
+                     * 设置1 封禁 2外部IP 3域名 4情报 5assets 6udf  7入侵防御规则id （2-7属于白名单类型）
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _ruleType 1 封禁 2外部IP 3域名 4情报 5assets 6udf  7入侵防御规则id （2-7属于白名单类型）
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetRuleType(const int64_t& _ruleType);
+
+                    /**
+                     * 判断参数 RuleType 是否已赋值
+                     * @return RuleType 是否已赋值
+                     * 
+                     */
+                    bool RuleTypeHasBeenSet() const;
+
+                    /**
+                     * 获取规则ip或白名单内容
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return Ioc 规则ip或白名单内容
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::string GetIoc() const;
+
+                    /**
+                     * 设置规则ip或白名单内容
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _ioc 规则ip或白名单内容
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetIoc(const std::string& _ioc);
+
+                    /**
+                     * 判断参数 Ioc 是否已赋值
+                     * @return Ioc 是否已赋值
+                     * 
+                     */
+                    bool IocHasBeenSet() const;
+
+                    /**
+                     * 获取资产实例名称、自定义策略名称等
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return IocName 资产实例名称、自定义策略名称等
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::string GetIocName() const;
+
+                    /**
+                     * 设置资产实例名称、自定义策略名称等
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _iocName 资产实例名称、自定义策略名称等
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetIocName(const std::string& _iocName);
+
+                    /**
+                     * 判断参数 IocName 是否已赋值
+                     * @return IocName 是否已赋值
+                     * 
+                     */
+                    bool IocNameHasBeenSet() const;
+
+                    /**
+                     * 获取白名单信息
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return IocInfo 白名单信息
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::string GetIocInfo() const;
+
+                    /**
+                     * 设置白名单信息
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _iocInfo 白名单信息
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetIocInfo(const std::string& _iocInfo);
+
+                    /**
+                     * 判断参数 IocInfo 是否已赋值
+                     * @return IocInfo 是否已赋值
+                     * 
+                     */
+                    bool IocInfoHasBeenSet() const;
 
                     /**
                      * 获取域名
@@ -95,31 +196,6 @@ namespace TencentCloud
                      * 
                      */
                     bool IPHasBeenSet() const;
-
-                    /**
-                     * 获取规则ip
-注意：此字段可能返回 null，表示取不到有效值。
-                     * @return Ioc 规则ip
-注意：此字段可能返回 null，表示取不到有效值。
-                     * 
-                     */
-                    std::string GetIoc() const;
-
-                    /**
-                     * 设置规则ip
-注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _ioc 规则ip
-注意：此字段可能返回 null，表示取不到有效值。
-                     * 
-                     */
-                    void SetIoc(const std::string& _ioc);
-
-                    /**
-                     * 判断参数 Ioc 是否已赋值
-                     * @return Ioc 是否已赋值
-                     * 
-                     */
-                    bool IocHasBeenSet() const;
 
                     /**
                      * 获取危险等级
@@ -195,6 +271,31 @@ namespace TencentCloud
                      * 
                      */
                     bool DirectionHasBeenSet() const;
+
+                    /**
+                     * 获取所有方向聚合成字符串
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return DirectionList 所有方向聚合成字符串
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::string GetDirectionList() const;
+
+                    /**
+                     * 设置所有方向聚合成字符串
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _directionList 所有方向聚合成字符串
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetDirectionList(const std::string& _directionList);
+
+                    /**
+                     * 判断参数 DirectionList 是否已赋值
+                     * @return DirectionList 是否已赋值
+                     * 
+                     */
+                    bool DirectionListHasBeenSet() const;
 
                     /**
                      * 获取协议
@@ -471,7 +572,85 @@ namespace TencentCloud
                      */
                     bool CommentHasBeenSet() const;
 
+                    /**
+                     * 获取上次命中时间
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return LastHitTime 上次命中时间
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::string GetLastHitTime() const;
+
+                    /**
+                     * 设置上次命中时间
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _lastHitTime 上次命中时间
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetLastHitTime(const std::string& _lastHitTime);
+
+                    /**
+                     * 判断参数 LastHitTime 是否已赋值
+                     * @return LastHitTime 是否已赋值
+                     * 
+                     */
+                    bool LastHitTimeHasBeenSet() const;
+
+                    /**
+                     * 获取自定义规则细节
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return CustomRule 自定义规则细节
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    CustomWhiteRule GetCustomRule() const;
+
+                    /**
+                     * 设置自定义规则细节
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _customRule 自定义规则细节
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetCustomRule(const CustomWhiteRule& _customRule);
+
+                    /**
+                     * 判断参数 CustomRule 是否已赋值
+                     * @return CustomRule 是否已赋值
+                     * 
+                     */
+                    bool CustomRuleHasBeenSet() const;
+
                 private:
+
+                    /**
+                     * 1 封禁 2外部IP 3域名 4情报 5assets 6udf  7入侵防御规则id （2-7属于白名单类型）
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    int64_t m_ruleType;
+                    bool m_ruleTypeHasBeenSet;
+
+                    /**
+                     * 规则ip或白名单内容
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_ioc;
+                    bool m_iocHasBeenSet;
+
+                    /**
+                     * 资产实例名称、自定义策略名称等
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_iocName;
+                    bool m_iocNameHasBeenSet;
+
+                    /**
+                     * 白名单信息
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_iocInfo;
+                    bool m_iocInfoHasBeenSet;
 
                     /**
                      * 域名
@@ -486,13 +665,6 @@ namespace TencentCloud
                      */
                     std::string m_iP;
                     bool m_iPHasBeenSet;
-
-                    /**
-                     * 规则ip
-注意：此字段可能返回 null，表示取不到有效值。
-                     */
-                    std::string m_ioc;
-                    bool m_iocHasBeenSet;
 
                     /**
                      * 危险等级
@@ -514,6 +686,13 @@ namespace TencentCloud
                      */
                     int64_t m_direction;
                     bool m_directionHasBeenSet;
+
+                    /**
+                     * 所有方向聚合成字符串
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_directionList;
+                    bool m_directionListHasBeenSet;
 
                     /**
                      * 协议
@@ -591,6 +770,20 @@ namespace TencentCloud
                      */
                     std::string m_comment;
                     bool m_commentHasBeenSet;
+
+                    /**
+                     * 上次命中时间
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_lastHitTime;
+                    bool m_lastHitTimeHasBeenSet;
+
+                    /**
+                     * 自定义规则细节
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    CustomWhiteRule m_customRule;
+                    bool m_customRuleHasBeenSet;
 
                 };
             }

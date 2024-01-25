@@ -423,10 +423,10 @@ https：使用https协议回源
                     bool GrayAreasHasBeenSet() const;
 
                     /**
-                     * 获取是否开启HTTP强制跳转到HTTPS。
+                     * 获取必填项，是否开启HTTP强制跳转到HTTPS。
 0：不强制跳转
 1：开启强制跳转
-                     * @return HttpsRewrite 是否开启HTTP强制跳转到HTTPS。
+                     * @return HttpsRewrite 必填项，是否开启HTTP强制跳转到HTTPS。
 0：不强制跳转
 1：开启强制跳转
                      * 
@@ -434,10 +434,10 @@ https：使用https协议回源
                     int64_t GetHttpsRewrite() const;
 
                     /**
-                     * 设置是否开启HTTP强制跳转到HTTPS。
+                     * 设置必填项，是否开启HTTP强制跳转到HTTPS。
 0：不强制跳转
 1：开启强制跳转
-                     * @param _httpsRewrite 是否开启HTTP强制跳转到HTTPS。
+                     * @param _httpsRewrite 必填项，是否开启HTTP强制跳转到HTTPS。
 0：不强制跳转
 1：开启强制跳转
                      * 
@@ -494,10 +494,10 @@ https：使用https协议回源
                     bool SrcListHasBeenSet() const;
 
                     /**
-                     * 获取是否开启HTTP2，需要开启HTTPS协议支持。
+                     * 获取必填项，是否开启HTTP2，需要开启HTTPS协议支持。
 0：关闭
 1：开启
-                     * @return IsHttp2 是否开启HTTP2，需要开启HTTPS协议支持。
+                     * @return IsHttp2 必填项，是否开启HTTP2，需要开启HTTPS协议支持。
 0：关闭
 1：开启
                      * 
@@ -505,10 +505,10 @@ https：使用https协议回源
                     int64_t GetIsHttp2() const;
 
                     /**
-                     * 设置是否开启HTTP2，需要开启HTTPS协议支持。
+                     * 设置必填项，是否开启HTTP2，需要开启HTTPS协议支持。
 0：关闭
 1：开启
-                     * @param _isHttp2 是否开启HTTP2，需要开启HTTPS协议支持。
+                     * @param _isHttp2 必填项，是否开启HTTP2，需要开启HTTPS协议支持。
 0：关闭
 1：开启
                      * 
@@ -597,10 +597,10 @@ cdn-waf：CDN上的Web防护能力
                     bool EditionHasBeenSet() const;
 
                     /**
-                     * 获取是否开启长连接。
+                     * 获取必填项，是否开启长连接。
 0： 短连接
 1： 长连接
-                     * @return IsKeepAlive 是否开启长连接。
+                     * @return IsKeepAlive 必填项，是否开启长连接。
 0： 短连接
 1： 长连接
                      * 
@@ -608,10 +608,10 @@ cdn-waf：CDN上的Web防护能力
                     std::string GetIsKeepAlive() const;
 
                     /**
-                     * 设置是否开启长连接。
+                     * 设置必填项，是否开启长连接。
 0： 短连接
 1： 长连接
-                     * @param _isKeepAlive 是否开启长连接。
+                     * @param _isKeepAlive 必填项，是否开启长连接。
 0： 短连接
 1： 长连接
                      * 
@@ -626,15 +626,15 @@ cdn-waf：CDN上的Web防护能力
                     bool IsKeepAliveHasBeenSet() const;
 
                     /**
-                     * 获取域名所属实例id
-                     * @return InstanceID 域名所属实例id
+                     * 获取必填项，域名所属实例id
+                     * @return InstanceID 必填项，域名所属实例id
                      * 
                      */
                     std::string GetInstanceID() const;
 
                     /**
-                     * 设置域名所属实例id
-                     * @param _instanceID 域名所属实例id
+                     * 设置必填项，域名所属实例id
+                     * @param _instanceID 必填项，域名所属实例id
                      * 
                      */
                     void SetInstanceID(const std::string& _instanceID);
@@ -689,10 +689,10 @@ cdn-waf：CDN上的Web防护能力
                     bool WeightsHasBeenSet() const;
 
                     /**
-                     * 获取是否开启主动健康检测。
+                     * 获取必填项，是否开启主动健康检测。
 0：不开启
 1：开启
-                     * @return ActiveCheck 是否开启主动健康检测。
+                     * @return ActiveCheck 必填项，是否开启主动健康检测。
 0：不开启
 1：开启
                      * 
@@ -700,10 +700,10 @@ cdn-waf：CDN上的Web防护能力
                     int64_t GetActiveCheck() const;
 
                     /**
-                     * 设置是否开启主动健康检测。
+                     * 设置必填项，是否开启主动健康检测。
 0：不开启
 1：开启
-                     * @param _activeCheck 是否开启主动健康检测。
+                     * @param _activeCheck 必填项，是否开启主动健康检测。
 0：不开启
 1：开启
                      * 
@@ -739,12 +739,12 @@ cdn-waf：CDN上的Web防护能力
                     bool TLSVersionHasBeenSet() const;
 
                     /**
-                     * 获取加密套件模板。
+                     * 获取必填项，加密套件模板。
 0：不支持选择，使用默认模板  
 1：通用型模板 
 2：安全型模板
 3：自定义模板
-                     * @return CipherTemplate 加密套件模板。
+                     * @return CipherTemplate 必填项，加密套件模板。
 0：不支持选择，使用默认模板  
 1：通用型模板 
 2：安全型模板
@@ -754,12 +754,12 @@ cdn-waf：CDN上的Web防护能力
                     int64_t GetCipherTemplate() const;
 
                     /**
-                     * 设置加密套件模板。
+                     * 设置必填项，加密套件模板。
 0：不支持选择，使用默认模板  
 1：通用型模板 
 2：安全型模板
 3：自定义模板
-                     * @param _cipherTemplate 加密套件模板。
+                     * @param _cipherTemplate 必填项，加密套件模板。
 0：不支持选择，使用默认模板  
 1：通用型模板 
 2：安全型模板
@@ -925,6 +925,48 @@ cdn-waf：CDN上的Web防护能力
                      */
                     bool XFFResetHasBeenSet() const;
 
+                    /**
+                     * 获取域名备注信息
+                     * @return Note 域名备注信息
+                     * 
+                     */
+                    std::string GetNote() const;
+
+                    /**
+                     * 设置域名备注信息
+                     * @param _note 域名备注信息
+                     * 
+                     */
+                    void SetNote(const std::string& _note);
+
+                    /**
+                     * 判断参数 Note 是否已赋值
+                     * @return Note 是否已赋值
+                     * 
+                     */
+                    bool NoteHasBeenSet() const;
+
+                    /**
+                     * 获取自定义回源Host。默认为空字符串，表示使用防护域名作为回源Host。
+                     * @return UpstreamHost 自定义回源Host。默认为空字符串，表示使用防护域名作为回源Host。
+                     * 
+                     */
+                    std::string GetUpstreamHost() const;
+
+                    /**
+                     * 设置自定义回源Host。默认为空字符串，表示使用防护域名作为回源Host。
+                     * @param _upstreamHost 自定义回源Host。默认为空字符串，表示使用防护域名作为回源Host。
+                     * 
+                     */
+                    void SetUpstreamHost(const std::string& _upstreamHost);
+
+                    /**
+                     * 判断参数 UpstreamHost 是否已赋值
+                     * @return UpstreamHost 是否已赋值
+                     * 
+                     */
+                    bool UpstreamHostHasBeenSet() const;
+
                 private:
 
                     /**
@@ -1034,7 +1076,7 @@ https：使用https协议回源
                     bool m_grayAreasHasBeenSet;
 
                     /**
-                     * 是否开启HTTP强制跳转到HTTPS。
+                     * 必填项，是否开启HTTP强制跳转到HTTPS。
 0：不强制跳转
 1：开启强制跳转
                      */
@@ -1054,7 +1096,7 @@ https：使用https协议回源
                     bool m_srcListHasBeenSet;
 
                     /**
-                     * 是否开启HTTP2，需要开启HTTPS协议支持。
+                     * 必填项，是否开启HTTP2，需要开启HTTPS协议支持。
 0：关闭
 1：开启
                      */
@@ -1082,7 +1124,7 @@ cdn-waf：CDN上的Web防护能力
                     bool m_editionHasBeenSet;
 
                     /**
-                     * 是否开启长连接。
+                     * 必填项，是否开启长连接。
 0： 短连接
 1： 长连接
                      */
@@ -1090,7 +1132,7 @@ cdn-waf：CDN上的Web防护能力
                     bool m_isKeepAliveHasBeenSet;
 
                     /**
-                     * 域名所属实例id
+                     * 必填项，域名所属实例id
                      */
                     std::string m_instanceID;
                     bool m_instanceIDHasBeenSet;
@@ -1108,7 +1150,7 @@ cdn-waf：CDN上的Web防护能力
                     bool m_weightsHasBeenSet;
 
                     /**
-                     * 是否开启主动健康检测。
+                     * 必填项，是否开启主动健康检测。
 0：不开启
 1：开启
                      */
@@ -1122,7 +1164,7 @@ cdn-waf：CDN上的Web防护能力
                     bool m_tLSVersionHasBeenSet;
 
                     /**
-                     * 加密套件模板。
+                     * 必填项，加密套件模板。
 0：不支持选择，使用默认模板  
 1：通用型模板 
 2：安全型模板
@@ -1172,6 +1214,18 @@ cdn-waf：CDN上的Web防护能力
                      */
                     int64_t m_xFFReset;
                     bool m_xFFResetHasBeenSet;
+
+                    /**
+                     * 域名备注信息
+                     */
+                    std::string m_note;
+                    bool m_noteHasBeenSet;
+
+                    /**
+                     * 自定义回源Host。默认为空字符串，表示使用防护域名作为回源Host。
+                     */
+                    std::string m_upstreamHost;
+                    bool m_upstreamHostHasBeenSet;
 
                 };
             }

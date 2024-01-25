@@ -45,43 +45,39 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取过滤器，eg：[{ "Name": "Id", "Values": ["train-23091792777383936"] }]
+                     * 获取过滤器
 
-取值范围：
-Name（名称）：task1
-Id（task ID）：train-23091792777383936
-Status（状态）：STARTING / RUNNING / STOPPING / STOPPED / FAILED / SUCCEED / SUBMIT_FAILED
-ChargeType（计费类型）：PREPAID 包年包月 / POSTPAID_BY_HOUR 按量计费
-CHARGE_STATUS（计费状态）：NOT_BILLING（未开始计费）/ BILLING（计费中）/ ARREARS_STOP（欠费停止）
-                     * @return Filters 过滤器，eg：[{ "Name": "Id", "Values": ["train-23091792777383936"] }]
+Name支持的取值范围：
+BatchTaskId, BatchTaskName, Status, ModelVersionId
 
-取值范围：
-Name（名称）：task1
-Id（task ID）：train-23091792777383936
-Status（状态）：STARTING / RUNNING / STOPPING / STOPPED / FAILED / SUCCEED / SUBMIT_FAILED
-ChargeType（计费类型）：PREPAID 包年包月 / POSTPAID_BY_HOUR 按量计费
-CHARGE_STATUS（计费状态）：NOT_BILLING（未开始计费）/ BILLING（计费中）/ ARREARS_STOP（欠费停止）
+其中Status 的有效取值范围:
+INIT, STARTING, RUNNING, FAILED, STOPPING, STOPPED, SUCCEED
+                     * @return Filters 过滤器
+
+Name支持的取值范围：
+BatchTaskId, BatchTaskName, Status, ModelVersionId
+
+其中Status 的有效取值范围:
+INIT, STARTING, RUNNING, FAILED, STOPPING, STOPPED, SUCCEED
                      * 
                      */
                     std::vector<Filter> GetFilters() const;
 
                     /**
-                     * 设置过滤器，eg：[{ "Name": "Id", "Values": ["train-23091792777383936"] }]
+                     * 设置过滤器
 
-取值范围：
-Name（名称）：task1
-Id（task ID）：train-23091792777383936
-Status（状态）：STARTING / RUNNING / STOPPING / STOPPED / FAILED / SUCCEED / SUBMIT_FAILED
-ChargeType（计费类型）：PREPAID 包年包月 / POSTPAID_BY_HOUR 按量计费
-CHARGE_STATUS（计费状态）：NOT_BILLING（未开始计费）/ BILLING（计费中）/ ARREARS_STOP（欠费停止）
-                     * @param _filters 过滤器，eg：[{ "Name": "Id", "Values": ["train-23091792777383936"] }]
+Name支持的取值范围：
+BatchTaskId, BatchTaskName, Status, ModelVersionId
 
-取值范围：
-Name（名称）：task1
-Id（task ID）：train-23091792777383936
-Status（状态）：STARTING / RUNNING / STOPPING / STOPPED / FAILED / SUCCEED / SUBMIT_FAILED
-ChargeType（计费类型）：PREPAID 包年包月 / POSTPAID_BY_HOUR 按量计费
-CHARGE_STATUS（计费状态）：NOT_BILLING（未开始计费）/ BILLING（计费中）/ ARREARS_STOP（欠费停止）
+其中Status 的有效取值范围:
+INIT, STARTING, RUNNING, FAILED, STOPPING, STOPPED, SUCCEED
+                     * @param _filters 过滤器
+
+Name支持的取值范围：
+BatchTaskId, BatchTaskName, Status, ModelVersionId
+
+其中Status 的有效取值范围:
+INIT, STARTING, RUNNING, FAILED, STOPPING, STOPPED, SUCCEED
                      * 
                      */
                     void SetFilters(const std::vector<Filter>& _filters);
@@ -94,15 +90,15 @@ CHARGE_STATUS（计费状态）：NOT_BILLING（未开始计费）/ BILLING（�
                     bool FiltersHasBeenSet() const;
 
                     /**
-                     * 获取标签过滤器，eg：[{ "TagKey": "TagKeyA", "TagValue": ["TagValueA"] }]
-                     * @return TagFilters 标签过滤器，eg：[{ "TagKey": "TagKeyA", "TagValue": ["TagValueA"] }]
+                     * 获取标签过滤器
+                     * @return TagFilters 标签过滤器
                      * 
                      */
                     std::vector<TagFilter> GetTagFilters() const;
 
                     /**
-                     * 设置标签过滤器，eg：[{ "TagKey": "TagKeyA", "TagValue": ["TagValueA"] }]
-                     * @param _tagFilters 标签过滤器，eg：[{ "TagKey": "TagKeyA", "TagValue": ["TagValueA"] }]
+                     * 设置标签过滤器
+                     * @param _tagFilters 标签过滤器
                      * 
                      */
                     void SetTagFilters(const std::vector<TagFilter>& _tagFilters);
@@ -136,15 +132,15 @@ CHARGE_STATUS（计费状态）：NOT_BILLING（未开始计费）/ BILLING（�
                     bool OffsetHasBeenSet() const;
 
                     /**
-                     * 获取返回数量，默认为10，最大为50
-                     * @return Limit 返回数量，默认为10，最大为50
+                     * 获取限制数目，默认为20
+                     * @return Limit 限制数目，默认为20
                      * 
                      */
                     uint64_t GetLimit() const;
 
                     /**
-                     * 设置返回数量，默认为10，最大为50
-                     * @param _limit 返回数量，默认为10，最大为50
+                     * 设置限制数目，默认为20
+                     * @param _limit 限制数目，默认为20
                      * 
                      */
                     void SetLimit(const uint64_t& _limit);
@@ -178,15 +174,19 @@ CHARGE_STATUS（计费状态）：NOT_BILLING（未开始计费）/ BILLING（�
                     bool OrderHasBeenSet() const;
 
                     /**
-                     * 获取排序的依据字段， 取值范围 "CreateTime" "UpdateTime"
-                     * @return OrderField 排序的依据字段， 取值范围 "CreateTime" "UpdateTime"
+                     * 获取排序字段。当前仅支持 "CreateTime"。
+不传此字段则按照DB默认排序结果返回
+                     * @return OrderField 排序字段。当前仅支持 "CreateTime"。
+不传此字段则按照DB默认排序结果返回
                      * 
                      */
                     std::string GetOrderField() const;
 
                     /**
-                     * 设置排序的依据字段， 取值范围 "CreateTime" "UpdateTime"
-                     * @param _orderField 排序的依据字段， 取值范围 "CreateTime" "UpdateTime"
+                     * 设置排序字段。当前仅支持 "CreateTime"。
+不传此字段则按照DB默认排序结果返回
+                     * @param _orderField 排序字段。当前仅支持 "CreateTime"。
+不传此字段则按照DB默认排序结果返回
                      * 
                      */
                     void SetOrderField(const std::string& _orderField);
@@ -201,20 +201,19 @@ CHARGE_STATUS（计费状态）：NOT_BILLING（未开始计费）/ BILLING（�
                 private:
 
                     /**
-                     * 过滤器，eg：[{ "Name": "Id", "Values": ["train-23091792777383936"] }]
+                     * 过滤器
 
-取值范围：
-Name（名称）：task1
-Id（task ID）：train-23091792777383936
-Status（状态）：STARTING / RUNNING / STOPPING / STOPPED / FAILED / SUCCEED / SUBMIT_FAILED
-ChargeType（计费类型）：PREPAID 包年包月 / POSTPAID_BY_HOUR 按量计费
-CHARGE_STATUS（计费状态）：NOT_BILLING（未开始计费）/ BILLING（计费中）/ ARREARS_STOP（欠费停止）
+Name支持的取值范围：
+BatchTaskId, BatchTaskName, Status, ModelVersionId
+
+其中Status 的有效取值范围:
+INIT, STARTING, RUNNING, FAILED, STOPPING, STOPPED, SUCCEED
                      */
                     std::vector<Filter> m_filters;
                     bool m_filtersHasBeenSet;
 
                     /**
-                     * 标签过滤器，eg：[{ "TagKey": "TagKeyA", "TagValue": ["TagValueA"] }]
+                     * 标签过滤器
                      */
                     std::vector<TagFilter> m_tagFilters;
                     bool m_tagFiltersHasBeenSet;
@@ -226,7 +225,7 @@ CHARGE_STATUS（计费状态）：NOT_BILLING（未开始计费）/ BILLING（�
                     bool m_offsetHasBeenSet;
 
                     /**
-                     * 返回数量，默认为10，最大为50
+                     * 限制数目，默认为20
                      */
                     uint64_t m_limit;
                     bool m_limitHasBeenSet;
@@ -238,7 +237,8 @@ CHARGE_STATUS（计费状态）：NOT_BILLING（未开始计费）/ BILLING（�
                     bool m_orderHasBeenSet;
 
                     /**
-                     * 排序的依据字段， 取值范围 "CreateTime" "UpdateTime"
+                     * 排序字段。当前仅支持 "CreateTime"。
+不传此字段则按照DB默认排序结果返回
                      */
                     std::string m_orderField;
                     bool m_orderFieldHasBeenSet;

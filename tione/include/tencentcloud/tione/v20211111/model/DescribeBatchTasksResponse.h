@@ -45,8 +45,8 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取数量
-                     * @return TotalCount 数量
+                     * 获取批量预测任务总数
+                     * @return TotalCount 批量预测任务总数
                      * 
                      */
                     uint64_t GetTotalCount() const;
@@ -59,9 +59,9 @@ namespace TencentCloud
                     bool TotalCountHasBeenSet() const;
 
                     /**
-                     * 获取任务集
+                     * 获取批量预测任务列表
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return BatchTaskSet 任务集
+                     * @return BatchTaskSet 批量预测任务列表
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -77,13 +77,13 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 数量
+                     * 批量预测任务总数
                      */
                     uint64_t m_totalCount;
                     bool m_totalCountHasBeenSet;
 
                     /**
-                     * 任务集
+                     * 批量预测任务列表
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<BatchTaskSetItem> m_batchTaskSet;

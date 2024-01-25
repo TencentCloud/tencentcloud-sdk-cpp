@@ -44,8 +44,16 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取状态码
-                     * @return Status 状态码
+                     * 获取状态码。
+0：证书正常
+310：证书异常
+311：证书过期
+312：证书即将过期
+                     * @return Status 状态码。
+0：证书正常
+310：证书异常
+311：证书过期
+312：证书即将过期
                      * 
                      */
                     int64_t GetStatus() const;
@@ -86,9 +94,13 @@ namespace TencentCloud
                     bool NotAfterHasBeenSet() const;
 
                     /**
-                     * 获取证书是否改变:1有改变，0没有改变
+                     * 获取证书是否改变。
+0：未变化
+1：有变化
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return Changed 证书是否改变:1有改变，0没有改变
+                     * @return Changed 证书是否改变。
+0：未变化
+1：有变化
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -104,7 +116,11 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 状态码
+                     * 状态码。
+0：证书正常
+310：证书异常
+311：证书过期
+312：证书即将过期
                      */
                     int64_t m_status;
                     bool m_statusHasBeenSet;
@@ -122,7 +138,9 @@ namespace TencentCloud
                     bool m_notAfterHasBeenSet;
 
                     /**
-                     * 证书是否改变:1有改变，0没有改变
+                     * 证书是否改变。
+0：未变化
+1：有变化
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_changed;

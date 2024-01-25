@@ -31,7 +31,8 @@ ModifyDBInstanceLogToCLSRequest::ModifyDBInstanceLogToCLSRequest() :
     m_createLogTopicHasBeenSet(false),
     m_logTopicHasBeenSet(false),
     m_periodHasBeenSet(false),
-    m_createIndexHasBeenSet(false)
+    m_createIndexHasBeenSet(false),
+    m_clsRegionHasBeenSet(false)
 {
 }
 
@@ -112,6 +113,14 @@ string ModifyDBInstanceLogToCLSRequest::ToJsonString() const
         string key = "CreateIndex";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_createIndex, allocator);
+    }
+
+    if (m_clsRegionHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ClsRegion";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_clsRegion.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -264,6 +273,22 @@ void ModifyDBInstanceLogToCLSRequest::SetCreateIndex(const bool& _createIndex)
 bool ModifyDBInstanceLogToCLSRequest::CreateIndexHasBeenSet() const
 {
     return m_createIndexHasBeenSet;
+}
+
+string ModifyDBInstanceLogToCLSRequest::GetClsRegion() const
+{
+    return m_clsRegion;
+}
+
+void ModifyDBInstanceLogToCLSRequest::SetClsRegion(const string& _clsRegion)
+{
+    m_clsRegion = _clsRegion;
+    m_clsRegionHasBeenSet = true;
+}
+
+bool ModifyDBInstanceLogToCLSRequest::ClsRegionHasBeenSet() const
+{
+    return m_clsRegionHasBeenSet;
 }
 
 

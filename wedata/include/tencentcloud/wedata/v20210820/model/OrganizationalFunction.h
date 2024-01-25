@@ -556,6 +556,106 @@ namespace TencentCloud
                      */
                     bool SubmitErrorMsgHasBeenSet() const;
 
+                    /**
+                     * 获取模式名
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return SchemaName 模式名
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::string GetSchemaName() const;
+
+                    /**
+                     * 设置模式名
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _schemaName 模式名
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetSchemaName(const std::string& _schemaName);
+
+                    /**
+                     * 判断参数 SchemaName 是否已赋值
+                     * @return SchemaName 是否已赋值
+                     * 
+                     */
+                    bool SchemaNameHasBeenSet() const;
+
+                    /**
+                     * 获取函数命令格式
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return CommandFormat 函数命令格式
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::string GetCommandFormat() const;
+
+                    /**
+                     * 设置函数命令格式
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _commandFormat 函数命令格式
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetCommandFormat(const std::string& _commandFormat);
+
+                    /**
+                     * 判断参数 CommandFormat 是否已赋值
+                     * @return CommandFormat 是否已赋值
+                     * 
+                     */
+                    bool CommandFormatHasBeenSet() const;
+
+                    /**
+                     * 获取名称
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return OwnerName 名称
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::string GetOwnerName() const;
+
+                    /**
+                     * 设置名称
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _ownerName 名称
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetOwnerName(const std::string& _ownerName);
+
+                    /**
+                     * 判断参数 OwnerName 是否已赋值
+                     * @return OwnerName 是否已赋值
+                     * 
+                     */
+                    bool OwnerNameHasBeenSet() const;
+
+                    /**
+                     * 获取时间戳
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return SubmitTimestamp 时间戳
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::string GetSubmitTimestamp() const;
+
+                    /**
+                     * 设置时间戳
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _submitTimestamp 时间戳
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetSubmitTimestamp(const std::string& _submitTimestamp);
+
+                    /**
+                     * 判断参数 SubmitTimestamp 是否已赋值
+                     * @return SubmitTimestamp 是否已赋值
+                     * 
+                     */
+                    bool SubmitTimestampHasBeenSet() const;
+
                 private:
 
                     /**
@@ -700,6 +800,34 @@ namespace TencentCloud
                      */
                     std::string m_submitErrorMsg;
                     bool m_submitErrorMsgHasBeenSet;
+
+                    /**
+                     * 模式名
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_schemaName;
+                    bool m_schemaNameHasBeenSet;
+
+                    /**
+                     * 函数命令格式
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_commandFormat;
+                    bool m_commandFormatHasBeenSet;
+
+                    /**
+                     * 名称
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_ownerName;
+                    bool m_ownerNameHasBeenSet;
+
+                    /**
+                     * 时间戳
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_submitTimestamp;
+                    bool m_submitTimestampHasBeenSet;
 
                 };
             }

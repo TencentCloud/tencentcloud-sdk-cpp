@@ -26,7 +26,8 @@ using namespace std;
 DescribePrometheusInstanceInitStatusResponse::DescribePrometheusInstanceInitStatusResponse() :
     m_statusHasBeenSet(false),
     m_stepsHasBeenSet(false),
-    m_eksClusterIdHasBeenSet(false)
+    m_eksClusterIdHasBeenSet(false),
+    m_securityGroupIdHasBeenSet(false)
 {
 }
 
@@ -104,6 +105,16 @@ CoreInternalOutcome DescribePrometheusInstanceInitStatusResponse::Deserialize(co
         m_eksClusterIdHasBeenSet = true;
     }
 
+    if (rsp.HasMember("SecurityGroupId") && !rsp["SecurityGroupId"].IsNull())
+    {
+        if (!rsp["SecurityGroupId"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `SecurityGroupId` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_securityGroupId = string(rsp["SecurityGroupId"].GetString());
+        m_securityGroupIdHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -143,6 +154,14 @@ string DescribePrometheusInstanceInitStatusResponse::ToJsonString() const
         string key = "EksClusterId";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_eksClusterId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_securityGroupIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "SecurityGroupId";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_securityGroupId.c_str(), allocator).Move(), allocator);
     }
 
     rapidjson::Value iKey(rapidjson::kStringType);
@@ -185,6 +204,16 @@ string DescribePrometheusInstanceInitStatusResponse::GetEksClusterId() const
 bool DescribePrometheusInstanceInitStatusResponse::EksClusterIdHasBeenSet() const
 {
     return m_eksClusterIdHasBeenSet;
+}
+
+string DescribePrometheusInstanceInitStatusResponse::GetSecurityGroupId() const
+{
+    return m_securityGroupId;
+}
+
+bool DescribePrometheusInstanceInitStatusResponse::SecurityGroupIdHasBeenSet() const
+{
+    return m_securityGroupIdHasBeenSet;
 }
 
 

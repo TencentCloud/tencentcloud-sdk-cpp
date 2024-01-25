@@ -148,6 +148,27 @@ namespace TencentCloud
                      */
                     bool AlarmRecipientTypesHasBeenSet() const;
 
+                    /**
+                     * 获取是否需要校验父任务已经提交到调度	
+                     * @return NeedCheckParentSubmitted 是否需要校验父任务已经提交到调度	
+                     * 
+                     */
+                    bool GetNeedCheckParentSubmitted() const;
+
+                    /**
+                     * 设置是否需要校验父任务已经提交到调度	
+                     * @param _needCheckParentSubmitted 是否需要校验父任务已经提交到调度	
+                     * 
+                     */
+                    void SetNeedCheckParentSubmitted(const bool& _needCheckParentSubmitted);
+
+                    /**
+                     * 判断参数 NeedCheckParentSubmitted 是否已赋值
+                     * @return NeedCheckParentSubmitted 是否已赋值
+                     * 
+                     */
+                    bool NeedCheckParentSubmittedHasBeenSet() const;
+
                 private:
 
                     /**
@@ -179,6 +200,12 @@ namespace TencentCloud
                      */
                     std::string m_alarmRecipientTypes;
                     bool m_alarmRecipientTypesHasBeenSet;
+
+                    /**
+                     * 是否需要校验父任务已经提交到调度	
+                     */
+                    bool m_needCheckParentSubmitted;
+                    bool m_needCheckParentSubmittedHasBeenSet;
 
                 };
             }

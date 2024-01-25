@@ -63,6 +63,27 @@ namespace TencentCloud
                      */
                     bool InstanceIdHasBeenSet() const;
 
+                    /**
+                     * 获取CLS服务所在地域
+                     * @return ClsRegion CLS服务所在地域
+                     * 
+                     */
+                    std::string GetClsRegion() const;
+
+                    /**
+                     * 设置CLS服务所在地域
+                     * @param _clsRegion CLS服务所在地域
+                     * 
+                     */
+                    void SetClsRegion(const std::string& _clsRegion);
+
+                    /**
+                     * 判断参数 ClsRegion 是否已赋值
+                     * @return ClsRegion 是否已赋值
+                     * 
+                     */
+                    bool ClsRegionHasBeenSet() const;
+
                 private:
 
                     /**
@@ -70,6 +91,12 @@ namespace TencentCloud
                      */
                     std::string m_instanceId;
                     bool m_instanceIdHasBeenSet;
+
+                    /**
+                     * CLS服务所在地域
+                     */
+                    std::string m_clsRegion;
+                    bool m_clsRegionHasBeenSet;
 
                 };
             }

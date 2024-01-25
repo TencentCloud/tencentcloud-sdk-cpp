@@ -26,10 +26,11 @@ DescribeBlockIgnoreListRequest::DescribeBlockIgnoreListRequest() :
     m_limitHasBeenSet(false),
     m_offsetHasBeenSet(false),
     m_directionHasBeenSet(false),
-    m_ruleTypeHasBeenSet(false),
     m_orderHasBeenSet(false),
     m_byHasBeenSet(false),
-    m_searchValueHasBeenSet(false)
+    m_searchValueHasBeenSet(false),
+    m_ruleTypeHasBeenSet(false),
+    m_showTypeHasBeenSet(false)
 {
 }
 
@@ -64,14 +65,6 @@ string DescribeBlockIgnoreListRequest::ToJsonString() const
         d.AddMember(iKey, rapidjson::Value(m_direction.c_str(), allocator).Move(), allocator);
     }
 
-    if (m_ruleTypeHasBeenSet)
-    {
-        rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "RuleType";
-        iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, m_ruleType, allocator);
-    }
-
     if (m_orderHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
@@ -94,6 +87,22 @@ string DescribeBlockIgnoreListRequest::ToJsonString() const
         string key = "SearchValue";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_searchValue.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_ruleTypeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "RuleType";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_ruleType, allocator);
+    }
+
+    if (m_showTypeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ShowType";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_showType.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -152,22 +161,6 @@ bool DescribeBlockIgnoreListRequest::DirectionHasBeenSet() const
     return m_directionHasBeenSet;
 }
 
-uint64_t DescribeBlockIgnoreListRequest::GetRuleType() const
-{
-    return m_ruleType;
-}
-
-void DescribeBlockIgnoreListRequest::SetRuleType(const uint64_t& _ruleType)
-{
-    m_ruleType = _ruleType;
-    m_ruleTypeHasBeenSet = true;
-}
-
-bool DescribeBlockIgnoreListRequest::RuleTypeHasBeenSet() const
-{
-    return m_ruleTypeHasBeenSet;
-}
-
 string DescribeBlockIgnoreListRequest::GetOrder() const
 {
     return m_order;
@@ -214,6 +207,38 @@ void DescribeBlockIgnoreListRequest::SetSearchValue(const string& _searchValue)
 bool DescribeBlockIgnoreListRequest::SearchValueHasBeenSet() const
 {
     return m_searchValueHasBeenSet;
+}
+
+uint64_t DescribeBlockIgnoreListRequest::GetRuleType() const
+{
+    return m_ruleType;
+}
+
+void DescribeBlockIgnoreListRequest::SetRuleType(const uint64_t& _ruleType)
+{
+    m_ruleType = _ruleType;
+    m_ruleTypeHasBeenSet = true;
+}
+
+bool DescribeBlockIgnoreListRequest::RuleTypeHasBeenSet() const
+{
+    return m_ruleTypeHasBeenSet;
+}
+
+string DescribeBlockIgnoreListRequest::GetShowType() const
+{
+    return m_showType;
+}
+
+void DescribeBlockIgnoreListRequest::SetShowType(const string& _showType)
+{
+    m_showType = _showType;
+    m_showTypeHasBeenSet = true;
+}
+
+bool DescribeBlockIgnoreListRequest::ShowTypeHasBeenSet() const
+{
+    return m_showTypeHasBeenSet;
 }
 
 

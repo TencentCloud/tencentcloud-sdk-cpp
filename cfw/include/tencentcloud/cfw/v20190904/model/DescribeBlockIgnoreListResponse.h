@@ -114,6 +114,20 @@ namespace TencentCloud
                      */
                     bool SourceListHasBeenSet() const;
 
+                    /**
+                     * 获取对应规则类型的数量，示例：[0,122,30,55,12,232,0]，封禁0个，IP地址122个，域名30个，威胁情报55个，资产实例12个，自定义策略232个，入侵防御规则0个
+                     * @return RuleTypeDataList 对应规则类型的数量，示例：[0,122,30,55,12,232,0]，封禁0个，IP地址122个，域名30个，威胁情报55个，资产实例12个，自定义策略232个，入侵防御规则0个
+                     * 
+                     */
+                    std::vector<int64_t> GetRuleTypeDataList() const;
+
+                    /**
+                     * 判断参数 RuleTypeDataList 是否已赋值
+                     * @return RuleTypeDataList 是否已赋值
+                     * 
+                     */
+                    bool RuleTypeDataListHasBeenSet() const;
+
                 private:
 
                     /**
@@ -145,6 +159,12 @@ namespace TencentCloud
                      */
                     std::vector<std::string> m_sourceList;
                     bool m_sourceListHasBeenSet;
+
+                    /**
+                     * 对应规则类型的数量，示例：[0,122,30,55,12,232,0]，封禁0个，IP地址122个，域名30个，威胁情报55个，资产实例12个，自定义策略232个，入侵防御规则0个
+                     */
+                    std::vector<int64_t> m_ruleTypeDataList;
+                    bool m_ruleTypeDataListHasBeenSet;
 
                 };
             }

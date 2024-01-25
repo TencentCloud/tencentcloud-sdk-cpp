@@ -147,6 +147,27 @@ namespace TencentCloud
                      */
                     bool SourceTypeHasBeenSet() const;
 
+                    /**
+                     * 获取IP黑白名单类型，40为IP白名单，42为IP黑名单
+                     * @return ActionType IP黑白名单类型，40为IP白名单，42为IP黑名单
+                     * 
+                     */
+                    uint64_t GetActionType() const;
+
+                    /**
+                     * 设置IP黑白名单类型，40为IP白名单，42为IP黑名单
+                     * @param _actionType IP黑白名单类型，40为IP白名单，42为IP黑名单
+                     * 
+                     */
+                    void SetActionType(const uint64_t& _actionType);
+
+                    /**
+                     * 判断参数 ActionType 是否已赋值
+                     * @return ActionType 是否已赋值
+                     * 
+                     */
+                    bool ActionTypeHasBeenSet() const;
+
                 private:
 
                     /**
@@ -178,6 +199,12 @@ namespace TencentCloud
                      */
                     std::string m_sourceType;
                     bool m_sourceTypeHasBeenSet;
+
+                    /**
+                     * IP黑白名单类型，40为IP白名单，42为IP黑名单
+                     */
+                    uint64_t m_actionType;
+                    bool m_actionTypeHasBeenSet;
 
                 };
             }

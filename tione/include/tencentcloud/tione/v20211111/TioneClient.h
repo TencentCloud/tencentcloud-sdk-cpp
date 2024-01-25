@@ -429,7 +429,7 @@ namespace TencentCloud
                 CreateBatchModelAccTasksOutcomeCallable CreateBatchModelAccTasksCallable(const Model::CreateBatchModelAccTasksRequest& request);
 
                 /**
-                 *创建跑批任务
+                 *创建批量预测任务
                  * @param req CreateBatchTaskRequest
                  * @return CreateBatchTaskOutcome
                  */
@@ -501,7 +501,7 @@ namespace TencentCloud
                 CreateTrainingTaskOutcomeCallable CreateTrainingTaskCallable(const Model::CreateTrainingTaskRequest& request);
 
                 /**
-                 *删除跑批任务
+                 *删除批量预测任务
                  * @param req DeleteBatchTaskRequest
                  * @return DeleteBatchTaskOutcome
                  */
@@ -600,7 +600,7 @@ namespace TencentCloud
                 DescribeAPIConfigsOutcomeCallable DescribeAPIConfigsCallable(const Model::DescribeAPIConfigsRequest& request);
 
                 /**
-                 *查询跑批任务
+                 *查询批量预测任务
                  * @param req DescribeBatchTaskRequest
                  * @return DescribeBatchTaskOutcome
                  */
@@ -609,7 +609,7 @@ namespace TencentCloud
                 DescribeBatchTaskOutcomeCallable DescribeBatchTaskCallable(const Model::DescribeBatchTaskRequest& request);
 
                 /**
-                 *查询跑批实例列表
+                 *查询批量预测任务实例列表
                  * @param req DescribeBatchTaskInstancesRequest
                  * @return DescribeBatchTaskInstancesOutcome
                  */
@@ -618,7 +618,7 @@ namespace TencentCloud
                 DescribeBatchTaskInstancesOutcomeCallable DescribeBatchTaskInstancesCallable(const Model::DescribeBatchTaskInstancesRequest& request);
 
                 /**
-                 *批量预测任务列表信息
+                 *查询批量预测任务列表信息
                  * @param req DescribeBatchTasksRequest
                  * @return DescribeBatchTasksOutcome
                  */
@@ -1032,7 +1032,7 @@ namespace TencentCloud
                 StartTrainingTaskOutcomeCallable StartTrainingTaskCallable(const Model::StartTrainingTaskRequest& request);
 
                 /**
-                 *停止跑批任务
+                 *停止批量预测任务
                  * @param req StopBatchTaskRequest
                  * @return StopBatchTaskOutcome
                  */

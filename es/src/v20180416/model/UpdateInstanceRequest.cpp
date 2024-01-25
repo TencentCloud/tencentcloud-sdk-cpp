@@ -56,7 +56,8 @@ UpdateInstanceRequest::UpdateInstanceRequest() :
     m_operationDurationHasBeenSet(false),
     m_kibanaAlteringPublicAccessHasBeenSet(false),
     m_kibanaPrivateDomainHasBeenSet(false),
-    m_cerebroPrivateDomainHasBeenSet(false)
+    m_cerebroPrivateDomainHasBeenSet(false),
+    m_protocolHasBeenSet(false)
 {
 }
 
@@ -357,6 +358,14 @@ string UpdateInstanceRequest::ToJsonString() const
         string key = "CerebroPrivateDomain";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_cerebroPrivateDomain.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_protocolHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Protocol";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_protocol.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -909,6 +918,22 @@ void UpdateInstanceRequest::SetCerebroPrivateDomain(const string& _cerebroPrivat
 bool UpdateInstanceRequest::CerebroPrivateDomainHasBeenSet() const
 {
     return m_cerebroPrivateDomainHasBeenSet;
+}
+
+string UpdateInstanceRequest::GetProtocol() const
+{
+    return m_protocol;
+}
+
+void UpdateInstanceRequest::SetProtocol(const string& _protocol)
+{
+    m_protocol = _protocol;
+    m_protocolHasBeenSet = true;
+}
+
+bool UpdateInstanceRequest::ProtocolHasBeenSet() const
+{
+    return m_protocolHasBeenSet;
 }
 
 

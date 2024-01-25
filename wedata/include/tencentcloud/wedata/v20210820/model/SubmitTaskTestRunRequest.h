@@ -44,15 +44,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取无
-                     * @return TaskIds 无
+                     * 获取taskId列表
+                     * @return TaskIds taskId列表
                      * 
                      */
                     std::string GetTaskIds() const;
 
                     /**
-                     * 设置无
-                     * @param _taskIds 无
+                     * 设置taskId列表
+                     * @param _taskIds taskId列表
                      * 
                      */
                     void SetTaskIds(const std::string& _taskIds);
@@ -65,15 +65,15 @@ namespace TencentCloud
                     bool TaskIdsHasBeenSet() const;
 
                     /**
-                     * 获取无
-                     * @return ProjectId 无
+                     * 获取项目Id
+                     * @return ProjectId 项目Id
                      * 
                      */
                     std::string GetProjectId() const;
 
                     /**
-                     * 设置无
-                     * @param _projectId 无
+                     * 设置项目Id
+                     * @param _projectId 项目Id
                      * 
                      */
                     void SetProjectId(const std::string& _projectId);
@@ -86,15 +86,15 @@ namespace TencentCloud
                     bool ProjectIdHasBeenSet() const;
 
                     /**
-                     * 获取无
-                     * @return WorkFlowId 无
+                     * 获取工作流id
+                     * @return WorkFlowId 工作流id
                      * 
                      */
                     std::string GetWorkFlowId() const;
 
                     /**
-                     * 设置无
-                     * @param _workFlowId 无
+                     * 设置工作流id
+                     * @param _workFlowId 工作流id
                      * 
                      */
                     void SetWorkFlowId(const std::string& _workFlowId);
@@ -107,15 +107,15 @@ namespace TencentCloud
                     bool WorkFlowIdHasBeenSet() const;
 
                     /**
-                     * 获取无
-                     * @return Name 无
+                     * 获取工作流名称
+                     * @return Name 工作流名称
                      * 
                      */
                     std::string GetName() const;
 
                     /**
-                     * 设置无
-                     * @param _name 无
+                     * 设置工作流名称
+                     * @param _name 工作流名称
                      * 
                      */
                     void SetName(const std::string& _name);
@@ -128,15 +128,15 @@ namespace TencentCloud
                     bool NameHasBeenSet() const;
 
                     /**
-                     * 获取无
-                     * @return Tasks 无
+                     * 获取工作流任务列表
+                     * @return Tasks 工作流任务列表
                      * 
                      */
                     std::vector<StageCloudApiRequest> GetTasks() const;
 
                     /**
-                     * 设置无
-                     * @param _tasks 无
+                     * 设置工作流任务列表
+                     * @param _tasks 工作流任务列表
                      * 
                      */
                     void SetTasks(const std::vector<StageCloudApiRequest>& _tasks);
@@ -149,15 +149,15 @@ namespace TencentCloud
                     bool TasksHasBeenSet() const;
 
                     /**
-                     * 获取无
-                     * @return Description 无
+                     * 获取备注
+                     * @return Description 备注
                      * 
                      */
                     std::string GetDescription() const;
 
                     /**
-                     * 设置无
-                     * @param _description 无
+                     * 设置备注
+                     * @param _description 备注
                      * 
                      */
                     void SetDescription(const std::string& _description);
@@ -170,15 +170,15 @@ namespace TencentCloud
                     bool DescriptionHasBeenSet() const;
 
                     /**
-                     * 获取无
-                     * @return RunParams 无
+                     * 获取运行参数，map的Json形式
+                     * @return RunParams 运行参数，map的Json形式
                      * 
                      */
                     std::string GetRunParams() const;
 
                     /**
-                     * 设置无
-                     * @param _runParams 无
+                     * 设置运行参数，map的Json形式
+                     * @param _runParams 运行参数，map的Json形式
                      * 
                      */
                     void SetRunParams(const std::string& _runParams);
@@ -191,15 +191,15 @@ namespace TencentCloud
                     bool RunParamsHasBeenSet() const;
 
                     /**
-                     * 获取无
-                     * @return ScriptContent 无
+                     * 获取脚本内容
+                     * @return ScriptContent 脚本内容
                      * 
                      */
                     std::string GetScriptContent() const;
 
                     /**
-                     * 设置无
-                     * @param _scriptContent 无
+                     * 设置脚本内容
+                     * @param _scriptContent 脚本内容
                      * 
                      */
                     void SetScriptContent(const std::string& _scriptContent);
@@ -212,15 +212,15 @@ namespace TencentCloud
                     bool ScriptContentHasBeenSet() const;
 
                     /**
-                     * 获取无
-                     * @return VersionId 无
+                     * 获取版本号
+                     * @return VersionId 版本号
                      * 
                      */
                     std::string GetVersionId() const;
 
                     /**
-                     * 设置无
-                     * @param _versionId 无
+                     * 设置版本号
+                     * @param _versionId 版本号
                      * 
                      */
                     void SetVersionId(const std::string& _versionId);
@@ -235,55 +235,55 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 无
+                     * taskId列表
                      */
                     std::string m_taskIds;
                     bool m_taskIdsHasBeenSet;
 
                     /**
-                     * 无
+                     * 项目Id
                      */
                     std::string m_projectId;
                     bool m_projectIdHasBeenSet;
 
                     /**
-                     * 无
+                     * 工作流id
                      */
                     std::string m_workFlowId;
                     bool m_workFlowIdHasBeenSet;
 
                     /**
-                     * 无
+                     * 工作流名称
                      */
                     std::string m_name;
                     bool m_nameHasBeenSet;
 
                     /**
-                     * 无
+                     * 工作流任务列表
                      */
                     std::vector<StageCloudApiRequest> m_tasks;
                     bool m_tasksHasBeenSet;
 
                     /**
-                     * 无
+                     * 备注
                      */
                     std::string m_description;
                     bool m_descriptionHasBeenSet;
 
                     /**
-                     * 无
+                     * 运行参数，map的Json形式
                      */
                     std::string m_runParams;
                     bool m_runParamsHasBeenSet;
 
                     /**
-                     * 无
+                     * 脚本内容
                      */
                     std::string m_scriptContent;
                     bool m_scriptContentHasBeenSet;
 
                     /**
-                     * 无
+                     * 版本号
                      */
                     std::string m_versionId;
                     bool m_versionIdHasBeenSet;

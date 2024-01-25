@@ -23,7 +23,8 @@ using namespace TencentCloud::Cdb::V20170320::Model;
 using namespace std;
 
 DescribeDBInstanceLogToCLSRequest::DescribeDBInstanceLogToCLSRequest() :
-    m_instanceIdHasBeenSet(false)
+    m_instanceIdHasBeenSet(false),
+    m_clsRegionHasBeenSet(false)
 {
 }
 
@@ -40,6 +41,14 @@ string DescribeDBInstanceLogToCLSRequest::ToJsonString() const
         string key = "InstanceId";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_instanceId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_clsRegionHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ClsRegion";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_clsRegion.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -64,6 +73,22 @@ void DescribeDBInstanceLogToCLSRequest::SetInstanceId(const string& _instanceId)
 bool DescribeDBInstanceLogToCLSRequest::InstanceIdHasBeenSet() const
 {
     return m_instanceIdHasBeenSet;
+}
+
+string DescribeDBInstanceLogToCLSRequest::GetClsRegion() const
+{
+    return m_clsRegion;
+}
+
+void DescribeDBInstanceLogToCLSRequest::SetClsRegion(const string& _clsRegion)
+{
+    m_clsRegion = _clsRegion;
+    m_clsRegionHasBeenSet = true;
+}
+
+bool DescribeDBInstanceLogToCLSRequest::ClsRegionHasBeenSet() const
+{
+    return m_clsRegionHasBeenSet;
 }
 
 

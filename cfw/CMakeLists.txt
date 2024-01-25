@@ -217,6 +217,7 @@ set(cfw_public_header_model
   include/tencentcloud/cfw/v20190904/model/ModifyNatFwSwitchRequest.h
   include/tencentcloud/cfw/v20190904/model/ModifyFwGroupSwitchResponse.h
   include/tencentcloud/cfw/v20190904/model/RemoveNatAcRuleResponse.h
+  include/tencentcloud/cfw/v20190904/model/CustomWhiteRule.h
   include/tencentcloud/cfw/v20190904/model/DescribeFwEdgeIpsResponse.h
   include/tencentcloud/cfw/v20190904/model/DescribeIPStatusListResponse.h
   include/tencentcloud/cfw/v20190904/model/CreateDatabaseWhiteListRulesRequest.h
@@ -499,6 +500,7 @@ set(cfw_src
   src/v20190904/model/ModifyNatFwSwitchRequest.cpp
   src/v20190904/model/ModifyFwGroupSwitchResponse.cpp
   src/v20190904/model/RemoveNatAcRuleResponse.cpp
+  src/v20190904/model/CustomWhiteRule.cpp
   src/v20190904/model/DescribeFwEdgeIpsResponse.cpp
   src/v20190904/model/DescribeIPStatusListResponse.cpp
   src/v20190904/model/CreateDatabaseWhiteListRulesRequest.cpp

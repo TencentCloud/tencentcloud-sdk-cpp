@@ -378,6 +378,27 @@ drop：拒绝
                      */
                     bool EnableHasBeenSet() const;
 
+                    /**
+                     * 获取规则对应的唯一内部id
+                     * @return Uid 规则对应的唯一内部id
+                     * 
+                     */
+                    std::string GetUid() const;
+
+                    /**
+                     * 设置规则对应的唯一内部id
+                     * @param _uid 规则对应的唯一内部id
+                     * 
+                     */
+                    void SetUid(const std::string& _uid);
+
+                    /**
+                     * 判断参数 Uid 是否已赋值
+                     * @return Uid 是否已赋值
+                     * 
+                     */
+                    bool UidHasBeenSet() const;
+
                 private:
 
                     /**
@@ -471,6 +492,12 @@ drop：拒绝
                      */
                     std::string m_enable;
                     bool m_enableHasBeenSet;
+
+                    /**
+                     * 规则对应的唯一内部id
+                     */
+                    std::string m_uid;
+                    bool m_uidHasBeenSet;
 
                 };
             }

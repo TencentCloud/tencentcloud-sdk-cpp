@@ -121,6 +121,31 @@ namespace TencentCloud
                      */
                     bool LogTopicIdHasBeenSet() const;
 
+                    /**
+                     * 获取CLS服务所在地域
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return ClsRegion CLS服务所在地域
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::string GetClsRegion() const;
+
+                    /**
+                     * 设置CLS服务所在地域
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _clsRegion CLS服务所在地域
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetClsRegion(const std::string& _clsRegion);
+
+                    /**
+                     * 判断参数 ClsRegion 是否已赋值
+                     * @return ClsRegion 是否已赋值
+                     * 
+                     */
+                    bool ClsRegionHasBeenSet() const;
+
                 private:
 
                     /**
@@ -143,6 +168,13 @@ namespace TencentCloud
                      */
                     std::string m_logTopicId;
                     bool m_logTopicIdHasBeenSet;
+
+                    /**
+                     * CLS服务所在地域
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_clsRegion;
+                    bool m_clsRegionHasBeenSet;
 
                 };
             }

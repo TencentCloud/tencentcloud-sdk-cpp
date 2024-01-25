@@ -45,8 +45,8 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取操作的状态码，如果所有的资源操作成功则返回的是成功的状态码，如果有资源操作失败则需要解析Message的内容来查看哪个资源失败
-                     * @return Success 操作的状态码，如果所有的资源操作成功则返回的是成功的状态码，如果有资源操作失败则需要解析Message的内容来查看哪个资源失败
+                     * 获取域名删除结果。Code表示状态码，Message表示详细信息。
+                     * @return Success 域名删除结果。Code表示状态码，Message表示详细信息。
                      * 
                      */
                     ResponseCode GetSuccess() const;
@@ -61,7 +61,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 操作的状态码，如果所有的资源操作成功则返回的是成功的状态码，如果有资源操作失败则需要解析Message的内容来查看哪个资源失败
+                     * 域名删除结果。Code表示状态码，Message表示详细信息。
                      */
                     ResponseCode m_success;
                     bool m_successHasBeenSet;

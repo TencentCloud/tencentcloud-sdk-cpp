@@ -84,6 +84,69 @@ namespace TencentCloud
                      */
                     bool WorkflowIdHasBeenSet() const;
 
+                    /**
+                     * 获取是否删除脚本
+                     * @return DeleteScript 是否删除脚本
+                     * 
+                     */
+                    std::string GetDeleteScript() const;
+
+                    /**
+                     * 设置是否删除脚本
+                     * @param _deleteScript 是否删除脚本
+                     * 
+                     */
+                    void SetDeleteScript(const std::string& _deleteScript);
+
+                    /**
+                     * 判断参数 DeleteScript 是否已赋值
+                     * @return DeleteScript 是否已赋值
+                     * 
+                     */
+                    bool DeleteScriptHasBeenSet() const;
+
+                    /**
+                     * 获取删除是否通知下游
+                     * @return OperateIsInform 删除是否通知下游
+                     * 
+                     */
+                    std::string GetOperateIsInform() const;
+
+                    /**
+                     * 设置删除是否通知下游
+                     * @param _operateIsInform 删除是否通知下游
+                     * 
+                     */
+                    void SetOperateIsInform(const std::string& _operateIsInform);
+
+                    /**
+                     * 判断参数 OperateIsInform 是否已赋值
+                     * @return OperateIsInform 是否已赋值
+                     * 
+                     */
+                    bool OperateIsInformHasBeenSet() const;
+
+                    /**
+                     * 获取是否终止进行中的任务
+                     * @return DeleteMode 是否终止进行中的任务
+                     * 
+                     */
+                    std::string GetDeleteMode() const;
+
+                    /**
+                     * 设置是否终止进行中的任务
+                     * @param _deleteMode 是否终止进行中的任务
+                     * 
+                     */
+                    void SetDeleteMode(const std::string& _deleteMode);
+
+                    /**
+                     * 判断参数 DeleteMode 是否已赋值
+                     * @return DeleteMode 是否已赋值
+                     * 
+                     */
+                    bool DeleteModeHasBeenSet() const;
+
                 private:
 
                     /**
@@ -97,6 +160,24 @@ namespace TencentCloud
                      */
                     std::string m_workflowId;
                     bool m_workflowIdHasBeenSet;
+
+                    /**
+                     * 是否删除脚本
+                     */
+                    std::string m_deleteScript;
+                    bool m_deleteScriptHasBeenSet;
+
+                    /**
+                     * 删除是否通知下游
+                     */
+                    std::string m_operateIsInform;
+                    bool m_operateIsInformHasBeenSet;
+
+                    /**
+                     * 是否终止进行中的任务
+                     */
+                    std::string m_deleteMode;
+                    bool m_deleteModeHasBeenSet;
 
                 };
             }

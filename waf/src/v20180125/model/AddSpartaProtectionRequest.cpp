@@ -56,7 +56,9 @@ AddSpartaProtectionRequest::AddSpartaProtectionRequest() :
     m_proxySendTimeoutHasBeenSet(false),
     m_sniTypeHasBeenSet(false),
     m_sniHostHasBeenSet(false),
-    m_xFFResetHasBeenSet(false)
+    m_xFFResetHasBeenSet(false),
+    m_noteHasBeenSet(false),
+    m_upstreamHostHasBeenSet(false)
 {
 }
 
@@ -369,6 +371,22 @@ string AddSpartaProtectionRequest::ToJsonString() const
         string key = "XFFReset";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_xFFReset, allocator);
+    }
+
+    if (m_noteHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Note";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_note.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_upstreamHostHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "UpstreamHost";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_upstreamHost.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -921,6 +939,38 @@ void AddSpartaProtectionRequest::SetXFFReset(const int64_t& _xFFReset)
 bool AddSpartaProtectionRequest::XFFResetHasBeenSet() const
 {
     return m_xFFResetHasBeenSet;
+}
+
+string AddSpartaProtectionRequest::GetNote() const
+{
+    return m_note;
+}
+
+void AddSpartaProtectionRequest::SetNote(const string& _note)
+{
+    m_note = _note;
+    m_noteHasBeenSet = true;
+}
+
+bool AddSpartaProtectionRequest::NoteHasBeenSet() const
+{
+    return m_noteHasBeenSet;
+}
+
+string AddSpartaProtectionRequest::GetUpstreamHost() const
+{
+    return m_upstreamHost;
+}
+
+void AddSpartaProtectionRequest::SetUpstreamHost(const string& _upstreamHost)
+{
+    m_upstreamHost = _upstreamHost;
+    m_upstreamHostHasBeenSet = true;
+}
+
+bool AddSpartaProtectionRequest::UpstreamHostHasBeenSet() const
+{
+    return m_upstreamHostHasBeenSet;
 }
 
 

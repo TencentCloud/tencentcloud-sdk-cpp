@@ -46,7 +46,8 @@ FlowCreateApprover::FlowCreateApprover() :
     m_componentLimitTypeHasBeenSet(false),
     m_approverVerifyTypesHasBeenSet(false),
     m_approverSignTypesHasBeenSet(false),
-    m_signTypeSelectorHasBeenSet(false)
+    m_signTypeSelectorHasBeenSet(false),
+    m_deadlineHasBeenSet(false)
 {
 }
 
@@ -361,6 +362,16 @@ CoreInternalOutcome FlowCreateApprover::Deserialize(const rapidjson::Value &valu
         m_signTypeSelectorHasBeenSet = true;
     }
 
+    if (value.HasMember("Deadline") && !value["Deadline"].IsNull())
+    {
+        if (!value["Deadline"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `FlowCreateApprover.Deadline` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_deadline = value["Deadline"].GetInt64();
+        m_deadlineHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -610,6 +621,14 @@ void FlowCreateApprover::ToJsonObject(rapidjson::Value &value, rapidjson::Docume
         string key = "SignTypeSelector";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_signTypeSelector, allocator);
+    }
+
+    if (m_deadlineHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Deadline";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_deadline, allocator);
     }
 
 }
@@ -1029,5 +1048,21 @@ void FlowCreateApprover::SetSignTypeSelector(const uint64_t& _signTypeSelector)
 bool FlowCreateApprover::SignTypeSelectorHasBeenSet() const
 {
     return m_signTypeSelectorHasBeenSet;
+}
+
+int64_t FlowCreateApprover::GetDeadline() const
+{
+    return m_deadline;
+}
+
+void FlowCreateApprover::SetDeadline(const int64_t& _deadline)
+{
+    m_deadline = _deadline;
+    m_deadlineHasBeenSet = true;
+}
+
+bool FlowCreateApprover::DeadlineHasBeenSet() const
+{
+    return m_deadlineHasBeenSet;
 }
 

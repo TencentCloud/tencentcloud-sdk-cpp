@@ -306,6 +306,81 @@ namespace TencentCloud
                      */
                     bool IsQueryHasBeenSet() const;
 
+                    /**
+                     * 获取ResultBytes的MB格式
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return ResultBytesMB ResultBytes的MB格式
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    double GetResultBytesMB() const;
+
+                    /**
+                     * 设置ResultBytes的MB格式
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _resultBytesMB ResultBytes的MB格式
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetResultBytesMB(const double& _resultBytesMB);
+
+                    /**
+                     * 判断参数 ResultBytesMB 是否已赋值
+                     * @return ResultBytesMB 是否已赋值
+                     * 
+                     */
+                    bool ResultBytesMBHasBeenSet() const;
+
+                    /**
+                     * 获取MemoryUsage的MB表示
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return MemoryUsageMB MemoryUsage的MB表示
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    double GetMemoryUsageMB() const;
+
+                    /**
+                     * 设置MemoryUsage的MB表示
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _memoryUsageMB MemoryUsage的MB表示
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetMemoryUsageMB(const double& _memoryUsageMB);
+
+                    /**
+                     * 判断参数 MemoryUsageMB 是否已赋值
+                     * @return MemoryUsageMB 是否已赋值
+                     * 
+                     */
+                    bool MemoryUsageMBHasBeenSet() const;
+
+                    /**
+                     * 获取DurationMs的秒表示
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return DurationSec DurationMs的秒表示
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    double GetDurationSec() const;
+
+                    /**
+                     * 设置DurationMs的秒表示
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _durationSec DurationMs的秒表示
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetDurationSec(const double& _durationSec);
+
+                    /**
+                     * 判断参数 DurationSec 是否已赋值
+                     * @return DurationSec 是否已赋值
+                     * 
+                     */
+                    bool DurationSecHasBeenSet() const;
+
                 private:
 
                     /**
@@ -381,6 +456,27 @@ namespace TencentCloud
                      */
                     int64_t m_isQuery;
                     bool m_isQueryHasBeenSet;
+
+                    /**
+                     * ResultBytes的MB格式
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    double m_resultBytesMB;
+                    bool m_resultBytesMBHasBeenSet;
+
+                    /**
+                     * MemoryUsage的MB表示
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    double m_memoryUsageMB;
+                    bool m_memoryUsageMBHasBeenSet;
+
+                    /**
+                     * DurationMs的秒表示
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    double m_durationSec;
+                    bool m_durationSecHasBeenSet;
 
                 };
             }

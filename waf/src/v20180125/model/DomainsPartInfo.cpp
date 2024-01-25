@@ -58,7 +58,10 @@ DomainsPartInfo::DomainsPartInfo() :
     m_sniHostHasBeenSet(false),
     m_weightsHasBeenSet(false),
     m_ipHeadersHasBeenSet(false),
-    m_xFFResetHasBeenSet(false)
+    m_xFFResetHasBeenSet(false),
+    m_noteHasBeenSet(false),
+    m_upstreamHostHasBeenSet(false),
+    m_levelHasBeenSet(false)
 {
 }
 
@@ -469,6 +472,36 @@ CoreInternalOutcome DomainsPartInfo::Deserialize(const rapidjson::Value &value)
         m_xFFResetHasBeenSet = true;
     }
 
+    if (value.HasMember("Note") && !value["Note"].IsNull())
+    {
+        if (!value["Note"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `DomainsPartInfo.Note` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_note = string(value["Note"].GetString());
+        m_noteHasBeenSet = true;
+    }
+
+    if (value.HasMember("UpstreamHost") && !value["UpstreamHost"].IsNull())
+    {
+        if (!value["UpstreamHost"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `DomainsPartInfo.UpstreamHost` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_upstreamHost = string(value["UpstreamHost"].GetString());
+        m_upstreamHostHasBeenSet = true;
+    }
+
+    if (value.HasMember("Level") && !value["Level"].IsNull())
+    {
+        if (!value["Level"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `DomainsPartInfo.Level` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_level = string(value["Level"].GetString());
+        m_levelHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -805,6 +838,30 @@ void DomainsPartInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Document:
         string key = "XFFReset";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_xFFReset, allocator);
+    }
+
+    if (m_noteHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Note";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_note.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_upstreamHostHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "UpstreamHost";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_upstreamHost.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_levelHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Level";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_level.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -1416,5 +1473,53 @@ void DomainsPartInfo::SetXFFReset(const int64_t& _xFFReset)
 bool DomainsPartInfo::XFFResetHasBeenSet() const
 {
     return m_xFFResetHasBeenSet;
+}
+
+string DomainsPartInfo::GetNote() const
+{
+    return m_note;
+}
+
+void DomainsPartInfo::SetNote(const string& _note)
+{
+    m_note = _note;
+    m_noteHasBeenSet = true;
+}
+
+bool DomainsPartInfo::NoteHasBeenSet() const
+{
+    return m_noteHasBeenSet;
+}
+
+string DomainsPartInfo::GetUpstreamHost() const
+{
+    return m_upstreamHost;
+}
+
+void DomainsPartInfo::SetUpstreamHost(const string& _upstreamHost)
+{
+    m_upstreamHost = _upstreamHost;
+    m_upstreamHostHasBeenSet = true;
+}
+
+bool DomainsPartInfo::UpstreamHostHasBeenSet() const
+{
+    return m_upstreamHostHasBeenSet;
+}
+
+string DomainsPartInfo::GetLevel() const
+{
+    return m_level;
+}
+
+void DomainsPartInfo::SetLevel(const string& _level)
+{
+    m_level = _level;
+    m_levelHasBeenSet = true;
+}
+
+bool DomainsPartInfo::LevelHasBeenSet() const
+{
+    return m_levelHasBeenSet;
 }
 

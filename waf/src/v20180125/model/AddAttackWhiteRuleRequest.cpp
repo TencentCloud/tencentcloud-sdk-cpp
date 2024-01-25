@@ -24,10 +24,11 @@ using namespace std;
 
 AddAttackWhiteRuleRequest::AddAttackWhiteRuleRequest() :
     m_domainHasBeenSet(false),
-    m_signatureIdHasBeenSet(false),
     m_statusHasBeenSet(false),
     m_rulesHasBeenSet(false),
-    m_ruleIdHasBeenSet(false)
+    m_ruleIdHasBeenSet(false),
+    m_signatureIdHasBeenSet(false),
+    m_signatureIdsHasBeenSet(false)
 {
 }
 
@@ -44,14 +45,6 @@ string AddAttackWhiteRuleRequest::ToJsonString() const
         string key = "Domain";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_domain.c_str(), allocator).Move(), allocator);
-    }
-
-    if (m_signatureIdHasBeenSet)
-    {
-        rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "SignatureId";
-        iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, rapidjson::Value(m_signatureId.c_str(), allocator).Move(), allocator);
     }
 
     if (m_statusHasBeenSet)
@@ -85,6 +78,27 @@ string AddAttackWhiteRuleRequest::ToJsonString() const
         d.AddMember(iKey, m_ruleId, allocator);
     }
 
+    if (m_signatureIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "SignatureId";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_signatureId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_signatureIdsHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "SignatureIds";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        for (auto itr = m_signatureIds.begin(); itr != m_signatureIds.end(); ++itr)
+        {
+            d[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
+        }
+    }
+
 
     rapidjson::StringBuffer buffer;
     rapidjson::Writer<rapidjson::StringBuffer> writer(buffer);
@@ -107,22 +121,6 @@ void AddAttackWhiteRuleRequest::SetDomain(const string& _domain)
 bool AddAttackWhiteRuleRequest::DomainHasBeenSet() const
 {
     return m_domainHasBeenSet;
-}
-
-string AddAttackWhiteRuleRequest::GetSignatureId() const
-{
-    return m_signatureId;
-}
-
-void AddAttackWhiteRuleRequest::SetSignatureId(const string& _signatureId)
-{
-    m_signatureId = _signatureId;
-    m_signatureIdHasBeenSet = true;
-}
-
-bool AddAttackWhiteRuleRequest::SignatureIdHasBeenSet() const
-{
-    return m_signatureIdHasBeenSet;
 }
 
 uint64_t AddAttackWhiteRuleRequest::GetStatus() const
@@ -171,6 +169,38 @@ void AddAttackWhiteRuleRequest::SetRuleId(const uint64_t& _ruleId)
 bool AddAttackWhiteRuleRequest::RuleIdHasBeenSet() const
 {
     return m_ruleIdHasBeenSet;
+}
+
+string AddAttackWhiteRuleRequest::GetSignatureId() const
+{
+    return m_signatureId;
+}
+
+void AddAttackWhiteRuleRequest::SetSignatureId(const string& _signatureId)
+{
+    m_signatureId = _signatureId;
+    m_signatureIdHasBeenSet = true;
+}
+
+bool AddAttackWhiteRuleRequest::SignatureIdHasBeenSet() const
+{
+    return m_signatureIdHasBeenSet;
+}
+
+vector<string> AddAttackWhiteRuleRequest::GetSignatureIds() const
+{
+    return m_signatureIds;
+}
+
+void AddAttackWhiteRuleRequest::SetSignatureIds(const vector<string>& _signatureIds)
+{
+    m_signatureIds = _signatureIds;
+    m_signatureIdsHasBeenSet = true;
+}
+
+bool AddAttackWhiteRuleRequest::SignatureIdsHasBeenSet() const
+{
+    return m_signatureIdsHasBeenSet;
 }
 
 

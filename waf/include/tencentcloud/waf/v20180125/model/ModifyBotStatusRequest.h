@@ -43,27 +43,6 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取域名
-                     * @return Domain 域名
-                     * 
-                     */
-                    std::string GetDomain() const;
-
-                    /**
-                     * 设置域名
-                     * @param _domain 域名
-                     * 
-                     */
-                    void SetDomain(const std::string& _domain);
-
-                    /**
-                     * 判断参数 Domain 是否已赋值
-                     * @return Domain 是否已赋值
-                     * 
-                     */
-                    bool DomainHasBeenSet() const;
-
-                    /**
                      * 获取类别
                      * @return Category 类别
                      * 
@@ -104,6 +83,27 @@ namespace TencentCloud
                      * 
                      */
                     bool StatusHasBeenSet() const;
+
+                    /**
+                     * 获取域名
+                     * @return Domain 域名
+                     * 
+                     */
+                    std::string GetDomain() const;
+
+                    /**
+                     * 设置域名
+                     * @param _domain 域名
+                     * 
+                     */
+                    void SetDomain(const std::string& _domain);
+
+                    /**
+                     * 判断参数 Domain 是否已赋值
+                     * @return Domain 是否已赋值
+                     * 
+                     */
+                    bool DomainHasBeenSet() const;
 
                     /**
                      * 获取实例id
@@ -168,13 +168,28 @@ namespace TencentCloud
                      */
                     bool BotVersionHasBeenSet() const;
 
-                private:
+                    /**
+                     * 获取批量开启BOT开关的域名列表
+                     * @return DomainList 批量开启BOT开关的域名列表
+                     * 
+                     */
+                    std::vector<std::string> GetDomainList() const;
 
                     /**
-                     * 域名
+                     * 设置批量开启BOT开关的域名列表
+                     * @param _domainList 批量开启BOT开关的域名列表
+                     * 
                      */
-                    std::string m_domain;
-                    bool m_domainHasBeenSet;
+                    void SetDomainList(const std::vector<std::string>& _domainList);
+
+                    /**
+                     * 判断参数 DomainList 是否已赋值
+                     * @return DomainList 是否已赋值
+                     * 
+                     */
+                    bool DomainListHasBeenSet() const;
+
+                private:
 
                     /**
                      * 类别
@@ -187,6 +202,12 @@ namespace TencentCloud
                      */
                     std::string m_status;
                     bool m_statusHasBeenSet;
+
+                    /**
+                     * 域名
+                     */
+                    std::string m_domain;
+                    bool m_domainHasBeenSet;
 
                     /**
                      * 实例id
@@ -205,6 +226,12 @@ namespace TencentCloud
                      */
                     std::string m_botVersion;
                     bool m_botVersionHasBeenSet;
+
+                    /**
+                     * 批量开启BOT开关的域名列表
+                     */
+                    std::vector<std::string> m_domainList;
+                    bool m_domainListHasBeenSet;
 
                 };
             }

@@ -836,6 +836,27 @@ CLOSE 关闭
                      */
                     bool CerebroPrivateDomainHasBeenSet() const;
 
+                    /**
+                     * 获取变更为https集群，默认是http
+                     * @return Protocol 变更为https集群，默认是http
+                     * 
+                     */
+                    std::string GetProtocol() const;
+
+                    /**
+                     * 设置变更为https集群，默认是http
+                     * @param _protocol 变更为https集群，默认是http
+                     * 
+                     */
+                    void SetProtocol(const std::string& _protocol);
+
+                    /**
+                     * 判断参数 Protocol 是否已赋值
+                     * @return Protocol 是否已赋值
+                     * 
+                     */
+                    bool ProtocolHasBeenSet() const;
+
                 private:
 
                     /**
@@ -1059,6 +1080,12 @@ CLOSE 关闭
                      */
                     std::string m_cerebroPrivateDomain;
                     bool m_cerebroPrivateDomainHasBeenSet;
+
+                    /**
+                     * 变更为https集群，默认是http
+                     */
+                    std::string m_protocol;
+                    bool m_protocolHasBeenSet;
 
                 };
             }

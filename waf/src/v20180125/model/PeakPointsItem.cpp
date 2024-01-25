@@ -39,7 +39,10 @@ PeakPointsItem::PeakPointsItem() :
     m_tamperHasBeenSet(false),
     m_leakHasBeenSet(false),
     m_aCLHasBeenSet(false),
-    m_wxAccessHasBeenSet(false)
+    m_wxAccessHasBeenSet(false),
+    m_wxCountHasBeenSet(false),
+    m_wxUpHasBeenSet(false),
+    m_wxDownHasBeenSet(false)
 {
 }
 
@@ -238,6 +241,36 @@ CoreInternalOutcome PeakPointsItem::Deserialize(const rapidjson::Value &value)
         m_wxAccessHasBeenSet = true;
     }
 
+    if (value.HasMember("WxCount") && !value["WxCount"].IsNull())
+    {
+        if (!value["WxCount"].IsUint64())
+        {
+            return CoreInternalOutcome(Core::Error("response `PeakPointsItem.WxCount` IsUint64=false incorrectly").SetRequestId(requestId));
+        }
+        m_wxCount = value["WxCount"].GetUint64();
+        m_wxCountHasBeenSet = true;
+    }
+
+    if (value.HasMember("WxUp") && !value["WxUp"].IsNull())
+    {
+        if (!value["WxUp"].IsUint64())
+        {
+            return CoreInternalOutcome(Core::Error("response `PeakPointsItem.WxUp` IsUint64=false incorrectly").SetRequestId(requestId));
+        }
+        m_wxUp = value["WxUp"].GetUint64();
+        m_wxUpHasBeenSet = true;
+    }
+
+    if (value.HasMember("WxDown") && !value["WxDown"].IsNull())
+    {
+        if (!value["WxDown"].IsUint64())
+        {
+            return CoreInternalOutcome(Core::Error("response `PeakPointsItem.WxDown` IsUint64=false incorrectly").SetRequestId(requestId));
+        }
+        m_wxDown = value["WxDown"].GetUint64();
+        m_wxDownHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -395,6 +428,30 @@ void PeakPointsItem::ToJsonObject(rapidjson::Value &value, rapidjson::Document::
         string key = "WxAccess";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_wxAccess, allocator);
+    }
+
+    if (m_wxCountHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "WxCount";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_wxCount, allocator);
+    }
+
+    if (m_wxUpHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "WxUp";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_wxUp, allocator);
+    }
+
+    if (m_wxDownHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "WxDown";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_wxDown, allocator);
     }
 
 }
@@ -702,5 +759,53 @@ void PeakPointsItem::SetWxAccess(const uint64_t& _wxAccess)
 bool PeakPointsItem::WxAccessHasBeenSet() const
 {
     return m_wxAccessHasBeenSet;
+}
+
+uint64_t PeakPointsItem::GetWxCount() const
+{
+    return m_wxCount;
+}
+
+void PeakPointsItem::SetWxCount(const uint64_t& _wxCount)
+{
+    m_wxCount = _wxCount;
+    m_wxCountHasBeenSet = true;
+}
+
+bool PeakPointsItem::WxCountHasBeenSet() const
+{
+    return m_wxCountHasBeenSet;
+}
+
+uint64_t PeakPointsItem::GetWxUp() const
+{
+    return m_wxUp;
+}
+
+void PeakPointsItem::SetWxUp(const uint64_t& _wxUp)
+{
+    m_wxUp = _wxUp;
+    m_wxUpHasBeenSet = true;
+}
+
+bool PeakPointsItem::WxUpHasBeenSet() const
+{
+    return m_wxUpHasBeenSet;
+}
+
+uint64_t PeakPointsItem::GetWxDown() const
+{
+    return m_wxDown;
+}
+
+void PeakPointsItem::SetWxDown(const uint64_t& _wxDown)
+{
+    m_wxDown = _wxDown;
+    m_wxDownHasBeenSet = true;
+}
+
+bool PeakPointsItem::WxDownHasBeenSet() const
+{
+    return m_wxDownHasBeenSet;
 }
 

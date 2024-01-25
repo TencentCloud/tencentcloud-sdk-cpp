@@ -493,6 +493,81 @@ namespace TencentCloud
                      */
                     bool WxAccessHasBeenSet() const;
 
+                    /**
+                     * 获取小程序请求数
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return WxCount 小程序请求数
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    uint64_t GetWxCount() const;
+
+                    /**
+                     * 设置小程序请求数
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _wxCount 小程序请求数
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetWxCount(const uint64_t& _wxCount);
+
+                    /**
+                     * 判断参数 WxCount 是否已赋值
+                     * @return WxCount 是否已赋值
+                     * 
+                     */
+                    bool WxCountHasBeenSet() const;
+
+                    /**
+                     * 获取小程序上行带宽峰值，单位B
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return WxUp 小程序上行带宽峰值，单位B
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    uint64_t GetWxUp() const;
+
+                    /**
+                     * 设置小程序上行带宽峰值，单位B
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _wxUp 小程序上行带宽峰值，单位B
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetWxUp(const uint64_t& _wxUp);
+
+                    /**
+                     * 判断参数 WxUp 是否已赋值
+                     * @return WxUp 是否已赋值
+                     * 
+                     */
+                    bool WxUpHasBeenSet() const;
+
+                    /**
+                     * 获取小程序下行带宽峰值，单位B
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return WxDown 小程序下行带宽峰值，单位B
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    uint64_t GetWxDown() const;
+
+                    /**
+                     * 设置小程序下行带宽峰值，单位B
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _wxDown 小程序下行带宽峰值，单位B
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetWxDown(const uint64_t& _wxDown);
+
+                    /**
+                     * 判断参数 WxDown 是否已赋值
+                     * @return WxDown 是否已赋值
+                     * 
+                     */
+                    bool WxDownHasBeenSet() const;
+
                 private:
 
                     /**
@@ -620,6 +695,27 @@ namespace TencentCloud
                      */
                     uint64_t m_wxAccess;
                     bool m_wxAccessHasBeenSet;
+
+                    /**
+                     * 小程序请求数
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    uint64_t m_wxCount;
+                    bool m_wxCountHasBeenSet;
+
+                    /**
+                     * 小程序上行带宽峰值，单位B
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    uint64_t m_wxUp;
+                    bool m_wxUpHasBeenSet;
+
+                    /**
+                     * 小程序下行带宽峰值，单位B
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    uint64_t m_wxDown;
+                    bool m_wxDownHasBeenSet;
 
                 };
             }

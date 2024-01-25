@@ -26,7 +26,9 @@ ModifyObjectRequest::ModifyObjectRequest() :
     m_objectIdHasBeenSet(false),
     m_opTypeHasBeenSet(false),
     m_statusHasBeenSet(false),
-    m_instanceIdHasBeenSet(false)
+    m_instanceIdHasBeenSet(false),
+    m_proxyHasBeenSet(false),
+    m_ipHeadersHasBeenSet(false)
 {
 }
 
@@ -67,6 +69,27 @@ string ModifyObjectRequest::ToJsonString() const
         string key = "InstanceId";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_instanceId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_proxyHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Proxy";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_proxy, allocator);
+    }
+
+    if (m_ipHeadersHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "IpHeaders";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        for (auto itr = m_ipHeaders.begin(); itr != m_ipHeaders.end(); ++itr)
+        {
+            d[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
+        }
     }
 
 
@@ -139,6 +162,38 @@ void ModifyObjectRequest::SetInstanceId(const string& _instanceId)
 bool ModifyObjectRequest::InstanceIdHasBeenSet() const
 {
     return m_instanceIdHasBeenSet;
+}
+
+uint64_t ModifyObjectRequest::GetProxy() const
+{
+    return m_proxy;
+}
+
+void ModifyObjectRequest::SetProxy(const uint64_t& _proxy)
+{
+    m_proxy = _proxy;
+    m_proxyHasBeenSet = true;
+}
+
+bool ModifyObjectRequest::ProxyHasBeenSet() const
+{
+    return m_proxyHasBeenSet;
+}
+
+vector<string> ModifyObjectRequest::GetIpHeaders() const
+{
+    return m_ipHeaders;
+}
+
+void ModifyObjectRequest::SetIpHeaders(const vector<string>& _ipHeaders)
+{
+    m_ipHeaders = _ipHeaders;
+    m_ipHeadersHasBeenSet = true;
+}
+
+bool ModifyObjectRequest::IpHeadersHasBeenSet() const
+{
+    return m_ipHeadersHasBeenSet;
 }
 
 

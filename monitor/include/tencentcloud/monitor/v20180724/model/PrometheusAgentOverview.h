@@ -268,6 +268,31 @@ abnormal = 异常
                      */
                     bool NameHasBeenSet() const;
 
+                    /**
+                     * 获取是否已开启公网访问，true 开启，false 未开启
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return EnableExternal 是否已开启公网访问，true 开启，false 未开启
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    bool GetEnableExternal() const;
+
+                    /**
+                     * 设置是否已开启公网访问，true 开启，false 未开启
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _enableExternal 是否已开启公网访问，true 开启，false 未开启
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetEnableExternal(const bool& _enableExternal);
+
+                    /**
+                     * 判断参数 EnableExternal 是否已赋值
+                     * @return EnableExternal 是否已赋值
+                     * 
+                     */
+                    bool EnableExternalHasBeenSet() const;
+
                 private:
 
                     /**
@@ -331,6 +356,13 @@ abnormal = 异常
                      */
                     std::string m_name;
                     bool m_nameHasBeenSet;
+
+                    /**
+                     * 是否已开启公网访问，true 开启，false 未开启
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    bool m_enableExternal;
+                    bool m_enableExternalHasBeenSet;
 
                 };
             }

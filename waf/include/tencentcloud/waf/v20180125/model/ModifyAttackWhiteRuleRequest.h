@@ -86,27 +86,6 @@ namespace TencentCloud
                     bool DomainHasBeenSet() const;
 
                     /**
-                     * 获取规则Id
-                     * @return SignatureId 规则Id
-                     * 
-                     */
-                    std::string GetSignatureId() const;
-
-                    /**
-                     * 设置规则Id
-                     * @param _signatureId 规则Id
-                     * 
-                     */
-                    void SetSignatureId(const std::string& _signatureId);
-
-                    /**
-                     * 判断参数 SignatureId 是否已赋值
-                     * @return SignatureId 是否已赋值
-                     * 
-                     */
-                    bool SignatureIdHasBeenSet() const;
-
-                    /**
                      * 获取规则状态
                      * @return Status 规则状态
                      * 
@@ -148,6 +127,48 @@ namespace TencentCloud
                      */
                     bool RulesHasBeenSet() const;
 
+                    /**
+                     * 获取规则Id
+                     * @return SignatureId 规则Id
+                     * 
+                     */
+                    std::string GetSignatureId() const;
+
+                    /**
+                     * 设置规则Id
+                     * @param _signatureId 规则Id
+                     * 
+                     */
+                    void SetSignatureId(const std::string& _signatureId);
+
+                    /**
+                     * 判断参数 SignatureId 是否已赋值
+                     * @return SignatureId 是否已赋值
+                     * 
+                     */
+                    bool SignatureIdHasBeenSet() const;
+
+                    /**
+                     * 获取编辑的加白的规则ID列表
+                     * @return SignatureIds 编辑的加白的规则ID列表
+                     * 
+                     */
+                    std::vector<std::string> GetSignatureIds() const;
+
+                    /**
+                     * 设置编辑的加白的规则ID列表
+                     * @param _signatureIds 编辑的加白的规则ID列表
+                     * 
+                     */
+                    void SetSignatureIds(const std::vector<std::string>& _signatureIds);
+
+                    /**
+                     * 判断参数 SignatureIds 是否已赋值
+                     * @return SignatureIds 是否已赋值
+                     * 
+                     */
+                    bool SignatureIdsHasBeenSet() const;
+
                 private:
 
                     /**
@@ -163,12 +184,6 @@ namespace TencentCloud
                     bool m_domainHasBeenSet;
 
                     /**
-                     * 规则Id
-                     */
-                    std::string m_signatureId;
-                    bool m_signatureIdHasBeenSet;
-
-                    /**
                      * 规则状态
                      */
                     uint64_t m_status;
@@ -179,6 +194,18 @@ namespace TencentCloud
                      */
                     std::vector<UserWhiteRuleItem> m_rules;
                     bool m_rulesHasBeenSet;
+
+                    /**
+                     * 规则Id
+                     */
+                    std::string m_signatureId;
+                    bool m_signatureIdHasBeenSet;
+
+                    /**
+                     * 编辑的加白的规则ID列表
+                     */
+                    std::vector<std::string> m_signatureIds;
+                    bool m_signatureIdsHasBeenSet;
 
                 };
             }

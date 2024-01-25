@@ -49,7 +49,9 @@ DescAcItem::DescAcItem() :
     m_scopeHasBeenSet(false),
     m_internetBorderUuidHasBeenSet(false),
     m_paramTemplateNameHasBeenSet(false),
-    m_paramTemplateIdHasBeenSet(false)
+    m_paramTemplateIdHasBeenSet(false),
+    m_sourceNameHasBeenSet(false),
+    m_targetNameHasBeenSet(false)
 {
 }
 
@@ -358,6 +360,26 @@ CoreInternalOutcome DescAcItem::Deserialize(const rapidjson::Value &value)
         m_paramTemplateIdHasBeenSet = true;
     }
 
+    if (value.HasMember("SourceName") && !value["SourceName"].IsNull())
+    {
+        if (!value["SourceName"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `DescAcItem.SourceName` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_sourceName = string(value["SourceName"].GetString());
+        m_sourceNameHasBeenSet = true;
+    }
+
+    if (value.HasMember("TargetName") && !value["TargetName"].IsNull())
+    {
+        if (!value["TargetName"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `DescAcItem.TargetName` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_targetName = string(value["TargetName"].GetString());
+        m_targetNameHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -602,6 +624,22 @@ void DescAcItem::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Allo
         string key = "ParamTemplateId";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_paramTemplateId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_sourceNameHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "SourceName";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_sourceName.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_targetNameHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "TargetName";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_targetName.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -1069,5 +1107,37 @@ void DescAcItem::SetParamTemplateId(const string& _paramTemplateId)
 bool DescAcItem::ParamTemplateIdHasBeenSet() const
 {
     return m_paramTemplateIdHasBeenSet;
+}
+
+string DescAcItem::GetSourceName() const
+{
+    return m_sourceName;
+}
+
+void DescAcItem::SetSourceName(const string& _sourceName)
+{
+    m_sourceName = _sourceName;
+    m_sourceNameHasBeenSet = true;
+}
+
+bool DescAcItem::SourceNameHasBeenSet() const
+{
+    return m_sourceNameHasBeenSet;
+}
+
+string DescAcItem::GetTargetName() const
+{
+    return m_targetName;
+}
+
+void DescAcItem::SetTargetName(const string& _targetName)
+{
+    m_targetName = _targetName;
+    m_targetNameHasBeenSet = true;
+}
+
+bool DescAcItem::TargetNameHasBeenSet() const
+{
+    return m_targetNameHasBeenSet;
 }
 

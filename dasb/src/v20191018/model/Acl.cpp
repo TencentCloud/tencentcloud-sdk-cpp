@@ -49,7 +49,8 @@ Acl::Acl() :
     m_statusHasBeenSet(false),
     m_departmentHasBeenSet(false),
     m_allowAccessCredentialHasBeenSet(false),
-    m_aCTemplateSetHasBeenSet(false)
+    m_aCTemplateSetHasBeenSet(false),
+    m_whiteCmdsHasBeenSet(false)
 {
 }
 
@@ -418,6 +419,19 @@ CoreInternalOutcome Acl::Deserialize(const rapidjson::Value &value)
         m_aCTemplateSetHasBeenSet = true;
     }
 
+    if (value.HasMember("WhiteCmds") && !value["WhiteCmds"].IsNull())
+    {
+        if (!value["WhiteCmds"].IsArray())
+            return CoreInternalOutcome(Core::Error("response `Acl.WhiteCmds` is not array type"));
+
+        const rapidjson::Value &tmpValue = value["WhiteCmds"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            m_whiteCmds.push_back((*itr).GetString());
+        }
+        m_whiteCmdsHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -702,6 +716,19 @@ void Acl::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorTy
         {
             value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
             (*itr).ToJsonObject(value[key.c_str()][i], allocator);
+        }
+    }
+
+    if (m_whiteCmdsHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "WhiteCmds";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        for (auto itr = m_whiteCmds.begin(); itr != m_whiteCmds.end(); ++itr)
+        {
+            value[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
         }
     }
 
@@ -1170,5 +1197,21 @@ void Acl::SetACTemplateSet(const vector<ACTemplate>& _aCTemplateSet)
 bool Acl::ACTemplateSetHasBeenSet() const
 {
     return m_aCTemplateSetHasBeenSet;
+}
+
+vector<string> Acl::GetWhiteCmds() const
+{
+    return m_whiteCmds;
+}
+
+void Acl::SetWhiteCmds(const vector<string>& _whiteCmds)
+{
+    m_whiteCmds = _whiteCmds;
+    m_whiteCmdsHasBeenSet = true;
+}
+
+bool Acl::WhiteCmdsHasBeenSet() const
+{
+    return m_whiteCmdsHasBeenSet;
 }
 

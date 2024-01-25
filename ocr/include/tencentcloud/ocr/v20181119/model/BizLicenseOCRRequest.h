@@ -113,15 +113,15 @@ namespace TencentCloud
                     bool ImageUrlHasBeenSet() const;
 
                     /**
-                     * 获取是否返回黑白复印件告警码，默认为false
-                     * @return EnableCopyWarn 是否返回黑白复印件告警码，默认为false
+                     * 获取是否返回告警码，默认为false
+                     * @return EnableCopyWarn 是否返回告警码，默认为false
                      * 
                      */
                     bool GetEnableCopyWarn() const;
 
                     /**
-                     * 设置是否返回黑白复印件告警码，默认为false
-                     * @param _enableCopyWarn 是否返回黑白复印件告警码，默认为false
+                     * 设置是否返回告警码，默认为false
+                     * @param _enableCopyWarn 是否返回告警码，默认为false
                      * 
                      */
                     void SetEnableCopyWarn(const bool& _enableCopyWarn);
@@ -155,7 +155,7 @@ namespace TencentCloud
                     bool m_imageUrlHasBeenSet;
 
                     /**
-                     * 是否返回黑白复印件告警码，默认为false
+                     * 是否返回告警码，默认为false
                      */
                     bool m_enableCopyWarn;
                     bool m_enableCopyWarnHasBeenSet;

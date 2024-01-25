@@ -41,7 +41,8 @@ ApproverInfo::ApproverInfo() :
     m_approverSignTypesHasBeenSet(false),
     m_approverNeedSignReviewHasBeenSet(false),
     m_addSignComponentsLimitsHasBeenSet(false),
-    m_signInstructionContentHasBeenSet(false)
+    m_signInstructionContentHasBeenSet(false),
+    m_deadlineHasBeenSet(false)
 {
 }
 
@@ -296,6 +297,16 @@ CoreInternalOutcome ApproverInfo::Deserialize(const rapidjson::Value &value)
         m_signInstructionContentHasBeenSet = true;
     }
 
+    if (value.HasMember("Deadline") && !value["Deadline"].IsNull())
+    {
+        if (!value["Deadline"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `ApproverInfo.Deadline` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_deadline = value["Deadline"].GetInt64();
+        m_deadlineHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -499,6 +510,14 @@ void ApproverInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Al
         string key = "SignInstructionContent";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_signInstructionContent.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_deadlineHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Deadline";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_deadline, allocator);
     }
 
 }
@@ -838,5 +857,21 @@ void ApproverInfo::SetSignInstructionContent(const string& _signInstructionConte
 bool ApproverInfo::SignInstructionContentHasBeenSet() const
 {
     return m_signInstructionContentHasBeenSet;
+}
+
+int64_t ApproverInfo::GetDeadline() const
+{
+    return m_deadline;
+}
+
+void ApproverInfo::SetDeadline(const int64_t& _deadline)
+{
+    m_deadline = _deadline;
+    m_deadlineHasBeenSet = true;
+}
+
+bool ApproverInfo::DeadlineHasBeenSet() const
+{
+    return m_deadlineHasBeenSet;
 }
 

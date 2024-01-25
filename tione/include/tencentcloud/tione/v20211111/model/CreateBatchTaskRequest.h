@@ -51,15 +51,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取跑批任务名称，不超过60个字符，仅支持中英文、数字、下划线"_"、短横"-"，只能以中英文、数字开头
-                     * @return BatchTaskName 跑批任务名称，不超过60个字符，仅支持中英文、数字、下划线"_"、短横"-"，只能以中英文、数字开头
+                     * 获取批量预测任务名称，不超过60个字符，仅支持中英文、数字、下划线"_"、短横"-"，只能以中英文、数字开头
+                     * @return BatchTaskName 批量预测任务名称，不超过60个字符，仅支持中英文、数字、下划线"_"、短横"-"，只能以中英文、数字开头
                      * 
                      */
                     std::string GetBatchTaskName() const;
 
                     /**
-                     * 设置跑批任务名称，不超过60个字符，仅支持中英文、数字、下划线"_"、短横"-"，只能以中英文、数字开头
-                     * @param _batchTaskName 跑批任务名称，不超过60个字符，仅支持中英文、数字、下划线"_"、短横"-"，只能以中英文、数字开头
+                     * 设置批量预测任务名称，不超过60个字符，仅支持中英文、数字、下划线"_"、短横"-"，只能以中英文、数字开头
+                     * @param _batchTaskName 批量预测任务名称，不超过60个字符，仅支持中英文、数字、下划线"_"、短横"-"，只能以中英文、数字开头
                      * 
                      */
                     void SetBatchTaskName(const std::string& _batchTaskName);
@@ -114,15 +114,15 @@ namespace TencentCloud
                     bool ResourceConfigInfoHasBeenSet() const;
 
                     /**
-                     * 获取结果输出
-                     * @return Outputs 结果输出
+                     * 获取结果输出存储信息
+                     * @return Outputs 结果输出存储信息
                      * 
                      */
                     std::vector<DataConfig> GetOutputs() const;
 
                     /**
-                     * 设置结果输出
-                     * @param _outputs 结果输出
+                     * 设置结果输出存储信息
+                     * @param _outputs 结果输出存储信息
                      * 
                      */
                     void SetOutputs(const std::vector<DataConfig>& _outputs);
@@ -158,42 +158,42 @@ namespace TencentCloud
                     /**
                      * 获取工作类型 1:单次 2:周期
                      * @return JobType 工作类型 1:单次 2:周期
-                     * 
+                     * @deprecated
                      */
                     uint64_t GetJobType() const;
 
                     /**
                      * 设置工作类型 1:单次 2:周期
                      * @param _jobType 工作类型 1:单次 2:周期
-                     * 
+                     * @deprecated
                      */
                     void SetJobType(const uint64_t& _jobType);
 
                     /**
                      * 判断参数 JobType 是否已赋值
                      * @return JobType 是否已赋值
-                     * 
+                     * @deprecated
                      */
                     bool JobTypeHasBeenSet() const;
 
                     /**
                      * 获取任务周期描述
                      * @return CronInfo 任务周期描述
-                     * 
+                     * @deprecated
                      */
                     CronInfo GetCronInfo() const;
 
                     /**
                      * 设置任务周期描述
                      * @param _cronInfo 任务周期描述
-                     * 
+                     * @deprecated
                      */
                     void SetCronInfo(const CronInfo& _cronInfo);
 
                     /**
                      * 判断参数 CronInfo 是否已赋值
                      * @return CronInfo 是否已赋值
-                     * 
+                     * @deprecated
                      */
                     bool CronInfoHasBeenSet() const;
 
@@ -452,7 +452,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 跑批任务名称，不超过60个字符，仅支持中英文、数字、下划线"_"、短横"-"，只能以中英文、数字开头
+                     * 批量预测任务名称，不超过60个字符，仅支持中英文、数字、下划线"_"、短横"-"，只能以中英文、数字开头
                      */
                     std::string m_batchTaskName;
                     bool m_batchTaskNameHasBeenSet;
@@ -470,7 +470,7 @@ namespace TencentCloud
                     bool m_resourceConfigInfoHasBeenSet;
 
                     /**
-                     * 结果输出
+                     * 结果输出存储信息
                      */
                     std::vector<DataConfig> m_outputs;
                     bool m_outputsHasBeenSet;

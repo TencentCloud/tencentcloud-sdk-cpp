@@ -133,15 +133,27 @@ namespace TencentCloud
                     bool CnameHasBeenSet() const;
 
                     /**
-                     * 获取实例类型,sparta-waf表示saaswaf实例域名,clb-waf表示clbwaf实例域名,cdc-clb-waf表示CDC环境下clbwaf实例域名,cdn-waf表示cdnwaf实例域名
-                     * @return Edition 实例类型,sparta-waf表示saaswaf实例域名,clb-waf表示clbwaf实例域名,cdc-clb-waf表示CDC环境下clbwaf实例域名,cdn-waf表示cdnwaf实例域名
+                     * 获取域名所属实例类型。
+sparta-waf：SaaS型WAF实例
+clb-waf：负载均衡型WAF实例
+cdc-clb-waf：CDC环境下负载均衡型WAF实例
+                     * @return Edition 域名所属实例类型。
+sparta-waf：SaaS型WAF实例
+clb-waf：负载均衡型WAF实例
+cdc-clb-waf：CDC环境下负载均衡型WAF实例
                      * 
                      */
                     std::string GetEdition() const;
 
                     /**
-                     * 设置实例类型,sparta-waf表示saaswaf实例域名,clb-waf表示clbwaf实例域名,cdc-clb-waf表示CDC环境下clbwaf实例域名,cdn-waf表示cdnwaf实例域名
-                     * @param _edition 实例类型,sparta-waf表示saaswaf实例域名,clb-waf表示clbwaf实例域名,cdc-clb-waf表示CDC环境下clbwaf实例域名,cdn-waf表示cdnwaf实例域名
+                     * 设置域名所属实例类型。
+sparta-waf：SaaS型WAF实例
+clb-waf：负载均衡型WAF实例
+cdc-clb-waf：CDC环境下负载均衡型WAF实例
+                     * @param _edition 域名所属实例类型。
+sparta-waf：SaaS型WAF实例
+clb-waf：负载均衡型WAF实例
+cdc-clb-waf：CDC环境下负载均衡型WAF实例
                      * 
                      */
                     void SetEdition(const std::string& _edition);
@@ -154,15 +166,127 @@ namespace TencentCloud
                     bool EditionHasBeenSet() const;
 
                     /**
-                     * 获取地域
-                     * @return Region 地域
+                     * 获取地域。
+"多伦多": "ca"
+"广州": "gz"
+"成都": "cd"
+"福州": "fzec"
+"深圳": "szx"
+"印度": "in"
+"济南": "jnec"
+"重庆": "cq"
+"天津": "tsn"
+"欧洲东北": "ru"
+"南京": "nj"
+"美国硅谷": "usw"
+"泰国": "th"
+"广州Open": "gzopen"
+"深圳金融": "szjr"
+"法兰克福": "de"
+"日本": "jp"
+"弗吉尼亚": "use"
+"北京": "bj"
+"香港": "hk"
+"杭州": "hzec"
+"北京金融": "bjjr"
+"上海金融": "shjr"
+"台北": "tpe"
+"首尔": "kr"
+"上海": "sh"
+"新加坡": "sg"
+"清远": "qy"
+                     * @return Region 地域。
+"多伦多": "ca"
+"广州": "gz"
+"成都": "cd"
+"福州": "fzec"
+"深圳": "szx"
+"印度": "in"
+"济南": "jnec"
+"重庆": "cq"
+"天津": "tsn"
+"欧洲东北": "ru"
+"南京": "nj"
+"美国硅谷": "usw"
+"泰国": "th"
+"广州Open": "gzopen"
+"深圳金融": "szjr"
+"法兰克福": "de"
+"日本": "jp"
+"弗吉尼亚": "use"
+"北京": "bj"
+"香港": "hk"
+"杭州": "hzec"
+"北京金融": "bjjr"
+"上海金融": "shjr"
+"台北": "tpe"
+"首尔": "kr"
+"上海": "sh"
+"新加坡": "sg"
+"清远": "qy"
                      * 
                      */
                     std::string GetRegion() const;
 
                     /**
-                     * 设置地域
-                     * @param _region 地域
+                     * 设置地域。
+"多伦多": "ca"
+"广州": "gz"
+"成都": "cd"
+"福州": "fzec"
+"深圳": "szx"
+"印度": "in"
+"济南": "jnec"
+"重庆": "cq"
+"天津": "tsn"
+"欧洲东北": "ru"
+"南京": "nj"
+"美国硅谷": "usw"
+"泰国": "th"
+"广州Open": "gzopen"
+"深圳金融": "szjr"
+"法兰克福": "de"
+"日本": "jp"
+"弗吉尼亚": "use"
+"北京": "bj"
+"香港": "hk"
+"杭州": "hzec"
+"北京金融": "bjjr"
+"上海金融": "shjr"
+"台北": "tpe"
+"首尔": "kr"
+"上海": "sh"
+"新加坡": "sg"
+"清远": "qy"
+                     * @param _region 地域。
+"多伦多": "ca"
+"广州": "gz"
+"成都": "cd"
+"福州": "fzec"
+"深圳": "szx"
+"印度": "in"
+"济南": "jnec"
+"重庆": "cq"
+"天津": "tsn"
+"欧洲东北": "ru"
+"南京": "nj"
+"美国硅谷": "usw"
+"泰国": "th"
+"广州Open": "gzopen"
+"深圳金融": "szjr"
+"法兰克福": "de"
+"日本": "jp"
+"弗吉尼亚": "use"
+"北京": "bj"
+"香港": "hk"
+"杭州": "hzec"
+"北京金融": "bjjr"
+"上海金融": "shjr"
+"台北": "tpe"
+"首尔": "kr"
+"上海": "sh"
+"新加坡": "sg"
+"清远": "qy"
                      * 
                      */
                     void SetRegion(const std::string& _region);
@@ -196,15 +320,23 @@ namespace TencentCloud
                     bool InstanceNameHasBeenSet() const;
 
                     /**
-                     * 获取日志包
-                     * @return ClsStatus 日志包
+                     * 获取访问日志开关状态。
+0：关闭
+1：开启
+                     * @return ClsStatus 访问日志开关状态。
+0：关闭
+1：开启
                      * 
                      */
                     uint64_t GetClsStatus() const;
 
                     /**
-                     * 设置日志包
-                     * @param _clsStatus 日志包
+                     * 设置访问日志开关状态。
+0：关闭
+1：开启
+                     * @param _clsStatus 访问日志开关状态。
+0：关闭
+1：开启
                      * 
                      */
                     void SetClsStatus(const uint64_t& _clsStatus);
@@ -217,15 +349,23 @@ namespace TencentCloud
                     bool ClsStatusHasBeenSet() const;
 
                     /**
-                     * 获取clbwaf使用模式,0镜像模式 1清洗模式
-                     * @return FlowMode clbwaf使用模式,0镜像模式 1清洗模式
+                     * 获取负载均衡型WAF使用模式。
+0：镜像模式 
+1：清洗模式
+                     * @return FlowMode 负载均衡型WAF使用模式。
+0：镜像模式 
+1：清洗模式
                      * 
                      */
                     uint64_t GetFlowMode() const;
 
                     /**
-                     * 设置clbwaf使用模式,0镜像模式 1清洗模式
-                     * @param _flowMode clbwaf使用模式,0镜像模式 1清洗模式
+                     * 设置负载均衡型WAF使用模式。
+0：镜像模式 
+1：清洗模式
+                     * @param _flowMode 负载均衡型WAF使用模式。
+0：镜像模式 
+1：清洗模式
                      * 
                      */
                     void SetFlowMode(const uint64_t& _flowMode);
@@ -238,15 +378,23 @@ namespace TencentCloud
                     bool FlowModeHasBeenSet() const;
 
                     /**
-                     * 获取waf开关,0关闭 1开启
-                     * @return Status waf开关,0关闭 1开启
+                     * 获取waf开关状态。
+0：关闭 
+1：开启
+                     * @return Status waf开关状态。
+0：关闭 
+1：开启
                      * 
                      */
                     uint64_t GetStatus() const;
 
                     /**
-                     * 设置waf开关,0关闭 1开启
-                     * @param _status waf开关,0关闭 1开启
+                     * 设置waf开关状态。
+0：关闭 
+1：开启
+                     * @param _status waf开关状态。
+0：关闭 
+1：开启
                      * 
                      */
                     void SetStatus(const uint64_t& _status);
@@ -259,15 +407,23 @@ namespace TencentCloud
                     bool StatusHasBeenSet() const;
 
                     /**
-                     * 获取规则引擎防护模式,0观察模式 1拦截模式
-                     * @return Mode 规则引擎防护模式,0观察模式 1拦截模式
+                     * 获取规则引擎防护模式。
+0：观察模式 
+1：拦截模式
+                     * @return Mode 规则引擎防护模式。
+0：观察模式 
+1：拦截模式
                      * 
                      */
                     uint64_t GetMode() const;
 
                     /**
-                     * 设置规则引擎防护模式,0观察模式 1拦截模式
-                     * @param _mode 规则引擎防护模式,0观察模式 1拦截模式
+                     * 设置规则引擎防护模式。
+0：观察模式 
+1：拦截模式
+                     * @param _mode 规则引擎防护模式。
+0：观察模式 
+1：拦截模式
                      * 
                      */
                     void SetMode(const uint64_t& _mode);
@@ -280,15 +436,43 @@ namespace TencentCloud
                     bool ModeHasBeenSet() const;
 
                     /**
-                     * 获取规则引擎和AI引擎防护模式联合状态,10规则引擎观察&&AI引擎关闭模式 11规则引擎观察&&AI引擎观察模式 12规则引擎观察&&AI引擎拦截模式 20规则引擎拦截&&AI引擎关闭模式 21规则引擎拦截&&AI引擎观察模式 22规则引擎拦截&&AI引擎拦截模式
-                     * @return Engine 规则引擎和AI引擎防护模式联合状态,10规则引擎观察&&AI引擎关闭模式 11规则引擎观察&&AI引擎观察模式 12规则引擎观察&&AI引擎拦截模式 20规则引擎拦截&&AI引擎关闭模式 21规则引擎拦截&&AI引擎观察模式 22规则引擎拦截&&AI引擎拦截模式
+                     * 获取规则引擎和AI引擎防护模式联合状态。
+1:初始状态,规则引擎拦截&&AI引擎未操作开关状态
+10：规则引擎观察&&AI引擎关闭模式 
+11：规则引擎观察&&AI引擎观察模式 
+12：规则引擎观察&&AI引擎拦截模式 
+20：规则引擎拦截&&AI引擎关闭模式 
+21：规则引擎拦截&&AI引擎观察模式 
+22：规则引擎拦截&&AI引擎拦截模式
+                     * @return Engine 规则引擎和AI引擎防护模式联合状态。
+1:初始状态,规则引擎拦截&&AI引擎未操作开关状态
+10：规则引擎观察&&AI引擎关闭模式 
+11：规则引擎观察&&AI引擎观察模式 
+12：规则引擎观察&&AI引擎拦截模式 
+20：规则引擎拦截&&AI引擎关闭模式 
+21：规则引擎拦截&&AI引擎观察模式 
+22：规则引擎拦截&&AI引擎拦截模式
                      * 
                      */
                     uint64_t GetEngine() const;
 
                     /**
-                     * 设置规则引擎和AI引擎防护模式联合状态,10规则引擎观察&&AI引擎关闭模式 11规则引擎观察&&AI引擎观察模式 12规则引擎观察&&AI引擎拦截模式 20规则引擎拦截&&AI引擎关闭模式 21规则引擎拦截&&AI引擎观察模式 22规则引擎拦截&&AI引擎拦截模式
-                     * @param _engine 规则引擎和AI引擎防护模式联合状态,10规则引擎观察&&AI引擎关闭模式 11规则引擎观察&&AI引擎观察模式 12规则引擎观察&&AI引擎拦截模式 20规则引擎拦截&&AI引擎关闭模式 21规则引擎拦截&&AI引擎观察模式 22规则引擎拦截&&AI引擎拦截模式
+                     * 设置规则引擎和AI引擎防护模式联合状态。
+1:初始状态,规则引擎拦截&&AI引擎未操作开关状态
+10：规则引擎观察&&AI引擎关闭模式 
+11：规则引擎观察&&AI引擎观察模式 
+12：规则引擎观察&&AI引擎拦截模式 
+20：规则引擎拦截&&AI引擎关闭模式 
+21：规则引擎拦截&&AI引擎观察模式 
+22：规则引擎拦截&&AI引擎拦截模式
+                     * @param _engine 规则引擎和AI引擎防护模式联合状态。
+1:初始状态,规则引擎拦截&&AI引擎未操作开关状态
+10：规则引擎观察&&AI引擎关闭模式 
+11：规则引擎观察&&AI引擎观察模式 
+12：规则引擎观察&&AI引擎拦截模式 
+20：规则引擎拦截&&AI引擎关闭模式 
+21：规则引擎拦截&&AI引擎观察模式 
+22：规则引擎拦截&&AI引擎拦截模式
                      * 
                      */
                     void SetEngine(const uint64_t& _engine);
@@ -301,15 +485,15 @@ namespace TencentCloud
                     bool EngineHasBeenSet() const;
 
                     /**
-                     * 获取CC列表
-                     * @return CCList CC列表
+                     * 获取沙箱集群回源出口IP列表
+                     * @return CCList 沙箱集群回源出口IP列表
                      * 
                      */
                     std::vector<std::string> GetCCList() const;
 
                     /**
-                     * 设置CC列表
-                     * @param _cCList CC列表
+                     * 设置沙箱集群回源出口IP列表
+                     * @param _cCList 沙箱集群回源出口IP列表
                      * 
                      */
                     void SetCCList(const std::vector<std::string>& _cCList);
@@ -322,15 +506,15 @@ namespace TencentCloud
                     bool CCListHasBeenSet() const;
 
                     /**
-                     * 获取回源ip
-                     * @return RsList 回源ip
+                     * 获取生产集群回源出口IP列表
+                     * @return RsList 生产集群回源出口IP列表
                      * 
                      */
                     std::vector<std::string> GetRsList() const;
 
                     /**
-                     * 设置回源ip
-                     * @param _rsList 回源ip
+                     * 设置生产集群回源出口IP列表
+                     * @param _rsList 生产集群回源出口IP列表
                      * 
                      */
                     void SetRsList(const std::vector<std::string>& _rsList);
@@ -364,15 +548,15 @@ namespace TencentCloud
                     bool PortsHasBeenSet() const;
 
                     /**
-                     * 获取负载均衡器
-                     * @return LoadBalancerSet 负载均衡器
+                     * 获取负载均衡器相关配置
+                     * @return LoadBalancerSet 负载均衡器相关配置
                      * 
                      */
                     std::vector<LoadBalancerPackageNew> GetLoadBalancerSet() const;
 
                     /**
-                     * 设置负载均衡器
-                     * @param _loadBalancerSet 负载均衡器
+                     * 设置负载均衡器相关配置
+                     * @param _loadBalancerSet 负载均衡器相关配置
                      * 
                      */
                     void SetLoadBalancerSet(const std::vector<LoadBalancerPackageNew>& _loadBalancerSet);
@@ -406,15 +590,39 @@ namespace TencentCloud
                     bool AppIdHasBeenSet() const;
 
                     /**
-                     * 获取clbwaf域名监听器状态,0操作成功 4正在绑定LB 6正在解绑LB 7解绑LB失败 8绑定LB失败 10内部错误
-                     * @return State clbwaf域名监听器状态,0操作成功 4正在绑定LB 6正在解绑LB 7解绑LB失败 8绑定LB失败 10内部错误
+                     * 获取负载均衡型WAF域名LB监听器状态。
+0：操作成功 
+4：正在绑定LB 
+6：正在解绑LB 
+7：解绑LB失败 
+8：绑定LB失败 
+10：内部错误
+                     * @return State 负载均衡型WAF域名LB监听器状态。
+0：操作成功 
+4：正在绑定LB 
+6：正在解绑LB 
+7：解绑LB失败 
+8：绑定LB失败 
+10：内部错误
                      * 
                      */
                     int64_t GetState() const;
 
                     /**
-                     * 设置clbwaf域名监听器状态,0操作成功 4正在绑定LB 6正在解绑LB 7解绑LB失败 8绑定LB失败 10内部错误
-                     * @param _state clbwaf域名监听器状态,0操作成功 4正在绑定LB 6正在解绑LB 7解绑LB失败 8绑定LB失败 10内部错误
+                     * 设置负载均衡型WAF域名LB监听器状态。
+0：操作成功 
+4：正在绑定LB 
+6：正在解绑LB 
+7：解绑LB失败 
+8：绑定LB失败 
+10：内部错误
+                     * @param _state 负载均衡型WAF域名LB监听器状态。
+0：操作成功 
+4：正在绑定LB 
+6：正在解绑LB 
+7：解绑LB失败 
+8：绑定LB失败 
+10：内部错误
                      * 
                      */
                     void SetState(const int64_t& _state);
@@ -448,15 +656,23 @@ namespace TencentCloud
                     bool CreateTimeHasBeenSet() const;
 
                     /**
-                     * 获取Ipv6开关状态,0关闭 1开启
-                     * @return Ipv6Status Ipv6开关状态,0关闭 1开启
+                     * 获取Ipv6开关状态。
+0：关闭 
+1：开启
+                     * @return Ipv6Status Ipv6开关状态。
+0：关闭 
+1：开启
                      * 
                      */
                     int64_t GetIpv6Status() const;
 
                     /**
-                     * 设置Ipv6开关状态,0关闭 1开启
-                     * @param _ipv6Status Ipv6开关状态,0关闭 1开启
+                     * 设置Ipv6开关状态。
+0：关闭 
+1：开启
+                     * @param _ipv6Status Ipv6开关状态。
+0：关闭 
+1：开启
                      * 
                      */
                     void SetIpv6Status(const int64_t& _ipv6Status);
@@ -469,15 +685,31 @@ namespace TencentCloud
                     bool Ipv6StatusHasBeenSet() const;
 
                     /**
-                     * 获取BOT开关状态,0关闭 1开启
-                     * @return BotStatus BOT开关状态,0关闭 1开启
+                     * 获取BOT开关状态。
+0：关闭 
+1：关闭
+2：开启
+3：开启
+                     * @return BotStatus BOT开关状态。
+0：关闭 
+1：关闭
+2：开启
+3：开启
                      * 
                      */
                     int64_t GetBotStatus() const;
 
                     /**
-                     * 设置BOT开关状态,0关闭 1开启
-                     * @param _botStatus BOT开关状态,0关闭 1开启
+                     * 设置BOT开关状态。
+0：关闭 
+1：关闭
+2：开启
+3：开启
+                     * @param _botStatus BOT开关状态。
+0：关闭 
+1：关闭
+2：开启
+3：开启
                      * 
                      */
                     void SetBotStatus(const int64_t& _botStatus);
@@ -490,15 +722,39 @@ namespace TencentCloud
                     bool BotStatusHasBeenSet() const;
 
                     /**
-                     * 获取版本信息
-                     * @return Level 版本信息
+                     * 获取实例版本信息。
+101：小微敏捷版 
+102：小微超轻版
+2：高级版
+3：企业版
+4：旗舰版
+6：独享版
+                     * @return Level 实例版本信息。
+101：小微敏捷版 
+102：小微超轻版
+2：高级版
+3：企业版
+4：旗舰版
+6：独享版
                      * 
                      */
                     int64_t GetLevel() const;
 
                     /**
-                     * 设置版本信息
-                     * @param _level 版本信息
+                     * 设置实例版本信息。
+101：小微敏捷版 
+102：小微超轻版
+2：高级版
+3：企业版
+4：旗舰版
+6：独享版
+                     * @param _level 实例版本信息。
+101：小微敏捷版 
+102：小微超轻版
+2：高级版
+3：企业版
+4：旗舰版
+6：独享版
                      * 
                      */
                     void SetLevel(const int64_t& _level);
@@ -511,15 +767,23 @@ namespace TencentCloud
                     bool LevelHasBeenSet() const;
 
                     /**
-                     * 获取是否开启投递CLS功能,0关闭 1开启
-                     * @return PostCLSStatus 是否开启投递CLS功能,0关闭 1开启
+                     * 获取投递CLS状态。
+0：关闭 
+1：开启
+                     * @return PostCLSStatus 投递CLS状态。
+0：关闭 
+1：开启
                      * 
                      */
                     int64_t GetPostCLSStatus() const;
 
                     /**
-                     * 设置是否开启投递CLS功能,0关闭 1开启
-                     * @param _postCLSStatus 是否开启投递CLS功能,0关闭 1开启
+                     * 设置投递CLS状态。
+0：关闭 
+1：开启
+                     * @param _postCLSStatus 投递CLS状态。
+0：关闭 
+1：开启
                      * 
                      */
                     void SetPostCLSStatus(const int64_t& _postCLSStatus);
@@ -532,15 +796,23 @@ namespace TencentCloud
                     bool PostCLSStatusHasBeenSet() const;
 
                     /**
-                     * 获取是否开启投递CKafka功能,0关闭 1开启
-                     * @return PostCKafkaStatus 是否开启投递CKafka功能,0关闭 1开启
+                     * 获取投递CKafka状态。
+0：关闭 
+1：开启
+                     * @return PostCKafkaStatus 投递CKafka状态。
+0：关闭 
+1：开启
                      * 
                      */
                     int64_t GetPostCKafkaStatus() const;
 
                     /**
-                     * 设置是否开启投递CKafka功能,0关闭 1开启
-                     * @param _postCKafkaStatus 是否开启投递CKafka功能,0关闭 1开启
+                     * 设置投递CKafka状态。
+0：关闭 
+1：开启
+                     * @param _postCKafkaStatus 投递CKafka状态。
+0：关闭 
+1：开启
                      * 
                      */
                     void SetPostCKafkaStatus(const int64_t& _postCKafkaStatus);
@@ -553,18 +825,18 @@ namespace TencentCloud
                     bool PostCKafkaStatusHasBeenSet() const;
 
                     /**
-                     * 获取cdc实例域名接入的集群信息,非cdc实例忽略
+                     * 获取cdc实例域名接入的集群信息,非cdc实例忽略。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return CdcClusters cdc实例域名接入的集群信息,非cdc实例忽略
+                     * @return CdcClusters cdc实例域名接入的集群信息,非cdc实例忽略。
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetCdcClusters() const;
 
                     /**
-                     * 设置cdc实例域名接入的集群信息,非cdc实例忽略
+                     * 设置cdc实例域名接入的集群信息,非cdc实例忽略。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _cdcClusters cdc实例域名接入的集群信息,非cdc实例忽略
+                     * @param _cdcClusters cdc实例域名接入的集群信息,非cdc实例忽略。
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -578,18 +850,26 @@ namespace TencentCloud
                     bool CdcClustersHasBeenSet() const;
 
                     /**
-                     * 获取api安全开关状态,0关闭 1开启
+                     * 获取api安全开关状态。
+0：关闭 
+1：开启
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return ApiStatus api安全开关状态,0关闭 1开启
+                     * @return ApiStatus api安全开关状态。
+0：关闭 
+1：开启
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetApiStatus() const;
 
                     /**
-                     * 设置api安全开关状态,0关闭 1开启
+                     * 设置api安全开关状态。
+0：关闭 
+1：开启
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _apiStatus api安全开关状态,0关闭 1开启
+                     * @param _apiStatus api安全开关状态。
+0：关闭 
+1：开启
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -603,18 +883,26 @@ namespace TencentCloud
                     bool ApiStatusHasBeenSet() const;
 
                     /**
-                     * 获取应用型负载均衡类型,clb或者apisix，默认clb
+                     * 获取应用型负载均衡类型，默认clb。
+clb：七层负载均衡器类型
+apisix：apisix网关型
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return AlbType 应用型负载均衡类型,clb或者apisix，默认clb
+                     * @return AlbType 应用型负载均衡类型，默认clb。
+clb：七层负载均衡器类型
+apisix：apisix网关型
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetAlbType() const;
 
                     /**
-                     * 设置应用型负载均衡类型,clb或者apisix，默认clb
+                     * 设置应用型负载均衡类型，默认clb。
+clb：七层负载均衡器类型
+apisix：apisix网关型
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _albType 应用型负载均衡类型,clb或者apisix，默认clb
+                     * @param _albType 应用型负载均衡类型，默认clb。
+clb：七层负载均衡器类型
+apisix：apisix网关型
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -628,18 +916,34 @@ namespace TencentCloud
                     bool AlbTypeHasBeenSet() const;
 
                     /**
-                     * 获取安全组状态,0不展示 1非腾讯云源站 2安全组绑定失败 3安全组发生变更
+                     * 获取安全组状态。
+0：不展示
+1：非腾讯云源站
+2：安全组绑定失败
+3：安全组发生变更
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return SgState 安全组状态,0不展示 1非腾讯云源站 2安全组绑定失败 3安全组发生变更
+                     * @return SgState 安全组状态。
+0：不展示
+1：非腾讯云源站
+2：安全组绑定失败
+3：安全组发生变更
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetSgState() const;
 
                     /**
-                     * 设置安全组状态,0不展示 1非腾讯云源站 2安全组绑定失败 3安全组发生变更
+                     * 设置安全组状态。
+0：不展示
+1：非腾讯云源站
+2：安全组绑定失败
+3：安全组发生变更
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _sgState 安全组状态,0不展示 1非腾讯云源站 2安全组绑定失败 3安全组发生变更
+                     * @param _sgState 安全组状态。
+0：不展示
+1：非腾讯云源站
+2：安全组绑定失败
+3：安全组发生变更
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -678,18 +982,22 @@ namespace TencentCloud
                     bool SgDetailHasBeenSet() const;
 
                     /**
-                     * 获取域名类型:hybrid表示混合云域名，public表示公有云域名
+                     * 获取域名云环境。hybrid：混合云域名
+public：公有云域名
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return CloudType 域名类型:hybrid表示混合云域名，public表示公有云域名
+                     * @return CloudType 域名云环境。hybrid：混合云域名
+public：公有云域名
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetCloudType() const;
 
                     /**
-                     * 设置域名类型:hybrid表示混合云域名，public表示公有云域名
+                     * 设置域名云环境。hybrid：混合云域名
+public：公有云域名
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _cloudType 域名类型:hybrid表示混合云域名，public表示公有云域名
+                     * @param _cloudType 域名云环境。hybrid：混合云域名
+public：公有云域名
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -701,6 +1009,106 @@ namespace TencentCloud
                      * 
                      */
                     bool CloudTypeHasBeenSet() const;
+
+                    /**
+                     * 获取域名备注信息
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return Note 域名备注信息
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::string GetNote() const;
+
+                    /**
+                     * 设置域名备注信息
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _note 域名备注信息
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetNote(const std::string& _note);
+
+                    /**
+                     * 判断参数 Note 是否已赋值
+                     * @return Note 是否已赋值
+                     * 
+                     */
+                    bool NoteHasBeenSet() const;
+
+                    /**
+                     * 获取SAASWAF源站IP列表
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return SrcList SAASWAF源站IP列表
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::vector<std::string> GetSrcList() const;
+
+                    /**
+                     * 设置SAASWAF源站IP列表
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _srcList SAASWAF源站IP列表
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetSrcList(const std::vector<std::string>& _srcList);
+
+                    /**
+                     * 判断参数 SrcList 是否已赋值
+                     * @return SrcList 是否已赋值
+                     * 
+                     */
+                    bool SrcListHasBeenSet() const;
+
+                    /**
+                     * 获取SAASWAF源站域名列表
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return UpstreamDomainList SAASWAF源站域名列表
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::vector<std::string> GetUpstreamDomainList() const;
+
+                    /**
+                     * 设置SAASWAF源站域名列表
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _upstreamDomainList SAASWAF源站域名列表
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetUpstreamDomainList(const std::vector<std::string>& _upstreamDomainList);
+
+                    /**
+                     * 判断参数 UpstreamDomainList 是否已赋值
+                     * @return UpstreamDomainList 是否已赋值
+                     * 
+                     */
+                    bool UpstreamDomainListHasBeenSet() const;
+
+                    /**
+                     * 获取安全组ID
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return SgID 安全组ID
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::string GetSgID() const;
+
+                    /**
+                     * 设置安全组ID
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _sgID 安全组ID
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetSgID(const std::string& _sgID);
+
+                    /**
+                     * 判断参数 SgID 是否已赋值
+                     * @return SgID 是否已赋值
+                     * 
+                     */
+                    bool SgIDHasBeenSet() const;
 
                 private:
 
@@ -729,13 +1137,44 @@ namespace TencentCloud
                     bool m_cnameHasBeenSet;
 
                     /**
-                     * 实例类型,sparta-waf表示saaswaf实例域名,clb-waf表示clbwaf实例域名,cdc-clb-waf表示CDC环境下clbwaf实例域名,cdn-waf表示cdnwaf实例域名
+                     * 域名所属实例类型。
+sparta-waf：SaaS型WAF实例
+clb-waf：负载均衡型WAF实例
+cdc-clb-waf：CDC环境下负载均衡型WAF实例
                      */
                     std::string m_edition;
                     bool m_editionHasBeenSet;
 
                     /**
-                     * 地域
+                     * 地域。
+"多伦多": "ca"
+"广州": "gz"
+"成都": "cd"
+"福州": "fzec"
+"深圳": "szx"
+"印度": "in"
+"济南": "jnec"
+"重庆": "cq"
+"天津": "tsn"
+"欧洲东北": "ru"
+"南京": "nj"
+"美国硅谷": "usw"
+"泰国": "th"
+"广州Open": "gzopen"
+"深圳金融": "szjr"
+"法兰克福": "de"
+"日本": "jp"
+"弗吉尼亚": "use"
+"北京": "bj"
+"香港": "hk"
+"杭州": "hzec"
+"北京金融": "bjjr"
+"上海金融": "shjr"
+"台北": "tpe"
+"首尔": "kr"
+"上海": "sh"
+"新加坡": "sg"
+"清远": "qy"
                      */
                     std::string m_region;
                     bool m_regionHasBeenSet;
@@ -747,43 +1186,58 @@ namespace TencentCloud
                     bool m_instanceNameHasBeenSet;
 
                     /**
-                     * 日志包
+                     * 访问日志开关状态。
+0：关闭
+1：开启
                      */
                     uint64_t m_clsStatus;
                     bool m_clsStatusHasBeenSet;
 
                     /**
-                     * clbwaf使用模式,0镜像模式 1清洗模式
+                     * 负载均衡型WAF使用模式。
+0：镜像模式 
+1：清洗模式
                      */
                     uint64_t m_flowMode;
                     bool m_flowModeHasBeenSet;
 
                     /**
-                     * waf开关,0关闭 1开启
+                     * waf开关状态。
+0：关闭 
+1：开启
                      */
                     uint64_t m_status;
                     bool m_statusHasBeenSet;
 
                     /**
-                     * 规则引擎防护模式,0观察模式 1拦截模式
+                     * 规则引擎防护模式。
+0：观察模式 
+1：拦截模式
                      */
                     uint64_t m_mode;
                     bool m_modeHasBeenSet;
 
                     /**
-                     * 规则引擎和AI引擎防护模式联合状态,10规则引擎观察&&AI引擎关闭模式 11规则引擎观察&&AI引擎观察模式 12规则引擎观察&&AI引擎拦截模式 20规则引擎拦截&&AI引擎关闭模式 21规则引擎拦截&&AI引擎观察模式 22规则引擎拦截&&AI引擎拦截模式
+                     * 规则引擎和AI引擎防护模式联合状态。
+1:初始状态,规则引擎拦截&&AI引擎未操作开关状态
+10：规则引擎观察&&AI引擎关闭模式 
+11：规则引擎观察&&AI引擎观察模式 
+12：规则引擎观察&&AI引擎拦截模式 
+20：规则引擎拦截&&AI引擎关闭模式 
+21：规则引擎拦截&&AI引擎观察模式 
+22：规则引擎拦截&&AI引擎拦截模式
                      */
                     uint64_t m_engine;
                     bool m_engineHasBeenSet;
 
                     /**
-                     * CC列表
+                     * 沙箱集群回源出口IP列表
                      */
                     std::vector<std::string> m_cCList;
                     bool m_cCListHasBeenSet;
 
                     /**
-                     * 回源ip
+                     * 生产集群回源出口IP列表
                      */
                     std::vector<std::string> m_rsList;
                     bool m_rsListHasBeenSet;
@@ -795,7 +1249,7 @@ namespace TencentCloud
                     bool m_portsHasBeenSet;
 
                     /**
-                     * 负载均衡器
+                     * 负载均衡器相关配置
                      */
                     std::vector<LoadBalancerPackageNew> m_loadBalancerSet;
                     bool m_loadBalancerSetHasBeenSet;
@@ -807,7 +1261,13 @@ namespace TencentCloud
                     bool m_appIdHasBeenSet;
 
                     /**
-                     * clbwaf域名监听器状态,0操作成功 4正在绑定LB 6正在解绑LB 7解绑LB失败 8绑定LB失败 10内部错误
+                     * 负载均衡型WAF域名LB监听器状态。
+0：操作成功 
+4：正在绑定LB 
+6：正在解绑LB 
+7：解绑LB失败 
+8：绑定LB失败 
+10：内部错误
                      */
                     int64_t m_state;
                     bool m_stateHasBeenSet;
@@ -819,58 +1279,82 @@ namespace TencentCloud
                     bool m_createTimeHasBeenSet;
 
                     /**
-                     * Ipv6开关状态,0关闭 1开启
+                     * Ipv6开关状态。
+0：关闭 
+1：开启
                      */
                     int64_t m_ipv6Status;
                     bool m_ipv6StatusHasBeenSet;
 
                     /**
-                     * BOT开关状态,0关闭 1开启
+                     * BOT开关状态。
+0：关闭 
+1：关闭
+2：开启
+3：开启
                      */
                     int64_t m_botStatus;
                     bool m_botStatusHasBeenSet;
 
                     /**
-                     * 版本信息
+                     * 实例版本信息。
+101：小微敏捷版 
+102：小微超轻版
+2：高级版
+3：企业版
+4：旗舰版
+6：独享版
                      */
                     int64_t m_level;
                     bool m_levelHasBeenSet;
 
                     /**
-                     * 是否开启投递CLS功能,0关闭 1开启
+                     * 投递CLS状态。
+0：关闭 
+1：开启
                      */
                     int64_t m_postCLSStatus;
                     bool m_postCLSStatusHasBeenSet;
 
                     /**
-                     * 是否开启投递CKafka功能,0关闭 1开启
+                     * 投递CKafka状态。
+0：关闭 
+1：开启
                      */
                     int64_t m_postCKafkaStatus;
                     bool m_postCKafkaStatusHasBeenSet;
 
                     /**
-                     * cdc实例域名接入的集群信息,非cdc实例忽略
+                     * cdc实例域名接入的集群信息,非cdc实例忽略。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_cdcClusters;
                     bool m_cdcClustersHasBeenSet;
 
                     /**
-                     * api安全开关状态,0关闭 1开启
+                     * api安全开关状态。
+0：关闭 
+1：开启
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_apiStatus;
                     bool m_apiStatusHasBeenSet;
 
                     /**
-                     * 应用型负载均衡类型,clb或者apisix，默认clb
+                     * 应用型负载均衡类型，默认clb。
+clb：七层负载均衡器类型
+apisix：apisix网关型
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_albType;
                     bool m_albTypeHasBeenSet;
 
                     /**
-                     * 安全组状态,0不展示 1非腾讯云源站 2安全组绑定失败 3安全组发生变更
+                     * 安全组状态。
+0：不展示
+1：非腾讯云源站
+2：安全组绑定失败
+3：安全组发生变更
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_sgState;
@@ -884,11 +1368,40 @@ namespace TencentCloud
                     bool m_sgDetailHasBeenSet;
 
                     /**
-                     * 域名类型:hybrid表示混合云域名，public表示公有云域名
+                     * 域名云环境。hybrid：混合云域名
+public：公有云域名
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_cloudType;
                     bool m_cloudTypeHasBeenSet;
+
+                    /**
+                     * 域名备注信息
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_note;
+                    bool m_noteHasBeenSet;
+
+                    /**
+                     * SAASWAF源站IP列表
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::vector<std::string> m_srcList;
+                    bool m_srcListHasBeenSet;
+
+                    /**
+                     * SAASWAF源站域名列表
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::vector<std::string> m_upstreamDomainList;
+                    bool m_upstreamDomainListHasBeenSet;
+
+                    /**
+                     * 安全组ID
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_sgID;
+                    bool m_sgIDHasBeenSet;
 
                 };
             }

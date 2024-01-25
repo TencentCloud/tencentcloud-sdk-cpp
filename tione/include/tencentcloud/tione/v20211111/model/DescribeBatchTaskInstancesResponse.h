@@ -45,9 +45,9 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取实例集
+                     * 获取批量预测实例结果
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return BatchInstances 实例集
+                     * @return BatchInstances 批量预测实例结果
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -63,7 +63,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 实例集
+                     * 批量预测实例结果
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<BatchTaskInstance> m_batchInstances;

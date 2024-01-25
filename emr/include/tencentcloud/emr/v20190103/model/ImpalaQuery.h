@@ -596,6 +596,56 @@ namespace TencentCloud
                      */
                     bool NumRowsFetchedFromCacheHasBeenSet() const;
 
+                    /**
+                     * 获取会话ID
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return SessionId 会话ID
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::string GetSessionId() const;
+
+                    /**
+                     * 设置会话ID
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _sessionId 会话ID
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetSessionId(const std::string& _sessionId);
+
+                    /**
+                     * 判断参数 SessionId 是否已赋值
+                     * @return SessionId 是否已赋值
+                     * 
+                     */
+                    bool SessionIdHasBeenSet() const;
+
+                    /**
+                     * 获取单节点内存峰值和(Bytes)
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return PerNodePeakMemoryBytesSum 单节点内存峰值和(Bytes)
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    int64_t GetPerNodePeakMemoryBytesSum() const;
+
+                    /**
+                     * 设置单节点内存峰值和(Bytes)
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _perNodePeakMemoryBytesSum 单节点内存峰值和(Bytes)
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetPerNodePeakMemoryBytesSum(const int64_t& _perNodePeakMemoryBytesSum);
+
+                    /**
+                     * 判断参数 PerNodePeakMemoryBytesSum 是否已赋值
+                     * @return PerNodePeakMemoryBytesSum 是否已赋值
+                     * 
+                     */
+                    bool PerNodePeakMemoryBytesSumHasBeenSet() const;
+
                 private:
 
                     /**
@@ -751,6 +801,20 @@ namespace TencentCloud
                      */
                     int64_t m_numRowsFetchedFromCache;
                     bool m_numRowsFetchedFromCacheHasBeenSet;
+
+                    /**
+                     * 会话ID
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_sessionId;
+                    bool m_sessionIdHasBeenSet;
+
+                    /**
+                     * 单节点内存峰值和(Bytes)
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    int64_t m_perNodePeakMemoryBytesSum;
+                    bool m_perNodePeakMemoryBytesSumHasBeenSet;
 
                 };
             }

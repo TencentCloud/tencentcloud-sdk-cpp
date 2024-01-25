@@ -29,7 +29,8 @@ PrometheusAgentOverview::PrometheusAgentOverview() :
     m_regionHasBeenSet(false),
     m_vpcIdHasBeenSet(false),
     m_failedReasonHasBeenSet(false),
-    m_nameHasBeenSet(false)
+    m_nameHasBeenSet(false),
+    m_enableExternalHasBeenSet(false)
 {
 }
 
@@ -138,6 +139,16 @@ CoreInternalOutcome PrometheusAgentOverview::Deserialize(const rapidjson::Value 
         m_nameHasBeenSet = true;
     }
 
+    if (value.HasMember("EnableExternal") && !value["EnableExternal"].IsNull())
+    {
+        if (!value["EnableExternal"].IsBool())
+        {
+            return CoreInternalOutcome(Core::Error("response `PrometheusAgentOverview.EnableExternal` IsBool=false incorrectly").SetRequestId(requestId));
+        }
+        m_enableExternal = value["EnableExternal"].GetBool();
+        m_enableExternalHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -222,6 +233,14 @@ void PrometheusAgentOverview::ToJsonObject(rapidjson::Value &value, rapidjson::D
         string key = "Name";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_name.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_enableExternalHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "EnableExternal";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_enableExternal, allocator);
     }
 
 }
@@ -369,5 +388,21 @@ void PrometheusAgentOverview::SetName(const string& _name)
 bool PrometheusAgentOverview::NameHasBeenSet() const
 {
     return m_nameHasBeenSet;
+}
+
+bool PrometheusAgentOverview::GetEnableExternal() const
+{
+    return m_enableExternal;
+}
+
+void PrometheusAgentOverview::SetEnableExternal(const bool& _enableExternal)
+{
+    m_enableExternal = _enableExternal;
+    m_enableExternalHasBeenSet = true;
+}
+
+bool PrometheusAgentOverview::EnableExternalHasBeenSet() const
+{
+    return m_enableExternalHasBeenSet;
 }
 

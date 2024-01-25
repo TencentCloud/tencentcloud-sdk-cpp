@@ -23,7 +23,8 @@ using namespace std;
 LogToCLSConfig::LogToCLSConfig() :
     m_statusHasBeenSet(false),
     m_logSetIdHasBeenSet(false),
-    m_logTopicIdHasBeenSet(false)
+    m_logTopicIdHasBeenSet(false),
+    m_clsRegionHasBeenSet(false)
 {
 }
 
@@ -62,6 +63,16 @@ CoreInternalOutcome LogToCLSConfig::Deserialize(const rapidjson::Value &value)
         m_logTopicIdHasBeenSet = true;
     }
 
+    if (value.HasMember("ClsRegion") && !value["ClsRegion"].IsNull())
+    {
+        if (!value["ClsRegion"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `LogToCLSConfig.ClsRegion` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_clsRegion = string(value["ClsRegion"].GetString());
+        m_clsRegionHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -91,6 +102,14 @@ void LogToCLSConfig::ToJsonObject(rapidjson::Value &value, rapidjson::Document::
         string key = "LogTopicId";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_logTopicId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_clsRegionHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ClsRegion";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_clsRegion.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -142,5 +161,21 @@ void LogToCLSConfig::SetLogTopicId(const string& _logTopicId)
 bool LogToCLSConfig::LogTopicIdHasBeenSet() const
 {
     return m_logTopicIdHasBeenSet;
+}
+
+string LogToCLSConfig::GetClsRegion() const
+{
+    return m_clsRegion;
+}
+
+void LogToCLSConfig::SetClsRegion(const string& _clsRegion)
+{
+    m_clsRegion = _clsRegion;
+    m_clsRegionHasBeenSet = true;
+}
+
+bool LogToCLSConfig::ClsRegionHasBeenSet() const
+{
+    return m_clsRegionHasBeenSet;
 }
 

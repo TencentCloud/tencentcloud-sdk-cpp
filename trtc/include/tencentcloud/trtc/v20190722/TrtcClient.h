@@ -411,7 +411,7 @@ namespace TencentCloud
                 DescribeScaleInfoOutcomeCallable DescribeScaleInfoCallable(const Model::DescribeScaleInfoRequest& request);
 
                 /**
-                 *您可以查询转推任务的状态。
+                 *您可以查询输入在线媒体流任务的状态。
                  * @param req DescribeStreamIngestRequest
                  * @return DescribeStreamIngestOutcome
                  */
@@ -871,7 +871,7 @@ ver：可以忽略。
                 StopPublishCdnStreamOutcomeCallable StopPublishCdnStreamCallable(const Model::StopPublishCdnStreamRequest& request);
 
                 /**
-                 *停止一个拉流转推任务。
+                 *停止一个输入在线媒体流任务。
                  * @param req StopStreamIngestRequest
                  * @return StopStreamIngestOutcome
                  */

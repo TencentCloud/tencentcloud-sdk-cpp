@@ -106,27 +106,6 @@ namespace TencentCloud
                     bool DirectionHasBeenSet() const;
 
                     /**
-                     * 获取规则类型：1封禁，2放通
-                     * @return RuleType 规则类型：1封禁，2放通
-                     * 
-                     */
-                    uint64_t GetRuleType() const;
-
-                    /**
-                     * 设置规则类型：1封禁，2放通
-                     * @param _ruleType 规则类型：1封禁，2放通
-                     * 
-                     */
-                    void SetRuleType(const uint64_t& _ruleType);
-
-                    /**
-                     * 判断参数 RuleType 是否已赋值
-                     * @return RuleType 是否已赋值
-                     * 
-                     */
-                    bool RuleTypeHasBeenSet() const;
-
-                    /**
                      * 获取排序类型：desc降序，asc正序
                      * @return Order 排序类型：desc降序，asc正序
                      * 
@@ -189,6 +168,52 @@ namespace TencentCloud
                      */
                     bool SearchValueHasBeenSet() const;
 
+                    /**
+                     * 获取规则类型：1封禁，2放通
+                     * @return RuleType 规则类型：1封禁，2放通
+                     * 
+                     */
+                    uint64_t GetRuleType() const;
+
+                    /**
+                     * 设置规则类型：1封禁，2放通
+                     * @param _ruleType 规则类型：1封禁，2放通
+                     * 
+                     */
+                    void SetRuleType(const uint64_t& _ruleType);
+
+                    /**
+                     * 判断参数 RuleType 是否已赋值
+                     * @return RuleType 是否已赋值
+                     * 
+                     */
+                    bool RuleTypeHasBeenSet() const;
+
+                    /**
+                     * 获取blocklist 封禁列表
+whitelist 白名单列表
+                     * @return ShowType blocklist 封禁列表
+whitelist 白名单列表
+                     * 
+                     */
+                    std::string GetShowType() const;
+
+                    /**
+                     * 设置blocklist 封禁列表
+whitelist 白名单列表
+                     * @param _showType blocklist 封禁列表
+whitelist 白名单列表
+                     * 
+                     */
+                    void SetShowType(const std::string& _showType);
+
+                    /**
+                     * 判断参数 ShowType 是否已赋值
+                     * @return ShowType 是否已赋值
+                     * 
+                     */
+                    bool ShowTypeHasBeenSet() const;
+
                 private:
 
                     /**
@@ -210,12 +235,6 @@ namespace TencentCloud
                     bool m_directionHasBeenSet;
 
                     /**
-                     * 规则类型：1封禁，2放通
-                     */
-                    uint64_t m_ruleType;
-                    bool m_ruleTypeHasBeenSet;
-
-                    /**
                      * 排序类型：desc降序，asc正序
                      */
                     std::string m_order;
@@ -232,6 +251,19 @@ namespace TencentCloud
                      */
                     std::string m_searchValue;
                     bool m_searchValueHasBeenSet;
+
+                    /**
+                     * 规则类型：1封禁，2放通
+                     */
+                    uint64_t m_ruleType;
+                    bool m_ruleTypeHasBeenSet;
+
+                    /**
+                     * blocklist 封禁列表
+whitelist 白名单列表
+                     */
+                    std::string m_showType;
+                    bool m_showTypeHasBeenSet;
 
                 };
             }

@@ -36,7 +36,7 @@ namespace TencentCloud
             namespace Model
             {
                 /**
-                * clb-waf防护域名
+                * 负载均衡型WAF域名信息
                 */
                 class HostRecord : public AbstractModel
                 {
@@ -69,15 +69,15 @@ namespace TencentCloud
                     bool DomainHasBeenSet() const;
 
                     /**
-                     * 获取域名ID
-                     * @return DomainId 域名ID
+                     * 获取域名唯一ID
+                     * @return DomainId 域名唯一ID
                      * 
                      */
                     std::string GetDomainId() const;
 
                     /**
-                     * 设置域名ID
-                     * @param _domainId 域名ID
+                     * 设置域名唯一ID
+                     * @param _domainId 域名唯一ID
                      * 
                      */
                     void SetDomainId(const std::string& _domainId);
@@ -111,15 +111,23 @@ namespace TencentCloud
                     bool MainDomainHasBeenSet() const;
 
                     /**
-                     * 获取规则引擎防护模式，0 观察模式，1拦截模式
-                     * @return Mode 规则引擎防护模式，0 观察模式，1拦截模式
+                     * 获取规则引擎防护模式。
+0：观察模式
+1：拦截模式
+                     * @return Mode 规则引擎防护模式。
+0：观察模式
+1：拦截模式
                      * 
                      */
                     uint64_t GetMode() const;
 
                     /**
-                     * 设置规则引擎防护模式，0 观察模式，1拦截模式
-                     * @param _mode 规则引擎防护模式，0 观察模式，1拦截模式
+                     * 设置规则引擎防护模式。
+0：观察模式
+1：拦截模式
+                     * @param _mode 规则引擎防护模式。
+0：观察模式
+1：拦截模式
                      * 
                      */
                     void SetMode(const uint64_t& _mode);
@@ -132,15 +140,23 @@ namespace TencentCloud
                     bool ModeHasBeenSet() const;
 
                     /**
-                     * 获取waf和LD的绑定，0：没有绑定，1：绑定
-                     * @return Status waf和LD的绑定，0：没有绑定，1：绑定
+                     * 获取waf和负载均衡器的绑定关系。
+0：未绑定
+1：已绑定
+                     * @return Status waf和负载均衡器的绑定关系。
+0：未绑定
+1：已绑定
                      * 
                      */
                     uint64_t GetStatus() const;
 
                     /**
-                     * 设置waf和LD的绑定，0：没有绑定，1：绑定
-                     * @param _status waf和LD的绑定，0：没有绑定，1：绑定
+                     * 设置waf和负载均衡器的绑定关系。
+0：未绑定
+1：已绑定
+                     * @param _status waf和负载均衡器的绑定关系。
+0：未绑定
+1：已绑定
                      * 
                      */
                     void SetStatus(const uint64_t& _status);
@@ -153,15 +169,39 @@ namespace TencentCloud
                     bool StatusHasBeenSet() const;
 
                     /**
-                     * 获取域名状态，0：正常，1：未检测到流量，2：即将过期，3：过期
-                     * @return State 域名状态，0：正常，1：未检测到流量，2：即将过期，3：过期
+                     * 获取clbwaf域名监听器状态。
+0：操作成功
+4：正在绑定LB
+6：正在解绑LB 
+7：解绑LB失败 
+8：绑定LB失败 
+10：内部错误
+                     * @return State clbwaf域名监听器状态。
+0：操作成功
+4：正在绑定LB
+6：正在解绑LB 
+7：解绑LB失败 
+8：绑定LB失败 
+10：内部错误
                      * 
                      */
                     uint64_t GetState() const;
 
                     /**
-                     * 设置域名状态，0：正常，1：未检测到流量，2：即将过期，3：过期
-                     * @param _state 域名状态，0：正常，1：未检测到流量，2：即将过期，3：过期
+                     * 设置clbwaf域名监听器状态。
+0：操作成功
+4：正在绑定LB
+6：正在解绑LB 
+7：解绑LB失败 
+8：绑定LB失败 
+10：内部错误
+                     * @param _state clbwaf域名监听器状态。
+0：操作成功
+4：正在绑定LB
+6：正在解绑LB 
+7：解绑LB失败 
+8：绑定LB失败 
+10：内部错误
                      * 
                      */
                     void SetState(const uint64_t& _state);
@@ -174,15 +214,43 @@ namespace TencentCloud
                     bool StateHasBeenSet() const;
 
                     /**
-                     * 获取规则引擎和AI引擎防护模式联合状态,10规则引擎观察&&AI引擎关闭模式 11规则引擎观察&&AI引擎观察模式 12规则引擎观察&&AI引擎拦截模式 20规则引擎拦截&&AI引擎关闭模式 21规则引擎拦截&&AI引擎观察模式 22规则引擎拦截&&AI引擎拦截模式
-                     * @return Engine 规则引擎和AI引擎防护模式联合状态,10规则引擎观察&&AI引擎关闭模式 11规则引擎观察&&AI引擎观察模式 12规则引擎观察&&AI引擎拦截模式 20规则引擎拦截&&AI引擎关闭模式 21规则引擎拦截&&AI引擎观察模式 22规则引擎拦截&&AI引擎拦截模式
+                     * 获取规则引擎和AI引擎防护模式联合状态。
+1:初始状态,规则引擎拦截&&AI引擎未操作开关状态
+10：规则引擎观察&&AI引擎关闭模式 
+11：规则引擎观察&&AI引擎观察模式 
+12：规则引擎观察&&AI引擎拦截模式 
+20：规则引擎拦截&&AI引擎关闭模式 
+21：规则引擎拦截&&AI引擎观察模式 
+22：规则引擎拦截&&AI引擎拦截模式
+                     * @return Engine 规则引擎和AI引擎防护模式联合状态。
+1:初始状态,规则引擎拦截&&AI引擎未操作开关状态
+10：规则引擎观察&&AI引擎关闭模式 
+11：规则引擎观察&&AI引擎观察模式 
+12：规则引擎观察&&AI引擎拦截模式 
+20：规则引擎拦截&&AI引擎关闭模式 
+21：规则引擎拦截&&AI引擎观察模式 
+22：规则引擎拦截&&AI引擎拦截模式
                      * 
                      */
                     uint64_t GetEngine() const;
 
                     /**
-                     * 设置规则引擎和AI引擎防护模式联合状态,10规则引擎观察&&AI引擎关闭模式 11规则引擎观察&&AI引擎观察模式 12规则引擎观察&&AI引擎拦截模式 20规则引擎拦截&&AI引擎关闭模式 21规则引擎拦截&&AI引擎观察模式 22规则引擎拦截&&AI引擎拦截模式
-                     * @param _engine 规则引擎和AI引擎防护模式联合状态,10规则引擎观察&&AI引擎关闭模式 11规则引擎观察&&AI引擎观察模式 12规则引擎观察&&AI引擎拦截模式 20规则引擎拦截&&AI引擎关闭模式 21规则引擎拦截&&AI引擎观察模式 22规则引擎拦截&&AI引擎拦截模式
+                     * 设置规则引擎和AI引擎防护模式联合状态。
+1:初始状态,规则引擎拦截&&AI引擎未操作开关状态
+10：规则引擎观察&&AI引擎关闭模式 
+11：规则引擎观察&&AI引擎观察模式 
+12：规则引擎观察&&AI引擎拦截模式 
+20：规则引擎拦截&&AI引擎关闭模式 
+21：规则引擎拦截&&AI引擎观察模式 
+22：规则引擎拦截&&AI引擎拦截模式
+                     * @param _engine 规则引擎和AI引擎防护模式联合状态。
+1:初始状态,规则引擎拦截&&AI引擎未操作开关状态
+10：规则引擎观察&&AI引擎关闭模式 
+11：规则引擎观察&&AI引擎观察模式 
+12：规则引擎观察&&AI引擎拦截模式 
+20：规则引擎拦截&&AI引擎关闭模式 
+21：规则引擎拦截&&AI引擎观察模式 
+22：规则引擎拦截&&AI引擎拦截模式
                      * 
                      */
                     void SetEngine(const uint64_t& _engine);
@@ -195,15 +263,15 @@ namespace TencentCloud
                     bool EngineHasBeenSet() const;
 
                     /**
-                     * 获取是否开启代理，0：不开启，1：开启
-                     * @return IsCdn 是否开启代理，0：不开启，1：开启
+                     * 获取waf前是否部署有七层代理服务。 0：没有部署代理服务 1：有部署代理服务，waf将使用XFF获取客户端IP 2：有部署代理服务，waf将使用remote_addr获取客户端IP 3：有部署代理服务，waf将使用ip_headers中的自定义header获取客户端IP
+                     * @return IsCdn waf前是否部署有七层代理服务。 0：没有部署代理服务 1：有部署代理服务，waf将使用XFF获取客户端IP 2：有部署代理服务，waf将使用remote_addr获取客户端IP 3：有部署代理服务，waf将使用ip_headers中的自定义header获取客户端IP
                      * 
                      */
                     uint64_t GetIsCdn() const;
 
                     /**
-                     * 设置是否开启代理，0：不开启，1：开启
-                     * @param _isCdn 是否开启代理，0：不开启，1：开启
+                     * 设置waf前是否部署有七层代理服务。 0：没有部署代理服务 1：有部署代理服务，waf将使用XFF获取客户端IP 2：有部署代理服务，waf将使用remote_addr获取客户端IP 3：有部署代理服务，waf将使用ip_headers中的自定义header获取客户端IP
+                     * @param _isCdn waf前是否部署有七层代理服务。 0：没有部署代理服务 1：有部署代理服务，waf将使用XFF获取客户端IP 2：有部署代理服务，waf将使用remote_addr获取客户端IP 3：有部署代理服务，waf将使用ip_headers中的自定义header获取客户端IP
                      * 
                      */
                     void SetIsCdn(const uint64_t& _isCdn);
@@ -216,15 +284,15 @@ namespace TencentCloud
                     bool IsCdnHasBeenSet() const;
 
                     /**
-                     * 获取绑定的LB列表
-                     * @return LoadBalancerSet 绑定的LB列表
+                     * 获取绑定的负载均衡器信息列表
+                     * @return LoadBalancerSet 绑定的负载均衡器信息列表
                      * 
                      */
                     std::vector<LoadBalancer> GetLoadBalancerSet() const;
 
                     /**
-                     * 设置绑定的LB列表
-                     * @param _loadBalancerSet 绑定的LB列表
+                     * 设置绑定的负载均衡器信息列表
+                     * @param _loadBalancerSet 绑定的负载均衡器信息列表
                      * 
                      */
                     void SetLoadBalancerSet(const std::vector<LoadBalancer>& _loadBalancerSet);
@@ -237,15 +305,15 @@ namespace TencentCloud
                     bool LoadBalancerSetHasBeenSet() const;
 
                     /**
-                     * 获取域名绑定的LB的地域，以,分割多个地域
-                     * @return Region 域名绑定的LB的地域，以,分割多个地域
+                     * 获取域名绑定的LB的地域，以逗号分割多个地域
+                     * @return Region 域名绑定的LB的地域，以逗号分割多个地域
                      * 
                      */
                     std::string GetRegion() const;
 
                     /**
-                     * 设置域名绑定的LB的地域，以,分割多个地域
-                     * @param _region 域名绑定的LB的地域，以,分割多个地域
+                     * 设置域名绑定的LB的地域，以逗号分割多个地域
+                     * @param _region 域名绑定的LB的地域，以逗号分割多个地域
                      * 
                      */
                     void SetRegion(const std::string& _region);
@@ -258,15 +326,15 @@ namespace TencentCloud
                     bool RegionHasBeenSet() const;
 
                     /**
-                     * 获取产品分类，取值为：sparta-waf、clb-waf、cdn-waf
-                     * @return Edition 产品分类，取值为：sparta-waf、clb-waf、cdn-waf
+                     * 获取域名所属实例类型。负载均衡型WAF为"clb-waf"
+                     * @return Edition 域名所属实例类型。负载均衡型WAF为"clb-waf"
                      * 
                      */
                     std::string GetEdition() const;
 
                     /**
-                     * 设置产品分类，取值为：sparta-waf、clb-waf、cdn-waf
-                     * @param _edition 产品分类，取值为：sparta-waf、clb-waf、cdn-waf
+                     * 设置域名所属实例类型。负载均衡型WAF为"clb-waf"
+                     * @param _edition 域名所属实例类型。负载均衡型WAF为"clb-waf"
                      * 
                      */
                     void SetEdition(const std::string& _edition);
@@ -279,15 +347,23 @@ namespace TencentCloud
                     bool EditionHasBeenSet() const;
 
                     /**
-                     * 获取WAF的流量模式，1：清洗模式，0：镜像模式
-                     * @return FlowMode WAF的流量模式，1：清洗模式，0：镜像模式
+                     * 获取负载均衡型WAF域名的流量模式。
+1：清洗模式
+0：镜像模式
+                     * @return FlowMode 负载均衡型WAF域名的流量模式。
+1：清洗模式
+0：镜像模式
                      * 
                      */
                     uint64_t GetFlowMode() const;
 
                     /**
-                     * 设置WAF的流量模式，1：清洗模式，0：镜像模式
-                     * @param _flowMode WAF的流量模式，1：清洗模式，0：镜像模式
+                     * 设置负载均衡型WAF域名的流量模式。
+1：清洗模式
+0：镜像模式
+                     * @param _flowMode 负载均衡型WAF域名的流量模式。
+1：清洗模式
+0：镜像模式
                      * 
                      */
                     void SetFlowMode(const uint64_t& _flowMode);
@@ -300,15 +376,23 @@ namespace TencentCloud
                     bool FlowModeHasBeenSet() const;
 
                     /**
-                     * 获取是否开启访问日志，1：开启，0：关闭
-                     * @return ClsStatus 是否开启访问日志，1：开启，0：关闭
+                     * 获取是否开启访问日志。
+1：开启
+0：关闭
+                     * @return ClsStatus 是否开启访问日志。
+1：开启
+0：关闭
                      * 
                      */
                     uint64_t GetClsStatus() const;
 
                     /**
-                     * 设置是否开启访问日志，1：开启，0：关闭
-                     * @param _clsStatus 是否开启访问日志，1：开启，0：关闭
+                     * 设置是否开启访问日志。
+1：开启
+0：关闭
+                     * @param _clsStatus 是否开启访问日志。
+1：开启
+0：关闭
                      * 
                      */
                     void SetClsStatus(const uint64_t& _clsStatus);
@@ -346,18 +430,18 @@ namespace TencentCloud
                     bool LevelHasBeenSet() const;
 
                     /**
-                     * 获取域名需要下发到的cdc集群列表
+                     * 获取域名需要下发到的cdc集群列表。仅CDC场景下填充
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return CdcClusters 域名需要下发到的cdc集群列表
+                     * @return CdcClusters 域名需要下发到的cdc集群列表。仅CDC场景下填充
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<std::string> GetCdcClusters() const;
 
                     /**
-                     * 设置域名需要下发到的cdc集群列表
+                     * 设置域名需要下发到的cdc集群列表。仅CDC场景下填充
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _cdcClusters 域名需要下发到的cdc集群列表
+                     * @param _cdcClusters 域名需要下发到的cdc集群列表。仅CDC场景下填充
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -371,18 +455,26 @@ namespace TencentCloud
                     bool CdcClustersHasBeenSet() const;
 
                     /**
-                     * 获取应用型负载均衡类型: clb或者apisix，默认clb
+                     * 获取应用型负载均衡类型，默认clb。 
+clb：七层负载均衡器类型 
+apisix：apisix网关型
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return AlbType 应用型负载均衡类型: clb或者apisix，默认clb
+                     * @return AlbType 应用型负载均衡类型，默认clb。 
+clb：七层负载均衡器类型 
+apisix：apisix网关型
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetAlbType() const;
 
                     /**
-                     * 设置应用型负载均衡类型: clb或者apisix，默认clb
+                     * 设置应用型负载均衡类型，默认clb。 
+clb：七层负载均衡器类型 
+apisix：apisix网关型
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _albType 应用型负载均衡类型: clb或者apisix，默认clb
+                     * @param _albType 应用型负载均衡类型，默认clb。 
+clb：七层负载均衡器类型 
+apisix：apisix网关型
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -421,18 +513,26 @@ namespace TencentCloud
                     bool IpHeadersHasBeenSet() const;
 
                     /**
-                     * 获取规则引擎类型， 1: menshen,   2:tiga
+                     * 获取规则引擎类型。
+1: menshen
+2: tiga
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return EngineType 规则引擎类型， 1: menshen,   2:tiga
+                     * @return EngineType 规则引擎类型。
+1: menshen
+2: tiga
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetEngineType() const;
 
                     /**
-                     * 设置规则引擎类型， 1: menshen,   2:tiga
+                     * 设置规则引擎类型。
+1: menshen
+2: tiga
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _engineType 规则引擎类型， 1: menshen,   2:tiga
+                     * @param _engineType 规则引擎类型。
+1: menshen
+2: tiga
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -446,18 +546,30 @@ namespace TencentCloud
                     bool EngineTypeHasBeenSet() const;
 
                     /**
-                     * 获取云类型:public:公有云；private:私有云;hybrid:混合云
+                     * 获取云类型。
+public:公有云
+private:私有云
+hybrid:混合云
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return CloudType 云类型:public:公有云；private:私有云;hybrid:混合云
+                     * @return CloudType 云类型。
+public:公有云
+private:私有云
+hybrid:混合云
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetCloudType() const;
 
                     /**
-                     * 设置云类型:public:公有云；private:私有云;hybrid:混合云
+                     * 设置云类型。
+public:公有云
+private:私有云
+hybrid:混合云
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _cloudType 云类型:public:公有云；private:私有云;hybrid:混合云
+                     * @param _cloudType 云类型。
+public:公有云
+private:私有云
+hybrid:混合云
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -470,6 +582,31 @@ namespace TencentCloud
                      */
                     bool CloudTypeHasBeenSet() const;
 
+                    /**
+                     * 获取域名备注信息
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return Note 域名备注信息
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::string GetNote() const;
+
+                    /**
+                     * 设置域名备注信息
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _note 域名备注信息
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetNote(const std::string& _note);
+
+                    /**
+                     * 判断参数 Note 是否已赋值
+                     * @return Note 是否已赋值
+                     * 
+                     */
+                    bool NoteHasBeenSet() const;
+
                 private:
 
                     /**
@@ -479,7 +616,7 @@ namespace TencentCloud
                     bool m_domainHasBeenSet;
 
                     /**
-                     * 域名ID
+                     * 域名唯一ID
                      */
                     std::string m_domainId;
                     bool m_domainIdHasBeenSet;
@@ -491,61 +628,82 @@ namespace TencentCloud
                     bool m_mainDomainHasBeenSet;
 
                     /**
-                     * 规则引擎防护模式，0 观察模式，1拦截模式
+                     * 规则引擎防护模式。
+0：观察模式
+1：拦截模式
                      */
                     uint64_t m_mode;
                     bool m_modeHasBeenSet;
 
                     /**
-                     * waf和LD的绑定，0：没有绑定，1：绑定
+                     * waf和负载均衡器的绑定关系。
+0：未绑定
+1：已绑定
                      */
                     uint64_t m_status;
                     bool m_statusHasBeenSet;
 
                     /**
-                     * 域名状态，0：正常，1：未检测到流量，2：即将过期，3：过期
+                     * clbwaf域名监听器状态。
+0：操作成功
+4：正在绑定LB
+6：正在解绑LB 
+7：解绑LB失败 
+8：绑定LB失败 
+10：内部错误
                      */
                     uint64_t m_state;
                     bool m_stateHasBeenSet;
 
                     /**
-                     * 规则引擎和AI引擎防护模式联合状态,10规则引擎观察&&AI引擎关闭模式 11规则引擎观察&&AI引擎观察模式 12规则引擎观察&&AI引擎拦截模式 20规则引擎拦截&&AI引擎关闭模式 21规则引擎拦截&&AI引擎观察模式 22规则引擎拦截&&AI引擎拦截模式
+                     * 规则引擎和AI引擎防护模式联合状态。
+1:初始状态,规则引擎拦截&&AI引擎未操作开关状态
+10：规则引擎观察&&AI引擎关闭模式 
+11：规则引擎观察&&AI引擎观察模式 
+12：规则引擎观察&&AI引擎拦截模式 
+20：规则引擎拦截&&AI引擎关闭模式 
+21：规则引擎拦截&&AI引擎观察模式 
+22：规则引擎拦截&&AI引擎拦截模式
                      */
                     uint64_t m_engine;
                     bool m_engineHasBeenSet;
 
                     /**
-                     * 是否开启代理，0：不开启，1：开启
+                     * waf前是否部署有七层代理服务。 0：没有部署代理服务 1：有部署代理服务，waf将使用XFF获取客户端IP 2：有部署代理服务，waf将使用remote_addr获取客户端IP 3：有部署代理服务，waf将使用ip_headers中的自定义header获取客户端IP
                      */
                     uint64_t m_isCdn;
                     bool m_isCdnHasBeenSet;
 
                     /**
-                     * 绑定的LB列表
+                     * 绑定的负载均衡器信息列表
                      */
                     std::vector<LoadBalancer> m_loadBalancerSet;
                     bool m_loadBalancerSetHasBeenSet;
 
                     /**
-                     * 域名绑定的LB的地域，以,分割多个地域
+                     * 域名绑定的LB的地域，以逗号分割多个地域
                      */
                     std::string m_region;
                     bool m_regionHasBeenSet;
 
                     /**
-                     * 产品分类，取值为：sparta-waf、clb-waf、cdn-waf
+                     * 域名所属实例类型。负载均衡型WAF为"clb-waf"
                      */
                     std::string m_edition;
                     bool m_editionHasBeenSet;
 
                     /**
-                     * WAF的流量模式，1：清洗模式，0：镜像模式
+                     * 负载均衡型WAF域名的流量模式。
+1：清洗模式
+0：镜像模式
                      */
                     uint64_t m_flowMode;
                     bool m_flowModeHasBeenSet;
 
                     /**
-                     * 是否开启访问日志，1：开启，0：关闭
+                     * 是否开启访问日志。
+1：开启
+0：关闭
                      */
                     uint64_t m_clsStatus;
                     bool m_clsStatusHasBeenSet;
@@ -558,14 +716,16 @@ namespace TencentCloud
                     bool m_levelHasBeenSet;
 
                     /**
-                     * 域名需要下发到的cdc集群列表
+                     * 域名需要下发到的cdc集群列表。仅CDC场景下填充
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<std::string> m_cdcClusters;
                     bool m_cdcClustersHasBeenSet;
 
                     /**
-                     * 应用型负载均衡类型: clb或者apisix，默认clb
+                     * 应用型负载均衡类型，默认clb。 
+clb：七层负载均衡器类型 
+apisix：apisix网关型
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_albType;
@@ -579,18 +739,30 @@ namespace TencentCloud
                     bool m_ipHeadersHasBeenSet;
 
                     /**
-                     * 规则引擎类型， 1: menshen,   2:tiga
+                     * 规则引擎类型。
+1: menshen
+2: tiga
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_engineType;
                     bool m_engineTypeHasBeenSet;
 
                     /**
-                     * 云类型:public:公有云；private:私有云;hybrid:混合云
+                     * 云类型。
+public:公有云
+private:私有云
+hybrid:混合云
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_cloudType;
                     bool m_cloudTypeHasBeenSet;
+
+                    /**
+                     * 域名备注信息
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_note;
+                    bool m_noteHasBeenSet;
 
                 };
             }

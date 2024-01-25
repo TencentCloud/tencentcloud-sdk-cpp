@@ -23,12 +23,13 @@ using namespace TencentCloud::Waf::V20180125::Model;
 using namespace std;
 
 ModifyBotStatusRequest::ModifyBotStatusRequest() :
-    m_domainHasBeenSet(false),
     m_categoryHasBeenSet(false),
     m_statusHasBeenSet(false),
+    m_domainHasBeenSet(false),
     m_instanceIDHasBeenSet(false),
     m_isVersionFourHasBeenSet(false),
-    m_botVersionHasBeenSet(false)
+    m_botVersionHasBeenSet(false),
+    m_domainListHasBeenSet(false)
 {
 }
 
@@ -38,14 +39,6 @@ string ModifyBotStatusRequest::ToJsonString() const
     d.SetObject();
     rapidjson::Document::AllocatorType& allocator = d.GetAllocator();
 
-
-    if (m_domainHasBeenSet)
-    {
-        rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "Domain";
-        iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, rapidjson::Value(m_domain.c_str(), allocator).Move(), allocator);
-    }
 
     if (m_categoryHasBeenSet)
     {
@@ -61,6 +54,14 @@ string ModifyBotStatusRequest::ToJsonString() const
         string key = "Status";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_status.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_domainHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Domain";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_domain.c_str(), allocator).Move(), allocator);
     }
 
     if (m_instanceIDHasBeenSet)
@@ -87,6 +88,19 @@ string ModifyBotStatusRequest::ToJsonString() const
         d.AddMember(iKey, rapidjson::Value(m_botVersion.c_str(), allocator).Move(), allocator);
     }
 
+    if (m_domainListHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "DomainList";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        for (auto itr = m_domainList.begin(); itr != m_domainList.end(); ++itr)
+        {
+            d[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
+        }
+    }
+
 
     rapidjson::StringBuffer buffer;
     rapidjson::Writer<rapidjson::StringBuffer> writer(buffer);
@@ -94,22 +108,6 @@ string ModifyBotStatusRequest::ToJsonString() const
     return buffer.GetString();
 }
 
-
-string ModifyBotStatusRequest::GetDomain() const
-{
-    return m_domain;
-}
-
-void ModifyBotStatusRequest::SetDomain(const string& _domain)
-{
-    m_domain = _domain;
-    m_domainHasBeenSet = true;
-}
-
-bool ModifyBotStatusRequest::DomainHasBeenSet() const
-{
-    return m_domainHasBeenSet;
-}
 
 string ModifyBotStatusRequest::GetCategory() const
 {
@@ -141,6 +139,22 @@ void ModifyBotStatusRequest::SetStatus(const string& _status)
 bool ModifyBotStatusRequest::StatusHasBeenSet() const
 {
     return m_statusHasBeenSet;
+}
+
+string ModifyBotStatusRequest::GetDomain() const
+{
+    return m_domain;
+}
+
+void ModifyBotStatusRequest::SetDomain(const string& _domain)
+{
+    m_domain = _domain;
+    m_domainHasBeenSet = true;
+}
+
+bool ModifyBotStatusRequest::DomainHasBeenSet() const
+{
+    return m_domainHasBeenSet;
 }
 
 string ModifyBotStatusRequest::GetInstanceID() const
@@ -189,6 +203,22 @@ void ModifyBotStatusRequest::SetBotVersion(const string& _botVersion)
 bool ModifyBotStatusRequest::BotVersionHasBeenSet() const
 {
     return m_botVersionHasBeenSet;
+}
+
+vector<string> ModifyBotStatusRequest::GetDomainList() const
+{
+    return m_domainList;
+}
+
+void ModifyBotStatusRequest::SetDomainList(const vector<string>& _domainList)
+{
+    m_domainList = _domainList;
+    m_domainListHasBeenSet = true;
+}
+
+bool ModifyBotStatusRequest::DomainListHasBeenSet() const
+{
+    return m_domainListHasBeenSet;
 }
 
 

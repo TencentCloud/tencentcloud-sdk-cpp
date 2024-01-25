@@ -36,7 +36,7 @@ namespace TencentCloud
             namespace Model
             {
                 /**
-                * saas域名详情
+                * SaaS型WAF域名详情
                 */
                 class DomainsPartInfo : public AbstractModel
                 {
@@ -69,15 +69,15 @@ namespace TencentCloud
                     bool DomainHasBeenSet() const;
 
                     /**
-                     * 获取域名id
-                     * @return DomainId 域名id
+                     * 获取域名唯一ID
+                     * @return DomainId 域名唯一ID
                      * 
                      */
                     std::string GetDomainId() const;
 
                     /**
-                     * 设置域名id
-                     * @param _domainId 域名id
+                     * 设置域名唯一ID
+                     * @param _domainId 域名唯一ID
                      * 
                      */
                     void SetDomainId(const std::string& _domainId);
@@ -90,15 +90,15 @@ namespace TencentCloud
                     bool DomainIdHasBeenSet() const;
 
                     /**
-                     * 获取实例id
-                     * @return InstanceId 实例id
+                     * 获取域名所属实例唯一ID
+                     * @return InstanceId 域名所属实例唯一ID
                      * 
                      */
                     std::string GetInstanceId() const;
 
                     /**
-                     * 设置实例id
-                     * @param _instanceId 实例id
+                     * 设置域名所属实例唯一ID
+                     * @param _instanceId 域名所属实例唯一ID
                      * 
                      */
                     void SetInstanceId(const std::string& _instanceId);
@@ -111,15 +111,15 @@ namespace TencentCloud
                     bool InstanceIdHasBeenSet() const;
 
                     /**
-                     * 获取类型
-                     * @return Edition 类型
+                     * 获取域名所属实例类型
+                     * @return Edition 域名所属实例类型
                      * 
                      */
                     std::string GetEdition() const;
 
                     /**
-                     * 设置类型
-                     * @param _edition 类型
+                     * 设置域名所属实例类型
+                     * @param _edition 域名所属实例类型
                      * 
                      */
                     void SetEdition(const std::string& _edition);
@@ -132,15 +132,15 @@ namespace TencentCloud
                     bool EditionHasBeenSet() const;
 
                     /**
-                     * 获取实例名
-                     * @return InstanceName 实例名
+                     * 获取域名所属实例名
+                     * @return InstanceName 域名所属实例名
                      * 
                      */
                     std::string GetInstanceName() const;
 
                     /**
-                     * 设置实例名
-                     * @param _instanceName 实例名
+                     * 设置域名所属实例名
+                     * @param _instanceName 域名所属实例名
                      * 
                      */
                     void SetInstanceName(const std::string& _instanceName);
@@ -195,15 +195,43 @@ namespace TencentCloud
                     bool CreateTimeHasBeenSet() const;
 
                     /**
-                     * 获取AI防御模式
-                     * @return Engine AI防御模式
+                     * 获取规则引擎和AI引擎防护模式联合状态。
+1:初始状态,规则引擎拦截&&AI引擎未操作开关状态
+10：规则引擎观察&&AI引擎关闭模式 
+11：规则引擎观察&&AI引擎观察模式 
+12：规则引擎观察&&AI引擎拦截模式 
+20：规则引擎拦截&&AI引擎关闭模式 
+21：规则引擎拦截&&AI引擎观察模式 
+22：规则引擎拦截&&AI引擎拦截模式
+                     * @return Engine 规则引擎和AI引擎防护模式联合状态。
+1:初始状态,规则引擎拦截&&AI引擎未操作开关状态
+10：规则引擎观察&&AI引擎关闭模式 
+11：规则引擎观察&&AI引擎观察模式 
+12：规则引擎观察&&AI引擎拦截模式 
+20：规则引擎拦截&&AI引擎关闭模式 
+21：规则引擎拦截&&AI引擎观察模式 
+22：规则引擎拦截&&AI引擎拦截模式
                      * 
                      */
                     uint64_t GetEngine() const;
 
                     /**
-                     * 设置AI防御模式
-                     * @param _engine AI防御模式
+                     * 设置规则引擎和AI引擎防护模式联合状态。
+1:初始状态,规则引擎拦截&&AI引擎未操作开关状态
+10：规则引擎观察&&AI引擎关闭模式 
+11：规则引擎观察&&AI引擎观察模式 
+12：规则引擎观察&&AI引擎拦截模式 
+20：规则引擎拦截&&AI引擎关闭模式 
+21：规则引擎拦截&&AI引擎观察模式 
+22：规则引擎拦截&&AI引擎拦截模式
+                     * @param _engine 规则引擎和AI引擎防护模式联合状态。
+1:初始状态,规则引擎拦截&&AI引擎未操作开关状态
+10：规则引擎观察&&AI引擎关闭模式 
+11：规则引擎观察&&AI引擎观察模式 
+12：规则引擎观察&&AI引擎拦截模式 
+20：规则引擎拦截&&AI引擎关闭模式 
+21：规则引擎拦截&&AI引擎观察模式 
+22：规则引擎拦截&&AI引擎拦截模式
                      * 
                      */
                     void SetEngine(const uint64_t& _engine);
@@ -216,15 +244,23 @@ namespace TencentCloud
                     bool EngineHasBeenSet() const;
 
                     /**
-                     * 获取是否开启httpRewrite
-                     * @return HttpsRewrite 是否开启httpRewrite
+                     * 获取是否开启HTTP强制跳转到HTTPS。
+0：不强制跳转
+1：开启强制跳转
+                     * @return HttpsRewrite 是否开启HTTP强制跳转到HTTPS。
+0：不强制跳转
+1：开启强制跳转
                      * 
                      */
                     uint64_t GetHttpsRewrite() const;
 
                     /**
-                     * 设置是否开启httpRewrite
-                     * @param _httpsRewrite 是否开启httpRewrite
+                     * 设置是否开启HTTP强制跳转到HTTPS。
+0：不强制跳转
+1：开启强制跳转
+                     * @param _httpsRewrite 是否开启HTTP强制跳转到HTTPS。
+0：不强制跳转
+1：开启强制跳转
                      * 
                      */
                     void SetHttpsRewrite(const uint64_t& _httpsRewrite);
@@ -237,15 +273,15 @@ namespace TencentCloud
                     bool HttpsRewriteHasBeenSet() const;
 
                     /**
-                     * 获取https回源端口
-                     * @return HttpsUpstreamPort https回源端口
+                     * 获取HTTPS回源端口
+                     * @return HttpsUpstreamPort HTTPS回源端口
                      * 
                      */
                     std::string GetHttpsUpstreamPort() const;
 
                     /**
-                     * 设置https回源端口
-                     * @param _httpsUpstreamPort https回源端口
+                     * 设置HTTPS回源端口
+                     * @param _httpsUpstreamPort HTTPS回源端口
                      * 
                      */
                     void SetHttpsUpstreamPort(const std::string& _httpsUpstreamPort);
@@ -258,15 +294,31 @@ namespace TencentCloud
                     bool HttpsUpstreamPortHasBeenSet() const;
 
                     /**
-                     * 获取是否是cdn
-                     * @return IsCdn 是否是cdn
+                     * 获取waf前是否部署有七层代理服务。
+0：没有部署代理服务
+1：有部署代理服务，waf将使用XFF获取客户端IP
+2：有部署代理服务，waf将使用remote_addr获取客户端IP
+3：有部署代理服务，waf将使用ip_headers中的自定义header获取客户端IP
+                     * @return IsCdn waf前是否部署有七层代理服务。
+0：没有部署代理服务
+1：有部署代理服务，waf将使用XFF获取客户端IP
+2：有部署代理服务，waf将使用remote_addr获取客户端IP
+3：有部署代理服务，waf将使用ip_headers中的自定义header获取客户端IP
                      * 
                      */
                     uint64_t GetIsCdn() const;
 
                     /**
-                     * 设置是否是cdn
-                     * @param _isCdn 是否是cdn
+                     * 设置waf前是否部署有七层代理服务。
+0：没有部署代理服务
+1：有部署代理服务，waf将使用XFF获取客户端IP
+2：有部署代理服务，waf将使用remote_addr获取客户端IP
+3：有部署代理服务，waf将使用ip_headers中的自定义header获取客户端IP
+                     * @param _isCdn waf前是否部署有七层代理服务。
+0：没有部署代理服务
+1：有部署代理服务，waf将使用XFF获取客户端IP
+2：有部署代理服务，waf将使用remote_addr获取客户端IP
+3：有部署代理服务，waf将使用ip_headers中的自定义header获取客户端IP
                      * 
                      */
                     void SetIsCdn(const uint64_t& _isCdn);
@@ -279,15 +331,15 @@ namespace TencentCloud
                     bool IsCdnHasBeenSet() const;
 
                     /**
-                     * 获取是否开启gray
-                     * @return IsGray 是否开启gray
+                     * 获取是否开启灰度，已废弃。
+                     * @return IsGray 是否开启灰度，已废弃。
                      * 
                      */
                     uint64_t GetIsGray() const;
 
                     /**
-                     * 设置是否开启gray
-                     * @param _isGray 是否开启gray
+                     * 设置是否开启灰度，已废弃。
+                     * @param _isGray 是否开启灰度，已废弃。
                      * 
                      */
                     void SetIsGray(const uint64_t& _isGray);
@@ -300,15 +352,23 @@ namespace TencentCloud
                     bool IsGrayHasBeenSet() const;
 
                     /**
-                     * 获取是否是http2
-                     * @return IsHttp2 是否是http2
+                     * 获取是否开启HTTP2，需要开启HTTPS协议支持。
+0：关闭
+1：开启
+                     * @return IsHttp2 是否开启HTTP2，需要开启HTTPS协议支持。
+0：关闭
+1：开启
                      * 
                      */
                     uint64_t GetIsHttp2() const;
 
                     /**
-                     * 设置是否是http2
-                     * @param _isHttp2 是否是http2
+                     * 设置是否开启HTTP2，需要开启HTTPS协议支持。
+0：关闭
+1：开启
+                     * @param _isHttp2 是否开启HTTP2，需要开启HTTPS协议支持。
+0：关闭
+1：开启
                      * 
                      */
                     void SetIsHttp2(const uint64_t& _isHttp2);
@@ -321,15 +381,23 @@ namespace TencentCloud
                     bool IsHttp2HasBeenSet() const;
 
                     /**
-                     * 获取是否开启websocket
-                     * @return IsWebsocket 是否开启websocket
+                     * 获取是否开启WebSocket支持。
+0：关闭
+1：开启
+                     * @return IsWebsocket 是否开启WebSocket支持。
+0：关闭
+1：开启
                      * 
                      */
                     uint64_t GetIsWebsocket() const;
 
                     /**
-                     * 设置是否开启websocket
-                     * @param _isWebsocket 是否开启websocket
+                     * 设置是否开启WebSocket支持。
+0：关闭
+1：开启
+                     * @param _isWebsocket 是否开启WebSocket支持。
+0：关闭
+1：开启
                      * 
                      */
                     void SetIsWebsocket(const uint64_t& _isWebsocket);
@@ -342,15 +410,27 @@ namespace TencentCloud
                     bool IsWebsocketHasBeenSet() const;
 
                     /**
-                     * 获取负载均衡
-                     * @return LoadBalance 负载均衡
+                     * 获取回源负载均衡策略。
+0：轮询
+1：IP hash
+2：加权轮询
+                     * @return LoadBalance 回源负载均衡策略。
+0：轮询
+1：IP hash
+2：加权轮询
                      * 
                      */
                     uint64_t GetLoadBalance() const;
 
                     /**
-                     * 设置负载均衡
-                     * @param _loadBalance 负载均衡
+                     * 设置回源负载均衡策略。
+0：轮询
+1：IP hash
+2：加权轮询
+                     * @param _loadBalance 回源负载均衡策略。
+0：轮询
+1：IP hash
+2：加权轮询
                      * 
                      */
                     void SetLoadBalance(const uint64_t& _loadBalance);
@@ -363,15 +443,23 @@ namespace TencentCloud
                     bool LoadBalanceHasBeenSet() const;
 
                     /**
-                     * 获取防御模式
-                     * @return Mode 防御模式
+                     * 获取防护模式。
+0：观察模式
+1：拦截模式
+                     * @return Mode 防护模式。
+0：观察模式
+1：拦截模式
                      * 
                      */
                     uint64_t GetMode() const;
 
                     /**
-                     * 设置防御模式
-                     * @param _mode 防御模式
+                     * 设置防护模式。
+0：观察模式
+1：拦截模式
+                     * @param _mode 防护模式。
+0：观察模式
+1：拦截模式
                      * 
                      */
                     void SetMode(const uint64_t& _mode);
@@ -384,15 +472,15 @@ namespace TencentCloud
                     bool ModeHasBeenSet() const;
 
                     /**
-                     * 获取私钥
-                     * @return PrivateKey 私钥
+                     * 获取自有证书的私钥
+                     * @return PrivateKey 自有证书的私钥
                      * 
                      */
                     std::string GetPrivateKey() const;
 
                     /**
-                     * 设置私钥
-                     * @param _privateKey 私钥
+                     * 设置自有证书的私钥
+                     * @param _privateKey 自有证书的私钥
                      * 
                      */
                     void SetPrivateKey(const std::string& _privateKey);
@@ -405,15 +493,15 @@ namespace TencentCloud
                     bool PrivateKeyHasBeenSet() const;
 
                     /**
-                     * 获取ssl id
-                     * @return SSLId ssl id
+                     * 获取CertType为2时，需要填充此参数，表示腾讯云SSL平台托管的证书id
+                     * @return SSLId CertType为2时，需要填充此参数，表示腾讯云SSL平台托管的证书id
                      * 
                      */
                     std::string GetSSLId() const;
 
                     /**
-                     * 设置ssl id
-                     * @param _sSLId ssl id
+                     * 设置CertType为2时，需要填充此参数，表示腾讯云SSL平台托管的证书id
+                     * @param _sSLId CertType为2时，需要填充此参数，表示腾讯云SSL平台托管的证书id
                      * 
                      */
                     void SetSSLId(const std::string& _sSLId);
@@ -426,15 +514,15 @@ namespace TencentCloud
                     bool SSLIdHasBeenSet() const;
 
                     /**
-                     * 获取回源域名
-                     * @return UpstreamDomain 回源域名
+                     * 获取域名回源时的回源域名。UpstreamType为1时，需要填充此字段
+                     * @return UpstreamDomain 域名回源时的回源域名。UpstreamType为1时，需要填充此字段
                      * 
                      */
                     std::string GetUpstreamDomain() const;
 
                     /**
-                     * 设置回源域名
-                     * @param _upstreamDomain 回源域名
+                     * 设置域名回源时的回源域名。UpstreamType为1时，需要填充此字段
+                     * @param _upstreamDomain 域名回源时的回源域名。UpstreamType为1时，需要填充此字段
                      * 
                      */
                     void SetUpstreamDomain(const std::string& _upstreamDomain);
@@ -447,15 +535,23 @@ namespace TencentCloud
                     bool UpstreamDomainHasBeenSet() const;
 
                     /**
-                     * 获取回源类型
-                     * @return UpstreamType 回源类型
+                     * 获取回源类型。
+0：通过IP回源
+1：通过域名回源
+                     * @return UpstreamType 回源类型。
+0：通过IP回源
+1：通过域名回源
                      * 
                      */
                     uint64_t GetUpstreamType() const;
 
                     /**
-                     * 设置回源类型
-                     * @param _upstreamType 回源类型
+                     * 设置回源类型。
+0：通过IP回源
+1：通过域名回源
+                     * @param _upstreamType 回源类型。
+0：通过IP回源
+1：通过域名回源
                      * 
                      */
                     void SetUpstreamType(const uint64_t& _upstreamType);
@@ -468,15 +564,15 @@ namespace TencentCloud
                     bool UpstreamTypeHasBeenSet() const;
 
                     /**
-                     * 获取回源ip
-                     * @return SrcList 回源ip
+                     * 获取IP回源时的回源IP列表。UpstreamType为0时，需要填充此字段
+                     * @return SrcList IP回源时的回源IP列表。UpstreamType为0时，需要填充此字段
                      * 
                      */
                     std::vector<std::string> GetSrcList() const;
 
                     /**
-                     * 设置回源ip
-                     * @param _srcList 回源ip
+                     * 设置IP回源时的回源IP列表。UpstreamType为0时，需要填充此字段
+                     * @param _srcList IP回源时的回源IP列表。UpstreamType为0时，需要填充此字段
                      * 
                      */
                     void SetSrcList(const std::vector<std::string>& _srcList);
@@ -489,15 +585,15 @@ namespace TencentCloud
                     bool SrcListHasBeenSet() const;
 
                     /**
-                     * 获取服务端口配置
-                     * @return Ports 服务端口配置
+                     * 获取域名端口配置
+                     * @return Ports 域名端口配置
                      * 
                      */
                     std::vector<PortInfo> GetPorts() const;
 
                     /**
-                     * 设置服务端口配置
-                     * @param _ports 服务端口配置
+                     * 设置域名端口配置
+                     * @param _ports 域名端口配置
                      * 
                      */
                     void SetPorts(const std::vector<PortInfo>& _ports);
@@ -510,15 +606,27 @@ namespace TencentCloud
                     bool PortsHasBeenSet() const;
 
                     /**
-                     * 获取证书类型
-                     * @return CertType 证书类型
+                     * 获取证书类型。
+0：仅配置HTTP监听端口，没有证书
+1：证书来源为自有证书
+2：证书来源为托管证书
+                     * @return CertType 证书类型。
+0：仅配置HTTP监听端口，没有证书
+1：证书来源为自有证书
+2：证书来源为托管证书
                      * 
                      */
                     uint64_t GetCertType() const;
 
                     /**
-                     * 设置证书类型
-                     * @param _certType 证书类型
+                     * 设置证书类型。
+0：仅配置HTTP监听端口，没有证书
+1：证书来源为自有证书
+2：证书来源为托管证书
+                     * @param _certType 证书类型。
+0：仅配置HTTP监听端口，没有证书
+1：证书来源为自有证书
+2：证书来源为托管证书
                      * 
                      */
                     void SetCertType(const uint64_t& _certType);
@@ -531,15 +639,23 @@ namespace TencentCloud
                     bool CertTypeHasBeenSet() const;
 
                     /**
-                     * 获取回源方式
-                     * @return UpstreamScheme 回源方式
+                     * 获取服务配置有HTTPS端口时，HTTPS的回源协议。
+http：使用http协议回源，和HttpsUpstreamPort配合使用
+https：使用https协议回源
+                     * @return UpstreamScheme 服务配置有HTTPS端口时，HTTPS的回源协议。
+http：使用http协议回源，和HttpsUpstreamPort配合使用
+https：使用https协议回源
                      * 
                      */
                     std::string GetUpstreamScheme() const;
 
                     /**
-                     * 设置回源方式
-                     * @param _upstreamScheme 回源方式
+                     * 设置服务配置有HTTPS端口时，HTTPS的回源协议。
+http：使用http协议回源，和HttpsUpstreamPort配合使用
+https：使用https协议回源
+                     * @param _upstreamScheme 服务配置有HTTPS端口时，HTTPS的回源协议。
+http：使用http协议回源，和HttpsUpstreamPort配合使用
+https：使用https协议回源
                      * 
                      */
                     void SetUpstreamScheme(const std::string& _upstreamScheme);
@@ -552,15 +668,23 @@ namespace TencentCloud
                     bool UpstreamSchemeHasBeenSet() const;
 
                     /**
-                     * 获取日志包
-                     * @return Cls 日志包
+                     * 获取日志包是否开启。
+0：关闭
+1：开启
+                     * @return Cls 日志包是否开启。
+0：关闭
+1：开启
                      * 
                      */
                     uint64_t GetCls() const;
 
                     /**
-                     * 设置日志包
-                     * @param _cls 日志包
+                     * 设置日志包是否开启。
+0：关闭
+1：开启
+                     * @param _cls 日志包是否开启。
+0：关闭
+1：开启
                      * 
                      */
                     void SetCls(const uint64_t& _cls);
@@ -573,15 +697,15 @@ namespace TencentCloud
                     bool ClsHasBeenSet() const;
 
                     /**
-                     * 获取一级cname
-                     * @return Cname 一级cname
+                     * 获取接入Cname，SaaS型域名使用此Cname进行接入
+                     * @return Cname 接入Cname，SaaS型域名使用此Cname进行接入
                      * 
                      */
                     std::string GetCname() const;
 
                     /**
-                     * 设置一级cname
-                     * @param _cname 一级cname
+                     * 设置接入Cname，SaaS型域名使用此Cname进行接入
+                     * @param _cname 接入Cname，SaaS型域名使用此Cname进行接入
                      * 
                      */
                     void SetCname(const std::string& _cname);
@@ -594,15 +718,23 @@ namespace TencentCloud
                     bool CnameHasBeenSet() const;
 
                     /**
-                     * 获取是否长连接
-                     * @return IsKeepAlive 是否长连接
+                     * 获取是否开启长连接。
+0： 短连接
+1： 长连接
+                     * @return IsKeepAlive 是否开启长连接。
+0： 短连接
+1： 长连接
                      * 
                      */
                     uint64_t GetIsKeepAlive() const;
 
                     /**
-                     * 设置是否长连接
-                     * @param _isKeepAlive 是否长连接
+                     * 设置是否开启长连接。
+0： 短连接
+1： 长连接
+                     * @param _isKeepAlive 是否开启长连接。
+0： 短连接
+1： 长连接
                      * 
                      */
                     void SetIsKeepAlive(const uint64_t& _isKeepAlive);
@@ -615,18 +747,26 @@ namespace TencentCloud
                     bool IsKeepAliveHasBeenSet() const;
 
                     /**
-                     * 获取是否开启主动健康检测，1表示开启，0表示不开启
+                     * 获取是否开启主动健康检测。
+0：不开启
+1：开启
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return ActiveCheck 是否开启主动健康检测，1表示开启，0表示不开启
+                     * @return ActiveCheck 是否开启主动健康检测。
+0：不开启
+1：开启
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     uint64_t GetActiveCheck() const;
 
                     /**
-                     * 设置是否开启主动健康检测，1表示开启，0表示不开启
+                     * 设置是否开启主动健康检测。
+0：不开启
+1：开启
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _activeCheck 是否开启主动健康检测，1表示开启，0表示不开启
+                     * @param _activeCheck 是否开启主动健康检测。
+0：不开启
+1：开启
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -665,18 +805,18 @@ namespace TencentCloud
                     bool TLSVersionHasBeenSet() const;
 
                     /**
-                     * 获取加密套件信息
+                     * 获取自定义的加密套件列表。CipherTemplate为3时需要填此字段，表示自定义的加密套件，值通过DescribeCiphersDetail接口获取。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return Ciphers 加密套件信息
+                     * @return Ciphers 自定义的加密套件列表。CipherTemplate为3时需要填此字段，表示自定义的加密套件，值通过DescribeCiphersDetail接口获取。
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<int64_t> GetCiphers() const;
 
                     /**
-                     * 设置加密套件信息
+                     * 设置自定义的加密套件列表。CipherTemplate为3时需要填此字段，表示自定义的加密套件，值通过DescribeCiphersDetail接口获取。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _ciphers 加密套件信息
+                     * @param _ciphers 自定义的加密套件列表。CipherTemplate为3时需要填此字段，表示自定义的加密套件，值通过DescribeCiphersDetail接口获取。
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -690,18 +830,34 @@ namespace TencentCloud
                     bool CiphersHasBeenSet() const;
 
                     /**
-                     * 获取模板
+                     * 获取加密套件模板。
+0：不支持选择，使用默认模板  
+1：通用型模板 
+2：安全型模板
+3：自定义模板
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return CipherTemplate 模板
+                     * @return CipherTemplate 加密套件模板。
+0：不支持选择，使用默认模板  
+1：通用型模板 
+2：安全型模板
+3：自定义模板
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetCipherTemplate() const;
 
                     /**
-                     * 设置模板
+                     * 设置加密套件模板。
+0：不支持选择，使用默认模板  
+1：通用型模板 
+2：安全型模板
+3：自定义模板
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _cipherTemplate 模板
+                     * @param _cipherTemplate 加密套件模板。
+0：不支持选择，使用默认模板  
+1：通用型模板 
+2：安全型模板
+3：自定义模板
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -715,18 +871,18 @@ namespace TencentCloud
                     bool CipherTemplateHasBeenSet() const;
 
                     /**
-                     * 获取300s
+                     * 获取WAF与源站的读超时时间，默认300s。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return ProxyReadTimeout 300s
+                     * @return ProxyReadTimeout WAF与源站的读超时时间，默认300s。
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetProxyReadTimeout() const;
 
                     /**
-                     * 设置300s
+                     * 设置WAF与源站的读超时时间，默认300s。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _proxyReadTimeout 300s
+                     * @param _proxyReadTimeout WAF与源站的读超时时间，默认300s。
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -740,18 +896,18 @@ namespace TencentCloud
                     bool ProxyReadTimeoutHasBeenSet() const;
 
                     /**
-                     * 获取300s
+                     * 获取WAF与源站的写超时时间，默认300s。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return ProxySendTimeout 300s
+                     * @return ProxySendTimeout WAF与源站的写超时时间，默认300s。
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetProxySendTimeout() const;
 
                     /**
-                     * 设置300s
+                     * 设置WAF与源站的写超时时间，默认300s。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _proxySendTimeout 300s
+                     * @param _proxySendTimeout WAF与源站的写超时时间，默认300s。
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -765,18 +921,34 @@ namespace TencentCloud
                     bool ProxySendTimeoutHasBeenSet() const;
 
                     /**
-                     * 获取0:关闭SNI；1:开启SNI，SNI=源请求host；2:开启SNI，SNI=修改为源站host；3：开启SNI，自定义host，SNI=SniHost；
+                     * 获取WAF回源时的SNI类型。
+0：关闭SNI，不配置client_hello中的server_name
+1：开启SNI，client_hello中的server_name为防护域名
+2：开启SNI，SNI为域名回源时的源站域名
+3：开启SNI，SNI为自定义域名
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return SniType 0:关闭SNI；1:开启SNI，SNI=源请求host；2:开启SNI，SNI=修改为源站host；3：开启SNI，自定义host，SNI=SniHost；
+                     * @return SniType WAF回源时的SNI类型。
+0：关闭SNI，不配置client_hello中的server_name
+1：开启SNI，client_hello中的server_name为防护域名
+2：开启SNI，SNI为域名回源时的源站域名
+3：开启SNI，SNI为自定义域名
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetSniType() const;
 
                     /**
-                     * 设置0:关闭SNI；1:开启SNI，SNI=源请求host；2:开启SNI，SNI=修改为源站host；3：开启SNI，自定义host，SNI=SniHost；
+                     * 设置WAF回源时的SNI类型。
+0：关闭SNI，不配置client_hello中的server_name
+1：开启SNI，client_hello中的server_name为防护域名
+2：开启SNI，SNI为域名回源时的源站域名
+3：开启SNI，SNI为自定义域名
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _sniType 0:关闭SNI；1:开启SNI，SNI=源请求host；2:开启SNI，SNI=修改为源站host；3：开启SNI，自定义host，SNI=SniHost；
+                     * @param _sniType WAF回源时的SNI类型。
+0：关闭SNI，不配置client_hello中的server_name
+1：开启SNI，client_hello中的server_name为防护域名
+2：开启SNI，SNI为域名回源时的源站域名
+3：开启SNI，SNI为自定义域名
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -790,18 +962,18 @@ namespace TencentCloud
                     bool SniTypeHasBeenSet() const;
 
                     /**
-                     * 获取SniType=3时，需要填此参数，表示自定义的host；
+                     * 获取SniType为3时，需要填此参数，表示自定义的SNI；
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return SniHost SniType=3时，需要填此参数，表示自定义的host；
+                     * @return SniHost SniType为3时，需要填此参数，表示自定义的SNI；
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetSniHost() const;
 
                     /**
-                     * 设置SniType=3时，需要填此参数，表示自定义的host；
+                     * 设置SniType为3时，需要填此参数，表示自定义的SNI；
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _sniHost SniType=3时，需要填此参数，表示自定义的host；
+                     * @param _sniHost SniType为3时，需要填此参数，表示自定义的SNI；
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -815,18 +987,18 @@ namespace TencentCloud
                     bool SniHostHasBeenSet() const;
 
                     /**
-                     * 获取无
+                     * 获取回源IP权重
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return Weights 无
+                     * @return Weights 回源IP权重
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<std::string> GetWeights() const;
 
                     /**
-                     * 设置无
+                     * 设置回源IP权重
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _weights 无
+                     * @param _weights 回源IP权重
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -865,18 +1037,26 @@ namespace TencentCloud
                     bool IpHeadersHasBeenSet() const;
 
                     /**
-                     * 获取0:关闭xff重置；1:开启xff重置
+                     * 获取是否开启XFF重置。
+0：关闭
+1：开启
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return XFFReset 0:关闭xff重置；1:开启xff重置
+                     * @return XFFReset 是否开启XFF重置。
+0：关闭
+1：开启
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetXFFReset() const;
 
                     /**
-                     * 设置0:关闭xff重置；1:开启xff重置
+                     * 设置是否开启XFF重置。
+0：关闭
+1：开启
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _xFFReset 0:关闭xff重置；1:开启xff重置
+                     * @param _xFFReset 是否开启XFF重置。
+0：关闭
+1：开启
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -889,6 +1069,81 @@ namespace TencentCloud
                      */
                     bool XFFResetHasBeenSet() const;
 
+                    /**
+                     * 获取域名备注信息
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return Note 域名备注信息
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::string GetNote() const;
+
+                    /**
+                     * 设置域名备注信息
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _note 域名备注信息
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetNote(const std::string& _note);
+
+                    /**
+                     * 判断参数 Note 是否已赋值
+                     * @return Note 是否已赋值
+                     * 
+                     */
+                    bool NoteHasBeenSet() const;
+
+                    /**
+                     * 获取自定义回源Host。默认为空字符串，表示使用防护域名作为回源Host。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return UpstreamHost 自定义回源Host。默认为空字符串，表示使用防护域名作为回源Host。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::string GetUpstreamHost() const;
+
+                    /**
+                     * 设置自定义回源Host。默认为空字符串，表示使用防护域名作为回源Host。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _upstreamHost 自定义回源Host。默认为空字符串，表示使用防护域名作为回源Host。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetUpstreamHost(const std::string& _upstreamHost);
+
+                    /**
+                     * 判断参数 UpstreamHost 是否已赋值
+                     * @return UpstreamHost 是否已赋值
+                     * 
+                     */
+                    bool UpstreamHostHasBeenSet() const;
+
+                    /**
+                     * 获取防护规则
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return Level 防护规则
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::string GetLevel() const;
+
+                    /**
+                     * 设置防护规则
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _level 防护规则
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetLevel(const std::string& _level);
+
+                    /**
+                     * 判断参数 Level 是否已赋值
+                     * @return Level 是否已赋值
+                     * 
+                     */
+                    bool LevelHasBeenSet() const;
+
                 private:
 
                     /**
@@ -898,25 +1153,25 @@ namespace TencentCloud
                     bool m_domainHasBeenSet;
 
                     /**
-                     * 域名id
+                     * 域名唯一ID
                      */
                     std::string m_domainId;
                     bool m_domainIdHasBeenSet;
 
                     /**
-                     * 实例id
+                     * 域名所属实例唯一ID
                      */
                     std::string m_instanceId;
                     bool m_instanceIdHasBeenSet;
 
                     /**
-                     * 类型
+                     * 域名所属实例类型
                      */
                     std::string m_edition;
                     bool m_editionHasBeenSet;
 
                     /**
-                     * 实例名
+                     * 域名所属实例名
                      */
                     std::string m_instanceName;
                     bool m_instanceNameHasBeenSet;
@@ -934,127 +1189,162 @@ namespace TencentCloud
                     bool m_createTimeHasBeenSet;
 
                     /**
-                     * AI防御模式
+                     * 规则引擎和AI引擎防护模式联合状态。
+1:初始状态,规则引擎拦截&&AI引擎未操作开关状态
+10：规则引擎观察&&AI引擎关闭模式 
+11：规则引擎观察&&AI引擎观察模式 
+12：规则引擎观察&&AI引擎拦截模式 
+20：规则引擎拦截&&AI引擎关闭模式 
+21：规则引擎拦截&&AI引擎观察模式 
+22：规则引擎拦截&&AI引擎拦截模式
                      */
                     uint64_t m_engine;
                     bool m_engineHasBeenSet;
 
                     /**
-                     * 是否开启httpRewrite
+                     * 是否开启HTTP强制跳转到HTTPS。
+0：不强制跳转
+1：开启强制跳转
                      */
                     uint64_t m_httpsRewrite;
                     bool m_httpsRewriteHasBeenSet;
 
                     /**
-                     * https回源端口
+                     * HTTPS回源端口
                      */
                     std::string m_httpsUpstreamPort;
                     bool m_httpsUpstreamPortHasBeenSet;
 
                     /**
-                     * 是否是cdn
+                     * waf前是否部署有七层代理服务。
+0：没有部署代理服务
+1：有部署代理服务，waf将使用XFF获取客户端IP
+2：有部署代理服务，waf将使用remote_addr获取客户端IP
+3：有部署代理服务，waf将使用ip_headers中的自定义header获取客户端IP
                      */
                     uint64_t m_isCdn;
                     bool m_isCdnHasBeenSet;
 
                     /**
-                     * 是否开启gray
+                     * 是否开启灰度，已废弃。
                      */
                     uint64_t m_isGray;
                     bool m_isGrayHasBeenSet;
 
                     /**
-                     * 是否是http2
+                     * 是否开启HTTP2，需要开启HTTPS协议支持。
+0：关闭
+1：开启
                      */
                     uint64_t m_isHttp2;
                     bool m_isHttp2HasBeenSet;
 
                     /**
-                     * 是否开启websocket
+                     * 是否开启WebSocket支持。
+0：关闭
+1：开启
                      */
                     uint64_t m_isWebsocket;
                     bool m_isWebsocketHasBeenSet;
 
                     /**
-                     * 负载均衡
+                     * 回源负载均衡策略。
+0：轮询
+1：IP hash
+2：加权轮询
                      */
                     uint64_t m_loadBalance;
                     bool m_loadBalanceHasBeenSet;
 
                     /**
-                     * 防御模式
+                     * 防护模式。
+0：观察模式
+1：拦截模式
                      */
                     uint64_t m_mode;
                     bool m_modeHasBeenSet;
 
                     /**
-                     * 私钥
+                     * 自有证书的私钥
                      */
                     std::string m_privateKey;
                     bool m_privateKeyHasBeenSet;
 
                     /**
-                     * ssl id
+                     * CertType为2时，需要填充此参数，表示腾讯云SSL平台托管的证书id
                      */
                     std::string m_sSLId;
                     bool m_sSLIdHasBeenSet;
 
                     /**
-                     * 回源域名
+                     * 域名回源时的回源域名。UpstreamType为1时，需要填充此字段
                      */
                     std::string m_upstreamDomain;
                     bool m_upstreamDomainHasBeenSet;
 
                     /**
-                     * 回源类型
+                     * 回源类型。
+0：通过IP回源
+1：通过域名回源
                      */
                     uint64_t m_upstreamType;
                     bool m_upstreamTypeHasBeenSet;
 
                     /**
-                     * 回源ip
+                     * IP回源时的回源IP列表。UpstreamType为0时，需要填充此字段
                      */
                     std::vector<std::string> m_srcList;
                     bool m_srcListHasBeenSet;
 
                     /**
-                     * 服务端口配置
+                     * 域名端口配置
                      */
                     std::vector<PortInfo> m_ports;
                     bool m_portsHasBeenSet;
 
                     /**
-                     * 证书类型
+                     * 证书类型。
+0：仅配置HTTP监听端口，没有证书
+1：证书来源为自有证书
+2：证书来源为托管证书
                      */
                     uint64_t m_certType;
                     bool m_certTypeHasBeenSet;
 
                     /**
-                     * 回源方式
+                     * 服务配置有HTTPS端口时，HTTPS的回源协议。
+http：使用http协议回源，和HttpsUpstreamPort配合使用
+https：使用https协议回源
                      */
                     std::string m_upstreamScheme;
                     bool m_upstreamSchemeHasBeenSet;
 
                     /**
-                     * 日志包
+                     * 日志包是否开启。
+0：关闭
+1：开启
                      */
                     uint64_t m_cls;
                     bool m_clsHasBeenSet;
 
                     /**
-                     * 一级cname
+                     * 接入Cname，SaaS型域名使用此Cname进行接入
                      */
                     std::string m_cname;
                     bool m_cnameHasBeenSet;
 
                     /**
-                     * 是否长连接
+                     * 是否开启长连接。
+0： 短连接
+1： 长连接
                      */
                     uint64_t m_isKeepAlive;
                     bool m_isKeepAliveHasBeenSet;
 
                     /**
-                     * 是否开启主动健康检测，1表示开启，0表示不开启
+                     * 是否开启主动健康检测。
+0：不开启
+1：开启
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     uint64_t m_activeCheck;
@@ -1068,49 +1358,57 @@ namespace TencentCloud
                     bool m_tLSVersionHasBeenSet;
 
                     /**
-                     * 加密套件信息
+                     * 自定义的加密套件列表。CipherTemplate为3时需要填此字段，表示自定义的加密套件，值通过DescribeCiphersDetail接口获取。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<int64_t> m_ciphers;
                     bool m_ciphersHasBeenSet;
 
                     /**
-                     * 模板
+                     * 加密套件模板。
+0：不支持选择，使用默认模板  
+1：通用型模板 
+2：安全型模板
+3：自定义模板
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_cipherTemplate;
                     bool m_cipherTemplateHasBeenSet;
 
                     /**
-                     * 300s
+                     * WAF与源站的读超时时间，默认300s。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_proxyReadTimeout;
                     bool m_proxyReadTimeoutHasBeenSet;
 
                     /**
-                     * 300s
+                     * WAF与源站的写超时时间，默认300s。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_proxySendTimeout;
                     bool m_proxySendTimeoutHasBeenSet;
 
                     /**
-                     * 0:关闭SNI；1:开启SNI，SNI=源请求host；2:开启SNI，SNI=修改为源站host；3：开启SNI，自定义host，SNI=SniHost；
+                     * WAF回源时的SNI类型。
+0：关闭SNI，不配置client_hello中的server_name
+1：开启SNI，client_hello中的server_name为防护域名
+2：开启SNI，SNI为域名回源时的源站域名
+3：开启SNI，SNI为自定义域名
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_sniType;
                     bool m_sniTypeHasBeenSet;
 
                     /**
-                     * SniType=3时，需要填此参数，表示自定义的host；
+                     * SniType为3时，需要填此参数，表示自定义的SNI；
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_sniHost;
                     bool m_sniHostHasBeenSet;
 
                     /**
-                     * 无
+                     * 回源IP权重
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<std::string> m_weights;
@@ -1124,11 +1422,34 @@ namespace TencentCloud
                     bool m_ipHeadersHasBeenSet;
 
                     /**
-                     * 0:关闭xff重置；1:开启xff重置
+                     * 是否开启XFF重置。
+0：关闭
+1：开启
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_xFFReset;
                     bool m_xFFResetHasBeenSet;
+
+                    /**
+                     * 域名备注信息
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_note;
+                    bool m_noteHasBeenSet;
+
+                    /**
+                     * 自定义回源Host。默认为空字符串，表示使用防护域名作为回源Host。
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_upstreamHost;
+                    bool m_upstreamHostHasBeenSet;
+
+                    /**
+                     * 防护规则
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_level;
+                    bool m_levelHasBeenSet;
 
                 };
             }

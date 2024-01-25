@@ -64,15 +64,15 @@ namespace TencentCloud
                     bool DomainHasBeenSet() const;
 
                     /**
-                     * 获取证书类型
-                     * @return CertType 证书类型
+                     * 获取证书类型。 0：仅配置HTTP监听端口，没有证书 1：证书来源为自有证书 2：证书来源为托管证书
+                     * @return CertType 证书类型。 0：仅配置HTTP监听端口，没有证书 1：证书来源为自有证书 2：证书来源为托管证书
                      * 
                      */
                     int64_t GetCertType() const;
 
                     /**
-                     * 设置证书类型
-                     * @param _certType 证书类型
+                     * 设置证书类型。 0：仅配置HTTP监听端口，没有证书 1：证书来源为自有证书 2：证书来源为托管证书
+                     * @param _certType 证书类型。 0：仅配置HTTP监听端口，没有证书 1：证书来源为自有证书 2：证书来源为托管证书
                      * 
                      */
                     void SetCertType(const int64_t& _certType);
@@ -85,15 +85,15 @@ namespace TencentCloud
                     bool CertTypeHasBeenSet() const;
 
                     /**
-                     * 获取证书公钥
-                     * @return Certificate 证书公钥
+                     * 获取CertType为1时，需要填充此参数，表示自有证书的证书链
+                     * @return Certificate CertType为1时，需要填充此参数，表示自有证书的证书链
                      * 
                      */
                     std::string GetCertificate() const;
 
                     /**
-                     * 设置证书公钥
-                     * @param _certificate 证书公钥
+                     * 设置CertType为1时，需要填充此参数，表示自有证书的证书链
+                     * @param _certificate CertType为1时，需要填充此参数，表示自有证书的证书链
                      * 
                      */
                     void SetCertificate(const std::string& _certificate);
@@ -106,15 +106,15 @@ namespace TencentCloud
                     bool CertificateHasBeenSet() const;
 
                     /**
-                     * 获取证书ID
-                     * @return CertID 证书ID
+                     * 获取CertType为2时，需要填充此参数，表示腾讯云SSL平台托管的证书id
+                     * @return CertID CertType为2时，需要填充此参数，表示腾讯云SSL平台托管的证书id
                      * 
                      */
                     std::string GetCertID() const;
 
                     /**
-                     * 设置证书ID
-                     * @param _certID 证书ID
+                     * 设置CertType为2时，需要填充此参数，表示腾讯云SSL平台托管的证书id
+                     * @param _certID CertType为2时，需要填充此参数，表示腾讯云SSL平台托管的证书id
                      * 
                      */
                     void SetCertID(const std::string& _certID);
@@ -127,15 +127,15 @@ namespace TencentCloud
                     bool CertIDHasBeenSet() const;
 
                     /**
-                     * 获取私钥信息
-                     * @return PrivateKey 私钥信息
+                     * 获取CertType为1时，需要填充此参数，表示自有证书的私钥
+                     * @return PrivateKey CertType为1时，需要填充此参数，表示自有证书的私钥
                      * 
                      */
                     std::string GetPrivateKey() const;
 
                     /**
-                     * 设置私钥信息
-                     * @param _privateKey 私钥信息
+                     * 设置CertType为1时，需要填充此参数，表示自有证书的私钥
+                     * @param _privateKey CertType为1时，需要填充此参数，表示自有证书的私钥
                      * 
                      */
                     void SetPrivateKey(const std::string& _privateKey);
@@ -156,25 +156,25 @@ namespace TencentCloud
                     bool m_domainHasBeenSet;
 
                     /**
-                     * 证书类型
+                     * 证书类型。 0：仅配置HTTP监听端口，没有证书 1：证书来源为自有证书 2：证书来源为托管证书
                      */
                     int64_t m_certType;
                     bool m_certTypeHasBeenSet;
 
                     /**
-                     * 证书公钥
+                     * CertType为1时，需要填充此参数，表示自有证书的证书链
                      */
                     std::string m_certificate;
                     bool m_certificateHasBeenSet;
 
                     /**
-                     * 证书ID
+                     * CertType为2时，需要填充此参数，表示腾讯云SSL平台托管的证书id
                      */
                     std::string m_certID;
                     bool m_certIDHasBeenSet;
 
                     /**
-                     * 私钥信息
+                     * CertType为1时，需要填充此参数，表示自有证书的私钥
                      */
                     std::string m_privateKey;
                     bool m_privateKeyHasBeenSet;

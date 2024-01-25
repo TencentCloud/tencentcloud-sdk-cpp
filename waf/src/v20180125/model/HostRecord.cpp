@@ -39,7 +39,8 @@ HostRecord::HostRecord() :
     m_albTypeHasBeenSet(false),
     m_ipHeadersHasBeenSet(false),
     m_engineTypeHasBeenSet(false),
-    m_cloudTypeHasBeenSet(false)
+    m_cloudTypeHasBeenSet(false),
+    m_noteHasBeenSet(false)
 {
 }
 
@@ -254,6 +255,16 @@ CoreInternalOutcome HostRecord::Deserialize(const rapidjson::Value &value)
         m_cloudTypeHasBeenSet = true;
     }
 
+    if (value.HasMember("Note") && !value["Note"].IsNull())
+    {
+        if (!value["Note"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `HostRecord.Note` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_note = string(value["Note"].GetString());
+        m_noteHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -428,6 +439,14 @@ void HostRecord::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Allo
         string key = "CloudType";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_cloudType.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_noteHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Note";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_note.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -735,5 +754,21 @@ void HostRecord::SetCloudType(const string& _cloudType)
 bool HostRecord::CloudTypeHasBeenSet() const
 {
     return m_cloudTypeHasBeenSet;
+}
+
+string HostRecord::GetNote() const
+{
+    return m_note;
+}
+
+void HostRecord::SetNote(const string& _note)
+{
+    m_note = _note;
+    m_noteHasBeenSet = true;
+}
+
+bool HostRecord::NoteHasBeenSet() const
+{
+    return m_noteHasBeenSet;
 }
 

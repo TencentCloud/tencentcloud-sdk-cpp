@@ -65,15 +65,15 @@ namespace TencentCloud
                     bool HostHasBeenSet() const;
 
                     /**
-                     * 获取实例id
-                     * @return InstanceID 实例id
+                     * 获取实例唯一ID
+                     * @return InstanceID 实例唯一ID
                      * 
                      */
                     std::string GetInstanceID() const;
 
                     /**
-                     * 设置实例id
-                     * @param _instanceID 实例id
+                     * 设置实例唯一ID
+                     * @param _instanceID 实例唯一ID
                      * 
                      */
                     void SetInstanceID(const std::string& _instanceID);
@@ -94,7 +94,7 @@ namespace TencentCloud
                     bool m_hostHasBeenSet;
 
                     /**
-                     * 实例id
+                     * 实例唯一ID
                      */
                     std::string m_instanceID;
                     bool m_instanceIDHasBeenSet;

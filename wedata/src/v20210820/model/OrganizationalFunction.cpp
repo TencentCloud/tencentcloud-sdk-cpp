@@ -41,7 +41,11 @@ OrganizationalFunction::OrganizationalFunction() :
     m_operatorUserIdsHasBeenSet(false),
     m_ownerUserIdsHasBeenSet(false),
     m_dbNameHasBeenSet(false),
-    m_submitErrorMsgHasBeenSet(false)
+    m_submitErrorMsgHasBeenSet(false),
+    m_schemaNameHasBeenSet(false),
+    m_commandFormatHasBeenSet(false),
+    m_ownerNameHasBeenSet(false),
+    m_submitTimestampHasBeenSet(false)
 {
 }
 
@@ -276,6 +280,46 @@ CoreInternalOutcome OrganizationalFunction::Deserialize(const rapidjson::Value &
         m_submitErrorMsgHasBeenSet = true;
     }
 
+    if (value.HasMember("SchemaName") && !value["SchemaName"].IsNull())
+    {
+        if (!value["SchemaName"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `OrganizationalFunction.SchemaName` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_schemaName = string(value["SchemaName"].GetString());
+        m_schemaNameHasBeenSet = true;
+    }
+
+    if (value.HasMember("CommandFormat") && !value["CommandFormat"].IsNull())
+    {
+        if (!value["CommandFormat"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `OrganizationalFunction.CommandFormat` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_commandFormat = string(value["CommandFormat"].GetString());
+        m_commandFormatHasBeenSet = true;
+    }
+
+    if (value.HasMember("OwnerName") && !value["OwnerName"].IsNull())
+    {
+        if (!value["OwnerName"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `OrganizationalFunction.OwnerName` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_ownerName = string(value["OwnerName"].GetString());
+        m_ownerNameHasBeenSet = true;
+    }
+
+    if (value.HasMember("SubmitTimestamp") && !value["SubmitTimestamp"].IsNull())
+    {
+        if (!value["SubmitTimestamp"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `OrganizationalFunction.SubmitTimestamp` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_submitTimestamp = string(value["SubmitTimestamp"].GetString());
+        m_submitTimestampHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -466,6 +510,38 @@ void OrganizationalFunction::ToJsonObject(rapidjson::Value &value, rapidjson::Do
         string key = "SubmitErrorMsg";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_submitErrorMsg.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_schemaNameHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "SchemaName";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_schemaName.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_commandFormatHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "CommandFormat";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_commandFormat.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_ownerNameHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "OwnerName";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_ownerName.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_submitTimestampHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "SubmitTimestamp";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_submitTimestamp.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -805,5 +881,69 @@ void OrganizationalFunction::SetSubmitErrorMsg(const string& _submitErrorMsg)
 bool OrganizationalFunction::SubmitErrorMsgHasBeenSet() const
 {
     return m_submitErrorMsgHasBeenSet;
+}
+
+string OrganizationalFunction::GetSchemaName() const
+{
+    return m_schemaName;
+}
+
+void OrganizationalFunction::SetSchemaName(const string& _schemaName)
+{
+    m_schemaName = _schemaName;
+    m_schemaNameHasBeenSet = true;
+}
+
+bool OrganizationalFunction::SchemaNameHasBeenSet() const
+{
+    return m_schemaNameHasBeenSet;
+}
+
+string OrganizationalFunction::GetCommandFormat() const
+{
+    return m_commandFormat;
+}
+
+void OrganizationalFunction::SetCommandFormat(const string& _commandFormat)
+{
+    m_commandFormat = _commandFormat;
+    m_commandFormatHasBeenSet = true;
+}
+
+bool OrganizationalFunction::CommandFormatHasBeenSet() const
+{
+    return m_commandFormatHasBeenSet;
+}
+
+string OrganizationalFunction::GetOwnerName() const
+{
+    return m_ownerName;
+}
+
+void OrganizationalFunction::SetOwnerName(const string& _ownerName)
+{
+    m_ownerName = _ownerName;
+    m_ownerNameHasBeenSet = true;
+}
+
+bool OrganizationalFunction::OwnerNameHasBeenSet() const
+{
+    return m_ownerNameHasBeenSet;
+}
+
+string OrganizationalFunction::GetSubmitTimestamp() const
+{
+    return m_submitTimestamp;
+}
+
+void OrganizationalFunction::SetSubmitTimestamp(const string& _submitTimestamp)
+{
+    m_submitTimestamp = _submitTimestamp;
+    m_submitTimestampHasBeenSet = true;
+}
+
+bool OrganizationalFunction::SubmitTimestampHasBeenSet() const
+{
+    return m_submitTimestampHasBeenSet;
 }
 

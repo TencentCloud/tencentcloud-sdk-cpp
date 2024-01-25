@@ -21,12 +21,16 @@ using namespace TencentCloud::Cfw::V20190904::Model;
 using namespace std;
 
 BlockIgnoreRule::BlockIgnoreRule() :
+    m_ruleTypeHasBeenSet(false),
+    m_iocHasBeenSet(false),
+    m_iocNameHasBeenSet(false),
+    m_iocInfoHasBeenSet(false),
     m_domainHasBeenSet(false),
     m_iPHasBeenSet(false),
-    m_iocHasBeenSet(false),
     m_levelHasBeenSet(false),
     m_eventNameHasBeenSet(false),
     m_directionHasBeenSet(false),
+    m_directionListHasBeenSet(false),
     m_protocolHasBeenSet(false),
     m_addressHasBeenSet(false),
     m_actionHasBeenSet(false),
@@ -37,7 +41,9 @@ BlockIgnoreRule::BlockIgnoreRule() :
     m_uniqueIdHasBeenSet(false),
     m_matchTimesHasBeenSet(false),
     m_countryHasBeenSet(false),
-    m_commentHasBeenSet(false)
+    m_commentHasBeenSet(false),
+    m_lastHitTimeHasBeenSet(false),
+    m_customRuleHasBeenSet(false)
 {
 }
 
@@ -45,6 +51,46 @@ CoreInternalOutcome BlockIgnoreRule::Deserialize(const rapidjson::Value &value)
 {
     string requestId = "";
 
+
+    if (value.HasMember("RuleType") && !value["RuleType"].IsNull())
+    {
+        if (!value["RuleType"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `BlockIgnoreRule.RuleType` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_ruleType = value["RuleType"].GetInt64();
+        m_ruleTypeHasBeenSet = true;
+    }
+
+    if (value.HasMember("Ioc") && !value["Ioc"].IsNull())
+    {
+        if (!value["Ioc"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `BlockIgnoreRule.Ioc` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_ioc = string(value["Ioc"].GetString());
+        m_iocHasBeenSet = true;
+    }
+
+    if (value.HasMember("IocName") && !value["IocName"].IsNull())
+    {
+        if (!value["IocName"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `BlockIgnoreRule.IocName` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_iocName = string(value["IocName"].GetString());
+        m_iocNameHasBeenSet = true;
+    }
+
+    if (value.HasMember("IocInfo") && !value["IocInfo"].IsNull())
+    {
+        if (!value["IocInfo"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `BlockIgnoreRule.IocInfo` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_iocInfo = string(value["IocInfo"].GetString());
+        m_iocInfoHasBeenSet = true;
+    }
 
     if (value.HasMember("Domain") && !value["Domain"].IsNull())
     {
@@ -64,16 +110,6 @@ CoreInternalOutcome BlockIgnoreRule::Deserialize(const rapidjson::Value &value)
         }
         m_iP = string(value["IP"].GetString());
         m_iPHasBeenSet = true;
-    }
-
-    if (value.HasMember("Ioc") && !value["Ioc"].IsNull())
-    {
-        if (!value["Ioc"].IsString())
-        {
-            return CoreInternalOutcome(Core::Error("response `BlockIgnoreRule.Ioc` IsString=false incorrectly").SetRequestId(requestId));
-        }
-        m_ioc = string(value["Ioc"].GetString());
-        m_iocHasBeenSet = true;
     }
 
     if (value.HasMember("Level") && !value["Level"].IsNull())
@@ -104,6 +140,16 @@ CoreInternalOutcome BlockIgnoreRule::Deserialize(const rapidjson::Value &value)
         }
         m_direction = value["Direction"].GetInt64();
         m_directionHasBeenSet = true;
+    }
+
+    if (value.HasMember("DirectionList") && !value["DirectionList"].IsNull())
+    {
+        if (!value["DirectionList"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `BlockIgnoreRule.DirectionList` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_directionList = string(value["DirectionList"].GetString());
+        m_directionListHasBeenSet = true;
     }
 
     if (value.HasMember("Protocol") && !value["Protocol"].IsNull())
@@ -216,12 +262,71 @@ CoreInternalOutcome BlockIgnoreRule::Deserialize(const rapidjson::Value &value)
         m_commentHasBeenSet = true;
     }
 
+    if (value.HasMember("LastHitTime") && !value["LastHitTime"].IsNull())
+    {
+        if (!value["LastHitTime"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `BlockIgnoreRule.LastHitTime` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_lastHitTime = string(value["LastHitTime"].GetString());
+        m_lastHitTimeHasBeenSet = true;
+    }
+
+    if (value.HasMember("CustomRule") && !value["CustomRule"].IsNull())
+    {
+        if (!value["CustomRule"].IsObject())
+        {
+            return CoreInternalOutcome(Core::Error("response `BlockIgnoreRule.CustomRule` is not object type").SetRequestId(requestId));
+        }
+
+        CoreInternalOutcome outcome = m_customRule.Deserialize(value["CustomRule"]);
+        if (!outcome.IsSuccess())
+        {
+            outcome.GetError().SetRequestId(requestId);
+            return outcome;
+        }
+
+        m_customRuleHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
 
 void BlockIgnoreRule::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const
 {
+
+    if (m_ruleTypeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "RuleType";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_ruleType, allocator);
+    }
+
+    if (m_iocHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Ioc";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_ioc.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_iocNameHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "IocName";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_iocName.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_iocInfoHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "IocInfo";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_iocInfo.c_str(), allocator).Move(), allocator);
+    }
 
     if (m_domainHasBeenSet)
     {
@@ -237,14 +342,6 @@ void BlockIgnoreRule::ToJsonObject(rapidjson::Value &value, rapidjson::Document:
         string key = "IP";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_iP.c_str(), allocator).Move(), allocator);
-    }
-
-    if (m_iocHasBeenSet)
-    {
-        rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "Ioc";
-        iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, rapidjson::Value(m_ioc.c_str(), allocator).Move(), allocator);
     }
 
     if (m_levelHasBeenSet)
@@ -269,6 +366,14 @@ void BlockIgnoreRule::ToJsonObject(rapidjson::Value &value, rapidjson::Document:
         string key = "Direction";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_direction, allocator);
+    }
+
+    if (m_directionListHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "DirectionList";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_directionList.c_str(), allocator).Move(), allocator);
     }
 
     if (m_protocolHasBeenSet)
@@ -359,8 +464,89 @@ void BlockIgnoreRule::ToJsonObject(rapidjson::Value &value, rapidjson::Document:
         value.AddMember(iKey, rapidjson::Value(m_comment.c_str(), allocator).Move(), allocator);
     }
 
+    if (m_lastHitTimeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "LastHitTime";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_lastHitTime.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_customRuleHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "CustomRule";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_customRule.ToJsonObject(value[key.c_str()], allocator);
+    }
+
 }
 
+
+int64_t BlockIgnoreRule::GetRuleType() const
+{
+    return m_ruleType;
+}
+
+void BlockIgnoreRule::SetRuleType(const int64_t& _ruleType)
+{
+    m_ruleType = _ruleType;
+    m_ruleTypeHasBeenSet = true;
+}
+
+bool BlockIgnoreRule::RuleTypeHasBeenSet() const
+{
+    return m_ruleTypeHasBeenSet;
+}
+
+string BlockIgnoreRule::GetIoc() const
+{
+    return m_ioc;
+}
+
+void BlockIgnoreRule::SetIoc(const string& _ioc)
+{
+    m_ioc = _ioc;
+    m_iocHasBeenSet = true;
+}
+
+bool BlockIgnoreRule::IocHasBeenSet() const
+{
+    return m_iocHasBeenSet;
+}
+
+string BlockIgnoreRule::GetIocName() const
+{
+    return m_iocName;
+}
+
+void BlockIgnoreRule::SetIocName(const string& _iocName)
+{
+    m_iocName = _iocName;
+    m_iocNameHasBeenSet = true;
+}
+
+bool BlockIgnoreRule::IocNameHasBeenSet() const
+{
+    return m_iocNameHasBeenSet;
+}
+
+string BlockIgnoreRule::GetIocInfo() const
+{
+    return m_iocInfo;
+}
+
+void BlockIgnoreRule::SetIocInfo(const string& _iocInfo)
+{
+    m_iocInfo = _iocInfo;
+    m_iocInfoHasBeenSet = true;
+}
+
+bool BlockIgnoreRule::IocInfoHasBeenSet() const
+{
+    return m_iocInfoHasBeenSet;
+}
 
 string BlockIgnoreRule::GetDomain() const
 {
@@ -392,22 +578,6 @@ void BlockIgnoreRule::SetIP(const string& _iP)
 bool BlockIgnoreRule::IPHasBeenSet() const
 {
     return m_iPHasBeenSet;
-}
-
-string BlockIgnoreRule::GetIoc() const
-{
-    return m_ioc;
-}
-
-void BlockIgnoreRule::SetIoc(const string& _ioc)
-{
-    m_ioc = _ioc;
-    m_iocHasBeenSet = true;
-}
-
-bool BlockIgnoreRule::IocHasBeenSet() const
-{
-    return m_iocHasBeenSet;
 }
 
 string BlockIgnoreRule::GetLevel() const
@@ -456,6 +626,22 @@ void BlockIgnoreRule::SetDirection(const int64_t& _direction)
 bool BlockIgnoreRule::DirectionHasBeenSet() const
 {
     return m_directionHasBeenSet;
+}
+
+string BlockIgnoreRule::GetDirectionList() const
+{
+    return m_directionList;
+}
+
+void BlockIgnoreRule::SetDirectionList(const string& _directionList)
+{
+    m_directionList = _directionList;
+    m_directionListHasBeenSet = true;
+}
+
+bool BlockIgnoreRule::DirectionListHasBeenSet() const
+{
+    return m_directionListHasBeenSet;
 }
 
 string BlockIgnoreRule::GetProtocol() const
@@ -632,5 +818,37 @@ void BlockIgnoreRule::SetComment(const string& _comment)
 bool BlockIgnoreRule::CommentHasBeenSet() const
 {
     return m_commentHasBeenSet;
+}
+
+string BlockIgnoreRule::GetLastHitTime() const
+{
+    return m_lastHitTime;
+}
+
+void BlockIgnoreRule::SetLastHitTime(const string& _lastHitTime)
+{
+    m_lastHitTime = _lastHitTime;
+    m_lastHitTimeHasBeenSet = true;
+}
+
+bool BlockIgnoreRule::LastHitTimeHasBeenSet() const
+{
+    return m_lastHitTimeHasBeenSet;
+}
+
+CustomWhiteRule BlockIgnoreRule::GetCustomRule() const
+{
+    return m_customRule;
+}
+
+void BlockIgnoreRule::SetCustomRule(const CustomWhiteRule& _customRule)
+{
+    m_customRule = _customRule;
+    m_customRuleHasBeenSet = true;
+}
+
+bool BlockIgnoreRule::CustomRuleHasBeenSet() const
+{
+    return m_customRuleHasBeenSet;
 }
 

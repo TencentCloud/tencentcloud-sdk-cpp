@@ -85,15 +85,23 @@ namespace TencentCloud
                     bool DomainIdHasBeenSet() const;
 
                     /**
-                     * 获取WAF流量模式，1：清洗模式，0：镜像模式（默认）
-                     * @return FlowMode WAF流量模式，1：清洗模式，0：镜像模式（默认）
+                     * 获取WAF流量模式。
+0：镜像模式（默认）
+1：清洗模式
+                     * @return FlowMode WAF流量模式。
+0：镜像模式（默认）
+1：清洗模式
                      * 
                      */
                     uint64_t GetFlowMode() const;
 
                     /**
-                     * 设置WAF流量模式，1：清洗模式，0：镜像模式（默认）
-                     * @param _flowMode WAF流量模式，1：清洗模式，0：镜像模式（默认）
+                     * 设置WAF流量模式。
+0：镜像模式（默认）
+1：清洗模式
+                     * @param _flowMode WAF流量模式。
+0：镜像模式（默认）
+1：清洗模式
                      * 
                      */
                     void SetFlowMode(const uint64_t& _flowMode);
@@ -141,7 +149,9 @@ namespace TencentCloud
                     bool m_domainIdHasBeenSet;
 
                     /**
-                     * WAF流量模式，1：清洗模式，0：镜像模式（默认）
+                     * WAF流量模式。
+0：镜像模式（默认）
+1：清洗模式
                      */
                     uint64_t m_flowMode;
                     bool m_flowModeHasBeenSet;

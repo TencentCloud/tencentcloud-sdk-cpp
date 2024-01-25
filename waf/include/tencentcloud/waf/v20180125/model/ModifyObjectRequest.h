@@ -64,15 +64,15 @@ namespace TencentCloud
                     bool ObjectIdHasBeenSet() const;
 
                     /**
-                     * 获取改动作类型:Status修改开关，InstanceId绑定实例
-                     * @return OpType 改动作类型:Status修改开关，InstanceId绑定实例
+                     * 获取改动作类型:Status修改开关，InstanceId绑定实例, Proxy设置代理状态
+                     * @return OpType 改动作类型:Status修改开关，InstanceId绑定实例, Proxy设置代理状态
                      * 
                      */
                     std::string GetOpType() const;
 
                     /**
-                     * 设置改动作类型:Status修改开关，InstanceId绑定实例
-                     * @param _opType 改动作类型:Status修改开关，InstanceId绑定实例
+                     * 设置改动作类型:Status修改开关，InstanceId绑定实例, Proxy设置代理状态
+                     * @param _opType 改动作类型:Status修改开关，InstanceId绑定实例, Proxy设置代理状态
                      * 
                      */
                     void SetOpType(const std::string& _opType);
@@ -126,6 +126,48 @@ namespace TencentCloud
                      */
                     bool InstanceIdHasBeenSet() const;
 
+                    /**
+                     * 获取是否开启代理，0:不开启,1:以XFF的第一个IP地址作为客户端IP,2:以remote_addr作为客户端IP,3:从指定的头部字段获取客户端IP，字段通过IpHeaders字段给出(OpType为Status或Proxy时，该值有效)
+                     * @return Proxy 是否开启代理，0:不开启,1:以XFF的第一个IP地址作为客户端IP,2:以remote_addr作为客户端IP,3:从指定的头部字段获取客户端IP，字段通过IpHeaders字段给出(OpType为Status或Proxy时，该值有效)
+                     * 
+                     */
+                    uint64_t GetProxy() const;
+
+                    /**
+                     * 设置是否开启代理，0:不开启,1:以XFF的第一个IP地址作为客户端IP,2:以remote_addr作为客户端IP,3:从指定的头部字段获取客户端IP，字段通过IpHeaders字段给出(OpType为Status或Proxy时，该值有效)
+                     * @param _proxy 是否开启代理，0:不开启,1:以XFF的第一个IP地址作为客户端IP,2:以remote_addr作为客户端IP,3:从指定的头部字段获取客户端IP，字段通过IpHeaders字段给出(OpType为Status或Proxy时，该值有效)
+                     * 
+                     */
+                    void SetProxy(const uint64_t& _proxy);
+
+                    /**
+                     * 判断参数 Proxy 是否已赋值
+                     * @return Proxy 是否已赋值
+                     * 
+                     */
+                    bool ProxyHasBeenSet() const;
+
+                    /**
+                     * 获取IsCdn=3时，需要填此参数，表示自定义header(OpType为Status或Proxy时，该值有效)
+                     * @return IpHeaders IsCdn=3时，需要填此参数，表示自定义header(OpType为Status或Proxy时，该值有效)
+                     * 
+                     */
+                    std::vector<std::string> GetIpHeaders() const;
+
+                    /**
+                     * 设置IsCdn=3时，需要填此参数，表示自定义header(OpType为Status或Proxy时，该值有效)
+                     * @param _ipHeaders IsCdn=3时，需要填此参数，表示自定义header(OpType为Status或Proxy时，该值有效)
+                     * 
+                     */
+                    void SetIpHeaders(const std::vector<std::string>& _ipHeaders);
+
+                    /**
+                     * 判断参数 IpHeaders 是否已赋值
+                     * @return IpHeaders 是否已赋值
+                     * 
+                     */
+                    bool IpHeadersHasBeenSet() const;
+
                 private:
 
                     /**
@@ -135,7 +177,7 @@ namespace TencentCloud
                     bool m_objectIdHasBeenSet;
 
                     /**
-                     * 改动作类型:Status修改开关，InstanceId绑定实例
+                     * 改动作类型:Status修改开关，InstanceId绑定实例, Proxy设置代理状态
                      */
                     std::string m_opType;
                     bool m_opTypeHasBeenSet;
@@ -151,6 +193,18 @@ namespace TencentCloud
                      */
                     std::string m_instanceId;
                     bool m_instanceIdHasBeenSet;
+
+                    /**
+                     * 是否开启代理，0:不开启,1:以XFF的第一个IP地址作为客户端IP,2:以remote_addr作为客户端IP,3:从指定的头部字段获取客户端IP，字段通过IpHeaders字段给出(OpType为Status或Proxy时，该值有效)
+                     */
+                    uint64_t m_proxy;
+                    bool m_proxyHasBeenSet;
+
+                    /**
+                     * IsCdn=3时，需要填此参数，表示自定义header(OpType为Status或Proxy时，该值有效)
+                     */
+                    std::vector<std::string> m_ipHeaders;
+                    bool m_ipHeadersHasBeenSet;
 
                 };
             }

@@ -2835,6 +2835,49 @@ EssbasicClient::ModifyExtendedServiceOutcomeCallable EssbasicClient::ModifyExten
     return task->get_future();
 }
 
+EssbasicClient::ModifyFlowDeadlineOutcome EssbasicClient::ModifyFlowDeadline(const ModifyFlowDeadlineRequest &request)
+{
+    auto outcome = MakeRequest(request, "ModifyFlowDeadline");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ModifyFlowDeadlineResponse rsp = ModifyFlowDeadlineResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ModifyFlowDeadlineOutcome(rsp);
+        else
+            return ModifyFlowDeadlineOutcome(o.GetError());
+    }
+    else
+    {
+        return ModifyFlowDeadlineOutcome(outcome.GetError());
+    }
+}
+
+void EssbasicClient::ModifyFlowDeadlineAsync(const ModifyFlowDeadlineRequest& request, const ModifyFlowDeadlineAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->ModifyFlowDeadline(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+EssbasicClient::ModifyFlowDeadlineOutcomeCallable EssbasicClient::ModifyFlowDeadlineCallable(const ModifyFlowDeadlineRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<ModifyFlowDeadlineOutcome()>>(
+        [this, request]()
+        {
+            return this->ModifyFlowDeadline(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 EssbasicClient::OperateChannelTemplateOutcome EssbasicClient::OperateChannelTemplate(const OperateChannelTemplateRequest &request)
 {
     auto outcome = MakeRequest(request, "OperateChannelTemplate");

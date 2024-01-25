@@ -27,7 +27,8 @@ BatchCreateTaskVersionDsRequest::BatchCreateTaskVersionDsRequest() :
     m_projectIdHasBeenSet(false),
     m_autoRunHasBeenSet(false),
     m_alarmWaysHasBeenSet(false),
-    m_alarmRecipientTypesHasBeenSet(false)
+    m_alarmRecipientTypesHasBeenSet(false),
+    m_needCheckParentSubmittedHasBeenSet(false)
 {
 }
 
@@ -83,6 +84,14 @@ string BatchCreateTaskVersionDsRequest::ToJsonString() const
         string key = "AlarmRecipientTypes";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_alarmRecipientTypes.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_needCheckParentSubmittedHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "NeedCheckParentSubmitted";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_needCheckParentSubmitted, allocator);
     }
 
 
@@ -171,6 +180,22 @@ void BatchCreateTaskVersionDsRequest::SetAlarmRecipientTypes(const string& _alar
 bool BatchCreateTaskVersionDsRequest::AlarmRecipientTypesHasBeenSet() const
 {
     return m_alarmRecipientTypesHasBeenSet;
+}
+
+bool BatchCreateTaskVersionDsRequest::GetNeedCheckParentSubmitted() const
+{
+    return m_needCheckParentSubmitted;
+}
+
+void BatchCreateTaskVersionDsRequest::SetNeedCheckParentSubmitted(const bool& _needCheckParentSubmitted)
+{
+    m_needCheckParentSubmitted = _needCheckParentSubmitted;
+    m_needCheckParentSubmittedHasBeenSet = true;
+}
+
+bool BatchCreateTaskVersionDsRequest::NeedCheckParentSubmittedHasBeenSet() const
+{
+    return m_needCheckParentSubmittedHasBeenSet;
 }
 
 

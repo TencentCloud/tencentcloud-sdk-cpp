@@ -151,6 +151,8 @@
 #include <tencentcloud/ess/v20201111/model/ModifyApplicationCallbackInfoResponse.h>
 #include <tencentcloud/ess/v20201111/model/ModifyExtendedServiceRequest.h>
 #include <tencentcloud/ess/v20201111/model/ModifyExtendedServiceResponse.h>
+#include <tencentcloud/ess/v20201111/model/ModifyFlowDeadlineRequest.h>
+#include <tencentcloud/ess/v20201111/model/ModifyFlowDeadlineResponse.h>
 #include <tencentcloud/ess/v20201111/model/ModifyIntegrationDepartmentRequest.h>
 #include <tencentcloud/ess/v20201111/model/ModifyIntegrationDepartmentResponse.h>
 #include <tencentcloud/ess/v20201111/model/ModifyIntegrationRoleRequest.h>
@@ -371,6 +373,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::ModifyExtendedServiceResponse> ModifyExtendedServiceOutcome;
                 typedef std::future<ModifyExtendedServiceOutcome> ModifyExtendedServiceOutcomeCallable;
                 typedef std::function<void(const EssClient*, const Model::ModifyExtendedServiceRequest&, ModifyExtendedServiceOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyExtendedServiceAsyncHandler;
+                typedef Outcome<Core::Error, Model::ModifyFlowDeadlineResponse> ModifyFlowDeadlineOutcome;
+                typedef std::future<ModifyFlowDeadlineOutcome> ModifyFlowDeadlineOutcomeCallable;
+                typedef std::function<void(const EssClient*, const Model::ModifyFlowDeadlineRequest&, ModifyFlowDeadlineOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyFlowDeadlineAsyncHandler;
                 typedef Outcome<Core::Error, Model::ModifyIntegrationDepartmentResponse> ModifyIntegrationDepartmentOutcome;
                 typedef std::future<ModifyIntegrationDepartmentOutcome> ModifyIntegrationDepartmentOutcomeCallable;
                 typedef std::function<void(const EssClient*, const Model::ModifyIntegrationDepartmentRequest&, ModifyIntegrationDepartmentOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyIntegrationDepartmentAsyncHandler;
@@ -580,8 +585,9 @@ namespace TencentCloud
 注：**静默（自动）签署不支持合同签署方存在填写**功能
 <br>
 
-<font color="red">相关视频指引</font>
-<a href="https://dyn.ess.tencent.cn/guide/apivideo/createflow_seversign.mp4" target="_blank">创建静默（自动）签署模板和开通自动签署</a>
+<font color="red">相关视频指引</font> <br>
+1. <a href="https://dyn.ess.tencent.cn/guide/apivideo/createflow_seversign.mp4" target="_blank">创建静默（自动）签署模板和开通自动签署</a><br>
+2. <a href="https://dyn.ess.tencent.cn/guide/apivideo/flow_document_start.mp4" target="_blank">用模版创建发起合同</a><br>
                  * @param req CreateFlowRequest
                  * @return CreateFlowOutcome
                  */
@@ -1422,6 +1428,25 @@ namespace TencentCloud
                 ModifyExtendedServiceOutcome ModifyExtendedService(const Model::ModifyExtendedServiceRequest &request);
                 void ModifyExtendedServiceAsync(const Model::ModifyExtendedServiceRequest& request, const ModifyExtendedServiceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 ModifyExtendedServiceOutcomeCallable ModifyExtendedServiceCallable(const Model::ModifyExtendedServiceRequest& request);
+
+                /**
+                 *在已发起的签署流程中，我们支持对签署截止日期进行延期操作，主要涉及以下两个维度：
+1. 合同（流程）维度：只需要传递流程ID，无需传递签署人ID。这将对尚未设定签署截止时间的合同（流程）和发起合同（流程）时的签署人进行延期操作。
+2. 签署人维度：需要传递流程ID和签署人ID。此操作将对签署人进行延期操作，尤其对于有序的合同（流程），签署截止时间不能超过后一位合同（流程）签署人的流程截止时间。
+
+此接口有如下限制条件：
+1. 执行操作的员工需为发起方企业的超级管理员、法定代表人或签署流程的发起人。
+2. 在延长整个签署流程时，签署流程应至少还有一方未签署（即签署流程不能处于已全部签署完成、已拒签、已过期、已撤回、拒绝填写、已解除等合同状态）。
+3. 在延长整个签署流程时，新的签署截止日期应晚于合同已设定的签署截止日期和当前日期。
+4. 在延长签署方的截止时间时，签署方不能处于流程完结或已终止状态（即签署人不能处于已签署、已拒签、已过期、已撤回、拒绝填写、已解除等状态）。
+5. 在延长签署方的截止时间时，签署方的新签署截止日期应晚于当前日期和签署方已设定的截止日期。若为有序合同，还应早于或等于下一签署人的截止日期，且早于签署流程整体的截止日期。
+6. 不支持操作合同组合同。
+                 * @param req ModifyFlowDeadlineRequest
+                 * @return ModifyFlowDeadlineOutcome
+                 */
+                ModifyFlowDeadlineOutcome ModifyFlowDeadline(const Model::ModifyFlowDeadlineRequest &request);
+                void ModifyFlowDeadlineAsync(const Model::ModifyFlowDeadlineRequest& request, const ModifyFlowDeadlineAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                ModifyFlowDeadlineOutcomeCallable ModifyFlowDeadlineCallable(const Model::ModifyFlowDeadlineRequest& request);
 
                 /**
                  *此接口（ModifyIntegrationDepartment）用于更新企业的部门信息，支持更新部门名称、客户系统部门ID和部门序号等信息。

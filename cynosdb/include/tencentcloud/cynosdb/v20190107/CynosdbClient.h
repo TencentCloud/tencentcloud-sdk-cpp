@@ -81,6 +81,8 @@
 #include <tencentcloud/cynosdb/v20190107/model/DescribeAccountPrivilegesResponse.h>
 #include <tencentcloud/cynosdb/v20190107/model/DescribeAccountsRequest.h>
 #include <tencentcloud/cynosdb/v20190107/model/DescribeAccountsResponse.h>
+#include <tencentcloud/cynosdb/v20190107/model/DescribeAuditInstanceListRequest.h>
+#include <tencentcloud/cynosdb/v20190107/model/DescribeAuditInstanceListResponse.h>
 #include <tencentcloud/cynosdb/v20190107/model/DescribeAuditLogFilesRequest.h>
 #include <tencentcloud/cynosdb/v20190107/model/DescribeAuditLogFilesResponse.h>
 #include <tencentcloud/cynosdb/v20190107/model/DescribeAuditLogsRequest.h>
@@ -384,6 +386,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeAccountsResponse> DescribeAccountsOutcome;
                 typedef std::future<DescribeAccountsOutcome> DescribeAccountsOutcomeCallable;
                 typedef std::function<void(const CynosdbClient*, const Model::DescribeAccountsRequest&, DescribeAccountsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeAccountsAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeAuditInstanceListResponse> DescribeAuditInstanceListOutcome;
+                typedef std::future<DescribeAuditInstanceListOutcome> DescribeAuditInstanceListOutcomeCallable;
+                typedef std::function<void(const CynosdbClient*, const Model::DescribeAuditInstanceListRequest&, DescribeAuditInstanceListOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeAuditInstanceListAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeAuditLogFilesResponse> DescribeAuditLogFilesOutcome;
                 typedef std::future<DescribeAuditLogFilesOutcome> DescribeAuditLogFilesOutcomeCallable;
                 typedef std::function<void(const CynosdbClient*, const Model::DescribeAuditLogFilesRequest&, DescribeAuditLogFilesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeAuditLogFilesAsyncHandler;
@@ -950,6 +955,15 @@ namespace TencentCloud
                 DescribeAccountsOutcome DescribeAccounts(const Model::DescribeAccountsRequest &request);
                 void DescribeAccountsAsync(const Model::DescribeAccountsRequest& request, const DescribeAccountsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DescribeAccountsOutcomeCallable DescribeAccountsCallable(const Model::DescribeAccountsRequest& request);
+
+                /**
+                 *获取审计实例列表
+                 * @param req DescribeAuditInstanceListRequest
+                 * @return DescribeAuditInstanceListOutcome
+                 */
+                DescribeAuditInstanceListOutcome DescribeAuditInstanceList(const Model::DescribeAuditInstanceListRequest &request);
+                void DescribeAuditInstanceListAsync(const Model::DescribeAuditInstanceListRequest& request, const DescribeAuditInstanceListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeAuditInstanceListOutcomeCallable DescribeAuditInstanceListCallable(const Model::DescribeAuditInstanceListRequest& request);
 
                 /**
                  *本接口(DescribeAuditLogFiles)用于查询云数据库实例的审计日志文件。

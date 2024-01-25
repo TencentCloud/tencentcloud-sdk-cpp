@@ -44,15 +44,47 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取应用相关信息。 此接口Agent.ProxyOrganizationOpenId、Agent. ProxyOperator.OpenId、Agent.AppId 必填。
-                     * @return Agent 应用相关信息。 此接口Agent.ProxyOrganizationOpenId、Agent. ProxyOperator.OpenId、Agent.AppId 必填。
+                     * 获取关于渠道应用的相关信息，包括渠道应用标识、第三方平台子客企业标识及第三方平台子客企业中的员工标识等内容，您可以参阅开发者中心所提供的 Agent 结构体以获取详细定义。
+
+此接口下面信息必填。
+<ul>
+<li>渠道应用标识:  Agent.AppId</li>
+<li>第三方平台子客企业标识: Agent.ProxyOrganizationOpenId</li>
+<li>第三方平台子客企业中的员工标识: Agent. ProxyOperator.OpenId</li>
+</ul>
+第三方平台子客企业和员工必须已经经过实名认证
+                     * @return Agent 关于渠道应用的相关信息，包括渠道应用标识、第三方平台子客企业标识及第三方平台子客企业中的员工标识等内容，您可以参阅开发者中心所提供的 Agent 结构体以获取详细定义。
+
+此接口下面信息必填。
+<ul>
+<li>渠道应用标识:  Agent.AppId</li>
+<li>第三方平台子客企业标识: Agent.ProxyOrganizationOpenId</li>
+<li>第三方平台子客企业中的员工标识: Agent. ProxyOperator.OpenId</li>
+</ul>
+第三方平台子客企业和员工必须已经经过实名认证
                      * 
                      */
                     Agent GetAgent() const;
 
                     /**
-                     * 设置应用相关信息。 此接口Agent.ProxyOrganizationOpenId、Agent. ProxyOperator.OpenId、Agent.AppId 必填。
-                     * @param _agent 应用相关信息。 此接口Agent.ProxyOrganizationOpenId、Agent. ProxyOperator.OpenId、Agent.AppId 必填。
+                     * 设置关于渠道应用的相关信息，包括渠道应用标识、第三方平台子客企业标识及第三方平台子客企业中的员工标识等内容，您可以参阅开发者中心所提供的 Agent 结构体以获取详细定义。
+
+此接口下面信息必填。
+<ul>
+<li>渠道应用标识:  Agent.AppId</li>
+<li>第三方平台子客企业标识: Agent.ProxyOrganizationOpenId</li>
+<li>第三方平台子客企业中的员工标识: Agent. ProxyOperator.OpenId</li>
+</ul>
+第三方平台子客企业和员工必须已经经过实名认证
+                     * @param _agent 关于渠道应用的相关信息，包括渠道应用标识、第三方平台子客企业标识及第三方平台子客企业中的员工标识等内容，您可以参阅开发者中心所提供的 Agent 结构体以获取详细定义。
+
+此接口下面信息必填。
+<ul>
+<li>渠道应用标识:  Agent.AppId</li>
+<li>第三方平台子客企业标识: Agent.ProxyOrganizationOpenId</li>
+<li>第三方平台子客企业中的员工标识: Agent. ProxyOperator.OpenId</li>
+</ul>
+第三方平台子客企业和员工必须已经经过实名认证
                      * 
                      */
                     void SetAgent(const Agent& _agent);
@@ -66,22 +98,14 @@ namespace TencentCloud
 
                     /**
                      * 获取合同流程ID，为32位字符串。
-<ul><li>建议开发者妥善保存此流程ID，以便于顺利进行后续操作。</li>
-<li>可登录腾讯电子签控制台，在 "合同"->"合同中心" 中查看某个合同的FlowId(在页面中展示为合同ID)。</li></ul>
                      * @return FlowId 合同流程ID，为32位字符串。
-<ul><li>建议开发者妥善保存此流程ID，以便于顺利进行后续操作。</li>
-<li>可登录腾讯电子签控制台，在 "合同"->"合同中心" 中查看某个合同的FlowId(在页面中展示为合同ID)。</li></ul>
                      * 
                      */
                     std::string GetFlowId() const;
 
                     /**
                      * 设置合同流程ID，为32位字符串。
-<ul><li>建议开发者妥善保存此流程ID，以便于顺利进行后续操作。</li>
-<li>可登录腾讯电子签控制台，在 "合同"->"合同中心" 中查看某个合同的FlowId(在页面中展示为合同ID)。</li></ul>
                      * @param _flowId 合同流程ID，为32位字符串。
-<ul><li>建议开发者妥善保存此流程ID，以便于顺利进行后续操作。</li>
-<li>可登录腾讯电子签控制台，在 "合同"->"合同中心" 中查看某个合同的FlowId(在页面中展示为合同ID)。</li></ul>
                      * 
                      */
                     void SetFlowId(const std::string& _flowId);
@@ -95,26 +119,26 @@ namespace TencentCloud
 
                     /**
                      * 获取企业内部审核结果
-<ul><li>PASS: 审核通过</li>
-<li>REJECT: 审核拒绝</li>
-<li>SIGN_REJECT:拒签(流程结束)</li></ul>
+<ul><li>PASS: 审核通过（流程可以继续签署或者发起）</li>
+<li>REJECT: 审核拒绝（流程状态不变，可以继续调用审核接口通过审核）</li>
+<li>SIGN_REJECT:拒签(流程终止，流程状态变为拒签状态)</li></ul>
                      * @return ReviewType 企业内部审核结果
-<ul><li>PASS: 审核通过</li>
-<li>REJECT: 审核拒绝</li>
-<li>SIGN_REJECT:拒签(流程结束)</li></ul>
+<ul><li>PASS: 审核通过（流程可以继续签署或者发起）</li>
+<li>REJECT: 审核拒绝（流程状态不变，可以继续调用审核接口通过审核）</li>
+<li>SIGN_REJECT:拒签(流程终止，流程状态变为拒签状态)</li></ul>
                      * 
                      */
                     std::string GetReviewType() const;
 
                     /**
                      * 设置企业内部审核结果
-<ul><li>PASS: 审核通过</li>
-<li>REJECT: 审核拒绝</li>
-<li>SIGN_REJECT:拒签(流程结束)</li></ul>
+<ul><li>PASS: 审核通过（流程可以继续签署或者发起）</li>
+<li>REJECT: 审核拒绝（流程状态不变，可以继续调用审核接口通过审核）</li>
+<li>SIGN_REJECT:拒签(流程终止，流程状态变为拒签状态)</li></ul>
                      * @param _reviewType 企业内部审核结果
-<ul><li>PASS: 审核通过</li>
-<li>REJECT: 审核拒绝</li>
-<li>SIGN_REJECT:拒签(流程结束)</li></ul>
+<ul><li>PASS: 审核通过（流程可以继续签署或者发起）</li>
+<li>REJECT: 审核拒绝（流程状态不变，可以继续调用审核接口通过审核）</li>
+<li>SIGN_REJECT:拒签(流程终止，流程状态变为拒签状态)</li></ul>
                      * 
                      */
                     void SetReviewType(const std::string& _reviewType);
@@ -228,24 +252,30 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 应用相关信息。 此接口Agent.ProxyOrganizationOpenId、Agent. ProxyOperator.OpenId、Agent.AppId 必填。
+                     * 关于渠道应用的相关信息，包括渠道应用标识、第三方平台子客企业标识及第三方平台子客企业中的员工标识等内容，您可以参阅开发者中心所提供的 Agent 结构体以获取详细定义。
+
+此接口下面信息必填。
+<ul>
+<li>渠道应用标识:  Agent.AppId</li>
+<li>第三方平台子客企业标识: Agent.ProxyOrganizationOpenId</li>
+<li>第三方平台子客企业中的员工标识: Agent. ProxyOperator.OpenId</li>
+</ul>
+第三方平台子客企业和员工必须已经经过实名认证
                      */
                     Agent m_agent;
                     bool m_agentHasBeenSet;
 
                     /**
                      * 合同流程ID，为32位字符串。
-<ul><li>建议开发者妥善保存此流程ID，以便于顺利进行后续操作。</li>
-<li>可登录腾讯电子签控制台，在 "合同"->"合同中心" 中查看某个合同的FlowId(在页面中展示为合同ID)。</li></ul>
                      */
                     std::string m_flowId;
                     bool m_flowIdHasBeenSet;
 
                     /**
                      * 企业内部审核结果
-<ul><li>PASS: 审核通过</li>
-<li>REJECT: 审核拒绝</li>
-<li>SIGN_REJECT:拒签(流程结束)</li></ul>
+<ul><li>PASS: 审核通过（流程可以继续签署或者发起）</li>
+<li>REJECT: 审核拒绝（流程状态不变，可以继续调用审核接口通过审核）</li>
+<li>SIGN_REJECT:拒签(流程终止，流程状态变为拒签状态)</li></ul>
                      */
                     std::string m_reviewType;
                     bool m_reviewTypeHasBeenSet;

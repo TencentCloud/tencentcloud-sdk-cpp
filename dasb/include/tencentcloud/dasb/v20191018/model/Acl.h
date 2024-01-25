@@ -681,6 +681,31 @@ namespace TencentCloud
                      */
                     bool ACTemplateSetHasBeenSet() const;
 
+                    /**
+                     * 获取关联的白命令命令
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return WhiteCmds 关联的白命令命令
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::vector<std::string> GetWhiteCmds() const;
+
+                    /**
+                     * 设置关联的白命令命令
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _whiteCmds 关联的白命令命令
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetWhiteCmds(const std::vector<std::string>& _whiteCmds);
+
+                    /**
+                     * 判断参数 WhiteCmds 是否已赋值
+                     * @return WhiteCmds 是否已赋值
+                     * 
+                     */
+                    bool WhiteCmdsHasBeenSet() const;
+
                 private:
 
                     /**
@@ -861,6 +886,13 @@ namespace TencentCloud
                      */
                     std::vector<ACTemplate> m_aCTemplateSet;
                     bool m_aCTemplateSetHasBeenSet;
+
+                    /**
+                     * 关联的白命令命令
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::vector<std::string> m_whiteCmds;
+                    bool m_whiteCmdsHasBeenSet;
 
                 };
             }

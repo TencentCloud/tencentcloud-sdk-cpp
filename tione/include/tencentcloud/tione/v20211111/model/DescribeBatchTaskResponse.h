@@ -45,9 +45,9 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取跑批任务详情
+                     * 获取批量预测任务详情
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return BatchTaskDetail 跑批任务详情
+                     * @return BatchTaskDetail 批量预测任务详情
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -63,7 +63,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 跑批任务详情
+                     * 批量预测任务详情
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     BatchTaskDetail m_batchTaskDetail;

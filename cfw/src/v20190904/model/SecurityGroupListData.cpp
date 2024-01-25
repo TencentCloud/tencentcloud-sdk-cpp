@@ -48,7 +48,8 @@ SecurityGroupListData::SecurityGroupListData() :
     m_regionHasBeenSet(false),
     m_assetGroupNameInHasBeenSet(false),
     m_assetGroupNameOutHasBeenSet(false),
-    m_parameterNameHasBeenSet(false)
+    m_parameterNameHasBeenSet(false),
+    m_protocolPortNameHasBeenSet(false)
 {
 }
 
@@ -347,6 +348,16 @@ CoreInternalOutcome SecurityGroupListData::Deserialize(const rapidjson::Value &v
         m_parameterNameHasBeenSet = true;
     }
 
+    if (value.HasMember("ProtocolPortName") && !value["ProtocolPortName"].IsNull())
+    {
+        if (!value["ProtocolPortName"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `SecurityGroupListData.ProtocolPortName` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_protocolPortName = string(value["ProtocolPortName"].GetString());
+        m_protocolPortNameHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -583,6 +594,14 @@ void SecurityGroupListData::ToJsonObject(rapidjson::Value &value, rapidjson::Doc
         string key = "ParameterName";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_parameterName.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_protocolPortNameHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ProtocolPortName";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_protocolPortName.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -1034,5 +1053,21 @@ void SecurityGroupListData::SetParameterName(const string& _parameterName)
 bool SecurityGroupListData::ParameterNameHasBeenSet() const
 {
     return m_parameterNameHasBeenSet;
+}
+
+string SecurityGroupListData::GetProtocolPortName() const
+{
+    return m_protocolPortName;
+}
+
+void SecurityGroupListData::SetProtocolPortName(const string& _protocolPortName)
+{
+    m_protocolPortName = _protocolPortName;
+    m_protocolPortNameHasBeenSet = true;
+}
+
+bool SecurityGroupListData::ProtocolPortNameHasBeenSet() const
+{
+    return m_protocolPortNameHasBeenSet;
 }
 

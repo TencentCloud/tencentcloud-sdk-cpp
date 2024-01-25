@@ -100,6 +100,24 @@ namespace TencentCloud
                     bool DefenseStatusHasBeenSet() const;
 
                     /**
+                     * 获取数据来源Source字段 custom-自定义(默认)、batch-domain-批量域名
+
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return Source 数据来源Source字段 custom-自定义(默认)、batch-domain-批量域名
+
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::string GetSource() const;
+
+                    /**
+                     * 判断参数 Source 是否已赋值
+                     * @return Source 是否已赋值
+                     * 
+                     */
+                    bool SourceHasBeenSet() const;
+
+                    /**
                      * 获取重保护网域名状态
                      * @return HWState 重保护网域名状态
                      * 
@@ -138,6 +156,14 @@ namespace TencentCloud
                      */
                     int64_t m_defenseStatus;
                     bool m_defenseStatusHasBeenSet;
+
+                    /**
+                     * 数据来源Source字段 custom-自定义(默认)、batch-domain-批量域名
+
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_source;
+                    bool m_sourceHasBeenSet;
 
                     /**
                      * 重保护网域名状态

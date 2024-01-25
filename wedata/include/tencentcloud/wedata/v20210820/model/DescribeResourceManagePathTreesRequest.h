@@ -128,14 +128,26 @@ namespace TencentCloud
 
                     /**
                      * 获取文件夹类型
+personal 个人
+project 项目
+resource 资源
                      * @return DirType 文件夹类型
+personal 个人
+project 项目
+resource 资源
                      * 
                      */
                     std::string GetDirType() const;
 
                     /**
                      * 设置文件夹类型
+personal 个人
+project 项目
+resource 资源
                      * @param _dirType 文件夹类型
+personal 个人
+project 项目
+resource 资源
                      * 
                      */
                     void SetDirType(const std::string& _dirType);
@@ -175,6 +187,9 @@ namespace TencentCloud
 
                     /**
                      * 文件夹类型
+personal 个人
+project 项目
+resource 资源
                      */
                     std::string m_dirType;
                     bool m_dirTypeHasBeenSet;

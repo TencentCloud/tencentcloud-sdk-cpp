@@ -33,7 +33,8 @@ CreateNatRuleItem::CreateNatRuleItem() :
     m_enableHasBeenSet(false),
     m_uuidHasBeenSet(false),
     m_descriptionHasBeenSet(false),
-    m_paramTemplateIdHasBeenSet(false)
+    m_paramTemplateIdHasBeenSet(false),
+    m_internalUuidHasBeenSet(false)
 {
 }
 
@@ -172,6 +173,16 @@ CoreInternalOutcome CreateNatRuleItem::Deserialize(const rapidjson::Value &value
         m_paramTemplateIdHasBeenSet = true;
     }
 
+    if (value.HasMember("InternalUuid") && !value["InternalUuid"].IsNull())
+    {
+        if (!value["InternalUuid"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `CreateNatRuleItem.InternalUuid` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_internalUuid = value["InternalUuid"].GetInt64();
+        m_internalUuidHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -281,6 +292,14 @@ void CreateNatRuleItem::ToJsonObject(rapidjson::Value &value, rapidjson::Documen
         string key = "ParamTemplateId";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_paramTemplateId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_internalUuidHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "InternalUuid";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_internalUuid, allocator);
     }
 
 }
@@ -492,5 +511,21 @@ void CreateNatRuleItem::SetParamTemplateId(const string& _paramTemplateId)
 bool CreateNatRuleItem::ParamTemplateIdHasBeenSet() const
 {
     return m_paramTemplateIdHasBeenSet;
+}
+
+int64_t CreateNatRuleItem::GetInternalUuid() const
+{
+    return m_internalUuid;
+}
+
+void CreateNatRuleItem::SetInternalUuid(const int64_t& _internalUuid)
+{
+    m_internalUuid = _internalUuid;
+    m_internalUuidHasBeenSet = true;
+}
+
+bool CreateNatRuleItem::InternalUuidHasBeenSet() const
+{
+    return m_internalUuidHasBeenSet;
 }
 

@@ -52,15 +52,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取跑批任务ID
-                     * @return BatchTaskId 跑批任务ID
+                     * 获取批量预测任务ID
+                     * @return BatchTaskId 批量预测任务ID
                      * 
                      */
                     std::string GetBatchTaskId() const;
 
                     /**
-                     * 设置跑批任务ID
-                     * @param _batchTaskId 跑批任务ID
+                     * 设置批量预测任务ID
+                     * @param _batchTaskId 批量预测任务ID
                      * 
                      */
                     void SetBatchTaskId(const std::string& _batchTaskId);
@@ -73,15 +73,15 @@ namespace TencentCloud
                     bool BatchTaskIdHasBeenSet() const;
 
                     /**
-                     * 获取跑批任务名称
-                     * @return BatchTaskName 跑批任务名称
+                     * 获取批量预测任务名称
+                     * @return BatchTaskName 批量预测任务名称
                      * 
                      */
                     std::string GetBatchTaskName() const;
 
                     /**
-                     * 设置跑批任务名称
-                     * @param _batchTaskName 跑批任务名称
+                     * 设置批量预测任务名称
+                     * @param _batchTaskName 批量预测任务名称
                      * 
                      */
                     void SetBatchTaskName(const std::string& _batchTaskName);
@@ -161,15 +161,35 @@ namespace TencentCloud
                     bool ChargeTypeHasBeenSet() const;
 
                     /**
-                     * 获取计费状态，eg：BILLING计费中，ARREARS_STOP欠费停止，NOT_BILLING不在计费中
-                     * @return ChargeStatus 计费状态，eg：BILLING计费中，ARREARS_STOP欠费停止，NOT_BILLING不在计费中
+                     * 获取计费状态，取值范围:
+BILLING: 计费中
+NOT_BILLING: 未计费
+WHITELIST_USING: 白名单使用中
+WHITELIST_STOP: 白名单到期
+ARREARS_STOP: 欠费停止
+                     * @return ChargeStatus 计费状态，取值范围:
+BILLING: 计费中
+NOT_BILLING: 未计费
+WHITELIST_USING: 白名单使用中
+WHITELIST_STOP: 白名单到期
+ARREARS_STOP: 欠费停止
                      * 
                      */
                     std::string GetChargeStatus() const;
 
                     /**
-                     * 设置计费状态，eg：BILLING计费中，ARREARS_STOP欠费停止，NOT_BILLING不在计费中
-                     * @param _chargeStatus 计费状态，eg：BILLING计费中，ARREARS_STOP欠费停止，NOT_BILLING不在计费中
+                     * 设置计费状态，取值范围:
+BILLING: 计费中
+NOT_BILLING: 未计费
+WHITELIST_USING: 白名单使用中
+WHITELIST_STOP: 白名单到期
+ARREARS_STOP: 欠费停止
+                     * @param _chargeStatus 计费状态，取值范围:
+BILLING: 计费中
+NOT_BILLING: 未计费
+WHITELIST_USING: 白名单使用中
+WHITELIST_STOP: 白名单到期
+ARREARS_STOP: 欠费停止
                      * 
                      */
                     void SetChargeStatus(const std::string& _chargeStatus);
@@ -253,15 +273,19 @@ namespace TencentCloud
                     bool TagsHasBeenSet() const;
 
                     /**
-                     * 获取任务状态
-                     * @return Status 任务状态
+                     * 获取任务状态, 取值范围:
+INIT, STARTING, RUNNING, FAILED, STOPPING, STOPPED, SUCCEED
+                     * @return Status 任务状态, 取值范围:
+INIT, STARTING, RUNNING, FAILED, STOPPING, STOPPED, SUCCEED
                      * 
                      */
                     std::string GetStatus() const;
 
                     /**
-                     * 设置任务状态
-                     * @param _status 任务状态
+                     * 设置任务状态, 取值范围:
+INIT, STARTING, RUNNING, FAILED, STOPPING, STOPPED, SUCCEED
+                     * @param _status 任务状态, 取值范围:
+INIT, STARTING, RUNNING, FAILED, STOPPING, STOPPED, SUCCEED
                      * 
                      */
                     void SetStatus(const std::string& _status);
@@ -299,15 +323,15 @@ namespace TencentCloud
                     bool RuntimeInSecondsHasBeenSet() const;
 
                     /**
-                     * 获取创建时间
-                     * @return CreateTime 创建时间
+                     * 获取任务创建时间
+                     * @return CreateTime 任务创建时间
                      * 
                      */
                     std::string GetCreateTime() const;
 
                     /**
-                     * 设置创建时间
-                     * @param _createTime 创建时间
+                     * 设置任务创建时间
+                     * @param _createTime 任务创建时间
                      * 
                      */
                     void SetCreateTime(const std::string& _createTime);
@@ -320,18 +344,18 @@ namespace TencentCloud
                     bool CreateTimeHasBeenSet() const;
 
                     /**
-                     * 获取开始时间
+                     * 获取任务开始运行时间
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return StartTime 开始时间
+                     * @return StartTime 任务开始运行时间
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetStartTime() const;
 
                     /**
-                     * 设置开始时间
+                     * 设置任务开始运行时间
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _startTime 开始时间
+                     * @param _startTime 任务开始运行时间
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -345,18 +369,18 @@ namespace TencentCloud
                     bool StartTimeHasBeenSet() const;
 
                     /**
-                     * 获取结束时间
+                     * 获取任务结束时间
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return EndTime 结束时间
+                     * @return EndTime 任务结束时间
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetEndTime() const;
 
                     /**
-                     * 设置结束时间
+                     * 设置任务结束时间
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _endTime 结束时间
+                     * @param _endTime 任务结束时间
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -370,18 +394,18 @@ namespace TencentCloud
                     bool EndTimeHasBeenSet() const;
 
                     /**
-                     * 获取更新时间
+                     * 获取任务更新时间
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return UpdateTime 更新时间
+                     * @return UpdateTime 任务更新时间
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetUpdateTime() const;
 
                     /**
-                     * 设置更新时间
+                     * 设置任务更新时间
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _updateTime 更新时间
+                     * @param _updateTime 任务更新时间
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -462,15 +486,15 @@ namespace TencentCloud
                     bool FailureReasonHasBeenSet() const;
 
                     /**
-                     * 获取计费金额信息，eg：2.00元/小时 (for 按量计费)
-                     * @return BillingInfo 计费金额信息，eg：2.00元/小时 (for 按量计费)
+                     * 获取按量计费信息
+                     * @return BillingInfo 按量计费信息
                      * 
                      */
                     std::string GetBillingInfo() const;
 
                     /**
-                     * 设置计费金额信息，eg：2.00元/小时 (for 按量计费)
-                     * @param _billingInfo 计费金额信息，eg：2.00元/小时 (for 按量计费)
+                     * 设置按量计费信息
+                     * @param _billingInfo 按量计费信息
                      * 
                      */
                     void SetBillingInfo(const std::string& _billingInfo);
@@ -485,13 +509,13 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 跑批任务ID
+                     * 批量预测任务ID
                      */
                     std::string m_batchTaskId;
                     bool m_batchTaskIdHasBeenSet;
 
                     /**
-                     * 跑批任务名称
+                     * 批量预测任务名称
                      */
                     std::string m_batchTaskName;
                     bool m_batchTaskNameHasBeenSet;
@@ -516,7 +540,12 @@ namespace TencentCloud
                     bool m_chargeTypeHasBeenSet;
 
                     /**
-                     * 计费状态，eg：BILLING计费中，ARREARS_STOP欠费停止，NOT_BILLING不在计费中
+                     * 计费状态，取值范围:
+BILLING: 计费中
+NOT_BILLING: 未计费
+WHITELIST_USING: 白名单使用中
+WHITELIST_STOP: 白名单到期
+ARREARS_STOP: 欠费停止
                      */
                     std::string m_chargeStatus;
                     bool m_chargeStatusHasBeenSet;
@@ -542,7 +571,8 @@ namespace TencentCloud
                     bool m_tagsHasBeenSet;
 
                     /**
-                     * 任务状态
+                     * 任务状态, 取值范围:
+INIT, STARTING, RUNNING, FAILED, STOPPING, STOPPED, SUCCEED
                      */
                     std::string m_status;
                     bool m_statusHasBeenSet;
@@ -555,27 +585,27 @@ namespace TencentCloud
                     bool m_runtimeInSecondsHasBeenSet;
 
                     /**
-                     * 创建时间
+                     * 任务创建时间
                      */
                     std::string m_createTime;
                     bool m_createTimeHasBeenSet;
 
                     /**
-                     * 开始时间
+                     * 任务开始运行时间
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_startTime;
                     bool m_startTimeHasBeenSet;
 
                     /**
-                     * 结束时间
+                     * 任务结束时间
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_endTime;
                     bool m_endTimeHasBeenSet;
 
                     /**
-                     * 更新时间
+                     * 任务更新时间
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_updateTime;
@@ -601,7 +631,7 @@ namespace TencentCloud
                     bool m_failureReasonHasBeenSet;
 
                     /**
-                     * 计费金额信息，eg：2.00元/小时 (for 按量计费)
+                     * 按量计费信息
                      */
                     std::string m_billingInfo;
                     bool m_billingInfoHasBeenSet;

@@ -48,6 +48,7 @@
 #include <tencentcloud/vod/v20180717/model/DescribeFileAttributesTask.h>
 #include <tencentcloud/vod/v20180717/model/QualityInspectTask.h>
 #include <tencentcloud/vod/v20180717/model/QualityEnhanceTask.h>
+#include <tencentcloud/vod/v20180717/model/MediaCastEvent.h>
 
 
 namespace TencentCloud
@@ -804,6 +805,31 @@ namespace TencentCloud
                      */
                     bool QualityEnhanceCompleteEventHasBeenSet() const;
 
+                    /**
+                     * 获取媒体转推状态变化事件，当事件类型为 MediaCastStatusChanged 时有效。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return MediaCastStatusChangedEvent 媒体转推状态变化事件，当事件类型为 MediaCastStatusChanged 时有效。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    MediaCastEvent GetMediaCastStatusChangedEvent() const;
+
+                    /**
+                     * 设置媒体转推状态变化事件，当事件类型为 MediaCastStatusChanged 时有效。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _mediaCastStatusChangedEvent 媒体转推状态变化事件，当事件类型为 MediaCastStatusChanged 时有效。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetMediaCastStatusChangedEvent(const MediaCastEvent& _mediaCastStatusChangedEvent);
+
+                    /**
+                     * 判断参数 MediaCastStatusChangedEvent 是否已赋值
+                     * @return MediaCastStatusChangedEvent 是否已赋值
+                     * 
+                     */
+                    bool MediaCastStatusChangedEventHasBeenSet() const;
+
                 private:
 
                     /**
@@ -1008,6 +1034,13 @@ namespace TencentCloud
                      */
                     QualityEnhanceTask m_qualityEnhanceCompleteEvent;
                     bool m_qualityEnhanceCompleteEventHasBeenSet;
+
+                    /**
+                     * 媒体转推状态变化事件，当事件类型为 MediaCastStatusChanged 时有效。
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    MediaCastEvent m_mediaCastStatusChangedEvent;
+                    bool m_mediaCastStatusChangedEventHasBeenSet;
 
                 };
             }

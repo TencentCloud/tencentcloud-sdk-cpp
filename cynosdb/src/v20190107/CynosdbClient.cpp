@@ -1287,6 +1287,49 @@ CynosdbClient::DescribeAccountsOutcomeCallable CynosdbClient::DescribeAccountsCa
     return task->get_future();
 }
 
+CynosdbClient::DescribeAuditInstanceListOutcome CynosdbClient::DescribeAuditInstanceList(const DescribeAuditInstanceListRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeAuditInstanceList");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeAuditInstanceListResponse rsp = DescribeAuditInstanceListResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeAuditInstanceListOutcome(rsp);
+        else
+            return DescribeAuditInstanceListOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeAuditInstanceListOutcome(outcome.GetError());
+    }
+}
+
+void CynosdbClient::DescribeAuditInstanceListAsync(const DescribeAuditInstanceListRequest& request, const DescribeAuditInstanceListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeAuditInstanceList(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+CynosdbClient::DescribeAuditInstanceListOutcomeCallable CynosdbClient::DescribeAuditInstanceListCallable(const DescribeAuditInstanceListRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeAuditInstanceListOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeAuditInstanceList(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 CynosdbClient::DescribeAuditLogFilesOutcome CynosdbClient::DescribeAuditLogFiles(const DescribeAuditLogFilesRequest &request)
 {
     auto outcome = MakeRequest(request, "DescribeAuditLogFiles");

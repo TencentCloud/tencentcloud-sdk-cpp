@@ -1,0 +1,300 @@
+/*
+ * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *    http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+
+#ifndef TENCENTCLOUD_WEDATA_V20210820_MODEL_ANALYZEDEPENDENTTASK_H_
+#define TENCENTCLOUD_WEDATA_V20210820_MODEL_ANALYZEDEPENDENTTASK_H_
+
+#include <string>
+#include <vector>
+#include <map>
+#include <tencentcloud/core/utils/rapidjson/document.h>
+#include <tencentcloud/core/utils/rapidjson/writer.h>
+#include <tencentcloud/core/utils/rapidjson/stringbuffer.h>
+#include <tencentcloud/core/AbstractModel.h>
+
+
+namespace TencentCloud
+{
+    namespace Wedata
+    {
+        namespace V20210820
+        {
+            namespace Model
+            {
+                /**
+                * 自动解析上游依赖任务请求
+                */
+                class AnalyzeDependentTask : public AbstractModel
+                {
+                public:
+                    AnalyzeDependentTask();
+                    ~AnalyzeDependentTask() = default;
+                    void ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const;
+                    CoreInternalOutcome Deserialize(const rapidjson::Value &value);
+
+
+                    /**
+                     * 获取任务id
+                     * @return TaskId 任务id
+                     * 
+                     */
+                    std::string GetTaskId() const;
+
+                    /**
+                     * 设置任务id
+                     * @param _taskId 任务id
+                     * 
+                     */
+                    void SetTaskId(const std::string& _taskId);
+
+                    /**
+                     * 判断参数 TaskId 是否已赋值
+                     * @return TaskId 是否已赋值
+                     * 
+                     */
+                    bool TaskIdHasBeenSet() const;
+
+                    /**
+                     * 获取项目id
+                     * @return ProjectId 项目id
+                     * 
+                     */
+                    std::string GetProjectId() const;
+
+                    /**
+                     * 设置项目id
+                     * @param _projectId 项目id
+                     * 
+                     */
+                    void SetProjectId(const std::string& _projectId);
+
+                    /**
+                     * 判断参数 ProjectId 是否已赋值
+                     * @return ProjectId 是否已赋值
+                     * 
+                     */
+                    bool ProjectIdHasBeenSet() const;
+
+                    /**
+                     * 获取表物理唯一id
+                     * @return TablePhysicalId 表物理唯一id
+                     * 
+                     */
+                    std::string GetTablePhysicalId() const;
+
+                    /**
+                     * 设置表物理唯一id
+                     * @param _tablePhysicalId 表物理唯一id
+                     * 
+                     */
+                    void SetTablePhysicalId(const std::string& _tablePhysicalId);
+
+                    /**
+                     * 判断参数 TablePhysicalId 是否已赋值
+                     * @return TablePhysicalId 是否已赋值
+                     * 
+                     */
+                    bool TablePhysicalIdHasBeenSet() const;
+
+                    /**
+                     * 获取任务名称
+                     * @return TaskName 任务名称
+                     * 
+                     */
+                    std::string GetTaskName() const;
+
+                    /**
+                     * 设置任务名称
+                     * @param _taskName 任务名称
+                     * 
+                     */
+                    void SetTaskName(const std::string& _taskName);
+
+                    /**
+                     * 判断参数 TaskName 是否已赋值
+                     * @return TaskName 是否已赋值
+                     * 
+                     */
+                    bool TaskNameHasBeenSet() const;
+
+                    /**
+                     * 获取数据源id
+                     * @return DatasourceId 数据源id
+                     * 
+                     */
+                    std::string GetDatasourceId() const;
+
+                    /**
+                     * 设置数据源id
+                     * @param _datasourceId 数据源id
+                     * 
+                     */
+                    void SetDatasourceId(const std::string& _datasourceId);
+
+                    /**
+                     * 判断参数 DatasourceId 是否已赋值
+                     * @return DatasourceId 是否已赋值
+                     * 
+                     */
+                    bool DatasourceIdHasBeenSet() const;
+
+                    /**
+                     * 获取数据库名称
+                     * @return DatabaseName 数据库名称
+                     * 
+                     */
+                    std::string GetDatabaseName() const;
+
+                    /**
+                     * 设置数据库名称
+                     * @param _databaseName 数据库名称
+                     * 
+                     */
+                    void SetDatabaseName(const std::string& _databaseName);
+
+                    /**
+                     * 判断参数 DatabaseName 是否已赋值
+                     * @return DatabaseName 是否已赋值
+                     * 
+                     */
+                    bool DatabaseNameHasBeenSet() const;
+
+                    /**
+                     * 获取表名称
+                     * @return TableName 表名称
+                     * 
+                     */
+                    std::string GetTableName() const;
+
+                    /**
+                     * 设置表名称
+                     * @param _tableName 表名称
+                     * 
+                     */
+                    void SetTableName(const std::string& _tableName);
+
+                    /**
+                     * 判断参数 TableName 是否已赋值
+                     * @return TableName 是否已赋值
+                     * 
+                     */
+                    bool TableNameHasBeenSet() const;
+
+                    /**
+                     * 获取表唯一标识
+                     * @return TableGuid 表唯一标识
+                     * 
+                     */
+                    std::string GetTableGuid() const;
+
+                    /**
+                     * 设置表唯一标识
+                     * @param _tableGuid 表唯一标识
+                     * 
+                     */
+                    void SetTableGuid(const std::string& _tableGuid);
+
+                    /**
+                     * 判断参数 TableGuid 是否已赋值
+                     * @return TableGuid 是否已赋值
+                     * 
+                     */
+                    bool TableGuidHasBeenSet() const;
+
+                    /**
+                     * 获取分区名称
+                     * @return PartitionName 分区名称
+                     * 
+                     */
+                    std::string GetPartitionName() const;
+
+                    /**
+                     * 设置分区名称
+                     * @param _partitionName 分区名称
+                     * 
+                     */
+                    void SetPartitionName(const std::string& _partitionName);
+
+                    /**
+                     * 判断参数 PartitionName 是否已赋值
+                     * @return PartitionName 是否已赋值
+                     * 
+                     */
+                    bool PartitionNameHasBeenSet() const;
+
+                private:
+
+                    /**
+                     * 任务id
+                     */
+                    std::string m_taskId;
+                    bool m_taskIdHasBeenSet;
+
+                    /**
+                     * 项目id
+                     */
+                    std::string m_projectId;
+                    bool m_projectIdHasBeenSet;
+
+                    /**
+                     * 表物理唯一id
+                     */
+                    std::string m_tablePhysicalId;
+                    bool m_tablePhysicalIdHasBeenSet;
+
+                    /**
+                     * 任务名称
+                     */
+                    std::string m_taskName;
+                    bool m_taskNameHasBeenSet;
+
+                    /**
+                     * 数据源id
+                     */
+                    std::string m_datasourceId;
+                    bool m_datasourceIdHasBeenSet;
+
+                    /**
+                     * 数据库名称
+                     */
+                    std::string m_databaseName;
+                    bool m_databaseNameHasBeenSet;
+
+                    /**
+                     * 表名称
+                     */
+                    std::string m_tableName;
+                    bool m_tableNameHasBeenSet;
+
+                    /**
+                     * 表唯一标识
+                     */
+                    std::string m_tableGuid;
+                    bool m_tableGuidHasBeenSet;
+
+                    /**
+                     * 分区名称
+                     */
+                    std::string m_partitionName;
+                    bool m_partitionNameHasBeenSet;
+
+                };
+            }
+        }
+    }
+}
+
+#endif // !TENCENTCLOUD_WEDATA_V20210820_MODEL_ANALYZEDEPENDENTTASK_H_

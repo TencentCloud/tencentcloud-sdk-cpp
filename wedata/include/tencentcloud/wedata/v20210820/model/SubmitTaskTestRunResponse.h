@@ -44,8 +44,8 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取无
-                     * @return JobId 无
+                     * 获取提交运行jobid
+                     * @return JobId 提交运行jobid
                      * 
                      */
                     int64_t GetJobId() const;
@@ -58,8 +58,8 @@ namespace TencentCloud
                     bool JobIdHasBeenSet() const;
 
                     /**
-                     * 获取无
-                     * @return RecordId 无
+                     * 获取运行记录id
+                     * @return RecordId 运行记录id
                      * 
                      */
                     std::vector<int64_t> GetRecordId() const;
@@ -74,13 +74,13 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 无
+                     * 提交运行jobid
                      */
                     int64_t m_jobId;
                     bool m_jobIdHasBeenSet;
 
                     /**
-                     * 无
+                     * 运行记录id
                      */
                     std::vector<int64_t> m_recordId;
                     bool m_recordIdHasBeenSet;

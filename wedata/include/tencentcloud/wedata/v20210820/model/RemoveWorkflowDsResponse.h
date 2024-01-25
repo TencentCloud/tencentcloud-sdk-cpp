@@ -44,8 +44,8 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取工作流ID
-                     * @return Data 工作流ID
+                     * 获取是否删除成功
+                     * @return Data 是否删除成功
                      * 
                      */
                     bool GetData() const;
@@ -60,7 +60,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 工作流ID
+                     * 是否删除成功
                      */
                     bool m_data;
                     bool m_dataHasBeenSet;

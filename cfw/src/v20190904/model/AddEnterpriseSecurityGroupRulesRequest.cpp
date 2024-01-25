@@ -26,7 +26,9 @@ AddEnterpriseSecurityGroupRulesRequest::AddEnterpriseSecurityGroupRulesRequest()
     m_dataHasBeenSet(false),
     m_typeHasBeenSet(false),
     m_clientTokenHasBeenSet(false),
-    m_isDelayHasBeenSet(false)
+    m_isDelayHasBeenSet(false),
+    m_fromHasBeenSet(false),
+    m_isUseIdHasBeenSet(false)
 {
 }
 
@@ -74,6 +76,22 @@ string AddEnterpriseSecurityGroupRulesRequest::ToJsonString() const
         string key = "IsDelay";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_isDelay, allocator);
+    }
+
+    if (m_fromHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "From";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_from.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_isUseIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "IsUseId";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_isUseId, allocator);
     }
 
 
@@ -146,6 +164,38 @@ void AddEnterpriseSecurityGroupRulesRequest::SetIsDelay(const uint64_t& _isDelay
 bool AddEnterpriseSecurityGroupRulesRequest::IsDelayHasBeenSet() const
 {
     return m_isDelayHasBeenSet;
+}
+
+string AddEnterpriseSecurityGroupRulesRequest::GetFrom() const
+{
+    return m_from;
+}
+
+void AddEnterpriseSecurityGroupRulesRequest::SetFrom(const string& _from)
+{
+    m_from = _from;
+    m_fromHasBeenSet = true;
+}
+
+bool AddEnterpriseSecurityGroupRulesRequest::FromHasBeenSet() const
+{
+    return m_fromHasBeenSet;
+}
+
+int64_t AddEnterpriseSecurityGroupRulesRequest::GetIsUseId() const
+{
+    return m_isUseId;
+}
+
+void AddEnterpriseSecurityGroupRulesRequest::SetIsUseId(const int64_t& _isUseId)
+{
+    m_isUseId = _isUseId;
+    m_isUseIdHasBeenSet = true;
+}
+
+bool AddEnterpriseSecurityGroupRulesRequest::IsUseIdHasBeenSet() const
+{
+    return m_isUseIdHasBeenSet;
 }
 
 

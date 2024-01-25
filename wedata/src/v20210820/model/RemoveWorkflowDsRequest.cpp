@@ -24,7 +24,10 @@ using namespace std;
 
 RemoveWorkflowDsRequest::RemoveWorkflowDsRequest() :
     m_projectIdHasBeenSet(false),
-    m_workflowIdHasBeenSet(false)
+    m_workflowIdHasBeenSet(false),
+    m_deleteScriptHasBeenSet(false),
+    m_operateIsInformHasBeenSet(false),
+    m_deleteModeHasBeenSet(false)
 {
 }
 
@@ -49,6 +52,30 @@ string RemoveWorkflowDsRequest::ToJsonString() const
         string key = "WorkflowId";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_workflowId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_deleteScriptHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "DeleteScript";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_deleteScript.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_operateIsInformHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "OperateIsInform";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_operateIsInform.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_deleteModeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "DeleteMode";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_deleteMode.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -89,6 +116,54 @@ void RemoveWorkflowDsRequest::SetWorkflowId(const string& _workflowId)
 bool RemoveWorkflowDsRequest::WorkflowIdHasBeenSet() const
 {
     return m_workflowIdHasBeenSet;
+}
+
+string RemoveWorkflowDsRequest::GetDeleteScript() const
+{
+    return m_deleteScript;
+}
+
+void RemoveWorkflowDsRequest::SetDeleteScript(const string& _deleteScript)
+{
+    m_deleteScript = _deleteScript;
+    m_deleteScriptHasBeenSet = true;
+}
+
+bool RemoveWorkflowDsRequest::DeleteScriptHasBeenSet() const
+{
+    return m_deleteScriptHasBeenSet;
+}
+
+string RemoveWorkflowDsRequest::GetOperateIsInform() const
+{
+    return m_operateIsInform;
+}
+
+void RemoveWorkflowDsRequest::SetOperateIsInform(const string& _operateIsInform)
+{
+    m_operateIsInform = _operateIsInform;
+    m_operateIsInformHasBeenSet = true;
+}
+
+bool RemoveWorkflowDsRequest::OperateIsInformHasBeenSet() const
+{
+    return m_operateIsInformHasBeenSet;
+}
+
+string RemoveWorkflowDsRequest::GetDeleteMode() const
+{
+    return m_deleteMode;
+}
+
+void RemoveWorkflowDsRequest::SetDeleteMode(const string& _deleteMode)
+{
+    m_deleteMode = _deleteMode;
+    m_deleteModeHasBeenSet = true;
+}
+
+bool RemoveWorkflowDsRequest::DeleteModeHasBeenSet() const
+{
+    return m_deleteModeHasBeenSet;
 }
 
 

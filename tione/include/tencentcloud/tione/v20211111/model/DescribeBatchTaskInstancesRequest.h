@@ -43,15 +43,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取跑批任务id
-                     * @return BatchTaskId 跑批任务id
+                     * 获取批量预测任务id
+                     * @return BatchTaskId 批量预测任务id
                      * 
                      */
                     std::string GetBatchTaskId() const;
 
                     /**
-                     * 设置跑批任务id
-                     * @param _batchTaskId 跑批任务id
+                     * 设置批量预测任务id
+                     * @param _batchTaskId 批量预测任务id
                      * 
                      */
                     void SetBatchTaskId(const std::string& _batchTaskId);
@@ -66,7 +66,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 跑批任务id
+                     * 批量预测任务id
                      */
                     std::string m_batchTaskId;
                     bool m_batchTaskIdHasBeenSet;

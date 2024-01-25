@@ -46,7 +46,8 @@ EventContent::EventContent() :
     m_reduceMediaBitrateCompleteEventHasBeenSet(false),
     m_describeFileAttributesCompleteEventHasBeenSet(false),
     m_qualityInspectCompleteEventHasBeenSet(false),
-    m_qualityEnhanceCompleteEventHasBeenSet(false)
+    m_qualityEnhanceCompleteEventHasBeenSet(false),
+    m_mediaCastStatusChangedEventHasBeenSet(false)
 {
 }
 
@@ -483,6 +484,23 @@ CoreInternalOutcome EventContent::Deserialize(const rapidjson::Value &value)
         m_qualityEnhanceCompleteEventHasBeenSet = true;
     }
 
+    if (value.HasMember("MediaCastStatusChangedEvent") && !value["MediaCastStatusChangedEvent"].IsNull())
+    {
+        if (!value["MediaCastStatusChangedEvent"].IsObject())
+        {
+            return CoreInternalOutcome(Core::Error("response `EventContent.MediaCastStatusChangedEvent` is not object type").SetRequestId(requestId));
+        }
+
+        CoreInternalOutcome outcome = m_mediaCastStatusChangedEvent.Deserialize(value["MediaCastStatusChangedEvent"]);
+        if (!outcome.IsSuccess())
+        {
+            outcome.GetError().SetRequestId(requestId);
+            return outcome;
+        }
+
+        m_mediaCastStatusChangedEventHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -720,6 +738,15 @@ void EventContent::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Al
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
         m_qualityEnhanceCompleteEvent.ToJsonObject(value[key.c_str()], allocator);
+    }
+
+    if (m_mediaCastStatusChangedEventHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "MediaCastStatusChangedEvent";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_mediaCastStatusChangedEvent.ToJsonObject(value[key.c_str()], allocator);
     }
 
 }
@@ -1139,5 +1166,21 @@ void EventContent::SetQualityEnhanceCompleteEvent(const QualityEnhanceTask& _qua
 bool EventContent::QualityEnhanceCompleteEventHasBeenSet() const
 {
     return m_qualityEnhanceCompleteEventHasBeenSet;
+}
+
+MediaCastEvent EventContent::GetMediaCastStatusChangedEvent() const
+{
+    return m_mediaCastStatusChangedEvent;
+}
+
+void EventContent::SetMediaCastStatusChangedEvent(const MediaCastEvent& _mediaCastStatusChangedEvent)
+{
+    m_mediaCastStatusChangedEvent = _mediaCastStatusChangedEvent;
+    m_mediaCastStatusChangedEventHasBeenSet = true;
+}
+
+bool EventContent::MediaCastStatusChangedEventHasBeenSet() const
+{
+    return m_mediaCastStatusChangedEventHasBeenSet;
 }
 

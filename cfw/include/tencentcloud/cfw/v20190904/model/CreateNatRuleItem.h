@@ -319,6 +319,27 @@ namespace TencentCloud
                      */
                     bool ParamTemplateIdHasBeenSet() const;
 
+                    /**
+                     * 获取内部id
+                     * @return InternalUuid 内部id
+                     * 
+                     */
+                    int64_t GetInternalUuid() const;
+
+                    /**
+                     * 设置内部id
+                     * @param _internalUuid 内部id
+                     * 
+                     */
+                    void SetInternalUuid(const int64_t& _internalUuid);
+
+                    /**
+                     * 判断参数 InternalUuid 是否已赋值
+                     * @return InternalUuid 是否已赋值
+                     * 
+                     */
+                    bool InternalUuidHasBeenSet() const;
+
                 private:
 
                     /**
@@ -398,6 +419,12 @@ namespace TencentCloud
                      */
                     std::string m_paramTemplateId;
                     bool m_paramTemplateIdHasBeenSet;
+
+                    /**
+                     * 内部id
+                     */
+                    int64_t m_internalUuid;
+                    bool m_internalUuidHasBeenSet;
 
                 };
             }

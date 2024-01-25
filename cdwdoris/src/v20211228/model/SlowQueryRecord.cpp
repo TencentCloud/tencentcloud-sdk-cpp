@@ -32,7 +32,10 @@ SlowQueryRecord::SlowQueryRecord() :
     m_memoryUsageHasBeenSet(false),
     m_initialAddressHasBeenSet(false),
     m_dbNameHasBeenSet(false),
-    m_isQueryHasBeenSet(false)
+    m_isQueryHasBeenSet(false),
+    m_resultBytesMBHasBeenSet(false),
+    m_memoryUsageMBHasBeenSet(false),
+    m_durationSecHasBeenSet(false)
 {
 }
 
@@ -161,6 +164,36 @@ CoreInternalOutcome SlowQueryRecord::Deserialize(const rapidjson::Value &value)
         m_isQueryHasBeenSet = true;
     }
 
+    if (value.HasMember("ResultBytesMB") && !value["ResultBytesMB"].IsNull())
+    {
+        if (!value["ResultBytesMB"].IsLosslessDouble())
+        {
+            return CoreInternalOutcome(Core::Error("response `SlowQueryRecord.ResultBytesMB` IsLosslessDouble=false incorrectly").SetRequestId(requestId));
+        }
+        m_resultBytesMB = value["ResultBytesMB"].GetDouble();
+        m_resultBytesMBHasBeenSet = true;
+    }
+
+    if (value.HasMember("MemoryUsageMB") && !value["MemoryUsageMB"].IsNull())
+    {
+        if (!value["MemoryUsageMB"].IsLosslessDouble())
+        {
+            return CoreInternalOutcome(Core::Error("response `SlowQueryRecord.MemoryUsageMB` IsLosslessDouble=false incorrectly").SetRequestId(requestId));
+        }
+        m_memoryUsageMB = value["MemoryUsageMB"].GetDouble();
+        m_memoryUsageMBHasBeenSet = true;
+    }
+
+    if (value.HasMember("DurationSec") && !value["DurationSec"].IsNull())
+    {
+        if (!value["DurationSec"].IsLosslessDouble())
+        {
+            return CoreInternalOutcome(Core::Error("response `SlowQueryRecord.DurationSec` IsLosslessDouble=false incorrectly").SetRequestId(requestId));
+        }
+        m_durationSec = value["DurationSec"].GetDouble();
+        m_durationSecHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -262,6 +295,30 @@ void SlowQueryRecord::ToJsonObject(rapidjson::Value &value, rapidjson::Document:
         string key = "IsQuery";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_isQuery, allocator);
+    }
+
+    if (m_resultBytesMBHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ResultBytesMB";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_resultBytesMB, allocator);
+    }
+
+    if (m_memoryUsageMBHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "MemoryUsageMB";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_memoryUsageMB, allocator);
+    }
+
+    if (m_durationSecHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "DurationSec";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_durationSec, allocator);
     }
 
 }
@@ -457,5 +514,53 @@ void SlowQueryRecord::SetIsQuery(const int64_t& _isQuery)
 bool SlowQueryRecord::IsQueryHasBeenSet() const
 {
     return m_isQueryHasBeenSet;
+}
+
+double SlowQueryRecord::GetResultBytesMB() const
+{
+    return m_resultBytesMB;
+}
+
+void SlowQueryRecord::SetResultBytesMB(const double& _resultBytesMB)
+{
+    m_resultBytesMB = _resultBytesMB;
+    m_resultBytesMBHasBeenSet = true;
+}
+
+bool SlowQueryRecord::ResultBytesMBHasBeenSet() const
+{
+    return m_resultBytesMBHasBeenSet;
+}
+
+double SlowQueryRecord::GetMemoryUsageMB() const
+{
+    return m_memoryUsageMB;
+}
+
+void SlowQueryRecord::SetMemoryUsageMB(const double& _memoryUsageMB)
+{
+    m_memoryUsageMB = _memoryUsageMB;
+    m_memoryUsageMBHasBeenSet = true;
+}
+
+bool SlowQueryRecord::MemoryUsageMBHasBeenSet() const
+{
+    return m_memoryUsageMBHasBeenSet;
+}
+
+double SlowQueryRecord::GetDurationSec() const
+{
+    return m_durationSec;
+}
+
+void SlowQueryRecord::SetDurationSec(const double& _durationSec)
+{
+    m_durationSec = _durationSec;
+    m_durationSecHasBeenSet = true;
+}
+
+bool SlowQueryRecord::DurationSecHasBeenSet() const
+{
+    return m_durationSecHasBeenSet;
 }
 

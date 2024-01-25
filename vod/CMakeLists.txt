@@ -589,6 +589,7 @@ set(vod_public_header_model
   include/tencentcloud/vod/v20180717/model/AiRecognitionTaskOcrWordsSegmentItem.h
   include/tencentcloud/vod/v20180717/model/MediaProcessTaskResult.h
   include/tencentcloud/vod/v20180717/model/DeleteWordSamplesResponse.h
+  include/tencentcloud/vod/v20180717/model/MediaCastEvent.h
   include/tencentcloud/vod/v20180717/model/DeleteProcedureTemplateRequest.h
   include/tencentcloud/vod/v20180717/model/WatermarkInput.h
   include/tencentcloud/vod/v20180717/model/AiSampleWordInfo.h
@@ -1387,6 +1388,7 @@ set(vod_src
   src/v20180717/model/AiRecognitionTaskOcrWordsSegmentItem.cpp
   src/v20180717/model/MediaProcessTaskResult.cpp
   src/v20180717/model/DeleteWordSamplesResponse.cpp
+  src/v20180717/model/MediaCastEvent.cpp
   src/v20180717/model/DeleteProcedureTemplateRequest.cpp
   src/v20180717/model/WatermarkInput.cpp
   src/v20180717/model/AiSampleWordInfo.cpp

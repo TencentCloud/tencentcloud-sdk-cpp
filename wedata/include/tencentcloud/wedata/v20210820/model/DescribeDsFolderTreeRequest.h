@@ -64,15 +64,19 @@ namespace TencentCloud
                     bool ProjectIdHasBeenSet() const;
 
                     /**
-                     * 获取是否一级拉取
-                     * @return FirstLevelPull 是否一级拉取
+                     * 获取是否一级拉取 true 是 
+false 否
+                     * @return FirstLevelPull 是否一级拉取 true 是 
+false 否
                      * 
                      */
                     bool GetFirstLevelPull() const;
 
                     /**
-                     * 设置是否一级拉取
-                     * @param _firstLevelPull 是否一级拉取
+                     * 设置是否一级拉取 true 是 
+false 否
+                     * @param _firstLevelPull 是否一级拉取 true 是 
+false 否
                      * 
                      */
                     void SetFirstLevelPull(const bool& _firstLevelPull);
@@ -148,15 +152,19 @@ namespace TencentCloud
                     bool KeywordHasBeenSet() const;
 
                     /**
-                     * 获取是否包含工作流
-                     * @return IncludeWorkflow 是否包含工作流
+                     * 获取是否包含工作流 true 是 
+false 否
+                     * @return IncludeWorkflow 是否包含工作流 true 是 
+false 否
                      * 
                      */
                     bool GetIncludeWorkflow() const;
 
                     /**
-                     * 设置是否包含工作流
-                     * @param _includeWorkflow 是否包含工作流
+                     * 设置是否包含工作流 true 是 
+false 否
+                     * @param _includeWorkflow 是否包含工作流 true 是 
+false 否
                      * 
                      */
                     void SetIncludeWorkflow(const bool& _includeWorkflow);
@@ -169,15 +177,19 @@ namespace TencentCloud
                     bool IncludeWorkflowHasBeenSet() const;
 
                     /**
-                     * 获取是否包含任务
-                     * @return IncludeTask 是否包含任务
+                     * 获取是否包含任务 true 是 
+false 否
+                     * @return IncludeTask 是否包含任务 true 是 
+false 否
                      * 
                      */
                     bool GetIncludeTask() const;
 
                     /**
-                     * 设置是否包含任务
-                     * @param _includeTask 是否包含任务
+                     * 设置是否包含任务 true 是 
+false 否
+                     * @param _includeTask 是否包含任务 true 是 
+false 否
                      * 
                      */
                     void SetIncludeTask(const bool& _includeTask);
@@ -253,15 +265,19 @@ namespace TencentCloud
                     bool DisplayTypeHasBeenSet() const;
 
                     /**
-                     * 获取是否包含任务目录
-                     * @return IncludeTaskFolder 是否包含任务目录
+                     * 获取是否包含任务目录 true 是 
+false 否
+                     * @return IncludeTaskFolder 是否包含任务目录 true 是 
+false 否
                      * 
                      */
                     bool GetIncludeTaskFolder() const;
 
                     /**
-                     * 设置是否包含任务目录
-                     * @param _includeTaskFolder 是否包含任务目录
+                     * 设置是否包含任务目录 true 是 
+false 否
+                     * @param _includeTaskFolder 是否包含任务目录 true 是 
+false 否
                      * 
                      */
                     void SetIncludeTaskFolder(const bool& _includeTaskFolder);
@@ -282,7 +298,8 @@ namespace TencentCloud
                     bool m_projectIdHasBeenSet;
 
                     /**
-                     * 是否一级拉取
+                     * 是否一级拉取 true 是 
+false 否
                      */
                     bool m_firstLevelPull;
                     bool m_firstLevelPullHasBeenSet;
@@ -306,13 +323,15 @@ namespace TencentCloud
                     bool m_keywordHasBeenSet;
 
                     /**
-                     * 是否包含工作流
+                     * 是否包含工作流 true 是 
+false 否
                      */
                     bool m_includeWorkflow;
                     bool m_includeWorkflowHasBeenSet;
 
                     /**
-                     * 是否包含任务
+                     * 是否包含任务 true 是 
+false 否
                      */
                     bool m_includeTask;
                     bool m_includeTaskHasBeenSet;
@@ -336,7 +355,8 @@ namespace TencentCloud
                     bool m_displayTypeHasBeenSet;
 
                     /**
-                     * 是否包含任务目录
+                     * 是否包含任务目录 true 是 
+false 否
                      */
                     bool m_includeTaskFolder;
                     bool m_includeTaskFolderHasBeenSet;

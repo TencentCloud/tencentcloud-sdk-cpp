@@ -65,14 +65,18 @@ namespace TencentCloud
 
                     /**
                      * 获取文件路径
+项目区1470575647377821696项目，f1目录下： /datastudio/project/1470575647377821696/f1/sql1234.sql 个人区： /datastudio/personal/sqlTTT.sql
                      * @return FilePath 文件路径
+项目区1470575647377821696项目，f1目录下： /datastudio/project/1470575647377821696/f1/sql1234.sql 个人区： /datastudio/personal/sqlTTT.sql
                      * 
                      */
                     std::string GetFilePath() const;
 
                     /**
                      * 设置文件路径
+项目区1470575647377821696项目，f1目录下： /datastudio/project/1470575647377821696/f1/sql1234.sql 个人区： /datastudio/personal/sqlTTT.sql
                      * @param _filePath 文件路径
+项目区1470575647377821696项目，f1目录下： /datastudio/project/1470575647377821696/f1/sql1234.sql 个人区： /datastudio/personal/sqlTTT.sql
                      * 
                      */
                     void SetFilePath(const std::string& _filePath);
@@ -94,6 +98,7 @@ namespace TencentCloud
 
                     /**
                      * 文件路径
+项目区1470575647377821696项目，f1目录下： /datastudio/project/1470575647377821696/f1/sql1234.sql 个人区： /datastudio/personal/sqlTTT.sql
                      */
                     std::string m_filePath;
                     bool m_filePathHasBeenSet;

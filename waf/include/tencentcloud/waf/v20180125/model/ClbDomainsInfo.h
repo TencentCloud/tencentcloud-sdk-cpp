@@ -36,7 +36,7 @@ namespace TencentCloud
             namespace Model
             {
                 /**
-                * clb域名详情
+                * 负载均衡型WAF域名详情
                 */
                 class ClbDomainsInfo : public AbstractModel
                 {
@@ -69,15 +69,15 @@ namespace TencentCloud
                     bool DomainHasBeenSet() const;
 
                     /**
-                     * 获取域名id
-                     * @return DomainId 域名id
+                     * 获取域名唯一ID
+                     * @return DomainId 域名唯一ID
                      * 
                      */
                     std::string GetDomainId() const;
 
                     /**
-                     * 设置域名id
-                     * @param _domainId 域名id
+                     * 设置域名唯一ID
+                     * @param _domainId 域名唯一ID
                      * 
                      */
                     void SetDomainId(const std::string& _domainId);
@@ -90,15 +90,15 @@ namespace TencentCloud
                     bool DomainIdHasBeenSet() const;
 
                     /**
-                     * 获取实例id
-                     * @return InstanceId 实例id
+                     * 获取域名所属实例ID
+                     * @return InstanceId 域名所属实例ID
                      * 
                      */
                     std::string GetInstanceId() const;
 
                     /**
-                     * 设置实例id
-                     * @param _instanceId 实例id
+                     * 设置域名所属实例ID
+                     * @param _instanceId 域名所属实例ID
                      * 
                      */
                     void SetInstanceId(const std::string& _instanceId);
@@ -111,15 +111,15 @@ namespace TencentCloud
                     bool InstanceIdHasBeenSet() const;
 
                     /**
-                     * 获取实例名
-                     * @return InstanceName 实例名
+                     * 获取域名所属实例名
+                     * @return InstanceName 域名所属实例名
                      * 
                      */
                     std::string GetInstanceName() const;
 
                     /**
-                     * 设置实例名
-                     * @param _instanceName 实例名
+                     * 设置域名所属实例名
+                     * @param _instanceName 域名所属实例名
                      * 
                      */
                     void SetInstanceName(const std::string& _instanceName);
@@ -132,15 +132,15 @@ namespace TencentCloud
                     bool InstanceNameHasBeenSet() const;
 
                     /**
-                     * 获取waf类型
-                     * @return Edition waf类型
+                     * 获取域名所属实例类型
+                     * @return Edition 域名所属实例类型
                      * 
                      */
                     std::string GetEdition() const;
 
                     /**
-                     * 设置waf类型
-                     * @param _edition waf类型
+                     * 设置域名所属实例类型
+                     * @param _edition 域名所属实例类型
                      * 
                      */
                     void SetEdition(const std::string& _edition);
@@ -153,15 +153,15 @@ namespace TencentCloud
                     bool EditionHasBeenSet() const;
 
                     /**
-                     * 获取是否是cdn
-                     * @return IsCdn 是否是cdn
+                     * 获取waf前是否部署有七层代理服务。 0：没有部署代理服务 1：有部署代理服务，waf将使用XFF获取客户端IP 2：有部署代理服务，waf将使用remote_addr获取客户端IP 3：有部署代理服务，waf将使用ip_headers中的自定义header获取客户端IP
+                     * @return IsCdn waf前是否部署有七层代理服务。 0：没有部署代理服务 1：有部署代理服务，waf将使用XFF获取客户端IP 2：有部署代理服务，waf将使用remote_addr获取客户端IP 3：有部署代理服务，waf将使用ip_headers中的自定义header获取客户端IP
                      * 
                      */
                     uint64_t GetIsCdn() const;
 
                     /**
-                     * 设置是否是cdn
-                     * @param _isCdn 是否是cdn
+                     * 设置waf前是否部署有七层代理服务。 0：没有部署代理服务 1：有部署代理服务，waf将使用XFF获取客户端IP 2：有部署代理服务，waf将使用remote_addr获取客户端IP 3：有部署代理服务，waf将使用ip_headers中的自定义header获取客户端IP
+                     * @param _isCdn waf前是否部署有七层代理服务。 0：没有部署代理服务 1：有部署代理服务，waf将使用XFF获取客户端IP 2：有部署代理服务，waf将使用remote_addr获取客户端IP 3：有部署代理服务，waf将使用ip_headers中的自定义header获取客户端IP
                      * 
                      */
                     void SetIsCdn(const uint64_t& _isCdn);
@@ -174,15 +174,15 @@ namespace TencentCloud
                     bool IsCdnHasBeenSet() const;
 
                     /**
-                     * 获取负载均衡算法
-                     * @return LoadBalancerSet 负载均衡算法
+                     * 获取负载均衡类型为clb时，对应的负载均衡器信息
+                     * @return LoadBalancerSet 负载均衡类型为clb时，对应的负载均衡器信息
                      * 
                      */
                     std::vector<LoadBalancerPackageNew> GetLoadBalancerSet() const;
 
                     /**
-                     * 设置负载均衡算法
-                     * @param _loadBalancerSet 负载均衡算法
+                     * 设置负载均衡类型为clb时，对应的负载均衡器信息
+                     * @param _loadBalancerSet 负载均衡类型为clb时，对应的负载均衡器信息
                      * 
                      */
                     void SetLoadBalancerSet(const std::vector<LoadBalancerPackageNew>& _loadBalancerSet);
@@ -195,15 +195,15 @@ namespace TencentCloud
                     bool LoadBalancerSetHasBeenSet() const;
 
                     /**
-                     * 获取镜像模式
-                     * @return FlowMode 镜像模式
+                     * 获取负载均衡型WAF的流量模式，1：清洗模式，0：镜像模式
+                     * @return FlowMode 负载均衡型WAF的流量模式，1：清洗模式，0：镜像模式
                      * 
                      */
                     uint64_t GetFlowMode() const;
 
                     /**
-                     * 设置镜像模式
-                     * @param _flowMode 镜像模式
+                     * 设置负载均衡型WAF的流量模式，1：清洗模式，0：镜像模式
+                     * @param _flowMode 负载均衡型WAF的流量模式，1：清洗模式，0：镜像模式
                      * 
                      */
                     void SetFlowMode(const uint64_t& _flowMode);
@@ -216,18 +216,18 @@ namespace TencentCloud
                     bool FlowModeHasBeenSet() const;
 
                     /**
-                     * 获取绑定clb状态
+                     * 获取域名绑定负载均衡器状态
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return State 绑定clb状态
+                     * @return State 域名绑定负载均衡器状态
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetState() const;
 
                     /**
-                     * 设置绑定clb状态
+                     * 设置域名绑定负载均衡器状态
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _state 绑定clb状态
+                     * @param _state 域名绑定负载均衡器状态
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -291,18 +291,18 @@ namespace TencentCloud
                     bool IpHeadersHasBeenSet() const;
 
                     /**
-                     * 获取cdc类型会增加集群信息
+                     * 获取cdc-clb-waf类型WAF的CDC集群信息
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return CdcClusters cdc类型会增加集群信息
+                     * @return CdcClusters cdc-clb-waf类型WAF的CDC集群信息
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetCdcClusters() const;
 
                     /**
-                     * 设置cdc类型会增加集群信息
+                     * 设置cdc-clb-waf类型WAF的CDC集群信息
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _cdcClusters cdc类型会增加集群信息
+                     * @param _cdcClusters cdc-clb-waf类型WAF的CDC集群信息
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -340,6 +340,31 @@ namespace TencentCloud
                      */
                     bool CloudTypeHasBeenSet() const;
 
+                    /**
+                     * 获取域名备注信息
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return Note 域名备注信息
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::string GetNote() const;
+
+                    /**
+                     * 设置域名备注信息
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _note 域名备注信息
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetNote(const std::string& _note);
+
+                    /**
+                     * 判断参数 Note 是否已赋值
+                     * @return Note 是否已赋值
+                     * 
+                     */
+                    bool NoteHasBeenSet() const;
+
                 private:
 
                     /**
@@ -349,49 +374,49 @@ namespace TencentCloud
                     bool m_domainHasBeenSet;
 
                     /**
-                     * 域名id
+                     * 域名唯一ID
                      */
                     std::string m_domainId;
                     bool m_domainIdHasBeenSet;
 
                     /**
-                     * 实例id
+                     * 域名所属实例ID
                      */
                     std::string m_instanceId;
                     bool m_instanceIdHasBeenSet;
 
                     /**
-                     * 实例名
+                     * 域名所属实例名
                      */
                     std::string m_instanceName;
                     bool m_instanceNameHasBeenSet;
 
                     /**
-                     * waf类型
+                     * 域名所属实例类型
                      */
                     std::string m_edition;
                     bool m_editionHasBeenSet;
 
                     /**
-                     * 是否是cdn
+                     * waf前是否部署有七层代理服务。 0：没有部署代理服务 1：有部署代理服务，waf将使用XFF获取客户端IP 2：有部署代理服务，waf将使用remote_addr获取客户端IP 3：有部署代理服务，waf将使用ip_headers中的自定义header获取客户端IP
                      */
                     uint64_t m_isCdn;
                     bool m_isCdnHasBeenSet;
 
                     /**
-                     * 负载均衡算法
+                     * 负载均衡类型为clb时，对应的负载均衡器信息
                      */
                     std::vector<LoadBalancerPackageNew> m_loadBalancerSet;
                     bool m_loadBalancerSetHasBeenSet;
 
                     /**
-                     * 镜像模式
+                     * 负载均衡型WAF的流量模式，1：清洗模式，0：镜像模式
                      */
                     uint64_t m_flowMode;
                     bool m_flowModeHasBeenSet;
 
                     /**
-                     * 绑定clb状态
+                     * 域名绑定负载均衡器状态
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_state;
@@ -412,7 +437,7 @@ namespace TencentCloud
                     bool m_ipHeadersHasBeenSet;
 
                     /**
-                     * cdc类型会增加集群信息
+                     * cdc-clb-waf类型WAF的CDC集群信息
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_cdcClusters;
@@ -424,6 +449,13 @@ namespace TencentCloud
                      */
                     std::string m_cloudType;
                     bool m_cloudTypeHasBeenSet;
+
+                    /**
+                     * 域名备注信息
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_note;
+                    bool m_noteHasBeenSet;
 
                 };
             }

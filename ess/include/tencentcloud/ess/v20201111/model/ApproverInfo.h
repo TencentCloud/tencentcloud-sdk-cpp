@@ -766,6 +766,35 @@ namespace TencentCloud
                      */
                     bool SignInstructionContentHasBeenSet() const;
 
+                    /**
+                     * 获取签署人的签署截止时间，格式为Unix标准时间戳（秒）
+
+注: `若不设置此参数，则默认使用合同的截止时间，此参数暂不支持合同组子合同`
+                     * @return Deadline 签署人的签署截止时间，格式为Unix标准时间戳（秒）
+
+注: `若不设置此参数，则默认使用合同的截止时间，此参数暂不支持合同组子合同`
+                     * 
+                     */
+                    int64_t GetDeadline() const;
+
+                    /**
+                     * 设置签署人的签署截止时间，格式为Unix标准时间戳（秒）
+
+注: `若不设置此参数，则默认使用合同的截止时间，此参数暂不支持合同组子合同`
+                     * @param _deadline 签署人的签署截止时间，格式为Unix标准时间戳（秒）
+
+注: `若不设置此参数，则默认使用合同的截止时间，此参数暂不支持合同组子合同`
+                     * 
+                     */
+                    void SetDeadline(const int64_t& _deadline);
+
+                    /**
+                     * 判断参数 Deadline 是否已赋值
+                     * @return Deadline 是否已赋值
+                     * 
+                     */
+                    bool DeadlineHasBeenSet() const;
+
                 private:
 
                     /**
@@ -962,6 +991,14 @@ namespace TencentCloud
                      */
                     std::string m_signInstructionContent;
                     bool m_signInstructionContentHasBeenSet;
+
+                    /**
+                     * 签署人的签署截止时间，格式为Unix标准时间戳（秒）
+
+注: `若不设置此参数，则默认使用合同的截止时间，此参数暂不支持合同组子合同`
+                     */
+                    int64_t m_deadline;
+                    bool m_deadlineHasBeenSet;
 
                 };
             }

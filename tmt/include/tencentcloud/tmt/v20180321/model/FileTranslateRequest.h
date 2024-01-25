@@ -297,15 +297,15 @@ lo（老挝语）：zh（简体中文）、zh-HK（繁体中文）、 zh-TW（�
                     bool BasicDocumentTypeHasBeenSet() const;
 
                     /**
-                     * 获取回调url，文件大于10MB，建议采用回调方式；回调时，所有内容会放入 Body 中。
-                     * @return CallbackUrl 回调url，文件大于10MB，建议采用回调方式；回调时，所有内容会放入 Body 中。
+                     * 获取回调url，文件大于10MB，建议采用回调方式；回调时，所有内容会放入 Body 中，具体请参见[文件翻译回调说明](https://cloud.tencent.com/document/product/551/91138)。
+                     * @return CallbackUrl 回调url，文件大于10MB，建议采用回调方式；回调时，所有内容会放入 Body 中，具体请参见[文件翻译回调说明](https://cloud.tencent.com/document/product/551/91138)。
                      * 
                      */
                     std::string GetCallbackUrl() const;
 
                     /**
-                     * 设置回调url，文件大于10MB，建议采用回调方式；回调时，所有内容会放入 Body 中。
-                     * @param _callbackUrl 回调url，文件大于10MB，建议采用回调方式；回调时，所有内容会放入 Body 中。
+                     * 设置回调url，文件大于10MB，建议采用回调方式；回调时，所有内容会放入 Body 中，具体请参见[文件翻译回调说明](https://cloud.tencent.com/document/product/551/91138)。
+                     * @param _callbackUrl 回调url，文件大于10MB，建议采用回调方式；回调时，所有内容会放入 Body 中，具体请参见[文件翻译回调说明](https://cloud.tencent.com/document/product/551/91138)。
                      * 
                      */
                     void SetCallbackUrl(const std::string& _callbackUrl);
@@ -409,7 +409,7 @@ lo（老挝语）：zh（简体中文）、zh-HK（繁体中文）、 zh-TW（�
                     bool m_basicDocumentTypeHasBeenSet;
 
                     /**
-                     * 回调url，文件大于10MB，建议采用回调方式；回调时，所有内容会放入 Body 中。
+                     * 回调url，文件大于10MB，建议采用回调方式；回调时，所有内容会放入 Body 中，具体请参见[文件翻译回调说明](https://cloud.tencent.com/document/product/551/91138)。
                      */
                     std::string m_callbackUrl;
                     bool m_callbackUrlHasBeenSet;

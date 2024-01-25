@@ -98,6 +98,22 @@ running 初始化完成，运行中
                      */
                     bool EksClusterIdHasBeenSet() const;
 
+                    /**
+                     * 获取eks集群内pod的安全组
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return SecurityGroupId eks集群内pod的安全组
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::string GetSecurityGroupId() const;
+
+                    /**
+                     * 判断参数 SecurityGroupId 是否已赋值
+                     * @return SecurityGroupId 是否已赋值
+                     * 
+                     */
+                    bool SecurityGroupIdHasBeenSet() const;
+
                 private:
 
                     /**
@@ -123,6 +139,13 @@ running 初始化完成，运行中
                      */
                     std::string m_eksClusterId;
                     bool m_eksClusterIdHasBeenSet;
+
+                    /**
+                     * eks集群内pod的安全组
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_securityGroupId;
+                    bool m_securityGroupIdHasBeenSet;
 
                 };
             }

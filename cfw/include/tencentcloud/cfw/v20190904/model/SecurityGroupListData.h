@@ -687,6 +687,27 @@ namespace TencentCloud
                      */
                     bool ParameterNameHasBeenSet() const;
 
+                    /**
+                     * 获取端口协议类型参数模板名称
+                     * @return ProtocolPortName 端口协议类型参数模板名称
+                     * 
+                     */
+                    std::string GetProtocolPortName() const;
+
+                    /**
+                     * 设置端口协议类型参数模板名称
+                     * @param _protocolPortName 端口协议类型参数模板名称
+                     * 
+                     */
+                    void SetProtocolPortName(const std::string& _protocolPortName);
+
+                    /**
+                     * 判断参数 ProtocolPortName 是否已赋值
+                     * @return ProtocolPortName 是否已赋值
+                     * 
+                     */
+                    bool ProtocolPortNameHasBeenSet() const;
+
                 private:
 
                     /**
@@ -869,6 +890,12 @@ namespace TencentCloud
                      */
                     std::string m_parameterName;
                     bool m_parameterNameHasBeenSet;
+
+                    /**
+                     * 端口协议类型参数模板名称
+                     */
+                    std::string m_protocolPortName;
+                    bool m_protocolPortNameHasBeenSet;
 
                 };
             }

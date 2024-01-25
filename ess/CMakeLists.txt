@@ -119,9 +119,10 @@ set(ess_public_header_model
   include/tencentcloud/ess/v20201111/model/DescribeFileUrlsRequest.h
   include/tencentcloud/ess/v20201111/model/FormField.h
   include/tencentcloud/ess/v20201111/model/CreateUserAutoSignSealUrlRequest.h
+  include/tencentcloud/ess/v20201111/model/ModifyFlowDeadlineRequest.h
   include/tencentcloud/ess/v20201111/model/UserInfo.h
   include/tencentcloud/ess/v20201111/model/CreateFlowApproversRequest.h
-  include/tencentcloud/ess/v20201111/model/ModifyIntegrationRoleResponse.h
+  include/tencentcloud/ess/v20201111/model/ModifyFlowDeadlineResponse.h
   include/tencentcloud/ess/v20201111/model/ExtendAuthInfo.h
   include/tencentcloud/ess/v20201111/model/FlowCreateApprover.h
   include/tencentcloud/ess/v20201111/model/ApproverComponentLimitType.h
@@ -211,6 +212,7 @@ set(ess_public_header_model
   include/tencentcloud/ess/v20201111/model/Admin.h
   include/tencentcloud/ess/v20201111/model/Caller.h
   include/tencentcloud/ess/v20201111/model/DescribeFlowTemplatesResponse.h
+  include/tencentcloud/ess/v20201111/model/ModifyIntegrationRoleResponse.h
   include/tencentcloud/ess/v20201111/model/UploadFilesRequest.h
   include/tencentcloud/ess/v20201111/model/DescribePersonCertificateRequest.h
   include/tencentcloud/ess/v20201111/model/RelieveInfo.h
@@ -336,9 +338,10 @@ set(ess_src
   src/v20201111/model/DescribeFileUrlsRequest.cpp
   src/v20201111/model/FormField.cpp
   src/v20201111/model/CreateUserAutoSignSealUrlRequest.cpp
+  src/v20201111/model/ModifyFlowDeadlineRequest.cpp
   src/v20201111/model/UserInfo.cpp
   src/v20201111/model/CreateFlowApproversRequest.cpp
-  src/v20201111/model/ModifyIntegrationRoleResponse.cpp
+  src/v20201111/model/ModifyFlowDeadlineResponse.cpp
   src/v20201111/model/ExtendAuthInfo.cpp
   src/v20201111/model/FlowCreateApprover.cpp
   src/v20201111/model/ApproverComponentLimitType.cpp
@@ -428,6 +431,7 @@ set(ess_src
   src/v20201111/model/Admin.cpp
   src/v20201111/model/Caller.cpp
   src/v20201111/model/DescribeFlowTemplatesResponse.cpp
+  src/v20201111/model/ModifyIntegrationRoleResponse.cpp
   src/v20201111/model/UploadFilesRequest.cpp
   src/v20201111/model/DescribePersonCertificateRequest.cpp
   src/v20201111/model/RelieveInfo.cpp

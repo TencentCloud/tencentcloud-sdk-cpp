@@ -204,10 +204,10 @@ namespace TencentCloud
                     /**
                      * 获取告警码说明：
 WARN_COPY_CARD 黑白复印件告警
-WARN_RESHOOT_SCREENED_CARD 翻拍件告警
+WARN_RESHOOT_CARD翻拍件告警
                      * @return RecognizeWarnMsg 告警码说明：
 WARN_COPY_CARD 黑白复印件告警
-WARN_RESHOOT_SCREENED_CARD 翻拍件告警
+WARN_RESHOOT_CARD翻拍件告警
                      * 
                      */
                     std::vector<std::string> GetRecognizeWarnMsg() const;
@@ -338,7 +338,7 @@ WARN_RESHOOT_SCREENED_CARD 翻拍件告警
                     /**
                      * 告警码说明：
 WARN_COPY_CARD 黑白复印件告警
-WARN_RESHOOT_SCREENED_CARD 翻拍件告警
+WARN_RESHOOT_CARD翻拍件告警
                      */
                     std::vector<std::string> m_recognizeWarnMsg;
                     bool m_recognizeWarnMsgHasBeenSet;

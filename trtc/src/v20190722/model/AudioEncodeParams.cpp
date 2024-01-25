@@ -23,7 +23,8 @@ using namespace std;
 AudioEncodeParams::AudioEncodeParams() :
     m_sampleRateHasBeenSet(false),
     m_channelHasBeenSet(false),
-    m_bitRateHasBeenSet(false)
+    m_bitRateHasBeenSet(false),
+    m_volumeHasBeenSet(false)
 {
 }
 
@@ -62,6 +63,16 @@ CoreInternalOutcome AudioEncodeParams::Deserialize(const rapidjson::Value &value
         m_bitRateHasBeenSet = true;
     }
 
+    if (value.HasMember("Volume") && !value["Volume"].IsNull())
+    {
+        if (!value["Volume"].IsUint64())
+        {
+            return CoreInternalOutcome(Core::Error("response `AudioEncodeParams.Volume` IsUint64=false incorrectly").SetRequestId(requestId));
+        }
+        m_volume = value["Volume"].GetUint64();
+        m_volumeHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -91,6 +102,14 @@ void AudioEncodeParams::ToJsonObject(rapidjson::Value &value, rapidjson::Documen
         string key = "BitRate";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_bitRate, allocator);
+    }
+
+    if (m_volumeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Volume";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_volume, allocator);
     }
 
 }
@@ -142,5 +161,21 @@ void AudioEncodeParams::SetBitRate(const uint64_t& _bitRate)
 bool AudioEncodeParams::BitRateHasBeenSet() const
 {
     return m_bitRateHasBeenSet;
+}
+
+uint64_t AudioEncodeParams::GetVolume() const
+{
+    return m_volume;
+}
+
+void AudioEncodeParams::SetVolume(const uint64_t& _volume)
+{
+    m_volume = _volume;
+    m_volumeHasBeenSet = true;
+}
+
+bool AudioEncodeParams::VolumeHasBeenSet() const
+{
+    return m_volumeHasBeenSet;
 }
 

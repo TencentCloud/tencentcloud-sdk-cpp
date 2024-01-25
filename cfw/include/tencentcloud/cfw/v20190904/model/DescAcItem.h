@@ -764,6 +764,56 @@ namespace TencentCloud
                      */
                     bool ParamTemplateIdHasBeenSet() const;
 
+                    /**
+                     * 获取访问源名称
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return SourceName 访问源名称
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::string GetSourceName() const;
+
+                    /**
+                     * 设置访问源名称
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _sourceName 访问源名称
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetSourceName(const std::string& _sourceName);
+
+                    /**
+                     * 判断参数 SourceName 是否已赋值
+                     * @return SourceName 是否已赋值
+                     * 
+                     */
+                    bool SourceNameHasBeenSet() const;
+
+                    /**
+                     * 获取访问目的名称
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return TargetName 访问目的名称
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::string GetTargetName() const;
+
+                    /**
+                     * 设置访问目的名称
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _targetName 访问目的名称
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetTargetName(const std::string& _targetName);
+
+                    /**
+                     * 判断参数 TargetName 是否已赋值
+                     * @return TargetName 是否已赋值
+                     * 
+                     */
+                    bool TargetNameHasBeenSet() const;
+
                 private:
 
                     /**
@@ -966,6 +1016,20 @@ namespace TencentCloud
                      */
                     std::string m_paramTemplateId;
                     bool m_paramTemplateIdHasBeenSet;
+
+                    /**
+                     * 访问源名称
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_sourceName;
+                    bool m_sourceNameHasBeenSet;
+
+                    /**
+                     * 访问目的名称
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_targetName;
+                    bool m_targetNameHasBeenSet;
 
                 };
             }

@@ -119,6 +119,7 @@ set(essbasic_public_header_model
   include/tencentcloud/essbasic/v20210526/model/CreatePartnerAutoSignAuthUrlResponse.h
   include/tencentcloud/essbasic/v20210526/model/FlowInfo.h
   include/tencentcloud/essbasic/v20210526/model/UserInfo.h
+  include/tencentcloud/essbasic/v20210526/model/ModifyFlowDeadlineResponse.h
   include/tencentcloud/essbasic/v20210526/model/TaskInfo.h
   include/tencentcloud/essbasic/v20210526/model/ChannelCreateBoundFlowsResponse.h
   include/tencentcloud/essbasic/v20210526/model/ChannelCreateUserAutoSignSealUrlResponse.h
@@ -195,6 +196,7 @@ set(essbasic_public_header_model
   include/tencentcloud/essbasic/v20210526/model/ChannelBatchCancelFlowsRequest.h
   include/tencentcloud/essbasic/v20210526/model/CreateChannelOrganizationInfoChangeUrlRequest.h
   include/tencentcloud/essbasic/v20210526/model/ChannelModifyRoleRequest.h
+  include/tencentcloud/essbasic/v20210526/model/ModifyFlowDeadlineRequest.h
   include/tencentcloud/essbasic/v20210526/model/ChannelUpdateSealStatusRequest.h
   include/tencentcloud/essbasic/v20210526/model/ChannelCreateFlowGroupByTemplatesRequest.h
   include/tencentcloud/essbasic/v20210526/model/SignUrl.h
@@ -458,6 +460,7 @@ set(essbasic_src
   src/v20210526/model/CreatePartnerAutoSignAuthUrlResponse.cpp
   src/v20210526/model/FlowInfo.cpp
   src/v20210526/model/UserInfo.cpp
+  src/v20210526/model/ModifyFlowDeadlineResponse.cpp
   src/v20210526/model/TaskInfo.cpp
   src/v20210526/model/ChannelCreateBoundFlowsResponse.cpp
   src/v20210526/model/ChannelCreateUserAutoSignSealUrlResponse.cpp
@@ -534,6 +537,7 @@ set(essbasic_src
   src/v20210526/model/ChannelBatchCancelFlowsRequest.cpp
   src/v20210526/model/CreateChannelOrganizationInfoChangeUrlRequest.cpp
   src/v20210526/model/ChannelModifyRoleRequest.cpp
+  src/v20210526/model/ModifyFlowDeadlineRequest.cpp
   src/v20210526/model/ChannelUpdateSealStatusRequest.cpp
   src/v20210526/model/ChannelCreateFlowGroupByTemplatesRequest.cpp
   src/v20210526/model/SignUrl.cpp

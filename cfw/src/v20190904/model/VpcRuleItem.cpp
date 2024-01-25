@@ -41,7 +41,9 @@ VpcRuleItem::VpcRuleItem() :
     m_fwGroupNameHasBeenSet(false),
     m_betaListHasBeenSet(false),
     m_paramTemplateIdHasBeenSet(false),
-    m_paramTemplateNameHasBeenSet(false)
+    m_paramTemplateNameHasBeenSet(false),
+    m_targetNameHasBeenSet(false),
+    m_sourceNameHasBeenSet(false)
 {
 }
 
@@ -270,6 +272,26 @@ CoreInternalOutcome VpcRuleItem::Deserialize(const rapidjson::Value &value)
         m_paramTemplateNameHasBeenSet = true;
     }
 
+    if (value.HasMember("TargetName") && !value["TargetName"].IsNull())
+    {
+        if (!value["TargetName"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `VpcRuleItem.TargetName` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_targetName = string(value["TargetName"].GetString());
+        m_targetNameHasBeenSet = true;
+    }
+
+    if (value.HasMember("SourceName") && !value["SourceName"].IsNull())
+    {
+        if (!value["SourceName"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `VpcRuleItem.SourceName` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_sourceName = string(value["SourceName"].GetString());
+        m_sourceNameHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -450,6 +472,22 @@ void VpcRuleItem::ToJsonObject(rapidjson::Value &value, rapidjson::Document::All
         string key = "ParamTemplateName";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_paramTemplateName.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_targetNameHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "TargetName";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_targetName.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_sourceNameHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "SourceName";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_sourceName.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -789,5 +827,37 @@ void VpcRuleItem::SetParamTemplateName(const string& _paramTemplateName)
 bool VpcRuleItem::ParamTemplateNameHasBeenSet() const
 {
     return m_paramTemplateNameHasBeenSet;
+}
+
+string VpcRuleItem::GetTargetName() const
+{
+    return m_targetName;
+}
+
+void VpcRuleItem::SetTargetName(const string& _targetName)
+{
+    m_targetName = _targetName;
+    m_targetNameHasBeenSet = true;
+}
+
+bool VpcRuleItem::TargetNameHasBeenSet() const
+{
+    return m_targetNameHasBeenSet;
+}
+
+string VpcRuleItem::GetSourceName() const
+{
+    return m_sourceName;
+}
+
+void VpcRuleItem::SetSourceName(const string& _sourceName)
+{
+    m_sourceName = _sourceName;
+    m_sourceNameHasBeenSet = true;
+}
+
+bool VpcRuleItem::SourceNameHasBeenSet() const
+{
+    return m_sourceNameHasBeenSet;
 }
 
