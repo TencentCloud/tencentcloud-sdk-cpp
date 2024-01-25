@@ -84,6 +84,31 @@ namespace TencentCloud
                      */
                     bool RetImageHasBeenSet() const;
 
+                    /**
+                     * 获取图片的 Url 地址。要求图片经Base64编码后不超过 7M，分辨率建议500*800以上，支持PNG、JPG、JPEG、BMP格式。建议卡片部分占据图片2/3以上。图片下载时间不超过 3 秒。
+建议图片存储于腾讯云，可保障更高的下载速度和稳定性。
+                     * @return ImageUrl 图片的 Url 地址。要求图片经Base64编码后不超过 7M，分辨率建议500*800以上，支持PNG、JPG、JPEG、BMP格式。建议卡片部分占据图片2/3以上。图片下载时间不超过 3 秒。
+建议图片存储于腾讯云，可保障更高的下载速度和稳定性。
+                     * 
+                     */
+                    std::string GetImageUrl() const;
+
+                    /**
+                     * 设置图片的 Url 地址。要求图片经Base64编码后不超过 7M，分辨率建议500*800以上，支持PNG、JPG、JPEG、BMP格式。建议卡片部分占据图片2/3以上。图片下载时间不超过 3 秒。
+建议图片存储于腾讯云，可保障更高的下载速度和稳定性。
+                     * @param _imageUrl 图片的 Url 地址。要求图片经Base64编码后不超过 7M，分辨率建议500*800以上，支持PNG、JPG、JPEG、BMP格式。建议卡片部分占据图片2/3以上。图片下载时间不超过 3 秒。
+建议图片存储于腾讯云，可保障更高的下载速度和稳定性。
+                     * 
+                     */
+                    void SetImageUrl(const std::string& _imageUrl);
+
+                    /**
+                     * 判断参数 ImageUrl 是否已赋值
+                     * @return ImageUrl 是否已赋值
+                     * 
+                     */
+                    bool ImageUrlHasBeenSet() const;
+
                 private:
 
                     /**
@@ -97,6 +122,13 @@ namespace TencentCloud
                      */
                     bool m_retImage;
                     bool m_retImageHasBeenSet;
+
+                    /**
+                     * 图片的 Url 地址。要求图片经Base64编码后不超过 7M，分辨率建议500*800以上，支持PNG、JPG、JPEG、BMP格式。建议卡片部分占据图片2/3以上。图片下载时间不超过 3 秒。
+建议图片存储于腾讯云，可保障更高的下载速度和稳定性。
+                     */
+                    std::string m_imageUrl;
+                    bool m_imageUrlHasBeenSet;
 
                 };
             }

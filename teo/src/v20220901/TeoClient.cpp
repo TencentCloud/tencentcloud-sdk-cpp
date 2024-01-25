@@ -427,6 +427,92 @@ TeoClient::CreateConfigGroupVersionOutcomeCallable TeoClient::CreateConfigGroupV
     return task->get_future();
 }
 
+TeoClient::CreateL4ProxyOutcome TeoClient::CreateL4Proxy(const CreateL4ProxyRequest &request)
+{
+    auto outcome = MakeRequest(request, "CreateL4Proxy");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        CreateL4ProxyResponse rsp = CreateL4ProxyResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return CreateL4ProxyOutcome(rsp);
+        else
+            return CreateL4ProxyOutcome(o.GetError());
+    }
+    else
+    {
+        return CreateL4ProxyOutcome(outcome.GetError());
+    }
+}
+
+void TeoClient::CreateL4ProxyAsync(const CreateL4ProxyRequest& request, const CreateL4ProxyAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->CreateL4Proxy(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+TeoClient::CreateL4ProxyOutcomeCallable TeoClient::CreateL4ProxyCallable(const CreateL4ProxyRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<CreateL4ProxyOutcome()>>(
+        [this, request]()
+        {
+            return this->CreateL4Proxy(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+TeoClient::CreateL4ProxyRulesOutcome TeoClient::CreateL4ProxyRules(const CreateL4ProxyRulesRequest &request)
+{
+    auto outcome = MakeRequest(request, "CreateL4ProxyRules");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        CreateL4ProxyRulesResponse rsp = CreateL4ProxyRulesResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return CreateL4ProxyRulesOutcome(rsp);
+        else
+            return CreateL4ProxyRulesOutcome(o.GetError());
+    }
+    else
+    {
+        return CreateL4ProxyRulesOutcome(outcome.GetError());
+    }
+}
+
+void TeoClient::CreateL4ProxyRulesAsync(const CreateL4ProxyRulesRequest& request, const CreateL4ProxyRulesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->CreateL4ProxyRules(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+TeoClient::CreateL4ProxyRulesOutcomeCallable TeoClient::CreateL4ProxyRulesCallable(const CreateL4ProxyRulesRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<CreateL4ProxyRulesOutcome()>>(
+        [this, request]()
+        {
+            return this->CreateL4ProxyRules(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 TeoClient::CreateOriginGroupOutcome TeoClient::CreateOriginGroup(const CreateOriginGroupRequest &request)
 {
     auto outcome = MakeRequest(request, "CreateOriginGroup");
@@ -936,6 +1022,92 @@ TeoClient::DeleteApplicationProxyRuleOutcomeCallable TeoClient::DeleteApplicatio
         [this, request]()
         {
             return this->DeleteApplicationProxyRule(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+TeoClient::DeleteL4ProxyOutcome TeoClient::DeleteL4Proxy(const DeleteL4ProxyRequest &request)
+{
+    auto outcome = MakeRequest(request, "DeleteL4Proxy");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DeleteL4ProxyResponse rsp = DeleteL4ProxyResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DeleteL4ProxyOutcome(rsp);
+        else
+            return DeleteL4ProxyOutcome(o.GetError());
+    }
+    else
+    {
+        return DeleteL4ProxyOutcome(outcome.GetError());
+    }
+}
+
+void TeoClient::DeleteL4ProxyAsync(const DeleteL4ProxyRequest& request, const DeleteL4ProxyAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DeleteL4Proxy(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+TeoClient::DeleteL4ProxyOutcomeCallable TeoClient::DeleteL4ProxyCallable(const DeleteL4ProxyRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DeleteL4ProxyOutcome()>>(
+        [this, request]()
+        {
+            return this->DeleteL4Proxy(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+TeoClient::DeleteL4ProxyRulesOutcome TeoClient::DeleteL4ProxyRules(const DeleteL4ProxyRulesRequest &request)
+{
+    auto outcome = MakeRequest(request, "DeleteL4ProxyRules");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DeleteL4ProxyRulesResponse rsp = DeleteL4ProxyRulesResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DeleteL4ProxyRulesOutcome(rsp);
+        else
+            return DeleteL4ProxyRulesOutcome(o.GetError());
+    }
+    else
+    {
+        return DeleteL4ProxyRulesOutcome(outcome.GetError());
+    }
+}
+
+void TeoClient::DeleteL4ProxyRulesAsync(const DeleteL4ProxyRulesRequest& request, const DeleteL4ProxyRulesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DeleteL4ProxyRules(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+TeoClient::DeleteL4ProxyRulesOutcomeCallable TeoClient::DeleteL4ProxyRulesCallable(const DeleteL4ProxyRulesRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DeleteL4ProxyRulesOutcome()>>(
+        [this, request]()
+        {
+            return this->DeleteL4ProxyRules(request);
         }
     );
 
@@ -1882,6 +2054,92 @@ TeoClient::DescribeIdentificationsOutcomeCallable TeoClient::DescribeIdentificat
         [this, request]()
         {
             return this->DescribeIdentifications(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+TeoClient::DescribeL4ProxyOutcome TeoClient::DescribeL4Proxy(const DescribeL4ProxyRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeL4Proxy");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeL4ProxyResponse rsp = DescribeL4ProxyResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeL4ProxyOutcome(rsp);
+        else
+            return DescribeL4ProxyOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeL4ProxyOutcome(outcome.GetError());
+    }
+}
+
+void TeoClient::DescribeL4ProxyAsync(const DescribeL4ProxyRequest& request, const DescribeL4ProxyAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeL4Proxy(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+TeoClient::DescribeL4ProxyOutcomeCallable TeoClient::DescribeL4ProxyCallable(const DescribeL4ProxyRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeL4ProxyOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeL4Proxy(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+TeoClient::DescribeL4ProxyRulesOutcome TeoClient::DescribeL4ProxyRules(const DescribeL4ProxyRulesRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeL4ProxyRules");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeL4ProxyRulesResponse rsp = DescribeL4ProxyRulesResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeL4ProxyRulesOutcome(rsp);
+        else
+            return DescribeL4ProxyRulesOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeL4ProxyRulesOutcome(outcome.GetError());
+    }
+}
+
+void TeoClient::DescribeL4ProxyRulesAsync(const DescribeL4ProxyRulesRequest& request, const DescribeL4ProxyRulesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeL4ProxyRules(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+TeoClient::DescribeL4ProxyRulesOutcomeCallable TeoClient::DescribeL4ProxyRulesCallable(const DescribeL4ProxyRulesRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeL4ProxyRulesOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeL4ProxyRules(request);
         }
     );
 
@@ -3043,6 +3301,178 @@ TeoClient::ModifyHostsCertificateOutcomeCallable TeoClient::ModifyHostsCertifica
         [this, request]()
         {
             return this->ModifyHostsCertificate(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+TeoClient::ModifyL4ProxyOutcome TeoClient::ModifyL4Proxy(const ModifyL4ProxyRequest &request)
+{
+    auto outcome = MakeRequest(request, "ModifyL4Proxy");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ModifyL4ProxyResponse rsp = ModifyL4ProxyResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ModifyL4ProxyOutcome(rsp);
+        else
+            return ModifyL4ProxyOutcome(o.GetError());
+    }
+    else
+    {
+        return ModifyL4ProxyOutcome(outcome.GetError());
+    }
+}
+
+void TeoClient::ModifyL4ProxyAsync(const ModifyL4ProxyRequest& request, const ModifyL4ProxyAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->ModifyL4Proxy(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+TeoClient::ModifyL4ProxyOutcomeCallable TeoClient::ModifyL4ProxyCallable(const ModifyL4ProxyRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<ModifyL4ProxyOutcome()>>(
+        [this, request]()
+        {
+            return this->ModifyL4Proxy(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+TeoClient::ModifyL4ProxyRulesOutcome TeoClient::ModifyL4ProxyRules(const ModifyL4ProxyRulesRequest &request)
+{
+    auto outcome = MakeRequest(request, "ModifyL4ProxyRules");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ModifyL4ProxyRulesResponse rsp = ModifyL4ProxyRulesResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ModifyL4ProxyRulesOutcome(rsp);
+        else
+            return ModifyL4ProxyRulesOutcome(o.GetError());
+    }
+    else
+    {
+        return ModifyL4ProxyRulesOutcome(outcome.GetError());
+    }
+}
+
+void TeoClient::ModifyL4ProxyRulesAsync(const ModifyL4ProxyRulesRequest& request, const ModifyL4ProxyRulesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->ModifyL4ProxyRules(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+TeoClient::ModifyL4ProxyRulesOutcomeCallable TeoClient::ModifyL4ProxyRulesCallable(const ModifyL4ProxyRulesRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<ModifyL4ProxyRulesOutcome()>>(
+        [this, request]()
+        {
+            return this->ModifyL4ProxyRules(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+TeoClient::ModifyL4ProxyRulesStatusOutcome TeoClient::ModifyL4ProxyRulesStatus(const ModifyL4ProxyRulesStatusRequest &request)
+{
+    auto outcome = MakeRequest(request, "ModifyL4ProxyRulesStatus");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ModifyL4ProxyRulesStatusResponse rsp = ModifyL4ProxyRulesStatusResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ModifyL4ProxyRulesStatusOutcome(rsp);
+        else
+            return ModifyL4ProxyRulesStatusOutcome(o.GetError());
+    }
+    else
+    {
+        return ModifyL4ProxyRulesStatusOutcome(outcome.GetError());
+    }
+}
+
+void TeoClient::ModifyL4ProxyRulesStatusAsync(const ModifyL4ProxyRulesStatusRequest& request, const ModifyL4ProxyRulesStatusAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->ModifyL4ProxyRulesStatus(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+TeoClient::ModifyL4ProxyRulesStatusOutcomeCallable TeoClient::ModifyL4ProxyRulesStatusCallable(const ModifyL4ProxyRulesStatusRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<ModifyL4ProxyRulesStatusOutcome()>>(
+        [this, request]()
+        {
+            return this->ModifyL4ProxyRulesStatus(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+TeoClient::ModifyL4ProxyStatusOutcome TeoClient::ModifyL4ProxyStatus(const ModifyL4ProxyStatusRequest &request)
+{
+    auto outcome = MakeRequest(request, "ModifyL4ProxyStatus");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ModifyL4ProxyStatusResponse rsp = ModifyL4ProxyStatusResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ModifyL4ProxyStatusOutcome(rsp);
+        else
+            return ModifyL4ProxyStatusOutcome(o.GetError());
+    }
+    else
+    {
+        return ModifyL4ProxyStatusOutcome(outcome.GetError());
+    }
+}
+
+void TeoClient::ModifyL4ProxyStatusAsync(const ModifyL4ProxyStatusRequest& request, const ModifyL4ProxyStatusAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->ModifyL4ProxyStatus(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+TeoClient::ModifyL4ProxyStatusOutcomeCallable TeoClient::ModifyL4ProxyStatusCallable(const ModifyL4ProxyStatusRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<ModifyL4ProxyStatusOutcome()>>(
+        [this, request]()
+        {
+            return this->ModifyL4ProxyStatus(request);
         }
     );
 

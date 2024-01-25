@@ -277,6 +277,93 @@ namespace TencentCloud
                      */
                     bool DateOfExpirationHasBeenSet() const;
 
+                    /**
+                     * 获取持证人签名（护照信息页识别结果）
+
+仅中国大陆护照支持返回此字段，港澳台及境外护照不支持
+                     * @return Signature 持证人签名（护照信息页识别结果）
+
+仅中国大陆护照支持返回此字段，港澳台及境外护照不支持
+                     * 
+                     */
+                    std::string GetSignature() const;
+
+                    /**
+                     * 设置持证人签名（护照信息页识别结果）
+
+仅中国大陆护照支持返回此字段，港澳台及境外护照不支持
+                     * @param _signature 持证人签名（护照信息页识别结果）
+
+仅中国大陆护照支持返回此字段，港澳台及境外护照不支持
+                     * 
+                     */
+                    void SetSignature(const std::string& _signature);
+
+                    /**
+                     * 判断参数 Signature 是否已赋值
+                     * @return Signature 是否已赋值
+                     * 
+                     */
+                    bool SignatureHasBeenSet() const;
+
+                    /**
+                     * 获取签发地点（护照信息页识别结果）
+
+仅中国大陆护照支持返回此字段，港澳台及境外护照不支持
+                     * @return IssuePlace 签发地点（护照信息页识别结果）
+
+仅中国大陆护照支持返回此字段，港澳台及境外护照不支持
+                     * 
+                     */
+                    std::string GetIssuePlace() const;
+
+                    /**
+                     * 设置签发地点（护照信息页识别结果）
+
+仅中国大陆护照支持返回此字段，港澳台及境外护照不支持
+                     * @param _issuePlace 签发地点（护照信息页识别结果）
+
+仅中国大陆护照支持返回此字段，港澳台及境外护照不支持
+                     * 
+                     */
+                    void SetIssuePlace(const std::string& _issuePlace);
+
+                    /**
+                     * 判断参数 IssuePlace 是否已赋值
+                     * @return IssuePlace 是否已赋值
+                     * 
+                     */
+                    bool IssuePlaceHasBeenSet() const;
+
+                    /**
+                     * 获取签发机关（护照信息页识别结果）
+
+仅中国大陆护照支持返回此字段，港澳台及境外护照不支持
+                     * @return IssuingAuthority 签发机关（护照信息页识别结果）
+
+仅中国大陆护照支持返回此字段，港澳台及境外护照不支持
+                     * 
+                     */
+                    std::string GetIssuingAuthority() const;
+
+                    /**
+                     * 设置签发机关（护照信息页识别结果）
+
+仅中国大陆护照支持返回此字段，港澳台及境外护照不支持
+                     * @param _issuingAuthority 签发机关（护照信息页识别结果）
+
+仅中国大陆护照支持返回此字段，港澳台及境外护照不支持
+                     * 
+                     */
+                    void SetIssuingAuthority(const std::string& _issuingAuthority);
+
+                    /**
+                     * 判断参数 IssuingAuthority 是否已赋值
+                     * @return IssuingAuthority 是否已赋值
+                     * 
+                     */
+                    bool IssuingAuthorityHasBeenSet() const;
+
                 private:
 
                     /**
@@ -344,6 +431,30 @@ namespace TencentCloud
                      */
                     std::string m_dateOfExpiration;
                     bool m_dateOfExpirationHasBeenSet;
+
+                    /**
+                     * 持证人签名（护照信息页识别结果）
+
+仅中国大陆护照支持返回此字段，港澳台及境外护照不支持
+                     */
+                    std::string m_signature;
+                    bool m_signatureHasBeenSet;
+
+                    /**
+                     * 签发地点（护照信息页识别结果）
+
+仅中国大陆护照支持返回此字段，港澳台及境外护照不支持
+                     */
+                    std::string m_issuePlace;
+                    bool m_issuePlaceHasBeenSet;
+
+                    /**
+                     * 签发机关（护照信息页识别结果）
+
+仅中国大陆护照支持返回此字段，港澳台及境外护照不支持
+                     */
+                    std::string m_issuingAuthority;
+                    bool m_issuingAuthorityHasBeenSet;
 
                 };
             }

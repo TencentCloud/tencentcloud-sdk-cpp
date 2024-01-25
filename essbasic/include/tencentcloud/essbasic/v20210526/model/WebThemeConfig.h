@@ -104,6 +104,89 @@ namespace TencentCloud
                      */
                     bool WebEmbedThemeColorHasBeenSet() const;
 
+                    /**
+                     * 获取企业认证页背景图（base64图片）
+
+                     * @return AuthenticateBackground 企业认证页背景图（base64图片）
+
+                     * 
+                     */
+                    std::string GetAuthenticateBackground() const;
+
+                    /**
+                     * 设置企业认证页背景图（base64图片）
+
+                     * @param _authenticateBackground 企业认证页背景图（base64图片）
+
+                     * 
+                     */
+                    void SetAuthenticateBackground(const std::string& _authenticateBackground);
+
+                    /**
+                     * 判断参数 AuthenticateBackground 是否已赋值
+                     * @return AuthenticateBackground 是否已赋值
+                     * 
+                     */
+                    bool AuthenticateBackgroundHasBeenSet() const;
+
+                    /**
+                     * 获取隐藏企业认证页面导航栏，取值如下：
+<ul><li> **true**：隐藏企业认证页面导航栏</li>
+<li> **false**：显示企业认证页面导航栏（默认）</li></ul>
+                     * @return HideAuthenticateNavigationBar 隐藏企业认证页面导航栏，取值如下：
+<ul><li> **true**：隐藏企业认证页面导航栏</li>
+<li> **false**：显示企业认证页面导航栏（默认）</li></ul>
+                     * 
+                     */
+                    bool GetHideAuthenticateNavigationBar() const;
+
+                    /**
+                     * 设置隐藏企业认证页面导航栏，取值如下：
+<ul><li> **true**：隐藏企业认证页面导航栏</li>
+<li> **false**：显示企业认证页面导航栏（默认）</li></ul>
+                     * @param _hideAuthenticateNavigationBar 隐藏企业认证页面导航栏，取值如下：
+<ul><li> **true**：隐藏企业认证页面导航栏</li>
+<li> **false**：显示企业认证页面导航栏（默认）</li></ul>
+                     * 
+                     */
+                    void SetHideAuthenticateNavigationBar(const bool& _hideAuthenticateNavigationBar);
+
+                    /**
+                     * 判断参数 HideAuthenticateNavigationBar 是否已赋值
+                     * @return HideAuthenticateNavigationBar 是否已赋值
+                     * 
+                     */
+                    bool HideAuthenticateNavigationBarHasBeenSet() const;
+
+                    /**
+                     * 获取隐藏企业认证顶部logo，取值如下：
+<ul><li> **true**：隐藏企业认证顶部logo</li>
+<li> **false**：显示企业认证顶部logo（默认）</li></ul>
+                     * @return HideAuthenticateTopLogo 隐藏企业认证顶部logo，取值如下：
+<ul><li> **true**：隐藏企业认证顶部logo</li>
+<li> **false**：显示企业认证顶部logo（默认）</li></ul>
+                     * 
+                     */
+                    bool GetHideAuthenticateTopLogo() const;
+
+                    /**
+                     * 设置隐藏企业认证顶部logo，取值如下：
+<ul><li> **true**：隐藏企业认证顶部logo</li>
+<li> **false**：显示企业认证顶部logo（默认）</li></ul>
+                     * @param _hideAuthenticateTopLogo 隐藏企业认证顶部logo，取值如下：
+<ul><li> **true**：隐藏企业认证顶部logo</li>
+<li> **false**：显示企业认证顶部logo（默认）</li></ul>
+                     * 
+                     */
+                    void SetHideAuthenticateTopLogo(const bool& _hideAuthenticateTopLogo);
+
+                    /**
+                     * 判断参数 HideAuthenticateTopLogo 是否已赋值
+                     * @return HideAuthenticateTopLogo 是否已赋值
+                     * 
+                     */
+                    bool HideAuthenticateTopLogoHasBeenSet() const;
+
                 private:
 
                     /**
@@ -121,6 +204,29 @@ namespace TencentCloud
                      */
                     std::string m_webEmbedThemeColor;
                     bool m_webEmbedThemeColorHasBeenSet;
+
+                    /**
+                     * 企业认证页背景图（base64图片）
+
+                     */
+                    std::string m_authenticateBackground;
+                    bool m_authenticateBackgroundHasBeenSet;
+
+                    /**
+                     * 隐藏企业认证页面导航栏，取值如下：
+<ul><li> **true**：隐藏企业认证页面导航栏</li>
+<li> **false**：显示企业认证页面导航栏（默认）</li></ul>
+                     */
+                    bool m_hideAuthenticateNavigationBar;
+                    bool m_hideAuthenticateNavigationBarHasBeenSet;
+
+                    /**
+                     * 隐藏企业认证顶部logo，取值如下：
+<ul><li> **true**：隐藏企业认证顶部logo</li>
+<li> **false**：显示企业认证顶部logo（默认）</li></ul>
+                     */
+                    bool m_hideAuthenticateTopLogo;
+                    bool m_hideAuthenticateTopLogoHasBeenSet;
 
                 };
             }

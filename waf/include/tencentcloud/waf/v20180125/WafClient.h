@@ -225,6 +225,8 @@
 #include <tencentcloud/waf/v20180125/model/ModifyCustomWhiteRuleStatusResponse.h>
 #include <tencentcloud/waf/v20180125/model/ModifyDomainIpv6StatusRequest.h>
 #include <tencentcloud/waf/v20180125/model/ModifyDomainIpv6StatusResponse.h>
+#include <tencentcloud/waf/v20180125/model/ModifyDomainPostActionRequest.h>
+#include <tencentcloud/waf/v20180125/model/ModifyDomainPostActionResponse.h>
 #include <tencentcloud/waf/v20180125/model/ModifyDomainWhiteRuleRequest.h>
 #include <tencentcloud/waf/v20180125/model/ModifyDomainWhiteRuleResponse.h>
 #include <tencentcloud/waf/v20180125/model/ModifyDomainsCLSStatusRequest.h>
@@ -604,6 +606,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::ModifyDomainIpv6StatusResponse> ModifyDomainIpv6StatusOutcome;
                 typedef std::future<ModifyDomainIpv6StatusOutcome> ModifyDomainIpv6StatusOutcomeCallable;
                 typedef std::function<void(const WafClient*, const Model::ModifyDomainIpv6StatusRequest&, ModifyDomainIpv6StatusOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyDomainIpv6StatusAsyncHandler;
+                typedef Outcome<Core::Error, Model::ModifyDomainPostActionResponse> ModifyDomainPostActionOutcome;
+                typedef std::future<ModifyDomainPostActionOutcome> ModifyDomainPostActionOutcomeCallable;
+                typedef std::function<void(const WafClient*, const Model::ModifyDomainPostActionRequest&, ModifyDomainPostActionOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyDomainPostActionAsyncHandler;
                 typedef Outcome<Core::Error, Model::ModifyDomainWhiteRuleResponse> ModifyDomainWhiteRuleOutcome;
                 typedef std::future<ModifyDomainWhiteRuleOutcome> ModifyDomainWhiteRuleOutcomeCallable;
                 typedef std::function<void(const WafClient*, const Model::ModifyDomainWhiteRuleRequest&, ModifyDomainWhiteRuleOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyDomainWhiteRuleAsyncHandler;
@@ -1617,6 +1622,15 @@ namespace TencentCloud
                 ModifyDomainIpv6StatusOutcome ModifyDomainIpv6Status(const Model::ModifyDomainIpv6StatusRequest &request);
                 void ModifyDomainIpv6StatusAsync(const Model::ModifyDomainIpv6StatusRequest& request, const ModifyDomainIpv6StatusAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 ModifyDomainIpv6StatusOutcomeCallable ModifyDomainIpv6StatusCallable(const Model::ModifyDomainIpv6StatusRequest& request);
+
+                /**
+                 *修改域名投递状态
+                 * @param req ModifyDomainPostActionRequest
+                 * @return ModifyDomainPostActionOutcome
+                 */
+                ModifyDomainPostActionOutcome ModifyDomainPostAction(const Model::ModifyDomainPostActionRequest &request);
+                void ModifyDomainPostActionAsync(const Model::ModifyDomainPostActionRequest& request, const ModifyDomainPostActionAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                ModifyDomainPostActionOutcomeCallable ModifyDomainPostActionCallable(const Model::ModifyDomainPostActionRequest& request);
 
                 /**
                  *更改某一条规则

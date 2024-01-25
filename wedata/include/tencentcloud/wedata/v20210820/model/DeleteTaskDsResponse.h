@@ -44,9 +44,9 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取无
+                     * 获取是否删除成功
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return Data 无
+                     * @return Data 是否删除成功
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -62,7 +62,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 无
+                     * 是否删除成功
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     bool m_data;

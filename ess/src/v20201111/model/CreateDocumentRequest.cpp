@@ -24,8 +24,8 @@ using namespace std;
 
 CreateDocumentRequest::CreateDocumentRequest() :
     m_operatorHasBeenSet(false),
-    m_flowIdHasBeenSet(false),
     m_templateIdHasBeenSet(false),
+    m_flowIdHasBeenSet(false),
     m_fileNamesHasBeenSet(false),
     m_formFieldsHasBeenSet(false),
     m_needPreviewHasBeenSet(false),
@@ -51,20 +51,20 @@ string CreateDocumentRequest::ToJsonString() const
         m_operator.ToJsonObject(d[key.c_str()], allocator);
     }
 
-    if (m_flowIdHasBeenSet)
-    {
-        rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "FlowId";
-        iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, rapidjson::Value(m_flowId.c_str(), allocator).Move(), allocator);
-    }
-
     if (m_templateIdHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
         string key = "TemplateId";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_templateId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_flowIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "FlowId";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_flowId.c_str(), allocator).Move(), allocator);
     }
 
     if (m_fileNamesHasBeenSet)
@@ -152,22 +152,6 @@ bool CreateDocumentRequest::OperatorHasBeenSet() const
     return m_operatorHasBeenSet;
 }
 
-string CreateDocumentRequest::GetFlowId() const
-{
-    return m_flowId;
-}
-
-void CreateDocumentRequest::SetFlowId(const string& _flowId)
-{
-    m_flowId = _flowId;
-    m_flowIdHasBeenSet = true;
-}
-
-bool CreateDocumentRequest::FlowIdHasBeenSet() const
-{
-    return m_flowIdHasBeenSet;
-}
-
 string CreateDocumentRequest::GetTemplateId() const
 {
     return m_templateId;
@@ -182,6 +166,22 @@ void CreateDocumentRequest::SetTemplateId(const string& _templateId)
 bool CreateDocumentRequest::TemplateIdHasBeenSet() const
 {
     return m_templateIdHasBeenSet;
+}
+
+string CreateDocumentRequest::GetFlowId() const
+{
+    return m_flowId;
+}
+
+void CreateDocumentRequest::SetFlowId(const string& _flowId)
+{
+    m_flowId = _flowId;
+    m_flowIdHasBeenSet = true;
+}
+
+bool CreateDocumentRequest::FlowIdHasBeenSet() const
+{
+    return m_flowIdHasBeenSet;
 }
 
 vector<string> CreateDocumentRequest::GetFileNames() const

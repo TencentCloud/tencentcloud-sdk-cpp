@@ -4383,6 +4383,49 @@ WafClient::ModifyDomainIpv6StatusOutcomeCallable WafClient::ModifyDomainIpv6Stat
     return task->get_future();
 }
 
+WafClient::ModifyDomainPostActionOutcome WafClient::ModifyDomainPostAction(const ModifyDomainPostActionRequest &request)
+{
+    auto outcome = MakeRequest(request, "ModifyDomainPostAction");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ModifyDomainPostActionResponse rsp = ModifyDomainPostActionResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ModifyDomainPostActionOutcome(rsp);
+        else
+            return ModifyDomainPostActionOutcome(o.GetError());
+    }
+    else
+    {
+        return ModifyDomainPostActionOutcome(outcome.GetError());
+    }
+}
+
+void WafClient::ModifyDomainPostActionAsync(const ModifyDomainPostActionRequest& request, const ModifyDomainPostActionAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->ModifyDomainPostAction(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+WafClient::ModifyDomainPostActionOutcomeCallable WafClient::ModifyDomainPostActionCallable(const ModifyDomainPostActionRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<ModifyDomainPostActionOutcome()>>(
+        [this, request]()
+        {
+            return this->ModifyDomainPostAction(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 WafClient::ModifyDomainWhiteRuleOutcome WafClient::ModifyDomainWhiteRule(const ModifyDomainWhiteRuleRequest &request)
 {
     auto outcome = MakeRequest(request, "ModifyDomainWhiteRule");

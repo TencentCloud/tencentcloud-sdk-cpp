@@ -31,7 +31,10 @@ PassportRecognizeInfos::PassportRecognizeInfos() :
     m_dateOfBirthHasBeenSet(false),
     m_sexHasBeenSet(false),
     m_dateOfIssuanceHasBeenSet(false),
-    m_dateOfExpirationHasBeenSet(false)
+    m_dateOfExpirationHasBeenSet(false),
+    m_signatureHasBeenSet(false),
+    m_issuePlaceHasBeenSet(false),
+    m_issuingAuthorityHasBeenSet(false)
 {
 }
 
@@ -150,6 +153,36 @@ CoreInternalOutcome PassportRecognizeInfos::Deserialize(const rapidjson::Value &
         m_dateOfExpirationHasBeenSet = true;
     }
 
+    if (value.HasMember("Signature") && !value["Signature"].IsNull())
+    {
+        if (!value["Signature"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `PassportRecognizeInfos.Signature` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_signature = string(value["Signature"].GetString());
+        m_signatureHasBeenSet = true;
+    }
+
+    if (value.HasMember("IssuePlace") && !value["IssuePlace"].IsNull())
+    {
+        if (!value["IssuePlace"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `PassportRecognizeInfos.IssuePlace` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_issuePlace = string(value["IssuePlace"].GetString());
+        m_issuePlaceHasBeenSet = true;
+    }
+
+    if (value.HasMember("IssuingAuthority") && !value["IssuingAuthority"].IsNull())
+    {
+        if (!value["IssuingAuthority"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `PassportRecognizeInfos.IssuingAuthority` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_issuingAuthority = string(value["IssuingAuthority"].GetString());
+        m_issuingAuthorityHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -243,6 +276,30 @@ void PassportRecognizeInfos::ToJsonObject(rapidjson::Value &value, rapidjson::Do
         string key = "DateOfExpiration";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_dateOfExpiration.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_signatureHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Signature";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_signature.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_issuePlaceHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "IssuePlace";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_issuePlace.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_issuingAuthorityHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "IssuingAuthority";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_issuingAuthority.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -422,5 +479,53 @@ void PassportRecognizeInfos::SetDateOfExpiration(const string& _dateOfExpiration
 bool PassportRecognizeInfos::DateOfExpirationHasBeenSet() const
 {
     return m_dateOfExpirationHasBeenSet;
+}
+
+string PassportRecognizeInfos::GetSignature() const
+{
+    return m_signature;
+}
+
+void PassportRecognizeInfos::SetSignature(const string& _signature)
+{
+    m_signature = _signature;
+    m_signatureHasBeenSet = true;
+}
+
+bool PassportRecognizeInfos::SignatureHasBeenSet() const
+{
+    return m_signatureHasBeenSet;
+}
+
+string PassportRecognizeInfos::GetIssuePlace() const
+{
+    return m_issuePlace;
+}
+
+void PassportRecognizeInfos::SetIssuePlace(const string& _issuePlace)
+{
+    m_issuePlace = _issuePlace;
+    m_issuePlaceHasBeenSet = true;
+}
+
+bool PassportRecognizeInfos::IssuePlaceHasBeenSet() const
+{
+    return m_issuePlaceHasBeenSet;
+}
+
+string PassportRecognizeInfos::GetIssuingAuthority() const
+{
+    return m_issuingAuthority;
+}
+
+void PassportRecognizeInfos::SetIssuingAuthority(const string& _issuingAuthority)
+{
+    m_issuingAuthority = _issuingAuthority;
+    m_issuingAuthorityHasBeenSet = true;
+}
+
+bool PassportRecognizeInfos::IssuingAuthorityHasBeenSet() const
+{
+    return m_issuingAuthorityHasBeenSet;
 }
 

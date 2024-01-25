@@ -29,7 +29,8 @@ ModifyScheduleRequest::ModifyScheduleRequest() :
     m_activitiesHasBeenSet(false),
     m_outputStorageHasBeenSet(false),
     m_outputDirHasBeenSet(false),
-    m_taskNotifyConfigHasBeenSet(false)
+    m_taskNotifyConfigHasBeenSet(false),
+    m_resourceIdHasBeenSet(false)
 {
 }
 
@@ -104,6 +105,14 @@ string ModifyScheduleRequest::ToJsonString() const
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
         m_taskNotifyConfig.ToJsonObject(d[key.c_str()], allocator);
+    }
+
+    if (m_resourceIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ResourceId";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_resourceId.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -224,6 +233,22 @@ void ModifyScheduleRequest::SetTaskNotifyConfig(const TaskNotifyConfig& _taskNot
 bool ModifyScheduleRequest::TaskNotifyConfigHasBeenSet() const
 {
     return m_taskNotifyConfigHasBeenSet;
+}
+
+string ModifyScheduleRequest::GetResourceId() const
+{
+    return m_resourceId;
+}
+
+void ModifyScheduleRequest::SetResourceId(const string& _resourceId)
+{
+    m_resourceId = _resourceId;
+    m_resourceIdHasBeenSet = true;
+}
+
+bool ModifyScheduleRequest::ResourceIdHasBeenSet() const
+{
+    return m_resourceIdHasBeenSet;
 }
 
 

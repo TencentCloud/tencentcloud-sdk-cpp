@@ -105,6 +105,48 @@ namespace TencentCloud
                      */
                     bool OffsetHasBeenSet() const;
 
+                    /**
+                     * 获取按项目ID筛选，大于0
+                     * @return ProjectId 按项目ID筛选，大于0
+                     * 
+                     */
+                    int64_t GetProjectId() const;
+
+                    /**
+                     * 设置按项目ID筛选，大于0
+                     * @param _projectId 按项目ID筛选，大于0
+                     * 
+                     */
+                    void SetProjectId(const int64_t& _projectId);
+
+                    /**
+                     * 判断参数 ProjectId 是否已赋值
+                     * @return ProjectId 是否已赋值
+                     * 
+                     */
+                    bool ProjectIdHasBeenSet() const;
+
+                    /**
+                     * 获取按项目名称筛选
+                     * @return ProjectName 按项目名称筛选
+                     * 
+                     */
+                    std::string GetProjectName() const;
+
+                    /**
+                     * 设置按项目名称筛选
+                     * @param _projectName 按项目名称筛选
+                     * 
+                     */
+                    void SetProjectName(const std::string& _projectName);
+
+                    /**
+                     * 判断参数 ProjectName 是否已赋值
+                     * @return ProjectName 是否已赋值
+                     * 
+                     */
+                    bool ProjectNameHasBeenSet() const;
+
                 private:
 
                     /**
@@ -124,6 +166,18 @@ namespace TencentCloud
                      */
                     uint64_t m_offset;
                     bool m_offsetHasBeenSet;
+
+                    /**
+                     * 按项目ID筛选，大于0
+                     */
+                    int64_t m_projectId;
+                    bool m_projectIdHasBeenSet;
+
+                    /**
+                     * 按项目名称筛选
+                     */
+                    std::string m_projectName;
+                    bool m_projectNameHasBeenSet;
 
                 };
             }

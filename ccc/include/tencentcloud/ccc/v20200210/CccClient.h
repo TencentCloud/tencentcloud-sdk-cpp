@@ -282,7 +282,7 @@ namespace TencentCloud
                 CreateAutoCalloutTaskOutcomeCallable CreateAutoCalloutTaskCallable(const Model::CreateAutoCalloutTaskRequest& request);
 
                 /**
-                 *创建技能组
+                 *新建技能组
                  * @param req CreateCCCSkillGroupRequest
                  * @return CreateCCCSkillGroupOutcome
                  */

@@ -86,15 +86,19 @@ namespace TencentCloud
                     bool NamespaceHasBeenSet() const;
 
                     /**
-                     * 获取指标名列表
-                     * @return MetricNames 指标名列表
+                     * 获取指标名列表，相关指标信息可参考对应 云产品指标文档
+https://cloud.tencent.com/document/product/248/62458
+                     * @return MetricNames 指标名列表，相关指标信息可参考对应 云产品指标文档
+https://cloud.tencent.com/document/product/248/62458
                      * 
                      */
                     std::vector<std::string> GetMetricNames() const;
 
                     /**
-                     * 设置指标名列表
-                     * @param _metricNames 指标名列表
+                     * 设置指标名列表，相关指标信息可参考对应 云产品指标文档
+https://cloud.tencent.com/document/product/248/62458
+                     * @param _metricNames 指标名列表，相关指标信息可参考对应 云产品指标文档
+https://cloud.tencent.com/document/product/248/62458
                      * 
                      */
                     void SetMetricNames(const std::vector<std::string>& _metricNames);
@@ -250,7 +254,8 @@ namespace TencentCloud
                     bool m_namespaceHasBeenSet;
 
                     /**
-                     * 指标名列表
+                     * 指标名列表，相关指标信息可参考对应 云产品指标文档
+https://cloud.tencent.com/document/product/248/62458
                      */
                     std::vector<std::string> m_metricNames;
                     bool m_metricNamesHasBeenSet;

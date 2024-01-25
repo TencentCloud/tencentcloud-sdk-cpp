@@ -47,6 +47,35 @@ namespace TencentCloud
 
 
                     /**
+                     * 获取通知类型，默认CMQ，指定URL时HTTP回调推送到 NotifyUrl 指定的地址。
+
+<font color="red"> 注：不填或为空时默认 CMQ，如需采用其他类型需填写对应类型值。 </font>
+                     * @return NotifyType 通知类型，默认CMQ，指定URL时HTTP回调推送到 NotifyUrl 指定的地址。
+
+<font color="red"> 注：不填或为空时默认 CMQ，如需采用其他类型需填写对应类型值。 </font>
+                     * 
+                     */
+                    std::string GetNotifyType() const;
+
+                    /**
+                     * 设置通知类型，默认CMQ，指定URL时HTTP回调推送到 NotifyUrl 指定的地址。
+
+<font color="red"> 注：不填或为空时默认 CMQ，如需采用其他类型需填写对应类型值。 </font>
+                     * @param _notifyType 通知类型，默认CMQ，指定URL时HTTP回调推送到 NotifyUrl 指定的地址。
+
+<font color="red"> 注：不填或为空时默认 CMQ，如需采用其他类型需填写对应类型值。 </font>
+                     * 
+                     */
+                    void SetNotifyType(const std::string& _notifyType);
+
+                    /**
+                     * 判断参数 NotifyType 是否已赋值
+                     * @return NotifyType 是否已赋值
+                     * 
+                     */
+                    bool NotifyTypeHasBeenSet() const;
+
+                    /**
                      * 获取CMQ 的模型，有 Queue 和 Topic 两种，目前仅支持 Queue。
                      * @return CmqModel CMQ 的模型，有 Queue 和 Topic 两种，目前仅支持 Queue。
                      * 
@@ -131,35 +160,6 @@ namespace TencentCloud
                     bool TopicNameHasBeenSet() const;
 
                     /**
-                     * 获取通知类型，默认CMQ，指定URL时HTTP回调推送到 NotifyUrl 指定的地址。
-
-<font color="red"> 注：不填或为空时默认 CMQ，如需采用其他类型需填写对应类型值。 </font>
-                     * @return NotifyType 通知类型，默认CMQ，指定URL时HTTP回调推送到 NotifyUrl 指定的地址。
-
-<font color="red"> 注：不填或为空时默认 CMQ，如需采用其他类型需填写对应类型值。 </font>
-                     * 
-                     */
-                    std::string GetNotifyType() const;
-
-                    /**
-                     * 设置通知类型，默认CMQ，指定URL时HTTP回调推送到 NotifyUrl 指定的地址。
-
-<font color="red"> 注：不填或为空时默认 CMQ，如需采用其他类型需填写对应类型值。 </font>
-                     * @param _notifyType 通知类型，默认CMQ，指定URL时HTTP回调推送到 NotifyUrl 指定的地址。
-
-<font color="red"> 注：不填或为空时默认 CMQ，如需采用其他类型需填写对应类型值。 </font>
-                     * 
-                     */
-                    void SetNotifyType(const std::string& _notifyType);
-
-                    /**
-                     * 判断参数 NotifyType 是否已赋值
-                     * @return NotifyType 是否已赋值
-                     * 
-                     */
-                    bool NotifyTypeHasBeenSet() const;
-
-                    /**
                      * 获取HTTP回调地址，NotifyType为URL时必填。
                      * @return NotifyUrl HTTP回调地址，NotifyType为URL时必填。
                      * 
@@ -181,6 +181,14 @@ namespace TencentCloud
                     bool NotifyUrlHasBeenSet() const;
 
                 private:
+
+                    /**
+                     * 通知类型，默认CMQ，指定URL时HTTP回调推送到 NotifyUrl 指定的地址。
+
+<font color="red"> 注：不填或为空时默认 CMQ，如需采用其他类型需填写对应类型值。 </font>
+                     */
+                    std::string m_notifyType;
+                    bool m_notifyTypeHasBeenSet;
 
                     /**
                      * CMQ 的模型，有 Queue 和 Topic 两种，目前仅支持 Queue。
@@ -205,14 +213,6 @@ namespace TencentCloud
                      */
                     std::string m_topicName;
                     bool m_topicNameHasBeenSet;
-
-                    /**
-                     * 通知类型，默认CMQ，指定URL时HTTP回调推送到 NotifyUrl 指定的地址。
-
-<font color="red"> 注：不填或为空时默认 CMQ，如需采用其他类型需填写对应类型值。 </font>
-                     */
-                    std::string m_notifyType;
-                    bool m_notifyTypeHasBeenSet;
 
                     /**
                      * HTTP回调地址，NotifyType为URL时必填。

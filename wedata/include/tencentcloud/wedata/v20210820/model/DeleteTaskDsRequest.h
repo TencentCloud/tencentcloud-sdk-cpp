@@ -65,14 +65,26 @@ namespace TencentCloud
 
                     /**
                      * 获取是否删除脚本
+true：删除
+false：不删除
+不传默认false
                      * @return DeleteScript 是否删除脚本
+true：删除
+false：不删除
+不传默认false
                      * 
                      */
                     bool GetDeleteScript() const;
 
                     /**
                      * 设置是否删除脚本
+true：删除
+false：不删除
+不传默认false
                      * @param _deleteScript 是否删除脚本
+true：删除
+false：不删除
+不传默认false
                      * 
                      */
                     void SetDeleteScript(const bool& _deleteScript);
@@ -85,15 +97,23 @@ namespace TencentCloud
                     bool DeleteScriptHasBeenSet() const;
 
                     /**
-                     * 获取任务操作是否消息通知下游任务责任人
-                     * @return OperateInform 任务操作是否消息通知下游任务责任人
+                     * 获取任务操作是否消息通知下游任务责任人true：通知
+false：不通知
+不传默认false
+                     * @return OperateInform 任务操作是否消息通知下游任务责任人true：通知
+false：不通知
+不传默认false
                      * 
                      */
                     bool GetOperateInform() const;
 
                     /**
-                     * 设置任务操作是否消息通知下游任务责任人
-                     * @param _operateInform 任务操作是否消息通知下游任务责任人
+                     * 设置任务操作是否消息通知下游任务责任人true：通知
+false：不通知
+不传默认false
+                     * @param _operateInform 任务操作是否消息通知下游任务责任人true：通知
+false：不通知
+不传默认false
                      * 
                      */
                     void SetOperateInform(const bool& _operateInform);
@@ -107,14 +127,18 @@ namespace TencentCloud
 
                     /**
                      * 获取任务ID
+和VirtualTaskId选填一个
                      * @return TaskId 任务ID
+和VirtualTaskId选填一个
                      * 
                      */
                     std::string GetTaskId() const;
 
                     /**
                      * 设置任务ID
+和VirtualTaskId选填一个
                      * @param _taskId 任务ID
+和VirtualTaskId选填一个
                      * 
                      */
                     void SetTaskId(const std::string& _taskId);
@@ -128,14 +152,22 @@ namespace TencentCloud
 
                     /**
                      * 获取虚拟任务id
+和TaskId选填一个
+
                      * @return VirtualTaskId 虚拟任务id
+和TaskId选填一个
+
                      * 
                      */
                     std::string GetVirtualTaskId() const;
 
                     /**
                      * 设置虚拟任务id
+和TaskId选填一个
+
                      * @param _virtualTaskId 虚拟任务id
+和TaskId选填一个
+
                      * 
                      */
                     void SetVirtualTaskId(const std::string& _virtualTaskId);
@@ -149,14 +181,26 @@ namespace TencentCloud
 
                     /**
                      * 获取虚拟任务标记
+true：是虚拟任务
+false：不是虚拟任务
+不传默认false
                      * @return VirtualFlag 虚拟任务标记
+true：是虚拟任务
+false：不是虚拟任务
+不传默认false
                      * 
                      */
                     bool GetVirtualFlag() const;
 
                     /**
                      * 设置虚拟任务标记
+true：是虚拟任务
+false：不是虚拟任务
+不传默认false
                      * @param _virtualFlag 虚拟任务标记
+true：是虚拟任务
+false：不是虚拟任务
+不传默认false
                      * 
                      */
                     void SetVirtualFlag(const bool& _virtualFlag);
@@ -170,14 +214,30 @@ namespace TencentCloud
 
                     /**
                      * 获取任务删除方式
+true：不针对下游任务实例进行强制失败
+false：针对下游任务实例进行强制失败
+不传默认false
+
                      * @return DeleteMode 任务删除方式
+true：不针对下游任务实例进行强制失败
+false：针对下游任务实例进行强制失败
+不传默认false
+
                      * 
                      */
                     bool GetDeleteMode() const;
 
                     /**
                      * 设置任务删除方式
+true：不针对下游任务实例进行强制失败
+false：针对下游任务实例进行强制失败
+不传默认false
+
                      * @param _deleteMode 任务删除方式
+true：不针对下游任务实例进行强制失败
+false：针对下游任务实例进行强制失败
+不传默认false
+
                      * 
                      */
                     void SetDeleteMode(const bool& _deleteMode);
@@ -199,36 +259,51 @@ namespace TencentCloud
 
                     /**
                      * 是否删除脚本
+true：删除
+false：不删除
+不传默认false
                      */
                     bool m_deleteScript;
                     bool m_deleteScriptHasBeenSet;
 
                     /**
-                     * 任务操作是否消息通知下游任务责任人
+                     * 任务操作是否消息通知下游任务责任人true：通知
+false：不通知
+不传默认false
                      */
                     bool m_operateInform;
                     bool m_operateInformHasBeenSet;
 
                     /**
                      * 任务ID
+和VirtualTaskId选填一个
                      */
                     std::string m_taskId;
                     bool m_taskIdHasBeenSet;
 
                     /**
                      * 虚拟任务id
+和TaskId选填一个
+
                      */
                     std::string m_virtualTaskId;
                     bool m_virtualTaskIdHasBeenSet;
 
                     /**
                      * 虚拟任务标记
+true：是虚拟任务
+false：不是虚拟任务
+不传默认false
                      */
                     bool m_virtualFlag;
                     bool m_virtualFlagHasBeenSet;
 
                     /**
                      * 任务删除方式
+true：不针对下游任务实例进行强制失败
+false：针对下游任务实例进行强制失败
+不传默认false
+
                      */
                     bool m_deleteMode;
                     bool m_deleteModeHasBeenSet;

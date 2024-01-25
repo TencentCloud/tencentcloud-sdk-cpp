@@ -25,7 +25,9 @@ using namespace std;
 DescribeProjectsRequest::DescribeProjectsRequest() :
     m_allListHasBeenSet(false),
     m_limitHasBeenSet(false),
-    m_offsetHasBeenSet(false)
+    m_offsetHasBeenSet(false),
+    m_projectIdHasBeenSet(false),
+    m_projectNameHasBeenSet(false)
 {
 }
 
@@ -58,6 +60,22 @@ string DescribeProjectsRequest::ToJsonString() const
         string key = "Offset";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_offset, allocator);
+    }
+
+    if (m_projectIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ProjectId";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_projectId, allocator);
+    }
+
+    if (m_projectNameHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ProjectName";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_projectName.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -114,6 +132,38 @@ void DescribeProjectsRequest::SetOffset(const uint64_t& _offset)
 bool DescribeProjectsRequest::OffsetHasBeenSet() const
 {
     return m_offsetHasBeenSet;
+}
+
+int64_t DescribeProjectsRequest::GetProjectId() const
+{
+    return m_projectId;
+}
+
+void DescribeProjectsRequest::SetProjectId(const int64_t& _projectId)
+{
+    m_projectId = _projectId;
+    m_projectIdHasBeenSet = true;
+}
+
+bool DescribeProjectsRequest::ProjectIdHasBeenSet() const
+{
+    return m_projectIdHasBeenSet;
+}
+
+string DescribeProjectsRequest::GetProjectName() const
+{
+    return m_projectName;
+}
+
+void DescribeProjectsRequest::SetProjectName(const string& _projectName)
+{
+    m_projectName = _projectName;
+    m_projectNameHasBeenSet = true;
+}
+
+bool DescribeProjectsRequest::ProjectNameHasBeenSet() const
+{
+    return m_projectNameHasBeenSet;
 }
 
 

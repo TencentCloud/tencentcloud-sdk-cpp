@@ -81,6 +81,8 @@
 #include <tencentcloud/wedata/v20210820/model/BatchUpdateTasksDsResponse.h>
 #include <tencentcloud/wedata/v20210820/model/CheckAlarmRegularNameExistRequest.h>
 #include <tencentcloud/wedata/v20210820/model/CheckAlarmRegularNameExistResponse.h>
+#include <tencentcloud/wedata/v20210820/model/CheckCustomFunctionPremiseRequest.h>
+#include <tencentcloud/wedata/v20210820/model/CheckCustomFunctionPremiseResponse.h>
 #include <tencentcloud/wedata/v20210820/model/CheckDuplicateRuleNameRequest.h>
 #include <tencentcloud/wedata/v20210820/model/CheckDuplicateRuleNameResponse.h>
 #include <tencentcloud/wedata/v20210820/model/CheckDuplicateTemplateNameRequest.h>
@@ -95,6 +97,8 @@
 #include <tencentcloud/wedata/v20210820/model/CheckTaskNameExistDsResponse.h>
 #include <tencentcloud/wedata/v20210820/model/CheckTaskPriorityDsRequest.h>
 #include <tencentcloud/wedata/v20210820/model/CheckTaskPriorityDsResponse.h>
+#include <tencentcloud/wedata/v20210820/model/ClearRecycleTaskRequest.h>
+#include <tencentcloud/wedata/v20210820/model/ClearRecycleTaskResponse.h>
 #include <tencentcloud/wedata/v20210820/model/CommitExportTaskRequest.h>
 #include <tencentcloud/wedata/v20210820/model/CommitExportTaskResponse.h>
 #include <tencentcloud/wedata/v20210820/model/CommitIntegrationTaskRequest.h>
@@ -103,12 +107,20 @@
 #include <tencentcloud/wedata/v20210820/model/CommitRuleGroupExecResultResponse.h>
 #include <tencentcloud/wedata/v20210820/model/CommitRuleGroupTaskRequest.h>
 #include <tencentcloud/wedata/v20210820/model/CommitRuleGroupTaskResponse.h>
+#include <tencentcloud/wedata/v20210820/model/CommitWorkflowRequest.h>
+#include <tencentcloud/wedata/v20210820/model/CommitWorkflowResponse.h>
+#include <tencentcloud/wedata/v20210820/model/CompareDsTaskVersionInfoRequest.h>
+#include <tencentcloud/wedata/v20210820/model/CompareDsTaskVersionInfoResponse.h>
 #include <tencentcloud/wedata/v20210820/model/CopyTaskDsRequest.h>
 #include <tencentcloud/wedata/v20210820/model/CopyTaskDsResponse.h>
+#include <tencentcloud/wedata/v20210820/model/CopyWorkflowDsRequest.h>
+#include <tencentcloud/wedata/v20210820/model/CopyWorkflowDsResponse.h>
 #include <tencentcloud/wedata/v20210820/model/CountOpsInstanceStateRequest.h>
 #include <tencentcloud/wedata/v20210820/model/CountOpsInstanceStateResponse.h>
 #include <tencentcloud/wedata/v20210820/model/CreateBaselineRequest.h>
 #include <tencentcloud/wedata/v20210820/model/CreateBaselineResponse.h>
+#include <tencentcloud/wedata/v20210820/model/CreateBrowsingHistoryRequest.h>
+#include <tencentcloud/wedata/v20210820/model/CreateBrowsingHistoryResponse.h>
 #include <tencentcloud/wedata/v20210820/model/CreateCustomFunctionRequest.h>
 #include <tencentcloud/wedata/v20210820/model/CreateCustomFunctionResponse.h>
 #include <tencentcloud/wedata/v20210820/model/CreateDataSourceRequest.h>
@@ -129,6 +141,8 @@
 #include <tencentcloud/wedata/v20210820/model/CreateIntegrationNodeResponse.h>
 #include <tencentcloud/wedata/v20210820/model/CreateIntegrationTaskRequest.h>
 #include <tencentcloud/wedata/v20210820/model/CreateIntegrationTaskResponse.h>
+#include <tencentcloud/wedata/v20210820/model/CreateLinkRequest.h>
+#include <tencentcloud/wedata/v20210820/model/CreateLinkResponse.h>
 #include <tencentcloud/wedata/v20210820/model/CreateOfflineTaskRequest.h>
 #include <tencentcloud/wedata/v20210820/model/CreateOfflineTaskResponse.h>
 #include <tencentcloud/wedata/v20210820/model/CreateOpsMakePlanRequest.h>
@@ -139,6 +153,8 @@
 #include <tencentcloud/wedata/v20210820/model/CreatePathResponse.h>
 #include <tencentcloud/wedata/v20210820/model/CreateProjectParamDsRequest.h>
 #include <tencentcloud/wedata/v20210820/model/CreateProjectParamDsResponse.h>
+#include <tencentcloud/wedata/v20210820/model/CreateResourceDirectoryRequest.h>
+#include <tencentcloud/wedata/v20210820/model/CreateResourceDirectoryResponse.h>
 #include <tencentcloud/wedata/v20210820/model/CreateResourcePathRequest.h>
 #include <tencentcloud/wedata/v20210820/model/CreateResourcePathResponse.h>
 #include <tencentcloud/wedata/v20210820/model/CreateRuleRequest.h>
@@ -169,20 +185,28 @@
 #include <tencentcloud/wedata/v20210820/model/CreateTaskVersionDsResponse.h>
 #include <tencentcloud/wedata/v20210820/model/CreateWorkflowRequest.h>
 #include <tencentcloud/wedata/v20210820/model/CreateWorkflowResponse.h>
+#include <tencentcloud/wedata/v20210820/model/CreateWorkflowDsRequest.h>
+#include <tencentcloud/wedata/v20210820/model/CreateWorkflowDsResponse.h>
 #include <tencentcloud/wedata/v20210820/model/DagInstancesRequest.h>
 #include <tencentcloud/wedata/v20210820/model/DagInstancesResponse.h>
 #include <tencentcloud/wedata/v20210820/model/DeleteBaselineRequest.h>
 #include <tencentcloud/wedata/v20210820/model/DeleteBaselineResponse.h>
+#include <tencentcloud/wedata/v20210820/model/DeleteBatchWorkflowDsRequest.h>
+#include <tencentcloud/wedata/v20210820/model/DeleteBatchWorkflowDsResponse.h>
 #include <tencentcloud/wedata/v20210820/model/DeleteCustomFunctionRequest.h>
 #include <tencentcloud/wedata/v20210820/model/DeleteCustomFunctionResponse.h>
 #include <tencentcloud/wedata/v20210820/model/DeleteDataSourcesRequest.h>
 #include <tencentcloud/wedata/v20210820/model/DeleteDataSourcesResponse.h>
+#include <tencentcloud/wedata/v20210820/model/DeleteDsEventRequest.h>
+#include <tencentcloud/wedata/v20210820/model/DeleteDsEventResponse.h>
 #include <tencentcloud/wedata/v20210820/model/DeleteDsEventListenerRequest.h>
 #include <tencentcloud/wedata/v20210820/model/DeleteDsEventListenerResponse.h>
 #include <tencentcloud/wedata/v20210820/model/DeleteDsEventPublisherRequest.h>
 #include <tencentcloud/wedata/v20210820/model/DeleteDsEventPublisherResponse.h>
 #include <tencentcloud/wedata/v20210820/model/DeleteDsFolderRequest.h>
 #include <tencentcloud/wedata/v20210820/model/DeleteDsFolderResponse.h>
+#include <tencentcloud/wedata/v20210820/model/DeleteEventListenerByTaskIdRequest.h>
+#include <tencentcloud/wedata/v20210820/model/DeleteEventListenerByTaskIdResponse.h>
 #include <tencentcloud/wedata/v20210820/model/DeleteFileRequest.h>
 #include <tencentcloud/wedata/v20210820/model/DeleteFileResponse.h>
 #include <tencentcloud/wedata/v20210820/model/DeleteFilePathRequest.h>
@@ -205,12 +229,18 @@
 #include <tencentcloud/wedata/v20210820/model/DeleteProjectParamVersionDsResponse.h>
 #include <tencentcloud/wedata/v20210820/model/DeleteProjectUsersRequest.h>
 #include <tencentcloud/wedata/v20210820/model/DeleteProjectUsersResponse.h>
+#include <tencentcloud/wedata/v20210820/model/DeleteRecordListRequest.h>
+#include <tencentcloud/wedata/v20210820/model/DeleteRecordListResponse.h>
+#include <tencentcloud/wedata/v20210820/model/DeleteRecycleTaskRequest.h>
+#include <tencentcloud/wedata/v20210820/model/DeleteRecycleTaskResponse.h>
 #include <tencentcloud/wedata/v20210820/model/DeleteResourceRequest.h>
 #include <tencentcloud/wedata/v20210820/model/DeleteResourceResponse.h>
 #include <tencentcloud/wedata/v20210820/model/DeleteResourceFileRequest.h>
 #include <tencentcloud/wedata/v20210820/model/DeleteResourceFileResponse.h>
 #include <tencentcloud/wedata/v20210820/model/DeleteResourceFilesRequest.h>
 #include <tencentcloud/wedata/v20210820/model/DeleteResourceFilesResponse.h>
+#include <tencentcloud/wedata/v20210820/model/DeleteResourcePathRequest.h>
+#include <tencentcloud/wedata/v20210820/model/DeleteResourcePathResponse.h>
 #include <tencentcloud/wedata/v20210820/model/DeleteRuleRequest.h>
 #include <tencentcloud/wedata/v20210820/model/DeleteRuleResponse.h>
 #include <tencentcloud/wedata/v20210820/model/DeleteRuleTemplateRequest.h>
@@ -237,6 +267,8 @@
 #include <tencentcloud/wedata/v20210820/model/DescribeAlarmReceiverResponse.h>
 #include <tencentcloud/wedata/v20210820/model/DescribeAllByFolderNewRequest.h>
 #include <tencentcloud/wedata/v20210820/model/DescribeAllByFolderNewResponse.h>
+#include <tencentcloud/wedata/v20210820/model/DescribeAllParamDsRequest.h>
+#include <tencentcloud/wedata/v20210820/model/DescribeAllParamDsResponse.h>
 #include <tencentcloud/wedata/v20210820/model/DescribeAllTaskTypeRequest.h>
 #include <tencentcloud/wedata/v20210820/model/DescribeAllTaskTypeResponse.h>
 #include <tencentcloud/wedata/v20210820/model/DescribeAllUsedVersionSonRequest.h>
@@ -259,6 +291,8 @@
 #include <tencentcloud/wedata/v20210820/model/DescribeBaselinesResponse.h>
 #include <tencentcloud/wedata/v20210820/model/DescribeBatchOperateTaskRequest.h>
 #include <tencentcloud/wedata/v20210820/model/DescribeBatchOperateTaskResponse.h>
+#include <tencentcloud/wedata/v20210820/model/DescribeBatchTestRunRequest.h>
+#include <tencentcloud/wedata/v20210820/model/DescribeBatchTestRunResponse.h>
 #include <tencentcloud/wedata/v20210820/model/DescribeBelongToRequest.h>
 #include <tencentcloud/wedata/v20210820/model/DescribeBelongToResponse.h>
 #include <tencentcloud/wedata/v20210820/model/DescribeBrowsingHistoriesRequest.h>
@@ -289,6 +323,8 @@
 #include <tencentcloud/wedata/v20210820/model/DescribeColumnsMetaResponse.h>
 #include <tencentcloud/wedata/v20210820/model/DescribeCrontabTopNDsRequest.h>
 #include <tencentcloud/wedata/v20210820/model/DescribeCrontabTopNDsResponse.h>
+#include <tencentcloud/wedata/v20210820/model/DescribeCustomFunctionVersionListRequest.h>
+#include <tencentcloud/wedata/v20210820/model/DescribeCustomFunctionVersionListResponse.h>
 #include <tencentcloud/wedata/v20210820/model/DescribeDataBasesRequest.h>
 #include <tencentcloud/wedata/v20210820/model/DescribeDataBasesResponse.h>
 #include <tencentcloud/wedata/v20210820/model/DescribeDataCheckStatRequest.h>
@@ -303,6 +339,8 @@
 #include <tencentcloud/wedata/v20210820/model/DescribeDataSourceListResponse.h>
 #include <tencentcloud/wedata/v20210820/model/DescribeDataSourceWithoutInfoRequest.h>
 #include <tencentcloud/wedata/v20210820/model/DescribeDataSourceWithoutInfoResponse.h>
+#include <tencentcloud/wedata/v20210820/model/DescribeDataTableImportProgressRequest.h>
+#include <tencentcloud/wedata/v20210820/model/DescribeDataTableImportProgressResponse.h>
 #include <tencentcloud/wedata/v20210820/model/DescribeDataTypesRequest.h>
 #include <tencentcloud/wedata/v20210820/model/DescribeDataTypesResponse.h>
 #include <tencentcloud/wedata/v20210820/model/DescribeDatabaseInfoListRequest.h>
@@ -339,12 +377,30 @@
 #include <tencentcloud/wedata/v20210820/model/DescribeDrSonInstanceResponse.h>
 #include <tencentcloud/wedata/v20210820/model/DescribeDsEventRequest.h>
 #include <tencentcloud/wedata/v20210820/model/DescribeDsEventResponse.h>
+#include <tencentcloud/wedata/v20210820/model/DescribeDsEventDetailRequest.h>
+#include <tencentcloud/wedata/v20210820/model/DescribeDsEventDetailResponse.h>
+#include <tencentcloud/wedata/v20210820/model/DescribeDsEventListenerRequest.h>
+#include <tencentcloud/wedata/v20210820/model/DescribeDsEventListenerResponse.h>
+#include <tencentcloud/wedata/v20210820/model/DescribeDsEventListenerListRequest.h>
+#include <tencentcloud/wedata/v20210820/model/DescribeDsEventListenerListResponse.h>
+#include <tencentcloud/wedata/v20210820/model/DescribeDsEventPublisherRequest.h>
+#include <tencentcloud/wedata/v20210820/model/DescribeDsEventPublisherResponse.h>
+#include <tencentcloud/wedata/v20210820/model/DescribeDsEventPublisherListRequest.h>
+#include <tencentcloud/wedata/v20210820/model/DescribeDsEventPublisherListResponse.h>
 #include <tencentcloud/wedata/v20210820/model/DescribeDsFolderTreeRequest.h>
 #include <tencentcloud/wedata/v20210820/model/DescribeDsFolderTreeResponse.h>
 #include <tencentcloud/wedata/v20210820/model/DescribeDsKettleServerFolderTreeRequest.h>
 #include <tencentcloud/wedata/v20210820/model/DescribeDsKettleServerFolderTreeResponse.h>
+#include <tencentcloud/wedata/v20210820/model/DescribeDsLatestTaskVersionInfoRequest.h>
+#include <tencentcloud/wedata/v20210820/model/DescribeDsLatestTaskVersionInfoResponse.h>
+#include <tencentcloud/wedata/v20210820/model/DescribeDsNotSubmitTasksAndCanRunByWorkflowRequest.h>
+#include <tencentcloud/wedata/v20210820/model/DescribeDsNotSubmitTasksAndCanRunByWorkflowResponse.h>
 #include <tencentcloud/wedata/v20210820/model/DescribeDsParentFolderTreeRequest.h>
 #include <tencentcloud/wedata/v20210820/model/DescribeDsParentFolderTreeResponse.h>
+#include <tencentcloud/wedata/v20210820/model/DescribeDsTaskVersionInfoRequest.h>
+#include <tencentcloud/wedata/v20210820/model/DescribeDsTaskVersionInfoResponse.h>
+#include <tencentcloud/wedata/v20210820/model/DescribeDsTaskVersionListRequest.h>
+#include <tencentcloud/wedata/v20210820/model/DescribeDsTaskVersionListResponse.h>
 #include <tencentcloud/wedata/v20210820/model/DescribeEtlTaskTypeRequest.h>
 #include <tencentcloud/wedata/v20210820/model/DescribeEtlTaskTypeResponse.h>
 #include <tencentcloud/wedata/v20210820/model/DescribeEventRequest.h>
@@ -367,12 +423,16 @@
 #include <tencentcloud/wedata/v20210820/model/DescribeEventsResponse.h>
 #include <tencentcloud/wedata/v20210820/model/DescribeExecStrategyRequest.h>
 #include <tencentcloud/wedata/v20210820/model/DescribeExecStrategyResponse.h>
+#include <tencentcloud/wedata/v20210820/model/DescribeExecutionLogRequest.h>
+#include <tencentcloud/wedata/v20210820/model/DescribeExecutionLogResponse.h>
 #include <tencentcloud/wedata/v20210820/model/DescribeFatherDatasourceInfoDsRequest.h>
 #include <tencentcloud/wedata/v20210820/model/DescribeFatherDatasourceInfoDsResponse.h>
 #include <tencentcloud/wedata/v20210820/model/DescribeFathersRequest.h>
 #include <tencentcloud/wedata/v20210820/model/DescribeFathersResponse.h>
 #include <tencentcloud/wedata/v20210820/model/DescribeFieldBasicInfoRequest.h>
 #include <tencentcloud/wedata/v20210820/model/DescribeFieldBasicInfoResponse.h>
+#include <tencentcloud/wedata/v20210820/model/DescribeFileVersionsRequest.h>
+#include <tencentcloud/wedata/v20210820/model/DescribeFileVersionsResponse.h>
 #include <tencentcloud/wedata/v20210820/model/DescribeFolderListRequest.h>
 #include <tencentcloud/wedata/v20210820/model/DescribeFolderListResponse.h>
 #include <tencentcloud/wedata/v20210820/model/DescribeFolderWorkflowListRequest.h>
@@ -381,6 +441,8 @@
 #include <tencentcloud/wedata/v20210820/model/DescribeFunctionKindsResponse.h>
 #include <tencentcloud/wedata/v20210820/model/DescribeFunctionTypesRequest.h>
 #include <tencentcloud/wedata/v20210820/model/DescribeFunctionTypesResponse.h>
+#include <tencentcloud/wedata/v20210820/model/DescribeGlobalWorkflowDsRequest.h>
+#include <tencentcloud/wedata/v20210820/model/DescribeGlobalWorkflowDsResponse.h>
 #include <tencentcloud/wedata/v20210820/model/DescribeImportableOfflineTaskRequest.h>
 #include <tencentcloud/wedata/v20210820/model/DescribeImportableOfflineTaskResponse.h>
 #include <tencentcloud/wedata/v20210820/model/DescribeInLongAgentListRequest.h>
@@ -439,6 +501,8 @@
 #include <tencentcloud/wedata/v20210820/model/DescribeLockResponse.h>
 #include <tencentcloud/wedata/v20210820/model/DescribeMonitorsByPageRequest.h>
 #include <tencentcloud/wedata/v20210820/model/DescribeMonitorsByPageResponse.h>
+#include <tencentcloud/wedata/v20210820/model/DescribeNewSqlTaskResultRequest.h>
+#include <tencentcloud/wedata/v20210820/model/DescribeNewSqlTaskResultResponse.h>
 #include <tencentcloud/wedata/v20210820/model/DescribeOfflineTaskTokenRequest.h>
 #include <tencentcloud/wedata/v20210820/model/DescribeOfflineTaskTokenResponse.h>
 #include <tencentcloud/wedata/v20210820/model/DescribeOperateOpsTaskDatasourceRequest.h>
@@ -467,10 +531,16 @@
 #include <tencentcloud/wedata/v20210820/model/DescribePathTreesResponse.h>
 #include <tencentcloud/wedata/v20210820/model/DescribeProdTasksRequest.h>
 #include <tencentcloud/wedata/v20210820/model/DescribeProdTasksResponse.h>
+#include <tencentcloud/wedata/v20210820/model/DescribeProdWorkflowCanvasInfoDsRequest.h>
+#include <tencentcloud/wedata/v20210820/model/DescribeProdWorkflowCanvasInfoDsResponse.h>
 #include <tencentcloud/wedata/v20210820/model/DescribeProjectRequest.h>
 #include <tencentcloud/wedata/v20210820/model/DescribeProjectResponse.h>
+#include <tencentcloud/wedata/v20210820/model/DescribeProjectParamDsRequest.h>
+#include <tencentcloud/wedata/v20210820/model/DescribeProjectParamDsResponse.h>
 #include <tencentcloud/wedata/v20210820/model/DescribeProjectParamDsPageRequest.h>
 #include <tencentcloud/wedata/v20210820/model/DescribeProjectParamDsPageResponse.h>
+#include <tencentcloud/wedata/v20210820/model/DescribeProjectParamVersionDsRequest.h>
+#include <tencentcloud/wedata/v20210820/model/DescribeProjectParamVersionDsResponse.h>
 #include <tencentcloud/wedata/v20210820/model/DescribeProjectParamVersionInfoDsRequest.h>
 #include <tencentcloud/wedata/v20210820/model/DescribeProjectParamVersionInfoDsResponse.h>
 #include <tencentcloud/wedata/v20210820/model/DescribeQualityScoreRequest.h>
@@ -483,6 +553,12 @@
 #include <tencentcloud/wedata/v20210820/model/DescribeRealTimeTaskMetricOverviewResponse.h>
 #include <tencentcloud/wedata/v20210820/model/DescribeRealTimeTaskSpeedRequest.h>
 #include <tencentcloud/wedata/v20210820/model/DescribeRealTimeTaskSpeedResponse.h>
+#include <tencentcloud/wedata/v20210820/model/DescribeRecordListRequest.h>
+#include <tencentcloud/wedata/v20210820/model/DescribeRecordListResponse.h>
+#include <tencentcloud/wedata/v20210820/model/DescribeRecycleTaskDetailRequest.h>
+#include <tencentcloud/wedata/v20210820/model/DescribeRecycleTaskDetailResponse.h>
+#include <tencentcloud/wedata/v20210820/model/DescribeRecycleTaskListRequest.h>
+#include <tencentcloud/wedata/v20210820/model/DescribeRecycleTaskListResponse.h>
 #include <tencentcloud/wedata/v20210820/model/DescribeRelatedInstancesRequest.h>
 #include <tencentcloud/wedata/v20210820/model/DescribeRelatedInstancesResponse.h>
 #include <tencentcloud/wedata/v20210820/model/DescribeResourceManagePathTreesRequest.h>
@@ -549,6 +625,8 @@
 #include <tencentcloud/wedata/v20210820/model/DescribeScriptsImportTaskTypeResponse.h>
 #include <tencentcloud/wedata/v20210820/model/DescribeSonInstancesRequest.h>
 #include <tencentcloud/wedata/v20210820/model/DescribeSonInstancesResponse.h>
+#include <tencentcloud/wedata/v20210820/model/DescribeSqlTaskResultRequest.h>
+#include <tencentcloud/wedata/v20210820/model/DescribeSqlTaskResultResponse.h>
 #include <tencentcloud/wedata/v20210820/model/DescribeStandardRuleDetailInfoListRequest.h>
 #include <tencentcloud/wedata/v20210820/model/DescribeStandardRuleDetailInfoListResponse.h>
 #include <tencentcloud/wedata/v20210820/model/DescribeStatisticInstanceStatusTrendOpsRequest.h>
@@ -589,6 +667,8 @@
 #include <tencentcloud/wedata/v20210820/model/DescribeTaskDetailResponse.h>
 #include <tencentcloud/wedata/v20210820/model/DescribeTaskDetailDsRequest.h>
 #include <tencentcloud/wedata/v20210820/model/DescribeTaskDetailDsResponse.h>
+#include <tencentcloud/wedata/v20210820/model/DescribeTaskInParamDsRequest.h>
+#include <tencentcloud/wedata/v20210820/model/DescribeTaskInParamDsResponse.h>
 #include <tencentcloud/wedata/v20210820/model/DescribeTaskInstanceRequest.h>
 #include <tencentcloud/wedata/v20210820/model/DescribeTaskInstanceResponse.h>
 #include <tencentcloud/wedata/v20210820/model/DescribeTaskInstanceReportDetailRequest.h>
@@ -601,8 +681,12 @@
 #include <tencentcloud/wedata/v20210820/model/DescribeTaskListByConditionDsResponse.h>
 #include <tencentcloud/wedata/v20210820/model/DescribeTaskLockStatusRequest.h>
 #include <tencentcloud/wedata/v20210820/model/DescribeTaskLockStatusResponse.h>
+#include <tencentcloud/wedata/v20210820/model/DescribeTaskOutParamDsRequest.h>
+#include <tencentcloud/wedata/v20210820/model/DescribeTaskOutParamDsResponse.h>
 #include <tencentcloud/wedata/v20210820/model/DescribeTaskOutputRegistriesRequest.h>
 #include <tencentcloud/wedata/v20210820/model/DescribeTaskOutputRegistriesResponse.h>
+#include <tencentcloud/wedata/v20210820/model/DescribeTaskParamDsRequest.h>
+#include <tencentcloud/wedata/v20210820/model/DescribeTaskParamDsResponse.h>
 #include <tencentcloud/wedata/v20210820/model/DescribeTaskParentRunTimeRequest.h>
 #include <tencentcloud/wedata/v20210820/model/DescribeTaskParentRunTimeResponse.h>
 #include <tencentcloud/wedata/v20210820/model/DescribeTaskReportRequest.h>
@@ -623,18 +707,26 @@
 #include <tencentcloud/wedata/v20210820/model/DescribeTemplateDimCountResponse.h>
 #include <tencentcloud/wedata/v20210820/model/DescribeTemplateHistoryRequest.h>
 #include <tencentcloud/wedata/v20210820/model/DescribeTemplateHistoryResponse.h>
+#include <tencentcloud/wedata/v20210820/model/DescribeTestRunRequest.h>
+#include <tencentcloud/wedata/v20210820/model/DescribeTestRunResponse.h>
 #include <tencentcloud/wedata/v20210820/model/DescribeThirdTaskRunLogRequest.h>
 #include <tencentcloud/wedata/v20210820/model/DescribeThirdTaskRunLogResponse.h>
+#include <tencentcloud/wedata/v20210820/model/DescribeTokenRequest.h>
+#include <tencentcloud/wedata/v20210820/model/DescribeTokenResponse.h>
 #include <tencentcloud/wedata/v20210820/model/DescribeTopTableStatRequest.h>
 #include <tencentcloud/wedata/v20210820/model/DescribeTopTableStatResponse.h>
 #include <tencentcloud/wedata/v20210820/model/DescribeTrendStatRequest.h>
 #include <tencentcloud/wedata/v20210820/model/DescribeTrendStatResponse.h>
+#include <tencentcloud/wedata/v20210820/model/DescribeWorkflowByFordIdsRequest.h>
+#include <tencentcloud/wedata/v20210820/model/DescribeWorkflowByFordIdsResponse.h>
 #include <tencentcloud/wedata/v20210820/model/DescribeWorkflowCanvasInfoRequest.h>
 #include <tencentcloud/wedata/v20210820/model/DescribeWorkflowCanvasInfoResponse.h>
 #include <tencentcloud/wedata/v20210820/model/DescribeWorkflowCanvasInfoDsRequest.h>
 #include <tencentcloud/wedata/v20210820/model/DescribeWorkflowCanvasInfoDsResponse.h>
 #include <tencentcloud/wedata/v20210820/model/DescribeWorkflowCanvasOpLogsRequest.h>
 #include <tencentcloud/wedata/v20210820/model/DescribeWorkflowCanvasOpLogsResponse.h>
+#include <tencentcloud/wedata/v20210820/model/DescribeWorkflowCanvasOperatorsRequest.h>
+#include <tencentcloud/wedata/v20210820/model/DescribeWorkflowCanvasOperatorsResponse.h>
 #include <tencentcloud/wedata/v20210820/model/DescribeWorkflowExecuteByIdRequest.h>
 #include <tencentcloud/wedata/v20210820/model/DescribeWorkflowExecuteByIdResponse.h>
 #include <tencentcloud/wedata/v20210820/model/DescribeWorkflowForProjectCloneRequest.h>
@@ -645,6 +737,8 @@
 #include <tencentcloud/wedata/v20210820/model/DescribeWorkflowListByProjectIdResponse.h>
 #include <tencentcloud/wedata/v20210820/model/DescribeWorkflowOpsCanvasInfoRequest.h>
 #include <tencentcloud/wedata/v20210820/model/DescribeWorkflowOpsCanvasInfoResponse.h>
+#include <tencentcloud/wedata/v20210820/model/DescribeWorkflowParamDsRequest.h>
+#include <tencentcloud/wedata/v20210820/model/DescribeWorkflowParamDsResponse.h>
 #include <tencentcloud/wedata/v20210820/model/DescribeWorkflowSchedulerInfoDsRequest.h>
 #include <tencentcloud/wedata/v20210820/model/DescribeWorkflowSchedulerInfoDsResponse.h>
 #include <tencentcloud/wedata/v20210820/model/DescribeWorkflowTaskCountRequest.h>
@@ -653,6 +747,10 @@
 #include <tencentcloud/wedata/v20210820/model/DescribeWorkflowTasksForProjectCloneResponse.h>
 #include <tencentcloud/wedata/v20210820/model/DiagnosePlusRequest.h>
 #include <tencentcloud/wedata/v20210820/model/DiagnosePlusResponse.h>
+#include <tencentcloud/wedata/v20210820/model/DownloadNewSqlResultRequest.h>
+#include <tencentcloud/wedata/v20210820/model/DownloadNewSqlResultResponse.h>
+#include <tencentcloud/wedata/v20210820/model/DownloadSqlResultRequest.h>
+#include <tencentcloud/wedata/v20210820/model/DownloadSqlResultResponse.h>
 #include <tencentcloud/wedata/v20210820/model/DryRunDIOfflineTaskRequest.h>
 #include <tencentcloud/wedata/v20210820/model/DryRunDIOfflineTaskResponse.h>
 #include <tencentcloud/wedata/v20210820/model/EditBaselineRequest.h>
@@ -675,6 +773,8 @@
 #include <tencentcloud/wedata/v20210820/model/FindDependTaskListsDsResponse.h>
 #include <tencentcloud/wedata/v20210820/model/FindFuzzyTasksDsRequest.h>
 #include <tencentcloud/wedata/v20210820/model/FindFuzzyTasksDsResponse.h>
+#include <tencentcloud/wedata/v20210820/model/FindTaskByRemotePathRequest.h>
+#include <tencentcloud/wedata/v20210820/model/FindTaskByRemotePathResponse.h>
 #include <tencentcloud/wedata/v20210820/model/ForceSucInstancesRequest.h>
 #include <tencentcloud/wedata/v20210820/model/ForceSucInstancesResponse.h>
 #include <tencentcloud/wedata/v20210820/model/ForceSucScheduleInstancesRequest.h>
@@ -699,12 +799,18 @@
 #include <tencentcloud/wedata/v20210820/model/GetFileInfoResponse.h>
 #include <tencentcloud/wedata/v20210820/model/GetIntegrationNodeColumnSchemaRequest.h>
 #include <tencentcloud/wedata/v20210820/model/GetIntegrationNodeColumnSchemaResponse.h>
+#include <tencentcloud/wedata/v20210820/model/GetLatestAnalyseInfoRequest.h>
+#include <tencentcloud/wedata/v20210820/model/GetLatestAnalyseInfoResponse.h>
+#include <tencentcloud/wedata/v20210820/model/GetLatestTestRunInfoRequest.h>
+#include <tencentcloud/wedata/v20210820/model/GetLatestTestRunInfoResponse.h>
 #include <tencentcloud/wedata/v20210820/model/GetOfflineDIInstanceListRequest.h>
 #include <tencentcloud/wedata/v20210820/model/GetOfflineDIInstanceListResponse.h>
 #include <tencentcloud/wedata/v20210820/model/GetOfflineInstanceListRequest.h>
 #include <tencentcloud/wedata/v20210820/model/GetOfflineInstanceListResponse.h>
 #include <tencentcloud/wedata/v20210820/model/GetPathTreesRequest.h>
 #include <tencentcloud/wedata/v20210820/model/GetPathTreesResponse.h>
+#include <tencentcloud/wedata/v20210820/model/GetResourceCosPathRequest.h>
+#include <tencentcloud/wedata/v20210820/model/GetResourceCosPathResponse.h>
 #include <tencentcloud/wedata/v20210820/model/GetResourcePathTreeRequest.h>
 #include <tencentcloud/wedata/v20210820/model/GetResourcePathTreeResponse.h>
 #include <tencentcloud/wedata/v20210820/model/GetRunSonListDsRequest.h>
@@ -721,6 +827,14 @@
 #include <tencentcloud/wedata/v20210820/model/ImportOfflineTaskResponse.h>
 #include <tencentcloud/wedata/v20210820/model/ImportProjectParamDsRequest.h>
 #include <tencentcloud/wedata/v20210820/model/ImportProjectParamDsResponse.h>
+#include <tencentcloud/wedata/v20210820/model/ImportTableDataRequest.h>
+#include <tencentcloud/wedata/v20210820/model/ImportTableDataResponse.h>
+#include <tencentcloud/wedata/v20210820/model/ImportWorkflowXmlRequest.h>
+#include <tencentcloud/wedata/v20210820/model/ImportWorkflowXmlResponse.h>
+#include <tencentcloud/wedata/v20210820/model/ImportWorkflowZipRequest.h>
+#include <tencentcloud/wedata/v20210820/model/ImportWorkflowZipResponse.h>
+#include <tencentcloud/wedata/v20210820/model/JudgeResourceFileRequest.h>
+#include <tencentcloud/wedata/v20210820/model/JudgeResourceFileResponse.h>
 #include <tencentcloud/wedata/v20210820/model/JudgeTaskListenEventRequest.h>
 #include <tencentcloud/wedata/v20210820/model/JudgeTaskListenEventResponse.h>
 #include <tencentcloud/wedata/v20210820/model/KillInstancesRequest.h>
@@ -729,6 +843,8 @@
 #include <tencentcloud/wedata/v20210820/model/KillOpsMakePlanInstancesResponse.h>
 #include <tencentcloud/wedata/v20210820/model/KillScheduleInstancesRequest.h>
 #include <tencentcloud/wedata/v20210820/model/KillScheduleInstancesResponse.h>
+#include <tencentcloud/wedata/v20210820/model/KillTasksTestRunRequest.h>
+#include <tencentcloud/wedata/v20210820/model/KillTasksTestRunResponse.h>
 #include <tencentcloud/wedata/v20210820/model/ListBatchDetailRequest.h>
 #include <tencentcloud/wedata/v20210820/model/ListBatchDetailResponse.h>
 #include <tencentcloud/wedata/v20210820/model/ListBatchJobRequest.h>
@@ -797,6 +913,10 @@
 #include <tencentcloud/wedata/v20210820/model/MoveFileResponse.h>
 #include <tencentcloud/wedata/v20210820/model/MoveTasksToFolderRequest.h>
 #include <tencentcloud/wedata/v20210820/model/MoveTasksToFolderResponse.h>
+#include <tencentcloud/wedata/v20210820/model/PreviewDataTableCsvRequest.h>
+#include <tencentcloud/wedata/v20210820/model/PreviewDataTableCsvResponse.h>
+#include <tencentcloud/wedata/v20210820/model/QueryWorkflowVersionRequest.h>
+#include <tencentcloud/wedata/v20210820/model/QueryWorkflowVersionResponse.h>
 #include <tencentcloud/wedata/v20210820/model/RegisterDsEventRequest.h>
 #include <tencentcloud/wedata/v20210820/model/RegisterDsEventResponse.h>
 #include <tencentcloud/wedata/v20210820/model/RegisterDsEventListenerRequest.h>
@@ -817,6 +937,8 @@
 #include <tencentcloud/wedata/v20210820/model/RenameResourceResponse.h>
 #include <tencentcloud/wedata/v20210820/model/RenameResourceFileRequest.h>
 #include <tencentcloud/wedata/v20210820/model/RenameResourceFileResponse.h>
+#include <tencentcloud/wedata/v20210820/model/RenameResourcePathRequest.h>
+#include <tencentcloud/wedata/v20210820/model/RenameResourcePathResponse.h>
 #include <tencentcloud/wedata/v20210820/model/RenameTaskDsRequest.h>
 #include <tencentcloud/wedata/v20210820/model/RenameTaskDsResponse.h>
 #include <tencentcloud/wedata/v20210820/model/RenewWorkflowDsRequest.h>
@@ -827,6 +949,8 @@
 #include <tencentcloud/wedata/v20210820/model/RenewWorkflowOwnerDsResponse.h>
 #include <tencentcloud/wedata/v20210820/model/RenewWorkflowSchedulerInfoDsRequest.h>
 #include <tencentcloud/wedata/v20210820/model/RenewWorkflowSchedulerInfoDsResponse.h>
+#include <tencentcloud/wedata/v20210820/model/ReplaceProjectParamVersionDsRequest.h>
+#include <tencentcloud/wedata/v20210820/model/ReplaceProjectParamVersionDsResponse.h>
 #include <tencentcloud/wedata/v20210820/model/RerunInstancesRequest.h>
 #include <tencentcloud/wedata/v20210820/model/RerunInstancesResponse.h>
 #include <tencentcloud/wedata/v20210820/model/RerunOpsMakePlanInstancesRequest.h>
@@ -835,10 +959,14 @@
 #include <tencentcloud/wedata/v20210820/model/RerunScheduleInstancesResponse.h>
 #include <tencentcloud/wedata/v20210820/model/RestartInLongAgentRequest.h>
 #include <tencentcloud/wedata/v20210820/model/RestartInLongAgentResponse.h>
+#include <tencentcloud/wedata/v20210820/model/RestoreRecycleTaskRequest.h>
+#include <tencentcloud/wedata/v20210820/model/RestoreRecycleTaskResponse.h>
 #include <tencentcloud/wedata/v20210820/model/ResumeIntegrationTaskRequest.h>
 #include <tencentcloud/wedata/v20210820/model/ResumeIntegrationTaskResponse.h>
 #include <tencentcloud/wedata/v20210820/model/RobAndLockIntegrationTaskRequest.h>
 #include <tencentcloud/wedata/v20210820/model/RobAndLockIntegrationTaskResponse.h>
+#include <tencentcloud/wedata/v20210820/model/RollbackCustomFunctionVersionRequest.h>
+#include <tencentcloud/wedata/v20210820/model/RollbackCustomFunctionVersionResponse.h>
 #include <tencentcloud/wedata/v20210820/model/RunForceSucScheduleInstancesRequest.h>
 #include <tencentcloud/wedata/v20210820/model/RunForceSucScheduleInstancesResponse.h>
 #include <tencentcloud/wedata/v20210820/model/RunRerunScheduleInstancesRequest.h>
@@ -857,14 +985,22 @@
 #include <tencentcloud/wedata/v20210820/model/SetTaskAlarmNewResponse.h>
 #include <tencentcloud/wedata/v20210820/model/StartIntegrationTaskRequest.h>
 #include <tencentcloud/wedata/v20210820/model/StartIntegrationTaskResponse.h>
+#include <tencentcloud/wedata/v20210820/model/StopAdhocTaskRequest.h>
+#include <tencentcloud/wedata/v20210820/model/StopAdhocTaskResponse.h>
 #include <tencentcloud/wedata/v20210820/model/StopBaselineRequest.h>
 #include <tencentcloud/wedata/v20210820/model/StopBaselineResponse.h>
 #include <tencentcloud/wedata/v20210820/model/StopIntegrationTaskRequest.h>
 #include <tencentcloud/wedata/v20210820/model/StopIntegrationTaskResponse.h>
+#include <tencentcloud/wedata/v20210820/model/StopTestRunRequest.h>
+#include <tencentcloud/wedata/v20210820/model/StopTestRunResponse.h>
 #include <tencentcloud/wedata/v20210820/model/SubmitBaselineRequest.h>
 #include <tencentcloud/wedata/v20210820/model/SubmitBaselineResponse.h>
+#include <tencentcloud/wedata/v20210820/model/SubmitBatchTestRunRequest.h>
+#include <tencentcloud/wedata/v20210820/model/SubmitBatchTestRunResponse.h>
 #include <tencentcloud/wedata/v20210820/model/SubmitCustomFunctionRequest.h>
 #include <tencentcloud/wedata/v20210820/model/SubmitCustomFunctionResponse.h>
+#include <tencentcloud/wedata/v20210820/model/SubmitIntegrationTaskRequest.h>
+#include <tencentcloud/wedata/v20210820/model/SubmitIntegrationTaskResponse.h>
 #include <tencentcloud/wedata/v20210820/model/SubmitPySparkTaskRequest.h>
 #include <tencentcloud/wedata/v20210820/model/SubmitPySparkTaskResponse.h>
 #include <tencentcloud/wedata/v20210820/model/SubmitPythonTaskRequest.h>
@@ -877,6 +1013,8 @@
 #include <tencentcloud/wedata/v20210820/model/SubmitTaskResponse.h>
 #include <tencentcloud/wedata/v20210820/model/SubmitTaskTestRunRequest.h>
 #include <tencentcloud/wedata/v20210820/model/SubmitTaskTestRunResponse.h>
+#include <tencentcloud/wedata/v20210820/model/SubmitTestRunRequest.h>
+#include <tencentcloud/wedata/v20210820/model/SubmitTestRunResponse.h>
 #include <tencentcloud/wedata/v20210820/model/SubmitWorkflowRequest.h>
 #include <tencentcloud/wedata/v20210820/model/SubmitWorkflowResponse.h>
 #include <tencentcloud/wedata/v20210820/model/SuspendIntegrationTaskRequest.h>
@@ -911,6 +1049,8 @@
 #include <tencentcloud/wedata/v20210820/model/UpdateInLongAgentResponse.h>
 #include <tencentcloud/wedata/v20210820/model/UpdateTaskDsRequest.h>
 #include <tencentcloud/wedata/v20210820/model/UpdateTaskDsResponse.h>
+#include <tencentcloud/wedata/v20210820/model/UpdateWorkflowInfoRequest.h>
+#include <tencentcloud/wedata/v20210820/model/UpdateWorkflowInfoResponse.h>
 #include <tencentcloud/wedata/v20210820/model/UpdateWorkflowOwnerRequest.h>
 #include <tencentcloud/wedata/v20210820/model/UpdateWorkflowOwnerResponse.h>
 #include <tencentcloud/wedata/v20210820/model/UploadAdvanceRunParamsRequest.h>
@@ -1022,6 +1162,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::CheckAlarmRegularNameExistResponse> CheckAlarmRegularNameExistOutcome;
                 typedef std::future<CheckAlarmRegularNameExistOutcome> CheckAlarmRegularNameExistOutcomeCallable;
                 typedef std::function<void(const WedataClient*, const Model::CheckAlarmRegularNameExistRequest&, CheckAlarmRegularNameExistOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CheckAlarmRegularNameExistAsyncHandler;
+                typedef Outcome<Core::Error, Model::CheckCustomFunctionPremiseResponse> CheckCustomFunctionPremiseOutcome;
+                typedef std::future<CheckCustomFunctionPremiseOutcome> CheckCustomFunctionPremiseOutcomeCallable;
+                typedef std::function<void(const WedataClient*, const Model::CheckCustomFunctionPremiseRequest&, CheckCustomFunctionPremiseOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CheckCustomFunctionPremiseAsyncHandler;
                 typedef Outcome<Core::Error, Model::CheckDuplicateRuleNameResponse> CheckDuplicateRuleNameOutcome;
                 typedef std::future<CheckDuplicateRuleNameOutcome> CheckDuplicateRuleNameOutcomeCallable;
                 typedef std::function<void(const WedataClient*, const Model::CheckDuplicateRuleNameRequest&, CheckDuplicateRuleNameOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CheckDuplicateRuleNameAsyncHandler;
@@ -1043,6 +1186,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::CheckTaskPriorityDsResponse> CheckTaskPriorityDsOutcome;
                 typedef std::future<CheckTaskPriorityDsOutcome> CheckTaskPriorityDsOutcomeCallable;
                 typedef std::function<void(const WedataClient*, const Model::CheckTaskPriorityDsRequest&, CheckTaskPriorityDsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CheckTaskPriorityDsAsyncHandler;
+                typedef Outcome<Core::Error, Model::ClearRecycleTaskResponse> ClearRecycleTaskOutcome;
+                typedef std::future<ClearRecycleTaskOutcome> ClearRecycleTaskOutcomeCallable;
+                typedef std::function<void(const WedataClient*, const Model::ClearRecycleTaskRequest&, ClearRecycleTaskOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ClearRecycleTaskAsyncHandler;
                 typedef Outcome<Core::Error, Model::CommitExportTaskResponse> CommitExportTaskOutcome;
                 typedef std::future<CommitExportTaskOutcome> CommitExportTaskOutcomeCallable;
                 typedef std::function<void(const WedataClient*, const Model::CommitExportTaskRequest&, CommitExportTaskOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CommitExportTaskAsyncHandler;
@@ -1055,15 +1201,27 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::CommitRuleGroupTaskResponse> CommitRuleGroupTaskOutcome;
                 typedef std::future<CommitRuleGroupTaskOutcome> CommitRuleGroupTaskOutcomeCallable;
                 typedef std::function<void(const WedataClient*, const Model::CommitRuleGroupTaskRequest&, CommitRuleGroupTaskOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CommitRuleGroupTaskAsyncHandler;
+                typedef Outcome<Core::Error, Model::CommitWorkflowResponse> CommitWorkflowOutcome;
+                typedef std::future<CommitWorkflowOutcome> CommitWorkflowOutcomeCallable;
+                typedef std::function<void(const WedataClient*, const Model::CommitWorkflowRequest&, CommitWorkflowOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CommitWorkflowAsyncHandler;
+                typedef Outcome<Core::Error, Model::CompareDsTaskVersionInfoResponse> CompareDsTaskVersionInfoOutcome;
+                typedef std::future<CompareDsTaskVersionInfoOutcome> CompareDsTaskVersionInfoOutcomeCallable;
+                typedef std::function<void(const WedataClient*, const Model::CompareDsTaskVersionInfoRequest&, CompareDsTaskVersionInfoOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CompareDsTaskVersionInfoAsyncHandler;
                 typedef Outcome<Core::Error, Model::CopyTaskDsResponse> CopyTaskDsOutcome;
                 typedef std::future<CopyTaskDsOutcome> CopyTaskDsOutcomeCallable;
                 typedef std::function<void(const WedataClient*, const Model::CopyTaskDsRequest&, CopyTaskDsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CopyTaskDsAsyncHandler;
+                typedef Outcome<Core::Error, Model::CopyWorkflowDsResponse> CopyWorkflowDsOutcome;
+                typedef std::future<CopyWorkflowDsOutcome> CopyWorkflowDsOutcomeCallable;
+                typedef std::function<void(const WedataClient*, const Model::CopyWorkflowDsRequest&, CopyWorkflowDsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CopyWorkflowDsAsyncHandler;
                 typedef Outcome<Core::Error, Model::CountOpsInstanceStateResponse> CountOpsInstanceStateOutcome;
                 typedef std::future<CountOpsInstanceStateOutcome> CountOpsInstanceStateOutcomeCallable;
                 typedef std::function<void(const WedataClient*, const Model::CountOpsInstanceStateRequest&, CountOpsInstanceStateOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CountOpsInstanceStateAsyncHandler;
                 typedef Outcome<Core::Error, Model::CreateBaselineResponse> CreateBaselineOutcome;
                 typedef std::future<CreateBaselineOutcome> CreateBaselineOutcomeCallable;
                 typedef std::function<void(const WedataClient*, const Model::CreateBaselineRequest&, CreateBaselineOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateBaselineAsyncHandler;
+                typedef Outcome<Core::Error, Model::CreateBrowsingHistoryResponse> CreateBrowsingHistoryOutcome;
+                typedef std::future<CreateBrowsingHistoryOutcome> CreateBrowsingHistoryOutcomeCallable;
+                typedef std::function<void(const WedataClient*, const Model::CreateBrowsingHistoryRequest&, CreateBrowsingHistoryOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateBrowsingHistoryAsyncHandler;
                 typedef Outcome<Core::Error, Model::CreateCustomFunctionResponse> CreateCustomFunctionOutcome;
                 typedef std::future<CreateCustomFunctionOutcome> CreateCustomFunctionOutcomeCallable;
                 typedef std::function<void(const WedataClient*, const Model::CreateCustomFunctionRequest&, CreateCustomFunctionOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateCustomFunctionAsyncHandler;
@@ -1094,6 +1252,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::CreateIntegrationTaskResponse> CreateIntegrationTaskOutcome;
                 typedef std::future<CreateIntegrationTaskOutcome> CreateIntegrationTaskOutcomeCallable;
                 typedef std::function<void(const WedataClient*, const Model::CreateIntegrationTaskRequest&, CreateIntegrationTaskOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateIntegrationTaskAsyncHandler;
+                typedef Outcome<Core::Error, Model::CreateLinkResponse> CreateLinkOutcome;
+                typedef std::future<CreateLinkOutcome> CreateLinkOutcomeCallable;
+                typedef std::function<void(const WedataClient*, const Model::CreateLinkRequest&, CreateLinkOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateLinkAsyncHandler;
                 typedef Outcome<Core::Error, Model::CreateOfflineTaskResponse> CreateOfflineTaskOutcome;
                 typedef std::future<CreateOfflineTaskOutcome> CreateOfflineTaskOutcomeCallable;
                 typedef std::function<void(const WedataClient*, const Model::CreateOfflineTaskRequest&, CreateOfflineTaskOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateOfflineTaskAsyncHandler;
@@ -1109,6 +1270,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::CreateProjectParamDsResponse> CreateProjectParamDsOutcome;
                 typedef std::future<CreateProjectParamDsOutcome> CreateProjectParamDsOutcomeCallable;
                 typedef std::function<void(const WedataClient*, const Model::CreateProjectParamDsRequest&, CreateProjectParamDsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateProjectParamDsAsyncHandler;
+                typedef Outcome<Core::Error, Model::CreateResourceDirectoryResponse> CreateResourceDirectoryOutcome;
+                typedef std::future<CreateResourceDirectoryOutcome> CreateResourceDirectoryOutcomeCallable;
+                typedef std::function<void(const WedataClient*, const Model::CreateResourceDirectoryRequest&, CreateResourceDirectoryOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateResourceDirectoryAsyncHandler;
                 typedef Outcome<Core::Error, Model::CreateResourcePathResponse> CreateResourcePathOutcome;
                 typedef std::future<CreateResourcePathOutcome> CreateResourcePathOutcomeCallable;
                 typedef std::function<void(const WedataClient*, const Model::CreateResourcePathRequest&, CreateResourcePathOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateResourcePathAsyncHandler;
@@ -1154,18 +1318,27 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::CreateWorkflowResponse> CreateWorkflowOutcome;
                 typedef std::future<CreateWorkflowOutcome> CreateWorkflowOutcomeCallable;
                 typedef std::function<void(const WedataClient*, const Model::CreateWorkflowRequest&, CreateWorkflowOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateWorkflowAsyncHandler;
+                typedef Outcome<Core::Error, Model::CreateWorkflowDsResponse> CreateWorkflowDsOutcome;
+                typedef std::future<CreateWorkflowDsOutcome> CreateWorkflowDsOutcomeCallable;
+                typedef std::function<void(const WedataClient*, const Model::CreateWorkflowDsRequest&, CreateWorkflowDsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateWorkflowDsAsyncHandler;
                 typedef Outcome<Core::Error, Model::DagInstancesResponse> DagInstancesOutcome;
                 typedef std::future<DagInstancesOutcome> DagInstancesOutcomeCallable;
                 typedef std::function<void(const WedataClient*, const Model::DagInstancesRequest&, DagInstancesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DagInstancesAsyncHandler;
                 typedef Outcome<Core::Error, Model::DeleteBaselineResponse> DeleteBaselineOutcome;
                 typedef std::future<DeleteBaselineOutcome> DeleteBaselineOutcomeCallable;
                 typedef std::function<void(const WedataClient*, const Model::DeleteBaselineRequest&, DeleteBaselineOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteBaselineAsyncHandler;
+                typedef Outcome<Core::Error, Model::DeleteBatchWorkflowDsResponse> DeleteBatchWorkflowDsOutcome;
+                typedef std::future<DeleteBatchWorkflowDsOutcome> DeleteBatchWorkflowDsOutcomeCallable;
+                typedef std::function<void(const WedataClient*, const Model::DeleteBatchWorkflowDsRequest&, DeleteBatchWorkflowDsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteBatchWorkflowDsAsyncHandler;
                 typedef Outcome<Core::Error, Model::DeleteCustomFunctionResponse> DeleteCustomFunctionOutcome;
                 typedef std::future<DeleteCustomFunctionOutcome> DeleteCustomFunctionOutcomeCallable;
                 typedef std::function<void(const WedataClient*, const Model::DeleteCustomFunctionRequest&, DeleteCustomFunctionOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteCustomFunctionAsyncHandler;
                 typedef Outcome<Core::Error, Model::DeleteDataSourcesResponse> DeleteDataSourcesOutcome;
                 typedef std::future<DeleteDataSourcesOutcome> DeleteDataSourcesOutcomeCallable;
                 typedef std::function<void(const WedataClient*, const Model::DeleteDataSourcesRequest&, DeleteDataSourcesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteDataSourcesAsyncHandler;
+                typedef Outcome<Core::Error, Model::DeleteDsEventResponse> DeleteDsEventOutcome;
+                typedef std::future<DeleteDsEventOutcome> DeleteDsEventOutcomeCallable;
+                typedef std::function<void(const WedataClient*, const Model::DeleteDsEventRequest&, DeleteDsEventOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteDsEventAsyncHandler;
                 typedef Outcome<Core::Error, Model::DeleteDsEventListenerResponse> DeleteDsEventListenerOutcome;
                 typedef std::future<DeleteDsEventListenerOutcome> DeleteDsEventListenerOutcomeCallable;
                 typedef std::function<void(const WedataClient*, const Model::DeleteDsEventListenerRequest&, DeleteDsEventListenerOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteDsEventListenerAsyncHandler;
@@ -1175,6 +1348,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DeleteDsFolderResponse> DeleteDsFolderOutcome;
                 typedef std::future<DeleteDsFolderOutcome> DeleteDsFolderOutcomeCallable;
                 typedef std::function<void(const WedataClient*, const Model::DeleteDsFolderRequest&, DeleteDsFolderOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteDsFolderAsyncHandler;
+                typedef Outcome<Core::Error, Model::DeleteEventListenerByTaskIdResponse> DeleteEventListenerByTaskIdOutcome;
+                typedef std::future<DeleteEventListenerByTaskIdOutcome> DeleteEventListenerByTaskIdOutcomeCallable;
+                typedef std::function<void(const WedataClient*, const Model::DeleteEventListenerByTaskIdRequest&, DeleteEventListenerByTaskIdOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteEventListenerByTaskIdAsyncHandler;
                 typedef Outcome<Core::Error, Model::DeleteFileResponse> DeleteFileOutcome;
                 typedef std::future<DeleteFileOutcome> DeleteFileOutcomeCallable;
                 typedef std::function<void(const WedataClient*, const Model::DeleteFileRequest&, DeleteFileOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteFileAsyncHandler;
@@ -1208,6 +1384,12 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DeleteProjectUsersResponse> DeleteProjectUsersOutcome;
                 typedef std::future<DeleteProjectUsersOutcome> DeleteProjectUsersOutcomeCallable;
                 typedef std::function<void(const WedataClient*, const Model::DeleteProjectUsersRequest&, DeleteProjectUsersOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteProjectUsersAsyncHandler;
+                typedef Outcome<Core::Error, Model::DeleteRecordListResponse> DeleteRecordListOutcome;
+                typedef std::future<DeleteRecordListOutcome> DeleteRecordListOutcomeCallable;
+                typedef std::function<void(const WedataClient*, const Model::DeleteRecordListRequest&, DeleteRecordListOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteRecordListAsyncHandler;
+                typedef Outcome<Core::Error, Model::DeleteRecycleTaskResponse> DeleteRecycleTaskOutcome;
+                typedef std::future<DeleteRecycleTaskOutcome> DeleteRecycleTaskOutcomeCallable;
+                typedef std::function<void(const WedataClient*, const Model::DeleteRecycleTaskRequest&, DeleteRecycleTaskOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteRecycleTaskAsyncHandler;
                 typedef Outcome<Core::Error, Model::DeleteResourceResponse> DeleteResourceOutcome;
                 typedef std::future<DeleteResourceOutcome> DeleteResourceOutcomeCallable;
                 typedef std::function<void(const WedataClient*, const Model::DeleteResourceRequest&, DeleteResourceOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteResourceAsyncHandler;
@@ -1217,6 +1399,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DeleteResourceFilesResponse> DeleteResourceFilesOutcome;
                 typedef std::future<DeleteResourceFilesOutcome> DeleteResourceFilesOutcomeCallable;
                 typedef std::function<void(const WedataClient*, const Model::DeleteResourceFilesRequest&, DeleteResourceFilesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteResourceFilesAsyncHandler;
+                typedef Outcome<Core::Error, Model::DeleteResourcePathResponse> DeleteResourcePathOutcome;
+                typedef std::future<DeleteResourcePathOutcome> DeleteResourcePathOutcomeCallable;
+                typedef std::function<void(const WedataClient*, const Model::DeleteResourcePathRequest&, DeleteResourcePathOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteResourcePathAsyncHandler;
                 typedef Outcome<Core::Error, Model::DeleteRuleResponse> DeleteRuleOutcome;
                 typedef std::future<DeleteRuleOutcome> DeleteRuleOutcomeCallable;
                 typedef std::function<void(const WedataClient*, const Model::DeleteRuleRequest&, DeleteRuleOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteRuleAsyncHandler;
@@ -1256,6 +1441,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeAllByFolderNewResponse> DescribeAllByFolderNewOutcome;
                 typedef std::future<DescribeAllByFolderNewOutcome> DescribeAllByFolderNewOutcomeCallable;
                 typedef std::function<void(const WedataClient*, const Model::DescribeAllByFolderNewRequest&, DescribeAllByFolderNewOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeAllByFolderNewAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeAllParamDsResponse> DescribeAllParamDsOutcome;
+                typedef std::future<DescribeAllParamDsOutcome> DescribeAllParamDsOutcomeCallable;
+                typedef std::function<void(const WedataClient*, const Model::DescribeAllParamDsRequest&, DescribeAllParamDsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeAllParamDsAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeAllTaskTypeResponse> DescribeAllTaskTypeOutcome;
                 typedef std::future<DescribeAllTaskTypeOutcome> DescribeAllTaskTypeOutcomeCallable;
                 typedef std::function<void(const WedataClient*, const Model::DescribeAllTaskTypeRequest&, DescribeAllTaskTypeOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeAllTaskTypeAsyncHandler;
@@ -1289,6 +1477,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeBatchOperateTaskResponse> DescribeBatchOperateTaskOutcome;
                 typedef std::future<DescribeBatchOperateTaskOutcome> DescribeBatchOperateTaskOutcomeCallable;
                 typedef std::function<void(const WedataClient*, const Model::DescribeBatchOperateTaskRequest&, DescribeBatchOperateTaskOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeBatchOperateTaskAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeBatchTestRunResponse> DescribeBatchTestRunOutcome;
+                typedef std::future<DescribeBatchTestRunOutcome> DescribeBatchTestRunOutcomeCallable;
+                typedef std::function<void(const WedataClient*, const Model::DescribeBatchTestRunRequest&, DescribeBatchTestRunOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeBatchTestRunAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeBelongToResponse> DescribeBelongToOutcome;
                 typedef std::future<DescribeBelongToOutcome> DescribeBelongToOutcomeCallable;
                 typedef std::function<void(const WedataClient*, const Model::DescribeBelongToRequest&, DescribeBelongToOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeBelongToAsyncHandler;
@@ -1334,6 +1525,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeCrontabTopNDsResponse> DescribeCrontabTopNDsOutcome;
                 typedef std::future<DescribeCrontabTopNDsOutcome> DescribeCrontabTopNDsOutcomeCallable;
                 typedef std::function<void(const WedataClient*, const Model::DescribeCrontabTopNDsRequest&, DescribeCrontabTopNDsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeCrontabTopNDsAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeCustomFunctionVersionListResponse> DescribeCustomFunctionVersionListOutcome;
+                typedef std::future<DescribeCustomFunctionVersionListOutcome> DescribeCustomFunctionVersionListOutcomeCallable;
+                typedef std::function<void(const WedataClient*, const Model::DescribeCustomFunctionVersionListRequest&, DescribeCustomFunctionVersionListOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeCustomFunctionVersionListAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeDataBasesResponse> DescribeDataBasesOutcome;
                 typedef std::future<DescribeDataBasesOutcome> DescribeDataBasesOutcomeCallable;
                 typedef std::function<void(const WedataClient*, const Model::DescribeDataBasesRequest&, DescribeDataBasesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeDataBasesAsyncHandler;
@@ -1355,6 +1549,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeDataSourceWithoutInfoResponse> DescribeDataSourceWithoutInfoOutcome;
                 typedef std::future<DescribeDataSourceWithoutInfoOutcome> DescribeDataSourceWithoutInfoOutcomeCallable;
                 typedef std::function<void(const WedataClient*, const Model::DescribeDataSourceWithoutInfoRequest&, DescribeDataSourceWithoutInfoOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeDataSourceWithoutInfoAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeDataTableImportProgressResponse> DescribeDataTableImportProgressOutcome;
+                typedef std::future<DescribeDataTableImportProgressOutcome> DescribeDataTableImportProgressOutcomeCallable;
+                typedef std::function<void(const WedataClient*, const Model::DescribeDataTableImportProgressRequest&, DescribeDataTableImportProgressOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeDataTableImportProgressAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeDataTypesResponse> DescribeDataTypesOutcome;
                 typedef std::future<DescribeDataTypesOutcome> DescribeDataTypesOutcomeCallable;
                 typedef std::function<void(const WedataClient*, const Model::DescribeDataTypesRequest&, DescribeDataTypesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeDataTypesAsyncHandler;
@@ -1409,15 +1606,42 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeDsEventResponse> DescribeDsEventOutcome;
                 typedef std::future<DescribeDsEventOutcome> DescribeDsEventOutcomeCallable;
                 typedef std::function<void(const WedataClient*, const Model::DescribeDsEventRequest&, DescribeDsEventOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeDsEventAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeDsEventDetailResponse> DescribeDsEventDetailOutcome;
+                typedef std::future<DescribeDsEventDetailOutcome> DescribeDsEventDetailOutcomeCallable;
+                typedef std::function<void(const WedataClient*, const Model::DescribeDsEventDetailRequest&, DescribeDsEventDetailOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeDsEventDetailAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeDsEventListenerResponse> DescribeDsEventListenerOutcome;
+                typedef std::future<DescribeDsEventListenerOutcome> DescribeDsEventListenerOutcomeCallable;
+                typedef std::function<void(const WedataClient*, const Model::DescribeDsEventListenerRequest&, DescribeDsEventListenerOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeDsEventListenerAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeDsEventListenerListResponse> DescribeDsEventListenerListOutcome;
+                typedef std::future<DescribeDsEventListenerListOutcome> DescribeDsEventListenerListOutcomeCallable;
+                typedef std::function<void(const WedataClient*, const Model::DescribeDsEventListenerListRequest&, DescribeDsEventListenerListOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeDsEventListenerListAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeDsEventPublisherResponse> DescribeDsEventPublisherOutcome;
+                typedef std::future<DescribeDsEventPublisherOutcome> DescribeDsEventPublisherOutcomeCallable;
+                typedef std::function<void(const WedataClient*, const Model::DescribeDsEventPublisherRequest&, DescribeDsEventPublisherOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeDsEventPublisherAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeDsEventPublisherListResponse> DescribeDsEventPublisherListOutcome;
+                typedef std::future<DescribeDsEventPublisherListOutcome> DescribeDsEventPublisherListOutcomeCallable;
+                typedef std::function<void(const WedataClient*, const Model::DescribeDsEventPublisherListRequest&, DescribeDsEventPublisherListOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeDsEventPublisherListAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeDsFolderTreeResponse> DescribeDsFolderTreeOutcome;
                 typedef std::future<DescribeDsFolderTreeOutcome> DescribeDsFolderTreeOutcomeCallable;
                 typedef std::function<void(const WedataClient*, const Model::DescribeDsFolderTreeRequest&, DescribeDsFolderTreeOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeDsFolderTreeAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeDsKettleServerFolderTreeResponse> DescribeDsKettleServerFolderTreeOutcome;
                 typedef std::future<DescribeDsKettleServerFolderTreeOutcome> DescribeDsKettleServerFolderTreeOutcomeCallable;
                 typedef std::function<void(const WedataClient*, const Model::DescribeDsKettleServerFolderTreeRequest&, DescribeDsKettleServerFolderTreeOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeDsKettleServerFolderTreeAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeDsLatestTaskVersionInfoResponse> DescribeDsLatestTaskVersionInfoOutcome;
+                typedef std::future<DescribeDsLatestTaskVersionInfoOutcome> DescribeDsLatestTaskVersionInfoOutcomeCallable;
+                typedef std::function<void(const WedataClient*, const Model::DescribeDsLatestTaskVersionInfoRequest&, DescribeDsLatestTaskVersionInfoOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeDsLatestTaskVersionInfoAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeDsNotSubmitTasksAndCanRunByWorkflowResponse> DescribeDsNotSubmitTasksAndCanRunByWorkflowOutcome;
+                typedef std::future<DescribeDsNotSubmitTasksAndCanRunByWorkflowOutcome> DescribeDsNotSubmitTasksAndCanRunByWorkflowOutcomeCallable;
+                typedef std::function<void(const WedataClient*, const Model::DescribeDsNotSubmitTasksAndCanRunByWorkflowRequest&, DescribeDsNotSubmitTasksAndCanRunByWorkflowOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeDsNotSubmitTasksAndCanRunByWorkflowAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeDsParentFolderTreeResponse> DescribeDsParentFolderTreeOutcome;
                 typedef std::future<DescribeDsParentFolderTreeOutcome> DescribeDsParentFolderTreeOutcomeCallable;
                 typedef std::function<void(const WedataClient*, const Model::DescribeDsParentFolderTreeRequest&, DescribeDsParentFolderTreeOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeDsParentFolderTreeAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeDsTaskVersionInfoResponse> DescribeDsTaskVersionInfoOutcome;
+                typedef std::future<DescribeDsTaskVersionInfoOutcome> DescribeDsTaskVersionInfoOutcomeCallable;
+                typedef std::function<void(const WedataClient*, const Model::DescribeDsTaskVersionInfoRequest&, DescribeDsTaskVersionInfoOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeDsTaskVersionInfoAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeDsTaskVersionListResponse> DescribeDsTaskVersionListOutcome;
+                typedef std::future<DescribeDsTaskVersionListOutcome> DescribeDsTaskVersionListOutcomeCallable;
+                typedef std::function<void(const WedataClient*, const Model::DescribeDsTaskVersionListRequest&, DescribeDsTaskVersionListOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeDsTaskVersionListAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeEtlTaskTypeResponse> DescribeEtlTaskTypeOutcome;
                 typedef std::future<DescribeEtlTaskTypeOutcome> DescribeEtlTaskTypeOutcomeCallable;
                 typedef std::function<void(const WedataClient*, const Model::DescribeEtlTaskTypeRequest&, DescribeEtlTaskTypeOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeEtlTaskTypeAsyncHandler;
@@ -1451,6 +1675,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeExecStrategyResponse> DescribeExecStrategyOutcome;
                 typedef std::future<DescribeExecStrategyOutcome> DescribeExecStrategyOutcomeCallable;
                 typedef std::function<void(const WedataClient*, const Model::DescribeExecStrategyRequest&, DescribeExecStrategyOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeExecStrategyAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeExecutionLogResponse> DescribeExecutionLogOutcome;
+                typedef std::future<DescribeExecutionLogOutcome> DescribeExecutionLogOutcomeCallable;
+                typedef std::function<void(const WedataClient*, const Model::DescribeExecutionLogRequest&, DescribeExecutionLogOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeExecutionLogAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeFatherDatasourceInfoDsResponse> DescribeFatherDatasourceInfoDsOutcome;
                 typedef std::future<DescribeFatherDatasourceInfoDsOutcome> DescribeFatherDatasourceInfoDsOutcomeCallable;
                 typedef std::function<void(const WedataClient*, const Model::DescribeFatherDatasourceInfoDsRequest&, DescribeFatherDatasourceInfoDsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeFatherDatasourceInfoDsAsyncHandler;
@@ -1460,6 +1687,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeFieldBasicInfoResponse> DescribeFieldBasicInfoOutcome;
                 typedef std::future<DescribeFieldBasicInfoOutcome> DescribeFieldBasicInfoOutcomeCallable;
                 typedef std::function<void(const WedataClient*, const Model::DescribeFieldBasicInfoRequest&, DescribeFieldBasicInfoOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeFieldBasicInfoAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeFileVersionsResponse> DescribeFileVersionsOutcome;
+                typedef std::future<DescribeFileVersionsOutcome> DescribeFileVersionsOutcomeCallable;
+                typedef std::function<void(const WedataClient*, const Model::DescribeFileVersionsRequest&, DescribeFileVersionsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeFileVersionsAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeFolderListResponse> DescribeFolderListOutcome;
                 typedef std::future<DescribeFolderListOutcome> DescribeFolderListOutcomeCallable;
                 typedef std::function<void(const WedataClient*, const Model::DescribeFolderListRequest&, DescribeFolderListOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeFolderListAsyncHandler;
@@ -1472,6 +1702,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeFunctionTypesResponse> DescribeFunctionTypesOutcome;
                 typedef std::future<DescribeFunctionTypesOutcome> DescribeFunctionTypesOutcomeCallable;
                 typedef std::function<void(const WedataClient*, const Model::DescribeFunctionTypesRequest&, DescribeFunctionTypesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeFunctionTypesAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeGlobalWorkflowDsResponse> DescribeGlobalWorkflowDsOutcome;
+                typedef std::future<DescribeGlobalWorkflowDsOutcome> DescribeGlobalWorkflowDsOutcomeCallable;
+                typedef std::function<void(const WedataClient*, const Model::DescribeGlobalWorkflowDsRequest&, DescribeGlobalWorkflowDsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeGlobalWorkflowDsAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeImportableOfflineTaskResponse> DescribeImportableOfflineTaskOutcome;
                 typedef std::future<DescribeImportableOfflineTaskOutcome> DescribeImportableOfflineTaskOutcomeCallable;
                 typedef std::function<void(const WedataClient*, const Model::DescribeImportableOfflineTaskRequest&, DescribeImportableOfflineTaskOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeImportableOfflineTaskAsyncHandler;
@@ -1559,6 +1792,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeMonitorsByPageResponse> DescribeMonitorsByPageOutcome;
                 typedef std::future<DescribeMonitorsByPageOutcome> DescribeMonitorsByPageOutcomeCallable;
                 typedef std::function<void(const WedataClient*, const Model::DescribeMonitorsByPageRequest&, DescribeMonitorsByPageOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeMonitorsByPageAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeNewSqlTaskResultResponse> DescribeNewSqlTaskResultOutcome;
+                typedef std::future<DescribeNewSqlTaskResultOutcome> DescribeNewSqlTaskResultOutcomeCallable;
+                typedef std::function<void(const WedataClient*, const Model::DescribeNewSqlTaskResultRequest&, DescribeNewSqlTaskResultOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeNewSqlTaskResultAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeOfflineTaskTokenResponse> DescribeOfflineTaskTokenOutcome;
                 typedef std::future<DescribeOfflineTaskTokenOutcome> DescribeOfflineTaskTokenOutcomeCallable;
                 typedef std::function<void(const WedataClient*, const Model::DescribeOfflineTaskTokenRequest&, DescribeOfflineTaskTokenOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeOfflineTaskTokenAsyncHandler;
@@ -1601,12 +1837,21 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeProdTasksResponse> DescribeProdTasksOutcome;
                 typedef std::future<DescribeProdTasksOutcome> DescribeProdTasksOutcomeCallable;
                 typedef std::function<void(const WedataClient*, const Model::DescribeProdTasksRequest&, DescribeProdTasksOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeProdTasksAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeProdWorkflowCanvasInfoDsResponse> DescribeProdWorkflowCanvasInfoDsOutcome;
+                typedef std::future<DescribeProdWorkflowCanvasInfoDsOutcome> DescribeProdWorkflowCanvasInfoDsOutcomeCallable;
+                typedef std::function<void(const WedataClient*, const Model::DescribeProdWorkflowCanvasInfoDsRequest&, DescribeProdWorkflowCanvasInfoDsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeProdWorkflowCanvasInfoDsAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeProjectResponse> DescribeProjectOutcome;
                 typedef std::future<DescribeProjectOutcome> DescribeProjectOutcomeCallable;
                 typedef std::function<void(const WedataClient*, const Model::DescribeProjectRequest&, DescribeProjectOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeProjectAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeProjectParamDsResponse> DescribeProjectParamDsOutcome;
+                typedef std::future<DescribeProjectParamDsOutcome> DescribeProjectParamDsOutcomeCallable;
+                typedef std::function<void(const WedataClient*, const Model::DescribeProjectParamDsRequest&, DescribeProjectParamDsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeProjectParamDsAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeProjectParamDsPageResponse> DescribeProjectParamDsPageOutcome;
                 typedef std::future<DescribeProjectParamDsPageOutcome> DescribeProjectParamDsPageOutcomeCallable;
                 typedef std::function<void(const WedataClient*, const Model::DescribeProjectParamDsPageRequest&, DescribeProjectParamDsPageOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeProjectParamDsPageAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeProjectParamVersionDsResponse> DescribeProjectParamVersionDsOutcome;
+                typedef std::future<DescribeProjectParamVersionDsOutcome> DescribeProjectParamVersionDsOutcomeCallable;
+                typedef std::function<void(const WedataClient*, const Model::DescribeProjectParamVersionDsRequest&, DescribeProjectParamVersionDsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeProjectParamVersionDsAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeProjectParamVersionInfoDsResponse> DescribeProjectParamVersionInfoDsOutcome;
                 typedef std::future<DescribeProjectParamVersionInfoDsOutcome> DescribeProjectParamVersionInfoDsOutcomeCallable;
                 typedef std::function<void(const WedataClient*, const Model::DescribeProjectParamVersionInfoDsRequest&, DescribeProjectParamVersionInfoDsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeProjectParamVersionInfoDsAsyncHandler;
@@ -1625,6 +1870,15 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeRealTimeTaskSpeedResponse> DescribeRealTimeTaskSpeedOutcome;
                 typedef std::future<DescribeRealTimeTaskSpeedOutcome> DescribeRealTimeTaskSpeedOutcomeCallable;
                 typedef std::function<void(const WedataClient*, const Model::DescribeRealTimeTaskSpeedRequest&, DescribeRealTimeTaskSpeedOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeRealTimeTaskSpeedAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeRecordListResponse> DescribeRecordListOutcome;
+                typedef std::future<DescribeRecordListOutcome> DescribeRecordListOutcomeCallable;
+                typedef std::function<void(const WedataClient*, const Model::DescribeRecordListRequest&, DescribeRecordListOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeRecordListAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeRecycleTaskDetailResponse> DescribeRecycleTaskDetailOutcome;
+                typedef std::future<DescribeRecycleTaskDetailOutcome> DescribeRecycleTaskDetailOutcomeCallable;
+                typedef std::function<void(const WedataClient*, const Model::DescribeRecycleTaskDetailRequest&, DescribeRecycleTaskDetailOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeRecycleTaskDetailAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeRecycleTaskListResponse> DescribeRecycleTaskListOutcome;
+                typedef std::future<DescribeRecycleTaskListOutcome> DescribeRecycleTaskListOutcomeCallable;
+                typedef std::function<void(const WedataClient*, const Model::DescribeRecycleTaskListRequest&, DescribeRecycleTaskListOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeRecycleTaskListAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeRelatedInstancesResponse> DescribeRelatedInstancesOutcome;
                 typedef std::future<DescribeRelatedInstancesOutcome> DescribeRelatedInstancesOutcomeCallable;
                 typedef std::function<void(const WedataClient*, const Model::DescribeRelatedInstancesRequest&, DescribeRelatedInstancesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeRelatedInstancesAsyncHandler;
@@ -1724,6 +1978,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeSonInstancesResponse> DescribeSonInstancesOutcome;
                 typedef std::future<DescribeSonInstancesOutcome> DescribeSonInstancesOutcomeCallable;
                 typedef std::function<void(const WedataClient*, const Model::DescribeSonInstancesRequest&, DescribeSonInstancesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeSonInstancesAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeSqlTaskResultResponse> DescribeSqlTaskResultOutcome;
+                typedef std::future<DescribeSqlTaskResultOutcome> DescribeSqlTaskResultOutcomeCallable;
+                typedef std::function<void(const WedataClient*, const Model::DescribeSqlTaskResultRequest&, DescribeSqlTaskResultOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeSqlTaskResultAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeStandardRuleDetailInfoListResponse> DescribeStandardRuleDetailInfoListOutcome;
                 typedef std::future<DescribeStandardRuleDetailInfoListOutcome> DescribeStandardRuleDetailInfoListOutcomeCallable;
                 typedef std::function<void(const WedataClient*, const Model::DescribeStandardRuleDetailInfoListRequest&, DescribeStandardRuleDetailInfoListOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeStandardRuleDetailInfoListAsyncHandler;
@@ -1784,6 +2041,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeTaskDetailDsResponse> DescribeTaskDetailDsOutcome;
                 typedef std::future<DescribeTaskDetailDsOutcome> DescribeTaskDetailDsOutcomeCallable;
                 typedef std::function<void(const WedataClient*, const Model::DescribeTaskDetailDsRequest&, DescribeTaskDetailDsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeTaskDetailDsAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeTaskInParamDsResponse> DescribeTaskInParamDsOutcome;
+                typedef std::future<DescribeTaskInParamDsOutcome> DescribeTaskInParamDsOutcomeCallable;
+                typedef std::function<void(const WedataClient*, const Model::DescribeTaskInParamDsRequest&, DescribeTaskInParamDsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeTaskInParamDsAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeTaskInstanceResponse> DescribeTaskInstanceOutcome;
                 typedef std::future<DescribeTaskInstanceOutcome> DescribeTaskInstanceOutcomeCallable;
                 typedef std::function<void(const WedataClient*, const Model::DescribeTaskInstanceRequest&, DescribeTaskInstanceOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeTaskInstanceAsyncHandler;
@@ -1802,9 +2062,15 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeTaskLockStatusResponse> DescribeTaskLockStatusOutcome;
                 typedef std::future<DescribeTaskLockStatusOutcome> DescribeTaskLockStatusOutcomeCallable;
                 typedef std::function<void(const WedataClient*, const Model::DescribeTaskLockStatusRequest&, DescribeTaskLockStatusOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeTaskLockStatusAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeTaskOutParamDsResponse> DescribeTaskOutParamDsOutcome;
+                typedef std::future<DescribeTaskOutParamDsOutcome> DescribeTaskOutParamDsOutcomeCallable;
+                typedef std::function<void(const WedataClient*, const Model::DescribeTaskOutParamDsRequest&, DescribeTaskOutParamDsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeTaskOutParamDsAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeTaskOutputRegistriesResponse> DescribeTaskOutputRegistriesOutcome;
                 typedef std::future<DescribeTaskOutputRegistriesOutcome> DescribeTaskOutputRegistriesOutcomeCallable;
                 typedef std::function<void(const WedataClient*, const Model::DescribeTaskOutputRegistriesRequest&, DescribeTaskOutputRegistriesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeTaskOutputRegistriesAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeTaskParamDsResponse> DescribeTaskParamDsOutcome;
+                typedef std::future<DescribeTaskParamDsOutcome> DescribeTaskParamDsOutcomeCallable;
+                typedef std::function<void(const WedataClient*, const Model::DescribeTaskParamDsRequest&, DescribeTaskParamDsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeTaskParamDsAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeTaskParentRunTimeResponse> DescribeTaskParentRunTimeOutcome;
                 typedef std::future<DescribeTaskParentRunTimeOutcome> DescribeTaskParentRunTimeOutcomeCallable;
                 typedef std::function<void(const WedataClient*, const Model::DescribeTaskParentRunTimeRequest&, DescribeTaskParentRunTimeOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeTaskParentRunTimeAsyncHandler;
@@ -1835,15 +2101,24 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeTemplateHistoryResponse> DescribeTemplateHistoryOutcome;
                 typedef std::future<DescribeTemplateHistoryOutcome> DescribeTemplateHistoryOutcomeCallable;
                 typedef std::function<void(const WedataClient*, const Model::DescribeTemplateHistoryRequest&, DescribeTemplateHistoryOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeTemplateHistoryAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeTestRunResponse> DescribeTestRunOutcome;
+                typedef std::future<DescribeTestRunOutcome> DescribeTestRunOutcomeCallable;
+                typedef std::function<void(const WedataClient*, const Model::DescribeTestRunRequest&, DescribeTestRunOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeTestRunAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeThirdTaskRunLogResponse> DescribeThirdTaskRunLogOutcome;
                 typedef std::future<DescribeThirdTaskRunLogOutcome> DescribeThirdTaskRunLogOutcomeCallable;
                 typedef std::function<void(const WedataClient*, const Model::DescribeThirdTaskRunLogRequest&, DescribeThirdTaskRunLogOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeThirdTaskRunLogAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeTokenResponse> DescribeTokenOutcome;
+                typedef std::future<DescribeTokenOutcome> DescribeTokenOutcomeCallable;
+                typedef std::function<void(const WedataClient*, const Model::DescribeTokenRequest&, DescribeTokenOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeTokenAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeTopTableStatResponse> DescribeTopTableStatOutcome;
                 typedef std::future<DescribeTopTableStatOutcome> DescribeTopTableStatOutcomeCallable;
                 typedef std::function<void(const WedataClient*, const Model::DescribeTopTableStatRequest&, DescribeTopTableStatOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeTopTableStatAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeTrendStatResponse> DescribeTrendStatOutcome;
                 typedef std::future<DescribeTrendStatOutcome> DescribeTrendStatOutcomeCallable;
                 typedef std::function<void(const WedataClient*, const Model::DescribeTrendStatRequest&, DescribeTrendStatOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeTrendStatAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeWorkflowByFordIdsResponse> DescribeWorkflowByFordIdsOutcome;
+                typedef std::future<DescribeWorkflowByFordIdsOutcome> DescribeWorkflowByFordIdsOutcomeCallable;
+                typedef std::function<void(const WedataClient*, const Model::DescribeWorkflowByFordIdsRequest&, DescribeWorkflowByFordIdsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeWorkflowByFordIdsAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeWorkflowCanvasInfoResponse> DescribeWorkflowCanvasInfoOutcome;
                 typedef std::future<DescribeWorkflowCanvasInfoOutcome> DescribeWorkflowCanvasInfoOutcomeCallable;
                 typedef std::function<void(const WedataClient*, const Model::DescribeWorkflowCanvasInfoRequest&, DescribeWorkflowCanvasInfoOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeWorkflowCanvasInfoAsyncHandler;
@@ -1853,6 +2128,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeWorkflowCanvasOpLogsResponse> DescribeWorkflowCanvasOpLogsOutcome;
                 typedef std::future<DescribeWorkflowCanvasOpLogsOutcome> DescribeWorkflowCanvasOpLogsOutcomeCallable;
                 typedef std::function<void(const WedataClient*, const Model::DescribeWorkflowCanvasOpLogsRequest&, DescribeWorkflowCanvasOpLogsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeWorkflowCanvasOpLogsAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeWorkflowCanvasOperatorsResponse> DescribeWorkflowCanvasOperatorsOutcome;
+                typedef std::future<DescribeWorkflowCanvasOperatorsOutcome> DescribeWorkflowCanvasOperatorsOutcomeCallable;
+                typedef std::function<void(const WedataClient*, const Model::DescribeWorkflowCanvasOperatorsRequest&, DescribeWorkflowCanvasOperatorsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeWorkflowCanvasOperatorsAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeWorkflowExecuteByIdResponse> DescribeWorkflowExecuteByIdOutcome;
                 typedef std::future<DescribeWorkflowExecuteByIdOutcome> DescribeWorkflowExecuteByIdOutcomeCallable;
                 typedef std::function<void(const WedataClient*, const Model::DescribeWorkflowExecuteByIdRequest&, DescribeWorkflowExecuteByIdOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeWorkflowExecuteByIdAsyncHandler;
@@ -1868,6 +2146,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeWorkflowOpsCanvasInfoResponse> DescribeWorkflowOpsCanvasInfoOutcome;
                 typedef std::future<DescribeWorkflowOpsCanvasInfoOutcome> DescribeWorkflowOpsCanvasInfoOutcomeCallable;
                 typedef std::function<void(const WedataClient*, const Model::DescribeWorkflowOpsCanvasInfoRequest&, DescribeWorkflowOpsCanvasInfoOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeWorkflowOpsCanvasInfoAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeWorkflowParamDsResponse> DescribeWorkflowParamDsOutcome;
+                typedef std::future<DescribeWorkflowParamDsOutcome> DescribeWorkflowParamDsOutcomeCallable;
+                typedef std::function<void(const WedataClient*, const Model::DescribeWorkflowParamDsRequest&, DescribeWorkflowParamDsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeWorkflowParamDsAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeWorkflowSchedulerInfoDsResponse> DescribeWorkflowSchedulerInfoDsOutcome;
                 typedef std::future<DescribeWorkflowSchedulerInfoDsOutcome> DescribeWorkflowSchedulerInfoDsOutcomeCallable;
                 typedef std::function<void(const WedataClient*, const Model::DescribeWorkflowSchedulerInfoDsRequest&, DescribeWorkflowSchedulerInfoDsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeWorkflowSchedulerInfoDsAsyncHandler;
@@ -1880,6 +2161,12 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DiagnosePlusResponse> DiagnosePlusOutcome;
                 typedef std::future<DiagnosePlusOutcome> DiagnosePlusOutcomeCallable;
                 typedef std::function<void(const WedataClient*, const Model::DiagnosePlusRequest&, DiagnosePlusOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DiagnosePlusAsyncHandler;
+                typedef Outcome<Core::Error, Model::DownloadNewSqlResultResponse> DownloadNewSqlResultOutcome;
+                typedef std::future<DownloadNewSqlResultOutcome> DownloadNewSqlResultOutcomeCallable;
+                typedef std::function<void(const WedataClient*, const Model::DownloadNewSqlResultRequest&, DownloadNewSqlResultOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DownloadNewSqlResultAsyncHandler;
+                typedef Outcome<Core::Error, Model::DownloadSqlResultResponse> DownloadSqlResultOutcome;
+                typedef std::future<DownloadSqlResultOutcome> DownloadSqlResultOutcomeCallable;
+                typedef std::function<void(const WedataClient*, const Model::DownloadSqlResultRequest&, DownloadSqlResultOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DownloadSqlResultAsyncHandler;
                 typedef Outcome<Core::Error, Model::DryRunDIOfflineTaskResponse> DryRunDIOfflineTaskOutcome;
                 typedef std::future<DryRunDIOfflineTaskOutcome> DryRunDIOfflineTaskOutcomeCallable;
                 typedef std::function<void(const WedataClient*, const Model::DryRunDIOfflineTaskRequest&, DryRunDIOfflineTaskOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DryRunDIOfflineTaskAsyncHandler;
@@ -1913,6 +2200,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::FindFuzzyTasksDsResponse> FindFuzzyTasksDsOutcome;
                 typedef std::future<FindFuzzyTasksDsOutcome> FindFuzzyTasksDsOutcomeCallable;
                 typedef std::function<void(const WedataClient*, const Model::FindFuzzyTasksDsRequest&, FindFuzzyTasksDsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> FindFuzzyTasksDsAsyncHandler;
+                typedef Outcome<Core::Error, Model::FindTaskByRemotePathResponse> FindTaskByRemotePathOutcome;
+                typedef std::future<FindTaskByRemotePathOutcome> FindTaskByRemotePathOutcomeCallable;
+                typedef std::function<void(const WedataClient*, const Model::FindTaskByRemotePathRequest&, FindTaskByRemotePathOutcome, const std::shared_ptr<const AsyncCallerContext>&)> FindTaskByRemotePathAsyncHandler;
                 typedef Outcome<Core::Error, Model::ForceSucInstancesResponse> ForceSucInstancesOutcome;
                 typedef std::future<ForceSucInstancesOutcome> ForceSucInstancesOutcomeCallable;
                 typedef std::function<void(const WedataClient*, const Model::ForceSucInstancesRequest&, ForceSucInstancesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ForceSucInstancesAsyncHandler;
@@ -1949,6 +2239,12 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::GetIntegrationNodeColumnSchemaResponse> GetIntegrationNodeColumnSchemaOutcome;
                 typedef std::future<GetIntegrationNodeColumnSchemaOutcome> GetIntegrationNodeColumnSchemaOutcomeCallable;
                 typedef std::function<void(const WedataClient*, const Model::GetIntegrationNodeColumnSchemaRequest&, GetIntegrationNodeColumnSchemaOutcome, const std::shared_ptr<const AsyncCallerContext>&)> GetIntegrationNodeColumnSchemaAsyncHandler;
+                typedef Outcome<Core::Error, Model::GetLatestAnalyseInfoResponse> GetLatestAnalyseInfoOutcome;
+                typedef std::future<GetLatestAnalyseInfoOutcome> GetLatestAnalyseInfoOutcomeCallable;
+                typedef std::function<void(const WedataClient*, const Model::GetLatestAnalyseInfoRequest&, GetLatestAnalyseInfoOutcome, const std::shared_ptr<const AsyncCallerContext>&)> GetLatestAnalyseInfoAsyncHandler;
+                typedef Outcome<Core::Error, Model::GetLatestTestRunInfoResponse> GetLatestTestRunInfoOutcome;
+                typedef std::future<GetLatestTestRunInfoOutcome> GetLatestTestRunInfoOutcomeCallable;
+                typedef std::function<void(const WedataClient*, const Model::GetLatestTestRunInfoRequest&, GetLatestTestRunInfoOutcome, const std::shared_ptr<const AsyncCallerContext>&)> GetLatestTestRunInfoAsyncHandler;
                 typedef Outcome<Core::Error, Model::GetOfflineDIInstanceListResponse> GetOfflineDIInstanceListOutcome;
                 typedef std::future<GetOfflineDIInstanceListOutcome> GetOfflineDIInstanceListOutcomeCallable;
                 typedef std::function<void(const WedataClient*, const Model::GetOfflineDIInstanceListRequest&, GetOfflineDIInstanceListOutcome, const std::shared_ptr<const AsyncCallerContext>&)> GetOfflineDIInstanceListAsyncHandler;
@@ -1958,6 +2254,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::GetPathTreesResponse> GetPathTreesOutcome;
                 typedef std::future<GetPathTreesOutcome> GetPathTreesOutcomeCallable;
                 typedef std::function<void(const WedataClient*, const Model::GetPathTreesRequest&, GetPathTreesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> GetPathTreesAsyncHandler;
+                typedef Outcome<Core::Error, Model::GetResourceCosPathResponse> GetResourceCosPathOutcome;
+                typedef std::future<GetResourceCosPathOutcome> GetResourceCosPathOutcomeCallable;
+                typedef std::function<void(const WedataClient*, const Model::GetResourceCosPathRequest&, GetResourceCosPathOutcome, const std::shared_ptr<const AsyncCallerContext>&)> GetResourceCosPathAsyncHandler;
                 typedef Outcome<Core::Error, Model::GetResourcePathTreeResponse> GetResourcePathTreeOutcome;
                 typedef std::future<GetResourcePathTreeOutcome> GetResourcePathTreeOutcomeCallable;
                 typedef std::function<void(const WedataClient*, const Model::GetResourcePathTreeRequest&, GetResourcePathTreeOutcome, const std::shared_ptr<const AsyncCallerContext>&)> GetResourcePathTreeAsyncHandler;
@@ -1982,6 +2281,18 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::ImportProjectParamDsResponse> ImportProjectParamDsOutcome;
                 typedef std::future<ImportProjectParamDsOutcome> ImportProjectParamDsOutcomeCallable;
                 typedef std::function<void(const WedataClient*, const Model::ImportProjectParamDsRequest&, ImportProjectParamDsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ImportProjectParamDsAsyncHandler;
+                typedef Outcome<Core::Error, Model::ImportTableDataResponse> ImportTableDataOutcome;
+                typedef std::future<ImportTableDataOutcome> ImportTableDataOutcomeCallable;
+                typedef std::function<void(const WedataClient*, const Model::ImportTableDataRequest&, ImportTableDataOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ImportTableDataAsyncHandler;
+                typedef Outcome<Core::Error, Model::ImportWorkflowXmlResponse> ImportWorkflowXmlOutcome;
+                typedef std::future<ImportWorkflowXmlOutcome> ImportWorkflowXmlOutcomeCallable;
+                typedef std::function<void(const WedataClient*, const Model::ImportWorkflowXmlRequest&, ImportWorkflowXmlOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ImportWorkflowXmlAsyncHandler;
+                typedef Outcome<Core::Error, Model::ImportWorkflowZipResponse> ImportWorkflowZipOutcome;
+                typedef std::future<ImportWorkflowZipOutcome> ImportWorkflowZipOutcomeCallable;
+                typedef std::function<void(const WedataClient*, const Model::ImportWorkflowZipRequest&, ImportWorkflowZipOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ImportWorkflowZipAsyncHandler;
+                typedef Outcome<Core::Error, Model::JudgeResourceFileResponse> JudgeResourceFileOutcome;
+                typedef std::future<JudgeResourceFileOutcome> JudgeResourceFileOutcomeCallable;
+                typedef std::function<void(const WedataClient*, const Model::JudgeResourceFileRequest&, JudgeResourceFileOutcome, const std::shared_ptr<const AsyncCallerContext>&)> JudgeResourceFileAsyncHandler;
                 typedef Outcome<Core::Error, Model::JudgeTaskListenEventResponse> JudgeTaskListenEventOutcome;
                 typedef std::future<JudgeTaskListenEventOutcome> JudgeTaskListenEventOutcomeCallable;
                 typedef std::function<void(const WedataClient*, const Model::JudgeTaskListenEventRequest&, JudgeTaskListenEventOutcome, const std::shared_ptr<const AsyncCallerContext>&)> JudgeTaskListenEventAsyncHandler;
@@ -1994,6 +2305,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::KillScheduleInstancesResponse> KillScheduleInstancesOutcome;
                 typedef std::future<KillScheduleInstancesOutcome> KillScheduleInstancesOutcomeCallable;
                 typedef std::function<void(const WedataClient*, const Model::KillScheduleInstancesRequest&, KillScheduleInstancesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> KillScheduleInstancesAsyncHandler;
+                typedef Outcome<Core::Error, Model::KillTasksTestRunResponse> KillTasksTestRunOutcome;
+                typedef std::future<KillTasksTestRunOutcome> KillTasksTestRunOutcomeCallable;
+                typedef std::function<void(const WedataClient*, const Model::KillTasksTestRunRequest&, KillTasksTestRunOutcome, const std::shared_ptr<const AsyncCallerContext>&)> KillTasksTestRunAsyncHandler;
                 typedef Outcome<Core::Error, Model::ListBatchDetailResponse> ListBatchDetailOutcome;
                 typedef std::future<ListBatchDetailOutcome> ListBatchDetailOutcomeCallable;
                 typedef std::function<void(const WedataClient*, const Model::ListBatchDetailRequest&, ListBatchDetailOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ListBatchDetailAsyncHandler;
@@ -2096,6 +2410,12 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::MoveTasksToFolderResponse> MoveTasksToFolderOutcome;
                 typedef std::future<MoveTasksToFolderOutcome> MoveTasksToFolderOutcomeCallable;
                 typedef std::function<void(const WedataClient*, const Model::MoveTasksToFolderRequest&, MoveTasksToFolderOutcome, const std::shared_ptr<const AsyncCallerContext>&)> MoveTasksToFolderAsyncHandler;
+                typedef Outcome<Core::Error, Model::PreviewDataTableCsvResponse> PreviewDataTableCsvOutcome;
+                typedef std::future<PreviewDataTableCsvOutcome> PreviewDataTableCsvOutcomeCallable;
+                typedef std::function<void(const WedataClient*, const Model::PreviewDataTableCsvRequest&, PreviewDataTableCsvOutcome, const std::shared_ptr<const AsyncCallerContext>&)> PreviewDataTableCsvAsyncHandler;
+                typedef Outcome<Core::Error, Model::QueryWorkflowVersionResponse> QueryWorkflowVersionOutcome;
+                typedef std::future<QueryWorkflowVersionOutcome> QueryWorkflowVersionOutcomeCallable;
+                typedef std::function<void(const WedataClient*, const Model::QueryWorkflowVersionRequest&, QueryWorkflowVersionOutcome, const std::shared_ptr<const AsyncCallerContext>&)> QueryWorkflowVersionAsyncHandler;
                 typedef Outcome<Core::Error, Model::RegisterDsEventResponse> RegisterDsEventOutcome;
                 typedef std::future<RegisterDsEventOutcome> RegisterDsEventOutcomeCallable;
                 typedef std::function<void(const WedataClient*, const Model::RegisterDsEventRequest&, RegisterDsEventOutcome, const std::shared_ptr<const AsyncCallerContext>&)> RegisterDsEventAsyncHandler;
@@ -2126,6 +2446,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::RenameResourceFileResponse> RenameResourceFileOutcome;
                 typedef std::future<RenameResourceFileOutcome> RenameResourceFileOutcomeCallable;
                 typedef std::function<void(const WedataClient*, const Model::RenameResourceFileRequest&, RenameResourceFileOutcome, const std::shared_ptr<const AsyncCallerContext>&)> RenameResourceFileAsyncHandler;
+                typedef Outcome<Core::Error, Model::RenameResourcePathResponse> RenameResourcePathOutcome;
+                typedef std::future<RenameResourcePathOutcome> RenameResourcePathOutcomeCallable;
+                typedef std::function<void(const WedataClient*, const Model::RenameResourcePathRequest&, RenameResourcePathOutcome, const std::shared_ptr<const AsyncCallerContext>&)> RenameResourcePathAsyncHandler;
                 typedef Outcome<Core::Error, Model::RenameTaskDsResponse> RenameTaskDsOutcome;
                 typedef std::future<RenameTaskDsOutcome> RenameTaskDsOutcomeCallable;
                 typedef std::function<void(const WedataClient*, const Model::RenameTaskDsRequest&, RenameTaskDsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> RenameTaskDsAsyncHandler;
@@ -2141,6 +2464,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::RenewWorkflowSchedulerInfoDsResponse> RenewWorkflowSchedulerInfoDsOutcome;
                 typedef std::future<RenewWorkflowSchedulerInfoDsOutcome> RenewWorkflowSchedulerInfoDsOutcomeCallable;
                 typedef std::function<void(const WedataClient*, const Model::RenewWorkflowSchedulerInfoDsRequest&, RenewWorkflowSchedulerInfoDsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> RenewWorkflowSchedulerInfoDsAsyncHandler;
+                typedef Outcome<Core::Error, Model::ReplaceProjectParamVersionDsResponse> ReplaceProjectParamVersionDsOutcome;
+                typedef std::future<ReplaceProjectParamVersionDsOutcome> ReplaceProjectParamVersionDsOutcomeCallable;
+                typedef std::function<void(const WedataClient*, const Model::ReplaceProjectParamVersionDsRequest&, ReplaceProjectParamVersionDsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ReplaceProjectParamVersionDsAsyncHandler;
                 typedef Outcome<Core::Error, Model::RerunInstancesResponse> RerunInstancesOutcome;
                 typedef std::future<RerunInstancesOutcome> RerunInstancesOutcomeCallable;
                 typedef std::function<void(const WedataClient*, const Model::RerunInstancesRequest&, RerunInstancesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> RerunInstancesAsyncHandler;
@@ -2153,12 +2479,18 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::RestartInLongAgentResponse> RestartInLongAgentOutcome;
                 typedef std::future<RestartInLongAgentOutcome> RestartInLongAgentOutcomeCallable;
                 typedef std::function<void(const WedataClient*, const Model::RestartInLongAgentRequest&, RestartInLongAgentOutcome, const std::shared_ptr<const AsyncCallerContext>&)> RestartInLongAgentAsyncHandler;
+                typedef Outcome<Core::Error, Model::RestoreRecycleTaskResponse> RestoreRecycleTaskOutcome;
+                typedef std::future<RestoreRecycleTaskOutcome> RestoreRecycleTaskOutcomeCallable;
+                typedef std::function<void(const WedataClient*, const Model::RestoreRecycleTaskRequest&, RestoreRecycleTaskOutcome, const std::shared_ptr<const AsyncCallerContext>&)> RestoreRecycleTaskAsyncHandler;
                 typedef Outcome<Core::Error, Model::ResumeIntegrationTaskResponse> ResumeIntegrationTaskOutcome;
                 typedef std::future<ResumeIntegrationTaskOutcome> ResumeIntegrationTaskOutcomeCallable;
                 typedef std::function<void(const WedataClient*, const Model::ResumeIntegrationTaskRequest&, ResumeIntegrationTaskOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ResumeIntegrationTaskAsyncHandler;
                 typedef Outcome<Core::Error, Model::RobAndLockIntegrationTaskResponse> RobAndLockIntegrationTaskOutcome;
                 typedef std::future<RobAndLockIntegrationTaskOutcome> RobAndLockIntegrationTaskOutcomeCallable;
                 typedef std::function<void(const WedataClient*, const Model::RobAndLockIntegrationTaskRequest&, RobAndLockIntegrationTaskOutcome, const std::shared_ptr<const AsyncCallerContext>&)> RobAndLockIntegrationTaskAsyncHandler;
+                typedef Outcome<Core::Error, Model::RollbackCustomFunctionVersionResponse> RollbackCustomFunctionVersionOutcome;
+                typedef std::future<RollbackCustomFunctionVersionOutcome> RollbackCustomFunctionVersionOutcomeCallable;
+                typedef std::function<void(const WedataClient*, const Model::RollbackCustomFunctionVersionRequest&, RollbackCustomFunctionVersionOutcome, const std::shared_ptr<const AsyncCallerContext>&)> RollbackCustomFunctionVersionAsyncHandler;
                 typedef Outcome<Core::Error, Model::RunForceSucScheduleInstancesResponse> RunForceSucScheduleInstancesOutcome;
                 typedef std::future<RunForceSucScheduleInstancesOutcome> RunForceSucScheduleInstancesOutcomeCallable;
                 typedef std::function<void(const WedataClient*, const Model::RunForceSucScheduleInstancesRequest&, RunForceSucScheduleInstancesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> RunForceSucScheduleInstancesAsyncHandler;
@@ -2186,18 +2518,30 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::StartIntegrationTaskResponse> StartIntegrationTaskOutcome;
                 typedef std::future<StartIntegrationTaskOutcome> StartIntegrationTaskOutcomeCallable;
                 typedef std::function<void(const WedataClient*, const Model::StartIntegrationTaskRequest&, StartIntegrationTaskOutcome, const std::shared_ptr<const AsyncCallerContext>&)> StartIntegrationTaskAsyncHandler;
+                typedef Outcome<Core::Error, Model::StopAdhocTaskResponse> StopAdhocTaskOutcome;
+                typedef std::future<StopAdhocTaskOutcome> StopAdhocTaskOutcomeCallable;
+                typedef std::function<void(const WedataClient*, const Model::StopAdhocTaskRequest&, StopAdhocTaskOutcome, const std::shared_ptr<const AsyncCallerContext>&)> StopAdhocTaskAsyncHandler;
                 typedef Outcome<Core::Error, Model::StopBaselineResponse> StopBaselineOutcome;
                 typedef std::future<StopBaselineOutcome> StopBaselineOutcomeCallable;
                 typedef std::function<void(const WedataClient*, const Model::StopBaselineRequest&, StopBaselineOutcome, const std::shared_ptr<const AsyncCallerContext>&)> StopBaselineAsyncHandler;
                 typedef Outcome<Core::Error, Model::StopIntegrationTaskResponse> StopIntegrationTaskOutcome;
                 typedef std::future<StopIntegrationTaskOutcome> StopIntegrationTaskOutcomeCallable;
                 typedef std::function<void(const WedataClient*, const Model::StopIntegrationTaskRequest&, StopIntegrationTaskOutcome, const std::shared_ptr<const AsyncCallerContext>&)> StopIntegrationTaskAsyncHandler;
+                typedef Outcome<Core::Error, Model::StopTestRunResponse> StopTestRunOutcome;
+                typedef std::future<StopTestRunOutcome> StopTestRunOutcomeCallable;
+                typedef std::function<void(const WedataClient*, const Model::StopTestRunRequest&, StopTestRunOutcome, const std::shared_ptr<const AsyncCallerContext>&)> StopTestRunAsyncHandler;
                 typedef Outcome<Core::Error, Model::SubmitBaselineResponse> SubmitBaselineOutcome;
                 typedef std::future<SubmitBaselineOutcome> SubmitBaselineOutcomeCallable;
                 typedef std::function<void(const WedataClient*, const Model::SubmitBaselineRequest&, SubmitBaselineOutcome, const std::shared_ptr<const AsyncCallerContext>&)> SubmitBaselineAsyncHandler;
+                typedef Outcome<Core::Error, Model::SubmitBatchTestRunResponse> SubmitBatchTestRunOutcome;
+                typedef std::future<SubmitBatchTestRunOutcome> SubmitBatchTestRunOutcomeCallable;
+                typedef std::function<void(const WedataClient*, const Model::SubmitBatchTestRunRequest&, SubmitBatchTestRunOutcome, const std::shared_ptr<const AsyncCallerContext>&)> SubmitBatchTestRunAsyncHandler;
                 typedef Outcome<Core::Error, Model::SubmitCustomFunctionResponse> SubmitCustomFunctionOutcome;
                 typedef std::future<SubmitCustomFunctionOutcome> SubmitCustomFunctionOutcomeCallable;
                 typedef std::function<void(const WedataClient*, const Model::SubmitCustomFunctionRequest&, SubmitCustomFunctionOutcome, const std::shared_ptr<const AsyncCallerContext>&)> SubmitCustomFunctionAsyncHandler;
+                typedef Outcome<Core::Error, Model::SubmitIntegrationTaskResponse> SubmitIntegrationTaskOutcome;
+                typedef std::future<SubmitIntegrationTaskOutcome> SubmitIntegrationTaskOutcomeCallable;
+                typedef std::function<void(const WedataClient*, const Model::SubmitIntegrationTaskRequest&, SubmitIntegrationTaskOutcome, const std::shared_ptr<const AsyncCallerContext>&)> SubmitIntegrationTaskAsyncHandler;
                 typedef Outcome<Core::Error, Model::SubmitPySparkTaskResponse> SubmitPySparkTaskOutcome;
                 typedef std::future<SubmitPySparkTaskOutcome> SubmitPySparkTaskOutcomeCallable;
                 typedef std::function<void(const WedataClient*, const Model::SubmitPySparkTaskRequest&, SubmitPySparkTaskOutcome, const std::shared_ptr<const AsyncCallerContext>&)> SubmitPySparkTaskAsyncHandler;
@@ -2216,6 +2560,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::SubmitTaskTestRunResponse> SubmitTaskTestRunOutcome;
                 typedef std::future<SubmitTaskTestRunOutcome> SubmitTaskTestRunOutcomeCallable;
                 typedef std::function<void(const WedataClient*, const Model::SubmitTaskTestRunRequest&, SubmitTaskTestRunOutcome, const std::shared_ptr<const AsyncCallerContext>&)> SubmitTaskTestRunAsyncHandler;
+                typedef Outcome<Core::Error, Model::SubmitTestRunResponse> SubmitTestRunOutcome;
+                typedef std::future<SubmitTestRunOutcome> SubmitTestRunOutcomeCallable;
+                typedef std::function<void(const WedataClient*, const Model::SubmitTestRunRequest&, SubmitTestRunOutcome, const std::shared_ptr<const AsyncCallerContext>&)> SubmitTestRunAsyncHandler;
                 typedef Outcome<Core::Error, Model::SubmitWorkflowResponse> SubmitWorkflowOutcome;
                 typedef std::future<SubmitWorkflowOutcome> SubmitWorkflowOutcomeCallable;
                 typedef std::function<void(const WedataClient*, const Model::SubmitWorkflowRequest&, SubmitWorkflowOutcome, const std::shared_ptr<const AsyncCallerContext>&)> SubmitWorkflowAsyncHandler;
@@ -2267,6 +2614,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::UpdateTaskDsResponse> UpdateTaskDsOutcome;
                 typedef std::future<UpdateTaskDsOutcome> UpdateTaskDsOutcomeCallable;
                 typedef std::function<void(const WedataClient*, const Model::UpdateTaskDsRequest&, UpdateTaskDsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> UpdateTaskDsAsyncHandler;
+                typedef Outcome<Core::Error, Model::UpdateWorkflowInfoResponse> UpdateWorkflowInfoOutcome;
+                typedef std::future<UpdateWorkflowInfoOutcome> UpdateWorkflowInfoOutcomeCallable;
+                typedef std::function<void(const WedataClient*, const Model::UpdateWorkflowInfoRequest&, UpdateWorkflowInfoOutcome, const std::shared_ptr<const AsyncCallerContext>&)> UpdateWorkflowInfoAsyncHandler;
                 typedef Outcome<Core::Error, Model::UpdateWorkflowOwnerResponse> UpdateWorkflowOwnerOutcome;
                 typedef std::future<UpdateWorkflowOwnerOutcome> UpdateWorkflowOwnerOutcomeCallable;
                 typedef std::function<void(const WedataClient*, const Model::UpdateWorkflowOwnerRequest&, UpdateWorkflowOwnerOutcome, const std::shared_ptr<const AsyncCallerContext>&)> UpdateWorkflowOwnerAsyncHandler;
@@ -2554,6 +2904,15 @@ namespace TencentCloud
                 CheckAlarmRegularNameExistOutcomeCallable CheckAlarmRegularNameExistCallable(const Model::CheckAlarmRegularNameExistRequest& request);
 
                 /**
+                 *新建用户自定义函数组件检查
+                 * @param req CheckCustomFunctionPremiseRequest
+                 * @return CheckCustomFunctionPremiseOutcome
+                 */
+                CheckCustomFunctionPremiseOutcome CheckCustomFunctionPremise(const Model::CheckCustomFunctionPremiseRequest &request);
+                void CheckCustomFunctionPremiseAsync(const Model::CheckCustomFunctionPremiseRequest& request, const CheckCustomFunctionPremiseAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                CheckCustomFunctionPremiseOutcomeCallable CheckCustomFunctionPremiseCallable(const Model::CheckCustomFunctionPremiseRequest& request);
+
+                /**
                  *检查规则名称是否重复
                  * @param req CheckDuplicateRuleNameRequest
                  * @return CheckDuplicateRuleNameOutcome
@@ -2617,6 +2976,15 @@ namespace TencentCloud
                 CheckTaskPriorityDsOutcomeCallable CheckTaskPriorityDsCallable(const Model::CheckTaskPriorityDsRequest& request);
 
                 /**
+                 *清空回收站任务
+                 * @param req ClearRecycleTaskRequest
+                 * @return ClearRecycleTaskOutcome
+                 */
+                ClearRecycleTaskOutcome ClearRecycleTask(const Model::ClearRecycleTaskRequest &request);
+                void ClearRecycleTaskAsync(const Model::ClearRecycleTaskRequest& request, const ClearRecycleTaskAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                ClearRecycleTaskOutcomeCallable ClearRecycleTaskCallable(const Model::ClearRecycleTaskRequest& request);
+
+                /**
                  *提交数据导出任务
                  * @param req CommitExportTaskRequest
                  * @return CommitExportTaskOutcome
@@ -2653,6 +3021,24 @@ namespace TencentCloud
                 CommitRuleGroupTaskOutcomeCallable CommitRuleGroupTaskCallable(const Model::CommitRuleGroupTaskRequest& request);
 
                 /**
+                 *工作流版本提交
+                 * @param req CommitWorkflowRequest
+                 * @return CommitWorkflowOutcome
+                 */
+                CommitWorkflowOutcome CommitWorkflow(const Model::CommitWorkflowRequest &request);
+                void CommitWorkflowAsync(const Model::CommitWorkflowRequest& request, const CommitWorkflowAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                CommitWorkflowOutcomeCallable CommitWorkflowCallable(const Model::CommitWorkflowRequest& request);
+
+                /**
+                 *对比任务版本
+                 * @param req CompareDsTaskVersionInfoRequest
+                 * @return CompareDsTaskVersionInfoOutcome
+                 */
+                CompareDsTaskVersionInfoOutcome CompareDsTaskVersionInfo(const Model::CompareDsTaskVersionInfoRequest &request);
+                void CompareDsTaskVersionInfoAsync(const Model::CompareDsTaskVersionInfoRequest& request, const CompareDsTaskVersionInfoAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                CompareDsTaskVersionInfoOutcomeCallable CompareDsTaskVersionInfoCallable(const Model::CompareDsTaskVersionInfoRequest& request);
+
+                /**
                  *复制任务Ds
                  * @param req CopyTaskDsRequest
                  * @return CopyTaskDsOutcome
@@ -2660,6 +3046,15 @@ namespace TencentCloud
                 CopyTaskDsOutcome CopyTaskDs(const Model::CopyTaskDsRequest &request);
                 void CopyTaskDsAsync(const Model::CopyTaskDsRequest& request, const CopyTaskDsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 CopyTaskDsOutcomeCallable CopyTaskDsCallable(const Model::CopyTaskDsRequest& request);
+
+                /**
+                 *复制工作流
+                 * @param req CopyWorkflowDsRequest
+                 * @return CopyWorkflowDsOutcome
+                 */
+                CopyWorkflowDsOutcome CopyWorkflowDs(const Model::CopyWorkflowDsRequest &request);
+                void CopyWorkflowDsAsync(const Model::CopyWorkflowDsRequest& request, const CopyWorkflowDsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                CopyWorkflowDsOutcomeCallable CopyWorkflowDsCallable(const Model::CopyWorkflowDsRequest& request);
 
                 /**
                  *统计任务实例状态
@@ -2678,6 +3073,15 @@ namespace TencentCloud
                 CreateBaselineOutcome CreateBaseline(const Model::CreateBaselineRequest &request);
                 void CreateBaselineAsync(const Model::CreateBaselineRequest& request, const CreateBaselineAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 CreateBaselineOutcomeCallable CreateBaselineCallable(const Model::CreateBaselineRequest& request);
+
+                /**
+                 *创建用户数据开发浏览历史
+                 * @param req CreateBrowsingHistoryRequest
+                 * @return CreateBrowsingHistoryOutcome
+                 */
+                CreateBrowsingHistoryOutcome CreateBrowsingHistory(const Model::CreateBrowsingHistoryRequest &request);
+                void CreateBrowsingHistoryAsync(const Model::CreateBrowsingHistoryRequest& request, const CreateBrowsingHistoryAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                CreateBrowsingHistoryOutcomeCallable CreateBrowsingHistoryCallable(const Model::CreateBrowsingHistoryRequest& request);
 
                 /**
                  *创建用户自定义函数
@@ -2772,6 +3176,15 @@ namespace TencentCloud
                 CreateIntegrationTaskOutcomeCallable CreateIntegrationTaskCallable(const Model::CreateIntegrationTaskRequest& request);
 
                 /**
+                 *创建任务连接
+                 * @param req CreateLinkRequest
+                 * @return CreateLinkOutcome
+                 */
+                CreateLinkOutcome CreateLink(const Model::CreateLinkRequest &request);
+                void CreateLinkAsync(const Model::CreateLinkRequest& request, const CreateLinkAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                CreateLinkOutcomeCallable CreateLinkCallable(const Model::CreateLinkRequest& request);
+
+                /**
                  *创建离线任务
                  * @param req CreateOfflineTaskRequest
                  * @return CreateOfflineTaskOutcome
@@ -2815,6 +3228,15 @@ namespace TencentCloud
                 CreateProjectParamDsOutcome CreateProjectParamDs(const Model::CreateProjectParamDsRequest &request);
                 void CreateProjectParamDsAsync(const Model::CreateProjectParamDsRequest& request, const CreateProjectParamDsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 CreateProjectParamDsOutcomeCallable CreateProjectParamDsCallable(const Model::CreateProjectParamDsRequest& request);
+
+                /**
+                 *资源管理-创建资源目录
+                 * @param req CreateResourceDirectoryRequest
+                 * @return CreateResourceDirectoryOutcome
+                 */
+                CreateResourceDirectoryOutcome CreateResourceDirectory(const Model::CreateResourceDirectoryRequest &request);
+                void CreateResourceDirectoryAsync(const Model::CreateResourceDirectoryRequest& request, const CreateResourceDirectoryAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                CreateResourceDirectoryOutcomeCallable CreateResourceDirectoryCallable(const Model::CreateResourceDirectoryRequest& request);
 
                 /**
                  *文件路径的根目录为 /datastudio/resource，如果要在根目录下创建 aaa 文件夹，FilePath的值应该为 /datastudio/resource，如果根目录下已经创建了 aaa 文件夹，要在 aaa 下创建  bbb 文件夹，FilePath的值应该为 /datastudio/resource/aaa
@@ -2954,6 +3376,15 @@ namespace TencentCloud
                 CreateWorkflowOutcomeCallable CreateWorkflowCallable(const Model::CreateWorkflowRequest& request);
 
                 /**
+                 *创建工作流
+                 * @param req CreateWorkflowDsRequest
+                 * @return CreateWorkflowDsOutcome
+                 */
+                CreateWorkflowDsOutcome CreateWorkflowDs(const Model::CreateWorkflowDsRequest &request);
+                void CreateWorkflowDsAsync(const Model::CreateWorkflowDsRequest& request, const CreateWorkflowDsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                CreateWorkflowDsOutcomeCallable CreateWorkflowDsCallable(const Model::CreateWorkflowDsRequest& request);
+
+                /**
                  *拉取dag实例
                  * @param req DagInstancesRequest
                  * @return DagInstancesOutcome
@@ -2970,6 +3401,15 @@ namespace TencentCloud
                 DeleteBaselineOutcome DeleteBaseline(const Model::DeleteBaselineRequest &request);
                 void DeleteBaselineAsync(const Model::DeleteBaselineRequest& request, const DeleteBaselineAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DeleteBaselineOutcomeCallable DeleteBaselineCallable(const Model::DeleteBaselineRequest& request);
+
+                /**
+                 *批量删除工作流
+                 * @param req DeleteBatchWorkflowDsRequest
+                 * @return DeleteBatchWorkflowDsOutcome
+                 */
+                DeleteBatchWorkflowDsOutcome DeleteBatchWorkflowDs(const Model::DeleteBatchWorkflowDsRequest &request);
+                void DeleteBatchWorkflowDsAsync(const Model::DeleteBatchWorkflowDsRequest& request, const DeleteBatchWorkflowDsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DeleteBatchWorkflowDsOutcomeCallable DeleteBatchWorkflowDsCallable(const Model::DeleteBatchWorkflowDsRequest& request);
 
                 /**
                  *删除用户自定义函数
@@ -2989,6 +3429,15 @@ namespace TencentCloud
                 DeleteDataSourcesOutcome DeleteDataSources(const Model::DeleteDataSourcesRequest &request);
                 void DeleteDataSourcesAsync(const Model::DeleteDataSourcesRequest& request, const DeleteDataSourcesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DeleteDataSourcesOutcomeCallable DeleteDataSourcesCallable(const Model::DeleteDataSourcesRequest& request);
+
+                /**
+                 *删除事件
+                 * @param req DeleteDsEventRequest
+                 * @return DeleteDsEventOutcome
+                 */
+                DeleteDsEventOutcome DeleteDsEvent(const Model::DeleteDsEventRequest &request);
+                void DeleteDsEventAsync(const Model::DeleteDsEventRequest& request, const DeleteDsEventAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DeleteDsEventOutcomeCallable DeleteDsEventCallable(const Model::DeleteDsEventRequest& request);
 
                 /**
                  *删除事件监听者
@@ -3016,6 +3465,15 @@ namespace TencentCloud
                 DeleteDsFolderOutcome DeleteDsFolder(const Model::DeleteDsFolderRequest &request);
                 void DeleteDsFolderAsync(const Model::DeleteDsFolderRequest& request, const DeleteDsFolderAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DeleteDsFolderOutcomeCallable DeleteDsFolderCallable(const Model::DeleteDsFolderRequest& request);
+
+                /**
+                 *通过任务ID删除所有事件
+                 * @param req DeleteEventListenerByTaskIdRequest
+                 * @return DeleteEventListenerByTaskIdOutcome
+                 */
+                DeleteEventListenerByTaskIdOutcome DeleteEventListenerByTaskId(const Model::DeleteEventListenerByTaskIdRequest &request);
+                void DeleteEventListenerByTaskIdAsync(const Model::DeleteEventListenerByTaskIdRequest& request, const DeleteEventListenerByTaskIdAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DeleteEventListenerByTaskIdOutcomeCallable DeleteEventListenerByTaskIdCallable(const Model::DeleteEventListenerByTaskIdRequest& request);
 
                 /**
                  *删除文件
@@ -3118,6 +3576,24 @@ namespace TencentCloud
                 DeleteProjectUsersOutcomeCallable DeleteProjectUsersCallable(const Model::DeleteProjectUsersRequest& request);
 
                 /**
+                 *批量删除任务提交记录列表
+                 * @param req DeleteRecordListRequest
+                 * @return DeleteRecordListOutcome
+                 */
+                DeleteRecordListOutcome DeleteRecordList(const Model::DeleteRecordListRequest &request);
+                void DeleteRecordListAsync(const Model::DeleteRecordListRequest& request, const DeleteRecordListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DeleteRecordListOutcomeCallable DeleteRecordListCallable(const Model::DeleteRecordListRequest& request);
+
+                /**
+                 *删除回收站任务
+                 * @param req DeleteRecycleTaskRequest
+                 * @return DeleteRecycleTaskOutcome
+                 */
+                DeleteRecycleTaskOutcome DeleteRecycleTask(const Model::DeleteRecycleTaskRequest &request);
+                void DeleteRecycleTaskAsync(const Model::DeleteRecycleTaskRequest& request, const DeleteRecycleTaskAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DeleteRecycleTaskOutcomeCallable DeleteRecycleTaskCallable(const Model::DeleteRecycleTaskRequest& request);
+
+                /**
                  *资源管理删除资源
                  * @param req DeleteResourceRequest
                  * @return DeleteResourceOutcome
@@ -3143,6 +3619,15 @@ namespace TencentCloud
                 DeleteResourceFilesOutcome DeleteResourceFiles(const Model::DeleteResourceFilesRequest &request);
                 void DeleteResourceFilesAsync(const Model::DeleteResourceFilesRequest& request, const DeleteResourceFilesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DeleteResourceFilesOutcomeCallable DeleteResourceFilesCallable(const Model::DeleteResourceFilesRequest& request);
+
+                /**
+                 *资源管理-删除资源目录
+                 * @param req DeleteResourcePathRequest
+                 * @return DeleteResourcePathOutcome
+                 */
+                DeleteResourcePathOutcome DeleteResourcePath(const Model::DeleteResourcePathRequest &request);
+                void DeleteResourcePathAsync(const Model::DeleteResourcePathRequest& request, const DeleteResourcePathAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DeleteResourcePathOutcomeCallable DeleteResourcePathCallable(const Model::DeleteResourcePathRequest& request);
 
                 /**
                  *删除质量规则接口
@@ -3263,6 +3748,15 @@ namespace TencentCloud
                 DescribeAllByFolderNewOutcomeCallable DescribeAllByFolderNewCallable(const Model::DescribeAllByFolderNewRequest& request);
 
                 /**
+                 *查询所有参数
+                 * @param req DescribeAllParamDsRequest
+                 * @return DescribeAllParamDsOutcome
+                 */
+                DescribeAllParamDsOutcome DescribeAllParamDs(const Model::DescribeAllParamDsRequest &request);
+                void DescribeAllParamDsAsync(const Model::DescribeAllParamDsRequest& request, const DescribeAllParamDsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeAllParamDsOutcomeCallable DescribeAllParamDsCallable(const Model::DescribeAllParamDsRequest& request);
+
+                /**
                  *获取所有任务类型
                  * @param req DescribeAllTaskTypeRequest
                  * @return DescribeAllTaskTypeOutcome
@@ -3360,6 +3854,15 @@ namespace TencentCloud
                 DescribeBatchOperateTaskOutcome DescribeBatchOperateTask(const Model::DescribeBatchOperateTaskRequest &request);
                 void DescribeBatchOperateTaskAsync(const Model::DescribeBatchOperateTaskRequest& request, const DescribeBatchOperateTaskAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DescribeBatchOperateTaskOutcomeCallable DescribeBatchOperateTaskCallable(const Model::DescribeBatchOperateTaskRequest& request);
+
+                /**
+                 *批量获取etl测试运行任务执行状态和日志
+                 * @param req DescribeBatchTestRunRequest
+                 * @return DescribeBatchTestRunOutcome
+                 */
+                DescribeBatchTestRunOutcome DescribeBatchTestRun(const Model::DescribeBatchTestRunRequest &request);
+                void DescribeBatchTestRunAsync(const Model::DescribeBatchTestRunRequest& request, const DescribeBatchTestRunAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeBatchTestRunOutcomeCallable DescribeBatchTestRunCallable(const Model::DescribeBatchTestRunRequest& request);
 
                 /**
                  *智能运维-事件列表-所属任务/基线过滤列表
@@ -3497,6 +4000,15 @@ namespace TencentCloud
                 DescribeCrontabTopNDsOutcomeCallable DescribeCrontabTopNDsCallable(const Model::DescribeCrontabTopNDsRequest& request);
 
                 /**
+                 *查询函数版本列表
+                 * @param req DescribeCustomFunctionVersionListRequest
+                 * @return DescribeCustomFunctionVersionListOutcome
+                 */
+                DescribeCustomFunctionVersionListOutcome DescribeCustomFunctionVersionList(const Model::DescribeCustomFunctionVersionListRequest &request);
+                void DescribeCustomFunctionVersionListAsync(const Model::DescribeCustomFunctionVersionListRequest& request, const DescribeCustomFunctionVersionListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeCustomFunctionVersionListOutcomeCallable DescribeCustomFunctionVersionListCallable(const Model::DescribeCustomFunctionVersionListRequest& request);
+
+                /**
                  *查询数据来源列表
                  * @param req DescribeDataBasesRequest
                  * @return DescribeDataBasesOutcome
@@ -3560,6 +4072,15 @@ namespace TencentCloud
                 DescribeDataSourceWithoutInfoOutcome DescribeDataSourceWithoutInfo(const Model::DescribeDataSourceWithoutInfoRequest &request);
                 void DescribeDataSourceWithoutInfoAsync(const Model::DescribeDataSourceWithoutInfoRequest& request, const DescribeDataSourceWithoutInfoAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DescribeDataSourceWithoutInfoOutcomeCallable DescribeDataSourceWithoutInfoCallable(const Model::DescribeDataSourceWithoutInfoRequest& request);
+
+                /**
+                 *获取数据表导入状态
+                 * @param req DescribeDataTableImportProgressRequest
+                 * @return DescribeDataTableImportProgressOutcome
+                 */
+                DescribeDataTableImportProgressOutcome DescribeDataTableImportProgress(const Model::DescribeDataTableImportProgressRequest &request);
+                void DescribeDataTableImportProgressAsync(const Model::DescribeDataTableImportProgressRequest& request, const DescribeDataTableImportProgressAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeDataTableImportProgressOutcomeCallable DescribeDataTableImportProgressCallable(const Model::DescribeDataTableImportProgressRequest& request);
 
                 /**
                  *获取字段类型列表
@@ -3726,6 +4247,51 @@ namespace TencentCloud
                 DescribeDsEventOutcomeCallable DescribeDsEventCallable(const Model::DescribeDsEventRequest& request);
 
                 /**
+                 *事件管理-查询事件详情
+                 * @param req DescribeDsEventDetailRequest
+                 * @return DescribeDsEventDetailOutcome
+                 */
+                DescribeDsEventDetailOutcome DescribeDsEventDetail(const Model::DescribeDsEventDetailRequest &request);
+                void DescribeDsEventDetailAsync(const Model::DescribeDsEventDetailRequest& request, const DescribeDsEventDetailAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeDsEventDetailOutcomeCallable DescribeDsEventDetailCallable(const Model::DescribeDsEventDetailRequest& request);
+
+                /**
+                 *查询事件监听者信息
+                 * @param req DescribeDsEventListenerRequest
+                 * @return DescribeDsEventListenerOutcome
+                 */
+                DescribeDsEventListenerOutcome DescribeDsEventListener(const Model::DescribeDsEventListenerRequest &request);
+                void DescribeDsEventListenerAsync(const Model::DescribeDsEventListenerRequest& request, const DescribeDsEventListenerAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeDsEventListenerOutcomeCallable DescribeDsEventListenerCallable(const Model::DescribeDsEventListenerRequest& request);
+
+                /**
+                 *查询事件监听者列表
+                 * @param req DescribeDsEventListenerListRequest
+                 * @return DescribeDsEventListenerListOutcome
+                 */
+                DescribeDsEventListenerListOutcome DescribeDsEventListenerList(const Model::DescribeDsEventListenerListRequest &request);
+                void DescribeDsEventListenerListAsync(const Model::DescribeDsEventListenerListRequest& request, const DescribeDsEventListenerListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeDsEventListenerListOutcomeCallable DescribeDsEventListenerListCallable(const Model::DescribeDsEventListenerListRequest& request);
+
+                /**
+                 *查询事件发布者信息
+                 * @param req DescribeDsEventPublisherRequest
+                 * @return DescribeDsEventPublisherOutcome
+                 */
+                DescribeDsEventPublisherOutcome DescribeDsEventPublisher(const Model::DescribeDsEventPublisherRequest &request);
+                void DescribeDsEventPublisherAsync(const Model::DescribeDsEventPublisherRequest& request, const DescribeDsEventPublisherAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeDsEventPublisherOutcomeCallable DescribeDsEventPublisherCallable(const Model::DescribeDsEventPublisherRequest& request);
+
+                /**
+                 *查询事件发布者列表
+                 * @param req DescribeDsEventPublisherListRequest
+                 * @return DescribeDsEventPublisherListOutcome
+                 */
+                DescribeDsEventPublisherListOutcome DescribeDsEventPublisherList(const Model::DescribeDsEventPublisherListRequest &request);
+                void DescribeDsEventPublisherListAsync(const Model::DescribeDsEventPublisherListRequest& request, const DescribeDsEventPublisherListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeDsEventPublisherListOutcomeCallable DescribeDsEventPublisherListCallable(const Model::DescribeDsEventPublisherListRequest& request);
+
+                /**
                  *查询目录树
                  * @param req DescribeDsFolderTreeRequest
                  * @return DescribeDsFolderTreeOutcome
@@ -3744,6 +4310,24 @@ namespace TencentCloud
                 DescribeDsKettleServerFolderTreeOutcomeCallable DescribeDsKettleServerFolderTreeCallable(const Model::DescribeDsKettleServerFolderTreeRequest& request);
 
                 /**
+                 *获取任务最新版本
+                 * @param req DescribeDsLatestTaskVersionInfoRequest
+                 * @return DescribeDsLatestTaskVersionInfoOutcome
+                 */
+                DescribeDsLatestTaskVersionInfoOutcome DescribeDsLatestTaskVersionInfo(const Model::DescribeDsLatestTaskVersionInfoRequest &request);
+                void DescribeDsLatestTaskVersionInfoAsync(const Model::DescribeDsLatestTaskVersionInfoRequest& request, const DescribeDsLatestTaskVersionInfoAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeDsLatestTaskVersionInfoOutcomeCallable DescribeDsLatestTaskVersionInfoCallable(const Model::DescribeDsLatestTaskVersionInfoRequest& request);
+
+                /**
+                 *根据工作流id查询保存未提交任务
+                 * @param req DescribeDsNotSubmitTasksAndCanRunByWorkflowRequest
+                 * @return DescribeDsNotSubmitTasksAndCanRunByWorkflowOutcome
+                 */
+                DescribeDsNotSubmitTasksAndCanRunByWorkflowOutcome DescribeDsNotSubmitTasksAndCanRunByWorkflow(const Model::DescribeDsNotSubmitTasksAndCanRunByWorkflowRequest &request);
+                void DescribeDsNotSubmitTasksAndCanRunByWorkflowAsync(const Model::DescribeDsNotSubmitTasksAndCanRunByWorkflowRequest& request, const DescribeDsNotSubmitTasksAndCanRunByWorkflowAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeDsNotSubmitTasksAndCanRunByWorkflowOutcomeCallable DescribeDsNotSubmitTasksAndCanRunByWorkflowCallable(const Model::DescribeDsNotSubmitTasksAndCanRunByWorkflowRequest& request);
+
+                /**
                  *查询父目录树，用于工作流、任务定位
                  * @param req DescribeDsParentFolderTreeRequest
                  * @return DescribeDsParentFolderTreeOutcome
@@ -3751,6 +4335,24 @@ namespace TencentCloud
                 DescribeDsParentFolderTreeOutcome DescribeDsParentFolderTree(const Model::DescribeDsParentFolderTreeRequest &request);
                 void DescribeDsParentFolderTreeAsync(const Model::DescribeDsParentFolderTreeRequest& request, const DescribeDsParentFolderTreeAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DescribeDsParentFolderTreeOutcomeCallable DescribeDsParentFolderTreeCallable(const Model::DescribeDsParentFolderTreeRequest& request);
+
+                /**
+                 *查看任务版本详细信息
+                 * @param req DescribeDsTaskVersionInfoRequest
+                 * @return DescribeDsTaskVersionInfoOutcome
+                 */
+                DescribeDsTaskVersionInfoOutcome DescribeDsTaskVersionInfo(const Model::DescribeDsTaskVersionInfoRequest &request);
+                void DescribeDsTaskVersionInfoAsync(const Model::DescribeDsTaskVersionInfoRequest& request, const DescribeDsTaskVersionInfoAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeDsTaskVersionInfoOutcomeCallable DescribeDsTaskVersionInfoCallable(const Model::DescribeDsTaskVersionInfoRequest& request);
+
+                /**
+                 *拉取任务版本列表
+                 * @param req DescribeDsTaskVersionListRequest
+                 * @return DescribeDsTaskVersionListOutcome
+                 */
+                DescribeDsTaskVersionListOutcome DescribeDsTaskVersionList(const Model::DescribeDsTaskVersionListRequest &request);
+                void DescribeDsTaskVersionListAsync(const Model::DescribeDsTaskVersionListRequest& request, const DescribeDsTaskVersionListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeDsTaskVersionListOutcomeCallable DescribeDsTaskVersionListCallable(const Model::DescribeDsTaskVersionListRequest& request);
 
                 /**
                  *获取数据同步任务类型
@@ -3852,6 +4454,15 @@ namespace TencentCloud
                 DescribeExecStrategyOutcomeCallable DescribeExecStrategyCallable(const Model::DescribeExecStrategyRequest& request);
 
                 /**
+                 *获取执行日志
+                 * @param req DescribeExecutionLogRequest
+                 * @return DescribeExecutionLogOutcome
+                 */
+                DescribeExecutionLogOutcome DescribeExecutionLog(const Model::DescribeExecutionLogRequest &request);
+                void DescribeExecutionLogAsync(const Model::DescribeExecutionLogRequest& request, const DescribeExecutionLogAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeExecutionLogOutcomeCallable DescribeExecutionLogCallable(const Model::DescribeExecutionLogRequest& request);
+
+                /**
                  *查询父任务数据源信息Ds
                  * @param req DescribeFatherDatasourceInfoDsRequest
                  * @return DescribeFatherDatasourceInfoDsOutcome
@@ -3877,6 +4488,15 @@ namespace TencentCloud
                 DescribeFieldBasicInfoOutcome DescribeFieldBasicInfo(const Model::DescribeFieldBasicInfoRequest &request);
                 void DescribeFieldBasicInfoAsync(const Model::DescribeFieldBasicInfoRequest& request, const DescribeFieldBasicInfoAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DescribeFieldBasicInfoOutcomeCallable DescribeFieldBasicInfoCallable(const Model::DescribeFieldBasicInfoRequest& request);
+
+                /**
+                 *查询开发空间版本列表
+                 * @param req DescribeFileVersionsRequest
+                 * @return DescribeFileVersionsOutcome
+                 */
+                DescribeFileVersionsOutcome DescribeFileVersions(const Model::DescribeFileVersionsRequest &request);
+                void DescribeFileVersionsAsync(const Model::DescribeFileVersionsRequest& request, const DescribeFileVersionsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeFileVersionsOutcomeCallable DescribeFileVersionsCallable(const Model::DescribeFileVersionsRequest& request);
 
                 /**
                  *<p style="color:red;">[注意：该Beta版本只满足广州区部分白名单客户使用]</p>
@@ -3915,6 +4535,15 @@ namespace TencentCloud
                 DescribeFunctionTypesOutcome DescribeFunctionTypes(const Model::DescribeFunctionTypesRequest &request);
                 void DescribeFunctionTypesAsync(const Model::DescribeFunctionTypesRequest& request, const DescribeFunctionTypesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DescribeFunctionTypesOutcomeCallable DescribeFunctionTypesCallable(const Model::DescribeFunctionTypesRequest& request);
+
+                /**
+                 *获取全局工作流信息，用于跨工作流节点拉取租户所有工作流列表
+                 * @param req DescribeGlobalWorkflowDsRequest
+                 * @return DescribeGlobalWorkflowDsOutcome
+                 */
+                DescribeGlobalWorkflowDsOutcome DescribeGlobalWorkflowDs(const Model::DescribeGlobalWorkflowDsRequest &request);
+                void DescribeGlobalWorkflowDsAsync(const Model::DescribeGlobalWorkflowDsRequest& request, const DescribeGlobalWorkflowDsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeGlobalWorkflowDsOutcomeCallable DescribeGlobalWorkflowDsCallable(const Model::DescribeGlobalWorkflowDsRequest& request);
 
                 /**
                  *查询可导入的集成任务
@@ -4179,6 +4808,15 @@ namespace TencentCloud
                 DescribeMonitorsByPageOutcomeCallable DescribeMonitorsByPageCallable(const Model::DescribeMonitorsByPageRequest& request);
 
                 /**
+                 *新获取SQL执行结果
+                 * @param req DescribeNewSqlTaskResultRequest
+                 * @return DescribeNewSqlTaskResultOutcome
+                 */
+                DescribeNewSqlTaskResultOutcome DescribeNewSqlTaskResult(const Model::DescribeNewSqlTaskResultRequest &request);
+                void DescribeNewSqlTaskResultAsync(const Model::DescribeNewSqlTaskResultRequest& request, const DescribeNewSqlTaskResultAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeNewSqlTaskResultOutcomeCallable DescribeNewSqlTaskResultCallable(const Model::DescribeNewSqlTaskResultRequest& request);
+
+                /**
                  *获取离线任务长连接Token
                  * @param req DescribeOfflineTaskTokenRequest
                  * @return DescribeOfflineTaskTokenOutcome
@@ -4305,6 +4943,15 @@ namespace TencentCloud
                 DescribeProdTasksOutcomeCallable DescribeProdTasksCallable(const Model::DescribeProdTasksRequest& request);
 
                 /**
+                 *获取工作流画布信息
+                 * @param req DescribeProdWorkflowCanvasInfoDsRequest
+                 * @return DescribeProdWorkflowCanvasInfoDsOutcome
+                 */
+                DescribeProdWorkflowCanvasInfoDsOutcome DescribeProdWorkflowCanvasInfoDs(const Model::DescribeProdWorkflowCanvasInfoDsRequest &request);
+                void DescribeProdWorkflowCanvasInfoDsAsync(const Model::DescribeProdWorkflowCanvasInfoDsRequest& request, const DescribeProdWorkflowCanvasInfoDsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeProdWorkflowCanvasInfoDsOutcomeCallable DescribeProdWorkflowCanvasInfoDsCallable(const Model::DescribeProdWorkflowCanvasInfoDsRequest& request);
+
+                /**
                  *获取项目信息
                  * @param req DescribeProjectRequest
                  * @return DescribeProjectOutcome
@@ -4315,12 +4962,30 @@ namespace TencentCloud
 
                 /**
                  *查询项目全局参数
+                 * @param req DescribeProjectParamDsRequest
+                 * @return DescribeProjectParamDsOutcome
+                 */
+                DescribeProjectParamDsOutcome DescribeProjectParamDs(const Model::DescribeProjectParamDsRequest &request);
+                void DescribeProjectParamDsAsync(const Model::DescribeProjectParamDsRequest& request, const DescribeProjectParamDsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeProjectParamDsOutcomeCallable DescribeProjectParamDsCallable(const Model::DescribeProjectParamDsRequest& request);
+
+                /**
+                 *查询项目全局参数
                  * @param req DescribeProjectParamDsPageRequest
                  * @return DescribeProjectParamDsPageOutcome
                  */
                 DescribeProjectParamDsPageOutcome DescribeProjectParamDsPage(const Model::DescribeProjectParamDsPageRequest &request);
                 void DescribeProjectParamDsPageAsync(const Model::DescribeProjectParamDsPageRequest& request, const DescribeProjectParamDsPageAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DescribeProjectParamDsPageOutcomeCallable DescribeProjectParamDsPageCallable(const Model::DescribeProjectParamDsPageRequest& request);
+
+                /**
+                 *查询项目参数历史版本
+                 * @param req DescribeProjectParamVersionDsRequest
+                 * @return DescribeProjectParamVersionDsOutcome
+                 */
+                DescribeProjectParamVersionDsOutcome DescribeProjectParamVersionDs(const Model::DescribeProjectParamVersionDsRequest &request);
+                void DescribeProjectParamVersionDsAsync(const Model::DescribeProjectParamVersionDsRequest& request, const DescribeProjectParamVersionDsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeProjectParamVersionDsOutcomeCallable DescribeProjectParamVersionDsCallable(const Model::DescribeProjectParamVersionDsRequest& request);
 
                 /**
                  *拉取项目参数版本详情
@@ -4375,6 +5040,33 @@ namespace TencentCloud
                 DescribeRealTimeTaskSpeedOutcome DescribeRealTimeTaskSpeed(const Model::DescribeRealTimeTaskSpeedRequest &request);
                 void DescribeRealTimeTaskSpeedAsync(const Model::DescribeRealTimeTaskSpeedRequest& request, const DescribeRealTimeTaskSpeedAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DescribeRealTimeTaskSpeedOutcomeCallable DescribeRealTimeTaskSpeedCallable(const Model::DescribeRealTimeTaskSpeedRequest& request);
+
+                /**
+                 *即席分析-获取任务列表
+                 * @param req DescribeRecordListRequest
+                 * @return DescribeRecordListOutcome
+                 */
+                DescribeRecordListOutcome DescribeRecordList(const Model::DescribeRecordListRequest &request);
+                void DescribeRecordListAsync(const Model::DescribeRecordListRequest& request, const DescribeRecordListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeRecordListOutcomeCallable DescribeRecordListCallable(const Model::DescribeRecordListRequest& request);
+
+                /**
+                 *获取回收站任务详情
+                 * @param req DescribeRecycleTaskDetailRequest
+                 * @return DescribeRecycleTaskDetailOutcome
+                 */
+                DescribeRecycleTaskDetailOutcome DescribeRecycleTaskDetail(const Model::DescribeRecycleTaskDetailRequest &request);
+                void DescribeRecycleTaskDetailAsync(const Model::DescribeRecycleTaskDetailRequest& request, const DescribeRecycleTaskDetailAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeRecycleTaskDetailOutcomeCallable DescribeRecycleTaskDetailCallable(const Model::DescribeRecycleTaskDetailRequest& request);
+
+                /**
+                 *查询回收站任务列表
+                 * @param req DescribeRecycleTaskListRequest
+                 * @return DescribeRecycleTaskListOutcome
+                 */
+                DescribeRecycleTaskListOutcome DescribeRecycleTaskList(const Model::DescribeRecycleTaskListRequest &request);
+                void DescribeRecycleTaskListAsync(const Model::DescribeRecycleTaskListRequest& request, const DescribeRecycleTaskListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeRecycleTaskListOutcomeCallable DescribeRecycleTaskListCallable(const Model::DescribeRecycleTaskListRequest& request);
 
                 /**
                  *查询任务实例的关联实例列表
@@ -4677,6 +5369,15 @@ namespace TencentCloud
                 DescribeSonInstancesOutcomeCallable DescribeSonInstancesCallable(const Model::DescribeSonInstancesRequest& request);
 
                 /**
+                 *获取SQL执行结果
+                 * @param req DescribeSqlTaskResultRequest
+                 * @return DescribeSqlTaskResultOutcome
+                 */
+                DescribeSqlTaskResultOutcome DescribeSqlTaskResult(const Model::DescribeSqlTaskResultRequest &request);
+                void DescribeSqlTaskResultAsync(const Model::DescribeSqlTaskResultRequest& request, const DescribeSqlTaskResultAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeSqlTaskResultOutcomeCallable DescribeSqlTaskResultCallable(const Model::DescribeSqlTaskResultRequest& request);
+
+                /**
                  *获取数据标准规则详情
                  * @param req DescribeStandardRuleDetailInfoListRequest
                  * @return DescribeStandardRuleDetailInfoListOutcome
@@ -4858,6 +5559,15 @@ namespace TencentCloud
                 DescribeTaskDetailDsOutcomeCallable DescribeTaskDetailDsCallable(const Model::DescribeTaskDetailDsRequest& request);
 
                 /**
+                 *查询任务输入参数
+                 * @param req DescribeTaskInParamDsRequest
+                 * @return DescribeTaskInParamDsOutcome
+                 */
+                DescribeTaskInParamDsOutcome DescribeTaskInParamDs(const Model::DescribeTaskInParamDsRequest &request);
+                void DescribeTaskInParamDsAsync(const Model::DescribeTaskInParamDsRequest& request, const DescribeTaskInParamDsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeTaskInParamDsOutcomeCallable DescribeTaskInParamDsCallable(const Model::DescribeTaskInParamDsRequest& request);
+
+                /**
                  *离线任务实例详情
                  * @param req DescribeTaskInstanceRequest
                  * @return DescribeTaskInstanceOutcome
@@ -4912,6 +5622,15 @@ namespace TencentCloud
                 DescribeTaskLockStatusOutcomeCallable DescribeTaskLockStatusCallable(const Model::DescribeTaskLockStatusRequest& request);
 
                 /**
+                 *查询任务输出参数
+                 * @param req DescribeTaskOutParamDsRequest
+                 * @return DescribeTaskOutParamDsOutcome
+                 */
+                DescribeTaskOutParamDsOutcome DescribeTaskOutParamDs(const Model::DescribeTaskOutParamDsRequest &request);
+                void DescribeTaskOutParamDsAsync(const Model::DescribeTaskOutParamDsRequest& request, const DescribeTaskOutParamDsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeTaskOutParamDsOutcomeCallable DescribeTaskOutParamDsCallable(const Model::DescribeTaskOutParamDsRequest& request);
+
+                /**
                  *获取指定任务产出登记列表
                  * @param req DescribeTaskOutputRegistriesRequest
                  * @return DescribeTaskOutputRegistriesOutcome
@@ -4919,6 +5638,15 @@ namespace TencentCloud
                 DescribeTaskOutputRegistriesOutcome DescribeTaskOutputRegistries(const Model::DescribeTaskOutputRegistriesRequest &request);
                 void DescribeTaskOutputRegistriesAsync(const Model::DescribeTaskOutputRegistriesRequest& request, const DescribeTaskOutputRegistriesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DescribeTaskOutputRegistriesOutcomeCallable DescribeTaskOutputRegistriesCallable(const Model::DescribeTaskOutputRegistriesRequest& request);
+
+                /**
+                 *查询任务引用参数
+                 * @param req DescribeTaskParamDsRequest
+                 * @return DescribeTaskParamDsOutcome
+                 */
+                DescribeTaskParamDsOutcome DescribeTaskParamDs(const Model::DescribeTaskParamDsRequest &request);
+                void DescribeTaskParamDsAsync(const Model::DescribeTaskParamDsRequest& request, const DescribeTaskParamDsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeTaskParamDsOutcomeCallable DescribeTaskParamDsCallable(const Model::DescribeTaskParamDsRequest& request);
 
                 /**
                  *基于当前任务的数据时间计算依赖的上游任务数据时间
@@ -5013,6 +5741,15 @@ namespace TencentCloud
                 DescribeTemplateHistoryOutcomeCallable DescribeTemplateHistoryCallable(const Model::DescribeTemplateHistoryRequest& request);
 
                 /**
+                 *获取etl测试运行任务执行状态和日志
+                 * @param req DescribeTestRunRequest
+                 * @return DescribeTestRunOutcome
+                 */
+                DescribeTestRunOutcome DescribeTestRun(const Model::DescribeTestRunRequest &request);
+                void DescribeTestRunAsync(const Model::DescribeTestRunRequest& request, const DescribeTestRunAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeTestRunOutcomeCallable DescribeTestRunCallable(const Model::DescribeTestRunRequest& request);
+
+                /**
                  *获取第三方运行日志
                  * @param req DescribeThirdTaskRunLogRequest
                  * @return DescribeThirdTaskRunLogOutcome
@@ -5020,6 +5757,15 @@ namespace TencentCloud
                 DescribeThirdTaskRunLogOutcome DescribeThirdTaskRunLog(const Model::DescribeThirdTaskRunLogRequest &request);
                 void DescribeThirdTaskRunLogAsync(const Model::DescribeThirdTaskRunLogRequest& request, const DescribeThirdTaskRunLogAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DescribeThirdTaskRunLogOutcomeCallable DescribeThirdTaskRunLogCallable(const Model::DescribeThirdTaskRunLogRequest& request);
+
+                /**
+                 *获取长连接Token
+                 * @param req DescribeTokenRequest
+                 * @return DescribeTokenOutcome
+                 */
+                DescribeTokenOutcome DescribeToken(const Model::DescribeTokenRequest &request);
+                void DescribeTokenAsync(const Model::DescribeTokenRequest& request, const DescribeTokenAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeTokenOutcomeCallable DescribeTokenCallable(const Model::DescribeTokenRequest& request);
 
                 /**
                  *数据质量概览页面表排行接口
@@ -5038,6 +5784,15 @@ namespace TencentCloud
                 DescribeTrendStatOutcome DescribeTrendStat(const Model::DescribeTrendStatRequest &request);
                 void DescribeTrendStatAsync(const Model::DescribeTrendStatRequest& request, const DescribeTrendStatAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DescribeTrendStatOutcomeCallable DescribeTrendStatCallable(const Model::DescribeTrendStatRequest& request);
+
+                /**
+                 *根据文件夹查询工作流
+                 * @param req DescribeWorkflowByFordIdsRequest
+                 * @return DescribeWorkflowByFordIdsOutcome
+                 */
+                DescribeWorkflowByFordIdsOutcome DescribeWorkflowByFordIds(const Model::DescribeWorkflowByFordIdsRequest &request);
+                void DescribeWorkflowByFordIdsAsync(const Model::DescribeWorkflowByFordIdsRequest& request, const DescribeWorkflowByFordIdsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeWorkflowByFordIdsOutcomeCallable DescribeWorkflowByFordIdsCallable(const Model::DescribeWorkflowByFordIdsRequest& request);
 
                 /**
                  *查询工作流画布
@@ -5065,6 +5820,15 @@ namespace TencentCloud
                 DescribeWorkflowCanvasOpLogsOutcome DescribeWorkflowCanvasOpLogs(const Model::DescribeWorkflowCanvasOpLogsRequest &request);
                 void DescribeWorkflowCanvasOpLogsAsync(const Model::DescribeWorkflowCanvasOpLogsRequest& request, const DescribeWorkflowCanvasOpLogsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DescribeWorkflowCanvasOpLogsOutcomeCallable DescribeWorkflowCanvasOpLogsCallable(const Model::DescribeWorkflowCanvasOpLogsRequest& request);
+
+                /**
+                 *获取工作流画布操作人列表
+                 * @param req DescribeWorkflowCanvasOperatorsRequest
+                 * @return DescribeWorkflowCanvasOperatorsOutcome
+                 */
+                DescribeWorkflowCanvasOperatorsOutcome DescribeWorkflowCanvasOperators(const Model::DescribeWorkflowCanvasOperatorsRequest &request);
+                void DescribeWorkflowCanvasOperatorsAsync(const Model::DescribeWorkflowCanvasOperatorsRequest& request, const DescribeWorkflowCanvasOperatorsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeWorkflowCanvasOperatorsOutcomeCallable DescribeWorkflowCanvasOperatorsCallable(const Model::DescribeWorkflowCanvasOperatorsRequest& request);
 
                 /**
                  *查询工作流画布运行起止时间
@@ -5112,6 +5876,15 @@ namespace TencentCloud
                 DescribeWorkflowOpsCanvasInfoOutcomeCallable DescribeWorkflowOpsCanvasInfoCallable(const Model::DescribeWorkflowOpsCanvasInfoRequest& request);
 
                 /**
+                 *查询工作流全局参数
+                 * @param req DescribeWorkflowParamDsRequest
+                 * @return DescribeWorkflowParamDsOutcome
+                 */
+                DescribeWorkflowParamDsOutcome DescribeWorkflowParamDs(const Model::DescribeWorkflowParamDsRequest &request);
+                void DescribeWorkflowParamDsAsync(const Model::DescribeWorkflowParamDsRequest& request, const DescribeWorkflowParamDsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeWorkflowParamDsOutcomeCallable DescribeWorkflowParamDsCallable(const Model::DescribeWorkflowParamDsRequest& request);
+
+                /**
                  *获取工作流调度信息
                  * @param req DescribeWorkflowSchedulerInfoDsRequest
                  * @return DescribeWorkflowSchedulerInfoDsOutcome
@@ -5146,6 +5919,24 @@ namespace TencentCloud
                 DiagnosePlusOutcome DiagnosePlus(const Model::DiagnosePlusRequest &request);
                 void DiagnosePlusAsync(const Model::DiagnosePlusRequest& request, const DiagnosePlusAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DiagnosePlusOutcomeCallable DiagnosePlusCallable(const Model::DiagnosePlusRequest& request);
+
+                /**
+                 *下载SQL执行结果
+                 * @param req DownloadNewSqlResultRequest
+                 * @return DownloadNewSqlResultOutcome
+                 */
+                DownloadNewSqlResultOutcome DownloadNewSqlResult(const Model::DownloadNewSqlResultRequest &request);
+                void DownloadNewSqlResultAsync(const Model::DownloadNewSqlResultRequest& request, const DownloadNewSqlResultAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DownloadNewSqlResultOutcomeCallable DownloadNewSqlResultCallable(const Model::DownloadNewSqlResultRequest& request);
+
+                /**
+                 *下载SQL执行结果
+                 * @param req DownloadSqlResultRequest
+                 * @return DownloadSqlResultOutcome
+                 */
+                DownloadSqlResultOutcome DownloadSqlResult(const Model::DownloadSqlResultRequest &request);
+                void DownloadSqlResultAsync(const Model::DownloadSqlResultRequest& request, const DownloadSqlResultAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DownloadSqlResultOutcomeCallable DownloadSqlResultCallable(const Model::DownloadSqlResultRequest& request);
 
                 /**
                  *调试运行集成任务
@@ -5245,6 +6036,15 @@ namespace TencentCloud
                 FindFuzzyTasksDsOutcome FindFuzzyTasksDs(const Model::FindFuzzyTasksDsRequest &request);
                 void FindFuzzyTasksDsAsync(const Model::FindFuzzyTasksDsRequest& request, const FindFuzzyTasksDsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 FindFuzzyTasksDsOutcomeCallable FindFuzzyTasksDsCallable(const Model::FindFuzzyTasksDsRequest& request);
+
+                /**
+                 *远端路径寻找任务
+                 * @param req FindTaskByRemotePathRequest
+                 * @return FindTaskByRemotePathOutcome
+                 */
+                FindTaskByRemotePathOutcome FindTaskByRemotePath(const Model::FindTaskByRemotePathRequest &request);
+                void FindTaskByRemotePathAsync(const Model::FindTaskByRemotePathRequest& request, const FindTaskByRemotePathAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                FindTaskByRemotePathOutcomeCallable FindTaskByRemotePathCallable(const Model::FindTaskByRemotePathRequest& request);
 
                 /**
                  *<p style="color:red;">[注意：该Beta版本只满足广州区部分白名单客户使用]</p>
@@ -5358,6 +6158,24 @@ namespace TencentCloud
                 GetIntegrationNodeColumnSchemaOutcomeCallable GetIntegrationNodeColumnSchemaCallable(const Model::GetIntegrationNodeColumnSchemaRequest& request);
 
                 /**
+                 *开发空间获取最近一次测试运行记录信息
+                 * @param req GetLatestAnalyseInfoRequest
+                 * @return GetLatestAnalyseInfoOutcome
+                 */
+                GetLatestAnalyseInfoOutcome GetLatestAnalyseInfo(const Model::GetLatestAnalyseInfoRequest &request);
+                void GetLatestAnalyseInfoAsync(const Model::GetLatestAnalyseInfoRequest& request, const GetLatestAnalyseInfoAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                GetLatestAnalyseInfoOutcomeCallable GetLatestAnalyseInfoCallable(const Model::GetLatestAnalyseInfoRequest& request);
+
+                /**
+                 *编排空间获取最近一次测试运行记录信息
+                 * @param req GetLatestTestRunInfoRequest
+                 * @return GetLatestTestRunInfoOutcome
+                 */
+                GetLatestTestRunInfoOutcome GetLatestTestRunInfo(const Model::GetLatestTestRunInfoRequest &request);
+                void GetLatestTestRunInfoAsync(const Model::GetLatestTestRunInfoRequest& request, const GetLatestTestRunInfoAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                GetLatestTestRunInfoOutcomeCallable GetLatestTestRunInfoCallable(const Model::GetLatestTestRunInfoRequest& request);
+
+                /**
                  *获取离线任务实例列表(新)
                  * @param req GetOfflineDIInstanceListRequest
                  * @return GetOfflineDIInstanceListOutcome
@@ -5383,6 +6201,15 @@ namespace TencentCloud
                 GetPathTreesOutcome GetPathTrees(const Model::GetPathTreesRequest &request);
                 void GetPathTreesAsync(const Model::GetPathTreesRequest& request, const GetPathTreesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 GetPathTreesOutcomeCallable GetPathTreesCallable(const Model::GetPathTreesRequest& request);
+
+                /**
+                 *资源管理-获取资源上传的可用 cos 路径
+                 * @param req GetResourceCosPathRequest
+                 * @return GetResourceCosPathOutcome
+                 */
+                GetResourceCosPathOutcome GetResourceCosPath(const Model::GetResourceCosPathRequest &request);
+                void GetResourceCosPathAsync(const Model::GetResourceCosPathRequest& request, const GetResourceCosPathAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                GetResourceCosPathOutcomeCallable GetResourceCosPathCallable(const Model::GetResourceCosPathRequest& request);
 
                 /**
                  *资源管理-拉取资源目录树
@@ -5457,6 +6284,42 @@ namespace TencentCloud
                 ImportProjectParamDsOutcomeCallable ImportProjectParamDsCallable(const Model::ImportProjectParamDsRequest& request);
 
                 /**
+                 *创建数据表：HIVE
+                 * @param req ImportTableDataRequest
+                 * @return ImportTableDataOutcome
+                 */
+                ImportTableDataOutcome ImportTableData(const Model::ImportTableDataRequest &request);
+                void ImportTableDataAsync(const Model::ImportTableDataRequest& request, const ImportTableDataAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                ImportTableDataOutcomeCallable ImportTableDataCallable(const Model::ImportTableDataRequest& request);
+
+                /**
+                 *工作流导入（XML）
+                 * @param req ImportWorkflowXmlRequest
+                 * @return ImportWorkflowXmlOutcome
+                 */
+                ImportWorkflowXmlOutcome ImportWorkflowXml(const Model::ImportWorkflowXmlRequest &request);
+                void ImportWorkflowXmlAsync(const Model::ImportWorkflowXmlRequest& request, const ImportWorkflowXmlAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                ImportWorkflowXmlOutcomeCallable ImportWorkflowXmlCallable(const Model::ImportWorkflowXmlRequest& request);
+
+                /**
+                 *工作流导入（ZIP）
+                 * @param req ImportWorkflowZipRequest
+                 * @return ImportWorkflowZipOutcome
+                 */
+                ImportWorkflowZipOutcome ImportWorkflowZip(const Model::ImportWorkflowZipRequest &request);
+                void ImportWorkflowZipAsync(const Model::ImportWorkflowZipRequest& request, const ImportWorkflowZipAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                ImportWorkflowZipOutcomeCallable ImportWorkflowZipCallable(const Model::ImportWorkflowZipRequest& request);
+
+                /**
+                 *资源管理-判断资源文件是否存在
+                 * @param req JudgeResourceFileRequest
+                 * @return JudgeResourceFileOutcome
+                 */
+                JudgeResourceFileOutcome JudgeResourceFile(const Model::JudgeResourceFileRequest &request);
+                void JudgeResourceFileAsync(const Model::JudgeResourceFileRequest& request, const JudgeResourceFileAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                JudgeResourceFileOutcomeCallable JudgeResourceFileCallable(const Model::JudgeResourceFileRequest& request);
+
+                /**
                  *任务是否存在监听事件
                  * @param req JudgeTaskListenEventRequest
                  * @return JudgeTaskListenEventOutcome
@@ -5492,6 +6355,15 @@ namespace TencentCloud
                 KillScheduleInstancesOutcome KillScheduleInstances(const Model::KillScheduleInstancesRequest &request);
                 void KillScheduleInstancesAsync(const Model::KillScheduleInstancesRequest& request, const KillScheduleInstancesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 KillScheduleInstancesOutcomeCallable KillScheduleInstancesCallable(const Model::KillScheduleInstancesRequest& request);
+
+                /**
+                 *停止试运行任务（多个）
+                 * @param req KillTasksTestRunRequest
+                 * @return KillTasksTestRunOutcome
+                 */
+                KillTasksTestRunOutcome KillTasksTestRun(const Model::KillTasksTestRunRequest &request);
+                void KillTasksTestRunAsync(const Model::KillTasksTestRunRequest& request, const KillTasksTestRunAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                KillTasksTestRunOutcomeCallable KillTasksTestRunCallable(const Model::KillTasksTestRunRequest& request);
 
                 /**
                  *获取操作详情列表
@@ -5812,6 +6684,24 @@ namespace TencentCloud
                 MoveTasksToFolderOutcomeCallable MoveTasksToFolderCallable(const Model::MoveTasksToFolderRequest& request);
 
                 /**
+                 *库表管理-新建数据表-csv预览，最多支持500行预览
+                 * @param req PreviewDataTableCsvRequest
+                 * @return PreviewDataTableCsvOutcome
+                 */
+                PreviewDataTableCsvOutcome PreviewDataTableCsv(const Model::PreviewDataTableCsvRequest &request);
+                void PreviewDataTableCsvAsync(const Model::PreviewDataTableCsvRequest& request, const PreviewDataTableCsvAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                PreviewDataTableCsvOutcomeCallable PreviewDataTableCsvCallable(const Model::PreviewDataTableCsvRequest& request);
+
+                /**
+                 *查询工作流版本信息
+                 * @param req QueryWorkflowVersionRequest
+                 * @return QueryWorkflowVersionOutcome
+                 */
+                QueryWorkflowVersionOutcome QueryWorkflowVersion(const Model::QueryWorkflowVersionRequest &request);
+                void QueryWorkflowVersionAsync(const Model::QueryWorkflowVersionRequest& request, const QueryWorkflowVersionAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                QueryWorkflowVersionOutcomeCallable QueryWorkflowVersionCallable(const Model::QueryWorkflowVersionRequest& request);
+
+                /**
                  *注册事件
                  * @param req RegisterDsEventRequest
                  * @return RegisterDsEventOutcome
@@ -5904,6 +6794,15 @@ namespace TencentCloud
                 RenameResourceFileOutcomeCallable RenameResourceFileCallable(const Model::RenameResourceFileRequest& request);
 
                 /**
+                 *资源管理-重命名资源目录
+                 * @param req RenameResourcePathRequest
+                 * @return RenameResourcePathOutcome
+                 */
+                RenameResourcePathOutcome RenameResourcePath(const Model::RenameResourcePathRequest &request);
+                void RenameResourcePathAsync(const Model::RenameResourcePathRequest& request, const RenameResourcePathAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                RenameResourcePathOutcomeCallable RenameResourcePathCallable(const Model::RenameResourcePathRequest& request);
+
+                /**
                  *RenameTaskDs
                  * @param req RenameTaskDsRequest
                  * @return RenameTaskDsOutcome
@@ -5949,6 +6848,15 @@ namespace TencentCloud
                 RenewWorkflowSchedulerInfoDsOutcomeCallable RenewWorkflowSchedulerInfoDsCallable(const Model::RenewWorkflowSchedulerInfoDsRequest& request);
 
                 /**
+                 *替换项目参数历史版本
+                 * @param req ReplaceProjectParamVersionDsRequest
+                 * @return ReplaceProjectParamVersionDsOutcome
+                 */
+                ReplaceProjectParamVersionDsOutcome ReplaceProjectParamVersionDs(const Model::ReplaceProjectParamVersionDsRequest &request);
+                void ReplaceProjectParamVersionDsAsync(const Model::ReplaceProjectParamVersionDsRequest& request, const ReplaceProjectParamVersionDsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                ReplaceProjectParamVersionDsOutcomeCallable ReplaceProjectParamVersionDsCallable(const Model::ReplaceProjectParamVersionDsRequest& request);
+
+                /**
                  *<p style="color:red;">[注意：该Beta版本只满足广州区部分白名单客户使用]</p>
 实例批量重跑
                  * @param req RerunInstancesRequest
@@ -5986,6 +6894,15 @@ namespace TencentCloud
                 RestartInLongAgentOutcomeCallable RestartInLongAgentCallable(const Model::RestartInLongAgentRequest& request);
 
                 /**
+                 *还原任务
+                 * @param req RestoreRecycleTaskRequest
+                 * @return RestoreRecycleTaskOutcome
+                 */
+                RestoreRecycleTaskOutcome RestoreRecycleTask(const Model::RestoreRecycleTaskRequest &request);
+                void RestoreRecycleTaskAsync(const Model::RestoreRecycleTaskRequest& request, const RestoreRecycleTaskAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                RestoreRecycleTaskOutcomeCallable RestoreRecycleTaskCallable(const Model::RestoreRecycleTaskRequest& request);
+
+                /**
                  *继续集成任务
                  * @param req ResumeIntegrationTaskRequest
                  * @return ResumeIntegrationTaskOutcome
@@ -6002,6 +6919,15 @@ namespace TencentCloud
                 RobAndLockIntegrationTaskOutcome RobAndLockIntegrationTask(const Model::RobAndLockIntegrationTaskRequest &request);
                 void RobAndLockIntegrationTaskAsync(const Model::RobAndLockIntegrationTaskRequest& request, const RobAndLockIntegrationTaskAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 RobAndLockIntegrationTaskOutcomeCallable RobAndLockIntegrationTaskCallable(const Model::RobAndLockIntegrationTaskRequest& request);
+
+                /**
+                 *回滚自定义函数版本
+                 * @param req RollbackCustomFunctionVersionRequest
+                 * @return RollbackCustomFunctionVersionOutcome
+                 */
+                RollbackCustomFunctionVersionOutcome RollbackCustomFunctionVersion(const Model::RollbackCustomFunctionVersionRequest &request);
+                void RollbackCustomFunctionVersionAsync(const Model::RollbackCustomFunctionVersionRequest& request, const RollbackCustomFunctionVersionAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                RollbackCustomFunctionVersionOutcomeCallable RollbackCustomFunctionVersionCallable(const Model::RollbackCustomFunctionVersionRequest& request);
 
                 /**
                  *实例强制成功
@@ -6087,6 +7013,15 @@ namespace TencentCloud
                 StartIntegrationTaskOutcomeCallable StartIntegrationTaskCallable(const Model::StartIntegrationTaskRequest& request);
 
                 /**
+                 *即席分析终止任务接口
+                 * @param req StopAdhocTaskRequest
+                 * @return StopAdhocTaskOutcome
+                 */
+                StopAdhocTaskOutcome StopAdhocTask(const Model::StopAdhocTaskRequest &request);
+                void StopAdhocTaskAsync(const Model::StopAdhocTaskRequest& request, const StopAdhocTaskAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                StopAdhocTaskOutcomeCallable StopAdhocTaskCallable(const Model::StopAdhocTaskRequest& request);
+
+                /**
                  *提交基线
                  * @param req StopBaselineRequest
                  * @return StopBaselineOutcome
@@ -6105,6 +7040,15 @@ namespace TencentCloud
                 StopIntegrationTaskOutcomeCallable StopIntegrationTaskCallable(const Model::StopIntegrationTaskRequest& request);
 
                 /**
+                 *终止etl测试运行任务
+                 * @param req StopTestRunRequest
+                 * @return StopTestRunOutcome
+                 */
+                StopTestRunOutcome StopTestRun(const Model::StopTestRunRequest &request);
+                void StopTestRunAsync(const Model::StopTestRunRequest& request, const StopTestRunAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                StopTestRunOutcomeCallable StopTestRunCallable(const Model::StopTestRunRequest& request);
+
+                /**
                  *提交基线
                  * @param req SubmitBaselineRequest
                  * @return SubmitBaselineOutcome
@@ -6114,6 +7058,15 @@ namespace TencentCloud
                 SubmitBaselineOutcomeCallable SubmitBaselineCallable(const Model::SubmitBaselineRequest& request);
 
                 /**
+                 *批量提交etl测试运行任务
+                 * @param req SubmitBatchTestRunRequest
+                 * @return SubmitBatchTestRunOutcome
+                 */
+                SubmitBatchTestRunOutcome SubmitBatchTestRun(const Model::SubmitBatchTestRunRequest &request);
+                void SubmitBatchTestRunAsync(const Model::SubmitBatchTestRunRequest& request, const SubmitBatchTestRunAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                SubmitBatchTestRunOutcomeCallable SubmitBatchTestRunCallable(const Model::SubmitBatchTestRunRequest& request);
+
+                /**
                  *提交自定义函数
                  * @param req SubmitCustomFunctionRequest
                  * @return SubmitCustomFunctionOutcome
@@ -6121,6 +7074,15 @@ namespace TencentCloud
                 SubmitCustomFunctionOutcome SubmitCustomFunction(const Model::SubmitCustomFunctionRequest &request);
                 void SubmitCustomFunctionAsync(const Model::SubmitCustomFunctionRequest& request, const SubmitCustomFunctionAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 SubmitCustomFunctionOutcomeCallable SubmitCustomFunctionCallable(const Model::SubmitCustomFunctionRequest& request);
+
+                /**
+                 *即席分析提交数据集成任务
+                 * @param req SubmitIntegrationTaskRequest
+                 * @return SubmitIntegrationTaskOutcome
+                 */
+                SubmitIntegrationTaskOutcome SubmitIntegrationTask(const Model::SubmitIntegrationTaskRequest &request);
+                void SubmitIntegrationTaskAsync(const Model::SubmitIntegrationTaskRequest& request, const SubmitIntegrationTaskAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                SubmitIntegrationTaskOutcomeCallable SubmitIntegrationTaskCallable(const Model::SubmitIntegrationTaskRequest& request);
 
                 /**
                  *即席分析提交PySpark任务
@@ -6176,6 +7138,15 @@ namespace TencentCloud
                 SubmitTaskTestRunOutcome SubmitTaskTestRun(const Model::SubmitTaskTestRunRequest &request);
                 void SubmitTaskTestRunAsync(const Model::SubmitTaskTestRunRequest& request, const SubmitTaskTestRunAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 SubmitTaskTestRunOutcomeCallable SubmitTaskTestRunCallable(const Model::SubmitTaskTestRunRequest& request);
+
+                /**
+                 *提交etl测试运行任务
+                 * @param req SubmitTestRunRequest
+                 * @return SubmitTestRunOutcome
+                 */
+                SubmitTestRunOutcome SubmitTestRun(const Model::SubmitTestRunRequest &request);
+                void SubmitTestRunAsync(const Model::SubmitTestRunRequest& request, const SubmitTestRunAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                SubmitTestRunOutcomeCallable SubmitTestRunCallable(const Model::SubmitTestRunRequest& request);
 
                 /**
                  *<p style="color:red;">[注意：该Beta版本只满足广州区部分白名单客户使用]</p>
@@ -6331,6 +7302,16 @@ namespace TencentCloud
                 UpdateTaskDsOutcome UpdateTaskDs(const Model::UpdateTaskDsRequest &request);
                 void UpdateTaskDsAsync(const Model::UpdateTaskDsRequest& request, const UpdateTaskDsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 UpdateTaskDsOutcomeCallable UpdateTaskDsCallable(const Model::UpdateTaskDsRequest& request);
+
+                /**
+                 *<p style="color:red;">[该接口为 ds 中开发]</p>
+更新工作流（包括工作流基本信息与工作流参数）
+                 * @param req UpdateWorkflowInfoRequest
+                 * @return UpdateWorkflowInfoOutcome
+                 */
+                UpdateWorkflowInfoOutcome UpdateWorkflowInfo(const Model::UpdateWorkflowInfoRequest &request);
+                void UpdateWorkflowInfoAsync(const Model::UpdateWorkflowInfoRequest& request, const UpdateWorkflowInfoAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                UpdateWorkflowInfoOutcomeCallable UpdateWorkflowInfoCallable(const Model::UpdateWorkflowInfoRequest& request);
 
                 /**
                  *修改工作流责任人

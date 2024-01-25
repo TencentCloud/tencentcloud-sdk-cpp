@@ -322,46 +322,34 @@ namespace TencentCloud
                     bool AppIdHasBeenSet() const;
 
                     /**
-                     * 获取输入输出表类型 /**
-     * 输入流
-     */
-    UPSTREAM,
-    /**
-     * 输出流
-     */
-    DOWNSTREAM;
+                     * 获取输入输出表类型
+      输入流
+ UPSTREAM,
+      输出流
+  DOWNSTREAM;
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return DataFlowType 输入输出表类型 /**
-     * 输入流
-     */
-    UPSTREAM,
-    /**
-     * 输出流
-     */
-    DOWNSTREAM;
+                     * @return DataFlowType 输入输出表类型
+      输入流
+ UPSTREAM,
+      输出流
+  DOWNSTREAM;
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetDataFlowType() const;
 
                     /**
-                     * 设置输入输出表类型 /**
-     * 输入流
-     */
-    UPSTREAM,
-    /**
-     * 输出流
-     */
-    DOWNSTREAM;
+                     * 设置输入输出表类型
+      输入流
+ UPSTREAM,
+      输出流
+  DOWNSTREAM;
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _dataFlowType 输入输出表类型 /**
-     * 输入流
-     */
-    UPSTREAM,
-    /**
-     * 输出流
-     */
-    DOWNSTREAM;
+                     * @param _dataFlowType 输入输出表类型
+      输入流
+ UPSTREAM,
+      输出流
+  DOWNSTREAM;
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -579,14 +567,11 @@ namespace TencentCloud
                     bool m_appIdHasBeenSet;
 
                     /**
-                     * 输入输出表类型 /**
-     * 输入流
-     */
-    UPSTREAM,
-    /**
-     * 输出流
-     */
-    DOWNSTREAM;
+                     * 输入输出表类型
+      输入流
+ UPSTREAM,
+      输出流
+  DOWNSTREAM;
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_dataFlowType;

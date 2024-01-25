@@ -2018,6 +2018,49 @@ OcrClient::RecognizeContainerOCROutcomeCallable OcrClient::RecognizeContainerOCR
     return task->get_future();
 }
 
+OcrClient::RecognizeEncryptedIDCardOCROutcome OcrClient::RecognizeEncryptedIDCardOCR(const RecognizeEncryptedIDCardOCRRequest &request)
+{
+    auto outcome = MakeRequest(request, "RecognizeEncryptedIDCardOCR");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        RecognizeEncryptedIDCardOCRResponse rsp = RecognizeEncryptedIDCardOCRResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return RecognizeEncryptedIDCardOCROutcome(rsp);
+        else
+            return RecognizeEncryptedIDCardOCROutcome(o.GetError());
+    }
+    else
+    {
+        return RecognizeEncryptedIDCardOCROutcome(outcome.GetError());
+    }
+}
+
+void OcrClient::RecognizeEncryptedIDCardOCRAsync(const RecognizeEncryptedIDCardOCRRequest& request, const RecognizeEncryptedIDCardOCRAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->RecognizeEncryptedIDCardOCR(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+OcrClient::RecognizeEncryptedIDCardOCROutcomeCallable OcrClient::RecognizeEncryptedIDCardOCRCallable(const RecognizeEncryptedIDCardOCRRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<RecognizeEncryptedIDCardOCROutcome()>>(
+        [this, request]()
+        {
+            return this->RecognizeEncryptedIDCardOCR(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 OcrClient::RecognizeForeignPermanentResidentIdCardOutcome OcrClient::RecognizeForeignPermanentResidentIdCard(const RecognizeForeignPermanentResidentIdCardRequest &request)
 {
     auto outcome = MakeRequest(request, "RecognizeForeignPermanentResidentIdCard");

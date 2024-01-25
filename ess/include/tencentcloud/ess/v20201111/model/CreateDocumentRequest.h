@@ -67,6 +67,35 @@ namespace TencentCloud
                     bool OperatorHasBeenSet() const;
 
                     /**
+                     * 获取用户配置的合同模板ID，会基于此模板创建合同文档，为32位字符串。
+
+[点击查看模板Id在控制台上的位置](https://qcloudimg.tencent-cloud.cn/raw/253071cc2f7becb063c7cf71b37b7861.png)
+                     * @return TemplateId 用户配置的合同模板ID，会基于此模板创建合同文档，为32位字符串。
+
+[点击查看模板Id在控制台上的位置](https://qcloudimg.tencent-cloud.cn/raw/253071cc2f7becb063c7cf71b37b7861.png)
+                     * 
+                     */
+                    std::string GetTemplateId() const;
+
+                    /**
+                     * 设置用户配置的合同模板ID，会基于此模板创建合同文档，为32位字符串。
+
+[点击查看模板Id在控制台上的位置](https://qcloudimg.tencent-cloud.cn/raw/253071cc2f7becb063c7cf71b37b7861.png)
+                     * @param _templateId 用户配置的合同模板ID，会基于此模板创建合同文档，为32位字符串。
+
+[点击查看模板Id在控制台上的位置](https://qcloudimg.tencent-cloud.cn/raw/253071cc2f7becb063c7cf71b37b7861.png)
+                     * 
+                     */
+                    void SetTemplateId(const std::string& _templateId);
+
+                    /**
+                     * 判断参数 TemplateId 是否已赋值
+                     * @return TemplateId 是否已赋值
+                     * 
+                     */
+                    bool TemplateIdHasBeenSet() const;
+
+                    /**
                      * 获取合同流程ID，为32位字符串。
 此接口的合同流程ID需要由[创建签署流程](https://qian.tencent.com/developers/companyApis/startFlows/CreateFlow)接口创建得到。
                      * @return FlowId 合同流程ID，为32位字符串。
@@ -90,31 +119,6 @@ namespace TencentCloud
                      * 
                      */
                     bool FlowIdHasBeenSet() const;
-
-                    /**
-                     * 获取用户配置的合同模板ID，会基于此模板创建合同文档，为32位字符串。
-可登录腾讯电子签控制台，在 "模板"->"模板中心"->"列表展示设置"选中模板 ID 中查看某个模板的TemplateId(在页面中展示为模板ID)。
-                     * @return TemplateId 用户配置的合同模板ID，会基于此模板创建合同文档，为32位字符串。
-可登录腾讯电子签控制台，在 "模板"->"模板中心"->"列表展示设置"选中模板 ID 中查看某个模板的TemplateId(在页面中展示为模板ID)。
-                     * 
-                     */
-                    std::string GetTemplateId() const;
-
-                    /**
-                     * 设置用户配置的合同模板ID，会基于此模板创建合同文档，为32位字符串。
-可登录腾讯电子签控制台，在 "模板"->"模板中心"->"列表展示设置"选中模板 ID 中查看某个模板的TemplateId(在页面中展示为模板ID)。
-                     * @param _templateId 用户配置的合同模板ID，会基于此模板创建合同文档，为32位字符串。
-可登录腾讯电子签控制台，在 "模板"->"模板中心"->"列表展示设置"选中模板 ID 中查看某个模板的TemplateId(在页面中展示为模板ID)。
-                     * 
-                     */
-                    void SetTemplateId(const std::string& _templateId);
-
-                    /**
-                     * 判断参数 TemplateId 是否已赋值
-                     * @return TemplateId 是否已赋值
-                     * 
-                     */
-                    bool TemplateIdHasBeenSet() const;
 
                     /**
                      * 获取文件名列表，单个文件名最大长度200个字符，暂时仅支持单文件发起。设置后流程对应的文件名称当前设置的值。
@@ -307,18 +311,19 @@ namespace TencentCloud
                     bool m_operatorHasBeenSet;
 
                     /**
+                     * 用户配置的合同模板ID，会基于此模板创建合同文档，为32位字符串。
+
+[点击查看模板Id在控制台上的位置](https://qcloudimg.tencent-cloud.cn/raw/253071cc2f7becb063c7cf71b37b7861.png)
+                     */
+                    std::string m_templateId;
+                    bool m_templateIdHasBeenSet;
+
+                    /**
                      * 合同流程ID，为32位字符串。
 此接口的合同流程ID需要由[创建签署流程](https://qian.tencent.com/developers/companyApis/startFlows/CreateFlow)接口创建得到。
                      */
                     std::string m_flowId;
                     bool m_flowIdHasBeenSet;
-
-                    /**
-                     * 用户配置的合同模板ID，会基于此模板创建合同文档，为32位字符串。
-可登录腾讯电子签控制台，在 "模板"->"模板中心"->"列表展示设置"选中模板 ID 中查看某个模板的TemplateId(在页面中展示为模板ID)。
-                     */
-                    std::string m_templateId;
-                    bool m_templateIdHasBeenSet;
 
                     /**
                      * 文件名列表，单个文件名最大长度200个字符，暂时仅支持单文件发起。设置后流程对应的文件名称当前设置的值。

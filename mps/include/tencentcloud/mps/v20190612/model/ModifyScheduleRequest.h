@@ -201,6 +201,27 @@ namespace TencentCloud
                      */
                     bool TaskNotifyConfigHasBeenSet() const;
 
+                    /**
+                     * 获取资源ID，需要保证对应资源是开启状态。
+                     * @return ResourceId 资源ID，需要保证对应资源是开启状态。
+                     * 
+                     */
+                    std::string GetResourceId() const;
+
+                    /**
+                     * 设置资源ID，需要保证对应资源是开启状态。
+                     * @param _resourceId 资源ID，需要保证对应资源是开启状态。
+                     * 
+                     */
+                    void SetResourceId(const std::string& _resourceId);
+
+                    /**
+                     * 判断参数 ResourceId 是否已赋值
+                     * @return ResourceId 是否已赋值
+                     * 
+                     */
+                    bool ResourceIdHasBeenSet() const;
+
                 private:
 
                     /**
@@ -246,6 +267,12 @@ namespace TencentCloud
                      */
                     TaskNotifyConfig m_taskNotifyConfig;
                     bool m_taskNotifyConfigHasBeenSet;
+
+                    /**
+                     * 资源ID，需要保证对应资源是开启状态。
+                     */
+                    std::string m_resourceId;
+                    bool m_resourceIdHasBeenSet;
 
                 };
             }

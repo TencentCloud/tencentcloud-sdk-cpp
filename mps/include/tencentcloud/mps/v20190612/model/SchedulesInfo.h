@@ -337,6 +337,31 @@ Disabled：已禁用。
                      */
                     bool UpdateTimeHasBeenSet() const;
 
+                    /**
+                     * 获取资源ID，对于没有关联资源ID的，用账号主资源ID填充。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return ResourceId 资源ID，对于没有关联资源ID的，用账号主资源ID填充。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::string GetResourceId() const;
+
+                    /**
+                     * 设置资源ID，对于没有关联资源ID的，用账号主资源ID填充。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _resourceId 资源ID，对于没有关联资源ID的，用账号主资源ID填充。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetResourceId(const std::string& _resourceId);
+
+                    /**
+                     * 判断参数 ResourceId 是否已赋值
+                     * @return ResourceId 是否已赋值
+                     * 
+                     */
+                    bool ResourceIdHasBeenSet() const;
+
                 private:
 
                     /**
@@ -418,6 +443,13 @@ Disabled：已禁用。
                      */
                     std::string m_updateTime;
                     bool m_updateTimeHasBeenSet;
+
+                    /**
+                     * 资源ID，对于没有关联资源ID的，用账号主资源ID填充。
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_resourceId;
+                    bool m_resourceIdHasBeenSet;
 
                 };
             }
