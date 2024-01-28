@@ -23,7 +23,8 @@ using namespace TencentCloud::Ssl::V20191205::Model;
 using namespace std;
 
 DeleteCertificateRequest::DeleteCertificateRequest() :
-    m_certificateIdHasBeenSet(false)
+    m_certificateIdHasBeenSet(false),
+    m_isCheckResourceHasBeenSet(false)
 {
 }
 
@@ -40,6 +41,14 @@ string DeleteCertificateRequest::ToJsonString() const
         string key = "CertificateId";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_certificateId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_isCheckResourceHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "IsCheckResource";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_isCheckResource, allocator);
     }
 
 
@@ -64,6 +73,22 @@ void DeleteCertificateRequest::SetCertificateId(const string& _certificateId)
 bool DeleteCertificateRequest::CertificateIdHasBeenSet() const
 {
     return m_certificateIdHasBeenSet;
+}
+
+bool DeleteCertificateRequest::GetIsCheckResource() const
+{
+    return m_isCheckResource;
+}
+
+void DeleteCertificateRequest::SetIsCheckResource(const bool& _isCheckResource)
+{
+    m_isCheckResource = _isCheckResource;
+    m_isCheckResourceHasBeenSet = true;
+}
+
+bool DeleteCertificateRequest::IsCheckResourceHasBeenSet() const
+{
+    return m_isCheckResourceHasBeenSet;
 }
 
 

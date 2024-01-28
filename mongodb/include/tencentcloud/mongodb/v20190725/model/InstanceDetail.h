@@ -848,6 +848,31 @@ namespace TencentCloud
                     bool RealInstanceIdHasBeenSet() const;
 
                     /**
+                     * 获取实例当前可用区信息。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return ZoneList 实例当前可用区信息。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::vector<std::string> GetZoneList() const;
+
+                    /**
+                     * 设置实例当前可用区信息。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _zoneList 实例当前可用区信息。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetZoneList(const std::vector<std::string>& _zoneList);
+
+                    /**
+                     * 判断参数 ZoneList 是否已赋值
+                     * @return ZoneList 是否已赋值
+                     * 
+                     */
+                    bool ZoneListHasBeenSet() const;
+
+                    /**
                      * 获取mongos节点个数。
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return MongosNodeNum mongos节点个数。
@@ -1276,6 +1301,13 @@ namespace TencentCloud
                      */
                     std::string m_realInstanceId;
                     bool m_realInstanceIdHasBeenSet;
+
+                    /**
+                     * 实例当前可用区信息。
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::vector<std::string> m_zoneList;
+                    bool m_zoneListHasBeenSet;
 
                     /**
                      * mongos节点个数。

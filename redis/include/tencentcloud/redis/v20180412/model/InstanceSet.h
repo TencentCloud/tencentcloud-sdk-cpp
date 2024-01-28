@@ -962,18 +962,18 @@ namespace TencentCloud
                     bool PasswordFreeHasBeenSet() const;
 
                     /**
-                     * 获取内部参数，用户可忽略。
+                     * 获取该参数存在命名不规范问题，建议用参数IPv6取代。内部参数，用户可忽略。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return Vip6 内部参数，用户可忽略。
+                     * @return Vip6 该参数存在命名不规范问题，建议用参数IPv6取代。内部参数，用户可忽略。
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetVip6() const;
 
                     /**
-                     * 设置内部参数，用户可忽略。
+                     * 设置该参数存在命名不规范问题，建议用参数IPv6取代。内部参数，用户可忽略。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _vip6 内部参数，用户可忽略。
+                     * @param _vip6 该参数存在命名不规范问题，建议用参数IPv6取代。内部参数，用户可忽略。
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -985,6 +985,31 @@ namespace TencentCloud
                      * 
                      */
                     bool Vip6HasBeenSet() const;
+
+                    /**
+                     * 获取内部参数，用户可忽略。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return IPv6 内部参数，用户可忽略。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::string GetIPv6() const;
+
+                    /**
+                     * 设置内部参数，用户可忽略。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _iPv6 内部参数，用户可忽略。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetIPv6(const std::string& _iPv6);
+
+                    /**
+                     * 判断参数 IPv6 是否已赋值
+                     * @return IPv6 是否已赋值
+                     * 
+                     */
+                    bool IPv6HasBeenSet() const;
 
                     /**
                      * 获取实例只读标识（内部参数，用户可忽略）。
@@ -1597,11 +1622,18 @@ namespace TencentCloud
                     bool m_passwordFreeHasBeenSet;
 
                     /**
-                     * 内部参数，用户可忽略。
+                     * 该参数存在命名不规范问题，建议用参数IPv6取代。内部参数，用户可忽略。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_vip6;
                     bool m_vip6HasBeenSet;
+
+                    /**
+                     * 内部参数，用户可忽略。
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_iPv6;
+                    bool m_iPv6HasBeenSet;
 
                     /**
                      * 实例只读标识（内部参数，用户可忽略）。

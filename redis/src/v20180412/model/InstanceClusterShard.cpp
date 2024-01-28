@@ -29,6 +29,7 @@ InstanceClusterShard::InstanceClusterShard() :
     m_storageHasBeenSet(false),
     m_storageSlopeHasBeenSet(false),
     m_runidHasBeenSet(false),
+    m_runIdHasBeenSet(false),
     m_connectedHasBeenSet(false)
 {
 }
@@ -118,6 +119,16 @@ CoreInternalOutcome InstanceClusterShard::Deserialize(const rapidjson::Value &va
         m_runidHasBeenSet = true;
     }
 
+    if (value.HasMember("RunId") && !value["RunId"].IsNull())
+    {
+        if (!value["RunId"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `InstanceClusterShard.RunId` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_runId = string(value["RunId"].GetString());
+        m_runIdHasBeenSet = true;
+    }
+
     if (value.HasMember("Connected") && !value["Connected"].IsNull())
     {
         if (!value["Connected"].IsInt64())
@@ -197,6 +208,14 @@ void InstanceClusterShard::ToJsonObject(rapidjson::Value &value, rapidjson::Docu
         string key = "Runid";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_runid.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_runIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "RunId";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_runId.c_str(), allocator).Move(), allocator);
     }
 
     if (m_connectedHasBeenSet)
@@ -336,6 +355,22 @@ void InstanceClusterShard::SetRunid(const string& _runid)
 bool InstanceClusterShard::RunidHasBeenSet() const
 {
     return m_runidHasBeenSet;
+}
+
+string InstanceClusterShard::GetRunId() const
+{
+    return m_runId;
+}
+
+void InstanceClusterShard::SetRunId(const string& _runId)
+{
+    m_runId = _runId;
+    m_runIdHasBeenSet = true;
+}
+
+bool InstanceClusterShard::RunIdHasBeenSet() const
+{
+    return m_runIdHasBeenSet;
 }
 
 int64_t InstanceClusterShard::GetConnected() const

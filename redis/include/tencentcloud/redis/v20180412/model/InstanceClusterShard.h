@@ -202,15 +202,15 @@ namespace TencentCloud
                     bool StorageSlopeHasBeenSet() const;
 
                     /**
-                     * 获取实例运行时节点 ID。
-                     * @return Runid 实例运行时节点 ID。
+                     * 获取该字段因拼写不规范问题，建议使用RunId取代。含义：实例运行时节点 ID。
+                     * @return Runid 该字段因拼写不规范问题，建议使用RunId取代。含义：实例运行时节点 ID。
                      * 
                      */
                     std::string GetRunid() const;
 
                     /**
-                     * 设置实例运行时节点 ID。
-                     * @param _runid 实例运行时节点 ID。
+                     * 设置该字段因拼写不规范问题，建议使用RunId取代。含义：实例运行时节点 ID。
+                     * @param _runid 该字段因拼写不规范问题，建议使用RunId取代。含义：实例运行时节点 ID。
                      * 
                      */
                     void SetRunid(const std::string& _runid);
@@ -221,6 +221,27 @@ namespace TencentCloud
                      * 
                      */
                     bool RunidHasBeenSet() const;
+
+                    /**
+                     * 获取实例运行时节点 ID。
+                     * @return RunId 实例运行时节点 ID。
+                     * 
+                     */
+                    std::string GetRunId() const;
+
+                    /**
+                     * 设置实例运行时节点 ID。
+                     * @param _runId 实例运行时节点 ID。
+                     * 
+                     */
+                    void SetRunId(const std::string& _runId);
+
+                    /**
+                     * 判断参数 RunId 是否已赋值
+                     * @return RunId 是否已赋值
+                     * 
+                     */
+                    bool RunIdHasBeenSet() const;
 
                     /**
                      * 获取服务状态。
@@ -298,10 +319,16 @@ namespace TencentCloud
                     bool m_storageSlopeHasBeenSet;
 
                     /**
-                     * 实例运行时节点 ID。
+                     * 该字段因拼写不规范问题，建议使用RunId取代。含义：实例运行时节点 ID。
                      */
                     std::string m_runid;
                     bool m_runidHasBeenSet;
+
+                    /**
+                     * 实例运行时节点 ID。
+                     */
+                    std::string m_runId;
+                    bool m_runIdHasBeenSet;
 
                     /**
                      * 服务状态。

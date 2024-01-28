@@ -59,6 +59,7 @@ InstanceDetail::InstanceDetail() :
     m_instanceTypeHasBeenSet(false),
     m_instanceStatusDescHasBeenSet(false),
     m_realInstanceIdHasBeenSet(false),
+    m_zoneListHasBeenSet(false),
     m_mongosNodeNumHasBeenSet(false),
     m_mongosMemoryHasBeenSet(false),
     m_mongosCpuNumHasBeenSet(false),
@@ -512,6 +513,19 @@ CoreInternalOutcome InstanceDetail::Deserialize(const rapidjson::Value &value)
         m_realInstanceIdHasBeenSet = true;
     }
 
+    if (value.HasMember("ZoneList") && !value["ZoneList"].IsNull())
+    {
+        if (!value["ZoneList"].IsArray())
+            return CoreInternalOutcome(Core::Error("response `InstanceDetail.ZoneList` is not array type"));
+
+        const rapidjson::Value &tmpValue = value["ZoneList"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            m_zoneList.push_back((*itr).GetString());
+        }
+        m_zoneListHasBeenSet = true;
+    }
+
     if (value.HasMember("MongosNodeNum") && !value["MongosNodeNum"].IsNull())
     {
         if (!value["MongosNodeNum"].IsUint64())
@@ -937,6 +951,19 @@ void InstanceDetail::ToJsonObject(rapidjson::Value &value, rapidjson::Document::
         string key = "RealInstanceId";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_realInstanceId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_zoneListHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ZoneList";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        for (auto itr = m_zoneList.begin(); itr != m_zoneList.end(); ++itr)
+        {
+            value[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
+        }
     }
 
     if (m_mongosNodeNumHasBeenSet)
@@ -1612,6 +1639,22 @@ void InstanceDetail::SetRealInstanceId(const string& _realInstanceId)
 bool InstanceDetail::RealInstanceIdHasBeenSet() const
 {
     return m_realInstanceIdHasBeenSet;
+}
+
+vector<string> InstanceDetail::GetZoneList() const
+{
+    return m_zoneList;
+}
+
+void InstanceDetail::SetZoneList(const vector<string>& _zoneList)
+{
+    m_zoneList = _zoneList;
+    m_zoneListHasBeenSet = true;
+}
+
+bool InstanceDetail::ZoneListHasBeenSet() const
+{
+    return m_zoneListHasBeenSet;
 }
 
 uint64_t InstanceDetail::GetMongosNodeNum() const

@@ -758,6 +758,31 @@ namespace TencentCloud
                      */
                     bool IsSupportOutsideClusterHasBeenSet() const;
 
+                    /**
+                     * 获取是否专有集群场景集群
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return IsDedicatedCluster 是否专有集群场景集群
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    bool GetIsDedicatedCluster() const;
+
+                    /**
+                     * 设置是否专有集群场景集群
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _isDedicatedCluster 是否专有集群场景集群
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetIsDedicatedCluster(const bool& _isDedicatedCluster);
+
+                    /**
+                     * 判断参数 IsDedicatedCluster 是否已赋值
+                     * @return IsDedicatedCluster 是否已赋值
+                     * 
+                     */
+                    bool IsDedicatedClusterHasBeenSet() const;
+
                 private:
 
                     /**
@@ -959,6 +984,13 @@ namespace TencentCloud
                      */
                     bool m_isSupportOutsideCluster;
                     bool m_isSupportOutsideClusterHasBeenSet;
+
+                    /**
+                     * 是否专有集群场景集群
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    bool m_isDedicatedCluster;
+                    bool m_isDedicatedClusterHasBeenSet;
 
                 };
             }

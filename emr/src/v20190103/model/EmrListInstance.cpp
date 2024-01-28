@@ -50,7 +50,8 @@ EmrListInstance::EmrListInstance() :
     m_isMultiZoneClusterHasBeenSet(false),
     m_isHandsClusterHasBeenSet(false),
     m_outSideSoftInfoHasBeenSet(false),
-    m_isSupportOutsideClusterHasBeenSet(false)
+    m_isSupportOutsideClusterHasBeenSet(false),
+    m_isDedicatedClusterHasBeenSet(false)
 {
 }
 
@@ -379,6 +380,16 @@ CoreInternalOutcome EmrListInstance::Deserialize(const rapidjson::Value &value)
         m_isSupportOutsideClusterHasBeenSet = true;
     }
 
+    if (value.HasMember("IsDedicatedCluster") && !value["IsDedicatedCluster"].IsNull())
+    {
+        if (!value["IsDedicatedCluster"].IsBool())
+        {
+            return CoreInternalOutcome(Core::Error("response `EmrListInstance.IsDedicatedCluster` IsBool=false incorrectly").SetRequestId(requestId));
+        }
+        m_isDedicatedCluster = value["IsDedicatedCluster"].GetBool();
+        m_isDedicatedClusterHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -638,6 +649,14 @@ void EmrListInstance::ToJsonObject(rapidjson::Value &value, rapidjson::Document:
         string key = "IsSupportOutsideCluster";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_isSupportOutsideCluster, allocator);
+    }
+
+    if (m_isDedicatedClusterHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "IsDedicatedCluster";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_isDedicatedCluster, allocator);
     }
 
 }
@@ -1121,5 +1140,21 @@ void EmrListInstance::SetIsSupportOutsideCluster(const bool& _isSupportOutsideCl
 bool EmrListInstance::IsSupportOutsideClusterHasBeenSet() const
 {
     return m_isSupportOutsideClusterHasBeenSet;
+}
+
+bool EmrListInstance::GetIsDedicatedCluster() const
+{
+    return m_isDedicatedCluster;
+}
+
+void EmrListInstance::SetIsDedicatedCluster(const bool& _isDedicatedCluster)
+{
+    m_isDedicatedCluster = _isDedicatedCluster;
+    m_isDedicatedClusterHasBeenSet = true;
+}
+
+bool EmrListInstance::IsDedicatedClusterHasBeenSet() const
+{
+    return m_isDedicatedClusterHasBeenSet;
 }
 

@@ -265,15 +265,15 @@ namespace TencentCloud
                     bool ServiceTimeoutHasBeenSet() const;
 
                     /**
-                     * 获取API 的前端请求类型，如 HTTP 或 HTTPS 或者 HTTP 和 HTTPS。
-                     * @return Protocol API 的前端请求类型，如 HTTP 或 HTTPS 或者 HTTP 和 HTTPS。
+                     * 获取API 的前端请求类型，如 HTTP 或 HTTPS 或者 HTTP 和 HTTPS。修改api时推荐必填
+                     * @return Protocol API 的前端请求类型，如 HTTP 或 HTTPS 或者 HTTP 和 HTTPS。修改api时推荐必填
                      * 
                      */
                     std::string GetProtocol() const;
 
                     /**
-                     * 设置API 的前端请求类型，如 HTTP 或 HTTPS 或者 HTTP 和 HTTPS。
-                     * @param _protocol API 的前端请求类型，如 HTTP 或 HTTPS 或者 HTTP 和 HTTPS。
+                     * 设置API 的前端请求类型，如 HTTP 或 HTTPS 或者 HTTP 和 HTTPS。修改api时推荐必填
+                     * @param _protocol API 的前端请求类型，如 HTTP 或 HTTPS 或者 HTTP 和 HTTPS。修改api时推荐必填
                      * 
                      */
                     void SetProtocol(const std::string& _protocol);
@@ -1272,7 +1272,7 @@ namespace TencentCloud
                     bool m_serviceTimeoutHasBeenSet;
 
                     /**
-                     * API 的前端请求类型，如 HTTP 或 HTTPS 或者 HTTP 和 HTTPS。
+                     * API 的前端请求类型，如 HTTP 或 HTTPS 或者 HTTP 和 HTTPS。修改api时推荐必填
                      */
                     std::string m_protocol;
                     bool m_protocolHasBeenSet;

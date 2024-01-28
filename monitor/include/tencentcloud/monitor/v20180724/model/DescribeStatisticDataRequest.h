@@ -86,19 +86,15 @@ namespace TencentCloud
                     bool NamespaceHasBeenSet() const;
 
                     /**
-                     * 获取指标名列表，相关指标信息可参考对应 云产品指标文档
-https://cloud.tencent.com/document/product/248/62458
-                     * @return MetricNames 指标名列表，相关指标信息可参考对应 云产品指标文档
-https://cloud.tencent.com/document/product/248/62458
+                     * 获取指标名列表，相关指标信息可参考对应 [云产品指标文档](https://cloud.tencent.com/document/product/248/62458)
+                     * @return MetricNames 指标名列表，相关指标信息可参考对应 [云产品指标文档](https://cloud.tencent.com/document/product/248/62458)
                      * 
                      */
                     std::vector<std::string> GetMetricNames() const;
 
                     /**
-                     * 设置指标名列表，相关指标信息可参考对应 云产品指标文档
-https://cloud.tencent.com/document/product/248/62458
-                     * @param _metricNames 指标名列表，相关指标信息可参考对应 云产品指标文档
-https://cloud.tencent.com/document/product/248/62458
+                     * 设置指标名列表，相关指标信息可参考对应 [云产品指标文档](https://cloud.tencent.com/document/product/248/62458)
+                     * @param _metricNames 指标名列表，相关指标信息可参考对应 [云产品指标文档](https://cloud.tencent.com/document/product/248/62458)
                      * 
                      */
                     void SetMetricNames(const std::vector<std::string>& _metricNames);
@@ -111,19 +107,15 @@ https://cloud.tencent.com/document/product/248/62458
                     bool MetricNamesHasBeenSet() const;
 
                     /**
-                     * 获取维度条件，操作符支持=、in
-配置文档参考：https://cloud.tencent.com/document/product/248/53821
-                     * @return Conditions 维度条件，操作符支持=、in
-配置文档参考：https://cloud.tencent.com/document/product/248/53821
+                     * 获取维度条件，操作符支持=、in，详情请参考对应 [指标维度信息](https://cloud.tencent.com/document/product/248/53821)
+                     * @return Conditions 维度条件，操作符支持=、in，详情请参考对应 [指标维度信息](https://cloud.tencent.com/document/product/248/53821)
                      * 
                      */
                     std::vector<MidQueryCondition> GetConditions() const;
 
                     /**
-                     * 设置维度条件，操作符支持=、in
-配置文档参考：https://cloud.tencent.com/document/product/248/53821
-                     * @param _conditions 维度条件，操作符支持=、in
-配置文档参考：https://cloud.tencent.com/document/product/248/53821
+                     * 设置维度条件，操作符支持=、in，详情请参考对应 [指标维度信息](https://cloud.tencent.com/document/product/248/53821)
+                     * @param _conditions 维度条件，操作符支持=、in，详情请参考对应 [指标维度信息](https://cloud.tencent.com/document/product/248/53821)
                      * 
                      */
                     void SetConditions(const std::vector<MidQueryCondition>& _conditions);
@@ -254,15 +246,13 @@ https://cloud.tencent.com/document/product/248/62458
                     bool m_namespaceHasBeenSet;
 
                     /**
-                     * 指标名列表，相关指标信息可参考对应 云产品指标文档
-https://cloud.tencent.com/document/product/248/62458
+                     * 指标名列表，相关指标信息可参考对应 [云产品指标文档](https://cloud.tencent.com/document/product/248/62458)
                      */
                     std::vector<std::string> m_metricNames;
                     bool m_metricNamesHasBeenSet;
 
                     /**
-                     * 维度条件，操作符支持=、in
-配置文档参考：https://cloud.tencent.com/document/product/248/53821
+                     * 维度条件，操作符支持=、in，详情请参考对应 [指标维度信息](https://cloud.tencent.com/document/product/248/53821)
                      */
                     std::vector<MidQueryCondition> m_conditions;
                     bool m_conditionsHasBeenSet;

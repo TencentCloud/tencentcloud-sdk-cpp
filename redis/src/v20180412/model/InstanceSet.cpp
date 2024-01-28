@@ -62,6 +62,7 @@ InstanceSet::InstanceSet() :
     m_netLimitHasBeenSet(false),
     m_passwordFreeHasBeenSet(false),
     m_vip6HasBeenSet(false),
+    m_iPv6HasBeenSet(false),
     m_readOnlyHasBeenSet(false),
     m_remainBandwidthDurationHasBeenSet(false),
     m_diskSizeHasBeenSet(false),
@@ -515,6 +516,16 @@ CoreInternalOutcome InstanceSet::Deserialize(const rapidjson::Value &value)
         }
         m_vip6 = string(value["Vip6"].GetString());
         m_vip6HasBeenSet = true;
+    }
+
+    if (value.HasMember("IPv6") && !value["IPv6"].IsNull())
+    {
+        if (!value["IPv6"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `InstanceSet.IPv6` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_iPv6 = string(value["IPv6"].GetString());
+        m_iPv6HasBeenSet = true;
     }
 
     if (value.HasMember("ReadOnly") && !value["ReadOnly"].IsNull())
@@ -1019,6 +1030,14 @@ void InstanceSet::ToJsonObject(rapidjson::Value &value, rapidjson::Document::All
         string key = "Vip6";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_vip6.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_iPv6HasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "IPv6";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_iPv6.c_str(), allocator).Move(), allocator);
     }
 
     if (m_readOnlyHasBeenSet)
@@ -1797,6 +1816,22 @@ void InstanceSet::SetVip6(const string& _vip6)
 bool InstanceSet::Vip6HasBeenSet() const
 {
     return m_vip6HasBeenSet;
+}
+
+string InstanceSet::GetIPv6() const
+{
+    return m_iPv6;
+}
+
+void InstanceSet::SetIPv6(const string& _iPv6)
+{
+    m_iPv6 = _iPv6;
+    m_iPv6HasBeenSet = true;
+}
+
+bool InstanceSet::IPv6HasBeenSet() const
+{
+    return m_iPv6HasBeenSet;
 }
 
 int64_t InstanceSet::GetReadOnly() const
