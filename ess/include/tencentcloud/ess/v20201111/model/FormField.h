@@ -304,38 +304,38 @@ style String 为字体风格设置 风格支持： font : 目前支持 黑体、
 
                     /**
                      * 获取控件填充vaule，ComponentType和传入值类型对应关系：
-TEXT - 文本内容
-MULTI_LINE_TEXT - 文本内容
-CHECK_BOX - true/false
-FILL_IMAGE、ATTACHMENT - 附件的FileId，需要通过UploadFiles接口上传获取
-SELECTOR - 选项值
-DYNAMIC_TABLE - 传入json格式的表格内容，具体见数据结构FlowInfo：https://cloud.tencent.com/document/api/1420/61525#FlowInfo
+TEXT ：  文本内容
+MULTI_LINE_TEXT ：文本内容
+CHECK_BOX ：true/false
+FILL_IMAGE、ATTACHMENT ： 附件的FileId，需要通过UploadFiles接口上传获取
+SELECTOR ： 选项值
+DYNAMIC_TABLE ：传入json格式的表格内容，具体见数据结构[点击查看](https://qian.tencent.com/developers/company/dynamic_table)
                      * @return ComponentValue 控件填充vaule，ComponentType和传入值类型对应关系：
-TEXT - 文本内容
-MULTI_LINE_TEXT - 文本内容
-CHECK_BOX - true/false
-FILL_IMAGE、ATTACHMENT - 附件的FileId，需要通过UploadFiles接口上传获取
-SELECTOR - 选项值
-DYNAMIC_TABLE - 传入json格式的表格内容，具体见数据结构FlowInfo：https://cloud.tencent.com/document/api/1420/61525#FlowInfo
+TEXT ：  文本内容
+MULTI_LINE_TEXT ：文本内容
+CHECK_BOX ：true/false
+FILL_IMAGE、ATTACHMENT ： 附件的FileId，需要通过UploadFiles接口上传获取
+SELECTOR ： 选项值
+DYNAMIC_TABLE ：传入json格式的表格内容，具体见数据结构[点击查看](https://qian.tencent.com/developers/company/dynamic_table)
                      * 
                      */
                     std::string GetComponentValue() const;
 
                     /**
                      * 设置控件填充vaule，ComponentType和传入值类型对应关系：
-TEXT - 文本内容
-MULTI_LINE_TEXT - 文本内容
-CHECK_BOX - true/false
-FILL_IMAGE、ATTACHMENT - 附件的FileId，需要通过UploadFiles接口上传获取
-SELECTOR - 选项值
-DYNAMIC_TABLE - 传入json格式的表格内容，具体见数据结构FlowInfo：https://cloud.tencent.com/document/api/1420/61525#FlowInfo
+TEXT ：  文本内容
+MULTI_LINE_TEXT ：文本内容
+CHECK_BOX ：true/false
+FILL_IMAGE、ATTACHMENT ： 附件的FileId，需要通过UploadFiles接口上传获取
+SELECTOR ： 选项值
+DYNAMIC_TABLE ：传入json格式的表格内容，具体见数据结构[点击查看](https://qian.tencent.com/developers/company/dynamic_table)
                      * @param _componentValue 控件填充vaule，ComponentType和传入值类型对应关系：
-TEXT - 文本内容
-MULTI_LINE_TEXT - 文本内容
-CHECK_BOX - true/false
-FILL_IMAGE、ATTACHMENT - 附件的FileId，需要通过UploadFiles接口上传获取
-SELECTOR - 选项值
-DYNAMIC_TABLE - 传入json格式的表格内容，具体见数据结构FlowInfo：https://cloud.tencent.com/document/api/1420/61525#FlowInfo
+TEXT ：  文本内容
+MULTI_LINE_TEXT ：文本内容
+CHECK_BOX ：true/false
+FILL_IMAGE、ATTACHMENT ： 附件的FileId，需要通过UploadFiles接口上传获取
+SELECTOR ： 选项值
+DYNAMIC_TABLE ：传入json格式的表格内容，具体见数据结构[点击查看](https://qian.tencent.com/developers/company/dynamic_table)
                      * 
                      */
                     void SetComponentValue(const std::string& _componentValue);
@@ -349,14 +349,22 @@ DYNAMIC_TABLE - 传入json格式的表格内容，具体见数据结构FlowInfo�
 
                     /**
                      * 获取控件id，和ComponentName选择一项传入即可
+
+<a href="https://dyn.ess.tencent.cn/guide/apivideo/component_name.mp4" target="_blank">点击查看在模版中找到控件ID的方式</a>
                      * @return ComponentId 控件id，和ComponentName选择一项传入即可
+
+<a href="https://dyn.ess.tencent.cn/guide/apivideo/component_name.mp4" target="_blank">点击查看在模版中找到控件ID的方式</a>
                      * 
                      */
                     std::string GetComponentId() const;
 
                     /**
                      * 设置控件id，和ComponentName选择一项传入即可
+
+<a href="https://dyn.ess.tencent.cn/guide/apivideo/component_name.mp4" target="_blank">点击查看在模版中找到控件ID的方式</a>
                      * @param _componentId 控件id，和ComponentName选择一项传入即可
+
+<a href="https://dyn.ess.tencent.cn/guide/apivideo/component_name.mp4" target="_blank">点击查看在模版中找到控件ID的方式</a>
                      * 
                      */
                     void SetComponentId(const std::string& _componentId);
@@ -370,14 +378,22 @@ DYNAMIC_TABLE - 传入json格式的表格内容，具体见数据结构FlowInfo�
 
                     /**
                      * 获取控件名字，最大长度不超过30字符，和ComponentId选择一项传入即可
+
+<a href="https://dyn.ess.tencent.cn/guide/apivideo/component_name.mp4" target="_blank">点击查看在模版中找到控件名字的方式</a>
                      * @return ComponentName 控件名字，最大长度不超过30字符，和ComponentId选择一项传入即可
+
+<a href="https://dyn.ess.tencent.cn/guide/apivideo/component_name.mp4" target="_blank">点击查看在模版中找到控件名字的方式</a>
                      * 
                      */
                     std::string GetComponentName() const;
 
                     /**
                      * 设置控件名字，最大长度不超过30字符，和ComponentId选择一项传入即可
+
+<a href="https://dyn.ess.tencent.cn/guide/apivideo/component_name.mp4" target="_blank">点击查看在模版中找到控件名字的方式</a>
                      * @param _componentName 控件名字，最大长度不超过30字符，和ComponentId选择一项传入即可
+
+<a href="https://dyn.ess.tencent.cn/guide/apivideo/component_name.mp4" target="_blank">点击查看在模版中找到控件名字的方式</a>
                      * 
                      */
                     void SetComponentName(const std::string& _componentName);
@@ -393,24 +409,28 @@ DYNAMIC_TABLE - 传入json格式的表格内容，具体见数据结构FlowInfo�
 
                     /**
                      * 控件填充vaule，ComponentType和传入值类型对应关系：
-TEXT - 文本内容
-MULTI_LINE_TEXT - 文本内容
-CHECK_BOX - true/false
-FILL_IMAGE、ATTACHMENT - 附件的FileId，需要通过UploadFiles接口上传获取
-SELECTOR - 选项值
-DYNAMIC_TABLE - 传入json格式的表格内容，具体见数据结构FlowInfo：https://cloud.tencent.com/document/api/1420/61525#FlowInfo
+TEXT ：  文本内容
+MULTI_LINE_TEXT ：文本内容
+CHECK_BOX ：true/false
+FILL_IMAGE、ATTACHMENT ： 附件的FileId，需要通过UploadFiles接口上传获取
+SELECTOR ： 选项值
+DYNAMIC_TABLE ：传入json格式的表格内容，具体见数据结构[点击查看](https://qian.tencent.com/developers/company/dynamic_table)
                      */
                     std::string m_componentValue;
                     bool m_componentValueHasBeenSet;
 
                     /**
                      * 控件id，和ComponentName选择一项传入即可
+
+<a href="https://dyn.ess.tencent.cn/guide/apivideo/component_name.mp4" target="_blank">点击查看在模版中找到控件ID的方式</a>
                      */
                     std::string m_componentId;
                     bool m_componentIdHasBeenSet;
 
                     /**
                      * 控件名字，最大长度不超过30字符，和ComponentId选择一项传入即可
+
+<a href="https://dyn.ess.tencent.cn/guide/apivideo/component_name.mp4" target="_blank">点击查看在模版中找到控件名字的方式</a>
                      */
                     std::string m_componentName;
                     bool m_componentNameHasBeenSet;

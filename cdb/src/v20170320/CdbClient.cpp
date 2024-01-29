@@ -3394,6 +3394,49 @@ CdbClient::DescribeErrorLogDataOutcomeCallable CdbClient::DescribeErrorLogDataCa
     return task->get_future();
 }
 
+CdbClient::DescribeInstanceAlarmEventsOutcome CdbClient::DescribeInstanceAlarmEvents(const DescribeInstanceAlarmEventsRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeInstanceAlarmEvents");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeInstanceAlarmEventsResponse rsp = DescribeInstanceAlarmEventsResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeInstanceAlarmEventsOutcome(rsp);
+        else
+            return DescribeInstanceAlarmEventsOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeInstanceAlarmEventsOutcome(outcome.GetError());
+    }
+}
+
+void CdbClient::DescribeInstanceAlarmEventsAsync(const DescribeInstanceAlarmEventsRequest& request, const DescribeInstanceAlarmEventsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeInstanceAlarmEvents(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+CdbClient::DescribeInstanceAlarmEventsOutcomeCallable CdbClient::DescribeInstanceAlarmEventsCallable(const DescribeInstanceAlarmEventsRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeInstanceAlarmEventsOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeInstanceAlarmEvents(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 CdbClient::DescribeInstanceParamRecordsOutcome CdbClient::DescribeInstanceParamRecords(const DescribeInstanceParamRecordsRequest &request)
 {
     auto outcome = MakeRequest(request, "DescribeInstanceParamRecords");

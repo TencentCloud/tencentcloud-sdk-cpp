@@ -71,18 +71,18 @@ namespace TencentCloud
 
                     /**
                      * 获取需要执行撤回的流程(合同)的编号列表，最多100个.
-<br>列表中的流程(合同)编号不要重复.
+列表中的流程(合同)编号不要重复.
                      * @return FlowIds 需要执行撤回的流程(合同)的编号列表，最多100个.
-<br>列表中的流程(合同)编号不要重复.
+列表中的流程(合同)编号不要重复.
                      * 
                      */
                     std::vector<std::string> GetFlowIds() const;
 
                     /**
                      * 设置需要执行撤回的流程(合同)的编号列表，最多100个.
-<br>列表中的流程(合同)编号不要重复.
+列表中的流程(合同)编号不要重复.
                      * @param _flowIds 需要执行撤回的流程(合同)的编号列表，最多100个.
-<br>列表中的流程(合同)编号不要重复.
+列表中的流程(合同)编号不要重复.
                      * 
                      */
                     void SetFlowIds(const std::vector<std::string>& _flowIds);
@@ -130,7 +130,7 @@ namespace TencentCloud
 
                     /**
                      * 需要执行撤回的流程(合同)的编号列表，最多100个.
-<br>列表中的流程(合同)编号不要重复.
+列表中的流程(合同)编号不要重复.
                      */
                     std::vector<std::string> m_flowIds;
                     bool m_flowIdsHasBeenSet;

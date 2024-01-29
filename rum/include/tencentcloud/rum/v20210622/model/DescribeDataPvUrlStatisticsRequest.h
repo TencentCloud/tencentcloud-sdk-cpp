@@ -509,15 +509,19 @@ namespace TencentCloud
                     bool GroupByTypeHasBeenSet() const;
 
                     /**
-                     * 获取无需关注，是否查询zhiyan
-                     * @return IsNewData 无需关注，是否查询zhiyan
+                     * 获取1: 查询智研
+0: 走旧逻辑，已下线，勿使用
+                     * @return IsNewData 1: 查询智研
+0: 走旧逻辑，已下线，勿使用
                      * 
                      */
                     int64_t GetIsNewData() const;
 
                     /**
-                     * 设置无需关注，是否查询zhiyan
-                     * @param _isNewData 无需关注，是否查询zhiyan
+                     * 设置1: 查询智研
+0: 走旧逻辑，已下线，勿使用
+                     * @param _isNewData 1: 查询智研
+0: 走旧逻辑，已下线，勿使用
                      * 
                      */
                     void SetIsNewData(const int64_t& _isNewData);
@@ -665,7 +669,8 @@ namespace TencentCloud
                     bool m_groupByTypeHasBeenSet;
 
                     /**
-                     * 无需关注，是否查询zhiyan
+                     * 1: 查询智研
+0: 走旧逻辑，已下线，勿使用
                      */
                     int64_t m_isNewData;
                     bool m_isNewDataHasBeenSet;

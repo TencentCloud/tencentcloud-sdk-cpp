@@ -23,9 +23,10 @@ using namespace TencentCloud::Teo::V20220901::Model;
 using namespace std;
 
 DescribeApplicationProxiesRequest::DescribeApplicationProxiesRequest() :
+    m_zoneIdHasBeenSet(false),
+    m_filtersHasBeenSet(false),
     m_offsetHasBeenSet(false),
-    m_limitHasBeenSet(false),
-    m_filtersHasBeenSet(false)
+    m_limitHasBeenSet(false)
 {
 }
 
@@ -36,20 +37,12 @@ string DescribeApplicationProxiesRequest::ToJsonString() const
     rapidjson::Document::AllocatorType& allocator = d.GetAllocator();
 
 
-    if (m_offsetHasBeenSet)
+    if (m_zoneIdHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "Offset";
+        string key = "ZoneId";
         iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, m_offset, allocator);
-    }
-
-    if (m_limitHasBeenSet)
-    {
-        rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "Limit";
-        iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, m_limit, allocator);
+        d.AddMember(iKey, rapidjson::Value(m_zoneId.c_str(), allocator).Move(), allocator);
     }
 
     if (m_filtersHasBeenSet)
@@ -67,6 +60,22 @@ string DescribeApplicationProxiesRequest::ToJsonString() const
         }
     }
 
+    if (m_offsetHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Offset";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_offset, allocator);
+    }
+
+    if (m_limitHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Limit";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_limit, allocator);
+    }
+
 
     rapidjson::StringBuffer buffer;
     rapidjson::Writer<rapidjson::StringBuffer> writer(buffer);
@@ -74,6 +83,38 @@ string DescribeApplicationProxiesRequest::ToJsonString() const
     return buffer.GetString();
 }
 
+
+string DescribeApplicationProxiesRequest::GetZoneId() const
+{
+    return m_zoneId;
+}
+
+void DescribeApplicationProxiesRequest::SetZoneId(const string& _zoneId)
+{
+    m_zoneId = _zoneId;
+    m_zoneIdHasBeenSet = true;
+}
+
+bool DescribeApplicationProxiesRequest::ZoneIdHasBeenSet() const
+{
+    return m_zoneIdHasBeenSet;
+}
+
+vector<Filter> DescribeApplicationProxiesRequest::GetFilters() const
+{
+    return m_filters;
+}
+
+void DescribeApplicationProxiesRequest::SetFilters(const vector<Filter>& _filters)
+{
+    m_filters = _filters;
+    m_filtersHasBeenSet = true;
+}
+
+bool DescribeApplicationProxiesRequest::FiltersHasBeenSet() const
+{
+    return m_filtersHasBeenSet;
+}
 
 int64_t DescribeApplicationProxiesRequest::GetOffset() const
 {
@@ -105,22 +146,6 @@ void DescribeApplicationProxiesRequest::SetLimit(const int64_t& _limit)
 bool DescribeApplicationProxiesRequest::LimitHasBeenSet() const
 {
     return m_limitHasBeenSet;
-}
-
-vector<Filter> DescribeApplicationProxiesRequest::GetFilters() const
-{
-    return m_filters;
-}
-
-void DescribeApplicationProxiesRequest::SetFilters(const vector<Filter>& _filters)
-{
-    m_filters = _filters;
-    m_filtersHasBeenSet = true;
-}
-
-bool DescribeApplicationProxiesRequest::FiltersHasBeenSet() const
-{
-    return m_filtersHasBeenSet;
 }
 
 

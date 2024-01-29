@@ -26,7 +26,8 @@ DescribeDevicePackagesRequest::DescribeDevicePackagesRequest() :
     m_productIdHasBeenSet(false),
     m_deviceNameHasBeenSet(false),
     m_limitHasBeenSet(false),
-    m_offsetHasBeenSet(false)
+    m_offsetHasBeenSet(false),
+    m_channelIdHasBeenSet(false)
 {
 }
 
@@ -67,6 +68,14 @@ string DescribeDevicePackagesRequest::ToJsonString() const
         string key = "Offset";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_offset, allocator);
+    }
+
+    if (m_channelIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ChannelId";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_channelId, allocator);
     }
 
 
@@ -139,6 +148,22 @@ void DescribeDevicePackagesRequest::SetOffset(const uint64_t& _offset)
 bool DescribeDevicePackagesRequest::OffsetHasBeenSet() const
 {
     return m_offsetHasBeenSet;
+}
+
+uint64_t DescribeDevicePackagesRequest::GetChannelId() const
+{
+    return m_channelId;
+}
+
+void DescribeDevicePackagesRequest::SetChannelId(const uint64_t& _channelId)
+{
+    m_channelId = _channelId;
+    m_channelIdHasBeenSet = true;
+}
+
+bool DescribeDevicePackagesRequest::ChannelIdHasBeenSet() const
+{
+    return m_channelIdHasBeenSet;
 }
 
 

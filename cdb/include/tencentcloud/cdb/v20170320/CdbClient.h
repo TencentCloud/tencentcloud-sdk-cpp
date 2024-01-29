@@ -179,6 +179,8 @@
 #include <tencentcloud/cdb/v20170320/model/DescribeDeviceMonitorInfoResponse.h>
 #include <tencentcloud/cdb/v20170320/model/DescribeErrorLogDataRequest.h>
 #include <tencentcloud/cdb/v20170320/model/DescribeErrorLogDataResponse.h>
+#include <tencentcloud/cdb/v20170320/model/DescribeInstanceAlarmEventsRequest.h>
+#include <tencentcloud/cdb/v20170320/model/DescribeInstanceAlarmEventsResponse.h>
 #include <tencentcloud/cdb/v20170320/model/DescribeInstanceParamRecordsRequest.h>
 #include <tencentcloud/cdb/v20170320/model/DescribeInstanceParamRecordsResponse.h>
 #include <tencentcloud/cdb/v20170320/model/DescribeInstanceParamsRequest.h>
@@ -587,6 +589,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeErrorLogDataResponse> DescribeErrorLogDataOutcome;
                 typedef std::future<DescribeErrorLogDataOutcome> DescribeErrorLogDataOutcomeCallable;
                 typedef std::function<void(const CdbClient*, const Model::DescribeErrorLogDataRequest&, DescribeErrorLogDataOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeErrorLogDataAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeInstanceAlarmEventsResponse> DescribeInstanceAlarmEventsOutcome;
+                typedef std::future<DescribeInstanceAlarmEventsOutcome> DescribeInstanceAlarmEventsOutcomeCallable;
+                typedef std::function<void(const CdbClient*, const Model::DescribeInstanceAlarmEventsRequest&, DescribeInstanceAlarmEventsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeInstanceAlarmEventsAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeInstanceParamRecordsResponse> DescribeInstanceParamRecordsOutcome;
                 typedef std::future<DescribeInstanceParamRecordsOutcome> DescribeInstanceParamRecordsOutcomeCallable;
                 typedef std::function<void(const CdbClient*, const Model::DescribeInstanceParamRecordsRequest&, DescribeInstanceParamRecordsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeInstanceParamRecordsAsyncHandler;
@@ -1553,6 +1558,15 @@ namespace TencentCloud
                 DescribeErrorLogDataOutcome DescribeErrorLogData(const Model::DescribeErrorLogDataRequest &request);
                 void DescribeErrorLogDataAsync(const Model::DescribeErrorLogDataRequest& request, const DescribeErrorLogDataAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DescribeErrorLogDataOutcomeCallable DescribeErrorLogDataCallable(const Model::DescribeErrorLogDataRequest& request);
+
+                /**
+                 *查询实例发生的事件信息
+                 * @param req DescribeInstanceAlarmEventsRequest
+                 * @return DescribeInstanceAlarmEventsOutcome
+                 */
+                DescribeInstanceAlarmEventsOutcome DescribeInstanceAlarmEvents(const Model::DescribeInstanceAlarmEventsRequest &request);
+                void DescribeInstanceAlarmEventsAsync(const Model::DescribeInstanceAlarmEventsRequest& request, const DescribeInstanceAlarmEventsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeInstanceAlarmEventsOutcomeCallable DescribeInstanceAlarmEventsCallable(const Model::DescribeInstanceAlarmEventsRequest& request);
 
                 /**
                  *该接口（DescribeInstanceParamRecords）用于查询实例参数修改历史。

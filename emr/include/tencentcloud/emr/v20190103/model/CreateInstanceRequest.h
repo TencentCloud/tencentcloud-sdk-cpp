@@ -484,15 +484,15 @@ namespace TencentCloud
                     bool AutoRenewHasBeenSet() const;
 
                     /**
-                     * 获取客户端Token。
-                     * @return ClientToken 客户端Token。
+                     * 获取唯一随机标识，时效5分钟，需要调用者指定 防止客户端重新创建资源，例如 a9a90aa6-751a-41b6-aad6-fae36063280
+                     * @return ClientToken 唯一随机标识，时效5分钟，需要调用者指定 防止客户端重新创建资源，例如 a9a90aa6-751a-41b6-aad6-fae36063280
                      * 
                      */
                     std::string GetClientToken() const;
 
                     /**
-                     * 设置客户端Token。
-                     * @param _clientToken 客户端Token。
+                     * 设置唯一随机标识，时效5分钟，需要调用者指定 防止客户端重新创建资源，例如 a9a90aa6-751a-41b6-aad6-fae36063280
+                     * @param _clientToken 唯一随机标识，时效5分钟，需要调用者指定 防止客户端重新创建资源，例如 a9a90aa6-751a-41b6-aad6-fae36063280
                      * 
                      */
                     void SetClientToken(const std::string& _clientToken);
@@ -1002,7 +1002,7 @@ Hadoop-Hbase
                     bool m_autoRenewHasBeenSet;
 
                     /**
-                     * 客户端Token。
+                     * 唯一随机标识，时效5分钟，需要调用者指定 防止客户端重新创建资源，例如 a9a90aa6-751a-41b6-aad6-fae36063280
                      */
                     std::string m_clientToken;
                     bool m_clientTokenHasBeenSet;

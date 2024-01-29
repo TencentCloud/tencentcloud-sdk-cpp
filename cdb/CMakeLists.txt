@@ -109,6 +109,7 @@ set(cdb_public_header_model
   include/tencentcloud/cdb/v20170320/model/ReleaseResult.h
   include/tencentcloud/cdb/v20170320/model/CreateAuditLogFileRequest.h
   include/tencentcloud/cdb/v20170320/model/AuditRule.h
+  include/tencentcloud/cdb/v20170320/model/DescribeInstanceAlarmEventsRequest.h
   include/tencentcloud/cdb/v20170320/model/DescribeBinlogsRequest.h
   include/tencentcloud/cdb/v20170320/model/DescribeCdbProxyInfoRequest.h
   include/tencentcloud/cdb/v20170320/model/RollbackDBName.h
@@ -337,6 +338,7 @@ set(cdb_public_header_model
   include/tencentcloud/cdb/v20170320/model/DescribeCdbProxyInfoResponse.h
   include/tencentcloud/cdb/v20170320/model/ModifyAuditConfigRequest.h
   include/tencentcloud/cdb/v20170320/model/DeviceDiskInfo.h
+  include/tencentcloud/cdb/v20170320/model/DescribeInstanceAlarmEventsResponse.h
   include/tencentcloud/cdb/v20170320/model/DescribeRoMinScaleResponse.h
   include/tencentcloud/cdb/v20170320/model/RoWeightValue.h
   include/tencentcloud/cdb/v20170320/model/DescribeSlowLogDataResponse.h
@@ -528,6 +530,7 @@ set(cdb_src
   src/v20170320/model/ReleaseResult.cpp
   src/v20170320/model/CreateAuditLogFileRequest.cpp
   src/v20170320/model/AuditRule.cpp
+  src/v20170320/model/DescribeInstanceAlarmEventsRequest.cpp
   src/v20170320/model/DescribeBinlogsRequest.cpp
   src/v20170320/model/DescribeCdbProxyInfoRequest.cpp
   src/v20170320/model/RollbackDBName.cpp
@@ -756,6 +759,7 @@ set(cdb_src
   src/v20170320/model/DescribeCdbProxyInfoResponse.cpp
   src/v20170320/model/ModifyAuditConfigRequest.cpp
   src/v20170320/model/DeviceDiskInfo.cpp
+  src/v20170320/model/DescribeInstanceAlarmEventsResponse.cpp
   src/v20170320/model/DescribeRoMinScaleResponse.cpp
   src/v20170320/model/RoWeightValue.cpp
   src/v20170320/model/DescribeSlowLogDataResponse.cpp

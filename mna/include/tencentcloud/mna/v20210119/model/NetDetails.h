@@ -47,15 +47,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取流量值（bit）
-                     * @return Current 流量值（bit）
+                     * 获取流量值（byte）
+                     * @return Current 流量值（byte）
                      * 
                      */
                     double GetCurrent() const;
 
                     /**
-                     * 设置流量值（bit）
-                     * @param _current 流量值（bit）
+                     * 设置流量值（byte）
+                     * @param _current 流量值（byte）
                      * 
                      */
                     void SetCurrent(const double& _current);
@@ -91,7 +91,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 流量值（bit）
+                     * 流量值（byte）
                      */
                     double m_current;
                     bool m_currentHasBeenSet;

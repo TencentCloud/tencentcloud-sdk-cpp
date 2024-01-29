@@ -234,6 +234,27 @@ namespace TencentCloud
                      */
                     bool OrderIdHasBeenSet() const;
 
+                    /**
+                     * 获取通道id
+                     * @return ChannelId 通道id
+                     * 
+                     */
+                    uint64_t GetChannelId() const;
+
+                    /**
+                     * 设置通道id
+                     * @param _channelId 通道id
+                     * 
+                     */
+                    void SetChannelId(const uint64_t& _channelId);
+
+                    /**
+                     * 判断参数 ChannelId 是否已赋值
+                     * @return ChannelId 是否已赋值
+                     * 
+                     */
+                    bool ChannelIdHasBeenSet() const;
+
                 private:
 
                     /**
@@ -288,6 +309,12 @@ namespace TencentCloud
                      */
                     std::string m_orderId;
                     bool m_orderIdHasBeenSet;
+
+                    /**
+                     * 通道id
+                     */
+                    uint64_t m_channelId;
+                    bool m_channelIdHasBeenSet;
 
                 };
             }
