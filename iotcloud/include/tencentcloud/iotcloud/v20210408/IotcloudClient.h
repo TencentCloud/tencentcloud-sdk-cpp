@@ -157,6 +157,8 @@
 #include <tencentcloud/iotcloud/v20210408/model/UpdateDeviceShadowResponse.h>
 #include <tencentcloud/iotcloud/v20210408/model/UpdateDevicesEnableStateRequest.h>
 #include <tencentcloud/iotcloud/v20210408/model/UpdateDevicesEnableStateResponse.h>
+#include <tencentcloud/iotcloud/v20210408/model/UpdateOtaTaskStatusRequest.h>
+#include <tencentcloud/iotcloud/v20210408/model/UpdateOtaTaskStatusResponse.h>
 #include <tencentcloud/iotcloud/v20210408/model/UpdatePrivateCARequest.h>
 #include <tencentcloud/iotcloud/v20210408/model/UpdatePrivateCAResponse.h>
 #include <tencentcloud/iotcloud/v20210408/model/UpdateProductDynamicRegisterRequest.h>
@@ -382,6 +384,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::UpdateDevicesEnableStateResponse> UpdateDevicesEnableStateOutcome;
                 typedef std::future<UpdateDevicesEnableStateOutcome> UpdateDevicesEnableStateOutcomeCallable;
                 typedef std::function<void(const IotcloudClient*, const Model::UpdateDevicesEnableStateRequest&, UpdateDevicesEnableStateOutcome, const std::shared_ptr<const AsyncCallerContext>&)> UpdateDevicesEnableStateAsyncHandler;
+                typedef Outcome<Core::Error, Model::UpdateOtaTaskStatusResponse> UpdateOtaTaskStatusOutcome;
+                typedef std::future<UpdateOtaTaskStatusOutcome> UpdateOtaTaskStatusOutcomeCallable;
+                typedef std::function<void(const IotcloudClient*, const Model::UpdateOtaTaskStatusRequest&, UpdateOtaTaskStatusOutcome, const std::shared_ptr<const AsyncCallerContext>&)> UpdateOtaTaskStatusAsyncHandler;
                 typedef Outcome<Core::Error, Model::UpdatePrivateCAResponse> UpdatePrivateCAOutcome;
                 typedef std::future<UpdatePrivateCAOutcome> UpdatePrivateCAOutcomeCallable;
                 typedef std::function<void(const IotcloudClient*, const Model::UpdatePrivateCARequest&, UpdatePrivateCAOutcome, const std::shared_ptr<const AsyncCallerContext>&)> UpdatePrivateCAAsyncHandler;
@@ -401,7 +406,7 @@ namespace TencentCloud
 
 
                 /**
-                 *本接口（BatchUpdateFirmware）用于批量更新设备固件 
+                 *本接口（BatchUpdateFirmware）用于批量更新设备固件
                  * @param req BatchUpdateFirmwareRequest
                  * @return BatchUpdateFirmwareOutcome
                  */
@@ -842,7 +847,7 @@ namespace TencentCloud
                 GetUserResourceInfoOutcomeCallable GetUserResourceInfoCallable(const Model::GetUserResourceInfoRequest& request);
 
                 /**
-                 *本接口（ListFirmwares）用于获取固件列表 
+                 *本接口（ListFirmwares）用于获取固件列表
                  * @param req ListFirmwaresRequest
                  * @return ListFirmwaresOutcome
                  */
@@ -1004,6 +1009,15 @@ namespace TencentCloud
                 UpdateDevicesEnableStateOutcomeCallable UpdateDevicesEnableStateCallable(const Model::UpdateDevicesEnableStateRequest& request);
 
                 /**
+                 *本接口（UpdateOtaTask）当固件升级大任务处于没有在全部成功的状态时，可修改为取消状态，取消部分或全部设备的升级;或其它允许的可修改的状态
+                 * @param req UpdateOtaTaskStatusRequest
+                 * @return UpdateOtaTaskStatusOutcome
+                 */
+                UpdateOtaTaskStatusOutcome UpdateOtaTaskStatus(const Model::UpdateOtaTaskStatusRequest &request);
+                void UpdateOtaTaskStatusAsync(const Model::UpdateOtaTaskStatusRequest& request, const UpdateOtaTaskStatusAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                UpdateOtaTaskStatusOutcomeCallable UpdateOtaTaskStatusCallable(const Model::UpdateOtaTaskStatusRequest& request);
+
+                /**
                  *更新私有CA证书
                  * @param req UpdatePrivateCARequest
                  * @return UpdatePrivateCAOutcome
@@ -1040,7 +1054,7 @@ namespace TencentCloud
                 UpdateTopicPolicyOutcomeCallable UpdateTopicPolicyCallable(const Model::UpdateTopicPolicyRequest& request);
 
                 /**
-                 *本接口（UploadFirmware）用于上传设备固件信息 
+                 *本接口（UploadFirmware）用于上传设备固件信息
                  * @param req UploadFirmwareRequest
                  * @return UploadFirmwareOutcome
                  */

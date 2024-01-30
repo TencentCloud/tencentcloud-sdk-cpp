@@ -231,6 +231,27 @@ namespace TencentCloud
                      */
                     bool TimeoutIntervalHasBeenSet() const;
 
+                    /**
+                     * 获取固件升级任务类型，默认静态升级值为空或1，动态升级值为7。
+                     * @return Type 固件升级任务类型，默认静态升级值为空或1，动态升级值为7。
+                     * 
+                     */
+                    int64_t GetType() const;
+
+                    /**
+                     * 设置固件升级任务类型，默认静态升级值为空或1，动态升级值为7。
+                     * @param _type 固件升级任务类型，默认静态升级值为空或1，动态升级值为7。
+                     * 
+                     */
+                    void SetType(const int64_t& _type);
+
+                    /**
+                     * 判断参数 Type 是否已赋值
+                     * @return Type 是否已赋值
+                     * 
+                     */
+                    bool TypeHasBeenSet() const;
+
                 private:
 
                     /**
@@ -286,6 +307,12 @@ namespace TencentCloud
                      */
                     uint64_t m_timeoutInterval;
                     bool m_timeoutIntervalHasBeenSet;
+
+                    /**
+                     * 固件升级任务类型，默认静态升级值为空或1，动态升级值为7。
+                     */
+                    int64_t m_type;
+                    bool m_typeHasBeenSet;
 
                 };
             }

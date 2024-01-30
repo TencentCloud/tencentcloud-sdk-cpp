@@ -27,7 +27,8 @@ Device::Device() :
     m_remainDayHasBeenSet(false),
     m_expireTimeHasBeenSet(false),
     m_durationHasBeenSet(false),
-    m_licenseIdsHasBeenSet(false)
+    m_licenseIdsHasBeenSet(false),
+    m_monthlyRemainTimeHasBeenSet(false)
 {
 }
 
@@ -109,6 +110,16 @@ CoreInternalOutcome Device::Deserialize(const rapidjson::Value &value)
         m_licenseIdsHasBeenSet = true;
     }
 
+    if (value.HasMember("MonthlyRemainTime") && !value["MonthlyRemainTime"].IsNull())
+    {
+        if (!value["MonthlyRemainTime"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `Device.MonthlyRemainTime` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_monthlyRemainTime = value["MonthlyRemainTime"].GetInt64();
+        m_monthlyRemainTimeHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -175,6 +186,14 @@ void Device::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Allocato
         {
             value[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
         }
+    }
+
+    if (m_monthlyRemainTimeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "MonthlyRemainTime";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_monthlyRemainTime, allocator);
     }
 
 }
@@ -290,5 +309,21 @@ void Device::SetLicenseIds(const vector<string>& _licenseIds)
 bool Device::LicenseIdsHasBeenSet() const
 {
     return m_licenseIdsHasBeenSet;
+}
+
+int64_t Device::GetMonthlyRemainTime() const
+{
+    return m_monthlyRemainTime;
+}
+
+void Device::SetMonthlyRemainTime(const int64_t& _monthlyRemainTime)
+{
+    m_monthlyRemainTime = _monthlyRemainTime;
+    m_monthlyRemainTimeHasBeenSet = true;
+}
+
+bool Device::MonthlyRemainTimeHasBeenSet() const
+{
+    return m_monthlyRemainTimeHasBeenSet;
 }
 

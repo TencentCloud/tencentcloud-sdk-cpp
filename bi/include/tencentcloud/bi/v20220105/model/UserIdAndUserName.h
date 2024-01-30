@@ -413,6 +413,131 @@ namespace TencentCloud
                      */
                     bool MobileHasBeenSet() const;
 
+                    /**
+                     * 获取1
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return AppId 1
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::string GetAppId() const;
+
+                    /**
+                     * 设置1
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _appId 1
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetAppId(const std::string& _appId);
+
+                    /**
+                     * 判断参数 AppId 是否已赋值
+                     * @return AppId 是否已赋值
+                     * 
+                     */
+                    bool AppIdHasBeenSet() const;
+
+                    /**
+                     * 获取1
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return AppUserId 1
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::string GetAppUserId() const;
+
+                    /**
+                     * 设置1
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _appUserId 1
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetAppUserId(const std::string& _appUserId);
+
+                    /**
+                     * 判断参数 AppUserId 是否已赋值
+                     * @return AppUserId 是否已赋值
+                     * 
+                     */
+                    bool AppUserIdHasBeenSet() const;
+
+                    /**
+                     * 获取1
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return AppUserAliasName 1
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::string GetAppUserAliasName() const;
+
+                    /**
+                     * 设置1
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _appUserAliasName 1
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetAppUserAliasName(const std::string& _appUserAliasName);
+
+                    /**
+                     * 判断参数 AppUserAliasName 是否已赋值
+                     * @return AppUserAliasName 是否已赋值
+                     * 
+                     */
+                    bool AppUserAliasNameHasBeenSet() const;
+
+                    /**
+                     * 获取1
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return AppUserName 1
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::string GetAppUserName() const;
+
+                    /**
+                     * 设置1
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _appUserName 1
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetAppUserName(const std::string& _appUserName);
+
+                    /**
+                     * 判断参数 AppUserName 是否已赋值
+                     * @return AppUserName 是否已赋值
+                     * 
+                     */
+                    bool AppUserNameHasBeenSet() const;
+
+                    /**
+                     * 获取1
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return InValidateAppRange 1
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    bool GetInValidateAppRange() const;
+
+                    /**
+                     * 设置1
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _inValidateAppRange 1
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetInValidateAppRange(const bool& _inValidateAppRange);
+
+                    /**
+                     * 判断参数 InValidateAppRange 是否已赋值
+                     * @return InValidateAppRange 是否已赋值
+                     * 
+                     */
+                    bool InValidateAppRangeHasBeenSet() const;
+
                 private:
 
                     /**
@@ -517,6 +642,41 @@ namespace TencentCloud
                      */
                     std::string m_mobile;
                     bool m_mobileHasBeenSet;
+
+                    /**
+                     * 1
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_appId;
+                    bool m_appIdHasBeenSet;
+
+                    /**
+                     * 1
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_appUserId;
+                    bool m_appUserIdHasBeenSet;
+
+                    /**
+                     * 1
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_appUserAliasName;
+                    bool m_appUserAliasNameHasBeenSet;
+
+                    /**
+                     * 1
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_appUserName;
+                    bool m_appUserNameHasBeenSet;
+
+                    /**
+                     * 1
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    bool m_inValidateAppRange;
+                    bool m_inValidateAppRangeHasBeenSet;
 
                 };
             }

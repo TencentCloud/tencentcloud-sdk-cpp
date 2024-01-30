@@ -14,21 +14,21 @@
  * limitations under the License.
  */
 
-#include <tencentcloud/rum/v20210622/model/DescribeDataPerformanceProjectResponse.h>
+#include <tencentcloud/cls/v20201016/model/CreateAlarmShieldResponse.h>
 #include <tencentcloud/core/utils/rapidjson/document.h>
 #include <tencentcloud/core/utils/rapidjson/writer.h>
 #include <tencentcloud/core/utils/rapidjson/stringbuffer.h>
 
 using TencentCloud::CoreInternalOutcome;
-using namespace TencentCloud::Rum::V20210622::Model;
+using namespace TencentCloud::Cls::V20201016::Model;
 using namespace std;
 
-DescribeDataPerformanceProjectResponse::DescribeDataPerformanceProjectResponse() :
-    m_resultHasBeenSet(false)
+CreateAlarmShieldResponse::CreateAlarmShieldResponse() :
+    m_taskIdHasBeenSet(false)
 {
 }
 
-CoreInternalOutcome DescribeDataPerformanceProjectResponse::Deserialize(const string &payload)
+CoreInternalOutcome CreateAlarmShieldResponse::Deserialize(const string &payload)
 {
     rapidjson::Document d;
     d.Parse(payload.c_str());
@@ -62,32 +62,32 @@ CoreInternalOutcome DescribeDataPerformanceProjectResponse::Deserialize(const st
     }
 
 
-    if (rsp.HasMember("Result") && !rsp["Result"].IsNull())
+    if (rsp.HasMember("TaskId") && !rsp["TaskId"].IsNull())
     {
-        if (!rsp["Result"].IsString())
+        if (!rsp["TaskId"].IsString())
         {
-            return CoreInternalOutcome(Core::Error("response `Result` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `TaskId` IsString=false incorrectly").SetRequestId(requestId));
         }
-        m_result = string(rsp["Result"].GetString());
-        m_resultHasBeenSet = true;
+        m_taskId = string(rsp["TaskId"].GetString());
+        m_taskIdHasBeenSet = true;
     }
 
 
     return CoreInternalOutcome(true);
 }
 
-string DescribeDataPerformanceProjectResponse::ToJsonString() const
+string CreateAlarmShieldResponse::ToJsonString() const
 {
     rapidjson::Document value;
     value.SetObject();
     rapidjson::Document::AllocatorType& allocator = value.GetAllocator();
 
-    if (m_resultHasBeenSet)
+    if (m_taskIdHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "Result";
+        string key = "TaskId";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, rapidjson::Value(m_result.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_taskId.c_str(), allocator).Move(), allocator);
     }
 
     rapidjson::Value iKey(rapidjson::kStringType);
@@ -102,14 +102,14 @@ string DescribeDataPerformanceProjectResponse::ToJsonString() const
 }
 
 
-string DescribeDataPerformanceProjectResponse::GetResult() const
+string CreateAlarmShieldResponse::GetTaskId() const
 {
-    return m_result;
+    return m_taskId;
 }
 
-bool DescribeDataPerformanceProjectResponse::ResultHasBeenSet() const
+bool CreateAlarmShieldResponse::TaskIdHasBeenSet() const
 {
-    return m_resultHasBeenSet;
+    return m_taskIdHasBeenSet;
 }
 
 

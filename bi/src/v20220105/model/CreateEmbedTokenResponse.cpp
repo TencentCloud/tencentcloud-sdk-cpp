@@ -24,6 +24,7 @@ using namespace TencentCloud::Bi::V20220105::Model;
 using namespace std;
 
 CreateEmbedTokenResponse::CreateEmbedTokenResponse() :
+    m_errorInfoHasBeenSet(false),
     m_extraHasBeenSet(false),
     m_dataHasBeenSet(false),
     m_msgHasBeenSet(false)
@@ -63,6 +64,23 @@ CoreInternalOutcome CreateEmbedTokenResponse::Deserialize(const string &payload)
         return CoreInternalOutcome(Core::Error(errorCode, errorMsg).SetRequestId(requestId));
     }
 
+
+    if (rsp.HasMember("ErrorInfo") && !rsp["ErrorInfo"].IsNull())
+    {
+        if (!rsp["ErrorInfo"].IsObject())
+        {
+            return CoreInternalOutcome(Core::Error("response `ErrorInfo` is not object type").SetRequestId(requestId));
+        }
+
+        CoreInternalOutcome outcome = m_errorInfo.Deserialize(rsp["ErrorInfo"]);
+        if (!outcome.IsSuccess())
+        {
+            outcome.GetError().SetRequestId(requestId);
+            return outcome;
+        }
+
+        m_errorInfoHasBeenSet = true;
+    }
 
     if (rsp.HasMember("Extra") && !rsp["Extra"].IsNull())
     {
@@ -111,6 +129,15 @@ string CreateEmbedTokenResponse::ToJsonString() const
     value.SetObject();
     rapidjson::Document::AllocatorType& allocator = value.GetAllocator();
 
+    if (m_errorInfoHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ErrorInfo";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_errorInfo.ToJsonObject(value[key.c_str()], allocator);
+    }
+
     if (m_extraHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
@@ -147,6 +174,16 @@ string CreateEmbedTokenResponse::ToJsonString() const
     return buffer.GetString();
 }
 
+
+ErrorInfo CreateEmbedTokenResponse::GetErrorInfo() const
+{
+    return m_errorInfo;
+}
+
+bool CreateEmbedTokenResponse::ErrorInfoHasBeenSet() const
+{
+    return m_errorInfoHasBeenSet;
+}
 
 string CreateEmbedTokenResponse::GetExtra() const
 {

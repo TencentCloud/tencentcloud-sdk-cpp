@@ -33,6 +33,7 @@ set(bi_public_header_model
   include/tencentcloud/bi/v20220105/model/ProjectConfigResult.h
   include/tencentcloud/bi/v20220105/model/DeleteUserRoleResponse.h
   include/tencentcloud/bi/v20220105/model/DescribeUserProjectListRequest.h
+  include/tencentcloud/bi/v20220105/model/ErrorInfo.h
   include/tencentcloud/bi/v20220105/model/CreateDatasourceCloudResponse.h
   include/tencentcloud/bi/v20220105/model/ProjectConfigList.h
   include/tencentcloud/bi/v20220105/model/DeleteUserRoleRequest.h
@@ -101,6 +102,7 @@ set(bi_src
   src/v20220105/model/ProjectConfigResult.cpp
   src/v20220105/model/DeleteUserRoleResponse.cpp
   src/v20220105/model/DescribeUserProjectListRequest.cpp
+  src/v20220105/model/ErrorInfo.cpp
   src/v20220105/model/CreateDatasourceCloudResponse.cpp
   src/v20220105/model/ProjectConfigList.cpp
   src/v20220105/model/DeleteUserRoleRequest.cpp

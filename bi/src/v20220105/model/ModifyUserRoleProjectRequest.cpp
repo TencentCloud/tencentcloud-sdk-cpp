@@ -27,7 +27,8 @@ ModifyUserRoleProjectRequest::ModifyUserRoleProjectRequest() :
     m_userIdHasBeenSet(false),
     m_roleIdListHasBeenSet(false),
     m_emailHasBeenSet(false),
-    m_userNameHasBeenSet(false)
+    m_userNameHasBeenSet(false),
+    m_appUserIdHasBeenSet(false)
 {
 }
 
@@ -81,6 +82,14 @@ string ModifyUserRoleProjectRequest::ToJsonString() const
         string key = "UserName";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_userName.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_appUserIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "AppUserId";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_appUserId.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -169,6 +178,22 @@ void ModifyUserRoleProjectRequest::SetUserName(const string& _userName)
 bool ModifyUserRoleProjectRequest::UserNameHasBeenSet() const
 {
     return m_userNameHasBeenSet;
+}
+
+string ModifyUserRoleProjectRequest::GetAppUserId() const
+{
+    return m_appUserId;
+}
+
+void ModifyUserRoleProjectRequest::SetAppUserId(const string& _appUserId)
+{
+    m_appUserId = _appUserId;
+    m_appUserIdHasBeenSet = true;
+}
+
+bool ModifyUserRoleProjectRequest::AppUserIdHasBeenSet() const
+{
+    return m_appUserIdHasBeenSet;
 }
 
 

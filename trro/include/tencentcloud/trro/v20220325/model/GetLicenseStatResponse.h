@@ -99,6 +99,20 @@ namespace TencentCloud
                      */
                     bool ExpireHasBeenSet() const;
 
+                    /**
+                     * 获取当月用量超时授权个数
+                     * @return MonthlyExpire 当月用量超时授权个数
+                     * 
+                     */
+                    int64_t GetMonthlyExpire() const;
+
+                    /**
+                     * 判断参数 MonthlyExpire 是否已赋值
+                     * @return MonthlyExpire 是否已赋值
+                     * 
+                     */
+                    bool MonthlyExpireHasBeenSet() const;
+
                 private:
 
                     /**
@@ -124,6 +138,12 @@ namespace TencentCloud
                      */
                     int64_t m_expire;
                     bool m_expireHasBeenSet;
+
+                    /**
+                     * 当月用量超时授权个数
+                     */
+                    int64_t m_monthlyExpire;
+                    bool m_monthlyExpireHasBeenSet;
 
                 };
             }

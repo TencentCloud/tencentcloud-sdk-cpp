@@ -21,6 +21,7 @@
 #include <vector>
 #include <map>
 #include <tencentcloud/core/AbstractModel.h>
+#include <tencentcloud/bi/v20220105/model/ErrorInfo.h>
 
 
 namespace TencentCloud
@@ -42,6 +43,22 @@ namespace TencentCloud
                     CoreInternalOutcome Deserialize(const std::string &payload);
                     std::string ToJsonString() const;
 
+
+                    /**
+                     * 获取自定义错误信息对象
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return ErrorInfo 自定义错误信息对象
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    ErrorInfo GetErrorInfo() const;
+
+                    /**
+                     * 判断参数 ErrorInfo 是否已赋值
+                     * @return ErrorInfo 是否已赋值
+                     * 
+                     */
+                    bool ErrorInfoHasBeenSet() const;
 
                     /**
                      * 获取扩展
@@ -92,6 +109,13 @@ namespace TencentCloud
                     bool DataHasBeenSet() const;
 
                 private:
+
+                    /**
+                     * 自定义错误信息对象
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    ErrorInfo m_errorInfo;
+                    bool m_errorInfoHasBeenSet;
 
                     /**
                      * 扩展

@@ -48,18 +48,18 @@ namespace TencentCloud
 
                     /**
                      * 获取指标类型
-注意：此字段可能返回 null，表示取不到有效值。
+- Resource
                      * @return Type 指标类型
-注意：此字段可能返回 null，表示取不到有效值。
+- Resource
                      * 
                      */
                     std::string GetType() const;
 
                     /**
                      * 设置指标类型
-注意：此字段可能返回 null，表示取不到有效值。
+- Resource
                      * @param _type 指标类型
-注意：此字段可能返回 null，表示取不到有效值。
+- Resource
                      * 
                      */
                     void SetType(const std::string& _type);
@@ -73,8 +73,12 @@ namespace TencentCloud
 
                     /**
                      * 获取指标资源名称
+- cpu
+- memory
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return ResourceName 指标资源名称
+- cpu
+- memory
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -82,8 +86,12 @@ namespace TencentCloud
 
                     /**
                      * 设置指标资源名称
+- cpu
+- memory
 注意：此字段可能返回 null，表示取不到有效值。
                      * @param _resourceName 指标资源名称
+- cpu
+- memory
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -97,18 +105,18 @@ namespace TencentCloud
                     bool ResourceNameHasBeenSet() const;
 
                     /**
-                     * 获取指标目标类型
+                     * 获取指标目标类型，目前只支持百分比Utilization
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return TargetType 指标目标类型
+                     * @return TargetType 指标目标类型，目前只支持百分比Utilization
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetTargetType() const;
 
                     /**
-                     * 设置指标目标类型
+                     * 设置指标目标类型，目前只支持百分比Utilization
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _targetType 指标目标类型
+                     * @param _targetType 指标目标类型，目前只支持百分比Utilization
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -150,20 +158,22 @@ namespace TencentCloud
 
                     /**
                      * 指标类型
-注意：此字段可能返回 null，表示取不到有效值。
+- Resource
                      */
                     std::string m_type;
                     bool m_typeHasBeenSet;
 
                     /**
                      * 指标资源名称
+- cpu
+- memory
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_resourceName;
                     bool m_resourceNameHasBeenSet;
 
                     /**
-                     * 指标目标类型
+                     * 指标目标类型，目前只支持百分比Utilization
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_targetType;

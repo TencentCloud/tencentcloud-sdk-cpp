@@ -456,6 +456,106 @@ namespace TencentCloud
                      */
                     bool CorpAdminHasBeenSet() const;
 
+                    /**
+                     * 获取企微用户id
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return AppUserId 企微用户id
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::string GetAppUserId() const;
+
+                    /**
+                     * 设置企微用户id
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _appUserId 企微用户id
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetAppUserId(const std::string& _appUserId);
+
+                    /**
+                     * 判断参数 AppUserId 是否已赋值
+                     * @return AppUserId 是否已赋值
+                     * 
+                     */
+                    bool AppUserIdHasBeenSet() const;
+
+                    /**
+                     * 获取昵称
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return AppUserAliasName 昵称
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::string GetAppUserAliasName() const;
+
+                    /**
+                     * 设置昵称
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _appUserAliasName 昵称
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetAppUserAliasName(const std::string& _appUserAliasName);
+
+                    /**
+                     * 判断参数 AppUserAliasName 是否已赋值
+                     * @return AppUserAliasName 是否已赋值
+                     * 
+                     */
+                    bool AppUserAliasNameHasBeenSet() const;
+
+                    /**
+                     * 获取应用用户名
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return AppUserName 应用用户名
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::string GetAppUserName() const;
+
+                    /**
+                     * 设置应用用户名
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _appUserName 应用用户名
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetAppUserName(const std::string& _appUserName);
+
+                    /**
+                     * 判断参数 AppUserName 是否已赋值
+                     * @return AppUserName 是否已赋值
+                     * 
+                     */
+                    bool AppUserNameHasBeenSet() const;
+
+                    /**
+                     * 获取是否在可见范围内
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return InValidateAppRange 是否在可见范围内
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    bool GetInValidateAppRange() const;
+
+                    /**
+                     * 设置是否在可见范围内
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _inValidateAppRange 是否在可见范围内
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetInValidateAppRange(const bool& _inValidateAppRange);
+
+                    /**
+                     * 判断参数 InValidateAppRange 是否已赋值
+                     * @return InValidateAppRange 是否已赋值
+                     * 
+                     */
+                    bool InValidateAppRangeHasBeenSet() const;
+
                 private:
 
                     /**
@@ -572,6 +672,34 @@ namespace TencentCloud
                      */
                     bool m_corpAdmin;
                     bool m_corpAdminHasBeenSet;
+
+                    /**
+                     * 企微用户id
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_appUserId;
+                    bool m_appUserIdHasBeenSet;
+
+                    /**
+                     * 昵称
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_appUserAliasName;
+                    bool m_appUserAliasNameHasBeenSet;
+
+                    /**
+                     * 应用用户名
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_appUserName;
+                    bool m_appUserNameHasBeenSet;
+
+                    /**
+                     * 是否在可见范围内
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    bool m_inValidateAppRange;
+                    bool m_inValidateAppRangeHasBeenSet;
 
                 };
             }

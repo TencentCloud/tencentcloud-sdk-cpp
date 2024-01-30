@@ -200,18 +200,18 @@ namespace TencentCloud
                     bool ProductNameHasBeenSet() const;
 
                     /**
-                     * 获取产品能力:信令数据、音视频。第0位表示信令数据、第1表示音视频 ，默认为1（信令数据）
+                     * 获取产品能力:信令数据、音视频。二进制数值中第0位表示信令数据、第1位表示音视频 。1（信令数据），3（具有信令数据以及音视频能力）。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return ProductAbility 产品能力:信令数据、音视频。第0位表示信令数据、第1表示音视频 ，默认为1（信令数据）
+                     * @return ProductAbility 产品能力:信令数据、音视频。二进制数值中第0位表示信令数据、第1位表示音视频 。1（信令数据），3（具有信令数据以及音视频能力）。
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetProductAbility() const;
 
                     /**
-                     * 设置产品能力:信令数据、音视频。第0位表示信令数据、第1表示音视频 ，默认为1（信令数据）
+                     * 设置产品能力:信令数据、音视频。二进制数值中第0位表示信令数据、第1位表示音视频 。1（信令数据），3（具有信令数据以及音视频能力）。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _productAbility 产品能力:信令数据、音视频。第0位表示信令数据、第1表示音视频 ，默认为1（信令数据）
+                     * @param _productAbility 产品能力:信令数据、音视频。二进制数值中第0位表示信令数据、第1位表示音视频 。1（信令数据），3（具有信令数据以及音视频能力）。
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -549,6 +549,56 @@ namespace TencentCloud
                      */
                     bool GroupInfoHasBeenSet() const;
 
+                    /**
+                     * 获取通信在/离线状态（online=normal+fault，offline）
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return DeviceStatus 通信在/离线状态（online=normal+fault，offline）
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::string GetDeviceStatus() const;
+
+                    /**
+                     * 设置通信在/离线状态（online=normal+fault，offline）
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _deviceStatus 通信在/离线状态（online=normal+fault，offline）
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetDeviceStatus(const std::string& _deviceStatus);
+
+                    /**
+                     * 判断参数 DeviceStatus 是否已赋值
+                     * @return DeviceStatus 是否已赋值
+                     * 
+                     */
+                    bool DeviceStatusHasBeenSet() const;
+
+                    /**
+                     * 获取设备业务状态（normal、fault、offline）
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return Status 设备业务状态（normal、fault、offline）
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::string GetStatus() const;
+
+                    /**
+                     * 设置设备业务状态（normal、fault、offline）
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _status 设备业务状态（normal、fault、offline）
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetStatus(const std::string& _status);
+
+                    /**
+                     * 判断参数 Status 是否已赋值
+                     * @return Status 是否已赋值
+                     * 
+                     */
+                    bool StatusHasBeenSet() const;
+
                 private:
 
                     /**
@@ -594,7 +644,7 @@ namespace TencentCloud
                     bool m_productNameHasBeenSet;
 
                     /**
-                     * 产品能力:信令数据、音视频。第0位表示信令数据、第1表示音视频 ，默认为1（信令数据）
+                     * 产品能力:信令数据、音视频。二进制数值中第0位表示信令数据、第1位表示音视频 。1（信令数据），3（具有信令数据以及音视频能力）。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_productAbility;
@@ -690,6 +740,20 @@ namespace TencentCloud
                      */
                     std::string m_groupInfo;
                     bool m_groupInfoHasBeenSet;
+
+                    /**
+                     * 通信在/离线状态（online=normal+fault，offline）
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_deviceStatus;
+                    bool m_deviceStatusHasBeenSet;
+
+                    /**
+                     * 设备业务状态（normal、fault、offline）
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_status;
+                    bool m_statusHasBeenSet;
 
                 };
             }

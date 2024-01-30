@@ -35,7 +35,12 @@ UserIdAndUserName::UserIdAndUserName() :
     m_updatedUserHasBeenSet(false),
     m_updatedAtHasBeenSet(false),
     m_globalUserNameHasBeenSet(false),
-    m_mobileHasBeenSet(false)
+    m_mobileHasBeenSet(false),
+    m_appIdHasBeenSet(false),
+    m_appUserIdHasBeenSet(false),
+    m_appUserAliasNameHasBeenSet(false),
+    m_appUserNameHasBeenSet(false),
+    m_inValidateAppRangeHasBeenSet(false)
 {
 }
 
@@ -194,6 +199,56 @@ CoreInternalOutcome UserIdAndUserName::Deserialize(const rapidjson::Value &value
         m_mobileHasBeenSet = true;
     }
 
+    if (value.HasMember("AppId") && !value["AppId"].IsNull())
+    {
+        if (!value["AppId"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `UserIdAndUserName.AppId` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_appId = string(value["AppId"].GetString());
+        m_appIdHasBeenSet = true;
+    }
+
+    if (value.HasMember("AppUserId") && !value["AppUserId"].IsNull())
+    {
+        if (!value["AppUserId"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `UserIdAndUserName.AppUserId` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_appUserId = string(value["AppUserId"].GetString());
+        m_appUserIdHasBeenSet = true;
+    }
+
+    if (value.HasMember("AppUserAliasName") && !value["AppUserAliasName"].IsNull())
+    {
+        if (!value["AppUserAliasName"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `UserIdAndUserName.AppUserAliasName` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_appUserAliasName = string(value["AppUserAliasName"].GetString());
+        m_appUserAliasNameHasBeenSet = true;
+    }
+
+    if (value.HasMember("AppUserName") && !value["AppUserName"].IsNull())
+    {
+        if (!value["AppUserName"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `UserIdAndUserName.AppUserName` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_appUserName = string(value["AppUserName"].GetString());
+        m_appUserNameHasBeenSet = true;
+    }
+
+    if (value.HasMember("InValidateAppRange") && !value["InValidateAppRange"].IsNull())
+    {
+        if (!value["InValidateAppRange"].IsBool())
+        {
+            return CoreInternalOutcome(Core::Error("response `UserIdAndUserName.InValidateAppRange` IsBool=false incorrectly").SetRequestId(requestId));
+        }
+        m_inValidateAppRange = value["InValidateAppRange"].GetBool();
+        m_inValidateAppRangeHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -319,6 +374,46 @@ void UserIdAndUserName::ToJsonObject(rapidjson::Value &value, rapidjson::Documen
         string key = "Mobile";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_mobile.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_appIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "AppId";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_appId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_appUserIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "AppUserId";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_appUserId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_appUserAliasNameHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "AppUserAliasName";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_appUserAliasName.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_appUserNameHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "AppUserName";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_appUserName.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_inValidateAppRangeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "InValidateAppRange";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_inValidateAppRange, allocator);
     }
 
 }
@@ -562,5 +657,85 @@ void UserIdAndUserName::SetMobile(const string& _mobile)
 bool UserIdAndUserName::MobileHasBeenSet() const
 {
     return m_mobileHasBeenSet;
+}
+
+string UserIdAndUserName::GetAppId() const
+{
+    return m_appId;
+}
+
+void UserIdAndUserName::SetAppId(const string& _appId)
+{
+    m_appId = _appId;
+    m_appIdHasBeenSet = true;
+}
+
+bool UserIdAndUserName::AppIdHasBeenSet() const
+{
+    return m_appIdHasBeenSet;
+}
+
+string UserIdAndUserName::GetAppUserId() const
+{
+    return m_appUserId;
+}
+
+void UserIdAndUserName::SetAppUserId(const string& _appUserId)
+{
+    m_appUserId = _appUserId;
+    m_appUserIdHasBeenSet = true;
+}
+
+bool UserIdAndUserName::AppUserIdHasBeenSet() const
+{
+    return m_appUserIdHasBeenSet;
+}
+
+string UserIdAndUserName::GetAppUserAliasName() const
+{
+    return m_appUserAliasName;
+}
+
+void UserIdAndUserName::SetAppUserAliasName(const string& _appUserAliasName)
+{
+    m_appUserAliasName = _appUserAliasName;
+    m_appUserAliasNameHasBeenSet = true;
+}
+
+bool UserIdAndUserName::AppUserAliasNameHasBeenSet() const
+{
+    return m_appUserAliasNameHasBeenSet;
+}
+
+string UserIdAndUserName::GetAppUserName() const
+{
+    return m_appUserName;
+}
+
+void UserIdAndUserName::SetAppUserName(const string& _appUserName)
+{
+    m_appUserName = _appUserName;
+    m_appUserNameHasBeenSet = true;
+}
+
+bool UserIdAndUserName::AppUserNameHasBeenSet() const
+{
+    return m_appUserNameHasBeenSet;
+}
+
+bool UserIdAndUserName::GetInValidateAppRange() const
+{
+    return m_inValidateAppRange;
+}
+
+void UserIdAndUserName::SetInValidateAppRange(const bool& _inValidateAppRange)
+{
+    m_inValidateAppRange = _inValidateAppRange;
+    m_inValidateAppRangeHasBeenSet = true;
+}
+
+bool UserIdAndUserName::InValidateAppRangeHasBeenSet() const
+{
+    return m_inValidateAppRangeHasBeenSet;
 }
 

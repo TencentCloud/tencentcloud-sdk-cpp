@@ -2921,6 +2921,49 @@ IotcloudClient::UpdateDevicesEnableStateOutcomeCallable IotcloudClient::UpdateDe
     return task->get_future();
 }
 
+IotcloudClient::UpdateOtaTaskStatusOutcome IotcloudClient::UpdateOtaTaskStatus(const UpdateOtaTaskStatusRequest &request)
+{
+    auto outcome = MakeRequest(request, "UpdateOtaTaskStatus");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        UpdateOtaTaskStatusResponse rsp = UpdateOtaTaskStatusResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return UpdateOtaTaskStatusOutcome(rsp);
+        else
+            return UpdateOtaTaskStatusOutcome(o.GetError());
+    }
+    else
+    {
+        return UpdateOtaTaskStatusOutcome(outcome.GetError());
+    }
+}
+
+void IotcloudClient::UpdateOtaTaskStatusAsync(const UpdateOtaTaskStatusRequest& request, const UpdateOtaTaskStatusAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->UpdateOtaTaskStatus(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+IotcloudClient::UpdateOtaTaskStatusOutcomeCallable IotcloudClient::UpdateOtaTaskStatusCallable(const UpdateOtaTaskStatusRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<UpdateOtaTaskStatusOutcome()>>(
+        [this, request]()
+        {
+            return this->UpdateOtaTaskStatus(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 IotcloudClient::UpdatePrivateCAOutcome IotcloudClient::UpdatePrivateCA(const UpdatePrivateCARequest &request)
 {
     auto outcome = MakeRequest(request, "UpdatePrivateCA");

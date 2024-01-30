@@ -24,6 +24,7 @@ using namespace TencentCloud::Bi::V20220105::Model;
 using namespace std;
 
 DescribeDatasourceListResponse::DescribeDatasourceListResponse() :
+    m_errorInfoHasBeenSet(false),
     m_dataHasBeenSet(false),
     m_extraHasBeenSet(false),
     m_msgHasBeenSet(false)
@@ -63,6 +64,23 @@ CoreInternalOutcome DescribeDatasourceListResponse::Deserialize(const string &pa
         return CoreInternalOutcome(Core::Error(errorCode, errorMsg).SetRequestId(requestId));
     }
 
+
+    if (rsp.HasMember("ErrorInfo") && !rsp["ErrorInfo"].IsNull())
+    {
+        if (!rsp["ErrorInfo"].IsObject())
+        {
+            return CoreInternalOutcome(Core::Error("response `ErrorInfo` is not object type").SetRequestId(requestId));
+        }
+
+        CoreInternalOutcome outcome = m_errorInfo.Deserialize(rsp["ErrorInfo"]);
+        if (!outcome.IsSuccess())
+        {
+            outcome.GetError().SetRequestId(requestId);
+            return outcome;
+        }
+
+        m_errorInfoHasBeenSet = true;
+    }
 
     if (rsp.HasMember("Data") && !rsp["Data"].IsNull())
     {
@@ -111,6 +129,15 @@ string DescribeDatasourceListResponse::ToJsonString() const
     value.SetObject();
     rapidjson::Document::AllocatorType& allocator = value.GetAllocator();
 
+    if (m_errorInfoHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ErrorInfo";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_errorInfo.ToJsonObject(value[key.c_str()], allocator);
+    }
+
     if (m_dataHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
@@ -147,6 +174,16 @@ string DescribeDatasourceListResponse::ToJsonString() const
     return buffer.GetString();
 }
 
+
+ErrorInfo DescribeDatasourceListResponse::GetErrorInfo() const
+{
+    return m_errorInfo;
+}
+
+bool DescribeDatasourceListResponse::ErrorInfoHasBeenSet() const
+{
+    return m_errorInfoHasBeenSet;
+}
 
 DatasourceInfoData DescribeDatasourceListResponse::GetData() const
 {

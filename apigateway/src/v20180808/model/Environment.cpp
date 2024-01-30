@@ -24,7 +24,8 @@ Environment::Environment() :
     m_environmentNameHasBeenSet(false),
     m_urlHasBeenSet(false),
     m_statusHasBeenSet(false),
-    m_versionNameHasBeenSet(false)
+    m_versionNameHasBeenSet(false),
+    m_createTimeHasBeenSet(false)
 {
 }
 
@@ -73,6 +74,16 @@ CoreInternalOutcome Environment::Deserialize(const rapidjson::Value &value)
         m_versionNameHasBeenSet = true;
     }
 
+    if (value.HasMember("CreateTime") && !value["CreateTime"].IsNull())
+    {
+        if (!value["CreateTime"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `Environment.CreateTime` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_createTime = string(value["CreateTime"].GetString());
+        m_createTimeHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -110,6 +121,14 @@ void Environment::ToJsonObject(rapidjson::Value &value, rapidjson::Document::All
         string key = "VersionName";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_versionName.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_createTimeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "CreateTime";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_createTime.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -177,5 +196,21 @@ void Environment::SetVersionName(const string& _versionName)
 bool Environment::VersionNameHasBeenSet() const
 {
     return m_versionNameHasBeenSet;
+}
+
+string Environment::GetCreateTime() const
+{
+    return m_createTime;
+}
+
+void Environment::SetCreateTime(const string& _createTime)
+{
+    m_createTime = _createTime;
+    m_createTimeHasBeenSet = true;
+}
+
+bool Environment::CreateTimeHasBeenSet() const
+{
+    return m_createTimeHasBeenSet;
 }
 

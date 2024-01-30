@@ -25,7 +25,8 @@ using namespace std;
 DescribeUserRoleProjectListRequest::DescribeUserRoleProjectListRequest() :
     m_pageNoHasBeenSet(false),
     m_pageSizeHasBeenSet(false),
-    m_projectIdHasBeenSet(false)
+    m_projectIdHasBeenSet(false),
+    m_isOnlyBindAppUserHasBeenSet(false)
 {
 }
 
@@ -58,6 +59,14 @@ string DescribeUserRoleProjectListRequest::ToJsonString() const
         string key = "ProjectId";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_projectId, allocator);
+    }
+
+    if (m_isOnlyBindAppUserHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "IsOnlyBindAppUser";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_isOnlyBindAppUser, allocator);
     }
 
 
@@ -114,6 +123,22 @@ void DescribeUserRoleProjectListRequest::SetProjectId(const int64_t& _projectId)
 bool DescribeUserRoleProjectListRequest::ProjectIdHasBeenSet() const
 {
     return m_projectIdHasBeenSet;
+}
+
+bool DescribeUserRoleProjectListRequest::GetIsOnlyBindAppUser() const
+{
+    return m_isOnlyBindAppUser;
+}
+
+void DescribeUserRoleProjectListRequest::SetIsOnlyBindAppUser(const bool& _isOnlyBindAppUser)
+{
+    m_isOnlyBindAppUser = _isOnlyBindAppUser;
+    m_isOnlyBindAppUserHasBeenSet = true;
+}
+
+bool DescribeUserRoleProjectListRequest::IsOnlyBindAppUserHasBeenSet() const
+{
+    return m_isOnlyBindAppUserHasBeenSet;
 }
 
 

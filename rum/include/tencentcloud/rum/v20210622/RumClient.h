@@ -69,8 +69,6 @@
 #include <tencentcloud/rum/v20210622/model/DescribeDataLogUrlStatisticsResponse.h>
 #include <tencentcloud/rum/v20210622/model/DescribeDataPerformancePageRequest.h>
 #include <tencentcloud/rum/v20210622/model/DescribeDataPerformancePageResponse.h>
-#include <tencentcloud/rum/v20210622/model/DescribeDataPerformanceProjectRequest.h>
-#include <tencentcloud/rum/v20210622/model/DescribeDataPerformanceProjectResponse.h>
 #include <tencentcloud/rum/v20210622/model/DescribeDataPvUrlInfoRequest.h>
 #include <tencentcloud/rum/v20210622/model/DescribeDataPvUrlInfoResponse.h>
 #include <tencentcloud/rum/v20210622/model/DescribeDataPvUrlStatisticsRequest.h>
@@ -216,9 +214,6 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeDataPerformancePageResponse> DescribeDataPerformancePageOutcome;
                 typedef std::future<DescribeDataPerformancePageOutcome> DescribeDataPerformancePageOutcomeCallable;
                 typedef std::function<void(const RumClient*, const Model::DescribeDataPerformancePageRequest&, DescribeDataPerformancePageOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeDataPerformancePageAsyncHandler;
-                typedef Outcome<Core::Error, Model::DescribeDataPerformanceProjectResponse> DescribeDataPerformanceProjectOutcome;
-                typedef std::future<DescribeDataPerformanceProjectOutcome> DescribeDataPerformanceProjectOutcomeCallable;
-                typedef std::function<void(const RumClient*, const Model::DescribeDataPerformanceProjectRequest&, DescribeDataPerformanceProjectOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeDataPerformanceProjectAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeDataPvUrlInfoResponse> DescribeDataPvUrlInfoOutcome;
                 typedef std::future<DescribeDataPvUrlInfoOutcome> DescribeDataPvUrlInfoOutcomeCallable;
                 typedef std::function<void(const RumClient*, const Model::DescribeDataPvUrlInfoRequest&, DescribeDataPvUrlInfoOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeDataPvUrlInfoAsyncHandler;
@@ -521,15 +516,6 @@ namespace TencentCloud
                 DescribeDataPerformancePageOutcome DescribeDataPerformancePage(const Model::DescribeDataPerformancePageRequest &request);
                 void DescribeDataPerformancePageAsync(const Model::DescribeDataPerformancePageRequest& request, const DescribeDataPerformancePageAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DescribeDataPerformancePageOutcomeCallable DescribeDataPerformancePageCallable(const Model::DescribeDataPerformancePageRequest& request);
-
-                /**
-                 *获取PerformanceProject信息
-                 * @param req DescribeDataPerformanceProjectRequest
-                 * @return DescribeDataPerformanceProjectOutcome
-                 */
-                DescribeDataPerformanceProjectOutcome DescribeDataPerformanceProject(const Model::DescribeDataPerformanceProjectRequest &request);
-                void DescribeDataPerformanceProjectAsync(const Model::DescribeDataPerformanceProjectRequest& request, const DescribeDataPerformanceProjectAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
-                DescribeDataPerformanceProjectOutcomeCallable DescribeDataPerformanceProjectCallable(const Model::DescribeDataPerformanceProjectRequest& request);
 
                 /**
                  *获取PvUrlInfo信息

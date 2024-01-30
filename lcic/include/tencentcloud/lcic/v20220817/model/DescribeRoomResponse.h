@@ -457,6 +457,20 @@ video 纯视频
                      */
                     bool RecordBackgroundHasBeenSet() const;
 
+                    /**
+                     * 获取RTMP推流链接
+                     * @return RTMPStreamingURL RTMP推流链接
+                     * 
+                     */
+                    std::string GetRTMPStreamingURL() const;
+
+                    /**
+                     * 判断参数 RTMPStreamingURL 是否已赋值
+                     * @return RTMPStreamingURL 是否已赋值
+                     * 
+                     */
+                    bool RTMPStreamingURLHasBeenSet() const;
+
                 private:
 
                     /**
@@ -638,6 +652,12 @@ video 纯视频
                      */
                     std::string m_recordBackground;
                     bool m_recordBackgroundHasBeenSet;
+
+                    /**
+                     * RTMP推流链接
+                     */
+                    std::string m_rTMPStreamingURL;
+                    bool m_rTMPStreamingURLHasBeenSet;
 
                 };
             }

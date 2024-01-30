@@ -56,7 +56,7 @@ set(tse_public_header_model
   include/tencentcloud/tse/v20201207/model/DeleteCloudNativeAPIGatewayCertificateResponse.h
   include/tencentcloud/tse/v20201207/model/DeleteCloudNativeAPIGatewayCanaryRuleRequest.h
   include/tencentcloud/tse/v20201207/model/GatewayInstanceSchemeAndPorts.h
-  include/tencentcloud/tse/v20201207/model/DescribeZookeeperServerInterfacesRequest.h
+  include/tencentcloud/tse/v20201207/model/CreatePublicNetworkResult.h
   include/tencentcloud/tse/v20201207/model/UpstreamHealthCheckConfig.h
   include/tencentcloud/tse/v20201207/model/NacosServerInterface.h
   include/tencentcloud/tse/v20201207/model/DescribeNacosReplicasRequest.h
@@ -84,6 +84,7 @@ set(tse_public_header_model
   include/tencentcloud/tse/v20201207/model/DescribeCloudNativeAPIGatewayRoutesResponse.h
   include/tencentcloud/tse/v20201207/model/DescribeWafProtectionResponse.h
   include/tencentcloud/tse/v20201207/model/DescribeZookeeperReplicasRequest.h
+  include/tencentcloud/tse/v20201207/model/DescribeZookeeperServerInterfacesRequest.h
   include/tencentcloud/tse/v20201207/model/UpdateUpstreamTargetsRequest.h
   include/tencentcloud/tse/v20201207/model/DeleteCloudNativeAPIGatewayServiceResponse.h
   include/tencentcloud/tse/v20201207/model/DescribeWafDomainsResult.h
@@ -270,7 +271,7 @@ set(tse_src
   src/v20201207/model/DeleteCloudNativeAPIGatewayCertificateResponse.cpp
   src/v20201207/model/DeleteCloudNativeAPIGatewayCanaryRuleRequest.cpp
   src/v20201207/model/GatewayInstanceSchemeAndPorts.cpp
-  src/v20201207/model/DescribeZookeeperServerInterfacesRequest.cpp
+  src/v20201207/model/CreatePublicNetworkResult.cpp
   src/v20201207/model/UpstreamHealthCheckConfig.cpp
   src/v20201207/model/NacosServerInterface.cpp
   src/v20201207/model/DescribeNacosReplicasRequest.cpp
@@ -298,6 +299,7 @@ set(tse_src
   src/v20201207/model/DescribeCloudNativeAPIGatewayRoutesResponse.cpp
   src/v20201207/model/DescribeWafProtectionResponse.cpp
   src/v20201207/model/DescribeZookeeperReplicasRequest.cpp
+  src/v20201207/model/DescribeZookeeperServerInterfacesRequest.cpp
   src/v20201207/model/UpdateUpstreamTargetsRequest.cpp
   src/v20201207/model/DeleteCloudNativeAPIGatewayServiceResponse.cpp
   src/v20201207/model/DescribeWafDomainsResult.cpp

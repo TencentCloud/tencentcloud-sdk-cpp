@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef TENCENTCLOUD_RUM_V20210622_MODEL_DESCRIBEDATAPERFORMANCEPROJECTRESPONSE_H_
-#define TENCENTCLOUD_RUM_V20210622_MODEL_DESCRIBEDATAPERFORMANCEPROJECTRESPONSE_H_
+#ifndef TENCENTCLOUD_CLS_V20201016_MODEL_CREATEALARMSHIELDRESPONSE_H_
+#define TENCENTCLOUD_CLS_V20201016_MODEL_CREATEALARMSHIELDRESPONSE_H_
 
 #include <string>
 #include <vector>
@@ -25,45 +25,45 @@
 
 namespace TencentCloud
 {
-    namespace Rum
+    namespace Cls
     {
-        namespace V20210622
+        namespace V20201016
         {
             namespace Model
             {
                 /**
-                * DescribeDataPerformanceProject返回参数结构体
+                * CreateAlarmShield返回参数结构体
                 */
-                class DescribeDataPerformanceProjectResponse : public AbstractModel
+                class CreateAlarmShieldResponse : public AbstractModel
                 {
                 public:
-                    DescribeDataPerformanceProjectResponse();
-                    ~DescribeDataPerformanceProjectResponse() = default;
+                    CreateAlarmShieldResponse();
+                    ~CreateAlarmShieldResponse() = default;
                     CoreInternalOutcome Deserialize(const std::string &payload);
                     std::string ToJsonString() const;
 
 
                     /**
-                     * 获取返回值
-                     * @return Result 返回值
+                     * 获取屏蔽规则ID。
+                     * @return TaskId 屏蔽规则ID。
                      * 
                      */
-                    std::string GetResult() const;
+                    std::string GetTaskId() const;
 
                     /**
-                     * 判断参数 Result 是否已赋值
-                     * @return Result 是否已赋值
+                     * 判断参数 TaskId 是否已赋值
+                     * @return TaskId 是否已赋值
                      * 
                      */
-                    bool ResultHasBeenSet() const;
+                    bool TaskIdHasBeenSet() const;
 
                 private:
 
                     /**
-                     * 返回值
+                     * 屏蔽规则ID。
                      */
-                    std::string m_result;
-                    bool m_resultHasBeenSet;
+                    std::string m_taskId;
+                    bool m_taskIdHasBeenSet;
 
                 };
             }
@@ -71,4 +71,4 @@ namespace TencentCloud
     }
 }
 
-#endif // !TENCENTCLOUD_RUM_V20210622_MODEL_DESCRIBEDATAPERFORMANCEPROJECTRESPONSE_H_
+#endif // !TENCENTCLOUD_CLS_V20201016_MODEL_CREATEALARMSHIELDRESPONSE_H_

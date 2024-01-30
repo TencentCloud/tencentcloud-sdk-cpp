@@ -26,7 +26,8 @@ EditFirmwareRequest::EditFirmwareRequest() :
     m_productIdHasBeenSet(false),
     m_firmwareVersionHasBeenSet(false),
     m_firmwareNameHasBeenSet(false),
-    m_firmwareDescriptionHasBeenSet(false)
+    m_firmwareDescriptionHasBeenSet(false),
+    m_firmwareUserDefinedHasBeenSet(false)
 {
 }
 
@@ -67,6 +68,14 @@ string EditFirmwareRequest::ToJsonString() const
         string key = "FirmwareDescription";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_firmwareDescription.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_firmwareUserDefinedHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "FirmwareUserDefined";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_firmwareUserDefined.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -139,6 +148,22 @@ void EditFirmwareRequest::SetFirmwareDescription(const string& _firmwareDescript
 bool EditFirmwareRequest::FirmwareDescriptionHasBeenSet() const
 {
     return m_firmwareDescriptionHasBeenSet;
+}
+
+string EditFirmwareRequest::GetFirmwareUserDefined() const
+{
+    return m_firmwareUserDefined;
+}
+
+void EditFirmwareRequest::SetFirmwareUserDefined(const string& _firmwareUserDefined)
+{
+    m_firmwareUserDefined = _firmwareUserDefined;
+    m_firmwareUserDefinedHasBeenSet = true;
+}
+
+bool EditFirmwareRequest::FirmwareUserDefinedHasBeenSet() const
+{
+    return m_firmwareUserDefinedHasBeenSet;
 }
 
 

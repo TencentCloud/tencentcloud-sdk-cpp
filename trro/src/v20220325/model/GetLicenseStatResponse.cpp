@@ -27,7 +27,8 @@ GetLicenseStatResponse::GetLicenseStatResponse() :
     m_validHasBeenSet(false),
     m_boundHasBeenSet(false),
     m_unBoundHasBeenSet(false),
-    m_expireHasBeenSet(false)
+    m_expireHasBeenSet(false),
+    m_monthlyExpireHasBeenSet(false)
 {
 }
 
@@ -105,6 +106,16 @@ CoreInternalOutcome GetLicenseStatResponse::Deserialize(const string &payload)
         m_expireHasBeenSet = true;
     }
 
+    if (rsp.HasMember("MonthlyExpire") && !rsp["MonthlyExpire"].IsNull())
+    {
+        if (!rsp["MonthlyExpire"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `MonthlyExpire` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_monthlyExpire = rsp["MonthlyExpire"].GetInt64();
+        m_monthlyExpireHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -145,6 +156,14 @@ string GetLicenseStatResponse::ToJsonString() const
         string key = "Expire";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_expire, allocator);
+    }
+
+    if (m_monthlyExpireHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "MonthlyExpire";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_monthlyExpire, allocator);
     }
 
     rapidjson::Value iKey(rapidjson::kStringType);
@@ -197,6 +216,16 @@ int64_t GetLicenseStatResponse::GetExpire() const
 bool GetLicenseStatResponse::ExpireHasBeenSet() const
 {
     return m_expireHasBeenSet;
+}
+
+int64_t GetLicenseStatResponse::GetMonthlyExpire() const
+{
+    return m_monthlyExpire;
+}
+
+bool GetLicenseStatResponse::MonthlyExpireHasBeenSet() const
+{
+    return m_monthlyExpireHasBeenSet;
 }
 
 

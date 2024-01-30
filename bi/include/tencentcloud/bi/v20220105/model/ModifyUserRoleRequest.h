@@ -168,6 +168,27 @@ namespace TencentCloud
                      */
                     bool AreaCodeHasBeenSet() const;
 
+                    /**
+                     * 获取企业微信应用用户id
+                     * @return AppUserId 企业微信应用用户id
+                     * 
+                     */
+                    std::string GetAppUserId() const;
+
+                    /**
+                     * 设置企业微信应用用户id
+                     * @param _appUserId 企业微信应用用户id
+                     * 
+                     */
+                    void SetAppUserId(const std::string& _appUserId);
+
+                    /**
+                     * 判断参数 AppUserId 是否已赋值
+                     * @return AppUserId 是否已赋值
+                     * 
+                     */
+                    bool AppUserIdHasBeenSet() const;
+
                 private:
 
                     /**
@@ -205,6 +226,12 @@ namespace TencentCloud
                      */
                     std::string m_areaCode;
                     bool m_areaCodeHasBeenSet;
+
+                    /**
+                     * 企业微信应用用户id
+                     */
+                    std::string m_appUserId;
+                    bool m_appUserIdHasBeenSet;
 
                 };
             }

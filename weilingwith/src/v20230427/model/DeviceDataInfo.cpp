@@ -40,7 +40,9 @@ DeviceDataInfo::DeviceDataInfo() :
     m_sNHasBeenSet(false),
     m_locationHasBeenSet(false),
     m_fieldListHasBeenSet(false),
-    m_groupInfoHasBeenSet(false)
+    m_groupInfoHasBeenSet(false),
+    m_deviceStatusHasBeenSet(false),
+    m_statusHasBeenSet(false)
 {
 }
 
@@ -279,6 +281,26 @@ CoreInternalOutcome DeviceDataInfo::Deserialize(const rapidjson::Value &value)
         m_groupInfoHasBeenSet = true;
     }
 
+    if (value.HasMember("DeviceStatus") && !value["DeviceStatus"].IsNull())
+    {
+        if (!value["DeviceStatus"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `DeviceDataInfo.DeviceStatus` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_deviceStatus = string(value["DeviceStatus"].GetString());
+        m_deviceStatusHasBeenSet = true;
+    }
+
+    if (value.HasMember("Status") && !value["Status"].IsNull())
+    {
+        if (!value["Status"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `DeviceDataInfo.Status` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_status = string(value["Status"].GetString());
+        m_statusHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -464,6 +486,22 @@ void DeviceDataInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Document::
         string key = "GroupInfo";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_groupInfo.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_deviceStatusHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "DeviceStatus";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_deviceStatus.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_statusHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Status";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_status.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -787,5 +825,37 @@ void DeviceDataInfo::SetGroupInfo(const string& _groupInfo)
 bool DeviceDataInfo::GroupInfoHasBeenSet() const
 {
     return m_groupInfoHasBeenSet;
+}
+
+string DeviceDataInfo::GetDeviceStatus() const
+{
+    return m_deviceStatus;
+}
+
+void DeviceDataInfo::SetDeviceStatus(const string& _deviceStatus)
+{
+    m_deviceStatus = _deviceStatus;
+    m_deviceStatusHasBeenSet = true;
+}
+
+bool DeviceDataInfo::DeviceStatusHasBeenSet() const
+{
+    return m_deviceStatusHasBeenSet;
+}
+
+string DeviceDataInfo::GetStatus() const
+{
+    return m_status;
+}
+
+void DeviceDataInfo::SetStatus(const string& _status)
+{
+    m_status = _status;
+    m_statusHasBeenSet = true;
+}
+
+bool DeviceDataInfo::StatusHasBeenSet() const
+{
+    return m_statusHasBeenSet;
 }
 

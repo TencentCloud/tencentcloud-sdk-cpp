@@ -1029,49 +1029,6 @@ RumClient::DescribeDataPerformancePageOutcomeCallable RumClient::DescribeDataPer
     return task->get_future();
 }
 
-RumClient::DescribeDataPerformanceProjectOutcome RumClient::DescribeDataPerformanceProject(const DescribeDataPerformanceProjectRequest &request)
-{
-    auto outcome = MakeRequest(request, "DescribeDataPerformanceProject");
-    if (outcome.IsSuccess())
-    {
-        auto r = outcome.GetResult();
-        string payload = string(r.Body(), r.BodySize());
-        DescribeDataPerformanceProjectResponse rsp = DescribeDataPerformanceProjectResponse();
-        auto o = rsp.Deserialize(payload);
-        if (o.IsSuccess())
-            return DescribeDataPerformanceProjectOutcome(rsp);
-        else
-            return DescribeDataPerformanceProjectOutcome(o.GetError());
-    }
-    else
-    {
-        return DescribeDataPerformanceProjectOutcome(outcome.GetError());
-    }
-}
-
-void RumClient::DescribeDataPerformanceProjectAsync(const DescribeDataPerformanceProjectRequest& request, const DescribeDataPerformanceProjectAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
-{
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeDataPerformanceProject(request), context);
-    };
-
-    Executor::GetInstance()->Submit(new Runnable(fn));
-}
-
-RumClient::DescribeDataPerformanceProjectOutcomeCallable RumClient::DescribeDataPerformanceProjectCallable(const DescribeDataPerformanceProjectRequest &request)
-{
-    auto task = std::make_shared<std::packaged_task<DescribeDataPerformanceProjectOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeDataPerformanceProject(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
-}
-
 RumClient::DescribeDataPvUrlInfoOutcome RumClient::DescribeDataPvUrlInfo(const DescribeDataPvUrlInfoRequest &request)
 {
     auto outcome = MakeRequest(request, "DescribeDataPvUrlInfo");

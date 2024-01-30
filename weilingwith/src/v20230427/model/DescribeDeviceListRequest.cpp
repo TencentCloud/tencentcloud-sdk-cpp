@@ -34,7 +34,9 @@ DescribeDeviceListRequest::DescribeDeviceListRequest() :
     m_deviceTagSetHasBeenSet(false),
     m_wIDSetHasBeenSet(false),
     m_fieldHasBeenSet(false),
-    m_groupIdSetHasBeenSet(false)
+    m_groupIdSetHasBeenSet(false),
+    m_isActiveHasBeenSet(false),
+    m_isCameraHasBeenSet(false)
 {
 }
 
@@ -175,6 +177,22 @@ string DescribeDeviceListRequest::ToJsonString() const
         {
             d[key.c_str()].PushBack(rapidjson::Value().SetInt64(*itr), allocator);
         }
+    }
+
+    if (m_isActiveHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "IsActive";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_isActive.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_isCameraHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "IsCamera";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_isCamera.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -375,6 +393,38 @@ void DescribeDeviceListRequest::SetGroupIdSet(const vector<int64_t>& _groupIdSet
 bool DescribeDeviceListRequest::GroupIdSetHasBeenSet() const
 {
     return m_groupIdSetHasBeenSet;
+}
+
+string DescribeDeviceListRequest::GetIsActive() const
+{
+    return m_isActive;
+}
+
+void DescribeDeviceListRequest::SetIsActive(const string& _isActive)
+{
+    m_isActive = _isActive;
+    m_isActiveHasBeenSet = true;
+}
+
+bool DescribeDeviceListRequest::IsActiveHasBeenSet() const
+{
+    return m_isActiveHasBeenSet;
+}
+
+string DescribeDeviceListRequest::GetIsCamera() const
+{
+    return m_isCamera;
+}
+
+void DescribeDeviceListRequest::SetIsCamera(const string& _isCamera)
+{
+    m_isCamera = _isCamera;
+    m_isCameraHasBeenSet = true;
+}
+
+bool DescribeDeviceListRequest::IsCameraHasBeenSet() const
+{
+    return m_isCameraHasBeenSet;
 }
 
 

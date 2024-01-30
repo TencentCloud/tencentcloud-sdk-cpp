@@ -21,6 +21,7 @@ using namespace TencentCloud::Csip::V20221121::Model;
 using namespace std;
 
 TaskAdvanceCFG::TaskAdvanceCFG() :
+    m_portRiskHasBeenSet(false),
     m_vulRiskHasBeenSet(false),
     m_weakPwdRiskHasBeenSet(false),
     m_cFGRiskHasBeenSet(false)
@@ -31,6 +32,26 @@ CoreInternalOutcome TaskAdvanceCFG::Deserialize(const rapidjson::Value &value)
 {
     string requestId = "";
 
+
+    if (value.HasMember("PortRisk") && !value["PortRisk"].IsNull())
+    {
+        if (!value["PortRisk"].IsArray())
+            return CoreInternalOutcome(Core::Error("response `TaskAdvanceCFG.PortRisk` is not array type"));
+
+        const rapidjson::Value &tmpValue = value["PortRisk"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            PortRiskAdvanceCFGParamItem item;
+            CoreInternalOutcome outcome = item.Deserialize(*itr);
+            if (!outcome.IsSuccess())
+            {
+                outcome.GetError().SetRequestId(requestId);
+                return outcome;
+            }
+            m_portRisk.push_back(item);
+        }
+        m_portRiskHasBeenSet = true;
+    }
 
     if (value.HasMember("VulRisk") && !value["VulRisk"].IsNull())
     {
@@ -99,6 +120,21 @@ CoreInternalOutcome TaskAdvanceCFG::Deserialize(const rapidjson::Value &value)
 void TaskAdvanceCFG::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const
 {
 
+    if (m_portRiskHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "PortRisk";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_portRisk.begin(); itr != m_portRisk.end(); ++itr, ++i)
+        {
+            value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(value[key.c_str()][i], allocator);
+        }
+    }
+
     if (m_vulRiskHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
@@ -146,6 +182,22 @@ void TaskAdvanceCFG::ToJsonObject(rapidjson::Value &value, rapidjson::Document::
 
 }
 
+
+vector<PortRiskAdvanceCFGParamItem> TaskAdvanceCFG::GetPortRisk() const
+{
+    return m_portRisk;
+}
+
+void TaskAdvanceCFG::SetPortRisk(const vector<PortRiskAdvanceCFGParamItem>& _portRisk)
+{
+    m_portRisk = _portRisk;
+    m_portRiskHasBeenSet = true;
+}
+
+bool TaskAdvanceCFG::PortRiskHasBeenSet() const
+{
+    return m_portRiskHasBeenSet;
+}
 
 vector<TaskCenterVulRiskInputParam> TaskAdvanceCFG::GetVulRisk() const
 {

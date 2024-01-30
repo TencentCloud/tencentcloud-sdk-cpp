@@ -126,6 +126,27 @@ namespace TencentCloud
                      */
                     bool FirmwareDescriptionHasBeenSet() const;
 
+                    /**
+                     * 获取固件用户自定义配置信息
+                     * @return FirmwareUserDefined 固件用户自定义配置信息
+                     * 
+                     */
+                    std::string GetFirmwareUserDefined() const;
+
+                    /**
+                     * 设置固件用户自定义配置信息
+                     * @param _firmwareUserDefined 固件用户自定义配置信息
+                     * 
+                     */
+                    void SetFirmwareUserDefined(const std::string& _firmwareUserDefined);
+
+                    /**
+                     * 判断参数 FirmwareUserDefined 是否已赋值
+                     * @return FirmwareUserDefined 是否已赋值
+                     * 
+                     */
+                    bool FirmwareUserDefinedHasBeenSet() const;
+
                 private:
 
                     /**
@@ -151,6 +172,12 @@ namespace TencentCloud
                      */
                     std::string m_firmwareDescription;
                     bool m_firmwareDescriptionHasBeenSet;
+
+                    /**
+                     * 固件用户自定义配置信息
+                     */
+                    std::string m_firmwareUserDefined;
+                    bool m_firmwareUserDefinedHasBeenSet;
 
                 };
             }

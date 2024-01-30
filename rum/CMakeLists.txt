@@ -86,7 +86,6 @@ set(rum_public_header_model
   include/tencentcloud/rum/v20210622/model/DescribeDataCustomUrlResponse.h
   include/tencentcloud/rum/v20210622/model/RumAreaInfo.h
   include/tencentcloud/rum/v20210622/model/DescribeDataSetUrlStatisticsRequest.h
-  include/tencentcloud/rum/v20210622/model/DescribeDataPerformanceProjectResponse.h
   include/tencentcloud/rum/v20210622/model/ResumeInstanceResponse.h
   include/tencentcloud/rum/v20210622/model/DescribeDataStaticProjectResponse.h
   include/tencentcloud/rum/v20210622/model/CreateStarProjectRequest.h
@@ -124,7 +123,6 @@ set(rum_public_header_model
   include/tencentcloud/rum/v20210622/model/DescribeProjectsResponse.h
   include/tencentcloud/rum/v20210622/model/ModifyProjectResponse.h
   include/tencentcloud/rum/v20210622/model/DescribeDataReportCountResponse.h
-  include/tencentcloud/rum/v20210622/model/DescribeDataPerformanceProjectRequest.h
   include/tencentcloud/rum/v20210622/model/DescribeRumLogExportResponse.h
   include/tencentcloud/rum/v20210622/model/DescribeRumLogExportsRequest.h
   include/tencentcloud/rum/v20210622/model/ModifyProjectRequest.h
@@ -211,7 +209,6 @@ set(rum_src
   src/v20210622/model/DescribeDataCustomUrlResponse.cpp
   src/v20210622/model/RumAreaInfo.cpp
   src/v20210622/model/DescribeDataSetUrlStatisticsRequest.cpp
-  src/v20210622/model/DescribeDataPerformanceProjectResponse.cpp
   src/v20210622/model/ResumeInstanceResponse.cpp
   src/v20210622/model/DescribeDataStaticProjectResponse.cpp
   src/v20210622/model/CreateStarProjectRequest.cpp
@@ -249,7 +246,6 @@ set(rum_src
   src/v20210622/model/DescribeProjectsResponse.cpp
   src/v20210622/model/ModifyProjectResponse.cpp
   src/v20210622/model/DescribeDataReportCountResponse.cpp
-  src/v20210622/model/DescribeDataPerformanceProjectRequest.cpp
   src/v20210622/model/DescribeRumLogExportResponse.cpp
   src/v20210622/model/DescribeRumLogExportsRequest.cpp
   src/v20210622/model/ModifyProjectRequest.cpp

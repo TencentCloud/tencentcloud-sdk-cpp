@@ -24,6 +24,7 @@
 #include <tencentcloud/core/utils/rapidjson/writer.h>
 #include <tencentcloud/core/utils/rapidjson/stringbuffer.h>
 #include <tencentcloud/core/AbstractModel.h>
+#include <tencentcloud/csip/v20221121/model/PortRiskAdvanceCFGParamItem.h>
 #include <tencentcloud/csip/v20221121/model/TaskCenterVulRiskInputParam.h>
 #include <tencentcloud/csip/v20221121/model/TaskCenterWeakPwdRiskInputParam.h>
 #include <tencentcloud/csip/v20221121/model/TaskCenterCFGRiskInputParam.h>
@@ -48,6 +49,27 @@ namespace TencentCloud
                     void ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const;
                     CoreInternalOutcome Deserialize(const rapidjson::Value &value);
 
+
+                    /**
+                     * 获取端口风险高级配置
+                     * @return PortRisk 端口风险高级配置
+                     * 
+                     */
+                    std::vector<PortRiskAdvanceCFGParamItem> GetPortRisk() const;
+
+                    /**
+                     * 设置端口风险高级配置
+                     * @param _portRisk 端口风险高级配置
+                     * 
+                     */
+                    void SetPortRisk(const std::vector<PortRiskAdvanceCFGParamItem>& _portRisk);
+
+                    /**
+                     * 判断参数 PortRisk 是否已赋值
+                     * @return PortRisk 是否已赋值
+                     * 
+                     */
+                    bool PortRiskHasBeenSet() const;
 
                     /**
                      * 获取漏洞风险高级配置
@@ -113,6 +135,12 @@ namespace TencentCloud
                     bool CFGRiskHasBeenSet() const;
 
                 private:
+
+                    /**
+                     * 端口风险高级配置
+                     */
+                    std::vector<PortRiskAdvanceCFGParamItem> m_portRisk;
+                    bool m_portRiskHasBeenSet;
 
                     /**
                      * 漏洞风险高级配置

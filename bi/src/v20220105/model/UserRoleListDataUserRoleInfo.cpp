@@ -37,7 +37,11 @@ UserRoleListDataUserRoleInfo::UserRoleListDataUserRoleInfo() :
     m_phoneNumberHasBeenSet(false),
     m_areaCodeHasBeenSet(false),
     m_rootAccountHasBeenSet(false),
-    m_corpAdminHasBeenSet(false)
+    m_corpAdminHasBeenSet(false),
+    m_appUserIdHasBeenSet(false),
+    m_appUserAliasNameHasBeenSet(false),
+    m_appUserNameHasBeenSet(false),
+    m_inValidateAppRangeHasBeenSet(false)
 {
 }
 
@@ -229,6 +233,46 @@ CoreInternalOutcome UserRoleListDataUserRoleInfo::Deserialize(const rapidjson::V
         m_corpAdminHasBeenSet = true;
     }
 
+    if (value.HasMember("AppUserId") && !value["AppUserId"].IsNull())
+    {
+        if (!value["AppUserId"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `UserRoleListDataUserRoleInfo.AppUserId` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_appUserId = string(value["AppUserId"].GetString());
+        m_appUserIdHasBeenSet = true;
+    }
+
+    if (value.HasMember("AppUserAliasName") && !value["AppUserAliasName"].IsNull())
+    {
+        if (!value["AppUserAliasName"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `UserRoleListDataUserRoleInfo.AppUserAliasName` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_appUserAliasName = string(value["AppUserAliasName"].GetString());
+        m_appUserAliasNameHasBeenSet = true;
+    }
+
+    if (value.HasMember("AppUserName") && !value["AppUserName"].IsNull())
+    {
+        if (!value["AppUserName"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `UserRoleListDataUserRoleInfo.AppUserName` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_appUserName = string(value["AppUserName"].GetString());
+        m_appUserNameHasBeenSet = true;
+    }
+
+    if (value.HasMember("InValidateAppRange") && !value["InValidateAppRange"].IsNull())
+    {
+        if (!value["InValidateAppRange"].IsBool())
+        {
+            return CoreInternalOutcome(Core::Error("response `UserRoleListDataUserRoleInfo.InValidateAppRange` IsBool=false incorrectly").SetRequestId(requestId));
+        }
+        m_inValidateAppRange = value["InValidateAppRange"].GetBool();
+        m_inValidateAppRangeHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -382,6 +426,38 @@ void UserRoleListDataUserRoleInfo::ToJsonObject(rapidjson::Value &value, rapidjs
         string key = "CorpAdmin";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_corpAdmin, allocator);
+    }
+
+    if (m_appUserIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "AppUserId";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_appUserId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_appUserAliasNameHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "AppUserAliasName";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_appUserAliasName.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_appUserNameHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "AppUserName";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_appUserName.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_inValidateAppRangeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "InValidateAppRange";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_inValidateAppRange, allocator);
     }
 
 }
@@ -657,5 +733,69 @@ void UserRoleListDataUserRoleInfo::SetCorpAdmin(const bool& _corpAdmin)
 bool UserRoleListDataUserRoleInfo::CorpAdminHasBeenSet() const
 {
     return m_corpAdminHasBeenSet;
+}
+
+string UserRoleListDataUserRoleInfo::GetAppUserId() const
+{
+    return m_appUserId;
+}
+
+void UserRoleListDataUserRoleInfo::SetAppUserId(const string& _appUserId)
+{
+    m_appUserId = _appUserId;
+    m_appUserIdHasBeenSet = true;
+}
+
+bool UserRoleListDataUserRoleInfo::AppUserIdHasBeenSet() const
+{
+    return m_appUserIdHasBeenSet;
+}
+
+string UserRoleListDataUserRoleInfo::GetAppUserAliasName() const
+{
+    return m_appUserAliasName;
+}
+
+void UserRoleListDataUserRoleInfo::SetAppUserAliasName(const string& _appUserAliasName)
+{
+    m_appUserAliasName = _appUserAliasName;
+    m_appUserAliasNameHasBeenSet = true;
+}
+
+bool UserRoleListDataUserRoleInfo::AppUserAliasNameHasBeenSet() const
+{
+    return m_appUserAliasNameHasBeenSet;
+}
+
+string UserRoleListDataUserRoleInfo::GetAppUserName() const
+{
+    return m_appUserName;
+}
+
+void UserRoleListDataUserRoleInfo::SetAppUserName(const string& _appUserName)
+{
+    m_appUserName = _appUserName;
+    m_appUserNameHasBeenSet = true;
+}
+
+bool UserRoleListDataUserRoleInfo::AppUserNameHasBeenSet() const
+{
+    return m_appUserNameHasBeenSet;
+}
+
+bool UserRoleListDataUserRoleInfo::GetInValidateAppRange() const
+{
+    return m_inValidateAppRange;
+}
+
+void UserRoleListDataUserRoleInfo::SetInValidateAppRange(const bool& _inValidateAppRange)
+{
+    m_inValidateAppRange = _inValidateAppRange;
+    m_inValidateAppRangeHasBeenSet = true;
+}
+
+bool UserRoleListDataUserRoleInfo::InValidateAppRangeHasBeenSet() const
+{
+    return m_inValidateAppRangeHasBeenSet;
 }
 

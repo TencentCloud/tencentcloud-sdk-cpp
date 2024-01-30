@@ -206,6 +206,7 @@ set(iotcloud_public_header_model
   include/tencentcloud/iotcloud/v20210408/model/DeviceLabel.h
   include/tencentcloud/iotcloud/v20210408/model/DescribeProductTasksRequest.h
   include/tencentcloud/iotcloud/v20210408/model/UpdateProductPrivateCAResponse.h
+  include/tencentcloud/iotcloud/v20210408/model/UpdateOtaTaskStatusRequest.h
   include/tencentcloud/iotcloud/v20210408/model/UpdateDeviceShadowRequest.h
   include/tencentcloud/iotcloud/v20210408/model/DescribeGatewayBindDevicesResponse.h
   include/tencentcloud/iotcloud/v20210408/model/ProductResourceInfo.h
@@ -218,6 +219,7 @@ set(iotcloud_public_header_model
   include/tencentcloud/iotcloud/v20210408/model/EnableTopicRuleResponse.h
   include/tencentcloud/iotcloud/v20210408/model/DescribePushResourceTaskStatisticsResponse.h
   include/tencentcloud/iotcloud/v20210408/model/UpdateDeviceLogLevelRequest.h
+  include/tencentcloud/iotcloud/v20210408/model/UpdateOtaTaskStatusResponse.h
   include/tencentcloud/iotcloud/v20210408/model/PublishRRPCMessageRequest.h
   include/tencentcloud/iotcloud/v20210408/model/ProductProperties.h
   include/tencentcloud/iotcloud/v20210408/model/DeviceUpdateStatus.h
@@ -544,6 +546,7 @@ set(iotcloud_src
   src/v20210408/model/DeviceLabel.cpp
   src/v20210408/model/DescribeProductTasksRequest.cpp
   src/v20210408/model/UpdateProductPrivateCAResponse.cpp
+  src/v20210408/model/UpdateOtaTaskStatusRequest.cpp
   src/v20210408/model/UpdateDeviceShadowRequest.cpp
   src/v20210408/model/DescribeGatewayBindDevicesResponse.cpp
   src/v20210408/model/ProductResourceInfo.cpp
@@ -556,6 +559,7 @@ set(iotcloud_src
   src/v20210408/model/EnableTopicRuleResponse.cpp
   src/v20210408/model/DescribePushResourceTaskStatisticsResponse.cpp
   src/v20210408/model/UpdateDeviceLogLevelRequest.cpp
+  src/v20210408/model/UpdateOtaTaskStatusResponse.cpp
   src/v20210408/model/PublishRRPCMessageRequest.cpp
   src/v20210408/model/ProductProperties.cpp
   src/v20210408/model/DeviceUpdateStatus.cpp

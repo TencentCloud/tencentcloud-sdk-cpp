@@ -50,7 +50,8 @@ LaunchConfiguration::LaunchConfiguration() :
     m_instanceChargePrepaidHasBeenSet(false),
     m_diskTypePolicyHasBeenSet(false),
     m_hpcClusterIdHasBeenSet(false),
-    m_iPv6InternetAccessibleHasBeenSet(false)
+    m_iPv6InternetAccessibleHasBeenSet(false),
+    m_disasterRecoverGroupIdsHasBeenSet(false)
 {
 }
 
@@ -468,6 +469,19 @@ CoreInternalOutcome LaunchConfiguration::Deserialize(const rapidjson::Value &val
         m_iPv6InternetAccessibleHasBeenSet = true;
     }
 
+    if (value.HasMember("DisasterRecoverGroupIds") && !value["DisasterRecoverGroupIds"].IsNull())
+    {
+        if (!value["DisasterRecoverGroupIds"].IsArray())
+            return CoreInternalOutcome(Core::Error("response `LaunchConfiguration.DisasterRecoverGroupIds` is not array type"));
+
+        const rapidjson::Value &tmpValue = value["DisasterRecoverGroupIds"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            m_disasterRecoverGroupIds.push_back((*itr).GetString());
+        }
+        m_disasterRecoverGroupIdsHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -760,6 +774,19 @@ void LaunchConfiguration::ToJsonObject(rapidjson::Value &value, rapidjson::Docum
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
         m_iPv6InternetAccessible.ToJsonObject(value[key.c_str()], allocator);
+    }
+
+    if (m_disasterRecoverGroupIdsHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "DisasterRecoverGroupIds";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        for (auto itr = m_disasterRecoverGroupIds.begin(); itr != m_disasterRecoverGroupIds.end(); ++itr)
+        {
+            value[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
+        }
     }
 
 }
@@ -1243,5 +1270,21 @@ void LaunchConfiguration::SetIPv6InternetAccessible(const IPv6InternetAccessible
 bool LaunchConfiguration::IPv6InternetAccessibleHasBeenSet() const
 {
     return m_iPv6InternetAccessibleHasBeenSet;
+}
+
+vector<string> LaunchConfiguration::GetDisasterRecoverGroupIds() const
+{
+    return m_disasterRecoverGroupIds;
+}
+
+void LaunchConfiguration::SetDisasterRecoverGroupIds(const vector<string>& _disasterRecoverGroupIds)
+{
+    m_disasterRecoverGroupIds = _disasterRecoverGroupIds;
+    m_disasterRecoverGroupIdsHasBeenSet = true;
+}
+
+bool LaunchConfiguration::DisasterRecoverGroupIdsHasBeenSet() const
+{
+    return m_disasterRecoverGroupIdsHasBeenSet;
 }
 

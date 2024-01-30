@@ -97,18 +97,18 @@ namespace TencentCloud
                     bool StartAtHasBeenSet() const;
 
                     /**
-                     * 获取定时伸缩目标节点数
+                     * 获取定时伸缩目标节点数，不超过指标伸缩中定义的最大节点数
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return TargetReplicas 定时伸缩目标节点数
+                     * @return TargetReplicas 定时伸缩目标节点数，不超过指标伸缩中定义的最大节点数
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetTargetReplicas() const;
 
                     /**
-                     * 设置定时伸缩目标节点数
+                     * 设置定时伸缩目标节点数，不超过指标伸缩中定义的最大节点数
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _targetReplicas 定时伸缩目标节点数
+                     * @param _targetReplicas 定时伸缩目标节点数，不超过指标伸缩中定义的最大节点数
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -122,18 +122,18 @@ namespace TencentCloud
                     bool TargetReplicasHasBeenSet() const;
 
                     /**
-                     * 获取定时伸缩cron表达式
+                     * 获取定时伸缩cron表达式，无需输入
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return Crontab 定时伸缩cron表达式
+                     * @return Crontab 定时伸缩cron表达式，无需输入
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetCrontab() const;
 
                     /**
-                     * 设置定时伸缩cron表达式
+                     * 设置定时伸缩cron表达式，无需输入
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _crontab 定时伸缩cron表达式
+                     * @param _crontab 定时伸缩cron表达式，无需输入
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -163,14 +163,14 @@ namespace TencentCloud
                     bool m_startAtHasBeenSet;
 
                     /**
-                     * 定时伸缩目标节点数
+                     * 定时伸缩目标节点数，不超过指标伸缩中定义的最大节点数
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_targetReplicas;
                     bool m_targetReplicasHasBeenSet;
 
                     /**
-                     * 定时伸缩cron表达式
+                     * 定时伸缩cron表达式，无需输入
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_crontab;

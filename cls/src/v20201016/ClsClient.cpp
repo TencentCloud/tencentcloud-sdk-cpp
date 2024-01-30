@@ -341,6 +341,49 @@ ClsClient::CreateAlarmNoticeOutcomeCallable ClsClient::CreateAlarmNoticeCallable
     return task->get_future();
 }
 
+ClsClient::CreateAlarmShieldOutcome ClsClient::CreateAlarmShield(const CreateAlarmShieldRequest &request)
+{
+    auto outcome = MakeRequest(request, "CreateAlarmShield");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        CreateAlarmShieldResponse rsp = CreateAlarmShieldResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return CreateAlarmShieldOutcome(rsp);
+        else
+            return CreateAlarmShieldOutcome(o.GetError());
+    }
+    else
+    {
+        return CreateAlarmShieldOutcome(outcome.GetError());
+    }
+}
+
+void ClsClient::CreateAlarmShieldAsync(const CreateAlarmShieldRequest& request, const CreateAlarmShieldAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->CreateAlarmShield(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+ClsClient::CreateAlarmShieldOutcomeCallable ClsClient::CreateAlarmShieldCallable(const CreateAlarmShieldRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<CreateAlarmShieldOutcome()>>(
+        [this, request]()
+        {
+            return this->CreateAlarmShield(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 ClsClient::CreateConfigOutcome ClsClient::CreateConfig(const CreateConfigRequest &request)
 {
     auto outcome = MakeRequest(request, "CreateConfig");
@@ -1029,6 +1072,49 @@ ClsClient::DeleteAlarmNoticeOutcomeCallable ClsClient::DeleteAlarmNoticeCallable
     return task->get_future();
 }
 
+ClsClient::DeleteAlarmShieldOutcome ClsClient::DeleteAlarmShield(const DeleteAlarmShieldRequest &request)
+{
+    auto outcome = MakeRequest(request, "DeleteAlarmShield");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DeleteAlarmShieldResponse rsp = DeleteAlarmShieldResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DeleteAlarmShieldOutcome(rsp);
+        else
+            return DeleteAlarmShieldOutcome(o.GetError());
+    }
+    else
+    {
+        return DeleteAlarmShieldOutcome(outcome.GetError());
+    }
+}
+
+void ClsClient::DeleteAlarmShieldAsync(const DeleteAlarmShieldRequest& request, const DeleteAlarmShieldAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DeleteAlarmShield(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+ClsClient::DeleteAlarmShieldOutcomeCallable ClsClient::DeleteAlarmShieldCallable(const DeleteAlarmShieldRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DeleteAlarmShieldOutcome()>>(
+        [this, request]()
+        {
+            return this->DeleteAlarmShield(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 ClsClient::DeleteConfigOutcome ClsClient::DeleteConfig(const DeleteConfigRequest &request)
 {
     auto outcome = MakeRequest(request, "DeleteConfig");
@@ -1667,6 +1753,49 @@ ClsClient::DescribeAlarmNoticesOutcomeCallable ClsClient::DescribeAlarmNoticesCa
         [this, request]()
         {
             return this->DescribeAlarmNotices(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+ClsClient::DescribeAlarmShieldsOutcome ClsClient::DescribeAlarmShields(const DescribeAlarmShieldsRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeAlarmShields");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeAlarmShieldsResponse rsp = DescribeAlarmShieldsResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeAlarmShieldsOutcome(rsp);
+        else
+            return DescribeAlarmShieldsOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeAlarmShieldsOutcome(outcome.GetError());
+    }
+}
+
+void ClsClient::DescribeAlarmShieldsAsync(const DescribeAlarmShieldsRequest& request, const DescribeAlarmShieldsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeAlarmShields(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+ClsClient::DescribeAlarmShieldsOutcomeCallable ClsClient::DescribeAlarmShieldsCallable(const DescribeAlarmShieldsRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeAlarmShieldsOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeAlarmShields(request);
         }
     );
 
@@ -2914,6 +3043,49 @@ ClsClient::ModifyAlarmNoticeOutcomeCallable ClsClient::ModifyAlarmNoticeCallable
         [this, request]()
         {
             return this->ModifyAlarmNotice(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+ClsClient::ModifyAlarmShieldOutcome ClsClient::ModifyAlarmShield(const ModifyAlarmShieldRequest &request)
+{
+    auto outcome = MakeRequest(request, "ModifyAlarmShield");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ModifyAlarmShieldResponse rsp = ModifyAlarmShieldResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ModifyAlarmShieldOutcome(rsp);
+        else
+            return ModifyAlarmShieldOutcome(o.GetError());
+    }
+    else
+    {
+        return ModifyAlarmShieldOutcome(outcome.GetError());
+    }
+}
+
+void ClsClient::ModifyAlarmShieldAsync(const ModifyAlarmShieldRequest& request, const ModifyAlarmShieldAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->ModifyAlarmShield(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+ClsClient::ModifyAlarmShieldOutcomeCallable ClsClient::ModifyAlarmShieldCallable(const ModifyAlarmShieldRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<ModifyAlarmShieldOutcome()>>(
+        [this, request]()
+        {
+            return this->ModifyAlarmShield(request);
         }
     );
 

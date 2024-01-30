@@ -47,18 +47,18 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取类型，Pods或Percent
+                     * 获取类型，Pods
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return Type 类型，Pods或Percent
+                     * @return Type 类型，Pods
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetType() const;
 
                     /**
-                     * 设置类型，Pods或Percent
+                     * 设置类型，Pods
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _type 类型，Pods或Percent
+                     * @param _type 类型，Pods
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -124,7 +124,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 类型，Pods或Percent
+                     * 类型，Pods
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_type;

@@ -26,7 +26,8 @@ GetLicensesRequest::GetLicensesRequest() :
     m_pageNumHasBeenSet(false),
     m_pageSizeHasBeenSet(false),
     m_projectIdHasBeenSet(false),
-    m_deviceIdHasBeenSet(false)
+    m_deviceIdHasBeenSet(false),
+    m_statusHasBeenSet(false)
 {
 }
 
@@ -67,6 +68,14 @@ string GetLicensesRequest::ToJsonString() const
         string key = "DeviceId";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_deviceId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_statusHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Status";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_status, allocator);
     }
 
 
@@ -139,6 +148,22 @@ void GetLicensesRequest::SetDeviceId(const string& _deviceId)
 bool GetLicensesRequest::DeviceIdHasBeenSet() const
 {
     return m_deviceIdHasBeenSet;
+}
+
+int64_t GetLicensesRequest::GetStatus() const
+{
+    return m_status;
+}
+
+void GetLicensesRequest::SetStatus(const int64_t& _status)
+{
+    m_status = _status;
+    m_statusHasBeenSet = true;
+}
+
+bool GetLicensesRequest::StatusHasBeenSet() const
+{
+    return m_statusHasBeenSet;
 }
 
 

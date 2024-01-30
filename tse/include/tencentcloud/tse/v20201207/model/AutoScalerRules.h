@@ -48,18 +48,18 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取稳定窗口时间
+                     * 获取稳定窗口时间，扩容时默认0，缩容时默认300
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return StabilizationWindowSeconds 稳定窗口时间
+                     * @return StabilizationWindowSeconds 稳定窗口时间，扩容时默认0，缩容时默认300
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetStabilizationWindowSeconds() const;
 
                     /**
-                     * 设置稳定窗口时间
+                     * 设置稳定窗口时间，扩容时默认0，缩容时默认300
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _stabilizationWindowSeconds 稳定窗口时间
+                     * @param _stabilizationWindowSeconds 稳定窗口时间，扩容时默认0，缩容时默认300
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -98,18 +98,18 @@ namespace TencentCloud
                     bool SelectPolicyHasBeenSet() const;
 
                     /**
-                     * 获取扩容策略
+                     * 获取扩缩容策略
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return Policies 扩容策略
+                     * @return Policies 扩缩容策略
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<AutoScalerPolicy> GetPolicies() const;
 
                     /**
-                     * 设置扩容策略
+                     * 设置扩缩容策略
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _policies 扩容策略
+                     * @param _policies 扩缩容策略
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -125,7 +125,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 稳定窗口时间
+                     * 稳定窗口时间，扩容时默认0，缩容时默认300
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_stabilizationWindowSeconds;
@@ -139,7 +139,7 @@ namespace TencentCloud
                     bool m_selectPolicyHasBeenSet;
 
                     /**
-                     * 扩容策略
+                     * 扩缩容策略
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<AutoScalerPolicy> m_policies;

@@ -105,6 +105,27 @@ namespace TencentCloud
                      */
                     bool ProjectIdHasBeenSet() const;
 
+                    /**
+                     * 获取是否只获取绑定企微应用的
+                     * @return IsOnlyBindAppUser 是否只获取绑定企微应用的
+                     * 
+                     */
+                    bool GetIsOnlyBindAppUser() const;
+
+                    /**
+                     * 设置是否只获取绑定企微应用的
+                     * @param _isOnlyBindAppUser 是否只获取绑定企微应用的
+                     * 
+                     */
+                    void SetIsOnlyBindAppUser(const bool& _isOnlyBindAppUser);
+
+                    /**
+                     * 判断参数 IsOnlyBindAppUser 是否已赋值
+                     * @return IsOnlyBindAppUser 是否已赋值
+                     * 
+                     */
+                    bool IsOnlyBindAppUserHasBeenSet() const;
+
                 private:
 
                     /**
@@ -124,6 +145,12 @@ namespace TencentCloud
                      */
                     int64_t m_projectId;
                     bool m_projectIdHasBeenSet;
+
+                    /**
+                     * 是否只获取绑定企微应用的
+                     */
+                    bool m_isOnlyBindAppUser;
+                    bool m_isOnlyBindAppUserHasBeenSet;
 
                 };
             }

@@ -23,7 +23,8 @@ using namespace TencentCloud::Lcic::V20220817::Model;
 using namespace std;
 
 DescribeRoomRequest::DescribeRoomRequest() :
-    m_roomIdHasBeenSet(false)
+    m_roomIdHasBeenSet(false),
+    m_rTMPStreamingURLHasBeenSet(false)
 {
 }
 
@@ -40,6 +41,14 @@ string DescribeRoomRequest::ToJsonString() const
         string key = "RoomId";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_roomId, allocator);
+    }
+
+    if (m_rTMPStreamingURLHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "RTMPStreamingURL";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_rTMPStreamingURL, allocator);
     }
 
 
@@ -64,6 +73,22 @@ void DescribeRoomRequest::SetRoomId(const uint64_t& _roomId)
 bool DescribeRoomRequest::RoomIdHasBeenSet() const
 {
     return m_roomIdHasBeenSet;
+}
+
+uint64_t DescribeRoomRequest::GetRTMPStreamingURL() const
+{
+    return m_rTMPStreamingURL;
+}
+
+void DescribeRoomRequest::SetRTMPStreamingURL(const uint64_t& _rTMPStreamingURL)
+{
+    m_rTMPStreamingURL = _rTMPStreamingURL;
+    m_rTMPStreamingURLHasBeenSet = true;
+}
+
+bool DescribeRoomRequest::RTMPStreamingURLHasBeenSet() const
+{
+    return m_rTMPStreamingURLHasBeenSet;
 }
 
 

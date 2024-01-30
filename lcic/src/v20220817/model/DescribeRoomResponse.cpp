@@ -50,7 +50,8 @@ DescribeRoomResponse::DescribeRoomResponse() :
     m_liveTypeHasBeenSet(false),
     m_recordLiveUrlHasBeenSet(false),
     m_enableAutoStartHasBeenSet(false),
-    m_recordBackgroundHasBeenSet(false)
+    m_recordBackgroundHasBeenSet(false),
+    m_rTMPStreamingURLHasBeenSet(false)
 {
 }
 
@@ -361,6 +362,16 @@ CoreInternalOutcome DescribeRoomResponse::Deserialize(const string &payload)
         m_recordBackgroundHasBeenSet = true;
     }
 
+    if (rsp.HasMember("RTMPStreamingURL") && !rsp["RTMPStreamingURL"].IsNull())
+    {
+        if (!rsp["RTMPStreamingURL"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `RTMPStreamingURL` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_rTMPStreamingURL = string(rsp["RTMPStreamingURL"].GetString());
+        m_rTMPStreamingURLHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -590,6 +601,14 @@ string DescribeRoomResponse::ToJsonString() const
         string key = "RecordBackground";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_recordBackground.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_rTMPStreamingURLHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "RTMPStreamingURL";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_rTMPStreamingURL.c_str(), allocator).Move(), allocator);
     }
 
     rapidjson::Value iKey(rapidjson::kStringType);
@@ -872,6 +891,16 @@ string DescribeRoomResponse::GetRecordBackground() const
 bool DescribeRoomResponse::RecordBackgroundHasBeenSet() const
 {
     return m_recordBackgroundHasBeenSet;
+}
+
+string DescribeRoomResponse::GetRTMPStreamingURL() const
+{
+    return m_rTMPStreamingURL;
+}
+
+bool DescribeRoomResponse::RTMPStreamingURLHasBeenSet() const
+{
+    return m_rTMPStreamingURLHasBeenSet;
 }
 
 

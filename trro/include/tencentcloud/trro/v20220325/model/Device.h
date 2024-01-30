@@ -221,6 +221,31 @@ namespace TencentCloud
                      */
                     bool LicenseIdsHasBeenSet() const;
 
+                    /**
+                     * 获取每月license的限定时长
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return MonthlyRemainTime 每月license的限定时长
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    int64_t GetMonthlyRemainTime() const;
+
+                    /**
+                     * 设置每月license的限定时长
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _monthlyRemainTime 每月license的限定时长
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetMonthlyRemainTime(const int64_t& _monthlyRemainTime);
+
+                    /**
+                     * 判断参数 MonthlyRemainTime 是否已赋值
+                     * @return MonthlyRemainTime 是否已赋值
+                     * 
+                     */
+                    bool MonthlyRemainTimeHasBeenSet() const;
+
                 private:
 
                     /**
@@ -271,6 +296,13 @@ namespace TencentCloud
                      */
                     std::vector<std::string> m_licenseIds;
                     bool m_licenseIdsHasBeenSet;
+
+                    /**
+                     * 每月license的限定时长
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    int64_t m_monthlyRemainTime;
+                    bool m_monthlyRemainTimeHasBeenSet;
 
                 };
             }

@@ -295,6 +295,48 @@ namespace TencentCloud
                      */
                     bool GroupIdSetHasBeenSet() const;
 
+                    /**
+                     * 获取是否激活，默认全部，"1"激活，"0"未激活
+                     * @return IsActive 是否激活，默认全部，"1"激活，"0"未激活
+                     * 
+                     */
+                    std::string GetIsActive() const;
+
+                    /**
+                     * 设置是否激活，默认全部，"1"激活，"0"未激活
+                     * @param _isActive 是否激活，默认全部，"1"激活，"0"未激活
+                     * 
+                     */
+                    void SetIsActive(const std::string& _isActive);
+
+                    /**
+                     * 判断参数 IsActive 是否已赋值
+                     * @return IsActive 是否已赋值
+                     * 
+                     */
+                    bool IsActiveHasBeenSet() const;
+
+                    /**
+                     * 获取是否为摄像头，默认全部，"true"摄像头，"false"非摄像头
+                     * @return IsCamera 是否为摄像头，默认全部，"true"摄像头，"false"非摄像头
+                     * 
+                     */
+                    std::string GetIsCamera() const;
+
+                    /**
+                     * 设置是否为摄像头，默认全部，"true"摄像头，"false"非摄像头
+                     * @param _isCamera 是否为摄像头，默认全部，"true"摄像头，"false"非摄像头
+                     * 
+                     */
+                    void SetIsCamera(const std::string& _isCamera);
+
+                    /**
+                     * 判断参数 IsCamera 是否已赋值
+                     * @return IsCamera 是否已赋值
+                     * 
+                     */
+                    bool IsCameraHasBeenSet() const;
+
                 private:
 
                     /**
@@ -368,6 +410,18 @@ namespace TencentCloud
                      */
                     std::vector<int64_t> m_groupIdSet;
                     bool m_groupIdSetHasBeenSet;
+
+                    /**
+                     * 是否激活，默认全部，"1"激活，"0"未激活
+                     */
+                    std::string m_isActive;
+                    bool m_isActiveHasBeenSet;
+
+                    /**
+                     * 是否为摄像头，默认全部，"true"摄像头，"false"非摄像头
+                     */
+                    std::string m_isCamera;
+                    bool m_isCameraHasBeenSet;
 
                 };
             }
