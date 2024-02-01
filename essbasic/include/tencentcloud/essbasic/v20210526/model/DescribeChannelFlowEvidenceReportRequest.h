@@ -139,6 +139,35 @@ namespace TencentCloud
                      */
                     bool OperatorHasBeenSet() const;
 
+                    /**
+                     * 获取指定申请的报告类型，可选类型如下：
+<ul><li> **0** :合同签署报告（默认）</li>
+<li> **1** :公证处核验报告</li></ul>
+                     * @return ReportType 指定申请的报告类型，可选类型如下：
+<ul><li> **0** :合同签署报告（默认）</li>
+<li> **1** :公证处核验报告</li></ul>
+                     * 
+                     */
+                    int64_t GetReportType() const;
+
+                    /**
+                     * 设置指定申请的报告类型，可选类型如下：
+<ul><li> **0** :合同签署报告（默认）</li>
+<li> **1** :公证处核验报告</li></ul>
+                     * @param _reportType 指定申请的报告类型，可选类型如下：
+<ul><li> **0** :合同签署报告（默认）</li>
+<li> **1** :公证处核验报告</li></ul>
+                     * 
+                     */
+                    void SetReportType(const int64_t& _reportType);
+
+                    /**
+                     * 判断参数 ReportType 是否已赋值
+                     * @return ReportType 是否已赋值
+                     * 
+                     */
+                    bool ReportTypeHasBeenSet() const;
+
                 private:
 
                     /**
@@ -166,6 +195,14 @@ namespace TencentCloud
                      */
                     UserInfo m_operator;
                     bool m_operatorHasBeenSet;
+
+                    /**
+                     * 指定申请的报告类型，可选类型如下：
+<ul><li> **0** :合同签署报告（默认）</li>
+<li> **1** :公证处核验报告</li></ul>
+                     */
+                    int64_t m_reportType;
+                    bool m_reportTypeHasBeenSet;
 
                 };
             }

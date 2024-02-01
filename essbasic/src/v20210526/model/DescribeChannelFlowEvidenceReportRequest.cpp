@@ -25,7 +25,8 @@ using namespace std;
 DescribeChannelFlowEvidenceReportRequest::DescribeChannelFlowEvidenceReportRequest() :
     m_agentHasBeenSet(false),
     m_reportIdHasBeenSet(false),
-    m_operatorHasBeenSet(false)
+    m_operatorHasBeenSet(false),
+    m_reportTypeHasBeenSet(false)
 {
 }
 
@@ -60,6 +61,14 @@ string DescribeChannelFlowEvidenceReportRequest::ToJsonString() const
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
         m_operator.ToJsonObject(d[key.c_str()], allocator);
+    }
+
+    if (m_reportTypeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ReportType";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_reportType, allocator);
     }
 
 
@@ -116,6 +125,22 @@ void DescribeChannelFlowEvidenceReportRequest::SetOperator(const UserInfo& _oper
 bool DescribeChannelFlowEvidenceReportRequest::OperatorHasBeenSet() const
 {
     return m_operatorHasBeenSet;
+}
+
+int64_t DescribeChannelFlowEvidenceReportRequest::GetReportType() const
+{
+    return m_reportType;
+}
+
+void DescribeChannelFlowEvidenceReportRequest::SetReportType(const int64_t& _reportType)
+{
+    m_reportType = _reportType;
+    m_reportTypeHasBeenSet = true;
+}
+
+bool DescribeChannelFlowEvidenceReportRequest::ReportTypeHasBeenSet() const
+{
+    return m_reportTypeHasBeenSet;
 }
 
 
