@@ -38,7 +38,8 @@ ProductEntry::ProductEntry() :
     m_enableProductScriptHasBeenSet(false),
     m_createUserIdHasBeenSet(false),
     m_creatorNickNameHasBeenSet(false),
-    m_bindStrategyHasBeenSet(false)
+    m_bindStrategyHasBeenSet(false),
+    m_deviceCountHasBeenSet(false)
 {
 }
 
@@ -227,6 +228,16 @@ CoreInternalOutcome ProductEntry::Deserialize(const rapidjson::Value &value)
         m_bindStrategyHasBeenSet = true;
     }
 
+    if (value.HasMember("DeviceCount") && !value["DeviceCount"].IsNull())
+    {
+        if (!value["DeviceCount"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `ProductEntry.DeviceCount` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_deviceCount = value["DeviceCount"].GetInt64();
+        m_deviceCountHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -376,6 +387,14 @@ void ProductEntry::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Al
         string key = "BindStrategy";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_bindStrategy, allocator);
+    }
+
+    if (m_deviceCountHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "DeviceCount";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_deviceCount, allocator);
     }
 
 }
@@ -667,5 +686,21 @@ void ProductEntry::SetBindStrategy(const uint64_t& _bindStrategy)
 bool ProductEntry::BindStrategyHasBeenSet() const
 {
     return m_bindStrategyHasBeenSet;
+}
+
+int64_t ProductEntry::GetDeviceCount() const
+{
+    return m_deviceCount;
+}
+
+void ProductEntry::SetDeviceCount(const int64_t& _deviceCount)
+{
+    m_deviceCount = _deviceCount;
+    m_deviceCountHasBeenSet = true;
+}
+
+bool ProductEntry::DeviceCountHasBeenSet() const
+{
+    return m_deviceCountHasBeenSet;
 }
 

@@ -26,6 +26,8 @@
 #include <tencentcloud/core/AbstractModel.h>
 #include <tencentcloud/tione/v20211111/model/IngressPrivateLinkInfo.h>
 #include <tencentcloud/tione/v20211111/model/ServiceEIPInfo.h>
+#include <tencentcloud/tione/v20211111/model/PrivateLinkInfo.h>
+#include <tencentcloud/tione/v20211111/model/DefaultInnerCallInfo.h>
 
 
 namespace TencentCloud
@@ -98,6 +100,56 @@ namespace TencentCloud
                      */
                     bool ServiceEIPInfoHasBeenSet() const;
 
+                    /**
+                     * 获取私有连接信息
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return PrivateLinkInfos 私有连接信息
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::vector<PrivateLinkInfo> GetPrivateLinkInfos() const;
+
+                    /**
+                     * 设置私有连接信息
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _privateLinkInfos 私有连接信息
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetPrivateLinkInfos(const std::vector<PrivateLinkInfo>& _privateLinkInfos);
+
+                    /**
+                     * 判断参数 PrivateLinkInfos 是否已赋值
+                     * @return PrivateLinkInfos 是否已赋值
+                     * 
+                     */
+                    bool PrivateLinkInfosHasBeenSet() const;
+
+                    /**
+                     * 获取默认内网调用信息
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return DefaultInnerCallInfos 默认内网调用信息
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::vector<DefaultInnerCallInfo> GetDefaultInnerCallInfos() const;
+
+                    /**
+                     * 设置默认内网调用信息
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _defaultInnerCallInfos 默认内网调用信息
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetDefaultInnerCallInfos(const std::vector<DefaultInnerCallInfo>& _defaultInnerCallInfos);
+
+                    /**
+                     * 判断参数 DefaultInnerCallInfos 是否已赋值
+                     * @return DefaultInnerCallInfos 是否已赋值
+                     * 
+                     */
+                    bool DefaultInnerCallInfosHasBeenSet() const;
+
                 private:
 
                     /**
@@ -113,6 +165,20 @@ namespace TencentCloud
                      */
                     std::vector<ServiceEIPInfo> m_serviceEIPInfo;
                     bool m_serviceEIPInfoHasBeenSet;
+
+                    /**
+                     * 私有连接信息
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::vector<PrivateLinkInfo> m_privateLinkInfos;
+                    bool m_privateLinkInfosHasBeenSet;
+
+                    /**
+                     * 默认内网调用信息
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::vector<DefaultInnerCallInfo> m_defaultInnerCallInfos;
+                    bool m_defaultInnerCallInfosHasBeenSet;
 
                 };
             }

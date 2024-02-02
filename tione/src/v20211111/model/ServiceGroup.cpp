@@ -36,7 +36,9 @@ ServiceGroup::ServiceGroup() :
     m_businessStatusHasBeenSet(false),
     m_billingInfoHasBeenSet(false),
     m_createSourceHasBeenSet(false),
-    m_weightUpdateStatusHasBeenSet(false)
+    m_weightUpdateStatusHasBeenSet(false),
+    m_replicasCountHasBeenSet(false),
+    m_availableReplicasCountHasBeenSet(false)
 {
 }
 
@@ -225,6 +227,26 @@ CoreInternalOutcome ServiceGroup::Deserialize(const rapidjson::Value &value)
         m_weightUpdateStatusHasBeenSet = true;
     }
 
+    if (value.HasMember("ReplicasCount") && !value["ReplicasCount"].IsNull())
+    {
+        if (!value["ReplicasCount"].IsUint64())
+        {
+            return CoreInternalOutcome(Core::Error("response `ServiceGroup.ReplicasCount` IsUint64=false incorrectly").SetRequestId(requestId));
+        }
+        m_replicasCount = value["ReplicasCount"].GetUint64();
+        m_replicasCountHasBeenSet = true;
+    }
+
+    if (value.HasMember("AvailableReplicasCount") && !value["AvailableReplicasCount"].IsNull())
+    {
+        if (!value["AvailableReplicasCount"].IsUint64())
+        {
+            return CoreInternalOutcome(Core::Error("response `ServiceGroup.AvailableReplicasCount` IsUint64=false incorrectly").SetRequestId(requestId));
+        }
+        m_availableReplicasCount = value["AvailableReplicasCount"].GetUint64();
+        m_availableReplicasCountHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -372,6 +394,22 @@ void ServiceGroup::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Al
         string key = "WeightUpdateStatus";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_weightUpdateStatus.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_replicasCountHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ReplicasCount";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_replicasCount, allocator);
+    }
+
+    if (m_availableReplicasCountHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "AvailableReplicasCount";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_availableReplicasCount, allocator);
     }
 
 }
@@ -631,5 +669,37 @@ void ServiceGroup::SetWeightUpdateStatus(const string& _weightUpdateStatus)
 bool ServiceGroup::WeightUpdateStatusHasBeenSet() const
 {
     return m_weightUpdateStatusHasBeenSet;
+}
+
+uint64_t ServiceGroup::GetReplicasCount() const
+{
+    return m_replicasCount;
+}
+
+void ServiceGroup::SetReplicasCount(const uint64_t& _replicasCount)
+{
+    m_replicasCount = _replicasCount;
+    m_replicasCountHasBeenSet = true;
+}
+
+bool ServiceGroup::ReplicasCountHasBeenSet() const
+{
+    return m_replicasCountHasBeenSet;
+}
+
+uint64_t ServiceGroup::GetAvailableReplicasCount() const
+{
+    return m_availableReplicasCount;
+}
+
+void ServiceGroup::SetAvailableReplicasCount(const uint64_t& _availableReplicasCount)
+{
+    m_availableReplicasCount = _availableReplicasCount;
+    m_availableReplicasCountHasBeenSet = true;
+}
+
+bool ServiceGroup::AvailableReplicasCountHasBeenSet() const
+{
+    return m_availableReplicasCountHasBeenSet;
 }
 

@@ -85,15 +85,15 @@ namespace TencentCloud
                     bool ScopeHasBeenSet() const;
 
                     /**
-                     * 获取作用弄范围内旗舰版主机列表
-                     * @return Quuids 作用弄范围内旗舰版主机列表
+                     * 获取作用范围内旗舰版主机列表
+                     * @return Quuids 作用范围内旗舰版主机列表
                      * 
                      */
                     std::vector<std::string> GetQuuids() const;
 
                     /**
-                     * 设置作用弄范围内旗舰版主机列表
-                     * @param _quuids 作用弄范围内旗舰版主机列表
+                     * 设置作用范围内旗舰版主机列表
+                     * @param _quuids 作用范围内旗舰版主机列表
                      * 
                      */
                     void SetQuuids(const std::vector<std::string>& _quuids);
@@ -104,6 +104,69 @@ namespace TencentCloud
                      * 
                      */
                     bool QuuidsHasBeenSet() const;
+
+                    /**
+                     * 获取排除作用范围内旗舰版主机列表
+                     * @return ExcludeInstanceIds 排除作用范围内旗舰版主机列表
+                     * 
+                     */
+                    std::vector<std::string> GetExcludeInstanceIds() const;
+
+                    /**
+                     * 设置排除作用范围内旗舰版主机列表
+                     * @param _excludeInstanceIds 排除作用范围内旗舰版主机列表
+                     * 
+                     */
+                    void SetExcludeInstanceIds(const std::vector<std::string>& _excludeInstanceIds);
+
+                    /**
+                     * 判断参数 ExcludeInstanceIds 是否已赋值
+                     * @return ExcludeInstanceIds 是否已赋值
+                     * 
+                     */
+                    bool ExcludeInstanceIdsHasBeenSet() const;
+
+                    /**
+                     * 获取新增资产自动包含 0 不包含 1包含
+                     * @return AutoInclude 新增资产自动包含 0 不包含 1包含
+                     * 
+                     */
+                    uint64_t GetAutoInclude() const;
+
+                    /**
+                     * 设置新增资产自动包含 0 不包含 1包含
+                     * @param _autoInclude 新增资产自动包含 0 不包含 1包含
+                     * 
+                     */
+                    void SetAutoInclude(const uint64_t& _autoInclude);
+
+                    /**
+                     * 判断参数 AutoInclude 是否已赋值
+                     * @return AutoInclude 是否已赋值
+                     * 
+                     */
+                    bool AutoIncludeHasBeenSet() const;
+
+                    /**
+                     * 获取作用范围内旗舰版主机列表
+                     * @return InstanceIds 作用范围内旗舰版主机列表
+                     * 
+                     */
+                    std::vector<std::string> GetInstanceIds() const;
+
+                    /**
+                     * 设置作用范围内旗舰版主机列表
+                     * @param _instanceIds 作用范围内旗舰版主机列表
+                     * 
+                     */
+                    void SetInstanceIds(const std::vector<std::string>& _instanceIds);
+
+                    /**
+                     * 判断参数 InstanceIds 是否已赋值
+                     * @return InstanceIds 是否已赋值
+                     * 
+                     */
+                    bool InstanceIdsHasBeenSet() const;
 
                 private:
 
@@ -120,10 +183,28 @@ namespace TencentCloud
                     bool m_scopeHasBeenSet;
 
                     /**
-                     * 作用弄范围内旗舰版主机列表
+                     * 作用范围内旗舰版主机列表
                      */
                     std::vector<std::string> m_quuids;
                     bool m_quuidsHasBeenSet;
+
+                    /**
+                     * 排除作用范围内旗舰版主机列表
+                     */
+                    std::vector<std::string> m_excludeInstanceIds;
+                    bool m_excludeInstanceIdsHasBeenSet;
+
+                    /**
+                     * 新增资产自动包含 0 不包含 1包含
+                     */
+                    uint64_t m_autoInclude;
+                    bool m_autoIncludeHasBeenSet;
+
+                    /**
+                     * 作用范围内旗舰版主机列表
+                     */
+                    std::vector<std::string> m_instanceIds;
+                    bool m_instanceIdsHasBeenSet;
 
                 };
             }

@@ -444,6 +444,31 @@ wifi、wifi-ble、cellular、5g、lorawan、ble、ethernet、wifi-ethernet、els
                      */
                     bool BindStrategyHasBeenSet() const;
 
+                    /**
+                     * 获取设备数量
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return DeviceCount 设备数量
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    int64_t GetDeviceCount() const;
+
+                    /**
+                     * 设置设备数量
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _deviceCount 设备数量
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetDeviceCount(const int64_t& _deviceCount);
+
+                    /**
+                     * 判断参数 DeviceCount 是否已赋值
+                     * @return DeviceCount 是否已赋值
+                     * 
+                     */
+                    bool DeviceCountHasBeenSet() const;
+
                 private:
 
                     /**
@@ -558,6 +583,13 @@ wifi、wifi-ble、cellular、5g、lorawan、ble、ethernet、wifi-ethernet、els
                      */
                     uint64_t m_bindStrategy;
                     bool m_bindStrategyHasBeenSet;
+
+                    /**
+                     * 设备数量
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    int64_t m_deviceCount;
+                    bool m_deviceCountHasBeenSet;
 
                 };
             }

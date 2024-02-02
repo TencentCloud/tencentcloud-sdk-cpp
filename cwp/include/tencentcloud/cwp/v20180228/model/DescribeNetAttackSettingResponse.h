@@ -71,6 +71,66 @@ namespace TencentCloud
                      */
                     bool NetAttackAlarmStatusHasBeenSet() const;
 
+                    /**
+                     * 获取1 全部旗舰版主机，0 InstanceIds列表主机
+                     * @return Scope 1 全部旗舰版主机，0 InstanceIds列表主机
+                     * 
+                     */
+                    uint64_t GetScope() const;
+
+                    /**
+                     * 判断参数 Scope 是否已赋值
+                     * @return Scope 是否已赋值
+                     * 
+                     */
+                    bool ScopeHasBeenSet() const;
+
+                    /**
+                     * 获取自选主机
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return InstanceIds 自选主机
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::vector<std::string> GetInstanceIds() const;
+
+                    /**
+                     * 判断参数 InstanceIds 是否已赋值
+                     * @return InstanceIds 是否已赋值
+                     * 
+                     */
+                    bool InstanceIdsHasBeenSet() const;
+
+                    /**
+                     * 获取自选排除主机
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return ExcludeInstanceIds 自选排除主机
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::vector<std::string> GetExcludeInstanceIds() const;
+
+                    /**
+                     * 判断参数 ExcludeInstanceIds 是否已赋值
+                     * @return ExcludeInstanceIds 是否已赋值
+                     * 
+                     */
+                    bool ExcludeInstanceIdsHasBeenSet() const;
+
+                    /**
+                     * 获取新增资产自动包含 0 不包含 1包含
+                     * @return AutoInclude 新增资产自动包含 0 不包含 1包含
+                     * 
+                     */
+                    uint64_t GetAutoInclude() const;
+
+                    /**
+                     * 判断参数 AutoInclude 是否已赋值
+                     * @return AutoInclude 是否已赋值
+                     * 
+                     */
+                    bool AutoIncludeHasBeenSet() const;
+
                 private:
 
                     /**
@@ -84,6 +144,32 @@ namespace TencentCloud
                      */
                     uint64_t m_netAttackAlarmStatus;
                     bool m_netAttackAlarmStatusHasBeenSet;
+
+                    /**
+                     * 1 全部旗舰版主机，0 InstanceIds列表主机
+                     */
+                    uint64_t m_scope;
+                    bool m_scopeHasBeenSet;
+
+                    /**
+                     * 自选主机
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::vector<std::string> m_instanceIds;
+                    bool m_instanceIdsHasBeenSet;
+
+                    /**
+                     * 自选排除主机
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::vector<std::string> m_excludeInstanceIds;
+                    bool m_excludeInstanceIdsHasBeenSet;
+
+                    /**
+                     * 新增资产自动包含 0 不包含 1包含
+                     */
+                    uint64_t m_autoInclude;
+                    bool m_autoIncludeHasBeenSet;
 
                 };
             }

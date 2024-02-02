@@ -539,52 +539,52 @@ namespace TencentCloud
                     bool BusinessStatusHasBeenSet() const;
 
                     /**
-                     * 获取已废弃
+                     * 获取已废弃,以ServiceInfo中的对应为准
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return ServiceLimit 已废弃
+                     * @return ServiceLimit 已废弃,以ServiceInfo中的对应为准
 注意：此字段可能返回 null，表示取不到有效值。
-                     * 
+                     * @deprecated
                      */
                     ServiceLimit GetServiceLimit() const;
 
                     /**
-                     * 设置已废弃
+                     * 设置已废弃,以ServiceInfo中的对应为准
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _serviceLimit 已废弃
+                     * @param _serviceLimit 已废弃,以ServiceInfo中的对应为准
 注意：此字段可能返回 null，表示取不到有效值。
-                     * 
+                     * @deprecated
                      */
                     void SetServiceLimit(const ServiceLimit& _serviceLimit);
 
                     /**
                      * 判断参数 ServiceLimit 是否已赋值
                      * @return ServiceLimit 是否已赋值
-                     * 
+                     * @deprecated
                      */
                     bool ServiceLimitHasBeenSet() const;
 
                     /**
-                     * 获取已废弃
+                     * 获取已废弃,以ServiceInfo中的对应为准
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return ScheduledAction 已废弃
+                     * @return ScheduledAction 已废弃,以ServiceInfo中的对应为准
 注意：此字段可能返回 null，表示取不到有效值。
-                     * 
+                     * @deprecated
                      */
                     ScheduledAction GetScheduledAction() const;
 
                     /**
-                     * 设置已废弃
+                     * 设置已废弃,以ServiceInfo中的对应为准
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _scheduledAction 已废弃
+                     * @param _scheduledAction 已废弃,以ServiceInfo中的对应为准
 注意：此字段可能返回 null，表示取不到有效值。
-                     * 
+                     * @deprecated
                      */
                     void SetScheduledAction(const ScheduledAction& _scheduledAction);
 
                     /**
                      * 判断参数 ScheduledAction 是否已赋值
                      * @return ScheduledAction 是否已赋值
-                     * 
+                     * @deprecated
                      */
                     bool ScheduledActionHasBeenSet() const;
 
@@ -803,6 +803,31 @@ DEFAULT: 其他来源
                      */
                     bool LatestVersionHasBeenSet() const;
 
+                    /**
+                     * 获取资源组类别 托管 NORMAL，纳管 SW
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return ResourceGroupSWType 资源组类别 托管 NORMAL，纳管 SW
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::string GetResourceGroupSWType() const;
+
+                    /**
+                     * 设置资源组类别 托管 NORMAL，纳管 SW
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _resourceGroupSWType 资源组类别 托管 NORMAL，纳管 SW
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetResourceGroupSWType(const std::string& _resourceGroupSWType);
+
+                    /**
+                     * 判断参数 ResourceGroupSWType 是否已赋值
+                     * @return ResourceGroupSWType 是否已赋值
+                     * 
+                     */
+                    bool ResourceGroupSWTypeHasBeenSet() const;
+
                 private:
 
                     /**
@@ -943,14 +968,14 @@ DEFAULT: 其他来源
                     bool m_businessStatusHasBeenSet;
 
                     /**
-                     * 已废弃
+                     * 已废弃,以ServiceInfo中的对应为准
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     ServiceLimit m_serviceLimit;
                     bool m_serviceLimitHasBeenSet;
 
                     /**
-                     * 已废弃
+                     * 已废弃,以ServiceInfo中的对应为准
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     ScheduledAction m_scheduledAction;
@@ -1014,6 +1039,13 @@ DEFAULT: 其他来源
                      */
                     std::string m_latestVersion;
                     bool m_latestVersionHasBeenSet;
+
+                    /**
+                     * 资源组类别 托管 NORMAL，纳管 SW
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_resourceGroupSWType;
+                    bool m_resourceGroupSWTypeHasBeenSet;
 
                 };
             }

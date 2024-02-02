@@ -45,15 +45,23 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取资源组类型; 枚举值 TRAIN:训练 INFERENCE:推理
-                     * @return Type 资源组类型; 枚举值 TRAIN:训练 INFERENCE:推理
+                     * 获取资源组类型;
+枚举值:
+空: 通用, TRAIN: 训练, INFERENCE: 推理
+                     * @return Type 资源组类型;
+枚举值:
+空: 通用, TRAIN: 训练, INFERENCE: 推理
                      * 
                      */
                     std::string GetType() const;
 
                     /**
-                     * 设置资源组类型; 枚举值 TRAIN:训练 INFERENCE:推理
-                     * @param _type 资源组类型; 枚举值 TRAIN:训练 INFERENCE:推理
+                     * 设置资源组类型;
+枚举值:
+空: 通用, TRAIN: 训练, INFERENCE: 推理
+                     * @param _type 资源组类型;
+枚举值:
+空: 通用, TRAIN: 训练, INFERENCE: 推理
                      * 
                      */
                     void SetType(const std::string& _type);
@@ -141,19 +149,15 @@ Filter.Values: 长度为1且Filter.Fuzzy=true时，支持模糊查询; 不为1�
                     bool OffsetHasBeenSet() const;
 
                     /**
-                     * 获取返回数量，默认为20，最大值为30;
-注意：小于0则默认为20；大于30则默认为30
-                     * @return Limit 返回数量，默认为20，最大值为30;
-注意：小于0则默认为20；大于30则默认为30
+                     * 获取分页查询每页大小，默认20
+                     * @return Limit 分页查询每页大小，默认20
                      * 
                      */
                     int64_t GetLimit() const;
 
                     /**
-                     * 设置返回数量，默认为20，最大值为30;
-注意：小于0则默认为20；大于30则默认为30
-                     * @param _limit 返回数量，默认为20，最大值为30;
-注意：小于0则默认为20；大于30则默认为30
+                     * 设置分页查询每页大小，默认20
+                     * @param _limit 分页查询每页大小，默认20
                      * 
                      */
                     void SetLimit(const int64_t& _limit);
@@ -218,7 +222,9 @@ true: 不展示，false 展示；
                 private:
 
                     /**
-                     * 资源组类型; 枚举值 TRAIN:训练 INFERENCE:推理
+                     * 资源组类型;
+枚举值:
+空: 通用, TRAIN: 训练, INFERENCE: 推理
                      */
                     std::string m_type;
                     bool m_typeHasBeenSet;
@@ -245,8 +251,7 @@ Filter.Values: 长度为1且Filter.Fuzzy=true时，支持模糊查询; 不为1�
                     bool m_offsetHasBeenSet;
 
                     /**
-                     * 返回数量，默认为20，最大值为30;
-注意：小于0则默认为20；大于30则默认为30
+                     * 分页查询每页大小，默认20
                      */
                     int64_t m_limit;
                     bool m_limitHasBeenSet;

@@ -123,6 +123,22 @@ namespace TencentCloud
                      */
                     bool CheckFromListsHasBeenSet() const;
 
+                    /**
+                     * 获取漏洞标签列表
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return VulTagList 漏洞标签列表
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::vector<FilterDataObject> GetVulTagList() const;
+
+                    /**
+                     * 判断参数 VulTagList 是否已赋值
+                     * @return VulTagList 是否已赋值
+                     * 
+                     */
+                    bool VulTagListHasBeenSet() const;
+
                 private:
 
                     /**
@@ -158,6 +174,13 @@ namespace TencentCloud
                      */
                     std::vector<FilterDataObject> m_checkFromLists;
                     bool m_checkFromListsHasBeenSet;
+
+                    /**
+                     * 漏洞标签列表
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::vector<FilterDataObject> m_vulTagList;
+                    bool m_vulTagListHasBeenSet;
 
                 };
             }

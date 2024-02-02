@@ -35,7 +35,8 @@ AddUserDeviceRequest::AddUserDeviceRequest() :
     m_protocolTypeHasBeenSet(false),
     m_ipHasBeenSet(false),
     m_portHasBeenSet(false),
-    m_usernameHasBeenSet(false)
+    m_usernameHasBeenSet(false),
+    m_sNCodeHasBeenSet(false)
 {
 }
 
@@ -148,6 +149,14 @@ string AddUserDeviceRequest::ToJsonString() const
         string key = "Username";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_username.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_sNCodeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "SNCode";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_sNCode.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -364,6 +373,22 @@ void AddUserDeviceRequest::SetUsername(const string& _username)
 bool AddUserDeviceRequest::UsernameHasBeenSet() const
 {
     return m_usernameHasBeenSet;
+}
+
+string AddUserDeviceRequest::GetSNCode() const
+{
+    return m_sNCode;
+}
+
+void AddUserDeviceRequest::SetSNCode(const string& _sNCode)
+{
+    m_sNCode = _sNCode;
+    m_sNCodeHasBeenSet = true;
+}
+
+bool AddUserDeviceRequest::SNCodeHasBeenSet() const
+{
+    return m_sNCodeHasBeenSet;
 }
 
 

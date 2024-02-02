@@ -49,7 +49,8 @@ Service::Service() :
     m_weightHasBeenSet(false),
     m_createSourceHasBeenSet(false),
     m_versionHasBeenSet(false),
-    m_latestVersionHasBeenSet(false)
+    m_latestVersionHasBeenSet(false),
+    m_resourceGroupSWTypeHasBeenSet(false)
 {
 }
 
@@ -379,6 +380,16 @@ CoreInternalOutcome Service::Deserialize(const rapidjson::Value &value)
         m_latestVersionHasBeenSet = true;
     }
 
+    if (value.HasMember("ResourceGroupSWType") && !value["ResourceGroupSWType"].IsNull())
+    {
+        if (!value["ResourceGroupSWType"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `Service.ResourceGroupSWType` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_resourceGroupSWType = string(value["ResourceGroupSWType"].GetString());
+        m_resourceGroupSWTypeHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -626,6 +637,14 @@ void Service::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Allocat
         string key = "LatestVersion";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_latestVersion.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_resourceGroupSWTypeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ResourceGroupSWType";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_resourceGroupSWType.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -1093,5 +1112,21 @@ void Service::SetLatestVersion(const string& _latestVersion)
 bool Service::LatestVersionHasBeenSet() const
 {
     return m_latestVersionHasBeenSet;
+}
+
+string Service::GetResourceGroupSWType() const
+{
+    return m_resourceGroupSWType;
+}
+
+void Service::SetResourceGroupSWType(const string& _resourceGroupSWType)
+{
+    m_resourceGroupSWType = _resourceGroupSWType;
+    m_resourceGroupSWTypeHasBeenSet = true;
+}
+
+bool Service::ResourceGroupSWTypeHasBeenSet() const
+{
+    return m_resourceGroupSWTypeHasBeenSet;
 }
 

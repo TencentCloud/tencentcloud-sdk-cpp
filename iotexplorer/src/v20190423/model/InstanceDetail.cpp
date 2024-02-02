@@ -33,7 +33,9 @@ InstanceDetail::InstanceDetail() :
     m_updateTimeHasBeenSet(false),
     m_expireTimeHasBeenSet(false),
     m_totalDeviceHasBeenSet(false),
-    m_activateDeviceHasBeenSet(false)
+    m_activateDeviceHasBeenSet(false),
+    m_descriptionHasBeenSet(false),
+    m_statusHasBeenSet(false)
 {
 }
 
@@ -172,6 +174,26 @@ CoreInternalOutcome InstanceDetail::Deserialize(const rapidjson::Value &value)
         m_activateDeviceHasBeenSet = true;
     }
 
+    if (value.HasMember("Description") && !value["Description"].IsNull())
+    {
+        if (!value["Description"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `InstanceDetail.Description` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_description = string(value["Description"].GetString());
+        m_descriptionHasBeenSet = true;
+    }
+
+    if (value.HasMember("Status") && !value["Status"].IsNull())
+    {
+        if (!value["Status"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `InstanceDetail.Status` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_status = value["Status"].GetInt64();
+        m_statusHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -281,6 +303,22 @@ void InstanceDetail::ToJsonObject(rapidjson::Value &value, rapidjson::Document::
         string key = "ActivateDevice";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_activateDevice, allocator);
+    }
+
+    if (m_descriptionHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Description";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_description.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_statusHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Status";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_status, allocator);
     }
 
 }
@@ -492,5 +530,37 @@ void InstanceDetail::SetActivateDevice(const int64_t& _activateDevice)
 bool InstanceDetail::ActivateDeviceHasBeenSet() const
 {
     return m_activateDeviceHasBeenSet;
+}
+
+string InstanceDetail::GetDescription() const
+{
+    return m_description;
+}
+
+void InstanceDetail::SetDescription(const string& _description)
+{
+    m_description = _description;
+    m_descriptionHasBeenSet = true;
+}
+
+bool InstanceDetail::DescriptionHasBeenSet() const
+{
+    return m_descriptionHasBeenSet;
+}
+
+int64_t InstanceDetail::GetStatus() const
+{
+    return m_status;
+}
+
+void InstanceDetail::SetStatus(const int64_t& _status)
+{
+    m_status = _status;
+    m_statusHasBeenSet = true;
+}
+
+bool InstanceDetail::StatusHasBeenSet() const
+{
+    return m_statusHasBeenSet;
 }
 

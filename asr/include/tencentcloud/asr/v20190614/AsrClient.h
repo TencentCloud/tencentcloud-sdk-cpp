@@ -63,6 +63,8 @@
 #include <tencentcloud/asr/v20190614/model/SetVocabStateResponse.h>
 #include <tencentcloud/asr/v20190614/model/UpdateAsrVocabRequest.h>
 #include <tencentcloud/asr/v20190614/model/UpdateAsrVocabResponse.h>
+#include <tencentcloud/asr/v20190614/model/VoicePrintCompareRequest.h>
+#include <tencentcloud/asr/v20190614/model/VoicePrintCompareResponse.h>
 #include <tencentcloud/asr/v20190614/model/VoicePrintCountRequest.h>
 #include <tencentcloud/asr/v20190614/model/VoicePrintCountResponse.h>
 #include <tencentcloud/asr/v20190614/model/VoicePrintDeleteRequest.h>
@@ -147,6 +149,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::UpdateAsrVocabResponse> UpdateAsrVocabOutcome;
                 typedef std::future<UpdateAsrVocabOutcome> UpdateAsrVocabOutcomeCallable;
                 typedef std::function<void(const AsrClient*, const Model::UpdateAsrVocabRequest&, UpdateAsrVocabOutcome, const std::shared_ptr<const AsyncCallerContext>&)> UpdateAsrVocabAsyncHandler;
+                typedef Outcome<Core::Error, Model::VoicePrintCompareResponse> VoicePrintCompareOutcome;
+                typedef std::future<VoicePrintCompareOutcome> VoicePrintCompareOutcomeCallable;
+                typedef std::function<void(const AsrClient*, const Model::VoicePrintCompareRequest&, VoicePrintCompareOutcome, const std::shared_ptr<const AsyncCallerContext>&)> VoicePrintCompareAsyncHandler;
                 typedef Outcome<Core::Error, Model::VoicePrintCountResponse> VoicePrintCountOutcome;
                 typedef std::future<VoicePrintCountOutcome> VoicePrintCountOutcomeCallable;
                 typedef std::function<void(const AsrClient*, const Model::VoicePrintCountRequest&, VoicePrintCountOutcome, const std::shared_ptr<const AsyncCallerContext>&)> VoicePrintCountAsyncHandler;
@@ -372,6 +377,15 @@ namespace TencentCloud
                 UpdateAsrVocabOutcome UpdateAsrVocab(const Model::UpdateAsrVocabRequest &request);
                 void UpdateAsrVocabAsync(const Model::UpdateAsrVocabRequest& request, const UpdateAsrVocabAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 UpdateAsrVocabOutcomeCallable UpdateAsrVocabCallable(const Model::UpdateAsrVocabRequest& request);
+
+                /**
+                 *通过比对两段音频内说话人的声纹，得到一个打分，可通过打分判断两段音频声纹相似度,  打分区间[0 - 100]。 音频要求：16k采样率， 16bit位深，pcm或者wav格式， 单声道，总时长不超过30秒的音频，base64编码数据大小不超过2M，音频内容只有一个说话人声音，并且尽可能清晰，这样结果更加准确。
+                 * @param req VoicePrintCompareRequest
+                 * @return VoicePrintCompareOutcome
+                 */
+                VoicePrintCompareOutcome VoicePrintCompare(const Model::VoicePrintCompareRequest &request);
+                void VoicePrintCompareAsync(const Model::VoicePrintCompareRequest& request, const VoicePrintCompareAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                VoicePrintCompareOutcomeCallable VoicePrintCompareCallable(const Model::VoicePrintCompareRequest& request);
 
                 /**
                  *统计并返回注册的说话人id总数

@@ -101,6 +101,52 @@ namespace TencentCloud
                      */
                     bool FlagshipCountHasBeenSet() const;
 
+                    /**
+                     * 获取影响主机id列表
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return InstanceIds 影响主机id列表
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::vector<std::string> GetInstanceIds() const;
+
+                    /**
+                     * 判断参数 InstanceIds 是否已赋值
+                     * @return InstanceIds 是否已赋值
+                     * 
+                     */
+                    bool InstanceIdsHasBeenSet() const;
+
+                    /**
+                     * 获取新增旗舰版主机自动加入;1是，0否 
+                     * @return AutoInclude 新增旗舰版主机自动加入;1是，0否 
+                     * 
+                     */
+                    uint64_t GetAutoInclude() const;
+
+                    /**
+                     * 判断参数 AutoInclude 是否已赋值
+                     * @return AutoInclude 是否已赋值
+                     * 
+                     */
+                    bool AutoIncludeHasBeenSet() const;
+
+                    /**
+                     * 获取排除的主机id列表
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return ExcludeInstanceIds 排除的主机id列表
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::vector<std::string> GetExcludeInstanceIds() const;
+
+                    /**
+                     * 判断参数 ExcludeInstanceIds 是否已赋值
+                     * @return ExcludeInstanceIds 是否已赋值
+                     * 
+                     */
+                    bool ExcludeInstanceIdsHasBeenSet() const;
+
                 private:
 
                     /**
@@ -127,6 +173,26 @@ namespace TencentCloud
                      */
                     uint64_t m_flagshipCount;
                     bool m_flagshipCountHasBeenSet;
+
+                    /**
+                     * 影响主机id列表
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::vector<std::string> m_instanceIds;
+                    bool m_instanceIdsHasBeenSet;
+
+                    /**
+                     * 新增旗舰版主机自动加入;1是，0否 
+                     */
+                    uint64_t m_autoInclude;
+                    bool m_autoIncludeHasBeenSet;
+
+                    /**
+                     * 排除的主机id列表
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::vector<std::string> m_excludeInstanceIds;
+                    bool m_excludeInstanceIdsHasBeenSet;
 
                 };
             }

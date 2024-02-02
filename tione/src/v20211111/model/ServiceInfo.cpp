@@ -33,7 +33,6 @@ ServiceInfo::ServiceInfo() :
     m_horizontalPodAutoscalerHasBeenSet(false),
     m_statusHasBeenSet(false),
     m_weightHasBeenSet(false),
-    m_podListHasBeenSet(false),
     m_resourceTotalHasBeenSet(false),
     m_oldReplicasHasBeenSet(false),
     m_hybridBillingPrepaidReplicasHasBeenSet(false),
@@ -43,6 +42,7 @@ ServiceInfo::ServiceInfo() :
     m_cronScaleJobsHasBeenSet(false),
     m_scaleStrategyHasBeenSet(false),
     m_scheduledActionHasBeenSet(false),
+    m_podListHasBeenSet(false),
     m_podsHasBeenSet(false),
     m_podInfosHasBeenSet(false),
     m_serviceLimitHasBeenSet(false),
@@ -231,19 +231,6 @@ CoreInternalOutcome ServiceInfo::Deserialize(const rapidjson::Value &value)
         m_weightHasBeenSet = true;
     }
 
-    if (value.HasMember("PodList") && !value["PodList"].IsNull())
-    {
-        if (!value["PodList"].IsArray())
-            return CoreInternalOutcome(Core::Error("response `ServiceInfo.PodList` is not array type"));
-
-        const rapidjson::Value &tmpValue = value["PodList"];
-        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
-        {
-            m_podList.push_back((*itr).GetString());
-        }
-        m_podListHasBeenSet = true;
-    }
-
     if (value.HasMember("ResourceTotal") && !value["ResourceTotal"].IsNull())
     {
         if (!value["ResourceTotal"].IsObject())
@@ -349,6 +336,19 @@ CoreInternalOutcome ServiceInfo::Deserialize(const rapidjson::Value &value)
         }
         m_scheduledAction = string(value["ScheduledAction"].GetString());
         m_scheduledActionHasBeenSet = true;
+    }
+
+    if (value.HasMember("PodList") && !value["PodList"].IsNull())
+    {
+        if (!value["PodList"].IsArray())
+            return CoreInternalOutcome(Core::Error("response `ServiceInfo.PodList` is not array type"));
+
+        const rapidjson::Value &tmpValue = value["PodList"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            m_podList.push_back((*itr).GetString());
+        }
+        m_podListHasBeenSet = true;
     }
 
     if (value.HasMember("Pods") && !value["Pods"].IsNull())
@@ -592,19 +592,6 @@ void ServiceInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Document::All
         value.AddMember(iKey, m_weight, allocator);
     }
 
-    if (m_podListHasBeenSet)
-    {
-        rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "PodList";
-        iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
-
-        for (auto itr = m_podList.begin(); itr != m_podList.end(); ++itr)
-        {
-            value[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
-        }
-    }
-
     if (m_resourceTotalHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
@@ -683,6 +670,19 @@ void ServiceInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Document::All
         string key = "ScheduledAction";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_scheduledAction.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_podListHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "PodList";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        for (auto itr = m_podList.begin(); itr != m_podList.end(); ++itr)
+        {
+            value[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
+        }
     }
 
     if (m_podsHasBeenSet)
@@ -956,22 +956,6 @@ bool ServiceInfo::WeightHasBeenSet() const
     return m_weightHasBeenSet;
 }
 
-vector<string> ServiceInfo::GetPodList() const
-{
-    return m_podList;
-}
-
-void ServiceInfo::SetPodList(const vector<string>& _podList)
-{
-    m_podList = _podList;
-    m_podListHasBeenSet = true;
-}
-
-bool ServiceInfo::PodListHasBeenSet() const
-{
-    return m_podListHasBeenSet;
-}
-
 ResourceInfo ServiceInfo::GetResourceTotal() const
 {
     return m_resourceTotal;
@@ -1114,6 +1098,22 @@ void ServiceInfo::SetScheduledAction(const string& _scheduledAction)
 bool ServiceInfo::ScheduledActionHasBeenSet() const
 {
     return m_scheduledActionHasBeenSet;
+}
+
+vector<string> ServiceInfo::GetPodList() const
+{
+    return m_podList;
+}
+
+void ServiceInfo::SetPodList(const vector<string>& _podList)
+{
+    m_podList = _podList;
+    m_podListHasBeenSet = true;
+}
+
+bool ServiceInfo::PodListHasBeenSet() const
+{
+    return m_podListHasBeenSet;
 }
 
 Pod ServiceInfo::GetPods() const

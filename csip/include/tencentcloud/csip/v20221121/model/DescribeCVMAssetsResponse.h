@@ -23,6 +23,7 @@
 #include <tencentcloud/core/AbstractModel.h>
 #include <tencentcloud/csip/v20221121/model/CVMAssetVO.h>
 #include <tencentcloud/csip/v20221121/model/FilterDataObject.h>
+#include <tencentcloud/csip/v20221121/model/AssetInstanceTypeMap.h>
 
 
 namespace TencentCloud
@@ -221,6 +222,22 @@ namespace TencentCloud
                      */
                     bool OsListHasBeenSet() const;
 
+                    /**
+                     * 获取资产类型和实例类型的对应关系
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return AssetMapInstanceTypeList 资产类型和实例类型的对应关系
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::vector<AssetInstanceTypeMap> GetAssetMapInstanceTypeList() const;
+
+                    /**
+                     * 判断参数 AssetMapInstanceTypeList 是否已赋值
+                     * @return AssetMapInstanceTypeList 是否已赋值
+                     * 
+                     */
+                    bool AssetMapInstanceTypeListHasBeenSet() const;
+
                 private:
 
                     /**
@@ -299,6 +316,13 @@ namespace TencentCloud
                      */
                     std::vector<FilterDataObject> m_osList;
                     bool m_osListHasBeenSet;
+
+                    /**
+                     * 资产类型和实例类型的对应关系
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::vector<AssetInstanceTypeMap> m_assetMapInstanceTypeList;
+                    bool m_assetMapInstanceTypeListHasBeenSet;
 
                 };
             }

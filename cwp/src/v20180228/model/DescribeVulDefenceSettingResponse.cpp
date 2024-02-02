@@ -27,7 +27,10 @@ DescribeVulDefenceSettingResponse::DescribeVulDefenceSettingResponse() :
     m_enableHasBeenSet(false),
     m_scopeHasBeenSet(false),
     m_quuidsHasBeenSet(false),
-    m_flagshipCountHasBeenSet(false)
+    m_flagshipCountHasBeenSet(false),
+    m_instanceIdsHasBeenSet(false),
+    m_autoIncludeHasBeenSet(false),
+    m_excludeInstanceIdsHasBeenSet(false)
 {
 }
 
@@ -108,6 +111,42 @@ CoreInternalOutcome DescribeVulDefenceSettingResponse::Deserialize(const string 
         m_flagshipCountHasBeenSet = true;
     }
 
+    if (rsp.HasMember("InstanceIds") && !rsp["InstanceIds"].IsNull())
+    {
+        if (!rsp["InstanceIds"].IsArray())
+            return CoreInternalOutcome(Core::Error("response `InstanceIds` is not array type"));
+
+        const rapidjson::Value &tmpValue = rsp["InstanceIds"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            m_instanceIds.push_back((*itr).GetString());
+        }
+        m_instanceIdsHasBeenSet = true;
+    }
+
+    if (rsp.HasMember("AutoInclude") && !rsp["AutoInclude"].IsNull())
+    {
+        if (!rsp["AutoInclude"].IsUint64())
+        {
+            return CoreInternalOutcome(Core::Error("response `AutoInclude` IsUint64=false incorrectly").SetRequestId(requestId));
+        }
+        m_autoInclude = rsp["AutoInclude"].GetUint64();
+        m_autoIncludeHasBeenSet = true;
+    }
+
+    if (rsp.HasMember("ExcludeInstanceIds") && !rsp["ExcludeInstanceIds"].IsNull())
+    {
+        if (!rsp["ExcludeInstanceIds"].IsArray())
+            return CoreInternalOutcome(Core::Error("response `ExcludeInstanceIds` is not array type"));
+
+        const rapidjson::Value &tmpValue = rsp["ExcludeInstanceIds"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            m_excludeInstanceIds.push_back((*itr).GetString());
+        }
+        m_excludeInstanceIdsHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -153,6 +192,40 @@ string DescribeVulDefenceSettingResponse::ToJsonString() const
         string key = "FlagshipCount";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_flagshipCount, allocator);
+    }
+
+    if (m_instanceIdsHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "InstanceIds";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        for (auto itr = m_instanceIds.begin(); itr != m_instanceIds.end(); ++itr)
+        {
+            value[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
+        }
+    }
+
+    if (m_autoIncludeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "AutoInclude";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_autoInclude, allocator);
+    }
+
+    if (m_excludeInstanceIdsHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ExcludeInstanceIds";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        for (auto itr = m_excludeInstanceIds.begin(); itr != m_excludeInstanceIds.end(); ++itr)
+        {
+            value[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
+        }
     }
 
     rapidjson::Value iKey(rapidjson::kStringType);
@@ -205,6 +278,36 @@ uint64_t DescribeVulDefenceSettingResponse::GetFlagshipCount() const
 bool DescribeVulDefenceSettingResponse::FlagshipCountHasBeenSet() const
 {
     return m_flagshipCountHasBeenSet;
+}
+
+vector<string> DescribeVulDefenceSettingResponse::GetInstanceIds() const
+{
+    return m_instanceIds;
+}
+
+bool DescribeVulDefenceSettingResponse::InstanceIdsHasBeenSet() const
+{
+    return m_instanceIdsHasBeenSet;
+}
+
+uint64_t DescribeVulDefenceSettingResponse::GetAutoInclude() const
+{
+    return m_autoInclude;
+}
+
+bool DescribeVulDefenceSettingResponse::AutoIncludeHasBeenSet() const
+{
+    return m_autoIncludeHasBeenSet;
+}
+
+vector<string> DescribeVulDefenceSettingResponse::GetExcludeInstanceIds() const
+{
+    return m_excludeInstanceIds;
+}
+
+bool DescribeVulDefenceSettingResponse::ExcludeInstanceIdsHasBeenSet() const
+{
+    return m_excludeInstanceIdsHasBeenSet;
 }
 
 

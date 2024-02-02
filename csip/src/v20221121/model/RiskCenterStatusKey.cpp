@@ -22,9 +22,9 @@ using namespace std;
 
 RiskCenterStatusKey::RiskCenterStatusKey() :
     m_idHasBeenSet(false),
-    m_appIdHasBeenSet(false),
     m_publicIPDomainHasBeenSet(false),
-    m_instanceIdHasBeenSet(false)
+    m_instanceIdHasBeenSet(false),
+    m_appIdHasBeenSet(false)
 {
 }
 
@@ -41,16 +41,6 @@ CoreInternalOutcome RiskCenterStatusKey::Deserialize(const rapidjson::Value &val
         }
         m_id = string(value["Id"].GetString());
         m_idHasBeenSet = true;
-    }
-
-    if (value.HasMember("AppId") && !value["AppId"].IsNull())
-    {
-        if (!value["AppId"].IsString())
-        {
-            return CoreInternalOutcome(Core::Error("response `RiskCenterStatusKey.AppId` IsString=false incorrectly").SetRequestId(requestId));
-        }
-        m_appId = string(value["AppId"].GetString());
-        m_appIdHasBeenSet = true;
     }
 
     if (value.HasMember("PublicIPDomain") && !value["PublicIPDomain"].IsNull())
@@ -73,6 +63,16 @@ CoreInternalOutcome RiskCenterStatusKey::Deserialize(const rapidjson::Value &val
         m_instanceIdHasBeenSet = true;
     }
 
+    if (value.HasMember("AppId") && !value["AppId"].IsNull())
+    {
+        if (!value["AppId"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `RiskCenterStatusKey.AppId` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_appId = string(value["AppId"].GetString());
+        m_appIdHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -86,14 +86,6 @@ void RiskCenterStatusKey::ToJsonObject(rapidjson::Value &value, rapidjson::Docum
         string key = "Id";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_id.c_str(), allocator).Move(), allocator);
-    }
-
-    if (m_appIdHasBeenSet)
-    {
-        rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "AppId";
-        iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, rapidjson::Value(m_appId.c_str(), allocator).Move(), allocator);
     }
 
     if (m_publicIPDomainHasBeenSet)
@@ -110,6 +102,14 @@ void RiskCenterStatusKey::ToJsonObject(rapidjson::Value &value, rapidjson::Docum
         string key = "InstanceId";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_instanceId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_appIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "AppId";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_appId.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -129,22 +129,6 @@ void RiskCenterStatusKey::SetId(const string& _id)
 bool RiskCenterStatusKey::IdHasBeenSet() const
 {
     return m_idHasBeenSet;
-}
-
-string RiskCenterStatusKey::GetAppId() const
-{
-    return m_appId;
-}
-
-void RiskCenterStatusKey::SetAppId(const string& _appId)
-{
-    m_appId = _appId;
-    m_appIdHasBeenSet = true;
-}
-
-bool RiskCenterStatusKey::AppIdHasBeenSet() const
-{
-    return m_appIdHasBeenSet;
 }
 
 string RiskCenterStatusKey::GetPublicIPDomain() const
@@ -177,5 +161,21 @@ void RiskCenterStatusKey::SetInstanceId(const string& _instanceId)
 bool RiskCenterStatusKey::InstanceIdHasBeenSet() const
 {
     return m_instanceIdHasBeenSet;
+}
+
+string RiskCenterStatusKey::GetAppId() const
+{
+    return m_appId;
+}
+
+void RiskCenterStatusKey::SetAppId(const string& _appId)
+{
+    m_appId = _appId;
+    m_appIdHasBeenSet = true;
+}
+
+bool RiskCenterStatusKey::AppIdHasBeenSet() const
+{
+    return m_appIdHasBeenSet;
 }
 

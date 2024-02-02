@@ -86,15 +86,19 @@ namespace TencentCloud
                     bool OffsetHasBeenSet() const;
 
                     /**
-                     * 获取每页返回数量，默认值为10，最大值为100。
-                     * @return Limit 每页返回数量，默认值为10，最大值为100。
+                     * 获取每页返回数量，默认值为100，最大值为100。
+如果limit和offset都为0，则查询全部记录；
+                     * @return Limit 每页返回数量，默认值为100，最大值为100。
+如果limit和offset都为0，则查询全部记录；
                      * 
                      */
                     uint64_t GetLimit() const;
 
                     /**
-                     * 设置每页返回数量，默认值为10，最大值为100。
-                     * @param _limit 每页返回数量，默认值为10，最大值为100。
+                     * 设置每页返回数量，默认值为100，最大值为100。
+如果limit和offset都为0，则查询全部记录；
+                     * @param _limit 每页返回数量，默认值为100，最大值为100。
+如果limit和offset都为0，则查询全部记录；
                      * 
                      */
                     void SetLimit(const uint64_t& _limit);
@@ -184,7 +188,8 @@ namespace TencentCloud
                     bool m_offsetHasBeenSet;
 
                     /**
-                     * 每页返回数量，默认值为10，最大值为100。
+                     * 每页返回数量，默认值为100，最大值为100。
+如果limit和offset都为0，则查询全部记录；
                      */
                     uint64_t m_limit;
                     bool m_limitHasBeenSet;

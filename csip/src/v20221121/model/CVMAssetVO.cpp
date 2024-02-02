@@ -71,7 +71,19 @@ CVMAssetVO::CVMAssetVO() :
     m_osHasBeenSet(false),
     m_riskExposureHasBeenSet(false),
     m_bASAgentStatusHasBeenSet(false),
-    m_isNewAssetHasBeenSet(false)
+    m_isNewAssetHasBeenSet(false),
+    m_cVMAgentStatusHasBeenSet(false),
+    m_cVMStatusHasBeenSet(false),
+    m_defenseModelHasBeenSet(false),
+    m_tatStatusHasBeenSet(false),
+    m_cpuTrendHasBeenSet(false),
+    m_memoryTrendHasBeenSet(false),
+    m_agentStatusHasBeenSet(false),
+    m_closeDefenseCountHasBeenSet(false),
+    m_instanceStateHasBeenSet(false),
+    m_securityGroupIdsHasBeenSet(false),
+    m_agentMemRssHasBeenSet(false),
+    m_agentCpuPerHasBeenSet(false)
 {
 }
 
@@ -600,6 +612,149 @@ CoreInternalOutcome CVMAssetVO::Deserialize(const rapidjson::Value &value)
         m_isNewAssetHasBeenSet = true;
     }
 
+    if (value.HasMember("CVMAgentStatus") && !value["CVMAgentStatus"].IsNull())
+    {
+        if (!value["CVMAgentStatus"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `CVMAssetVO.CVMAgentStatus` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_cVMAgentStatus = value["CVMAgentStatus"].GetInt64();
+        m_cVMAgentStatusHasBeenSet = true;
+    }
+
+    if (value.HasMember("CVMStatus") && !value["CVMStatus"].IsNull())
+    {
+        if (!value["CVMStatus"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `CVMAssetVO.CVMStatus` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_cVMStatus = value["CVMStatus"].GetInt64();
+        m_cVMStatusHasBeenSet = true;
+    }
+
+    if (value.HasMember("DefenseModel") && !value["DefenseModel"].IsNull())
+    {
+        if (!value["DefenseModel"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `CVMAssetVO.DefenseModel` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_defenseModel = value["DefenseModel"].GetInt64();
+        m_defenseModelHasBeenSet = true;
+    }
+
+    if (value.HasMember("TatStatus") && !value["TatStatus"].IsNull())
+    {
+        if (!value["TatStatus"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `CVMAssetVO.TatStatus` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_tatStatus = value["TatStatus"].GetInt64();
+        m_tatStatusHasBeenSet = true;
+    }
+
+    if (value.HasMember("CpuTrend") && !value["CpuTrend"].IsNull())
+    {
+        if (!value["CpuTrend"].IsArray())
+            return CoreInternalOutcome(Core::Error("response `CVMAssetVO.CpuTrend` is not array type"));
+
+        const rapidjson::Value &tmpValue = value["CpuTrend"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            Element item;
+            CoreInternalOutcome outcome = item.Deserialize(*itr);
+            if (!outcome.IsSuccess())
+            {
+                outcome.GetError().SetRequestId(requestId);
+                return outcome;
+            }
+            m_cpuTrend.push_back(item);
+        }
+        m_cpuTrendHasBeenSet = true;
+    }
+
+    if (value.HasMember("MemoryTrend") && !value["MemoryTrend"].IsNull())
+    {
+        if (!value["MemoryTrend"].IsArray())
+            return CoreInternalOutcome(Core::Error("response `CVMAssetVO.MemoryTrend` is not array type"));
+
+        const rapidjson::Value &tmpValue = value["MemoryTrend"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            Element item;
+            CoreInternalOutcome outcome = item.Deserialize(*itr);
+            if (!outcome.IsSuccess())
+            {
+                outcome.GetError().SetRequestId(requestId);
+                return outcome;
+            }
+            m_memoryTrend.push_back(item);
+        }
+        m_memoryTrendHasBeenSet = true;
+    }
+
+    if (value.HasMember("AgentStatus") && !value["AgentStatus"].IsNull())
+    {
+        if (!value["AgentStatus"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `CVMAssetVO.AgentStatus` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_agentStatus = value["AgentStatus"].GetInt64();
+        m_agentStatusHasBeenSet = true;
+    }
+
+    if (value.HasMember("CloseDefenseCount") && !value["CloseDefenseCount"].IsNull())
+    {
+        if (!value["CloseDefenseCount"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `CVMAssetVO.CloseDefenseCount` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_closeDefenseCount = value["CloseDefenseCount"].GetInt64();
+        m_closeDefenseCountHasBeenSet = true;
+    }
+
+    if (value.HasMember("InstanceState") && !value["InstanceState"].IsNull())
+    {
+        if (!value["InstanceState"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `CVMAssetVO.InstanceState` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_instanceState = string(value["InstanceState"].GetString());
+        m_instanceStateHasBeenSet = true;
+    }
+
+    if (value.HasMember("SecurityGroupIds") && !value["SecurityGroupIds"].IsNull())
+    {
+        if (!value["SecurityGroupIds"].IsArray())
+            return CoreInternalOutcome(Core::Error("response `CVMAssetVO.SecurityGroupIds` is not array type"));
+
+        const rapidjson::Value &tmpValue = value["SecurityGroupIds"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            m_securityGroupIds.push_back((*itr).GetString());
+        }
+        m_securityGroupIdsHasBeenSet = true;
+    }
+
+    if (value.HasMember("AgentMemRss") && !value["AgentMemRss"].IsNull())
+    {
+        if (!value["AgentMemRss"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `CVMAssetVO.AgentMemRss` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_agentMemRss = value["AgentMemRss"].GetInt64();
+        m_agentMemRssHasBeenSet = true;
+    }
+
+    if (value.HasMember("AgentCpuPer") && !value["AgentCpuPer"].IsNull())
+    {
+        if (!value["AgentCpuPer"].IsLosslessDouble())
+        {
+            return CoreInternalOutcome(Core::Error("response `CVMAssetVO.AgentCpuPer` IsLosslessDouble=false incorrectly").SetRequestId(requestId));
+        }
+        m_agentCpuPer = value["AgentCpuPer"].GetDouble();
+        m_agentCpuPerHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -1020,6 +1175,121 @@ void CVMAssetVO::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Allo
         string key = "IsNewAsset";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_isNewAsset, allocator);
+    }
+
+    if (m_cVMAgentStatusHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "CVMAgentStatus";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_cVMAgentStatus, allocator);
+    }
+
+    if (m_cVMStatusHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "CVMStatus";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_cVMStatus, allocator);
+    }
+
+    if (m_defenseModelHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "DefenseModel";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_defenseModel, allocator);
+    }
+
+    if (m_tatStatusHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "TatStatus";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_tatStatus, allocator);
+    }
+
+    if (m_cpuTrendHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "CpuTrend";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_cpuTrend.begin(); itr != m_cpuTrend.end(); ++itr, ++i)
+        {
+            value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(value[key.c_str()][i], allocator);
+        }
+    }
+
+    if (m_memoryTrendHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "MemoryTrend";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_memoryTrend.begin(); itr != m_memoryTrend.end(); ++itr, ++i)
+        {
+            value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(value[key.c_str()][i], allocator);
+        }
+    }
+
+    if (m_agentStatusHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "AgentStatus";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_agentStatus, allocator);
+    }
+
+    if (m_closeDefenseCountHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "CloseDefenseCount";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_closeDefenseCount, allocator);
+    }
+
+    if (m_instanceStateHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "InstanceState";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_instanceState.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_securityGroupIdsHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "SecurityGroupIds";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        for (auto itr = m_securityGroupIds.begin(); itr != m_securityGroupIds.end(); ++itr)
+        {
+            value[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
+        }
+    }
+
+    if (m_agentMemRssHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "AgentMemRss";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_agentMemRss, allocator);
+    }
+
+    if (m_agentCpuPerHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "AgentCpuPer";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_agentCpuPer, allocator);
     }
 
 }
@@ -1839,5 +2109,197 @@ void CVMAssetVO::SetIsNewAsset(const uint64_t& _isNewAsset)
 bool CVMAssetVO::IsNewAssetHasBeenSet() const
 {
     return m_isNewAssetHasBeenSet;
+}
+
+int64_t CVMAssetVO::GetCVMAgentStatus() const
+{
+    return m_cVMAgentStatus;
+}
+
+void CVMAssetVO::SetCVMAgentStatus(const int64_t& _cVMAgentStatus)
+{
+    m_cVMAgentStatus = _cVMAgentStatus;
+    m_cVMAgentStatusHasBeenSet = true;
+}
+
+bool CVMAssetVO::CVMAgentStatusHasBeenSet() const
+{
+    return m_cVMAgentStatusHasBeenSet;
+}
+
+int64_t CVMAssetVO::GetCVMStatus() const
+{
+    return m_cVMStatus;
+}
+
+void CVMAssetVO::SetCVMStatus(const int64_t& _cVMStatus)
+{
+    m_cVMStatus = _cVMStatus;
+    m_cVMStatusHasBeenSet = true;
+}
+
+bool CVMAssetVO::CVMStatusHasBeenSet() const
+{
+    return m_cVMStatusHasBeenSet;
+}
+
+int64_t CVMAssetVO::GetDefenseModel() const
+{
+    return m_defenseModel;
+}
+
+void CVMAssetVO::SetDefenseModel(const int64_t& _defenseModel)
+{
+    m_defenseModel = _defenseModel;
+    m_defenseModelHasBeenSet = true;
+}
+
+bool CVMAssetVO::DefenseModelHasBeenSet() const
+{
+    return m_defenseModelHasBeenSet;
+}
+
+int64_t CVMAssetVO::GetTatStatus() const
+{
+    return m_tatStatus;
+}
+
+void CVMAssetVO::SetTatStatus(const int64_t& _tatStatus)
+{
+    m_tatStatus = _tatStatus;
+    m_tatStatusHasBeenSet = true;
+}
+
+bool CVMAssetVO::TatStatusHasBeenSet() const
+{
+    return m_tatStatusHasBeenSet;
+}
+
+vector<Element> CVMAssetVO::GetCpuTrend() const
+{
+    return m_cpuTrend;
+}
+
+void CVMAssetVO::SetCpuTrend(const vector<Element>& _cpuTrend)
+{
+    m_cpuTrend = _cpuTrend;
+    m_cpuTrendHasBeenSet = true;
+}
+
+bool CVMAssetVO::CpuTrendHasBeenSet() const
+{
+    return m_cpuTrendHasBeenSet;
+}
+
+vector<Element> CVMAssetVO::GetMemoryTrend() const
+{
+    return m_memoryTrend;
+}
+
+void CVMAssetVO::SetMemoryTrend(const vector<Element>& _memoryTrend)
+{
+    m_memoryTrend = _memoryTrend;
+    m_memoryTrendHasBeenSet = true;
+}
+
+bool CVMAssetVO::MemoryTrendHasBeenSet() const
+{
+    return m_memoryTrendHasBeenSet;
+}
+
+int64_t CVMAssetVO::GetAgentStatus() const
+{
+    return m_agentStatus;
+}
+
+void CVMAssetVO::SetAgentStatus(const int64_t& _agentStatus)
+{
+    m_agentStatus = _agentStatus;
+    m_agentStatusHasBeenSet = true;
+}
+
+bool CVMAssetVO::AgentStatusHasBeenSet() const
+{
+    return m_agentStatusHasBeenSet;
+}
+
+int64_t CVMAssetVO::GetCloseDefenseCount() const
+{
+    return m_closeDefenseCount;
+}
+
+void CVMAssetVO::SetCloseDefenseCount(const int64_t& _closeDefenseCount)
+{
+    m_closeDefenseCount = _closeDefenseCount;
+    m_closeDefenseCountHasBeenSet = true;
+}
+
+bool CVMAssetVO::CloseDefenseCountHasBeenSet() const
+{
+    return m_closeDefenseCountHasBeenSet;
+}
+
+string CVMAssetVO::GetInstanceState() const
+{
+    return m_instanceState;
+}
+
+void CVMAssetVO::SetInstanceState(const string& _instanceState)
+{
+    m_instanceState = _instanceState;
+    m_instanceStateHasBeenSet = true;
+}
+
+bool CVMAssetVO::InstanceStateHasBeenSet() const
+{
+    return m_instanceStateHasBeenSet;
+}
+
+vector<string> CVMAssetVO::GetSecurityGroupIds() const
+{
+    return m_securityGroupIds;
+}
+
+void CVMAssetVO::SetSecurityGroupIds(const vector<string>& _securityGroupIds)
+{
+    m_securityGroupIds = _securityGroupIds;
+    m_securityGroupIdsHasBeenSet = true;
+}
+
+bool CVMAssetVO::SecurityGroupIdsHasBeenSet() const
+{
+    return m_securityGroupIdsHasBeenSet;
+}
+
+int64_t CVMAssetVO::GetAgentMemRss() const
+{
+    return m_agentMemRss;
+}
+
+void CVMAssetVO::SetAgentMemRss(const int64_t& _agentMemRss)
+{
+    m_agentMemRss = _agentMemRss;
+    m_agentMemRssHasBeenSet = true;
+}
+
+bool CVMAssetVO::AgentMemRssHasBeenSet() const
+{
+    return m_agentMemRssHasBeenSet;
+}
+
+double CVMAssetVO::GetAgentCpuPer() const
+{
+    return m_agentCpuPer;
+}
+
+void CVMAssetVO::SetAgentCpuPer(const double& _agentCpuPer)
+{
+    m_agentCpuPer = _agentCpuPer;
+    m_agentCpuPerHasBeenSet = true;
+}
+
+bool CVMAssetVO::AgentCpuPerHasBeenSet() const
+{
+    return m_agentCpuPerHasBeenSet;
 }
 

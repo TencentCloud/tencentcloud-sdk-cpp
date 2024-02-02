@@ -43,7 +43,8 @@ FakeURLData::FakeURLData() :
     m_certificationStatusHasBeenSet(false),
     m_snapshotHasBeenSet(false),
     m_accountStatusHasBeenSet(false),
-    m_auditStatusHasBeenSet(false)
+    m_auditStatusHasBeenSet(false),
+    m_offlineTimeHasBeenSet(false)
 {
 }
 
@@ -282,6 +283,16 @@ CoreInternalOutcome FakeURLData::Deserialize(const rapidjson::Value &value)
         m_auditStatusHasBeenSet = true;
     }
 
+    if (value.HasMember("OfflineTime") && !value["OfflineTime"].IsNull())
+    {
+        if (!value["OfflineTime"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `FakeURLData.OfflineTime` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_offlineTime = string(value["OfflineTime"].GetString());
+        m_offlineTimeHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -471,6 +482,14 @@ void FakeURLData::ToJsonObject(rapidjson::Value &value, rapidjson::Document::All
         string key = "AuditStatus";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_auditStatus, allocator);
+    }
+
+    if (m_offlineTimeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "OfflineTime";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_offlineTime.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -842,5 +861,21 @@ void FakeURLData::SetAuditStatus(const int64_t& _auditStatus)
 bool FakeURLData::AuditStatusHasBeenSet() const
 {
     return m_auditStatusHasBeenSet;
+}
+
+string FakeURLData::GetOfflineTime() const
+{
+    return m_offlineTime;
+}
+
+void FakeURLData::SetOfflineTime(const string& _offlineTime)
+{
+    m_offlineTime = _offlineTime;
+    m_offlineTimeHasBeenSet = true;
+}
+
+bool FakeURLData::OfflineTimeHasBeenSet() const
+{
+    return m_offlineTimeHasBeenSet;
 }
 

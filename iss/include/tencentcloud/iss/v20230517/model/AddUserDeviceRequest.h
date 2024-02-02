@@ -64,15 +64,15 @@ namespace TencentCloud
                     bool NameHasBeenSet() const;
 
                     /**
-                     * 获取设备接入协议（1:RTMP,2:GB,3:GW）
-                     * @return AccessProtocol 设备接入协议（1:RTMP,2:GB,3:GW）
+                     * 获取设备接入协议（1:RTMP,2:GB,3:GW,4:IVCP）
+                     * @return AccessProtocol 设备接入协议（1:RTMP,2:GB,3:GW,4:IVCP）
                      * 
                      */
                     int64_t GetAccessProtocol() const;
 
                     /**
-                     * 设置设备接入协议（1:RTMP,2:GB,3:GW）
-                     * @param _accessProtocol 设备接入协议（1:RTMP,2:GB,3:GW）
+                     * 设置设备接入协议（1:RTMP,2:GB,3:GW,4:IVCP）
+                     * @param _accessProtocol 设备接入协议（1:RTMP,2:GB,3:GW,4:IVCP）
                      * 
                      */
                     void SetAccessProtocol(const int64_t& _accessProtocol);
@@ -85,15 +85,15 @@ namespace TencentCloud
                     bool AccessProtocolHasBeenSet() const;
 
                     /**
-                     * 获取设备类型，1:IPC,2:NVR；（若设备接入协议选择RTMP，则设备类型只能选择IPC）
-                     * @return Type 设备类型，1:IPC,2:NVR；（若设备接入协议选择RTMP，则设备类型只能选择IPC）
+                     * 获取设备类型，1:IPC,2:NVR；（若设备接入协议选择RTMP,IVCP，则设备类型只能选择IPC）
+                     * @return Type 设备类型，1:IPC,2:NVR；（若设备接入协议选择RTMP,IVCP，则设备类型只能选择IPC）
                      * 
                      */
                     int64_t GetType() const;
 
                     /**
-                     * 设置设备类型，1:IPC,2:NVR；（若设备接入协议选择RTMP，则设备类型只能选择IPC）
-                     * @param _type 设备类型，1:IPC,2:NVR；（若设备接入协议选择RTMP，则设备类型只能选择IPC）
+                     * 设置设备类型，1:IPC,2:NVR；（若设备接入协议选择RTMP,IVCP，则设备类型只能选择IPC）
+                     * @param _type 设备类型，1:IPC,2:NVR；（若设备接入协议选择RTMP,IVCP，则设备类型只能选择IPC）
                      * 
                      */
                     void SetType(const int64_t& _type);
@@ -315,6 +315,27 @@ namespace TencentCloud
                      */
                     bool UsernameHasBeenSet() const;
 
+                    /**
+                     * 获取设备 SN，仅IVCP 协议设备需要
+                     * @return SNCode 设备 SN，仅IVCP 协议设备需要
+                     * 
+                     */
+                    std::string GetSNCode() const;
+
+                    /**
+                     * 设置设备 SN，仅IVCP 协议设备需要
+                     * @param _sNCode 设备 SN，仅IVCP 协议设备需要
+                     * 
+                     */
+                    void SetSNCode(const std::string& _sNCode);
+
+                    /**
+                     * 判断参数 SNCode 是否已赋值
+                     * @return SNCode 是否已赋值
+                     * 
+                     */
+                    bool SNCodeHasBeenSet() const;
+
                 private:
 
                     /**
@@ -324,13 +345,13 @@ namespace TencentCloud
                     bool m_nameHasBeenSet;
 
                     /**
-                     * 设备接入协议（1:RTMP,2:GB,3:GW）
+                     * 设备接入协议（1:RTMP,2:GB,3:GW,4:IVCP）
                      */
                     int64_t m_accessProtocol;
                     bool m_accessProtocolHasBeenSet;
 
                     /**
-                     * 设备类型，1:IPC,2:NVR；（若设备接入协议选择RTMP，则设备类型只能选择IPC）
+                     * 设备类型，1:IPC,2:NVR；（若设备接入协议选择RTMP,IVCP，则设备类型只能选择IPC）
                      */
                     int64_t m_type;
                     bool m_typeHasBeenSet;
@@ -394,6 +415,12 @@ namespace TencentCloud
                      */
                     std::string m_username;
                     bool m_usernameHasBeenSet;
+
+                    /**
+                     * 设备 SN，仅IVCP 协议设备需要
+                     */
+                    std::string m_sNCode;
+                    bool m_sNCodeHasBeenSet;
 
                 };
             }

@@ -40,6 +40,49 @@ TseClient::TseClient(const Credential &credential, const string &region, const C
 }
 
 
+TseClient::BindAutoScalerResourceStrategyToGroupsOutcome TseClient::BindAutoScalerResourceStrategyToGroups(const BindAutoScalerResourceStrategyToGroupsRequest &request)
+{
+    auto outcome = MakeRequest(request, "BindAutoScalerResourceStrategyToGroups");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        BindAutoScalerResourceStrategyToGroupsResponse rsp = BindAutoScalerResourceStrategyToGroupsResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return BindAutoScalerResourceStrategyToGroupsOutcome(rsp);
+        else
+            return BindAutoScalerResourceStrategyToGroupsOutcome(o.GetError());
+    }
+    else
+    {
+        return BindAutoScalerResourceStrategyToGroupsOutcome(outcome.GetError());
+    }
+}
+
+void TseClient::BindAutoScalerResourceStrategyToGroupsAsync(const BindAutoScalerResourceStrategyToGroupsRequest& request, const BindAutoScalerResourceStrategyToGroupsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->BindAutoScalerResourceStrategyToGroups(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+TseClient::BindAutoScalerResourceStrategyToGroupsOutcomeCallable TseClient::BindAutoScalerResourceStrategyToGroupsCallable(const BindAutoScalerResourceStrategyToGroupsRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<BindAutoScalerResourceStrategyToGroupsOutcome()>>(
+        [this, request]()
+        {
+            return this->BindAutoScalerResourceStrategyToGroups(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 TseClient::CloseWafProtectionOutcome TseClient::CloseWafProtection(const CloseWafProtectionRequest &request)
 {
     auto outcome = MakeRequest(request, "CloseWafProtection");
@@ -76,6 +119,49 @@ TseClient::CloseWafProtectionOutcomeCallable TseClient::CloseWafProtectionCallab
         [this, request]()
         {
             return this->CloseWafProtection(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+TseClient::CreateAutoScalerResourceStrategyOutcome TseClient::CreateAutoScalerResourceStrategy(const CreateAutoScalerResourceStrategyRequest &request)
+{
+    auto outcome = MakeRequest(request, "CreateAutoScalerResourceStrategy");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        CreateAutoScalerResourceStrategyResponse rsp = CreateAutoScalerResourceStrategyResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return CreateAutoScalerResourceStrategyOutcome(rsp);
+        else
+            return CreateAutoScalerResourceStrategyOutcome(o.GetError());
+    }
+    else
+    {
+        return CreateAutoScalerResourceStrategyOutcome(outcome.GetError());
+    }
+}
+
+void TseClient::CreateAutoScalerResourceStrategyAsync(const CreateAutoScalerResourceStrategyRequest& request, const CreateAutoScalerResourceStrategyAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->CreateAutoScalerResourceStrategy(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+TseClient::CreateAutoScalerResourceStrategyOutcomeCallable TseClient::CreateAutoScalerResourceStrategyCallable(const CreateAutoScalerResourceStrategyRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<CreateAutoScalerResourceStrategyOutcome()>>(
+        [this, request]()
+        {
+            return this->CreateAutoScalerResourceStrategy(request);
         }
     );
 
@@ -556,6 +642,49 @@ TseClient::CreateWafDomainsOutcomeCallable TseClient::CreateWafDomainsCallable(c
     return task->get_future();
 }
 
+TseClient::DeleteAutoScalerResourceStrategyOutcome TseClient::DeleteAutoScalerResourceStrategy(const DeleteAutoScalerResourceStrategyRequest &request)
+{
+    auto outcome = MakeRequest(request, "DeleteAutoScalerResourceStrategy");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DeleteAutoScalerResourceStrategyResponse rsp = DeleteAutoScalerResourceStrategyResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DeleteAutoScalerResourceStrategyOutcome(rsp);
+        else
+            return DeleteAutoScalerResourceStrategyOutcome(o.GetError());
+    }
+    else
+    {
+        return DeleteAutoScalerResourceStrategyOutcome(outcome.GetError());
+    }
+}
+
+void TseClient::DeleteAutoScalerResourceStrategyAsync(const DeleteAutoScalerResourceStrategyRequest& request, const DeleteAutoScalerResourceStrategyAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DeleteAutoScalerResourceStrategy(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+TseClient::DeleteAutoScalerResourceStrategyOutcomeCallable TseClient::DeleteAutoScalerResourceStrategyCallable(const DeleteAutoScalerResourceStrategyRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DeleteAutoScalerResourceStrategyOutcome()>>(
+        [this, request]()
+        {
+            return this->DeleteAutoScalerResourceStrategy(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 TseClient::DeleteCloudNativeAPIGatewayOutcome TseClient::DeleteCloudNativeAPIGateway(const DeleteCloudNativeAPIGatewayRequest &request)
 {
     auto outcome = MakeRequest(request, "DeleteCloudNativeAPIGateway");
@@ -1022,6 +1151,92 @@ TseClient::DeleteWafDomainsOutcomeCallable TseClient::DeleteWafDomainsCallable(c
         [this, request]()
         {
             return this->DeleteWafDomains(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+TseClient::DescribeAutoScalerResourceStrategiesOutcome TseClient::DescribeAutoScalerResourceStrategies(const DescribeAutoScalerResourceStrategiesRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeAutoScalerResourceStrategies");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeAutoScalerResourceStrategiesResponse rsp = DescribeAutoScalerResourceStrategiesResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeAutoScalerResourceStrategiesOutcome(rsp);
+        else
+            return DescribeAutoScalerResourceStrategiesOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeAutoScalerResourceStrategiesOutcome(outcome.GetError());
+    }
+}
+
+void TseClient::DescribeAutoScalerResourceStrategiesAsync(const DescribeAutoScalerResourceStrategiesRequest& request, const DescribeAutoScalerResourceStrategiesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeAutoScalerResourceStrategies(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+TseClient::DescribeAutoScalerResourceStrategiesOutcomeCallable TseClient::DescribeAutoScalerResourceStrategiesCallable(const DescribeAutoScalerResourceStrategiesRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeAutoScalerResourceStrategiesOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeAutoScalerResourceStrategies(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+TseClient::DescribeAutoScalerResourceStrategyBindingGroupsOutcome TseClient::DescribeAutoScalerResourceStrategyBindingGroups(const DescribeAutoScalerResourceStrategyBindingGroupsRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeAutoScalerResourceStrategyBindingGroups");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeAutoScalerResourceStrategyBindingGroupsResponse rsp = DescribeAutoScalerResourceStrategyBindingGroupsResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeAutoScalerResourceStrategyBindingGroupsOutcome(rsp);
+        else
+            return DescribeAutoScalerResourceStrategyBindingGroupsOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeAutoScalerResourceStrategyBindingGroupsOutcome(outcome.GetError());
+    }
+}
+
+void TseClient::DescribeAutoScalerResourceStrategyBindingGroupsAsync(const DescribeAutoScalerResourceStrategyBindingGroupsRequest& request, const DescribeAutoScalerResourceStrategyBindingGroupsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeAutoScalerResourceStrategyBindingGroups(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+TseClient::DescribeAutoScalerResourceStrategyBindingGroupsOutcomeCallable TseClient::DescribeAutoScalerResourceStrategyBindingGroupsCallable(const DescribeAutoScalerResourceStrategyBindingGroupsRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeAutoScalerResourceStrategyBindingGroupsOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeAutoScalerResourceStrategyBindingGroups(request);
         }
     );
 
@@ -1760,6 +1975,49 @@ TseClient::DescribeOneCloudNativeAPIGatewayServiceOutcomeCallable TseClient::Des
     return task->get_future();
 }
 
+TseClient::DescribePublicNetworkOutcome TseClient::DescribePublicNetwork(const DescribePublicNetworkRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribePublicNetwork");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribePublicNetworkResponse rsp = DescribePublicNetworkResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribePublicNetworkOutcome(rsp);
+        else
+            return DescribePublicNetworkOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribePublicNetworkOutcome(outcome.GetError());
+    }
+}
+
+void TseClient::DescribePublicNetworkAsync(const DescribePublicNetworkRequest& request, const DescribePublicNetworkAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribePublicNetwork(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+TseClient::DescribePublicNetworkOutcomeCallable TseClient::DescribePublicNetworkCallable(const DescribePublicNetworkRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribePublicNetworkOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribePublicNetwork(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 TseClient::DescribeSREInstanceAccessAddressOutcome TseClient::DescribeSREInstanceAccessAddress(const DescribeSREInstanceAccessAddressRequest &request)
 {
     auto outcome = MakeRequest(request, "DescribeSREInstanceAccessAddress");
@@ -2054,6 +2312,49 @@ TseClient::DescribeZookeeperServerInterfacesOutcomeCallable TseClient::DescribeZ
         [this, request]()
         {
             return this->DescribeZookeeperServerInterfaces(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+TseClient::ModifyAutoScalerResourceStrategyOutcome TseClient::ModifyAutoScalerResourceStrategy(const ModifyAutoScalerResourceStrategyRequest &request)
+{
+    auto outcome = MakeRequest(request, "ModifyAutoScalerResourceStrategy");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ModifyAutoScalerResourceStrategyResponse rsp = ModifyAutoScalerResourceStrategyResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ModifyAutoScalerResourceStrategyOutcome(rsp);
+        else
+            return ModifyAutoScalerResourceStrategyOutcome(o.GetError());
+    }
+    else
+    {
+        return ModifyAutoScalerResourceStrategyOutcome(outcome.GetError());
+    }
+}
+
+void TseClient::ModifyAutoScalerResourceStrategyAsync(const ModifyAutoScalerResourceStrategyRequest& request, const ModifyAutoScalerResourceStrategyAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->ModifyAutoScalerResourceStrategy(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+TseClient::ModifyAutoScalerResourceStrategyOutcomeCallable TseClient::ModifyAutoScalerResourceStrategyCallable(const ModifyAutoScalerResourceStrategyRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<ModifyAutoScalerResourceStrategyOutcome()>>(
+        [this, request]()
+        {
+            return this->ModifyAutoScalerResourceStrategy(request);
         }
     );
 
@@ -2613,6 +2914,49 @@ TseClient::OpenWafProtectionOutcomeCallable TseClient::OpenWafProtectionCallable
         [this, request]()
         {
             return this->OpenWafProtection(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+TseClient::UnbindAutoScalerResourceStrategyFromGroupsOutcome TseClient::UnbindAutoScalerResourceStrategyFromGroups(const UnbindAutoScalerResourceStrategyFromGroupsRequest &request)
+{
+    auto outcome = MakeRequest(request, "UnbindAutoScalerResourceStrategyFromGroups");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        UnbindAutoScalerResourceStrategyFromGroupsResponse rsp = UnbindAutoScalerResourceStrategyFromGroupsResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return UnbindAutoScalerResourceStrategyFromGroupsOutcome(rsp);
+        else
+            return UnbindAutoScalerResourceStrategyFromGroupsOutcome(o.GetError());
+    }
+    else
+    {
+        return UnbindAutoScalerResourceStrategyFromGroupsOutcome(outcome.GetError());
+    }
+}
+
+void TseClient::UnbindAutoScalerResourceStrategyFromGroupsAsync(const UnbindAutoScalerResourceStrategyFromGroupsRequest& request, const UnbindAutoScalerResourceStrategyFromGroupsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->UnbindAutoScalerResourceStrategyFromGroups(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+TseClient::UnbindAutoScalerResourceStrategyFromGroupsOutcomeCallable TseClient::UnbindAutoScalerResourceStrategyFromGroupsCallable(const UnbindAutoScalerResourceStrategyFromGroupsRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<UnbindAutoScalerResourceStrategyFromGroupsOutcome()>>(
+        [this, request]()
+        {
+            return this->UnbindAutoScalerResourceStrategyFromGroups(request);
         }
     );
 

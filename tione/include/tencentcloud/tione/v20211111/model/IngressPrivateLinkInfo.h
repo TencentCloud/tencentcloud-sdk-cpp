@@ -146,6 +146,31 @@ namespace TencentCloud
                      */
                     bool InnerHttpsAddrHasBeenSet() const;
 
+                    /**
+                     * 获取私有连接状态
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return State 私有连接状态
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::string GetState() const;
+
+                    /**
+                     * 设置私有连接状态
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _state 私有连接状态
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetState(const std::string& _state);
+
+                    /**
+                     * 判断参数 State 是否已赋值
+                     * @return State 是否已赋值
+                     * 
+                     */
+                    bool StateHasBeenSet() const;
+
                 private:
 
                     /**
@@ -175,6 +200,13 @@ namespace TencentCloud
                      */
                     std::vector<std::string> m_innerHttpsAddr;
                     bool m_innerHttpsAddrHasBeenSet;
+
+                    /**
+                     * 私有连接状态
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_state;
+                    bool m_stateHasBeenSet;
 
                 };
             }

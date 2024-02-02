@@ -25,7 +25,10 @@ using namespace std;
 ModifyVulDefenceSettingRequest::ModifyVulDefenceSettingRequest() :
     m_enableHasBeenSet(false),
     m_scopeHasBeenSet(false),
-    m_quuidsHasBeenSet(false)
+    m_quuidsHasBeenSet(false),
+    m_excludeInstanceIdsHasBeenSet(false),
+    m_autoIncludeHasBeenSet(false),
+    m_instanceIdsHasBeenSet(false)
 {
 }
 
@@ -60,6 +63,40 @@ string ModifyVulDefenceSettingRequest::ToJsonString() const
         d.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
 
         for (auto itr = m_quuids.begin(); itr != m_quuids.end(); ++itr)
+        {
+            d[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
+        }
+    }
+
+    if (m_excludeInstanceIdsHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ExcludeInstanceIds";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        for (auto itr = m_excludeInstanceIds.begin(); itr != m_excludeInstanceIds.end(); ++itr)
+        {
+            d[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
+        }
+    }
+
+    if (m_autoIncludeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "AutoInclude";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_autoInclude, allocator);
+    }
+
+    if (m_instanceIdsHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "InstanceIds";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        for (auto itr = m_instanceIds.begin(); itr != m_instanceIds.end(); ++itr)
         {
             d[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
         }
@@ -119,6 +156,54 @@ void ModifyVulDefenceSettingRequest::SetQuuids(const vector<string>& _quuids)
 bool ModifyVulDefenceSettingRequest::QuuidsHasBeenSet() const
 {
     return m_quuidsHasBeenSet;
+}
+
+vector<string> ModifyVulDefenceSettingRequest::GetExcludeInstanceIds() const
+{
+    return m_excludeInstanceIds;
+}
+
+void ModifyVulDefenceSettingRequest::SetExcludeInstanceIds(const vector<string>& _excludeInstanceIds)
+{
+    m_excludeInstanceIds = _excludeInstanceIds;
+    m_excludeInstanceIdsHasBeenSet = true;
+}
+
+bool ModifyVulDefenceSettingRequest::ExcludeInstanceIdsHasBeenSet() const
+{
+    return m_excludeInstanceIdsHasBeenSet;
+}
+
+uint64_t ModifyVulDefenceSettingRequest::GetAutoInclude() const
+{
+    return m_autoInclude;
+}
+
+void ModifyVulDefenceSettingRequest::SetAutoInclude(const uint64_t& _autoInclude)
+{
+    m_autoInclude = _autoInclude;
+    m_autoIncludeHasBeenSet = true;
+}
+
+bool ModifyVulDefenceSettingRequest::AutoIncludeHasBeenSet() const
+{
+    return m_autoIncludeHasBeenSet;
+}
+
+vector<string> ModifyVulDefenceSettingRequest::GetInstanceIds() const
+{
+    return m_instanceIds;
+}
+
+void ModifyVulDefenceSettingRequest::SetInstanceIds(const vector<string>& _instanceIds)
+{
+    m_instanceIds = _instanceIds;
+    m_instanceIdsHasBeenSet = true;
+}
+
+bool ModifyVulDefenceSettingRequest::InstanceIdsHasBeenSet() const
+{
+    return m_instanceIdsHasBeenSet;
 }
 
 

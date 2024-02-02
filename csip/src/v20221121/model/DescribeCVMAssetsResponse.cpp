@@ -34,7 +34,8 @@ DescribeCVMAssetsResponse::DescribeCVMAssetsResponse() :
     m_ipTypeListHasBeenSet(false),
     m_appIdListHasBeenSet(false),
     m_zoneListHasBeenSet(false),
-    m_osListHasBeenSet(false)
+    m_osListHasBeenSet(false),
+    m_assetMapInstanceTypeListHasBeenSet(false)
 {
 }
 
@@ -282,6 +283,26 @@ CoreInternalOutcome DescribeCVMAssetsResponse::Deserialize(const string &payload
         m_osListHasBeenSet = true;
     }
 
+    if (rsp.HasMember("AssetMapInstanceTypeList") && !rsp["AssetMapInstanceTypeList"].IsNull())
+    {
+        if (!rsp["AssetMapInstanceTypeList"].IsArray())
+            return CoreInternalOutcome(Core::Error("response `AssetMapInstanceTypeList` is not array type"));
+
+        const rapidjson::Value &tmpValue = rsp["AssetMapInstanceTypeList"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            AssetInstanceTypeMap item;
+            CoreInternalOutcome outcome = item.Deserialize(*itr);
+            if (!outcome.IsSuccess())
+            {
+                outcome.GetError().SetRequestId(requestId);
+                return outcome;
+            }
+            m_assetMapInstanceTypeList.push_back(item);
+        }
+        m_assetMapInstanceTypeListHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -450,6 +471,21 @@ string DescribeCVMAssetsResponse::ToJsonString() const
         }
     }
 
+    if (m_assetMapInstanceTypeListHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "AssetMapInstanceTypeList";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_assetMapInstanceTypeList.begin(); itr != m_assetMapInstanceTypeList.end(); ++itr, ++i)
+        {
+            value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(value[key.c_str()][i], allocator);
+        }
+    }
+
     rapidjson::Value iKey(rapidjson::kStringType);
     string key = "RequestId";
     iKey.SetString(key.c_str(), allocator);
@@ -570,6 +606,16 @@ vector<FilterDataObject> DescribeCVMAssetsResponse::GetOsList() const
 bool DescribeCVMAssetsResponse::OsListHasBeenSet() const
 {
     return m_osListHasBeenSet;
+}
+
+vector<AssetInstanceTypeMap> DescribeCVMAssetsResponse::GetAssetMapInstanceTypeList() const
+{
+    return m_assetMapInstanceTypeList;
+}
+
+bool DescribeCVMAssetsResponse::AssetMapInstanceTypeListHasBeenSet() const
+{
+    return m_assetMapInstanceTypeListHasBeenSet;
 }
 
 

@@ -31,7 +31,8 @@ RegistrationOrganizationInfo::RegistrationOrganizationInfo() :
     m_adminMobileHasBeenSet(false),
     m_authorizationTypesHasBeenSet(false),
     m_adminIdCardTypeHasBeenSet(false),
-    m_adminIdCardNumberHasBeenSet(false)
+    m_adminIdCardNumberHasBeenSet(false),
+    m_businessLicenseHasBeenSet(false)
 {
 }
 
@@ -153,6 +154,16 @@ CoreInternalOutcome RegistrationOrganizationInfo::Deserialize(const rapidjson::V
         m_adminIdCardNumberHasBeenSet = true;
     }
 
+    if (value.HasMember("BusinessLicense") && !value["BusinessLicense"].IsNull())
+    {
+        if (!value["BusinessLicense"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `RegistrationOrganizationInfo.BusinessLicense` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_businessLicense = string(value["BusinessLicense"].GetString());
+        m_businessLicenseHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -251,6 +262,14 @@ void RegistrationOrganizationInfo::ToJsonObject(rapidjson::Value &value, rapidjs
         string key = "AdminIdCardNumber";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_adminIdCardNumber.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_businessLicenseHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "BusinessLicense";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_businessLicense.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -430,5 +449,21 @@ void RegistrationOrganizationInfo::SetAdminIdCardNumber(const string& _adminIdCa
 bool RegistrationOrganizationInfo::AdminIdCardNumberHasBeenSet() const
 {
     return m_adminIdCardNumberHasBeenSet;
+}
+
+string RegistrationOrganizationInfo::GetBusinessLicense() const
+{
+    return m_businessLicense;
+}
+
+void RegistrationOrganizationInfo::SetBusinessLicense(const string& _businessLicense)
+{
+    m_businessLicense = _businessLicense;
+    m_businessLicenseHasBeenSet = true;
+}
+
+bool RegistrationOrganizationInfo::BusinessLicenseHasBeenSet() const
+{
+    return m_businessLicenseHasBeenSet;
 }
 

@@ -23,8 +23,12 @@
 #include <tencentcloud/core/Credential.h>
 #include <tencentcloud/core/profile/ClientProfile.h>
 #include <tencentcloud/core/AsyncCallerContext.h>
+#include <tencentcloud/tse/v20201207/model/BindAutoScalerResourceStrategyToGroupsRequest.h>
+#include <tencentcloud/tse/v20201207/model/BindAutoScalerResourceStrategyToGroupsResponse.h>
 #include <tencentcloud/tse/v20201207/model/CloseWafProtectionRequest.h>
 #include <tencentcloud/tse/v20201207/model/CloseWafProtectionResponse.h>
+#include <tencentcloud/tse/v20201207/model/CreateAutoScalerResourceStrategyRequest.h>
+#include <tencentcloud/tse/v20201207/model/CreateAutoScalerResourceStrategyResponse.h>
 #include <tencentcloud/tse/v20201207/model/CreateCloudNativeAPIGatewayRequest.h>
 #include <tencentcloud/tse/v20201207/model/CreateCloudNativeAPIGatewayResponse.h>
 #include <tencentcloud/tse/v20201207/model/CreateCloudNativeAPIGatewayCanaryRuleRequest.h>
@@ -47,6 +51,8 @@
 #include <tencentcloud/tse/v20201207/model/CreateNativeGatewayServerGroupResponse.h>
 #include <tencentcloud/tse/v20201207/model/CreateWafDomainsRequest.h>
 #include <tencentcloud/tse/v20201207/model/CreateWafDomainsResponse.h>
+#include <tencentcloud/tse/v20201207/model/DeleteAutoScalerResourceStrategyRequest.h>
+#include <tencentcloud/tse/v20201207/model/DeleteAutoScalerResourceStrategyResponse.h>
 #include <tencentcloud/tse/v20201207/model/DeleteCloudNativeAPIGatewayRequest.h>
 #include <tencentcloud/tse/v20201207/model/DeleteCloudNativeAPIGatewayResponse.h>
 #include <tencentcloud/tse/v20201207/model/DeleteCloudNativeAPIGatewayCanaryRuleRequest.h>
@@ -69,6 +75,10 @@
 #include <tencentcloud/tse/v20201207/model/DeleteNativeGatewayServerGroupResponse.h>
 #include <tencentcloud/tse/v20201207/model/DeleteWafDomainsRequest.h>
 #include <tencentcloud/tse/v20201207/model/DeleteWafDomainsResponse.h>
+#include <tencentcloud/tse/v20201207/model/DescribeAutoScalerResourceStrategiesRequest.h>
+#include <tencentcloud/tse/v20201207/model/DescribeAutoScalerResourceStrategiesResponse.h>
+#include <tencentcloud/tse/v20201207/model/DescribeAutoScalerResourceStrategyBindingGroupsRequest.h>
+#include <tencentcloud/tse/v20201207/model/DescribeAutoScalerResourceStrategyBindingGroupsResponse.h>
 #include <tencentcloud/tse/v20201207/model/DescribeCloudNativeAPIGatewayRequest.h>
 #include <tencentcloud/tse/v20201207/model/DescribeCloudNativeAPIGatewayResponse.h>
 #include <tencentcloud/tse/v20201207/model/DescribeCloudNativeAPIGatewayCanaryRulesRequest.h>
@@ -103,6 +113,8 @@
 #include <tencentcloud/tse/v20201207/model/DescribeNativeGatewayServerGroupsResponse.h>
 #include <tencentcloud/tse/v20201207/model/DescribeOneCloudNativeAPIGatewayServiceRequest.h>
 #include <tencentcloud/tse/v20201207/model/DescribeOneCloudNativeAPIGatewayServiceResponse.h>
+#include <tencentcloud/tse/v20201207/model/DescribePublicNetworkRequest.h>
+#include <tencentcloud/tse/v20201207/model/DescribePublicNetworkResponse.h>
 #include <tencentcloud/tse/v20201207/model/DescribeSREInstanceAccessAddressRequest.h>
 #include <tencentcloud/tse/v20201207/model/DescribeSREInstanceAccessAddressResponse.h>
 #include <tencentcloud/tse/v20201207/model/DescribeSREInstancesRequest.h>
@@ -117,6 +129,8 @@
 #include <tencentcloud/tse/v20201207/model/DescribeZookeeperReplicasResponse.h>
 #include <tencentcloud/tse/v20201207/model/DescribeZookeeperServerInterfacesRequest.h>
 #include <tencentcloud/tse/v20201207/model/DescribeZookeeperServerInterfacesResponse.h>
+#include <tencentcloud/tse/v20201207/model/ModifyAutoScalerResourceStrategyRequest.h>
+#include <tencentcloud/tse/v20201207/model/ModifyAutoScalerResourceStrategyResponse.h>
 #include <tencentcloud/tse/v20201207/model/ModifyCloudNativeAPIGatewayRequest.h>
 #include <tencentcloud/tse/v20201207/model/ModifyCloudNativeAPIGatewayResponse.h>
 #include <tencentcloud/tse/v20201207/model/ModifyCloudNativeAPIGatewayCanaryRuleRequest.h>
@@ -143,6 +157,8 @@
 #include <tencentcloud/tse/v20201207/model/ModifyUpstreamNodeStatusResponse.h>
 #include <tencentcloud/tse/v20201207/model/OpenWafProtectionRequest.h>
 #include <tencentcloud/tse/v20201207/model/OpenWafProtectionResponse.h>
+#include <tencentcloud/tse/v20201207/model/UnbindAutoScalerResourceStrategyFromGroupsRequest.h>
+#include <tencentcloud/tse/v20201207/model/UnbindAutoScalerResourceStrategyFromGroupsResponse.h>
 #include <tencentcloud/tse/v20201207/model/UpdateCloudNativeAPIGatewayCertificateInfoRequest.h>
 #include <tencentcloud/tse/v20201207/model/UpdateCloudNativeAPIGatewayCertificateInfoResponse.h>
 #include <tencentcloud/tse/v20201207/model/UpdateCloudNativeAPIGatewaySpecRequest.h>
@@ -167,9 +183,15 @@ namespace TencentCloud
                 TseClient(const Credential &credential, const std::string &region);
                 TseClient(const Credential &credential, const std::string &region, const ClientProfile &profile);
 
+                typedef Outcome<Core::Error, Model::BindAutoScalerResourceStrategyToGroupsResponse> BindAutoScalerResourceStrategyToGroupsOutcome;
+                typedef std::future<BindAutoScalerResourceStrategyToGroupsOutcome> BindAutoScalerResourceStrategyToGroupsOutcomeCallable;
+                typedef std::function<void(const TseClient*, const Model::BindAutoScalerResourceStrategyToGroupsRequest&, BindAutoScalerResourceStrategyToGroupsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> BindAutoScalerResourceStrategyToGroupsAsyncHandler;
                 typedef Outcome<Core::Error, Model::CloseWafProtectionResponse> CloseWafProtectionOutcome;
                 typedef std::future<CloseWafProtectionOutcome> CloseWafProtectionOutcomeCallable;
                 typedef std::function<void(const TseClient*, const Model::CloseWafProtectionRequest&, CloseWafProtectionOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CloseWafProtectionAsyncHandler;
+                typedef Outcome<Core::Error, Model::CreateAutoScalerResourceStrategyResponse> CreateAutoScalerResourceStrategyOutcome;
+                typedef std::future<CreateAutoScalerResourceStrategyOutcome> CreateAutoScalerResourceStrategyOutcomeCallable;
+                typedef std::function<void(const TseClient*, const Model::CreateAutoScalerResourceStrategyRequest&, CreateAutoScalerResourceStrategyOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateAutoScalerResourceStrategyAsyncHandler;
                 typedef Outcome<Core::Error, Model::CreateCloudNativeAPIGatewayResponse> CreateCloudNativeAPIGatewayOutcome;
                 typedef std::future<CreateCloudNativeAPIGatewayOutcome> CreateCloudNativeAPIGatewayOutcomeCallable;
                 typedef std::function<void(const TseClient*, const Model::CreateCloudNativeAPIGatewayRequest&, CreateCloudNativeAPIGatewayOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateCloudNativeAPIGatewayAsyncHandler;
@@ -203,6 +225,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::CreateWafDomainsResponse> CreateWafDomainsOutcome;
                 typedef std::future<CreateWafDomainsOutcome> CreateWafDomainsOutcomeCallable;
                 typedef std::function<void(const TseClient*, const Model::CreateWafDomainsRequest&, CreateWafDomainsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateWafDomainsAsyncHandler;
+                typedef Outcome<Core::Error, Model::DeleteAutoScalerResourceStrategyResponse> DeleteAutoScalerResourceStrategyOutcome;
+                typedef std::future<DeleteAutoScalerResourceStrategyOutcome> DeleteAutoScalerResourceStrategyOutcomeCallable;
+                typedef std::function<void(const TseClient*, const Model::DeleteAutoScalerResourceStrategyRequest&, DeleteAutoScalerResourceStrategyOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteAutoScalerResourceStrategyAsyncHandler;
                 typedef Outcome<Core::Error, Model::DeleteCloudNativeAPIGatewayResponse> DeleteCloudNativeAPIGatewayOutcome;
                 typedef std::future<DeleteCloudNativeAPIGatewayOutcome> DeleteCloudNativeAPIGatewayOutcomeCallable;
                 typedef std::function<void(const TseClient*, const Model::DeleteCloudNativeAPIGatewayRequest&, DeleteCloudNativeAPIGatewayOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteCloudNativeAPIGatewayAsyncHandler;
@@ -236,6 +261,12 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DeleteWafDomainsResponse> DeleteWafDomainsOutcome;
                 typedef std::future<DeleteWafDomainsOutcome> DeleteWafDomainsOutcomeCallable;
                 typedef std::function<void(const TseClient*, const Model::DeleteWafDomainsRequest&, DeleteWafDomainsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteWafDomainsAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeAutoScalerResourceStrategiesResponse> DescribeAutoScalerResourceStrategiesOutcome;
+                typedef std::future<DescribeAutoScalerResourceStrategiesOutcome> DescribeAutoScalerResourceStrategiesOutcomeCallable;
+                typedef std::function<void(const TseClient*, const Model::DescribeAutoScalerResourceStrategiesRequest&, DescribeAutoScalerResourceStrategiesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeAutoScalerResourceStrategiesAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeAutoScalerResourceStrategyBindingGroupsResponse> DescribeAutoScalerResourceStrategyBindingGroupsOutcome;
+                typedef std::future<DescribeAutoScalerResourceStrategyBindingGroupsOutcome> DescribeAutoScalerResourceStrategyBindingGroupsOutcomeCallable;
+                typedef std::function<void(const TseClient*, const Model::DescribeAutoScalerResourceStrategyBindingGroupsRequest&, DescribeAutoScalerResourceStrategyBindingGroupsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeAutoScalerResourceStrategyBindingGroupsAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeCloudNativeAPIGatewayResponse> DescribeCloudNativeAPIGatewayOutcome;
                 typedef std::future<DescribeCloudNativeAPIGatewayOutcome> DescribeCloudNativeAPIGatewayOutcomeCallable;
                 typedef std::function<void(const TseClient*, const Model::DescribeCloudNativeAPIGatewayRequest&, DescribeCloudNativeAPIGatewayOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeCloudNativeAPIGatewayAsyncHandler;
@@ -287,6 +318,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeOneCloudNativeAPIGatewayServiceResponse> DescribeOneCloudNativeAPIGatewayServiceOutcome;
                 typedef std::future<DescribeOneCloudNativeAPIGatewayServiceOutcome> DescribeOneCloudNativeAPIGatewayServiceOutcomeCallable;
                 typedef std::function<void(const TseClient*, const Model::DescribeOneCloudNativeAPIGatewayServiceRequest&, DescribeOneCloudNativeAPIGatewayServiceOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeOneCloudNativeAPIGatewayServiceAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribePublicNetworkResponse> DescribePublicNetworkOutcome;
+                typedef std::future<DescribePublicNetworkOutcome> DescribePublicNetworkOutcomeCallable;
+                typedef std::function<void(const TseClient*, const Model::DescribePublicNetworkRequest&, DescribePublicNetworkOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribePublicNetworkAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeSREInstanceAccessAddressResponse> DescribeSREInstanceAccessAddressOutcome;
                 typedef std::future<DescribeSREInstanceAccessAddressOutcome> DescribeSREInstanceAccessAddressOutcomeCallable;
                 typedef std::function<void(const TseClient*, const Model::DescribeSREInstanceAccessAddressRequest&, DescribeSREInstanceAccessAddressOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeSREInstanceAccessAddressAsyncHandler;
@@ -308,6 +342,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeZookeeperServerInterfacesResponse> DescribeZookeeperServerInterfacesOutcome;
                 typedef std::future<DescribeZookeeperServerInterfacesOutcome> DescribeZookeeperServerInterfacesOutcomeCallable;
                 typedef std::function<void(const TseClient*, const Model::DescribeZookeeperServerInterfacesRequest&, DescribeZookeeperServerInterfacesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeZookeeperServerInterfacesAsyncHandler;
+                typedef Outcome<Core::Error, Model::ModifyAutoScalerResourceStrategyResponse> ModifyAutoScalerResourceStrategyOutcome;
+                typedef std::future<ModifyAutoScalerResourceStrategyOutcome> ModifyAutoScalerResourceStrategyOutcomeCallable;
+                typedef std::function<void(const TseClient*, const Model::ModifyAutoScalerResourceStrategyRequest&, ModifyAutoScalerResourceStrategyOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyAutoScalerResourceStrategyAsyncHandler;
                 typedef Outcome<Core::Error, Model::ModifyCloudNativeAPIGatewayResponse> ModifyCloudNativeAPIGatewayOutcome;
                 typedef std::future<ModifyCloudNativeAPIGatewayOutcome> ModifyCloudNativeAPIGatewayOutcomeCallable;
                 typedef std::function<void(const TseClient*, const Model::ModifyCloudNativeAPIGatewayRequest&, ModifyCloudNativeAPIGatewayOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyCloudNativeAPIGatewayAsyncHandler;
@@ -347,6 +384,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::OpenWafProtectionResponse> OpenWafProtectionOutcome;
                 typedef std::future<OpenWafProtectionOutcome> OpenWafProtectionOutcomeCallable;
                 typedef std::function<void(const TseClient*, const Model::OpenWafProtectionRequest&, OpenWafProtectionOutcome, const std::shared_ptr<const AsyncCallerContext>&)> OpenWafProtectionAsyncHandler;
+                typedef Outcome<Core::Error, Model::UnbindAutoScalerResourceStrategyFromGroupsResponse> UnbindAutoScalerResourceStrategyFromGroupsOutcome;
+                typedef std::future<UnbindAutoScalerResourceStrategyFromGroupsOutcome> UnbindAutoScalerResourceStrategyFromGroupsOutcomeCallable;
+                typedef std::function<void(const TseClient*, const Model::UnbindAutoScalerResourceStrategyFromGroupsRequest&, UnbindAutoScalerResourceStrategyFromGroupsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> UnbindAutoScalerResourceStrategyFromGroupsAsyncHandler;
                 typedef Outcome<Core::Error, Model::UpdateCloudNativeAPIGatewayCertificateInfoResponse> UpdateCloudNativeAPIGatewayCertificateInfoOutcome;
                 typedef std::future<UpdateCloudNativeAPIGatewayCertificateInfoOutcome> UpdateCloudNativeAPIGatewayCertificateInfoOutcomeCallable;
                 typedef std::function<void(const TseClient*, const Model::UpdateCloudNativeAPIGatewayCertificateInfoRequest&, UpdateCloudNativeAPIGatewayCertificateInfoOutcome, const std::shared_ptr<const AsyncCallerContext>&)> UpdateCloudNativeAPIGatewayCertificateInfoAsyncHandler;
@@ -366,6 +406,15 @@ namespace TencentCloud
 
 
                 /**
+                 *弹性伸缩策略批量绑定网关分组
+                 * @param req BindAutoScalerResourceStrategyToGroupsRequest
+                 * @return BindAutoScalerResourceStrategyToGroupsOutcome
+                 */
+                BindAutoScalerResourceStrategyToGroupsOutcome BindAutoScalerResourceStrategyToGroups(const Model::BindAutoScalerResourceStrategyToGroupsRequest &request);
+                void BindAutoScalerResourceStrategyToGroupsAsync(const Model::BindAutoScalerResourceStrategyToGroupsRequest& request, const BindAutoScalerResourceStrategyToGroupsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                BindAutoScalerResourceStrategyToGroupsOutcomeCallable BindAutoScalerResourceStrategyToGroupsCallable(const Model::BindAutoScalerResourceStrategyToGroupsRequest& request);
+
+                /**
                  *关闭 WAF 防护
                  * @param req CloseWafProtectionRequest
                  * @return CloseWafProtectionOutcome
@@ -373,6 +422,15 @@ namespace TencentCloud
                 CloseWafProtectionOutcome CloseWafProtection(const Model::CloseWafProtectionRequest &request);
                 void CloseWafProtectionAsync(const Model::CloseWafProtectionRequest& request, const CloseWafProtectionAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 CloseWafProtectionOutcomeCallable CloseWafProtectionCallable(const Model::CloseWafProtectionRequest& request);
+
+                /**
+                 *创建弹性伸缩策略
+                 * @param req CreateAutoScalerResourceStrategyRequest
+                 * @return CreateAutoScalerResourceStrategyOutcome
+                 */
+                CreateAutoScalerResourceStrategyOutcome CreateAutoScalerResourceStrategy(const Model::CreateAutoScalerResourceStrategyRequest &request);
+                void CreateAutoScalerResourceStrategyAsync(const Model::CreateAutoScalerResourceStrategyRequest& request, const CreateAutoScalerResourceStrategyAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                CreateAutoScalerResourceStrategyOutcomeCallable CreateAutoScalerResourceStrategyCallable(const Model::CreateAutoScalerResourceStrategyRequest& request);
 
                 /**
                  *创建云原生API网关实例
@@ -474,6 +532,15 @@ namespace TencentCloud
                 CreateWafDomainsOutcomeCallable CreateWafDomainsCallable(const Model::CreateWafDomainsRequest& request);
 
                 /**
+                 *删除弹性伸缩策略
+                 * @param req DeleteAutoScalerResourceStrategyRequest
+                 * @return DeleteAutoScalerResourceStrategyOutcome
+                 */
+                DeleteAutoScalerResourceStrategyOutcome DeleteAutoScalerResourceStrategy(const Model::DeleteAutoScalerResourceStrategyRequest &request);
+                void DeleteAutoScalerResourceStrategyAsync(const Model::DeleteAutoScalerResourceStrategyRequest& request, const DeleteAutoScalerResourceStrategyAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DeleteAutoScalerResourceStrategyOutcomeCallable DeleteAutoScalerResourceStrategyCallable(const Model::DeleteAutoScalerResourceStrategyRequest& request);
+
+                /**
                  *删除云原生API网关实例
                  * @param req DeleteCloudNativeAPIGatewayRequest
                  * @return DeleteCloudNativeAPIGatewayOutcome
@@ -571,6 +638,24 @@ namespace TencentCloud
                 DeleteWafDomainsOutcome DeleteWafDomains(const Model::DeleteWafDomainsRequest &request);
                 void DeleteWafDomainsAsync(const Model::DeleteWafDomainsRequest& request, const DeleteWafDomainsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DeleteWafDomainsOutcomeCallable DeleteWafDomainsCallable(const Model::DeleteWafDomainsRequest& request);
+
+                /**
+                 *查看弹性伸缩策略列表
+                 * @param req DescribeAutoScalerResourceStrategiesRequest
+                 * @return DescribeAutoScalerResourceStrategiesOutcome
+                 */
+                DescribeAutoScalerResourceStrategiesOutcome DescribeAutoScalerResourceStrategies(const Model::DescribeAutoScalerResourceStrategiesRequest &request);
+                void DescribeAutoScalerResourceStrategiesAsync(const Model::DescribeAutoScalerResourceStrategiesRequest& request, const DescribeAutoScalerResourceStrategiesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeAutoScalerResourceStrategiesOutcomeCallable DescribeAutoScalerResourceStrategiesCallable(const Model::DescribeAutoScalerResourceStrategiesRequest& request);
+
+                /**
+                 *查看弹性伸缩策略绑定的网关分组
+                 * @param req DescribeAutoScalerResourceStrategyBindingGroupsRequest
+                 * @return DescribeAutoScalerResourceStrategyBindingGroupsOutcome
+                 */
+                DescribeAutoScalerResourceStrategyBindingGroupsOutcome DescribeAutoScalerResourceStrategyBindingGroups(const Model::DescribeAutoScalerResourceStrategyBindingGroupsRequest &request);
+                void DescribeAutoScalerResourceStrategyBindingGroupsAsync(const Model::DescribeAutoScalerResourceStrategyBindingGroupsRequest& request, const DescribeAutoScalerResourceStrategyBindingGroupsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeAutoScalerResourceStrategyBindingGroupsOutcomeCallable DescribeAutoScalerResourceStrategyBindingGroupsCallable(const Model::DescribeAutoScalerResourceStrategyBindingGroupsRequest& request);
 
                 /**
                  *获取云原生API网关实例信息
@@ -726,6 +811,15 @@ namespace TencentCloud
                 DescribeOneCloudNativeAPIGatewayServiceOutcomeCallable DescribeOneCloudNativeAPIGatewayServiceCallable(const Model::DescribeOneCloudNativeAPIGatewayServiceRequest& request);
 
                 /**
+                 *查询云原生API网关实例公网详情
+                 * @param req DescribePublicNetworkRequest
+                 * @return DescribePublicNetworkOutcome
+                 */
+                DescribePublicNetworkOutcome DescribePublicNetwork(const Model::DescribePublicNetworkRequest &request);
+                void DescribePublicNetworkAsync(const Model::DescribePublicNetworkRequest& request, const DescribePublicNetworkAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribePublicNetworkOutcomeCallable DescribePublicNetworkCallable(const Model::DescribePublicNetworkRequest& request);
+
+                /**
                  *查询引擎实例访问地址
                  * @param req DescribeSREInstanceAccessAddressRequest
                  * @return DescribeSREInstanceAccessAddressOutcome
@@ -787,6 +881,15 @@ namespace TencentCloud
                 DescribeZookeeperServerInterfacesOutcome DescribeZookeeperServerInterfaces(const Model::DescribeZookeeperServerInterfacesRequest &request);
                 void DescribeZookeeperServerInterfacesAsync(const Model::DescribeZookeeperServerInterfacesRequest& request, const DescribeZookeeperServerInterfacesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DescribeZookeeperServerInterfacesOutcomeCallable DescribeZookeeperServerInterfacesCallable(const Model::DescribeZookeeperServerInterfacesRequest& request);
+
+                /**
+                 *更新弹性伸缩策略
+                 * @param req ModifyAutoScalerResourceStrategyRequest
+                 * @return ModifyAutoScalerResourceStrategyOutcome
+                 */
+                ModifyAutoScalerResourceStrategyOutcome ModifyAutoScalerResourceStrategy(const Model::ModifyAutoScalerResourceStrategyRequest &request);
+                void ModifyAutoScalerResourceStrategyAsync(const Model::ModifyAutoScalerResourceStrategyRequest& request, const ModifyAutoScalerResourceStrategyAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                ModifyAutoScalerResourceStrategyOutcomeCallable ModifyAutoScalerResourceStrategyCallable(const Model::ModifyAutoScalerResourceStrategyRequest& request);
 
                 /**
                  *修改云原生API网关实例基础信息
@@ -904,6 +1007,15 @@ namespace TencentCloud
                 OpenWafProtectionOutcome OpenWafProtection(const Model::OpenWafProtectionRequest &request);
                 void OpenWafProtectionAsync(const Model::OpenWafProtectionRequest& request, const OpenWafProtectionAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 OpenWafProtectionOutcomeCallable OpenWafProtectionCallable(const Model::OpenWafProtectionRequest& request);
+
+                /**
+                 *弹性伸缩策略批量解绑网关分组
+                 * @param req UnbindAutoScalerResourceStrategyFromGroupsRequest
+                 * @return UnbindAutoScalerResourceStrategyFromGroupsOutcome
+                 */
+                UnbindAutoScalerResourceStrategyFromGroupsOutcome UnbindAutoScalerResourceStrategyFromGroups(const Model::UnbindAutoScalerResourceStrategyFromGroupsRequest &request);
+                void UnbindAutoScalerResourceStrategyFromGroupsAsync(const Model::UnbindAutoScalerResourceStrategyFromGroupsRequest& request, const UnbindAutoScalerResourceStrategyFromGroupsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                UnbindAutoScalerResourceStrategyFromGroupsOutcomeCallable UnbindAutoScalerResourceStrategyFromGroupsCallable(const Model::UnbindAutoScalerResourceStrategyFromGroupsRequest& request);
 
                 /**
                  *修改云原生网关证书信息

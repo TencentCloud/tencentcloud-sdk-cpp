@@ -492,6 +492,56 @@ UPDATING 更新中
                      */
                     bool WeightUpdateStatusHasBeenSet() const;
 
+                    /**
+                     * 获取服务组下运行的pod数量
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return ReplicasCount 服务组下运行的pod数量
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    uint64_t GetReplicasCount() const;
+
+                    /**
+                     * 设置服务组下运行的pod数量
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _replicasCount 服务组下运行的pod数量
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetReplicasCount(const uint64_t& _replicasCount);
+
+                    /**
+                     * 判断参数 ReplicasCount 是否已赋值
+                     * @return ReplicasCount 是否已赋值
+                     * 
+                     */
+                    bool ReplicasCountHasBeenSet() const;
+
+                    /**
+                     * 获取服务组下期望的pod数
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return AvailableReplicasCount 服务组下期望的pod数
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    uint64_t GetAvailableReplicasCount() const;
+
+                    /**
+                     * 设置服务组下期望的pod数
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _availableReplicasCount 服务组下期望的pod数
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetAvailableReplicasCount(const uint64_t& _availableReplicasCount);
+
+                    /**
+                     * 判断参数 AvailableReplicasCount 是否已赋值
+                     * @return AvailableReplicasCount 是否已赋值
+                     * 
+                     */
+                    bool AvailableReplicasCountHasBeenSet() const;
+
                 private:
 
                     /**
@@ -616,6 +666,20 @@ UPDATING 更新中
                      */
                     std::string m_weightUpdateStatus;
                     bool m_weightUpdateStatusHasBeenSet;
+
+                    /**
+                     * 服务组下运行的pod数量
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    uint64_t m_replicasCount;
+                    bool m_replicasCountHasBeenSet;
+
+                    /**
+                     * 服务组下期望的pod数
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    uint64_t m_availableReplicasCount;
+                    bool m_availableReplicasCountHasBeenSet;
 
                 };
             }

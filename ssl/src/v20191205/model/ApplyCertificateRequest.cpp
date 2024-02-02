@@ -36,7 +36,8 @@ ApplyCertificateRequest::ApplyCertificateRequest() :
     m_aliasHasBeenSet(false),
     m_oldCertificateIdHasBeenSet(false),
     m_packageIdHasBeenSet(false),
-    m_deleteDnsAutoRecordHasBeenSet(false)
+    m_deleteDnsAutoRecordHasBeenSet(false),
+    m_dnsNamesHasBeenSet(false)
 {
 }
 
@@ -157,6 +158,19 @@ string ApplyCertificateRequest::ToJsonString() const
         string key = "DeleteDnsAutoRecord";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_deleteDnsAutoRecord, allocator);
+    }
+
+    if (m_dnsNamesHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "DnsNames";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        for (auto itr = m_dnsNames.begin(); itr != m_dnsNames.end(); ++itr)
+        {
+            d[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
+        }
     }
 
 
@@ -389,6 +403,22 @@ void ApplyCertificateRequest::SetDeleteDnsAutoRecord(const bool& _deleteDnsAutoR
 bool ApplyCertificateRequest::DeleteDnsAutoRecordHasBeenSet() const
 {
     return m_deleteDnsAutoRecordHasBeenSet;
+}
+
+vector<string> ApplyCertificateRequest::GetDnsNames() const
+{
+    return m_dnsNames;
+}
+
+void ApplyCertificateRequest::SetDnsNames(const vector<string>& _dnsNames)
+{
+    m_dnsNames = _dnsNames;
+    m_dnsNamesHasBeenSet = true;
+}
+
+bool ApplyCertificateRequest::DnsNamesHasBeenSet() const
+{
+    return m_dnsNamesHasBeenSet;
 }
 
 

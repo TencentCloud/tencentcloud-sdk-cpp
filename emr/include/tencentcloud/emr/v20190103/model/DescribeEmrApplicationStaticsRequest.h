@@ -253,15 +253,15 @@ namespace TencentCloud
                     bool OffsetHasBeenSet() const;
 
                     /**
-                     * 获取页容量
-                     * @return Limit 页容量
+                     * 获取页容量，范围为[10,100]
+                     * @return Limit 页容量，范围为[10,100]
                      * 
                      */
                     int64_t GetLimit() const;
 
                     /**
-                     * 设置页容量
-                     * @param _limit 页容量
+                     * 设置页容量，范围为[10,100]
+                     * @param _limit 页容量，范围为[10,100]
                      * 
                      */
                     void SetLimit(const int64_t& _limit);
@@ -336,7 +336,7 @@ namespace TencentCloud
                     bool m_offsetHasBeenSet;
 
                     /**
-                     * 页容量
+                     * 页容量，范围为[10,100]
                      */
                     int64_t m_limit;
                     bool m_limitHasBeenSet;

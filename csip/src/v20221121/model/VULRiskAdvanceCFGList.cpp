@@ -34,7 +34,13 @@ VULRiskAdvanceCFGList::VULRiskAdvanceCFGList() :
     m_releaseTimeHasBeenSet(false),
     m_eMGCVulTypeHasBeenSet(false),
     m_vULDescribeHasBeenSet(false),
-    m_impactComponentHasBeenSet(false)
+    m_impactComponentHasBeenSet(false),
+    m_payloadHasBeenSet(false),
+    m_referencesHasBeenSet(false),
+    m_cVSSHasBeenSet(false),
+    m_attackHeatHasBeenSet(false),
+    m_serviceSupportHasBeenSet(false),
+    m_recentScanTimeHasBeenSet(false)
 {
 }
 
@@ -189,6 +195,76 @@ CoreInternalOutcome VULRiskAdvanceCFGList::Deserialize(const rapidjson::Value &v
         m_impactComponentHasBeenSet = true;
     }
 
+    if (value.HasMember("Payload") && !value["Payload"].IsNull())
+    {
+        if (!value["Payload"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `VULRiskAdvanceCFGList.Payload` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_payload = string(value["Payload"].GetString());
+        m_payloadHasBeenSet = true;
+    }
+
+    if (value.HasMember("References") && !value["References"].IsNull())
+    {
+        if (!value["References"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `VULRiskAdvanceCFGList.References` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_references = string(value["References"].GetString());
+        m_referencesHasBeenSet = true;
+    }
+
+    if (value.HasMember("CVSS") && !value["CVSS"].IsNull())
+    {
+        if (!value["CVSS"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `VULRiskAdvanceCFGList.CVSS` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_cVSS = string(value["CVSS"].GetString());
+        m_cVSSHasBeenSet = true;
+    }
+
+    if (value.HasMember("AttackHeat") && !value["AttackHeat"].IsNull())
+    {
+        if (!value["AttackHeat"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `VULRiskAdvanceCFGList.AttackHeat` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_attackHeat = string(value["AttackHeat"].GetString());
+        m_attackHeatHasBeenSet = true;
+    }
+
+    if (value.HasMember("ServiceSupport") && !value["ServiceSupport"].IsNull())
+    {
+        if (!value["ServiceSupport"].IsArray())
+            return CoreInternalOutcome(Core::Error("response `VULRiskAdvanceCFGList.ServiceSupport` is not array type"));
+
+        const rapidjson::Value &tmpValue = value["ServiceSupport"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            ServiceSupport item;
+            CoreInternalOutcome outcome = item.Deserialize(*itr);
+            if (!outcome.IsSuccess())
+            {
+                outcome.GetError().SetRequestId(requestId);
+                return outcome;
+            }
+            m_serviceSupport.push_back(item);
+        }
+        m_serviceSupportHasBeenSet = true;
+    }
+
+    if (value.HasMember("RecentScanTime") && !value["RecentScanTime"].IsNull())
+    {
+        if (!value["RecentScanTime"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `VULRiskAdvanceCFGList.RecentScanTime` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_recentScanTime = string(value["RecentScanTime"].GetString());
+        m_recentScanTimeHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -316,6 +392,61 @@ void VULRiskAdvanceCFGList::ToJsonObject(rapidjson::Value &value, rapidjson::Doc
         string key = "ImpactComponent";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_impactComponent.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_payloadHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Payload";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_payload.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_referencesHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "References";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_references.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_cVSSHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "CVSS";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_cVSS.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_attackHeatHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "AttackHeat";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_attackHeat.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_serviceSupportHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ServiceSupport";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_serviceSupport.begin(); itr != m_serviceSupport.end(); ++itr, ++i)
+        {
+            value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(value[key.c_str()][i], allocator);
+        }
+    }
+
+    if (m_recentScanTimeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "RecentScanTime";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_recentScanTime.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -543,5 +674,101 @@ void VULRiskAdvanceCFGList::SetImpactComponent(const string& _impactComponent)
 bool VULRiskAdvanceCFGList::ImpactComponentHasBeenSet() const
 {
     return m_impactComponentHasBeenSet;
+}
+
+string VULRiskAdvanceCFGList::GetPayload() const
+{
+    return m_payload;
+}
+
+void VULRiskAdvanceCFGList::SetPayload(const string& _payload)
+{
+    m_payload = _payload;
+    m_payloadHasBeenSet = true;
+}
+
+bool VULRiskAdvanceCFGList::PayloadHasBeenSet() const
+{
+    return m_payloadHasBeenSet;
+}
+
+string VULRiskAdvanceCFGList::GetReferences() const
+{
+    return m_references;
+}
+
+void VULRiskAdvanceCFGList::SetReferences(const string& _references)
+{
+    m_references = _references;
+    m_referencesHasBeenSet = true;
+}
+
+bool VULRiskAdvanceCFGList::ReferencesHasBeenSet() const
+{
+    return m_referencesHasBeenSet;
+}
+
+string VULRiskAdvanceCFGList::GetCVSS() const
+{
+    return m_cVSS;
+}
+
+void VULRiskAdvanceCFGList::SetCVSS(const string& _cVSS)
+{
+    m_cVSS = _cVSS;
+    m_cVSSHasBeenSet = true;
+}
+
+bool VULRiskAdvanceCFGList::CVSSHasBeenSet() const
+{
+    return m_cVSSHasBeenSet;
+}
+
+string VULRiskAdvanceCFGList::GetAttackHeat() const
+{
+    return m_attackHeat;
+}
+
+void VULRiskAdvanceCFGList::SetAttackHeat(const string& _attackHeat)
+{
+    m_attackHeat = _attackHeat;
+    m_attackHeatHasBeenSet = true;
+}
+
+bool VULRiskAdvanceCFGList::AttackHeatHasBeenSet() const
+{
+    return m_attackHeatHasBeenSet;
+}
+
+vector<ServiceSupport> VULRiskAdvanceCFGList::GetServiceSupport() const
+{
+    return m_serviceSupport;
+}
+
+void VULRiskAdvanceCFGList::SetServiceSupport(const vector<ServiceSupport>& _serviceSupport)
+{
+    m_serviceSupport = _serviceSupport;
+    m_serviceSupportHasBeenSet = true;
+}
+
+bool VULRiskAdvanceCFGList::ServiceSupportHasBeenSet() const
+{
+    return m_serviceSupportHasBeenSet;
+}
+
+string VULRiskAdvanceCFGList::GetRecentScanTime() const
+{
+    return m_recentScanTime;
+}
+
+void VULRiskAdvanceCFGList::SetRecentScanTime(const string& _recentScanTime)
+{
+    m_recentScanTime = _recentScanTime;
+    m_recentScanTimeHasBeenSet = true;
+}
+
+bool VULRiskAdvanceCFGList::RecentScanTimeHasBeenSet() const
+{
+    return m_recentScanTimeHasBeenSet;
 }
 

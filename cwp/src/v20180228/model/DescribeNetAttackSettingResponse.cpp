@@ -25,7 +25,11 @@ using namespace std;
 
 DescribeNetAttackSettingResponse::DescribeNetAttackSettingResponse() :
     m_netAttackEnableHasBeenSet(false),
-    m_netAttackAlarmStatusHasBeenSet(false)
+    m_netAttackAlarmStatusHasBeenSet(false),
+    m_scopeHasBeenSet(false),
+    m_instanceIdsHasBeenSet(false),
+    m_excludeInstanceIdsHasBeenSet(false),
+    m_autoIncludeHasBeenSet(false)
 {
 }
 
@@ -83,6 +87,52 @@ CoreInternalOutcome DescribeNetAttackSettingResponse::Deserialize(const string &
         m_netAttackAlarmStatusHasBeenSet = true;
     }
 
+    if (rsp.HasMember("Scope") && !rsp["Scope"].IsNull())
+    {
+        if (!rsp["Scope"].IsUint64())
+        {
+            return CoreInternalOutcome(Core::Error("response `Scope` IsUint64=false incorrectly").SetRequestId(requestId));
+        }
+        m_scope = rsp["Scope"].GetUint64();
+        m_scopeHasBeenSet = true;
+    }
+
+    if (rsp.HasMember("InstanceIds") && !rsp["InstanceIds"].IsNull())
+    {
+        if (!rsp["InstanceIds"].IsArray())
+            return CoreInternalOutcome(Core::Error("response `InstanceIds` is not array type"));
+
+        const rapidjson::Value &tmpValue = rsp["InstanceIds"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            m_instanceIds.push_back((*itr).GetString());
+        }
+        m_instanceIdsHasBeenSet = true;
+    }
+
+    if (rsp.HasMember("ExcludeInstanceIds") && !rsp["ExcludeInstanceIds"].IsNull())
+    {
+        if (!rsp["ExcludeInstanceIds"].IsArray())
+            return CoreInternalOutcome(Core::Error("response `ExcludeInstanceIds` is not array type"));
+
+        const rapidjson::Value &tmpValue = rsp["ExcludeInstanceIds"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            m_excludeInstanceIds.push_back((*itr).GetString());
+        }
+        m_excludeInstanceIdsHasBeenSet = true;
+    }
+
+    if (rsp.HasMember("AutoInclude") && !rsp["AutoInclude"].IsNull())
+    {
+        if (!rsp["AutoInclude"].IsUint64())
+        {
+            return CoreInternalOutcome(Core::Error("response `AutoInclude` IsUint64=false incorrectly").SetRequestId(requestId));
+        }
+        m_autoInclude = rsp["AutoInclude"].GetUint64();
+        m_autoIncludeHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -107,6 +157,48 @@ string DescribeNetAttackSettingResponse::ToJsonString() const
         string key = "NetAttackAlarmStatus";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_netAttackAlarmStatus, allocator);
+    }
+
+    if (m_scopeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Scope";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_scope, allocator);
+    }
+
+    if (m_instanceIdsHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "InstanceIds";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        for (auto itr = m_instanceIds.begin(); itr != m_instanceIds.end(); ++itr)
+        {
+            value[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
+        }
+    }
+
+    if (m_excludeInstanceIdsHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ExcludeInstanceIds";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        for (auto itr = m_excludeInstanceIds.begin(); itr != m_excludeInstanceIds.end(); ++itr)
+        {
+            value[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
+        }
+    }
+
+    if (m_autoIncludeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "AutoInclude";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_autoInclude, allocator);
     }
 
     rapidjson::Value iKey(rapidjson::kStringType);
@@ -139,6 +231,46 @@ uint64_t DescribeNetAttackSettingResponse::GetNetAttackAlarmStatus() const
 bool DescribeNetAttackSettingResponse::NetAttackAlarmStatusHasBeenSet() const
 {
     return m_netAttackAlarmStatusHasBeenSet;
+}
+
+uint64_t DescribeNetAttackSettingResponse::GetScope() const
+{
+    return m_scope;
+}
+
+bool DescribeNetAttackSettingResponse::ScopeHasBeenSet() const
+{
+    return m_scopeHasBeenSet;
+}
+
+vector<string> DescribeNetAttackSettingResponse::GetInstanceIds() const
+{
+    return m_instanceIds;
+}
+
+bool DescribeNetAttackSettingResponse::InstanceIdsHasBeenSet() const
+{
+    return m_instanceIdsHasBeenSet;
+}
+
+vector<string> DescribeNetAttackSettingResponse::GetExcludeInstanceIds() const
+{
+    return m_excludeInstanceIds;
+}
+
+bool DescribeNetAttackSettingResponse::ExcludeInstanceIdsHasBeenSet() const
+{
+    return m_excludeInstanceIdsHasBeenSet;
+}
+
+uint64_t DescribeNetAttackSettingResponse::GetAutoInclude() const
+{
+    return m_autoInclude;
+}
+
+bool DescribeNetAttackSettingResponse::AutoIncludeHasBeenSet() const
+{
+    return m_autoIncludeHasBeenSet;
 }
 
 

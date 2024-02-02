@@ -27,7 +27,8 @@ ServiceCallInfo::ServiceCallInfo() :
     m_outerHttpAddrHasBeenSet(false),
     m_outerHttpsAddrHasBeenSet(false),
     m_appKeyHasBeenSet(false),
-    m_appSecretHasBeenSet(false)
+    m_appSecretHasBeenSet(false),
+    m_authorizationEnableHasBeenSet(false)
 {
 }
 
@@ -106,6 +107,16 @@ CoreInternalOutcome ServiceCallInfo::Deserialize(const rapidjson::Value &value)
         m_appSecretHasBeenSet = true;
     }
 
+    if (value.HasMember("AuthorizationEnable") && !value["AuthorizationEnable"].IsNull())
+    {
+        if (!value["AuthorizationEnable"].IsBool())
+        {
+            return CoreInternalOutcome(Core::Error("response `ServiceCallInfo.AuthorizationEnable` IsBool=false incorrectly").SetRequestId(requestId));
+        }
+        m_authorizationEnable = value["AuthorizationEnable"].GetBool();
+        m_authorizationEnableHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -167,6 +178,14 @@ void ServiceCallInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Document:
         string key = "AppSecret";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_appSecret.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_authorizationEnableHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "AuthorizationEnable";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_authorizationEnable, allocator);
     }
 
 }
@@ -282,5 +301,21 @@ void ServiceCallInfo::SetAppSecret(const string& _appSecret)
 bool ServiceCallInfo::AppSecretHasBeenSet() const
 {
     return m_appSecretHasBeenSet;
+}
+
+bool ServiceCallInfo::GetAuthorizationEnable() const
+{
+    return m_authorizationEnable;
+}
+
+void ServiceCallInfo::SetAuthorizationEnable(const bool& _authorizationEnable)
+{
+    m_authorizationEnable = _authorizationEnable;
+    m_authorizationEnableHasBeenSet = true;
+}
+
+bool ServiceCallInfo::AuthorizationEnableHasBeenSet() const
+{
+    return m_authorizationEnableHasBeenSet;
 }
 

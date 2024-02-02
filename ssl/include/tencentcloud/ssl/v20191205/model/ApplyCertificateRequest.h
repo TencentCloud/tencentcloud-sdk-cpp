@@ -336,6 +336,27 @@ namespace TencentCloud
                      */
                     bool DeleteDnsAutoRecordHasBeenSet() const;
 
+                    /**
+                     * 获取域名数组（多域名证书可以上传）。	
+                     * @return DnsNames 域名数组（多域名证书可以上传）。	
+                     * 
+                     */
+                    std::vector<std::string> GetDnsNames() const;
+
+                    /**
+                     * 设置域名数组（多域名证书可以上传）。	
+                     * @param _dnsNames 域名数组（多域名证书可以上传）。	
+                     * 
+                     */
+                    void SetDnsNames(const std::vector<std::string>& _dnsNames);
+
+                    /**
+                     * 判断参数 DnsNames 是否已赋值
+                     * @return DnsNames 是否已赋值
+                     * 
+                     */
+                    bool DnsNamesHasBeenSet() const;
+
                 private:
 
                     /**
@@ -421,6 +442,12 @@ namespace TencentCloud
                      */
                     bool m_deleteDnsAutoRecord;
                     bool m_deleteDnsAutoRecordHasBeenSet;
+
+                    /**
+                     * 域名数组（多域名证书可以上传）。	
+                     */
+                    std::vector<std::string> m_dnsNames;
+                    bool m_dnsNamesHasBeenSet;
 
                 };
             }

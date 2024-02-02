@@ -28,7 +28,12 @@ DescribeImageAuthorizedInfoResponse::DescribeImageAuthorizedInfoResponse() :
     m_usedAuthorizedCntHasBeenSet(false),
     m_scannedImageCntHasBeenSet(false),
     m_notScannedImageCntHasBeenSet(false),
-    m_notScannedLocalImageCntHasBeenSet(false)
+    m_notScannedLocalImageCntHasBeenSet(false),
+    m_trialAuthorizedCntHasBeenSet(false),
+    m_usedTrialAuthorizedCntHasBeenSet(false),
+    m_purchasedAuthorizedCntHasBeenSet(false),
+    m_usedPurchasedAuthorizedCntHasBeenSet(false),
+    m_canApplyFreeImageAuthorizeHasBeenSet(false)
 {
 }
 
@@ -116,6 +121,56 @@ CoreInternalOutcome DescribeImageAuthorizedInfoResponse::Deserialize(const strin
         m_notScannedLocalImageCntHasBeenSet = true;
     }
 
+    if (rsp.HasMember("TrialAuthorizedCnt") && !rsp["TrialAuthorizedCnt"].IsNull())
+    {
+        if (!rsp["TrialAuthorizedCnt"].IsUint64())
+        {
+            return CoreInternalOutcome(Core::Error("response `TrialAuthorizedCnt` IsUint64=false incorrectly").SetRequestId(requestId));
+        }
+        m_trialAuthorizedCnt = rsp["TrialAuthorizedCnt"].GetUint64();
+        m_trialAuthorizedCntHasBeenSet = true;
+    }
+
+    if (rsp.HasMember("UsedTrialAuthorizedCnt") && !rsp["UsedTrialAuthorizedCnt"].IsNull())
+    {
+        if (!rsp["UsedTrialAuthorizedCnt"].IsUint64())
+        {
+            return CoreInternalOutcome(Core::Error("response `UsedTrialAuthorizedCnt` IsUint64=false incorrectly").SetRequestId(requestId));
+        }
+        m_usedTrialAuthorizedCnt = rsp["UsedTrialAuthorizedCnt"].GetUint64();
+        m_usedTrialAuthorizedCntHasBeenSet = true;
+    }
+
+    if (rsp.HasMember("PurchasedAuthorizedCnt") && !rsp["PurchasedAuthorizedCnt"].IsNull())
+    {
+        if (!rsp["PurchasedAuthorizedCnt"].IsUint64())
+        {
+            return CoreInternalOutcome(Core::Error("response `PurchasedAuthorizedCnt` IsUint64=false incorrectly").SetRequestId(requestId));
+        }
+        m_purchasedAuthorizedCnt = rsp["PurchasedAuthorizedCnt"].GetUint64();
+        m_purchasedAuthorizedCntHasBeenSet = true;
+    }
+
+    if (rsp.HasMember("UsedPurchasedAuthorizedCnt") && !rsp["UsedPurchasedAuthorizedCnt"].IsNull())
+    {
+        if (!rsp["UsedPurchasedAuthorizedCnt"].IsUint64())
+        {
+            return CoreInternalOutcome(Core::Error("response `UsedPurchasedAuthorizedCnt` IsUint64=false incorrectly").SetRequestId(requestId));
+        }
+        m_usedPurchasedAuthorizedCnt = rsp["UsedPurchasedAuthorizedCnt"].GetUint64();
+        m_usedPurchasedAuthorizedCntHasBeenSet = true;
+    }
+
+    if (rsp.HasMember("CanApplyFreeImageAuthorize") && !rsp["CanApplyFreeImageAuthorize"].IsNull())
+    {
+        if (!rsp["CanApplyFreeImageAuthorize"].IsBool())
+        {
+            return CoreInternalOutcome(Core::Error("response `CanApplyFreeImageAuthorize` IsBool=false incorrectly").SetRequestId(requestId));
+        }
+        m_canApplyFreeImageAuthorize = rsp["CanApplyFreeImageAuthorize"].GetBool();
+        m_canApplyFreeImageAuthorizeHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -164,6 +219,46 @@ string DescribeImageAuthorizedInfoResponse::ToJsonString() const
         string key = "NotScannedLocalImageCnt";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_notScannedLocalImageCnt, allocator);
+    }
+
+    if (m_trialAuthorizedCntHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "TrialAuthorizedCnt";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_trialAuthorizedCnt, allocator);
+    }
+
+    if (m_usedTrialAuthorizedCntHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "UsedTrialAuthorizedCnt";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_usedTrialAuthorizedCnt, allocator);
+    }
+
+    if (m_purchasedAuthorizedCntHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "PurchasedAuthorizedCnt";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_purchasedAuthorizedCnt, allocator);
+    }
+
+    if (m_usedPurchasedAuthorizedCntHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "UsedPurchasedAuthorizedCnt";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_usedPurchasedAuthorizedCnt, allocator);
+    }
+
+    if (m_canApplyFreeImageAuthorizeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "CanApplyFreeImageAuthorize";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_canApplyFreeImageAuthorize, allocator);
     }
 
     rapidjson::Value iKey(rapidjson::kStringType);
@@ -226,6 +321,56 @@ uint64_t DescribeImageAuthorizedInfoResponse::GetNotScannedLocalImageCnt() const
 bool DescribeImageAuthorizedInfoResponse::NotScannedLocalImageCntHasBeenSet() const
 {
     return m_notScannedLocalImageCntHasBeenSet;
+}
+
+uint64_t DescribeImageAuthorizedInfoResponse::GetTrialAuthorizedCnt() const
+{
+    return m_trialAuthorizedCnt;
+}
+
+bool DescribeImageAuthorizedInfoResponse::TrialAuthorizedCntHasBeenSet() const
+{
+    return m_trialAuthorizedCntHasBeenSet;
+}
+
+uint64_t DescribeImageAuthorizedInfoResponse::GetUsedTrialAuthorizedCnt() const
+{
+    return m_usedTrialAuthorizedCnt;
+}
+
+bool DescribeImageAuthorizedInfoResponse::UsedTrialAuthorizedCntHasBeenSet() const
+{
+    return m_usedTrialAuthorizedCntHasBeenSet;
+}
+
+uint64_t DescribeImageAuthorizedInfoResponse::GetPurchasedAuthorizedCnt() const
+{
+    return m_purchasedAuthorizedCnt;
+}
+
+bool DescribeImageAuthorizedInfoResponse::PurchasedAuthorizedCntHasBeenSet() const
+{
+    return m_purchasedAuthorizedCntHasBeenSet;
+}
+
+uint64_t DescribeImageAuthorizedInfoResponse::GetUsedPurchasedAuthorizedCnt() const
+{
+    return m_usedPurchasedAuthorizedCnt;
+}
+
+bool DescribeImageAuthorizedInfoResponse::UsedPurchasedAuthorizedCntHasBeenSet() const
+{
+    return m_usedPurchasedAuthorizedCntHasBeenSet;
+}
+
+bool DescribeImageAuthorizedInfoResponse::GetCanApplyFreeImageAuthorize() const
+{
+    return m_canApplyFreeImageAuthorize;
+}
+
+bool DescribeImageAuthorizedInfoResponse::CanApplyFreeImageAuthorizeHasBeenSet() const
+{
+    return m_canApplyFreeImageAuthorizeHasBeenSet;
 }
 
 

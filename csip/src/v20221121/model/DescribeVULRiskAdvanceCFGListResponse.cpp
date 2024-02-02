@@ -28,7 +28,8 @@ DescribeVULRiskAdvanceCFGListResponse::DescribeVULRiskAdvanceCFGListResponse() :
     m_totalCountHasBeenSet(false),
     m_riskLevelListsHasBeenSet(false),
     m_vULTypeListsHasBeenSet(false),
-    m_checkFromListsHasBeenSet(false)
+    m_checkFromListsHasBeenSet(false),
+    m_vulTagListHasBeenSet(false)
 {
 }
 
@@ -156,6 +157,26 @@ CoreInternalOutcome DescribeVULRiskAdvanceCFGListResponse::Deserialize(const str
         m_checkFromListsHasBeenSet = true;
     }
 
+    if (rsp.HasMember("VulTagList") && !rsp["VulTagList"].IsNull())
+    {
+        if (!rsp["VulTagList"].IsArray())
+            return CoreInternalOutcome(Core::Error("response `VulTagList` is not array type"));
+
+        const rapidjson::Value &tmpValue = rsp["VulTagList"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            FilterDataObject item;
+            CoreInternalOutcome outcome = item.Deserialize(*itr);
+            if (!outcome.IsSuccess())
+            {
+                outcome.GetError().SetRequestId(requestId);
+                return outcome;
+            }
+            m_vulTagList.push_back(item);
+        }
+        m_vulTagListHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -234,6 +255,21 @@ string DescribeVULRiskAdvanceCFGListResponse::ToJsonString() const
         }
     }
 
+    if (m_vulTagListHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "VulTagList";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_vulTagList.begin(); itr != m_vulTagList.end(); ++itr, ++i)
+        {
+            value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(value[key.c_str()][i], allocator);
+        }
+    }
+
     rapidjson::Value iKey(rapidjson::kStringType);
     string key = "RequestId";
     iKey.SetString(key.c_str(), allocator);
@@ -294,6 +330,16 @@ vector<FilterDataObject> DescribeVULRiskAdvanceCFGListResponse::GetCheckFromList
 bool DescribeVULRiskAdvanceCFGListResponse::CheckFromListsHasBeenSet() const
 {
     return m_checkFromListsHasBeenSet;
+}
+
+vector<FilterDataObject> DescribeVULRiskAdvanceCFGListResponse::GetVulTagList() const
+{
+    return m_vulTagList;
+}
+
+bool DescribeVULRiskAdvanceCFGListResponse::VulTagListHasBeenSet() const
+{
+    return m_vulTagListHasBeenSet;
 }
 
 

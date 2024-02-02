@@ -169,14 +169,18 @@ namespace TencentCloud
 
                     /**
                      * 获取每页返回数量，默认值为100，最大值为100。
+如果offset和limit都不填，或者都填0，则返回全部数据
                      * @return Limit 每页返回数量，默认值为100，最大值为100。
+如果offset和limit都不填，或者都填0，则返回全部数据
                      * 
                      */
                     int64_t GetLimit() const;
 
                     /**
                      * 设置每页返回数量，默认值为100，最大值为100。
+如果offset和limit都不填，或者都填0，则返回全部数据
                      * @param _limit 每页返回数量，默认值为100，最大值为100。
+如果offset和limit都不填，或者都填0，则返回全部数据
                      * 
                      */
                     void SetLimit(const int64_t& _limit);
@@ -310,6 +314,7 @@ namespace TencentCloud
 
                     /**
                      * 每页返回数量，默认值为100，最大值为100。
+如果offset和limit都不填，或者都填0，则返回全部数据
                      */
                     int64_t m_limit;
                     bool m_limitHasBeenSet;

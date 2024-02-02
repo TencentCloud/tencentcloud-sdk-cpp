@@ -1056,7 +1056,7 @@ namespace TencentCloud
                 DescribeBinlogsOutcomeCallable DescribeBinlogsCallable(const Model::DescribeBinlogsRequest& request);
 
                 /**
-                 *获取database列表
+                 *获取集群数据库列表
                  * @param req DescribeClusterDatabasesRequest
                  * @return DescribeClusterDatabasesOutcome
                  */
@@ -1776,7 +1776,7 @@ namespace TencentCloud
                 RollBackClusterOutcomeCallable RollBackClusterCallable(const Model::RollBackClusterRequest& request);
 
                 /**
-                 *本接口(SearchClusterDatabases)搜索集群database列表
+                 *本接口(SearchClusterDatabases)搜索集群数据库列表
                  * @param req SearchClusterDatabasesRequest
                  * @return SearchClusterDatabasesOutcome
                  */

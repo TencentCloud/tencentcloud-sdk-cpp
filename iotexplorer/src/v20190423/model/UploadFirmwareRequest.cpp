@@ -29,7 +29,8 @@ UploadFirmwareRequest::UploadFirmwareRequest() :
     m_fileSizeHasBeenSet(false),
     m_firmwareNameHasBeenSet(false),
     m_firmwareDescriptionHasBeenSet(false),
-    m_fwTypeHasBeenSet(false)
+    m_fwTypeHasBeenSet(false),
+    m_firmwareUserDefinedHasBeenSet(false)
 {
 }
 
@@ -94,6 +95,14 @@ string UploadFirmwareRequest::ToJsonString() const
         string key = "FwType";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_fwType.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_firmwareUserDefinedHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "FirmwareUserDefined";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_firmwareUserDefined.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -214,6 +223,22 @@ void UploadFirmwareRequest::SetFwType(const string& _fwType)
 bool UploadFirmwareRequest::FwTypeHasBeenSet() const
 {
     return m_fwTypeHasBeenSet;
+}
+
+string UploadFirmwareRequest::GetFirmwareUserDefined() const
+{
+    return m_firmwareUserDefined;
+}
+
+void UploadFirmwareRequest::SetFirmwareUserDefined(const string& _firmwareUserDefined)
+{
+    m_firmwareUserDefined = _firmwareUserDefined;
+    m_firmwareUserDefinedHasBeenSet = true;
+}
+
+bool UploadFirmwareRequest::FirmwareUserDefinedHasBeenSet() const
+{
+    return m_firmwareUserDefinedHasBeenSet;
 }
 
 

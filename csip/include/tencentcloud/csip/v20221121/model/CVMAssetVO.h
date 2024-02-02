@@ -25,6 +25,7 @@
 #include <tencentcloud/core/utils/rapidjson/stringbuffer.h>
 #include <tencentcloud/core/AbstractModel.h>
 #include <tencentcloud/csip/v20221121/model/Tag.h>
+#include <tencentcloud/csip/v20221121/model/Element.h>
 
 
 namespace TencentCloud
@@ -1322,6 +1323,306 @@ namespace TencentCloud
                      */
                     bool IsNewAssetHasBeenSet() const;
 
+                    /**
+                     * 获取0 未安装  1安装 2:安装中
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return CVMAgentStatus 0 未安装  1安装 2:安装中
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    int64_t GetCVMAgentStatus() const;
+
+                    /**
+                     * 设置0 未安装  1安装 2:安装中
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _cVMAgentStatus 0 未安装  1安装 2:安装中
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetCVMAgentStatus(const int64_t& _cVMAgentStatus);
+
+                    /**
+                     * 判断参数 CVMAgentStatus 是否已赋值
+                     * @return CVMAgentStatus 是否已赋值
+                     * 
+                     */
+                    bool CVMAgentStatusHasBeenSet() const;
+
+                    /**
+                     * 获取1:开启 0:未开启
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return CVMStatus 1:开启 0:未开启
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    int64_t GetCVMStatus() const;
+
+                    /**
+                     * 设置1:开启 0:未开启
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _cVMStatus 1:开启 0:未开启
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetCVMStatus(const int64_t& _cVMStatus);
+
+                    /**
+                     * 判断参数 CVMStatus 是否已赋值
+                     * @return CVMStatus 是否已赋值
+                     * 
+                     */
+                    bool CVMStatusHasBeenSet() const;
+
+                    /**
+                     * 获取1:客户端已安装 0：未安装 2: Agentless
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return DefenseModel 1:客户端已安装 0：未安装 2: Agentless
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    int64_t GetDefenseModel() const;
+
+                    /**
+                     * 设置1:客户端已安装 0：未安装 2: Agentless
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _defenseModel 1:客户端已安装 0：未安装 2: Agentless
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetDefenseModel(const int64_t& _defenseModel);
+
+                    /**
+                     * 判断参数 DefenseModel 是否已赋值
+                     * @return DefenseModel 是否已赋值
+                     * 
+                     */
+                    bool DefenseModelHasBeenSet() const;
+
+                    /**
+                     * 获取1:已安装 0:未安装
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return TatStatus 1:已安装 0:未安装
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    int64_t GetTatStatus() const;
+
+                    /**
+                     * 设置1:已安装 0:未安装
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _tatStatus 1:已安装 0:未安装
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetTatStatus(const int64_t& _tatStatus);
+
+                    /**
+                     * 判断参数 TatStatus 是否已赋值
+                     * @return TatStatus 是否已赋值
+                     * 
+                     */
+                    bool TatStatusHasBeenSet() const;
+
+                    /**
+                     * 获取cpu趋势图
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return CpuTrend cpu趋势图
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::vector<Element> GetCpuTrend() const;
+
+                    /**
+                     * 设置cpu趋势图
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _cpuTrend cpu趋势图
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetCpuTrend(const std::vector<Element>& _cpuTrend);
+
+                    /**
+                     * 判断参数 CpuTrend 是否已赋值
+                     * @return CpuTrend 是否已赋值
+                     * 
+                     */
+                    bool CpuTrendHasBeenSet() const;
+
+                    /**
+                     * 获取内存趋势图
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return MemoryTrend 内存趋势图
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::vector<Element> GetMemoryTrend() const;
+
+                    /**
+                     * 设置内存趋势图
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _memoryTrend 内存趋势图
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetMemoryTrend(const std::vector<Element>& _memoryTrend);
+
+                    /**
+                     * 判断参数 MemoryTrend 是否已赋值
+                     * @return MemoryTrend 是否已赋值
+                     * 
+                     */
+                    bool MemoryTrendHasBeenSet() const;
+
+                    /**
+                     * 获取1:agent在线 0:agent离线 2:主机离线
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return AgentStatus 1:agent在线 0:agent离线 2:主机离线
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    int64_t GetAgentStatus() const;
+
+                    /**
+                     * 设置1:agent在线 0:agent离线 2:主机离线
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _agentStatus 1:agent在线 0:agent离线 2:主机离线
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetAgentStatus(const int64_t& _agentStatus);
+
+                    /**
+                     * 判断参数 AgentStatus 是否已赋值
+                     * @return AgentStatus 是否已赋值
+                     * 
+                     */
+                    bool AgentStatusHasBeenSet() const;
+
+                    /**
+                     * 获取本月防护关闭次数
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return CloseDefenseCount 本月防护关闭次数
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    int64_t GetCloseDefenseCount() const;
+
+                    /**
+                     * 设置本月防护关闭次数
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _closeDefenseCount 本月防护关闭次数
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetCloseDefenseCount(const int64_t& _closeDefenseCount);
+
+                    /**
+                     * 判断参数 CloseDefenseCount 是否已赋值
+                     * @return CloseDefenseCount 是否已赋值
+                     * 
+                     */
+                    bool CloseDefenseCountHasBeenSet() const;
+
+                    /**
+                     * 获取运行状态
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return InstanceState 运行状态
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::string GetInstanceState() const;
+
+                    /**
+                     * 设置运行状态
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _instanceState 运行状态
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetInstanceState(const std::string& _instanceState);
+
+                    /**
+                     * 判断参数 InstanceState 是否已赋值
+                     * @return InstanceState 是否已赋值
+                     * 
+                     */
+                    bool InstanceStateHasBeenSet() const;
+
+                    /**
+                     * 获取安全组数据
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return SecurityGroupIds 安全组数据
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::vector<std::string> GetSecurityGroupIds() const;
+
+                    /**
+                     * 设置安全组数据
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _securityGroupIds 安全组数据
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetSecurityGroupIds(const std::vector<std::string>& _securityGroupIds);
+
+                    /**
+                     * 判断参数 SecurityGroupIds 是否已赋值
+                     * @return SecurityGroupIds 是否已赋值
+                     * 
+                     */
+                    bool SecurityGroupIdsHasBeenSet() const;
+
+                    /**
+                     * 获取物理内存占用KB
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return AgentMemRss 物理内存占用KB
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    int64_t GetAgentMemRss() const;
+
+                    /**
+                     * 设置物理内存占用KB
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _agentMemRss 物理内存占用KB
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetAgentMemRss(const int64_t& _agentMemRss);
+
+                    /**
+                     * 判断参数 AgentMemRss 是否已赋值
+                     * @return AgentMemRss 是否已赋值
+                     * 
+                     */
+                    bool AgentMemRssHasBeenSet() const;
+
+                    /**
+                     * 获取CPU使用率百分比
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return AgentCpuPer CPU使用率百分比
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    double GetAgentCpuPer() const;
+
+                    /**
+                     * 设置CPU使用率百分比
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _agentCpuPer CPU使用率百分比
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetAgentCpuPer(const double& _agentCpuPer);
+
+                    /**
+                     * 判断参数 AgentCpuPer 是否已赋值
+                     * @return AgentCpuPer 是否已赋值
+                     * 
+                     */
+                    bool AgentCpuPerHasBeenSet() const;
+
                 private:
 
                     /**
@@ -1680,6 +1981,90 @@ namespace TencentCloud
                      */
                     uint64_t m_isNewAsset;
                     bool m_isNewAssetHasBeenSet;
+
+                    /**
+                     * 0 未安装  1安装 2:安装中
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    int64_t m_cVMAgentStatus;
+                    bool m_cVMAgentStatusHasBeenSet;
+
+                    /**
+                     * 1:开启 0:未开启
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    int64_t m_cVMStatus;
+                    bool m_cVMStatusHasBeenSet;
+
+                    /**
+                     * 1:客户端已安装 0：未安装 2: Agentless
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    int64_t m_defenseModel;
+                    bool m_defenseModelHasBeenSet;
+
+                    /**
+                     * 1:已安装 0:未安装
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    int64_t m_tatStatus;
+                    bool m_tatStatusHasBeenSet;
+
+                    /**
+                     * cpu趋势图
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::vector<Element> m_cpuTrend;
+                    bool m_cpuTrendHasBeenSet;
+
+                    /**
+                     * 内存趋势图
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::vector<Element> m_memoryTrend;
+                    bool m_memoryTrendHasBeenSet;
+
+                    /**
+                     * 1:agent在线 0:agent离线 2:主机离线
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    int64_t m_agentStatus;
+                    bool m_agentStatusHasBeenSet;
+
+                    /**
+                     * 本月防护关闭次数
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    int64_t m_closeDefenseCount;
+                    bool m_closeDefenseCountHasBeenSet;
+
+                    /**
+                     * 运行状态
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_instanceState;
+                    bool m_instanceStateHasBeenSet;
+
+                    /**
+                     * 安全组数据
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::vector<std::string> m_securityGroupIds;
+                    bool m_securityGroupIdsHasBeenSet;
+
+                    /**
+                     * 物理内存占用KB
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    int64_t m_agentMemRss;
+                    bool m_agentMemRssHasBeenSet;
+
+                    /**
+                     * CPU使用率百分比
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    double m_agentCpuPer;
+                    bool m_agentCpuPerHasBeenSet;
 
                 };
             }

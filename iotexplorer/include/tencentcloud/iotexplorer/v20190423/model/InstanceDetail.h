@@ -69,15 +69,15 @@ namespace TencentCloud
                     bool InstanceIdHasBeenSet() const;
 
                     /**
-                     * 获取实例类型（0 公共实例 1 标准企业实例 2专享企业实例）
-                     * @return InstanceType 实例类型（0 公共实例 1 标准企业实例 2专享企业实例）
+                     * 获取实例类型（0 公共实例 1 标准企业实例 2新企业实例3新公共实例）
+                     * @return InstanceType 实例类型（0 公共实例 1 标准企业实例 2新企业实例3新公共实例）
                      * 
                      */
                     int64_t GetInstanceType() const;
 
                     /**
-                     * 设置实例类型（0 公共实例 1 标准企业实例 2专享企业实例）
-                     * @param _instanceType 实例类型（0 公共实例 1 标准企业实例 2专享企业实例）
+                     * 设置实例类型（0 公共实例 1 标准企业实例 2新企业实例3新公共实例）
+                     * @param _instanceType 实例类型（0 公共实例 1 标准企业实例 2新企业实例3新公共实例）
                      * 
                      */
                     void SetInstanceType(const int64_t& _instanceType);
@@ -153,15 +153,15 @@ namespace TencentCloud
                     bool TotalDeviceNumHasBeenSet() const;
 
                     /**
-                     * 获取以注册设备数
-                     * @return UsedDeviceNum 以注册设备数
+                     * 获取已注册设备数
+                     * @return UsedDeviceNum 已注册设备数
                      * 
                      */
                     int64_t GetUsedDeviceNum() const;
 
                     /**
-                     * 设置以注册设备数
-                     * @param _usedDeviceNum 以注册设备数
+                     * 设置已注册设备数
+                     * @param _usedDeviceNum 已注册设备数
                      * 
                      */
                     void SetUsedDeviceNum(const int64_t& _usedDeviceNum);
@@ -328,6 +328,56 @@ namespace TencentCloud
                      */
                     bool ActivateDeviceHasBeenSet() const;
 
+                    /**
+                     * 获取备注
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return Description 备注
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::string GetDescription() const;
+
+                    /**
+                     * 设置备注
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _description 备注
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetDescription(const std::string& _description);
+
+                    /**
+                     * 判断参数 Description 是否已赋值
+                     * @return Description 是否已赋值
+                     * 
+                     */
+                    bool DescriptionHasBeenSet() const;
+
+                    /**
+                     * 获取实例状态
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return Status 实例状态
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    int64_t GetStatus() const;
+
+                    /**
+                     * 设置实例状态
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _status 实例状态
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetStatus(const int64_t& _status);
+
+                    /**
+                     * 判断参数 Status 是否已赋值
+                     * @return Status 是否已赋值
+                     * 
+                     */
+                    bool StatusHasBeenSet() const;
+
                 private:
 
                     /**
@@ -337,7 +387,7 @@ namespace TencentCloud
                     bool m_instanceIdHasBeenSet;
 
                     /**
-                     * 实例类型（0 公共实例 1 标准企业实例 2专享企业实例）
+                     * 实例类型（0 公共实例 1 标准企业实例 2新企业实例3新公共实例）
                      */
                     int64_t m_instanceType;
                     bool m_instanceTypeHasBeenSet;
@@ -361,7 +411,7 @@ namespace TencentCloud
                     bool m_totalDeviceNumHasBeenSet;
 
                     /**
-                     * 以注册设备数
+                     * 已注册设备数
                      */
                     int64_t m_usedDeviceNum;
                     bool m_usedDeviceNumHasBeenSet;
@@ -409,6 +459,20 @@ namespace TencentCloud
                      */
                     int64_t m_activateDevice;
                     bool m_activateDeviceHasBeenSet;
+
+                    /**
+                     * 备注
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_description;
+                    bool m_descriptionHasBeenSet;
+
+                    /**
+                     * 实例状态
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    int64_t m_status;
+                    bool m_statusHasBeenSet;
 
                 };
             }

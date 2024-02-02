@@ -24,6 +24,7 @@
 #include <tencentcloud/core/utils/rapidjson/writer.h>
 #include <tencentcloud/core/utils/rapidjson/stringbuffer.h>
 #include <tencentcloud/core/AbstractModel.h>
+#include <tencentcloud/csip/v20221121/model/ServiceSupport.h>
 
 
 namespace TencentCloud
@@ -368,6 +369,156 @@ namespace TencentCloud
                      */
                     bool ImpactComponentHasBeenSet() const;
 
+                    /**
+                     * 获取漏洞Payload
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return Payload 漏洞Payload
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::string GetPayload() const;
+
+                    /**
+                     * 设置漏洞Payload
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _payload 漏洞Payload
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetPayload(const std::string& _payload);
+
+                    /**
+                     * 判断参数 Payload 是否已赋值
+                     * @return Payload 是否已赋值
+                     * 
+                     */
+                    bool PayloadHasBeenSet() const;
+
+                    /**
+                     * 获取技术参考
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return References 技术参考
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::string GetReferences() const;
+
+                    /**
+                     * 设置技术参考
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _references 技术参考
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetReferences(const std::string& _references);
+
+                    /**
+                     * 判断参数 References 是否已赋值
+                     * @return References 是否已赋值
+                     * 
+                     */
+                    bool ReferencesHasBeenSet() const;
+
+                    /**
+                     * 获取cvss评分
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return CVSS cvss评分
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::string GetCVSS() const;
+
+                    /**
+                     * 设置cvss评分
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _cVSS cvss评分
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetCVSS(const std::string& _cVSS);
+
+                    /**
+                     * 判断参数 CVSS 是否已赋值
+                     * @return CVSS 是否已赋值
+                     * 
+                     */
+                    bool CVSSHasBeenSet() const;
+
+                    /**
+                     * 获取攻击热度
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return AttackHeat 攻击热度
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::string GetAttackHeat() const;
+
+                    /**
+                     * 设置攻击热度
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _attackHeat 攻击热度
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetAttackHeat(const std::string& _attackHeat);
+
+                    /**
+                     * 判断参数 AttackHeat 是否已赋值
+                     * @return AttackHeat 是否已赋值
+                     * 
+                     */
+                    bool AttackHeatHasBeenSet() const;
+
+                    /**
+                     * 获取安全产品支持情况
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return ServiceSupport 安全产品支持情况
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::vector<ServiceSupport> GetServiceSupport() const;
+
+                    /**
+                     * 设置安全产品支持情况
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _serviceSupport 安全产品支持情况
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetServiceSupport(const std::vector<ServiceSupport>& _serviceSupport);
+
+                    /**
+                     * 判断参数 ServiceSupport 是否已赋值
+                     * @return ServiceSupport 是否已赋值
+                     * 
+                     */
+                    bool ServiceSupportHasBeenSet() const;
+
+                    /**
+                     * 获取最新检测时间
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return RecentScanTime 最新检测时间
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::string GetRecentScanTime() const;
+
+                    /**
+                     * 设置最新检测时间
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _recentScanTime 最新检测时间
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetRecentScanTime(const std::string& _recentScanTime);
+
+                    /**
+                     * 判断参数 RecentScanTime 是否已赋值
+                     * @return RecentScanTime 是否已赋值
+                     * 
+                     */
+                    bool RecentScanTimeHasBeenSet() const;
+
                 private:
 
                     /**
@@ -460,6 +611,48 @@ namespace TencentCloud
                      */
                     std::string m_impactComponent;
                     bool m_impactComponentHasBeenSet;
+
+                    /**
+                     * 漏洞Payload
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_payload;
+                    bool m_payloadHasBeenSet;
+
+                    /**
+                     * 技术参考
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_references;
+                    bool m_referencesHasBeenSet;
+
+                    /**
+                     * cvss评分
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_cVSS;
+                    bool m_cVSSHasBeenSet;
+
+                    /**
+                     * 攻击热度
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_attackHeat;
+                    bool m_attackHeatHasBeenSet;
+
+                    /**
+                     * 安全产品支持情况
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::vector<ServiceSupport> m_serviceSupport;
+                    bool m_serviceSupportHasBeenSet;
+
+                    /**
+                     * 最新检测时间
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_recentScanTime;
+                    bool m_recentScanTimeHasBeenSet;
 
                 };
             }

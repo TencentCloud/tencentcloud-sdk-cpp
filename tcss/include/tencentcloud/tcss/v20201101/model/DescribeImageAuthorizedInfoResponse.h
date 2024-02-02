@@ -113,6 +113,76 @@ namespace TencentCloud
                      */
                     bool NotScannedLocalImageCntHasBeenSet() const;
 
+                    /**
+                     * 获取试用镜像授权数
+                     * @return TrialAuthorizedCnt 试用镜像授权数
+                     * 
+                     */
+                    uint64_t GetTrialAuthorizedCnt() const;
+
+                    /**
+                     * 判断参数 TrialAuthorizedCnt 是否已赋值
+                     * @return TrialAuthorizedCnt 是否已赋值
+                     * 
+                     */
+                    bool TrialAuthorizedCntHasBeenSet() const;
+
+                    /**
+                     * 获取已使用试用镜像授权数
+                     * @return UsedTrialAuthorizedCnt 已使用试用镜像授权数
+                     * 
+                     */
+                    uint64_t GetUsedTrialAuthorizedCnt() const;
+
+                    /**
+                     * 判断参数 UsedTrialAuthorizedCnt 是否已赋值
+                     * @return UsedTrialAuthorizedCnt 是否已赋值
+                     * 
+                     */
+                    bool UsedTrialAuthorizedCntHasBeenSet() const;
+
+                    /**
+                     * 获取已购镜像授权数
+                     * @return PurchasedAuthorizedCnt 已购镜像授权数
+                     * 
+                     */
+                    uint64_t GetPurchasedAuthorizedCnt() const;
+
+                    /**
+                     * 判断参数 PurchasedAuthorizedCnt 是否已赋值
+                     * @return PurchasedAuthorizedCnt 是否已赋值
+                     * 
+                     */
+                    bool PurchasedAuthorizedCntHasBeenSet() const;
+
+                    /**
+                     * 获取已使用已购镜像授权数
+                     * @return UsedPurchasedAuthorizedCnt 已使用已购镜像授权数
+                     * 
+                     */
+                    uint64_t GetUsedPurchasedAuthorizedCnt() const;
+
+                    /**
+                     * 判断参数 UsedPurchasedAuthorizedCnt 是否已赋值
+                     * @return UsedPurchasedAuthorizedCnt 是否已赋值
+                     * 
+                     */
+                    bool UsedPurchasedAuthorizedCntHasBeenSet() const;
+
+                    /**
+                     * 获取是否可免费领取镜像授权数
+                     * @return CanApplyFreeImageAuthorize 是否可免费领取镜像授权数
+                     * 
+                     */
+                    bool GetCanApplyFreeImageAuthorize() const;
+
+                    /**
+                     * 判断参数 CanApplyFreeImageAuthorize 是否已赋值
+                     * @return CanApplyFreeImageAuthorize 是否已赋值
+                     * 
+                     */
+                    bool CanApplyFreeImageAuthorizeHasBeenSet() const;
+
                 private:
 
                     /**
@@ -144,6 +214,36 @@ namespace TencentCloud
                      */
                     uint64_t m_notScannedLocalImageCnt;
                     bool m_notScannedLocalImageCntHasBeenSet;
+
+                    /**
+                     * 试用镜像授权数
+                     */
+                    uint64_t m_trialAuthorizedCnt;
+                    bool m_trialAuthorizedCntHasBeenSet;
+
+                    /**
+                     * 已使用试用镜像授权数
+                     */
+                    uint64_t m_usedTrialAuthorizedCnt;
+                    bool m_usedTrialAuthorizedCntHasBeenSet;
+
+                    /**
+                     * 已购镜像授权数
+                     */
+                    uint64_t m_purchasedAuthorizedCnt;
+                    bool m_purchasedAuthorizedCntHasBeenSet;
+
+                    /**
+                     * 已使用已购镜像授权数
+                     */
+                    uint64_t m_usedPurchasedAuthorizedCnt;
+                    bool m_usedPurchasedAuthorizedCntHasBeenSet;
+
+                    /**
+                     * 是否可免费领取镜像授权数
+                     */
+                    bool m_canApplyFreeImageAuthorize;
+                    bool m_canApplyFreeImageAuthorizeHasBeenSet;
 
                 };
             }

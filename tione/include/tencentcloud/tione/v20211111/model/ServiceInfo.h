@@ -388,31 +388,6 @@ HYBRID_PAID:
                     bool WeightHasBeenSet() const;
 
                     /**
-                     * 获取实例列表
-注意：此字段可能返回 null，表示取不到有效值。
-                     * @return PodList 实例列表
-注意：此字段可能返回 null，表示取不到有效值。
-                     * 
-                     */
-                    std::vector<std::string> GetPodList() const;
-
-                    /**
-                     * 设置实例列表
-注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _podList 实例列表
-注意：此字段可能返回 null，表示取不到有效值。
-                     * 
-                     */
-                    void SetPodList(const std::vector<std::string>& _podList);
-
-                    /**
-                     * 判断参数 PodList 是否已赋值
-                     * @return PodList 是否已赋值
-                     * 
-                     */
-                    bool PodListHasBeenSet() const;
-
-                    /**
                      * 获取资源总量
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return ResourceTotal 资源总量
@@ -642,11 +617,36 @@ HYBRID_PAID:
                     bool ScheduledActionHasBeenSet() const;
 
                     /**
+                     * 获取实例列表
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return PodList 实例列表
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @deprecated
+                     */
+                    std::vector<std::string> GetPodList() const;
+
+                    /**
+                     * 设置实例列表
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _podList 实例列表
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @deprecated
+                     */
+                    void SetPodList(const std::vector<std::string>& _podList);
+
+                    /**
+                     * 判断参数 PodList 是否已赋值
+                     * @return PodList 是否已赋值
+                     * @deprecated
+                     */
+                    bool PodListHasBeenSet() const;
+
+                    /**
                      * 获取Pod列表信息
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Pods Pod列表信息
 注意：此字段可能返回 null，表示取不到有效值。
-                     * 
+                     * @deprecated
                      */
                     Pod GetPods() const;
 
@@ -655,14 +655,14 @@ HYBRID_PAID:
 注意：此字段可能返回 null，表示取不到有效值。
                      * @param _pods Pod列表信息
 注意：此字段可能返回 null，表示取不到有效值。
-                     * 
+                     * @deprecated
                      */
                     void SetPods(const Pod& _pods);
 
                     /**
                      * 判断参数 Pods 是否已赋值
                      * @return Pods 是否已赋值
-                     * 
+                     * @deprecated
                      */
                     bool PodsHasBeenSet() const;
 
@@ -935,13 +935,6 @@ HYBRID_PAID:
                     bool m_weightHasBeenSet;
 
                     /**
-                     * 实例列表
-注意：此字段可能返回 null，表示取不到有效值。
-                     */
-                    std::vector<std::string> m_podList;
-                    bool m_podListHasBeenSet;
-
-                    /**
                      * 资源总量
 注意：此字段可能返回 null，表示取不到有效值。
                      */
@@ -1004,6 +997,13 @@ HYBRID_PAID:
                      */
                     std::string m_scheduledAction;
                     bool m_scheduledActionHasBeenSet;
+
+                    /**
+                     * 实例列表
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::vector<std::string> m_podList;
+                    bool m_podListHasBeenSet;
 
                     /**
                      * Pod列表信息

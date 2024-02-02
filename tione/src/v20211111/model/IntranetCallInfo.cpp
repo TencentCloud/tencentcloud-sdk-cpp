@@ -22,7 +22,9 @@ using namespace std;
 
 IntranetCallInfo::IntranetCallInfo() :
     m_ingressPrivateLinkInfoHasBeenSet(false),
-    m_serviceEIPInfoHasBeenSet(false)
+    m_serviceEIPInfoHasBeenSet(false),
+    m_privateLinkInfosHasBeenSet(false),
+    m_defaultInnerCallInfosHasBeenSet(false)
 {
 }
 
@@ -68,6 +70,46 @@ CoreInternalOutcome IntranetCallInfo::Deserialize(const rapidjson::Value &value)
         m_serviceEIPInfoHasBeenSet = true;
     }
 
+    if (value.HasMember("PrivateLinkInfos") && !value["PrivateLinkInfos"].IsNull())
+    {
+        if (!value["PrivateLinkInfos"].IsArray())
+            return CoreInternalOutcome(Core::Error("response `IntranetCallInfo.PrivateLinkInfos` is not array type"));
+
+        const rapidjson::Value &tmpValue = value["PrivateLinkInfos"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            PrivateLinkInfo item;
+            CoreInternalOutcome outcome = item.Deserialize(*itr);
+            if (!outcome.IsSuccess())
+            {
+                outcome.GetError().SetRequestId(requestId);
+                return outcome;
+            }
+            m_privateLinkInfos.push_back(item);
+        }
+        m_privateLinkInfosHasBeenSet = true;
+    }
+
+    if (value.HasMember("DefaultInnerCallInfos") && !value["DefaultInnerCallInfos"].IsNull())
+    {
+        if (!value["DefaultInnerCallInfos"].IsArray())
+            return CoreInternalOutcome(Core::Error("response `IntranetCallInfo.DefaultInnerCallInfos` is not array type"));
+
+        const rapidjson::Value &tmpValue = value["DefaultInnerCallInfos"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            DefaultInnerCallInfo item;
+            CoreInternalOutcome outcome = item.Deserialize(*itr);
+            if (!outcome.IsSuccess())
+            {
+                outcome.GetError().SetRequestId(requestId);
+                return outcome;
+            }
+            m_defaultInnerCallInfos.push_back(item);
+        }
+        m_defaultInnerCallInfosHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -93,6 +135,36 @@ void IntranetCallInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Document
 
         int i=0;
         for (auto itr = m_serviceEIPInfo.begin(); itr != m_serviceEIPInfo.end(); ++itr, ++i)
+        {
+            value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(value[key.c_str()][i], allocator);
+        }
+    }
+
+    if (m_privateLinkInfosHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "PrivateLinkInfos";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_privateLinkInfos.begin(); itr != m_privateLinkInfos.end(); ++itr, ++i)
+        {
+            value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(value[key.c_str()][i], allocator);
+        }
+    }
+
+    if (m_defaultInnerCallInfosHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "DefaultInnerCallInfos";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_defaultInnerCallInfos.begin(); itr != m_defaultInnerCallInfos.end(); ++itr, ++i)
         {
             value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
             (*itr).ToJsonObject(value[key.c_str()][i], allocator);
@@ -132,5 +204,37 @@ void IntranetCallInfo::SetServiceEIPInfo(const vector<ServiceEIPInfo>& _serviceE
 bool IntranetCallInfo::ServiceEIPInfoHasBeenSet() const
 {
     return m_serviceEIPInfoHasBeenSet;
+}
+
+vector<PrivateLinkInfo> IntranetCallInfo::GetPrivateLinkInfos() const
+{
+    return m_privateLinkInfos;
+}
+
+void IntranetCallInfo::SetPrivateLinkInfos(const vector<PrivateLinkInfo>& _privateLinkInfos)
+{
+    m_privateLinkInfos = _privateLinkInfos;
+    m_privateLinkInfosHasBeenSet = true;
+}
+
+bool IntranetCallInfo::PrivateLinkInfosHasBeenSet() const
+{
+    return m_privateLinkInfosHasBeenSet;
+}
+
+vector<DefaultInnerCallInfo> IntranetCallInfo::GetDefaultInnerCallInfos() const
+{
+    return m_defaultInnerCallInfos;
+}
+
+void IntranetCallInfo::SetDefaultInnerCallInfos(const vector<DefaultInnerCallInfo>& _defaultInnerCallInfos)
+{
+    m_defaultInnerCallInfos = _defaultInnerCallInfos;
+    m_defaultInnerCallInfosHasBeenSet = true;
+}
+
+bool IntranetCallInfo::DefaultInnerCallInfosHasBeenSet() const
+{
+    return m_defaultInnerCallInfosHasBeenSet;
 }
 

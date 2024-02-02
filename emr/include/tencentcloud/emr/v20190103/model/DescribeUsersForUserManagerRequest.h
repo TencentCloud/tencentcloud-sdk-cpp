@@ -86,15 +86,19 @@ namespace TencentCloud
                     bool PageNoHasBeenSet() const;
 
                     /**
-                     * 获取分页的大小
-                     * @return PageSize 分页的大小
+                     * 获取分页的大小。
+默认查询全部；PageNo和PageSize不合理的设置，都是查询全部
+                     * @return PageSize 分页的大小。
+默认查询全部；PageNo和PageSize不合理的设置，都是查询全部
                      * 
                      */
                     int64_t GetPageSize() const;
 
                     /**
-                     * 设置分页的大小
-                     * @param _pageSize 分页的大小
+                     * 设置分页的大小。
+默认查询全部；PageNo和PageSize不合理的设置，都是查询全部
+                     * @param _pageSize 分页的大小。
+默认查询全部；PageNo和PageSize不合理的设置，都是查询全部
                      * 
                      */
                     void SetPageSize(const int64_t& _pageSize);
@@ -163,7 +167,8 @@ namespace TencentCloud
                     bool m_pageNoHasBeenSet;
 
                     /**
-                     * 分页的大小
+                     * 分页的大小。
+默认查询全部；PageNo和PageSize不合理的设置，都是查询全部
                      */
                     int64_t m_pageSize;
                     bool m_pageSizeHasBeenSet;

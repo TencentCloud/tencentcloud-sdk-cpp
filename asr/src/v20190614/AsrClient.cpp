@@ -900,6 +900,49 @@ AsrClient::UpdateAsrVocabOutcomeCallable AsrClient::UpdateAsrVocabCallable(const
     return task->get_future();
 }
 
+AsrClient::VoicePrintCompareOutcome AsrClient::VoicePrintCompare(const VoicePrintCompareRequest &request)
+{
+    auto outcome = MakeRequest(request, "VoicePrintCompare");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        VoicePrintCompareResponse rsp = VoicePrintCompareResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return VoicePrintCompareOutcome(rsp);
+        else
+            return VoicePrintCompareOutcome(o.GetError());
+    }
+    else
+    {
+        return VoicePrintCompareOutcome(outcome.GetError());
+    }
+}
+
+void AsrClient::VoicePrintCompareAsync(const VoicePrintCompareRequest& request, const VoicePrintCompareAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->VoicePrintCompare(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+AsrClient::VoicePrintCompareOutcomeCallable AsrClient::VoicePrintCompareCallable(const VoicePrintCompareRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<VoicePrintCompareOutcome()>>(
+        [this, request]()
+        {
+            return this->VoicePrintCompare(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 AsrClient::VoicePrintCountOutcome AsrClient::VoicePrintCount(const VoicePrintCountRequest &request)
 {
     auto outcome = MakeRequest(request, "VoicePrintCount");

@@ -221,6 +221,31 @@ namespace TencentCloud
                      */
                     bool AppSecretHasBeenSet() const;
 
+                    /**
+                     * 获取鉴权是否开启
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return AuthorizationEnable 鉴权是否开启
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    bool GetAuthorizationEnable() const;
+
+                    /**
+                     * 设置鉴权是否开启
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _authorizationEnable 鉴权是否开启
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetAuthorizationEnable(const bool& _authorizationEnable);
+
+                    /**
+                     * 判断参数 AuthorizationEnable 是否已赋值
+                     * @return AuthorizationEnable 是否已赋值
+                     * 
+                     */
+                    bool AuthorizationEnableHasBeenSet() const;
+
                 private:
 
                     /**
@@ -271,6 +296,13 @@ namespace TencentCloud
                      */
                     std::string m_appSecret;
                     bool m_appSecretHasBeenSet;
+
+                    /**
+                     * 鉴权是否开启
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    bool m_authorizationEnable;
+                    bool m_authorizationEnableHasBeenSet;
 
                 };
             }

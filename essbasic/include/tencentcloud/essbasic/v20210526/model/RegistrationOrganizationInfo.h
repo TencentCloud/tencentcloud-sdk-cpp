@@ -256,38 +256,50 @@ namespace TencentCloud
 
                     /**
                      * 获取可选的此企业允许的授权方式, 可以设置的方式有:
-1：上传授权书+对公打款
-2：法人授权/认证  会根据当前操作人的身份判定,如果当前操作人是法人,则是法人认证, 如果当前操作人不是法人,则走法人授权
+1：上传授权书
+2：法人授权超管
+5：授权书+对公打款
+
 
 注:
 `1. 当前仅支持一种认证方式`
 `2. 如果当前的企业类型是政府/事业单位, 则只支持上传授权书+对公打款`
+`3. 如果当前操作人是法人,则是法人认证`
                      * @return AuthorizationTypes 可选的此企业允许的授权方式, 可以设置的方式有:
-1：上传授权书+对公打款
-2：法人授权/认证  会根据当前操作人的身份判定,如果当前操作人是法人,则是法人认证, 如果当前操作人不是法人,则走法人授权
+1：上传授权书
+2：法人授权超管
+5：授权书+对公打款
+
 
 注:
 `1. 当前仅支持一种认证方式`
 `2. 如果当前的企业类型是政府/事业单位, 则只支持上传授权书+对公打款`
+`3. 如果当前操作人是法人,则是法人认证`
                      * 
                      */
                     std::vector<uint64_t> GetAuthorizationTypes() const;
 
                     /**
                      * 设置可选的此企业允许的授权方式, 可以设置的方式有:
-1：上传授权书+对公打款
-2：法人授权/认证  会根据当前操作人的身份判定,如果当前操作人是法人,则是法人认证, 如果当前操作人不是法人,则走法人授权
+1：上传授权书
+2：法人授权超管
+5：授权书+对公打款
+
 
 注:
 `1. 当前仅支持一种认证方式`
 `2. 如果当前的企业类型是政府/事业单位, 则只支持上传授权书+对公打款`
+`3. 如果当前操作人是法人,则是法人认证`
                      * @param _authorizationTypes 可选的此企业允许的授权方式, 可以设置的方式有:
-1：上传授权书+对公打款
-2：法人授权/认证  会根据当前操作人的身份判定,如果当前操作人是法人,则是法人认证, 如果当前操作人不是法人,则走法人授权
+1：上传授权书
+2：法人授权超管
+5：授权书+对公打款
+
 
 注:
 `1. 当前仅支持一种认证方式`
 `2. 如果当前的企业类型是政府/事业单位, 则只支持上传授权书+对公打款`
+`3. 如果当前操作人是法人,则是法人认证`
                      * 
                      */
                     void SetAuthorizationTypes(const std::vector<uint64_t>& _authorizationTypes);
@@ -357,6 +369,27 @@ namespace TencentCloud
                      */
                     bool AdminIdCardNumberHasBeenSet() const;
 
+                    /**
+                     * 获取营业执照正面照(PNG或JPG) base64格式, 大小不超过5M
+                     * @return BusinessLicense 营业执照正面照(PNG或JPG) base64格式, 大小不超过5M
+                     * 
+                     */
+                    std::string GetBusinessLicense() const;
+
+                    /**
+                     * 设置营业执照正面照(PNG或JPG) base64格式, 大小不超过5M
+                     * @param _businessLicense 营业执照正面照(PNG或JPG) base64格式, 大小不超过5M
+                     * 
+                     */
+                    void SetBusinessLicense(const std::string& _businessLicense);
+
+                    /**
+                     * 判断参数 BusinessLicense 是否已赋值
+                     * @return BusinessLicense 是否已赋值
+                     * 
+                     */
+                    bool BusinessLicenseHasBeenSet() const;
+
                 private:
 
                     /**
@@ -419,12 +452,15 @@ namespace TencentCloud
 
                     /**
                      * 可选的此企业允许的授权方式, 可以设置的方式有:
-1：上传授权书+对公打款
-2：法人授权/认证  会根据当前操作人的身份判定,如果当前操作人是法人,则是法人认证, 如果当前操作人不是法人,则走法人授权
+1：上传授权书
+2：法人授权超管
+5：授权书+对公打款
+
 
 注:
 `1. 当前仅支持一种认证方式`
 `2. 如果当前的企业类型是政府/事业单位, 则只支持上传授权书+对公打款`
+`3. 如果当前操作人是法人,则是法人认证`
                      */
                     std::vector<uint64_t> m_authorizationTypes;
                     bool m_authorizationTypesHasBeenSet;
@@ -444,6 +480,12 @@ namespace TencentCloud
                      */
                     std::string m_adminIdCardNumber;
                     bool m_adminIdCardNumberHasBeenSet;
+
+                    /**
+                     * 营业执照正面照(PNG或JPG) base64格式, 大小不超过5M
+                     */
+                    std::string m_businessLicense;
+                    bool m_businessLicenseHasBeenSet;
 
                 };
             }
