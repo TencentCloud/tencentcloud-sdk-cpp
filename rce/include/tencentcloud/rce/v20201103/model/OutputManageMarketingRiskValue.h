@@ -50,17 +50,13 @@ namespace TencentCloud
                      * 获取账号ID。对应输入参数：
 AccountType是1时，对应QQ的OpenID。
 AccountType是2时，对应微信的OpenID/UnionID。
-AccountType是4时，对应手机号。
 AccountType是8时，对应imei、idfa、imeiMD5或者idfaMD5。
-AccountType是0时，对应账号信息。
 AccountType是10004时，对应手机号的MD5。
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return UserId 账号ID。对应输入参数：
 AccountType是1时，对应QQ的OpenID。
 AccountType是2时，对应微信的OpenID/UnionID。
-AccountType是4时，对应手机号。
 AccountType是8时，对应imei、idfa、imeiMD5或者idfaMD5。
-AccountType是0时，对应账号信息。
 AccountType是10004时，对应手机号的MD5。
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
@@ -71,17 +67,13 @@ AccountType是10004时，对应手机号的MD5。
                      * 设置账号ID。对应输入参数：
 AccountType是1时，对应QQ的OpenID。
 AccountType是2时，对应微信的OpenID/UnionID。
-AccountType是4时，对应手机号。
 AccountType是8时，对应imei、idfa、imeiMD5或者idfaMD5。
-AccountType是0时，对应账号信息。
 AccountType是10004时，对应手机号的MD5。
 注意：此字段可能返回 null，表示取不到有效值。
                      * @param _userId 账号ID。对应输入参数：
 AccountType是1时，对应QQ的OpenID。
 AccountType是2时，对应微信的OpenID/UnionID。
-AccountType是4时，对应手机号。
 AccountType是8时，对应imei、idfa、imeiMD5或者idfaMD5。
-AccountType是0时，对应账号信息。
 AccountType是10004时，对应手机号的MD5。
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
@@ -121,18 +113,18 @@ AccountType是10004时，对应手机号的MD5。
                     bool PostTimeHasBeenSet() const;
 
                     /**
-                     * 获取对应输入参数，AccountType 是 QQ 或微信开放账号时，用于标识 QQ 或微信用户登录后关联业务自身的账号ID。
+                     * 获取业务参数。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return AssociateAccount 对应输入参数，AccountType 是 QQ 或微信开放账号时，用于标识 QQ 或微信用户登录后关联业务自身的账号ID。
+                     * @return AssociateAccount 业务参数。
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetAssociateAccount() const;
 
                     /**
-                     * 设置对应输入参数，AccountType 是 QQ 或微信开放账号时，用于标识 QQ 或微信用户登录后关联业务自身的账号ID。
+                     * 设置业务参数。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _associateAccount 对应输入参数，AccountType 是 QQ 或微信开放账号时，用于标识 QQ 或微信用户登录后关联业务自身的账号ID。
+                     * @param _associateAccount 业务参数。
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -171,30 +163,30 @@ AccountType是10004时，对应手机号的MD5。
                     bool UserIpHasBeenSet() const;
 
                     /**
-                     * 获取风险值
-pass : 无恶意
-review：需要人工审核
-reject：拒绝，高风险恶意
+                     * 获取风险等级
+pass：无恶意
+review：低风险，需要人工审核
+reject：高风险，建议拦截
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return RiskLevel 风险值
-pass : 无恶意
-review：需要人工审核
-reject：拒绝，高风险恶意
+                     * @return RiskLevel 风险等级
+pass：无恶意
+review：低风险，需要人工审核
+reject：高风险，建议拦截
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetRiskLevel() const;
 
                     /**
-                     * 设置风险值
-pass : 无恶意
-review：需要人工审核
-reject：拒绝，高风险恶意
+                     * 设置风险等级
+pass：无恶意
+review：低风险，需要人工审核
+reject：高风险，建议拦截
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _riskLevel 风险值
-pass : 无恶意
-review：需要人工审核
-reject：拒绝，高风险恶意
+                     * @param _riskLevel 风险等级
+pass：无恶意
+review：低风险，需要人工审核
+reject：高风险，建议拦截
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -333,18 +325,18 @@ reject：拒绝，高风险恶意
                     bool RiskTypeHasBeenSet() const;
 
                     /**
-                     * 获取唯一ID
+                     * 获取设备指纹ID，如果集成了设备指纹，并传入了正确的DeviceToken和Platform，该字段正常输出；如果DeviceToken异常（校验不通过），则会在RiskType中返回"-1"标签，ConstId字段为空；如果没有集成设备指纹ConstId字段默认为空。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return ConstId 唯一ID
+                     * @return ConstId 设备指纹ID，如果集成了设备指纹，并传入了正确的DeviceToken和Platform，该字段正常输出；如果DeviceToken异常（校验不通过），则会在RiskType中返回"-1"标签，ConstId字段为空；如果没有集成设备指纹ConstId字段默认为空。
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetConstId() const;
 
                     /**
-                     * 设置唯一ID
+                     * 设置设备指纹ID，如果集成了设备指纹，并传入了正确的DeviceToken和Platform，该字段正常输出；如果DeviceToken异常（校验不通过），则会在RiskType中返回"-1"标签，ConstId字段为空；如果没有集成设备指纹ConstId字段默认为空。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _constId 唯一ID
+                     * @param _constId 设备指纹ID，如果集成了设备指纹，并传入了正确的DeviceToken和Platform，该字段正常输出；如果DeviceToken异常（校验不通过），则会在RiskType中返回"-1"标签，ConstId字段为空；如果没有集成设备指纹ConstId字段默认为空。
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -358,18 +350,18 @@ reject：拒绝，高风险恶意
                     bool ConstIdHasBeenSet() const;
 
                     /**
-                     * 获取扩展信息
+                     * 获取风险扩展数据。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return RiskInformation 扩展信息
+                     * @return RiskInformation 风险扩展数据。
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetRiskInformation() const;
 
                     /**
-                     * 设置扩展信息
+                     * 设置风险扩展数据。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _riskInformation 扩展信息
+                     * @param _riskInformation 风险扩展数据。
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -388,9 +380,7 @@ reject：拒绝，高风险恶意
                      * 账号ID。对应输入参数：
 AccountType是1时，对应QQ的OpenID。
 AccountType是2时，对应微信的OpenID/UnionID。
-AccountType是4时，对应手机号。
 AccountType是8时，对应imei、idfa、imeiMD5或者idfaMD5。
-AccountType是0时，对应账号信息。
 AccountType是10004时，对应手机号的MD5。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
@@ -405,7 +395,7 @@ AccountType是10004时，对应手机号的MD5。
                     bool m_postTimeHasBeenSet;
 
                     /**
-                     * 对应输入参数，AccountType 是 QQ 或微信开放账号时，用于标识 QQ 或微信用户登录后关联业务自身的账号ID。
+                     * 业务参数。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_associateAccount;
@@ -419,10 +409,10 @@ AccountType是10004时，对应手机号的MD5。
                     bool m_userIpHasBeenSet;
 
                     /**
-                     * 风险值
-pass : 无恶意
-review：需要人工审核
-reject：拒绝，高风险恶意
+                     * 风险等级
+pass：无恶意
+review：低风险，需要人工审核
+reject：高风险，建议拦截
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_riskLevel;
@@ -461,14 +451,14 @@ reject：拒绝，高风险恶意
                     bool m_riskTypeHasBeenSet;
 
                     /**
-                     * 唯一ID
+                     * 设备指纹ID，如果集成了设备指纹，并传入了正确的DeviceToken和Platform，该字段正常输出；如果DeviceToken异常（校验不通过），则会在RiskType中返回"-1"标签，ConstId字段为空；如果没有集成设备指纹ConstId字段默认为空。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_constId;
                     bool m_constIdHasBeenSet;
 
                     /**
-                     * 扩展信息
+                     * 风险扩展数据。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_riskInformation;

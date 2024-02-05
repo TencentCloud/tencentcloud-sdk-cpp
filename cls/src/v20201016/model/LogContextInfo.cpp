@@ -29,7 +29,8 @@ LogContextInfo::LogContextInfo() :
     m_bTimeHasBeenSet(false),
     m_hostNameHasBeenSet(false),
     m_rawLogHasBeenSet(false),
-    m_indexStatusHasBeenSet(false)
+    m_indexStatusHasBeenSet(false),
+    m_highLightsHasBeenSet(false)
 {
 }
 
@@ -128,6 +129,26 @@ CoreInternalOutcome LogContextInfo::Deserialize(const rapidjson::Value &value)
         m_indexStatusHasBeenSet = true;
     }
 
+    if (value.HasMember("HighLights") && !value["HighLights"].IsNull())
+    {
+        if (!value["HighLights"].IsArray())
+            return CoreInternalOutcome(Core::Error("response `LogContextInfo.HighLights` is not array type"));
+
+        const rapidjson::Value &tmpValue = value["HighLights"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            HighLightItem item;
+            CoreInternalOutcome outcome = item.Deserialize(*itr);
+            if (!outcome.IsSuccess())
+            {
+                outcome.GetError().SetRequestId(requestId);
+                return outcome;
+            }
+            m_highLights.push_back(item);
+        }
+        m_highLightsHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -205,6 +226,21 @@ void LogContextInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Document::
         string key = "IndexStatus";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_indexStatus.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_highLightsHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "HighLights";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_highLights.begin(); itr != m_highLights.end(); ++itr, ++i)
+        {
+            value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(value[key.c_str()][i], allocator);
+        }
     }
 
 }
@@ -352,5 +388,21 @@ void LogContextInfo::SetIndexStatus(const string& _indexStatus)
 bool LogContextInfo::IndexStatusHasBeenSet() const
 {
     return m_indexStatusHasBeenSet;
+}
+
+vector<HighLightItem> LogContextInfo::GetHighLights() const
+{
+    return m_highLights;
+}
+
+void LogContextInfo::SetHighLights(const vector<HighLightItem>& _highLights)
+{
+    m_highLights = _highLights;
+    m_highLightsHasBeenSet = true;
+}
+
+bool LogContextInfo::HighLightsHasBeenSet() const
+{
+    return m_highLightsHasBeenSet;
 }
 

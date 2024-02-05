@@ -47,47 +47,35 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取其它账号信息：  
-AccountType 是 4 时，填入真实的手机号（如 13123456789）。 
-AccountType 是 8 时，支持 imei、idfa、imeiMD5、idfaMD5入参。  
-AccountType 是 0 时，填入账号信息。  
-AccountType 是 10004 时，填入手机号的 MD5 值。 
-注：imeiMd5 加密方式为：  
-imei 明文小写后，进行 MD5 加密，加密后取小写值。  
-IdfaMd5 加密方式为：idfa 明文大写后，进行 MD5 加密，加密后取小写值。
-
-                     * @return AccountId 其它账号信息：  
-AccountType 是 4 时，填入真实的手机号（如 13123456789）。 
-AccountType 是 8 时，支持 imei、idfa、imeiMD5、idfaMD5入参。  
-AccountType 是 0 时，填入账号信息。  
-AccountType 是 10004 时，填入手机号的 MD5 值。 
-注：imeiMd5 加密方式为：  
-imei 明文小写后，进行 MD5 加密，加密后取小写值。  
-IdfaMd5 加密方式为：idfa 明文大写后，进行 MD5 加密，加密后取小写值。
-
+                     * 获取其他账号信息；
+AccountType是8时，填入设备号（imei/imeimd5/idfa/idfamd5）
+AccountType是10004时，填入中国大陆标准11位手机号的MD5值
+注释：
+MD5手机号加密方式，中国大陆11位手机号进行MD5加密，加密后取32位小写值
+imeiMD5/IdfaMd5加密方式，对imei/IdfaMd5明文进行MD5加密，加密后取32位小写值。
+                     * @return AccountId 其他账号信息；
+AccountType是8时，填入设备号（imei/imeimd5/idfa/idfamd5）
+AccountType是10004时，填入中国大陆标准11位手机号的MD5值
+注释：
+MD5手机号加密方式，中国大陆11位手机号进行MD5加密，加密后取32位小写值
+imeiMD5/IdfaMd5加密方式，对imei/IdfaMd5明文进行MD5加密，加密后取32位小写值。
                      * 
                      */
                     std::string GetAccountId() const;
 
                     /**
-                     * 设置其它账号信息：  
-AccountType 是 4 时，填入真实的手机号（如 13123456789）。 
-AccountType 是 8 时，支持 imei、idfa、imeiMD5、idfaMD5入参。  
-AccountType 是 0 时，填入账号信息。  
-AccountType 是 10004 时，填入手机号的 MD5 值。 
-注：imeiMd5 加密方式为：  
-imei 明文小写后，进行 MD5 加密，加密后取小写值。  
-IdfaMd5 加密方式为：idfa 明文大写后，进行 MD5 加密，加密后取小写值。
-
-                     * @param _accountId 其它账号信息：  
-AccountType 是 4 时，填入真实的手机号（如 13123456789）。 
-AccountType 是 8 时，支持 imei、idfa、imeiMD5、idfaMD5入参。  
-AccountType 是 0 时，填入账号信息。  
-AccountType 是 10004 时，填入手机号的 MD5 值。 
-注：imeiMd5 加密方式为：  
-imei 明文小写后，进行 MD5 加密，加密后取小写值。  
-IdfaMd5 加密方式为：idfa 明文大写后，进行 MD5 加密，加密后取小写值。
-
+                     * 设置其他账号信息；
+AccountType是8时，填入设备号（imei/imeimd5/idfa/idfamd5）
+AccountType是10004时，填入中国大陆标准11位手机号的MD5值
+注释：
+MD5手机号加密方式，中国大陆11位手机号进行MD5加密，加密后取32位小写值
+imeiMD5/IdfaMd5加密方式，对imei/IdfaMd5明文进行MD5加密，加密后取32位小写值。
+                     * @param _accountId 其他账号信息；
+AccountType是8时，填入设备号（imei/imeimd5/idfa/idfamd5）
+AccountType是10004时，填入中国大陆标准11位手机号的MD5值
+注释：
+MD5手机号加密方式，中国大陆11位手机号进行MD5加密，加密后取32位小写值
+imeiMD5/IdfaMd5加密方式，对imei/IdfaMd5明文进行MD5加密，加密后取32位小写值。
                      * 
                      */
                     void SetAccountId(const std::string& _accountId);
@@ -100,19 +88,15 @@ IdfaMd5 加密方式为：idfa 明文大写后，进行 MD5 加密，加密后�
                     bool AccountIdHasBeenSet() const;
 
                     /**
-                     * 获取手机号，若 AccountType 是 4（手机号）、或 10004（手机号 MD5），则无需重复填写 
-否则填入对应的手机号（如 13123456789）。
-                     * @return MobilePhone 手机号，若 AccountType 是 4（手机号）、或 10004（手机号 MD5），则无需重复填写 
-否则填入对应的手机号（如 13123456789）。
+                     * 获取MD5手机号,AccountType是10004时，此处无需重复填写。
+                     * @return MobilePhone MD5手机号,AccountType是10004时，此处无需重复填写。
                      * 
                      */
                     std::string GetMobilePhone() const;
 
                     /**
-                     * 设置手机号，若 AccountType 是 4（手机号）、或 10004（手机号 MD5），则无需重复填写 
-否则填入对应的手机号（如 13123456789）。
-                     * @param _mobilePhone 手机号，若 AccountType 是 4（手机号）、或 10004（手机号 MD5），则无需重复填写 
-否则填入对应的手机号（如 13123456789）。
+                     * 设置MD5手机号,AccountType是10004时，此处无需重复填写。
+                     * @param _mobilePhone MD5手机号,AccountType是10004时，此处无需重复填写。
                      * 
                      */
                     void SetMobilePhone(const std::string& _mobilePhone);
@@ -125,23 +109,15 @@ IdfaMd5 加密方式为：idfa 明文大写后，进行 MD5 加密，加密后�
                     bool MobilePhoneHasBeenSet() const;
 
                     /**
-                     * 获取用户设备号。若 AccountType 是 8（设备号），则无需重复填写，否则填入对应的设备 
-号。 
-
-                     * @return DeviceId 用户设备号。若 AccountType 是 8（设备号），则无需重复填写，否则填入对应的设备 
-号。 
-
+                     * 获取用户设备号，AccountType是8时，此处无需重复填写。
+                     * @return DeviceId 用户设备号，AccountType是8时，此处无需重复填写。
                      * 
                      */
                     std::string GetDeviceId() const;
 
                     /**
-                     * 设置用户设备号。若 AccountType 是 8（设备号），则无需重复填写，否则填入对应的设备 
-号。 
-
-                     * @param _deviceId 用户设备号。若 AccountType 是 8（设备号），则无需重复填写，否则填入对应的设备 
-号。 
-
+                     * 设置用户设备号，AccountType是8时，此处无需重复填写。
+                     * @param _deviceId 用户设备号，AccountType是8时，此处无需重复填写。
                      * 
                      */
                     void SetDeviceId(const std::string& _deviceId);
@@ -156,30 +132,24 @@ IdfaMd5 加密方式为：idfa 明文大写后，进行 MD5 加密，加密后�
                 private:
 
                     /**
-                     * 其它账号信息：  
-AccountType 是 4 时，填入真实的手机号（如 13123456789）。 
-AccountType 是 8 时，支持 imei、idfa、imeiMD5、idfaMD5入参。  
-AccountType 是 0 时，填入账号信息。  
-AccountType 是 10004 时，填入手机号的 MD5 值。 
-注：imeiMd5 加密方式为：  
-imei 明文小写后，进行 MD5 加密，加密后取小写值。  
-IdfaMd5 加密方式为：idfa 明文大写后，进行 MD5 加密，加密后取小写值。
-
+                     * 其他账号信息；
+AccountType是8时，填入设备号（imei/imeimd5/idfa/idfamd5）
+AccountType是10004时，填入中国大陆标准11位手机号的MD5值
+注释：
+MD5手机号加密方式，中国大陆11位手机号进行MD5加密，加密后取32位小写值
+imeiMD5/IdfaMd5加密方式，对imei/IdfaMd5明文进行MD5加密，加密后取32位小写值。
                      */
                     std::string m_accountId;
                     bool m_accountIdHasBeenSet;
 
                     /**
-                     * 手机号，若 AccountType 是 4（手机号）、或 10004（手机号 MD5），则无需重复填写 
-否则填入对应的手机号（如 13123456789）。
+                     * MD5手机号,AccountType是10004时，此处无需重复填写。
                      */
                     std::string m_mobilePhone;
                     bool m_mobilePhoneHasBeenSet;
 
                     /**
-                     * 用户设备号。若 AccountType 是 8（设备号），则无需重复填写，否则填入对应的设备 
-号。 
-
+                     * 用户设备号，AccountType是8时，此处无需重复填写。
                      */
                     std::string m_deviceId;
                     bool m_deviceIdHasBeenSet;

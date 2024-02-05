@@ -23,6 +23,8 @@
 #include <tencentcloud/core/Credential.h>
 #include <tencentcloud/core/profile/ClientProfile.h>
 #include <tencentcloud/core/AsyncCallerContext.h>
+#include <tencentcloud/taf/v20200210/model/ManagePortraitRiskRequest.h>
+#include <tencentcloud/taf/v20200210/model/ManagePortraitRiskResponse.h>
 #include <tencentcloud/taf/v20200210/model/RecognizeCustomizedAudienceRequest.h>
 #include <tencentcloud/taf/v20200210/model/RecognizeCustomizedAudienceResponse.h>
 #include <tencentcloud/taf/v20200210/model/RecognizePreciseTargetAudienceRequest.h>
@@ -43,6 +45,9 @@ namespace TencentCloud
                 TafClient(const Credential &credential, const std::string &region);
                 TafClient(const Credential &credential, const std::string &region, const ClientProfile &profile);
 
+                typedef Outcome<Core::Error, Model::ManagePortraitRiskResponse> ManagePortraitRiskOutcome;
+                typedef std::future<ManagePortraitRiskOutcome> ManagePortraitRiskOutcomeCallable;
+                typedef std::function<void(const TafClient*, const Model::ManagePortraitRiskRequest&, ManagePortraitRiskOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ManagePortraitRiskAsyncHandler;
                 typedef Outcome<Core::Error, Model::RecognizeCustomizedAudienceResponse> RecognizeCustomizedAudienceOutcome;
                 typedef std::future<RecognizeCustomizedAudienceOutcome> RecognizeCustomizedAudienceOutcomeCallable;
                 typedef std::function<void(const TafClient*, const Model::RecognizeCustomizedAudienceRequest&, RecognizeCustomizedAudienceOutcome, const std::shared_ptr<const AsyncCallerContext>&)> RecognizeCustomizedAudienceAsyncHandler;
@@ -54,6 +59,15 @@ namespace TencentCloud
                 typedef std::function<void(const TafClient*, const Model::RecognizeTargetAudienceRequest&, RecognizeTargetAudienceOutcome, const std::shared_ptr<const AsyncCallerContext>&)> RecognizeTargetAudienceAsyncHandler;
 
 
+
+                /**
+                 *虚假流量识别
+                 * @param req ManagePortraitRiskRequest
+                 * @return ManagePortraitRiskOutcome
+                 */
+                ManagePortraitRiskOutcome ManagePortraitRisk(const Model::ManagePortraitRiskRequest &request);
+                void ManagePortraitRiskAsync(const Model::ManagePortraitRiskRequest& request, const ManagePortraitRiskAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                ManagePortraitRiskOutcomeCallable ManagePortraitRiskCallable(const Model::ManagePortraitRiskRequest& request);
 
                 /**
                  *流量反欺诈-流量验准定制版

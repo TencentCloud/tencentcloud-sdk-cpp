@@ -118,15 +118,19 @@ namespace TencentCloud
                     bool RandStrHasBeenSet() const;
 
                     /**
-                     * 获取token
-                     * @return WeChatAccessToken token
+                     * 获取如果WeChatSubType 是1，填入授权的 access_token（注意：不是普通 access_token，详情请参阅官方说明文档。获取网页版本的 access_token 时，scope 字段必需填写snsapi_userinfo
+如果WeChatSubType是2，填入以session_key 为密钥签名随机数RandStr（hmac_sha256签名算法）得到的字符串。
+                     * @return WeChatAccessToken 如果WeChatSubType 是1，填入授权的 access_token（注意：不是普通 access_token，详情请参阅官方说明文档。获取网页版本的 access_token 时，scope 字段必需填写snsapi_userinfo
+如果WeChatSubType是2，填入以session_key 为密钥签名随机数RandStr（hmac_sha256签名算法）得到的字符串。
                      * 
                      */
                     std::string GetWeChatAccessToken() const;
 
                     /**
-                     * 设置token
-                     * @param _weChatAccessToken token
+                     * 设置如果WeChatSubType 是1，填入授权的 access_token（注意：不是普通 access_token，详情请参阅官方说明文档。获取网页版本的 access_token 时，scope 字段必需填写snsapi_userinfo
+如果WeChatSubType是2，填入以session_key 为密钥签名随机数RandStr（hmac_sha256签名算法）得到的字符串。
+                     * @param _weChatAccessToken 如果WeChatSubType 是1，填入授权的 access_token（注意：不是普通 access_token，详情请参阅官方说明文档。获取网页版本的 access_token 时，scope 字段必需填写snsapi_userinfo
+如果WeChatSubType是2，填入以session_key 为密钥签名随机数RandStr（hmac_sha256签名算法）得到的字符串。
                      * 
                      */
                     void SetWeChatAccessToken(const std::string& _weChatAccessToken);
@@ -160,15 +164,19 @@ namespace TencentCloud
                     bool AssociateAccountHasBeenSet() const;
 
                     /**
-                     * 获取账号绑定的手机号。
-                     * @return MobilePhone 账号绑定的手机号。
+                     * 获取账号绑定的MD5手机号，
+注释：只支持标准中国大陆11位手机号MD5加密后位的32位小写字符串。
+                     * @return MobilePhone 账号绑定的MD5手机号，
+注释：只支持标准中国大陆11位手机号MD5加密后位的32位小写字符串。
                      * 
                      */
                     std::string GetMobilePhone() const;
 
                     /**
-                     * 设置账号绑定的手机号。
-                     * @param _mobilePhone 账号绑定的手机号。
+                     * 设置账号绑定的MD5手机号，
+注释：只支持标准中国大陆11位手机号MD5加密后位的32位小写字符串。
+                     * @param _mobilePhone 账号绑定的MD5手机号，
+注释：只支持标准中国大陆11位手机号MD5加密后位的32位小写字符串。
                      * 
                      */
                     void SetMobilePhone(const std::string& _mobilePhone);
@@ -181,15 +189,19 @@ namespace TencentCloud
                     bool MobilePhoneHasBeenSet() const;
 
                     /**
-                     * 获取用户设备号。
-                     * @return DeviceId 用户设备号。
+                     * 获取用户设备号，支持imei/imeiMD5/Idfa/IdfaMd5
+注释：imeiMD5/IdfaMd5加密方式，对imei/IdfaMd5明文进行MD5加密，加密后取32位小写值。
+                     * @return DeviceId 用户设备号，支持imei/imeiMD5/Idfa/IdfaMd5
+注释：imeiMD5/IdfaMd5加密方式，对imei/IdfaMd5明文进行MD5加密，加密后取32位小写值。
                      * 
                      */
                     std::string GetDeviceId() const;
 
                     /**
-                     * 设置用户设备号。
-                     * @param _deviceId 用户设备号。
+                     * 设置用户设备号，支持imei/imeiMD5/Idfa/IdfaMd5
+注释：imeiMD5/IdfaMd5加密方式，对imei/IdfaMd5明文进行MD5加密，加密后取32位小写值。
+                     * @param _deviceId 用户设备号，支持imei/imeiMD5/Idfa/IdfaMd5
+注释：imeiMD5/IdfaMd5加密方式，对imei/IdfaMd5明文进行MD5加密，加密后取32位小写值。
                      * 
                      */
                     void SetDeviceId(const std::string& _deviceId);
@@ -224,7 +236,8 @@ namespace TencentCloud
                     bool m_randStrHasBeenSet;
 
                     /**
-                     * token
+                     * 如果WeChatSubType 是1，填入授权的 access_token（注意：不是普通 access_token，详情请参阅官方说明文档。获取网页版本的 access_token 时，scope 字段必需填写snsapi_userinfo
+如果WeChatSubType是2，填入以session_key 为密钥签名随机数RandStr（hmac_sha256签名算法）得到的字符串。
                      */
                     std::string m_weChatAccessToken;
                     bool m_weChatAccessTokenHasBeenSet;
@@ -236,13 +249,15 @@ namespace TencentCloud
                     bool m_associateAccountHasBeenSet;
 
                     /**
-                     * 账号绑定的手机号。
+                     * 账号绑定的MD5手机号，
+注释：只支持标准中国大陆11位手机号MD5加密后位的32位小写字符串。
                      */
                     std::string m_mobilePhone;
                     bool m_mobilePhoneHasBeenSet;
 
                     /**
-                     * 用户设备号。
+                     * 用户设备号，支持imei/imeiMD5/Idfa/IdfaMd5
+注释：imeiMD5/IdfaMd5加密方式，对imei/IdfaMd5明文进行MD5加密，加密后取32位小写值。
                      */
                     std::string m_deviceId;
                     bool m_deviceIdHasBeenSet;

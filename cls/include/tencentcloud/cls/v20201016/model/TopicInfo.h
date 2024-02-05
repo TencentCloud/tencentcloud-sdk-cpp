@@ -36,7 +36,7 @@ namespace TencentCloud
             namespace Model
             {
                 /**
-                * 日志主题信息
+                * 主题基本信息
                 */
                 class TopicInfo : public AbstractModel
                 {
@@ -69,15 +69,15 @@ namespace TencentCloud
                     bool LogsetIdHasBeenSet() const;
 
                     /**
-                     * 获取日志主题ID
-                     * @return TopicId 日志主题ID
+                     * 获取主题ID
+                     * @return TopicId 主题ID
                      * 
                      */
                     std::string GetTopicId() const;
 
                     /**
-                     * 设置日志主题ID
-                     * @param _topicId 日志主题ID
+                     * 设置主题ID
+                     * @param _topicId 主题ID
                      * 
                      */
                     void SetTopicId(const std::string& _topicId);
@@ -90,15 +90,15 @@ namespace TencentCloud
                     bool TopicIdHasBeenSet() const;
 
                     /**
-                     * 获取日志主题名称
-                     * @return TopicName 日志主题名称
+                     * 获取主题名称
+                     * @return TopicName 主题名称
                      * 
                      */
                     std::string GetTopicName() const;
 
                     /**
-                     * 设置日志主题名称
-                     * @param _topicName 日志主题名称
+                     * 设置主题名称
+                     * @param _topicName 主题名称
                      * 
                      */
                     void SetTopicName(const std::string& _topicName);
@@ -132,15 +132,15 @@ namespace TencentCloud
                     bool PartitionCountHasBeenSet() const;
 
                     /**
-                     * 获取是否开启索引
-                     * @return Index 是否开启索引
+                     * 获取主题是否开启索引（主题类型需为日志主题）
+                     * @return Index 主题是否开启索引（主题类型需为日志主题）
                      * 
                      */
                     bool GetIndex() const;
 
                     /**
-                     * 设置是否开启索引
-                     * @param _index 是否开启索引
+                     * 设置主题是否开启索引（主题类型需为日志主题）
+                     * @param _index 主题是否开启索引（主题类型需为日志主题）
                      * 
                      */
                     void SetIndex(const bool& _index);
@@ -153,18 +153,18 @@ namespace TencentCloud
                     bool IndexHasBeenSet() const;
 
                     /**
-                     * 获取云产品标识，日志主题由其它云产品创建时，该字段会显示云产品名称，例如CDN、TKE
+                     * 获取云产品标识，主题由其它云产品创建时，该字段会显示云产品名称，例如CDN、TKE
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return AssumerName 云产品标识，日志主题由其它云产品创建时，该字段会显示云产品名称，例如CDN、TKE
+                     * @return AssumerName 云产品标识，主题由其它云产品创建时，该字段会显示云产品名称，例如CDN、TKE
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetAssumerName() const;
 
                     /**
-                     * 设置云产品标识，日志主题由其它云产品创建时，该字段会显示云产品名称，例如CDN、TKE
+                     * 设置云产品标识，主题由其它云产品创建时，该字段会显示云产品名称，例如CDN、TKE
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _assumerName 云产品标识，日志主题由其它云产品创建时，该字段会显示云产品名称，例如CDN、TKE
+                     * @param _assumerName 云产品标识，主题由其它云产品创建时，该字段会显示云产品名称，例如CDN、TKE
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -199,15 +199,15 @@ namespace TencentCloud
                     bool CreateTimeHasBeenSet() const;
 
                     /**
-                     * 获取日主主题是否开启采集
-                     * @return Status 日主主题是否开启采集
+                     * 获取主题是否开启采集
+                     * @return Status 主题是否开启采集
                      * 
                      */
                     bool GetStatus() const;
 
                     /**
-                     * 设置日主主题是否开启采集
-                     * @param _status 日主主题是否开启采集
+                     * 设置主题是否开启采集
+                     * @param _status 主题是否开启采集
                      * 
                      */
                     void SetStatus(const bool& _status);
@@ -220,18 +220,18 @@ namespace TencentCloud
                     bool StatusHasBeenSet() const;
 
                     /**
-                     * 获取日志主题绑定的标签信息
+                     * 获取主题绑定的标签信息
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return Tags 日志主题绑定的标签信息
+                     * @return Tags 主题绑定的标签信息
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<Tag> GetTags() const;
 
                     /**
-                     * 设置日志主题绑定的标签信息
+                     * 设置主题绑定的标签信息
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _tags 日志主题绑定的标签信息
+                     * @param _tags 主题绑定的标签信息
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -295,18 +295,18 @@ namespace TencentCloud
                     bool MaxSplitPartitionsHasBeenSet() const;
 
                     /**
-                     * 获取日主题的存储类型
+                     * 获取主题的存储类型
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return StorageType 日主题的存储类型
+                     * @return StorageType 主题的存储类型
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetStorageType() const;
 
                     /**
-                     * 设置日主题的存储类型
+                     * 设置主题的存储类型
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _storageType 日主题的存储类型
+                     * @param _storageType 主题的存储类型
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -370,18 +370,18 @@ namespace TencentCloud
                     bool SubAssumerNameHasBeenSet() const;
 
                     /**
-                     * 获取日志主题描述
+                     * 获取主题描述
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return Describes 日志主题描述
+                     * @return Describes 主题描述
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetDescribes() const;
 
                     /**
-                     * 设置日志主题描述
+                     * 设置主题描述
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _describes 日志主题描述
+                     * @param _describes 主题描述
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -395,22 +395,22 @@ namespace TencentCloud
                     bool DescribesHasBeenSet() const;
 
                     /**
-                     * 获取开启日志沉降，热存储的生命周期， hotPeriod < Period。
-热存储为 hotPeriod, 冷存储则为 Period-hotPeriod。
+                     * 获取开启日志沉降，标准存储的生命周期， hotPeriod < Period。
+标准存储为 hotPeriod, 低频存储则为 Period-hotPeriod。（主题类型需为日志主题）
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return HotPeriod 开启日志沉降，热存储的生命周期， hotPeriod < Period。
-热存储为 hotPeriod, 冷存储则为 Period-hotPeriod。
+                     * @return HotPeriod 开启日志沉降，标准存储的生命周期， hotPeriod < Period。
+标准存储为 hotPeriod, 低频存储则为 Period-hotPeriod。（主题类型需为日志主题）
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     uint64_t GetHotPeriod() const;
 
                     /**
-                     * 设置开启日志沉降，热存储的生命周期， hotPeriod < Period。
-热存储为 hotPeriod, 冷存储则为 Period-hotPeriod。
+                     * 设置开启日志沉降，标准存储的生命周期， hotPeriod < Period。
+标准存储为 hotPeriod, 低频存储则为 Period-hotPeriod。（主题类型需为日志主题）
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _hotPeriod 开启日志沉降，热存储的生命周期， hotPeriod < Period。
-热存储为 hotPeriod, 冷存储则为 Period-hotPeriod。
+                     * @param _hotPeriod 开启日志沉降，标准存储的生命周期， hotPeriod < Period。
+标准存储为 hotPeriod, 低频存储则为 Period-hotPeriod。（主题类型需为日志主题）
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -498,13 +498,13 @@ namespace TencentCloud
                     bool m_logsetIdHasBeenSet;
 
                     /**
-                     * 日志主题ID
+                     * 主题ID
                      */
                     std::string m_topicId;
                     bool m_topicIdHasBeenSet;
 
                     /**
-                     * 日志主题名称
+                     * 主题名称
                      */
                     std::string m_topicName;
                     bool m_topicNameHasBeenSet;
@@ -516,13 +516,13 @@ namespace TencentCloud
                     bool m_partitionCountHasBeenSet;
 
                     /**
-                     * 是否开启索引
+                     * 主题是否开启索引（主题类型需为日志主题）
                      */
                     bool m_index;
                     bool m_indexHasBeenSet;
 
                     /**
-                     * 云产品标识，日志主题由其它云产品创建时，该字段会显示云产品名称，例如CDN、TKE
+                     * 云产品标识，主题由其它云产品创建时，该字段会显示云产品名称，例如CDN、TKE
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_assumerName;
@@ -535,13 +535,13 @@ namespace TencentCloud
                     bool m_createTimeHasBeenSet;
 
                     /**
-                     * 日主主题是否开启采集
+                     * 主题是否开启采集
                      */
                     bool m_status;
                     bool m_statusHasBeenSet;
 
                     /**
-                     * 日志主题绑定的标签信息
+                     * 主题绑定的标签信息
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<Tag> m_tags;
@@ -562,7 +562,7 @@ namespace TencentCloud
                     bool m_maxSplitPartitionsHasBeenSet;
 
                     /**
-                     * 日主题的存储类型
+                     * 主题的存储类型
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_storageType;
@@ -583,15 +583,15 @@ namespace TencentCloud
                     bool m_subAssumerNameHasBeenSet;
 
                     /**
-                     * 日志主题描述
+                     * 主题描述
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_describes;
                     bool m_describesHasBeenSet;
 
                     /**
-                     * 开启日志沉降，热存储的生命周期， hotPeriod < Period。
-热存储为 hotPeriod, 冷存储则为 Period-hotPeriod。
+                     * 开启日志沉降，标准存储的生命周期， hotPeriod < Period。
+标准存储为 hotPeriod, 低频存储则为 Period-hotPeriod。（主题类型需为日志主题）
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     uint64_t m_hotPeriod;

@@ -40,6 +40,49 @@ TafClient::TafClient(const Credential &credential, const string &region, const C
 }
 
 
+TafClient::ManagePortraitRiskOutcome TafClient::ManagePortraitRisk(const ManagePortraitRiskRequest &request)
+{
+    auto outcome = MakeRequest(request, "ManagePortraitRisk");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ManagePortraitRiskResponse rsp = ManagePortraitRiskResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ManagePortraitRiskOutcome(rsp);
+        else
+            return ManagePortraitRiskOutcome(o.GetError());
+    }
+    else
+    {
+        return ManagePortraitRiskOutcome(outcome.GetError());
+    }
+}
+
+void TafClient::ManagePortraitRiskAsync(const ManagePortraitRiskRequest& request, const ManagePortraitRiskAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->ManagePortraitRisk(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+TafClient::ManagePortraitRiskOutcomeCallable TafClient::ManagePortraitRiskCallable(const ManagePortraitRiskRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<ManagePortraitRiskOutcome()>>(
+        [this, request]()
+        {
+            return this->ManagePortraitRisk(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 TafClient::RecognizeCustomizedAudienceOutcome TafClient::RecognizeCustomizedAudience(const RecognizeCustomizedAudienceRequest &request)
 {
     auto outcome = MakeRequest(request, "RecognizeCustomizedAudience");

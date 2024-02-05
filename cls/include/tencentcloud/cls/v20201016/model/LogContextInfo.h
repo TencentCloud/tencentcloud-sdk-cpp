@@ -24,6 +24,7 @@
 #include <tencentcloud/core/utils/rapidjson/writer.h>
 #include <tencentcloud/core/utils/rapidjson/stringbuffer.h>
 #include <tencentcloud/core/AbstractModel.h>
+#include <tencentcloud/cls/v20201016/model/HighLightItem.h>
 
 
 namespace TencentCloud
@@ -247,6 +248,31 @@ namespace TencentCloud
                      */
                     bool IndexStatusHasBeenSet() const;
 
+                    /**
+                     * 获取日志内容的高亮描述信息
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return HighLights 日志内容的高亮描述信息
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::vector<HighLightItem> GetHighLights() const;
+
+                    /**
+                     * 设置日志内容的高亮描述信息
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _highLights 日志内容的高亮描述信息
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetHighLights(const std::vector<HighLightItem>& _highLights);
+
+                    /**
+                     * 判断参数 HighLights 是否已赋值
+                     * @return HighLights 是否已赋值
+                     * 
+                     */
+                    bool HighLightsHasBeenSet() const;
+
                 private:
 
                     /**
@@ -305,6 +331,13 @@ namespace TencentCloud
                      */
                     std::string m_indexStatus;
                     bool m_indexStatusHasBeenSet;
+
+                    /**
+                     * 日志内容的高亮描述信息
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::vector<HighLightItem> m_highLights;
+                    bool m_highLightsHasBeenSet;
 
                 };
             }

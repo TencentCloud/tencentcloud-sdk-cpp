@@ -51,51 +51,31 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取用户账号类型（默认开通 QQ 开放账号、手机号，手机 MD5 账号类型查询。如需使用微
-信开放账号，则需要 提交工单 由腾讯云进行资格审核，审核通过后方可正常使用微信
-开放账号）： 
-1：QQ 开放账号。 
-2：微信开放账号。 
-4：手机号（暂仅支持国内手机号）。 
-8：设备号（imei/imeiMD5/idfa/idfaMd5）。 
-0： 其他。 
-10004：手机号 MD5。
-
-                     * @return Account 用户账号类型（默认开通 QQ 开放账号、手机号，手机 MD5 账号类型查询。如需使用微
-信开放账号，则需要 提交工单 由腾讯云进行资格审核，审核通过后方可正常使用微信
-开放账号）： 
-1：QQ 开放账号。 
-2：微信开放账号。 
-4：手机号（暂仅支持国内手机号）。 
-8：设备号（imei/imeiMD5/idfa/idfaMd5）。 
-0： 其他。 
-10004：手机号 MD5。
-
+                     * 获取用户账号类型（默认开通 QQ 开放账号，手机 MD5 账号类型查询。如需使用微信开放账号，则需要 提交工单 由腾讯云进行资格审核，审核通过后方可正常使用微信开放账号）： 
+1：QQ 开放账号；
+2：微信开放账号；
+8：设备号（imei/imeiMD5/idfa/idfaMd5）；
+10004：手机号 MD5。
+                     * @return Account 用户账号类型（默认开通 QQ 开放账号，手机 MD5 账号类型查询。如需使用微信开放账号，则需要 提交工单 由腾讯云进行资格审核，审核通过后方可正常使用微信开放账号）： 
+1：QQ 开放账号；
+2：微信开放账号；
+8：设备号（imei/imeiMD5/idfa/idfaMd5）；
+10004：手机号 MD5。
                      * 
                      */
                     AccountInfo GetAccount() const;
 
                     /**
-                     * 设置用户账号类型（默认开通 QQ 开放账号、手机号，手机 MD5 账号类型查询。如需使用微
-信开放账号，则需要 提交工单 由腾讯云进行资格审核，审核通过后方可正常使用微信
-开放账号）： 
-1：QQ 开放账号。 
-2：微信开放账号。 
-4：手机号（暂仅支持国内手机号）。 
-8：设备号（imei/imeiMD5/idfa/idfaMd5）。 
-0： 其他。 
-10004：手机号 MD5。
-
-                     * @param _account 用户账号类型（默认开通 QQ 开放账号、手机号，手机 MD5 账号类型查询。如需使用微
-信开放账号，则需要 提交工单 由腾讯云进行资格审核，审核通过后方可正常使用微信
-开放账号）： 
-1：QQ 开放账号。 
-2：微信开放账号。 
-4：手机号（暂仅支持国内手机号）。 
-8：设备号（imei/imeiMD5/idfa/idfaMd5）。 
-0： 其他。 
-10004：手机号 MD5。
-
+                     * 设置用户账号类型（默认开通 QQ 开放账号，手机 MD5 账号类型查询。如需使用微信开放账号，则需要 提交工单 由腾讯云进行资格审核，审核通过后方可正常使用微信开放账号）： 
+1：QQ 开放账号；
+2：微信开放账号；
+8：设备号（imei/imeiMD5/idfa/idfaMd5）；
+10004：手机号 MD5。
+                     * @param _account 用户账号类型（默认开通 QQ 开放账号，手机 MD5 账号类型查询。如需使用微信开放账号，则需要 提交工单 由腾讯云进行资格审核，审核通过后方可正常使用微信开放账号）： 
+1：QQ 开放账号；
+2：微信开放账号；
+8：设备号（imei/imeiMD5/idfa/idfaMd5）；
+10004：手机号 MD5。
                      * 
                      */
                     void SetAccount(const AccountInfo& _account);
@@ -108,23 +88,31 @@ namespace TencentCloud
                     bool AccountHasBeenSet() const;
 
                     /**
-                     * 获取场景类型：场景SceneCode, 控制台上新建对应的场景并获取对应的值；
-例如：e_register_protection_1521184361
-控制台链接：https://console.cloud.tencent.com/rce/risk/sceneroot；
-                     * @return SceneCode 场景类型：场景SceneCode, 控制台上新建对应的场景并获取对应的值；
-例如：e_register_protection_1521184361
-控制台链接：https://console.cloud.tencent.com/rce/risk/sceneroot；
+                     * 获取场景码，用于识别和区分不同的业务场景，可在控制台上新建和管理
+控制台链接：https://console.cloud.tencent.com/rce/risk/strategy/scene-root
+活动防刷默认场景码：e_activity_antirush 
+登陆保护默认场景码：e_login_protection
+注册保护默认场景码：e_register_protection
+                     * @return SceneCode 场景码，用于识别和区分不同的业务场景，可在控制台上新建和管理
+控制台链接：https://console.cloud.tencent.com/rce/risk/strategy/scene-root
+活动防刷默认场景码：e_activity_antirush 
+登陆保护默认场景码：e_login_protection
+注册保护默认场景码：e_register_protection
                      * 
                      */
                     std::string GetSceneCode() const;
 
                     /**
-                     * 设置场景类型：场景SceneCode, 控制台上新建对应的场景并获取对应的值；
-例如：e_register_protection_1521184361
-控制台链接：https://console.cloud.tencent.com/rce/risk/sceneroot；
-                     * @param _sceneCode 场景类型：场景SceneCode, 控制台上新建对应的场景并获取对应的值；
-例如：e_register_protection_1521184361
-控制台链接：https://console.cloud.tencent.com/rce/risk/sceneroot；
+                     * 设置场景码，用于识别和区分不同的业务场景，可在控制台上新建和管理
+控制台链接：https://console.cloud.tencent.com/rce/risk/strategy/scene-root
+活动防刷默认场景码：e_activity_antirush 
+登陆保护默认场景码：e_login_protection
+注册保护默认场景码：e_register_protection
+                     * @param _sceneCode 场景码，用于识别和区分不同的业务场景，可在控制台上新建和管理
+控制台链接：https://console.cloud.tencent.com/rce/risk/strategy/scene-root
+活动防刷默认场景码：e_activity_antirush 
+登陆保护默认场景码：e_login_protection
+注册保护默认场景码：e_register_protection
                      * 
                      */
                     void SetSceneCode(const std::string& _sceneCode);
@@ -137,15 +125,15 @@ namespace TencentCloud
                     bool SceneCodeHasBeenSet() const;
 
                     /**
-                     * 获取登录来源的外网IP
-                     * @return UserIp 登录来源的外网IP
+                     * 获取用户外网ip（传入用户非外网ip会影响判断结果）。
+                     * @return UserIp 用户外网ip（传入用户非外网ip会影响判断结果）。
                      * 
                      */
                     std::string GetUserIp() const;
 
                     /**
-                     * 设置登录来源的外网IP
-                     * @param _userIp 登录来源的外网IP
+                     * 设置用户外网ip（传入用户非外网ip会影响判断结果）。
+                     * @param _userIp 用户外网ip（传入用户非外网ip会影响判断结果）。
                      * 
                      */
                     void SetUserIp(const std::string& _userIp);
@@ -158,15 +146,15 @@ namespace TencentCloud
                     bool UserIpHasBeenSet() const;
 
                     /**
-                     * 获取时间戳
-                     * @return PostTime 时间戳
+                     * 获取用户操作时间戳，精确到秒。
+                     * @return PostTime 用户操作时间戳，精确到秒。
                      * 
                      */
                     uint64_t GetPostTime() const;
 
                     /**
-                     * 设置时间戳
-                     * @param _postTime 时间戳
+                     * 设置用户操作时间戳，精确到秒。
+                     * @param _postTime 用户操作时间戳，精确到秒。
                      * 
                      */
                     void SetPostTime(const uint64_t& _postTime);
@@ -179,15 +167,15 @@ namespace TencentCloud
                     bool PostTimeHasBeenSet() const;
 
                     /**
-                     * 获取用户唯一标识。
-                     * @return UserId 用户唯一标识。
+                     * 获取业务平台用户唯一标识。
+                     * @return UserId 业务平台用户唯一标识。
                      * 
                      */
                     std::string GetUserId() const;
 
                     /**
-                     * 设置用户唯一标识。
-                     * @param _userId 用户唯一标识。
+                     * 设置业务平台用户唯一标识。
+                     * @param _userId 业务平台用户唯一标识。
                      * 
                      */
                     void SetUserId(const std::string& _userId);
@@ -200,15 +188,19 @@ namespace TencentCloud
                     bool UserIdHasBeenSet() const;
 
                     /**
-                     * 获取设备指纹token。
-                     * @return DeviceToken 设备指纹token。
+                     * 获取设备指纹Devicetoken值，集成设备指纹后获取，
+如果集成了相应的设备指纹，该字段必填。
+                     * @return DeviceToken 设备指纹Devicetoken值，集成设备指纹后获取，
+如果集成了相应的设备指纹，该字段必填。
                      * 
                      */
                     std::string GetDeviceToken() const;
 
                     /**
-                     * 设置设备指纹token。
-                     * @param _deviceToken 设备指纹token。
+                     * 设置设备指纹Devicetoken值，集成设备指纹后获取，
+如果集成了相应的设备指纹，该字段必填。
+                     * @param _deviceToken 设备指纹Devicetoken值，集成设备指纹后获取，
+如果集成了相应的设备指纹，该字段必填。
                      * 
                      */
                     void SetDeviceToken(const std::string& _deviceToken);
@@ -221,15 +213,15 @@ namespace TencentCloud
                     bool DeviceTokenHasBeenSet() const;
 
                     /**
-                     * 获取设备指纹BusinessId
-                     * @return DeviceBusinessId 设备指纹BusinessId
+                     * 获取设备指纹 BusinessId。
+                     * @return DeviceBusinessId 设备指纹 BusinessId。
                      * 
                      */
                     int64_t GetDeviceBusinessId() const;
 
                     /**
-                     * 设置设备指纹BusinessId
-                     * @param _deviceBusinessId 设备指纹BusinessId
+                     * 设置设备指纹 BusinessId。
+                     * @param _deviceBusinessId 设备指纹 BusinessId。
                      * 
                      */
                     void SetDeviceBusinessId(const int64_t& _deviceBusinessId);
@@ -460,35 +452,31 @@ namespace TencentCloud
                     bool VendorIdHasBeenSet() const;
 
                     /**
-                     * 获取设备类型，账号类型为8时必填： 
-0:未知 
-1:Imei;国际移动设备识别号（15-17位数字） 
-2:ImeiMd5；国际移动设备识别号，通过MD5加密后32位的小写字符串 
-3:Idfa; 
-4:IdfaMD5;
-                     * @return DeviceType 设备类型，账号类型为8时必填： 
-0:未知 
-1:Imei;国际移动设备识别号（15-17位数字） 
-2:ImeiMd5；国际移动设备识别号，通过MD5加密后32位的小写字符串 
-3:Idfa; 
-4:IdfaMD5;
+                     * 获取设备类型，账号类型（AccountType）为8时填写。
+1:Imei；国际移动设备识别号（15-17位数字）；
+2:ImeiMd5；国际移动设备识别号，通过MD5加密后取32位小写值；
+3:Idfa；
+4:IdfaMD5； 国际移动设备识别号，通过MD5加密后取32位小写值。
+                     * @return DeviceType 设备类型，账号类型（AccountType）为8时填写。
+1:Imei；国际移动设备识别号（15-17位数字）；
+2:ImeiMd5；国际移动设备识别号，通过MD5加密后取32位小写值；
+3:Idfa；
+4:IdfaMD5； 国际移动设备识别号，通过MD5加密后取32位小写值。
                      * 
                      */
                     int64_t GetDeviceType() const;
 
                     /**
-                     * 设置设备类型，账号类型为8时必填： 
-0:未知 
-1:Imei;国际移动设备识别号（15-17位数字） 
-2:ImeiMd5；国际移动设备识别号，通过MD5加密后32位的小写字符串 
-3:Idfa; 
-4:IdfaMD5;
-                     * @param _deviceType 设备类型，账号类型为8时必填： 
-0:未知 
-1:Imei;国际移动设备识别号（15-17位数字） 
-2:ImeiMd5；国际移动设备识别号，通过MD5加密后32位的小写字符串 
-3:Idfa; 
-4:IdfaMD5;
+                     * 设置设备类型，账号类型（AccountType）为8时填写。
+1:Imei；国际移动设备识别号（15-17位数字）；
+2:ImeiMd5；国际移动设备识别号，通过MD5加密后取32位小写值；
+3:Idfa；
+4:IdfaMD5； 国际移动设备识别号，通过MD5加密后取32位小写值。
+                     * @param _deviceType 设备类型，账号类型（AccountType）为8时填写。
+1:Imei；国际移动设备识别号（15-17位数字）；
+2:ImeiMd5；国际移动设备识别号，通过MD5加密后取32位小写值；
+3:Idfa；
+4:IdfaMD5； 国际移动设备识别号，通过MD5加密后取32位小写值。
                      * 
                      */
                     void SetDeviceType(const int64_t& _deviceType);
@@ -501,15 +489,15 @@ namespace TencentCloud
                     bool DeviceTypeHasBeenSet() const;
 
                     /**
-                     * 获取详细信息
-                     * @return Details 详细信息
+                     * 获取扩展字段。
+                     * @return Details 扩展字段。
                      * 
                      */
                     std::vector<InputDetails> GetDetails() const;
 
                     /**
-                     * 设置详细信息
-                     * @param _details 详细信息
+                     * 设置扩展字段。
+                     * @param _details 扩展字段。
                      * 
                      */
                     void SetDetails(const std::vector<InputDetails>& _details);
@@ -522,15 +510,15 @@ namespace TencentCloud
                     bool DetailsHasBeenSet() const;
 
                     /**
-                     * 获取可选填写。详情请跳转至SponsorInfo查看。
-                     * @return Sponsor 可选填写。详情请跳转至SponsorInfo查看。
+                     * 获取邀请助力场景相关信息。
+                     * @return Sponsor 邀请助力场景相关信息。
                      * 
                      */
                     SponsorInfo GetSponsor() const;
 
                     /**
-                     * 设置可选填写。详情请跳转至SponsorInfo查看。
-                     * @param _sponsor 可选填写。详情请跳转至SponsorInfo查看。
+                     * 设置邀请助力场景相关信息。
+                     * @param _sponsor 邀请助力场景相关信息。
                      * 
                      */
                     void SetSponsor(const SponsorInfo& _sponsor);
@@ -543,15 +531,15 @@ namespace TencentCloud
                     bool SponsorHasBeenSet() const;
 
                     /**
-                     * 获取可选填写。详情请跳转至OnlineScamInfo查看。
-                     * @return OnlineScam 可选填写。详情请跳转至OnlineScamInfo查看。
+                     * 获取详情请跳转至OnlineScamInfo查看。
+                     * @return OnlineScam 详情请跳转至OnlineScamInfo查看。
                      * 
                      */
                     OnlineScamInfo GetOnlineScam() const;
 
                     /**
-                     * 设置可选填写。详情请跳转至OnlineScamInfo查看。
-                     * @param _onlineScam 可选填写。详情请跳转至OnlineScamInfo查看。
+                     * 设置详情请跳转至OnlineScamInfo查看。
+                     * @param _onlineScam 详情请跳转至OnlineScamInfo查看。
                      * 
                      */
                     void SetOnlineScam(const OnlineScamInfo& _onlineScam);
@@ -564,30 +552,30 @@ namespace TencentCloud
                     bool OnlineScamHasBeenSet() const;
 
                     /**
-                     * 获取1：安卓
-2：iOS 
-3：H5 
-4：小程序 
+                     * 获取1：安卓；
+2：iOS ；
+3：H5 ；
+4：小程序 。
 
-                     * @return Platform 1：安卓
-2：iOS 
-3：H5 
-4：小程序 
+                     * @return Platform 1：安卓；
+2：iOS ；
+3：H5 ；
+4：小程序 。
 
                      * 
                      */
                     std::string GetPlatform() const;
 
                     /**
-                     * 设置1：安卓
-2：iOS 
-3：H5 
-4：小程序 
+                     * 设置1：安卓；
+2：iOS ；
+3：H5 ；
+4：小程序 。
 
-                     * @param _platform 1：安卓
-2：iOS 
-3：H5 
-4：小程序 
+                     * @param _platform 1：安卓；
+2：iOS ；
+3：H5 ；
+4：小程序 。
 
                      * 
                      */
@@ -603,54 +591,52 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 用户账号类型（默认开通 QQ 开放账号、手机号，手机 MD5 账号类型查询。如需使用微
-信开放账号，则需要 提交工单 由腾讯云进行资格审核，审核通过后方可正常使用微信
-开放账号）： 
-1：QQ 开放账号。 
-2：微信开放账号。 
-4：手机号（暂仅支持国内手机号）。 
-8：设备号（imei/imeiMD5/idfa/idfaMd5）。 
-0： 其他。 
-10004：手机号 MD5。
-
+                     * 用户账号类型（默认开通 QQ 开放账号，手机 MD5 账号类型查询。如需使用微信开放账号，则需要 提交工单 由腾讯云进行资格审核，审核通过后方可正常使用微信开放账号）： 
+1：QQ 开放账号；
+2：微信开放账号；
+8：设备号（imei/imeiMD5/idfa/idfaMd5）；
+10004：手机号 MD5。
                      */
                     AccountInfo m_account;
                     bool m_accountHasBeenSet;
 
                     /**
-                     * 场景类型：场景SceneCode, 控制台上新建对应的场景并获取对应的值；
-例如：e_register_protection_1521184361
-控制台链接：https://console.cloud.tencent.com/rce/risk/sceneroot；
+                     * 场景码，用于识别和区分不同的业务场景，可在控制台上新建和管理
+控制台链接：https://console.cloud.tencent.com/rce/risk/strategy/scene-root
+活动防刷默认场景码：e_activity_antirush 
+登陆保护默认场景码：e_login_protection
+注册保护默认场景码：e_register_protection
                      */
                     std::string m_sceneCode;
                     bool m_sceneCodeHasBeenSet;
 
                     /**
-                     * 登录来源的外网IP
+                     * 用户外网ip（传入用户非外网ip会影响判断结果）。
                      */
                     std::string m_userIp;
                     bool m_userIpHasBeenSet;
 
                     /**
-                     * 时间戳
+                     * 用户操作时间戳，精确到秒。
                      */
                     uint64_t m_postTime;
                     bool m_postTimeHasBeenSet;
 
                     /**
-                     * 用户唯一标识。
+                     * 业务平台用户唯一标识。
                      */
                     std::string m_userId;
                     bool m_userIdHasBeenSet;
 
                     /**
-                     * 设备指纹token。
+                     * 设备指纹Devicetoken值，集成设备指纹后获取，
+如果集成了相应的设备指纹，该字段必填。
                      */
                     std::string m_deviceToken;
                     bool m_deviceTokenHasBeenSet;
 
                     /**
-                     * 设备指纹BusinessId
+                     * 设备指纹 BusinessId。
                      */
                     int64_t m_deviceBusinessId;
                     bool m_deviceBusinessIdHasBeenSet;
@@ -718,39 +704,38 @@ namespace TencentCloud
                     bool m_vendorIdHasBeenSet;
 
                     /**
-                     * 设备类型，账号类型为8时必填： 
-0:未知 
-1:Imei;国际移动设备识别号（15-17位数字） 
-2:ImeiMd5；国际移动设备识别号，通过MD5加密后32位的小写字符串 
-3:Idfa; 
-4:IdfaMD5;
+                     * 设备类型，账号类型（AccountType）为8时填写。
+1:Imei；国际移动设备识别号（15-17位数字）；
+2:ImeiMd5；国际移动设备识别号，通过MD5加密后取32位小写值；
+3:Idfa；
+4:IdfaMD5； 国际移动设备识别号，通过MD5加密后取32位小写值。
                      */
                     int64_t m_deviceType;
                     bool m_deviceTypeHasBeenSet;
 
                     /**
-                     * 详细信息
+                     * 扩展字段。
                      */
                     std::vector<InputDetails> m_details;
                     bool m_detailsHasBeenSet;
 
                     /**
-                     * 可选填写。详情请跳转至SponsorInfo查看。
+                     * 邀请助力场景相关信息。
                      */
                     SponsorInfo m_sponsor;
                     bool m_sponsorHasBeenSet;
 
                     /**
-                     * 可选填写。详情请跳转至OnlineScamInfo查看。
+                     * 详情请跳转至OnlineScamInfo查看。
                      */
                     OnlineScamInfo m_onlineScam;
                     bool m_onlineScamHasBeenSet;
 
                     /**
-                     * 1：安卓
-2：iOS 
-3：H5 
-4：小程序 
+                     * 1：安卓；
+2：iOS ；
+3：H5 ；
+4：小程序 。
 
                      */
                     std::string m_platform;

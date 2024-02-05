@@ -50,15 +50,31 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取账号类型
-                     * @return AccountType 账号类型
+                     * 获取用户账号类型（默认开通QQopenid、手机号MD5；如需使用微信开放账号，则需要"提交工单"或联系对接人进行资格审核，审核通过后方可正常使用微信开放账号）
+1：QQ开放账号
+2：微信开放账号
+8：设备号（imei/imeiMD5/idfa/idfaMd5）
+10004：手机号MD5，中国大陆11位手机号进行MD5加密，取32位小写值
+                     * @return AccountType 用户账号类型（默认开通QQopenid、手机号MD5；如需使用微信开放账号，则需要"提交工单"或联系对接人进行资格审核，审核通过后方可正常使用微信开放账号）
+1：QQ开放账号
+2：微信开放账号
+8：设备号（imei/imeiMD5/idfa/idfaMd5）
+10004：手机号MD5，中国大陆11位手机号进行MD5加密，取32位小写值
                      * 
                      */
                     uint64_t GetAccountType() const;
 
                     /**
-                     * 设置账号类型
-                     * @param _accountType 账号类型
+                     * 设置用户账号类型（默认开通QQopenid、手机号MD5；如需使用微信开放账号，则需要"提交工单"或联系对接人进行资格审核，审核通过后方可正常使用微信开放账号）
+1：QQ开放账号
+2：微信开放账号
+8：设备号（imei/imeiMD5/idfa/idfaMd5）
+10004：手机号MD5，中国大陆11位手机号进行MD5加密，取32位小写值
+                     * @param _accountType 用户账号类型（默认开通QQopenid、手机号MD5；如需使用微信开放账号，则需要"提交工单"或联系对接人进行资格审核，审核通过后方可正常使用微信开放账号）
+1：QQ开放账号
+2：微信开放账号
+8：设备号（imei/imeiMD5/idfa/idfaMd5）
+10004：手机号MD5，中国大陆11位手机号进行MD5加密，取32位小写值
                      * 
                      */
                     void SetAccountType(const uint64_t& _accountType);
@@ -113,15 +129,15 @@ namespace TencentCloud
                     bool WeChatAccountHasBeenSet() const;
 
                     /**
-                     * 获取其它账号信息，AccountType是0、4、8或10004时，该字段必填。
-                     * @return OtherAccount 其它账号信息，AccountType是0、4、8或10004时，该字段必填。
+                     * 获取其它账号信息，AccountType是8或10004时，该字段必填。
+                     * @return OtherAccount 其它账号信息，AccountType是8或10004时，该字段必填。
                      * 
                      */
                     OtherAccountInfo GetOtherAccount() const;
 
                     /**
-                     * 设置其它账号信息，AccountType是0、4、8或10004时，该字段必填。
-                     * @param _otherAccount 其它账号信息，AccountType是0、4、8或10004时，该字段必填。
+                     * 设置其它账号信息，AccountType是8或10004时，该字段必填。
+                     * @param _otherAccount 其它账号信息，AccountType是8或10004时，该字段必填。
                      * 
                      */
                     void SetOtherAccount(const OtherAccountInfo& _otherAccount);
@@ -136,7 +152,11 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 账号类型
+                     * 用户账号类型（默认开通QQopenid、手机号MD5；如需使用微信开放账号，则需要"提交工单"或联系对接人进行资格审核，审核通过后方可正常使用微信开放账号）
+1：QQ开放账号
+2：微信开放账号
+8：设备号（imei/imeiMD5/idfa/idfaMd5）
+10004：手机号MD5，中国大陆11位手机号进行MD5加密，取32位小写值
                      */
                     uint64_t m_accountType;
                     bool m_accountTypeHasBeenSet;
@@ -154,7 +174,7 @@ namespace TencentCloud
                     bool m_weChatAccountHasBeenSet;
 
                     /**
-                     * 其它账号信息，AccountType是0、4、8或10004时，该字段必填。
+                     * 其它账号信息，AccountType是8或10004时，该字段必填。
                      */
                     OtherAccountInfo m_otherAccount;
                     bool m_otherAccountHasBeenSet;
