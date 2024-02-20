@@ -104,11 +104,11 @@ namespace TencentCloud
                      * 获取待解除的签署流程编号(即原签署流程的编号)。
 
 
-[点击产看流程编号在控制台上的位置](https://qcloudimg.tencent-cloud.cn/raw/05af26573d5106763b4cfbb9f7c64b41.png)
+[点击查看流程编号在控制台上的位置](https://qcloudimg.tencent-cloud.cn/raw/05af26573d5106763b4cfbb9f7c64b41.png)
                      * @return NeedRelievedFlowId 待解除的签署流程编号(即原签署流程的编号)。
 
 
-[点击产看流程编号在控制台上的位置](https://qcloudimg.tencent-cloud.cn/raw/05af26573d5106763b4cfbb9f7c64b41.png)
+[点击查看流程编号在控制台上的位置](https://qcloudimg.tencent-cloud.cn/raw/05af26573d5106763b4cfbb9f7c64b41.png)
                      * 
                      */
                     std::string GetNeedRelievedFlowId() const;
@@ -117,11 +117,11 @@ namespace TencentCloud
                      * 设置待解除的签署流程编号(即原签署流程的编号)。
 
 
-[点击产看流程编号在控制台上的位置](https://qcloudimg.tencent-cloud.cn/raw/05af26573d5106763b4cfbb9f7c64b41.png)
+[点击查看流程编号在控制台上的位置](https://qcloudimg.tencent-cloud.cn/raw/05af26573d5106763b4cfbb9f7c64b41.png)
                      * @param _needRelievedFlowId 待解除的签署流程编号(即原签署流程的编号)。
 
 
-[点击产看流程编号在控制台上的位置](https://qcloudimg.tencent-cloud.cn/raw/05af26573d5106763b4cfbb9f7c64b41.png)
+[点击查看流程编号在控制台上的位置](https://qcloudimg.tencent-cloud.cn/raw/05af26573d5106763b4cfbb9f7c64b41.png)
                      * 
                      */
                     void SetNeedRelievedFlowId(const std::string& _needRelievedFlowId);
@@ -348,7 +348,7 @@ namespace TencentCloud
                      * 待解除的签署流程编号(即原签署流程的编号)。
 
 
-[点击产看流程编号在控制台上的位置](https://qcloudimg.tencent-cloud.cn/raw/05af26573d5106763b4cfbb9f7c64b41.png)
+[点击查看流程编号在控制台上的位置](https://qcloudimg.tencent-cloud.cn/raw/05af26573d5106763b4cfbb9f7c64b41.png)
                      */
                     std::string m_needRelievedFlowId;
                     bool m_needRelievedFlowIdHasBeenSet;

@@ -39,7 +39,8 @@ TaskResultInfo::TaskResultInfo() :
     m_percentageHasBeenSet(false),
     m_progressDetailHasBeenSet(false),
     m_displayFormatHasBeenSet(false),
-    m_totalTimeHasBeenSet(false)
+    m_totalTimeHasBeenSet(false),
+    m_queryResultTimeHasBeenSet(false)
 {
 }
 
@@ -248,6 +249,16 @@ CoreInternalOutcome TaskResultInfo::Deserialize(const rapidjson::Value &value)
         m_totalTimeHasBeenSet = true;
     }
 
+    if (value.HasMember("QueryResultTime") && !value["QueryResultTime"].IsNull())
+    {
+        if (!value["QueryResultTime"].IsLosslessDouble())
+        {
+            return CoreInternalOutcome(Core::Error("response `TaskResultInfo.QueryResultTime` IsLosslessDouble=false incorrectly").SetRequestId(requestId));
+        }
+        m_queryResultTime = value["QueryResultTime"].GetDouble();
+        m_queryResultTimeHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -412,6 +423,14 @@ void TaskResultInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Document::
         string key = "TotalTime";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_totalTime, allocator);
+    }
+
+    if (m_queryResultTimeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "QueryResultTime";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_queryResultTime, allocator);
     }
 
 }
@@ -719,5 +738,21 @@ void TaskResultInfo::SetTotalTime(const int64_t& _totalTime)
 bool TaskResultInfo::TotalTimeHasBeenSet() const
 {
     return m_totalTimeHasBeenSet;
+}
+
+double TaskResultInfo::GetQueryResultTime() const
+{
+    return m_queryResultTime;
+}
+
+void TaskResultInfo::SetQueryResultTime(const double& _queryResultTime)
+{
+    m_queryResultTime = _queryResultTime;
+    m_queryResultTimeHasBeenSet = true;
+}
+
+bool TaskResultInfo::QueryResultTimeHasBeenSet() const
+{
+    return m_queryResultTimeHasBeenSet;
 }
 

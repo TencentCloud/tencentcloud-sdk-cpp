@@ -25,7 +25,8 @@ VirtualPrivateCloud::VirtualPrivateCloud() :
     m_subnetIdHasBeenSet(false),
     m_asVpcGatewayHasBeenSet(false),
     m_privateIpAddressesHasBeenSet(false),
-    m_ipv6AddressCountHasBeenSet(false)
+    m_ipv6AddressCountHasBeenSet(false),
+    m_ipv6SubnetIdsHasBeenSet(false)
 {
 }
 
@@ -87,6 +88,19 @@ CoreInternalOutcome VirtualPrivateCloud::Deserialize(const rapidjson::Value &val
         m_ipv6AddressCountHasBeenSet = true;
     }
 
+    if (value.HasMember("Ipv6SubnetIds") && !value["Ipv6SubnetIds"].IsNull())
+    {
+        if (!value["Ipv6SubnetIds"].IsArray())
+            return CoreInternalOutcome(Core::Error("response `VirtualPrivateCloud.Ipv6SubnetIds` is not array type"));
+
+        const rapidjson::Value &tmpValue = value["Ipv6SubnetIds"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            m_ipv6SubnetIds.push_back((*itr).GetString());
+        }
+        m_ipv6SubnetIdsHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -137,6 +151,19 @@ void VirtualPrivateCloud::ToJsonObject(rapidjson::Value &value, rapidjson::Docum
         string key = "Ipv6AddressCount";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_ipv6AddressCount, allocator);
+    }
+
+    if (m_ipv6SubnetIdsHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Ipv6SubnetIds";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        for (auto itr = m_ipv6SubnetIds.begin(); itr != m_ipv6SubnetIds.end(); ++itr)
+        {
+            value[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
+        }
     }
 
 }
@@ -220,5 +247,21 @@ void VirtualPrivateCloud::SetIpv6AddressCount(const int64_t& _ipv6AddressCount)
 bool VirtualPrivateCloud::Ipv6AddressCountHasBeenSet() const
 {
     return m_ipv6AddressCountHasBeenSet;
+}
+
+vector<string> VirtualPrivateCloud::GetIpv6SubnetIds() const
+{
+    return m_ipv6SubnetIds;
+}
+
+void VirtualPrivateCloud::SetIpv6SubnetIds(const vector<string>& _ipv6SubnetIds)
+{
+    m_ipv6SubnetIds = _ipv6SubnetIds;
+    m_ipv6SubnetIdsHasBeenSet = true;
+}
+
+bool VirtualPrivateCloud::Ipv6SubnetIdsHasBeenSet() const
+{
+    return m_ipv6SubnetIdsHasBeenSet;
 }
 

@@ -72,10 +72,10 @@ namespace TencentCloud
                     /**
                      * 获取合同流程ID, 为32位字符串。
 
-可登录腾讯电子签控制台，[点击产看FlowId在控制台中的位置](https://qcloudimg.tencent-cloud.cn/raw/0a83015166cfe1cb043d14f9ec4bd75e.png)
+可登录腾讯电子签控制台，[点击查看FlowId在控制台中的位置](https://qcloudimg.tencent-cloud.cn/raw/0a83015166cfe1cb043d14f9ec4bd75e.png)
                      * @return FlowId 合同流程ID, 为32位字符串。
 
-可登录腾讯电子签控制台，[点击产看FlowId在控制台中的位置](https://qcloudimg.tencent-cloud.cn/raw/0a83015166cfe1cb043d14f9ec4bd75e.png)
+可登录腾讯电子签控制台，[点击查看FlowId在控制台中的位置](https://qcloudimg.tencent-cloud.cn/raw/0a83015166cfe1cb043d14f9ec4bd75e.png)
                      * 
                      */
                     std::string GetFlowId() const;
@@ -83,10 +83,10 @@ namespace TencentCloud
                     /**
                      * 设置合同流程ID, 为32位字符串。
 
-可登录腾讯电子签控制台，[点击产看FlowId在控制台中的位置](https://qcloudimg.tencent-cloud.cn/raw/0a83015166cfe1cb043d14f9ec4bd75e.png)
+可登录腾讯电子签控制台，[点击查看FlowId在控制台中的位置](https://qcloudimg.tencent-cloud.cn/raw/0a83015166cfe1cb043d14f9ec4bd75e.png)
                      * @param _flowId 合同流程ID, 为32位字符串。
 
-可登录腾讯电子签控制台，[点击产看FlowId在控制台中的位置](https://qcloudimg.tencent-cloud.cn/raw/0a83015166cfe1cb043d14f9ec4bd75e.png)
+可登录腾讯电子签控制台，[点击查看FlowId在控制台中的位置](https://qcloudimg.tencent-cloud.cn/raw/0a83015166cfe1cb043d14f9ec4bd75e.png)
                      * 
                      */
                     void SetFlowId(const std::string& _flowId);
@@ -101,10 +101,10 @@ namespace TencentCloud
                     /**
                      * 获取撤销此合同流程的**撤销理由**，最多支持200个字符长度。只能由中文、字母、数字、中文标点和英文标点组成（不支持表情）。
 
-![image](https://dyn.ess.tencent.cn/guide/capi/channel_ChannelCancelFlow.png)
+![image](https://qcloudimg.tencent-cloud.cn/raw/f16cf37dbb3a09d6569877f093b92204/channel_ChannelCancelFlow.png)
                      * @return CancelMessage 撤销此合同流程的**撤销理由**，最多支持200个字符长度。只能由中文、字母、数字、中文标点和英文标点组成（不支持表情）。
 
-![image](https://dyn.ess.tencent.cn/guide/capi/channel_ChannelCancelFlow.png)
+![image](https://qcloudimg.tencent-cloud.cn/raw/f16cf37dbb3a09d6569877f093b92204/channel_ChannelCancelFlow.png)
                      * 
                      */
                     std::string GetCancelMessage() const;
@@ -112,10 +112,10 @@ namespace TencentCloud
                     /**
                      * 设置撤销此合同流程的**撤销理由**，最多支持200个字符长度。只能由中文、字母、数字、中文标点和英文标点组成（不支持表情）。
 
-![image](https://dyn.ess.tencent.cn/guide/capi/channel_ChannelCancelFlow.png)
+![image](https://qcloudimg.tencent-cloud.cn/raw/f16cf37dbb3a09d6569877f093b92204/channel_ChannelCancelFlow.png)
                      * @param _cancelMessage 撤销此合同流程的**撤销理由**，最多支持200个字符长度。只能由中文、字母、数字、中文标点和英文标点组成（不支持表情）。
 
-![image](https://dyn.ess.tencent.cn/guide/capi/channel_ChannelCancelFlow.png)
+![image](https://qcloudimg.tencent-cloud.cn/raw/f16cf37dbb3a09d6569877f093b92204/channel_ChannelCancelFlow.png)
                      * 
                      */
                     void SetCancelMessage(const std::string& _cancelMessage);
@@ -164,7 +164,7 @@ namespace TencentCloud
                     /**
                      * 合同流程ID, 为32位字符串。
 
-可登录腾讯电子签控制台，[点击产看FlowId在控制台中的位置](https://qcloudimg.tencent-cloud.cn/raw/0a83015166cfe1cb043d14f9ec4bd75e.png)
+可登录腾讯电子签控制台，[点击查看FlowId在控制台中的位置](https://qcloudimg.tencent-cloud.cn/raw/0a83015166cfe1cb043d14f9ec4bd75e.png)
                      */
                     std::string m_flowId;
                     bool m_flowIdHasBeenSet;
@@ -172,7 +172,7 @@ namespace TencentCloud
                     /**
                      * 撤销此合同流程的**撤销理由**，最多支持200个字符长度。只能由中文、字母、数字、中文标点和英文标点组成（不支持表情）。
 
-![image](https://dyn.ess.tencent.cn/guide/capi/channel_ChannelCancelFlow.png)
+![image](https://qcloudimg.tencent-cloud.cn/raw/f16cf37dbb3a09d6569877f093b92204/channel_ChannelCancelFlow.png)
                      */
                     std::string m_cancelMessage;
                     bool m_cancelMessageHasBeenSet;

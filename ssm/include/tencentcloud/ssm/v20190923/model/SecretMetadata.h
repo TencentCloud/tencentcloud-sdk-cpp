@@ -269,11 +269,13 @@ namespace TencentCloud
 1 -- 云产品凭据；
 2 -- SSH密钥对凭据；
 3 -- 云API密钥对凭据；
+4 -- Redis类型凭据；
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return SecretType 0 -- 用户自定义凭据；
 1 -- 云产品凭据；
 2 -- SSH密钥对凭据；
 3 -- 云API密钥对凭据；
+4 -- Redis类型凭据；
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -284,11 +286,13 @@ namespace TencentCloud
 1 -- 云产品凭据；
 2 -- SSH密钥对凭据；
 3 -- 云API密钥对凭据；
+4 -- Redis类型凭据；
 注意：此字段可能返回 null，表示取不到有效值。
                      * @param _secretType 0 -- 用户自定义凭据；
 1 -- 云产品凭据；
 2 -- SSH密钥对凭据；
 3 -- 云API密钥对凭据；
+4 -- Redis类型凭据；
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -570,6 +574,7 @@ namespace TencentCloud
 1 -- 云产品凭据；
 2 -- SSH密钥对凭据；
 3 -- 云API密钥对凭据；
+4 -- Redis类型凭据；
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_secretType;

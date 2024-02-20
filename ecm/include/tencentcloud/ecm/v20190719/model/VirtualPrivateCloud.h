@@ -167,6 +167,31 @@ FALSE：表示不用作公网网关
                      */
                     bool Ipv6AddressCountHasBeenSet() const;
 
+                    /**
+                     * 获取runInstances接口创建三网ipv6地址使用
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return Ipv6SubnetIds runInstances接口创建三网ipv6地址使用
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::vector<std::string> GetIpv6SubnetIds() const;
+
+                    /**
+                     * 设置runInstances接口创建三网ipv6地址使用
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _ipv6SubnetIds runInstances接口创建三网ipv6地址使用
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetIpv6SubnetIds(const std::vector<std::string>& _ipv6SubnetIds);
+
+                    /**
+                     * 判断参数 Ipv6SubnetIds 是否已赋值
+                     * @return Ipv6SubnetIds 是否已赋值
+                     * 
+                     */
+                    bool Ipv6SubnetIdsHasBeenSet() const;
+
                 private:
 
                     /**
@@ -202,6 +227,13 @@ FALSE：表示不用作公网网关
                      */
                     int64_t m_ipv6AddressCount;
                     bool m_ipv6AddressCountHasBeenSet;
+
+                    /**
+                     * runInstances接口创建三网ipv6地址使用
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::vector<std::string> m_ipv6SubnetIds;
+                    bool m_ipv6SubnetIdsHasBeenSet;
 
                 };
             }

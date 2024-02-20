@@ -141,6 +141,34 @@ namespace TencentCloud
                      */
                     bool NoHasBeenSet() const;
 
+                    /**
+                     * 获取曾持证件号码。
+                     * @return PreviousNumber 曾持证件号码。
+                     * 
+                     */
+                    std::string GetPreviousNumber() const;
+
+                    /**
+                     * 判断参数 PreviousNumber 是否已赋值
+                     * @return PreviousNumber 是否已赋值
+                     * 
+                     */
+                    bool PreviousNumberHasBeenSet() const;
+
+                    /**
+                     * 获取签发机关。
+                     * @return IssuedAuthority 签发机关。
+                     * 
+                     */
+                    std::string GetIssuedAuthority() const;
+
+                    /**
+                     * 判断参数 IssuedAuthority 是否已赋值
+                     * @return IssuedAuthority 是否已赋值
+                     * 
+                     */
+                    bool IssuedAuthorityHasBeenSet() const;
+
                 private:
 
                     /**
@@ -184,6 +212,18 @@ namespace TencentCloud
                      */
                     std::string m_no;
                     bool m_noHasBeenSet;
+
+                    /**
+                     * 曾持证件号码。
+                     */
+                    std::string m_previousNumber;
+                    bool m_previousNumberHasBeenSet;
+
+                    /**
+                     * 签发机关。
+                     */
+                    std::string m_issuedAuthority;
+                    bool m_issuedAuthorityHasBeenSet;
 
                 };
             }

@@ -350,10 +350,10 @@ DYNAMIC_TABLE ：传入json格式的表格内容，具体见数据结构[点击�
                     /**
                      * 获取控件id，和ComponentName选择一项传入即可
 
-<a href="https://dyn.ess.tencent.cn/guide/apivideo/component_name.mp4" target="_blank">点击查看在模版中找到控件ID的方式</a>
+<a href="https://dyn.ess.tencent.cn/guide/apivideo/component_name.mp4" target="_blank">点击查看在模板中找到控件ID的方式</a>
                      * @return ComponentId 控件id，和ComponentName选择一项传入即可
 
-<a href="https://dyn.ess.tencent.cn/guide/apivideo/component_name.mp4" target="_blank">点击查看在模版中找到控件ID的方式</a>
+<a href="https://dyn.ess.tencent.cn/guide/apivideo/component_name.mp4" target="_blank">点击查看在模板中找到控件ID的方式</a>
                      * 
                      */
                     std::string GetComponentId() const;
@@ -361,10 +361,10 @@ DYNAMIC_TABLE ：传入json格式的表格内容，具体见数据结构[点击�
                     /**
                      * 设置控件id，和ComponentName选择一项传入即可
 
-<a href="https://dyn.ess.tencent.cn/guide/apivideo/component_name.mp4" target="_blank">点击查看在模版中找到控件ID的方式</a>
+<a href="https://dyn.ess.tencent.cn/guide/apivideo/component_name.mp4" target="_blank">点击查看在模板中找到控件ID的方式</a>
                      * @param _componentId 控件id，和ComponentName选择一项传入即可
 
-<a href="https://dyn.ess.tencent.cn/guide/apivideo/component_name.mp4" target="_blank">点击查看在模版中找到控件ID的方式</a>
+<a href="https://dyn.ess.tencent.cn/guide/apivideo/component_name.mp4" target="_blank">点击查看在模板中找到控件ID的方式</a>
                      * 
                      */
                     void SetComponentId(const std::string& _componentId);
@@ -379,10 +379,10 @@ DYNAMIC_TABLE ：传入json格式的表格内容，具体见数据结构[点击�
                     /**
                      * 获取控件名字，最大长度不超过30字符，和ComponentId选择一项传入即可
 
-<a href="https://dyn.ess.tencent.cn/guide/apivideo/component_name.mp4" target="_blank">点击查看在模版中找到控件名字的方式</a>
+<a href="https://dyn.ess.tencent.cn/guide/apivideo/component_name.mp4" target="_blank">点击查看在模板中找到控件名字的方式</a>
                      * @return ComponentName 控件名字，最大长度不超过30字符，和ComponentId选择一项传入即可
 
-<a href="https://dyn.ess.tencent.cn/guide/apivideo/component_name.mp4" target="_blank">点击查看在模版中找到控件名字的方式</a>
+<a href="https://dyn.ess.tencent.cn/guide/apivideo/component_name.mp4" target="_blank">点击查看在模板中找到控件名字的方式</a>
                      * 
                      */
                     std::string GetComponentName() const;
@@ -390,10 +390,10 @@ DYNAMIC_TABLE ：传入json格式的表格内容，具体见数据结构[点击�
                     /**
                      * 设置控件名字，最大长度不超过30字符，和ComponentId选择一项传入即可
 
-<a href="https://dyn.ess.tencent.cn/guide/apivideo/component_name.mp4" target="_blank">点击查看在模版中找到控件名字的方式</a>
+<a href="https://dyn.ess.tencent.cn/guide/apivideo/component_name.mp4" target="_blank">点击查看在模板中找到控件名字的方式</a>
                      * @param _componentName 控件名字，最大长度不超过30字符，和ComponentId选择一项传入即可
 
-<a href="https://dyn.ess.tencent.cn/guide/apivideo/component_name.mp4" target="_blank">点击查看在模版中找到控件名字的方式</a>
+<a href="https://dyn.ess.tencent.cn/guide/apivideo/component_name.mp4" target="_blank">点击查看在模板中找到控件名字的方式</a>
                      * 
                      */
                     void SetComponentName(const std::string& _componentName);
@@ -422,7 +422,7 @@ DYNAMIC_TABLE ：传入json格式的表格内容，具体见数据结构[点击�
                     /**
                      * 控件id，和ComponentName选择一项传入即可
 
-<a href="https://dyn.ess.tencent.cn/guide/apivideo/component_name.mp4" target="_blank">点击查看在模版中找到控件ID的方式</a>
+<a href="https://dyn.ess.tencent.cn/guide/apivideo/component_name.mp4" target="_blank">点击查看在模板中找到控件ID的方式</a>
                      */
                     std::string m_componentId;
                     bool m_componentIdHasBeenSet;
@@ -430,7 +430,7 @@ DYNAMIC_TABLE ：传入json格式的表格内容，具体见数据结构[点击�
                     /**
                      * 控件名字，最大长度不超过30字符，和ComponentId选择一项传入即可
 
-<a href="https://dyn.ess.tencent.cn/guide/apivideo/component_name.mp4" target="_blank">点击查看在模版中找到控件名字的方式</a>
+<a href="https://dyn.ess.tencent.cn/guide/apivideo/component_name.mp4" target="_blank">点击查看在模板中找到控件名字的方式</a>
                      */
                     std::string m_componentName;
                     bool m_componentNameHasBeenSet;

@@ -59,8 +59,8 @@ namespace TencentCloud
                     bool QueueSetHasBeenSet() const;
 
                     /**
-                     * 获取符合条件的节点数量。
-                     * @return TotalCount 符合条件的节点数量。
+                     * 获取符合条件的队列数量。
+                     * @return TotalCount 符合条件的队列数量。
                      * 
                      */
                     int64_t GetTotalCount() const;
@@ -81,7 +81,7 @@ namespace TencentCloud
                     bool m_queueSetHasBeenSet;
 
                     /**
-                     * 符合条件的节点数量。
+                     * 符合条件的队列数量。
                      */
                     int64_t m_totalCount;
                     bool m_totalCountHasBeenSet;

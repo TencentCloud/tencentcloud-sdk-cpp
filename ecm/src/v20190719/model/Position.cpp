@@ -26,7 +26,8 @@ Position::Position() :
     m_areaHasBeenSet(false),
     m_provinceHasBeenSet(false),
     m_cityHasBeenSet(false),
-    m_regionInfoHasBeenSet(false)
+    m_regionInfoHasBeenSet(false),
+    m_ipv6SupportedHasBeenSet(false)
 {
 }
 
@@ -137,6 +138,16 @@ CoreInternalOutcome Position::Deserialize(const rapidjson::Value &value)
         m_regionInfoHasBeenSet = true;
     }
 
+    if (value.HasMember("Ipv6Supported") && !value["Ipv6Supported"].IsNull())
+    {
+        if (!value["Ipv6Supported"].IsBool())
+        {
+            return CoreInternalOutcome(Core::Error("response `Position.Ipv6Supported` IsBool=false incorrectly").SetRequestId(requestId));
+        }
+        m_ipv6Supported = value["Ipv6Supported"].GetBool();
+        m_ipv6SupportedHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -196,6 +207,14 @@ void Position::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Alloca
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
         m_regionInfo.ToJsonObject(value[key.c_str()], allocator);
+    }
+
+    if (m_ipv6SupportedHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Ipv6Supported";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_ipv6Supported, allocator);
     }
 
 }
@@ -295,5 +314,21 @@ void Position::SetRegionInfo(const RegionInfo& _regionInfo)
 bool Position::RegionInfoHasBeenSet() const
 {
     return m_regionInfoHasBeenSet;
+}
+
+bool Position::GetIpv6Supported() const
+{
+    return m_ipv6Supported;
+}
+
+void Position::SetIpv6Supported(const bool& _ipv6Supported)
+{
+    m_ipv6Supported = _ipv6Supported;
+    m_ipv6SupportedHasBeenSet = true;
+}
+
+bool Position::Ipv6SupportedHasBeenSet() const
+{
+    return m_ipv6SupportedHasBeenSet;
 }
 

@@ -41,7 +41,8 @@ ScaleOutClusterRequest::ScaleOutClusterRequest() :
     m_enableStartServiceFlagHasBeenSet(false),
     m_resourceSpecHasBeenSet(false),
     m_zoneHasBeenSet(false),
-    m_subnetIdHasBeenSet(false)
+    m_subnetIdHasBeenSet(false),
+    m_scaleOutServiceConfGroupsInfoHasBeenSet(false)
 {
 }
 
@@ -235,6 +236,21 @@ string ScaleOutClusterRequest::ToJsonString() const
         string key = "SubnetId";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_subnetId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_scaleOutServiceConfGroupsInfoHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ScaleOutServiceConfGroupsInfo";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_scaleOutServiceConfGroupsInfo.begin(); itr != m_scaleOutServiceConfGroupsInfo.end(); ++itr, ++i)
+        {
+            d[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(d[key.c_str()][i], allocator);
+        }
     }
 
 
@@ -547,6 +563,22 @@ void ScaleOutClusterRequest::SetSubnetId(const string& _subnetId)
 bool ScaleOutClusterRequest::SubnetIdHasBeenSet() const
 {
     return m_subnetIdHasBeenSet;
+}
+
+vector<ScaleOutServiceConfGroupsInfo> ScaleOutClusterRequest::GetScaleOutServiceConfGroupsInfo() const
+{
+    return m_scaleOutServiceConfGroupsInfo;
+}
+
+void ScaleOutClusterRequest::SetScaleOutServiceConfGroupsInfo(const vector<ScaleOutServiceConfGroupsInfo>& _scaleOutServiceConfGroupsInfo)
+{
+    m_scaleOutServiceConfGroupsInfo = _scaleOutServiceConfGroupsInfo;
+    m_scaleOutServiceConfGroupsInfoHasBeenSet = true;
+}
+
+bool ScaleOutClusterRequest::ScaleOutServiceConfGroupsInfoHasBeenSet() const
+{
+    return m_scaleOutServiceConfGroupsInfoHasBeenSet;
 }
 
 

@@ -27,6 +27,7 @@
 #include <tencentcloud/emr/v20190103/model/Tag.h>
 #include <tencentcloud/emr/v20190103/model/PodSpecInfo.h>
 #include <tencentcloud/emr/v20190103/model/NodeResourceSpec.h>
+#include <tencentcloud/emr/v20190103/model/ScaleOutServiceConfGroupsInfo.h>
 
 
 namespace TencentCloud
@@ -471,6 +472,27 @@ namespace TencentCloud
                      */
                     bool SubnetIdHasBeenSet() const;
 
+                    /**
+                     * 获取扩容指定配置组
+                     * @return ScaleOutServiceConfGroupsInfo 扩容指定配置组
+                     * 
+                     */
+                    std::vector<ScaleOutServiceConfGroupsInfo> GetScaleOutServiceConfGroupsInfo() const;
+
+                    /**
+                     * 设置扩容指定配置组
+                     * @param _scaleOutServiceConfGroupsInfo 扩容指定配置组
+                     * 
+                     */
+                    void SetScaleOutServiceConfGroupsInfo(const std::vector<ScaleOutServiceConfGroupsInfo>& _scaleOutServiceConfGroupsInfo);
+
+                    /**
+                     * 判断参数 ScaleOutServiceConfGroupsInfo 是否已赋值
+                     * @return ScaleOutServiceConfGroupsInfo 是否已赋值
+                     * 
+                     */
+                    bool ScaleOutServiceConfGroupsInfoHasBeenSet() const;
+
                 private:
 
                     /**
@@ -592,6 +614,12 @@ namespace TencentCloud
                      */
                     std::string m_subnetId;
                     bool m_subnetIdHasBeenSet;
+
+                    /**
+                     * 扩容指定配置组
+                     */
+                    std::vector<ScaleOutServiceConfGroupsInfo> m_scaleOutServiceConfGroupsInfo;
+                    bool m_scaleOutServiceConfGroupsInfoHasBeenSet;
 
                 };
             }

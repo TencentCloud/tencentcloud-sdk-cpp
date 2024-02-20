@@ -836,7 +836,7 @@ namespace TencentCloud
                 DescribeSubdomainAnalyticsOutcomeCallable DescribeSubdomainAnalyticsCallable(const Model::DescribeSubdomainAnalyticsRequest& request);
 
                 /**
-                 *获取帐户信息
+                 *获取账户信息
                  * @param req DescribeUserDetailRequest
                  * @return DescribeUserDetailOutcome
                  */

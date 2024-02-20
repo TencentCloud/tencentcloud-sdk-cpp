@@ -178,6 +178,31 @@ namespace TencentCloud
                      */
                     bool RegionInfoHasBeenSet() const;
 
+                    /**
+                     * 获取实例是否支持ipv6
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return Ipv6Supported 实例是否支持ipv6
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    bool GetIpv6Supported() const;
+
+                    /**
+                     * 设置实例是否支持ipv6
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _ipv6Supported 实例是否支持ipv6
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetIpv6Supported(const bool& _ipv6Supported);
+
+                    /**
+                     * 判断参数 Ipv6Supported 是否已赋值
+                     * @return Ipv6Supported 是否已赋值
+                     * 
+                     */
+                    bool Ipv6SupportedHasBeenSet() const;
+
                 private:
 
                     /**
@@ -215,6 +240,13 @@ namespace TencentCloud
                      */
                     RegionInfo m_regionInfo;
                     bool m_regionInfoHasBeenSet;
+
+                    /**
+                     * 实例是否支持ipv6
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    bool m_ipv6Supported;
+                    bool m_ipv6SupportedHasBeenSet;
 
                 };
             }

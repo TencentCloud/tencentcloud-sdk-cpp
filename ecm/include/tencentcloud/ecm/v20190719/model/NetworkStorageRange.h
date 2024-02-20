@@ -361,6 +361,48 @@ namespace TencentCloud
                      */
                     bool MaxModuleNumHasBeenSet() const;
 
+                    /**
+                     * 获取是否支持cbs
+                     * @return CBSSupported 是否支持cbs
+                     * 
+                     */
+                    bool GetCBSSupported() const;
+
+                    /**
+                     * 设置是否支持cbs
+                     * @param _cBSSupported 是否支持cbs
+                     * 
+                     */
+                    void SetCBSSupported(const bool& _cBSSupported);
+
+                    /**
+                     * 判断参数 CBSSupported 是否已赋值
+                     * @return CBSSupported 是否已赋值
+                     * 
+                     */
+                    bool CBSSupportedHasBeenSet() const;
+
+                    /**
+                     * 获取磁盘数量限制
+                     * @return DiskNumLimit 磁盘数量限制
+                     * 
+                     */
+                    int64_t GetDiskNumLimit() const;
+
+                    /**
+                     * 设置磁盘数量限制
+                     * @param _diskNumLimit 磁盘数量限制
+                     * 
+                     */
+                    void SetDiskNumLimit(const int64_t& _diskNumLimit);
+
+                    /**
+                     * 判断参数 DiskNumLimit 是否已赋值
+                     * @return DiskNumLimit 是否已赋值
+                     * 
+                     */
+                    bool DiskNumLimitHasBeenSet() const;
+
                 private:
 
                     /**
@@ -452,6 +494,18 @@ namespace TencentCloud
                      */
                     int64_t m_maxModuleNum;
                     bool m_maxModuleNumHasBeenSet;
+
+                    /**
+                     * 是否支持cbs
+                     */
+                    bool m_cBSSupported;
+                    bool m_cBSSupportedHasBeenSet;
+
+                    /**
+                     * 磁盘数量限制
+                     */
+                    int64_t m_diskNumLimit;
+                    bool m_diskNumLimitHasBeenSet;
 
                 };
             }

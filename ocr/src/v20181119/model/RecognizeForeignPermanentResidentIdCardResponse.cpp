@@ -30,7 +30,9 @@ RecognizeForeignPermanentResidentIdCardResponse::RecognizeForeignPermanentReside
     m_dateOfBirthHasBeenSet(false),
     m_nationalityHasBeenSet(false),
     m_periodOfValidityHasBeenSet(false),
-    m_noHasBeenSet(false)
+    m_noHasBeenSet(false),
+    m_previousNumberHasBeenSet(false),
+    m_issuedAuthorityHasBeenSet(false)
 {
 }
 
@@ -138,6 +140,26 @@ CoreInternalOutcome RecognizeForeignPermanentResidentIdCardResponse::Deserialize
         m_noHasBeenSet = true;
     }
 
+    if (rsp.HasMember("PreviousNumber") && !rsp["PreviousNumber"].IsNull())
+    {
+        if (!rsp["PreviousNumber"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `PreviousNumber` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_previousNumber = string(rsp["PreviousNumber"].GetString());
+        m_previousNumberHasBeenSet = true;
+    }
+
+    if (rsp.HasMember("IssuedAuthority") && !rsp["IssuedAuthority"].IsNull())
+    {
+        if (!rsp["IssuedAuthority"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `IssuedAuthority` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_issuedAuthority = string(rsp["IssuedAuthority"].GetString());
+        m_issuedAuthorityHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -202,6 +224,22 @@ string RecognizeForeignPermanentResidentIdCardResponse::ToJsonString() const
         string key = "No";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_no.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_previousNumberHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "PreviousNumber";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_previousNumber.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_issuedAuthorityHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "IssuedAuthority";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_issuedAuthority.c_str(), allocator).Move(), allocator);
     }
 
     rapidjson::Value iKey(rapidjson::kStringType);
@@ -284,6 +322,26 @@ string RecognizeForeignPermanentResidentIdCardResponse::GetNo() const
 bool RecognizeForeignPermanentResidentIdCardResponse::NoHasBeenSet() const
 {
     return m_noHasBeenSet;
+}
+
+string RecognizeForeignPermanentResidentIdCardResponse::GetPreviousNumber() const
+{
+    return m_previousNumber;
+}
+
+bool RecognizeForeignPermanentResidentIdCardResponse::PreviousNumberHasBeenSet() const
+{
+    return m_previousNumberHasBeenSet;
+}
+
+string RecognizeForeignPermanentResidentIdCardResponse::GetIssuedAuthority() const
+{
+    return m_issuedAuthority;
+}
+
+bool RecognizeForeignPermanentResidentIdCardResponse::IssuedAuthorityHasBeenSet() const
+{
+    return m_issuedAuthorityHasBeenSet;
 }
 
 

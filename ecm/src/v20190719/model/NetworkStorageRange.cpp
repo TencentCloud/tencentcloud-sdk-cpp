@@ -35,7 +35,9 @@ NetworkStorageRange::NetworkStorageRange() :
     m_maxVcpuPerReqHasBeenSet(false),
     m_perBandwidthHasBeenSet(false),
     m_perDataDiskHasBeenSet(false),
-    m_maxModuleNumHasBeenSet(false)
+    m_maxModuleNumHasBeenSet(false),
+    m_cBSSupportedHasBeenSet(false),
+    m_diskNumLimitHasBeenSet(false)
 {
 }
 
@@ -194,6 +196,26 @@ CoreInternalOutcome NetworkStorageRange::Deserialize(const rapidjson::Value &val
         m_maxModuleNumHasBeenSet = true;
     }
 
+    if (value.HasMember("CBSSupported") && !value["CBSSupported"].IsNull())
+    {
+        if (!value["CBSSupported"].IsBool())
+        {
+            return CoreInternalOutcome(Core::Error("response `NetworkStorageRange.CBSSupported` IsBool=false incorrectly").SetRequestId(requestId));
+        }
+        m_cBSSupported = value["CBSSupported"].GetBool();
+        m_cBSSupportedHasBeenSet = true;
+    }
+
+    if (value.HasMember("DiskNumLimit") && !value["DiskNumLimit"].IsNull())
+    {
+        if (!value["DiskNumLimit"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `NetworkStorageRange.DiskNumLimit` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_diskNumLimit = value["DiskNumLimit"].GetInt64();
+        m_diskNumLimitHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -319,6 +341,22 @@ void NetworkStorageRange::ToJsonObject(rapidjson::Value &value, rapidjson::Docum
         string key = "MaxModuleNum";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_maxModuleNum, allocator);
+    }
+
+    if (m_cBSSupportedHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "CBSSupported";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_cBSSupported, allocator);
+    }
+
+    if (m_diskNumLimitHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "DiskNumLimit";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_diskNumLimit, allocator);
     }
 
 }
@@ -562,5 +600,37 @@ void NetworkStorageRange::SetMaxModuleNum(const int64_t& _maxModuleNum)
 bool NetworkStorageRange::MaxModuleNumHasBeenSet() const
 {
     return m_maxModuleNumHasBeenSet;
+}
+
+bool NetworkStorageRange::GetCBSSupported() const
+{
+    return m_cBSSupported;
+}
+
+void NetworkStorageRange::SetCBSSupported(const bool& _cBSSupported)
+{
+    m_cBSSupported = _cBSSupported;
+    m_cBSSupportedHasBeenSet = true;
+}
+
+bool NetworkStorageRange::CBSSupportedHasBeenSet() const
+{
+    return m_cBSSupportedHasBeenSet;
+}
+
+int64_t NetworkStorageRange::GetDiskNumLimit() const
+{
+    return m_diskNumLimit;
+}
+
+void NetworkStorageRange::SetDiskNumLimit(const int64_t& _diskNumLimit)
+{
+    m_diskNumLimit = _diskNumLimit;
+    m_diskNumLimitHasBeenSet = true;
+}
+
+bool NetworkStorageRange::DiskNumLimitHasBeenSet() const
+{
+    return m_diskNumLimitHasBeenSet;
 }
 

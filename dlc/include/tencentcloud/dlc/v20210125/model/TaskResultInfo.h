@@ -462,6 +462,31 @@ namespace TencentCloud
                      */
                     bool TotalTimeHasBeenSet() const;
 
+                    /**
+                     * 获取获取结果消耗的时间
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return QueryResultTime 获取结果消耗的时间
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    double GetQueryResultTime() const;
+
+                    /**
+                     * 设置获取结果消耗的时间
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _queryResultTime 获取结果消耗的时间
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetQueryResultTime(const double& _queryResultTime);
+
+                    /**
+                     * 判断参数 QueryResultTime 是否已赋值
+                     * @return QueryResultTime 是否已赋值
+                     * 
+                     */
+                    bool QueryResultTimeHasBeenSet() const;
+
                 private:
 
                     /**
@@ -581,6 +606,13 @@ namespace TencentCloud
                      */
                     int64_t m_totalTime;
                     bool m_totalTimeHasBeenSet;
+
+                    /**
+                     * 获取结果消耗的时间
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    double m_queryResultTime;
+                    bool m_queryResultTimeHasBeenSet;
 
                 };
             }
