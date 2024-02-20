@@ -129,8 +129,6 @@
 #include <tencentcloud/essbasic/v20210526/model/CreateSignUrlsResponse.h>
 #include <tencentcloud/essbasic/v20210526/model/DescribeBatchOrganizationRegistrationUrlsRequest.h>
 #include <tencentcloud/essbasic/v20210526/model/DescribeBatchOrganizationRegistrationUrlsResponse.h>
-#include <tencentcloud/essbasic/v20210526/model/DescribeBillUsageDetailRequest.h>
-#include <tencentcloud/essbasic/v20210526/model/DescribeBillUsageDetailResponse.h>
 #include <tencentcloud/essbasic/v20210526/model/DescribeChannelFlowEvidenceReportRequest.h>
 #include <tencentcloud/essbasic/v20210526/model/DescribeChannelFlowEvidenceReportResponse.h>
 #include <tencentcloud/essbasic/v20210526/model/DescribeChannelOrganizationsRequest.h>
@@ -338,9 +336,6 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeBatchOrganizationRegistrationUrlsResponse> DescribeBatchOrganizationRegistrationUrlsOutcome;
                 typedef std::future<DescribeBatchOrganizationRegistrationUrlsOutcome> DescribeBatchOrganizationRegistrationUrlsOutcomeCallable;
                 typedef std::function<void(const EssbasicClient*, const Model::DescribeBatchOrganizationRegistrationUrlsRequest&, DescribeBatchOrganizationRegistrationUrlsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeBatchOrganizationRegistrationUrlsAsyncHandler;
-                typedef Outcome<Core::Error, Model::DescribeBillUsageDetailResponse> DescribeBillUsageDetailOutcome;
-                typedef std::future<DescribeBillUsageDetailOutcome> DescribeBillUsageDetailOutcomeCallable;
-                typedef std::function<void(const EssbasicClient*, const Model::DescribeBillUsageDetailRequest&, DescribeBillUsageDetailOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeBillUsageDetailAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeChannelFlowEvidenceReportResponse> DescribeChannelFlowEvidenceReportOutcome;
                 typedef std::future<DescribeChannelFlowEvidenceReportOutcome> DescribeChannelFlowEvidenceReportOutcomeCallable;
                 typedef std::function<void(const EssbasicClient*, const Model::DescribeChannelFlowEvidenceReportRequest&, DescribeChannelFlowEvidenceReportOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeChannelFlowEvidenceReportAsyncHandler;
@@ -1526,7 +1521,7 @@ Web链接访问后，会根据子客企业(**Agent中ProxyOrganizationOpenId表�
 | 腾讯电子签（正式版） | wxa023b292fd19d41d | gh_da88f6188665 |
 | 腾讯电子签Demo | wx371151823f6f3edf | gh_39a5d3de69fa |
 
-**主要使用场景可以更加EndPoint分类如下**
+**主要使用场景EndPoint分类**
 
 |EndPoint| 场景| 说明和示例|
 |  ----  | ----  | --- |
@@ -1554,17 +1549,6 @@ Web链接访问后，会根据子客企业(**Agent中ProxyOrganizationOpenId表�
                 DescribeBatchOrganizationRegistrationUrlsOutcome DescribeBatchOrganizationRegistrationUrls(const Model::DescribeBatchOrganizationRegistrationUrlsRequest &request);
                 void DescribeBatchOrganizationRegistrationUrlsAsync(const Model::DescribeBatchOrganizationRegistrationUrlsRequest& request, const DescribeBatchOrganizationRegistrationUrlsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DescribeBatchOrganizationRegistrationUrlsOutcomeCallable DescribeBatchOrganizationRegistrationUrlsCallable(const Model::DescribeBatchOrganizationRegistrationUrlsRequest& request);
-
-                /**
-                 *废弃接口
-
-通过此接口（DescribeBillUsageDetail）查询该第三方平台子客企业的套餐消耗详情。
-                 * @param req DescribeBillUsageDetailRequest
-                 * @return DescribeBillUsageDetailOutcome
-                 */
-                DescribeBillUsageDetailOutcome DescribeBillUsageDetail(const Model::DescribeBillUsageDetailRequest &request);
-                void DescribeBillUsageDetailAsync(const Model::DescribeBillUsageDetailRequest& request, const DescribeBillUsageDetailAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
-                DescribeBillUsageDetailOutcomeCallable DescribeBillUsageDetailCallable(const Model::DescribeBillUsageDetailRequest& request);
 
                 /**
                  *获取出证报告任务执行结果，返回报告 URL。
@@ -1846,11 +1830,12 @@ Web链接访问后，会根据子客企业(**Agent中ProxyOrganizationOpenId表�
                 SyncProxyOrganizationOutcomeCallable SyncProxyOrganizationCallable(const Model::SyncProxyOrganizationRequest& request);
 
                 /**
-                 *此接口（SyncProxyOrganizationOperators）用于同步 第三方平台子客企业经办人列表，主要是同步经办人的离职状态。子客Web控制台的组织架构管理，是依赖于第三方应用平台的，无法针对员工做新增/更新/离职等操作。 
+                 *此接口（SyncProxyOrganizationOperators）用于同步 第三方平台子客企业经办人列表，主要是同步经办人的离职状态。
+子客Web控制台的组织架构管理，依赖于第三方应用平台的，无法在页面针对员工做新增/更新/离职等操作， 必须通过 API 来操作。 
 
-- **新增员工的场景**:    通过本接口提前导入员工列表, 然后调用<a href="https://qian.tencent.com/developers/partnerApis/accounts/CreateConsoleLoginUrl" target="_blank">生成子客登录链接</a>分享给对应的员工进行实名, 新增员工后员工的状态为**未实名**, 通过链接实名后状态变为**已实名**, 已实名员工就可以参与合同的发起和签署
+- **新增员工的场景**:    通过本接口提前导入员工列表, 然后调用<a href="https://qian.tencent.com/developers/partnerApis/accounts/CreateConsoleLoginUrl" target="_blank">生成子客登录链接</a>分享给对应的员工进行实名, 新增员工后员工的状态为**未实名**, 通过链接实名后状态变为**已实名**, 已实名员工就可以参与合同的发起。
 
-- **员工离职的场景**: 通过本接口将员工置为离职, 员工无法登录控制台和腾讯电子签小程序进行操作了,   同时给此员工分配的openid会被回收可以给其他新员工使用 (离职后员工数据会被置空,  再次加入公司会从零开始) ,  若员工信息有误可通过离职后在新增来解决,  离职员工状态为**离职**
+- **员工离职的场景**: 通过本接口将员工置为离职, 员工无法登录控制台和腾讯电子签小程序进行操作了,   同时给此员工分配的openid会被回收可以给其他新员工使用 (离职后员工数据会被置空,  再次加入公司会从零开始) ,  若员工信息有误可通过离职后在新增来解决,  离职员工状态为**离职**。
 
 ![image](https://qcloudimg.tencent-cloud.cn/raw/7a27a6bb0e4d39c2f6aa2a0b39946181/channel_SyncProxyOrganizationOperators.png)
 

@@ -67,18 +67,34 @@ namespace TencentCloud
 
                     /**
                      * 获取主题类型<br/>EMBED_WEB_THEME：嵌入式主题
-<br/>目前只支持EMBED_WEB_THEME，web页面嵌入的主题风格配置
+<ul>
+<li>EMBED_WEB_THEME，web页面嵌入的主题风格配置</li>
+<li>COMPANY_AUTHENTICATE，子客认证主题配置， 对当前第三方应用号生效，
+目前支持的有，背景图替换，隐藏企业认证页面导航栏和隐藏企业认证顶部logo</li>
+</ul>
                      * @return ThemeType 主题类型<br/>EMBED_WEB_THEME：嵌入式主题
-<br/>目前只支持EMBED_WEB_THEME，web页面嵌入的主题风格配置
+<ul>
+<li>EMBED_WEB_THEME，web页面嵌入的主题风格配置</li>
+<li>COMPANY_AUTHENTICATE，子客认证主题配置， 对当前第三方应用号生效，
+目前支持的有，背景图替换，隐藏企业认证页面导航栏和隐藏企业认证顶部logo</li>
+</ul>
                      * 
                      */
                     std::string GetThemeType() const;
 
                     /**
                      * 设置主题类型<br/>EMBED_WEB_THEME：嵌入式主题
-<br/>目前只支持EMBED_WEB_THEME，web页面嵌入的主题风格配置
+<ul>
+<li>EMBED_WEB_THEME，web页面嵌入的主题风格配置</li>
+<li>COMPANY_AUTHENTICATE，子客认证主题配置， 对当前第三方应用号生效，
+目前支持的有，背景图替换，隐藏企业认证页面导航栏和隐藏企业认证顶部logo</li>
+</ul>
                      * @param _themeType 主题类型<br/>EMBED_WEB_THEME：嵌入式主题
-<br/>目前只支持EMBED_WEB_THEME，web页面嵌入的主题风格配置
+<ul>
+<li>EMBED_WEB_THEME，web页面嵌入的主题风格配置</li>
+<li>COMPANY_AUTHENTICATE，子客认证主题配置， 对当前第三方应用号生效，
+目前支持的有，背景图替换，隐藏企业认证页面导航栏和隐藏企业认证顶部logo</li>
+</ul>
                      * 
                      */
                     void SetThemeType(const std::string& _themeType);
@@ -121,7 +137,11 @@ namespace TencentCloud
 
                     /**
                      * 主题类型<br/>EMBED_WEB_THEME：嵌入式主题
-<br/>目前只支持EMBED_WEB_THEME，web页面嵌入的主题风格配置
+<ul>
+<li>EMBED_WEB_THEME，web页面嵌入的主题风格配置</li>
+<li>COMPANY_AUTHENTICATE，子客认证主题配置， 对当前第三方应用号生效，
+目前支持的有，背景图替换，隐藏企业认证页面导航栏和隐藏企业认证顶部logo</li>
+</ul>
                      */
                     std::string m_themeType;
                     bool m_themeTypeHasBeenSet;

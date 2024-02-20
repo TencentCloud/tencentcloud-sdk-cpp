@@ -21,7 +21,6 @@ set(essbasic_public_header
 
 set(essbasic_public_header_model
   include/tencentcloud/essbasic/v20210526/model/SyncProxyOrganizationResponse.h
-  include/tencentcloud/essbasic/v20210526/model/BillUsageDetail.h
   include/tencentcloud/essbasic/v20210526/model/ChannelCreateConvertTaskApiResponse.h
   include/tencentcloud/essbasic/v20210526/model/ChannelCreateFlowRemindsResponse.h
   include/tencentcloud/essbasic/v20210526/model/Component.h
@@ -133,7 +132,6 @@ set(essbasic_public_header_model
   include/tencentcloud/essbasic/v20210526/model/ChannelDeleteRoleUsersResponse.h
   include/tencentcloud/essbasic/v20210526/model/SyncProxyOrganizationOperatorsRequest.h
   include/tencentcloud/essbasic/v20210526/model/ChannelCreateFlowApproversResponse.h
-  include/tencentcloud/essbasic/v20210526/model/DescribeBillUsageDetailResponse.h
   include/tencentcloud/essbasic/v20210526/model/DescribeUsageResponse.h
   include/tencentcloud/essbasic/v20210526/model/CreateSignUrlsRequest.h
   include/tencentcloud/essbasic/v20210526/model/RegistrationOrganizationInfo.h
@@ -202,7 +200,7 @@ set(essbasic_public_header_model
   include/tencentcloud/essbasic/v20210526/model/SignUrl.h
   include/tencentcloud/essbasic/v20210526/model/CreateFlowGroupSignReviewRequest.h
   include/tencentcloud/essbasic/v20210526/model/ChannelBillUsageDetail.h
-  include/tencentcloud/essbasic/v20210526/model/DescribeBillUsageDetailRequest.h
+  include/tencentcloud/essbasic/v20210526/model/DescribeTemplatesRequest.h
   include/tencentcloud/essbasic/v20210526/model/RelieveInfo.h
   include/tencentcloud/essbasic/v20210526/model/ChannelCreateSealPolicyRequest.h
   include/tencentcloud/essbasic/v20210526/model/OccupiedSeal.h
@@ -225,7 +223,6 @@ set(essbasic_public_header_model
   include/tencentcloud/essbasic/v20210526/model/ChannelCreateFlowApproversRequest.h
   include/tencentcloud/essbasic/v20210526/model/ChannelUpdateSealStatusResponse.h
   include/tencentcloud/essbasic/v20210526/model/ChannelCreateFlowSignUrlRequest.h
-  include/tencentcloud/essbasic/v20210526/model/DescribeTemplatesRequest.h
   include/tencentcloud/essbasic/v20210526/model/DescribeExtendedServiceAuthInfoResponse.h
   include/tencentcloud/essbasic/v20210526/model/ChannelCreateEmbedWebUrlRequest.h
   include/tencentcloud/essbasic/v20210526/model/CcInfo.h
@@ -362,7 +359,6 @@ set(essbasic_src
   src/v20210526/EssbasicClient.cpp
   src/v20201222/EssbasicClient.cpp
   src/v20210526/model/SyncProxyOrganizationResponse.cpp
-  src/v20210526/model/BillUsageDetail.cpp
   src/v20210526/model/ChannelCreateConvertTaskApiResponse.cpp
   src/v20210526/model/ChannelCreateFlowRemindsResponse.cpp
   src/v20210526/model/Component.cpp
@@ -474,7 +470,6 @@ set(essbasic_src
   src/v20210526/model/ChannelDeleteRoleUsersResponse.cpp
   src/v20210526/model/SyncProxyOrganizationOperatorsRequest.cpp
   src/v20210526/model/ChannelCreateFlowApproversResponse.cpp
-  src/v20210526/model/DescribeBillUsageDetailResponse.cpp
   src/v20210526/model/DescribeUsageResponse.cpp
   src/v20210526/model/CreateSignUrlsRequest.cpp
   src/v20210526/model/RegistrationOrganizationInfo.cpp
@@ -543,7 +538,7 @@ set(essbasic_src
   src/v20210526/model/SignUrl.cpp
   src/v20210526/model/CreateFlowGroupSignReviewRequest.cpp
   src/v20210526/model/ChannelBillUsageDetail.cpp
-  src/v20210526/model/DescribeBillUsageDetailRequest.cpp
+  src/v20210526/model/DescribeTemplatesRequest.cpp
   src/v20210526/model/RelieveInfo.cpp
   src/v20210526/model/ChannelCreateSealPolicyRequest.cpp
   src/v20210526/model/OccupiedSeal.cpp
@@ -566,7 +561,6 @@ set(essbasic_src
   src/v20210526/model/ChannelCreateFlowApproversRequest.cpp
   src/v20210526/model/ChannelUpdateSealStatusResponse.cpp
   src/v20210526/model/ChannelCreateFlowSignUrlRequest.cpp
-  src/v20210526/model/DescribeTemplatesRequest.cpp
   src/v20210526/model/DescribeExtendedServiceAuthInfoResponse.cpp
   src/v20210526/model/ChannelCreateEmbedWebUrlRequest.cpp
   src/v20210526/model/CcInfo.cpp

@@ -229,6 +229,8 @@
 #include <tencentcloud/tcr/v20190924/model/ModifySecurityPolicyResponse.h>
 #include <tencentcloud/tcr/v20190924/model/ModifyServiceAccountRequest.h>
 #include <tencentcloud/tcr/v20190924/model/ModifyServiceAccountResponse.h>
+#include <tencentcloud/tcr/v20190924/model/ModifyServiceAccountPasswordRequest.h>
+#include <tencentcloud/tcr/v20190924/model/ModifyServiceAccountPasswordResponse.h>
 #include <tencentcloud/tcr/v20190924/model/ModifyTagRetentionRuleRequest.h>
 #include <tencentcloud/tcr/v20190924/model/ModifyTagRetentionRuleResponse.h>
 #include <tencentcloud/tcr/v20190924/model/ModifyUserPasswordPersonalRequest.h>
@@ -564,6 +566,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::ModifyServiceAccountResponse> ModifyServiceAccountOutcome;
                 typedef std::future<ModifyServiceAccountOutcome> ModifyServiceAccountOutcomeCallable;
                 typedef std::function<void(const TcrClient*, const Model::ModifyServiceAccountRequest&, ModifyServiceAccountOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyServiceAccountAsyncHandler;
+                typedef Outcome<Core::Error, Model::ModifyServiceAccountPasswordResponse> ModifyServiceAccountPasswordOutcome;
+                typedef std::future<ModifyServiceAccountPasswordOutcome> ModifyServiceAccountPasswordOutcomeCallable;
+                typedef std::function<void(const TcrClient*, const Model::ModifyServiceAccountPasswordRequest&, ModifyServiceAccountPasswordOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyServiceAccountPasswordAsyncHandler;
                 typedef Outcome<Core::Error, Model::ModifyTagRetentionRuleResponse> ModifyTagRetentionRuleOutcome;
                 typedef std::future<ModifyTagRetentionRuleOutcome> ModifyTagRetentionRuleOutcomeCallable;
                 typedef std::function<void(const TcrClient*, const Model::ModifyTagRetentionRuleRequest&, ModifyTagRetentionRuleOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyTagRetentionRuleAsyncHandler;
@@ -1513,6 +1518,15 @@ namespace TencentCloud
                 ModifyServiceAccountOutcome ModifyServiceAccount(const Model::ModifyServiceAccountRequest &request);
                 void ModifyServiceAccountAsync(const Model::ModifyServiceAccountRequest& request, const ModifyServiceAccountAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 ModifyServiceAccountOutcomeCallable ModifyServiceAccountCallable(const Model::ModifyServiceAccountRequest& request);
+
+                /**
+                 *更新服务级账号密码
+                 * @param req ModifyServiceAccountPasswordRequest
+                 * @return ModifyServiceAccountPasswordOutcome
+                 */
+                ModifyServiceAccountPasswordOutcome ModifyServiceAccountPassword(const Model::ModifyServiceAccountPasswordRequest &request);
+                void ModifyServiceAccountPasswordAsync(const Model::ModifyServiceAccountPasswordRequest& request, const ModifyServiceAccountPasswordAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                ModifyServiceAccountPasswordOutcomeCallable ModifyServiceAccountPasswordCallable(const Model::ModifyServiceAccountPasswordRequest& request);
 
                 /**
                  *更新版本保留规则

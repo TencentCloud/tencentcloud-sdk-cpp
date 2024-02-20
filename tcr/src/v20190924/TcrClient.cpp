@@ -4469,6 +4469,49 @@ TcrClient::ModifyServiceAccountOutcomeCallable TcrClient::ModifyServiceAccountCa
     return task->get_future();
 }
 
+TcrClient::ModifyServiceAccountPasswordOutcome TcrClient::ModifyServiceAccountPassword(const ModifyServiceAccountPasswordRequest &request)
+{
+    auto outcome = MakeRequest(request, "ModifyServiceAccountPassword");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ModifyServiceAccountPasswordResponse rsp = ModifyServiceAccountPasswordResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ModifyServiceAccountPasswordOutcome(rsp);
+        else
+            return ModifyServiceAccountPasswordOutcome(o.GetError());
+    }
+    else
+    {
+        return ModifyServiceAccountPasswordOutcome(outcome.GetError());
+    }
+}
+
+void TcrClient::ModifyServiceAccountPasswordAsync(const ModifyServiceAccountPasswordRequest& request, const ModifyServiceAccountPasswordAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->ModifyServiceAccountPassword(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+TcrClient::ModifyServiceAccountPasswordOutcomeCallable TcrClient::ModifyServiceAccountPasswordCallable(const ModifyServiceAccountPasswordRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<ModifyServiceAccountPasswordOutcome()>>(
+        [this, request]()
+        {
+            return this->ModifyServiceAccountPassword(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 TcrClient::ModifyTagRetentionRuleOutcome TcrClient::ModifyTagRetentionRule(const ModifyTagRetentionRuleRequest &request)
 {
     auto outcome = MakeRequest(request, "ModifyTagRetentionRule");
