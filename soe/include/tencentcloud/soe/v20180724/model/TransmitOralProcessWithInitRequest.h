@@ -581,15 +581,19 @@ namespace TencentCloud
                     bool KeywordHasBeenSet() const;
 
                     /**
-                     * 获取音频存储路径，支持通过子路径指定文件夹名称
-                     * @return COSBucketURL 音频存储路径，支持通过子路径指定文件夹名称
+                     * 获取音频存储模式，此参数已废弃，无需设置；
+注：有存储需求的用户建议自行存储至腾讯云COS[对象存储](https://cloud.tencent.com/product/cos)使用。
+                     * @return COSBucketURL 音频存储模式，此参数已废弃，无需设置；
+注：有存储需求的用户建议自行存储至腾讯云COS[对象存储](https://cloud.tencent.com/product/cos)使用。
                      * 
                      */
                     std::string GetCOSBucketURL() const;
 
                     /**
-                     * 设置音频存储路径，支持通过子路径指定文件夹名称
-                     * @param _cOSBucketURL 音频存储路径，支持通过子路径指定文件夹名称
+                     * 设置音频存储模式，此参数已废弃，无需设置；
+注：有存储需求的用户建议自行存储至腾讯云COS[对象存储](https://cloud.tencent.com/product/cos)使用。
+                     * @param _cOSBucketURL 音频存储模式，此参数已废弃，无需设置；
+注：有存储需求的用户建议自行存储至腾讯云COS[对象存储](https://cloud.tencent.com/product/cos)使用。
                      * 
                      */
                     void SetCOSBucketURL(const std::string& _cOSBucketURL);
@@ -752,7 +756,8 @@ namespace TencentCloud
                     bool m_keywordHasBeenSet;
 
                     /**
-                     * 音频存储路径，支持通过子路径指定文件夹名称
+                     * 音频存储模式，此参数已废弃，无需设置；
+注：有存储需求的用户建议自行存储至腾讯云COS[对象存储](https://cloud.tencent.com/product/cos)使用。
                      */
                     std::string m_cOSBucketURL;
                     bool m_cOSBucketURLHasBeenSet;

@@ -29,7 +29,8 @@ PackageInfo::PackageInfo() :
     m_updatedAtHasBeenSet(false),
     m_packageIdHasBeenSet(false),
     m_orderIdHasBeenSet(false),
-    m_channelIdHasBeenSet(false)
+    m_channelIdHasBeenSet(false),
+    m_cSUserIdHasBeenSet(false)
 {
 }
 
@@ -128,6 +129,16 @@ CoreInternalOutcome PackageInfo::Deserialize(const rapidjson::Value &value)
         m_channelIdHasBeenSet = true;
     }
 
+    if (value.HasMember("CSUserId") && !value["CSUserId"].IsNull())
+    {
+        if (!value["CSUserId"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `PackageInfo.CSUserId` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_cSUserId = string(value["CSUserId"].GetString());
+        m_cSUserIdHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -205,6 +216,14 @@ void PackageInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Document::All
         string key = "ChannelId";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_channelId, allocator);
+    }
+
+    if (m_cSUserIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "CSUserId";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_cSUserId.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -352,5 +371,21 @@ void PackageInfo::SetChannelId(const uint64_t& _channelId)
 bool PackageInfo::ChannelIdHasBeenSet() const
 {
     return m_channelIdHasBeenSet;
+}
+
+string PackageInfo::GetCSUserId() const
+{
+    return m_cSUserId;
+}
+
+void PackageInfo::SetCSUserId(const string& _cSUserId)
+{
+    m_cSUserId = _cSUserId;
+    m_cSUserIdHasBeenSet = true;
+}
+
+bool PackageInfo::CSUserIdHasBeenSet() const
+{
+    return m_cSUserIdHasBeenSet;
 }
 

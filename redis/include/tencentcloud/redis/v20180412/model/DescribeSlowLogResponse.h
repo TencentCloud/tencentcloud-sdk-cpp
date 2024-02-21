@@ -59,8 +59,8 @@ namespace TencentCloud
                     bool TotalCountHasBeenSet() const;
 
                     /**
-                     * 获取慢查询详情。
-                     * @return InstanceSlowlogDetail 慢查询详情。
+                     * 获取该参数存在命名不规范问题，建议用参数InstanceSlowLogDetail取代。慢查询详情。
+                     * @return InstanceSlowlogDetail 该参数存在命名不规范问题，建议用参数InstanceSlowLogDetail取代。慢查询详情。
                      * 
                      */
                     std::vector<InstanceSlowlogDetail> GetInstanceSlowlogDetail() const;
@@ -72,6 +72,20 @@ namespace TencentCloud
                      */
                     bool InstanceSlowlogDetailHasBeenSet() const;
 
+                    /**
+                     * 获取慢查询详情。
+                     * @return InstanceSlowLogDetail 慢查询详情。
+                     * 
+                     */
+                    std::vector<InstanceSlowlogDetail> GetInstanceSlowLogDetail() const;
+
+                    /**
+                     * 判断参数 InstanceSlowLogDetail 是否已赋值
+                     * @return InstanceSlowLogDetail 是否已赋值
+                     * 
+                     */
+                    bool InstanceSlowLogDetailHasBeenSet() const;
+
                 private:
 
                     /**
@@ -81,10 +95,16 @@ namespace TencentCloud
                     bool m_totalCountHasBeenSet;
 
                     /**
-                     * 慢查询详情。
+                     * 该参数存在命名不规范问题，建议用参数InstanceSlowLogDetail取代。慢查询详情。
                      */
                     std::vector<InstanceSlowlogDetail> m_instanceSlowlogDetail;
                     bool m_instanceSlowlogDetailHasBeenSet;
+
+                    /**
+                     * 慢查询详情。
+                     */
+                    std::vector<InstanceSlowlogDetail> m_instanceSlowLogDetail;
+                    bool m_instanceSlowLogDetailHasBeenSet;
 
                 };
             }

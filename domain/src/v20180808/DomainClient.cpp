@@ -470,6 +470,49 @@ DomainClient::DeletePhoneEmailOutcomeCallable DomainClient::DeletePhoneEmailCall
     return task->get_future();
 }
 
+DomainClient::DeleteReservedPreDomainInfoOutcome DomainClient::DeleteReservedPreDomainInfo(const DeleteReservedPreDomainInfoRequest &request)
+{
+    auto outcome = MakeRequest(request, "DeleteReservedPreDomainInfo");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DeleteReservedPreDomainInfoResponse rsp = DeleteReservedPreDomainInfoResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DeleteReservedPreDomainInfoOutcome(rsp);
+        else
+            return DeleteReservedPreDomainInfoOutcome(o.GetError());
+    }
+    else
+    {
+        return DeleteReservedPreDomainInfoOutcome(outcome.GetError());
+    }
+}
+
+void DomainClient::DeleteReservedPreDomainInfoAsync(const DeleteReservedPreDomainInfoRequest& request, const DeleteReservedPreDomainInfoAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DeleteReservedPreDomainInfo(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+DomainClient::DeleteReservedPreDomainInfoOutcomeCallable DomainClient::DeleteReservedPreDomainInfoCallable(const DeleteReservedPreDomainInfoRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DeleteReservedPreDomainInfoOutcome()>>(
+        [this, request]()
+        {
+            return this->DeleteReservedPreDomainInfo(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 DomainClient::DeleteTemplateOutcome DomainClient::DeleteTemplate(const DeleteTemplateRequest &request)
 {
     auto outcome = MakeRequest(request, "DeleteTemplate");
@@ -857,6 +900,92 @@ DomainClient::DescribePhoneEmailListOutcomeCallable DomainClient::DescribePhoneE
     return task->get_future();
 }
 
+DomainClient::DescribePreDomainListOutcome DomainClient::DescribePreDomainList(const DescribePreDomainListRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribePreDomainList");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribePreDomainListResponse rsp = DescribePreDomainListResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribePreDomainListOutcome(rsp);
+        else
+            return DescribePreDomainListOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribePreDomainListOutcome(outcome.GetError());
+    }
+}
+
+void DomainClient::DescribePreDomainListAsync(const DescribePreDomainListRequest& request, const DescribePreDomainListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribePreDomainList(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+DomainClient::DescribePreDomainListOutcomeCallable DomainClient::DescribePreDomainListCallable(const DescribePreDomainListRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribePreDomainListOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribePreDomainList(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+DomainClient::DescribeReservedPreDomainInfoOutcome DomainClient::DescribeReservedPreDomainInfo(const DescribeReservedPreDomainInfoRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeReservedPreDomainInfo");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeReservedPreDomainInfoResponse rsp = DescribeReservedPreDomainInfoResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeReservedPreDomainInfoOutcome(rsp);
+        else
+            return DescribeReservedPreDomainInfoOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeReservedPreDomainInfoOutcome(outcome.GetError());
+    }
+}
+
+void DomainClient::DescribeReservedPreDomainInfoAsync(const DescribeReservedPreDomainInfoRequest& request, const DescribeReservedPreDomainInfoAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeReservedPreDomainInfo(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+DomainClient::DescribeReservedPreDomainInfoOutcomeCallable DomainClient::DescribeReservedPreDomainInfoCallable(const DescribeReservedPreDomainInfoRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeReservedPreDomainInfoOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeReservedPreDomainInfo(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 DomainClient::DescribeTemplateOutcome DomainClient::DescribeTemplate(const DescribeTemplateRequest &request)
 {
     auto outcome = MakeRequest(request, "DescribeTemplate");
@@ -1151,6 +1280,49 @@ DomainClient::RenewDomainBatchOutcomeCallable DomainClient::RenewDomainBatchCall
         [this, request]()
         {
             return this->RenewDomainBatch(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+DomainClient::ReservedPreDomainsOutcome DomainClient::ReservedPreDomains(const ReservedPreDomainsRequest &request)
+{
+    auto outcome = MakeRequest(request, "ReservedPreDomains");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ReservedPreDomainsResponse rsp = ReservedPreDomainsResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ReservedPreDomainsOutcome(rsp);
+        else
+            return ReservedPreDomainsOutcome(o.GetError());
+    }
+    else
+    {
+        return ReservedPreDomainsOutcome(outcome.GetError());
+    }
+}
+
+void DomainClient::ReservedPreDomainsAsync(const ReservedPreDomainsRequest& request, const ReservedPreDomainsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->ReservedPreDomains(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+DomainClient::ReservedPreDomainsOutcomeCallable DomainClient::ReservedPreDomainsCallable(const ReservedPreDomainsRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<ReservedPreDomainsOutcome()>>(
+        [this, request]()
+        {
+            return this->ReservedPreDomains(request);
         }
     );
 

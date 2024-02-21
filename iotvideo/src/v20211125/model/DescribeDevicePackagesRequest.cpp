@@ -27,6 +27,7 @@ DescribeDevicePackagesRequest::DescribeDevicePackagesRequest() :
     m_deviceNameHasBeenSet(false),
     m_limitHasBeenSet(false),
     m_offsetHasBeenSet(false),
+    m_cSUserIdHasBeenSet(false),
     m_channelIdHasBeenSet(false)
 {
 }
@@ -68,6 +69,14 @@ string DescribeDevicePackagesRequest::ToJsonString() const
         string key = "Offset";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_offset, allocator);
+    }
+
+    if (m_cSUserIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "CSUserId";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_cSUserId.c_str(), allocator).Move(), allocator);
     }
 
     if (m_channelIdHasBeenSet)
@@ -148,6 +157,22 @@ void DescribeDevicePackagesRequest::SetOffset(const uint64_t& _offset)
 bool DescribeDevicePackagesRequest::OffsetHasBeenSet() const
 {
     return m_offsetHasBeenSet;
+}
+
+string DescribeDevicePackagesRequest::GetCSUserId() const
+{
+    return m_cSUserId;
+}
+
+void DescribeDevicePackagesRequest::SetCSUserId(const string& _cSUserId)
+{
+    m_cSUserId = _cSUserId;
+    m_cSUserIdHasBeenSet = true;
+}
+
+bool DescribeDevicePackagesRequest::CSUserIdHasBeenSet() const
+{
+    return m_cSUserIdHasBeenSet;
 }
 
 uint64_t DescribeDevicePackagesRequest::GetChannelId() const

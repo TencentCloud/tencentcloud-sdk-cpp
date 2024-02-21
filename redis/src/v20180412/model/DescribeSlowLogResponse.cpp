@@ -25,7 +25,8 @@ using namespace std;
 
 DescribeSlowLogResponse::DescribeSlowLogResponse() :
     m_totalCountHasBeenSet(false),
-    m_instanceSlowlogDetailHasBeenSet(false)
+    m_instanceSlowlogDetailHasBeenSet(false),
+    m_instanceSlowLogDetailHasBeenSet(false)
 {
 }
 
@@ -93,6 +94,26 @@ CoreInternalOutcome DescribeSlowLogResponse::Deserialize(const string &payload)
         m_instanceSlowlogDetailHasBeenSet = true;
     }
 
+    if (rsp.HasMember("InstanceSlowLogDetail") && !rsp["InstanceSlowLogDetail"].IsNull())
+    {
+        if (!rsp["InstanceSlowLogDetail"].IsArray())
+            return CoreInternalOutcome(Core::Error("response `InstanceSlowLogDetail` is not array type"));
+
+        const rapidjson::Value &tmpValue = rsp["InstanceSlowLogDetail"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            InstanceSlowlogDetail item;
+            CoreInternalOutcome outcome = item.Deserialize(*itr);
+            if (!outcome.IsSuccess())
+            {
+                outcome.GetError().SetRequestId(requestId);
+                return outcome;
+            }
+            m_instanceSlowLogDetail.push_back(item);
+        }
+        m_instanceSlowLogDetailHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -120,6 +141,21 @@ string DescribeSlowLogResponse::ToJsonString() const
 
         int i=0;
         for (auto itr = m_instanceSlowlogDetail.begin(); itr != m_instanceSlowlogDetail.end(); ++itr, ++i)
+        {
+            value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(value[key.c_str()][i], allocator);
+        }
+    }
+
+    if (m_instanceSlowLogDetailHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "InstanceSlowLogDetail";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_instanceSlowLogDetail.begin(); itr != m_instanceSlowLogDetail.end(); ++itr, ++i)
         {
             value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
             (*itr).ToJsonObject(value[key.c_str()][i], allocator);
@@ -156,6 +192,16 @@ vector<InstanceSlowlogDetail> DescribeSlowLogResponse::GetInstanceSlowlogDetail(
 bool DescribeSlowLogResponse::InstanceSlowlogDetailHasBeenSet() const
 {
     return m_instanceSlowlogDetailHasBeenSet;
+}
+
+vector<InstanceSlowlogDetail> DescribeSlowLogResponse::GetInstanceSlowLogDetail() const
+{
+    return m_instanceSlowLogDetail;
+}
+
+bool DescribeSlowLogResponse::InstanceSlowLogDetailHasBeenSet() const
+{
+    return m_instanceSlowLogDetailHasBeenSet;
 }
 
 

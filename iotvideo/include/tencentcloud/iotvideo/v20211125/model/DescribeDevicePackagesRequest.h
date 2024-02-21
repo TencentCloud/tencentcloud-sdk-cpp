@@ -127,6 +127,27 @@ namespace TencentCloud
                     bool OffsetHasBeenSet() const;
 
                     /**
+                     * 获取用户id
+                     * @return CSUserId 用户id
+                     * 
+                     */
+                    std::string GetCSUserId() const;
+
+                    /**
+                     * 设置用户id
+                     * @param _cSUserId 用户id
+                     * 
+                     */
+                    void SetCSUserId(const std::string& _cSUserId);
+
+                    /**
+                     * 判断参数 CSUserId 是否已赋值
+                     * @return CSUserId 是否已赋值
+                     * 
+                     */
+                    bool CSUserIdHasBeenSet() const;
+
+                    /**
                      * 获取通道id
                      * @return ChannelId 通道id
                      * 
@@ -172,6 +193,12 @@ namespace TencentCloud
                      */
                     uint64_t m_offset;
                     bool m_offsetHasBeenSet;
+
+                    /**
+                     * 用户id
+                     */
+                    std::string m_cSUserId;
+                    bool m_cSUserIdHasBeenSet;
 
                     /**
                      * 通道id

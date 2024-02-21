@@ -255,6 +255,31 @@ namespace TencentCloud
                      */
                     bool ChannelIdHasBeenSet() const;
 
+                    /**
+                     * 获取用户id
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return CSUserId 用户id
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::string GetCSUserId() const;
+
+                    /**
+                     * 设置用户id
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _cSUserId 用户id
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetCSUserId(const std::string& _cSUserId);
+
+                    /**
+                     * 判断参数 CSUserId 是否已赋值
+                     * @return CSUserId 是否已赋值
+                     * 
+                     */
+                    bool CSUserIdHasBeenSet() const;
+
                 private:
 
                     /**
@@ -315,6 +340,13 @@ namespace TencentCloud
                      */
                     uint64_t m_channelId;
                     bool m_channelIdHasBeenSet;
+
+                    /**
+                     * 用户id
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_cSUserId;
+                    bool m_cSUserIdHasBeenSet;
 
                 };
             }

@@ -276,15 +276,15 @@ lo（老挝语）：zh（简体中文）、zh-HK（繁体中文）、 zh-TW（�
                     bool UrlHasBeenSet() const;
 
                     /**
-                     * 获取原始文档类型
-                     * @return BasicDocumentType 原始文档类型
+                     * 获取原始文档类型。该参数为高级参数，请留空，如需使用，请与工作人员确认后再使用。
+                     * @return BasicDocumentType 原始文档类型。该参数为高级参数，请留空，如需使用，请与工作人员确认后再使用。
                      * 
                      */
                     std::string GetBasicDocumentType() const;
 
                     /**
-                     * 设置原始文档类型
-                     * @param _basicDocumentType 原始文档类型
+                     * 设置原始文档类型。该参数为高级参数，请留空，如需使用，请与工作人员确认后再使用。
+                     * @param _basicDocumentType 原始文档类型。该参数为高级参数，请留空，如需使用，请与工作人员确认后再使用。
                      * 
                      */
                     void SetBasicDocumentType(const std::string& _basicDocumentType);
@@ -403,7 +403,7 @@ lo（老挝语）：zh（简体中文）、zh-HK（繁体中文）、 zh-TW（�
                     bool m_urlHasBeenSet;
 
                     /**
-                     * 原始文档类型
+                     * 原始文档类型。该参数为高级参数，请留空，如需使用，请与工作人员确认后再使用。
                      */
                     std::string m_basicDocumentType;
                     bool m_basicDocumentTypeHasBeenSet;
