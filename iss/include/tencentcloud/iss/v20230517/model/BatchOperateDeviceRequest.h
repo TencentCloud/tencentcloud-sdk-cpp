@@ -64,15 +64,15 @@ namespace TencentCloud
                     bool DeviceIdsHasBeenSet() const;
 
                     /**
-                     * 获取操作命令（enable：启用；disable：禁用；delete：删除）
-                     * @return Cmd 操作命令（enable：启用；disable：禁用；delete：删除）
+                     * 获取操作命令（enable：启用；disable：禁用；delete：删除；upgrade：固件升级；reset：恢复出厂设置；reboot：重启）
+                     * @return Cmd 操作命令（enable：启用；disable：禁用；delete：删除；upgrade：固件升级；reset：恢复出厂设置；reboot：重启）
                      * 
                      */
                     std::string GetCmd() const;
 
                     /**
-                     * 设置操作命令（enable：启用；disable：禁用；delete：删除）
-                     * @param _cmd 操作命令（enable：启用；disable：禁用；delete：删除）
+                     * 设置操作命令（enable：启用；disable：禁用；delete：删除；upgrade：固件升级；reset：恢复出厂设置；reboot：重启）
+                     * @param _cmd 操作命令（enable：启用；disable：禁用；delete：删除；upgrade：固件升级；reset：恢复出厂设置；reboot：重启）
                      * 
                      */
                     void SetCmd(const std::string& _cmd);
@@ -93,7 +93,7 @@ namespace TencentCloud
                     bool m_deviceIdsHasBeenSet;
 
                     /**
-                     * 操作命令（enable：启用；disable：禁用；delete：删除）
+                     * 操作命令（enable：启用；disable：禁用；delete：删除；upgrade：固件升级；reset：恢复出厂设置；reboot：重启）
                      */
                     std::string m_cmd;
                     bool m_cmdHasBeenSet;

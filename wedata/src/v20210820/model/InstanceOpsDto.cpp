@@ -74,7 +74,13 @@ InstanceOpsDto::InstanceOpsDto() :
     m_tenantIdHasBeenSet(false),
     m_instanceKeyHasBeenSet(false),
     m_executorGroupIdHasBeenSet(false),
-    m_executorGroupNameHasBeenSet(false)
+    m_executorGroupNameHasBeenSet(false),
+    m_relatedInstanceListHasBeenSet(false),
+    m_relatedInstanceSizeHasBeenSet(false),
+    m_ownerIdHasBeenSet(false),
+    m_userIdHasBeenSet(false),
+    m_instanceLifeCycleOpsDtoHasBeenSet(false),
+    m_retryAttemptsHasBeenSet(false)
 {
 }
 
@@ -630,6 +636,83 @@ CoreInternalOutcome InstanceOpsDto::Deserialize(const rapidjson::Value &value)
         m_executorGroupNameHasBeenSet = true;
     }
 
+    if (value.HasMember("RelatedInstanceList") && !value["RelatedInstanceList"].IsNull())
+    {
+        if (!value["RelatedInstanceList"].IsArray())
+            return CoreInternalOutcome(Core::Error("response `InstanceOpsDto.RelatedInstanceList` is not array type"));
+
+        const rapidjson::Value &tmpValue = value["RelatedInstanceList"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            InstanceOpsDto item;
+            CoreInternalOutcome outcome = item.Deserialize(*itr);
+            if (!outcome.IsSuccess())
+            {
+                outcome.GetError().SetRequestId(requestId);
+                return outcome;
+            }
+            m_relatedInstanceList.push_back(item);
+        }
+        m_relatedInstanceListHasBeenSet = true;
+    }
+
+    if (value.HasMember("RelatedInstanceSize") && !value["RelatedInstanceSize"].IsNull())
+    {
+        if (!value["RelatedInstanceSize"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `InstanceOpsDto.RelatedInstanceSize` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_relatedInstanceSize = value["RelatedInstanceSize"].GetInt64();
+        m_relatedInstanceSizeHasBeenSet = true;
+    }
+
+    if (value.HasMember("OwnerId") && !value["OwnerId"].IsNull())
+    {
+        if (!value["OwnerId"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `InstanceOpsDto.OwnerId` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_ownerId = string(value["OwnerId"].GetString());
+        m_ownerIdHasBeenSet = true;
+    }
+
+    if (value.HasMember("UserId") && !value["UserId"].IsNull())
+    {
+        if (!value["UserId"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `InstanceOpsDto.UserId` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_userId = string(value["UserId"].GetString());
+        m_userIdHasBeenSet = true;
+    }
+
+    if (value.HasMember("InstanceLifeCycleOpsDto") && !value["InstanceLifeCycleOpsDto"].IsNull())
+    {
+        if (!value["InstanceLifeCycleOpsDto"].IsObject())
+        {
+            return CoreInternalOutcome(Core::Error("response `InstanceOpsDto.InstanceLifeCycleOpsDto` is not object type").SetRequestId(requestId));
+        }
+
+        CoreInternalOutcome outcome = m_instanceLifeCycleOpsDto.Deserialize(value["InstanceLifeCycleOpsDto"]);
+        if (!outcome.IsSuccess())
+        {
+            outcome.GetError().SetRequestId(requestId);
+            return outcome;
+        }
+
+        m_instanceLifeCycleOpsDtoHasBeenSet = true;
+    }
+
+    if (value.HasMember("RetryAttempts") && !value["RetryAttempts"].IsNull())
+    {
+        if (!value["RetryAttempts"].IsUint64())
+        {
+            return CoreInternalOutcome(Core::Error("response `InstanceOpsDto.RetryAttempts` IsUint64=false incorrectly").SetRequestId(requestId));
+        }
+        m_retryAttempts = value["RetryAttempts"].GetUint64();
+        m_retryAttemptsHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -1068,6 +1151,62 @@ void InstanceOpsDto::ToJsonObject(rapidjson::Value &value, rapidjson::Document::
         string key = "ExecutorGroupName";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_executorGroupName.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_relatedInstanceListHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "RelatedInstanceList";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_relatedInstanceList.begin(); itr != m_relatedInstanceList.end(); ++itr, ++i)
+        {
+            value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(value[key.c_str()][i], allocator);
+        }
+    }
+
+    if (m_relatedInstanceSizeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "RelatedInstanceSize";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_relatedInstanceSize, allocator);
+    }
+
+    if (m_ownerIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "OwnerId";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_ownerId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_userIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "UserId";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_userId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_instanceLifeCycleOpsDtoHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "InstanceLifeCycleOpsDto";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_instanceLifeCycleOpsDto.ToJsonObject(value[key.c_str()], allocator);
+    }
+
+    if (m_retryAttemptsHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "RetryAttempts";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_retryAttempts, allocator);
     }
 
 }
@@ -1935,5 +2074,101 @@ void InstanceOpsDto::SetExecutorGroupName(const string& _executorGroupName)
 bool InstanceOpsDto::ExecutorGroupNameHasBeenSet() const
 {
     return m_executorGroupNameHasBeenSet;
+}
+
+vector<InstanceOpsDto> InstanceOpsDto::GetRelatedInstanceList() const
+{
+    return m_relatedInstanceList;
+}
+
+void InstanceOpsDto::SetRelatedInstanceList(const vector<InstanceOpsDto>& _relatedInstanceList)
+{
+    m_relatedInstanceList = _relatedInstanceList;
+    m_relatedInstanceListHasBeenSet = true;
+}
+
+bool InstanceOpsDto::RelatedInstanceListHasBeenSet() const
+{
+    return m_relatedInstanceListHasBeenSet;
+}
+
+int64_t InstanceOpsDto::GetRelatedInstanceSize() const
+{
+    return m_relatedInstanceSize;
+}
+
+void InstanceOpsDto::SetRelatedInstanceSize(const int64_t& _relatedInstanceSize)
+{
+    m_relatedInstanceSize = _relatedInstanceSize;
+    m_relatedInstanceSizeHasBeenSet = true;
+}
+
+bool InstanceOpsDto::RelatedInstanceSizeHasBeenSet() const
+{
+    return m_relatedInstanceSizeHasBeenSet;
+}
+
+string InstanceOpsDto::GetOwnerId() const
+{
+    return m_ownerId;
+}
+
+void InstanceOpsDto::SetOwnerId(const string& _ownerId)
+{
+    m_ownerId = _ownerId;
+    m_ownerIdHasBeenSet = true;
+}
+
+bool InstanceOpsDto::OwnerIdHasBeenSet() const
+{
+    return m_ownerIdHasBeenSet;
+}
+
+string InstanceOpsDto::GetUserId() const
+{
+    return m_userId;
+}
+
+void InstanceOpsDto::SetUserId(const string& _userId)
+{
+    m_userId = _userId;
+    m_userIdHasBeenSet = true;
+}
+
+bool InstanceOpsDto::UserIdHasBeenSet() const
+{
+    return m_userIdHasBeenSet;
+}
+
+InstanceLifeCycleOpsDto InstanceOpsDto::GetInstanceLifeCycleOpsDto() const
+{
+    return m_instanceLifeCycleOpsDto;
+}
+
+void InstanceOpsDto::SetInstanceLifeCycleOpsDto(const InstanceLifeCycleOpsDto& _instanceLifeCycleOpsDto)
+{
+    m_instanceLifeCycleOpsDto = _instanceLifeCycleOpsDto;
+    m_instanceLifeCycleOpsDtoHasBeenSet = true;
+}
+
+bool InstanceOpsDto::InstanceLifeCycleOpsDtoHasBeenSet() const
+{
+    return m_instanceLifeCycleOpsDtoHasBeenSet;
+}
+
+uint64_t InstanceOpsDto::GetRetryAttempts() const
+{
+    return m_retryAttempts;
+}
+
+void InstanceOpsDto::SetRetryAttempts(const uint64_t& _retryAttempts)
+{
+    m_retryAttempts = _retryAttempts;
+    m_retryAttemptsHasBeenSet = true;
+}
+
+bool InstanceOpsDto::RetryAttemptsHasBeenSet() const
+{
+    return m_retryAttemptsHasBeenSet;
 }
 

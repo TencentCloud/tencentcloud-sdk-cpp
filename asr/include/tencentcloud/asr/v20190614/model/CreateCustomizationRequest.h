@@ -108,21 +108,21 @@ namespace TencentCloud
                     /**
                      * 获取标签信息
                      * @return TagInfos 标签信息
-                     * 
+                     * @deprecated
                      */
                     std::vector<std::string> GetTagInfos() const;
 
                     /**
                      * 设置标签信息
                      * @param _tagInfos 标签信息
-                     * 
+                     * @deprecated
                      */
                     void SetTagInfos(const std::vector<std::string>& _tagInfos);
 
                     /**
                      * 判断参数 TagInfos 是否已赋值
                      * @return TagInfos 是否已赋值
-                     * 
+                     * @deprecated
                      */
                     bool TagInfosHasBeenSet() const;
 

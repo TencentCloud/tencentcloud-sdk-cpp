@@ -25,6 +25,8 @@
 #include <tencentcloud/core/utils/rapidjson/stringbuffer.h>
 #include <tencentcloud/core/AbstractModel.h>
 #include <tencentcloud/wedata/v20210820/model/TaskTypeOpsDto.h>
+#include <tencentcloud/wedata/v20210820/model/InstanceOpsDto.h>
+#include <tencentcloud/wedata/v20210820/model/InstanceLifeCycleOpsDto.h>
 
 
 namespace TencentCloud
@@ -1397,6 +1399,156 @@ namespace TencentCloud
                      */
                     bool ExecutorGroupNameHasBeenSet() const;
 
+                    /**
+                     * 获取关联实例信息。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return RelatedInstanceList 关联实例信息。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::vector<InstanceOpsDto> GetRelatedInstanceList() const;
+
+                    /**
+                     * 设置关联实例信息。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _relatedInstanceList 关联实例信息。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetRelatedInstanceList(const std::vector<InstanceOpsDto>& _relatedInstanceList);
+
+                    /**
+                     * 判断参数 RelatedInstanceList 是否已赋值
+                     * @return RelatedInstanceList 是否已赋值
+                     * 
+                     */
+                    bool RelatedInstanceListHasBeenSet() const;
+
+                    /**
+                     * 获取关联实例信息数量，不和RelatedInstanceList强关联。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return RelatedInstanceSize 关联实例信息数量，不和RelatedInstanceList强关联。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    int64_t GetRelatedInstanceSize() const;
+
+                    /**
+                     * 设置关联实例信息数量，不和RelatedInstanceList强关联。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _relatedInstanceSize 关联实例信息数量，不和RelatedInstanceList强关联。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetRelatedInstanceSize(const int64_t& _relatedInstanceSize);
+
+                    /**
+                     * 判断参数 RelatedInstanceSize 是否已赋值
+                     * @return RelatedInstanceSize 是否已赋值
+                     * 
+                     */
+                    bool RelatedInstanceSizeHasBeenSet() const;
+
+                    /**
+                     * 获取ownerId
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return OwnerId ownerId
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::string GetOwnerId() const;
+
+                    /**
+                     * 设置ownerId
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _ownerId ownerId
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetOwnerId(const std::string& _ownerId);
+
+                    /**
+                     * 判断参数 OwnerId 是否已赋值
+                     * @return OwnerId 是否已赋值
+                     * 
+                     */
+                    bool OwnerIdHasBeenSet() const;
+
+                    /**
+                     * 获取用户id
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return UserId 用户id
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::string GetUserId() const;
+
+                    /**
+                     * 设置用户id
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _userId 用户id
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetUserId(const std::string& _userId);
+
+                    /**
+                     * 判断参数 UserId 是否已赋值
+                     * @return UserId 是否已赋值
+                     * 
+                     */
+                    bool UserIdHasBeenSet() const;
+
+                    /**
+                     * 获取实例生命周期
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return InstanceLifeCycleOpsDto 实例生命周期
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    InstanceLifeCycleOpsDto GetInstanceLifeCycleOpsDto() const;
+
+                    /**
+                     * 设置实例生命周期
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _instanceLifeCycleOpsDto 实例生命周期
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetInstanceLifeCycleOpsDto(const InstanceLifeCycleOpsDto& _instanceLifeCycleOpsDto);
+
+                    /**
+                     * 判断参数 InstanceLifeCycleOpsDto 是否已赋值
+                     * @return InstanceLifeCycleOpsDto 是否已赋值
+                     * 
+                     */
+                    bool InstanceLifeCycleOpsDtoHasBeenSet() const;
+
+                    /**
+                     * 获取自动重试次数
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return RetryAttempts 自动重试次数
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    uint64_t GetRetryAttempts() const;
+
+                    /**
+                     * 设置自动重试次数
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _retryAttempts 自动重试次数
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetRetryAttempts(const uint64_t& _retryAttempts);
+
+                    /**
+                     * 判断参数 RetryAttempts 是否已赋值
+                     * @return RetryAttempts 是否已赋值
+                     * 
+                     */
+                    bool RetryAttemptsHasBeenSet() const;
+
                 private:
 
                     /**
@@ -1776,6 +1928,48 @@ namespace TencentCloud
                      */
                     std::string m_executorGroupName;
                     bool m_executorGroupNameHasBeenSet;
+
+                    /**
+                     * 关联实例信息。
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::vector<InstanceOpsDto> m_relatedInstanceList;
+                    bool m_relatedInstanceListHasBeenSet;
+
+                    /**
+                     * 关联实例信息数量，不和RelatedInstanceList强关联。
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    int64_t m_relatedInstanceSize;
+                    bool m_relatedInstanceSizeHasBeenSet;
+
+                    /**
+                     * ownerId
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_ownerId;
+                    bool m_ownerIdHasBeenSet;
+
+                    /**
+                     * 用户id
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_userId;
+                    bool m_userIdHasBeenSet;
+
+                    /**
+                     * 实例生命周期
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    InstanceLifeCycleOpsDto m_instanceLifeCycleOpsDto;
+                    bool m_instanceLifeCycleOpsDtoHasBeenSet;
+
+                    /**
+                     * 自动重试次数
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    uint64_t m_retryAttempts;
+                    bool m_retryAttemptsHasBeenSet;
 
                 };
             }

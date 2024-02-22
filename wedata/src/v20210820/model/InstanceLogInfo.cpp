@@ -33,7 +33,8 @@ InstanceLogInfo::InstanceLogInfo() :
     m_taskNameHasBeenSet(false),
     m_costTimeHasBeenSet(false),
     m_instanceStatusHasBeenSet(false),
-    m_codeFileNameHasBeenSet(false)
+    m_codeFileNameHasBeenSet(false),
+    m_extensionInfoHasBeenSet(false)
 {
 }
 
@@ -172,6 +173,26 @@ CoreInternalOutcome InstanceLogInfo::Deserialize(const rapidjson::Value &value)
         m_codeFileNameHasBeenSet = true;
     }
 
+    if (value.HasMember("ExtensionInfo") && !value["ExtensionInfo"].IsNull())
+    {
+        if (!value["ExtensionInfo"].IsArray())
+            return CoreInternalOutcome(Core::Error("response `InstanceLogInfo.ExtensionInfo` is not array type"));
+
+        const rapidjson::Value &tmpValue = value["ExtensionInfo"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            AttributeItemDTO item;
+            CoreInternalOutcome outcome = item.Deserialize(*itr);
+            if (!outcome.IsSuccess())
+            {
+                outcome.GetError().SetRequestId(requestId);
+                return outcome;
+            }
+            m_extensionInfo.push_back(item);
+        }
+        m_extensionInfoHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -281,6 +302,21 @@ void InstanceLogInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Document:
         string key = "CodeFileName";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_codeFileName.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_extensionInfoHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ExtensionInfo";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_extensionInfo.begin(); itr != m_extensionInfo.end(); ++itr, ++i)
+        {
+            value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(value[key.c_str()][i], allocator);
+        }
     }
 
 }
@@ -492,5 +528,21 @@ void InstanceLogInfo::SetCodeFileName(const string& _codeFileName)
 bool InstanceLogInfo::CodeFileNameHasBeenSet() const
 {
     return m_codeFileNameHasBeenSet;
+}
+
+vector<AttributeItemDTO> InstanceLogInfo::GetExtensionInfo() const
+{
+    return m_extensionInfo;
+}
+
+void InstanceLogInfo::SetExtensionInfo(const vector<AttributeItemDTO>& _extensionInfo)
+{
+    m_extensionInfo = _extensionInfo;
+    m_extensionInfoHasBeenSet = true;
+}
+
+bool InstanceLogInfo::ExtensionInfoHasBeenSet() const
+{
+    return m_extensionInfoHasBeenSet;
 }
 

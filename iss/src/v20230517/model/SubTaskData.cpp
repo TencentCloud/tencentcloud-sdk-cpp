@@ -31,7 +31,11 @@ SubTaskData::SubTaskData() :
     m_startedAtHasBeenSet(false),
     m_createdAtHasBeenSet(false),
     m_updatedAtHasBeenSet(false),
-    m_runtimeHasBeenSet(false)
+    m_runtimeHasBeenSet(false),
+    m_deviceIdHasBeenSet(false),
+    m_deviceNameHasBeenSet(false),
+    m_channelIdHasBeenSet(false),
+    m_channelNameHasBeenSet(false)
 {
 }
 
@@ -150,6 +154,46 @@ CoreInternalOutcome SubTaskData::Deserialize(const rapidjson::Value &value)
         m_runtimeHasBeenSet = true;
     }
 
+    if (value.HasMember("DeviceId") && !value["DeviceId"].IsNull())
+    {
+        if (!value["DeviceId"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `SubTaskData.DeviceId` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_deviceId = string(value["DeviceId"].GetString());
+        m_deviceIdHasBeenSet = true;
+    }
+
+    if (value.HasMember("DeviceName") && !value["DeviceName"].IsNull())
+    {
+        if (!value["DeviceName"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `SubTaskData.DeviceName` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_deviceName = string(value["DeviceName"].GetString());
+        m_deviceNameHasBeenSet = true;
+    }
+
+    if (value.HasMember("ChannelId") && !value["ChannelId"].IsNull())
+    {
+        if (!value["ChannelId"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `SubTaskData.ChannelId` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_channelId = string(value["ChannelId"].GetString());
+        m_channelIdHasBeenSet = true;
+    }
+
+    if (value.HasMember("ChannelName") && !value["ChannelName"].IsNull())
+    {
+        if (!value["ChannelName"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `SubTaskData.ChannelName` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_channelName = string(value["ChannelName"].GetString());
+        m_channelNameHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -243,6 +287,38 @@ void SubTaskData::ToJsonObject(rapidjson::Value &value, rapidjson::Document::All
         string key = "Runtime";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_runtime, allocator);
+    }
+
+    if (m_deviceIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "DeviceId";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_deviceId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_deviceNameHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "DeviceName";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_deviceName.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_channelIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ChannelId";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_channelId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_channelNameHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ChannelName";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_channelName.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -422,5 +498,69 @@ void SubTaskData::SetRuntime(const int64_t& _runtime)
 bool SubTaskData::RuntimeHasBeenSet() const
 {
     return m_runtimeHasBeenSet;
+}
+
+string SubTaskData::GetDeviceId() const
+{
+    return m_deviceId;
+}
+
+void SubTaskData::SetDeviceId(const string& _deviceId)
+{
+    m_deviceId = _deviceId;
+    m_deviceIdHasBeenSet = true;
+}
+
+bool SubTaskData::DeviceIdHasBeenSet() const
+{
+    return m_deviceIdHasBeenSet;
+}
+
+string SubTaskData::GetDeviceName() const
+{
+    return m_deviceName;
+}
+
+void SubTaskData::SetDeviceName(const string& _deviceName)
+{
+    m_deviceName = _deviceName;
+    m_deviceNameHasBeenSet = true;
+}
+
+bool SubTaskData::DeviceNameHasBeenSet() const
+{
+    return m_deviceNameHasBeenSet;
+}
+
+string SubTaskData::GetChannelId() const
+{
+    return m_channelId;
+}
+
+void SubTaskData::SetChannelId(const string& _channelId)
+{
+    m_channelId = _channelId;
+    m_channelIdHasBeenSet = true;
+}
+
+bool SubTaskData::ChannelIdHasBeenSet() const
+{
+    return m_channelIdHasBeenSet;
+}
+
+string SubTaskData::GetChannelName() const
+{
+    return m_channelName;
+}
+
+void SubTaskData::SetChannelName(const string& _channelName)
+{
+    m_channelName = _channelName;
+    m_channelNameHasBeenSet = true;
+}
+
+bool SubTaskData::ChannelNameHasBeenSet() const
+{
+    return m_channelNameHasBeenSet;
 }
 

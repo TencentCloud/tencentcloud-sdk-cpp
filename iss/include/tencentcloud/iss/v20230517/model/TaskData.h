@@ -386,6 +386,106 @@ namespace TencentCloud
                      */
                     bool RuntimeHasBeenSet() const;
 
+                    /**
+                     * 获取设备ID
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return DeviceId 设备ID
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::string GetDeviceId() const;
+
+                    /**
+                     * 设置设备ID
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _deviceId 设备ID
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetDeviceId(const std::string& _deviceId);
+
+                    /**
+                     * 判断参数 DeviceId 是否已赋值
+                     * @return DeviceId 是否已赋值
+                     * 
+                     */
+                    bool DeviceIdHasBeenSet() const;
+
+                    /**
+                     * 获取设备名称
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return DeviceName 设备名称
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::string GetDeviceName() const;
+
+                    /**
+                     * 设置设备名称
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _deviceName 设备名称
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetDeviceName(const std::string& _deviceName);
+
+                    /**
+                     * 判断参数 DeviceName 是否已赋值
+                     * @return DeviceName 是否已赋值
+                     * 
+                     */
+                    bool DeviceNameHasBeenSet() const;
+
+                    /**
+                     * 获取通道ID
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return ChannelId 通道ID
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::string GetChannelId() const;
+
+                    /**
+                     * 设置通道ID
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _channelId 通道ID
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetChannelId(const std::string& _channelId);
+
+                    /**
+                     * 判断参数 ChannelId 是否已赋值
+                     * @return ChannelId 是否已赋值
+                     * 
+                     */
+                    bool ChannelIdHasBeenSet() const;
+
+                    /**
+                     * 获取 通道名称
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return ChannelName  通道名称
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::string GetChannelName() const;
+
+                    /**
+                     * 设置 通道名称
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _channelName  通道名称
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetChannelName(const std::string& _channelName);
+
+                    /**
+                     * 判断参数 ChannelName 是否已赋值
+                     * @return ChannelName 是否已赋值
+                     * 
+                     */
+                    bool ChannelNameHasBeenSet() const;
+
                 private:
 
                     /**
@@ -484,6 +584,34 @@ namespace TencentCloud
                      */
                     int64_t m_runtime;
                     bool m_runtimeHasBeenSet;
+
+                    /**
+                     * 设备ID
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_deviceId;
+                    bool m_deviceIdHasBeenSet;
+
+                    /**
+                     * 设备名称
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_deviceName;
+                    bool m_deviceNameHasBeenSet;
+
+                    /**
+                     * 通道ID
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_channelId;
+                    bool m_channelIdHasBeenSet;
+
+                    /**
+                     *  通道名称
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_channelName;
+                    bool m_channelNameHasBeenSet;
 
                 };
             }

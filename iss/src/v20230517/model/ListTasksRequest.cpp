@@ -26,7 +26,9 @@ ListTasksRequest::ListTasksRequest() :
     m_pageNumberHasBeenSet(false),
     m_pageSizeHasBeenSet(false),
     m_operationHasBeenSet(false),
-    m_statusHasBeenSet(false)
+    m_statusHasBeenSet(false),
+    m_beginTimeHasBeenSet(false),
+    m_endTimeHasBeenSet(false)
 {
 }
 
@@ -67,6 +69,22 @@ string ListTasksRequest::ToJsonString() const
         string key = "Status";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_status, allocator);
+    }
+
+    if (m_beginTimeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "BeginTime";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_beginTime, allocator);
+    }
+
+    if (m_endTimeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "EndTime";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_endTime, allocator);
     }
 
 
@@ -139,6 +157,38 @@ void ListTasksRequest::SetStatus(const int64_t& _status)
 bool ListTasksRequest::StatusHasBeenSet() const
 {
     return m_statusHasBeenSet;
+}
+
+int64_t ListTasksRequest::GetBeginTime() const
+{
+    return m_beginTime;
+}
+
+void ListTasksRequest::SetBeginTime(const int64_t& _beginTime)
+{
+    m_beginTime = _beginTime;
+    m_beginTimeHasBeenSet = true;
+}
+
+bool ListTasksRequest::BeginTimeHasBeenSet() const
+{
+    return m_beginTimeHasBeenSet;
+}
+
+int64_t ListTasksRequest::GetEndTime() const
+{
+    return m_endTime;
+}
+
+void ListTasksRequest::SetEndTime(const int64_t& _endTime)
+{
+    m_endTime = _endTime;
+    m_endTimeHasBeenSet = true;
+}
+
+bool ListTasksRequest::EndTimeHasBeenSet() const
+{
+    return m_endTimeHasBeenSet;
 }
 
 

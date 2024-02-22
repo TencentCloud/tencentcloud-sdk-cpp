@@ -589,7 +589,7 @@ namespace TencentCloud
                 DisableRestProxyOutcomeCallable DisableRestProxyCallable(const Model::DisableRestProxyRequest& request);
 
                 /**
-                 *当restful api为关闭状态时，可以通过此接口开启restful apu
+                 *当restful api为关闭状态时，可以通过此接口开启restful api。
                  * @param req EnableRestProxyRequest
                  * @return EnableRestProxyOutcome
                  */

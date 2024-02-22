@@ -64,15 +64,15 @@ namespace TencentCloud
                     bool PageNumberHasBeenSet() const;
 
                     /**
-                     * 获取每页数量，默认为10
-                     * @return PageSize 每页数量，默认为10
+                     * 获取每页数量，默认为20
+                     * @return PageSize 每页数量，默认为20
                      * 
                      */
                     int64_t GetPageSize() const;
 
                     /**
-                     * 设置每页数量，默认为10
-                     * @param _pageSize 每页数量，默认为10
+                     * 设置每页数量，默认为20
+                     * @param _pageSize 每页数量，默认为20
                      * 
                      */
                     void SetPageSize(const int64_t& _pageSize);
@@ -85,15 +85,27 @@ namespace TencentCloud
                     bool PageSizeHasBeenSet() const;
 
                     /**
-                     * 获取默认不根据该字段进行筛选，否则根据设备操作类型进行筛选，对应任务的Action字段，批量任务操作类型以Batch开头。目前值有：BatchDeleteUserDevice，BatchDisableDevice，BatchEnableDevice，DeleteUserDevice，DisableDevice，EnableDevice
-                     * @return Operation 默认不根据该字段进行筛选，否则根据设备操作类型进行筛选，对应任务的Action字段，批量任务操作类型以Batch开头。目前值有：BatchDeleteUserDevice，BatchDisableDevice，BatchEnableDevice，DeleteUserDevice，DisableDevice，EnableDevice
+                     * 获取默认不根据该字段进行筛选，否则根据设备操作类型进行筛选，目前值有：BatchDeleteUserDevice，BatchDisableDevice，BatchEnableDevice，
+BatchUpgradeDevice，
+BatchResetDevice,
+BatchRebootDevice
+                     * @return Operation 默认不根据该字段进行筛选，否则根据设备操作类型进行筛选，目前值有：BatchDeleteUserDevice，BatchDisableDevice，BatchEnableDevice，
+BatchUpgradeDevice，
+BatchResetDevice,
+BatchRebootDevice
                      * 
                      */
                     std::string GetOperation() const;
 
                     /**
-                     * 设置默认不根据该字段进行筛选，否则根据设备操作类型进行筛选，对应任务的Action字段，批量任务操作类型以Batch开头。目前值有：BatchDeleteUserDevice，BatchDisableDevice，BatchEnableDevice，DeleteUserDevice，DisableDevice，EnableDevice
-                     * @param _operation 默认不根据该字段进行筛选，否则根据设备操作类型进行筛选，对应任务的Action字段，批量任务操作类型以Batch开头。目前值有：BatchDeleteUserDevice，BatchDisableDevice，BatchEnableDevice，DeleteUserDevice，DisableDevice，EnableDevice
+                     * 设置默认不根据该字段进行筛选，否则根据设备操作类型进行筛选，目前值有：BatchDeleteUserDevice，BatchDisableDevice，BatchEnableDevice，
+BatchUpgradeDevice，
+BatchResetDevice,
+BatchRebootDevice
+                     * @param _operation 默认不根据该字段进行筛选，否则根据设备操作类型进行筛选，目前值有：BatchDeleteUserDevice，BatchDisableDevice，BatchEnableDevice，
+BatchUpgradeDevice，
+BatchResetDevice,
+BatchRebootDevice
                      * 
                      */
                     void SetOperation(const std::string& _operation);
@@ -106,15 +118,15 @@ namespace TencentCloud
                     bool OperationHasBeenSet() const;
 
                     /**
-                     * 获取默认不根据该字段进行筛选，否则根据任务状态进行筛选。状态码：1-NEW，2-RUNNING，3-COMPLETED，4-FAILED
-                     * @return Status 默认不根据该字段进行筛选，否则根据任务状态进行筛选。状态码：1-NEW，2-RUNNING，3-COMPLETED，4-FAILED
+                     * 获取默认不根据该字段进行筛选，否则根据任务状态进行筛选。状态码：1-未执行，2-执行中，3-完成，4-取消
+                     * @return Status 默认不根据该字段进行筛选，否则根据任务状态进行筛选。状态码：1-未执行，2-执行中，3-完成，4-取消
                      * 
                      */
                     int64_t GetStatus() const;
 
                     /**
-                     * 设置默认不根据该字段进行筛选，否则根据任务状态进行筛选。状态码：1-NEW，2-RUNNING，3-COMPLETED，4-FAILED
-                     * @param _status 默认不根据该字段进行筛选，否则根据任务状态进行筛选。状态码：1-NEW，2-RUNNING，3-COMPLETED，4-FAILED
+                     * 设置默认不根据该字段进行筛选，否则根据任务状态进行筛选。状态码：1-未执行，2-执行中，3-完成，4-取消
+                     * @param _status 默认不根据该字段进行筛选，否则根据任务状态进行筛选。状态码：1-未执行，2-执行中，3-完成，4-取消
                      * 
                      */
                     void SetStatus(const int64_t& _status);
@@ -126,6 +138,48 @@ namespace TencentCloud
                      */
                     bool StatusHasBeenSet() const;
 
+                    /**
+                     * 获取开始时间
+                     * @return BeginTime 开始时间
+                     * 
+                     */
+                    int64_t GetBeginTime() const;
+
+                    /**
+                     * 设置开始时间
+                     * @param _beginTime 开始时间
+                     * 
+                     */
+                    void SetBeginTime(const int64_t& _beginTime);
+
+                    /**
+                     * 判断参数 BeginTime 是否已赋值
+                     * @return BeginTime 是否已赋值
+                     * 
+                     */
+                    bool BeginTimeHasBeenSet() const;
+
+                    /**
+                     * 获取结束时间
+                     * @return EndTime 结束时间
+                     * 
+                     */
+                    int64_t GetEndTime() const;
+
+                    /**
+                     * 设置结束时间
+                     * @param _endTime 结束时间
+                     * 
+                     */
+                    void SetEndTime(const int64_t& _endTime);
+
+                    /**
+                     * 判断参数 EndTime 是否已赋值
+                     * @return EndTime 是否已赋值
+                     * 
+                     */
+                    bool EndTimeHasBeenSet() const;
+
                 private:
 
                     /**
@@ -135,22 +189,37 @@ namespace TencentCloud
                     bool m_pageNumberHasBeenSet;
 
                     /**
-                     * 每页数量，默认为10
+                     * 每页数量，默认为20
                      */
                     int64_t m_pageSize;
                     bool m_pageSizeHasBeenSet;
 
                     /**
-                     * 默认不根据该字段进行筛选，否则根据设备操作类型进行筛选，对应任务的Action字段，批量任务操作类型以Batch开头。目前值有：BatchDeleteUserDevice，BatchDisableDevice，BatchEnableDevice，DeleteUserDevice，DisableDevice，EnableDevice
+                     * 默认不根据该字段进行筛选，否则根据设备操作类型进行筛选，目前值有：BatchDeleteUserDevice，BatchDisableDevice，BatchEnableDevice，
+BatchUpgradeDevice，
+BatchResetDevice,
+BatchRebootDevice
                      */
                     std::string m_operation;
                     bool m_operationHasBeenSet;
 
                     /**
-                     * 默认不根据该字段进行筛选，否则根据任务状态进行筛选。状态码：1-NEW，2-RUNNING，3-COMPLETED，4-FAILED
+                     * 默认不根据该字段进行筛选，否则根据任务状态进行筛选。状态码：1-未执行，2-执行中，3-完成，4-取消
                      */
                     int64_t m_status;
                     bool m_statusHasBeenSet;
+
+                    /**
+                     * 开始时间
+                     */
+                    int64_t m_beginTime;
+                    bool m_beginTimeHasBeenSet;
+
+                    /**
+                     * 结束时间
+                     */
+                    int64_t m_endTime;
+                    bool m_endTimeHasBeenSet;
 
                 };
             }

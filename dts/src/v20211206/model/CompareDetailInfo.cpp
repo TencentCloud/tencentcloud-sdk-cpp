@@ -22,7 +22,10 @@ using namespace std;
 
 CompareDetailInfo::CompareDetailInfo() :
     m_differenceHasBeenSet(false),
-    m_skippedHasBeenSet(false)
+    m_skippedHasBeenSet(false),
+    m_differenceAdvancedObjectsHasBeenSet(false),
+    m_differenceDataHasBeenSet(false),
+    m_differenceRowHasBeenSet(false)
 {
 }
 
@@ -65,6 +68,57 @@ CoreInternalOutcome CompareDetailInfo::Deserialize(const rapidjson::Value &value
         m_skippedHasBeenSet = true;
     }
 
+    if (value.HasMember("DifferenceAdvancedObjects") && !value["DifferenceAdvancedObjects"].IsNull())
+    {
+        if (!value["DifferenceAdvancedObjects"].IsObject())
+        {
+            return CoreInternalOutcome(Core::Error("response `CompareDetailInfo.DifferenceAdvancedObjects` is not object type").SetRequestId(requestId));
+        }
+
+        CoreInternalOutcome outcome = m_differenceAdvancedObjects.Deserialize(value["DifferenceAdvancedObjects"]);
+        if (!outcome.IsSuccess())
+        {
+            outcome.GetError().SetRequestId(requestId);
+            return outcome;
+        }
+
+        m_differenceAdvancedObjectsHasBeenSet = true;
+    }
+
+    if (value.HasMember("DifferenceData") && !value["DifferenceData"].IsNull())
+    {
+        if (!value["DifferenceData"].IsObject())
+        {
+            return CoreInternalOutcome(Core::Error("response `CompareDetailInfo.DifferenceData` is not object type").SetRequestId(requestId));
+        }
+
+        CoreInternalOutcome outcome = m_differenceData.Deserialize(value["DifferenceData"]);
+        if (!outcome.IsSuccess())
+        {
+            outcome.GetError().SetRequestId(requestId);
+            return outcome;
+        }
+
+        m_differenceDataHasBeenSet = true;
+    }
+
+    if (value.HasMember("DifferenceRow") && !value["DifferenceRow"].IsNull())
+    {
+        if (!value["DifferenceRow"].IsObject())
+        {
+            return CoreInternalOutcome(Core::Error("response `CompareDetailInfo.DifferenceRow` is not object type").SetRequestId(requestId));
+        }
+
+        CoreInternalOutcome outcome = m_differenceRow.Deserialize(value["DifferenceRow"]);
+        if (!outcome.IsSuccess())
+        {
+            outcome.GetError().SetRequestId(requestId);
+            return outcome;
+        }
+
+        m_differenceRowHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -88,6 +142,33 @@ void CompareDetailInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Documen
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
         m_skipped.ToJsonObject(value[key.c_str()], allocator);
+    }
+
+    if (m_differenceAdvancedObjectsHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "DifferenceAdvancedObjects";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_differenceAdvancedObjects.ToJsonObject(value[key.c_str()], allocator);
+    }
+
+    if (m_differenceDataHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "DifferenceData";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_differenceData.ToJsonObject(value[key.c_str()], allocator);
+    }
+
+    if (m_differenceRowHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "DifferenceRow";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_differenceRow.ToJsonObject(value[key.c_str()], allocator);
     }
 
 }
@@ -123,5 +204,53 @@ void CompareDetailInfo::SetSkipped(const SkippedDetail& _skipped)
 bool CompareDetailInfo::SkippedHasBeenSet() const
 {
     return m_skippedHasBeenSet;
+}
+
+DifferenceAdvancedObjectsDetail CompareDetailInfo::GetDifferenceAdvancedObjects() const
+{
+    return m_differenceAdvancedObjects;
+}
+
+void CompareDetailInfo::SetDifferenceAdvancedObjects(const DifferenceAdvancedObjectsDetail& _differenceAdvancedObjects)
+{
+    m_differenceAdvancedObjects = _differenceAdvancedObjects;
+    m_differenceAdvancedObjectsHasBeenSet = true;
+}
+
+bool CompareDetailInfo::DifferenceAdvancedObjectsHasBeenSet() const
+{
+    return m_differenceAdvancedObjectsHasBeenSet;
+}
+
+DifferenceDataDetail CompareDetailInfo::GetDifferenceData() const
+{
+    return m_differenceData;
+}
+
+void CompareDetailInfo::SetDifferenceData(const DifferenceDataDetail& _differenceData)
+{
+    m_differenceData = _differenceData;
+    m_differenceDataHasBeenSet = true;
+}
+
+bool CompareDetailInfo::DifferenceDataHasBeenSet() const
+{
+    return m_differenceDataHasBeenSet;
+}
+
+DifferenceRowDetail CompareDetailInfo::GetDifferenceRow() const
+{
+    return m_differenceRow;
+}
+
+void CompareDetailInfo::SetDifferenceRow(const DifferenceRowDetail& _differenceRow)
+{
+    m_differenceRow = _differenceRow;
+    m_differenceRowHasBeenSet = true;
+}
+
+bool CompareDetailInfo::DifferenceRowHasBeenSet() const
+{
+    return m_differenceRowHasBeenSet;
 }
 

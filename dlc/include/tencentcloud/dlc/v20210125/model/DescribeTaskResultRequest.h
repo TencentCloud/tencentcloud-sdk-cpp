@@ -105,6 +105,27 @@ namespace TencentCloud
                      */
                     bool MaxResultsHasBeenSet() const;
 
+                    /**
+                     * 获取是否转化数据类型
+                     * @return IsTransformDataType 是否转化数据类型
+                     * 
+                     */
+                    bool GetIsTransformDataType() const;
+
+                    /**
+                     * 设置是否转化数据类型
+                     * @param _isTransformDataType 是否转化数据类型
+                     * 
+                     */
+                    void SetIsTransformDataType(const bool& _isTransformDataType);
+
+                    /**
+                     * 判断参数 IsTransformDataType 是否已赋值
+                     * @return IsTransformDataType 是否已赋值
+                     * 
+                     */
+                    bool IsTransformDataTypeHasBeenSet() const;
+
                 private:
 
                     /**
@@ -124,6 +145,12 @@ namespace TencentCloud
                      */
                     int64_t m_maxResults;
                     bool m_maxResultsHasBeenSet;
+
+                    /**
+                     * 是否转化数据类型
+                     */
+                    bool m_isTransformDataType;
+                    bool m_isTransformDataTypeHasBeenSet;
 
                 };
             }

@@ -24,6 +24,7 @@
 #include <tencentcloud/core/utils/rapidjson/writer.h>
 #include <tencentcloud/core/utils/rapidjson/stringbuffer.h>
 #include <tencentcloud/core/AbstractModel.h>
+#include <tencentcloud/wedata/v20210820/model/AttributeItemDTO.h>
 
 
 namespace TencentCloud
@@ -371,6 +372,31 @@ namespace TencentCloud
                      */
                     bool CodeFileNameHasBeenSet() const;
 
+                    /**
+                     * 获取扩展属性
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return ExtensionInfo 扩展属性
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::vector<AttributeItemDTO> GetExtensionInfo() const;
+
+                    /**
+                     * 设置扩展属性
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _extensionInfo 扩展属性
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetExtensionInfo(const std::vector<AttributeItemDTO>& _extensionInfo);
+
+                    /**
+                     * 判断参数 ExtensionInfo 是否已赋值
+                     * @return ExtensionInfo 是否已赋值
+                     * 
+                     */
+                    bool ExtensionInfoHasBeenSet() const;
+
                 private:
 
                     /**
@@ -463,6 +489,13 @@ namespace TencentCloud
                      */
                     std::string m_codeFileName;
                     bool m_codeFileNameHasBeenSet;
+
+                    /**
+                     * 扩展属性
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::vector<AttributeItemDTO> m_extensionInfo;
+                    bool m_extensionInfoHasBeenSet;
 
                 };
             }

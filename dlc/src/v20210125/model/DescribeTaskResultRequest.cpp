@@ -25,7 +25,8 @@ using namespace std;
 DescribeTaskResultRequest::DescribeTaskResultRequest() :
     m_taskIdHasBeenSet(false),
     m_nextTokenHasBeenSet(false),
-    m_maxResultsHasBeenSet(false)
+    m_maxResultsHasBeenSet(false),
+    m_isTransformDataTypeHasBeenSet(false)
 {
 }
 
@@ -58,6 +59,14 @@ string DescribeTaskResultRequest::ToJsonString() const
         string key = "MaxResults";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_maxResults, allocator);
+    }
+
+    if (m_isTransformDataTypeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "IsTransformDataType";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_isTransformDataType, allocator);
     }
 
 
@@ -114,6 +123,22 @@ void DescribeTaskResultRequest::SetMaxResults(const int64_t& _maxResults)
 bool DescribeTaskResultRequest::MaxResultsHasBeenSet() const
 {
     return m_maxResultsHasBeenSet;
+}
+
+bool DescribeTaskResultRequest::GetIsTransformDataType() const
+{
+    return m_isTransformDataType;
+}
+
+void DescribeTaskResultRequest::SetIsTransformDataType(const bool& _isTransformDataType)
+{
+    m_isTransformDataType = _isTransformDataType;
+    m_isTransformDataTypeHasBeenSet = true;
+}
+
+bool DescribeTaskResultRequest::IsTransformDataTypeHasBeenSet() const
+{
+    return m_isTransformDataTypeHasBeenSet;
 }
 
 
