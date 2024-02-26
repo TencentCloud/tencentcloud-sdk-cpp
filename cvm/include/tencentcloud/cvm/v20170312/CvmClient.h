@@ -51,6 +51,8 @@
 #include <tencentcloud/cvm/v20170312/model/DeleteHpcClustersResponse.h>
 #include <tencentcloud/cvm/v20170312/model/DeleteImagesRequest.h>
 #include <tencentcloud/cvm/v20170312/model/DeleteImagesResponse.h>
+#include <tencentcloud/cvm/v20170312/model/DeleteInstancesActionTimerRequest.h>
+#include <tencentcloud/cvm/v20170312/model/DeleteInstancesActionTimerResponse.h>
 #include <tencentcloud/cvm/v20170312/model/DeleteKeyPairsRequest.h>
 #include <tencentcloud/cvm/v20170312/model/DeleteKeyPairsResponse.h>
 #include <tencentcloud/cvm/v20170312/model/DeleteLaunchTemplateRequest.h>
@@ -89,6 +91,8 @@
 #include <tencentcloud/cvm/v20170312/model/DescribeInstanceVncUrlResponse.h>
 #include <tencentcloud/cvm/v20170312/model/DescribeInstancesRequest.h>
 #include <tencentcloud/cvm/v20170312/model/DescribeInstancesResponse.h>
+#include <tencentcloud/cvm/v20170312/model/DescribeInstancesActionTimerRequest.h>
+#include <tencentcloud/cvm/v20170312/model/DescribeInstancesActionTimerResponse.h>
 #include <tencentcloud/cvm/v20170312/model/DescribeInstancesModificationRequest.h>
 #include <tencentcloud/cvm/v20170312/model/DescribeInstancesModificationResponse.h>
 #include <tencentcloud/cvm/v20170312/model/DescribeInstancesOperationLimitRequest.h>
@@ -125,6 +129,8 @@
 #include <tencentcloud/cvm/v20170312/model/ExportImagesResponse.h>
 #include <tencentcloud/cvm/v20170312/model/ImportImageRequest.h>
 #include <tencentcloud/cvm/v20170312/model/ImportImageResponse.h>
+#include <tencentcloud/cvm/v20170312/model/ImportInstancesActionTimerRequest.h>
+#include <tencentcloud/cvm/v20170312/model/ImportInstancesActionTimerResponse.h>
 #include <tencentcloud/cvm/v20170312/model/ImportKeyPairRequest.h>
 #include <tencentcloud/cvm/v20170312/model/ImportKeyPairResponse.h>
 #include <tencentcloud/cvm/v20170312/model/InquirePricePurchaseReservedInstancesOfferingRequest.h>
@@ -267,6 +273,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DeleteImagesResponse> DeleteImagesOutcome;
                 typedef std::future<DeleteImagesOutcome> DeleteImagesOutcomeCallable;
                 typedef std::function<void(const CvmClient*, const Model::DeleteImagesRequest&, DeleteImagesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteImagesAsyncHandler;
+                typedef Outcome<Core::Error, Model::DeleteInstancesActionTimerResponse> DeleteInstancesActionTimerOutcome;
+                typedef std::future<DeleteInstancesActionTimerOutcome> DeleteInstancesActionTimerOutcomeCallable;
+                typedef std::function<void(const CvmClient*, const Model::DeleteInstancesActionTimerRequest&, DeleteInstancesActionTimerOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteInstancesActionTimerAsyncHandler;
                 typedef Outcome<Core::Error, Model::DeleteKeyPairsResponse> DeleteKeyPairsOutcome;
                 typedef std::future<DeleteKeyPairsOutcome> DeleteKeyPairsOutcomeCallable;
                 typedef std::function<void(const CvmClient*, const Model::DeleteKeyPairsRequest&, DeleteKeyPairsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteKeyPairsAsyncHandler;
@@ -324,6 +333,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeInstancesResponse> DescribeInstancesOutcome;
                 typedef std::future<DescribeInstancesOutcome> DescribeInstancesOutcomeCallable;
                 typedef std::function<void(const CvmClient*, const Model::DescribeInstancesRequest&, DescribeInstancesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeInstancesAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeInstancesActionTimerResponse> DescribeInstancesActionTimerOutcome;
+                typedef std::future<DescribeInstancesActionTimerOutcome> DescribeInstancesActionTimerOutcomeCallable;
+                typedef std::function<void(const CvmClient*, const Model::DescribeInstancesActionTimerRequest&, DescribeInstancesActionTimerOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeInstancesActionTimerAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeInstancesModificationResponse> DescribeInstancesModificationOutcome;
                 typedef std::future<DescribeInstancesModificationOutcome> DescribeInstancesModificationOutcomeCallable;
                 typedef std::function<void(const CvmClient*, const Model::DescribeInstancesModificationRequest&, DescribeInstancesModificationOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeInstancesModificationAsyncHandler;
@@ -378,6 +390,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::ImportImageResponse> ImportImageOutcome;
                 typedef std::future<ImportImageOutcome> ImportImageOutcomeCallable;
                 typedef std::function<void(const CvmClient*, const Model::ImportImageRequest&, ImportImageOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ImportImageAsyncHandler;
+                typedef Outcome<Core::Error, Model::ImportInstancesActionTimerResponse> ImportInstancesActionTimerOutcome;
+                typedef std::future<ImportInstancesActionTimerOutcome> ImportInstancesActionTimerOutcomeCallable;
+                typedef std::function<void(const CvmClient*, const Model::ImportInstancesActionTimerRequest&, ImportInstancesActionTimerOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ImportInstancesActionTimerAsyncHandler;
                 typedef Outcome<Core::Error, Model::ImportKeyPairResponse> ImportKeyPairOutcome;
                 typedef std::future<ImportKeyPairOutcome> ImportKeyPairOutcomeCallable;
                 typedef std::function<void(const CvmClient*, const Model::ImportKeyPairRequest&, ImportKeyPairOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ImportKeyPairAsyncHandler;
@@ -660,6 +675,15 @@ namespace TencentCloud
                 DeleteImagesOutcomeCallable DeleteImagesCallable(const Model::DeleteImagesRequest& request);
 
                 /**
+                 *本接口 (DeleteInstancesActionTimer) 用于删除定时任务。
+                 * @param req DeleteInstancesActionTimerRequest
+                 * @return DeleteInstancesActionTimerOutcome
+                 */
+                DeleteInstancesActionTimerOutcome DeleteInstancesActionTimer(const Model::DeleteInstancesActionTimerRequest &request);
+                void DeleteInstancesActionTimerAsync(const Model::DeleteInstancesActionTimerRequest& request, const DeleteInstancesActionTimerAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DeleteInstancesActionTimerOutcomeCallable DeleteInstancesActionTimerCallable(const Model::DeleteInstancesActionTimerRequest& request);
+
+                /**
                  *本接口 (DeleteKeyPairs) 用于删除已在腾讯云托管的密钥对。
 
 * 可以同时删除多个密钥对。
@@ -865,6 +889,15 @@ https://img.qcloud.com/qcloud/app/active_vnc/index.html?InstanceVncUrl=wss%3A%2F
                 DescribeInstancesOutcomeCallable DescribeInstancesCallable(const Model::DescribeInstancesRequest& request);
 
                 /**
+                 *本接口 (DescribeInstancesActionTimer) 用于查询定时任务信息。
+                 * @param req DescribeInstancesActionTimerRequest
+                 * @return DescribeInstancesActionTimerOutcome
+                 */
+                DescribeInstancesActionTimerOutcome DescribeInstancesActionTimer(const Model::DescribeInstancesActionTimerRequest &request);
+                void DescribeInstancesActionTimerAsync(const Model::DescribeInstancesActionTimerRequest& request, const DescribeInstancesActionTimerAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeInstancesActionTimerOutcomeCallable DescribeInstancesActionTimerCallable(const Model::DescribeInstancesActionTimerRequest& request);
+
+                /**
                  *本接口 (DescribeInstancesModification) 用于查询指定实例支持调整的机型配置。
                  * @param req DescribeInstancesModificationRequest
                  * @return DescribeInstancesModificationOutcome
@@ -1041,6 +1074,15 @@ https://img.qcloud.com/qcloud/app/active_vnc/index.html?InstanceVncUrl=wss%3A%2F
                 ImportImageOutcome ImportImage(const Model::ImportImageRequest &request);
                 void ImportImageAsync(const Model::ImportImageRequest& request, const ImportImageAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 ImportImageOutcomeCallable ImportImageCallable(const Model::ImportImageRequest& request);
+
+                /**
+                 *导入定时任务
+                 * @param req ImportInstancesActionTimerRequest
+                 * @return ImportInstancesActionTimerOutcome
+                 */
+                ImportInstancesActionTimerOutcome ImportInstancesActionTimer(const Model::ImportInstancesActionTimerRequest &request);
+                void ImportInstancesActionTimerAsync(const Model::ImportInstancesActionTimerRequest& request, const ImportInstancesActionTimerAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                ImportInstancesActionTimerOutcomeCallable ImportInstancesActionTimerCallable(const Model::ImportInstancesActionTimerRequest& request);
 
                 /**
                  *本接口 (ImportKeyPair) 用于导入密钥对。
@@ -1491,11 +1533,12 @@ https://img.qcloud.com/qcloud/app/active_vnc/index.html?InstanceVncUrl=wss%3A%2F
                 ResetInstancesTypeOutcomeCallable ResetInstancesTypeCallable(const Model::ResetInstancesTypeRequest& request);
 
                 /**
-                 *本接口 (ResizeInstanceDisks) 用于扩容实例的数据盘。
+                 *本接口 (ResizeInstanceDisks) 用于扩容实例的磁盘。
 
-* 目前只支持扩容非弹性盘（[`DescribeDisks`](https://cloud.tencent.com/document/api/362/16315)接口返回值中的`Portable`为`false`表示非弹性）。
-* 对于包年包月实例，使用该接口会涉及扣费，请确保账户余额充足。可通过[`DescribeAccountBalance`](https://cloud.tencent.com/document/product/555/20253)接口查询账户余额。
+* 目前只支持扩容非弹性盘（[ DescribeDisks ](https://cloud.tencent.com/document/api/362/16315)接口返回值中的`Portable`为`false`表示非弹性）。
+* 对于包年包月实例，使用该接口会涉及扣费，请确保账户余额充足。可通过[ DescribeAccountBalance ](https://cloud.tencent.com/document/product/555/20253)接口查询账户余额。
 * 目前只支持扩容一块数据盘。
+* 默认扩容方式为关机后扩容。
 * 实例操作结果可以通过调用 [DescribeInstances](https://cloud.tencent.com/document/api/213/15728#.E7.A4.BA.E4.BE.8B3-.E6.9F.A5.E8.AF.A2.E5.AE.9E.E4.BE.8B.E7.9A.84.E6.9C.80.E6.96.B0.E6.93.8D.E4.BD.9C.E6.83.85.E5.86.B5) 接口查询，如果实例的最新操作状态(LatestOperationState)为“SUCCESS”，则代表操作成功。
 * 如果是系统盘，目前只支持扩容，不支持缩容。
                  * @param req ResizeInstanceDisksRequest

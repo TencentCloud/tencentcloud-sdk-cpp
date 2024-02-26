@@ -230,6 +230,56 @@ namespace TencentCloud
                      */
                     bool InstanceIdsHasBeenSet() const;
 
+                    /**
+                     * 获取高性能计算集群类型。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return HpcClusterType 高性能计算集群类型。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::string GetHpcClusterType() const;
+
+                    /**
+                     * 设置高性能计算集群类型。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _hpcClusterType 高性能计算集群类型。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetHpcClusterType(const std::string& _hpcClusterType);
+
+                    /**
+                     * 判断参数 HpcClusterType 是否已赋值
+                     * @return HpcClusterType 是否已赋值
+                     * 
+                     */
+                    bool HpcClusterTypeHasBeenSet() const;
+
+                    /**
+                     * 获取高性能计算集群对应的业务场景标识，当前只支持CDC。	
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return HpcClusterBusinessId 高性能计算集群对应的业务场景标识，当前只支持CDC。	
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::string GetHpcClusterBusinessId() const;
+
+                    /**
+                     * 设置高性能计算集群对应的业务场景标识，当前只支持CDC。	
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _hpcClusterBusinessId 高性能计算集群对应的业务场景标识，当前只支持CDC。	
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetHpcClusterBusinessId(const std::string& _hpcClusterBusinessId);
+
+                    /**
+                     * 判断参数 HpcClusterBusinessId 是否已赋值
+                     * @return HpcClusterBusinessId 是否已赋值
+                     * 
+                     */
+                    bool HpcClusterBusinessIdHasBeenSet() const;
+
                 private:
 
                     /**
@@ -283,6 +333,20 @@ namespace TencentCloud
                      */
                     std::vector<std::string> m_instanceIds;
                     bool m_instanceIdsHasBeenSet;
+
+                    /**
+                     * 高性能计算集群类型。
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_hpcClusterType;
+                    bool m_hpcClusterTypeHasBeenSet;
+
+                    /**
+                     * 高性能计算集群对应的业务场景标识，当前只支持CDC。	
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_hpcClusterBusinessId;
+                    bool m_hpcClusterBusinessIdHasBeenSet;
 
                 };
             }

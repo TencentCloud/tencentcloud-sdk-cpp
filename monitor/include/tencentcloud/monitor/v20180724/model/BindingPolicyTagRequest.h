@@ -232,6 +232,27 @@ namespace TencentCloud
                      */
                     bool EbSubjectHasBeenSet() const;
 
+                    /**
+                     * 获取标识标签取交/并集关系
+                     * @return TagOperation 标识标签取交/并集关系
+                     * 
+                     */
+                    std::string GetTagOperation() const;
+
+                    /**
+                     * 设置标识标签取交/并集关系
+                     * @param _tagOperation 标识标签取交/并集关系
+                     * 
+                     */
+                    void SetTagOperation(const std::string& _tagOperation);
+
+                    /**
+                     * 判断参数 TagOperation 是否已赋值
+                     * @return TagOperation 是否已赋值
+                     * 
+                     */
+                    bool TagOperationHasBeenSet() const;
+
                 private:
 
                     /**
@@ -287,6 +308,12 @@ namespace TencentCloud
                      */
                     std::string m_ebSubject;
                     bool m_ebSubjectHasBeenSet;
+
+                    /**
+                     * 标识标签取交/并集关系
+                     */
+                    std::string m_tagOperation;
+                    bool m_tagOperationHasBeenSet;
 
                 };
             }

@@ -58,7 +58,8 @@ AlarmPolicy::AlarmPolicy() :
     m_advancedMetricNumberHasBeenSet(false),
     m_isBindAllHasBeenSet(false),
     m_tagsHasBeenSet(false),
-    m_isSupportAlarmTagHasBeenSet(false)
+    m_isSupportAlarmTagHasBeenSet(false),
+    m_tagOperationHasBeenSet(false)
 {
 }
 
@@ -531,6 +532,16 @@ CoreInternalOutcome AlarmPolicy::Deserialize(const rapidjson::Value &value)
         m_isSupportAlarmTagHasBeenSet = true;
     }
 
+    if (value.HasMember("TagOperation") && !value["TagOperation"].IsNull())
+    {
+        if (!value["TagOperation"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `AlarmPolicy.TagOperation` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_tagOperation = string(value["TagOperation"].GetString());
+        m_tagOperationHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -889,6 +900,14 @@ void AlarmPolicy::ToJsonObject(rapidjson::Value &value, rapidjson::Document::All
         string key = "IsSupportAlarmTag";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_isSupportAlarmTag, allocator);
+    }
+
+    if (m_tagOperationHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "TagOperation";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_tagOperation.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -1500,5 +1519,21 @@ void AlarmPolicy::SetIsSupportAlarmTag(const int64_t& _isSupportAlarmTag)
 bool AlarmPolicy::IsSupportAlarmTagHasBeenSet() const
 {
     return m_isSupportAlarmTagHasBeenSet;
+}
+
+string AlarmPolicy::GetTagOperation() const
+{
+    return m_tagOperation;
+}
+
+void AlarmPolicy::SetTagOperation(const string& _tagOperation)
+{
+    m_tagOperation = _tagOperation;
+    m_tagOperationHasBeenSet = true;
+}
+
+bool AlarmPolicy::TagOperationHasBeenSet() const
+{
+    return m_tagOperationHasBeenSet;
 }
 

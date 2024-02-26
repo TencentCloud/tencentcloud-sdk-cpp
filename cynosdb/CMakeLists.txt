@@ -151,6 +151,7 @@ set(cynosdb_public_header_model
   include/tencentcloud/cynosdb/v20190107/model/DescribeBackupDownloadUrlRequest.h
   include/tencentcloud/cynosdb/v20190107/model/InstanceAuditStatus.h
   include/tencentcloud/cynosdb/v20190107/model/CopyClusterPasswordComplexityRequest.h
+  include/tencentcloud/cynosdb/v20190107/model/DescribeClusterInstanceGroupsResponse.h
   include/tencentcloud/cynosdb/v20190107/model/CreateProxyEndPointResponse.h
   include/tencentcloud/cynosdb/v20190107/model/NetAddr.h
   include/tencentcloud/cynosdb/v20190107/model/OpenWanRequest.h
@@ -322,6 +323,7 @@ set(cynosdb_public_header_model
   include/tencentcloud/cynosdb/v20190107/model/ParamDetail.h
   include/tencentcloud/cynosdb/v20190107/model/OfflineClusterRequest.h
   include/tencentcloud/cynosdb/v20190107/model/ResetAccountPasswordResponse.h
+  include/tencentcloud/cynosdb/v20190107/model/DescribeClusterInstanceGroupsRequest.h
   include/tencentcloud/cynosdb/v20190107/model/OpenAuditServiceRequest.h
   include/tencentcloud/cynosdb/v20190107/model/ModifyResourcePackageNameResponse.h
   include/tencentcloud/cynosdb/v20190107/model/DescribeBackupListRequest.h
@@ -515,6 +517,7 @@ set(cynosdb_src
   src/v20190107/model/DescribeBackupDownloadUrlRequest.cpp
   src/v20190107/model/InstanceAuditStatus.cpp
   src/v20190107/model/CopyClusterPasswordComplexityRequest.cpp
+  src/v20190107/model/DescribeClusterInstanceGroupsResponse.cpp
   src/v20190107/model/CreateProxyEndPointResponse.cpp
   src/v20190107/model/NetAddr.cpp
   src/v20190107/model/OpenWanRequest.cpp
@@ -686,6 +689,7 @@ set(cynosdb_src
   src/v20190107/model/ParamDetail.cpp
   src/v20190107/model/OfflineClusterRequest.cpp
   src/v20190107/model/ResetAccountPasswordResponse.cpp
+  src/v20190107/model/DescribeClusterInstanceGroupsRequest.cpp
   src/v20190107/model/OpenAuditServiceRequest.cpp
   src/v20190107/model/ModifyResourcePackageNameResponse.cpp
   src/v20190107/model/DescribeBackupListRequest.cpp

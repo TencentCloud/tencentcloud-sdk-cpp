@@ -25,7 +25,9 @@ using namespace std;
 CreateHpcClusterRequest::CreateHpcClusterRequest() :
     m_zoneHasBeenSet(false),
     m_nameHasBeenSet(false),
-    m_remarkHasBeenSet(false)
+    m_remarkHasBeenSet(false),
+    m_hpcClusterTypeHasBeenSet(false),
+    m_hpcClusterBusinessIdHasBeenSet(false)
 {
 }
 
@@ -58,6 +60,22 @@ string CreateHpcClusterRequest::ToJsonString() const
         string key = "Remark";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_remark.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_hpcClusterTypeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "HpcClusterType";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_hpcClusterType.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_hpcClusterBusinessIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "HpcClusterBusinessId";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_hpcClusterBusinessId.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -114,6 +132,38 @@ void CreateHpcClusterRequest::SetRemark(const string& _remark)
 bool CreateHpcClusterRequest::RemarkHasBeenSet() const
 {
     return m_remarkHasBeenSet;
+}
+
+string CreateHpcClusterRequest::GetHpcClusterType() const
+{
+    return m_hpcClusterType;
+}
+
+void CreateHpcClusterRequest::SetHpcClusterType(const string& _hpcClusterType)
+{
+    m_hpcClusterType = _hpcClusterType;
+    m_hpcClusterTypeHasBeenSet = true;
+}
+
+bool CreateHpcClusterRequest::HpcClusterTypeHasBeenSet() const
+{
+    return m_hpcClusterTypeHasBeenSet;
+}
+
+string CreateHpcClusterRequest::GetHpcClusterBusinessId() const
+{
+    return m_hpcClusterBusinessId;
+}
+
+void CreateHpcClusterRequest::SetHpcClusterBusinessId(const string& _hpcClusterBusinessId)
+{
+    m_hpcClusterBusinessId = _hpcClusterBusinessId;
+    m_hpcClusterBusinessIdHasBeenSet = true;
+}
+
+bool CreateHpcClusterRequest::HpcClusterBusinessIdHasBeenSet() const
+{
+    return m_hpcClusterBusinessIdHasBeenSet;
 }
 
 

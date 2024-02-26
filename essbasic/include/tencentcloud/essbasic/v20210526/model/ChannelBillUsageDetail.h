@@ -217,7 +217,6 @@ namespace TencentCloud
 <li>**OrgEssAuth**: 签署企业实名</li>
 <li>**FlowNotify**: 短信通知</li>
 <li>**AuthService**: 企业工商信息查询</li>
-<li>**NoAuthSign**: 形式签</li>
 </ul>
                      * @return QuotaType 查询的套餐类型
 对应关系如下:
@@ -236,7 +235,6 @@ namespace TencentCloud
 <li>**OrgEssAuth**: 签署企业实名</li>
 <li>**FlowNotify**: 短信通知</li>
 <li>**AuthService**: 企业工商信息查询</li>
-<li>**NoAuthSign**: 形式签</li>
 </ul>
                      * 
                      */
@@ -260,7 +258,6 @@ namespace TencentCloud
 <li>**OrgEssAuth**: 签署企业实名</li>
 <li>**FlowNotify**: 短信通知</li>
 <li>**AuthService**: 企业工商信息查询</li>
-<li>**NoAuthSign**: 形式签</li>
 </ul>
                      * @param _quotaType 查询的套餐类型
 对应关系如下:
@@ -279,7 +276,6 @@ namespace TencentCloud
 <li>**OrgEssAuth**: 签署企业实名</li>
 <li>**FlowNotify**: 短信通知</li>
 <li>**AuthService**: 企业工商信息查询</li>
-<li>**NoAuthSign**: 形式签</li>
 </ul>
                      * 
                      */
@@ -471,7 +467,6 @@ namespace TencentCloud
 <li>**OrgEssAuth**: 签署企业实名</li>
 <li>**FlowNotify**: 短信通知</li>
 <li>**AuthService**: 企业工商信息查询</li>
-<li>**NoAuthSign**: 形式签</li>
 </ul>
                      */
                     std::string m_quotaType;

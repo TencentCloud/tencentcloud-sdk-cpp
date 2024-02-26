@@ -1017,6 +1017,31 @@ namespace TencentCloud
                      */
                     bool IsSupportAlarmTagHasBeenSet() const;
 
+                    /**
+                     * 获取多标签交/并集关系
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return TagOperation 多标签交/并集关系
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::string GetTagOperation() const;
+
+                    /**
+                     * 设置多标签交/并集关系
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _tagOperation 多标签交/并集关系
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetTagOperation(const std::string& _tagOperation);
+
+                    /**
+                     * 判断参数 TagOperation 是否已赋值
+                     * @return TagOperation 是否已赋值
+                     * 
+                     */
+                    bool TagOperationHasBeenSet() const;
+
                 private:
 
                     /**
@@ -1287,6 +1312,13 @@ namespace TencentCloud
                      */
                     int64_t m_isSupportAlarmTag;
                     bool m_isSupportAlarmTagHasBeenSet;
+
+                    /**
+                     * 多标签交/并集关系
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_tagOperation;
+                    bool m_tagOperationHasBeenSet;
 
                 };
             }

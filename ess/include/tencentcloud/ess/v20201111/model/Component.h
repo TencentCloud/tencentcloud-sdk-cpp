@@ -744,18 +744,14 @@ https://cloud.tencent.com/document/product/1323/78346#component-.E4.B8.89.E7.A7.
 
                     /**
                      * 获取**在通过接口拉取控件信息场景下**，为出参参数，此控件是否通过表单域定位方式生成，默认false-不是，**发起合同时候不要填写此字段留空即可**
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return IsFormType **在通过接口拉取控件信息场景下**，为出参参数，此控件是否通过表单域定位方式生成，默认false-不是，**发起合同时候不要填写此字段留空即可**
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     bool GetIsFormType() const;
 
                     /**
                      * 设置**在通过接口拉取控件信息场景下**，为出参参数，此控件是否通过表单域定位方式生成，默认false-不是，**发起合同时候不要填写此字段留空即可**
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _isFormType **在通过接口拉取控件信息场景下**，为出参参数，此控件是否通过表单域定位方式生成，默认false-不是，**发起合同时候不要填写此字段留空即可**
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetIsFormType(const bool& _isFormType);
@@ -1357,7 +1353,6 @@ https://cloud.tencent.com/document/product/1323/78346#component-.E4.B8.89.E7.A7.
 
                     /**
                      * **在通过接口拉取控件信息场景下**，为出参参数，此控件是否通过表单域定位方式生成，默认false-不是，**发起合同时候不要填写此字段留空即可**
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     bool m_isFormType;
                     bool m_isFormTypeHasBeenSet;

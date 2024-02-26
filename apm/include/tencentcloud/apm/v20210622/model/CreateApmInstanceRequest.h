@@ -86,15 +86,15 @@ namespace TencentCloud
                     bool DescriptionHasBeenSet() const;
 
                     /**
-                     * 获取Trace数据保存时长
-                     * @return TraceDuration Trace数据保存时长
+                     * 获取Trace数据保存时长，单位为天默认存储为3天
+                     * @return TraceDuration Trace数据保存时长，单位为天默认存储为3天
                      * 
                      */
                     int64_t GetTraceDuration() const;
 
                     /**
-                     * 设置Trace数据保存时长
-                     * @param _traceDuration Trace数据保存时长
+                     * 设置Trace数据保存时长，单位为天默认存储为3天
+                     * @param _traceDuration Trace数据保存时长，单位为天默认存储为3天
                      * 
                      */
                     void SetTraceDuration(const int64_t& _traceDuration);
@@ -128,15 +128,15 @@ namespace TencentCloud
                     bool TagsHasBeenSet() const;
 
                     /**
-                     * 获取实例上报额度值
-                     * @return SpanDailyCounters 实例上报额度值
+                     * 获取实例上报额度值，默认赋值为0表示不限制上报额度
+                     * @return SpanDailyCounters 实例上报额度值，默认赋值为0表示不限制上报额度
                      * 
                      */
                     uint64_t GetSpanDailyCounters() const;
 
                     /**
-                     * 设置实例上报额度值
-                     * @param _spanDailyCounters 实例上报额度值
+                     * 设置实例上报额度值，默认赋值为0表示不限制上报额度
+                     * @param _spanDailyCounters 实例上报额度值，默认赋值为0表示不限制上报额度
                      * 
                      */
                     void SetSpanDailyCounters(const uint64_t& _spanDailyCounters);
@@ -184,7 +184,7 @@ namespace TencentCloud
                     bool m_descriptionHasBeenSet;
 
                     /**
-                     * Trace数据保存时长
+                     * Trace数据保存时长，单位为天默认存储为3天
                      */
                     int64_t m_traceDuration;
                     bool m_traceDurationHasBeenSet;
@@ -196,7 +196,7 @@ namespace TencentCloud
                     bool m_tagsHasBeenSet;
 
                     /**
-                     * 实例上报额度值
+                     * 实例上报额度值，默认赋值为0表示不限制上报额度
                      */
                     uint64_t m_spanDailyCounters;
                     bool m_spanDailyCountersHasBeenSet;

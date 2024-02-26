@@ -97,19 +97,19 @@ namespace TencentCloud
                     bool NameHasBeenSet() const;
 
                     /**
-                     * 获取用户在客户系统的Id，需要在同一应用下唯一。
-
-                     * @return OriginId 用户在客户系统的Id，需要在同一应用下唯一。
-
+                     * 获取用户在客户系统的Id，需要在同一应用下唯一。入参为空时默认赋值为UserId
+。
+                     * @return OriginId 用户在客户系统的Id，需要在同一应用下唯一。入参为空时默认赋值为UserId
+。
                      * 
                      */
                     std::string GetOriginId() const;
 
                     /**
-                     * 设置用户在客户系统的Id，需要在同一应用下唯一。
-
-                     * @param _originId 用户在客户系统的Id，需要在同一应用下唯一。
-
+                     * 设置用户在客户系统的Id，需要在同一应用下唯一。入参为空时默认赋值为UserId
+。
+                     * @param _originId 用户在客户系统的Id，需要在同一应用下唯一。入参为空时默认赋值为UserId
+。
                      * 
                      */
                     void SetOriginId(const std::string& _originId);
@@ -163,8 +163,8 @@ namespace TencentCloud
                     bool m_nameHasBeenSet;
 
                     /**
-                     * 用户在客户系统的Id，需要在同一应用下唯一。
-
+                     * 用户在客户系统的Id，需要在同一应用下唯一。入参为空时默认赋值为UserId
+。
                      */
                     std::string m_originId;
                     bool m_originIdHasBeenSet;

@@ -1889,6 +1889,49 @@ CynosdbClient::DescribeClusterDetailDatabasesOutcomeCallable CynosdbClient::Desc
     return task->get_future();
 }
 
+CynosdbClient::DescribeClusterInstanceGroupsOutcome CynosdbClient::DescribeClusterInstanceGroups(const DescribeClusterInstanceGroupsRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeClusterInstanceGroups");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeClusterInstanceGroupsResponse rsp = DescribeClusterInstanceGroupsResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeClusterInstanceGroupsOutcome(rsp);
+        else
+            return DescribeClusterInstanceGroupsOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeClusterInstanceGroupsOutcome(outcome.GetError());
+    }
+}
+
+void CynosdbClient::DescribeClusterInstanceGroupsAsync(const DescribeClusterInstanceGroupsRequest& request, const DescribeClusterInstanceGroupsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeClusterInstanceGroups(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+CynosdbClient::DescribeClusterInstanceGroupsOutcomeCallable CynosdbClient::DescribeClusterInstanceGroupsCallable(const DescribeClusterInstanceGroupsRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeClusterInstanceGroupsOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeClusterInstanceGroups(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 CynosdbClient::DescribeClusterInstanceGrpsOutcome CynosdbClient::DescribeClusterInstanceGrps(const DescribeClusterInstanceGrpsRequest &request)
 {
     auto outcome = MakeRequest(request, "DescribeClusterInstanceGrps");

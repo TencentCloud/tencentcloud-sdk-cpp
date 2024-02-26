@@ -100,8 +100,10 @@ set(iotexplorer_public_header_model
   include/tencentcloud/iotexplorer/v20190423/model/ModifyTopicPolicyResponse.h
   include/tencentcloud/iotexplorer/v20190423/model/GetPositionSpaceListRequest.h
   include/tencentcloud/iotexplorer/v20190423/model/ProductEntry.h
+  include/tencentcloud/iotexplorer/v20190423/model/DescribeDeviceFirmWareResponse.h
   include/tencentcloud/iotexplorer/v20190423/model/SearchTopicRuleResponse.h
   include/tencentcloud/iotexplorer/v20190423/model/DescribeFenceEventListResponse.h
+  include/tencentcloud/iotexplorer/v20190423/model/DescribeDeviceFirmWareRequest.h
   include/tencentcloud/iotexplorer/v20190423/model/UpdateDevicesEnableStateRequest.h
   include/tencentcloud/iotexplorer/v20190423/model/DescribeTopicRuleRequest.h
   include/tencentcloud/iotexplorer/v20190423/model/GetDeviceLocationHistoryRequest.h
@@ -325,8 +327,10 @@ set(iotexplorer_src
   src/v20190423/model/ModifyTopicPolicyResponse.cpp
   src/v20190423/model/GetPositionSpaceListRequest.cpp
   src/v20190423/model/ProductEntry.cpp
+  src/v20190423/model/DescribeDeviceFirmWareResponse.cpp
   src/v20190423/model/SearchTopicRuleResponse.cpp
   src/v20190423/model/DescribeFenceEventListResponse.cpp
+  src/v20190423/model/DescribeDeviceFirmWareRequest.cpp
   src/v20190423/model/UpdateDevicesEnableStateRequest.cpp
   src/v20190423/model/DescribeTopicRuleRequest.cpp
   src/v20190423/model/GetDeviceLocationHistoryRequest.cpp

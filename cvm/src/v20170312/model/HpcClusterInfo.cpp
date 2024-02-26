@@ -28,7 +28,9 @@ HpcClusterInfo::HpcClusterInfo() :
     m_zoneHasBeenSet(false),
     m_currentNumHasBeenSet(false),
     m_createTimeHasBeenSet(false),
-    m_instanceIdsHasBeenSet(false)
+    m_instanceIdsHasBeenSet(false),
+    m_hpcClusterTypeHasBeenSet(false),
+    m_hpcClusterBusinessIdHasBeenSet(false)
 {
 }
 
@@ -120,6 +122,26 @@ CoreInternalOutcome HpcClusterInfo::Deserialize(const rapidjson::Value &value)
         m_instanceIdsHasBeenSet = true;
     }
 
+    if (value.HasMember("HpcClusterType") && !value["HpcClusterType"].IsNull())
+    {
+        if (!value["HpcClusterType"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `HpcClusterInfo.HpcClusterType` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_hpcClusterType = string(value["HpcClusterType"].GetString());
+        m_hpcClusterTypeHasBeenSet = true;
+    }
+
+    if (value.HasMember("HpcClusterBusinessId") && !value["HpcClusterBusinessId"].IsNull())
+    {
+        if (!value["HpcClusterBusinessId"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `HpcClusterInfo.HpcClusterBusinessId` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_hpcClusterBusinessId = string(value["HpcClusterBusinessId"].GetString());
+        m_hpcClusterBusinessIdHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -194,6 +216,22 @@ void HpcClusterInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Document::
         {
             value[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
         }
+    }
+
+    if (m_hpcClusterTypeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "HpcClusterType";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_hpcClusterType.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_hpcClusterBusinessIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "HpcClusterBusinessId";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_hpcClusterBusinessId.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -325,5 +363,37 @@ void HpcClusterInfo::SetInstanceIds(const vector<string>& _instanceIds)
 bool HpcClusterInfo::InstanceIdsHasBeenSet() const
 {
     return m_instanceIdsHasBeenSet;
+}
+
+string HpcClusterInfo::GetHpcClusterType() const
+{
+    return m_hpcClusterType;
+}
+
+void HpcClusterInfo::SetHpcClusterType(const string& _hpcClusterType)
+{
+    m_hpcClusterType = _hpcClusterType;
+    m_hpcClusterTypeHasBeenSet = true;
+}
+
+bool HpcClusterInfo::HpcClusterTypeHasBeenSet() const
+{
+    return m_hpcClusterTypeHasBeenSet;
+}
+
+string HpcClusterInfo::GetHpcClusterBusinessId() const
+{
+    return m_hpcClusterBusinessId;
+}
+
+void HpcClusterInfo::SetHpcClusterBusinessId(const string& _hpcClusterBusinessId)
+{
+    m_hpcClusterBusinessId = _hpcClusterBusinessId;
+    m_hpcClusterBusinessIdHasBeenSet = true;
+}
+
+bool HpcClusterInfo::HpcClusterBusinessIdHasBeenSet() const
+{
+    return m_hpcClusterBusinessIdHasBeenSet;
 }
 

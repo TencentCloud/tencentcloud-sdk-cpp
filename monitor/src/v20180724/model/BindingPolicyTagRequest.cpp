@@ -31,7 +31,8 @@ BindingPolicyTagRequest::BindingPolicyTagRequest() :
     m_instanceGroupIdHasBeenSet(false),
     m_batchTagHasBeenSet(false),
     m_ebEventFlagHasBeenSet(false),
-    m_ebSubjectHasBeenSet(false)
+    m_ebSubjectHasBeenSet(false),
+    m_tagOperationHasBeenSet(false)
 {
 }
 
@@ -120,6 +121,14 @@ string BindingPolicyTagRequest::ToJsonString() const
         string key = "EbSubject";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_ebSubject.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_tagOperationHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "TagOperation";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_tagOperation.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -272,6 +281,22 @@ void BindingPolicyTagRequest::SetEbSubject(const string& _ebSubject)
 bool BindingPolicyTagRequest::EbSubjectHasBeenSet() const
 {
     return m_ebSubjectHasBeenSet;
+}
+
+string BindingPolicyTagRequest::GetTagOperation() const
+{
+    return m_tagOperation;
+}
+
+void BindingPolicyTagRequest::SetTagOperation(const string& _tagOperation)
+{
+    m_tagOperation = _tagOperation;
+    m_tagOperationHasBeenSet = true;
+}
+
+bool BindingPolicyTagRequest::TagOperationHasBeenSet() const
+{
+    return m_tagOperationHasBeenSet;
 }
 
 

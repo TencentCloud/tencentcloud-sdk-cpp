@@ -27,7 +27,9 @@ DescribeHpcClustersRequest::DescribeHpcClustersRequest() :
     m_nameHasBeenSet(false),
     m_zoneHasBeenSet(false),
     m_offsetHasBeenSet(false),
-    m_limitHasBeenSet(false)
+    m_limitHasBeenSet(false),
+    m_hpcClusterTypeHasBeenSet(false),
+    m_hpcClusterBusinessIdHasBeenSet(false)
 {
 }
 
@@ -81,6 +83,22 @@ string DescribeHpcClustersRequest::ToJsonString() const
         string key = "Limit";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_limit, allocator);
+    }
+
+    if (m_hpcClusterTypeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "HpcClusterType";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_hpcClusterType.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_hpcClusterBusinessIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "HpcClusterBusinessId";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_hpcClusterBusinessId.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -169,6 +187,38 @@ void DescribeHpcClustersRequest::SetLimit(const uint64_t& _limit)
 bool DescribeHpcClustersRequest::LimitHasBeenSet() const
 {
     return m_limitHasBeenSet;
+}
+
+string DescribeHpcClustersRequest::GetHpcClusterType() const
+{
+    return m_hpcClusterType;
+}
+
+void DescribeHpcClustersRequest::SetHpcClusterType(const string& _hpcClusterType)
+{
+    m_hpcClusterType = _hpcClusterType;
+    m_hpcClusterTypeHasBeenSet = true;
+}
+
+bool DescribeHpcClustersRequest::HpcClusterTypeHasBeenSet() const
+{
+    return m_hpcClusterTypeHasBeenSet;
+}
+
+string DescribeHpcClustersRequest::GetHpcClusterBusinessId() const
+{
+    return m_hpcClusterBusinessId;
+}
+
+void DescribeHpcClustersRequest::SetHpcClusterBusinessId(const string& _hpcClusterBusinessId)
+{
+    m_hpcClusterBusinessId = _hpcClusterBusinessId;
+    m_hpcClusterBusinessIdHasBeenSet = true;
+}
+
+bool DescribeHpcClustersRequest::HpcClusterBusinessIdHasBeenSet() const
+{
+    return m_hpcClusterBusinessIdHasBeenSet;
 }
 
 

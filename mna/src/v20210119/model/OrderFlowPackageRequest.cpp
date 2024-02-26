@@ -26,7 +26,9 @@ OrderFlowPackageRequest::OrderFlowPackageRequest() :
     m_packageTypeHasBeenSet(false),
     m_deviceListHasBeenSet(false),
     m_autoRenewFlagHasBeenSet(false),
-    m_packageRegionHasBeenSet(false)
+    m_packageRegionHasBeenSet(false),
+    m_autoVoucherHasBeenSet(false),
+    m_voucherIdsHasBeenSet(false)
 {
 }
 
@@ -72,6 +74,27 @@ string OrderFlowPackageRequest::ToJsonString() const
         string key = "PackageRegion";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_packageRegion, allocator);
+    }
+
+    if (m_autoVoucherHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "AutoVoucher";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_autoVoucher, allocator);
+    }
+
+    if (m_voucherIdsHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "VoucherIds";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        for (auto itr = m_voucherIds.begin(); itr != m_voucherIds.end(); ++itr)
+        {
+            d[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
+        }
     }
 
 
@@ -144,6 +167,38 @@ void OrderFlowPackageRequest::SetPackageRegion(const int64_t& _packageRegion)
 bool OrderFlowPackageRequest::PackageRegionHasBeenSet() const
 {
     return m_packageRegionHasBeenSet;
+}
+
+bool OrderFlowPackageRequest::GetAutoVoucher() const
+{
+    return m_autoVoucher;
+}
+
+void OrderFlowPackageRequest::SetAutoVoucher(const bool& _autoVoucher)
+{
+    m_autoVoucher = _autoVoucher;
+    m_autoVoucherHasBeenSet = true;
+}
+
+bool OrderFlowPackageRequest::AutoVoucherHasBeenSet() const
+{
+    return m_autoVoucherHasBeenSet;
+}
+
+vector<string> OrderFlowPackageRequest::GetVoucherIds() const
+{
+    return m_voucherIds;
+}
+
+void OrderFlowPackageRequest::SetVoucherIds(const vector<string>& _voucherIds)
+{
+    m_voucherIds = _voucherIds;
+    m_voucherIdsHasBeenSet = true;
+}
+
+bool OrderFlowPackageRequest::VoucherIdsHasBeenSet() const
+{
+    return m_voucherIdsHasBeenSet;
 }
 
 

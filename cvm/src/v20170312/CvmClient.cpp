@@ -642,6 +642,49 @@ CvmClient::DeleteImagesOutcomeCallable CvmClient::DeleteImagesCallable(const Del
     return task->get_future();
 }
 
+CvmClient::DeleteInstancesActionTimerOutcome CvmClient::DeleteInstancesActionTimer(const DeleteInstancesActionTimerRequest &request)
+{
+    auto outcome = MakeRequest(request, "DeleteInstancesActionTimer");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DeleteInstancesActionTimerResponse rsp = DeleteInstancesActionTimerResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DeleteInstancesActionTimerOutcome(rsp);
+        else
+            return DeleteInstancesActionTimerOutcome(o.GetError());
+    }
+    else
+    {
+        return DeleteInstancesActionTimerOutcome(outcome.GetError());
+    }
+}
+
+void CvmClient::DeleteInstancesActionTimerAsync(const DeleteInstancesActionTimerRequest& request, const DeleteInstancesActionTimerAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DeleteInstancesActionTimer(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+CvmClient::DeleteInstancesActionTimerOutcomeCallable CvmClient::DeleteInstancesActionTimerCallable(const DeleteInstancesActionTimerRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DeleteInstancesActionTimerOutcome()>>(
+        [this, request]()
+        {
+            return this->DeleteInstancesActionTimer(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 CvmClient::DeleteKeyPairsOutcome CvmClient::DeleteKeyPairs(const DeleteKeyPairsRequest &request)
 {
     auto outcome = MakeRequest(request, "DeleteKeyPairs");
@@ -1459,6 +1502,49 @@ CvmClient::DescribeInstancesOutcomeCallable CvmClient::DescribeInstancesCallable
     return task->get_future();
 }
 
+CvmClient::DescribeInstancesActionTimerOutcome CvmClient::DescribeInstancesActionTimer(const DescribeInstancesActionTimerRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeInstancesActionTimer");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeInstancesActionTimerResponse rsp = DescribeInstancesActionTimerResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeInstancesActionTimerOutcome(rsp);
+        else
+            return DescribeInstancesActionTimerOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeInstancesActionTimerOutcome(outcome.GetError());
+    }
+}
+
+void CvmClient::DescribeInstancesActionTimerAsync(const DescribeInstancesActionTimerRequest& request, const DescribeInstancesActionTimerAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeInstancesActionTimer(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+CvmClient::DescribeInstancesActionTimerOutcomeCallable CvmClient::DescribeInstancesActionTimerCallable(const DescribeInstancesActionTimerRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeInstancesActionTimerOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeInstancesActionTimer(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 CvmClient::DescribeInstancesModificationOutcome CvmClient::DescribeInstancesModification(const DescribeInstancesModificationRequest &request)
 {
     auto outcome = MakeRequest(request, "DescribeInstancesModification");
@@ -2226,6 +2312,49 @@ CvmClient::ImportImageOutcomeCallable CvmClient::ImportImageCallable(const Impor
         [this, request]()
         {
             return this->ImportImage(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+CvmClient::ImportInstancesActionTimerOutcome CvmClient::ImportInstancesActionTimer(const ImportInstancesActionTimerRequest &request)
+{
+    auto outcome = MakeRequest(request, "ImportInstancesActionTimer");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ImportInstancesActionTimerResponse rsp = ImportInstancesActionTimerResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ImportInstancesActionTimerOutcome(rsp);
+        else
+            return ImportInstancesActionTimerOutcome(o.GetError());
+    }
+    else
+    {
+        return ImportInstancesActionTimerOutcome(outcome.GetError());
+    }
+}
+
+void CvmClient::ImportInstancesActionTimerAsync(const ImportInstancesActionTimerRequest& request, const ImportInstancesActionTimerAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->ImportInstancesActionTimer(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+CvmClient::ImportInstancesActionTimerOutcomeCallable CvmClient::ImportInstancesActionTimerCallable(const ImportInstancesActionTimerRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<ImportInstancesActionTimerOutcome()>>(
+        [this, request]()
+        {
+            return this->ImportInstancesActionTimer(request);
         }
     );
 
