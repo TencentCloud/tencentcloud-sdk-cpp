@@ -814,6 +814,49 @@ BillingClient::DescribeCostDetailOutcomeCallable BillingClient::DescribeCostDeta
     return task->get_future();
 }
 
+BillingClient::DescribeCostExplorerSummaryOutcome BillingClient::DescribeCostExplorerSummary(const DescribeCostExplorerSummaryRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeCostExplorerSummary");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeCostExplorerSummaryResponse rsp = DescribeCostExplorerSummaryResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeCostExplorerSummaryOutcome(rsp);
+        else
+            return DescribeCostExplorerSummaryOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeCostExplorerSummaryOutcome(outcome.GetError());
+    }
+}
+
+void BillingClient::DescribeCostExplorerSummaryAsync(const DescribeCostExplorerSummaryRequest& request, const DescribeCostExplorerSummaryAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeCostExplorerSummary(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+BillingClient::DescribeCostExplorerSummaryOutcomeCallable BillingClient::DescribeCostExplorerSummaryCallable(const DescribeCostExplorerSummaryRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeCostExplorerSummaryOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeCostExplorerSummary(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 BillingClient::DescribeCostSummaryByProductOutcome BillingClient::DescribeCostSummaryByProduct(const DescribeCostSummaryByProductRequest &request)
 {
     auto outcome = MakeRequest(request, "DescribeCostSummaryByProduct");

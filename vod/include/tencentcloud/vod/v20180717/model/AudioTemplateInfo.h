@@ -206,16 +206,18 @@ namespace TencentCloud
                     bool SampleRateHasBeenSet() const;
 
                     /**
-                     * 获取音频通道方式，可选值：
+                     * 获取音频通道，可选值：
 <li>1：单通道</li>
 <li>2：双通道</li>
 <li>6：立体声</li>
+<li>0：音频声道数和原始音频保持一致</li>
 当媒体的封装格式是音频格式时（flac，ogg，mp3，m4a）时，声道数不允许设为立体声。
 默认值：2。
-                     * @return AudioChannel 音频通道方式，可选值：
+                     * @return AudioChannel 音频通道，可选值：
 <li>1：单通道</li>
 <li>2：双通道</li>
 <li>6：立体声</li>
+<li>0：音频声道数和原始音频保持一致</li>
 当媒体的封装格式是音频格式时（flac，ogg，mp3，m4a）时，声道数不允许设为立体声。
 默认值：2。
                      * 
@@ -223,16 +225,18 @@ namespace TencentCloud
                     int64_t GetAudioChannel() const;
 
                     /**
-                     * 设置音频通道方式，可选值：
+                     * 设置音频通道，可选值：
 <li>1：单通道</li>
 <li>2：双通道</li>
 <li>6：立体声</li>
+<li>0：音频声道数和原始音频保持一致</li>
 当媒体的封装格式是音频格式时（flac，ogg，mp3，m4a）时，声道数不允许设为立体声。
 默认值：2。
-                     * @param _audioChannel 音频通道方式，可选值：
+                     * @param _audioChannel 音频通道，可选值：
 <li>1：单通道</li>
 <li>2：双通道</li>
 <li>6：立体声</li>
+<li>0：音频声道数和原始音频保持一致</li>
 当媒体的封装格式是音频格式时（flac，ogg，mp3，m4a）时，声道数不允许设为立体声。
 默认值：2。
                      * 
@@ -291,10 +295,11 @@ namespace TencentCloud
                     bool m_sampleRateHasBeenSet;
 
                     /**
-                     * 音频通道方式，可选值：
+                     * 音频通道，可选值：
 <li>1：单通道</li>
 <li>2：双通道</li>
 <li>6：立体声</li>
+<li>0：音频声道数和原始音频保持一致</li>
 当媒体的封装格式是音频格式时（flac，ogg，mp3，m4a）时，声道数不允许设为立体声。
 默认值：2。
                      */

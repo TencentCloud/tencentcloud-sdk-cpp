@@ -196,15 +196,15 @@ namespace TencentCloud
                     bool StatusHasBeenSet() const;
 
                     /**
-                     * 获取订单号
-                     * @return OrderId 订单号
+                     * 获取子订单号
+                     * @return OrderId 子订单号
                      * 
                      */
                     std::string GetOrderId() const;
 
                     /**
-                     * 设置订单号
-                     * @param _orderId 订单号
+                     * 设置子订单号
+                     * @param _orderId 子订单号
                      * 
                      */
                     void SetOrderId(const std::string& _orderId);
@@ -303,7 +303,7 @@ namespace TencentCloud
                     bool m_statusHasBeenSet;
 
                     /**
-                     * 订单号
+                     * 子订单号
                      */
                     std::string m_orderId;
                     bool m_orderIdHasBeenSet;

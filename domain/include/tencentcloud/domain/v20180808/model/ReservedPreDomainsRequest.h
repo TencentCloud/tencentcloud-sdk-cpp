@@ -64,15 +64,15 @@ namespace TencentCloud
                     bool DomainListHasBeenSet() const;
 
                     /**
-                     * 获取模版ID
-                     * @return TemplateId 模版ID
+                     * 获取模板ID
+                     * @return TemplateId 模板ID
                      * 
                      */
                     std::string GetTemplateId() const;
 
                     /**
-                     * 设置模版ID
-                     * @param _templateId 模版ID
+                     * 设置模板ID
+                     * @param _templateId 模板ID
                      * 
                      */
                     void SetTemplateId(const std::string& _templateId);
@@ -93,7 +93,7 @@ namespace TencentCloud
                     bool m_domainListHasBeenSet;
 
                     /**
-                     * 模版ID
+                     * 模板ID
                      */
                     std::string m_templateId;
                     bool m_templateIdHasBeenSet;

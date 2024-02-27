@@ -151,15 +151,15 @@ namespace TencentCloud
                     bool FilterDegreeHasBeenSet() const;
 
                     /**
-                     * 获取返回图像方式（base64 或 url ) ，二选一。url有效期为1天。
-                     * @return RspImgType 返回图像方式（base64 或 url ) ，二选一。url有效期为1天。
+                     * 获取返回图像方式（base64 或 url ) ，二选一。url有效期为1天。默认为base64。
+                     * @return RspImgType 返回图像方式（base64 或 url ) ，二选一。url有效期为1天。默认为base64。
                      * 
                      */
                     std::string GetRspImgType() const;
 
                     /**
-                     * 设置返回图像方式（base64 或 url ) ，二选一。url有效期为1天。
-                     * @param _rspImgType 返回图像方式（base64 或 url ) ，二选一。url有效期为1天。
+                     * 设置返回图像方式（base64 或 url ) ，二选一。url有效期为1天。默认为base64。
+                     * @param _rspImgType 返回图像方式（base64 或 url ) ，二选一。url有效期为1天。默认为base64。
                      * 
                      */
                     void SetRspImgType(const std::string& _rspImgType);
@@ -204,7 +204,7 @@ namespace TencentCloud
                     bool m_filterDegreeHasBeenSet;
 
                     /**
-                     * 返回图像方式（base64 或 url ) ，二选一。url有效期为1天。
+                     * 返回图像方式（base64 或 url ) ，二选一。url有效期为1天。默认为base64。
                      */
                     std::string m_rspImgType;
                     bool m_rspImgTypeHasBeenSet;

@@ -40,6 +40,49 @@ EmrClient::EmrClient(const Credential &credential, const string &region, const C
 }
 
 
+EmrClient::AddMetricScaleStrategyOutcome EmrClient::AddMetricScaleStrategy(const AddMetricScaleStrategyRequest &request)
+{
+    auto outcome = MakeRequest(request, "AddMetricScaleStrategy");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        AddMetricScaleStrategyResponse rsp = AddMetricScaleStrategyResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return AddMetricScaleStrategyOutcome(rsp);
+        else
+            return AddMetricScaleStrategyOutcome(o.GetError());
+    }
+    else
+    {
+        return AddMetricScaleStrategyOutcome(outcome.GetError());
+    }
+}
+
+void EmrClient::AddMetricScaleStrategyAsync(const AddMetricScaleStrategyRequest& request, const AddMetricScaleStrategyAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->AddMetricScaleStrategy(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+EmrClient::AddMetricScaleStrategyOutcomeCallable EmrClient::AddMetricScaleStrategyCallable(const AddMetricScaleStrategyRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<AddMetricScaleStrategyOutcome()>>(
+        [this, request]()
+        {
+            return this->AddMetricScaleStrategy(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 EmrClient::AddUsersForUserManagerOutcome EmrClient::AddUsersForUserManager(const AddUsersForUserManagerRequest &request)
 {
     auto outcome = MakeRequest(request, "AddUsersForUserManager");
@@ -169,6 +212,49 @@ EmrClient::CreateInstanceOutcomeCallable EmrClient::CreateInstanceCallable(const
     return task->get_future();
 }
 
+EmrClient::DeleteAutoScaleStrategyOutcome EmrClient::DeleteAutoScaleStrategy(const DeleteAutoScaleStrategyRequest &request)
+{
+    auto outcome = MakeRequest(request, "DeleteAutoScaleStrategy");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DeleteAutoScaleStrategyResponse rsp = DeleteAutoScaleStrategyResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DeleteAutoScaleStrategyOutcome(rsp);
+        else
+            return DeleteAutoScaleStrategyOutcome(o.GetError());
+    }
+    else
+    {
+        return DeleteAutoScaleStrategyOutcome(outcome.GetError());
+    }
+}
+
+void EmrClient::DeleteAutoScaleStrategyAsync(const DeleteAutoScaleStrategyRequest& request, const DeleteAutoScaleStrategyAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DeleteAutoScaleStrategy(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+EmrClient::DeleteAutoScaleStrategyOutcomeCallable EmrClient::DeleteAutoScaleStrategyCallable(const DeleteAutoScaleStrategyRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DeleteAutoScaleStrategyOutcome()>>(
+        [this, request]()
+        {
+            return this->DeleteAutoScaleStrategy(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 EmrClient::DeleteUserManagerUserListOutcome EmrClient::DeleteUserManagerUserList(const DeleteUserManagerUserListRequest &request)
 {
     auto outcome = MakeRequest(request, "DeleteUserManagerUserList");
@@ -212,6 +298,49 @@ EmrClient::DeleteUserManagerUserListOutcomeCallable EmrClient::DeleteUserManager
     return task->get_future();
 }
 
+EmrClient::DescribeAutoScaleGroupGlobalConfOutcome EmrClient::DescribeAutoScaleGroupGlobalConf(const DescribeAutoScaleGroupGlobalConfRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeAutoScaleGroupGlobalConf");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeAutoScaleGroupGlobalConfResponse rsp = DescribeAutoScaleGroupGlobalConfResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeAutoScaleGroupGlobalConfOutcome(rsp);
+        else
+            return DescribeAutoScaleGroupGlobalConfOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeAutoScaleGroupGlobalConfOutcome(outcome.GetError());
+    }
+}
+
+void EmrClient::DescribeAutoScaleGroupGlobalConfAsync(const DescribeAutoScaleGroupGlobalConfRequest& request, const DescribeAutoScaleGroupGlobalConfAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeAutoScaleGroupGlobalConf(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+EmrClient::DescribeAutoScaleGroupGlobalConfOutcomeCallable EmrClient::DescribeAutoScaleGroupGlobalConfCallable(const DescribeAutoScaleGroupGlobalConfRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeAutoScaleGroupGlobalConfOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeAutoScaleGroupGlobalConf(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 EmrClient::DescribeAutoScaleRecordsOutcome EmrClient::DescribeAutoScaleRecords(const DescribeAutoScaleRecordsRequest &request)
 {
     auto outcome = MakeRequest(request, "DescribeAutoScaleRecords");
@@ -248,6 +377,49 @@ EmrClient::DescribeAutoScaleRecordsOutcomeCallable EmrClient::DescribeAutoScaleR
         [this, request]()
         {
             return this->DescribeAutoScaleRecords(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+EmrClient::DescribeAutoScaleStrategiesOutcome EmrClient::DescribeAutoScaleStrategies(const DescribeAutoScaleStrategiesRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeAutoScaleStrategies");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeAutoScaleStrategiesResponse rsp = DescribeAutoScaleStrategiesResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeAutoScaleStrategiesOutcome(rsp);
+        else
+            return DescribeAutoScaleStrategiesOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeAutoScaleStrategiesOutcome(outcome.GetError());
+    }
+}
+
+void EmrClient::DescribeAutoScaleStrategiesAsync(const DescribeAutoScaleStrategiesRequest& request, const DescribeAutoScaleStrategiesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeAutoScaleStrategies(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+EmrClient::DescribeAutoScaleStrategiesOutcomeCallable EmrClient::DescribeAutoScaleStrategiesCallable(const DescribeAutoScaleStrategiesRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeAutoScaleStrategiesOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeAutoScaleStrategies(request);
         }
     );
 
@@ -1022,6 +1194,49 @@ EmrClient::InquiryPriceUpdateInstanceOutcomeCallable EmrClient::InquiryPriceUpda
         [this, request]()
         {
             return this->InquiryPriceUpdateInstance(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+EmrClient::ModifyAutoScaleStrategyOutcome EmrClient::ModifyAutoScaleStrategy(const ModifyAutoScaleStrategyRequest &request)
+{
+    auto outcome = MakeRequest(request, "ModifyAutoScaleStrategy");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ModifyAutoScaleStrategyResponse rsp = ModifyAutoScaleStrategyResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ModifyAutoScaleStrategyOutcome(rsp);
+        else
+            return ModifyAutoScaleStrategyOutcome(o.GetError());
+    }
+    else
+    {
+        return ModifyAutoScaleStrategyOutcome(outcome.GetError());
+    }
+}
+
+void EmrClient::ModifyAutoScaleStrategyAsync(const ModifyAutoScaleStrategyRequest& request, const ModifyAutoScaleStrategyAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->ModifyAutoScaleStrategy(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+EmrClient::ModifyAutoScaleStrategyOutcomeCallable EmrClient::ModifyAutoScaleStrategyCallable(const ModifyAutoScaleStrategyRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<ModifyAutoScaleStrategyOutcome()>>(
+        [this, request]()
+        {
+            return this->ModifyAutoScaleStrategy(request);
         }
     );
 

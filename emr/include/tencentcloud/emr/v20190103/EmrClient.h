@@ -23,16 +23,24 @@
 #include <tencentcloud/core/Credential.h>
 #include <tencentcloud/core/profile/ClientProfile.h>
 #include <tencentcloud/core/AsyncCallerContext.h>
+#include <tencentcloud/emr/v20190103/model/AddMetricScaleStrategyRequest.h>
+#include <tencentcloud/emr/v20190103/model/AddMetricScaleStrategyResponse.h>
 #include <tencentcloud/emr/v20190103/model/AddUsersForUserManagerRequest.h>
 #include <tencentcloud/emr/v20190103/model/AddUsersForUserManagerResponse.h>
 #include <tencentcloud/emr/v20190103/model/CreateClusterRequest.h>
 #include <tencentcloud/emr/v20190103/model/CreateClusterResponse.h>
 #include <tencentcloud/emr/v20190103/model/CreateInstanceRequest.h>
 #include <tencentcloud/emr/v20190103/model/CreateInstanceResponse.h>
+#include <tencentcloud/emr/v20190103/model/DeleteAutoScaleStrategyRequest.h>
+#include <tencentcloud/emr/v20190103/model/DeleteAutoScaleStrategyResponse.h>
 #include <tencentcloud/emr/v20190103/model/DeleteUserManagerUserListRequest.h>
 #include <tencentcloud/emr/v20190103/model/DeleteUserManagerUserListResponse.h>
+#include <tencentcloud/emr/v20190103/model/DescribeAutoScaleGroupGlobalConfRequest.h>
+#include <tencentcloud/emr/v20190103/model/DescribeAutoScaleGroupGlobalConfResponse.h>
 #include <tencentcloud/emr/v20190103/model/DescribeAutoScaleRecordsRequest.h>
 #include <tencentcloud/emr/v20190103/model/DescribeAutoScaleRecordsResponse.h>
+#include <tencentcloud/emr/v20190103/model/DescribeAutoScaleStrategiesRequest.h>
+#include <tencentcloud/emr/v20190103/model/DescribeAutoScaleStrategiesResponse.h>
 #include <tencentcloud/emr/v20190103/model/DescribeClusterNodesRequest.h>
 #include <tencentcloud/emr/v20190103/model/DescribeClusterNodesResponse.h>
 #include <tencentcloud/emr/v20190103/model/DescribeCvmQuotaRequest.h>
@@ -69,6 +77,8 @@
 #include <tencentcloud/emr/v20190103/model/InquiryPriceScaleOutInstanceResponse.h>
 #include <tencentcloud/emr/v20190103/model/InquiryPriceUpdateInstanceRequest.h>
 #include <tencentcloud/emr/v20190103/model/InquiryPriceUpdateInstanceResponse.h>
+#include <tencentcloud/emr/v20190103/model/ModifyAutoScaleStrategyRequest.h>
+#include <tencentcloud/emr/v20190103/model/ModifyAutoScaleStrategyResponse.h>
 #include <tencentcloud/emr/v20190103/model/ModifyResourcePoolsRequest.h>
 #include <tencentcloud/emr/v20190103/model/ModifyResourcePoolsResponse.h>
 #include <tencentcloud/emr/v20190103/model/ModifyResourceScheduleConfigRequest.h>
@@ -109,6 +119,9 @@ namespace TencentCloud
                 EmrClient(const Credential &credential, const std::string &region);
                 EmrClient(const Credential &credential, const std::string &region, const ClientProfile &profile);
 
+                typedef Outcome<Core::Error, Model::AddMetricScaleStrategyResponse> AddMetricScaleStrategyOutcome;
+                typedef std::future<AddMetricScaleStrategyOutcome> AddMetricScaleStrategyOutcomeCallable;
+                typedef std::function<void(const EmrClient*, const Model::AddMetricScaleStrategyRequest&, AddMetricScaleStrategyOutcome, const std::shared_ptr<const AsyncCallerContext>&)> AddMetricScaleStrategyAsyncHandler;
                 typedef Outcome<Core::Error, Model::AddUsersForUserManagerResponse> AddUsersForUserManagerOutcome;
                 typedef std::future<AddUsersForUserManagerOutcome> AddUsersForUserManagerOutcomeCallable;
                 typedef std::function<void(const EmrClient*, const Model::AddUsersForUserManagerRequest&, AddUsersForUserManagerOutcome, const std::shared_ptr<const AsyncCallerContext>&)> AddUsersForUserManagerAsyncHandler;
@@ -118,12 +131,21 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::CreateInstanceResponse> CreateInstanceOutcome;
                 typedef std::future<CreateInstanceOutcome> CreateInstanceOutcomeCallable;
                 typedef std::function<void(const EmrClient*, const Model::CreateInstanceRequest&, CreateInstanceOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateInstanceAsyncHandler;
+                typedef Outcome<Core::Error, Model::DeleteAutoScaleStrategyResponse> DeleteAutoScaleStrategyOutcome;
+                typedef std::future<DeleteAutoScaleStrategyOutcome> DeleteAutoScaleStrategyOutcomeCallable;
+                typedef std::function<void(const EmrClient*, const Model::DeleteAutoScaleStrategyRequest&, DeleteAutoScaleStrategyOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteAutoScaleStrategyAsyncHandler;
                 typedef Outcome<Core::Error, Model::DeleteUserManagerUserListResponse> DeleteUserManagerUserListOutcome;
                 typedef std::future<DeleteUserManagerUserListOutcome> DeleteUserManagerUserListOutcomeCallable;
                 typedef std::function<void(const EmrClient*, const Model::DeleteUserManagerUserListRequest&, DeleteUserManagerUserListOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteUserManagerUserListAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeAutoScaleGroupGlobalConfResponse> DescribeAutoScaleGroupGlobalConfOutcome;
+                typedef std::future<DescribeAutoScaleGroupGlobalConfOutcome> DescribeAutoScaleGroupGlobalConfOutcomeCallable;
+                typedef std::function<void(const EmrClient*, const Model::DescribeAutoScaleGroupGlobalConfRequest&, DescribeAutoScaleGroupGlobalConfOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeAutoScaleGroupGlobalConfAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeAutoScaleRecordsResponse> DescribeAutoScaleRecordsOutcome;
                 typedef std::future<DescribeAutoScaleRecordsOutcome> DescribeAutoScaleRecordsOutcomeCallable;
                 typedef std::function<void(const EmrClient*, const Model::DescribeAutoScaleRecordsRequest&, DescribeAutoScaleRecordsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeAutoScaleRecordsAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeAutoScaleStrategiesResponse> DescribeAutoScaleStrategiesOutcome;
+                typedef std::future<DescribeAutoScaleStrategiesOutcome> DescribeAutoScaleStrategiesOutcomeCallable;
+                typedef std::function<void(const EmrClient*, const Model::DescribeAutoScaleStrategiesRequest&, DescribeAutoScaleStrategiesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeAutoScaleStrategiesAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeClusterNodesResponse> DescribeClusterNodesOutcome;
                 typedef std::future<DescribeClusterNodesOutcome> DescribeClusterNodesOutcomeCallable;
                 typedef std::function<void(const EmrClient*, const Model::DescribeClusterNodesRequest&, DescribeClusterNodesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeClusterNodesAsyncHandler;
@@ -178,6 +200,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::InquiryPriceUpdateInstanceResponse> InquiryPriceUpdateInstanceOutcome;
                 typedef std::future<InquiryPriceUpdateInstanceOutcome> InquiryPriceUpdateInstanceOutcomeCallable;
                 typedef std::function<void(const EmrClient*, const Model::InquiryPriceUpdateInstanceRequest&, InquiryPriceUpdateInstanceOutcome, const std::shared_ptr<const AsyncCallerContext>&)> InquiryPriceUpdateInstanceAsyncHandler;
+                typedef Outcome<Core::Error, Model::ModifyAutoScaleStrategyResponse> ModifyAutoScaleStrategyOutcome;
+                typedef std::future<ModifyAutoScaleStrategyOutcome> ModifyAutoScaleStrategyOutcomeCallable;
+                typedef std::function<void(const EmrClient*, const Model::ModifyAutoScaleStrategyRequest&, ModifyAutoScaleStrategyOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyAutoScaleStrategyAsyncHandler;
                 typedef Outcome<Core::Error, Model::ModifyResourcePoolsResponse> ModifyResourcePoolsOutcome;
                 typedef std::future<ModifyResourcePoolsOutcome> ModifyResourcePoolsOutcomeCallable;
                 typedef std::function<void(const EmrClient*, const Model::ModifyResourcePoolsRequest&, ModifyResourcePoolsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyResourcePoolsAsyncHandler;
@@ -221,6 +246,15 @@ namespace TencentCloud
 
 
                 /**
+                 *添加扩缩容规则，按负载和时间
+                 * @param req AddMetricScaleStrategyRequest
+                 * @return AddMetricScaleStrategyOutcome
+                 */
+                AddMetricScaleStrategyOutcome AddMetricScaleStrategy(const Model::AddMetricScaleStrategyRequest &request);
+                void AddMetricScaleStrategyAsync(const Model::AddMetricScaleStrategyRequest& request, const AddMetricScaleStrategyAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                AddMetricScaleStrategyOutcomeCallable AddMetricScaleStrategyCallable(const Model::AddMetricScaleStrategyRequest& request);
+
+                /**
                  *该接口支持安装了OpenLdap组件的集群。
 新增用户列表（用户管理）。
                  * @param req AddUsersForUserManagerRequest
@@ -249,6 +283,15 @@ namespace TencentCloud
                 CreateInstanceOutcomeCallable CreateInstanceCallable(const Model::CreateInstanceRequest& request);
 
                 /**
+                 *删除自动扩缩容规则，后台销毁根据该规则扩缩容出来的节点
+                 * @param req DeleteAutoScaleStrategyRequest
+                 * @return DeleteAutoScaleStrategyOutcome
+                 */
+                DeleteAutoScaleStrategyOutcome DeleteAutoScaleStrategy(const Model::DeleteAutoScaleStrategyRequest &request);
+                void DeleteAutoScaleStrategyAsync(const Model::DeleteAutoScaleStrategyRequest& request, const DeleteAutoScaleStrategyAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DeleteAutoScaleStrategyOutcomeCallable DeleteAutoScaleStrategyCallable(const Model::DeleteAutoScaleStrategyRequest& request);
+
+                /**
                  *删除用户列表（用户管理）
                  * @param req DeleteUserManagerUserListRequest
                  * @return DeleteUserManagerUserListOutcome
@@ -258,6 +301,15 @@ namespace TencentCloud
                 DeleteUserManagerUserListOutcomeCallable DeleteUserManagerUserListCallable(const Model::DeleteUserManagerUserListRequest& request);
 
                 /**
+                 *获取自动扩缩容全局配置
+                 * @param req DescribeAutoScaleGroupGlobalConfRequest
+                 * @return DescribeAutoScaleGroupGlobalConfOutcome
+                 */
+                DescribeAutoScaleGroupGlobalConfOutcome DescribeAutoScaleGroupGlobalConf(const Model::DescribeAutoScaleGroupGlobalConfRequest &request);
+                void DescribeAutoScaleGroupGlobalConfAsync(const Model::DescribeAutoScaleGroupGlobalConfRequest& request, const DescribeAutoScaleGroupGlobalConfAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeAutoScaleGroupGlobalConfOutcomeCallable DescribeAutoScaleGroupGlobalConfCallable(const Model::DescribeAutoScaleGroupGlobalConfRequest& request);
+
+                /**
                  *获取集群的自动扩缩容的详细记录
                  * @param req DescribeAutoScaleRecordsRequest
                  * @return DescribeAutoScaleRecordsOutcome
@@ -265,6 +317,15 @@ namespace TencentCloud
                 DescribeAutoScaleRecordsOutcome DescribeAutoScaleRecords(const Model::DescribeAutoScaleRecordsRequest &request);
                 void DescribeAutoScaleRecordsAsync(const Model::DescribeAutoScaleRecordsRequest& request, const DescribeAutoScaleRecordsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DescribeAutoScaleRecordsOutcomeCallable DescribeAutoScaleRecordsCallable(const Model::DescribeAutoScaleRecordsRequest& request);
+
+                /**
+                 *获取自动扩缩容规则
+                 * @param req DescribeAutoScaleStrategiesRequest
+                 * @return DescribeAutoScaleStrategiesOutcome
+                 */
+                DescribeAutoScaleStrategiesOutcome DescribeAutoScaleStrategies(const Model::DescribeAutoScaleStrategiesRequest &request);
+                void DescribeAutoScaleStrategiesAsync(const Model::DescribeAutoScaleStrategiesRequest& request, const DescribeAutoScaleStrategiesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeAutoScaleStrategiesOutcomeCallable DescribeAutoScaleStrategiesCallable(const Model::DescribeAutoScaleStrategiesRequest& request);
 
                 /**
                  *查询集群节点信息
@@ -428,6 +489,15 @@ namespace TencentCloud
                 InquiryPriceUpdateInstanceOutcome InquiryPriceUpdateInstance(const Model::InquiryPriceUpdateInstanceRequest &request);
                 void InquiryPriceUpdateInstanceAsync(const Model::InquiryPriceUpdateInstanceRequest& request, const InquiryPriceUpdateInstanceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 InquiryPriceUpdateInstanceOutcomeCallable InquiryPriceUpdateInstanceCallable(const Model::InquiryPriceUpdateInstanceRequest& request);
+
+                /**
+                 *修改自动扩缩容规则
+                 * @param req ModifyAutoScaleStrategyRequest
+                 * @return ModifyAutoScaleStrategyOutcome
+                 */
+                ModifyAutoScaleStrategyOutcome ModifyAutoScaleStrategy(const Model::ModifyAutoScaleStrategyRequest &request);
+                void ModifyAutoScaleStrategyAsync(const Model::ModifyAutoScaleStrategyRequest& request, const ModifyAutoScaleStrategyAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                ModifyAutoScaleStrategyOutcomeCallable ModifyAutoScaleStrategyCallable(const Model::ModifyAutoScaleStrategyRequest& request);
 
                 /**
                  *刷新YARN的动态资源池
