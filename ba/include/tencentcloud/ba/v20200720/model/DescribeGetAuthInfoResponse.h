@@ -85,6 +85,26 @@ namespace TencentCloud
                      */
                     bool TypeHasBeenSet() const;
 
+                    /**
+                     * 获取大客户标识：
+1004、1003、1002、1001
+
+其余为普通的用户
+                     * @return Level 大客户标识：
+1004、1003、1002、1001
+
+其余为普通的用户
+                     * 
+                     */
+                    std::string GetLevel() const;
+
+                    /**
+                     * 判断参数 Level 是否已赋值
+                     * @return Level 是否已赋值
+                     * 
+                     */
+                    bool LevelHasBeenSet() const;
+
                 private:
 
                     /**
@@ -104,6 +124,15 @@ namespace TencentCloud
                      */
                     std::string m_type;
                     bool m_typeHasBeenSet;
+
+                    /**
+                     * 大客户标识：
+1004、1003、1002、1001
+
+其余为普通的用户
+                     */
+                    std::string m_level;
+                    bool m_levelHasBeenSet;
 
                 };
             }

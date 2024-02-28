@@ -341,6 +341,49 @@ OrganizationClient::CancelOrganizationMemberAuthAccountOutcomeCallable Organizat
     return task->get_future();
 }
 
+OrganizationClient::CheckAccountDeleteOutcome OrganizationClient::CheckAccountDelete(const CheckAccountDeleteRequest &request)
+{
+    auto outcome = MakeRequest(request, "CheckAccountDelete");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        CheckAccountDeleteResponse rsp = CheckAccountDeleteResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return CheckAccountDeleteOutcome(rsp);
+        else
+            return CheckAccountDeleteOutcome(o.GetError());
+    }
+    else
+    {
+        return CheckAccountDeleteOutcome(outcome.GetError());
+    }
+}
+
+void OrganizationClient::CheckAccountDeleteAsync(const CheckAccountDeleteRequest& request, const CheckAccountDeleteAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->CheckAccountDelete(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+OrganizationClient::CheckAccountDeleteOutcomeCallable OrganizationClient::CheckAccountDeleteCallable(const CheckAccountDeleteRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<CheckAccountDeleteOutcome()>>(
+        [this, request]()
+        {
+            return this->CheckAccountDelete(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 OrganizationClient::CreateOrganizationOutcome OrganizationClient::CreateOrganization(const CreateOrganizationRequest &request)
 {
     auto outcome = MakeRequest(request, "CreateOrganization");

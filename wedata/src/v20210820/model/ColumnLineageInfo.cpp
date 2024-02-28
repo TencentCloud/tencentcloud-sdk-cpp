@@ -23,7 +23,6 @@ using namespace std;
 ColumnLineageInfo::ColumnLineageInfo() :
     m_idHasBeenSet(false),
     m_datasourceIdHasBeenSet(false),
-    m_tableIdHasBeenSet(false),
     m_columnNameHasBeenSet(false),
     m_columnNameCnHasBeenSet(false),
     m_columnTypeHasBeenSet(false),
@@ -43,7 +42,8 @@ ColumnLineageInfo::ColumnLineageInfo() :
     m_tasksHasBeenSet(false),
     m_parentSetHasBeenSet(false),
     m_childSetHasBeenSet(false),
-    m_extParamsHasBeenSet(false)
+    m_extParamsHasBeenSet(false),
+    m_tableIdHasBeenSet(false)
 {
 }
 
@@ -70,16 +70,6 @@ CoreInternalOutcome ColumnLineageInfo::Deserialize(const rapidjson::Value &value
         }
         m_datasourceId = string(value["DatasourceId"].GetString());
         m_datasourceIdHasBeenSet = true;
-    }
-
-    if (value.HasMember("TableId") && !value["TableId"].IsNull())
-    {
-        if (!value["TableId"].IsString())
-        {
-            return CoreInternalOutcome(Core::Error("response `ColumnLineageInfo.TableId` IsString=false incorrectly").SetRequestId(requestId));
-        }
-        m_tableId = string(value["TableId"].GetString());
-        m_tableIdHasBeenSet = true;
     }
 
     if (value.HasMember("ColumnName") && !value["ColumnName"].IsNull())
@@ -295,6 +285,16 @@ CoreInternalOutcome ColumnLineageInfo::Deserialize(const rapidjson::Value &value
         m_extParamsHasBeenSet = true;
     }
 
+    if (value.HasMember("TableId") && !value["TableId"].IsNull())
+    {
+        if (!value["TableId"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `ColumnLineageInfo.TableId` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_tableId = string(value["TableId"].GetString());
+        m_tableIdHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -316,14 +316,6 @@ void ColumnLineageInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Documen
         string key = "DatasourceId";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_datasourceId.c_str(), allocator).Move(), allocator);
-    }
-
-    if (m_tableIdHasBeenSet)
-    {
-        rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "TableId";
-        iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, rapidjson::Value(m_tableId.c_str(), allocator).Move(), allocator);
     }
 
     if (m_columnNameHasBeenSet)
@@ -498,6 +490,14 @@ void ColumnLineageInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Documen
         }
     }
 
+    if (m_tableIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "TableId";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_tableId.c_str(), allocator).Move(), allocator);
+    }
+
 }
 
 
@@ -531,22 +531,6 @@ void ColumnLineageInfo::SetDatasourceId(const string& _datasourceId)
 bool ColumnLineageInfo::DatasourceIdHasBeenSet() const
 {
     return m_datasourceIdHasBeenSet;
-}
-
-string ColumnLineageInfo::GetTableId() const
-{
-    return m_tableId;
-}
-
-void ColumnLineageInfo::SetTableId(const string& _tableId)
-{
-    m_tableId = _tableId;
-    m_tableIdHasBeenSet = true;
-}
-
-bool ColumnLineageInfo::TableIdHasBeenSet() const
-{
-    return m_tableIdHasBeenSet;
 }
 
 string ColumnLineageInfo::GetColumnName() const
@@ -867,5 +851,21 @@ void ColumnLineageInfo::SetExtParams(const vector<LineageParamRecord>& _extParam
 bool ColumnLineageInfo::ExtParamsHasBeenSet() const
 {
     return m_extParamsHasBeenSet;
+}
+
+string ColumnLineageInfo::GetTableId() const
+{
+    return m_tableId;
+}
+
+void ColumnLineageInfo::SetTableId(const string& _tableId)
+{
+    m_tableId = _tableId;
+    m_tableIdHasBeenSet = true;
+}
+
+bool ColumnLineageInfo::TableIdHasBeenSet() const
+{
+    return m_tableIdHasBeenSet;
 }
 

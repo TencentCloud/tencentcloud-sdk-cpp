@@ -32,7 +32,8 @@ RunWorkflowRequest::RunWorkflowRequest() :
     m_descriptionHasBeenSet(false),
     m_inputBase64HasBeenSet(false),
     m_inputCosUriHasBeenSet(false),
-    m_cacheClearDelayHasBeenSet(false)
+    m_cacheClearDelayHasBeenSet(false),
+    m_workDirHasBeenSet(false)
 {
 }
 
@@ -123,6 +124,14 @@ string RunWorkflowRequest::ToJsonString() const
         string key = "CacheClearDelay";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_cacheClearDelay, allocator);
+    }
+
+    if (m_workDirHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "WorkDir";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_workDir.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -291,6 +300,22 @@ void RunWorkflowRequest::SetCacheClearDelay(const uint64_t& _cacheClearDelay)
 bool RunWorkflowRequest::CacheClearDelayHasBeenSet() const
 {
     return m_cacheClearDelayHasBeenSet;
+}
+
+string RunWorkflowRequest::GetWorkDir() const
+{
+    return m_workDir;
+}
+
+void RunWorkflowRequest::SetWorkDir(const string& _workDir)
+{
+    m_workDir = _workDir;
+    m_workDirHasBeenSet = true;
+}
+
+bool RunWorkflowRequest::WorkDirHasBeenSet() const
+{
+    return m_workDirHasBeenSet;
 }
 
 

@@ -48,7 +48,8 @@ TableBasicInfo::TableBasicInfo() :
     m_partitionFieldCountHasBeenSet(false),
     m_partitionExpireDaysHasBeenSet(false),
     m_createTimeHasBeenSet(false),
-    m_updateTimeHasBeenSet(false)
+    m_updateTimeHasBeenSet(false),
+    m_locationHasBeenSet(false)
 {
 }
 
@@ -340,6 +341,16 @@ CoreInternalOutcome TableBasicInfo::Deserialize(const rapidjson::Value &value)
         m_updateTimeHasBeenSet = true;
     }
 
+    if (value.HasMember("Location") && !value["Location"].IsNull())
+    {
+        if (!value["Location"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `TableBasicInfo.Location` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_location = string(value["Location"].GetString());
+        m_locationHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -574,6 +585,14 @@ void TableBasicInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Document::
         string key = "UpdateTime";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_updateTime.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_locationHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Location";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_location.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -1025,5 +1044,21 @@ void TableBasicInfo::SetUpdateTime(const string& _updateTime)
 bool TableBasicInfo::UpdateTimeHasBeenSet() const
 {
     return m_updateTimeHasBeenSet;
+}
+
+string TableBasicInfo::GetLocation() const
+{
+    return m_location;
+}
+
+void TableBasicInfo::SetLocation(const string& _location)
+{
+    m_location = _location;
+    m_locationHasBeenSet = true;
+}
+
+bool TableBasicInfo::LocationHasBeenSet() const
+{
+    return m_locationHasBeenSet;
 }
 

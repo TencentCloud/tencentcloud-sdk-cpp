@@ -39,7 +39,8 @@ ColumnBasicInfo::ColumnBasicInfo() :
     m_projectNameHasBeenSet(false),
     m_projectDisplayNameHasBeenSet(false),
     m_createTimeHasBeenSet(false),
-    m_updateTimeHasBeenSet(false)
+    m_updateTimeHasBeenSet(false),
+    m_scaleHasBeenSet(false)
 {
 }
 
@@ -238,6 +239,16 @@ CoreInternalOutcome ColumnBasicInfo::Deserialize(const rapidjson::Value &value)
         m_updateTimeHasBeenSet = true;
     }
 
+    if (value.HasMember("Scale") && !value["Scale"].IsNull())
+    {
+        if (!value["Scale"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `ColumnBasicInfo.Scale` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_scale = value["Scale"].GetInt64();
+        m_scaleHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -395,6 +406,14 @@ void ColumnBasicInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Document:
         string key = "UpdateTime";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_updateTime.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_scaleHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Scale";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_scale, allocator);
     }
 
 }
@@ -702,5 +721,21 @@ void ColumnBasicInfo::SetUpdateTime(const string& _updateTime)
 bool ColumnBasicInfo::UpdateTimeHasBeenSet() const
 {
     return m_updateTimeHasBeenSet;
+}
+
+int64_t ColumnBasicInfo::GetScale() const
+{
+    return m_scale;
+}
+
+void ColumnBasicInfo::SetScale(const int64_t& _scale)
+{
+    m_scale = _scale;
+    m_scaleHasBeenSet = true;
+}
+
+bool ColumnBasicInfo::ScaleHasBeenSet() const
+{
+    return m_scaleHasBeenSet;
 }
 

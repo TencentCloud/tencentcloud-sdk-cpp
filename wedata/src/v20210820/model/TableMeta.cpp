@@ -67,7 +67,10 @@ TableMeta::TableMeta() :
     m_ownerProjectIdHasBeenSet(false),
     m_tableOwnerIdHasBeenSet(false),
     m_dataSourceCategoryHasBeenSet(false),
-    m_columnsHasBeenSet(false)
+    m_columnsHasBeenSet(false),
+    m_metaCrawlTypeHasBeenSet(false),
+    m_isViewHasBeenSet(false),
+    m_locationHasBeenSet(false)
 {
 }
 
@@ -576,6 +579,36 @@ CoreInternalOutcome TableMeta::Deserialize(const rapidjson::Value &value)
         m_columnsHasBeenSet = true;
     }
 
+    if (value.HasMember("MetaCrawlType") && !value["MetaCrawlType"].IsNull())
+    {
+        if (!value["MetaCrawlType"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `TableMeta.MetaCrawlType` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_metaCrawlType = string(value["MetaCrawlType"].GetString());
+        m_metaCrawlTypeHasBeenSet = true;
+    }
+
+    if (value.HasMember("IsView") && !value["IsView"].IsNull())
+    {
+        if (!value["IsView"].IsBool())
+        {
+            return CoreInternalOutcome(Core::Error("response `TableMeta.IsView` IsBool=false incorrectly").SetRequestId(requestId));
+        }
+        m_isView = value["IsView"].GetBool();
+        m_isViewHasBeenSet = true;
+    }
+
+    if (value.HasMember("Location") && !value["Location"].IsNull())
+    {
+        if (!value["Location"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `TableMeta.Location` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_location = string(value["Location"].GetString());
+        m_locationHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -976,6 +1009,30 @@ void TableMeta::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Alloc
             value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
             (*itr).ToJsonObject(value[key.c_str()][i], allocator);
         }
+    }
+
+    if (m_metaCrawlTypeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "MetaCrawlType";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_metaCrawlType.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_isViewHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "IsView";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_isView, allocator);
+    }
+
+    if (m_locationHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Location";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_location.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -1731,5 +1788,53 @@ void TableMeta::SetColumns(const vector<SearchColumnDocVO>& _columns)
 bool TableMeta::ColumnsHasBeenSet() const
 {
     return m_columnsHasBeenSet;
+}
+
+string TableMeta::GetMetaCrawlType() const
+{
+    return m_metaCrawlType;
+}
+
+void TableMeta::SetMetaCrawlType(const string& _metaCrawlType)
+{
+    m_metaCrawlType = _metaCrawlType;
+    m_metaCrawlTypeHasBeenSet = true;
+}
+
+bool TableMeta::MetaCrawlTypeHasBeenSet() const
+{
+    return m_metaCrawlTypeHasBeenSet;
+}
+
+bool TableMeta::GetIsView() const
+{
+    return m_isView;
+}
+
+void TableMeta::SetIsView(const bool& _isView)
+{
+    m_isView = _isView;
+    m_isViewHasBeenSet = true;
+}
+
+bool TableMeta::IsViewHasBeenSet() const
+{
+    return m_isViewHasBeenSet;
+}
+
+string TableMeta::GetLocation() const
+{
+    return m_location;
+}
+
+void TableMeta::SetLocation(const string& _location)
+{
+    m_location = _location;
+    m_locationHasBeenSet = true;
+}
+
+bool TableMeta::LocationHasBeenSet() const
+{
+    return m_locationHasBeenSet;
 }
 

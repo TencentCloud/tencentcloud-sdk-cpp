@@ -23,6 +23,7 @@ using namespace std;
 ClusterOption::ClusterOption() :
     m_zoneHasBeenSet(false),
     m_typeHasBeenSet(false),
+    m_serviceCidrHasBeenSet(false),
     m_resourceQuotaHasBeenSet(false),
     m_limitRangeHasBeenSet(false)
 {
@@ -51,6 +52,16 @@ CoreInternalOutcome ClusterOption::Deserialize(const rapidjson::Value &value)
         }
         m_type = string(value["Type"].GetString());
         m_typeHasBeenSet = true;
+    }
+
+    if (value.HasMember("ServiceCidr") && !value["ServiceCidr"].IsNull())
+    {
+        if (!value["ServiceCidr"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `ClusterOption.ServiceCidr` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_serviceCidr = string(value["ServiceCidr"].GetString());
+        m_serviceCidrHasBeenSet = true;
     }
 
     if (value.HasMember("ResourceQuota") && !value["ResourceQuota"].IsNull())
@@ -110,6 +121,14 @@ void ClusterOption::ToJsonObject(rapidjson::Value &value, rapidjson::Document::A
         value.AddMember(iKey, rapidjson::Value(m_type.c_str(), allocator).Move(), allocator);
     }
 
+    if (m_serviceCidrHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ServiceCidr";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_serviceCidr.c_str(), allocator).Move(), allocator);
+    }
+
     if (m_resourceQuotaHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
@@ -161,6 +180,22 @@ void ClusterOption::SetType(const string& _type)
 bool ClusterOption::TypeHasBeenSet() const
 {
     return m_typeHasBeenSet;
+}
+
+string ClusterOption::GetServiceCidr() const
+{
+    return m_serviceCidr;
+}
+
+void ClusterOption::SetServiceCidr(const string& _serviceCidr)
+{
+    m_serviceCidr = _serviceCidr;
+    m_serviceCidrHasBeenSet = true;
+}
+
+bool ClusterOption::ServiceCidrHasBeenSet() const
+{
+    return m_serviceCidrHasBeenSet;
 }
 
 ResourceQuota ClusterOption::GetResourceQuota() const

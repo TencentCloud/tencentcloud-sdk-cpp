@@ -146,6 +146,43 @@ namespace TencentCloud
                      */
                     bool ResumeHasBeenSet() const;
 
+                    /**
+                     * 获取Nextflow引擎版本，取值范围：
+- 22.10.4
+- 22.10.8 
+- 23.10.1
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return NFVersion Nextflow引擎版本，取值范围：
+- 22.10.4
+- 22.10.8 
+- 23.10.1
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::string GetNFVersion() const;
+
+                    /**
+                     * 设置Nextflow引擎版本，取值范围：
+- 22.10.4
+- 22.10.8 
+- 23.10.1
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _nFVersion Nextflow引擎版本，取值范围：
+- 22.10.4
+- 22.10.8 
+- 23.10.1
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetNFVersion(const std::string& _nFVersion);
+
+                    /**
+                     * 判断参数 NFVersion 是否已赋值
+                     * @return NFVersion 是否已赋值
+                     * 
+                     */
+                    bool NFVersionHasBeenSet() const;
+
                 private:
 
                     /**
@@ -175,6 +212,16 @@ namespace TencentCloud
                      */
                     bool m_resume;
                     bool m_resumeHasBeenSet;
+
+                    /**
+                     * Nextflow引擎版本，取值范围：
+- 22.10.4
+- 22.10.8 
+- 23.10.1
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_nFVersion;
+                    bool m_nFVersionHasBeenSet;
 
                 };
             }

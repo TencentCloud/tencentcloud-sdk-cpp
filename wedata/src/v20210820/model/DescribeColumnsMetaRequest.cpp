@@ -28,7 +28,8 @@ DescribeColumnsMetaRequest::DescribeColumnsMetaRequest() :
     m_pageSizeHasBeenSet(false),
     m_filterSetHasBeenSet(false),
     m_orderFieldSetHasBeenSet(false),
-    m_isPartitionQueryHasBeenSet(false)
+    m_isPartitionQueryHasBeenSet(false),
+    m_complianceIdHasBeenSet(false)
 {
 }
 
@@ -99,6 +100,14 @@ string DescribeColumnsMetaRequest::ToJsonString() const
         string key = "IsPartitionQuery";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_isPartitionQuery, allocator);
+    }
+
+    if (m_complianceIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ComplianceId";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_complianceId, allocator);
     }
 
 
@@ -203,6 +212,22 @@ void DescribeColumnsMetaRequest::SetIsPartitionQuery(const bool& _isPartitionQue
 bool DescribeColumnsMetaRequest::IsPartitionQueryHasBeenSet() const
 {
     return m_isPartitionQueryHasBeenSet;
+}
+
+int64_t DescribeColumnsMetaRequest::GetComplianceId() const
+{
+    return m_complianceId;
+}
+
+void DescribeColumnsMetaRequest::SetComplianceId(const int64_t& _complianceId)
+{
+    m_complianceId = _complianceId;
+    m_complianceIdHasBeenSet = true;
+}
+
+bool DescribeColumnsMetaRequest::ComplianceIdHasBeenSet() const
+{
+    return m_complianceIdHasBeenSet;
 }
 
 

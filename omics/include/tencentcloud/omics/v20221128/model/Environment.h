@@ -227,6 +227,48 @@ namespace TencentCloud
                     bool AvailableHasBeenSet() const;
 
                     /**
+                     * 获取环境是否为默认环境。
+                     * @return IsDefault 环境是否为默认环境。
+                     * 
+                     */
+                    bool GetIsDefault() const;
+
+                    /**
+                     * 设置环境是否为默认环境。
+                     * @param _isDefault 环境是否为默认环境。
+                     * 
+                     */
+                    void SetIsDefault(const bool& _isDefault);
+
+                    /**
+                     * 判断参数 IsDefault 是否已赋值
+                     * @return IsDefault 是否已赋值
+                     * 
+                     */
+                    bool IsDefaultHasBeenSet() const;
+
+                    /**
+                     * 获取环境是否为托管环境。
+                     * @return IsManaged 环境是否为托管环境。
+                     * 
+                     */
+                    bool GetIsManaged() const;
+
+                    /**
+                     * 设置环境是否为托管环境。
+                     * @param _isManaged 环境是否为托管环境。
+                     * 
+                     */
+                    void SetIsManaged(const bool& _isManaged);
+
+                    /**
+                     * 判断参数 IsManaged 是否已赋值
+                     * @return IsManaged 是否已赋值
+                     * 
+                     */
+                    bool IsManagedHasBeenSet() const;
+
+                    /**
                      * 获取环境信息。
                      * @return Message 环境信息。
                      * 
@@ -369,6 +411,18 @@ namespace TencentCloud
                      */
                     bool m_available;
                     bool m_availableHasBeenSet;
+
+                    /**
+                     * 环境是否为默认环境。
+                     */
+                    bool m_isDefault;
+                    bool m_isDefaultHasBeenSet;
+
+                    /**
+                     * 环境是否为托管环境。
+                     */
+                    bool m_isManaged;
+                    bool m_isManagedHasBeenSet;
 
                     /**
                      * 环境信息。

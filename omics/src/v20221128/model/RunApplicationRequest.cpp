@@ -27,14 +27,15 @@ RunApplicationRequest::RunApplicationRequest() :
     m_nameHasBeenSet(false),
     m_environmentIdHasBeenSet(false),
     m_inputBase64HasBeenSet(false),
-    m_cacheClearDelayHasBeenSet(false),
     m_projectIdHasBeenSet(false),
     m_descriptionHasBeenSet(false),
     m_tableIdHasBeenSet(false),
     m_tableRowUuidsHasBeenSet(false),
+    m_cacheClearDelayHasBeenSet(false),
     m_applicationVersionIdHasBeenSet(false),
     m_optionHasBeenSet(false),
-    m_nFOptionHasBeenSet(false)
+    m_nFOptionHasBeenSet(false),
+    m_workDirHasBeenSet(false)
 {
 }
 
@@ -77,14 +78,6 @@ string RunApplicationRequest::ToJsonString() const
         d.AddMember(iKey, rapidjson::Value(m_inputBase64.c_str(), allocator).Move(), allocator);
     }
 
-    if (m_cacheClearDelayHasBeenSet)
-    {
-        rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "CacheClearDelay";
-        iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, m_cacheClearDelay, allocator);
-    }
-
     if (m_projectIdHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
@@ -122,6 +115,14 @@ string RunApplicationRequest::ToJsonString() const
         }
     }
 
+    if (m_cacheClearDelayHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "CacheClearDelay";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_cacheClearDelay, allocator);
+    }
+
     if (m_applicationVersionIdHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
@@ -146,6 +147,14 @@ string RunApplicationRequest::ToJsonString() const
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
         m_nFOption.ToJsonObject(d[key.c_str()], allocator);
+    }
+
+    if (m_workDirHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "WorkDir";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_workDir.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -220,22 +229,6 @@ bool RunApplicationRequest::InputBase64HasBeenSet() const
     return m_inputBase64HasBeenSet;
 }
 
-uint64_t RunApplicationRequest::GetCacheClearDelay() const
-{
-    return m_cacheClearDelay;
-}
-
-void RunApplicationRequest::SetCacheClearDelay(const uint64_t& _cacheClearDelay)
-{
-    m_cacheClearDelay = _cacheClearDelay;
-    m_cacheClearDelayHasBeenSet = true;
-}
-
-bool RunApplicationRequest::CacheClearDelayHasBeenSet() const
-{
-    return m_cacheClearDelayHasBeenSet;
-}
-
 string RunApplicationRequest::GetProjectId() const
 {
     return m_projectId;
@@ -300,6 +293,22 @@ bool RunApplicationRequest::TableRowUuidsHasBeenSet() const
     return m_tableRowUuidsHasBeenSet;
 }
 
+uint64_t RunApplicationRequest::GetCacheClearDelay() const
+{
+    return m_cacheClearDelay;
+}
+
+void RunApplicationRequest::SetCacheClearDelay(const uint64_t& _cacheClearDelay)
+{
+    m_cacheClearDelay = _cacheClearDelay;
+    m_cacheClearDelayHasBeenSet = true;
+}
+
+bool RunApplicationRequest::CacheClearDelayHasBeenSet() const
+{
+    return m_cacheClearDelayHasBeenSet;
+}
+
 string RunApplicationRequest::GetApplicationVersionId() const
 {
     return m_applicationVersionId;
@@ -346,6 +355,22 @@ void RunApplicationRequest::SetNFOption(const NFOption& _nFOption)
 bool RunApplicationRequest::NFOptionHasBeenSet() const
 {
     return m_nFOptionHasBeenSet;
+}
+
+string RunApplicationRequest::GetWorkDir() const
+{
+    return m_workDir;
+}
+
+void RunApplicationRequest::SetWorkDir(const string& _workDir)
+{
+    m_workDir = _workDir;
+    m_workDirHasBeenSet = true;
+}
+
+bool RunApplicationRequest::WorkDirHasBeenSet() const
+{
+    return m_workDirHasBeenSet;
 }
 
 

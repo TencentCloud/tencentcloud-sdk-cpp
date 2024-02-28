@@ -45,7 +45,7 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取多个条件筛选时 LicenseStatus,DeadlineStatus,ResourceId,Keywords 取交集
+                     * 获取多个条件筛选时取交集
 <li> LicenseStatus 授权状态信息,0 未使用,1 部分使用, 2 已用完, 3 不可用  4 可使用</li>
 <li> BuyTime 购买时间</li>
 <li> LicenseType  授权类型, 0 专业版-按量计费, 1专业版-包年包月 , 2 旗舰版-包年包月</li>
@@ -54,7 +54,8 @@ namespace TencentCloud
 <li>Keywords IP筛选</li>
 <li>PayMode 付费模式 0 按量计费 , 1 包年包月</li>
 <li>OrderStatus 订单状态 1 正常 2 隔离 3 销毁</li>
-                     * @return Filters 多个条件筛选时 LicenseStatus,DeadlineStatus,ResourceId,Keywords 取交集
+<li>DealNames 子订单号,最大长度10个,超出会失败</li>
+                     * @return Filters 多个条件筛选时取交集
 <li> LicenseStatus 授权状态信息,0 未使用,1 部分使用, 2 已用完, 3 不可用  4 可使用</li>
 <li> BuyTime 购买时间</li>
 <li> LicenseType  授权类型, 0 专业版-按量计费, 1专业版-包年包月 , 2 旗舰版-包年包月</li>
@@ -63,12 +64,13 @@ namespace TencentCloud
 <li>Keywords IP筛选</li>
 <li>PayMode 付费模式 0 按量计费 , 1 包年包月</li>
 <li>OrderStatus 订单状态 1 正常 2 隔离 3 销毁</li>
+<li>DealNames 子订单号,最大长度10个,超出会失败</li>
                      * 
                      */
                     std::vector<Filters> GetFilters() const;
 
                     /**
-                     * 设置多个条件筛选时 LicenseStatus,DeadlineStatus,ResourceId,Keywords 取交集
+                     * 设置多个条件筛选时取交集
 <li> LicenseStatus 授权状态信息,0 未使用,1 部分使用, 2 已用完, 3 不可用  4 可使用</li>
 <li> BuyTime 购买时间</li>
 <li> LicenseType  授权类型, 0 专业版-按量计费, 1专业版-包年包月 , 2 旗舰版-包年包月</li>
@@ -77,7 +79,8 @@ namespace TencentCloud
 <li>Keywords IP筛选</li>
 <li>PayMode 付费模式 0 按量计费 , 1 包年包月</li>
 <li>OrderStatus 订单状态 1 正常 2 隔离 3 销毁</li>
-                     * @param _filters 多个条件筛选时 LicenseStatus,DeadlineStatus,ResourceId,Keywords 取交集
+<li>DealNames 子订单号,最大长度10个,超出会失败</li>
+                     * @param _filters 多个条件筛选时取交集
 <li> LicenseStatus 授权状态信息,0 未使用,1 部分使用, 2 已用完, 3 不可用  4 可使用</li>
 <li> BuyTime 购买时间</li>
 <li> LicenseType  授权类型, 0 专业版-按量计费, 1专业版-包年包月 , 2 旗舰版-包年包月</li>
@@ -86,6 +89,7 @@ namespace TencentCloud
 <li>Keywords IP筛选</li>
 <li>PayMode 付费模式 0 按量计费 , 1 包年包月</li>
 <li>OrderStatus 订单状态 1 正常 2 隔离 3 销毁</li>
+<li>DealNames 子订单号,最大长度10个,超出会失败</li>
                      * 
                      */
                     void SetFilters(const std::vector<Filters>& _filters);
@@ -163,7 +167,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 多个条件筛选时 LicenseStatus,DeadlineStatus,ResourceId,Keywords 取交集
+                     * 多个条件筛选时取交集
 <li> LicenseStatus 授权状态信息,0 未使用,1 部分使用, 2 已用完, 3 不可用  4 可使用</li>
 <li> BuyTime 购买时间</li>
 <li> LicenseType  授权类型, 0 专业版-按量计费, 1专业版-包年包月 , 2 旗舰版-包年包月</li>
@@ -172,6 +176,7 @@ namespace TencentCloud
 <li>Keywords IP筛选</li>
 <li>PayMode 付费模式 0 按量计费 , 1 包年包月</li>
 <li>OrderStatus 订单状态 1 正常 2 隔离 3 销毁</li>
+<li>DealNames 子订单号,最大长度10个,超出会失败</li>
                      */
                     std::vector<Filters> m_filters;
                     bool m_filtersHasBeenSet;

@@ -548,6 +548,81 @@ namespace TencentCloud
                      */
                     bool ChannelTypeHasBeenSet() const;
 
+                    /**
+                     * 获取展示类型
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return DisplayType 展示类型
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::string GetDisplayType() const;
+
+                    /**
+                     * 设置展示类型
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _displayType 展示类型
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetDisplayType(const std::string& _displayType);
+
+                    /**
+                     * 判断参数 DisplayType 是否已赋值
+                     * @return DisplayType 是否已赋值
+                     * 
+                     */
+                    bool DisplayTypeHasBeenSet() const;
+
+                    /**
+                     * 获取表类型
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return EngineType 表类型
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::string GetEngineType() const;
+
+                    /**
+                     * 设置表类型
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _engineType 表类型
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetEngineType(const std::string& _engineType);
+
+                    /**
+                     * 判断参数 EngineType 是否已赋值
+                     * @return EngineType 是否已赋值
+                     * 
+                     */
+                    bool EngineTypeHasBeenSet() const;
+
+                    /**
+                     * 获取表类型
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return TableType 表类型
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::string GetTableType() const;
+
+                    /**
+                     * 设置表类型
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _tableType 表类型
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetTableType(const std::string& _tableType);
+
+                    /**
+                     * 判断参数 TableType 是否已赋值
+                     * @return TableType 是否已赋值
+                     * 
+                     */
+                    bool TableTypeHasBeenSet() const;
+
                 private:
 
                     /**
@@ -689,6 +764,27 @@ namespace TencentCloud
                      */
                     std::string m_channelType;
                     bool m_channelTypeHasBeenSet;
+
+                    /**
+                     * 展示类型
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_displayType;
+                    bool m_displayTypeHasBeenSet;
+
+                    /**
+                     * 表类型
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_engineType;
+                    bool m_engineTypeHasBeenSet;
+
+                    /**
+                     * 表类型
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_tableType;
+                    bool m_tableTypeHasBeenSet;
 
                 };
             }

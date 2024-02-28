@@ -296,6 +296,31 @@ namespace TencentCloud
                      */
                     bool ProtocolTypeHasBeenSet() const;
 
+                    /**
+                     * 获取模板包含地址数量
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return IPNum 模板包含地址数量
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    int64_t GetIPNum() const;
+
+                    /**
+                     * 设置模板包含地址数量
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _iPNum 模板包含地址数量
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetIPNum(const int64_t& _iPNum);
+
+                    /**
+                     * 判断参数 IPNum 是否已赋值
+                     * @return IPNum 是否已赋值
+                     * 
+                     */
+                    bool IPNumHasBeenSet() const;
+
                 private:
 
                     /**
@@ -367,6 +392,13 @@ namespace TencentCloud
                      */
                     std::string m_protocolType;
                     bool m_protocolTypeHasBeenSet;
+
+                    /**
+                     * 模板包含地址数量
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    int64_t m_iPNum;
+                    bool m_iPNumHasBeenSet;
 
                 };
             }

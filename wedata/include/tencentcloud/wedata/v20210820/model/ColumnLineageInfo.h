@@ -98,31 +98,6 @@ namespace TencentCloud
                     bool DatasourceIdHasBeenSet() const;
 
                     /**
-                     * 获取表ID
-注意：此字段可能返回 null，表示取不到有效值。
-                     * @return TableId 表ID
-注意：此字段可能返回 null，表示取不到有效值。
-                     * 
-                     */
-                    std::string GetTableId() const;
-
-                    /**
-                     * 设置表ID
-注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _tableId 表ID
-注意：此字段可能返回 null，表示取不到有效值。
-                     * 
-                     */
-                    void SetTableId(const std::string& _tableId);
-
-                    /**
-                     * 判断参数 TableId 是否已赋值
-                     * @return TableId 是否已赋值
-                     * 
-                     */
-                    bool TableIdHasBeenSet() const;
-
-                    /**
                      * 获取字段名称
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return ColumnName 字段名称
@@ -622,6 +597,31 @@ namespace TencentCloud
                      */
                     bool ExtParamsHasBeenSet() const;
 
+                    /**
+                     * 获取表ID
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return TableId 表ID
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::string GetTableId() const;
+
+                    /**
+                     * 设置表ID
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _tableId 表ID
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetTableId(const std::string& _tableId);
+
+                    /**
+                     * 判断参数 TableId 是否已赋值
+                     * @return TableId 是否已赋值
+                     * 
+                     */
+                    bool TableIdHasBeenSet() const;
+
                 private:
 
                     /**
@@ -637,13 +637,6 @@ namespace TencentCloud
                      */
                     std::string m_datasourceId;
                     bool m_datasourceIdHasBeenSet;
-
-                    /**
-                     * 表ID
-注意：此字段可能返回 null，表示取不到有效值。
-                     */
-                    std::string m_tableId;
-                    bool m_tableIdHasBeenSet;
 
                     /**
                      * 字段名称
@@ -784,6 +777,13 @@ namespace TencentCloud
                      */
                     std::vector<LineageParamRecord> m_extParams;
                     bool m_extParamsHasBeenSet;
+
+                    /**
+                     * 表ID
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_tableId;
+                    bool m_tableIdHasBeenSet;
 
                 };
             }

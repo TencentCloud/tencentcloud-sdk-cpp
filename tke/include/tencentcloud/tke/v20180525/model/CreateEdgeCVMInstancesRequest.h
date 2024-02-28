@@ -43,15 +43,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取集群id
-                     * @return ClusterID 集群id
+                     * 获取集群id，边缘集群需要先开启公网访问才能添加cvm节点
+                     * @return ClusterID 集群id，边缘集群需要先开启公网访问才能添加cvm节点
                      * 
                      */
                     std::string GetClusterID() const;
 
                     /**
-                     * 设置集群id
-                     * @param _clusterID 集群id
+                     * 设置集群id，边缘集群需要先开启公网访问才能添加cvm节点
+                     * @param _clusterID 集群id，边缘集群需要先开启公网访问才能添加cvm节点
                      * 
                      */
                     void SetClusterID(const std::string& _clusterID);
@@ -192,7 +192,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 集群id
+                     * 集群id，边缘集群需要先开启公网访问才能添加cvm节点
                      */
                     std::string m_clusterID;
                     bool m_clusterIDHasBeenSet;

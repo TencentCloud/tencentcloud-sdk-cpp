@@ -1224,6 +1224,85 @@ namespace TencentCloud
                      */
                     bool ColumnsHasBeenSet() const;
 
+                    /**
+                     * 获取表采集类型
+TABLE, VIEW, MANAGED_TABLE(Hive管理表), EXTERNAL_TABLE(Hive外部表), VIRTUAL_VIEW(虚拟视图), MATERIALIZED_VIEW(物化视图), LATERAL_VIEW, INDEX_TABLE(索引表), END_SELECT(查询结构), INSTANCE(中间临时表类型(数据血缘)), CDW(CDW表类型)
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return MetaCrawlType 表采集类型
+TABLE, VIEW, MANAGED_TABLE(Hive管理表), EXTERNAL_TABLE(Hive外部表), VIRTUAL_VIEW(虚拟视图), MATERIALIZED_VIEW(物化视图), LATERAL_VIEW, INDEX_TABLE(索引表), END_SELECT(查询结构), INSTANCE(中间临时表类型(数据血缘)), CDW(CDW表类型)
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::string GetMetaCrawlType() const;
+
+                    /**
+                     * 设置表采集类型
+TABLE, VIEW, MANAGED_TABLE(Hive管理表), EXTERNAL_TABLE(Hive外部表), VIRTUAL_VIEW(虚拟视图), MATERIALIZED_VIEW(物化视图), LATERAL_VIEW, INDEX_TABLE(索引表), END_SELECT(查询结构), INSTANCE(中间临时表类型(数据血缘)), CDW(CDW表类型)
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _metaCrawlType 表采集类型
+TABLE, VIEW, MANAGED_TABLE(Hive管理表), EXTERNAL_TABLE(Hive外部表), VIRTUAL_VIEW(虚拟视图), MATERIALIZED_VIEW(物化视图), LATERAL_VIEW, INDEX_TABLE(索引表), END_SELECT(查询结构), INSTANCE(中间临时表类型(数据血缘)), CDW(CDW表类型)
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetMetaCrawlType(const std::string& _metaCrawlType);
+
+                    /**
+                     * 判断参数 MetaCrawlType 是否已赋值
+                     * @return MetaCrawlType 是否已赋值
+                     * 
+                     */
+                    bool MetaCrawlTypeHasBeenSet() const;
+
+                    /**
+                     * 获取是否视图
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return IsView 是否视图
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    bool GetIsView() const;
+
+                    /**
+                     * 设置是否视图
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _isView 是否视图
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetIsView(const bool& _isView);
+
+                    /**
+                     * 判断参数 IsView 是否已赋值
+                     * @return IsView 是否已赋值
+                     * 
+                     */
+                    bool IsViewHasBeenSet() const;
+
+                    /**
+                     * 获取存储位置
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return Location 存储位置
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::string GetLocation() const;
+
+                    /**
+                     * 设置存储位置
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _location 存储位置
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetLocation(const std::string& _location);
+
+                    /**
+                     * 判断参数 Location 是否已赋值
+                     * @return Location 是否已赋值
+                     * 
+                     */
+                    bool LocationHasBeenSet() const;
+
                 private:
 
                     /**
@@ -1554,6 +1633,28 @@ namespace TencentCloud
                      */
                     std::vector<SearchColumnDocVO> m_columns;
                     bool m_columnsHasBeenSet;
+
+                    /**
+                     * 表采集类型
+TABLE, VIEW, MANAGED_TABLE(Hive管理表), EXTERNAL_TABLE(Hive外部表), VIRTUAL_VIEW(虚拟视图), MATERIALIZED_VIEW(物化视图), LATERAL_VIEW, INDEX_TABLE(索引表), END_SELECT(查询结构), INSTANCE(中间临时表类型(数据血缘)), CDW(CDW表类型)
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_metaCrawlType;
+                    bool m_metaCrawlTypeHasBeenSet;
+
+                    /**
+                     * 是否视图
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    bool m_isView;
+                    bool m_isViewHasBeenSet;
+
+                    /**
+                     * 存储位置
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_location;
+                    bool m_locationHasBeenSet;
 
                 };
             }

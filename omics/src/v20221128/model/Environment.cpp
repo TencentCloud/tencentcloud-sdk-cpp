@@ -28,6 +28,8 @@ Environment::Environment() :
     m_typeHasBeenSet(false),
     m_statusHasBeenSet(false),
     m_availableHasBeenSet(false),
+    m_isDefaultHasBeenSet(false),
+    m_isManagedHasBeenSet(false),
     m_messageHasBeenSet(false),
     m_resourceIdsHasBeenSet(false),
     m_lastWorkflowUuidHasBeenSet(false),
@@ -108,6 +110,26 @@ CoreInternalOutcome Environment::Deserialize(const rapidjson::Value &value)
         }
         m_available = value["Available"].GetBool();
         m_availableHasBeenSet = true;
+    }
+
+    if (value.HasMember("IsDefault") && !value["IsDefault"].IsNull())
+    {
+        if (!value["IsDefault"].IsBool())
+        {
+            return CoreInternalOutcome(Core::Error("response `Environment.IsDefault` IsBool=false incorrectly").SetRequestId(requestId));
+        }
+        m_isDefault = value["IsDefault"].GetBool();
+        m_isDefaultHasBeenSet = true;
+    }
+
+    if (value.HasMember("IsManaged") && !value["IsManaged"].IsNull())
+    {
+        if (!value["IsManaged"].IsBool())
+        {
+            return CoreInternalOutcome(Core::Error("response `Environment.IsManaged` IsBool=false incorrectly").SetRequestId(requestId));
+        }
+        m_isManaged = value["IsManaged"].GetBool();
+        m_isManagedHasBeenSet = true;
     }
 
     if (value.HasMember("Message") && !value["Message"].IsNull())
@@ -218,6 +240,22 @@ void Environment::ToJsonObject(rapidjson::Value &value, rapidjson::Document::All
         string key = "Available";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_available, allocator);
+    }
+
+    if (m_isDefaultHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "IsDefault";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_isDefault, allocator);
+    }
+
+    if (m_isManagedHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "IsManaged";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_isManaged, allocator);
     }
 
     if (m_messageHasBeenSet)
@@ -366,6 +404,38 @@ void Environment::SetAvailable(const bool& _available)
 bool Environment::AvailableHasBeenSet() const
 {
     return m_availableHasBeenSet;
+}
+
+bool Environment::GetIsDefault() const
+{
+    return m_isDefault;
+}
+
+void Environment::SetIsDefault(const bool& _isDefault)
+{
+    m_isDefault = _isDefault;
+    m_isDefaultHasBeenSet = true;
+}
+
+bool Environment::IsDefaultHasBeenSet() const
+{
+    return m_isDefaultHasBeenSet;
+}
+
+bool Environment::GetIsManaged() const
+{
+    return m_isManaged;
+}
+
+void Environment::SetIsManaged(const bool& _isManaged)
+{
+    m_isManaged = _isManaged;
+    m_isManagedHasBeenSet = true;
+}
+
+bool Environment::IsManagedHasBeenSet() const
+{
+    return m_isManagedHasBeenSet;
 }
 
 string Environment::GetMessage() const

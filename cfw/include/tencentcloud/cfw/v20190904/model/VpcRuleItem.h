@@ -123,15 +123,15 @@ domain：域名规则，例如*.qq.com
                     bool DestContentHasBeenSet() const;
 
                     /**
-                     * 获取访问目的类型，类型可以为：net，domain
-                     * @return DestType 访问目的类型，类型可以为：net，domain
+                     * 获取访问目的类型，类型可以为：net，domain，dnsparse
+                     * @return DestType 访问目的类型，类型可以为：net，domain，dnsparse
                      * 
                      */
                     std::string GetDestType() const;
 
                     /**
-                     * 设置访问目的类型，类型可以为：net，domain
-                     * @param _destType 访问目的类型，类型可以为：net，domain
+                     * 设置访问目的类型，类型可以为：net，domain，dnsparse
+                     * @param _destType 访问目的类型，类型可以为：net，domain，dnsparse
                      * 
                      */
                     void SetDestType(const std::string& _destType);
@@ -674,7 +674,7 @@ domain：域名规则，例如*.qq.com
                     bool m_destContentHasBeenSet;
 
                     /**
-                     * 访问目的类型，类型可以为：net，domain
+                     * 访问目的类型，类型可以为：net，domain，dnsparse
                      */
                     std::string m_destType;
                     bool m_destTypeHasBeenSet;

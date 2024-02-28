@@ -64,15 +64,15 @@ namespace TencentCloud
                     bool ClusterIdHasBeenSet() const;
 
                     /**
-                     * 获取网卡名
-                     * @return Interface 网卡名
+                     * 获取网卡名,指定边缘节点上kubelet向apiserver注册使用的网卡
+                     * @return Interface 网卡名,指定边缘节点上kubelet向apiserver注册使用的网卡
                      * 
                      */
                     std::string GetInterface() const;
 
                     /**
-                     * 设置网卡名
-                     * @param _interface 网卡名
+                     * 设置网卡名,指定边缘节点上kubelet向apiserver注册使用的网卡
+                     * @param _interface 网卡名,指定边缘节点上kubelet向apiserver注册使用的网卡
                      * 
                      */
                     void SetInterface(const std::string& _interface);
@@ -156,7 +156,7 @@ namespace TencentCloud
                     bool m_clusterIdHasBeenSet;
 
                     /**
-                     * 网卡名
+                     * 网卡名,指定边缘节点上kubelet向apiserver注册使用的网卡
                      */
                     std::string m_interface;
                     bool m_interfaceHasBeenSet;

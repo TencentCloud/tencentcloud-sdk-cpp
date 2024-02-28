@@ -25,7 +25,8 @@ InstanceLogInfoOpsDto::InstanceLogInfoOpsDto() :
     m_yarnLogInfoHasBeenSet(false),
     m_dataLogInfoHasBeenSet(false),
     m_thirdTaskRunLogInfoHasBeenSet(false),
-    m_thirdTaskLogUrlDescHasBeenSet(false)
+    m_thirdTaskLogUrlDescHasBeenSet(false),
+    m_lineCountHasBeenSet(false)
 {
 }
 
@@ -87,6 +88,16 @@ CoreInternalOutcome InstanceLogInfoOpsDto::Deserialize(const rapidjson::Value &v
         m_thirdTaskLogUrlDescHasBeenSet = true;
     }
 
+    if (value.HasMember("LineCount") && !value["LineCount"].IsNull())
+    {
+        if (!value["LineCount"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `InstanceLogInfoOpsDto.LineCount` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_lineCount = value["LineCount"].GetInt64();
+        m_lineCountHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -137,6 +148,14 @@ void InstanceLogInfoOpsDto::ToJsonObject(rapidjson::Value &value, rapidjson::Doc
         string key = "ThirdTaskLogUrlDesc";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_thirdTaskLogUrlDesc.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_lineCountHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "LineCount";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_lineCount, allocator);
     }
 
 }
@@ -220,5 +239,21 @@ void InstanceLogInfoOpsDto::SetThirdTaskLogUrlDesc(const string& _thirdTaskLogUr
 bool InstanceLogInfoOpsDto::ThirdTaskLogUrlDescHasBeenSet() const
 {
     return m_thirdTaskLogUrlDescHasBeenSet;
+}
+
+int64_t InstanceLogInfoOpsDto::GetLineCount() const
+{
+    return m_lineCount;
+}
+
+void InstanceLogInfoOpsDto::SetLineCount(const int64_t& _lineCount)
+{
+    m_lineCount = _lineCount;
+    m_lineCountHasBeenSet = true;
+}
+
+bool InstanceLogInfoOpsDto::LineCountHasBeenSet() const
+{
+    return m_lineCountHasBeenSet;
 }
 

@@ -29,7 +29,8 @@ CreateCloudStorageRequest::CreateCloudStorageRequest() :
     m_overrideHasBeenSet(false),
     m_packageQueueHasBeenSet(false),
     m_orderIdHasBeenSet(false),
-    m_channelIdHasBeenSet(false)
+    m_channelIdHasBeenSet(false),
+    m_storageRegionHasBeenSet(false)
 {
 }
 
@@ -94,6 +95,14 @@ string CreateCloudStorageRequest::ToJsonString() const
         string key = "ChannelId";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_channelId, allocator);
+    }
+
+    if (m_storageRegionHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "StorageRegion";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_storageRegion.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -214,6 +223,22 @@ void CreateCloudStorageRequest::SetChannelId(const uint64_t& _channelId)
 bool CreateCloudStorageRequest::ChannelIdHasBeenSet() const
 {
     return m_channelIdHasBeenSet;
+}
+
+string CreateCloudStorageRequest::GetStorageRegion() const
+{
+    return m_storageRegion;
+}
+
+void CreateCloudStorageRequest::SetStorageRegion(const string& _storageRegion)
+{
+    m_storageRegion = _storageRegion;
+    m_storageRegionHasBeenSet = true;
+}
+
+bool CreateCloudStorageRequest::StorageRegionHasBeenSet() const
+{
+    return m_storageRegionHasBeenSet;
 }
 
 

@@ -45,15 +45,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取集群id
-                     * @return ClusterID 集群id
+                     * 获取集群id，边缘集群需要先开启公网访问才能添加ecm节点
+                     * @return ClusterID 集群id，边缘集群需要先开启公网访问才能添加ecm节点
                      * 
                      */
                     std::string GetClusterID() const;
 
                     /**
-                     * 设置集群id
-                     * @param _clusterID 集群id
+                     * 设置集群id，边缘集群需要先开启公网访问才能添加ecm节点
+                     * @param _clusterID 集群id，边缘集群需要先开启公网访问才能添加ecm节点
                      * 
                      */
                     void SetClusterID(const std::string& _clusterID);
@@ -66,15 +66,15 @@ namespace TencentCloud
                     bool ClusterIDHasBeenSet() const;
 
                     /**
-                     * 获取模块id
-                     * @return ModuleId 模块id
+                     * 获取边缘模块id
+                     * @return ModuleId 边缘模块id
                      * 
                      */
                     std::string GetModuleId() const;
 
                     /**
-                     * 设置模块id
-                     * @param _moduleId 模块id
+                     * 设置边缘模块id
+                     * @param _moduleId 边缘模块id
                      * 
                      */
                     void SetModuleId(const std::string& _moduleId);
@@ -299,13 +299,13 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 集群id
+                     * 集群id，边缘集群需要先开启公网访问才能添加ecm节点
                      */
                     std::string m_clusterID;
                     bool m_clusterIDHasBeenSet;
 
                     /**
-                     * 模块id
+                     * 边缘模块id
                      */
                     std::string m_moduleId;
                     bool m_moduleIdHasBeenSet;

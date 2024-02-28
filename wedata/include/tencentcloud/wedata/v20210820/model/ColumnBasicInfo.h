@@ -521,6 +521,31 @@ namespace TencentCloud
                      */
                     bool UpdateTimeHasBeenSet() const;
 
+                    /**
+                     * 获取精度
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return Scale 精度
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    int64_t GetScale() const;
+
+                    /**
+                     * 设置精度
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _scale 精度
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetScale(const int64_t& _scale);
+
+                    /**
+                     * 判断参数 Scale 是否已赋值
+                     * @return Scale 是否已赋值
+                     * 
+                     */
+                    bool ScaleHasBeenSet() const;
+
                 private:
 
                     /**
@@ -655,6 +680,13 @@ namespace TencentCloud
                      */
                     std::string m_updateTime;
                     bool m_updateTimeHasBeenSet;
+
+                    /**
+                     * 精度
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    int64_t m_scale;
+                    bool m_scaleHasBeenSet;
 
                 };
             }

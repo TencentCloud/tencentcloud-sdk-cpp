@@ -44,9 +44,9 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取可升级的集群组件和
+                     * 获取可升级的集群组件及其版本
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return ComponentVersion 可升级的集群组件和
+                     * @return ComponentVersion 可升级的集群组件及其版本
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -126,7 +126,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 可升级的集群组件和
+                     * 可升级的集群组件及其版本
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_componentVersion;

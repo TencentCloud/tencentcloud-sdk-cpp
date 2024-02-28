@@ -296,15 +296,15 @@ namespace TencentCloud
                     bool StartBackupPeriodSaveDateHasBeenSet() const;
 
                     /**
-                     * 获取是否开启数据备份归档策略，off-关闭，on-打开，默认为off
-                     * @return EnableBackupArchive 是否开启数据备份归档策略，off-关闭，on-打开，默认为off
+                     * 获取是否开启数据备份归档策略，off-关闭，on-打开，如果不指定该入参， 则保持不变。
+                     * @return EnableBackupArchive 是否开启数据备份归档策略，off-关闭，on-打开，如果不指定该入参， 则保持不变。
                      * 
                      */
                     std::string GetEnableBackupArchive() const;
 
                     /**
-                     * 设置是否开启数据备份归档策略，off-关闭，on-打开，默认为off
-                     * @param _enableBackupArchive 是否开启数据备份归档策略，off-关闭，on-打开，默认为off
+                     * 设置是否开启数据备份归档策略，off-关闭，on-打开，如果不指定该入参， 则保持不变。
+                     * @param _enableBackupArchive 是否开启数据备份归档策略，off-关闭，on-打开，如果不指定该入参， 则保持不变。
                      * 
                      */
                     void SetEnableBackupArchive(const std::string& _enableBackupArchive);
@@ -359,15 +359,15 @@ namespace TencentCloud
                     bool BinlogArchiveDaysHasBeenSet() const;
 
                     /**
-                     * 获取是否开启日志备份归档策略，off-关闭，on-打开，默认为off
-                     * @return EnableBinlogArchive 是否开启日志备份归档策略，off-关闭，on-打开，默认为off
+                     * 获取是否开启日志备份归档策略，off-关闭，on-打开，如果不指定该入参， 则保持不变。
+                     * @return EnableBinlogArchive 是否开启日志备份归档策略，off-关闭，on-打开，如果不指定该入参， 则保持不变。
                      * 
                      */
                     std::string GetEnableBinlogArchive() const;
 
                     /**
-                     * 设置是否开启日志备份归档策略，off-关闭，on-打开，默认为off
-                     * @param _enableBinlogArchive 是否开启日志备份归档策略，off-关闭，on-打开，默认为off
+                     * 设置是否开启日志备份归档策略，off-关闭，on-打开，如果不指定该入参， 则保持不变。
+                     * @param _enableBinlogArchive 是否开启日志备份归档策略，off-关闭，on-打开，如果不指定该入参， 则保持不变。
                      * 
                      */
                     void SetEnableBinlogArchive(const std::string& _enableBinlogArchive);
@@ -380,15 +380,15 @@ namespace TencentCloud
                     bool EnableBinlogArchiveHasBeenSet() const;
 
                     /**
-                     * 获取是否开启数据备份标准存储策略，off-关闭，on-打开，默认为off
-                     * @return EnableBackupStandby 是否开启数据备份标准存储策略，off-关闭，on-打开，默认为off
+                     * 获取是否开启数据备份标准存储策略，off-关闭，on-打开，如果不指定该入参， 则保持不变。
+                     * @return EnableBackupStandby 是否开启数据备份标准存储策略，off-关闭，on-打开，如果不指定该入参， 则保持不变。
                      * 
                      */
                     std::string GetEnableBackupStandby() const;
 
                     /**
-                     * 设置是否开启数据备份标准存储策略，off-关闭，on-打开，默认为off
-                     * @param _enableBackupStandby 是否开启数据备份标准存储策略，off-关闭，on-打开，默认为off
+                     * 设置是否开启数据备份标准存储策略，off-关闭，on-打开，如果不指定该入参， 则保持不变。
+                     * @param _enableBackupStandby 是否开启数据备份标准存储策略，off-关闭，on-打开，如果不指定该入参， 则保持不变。
                      * 
                      */
                     void SetEnableBackupStandby(const std::string& _enableBackupStandby);
@@ -422,15 +422,15 @@ namespace TencentCloud
                     bool BackupStandbyDaysHasBeenSet() const;
 
                     /**
-                     * 获取是否开启日志备份标准存储策略，off-关闭，on-打开，默认为off
-                     * @return EnableBinlogStandby 是否开启日志备份标准存储策略，off-关闭，on-打开，默认为off
+                     * 获取是否开启日志备份标准存储策略，off-关闭，on-打开，如果不指定该入参， 则保持不变。
+                     * @return EnableBinlogStandby 是否开启日志备份标准存储策略，off-关闭，on-打开，如果不指定该入参， 则保持不变。
                      * 
                      */
                     std::string GetEnableBinlogStandby() const;
 
                     /**
-                     * 设置是否开启日志备份标准存储策略，off-关闭，on-打开，默认为off
-                     * @param _enableBinlogStandby 是否开启日志备份标准存储策略，off-关闭，on-打开，默认为off
+                     * 设置是否开启日志备份标准存储策略，off-关闭，on-打开，如果不指定该入参， 则保持不变。
+                     * @param _enableBinlogStandby 是否开启日志备份标准存储策略，off-关闭，on-打开，如果不指定该入参， 则保持不变。
                      * 
                      */
                     void SetEnableBinlogStandby(const std::string& _enableBinlogStandby);
@@ -538,7 +538,7 @@ namespace TencentCloud
                     bool m_startBackupPeriodSaveDateHasBeenSet;
 
                     /**
-                     * 是否开启数据备份归档策略，off-关闭，on-打开，默认为off
+                     * 是否开启数据备份归档策略，off-关闭，on-打开，如果不指定该入参， 则保持不变。
                      */
                     std::string m_enableBackupArchive;
                     bool m_enableBackupArchiveHasBeenSet;
@@ -556,13 +556,13 @@ namespace TencentCloud
                     bool m_binlogArchiveDaysHasBeenSet;
 
                     /**
-                     * 是否开启日志备份归档策略，off-关闭，on-打开，默认为off
+                     * 是否开启日志备份归档策略，off-关闭，on-打开，如果不指定该入参， 则保持不变。
                      */
                     std::string m_enableBinlogArchive;
                     bool m_enableBinlogArchiveHasBeenSet;
 
                     /**
-                     * 是否开启数据备份标准存储策略，off-关闭，on-打开，默认为off
+                     * 是否开启数据备份标准存储策略，off-关闭，on-打开，如果不指定该入参， 则保持不变。
                      */
                     std::string m_enableBackupStandby;
                     bool m_enableBackupStandbyHasBeenSet;
@@ -574,7 +574,7 @@ namespace TencentCloud
                     bool m_backupStandbyDaysHasBeenSet;
 
                     /**
-                     * 是否开启日志备份标准存储策略，off-关闭，on-打开，默认为off
+                     * 是否开启日志备份标准存储策略，off-关闭，on-打开，如果不指定该入参， 则保持不变。
                      */
                     std::string m_enableBinlogStandby;
                     bool m_enableBinlogStandbyHasBeenSet;

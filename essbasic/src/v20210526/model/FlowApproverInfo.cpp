@@ -45,7 +45,8 @@ FlowApproverInfo::FlowApproverInfo() :
     m_notifyTypeHasBeenSet(false),
     m_addSignComponentsLimitsHasBeenSet(false),
     m_approverRoleNameHasBeenSet(false),
-    m_signTypeSelectorHasBeenSet(false)
+    m_signTypeSelectorHasBeenSet(false),
+    m_componentsHasBeenSet(false)
 {
 }
 
@@ -340,6 +341,26 @@ CoreInternalOutcome FlowApproverInfo::Deserialize(const rapidjson::Value &value)
         m_signTypeSelectorHasBeenSet = true;
     }
 
+    if (value.HasMember("Components") && !value["Components"].IsNull())
+    {
+        if (!value["Components"].IsArray())
+            return CoreInternalOutcome(Core::Error("response `FlowApproverInfo.Components` is not array type"));
+
+        const rapidjson::Value &tmpValue = value["Components"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            Component item;
+            CoreInternalOutcome outcome = item.Deserialize(*itr);
+            if (!outcome.IsSuccess())
+            {
+                outcome.GetError().SetRequestId(requestId);
+                return outcome;
+            }
+            m_components.push_back(item);
+        }
+        m_componentsHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -575,6 +596,21 @@ void FlowApproverInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Document
         string key = "SignTypeSelector";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_signTypeSelector, allocator);
+    }
+
+    if (m_componentsHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Components";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_components.begin(); itr != m_components.end(); ++itr, ++i)
+        {
+            value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(value[key.c_str()][i], allocator);
+        }
     }
 
 }
@@ -978,5 +1014,21 @@ void FlowApproverInfo::SetSignTypeSelector(const uint64_t& _signTypeSelector)
 bool FlowApproverInfo::SignTypeSelectorHasBeenSet() const
 {
     return m_signTypeSelectorHasBeenSet;
+}
+
+vector<Component> FlowApproverInfo::GetComponents() const
+{
+    return m_components;
+}
+
+void FlowApproverInfo::SetComponents(const vector<Component>& _components)
+{
+    m_components = _components;
+    m_componentsHasBeenSet = true;
+}
+
+bool FlowApproverInfo::ComponentsHasBeenSet() const
+{
+    return m_componentsHasBeenSet;
 }
 

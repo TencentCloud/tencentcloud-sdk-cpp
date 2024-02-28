@@ -3351,6 +3351,49 @@ LighthouseClient::ModifyDisksAttributeOutcomeCallable LighthouseClient::ModifyDi
     return task->get_future();
 }
 
+LighthouseClient::ModifyDisksBackupQuotaOutcome LighthouseClient::ModifyDisksBackupQuota(const ModifyDisksBackupQuotaRequest &request)
+{
+    auto outcome = MakeRequest(request, "ModifyDisksBackupQuota");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ModifyDisksBackupQuotaResponse rsp = ModifyDisksBackupQuotaResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ModifyDisksBackupQuotaOutcome(rsp);
+        else
+            return ModifyDisksBackupQuotaOutcome(o.GetError());
+    }
+    else
+    {
+        return ModifyDisksBackupQuotaOutcome(outcome.GetError());
+    }
+}
+
+void LighthouseClient::ModifyDisksBackupQuotaAsync(const ModifyDisksBackupQuotaRequest& request, const ModifyDisksBackupQuotaAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->ModifyDisksBackupQuota(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+LighthouseClient::ModifyDisksBackupQuotaOutcomeCallable LighthouseClient::ModifyDisksBackupQuotaCallable(const ModifyDisksBackupQuotaRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<ModifyDisksBackupQuotaOutcome()>>(
+        [this, request]()
+        {
+            return this->ModifyDisksBackupQuota(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 LighthouseClient::ModifyDisksRenewFlagOutcome LighthouseClient::ModifyDisksRenewFlag(const ModifyDisksRenewFlagRequest &request)
 {
     auto outcome = MakeRequest(request, "ModifyDisksRenewFlag");
@@ -4247,6 +4290,49 @@ LighthouseClient::ResetInstancesPasswordOutcomeCallable LighthouseClient::ResetI
         [this, request]()
         {
             return this->ResetInstancesPassword(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+LighthouseClient::ResizeDisksOutcome LighthouseClient::ResizeDisks(const ResizeDisksRequest &request)
+{
+    auto outcome = MakeRequest(request, "ResizeDisks");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ResizeDisksResponse rsp = ResizeDisksResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ResizeDisksOutcome(rsp);
+        else
+            return ResizeDisksOutcome(o.GetError());
+    }
+    else
+    {
+        return ResizeDisksOutcome(outcome.GetError());
+    }
+}
+
+void LighthouseClient::ResizeDisksAsync(const ResizeDisksRequest& request, const ResizeDisksAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->ResizeDisks(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+LighthouseClient::ResizeDisksOutcomeCallable LighthouseClient::ResizeDisksCallable(const ResizeDisksRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<ResizeDisksOutcome()>>(
+        [this, request]()
+        {
+            return this->ResizeDisks(request);
         }
     );
 

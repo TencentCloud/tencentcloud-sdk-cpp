@@ -30,7 +30,9 @@ ColumnMeta::ColumnMeta() :
     m_nameHasBeenSet(false),
     m_columnFamiliesFieldSetHasBeenSet(false),
     m_dictionaryIdHasBeenSet(false),
-    m_dictionaryNameHasBeenSet(false)
+    m_dictionaryNameHasBeenSet(false),
+    m_levelNameHasBeenSet(false),
+    m_levelRankHasBeenSet(false)
 {
 }
 
@@ -149,6 +151,26 @@ CoreInternalOutcome ColumnMeta::Deserialize(const rapidjson::Value &value)
         m_dictionaryNameHasBeenSet = true;
     }
 
+    if (value.HasMember("LevelName") && !value["LevelName"].IsNull())
+    {
+        if (!value["LevelName"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `ColumnMeta.LevelName` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_levelName = string(value["LevelName"].GetString());
+        m_levelNameHasBeenSet = true;
+    }
+
+    if (value.HasMember("LevelRank") && !value["LevelRank"].IsNull())
+    {
+        if (!value["LevelRank"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `ColumnMeta.LevelRank` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_levelRank = value["LevelRank"].GetInt64();
+        m_levelRankHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -241,6 +263,22 @@ void ColumnMeta::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Allo
         string key = "DictionaryName";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_dictionaryName.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_levelNameHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "LevelName";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_levelName.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_levelRankHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "LevelRank";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_levelRank, allocator);
     }
 
 }
@@ -404,5 +442,37 @@ void ColumnMeta::SetDictionaryName(const string& _dictionaryName)
 bool ColumnMeta::DictionaryNameHasBeenSet() const
 {
     return m_dictionaryNameHasBeenSet;
+}
+
+string ColumnMeta::GetLevelName() const
+{
+    return m_levelName;
+}
+
+void ColumnMeta::SetLevelName(const string& _levelName)
+{
+    m_levelName = _levelName;
+    m_levelNameHasBeenSet = true;
+}
+
+bool ColumnMeta::LevelNameHasBeenSet() const
+{
+    return m_levelNameHasBeenSet;
+}
+
+int64_t ColumnMeta::GetLevelRank() const
+{
+    return m_levelRank;
+}
+
+void ColumnMeta::SetLevelRank(const int64_t& _levelRank)
+{
+    m_levelRank = _levelRank;
+    m_levelRankHasBeenSet = true;
+}
+
+bool ColumnMeta::LevelRankHasBeenSet() const
+{
+    return m_levelRankHasBeenSet;
 }
 

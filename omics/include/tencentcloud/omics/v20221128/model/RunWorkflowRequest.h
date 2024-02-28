@@ -258,15 +258,15 @@ namespace TencentCloud
                     bool InputCosUriHasBeenSet() const;
 
                     /**
-                     * 获取任务缓存清理时间（小时）。不填表示不清理。
-                     * @return CacheClearDelay 任务缓存清理时间（小时）。不填表示不清理。
+                     * 获取任务缓存清理时间（小时）。不填或0表示不清理。
+                     * @return CacheClearDelay 任务缓存清理时间（小时）。不填或0表示不清理。
                      * 
                      */
                     uint64_t GetCacheClearDelay() const;
 
                     /**
-                     * 设置任务缓存清理时间（小时）。不填表示不清理。
-                     * @param _cacheClearDelay 任务缓存清理时间（小时）。不填表示不清理。
+                     * 设置任务缓存清理时间（小时）。不填或0表示不清理。
+                     * @param _cacheClearDelay 任务缓存清理时间（小时）。不填或0表示不清理。
                      * 
                      */
                     void SetCacheClearDelay(const uint64_t& _cacheClearDelay);
@@ -277,6 +277,27 @@ namespace TencentCloud
                      * 
                      */
                     bool CacheClearDelayHasBeenSet() const;
+
+                    /**
+                     * 获取工作目录，使用缓存卷内的相对路径 (暂时仅支持Nextflow)
+                     * @return WorkDir 工作目录，使用缓存卷内的相对路径 (暂时仅支持Nextflow)
+                     * 
+                     */
+                    std::string GetWorkDir() const;
+
+                    /**
+                     * 设置工作目录，使用缓存卷内的相对路径 (暂时仅支持Nextflow)
+                     * @param _workDir 工作目录，使用缓存卷内的相对路径 (暂时仅支持Nextflow)
+                     * 
+                     */
+                    void SetWorkDir(const std::string& _workDir);
+
+                    /**
+                     * 判断参数 WorkDir 是否已赋值
+                     * @return WorkDir 是否已赋值
+                     * 
+                     */
+                    bool WorkDirHasBeenSet() const;
 
                 private:
 
@@ -341,10 +362,16 @@ namespace TencentCloud
                     bool m_inputCosUriHasBeenSet;
 
                     /**
-                     * 任务缓存清理时间（小时）。不填表示不清理。
+                     * 任务缓存清理时间（小时）。不填或0表示不清理。
                      */
                     uint64_t m_cacheClearDelay;
                     bool m_cacheClearDelayHasBeenSet;
+
+                    /**
+                     * 工作目录，使用缓存卷内的相对路径 (暂时仅支持Nextflow)
+                     */
+                    std::string m_workDir;
+                    bool m_workDirHasBeenSet;
 
                 };
             }

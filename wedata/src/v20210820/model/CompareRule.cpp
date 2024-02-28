@@ -22,7 +22,8 @@ using namespace std;
 
 CompareRule::CompareRule() :
     m_itemsHasBeenSet(false),
-    m_cycleStepHasBeenSet(false)
+    m_cycleStepHasBeenSet(false),
+    m_computeExpressionHasBeenSet(false)
 {
 }
 
@@ -61,6 +62,16 @@ CoreInternalOutcome CompareRule::Deserialize(const rapidjson::Value &value)
         m_cycleStepHasBeenSet = true;
     }
 
+    if (value.HasMember("ComputeExpression") && !value["ComputeExpression"].IsNull())
+    {
+        if (!value["ComputeExpression"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `CompareRule.ComputeExpression` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_computeExpression = string(value["ComputeExpression"].GetString());
+        m_computeExpressionHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -89,6 +100,14 @@ void CompareRule::ToJsonObject(rapidjson::Value &value, rapidjson::Document::All
         string key = "CycleStep";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_cycleStep, allocator);
+    }
+
+    if (m_computeExpressionHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ComputeExpression";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_computeExpression.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -124,5 +143,21 @@ void CompareRule::SetCycleStep(const uint64_t& _cycleStep)
 bool CompareRule::CycleStepHasBeenSet() const
 {
     return m_cycleStepHasBeenSet;
+}
+
+string CompareRule::GetComputeExpression() const
+{
+    return m_computeExpression;
+}
+
+void CompareRule::SetComputeExpression(const string& _computeExpression)
+{
+    m_computeExpression = _computeExpression;
+    m_computeExpressionHasBeenSet = true;
+}
+
+bool CompareRule::ComputeExpressionHasBeenSet() const
+{
+    return m_computeExpressionHasBeenSet;
 }
 

@@ -39,7 +39,9 @@ RuleGroup::RuleGroup() :
     m_monitorStatusHasBeenSet(false),
     m_tableOwnerUserIdHasBeenSet(false),
     m_instanceIdHasBeenSet(false),
-    m_createTimeHasBeenSet(false)
+    m_createTimeHasBeenSet(false),
+    m_strategyConfigHasBeenSet(false),
+    m_subscribeConfigHasBeenSet(false)
 {
 }
 
@@ -252,6 +254,26 @@ CoreInternalOutcome RuleGroup::Deserialize(const rapidjson::Value &value)
         m_createTimeHasBeenSet = true;
     }
 
+    if (value.HasMember("StrategyConfig") && !value["StrategyConfig"].IsNull())
+    {
+        if (!value["StrategyConfig"].IsBool())
+        {
+            return CoreInternalOutcome(Core::Error("response `RuleGroup.StrategyConfig` IsBool=false incorrectly").SetRequestId(requestId));
+        }
+        m_strategyConfig = value["StrategyConfig"].GetBool();
+        m_strategyConfigHasBeenSet = true;
+    }
+
+    if (value.HasMember("SubscribeConfig") && !value["SubscribeConfig"].IsNull())
+    {
+        if (!value["SubscribeConfig"].IsBool())
+        {
+            return CoreInternalOutcome(Core::Error("response `RuleGroup.SubscribeConfig` IsBool=false incorrectly").SetRequestId(requestId));
+        }
+        m_subscribeConfig = value["SubscribeConfig"].GetBool();
+        m_subscribeConfigHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -411,6 +433,22 @@ void RuleGroup::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Alloc
         string key = "CreateTime";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_createTime.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_strategyConfigHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "StrategyConfig";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_strategyConfig, allocator);
+    }
+
+    if (m_subscribeConfigHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "SubscribeConfig";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_subscribeConfig, allocator);
     }
 
 }
@@ -718,5 +756,37 @@ void RuleGroup::SetCreateTime(const string& _createTime)
 bool RuleGroup::CreateTimeHasBeenSet() const
 {
     return m_createTimeHasBeenSet;
+}
+
+bool RuleGroup::GetStrategyConfig() const
+{
+    return m_strategyConfig;
+}
+
+void RuleGroup::SetStrategyConfig(const bool& _strategyConfig)
+{
+    m_strategyConfig = _strategyConfig;
+    m_strategyConfigHasBeenSet = true;
+}
+
+bool RuleGroup::StrategyConfigHasBeenSet() const
+{
+    return m_strategyConfigHasBeenSet;
+}
+
+bool RuleGroup::GetSubscribeConfig() const
+{
+    return m_subscribeConfig;
+}
+
+void RuleGroup::SetSubscribeConfig(const bool& _subscribeConfig)
+{
+    m_subscribeConfig = _subscribeConfig;
+    m_subscribeConfigHasBeenSet = true;
+}
+
+bool RuleGroup::SubscribeConfigHasBeenSet() const
+{
+    return m_subscribeConfigHasBeenSet;
 }
 

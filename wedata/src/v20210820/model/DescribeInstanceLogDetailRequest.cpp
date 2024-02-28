@@ -27,7 +27,9 @@ DescribeInstanceLogDetailRequest::DescribeInstanceLogDetailRequest() :
     m_taskIdHasBeenSet(false),
     m_curRunDateHasBeenSet(false),
     m_brokerIpHasBeenSet(false),
-    m_originFileNameHasBeenSet(false)
+    m_originFileNameHasBeenSet(false),
+    m_startCountHasBeenSet(false),
+    m_lineCountHasBeenSet(false)
 {
 }
 
@@ -76,6 +78,22 @@ string DescribeInstanceLogDetailRequest::ToJsonString() const
         string key = "OriginFileName";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_originFileName.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_startCountHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "StartCount";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_startCount, allocator);
+    }
+
+    if (m_lineCountHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "LineCount";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_lineCount, allocator);
     }
 
 
@@ -164,6 +182,38 @@ void DescribeInstanceLogDetailRequest::SetOriginFileName(const string& _originFi
 bool DescribeInstanceLogDetailRequest::OriginFileNameHasBeenSet() const
 {
     return m_originFileNameHasBeenSet;
+}
+
+int64_t DescribeInstanceLogDetailRequest::GetStartCount() const
+{
+    return m_startCount;
+}
+
+void DescribeInstanceLogDetailRequest::SetStartCount(const int64_t& _startCount)
+{
+    m_startCount = _startCount;
+    m_startCountHasBeenSet = true;
+}
+
+bool DescribeInstanceLogDetailRequest::StartCountHasBeenSet() const
+{
+    return m_startCountHasBeenSet;
+}
+
+int64_t DescribeInstanceLogDetailRequest::GetLineCount() const
+{
+    return m_lineCount;
+}
+
+void DescribeInstanceLogDetailRequest::SetLineCount(const int64_t& _lineCount)
+{
+    m_lineCount = _lineCount;
+    m_lineCountHasBeenSet = true;
+}
+
+bool DescribeInstanceLogDetailRequest::LineCountHasBeenSet() const
+{
+    return m_lineCountHasBeenSet;
 }
 
 

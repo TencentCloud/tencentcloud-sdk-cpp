@@ -24,7 +24,8 @@ NFOption::NFOption() :
     m_configHasBeenSet(false),
     m_profileHasBeenSet(false),
     m_reportHasBeenSet(false),
-    m_resumeHasBeenSet(false)
+    m_resumeHasBeenSet(false),
+    m_nFVersionHasBeenSet(false)
 {
 }
 
@@ -73,6 +74,16 @@ CoreInternalOutcome NFOption::Deserialize(const rapidjson::Value &value)
         m_resumeHasBeenSet = true;
     }
 
+    if (value.HasMember("NFVersion") && !value["NFVersion"].IsNull())
+    {
+        if (!value["NFVersion"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `NFOption.NFVersion` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_nFVersion = string(value["NFVersion"].GetString());
+        m_nFVersionHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -110,6 +121,14 @@ void NFOption::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Alloca
         string key = "Resume";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_resume, allocator);
+    }
+
+    if (m_nFVersionHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "NFVersion";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_nFVersion.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -177,5 +196,21 @@ void NFOption::SetResume(const bool& _resume)
 bool NFOption::ResumeHasBeenSet() const
 {
     return m_resumeHasBeenSet;
+}
+
+string NFOption::GetNFVersion() const
+{
+    return m_nFVersion;
+}
+
+void NFOption::SetNFVersion(const string& _nFVersion)
+{
+    m_nFVersion = _nFVersion;
+    m_nFVersionHasBeenSet = true;
+}
+
+bool NFOption::NFVersionHasBeenSet() const
+{
+    return m_nFVersionHasBeenSet;
 }
 

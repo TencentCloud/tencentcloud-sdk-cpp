@@ -191,6 +191,8 @@
 #include <tencentcloud/clb/v20180317/model/SetLoadBalancerClsLogResponse.h>
 #include <tencentcloud/clb/v20180317/model/SetLoadBalancerSecurityGroupsRequest.h>
 #include <tencentcloud/clb/v20180317/model/SetLoadBalancerSecurityGroupsResponse.h>
+#include <tencentcloud/clb/v20180317/model/SetLoadBalancerStartStatusRequest.h>
+#include <tencentcloud/clb/v20180317/model/SetLoadBalancerStartStatusResponse.h>
 #include <tencentcloud/clb/v20180317/model/SetSecurityGroupForLoadbalancersRequest.h>
 #include <tencentcloud/clb/v20180317/model/SetSecurityGroupForLoadbalancersResponse.h>
 
@@ -459,6 +461,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::SetLoadBalancerSecurityGroupsResponse> SetLoadBalancerSecurityGroupsOutcome;
                 typedef std::future<SetLoadBalancerSecurityGroupsOutcome> SetLoadBalancerSecurityGroupsOutcomeCallable;
                 typedef std::function<void(const ClbClient*, const Model::SetLoadBalancerSecurityGroupsRequest&, SetLoadBalancerSecurityGroupsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> SetLoadBalancerSecurityGroupsAsyncHandler;
+                typedef Outcome<Core::Error, Model::SetLoadBalancerStartStatusResponse> SetLoadBalancerStartStatusOutcome;
+                typedef std::future<SetLoadBalancerStartStatusOutcome> SetLoadBalancerStartStatusOutcomeCallable;
+                typedef std::function<void(const ClbClient*, const Model::SetLoadBalancerStartStatusRequest&, SetLoadBalancerStartStatusOutcome, const std::shared_ptr<const AsyncCallerContext>&)> SetLoadBalancerStartStatusAsyncHandler;
                 typedef Outcome<Core::Error, Model::SetSecurityGroupForLoadbalancersResponse> SetSecurityGroupForLoadbalancersOutcome;
                 typedef std::future<SetSecurityGroupForLoadbalancersOutcome> SetSecurityGroupForLoadbalancersOutcomeCallable;
                 typedef std::function<void(const ClbClient*, const Model::SetSecurityGroupForLoadbalancersRequest&, SetSecurityGroupForLoadbalancersOutcome, const std::shared_ptr<const AsyncCallerContext>&)> SetSecurityGroupForLoadbalancersAsyncHandler;
@@ -1303,6 +1308,17 @@ BGP带宽包必须传带宽包id
                 SetLoadBalancerSecurityGroupsOutcome SetLoadBalancerSecurityGroups(const Model::SetLoadBalancerSecurityGroupsRequest &request);
                 void SetLoadBalancerSecurityGroupsAsync(const Model::SetLoadBalancerSecurityGroupsRequest& request, const SetLoadBalancerSecurityGroupsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 SetLoadBalancerSecurityGroupsOutcomeCallable SetLoadBalancerSecurityGroupsCallable(const Model::SetLoadBalancerSecurityGroupsRequest& request);
+
+                /**
+                 *启停负载均衡实例或者监听器。
+本接口为异步接口，接口返回成功后，需以得到的 RequestID 为入参，调用 DescribeTaskStatus 接口查询本次任务是否成功。
+该功能正在内测中，如需使用，请通过[工单申请](https://console.cloud.tencent.com/workorder/category?level1_id=6&level2_id=163&source=0&data_title=%E8%B4%9F%E8%BD%BD%E5%9D%87%E8%A1%A1%20LB&step=1)。
+                 * @param req SetLoadBalancerStartStatusRequest
+                 * @return SetLoadBalancerStartStatusOutcome
+                 */
+                SetLoadBalancerStartStatusOutcome SetLoadBalancerStartStatus(const Model::SetLoadBalancerStartStatusRequest &request);
+                void SetLoadBalancerStartStatusAsync(const Model::SetLoadBalancerStartStatusRequest& request, const SetLoadBalancerStartStatusAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                SetLoadBalancerStartStatusOutcomeCallable SetLoadBalancerStartStatusCallable(const Model::SetLoadBalancerStartStatusRequest& request);
 
                 /**
                  *绑定或解绑一个安全组到多个公网负载均衡实例。注意：内网负载均衡不支持绑定安全组。

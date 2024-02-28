@@ -493,19 +493,19 @@ namespace TencentCloud
                     bool ProxyOperatorIdCardNumberHasBeenSet() const;
 
                     /**
-                     * 获取认证完成跳转链接
-注意：`只在H5生效，域名需要联系我们开白`。
-                     * @return AutoJumpUrl 认证完成跳转链接
-注意：`只在H5生效，域名需要联系我们开白`。
+                     * 获取认证完成跳转链接。
+注意：`目前仅支持 H5 和 PC， 如果使用的是 H5，域名需要联系我们开白`。
+                     * @return AutoJumpUrl 认证完成跳转链接。
+注意：`目前仅支持 H5 和 PC， 如果使用的是 H5，域名需要联系我们开白`。
                      * 
                      */
                     std::string GetAutoJumpUrl() const;
 
                     /**
-                     * 设置认证完成跳转链接
-注意：`只在H5生效，域名需要联系我们开白`。
-                     * @param _autoJumpUrl 认证完成跳转链接
-注意：`只在H5生效，域名需要联系我们开白`。
+                     * 设置认证完成跳转链接。
+注意：`目前仅支持 H5 和 PC， 如果使用的是 H5，域名需要联系我们开白`。
+                     * @param _autoJumpUrl 认证完成跳转链接。
+注意：`目前仅支持 H5 和 PC， 如果使用的是 H5，域名需要联系我们开白`。
                      * 
                      */
                     void SetAutoJumpUrl(const std::string& _autoJumpUrl);
@@ -641,8 +641,8 @@ namespace TencentCloud
                     bool m_proxyOperatorIdCardNumberHasBeenSet;
 
                     /**
-                     * 认证完成跳转链接
-注意：`只在H5生效，域名需要联系我们开白`。
+                     * 认证完成跳转链接。
+注意：`目前仅支持 H5 和 PC， 如果使用的是 H5，域名需要联系我们开白`。
                      */
                     std::string m_autoJumpUrl;
                     bool m_autoJumpUrlHasBeenSet;

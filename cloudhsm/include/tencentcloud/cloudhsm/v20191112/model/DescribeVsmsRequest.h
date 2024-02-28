@@ -86,15 +86,15 @@ namespace TencentCloud
                     bool LimitHasBeenSet() const;
 
                     /**
-                     * 获取查询关键字
-                     * @return SearchWord 查询关键字
+                     * 获取资源ID或者资源名字模糊查询的关键字
+                     * @return SearchWord 资源ID或者资源名字模糊查询的关键字
                      * 
                      */
                     std::string GetSearchWord() const;
 
                     /**
-                     * 设置查询关键字
-                     * @param _searchWord 查询关键字
+                     * 设置资源ID或者资源名字模糊查询的关键字
+                     * @param _searchWord 资源ID或者资源名字模糊查询的关键字
                      * 
                      */
                     void SetSearchWord(const std::string& _searchWord);
@@ -184,7 +184,7 @@ namespace TencentCloud
                     bool m_limitHasBeenSet;
 
                     /**
-                     * 查询关键字
+                     * 资源ID或者资源名字模糊查询的关键字
                      */
                     std::string m_searchWord;
                     bool m_searchWordHasBeenSet;

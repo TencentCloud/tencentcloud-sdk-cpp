@@ -170,6 +170,27 @@ namespace TencentCloud
                      */
                     bool IsPartitionQueryHasBeenSet() const;
 
+                    /**
+                     * 获取合规组ID
+                     * @return ComplianceId 合规组ID
+                     * 
+                     */
+                    int64_t GetComplianceId() const;
+
+                    /**
+                     * 设置合规组ID
+                     * @param _complianceId 合规组ID
+                     * 
+                     */
+                    void SetComplianceId(const int64_t& _complianceId);
+
+                    /**
+                     * 判断参数 ComplianceId 是否已赋值
+                     * @return ComplianceId 是否已赋值
+                     * 
+                     */
+                    bool ComplianceIdHasBeenSet() const;
+
                 private:
 
                     /**
@@ -207,6 +228,12 @@ namespace TencentCloud
                      */
                     bool m_isPartitionQuery;
                     bool m_isPartitionQueryHasBeenSet;
+
+                    /**
+                     * 合规组ID
+                     */
+                    int64_t m_complianceId;
+                    bool m_complianceIdHasBeenSet;
 
                 };
             }

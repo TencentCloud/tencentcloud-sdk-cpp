@@ -177,6 +177,8 @@
 #include <tencentcloud/lighthouse/v20200324/model/ModifyDiskBackupsAttributeResponse.h>
 #include <tencentcloud/lighthouse/v20200324/model/ModifyDisksAttributeRequest.h>
 #include <tencentcloud/lighthouse/v20200324/model/ModifyDisksAttributeResponse.h>
+#include <tencentcloud/lighthouse/v20200324/model/ModifyDisksBackupQuotaRequest.h>
+#include <tencentcloud/lighthouse/v20200324/model/ModifyDisksBackupQuotaResponse.h>
 #include <tencentcloud/lighthouse/v20200324/model/ModifyDisksRenewFlagRequest.h>
 #include <tencentcloud/lighthouse/v20200324/model/ModifyDisksRenewFlagResponse.h>
 #include <tencentcloud/lighthouse/v20200324/model/ModifyDockerContainerRequest.h>
@@ -219,6 +221,8 @@
 #include <tencentcloud/lighthouse/v20200324/model/ResetInstanceResponse.h>
 #include <tencentcloud/lighthouse/v20200324/model/ResetInstancesPasswordRequest.h>
 #include <tencentcloud/lighthouse/v20200324/model/ResetInstancesPasswordResponse.h>
+#include <tencentcloud/lighthouse/v20200324/model/ResizeDisksRequest.h>
+#include <tencentcloud/lighthouse/v20200324/model/ResizeDisksResponse.h>
 #include <tencentcloud/lighthouse/v20200324/model/RestartDockerContainersRequest.h>
 #include <tencentcloud/lighthouse/v20200324/model/RestartDockerContainersResponse.h>
 #include <tencentcloud/lighthouse/v20200324/model/RunDockerContainersRequest.h>
@@ -482,6 +486,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::ModifyDisksAttributeResponse> ModifyDisksAttributeOutcome;
                 typedef std::future<ModifyDisksAttributeOutcome> ModifyDisksAttributeOutcomeCallable;
                 typedef std::function<void(const LighthouseClient*, const Model::ModifyDisksAttributeRequest&, ModifyDisksAttributeOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyDisksAttributeAsyncHandler;
+                typedef Outcome<Core::Error, Model::ModifyDisksBackupQuotaResponse> ModifyDisksBackupQuotaOutcome;
+                typedef std::future<ModifyDisksBackupQuotaOutcome> ModifyDisksBackupQuotaOutcomeCallable;
+                typedef std::function<void(const LighthouseClient*, const Model::ModifyDisksBackupQuotaRequest&, ModifyDisksBackupQuotaOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyDisksBackupQuotaAsyncHandler;
                 typedef Outcome<Core::Error, Model::ModifyDisksRenewFlagResponse> ModifyDisksRenewFlagOutcome;
                 typedef std::future<ModifyDisksRenewFlagOutcome> ModifyDisksRenewFlagOutcomeCallable;
                 typedef std::function<void(const LighthouseClient*, const Model::ModifyDisksRenewFlagRequest&, ModifyDisksRenewFlagOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyDisksRenewFlagAsyncHandler;
@@ -545,6 +552,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::ResetInstancesPasswordResponse> ResetInstancesPasswordOutcome;
                 typedef std::future<ResetInstancesPasswordOutcome> ResetInstancesPasswordOutcomeCallable;
                 typedef std::function<void(const LighthouseClient*, const Model::ResetInstancesPasswordRequest&, ResetInstancesPasswordOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ResetInstancesPasswordAsyncHandler;
+                typedef Outcome<Core::Error, Model::ResizeDisksResponse> ResizeDisksOutcome;
+                typedef std::future<ResizeDisksOutcome> ResizeDisksOutcomeCallable;
+                typedef std::function<void(const LighthouseClient*, const Model::ResizeDisksRequest&, ResizeDisksOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ResizeDisksAsyncHandler;
                 typedef Outcome<Core::Error, Model::RestartDockerContainersResponse> RestartDockerContainersOutcome;
                 typedef std::future<RestartDockerContainersOutcome> RestartDockerContainersOutcomeCallable;
                 typedef std::function<void(const LighthouseClient*, const Model::RestartDockerContainersRequest&, RestartDockerContainersOutcome, const std::shared_ptr<const AsyncCallerContext>&)> RestartDockerContainersAsyncHandler;
@@ -1339,6 +1349,15 @@ https://img.qcloud.com/qcloud/app/active_vnc/index.html?InstanceVncUrl=wss%3A%2F
                 ModifyDisksAttributeOutcomeCallable ModifyDisksAttributeCallable(const Model::ModifyDisksAttributeRequest& request);
 
                 /**
+                 *本接口(ModifyDisksBackupQuota)用于调整云硬盘备份点配额。该操作目前仅支持云硬盘类型为数据盘的云硬盘。
+                 * @param req ModifyDisksBackupQuotaRequest
+                 * @return ModifyDisksBackupQuotaOutcome
+                 */
+                ModifyDisksBackupQuotaOutcome ModifyDisksBackupQuota(const Model::ModifyDisksBackupQuotaRequest &request);
+                void ModifyDisksBackupQuotaAsync(const Model::ModifyDisksBackupQuotaRequest& request, const ModifyDisksBackupQuotaAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                ModifyDisksBackupQuotaOutcomeCallable ModifyDisksBackupQuotaCallable(const Model::ModifyDisksBackupQuotaRequest& request);
+
+                /**
                  *本接口（ModifyDisksRenewFlag）用于修改云硬盘续费标识。
                  * @param req ModifyDisksRenewFlagRequest
                  * @return ModifyDisksRenewFlagOutcome
@@ -1580,6 +1599,15 @@ https://img.qcloud.com/qcloud/app/active_vnc/index.html?InstanceVncUrl=wss%3A%2F
                 ResetInstancesPasswordOutcome ResetInstancesPassword(const Model::ResetInstancesPasswordRequest &request);
                 void ResetInstancesPasswordAsync(const Model::ResetInstancesPasswordRequest& request, const ResetInstancesPasswordAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 ResetInstancesPasswordOutcomeCallable ResetInstancesPasswordCallable(const Model::ResetInstancesPasswordRequest& request);
+
+                /**
+                 *本接口(ResizeDisks)用于扩容云硬盘。该操作目前仅支持云硬盘类型为数据盘的云硬盘。
+                 * @param req ResizeDisksRequest
+                 * @return ResizeDisksOutcome
+                 */
+                ResizeDisksOutcome ResizeDisks(const Model::ResizeDisksRequest &request);
+                void ResizeDisksAsync(const Model::ResizeDisksRequest& request, const ResizeDisksAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                ResizeDisksOutcomeCallable ResizeDisksCallable(const Model::ResizeDisksRequest& request);
 
                 /**
                  *重启实例内的Docker容器，之后可以通过返回的ActivityId调用DescribeDockerActivities接口查询重启情况。

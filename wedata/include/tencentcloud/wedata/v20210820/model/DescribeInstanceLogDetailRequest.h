@@ -147,6 +147,48 @@ namespace TencentCloud
                      */
                     bool OriginFileNameHasBeenSet() const;
 
+                    /**
+                     * 获取起始行
+                     * @return StartCount 起始行
+                     * 
+                     */
+                    int64_t GetStartCount() const;
+
+                    /**
+                     * 设置起始行
+                     * @param _startCount 起始行
+                     * 
+                     */
+                    void SetStartCount(const int64_t& _startCount);
+
+                    /**
+                     * 判断参数 StartCount 是否已赋值
+                     * @return StartCount 是否已赋值
+                     * 
+                     */
+                    bool StartCountHasBeenSet() const;
+
+                    /**
+                     * 获取每次查询行数
+                     * @return LineCount 每次查询行数
+                     * 
+                     */
+                    int64_t GetLineCount() const;
+
+                    /**
+                     * 设置每次查询行数
+                     * @param _lineCount 每次查询行数
+                     * 
+                     */
+                    void SetLineCount(const int64_t& _lineCount);
+
+                    /**
+                     * 判断参数 LineCount 是否已赋值
+                     * @return LineCount 是否已赋值
+                     * 
+                     */
+                    bool LineCountHasBeenSet() const;
+
                 private:
 
                     /**
@@ -178,6 +220,18 @@ namespace TencentCloud
                      */
                     std::string m_originFileName;
                     bool m_originFileNameHasBeenSet;
+
+                    /**
+                     * 起始行
+                     */
+                    int64_t m_startCount;
+                    bool m_startCountHasBeenSet;
+
+                    /**
+                     * 每次查询行数
+                     */
+                    int64_t m_lineCount;
+                    bool m_lineCountHasBeenSet;
 
                 };
             }

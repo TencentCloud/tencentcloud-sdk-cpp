@@ -95,6 +95,27 @@ namespace TencentCloud
                     bool TypeHasBeenSet() const;
 
                     /**
+                     * 获取计算集群Service CIDR，不能与VPC网段重合。
+                     * @return ServiceCidr 计算集群Service CIDR，不能与VPC网段重合。
+                     * 
+                     */
+                    std::string GetServiceCidr() const;
+
+                    /**
+                     * 设置计算集群Service CIDR，不能与VPC网段重合。
+                     * @param _serviceCidr 计算集群Service CIDR，不能与VPC网段重合。
+                     * 
+                     */
+                    void SetServiceCidr(const std::string& _serviceCidr);
+
+                    /**
+                     * 判断参数 ServiceCidr 是否已赋值
+                     * @return ServiceCidr 是否已赋值
+                     * 
+                     */
+                    bool ServiceCidrHasBeenSet() const;
+
+                    /**
                      * 获取资源配额。
                      * @return ResourceQuota 资源配额。
                      * 
@@ -150,6 +171,12 @@ namespace TencentCloud
                      */
                     std::string m_type;
                     bool m_typeHasBeenSet;
+
+                    /**
+                     * 计算集群Service CIDR，不能与VPC网段重合。
+                     */
+                    std::string m_serviceCidr;
+                    bool m_serviceCidrHasBeenSet;
 
                     /**
                      * 资源配额。

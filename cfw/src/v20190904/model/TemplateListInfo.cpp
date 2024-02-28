@@ -30,7 +30,8 @@ TemplateListInfo::TemplateListInfo() :
     m_typeHasBeenSet(false),
     m_rulesNumHasBeenSet(false),
     m_templateIdHasBeenSet(false),
-    m_protocolTypeHasBeenSet(false)
+    m_protocolTypeHasBeenSet(false),
+    m_iPNumHasBeenSet(false)
 {
 }
 
@@ -139,6 +140,16 @@ CoreInternalOutcome TemplateListInfo::Deserialize(const rapidjson::Value &value)
         m_protocolTypeHasBeenSet = true;
     }
 
+    if (value.HasMember("IPNum") && !value["IPNum"].IsNull())
+    {
+        if (!value["IPNum"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `TemplateListInfo.IPNum` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_iPNum = value["IPNum"].GetInt64();
+        m_iPNumHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -224,6 +235,14 @@ void TemplateListInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Document
         string key = "ProtocolType";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_protocolType.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_iPNumHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "IPNum";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_iPNum, allocator);
     }
 
 }
@@ -387,5 +406,21 @@ void TemplateListInfo::SetProtocolType(const string& _protocolType)
 bool TemplateListInfo::ProtocolTypeHasBeenSet() const
 {
     return m_protocolTypeHasBeenSet;
+}
+
+int64_t TemplateListInfo::GetIPNum() const
+{
+    return m_iPNum;
+}
+
+void TemplateListInfo::SetIPNum(const int64_t& _iPNum)
+{
+    m_iPNum = _iPNum;
+    m_iPNumHasBeenSet = true;
+}
+
+bool TemplateListInfo::IPNumHasBeenSet() const
+{
+    return m_iPNumHasBeenSet;
 }
 

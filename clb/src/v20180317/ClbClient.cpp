@@ -3652,6 +3652,49 @@ ClbClient::SetLoadBalancerSecurityGroupsOutcomeCallable ClbClient::SetLoadBalanc
     return task->get_future();
 }
 
+ClbClient::SetLoadBalancerStartStatusOutcome ClbClient::SetLoadBalancerStartStatus(const SetLoadBalancerStartStatusRequest &request)
+{
+    auto outcome = MakeRequest(request, "SetLoadBalancerStartStatus");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        SetLoadBalancerStartStatusResponse rsp = SetLoadBalancerStartStatusResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return SetLoadBalancerStartStatusOutcome(rsp);
+        else
+            return SetLoadBalancerStartStatusOutcome(o.GetError());
+    }
+    else
+    {
+        return SetLoadBalancerStartStatusOutcome(outcome.GetError());
+    }
+}
+
+void ClbClient::SetLoadBalancerStartStatusAsync(const SetLoadBalancerStartStatusRequest& request, const SetLoadBalancerStartStatusAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->SetLoadBalancerStartStatus(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+ClbClient::SetLoadBalancerStartStatusOutcomeCallable ClbClient::SetLoadBalancerStartStatusCallable(const SetLoadBalancerStartStatusRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<SetLoadBalancerStartStatusOutcome()>>(
+        [this, request]()
+        {
+            return this->SetLoadBalancerStartStatus(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 ClbClient::SetSecurityGroupForLoadbalancersOutcome ClbClient::SetSecurityGroupForLoadbalancers(const SetSecurityGroupForLoadbalancersRequest &request)
 {
     auto outcome = MakeRequest(request, "SetSecurityGroupForLoadbalancers");

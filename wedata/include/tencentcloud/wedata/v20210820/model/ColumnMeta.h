@@ -297,6 +297,56 @@ namespace TencentCloud
                      */
                     bool DictionaryNameHasBeenSet() const;
 
+                    /**
+                     * 获取安全等级：名称
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return LevelName 安全等级：名称
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::string GetLevelName() const;
+
+                    /**
+                     * 设置安全等级：名称
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _levelName 安全等级：名称
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetLevelName(const std::string& _levelName);
+
+                    /**
+                     * 判断参数 LevelName 是否已赋值
+                     * @return LevelName 是否已赋值
+                     * 
+                     */
+                    bool LevelNameHasBeenSet() const;
+
+                    /**
+                     * 获取安全等级：值范围1-10
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return LevelRank 安全等级：值范围1-10
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    int64_t GetLevelRank() const;
+
+                    /**
+                     * 设置安全等级：值范围1-10
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _levelRank 安全等级：值范围1-10
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetLevelRank(const int64_t& _levelRank);
+
+                    /**
+                     * 判断参数 LevelRank 是否已赋值
+                     * @return LevelRank 是否已赋值
+                     * 
+                     */
+                    bool LevelRankHasBeenSet() const;
+
                 private:
 
                     /**
@@ -368,6 +418,20 @@ namespace TencentCloud
                      */
                     std::string m_dictionaryName;
                     bool m_dictionaryNameHasBeenSet;
+
+                    /**
+                     * 安全等级：名称
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_levelName;
+                    bool m_levelNameHasBeenSet;
+
+                    /**
+                     * 安全等级：值范围1-10
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    int64_t m_levelRank;
+                    bool m_levelRankHasBeenSet;
 
                 };
             }

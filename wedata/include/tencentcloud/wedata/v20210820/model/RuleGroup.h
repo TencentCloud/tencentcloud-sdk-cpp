@@ -523,6 +523,56 @@ namespace TencentCloud
                      */
                     bool CreateTimeHasBeenSet() const;
 
+                    /**
+                     * 获取是否已配置执行策略
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return StrategyConfig 是否已配置执行策略
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    bool GetStrategyConfig() const;
+
+                    /**
+                     * 设置是否已配置执行策略
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _strategyConfig 是否已配置执行策略
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetStrategyConfig(const bool& _strategyConfig);
+
+                    /**
+                     * 判断参数 StrategyConfig 是否已赋值
+                     * @return StrategyConfig 是否已赋值
+                     * 
+                     */
+                    bool StrategyConfigHasBeenSet() const;
+
+                    /**
+                     * 获取是否已配置执行策略
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return SubscribeConfig 是否已配置执行策略
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    bool GetSubscribeConfig() const;
+
+                    /**
+                     * 设置是否已配置执行策略
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _subscribeConfig 是否已配置执行策略
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetSubscribeConfig(const bool& _subscribeConfig);
+
+                    /**
+                     * 判断参数 SubscribeConfig 是否已赋值
+                     * @return SubscribeConfig 是否已赋值
+                     * 
+                     */
+                    bool SubscribeConfigHasBeenSet() const;
+
                 private:
 
                     /**
@@ -657,6 +707,20 @@ namespace TencentCloud
                      */
                     std::string m_createTime;
                     bool m_createTimeHasBeenSet;
+
+                    /**
+                     * 是否已配置执行策略
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    bool m_strategyConfig;
+                    bool m_strategyConfigHasBeenSet;
+
+                    /**
+                     * 是否已配置执行策略
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    bool m_subscribeConfig;
+                    bool m_subscribeConfigHasBeenSet;
 
                 };
             }

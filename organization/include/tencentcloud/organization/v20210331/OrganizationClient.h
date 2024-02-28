@@ -37,6 +37,8 @@
 #include <tencentcloud/organization/v20210331/model/BindOrganizationMemberAuthAccountResponse.h>
 #include <tencentcloud/organization/v20210331/model/CancelOrganizationMemberAuthAccountRequest.h>
 #include <tencentcloud/organization/v20210331/model/CancelOrganizationMemberAuthAccountResponse.h>
+#include <tencentcloud/organization/v20210331/model/CheckAccountDeleteRequest.h>
+#include <tencentcloud/organization/v20210331/model/CheckAccountDeleteResponse.h>
 #include <tencentcloud/organization/v20210331/model/CreateOrganizationRequest.h>
 #include <tencentcloud/organization/v20210331/model/CreateOrganizationResponse.h>
 #include <tencentcloud/organization/v20210331/model/CreateOrganizationIdentityRequest.h>
@@ -150,6 +152,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::CancelOrganizationMemberAuthAccountResponse> CancelOrganizationMemberAuthAccountOutcome;
                 typedef std::future<CancelOrganizationMemberAuthAccountOutcome> CancelOrganizationMemberAuthAccountOutcomeCallable;
                 typedef std::function<void(const OrganizationClient*, const Model::CancelOrganizationMemberAuthAccountRequest&, CancelOrganizationMemberAuthAccountOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CancelOrganizationMemberAuthAccountAsyncHandler;
+                typedef Outcome<Core::Error, Model::CheckAccountDeleteResponse> CheckAccountDeleteOutcome;
+                typedef std::future<CheckAccountDeleteOutcome> CheckAccountDeleteOutcomeCallable;
+                typedef std::function<void(const OrganizationClient*, const Model::CheckAccountDeleteRequest&, CheckAccountDeleteOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CheckAccountDeleteAsyncHandler;
                 typedef Outcome<Core::Error, Model::CreateOrganizationResponse> CreateOrganizationOutcome;
                 typedef std::future<CreateOrganizationOutcome> CreateOrganizationOutcomeCallable;
                 typedef std::function<void(const OrganizationClient*, const Model::CreateOrganizationRequest&, CreateOrganizationOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateOrganizationAsyncHandler;
@@ -333,6 +338,15 @@ namespace TencentCloud
                 CancelOrganizationMemberAuthAccountOutcome CancelOrganizationMemberAuthAccount(const Model::CancelOrganizationMemberAuthAccountRequest &request);
                 void CancelOrganizationMemberAuthAccountAsync(const Model::CancelOrganizationMemberAuthAccountRequest& request, const CancelOrganizationMemberAuthAccountAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 CancelOrganizationMemberAuthAccountOutcomeCallable CancelOrganizationMemberAuthAccountCallable(const Model::CancelOrganizationMemberAuthAccountRequest& request);
+
+                /**
+                 *成员账号删除检查
+                 * @param req CheckAccountDeleteRequest
+                 * @return CheckAccountDeleteOutcome
+                 */
+                CheckAccountDeleteOutcome CheckAccountDelete(const Model::CheckAccountDeleteRequest &request);
+                void CheckAccountDeleteAsync(const Model::CheckAccountDeleteRequest& request, const CheckAccountDeleteAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                CheckAccountDeleteOutcomeCallable CheckAccountDeleteCallable(const Model::CheckAccountDeleteRequest& request);
 
                 /**
                  *创建企业组织

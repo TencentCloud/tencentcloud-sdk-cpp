@@ -171,6 +171,31 @@ namespace TencentCloud
                      */
                     bool ThirdTaskLogUrlDescHasBeenSet() const;
 
+                    /**
+                     * 获取日志行数
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return LineCount 日志行数
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    int64_t GetLineCount() const;
+
+                    /**
+                     * 设置日志行数
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _lineCount 日志行数
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetLineCount(const int64_t& _lineCount);
+
+                    /**
+                     * 判断参数 LineCount 是否已赋值
+                     * @return LineCount 是否已赋值
+                     * 
+                     */
+                    bool LineCountHasBeenSet() const;
+
                 private:
 
                     /**
@@ -207,6 +232,13 @@ namespace TencentCloud
                      */
                     std::string m_thirdTaskLogUrlDesc;
                     bool m_thirdTaskLogUrlDescHasBeenSet;
+
+                    /**
+                     * 日志行数
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    int64_t m_lineCount;
+                    bool m_lineCountHasBeenSet;
 
                 };
             }

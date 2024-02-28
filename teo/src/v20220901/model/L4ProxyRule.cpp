@@ -31,7 +31,8 @@ L4ProxyRule::L4ProxyRule() :
     m_sessionPersistHasBeenSet(false),
     m_sessionPersistTimeHasBeenSet(false),
     m_ruleTagHasBeenSet(false),
-    m_statusHasBeenSet(false)
+    m_statusHasBeenSet(false),
+    m_buIdHasBeenSet(false)
 {
 }
 
@@ -156,6 +157,16 @@ CoreInternalOutcome L4ProxyRule::Deserialize(const rapidjson::Value &value)
         m_statusHasBeenSet = true;
     }
 
+    if (value.HasMember("BuId") && !value["BuId"].IsNull())
+    {
+        if (!value["BuId"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `L4ProxyRule.BuId` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_buId = string(value["BuId"].GetString());
+        m_buIdHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -259,6 +270,14 @@ void L4ProxyRule::ToJsonObject(rapidjson::Value &value, rapidjson::Document::All
         string key = "Status";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_status.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_buIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "BuId";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_buId.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -438,5 +457,21 @@ void L4ProxyRule::SetStatus(const string& _status)
 bool L4ProxyRule::StatusHasBeenSet() const
 {
     return m_statusHasBeenSet;
+}
+
+string L4ProxyRule::GetBuId() const
+{
+    return m_buId;
+}
+
+void L4ProxyRule::SetBuId(const string& _buId)
+{
+    m_buId = _buId;
+    m_buIdHasBeenSet = true;
+}
+
+bool L4ProxyRule::BuIdHasBeenSet() const
+{
+    return m_buIdHasBeenSet;
 }
 

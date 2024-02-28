@@ -40,7 +40,10 @@ TableLineageInfo::TableLineageInfo() :
     m_createTimeHasBeenSet(false),
     m_modifyTimeHasBeenSet(false),
     m_tasksHasBeenSet(false),
-    m_channelTypeHasBeenSet(false)
+    m_channelTypeHasBeenSet(false),
+    m_displayTypeHasBeenSet(false),
+    m_engineTypeHasBeenSet(false),
+    m_tableTypeHasBeenSet(false)
 {
 }
 
@@ -272,6 +275,36 @@ CoreInternalOutcome TableLineageInfo::Deserialize(const rapidjson::Value &value)
         m_channelTypeHasBeenSet = true;
     }
 
+    if (value.HasMember("DisplayType") && !value["DisplayType"].IsNull())
+    {
+        if (!value["DisplayType"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `TableLineageInfo.DisplayType` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_displayType = string(value["DisplayType"].GetString());
+        m_displayTypeHasBeenSet = true;
+    }
+
+    if (value.HasMember("EngineType") && !value["EngineType"].IsNull())
+    {
+        if (!value["EngineType"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `TableLineageInfo.EngineType` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_engineType = string(value["EngineType"].GetString());
+        m_engineTypeHasBeenSet = true;
+    }
+
+    if (value.HasMember("TableType") && !value["TableType"].IsNull())
+    {
+        if (!value["TableType"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `TableLineageInfo.TableType` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_tableType = string(value["TableType"].GetString());
+        m_tableTypeHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -456,6 +489,30 @@ void TableLineageInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Document
         string key = "ChannelType";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_channelType.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_displayTypeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "DisplayType";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_displayType.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_engineTypeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "EngineType";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_engineType.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_tableTypeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "TableType";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_tableType.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -779,5 +836,53 @@ void TableLineageInfo::SetChannelType(const string& _channelType)
 bool TableLineageInfo::ChannelTypeHasBeenSet() const
 {
     return m_channelTypeHasBeenSet;
+}
+
+string TableLineageInfo::GetDisplayType() const
+{
+    return m_displayType;
+}
+
+void TableLineageInfo::SetDisplayType(const string& _displayType)
+{
+    m_displayType = _displayType;
+    m_displayTypeHasBeenSet = true;
+}
+
+bool TableLineageInfo::DisplayTypeHasBeenSet() const
+{
+    return m_displayTypeHasBeenSet;
+}
+
+string TableLineageInfo::GetEngineType() const
+{
+    return m_engineType;
+}
+
+void TableLineageInfo::SetEngineType(const string& _engineType)
+{
+    m_engineType = _engineType;
+    m_engineTypeHasBeenSet = true;
+}
+
+bool TableLineageInfo::EngineTypeHasBeenSet() const
+{
+    return m_engineTypeHasBeenSet;
+}
+
+string TableLineageInfo::GetTableType() const
+{
+    return m_tableType;
+}
+
+void TableLineageInfo::SetTableType(const string& _tableType)
+{
+    m_tableType = _tableType;
+    m_tableTypeHasBeenSet = true;
+}
+
+bool TableLineageInfo::TableTypeHasBeenSet() const
+{
+    return m_tableTypeHasBeenSet;
 }
 

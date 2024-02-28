@@ -97,6 +97,31 @@ namespace TencentCloud
                      */
                     bool CycleStepHasBeenSet() const;
 
+                    /**
+                     * 获取o 表示 或，a 表示 且，数字表示items下标
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return ComputeExpression o 表示 或，a 表示 且，数字表示items下标
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::string GetComputeExpression() const;
+
+                    /**
+                     * 设置o 表示 或，a 表示 且，数字表示items下标
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _computeExpression o 表示 或，a 表示 且，数字表示items下标
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetComputeExpression(const std::string& _computeExpression);
+
+                    /**
+                     * 判断参数 ComputeExpression 是否已赋值
+                     * @return ComputeExpression 是否已赋值
+                     * 
+                     */
+                    bool ComputeExpressionHasBeenSet() const;
+
                 private:
 
                     /**
@@ -112,6 +137,13 @@ namespace TencentCloud
                      */
                     uint64_t m_cycleStep;
                     bool m_cycleStepHasBeenSet;
+
+                    /**
+                     * o 表示 或，a 表示 且，数字表示items下标
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_computeExpression;
+                    bool m_computeExpressionHasBeenSet;
 
                 };
             }

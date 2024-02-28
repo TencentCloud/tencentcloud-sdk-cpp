@@ -42,7 +42,8 @@ ApproverInfo::ApproverInfo() :
     m_approverNeedSignReviewHasBeenSet(false),
     m_addSignComponentsLimitsHasBeenSet(false),
     m_signInstructionContentHasBeenSet(false),
-    m_deadlineHasBeenSet(false)
+    m_deadlineHasBeenSet(false),
+    m_componentsHasBeenSet(false)
 {
 }
 
@@ -307,6 +308,26 @@ CoreInternalOutcome ApproverInfo::Deserialize(const rapidjson::Value &value)
         m_deadlineHasBeenSet = true;
     }
 
+    if (value.HasMember("Components") && !value["Components"].IsNull())
+    {
+        if (!value["Components"].IsArray())
+            return CoreInternalOutcome(Core::Error("response `ApproverInfo.Components` is not array type"));
+
+        const rapidjson::Value &tmpValue = value["Components"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            Component item;
+            CoreInternalOutcome outcome = item.Deserialize(*itr);
+            if (!outcome.IsSuccess())
+            {
+                outcome.GetError().SetRequestId(requestId);
+                return outcome;
+            }
+            m_components.push_back(item);
+        }
+        m_componentsHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -518,6 +539,21 @@ void ApproverInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Al
         string key = "Deadline";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_deadline, allocator);
+    }
+
+    if (m_componentsHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Components";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_components.begin(); itr != m_components.end(); ++itr, ++i)
+        {
+            value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(value[key.c_str()][i], allocator);
+        }
     }
 
 }
@@ -873,5 +909,21 @@ void ApproverInfo::SetDeadline(const int64_t& _deadline)
 bool ApproverInfo::DeadlineHasBeenSet() const
 {
     return m_deadlineHasBeenSet;
+}
+
+vector<Component> ApproverInfo::GetComponents() const
+{
+    return m_components;
+}
+
+void ApproverInfo::SetComponents(const vector<Component>& _components)
+{
+    m_components = _components;
+    m_componentsHasBeenSet = true;
+}
+
+bool ApproverInfo::ComponentsHasBeenSet() const
+{
+    return m_componentsHasBeenSet;
 }
 
