@@ -45,6 +45,8 @@
 #include <tencentcloud/cfw/v20190904/model/CreateAlertCenterRuleResponse.h>
 #include <tencentcloud/cfw/v20190904/model/CreateBlockIgnoreRuleListRequest.h>
 #include <tencentcloud/cfw/v20190904/model/CreateBlockIgnoreRuleListResponse.h>
+#include <tencentcloud/cfw/v20190904/model/CreateBlockIgnoreRuleNewRequest.h>
+#include <tencentcloud/cfw/v20190904/model/CreateBlockIgnoreRuleNewResponse.h>
 #include <tencentcloud/cfw/v20190904/model/CreateChooseVpcsRequest.h>
 #include <tencentcloud/cfw/v20190904/model/CreateChooseVpcsResponse.h>
 #include <tencentcloud/cfw/v20190904/model/CreateDatabaseWhiteListRulesRequest.h>
@@ -67,6 +69,8 @@
 #include <tencentcloud/cfw/v20190904/model/DeleteAllAccessControlRuleResponse.h>
 #include <tencentcloud/cfw/v20190904/model/DeleteBlockIgnoreRuleListRequest.h>
 #include <tencentcloud/cfw/v20190904/model/DeleteBlockIgnoreRuleListResponse.h>
+#include <tencentcloud/cfw/v20190904/model/DeleteBlockIgnoreRuleNewRequest.h>
+#include <tencentcloud/cfw/v20190904/model/DeleteBlockIgnoreRuleNewResponse.h>
 #include <tencentcloud/cfw/v20190904/model/DeleteIdsWhiteRuleRequest.h>
 #include <tencentcloud/cfw/v20190904/model/DeleteIdsWhiteRuleResponse.h>
 #include <tencentcloud/cfw/v20190904/model/DeleteNatFwInstanceRequest.h>
@@ -177,6 +181,8 @@
 #include <tencentcloud/cfw/v20190904/model/ModifyBlockIgnoreListResponse.h>
 #include <tencentcloud/cfw/v20190904/model/ModifyBlockIgnoreRuleRequest.h>
 #include <tencentcloud/cfw/v20190904/model/ModifyBlockIgnoreRuleResponse.h>
+#include <tencentcloud/cfw/v20190904/model/ModifyBlockIgnoreRuleNewRequest.h>
+#include <tencentcloud/cfw/v20190904/model/ModifyBlockIgnoreRuleNewResponse.h>
 #include <tencentcloud/cfw/v20190904/model/ModifyBlockTopRequest.h>
 #include <tencentcloud/cfw/v20190904/model/ModifyBlockTopResponse.h>
 #include <tencentcloud/cfw/v20190904/model/ModifyEWRuleStatusRequest.h>
@@ -290,6 +296,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::CreateBlockIgnoreRuleListResponse> CreateBlockIgnoreRuleListOutcome;
                 typedef std::future<CreateBlockIgnoreRuleListOutcome> CreateBlockIgnoreRuleListOutcomeCallable;
                 typedef std::function<void(const CfwClient*, const Model::CreateBlockIgnoreRuleListRequest&, CreateBlockIgnoreRuleListOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateBlockIgnoreRuleListAsyncHandler;
+                typedef Outcome<Core::Error, Model::CreateBlockIgnoreRuleNewResponse> CreateBlockIgnoreRuleNewOutcome;
+                typedef std::future<CreateBlockIgnoreRuleNewOutcome> CreateBlockIgnoreRuleNewOutcomeCallable;
+                typedef std::function<void(const CfwClient*, const Model::CreateBlockIgnoreRuleNewRequest&, CreateBlockIgnoreRuleNewOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateBlockIgnoreRuleNewAsyncHandler;
                 typedef Outcome<Core::Error, Model::CreateChooseVpcsResponse> CreateChooseVpcsOutcome;
                 typedef std::future<CreateChooseVpcsOutcome> CreateChooseVpcsOutcomeCallable;
                 typedef std::function<void(const CfwClient*, const Model::CreateChooseVpcsRequest&, CreateChooseVpcsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateChooseVpcsAsyncHandler;
@@ -323,6 +332,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DeleteBlockIgnoreRuleListResponse> DeleteBlockIgnoreRuleListOutcome;
                 typedef std::future<DeleteBlockIgnoreRuleListOutcome> DeleteBlockIgnoreRuleListOutcomeCallable;
                 typedef std::function<void(const CfwClient*, const Model::DeleteBlockIgnoreRuleListRequest&, DeleteBlockIgnoreRuleListOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteBlockIgnoreRuleListAsyncHandler;
+                typedef Outcome<Core::Error, Model::DeleteBlockIgnoreRuleNewResponse> DeleteBlockIgnoreRuleNewOutcome;
+                typedef std::future<DeleteBlockIgnoreRuleNewOutcome> DeleteBlockIgnoreRuleNewOutcomeCallable;
+                typedef std::function<void(const CfwClient*, const Model::DeleteBlockIgnoreRuleNewRequest&, DeleteBlockIgnoreRuleNewOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteBlockIgnoreRuleNewAsyncHandler;
                 typedef Outcome<Core::Error, Model::DeleteIdsWhiteRuleResponse> DeleteIdsWhiteRuleOutcome;
                 typedef std::future<DeleteIdsWhiteRuleOutcome> DeleteIdsWhiteRuleOutcomeCallable;
                 typedef std::function<void(const CfwClient*, const Model::DeleteIdsWhiteRuleRequest&, DeleteIdsWhiteRuleOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteIdsWhiteRuleAsyncHandler;
@@ -488,6 +500,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::ModifyBlockIgnoreRuleResponse> ModifyBlockIgnoreRuleOutcome;
                 typedef std::future<ModifyBlockIgnoreRuleOutcome> ModifyBlockIgnoreRuleOutcomeCallable;
                 typedef std::function<void(const CfwClient*, const Model::ModifyBlockIgnoreRuleRequest&, ModifyBlockIgnoreRuleOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyBlockIgnoreRuleAsyncHandler;
+                typedef Outcome<Core::Error, Model::ModifyBlockIgnoreRuleNewResponse> ModifyBlockIgnoreRuleNewOutcome;
+                typedef std::future<ModifyBlockIgnoreRuleNewOutcome> ModifyBlockIgnoreRuleNewOutcomeCallable;
+                typedef std::function<void(const CfwClient*, const Model::ModifyBlockIgnoreRuleNewRequest&, ModifyBlockIgnoreRuleNewOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyBlockIgnoreRuleNewAsyncHandler;
                 typedef Outcome<Core::Error, Model::ModifyBlockTopResponse> ModifyBlockTopOutcome;
                 typedef std::future<ModifyBlockTopOutcome> ModifyBlockTopOutcomeCallable;
                 typedef std::function<void(const CfwClient*, const Model::ModifyBlockTopRequest&, ModifyBlockTopOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyBlockTopAsyncHandler;
@@ -690,6 +705,15 @@ namespace TencentCloud
                 CreateBlockIgnoreRuleListOutcomeCallable CreateBlockIgnoreRuleListCallable(const Model::CreateBlockIgnoreRuleListRequest& request);
 
                 /**
+                 *批量添加入侵防御封禁列表、放通列表规则
+                 * @param req CreateBlockIgnoreRuleNewRequest
+                 * @return CreateBlockIgnoreRuleNewOutcome
+                 */
+                CreateBlockIgnoreRuleNewOutcome CreateBlockIgnoreRuleNew(const Model::CreateBlockIgnoreRuleNewRequest &request);
+                void CreateBlockIgnoreRuleNewAsync(const Model::CreateBlockIgnoreRuleNewRequest& request, const CreateBlockIgnoreRuleNewAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                CreateBlockIgnoreRuleNewOutcomeCallable CreateBlockIgnoreRuleNewCallable(const Model::CreateBlockIgnoreRuleNewRequest& request);
+
+                /**
                  *创建、选择vpc
                  * @param req CreateChooseVpcsRequest
                  * @return CreateChooseVpcsOutcome
@@ -787,6 +811,15 @@ namespace TencentCloud
                 DeleteBlockIgnoreRuleListOutcome DeleteBlockIgnoreRuleList(const Model::DeleteBlockIgnoreRuleListRequest &request);
                 void DeleteBlockIgnoreRuleListAsync(const Model::DeleteBlockIgnoreRuleListRequest& request, const DeleteBlockIgnoreRuleListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DeleteBlockIgnoreRuleListOutcomeCallable DeleteBlockIgnoreRuleListCallable(const Model::DeleteBlockIgnoreRuleListRequest& request);
+
+                /**
+                 *批量删除入侵防御封禁列表、放通列表规则（新）
+                 * @param req DeleteBlockIgnoreRuleNewRequest
+                 * @return DeleteBlockIgnoreRuleNewOutcome
+                 */
+                DeleteBlockIgnoreRuleNewOutcome DeleteBlockIgnoreRuleNew(const Model::DeleteBlockIgnoreRuleNewRequest &request);
+                void DeleteBlockIgnoreRuleNewAsync(const Model::DeleteBlockIgnoreRuleNewRequest& request, const DeleteBlockIgnoreRuleNewAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DeleteBlockIgnoreRuleNewOutcomeCallable DeleteBlockIgnoreRuleNewCallable(const Model::DeleteBlockIgnoreRuleNewRequest& request);
 
                 /**
                  *删除入侵防御规则白名单接口
@@ -1289,6 +1322,15 @@ namespace TencentCloud
                 ModifyBlockIgnoreRuleOutcome ModifyBlockIgnoreRule(const Model::ModifyBlockIgnoreRuleRequest &request);
                 void ModifyBlockIgnoreRuleAsync(const Model::ModifyBlockIgnoreRuleRequest& request, const ModifyBlockIgnoreRuleAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 ModifyBlockIgnoreRuleOutcomeCallable ModifyBlockIgnoreRuleCallable(const Model::ModifyBlockIgnoreRuleRequest& request);
+
+                /**
+                 *编辑单条入侵防御封禁列表、放通列表规则（新）
+                 * @param req ModifyBlockIgnoreRuleNewRequest
+                 * @return ModifyBlockIgnoreRuleNewOutcome
+                 */
+                ModifyBlockIgnoreRuleNewOutcome ModifyBlockIgnoreRuleNew(const Model::ModifyBlockIgnoreRuleNewRequest &request);
+                void ModifyBlockIgnoreRuleNewAsync(const Model::ModifyBlockIgnoreRuleNewRequest& request, const ModifyBlockIgnoreRuleNewAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                ModifyBlockIgnoreRuleNewOutcomeCallable ModifyBlockIgnoreRuleNewCallable(const Model::ModifyBlockIgnoreRuleNewRequest& request);
 
                 /**
                  *ModifyBlockTop取消置顶接口

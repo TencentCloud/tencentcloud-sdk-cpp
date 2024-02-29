@@ -3308,6 +3308,49 @@ VodClient::DescribeDailyPlayStatFileListOutcomeCallable VodClient::DescribeDaily
     return task->get_future();
 }
 
+VodClient::DescribeDefaultDistributionConfigOutcome VodClient::DescribeDefaultDistributionConfig(const DescribeDefaultDistributionConfigRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeDefaultDistributionConfig");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeDefaultDistributionConfigResponse rsp = DescribeDefaultDistributionConfigResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeDefaultDistributionConfigOutcome(rsp);
+        else
+            return DescribeDefaultDistributionConfigOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeDefaultDistributionConfigOutcome(outcome.GetError());
+    }
+}
+
+void VodClient::DescribeDefaultDistributionConfigAsync(const DescribeDefaultDistributionConfigRequest& request, const DescribeDefaultDistributionConfigAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeDefaultDistributionConfig(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+VodClient::DescribeDefaultDistributionConfigOutcomeCallable VodClient::DescribeDefaultDistributionConfigCallable(const DescribeDefaultDistributionConfigRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeDefaultDistributionConfigOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeDefaultDistributionConfig(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 VodClient::DescribeDrmDataKeyOutcome VodClient::DescribeDrmDataKey(const DescribeDrmDataKeyRequest &request)
 {
     auto outcome = MakeRequest(request, "DescribeDrmDataKey");
@@ -5537,6 +5580,49 @@ VodClient::ModifyContentReviewTemplateOutcomeCallable VodClient::ModifyContentRe
         [this, request]()
         {
             return this->ModifyContentReviewTemplate(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+VodClient::ModifyDefaultDistributionConfigOutcome VodClient::ModifyDefaultDistributionConfig(const ModifyDefaultDistributionConfigRequest &request)
+{
+    auto outcome = MakeRequest(request, "ModifyDefaultDistributionConfig");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ModifyDefaultDistributionConfigResponse rsp = ModifyDefaultDistributionConfigResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ModifyDefaultDistributionConfigOutcome(rsp);
+        else
+            return ModifyDefaultDistributionConfigOutcome(o.GetError());
+    }
+    else
+    {
+        return ModifyDefaultDistributionConfigOutcome(outcome.GetError());
+    }
+}
+
+void VodClient::ModifyDefaultDistributionConfigAsync(const ModifyDefaultDistributionConfigRequest& request, const ModifyDefaultDistributionConfigAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->ModifyDefaultDistributionConfig(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+VodClient::ModifyDefaultDistributionConfigOutcomeCallable VodClient::ModifyDefaultDistributionConfigCallable(const ModifyDefaultDistributionConfigRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<ModifyDefaultDistributionConfigOutcome()>>(
+        [this, request]()
+        {
+            return this->ModifyDefaultDistributionConfig(request);
         }
     );
 

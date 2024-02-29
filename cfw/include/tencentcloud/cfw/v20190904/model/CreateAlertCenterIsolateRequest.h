@@ -151,15 +151,15 @@ namespace TencentCloud
                     bool IsolateTypeHasBeenSet() const;
 
                     /**
-                     * 获取运维模式 1 IP白名单 2 身份认证
-                     * @return OmMode 运维模式 1 IP白名单 2 身份认证
+                     * 获取运维模式 1 IP白名单 2 身份认证  0 非运维模式
+                     * @return OmMode 运维模式 1 IP白名单 2 身份认证  0 非运维模式
                      * 
                      */
                     int64_t GetOmMode() const;
 
                     /**
-                     * 设置运维模式 1 IP白名单 2 身份认证
-                     * @param _omMode 运维模式 1 IP白名单 2 身份认证
+                     * 设置运维模式 1 IP白名单 2 身份认证  0 非运维模式
+                     * @param _omMode 运维模式 1 IP白名单 2 身份认证  0 非运维模式
                      * 
                      */
                     void SetOmMode(const int64_t& _omMode);
@@ -204,7 +204,7 @@ namespace TencentCloud
                     bool m_isolateTypeHasBeenSet;
 
                     /**
-                     * 运维模式 1 IP白名单 2 身份认证
+                     * 运维模式 1 IP白名单 2 身份认证  0 非运维模式
                      */
                     int64_t m_omMode;
                     bool m_omModeHasBeenSet;

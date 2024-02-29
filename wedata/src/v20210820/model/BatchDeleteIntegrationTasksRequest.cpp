@@ -26,7 +26,9 @@ BatchDeleteIntegrationTasksRequest::BatchDeleteIntegrationTasksRequest() :
     m_taskIdsHasBeenSet(false),
     m_taskTypeHasBeenSet(false),
     m_projectIdHasBeenSet(false),
-    m_deleteKFFlagHasBeenSet(false)
+    m_deleteKFFlagHasBeenSet(false),
+    m_nameHasBeenSet(false),
+    m_taskNamesHasBeenSet(false)
 {
 }
 
@@ -72,6 +74,27 @@ string BatchDeleteIntegrationTasksRequest::ToJsonString() const
         string key = "DeleteKFFlag";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_deleteKFFlag, allocator);
+    }
+
+    if (m_nameHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Name";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_name.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_taskNamesHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "TaskNames";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        for (auto itr = m_taskNames.begin(); itr != m_taskNames.end(); ++itr)
+        {
+            d[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
+        }
     }
 
 
@@ -144,6 +167,38 @@ void BatchDeleteIntegrationTasksRequest::SetDeleteKFFlag(const int64_t& _deleteK
 bool BatchDeleteIntegrationTasksRequest::DeleteKFFlagHasBeenSet() const
 {
     return m_deleteKFFlagHasBeenSet;
+}
+
+string BatchDeleteIntegrationTasksRequest::GetName() const
+{
+    return m_name;
+}
+
+void BatchDeleteIntegrationTasksRequest::SetName(const string& _name)
+{
+    m_name = _name;
+    m_nameHasBeenSet = true;
+}
+
+bool BatchDeleteIntegrationTasksRequest::NameHasBeenSet() const
+{
+    return m_nameHasBeenSet;
+}
+
+vector<string> BatchDeleteIntegrationTasksRequest::GetTaskNames() const
+{
+    return m_taskNames;
+}
+
+void BatchDeleteIntegrationTasksRequest::SetTaskNames(const vector<string>& _taskNames)
+{
+    m_taskNames = _taskNames;
+    m_taskNamesHasBeenSet = true;
+}
+
+bool BatchDeleteIntegrationTasksRequest::TaskNamesHasBeenSet() const
+{
+    return m_taskNamesHasBeenSet;
 }
 
 

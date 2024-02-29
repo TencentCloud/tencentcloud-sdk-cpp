@@ -25,7 +25,8 @@ DeviceBaseInfo::DeviceBaseInfo() :
     m_deviceNameHasBeenSet(false),
     m_createTimeHasBeenSet(false),
     m_lastTimeHasBeenSet(false),
-    m_remarkHasBeenSet(false)
+    m_remarkHasBeenSet(false),
+    m_accessScopeHasBeenSet(false)
 {
 }
 
@@ -84,6 +85,16 @@ CoreInternalOutcome DeviceBaseInfo::Deserialize(const rapidjson::Value &value)
         m_remarkHasBeenSet = true;
     }
 
+    if (value.HasMember("AccessScope") && !value["AccessScope"].IsNull())
+    {
+        if (!value["AccessScope"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `DeviceBaseInfo.AccessScope` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_accessScope = value["AccessScope"].GetInt64();
+        m_accessScopeHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -129,6 +140,14 @@ void DeviceBaseInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Document::
         string key = "Remark";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_remark.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_accessScopeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "AccessScope";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_accessScope, allocator);
     }
 
 }
@@ -212,5 +231,21 @@ void DeviceBaseInfo::SetRemark(const string& _remark)
 bool DeviceBaseInfo::RemarkHasBeenSet() const
 {
     return m_remarkHasBeenSet;
+}
+
+int64_t DeviceBaseInfo::GetAccessScope() const
+{
+    return m_accessScope;
+}
+
+void DeviceBaseInfo::SetAccessScope(const int64_t& _accessScope)
+{
+    m_accessScope = _accessScope;
+    m_accessScopeHasBeenSet = true;
+}
+
+bool DeviceBaseInfo::AccessScopeHasBeenSet() const
+{
+    return m_accessScopeHasBeenSet;
 }
 

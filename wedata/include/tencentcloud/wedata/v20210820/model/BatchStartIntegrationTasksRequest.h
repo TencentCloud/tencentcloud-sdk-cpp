@@ -21,6 +21,7 @@
 #include <vector>
 #include <map>
 #include <tencentcloud/core/AbstractModel.h>
+#include <tencentcloud/wedata/v20210820/model/StartTaskInfo.h>
 
 
 namespace TencentCloud
@@ -41,27 +42,6 @@ namespace TencentCloud
                     ~BatchStartIntegrationTasksRequest() = default;
                     std::string ToJsonString() const;
 
-
-                    /**
-                     * 获取任务id
-                     * @return TaskIds 任务id
-                     * 
-                     */
-                    std::vector<std::string> GetTaskIds() const;
-
-                    /**
-                     * 设置任务id
-                     * @param _taskIds 任务id
-                     * 
-                     */
-                    void SetTaskIds(const std::vector<std::string>& _taskIds);
-
-                    /**
-                     * 判断参数 TaskIds 是否已赋值
-                     * @return TaskIds 是否已赋值
-                     * 
-                     */
-                    bool TaskIdsHasBeenSet() const;
 
                     /**
                      * 获取任务类型
@@ -105,13 +85,49 @@ namespace TencentCloud
                      */
                     bool ProjectIdHasBeenSet() const;
 
-                private:
+                    /**
+                     * 获取任务id
+                     * @return TaskIds 任务id
+                     * 
+                     */
+                    std::vector<std::string> GetTaskIds() const;
 
                     /**
-                     * 任务id
+                     * 设置任务id
+                     * @param _taskIds 任务id
+                     * 
                      */
-                    std::vector<std::string> m_taskIds;
-                    bool m_taskIdsHasBeenSet;
+                    void SetTaskIds(const std::vector<std::string>& _taskIds);
+
+                    /**
+                     * 判断参数 TaskIds 是否已赋值
+                     * @return TaskIds 是否已赋值
+                     * 
+                     */
+                    bool TaskIdsHasBeenSet() const;
+
+                    /**
+                     * 获取批量运行集成任务，目前仅实时集成用到了这个参数
+                     * @return StartTaskInfoSet 批量运行集成任务，目前仅实时集成用到了这个参数
+                     * 
+                     */
+                    std::vector<StartTaskInfo> GetStartTaskInfoSet() const;
+
+                    /**
+                     * 设置批量运行集成任务，目前仅实时集成用到了这个参数
+                     * @param _startTaskInfoSet 批量运行集成任务，目前仅实时集成用到了这个参数
+                     * 
+                     */
+                    void SetStartTaskInfoSet(const std::vector<StartTaskInfo>& _startTaskInfoSet);
+
+                    /**
+                     * 判断参数 StartTaskInfoSet 是否已赋值
+                     * @return StartTaskInfoSet 是否已赋值
+                     * 
+                     */
+                    bool StartTaskInfoSetHasBeenSet() const;
+
+                private:
 
                     /**
                      * 任务类型
@@ -124,6 +140,18 @@ namespace TencentCloud
                      */
                     std::string m_projectId;
                     bool m_projectIdHasBeenSet;
+
+                    /**
+                     * 任务id
+                     */
+                    std::vector<std::string> m_taskIds;
+                    bool m_taskIdsHasBeenSet;
+
+                    /**
+                     * 批量运行集成任务，目前仅实时集成用到了这个参数
+                     */
+                    std::vector<StartTaskInfo> m_startTaskInfoSet;
+                    bool m_startTaskInfoSetHasBeenSet;
 
                 };
             }

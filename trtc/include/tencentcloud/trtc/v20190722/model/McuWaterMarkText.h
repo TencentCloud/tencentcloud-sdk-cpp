@@ -235,6 +235,27 @@ namespace TencentCloud
                      */
                     bool DynamicPosTypeHasBeenSet() const;
 
+                    /**
+                     * 获取水印在输出时的层级，不填默认为0。
+                     * @return ZOrder 水印在输出时的层级，不填默认为0。
+                     * 
+                     */
+                    uint64_t GetZOrder() const;
+
+                    /**
+                     * 设置水印在输出时的层级，不填默认为0。
+                     * @param _zOrder 水印在输出时的层级，不填默认为0。
+                     * 
+                     */
+                    void SetZOrder(const uint64_t& _zOrder);
+
+                    /**
+                     * 判断参数 ZOrder 是否已赋值
+                     * @return ZOrder 是否已赋值
+                     * 
+                     */
+                    bool ZOrderHasBeenSet() const;
+
                 private:
 
                     /**
@@ -290,6 +311,12 @@ namespace TencentCloud
                      */
                     uint64_t m_dynamicPosType;
                     bool m_dynamicPosTypeHasBeenSet;
+
+                    /**
+                     * 水印在输出时的层级，不填默认为0。
+                     */
+                    uint64_t m_zOrder;
+                    bool m_zOrderHasBeenSet;
 
                 };
             }

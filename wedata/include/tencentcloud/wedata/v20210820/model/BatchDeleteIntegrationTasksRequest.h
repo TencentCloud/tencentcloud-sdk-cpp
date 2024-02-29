@@ -126,6 +126,48 @@ namespace TencentCloud
                      */
                     bool DeleteKFFlagHasBeenSet() const;
 
+                    /**
+                     * 获取操作名称
+                     * @return Name 操作名称
+                     * 
+                     */
+                    std::string GetName() const;
+
+                    /**
+                     * 设置操作名称
+                     * @param _name 操作名称
+                     * 
+                     */
+                    void SetName(const std::string& _name);
+
+                    /**
+                     * 判断参数 Name 是否已赋值
+                     * @return Name 是否已赋值
+                     * 
+                     */
+                    bool NameHasBeenSet() const;
+
+                    /**
+                     * 获取本次批量操作涉及任务，用于审计
+                     * @return TaskNames 本次批量操作涉及任务，用于审计
+                     * 
+                     */
+                    std::vector<std::string> GetTaskNames() const;
+
+                    /**
+                     * 设置本次批量操作涉及任务，用于审计
+                     * @param _taskNames 本次批量操作涉及任务，用于审计
+                     * 
+                     */
+                    void SetTaskNames(const std::vector<std::string>& _taskNames);
+
+                    /**
+                     * 判断参数 TaskNames 是否已赋值
+                     * @return TaskNames 是否已赋值
+                     * 
+                     */
+                    bool TaskNamesHasBeenSet() const;
+
                 private:
 
                     /**
@@ -151,6 +193,18 @@ namespace TencentCloud
                      */
                     int64_t m_deleteKFFlag;
                     bool m_deleteKFFlagHasBeenSet;
+
+                    /**
+                     * 操作名称
+                     */
+                    std::string m_name;
+                    bool m_nameHasBeenSet;
+
+                    /**
+                     * 本次批量操作涉及任务，用于审计
+                     */
+                    std::vector<std::string> m_taskNames;
+                    bool m_taskNamesHasBeenSet;
 
                 };
             }

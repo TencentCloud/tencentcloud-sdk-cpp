@@ -64,15 +64,15 @@ namespace TencentCloud
                     bool ClusterIdHasBeenSet() const;
 
                     /**
-                     * 获取备份文件列表大小，取值范围(0,100]
-                     * @return Limit 备份文件列表大小，取值范围(0,100]
+                     * 获取返回数量，取值范围(0,100]
+                     * @return Limit 返回数量，取值范围(0,100]
                      * 
                      */
                     int64_t GetLimit() const;
 
                     /**
-                     * 设置备份文件列表大小，取值范围(0,100]
-                     * @param _limit 备份文件列表大小，取值范围(0,100]
+                     * 设置返回数量，取值范围(0,100]
+                     * @param _limit 返回数量，取值范围(0,100]
                      * 
                      */
                     void SetLimit(const int64_t& _limit);
@@ -85,15 +85,15 @@ namespace TencentCloud
                     bool LimitHasBeenSet() const;
 
                     /**
-                     * 获取备份文件列表偏移，取值范围[0,INF)
-                     * @return Offset 备份文件列表偏移，取值范围[0,INF)
+                     * 获取记录偏移量，取值范围[0,INF)
+                     * @return Offset 记录偏移量，取值范围[0,INF)
                      * 
                      */
                     int64_t GetOffset() const;
 
                     /**
-                     * 设置备份文件列表偏移，取值范围[0,INF)
-                     * @param _offset 备份文件列表偏移，取值范围[0,INF)
+                     * 设置记录偏移量，取值范围[0,INF)
+                     * @param _offset 记录偏移量，取值范围[0,INF)
                      * 
                      */
                     void SetOffset(const int64_t& _offset);
@@ -173,15 +173,15 @@ namespace TencentCloud
                     bool BackupTypeHasBeenSet() const;
 
                     /**
-                     * 获取备份方式，可选值：auto，自动备份；manual，手动备
-                     * @return BackupMethod 备份方式，可选值：auto，自动备份；manual，手动备
+                     * 获取备份方式，可选值：auto，自动备份；manual，手动备份
+                     * @return BackupMethod 备份方式，可选值：auto，自动备份；manual，手动备份
                      * 
                      */
                     std::string GetBackupMethod() const;
 
                     /**
-                     * 设置备份方式，可选值：auto，自动备份；manual，手动备
-                     * @param _backupMethod 备份方式，可选值：auto，自动备份；manual，手动备
+                     * 设置备份方式，可选值：auto，自动备份；manual，手动备份
+                     * @param _backupMethod 备份方式，可选值：auto，自动备份；manual，手动备份
                      * 
                      */
                     void SetBackupMethod(const std::string& _backupMethod);
@@ -370,13 +370,13 @@ namespace TencentCloud
                     bool m_clusterIdHasBeenSet;
 
                     /**
-                     * 备份文件列表大小，取值范围(0,100]
+                     * 返回数量，取值范围(0,100]
                      */
                     int64_t m_limit;
                     bool m_limitHasBeenSet;
 
                     /**
-                     * 备份文件列表偏移，取值范围[0,INF)
+                     * 记录偏移量，取值范围[0,INF)
                      */
                     int64_t m_offset;
                     bool m_offsetHasBeenSet;
@@ -401,7 +401,7 @@ namespace TencentCloud
                     bool m_backupTypeHasBeenSet;
 
                     /**
-                     * 备份方式，可选值：auto，自动备份；manual，手动备
+                     * 备份方式，可选值：auto，自动备份；manual，手动备份
                      */
                     std::string m_backupMethod;
                     bool m_backupMethodHasBeenSet;

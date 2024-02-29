@@ -26,7 +26,8 @@ AddDeviceRequest::AddDeviceRequest() :
     m_deviceNameHasBeenSet(false),
     m_remarkHasBeenSet(false),
     m_dataKeyHasBeenSet(false),
-    m_encryptedHasBeenSet(false)
+    m_encryptedHasBeenSet(false),
+    m_accessScopeHasBeenSet(false)
 {
 }
 
@@ -67,6 +68,14 @@ string AddDeviceRequest::ToJsonString() const
         string key = "Encrypted";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_encrypted, allocator);
+    }
+
+    if (m_accessScopeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "AccessScope";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_accessScope, allocator);
     }
 
 
@@ -139,6 +148,22 @@ void AddDeviceRequest::SetEncrypted(const bool& _encrypted)
 bool AddDeviceRequest::EncryptedHasBeenSet() const
 {
     return m_encryptedHasBeenSet;
+}
+
+int64_t AddDeviceRequest::GetAccessScope() const
+{
+    return m_accessScope;
+}
+
+void AddDeviceRequest::SetAccessScope(const int64_t& _accessScope)
+{
+    m_accessScope = _accessScope;
+    m_accessScopeHasBeenSet = true;
+}
+
+bool AddDeviceRequest::AccessScopeHasBeenSet() const
+{
+    return m_accessScopeHasBeenSet;
 }
 
 

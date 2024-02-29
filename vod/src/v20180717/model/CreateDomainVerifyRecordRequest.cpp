@@ -22,7 +22,8 @@
 using namespace TencentCloud::Vod::V20180717::Model;
 using namespace std;
 
-CreateDomainVerifyRecordRequest::CreateDomainVerifyRecordRequest()
+CreateDomainVerifyRecordRequest::CreateDomainVerifyRecordRequest() :
+    m_domainHasBeenSet(false)
 {
 }
 
@@ -33,6 +34,14 @@ string CreateDomainVerifyRecordRequest::ToJsonString() const
     rapidjson::Document::AllocatorType& allocator = d.GetAllocator();
 
 
+    if (m_domainHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Domain";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_domain.c_str(), allocator).Move(), allocator);
+    }
+
 
     rapidjson::StringBuffer buffer;
     rapidjson::Writer<rapidjson::StringBuffer> writer(buffer);
@@ -40,5 +49,21 @@ string CreateDomainVerifyRecordRequest::ToJsonString() const
     return buffer.GetString();
 }
 
+
+string CreateDomainVerifyRecordRequest::GetDomain() const
+{
+    return m_domain;
+}
+
+void CreateDomainVerifyRecordRequest::SetDomain(const string& _domain)
+{
+    m_domain = _domain;
+    m_domainHasBeenSet = true;
+}
+
+bool CreateDomainVerifyRecordRequest::DomainHasBeenSet() const
+{
+    return m_domainHasBeenSet;
+}
 
 

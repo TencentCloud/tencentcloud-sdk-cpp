@@ -31,7 +31,8 @@ ModifyDBInstanceSpecRequest::ModifyDBInstanceSpecRequest() :
     m_activityIdHasBeenSet(false),
     m_switchTagHasBeenSet(false),
     m_switchStartTimeHasBeenSet(false),
-    m_switchEndTimeHasBeenSet(false)
+    m_switchEndTimeHasBeenSet(false),
+    m_cpuHasBeenSet(false)
 {
 }
 
@@ -117,6 +118,14 @@ string ModifyDBInstanceSpecRequest::ToJsonString() const
         string key = "SwitchEndTime";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_switchEndTime.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_cpuHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Cpu";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_cpu, allocator);
     }
 
 
@@ -269,6 +278,22 @@ void ModifyDBInstanceSpecRequest::SetSwitchEndTime(const string& _switchEndTime)
 bool ModifyDBInstanceSpecRequest::SwitchEndTimeHasBeenSet() const
 {
     return m_switchEndTimeHasBeenSet;
+}
+
+uint64_t ModifyDBInstanceSpecRequest::GetCpu() const
+{
+    return m_cpu;
+}
+
+void ModifyDBInstanceSpecRequest::SetCpu(const uint64_t& _cpu)
+{
+    m_cpu = _cpu;
+    m_cpuHasBeenSet = true;
+}
+
+bool ModifyDBInstanceSpecRequest::CpuHasBeenSet() const
+{
+    return m_cpuHasBeenSet;
 }
 
 

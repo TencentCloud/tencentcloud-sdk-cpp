@@ -259,6 +259,27 @@ namespace TencentCloud
                      */
                     bool SwitchEndTimeHasBeenSet() const;
 
+                    /**
+                     * 获取修改后的实例CPU大小，单位Core。
+                     * @return Cpu 修改后的实例CPU大小，单位Core。
+                     * 
+                     */
+                    uint64_t GetCpu() const;
+
+                    /**
+                     * 设置修改后的实例CPU大小，单位Core。
+                     * @param _cpu 修改后的实例CPU大小，单位Core。
+                     * 
+                     */
+                    void SetCpu(const uint64_t& _cpu);
+
+                    /**
+                     * 判断参数 Cpu 是否已赋值
+                     * @return Cpu 是否已赋值
+                     * 
+                     */
+                    bool CpuHasBeenSet() const;
+
                 private:
 
                     /**
@@ -321,6 +342,12 @@ namespace TencentCloud
                      */
                     std::string m_switchEndTime;
                     bool m_switchEndTimeHasBeenSet;
+
+                    /**
+                     * 修改后的实例CPU大小，单位Core。
+                     */
+                    uint64_t m_cpu;
+                    bool m_cpuHasBeenSet;
 
                 };
             }

@@ -42,7 +42,34 @@ namespace TencentCloud
                     std::string ToJsonString() const;
 
 
+                    /**
+                     * 获取需要接入点播的加速域名。
+                     * @return Domain 需要接入点播的加速域名。
+                     * 
+                     */
+                    std::string GetDomain() const;
+
+                    /**
+                     * 设置需要接入点播的加速域名。
+                     * @param _domain 需要接入点播的加速域名。
+                     * 
+                     */
+                    void SetDomain(const std::string& _domain);
+
+                    /**
+                     * 判断参数 Domain 是否已赋值
+                     * @return Domain 是否已赋值
+                     * 
+                     */
+                    bool DomainHasBeenSet() const;
+
                 private:
+
+                    /**
+                     * 需要接入点播的加速域名。
+                     */
+                    std::string m_domain;
+                    bool m_domainHasBeenSet;
 
                 };
             }

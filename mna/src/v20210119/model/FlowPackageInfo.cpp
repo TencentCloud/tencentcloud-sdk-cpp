@@ -25,12 +25,14 @@ FlowPackageInfo::FlowPackageInfo() :
     m_appIdHasBeenSet(false),
     m_packageTypeHasBeenSet(false),
     m_statusHasBeenSet(false),
+    m_createTimeHasBeenSet(false),
     m_activeTimeHasBeenSet(false),
     m_expireTimeHasBeenSet(false),
     m_deviceListHasBeenSet(false),
     m_capacitySizeHasBeenSet(false),
     m_capacityRemainHasBeenSet(false),
-    m_renewFlagHasBeenSet(false)
+    m_renewFlagHasBeenSet(false),
+    m_modifyStatusHasBeenSet(false)
 {
 }
 
@@ -77,6 +79,16 @@ CoreInternalOutcome FlowPackageInfo::Deserialize(const rapidjson::Value &value)
         }
         m_status = value["Status"].GetInt64();
         m_statusHasBeenSet = true;
+    }
+
+    if (value.HasMember("CreateTime") && !value["CreateTime"].IsNull())
+    {
+        if (!value["CreateTime"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `FlowPackageInfo.CreateTime` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_createTime = value["CreateTime"].GetInt64();
+        m_createTimeHasBeenSet = true;
     }
 
     if (value.HasMember("ActiveTime") && !value["ActiveTime"].IsNull())
@@ -142,6 +154,16 @@ CoreInternalOutcome FlowPackageInfo::Deserialize(const rapidjson::Value &value)
         m_renewFlagHasBeenSet = true;
     }
 
+    if (value.HasMember("ModifyStatus") && !value["ModifyStatus"].IsNull())
+    {
+        if (!value["ModifyStatus"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `FlowPackageInfo.ModifyStatus` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_modifyStatus = value["ModifyStatus"].GetInt64();
+        m_modifyStatusHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -179,6 +201,14 @@ void FlowPackageInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Document:
         string key = "Status";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_status, allocator);
+    }
+
+    if (m_createTimeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "CreateTime";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_createTime, allocator);
     }
 
     if (m_activeTimeHasBeenSet)
@@ -232,6 +262,14 @@ void FlowPackageInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Document:
         string key = "RenewFlag";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_renewFlag, allocator);
+    }
+
+    if (m_modifyStatusHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ModifyStatus";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_modifyStatus, allocator);
     }
 
 }
@@ -299,6 +337,22 @@ void FlowPackageInfo::SetStatus(const int64_t& _status)
 bool FlowPackageInfo::StatusHasBeenSet() const
 {
     return m_statusHasBeenSet;
+}
+
+int64_t FlowPackageInfo::GetCreateTime() const
+{
+    return m_createTime;
+}
+
+void FlowPackageInfo::SetCreateTime(const int64_t& _createTime)
+{
+    m_createTime = _createTime;
+    m_createTimeHasBeenSet = true;
+}
+
+bool FlowPackageInfo::CreateTimeHasBeenSet() const
+{
+    return m_createTimeHasBeenSet;
 }
 
 int64_t FlowPackageInfo::GetActiveTime() const
@@ -395,5 +449,21 @@ void FlowPackageInfo::SetRenewFlag(const bool& _renewFlag)
 bool FlowPackageInfo::RenewFlagHasBeenSet() const
 {
     return m_renewFlagHasBeenSet;
+}
+
+int64_t FlowPackageInfo::GetModifyStatus() const
+{
+    return m_modifyStatus;
+}
+
+void FlowPackageInfo::SetModifyStatus(const int64_t& _modifyStatus)
+{
+    m_modifyStatus = _modifyStatus;
+    m_modifyStatusHasBeenSet = true;
+}
+
+bool FlowPackageInfo::ModifyStatusHasBeenSet() const
+{
+    return m_modifyStatusHasBeenSet;
 }
 

@@ -26,7 +26,8 @@ BatchSuspendIntegrationTasksRequest::BatchSuspendIntegrationTasksRequest() :
     m_taskIdsHasBeenSet(false),
     m_taskTypeHasBeenSet(false),
     m_projectIdHasBeenSet(false),
-    m_eventHasBeenSet(false)
+    m_eventHasBeenSet(false),
+    m_taskNamesHasBeenSet(false)
 {
 }
 
@@ -72,6 +73,19 @@ string BatchSuspendIntegrationTasksRequest::ToJsonString() const
         string key = "Event";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_event.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_taskNamesHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "TaskNames";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        for (auto itr = m_taskNames.begin(); itr != m_taskNames.end(); ++itr)
+        {
+            d[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
+        }
     }
 
 
@@ -144,6 +158,22 @@ void BatchSuspendIntegrationTasksRequest::SetEvent(const string& _event)
 bool BatchSuspendIntegrationTasksRequest::EventHasBeenSet() const
 {
     return m_eventHasBeenSet;
+}
+
+vector<string> BatchSuspendIntegrationTasksRequest::GetTaskNames() const
+{
+    return m_taskNames;
+}
+
+void BatchSuspendIntegrationTasksRequest::SetTaskNames(const vector<string>& _taskNames)
+{
+    m_taskNames = _taskNames;
+    m_taskNamesHasBeenSet = true;
+}
+
+bool BatchSuspendIntegrationTasksRequest::TaskNamesHasBeenSet() const
+{
+    return m_taskNamesHasBeenSet;
 }
 
 

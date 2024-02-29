@@ -147,6 +147,27 @@ namespace TencentCloud
                      */
                     bool BackupPeriodHasBeenSet() const;
 
+                    /**
+                     * 获取实例日志备份保留时长，取值范围为7-1830，单位是天
+                     * @return LogBackupRetentionPeriod 实例日志备份保留时长，取值范围为7-1830，单位是天
+                     * 
+                     */
+                    uint64_t GetLogBackupRetentionPeriod() const;
+
+                    /**
+                     * 设置实例日志备份保留时长，取值范围为7-1830，单位是天
+                     * @param _logBackupRetentionPeriod 实例日志备份保留时长，取值范围为7-1830，单位是天
+                     * 
+                     */
+                    void SetLogBackupRetentionPeriod(const uint64_t& _logBackupRetentionPeriod);
+
+                    /**
+                     * 判断参数 LogBackupRetentionPeriod 是否已赋值
+                     * @return LogBackupRetentionPeriod 是否已赋值
+                     * 
+                     */
+                    bool LogBackupRetentionPeriodHasBeenSet() const;
+
                 private:
 
                     /**
@@ -178,6 +199,12 @@ namespace TencentCloud
                      */
                     std::vector<std::string> m_backupPeriod;
                     bool m_backupPeriodHasBeenSet;
+
+                    /**
+                     * 实例日志备份保留时长，取值范围为7-1830，单位是天
+                     */
+                    uint64_t m_logBackupRetentionPeriod;
+                    bool m_logBackupRetentionPeriodHasBeenSet;
 
                 };
             }

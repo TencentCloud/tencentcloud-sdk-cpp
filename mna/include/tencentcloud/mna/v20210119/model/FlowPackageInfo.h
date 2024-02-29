@@ -163,6 +163,31 @@ DEVICE_5_FLOW_500G，分别代表20G、50G、100G、500G档位的流量包。
                     bool StatusHasBeenSet() const;
 
                     /**
+                     * 获取购买时间，Unix时间戳格式，单位：秒
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return CreateTime 购买时间，Unix时间戳格式，单位：秒
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    int64_t GetCreateTime() const;
+
+                    /**
+                     * 设置购买时间，Unix时间戳格式，单位：秒
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _createTime 购买时间，Unix时间戳格式，单位：秒
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetCreateTime(const int64_t& _createTime);
+
+                    /**
+                     * 判断参数 CreateTime 是否已赋值
+                     * @return CreateTime 是否已赋值
+                     * 
+                     */
+                    bool CreateTimeHasBeenSet() const;
+
+                    /**
                      * 获取生效时间，Unix时间戳格式，单位：秒
                      * @return ActiveTime 生效时间，Unix时间戳格式，单位：秒
                      * 
@@ -288,6 +313,27 @@ DEVICE_5_FLOW_500G，分别代表20G、50G、100G、500G档位的流量包。
                      */
                     bool RenewFlagHasBeenSet() const;
 
+                    /**
+                     * 获取资源包变更状态，0：未发生变配；1：变配中；2：已变配或已续费
+                     * @return ModifyStatus 资源包变更状态，0：未发生变配；1：变配中；2：已变配或已续费
+                     * 
+                     */
+                    int64_t GetModifyStatus() const;
+
+                    /**
+                     * 设置资源包变更状态，0：未发生变配；1：变配中；2：已变配或已续费
+                     * @param _modifyStatus 资源包变更状态，0：未发生变配；1：变配中；2：已变配或已续费
+                     * 
+                     */
+                    void SetModifyStatus(const int64_t& _modifyStatus);
+
+                    /**
+                     * 判断参数 ModifyStatus 是否已赋值
+                     * @return ModifyStatus 是否已赋值
+                     * 
+                     */
+                    bool ModifyStatusHasBeenSet() const;
+
                 private:
 
                     /**
@@ -321,6 +367,13 @@ DEVICE_5_FLOW_500G，分别代表20G、50G、100G、500G档位的流量包。
                      */
                     int64_t m_status;
                     bool m_statusHasBeenSet;
+
+                    /**
+                     * 购买时间，Unix时间戳格式，单位：秒
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    int64_t m_createTime;
+                    bool m_createTimeHasBeenSet;
 
                     /**
                      * 生效时间，Unix时间戳格式，单位：秒
@@ -357,6 +410,12 @@ DEVICE_5_FLOW_500G，分别代表20G、50G、100G、500G档位的流量包。
                      */
                     bool m_renewFlag;
                     bool m_renewFlagHasBeenSet;
+
+                    /**
+                     * 资源包变更状态，0：未发生变配；1：变配中；2：已变配或已续费
+                     */
+                    int64_t m_modifyStatus;
+                    bool m_modifyStatusHasBeenSet;
 
                 };
             }

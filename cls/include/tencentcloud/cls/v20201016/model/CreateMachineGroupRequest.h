@@ -193,6 +193,27 @@ namespace TencentCloud
                     bool ServiceLoggingHasBeenSet() const;
 
                     /**
+                     * 获取机器组中机器离线清理时间
+                     * @return DelayCleanupTime 机器组中机器离线清理时间
+                     * 
+                     */
+                    int64_t GetDelayCleanupTime() const;
+
+                    /**
+                     * 设置机器组中机器离线清理时间
+                     * @param _delayCleanupTime 机器组中机器离线清理时间
+                     * 
+                     */
+                    void SetDelayCleanupTime(const int64_t& _delayCleanupTime);
+
+                    /**
+                     * 判断参数 DelayCleanupTime 是否已赋值
+                     * @return DelayCleanupTime 是否已赋值
+                     * 
+                     */
+                    bool DelayCleanupTimeHasBeenSet() const;
+
+                    /**
                      * 获取机器组元数据信息列表
                      * @return MetaTags 机器组元数据信息列表
                      * 
@@ -277,6 +298,12 @@ namespace TencentCloud
                      */
                     bool m_serviceLogging;
                     bool m_serviceLoggingHasBeenSet;
+
+                    /**
+                     * 机器组中机器离线清理时间
+                     */
+                    int64_t m_delayCleanupTime;
+                    bool m_delayCleanupTimeHasBeenSet;
 
                     /**
                      * 机器组元数据信息列表

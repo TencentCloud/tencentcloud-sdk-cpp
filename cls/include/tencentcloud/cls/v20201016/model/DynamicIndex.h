@@ -35,7 +35,7 @@ namespace TencentCloud
             namespace Model
             {
                 /**
-                * 动态索引配置，启用后将自动把日志内的字段添加到键值索引字段列表中，包括日志中新增的字段。
+                * 键值索引自动配置，启用后自动将日志内的字段添加到键值索引中，包括日志中后续新增的字段。
                 */
                 class DynamicIndex : public AbstractModel
                 {
@@ -47,18 +47,18 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取动态索引配置开关
+                     * 获取键值索引自动配置开关
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return Status 动态索引配置开关
+                     * @return Status 键值索引自动配置开关
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     bool GetStatus() const;
 
                     /**
-                     * 设置动态索引配置开关
+                     * 设置键值索引自动配置开关
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _status 动态索引配置开关
+                     * @param _status 键值索引自动配置开关
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -74,7 +74,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 动态索引配置开关
+                     * 键值索引自动配置开关
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     bool m_status;

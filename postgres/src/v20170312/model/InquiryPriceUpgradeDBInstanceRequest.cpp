@@ -26,7 +26,8 @@ InquiryPriceUpgradeDBInstanceRequest::InquiryPriceUpgradeDBInstanceRequest() :
     m_storageHasBeenSet(false),
     m_memoryHasBeenSet(false),
     m_dBInstanceIdHasBeenSet(false),
-    m_instanceChargeTypeHasBeenSet(false)
+    m_instanceChargeTypeHasBeenSet(false),
+    m_cpuHasBeenSet(false)
 {
 }
 
@@ -67,6 +68,14 @@ string InquiryPriceUpgradeDBInstanceRequest::ToJsonString() const
         string key = "InstanceChargeType";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_instanceChargeType.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_cpuHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Cpu";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_cpu, allocator);
     }
 
 
@@ -139,6 +148,22 @@ void InquiryPriceUpgradeDBInstanceRequest::SetInstanceChargeType(const string& _
 bool InquiryPriceUpgradeDBInstanceRequest::InstanceChargeTypeHasBeenSet() const
 {
     return m_instanceChargeTypeHasBeenSet;
+}
+
+int64_t InquiryPriceUpgradeDBInstanceRequest::GetCpu() const
+{
+    return m_cpu;
+}
+
+void InquiryPriceUpgradeDBInstanceRequest::SetCpu(const int64_t& _cpu)
+{
+    m_cpu = _cpu;
+    m_cpuHasBeenSet = true;
+}
+
+bool InquiryPriceUpgradeDBInstanceRequest::CpuHasBeenSet() const
+{
+    return m_cpuHasBeenSet;
 }
 
 

@@ -24,7 +24,8 @@ using namespace TencentCloud::Mna::V20210119::Model;
 using namespace std;
 
 GetNetMonitorResponse::GetNetMonitorResponse() :
-    m_monitorDataHasBeenSet(false)
+    m_monitorDataHasBeenSet(false),
+    m_accessRegionHasBeenSet(false)
 {
 }
 
@@ -82,6 +83,16 @@ CoreInternalOutcome GetNetMonitorResponse::Deserialize(const string &payload)
         m_monitorDataHasBeenSet = true;
     }
 
+    if (rsp.HasMember("AccessRegion") && !rsp["AccessRegion"].IsNull())
+    {
+        if (!rsp["AccessRegion"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `AccessRegion` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_accessRegion = string(rsp["AccessRegion"].GetString());
+        m_accessRegionHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -107,6 +118,14 @@ string GetNetMonitorResponse::ToJsonString() const
         }
     }
 
+    if (m_accessRegionHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "AccessRegion";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_accessRegion.c_str(), allocator).Move(), allocator);
+    }
+
     rapidjson::Value iKey(rapidjson::kStringType);
     string key = "RequestId";
     iKey.SetString(key.c_str(), allocator);
@@ -127,6 +146,16 @@ vector<MonitorData> GetNetMonitorResponse::GetMonitorData() const
 bool GetNetMonitorResponse::MonitorDataHasBeenSet() const
 {
     return m_monitorDataHasBeenSet;
+}
+
+string GetNetMonitorResponse::GetAccessRegion() const
+{
+    return m_accessRegion;
+}
+
+bool GetNetMonitorResponse::AccessRegionHasBeenSet() const
+{
+    return m_accessRegionHasBeenSet;
 }
 
 

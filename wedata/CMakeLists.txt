@@ -210,6 +210,7 @@ set(wedata_public_header_model
   include/tencentcloud/wedata/v20210820/model/LineageParamRecord.h
   include/tencentcloud/wedata/v20210820/model/BatchResult.h
   include/tencentcloud/wedata/v20210820/model/FreezeTasksResponse.h
+  include/tencentcloud/wedata/v20210820/model/StartTaskInfo.h
   include/tencentcloud/wedata/v20210820/model/DescribeTaskReportDetailListResponse.h
   include/tencentcloud/wedata/v20210820/model/DescribeBaselineInstanceDagRequest.h
   include/tencentcloud/wedata/v20210820/model/DescribeIntegrationStatisticsInstanceTrendResponse.h
@@ -1140,6 +1141,7 @@ set(wedata_src
   src/v20210820/model/LineageParamRecord.cpp
   src/v20210820/model/BatchResult.cpp
   src/v20210820/model/FreezeTasksResponse.cpp
+  src/v20210820/model/StartTaskInfo.cpp
   src/v20210820/model/DescribeTaskReportDetailListResponse.cpp
   src/v20210820/model/DescribeBaselineInstanceDagRequest.cpp
   src/v20210820/model/DescribeIntegrationStatisticsInstanceTrendResponse.cpp

@@ -47,15 +47,19 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取字段名
-                     * @return Name 字段名
+                     * 获取字段名； 过滤
+子订单号过滤通过name 为：DealName； value为子订单号
+                     * @return Name 字段名； 过滤
+子订单号过滤通过name 为：DealName； value为子订单号
                      * 
                      */
                     std::string GetName() const;
 
                     /**
-                     * 设置字段名
-                     * @param _name 字段名
+                     * 设置字段名； 过滤
+子订单号过滤通过name 为：DealName； value为子订单号
+                     * @param _name 字段名； 过滤
+子订单号过滤通过name 为：DealName； value为子订单号
                      * 
                      */
                     void SetName(const std::string& _name);
@@ -112,7 +116,8 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 字段名
+                     * 字段名； 过滤
+子订单号过滤通过name 为：DealName； value为子订单号
                      */
                     std::string m_name;
                     bool m_nameHasBeenSet;

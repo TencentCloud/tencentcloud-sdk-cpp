@@ -30,6 +30,7 @@ CreateMachineGroupRequest::CreateMachineGroupRequest() :
     m_updateStartTimeHasBeenSet(false),
     m_updateEndTimeHasBeenSet(false),
     m_serviceLoggingHasBeenSet(false),
+    m_delayCleanupTimeHasBeenSet(false),
     m_metaTagsHasBeenSet(false),
     m_oSTypeHasBeenSet(false)
 {
@@ -104,6 +105,14 @@ string CreateMachineGroupRequest::ToJsonString() const
         string key = "ServiceLogging";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_serviceLogging, allocator);
+    }
+
+    if (m_delayCleanupTimeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "DelayCleanupTime";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_delayCleanupTime, allocator);
     }
 
     if (m_metaTagsHasBeenSet)
@@ -247,6 +256,22 @@ void CreateMachineGroupRequest::SetServiceLogging(const bool& _serviceLogging)
 bool CreateMachineGroupRequest::ServiceLoggingHasBeenSet() const
 {
     return m_serviceLoggingHasBeenSet;
+}
+
+int64_t CreateMachineGroupRequest::GetDelayCleanupTime() const
+{
+    return m_delayCleanupTime;
+}
+
+void CreateMachineGroupRequest::SetDelayCleanupTime(const int64_t& _delayCleanupTime)
+{
+    m_delayCleanupTime = _delayCleanupTime;
+    m_delayCleanupTimeHasBeenSet = true;
+}
+
+bool CreateMachineGroupRequest::DelayCleanupTimeHasBeenSet() const
+{
+    return m_delayCleanupTimeHasBeenSet;
 }
 
 vector<MetaTagInfo> CreateMachineGroupRequest::GetMetaTags() const

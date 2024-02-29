@@ -39,6 +39,8 @@
 #include <tencentcloud/waf/v20180125/model/AddSpartaProtectionResponse.h>
 #include <tencentcloud/waf/v20180125/model/CreateAccessExportRequest.h>
 #include <tencentcloud/waf/v20180125/model/CreateAccessExportResponse.h>
+#include <tencentcloud/waf/v20180125/model/CreateDealsRequest.h>
+#include <tencentcloud/waf/v20180125/model/CreateDealsResponse.h>
 #include <tencentcloud/waf/v20180125/model/CreateHostRequest.h>
 #include <tencentcloud/waf/v20180125/model/CreateHostResponse.h>
 #include <tencentcloud/waf/v20180125/model/DeleteAccessExportRequest.h>
@@ -327,6 +329,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::CreateAccessExportResponse> CreateAccessExportOutcome;
                 typedef std::future<CreateAccessExportOutcome> CreateAccessExportOutcomeCallable;
                 typedef std::function<void(const WafClient*, const Model::CreateAccessExportRequest&, CreateAccessExportOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateAccessExportAsyncHandler;
+                typedef Outcome<Core::Error, Model::CreateDealsResponse> CreateDealsOutcome;
+                typedef std::future<CreateDealsOutcome> CreateDealsOutcomeCallable;
+                typedef std::function<void(const WafClient*, const Model::CreateDealsRequest&, CreateDealsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateDealsAsyncHandler;
                 typedef Outcome<Core::Error, Model::CreateHostResponse> CreateHostOutcome;
                 typedef std::future<CreateHostOutcome> CreateHostOutcomeCallable;
                 typedef std::function<void(const WafClient*, const Model::CreateHostRequest&, CreateHostOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateHostAsyncHandler;
@@ -776,6 +781,15 @@ namespace TencentCloud
                 CreateAccessExportOutcome CreateAccessExport(const Model::CreateAccessExportRequest &request);
                 void CreateAccessExportAsync(const Model::CreateAccessExportRequest& request, const CreateAccessExportAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 CreateAccessExportOutcomeCallable CreateAccessExportCallable(const Model::CreateAccessExportRequest& request);
+
+                /**
+                 *计费资源购买、续费下单接口
+                 * @param req CreateDealsRequest
+                 * @return CreateDealsOutcome
+                 */
+                CreateDealsOutcome CreateDeals(const Model::CreateDealsRequest &request);
+                void CreateDealsAsync(const Model::CreateDealsRequest& request, const CreateDealsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                CreateDealsOutcomeCallable CreateDealsCallable(const Model::CreateDealsRequest& request);
 
                 /**
                  *clb-waf中添加防护域名

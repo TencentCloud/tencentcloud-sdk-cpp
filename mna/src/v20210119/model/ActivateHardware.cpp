@@ -25,7 +25,8 @@ ActivateHardware::ActivateHardware() :
     m_sNHasBeenSet(false),
     m_deviceNameHasBeenSet(false),
     m_descriptionHasBeenSet(false),
-    m_dataKeyHasBeenSet(false)
+    m_dataKeyHasBeenSet(false),
+    m_accessScopeHasBeenSet(false)
 {
 }
 
@@ -84,6 +85,16 @@ CoreInternalOutcome ActivateHardware::Deserialize(const rapidjson::Value &value)
         m_dataKeyHasBeenSet = true;
     }
 
+    if (value.HasMember("AccessScope") && !value["AccessScope"].IsNull())
+    {
+        if (!value["AccessScope"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `ActivateHardware.AccessScope` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_accessScope = value["AccessScope"].GetInt64();
+        m_accessScopeHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -129,6 +140,14 @@ void ActivateHardware::ToJsonObject(rapidjson::Value &value, rapidjson::Document
         string key = "DataKey";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_dataKey.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_accessScopeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "AccessScope";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_accessScope, allocator);
     }
 
 }
@@ -212,5 +231,21 @@ void ActivateHardware::SetDataKey(const string& _dataKey)
 bool ActivateHardware::DataKeyHasBeenSet() const
 {
     return m_dataKeyHasBeenSet;
+}
+
+int64_t ActivateHardware::GetAccessScope() const
+{
+    return m_accessScope;
+}
+
+void ActivateHardware::SetAccessScope(const int64_t& _accessScope)
+{
+    m_accessScope = _accessScope;
+    m_accessScopeHasBeenSet = true;
+}
+
+bool ActivateHardware::AccessScopeHasBeenSet() const
+{
+    return m_accessScopeHasBeenSet;
 }
 

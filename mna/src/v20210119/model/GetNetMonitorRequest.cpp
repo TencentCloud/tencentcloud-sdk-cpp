@@ -26,7 +26,8 @@ GetNetMonitorRequest::GetNetMonitorRequest() :
     m_deviceIdHasBeenSet(false),
     m_beginTimeHasBeenSet(false),
     m_endTimeHasBeenSet(false),
-    m_metricsHasBeenSet(false)
+    m_metricsHasBeenSet(false),
+    m_gatewayTypeHasBeenSet(false)
 {
 }
 
@@ -67,6 +68,14 @@ string GetNetMonitorRequest::ToJsonString() const
         string key = "Metrics";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_metrics.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_gatewayTypeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "GatewayType";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_gatewayType, allocator);
     }
 
 
@@ -139,6 +148,22 @@ void GetNetMonitorRequest::SetMetrics(const string& _metrics)
 bool GetNetMonitorRequest::MetricsHasBeenSet() const
 {
     return m_metricsHasBeenSet;
+}
+
+int64_t GetNetMonitorRequest::GetGatewayType() const
+{
+    return m_gatewayType;
+}
+
+void GetNetMonitorRequest::SetGatewayType(const int64_t& _gatewayType)
+{
+    m_gatewayType = _gatewayType;
+    m_gatewayTypeHasBeenSet = true;
+}
+
+bool GetNetMonitorRequest::GatewayTypeHasBeenSet() const
+{
+    return m_gatewayTypeHasBeenSet;
 }
 
 

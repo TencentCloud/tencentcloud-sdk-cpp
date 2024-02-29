@@ -23,9 +23,10 @@ using namespace TencentCloud::Wedata::V20210820::Model;
 using namespace std;
 
 BatchStartIntegrationTasksRequest::BatchStartIntegrationTasksRequest() :
-    m_taskIdsHasBeenSet(false),
     m_taskTypeHasBeenSet(false),
-    m_projectIdHasBeenSet(false)
+    m_projectIdHasBeenSet(false),
+    m_taskIdsHasBeenSet(false),
+    m_startTaskInfoSetHasBeenSet(false)
 {
 }
 
@@ -35,19 +36,6 @@ string BatchStartIntegrationTasksRequest::ToJsonString() const
     d.SetObject();
     rapidjson::Document::AllocatorType& allocator = d.GetAllocator();
 
-
-    if (m_taskIdsHasBeenSet)
-    {
-        rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "TaskIds";
-        iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
-
-        for (auto itr = m_taskIds.begin(); itr != m_taskIds.end(); ++itr)
-        {
-            d[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
-        }
-    }
 
     if (m_taskTypeHasBeenSet)
     {
@@ -65,6 +53,34 @@ string BatchStartIntegrationTasksRequest::ToJsonString() const
         d.AddMember(iKey, rapidjson::Value(m_projectId.c_str(), allocator).Move(), allocator);
     }
 
+    if (m_taskIdsHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "TaskIds";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        for (auto itr = m_taskIds.begin(); itr != m_taskIds.end(); ++itr)
+        {
+            d[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
+        }
+    }
+
+    if (m_startTaskInfoSetHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "StartTaskInfoSet";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_startTaskInfoSet.begin(); itr != m_startTaskInfoSet.end(); ++itr, ++i)
+        {
+            d[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(d[key.c_str()][i], allocator);
+        }
+    }
+
 
     rapidjson::StringBuffer buffer;
     rapidjson::Writer<rapidjson::StringBuffer> writer(buffer);
@@ -72,22 +88,6 @@ string BatchStartIntegrationTasksRequest::ToJsonString() const
     return buffer.GetString();
 }
 
-
-vector<string> BatchStartIntegrationTasksRequest::GetTaskIds() const
-{
-    return m_taskIds;
-}
-
-void BatchStartIntegrationTasksRequest::SetTaskIds(const vector<string>& _taskIds)
-{
-    m_taskIds = _taskIds;
-    m_taskIdsHasBeenSet = true;
-}
-
-bool BatchStartIntegrationTasksRequest::TaskIdsHasBeenSet() const
-{
-    return m_taskIdsHasBeenSet;
-}
 
 int64_t BatchStartIntegrationTasksRequest::GetTaskType() const
 {
@@ -119,6 +119,38 @@ void BatchStartIntegrationTasksRequest::SetProjectId(const string& _projectId)
 bool BatchStartIntegrationTasksRequest::ProjectIdHasBeenSet() const
 {
     return m_projectIdHasBeenSet;
+}
+
+vector<string> BatchStartIntegrationTasksRequest::GetTaskIds() const
+{
+    return m_taskIds;
+}
+
+void BatchStartIntegrationTasksRequest::SetTaskIds(const vector<string>& _taskIds)
+{
+    m_taskIds = _taskIds;
+    m_taskIdsHasBeenSet = true;
+}
+
+bool BatchStartIntegrationTasksRequest::TaskIdsHasBeenSet() const
+{
+    return m_taskIdsHasBeenSet;
+}
+
+vector<StartTaskInfo> BatchStartIntegrationTasksRequest::GetStartTaskInfoSet() const
+{
+    return m_startTaskInfoSet;
+}
+
+void BatchStartIntegrationTasksRequest::SetStartTaskInfoSet(const vector<StartTaskInfo>& _startTaskInfoSet)
+{
+    m_startTaskInfoSet = _startTaskInfoSet;
+    m_startTaskInfoSetHasBeenSet = true;
+}
+
+bool BatchStartIntegrationTasksRequest::StartTaskInfoSetHasBeenSet() const
+{
+    return m_startTaskInfoSetHasBeenSet;
 }
 
 

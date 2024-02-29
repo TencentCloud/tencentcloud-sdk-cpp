@@ -804,9 +804,9 @@ namespace TencentCloud
 <li>图片控件</li>
 <li>数据表格等填写控件</li></ul>
 
-具体使用说明可参考[为签署方指定填写控件](https%3A%2F%2Fqian.tencent.cn%2Fdevelopers%2Fcompany%2FcreateFlowByFiles%2F%23%E6%8C%87%E5%AE%9A%E7%AD%BE%E7%BD%B2%E6%96%B9%E5%A1%AB%E5%86%99%E6%8E%A7%E4%BB%B6)
+具体使用说明可参考[为签署方指定填写控件](https://qian.tencent.cn/developers/company/createFlowByFiles/#指定签署方填写控件)
 
-注1：`此参数仅在通过文件发起合同或者合同组时生效`
+注：`此参数仅在通过文件发起合同或者合同组时生效`
                      * @return Components 签署人在合同中的填写控件列表，列表中可支持下列多种填写控件，控件的详细定义参考开发者中心的Component结构体
 <ul><li>单行文本控件</li>
 <li>多行文本控件</li>
@@ -815,9 +815,9 @@ namespace TencentCloud
 <li>图片控件</li>
 <li>数据表格等填写控件</li></ul>
 
-具体使用说明可参考[为签署方指定填写控件](https%3A%2F%2Fqian.tencent.cn%2Fdevelopers%2Fcompany%2FcreateFlowByFiles%2F%23%E6%8C%87%E5%AE%9A%E7%AD%BE%E7%BD%B2%E6%96%B9%E5%A1%AB%E5%86%99%E6%8E%A7%E4%BB%B6)
+具体使用说明可参考[为签署方指定填写控件](https://qian.tencent.cn/developers/company/createFlowByFiles/#指定签署方填写控件)
 
-注1：`此参数仅在通过文件发起合同或者合同组时生效`
+注：`此参数仅在通过文件发起合同或者合同组时生效`
                      * 
                      */
                     std::vector<Component> GetComponents() const;
@@ -831,9 +831,9 @@ namespace TencentCloud
 <li>图片控件</li>
 <li>数据表格等填写控件</li></ul>
 
-具体使用说明可参考[为签署方指定填写控件](https%3A%2F%2Fqian.tencent.cn%2Fdevelopers%2Fcompany%2FcreateFlowByFiles%2F%23%E6%8C%87%E5%AE%9A%E7%AD%BE%E7%BD%B2%E6%96%B9%E5%A1%AB%E5%86%99%E6%8E%A7%E4%BB%B6)
+具体使用说明可参考[为签署方指定填写控件](https://qian.tencent.cn/developers/company/createFlowByFiles/#指定签署方填写控件)
 
-注1：`此参数仅在通过文件发起合同或者合同组时生效`
+注：`此参数仅在通过文件发起合同或者合同组时生效`
                      * @param _components 签署人在合同中的填写控件列表，列表中可支持下列多种填写控件，控件的详细定义参考开发者中心的Component结构体
 <ul><li>单行文本控件</li>
 <li>多行文本控件</li>
@@ -842,9 +842,9 @@ namespace TencentCloud
 <li>图片控件</li>
 <li>数据表格等填写控件</li></ul>
 
-具体使用说明可参考[为签署方指定填写控件](https%3A%2F%2Fqian.tencent.cn%2Fdevelopers%2Fcompany%2FcreateFlowByFiles%2F%23%E6%8C%87%E5%AE%9A%E7%AD%BE%E7%BD%B2%E6%96%B9%E5%A1%AB%E5%86%99%E6%8E%A7%E4%BB%B6)
+具体使用说明可参考[为签署方指定填写控件](https://qian.tencent.cn/developers/company/createFlowByFiles/#指定签署方填写控件)
 
-注1：`此参数仅在通过文件发起合同或者合同组时生效`
+注：`此参数仅在通过文件发起合同或者合同组时生效`
                      * 
                      */
                     void SetComponents(const std::vector<Component>& _components);
@@ -1070,9 +1070,9 @@ namespace TencentCloud
 <li>图片控件</li>
 <li>数据表格等填写控件</li></ul>
 
-具体使用说明可参考[为签署方指定填写控件](https%3A%2F%2Fqian.tencent.cn%2Fdevelopers%2Fcompany%2FcreateFlowByFiles%2F%23%E6%8C%87%E5%AE%9A%E7%AD%BE%E7%BD%B2%E6%96%B9%E5%A1%AB%E5%86%99%E6%8E%A7%E4%BB%B6)
+具体使用说明可参考[为签署方指定填写控件](https://qian.tencent.cn/developers/company/createFlowByFiles/#指定签署方填写控件)
 
-注1：`此参数仅在通过文件发起合同或者合同组时生效`
+注：`此参数仅在通过文件发起合同或者合同组时生效`
                      */
                     std::vector<Component> m_components;
                     bool m_componentsHasBeenSet;

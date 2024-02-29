@@ -513,6 +513,49 @@ CfwClient::CreateBlockIgnoreRuleListOutcomeCallable CfwClient::CreateBlockIgnore
     return task->get_future();
 }
 
+CfwClient::CreateBlockIgnoreRuleNewOutcome CfwClient::CreateBlockIgnoreRuleNew(const CreateBlockIgnoreRuleNewRequest &request)
+{
+    auto outcome = MakeRequest(request, "CreateBlockIgnoreRuleNew");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        CreateBlockIgnoreRuleNewResponse rsp = CreateBlockIgnoreRuleNewResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return CreateBlockIgnoreRuleNewOutcome(rsp);
+        else
+            return CreateBlockIgnoreRuleNewOutcome(o.GetError());
+    }
+    else
+    {
+        return CreateBlockIgnoreRuleNewOutcome(outcome.GetError());
+    }
+}
+
+void CfwClient::CreateBlockIgnoreRuleNewAsync(const CreateBlockIgnoreRuleNewRequest& request, const CreateBlockIgnoreRuleNewAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->CreateBlockIgnoreRuleNew(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+CfwClient::CreateBlockIgnoreRuleNewOutcomeCallable CfwClient::CreateBlockIgnoreRuleNewCallable(const CreateBlockIgnoreRuleNewRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<CreateBlockIgnoreRuleNewOutcome()>>(
+        [this, request]()
+        {
+            return this->CreateBlockIgnoreRuleNew(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 CfwClient::CreateChooseVpcsOutcome CfwClient::CreateChooseVpcs(const CreateChooseVpcsRequest &request)
 {
     auto outcome = MakeRequest(request, "CreateChooseVpcs");
@@ -979,6 +1022,49 @@ CfwClient::DeleteBlockIgnoreRuleListOutcomeCallable CfwClient::DeleteBlockIgnore
         [this, request]()
         {
             return this->DeleteBlockIgnoreRuleList(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+CfwClient::DeleteBlockIgnoreRuleNewOutcome CfwClient::DeleteBlockIgnoreRuleNew(const DeleteBlockIgnoreRuleNewRequest &request)
+{
+    auto outcome = MakeRequest(request, "DeleteBlockIgnoreRuleNew");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DeleteBlockIgnoreRuleNewResponse rsp = DeleteBlockIgnoreRuleNewResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DeleteBlockIgnoreRuleNewOutcome(rsp);
+        else
+            return DeleteBlockIgnoreRuleNewOutcome(o.GetError());
+    }
+    else
+    {
+        return DeleteBlockIgnoreRuleNewOutcome(outcome.GetError());
+    }
+}
+
+void CfwClient::DeleteBlockIgnoreRuleNewAsync(const DeleteBlockIgnoreRuleNewRequest& request, const DeleteBlockIgnoreRuleNewAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DeleteBlockIgnoreRuleNew(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+CfwClient::DeleteBlockIgnoreRuleNewOutcomeCallable CfwClient::DeleteBlockIgnoreRuleNewCallable(const DeleteBlockIgnoreRuleNewRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DeleteBlockIgnoreRuleNewOutcome()>>(
+        [this, request]()
+        {
+            return this->DeleteBlockIgnoreRuleNew(request);
         }
     );
 
@@ -3344,6 +3430,49 @@ CfwClient::ModifyBlockIgnoreRuleOutcomeCallable CfwClient::ModifyBlockIgnoreRule
         [this, request]()
         {
             return this->ModifyBlockIgnoreRule(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+CfwClient::ModifyBlockIgnoreRuleNewOutcome CfwClient::ModifyBlockIgnoreRuleNew(const ModifyBlockIgnoreRuleNewRequest &request)
+{
+    auto outcome = MakeRequest(request, "ModifyBlockIgnoreRuleNew");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ModifyBlockIgnoreRuleNewResponse rsp = ModifyBlockIgnoreRuleNewResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ModifyBlockIgnoreRuleNewOutcome(rsp);
+        else
+            return ModifyBlockIgnoreRuleNewOutcome(o.GetError());
+    }
+    else
+    {
+        return ModifyBlockIgnoreRuleNewOutcome(outcome.GetError());
+    }
+}
+
+void CfwClient::ModifyBlockIgnoreRuleNewAsync(const ModifyBlockIgnoreRuleNewRequest& request, const ModifyBlockIgnoreRuleNewAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->ModifyBlockIgnoreRuleNew(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+CfwClient::ModifyBlockIgnoreRuleNewOutcomeCallable CfwClient::ModifyBlockIgnoreRuleNewCallable(const ModifyBlockIgnoreRuleNewRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<ModifyBlockIgnoreRuleNewOutcome()>>(
+        [this, request]()
+        {
+            return this->ModifyBlockIgnoreRuleNew(request);
         }
     );
 

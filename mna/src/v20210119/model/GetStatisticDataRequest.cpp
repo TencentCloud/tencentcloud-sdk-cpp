@@ -26,7 +26,9 @@ GetStatisticDataRequest::GetStatisticDataRequest() :
     m_deviceIdHasBeenSet(false),
     m_beginTimeHasBeenSet(false),
     m_endTimeHasBeenSet(false),
-    m_timeGranularityHasBeenSet(false)
+    m_timeGranularityHasBeenSet(false),
+    m_accessRegionHasBeenSet(false),
+    m_gatewayTypeHasBeenSet(false)
 {
 }
 
@@ -67,6 +69,22 @@ string GetStatisticDataRequest::ToJsonString() const
         string key = "TimeGranularity";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_timeGranularity, allocator);
+    }
+
+    if (m_accessRegionHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "AccessRegion";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_accessRegion.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_gatewayTypeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "GatewayType";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_gatewayType, allocator);
     }
 
 
@@ -139,6 +157,38 @@ void GetStatisticDataRequest::SetTimeGranularity(const int64_t& _timeGranularity
 bool GetStatisticDataRequest::TimeGranularityHasBeenSet() const
 {
     return m_timeGranularityHasBeenSet;
+}
+
+string GetStatisticDataRequest::GetAccessRegion() const
+{
+    return m_accessRegion;
+}
+
+void GetStatisticDataRequest::SetAccessRegion(const string& _accessRegion)
+{
+    m_accessRegion = _accessRegion;
+    m_accessRegionHasBeenSet = true;
+}
+
+bool GetStatisticDataRequest::AccessRegionHasBeenSet() const
+{
+    return m_accessRegionHasBeenSet;
+}
+
+int64_t GetStatisticDataRequest::GetGatewayType() const
+{
+    return m_gatewayType;
+}
+
+void GetStatisticDataRequest::SetGatewayType(const int64_t& _gatewayType)
+{
+    m_gatewayType = _gatewayType;
+    m_gatewayTypeHasBeenSet = true;
+}
+
+bool GetStatisticDataRequest::GatewayTypeHasBeenSet() const
+{
+    return m_gatewayTypeHasBeenSet;
 }
 
 

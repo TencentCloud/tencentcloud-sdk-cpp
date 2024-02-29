@@ -29,7 +29,8 @@ McuWaterMarkText::McuWaterMarkText() :
     m_fontSizeHasBeenSet(false),
     m_fontColorHasBeenSet(false),
     m_backGroundColorHasBeenSet(false),
-    m_dynamicPosTypeHasBeenSet(false)
+    m_dynamicPosTypeHasBeenSet(false),
+    m_zOrderHasBeenSet(false)
 {
 }
 
@@ -128,6 +129,16 @@ CoreInternalOutcome McuWaterMarkText::Deserialize(const rapidjson::Value &value)
         m_dynamicPosTypeHasBeenSet = true;
     }
 
+    if (value.HasMember("ZOrder") && !value["ZOrder"].IsNull())
+    {
+        if (!value["ZOrder"].IsUint64())
+        {
+            return CoreInternalOutcome(Core::Error("response `McuWaterMarkText.ZOrder` IsUint64=false incorrectly").SetRequestId(requestId));
+        }
+        m_zOrder = value["ZOrder"].GetUint64();
+        m_zOrderHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -205,6 +216,14 @@ void McuWaterMarkText::ToJsonObject(rapidjson::Value &value, rapidjson::Document
         string key = "DynamicPosType";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_dynamicPosType, allocator);
+    }
+
+    if (m_zOrderHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ZOrder";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_zOrder, allocator);
     }
 
 }
@@ -352,5 +371,21 @@ void McuWaterMarkText::SetDynamicPosType(const uint64_t& _dynamicPosType)
 bool McuWaterMarkText::DynamicPosTypeHasBeenSet() const
 {
     return m_dynamicPosTypeHasBeenSet;
+}
+
+uint64_t McuWaterMarkText::GetZOrder() const
+{
+    return m_zOrder;
+}
+
+void McuWaterMarkText::SetZOrder(const uint64_t& _zOrder)
+{
+    m_zOrder = _zOrder;
+    m_zOrderHasBeenSet = true;
+}
+
+bool McuWaterMarkText::ZOrderHasBeenSet() const
+{
+    return m_zOrderHasBeenSet;
 }
 

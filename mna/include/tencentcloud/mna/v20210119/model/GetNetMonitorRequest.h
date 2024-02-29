@@ -126,6 +126,27 @@ namespace TencentCloud
                      */
                     bool MetricsHasBeenSet() const;
 
+                    /**
+                     * 获取网关类型。0：公有云网关；1：自有网关。不传默认为0。
+                     * @return GatewayType 网关类型。0：公有云网关；1：自有网关。不传默认为0。
+                     * 
+                     */
+                    int64_t GetGatewayType() const;
+
+                    /**
+                     * 设置网关类型。0：公有云网关；1：自有网关。不传默认为0。
+                     * @param _gatewayType 网关类型。0：公有云网关；1：自有网关。不传默认为0。
+                     * 
+                     */
+                    void SetGatewayType(const int64_t& _gatewayType);
+
+                    /**
+                     * 判断参数 GatewayType 是否已赋值
+                     * @return GatewayType 是否已赋值
+                     * 
+                     */
+                    bool GatewayTypeHasBeenSet() const;
+
                 private:
 
                     /**
@@ -151,6 +172,12 @@ namespace TencentCloud
                      */
                     std::string m_metrics;
                     bool m_metricsHasBeenSet;
+
+                    /**
+                     * 网关类型。0：公有云网关；1：自有网关。不传默认为0。
+                     */
+                    int64_t m_gatewayType;
+                    bool m_gatewayTypeHasBeenSet;
 
                 };
             }

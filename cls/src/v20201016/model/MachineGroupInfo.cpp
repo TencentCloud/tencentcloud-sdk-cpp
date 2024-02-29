@@ -30,6 +30,7 @@ MachineGroupInfo::MachineGroupInfo() :
     m_updateStartTimeHasBeenSet(false),
     m_updateEndTimeHasBeenSet(false),
     m_serviceLoggingHasBeenSet(false),
+    m_delayCleanupTimeHasBeenSet(false),
     m_metaTagsHasBeenSet(false),
     m_oSTypeHasBeenSet(false)
 {
@@ -147,6 +148,16 @@ CoreInternalOutcome MachineGroupInfo::Deserialize(const rapidjson::Value &value)
         m_serviceLoggingHasBeenSet = true;
     }
 
+    if (value.HasMember("DelayCleanupTime") && !value["DelayCleanupTime"].IsNull())
+    {
+        if (!value["DelayCleanupTime"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `MachineGroupInfo.DelayCleanupTime` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_delayCleanupTime = value["DelayCleanupTime"].GetInt64();
+        m_delayCleanupTimeHasBeenSet = true;
+    }
+
     if (value.HasMember("MetaTags") && !value["MetaTags"].IsNull())
     {
         if (!value["MetaTags"].IsArray())
@@ -262,6 +273,14 @@ void MachineGroupInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Document
         string key = "ServiceLogging";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_serviceLogging, allocator);
+    }
+
+    if (m_delayCleanupTimeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "DelayCleanupTime";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_delayCleanupTime, allocator);
     }
 
     if (m_metaTagsHasBeenSet)
@@ -432,6 +451,22 @@ void MachineGroupInfo::SetServiceLogging(const bool& _serviceLogging)
 bool MachineGroupInfo::ServiceLoggingHasBeenSet() const
 {
     return m_serviceLoggingHasBeenSet;
+}
+
+int64_t MachineGroupInfo::GetDelayCleanupTime() const
+{
+    return m_delayCleanupTime;
+}
+
+void MachineGroupInfo::SetDelayCleanupTime(const int64_t& _delayCleanupTime)
+{
+    m_delayCleanupTime = _delayCleanupTime;
+    m_delayCleanupTimeHasBeenSet = true;
+}
+
+bool MachineGroupInfo::DelayCleanupTimeHasBeenSet() const
+{
+    return m_delayCleanupTimeHasBeenSet;
 }
 
 vector<MetaTagInfo> MachineGroupInfo::GetMetaTags() const

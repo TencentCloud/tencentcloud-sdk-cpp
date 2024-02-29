@@ -175,6 +175,8 @@
 #include <tencentcloud/vod/v20180717/model/DescribeDailyMostPlayedStatResponse.h>
 #include <tencentcloud/vod/v20180717/model/DescribeDailyPlayStatFileListRequest.h>
 #include <tencentcloud/vod/v20180717/model/DescribeDailyPlayStatFileListResponse.h>
+#include <tencentcloud/vod/v20180717/model/DescribeDefaultDistributionConfigRequest.h>
+#include <tencentcloud/vod/v20180717/model/DescribeDefaultDistributionConfigResponse.h>
 #include <tencentcloud/vod/v20180717/model/DescribeDrmDataKeyRequest.h>
 #include <tencentcloud/vod/v20180717/model/DescribeDrmDataKeyResponse.h>
 #include <tencentcloud/vod/v20180717/model/DescribeDrmKeyProviderInfoRequest.h>
@@ -279,6 +281,8 @@
 #include <tencentcloud/vod/v20180717/model/ModifyClassResponse.h>
 #include <tencentcloud/vod/v20180717/model/ModifyContentReviewTemplateRequest.h>
 #include <tencentcloud/vod/v20180717/model/ModifyContentReviewTemplateResponse.h>
+#include <tencentcloud/vod/v20180717/model/ModifyDefaultDistributionConfigRequest.h>
+#include <tencentcloud/vod/v20180717/model/ModifyDefaultDistributionConfigResponse.h>
 #include <tencentcloud/vod/v20180717/model/ModifyDefaultStorageRegionRequest.h>
 #include <tencentcloud/vod/v20180717/model/ModifyDefaultStorageRegionResponse.h>
 #include <tencentcloud/vod/v20180717/model/ModifyEnhanceMediaTemplateRequest.h>
@@ -615,6 +619,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeDailyPlayStatFileListResponse> DescribeDailyPlayStatFileListOutcome;
                 typedef std::future<DescribeDailyPlayStatFileListOutcome> DescribeDailyPlayStatFileListOutcomeCallable;
                 typedef std::function<void(const VodClient*, const Model::DescribeDailyPlayStatFileListRequest&, DescribeDailyPlayStatFileListOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeDailyPlayStatFileListAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeDefaultDistributionConfigResponse> DescribeDefaultDistributionConfigOutcome;
+                typedef std::future<DescribeDefaultDistributionConfigOutcome> DescribeDefaultDistributionConfigOutcomeCallable;
+                typedef std::function<void(const VodClient*, const Model::DescribeDefaultDistributionConfigRequest&, DescribeDefaultDistributionConfigOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeDefaultDistributionConfigAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeDrmDataKeyResponse> DescribeDrmDataKeyOutcome;
                 typedef std::future<DescribeDrmDataKeyOutcome> DescribeDrmDataKeyOutcomeCallable;
                 typedef std::function<void(const VodClient*, const Model::DescribeDrmDataKeyRequest&, DescribeDrmDataKeyOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeDrmDataKeyAsyncHandler;
@@ -771,6 +778,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::ModifyContentReviewTemplateResponse> ModifyContentReviewTemplateOutcome;
                 typedef std::future<ModifyContentReviewTemplateOutcome> ModifyContentReviewTemplateOutcomeCallable;
                 typedef std::function<void(const VodClient*, const Model::ModifyContentReviewTemplateRequest&, ModifyContentReviewTemplateOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyContentReviewTemplateAsyncHandler;
+                typedef Outcome<Core::Error, Model::ModifyDefaultDistributionConfigResponse> ModifyDefaultDistributionConfigOutcome;
+                typedef std::future<ModifyDefaultDistributionConfigOutcome> ModifyDefaultDistributionConfigOutcomeCallable;
+                typedef std::function<void(const VodClient*, const Model::ModifyDefaultDistributionConfigRequest&, ModifyDefaultDistributionConfigOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyDefaultDistributionConfigAsyncHandler;
                 typedef Outcome<Core::Error, Model::ModifyDefaultStorageRegionResponse> ModifyDefaultStorageRegionOutcome;
                 typedef std::future<ModifyDefaultStorageRegionOutcome> ModifyDefaultStorageRegionOutcomeCallable;
                 typedef std::function<void(const VodClient*, const Model::ModifyDefaultStorageRegionRequest&, ModifyDefaultStorageRegionOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyDefaultStorageRegionAsyncHandler;
@@ -1669,6 +1679,17 @@ namespace TencentCloud
                 DescribeDailyPlayStatFileListOutcomeCallable DescribeDailyPlayStatFileListCallable(const Model::DescribeDailyPlayStatFileListRequest& request);
 
                 /**
+                 *该接口用于查询默认分发配置。
+* 分发域名和分发协议，即媒体文件分发 URL 中的域名和协议。媒体文件按默认分发配置进行分发。
+* 播放密钥，用于计算播放器签名。
+                 * @param req DescribeDefaultDistributionConfigRequest
+                 * @return DescribeDefaultDistributionConfigOutcome
+                 */
+                DescribeDefaultDistributionConfigOutcome DescribeDefaultDistributionConfig(const Model::DescribeDefaultDistributionConfigRequest &request);
+                void DescribeDefaultDistributionConfigAsync(const Model::DescribeDefaultDistributionConfigRequest& request, const DescribeDefaultDistributionConfigAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeDefaultDistributionConfigOutcomeCallable DescribeDefaultDistributionConfigCallable(const Model::DescribeDefaultDistributionConfigRequest& request);
+
+                /**
                  *本 API 是 [旧版本加密](https://cloud.tencent.com/document/product/266/9638) 中 [DescribeDrmDataKey 的 API 2017 接口](https://cloud.tencent.com/document/product/266/9643) 的升级版本。
 
 如果您是新接入点播加密的用户，不要使用该 API，请参考 [视频加密综述](https://cloud.tencent.com/document/product/266/45552) 使用推荐的加密方式。
@@ -2226,6 +2247,17 @@ namespace TencentCloud
                 ModifyContentReviewTemplateOutcome ModifyContentReviewTemplate(const Model::ModifyContentReviewTemplateRequest &request);
                 void ModifyContentReviewTemplateAsync(const Model::ModifyContentReviewTemplateRequest& request, const ModifyContentReviewTemplateAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 ModifyContentReviewTemplateOutcomeCallable ModifyContentReviewTemplateCallable(const Model::ModifyContentReviewTemplateRequest& request);
+
+                /**
+                 *该接口用于修改默认分发配置。
+* 分发域名和分发协议，即媒体文件分发 URL 中的域名和协议。媒体文件按默认分发配置进行分发。
+* 播放密钥，用于计算播放器签名。
+                 * @param req ModifyDefaultDistributionConfigRequest
+                 * @return ModifyDefaultDistributionConfigOutcome
+                 */
+                ModifyDefaultDistributionConfigOutcome ModifyDefaultDistributionConfig(const Model::ModifyDefaultDistributionConfigRequest &request);
+                void ModifyDefaultDistributionConfigAsync(const Model::ModifyDefaultDistributionConfigRequest& request, const ModifyDefaultDistributionConfigAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                ModifyDefaultDistributionConfigOutcomeCallable ModifyDefaultDistributionConfigCallable(const Model::ModifyDefaultDistributionConfigRequest& request);
 
                 /**
                  *该接口用于设置默认的存储地域。上传文件时如果没有指定地域，将上传到默认地域。

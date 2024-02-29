@@ -27,7 +27,9 @@ GetMultiFlowStatisticRequest::GetMultiFlowStatisticRequest() :
     m_beginTimeHasBeenSet(false),
     m_endTimeHasBeenSet(false),
     m_typeHasBeenSet(false),
-    m_timeGranularityHasBeenSet(false)
+    m_timeGranularityHasBeenSet(false),
+    m_accessRegionHasBeenSet(false),
+    m_gatewayTypeHasBeenSet(false)
 {
 }
 
@@ -81,6 +83,22 @@ string GetMultiFlowStatisticRequest::ToJsonString() const
         string key = "TimeGranularity";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_timeGranularity, allocator);
+    }
+
+    if (m_accessRegionHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "AccessRegion";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_accessRegion.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_gatewayTypeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "GatewayType";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_gatewayType, allocator);
     }
 
 
@@ -169,6 +187,38 @@ void GetMultiFlowStatisticRequest::SetTimeGranularity(const int64_t& _timeGranul
 bool GetMultiFlowStatisticRequest::TimeGranularityHasBeenSet() const
 {
     return m_timeGranularityHasBeenSet;
+}
+
+string GetMultiFlowStatisticRequest::GetAccessRegion() const
+{
+    return m_accessRegion;
+}
+
+void GetMultiFlowStatisticRequest::SetAccessRegion(const string& _accessRegion)
+{
+    m_accessRegion = _accessRegion;
+    m_accessRegionHasBeenSet = true;
+}
+
+bool GetMultiFlowStatisticRequest::AccessRegionHasBeenSet() const
+{
+    return m_accessRegionHasBeenSet;
+}
+
+int64_t GetMultiFlowStatisticRequest::GetGatewayType() const
+{
+    return m_gatewayType;
+}
+
+void GetMultiFlowStatisticRequest::SetGatewayType(const int64_t& _gatewayType)
+{
+    m_gatewayType = _gatewayType;
+    m_gatewayTypeHasBeenSet = true;
+}
+
+bool GetMultiFlowStatisticRequest::GatewayTypeHasBeenSet() const
+{
+    return m_gatewayTypeHasBeenSet;
 }
 
 

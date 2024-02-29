@@ -43,15 +43,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取设备ID
-                     * @return DeviceId 设备ID
+                     * 获取设备ID。若不指定设备，可传"-1"
+                     * @return DeviceId 设备ID。若不指定设备，可传"-1"
                      * 
                      */
                     std::string GetDeviceId() const;
 
                     /**
-                     * 设置设备ID
-                     * @param _deviceId 设备ID
+                     * 设置设备ID。若不指定设备，可传"-1"
+                     * @param _deviceId 设备ID。若不指定设备，可传"-1"
                      * 
                      */
                     void SetDeviceId(const std::string& _deviceId);
@@ -134,10 +134,52 @@ namespace TencentCloud
                      */
                     bool TimeGranularityHasBeenSet() const;
 
+                    /**
+                     * 获取接入区域。取值范围：['MC','AP','EU','AM'] MC=中国大陆 AP=亚太 EU=欧洲 AM=美洲。不填默认中国大陆
+                     * @return AccessRegion 接入区域。取值范围：['MC','AP','EU','AM'] MC=中国大陆 AP=亚太 EU=欧洲 AM=美洲。不填默认中国大陆
+                     * 
+                     */
+                    std::string GetAccessRegion() const;
+
+                    /**
+                     * 设置接入区域。取值范围：['MC','AP','EU','AM'] MC=中国大陆 AP=亚太 EU=欧洲 AM=美洲。不填默认中国大陆
+                     * @param _accessRegion 接入区域。取值范围：['MC','AP','EU','AM'] MC=中国大陆 AP=亚太 EU=欧洲 AM=美洲。不填默认中国大陆
+                     * 
+                     */
+                    void SetAccessRegion(const std::string& _accessRegion);
+
+                    /**
+                     * 判断参数 AccessRegion 是否已赋值
+                     * @return AccessRegion 是否已赋值
+                     * 
+                     */
+                    bool AccessRegionHasBeenSet() const;
+
+                    /**
+                     * 获取网关类型。0：公有云网关；1：自有网关。不传默认为0。
+                     * @return GatewayType 网关类型。0：公有云网关；1：自有网关。不传默认为0。
+                     * 
+                     */
+                    int64_t GetGatewayType() const;
+
+                    /**
+                     * 设置网关类型。0：公有云网关；1：自有网关。不传默认为0。
+                     * @param _gatewayType 网关类型。0：公有云网关；1：自有网关。不传默认为0。
+                     * 
+                     */
+                    void SetGatewayType(const int64_t& _gatewayType);
+
+                    /**
+                     * 判断参数 GatewayType 是否已赋值
+                     * @return GatewayType 是否已赋值
+                     * 
+                     */
+                    bool GatewayTypeHasBeenSet() const;
+
                 private:
 
                     /**
-                     * 设备ID
+                     * 设备ID。若不指定设备，可传"-1"
                      */
                     std::string m_deviceId;
                     bool m_deviceIdHasBeenSet;
@@ -161,6 +203,18 @@ namespace TencentCloud
                      */
                     int64_t m_timeGranularity;
                     bool m_timeGranularityHasBeenSet;
+
+                    /**
+                     * 接入区域。取值范围：['MC','AP','EU','AM'] MC=中国大陆 AP=亚太 EU=欧洲 AM=美洲。不填默认中国大陆
+                     */
+                    std::string m_accessRegion;
+                    bool m_accessRegionHasBeenSet;
+
+                    /**
+                     * 网关类型。0：公有云网关；1：自有网关。不传默认为0。
+                     */
+                    int64_t m_gatewayType;
+                    bool m_gatewayTypeHasBeenSet;
 
                 };
             }

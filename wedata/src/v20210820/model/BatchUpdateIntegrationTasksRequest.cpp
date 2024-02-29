@@ -27,7 +27,8 @@ BatchUpdateIntegrationTasksRequest::BatchUpdateIntegrationTasksRequest() :
     m_inchargeHasBeenSet(false),
     m_taskTypeHasBeenSet(false),
     m_projectIdHasBeenSet(false),
-    m_inchargeIdsHasBeenSet(false)
+    m_inchargeIdsHasBeenSet(false),
+    m_taskNamesHasBeenSet(false)
 {
 }
 
@@ -81,6 +82,19 @@ string BatchUpdateIntegrationTasksRequest::ToJsonString() const
         string key = "InchargeIds";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_inchargeIds.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_taskNamesHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "TaskNames";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        for (auto itr = m_taskNames.begin(); itr != m_taskNames.end(); ++itr)
+        {
+            d[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
+        }
     }
 
 
@@ -169,6 +183,22 @@ void BatchUpdateIntegrationTasksRequest::SetInchargeIds(const string& _inchargeI
 bool BatchUpdateIntegrationTasksRequest::InchargeIdsHasBeenSet() const
 {
     return m_inchargeIdsHasBeenSet;
+}
+
+vector<string> BatchUpdateIntegrationTasksRequest::GetTaskNames() const
+{
+    return m_taskNames;
+}
+
+void BatchUpdateIntegrationTasksRequest::SetTaskNames(const vector<string>& _taskNames)
+{
+    m_taskNames = _taskNames;
+    m_taskNamesHasBeenSet = true;
+}
+
+bool BatchUpdateIntegrationTasksRequest::TaskNamesHasBeenSet() const
+{
+    return m_taskNamesHasBeenSet;
 }
 
 

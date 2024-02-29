@@ -26,7 +26,8 @@ using namespace std;
 BatchStopIntegrationTasksResponse::BatchStopIntegrationTasksResponse() :
     m_successCountHasBeenSet(false),
     m_failedCountHasBeenSet(false),
-    m_totalCountHasBeenSet(false)
+    m_totalCountHasBeenSet(false),
+    m_taskNamesHasBeenSet(false)
 {
 }
 
@@ -94,6 +95,19 @@ CoreInternalOutcome BatchStopIntegrationTasksResponse::Deserialize(const string 
         m_totalCountHasBeenSet = true;
     }
 
+    if (rsp.HasMember("TaskNames") && !rsp["TaskNames"].IsNull())
+    {
+        if (!rsp["TaskNames"].IsArray())
+            return CoreInternalOutcome(Core::Error("response `TaskNames` is not array type"));
+
+        const rapidjson::Value &tmpValue = rsp["TaskNames"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            m_taskNames.push_back((*itr).GetString());
+        }
+        m_taskNamesHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -126,6 +140,19 @@ string BatchStopIntegrationTasksResponse::ToJsonString() const
         string key = "TotalCount";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_totalCount, allocator);
+    }
+
+    if (m_taskNamesHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "TaskNames";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        for (auto itr = m_taskNames.begin(); itr != m_taskNames.end(); ++itr)
+        {
+            value[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
+        }
     }
 
     rapidjson::Value iKey(rapidjson::kStringType);
@@ -168,6 +195,16 @@ int64_t BatchStopIntegrationTasksResponse::GetTotalCount() const
 bool BatchStopIntegrationTasksResponse::TotalCountHasBeenSet() const
 {
     return m_totalCountHasBeenSet;
+}
+
+vector<string> BatchStopIntegrationTasksResponse::GetTaskNames() const
+{
+    return m_taskNames;
+}
+
+bool BatchStopIntegrationTasksResponse::TaskNamesHasBeenSet() const
+{
+    return m_taskNamesHasBeenSet;
 }
 
 

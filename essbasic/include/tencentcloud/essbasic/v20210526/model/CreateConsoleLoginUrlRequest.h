@@ -494,18 +494,18 @@ namespace TencentCloud
 
                     /**
                      * 获取认证完成跳转链接。
-注意：`目前仅支持 H5 和 PC， 如果使用的是 H5，域名需要联系我们开白`。
+注意：`目前仅支持 H5 和 PC`。
                      * @return AutoJumpUrl 认证完成跳转链接。
-注意：`目前仅支持 H5 和 PC， 如果使用的是 H5，域名需要联系我们开白`。
+注意：`目前仅支持 H5 和 PC`。
                      * 
                      */
                     std::string GetAutoJumpUrl() const;
 
                     /**
                      * 设置认证完成跳转链接。
-注意：`目前仅支持 H5 和 PC， 如果使用的是 H5，域名需要联系我们开白`。
+注意：`目前仅支持 H5 和 PC`。
                      * @param _autoJumpUrl 认证完成跳转链接。
-注意：`目前仅支持 H5 和 PC， 如果使用的是 H5，域名需要联系我们开白`。
+注意：`目前仅支持 H5 和 PC`。
                      * 
                      */
                     void SetAutoJumpUrl(const std::string& _autoJumpUrl);
@@ -642,7 +642,7 @@ namespace TencentCloud
 
                     /**
                      * 认证完成跳转链接。
-注意：`目前仅支持 H5 和 PC， 如果使用的是 H5，域名需要联系我们开白`。
+注意：`目前仅支持 H5 和 PC`。
                      */
                     std::string m_autoJumpUrl;
                     bool m_autoJumpUrlHasBeenSet;

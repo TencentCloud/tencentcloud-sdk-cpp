@@ -384,6 +384,49 @@ WafClient::CreateAccessExportOutcomeCallable WafClient::CreateAccessExportCallab
     return task->get_future();
 }
 
+WafClient::CreateDealsOutcome WafClient::CreateDeals(const CreateDealsRequest &request)
+{
+    auto outcome = MakeRequest(request, "CreateDeals");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        CreateDealsResponse rsp = CreateDealsResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return CreateDealsOutcome(rsp);
+        else
+            return CreateDealsOutcome(o.GetError());
+    }
+    else
+    {
+        return CreateDealsOutcome(outcome.GetError());
+    }
+}
+
+void WafClient::CreateDealsAsync(const CreateDealsRequest& request, const CreateDealsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->CreateDeals(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+WafClient::CreateDealsOutcomeCallable WafClient::CreateDealsCallable(const CreateDealsRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<CreateDealsOutcome()>>(
+        [this, request]()
+        {
+            return this->CreateDeals(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 WafClient::CreateHostOutcome WafClient::CreateHost(const CreateHostRequest &request)
 {
     auto outcome = MakeRequest(request, "CreateHost");

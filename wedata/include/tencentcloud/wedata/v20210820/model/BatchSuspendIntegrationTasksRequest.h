@@ -126,6 +126,27 @@ namespace TencentCloud
                      */
                     bool EventHasBeenSet() const;
 
+                    /**
+                     * 获取本次批量操作涉及任务，用于审计
+                     * @return TaskNames 本次批量操作涉及任务，用于审计
+                     * 
+                     */
+                    std::vector<std::string> GetTaskNames() const;
+
+                    /**
+                     * 设置本次批量操作涉及任务，用于审计
+                     * @param _taskNames 本次批量操作涉及任务，用于审计
+                     * 
+                     */
+                    void SetTaskNames(const std::vector<std::string>& _taskNames);
+
+                    /**
+                     * 判断参数 TaskNames 是否已赋值
+                     * @return TaskNames 是否已赋值
+                     * 
+                     */
+                    bool TaskNamesHasBeenSet() const;
+
                 private:
 
                     /**
@@ -151,6 +172,12 @@ namespace TencentCloud
                      */
                     std::string m_event;
                     bool m_eventHasBeenSet;
+
+                    /**
+                     * 本次批量操作涉及任务，用于审计
+                     */
+                    std::vector<std::string> m_taskNames;
+                    bool m_taskNamesHasBeenSet;
 
                 };
             }

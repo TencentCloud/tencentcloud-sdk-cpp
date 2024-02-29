@@ -27,7 +27,9 @@ GetFlowStatisticRequest::GetFlowStatisticRequest() :
     m_beginTimeHasBeenSet(false),
     m_endTimeHasBeenSet(false),
     m_typeHasBeenSet(false),
-    m_timeGranularityHasBeenSet(false)
+    m_timeGranularityHasBeenSet(false),
+    m_accessRegionHasBeenSet(false),
+    m_gatewayTypeHasBeenSet(false)
 {
 }
 
@@ -76,6 +78,22 @@ string GetFlowStatisticRequest::ToJsonString() const
         string key = "TimeGranularity";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_timeGranularity, allocator);
+    }
+
+    if (m_accessRegionHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "AccessRegion";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_accessRegion.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_gatewayTypeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "GatewayType";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_gatewayType, allocator);
     }
 
 
@@ -164,6 +182,38 @@ void GetFlowStatisticRequest::SetTimeGranularity(const int64_t& _timeGranularity
 bool GetFlowStatisticRequest::TimeGranularityHasBeenSet() const
 {
     return m_timeGranularityHasBeenSet;
+}
+
+string GetFlowStatisticRequest::GetAccessRegion() const
+{
+    return m_accessRegion;
+}
+
+void GetFlowStatisticRequest::SetAccessRegion(const string& _accessRegion)
+{
+    m_accessRegion = _accessRegion;
+    m_accessRegionHasBeenSet = true;
+}
+
+bool GetFlowStatisticRequest::AccessRegionHasBeenSet() const
+{
+    return m_accessRegionHasBeenSet;
+}
+
+int64_t GetFlowStatisticRequest::GetGatewayType() const
+{
+    return m_gatewayType;
+}
+
+void GetFlowStatisticRequest::SetGatewayType(const int64_t& _gatewayType)
+{
+    m_gatewayType = _gatewayType;
+    m_gatewayTypeHasBeenSet = true;
+}
+
+bool GetFlowStatisticRequest::GatewayTypeHasBeenSet() const
+{
+    return m_gatewayTypeHasBeenSet;
 }
 
 

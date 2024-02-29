@@ -40,6 +40,49 @@ CccClient::CccClient(const Credential &credential, const string &region, const C
 }
 
 
+CccClient::AbortPredictiveDialingCampaignOutcome CccClient::AbortPredictiveDialingCampaign(const AbortPredictiveDialingCampaignRequest &request)
+{
+    auto outcome = MakeRequest(request, "AbortPredictiveDialingCampaign");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        AbortPredictiveDialingCampaignResponse rsp = AbortPredictiveDialingCampaignResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return AbortPredictiveDialingCampaignOutcome(rsp);
+        else
+            return AbortPredictiveDialingCampaignOutcome(o.GetError());
+    }
+    else
+    {
+        return AbortPredictiveDialingCampaignOutcome(outcome.GetError());
+    }
+}
+
+void CccClient::AbortPredictiveDialingCampaignAsync(const AbortPredictiveDialingCampaignRequest& request, const AbortPredictiveDialingCampaignAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->AbortPredictiveDialingCampaign(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+CccClient::AbortPredictiveDialingCampaignOutcomeCallable CccClient::AbortPredictiveDialingCampaignCallable(const AbortPredictiveDialingCampaignRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<AbortPredictiveDialingCampaignOutcome()>>(
+        [this, request]()
+        {
+            return this->AbortPredictiveDialingCampaign(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 CccClient::BindNumberCallOutSkillGroupOutcome CccClient::BindNumberCallOutSkillGroup(const BindNumberCallOutSkillGroupRequest &request)
 {
     auto outcome = MakeRequest(request, "BindNumberCallOutSkillGroup");
@@ -384,6 +427,49 @@ CccClient::CreateExtensionOutcomeCallable CccClient::CreateExtensionCallable(con
     return task->get_future();
 }
 
+CccClient::CreatePredictiveDialingCampaignOutcome CccClient::CreatePredictiveDialingCampaign(const CreatePredictiveDialingCampaignRequest &request)
+{
+    auto outcome = MakeRequest(request, "CreatePredictiveDialingCampaign");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        CreatePredictiveDialingCampaignResponse rsp = CreatePredictiveDialingCampaignResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return CreatePredictiveDialingCampaignOutcome(rsp);
+        else
+            return CreatePredictiveDialingCampaignOutcome(o.GetError());
+    }
+    else
+    {
+        return CreatePredictiveDialingCampaignOutcome(outcome.GetError());
+    }
+}
+
+void CccClient::CreatePredictiveDialingCampaignAsync(const CreatePredictiveDialingCampaignRequest& request, const CreatePredictiveDialingCampaignAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->CreatePredictiveDialingCampaign(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+CccClient::CreatePredictiveDialingCampaignOutcomeCallable CccClient::CreatePredictiveDialingCampaignCallable(const CreatePredictiveDialingCampaignRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<CreatePredictiveDialingCampaignOutcome()>>(
+        [this, request]()
+        {
+            return this->CreatePredictiveDialingCampaign(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 CccClient::CreateSDKLoginTokenOutcome CccClient::CreateSDKLoginToken(const CreateSDKLoginTokenRequest &request)
 {
     auto outcome = MakeRequest(request, "CreateSDKLoginToken");
@@ -549,6 +635,49 @@ CccClient::DeleteExtensionOutcomeCallable CccClient::DeleteExtensionCallable(con
         [this, request]()
         {
             return this->DeleteExtension(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+CccClient::DeletePredictiveDialingCampaignOutcome CccClient::DeletePredictiveDialingCampaign(const DeletePredictiveDialingCampaignRequest &request)
+{
+    auto outcome = MakeRequest(request, "DeletePredictiveDialingCampaign");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DeletePredictiveDialingCampaignResponse rsp = DeletePredictiveDialingCampaignResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DeletePredictiveDialingCampaignOutcome(rsp);
+        else
+            return DeletePredictiveDialingCampaignOutcome(o.GetError());
+    }
+    else
+    {
+        return DeletePredictiveDialingCampaignOutcome(outcome.GetError());
+    }
+}
+
+void CccClient::DeletePredictiveDialingCampaignAsync(const DeletePredictiveDialingCampaignRequest& request, const DeletePredictiveDialingCampaignAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DeletePredictiveDialingCampaign(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+CccClient::DeletePredictiveDialingCampaignOutcomeCallable CccClient::DeletePredictiveDialingCampaignCallable(const DeletePredictiveDialingCampaignRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DeletePredictiveDialingCampaignOutcome()>>(
+        [this, request]()
+        {
+            return this->DeletePredictiveDialingCampaign(request);
         }
     );
 
@@ -1158,6 +1287,135 @@ CccClient::DescribePSTNActiveSessionListOutcomeCallable CccClient::DescribePSTNA
     return task->get_future();
 }
 
+CccClient::DescribePredictiveDialingCampaignOutcome CccClient::DescribePredictiveDialingCampaign(const DescribePredictiveDialingCampaignRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribePredictiveDialingCampaign");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribePredictiveDialingCampaignResponse rsp = DescribePredictiveDialingCampaignResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribePredictiveDialingCampaignOutcome(rsp);
+        else
+            return DescribePredictiveDialingCampaignOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribePredictiveDialingCampaignOutcome(outcome.GetError());
+    }
+}
+
+void CccClient::DescribePredictiveDialingCampaignAsync(const DescribePredictiveDialingCampaignRequest& request, const DescribePredictiveDialingCampaignAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribePredictiveDialingCampaign(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+CccClient::DescribePredictiveDialingCampaignOutcomeCallable CccClient::DescribePredictiveDialingCampaignCallable(const DescribePredictiveDialingCampaignRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribePredictiveDialingCampaignOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribePredictiveDialingCampaign(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+CccClient::DescribePredictiveDialingCampaignsOutcome CccClient::DescribePredictiveDialingCampaigns(const DescribePredictiveDialingCampaignsRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribePredictiveDialingCampaigns");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribePredictiveDialingCampaignsResponse rsp = DescribePredictiveDialingCampaignsResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribePredictiveDialingCampaignsOutcome(rsp);
+        else
+            return DescribePredictiveDialingCampaignsOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribePredictiveDialingCampaignsOutcome(outcome.GetError());
+    }
+}
+
+void CccClient::DescribePredictiveDialingCampaignsAsync(const DescribePredictiveDialingCampaignsRequest& request, const DescribePredictiveDialingCampaignsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribePredictiveDialingCampaigns(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+CccClient::DescribePredictiveDialingCampaignsOutcomeCallable CccClient::DescribePredictiveDialingCampaignsCallable(const DescribePredictiveDialingCampaignsRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribePredictiveDialingCampaignsOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribePredictiveDialingCampaigns(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+CccClient::DescribePredictiveDialingSessionsOutcome CccClient::DescribePredictiveDialingSessions(const DescribePredictiveDialingSessionsRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribePredictiveDialingSessions");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribePredictiveDialingSessionsResponse rsp = DescribePredictiveDialingSessionsResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribePredictiveDialingSessionsOutcome(rsp);
+        else
+            return DescribePredictiveDialingSessionsOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribePredictiveDialingSessionsOutcome(outcome.GetError());
+    }
+}
+
+void CccClient::DescribePredictiveDialingSessionsAsync(const DescribePredictiveDialingSessionsRequest& request, const DescribePredictiveDialingSessionsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribePredictiveDialingSessions(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+CccClient::DescribePredictiveDialingSessionsOutcomeCallable CccClient::DescribePredictiveDialingSessionsCallable(const DescribePredictiveDialingSessionsRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribePredictiveDialingSessionsOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribePredictiveDialingSessions(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 CccClient::DescribeProtectedTelCdrOutcome CccClient::DescribeProtectedTelCdr(const DescribeProtectedTelCdrRequest &request)
 {
     auto outcome = MakeRequest(request, "DescribeProtectedTelCdr");
@@ -1631,6 +1889,49 @@ CccClient::ModifyStaffOutcomeCallable CccClient::ModifyStaffCallable(const Modif
     return task->get_future();
 }
 
+CccClient::PausePredictiveDialingCampaignOutcome CccClient::PausePredictiveDialingCampaign(const PausePredictiveDialingCampaignRequest &request)
+{
+    auto outcome = MakeRequest(request, "PausePredictiveDialingCampaign");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        PausePredictiveDialingCampaignResponse rsp = PausePredictiveDialingCampaignResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return PausePredictiveDialingCampaignOutcome(rsp);
+        else
+            return PausePredictiveDialingCampaignOutcome(o.GetError());
+    }
+    else
+    {
+        return PausePredictiveDialingCampaignOutcome(outcome.GetError());
+    }
+}
+
+void CccClient::PausePredictiveDialingCampaignAsync(const PausePredictiveDialingCampaignRequest& request, const PausePredictiveDialingCampaignAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->PausePredictiveDialingCampaign(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+CccClient::PausePredictiveDialingCampaignOutcomeCallable CccClient::PausePredictiveDialingCampaignCallable(const PausePredictiveDialingCampaignRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<PausePredictiveDialingCampaignOutcome()>>(
+        [this, request]()
+        {
+            return this->PausePredictiveDialingCampaign(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 CccClient::ResetExtensionPasswordOutcome CccClient::ResetExtensionPassword(const ResetExtensionPasswordRequest &request)
 {
     auto outcome = MakeRequest(request, "ResetExtensionPassword");
@@ -1667,6 +1968,49 @@ CccClient::ResetExtensionPasswordOutcomeCallable CccClient::ResetExtensionPasswo
         [this, request]()
         {
             return this->ResetExtensionPassword(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+CccClient::ResumePredictiveDialingCampaignOutcome CccClient::ResumePredictiveDialingCampaign(const ResumePredictiveDialingCampaignRequest &request)
+{
+    auto outcome = MakeRequest(request, "ResumePredictiveDialingCampaign");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ResumePredictiveDialingCampaignResponse rsp = ResumePredictiveDialingCampaignResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ResumePredictiveDialingCampaignOutcome(rsp);
+        else
+            return ResumePredictiveDialingCampaignOutcome(o.GetError());
+    }
+    else
+    {
+        return ResumePredictiveDialingCampaignOutcome(outcome.GetError());
+    }
+}
+
+void CccClient::ResumePredictiveDialingCampaignAsync(const ResumePredictiveDialingCampaignRequest& request, const ResumePredictiveDialingCampaignAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->ResumePredictiveDialingCampaign(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+CccClient::ResumePredictiveDialingCampaignOutcomeCallable CccClient::ResumePredictiveDialingCampaignCallable(const ResumePredictiveDialingCampaignRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<ResumePredictiveDialingCampaignOutcome()>>(
+        [this, request]()
+        {
+            return this->ResumePredictiveDialingCampaign(request);
         }
     );
 
@@ -1796,6 +2140,49 @@ CccClient::UnbindStaffSkillGroupListOutcomeCallable CccClient::UnbindStaffSkillG
         [this, request]()
         {
             return this->UnbindStaffSkillGroupList(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+CccClient::UpdatePredictiveDialingCampaignOutcome CccClient::UpdatePredictiveDialingCampaign(const UpdatePredictiveDialingCampaignRequest &request)
+{
+    auto outcome = MakeRequest(request, "UpdatePredictiveDialingCampaign");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        UpdatePredictiveDialingCampaignResponse rsp = UpdatePredictiveDialingCampaignResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return UpdatePredictiveDialingCampaignOutcome(rsp);
+        else
+            return UpdatePredictiveDialingCampaignOutcome(o.GetError());
+    }
+    else
+    {
+        return UpdatePredictiveDialingCampaignOutcome(outcome.GetError());
+    }
+}
+
+void CccClient::UpdatePredictiveDialingCampaignAsync(const UpdatePredictiveDialingCampaignRequest& request, const UpdatePredictiveDialingCampaignAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->UpdatePredictiveDialingCampaign(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+CccClient::UpdatePredictiveDialingCampaignOutcomeCallable CccClient::UpdatePredictiveDialingCampaignCallable(const UpdatePredictiveDialingCampaignRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<UpdatePredictiveDialingCampaignOutcome()>>(
+        [this, request]()
+        {
+            return this->UpdatePredictiveDialingCampaign(request);
         }
     );
 

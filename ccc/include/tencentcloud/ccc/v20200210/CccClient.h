@@ -23,6 +23,8 @@
 #include <tencentcloud/core/Credential.h>
 #include <tencentcloud/core/profile/ClientProfile.h>
 #include <tencentcloud/core/AsyncCallerContext.h>
+#include <tencentcloud/ccc/v20200210/model/AbortPredictiveDialingCampaignRequest.h>
+#include <tencentcloud/ccc/v20200210/model/AbortPredictiveDialingCampaignResponse.h>
 #include <tencentcloud/ccc/v20200210/model/BindNumberCallOutSkillGroupRequest.h>
 #include <tencentcloud/ccc/v20200210/model/BindNumberCallOutSkillGroupResponse.h>
 #include <tencentcloud/ccc/v20200210/model/BindStaffSkillGroupListRequest.h>
@@ -39,6 +41,8 @@
 #include <tencentcloud/ccc/v20200210/model/CreateCarrierPrivilegeNumberApplicantResponse.h>
 #include <tencentcloud/ccc/v20200210/model/CreateExtensionRequest.h>
 #include <tencentcloud/ccc/v20200210/model/CreateExtensionResponse.h>
+#include <tencentcloud/ccc/v20200210/model/CreatePredictiveDialingCampaignRequest.h>
+#include <tencentcloud/ccc/v20200210/model/CreatePredictiveDialingCampaignResponse.h>
 #include <tencentcloud/ccc/v20200210/model/CreateSDKLoginTokenRequest.h>
 #include <tencentcloud/ccc/v20200210/model/CreateSDKLoginTokenResponse.h>
 #include <tencentcloud/ccc/v20200210/model/CreateStaffRequest.h>
@@ -47,6 +51,8 @@
 #include <tencentcloud/ccc/v20200210/model/CreateUserSigResponse.h>
 #include <tencentcloud/ccc/v20200210/model/DeleteExtensionRequest.h>
 #include <tencentcloud/ccc/v20200210/model/DeleteExtensionResponse.h>
+#include <tencentcloud/ccc/v20200210/model/DeletePredictiveDialingCampaignRequest.h>
+#include <tencentcloud/ccc/v20200210/model/DeletePredictiveDialingCampaignResponse.h>
 #include <tencentcloud/ccc/v20200210/model/DeleteStaffRequest.h>
 #include <tencentcloud/ccc/v20200210/model/DeleteStaffResponse.h>
 #include <tencentcloud/ccc/v20200210/model/DescribeActiveCarrierPrivilegeNumberRequest.h>
@@ -75,6 +81,12 @@
 #include <tencentcloud/ccc/v20200210/model/DescribeNumbersResponse.h>
 #include <tencentcloud/ccc/v20200210/model/DescribePSTNActiveSessionListRequest.h>
 #include <tencentcloud/ccc/v20200210/model/DescribePSTNActiveSessionListResponse.h>
+#include <tencentcloud/ccc/v20200210/model/DescribePredictiveDialingCampaignRequest.h>
+#include <tencentcloud/ccc/v20200210/model/DescribePredictiveDialingCampaignResponse.h>
+#include <tencentcloud/ccc/v20200210/model/DescribePredictiveDialingCampaignsRequest.h>
+#include <tencentcloud/ccc/v20200210/model/DescribePredictiveDialingCampaignsResponse.h>
+#include <tencentcloud/ccc/v20200210/model/DescribePredictiveDialingSessionsRequest.h>
+#include <tencentcloud/ccc/v20200210/model/DescribePredictiveDialingSessionsResponse.h>
 #include <tencentcloud/ccc/v20200210/model/DescribeProtectedTelCdrRequest.h>
 #include <tencentcloud/ccc/v20200210/model/DescribeProtectedTelCdrResponse.h>
 #include <tencentcloud/ccc/v20200210/model/DescribeSkillGroupInfoListRequest.h>
@@ -97,14 +109,20 @@
 #include <tencentcloud/ccc/v20200210/model/ModifyExtensionResponse.h>
 #include <tencentcloud/ccc/v20200210/model/ModifyStaffRequest.h>
 #include <tencentcloud/ccc/v20200210/model/ModifyStaffResponse.h>
+#include <tencentcloud/ccc/v20200210/model/PausePredictiveDialingCampaignRequest.h>
+#include <tencentcloud/ccc/v20200210/model/PausePredictiveDialingCampaignResponse.h>
 #include <tencentcloud/ccc/v20200210/model/ResetExtensionPasswordRequest.h>
 #include <tencentcloud/ccc/v20200210/model/ResetExtensionPasswordResponse.h>
+#include <tencentcloud/ccc/v20200210/model/ResumePredictiveDialingCampaignRequest.h>
+#include <tencentcloud/ccc/v20200210/model/ResumePredictiveDialingCampaignResponse.h>
 #include <tencentcloud/ccc/v20200210/model/StopAutoCalloutTaskRequest.h>
 #include <tencentcloud/ccc/v20200210/model/StopAutoCalloutTaskResponse.h>
 #include <tencentcloud/ccc/v20200210/model/UnbindNumberCallOutSkillGroupRequest.h>
 #include <tencentcloud/ccc/v20200210/model/UnbindNumberCallOutSkillGroupResponse.h>
 #include <tencentcloud/ccc/v20200210/model/UnbindStaffSkillGroupListRequest.h>
 #include <tencentcloud/ccc/v20200210/model/UnbindStaffSkillGroupListResponse.h>
+#include <tencentcloud/ccc/v20200210/model/UpdatePredictiveDialingCampaignRequest.h>
+#include <tencentcloud/ccc/v20200210/model/UpdatePredictiveDialingCampaignResponse.h>
 
 
 namespace TencentCloud
@@ -119,6 +137,9 @@ namespace TencentCloud
                 CccClient(const Credential &credential, const std::string &region);
                 CccClient(const Credential &credential, const std::string &region, const ClientProfile &profile);
 
+                typedef Outcome<Core::Error, Model::AbortPredictiveDialingCampaignResponse> AbortPredictiveDialingCampaignOutcome;
+                typedef std::future<AbortPredictiveDialingCampaignOutcome> AbortPredictiveDialingCampaignOutcomeCallable;
+                typedef std::function<void(const CccClient*, const Model::AbortPredictiveDialingCampaignRequest&, AbortPredictiveDialingCampaignOutcome, const std::shared_ptr<const AsyncCallerContext>&)> AbortPredictiveDialingCampaignAsyncHandler;
                 typedef Outcome<Core::Error, Model::BindNumberCallOutSkillGroupResponse> BindNumberCallOutSkillGroupOutcome;
                 typedef std::future<BindNumberCallOutSkillGroupOutcome> BindNumberCallOutSkillGroupOutcomeCallable;
                 typedef std::function<void(const CccClient*, const Model::BindNumberCallOutSkillGroupRequest&, BindNumberCallOutSkillGroupOutcome, const std::shared_ptr<const AsyncCallerContext>&)> BindNumberCallOutSkillGroupAsyncHandler;
@@ -143,6 +164,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::CreateExtensionResponse> CreateExtensionOutcome;
                 typedef std::future<CreateExtensionOutcome> CreateExtensionOutcomeCallable;
                 typedef std::function<void(const CccClient*, const Model::CreateExtensionRequest&, CreateExtensionOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateExtensionAsyncHandler;
+                typedef Outcome<Core::Error, Model::CreatePredictiveDialingCampaignResponse> CreatePredictiveDialingCampaignOutcome;
+                typedef std::future<CreatePredictiveDialingCampaignOutcome> CreatePredictiveDialingCampaignOutcomeCallable;
+                typedef std::function<void(const CccClient*, const Model::CreatePredictiveDialingCampaignRequest&, CreatePredictiveDialingCampaignOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreatePredictiveDialingCampaignAsyncHandler;
                 typedef Outcome<Core::Error, Model::CreateSDKLoginTokenResponse> CreateSDKLoginTokenOutcome;
                 typedef std::future<CreateSDKLoginTokenOutcome> CreateSDKLoginTokenOutcomeCallable;
                 typedef std::function<void(const CccClient*, const Model::CreateSDKLoginTokenRequest&, CreateSDKLoginTokenOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateSDKLoginTokenAsyncHandler;
@@ -155,6 +179,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DeleteExtensionResponse> DeleteExtensionOutcome;
                 typedef std::future<DeleteExtensionOutcome> DeleteExtensionOutcomeCallable;
                 typedef std::function<void(const CccClient*, const Model::DeleteExtensionRequest&, DeleteExtensionOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteExtensionAsyncHandler;
+                typedef Outcome<Core::Error, Model::DeletePredictiveDialingCampaignResponse> DeletePredictiveDialingCampaignOutcome;
+                typedef std::future<DeletePredictiveDialingCampaignOutcome> DeletePredictiveDialingCampaignOutcomeCallable;
+                typedef std::function<void(const CccClient*, const Model::DeletePredictiveDialingCampaignRequest&, DeletePredictiveDialingCampaignOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeletePredictiveDialingCampaignAsyncHandler;
                 typedef Outcome<Core::Error, Model::DeleteStaffResponse> DeleteStaffOutcome;
                 typedef std::future<DeleteStaffOutcome> DeleteStaffOutcomeCallable;
                 typedef std::function<void(const CccClient*, const Model::DeleteStaffRequest&, DeleteStaffOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteStaffAsyncHandler;
@@ -197,6 +224,15 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribePSTNActiveSessionListResponse> DescribePSTNActiveSessionListOutcome;
                 typedef std::future<DescribePSTNActiveSessionListOutcome> DescribePSTNActiveSessionListOutcomeCallable;
                 typedef std::function<void(const CccClient*, const Model::DescribePSTNActiveSessionListRequest&, DescribePSTNActiveSessionListOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribePSTNActiveSessionListAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribePredictiveDialingCampaignResponse> DescribePredictiveDialingCampaignOutcome;
+                typedef std::future<DescribePredictiveDialingCampaignOutcome> DescribePredictiveDialingCampaignOutcomeCallable;
+                typedef std::function<void(const CccClient*, const Model::DescribePredictiveDialingCampaignRequest&, DescribePredictiveDialingCampaignOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribePredictiveDialingCampaignAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribePredictiveDialingCampaignsResponse> DescribePredictiveDialingCampaignsOutcome;
+                typedef std::future<DescribePredictiveDialingCampaignsOutcome> DescribePredictiveDialingCampaignsOutcomeCallable;
+                typedef std::function<void(const CccClient*, const Model::DescribePredictiveDialingCampaignsRequest&, DescribePredictiveDialingCampaignsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribePredictiveDialingCampaignsAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribePredictiveDialingSessionsResponse> DescribePredictiveDialingSessionsOutcome;
+                typedef std::future<DescribePredictiveDialingSessionsOutcome> DescribePredictiveDialingSessionsOutcomeCallable;
+                typedef std::function<void(const CccClient*, const Model::DescribePredictiveDialingSessionsRequest&, DescribePredictiveDialingSessionsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribePredictiveDialingSessionsAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeProtectedTelCdrResponse> DescribeProtectedTelCdrOutcome;
                 typedef std::future<DescribeProtectedTelCdrOutcome> DescribeProtectedTelCdrOutcomeCallable;
                 typedef std::function<void(const CccClient*, const Model::DescribeProtectedTelCdrRequest&, DescribeProtectedTelCdrOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeProtectedTelCdrAsyncHandler;
@@ -230,9 +266,15 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::ModifyStaffResponse> ModifyStaffOutcome;
                 typedef std::future<ModifyStaffOutcome> ModifyStaffOutcomeCallable;
                 typedef std::function<void(const CccClient*, const Model::ModifyStaffRequest&, ModifyStaffOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyStaffAsyncHandler;
+                typedef Outcome<Core::Error, Model::PausePredictiveDialingCampaignResponse> PausePredictiveDialingCampaignOutcome;
+                typedef std::future<PausePredictiveDialingCampaignOutcome> PausePredictiveDialingCampaignOutcomeCallable;
+                typedef std::function<void(const CccClient*, const Model::PausePredictiveDialingCampaignRequest&, PausePredictiveDialingCampaignOutcome, const std::shared_ptr<const AsyncCallerContext>&)> PausePredictiveDialingCampaignAsyncHandler;
                 typedef Outcome<Core::Error, Model::ResetExtensionPasswordResponse> ResetExtensionPasswordOutcome;
                 typedef std::future<ResetExtensionPasswordOutcome> ResetExtensionPasswordOutcomeCallable;
                 typedef std::function<void(const CccClient*, const Model::ResetExtensionPasswordRequest&, ResetExtensionPasswordOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ResetExtensionPasswordAsyncHandler;
+                typedef Outcome<Core::Error, Model::ResumePredictiveDialingCampaignResponse> ResumePredictiveDialingCampaignOutcome;
+                typedef std::future<ResumePredictiveDialingCampaignOutcome> ResumePredictiveDialingCampaignOutcomeCallable;
+                typedef std::function<void(const CccClient*, const Model::ResumePredictiveDialingCampaignRequest&, ResumePredictiveDialingCampaignOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ResumePredictiveDialingCampaignAsyncHandler;
                 typedef Outcome<Core::Error, Model::StopAutoCalloutTaskResponse> StopAutoCalloutTaskOutcome;
                 typedef std::future<StopAutoCalloutTaskOutcome> StopAutoCalloutTaskOutcomeCallable;
                 typedef std::function<void(const CccClient*, const Model::StopAutoCalloutTaskRequest&, StopAutoCalloutTaskOutcome, const std::shared_ptr<const AsyncCallerContext>&)> StopAutoCalloutTaskAsyncHandler;
@@ -242,8 +284,20 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::UnbindStaffSkillGroupListResponse> UnbindStaffSkillGroupListOutcome;
                 typedef std::future<UnbindStaffSkillGroupListOutcome> UnbindStaffSkillGroupListOutcomeCallable;
                 typedef std::function<void(const CccClient*, const Model::UnbindStaffSkillGroupListRequest&, UnbindStaffSkillGroupListOutcome, const std::shared_ptr<const AsyncCallerContext>&)> UnbindStaffSkillGroupListAsyncHandler;
+                typedef Outcome<Core::Error, Model::UpdatePredictiveDialingCampaignResponse> UpdatePredictiveDialingCampaignOutcome;
+                typedef std::future<UpdatePredictiveDialingCampaignOutcome> UpdatePredictiveDialingCampaignOutcomeCallable;
+                typedef std::function<void(const CccClient*, const Model::UpdatePredictiveDialingCampaignRequest&, UpdatePredictiveDialingCampaignOutcome, const std::shared_ptr<const AsyncCallerContext>&)> UpdatePredictiveDialingCampaignAsyncHandler;
 
 
+
+                /**
+                 *停止预测式外呼任务
+                 * @param req AbortPredictiveDialingCampaignRequest
+                 * @return AbortPredictiveDialingCampaignOutcome
+                 */
+                AbortPredictiveDialingCampaignOutcome AbortPredictiveDialingCampaign(const Model::AbortPredictiveDialingCampaignRequest &request);
+                void AbortPredictiveDialingCampaignAsync(const Model::AbortPredictiveDialingCampaignRequest& request, const AbortPredictiveDialingCampaignAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                AbortPredictiveDialingCampaignOutcomeCallable AbortPredictiveDialingCampaignCallable(const Model::AbortPredictiveDialingCampaignRequest& request);
 
                 /**
                  *绑定号码外呼技能组
@@ -318,6 +372,15 @@ namespace TencentCloud
                 CreateExtensionOutcomeCallable CreateExtensionCallable(const Model::CreateExtensionRequest& request);
 
                 /**
+                 *创建预测式外呼任务
+                 * @param req CreatePredictiveDialingCampaignRequest
+                 * @return CreatePredictiveDialingCampaignOutcome
+                 */
+                CreatePredictiveDialingCampaignOutcome CreatePredictiveDialingCampaign(const Model::CreatePredictiveDialingCampaignRequest &request);
+                void CreatePredictiveDialingCampaignAsync(const Model::CreatePredictiveDialingCampaignRequest& request, const CreatePredictiveDialingCampaignAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                CreatePredictiveDialingCampaignOutcomeCallable CreatePredictiveDialingCampaignCallable(const Model::CreatePredictiveDialingCampaignRequest& request);
+
+                /**
                  *创建 SDK 登录 Token。
                  * @param req CreateSDKLoginTokenRequest
                  * @return CreateSDKLoginTokenOutcome
@@ -352,6 +415,15 @@ namespace TencentCloud
                 DeleteExtensionOutcome DeleteExtension(const Model::DeleteExtensionRequest &request);
                 void DeleteExtensionAsync(const Model::DeleteExtensionRequest& request, const DeleteExtensionAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DeleteExtensionOutcomeCallable DeleteExtensionCallable(const Model::DeleteExtensionRequest& request);
+
+                /**
+                 *删除预测式外呼任务
+                 * @param req DeletePredictiveDialingCampaignRequest
+                 * @return DeletePredictiveDialingCampaignOutcome
+                 */
+                DeletePredictiveDialingCampaignOutcome DeletePredictiveDialingCampaign(const Model::DeletePredictiveDialingCampaignRequest &request);
+                void DeletePredictiveDialingCampaignAsync(const Model::DeletePredictiveDialingCampaignRequest& request, const DeletePredictiveDialingCampaignAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DeletePredictiveDialingCampaignOutcomeCallable DeletePredictiveDialingCampaignCallable(const Model::DeletePredictiveDialingCampaignRequest& request);
 
                 /**
                  *删除坐席信息
@@ -482,6 +554,33 @@ namespace TencentCloud
                 DescribePSTNActiveSessionListOutcomeCallable DescribePSTNActiveSessionListCallable(const Model::DescribePSTNActiveSessionListRequest& request);
 
                 /**
+                 *查询预测式外呼任务
+                 * @param req DescribePredictiveDialingCampaignRequest
+                 * @return DescribePredictiveDialingCampaignOutcome
+                 */
+                DescribePredictiveDialingCampaignOutcome DescribePredictiveDialingCampaign(const Model::DescribePredictiveDialingCampaignRequest &request);
+                void DescribePredictiveDialingCampaignAsync(const Model::DescribePredictiveDialingCampaignRequest& request, const DescribePredictiveDialingCampaignAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribePredictiveDialingCampaignOutcomeCallable DescribePredictiveDialingCampaignCallable(const Model::DescribePredictiveDialingCampaignRequest& request);
+
+                /**
+                 *查询预测式外呼任务列表
+                 * @param req DescribePredictiveDialingCampaignsRequest
+                 * @return DescribePredictiveDialingCampaignsOutcome
+                 */
+                DescribePredictiveDialingCampaignsOutcome DescribePredictiveDialingCampaigns(const Model::DescribePredictiveDialingCampaignsRequest &request);
+                void DescribePredictiveDialingCampaignsAsync(const Model::DescribePredictiveDialingCampaignsRequest& request, const DescribePredictiveDialingCampaignsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribePredictiveDialingCampaignsOutcomeCallable DescribePredictiveDialingCampaignsCallable(const Model::DescribePredictiveDialingCampaignsRequest& request);
+
+                /**
+                 *查询预测式外呼呼叫列表
+                 * @param req DescribePredictiveDialingSessionsRequest
+                 * @return DescribePredictiveDialingSessionsOutcome
+                 */
+                DescribePredictiveDialingSessionsOutcome DescribePredictiveDialingSessions(const Model::DescribePredictiveDialingSessionsRequest &request);
+                void DescribePredictiveDialingSessionsAsync(const Model::DescribePredictiveDialingSessionsRequest& request, const DescribePredictiveDialingSessionsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribePredictiveDialingSessionsOutcomeCallable DescribePredictiveDialingSessionsCallable(const Model::DescribePredictiveDialingSessionsRequest& request);
+
+                /**
                  *获取主被叫受保护的电话服务记录与录音
                  * @param req DescribeProtectedTelCdrRequest
                  * @return DescribeProtectedTelCdrOutcome
@@ -581,6 +680,15 @@ namespace TencentCloud
                 ModifyStaffOutcomeCallable ModifyStaffCallable(const Model::ModifyStaffRequest& request);
 
                 /**
+                 *暂停预测式外呼任务
+                 * @param req PausePredictiveDialingCampaignRequest
+                 * @return PausePredictiveDialingCampaignOutcome
+                 */
+                PausePredictiveDialingCampaignOutcome PausePredictiveDialingCampaign(const Model::PausePredictiveDialingCampaignRequest &request);
+                void PausePredictiveDialingCampaignAsync(const Model::PausePredictiveDialingCampaignRequest& request, const PausePredictiveDialingCampaignAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                PausePredictiveDialingCampaignOutcomeCallable PausePredictiveDialingCampaignCallable(const Model::PausePredictiveDialingCampaignRequest& request);
+
+                /**
                  *重置话机注册密码
                  * @param req ResetExtensionPasswordRequest
                  * @return ResetExtensionPasswordOutcome
@@ -588,6 +696,15 @@ namespace TencentCloud
                 ResetExtensionPasswordOutcome ResetExtensionPassword(const Model::ResetExtensionPasswordRequest &request);
                 void ResetExtensionPasswordAsync(const Model::ResetExtensionPasswordRequest& request, const ResetExtensionPasswordAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 ResetExtensionPasswordOutcomeCallable ResetExtensionPasswordCallable(const Model::ResetExtensionPasswordRequest& request);
+
+                /**
+                 *恢复预测式外呼任务
+                 * @param req ResumePredictiveDialingCampaignRequest
+                 * @return ResumePredictiveDialingCampaignOutcome
+                 */
+                ResumePredictiveDialingCampaignOutcome ResumePredictiveDialingCampaign(const Model::ResumePredictiveDialingCampaignRequest &request);
+                void ResumePredictiveDialingCampaignAsync(const Model::ResumePredictiveDialingCampaignRequest& request, const ResumePredictiveDialingCampaignAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                ResumePredictiveDialingCampaignOutcomeCallable ResumePredictiveDialingCampaignCallable(const Model::ResumePredictiveDialingCampaignRequest& request);
 
                 /**
                  *停止自动外呼任务
@@ -615,6 +732,15 @@ namespace TencentCloud
                 UnbindStaffSkillGroupListOutcome UnbindStaffSkillGroupList(const Model::UnbindStaffSkillGroupListRequest &request);
                 void UnbindStaffSkillGroupListAsync(const Model::UnbindStaffSkillGroupListRequest& request, const UnbindStaffSkillGroupListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 UnbindStaffSkillGroupListOutcomeCallable UnbindStaffSkillGroupListCallable(const Model::UnbindStaffSkillGroupListRequest& request);
+
+                /**
+                 *任务未启动前，更新预测式外呼任务。
+                 * @param req UpdatePredictiveDialingCampaignRequest
+                 * @return UpdatePredictiveDialingCampaignOutcome
+                 */
+                UpdatePredictiveDialingCampaignOutcome UpdatePredictiveDialingCampaign(const Model::UpdatePredictiveDialingCampaignRequest &request);
+                void UpdatePredictiveDialingCampaignAsync(const Model::UpdatePredictiveDialingCampaignRequest& request, const UpdatePredictiveDialingCampaignAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                UpdatePredictiveDialingCampaignOutcomeCallable UpdatePredictiveDialingCampaignCallable(const Model::UpdatePredictiveDialingCampaignRequest& request);
 
             };
         }
