@@ -189,6 +189,27 @@ namespace TencentCloud
                      */
                     bool CorpIdHasBeenSet() const;
 
+                    /**
+                     * 获取批次状态
+                     * @return Status 批次状态
+                     * 
+                     */
+                    uint64_t GetStatus() const;
+
+                    /**
+                     * 设置批次状态
+                     * @param _status 批次状态
+                     * 
+                     */
+                    void SetStatus(const uint64_t& _status);
+
+                    /**
+                     * 判断参数 Status 是否已赋值
+                     * @return Status 是否已赋值
+                     * 
+                     */
+                    bool StatusHasBeenSet() const;
+
                 private:
 
                     /**
@@ -232,6 +253,12 @@ namespace TencentCloud
                      */
                     uint64_t m_corpId;
                     bool m_corpIdHasBeenSet;
+
+                    /**
+                     * 批次状态
+                     */
+                    uint64_t m_status;
+                    bool m_statusHasBeenSet;
 
                 };
             }

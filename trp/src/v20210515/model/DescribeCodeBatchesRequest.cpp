@@ -29,7 +29,8 @@ DescribeCodeBatchesRequest::DescribeCodeBatchesRequest() :
     m_pageSizeHasBeenSet(false),
     m_pageNumberHasBeenSet(false),
     m_batchTypeHasBeenSet(false),
-    m_corpIdHasBeenSet(false)
+    m_corpIdHasBeenSet(false),
+    m_statusHasBeenSet(false)
 {
 }
 
@@ -94,6 +95,14 @@ string DescribeCodeBatchesRequest::ToJsonString() const
         string key = "CorpId";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_corpId, allocator);
+    }
+
+    if (m_statusHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Status";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_status, allocator);
     }
 
 
@@ -214,6 +223,22 @@ void DescribeCodeBatchesRequest::SetCorpId(const uint64_t& _corpId)
 bool DescribeCodeBatchesRequest::CorpIdHasBeenSet() const
 {
     return m_corpIdHasBeenSet;
+}
+
+uint64_t DescribeCodeBatchesRequest::GetStatus() const
+{
+    return m_status;
+}
+
+void DescribeCodeBatchesRequest::SetStatus(const uint64_t& _status)
+{
+    m_status = _status;
+    m_statusHasBeenSet = true;
+}
+
+bool DescribeCodeBatchesRequest::StatusHasBeenSet() const
+{
+    return m_statusHasBeenSet;
 }
 
 

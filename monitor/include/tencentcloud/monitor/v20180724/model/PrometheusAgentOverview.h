@@ -293,6 +293,56 @@ abnormal = 异常
                      */
                     bool EnableExternalHasBeenSet() const;
 
+                    /**
+                     * 获取采集agent期望pod数
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return DesiredAgentNum 采集agent期望pod数
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    int64_t GetDesiredAgentNum() const;
+
+                    /**
+                     * 设置采集agent期望pod数
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _desiredAgentNum 采集agent期望pod数
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetDesiredAgentNum(const int64_t& _desiredAgentNum);
+
+                    /**
+                     * 判断参数 DesiredAgentNum 是否已赋值
+                     * @return DesiredAgentNum 是否已赋值
+                     * 
+                     */
+                    bool DesiredAgentNumHasBeenSet() const;
+
+                    /**
+                     * 获取采集agent已正常启动pod数
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return ReadyAgentNum 采集agent已正常启动pod数
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    int64_t GetReadyAgentNum() const;
+
+                    /**
+                     * 设置采集agent已正常启动pod数
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _readyAgentNum 采集agent已正常启动pod数
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetReadyAgentNum(const int64_t& _readyAgentNum);
+
+                    /**
+                     * 判断参数 ReadyAgentNum 是否已赋值
+                     * @return ReadyAgentNum 是否已赋值
+                     * 
+                     */
+                    bool ReadyAgentNumHasBeenSet() const;
+
                 private:
 
                     /**
@@ -363,6 +413,20 @@ abnormal = 异常
                      */
                     bool m_enableExternal;
                     bool m_enableExternalHasBeenSet;
+
+                    /**
+                     * 采集agent期望pod数
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    int64_t m_desiredAgentNum;
+                    bool m_desiredAgentNumHasBeenSet;
+
+                    /**
+                     * 采集agent已正常启动pod数
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    int64_t m_readyAgentNum;
+                    bool m_readyAgentNumHasBeenSet;
 
                 };
             }

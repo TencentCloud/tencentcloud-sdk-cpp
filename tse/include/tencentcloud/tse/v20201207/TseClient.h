@@ -47,6 +47,8 @@
 #include <tencentcloud/tse/v20201207/model/CreateCloudNativeAPIGatewayServiceRateLimitResponse.h>
 #include <tencentcloud/tse/v20201207/model/CreateEngineRequest.h>
 #include <tencentcloud/tse/v20201207/model/CreateEngineResponse.h>
+#include <tencentcloud/tse/v20201207/model/CreateGovernanceInstancesRequest.h>
+#include <tencentcloud/tse/v20201207/model/CreateGovernanceInstancesResponse.h>
 #include <tencentcloud/tse/v20201207/model/CreateNativeGatewayServerGroupRequest.h>
 #include <tencentcloud/tse/v20201207/model/CreateNativeGatewayServerGroupResponse.h>
 #include <tencentcloud/tse/v20201207/model/CreateWafDomainsRequest.h>
@@ -71,6 +73,8 @@
 #include <tencentcloud/tse/v20201207/model/DeleteCloudNativeAPIGatewayServiceRateLimitResponse.h>
 #include <tencentcloud/tse/v20201207/model/DeleteEngineRequest.h>
 #include <tencentcloud/tse/v20201207/model/DeleteEngineResponse.h>
+#include <tencentcloud/tse/v20201207/model/DeleteGovernanceInstancesRequest.h>
+#include <tencentcloud/tse/v20201207/model/DeleteGovernanceInstancesResponse.h>
 #include <tencentcloud/tse/v20201207/model/DeleteNativeGatewayServerGroupRequest.h>
 #include <tencentcloud/tse/v20201207/model/DeleteNativeGatewayServerGroupResponse.h>
 #include <tencentcloud/tse/v20201207/model/DeleteWafDomainsRequest.h>
@@ -105,6 +109,8 @@
 #include <tencentcloud/tse/v20201207/model/DescribeCloudNativeAPIGatewayUpstreamResponse.h>
 #include <tencentcloud/tse/v20201207/model/DescribeCloudNativeAPIGatewaysRequest.h>
 #include <tencentcloud/tse/v20201207/model/DescribeCloudNativeAPIGatewaysResponse.h>
+#include <tencentcloud/tse/v20201207/model/DescribeGovernanceInstancesRequest.h>
+#include <tencentcloud/tse/v20201207/model/DescribeGovernanceInstancesResponse.h>
 #include <tencentcloud/tse/v20201207/model/DescribeNacosReplicasRequest.h>
 #include <tencentcloud/tse/v20201207/model/DescribeNacosReplicasResponse.h>
 #include <tencentcloud/tse/v20201207/model/DescribeNacosServerInterfacesRequest.h>
@@ -147,6 +153,8 @@
 #include <tencentcloud/tse/v20201207/model/ModifyCloudNativeAPIGatewayServiceRateLimitResponse.h>
 #include <tencentcloud/tse/v20201207/model/ModifyConsoleNetworkRequest.h>
 #include <tencentcloud/tse/v20201207/model/ModifyConsoleNetworkResponse.h>
+#include <tencentcloud/tse/v20201207/model/ModifyGovernanceInstancesRequest.h>
+#include <tencentcloud/tse/v20201207/model/ModifyGovernanceInstancesResponse.h>
 #include <tencentcloud/tse/v20201207/model/ModifyNativeGatewayServerGroupRequest.h>
 #include <tencentcloud/tse/v20201207/model/ModifyNativeGatewayServerGroupResponse.h>
 #include <tencentcloud/tse/v20201207/model/ModifyNetworkAccessStrategyRequest.h>
@@ -219,6 +227,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::CreateEngineResponse> CreateEngineOutcome;
                 typedef std::future<CreateEngineOutcome> CreateEngineOutcomeCallable;
                 typedef std::function<void(const TseClient*, const Model::CreateEngineRequest&, CreateEngineOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateEngineAsyncHandler;
+                typedef Outcome<Core::Error, Model::CreateGovernanceInstancesResponse> CreateGovernanceInstancesOutcome;
+                typedef std::future<CreateGovernanceInstancesOutcome> CreateGovernanceInstancesOutcomeCallable;
+                typedef std::function<void(const TseClient*, const Model::CreateGovernanceInstancesRequest&, CreateGovernanceInstancesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateGovernanceInstancesAsyncHandler;
                 typedef Outcome<Core::Error, Model::CreateNativeGatewayServerGroupResponse> CreateNativeGatewayServerGroupOutcome;
                 typedef std::future<CreateNativeGatewayServerGroupOutcome> CreateNativeGatewayServerGroupOutcomeCallable;
                 typedef std::function<void(const TseClient*, const Model::CreateNativeGatewayServerGroupRequest&, CreateNativeGatewayServerGroupOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateNativeGatewayServerGroupAsyncHandler;
@@ -255,6 +266,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DeleteEngineResponse> DeleteEngineOutcome;
                 typedef std::future<DeleteEngineOutcome> DeleteEngineOutcomeCallable;
                 typedef std::function<void(const TseClient*, const Model::DeleteEngineRequest&, DeleteEngineOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteEngineAsyncHandler;
+                typedef Outcome<Core::Error, Model::DeleteGovernanceInstancesResponse> DeleteGovernanceInstancesOutcome;
+                typedef std::future<DeleteGovernanceInstancesOutcome> DeleteGovernanceInstancesOutcomeCallable;
+                typedef std::function<void(const TseClient*, const Model::DeleteGovernanceInstancesRequest&, DeleteGovernanceInstancesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteGovernanceInstancesAsyncHandler;
                 typedef Outcome<Core::Error, Model::DeleteNativeGatewayServerGroupResponse> DeleteNativeGatewayServerGroupOutcome;
                 typedef std::future<DeleteNativeGatewayServerGroupOutcome> DeleteNativeGatewayServerGroupOutcomeCallable;
                 typedef std::function<void(const TseClient*, const Model::DeleteNativeGatewayServerGroupRequest&, DeleteNativeGatewayServerGroupOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteNativeGatewayServerGroupAsyncHandler;
@@ -306,6 +320,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeCloudNativeAPIGatewaysResponse> DescribeCloudNativeAPIGatewaysOutcome;
                 typedef std::future<DescribeCloudNativeAPIGatewaysOutcome> DescribeCloudNativeAPIGatewaysOutcomeCallable;
                 typedef std::function<void(const TseClient*, const Model::DescribeCloudNativeAPIGatewaysRequest&, DescribeCloudNativeAPIGatewaysOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeCloudNativeAPIGatewaysAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeGovernanceInstancesResponse> DescribeGovernanceInstancesOutcome;
+                typedef std::future<DescribeGovernanceInstancesOutcome> DescribeGovernanceInstancesOutcomeCallable;
+                typedef std::function<void(const TseClient*, const Model::DescribeGovernanceInstancesRequest&, DescribeGovernanceInstancesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeGovernanceInstancesAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeNacosReplicasResponse> DescribeNacosReplicasOutcome;
                 typedef std::future<DescribeNacosReplicasOutcome> DescribeNacosReplicasOutcomeCallable;
                 typedef std::function<void(const TseClient*, const Model::DescribeNacosReplicasRequest&, DescribeNacosReplicasOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeNacosReplicasAsyncHandler;
@@ -369,6 +386,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::ModifyConsoleNetworkResponse> ModifyConsoleNetworkOutcome;
                 typedef std::future<ModifyConsoleNetworkOutcome> ModifyConsoleNetworkOutcomeCallable;
                 typedef std::function<void(const TseClient*, const Model::ModifyConsoleNetworkRequest&, ModifyConsoleNetworkOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyConsoleNetworkAsyncHandler;
+                typedef Outcome<Core::Error, Model::ModifyGovernanceInstancesResponse> ModifyGovernanceInstancesOutcome;
+                typedef std::future<ModifyGovernanceInstancesOutcome> ModifyGovernanceInstancesOutcomeCallable;
+                typedef std::function<void(const TseClient*, const Model::ModifyGovernanceInstancesRequest&, ModifyGovernanceInstancesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyGovernanceInstancesAsyncHandler;
                 typedef Outcome<Core::Error, Model::ModifyNativeGatewayServerGroupResponse> ModifyNativeGatewayServerGroupOutcome;
                 typedef std::future<ModifyNativeGatewayServerGroupOutcome> ModifyNativeGatewayServerGroupOutcomeCallable;
                 typedef std::function<void(const TseClient*, const Model::ModifyNativeGatewayServerGroupRequest&, ModifyNativeGatewayServerGroupOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyNativeGatewayServerGroupAsyncHandler;
@@ -514,6 +534,15 @@ namespace TencentCloud
                 CreateEngineOutcomeCallable CreateEngineCallable(const Model::CreateEngineRequest& request);
 
                 /**
+                 *创建治理中心服务实例
+                 * @param req CreateGovernanceInstancesRequest
+                 * @return CreateGovernanceInstancesOutcome
+                 */
+                CreateGovernanceInstancesOutcome CreateGovernanceInstances(const Model::CreateGovernanceInstancesRequest &request);
+                void CreateGovernanceInstancesAsync(const Model::CreateGovernanceInstancesRequest& request, const CreateGovernanceInstancesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                CreateGovernanceInstancesOutcomeCallable CreateGovernanceInstancesCallable(const Model::CreateGovernanceInstancesRequest& request);
+
+                /**
                  *创建云原生网关引擎分组
                  * @param req CreateNativeGatewayServerGroupRequest
                  * @return CreateNativeGatewayServerGroupOutcome
@@ -620,6 +649,15 @@ namespace TencentCloud
                 DeleteEngineOutcome DeleteEngine(const Model::DeleteEngineRequest &request);
                 void DeleteEngineAsync(const Model::DeleteEngineRequest& request, const DeleteEngineAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DeleteEngineOutcomeCallable DeleteEngineCallable(const Model::DeleteEngineRequest& request);
+
+                /**
+                 *删除治理中心服务实例
+                 * @param req DeleteGovernanceInstancesRequest
+                 * @return DeleteGovernanceInstancesOutcome
+                 */
+                DeleteGovernanceInstancesOutcome DeleteGovernanceInstances(const Model::DeleteGovernanceInstancesRequest &request);
+                void DeleteGovernanceInstancesAsync(const Model::DeleteGovernanceInstancesRequest& request, const DeleteGovernanceInstancesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DeleteGovernanceInstancesOutcomeCallable DeleteGovernanceInstancesCallable(const Model::DeleteGovernanceInstancesRequest& request);
 
                 /**
                  *删除网关实例分组
@@ -773,6 +811,15 @@ namespace TencentCloud
                 DescribeCloudNativeAPIGatewaysOutcome DescribeCloudNativeAPIGateways(const Model::DescribeCloudNativeAPIGatewaysRequest &request);
                 void DescribeCloudNativeAPIGatewaysAsync(const Model::DescribeCloudNativeAPIGatewaysRequest& request, const DescribeCloudNativeAPIGatewaysAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DescribeCloudNativeAPIGatewaysOutcomeCallable DescribeCloudNativeAPIGatewaysCallable(const Model::DescribeCloudNativeAPIGatewaysRequest& request);
+
+                /**
+                 *查询治理中心服务实例
+                 * @param req DescribeGovernanceInstancesRequest
+                 * @return DescribeGovernanceInstancesOutcome
+                 */
+                DescribeGovernanceInstancesOutcome DescribeGovernanceInstances(const Model::DescribeGovernanceInstancesRequest &request);
+                void DescribeGovernanceInstancesAsync(const Model::DescribeGovernanceInstancesRequest& request, const DescribeGovernanceInstancesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeGovernanceInstancesOutcomeCallable DescribeGovernanceInstancesCallable(const Model::DescribeGovernanceInstancesRequest& request);
 
                 /**
                  *查询Nacos类型引擎实例副本信息
@@ -962,6 +1009,15 @@ namespace TencentCloud
                 ModifyConsoleNetworkOutcome ModifyConsoleNetwork(const Model::ModifyConsoleNetworkRequest &request);
                 void ModifyConsoleNetworkAsync(const Model::ModifyConsoleNetworkRequest& request, const ModifyConsoleNetworkAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 ModifyConsoleNetworkOutcomeCallable ModifyConsoleNetworkCallable(const Model::ModifyConsoleNetworkRequest& request);
+
+                /**
+                 *修改治理中心服务实例
+                 * @param req ModifyGovernanceInstancesRequest
+                 * @return ModifyGovernanceInstancesOutcome
+                 */
+                ModifyGovernanceInstancesOutcome ModifyGovernanceInstances(const Model::ModifyGovernanceInstancesRequest &request);
+                void ModifyGovernanceInstancesAsync(const Model::ModifyGovernanceInstancesRequest& request, const ModifyGovernanceInstancesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                ModifyGovernanceInstancesOutcomeCallable ModifyGovernanceInstancesCallable(const Model::ModifyGovernanceInstancesRequest& request);
 
                 /**
                  *修改云原生API网关实例分组基础信息

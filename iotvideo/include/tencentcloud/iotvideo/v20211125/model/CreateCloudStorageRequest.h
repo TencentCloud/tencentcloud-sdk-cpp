@@ -270,15 +270,15 @@ lye1y30d：低功耗事件30天年套餐。
                     bool ChannelIdHasBeenSet() const;
 
                     /**
-                     * 获取云存存储区域，国内默认为ap-guangzhou。海外默认为东南亚ap-singapore，可选美东na-ashburn、欧洲eu-frankfurt。
-                     * @return StorageRegion 云存存储区域，国内默认为ap-guangzhou。海外默认为东南亚ap-singapore，可选美东na-ashburn、欧洲eu-frankfurt。
+                     * 获取云存视频存储区域，国内默认为ap-guangzhou。海外默认为东南亚ap-singapore，可选美东na-ashburn、欧洲eu-frankfurt。
+                     * @return StorageRegion 云存视频存储区域，国内默认为ap-guangzhou。海外默认为东南亚ap-singapore，可选美东na-ashburn、欧洲eu-frankfurt。
                      * 
                      */
                     std::string GetStorageRegion() const;
 
                     /**
-                     * 设置云存存储区域，国内默认为ap-guangzhou。海外默认为东南亚ap-singapore，可选美东na-ashburn、欧洲eu-frankfurt。
-                     * @param _storageRegion 云存存储区域，国内默认为ap-guangzhou。海外默认为东南亚ap-singapore，可选美东na-ashburn、欧洲eu-frankfurt。
+                     * 设置云存视频存储区域，国内默认为ap-guangzhou。海外默认为东南亚ap-singapore，可选美东na-ashburn、欧洲eu-frankfurt。
+                     * @param _storageRegion 云存视频存储区域，国内默认为ap-guangzhou。海外默认为东南亚ap-singapore，可选美东na-ashburn、欧洲eu-frankfurt。
                      * 
                      */
                     void SetStorageRegion(const std::string& _storageRegion);
@@ -355,7 +355,7 @@ lye1y30d：低功耗事件30天年套餐。
                     bool m_channelIdHasBeenSet;
 
                     /**
-                     * 云存存储区域，国内默认为ap-guangzhou。海外默认为东南亚ap-singapore，可选美东na-ashburn、欧洲eu-frankfurt。
+                     * 云存视频存储区域，国内默认为ap-guangzhou。海外默认为东南亚ap-singapore，可选美东na-ashburn、欧洲eu-frankfurt。
                      */
                     std::string m_storageRegion;
                     bool m_storageRegionHasBeenSet;

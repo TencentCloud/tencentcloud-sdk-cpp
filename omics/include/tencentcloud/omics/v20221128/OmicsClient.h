@@ -25,8 +25,14 @@
 #include <tencentcloud/core/AsyncCallerContext.h>
 #include <tencentcloud/omics/v20221128/model/CreateEnvironmentRequest.h>
 #include <tencentcloud/omics/v20221128/model/CreateEnvironmentResponse.h>
+#include <tencentcloud/omics/v20221128/model/CreateVolumeRequest.h>
+#include <tencentcloud/omics/v20221128/model/CreateVolumeResponse.h>
 #include <tencentcloud/omics/v20221128/model/DeleteEnvironmentRequest.h>
 #include <tencentcloud/omics/v20221128/model/DeleteEnvironmentResponse.h>
+#include <tencentcloud/omics/v20221128/model/DeleteVolumeRequest.h>
+#include <tencentcloud/omics/v20221128/model/DeleteVolumeResponse.h>
+#include <tencentcloud/omics/v20221128/model/DeleteVolumeDataRequest.h>
+#include <tencentcloud/omics/v20221128/model/DeleteVolumeDataResponse.h>
 #include <tencentcloud/omics/v20221128/model/DescribeEnvironmentsRequest.h>
 #include <tencentcloud/omics/v20221128/model/DescribeEnvironmentsResponse.h>
 #include <tencentcloud/omics/v20221128/model/DescribeRunGroupsRequest.h>
@@ -37,6 +43,8 @@
 #include <tencentcloud/omics/v20221128/model/DescribeTablesResponse.h>
 #include <tencentcloud/omics/v20221128/model/DescribeTablesRowsRequest.h>
 #include <tencentcloud/omics/v20221128/model/DescribeTablesRowsResponse.h>
+#include <tencentcloud/omics/v20221128/model/DescribeVolumesRequest.h>
+#include <tencentcloud/omics/v20221128/model/DescribeVolumesResponse.h>
 #include <tencentcloud/omics/v20221128/model/GetRunCallsRequest.h>
 #include <tencentcloud/omics/v20221128/model/GetRunCallsResponse.h>
 #include <tencentcloud/omics/v20221128/model/GetRunMetadataFileRequest.h>
@@ -45,6 +53,8 @@
 #include <tencentcloud/omics/v20221128/model/GetRunStatusResponse.h>
 #include <tencentcloud/omics/v20221128/model/ImportTableFileRequest.h>
 #include <tencentcloud/omics/v20221128/model/ImportTableFileResponse.h>
+#include <tencentcloud/omics/v20221128/model/ModifyVolumeRequest.h>
+#include <tencentcloud/omics/v20221128/model/ModifyVolumeResponse.h>
 #include <tencentcloud/omics/v20221128/model/RetryRunsRequest.h>
 #include <tencentcloud/omics/v20221128/model/RetryRunsResponse.h>
 #include <tencentcloud/omics/v20221128/model/RunApplicationRequest.h>
@@ -70,9 +80,18 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::CreateEnvironmentResponse> CreateEnvironmentOutcome;
                 typedef std::future<CreateEnvironmentOutcome> CreateEnvironmentOutcomeCallable;
                 typedef std::function<void(const OmicsClient*, const Model::CreateEnvironmentRequest&, CreateEnvironmentOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateEnvironmentAsyncHandler;
+                typedef Outcome<Core::Error, Model::CreateVolumeResponse> CreateVolumeOutcome;
+                typedef std::future<CreateVolumeOutcome> CreateVolumeOutcomeCallable;
+                typedef std::function<void(const OmicsClient*, const Model::CreateVolumeRequest&, CreateVolumeOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateVolumeAsyncHandler;
                 typedef Outcome<Core::Error, Model::DeleteEnvironmentResponse> DeleteEnvironmentOutcome;
                 typedef std::future<DeleteEnvironmentOutcome> DeleteEnvironmentOutcomeCallable;
                 typedef std::function<void(const OmicsClient*, const Model::DeleteEnvironmentRequest&, DeleteEnvironmentOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteEnvironmentAsyncHandler;
+                typedef Outcome<Core::Error, Model::DeleteVolumeResponse> DeleteVolumeOutcome;
+                typedef std::future<DeleteVolumeOutcome> DeleteVolumeOutcomeCallable;
+                typedef std::function<void(const OmicsClient*, const Model::DeleteVolumeRequest&, DeleteVolumeOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteVolumeAsyncHandler;
+                typedef Outcome<Core::Error, Model::DeleteVolumeDataResponse> DeleteVolumeDataOutcome;
+                typedef std::future<DeleteVolumeDataOutcome> DeleteVolumeDataOutcomeCallable;
+                typedef std::function<void(const OmicsClient*, const Model::DeleteVolumeDataRequest&, DeleteVolumeDataOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteVolumeDataAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeEnvironmentsResponse> DescribeEnvironmentsOutcome;
                 typedef std::future<DescribeEnvironmentsOutcome> DescribeEnvironmentsOutcomeCallable;
                 typedef std::function<void(const OmicsClient*, const Model::DescribeEnvironmentsRequest&, DescribeEnvironmentsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeEnvironmentsAsyncHandler;
@@ -88,6 +107,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeTablesRowsResponse> DescribeTablesRowsOutcome;
                 typedef std::future<DescribeTablesRowsOutcome> DescribeTablesRowsOutcomeCallable;
                 typedef std::function<void(const OmicsClient*, const Model::DescribeTablesRowsRequest&, DescribeTablesRowsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeTablesRowsAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeVolumesResponse> DescribeVolumesOutcome;
+                typedef std::future<DescribeVolumesOutcome> DescribeVolumesOutcomeCallable;
+                typedef std::function<void(const OmicsClient*, const Model::DescribeVolumesRequest&, DescribeVolumesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeVolumesAsyncHandler;
                 typedef Outcome<Core::Error, Model::GetRunCallsResponse> GetRunCallsOutcome;
                 typedef std::future<GetRunCallsOutcome> GetRunCallsOutcomeCallable;
                 typedef std::function<void(const OmicsClient*, const Model::GetRunCallsRequest&, GetRunCallsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> GetRunCallsAsyncHandler;
@@ -100,6 +122,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::ImportTableFileResponse> ImportTableFileOutcome;
                 typedef std::future<ImportTableFileOutcome> ImportTableFileOutcomeCallable;
                 typedef std::function<void(const OmicsClient*, const Model::ImportTableFileRequest&, ImportTableFileOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ImportTableFileAsyncHandler;
+                typedef Outcome<Core::Error, Model::ModifyVolumeResponse> ModifyVolumeOutcome;
+                typedef std::future<ModifyVolumeOutcome> ModifyVolumeOutcomeCallable;
+                typedef std::function<void(const OmicsClient*, const Model::ModifyVolumeRequest&, ModifyVolumeOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyVolumeAsyncHandler;
                 typedef Outcome<Core::Error, Model::RetryRunsResponse> RetryRunsOutcome;
                 typedef std::future<RetryRunsOutcome> RetryRunsOutcomeCallable;
                 typedef std::function<void(const OmicsClient*, const Model::RetryRunsRequest&, RetryRunsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> RetryRunsAsyncHandler;
@@ -125,6 +150,15 @@ namespace TencentCloud
                 CreateEnvironmentOutcomeCallable CreateEnvironmentCallable(const Model::CreateEnvironmentRequest& request);
 
                 /**
+                 *创建缓存卷。
+                 * @param req CreateVolumeRequest
+                 * @return CreateVolumeOutcome
+                 */
+                CreateVolumeOutcome CreateVolume(const Model::CreateVolumeRequest &request);
+                void CreateVolumeAsync(const Model::CreateVolumeRequest& request, const CreateVolumeAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                CreateVolumeOutcomeCallable CreateVolumeCallable(const Model::CreateVolumeRequest& request);
+
+                /**
                  *删除环境。
                  * @param req DeleteEnvironmentRequest
                  * @return DeleteEnvironmentOutcome
@@ -132,6 +166,24 @@ namespace TencentCloud
                 DeleteEnvironmentOutcome DeleteEnvironment(const Model::DeleteEnvironmentRequest &request);
                 void DeleteEnvironmentAsync(const Model::DeleteEnvironmentRequest& request, const DeleteEnvironmentAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DeleteEnvironmentOutcomeCallable DeleteEnvironmentCallable(const Model::DeleteEnvironmentRequest& request);
+
+                /**
+                 *删除缓存卷。
+                 * @param req DeleteVolumeRequest
+                 * @return DeleteVolumeOutcome
+                 */
+                DeleteVolumeOutcome DeleteVolume(const Model::DeleteVolumeRequest &request);
+                void DeleteVolumeAsync(const Model::DeleteVolumeRequest& request, const DeleteVolumeAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DeleteVolumeOutcomeCallable DeleteVolumeCallable(const Model::DeleteVolumeRequest& request);
+
+                /**
+                 *删除缓存卷数据。
+                 * @param req DeleteVolumeDataRequest
+                 * @return DeleteVolumeDataOutcome
+                 */
+                DeleteVolumeDataOutcome DeleteVolumeData(const Model::DeleteVolumeDataRequest &request);
+                void DeleteVolumeDataAsync(const Model::DeleteVolumeDataRequest& request, const DeleteVolumeDataAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DeleteVolumeDataOutcomeCallable DeleteVolumeDataCallable(const Model::DeleteVolumeDataRequest& request);
 
                 /**
                  *查询环境列表。
@@ -179,6 +231,15 @@ namespace TencentCloud
                 DescribeTablesRowsOutcomeCallable DescribeTablesRowsCallable(const Model::DescribeTablesRowsRequest& request);
 
                 /**
+                 *查询缓存卷列表。
+                 * @param req DescribeVolumesRequest
+                 * @return DescribeVolumesOutcome
+                 */
+                DescribeVolumesOutcome DescribeVolumes(const Model::DescribeVolumesRequest &request);
+                void DescribeVolumesAsync(const Model::DescribeVolumesRequest& request, const DescribeVolumesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeVolumesOutcomeCallable DescribeVolumesCallable(const Model::DescribeVolumesRequest& request);
+
+                /**
                  *查询作业详情。
                  * @param req GetRunCallsRequest
                  * @return GetRunCallsOutcome
@@ -213,6 +274,15 @@ namespace TencentCloud
                 ImportTableFileOutcome ImportTableFile(const Model::ImportTableFileRequest &request);
                 void ImportTableFileAsync(const Model::ImportTableFileRequest& request, const ImportTableFileAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 ImportTableFileOutcomeCallable ImportTableFileCallable(const Model::ImportTableFileRequest& request);
+
+                /**
+                 *修改缓存卷。
+                 * @param req ModifyVolumeRequest
+                 * @return ModifyVolumeOutcome
+                 */
+                ModifyVolumeOutcome ModifyVolume(const Model::ModifyVolumeRequest &request);
+                void ModifyVolumeAsync(const Model::ModifyVolumeRequest& request, const ModifyVolumeAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                ModifyVolumeOutcomeCallable ModifyVolumeCallable(const Model::ModifyVolumeRequest& request);
 
                 /**
                  *重试任务。

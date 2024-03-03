@@ -556,6 +556,49 @@ TseClient::CreateEngineOutcomeCallable TseClient::CreateEngineCallable(const Cre
     return task->get_future();
 }
 
+TseClient::CreateGovernanceInstancesOutcome TseClient::CreateGovernanceInstances(const CreateGovernanceInstancesRequest &request)
+{
+    auto outcome = MakeRequest(request, "CreateGovernanceInstances");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        CreateGovernanceInstancesResponse rsp = CreateGovernanceInstancesResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return CreateGovernanceInstancesOutcome(rsp);
+        else
+            return CreateGovernanceInstancesOutcome(o.GetError());
+    }
+    else
+    {
+        return CreateGovernanceInstancesOutcome(outcome.GetError());
+    }
+}
+
+void TseClient::CreateGovernanceInstancesAsync(const CreateGovernanceInstancesRequest& request, const CreateGovernanceInstancesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->CreateGovernanceInstances(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+TseClient::CreateGovernanceInstancesOutcomeCallable TseClient::CreateGovernanceInstancesCallable(const CreateGovernanceInstancesRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<CreateGovernanceInstancesOutcome()>>(
+        [this, request]()
+        {
+            return this->CreateGovernanceInstances(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 TseClient::CreateNativeGatewayServerGroupOutcome TseClient::CreateNativeGatewayServerGroup(const CreateNativeGatewayServerGroupRequest &request)
 {
     auto outcome = MakeRequest(request, "CreateNativeGatewayServerGroup");
@@ -1065,6 +1108,49 @@ TseClient::DeleteEngineOutcomeCallable TseClient::DeleteEngineCallable(const Del
         [this, request]()
         {
             return this->DeleteEngine(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+TseClient::DeleteGovernanceInstancesOutcome TseClient::DeleteGovernanceInstances(const DeleteGovernanceInstancesRequest &request)
+{
+    auto outcome = MakeRequest(request, "DeleteGovernanceInstances");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DeleteGovernanceInstancesResponse rsp = DeleteGovernanceInstancesResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DeleteGovernanceInstancesOutcome(rsp);
+        else
+            return DeleteGovernanceInstancesOutcome(o.GetError());
+    }
+    else
+    {
+        return DeleteGovernanceInstancesOutcome(outcome.GetError());
+    }
+}
+
+void TseClient::DeleteGovernanceInstancesAsync(const DeleteGovernanceInstancesRequest& request, const DeleteGovernanceInstancesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DeleteGovernanceInstances(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+TseClient::DeleteGovernanceInstancesOutcomeCallable TseClient::DeleteGovernanceInstancesCallable(const DeleteGovernanceInstancesRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DeleteGovernanceInstancesOutcome()>>(
+        [this, request]()
+        {
+            return this->DeleteGovernanceInstances(request);
         }
     );
 
@@ -1796,6 +1882,49 @@ TseClient::DescribeCloudNativeAPIGatewaysOutcomeCallable TseClient::DescribeClou
         [this, request]()
         {
             return this->DescribeCloudNativeAPIGateways(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+TseClient::DescribeGovernanceInstancesOutcome TseClient::DescribeGovernanceInstances(const DescribeGovernanceInstancesRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeGovernanceInstances");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeGovernanceInstancesResponse rsp = DescribeGovernanceInstancesResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeGovernanceInstancesOutcome(rsp);
+        else
+            return DescribeGovernanceInstancesOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeGovernanceInstancesOutcome(outcome.GetError());
+    }
+}
+
+void TseClient::DescribeGovernanceInstancesAsync(const DescribeGovernanceInstancesRequest& request, const DescribeGovernanceInstancesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeGovernanceInstances(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+TseClient::DescribeGovernanceInstancesOutcomeCallable TseClient::DescribeGovernanceInstancesCallable(const DescribeGovernanceInstancesRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeGovernanceInstancesOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeGovernanceInstances(request);
         }
     );
 
@@ -2699,6 +2828,49 @@ TseClient::ModifyConsoleNetworkOutcomeCallable TseClient::ModifyConsoleNetworkCa
         [this, request]()
         {
             return this->ModifyConsoleNetwork(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+TseClient::ModifyGovernanceInstancesOutcome TseClient::ModifyGovernanceInstances(const ModifyGovernanceInstancesRequest &request)
+{
+    auto outcome = MakeRequest(request, "ModifyGovernanceInstances");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ModifyGovernanceInstancesResponse rsp = ModifyGovernanceInstancesResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ModifyGovernanceInstancesOutcome(rsp);
+        else
+            return ModifyGovernanceInstancesOutcome(o.GetError());
+    }
+    else
+    {
+        return ModifyGovernanceInstancesOutcome(outcome.GetError());
+    }
+}
+
+void TseClient::ModifyGovernanceInstancesAsync(const ModifyGovernanceInstancesRequest& request, const ModifyGovernanceInstancesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->ModifyGovernanceInstances(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+TseClient::ModifyGovernanceInstancesOutcomeCallable TseClient::ModifyGovernanceInstancesCallable(const ModifyGovernanceInstancesRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<ModifyGovernanceInstancesOutcome()>>(
+        [this, request]()
+        {
+            return this->ModifyGovernanceInstances(request);
         }
     );
 

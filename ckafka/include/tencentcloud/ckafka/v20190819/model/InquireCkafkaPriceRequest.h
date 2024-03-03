@@ -46,15 +46,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取国内站标准版填写standards2, 国际站标准版填写standard，专业版填写profession
-                     * @return InstanceType 国内站标准版填写standards2, 国际站标准版填写standard，专业版填写profession
+                     * 获取国内站标准版填写standards2, 国际站标准版填写standard,专业版填写profession,高级版填写premium
+                     * @return InstanceType 国内站标准版填写standards2, 国际站标准版填写standard,专业版填写profession,高级版填写premium
                      * 
                      */
                     std::string GetInstanceType() const;
 
                     /**
-                     * 设置国内站标准版填写standards2, 国际站标准版填写standard，专业版填写profession
-                     * @param _instanceType 国内站标准版填写standards2, 国际站标准版填写standard，专业版填写profession
+                     * 设置国内站标准版填写standards2, 国际站标准版填写standard,专业版填写profession,高级版填写premium
+                     * @param _instanceType 国内站标准版填写standards2, 国际站标准版填写standard,专业版填写profession,高级版填写premium
                      * 
                      */
                     void SetInstanceType(const std::string& _instanceType);
@@ -109,15 +109,15 @@ namespace TencentCloud
                     bool InstanceNumHasBeenSet() const;
 
                     /**
-                     * 获取实例内网带宽大小, 单位MB/s (购买时必填，专业版询价时带宽信息必填)
-                     * @return Bandwidth 实例内网带宽大小, 单位MB/s (购买时必填，专业版询价时带宽信息必填)
+                     * 获取实例内网带宽大小, 单位MB/s (购买时必填，专业版/高级版询价时带宽信息必填)
+                     * @return Bandwidth 实例内网带宽大小, 单位MB/s (购买时必填，专业版/高级版询价时带宽信息必填)
                      * 
                      */
                     int64_t GetBandwidth() const;
 
                     /**
-                     * 设置实例内网带宽大小, 单位MB/s (购买时必填，专业版询价时带宽信息必填)
-                     * @param _bandwidth 实例内网带宽大小, 单位MB/s (购买时必填，专业版询价时带宽信息必填)
+                     * 设置实例内网带宽大小, 单位MB/s (购买时必填，专业版/高级版询价时带宽信息必填)
+                     * @param _bandwidth 实例内网带宽大小, 单位MB/s (购买时必填，专业版/高级版询价时带宽信息必填)
                      * 
                      */
                     void SetBandwidth(const int64_t& _bandwidth);
@@ -130,15 +130,15 @@ namespace TencentCloud
                     bool BandwidthHasBeenSet() const;
 
                     /**
-                     * 获取实例的硬盘购买类型以及大小 (购买时必填，专业版询价时磁盘信息必填)
-                     * @return InquiryDiskParam 实例的硬盘购买类型以及大小 (购买时必填，专业版询价时磁盘信息必填)
+                     * 获取实例的硬盘购买类型以及大小 (购买时必填，专业版/高级版询价时磁盘信息必填)
+                     * @return InquiryDiskParam 实例的硬盘购买类型以及大小 (购买时必填，专业版/高级版询价时磁盘信息必填)
                      * 
                      */
                     InquiryDiskParam GetInquiryDiskParam() const;
 
                     /**
-                     * 设置实例的硬盘购买类型以及大小 (购买时必填，专业版询价时磁盘信息必填)
-                     * @param _inquiryDiskParam 实例的硬盘购买类型以及大小 (购买时必填，专业版询价时磁盘信息必填)
+                     * 设置实例的硬盘购买类型以及大小 (购买时必填，专业版/高级版询价时磁盘信息必填)
+                     * @param _inquiryDiskParam 实例的硬盘购买类型以及大小 (购买时必填，专业版/高级版询价时磁盘信息必填)
                      * 
                      */
                     void SetInquiryDiskParam(const InquiryDiskParam& _inquiryDiskParam);
@@ -193,15 +193,15 @@ namespace TencentCloud
                     bool TopicHasBeenSet() const;
 
                     /**
-                     * 获取购买实例分区数, 单位个 (购买时必填，专业版询价时带宽信息必填)
-                     * @return Partition 购买实例分区数, 单位个 (购买时必填，专业版询价时带宽信息必填)
+                     * 获取购买实例分区数, 单位个 (购买时必填，专业版/高级版询价时带宽信息必填)
+                     * @return Partition 购买实例分区数, 单位个 (购买时必填，专业版/高级版询价时带宽信息必填)
                      * 
                      */
                     int64_t GetPartition() const;
 
                     /**
-                     * 设置购买实例分区数, 单位个 (购买时必填，专业版询价时带宽信息必填)
-                     * @param _partition 购买实例分区数, 单位个 (购买时必填，专业版询价时带宽信息必填)
+                     * 设置购买实例分区数, 单位个 (购买时必填，专业版/高级版询价时带宽信息必填)
+                     * @param _partition 购买实例分区数, 单位个 (购买时必填，专业版/高级版询价时带宽信息必填)
                      * 
                      */
                     void SetPartition(const int64_t& _partition);
@@ -321,7 +321,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 国内站标准版填写standards2, 国际站标准版填写standard，专业版填写profession
+                     * 国内站标准版填写standards2, 国际站标准版填写standard,专业版填写profession,高级版填写premium
                      */
                     std::string m_instanceType;
                     bool m_instanceTypeHasBeenSet;
@@ -339,13 +339,13 @@ namespace TencentCloud
                     bool m_instanceNumHasBeenSet;
 
                     /**
-                     * 实例内网带宽大小, 单位MB/s (购买时必填，专业版询价时带宽信息必填)
+                     * 实例内网带宽大小, 单位MB/s (购买时必填，专业版/高级版询价时带宽信息必填)
                      */
                     int64_t m_bandwidth;
                     bool m_bandwidthHasBeenSet;
 
                     /**
-                     * 实例的硬盘购买类型以及大小 (购买时必填，专业版询价时磁盘信息必填)
+                     * 实例的硬盘购买类型以及大小 (购买时必填，专业版/高级版询价时磁盘信息必填)
                      */
                     InquiryDiskParam m_inquiryDiskParam;
                     bool m_inquiryDiskParamHasBeenSet;
@@ -363,7 +363,7 @@ namespace TencentCloud
                     bool m_topicHasBeenSet;
 
                     /**
-                     * 购买实例分区数, 单位个 (购买时必填，专业版询价时带宽信息必填)
+                     * 购买实例分区数, 单位个 (购买时必填，专业版/高级版询价时带宽信息必填)
                      */
                     int64_t m_partition;
                     bool m_partitionHasBeenSet;

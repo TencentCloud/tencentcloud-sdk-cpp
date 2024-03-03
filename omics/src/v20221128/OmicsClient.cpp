@@ -83,6 +83,49 @@ OmicsClient::CreateEnvironmentOutcomeCallable OmicsClient::CreateEnvironmentCall
     return task->get_future();
 }
 
+OmicsClient::CreateVolumeOutcome OmicsClient::CreateVolume(const CreateVolumeRequest &request)
+{
+    auto outcome = MakeRequest(request, "CreateVolume");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        CreateVolumeResponse rsp = CreateVolumeResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return CreateVolumeOutcome(rsp);
+        else
+            return CreateVolumeOutcome(o.GetError());
+    }
+    else
+    {
+        return CreateVolumeOutcome(outcome.GetError());
+    }
+}
+
+void OmicsClient::CreateVolumeAsync(const CreateVolumeRequest& request, const CreateVolumeAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->CreateVolume(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+OmicsClient::CreateVolumeOutcomeCallable OmicsClient::CreateVolumeCallable(const CreateVolumeRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<CreateVolumeOutcome()>>(
+        [this, request]()
+        {
+            return this->CreateVolume(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 OmicsClient::DeleteEnvironmentOutcome OmicsClient::DeleteEnvironment(const DeleteEnvironmentRequest &request)
 {
     auto outcome = MakeRequest(request, "DeleteEnvironment");
@@ -119,6 +162,92 @@ OmicsClient::DeleteEnvironmentOutcomeCallable OmicsClient::DeleteEnvironmentCall
         [this, request]()
         {
             return this->DeleteEnvironment(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+OmicsClient::DeleteVolumeOutcome OmicsClient::DeleteVolume(const DeleteVolumeRequest &request)
+{
+    auto outcome = MakeRequest(request, "DeleteVolume");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DeleteVolumeResponse rsp = DeleteVolumeResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DeleteVolumeOutcome(rsp);
+        else
+            return DeleteVolumeOutcome(o.GetError());
+    }
+    else
+    {
+        return DeleteVolumeOutcome(outcome.GetError());
+    }
+}
+
+void OmicsClient::DeleteVolumeAsync(const DeleteVolumeRequest& request, const DeleteVolumeAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DeleteVolume(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+OmicsClient::DeleteVolumeOutcomeCallable OmicsClient::DeleteVolumeCallable(const DeleteVolumeRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DeleteVolumeOutcome()>>(
+        [this, request]()
+        {
+            return this->DeleteVolume(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+OmicsClient::DeleteVolumeDataOutcome OmicsClient::DeleteVolumeData(const DeleteVolumeDataRequest &request)
+{
+    auto outcome = MakeRequest(request, "DeleteVolumeData");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DeleteVolumeDataResponse rsp = DeleteVolumeDataResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DeleteVolumeDataOutcome(rsp);
+        else
+            return DeleteVolumeDataOutcome(o.GetError());
+    }
+    else
+    {
+        return DeleteVolumeDataOutcome(outcome.GetError());
+    }
+}
+
+void OmicsClient::DeleteVolumeDataAsync(const DeleteVolumeDataRequest& request, const DeleteVolumeDataAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DeleteVolumeData(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+OmicsClient::DeleteVolumeDataOutcomeCallable OmicsClient::DeleteVolumeDataCallable(const DeleteVolumeDataRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DeleteVolumeDataOutcome()>>(
+        [this, request]()
+        {
+            return this->DeleteVolumeData(request);
         }
     );
 
@@ -341,6 +470,49 @@ OmicsClient::DescribeTablesRowsOutcomeCallable OmicsClient::DescribeTablesRowsCa
     return task->get_future();
 }
 
+OmicsClient::DescribeVolumesOutcome OmicsClient::DescribeVolumes(const DescribeVolumesRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeVolumes");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeVolumesResponse rsp = DescribeVolumesResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeVolumesOutcome(rsp);
+        else
+            return DescribeVolumesOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeVolumesOutcome(outcome.GetError());
+    }
+}
+
+void OmicsClient::DescribeVolumesAsync(const DescribeVolumesRequest& request, const DescribeVolumesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeVolumes(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+OmicsClient::DescribeVolumesOutcomeCallable OmicsClient::DescribeVolumesCallable(const DescribeVolumesRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeVolumesOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeVolumes(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 OmicsClient::GetRunCallsOutcome OmicsClient::GetRunCalls(const GetRunCallsRequest &request)
 {
     auto outcome = MakeRequest(request, "GetRunCalls");
@@ -506,6 +678,49 @@ OmicsClient::ImportTableFileOutcomeCallable OmicsClient::ImportTableFileCallable
         [this, request]()
         {
             return this->ImportTableFile(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+OmicsClient::ModifyVolumeOutcome OmicsClient::ModifyVolume(const ModifyVolumeRequest &request)
+{
+    auto outcome = MakeRequest(request, "ModifyVolume");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ModifyVolumeResponse rsp = ModifyVolumeResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ModifyVolumeOutcome(rsp);
+        else
+            return ModifyVolumeOutcome(o.GetError());
+    }
+    else
+    {
+        return ModifyVolumeOutcome(outcome.GetError());
+    }
+}
+
+void OmicsClient::ModifyVolumeAsync(const ModifyVolumeRequest& request, const ModifyVolumeAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->ModifyVolume(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+OmicsClient::ModifyVolumeOutcomeCallable OmicsClient::ModifyVolumeCallable(const ModifyVolumeRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<ModifyVolumeOutcome()>>(
+        [this, request]()
+        {
+            return this->ModifyVolume(request);
         }
     );
 

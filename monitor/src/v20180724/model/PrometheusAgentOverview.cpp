@@ -30,7 +30,9 @@ PrometheusAgentOverview::PrometheusAgentOverview() :
     m_vpcIdHasBeenSet(false),
     m_failedReasonHasBeenSet(false),
     m_nameHasBeenSet(false),
-    m_enableExternalHasBeenSet(false)
+    m_enableExternalHasBeenSet(false),
+    m_desiredAgentNumHasBeenSet(false),
+    m_readyAgentNumHasBeenSet(false)
 {
 }
 
@@ -149,6 +151,26 @@ CoreInternalOutcome PrometheusAgentOverview::Deserialize(const rapidjson::Value 
         m_enableExternalHasBeenSet = true;
     }
 
+    if (value.HasMember("DesiredAgentNum") && !value["DesiredAgentNum"].IsNull())
+    {
+        if (!value["DesiredAgentNum"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `PrometheusAgentOverview.DesiredAgentNum` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_desiredAgentNum = value["DesiredAgentNum"].GetInt64();
+        m_desiredAgentNumHasBeenSet = true;
+    }
+
+    if (value.HasMember("ReadyAgentNum") && !value["ReadyAgentNum"].IsNull())
+    {
+        if (!value["ReadyAgentNum"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `PrometheusAgentOverview.ReadyAgentNum` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_readyAgentNum = value["ReadyAgentNum"].GetInt64();
+        m_readyAgentNumHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -241,6 +263,22 @@ void PrometheusAgentOverview::ToJsonObject(rapidjson::Value &value, rapidjson::D
         string key = "EnableExternal";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_enableExternal, allocator);
+    }
+
+    if (m_desiredAgentNumHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "DesiredAgentNum";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_desiredAgentNum, allocator);
+    }
+
+    if (m_readyAgentNumHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ReadyAgentNum";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_readyAgentNum, allocator);
     }
 
 }
@@ -404,5 +442,37 @@ void PrometheusAgentOverview::SetEnableExternal(const bool& _enableExternal)
 bool PrometheusAgentOverview::EnableExternalHasBeenSet() const
 {
     return m_enableExternalHasBeenSet;
+}
+
+int64_t PrometheusAgentOverview::GetDesiredAgentNum() const
+{
+    return m_desiredAgentNum;
+}
+
+void PrometheusAgentOverview::SetDesiredAgentNum(const int64_t& _desiredAgentNum)
+{
+    m_desiredAgentNum = _desiredAgentNum;
+    m_desiredAgentNumHasBeenSet = true;
+}
+
+bool PrometheusAgentOverview::DesiredAgentNumHasBeenSet() const
+{
+    return m_desiredAgentNumHasBeenSet;
+}
+
+int64_t PrometheusAgentOverview::GetReadyAgentNum() const
+{
+    return m_readyAgentNum;
+}
+
+void PrometheusAgentOverview::SetReadyAgentNum(const int64_t& _readyAgentNum)
+{
+    m_readyAgentNum = _readyAgentNum;
+    m_readyAgentNumHasBeenSet = true;
+}
+
+bool PrometheusAgentOverview::ReadyAgentNumHasBeenSet() const
+{
+    return m_readyAgentNumHasBeenSet;
 }
 

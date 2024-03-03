@@ -1330,6 +1330,49 @@ CsipClient::DescribeTaskLogURLOutcomeCallable CsipClient::DescribeTaskLogURLCall
     return task->get_future();
 }
 
+CsipClient::DescribeTopAttackInfoOutcome CsipClient::DescribeTopAttackInfo(const DescribeTopAttackInfoRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeTopAttackInfo");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeTopAttackInfoResponse rsp = DescribeTopAttackInfoResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeTopAttackInfoOutcome(rsp);
+        else
+            return DescribeTopAttackInfoOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeTopAttackInfoOutcome(outcome.GetError());
+    }
+}
+
+void CsipClient::DescribeTopAttackInfoAsync(const DescribeTopAttackInfoRequest& request, const DescribeTopAttackInfoAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeTopAttackInfo(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+CsipClient::DescribeTopAttackInfoOutcomeCallable CsipClient::DescribeTopAttackInfoCallable(const DescribeTopAttackInfoRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeTopAttackInfoOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeTopAttackInfo(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 CsipClient::DescribeVULRiskAdvanceCFGListOutcome CsipClient::DescribeVULRiskAdvanceCFGList(const DescribeVULRiskAdvanceCFGListRequest &request)
 {
     auto outcome = MakeRequest(request, "DescribeVULRiskAdvanceCFGList");
