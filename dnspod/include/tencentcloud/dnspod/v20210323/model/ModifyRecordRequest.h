@@ -253,15 +253,15 @@ namespace TencentCloud
                     bool TTLHasBeenSet() const;
 
                     /**
-                     * 获取权重信息，0到100的整数。仅企业 VIP 域名可用，0 表示关闭，不传该参数，表示不设置权重信息。
-                     * @return Weight 权重信息，0到100的整数。仅企业 VIP 域名可用，0 表示关闭，不传该参数，表示不设置权重信息。
+                     * 获取权重信息，0到100的整数。0 表示关闭，不传该参数，表示不设置权重信息。
+                     * @return Weight 权重信息，0到100的整数。0 表示关闭，不传该参数，表示不设置权重信息。
                      * 
                      */
                     uint64_t GetWeight() const;
 
                     /**
-                     * 设置权重信息，0到100的整数。仅企业 VIP 域名可用，0 表示关闭，不传该参数，表示不设置权重信息。
-                     * @param _weight 权重信息，0到100的整数。仅企业 VIP 域名可用，0 表示关闭，不传该参数，表示不设置权重信息。
+                     * 设置权重信息，0到100的整数。0 表示关闭，不传该参数，表示不设置权重信息。
+                     * @param _weight 权重信息，0到100的整数。0 表示关闭，不传该参数，表示不设置权重信息。
                      * 
                      */
                     void SetWeight(const uint64_t& _weight);
@@ -378,7 +378,7 @@ namespace TencentCloud
                     bool m_tTLHasBeenSet;
 
                     /**
-                     * 权重信息，0到100的整数。仅企业 VIP 域名可用，0 表示关闭，不传该参数，表示不设置权重信息。
+                     * 权重信息，0到100的整数。0 表示关闭，不传该参数，表示不设置权重信息。
                      */
                     uint64_t m_weight;
                     bool m_weightHasBeenSet;

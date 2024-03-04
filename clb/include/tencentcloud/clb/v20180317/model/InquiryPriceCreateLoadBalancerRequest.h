@@ -87,15 +87,15 @@ namespace TencentCloud
                     bool LoadBalancerChargeTypeHasBeenSet() const;
 
                     /**
-                     * 获取询价的收费周期
-                     * @return LoadBalancerChargePrepaid 询价的收费周期
+                     * 获取询价的收费周期。（仅包年包月支持该参数）
+                     * @return LoadBalancerChargePrepaid 询价的收费周期。（仅包年包月支持该参数）
                      * 
                      */
                     LBChargePrepaid GetLoadBalancerChargePrepaid() const;
 
                     /**
-                     * 设置询价的收费周期
-                     * @param _loadBalancerChargePrepaid 询价的收费周期
+                     * 设置询价的收费周期。（仅包年包月支持该参数）
+                     * @param _loadBalancerChargePrepaid 询价的收费周期。（仅包年包月支持该参数）
                      * 
                      */
                     void SetLoadBalancerChargePrepaid(const LBChargePrepaid& _loadBalancerChargePrepaid);
@@ -171,15 +171,23 @@ namespace TencentCloud
                     bool ZoneIdHasBeenSet() const;
 
                     /**
-                     * 获取包年包月询价时传性能容量型规格，如：clb.c3.small。按量付费询价时传SLA
-                     * @return SlaType 包年包月询价时传性能容量型规格，如：clb.c3.small。按量付费询价时传SLA
+                     * 获取包年包月询价时传性能容量型规格，如：<li>clb.c2.medium（标准型）</li><li>clb.c3.small（高阶型1）</li><li>clb.c3.medium（高阶型2）</li>
+<li>clb.c4.small（超强型1）</li><li>clb.c4.medium（超强型2）</li><li>clb.c4.large（超强型3）</li><li>clb.c4.xlarge（超强型4）</li>
+按量付费询价时传SLA
+                     * @return SlaType 包年包月询价时传性能容量型规格，如：<li>clb.c2.medium（标准型）</li><li>clb.c3.small（高阶型1）</li><li>clb.c3.medium（高阶型2）</li>
+<li>clb.c4.small（超强型1）</li><li>clb.c4.medium（超强型2）</li><li>clb.c4.large（超强型3）</li><li>clb.c4.xlarge（超强型4）</li>
+按量付费询价时传SLA
                      * 
                      */
                     std::string GetSlaType() const;
 
                     /**
-                     * 设置包年包月询价时传性能容量型规格，如：clb.c3.small。按量付费询价时传SLA
-                     * @param _slaType 包年包月询价时传性能容量型规格，如：clb.c3.small。按量付费询价时传SLA
+                     * 设置包年包月询价时传性能容量型规格，如：<li>clb.c2.medium（标准型）</li><li>clb.c3.small（高阶型1）</li><li>clb.c3.medium（高阶型2）</li>
+<li>clb.c4.small（超强型1）</li><li>clb.c4.medium（超强型2）</li><li>clb.c4.large（超强型3）</li><li>clb.c4.xlarge（超强型4）</li>
+按量付费询价时传SLA
+                     * @param _slaType 包年包月询价时传性能容量型规格，如：<li>clb.c2.medium（标准型）</li><li>clb.c3.small（高阶型1）</li><li>clb.c3.medium（高阶型2）</li>
+<li>clb.c4.small（超强型1）</li><li>clb.c4.medium（超强型2）</li><li>clb.c4.large（超强型3）</li><li>clb.c4.xlarge（超强型4）</li>
+按量付费询价时传SLA
                      * 
                      */
                     void SetSlaType(const std::string& _slaType);
@@ -214,18 +222,14 @@ namespace TencentCloud
 
                     /**
                      * 获取仅适用于公网负载均衡。目前仅广州、上海、南京、济南、杭州、福州、北京、石家庄、武汉、长沙、成都、重庆地域支持静态单线 IP 线路类型，如需体验，请联系商务经理申请。申请通过后，即可选择中国移动（CMCC）、中国联通（CUCC）或中国电信（CTCC）的运营商类型，网络计费模式只能使用按带宽包计费(BANDWIDTH_PACKAGE)。 如果不指定本参数，则默认使用BGP。可通过 DescribeResources 接口查询一个地域所支持的Isp。
-示例值：CMCC
                      * @return VipIsp 仅适用于公网负载均衡。目前仅广州、上海、南京、济南、杭州、福州、北京、石家庄、武汉、长沙、成都、重庆地域支持静态单线 IP 线路类型，如需体验，请联系商务经理申请。申请通过后，即可选择中国移动（CMCC）、中国联通（CUCC）或中国电信（CTCC）的运营商类型，网络计费模式只能使用按带宽包计费(BANDWIDTH_PACKAGE)。 如果不指定本参数，则默认使用BGP。可通过 DescribeResources 接口查询一个地域所支持的Isp。
-示例值：CMCC
                      * 
                      */
                     std::string GetVipIsp() const;
 
                     /**
                      * 设置仅适用于公网负载均衡。目前仅广州、上海、南京、济南、杭州、福州、北京、石家庄、武汉、长沙、成都、重庆地域支持静态单线 IP 线路类型，如需体验，请联系商务经理申请。申请通过后，即可选择中国移动（CMCC）、中国联通（CUCC）或中国电信（CTCC）的运营商类型，网络计费模式只能使用按带宽包计费(BANDWIDTH_PACKAGE)。 如果不指定本参数，则默认使用BGP。可通过 DescribeResources 接口查询一个地域所支持的Isp。
-示例值：CMCC
                      * @param _vipIsp 仅适用于公网负载均衡。目前仅广州、上海、南京、济南、杭州、福州、北京、石家庄、武汉、长沙、成都、重庆地域支持静态单线 IP 线路类型，如需体验，请联系商务经理申请。申请通过后，即可选择中国移动（CMCC）、中国联通（CUCC）或中国电信（CTCC）的运营商类型，网络计费模式只能使用按带宽包计费(BANDWIDTH_PACKAGE)。 如果不指定本参数，则默认使用BGP。可通过 DescribeResources 接口查询一个地域所支持的Isp。
-示例值：CMCC
                      * 
                      */
                     void SetVipIsp(const std::string& _vipIsp);
@@ -252,7 +256,7 @@ namespace TencentCloud
                     bool m_loadBalancerChargeTypeHasBeenSet;
 
                     /**
-                     * 询价的收费周期
+                     * 询价的收费周期。（仅包年包月支持该参数）
                      */
                     LBChargePrepaid m_loadBalancerChargePrepaid;
                     bool m_loadBalancerChargePrepaidHasBeenSet;
@@ -276,7 +280,9 @@ namespace TencentCloud
                     bool m_zoneIdHasBeenSet;
 
                     /**
-                     * 包年包月询价时传性能容量型规格，如：clb.c3.small。按量付费询价时传SLA
+                     * 包年包月询价时传性能容量型规格，如：<li>clb.c2.medium（标准型）</li><li>clb.c3.small（高阶型1）</li><li>clb.c3.medium（高阶型2）</li>
+<li>clb.c4.small（超强型1）</li><li>clb.c4.medium（超强型2）</li><li>clb.c4.large（超强型3）</li><li>clb.c4.xlarge（超强型4）</li>
+按量付费询价时传SLA
                      */
                     std::string m_slaType;
                     bool m_slaTypeHasBeenSet;
@@ -289,7 +295,6 @@ namespace TencentCloud
 
                     /**
                      * 仅适用于公网负载均衡。目前仅广州、上海、南京、济南、杭州、福州、北京、石家庄、武汉、长沙、成都、重庆地域支持静态单线 IP 线路类型，如需体验，请联系商务经理申请。申请通过后，即可选择中国移动（CMCC）、中国联通（CUCC）或中国电信（CTCC）的运营商类型，网络计费模式只能使用按带宽包计费(BANDWIDTH_PACKAGE)。 如果不指定本参数，则默认使用BGP。可通过 DescribeResources 接口查询一个地域所支持的Isp。
-示例值：CMCC
                      */
                     std::string m_vipIsp;
                     bool m_vipIspHasBeenSet;

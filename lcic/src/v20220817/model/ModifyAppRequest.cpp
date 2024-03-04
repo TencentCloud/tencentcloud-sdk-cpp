@@ -25,7 +25,9 @@ using namespace std;
 ModifyAppRequest::ModifyAppRequest() :
     m_sdkAppIdHasBeenSet(false),
     m_callbackHasBeenSet(false),
-    m_callbackKeyHasBeenSet(false)
+    m_callbackKeyHasBeenSet(false),
+    m_transferIdHasBeenSet(false),
+    m_transferUrlHasBeenSet(false)
 {
 }
 
@@ -58,6 +60,22 @@ string ModifyAppRequest::ToJsonString() const
         string key = "CallbackKey";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_callbackKey.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_transferIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "TransferId";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_transferId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_transferUrlHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "TransferUrl";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_transferUrl.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -114,6 +132,38 @@ void ModifyAppRequest::SetCallbackKey(const string& _callbackKey)
 bool ModifyAppRequest::CallbackKeyHasBeenSet() const
 {
     return m_callbackKeyHasBeenSet;
+}
+
+string ModifyAppRequest::GetTransferId() const
+{
+    return m_transferId;
+}
+
+void ModifyAppRequest::SetTransferId(const string& _transferId)
+{
+    m_transferId = _transferId;
+    m_transferIdHasBeenSet = true;
+}
+
+bool ModifyAppRequest::TransferIdHasBeenSet() const
+{
+    return m_transferIdHasBeenSet;
+}
+
+string ModifyAppRequest::GetTransferUrl() const
+{
+    return m_transferUrl;
+}
+
+void ModifyAppRequest::SetTransferUrl(const string& _transferUrl)
+{
+    m_transferUrl = _transferUrl;
+    m_transferUrlHasBeenSet = true;
+}
+
+bool ModifyAppRequest::TransferUrlHasBeenSet() const
+{
+    return m_transferUrlHasBeenSet;
 }
 
 

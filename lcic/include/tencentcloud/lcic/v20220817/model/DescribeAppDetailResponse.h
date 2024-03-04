@@ -23,6 +23,7 @@
 #include <tencentcloud/core/AbstractModel.h>
 #include <tencentcloud/lcic/v20220817/model/AppConfig.h>
 #include <tencentcloud/lcic/v20220817/model/SceneItem.h>
+#include <tencentcloud/lcic/v20220817/model/TransferItem.h>
 
 
 namespace TencentCloud
@@ -87,6 +88,20 @@ namespace TencentCloud
                      */
                     bool SceneConfigHasBeenSet() const;
 
+                    /**
+                     * 获取转存配置
+                     * @return TransferConfig 转存配置
+                     * 
+                     */
+                    TransferItem GetTransferConfig() const;
+
+                    /**
+                     * 判断参数 TransferConfig 是否已赋值
+                     * @return TransferConfig 是否已赋值
+                     * 
+                     */
+                    bool TransferConfigHasBeenSet() const;
+
                 private:
 
                     /**
@@ -106,6 +121,12 @@ namespace TencentCloud
                      */
                     std::vector<SceneItem> m_sceneConfig;
                     bool m_sceneConfigHasBeenSet;
+
+                    /**
+                     * 转存配置
+                     */
+                    TransferItem m_transferConfig;
+                    bool m_transferConfigHasBeenSet;
 
                 };
             }

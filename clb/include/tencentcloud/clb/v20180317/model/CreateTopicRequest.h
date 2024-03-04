@@ -106,15 +106,15 @@ namespace TencentCloud
                     bool TopicTypeHasBeenSet() const;
 
                     /**
-                     * 获取日志集的保存周期，单位：天，默认30天。
-                     * @return Period 日志集的保存周期，单位：天，默认30天。
+                     * 获取日志集的保存周期，单位：天，默认30天，范围[1, 3600]。
+                     * @return Period 日志集的保存周期，单位：天，默认30天，范围[1, 3600]。
                      * 
                      */
                     uint64_t GetPeriod() const;
 
                     /**
-                     * 设置日志集的保存周期，单位：天，默认30天。
-                     * @param _period 日志集的保存周期，单位：天，默认30天。
+                     * 设置日志集的保存周期，单位：天，默认30天，范围[1, 3600]。
+                     * @param _period 日志集的保存周期，单位：天，默认30天，范围[1, 3600]。
                      * 
                      */
                     void SetPeriod(const uint64_t& _period);
@@ -168,7 +168,7 @@ namespace TencentCloud
                     bool m_topicTypeHasBeenSet;
 
                     /**
-                     * 日志集的保存周期，单位：天，默认30天。
+                     * 日志集的保存周期，单位：天，默认30天，范围[1, 3600]。
                      */
                     uint64_t m_period;
                     bool m_periodHasBeenSet;

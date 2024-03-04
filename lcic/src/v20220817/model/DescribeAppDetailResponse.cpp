@@ -26,7 +26,8 @@ using namespace std;
 DescribeAppDetailResponse::DescribeAppDetailResponse() :
     m_sdkAppIdHasBeenSet(false),
     m_appConfigHasBeenSet(false),
-    m_sceneConfigHasBeenSet(false)
+    m_sceneConfigHasBeenSet(false),
+    m_transferConfigHasBeenSet(false)
 {
 }
 
@@ -111,6 +112,23 @@ CoreInternalOutcome DescribeAppDetailResponse::Deserialize(const string &payload
         m_sceneConfigHasBeenSet = true;
     }
 
+    if (rsp.HasMember("TransferConfig") && !rsp["TransferConfig"].IsNull())
+    {
+        if (!rsp["TransferConfig"].IsObject())
+        {
+            return CoreInternalOutcome(Core::Error("response `TransferConfig` is not object type").SetRequestId(requestId));
+        }
+
+        CoreInternalOutcome outcome = m_transferConfig.Deserialize(rsp["TransferConfig"]);
+        if (!outcome.IsSuccess())
+        {
+            outcome.GetError().SetRequestId(requestId);
+            return outcome;
+        }
+
+        m_transferConfigHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -153,6 +171,15 @@ string DescribeAppDetailResponse::ToJsonString() const
         }
     }
 
+    if (m_transferConfigHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "TransferConfig";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_transferConfig.ToJsonObject(value[key.c_str()], allocator);
+    }
+
     rapidjson::Value iKey(rapidjson::kStringType);
     string key = "RequestId";
     iKey.SetString(key.c_str(), allocator);
@@ -193,6 +220,16 @@ vector<SceneItem> DescribeAppDetailResponse::GetSceneConfig() const
 bool DescribeAppDetailResponse::SceneConfigHasBeenSet() const
 {
     return m_sceneConfigHasBeenSet;
+}
+
+TransferItem DescribeAppDetailResponse::GetTransferConfig() const
+{
+    return m_transferConfig;
+}
+
+bool DescribeAppDetailResponse::TransferConfigHasBeenSet() const
+{
+    return m_transferConfigHasBeenSet;
 }
 
 

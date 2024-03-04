@@ -46,7 +46,226 @@ namespace TencentCloud
                     CoreInternalOutcome Deserialize(const rapidjson::Value &value);
 
 
+                    /**
+                     * 获取应用ID
+                     * @return ApplicationId 应用ID
+                     * 
+                     */
+                    std::string GetApplicationId() const;
+
+                    /**
+                     * 设置应用ID
+                     * @param _applicationId 应用ID
+                     * 
+                     */
+                    void SetApplicationId(const std::string& _applicationId);
+
+                    /**
+                     * 判断参数 ApplicationId 是否已赋值
+                     * @return ApplicationId 是否已赋值
+                     * 
+                     */
+                    bool ApplicationIdHasBeenSet() const;
+
+                    /**
+                     * 获取应用名称
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return AppName 应用名称
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::string GetAppName() const;
+
+                    /**
+                     * 设置应用名称
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _appName 应用名称
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetAppName(const std::string& _appName);
+
+                    /**
+                     * 判断参数 AppName 是否已赋值
+                     * @return AppName 是否已赋值
+                     * 
+                     */
+                    bool AppNameHasBeenSet() const;
+
+                    /**
+                     * 获取应用状态 1正常 2停用
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return State 应用状态 1正常 2停用
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    int64_t GetState() const;
+
+                    /**
+                     * 设置应用状态 1正常 2停用
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _state 应用状态 1正常 2停用
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetState(const int64_t& _state);
+
+                    /**
+                     * 判断参数 State 是否已赋值
+                     * @return State 是否已赋值
+                     * 
+                     */
+                    bool StateHasBeenSet() const;
+
+                    /**
+                     * 获取1试用 2轻量版 3标准版 4旗舰版
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return AppVersion 1试用 2轻量版 3标准版 4旗舰版
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    int64_t GetAppVersion() const;
+
+                    /**
+                     * 设置1试用 2轻量版 3标准版 4旗舰版
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _appVersion 1试用 2轻量版 3标准版 4旗舰版
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetAppVersion(const int64_t& _appVersion);
+
+                    /**
+                     * 判断参数 AppVersion 是否已赋值
+                     * @return AppVersion 是否已赋值
+                     * 
+                     */
+                    bool AppVersionHasBeenSet() const;
+
+                    /**
+                     * 获取创建时间
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return CreatedAt 创建时间
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::string GetCreatedAt() const;
+
+                    /**
+                     * 设置创建时间
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _createdAt 创建时间
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetCreatedAt(const std::string& _createdAt);
+
+                    /**
+                     * 判断参数 CreatedAt 是否已赋值
+                     * @return CreatedAt 是否已赋值
+                     * 
+                     */
+                    bool CreatedAtHasBeenSet() const;
+
+                    /**
+                     * 获取回调
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return Callback 回调
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::string GetCallback() const;
+
+                    /**
+                     * 设置回调
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _callback 回调
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetCallback(const std::string& _callback);
+
+                    /**
+                     * 判断参数 Callback 是否已赋值
+                     * @return Callback 是否已赋值
+                     * 
+                     */
+                    bool CallbackHasBeenSet() const;
+
+                    /**
+                     * 获取回调Key
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return CallbackKey 回调Key
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::string GetCallbackKey() const;
+
+                    /**
+                     * 设置回调Key
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _callbackKey 回调Key
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetCallbackKey(const std::string& _callbackKey);
+
+                    /**
+                     * 判断参数 CallbackKey 是否已赋值
+                     * @return CallbackKey 是否已赋值
+                     * 
+                     */
+                    bool CallbackKeyHasBeenSet() const;
+
                 private:
+
+                    /**
+                     * 应用ID
+                     */
+                    std::string m_applicationId;
+                    bool m_applicationIdHasBeenSet;
+
+                    /**
+                     * 应用名称
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_appName;
+                    bool m_appNameHasBeenSet;
+
+                    /**
+                     * 应用状态 1正常 2停用
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    int64_t m_state;
+                    bool m_stateHasBeenSet;
+
+                    /**
+                     * 1试用 2轻量版 3标准版 4旗舰版
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    int64_t m_appVersion;
+                    bool m_appVersionHasBeenSet;
+
+                    /**
+                     * 创建时间
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_createdAt;
+                    bool m_createdAtHasBeenSet;
+
+                    /**
+                     * 回调
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_callback;
+                    bool m_callbackHasBeenSet;
+
+                    /**
+                     * 回调Key
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_callbackKey;
+                    bool m_callbackKeyHasBeenSet;
 
                 };
             }

@@ -105,6 +105,7 @@ set(lcic_public_header_model
   include/tencentcloud/lcic/v20220817/model/GetRoomMessageResponse.h
   include/tencentcloud/lcic/v20220817/model/BatchUserInfo.h
   include/tencentcloud/lcic/v20220817/model/BatchAddGroupMemberRequest.h
+  include/tencentcloud/lcic/v20220817/model/TransferItem.h
   include/tencentcloud/lcic/v20220817/model/DescribeRoomResponse.h
   include/tencentcloud/lcic/v20220817/model/DescribeCurrentMemberListRequest.h
   include/tencentcloud/lcic/v20220817/model/SendRoomNotificationMessageRequest.h
@@ -258,6 +259,7 @@ set(lcic_src
   src/v20220817/model/GetRoomMessageResponse.cpp
   src/v20220817/model/BatchUserInfo.cpp
   src/v20220817/model/BatchAddGroupMemberRequest.cpp
+  src/v20220817/model/TransferItem.cpp
   src/v20220817/model/DescribeRoomResponse.cpp
   src/v20220817/model/DescribeCurrentMemberListRequest.cpp
   src/v20220817/model/SendRoomNotificationMessageRequest.cpp

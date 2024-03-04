@@ -105,6 +105,48 @@ namespace TencentCloud
                      */
                     bool CallbackKeyHasBeenSet() const;
 
+                    /**
+                     * 获取转存id
+                     * @return TransferId 转存id
+                     * 
+                     */
+                    std::string GetTransferId() const;
+
+                    /**
+                     * 设置转存id
+                     * @param _transferId 转存id
+                     * 
+                     */
+                    void SetTransferId(const std::string& _transferId);
+
+                    /**
+                     * 判断参数 TransferId 是否已赋值
+                     * @return TransferId 是否已赋值
+                     * 
+                     */
+                    bool TransferIdHasBeenSet() const;
+
+                    /**
+                     * 获取转存地址
+                     * @return TransferUrl 转存地址
+                     * 
+                     */
+                    std::string GetTransferUrl() const;
+
+                    /**
+                     * 设置转存地址
+                     * @param _transferUrl 转存地址
+                     * 
+                     */
+                    void SetTransferUrl(const std::string& _transferUrl);
+
+                    /**
+                     * 判断参数 TransferUrl 是否已赋值
+                     * @return TransferUrl 是否已赋值
+                     * 
+                     */
+                    bool TransferUrlHasBeenSet() const;
+
                 private:
 
                     /**
@@ -124,6 +166,18 @@ namespace TencentCloud
                      */
                     std::string m_callbackKey;
                     bool m_callbackKeyHasBeenSet;
+
+                    /**
+                     * 转存id
+                     */
+                    std::string m_transferId;
+                    bool m_transferIdHasBeenSet;
+
+                    /**
+                     * 转存地址
+                     */
+                    std::string m_transferUrl;
+                    bool m_transferUrlHasBeenSet;
 
                 };
             }

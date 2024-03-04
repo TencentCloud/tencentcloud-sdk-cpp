@@ -2147,6 +2147,49 @@ CccClient::UnbindStaffSkillGroupListOutcomeCallable CccClient::UnbindStaffSkillG
     return task->get_future();
 }
 
+CccClient::UpdateCCCSkillGroupOutcome CccClient::UpdateCCCSkillGroup(const UpdateCCCSkillGroupRequest &request)
+{
+    auto outcome = MakeRequest(request, "UpdateCCCSkillGroup");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        UpdateCCCSkillGroupResponse rsp = UpdateCCCSkillGroupResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return UpdateCCCSkillGroupOutcome(rsp);
+        else
+            return UpdateCCCSkillGroupOutcome(o.GetError());
+    }
+    else
+    {
+        return UpdateCCCSkillGroupOutcome(outcome.GetError());
+    }
+}
+
+void CccClient::UpdateCCCSkillGroupAsync(const UpdateCCCSkillGroupRequest& request, const UpdateCCCSkillGroupAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->UpdateCCCSkillGroup(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+CccClient::UpdateCCCSkillGroupOutcomeCallable CccClient::UpdateCCCSkillGroupCallable(const UpdateCCCSkillGroupRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<UpdateCCCSkillGroupOutcome()>>(
+        [this, request]()
+        {
+            return this->UpdateCCCSkillGroup(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 CccClient::UpdatePredictiveDialingCampaignOutcome CccClient::UpdatePredictiveDialingCampaign(const UpdatePredictiveDialingCampaignRequest &request)
 {
     auto outcome = MakeRequest(request, "UpdatePredictiveDialingCampaign");

@@ -99,6 +99,20 @@ namespace TencentCloud
                      */
                     bool ActionHasBeenSet() const;
 
+                    /**
+                     * 获取当前订单的资源Id。
+                     * @return InstanceId 当前订单的资源Id。
+                     * 
+                     */
+                    std::string GetInstanceId() const;
+
+                    /**
+                     * 判断参数 InstanceId 是否已赋值
+                     * @return InstanceId 是否已赋值
+                     * 
+                     */
+                    bool InstanceIdHasBeenSet() const;
+
                 private:
 
                     /**
@@ -124,6 +138,12 @@ namespace TencentCloud
                      */
                     std::string m_action;
                     bool m_actionHasBeenSet;
+
+                    /**
+                     * 当前订单的资源Id。
+                     */
+                    std::string m_instanceId;
+                    bool m_instanceIdHasBeenSet;
 
                 };
             }

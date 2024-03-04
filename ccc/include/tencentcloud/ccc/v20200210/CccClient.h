@@ -121,6 +121,8 @@
 #include <tencentcloud/ccc/v20200210/model/UnbindNumberCallOutSkillGroupResponse.h>
 #include <tencentcloud/ccc/v20200210/model/UnbindStaffSkillGroupListRequest.h>
 #include <tencentcloud/ccc/v20200210/model/UnbindStaffSkillGroupListResponse.h>
+#include <tencentcloud/ccc/v20200210/model/UpdateCCCSkillGroupRequest.h>
+#include <tencentcloud/ccc/v20200210/model/UpdateCCCSkillGroupResponse.h>
 #include <tencentcloud/ccc/v20200210/model/UpdatePredictiveDialingCampaignRequest.h>
 #include <tencentcloud/ccc/v20200210/model/UpdatePredictiveDialingCampaignResponse.h>
 
@@ -284,6 +286,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::UnbindStaffSkillGroupListResponse> UnbindStaffSkillGroupListOutcome;
                 typedef std::future<UnbindStaffSkillGroupListOutcome> UnbindStaffSkillGroupListOutcomeCallable;
                 typedef std::function<void(const CccClient*, const Model::UnbindStaffSkillGroupListRequest&, UnbindStaffSkillGroupListOutcome, const std::shared_ptr<const AsyncCallerContext>&)> UnbindStaffSkillGroupListAsyncHandler;
+                typedef Outcome<Core::Error, Model::UpdateCCCSkillGroupResponse> UpdateCCCSkillGroupOutcome;
+                typedef std::future<UpdateCCCSkillGroupOutcome> UpdateCCCSkillGroupOutcomeCallable;
+                typedef std::function<void(const CccClient*, const Model::UpdateCCCSkillGroupRequest&, UpdateCCCSkillGroupOutcome, const std::shared_ptr<const AsyncCallerContext>&)> UpdateCCCSkillGroupAsyncHandler;
                 typedef Outcome<Core::Error, Model::UpdatePredictiveDialingCampaignResponse> UpdatePredictiveDialingCampaignOutcome;
                 typedef std::future<UpdatePredictiveDialingCampaignOutcome> UpdatePredictiveDialingCampaignOutcomeCallable;
                 typedef std::function<void(const CccClient*, const Model::UpdatePredictiveDialingCampaignRequest&, UpdatePredictiveDialingCampaignOutcome, const std::shared_ptr<const AsyncCallerContext>&)> UpdatePredictiveDialingCampaignAsyncHandler;
@@ -732,6 +737,15 @@ namespace TencentCloud
                 UnbindStaffSkillGroupListOutcome UnbindStaffSkillGroupList(const Model::UnbindStaffSkillGroupListRequest &request);
                 void UnbindStaffSkillGroupListAsync(const Model::UnbindStaffSkillGroupListRequest& request, const UnbindStaffSkillGroupListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 UnbindStaffSkillGroupListOutcomeCallable UnbindStaffSkillGroupListCallable(const Model::UnbindStaffSkillGroupListRequest& request);
+
+                /**
+                 *更新技能组
+                 * @param req UpdateCCCSkillGroupRequest
+                 * @return UpdateCCCSkillGroupOutcome
+                 */
+                UpdateCCCSkillGroupOutcome UpdateCCCSkillGroup(const Model::UpdateCCCSkillGroupRequest &request);
+                void UpdateCCCSkillGroupAsync(const Model::UpdateCCCSkillGroupRequest& request, const UpdateCCCSkillGroupAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                UpdateCCCSkillGroupOutcomeCallable UpdateCCCSkillGroupCallable(const Model::UpdateCCCSkillGroupRequest& request);
 
                 /**
                  *任务未启动前，更新预测式外呼任务。
