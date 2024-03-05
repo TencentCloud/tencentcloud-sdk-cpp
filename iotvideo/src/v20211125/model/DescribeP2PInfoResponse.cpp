@@ -14,22 +14,22 @@
  * limitations under the License.
  */
 
-#include <tencentcloud/tdmq/v20200217/model/DeleteProClustersResponse.h>
+#include <tencentcloud/iotvideo/v20211125/model/DescribeP2PInfoResponse.h>
 #include <tencentcloud/core/utils/rapidjson/document.h>
 #include <tencentcloud/core/utils/rapidjson/writer.h>
 #include <tencentcloud/core/utils/rapidjson/stringbuffer.h>
 
 using TencentCloud::CoreInternalOutcome;
-using namespace TencentCloud::Tdmq::V20200217::Model;
+using namespace TencentCloud::Iotvideo::V20211125::Model;
 using namespace std;
 
-DeleteProClustersResponse::DeleteProClustersResponse() :
-    m_dealNamesHasBeenSet(false),
-    m_clusterIdsHasBeenSet(false)
+DescribeP2PInfoResponse::DescribeP2PInfoResponse() :
+    m_p2PInfoHasBeenSet(false),
+    m_reportTimeHasBeenSet(false)
 {
 }
 
-CoreInternalOutcome DeleteProClustersResponse::Deserialize(const string &payload)
+CoreInternalOutcome DescribeP2PInfoResponse::Deserialize(const string &payload)
 {
     rapidjson::Document d;
     d.Parse(payload.c_str());
@@ -63,66 +63,50 @@ CoreInternalOutcome DeleteProClustersResponse::Deserialize(const string &payload
     }
 
 
-    if (rsp.HasMember("DealNames") && !rsp["DealNames"].IsNull())
+    if (rsp.HasMember("P2PInfo") && !rsp["P2PInfo"].IsNull())
     {
-        if (!rsp["DealNames"].IsArray())
-            return CoreInternalOutcome(Core::Error("response `DealNames` is not array type"));
-
-        const rapidjson::Value &tmpValue = rsp["DealNames"];
-        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        if (!rsp["P2PInfo"].IsString())
         {
-            m_dealNames.push_back((*itr).GetString());
+            return CoreInternalOutcome(Core::Error("response `P2PInfo` IsString=false incorrectly").SetRequestId(requestId));
         }
-        m_dealNamesHasBeenSet = true;
+        m_p2PInfo = string(rsp["P2PInfo"].GetString());
+        m_p2PInfoHasBeenSet = true;
     }
 
-    if (rsp.HasMember("ClusterIds") && !rsp["ClusterIds"].IsNull())
+    if (rsp.HasMember("ReportTime") && !rsp["ReportTime"].IsNull())
     {
-        if (!rsp["ClusterIds"].IsArray())
-            return CoreInternalOutcome(Core::Error("response `ClusterIds` is not array type"));
-
-        const rapidjson::Value &tmpValue = rsp["ClusterIds"];
-        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        if (!rsp["ReportTime"].IsInt64())
         {
-            m_clusterIds.push_back((*itr).GetString());
+            return CoreInternalOutcome(Core::Error("response `ReportTime` IsInt64=false incorrectly").SetRequestId(requestId));
         }
-        m_clusterIdsHasBeenSet = true;
+        m_reportTime = rsp["ReportTime"].GetInt64();
+        m_reportTimeHasBeenSet = true;
     }
 
 
     return CoreInternalOutcome(true);
 }
 
-string DeleteProClustersResponse::ToJsonString() const
+string DescribeP2PInfoResponse::ToJsonString() const
 {
     rapidjson::Document value;
     value.SetObject();
     rapidjson::Document::AllocatorType& allocator = value.GetAllocator();
 
-    if (m_dealNamesHasBeenSet)
+    if (m_p2PInfoHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "DealNames";
+        string key = "P2PInfo";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
-
-        for (auto itr = m_dealNames.begin(); itr != m_dealNames.end(); ++itr)
-        {
-            value[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
-        }
+        value.AddMember(iKey, rapidjson::Value(m_p2PInfo.c_str(), allocator).Move(), allocator);
     }
 
-    if (m_clusterIdsHasBeenSet)
+    if (m_reportTimeHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "ClusterIds";
+        string key = "ReportTime";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
-
-        for (auto itr = m_clusterIds.begin(); itr != m_clusterIds.end(); ++itr)
-        {
-            value[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
-        }
+        value.AddMember(iKey, m_reportTime, allocator);
     }
 
     rapidjson::Value iKey(rapidjson::kStringType);
@@ -137,24 +121,24 @@ string DeleteProClustersResponse::ToJsonString() const
 }
 
 
-vector<string> DeleteProClustersResponse::GetDealNames() const
+string DescribeP2PInfoResponse::GetP2PInfo() const
 {
-    return m_dealNames;
+    return m_p2PInfo;
 }
 
-bool DeleteProClustersResponse::DealNamesHasBeenSet() const
+bool DescribeP2PInfoResponse::P2PInfoHasBeenSet() const
 {
-    return m_dealNamesHasBeenSet;
+    return m_p2PInfoHasBeenSet;
 }
 
-vector<string> DeleteProClustersResponse::GetClusterIds() const
+int64_t DescribeP2PInfoResponse::GetReportTime() const
 {
-    return m_clusterIds;
+    return m_reportTime;
 }
 
-bool DeleteProClustersResponse::ClusterIdsHasBeenSet() const
+bool DescribeP2PInfoResponse::ReportTimeHasBeenSet() const
 {
-    return m_clusterIdsHasBeenSet;
+    return m_reportTimeHasBeenSet;
 }
 
 

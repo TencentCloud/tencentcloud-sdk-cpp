@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef TENCENTCLOUD_TDMQ_V20200217_MODEL_DELETEPROCLUSTERSRESPONSE_H_
-#define TENCENTCLOUD_TDMQ_V20200217_MODEL_DELETEPROCLUSTERSRESPONSE_H_
+#ifndef TENCENTCLOUD_IOTVIDEO_V20211125_MODEL_DESCRIBEP2PINFORESPONSE_H_
+#define TENCENTCLOUD_IOTVIDEO_V20211125_MODEL_DESCRIBEP2PINFORESPONSE_H_
 
 #include <string>
 #include <vector>
@@ -25,65 +25,65 @@
 
 namespace TencentCloud
 {
-    namespace Tdmq
+    namespace Iotvideo
     {
-        namespace V20200217
+        namespace V20211125
         {
             namespace Model
             {
                 /**
-                * DeleteProClusters返回参数结构体
+                * DescribeP2PInfo返回参数结构体
                 */
-                class DeleteProClustersResponse : public AbstractModel
+                class DescribeP2PInfoResponse : public AbstractModel
                 {
                 public:
-                    DeleteProClustersResponse();
-                    ~DeleteProClustersResponse() = default;
+                    DescribeP2PInfoResponse();
+                    ~DescribeP2PInfoResponse() = default;
                     CoreInternalOutcome Deserialize(const std::string &payload);
                     std::string ToJsonString() const;
 
 
                     /**
-                     * 获取退还实例订单号
-                     * @return DealNames 退还实例订单号
+                     * 获取xp2pinfo信息
+                     * @return P2PInfo xp2pinfo信息
                      * 
                      */
-                    std::vector<std::string> GetDealNames() const;
+                    std::string GetP2PInfo() const;
 
                     /**
-                     * 判断参数 DealNames 是否已赋值
-                     * @return DealNames 是否已赋值
+                     * 判断参数 P2PInfo 是否已赋值
+                     * @return P2PInfo 是否已赋值
                      * 
                      */
-                    bool DealNamesHasBeenSet() const;
+                    bool P2PInfoHasBeenSet() const;
 
                     /**
-                     * 获取集群ID
-                     * @return ClusterIds 集群ID
+                     * 获取上报时间
+                     * @return ReportTime 上报时间
                      * 
                      */
-                    std::vector<std::string> GetClusterIds() const;
+                    int64_t GetReportTime() const;
 
                     /**
-                     * 判断参数 ClusterIds 是否已赋值
-                     * @return ClusterIds 是否已赋值
+                     * 判断参数 ReportTime 是否已赋值
+                     * @return ReportTime 是否已赋值
                      * 
                      */
-                    bool ClusterIdsHasBeenSet() const;
+                    bool ReportTimeHasBeenSet() const;
 
                 private:
 
                     /**
-                     * 退还实例订单号
+                     * xp2pinfo信息
                      */
-                    std::vector<std::string> m_dealNames;
-                    bool m_dealNamesHasBeenSet;
+                    std::string m_p2PInfo;
+                    bool m_p2PInfoHasBeenSet;
 
                     /**
-                     * 集群ID
+                     * 上报时间
                      */
-                    std::vector<std::string> m_clusterIds;
-                    bool m_clusterIdsHasBeenSet;
+                    int64_t m_reportTime;
+                    bool m_reportTimeHasBeenSet;
 
                 };
             }
@@ -91,4 +91,4 @@ namespace TencentCloud
     }
 }
 
-#endif // !TENCENTCLOUD_TDMQ_V20200217_MODEL_DELETEPROCLUSTERSRESPONSE_H_
+#endif // !TENCENTCLOUD_IOTVIDEO_V20211125_MODEL_DESCRIBEP2PINFORESPONSE_H_

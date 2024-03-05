@@ -1,0 +1,218 @@
+/*
+ * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *    http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+
+#ifndef TENCENTCLOUD_TDMQ_V20200217_MODEL_DESCRIBEMQMSGTRACERESPONSE_H_
+#define TENCENTCLOUD_TDMQ_V20200217_MODEL_DESCRIBEMQMSGTRACERESPONSE_H_
+
+#include <string>
+#include <vector>
+#include <map>
+#include <tencentcloud/core/AbstractModel.h>
+#include <tencentcloud/tdmq/v20200217/model/TraceResult.h>
+
+
+namespace TencentCloud
+{
+    namespace Tdmq
+    {
+        namespace V20200217
+        {
+            namespace Model
+            {
+                /**
+                * DescribeMqMsgTrace返回参数结构体
+                */
+                class DescribeMqMsgTraceResponse : public AbstractModel
+                {
+                public:
+                    DescribeMqMsgTraceResponse();
+                    ~DescribeMqMsgTraceResponse() = default;
+                    CoreInternalOutcome Deserialize(const std::string &payload);
+                    std::string ToJsonString() const;
+
+
+                    /**
+                     * 获取[
+    {
+        "Stage": "produce",
+        "Data": {
+            "ProducerName": "生产者名",
+            "ProduceTime": "消息生产时间",
+            "ProducerAddr": "客户端地址",
+            "Duration": "耗时ms",
+            "Status": "状态（0：成功，1：失败）"
+        }
+    },
+    {
+        "Stage": "persist",
+        "Data": {
+            "PersistTime": "存储时间",
+            "Duration": "耗时ms",
+            "Status": "状态（0：成功，1：失败）"
+        }
+    },
+    {
+        "Stage": "consume",
+        "Data": {
+            "TotalCount": 2,
+            "RocketMqConsumeLogs": [
+                {
+                    "ConsumerGroup": "消费组",
+                    "ConsumeModel": "消费模式",
+                    "ConsumerAddr": "消费者地址",
+                    "ConsumeTime": "推送时间",
+                    "Status": "状态（0:已推送未确认, 2:已确认, 3:转入重试, 4:已重试未确认, 5:已转入死信队列）"
+                },
+                {
+                    "ConsumerGroup": "消费组",
+                    "ConsumeModel": "消费模式",
+                    "ConsumerAddr": "消费者地址",
+                    "ConsumeTime": "推送时间",
+                    "Status": "状态（0:已推送未确认, 2:已确认, 3:转入重试, 4:已重试未确认, 5:已转入死信队列）"
+                }
+            ]    
+        }
+    }
+]
+                     * @return Result [
+    {
+        "Stage": "produce",
+        "Data": {
+            "ProducerName": "生产者名",
+            "ProduceTime": "消息生产时间",
+            "ProducerAddr": "客户端地址",
+            "Duration": "耗时ms",
+            "Status": "状态（0：成功，1：失败）"
+        }
+    },
+    {
+        "Stage": "persist",
+        "Data": {
+            "PersistTime": "存储时间",
+            "Duration": "耗时ms",
+            "Status": "状态（0：成功，1：失败）"
+        }
+    },
+    {
+        "Stage": "consume",
+        "Data": {
+            "TotalCount": 2,
+            "RocketMqConsumeLogs": [
+                {
+                    "ConsumerGroup": "消费组",
+                    "ConsumeModel": "消费模式",
+                    "ConsumerAddr": "消费者地址",
+                    "ConsumeTime": "推送时间",
+                    "Status": "状态（0:已推送未确认, 2:已确认, 3:转入重试, 4:已重试未确认, 5:已转入死信队列）"
+                },
+                {
+                    "ConsumerGroup": "消费组",
+                    "ConsumeModel": "消费模式",
+                    "ConsumerAddr": "消费者地址",
+                    "ConsumeTime": "推送时间",
+                    "Status": "状态（0:已推送未确认, 2:已确认, 3:转入重试, 4:已重试未确认, 5:已转入死信队列）"
+                }
+            ]    
+        }
+    }
+]
+                     * 
+                     */
+                    std::vector<TraceResult> GetResult() const;
+
+                    /**
+                     * 判断参数 Result 是否已赋值
+                     * @return Result 是否已赋值
+                     * 
+                     */
+                    bool ResultHasBeenSet() const;
+
+                    /**
+                     * 获取消息轨迹页展示的topic名称
+                     * @return ShowTopicName 消息轨迹页展示的topic名称
+                     * 
+                     */
+                    std::string GetShowTopicName() const;
+
+                    /**
+                     * 判断参数 ShowTopicName 是否已赋值
+                     * @return ShowTopicName 是否已赋值
+                     * 
+                     */
+                    bool ShowTopicNameHasBeenSet() const;
+
+                private:
+
+                    /**
+                     * [
+    {
+        "Stage": "produce",
+        "Data": {
+            "ProducerName": "生产者名",
+            "ProduceTime": "消息生产时间",
+            "ProducerAddr": "客户端地址",
+            "Duration": "耗时ms",
+            "Status": "状态（0：成功，1：失败）"
+        }
+    },
+    {
+        "Stage": "persist",
+        "Data": {
+            "PersistTime": "存储时间",
+            "Duration": "耗时ms",
+            "Status": "状态（0：成功，1：失败）"
+        }
+    },
+    {
+        "Stage": "consume",
+        "Data": {
+            "TotalCount": 2,
+            "RocketMqConsumeLogs": [
+                {
+                    "ConsumerGroup": "消费组",
+                    "ConsumeModel": "消费模式",
+                    "ConsumerAddr": "消费者地址",
+                    "ConsumeTime": "推送时间",
+                    "Status": "状态（0:已推送未确认, 2:已确认, 3:转入重试, 4:已重试未确认, 5:已转入死信队列）"
+                },
+                {
+                    "ConsumerGroup": "消费组",
+                    "ConsumeModel": "消费模式",
+                    "ConsumerAddr": "消费者地址",
+                    "ConsumeTime": "推送时间",
+                    "Status": "状态（0:已推送未确认, 2:已确认, 3:转入重试, 4:已重试未确认, 5:已转入死信队列）"
+                }
+            ]    
+        }
+    }
+]
+                     */
+                    std::vector<TraceResult> m_result;
+                    bool m_resultHasBeenSet;
+
+                    /**
+                     * 消息轨迹页展示的topic名称
+                     */
+                    std::string m_showTopicName;
+                    bool m_showTopicNameHasBeenSet;
+
+                };
+            }
+        }
+    }
+}
+
+#endif // !TENCENTCLOUD_TDMQ_V20200217_MODEL_DESCRIBEMQMSGTRACERESPONSE_H_

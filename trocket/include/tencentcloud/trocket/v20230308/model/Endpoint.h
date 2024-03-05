@@ -48,23 +48,27 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取接入点类型，
-VPC，
-PUBLIC 公网
-                     * @return Type 接入点类型，
-VPC，
-PUBLIC 公网
+                     * 获取接入点类型，枚举值如下
+VPC: VPC;
+PUBLIC: 公网;
+INTERNAL: 支撑网;
+                     * @return Type 接入点类型，枚举值如下
+VPC: VPC;
+PUBLIC: 公网;
+INTERNAL: 支撑网;
                      * 
                      */
                     std::string GetType() const;
 
                     /**
-                     * 设置接入点类型，
-VPC，
-PUBLIC 公网
-                     * @param _type 接入点类型，
-VPC，
-PUBLIC 公网
+                     * 设置接入点类型，枚举值如下
+VPC: VPC;
+PUBLIC: 公网;
+INTERNAL: 支撑网;
+                     * @param _type 接入点类型，枚举值如下
+VPC: VPC;
+PUBLIC: 公网;
+INTERNAL: 支撑网;
                      * 
                      */
                     void SetType(const std::string& _type);
@@ -270,9 +274,10 @@ POSTPAID 按量付费
                 private:
 
                     /**
-                     * 接入点类型，
-VPC，
-PUBLIC 公网
+                     * 接入点类型，枚举值如下
+VPC: VPC;
+PUBLIC: 公网;
+INTERNAL: 支撑网;
                      */
                     std::string m_type;
                     bool m_typeHasBeenSet;

@@ -2878,6 +2878,49 @@ IotvideoClient::DescribeModelDefinitionOutcomeCallable IotvideoClient::DescribeM
     return task->get_future();
 }
 
+IotvideoClient::DescribeP2PInfoOutcome IotvideoClient::DescribeP2PInfo(const DescribeP2PInfoRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeP2PInfo");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeP2PInfoResponse rsp = DescribeP2PInfoResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeP2PInfoOutcome(rsp);
+        else
+            return DescribeP2PInfoOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeP2PInfoOutcome(outcome.GetError());
+    }
+}
+
+void IotvideoClient::DescribeP2PInfoAsync(const DescribeP2PInfoRequest& request, const DescribeP2PInfoAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeP2PInfo(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+IotvideoClient::DescribeP2PInfoOutcomeCallable IotvideoClient::DescribeP2PInfoCallable(const DescribeP2PInfoRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeP2PInfoOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeP2PInfo(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 IotvideoClient::DescribePackageConsumeTaskOutcome IotvideoClient::DescribePackageConsumeTask(const DescribePackageConsumeTaskRequest &request)
 {
     auto outcome = MakeRequest(request, "DescribePackageConsumeTask");

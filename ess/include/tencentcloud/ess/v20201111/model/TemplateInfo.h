@@ -24,9 +24,9 @@
 #include <tencentcloud/core/utils/rapidjson/writer.h>
 #include <tencentcloud/core/utils/rapidjson/stringbuffer.h>
 #include <tencentcloud/core/AbstractModel.h>
-#include <tencentcloud/ess/v20201111/model/FileInfo.h>
 #include <tencentcloud/ess/v20201111/model/Recipient.h>
 #include <tencentcloud/ess/v20201111/model/Component.h>
+#include <tencentcloud/ess/v20201111/model/FileInfo.h>
 #include <tencentcloud/ess/v20201111/model/SealInfo.h>
 
 
@@ -81,15 +81,15 @@ namespace TencentCloud
                     bool TemplateIdHasBeenSet() const;
 
                     /**
-                     * 获取模板名
-                     * @return TemplateName 模板名
+                     * 获取模板的名字
+                     * @return TemplateName 模板的名字
                      * 
                      */
                     std::string GetTemplateName() const;
 
                     /**
-                     * 设置模板名
-                     * @param _templateName 模板名
+                     * 设置模板的名字
+                     * @param _templateName 模板的名字
                      * 
                      */
                     void SetTemplateName(const std::string& _templateName);
@@ -100,6 +100,101 @@ namespace TencentCloud
                      * 
                      */
                     bool TemplateNameHasBeenSet() const;
+
+                    /**
+                     * 获取此模块需要签署的各个参与方的角色列表。RecipientId标识每个参与方角色对应的唯一标识符，用于确定此角色的信息。
+
+[点击查看在模板中配置的签署参与方角色列表的样子](https://qcloudimg.tencent-cloud.cn/raw/e082bbcc0d923f8cb723d98382410aa2.png)
+
+
+                     * @return Recipients 此模块需要签署的各个参与方的角色列表。RecipientId标识每个参与方角色对应的唯一标识符，用于确定此角色的信息。
+
+[点击查看在模板中配置的签署参与方角色列表的样子](https://qcloudimg.tencent-cloud.cn/raw/e082bbcc0d923f8cb723d98382410aa2.png)
+
+
+                     * 
+                     */
+                    std::vector<Recipient> GetRecipients() const;
+
+                    /**
+                     * 设置此模块需要签署的各个参与方的角色列表。RecipientId标识每个参与方角色对应的唯一标识符，用于确定此角色的信息。
+
+[点击查看在模板中配置的签署参与方角色列表的样子](https://qcloudimg.tencent-cloud.cn/raw/e082bbcc0d923f8cb723d98382410aa2.png)
+
+
+                     * @param _recipients 此模块需要签署的各个参与方的角色列表。RecipientId标识每个参与方角色对应的唯一标识符，用于确定此角色的信息。
+
+[点击查看在模板中配置的签署参与方角色列表的样子](https://qcloudimg.tencent-cloud.cn/raw/e082bbcc0d923f8cb723d98382410aa2.png)
+
+
+                     * 
+                     */
+                    void SetRecipients(const std::vector<Recipient>& _recipients);
+
+                    /**
+                     * 判断参数 Recipients 是否已赋值
+                     * @return Recipients 是否已赋值
+                     * 
+                     */
+                    bool RecipientsHasBeenSet() const;
+
+                    /**
+                     * 获取模板的填充控件列表
+
+[点击查看在模板中配置的填充控件的样子](https://qcloudimg.tencent-cloud.cn/raw/cb2f58529fca8d909258f9d45a56f7f4.png)
+                     * @return Components 模板的填充控件列表
+
+[点击查看在模板中配置的填充控件的样子](https://qcloudimg.tencent-cloud.cn/raw/cb2f58529fca8d909258f9d45a56f7f4.png)
+                     * 
+                     */
+                    std::vector<Component> GetComponents() const;
+
+                    /**
+                     * 设置模板的填充控件列表
+
+[点击查看在模板中配置的填充控件的样子](https://qcloudimg.tencent-cloud.cn/raw/cb2f58529fca8d909258f9d45a56f7f4.png)
+                     * @param _components 模板的填充控件列表
+
+[点击查看在模板中配置的填充控件的样子](https://qcloudimg.tencent-cloud.cn/raw/cb2f58529fca8d909258f9d45a56f7f4.png)
+                     * 
+                     */
+                    void SetComponents(const std::vector<Component>& _components);
+
+                    /**
+                     * 判断参数 Components 是否已赋值
+                     * @return Components 是否已赋值
+                     * 
+                     */
+                    bool ComponentsHasBeenSet() const;
+
+                    /**
+                     * 获取此模板中的签署控件列表
+
+[点击查看在模板中配置的签署控件的样子](https://qcloudimg.tencent-cloud.cn/raw/29bc6ed753a5a0fce4a3ab02e2c0d955.png)
+                     * @return SignComponents 此模板中的签署控件列表
+
+[点击查看在模板中配置的签署控件的样子](https://qcloudimg.tencent-cloud.cn/raw/29bc6ed753a5a0fce4a3ab02e2c0d955.png)
+                     * 
+                     */
+                    std::vector<Component> GetSignComponents() const;
+
+                    /**
+                     * 设置此模板中的签署控件列表
+
+[点击查看在模板中配置的签署控件的样子](https://qcloudimg.tencent-cloud.cn/raw/29bc6ed753a5a0fce4a3ab02e2c0d955.png)
+                     * @param _signComponents 此模板中的签署控件列表
+
+[点击查看在模板中配置的签署控件的样子](https://qcloudimg.tencent-cloud.cn/raw/29bc6ed753a5a0fce4a3ab02e2c0d955.png)
+                     * 
+                     */
+                    void SetSignComponents(const std::vector<Component>& _signComponents);
+
+                    /**
+                     * 判断参数 SignComponents 是否已赋值
+                     * @return SignComponents 是否已赋值
+                     * 
+                     */
+                    bool SignComponentsHasBeenSet() const;
 
                     /**
                      * 获取模板描述信息
@@ -123,15 +218,15 @@ namespace TencentCloud
                     bool DescriptionHasBeenSet() const;
 
                     /**
-                     * 获取模板关联的资源ID列表
-                     * @return DocumentResourceIds 模板关联的资源ID列表
+                     * 获取此模板的资源ID
+                     * @return DocumentResourceIds 此模板的资源ID
                      * 
                      */
                     std::vector<std::string> GetDocumentResourceIds() const;
 
                     /**
-                     * 设置模板关联的资源ID列表
-                     * @param _documentResourceIds 模板关联的资源ID列表
+                     * 设置此模板的资源ID
+                     * @param _documentResourceIds 此模板的资源ID
                      * 
                      */
                     void SetDocumentResourceIds(const std::vector<std::string>& _documentResourceIds);
@@ -165,15 +260,15 @@ namespace TencentCloud
                     bool FileInfosHasBeenSet() const;
 
                     /**
-                     * 获取附件关联的资源ID
-                     * @return AttachmentResourceIds 附件关联的资源ID
+                     * 获取此模板里边附件的资源ID
+                     * @return AttachmentResourceIds 此模板里边附件的资源ID
                      * 
                      */
                     std::vector<std::string> GetAttachmentResourceIds() const;
 
                     /**
-                     * 设置附件关联的资源ID
-                     * @param _attachmentResourceIds 附件关联的资源ID
+                     * 设置此模板里边附件的资源ID
+                     * @param _attachmentResourceIds 此模板里边附件的资源ID
                      * 
                      */
                     void SetAttachmentResourceIds(const std::vector<std::string>& _attachmentResourceIds);
@@ -186,23 +281,27 @@ namespace TencentCloud
                     bool AttachmentResourceIdsHasBeenSet() const;
 
                     /**
-                     * 获取签署顺序
-无序 -1
-有序为序列数字 0,1,2
-                     * @return SignOrder 签署顺序
-无序 -1
-有序为序列数字 0,1,2
+                     * 获取签署人参与签署的顺序，可以分为以下两种方式：
+
+<b>无序</b>：不限定签署人的签署顺序，签署人可以在任何时间签署。此种方式值为 ：｛-1｝
+<b>有序</b>：通过序列数字标识签署顺序，从0开始编码，数字越大签署顺序越靠后，签署人按照指定的顺序依次签署。此种方式值为： ｛0，1，2，3………｝
+                     * @return SignOrder 签署人参与签署的顺序，可以分为以下两种方式：
+
+<b>无序</b>：不限定签署人的签署顺序，签署人可以在任何时间签署。此种方式值为 ：｛-1｝
+<b>有序</b>：通过序列数字标识签署顺序，从0开始编码，数字越大签署顺序越靠后，签署人按照指定的顺序依次签署。此种方式值为： ｛0，1，2，3………｝
                      * 
                      */
                     std::vector<int64_t> GetSignOrder() const;
 
                     /**
-                     * 设置签署顺序
-无序 -1
-有序为序列数字 0,1,2
-                     * @param _signOrder 签署顺序
-无序 -1
-有序为序列数字 0,1,2
+                     * 设置签署人参与签署的顺序，可以分为以下两种方式：
+
+<b>无序</b>：不限定签署人的签署顺序，签署人可以在任何时间签署。此种方式值为 ：｛-1｝
+<b>有序</b>：通过序列数字标识签署顺序，从0开始编码，数字越大签署顺序越靠后，签署人按照指定的顺序依次签署。此种方式值为： ｛0，1，2，3………｝
+                     * @param _signOrder 签署人参与签署的顺序，可以分为以下两种方式：
+
+<b>无序</b>：不限定签署人的签署顺序，签署人可以在任何时间签署。此种方式值为 ：｛-1｝
+<b>有序</b>：通过序列数字标识签署顺序，从0开始编码，数字越大签署顺序越靠后，签署人按照指定的顺序依次签署。此种方式值为： ｛0，1，2，3………｝
                      * 
                      */
                     void SetSignOrder(const std::vector<int64_t>& _signOrder);
@@ -215,90 +314,31 @@ namespace TencentCloud
                     bool SignOrderHasBeenSet() const;
 
                     /**
-                     * 获取模板中的签署参与方列表
-                     * @return Recipients 模板中的签署参与方列表
-                     * 
-                     */
-                    std::vector<Recipient> GetRecipients() const;
+                     * 获取此模板的状态可以分为以下几种：
 
-                    /**
-                     * 设置模板中的签署参与方列表
-                     * @param _recipients 模板中的签署参与方列表
-                     * 
-                     */
-                    void SetRecipients(const std::vector<Recipient>& _recipients);
+<b>-1</b>：不可用状态。
+<b>0</b>：草稿态，即模板正在编辑或未发布状态。
+<b>1</b>：正式态，只有正式态的模板才可以发起合同。
+                     * @return Status 此模板的状态可以分为以下几种：
 
-                    /**
-                     * 判断参数 Recipients 是否已赋值
-                     * @return Recipients 是否已赋值
-                     * 
-                     */
-                    bool RecipientsHasBeenSet() const;
-
-                    /**
-                     * 获取模板的填充控件列表
-                     * @return Components 模板的填充控件列表
-                     * 
-                     */
-                    std::vector<Component> GetComponents() const;
-
-                    /**
-                     * 设置模板的填充控件列表
-                     * @param _components 模板的填充控件列表
-                     * 
-                     */
-                    void SetComponents(const std::vector<Component>& _components);
-
-                    /**
-                     * 判断参数 Components 是否已赋值
-                     * @return Components 是否已赋值
-                     * 
-                     */
-                    bool ComponentsHasBeenSet() const;
-
-                    /**
-                     * 获取模板中的签署控件列表
-                     * @return SignComponents 模板中的签署控件列表
-                     * 
-                     */
-                    std::vector<Component> GetSignComponents() const;
-
-                    /**
-                     * 设置模板中的签署控件列表
-                     * @param _signComponents 模板中的签署控件列表
-                     * 
-                     */
-                    void SetSignComponents(const std::vector<Component>& _signComponents);
-
-                    /**
-                     * 判断参数 SignComponents 是否已赋值
-                     * @return SignComponents 是否已赋值
-                     * 
-                     */
-                    bool SignComponentsHasBeenSet() const;
-
-                    /**
-                     * 获取模板状态
--1:不可用
-0:草稿态
-1:正式态，可以正常使用
-                     * @return Status 模板状态
--1:不可用
-0:草稿态
-1:正式态，可以正常使用
+<b>-1</b>：不可用状态。
+<b>0</b>：草稿态，即模板正在编辑或未发布状态。
+<b>1</b>：正式态，只有正式态的模板才可以发起合同。
                      * 
                      */
                     int64_t GetStatus() const;
 
                     /**
-                     * 设置模板状态
--1:不可用
-0:草稿态
-1:正式态，可以正常使用
-                     * @param _status 模板状态
--1:不可用
-0:草稿态
-1:正式态，可以正常使用
+                     * 设置此模板的状态可以分为以下几种：
+
+<b>-1</b>：不可用状态。
+<b>0</b>：草稿态，即模板正在编辑或未发布状态。
+<b>1</b>：正式态，只有正式态的模板才可以发起合同。
+                     * @param _status 此模板的状态可以分为以下几种：
+
+<b>-1</b>：不可用状态。
+<b>0</b>：草稿态，即模板正在编辑或未发布状态。
+<b>1</b>：正式态，只有正式态的模板才可以发起合同。
                      * 
                      */
                     void SetStatus(const int64_t& _status);
@@ -311,15 +351,23 @@ namespace TencentCloud
                     bool StatusHasBeenSet() const;
 
                     /**
-                     * 获取模板的创建者信息，电子签系统用户ID
-                     * @return Creator 模板的创建者信息，电子签系统用户ID
+                     * 获取模板的创建者信息，用户的名字
+
+注： `是创建者的名字，而非创建者的用户ID`
+                     * @return Creator 模板的创建者信息，用户的名字
+
+注： `是创建者的名字，而非创建者的用户ID`
                      * 
                      */
                     std::string GetCreator() const;
 
                     /**
-                     * 设置模板的创建者信息，电子签系统用户ID
-                     * @param _creator 模板的创建者信息，电子签系统用户ID
+                     * 设置模板的创建者信息，用户的名字
+
+注： `是创建者的名字，而非创建者的用户ID`
+                     * @param _creator 模板的创建者信息，用户的名字
+
+注： `是创建者的名字，而非创建者的用户ID`
                      * 
                      */
                     void SetCreator(const std::string& _creator);
@@ -353,15 +401,27 @@ namespace TencentCloud
                     bool CreatedOnHasBeenSet() const;
 
                     /**
-                     * 获取发起方参与信息Promoter
-                     * @return Promoter 发起方参与信息Promoter
+                     * 获取此模板创建方角色信息。
+
+[点击查看在模板中配置的创建方角色的样子](https://qcloudimg.tencent-cloud.cn/raw/e082bbcc0d923f8cb723d98382410aa2.png)
+
+                     * @return Promoter 此模板创建方角色信息。
+
+[点击查看在模板中配置的创建方角色的样子](https://qcloudimg.tencent-cloud.cn/raw/e082bbcc0d923f8cb723d98382410aa2.png)
+
                      * 
                      */
                     Recipient GetPromoter() const;
 
                     /**
-                     * 设置发起方参与信息Promoter
-                     * @param _promoter 发起方参与信息Promoter
+                     * 设置此模板创建方角色信息。
+
+[点击查看在模板中配置的创建方角色的样子](https://qcloudimg.tencent-cloud.cn/raw/e082bbcc0d923f8cb723d98382410aa2.png)
+
+                     * @param _promoter 此模板创建方角色信息。
+
+[点击查看在模板中配置的创建方角色的样子](https://qcloudimg.tencent-cloud.cn/raw/e082bbcc0d923f8cb723d98382410aa2.png)
+
                      * 
                      */
                     void SetPromoter(const Recipient& _promoter);
@@ -374,23 +434,27 @@ namespace TencentCloud
                     bool PromoterHasBeenSet() const;
 
                     /**
-                     * 获取模板类型：
-1  静默签,
-3  普通模板
-                     * @return TemplateType 模板类型：
-1  静默签,
-3  普通模板
+                     * 获取模板类型可以分为以下两种：
+
+<b>1</b>：带有本企业自动签署的模板，即签署过程无需签署人手动操作，系统自动完成签署。
+<b>3</b>：普通模板，即签署人需要手动进行签署操作。
+                     * @return TemplateType 模板类型可以分为以下两种：
+
+<b>1</b>：带有本企业自动签署的模板，即签署过程无需签署人手动操作，系统自动完成签署。
+<b>3</b>：普通模板，即签署人需要手动进行签署操作。
                      * 
                      */
                     int64_t GetTemplateType() const;
 
                     /**
-                     * 设置模板类型：
-1  静默签,
-3  普通模板
-                     * @param _templateType 模板类型：
-1  静默签,
-3  普通模板
+                     * 设置模板类型可以分为以下两种：
+
+<b>1</b>：带有本企业自动签署的模板，即签署过程无需签署人手动操作，系统自动完成签署。
+<b>3</b>：普通模板，即签署人需要手动进行签署操作。
+                     * @param _templateType 模板类型可以分为以下两种：
+
+<b>1</b>：带有本企业自动签署的模板，即签署过程无需签署人手动操作，系统自动完成签署。
+<b>3</b>：普通模板，即签署人需要手动进行签署操作。
                      * 
                      */
                     void SetTemplateType(const int64_t& _templateType);
@@ -403,23 +467,35 @@ namespace TencentCloud
                     bool TemplateTypeHasBeenSet() const;
 
                     /**
-                     * 获取模板可用状态：
-1 启用（默认）
-2 停用
-                     * @return Available 模板可用状态：
-1 启用（默认）
-2 停用
+                     * 获取模板可用状态可以分为以下两种：
+
+<b>1</b>：（默认）启用状态，即模板可以正常使用。
+<b>2</b>：停用状态，即模板暂时无法使用。
+
+可到控制台启停模板
+                     * @return Available 模板可用状态可以分为以下两种：
+
+<b>1</b>：（默认）启用状态，即模板可以正常使用。
+<b>2</b>：停用状态，即模板暂时无法使用。
+
+可到控制台启停模板
                      * 
                      */
                     int64_t GetAvailable() const;
 
                     /**
-                     * 设置模板可用状态：
-1 启用（默认）
-2 停用
-                     * @param _available 模板可用状态：
-1 启用（默认）
-2 停用
+                     * 设置模板可用状态可以分为以下两种：
+
+<b>1</b>：（默认）启用状态，即模板可以正常使用。
+<b>2</b>：停用状态，即模板暂时无法使用。
+
+可到控制台启停模板
+                     * @param _available 模板可用状态可以分为以下两种：
+
+<b>1</b>：（默认）启用状态，即模板可以正常使用。
+<b>2</b>：停用状态，即模板暂时无法使用。
+
+可到控制台启停模板
                      * 
                      */
                     void SetAvailable(const int64_t& _available);
@@ -453,18 +529,43 @@ namespace TencentCloud
                     bool OrganizationIdHasBeenSet() const;
 
                     /**
-                     * 获取模板预览链接，有效时间5分钟
+                     * 获取模板创建人用户ID
+                     * @return CreatorId 模板创建人用户ID
+                     * 
+                     */
+                    std::string GetCreatorId() const;
+
+                    /**
+                     * 设置模板创建人用户ID
+                     * @param _creatorId 模板创建人用户ID
+                     * 
+                     */
+                    void SetCreatorId(const std::string& _creatorId);
+
+                    /**
+                     * 判断参数 CreatorId 是否已赋值
+                     * @return CreatorId 是否已赋值
+                     * 
+                     */
+                    bool CreatorIdHasBeenSet() const;
+
+                    /**
+                     * 获取模板的H5预览链接,有效期5分钟。
+可以通过浏览器打开此链接预览模板，或者嵌入到iframe中预览模板。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return PreviewUrl 模板预览链接，有效时间5分钟
+                     * @return PreviewUrl 模板的H5预览链接,有效期5分钟。
+可以通过浏览器打开此链接预览模板，或者嵌入到iframe中预览模板。
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetPreviewUrl() const;
 
                     /**
-                     * 设置模板预览链接，有效时间5分钟
+                     * 设置模板的H5预览链接,有效期5分钟。
+可以通过浏览器打开此链接预览模板，或者嵌入到iframe中预览模板。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _previewUrl 模板预览链接，有效时间5分钟
+                     * @param _previewUrl 模板的H5预览链接,有效期5分钟。
+可以通过浏览器打开此链接预览模板，或者嵌入到iframe中预览模板。
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -478,18 +579,18 @@ namespace TencentCloud
                     bool PreviewUrlHasBeenSet() const;
 
                     /**
-                     * 获取模板版本。默认为空时，全数字字符，初始版本为yyyyMMdd001。
+                     * 获取模板版本的编号，旨在标识其独特的版本信息，通常呈现为一串字符串，由日期和递增的数字组成
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return TemplateVersion 模板版本。默认为空时，全数字字符，初始版本为yyyyMMdd001。
+                     * @return TemplateVersion 模板版本的编号，旨在标识其独特的版本信息，通常呈现为一串字符串，由日期和递增的数字组成
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetTemplateVersion() const;
 
                     /**
-                     * 设置模板版本。默认为空时，全数字字符，初始版本为yyyyMMdd001。
+                     * 设置模板版本的编号，旨在标识其独特的版本信息，通常呈现为一串字符串，由日期和递增的数字组成
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _templateVersion 模板版本。默认为空时，全数字字符，初始版本为yyyyMMdd001。
+                     * @param _templateVersion 模板版本的编号，旨在标识其独特的版本信息，通常呈现为一串字符串，由日期和递增的数字组成
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -503,26 +604,30 @@ namespace TencentCloud
                     bool TemplateVersionHasBeenSet() const;
 
                     /**
-                     * 获取模板是否已发布：
-true-已发布
-false-未发布
+                     * 获取模板是否已发布可以分为以下两种状态：
+
+<b>true</b>：已发布状态，表示该模板已经发布并可以正常使用。
+<b>false</b>：未发布状态，表示该模板还未发布，无法使用。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return Published 模板是否已发布：
-true-已发布
-false-未发布
+                     * @return Published 模板是否已发布可以分为以下两种状态：
+
+<b>true</b>：已发布状态，表示该模板已经发布并可以正常使用。
+<b>false</b>：未发布状态，表示该模板还未发布，无法使用。
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     bool GetPublished() const;
 
                     /**
-                     * 设置模板是否已发布：
-true-已发布
-false-未发布
+                     * 设置模板是否已发布可以分为以下两种状态：
+
+<b>true</b>：已发布状态，表示该模板已经发布并可以正常使用。
+<b>false</b>：未发布状态，表示该模板还未发布，无法使用。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _published 模板是否已发布：
-true-已发布
-false-未发布
+                     * @param _published 模板是否已发布可以分为以下两种状态：
+
+<b>true</b>：已发布状态，表示该模板已经发布并可以正常使用。
+<b>false</b>：未发布状态，表示该模板还未发布，无法使用。
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -536,18 +641,18 @@ false-未发布
                     bool PublishedHasBeenSet() const;
 
                     /**
-                     * 获取分享来源的模板ID。用在集团账号子企业模板里
+                     * 获取<b>集体账号场景下</b>： 集团账号分享给子企业的模板的来源模板ID。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return ShareTemplateId 分享来源的模板ID。用在集团账号子企业模板里
+                     * @return ShareTemplateId <b>集体账号场景下</b>： 集团账号分享给子企业的模板的来源模板ID。
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetShareTemplateId() const;
 
                     /**
-                     * 设置分享来源的模板ID。用在集团账号子企业模板里
+                     * 设置<b>集体账号场景下</b>： 集团账号分享给子企业的模板的来源模板ID。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _shareTemplateId 分享来源的模板ID。用在集团账号子企业模板里
+                     * @param _shareTemplateId <b>集体账号场景下</b>： 集团账号分享给子企业的模板的来源模板ID。
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -561,18 +666,18 @@ false-未发布
                     bool ShareTemplateIdHasBeenSet() const;
 
                     /**
-                     * 获取模板内部指定的印章列表
+                     * 获取此模板配置的预填印章列表（包括自动签署指定的印章）
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return TemplateSeals 模板内部指定的印章列表
+                     * @return TemplateSeals 此模板配置的预填印章列表（包括自动签署指定的印章）
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<SealInfo> GetTemplateSeals() const;
 
                     /**
-                     * 设置模板内部指定的印章列表
+                     * 设置此模板配置的预填印章列表（包括自动签署指定的印章）
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _templateSeals 模板内部指定的印章列表
+                     * @param _templateSeals 此模板配置的预填印章列表（包括自动签署指定的印章）
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -619,10 +724,36 @@ false-未发布
                     bool m_templateIdHasBeenSet;
 
                     /**
-                     * 模板名
+                     * 模板的名字
                      */
                     std::string m_templateName;
                     bool m_templateNameHasBeenSet;
+
+                    /**
+                     * 此模块需要签署的各个参与方的角色列表。RecipientId标识每个参与方角色对应的唯一标识符，用于确定此角色的信息。
+
+[点击查看在模板中配置的签署参与方角色列表的样子](https://qcloudimg.tencent-cloud.cn/raw/e082bbcc0d923f8cb723d98382410aa2.png)
+
+
+                     */
+                    std::vector<Recipient> m_recipients;
+                    bool m_recipientsHasBeenSet;
+
+                    /**
+                     * 模板的填充控件列表
+
+[点击查看在模板中配置的填充控件的样子](https://qcloudimg.tencent-cloud.cn/raw/cb2f58529fca8d909258f9d45a56f7f4.png)
+                     */
+                    std::vector<Component> m_components;
+                    bool m_componentsHasBeenSet;
+
+                    /**
+                     * 此模板中的签署控件列表
+
+[点击查看在模板中配置的签署控件的样子](https://qcloudimg.tencent-cloud.cn/raw/29bc6ed753a5a0fce4a3ab02e2c0d955.png)
+                     */
+                    std::vector<Component> m_signComponents;
+                    bool m_signComponentsHasBeenSet;
 
                     /**
                      * 模板描述信息
@@ -631,7 +762,7 @@ false-未发布
                     bool m_descriptionHasBeenSet;
 
                     /**
-                     * 模板关联的资源ID列表
+                     * 此模板的资源ID
                      */
                     std::vector<std::string> m_documentResourceIds;
                     bool m_documentResourceIdsHasBeenSet;
@@ -643,48 +774,34 @@ false-未发布
                     bool m_fileInfosHasBeenSet;
 
                     /**
-                     * 附件关联的资源ID
+                     * 此模板里边附件的资源ID
                      */
                     std::vector<std::string> m_attachmentResourceIds;
                     bool m_attachmentResourceIdsHasBeenSet;
 
                     /**
-                     * 签署顺序
-无序 -1
-有序为序列数字 0,1,2
+                     * 签署人参与签署的顺序，可以分为以下两种方式：
+
+<b>无序</b>：不限定签署人的签署顺序，签署人可以在任何时间签署。此种方式值为 ：｛-1｝
+<b>有序</b>：通过序列数字标识签署顺序，从0开始编码，数字越大签署顺序越靠后，签署人按照指定的顺序依次签署。此种方式值为： ｛0，1，2，3………｝
                      */
                     std::vector<int64_t> m_signOrder;
                     bool m_signOrderHasBeenSet;
 
                     /**
-                     * 模板中的签署参与方列表
-                     */
-                    std::vector<Recipient> m_recipients;
-                    bool m_recipientsHasBeenSet;
+                     * 此模板的状态可以分为以下几种：
 
-                    /**
-                     * 模板的填充控件列表
-                     */
-                    std::vector<Component> m_components;
-                    bool m_componentsHasBeenSet;
-
-                    /**
-                     * 模板中的签署控件列表
-                     */
-                    std::vector<Component> m_signComponents;
-                    bool m_signComponentsHasBeenSet;
-
-                    /**
-                     * 模板状态
--1:不可用
-0:草稿态
-1:正式态，可以正常使用
+<b>-1</b>：不可用状态。
+<b>0</b>：草稿态，即模板正在编辑或未发布状态。
+<b>1</b>：正式态，只有正式态的模板才可以发起合同。
                      */
                     int64_t m_status;
                     bool m_statusHasBeenSet;
 
                     /**
-                     * 模板的创建者信息，电子签系统用户ID
+                     * 模板的创建者信息，用户的名字
+
+注： `是创建者的名字，而非创建者的用户ID`
                      */
                     std::string m_creator;
                     bool m_creatorHasBeenSet;
@@ -696,23 +813,30 @@ false-未发布
                     bool m_createdOnHasBeenSet;
 
                     /**
-                     * 发起方参与信息Promoter
+                     * 此模板创建方角色信息。
+
+[点击查看在模板中配置的创建方角色的样子](https://qcloudimg.tencent-cloud.cn/raw/e082bbcc0d923f8cb723d98382410aa2.png)
+
                      */
                     Recipient m_promoter;
                     bool m_promoterHasBeenSet;
 
                     /**
-                     * 模板类型：
-1  静默签,
-3  普通模板
+                     * 模板类型可以分为以下两种：
+
+<b>1</b>：带有本企业自动签署的模板，即签署过程无需签署人手动操作，系统自动完成签署。
+<b>3</b>：普通模板，即签署人需要手动进行签署操作。
                      */
                     int64_t m_templateType;
                     bool m_templateTypeHasBeenSet;
 
                     /**
-                     * 模板可用状态：
-1 启用（默认）
-2 停用
+                     * 模板可用状态可以分为以下两种：
+
+<b>1</b>：（默认）启用状态，即模板可以正常使用。
+<b>2</b>：停用状态，即模板暂时无法使用。
+
+可到控制台启停模板
                      */
                     int64_t m_available;
                     bool m_availableHasBeenSet;
@@ -724,37 +848,45 @@ false-未发布
                     bool m_organizationIdHasBeenSet;
 
                     /**
-                     * 模板预览链接，有效时间5分钟
+                     * 模板创建人用户ID
+                     */
+                    std::string m_creatorId;
+                    bool m_creatorIdHasBeenSet;
+
+                    /**
+                     * 模板的H5预览链接,有效期5分钟。
+可以通过浏览器打开此链接预览模板，或者嵌入到iframe中预览模板。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_previewUrl;
                     bool m_previewUrlHasBeenSet;
 
                     /**
-                     * 模板版本。默认为空时，全数字字符，初始版本为yyyyMMdd001。
+                     * 模板版本的编号，旨在标识其独特的版本信息，通常呈现为一串字符串，由日期和递增的数字组成
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_templateVersion;
                     bool m_templateVersionHasBeenSet;
 
                     /**
-                     * 模板是否已发布：
-true-已发布
-false-未发布
+                     * 模板是否已发布可以分为以下两种状态：
+
+<b>true</b>：已发布状态，表示该模板已经发布并可以正常使用。
+<b>false</b>：未发布状态，表示该模板还未发布，无法使用。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     bool m_published;
                     bool m_publishedHasBeenSet;
 
                     /**
-                     * 分享来源的模板ID。用在集团账号子企业模板里
+                     * <b>集体账号场景下</b>： 集团账号分享给子企业的模板的来源模板ID。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_shareTemplateId;
                     bool m_shareTemplateIdHasBeenSet;
 
                     /**
-                     * 模板内部指定的印章列表
+                     * 此模板配置的预填印章列表（包括自动签署指定的印章）
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<SealInfo> m_templateSeals;

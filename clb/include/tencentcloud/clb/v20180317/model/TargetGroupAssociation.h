@@ -89,15 +89,15 @@ namespace TencentCloud
                     bool TargetGroupIdHasBeenSet() const;
 
                     /**
-                     * 获取监听器ID
-                     * @return ListenerId 监听器ID
+                     * 获取监听器ID。访问AssociateTargetGroups和DisassociateTargetGroups接口时必传此参数。
+                     * @return ListenerId 监听器ID。访问AssociateTargetGroups和DisassociateTargetGroups接口时必传此参数。
                      * 
                      */
                     std::string GetListenerId() const;
 
                     /**
-                     * 设置监听器ID
-                     * @param _listenerId 监听器ID
+                     * 设置监听器ID。访问AssociateTargetGroups和DisassociateTargetGroups接口时必传此参数。
+                     * @param _listenerId 监听器ID。访问AssociateTargetGroups和DisassociateTargetGroups接口时必传此参数。
                      * 
                      */
                     void SetListenerId(const std::string& _listenerId);
@@ -145,7 +145,7 @@ namespace TencentCloud
                     bool m_targetGroupIdHasBeenSet;
 
                     /**
-                     * 监听器ID
+                     * 监听器ID。访问AssociateTargetGroups和DisassociateTargetGroups接口时必传此参数。
                      */
                     std::string m_listenerId;
                     bool m_listenerIdHasBeenSet;

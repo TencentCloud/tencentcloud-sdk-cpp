@@ -193,15 +193,19 @@ namespace TencentCloud
                     bool CertificateHasBeenSet() const;
 
                     /**
-                     * 获取规则的请求转发方式
-                     * @return Scheduler 规则的请求转发方式
+                     * 获取规则的请求转发方式。
+WRR、LEAST_CONN、IP_HASH分别表示按权重轮询、最小连接数、IP Hash。
+                     * @return Scheduler 规则的请求转发方式。
+WRR、LEAST_CONN、IP_HASH分别表示按权重轮询、最小连接数、IP Hash。
                      * 
                      */
                     std::string GetScheduler() const;
 
                     /**
-                     * 设置规则的请求转发方式
-                     * @param _scheduler 规则的请求转发方式
+                     * 设置规则的请求转发方式。
+WRR、LEAST_CONN、IP_HASH分别表示按权重轮询、最小连接数、IP Hash。
+                     * @param _scheduler 规则的请求转发方式。
+WRR、LEAST_CONN、IP_HASH分别表示按权重轮询、最小连接数、IP Hash。
                      * 
                      */
                     void SetScheduler(const std::string& _scheduler);
@@ -386,15 +390,15 @@ namespace TencentCloud
                     bool CreateTimeHasBeenSet() const;
 
                     /**
-                     * 获取后端服务器类型
-                     * @return TargetType 后端服务器类型
+                     * 获取后端服务器类型。NODE表示绑定普通节点，TARGETGROUP表示绑定目标组。
+                     * @return TargetType 后端服务器类型。NODE表示绑定普通节点，TARGETGROUP表示绑定目标组。
                      * 
                      */
                     std::string GetTargetType() const;
 
                     /**
-                     * 设置后端服务器类型
-                     * @param _targetType 后端服务器类型
+                     * 设置后端服务器类型。NODE表示绑定普通节点，TARGETGROUP表示绑定目标组。
+                     * @param _targetType 后端服务器类型。NODE表示绑定普通节点，TARGETGROUP表示绑定目标组。
                      * 
                      */
                     void SetTargetType(const std::string& _targetType);
@@ -507,18 +511,18 @@ namespace TencentCloud
                     bool TrpcFuncHasBeenSet() const;
 
                     /**
-                     * 获取QUIC状态
+                     * 获取QUIC状态。QUIC_ACTIVE表示开启，QUIC_INACTIVE表示未开启。注意，只有HTTPS域名才能开启QUIC。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return QuicStatus QUIC状态
+                     * @return QuicStatus QUIC状态。QUIC_ACTIVE表示开启，QUIC_INACTIVE表示未开启。注意，只有HTTPS域名才能开启QUIC。
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetQuicStatus() const;
 
                     /**
-                     * 设置QUIC状态
+                     * 设置QUIC状态。QUIC_ACTIVE表示开启，QUIC_INACTIVE表示未开启。注意，只有HTTPS域名才能开启QUIC。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _quicStatus QUIC状态
+                     * @param _quicStatus QUIC状态。QUIC_ACTIVE表示开启，QUIC_INACTIVE表示未开启。注意，只有HTTPS域名才能开启QUIC。
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -624,7 +628,8 @@ namespace TencentCloud
                     bool m_certificateHasBeenSet;
 
                     /**
-                     * 规则的请求转发方式
+                     * 规则的请求转发方式。
+WRR、LEAST_CONN、IP_HASH分别表示按权重轮询、最小连接数、IP Hash。
                      */
                     std::string m_scheduler;
                     bool m_schedulerHasBeenSet;
@@ -679,7 +684,7 @@ namespace TencentCloud
                     bool m_createTimeHasBeenSet;
 
                     /**
-                     * 后端服务器类型
+                     * 后端服务器类型。NODE表示绑定普通节点，TARGETGROUP表示绑定目标组。
                      */
                     std::string m_targetType;
                     bool m_targetTypeHasBeenSet;
@@ -713,7 +718,7 @@ namespace TencentCloud
                     bool m_trpcFuncHasBeenSet;
 
                     /**
-                     * QUIC状态
+                     * QUIC状态。QUIC_ACTIVE表示开启，QUIC_INACTIVE表示未开启。注意，只有HTTPS域名才能开启QUIC。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_quicStatus;

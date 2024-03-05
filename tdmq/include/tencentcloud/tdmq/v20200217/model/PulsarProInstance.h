@@ -449,6 +449,31 @@ namespace TencentCloud
                      */
                     bool CreateTimeHasBeenSet() const;
 
+                    /**
+                     * 获取代表是专业版和小规格专业版的不同计费规格PULSAR.P1固定存储PULSAR.P2弹性存储
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return BillingLabelVersion 代表是专业版和小规格专业版的不同计费规格PULSAR.P1固定存储PULSAR.P2弹性存储
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::string GetBillingLabelVersion() const;
+
+                    /**
+                     * 设置代表是专业版和小规格专业版的不同计费规格PULSAR.P1固定存储PULSAR.P2弹性存储
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _billingLabelVersion 代表是专业版和小规格专业版的不同计费规格PULSAR.P1固定存储PULSAR.P2弹性存储
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetBillingLabelVersion(const std::string& _billingLabelVersion);
+
+                    /**
+                     * 判断参数 BillingLabelVersion 是否已赋值
+                     * @return BillingLabelVersion 是否已赋值
+                     * 
+                     */
+                    bool BillingLabelVersionHasBeenSet() const;
+
                 private:
 
                     /**
@@ -564,6 +589,13 @@ namespace TencentCloud
                      */
                     std::string m_createTime;
                     bool m_createTimeHasBeenSet;
+
+                    /**
+                     * 代表是专业版和小规格专业版的不同计费规格PULSAR.P1固定存储PULSAR.P2弹性存储
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_billingLabelVersion;
+                    bool m_billingLabelVersionHasBeenSet;
 
                 };
             }

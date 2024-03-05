@@ -51,13 +51,11 @@ EXPERIMENT 体验版
 BASIC 基础版
 PRO  专业版
 PLATINUM 铂金版
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return InstanceType 实例类型，
 EXPERIMENT 体验版
 BASIC 基础版
 PRO  专业版
 PLATINUM 铂金版
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetInstanceType() const;
@@ -381,6 +379,110 @@ PLATINUM 铂金版
                      */
                     bool PayModeHasBeenSet() const;
 
+                    /**
+                     * 获取是否开启弹性TPS
+                     * @return ScaledTpsEnabled 是否开启弹性TPS
+                     * 
+                     */
+                    bool GetScaledTpsEnabled() const;
+
+                    /**
+                     * 判断参数 ScaledTpsEnabled 是否已赋值
+                     * @return ScaledTpsEnabled 是否已赋值
+                     * 
+                     */
+                    bool ScaledTpsEnabledHasBeenSet() const;
+
+                    /**
+                     * 获取是否自动续费
+                     * @return RenewFlag 是否自动续费
+                     * 
+                     */
+                    int64_t GetRenewFlag() const;
+
+                    /**
+                     * 判断参数 RenewFlag 是否已赋值
+                     * @return RenewFlag 是否已赋值
+                     * 
+                     */
+                    bool RenewFlagHasBeenSet() const;
+
+                    /**
+                     * 获取到期时间
+                     * @return ExpiryTime 到期时间
+                     * 
+                     */
+                    int64_t GetExpiryTime() const;
+
+                    /**
+                     * 判断参数 ExpiryTime 是否已赋值
+                     * @return ExpiryTime 是否已赋值
+                     * 
+                     */
+                    bool ExpiryTimeHasBeenSet() const;
+
+                    /**
+                     * 获取角色数量限制
+                     * @return RoleNumLimit 角色数量限制
+                     * 
+                     */
+                    int64_t GetRoleNumLimit() const;
+
+                    /**
+                     * 判断参数 RoleNumLimit 是否已赋值
+                     * @return RoleNumLimit 是否已赋值
+                     * 
+                     */
+                    bool RoleNumLimitHasBeenSet() const;
+
+                    /**
+                     * 获取是否开启 ACL
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return AclEnabled 是否开启 ACL
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    bool GetAclEnabled() const;
+
+                    /**
+                     * 判断参数 AclEnabled 是否已赋值
+                     * @return AclEnabled 是否已赋值
+                     * 
+                     */
+                    bool AclEnabledHasBeenSet() const;
+
+                    /**
+                     * 获取topic个数免费额度
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return TopicNumLowerLimit topic个数免费额度
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    int64_t GetTopicNumLowerLimit() const;
+
+                    /**
+                     * 判断参数 TopicNumLowerLimit 是否已赋值
+                     * @return TopicNumLowerLimit 是否已赋值
+                     * 
+                     */
+                    bool TopicNumLowerLimitHasBeenSet() const;
+
+                    /**
+                     * 获取最大可设置的topic个数
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return TopicNumUpperLimit 最大可设置的topic个数
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    int64_t GetTopicNumUpperLimit() const;
+
+                    /**
+                     * 判断参数 TopicNumUpperLimit 是否已赋值
+                     * @return TopicNumUpperLimit 是否已赋值
+                     * 
+                     */
+                    bool TopicNumUpperLimitHasBeenSet() const;
+
                 private:
 
                     /**
@@ -389,7 +491,6 @@ EXPERIMENT 体验版
 BASIC 基础版
 PRO  专业版
 PLATINUM 铂金版
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_instanceType;
                     bool m_instanceTypeHasBeenSet;
@@ -527,6 +628,51 @@ PLATINUM 铂金版
                      */
                     std::string m_payMode;
                     bool m_payModeHasBeenSet;
+
+                    /**
+                     * 是否开启弹性TPS
+                     */
+                    bool m_scaledTpsEnabled;
+                    bool m_scaledTpsEnabledHasBeenSet;
+
+                    /**
+                     * 是否自动续费
+                     */
+                    int64_t m_renewFlag;
+                    bool m_renewFlagHasBeenSet;
+
+                    /**
+                     * 到期时间
+                     */
+                    int64_t m_expiryTime;
+                    bool m_expiryTimeHasBeenSet;
+
+                    /**
+                     * 角色数量限制
+                     */
+                    int64_t m_roleNumLimit;
+                    bool m_roleNumLimitHasBeenSet;
+
+                    /**
+                     * 是否开启 ACL
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    bool m_aclEnabled;
+                    bool m_aclEnabledHasBeenSet;
+
+                    /**
+                     * topic个数免费额度
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    int64_t m_topicNumLowerLimit;
+                    bool m_topicNumLowerLimitHasBeenSet;
+
+                    /**
+                     * 最大可设置的topic个数
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    int64_t m_topicNumUpperLimit;
+                    bool m_topicNumUpperLimitHasBeenSet;
 
                 };
             }

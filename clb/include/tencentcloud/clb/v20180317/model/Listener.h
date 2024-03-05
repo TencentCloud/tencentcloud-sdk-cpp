@@ -164,18 +164,18 @@ namespace TencentCloud
                     bool HealthCheckHasBeenSet() const;
 
                     /**
-                     * 获取请求的调度方式
+                     * 获取请求的调度方式。 WRR、LEAST_CONN、IP_HASH分别表示按权重轮询、最小连接数、IP Hash。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return Scheduler 请求的调度方式
+                     * @return Scheduler 请求的调度方式。 WRR、LEAST_CONN、IP_HASH分别表示按权重轮询、最小连接数、IP Hash。
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetScheduler() const;
 
                     /**
-                     * 设置请求的调度方式
+                     * 设置请求的调度方式。 WRR、LEAST_CONN、IP_HASH分别表示按权重轮询、最小连接数、IP Hash。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _scheduler 请求的调度方式
+                     * @param _scheduler 请求的调度方式。 WRR、LEAST_CONN、IP_HASH分别表示按权重轮询、最小连接数、IP Hash。
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -613,6 +613,31 @@ namespace TencentCloud
                      */
                     bool IdleConnectTimeoutHasBeenSet() const;
 
+                    /**
+                     * 获取调度时间。触发强制重新调度后，长连接将会在设置的调度时间内断开并完成重新分配
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return RescheduleInterval 调度时间。触发强制重新调度后，长连接将会在设置的调度时间内断开并完成重新分配
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    uint64_t GetRescheduleInterval() const;
+
+                    /**
+                     * 设置调度时间。触发强制重新调度后，长连接将会在设置的调度时间内断开并完成重新分配
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _rescheduleInterval 调度时间。触发强制重新调度后，长连接将会在设置的调度时间内断开并完成重新分配
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetRescheduleInterval(const uint64_t& _rescheduleInterval);
+
+                    /**
+                     * 判断参数 RescheduleInterval 是否已赋值
+                     * @return RescheduleInterval 是否已赋值
+                     * 
+                     */
+                    bool RescheduleIntervalHasBeenSet() const;
+
                 private:
 
                     /**
@@ -648,7 +673,7 @@ namespace TencentCloud
                     bool m_healthCheckHasBeenSet;
 
                     /**
-                     * 请求的调度方式
+                     * 请求的调度方式。 WRR、LEAST_CONN、IP_HASH分别表示按权重轮询、最小连接数、IP Hash。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_scheduler;
@@ -772,6 +797,13 @@ namespace TencentCloud
                      */
                     int64_t m_idleConnectTimeout;
                     bool m_idleConnectTimeoutHasBeenSet;
+
+                    /**
+                     * 调度时间。触发强制重新调度后，长连接将会在设置的调度时间内断开并完成重新分配
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    uint64_t m_rescheduleInterval;
+                    bool m_rescheduleIntervalHasBeenSet;
 
                 };
             }

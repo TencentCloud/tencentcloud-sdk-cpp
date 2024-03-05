@@ -1244,49 +1244,6 @@ TdmqClient::DeleteProClusterOutcomeCallable TdmqClient::DeleteProClusterCallable
     return task->get_future();
 }
 
-TdmqClient::DeleteProClustersOutcome TdmqClient::DeleteProClusters(const DeleteProClustersRequest &request)
-{
-    auto outcome = MakeRequest(request, "DeleteProClusters");
-    if (outcome.IsSuccess())
-    {
-        auto r = outcome.GetResult();
-        string payload = string(r.Body(), r.BodySize());
-        DeleteProClustersResponse rsp = DeleteProClustersResponse();
-        auto o = rsp.Deserialize(payload);
-        if (o.IsSuccess())
-            return DeleteProClustersOutcome(rsp);
-        else
-            return DeleteProClustersOutcome(o.GetError());
-    }
-    else
-    {
-        return DeleteProClustersOutcome(outcome.GetError());
-    }
-}
-
-void TdmqClient::DeleteProClustersAsync(const DeleteProClustersRequest& request, const DeleteProClustersAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
-{
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DeleteProClusters(request), context);
-    };
-
-    Executor::GetInstance()->Submit(new Runnable(fn));
-}
-
-TdmqClient::DeleteProClustersOutcomeCallable TdmqClient::DeleteProClustersCallable(const DeleteProClustersRequest &request)
-{
-    auto task = std::make_shared<std::packaged_task<DeleteProClustersOutcome()>>(
-        [this, request]()
-        {
-            return this->DeleteProClusters(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
-}
-
 TdmqClient::DeleteRabbitMQUserOutcome TdmqClient::DeleteRabbitMQUser(const DeleteRabbitMQUserRequest &request)
 {
     auto outcome = MakeRequest(request, "DeleteRabbitMQUser");
@@ -2398,6 +2355,92 @@ TdmqClient::DescribeEnvironmentsOutcomeCallable TdmqClient::DescribeEnvironments
         [this, request]()
         {
             return this->DescribeEnvironments(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+TdmqClient::DescribeMqMsgTraceOutcome TdmqClient::DescribeMqMsgTrace(const DescribeMqMsgTraceRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeMqMsgTrace");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeMqMsgTraceResponse rsp = DescribeMqMsgTraceResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeMqMsgTraceOutcome(rsp);
+        else
+            return DescribeMqMsgTraceOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeMqMsgTraceOutcome(outcome.GetError());
+    }
+}
+
+void TdmqClient::DescribeMqMsgTraceAsync(const DescribeMqMsgTraceRequest& request, const DescribeMqMsgTraceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeMqMsgTrace(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+TdmqClient::DescribeMqMsgTraceOutcomeCallable TdmqClient::DescribeMqMsgTraceCallable(const DescribeMqMsgTraceRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeMqMsgTraceOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeMqMsgTrace(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+TdmqClient::DescribeMsgOutcome TdmqClient::DescribeMsg(const DescribeMsgRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeMsg");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeMsgResponse rsp = DescribeMsgResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeMsgOutcome(rsp);
+        else
+            return DescribeMsgOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeMsgOutcome(outcome.GetError());
+    }
+}
+
+void TdmqClient::DescribeMsgAsync(const DescribeMsgRequest& request, const DescribeMsgAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeMsg(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+TdmqClient::DescribeMsgOutcomeCallable TdmqClient::DescribeMsgCallable(const DescribeMsgRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeMsgOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeMsg(request);
         }
     );
 

@@ -14,37 +14,41 @@
  * limitations under the License.
  */
 
-#include <tencentcloud/tdmq/v20200217/model/DeleteProClustersRequest.h>
+#include <tencentcloud/teo/v20220901/model/CreateCLSIndexRequest.h>
 #include <tencentcloud/core/utils/rapidjson/document.h>
 #include <tencentcloud/core/utils/rapidjson/writer.h>
 #include <tencentcloud/core/utils/rapidjson/stringbuffer.h>
 
-using namespace TencentCloud::Tdmq::V20200217::Model;
+using namespace TencentCloud::Teo::V20220901::Model;
 using namespace std;
 
-DeleteProClustersRequest::DeleteProClustersRequest() :
-    m_clusterIdsHasBeenSet(false)
+CreateCLSIndexRequest::CreateCLSIndexRequest() :
+    m_zoneIdHasBeenSet(false),
+    m_taskIdHasBeenSet(false)
 {
 }
 
-string DeleteProClustersRequest::ToJsonString() const
+string CreateCLSIndexRequest::ToJsonString() const
 {
     rapidjson::Document d;
     d.SetObject();
     rapidjson::Document::AllocatorType& allocator = d.GetAllocator();
 
 
-    if (m_clusterIdsHasBeenSet)
+    if (m_zoneIdHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "ClusterIds";
+        string key = "ZoneId";
         iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_zoneId.c_str(), allocator).Move(), allocator);
+    }
 
-        for (auto itr = m_clusterIds.begin(); itr != m_clusterIds.end(); ++itr)
-        {
-            d[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
-        }
+    if (m_taskIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "TaskId";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_taskId.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -55,20 +59,36 @@ string DeleteProClustersRequest::ToJsonString() const
 }
 
 
-vector<string> DeleteProClustersRequest::GetClusterIds() const
+string CreateCLSIndexRequest::GetZoneId() const
 {
-    return m_clusterIds;
+    return m_zoneId;
 }
 
-void DeleteProClustersRequest::SetClusterIds(const vector<string>& _clusterIds)
+void CreateCLSIndexRequest::SetZoneId(const string& _zoneId)
 {
-    m_clusterIds = _clusterIds;
-    m_clusterIdsHasBeenSet = true;
+    m_zoneId = _zoneId;
+    m_zoneIdHasBeenSet = true;
 }
 
-bool DeleteProClustersRequest::ClusterIdsHasBeenSet() const
+bool CreateCLSIndexRequest::ZoneIdHasBeenSet() const
 {
-    return m_clusterIdsHasBeenSet;
+    return m_zoneIdHasBeenSet;
+}
+
+string CreateCLSIndexRequest::GetTaskId() const
+{
+    return m_taskId;
+}
+
+void CreateCLSIndexRequest::SetTaskId(const string& _taskId)
+{
+    m_taskId = _taskId;
+    m_taskIdHasBeenSet = true;
+}
+
+bool CreateCLSIndexRequest::TaskIdHasBeenSet() const
+{
+    return m_taskIdHasBeenSet;
 }
 
 

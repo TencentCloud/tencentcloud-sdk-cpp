@@ -38,7 +38,8 @@ PulsarProInstance::PulsarProInstance() :
     m_subnetIdHasBeenSet(false),
     m_maxBandWidthHasBeenSet(false),
     m_tagsHasBeenSet(false),
-    m_createTimeHasBeenSet(false)
+    m_createTimeHasBeenSet(false),
+    m_billingLabelVersionHasBeenSet(false)
 {
 }
 
@@ -237,6 +238,16 @@ CoreInternalOutcome PulsarProInstance::Deserialize(const rapidjson::Value &value
         m_createTimeHasBeenSet = true;
     }
 
+    if (value.HasMember("BillingLabelVersion") && !value["BillingLabelVersion"].IsNull())
+    {
+        if (!value["BillingLabelVersion"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `PulsarProInstance.BillingLabelVersion` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_billingLabelVersion = string(value["BillingLabelVersion"].GetString());
+        m_billingLabelVersionHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -393,6 +404,14 @@ void PulsarProInstance::ToJsonObject(rapidjson::Value &value, rapidjson::Documen
         string key = "CreateTime";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_createTime.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_billingLabelVersionHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "BillingLabelVersion";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_billingLabelVersion.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -684,5 +703,21 @@ void PulsarProInstance::SetCreateTime(const string& _createTime)
 bool PulsarProInstance::CreateTimeHasBeenSet() const
 {
     return m_createTimeHasBeenSet;
+}
+
+string PulsarProInstance::GetBillingLabelVersion() const
+{
+    return m_billingLabelVersion;
+}
+
+void PulsarProInstance::SetBillingLabelVersion(const string& _billingLabelVersion)
+{
+    m_billingLabelVersion = _billingLabelVersion;
+    m_billingLabelVersionHasBeenSet = true;
+}
+
+bool PulsarProInstance::BillingLabelVersionHasBeenSet() const
+{
+    return m_billingLabelVersionHasBeenSet;
 }
 

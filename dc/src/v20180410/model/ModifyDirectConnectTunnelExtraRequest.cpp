@@ -38,7 +38,10 @@ ModifyDirectConnectTunnelExtraRequest::ModifyDirectConnectTunnelExtraRequest() :
     m_nqaInfoHasBeenSet(false),
     m_iPv6EnableHasBeenSet(false),
     m_customerIDCRoutesHasBeenSet(false),
-    m_jumboEnableHasBeenSet(false)
+    m_jumboEnableHasBeenSet(false),
+    m_tencentIPv6AddressHasBeenSet(false),
+    m_tencentBackupIPv6AddressHasBeenSet(false),
+    m_customerIPv6AddressHasBeenSet(false)
 {
 }
 
@@ -186,6 +189,30 @@ string ModifyDirectConnectTunnelExtraRequest::ToJsonString() const
         string key = "JumboEnable";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_jumboEnable, allocator);
+    }
+
+    if (m_tencentIPv6AddressHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "TencentIPv6Address";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_tencentIPv6Address.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_tencentBackupIPv6AddressHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "TencentBackupIPv6Address";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_tencentBackupIPv6Address.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_customerIPv6AddressHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "CustomerIPv6Address";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_customerIPv6Address.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -450,6 +477,54 @@ void ModifyDirectConnectTunnelExtraRequest::SetJumboEnable(const int64_t& _jumbo
 bool ModifyDirectConnectTunnelExtraRequest::JumboEnableHasBeenSet() const
 {
     return m_jumboEnableHasBeenSet;
+}
+
+string ModifyDirectConnectTunnelExtraRequest::GetTencentIPv6Address() const
+{
+    return m_tencentIPv6Address;
+}
+
+void ModifyDirectConnectTunnelExtraRequest::SetTencentIPv6Address(const string& _tencentIPv6Address)
+{
+    m_tencentIPv6Address = _tencentIPv6Address;
+    m_tencentIPv6AddressHasBeenSet = true;
+}
+
+bool ModifyDirectConnectTunnelExtraRequest::TencentIPv6AddressHasBeenSet() const
+{
+    return m_tencentIPv6AddressHasBeenSet;
+}
+
+string ModifyDirectConnectTunnelExtraRequest::GetTencentBackupIPv6Address() const
+{
+    return m_tencentBackupIPv6Address;
+}
+
+void ModifyDirectConnectTunnelExtraRequest::SetTencentBackupIPv6Address(const string& _tencentBackupIPv6Address)
+{
+    m_tencentBackupIPv6Address = _tencentBackupIPv6Address;
+    m_tencentBackupIPv6AddressHasBeenSet = true;
+}
+
+bool ModifyDirectConnectTunnelExtraRequest::TencentBackupIPv6AddressHasBeenSet() const
+{
+    return m_tencentBackupIPv6AddressHasBeenSet;
+}
+
+string ModifyDirectConnectTunnelExtraRequest::GetCustomerIPv6Address() const
+{
+    return m_customerIPv6Address;
+}
+
+void ModifyDirectConnectTunnelExtraRequest::SetCustomerIPv6Address(const string& _customerIPv6Address)
+{
+    m_customerIPv6Address = _customerIPv6Address;
+    m_customerIPv6AddressHasBeenSet = true;
+}
+
+bool ModifyDirectConnectTunnelExtraRequest::CustomerIPv6AddressHasBeenSet() const
+{
+    return m_customerIPv6AddressHasBeenSet;
 }
 
 

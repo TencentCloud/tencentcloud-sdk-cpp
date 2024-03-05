@@ -156,15 +156,15 @@ namespace TencentCloud
                     bool WeightHasBeenSet() const;
 
                     /**
-                     * 获取七层规则 ID。
-                     * @return LocationId 七层规则 ID。
+                     * 获取七层规则 ID。7层负载均衡该参数必填
+                     * @return LocationId 七层规则 ID。7层负载均衡该参数必填
                      * 
                      */
                     std::string GetLocationId() const;
 
                     /**
-                     * 设置七层规则 ID。
-                     * @param _locationId 七层规则 ID。
+                     * 设置七层规则 ID。7层负载均衡该参数必填
+                     * @param _locationId 七层规则 ID。7层负载均衡该参数必填
                      * 
                      */
                     void SetLocationId(const std::string& _locationId);
@@ -231,7 +231,7 @@ namespace TencentCloud
                     bool m_weightHasBeenSet;
 
                     /**
-                     * 七层规则 ID。
+                     * 七层规则 ID。7层负载均衡该参数必填
                      */
                     std::string m_locationId;
                     bool m_locationIdHasBeenSet;

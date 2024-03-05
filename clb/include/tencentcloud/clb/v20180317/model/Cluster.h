@@ -111,18 +111,18 @@ namespace TencentCloud
                     bool ClusterTypeHasBeenSet() const;
 
                     /**
-                     * 获取集群标签，只有STGW集群有标签
+                     * 获取集群标签，只有TGW/STGW集群有标签
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return ClusterTag 集群标签，只有STGW集群有标签
+                     * @return ClusterTag 集群标签，只有TGW/STGW集群有标签
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetClusterTag() const;
 
                     /**
-                     * 设置集群标签，只有STGW集群有标签
+                     * 设置集群标签，只有TGW/STGW集群有标签
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _clusterTag 集群标签，只有STGW集群有标签
+                     * @param _clusterTag 集群标签，只有TGW/STGW集群有标签
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -178,18 +178,18 @@ namespace TencentCloud
                     bool NetworkHasBeenSet() const;
 
                     /**
-                     * 获取最大连接数
+                     * 获取最大连接数（个/秒）
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return MaxConn 最大连接数
+                     * @return MaxConn 最大连接数（个/秒）
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetMaxConn() const;
 
                     /**
-                     * 设置最大连接数
+                     * 设置最大连接数（个/秒）
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _maxConn 最大连接数
+                     * @param _maxConn 最大连接数（个/秒）
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -203,18 +203,18 @@ namespace TencentCloud
                     bool MaxConnHasBeenSet() const;
 
                     /**
-                     * 获取最大入带宽
+                     * 获取最大入带宽Mbps
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return MaxInFlow 最大入带宽
+                     * @return MaxInFlow 最大入带宽Mbps
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetMaxInFlow() const;
 
                     /**
-                     * 设置最大入带宽
+                     * 设置最大入带宽Mbps
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _maxInFlow 最大入带宽
+                     * @param _maxInFlow 最大入带宽Mbps
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -228,18 +228,18 @@ namespace TencentCloud
                     bool MaxInFlowHasBeenSet() const;
 
                     /**
-                     * 获取最大入包量
+                     * 获取最大入包量（个/秒）
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return MaxInPkg 最大入包量
+                     * @return MaxInPkg 最大入包量（个/秒）
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetMaxInPkg() const;
 
                     /**
-                     * 设置最大入包量
+                     * 设置最大入包量（个/秒）
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _maxInPkg 最大入包量
+                     * @param _maxInPkg 最大入包量（个/秒）
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -253,18 +253,18 @@ namespace TencentCloud
                     bool MaxInPkgHasBeenSet() const;
 
                     /**
-                     * 获取最大出带宽
+                     * 获取最大出带宽Mbps
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return MaxOutFlow 最大出带宽
+                     * @return MaxOutFlow 最大出带宽Mbps
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetMaxOutFlow() const;
 
                     /**
-                     * 设置最大出带宽
+                     * 设置最大出带宽Mbps
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _maxOutFlow 最大出带宽
+                     * @param _maxOutFlow 最大出带宽Mbps
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -278,18 +278,18 @@ namespace TencentCloud
                     bool MaxOutFlowHasBeenSet() const;
 
                     /**
-                     * 获取最大出包量
+                     * 获取最大出包量（个/秒）
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return MaxOutPkg 最大出包量
+                     * @return MaxOutPkg 最大出包量（个/秒）
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetMaxOutPkg() const;
 
                     /**
-                     * 设置最大出包量
+                     * 设置最大出包量（个/秒）
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _maxOutPkg 最大出包量
+                     * @param _maxOutPkg 最大出包量（个/秒）
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -303,18 +303,18 @@ namespace TencentCloud
                     bool MaxOutPkgHasBeenSet() const;
 
                     /**
-                     * 获取最大新建连接数
+                     * 获取最大新建连接数（个/秒）
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return MaxNewConn 最大新建连接数
+                     * @return MaxNewConn 最大新建连接数（个/秒）
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetMaxNewConn() const;
 
                     /**
-                     * 设置最大新建连接数
+                     * 设置最大新建连接数（个/秒）
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _maxNewConn 最大新建连接数
+                     * @param _maxNewConn 最大新建连接数（个/秒）
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -328,18 +328,18 @@ namespace TencentCloud
                     bool MaxNewConnHasBeenSet() const;
 
                     /**
-                     * 获取http最大新建连接数
+                     * 获取http最大新建连接数（个/秒）
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return HTTPMaxNewConn http最大新建连接数
+                     * @return HTTPMaxNewConn http最大新建连接数（个/秒）
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetHTTPMaxNewConn() const;
 
                     /**
-                     * 设置http最大新建连接数
+                     * 设置http最大新建连接数（个/秒）
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _hTTPMaxNewConn http最大新建连接数
+                     * @param _hTTPMaxNewConn http最大新建连接数（个/秒）
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -353,18 +353,18 @@ namespace TencentCloud
                     bool HTTPMaxNewConnHasBeenSet() const;
 
                     /**
-                     * 获取https最大新建连接数
+                     * 获取https最大新建连接数（个/秒）
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return HTTPSMaxNewConn https最大新建连接数
+                     * @return HTTPSMaxNewConn https最大新建连接数（个/秒）
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetHTTPSMaxNewConn() const;
 
                     /**
-                     * 设置https最大新建连接数
+                     * 设置https最大新建连接数（个/秒）
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _hTTPSMaxNewConn https最大新建连接数
+                     * @param _hTTPSMaxNewConn https最大新建连接数（个/秒）
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -623,6 +623,31 @@ namespace TencentCloud
                      */
                     bool EgressHasBeenSet() const;
 
+                    /**
+                     * 获取IP版本
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return IPVersion IP版本
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::string GetIPVersion() const;
+
+                    /**
+                     * 设置IP版本
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _iPVersion IP版本
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetIPVersion(const std::string& _iPVersion);
+
+                    /**
+                     * 判断参数 IPVersion 是否已赋值
+                     * @return IPVersion 是否已赋值
+                     * 
+                     */
+                    bool IPVersionHasBeenSet() const;
+
                 private:
 
                     /**
@@ -644,7 +669,7 @@ namespace TencentCloud
                     bool m_clusterTypeHasBeenSet;
 
                     /**
-                     * 集群标签，只有STGW集群有标签
+                     * 集群标签，只有TGW/STGW集群有标签
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_clusterTag;
@@ -663,56 +688,56 @@ namespace TencentCloud
                     bool m_networkHasBeenSet;
 
                     /**
-                     * 最大连接数
+                     * 最大连接数（个/秒）
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_maxConn;
                     bool m_maxConnHasBeenSet;
 
                     /**
-                     * 最大入带宽
+                     * 最大入带宽Mbps
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_maxInFlow;
                     bool m_maxInFlowHasBeenSet;
 
                     /**
-                     * 最大入包量
+                     * 最大入包量（个/秒）
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_maxInPkg;
                     bool m_maxInPkgHasBeenSet;
 
                     /**
-                     * 最大出带宽
+                     * 最大出带宽Mbps
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_maxOutFlow;
                     bool m_maxOutFlowHasBeenSet;
 
                     /**
-                     * 最大出包量
+                     * 最大出包量（个/秒）
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_maxOutPkg;
                     bool m_maxOutPkgHasBeenSet;
 
                     /**
-                     * 最大新建连接数
+                     * 最大新建连接数（个/秒）
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_maxNewConn;
                     bool m_maxNewConnHasBeenSet;
 
                     /**
-                     * http最大新建连接数
+                     * http最大新建连接数（个/秒）
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_hTTPMaxNewConn;
                     bool m_hTTPMaxNewConnHasBeenSet;
 
                     /**
-                     * https最大新建连接数
+                     * https最大新建连接数（个/秒）
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_hTTPSMaxNewConn;
@@ -786,6 +811,13 @@ namespace TencentCloud
                      */
                     std::string m_egress;
                     bool m_egressHasBeenSet;
+
+                    /**
+                     * IP版本
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_iPVersion;
+                    bool m_iPVersionHasBeenSet;
 
                 };
             }

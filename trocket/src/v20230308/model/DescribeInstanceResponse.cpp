@@ -46,7 +46,14 @@ DescribeInstanceResponse::DescribeInstanceResponse() :
     m_remarkHasBeenSet(false),
     m_instanceStatusHasBeenSet(false),
     m_skuCodeHasBeenSet(false),
-    m_payModeHasBeenSet(false)
+    m_payModeHasBeenSet(false),
+    m_scaledTpsEnabledHasBeenSet(false),
+    m_renewFlagHasBeenSet(false),
+    m_expiryTimeHasBeenSet(false),
+    m_roleNumLimitHasBeenSet(false),
+    m_aclEnabledHasBeenSet(false),
+    m_topicNumLowerLimitHasBeenSet(false),
+    m_topicNumUpperLimitHasBeenSet(false)
 {
 }
 
@@ -334,6 +341,76 @@ CoreInternalOutcome DescribeInstanceResponse::Deserialize(const string &payload)
         m_payModeHasBeenSet = true;
     }
 
+    if (rsp.HasMember("ScaledTpsEnabled") && !rsp["ScaledTpsEnabled"].IsNull())
+    {
+        if (!rsp["ScaledTpsEnabled"].IsBool())
+        {
+            return CoreInternalOutcome(Core::Error("response `ScaledTpsEnabled` IsBool=false incorrectly").SetRequestId(requestId));
+        }
+        m_scaledTpsEnabled = rsp["ScaledTpsEnabled"].GetBool();
+        m_scaledTpsEnabledHasBeenSet = true;
+    }
+
+    if (rsp.HasMember("RenewFlag") && !rsp["RenewFlag"].IsNull())
+    {
+        if (!rsp["RenewFlag"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `RenewFlag` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_renewFlag = rsp["RenewFlag"].GetInt64();
+        m_renewFlagHasBeenSet = true;
+    }
+
+    if (rsp.HasMember("ExpiryTime") && !rsp["ExpiryTime"].IsNull())
+    {
+        if (!rsp["ExpiryTime"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `ExpiryTime` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_expiryTime = rsp["ExpiryTime"].GetInt64();
+        m_expiryTimeHasBeenSet = true;
+    }
+
+    if (rsp.HasMember("RoleNumLimit") && !rsp["RoleNumLimit"].IsNull())
+    {
+        if (!rsp["RoleNumLimit"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `RoleNumLimit` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_roleNumLimit = rsp["RoleNumLimit"].GetInt64();
+        m_roleNumLimitHasBeenSet = true;
+    }
+
+    if (rsp.HasMember("AclEnabled") && !rsp["AclEnabled"].IsNull())
+    {
+        if (!rsp["AclEnabled"].IsBool())
+        {
+            return CoreInternalOutcome(Core::Error("response `AclEnabled` IsBool=false incorrectly").SetRequestId(requestId));
+        }
+        m_aclEnabled = rsp["AclEnabled"].GetBool();
+        m_aclEnabledHasBeenSet = true;
+    }
+
+    if (rsp.HasMember("TopicNumLowerLimit") && !rsp["TopicNumLowerLimit"].IsNull())
+    {
+        if (!rsp["TopicNumLowerLimit"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `TopicNumLowerLimit` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_topicNumLowerLimit = rsp["TopicNumLowerLimit"].GetInt64();
+        m_topicNumLowerLimitHasBeenSet = true;
+    }
+
+    if (rsp.HasMember("TopicNumUpperLimit") && !rsp["TopicNumUpperLimit"].IsNull())
+    {
+        if (!rsp["TopicNumUpperLimit"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `TopicNumUpperLimit` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_topicNumUpperLimit = rsp["TopicNumUpperLimit"].GetInt64();
+        m_topicNumUpperLimitHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -540,6 +617,62 @@ string DescribeInstanceResponse::ToJsonString() const
         string key = "PayMode";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_payMode.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_scaledTpsEnabledHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ScaledTpsEnabled";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_scaledTpsEnabled, allocator);
+    }
+
+    if (m_renewFlagHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "RenewFlag";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_renewFlag, allocator);
+    }
+
+    if (m_expiryTimeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ExpiryTime";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_expiryTime, allocator);
+    }
+
+    if (m_roleNumLimitHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "RoleNumLimit";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_roleNumLimit, allocator);
+    }
+
+    if (m_aclEnabledHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "AclEnabled";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_aclEnabled, allocator);
+    }
+
+    if (m_topicNumLowerLimitHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "TopicNumLowerLimit";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_topicNumLowerLimit, allocator);
+    }
+
+    if (m_topicNumUpperLimitHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "TopicNumUpperLimit";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_topicNumUpperLimit, allocator);
     }
 
     rapidjson::Value iKey(rapidjson::kStringType);
@@ -782,6 +915,76 @@ string DescribeInstanceResponse::GetPayMode() const
 bool DescribeInstanceResponse::PayModeHasBeenSet() const
 {
     return m_payModeHasBeenSet;
+}
+
+bool DescribeInstanceResponse::GetScaledTpsEnabled() const
+{
+    return m_scaledTpsEnabled;
+}
+
+bool DescribeInstanceResponse::ScaledTpsEnabledHasBeenSet() const
+{
+    return m_scaledTpsEnabledHasBeenSet;
+}
+
+int64_t DescribeInstanceResponse::GetRenewFlag() const
+{
+    return m_renewFlag;
+}
+
+bool DescribeInstanceResponse::RenewFlagHasBeenSet() const
+{
+    return m_renewFlagHasBeenSet;
+}
+
+int64_t DescribeInstanceResponse::GetExpiryTime() const
+{
+    return m_expiryTime;
+}
+
+bool DescribeInstanceResponse::ExpiryTimeHasBeenSet() const
+{
+    return m_expiryTimeHasBeenSet;
+}
+
+int64_t DescribeInstanceResponse::GetRoleNumLimit() const
+{
+    return m_roleNumLimit;
+}
+
+bool DescribeInstanceResponse::RoleNumLimitHasBeenSet() const
+{
+    return m_roleNumLimitHasBeenSet;
+}
+
+bool DescribeInstanceResponse::GetAclEnabled() const
+{
+    return m_aclEnabled;
+}
+
+bool DescribeInstanceResponse::AclEnabledHasBeenSet() const
+{
+    return m_aclEnabledHasBeenSet;
+}
+
+int64_t DescribeInstanceResponse::GetTopicNumLowerLimit() const
+{
+    return m_topicNumLowerLimit;
+}
+
+bool DescribeInstanceResponse::TopicNumLowerLimitHasBeenSet() const
+{
+    return m_topicNumLowerLimitHasBeenSet;
+}
+
+int64_t DescribeInstanceResponse::GetTopicNumUpperLimit() const
+{
+    return m_topicNumUpperLimit;
+}
+
+bool DescribeInstanceResponse::TopicNumUpperLimitHasBeenSet() const
+{
+    return m_topicNumUpperLimitHasBeenSet;
 }
 
 

@@ -24,6 +24,7 @@
 #include <tencentcloud/core/utils/rapidjson/writer.h>
 #include <tencentcloud/core/utils/rapidjson/stringbuffer.h>
 #include <tencentcloud/core/AbstractModel.h>
+#include <tencentcloud/tdmq/v20200217/model/VpcEndpointInfo.h>
 
 
 namespace TencentCloud
@@ -398,6 +399,56 @@ namespace TencentCloud
                      */
                     bool ClusterStatusHasBeenSet() const;
 
+                    /**
+                     * 获取公网接入点
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return PublicAccessEndpoint 公网接入点
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::string GetPublicAccessEndpoint() const;
+
+                    /**
+                     * 设置公网接入点
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _publicAccessEndpoint 公网接入点
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetPublicAccessEndpoint(const std::string& _publicAccessEndpoint);
+
+                    /**
+                     * 判断参数 PublicAccessEndpoint 是否已赋值
+                     * @return PublicAccessEndpoint 是否已赋值
+                     * 
+                     */
+                    bool PublicAccessEndpointHasBeenSet() const;
+
+                    /**
+                     * 获取VPC 接入点列表
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return Vpcs VPC 接入点列表
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::vector<VpcEndpointInfo> GetVpcs() const;
+
+                    /**
+                     * 设置VPC 接入点列表
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _vpcs VPC 接入点列表
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetVpcs(const std::vector<VpcEndpointInfo>& _vpcs);
+
+                    /**
+                     * 判断参数 Vpcs 是否已赋值
+                     * @return Vpcs 是否已赋值
+                     * 
+                     */
+                    bool VpcsHasBeenSet() const;
+
                 private:
 
                     /**
@@ -499,6 +550,20 @@ namespace TencentCloud
                      */
                     int64_t m_clusterStatus;
                     bool m_clusterStatusHasBeenSet;
+
+                    /**
+                     * 公网接入点
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_publicAccessEndpoint;
+                    bool m_publicAccessEndpointHasBeenSet;
+
+                    /**
+                     * VPC 接入点列表
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::vector<VpcEndpointInfo> m_vpcs;
+                    bool m_vpcsHasBeenSet;
 
                 };
             }

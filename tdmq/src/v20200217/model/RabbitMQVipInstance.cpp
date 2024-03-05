@@ -36,7 +36,9 @@ RabbitMQVipInstance::RabbitMQVipInstance() :
     m_remarkHasBeenSet(false),
     m_specNameHasBeenSet(false),
     m_exceptionInformationHasBeenSet(false),
-    m_clusterStatusHasBeenSet(false)
+    m_clusterStatusHasBeenSet(false),
+    m_publicAccessEndpointHasBeenSet(false),
+    m_vpcsHasBeenSet(false)
 {
 }
 
@@ -205,6 +207,36 @@ CoreInternalOutcome RabbitMQVipInstance::Deserialize(const rapidjson::Value &val
         m_clusterStatusHasBeenSet = true;
     }
 
+    if (value.HasMember("PublicAccessEndpoint") && !value["PublicAccessEndpoint"].IsNull())
+    {
+        if (!value["PublicAccessEndpoint"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `RabbitMQVipInstance.PublicAccessEndpoint` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_publicAccessEndpoint = string(value["PublicAccessEndpoint"].GetString());
+        m_publicAccessEndpointHasBeenSet = true;
+    }
+
+    if (value.HasMember("Vpcs") && !value["Vpcs"].IsNull())
+    {
+        if (!value["Vpcs"].IsArray())
+            return CoreInternalOutcome(Core::Error("response `RabbitMQVipInstance.Vpcs` is not array type"));
+
+        const rapidjson::Value &tmpValue = value["Vpcs"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            VpcEndpointInfo item;
+            CoreInternalOutcome outcome = item.Deserialize(*itr);
+            if (!outcome.IsSuccess())
+            {
+                outcome.GetError().SetRequestId(requestId);
+                return outcome;
+            }
+            m_vpcs.push_back(item);
+        }
+        m_vpcsHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -338,6 +370,29 @@ void RabbitMQVipInstance::ToJsonObject(rapidjson::Value &value, rapidjson::Docum
         string key = "ClusterStatus";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_clusterStatus, allocator);
+    }
+
+    if (m_publicAccessEndpointHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "PublicAccessEndpoint";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_publicAccessEndpoint.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_vpcsHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Vpcs";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_vpcs.begin(); itr != m_vpcs.end(); ++itr, ++i)
+        {
+            value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(value[key.c_str()][i], allocator);
+        }
     }
 
 }
@@ -597,5 +652,37 @@ void RabbitMQVipInstance::SetClusterStatus(const int64_t& _clusterStatus)
 bool RabbitMQVipInstance::ClusterStatusHasBeenSet() const
 {
     return m_clusterStatusHasBeenSet;
+}
+
+string RabbitMQVipInstance::GetPublicAccessEndpoint() const
+{
+    return m_publicAccessEndpoint;
+}
+
+void RabbitMQVipInstance::SetPublicAccessEndpoint(const string& _publicAccessEndpoint)
+{
+    m_publicAccessEndpoint = _publicAccessEndpoint;
+    m_publicAccessEndpointHasBeenSet = true;
+}
+
+bool RabbitMQVipInstance::PublicAccessEndpointHasBeenSet() const
+{
+    return m_publicAccessEndpointHasBeenSet;
+}
+
+vector<VpcEndpointInfo> RabbitMQVipInstance::GetVpcs() const
+{
+    return m_vpcs;
+}
+
+void RabbitMQVipInstance::SetVpcs(const vector<VpcEndpointInfo>& _vpcs)
+{
+    m_vpcs = _vpcs;
+    m_vpcsHasBeenSet = true;
+}
+
+bool RabbitMQVipInstance::VpcsHasBeenSet() const
+{
+    return m_vpcsHasBeenSet;
 }
 

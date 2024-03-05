@@ -269,15 +269,15 @@ OPEN：公网属性， INTERNAL：内网属性。
                     bool ZoneIdHasBeenSet() const;
 
                     /**
-                     * 获取仅对内网属性的性能容量型实例和公网属性的所有实例生效。
-                     * @return InternetAccessible 仅对内网属性的性能容量型实例和公网属性的所有实例生效。
+                     * 获取网络计费模式，最大出带宽。仅对内网属性的性能容量型实例和公网属性的所有实例生效。
+                     * @return InternetAccessible 网络计费模式，最大出带宽。仅对内网属性的性能容量型实例和公网属性的所有实例生效。
                      * 
                      */
                     InternetAccessible GetInternetAccessible() const;
 
                     /**
-                     * 设置仅对内网属性的性能容量型实例和公网属性的所有实例生效。
-                     * @param _internetAccessible 仅对内网属性的性能容量型实例和公网属性的所有实例生效。
+                     * 设置网络计费模式，最大出带宽。仅对内网属性的性能容量型实例和公网属性的所有实例生效。
+                     * @param _internetAccessible 网络计费模式，最大出带宽。仅对内网属性的性能容量型实例和公网属性的所有实例生效。
                      * 
                      */
                     void SetInternetAccessible(const InternetAccessible& _internetAccessible);
@@ -703,7 +703,7 @@ OPEN：公网属性， INTERNAL：内网属性。
                     bool m_zoneIdHasBeenSet;
 
                     /**
-                     * 仅对内网属性的性能容量型实例和公网属性的所有实例生效。
+                     * 网络计费模式，最大出带宽。仅对内网属性的性能容量型实例和公网属性的所有实例生效。
                      */
                     InternetAccessible m_internetAccessible;
                     bool m_internetAccessibleHasBeenSet;

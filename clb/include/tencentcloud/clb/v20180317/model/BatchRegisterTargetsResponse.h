@@ -59,6 +59,20 @@ namespace TencentCloud
                      */
                     bool FailListenerIdSetHasBeenSet() const;
 
+                    /**
+                     * 获取绑定失败错误原因信息。
+                     * @return Message 绑定失败错误原因信息。
+                     * 
+                     */
+                    std::string GetMessage() const;
+
+                    /**
+                     * 判断参数 Message 是否已赋值
+                     * @return Message 是否已赋值
+                     * 
+                     */
+                    bool MessageHasBeenSet() const;
+
                 private:
 
                     /**
@@ -67,6 +81,12 @@ namespace TencentCloud
                      */
                     std::vector<std::string> m_failListenerIdSet;
                     bool m_failListenerIdSetHasBeenSet;
+
+                    /**
+                     * 绑定失败错误原因信息。
+                     */
+                    std::string m_message;
+                    bool m_messageHasBeenSet;
 
                 };
             }

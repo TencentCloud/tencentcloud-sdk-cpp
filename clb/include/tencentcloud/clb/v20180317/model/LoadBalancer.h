@@ -143,18 +143,18 @@ OPEN：公网属性， INTERNAL：内网属性。
                     bool ForwardHasBeenSet() const;
 
                     /**
-                     * 获取负载均衡实例的域名，仅公网传统型负载均衡实例才提供该字段。逐步下线中，建议用LoadBalancerDomain替代。
+                     * 获取负载均衡实例的域名，仅公网传统型和域名型负载均衡实例才提供该字段。逐步下线中，建议用LoadBalancerDomain替代。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return Domain 负载均衡实例的域名，仅公网传统型负载均衡实例才提供该字段。逐步下线中，建议用LoadBalancerDomain替代。
+                     * @return Domain 负载均衡实例的域名，仅公网传统型和域名型负载均衡实例才提供该字段。逐步下线中，建议用LoadBalancerDomain替代。
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetDomain() const;
 
                     /**
-                     * 设置负载均衡实例的域名，仅公网传统型负载均衡实例才提供该字段。逐步下线中，建议用LoadBalancerDomain替代。
+                     * 设置负载均衡实例的域名，仅公网传统型和域名型负载均衡实例才提供该字段。逐步下线中，建议用LoadBalancerDomain替代。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _domain 负载均衡实例的域名，仅公网传统型负载均衡实例才提供该字段。逐步下线中，建议用LoadBalancerDomain替代。
+                     * @param _domain 负载均衡实例的域名，仅公网传统型和域名型负载均衡实例才提供该字段。逐步下线中，建议用LoadBalancerDomain替代。
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -397,7 +397,7 @@ OPEN：公网属性， INTERNAL：内网属性。
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Log 用户开启日志的信息，日志只有公网属性创建了 HTTP 、HTTPS 监听器的负载均衡才会有日志。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * 
+                     * @deprecated
                      */
                     std::string GetLog() const;
 
@@ -406,14 +406,14 @@ OPEN：公网属性， INTERNAL：内网属性。
 注意：此字段可能返回 null，表示取不到有效值。
                      * @param _log 用户开启日志的信息，日志只有公网属性创建了 HTTP 、HTTPS 监听器的负载均衡才会有日志。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * 
+                     * @deprecated
                      */
                     void SetLog(const std::string& _log);
 
                     /**
                      * 判断参数 Log 是否已赋值
                      * @return Log 是否已赋值
-                     * 
+                     * @deprecated
                      */
                     bool LogHasBeenSet() const;
 
@@ -593,18 +593,18 @@ OPEN：公网属性， INTERNAL：内网属性。
                     bool NumericalVpcIdHasBeenSet() const;
 
                     /**
-                     * 获取负载均衡IP地址所属的ISP
+                     * 获取负载均衡IP地址所属的运营商。取值范围（BGP、CMCC、CTCC、CUCC）
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return VipIsp 负载均衡IP地址所属的ISP
+                     * @return VipIsp 负载均衡IP地址所属的运营商。取值范围（BGP、CMCC、CTCC、CUCC）
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetVipIsp() const;
 
                     /**
-                     * 设置负载均衡IP地址所属的ISP
+                     * 设置负载均衡IP地址所属的运营商。取值范围（BGP、CMCC、CTCC、CUCC）
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _vipIsp 负载均衡IP地址所属的ISP
+                     * @param _vipIsp 负载均衡IP地址所属的运营商。取值范围（BGP、CMCC、CTCC、CUCC）
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -1445,7 +1445,7 @@ OPEN：公网属性， INTERNAL：内网属性。
                     bool m_forwardHasBeenSet;
 
                     /**
-                     * 负载均衡实例的域名，仅公网传统型负载均衡实例才提供该字段。逐步下线中，建议用LoadBalancerDomain替代。
+                     * 负载均衡实例的域名，仅公网传统型和域名型负载均衡实例才提供该字段。逐步下线中，建议用LoadBalancerDomain替代。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_domain;
@@ -1571,7 +1571,7 @@ OPEN：公网属性， INTERNAL：内网属性。
                     bool m_numericalVpcIdHasBeenSet;
 
                     /**
-                     * 负载均衡IP地址所属的ISP
+                     * 负载均衡IP地址所属的运营商。取值范围（BGP、CMCC、CTCC、CUCC）
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_vipIsp;

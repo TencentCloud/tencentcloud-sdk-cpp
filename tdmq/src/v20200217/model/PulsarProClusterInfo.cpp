@@ -29,7 +29,8 @@ PulsarProClusterInfo::PulsarProClusterInfo() :
     m_versionHasBeenSet(false),
     m_nodeDistributionHasBeenSet(false),
     m_maxStorageHasBeenSet(false),
-    m_canEditRouteHasBeenSet(false)
+    m_canEditRouteHasBeenSet(false),
+    m_billingLabelVersionHasBeenSet(false)
 {
 }
 
@@ -138,6 +139,16 @@ CoreInternalOutcome PulsarProClusterInfo::Deserialize(const rapidjson::Value &va
         m_canEditRouteHasBeenSet = true;
     }
 
+    if (value.HasMember("BillingLabelVersion") && !value["BillingLabelVersion"].IsNull())
+    {
+        if (!value["BillingLabelVersion"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `PulsarProClusterInfo.BillingLabelVersion` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_billingLabelVersion = string(value["BillingLabelVersion"].GetString());
+        m_billingLabelVersionHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -222,6 +233,14 @@ void PulsarProClusterInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Docu
         string key = "CanEditRoute";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_canEditRoute, allocator);
+    }
+
+    if (m_billingLabelVersionHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "BillingLabelVersion";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_billingLabelVersion.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -369,5 +388,21 @@ void PulsarProClusterInfo::SetCanEditRoute(const bool& _canEditRoute)
 bool PulsarProClusterInfo::CanEditRouteHasBeenSet() const
 {
     return m_canEditRouteHasBeenSet;
+}
+
+string PulsarProClusterInfo::GetBillingLabelVersion() const
+{
+    return m_billingLabelVersion;
+}
+
+void PulsarProClusterInfo::SetBillingLabelVersion(const string& _billingLabelVersion)
+{
+    m_billingLabelVersion = _billingLabelVersion;
+    m_billingLabelVersionHasBeenSet = true;
+}
+
+bool PulsarProClusterInfo::BillingLabelVersionHasBeenSet() const
+{
+    return m_billingLabelVersionHasBeenSet;
 }
 

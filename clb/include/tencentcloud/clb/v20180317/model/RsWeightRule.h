@@ -113,42 +113,42 @@ namespace TencentCloud
                     /**
                      * 获取目标规则的域名，提供LocationId参数时本参数不生效。
                      * @return Domain 目标规则的域名，提供LocationId参数时本参数不生效。
-                     * 
+                     * @deprecated
                      */
                     std::string GetDomain() const;
 
                     /**
                      * 设置目标规则的域名，提供LocationId参数时本参数不生效。
                      * @param _domain 目标规则的域名，提供LocationId参数时本参数不生效。
-                     * 
+                     * @deprecated
                      */
                     void SetDomain(const std::string& _domain);
 
                     /**
                      * 判断参数 Domain 是否已赋值
                      * @return Domain 是否已赋值
-                     * 
+                     * @deprecated
                      */
                     bool DomainHasBeenSet() const;
 
                     /**
                      * 获取目标规则的URL，提供LocationId参数时本参数不生效。
                      * @return Url 目标规则的URL，提供LocationId参数时本参数不生效。
-                     * 
+                     * @deprecated
                      */
                     std::string GetUrl() const;
 
                     /**
                      * 设置目标规则的URL，提供LocationId参数时本参数不生效。
                      * @param _url 目标规则的URL，提供LocationId参数时本参数不生效。
-                     * 
+                     * @deprecated
                      */
                     void SetUrl(const std::string& _url);
 
                     /**
                      * 判断参数 Url 是否已赋值
                      * @return Url 是否已赋值
-                     * 
+                     * @deprecated
                      */
                     bool UrlHasBeenSet() const;
 

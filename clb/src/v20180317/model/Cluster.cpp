@@ -44,7 +44,8 @@ Cluster::Cluster() :
     m_clustersZoneHasBeenSet(false),
     m_clustersVersionHasBeenSet(false),
     m_disasterRecoveryTypeHasBeenSet(false),
-    m_egressHasBeenSet(false)
+    m_egressHasBeenSet(false),
+    m_iPVersionHasBeenSet(false)
 {
 }
 
@@ -300,6 +301,16 @@ CoreInternalOutcome Cluster::Deserialize(const rapidjson::Value &value)
         m_egressHasBeenSet = true;
     }
 
+    if (value.HasMember("IPVersion") && !value["IPVersion"].IsNull())
+    {
+        if (!value["IPVersion"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `Cluster.IPVersion` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_iPVersion = string(value["IPVersion"].GetString());
+        m_iPVersionHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -498,6 +509,14 @@ void Cluster::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Allocat
         string key = "Egress";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_egress.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_iPVersionHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "IPVersion";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_iPVersion.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -885,5 +904,21 @@ void Cluster::SetEgress(const string& _egress)
 bool Cluster::EgressHasBeenSet() const
 {
     return m_egressHasBeenSet;
+}
+
+string Cluster::GetIPVersion() const
+{
+    return m_iPVersion;
+}
+
+void Cluster::SetIPVersion(const string& _iPVersion)
+{
+    m_iPVersion = _iPVersion;
+    m_iPVersionHasBeenSet = true;
+}
+
+bool Cluster::IPVersionHasBeenSet() const
+{
+    return m_iPVersionHasBeenSet;
 }
 

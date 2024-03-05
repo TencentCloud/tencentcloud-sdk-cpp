@@ -79,8 +79,6 @@
 #include <tencentcloud/tdmq/v20200217/model/DeleteEnvironmentsResponse.h>
 #include <tencentcloud/tdmq/v20200217/model/DeleteProClusterRequest.h>
 #include <tencentcloud/tdmq/v20200217/model/DeleteProClusterResponse.h>
-#include <tencentcloud/tdmq/v20200217/model/DeleteProClustersRequest.h>
-#include <tencentcloud/tdmq/v20200217/model/DeleteProClustersResponse.h>
 #include <tencentcloud/tdmq/v20200217/model/DeleteRabbitMQUserRequest.h>
 #include <tencentcloud/tdmq/v20200217/model/DeleteRabbitMQUserResponse.h>
 #include <tencentcloud/tdmq/v20200217/model/DeleteRabbitMQVipInstanceRequest.h>
@@ -133,6 +131,10 @@
 #include <tencentcloud/tdmq/v20200217/model/DescribeEnvironmentRolesResponse.h>
 #include <tencentcloud/tdmq/v20200217/model/DescribeEnvironmentsRequest.h>
 #include <tencentcloud/tdmq/v20200217/model/DescribeEnvironmentsResponse.h>
+#include <tencentcloud/tdmq/v20200217/model/DescribeMqMsgTraceRequest.h>
+#include <tencentcloud/tdmq/v20200217/model/DescribeMqMsgTraceResponse.h>
+#include <tencentcloud/tdmq/v20200217/model/DescribeMsgRequest.h>
+#include <tencentcloud/tdmq/v20200217/model/DescribeMsgResponse.h>
 #include <tencentcloud/tdmq/v20200217/model/DescribeMsgTraceRequest.h>
 #include <tencentcloud/tdmq/v20200217/model/DescribeMsgTraceResponse.h>
 #include <tencentcloud/tdmq/v20200217/model/DescribeNamespaceBundlesOptRequest.h>
@@ -377,9 +379,6 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DeleteProClusterResponse> DeleteProClusterOutcome;
                 typedef std::future<DeleteProClusterOutcome> DeleteProClusterOutcomeCallable;
                 typedef std::function<void(const TdmqClient*, const Model::DeleteProClusterRequest&, DeleteProClusterOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteProClusterAsyncHandler;
-                typedef Outcome<Core::Error, Model::DeleteProClustersResponse> DeleteProClustersOutcome;
-                typedef std::future<DeleteProClustersOutcome> DeleteProClustersOutcomeCallable;
-                typedef std::function<void(const TdmqClient*, const Model::DeleteProClustersRequest&, DeleteProClustersOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteProClustersAsyncHandler;
                 typedef Outcome<Core::Error, Model::DeleteRabbitMQUserResponse> DeleteRabbitMQUserOutcome;
                 typedef std::future<DeleteRabbitMQUserOutcome> DeleteRabbitMQUserOutcomeCallable;
                 typedef std::function<void(const TdmqClient*, const Model::DeleteRabbitMQUserRequest&, DeleteRabbitMQUserOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteRabbitMQUserAsyncHandler;
@@ -458,6 +457,12 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeEnvironmentsResponse> DescribeEnvironmentsOutcome;
                 typedef std::future<DescribeEnvironmentsOutcome> DescribeEnvironmentsOutcomeCallable;
                 typedef std::function<void(const TdmqClient*, const Model::DescribeEnvironmentsRequest&, DescribeEnvironmentsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeEnvironmentsAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeMqMsgTraceResponse> DescribeMqMsgTraceOutcome;
+                typedef std::future<DescribeMqMsgTraceOutcome> DescribeMqMsgTraceOutcomeCallable;
+                typedef std::function<void(const TdmqClient*, const Model::DescribeMqMsgTraceRequest&, DescribeMqMsgTraceOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeMqMsgTraceAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeMsgResponse> DescribeMsgOutcome;
+                typedef std::future<DescribeMsgOutcome> DescribeMsgOutcomeCallable;
+                typedef std::function<void(const TdmqClient*, const Model::DescribeMsgRequest&, DescribeMsgOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeMsgAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeMsgTraceResponse> DescribeMsgTraceOutcome;
                 typedef std::future<DescribeMsgTraceOutcome> DescribeMsgTraceOutcomeCallable;
                 typedef std::function<void(const TdmqClient*, const Model::DescribeMsgTraceRequest&, DescribeMsgTraceOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeMsgTraceAsyncHandler;
@@ -933,17 +938,6 @@ namespace TencentCloud
                 DeleteProClusterOutcomeCallable DeleteProClusterCallable(const Model::DeleteProClusterRequest& request);
 
                 /**
-                 *接口支持删除多个集群，目前已废弃
-
-删除专业集群——预付费，仅通过API 调用，支持同时删除多个集群
-                 * @param req DeleteProClustersRequest
-                 * @return DeleteProClustersOutcome
-                 */
-                DeleteProClustersOutcome DeleteProClusters(const Model::DeleteProClustersRequest &request);
-                void DeleteProClustersAsync(const Model::DeleteProClustersRequest& request, const DeleteProClustersAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
-                DeleteProClustersOutcomeCallable DeleteProClustersCallable(const Model::DeleteProClustersRequest& request);
-
-                /**
                  *删除RabbitMQ的用户
                  * @param req DeleteRabbitMQUserRequest
                  * @return DeleteRabbitMQUserOutcome
@@ -1176,6 +1170,24 @@ namespace TencentCloud
                 DescribeEnvironmentsOutcome DescribeEnvironments(const Model::DescribeEnvironmentsRequest &request);
                 void DescribeEnvironmentsAsync(const Model::DescribeEnvironmentsRequest& request, const DescribeEnvironmentsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DescribeEnvironmentsOutcomeCallable DescribeEnvironmentsCallable(const Model::DescribeEnvironmentsRequest& request);
+
+                /**
+                 *查询消息轨迹
+                 * @param req DescribeMqMsgTraceRequest
+                 * @return DescribeMqMsgTraceOutcome
+                 */
+                DescribeMqMsgTraceOutcome DescribeMqMsgTrace(const Model::DescribeMqMsgTraceRequest &request);
+                void DescribeMqMsgTraceAsync(const Model::DescribeMqMsgTraceRequest& request, const DescribeMqMsgTraceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeMqMsgTraceOutcomeCallable DescribeMqMsgTraceCallable(const Model::DescribeMqMsgTraceRequest& request);
+
+                /**
+                 *消息详情
+                 * @param req DescribeMsgRequest
+                 * @return DescribeMsgOutcome
+                 */
+                DescribeMsgOutcome DescribeMsg(const Model::DescribeMsgRequest &request);
+                void DescribeMsgAsync(const Model::DescribeMsgRequest& request, const DescribeMsgAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeMsgOutcomeCallable DescribeMsgCallable(const Model::DescribeMsgRequest& request);
 
                 /**
                  *查询消息轨迹

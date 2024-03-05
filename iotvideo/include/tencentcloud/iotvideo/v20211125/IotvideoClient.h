@@ -155,6 +155,8 @@
 #include <tencentcloud/iotvideo/v20211125/model/DescribeMessageDataStatsResponse.h>
 #include <tencentcloud/iotvideo/v20211125/model/DescribeModelDefinitionRequest.h>
 #include <tencentcloud/iotvideo/v20211125/model/DescribeModelDefinitionResponse.h>
+#include <tencentcloud/iotvideo/v20211125/model/DescribeP2PInfoRequest.h>
+#include <tencentcloud/iotvideo/v20211125/model/DescribeP2PInfoResponse.h>
 #include <tencentcloud/iotvideo/v20211125/model/DescribePackageConsumeTaskRequest.h>
 #include <tencentcloud/iotvideo/v20211125/model/DescribePackageConsumeTaskResponse.h>
 #include <tencentcloud/iotvideo/v20211125/model/DescribePackageConsumeTasksRequest.h>
@@ -437,6 +439,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeModelDefinitionResponse> DescribeModelDefinitionOutcome;
                 typedef std::future<DescribeModelDefinitionOutcome> DescribeModelDefinitionOutcomeCallable;
                 typedef std::function<void(const IotvideoClient*, const Model::DescribeModelDefinitionRequest&, DescribeModelDefinitionOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeModelDefinitionAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeP2PInfoResponse> DescribeP2PInfoOutcome;
+                typedef std::future<DescribeP2PInfoOutcome> DescribeP2PInfoOutcomeCallable;
+                typedef std::function<void(const IotvideoClient*, const Model::DescribeP2PInfoRequest&, DescribeP2PInfoOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeP2PInfoAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribePackageConsumeTaskResponse> DescribePackageConsumeTaskOutcome;
                 typedef std::future<DescribePackageConsumeTaskOutcome> DescribePackageConsumeTaskOutcomeCallable;
                 typedef std::function<void(const IotvideoClient*, const Model::DescribePackageConsumeTaskRequest&, DescribePackageConsumeTaskOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribePackageConsumeTaskAsyncHandler;
@@ -1138,6 +1143,15 @@ namespace TencentCloud
                 DescribeModelDefinitionOutcome DescribeModelDefinition(const Model::DescribeModelDefinitionRequest &request);
                 void DescribeModelDefinitionAsync(const Model::DescribeModelDefinitionRequest& request, const DescribeModelDefinitionAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DescribeModelDefinitionOutcomeCallable DescribeModelDefinitionCallable(const Model::DescribeModelDefinitionRequest& request);
+
+                /**
+                 *拉取设备p2p信息
+                 * @param req DescribeP2PInfoRequest
+                 * @return DescribeP2PInfoOutcome
+                 */
+                DescribeP2PInfoOutcome DescribeP2PInfo(const Model::DescribeP2PInfoRequest &request);
+                void DescribeP2PInfoAsync(const Model::DescribeP2PInfoRequest& request, const DescribeP2PInfoAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeP2PInfoOutcomeCallable DescribeP2PInfoCallable(const Model::DescribeP2PInfoRequest& request);
 
                 /**
                  *查询套餐消耗记录详情

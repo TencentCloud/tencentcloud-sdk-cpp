@@ -43,7 +43,8 @@ Listener::Listener() :
     m_targetGroupListHasBeenSet(false),
     m_maxConnHasBeenSet(false),
     m_maxCpsHasBeenSet(false),
-    m_idleConnectTimeoutHasBeenSet(false)
+    m_idleConnectTimeoutHasBeenSet(false),
+    m_rescheduleIntervalHasBeenSet(false)
 {
 }
 
@@ -326,6 +327,16 @@ CoreInternalOutcome Listener::Deserialize(const rapidjson::Value &value)
         m_idleConnectTimeoutHasBeenSet = true;
     }
 
+    if (value.HasMember("RescheduleInterval") && !value["RescheduleInterval"].IsNull())
+    {
+        if (!value["RescheduleInterval"].IsUint64())
+        {
+            return CoreInternalOutcome(Core::Error("response `Listener.RescheduleInterval` IsUint64=false incorrectly").SetRequestId(requestId));
+        }
+        m_rescheduleInterval = value["RescheduleInterval"].GetUint64();
+        m_rescheduleIntervalHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -537,6 +548,14 @@ void Listener::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Alloca
         string key = "IdleConnectTimeout";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_idleConnectTimeout, allocator);
+    }
+
+    if (m_rescheduleIntervalHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "RescheduleInterval";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_rescheduleInterval, allocator);
     }
 
 }
@@ -908,5 +927,21 @@ void Listener::SetIdleConnectTimeout(const int64_t& _idleConnectTimeout)
 bool Listener::IdleConnectTimeoutHasBeenSet() const
 {
     return m_idleConnectTimeoutHasBeenSet;
+}
+
+uint64_t Listener::GetRescheduleInterval() const
+{
+    return m_rescheduleInterval;
+}
+
+void Listener::SetRescheduleInterval(const uint64_t& _rescheduleInterval)
+{
+    m_rescheduleInterval = _rescheduleInterval;
+    m_rescheduleIntervalHasBeenSet = true;
+}
+
+bool Listener::RescheduleIntervalHasBeenSet() const
+{
+    return m_rescheduleIntervalHasBeenSet;
 }
 

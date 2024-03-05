@@ -86,15 +86,19 @@ namespace TencentCloud
                     bool VpcIdHasBeenSet() const;
 
                     /**
-                     * 获取目标组的默认端口， 后续添加服务器时可使用该默认端口
-                     * @return Port 目标组的默认端口， 后续添加服务器时可使用该默认端口
+                     * 获取目标组的默认端口， 后续添加服务器时可使用该默认端口。Port和TargetGroupInstances.N中的port二者必填其一。
+
+                     * @return Port 目标组的默认端口， 后续添加服务器时可使用该默认端口。Port和TargetGroupInstances.N中的port二者必填其一。
+
                      * 
                      */
                     uint64_t GetPort() const;
 
                     /**
-                     * 设置目标组的默认端口， 后续添加服务器时可使用该默认端口
-                     * @param _port 目标组的默认端口， 后续添加服务器时可使用该默认端口
+                     * 设置目标组的默认端口， 后续添加服务器时可使用该默认端口。Port和TargetGroupInstances.N中的port二者必填其一。
+
+                     * @param _port 目标组的默认端口， 后续添加服务器时可使用该默认端口。Port和TargetGroupInstances.N中的port二者必填其一。
+
                      * 
                      */
                     void SetPort(const uint64_t& _port);
@@ -142,7 +146,8 @@ namespace TencentCloud
                     bool m_vpcIdHasBeenSet;
 
                     /**
-                     * 目标组的默认端口， 后续添加服务器时可使用该默认端口
+                     * 目标组的默认端口， 后续添加服务器时可使用该默认端口。Port和TargetGroupInstances.N中的port二者必填其一。
+
                      */
                     uint64_t m_port;
                     bool m_portHasBeenSet;

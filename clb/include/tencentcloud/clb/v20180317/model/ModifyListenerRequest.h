@@ -174,8 +174,10 @@ namespace TencentCloud
                     /**
                      * 获取监听器转发的方式。可选值：WRR、LEAST_CONN
 分别表示按权重轮询、最小连接数， 默认为 WRR。
+使用场景：适用于TCP/UDP/TCP_SSL/QUIC监听器。七层监听器的均衡方式应在转发规则中修改。
                      * @return Scheduler 监听器转发的方式。可选值：WRR、LEAST_CONN
 分别表示按权重轮询、最小连接数， 默认为 WRR。
+使用场景：适用于TCP/UDP/TCP_SSL/QUIC监听器。七层监听器的均衡方式应在转发规则中修改。
                      * 
                      */
                     std::string GetScheduler() const;
@@ -183,8 +185,10 @@ namespace TencentCloud
                     /**
                      * 设置监听器转发的方式。可选值：WRR、LEAST_CONN
 分别表示按权重轮询、最小连接数， 默认为 WRR。
+使用场景：适用于TCP/UDP/TCP_SSL/QUIC监听器。七层监听器的均衡方式应在转发规则中修改。
                      * @param _scheduler 监听器转发的方式。可选值：WRR、LEAST_CONN
 分别表示按权重轮询、最小连接数， 默认为 WRR。
+使用场景：适用于TCP/UDP/TCP_SSL/QUIC监听器。七层监听器的均衡方式应在转发规则中修改。
                      * 
                      */
                     void SetScheduler(const std::string& _scheduler);
@@ -197,15 +201,15 @@ namespace TencentCloud
                     bool SchedulerHasBeenSet() const;
 
                     /**
-                     * 获取是否开启SNI特性，此参数仅适用于HTTPS监听器。注意：未开启SNI的监听器可以开启SNI；已开启SNI的监听器不能关闭SNI。
-                     * @return SniSwitch 是否开启SNI特性，此参数仅适用于HTTPS监听器。注意：未开启SNI的监听器可以开启SNI；已开启SNI的监听器不能关闭SNI。
+                     * 获取是否开启SNI特性，此参数仅适用于HTTPS监听器。默认0，表示不开启，1表示开启。注意：未开启SNI的监听器可以开启SNI；已开启SNI的监听器不能关闭SNI。
+                     * @return SniSwitch 是否开启SNI特性，此参数仅适用于HTTPS监听器。默认0，表示不开启，1表示开启。注意：未开启SNI的监听器可以开启SNI；已开启SNI的监听器不能关闭SNI。
                      * 
                      */
                     int64_t GetSniSwitch() const;
 
                     /**
-                     * 设置是否开启SNI特性，此参数仅适用于HTTPS监听器。注意：未开启SNI的监听器可以开启SNI；已开启SNI的监听器不能关闭SNI。
-                     * @param _sniSwitch 是否开启SNI特性，此参数仅适用于HTTPS监听器。注意：未开启SNI的监听器可以开启SNI；已开启SNI的监听器不能关闭SNI。
+                     * 设置是否开启SNI特性，此参数仅适用于HTTPS监听器。默认0，表示不开启，1表示开启。注意：未开启SNI的监听器可以开启SNI；已开启SNI的监听器不能关闭SNI。
+                     * @param _sniSwitch 是否开启SNI特性，此参数仅适用于HTTPS监听器。默认0，表示不开启，1表示开启。注意：未开启SNI的监听器可以开启SNI；已开启SNI的监听器不能关闭SNI。
                      * 
                      */
                     void SetSniSwitch(const int64_t& _sniSwitch);
@@ -240,14 +244,18 @@ namespace TencentCloud
 
                     /**
                      * 获取是否开启长连接，此参数仅适用于HTTP/HTTPS监听器。
+默认值0表示不开启，1表示开启。
                      * @return KeepaliveEnable 是否开启长连接，此参数仅适用于HTTP/HTTPS监听器。
+默认值0表示不开启，1表示开启。
                      * 
                      */
                     int64_t GetKeepaliveEnable() const;
 
                     /**
                      * 设置是否开启长连接，此参数仅适用于HTTP/HTTPS监听器。
+默认值0表示不开启，1表示开启。
                      * @param _keepaliveEnable 是否开启长连接，此参数仅适用于HTTP/HTTPS监听器。
+默认值0表示不开启，1表示开启。
                      * 
                      */
                     void SetKeepaliveEnable(const int64_t& _keepaliveEnable);
@@ -282,14 +290,18 @@ namespace TencentCloud
 
                     /**
                      * 获取会话保持类型。NORMAL表示默认会话保持类型。QUIC_CID表示根据Quic Connection ID做会话保持。QUIC_CID只支持UDP协议。
+使用场景：适用于TCP/UDP/TCP_SSL/QUIC监听器。
                      * @return SessionType 会话保持类型。NORMAL表示默认会话保持类型。QUIC_CID表示根据Quic Connection ID做会话保持。QUIC_CID只支持UDP协议。
+使用场景：适用于TCP/UDP/TCP_SSL/QUIC监听器。
                      * 
                      */
                     std::string GetSessionType() const;
 
                     /**
                      * 设置会话保持类型。NORMAL表示默认会话保持类型。QUIC_CID表示根据Quic Connection ID做会话保持。QUIC_CID只支持UDP协议。
+使用场景：适用于TCP/UDP/TCP_SSL/QUIC监听器。
                      * @param _sessionType 会话保持类型。NORMAL表示默认会话保持类型。QUIC_CID表示根据Quic Connection ID做会话保持。QUIC_CID只支持UDP协议。
+使用场景：适用于TCP/UDP/TCP_SSL/QUIC监听器。
                      * 
                      */
                     void SetSessionType(const std::string& _sessionType);
@@ -426,12 +438,13 @@ namespace TencentCloud
                     /**
                      * 监听器转发的方式。可选值：WRR、LEAST_CONN
 分别表示按权重轮询、最小连接数， 默认为 WRR。
+使用场景：适用于TCP/UDP/TCP_SSL/QUIC监听器。七层监听器的均衡方式应在转发规则中修改。
                      */
                     std::string m_scheduler;
                     bool m_schedulerHasBeenSet;
 
                     /**
-                     * 是否开启SNI特性，此参数仅适用于HTTPS监听器。注意：未开启SNI的监听器可以开启SNI；已开启SNI的监听器不能关闭SNI。
+                     * 是否开启SNI特性，此参数仅适用于HTTPS监听器。默认0，表示不开启，1表示开启。注意：未开启SNI的监听器可以开启SNI；已开启SNI的监听器不能关闭SNI。
                      */
                     int64_t m_sniSwitch;
                     bool m_sniSwitchHasBeenSet;
@@ -444,6 +457,7 @@ namespace TencentCloud
 
                     /**
                      * 是否开启长连接，此参数仅适用于HTTP/HTTPS监听器。
+默认值0表示不开启，1表示开启。
                      */
                     int64_t m_keepaliveEnable;
                     bool m_keepaliveEnableHasBeenSet;
@@ -456,6 +470,7 @@ namespace TencentCloud
 
                     /**
                      * 会话保持类型。NORMAL表示默认会话保持类型。QUIC_CID表示根据Quic Connection ID做会话保持。QUIC_CID只支持UDP协议。
+使用场景：适用于TCP/UDP/TCP_SSL/QUIC监听器。
                      */
                     std::string m_sessionType;
                     bool m_sessionTypeHasBeenSet;

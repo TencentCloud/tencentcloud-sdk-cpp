@@ -66,21 +66,21 @@ namespace TencentCloud
                     /**
                      * 获取日志集的保存周期，单位：天。
                      * @return Period 日志集的保存周期，单位：天。
-                     * 
+                     * @deprecated
                      */
                     uint64_t GetPeriod() const;
 
                     /**
                      * 设置日志集的保存周期，单位：天。
                      * @param _period 日志集的保存周期，单位：天。
-                     * 
+                     * @deprecated
                      */
                     void SetPeriod(const uint64_t& _period);
 
                     /**
                      * 判断参数 Period 是否已赋值
                      * @return Period 是否已赋值
-                     * 
+                     * @deprecated
                      */
                     bool PeriodHasBeenSet() const;
 

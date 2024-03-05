@@ -27,7 +27,9 @@ RabbitMQQueueListInfo::RabbitMQQueueListInfo() :
     m_queueTypeHasBeenSet(false),
     m_messageHeapCountHasBeenSet(false),
     m_messageRateInHasBeenSet(false),
-    m_messageRateOutHasBeenSet(false)
+    m_messageRateOutHasBeenSet(false),
+    m_createTimeHasBeenSet(false),
+    m_modifyTimeHasBeenSet(false)
 {
 }
 
@@ -113,6 +115,26 @@ CoreInternalOutcome RabbitMQQueueListInfo::Deserialize(const rapidjson::Value &v
         m_messageRateOutHasBeenSet = true;
     }
 
+    if (value.HasMember("CreateTime") && !value["CreateTime"].IsNull())
+    {
+        if (!value["CreateTime"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `RabbitMQQueueListInfo.CreateTime` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_createTime = string(value["CreateTime"].GetString());
+        m_createTimeHasBeenSet = true;
+    }
+
+    if (value.HasMember("ModifyTime") && !value["ModifyTime"].IsNull())
+    {
+        if (!value["ModifyTime"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `RabbitMQQueueListInfo.ModifyTime` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_modifyTime = string(value["ModifyTime"].GetString());
+        m_modifyTimeHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -175,6 +197,22 @@ void RabbitMQQueueListInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Doc
         string key = "MessageRateOut";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_messageRateOut, allocator);
+    }
+
+    if (m_createTimeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "CreateTime";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_createTime.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_modifyTimeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ModifyTime";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_modifyTime.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -290,5 +328,37 @@ void RabbitMQQueueListInfo::SetMessageRateOut(const double& _messageRateOut)
 bool RabbitMQQueueListInfo::MessageRateOutHasBeenSet() const
 {
     return m_messageRateOutHasBeenSet;
+}
+
+string RabbitMQQueueListInfo::GetCreateTime() const
+{
+    return m_createTime;
+}
+
+void RabbitMQQueueListInfo::SetCreateTime(const string& _createTime)
+{
+    m_createTime = _createTime;
+    m_createTimeHasBeenSet = true;
+}
+
+bool RabbitMQQueueListInfo::CreateTimeHasBeenSet() const
+{
+    return m_createTimeHasBeenSet;
+}
+
+string RabbitMQQueueListInfo::GetModifyTime() const
+{
+    return m_modifyTime;
+}
+
+void RabbitMQQueueListInfo::SetModifyTime(const string& _modifyTime)
+{
+    m_modifyTime = _modifyTime;
+    m_modifyTimeHasBeenSet = true;
+}
+
+bool RabbitMQQueueListInfo::ModifyTimeHasBeenSet() const
+{
+    return m_modifyTimeHasBeenSet;
 }
 

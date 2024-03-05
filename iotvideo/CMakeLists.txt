@@ -315,6 +315,7 @@ set(iotvideo_public_header_model
   include/tencentcloud/iotvideo/v20211125/model/DescribeAIModelsRequest.h
   include/tencentcloud/iotvideo/v20211125/model/RetryDeviceFirmwareTaskResponse.h
   include/tencentcloud/iotvideo/v20211125/model/GenSingleDeviceSignatureOfPublicRequest.h
+  include/tencentcloud/iotvideo/v20211125/model/DescribeP2PInfoResponse.h
   include/tencentcloud/iotvideo/v20211125/model/ResetCloudStorageResponse.h
   include/tencentcloud/iotvideo/v20211125/model/InheritCloudStorageUserResponse.h
   include/tencentcloud/iotvideo/v20211125/model/DescribeDeviceEventHistoryResponse.h
@@ -335,6 +336,7 @@ set(iotvideo_public_header_model
   include/tencentcloud/iotvideo/v20211125/model/DescribeFirmwareTaskDevicesResponse.h
   include/tencentcloud/iotvideo/v20211125/model/DescribeFirmwareTasksResponse.h
   include/tencentcloud/iotvideo/v20211125/model/CloudStorageUserInfo.h
+  include/tencentcloud/iotvideo/v20211125/model/DescribeP2PInfoRequest.h
   include/tencentcloud/iotvideo/v20211125/model/DescribePackageConsumeTasksRequest.h
   include/tencentcloud/iotvideo/v20211125/model/DescribeAccountRequest.h
   include/tencentcloud/iotvideo/v20211125/model/EditFirmwareResponse.h
@@ -894,6 +896,7 @@ set(iotvideo_src
   src/v20211125/model/DescribeAIModelsRequest.cpp
   src/v20211125/model/RetryDeviceFirmwareTaskResponse.cpp
   src/v20211125/model/GenSingleDeviceSignatureOfPublicRequest.cpp
+  src/v20211125/model/DescribeP2PInfoResponse.cpp
   src/v20211125/model/ResetCloudStorageResponse.cpp
   src/v20211125/model/InheritCloudStorageUserResponse.cpp
   src/v20211125/model/DescribeDeviceEventHistoryResponse.cpp
@@ -914,6 +917,7 @@ set(iotvideo_src
   src/v20211125/model/DescribeFirmwareTaskDevicesResponse.cpp
   src/v20211125/model/DescribeFirmwareTasksResponse.cpp
   src/v20211125/model/CloudStorageUserInfo.cpp
+  src/v20211125/model/DescribeP2PInfoRequest.cpp
   src/v20211125/model/DescribePackageConsumeTasksRequest.cpp
   src/v20211125/model/DescribeAccountRequest.cpp
   src/v20211125/model/EditFirmwareResponse.cpp

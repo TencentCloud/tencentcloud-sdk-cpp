@@ -384,6 +384,49 @@ TeoClient::CreateApplicationProxyRuleOutcomeCallable TeoClient::CreateApplicatio
     return task->get_future();
 }
 
+TeoClient::CreateCLSIndexOutcome TeoClient::CreateCLSIndex(const CreateCLSIndexRequest &request)
+{
+    auto outcome = MakeRequest(request, "CreateCLSIndex");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        CreateCLSIndexResponse rsp = CreateCLSIndexResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return CreateCLSIndexOutcome(rsp);
+        else
+            return CreateCLSIndexOutcome(o.GetError());
+    }
+    else
+    {
+        return CreateCLSIndexOutcome(outcome.GetError());
+    }
+}
+
+void TeoClient::CreateCLSIndexAsync(const CreateCLSIndexRequest& request, const CreateCLSIndexAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->CreateCLSIndex(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+TeoClient::CreateCLSIndexOutcomeCallable TeoClient::CreateCLSIndexCallable(const CreateCLSIndexRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<CreateCLSIndexOutcome()>>(
+        [this, request]()
+        {
+            return this->CreateCLSIndex(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 TeoClient::CreateConfigGroupVersionOutcome TeoClient::CreateConfigGroupVersion(const CreateConfigGroupVersionRequest &request)
 {
     auto outcome = MakeRequest(request, "CreateConfigGroupVersion");
@@ -678,6 +721,49 @@ TeoClient::CreatePurgeTaskOutcomeCallable TeoClient::CreatePurgeTaskCallable(con
         [this, request]()
         {
             return this->CreatePurgeTask(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+TeoClient::CreateRealtimeLogDeliveryTaskOutcome TeoClient::CreateRealtimeLogDeliveryTask(const CreateRealtimeLogDeliveryTaskRequest &request)
+{
+    auto outcome = MakeRequest(request, "CreateRealtimeLogDeliveryTask");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        CreateRealtimeLogDeliveryTaskResponse rsp = CreateRealtimeLogDeliveryTaskResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return CreateRealtimeLogDeliveryTaskOutcome(rsp);
+        else
+            return CreateRealtimeLogDeliveryTaskOutcome(o.GetError());
+    }
+    else
+    {
+        return CreateRealtimeLogDeliveryTaskOutcome(outcome.GetError());
+    }
+}
+
+void TeoClient::CreateRealtimeLogDeliveryTaskAsync(const CreateRealtimeLogDeliveryTaskRequest& request, const CreateRealtimeLogDeliveryTaskAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->CreateRealtimeLogDeliveryTask(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+TeoClient::CreateRealtimeLogDeliveryTaskOutcomeCallable TeoClient::CreateRealtimeLogDeliveryTaskCallable(const CreateRealtimeLogDeliveryTaskRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<CreateRealtimeLogDeliveryTaskOutcome()>>(
+        [this, request]()
+        {
+            return this->CreateRealtimeLogDeliveryTask(request);
         }
     );
 
@@ -1151,6 +1237,49 @@ TeoClient::DeleteOriginGroupOutcomeCallable TeoClient::DeleteOriginGroupCallable
         [this, request]()
         {
             return this->DeleteOriginGroup(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+TeoClient::DeleteRealtimeLogDeliveryTaskOutcome TeoClient::DeleteRealtimeLogDeliveryTask(const DeleteRealtimeLogDeliveryTaskRequest &request)
+{
+    auto outcome = MakeRequest(request, "DeleteRealtimeLogDeliveryTask");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DeleteRealtimeLogDeliveryTaskResponse rsp = DeleteRealtimeLogDeliveryTaskResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DeleteRealtimeLogDeliveryTaskOutcome(rsp);
+        else
+            return DeleteRealtimeLogDeliveryTaskOutcome(o.GetError());
+    }
+    else
+    {
+        return DeleteRealtimeLogDeliveryTaskOutcome(outcome.GetError());
+    }
+}
+
+void TeoClient::DeleteRealtimeLogDeliveryTaskAsync(const DeleteRealtimeLogDeliveryTaskRequest& request, const DeleteRealtimeLogDeliveryTaskAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DeleteRealtimeLogDeliveryTask(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+TeoClient::DeleteRealtimeLogDeliveryTaskOutcomeCallable TeoClient::DeleteRealtimeLogDeliveryTaskCallable(const DeleteRealtimeLogDeliveryTaskRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DeleteRealtimeLogDeliveryTaskOutcome()>>(
+        [this, request]()
+        {
+            return this->DeleteRealtimeLogDeliveryTask(request);
         }
     );
 
@@ -2405,6 +2534,49 @@ TeoClient::DescribePurgeTasksOutcomeCallable TeoClient::DescribePurgeTasksCallab
     return task->get_future();
 }
 
+TeoClient::DescribeRealtimeLogDeliveryTasksOutcome TeoClient::DescribeRealtimeLogDeliveryTasks(const DescribeRealtimeLogDeliveryTasksRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeRealtimeLogDeliveryTasks");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeRealtimeLogDeliveryTasksResponse rsp = DescribeRealtimeLogDeliveryTasksResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeRealtimeLogDeliveryTasksOutcome(rsp);
+        else
+            return DescribeRealtimeLogDeliveryTasksOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeRealtimeLogDeliveryTasksOutcome(outcome.GetError());
+    }
+}
+
+void TeoClient::DescribeRealtimeLogDeliveryTasksAsync(const DescribeRealtimeLogDeliveryTasksRequest& request, const DescribeRealtimeLogDeliveryTasksAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeRealtimeLogDeliveryTasks(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+TeoClient::DescribeRealtimeLogDeliveryTasksOutcomeCallable TeoClient::DescribeRealtimeLogDeliveryTasksCallable(const DescribeRealtimeLogDeliveryTasksRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeRealtimeLogDeliveryTasksOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeRealtimeLogDeliveryTasks(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 TeoClient::DescribeRulesOutcome TeoClient::DescribeRules(const DescribeRulesRequest &request)
 {
     auto outcome = MakeRequest(request, "DescribeRules");
@@ -3559,6 +3731,49 @@ TeoClient::ModifyOriginGroupOutcomeCallable TeoClient::ModifyOriginGroupCallable
         [this, request]()
         {
             return this->ModifyOriginGroup(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+TeoClient::ModifyRealtimeLogDeliveryTaskOutcome TeoClient::ModifyRealtimeLogDeliveryTask(const ModifyRealtimeLogDeliveryTaskRequest &request)
+{
+    auto outcome = MakeRequest(request, "ModifyRealtimeLogDeliveryTask");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ModifyRealtimeLogDeliveryTaskResponse rsp = ModifyRealtimeLogDeliveryTaskResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ModifyRealtimeLogDeliveryTaskOutcome(rsp);
+        else
+            return ModifyRealtimeLogDeliveryTaskOutcome(o.GetError());
+    }
+    else
+    {
+        return ModifyRealtimeLogDeliveryTaskOutcome(outcome.GetError());
+    }
+}
+
+void TeoClient::ModifyRealtimeLogDeliveryTaskAsync(const ModifyRealtimeLogDeliveryTaskRequest& request, const ModifyRealtimeLogDeliveryTaskAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->ModifyRealtimeLogDeliveryTask(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+TeoClient::ModifyRealtimeLogDeliveryTaskOutcomeCallable TeoClient::ModifyRealtimeLogDeliveryTaskCallable(const ModifyRealtimeLogDeliveryTaskRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<ModifyRealtimeLogDeliveryTaskOutcome()>>(
+        [this, request]()
+        {
+            return this->ModifyRealtimeLogDeliveryTask(request);
         }
     );
 
