@@ -32,7 +32,11 @@ CreateInstanceRequest::CreateInstanceRequest() :
     m_enablePublicHasBeenSet(false),
     m_bandwidthHasBeenSet(false),
     m_ipRulesHasBeenSet(false),
-    m_messageRetentionHasBeenSet(false)
+    m_messageRetentionHasBeenSet(false),
+    m_payModeHasBeenSet(false),
+    m_renewFlagHasBeenSet(false),
+    m_timeSpanHasBeenSet(false),
+    m_maxTopicNumHasBeenSet(false)
 {
 }
 
@@ -142,6 +146,38 @@ string CreateInstanceRequest::ToJsonString() const
         string key = "MessageRetention";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_messageRetention, allocator);
+    }
+
+    if (m_payModeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "PayMode";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_payMode, allocator);
+    }
+
+    if (m_renewFlagHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "RenewFlag";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_renewFlag, allocator);
+    }
+
+    if (m_timeSpanHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "TimeSpan";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_timeSpan, allocator);
+    }
+
+    if (m_maxTopicNumHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "MaxTopicNum";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_maxTopicNum, allocator);
     }
 
 
@@ -310,6 +346,70 @@ void CreateInstanceRequest::SetMessageRetention(const int64_t& _messageRetention
 bool CreateInstanceRequest::MessageRetentionHasBeenSet() const
 {
     return m_messageRetentionHasBeenSet;
+}
+
+int64_t CreateInstanceRequest::GetPayMode() const
+{
+    return m_payMode;
+}
+
+void CreateInstanceRequest::SetPayMode(const int64_t& _payMode)
+{
+    m_payMode = _payMode;
+    m_payModeHasBeenSet = true;
+}
+
+bool CreateInstanceRequest::PayModeHasBeenSet() const
+{
+    return m_payModeHasBeenSet;
+}
+
+int64_t CreateInstanceRequest::GetRenewFlag() const
+{
+    return m_renewFlag;
+}
+
+void CreateInstanceRequest::SetRenewFlag(const int64_t& _renewFlag)
+{
+    m_renewFlag = _renewFlag;
+    m_renewFlagHasBeenSet = true;
+}
+
+bool CreateInstanceRequest::RenewFlagHasBeenSet() const
+{
+    return m_renewFlagHasBeenSet;
+}
+
+int64_t CreateInstanceRequest::GetTimeSpan() const
+{
+    return m_timeSpan;
+}
+
+void CreateInstanceRequest::SetTimeSpan(const int64_t& _timeSpan)
+{
+    m_timeSpan = _timeSpan;
+    m_timeSpanHasBeenSet = true;
+}
+
+bool CreateInstanceRequest::TimeSpanHasBeenSet() const
+{
+    return m_timeSpanHasBeenSet;
+}
+
+int64_t CreateInstanceRequest::GetMaxTopicNum() const
+{
+    return m_maxTopicNum;
+}
+
+void CreateInstanceRequest::SetMaxTopicNum(const int64_t& _maxTopicNum)
+{
+    m_maxTopicNum = _maxTopicNum;
+    m_maxTopicNumHasBeenSet = true;
+}
+
+bool CreateInstanceRequest::MaxTopicNumHasBeenSet() const
+{
+    return m_maxTopicNumHasBeenSet;
 }
 
 

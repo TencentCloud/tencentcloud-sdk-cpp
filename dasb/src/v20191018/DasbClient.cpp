@@ -1846,6 +1846,49 @@ DasbClient::ModifyDeviceGroupOutcomeCallable DasbClient::ModifyDeviceGroupCallab
     return task->get_future();
 }
 
+DasbClient::ModifyOAuthSettingOutcome DasbClient::ModifyOAuthSetting(const ModifyOAuthSettingRequest &request)
+{
+    auto outcome = MakeRequest(request, "ModifyOAuthSetting");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ModifyOAuthSettingResponse rsp = ModifyOAuthSettingResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ModifyOAuthSettingOutcome(rsp);
+        else
+            return ModifyOAuthSettingOutcome(o.GetError());
+    }
+    else
+    {
+        return ModifyOAuthSettingOutcome(outcome.GetError());
+    }
+}
+
+void DasbClient::ModifyOAuthSettingAsync(const ModifyOAuthSettingRequest& request, const ModifyOAuthSettingAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->ModifyOAuthSetting(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+DasbClient::ModifyOAuthSettingOutcomeCallable DasbClient::ModifyOAuthSettingCallable(const ModifyOAuthSettingRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<ModifyOAuthSettingOutcome()>>(
+        [this, request]()
+        {
+            return this->ModifyOAuthSetting(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 DasbClient::ModifyResourceOutcome DasbClient::ModifyResource(const ModifyResourceRequest &request)
 {
     auto outcome = MakeRequest(request, "ModifyResource");

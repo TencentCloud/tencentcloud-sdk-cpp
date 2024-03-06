@@ -163,8 +163,8 @@ namespace TencentCloud
                     bool WarnHasBeenSet() const;
 
                     /**
-                     * 获取证件图片
-                     * @return Image 证件图片
+                     * 获取证件中的人像图片base64
+                     * @return Image 证件中的人像图片base64
                      * 
                      */
                     std::string GetImage() const;
@@ -348,7 +348,7 @@ namespace TencentCloud
                     bool m_warnHasBeenSet;
 
                     /**
-                     * 证件图片
+                     * 证件中的人像图片base64
                      */
                     std::string m_image;
                     bool m_imageHasBeenSet;

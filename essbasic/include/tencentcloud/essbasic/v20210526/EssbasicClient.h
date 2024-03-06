@@ -97,6 +97,8 @@
 #include <tencentcloud/essbasic/v20210526/model/ChannelDescribeOrganizationSealsResponse.h>
 #include <tencentcloud/essbasic/v20210526/model/ChannelDescribeRolesRequest.h>
 #include <tencentcloud/essbasic/v20210526/model/ChannelDescribeRolesResponse.h>
+#include <tencentcloud/essbasic/v20210526/model/ChannelDescribeSignFaceVideoRequest.h>
+#include <tencentcloud/essbasic/v20210526/model/ChannelDescribeSignFaceVideoResponse.h>
 #include <tencentcloud/essbasic/v20210526/model/ChannelDescribeUserAutoSignStatusRequest.h>
 #include <tencentcloud/essbasic/v20210526/model/ChannelDescribeUserAutoSignStatusResponse.h>
 #include <tencentcloud/essbasic/v20210526/model/ChannelDisableUserAutoSignRequest.h>
@@ -288,6 +290,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::ChannelDescribeRolesResponse> ChannelDescribeRolesOutcome;
                 typedef std::future<ChannelDescribeRolesOutcome> ChannelDescribeRolesOutcomeCallable;
                 typedef std::function<void(const EssbasicClient*, const Model::ChannelDescribeRolesRequest&, ChannelDescribeRolesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ChannelDescribeRolesAsyncHandler;
+                typedef Outcome<Core::Error, Model::ChannelDescribeSignFaceVideoResponse> ChannelDescribeSignFaceVideoOutcome;
+                typedef std::future<ChannelDescribeSignFaceVideoOutcome> ChannelDescribeSignFaceVideoOutcomeCallable;
+                typedef std::function<void(const EssbasicClient*, const Model::ChannelDescribeSignFaceVideoRequest&, ChannelDescribeSignFaceVideoOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ChannelDescribeSignFaceVideoAsyncHandler;
                 typedef Outcome<Core::Error, Model::ChannelDescribeUserAutoSignStatusResponse> ChannelDescribeUserAutoSignStatusOutcome;
                 typedef std::future<ChannelDescribeUserAutoSignStatusOutcome> ChannelDescribeUserAutoSignStatusOutcomeCallable;
                 typedef std::function<void(const EssbasicClient*, const Model::ChannelDescribeUserAutoSignStatusRequest&, ChannelDescribeUserAutoSignStatusOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ChannelDescribeUserAutoSignStatusAsyncHandler;
@@ -1145,6 +1150,21 @@ namespace TencentCloud
                 ChannelDescribeRolesOutcome ChannelDescribeRoles(const Model::ChannelDescribeRolesRequest &request);
                 void ChannelDescribeRolesAsync(const Model::ChannelDescribeRolesRequest& request, const ChannelDescribeRolesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 ChannelDescribeRolesOutcomeCallable ChannelDescribeRolesCallable(const Model::ChannelDescribeRolesRequest& request);
+
+                /**
+                 *该接口用于在使用视频认证方式签署合同后，获取用户的签署人脸认证视频。
+
+1. 该接口**仅适用于在H5端签署**的合同，**在通过视频认证后**获取人脸图片。
+2. 该接口**不支持小程序端**的签署人脸图片获取。
+3. 请在**签署完成后的三天内**获取人脸图片，**过期后将无法获取**。
+
+**注意：该接口需要开通白名单，请联系客户经理开通后使用。**
+                 * @param req ChannelDescribeSignFaceVideoRequest
+                 * @return ChannelDescribeSignFaceVideoOutcome
+                 */
+                ChannelDescribeSignFaceVideoOutcome ChannelDescribeSignFaceVideo(const Model::ChannelDescribeSignFaceVideoRequest &request);
+                void ChannelDescribeSignFaceVideoAsync(const Model::ChannelDescribeSignFaceVideoRequest& request, const ChannelDescribeSignFaceVideoAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                ChannelDescribeSignFaceVideoOutcomeCallable ChannelDescribeSignFaceVideoCallable(const Model::ChannelDescribeSignFaceVideoRequest& request);
 
                 /**
                  *通过此接口获取个人用户自动签的开通状态。

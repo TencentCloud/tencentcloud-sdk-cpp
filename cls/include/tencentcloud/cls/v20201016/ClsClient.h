@@ -596,7 +596,7 @@ namespace TencentCloud
                 CreateConfigExtraOutcomeCallable CreateConfigExtraCallable(const Model::CreateConfigExtraRequest& request);
 
                 /**
-                 *本接口用于创建投递任务
+                 *本接口用于创建投递CKafka任务
                  * @param req CreateConsumerRequest
                  * @return CreateConsumerOutcome
                  */
@@ -1001,7 +1001,7 @@ namespace TencentCloud
                 DescribeKafkaUserOutcomeCallable DescribeKafkaUserCallable(const Model::DescribeKafkaUserRequest& request);
 
                 /**
-                 *本接口用于搜索日志上下文附近的内容
+                 *本接口用于搜索日志上下文附近的内容，详情参考[上下文检索](https://cloud.tencent.com/document/product/614/53248)。
 API返回数据包最大49MB，建议启用 gzip 压缩（HTTP Request Header Accept-Encoding:gzip）。
                  * @param req DescribeLogContextRequest
                  * @return DescribeLogContextOutcome
@@ -1164,7 +1164,7 @@ API返回数据包最大49MB，建议启用 gzip 压缩（HTTP Request Header Ac
                 ModifyConfigExtraOutcomeCallable ModifyConfigExtraCallable(const Model::ModifyConfigExtraRequest& request);
 
                 /**
-                 *本接口用于修改投递任务
+                 *本接口用于修改投递Ckafka任务
                  * @param req ModifyConsumerRequest
                  * @return ModifyConsumerOutcome
                  */

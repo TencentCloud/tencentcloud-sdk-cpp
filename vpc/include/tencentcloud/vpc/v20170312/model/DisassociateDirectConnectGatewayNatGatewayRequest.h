@@ -43,15 +43,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取专线网关ID。
-                     * @return VpcId 专线网关ID。
+                     * 获取VPC实例ID。形如：vpc-xxx。
+                     * @return VpcId VPC实例ID。形如：vpc-xxx。
                      * 
                      */
                     std::string GetVpcId() const;
 
                     /**
-                     * 设置专线网关ID。
-                     * @param _vpcId 专线网关ID。
+                     * 设置VPC实例ID。形如：vpc-xxx。
+                     * @param _vpcId VPC实例ID。形如：vpc-xxx。
                      * 
                      */
                     void SetVpcId(const std::string& _vpcId);
@@ -64,15 +64,15 @@ namespace TencentCloud
                     bool VpcIdHasBeenSet() const;
 
                     /**
-                     * 获取NAT网关ID。
-                     * @return NatGatewayId NAT网关ID。
+                     * 获取NAT网关ID。形如：nat-xxx
+                     * @return NatGatewayId NAT网关ID。形如：nat-xxx
                      * 
                      */
                     std::string GetNatGatewayId() const;
 
                     /**
-                     * 设置NAT网关ID。
-                     * @param _natGatewayId NAT网关ID。
+                     * 设置NAT网关ID。形如：nat-xxx
+                     * @param _natGatewayId NAT网关ID。形如：nat-xxx
                      * 
                      */
                     void SetNatGatewayId(const std::string& _natGatewayId);
@@ -85,15 +85,15 @@ namespace TencentCloud
                     bool NatGatewayIdHasBeenSet() const;
 
                     /**
-                     * 获取VPC实例ID。可通过DescribeVpcs接口返回值中的VpcId获取。
-                     * @return DirectConnectGatewayId VPC实例ID。可通过DescribeVpcs接口返回值中的VpcId获取。
+                     * 获取专线网关ID。形如：dcg-xxx
+                     * @return DirectConnectGatewayId 专线网关ID。形如：dcg-xxx
                      * 
                      */
                     std::string GetDirectConnectGatewayId() const;
 
                     /**
-                     * 设置VPC实例ID。可通过DescribeVpcs接口返回值中的VpcId获取。
-                     * @param _directConnectGatewayId VPC实例ID。可通过DescribeVpcs接口返回值中的VpcId获取。
+                     * 设置专线网关ID。形如：dcg-xxx
+                     * @param _directConnectGatewayId 专线网关ID。形如：dcg-xxx
                      * 
                      */
                     void SetDirectConnectGatewayId(const std::string& _directConnectGatewayId);
@@ -108,19 +108,19 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 专线网关ID。
+                     * VPC实例ID。形如：vpc-xxx。
                      */
                     std::string m_vpcId;
                     bool m_vpcIdHasBeenSet;
 
                     /**
-                     * NAT网关ID。
+                     * NAT网关ID。形如：nat-xxx
                      */
                     std::string m_natGatewayId;
                     bool m_natGatewayIdHasBeenSet;
 
                     /**
-                     * VPC实例ID。可通过DescribeVpcs接口返回值中的VpcId获取。
+                     * 专线网关ID。形如：dcg-xxx
                      */
                     std::string m_directConnectGatewayId;
                     bool m_directConnectGatewayIdHasBeenSet;

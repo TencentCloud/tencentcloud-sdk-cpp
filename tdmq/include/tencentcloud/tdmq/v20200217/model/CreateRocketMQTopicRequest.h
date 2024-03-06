@@ -85,15 +85,15 @@ namespace TencentCloud
                     bool NamespacesHasBeenSet() const;
 
                     /**
-                     * 获取主题类型，可选值为Normal, PartitionedOrder, Transaction, DelayScheduled。
-                     * @return Type 主题类型，可选值为Normal, PartitionedOrder, Transaction, DelayScheduled。
+                     * 获取主题类型，可选值为Normal, GlobalOrder, PartitionedOrder, Transaction, DelayScheduled。Transaction仅在专享版支持。
+                     * @return Type 主题类型，可选值为Normal, GlobalOrder, PartitionedOrder, Transaction, DelayScheduled。Transaction仅在专享版支持。
                      * 
                      */
                     std::string GetType() const;
 
                     /**
-                     * 设置主题类型，可选值为Normal, PartitionedOrder, Transaction, DelayScheduled。
-                     * @param _type 主题类型，可选值为Normal, PartitionedOrder, Transaction, DelayScheduled。
+                     * 设置主题类型，可选值为Normal, GlobalOrder, PartitionedOrder, Transaction, DelayScheduled。Transaction仅在专享版支持。
+                     * @param _type 主题类型，可选值为Normal, GlobalOrder, PartitionedOrder, Transaction, DelayScheduled。Transaction仅在专享版支持。
                      * 
                      */
                     void SetType(const std::string& _type);
@@ -183,7 +183,7 @@ namespace TencentCloud
                     bool m_namespacesHasBeenSet;
 
                     /**
-                     * 主题类型，可选值为Normal, PartitionedOrder, Transaction, DelayScheduled。
+                     * 主题类型，可选值为Normal, GlobalOrder, PartitionedOrder, Transaction, DelayScheduled。Transaction仅在专享版支持。
                      */
                     std::string m_type;
                     bool m_typeHasBeenSet;

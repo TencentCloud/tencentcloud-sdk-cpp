@@ -169,6 +169,27 @@ namespace TencentCloud
                     bool StaffNumberHasBeenSet() const;
 
                     /**
+                     * 获取用户角色id
+                     * @return RoleId 用户角色id
+                     * 
+                     */
+                    uint64_t GetRoleId() const;
+
+                    /**
+                     * 设置用户角色id
+                     * @param _roleId 用户角色id
+                     * 
+                     */
+                    void SetRoleId(const uint64_t& _roleId);
+
+                    /**
+                     * 判断参数 RoleId 是否已赋值
+                     * @return RoleId 是否已赋值
+                     * 
+                     */
+                    bool RoleIdHasBeenSet() const;
+
+                    /**
                      * 获取所属技能组列表
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return SkillGroupList 所属技能组列表
@@ -253,6 +274,12 @@ namespace TencentCloud
                      */
                     std::string m_staffNumber;
                     bool m_staffNumberHasBeenSet;
+
+                    /**
+                     * 用户角色id
+                     */
+                    uint64_t m_roleId;
+                    bool m_roleIdHasBeenSet;
 
                     /**
                      * 所属技能组列表

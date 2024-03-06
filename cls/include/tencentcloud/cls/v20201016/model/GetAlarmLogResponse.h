@@ -129,10 +129,10 @@ namespace TencentCloud
                     bool ResultsHasBeenSet() const;
 
                     /**
-                     * 获取执行详情统计分析结果。当Query字段有SQL语句时，返回sql统计结果，否则可能返回null。
+                     * 获取执行详情统计分析结果。当Query字段有SQL语句时，返回SQL统计结果，否则可能返回null。
 
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return AnalysisResults 执行详情统计分析结果。当Query字段有SQL语句时，返回sql统计结果，否则可能返回null。
+                     * @return AnalysisResults 执行详情统计分析结果。当Query字段有SQL语句时，返回SQL统计结果，否则可能返回null。
 
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
@@ -147,9 +147,9 @@ namespace TencentCloud
                     bool AnalysisResultsHasBeenSet() const;
 
                     /**
-                     * 获取执行详情统计分析结果; UseNewAnalysis为true有效
+                     * 获取执行详情统计分析结果；UseNewAnalysis为true有效。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return AnalysisRecords 执行详情统计分析结果; UseNewAnalysis为true有效
+                     * @return AnalysisRecords 执行详情统计分析结果；UseNewAnalysis为true有效。
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -217,7 +217,7 @@ namespace TencentCloud
                     bool m_resultsHasBeenSet;
 
                     /**
-                     * 执行详情统计分析结果。当Query字段有SQL语句时，返回sql统计结果，否则可能返回null。
+                     * 执行详情统计分析结果。当Query字段有SQL语句时，返回SQL统计结果，否则可能返回null。
 
 注意：此字段可能返回 null，表示取不到有效值。
                      */
@@ -225,7 +225,7 @@ namespace TencentCloud
                     bool m_analysisResultsHasBeenSet;
 
                     /**
-                     * 执行详情统计分析结果; UseNewAnalysis为true有效
+                     * 执行详情统计分析结果；UseNewAnalysis为true有效。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<std::string> m_analysisRecords;

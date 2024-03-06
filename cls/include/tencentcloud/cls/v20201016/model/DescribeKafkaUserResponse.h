@@ -44,8 +44,8 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取kafka消费用户名
-                     * @return UserName kafka消费用户名
+                     * 获取如果返回不为空，代表用户名UserName已经创建成功。
+                     * @return UserName 如果返回不为空，代表用户名UserName已经创建成功。
                      * 
                      */
                     std::string GetUserName() const;
@@ -60,7 +60,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * kafka消费用户名
+                     * 如果返回不为空，代表用户名UserName已经创建成功。
                      */
                     std::string m_userName;
                     bool m_userNameHasBeenSet;

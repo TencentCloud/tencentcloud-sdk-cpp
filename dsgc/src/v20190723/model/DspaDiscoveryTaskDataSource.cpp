@@ -25,7 +25,8 @@ DspaDiscoveryTaskDataSource::DspaDiscoveryTaskDataSource() :
     m_conditionHasBeenSet(false),
     m_proxyAddressHasBeenSet(false),
     m_dataSourceNameHasBeenSet(false),
-    m_resourceRegionHasBeenSet(false)
+    m_resourceRegionHasBeenSet(false),
+    m_dataSourceTypeHasBeenSet(false)
 {
 }
 
@@ -87,6 +88,16 @@ CoreInternalOutcome DspaDiscoveryTaskDataSource::Deserialize(const rapidjson::Va
         m_resourceRegionHasBeenSet = true;
     }
 
+    if (value.HasMember("DataSourceType") && !value["DataSourceType"].IsNull())
+    {
+        if (!value["DataSourceType"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `DspaDiscoveryTaskDataSource.DataSourceType` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_dataSourceType = string(value["DataSourceType"].GetString());
+        m_dataSourceTypeHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -137,6 +148,14 @@ void DspaDiscoveryTaskDataSource::ToJsonObject(rapidjson::Value &value, rapidjso
         string key = "ResourceRegion";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_resourceRegion.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_dataSourceTypeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "DataSourceType";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_dataSourceType.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -220,5 +239,21 @@ void DspaDiscoveryTaskDataSource::SetResourceRegion(const string& _resourceRegio
 bool DspaDiscoveryTaskDataSource::ResourceRegionHasBeenSet() const
 {
     return m_resourceRegionHasBeenSet;
+}
+
+string DspaDiscoveryTaskDataSource::GetDataSourceType() const
+{
+    return m_dataSourceType;
+}
+
+void DspaDiscoveryTaskDataSource::SetDataSourceType(const string& _dataSourceType)
+{
+    m_dataSourceType = _dataSourceType;
+    m_dataSourceTypeHasBeenSet = true;
+}
+
+bool DspaDiscoveryTaskDataSource::DataSourceTypeHasBeenSet() const
+{
+    return m_dataSourceTypeHasBeenSet;
 }
 

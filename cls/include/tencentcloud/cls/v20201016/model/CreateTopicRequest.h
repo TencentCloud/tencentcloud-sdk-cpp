@@ -191,15 +191,19 @@ namespace TencentCloud
                     bool StorageTypeHasBeenSet() const;
 
                     /**
-                     * 获取生命周期，单位天，标准存储取值范围1\~3600，低频存储取值范围7\~3600天。取值为3640时代表永久保存
-                     * @return Period 生命周期，单位天，标准存储取值范围1\~3600，低频存储取值范围7\~3600天。取值为3640时代表永久保存
+                     * 获取生命周期，单位天，标准存储取值范围1\~3600，低频存储取值范围7\~3600天。取值为3640时代表永久保存。
+不传此值，默认获取该日志主题对应日志集的Period值（当获取失败时默认为30天）。
+                     * @return Period 生命周期，单位天，标准存储取值范围1\~3600，低频存储取值范围7\~3600天。取值为3640时代表永久保存。
+不传此值，默认获取该日志主题对应日志集的Period值（当获取失败时默认为30天）。
                      * 
                      */
                     int64_t GetPeriod() const;
 
                     /**
-                     * 设置生命周期，单位天，标准存储取值范围1\~3600，低频存储取值范围7\~3600天。取值为3640时代表永久保存
-                     * @param _period 生命周期，单位天，标准存储取值范围1\~3600，低频存储取值范围7\~3600天。取值为3640时代表永久保存
+                     * 设置生命周期，单位天，标准存储取值范围1\~3600，低频存储取值范围7\~3600天。取值为3640时代表永久保存。
+不传此值，默认获取该日志主题对应日志集的Period值（当获取失败时默认为30天）。
+                     * @param _period 生命周期，单位天，标准存储取值范围1\~3600，低频存储取值范围7\~3600天。取值为3640时代表永久保存。
+不传此值，默认获取该日志主题对应日志集的Period值（当获取失败时默认为30天）。
                      * 
                      */
                     void SetPeriod(const int64_t& _period);
@@ -234,18 +238,22 @@ namespace TencentCloud
 
                     /**
                      * 获取0：关闭日志沉降。
-非0：开启日志沉降后标准存储的天数。HotPeriod需要大于等于7，且小于Period。仅在StorageType为 hot 时生效
+非0：开启日志沉降后标准存储的天数，HotPeriod需要大于等于7，且小于Period。
+仅在StorageType为 hot 时生效。
                      * @return HotPeriod 0：关闭日志沉降。
-非0：开启日志沉降后标准存储的天数。HotPeriod需要大于等于7，且小于Period。仅在StorageType为 hot 时生效
+非0：开启日志沉降后标准存储的天数，HotPeriod需要大于等于7，且小于Period。
+仅在StorageType为 hot 时生效。
                      * 
                      */
                     uint64_t GetHotPeriod() const;
 
                     /**
                      * 设置0：关闭日志沉降。
-非0：开启日志沉降后标准存储的天数。HotPeriod需要大于等于7，且小于Period。仅在StorageType为 hot 时生效
+非0：开启日志沉降后标准存储的天数，HotPeriod需要大于等于7，且小于Period。
+仅在StorageType为 hot 时生效。
                      * @param _hotPeriod 0：关闭日志沉降。
-非0：开启日志沉降后标准存储的天数。HotPeriod需要大于等于7，且小于Period。仅在StorageType为 hot 时生效
+非0：开启日志沉降后标准存储的天数，HotPeriod需要大于等于7，且小于Period。
+仅在StorageType为 hot 时生效。
                      * 
                      */
                     void SetHotPeriod(const uint64_t& _hotPeriod);
@@ -258,15 +266,19 @@ namespace TencentCloud
                     bool HotPeriodHasBeenSet() const;
 
                     /**
-                     * 获取免鉴权开关； false: 关闭 true： 开启
-                     * @return IsWebTracking 免鉴权开关； false: 关闭 true： 开启
+                     * 获取免鉴权开关。 false：关闭； true：开启。
+开启后将支持指定操作匿名访问该日志主题。详情请参见[日志主题](https://cloud.tencent.com/document/product/614/41035)。
+                     * @return IsWebTracking 免鉴权开关。 false：关闭； true：开启。
+开启后将支持指定操作匿名访问该日志主题。详情请参见[日志主题](https://cloud.tencent.com/document/product/614/41035)。
                      * 
                      */
                     bool GetIsWebTracking() const;
 
                     /**
-                     * 设置免鉴权开关； false: 关闭 true： 开启
-                     * @param _isWebTracking 免鉴权开关； false: 关闭 true： 开启
+                     * 设置免鉴权开关。 false：关闭； true：开启。
+开启后将支持指定操作匿名访问该日志主题。详情请参见[日志主题](https://cloud.tencent.com/document/product/614/41035)。
+                     * @param _isWebTracking 免鉴权开关。 false：关闭； true：开启。
+开启后将支持指定操作匿名访问该日志主题。详情请参见[日志主题](https://cloud.tencent.com/document/product/614/41035)。
                      * 
                      */
                     void SetIsWebTracking(const bool& _isWebTracking);
@@ -323,7 +335,8 @@ namespace TencentCloud
                     bool m_storageTypeHasBeenSet;
 
                     /**
-                     * 生命周期，单位天，标准存储取值范围1\~3600，低频存储取值范围7\~3600天。取值为3640时代表永久保存
+                     * 生命周期，单位天，标准存储取值范围1\~3600，低频存储取值范围7\~3600天。取值为3640时代表永久保存。
+不传此值，默认获取该日志主题对应日志集的Period值（当获取失败时默认为30天）。
                      */
                     int64_t m_period;
                     bool m_periodHasBeenSet;
@@ -336,13 +349,15 @@ namespace TencentCloud
 
                     /**
                      * 0：关闭日志沉降。
-非0：开启日志沉降后标准存储的天数。HotPeriod需要大于等于7，且小于Period。仅在StorageType为 hot 时生效
+非0：开启日志沉降后标准存储的天数，HotPeriod需要大于等于7，且小于Period。
+仅在StorageType为 hot 时生效。
                      */
                     uint64_t m_hotPeriod;
                     bool m_hotPeriodHasBeenSet;
 
                     /**
-                     * 免鉴权开关； false: 关闭 true： 开启
+                     * 免鉴权开关。 false：关闭； true：开启。
+开启后将支持指定操作匿名访问该日志主题。详情请参见[日志主题](https://cloud.tencent.com/document/product/614/41035)。
                      */
                     bool m_isWebTracking;
                     bool m_isWebTrackingHasBeenSet;

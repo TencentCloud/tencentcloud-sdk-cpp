@@ -314,6 +314,60 @@ clb - 通过LB的方式进行访问。
                      */
                     bool ResourceNameHasBeenSet() const;
 
+                    /**
+                     * 获取实例类型
+databse
+sid
+serviceName
+                     * @return InstanceType 实例类型
+databse
+sid
+serviceName
+                     * 
+                     */
+                    std::string GetInstanceType() const;
+
+                    /**
+                     * 设置实例类型
+databse
+sid
+serviceName
+                     * @param _instanceType 实例类型
+databse
+sid
+serviceName
+                     * 
+                     */
+                    void SetInstanceType(const std::string& _instanceType);
+
+                    /**
+                     * 判断参数 InstanceType 是否已赋值
+                     * @return InstanceType 是否已赋值
+                     * 
+                     */
+                    bool InstanceTypeHasBeenSet() const;
+
+                    /**
+                     * 获取实例值
+                     * @return InstanceValue 实例值
+                     * 
+                     */
+                    std::string GetInstanceValue() const;
+
+                    /**
+                     * 设置实例值
+                     * @param _instanceValue 实例值
+                     * 
+                     */
+                    void SetInstanceValue(const std::string& _instanceValue);
+
+                    /**
+                     * 判断参数 InstanceValue 是否已赋值
+                     * @return InstanceValue 是否已赋值
+                     * 
+                     */
+                    bool InstanceValueHasBeenSet() const;
+
                 private:
 
                     /**
@@ -392,6 +446,21 @@ clb - 通过LB的方式进行访问。
                      */
                     std::string m_resourceName;
                     bool m_resourceNameHasBeenSet;
+
+                    /**
+                     * 实例类型
+databse
+sid
+serviceName
+                     */
+                    std::string m_instanceType;
+                    bool m_instanceTypeHasBeenSet;
+
+                    /**
+                     * 实例值
+                     */
+                    std::string m_instanceValue;
+                    bool m_instanceValueHasBeenSet;
 
                 };
             }

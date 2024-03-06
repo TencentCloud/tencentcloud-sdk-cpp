@@ -107,15 +107,19 @@ namespace TencentCloud
                     bool TagsHasBeenSet() const;
 
                     /**
-                     * 获取该日志主题是否开始采集
-                     * @return Status 该日志主题是否开始采集
+                     * 获取主题是否开启采集，true：开启采集；false：关闭采集。
+控制台目前不支持修改此参数。
+                     * @return Status 主题是否开启采集，true：开启采集；false：关闭采集。
+控制台目前不支持修改此参数。
                      * 
                      */
                     bool GetStatus() const;
 
                     /**
-                     * 设置该日志主题是否开始采集
-                     * @param _status 该日志主题是否开始采集
+                     * 设置主题是否开启采集，true：开启采集；false：关闭采集。
+控制台目前不支持修改此参数。
+                     * @param _status 主题是否开启采集，true：开启采集；false：关闭采集。
+控制台目前不支持修改此参数。
                      * 
                      */
                     void SetStatus(const bool& _status);
@@ -237,15 +241,19 @@ namespace TencentCloud
                     bool HotPeriodHasBeenSet() const;
 
                     /**
-                     * 获取免鉴权开关； false: 关闭 true: 开启
-                     * @return IsWebTracking 免鉴权开关； false: 关闭 true: 开启
+                     * 获取免鉴权开关。 false：关闭； true：开启。
+开启后将支持指定操作匿名访问该日志主题。详情请参见[日志主题](https://cloud.tencent.com/document/product/614/41035)。
+                     * @return IsWebTracking 免鉴权开关。 false：关闭； true：开启。
+开启后将支持指定操作匿名访问该日志主题。详情请参见[日志主题](https://cloud.tencent.com/document/product/614/41035)。
                      * 
                      */
                     bool GetIsWebTracking() const;
 
                     /**
-                     * 设置免鉴权开关； false: 关闭 true: 开启
-                     * @param _isWebTracking 免鉴权开关； false: 关闭 true: 开启
+                     * 设置免鉴权开关。 false：关闭； true：开启。
+开启后将支持指定操作匿名访问该日志主题。详情请参见[日志主题](https://cloud.tencent.com/document/product/614/41035)。
+                     * @param _isWebTracking 免鉴权开关。 false：关闭； true：开启。
+开启后将支持指定操作匿名访问该日志主题。详情请参见[日志主题](https://cloud.tencent.com/document/product/614/41035)。
                      * 
                      */
                     void SetIsWebTracking(const bool& _isWebTracking);
@@ -278,7 +286,8 @@ namespace TencentCloud
                     bool m_tagsHasBeenSet;
 
                     /**
-                     * 该日志主题是否开始采集
+                     * 主题是否开启采集，true：开启采集；false：关闭采集。
+控制台目前不支持修改此参数。
                      */
                     bool m_status;
                     bool m_statusHasBeenSet;
@@ -315,7 +324,8 @@ namespace TencentCloud
                     bool m_hotPeriodHasBeenSet;
 
                     /**
-                     * 免鉴权开关； false: 关闭 true: 开启
+                     * 免鉴权开关。 false：关闭； true：开启。
+开启后将支持指定操作匿名访问该日志主题。详情请参见[日志主题](https://cloud.tencent.com/document/product/614/41035)。
                      */
                     bool m_isWebTracking;
                     bool m_isWebTrackingHasBeenSet;

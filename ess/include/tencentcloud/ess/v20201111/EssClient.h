@@ -139,6 +139,8 @@
 #include <tencentcloud/ess/v20201111/model/DescribeOrganizationSealsResponse.h>
 #include <tencentcloud/ess/v20201111/model/DescribePersonCertificateRequest.h>
 #include <tencentcloud/ess/v20201111/model/DescribePersonCertificateResponse.h>
+#include <tencentcloud/ess/v20201111/model/DescribeSignFaceVideoRequest.h>
+#include <tencentcloud/ess/v20201111/model/DescribeSignFaceVideoResponse.h>
 #include <tencentcloud/ess/v20201111/model/DescribeThirdPartyAuthCodeRequest.h>
 #include <tencentcloud/ess/v20201111/model/DescribeThirdPartyAuthCodeResponse.h>
 #include <tencentcloud/ess/v20201111/model/DescribeUserAutoSignStatusRequest.h>
@@ -355,6 +357,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribePersonCertificateResponse> DescribePersonCertificateOutcome;
                 typedef std::future<DescribePersonCertificateOutcome> DescribePersonCertificateOutcomeCallable;
                 typedef std::function<void(const EssClient*, const Model::DescribePersonCertificateRequest&, DescribePersonCertificateOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribePersonCertificateAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeSignFaceVideoResponse> DescribeSignFaceVideoOutcome;
+                typedef std::future<DescribeSignFaceVideoOutcome> DescribeSignFaceVideoOutcomeCallable;
+                typedef std::function<void(const EssClient*, const Model::DescribeSignFaceVideoRequest&, DescribeSignFaceVideoOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeSignFaceVideoAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeThirdPartyAuthCodeResponse> DescribeThirdPartyAuthCodeOutcome;
                 typedef std::future<DescribeThirdPartyAuthCodeOutcome> DescribeThirdPartyAuthCodeOutcomeCallable;
                 typedef std::function<void(const EssClient*, const Model::DescribeThirdPartyAuthCodeRequest&, DescribeThirdPartyAuthCodeOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeThirdPartyAuthCodeAsyncHandler;
@@ -1388,6 +1393,21 @@ namespace TencentCloud
                 DescribePersonCertificateOutcome DescribePersonCertificate(const Model::DescribePersonCertificateRequest &request);
                 void DescribePersonCertificateAsync(const Model::DescribePersonCertificateRequest& request, const DescribePersonCertificateAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DescribePersonCertificateOutcomeCallable DescribePersonCertificateCallable(const Model::DescribePersonCertificateRequest& request);
+
+                /**
+                 *该接口用于在使用视频认证方式签署合同后，获取用户的签署人脸认证视频。
+
+1. 该接口**仅适用于在H5端签署**的合同，**在通过视频认证后**获取人脸图片。
+2. 该接口**不支持小程序端**的签署人脸图片获取。
+3. 请在**签署完成后的三天内**获取人脸图片，**过期后将无法获取**。
+
+**注意：该接口需要开通白名单，请联系客户经理开通后使用。**
+                 * @param req DescribeSignFaceVideoRequest
+                 * @return DescribeSignFaceVideoOutcome
+                 */
+                DescribeSignFaceVideoOutcome DescribeSignFaceVideo(const Model::DescribeSignFaceVideoRequest &request);
+                void DescribeSignFaceVideoAsync(const Model::DescribeSignFaceVideoRequest& request, const DescribeSignFaceVideoAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeSignFaceVideoOutcomeCallable DescribeSignFaceVideoCallable(const Model::DescribeSignFaceVideoRequest& request);
 
                 /**
                  *通过AuthCode查询个人用户是否实名

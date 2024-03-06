@@ -167,6 +167,27 @@ TRANSACTION:事务消息
                      */
                     bool RemarkHasBeenSet() const;
 
+                    /**
+                     * 获取消息保留时长
+                     * @return MsgTTL 消息保留时长
+                     * 
+                     */
+                    int64_t GetMsgTTL() const;
+
+                    /**
+                     * 设置消息保留时长
+                     * @param _msgTTL 消息保留时长
+                     * 
+                     */
+                    void SetMsgTTL(const int64_t& _msgTTL);
+
+                    /**
+                     * 判断参数 MsgTTL 是否已赋值
+                     * @return MsgTTL 是否已赋值
+                     * 
+                     */
+                    bool MsgTTLHasBeenSet() const;
+
                 private:
 
                     /**
@@ -203,6 +224,12 @@ TRANSACTION:事务消息
                      */
                     std::string m_remark;
                     bool m_remarkHasBeenSet;
+
+                    /**
+                     * 消息保留时长
+                     */
+                    int64_t m_msgTTL;
+                    bool m_msgTTLHasBeenSet;
 
                 };
             }

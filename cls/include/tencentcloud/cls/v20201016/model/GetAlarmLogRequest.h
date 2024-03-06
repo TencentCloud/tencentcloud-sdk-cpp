@@ -185,15 +185,27 @@ namespace TencentCloud
                     bool SortHasBeenSet() const;
 
                     /**
-                     * 获取如果Query包含SQL语句，UseNewAnalysis为true时响应参数AnalysisRecords和Columns有效， UseNewAnalysis为false时响应参数AnalysisResults和ColNames有效
-                     * @return UseNewAnalysis 如果Query包含SQL语句，UseNewAnalysis为true时响应参数AnalysisRecords和Columns有效， UseNewAnalysis为false时响应参数AnalysisResults和ColNames有效
+                     * 获取为true代表使用新的检索结果返回方式，输出参数AnalysisRecords和Columns有效；
+为false代表使用老的检索结果返回方式，输出AnalysisResults和ColNames有效；
+两种返回方式在编码格式上有少量区别，建议使用true。
+示例值：false
+                     * @return UseNewAnalysis 为true代表使用新的检索结果返回方式，输出参数AnalysisRecords和Columns有效；
+为false代表使用老的检索结果返回方式，输出AnalysisResults和ColNames有效；
+两种返回方式在编码格式上有少量区别，建议使用true。
+示例值：false
                      * 
                      */
                     bool GetUseNewAnalysis() const;
 
                     /**
-                     * 设置如果Query包含SQL语句，UseNewAnalysis为true时响应参数AnalysisRecords和Columns有效， UseNewAnalysis为false时响应参数AnalysisResults和ColNames有效
-                     * @param _useNewAnalysis 如果Query包含SQL语句，UseNewAnalysis为true时响应参数AnalysisRecords和Columns有效， UseNewAnalysis为false时响应参数AnalysisResults和ColNames有效
+                     * 设置为true代表使用新的检索结果返回方式，输出参数AnalysisRecords和Columns有效；
+为false代表使用老的检索结果返回方式，输出AnalysisResults和ColNames有效；
+两种返回方式在编码格式上有少量区别，建议使用true。
+示例值：false
+                     * @param _useNewAnalysis 为true代表使用新的检索结果返回方式，输出参数AnalysisRecords和Columns有效；
+为false代表使用老的检索结果返回方式，输出AnalysisResults和ColNames有效；
+两种返回方式在编码格式上有少量区别，建议使用true。
+示例值：false
                      * 
                      */
                     void SetUseNewAnalysis(const bool& _useNewAnalysis);
@@ -248,7 +260,10 @@ namespace TencentCloud
                     bool m_sortHasBeenSet;
 
                     /**
-                     * 如果Query包含SQL语句，UseNewAnalysis为true时响应参数AnalysisRecords和Columns有效， UseNewAnalysis为false时响应参数AnalysisResults和ColNames有效
+                     * 为true代表使用新的检索结果返回方式，输出参数AnalysisRecords和Columns有效；
+为false代表使用老的检索结果返回方式，输出AnalysisResults和ColNames有效；
+两种返回方式在编码格式上有少量区别，建议使用true。
+示例值：false
                      */
                     bool m_useNewAnalysis;
                     bool m_useNewAnalysisHasBeenSet;

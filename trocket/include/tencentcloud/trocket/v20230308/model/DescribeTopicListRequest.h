@@ -65,6 +65,27 @@ namespace TencentCloud
                     bool InstanceIdHasBeenSet() const;
 
                     /**
+                     * 获取查询条件列表
+                     * @return Filters 查询条件列表
+                     * 
+                     */
+                    std::vector<Filter> GetFilters() const;
+
+                    /**
+                     * 设置查询条件列表
+                     * @param _filters 查询条件列表
+                     * 
+                     */
+                    void SetFilters(const std::vector<Filter>& _filters);
+
+                    /**
+                     * 判断参数 Filters 是否已赋值
+                     * @return Filters 是否已赋值
+                     * 
+                     */
+                    bool FiltersHasBeenSet() const;
+
+                    /**
                      * 获取查询起始位置
                      * @return Offset 查询起始位置
                      * 
@@ -106,27 +127,6 @@ namespace TencentCloud
                      */
                     bool LimitHasBeenSet() const;
 
-                    /**
-                     * 获取查询条件列表
-                     * @return Filters 查询条件列表
-                     * 
-                     */
-                    std::vector<Filter> GetFilters() const;
-
-                    /**
-                     * 设置查询条件列表
-                     * @param _filters 查询条件列表
-                     * 
-                     */
-                    void SetFilters(const std::vector<Filter>& _filters);
-
-                    /**
-                     * 判断参数 Filters 是否已赋值
-                     * @return Filters 是否已赋值
-                     * 
-                     */
-                    bool FiltersHasBeenSet() const;
-
                 private:
 
                     /**
@@ -134,6 +134,12 @@ namespace TencentCloud
                      */
                     std::string m_instanceId;
                     bool m_instanceIdHasBeenSet;
+
+                    /**
+                     * 查询条件列表
+                     */
+                    std::vector<Filter> m_filters;
+                    bool m_filtersHasBeenSet;
 
                     /**
                      * 查询起始位置
@@ -146,12 +152,6 @@ namespace TencentCloud
                      */
                     int64_t m_limit;
                     bool m_limitHasBeenSet;
-
-                    /**
-                     * 查询条件列表
-                     */
-                    std::vector<Filter> m_filters;
-                    bool m_filtersHasBeenSet;
 
                 };
             }

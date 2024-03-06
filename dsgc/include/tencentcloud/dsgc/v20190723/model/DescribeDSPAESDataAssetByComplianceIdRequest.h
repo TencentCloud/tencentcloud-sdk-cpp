@@ -84,6 +84,52 @@ namespace TencentCloud
                      */
                     bool ComplianceIdHasBeenSet() const;
 
+                    /**
+                     * 获取云上还是自建
+
+                     * @return BuildType 云上还是自建
+
+                     * 
+                     */
+                    std::string GetBuildType() const;
+
+                    /**
+                     * 设置云上还是自建
+
+                     * @param _buildType 云上还是自建
+
+                     * 
+                     */
+                    void SetBuildType(const std::string& _buildType);
+
+                    /**
+                     * 判断参数 BuildType 是否已赋值
+                     * @return BuildType 是否已赋值
+                     * 
+                     */
+                    bool BuildTypeHasBeenSet() const;
+
+                    /**
+                     * 获取数据源类型
+                     * @return DataSourceType 数据源类型
+                     * 
+                     */
+                    std::string GetDataSourceType() const;
+
+                    /**
+                     * 设置数据源类型
+                     * @param _dataSourceType 数据源类型
+                     * 
+                     */
+                    void SetDataSourceType(const std::string& _dataSourceType);
+
+                    /**
+                     * 判断参数 DataSourceType 是否已赋值
+                     * @return DataSourceType 是否已赋值
+                     * 
+                     */
+                    bool DataSourceTypeHasBeenSet() const;
+
                 private:
 
                     /**
@@ -97,6 +143,19 @@ namespace TencentCloud
                      */
                     int64_t m_complianceId;
                     bool m_complianceIdHasBeenSet;
+
+                    /**
+                     * 云上还是自建
+
+                     */
+                    std::string m_buildType;
+                    bool m_buildTypeHasBeenSet;
+
+                    /**
+                     * 数据源类型
+                     */
+                    std::string m_dataSourceType;
+                    bool m_dataSourceTypeHasBeenSet;
 
                 };
             }

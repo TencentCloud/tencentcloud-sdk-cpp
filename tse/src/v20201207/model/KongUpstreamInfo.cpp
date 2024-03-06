@@ -40,7 +40,8 @@ KongUpstreamInfo::KongUpstreamInfo() :
     m_autoScalingHookStatusHasBeenSet(false),
     m_sourceNameHasBeenSet(false),
     m_realSourceTypeHasBeenSet(false),
-    m_healthStatusHasBeenSet(false)
+    m_healthStatusHasBeenSet(false),
+    m_scfCamAuthEnableHasBeenSet(false)
 {
 }
 
@@ -259,6 +260,16 @@ CoreInternalOutcome KongUpstreamInfo::Deserialize(const rapidjson::Value &value)
         m_healthStatusHasBeenSet = true;
     }
 
+    if (value.HasMember("ScfCamAuthEnable") && !value["ScfCamAuthEnable"].IsNull())
+    {
+        if (!value["ScfCamAuthEnable"].IsBool())
+        {
+            return CoreInternalOutcome(Core::Error("response `KongUpstreamInfo.ScfCamAuthEnable` IsBool=false incorrectly").SetRequestId(requestId));
+        }
+        m_scfCamAuthEnable = value["ScfCamAuthEnable"].GetBool();
+        m_scfCamAuthEnableHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -431,6 +442,14 @@ void KongUpstreamInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Document
         string key = "HealthStatus";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_healthStatus.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_scfCamAuthEnableHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ScfCamAuthEnable";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_scfCamAuthEnable, allocator);
     }
 
 }
@@ -754,5 +773,21 @@ void KongUpstreamInfo::SetHealthStatus(const string& _healthStatus)
 bool KongUpstreamInfo::HealthStatusHasBeenSet() const
 {
     return m_healthStatusHasBeenSet;
+}
+
+bool KongUpstreamInfo::GetScfCamAuthEnable() const
+{
+    return m_scfCamAuthEnable;
+}
+
+void KongUpstreamInfo::SetScfCamAuthEnable(const bool& _scfCamAuthEnable)
+{
+    m_scfCamAuthEnable = _scfCamAuthEnable;
+    m_scfCamAuthEnableHasBeenSet = true;
+}
+
+bool KongUpstreamInfo::ScfCamAuthEnableHasBeenSet() const
+{
+    return m_scfCamAuthEnableHasBeenSet;
 }
 

@@ -166,6 +166,20 @@ TRANSACTION:事务消息
                      */
                     bool SubscriptionDataHasBeenSet() const;
 
+                    /**
+                     * 获取消息保留时长
+                     * @return MsgTTL 消息保留时长
+                     * 
+                     */
+                    int64_t GetMsgTTL() const;
+
+                    /**
+                     * 判断参数 MsgTTL 是否已赋值
+                     * @return MsgTTL 是否已赋值
+                     * 
+                     */
+                    bool MsgTTLHasBeenSet() const;
+
                 private:
 
                     /**
@@ -220,6 +234,12 @@ TRANSACTION:事务消息
                      */
                     std::vector<SubscriptionData> m_subscriptionData;
                     bool m_subscriptionDataHasBeenSet;
+
+                    /**
+                     * 消息保留时长
+                     */
+                    int64_t m_msgTTL;
+                    bool m_msgTTLHasBeenSet;
 
                 };
             }

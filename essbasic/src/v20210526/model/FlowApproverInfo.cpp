@@ -46,7 +46,8 @@ FlowApproverInfo::FlowApproverInfo() :
     m_addSignComponentsLimitsHasBeenSet(false),
     m_approverRoleNameHasBeenSet(false),
     m_signTypeSelectorHasBeenSet(false),
-    m_componentsHasBeenSet(false)
+    m_componentsHasBeenSet(false),
+    m_intentionHasBeenSet(false)
 {
 }
 
@@ -361,6 +362,23 @@ CoreInternalOutcome FlowApproverInfo::Deserialize(const rapidjson::Value &value)
         m_componentsHasBeenSet = true;
     }
 
+    if (value.HasMember("Intention") && !value["Intention"].IsNull())
+    {
+        if (!value["Intention"].IsObject())
+        {
+            return CoreInternalOutcome(Core::Error("response `FlowApproverInfo.Intention` is not object type").SetRequestId(requestId));
+        }
+
+        CoreInternalOutcome outcome = m_intention.Deserialize(value["Intention"]);
+        if (!outcome.IsSuccess())
+        {
+            outcome.GetError().SetRequestId(requestId);
+            return outcome;
+        }
+
+        m_intentionHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -611,6 +629,15 @@ void FlowApproverInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Document
             value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
             (*itr).ToJsonObject(value[key.c_str()][i], allocator);
         }
+    }
+
+    if (m_intentionHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Intention";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_intention.ToJsonObject(value[key.c_str()], allocator);
     }
 
 }
@@ -1030,5 +1057,21 @@ void FlowApproverInfo::SetComponents(const vector<Component>& _components)
 bool FlowApproverInfo::ComponentsHasBeenSet() const
 {
     return m_componentsHasBeenSet;
+}
+
+Intention FlowApproverInfo::GetIntention() const
+{
+    return m_intention;
+}
+
+void FlowApproverInfo::SetIntention(const Intention& _intention)
+{
+    m_intention = _intention;
+    m_intentionHasBeenSet = true;
+}
+
+bool FlowApproverInfo::IntentionHasBeenSet() const
+{
+    return m_intentionHasBeenSet;
 }
 

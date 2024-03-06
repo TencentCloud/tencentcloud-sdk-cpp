@@ -59,8 +59,8 @@ namespace TencentCloud
                     bool MachinesHasBeenSet() const;
 
                     /**
-                     * 获取机器组是否开启自动升级功能
-                     * @return AutoUpdate 机器组是否开启自动升级功能
+                     * 获取机器组是否开启自动升级功能。 0：未开启自动升级；1：开启了自动升级。
+                     * @return AutoUpdate 机器组是否开启自动升级功能。 0：未开启自动升级；1：开启了自动升级。
                      * 
                      */
                     int64_t GetAutoUpdate() const;
@@ -137,7 +137,7 @@ namespace TencentCloud
                     bool m_machinesHasBeenSet;
 
                     /**
-                     * 机器组是否开启自动升级功能
+                     * 机器组是否开启自动升级功能。 0：未开启自动升级；1：开启了自动升级。
                      */
                     int64_t m_autoUpdate;
                     bool m_autoUpdateHasBeenSet;

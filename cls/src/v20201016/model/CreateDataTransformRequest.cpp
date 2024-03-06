@@ -28,8 +28,8 @@ CreateDataTransformRequest::CreateDataTransformRequest() :
     m_nameHasBeenSet(false),
     m_etlContentHasBeenSet(false),
     m_taskTypeHasBeenSet(false),
-    m_enableFlagHasBeenSet(false),
     m_dstResourcesHasBeenSet(false),
+    m_enableFlagHasBeenSet(false),
     m_previewLogStatisticsHasBeenSet(false)
 {
 }
@@ -81,14 +81,6 @@ string CreateDataTransformRequest::ToJsonString() const
         d.AddMember(iKey, m_taskType, allocator);
     }
 
-    if (m_enableFlagHasBeenSet)
-    {
-        rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "EnableFlag";
-        iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, m_enableFlag, allocator);
-    }
-
     if (m_dstResourcesHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
@@ -102,6 +94,14 @@ string CreateDataTransformRequest::ToJsonString() const
             d[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
             (*itr).ToJsonObject(d[key.c_str()][i], allocator);
         }
+    }
+
+    if (m_enableFlagHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "EnableFlag";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_enableFlag, allocator);
     }
 
     if (m_previewLogStatisticsHasBeenSet)
@@ -207,22 +207,6 @@ bool CreateDataTransformRequest::TaskTypeHasBeenSet() const
     return m_taskTypeHasBeenSet;
 }
 
-int64_t CreateDataTransformRequest::GetEnableFlag() const
-{
-    return m_enableFlag;
-}
-
-void CreateDataTransformRequest::SetEnableFlag(const int64_t& _enableFlag)
-{
-    m_enableFlag = _enableFlag;
-    m_enableFlagHasBeenSet = true;
-}
-
-bool CreateDataTransformRequest::EnableFlagHasBeenSet() const
-{
-    return m_enableFlagHasBeenSet;
-}
-
 vector<DataTransformResouceInfo> CreateDataTransformRequest::GetDstResources() const
 {
     return m_dstResources;
@@ -237,6 +221,22 @@ void CreateDataTransformRequest::SetDstResources(const vector<DataTransformResou
 bool CreateDataTransformRequest::DstResourcesHasBeenSet() const
 {
     return m_dstResourcesHasBeenSet;
+}
+
+int64_t CreateDataTransformRequest::GetEnableFlag() const
+{
+    return m_enableFlag;
+}
+
+void CreateDataTransformRequest::SetEnableFlag(const int64_t& _enableFlag)
+{
+    m_enableFlag = _enableFlag;
+    m_enableFlagHasBeenSet = true;
+}
+
+bool CreateDataTransformRequest::EnableFlagHasBeenSet() const
+{
+    return m_enableFlagHasBeenSet;
 }
 
 vector<PreviewLogStatistic> CreateDataTransformRequest::GetPreviewLogStatistics() const

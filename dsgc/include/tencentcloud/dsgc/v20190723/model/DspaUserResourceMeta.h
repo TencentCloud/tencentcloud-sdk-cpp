@@ -445,6 +445,56 @@ namespace TencentCloud
                      */
                     bool ResourceAuthAccountHasBeenSet() const;
 
+                    /**
+                     * 获取x
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return InstanceType x
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::string GetInstanceType() const;
+
+                    /**
+                     * 设置x
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _instanceType x
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetInstanceType(const std::string& _instanceType);
+
+                    /**
+                     * 判断参数 InstanceType 是否已赋值
+                     * @return InstanceType 是否已赋值
+                     * 
+                     */
+                    bool InstanceTypeHasBeenSet() const;
+
+                    /**
+                     * 获取x
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return InstanceValue x
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::string GetInstanceValue() const;
+
+                    /**
+                     * 设置x
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _instanceValue x
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetInstanceValue(const std::string& _instanceValue);
+
+                    /**
+                     * 判断参数 InstanceValue 是否已赋值
+                     * @return InstanceValue 是否已赋值
+                     * 
+                     */
+                    bool InstanceValueHasBeenSet() const;
+
                 private:
 
                     /**
@@ -560,6 +610,20 @@ namespace TencentCloud
                      */
                     std::string m_resourceAuthAccount;
                     bool m_resourceAuthAccountHasBeenSet;
+
+                    /**
+                     * x
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_instanceType;
+                    bool m_instanceTypeHasBeenSet;
+
+                    /**
+                     * x
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_instanceValue;
+                    bool m_instanceValueHasBeenSet;
 
                 };
             }

@@ -43,15 +43,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取kafka消费用户名
-                     * @return UserName kafka消费用户名
+                     * 获取kafka用户名。
+                     * @return UserName kafka用户名。
                      * 
                      */
                     std::string GetUserName() const;
 
                     /**
-                     * 设置kafka消费用户名
-                     * @param _userName kafka消费用户名
+                     * 设置kafka用户名。
+                     * @param _userName kafka用户名。
                      * 
                      */
                     void SetUserName(const std::string& _userName);
@@ -66,7 +66,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * kafka消费用户名
+                     * kafka用户名。
                      */
                     std::string m_userName;
                     bool m_userNameHasBeenSet;

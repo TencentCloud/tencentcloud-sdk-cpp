@@ -177,15 +177,15 @@ namespace TencentCloud
                     bool VersionHasBeenSet() const;
 
                     /**
-                     * 获取机器升级功能状态。
-                     * @return UpdateStatus 机器升级功能状态。
+                     * 获取机器升级功能状态。 0：升级成功；1：升级中；-1：升级失败。
+                     * @return UpdateStatus 机器升级功能状态。 0：升级成功；1：升级中；-1：升级失败。
                      * 
                      */
                     int64_t GetUpdateStatus() const;
 
                     /**
-                     * 设置机器升级功能状态。
-                     * @param _updateStatus 机器升级功能状态。
+                     * 设置机器升级功能状态。 0：升级成功；1：升级中；-1：升级失败。
+                     * @param _updateStatus 机器升级功能状态。 0：升级成功；1：升级中；-1：升级失败。
                      * 
                      */
                     void SetUpdateStatus(const int64_t& _updateStatus);
@@ -199,14 +199,18 @@ namespace TencentCloud
 
                     /**
                      * 获取机器升级结果标识。
+0：成功；1200：升级成功；其他值表示异常。
                      * @return ErrCode 机器升级结果标识。
+0：成功；1200：升级成功；其他值表示异常。
                      * 
                      */
                     int64_t GetErrCode() const;
 
                     /**
                      * 设置机器升级结果标识。
+0：成功；1200：升级成功；其他值表示异常。
                      * @param _errCode 机器升级结果标识。
+0：成功；1200：升级成功；其他值表示异常。
                      * 
                      */
                     void SetErrCode(const int64_t& _errCode);
@@ -220,14 +224,18 @@ namespace TencentCloud
 
                     /**
                      * 获取机器升级结果信息。
+“ok”：成功；“update success”：升级成功；其他值为失败原因。
                      * @return ErrMsg 机器升级结果信息。
+“ok”：成功；“update success”：升级成功；其他值为失败原因。
                      * 
                      */
                     std::string GetErrMsg() const;
 
                     /**
                      * 设置机器升级结果信息。
+“ok”：成功；“update success”：升级成功；其他值为失败原因。
                      * @param _errMsg 机器升级结果信息。
+“ok”：成功；“update success”：升级成功；其他值为失败原因。
                      * 
                      */
                     void SetErrMsg(const std::string& _errMsg);
@@ -279,19 +287,21 @@ namespace TencentCloud
                     bool m_versionHasBeenSet;
 
                     /**
-                     * 机器升级功能状态。
+                     * 机器升级功能状态。 0：升级成功；1：升级中；-1：升级失败。
                      */
                     int64_t m_updateStatus;
                     bool m_updateStatusHasBeenSet;
 
                     /**
                      * 机器升级结果标识。
+0：成功；1200：升级成功；其他值表示异常。
                      */
                     int64_t m_errCode;
                     bool m_errCodeHasBeenSet;
 
                     /**
                      * 机器升级结果信息。
+“ok”：成功；“update success”：升级成功；其他值为失败原因。
                      */
                     std::string m_errMsg;
                     bool m_errMsgHasBeenSet;

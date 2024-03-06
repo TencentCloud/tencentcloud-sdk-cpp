@@ -44,15 +44,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取实例名称 如 云镜测试环境
-                     * @return KafkaEnvName 实例名称 如 云镜测试环境
+                     * 获取实例名称 如 主机安全测试环境
+                     * @return KafkaEnvName 实例名称 如 主机安全测试环境
                      * 
                      */
                     std::string GetKafkaEnvName() const;
 
                     /**
-                     * 设置实例名称 如 云镜测试环境
-                     * @param _kafkaEnvName 实例名称 如 云镜测试环境
+                     * 设置实例名称 如 主机安全测试环境
+                     * @param _kafkaEnvName 实例名称 如 主机安全测试环境
                      * 
                      */
                     void SetKafkaEnvName(const std::string& _kafkaEnvName);
@@ -382,7 +382,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 实例名称 如 云镜测试环境
+                     * 实例名称 如 主机安全测试环境
                      */
                     std::string m_kafkaEnvName;
                     bool m_kafkaEnvNameHasBeenSet;

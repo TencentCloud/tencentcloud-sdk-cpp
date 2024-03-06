@@ -21,6 +21,7 @@ set(ess_public_header
 set(ess_public_header_model
   include/tencentcloud/ess/v20201111/model/DescribePersonCertificateResponse.h
   include/tencentcloud/ess/v20201111/model/BillUsageDetail.h
+  include/tencentcloud/ess/v20201111/model/IntentionActionResult.h
   include/tencentcloud/ess/v20201111/model/CreateSealRequest.h
   include/tencentcloud/ess/v20201111/model/ModifyIntegrationDepartmentResponse.h
   include/tencentcloud/ess/v20201111/model/CancelFlowResponse.h
@@ -34,6 +35,7 @@ set(ess_public_header_model
   include/tencentcloud/ess/v20201111/model/CreateFlowApproversResponse.h
   include/tencentcloud/ess/v20201111/model/DescribeFileUrlsResponse.h
   include/tencentcloud/ess/v20201111/model/CreateExtendedServiceAuthInfosRequest.h
+  include/tencentcloud/ess/v20201111/model/IntentionQuestionResult.h
   include/tencentcloud/ess/v20201111/model/AuthInfoDetail.h
   include/tencentcloud/ess/v20201111/model/ModifyApplicationCallbackInfoResponse.h
   include/tencentcloud/ess/v20201111/model/CreateMultiFlowSignQRCodeResponse.h
@@ -69,9 +71,12 @@ set(ess_public_header_model
   include/tencentcloud/ess/v20201111/model/CreateFlowGroupByFilesRequest.h
   include/tencentcloud/ess/v20201111/model/DescribeFlowComponentsResponse.h
   include/tencentcloud/ess/v20201111/model/DescribeFlowEvidenceReportResponse.h
+  include/tencentcloud/ess/v20201111/model/IntentionAction.h
   include/tencentcloud/ess/v20201111/model/CallbackInfo.h
+  include/tencentcloud/ess/v20201111/model/DescribeSignFaceVideoRequest.h
   include/tencentcloud/ess/v20201111/model/DeleteSealPoliciesRequest.h
   include/tencentcloud/ess/v20201111/model/CreateFlowGroupByTemplatesResponse.h
+  include/tencentcloud/ess/v20201111/model/DetectInfoVideoData.h
   include/tencentcloud/ess/v20201111/model/TemplateInfo.h
   include/tencentcloud/ess/v20201111/model/CreateDocumentResponse.h
   include/tencentcloud/ess/v20201111/model/DescribeIntegrationEmployeesRequest.h
@@ -98,6 +103,7 @@ set(ess_public_header_model
   include/tencentcloud/ess/v20201111/model/CreateUserAutoSignSealUrlResponse.h
   include/tencentcloud/ess/v20201111/model/FillApproverInfo.h
   include/tencentcloud/ess/v20201111/model/OccupiedSeal.h
+  include/tencentcloud/ess/v20201111/model/IntentionActionResultDetail.h
   include/tencentcloud/ess/v20201111/model/CreatePersonAuthCertificateImageResponse.h
   include/tencentcloud/ess/v20201111/model/FailedDeleteStaffData.h
   include/tencentcloud/ess/v20201111/model/PdfVerifyResult.h
@@ -134,6 +140,7 @@ set(ess_public_header_model
   include/tencentcloud/ess/v20201111/model/CreateIntegrationDepartmentRequest.h
   include/tencentcloud/ess/v20201111/model/GroupOrganization.h
   include/tencentcloud/ess/v20201111/model/AuthorizedUser.h
+  include/tencentcloud/ess/v20201111/model/Intention.h
   include/tencentcloud/ess/v20201111/model/CreateDocumentRequest.h
   include/tencentcloud/ess/v20201111/model/RemindFlowRecords.h
   include/tencentcloud/ess/v20201111/model/CreatePreparedPersonalEsignResponse.h
@@ -205,6 +212,7 @@ set(ess_public_header_model
   include/tencentcloud/ess/v20201111/model/CreateFlowGroupByTemplatesRequest.h
   include/tencentcloud/ess/v20201111/model/DescribeBillUsageDetailResponse.h
   include/tencentcloud/ess/v20201111/model/CreateUserAutoSignEnableUrlResponse.h
+  include/tencentcloud/ess/v20201111/model/DescribeSignFaceVideoResponse.h
   include/tencentcloud/ess/v20201111/model/SignUrl.h
   include/tencentcloud/ess/v20201111/model/VerifyPdfResponse.h
   include/tencentcloud/ess/v20201111/model/CreateFlowGroupSignReviewRequest.h
@@ -234,12 +242,14 @@ set(ess_public_header_model
   include/tencentcloud/ess/v20201111/model/DescribeOrganizationGroupOrganizationsResponse.h
   include/tencentcloud/ess/v20201111/model/DescribeExtendedServiceAuthInfosResponse.h
   include/tencentcloud/ess/v20201111/model/CcInfo.h
+  include/tencentcloud/ess/v20201111/model/IntentionQuestion.h
   )
 
 set(ess_src
   src/v20201111/EssClient.cpp
   src/v20201111/model/DescribePersonCertificateResponse.cpp
   src/v20201111/model/BillUsageDetail.cpp
+  src/v20201111/model/IntentionActionResult.cpp
   src/v20201111/model/CreateSealRequest.cpp
   src/v20201111/model/ModifyIntegrationDepartmentResponse.cpp
   src/v20201111/model/CancelFlowResponse.cpp
@@ -253,6 +263,7 @@ set(ess_src
   src/v20201111/model/CreateFlowApproversResponse.cpp
   src/v20201111/model/DescribeFileUrlsResponse.cpp
   src/v20201111/model/CreateExtendedServiceAuthInfosRequest.cpp
+  src/v20201111/model/IntentionQuestionResult.cpp
   src/v20201111/model/AuthInfoDetail.cpp
   src/v20201111/model/ModifyApplicationCallbackInfoResponse.cpp
   src/v20201111/model/CreateMultiFlowSignQRCodeResponse.cpp
@@ -288,9 +299,12 @@ set(ess_src
   src/v20201111/model/CreateFlowGroupByFilesRequest.cpp
   src/v20201111/model/DescribeFlowComponentsResponse.cpp
   src/v20201111/model/DescribeFlowEvidenceReportResponse.cpp
+  src/v20201111/model/IntentionAction.cpp
   src/v20201111/model/CallbackInfo.cpp
+  src/v20201111/model/DescribeSignFaceVideoRequest.cpp
   src/v20201111/model/DeleteSealPoliciesRequest.cpp
   src/v20201111/model/CreateFlowGroupByTemplatesResponse.cpp
+  src/v20201111/model/DetectInfoVideoData.cpp
   src/v20201111/model/TemplateInfo.cpp
   src/v20201111/model/CreateDocumentResponse.cpp
   src/v20201111/model/DescribeIntegrationEmployeesRequest.cpp
@@ -317,6 +331,7 @@ set(ess_src
   src/v20201111/model/CreateUserAutoSignSealUrlResponse.cpp
   src/v20201111/model/FillApproverInfo.cpp
   src/v20201111/model/OccupiedSeal.cpp
+  src/v20201111/model/IntentionActionResultDetail.cpp
   src/v20201111/model/CreatePersonAuthCertificateImageResponse.cpp
   src/v20201111/model/FailedDeleteStaffData.cpp
   src/v20201111/model/PdfVerifyResult.cpp
@@ -353,6 +368,7 @@ set(ess_src
   src/v20201111/model/CreateIntegrationDepartmentRequest.cpp
   src/v20201111/model/GroupOrganization.cpp
   src/v20201111/model/AuthorizedUser.cpp
+  src/v20201111/model/Intention.cpp
   src/v20201111/model/CreateDocumentRequest.cpp
   src/v20201111/model/RemindFlowRecords.cpp
   src/v20201111/model/CreatePreparedPersonalEsignResponse.cpp
@@ -424,6 +440,7 @@ set(ess_src
   src/v20201111/model/CreateFlowGroupByTemplatesRequest.cpp
   src/v20201111/model/DescribeBillUsageDetailResponse.cpp
   src/v20201111/model/CreateUserAutoSignEnableUrlResponse.cpp
+  src/v20201111/model/DescribeSignFaceVideoResponse.cpp
   src/v20201111/model/SignUrl.cpp
   src/v20201111/model/VerifyPdfResponse.cpp
   src/v20201111/model/CreateFlowGroupSignReviewRequest.cpp
@@ -453,6 +470,7 @@ set(ess_src
   src/v20201111/model/DescribeOrganizationGroupOrganizationsResponse.cpp
   src/v20201111/model/DescribeExtendedServiceAuthInfosResponse.cpp
   src/v20201111/model/CcInfo.cpp
+  src/v20201111/model/IntentionQuestion.cpp
   )
 
 set(ess_include

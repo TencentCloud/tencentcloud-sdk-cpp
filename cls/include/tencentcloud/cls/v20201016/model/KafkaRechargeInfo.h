@@ -295,18 +295,18 @@ namespace TencentCloud
                     bool ConsumerGroupNameHasBeenSet() const;
 
                     /**
-                     * 获取状态   status 1: 运行中, 2: 暂停 ...
+                     * 获取状态 ，1：运行中；2：暂停。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return Status 状态   status 1: 运行中, 2: 暂停 ...
+                     * @return Status 状态 ，1：运行中；2：暂停。
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetStatus() const;
 
                     /**
-                     * 设置状态   status 1: 运行中, 2: 暂停 ...
+                     * 设置状态 ，1：运行中；2：暂停。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _status 状态   status 1: 运行中, 2: 暂停 ...
+                     * @param _status 状态 ，1：运行中；2：暂停。
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -491,7 +491,7 @@ namespace TencentCloud
                     bool m_consumerGroupNameHasBeenSet;
 
                     /**
-                     * 状态   status 1: 运行中, 2: 暂停 ...
+                     * 状态 ，1：运行中；2：暂停。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_status;

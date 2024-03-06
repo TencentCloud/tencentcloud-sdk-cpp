@@ -47,18 +47,22 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取是否投递 TAG 信息
+                     * 获取是否投递 TAG 信息。
+当EnableTag为true时，表示投递TAG元信息。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return EnableTag 是否投递 TAG 信息
+                     * @return EnableTag 是否投递 TAG 信息。
+当EnableTag为true时，表示投递TAG元信息。
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     bool GetEnableTag() const;
 
                     /**
-                     * 设置是否投递 TAG 信息
+                     * 设置是否投递 TAG 信息。
+当EnableTag为true时，表示投递TAG元信息。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _enableTag 是否投递 TAG 信息
+                     * @param _enableTag 是否投递 TAG 信息。
+当EnableTag为true时，表示投递TAG元信息。
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -97,18 +101,54 @@ namespace TencentCloud
                     bool MetaFieldsHasBeenSet() const;
 
                     /**
-                     * 获取当EnableTag为true时，必须填写TagJsonNotTiled字段，TagJsonNotTiled用于标识tag信息是否json平铺，TagJsonNotTiled为true时不平铺，false时平铺
+                     * 获取当EnableTag为true时，必须填写TagJsonNotTiled字段。
+TagJsonNotTiled用于标识tag信息是否json平铺。
+
+TagJsonNotTiled为true时不平铺，示例：
+TAG信息：`{"__TAG__":{"fieldA":200,"fieldB":"text"}}`
+不平铺：`{"__TAG__":{"fieldA":200,"fieldB":"text"}}`
+
+TagJsonNotTiled为false时平铺，示例：
+TAG信息：`{"__TAG__":{"fieldA":200,"fieldB":"text"}}`
+平铺：`{"__TAG__.fieldA":200,"__TAG__.fieldB":"text"}`
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return TagJsonNotTiled 当EnableTag为true时，必须填写TagJsonNotTiled字段，TagJsonNotTiled用于标识tag信息是否json平铺，TagJsonNotTiled为true时不平铺，false时平铺
+                     * @return TagJsonNotTiled 当EnableTag为true时，必须填写TagJsonNotTiled字段。
+TagJsonNotTiled用于标识tag信息是否json平铺。
+
+TagJsonNotTiled为true时不平铺，示例：
+TAG信息：`{"__TAG__":{"fieldA":200,"fieldB":"text"}}`
+不平铺：`{"__TAG__":{"fieldA":200,"fieldB":"text"}}`
+
+TagJsonNotTiled为false时平铺，示例：
+TAG信息：`{"__TAG__":{"fieldA":200,"fieldB":"text"}}`
+平铺：`{"__TAG__.fieldA":200,"__TAG__.fieldB":"text"}`
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     bool GetTagJsonNotTiled() const;
 
                     /**
-                     * 设置当EnableTag为true时，必须填写TagJsonNotTiled字段，TagJsonNotTiled用于标识tag信息是否json平铺，TagJsonNotTiled为true时不平铺，false时平铺
+                     * 设置当EnableTag为true时，必须填写TagJsonNotTiled字段。
+TagJsonNotTiled用于标识tag信息是否json平铺。
+
+TagJsonNotTiled为true时不平铺，示例：
+TAG信息：`{"__TAG__":{"fieldA":200,"fieldB":"text"}}`
+不平铺：`{"__TAG__":{"fieldA":200,"fieldB":"text"}}`
+
+TagJsonNotTiled为false时平铺，示例：
+TAG信息：`{"__TAG__":{"fieldA":200,"fieldB":"text"}}`
+平铺：`{"__TAG__.fieldA":200,"__TAG__.fieldB":"text"}`
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _tagJsonNotTiled 当EnableTag为true时，必须填写TagJsonNotTiled字段，TagJsonNotTiled用于标识tag信息是否json平铺，TagJsonNotTiled为true时不平铺，false时平铺
+                     * @param _tagJsonNotTiled 当EnableTag为true时，必须填写TagJsonNotTiled字段。
+TagJsonNotTiled用于标识tag信息是否json平铺。
+
+TagJsonNotTiled为true时不平铺，示例：
+TAG信息：`{"__TAG__":{"fieldA":200,"fieldB":"text"}}`
+不平铺：`{"__TAG__":{"fieldA":200,"fieldB":"text"}}`
+
+TagJsonNotTiled为false时平铺，示例：
+TAG信息：`{"__TAG__":{"fieldA":200,"fieldB":"text"}}`
+平铺：`{"__TAG__.fieldA":200,"__TAG__.fieldB":"text"}`
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -122,18 +162,18 @@ namespace TencentCloud
                     bool TagJsonNotTiledHasBeenSet() const;
 
                     /**
-                     * 获取投递时间戳精度，可选项 [1:秒；2:毫秒] ，默认是秒
+                     * 获取投递时间戳精度，可选项 [1：秒；2：毫秒] ，默认是1。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return TimestampAccuracy 投递时间戳精度，可选项 [1:秒；2:毫秒] ，默认是秒
+                     * @return TimestampAccuracy 投递时间戳精度，可选项 [1：秒；2：毫秒] ，默认是1。
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetTimestampAccuracy() const;
 
                     /**
-                     * 设置投递时间戳精度，可选项 [1:秒；2:毫秒] ，默认是秒
+                     * 设置投递时间戳精度，可选项 [1：秒；2：毫秒] ，默认是1。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _timestampAccuracy 投递时间戳精度，可选项 [1:秒；2:毫秒] ，默认是秒
+                     * @param _timestampAccuracy 投递时间戳精度，可选项 [1：秒；2：毫秒] ，默认是1。
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -146,10 +186,64 @@ namespace TencentCloud
                      */
                     bool TimestampAccuracyHasBeenSet() const;
 
+                    /**
+                     * 获取投递Json格式。
+JsonType为0：和原始日志一致，不转义。示例：
+日志原文：`{"a":"aa", "b":{"b1":"b1b1", "c1":"c1c1"}}`
+投递到Ckafka：`{"a":"aa", "b":{"b1":"b1b1", "c1":"c1c1"}}`
+
+JsonType为1：转义。示例：
+日志原文：`{"a":"aa", "b":{"b1":"b1b1", "c1":"c1c1"}}`
+投递到Ckafka：`{"a":"aa","b":"{\"b1\":\"b1b1\", \"c1\":\"c1c1\"}"}`
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return JsonType 投递Json格式。
+JsonType为0：和原始日志一致，不转义。示例：
+日志原文：`{"a":"aa", "b":{"b1":"b1b1", "c1":"c1c1"}}`
+投递到Ckafka：`{"a":"aa", "b":{"b1":"b1b1", "c1":"c1c1"}}`
+
+JsonType为1：转义。示例：
+日志原文：`{"a":"aa", "b":{"b1":"b1b1", "c1":"c1c1"}}`
+投递到Ckafka：`{"a":"aa","b":"{\"b1\":\"b1b1\", \"c1\":\"c1c1\"}"}`
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    int64_t GetJsonType() const;
+
+                    /**
+                     * 设置投递Json格式。
+JsonType为0：和原始日志一致，不转义。示例：
+日志原文：`{"a":"aa", "b":{"b1":"b1b1", "c1":"c1c1"}}`
+投递到Ckafka：`{"a":"aa", "b":{"b1":"b1b1", "c1":"c1c1"}}`
+
+JsonType为1：转义。示例：
+日志原文：`{"a":"aa", "b":{"b1":"b1b1", "c1":"c1c1"}}`
+投递到Ckafka：`{"a":"aa","b":"{\"b1\":\"b1b1\", \"c1\":\"c1c1\"}"}`
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _jsonType 投递Json格式。
+JsonType为0：和原始日志一致，不转义。示例：
+日志原文：`{"a":"aa", "b":{"b1":"b1b1", "c1":"c1c1"}}`
+投递到Ckafka：`{"a":"aa", "b":{"b1":"b1b1", "c1":"c1c1"}}`
+
+JsonType为1：转义。示例：
+日志原文：`{"a":"aa", "b":{"b1":"b1b1", "c1":"c1c1"}}`
+投递到Ckafka：`{"a":"aa","b":"{\"b1\":\"b1b1\", \"c1\":\"c1c1\"}"}`
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetJsonType(const int64_t& _jsonType);
+
+                    /**
+                     * 判断参数 JsonType 是否已赋值
+                     * @return JsonType 是否已赋值
+                     * 
+                     */
+                    bool JsonTypeHasBeenSet() const;
+
                 private:
 
                     /**
-                     * 是否投递 TAG 信息
+                     * 是否投递 TAG 信息。
+当EnableTag为true时，表示投递TAG元信息。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     bool m_enableTag;
@@ -163,18 +257,41 @@ namespace TencentCloud
                     bool m_metaFieldsHasBeenSet;
 
                     /**
-                     * 当EnableTag为true时，必须填写TagJsonNotTiled字段，TagJsonNotTiled用于标识tag信息是否json平铺，TagJsonNotTiled为true时不平铺，false时平铺
+                     * 当EnableTag为true时，必须填写TagJsonNotTiled字段。
+TagJsonNotTiled用于标识tag信息是否json平铺。
+
+TagJsonNotTiled为true时不平铺，示例：
+TAG信息：`{"__TAG__":{"fieldA":200,"fieldB":"text"}}`
+不平铺：`{"__TAG__":{"fieldA":200,"fieldB":"text"}}`
+
+TagJsonNotTiled为false时平铺，示例：
+TAG信息：`{"__TAG__":{"fieldA":200,"fieldB":"text"}}`
+平铺：`{"__TAG__.fieldA":200,"__TAG__.fieldB":"text"}`
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     bool m_tagJsonNotTiled;
                     bool m_tagJsonNotTiledHasBeenSet;
 
                     /**
-                     * 投递时间戳精度，可选项 [1:秒；2:毫秒] ，默认是秒
+                     * 投递时间戳精度，可选项 [1：秒；2：毫秒] ，默认是1。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_timestampAccuracy;
                     bool m_timestampAccuracyHasBeenSet;
+
+                    /**
+                     * 投递Json格式。
+JsonType为0：和原始日志一致，不转义。示例：
+日志原文：`{"a":"aa", "b":{"b1":"b1b1", "c1":"c1c1"}}`
+投递到Ckafka：`{"a":"aa", "b":{"b1":"b1b1", "c1":"c1c1"}}`
+
+JsonType为1：转义。示例：
+日志原文：`{"a":"aa", "b":{"b1":"b1b1", "c1":"c1c1"}}`
+投递到Ckafka：`{"a":"aa","b":"{\"b1\":\"b1b1\", \"c1\":\"c1c1\"}"}`
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    int64_t m_jsonType;
+                    bool m_jsonTypeHasBeenSet;
 
                 };
             }

@@ -25,7 +25,8 @@ using namespace std;
 DescribeDSPARDBDataAssetByComplianceIdRequest::DescribeDSPARDBDataAssetByComplianceIdRequest() :
     m_dspaIdHasBeenSet(false),
     m_complianceIdHasBeenSet(false),
-    m_dataSourceTypeHasBeenSet(false)
+    m_dataSourceTypeHasBeenSet(false),
+    m_buildTypeHasBeenSet(false)
 {
 }
 
@@ -58,6 +59,14 @@ string DescribeDSPARDBDataAssetByComplianceIdRequest::ToJsonString() const
         string key = "DataSourceType";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_dataSourceType.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_buildTypeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "BuildType";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_buildType.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -114,6 +123,22 @@ void DescribeDSPARDBDataAssetByComplianceIdRequest::SetDataSourceType(const stri
 bool DescribeDSPARDBDataAssetByComplianceIdRequest::DataSourceTypeHasBeenSet() const
 {
     return m_dataSourceTypeHasBeenSet;
+}
+
+string DescribeDSPARDBDataAssetByComplianceIdRequest::GetBuildType() const
+{
+    return m_buildType;
+}
+
+void DescribeDSPARDBDataAssetByComplianceIdRequest::SetBuildType(const string& _buildType)
+{
+    m_buildType = _buildType;
+    m_buildTypeHasBeenSet = true;
+}
+
+bool DescribeDSPARDBDataAssetByComplianceIdRequest::BuildTypeHasBeenSet() const
+{
+    return m_buildTypeHasBeenSet;
 }
 
 

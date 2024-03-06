@@ -38,7 +38,9 @@ DspaCOSDataAssetDetail::DspaCOSDataAssetDetail() :
     m_levelIdHasBeenSet(false),
     m_fileResultIdHasBeenSet(false),
     m_dataSourceNameHasBeenSet(false),
-    m_categoryFullPathHasBeenSet(false)
+    m_categoryFullPathHasBeenSet(false),
+    m_identifyTypeHasBeenSet(false),
+    m_checkStatusHasBeenSet(false)
 {
 }
 
@@ -227,6 +229,26 @@ CoreInternalOutcome DspaCOSDataAssetDetail::Deserialize(const rapidjson::Value &
         m_categoryFullPathHasBeenSet = true;
     }
 
+    if (value.HasMember("IdentifyType") && !value["IdentifyType"].IsNull())
+    {
+        if (!value["IdentifyType"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `DspaCOSDataAssetDetail.IdentifyType` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_identifyType = value["IdentifyType"].GetInt64();
+        m_identifyTypeHasBeenSet = true;
+    }
+
+    if (value.HasMember("CheckStatus") && !value["CheckStatus"].IsNull())
+    {
+        if (!value["CheckStatus"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `DspaCOSDataAssetDetail.CheckStatus` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_checkStatus = value["CheckStatus"].GetInt64();
+        m_checkStatusHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -376,6 +398,22 @@ void DspaCOSDataAssetDetail::ToJsonObject(rapidjson::Value &value, rapidjson::Do
         string key = "CategoryFullPath";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_categoryFullPath.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_identifyTypeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "IdentifyType";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_identifyType, allocator);
+    }
+
+    if (m_checkStatusHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "CheckStatus";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_checkStatus, allocator);
     }
 
 }
@@ -667,5 +705,37 @@ void DspaCOSDataAssetDetail::SetCategoryFullPath(const string& _categoryFullPath
 bool DspaCOSDataAssetDetail::CategoryFullPathHasBeenSet() const
 {
     return m_categoryFullPathHasBeenSet;
+}
+
+int64_t DspaCOSDataAssetDetail::GetIdentifyType() const
+{
+    return m_identifyType;
+}
+
+void DspaCOSDataAssetDetail::SetIdentifyType(const int64_t& _identifyType)
+{
+    m_identifyType = _identifyType;
+    m_identifyTypeHasBeenSet = true;
+}
+
+bool DspaCOSDataAssetDetail::IdentifyTypeHasBeenSet() const
+{
+    return m_identifyTypeHasBeenSet;
+}
+
+int64_t DspaCOSDataAssetDetail::GetCheckStatus() const
+{
+    return m_checkStatus;
+}
+
+void DspaCOSDataAssetDetail::SetCheckStatus(const int64_t& _checkStatus)
+{
+    m_checkStatus = _checkStatus;
+    m_checkStatusHasBeenSet = true;
+}
+
+bool DspaCOSDataAssetDetail::CheckStatusHasBeenSet() const
+{
+    return m_checkStatusHasBeenSet;
 }
 

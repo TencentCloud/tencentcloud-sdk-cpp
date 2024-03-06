@@ -34,7 +34,8 @@ SubscriptionData::SubscriptionData() :
     m_consumerLagHasBeenSet(false),
     m_lastUpdateTimeHasBeenSet(false),
     m_maxRetryTimesHasBeenSet(false),
-    m_consumeMessageOrderlyHasBeenSet(false)
+    m_consumeMessageOrderlyHasBeenSet(false),
+    m_messageModelHasBeenSet(false)
 {
 }
 
@@ -183,6 +184,16 @@ CoreInternalOutcome SubscriptionData::Deserialize(const rapidjson::Value &value)
         m_consumeMessageOrderlyHasBeenSet = true;
     }
 
+    if (value.HasMember("MessageModel") && !value["MessageModel"].IsNull())
+    {
+        if (!value["MessageModel"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `SubscriptionData.MessageModel` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_messageModel = string(value["MessageModel"].GetString());
+        m_messageModelHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -300,6 +311,14 @@ void SubscriptionData::ToJsonObject(rapidjson::Value &value, rapidjson::Document
         string key = "ConsumeMessageOrderly";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_consumeMessageOrderly, allocator);
+    }
+
+    if (m_messageModelHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "MessageModel";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_messageModel.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -527,5 +546,21 @@ void SubscriptionData::SetConsumeMessageOrderly(const bool& _consumeMessageOrder
 bool SubscriptionData::ConsumeMessageOrderlyHasBeenSet() const
 {
     return m_consumeMessageOrderlyHasBeenSet;
+}
+
+string SubscriptionData::GetMessageModel() const
+{
+    return m_messageModel;
+}
+
+void SubscriptionData::SetMessageModel(const string& _messageModel)
+{
+    m_messageModel = _messageModel;
+    m_messageModelHasBeenSet = true;
+}
+
+bool SubscriptionData::MessageModelHasBeenSet() const
+{
+    return m_messageModelHasBeenSet;
 }
 

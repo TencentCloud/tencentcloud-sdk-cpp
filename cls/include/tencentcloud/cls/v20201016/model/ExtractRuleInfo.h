@@ -50,18 +50,18 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取时间字段的key名字，time_key和time_format必须成对出现
+                     * 获取时间字段的key名字，TikeKey和TimeFormat必须成对出现
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return TimeKey 时间字段的key名字，time_key和time_format必须成对出现
+                     * @return TimeKey 时间字段的key名字，TikeKey和TimeFormat必须成对出现
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetTimeKey() const;
 
                     /**
-                     * 设置时间字段的key名字，time_key和time_format必须成对出现
+                     * 设置时间字段的key名字，TikeKey和TimeFormat必须成对出现
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _timeKey 时间字段的key名字，time_key和time_format必须成对出现
+                     * @param _timeKey 时间字段的key名字，TikeKey和TimeFormat必须成对出现
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -100,18 +100,18 @@ namespace TencentCloud
                     bool TimeFormatHasBeenSet() const;
 
                     /**
-                     * 获取分隔符类型日志的分隔符，只有log_type为delimiter_log时有效
+                     * 获取分隔符类型日志的分隔符，只有LogType为delimiter_log时有效
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return Delimiter 分隔符类型日志的分隔符，只有log_type为delimiter_log时有效
+                     * @return Delimiter 分隔符类型日志的分隔符，只有LogType为delimiter_log时有效
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetDelimiter() const;
 
                     /**
-                     * 设置分隔符类型日志的分隔符，只有log_type为delimiter_log时有效
+                     * 设置分隔符类型日志的分隔符，只有LogType为delimiter_log时有效
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _delimiter 分隔符类型日志的分隔符，只有log_type为delimiter_log时有效
+                     * @param _delimiter 分隔符类型日志的分隔符，只有LogType为delimiter_log时有效
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -125,18 +125,18 @@ namespace TencentCloud
                     bool DelimiterHasBeenSet() const;
 
                     /**
-                     * 获取整条日志匹配规则，只有log_type为fullregex_log时有效
+                     * 获取整条日志匹配规则，只有LogType为fullregex_log时有效
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return LogRegex 整条日志匹配规则，只有log_type为fullregex_log时有效
+                     * @return LogRegex 整条日志匹配规则，只有LogType为fullregex_log时有效
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetLogRegex() const;
 
                     /**
-                     * 设置整条日志匹配规则，只有log_type为fullregex_log时有效
+                     * 设置整条日志匹配规则，只有LogType为fullregex_log时有效
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _logRegex 整条日志匹配规则，只有log_type为fullregex_log时有效
+                     * @param _logRegex 整条日志匹配规则，只有LogType为fullregex_log时有效
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -150,18 +150,18 @@ namespace TencentCloud
                     bool LogRegexHasBeenSet() const;
 
                     /**
-                     * 获取行首匹配规则，只有log_type为multiline_log或fullregex_log时有效
+                     * 获取行首匹配规则，只有LogType为multiline_log或fullregex_log时有效
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return BeginRegex 行首匹配规则，只有log_type为multiline_log或fullregex_log时有效
+                     * @return BeginRegex 行首匹配规则，只有LogType为multiline_log或fullregex_log时有效
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetBeginRegex() const;
 
                     /**
-                     * 设置行首匹配规则，只有log_type为multiline_log或fullregex_log时有效
+                     * 设置行首匹配规则，只有LogType为multiline_log或fullregex_log时有效
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _beginRegex 行首匹配规则，只有log_type为multiline_log或fullregex_log时有效
+                     * @param _beginRegex 行首匹配规则，只有LogType为multiline_log或fullregex_log时有效
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -175,18 +175,18 @@ namespace TencentCloud
                     bool BeginRegexHasBeenSet() const;
 
                     /**
-                     * 获取取的每个字段的key名字，为空的key代表丢弃这个字段，只有log_type为delimiter_log时有效，json_log的日志使用json本身的key。限制100个。
+                     * 获取取的每个字段的key名字，为空的key代表丢弃这个字段，只有LogType为delimiter_log时有效，json_log的日志使用json本身的key。限制100个。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return Keys 取的每个字段的key名字，为空的key代表丢弃这个字段，只有log_type为delimiter_log时有效，json_log的日志使用json本身的key。限制100个。
+                     * @return Keys 取的每个字段的key名字，为空的key代表丢弃这个字段，只有LogType为delimiter_log时有效，json_log的日志使用json本身的key。限制100个。
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<std::string> GetKeys() const;
 
                     /**
-                     * 设置取的每个字段的key名字，为空的key代表丢弃这个字段，只有log_type为delimiter_log时有效，json_log的日志使用json本身的key。限制100个。
+                     * 设置取的每个字段的key名字，为空的key代表丢弃这个字段，只有LogType为delimiter_log时有效，json_log的日志使用json本身的key。限制100个。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _keys 取的每个字段的key名字，为空的key代表丢弃这个字段，只有log_type为delimiter_log时有效，json_log的日志使用json本身的key。限制100个。
+                     * @param _keys 取的每个字段的key名字，为空的key代表丢弃这个字段，只有LogType为delimiter_log时有效，json_log的日志使用json本身的key。限制100个。
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -275,18 +275,18 @@ namespace TencentCloud
                     bool UnMatchLogKeyHasBeenSet() const;
 
                     /**
-                     * 获取增量采集模式下的回溯数据量，默认-1（全量采集）
+                     * 获取增量采集模式下的回溯数据量，默认-1（全量采集）；其他非负数表示增量采集（从最新的位置，往前采集${Backtracking}字节（Byte）的日志）最大支持1073741824（1G）。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return Backtracking 增量采集模式下的回溯数据量，默认-1（全量采集）
+                     * @return Backtracking 增量采集模式下的回溯数据量，默认-1（全量采集）；其他非负数表示增量采集（从最新的位置，往前采集${Backtracking}字节（Byte）的日志）最大支持1073741824（1G）。
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetBacktracking() const;
 
                     /**
-                     * 设置增量采集模式下的回溯数据量，默认-1（全量采集）
+                     * 设置增量采集模式下的回溯数据量，默认-1（全量采集）；其他非负数表示增量采集（从最新的位置，往前采集${Backtracking}字节（Byte）的日志）最大支持1073741824（1G）。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _backtracking 增量采集模式下的回溯数据量，默认-1（全量采集）
+                     * @param _backtracking 增量采集模式下的回溯数据量，默认-1（全量采集）；其他非负数表示增量采集（从最新的位置，往前采集${Backtracking}字节（Byte）的日志）最大支持1073741824（1G）。
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -535,7 +535,7 @@ auto：自动匹配rfc3164或者rfc5424其中一种协议
                 private:
 
                     /**
-                     * 时间字段的key名字，time_key和time_format必须成对出现
+                     * 时间字段的key名字，TikeKey和TimeFormat必须成对出现
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_timeKey;
@@ -549,28 +549,28 @@ auto：自动匹配rfc3164或者rfc5424其中一种协议
                     bool m_timeFormatHasBeenSet;
 
                     /**
-                     * 分隔符类型日志的分隔符，只有log_type为delimiter_log时有效
+                     * 分隔符类型日志的分隔符，只有LogType为delimiter_log时有效
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_delimiter;
                     bool m_delimiterHasBeenSet;
 
                     /**
-                     * 整条日志匹配规则，只有log_type为fullregex_log时有效
+                     * 整条日志匹配规则，只有LogType为fullregex_log时有效
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_logRegex;
                     bool m_logRegexHasBeenSet;
 
                     /**
-                     * 行首匹配规则，只有log_type为multiline_log或fullregex_log时有效
+                     * 行首匹配规则，只有LogType为multiline_log或fullregex_log时有效
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_beginRegex;
                     bool m_beginRegexHasBeenSet;
 
                     /**
-                     * 取的每个字段的key名字，为空的key代表丢弃这个字段，只有log_type为delimiter_log时有效，json_log的日志使用json本身的key。限制100个。
+                     * 取的每个字段的key名字，为空的key代表丢弃这个字段，只有LogType为delimiter_log时有效，json_log的日志使用json本身的key。限制100个。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<std::string> m_keys;
@@ -598,7 +598,7 @@ auto：自动匹配rfc3164或者rfc5424其中一种协议
                     bool m_unMatchLogKeyHasBeenSet;
 
                     /**
-                     * 增量采集模式下的回溯数据量，默认-1（全量采集）
+                     * 增量采集模式下的回溯数据量，默认-1（全量采集）；其他非负数表示增量采集（从最新的位置，往前采集${Backtracking}字节（Byte）的日志）最大支持1073741824（1G）。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_backtracking;

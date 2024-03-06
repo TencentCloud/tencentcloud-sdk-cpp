@@ -39,7 +39,9 @@ DspaUserResourceMeta::DspaUserResourceMeta() :
     m_protocolHasBeenSet(false),
     m_resourceVersionHasBeenSet(false),
     m_resourceAuthTypeHasBeenSet(false),
-    m_resourceAuthAccountHasBeenSet(false)
+    m_resourceAuthAccountHasBeenSet(false),
+    m_instanceTypeHasBeenSet(false),
+    m_instanceValueHasBeenSet(false)
 {
 }
 
@@ -238,6 +240,26 @@ CoreInternalOutcome DspaUserResourceMeta::Deserialize(const rapidjson::Value &va
         m_resourceAuthAccountHasBeenSet = true;
     }
 
+    if (value.HasMember("InstanceType") && !value["InstanceType"].IsNull())
+    {
+        if (!value["InstanceType"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `DspaUserResourceMeta.InstanceType` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_instanceType = string(value["InstanceType"].GetString());
+        m_instanceTypeHasBeenSet = true;
+    }
+
+    if (value.HasMember("InstanceValue") && !value["InstanceValue"].IsNull())
+    {
+        if (!value["InstanceValue"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `DspaUserResourceMeta.InstanceValue` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_instanceValue = string(value["InstanceValue"].GetString());
+        m_instanceValueHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -395,6 +417,22 @@ void DspaUserResourceMeta::ToJsonObject(rapidjson::Value &value, rapidjson::Docu
         string key = "ResourceAuthAccount";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_resourceAuthAccount.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_instanceTypeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "InstanceType";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_instanceType.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_instanceValueHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "InstanceValue";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_instanceValue.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -702,5 +740,37 @@ void DspaUserResourceMeta::SetResourceAuthAccount(const string& _resourceAuthAcc
 bool DspaUserResourceMeta::ResourceAuthAccountHasBeenSet() const
 {
     return m_resourceAuthAccountHasBeenSet;
+}
+
+string DspaUserResourceMeta::GetInstanceType() const
+{
+    return m_instanceType;
+}
+
+void DspaUserResourceMeta::SetInstanceType(const string& _instanceType)
+{
+    m_instanceType = _instanceType;
+    m_instanceTypeHasBeenSet = true;
+}
+
+bool DspaUserResourceMeta::InstanceTypeHasBeenSet() const
+{
+    return m_instanceTypeHasBeenSet;
+}
+
+string DspaUserResourceMeta::GetInstanceValue() const
+{
+    return m_instanceValue;
+}
+
+void DspaUserResourceMeta::SetInstanceValue(const string& _instanceValue)
+{
+    m_instanceValue = _instanceValue;
+    m_instanceValueHasBeenSet = true;
+}
+
+bool DspaUserResourceMeta::InstanceValueHasBeenSet() const
+{
+    return m_instanceValueHasBeenSet;
 }
 

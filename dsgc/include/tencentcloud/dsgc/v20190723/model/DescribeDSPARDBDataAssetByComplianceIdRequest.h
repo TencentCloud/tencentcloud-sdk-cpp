@@ -105,6 +105,27 @@ namespace TencentCloud
                      */
                     bool DataSourceTypeHasBeenSet() const;
 
+                    /**
+                     * 获取自建还是云上
+                     * @return BuildType 自建还是云上
+                     * 
+                     */
+                    std::string GetBuildType() const;
+
+                    /**
+                     * 设置自建还是云上
+                     * @param _buildType 自建还是云上
+                     * 
+                     */
+                    void SetBuildType(const std::string& _buildType);
+
+                    /**
+                     * 判断参数 BuildType 是否已赋值
+                     * @return BuildType 是否已赋值
+                     * 
+                     */
+                    bool BuildTypeHasBeenSet() const;
+
                 private:
 
                     /**
@@ -124,6 +145,12 @@ namespace TencentCloud
                      */
                     std::string m_dataSourceType;
                     bool m_dataSourceTypeHasBeenSet;
+
+                    /**
+                     * 自建还是云上
+                     */
+                    std::string m_buildType;
+                    bool m_buildTypeHasBeenSet;
 
                 };
             }

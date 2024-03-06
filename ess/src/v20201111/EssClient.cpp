@@ -2534,6 +2534,49 @@ EssClient::DescribePersonCertificateOutcomeCallable EssClient::DescribePersonCer
     return task->get_future();
 }
 
+EssClient::DescribeSignFaceVideoOutcome EssClient::DescribeSignFaceVideo(const DescribeSignFaceVideoRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeSignFaceVideo");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeSignFaceVideoResponse rsp = DescribeSignFaceVideoResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeSignFaceVideoOutcome(rsp);
+        else
+            return DescribeSignFaceVideoOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeSignFaceVideoOutcome(outcome.GetError());
+    }
+}
+
+void EssClient::DescribeSignFaceVideoAsync(const DescribeSignFaceVideoRequest& request, const DescribeSignFaceVideoAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeSignFaceVideo(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+EssClient::DescribeSignFaceVideoOutcomeCallable EssClient::DescribeSignFaceVideoCallable(const DescribeSignFaceVideoRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeSignFaceVideoOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeSignFaceVideo(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 EssClient::DescribeThirdPartyAuthCodeOutcome EssClient::DescribeThirdPartyAuthCode(const DescribeThirdPartyAuthCodeRequest &request)
 {
     auto outcome = MakeRequest(request, "DescribeThirdPartyAuthCode");

@@ -34,7 +34,9 @@ CreateDSPASelfBuildMetaResourceRequest::CreateDSPASelfBuildMetaResourceRequest()
     m_resourceAccessTypeHasBeenSet(false),
     m_userNameHasBeenSet(false),
     m_passwordHasBeenSet(false),
-    m_resourceNameHasBeenSet(false)
+    m_resourceNameHasBeenSet(false),
+    m_instanceTypeHasBeenSet(false),
+    m_instanceValueHasBeenSet(false)
 {
 }
 
@@ -139,6 +141,22 @@ string CreateDSPASelfBuildMetaResourceRequest::ToJsonString() const
         string key = "ResourceName";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_resourceName.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_instanceTypeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "InstanceType";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_instanceType.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_instanceValueHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "InstanceValue";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_instanceValue.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -339,6 +357,38 @@ void CreateDSPASelfBuildMetaResourceRequest::SetResourceName(const string& _reso
 bool CreateDSPASelfBuildMetaResourceRequest::ResourceNameHasBeenSet() const
 {
     return m_resourceNameHasBeenSet;
+}
+
+string CreateDSPASelfBuildMetaResourceRequest::GetInstanceType() const
+{
+    return m_instanceType;
+}
+
+void CreateDSPASelfBuildMetaResourceRequest::SetInstanceType(const string& _instanceType)
+{
+    m_instanceType = _instanceType;
+    m_instanceTypeHasBeenSet = true;
+}
+
+bool CreateDSPASelfBuildMetaResourceRequest::InstanceTypeHasBeenSet() const
+{
+    return m_instanceTypeHasBeenSet;
+}
+
+string CreateDSPASelfBuildMetaResourceRequest::GetInstanceValue() const
+{
+    return m_instanceValue;
+}
+
+void CreateDSPASelfBuildMetaResourceRequest::SetInstanceValue(const string& _instanceValue)
+{
+    m_instanceValue = _instanceValue;
+    m_instanceValueHasBeenSet = true;
+}
+
+bool CreateDSPASelfBuildMetaResourceRequest::InstanceValueHasBeenSet() const
+{
+    return m_instanceValueHasBeenSet;
 }
 
 

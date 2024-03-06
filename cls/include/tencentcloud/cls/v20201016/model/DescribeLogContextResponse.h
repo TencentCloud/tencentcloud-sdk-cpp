@@ -59,8 +59,8 @@ namespace TencentCloud
                     bool LogContextInfosHasBeenSet() const;
 
                     /**
-                     * 获取上文日志是否已经返回
-                     * @return PrevOver 上文日志是否已经返回
+                     * 获取上文日志是否已经返回完成（当PrevOver为false，表示有上文日志还未全部返回）。
+                     * @return PrevOver 上文日志是否已经返回完成（当PrevOver为false，表示有上文日志还未全部返回）。
                      * 
                      */
                     bool GetPrevOver() const;
@@ -73,8 +73,8 @@ namespace TencentCloud
                     bool PrevOverHasBeenSet() const;
 
                     /**
-                     * 获取下文日志是否已经返回
-                     * @return NextOver 下文日志是否已经返回
+                     * 获取下文日志是否已经返回完成（当NextOver为false，表示有下文日志还未全部返回）。
+                     * @return NextOver 下文日志是否已经返回完成（当NextOver为false，表示有下文日志还未全部返回）。
                      * 
                      */
                     bool GetNextOver() const;
@@ -95,13 +95,13 @@ namespace TencentCloud
                     bool m_logContextInfosHasBeenSet;
 
                     /**
-                     * 上文日志是否已经返回
+                     * 上文日志是否已经返回完成（当PrevOver为false，表示有上文日志还未全部返回）。
                      */
                     bool m_prevOver;
                     bool m_prevOverHasBeenSet;
 
                     /**
-                     * 下文日志是否已经返回
+                     * 下文日志是否已经返回完成（当NextOver为false，表示有下文日志还未全部返回）。
                      */
                     bool m_nextOver;
                     bool m_nextOverHasBeenSet;

@@ -47,15 +47,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取消费格式 0:全文；1:json
-                     * @return Format 消费格式 0:全文；1:json
+                     * 获取消费数据格式。 0：原始内容；1：JSON。
+                     * @return Format 消费数据格式。 0：原始内容；1：JSON。
                      * 
                      */
                     int64_t GetFormat() const;
 
                     /**
-                     * 设置消费格式 0:全文；1:json
-                     * @param _format 消费格式 0:全文；1:json
+                     * 设置消费数据格式。 0：原始内容；1：JSON。
+                     * @param _format 消费数据格式。 0：原始内容；1：JSON。
                      * 
                      */
                     void SetFormat(const int64_t& _format);
@@ -122,26 +122,50 @@ Format为0时，此字段不需要赋值
                     bool MetaFieldsHasBeenSet() const;
 
                     /**
-                     * 获取tag数据处理方式：
-1:不平铺（默认值）
-2:平铺
+                     * 获取tag数据处理方式：1:不平铺（默认值）；2:平铺。
+
+不平铺示例：
+TAG信息：`{"__TAG__":{"fieldA":200,"fieldB":"text"}}`
+不平铺：`{"__TAG__":{"fieldA":200,"fieldB":"text"}}`
+
+平铺示例：
+TAG信息：`{"__TAG__":{"fieldA":200,"fieldB":"text"}}`
+平铺：`{"__TAG__.fieldA":200,"__TAG__.fieldB":"text"}`
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return TagTransaction tag数据处理方式：
-1:不平铺（默认值）
-2:平铺
+                     * @return TagTransaction tag数据处理方式：1:不平铺（默认值）；2:平铺。
+
+不平铺示例：
+TAG信息：`{"__TAG__":{"fieldA":200,"fieldB":"text"}}`
+不平铺：`{"__TAG__":{"fieldA":200,"fieldB":"text"}}`
+
+平铺示例：
+TAG信息：`{"__TAG__":{"fieldA":200,"fieldB":"text"}}`
+平铺：`{"__TAG__.fieldA":200,"__TAG__.fieldB":"text"}`
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetTagTransaction() const;
 
                     /**
-                     * 设置tag数据处理方式：
-1:不平铺（默认值）
-2:平铺
+                     * 设置tag数据处理方式：1:不平铺（默认值）；2:平铺。
+
+不平铺示例：
+TAG信息：`{"__TAG__":{"fieldA":200,"fieldB":"text"}}`
+不平铺：`{"__TAG__":{"fieldA":200,"fieldB":"text"}}`
+
+平铺示例：
+TAG信息：`{"__TAG__":{"fieldA":200,"fieldB":"text"}}`
+平铺：`{"__TAG__.fieldA":200,"__TAG__.fieldB":"text"}`
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _tagTransaction tag数据处理方式：
-1:不平铺（默认值）
-2:平铺
+                     * @param _tagTransaction tag数据处理方式：1:不平铺（默认值）；2:平铺。
+
+不平铺示例：
+TAG信息：`{"__TAG__":{"fieldA":200,"fieldB":"text"}}`
+不平铺：`{"__TAG__":{"fieldA":200,"fieldB":"text"}}`
+
+平铺示例：
+TAG信息：`{"__TAG__":{"fieldA":200,"fieldB":"text"}}`
+平铺：`{"__TAG__.fieldA":200,"__TAG__.fieldB":"text"}`
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -158,9 +182,27 @@ Format为0时，此字段不需要赋值
                      * 获取消费数据Json格式：
 1：不转义（默认格式）
 2：转义
+
+投递Json格式。
+JsonType为1：和原始日志一致，不转义。示例：
+日志原文：`{"a":"aa", "b":{"b1":"b1b1", "c1":"c1c1"}}`
+投递到Ckafka：`{"a":"aa", "b":{"b1":"b1b1", "c1":"c1c1"}}`
+
+JsonType为2：转义。示例：
+日志原文：`{"a":"aa", "b":{"b1":"b1b1", "c1":"c1c1"}}`
+投递到Ckafka：`{"a":"aa","b":"{\"b1\":\"b1b1\", \"c1\":\"c1c1\"}"}`
                      * @return JsonType 消费数据Json格式：
 1：不转义（默认格式）
 2：转义
+
+投递Json格式。
+JsonType为1：和原始日志一致，不转义。示例：
+日志原文：`{"a":"aa", "b":{"b1":"b1b1", "c1":"c1c1"}}`
+投递到Ckafka：`{"a":"aa", "b":{"b1":"b1b1", "c1":"c1c1"}}`
+
+JsonType为2：转义。示例：
+日志原文：`{"a":"aa", "b":{"b1":"b1b1", "c1":"c1c1"}}`
+投递到Ckafka：`{"a":"aa","b":"{\"b1\":\"b1b1\", \"c1\":\"c1c1\"}"}`
                      * 
                      */
                     int64_t GetJsonType() const;
@@ -169,9 +211,27 @@ Format为0时，此字段不需要赋值
                      * 设置消费数据Json格式：
 1：不转义（默认格式）
 2：转义
+
+投递Json格式。
+JsonType为1：和原始日志一致，不转义。示例：
+日志原文：`{"a":"aa", "b":{"b1":"b1b1", "c1":"c1c1"}}`
+投递到Ckafka：`{"a":"aa", "b":{"b1":"b1b1", "c1":"c1c1"}}`
+
+JsonType为2：转义。示例：
+日志原文：`{"a":"aa", "b":{"b1":"b1b1", "c1":"c1c1"}}`
+投递到Ckafka：`{"a":"aa","b":"{\"b1\":\"b1b1\", \"c1\":\"c1c1\"}"}`
                      * @param _jsonType 消费数据Json格式：
 1：不转义（默认格式）
 2：转义
+
+投递Json格式。
+JsonType为1：和原始日志一致，不转义。示例：
+日志原文：`{"a":"aa", "b":{"b1":"b1b1", "c1":"c1c1"}}`
+投递到Ckafka：`{"a":"aa", "b":{"b1":"b1b1", "c1":"c1c1"}}`
+
+JsonType为2：转义。示例：
+日志原文：`{"a":"aa", "b":{"b1":"b1b1", "c1":"c1c1"}}`
+投递到Ckafka：`{"a":"aa","b":"{\"b1\":\"b1b1\", \"c1\":\"c1c1\"}"}`
                      * 
                      */
                     void SetJsonType(const int64_t& _jsonType);
@@ -186,7 +246,7 @@ Format为0时，此字段不需要赋值
                 private:
 
                     /**
-                     * 消费格式 0:全文；1:json
+                     * 消费数据格式。 0：原始内容；1：JSON。
                      */
                     int64_t m_format;
                     bool m_formatHasBeenSet;
@@ -207,9 +267,15 @@ Format为0时，此字段不需要赋值
                     bool m_metaFieldsHasBeenSet;
 
                     /**
-                     * tag数据处理方式：
-1:不平铺（默认值）
-2:平铺
+                     * tag数据处理方式：1:不平铺（默认值）；2:平铺。
+
+不平铺示例：
+TAG信息：`{"__TAG__":{"fieldA":200,"fieldB":"text"}}`
+不平铺：`{"__TAG__":{"fieldA":200,"fieldB":"text"}}`
+
+平铺示例：
+TAG信息：`{"__TAG__":{"fieldA":200,"fieldB":"text"}}`
+平铺：`{"__TAG__.fieldA":200,"__TAG__.fieldB":"text"}`
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_tagTransaction;
@@ -219,6 +285,15 @@ Format为0时，此字段不需要赋值
                      * 消费数据Json格式：
 1：不转义（默认格式）
 2：转义
+
+投递Json格式。
+JsonType为1：和原始日志一致，不转义。示例：
+日志原文：`{"a":"aa", "b":{"b1":"b1b1", "c1":"c1c1"}}`
+投递到Ckafka：`{"a":"aa", "b":{"b1":"b1b1", "c1":"c1c1"}}`
+
+JsonType为2：转义。示例：
+日志原文：`{"a":"aa", "b":{"b1":"b1b1", "c1":"c1c1"}}`
+投递到Ckafka：`{"a":"aa","b":"{\"b1\":\"b1b1\", \"c1\":\"c1c1\"}"}`
                      */
                     int64_t m_jsonType;
                     bool m_jsonTypeHasBeenSet;

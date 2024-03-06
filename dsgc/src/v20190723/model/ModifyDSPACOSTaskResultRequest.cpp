@@ -26,7 +26,10 @@ ModifyDSPACOSTaskResultRequest::ModifyDSPACOSTaskResultRequest() :
     m_dspaIdHasBeenSet(false),
     m_complianceIdHasBeenSet(false),
     m_fileResultIdHasBeenSet(false),
-    m_isSetNonSensitiveFileHasBeenSet(false)
+    m_isSetNonSensitiveFileHasBeenSet(false),
+    m_fileNameHasBeenSet(false),
+    m_bucketNameHasBeenSet(false),
+    m_dataSourceIdHasBeenSet(false)
 {
 }
 
@@ -67,6 +70,30 @@ string ModifyDSPACOSTaskResultRequest::ToJsonString() const
         string key = "IsSetNonSensitiveFile";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_isSetNonSensitiveFile, allocator);
+    }
+
+    if (m_fileNameHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "FileName";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_fileName.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_bucketNameHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "BucketName";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_bucketName.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_dataSourceIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "DataSourceId";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_dataSourceId.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -139,6 +166,54 @@ void ModifyDSPACOSTaskResultRequest::SetIsSetNonSensitiveFile(const bool& _isSet
 bool ModifyDSPACOSTaskResultRequest::IsSetNonSensitiveFileHasBeenSet() const
 {
     return m_isSetNonSensitiveFileHasBeenSet;
+}
+
+string ModifyDSPACOSTaskResultRequest::GetFileName() const
+{
+    return m_fileName;
+}
+
+void ModifyDSPACOSTaskResultRequest::SetFileName(const string& _fileName)
+{
+    m_fileName = _fileName;
+    m_fileNameHasBeenSet = true;
+}
+
+bool ModifyDSPACOSTaskResultRequest::FileNameHasBeenSet() const
+{
+    return m_fileNameHasBeenSet;
+}
+
+string ModifyDSPACOSTaskResultRequest::GetBucketName() const
+{
+    return m_bucketName;
+}
+
+void ModifyDSPACOSTaskResultRequest::SetBucketName(const string& _bucketName)
+{
+    m_bucketName = _bucketName;
+    m_bucketNameHasBeenSet = true;
+}
+
+bool ModifyDSPACOSTaskResultRequest::BucketNameHasBeenSet() const
+{
+    return m_bucketNameHasBeenSet;
+}
+
+string ModifyDSPACOSTaskResultRequest::GetDataSourceId() const
+{
+    return m_dataSourceId;
+}
+
+void ModifyDSPACOSTaskResultRequest::SetDataSourceId(const string& _dataSourceId)
+{
+    m_dataSourceId = _dataSourceId;
+    m_dataSourceIdHasBeenSet = true;
+}
+
+bool ModifyDSPACOSTaskResultRequest::DataSourceIdHasBeenSet() const
+{
+    return m_dataSourceIdHasBeenSet;
 }
 
 

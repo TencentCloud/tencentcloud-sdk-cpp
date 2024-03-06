@@ -85,15 +85,15 @@ namespace TencentCloud
                     bool BTimeHasBeenSet() const;
 
                     /**
-                     * 获取日志包序号
-                     * @return PkgId 日志包序号
+                     * 获取日志包序号。SearchLog接口返回信息中Results结构体中的PkgId。
+                     * @return PkgId 日志包序号。SearchLog接口返回信息中Results结构体中的PkgId。
                      * 
                      */
                     std::string GetPkgId() const;
 
                     /**
-                     * 设置日志包序号
-                     * @param _pkgId 日志包序号
+                     * 设置日志包序号。SearchLog接口返回信息中Results结构体中的PkgId。
+                     * @param _pkgId 日志包序号。SearchLog接口返回信息中Results结构体中的PkgId。
                      * 
                      */
                     void SetPkgId(const std::string& _pkgId);
@@ -106,15 +106,19 @@ namespace TencentCloud
                     bool PkgIdHasBeenSet() const;
 
                     /**
-                     * 获取日志包内一条日志的序号
-                     * @return PkgLogId 日志包内一条日志的序号
+                     * 获取日志包内一条日志的序号。
+SearchLog接口返回信息中Results结构中的PkgLogId。
+                     * @return PkgLogId 日志包内一条日志的序号。
+SearchLog接口返回信息中Results结构中的PkgLogId。
                      * 
                      */
                     int64_t GetPkgLogId() const;
 
                     /**
-                     * 设置日志包内一条日志的序号
-                     * @param _pkgLogId 日志包内一条日志的序号
+                     * 设置日志包内一条日志的序号。
+SearchLog接口返回信息中Results结构中的PkgLogId。
+                     * @param _pkgLogId 日志包内一条日志的序号。
+SearchLog接口返回信息中Results结构中的PkgLogId。
                      * 
                      */
                     void SetPkgLogId(const int64_t& _pkgLogId);
@@ -127,15 +131,15 @@ namespace TencentCloud
                     bool PkgLogIdHasBeenSet() const;
 
                     /**
-                     * 获取上文日志条数,  默认值10
-                     * @return PrevLogs 上文日志条数,  默认值10
+                     * 获取前${PrevLogs}条日志，默认值10。
+                     * @return PrevLogs 前${PrevLogs}条日志，默认值10。
                      * 
                      */
                     int64_t GetPrevLogs() const;
 
                     /**
-                     * 设置上文日志条数,  默认值10
-                     * @param _prevLogs 上文日志条数,  默认值10
+                     * 设置前${PrevLogs}条日志，默认值10。
+                     * @param _prevLogs 前${PrevLogs}条日志，默认值10。
                      * 
                      */
                     void SetPrevLogs(const int64_t& _prevLogs);
@@ -148,15 +152,15 @@ namespace TencentCloud
                     bool PrevLogsHasBeenSet() const;
 
                     /**
-                     * 获取下文日志条数,  默认值10
-                     * @return NextLogs 下文日志条数,  默认值10
+                     * 获取后${NextLogs}条日志，默认值10。
+                     * @return NextLogs 后${NextLogs}条日志，默认值10。
                      * 
                      */
                     int64_t GetNextLogs() const;
 
                     /**
-                     * 设置下文日志条数,  默认值10
-                     * @param _nextLogs 下文日志条数,  默认值10
+                     * 设置后${NextLogs}条日志，默认值10。
+                     * @param _nextLogs 后${NextLogs}条日志，默认值10。
                      * 
                      */
                     void SetNextLogs(const int64_t& _nextLogs);
@@ -183,25 +187,26 @@ namespace TencentCloud
                     bool m_bTimeHasBeenSet;
 
                     /**
-                     * 日志包序号
+                     * 日志包序号。SearchLog接口返回信息中Results结构体中的PkgId。
                      */
                     std::string m_pkgId;
                     bool m_pkgIdHasBeenSet;
 
                     /**
-                     * 日志包内一条日志的序号
+                     * 日志包内一条日志的序号。
+SearchLog接口返回信息中Results结构中的PkgLogId。
                      */
                     int64_t m_pkgLogId;
                     bool m_pkgLogIdHasBeenSet;
 
                     /**
-                     * 上文日志条数,  默认值10
+                     * 前${PrevLogs}条日志，默认值10。
                      */
                     int64_t m_prevLogs;
                     bool m_prevLogsHasBeenSet;
 
                     /**
-                     * 下文日志条数,  默认值10
+                     * 后${NextLogs}条日志，默认值10。
                      */
                     int64_t m_nextLogs;
                     bool m_nextLogsHasBeenSet;

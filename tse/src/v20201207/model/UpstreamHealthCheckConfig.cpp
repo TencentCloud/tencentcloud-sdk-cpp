@@ -29,7 +29,8 @@ UpstreamHealthCheckConfig::UpstreamHealthCheckConfig() :
     m_failuresHasBeenSet(false),
     m_timeoutsHasBeenSet(false),
     m_healthyHttpStatusesHasBeenSet(false),
-    m_unhealthyHttpStatusesHasBeenSet(false)
+    m_unhealthyHttpStatusesHasBeenSet(false),
+    m_ignoreZeroWeightNodesHasBeenSet(false)
 {
 }
 
@@ -148,6 +149,16 @@ CoreInternalOutcome UpstreamHealthCheckConfig::Deserialize(const rapidjson::Valu
         m_unhealthyHttpStatusesHasBeenSet = true;
     }
 
+    if (value.HasMember("IgnoreZeroWeightNodes") && !value["IgnoreZeroWeightNodes"].IsNull())
+    {
+        if (!value["IgnoreZeroWeightNodes"].IsBool())
+        {
+            return CoreInternalOutcome(Core::Error("response `UpstreamHealthCheckConfig.IgnoreZeroWeightNodes` IsBool=false incorrectly").SetRequestId(requestId));
+        }
+        m_ignoreZeroWeightNodes = value["IgnoreZeroWeightNodes"].GetBool();
+        m_ignoreZeroWeightNodesHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -237,6 +248,14 @@ void UpstreamHealthCheckConfig::ToJsonObject(rapidjson::Value &value, rapidjson:
         {
             value[key.c_str()].PushBack(rapidjson::Value().SetUint64(*itr), allocator);
         }
+    }
+
+    if (m_ignoreZeroWeightNodesHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "IgnoreZeroWeightNodes";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_ignoreZeroWeightNodes, allocator);
     }
 
 }
@@ -384,5 +403,21 @@ void UpstreamHealthCheckConfig::SetUnhealthyHttpStatuses(const vector<uint64_t>&
 bool UpstreamHealthCheckConfig::UnhealthyHttpStatusesHasBeenSet() const
 {
     return m_unhealthyHttpStatusesHasBeenSet;
+}
+
+bool UpstreamHealthCheckConfig::GetIgnoreZeroWeightNodes() const
+{
+    return m_ignoreZeroWeightNodes;
+}
+
+void UpstreamHealthCheckConfig::SetIgnoreZeroWeightNodes(const bool& _ignoreZeroWeightNodes)
+{
+    m_ignoreZeroWeightNodes = _ignoreZeroWeightNodes;
+    m_ignoreZeroWeightNodesHasBeenSet = true;
+}
+
+bool UpstreamHealthCheckConfig::IgnoreZeroWeightNodesHasBeenSet() const
+{
+    return m_ignoreZeroWeightNodesHasBeenSet;
 }
 

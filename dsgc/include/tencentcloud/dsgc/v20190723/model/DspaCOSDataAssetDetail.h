@@ -448,6 +448,64 @@ namespace TencentCloud
                      */
                     bool CategoryFullPathHasBeenSet() const;
 
+                    /**
+                     * 获取0-系统识别
+1-人工识别
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return IdentifyType 0-系统识别
+1-人工识别
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    int64_t GetIdentifyType() const;
+
+                    /**
+                     * 设置0-系统识别
+1-人工识别
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _identifyType 0-系统识别
+1-人工识别
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetIdentifyType(const int64_t& _identifyType);
+
+                    /**
+                     * 判断参数 IdentifyType 是否已赋值
+                     * @return IdentifyType 是否已赋值
+                     * 
+                     */
+                    bool IdentifyTypeHasBeenSet() const;
+
+                    /**
+                     * 获取0-系统识别
+1-人工识别
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return CheckStatus 0-系统识别
+1-人工识别
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    int64_t GetCheckStatus() const;
+
+                    /**
+                     * 设置0-系统识别
+1-人工识别
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _checkStatus 0-系统识别
+1-人工识别
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetCheckStatus(const int64_t& _checkStatus);
+
+                    /**
+                     * 判断参数 CheckStatus 是否已赋值
+                     * @return CheckStatus 是否已赋值
+                     * 
+                     */
+                    bool CheckStatusHasBeenSet() const;
+
                 private:
 
                     /**
@@ -563,6 +621,22 @@ namespace TencentCloud
                      */
                     std::string m_categoryFullPath;
                     bool m_categoryFullPathHasBeenSet;
+
+                    /**
+                     * 0-系统识别
+1-人工识别
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    int64_t m_identifyType;
+                    bool m_identifyTypeHasBeenSet;
+
+                    /**
+                     * 0-系统识别
+1-人工识别
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    int64_t m_checkStatus;
+                    bool m_checkStatusHasBeenSet;
 
                 };
             }

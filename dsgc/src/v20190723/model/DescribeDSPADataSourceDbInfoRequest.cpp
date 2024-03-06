@@ -24,7 +24,8 @@ using namespace std;
 
 DescribeDSPADataSourceDbInfoRequest::DescribeDSPADataSourceDbInfoRequest() :
     m_dspaIdHasBeenSet(false),
-    m_dataSourceIdHasBeenSet(false)
+    m_dataSourceIdHasBeenSet(false),
+    m_dataSourceTypeHasBeenSet(false)
 {
 }
 
@@ -49,6 +50,14 @@ string DescribeDSPADataSourceDbInfoRequest::ToJsonString() const
         string key = "DataSourceId";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_dataSourceId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_dataSourceTypeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "DataSourceType";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_dataSourceType.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -89,6 +98,22 @@ void DescribeDSPADataSourceDbInfoRequest::SetDataSourceId(const string& _dataSou
 bool DescribeDSPADataSourceDbInfoRequest::DataSourceIdHasBeenSet() const
 {
     return m_dataSourceIdHasBeenSet;
+}
+
+string DescribeDSPADataSourceDbInfoRequest::GetDataSourceType() const
+{
+    return m_dataSourceType;
+}
+
+void DescribeDSPADataSourceDbInfoRequest::SetDataSourceType(const string& _dataSourceType)
+{
+    m_dataSourceType = _dataSourceType;
+    m_dataSourceTypeHasBeenSet = true;
+}
+
+bool DescribeDSPADataSourceDbInfoRequest::DataSourceTypeHasBeenSet() const
+{
+    return m_dataSourceTypeHasBeenSet;
 }
 
 

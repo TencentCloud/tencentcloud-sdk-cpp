@@ -189,6 +189,27 @@ namespace TencentCloud
                      */
                     bool ScaledTpsEnabledHasBeenSet() const;
 
+                    /**
+                     * 获取最大可创建主题数
+                     * @return MaxTopicNum 最大可创建主题数
+                     * 
+                     */
+                    int64_t GetMaxTopicNum() const;
+
+                    /**
+                     * 设置最大可创建主题数
+                     * @param _maxTopicNum 最大可创建主题数
+                     * 
+                     */
+                    void SetMaxTopicNum(const int64_t& _maxTopicNum);
+
+                    /**
+                     * 判断参数 MaxTopicNum 是否已赋值
+                     * @return MaxTopicNum 是否已赋值
+                     * 
+                     */
+                    bool MaxTopicNumHasBeenSet() const;
+
                 private:
 
                     /**
@@ -232,6 +253,12 @@ namespace TencentCloud
                      */
                     bool m_scaledTpsEnabled;
                     bool m_scaledTpsEnabledHasBeenSet;
+
+                    /**
+                     * 最大可创建主题数
+                     */
+                    int64_t m_maxTopicNum;
+                    bool m_maxTopicNumHasBeenSet;
 
                 };
             }

@@ -126,6 +126,69 @@ namespace TencentCloud
                      */
                     bool IsSetNonSensitiveFileHasBeenSet() const;
 
+                    /**
+                     * 获取文件名
+                     * @return FileName 文件名
+                     * 
+                     */
+                    std::string GetFileName() const;
+
+                    /**
+                     * 设置文件名
+                     * @param _fileName 文件名
+                     * 
+                     */
+                    void SetFileName(const std::string& _fileName);
+
+                    /**
+                     * 判断参数 FileName 是否已赋值
+                     * @return FileName 是否已赋值
+                     * 
+                     */
+                    bool FileNameHasBeenSet() const;
+
+                    /**
+                     * 获取桶名
+                     * @return BucketName 桶名
+                     * 
+                     */
+                    std::string GetBucketName() const;
+
+                    /**
+                     * 设置桶名
+                     * @param _bucketName 桶名
+                     * 
+                     */
+                    void SetBucketName(const std::string& _bucketName);
+
+                    /**
+                     * 判断参数 BucketName 是否已赋值
+                     * @return BucketName 是否已赋值
+                     * 
+                     */
+                    bool BucketNameHasBeenSet() const;
+
+                    /**
+                     * 获取数据源id
+                     * @return DataSourceId 数据源id
+                     * 
+                     */
+                    std::string GetDataSourceId() const;
+
+                    /**
+                     * 设置数据源id
+                     * @param _dataSourceId 数据源id
+                     * 
+                     */
+                    void SetDataSourceId(const std::string& _dataSourceId);
+
+                    /**
+                     * 判断参数 DataSourceId 是否已赋值
+                     * @return DataSourceId 是否已赋值
+                     * 
+                     */
+                    bool DataSourceIdHasBeenSet() const;
+
                 private:
 
                     /**
@@ -151,6 +214,24 @@ namespace TencentCloud
                      */
                     bool m_isSetNonSensitiveFile;
                     bool m_isSetNonSensitiveFileHasBeenSet;
+
+                    /**
+                     * 文件名
+                     */
+                    std::string m_fileName;
+                    bool m_fileNameHasBeenSet;
+
+                    /**
+                     * 桶名
+                     */
+                    std::string m_bucketName;
+                    bool m_bucketNameHasBeenSet;
+
+                    /**
+                     * 数据源id
+                     */
+                    std::string m_dataSourceId;
+                    bool m_dataSourceIdHasBeenSet;
 
                 };
             }

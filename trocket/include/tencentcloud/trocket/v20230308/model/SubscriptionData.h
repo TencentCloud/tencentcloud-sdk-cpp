@@ -396,6 +396,39 @@ namespace TencentCloud
                      */
                     bool ConsumeMessageOrderlyHasBeenSet() const;
 
+                    /**
+                     * 获取消费模式: 
+BROADCASTING 广播模式;
+CLUSTERING 集群模式;
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return MessageModel 消费模式: 
+BROADCASTING 广播模式;
+CLUSTERING 集群模式;
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::string GetMessageModel() const;
+
+                    /**
+                     * 设置消费模式: 
+BROADCASTING 广播模式;
+CLUSTERING 集群模式;
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _messageModel 消费模式: 
+BROADCASTING 广播模式;
+CLUSTERING 集群模式;
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetMessageModel(const std::string& _messageModel);
+
+                    /**
+                     * 判断参数 MessageModel 是否已赋值
+                     * @return MessageModel 是否已赋值
+                     * 
+                     */
+                    bool MessageModelHasBeenSet() const;
+
                 private:
 
                     /**
@@ -495,6 +528,15 @@ namespace TencentCloud
                      */
                     bool m_consumeMessageOrderly;
                     bool m_consumeMessageOrderlyHasBeenSet;
+
+                    /**
+                     * 消费模式: 
+BROADCASTING 广播模式;
+CLUSTERING 集群模式;
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_messageModel;
+                    bool m_messageModelHasBeenSet;
 
                 };
             }

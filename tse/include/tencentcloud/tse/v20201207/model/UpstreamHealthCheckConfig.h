@@ -273,6 +273,31 @@ namespace TencentCloud
                      */
                     bool UnhealthyHttpStatusesHasBeenSet() const;
 
+                    /**
+                     * 获取健康检查屏蔽权重为0的节点
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return IgnoreZeroWeightNodes 健康检查屏蔽权重为0的节点
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    bool GetIgnoreZeroWeightNodes() const;
+
+                    /**
+                     * 设置健康检查屏蔽权重为0的节点
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _ignoreZeroWeightNodes 健康检查屏蔽权重为0的节点
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetIgnoreZeroWeightNodes(const bool& _ignoreZeroWeightNodes);
+
+                    /**
+                     * 判断参数 IgnoreZeroWeightNodes 是否已赋值
+                     * @return IgnoreZeroWeightNodes 是否已赋值
+                     * 
+                     */
+                    bool IgnoreZeroWeightNodesHasBeenSet() const;
+
                 private:
 
                     /**
@@ -337,6 +362,13 @@ namespace TencentCloud
                      */
                     std::vector<uint64_t> m_unhealthyHttpStatuses;
                     bool m_unhealthyHttpStatusesHasBeenSet;
+
+                    /**
+                     * 健康检查屏蔽权重为0的节点
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    bool m_ignoreZeroWeightNodes;
+                    bool m_ignoreZeroWeightNodesHasBeenSet;
 
                 };
             }

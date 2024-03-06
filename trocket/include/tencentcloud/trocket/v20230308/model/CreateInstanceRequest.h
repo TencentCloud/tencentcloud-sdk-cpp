@@ -109,13 +109,47 @@ experiment_500,
 basic_1k,
 basic_2k,
 basic_4k,
-basic_6k
+basic_6k,
+pro_4k,
+pro_6k,
+pro_1w,
+pro_2w,
+pro_3w,
+pro_4w,
+pro_5w,
+platinum_6k,
+platinum_1w,
+platinum_2w,
+platinum_4w,
+platinum_10w,
+platinum_15w,
+platinum_20w,
+platinum_40w,
+platinum_60w,
+platinum_100w
                      * @return SkuCode 商品规格，可用规格如下：
 experiment_500,
 basic_1k,
 basic_2k,
 basic_4k,
-basic_6k
+basic_6k,
+pro_4k,
+pro_6k,
+pro_1w,
+pro_2w,
+pro_3w,
+pro_4w,
+pro_5w,
+platinum_6k,
+platinum_1w,
+platinum_2w,
+platinum_4w,
+platinum_10w,
+platinum_15w,
+platinum_20w,
+platinum_40w,
+platinum_60w,
+platinum_100w
                      * 
                      */
                     std::string GetSkuCode() const;
@@ -126,13 +160,47 @@ experiment_500,
 basic_1k,
 basic_2k,
 basic_4k,
-basic_6k
+basic_6k,
+pro_4k,
+pro_6k,
+pro_1w,
+pro_2w,
+pro_3w,
+pro_4w,
+pro_5w,
+platinum_6k,
+platinum_1w,
+platinum_2w,
+platinum_4w,
+platinum_10w,
+platinum_15w,
+platinum_20w,
+platinum_40w,
+platinum_60w,
+platinum_100w
                      * @param _skuCode 商品规格，可用规格如下：
 experiment_500,
 basic_1k,
 basic_2k,
 basic_4k,
-basic_6k
+basic_6k,
+pro_4k,
+pro_6k,
+pro_1w,
+pro_2w,
+pro_3w,
+pro_4w,
+pro_5w,
+platinum_6k,
+platinum_1w,
+platinum_2w,
+platinum_4w,
+platinum_10w,
+platinum_15w,
+platinum_20w,
+platinum_40w,
+platinum_60w,
+platinum_100w
                      * 
                      */
                     void SetSkuCode(const std::string& _skuCode);
@@ -229,15 +297,15 @@ basic_6k
                     bool EnablePublicHasBeenSet() const;
 
                     /**
-                     * 获取公网带宽
-                     * @return Bandwidth 公网带宽
+                     * 获取公网带宽（单位：兆）
+                     * @return Bandwidth 公网带宽（单位：兆）
                      * 
                      */
                     int64_t GetBandwidth() const;
 
                     /**
-                     * 设置公网带宽
-                     * @param _bandwidth 公网带宽
+                     * 设置公网带宽（单位：兆）
+                     * @param _bandwidth 公网带宽（单位：兆）
                      * 
                      */
                     void SetBandwidth(const int64_t& _bandwidth);
@@ -271,15 +339,15 @@ basic_6k
                     bool IpRulesHasBeenSet() const;
 
                     /**
-                     * 获取消息保留时长，小时为单位
-                     * @return MessageRetention 消息保留时长，小时为单位
+                     * 获取消息保留时长（单位：小时）
+                     * @return MessageRetention 消息保留时长（单位：小时）
                      * 
                      */
                     int64_t GetMessageRetention() const;
 
                     /**
-                     * 设置消息保留时长，小时为单位
-                     * @param _messageRetention 消息保留时长，小时为单位
+                     * 设置消息保留时长（单位：小时）
+                     * @param _messageRetention 消息保留时长（单位：小时）
                      * 
                      */
                     void SetMessageRetention(const int64_t& _messageRetention);
@@ -290,6 +358,90 @@ basic_6k
                      * 
                      */
                     bool MessageRetentionHasBeenSet() const;
+
+                    /**
+                     * 获取付费模式（0: 后付费；1: 预付费）
+                     * @return PayMode 付费模式（0: 后付费；1: 预付费）
+                     * 
+                     */
+                    int64_t GetPayMode() const;
+
+                    /**
+                     * 设置付费模式（0: 后付费；1: 预付费）
+                     * @param _payMode 付费模式（0: 后付费；1: 预付费）
+                     * 
+                     */
+                    void SetPayMode(const int64_t& _payMode);
+
+                    /**
+                     * 判断参数 PayMode 是否已赋值
+                     * @return PayMode 是否已赋值
+                     * 
+                     */
+                    bool PayModeHasBeenSet() const;
+
+                    /**
+                     * 获取是否自动续费（0: 不自动续费；1: 自动续费）
+                     * @return RenewFlag 是否自动续费（0: 不自动续费；1: 自动续费）
+                     * 
+                     */
+                    int64_t GetRenewFlag() const;
+
+                    /**
+                     * 设置是否自动续费（0: 不自动续费；1: 自动续费）
+                     * @param _renewFlag 是否自动续费（0: 不自动续费；1: 自动续费）
+                     * 
+                     */
+                    void SetRenewFlag(const int64_t& _renewFlag);
+
+                    /**
+                     * 判断参数 RenewFlag 是否已赋值
+                     * @return RenewFlag 是否已赋值
+                     * 
+                     */
+                    bool RenewFlagHasBeenSet() const;
+
+                    /**
+                     * 获取购买时长（单位：月）
+                     * @return TimeSpan 购买时长（单位：月）
+                     * 
+                     */
+                    int64_t GetTimeSpan() const;
+
+                    /**
+                     * 设置购买时长（单位：月）
+                     * @param _timeSpan 购买时长（单位：月）
+                     * 
+                     */
+                    void SetTimeSpan(const int64_t& _timeSpan);
+
+                    /**
+                     * 判断参数 TimeSpan 是否已赋值
+                     * @return TimeSpan 是否已赋值
+                     * 
+                     */
+                    bool TimeSpanHasBeenSet() const;
+
+                    /**
+                     * 获取最大可创建主题数
+                     * @return MaxTopicNum 最大可创建主题数
+                     * 
+                     */
+                    int64_t GetMaxTopicNum() const;
+
+                    /**
+                     * 设置最大可创建主题数
+                     * @param _maxTopicNum 最大可创建主题数
+                     * 
+                     */
+                    void SetMaxTopicNum(const int64_t& _maxTopicNum);
+
+                    /**
+                     * 判断参数 MaxTopicNum 是否已赋值
+                     * @return MaxTopicNum 是否已赋值
+                     * 
+                     */
+                    bool MaxTopicNumHasBeenSet() const;
 
                 private:
 
@@ -315,7 +467,24 @@ experiment_500,
 basic_1k,
 basic_2k,
 basic_4k,
-basic_6k
+basic_6k,
+pro_4k,
+pro_6k,
+pro_1w,
+pro_2w,
+pro_3w,
+pro_4w,
+pro_5w,
+platinum_6k,
+platinum_1w,
+platinum_2w,
+platinum_4w,
+platinum_10w,
+platinum_15w,
+platinum_20w,
+platinum_40w,
+platinum_60w,
+platinum_100w
                      */
                     std::string m_skuCode;
                     bool m_skuCodeHasBeenSet;
@@ -345,7 +514,7 @@ basic_6k
                     bool m_enablePublicHasBeenSet;
 
                     /**
-                     * 公网带宽
+                     * 公网带宽（单位：兆）
                      */
                     int64_t m_bandwidth;
                     bool m_bandwidthHasBeenSet;
@@ -357,10 +526,34 @@ basic_6k
                     bool m_ipRulesHasBeenSet;
 
                     /**
-                     * 消息保留时长，小时为单位
+                     * 消息保留时长（单位：小时）
                      */
                     int64_t m_messageRetention;
                     bool m_messageRetentionHasBeenSet;
+
+                    /**
+                     * 付费模式（0: 后付费；1: 预付费）
+                     */
+                    int64_t m_payMode;
+                    bool m_payModeHasBeenSet;
+
+                    /**
+                     * 是否自动续费（0: 不自动续费；1: 自动续费）
+                     */
+                    int64_t m_renewFlag;
+                    bool m_renewFlagHasBeenSet;
+
+                    /**
+                     * 购买时长（单位：月）
+                     */
+                    int64_t m_timeSpan;
+                    bool m_timeSpanHasBeenSet;
+
+                    /**
+                     * 最大可创建主题数
+                     */
+                    int64_t m_maxTopicNum;
+                    bool m_maxTopicNumHasBeenSet;
 
                 };
             }

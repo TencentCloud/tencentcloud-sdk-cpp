@@ -43,15 +43,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取VPC实例ID。形如：vpc-f49l6u0z。每次请求的实例的上限为100。参数不支持同时指定VpcIds和Filters。
-                     * @return VpcId VPC实例ID。形如：vpc-f49l6u0z。每次请求的实例的上限为100。参数不支持同时指定VpcIds和Filters。
+                     * 获取VPC实例ID。形如：vpc-f49l6u0z。
+                     * @return VpcId VPC实例ID。形如：vpc-f49l6u0z。
                      * 
                      */
                     std::string GetVpcId() const;
 
                     /**
-                     * 设置VPC实例ID。形如：vpc-f49l6u0z。每次请求的实例的上限为100。参数不支持同时指定VpcIds和Filters。
-                     * @param _vpcId VPC实例ID。形如：vpc-f49l6u0z。每次请求的实例的上限为100。参数不支持同时指定VpcIds和Filters。
+                     * 设置VPC实例ID。形如：vpc-f49l6u0z。
+                     * @param _vpcId VPC实例ID。形如：vpc-f49l6u0z。
                      * 
                      */
                     void SetVpcId(const std::string& _vpcId);
@@ -171,7 +171,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * VPC实例ID。形如：vpc-f49l6u0z。每次请求的实例的上限为100。参数不支持同时指定VpcIds和Filters。
+                     * VPC实例ID。形如：vpc-f49l6u0z。
                      */
                     std::string m_vpcId;
                     bool m_vpcIdHasBeenSet;

@@ -150,7 +150,7 @@ namespace TencentCloud
                 DescribeServiceOverviewOutcomeCallable DescribeServiceOverviewCallable(const Model::DescribeServiceOverviewRequest& request);
 
                 /**
-                 *修改Apm实例接口
+                 *修改APM实例接口
                  * @param req ModifyApmInstanceRequest
                  * @return ModifyApmInstanceOutcome
                  */

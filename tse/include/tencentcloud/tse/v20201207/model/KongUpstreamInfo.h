@@ -547,6 +547,31 @@ namespace TencentCloud
                      */
                     bool HealthStatusHasBeenSet() const;
 
+                    /**
+                     * 获取云函数是否开启CAM鉴权，不填时默认为开启(true)
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return ScfCamAuthEnable 云函数是否开启CAM鉴权，不填时默认为开启(true)
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    bool GetScfCamAuthEnable() const;
+
+                    /**
+                     * 设置云函数是否开启CAM鉴权，不填时默认为开启(true)
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _scfCamAuthEnable 云函数是否开启CAM鉴权，不填时默认为开启(true)
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetScfCamAuthEnable(const bool& _scfCamAuthEnable);
+
+                    /**
+                     * 判断参数 ScfCamAuthEnable 是否已赋值
+                     * @return ScfCamAuthEnable 是否已赋值
+                     * 
+                     */
+                    bool ScfCamAuthEnableHasBeenSet() const;
+
                 private:
 
                     /**
@@ -688,6 +713,13 @@ namespace TencentCloud
                      */
                     std::string m_healthStatus;
                     bool m_healthStatusHasBeenSet;
+
+                    /**
+                     * 云函数是否开启CAM鉴权，不填时默认为开启(true)
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    bool m_scfCamAuthEnable;
+                    bool m_scfCamAuthEnableHasBeenSet;
 
                 };
             }

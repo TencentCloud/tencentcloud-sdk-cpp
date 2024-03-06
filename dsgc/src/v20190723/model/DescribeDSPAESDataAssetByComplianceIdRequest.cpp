@@ -24,7 +24,9 @@ using namespace std;
 
 DescribeDSPAESDataAssetByComplianceIdRequest::DescribeDSPAESDataAssetByComplianceIdRequest() :
     m_dspaIdHasBeenSet(false),
-    m_complianceIdHasBeenSet(false)
+    m_complianceIdHasBeenSet(false),
+    m_buildTypeHasBeenSet(false),
+    m_dataSourceTypeHasBeenSet(false)
 {
 }
 
@@ -49,6 +51,22 @@ string DescribeDSPAESDataAssetByComplianceIdRequest::ToJsonString() const
         string key = "ComplianceId";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_complianceId, allocator);
+    }
+
+    if (m_buildTypeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "BuildType";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_buildType.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_dataSourceTypeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "DataSourceType";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_dataSourceType.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -89,6 +107,38 @@ void DescribeDSPAESDataAssetByComplianceIdRequest::SetComplianceId(const int64_t
 bool DescribeDSPAESDataAssetByComplianceIdRequest::ComplianceIdHasBeenSet() const
 {
     return m_complianceIdHasBeenSet;
+}
+
+string DescribeDSPAESDataAssetByComplianceIdRequest::GetBuildType() const
+{
+    return m_buildType;
+}
+
+void DescribeDSPAESDataAssetByComplianceIdRequest::SetBuildType(const string& _buildType)
+{
+    m_buildType = _buildType;
+    m_buildTypeHasBeenSet = true;
+}
+
+bool DescribeDSPAESDataAssetByComplianceIdRequest::BuildTypeHasBeenSet() const
+{
+    return m_buildTypeHasBeenSet;
+}
+
+string DescribeDSPAESDataAssetByComplianceIdRequest::GetDataSourceType() const
+{
+    return m_dataSourceType;
+}
+
+void DescribeDSPAESDataAssetByComplianceIdRequest::SetDataSourceType(const string& _dataSourceType)
+{
+    m_dataSourceType = _dataSourceType;
+    m_dataSourceTypeHasBeenSet = true;
+}
+
+bool DescribeDSPAESDataAssetByComplianceIdRequest::DataSourceTypeHasBeenSet() const
+{
+    return m_dataSourceTypeHasBeenSet;
 }
 
 

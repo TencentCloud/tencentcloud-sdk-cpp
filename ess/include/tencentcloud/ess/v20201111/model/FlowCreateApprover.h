@@ -27,6 +27,7 @@
 #include <tencentcloud/ess/v20201111/model/RegisterInfo.h>
 #include <tencentcloud/ess/v20201111/model/ApproverOption.h>
 #include <tencentcloud/ess/v20201111/model/Component.h>
+#include <tencentcloud/ess/v20201111/model/Intention.h>
 
 
 namespace TencentCloud
@@ -996,6 +997,43 @@ namespace TencentCloud
                      */
                     bool DeadlineHasBeenSet() const;
 
+                    /**
+                     * 获取视频核身意图配置，可指定问答模式或者点头模式的语音文本。
+
+注:
+ `1.视频认证为白名单功能，使用前请联系对接的客户经理沟通。`
+`2.使用视频认证必须指定签署认证方式为人脸（即ApproverSignTypes）。`
+                     * @return Intention 视频核身意图配置，可指定问答模式或者点头模式的语音文本。
+
+注:
+ `1.视频认证为白名单功能，使用前请联系对接的客户经理沟通。`
+`2.使用视频认证必须指定签署认证方式为人脸（即ApproverSignTypes）。`
+                     * 
+                     */
+                    Intention GetIntention() const;
+
+                    /**
+                     * 设置视频核身意图配置，可指定问答模式或者点头模式的语音文本。
+
+注:
+ `1.视频认证为白名单功能，使用前请联系对接的客户经理沟通。`
+`2.使用视频认证必须指定签署认证方式为人脸（即ApproverSignTypes）。`
+                     * @param _intention 视频核身意图配置，可指定问答模式或者点头模式的语音文本。
+
+注:
+ `1.视频认证为白名单功能，使用前请联系对接的客户经理沟通。`
+`2.使用视频认证必须指定签署认证方式为人脸（即ApproverSignTypes）。`
+                     * 
+                     */
+                    void SetIntention(const Intention& _intention);
+
+                    /**
+                     * 判断参数 Intention 是否已赋值
+                     * @return Intention 是否已赋值
+                     * 
+                     */
+                    bool IntentionHasBeenSet() const;
+
                 private:
 
                     /**
@@ -1254,6 +1292,16 @@ namespace TencentCloud
                      */
                     int64_t m_deadline;
                     bool m_deadlineHasBeenSet;
+
+                    /**
+                     * 视频核身意图配置，可指定问答模式或者点头模式的语音文本。
+
+注:
+ `1.视频认证为白名单功能，使用前请联系对接的客户经理沟通。`
+`2.使用视频认证必须指定签署认证方式为人脸（即ApproverSignTypes）。`
+                     */
+                    Intention m_intention;
+                    bool m_intentionHasBeenSet;
 
                 };
             }

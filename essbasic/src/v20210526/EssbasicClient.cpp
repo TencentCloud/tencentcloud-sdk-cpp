@@ -1631,6 +1631,49 @@ EssbasicClient::ChannelDescribeRolesOutcomeCallable EssbasicClient::ChannelDescr
     return task->get_future();
 }
 
+EssbasicClient::ChannelDescribeSignFaceVideoOutcome EssbasicClient::ChannelDescribeSignFaceVideo(const ChannelDescribeSignFaceVideoRequest &request)
+{
+    auto outcome = MakeRequest(request, "ChannelDescribeSignFaceVideo");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ChannelDescribeSignFaceVideoResponse rsp = ChannelDescribeSignFaceVideoResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ChannelDescribeSignFaceVideoOutcome(rsp);
+        else
+            return ChannelDescribeSignFaceVideoOutcome(o.GetError());
+    }
+    else
+    {
+        return ChannelDescribeSignFaceVideoOutcome(outcome.GetError());
+    }
+}
+
+void EssbasicClient::ChannelDescribeSignFaceVideoAsync(const ChannelDescribeSignFaceVideoRequest& request, const ChannelDescribeSignFaceVideoAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->ChannelDescribeSignFaceVideo(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+EssbasicClient::ChannelDescribeSignFaceVideoOutcomeCallable EssbasicClient::ChannelDescribeSignFaceVideoCallable(const ChannelDescribeSignFaceVideoRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<ChannelDescribeSignFaceVideoOutcome()>>(
+        [this, request]()
+        {
+            return this->ChannelDescribeSignFaceVideo(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 EssbasicClient::ChannelDescribeUserAutoSignStatusOutcome EssbasicClient::ChannelDescribeUserAutoSignStatus(const ChannelDescribeUserAutoSignStatusRequest &request)
 {
     auto outcome = MakeRequest(request, "ChannelDescribeUserAutoSignStatus");

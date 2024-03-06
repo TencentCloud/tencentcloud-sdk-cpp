@@ -95,6 +95,7 @@ set(dasb_public_header_model
   include/tencentcloud/dasb/v20191018/model/DeleteDeviceAccountsRequest.h
   include/tencentcloud/dasb/v20191018/model/DeleteDeviceGroupMembersResponse.h
   include/tencentcloud/dasb/v20191018/model/ModifyDeviceGroupResponse.h
+  include/tencentcloud/dasb/v20191018/model/ModifyOAuthSettingResponse.h
   include/tencentcloud/dasb/v20191018/model/DescribeUserGroupMembersResponse.h
   include/tencentcloud/dasb/v20191018/model/ImportExternalDeviceResponse.h
   include/tencentcloud/dasb/v20191018/model/SearchSessionCommandResponse.h
@@ -105,6 +106,7 @@ set(dasb_public_header_model
   include/tencentcloud/dasb/v20191018/model/DescribeDasbImageIdsRequest.h
   include/tencentcloud/dasb/v20191018/model/CreateDeviceAccountResponse.h
   include/tencentcloud/dasb/v20191018/model/ModifyDeviceGroupRequest.h
+  include/tencentcloud/dasb/v20191018/model/ModifyOAuthSettingRequest.h
   include/tencentcloud/dasb/v20191018/model/Filter.h
   include/tencentcloud/dasb/v20191018/model/DescribeUsersResponse.h
   include/tencentcloud/dasb/v20191018/model/DeployResourceResponse.h
@@ -233,6 +235,7 @@ set(dasb_src
   src/v20191018/model/DeleteDeviceAccountsRequest.cpp
   src/v20191018/model/DeleteDeviceGroupMembersResponse.cpp
   src/v20191018/model/ModifyDeviceGroupResponse.cpp
+  src/v20191018/model/ModifyOAuthSettingResponse.cpp
   src/v20191018/model/DescribeUserGroupMembersResponse.cpp
   src/v20191018/model/ImportExternalDeviceResponse.cpp
   src/v20191018/model/SearchSessionCommandResponse.cpp
@@ -243,6 +246,7 @@ set(dasb_src
   src/v20191018/model/DescribeDasbImageIdsRequest.cpp
   src/v20191018/model/CreateDeviceAccountResponse.cpp
   src/v20191018/model/ModifyDeviceGroupRequest.cpp
+  src/v20191018/model/ModifyOAuthSettingRequest.cpp
   src/v20191018/model/Filter.cpp
   src/v20191018/model/DescribeUsersResponse.cpp
   src/v20191018/model/DeployResourceResponse.cpp

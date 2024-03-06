@@ -155,6 +155,131 @@ namespace TencentCloud
                      */
                     bool RemarkHasBeenSet() const;
 
+                    /**
+                     * 获取4.x的集群id
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return ClusterIdV4 4.x的集群id
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::string GetClusterIdV4() const;
+
+                    /**
+                     * 设置4.x的集群id
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _clusterIdV4 4.x的集群id
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetClusterIdV4(const std::string& _clusterIdV4);
+
+                    /**
+                     * 判断参数 ClusterIdV4 是否已赋值
+                     * @return ClusterIdV4 是否已赋值
+                     * 
+                     */
+                    bool ClusterIdV4HasBeenSet() const;
+
+                    /**
+                     * 获取4.x的命名空间
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return NamespaceV4 4.x的命名空间
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::string GetNamespaceV4() const;
+
+                    /**
+                     * 设置4.x的命名空间
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _namespaceV4 4.x的命名空间
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetNamespaceV4(const std::string& _namespaceV4);
+
+                    /**
+                     * 判断参数 NamespaceV4 是否已赋值
+                     * @return NamespaceV4 是否已赋值
+                     * 
+                     */
+                    bool NamespaceV4HasBeenSet() const;
+
+                    /**
+                     * 获取4.x的主题名称
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return TopicV4 4.x的主题名称
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::string GetTopicV4() const;
+
+                    /**
+                     * 设置4.x的主题名称
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _topicV4 4.x的主题名称
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetTopicV4(const std::string& _topicV4);
+
+                    /**
+                     * 判断参数 TopicV4 是否已赋值
+                     * @return TopicV4 是否已赋值
+                     * 
+                     */
+                    bool TopicV4HasBeenSet() const;
+
+                    /**
+                     * 获取4.x的完整命名空间
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return FullNamespaceV4 4.x的完整命名空间
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::string GetFullNamespaceV4() const;
+
+                    /**
+                     * 设置4.x的完整命名空间
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _fullNamespaceV4 4.x的完整命名空间
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetFullNamespaceV4(const std::string& _fullNamespaceV4);
+
+                    /**
+                     * 判断参数 FullNamespaceV4 是否已赋值
+                     * @return FullNamespaceV4 是否已赋值
+                     * 
+                     */
+                    bool FullNamespaceV4HasBeenSet() const;
+
+                    /**
+                     * 获取消息保留时长
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return MsgTTL 消息保留时长
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    int64_t GetMsgTTL() const;
+
+                    /**
+                     * 设置消息保留时长
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _msgTTL 消息保留时长
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetMsgTTL(const int64_t& _msgTTL);
+
+                    /**
+                     * 判断参数 MsgTTL 是否已赋值
+                     * @return MsgTTL 是否已赋值
+                     * 
+                     */
+                    bool MsgTTLHasBeenSet() const;
+
                 private:
 
                     /**
@@ -187,6 +312,41 @@ namespace TencentCloud
                      */
                     std::string m_remark;
                     bool m_remarkHasBeenSet;
+
+                    /**
+                     * 4.x的集群id
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_clusterIdV4;
+                    bool m_clusterIdV4HasBeenSet;
+
+                    /**
+                     * 4.x的命名空间
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_namespaceV4;
+                    bool m_namespaceV4HasBeenSet;
+
+                    /**
+                     * 4.x的主题名称
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_topicV4;
+                    bool m_topicV4HasBeenSet;
+
+                    /**
+                     * 4.x的完整命名空间
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_fullNamespaceV4;
+                    bool m_fullNamespaceV4HasBeenSet;
+
+                    /**
+                     * 消息保留时长
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    int64_t m_msgTTL;
+                    bool m_msgTTLHasBeenSet;
 
                 };
             }

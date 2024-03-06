@@ -87,15 +87,23 @@ namespace TencentCloud
                     bool EffectiveHasBeenSet() const;
 
                     /**
-                     * 获取是否投递日志的元数据信息，默认为 false
-                     * @return NeedContent 是否投递日志的元数据信息，默认为 false
+                     * 获取是否投递日志的元数据信息，默认为 true。
+当NeedContent为true时：字段Content有效。
+当NeedContent为false时：字段Content无效。
+                     * @return NeedContent 是否投递日志的元数据信息，默认为 true。
+当NeedContent为true时：字段Content有效。
+当NeedContent为false时：字段Content无效。
                      * 
                      */
                     bool GetNeedContent() const;
 
                     /**
-                     * 设置是否投递日志的元数据信息，默认为 false
-                     * @param _needContent 是否投递日志的元数据信息，默认为 false
+                     * 设置是否投递日志的元数据信息，默认为 true。
+当NeedContent为true时：字段Content有效。
+当NeedContent为false时：字段Content无效。
+                     * @param _needContent 是否投递日志的元数据信息，默认为 true。
+当NeedContent为true时：字段Content有效。
+当NeedContent为false时：字段Content无效。
                      * 
                      */
                     void SetNeedContent(const bool& _needContent);
@@ -150,15 +158,15 @@ namespace TencentCloud
                     bool CkafkaHasBeenSet() const;
 
                     /**
-                     * 获取投递时压缩方式，取值0，2，3。[0:NONE；2:SNAPPY；3:LZ4]
-                     * @return Compression 投递时压缩方式，取值0，2，3。[0:NONE；2:SNAPPY；3:LZ4]
+                     * 获取投递时压缩方式，取值0，2，3。[0：NONE；2：SNAPPY；3：LZ4]
+                     * @return Compression 投递时压缩方式，取值0，2，3。[0：NONE；2：SNAPPY；3：LZ4]
                      * 
                      */
                     int64_t GetCompression() const;
 
                     /**
-                     * 设置投递时压缩方式，取值0，2，3。[0:NONE；2:SNAPPY；3:LZ4]
-                     * @param _compression 投递时压缩方式，取值0，2，3。[0:NONE；2:SNAPPY；3:LZ4]
+                     * 设置投递时压缩方式，取值0，2，3。[0：NONE；2：SNAPPY；3：LZ4]
+                     * @param _compression 投递时压缩方式，取值0，2，3。[0：NONE；2：SNAPPY；3：LZ4]
                      * 
                      */
                     void SetCompression(const int64_t& _compression);
@@ -185,7 +193,9 @@ namespace TencentCloud
                     bool m_effectiveHasBeenSet;
 
                     /**
-                     * 是否投递日志的元数据信息，默认为 false
+                     * 是否投递日志的元数据信息，默认为 true。
+当NeedContent为true时：字段Content有效。
+当NeedContent为false时：字段Content无效。
                      */
                     bool m_needContent;
                     bool m_needContentHasBeenSet;
@@ -203,7 +213,7 @@ namespace TencentCloud
                     bool m_ckafkaHasBeenSet;
 
                     /**
-                     * 投递时压缩方式，取值0，2，3。[0:NONE；2:SNAPPY；3:LZ4]
+                     * 投递时压缩方式，取值0，2，3。[0：NONE；2：SNAPPY；3：LZ4]
                      */
                     int64_t m_compression;
                     bool m_compressionHasBeenSet;

@@ -25,7 +25,12 @@ TopicItem::TopicItem() :
     m_topicHasBeenSet(false),
     m_topicTypeHasBeenSet(false),
     m_queueNumHasBeenSet(false),
-    m_remarkHasBeenSet(false)
+    m_remarkHasBeenSet(false),
+    m_clusterIdV4HasBeenSet(false),
+    m_namespaceV4HasBeenSet(false),
+    m_topicV4HasBeenSet(false),
+    m_fullNamespaceV4HasBeenSet(false),
+    m_msgTTLHasBeenSet(false)
 {
 }
 
@@ -84,6 +89,56 @@ CoreInternalOutcome TopicItem::Deserialize(const rapidjson::Value &value)
         m_remarkHasBeenSet = true;
     }
 
+    if (value.HasMember("ClusterIdV4") && !value["ClusterIdV4"].IsNull())
+    {
+        if (!value["ClusterIdV4"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `TopicItem.ClusterIdV4` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_clusterIdV4 = string(value["ClusterIdV4"].GetString());
+        m_clusterIdV4HasBeenSet = true;
+    }
+
+    if (value.HasMember("NamespaceV4") && !value["NamespaceV4"].IsNull())
+    {
+        if (!value["NamespaceV4"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `TopicItem.NamespaceV4` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_namespaceV4 = string(value["NamespaceV4"].GetString());
+        m_namespaceV4HasBeenSet = true;
+    }
+
+    if (value.HasMember("TopicV4") && !value["TopicV4"].IsNull())
+    {
+        if (!value["TopicV4"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `TopicItem.TopicV4` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_topicV4 = string(value["TopicV4"].GetString());
+        m_topicV4HasBeenSet = true;
+    }
+
+    if (value.HasMember("FullNamespaceV4") && !value["FullNamespaceV4"].IsNull())
+    {
+        if (!value["FullNamespaceV4"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `TopicItem.FullNamespaceV4` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_fullNamespaceV4 = string(value["FullNamespaceV4"].GetString());
+        m_fullNamespaceV4HasBeenSet = true;
+    }
+
+    if (value.HasMember("MsgTTL") && !value["MsgTTL"].IsNull())
+    {
+        if (!value["MsgTTL"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `TopicItem.MsgTTL` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_msgTTL = value["MsgTTL"].GetInt64();
+        m_msgTTLHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -129,6 +184,46 @@ void TopicItem::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Alloc
         string key = "Remark";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_remark.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_clusterIdV4HasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ClusterIdV4";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_clusterIdV4.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_namespaceV4HasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "NamespaceV4";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_namespaceV4.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_topicV4HasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "TopicV4";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_topicV4.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_fullNamespaceV4HasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "FullNamespaceV4";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_fullNamespaceV4.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_msgTTLHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "MsgTTL";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_msgTTL, allocator);
     }
 
 }
@@ -212,5 +307,85 @@ void TopicItem::SetRemark(const string& _remark)
 bool TopicItem::RemarkHasBeenSet() const
 {
     return m_remarkHasBeenSet;
+}
+
+string TopicItem::GetClusterIdV4() const
+{
+    return m_clusterIdV4;
+}
+
+void TopicItem::SetClusterIdV4(const string& _clusterIdV4)
+{
+    m_clusterIdV4 = _clusterIdV4;
+    m_clusterIdV4HasBeenSet = true;
+}
+
+bool TopicItem::ClusterIdV4HasBeenSet() const
+{
+    return m_clusterIdV4HasBeenSet;
+}
+
+string TopicItem::GetNamespaceV4() const
+{
+    return m_namespaceV4;
+}
+
+void TopicItem::SetNamespaceV4(const string& _namespaceV4)
+{
+    m_namespaceV4 = _namespaceV4;
+    m_namespaceV4HasBeenSet = true;
+}
+
+bool TopicItem::NamespaceV4HasBeenSet() const
+{
+    return m_namespaceV4HasBeenSet;
+}
+
+string TopicItem::GetTopicV4() const
+{
+    return m_topicV4;
+}
+
+void TopicItem::SetTopicV4(const string& _topicV4)
+{
+    m_topicV4 = _topicV4;
+    m_topicV4HasBeenSet = true;
+}
+
+bool TopicItem::TopicV4HasBeenSet() const
+{
+    return m_topicV4HasBeenSet;
+}
+
+string TopicItem::GetFullNamespaceV4() const
+{
+    return m_fullNamespaceV4;
+}
+
+void TopicItem::SetFullNamespaceV4(const string& _fullNamespaceV4)
+{
+    m_fullNamespaceV4 = _fullNamespaceV4;
+    m_fullNamespaceV4HasBeenSet = true;
+}
+
+bool TopicItem::FullNamespaceV4HasBeenSet() const
+{
+    return m_fullNamespaceV4HasBeenSet;
+}
+
+int64_t TopicItem::GetMsgTTL() const
+{
+    return m_msgTTL;
+}
+
+void TopicItem::SetMsgTTL(const int64_t& _msgTTL)
+{
+    m_msgTTL = _msgTTL;
+    m_msgTTLHasBeenSet = true;
+}
+
+bool TopicItem::MsgTTLHasBeenSet() const
+{
+    return m_msgTTLHasBeenSet;
 }
 

@@ -179,18 +179,18 @@ KafkaType为1时ServerAddr必填
                     bool ServerAddrHasBeenSet() const;
 
                     /**
-                     * 获取ServerAddr是否为加密连接。。
+                     * 获取ServerAddr是否为加密连接。
 KafkaType为1时有效。
-                     * @return IsEncryptionAddr ServerAddr是否为加密连接。。
+                     * @return IsEncryptionAddr ServerAddr是否为加密连接。
 KafkaType为1时有效。
                      * 
                      */
                     bool GetIsEncryptionAddr() const;
 
                     /**
-                     * 设置ServerAddr是否为加密连接。。
+                     * 设置ServerAddr是否为加密连接。
 KafkaType为1时有效。
-                     * @param _isEncryptionAddr ServerAddr是否为加密连接。。
+                     * @param _isEncryptionAddr ServerAddr是否为加密连接。
 KafkaType为1时有效。
                      * 
                      */
@@ -311,7 +311,7 @@ KafkaType为1时ServerAddr必填
                     bool m_serverAddrHasBeenSet;
 
                     /**
-                     * ServerAddr是否为加密连接。。
+                     * ServerAddr是否为加密连接。
 KafkaType为1时有效。
                      */
                     bool m_isEncryptionAddr;

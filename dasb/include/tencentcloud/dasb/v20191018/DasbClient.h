@@ -107,6 +107,8 @@
 #include <tencentcloud/dasb/v20191018/model/ModifyDeviceResponse.h>
 #include <tencentcloud/dasb/v20191018/model/ModifyDeviceGroupRequest.h>
 #include <tencentcloud/dasb/v20191018/model/ModifyDeviceGroupResponse.h>
+#include <tencentcloud/dasb/v20191018/model/ModifyOAuthSettingRequest.h>
+#include <tencentcloud/dasb/v20191018/model/ModifyOAuthSettingResponse.h>
 #include <tencentcloud/dasb/v20191018/model/ModifyResourceRequest.h>
 #include <tencentcloud/dasb/v20191018/model/ModifyResourceResponse.h>
 #include <tencentcloud/dasb/v20191018/model/ModifyUserRequest.h>
@@ -273,6 +275,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::ModifyDeviceGroupResponse> ModifyDeviceGroupOutcome;
                 typedef std::future<ModifyDeviceGroupOutcome> ModifyDeviceGroupOutcomeCallable;
                 typedef std::function<void(const DasbClient*, const Model::ModifyDeviceGroupRequest&, ModifyDeviceGroupOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyDeviceGroupAsyncHandler;
+                typedef Outcome<Core::Error, Model::ModifyOAuthSettingResponse> ModifyOAuthSettingOutcome;
+                typedef std::future<ModifyOAuthSettingOutcome> ModifyOAuthSettingOutcomeCallable;
+                typedef std::function<void(const DasbClient*, const Model::ModifyOAuthSettingRequest&, ModifyOAuthSettingOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyOAuthSettingAsyncHandler;
                 typedef Outcome<Core::Error, Model::ModifyResourceResponse> ModifyResourceOutcome;
                 typedef std::future<ModifyResourceOutcome> ModifyResourceOutcomeCallable;
                 typedef std::function<void(const DasbClient*, const Model::ModifyResourceRequest&, ModifyResourceOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyResourceAsyncHandler;
@@ -692,6 +697,15 @@ namespace TencentCloud
                 ModifyDeviceGroupOutcome ModifyDeviceGroup(const Model::ModifyDeviceGroupRequest &request);
                 void ModifyDeviceGroupAsync(const Model::ModifyDeviceGroupRequest& request, const ModifyDeviceGroupAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 ModifyDeviceGroupOutcomeCallable ModifyDeviceGroupCallable(const Model::ModifyDeviceGroupRequest& request);
+
+                /**
+                 *设置OAuth认证参数
+                 * @param req ModifyOAuthSettingRequest
+                 * @return ModifyOAuthSettingOutcome
+                 */
+                ModifyOAuthSettingOutcome ModifyOAuthSetting(const Model::ModifyOAuthSettingRequest &request);
+                void ModifyOAuthSettingAsync(const Model::ModifyOAuthSettingRequest& request, const ModifyOAuthSettingAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                ModifyOAuthSettingOutcomeCallable ModifyOAuthSettingCallable(const Model::ModifyOAuthSettingRequest& request);
 
                 /**
                  *资源变配

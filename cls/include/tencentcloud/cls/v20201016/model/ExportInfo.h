@@ -278,15 +278,15 @@ namespace TencentCloud
                     bool ToHasBeenSet() const;
 
                     /**
-                     * 获取日志导出路径
-                     * @return CosPath 日志导出路径
+                     * 获取日志导出路径,有效期一个小时，请尽快使用该路径下载。
+                     * @return CosPath 日志导出路径,有效期一个小时，请尽快使用该路径下载。
                      * 
                      */
                     std::string GetCosPath() const;
 
                     /**
-                     * 设置日志导出路径
-                     * @param _cosPath 日志导出路径
+                     * 设置日志导出路径,有效期一个小时，请尽快使用该路径下载。
+                     * @param _cosPath 日志导出路径,有效期一个小时，请尽快使用该路径下载。
                      * 
                      */
                     void SetCosPath(const std::string& _cosPath);
@@ -413,7 +413,7 @@ namespace TencentCloud
                     bool m_toHasBeenSet;
 
                     /**
-                     * 日志导出路径
+                     * 日志导出路径,有效期一个小时，请尽快使用该路径下载。
                      */
                     std::string m_cosPath;
                     bool m_cosPathHasBeenSet;

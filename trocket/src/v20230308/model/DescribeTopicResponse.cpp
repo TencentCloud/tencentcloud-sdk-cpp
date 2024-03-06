@@ -31,7 +31,8 @@ DescribeTopicResponse::DescribeTopicResponse() :
     m_createdTimeHasBeenSet(false),
     m_lastUpdateTimeHasBeenSet(false),
     m_subscriptionCountHasBeenSet(false),
-    m_subscriptionDataHasBeenSet(false)
+    m_subscriptionDataHasBeenSet(false),
+    m_msgTTLHasBeenSet(false)
 {
 }
 
@@ -159,6 +160,16 @@ CoreInternalOutcome DescribeTopicResponse::Deserialize(const string &payload)
         m_subscriptionDataHasBeenSet = true;
     }
 
+    if (rsp.HasMember("MsgTTL") && !rsp["MsgTTL"].IsNull())
+    {
+        if (!rsp["MsgTTL"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `MsgTTL` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_msgTTL = rsp["MsgTTL"].GetInt64();
+        m_msgTTLHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -238,6 +249,14 @@ string DescribeTopicResponse::ToJsonString() const
             value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
             (*itr).ToJsonObject(value[key.c_str()][i], allocator);
         }
+    }
+
+    if (m_msgTTLHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "MsgTTL";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_msgTTL, allocator);
     }
 
     rapidjson::Value iKey(rapidjson::kStringType);
@@ -330,6 +349,16 @@ vector<SubscriptionData> DescribeTopicResponse::GetSubscriptionData() const
 bool DescribeTopicResponse::SubscriptionDataHasBeenSet() const
 {
     return m_subscriptionDataHasBeenSet;
+}
+
+int64_t DescribeTopicResponse::GetMsgTTL() const
+{
+    return m_msgTTL;
+}
+
+bool DescribeTopicResponse::MsgTTLHasBeenSet() const
+{
+    return m_msgTTLHasBeenSet;
 }
 
 

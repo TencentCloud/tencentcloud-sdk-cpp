@@ -45,15 +45,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取任务类型. 1: 指定主题；2:动态创建
-                     * @return FuncType 任务类型. 1: 指定主题；2:动态创建
+                     * 获取任务类型. 1: 指定主题；2:动态创建。详情请参考[创建加工任务文档](https://cloud.tencent.com/document/product/614/63940)。
+                     * @return FuncType 任务类型. 1: 指定主题；2:动态创建。详情请参考[创建加工任务文档](https://cloud.tencent.com/document/product/614/63940)。
                      * 
                      */
                     int64_t GetFuncType() const;
 
                     /**
-                     * 设置任务类型. 1: 指定主题；2:动态创建
-                     * @param _funcType 任务类型. 1: 指定主题；2:动态创建
+                     * 设置任务类型. 1: 指定主题；2:动态创建。详情请参考[创建加工任务文档](https://cloud.tencent.com/document/product/614/63940)。
+                     * @param _funcType 任务类型. 1: 指定主题；2:动态创建。详情请参考[创建加工任务文档](https://cloud.tencent.com/document/product/614/63940)。
                      * 
                      */
                     void SetFuncType(const int64_t& _funcType);
@@ -129,15 +129,19 @@ namespace TencentCloud
                     bool EtlContentHasBeenSet() const;
 
                     /**
-                     * 获取加工类型  1 使用源日志主题中的随机数据，进行加工预览 :2 使用用户自定义测试数据，进行加工预览 3 创建真实加工任务
-                     * @return TaskType 加工类型  1 使用源日志主题中的随机数据，进行加工预览 :2 使用用户自定义测试数据，进行加工预览 3 创建真实加工任务
+                     * 获取加工类型。
+1：使用源日志主题中的随机数据，进行加工预览；2：使用用户自定义测试数据，进行加工预览；3：创建真实加工任务。
+                     * @return TaskType 加工类型。
+1：使用源日志主题中的随机数据，进行加工预览；2：使用用户自定义测试数据，进行加工预览；3：创建真实加工任务。
                      * 
                      */
                     int64_t GetTaskType() const;
 
                     /**
-                     * 设置加工类型  1 使用源日志主题中的随机数据，进行加工预览 :2 使用用户自定义测试数据，进行加工预览 3 创建真实加工任务
-                     * @param _taskType 加工类型  1 使用源日志主题中的随机数据，进行加工预览 :2 使用用户自定义测试数据，进行加工预览 3 创建真实加工任务
+                     * 设置加工类型。
+1：使用源日志主题中的随机数据，进行加工预览；2：使用用户自定义测试数据，进行加工预览；3：创建真实加工任务。
+                     * @param _taskType 加工类型。
+1：使用源日志主题中的随机数据，进行加工预览；2：使用用户自定义测试数据，进行加工预览；3：创建真实加工任务。
                      * 
                      */
                     void SetTaskType(const int64_t& _taskType);
@@ -148,6 +152,27 @@ namespace TencentCloud
                      * 
                      */
                     bool TaskTypeHasBeenSet() const;
+
+                    /**
+                     * 获取加工任务目的topic_id以及别名,当FuncType=1时，该参数必填，当FuncType=2时，无需填写。
+                     * @return DstResources 加工任务目的topic_id以及别名,当FuncType=1时，该参数必填，当FuncType=2时，无需填写。
+                     * 
+                     */
+                    std::vector<DataTransformResouceInfo> GetDstResources() const;
+
+                    /**
+                     * 设置加工任务目的topic_id以及别名,当FuncType=1时，该参数必填，当FuncType=2时，无需填写。
+                     * @param _dstResources 加工任务目的topic_id以及别名,当FuncType=1时，该参数必填，当FuncType=2时，无需填写。
+                     * 
+                     */
+                    void SetDstResources(const std::vector<DataTransformResouceInfo>& _dstResources);
+
+                    /**
+                     * 判断参数 DstResources 是否已赋值
+                     * @return DstResources 是否已赋值
+                     * 
+                     */
+                    bool DstResourcesHasBeenSet() const;
 
                     /**
                      * 获取任务启动状态.   默认为1:开启,  2:关闭
@@ -169,27 +194,6 @@ namespace TencentCloud
                      * 
                      */
                     bool EnableFlagHasBeenSet() const;
-
-                    /**
-                     * 获取加工任务目的topic_id以及别名,当FuncType=1时，该参数必填，当FuncType=2时，无需填写
-                     * @return DstResources 加工任务目的topic_id以及别名,当FuncType=1时，该参数必填，当FuncType=2时，无需填写
-                     * 
-                     */
-                    std::vector<DataTransformResouceInfo> GetDstResources() const;
-
-                    /**
-                     * 设置加工任务目的topic_id以及别名,当FuncType=1时，该参数必填，当FuncType=2时，无需填写
-                     * @param _dstResources 加工任务目的topic_id以及别名,当FuncType=1时，该参数必填，当FuncType=2时，无需填写
-                     * 
-                     */
-                    void SetDstResources(const std::vector<DataTransformResouceInfo>& _dstResources);
-
-                    /**
-                     * 判断参数 DstResources 是否已赋值
-                     * @return DstResources 是否已赋值
-                     * 
-                     */
-                    bool DstResourcesHasBeenSet() const;
 
                     /**
                      * 获取用于预览加工结果的测试数据
@@ -215,7 +219,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 任务类型. 1: 指定主题；2:动态创建
+                     * 任务类型. 1: 指定主题；2:动态创建。详情请参考[创建加工任务文档](https://cloud.tencent.com/document/product/614/63940)。
                      */
                     int64_t m_funcType;
                     bool m_funcTypeHasBeenSet;
@@ -239,22 +243,23 @@ namespace TencentCloud
                     bool m_etlContentHasBeenSet;
 
                     /**
-                     * 加工类型  1 使用源日志主题中的随机数据，进行加工预览 :2 使用用户自定义测试数据，进行加工预览 3 创建真实加工任务
+                     * 加工类型。
+1：使用源日志主题中的随机数据，进行加工预览；2：使用用户自定义测试数据，进行加工预览；3：创建真实加工任务。
                      */
                     int64_t m_taskType;
                     bool m_taskTypeHasBeenSet;
+
+                    /**
+                     * 加工任务目的topic_id以及别名,当FuncType=1时，该参数必填，当FuncType=2时，无需填写。
+                     */
+                    std::vector<DataTransformResouceInfo> m_dstResources;
+                    bool m_dstResourcesHasBeenSet;
 
                     /**
                      * 任务启动状态.   默认为1:开启,  2:关闭
                      */
                     int64_t m_enableFlag;
                     bool m_enableFlagHasBeenSet;
-
-                    /**
-                     * 加工任务目的topic_id以及别名,当FuncType=1时，该参数必填，当FuncType=2时，无需填写
-                     */
-                    std::vector<DataTransformResouceInfo> m_dstResources;
-                    bool m_dstResourcesHasBeenSet;
 
                     /**
                      * 用于预览加工结果的测试数据
