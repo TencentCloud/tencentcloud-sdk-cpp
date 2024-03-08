@@ -67,12 +67,12 @@ namespace TencentCloud
                     /**
                      * 获取密钥对创建后所属的项目ID。
 可以通过以下方式获取项目ID：
-<li>通过项目列表查询项目ID。
-<li>通过调用接口DescribeProject，取返回信息中的`projectId `获取项目ID。
+<li>通过项目列表查询项目ID。</li>
+<li>通过调用接口 [DescribeProjects](https://cloud.tencent.com/document/api/651/78725)，取返回信息中的`projectId `获取项目ID。</li>
                      * @return ProjectId 密钥对创建后所属的项目ID。
 可以通过以下方式获取项目ID：
-<li>通过项目列表查询项目ID。
-<li>通过调用接口DescribeProject，取返回信息中的`projectId `获取项目ID。
+<li>通过项目列表查询项目ID。</li>
+<li>通过调用接口 [DescribeProjects](https://cloud.tencent.com/document/api/651/78725)，取返回信息中的`projectId `获取项目ID。</li>
                      * 
                      */
                     int64_t GetProjectId() const;
@@ -80,12 +80,12 @@ namespace TencentCloud
                     /**
                      * 设置密钥对创建后所属的项目ID。
 可以通过以下方式获取项目ID：
-<li>通过项目列表查询项目ID。
-<li>通过调用接口DescribeProject，取返回信息中的`projectId `获取项目ID。
+<li>通过项目列表查询项目ID。</li>
+<li>通过调用接口 [DescribeProjects](https://cloud.tencent.com/document/api/651/78725)，取返回信息中的`projectId `获取项目ID。</li>
                      * @param _projectId 密钥对创建后所属的项目ID。
 可以通过以下方式获取项目ID：
-<li>通过项目列表查询项目ID。
-<li>通过调用接口DescribeProject，取返回信息中的`projectId `获取项目ID。
+<li>通过项目列表查询项目ID。</li>
+<li>通过调用接口 [DescribeProjects](https://cloud.tencent.com/document/api/651/78725)，取返回信息中的`projectId `获取项目ID。</li>
                      * 
                      */
                     void SetProjectId(const int64_t& _projectId);
@@ -129,8 +129,8 @@ namespace TencentCloud
                     /**
                      * 密钥对创建后所属的项目ID。
 可以通过以下方式获取项目ID：
-<li>通过项目列表查询项目ID。
-<li>通过调用接口DescribeProject，取返回信息中的`projectId `获取项目ID。
+<li>通过项目列表查询项目ID。</li>
+<li>通过调用接口 [DescribeProjects](https://cloud.tencent.com/document/api/651/78725)，取返回信息中的`projectId `获取项目ID。</li>
                      */
                     int64_t m_projectId;
                     bool m_projectIdHasBeenSet;

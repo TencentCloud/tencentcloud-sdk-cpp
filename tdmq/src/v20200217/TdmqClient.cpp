@@ -3523,6 +3523,49 @@ TdmqClient::DescribeRocketMQNamespacesOutcomeCallable TdmqClient::DescribeRocket
     return task->get_future();
 }
 
+TdmqClient::DescribeRocketMQPublicAccessMonitorDataOutcome TdmqClient::DescribeRocketMQPublicAccessMonitorData(const DescribeRocketMQPublicAccessMonitorDataRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeRocketMQPublicAccessMonitorData");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeRocketMQPublicAccessMonitorDataResponse rsp = DescribeRocketMQPublicAccessMonitorDataResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeRocketMQPublicAccessMonitorDataOutcome(rsp);
+        else
+            return DescribeRocketMQPublicAccessMonitorDataOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeRocketMQPublicAccessMonitorDataOutcome(outcome.GetError());
+    }
+}
+
+void TdmqClient::DescribeRocketMQPublicAccessMonitorDataAsync(const DescribeRocketMQPublicAccessMonitorDataRequest& request, const DescribeRocketMQPublicAccessMonitorDataAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeRocketMQPublicAccessMonitorData(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+TdmqClient::DescribeRocketMQPublicAccessMonitorDataOutcomeCallable TdmqClient::DescribeRocketMQPublicAccessMonitorDataCallable(const DescribeRocketMQPublicAccessMonitorDataRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeRocketMQPublicAccessMonitorDataOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeRocketMQPublicAccessMonitorData(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 TdmqClient::DescribeRocketMQPublicAccessPointOutcome TdmqClient::DescribeRocketMQPublicAccessPoint(const DescribeRocketMQPublicAccessPointRequest &request)
 {
     auto outcome = MakeRequest(request, "DescribeRocketMQPublicAccessPoint");

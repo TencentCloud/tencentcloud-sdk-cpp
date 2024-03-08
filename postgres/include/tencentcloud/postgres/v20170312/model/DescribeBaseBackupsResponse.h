@@ -45,8 +45,8 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取查询到的基础备份数量。
-                     * @return TotalCount 查询到的基础备份数量。
+                     * 获取查询到的数据备份数量。
+                     * @return TotalCount 查询到的数据备份数量。
                      * 
                      */
                     uint64_t GetTotalCount() const;
@@ -59,8 +59,8 @@ namespace TencentCloud
                     bool TotalCountHasBeenSet() const;
 
                     /**
-                     * 获取基础备份详细信息列表。
-                     * @return BaseBackupSet 基础备份详细信息列表。
+                     * 获取数据备份详细信息列表。
+                     * @return BaseBackupSet 数据备份详细信息列表。
                      * 
                      */
                     std::vector<BaseBackup> GetBaseBackupSet() const;
@@ -75,13 +75,13 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 查询到的基础备份数量。
+                     * 查询到的数据备份数量。
                      */
                     uint64_t m_totalCount;
                     bool m_totalCountHasBeenSet;
 
                     /**
-                     * 基础备份详细信息列表。
+                     * 数据备份详细信息列表。
                      */
                     std::vector<BaseBackup> m_baseBackupSet;
                     bool m_baseBackupSetHasBeenSet;

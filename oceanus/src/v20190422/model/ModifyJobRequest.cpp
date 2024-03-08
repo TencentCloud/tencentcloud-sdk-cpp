@@ -27,7 +27,8 @@ ModifyJobRequest::ModifyJobRequest() :
     m_nameHasBeenSet(false),
     m_remarkHasBeenSet(false),
     m_targetFolderIdHasBeenSet(false),
-    m_workSpaceIdHasBeenSet(false)
+    m_workSpaceIdHasBeenSet(false),
+    m_descriptionHasBeenSet(false)
 {
 }
 
@@ -76,6 +77,14 @@ string ModifyJobRequest::ToJsonString() const
         string key = "WorkSpaceId";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_workSpaceId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_descriptionHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Description";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_description.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -164,6 +173,22 @@ void ModifyJobRequest::SetWorkSpaceId(const string& _workSpaceId)
 bool ModifyJobRequest::WorkSpaceIdHasBeenSet() const
 {
     return m_workSpaceIdHasBeenSet;
+}
+
+string ModifyJobRequest::GetDescription() const
+{
+    return m_description;
+}
+
+void ModifyJobRequest::SetDescription(const string& _description)
+{
+    m_description = _description;
+    m_descriptionHasBeenSet = true;
+}
+
+bool ModifyJobRequest::DescriptionHasBeenSet() const
+{
+    return m_descriptionHasBeenSet;
 }
 
 

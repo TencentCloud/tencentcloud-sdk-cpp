@@ -23,7 +23,8 @@ using namespace TencentCloud::Sqlserver::V20180328::Model;
 using namespace std;
 
 ModifyCloseWanIpRequest::ModifyCloseWanIpRequest() :
-    m_instanceIdHasBeenSet(false)
+    m_instanceIdHasBeenSet(false),
+    m_roGroupIdHasBeenSet(false)
 {
 }
 
@@ -40,6 +41,14 @@ string ModifyCloseWanIpRequest::ToJsonString() const
         string key = "InstanceId";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_instanceId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_roGroupIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "RoGroupId";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_roGroupId.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -64,6 +73,22 @@ void ModifyCloseWanIpRequest::SetInstanceId(const string& _instanceId)
 bool ModifyCloseWanIpRequest::InstanceIdHasBeenSet() const
 {
     return m_instanceIdHasBeenSet;
+}
+
+string ModifyCloseWanIpRequest::GetRoGroupId() const
+{
+    return m_roGroupId;
+}
+
+void ModifyCloseWanIpRequest::SetRoGroupId(const string& _roGroupId)
+{
+    m_roGroupId = _roGroupId;
+    m_roGroupIdHasBeenSet = true;
+}
+
+bool ModifyCloseWanIpRequest::RoGroupIdHasBeenSet() const
+{
+    return m_roGroupIdHasBeenSet;
 }
 
 

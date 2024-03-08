@@ -110,15 +110,15 @@ namespace TencentCloud
                     bool LogBackupSizeHasBeenSet() const;
 
                     /**
-                     * 获取手动创建的实例基础备份数量。
-                     * @return ManualBaseBackupCount 手动创建的实例基础备份数量。
+                     * 获取手动创建的实例数据备份数量。
+                     * @return ManualBaseBackupCount 手动创建的实例数据备份数量。
                      * 
                      */
                     uint64_t GetManualBaseBackupCount() const;
 
                     /**
-                     * 设置手动创建的实例基础备份数量。
-                     * @param _manualBaseBackupCount 手动创建的实例基础备份数量。
+                     * 设置手动创建的实例数据备份数量。
+                     * @param _manualBaseBackupCount 手动创建的实例数据备份数量。
                      * 
                      */
                     void SetManualBaseBackupCount(const uint64_t& _manualBaseBackupCount);
@@ -131,15 +131,15 @@ namespace TencentCloud
                     bool ManualBaseBackupCountHasBeenSet() const;
 
                     /**
-                     * 获取手动创建的实例基础备份大小。
-                     * @return ManualBaseBackupSize 手动创建的实例基础备份大小。
+                     * 获取手动创建的实例数据备份大小。
+                     * @return ManualBaseBackupSize 手动创建的实例数据备份大小。
                      * 
                      */
                     uint64_t GetManualBaseBackupSize() const;
 
                     /**
-                     * 设置手动创建的实例基础备份大小。
-                     * @param _manualBaseBackupSize 手动创建的实例基础备份大小。
+                     * 设置手动创建的实例数据备份大小。
+                     * @param _manualBaseBackupSize 手动创建的实例数据备份大小。
                      * 
                      */
                     void SetManualBaseBackupSize(const uint64_t& _manualBaseBackupSize);
@@ -152,15 +152,15 @@ namespace TencentCloud
                     bool ManualBaseBackupSizeHasBeenSet() const;
 
                     /**
-                     * 获取自动创建的实例基础备份数量。
-                     * @return AutoBaseBackupCount 自动创建的实例基础备份数量。
+                     * 获取自动创建的实例数据备份数量。
+                     * @return AutoBaseBackupCount 自动创建的实例数据备份数量。
                      * 
                      */
                     uint64_t GetAutoBaseBackupCount() const;
 
                     /**
-                     * 设置自动创建的实例基础备份数量。
-                     * @param _autoBaseBackupCount 自动创建的实例基础备份数量。
+                     * 设置自动创建的实例数据备份数量。
+                     * @param _autoBaseBackupCount 自动创建的实例数据备份数量。
                      * 
                      */
                     void SetAutoBaseBackupCount(const uint64_t& _autoBaseBackupCount);
@@ -173,15 +173,15 @@ namespace TencentCloud
                     bool AutoBaseBackupCountHasBeenSet() const;
 
                     /**
-                     * 获取自动创建的实例基础备份大小。
-                     * @return AutoBaseBackupSize 自动创建的实例基础备份大小。
+                     * 获取自动创建的实例数据备份大小。
+                     * @return AutoBaseBackupSize 自动创建的实例数据备份大小。
                      * 
                      */
                     uint64_t GetAutoBaseBackupSize() const;
 
                     /**
-                     * 设置自动创建的实例基础备份大小。
-                     * @param _autoBaseBackupSize 自动创建的实例基础备份大小。
+                     * 设置自动创建的实例数据备份大小。
+                     * @param _autoBaseBackupSize 自动创建的实例数据备份大小。
                      * 
                      */
                     void SetAutoBaseBackupSize(const uint64_t& _autoBaseBackupSize);
@@ -256,25 +256,25 @@ namespace TencentCloud
                     bool m_logBackupSizeHasBeenSet;
 
                     /**
-                     * 手动创建的实例基础备份数量。
+                     * 手动创建的实例数据备份数量。
                      */
                     uint64_t m_manualBaseBackupCount;
                     bool m_manualBaseBackupCountHasBeenSet;
 
                     /**
-                     * 手动创建的实例基础备份大小。
+                     * 手动创建的实例数据备份大小。
                      */
                     uint64_t m_manualBaseBackupSize;
                     bool m_manualBaseBackupSizeHasBeenSet;
 
                     /**
-                     * 自动创建的实例基础备份数量。
+                     * 自动创建的实例数据备份数量。
                      */
                     uint64_t m_autoBaseBackupCount;
                     bool m_autoBaseBackupCountHasBeenSet;
 
                     /**
-                     * 自动创建的实例基础备份大小。
+                     * 自动创建的实例数据备份大小。
                      */
                     uint64_t m_autoBaseBackupSize;
                     bool m_autoBaseBackupSizeHasBeenSet;

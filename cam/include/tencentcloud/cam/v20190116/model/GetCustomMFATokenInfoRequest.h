@@ -43,15 +43,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取自定义多因子验证Token
-                     * @return MFAToken 自定义多因子验证Token
+                     * 获取自定义多因子验证Token，针对用户自定义的安全校验方式而生成的，以供查询用户安全校验时使用。
+                     * @return MFAToken 自定义多因子验证Token，针对用户自定义的安全校验方式而生成的，以供查询用户安全校验时使用。
                      * 
                      */
                     std::string GetMFAToken() const;
 
                     /**
-                     * 设置自定义多因子验证Token
-                     * @param _mFAToken 自定义多因子验证Token
+                     * 设置自定义多因子验证Token，针对用户自定义的安全校验方式而生成的，以供查询用户安全校验时使用。
+                     * @param _mFAToken 自定义多因子验证Token，针对用户自定义的安全校验方式而生成的，以供查询用户安全校验时使用。
                      * 
                      */
                     void SetMFAToken(const std::string& _mFAToken);
@@ -66,7 +66,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 自定义多因子验证Token
+                     * 自定义多因子验证Token，针对用户自定义的安全校验方式而生成的，以供查询用户安全校验时使用。
                      */
                     std::string m_mFAToken;
                     bool m_mFATokenHasBeenSet;

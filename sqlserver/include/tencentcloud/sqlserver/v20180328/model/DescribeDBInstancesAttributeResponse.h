@@ -23,6 +23,7 @@
 #include <tencentcloud/core/AbstractModel.h>
 #include <tencentcloud/sqlserver/v20180328/model/TDEConfigAttribute.h>
 #include <tencentcloud/sqlserver/v20180328/model/SSLConfig.h>
+#include <tencentcloud/sqlserver/v20180328/model/DrReadableInfo.h>
 
 
 namespace TencentCloud
@@ -185,6 +186,20 @@ namespace TencentCloud
                      */
                     bool SSLConfigHasBeenSet() const;
 
+                    /**
+                     * 获取备机只读信息
+                     * @return DrReadableInfo 备机只读信息
+                     * 
+                     */
+                    DrReadableInfo GetDrReadableInfo() const;
+
+                    /**
+                     * 判断参数 DrReadableInfo 是否已赋值
+                     * @return DrReadableInfo 是否已赋值
+                     * 
+                     */
+                    bool DrReadableInfoHasBeenSet() const;
+
                 private:
 
                     /**
@@ -246,6 +261,12 @@ namespace TencentCloud
                      */
                     SSLConfig m_sSLConfig;
                     bool m_sSLConfigHasBeenSet;
+
+                    /**
+                     * 备机只读信息
+                     */
+                    DrReadableInfo m_drReadableInfo;
+                    bool m_drReadableInfoHasBeenSet;
 
                 };
             }

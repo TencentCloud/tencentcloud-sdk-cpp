@@ -34,7 +34,9 @@ ReadOnlyGroup::ReadOnlyGroup() :
     m_subnetIdHasBeenSet(false),
     m_statusHasBeenSet(false),
     m_masterInstanceIdHasBeenSet(false),
-    m_readOnlyInstanceSetHasBeenSet(false)
+    m_readOnlyInstanceSetHasBeenSet(false),
+    m_dnsPodDomainHasBeenSet(false),
+    m_tgwWanVPortHasBeenSet(false)
 {
 }
 
@@ -193,6 +195,26 @@ CoreInternalOutcome ReadOnlyGroup::Deserialize(const rapidjson::Value &value)
         m_readOnlyInstanceSetHasBeenSet = true;
     }
 
+    if (value.HasMember("DnsPodDomain") && !value["DnsPodDomain"].IsNull())
+    {
+        if (!value["DnsPodDomain"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `ReadOnlyGroup.DnsPodDomain` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_dnsPodDomain = string(value["DnsPodDomain"].GetString());
+        m_dnsPodDomainHasBeenSet = true;
+    }
+
+    if (value.HasMember("TgwWanVPort") && !value["TgwWanVPort"].IsNull())
+    {
+        if (!value["TgwWanVPort"].IsUint64())
+        {
+            return CoreInternalOutcome(Core::Error("response `ReadOnlyGroup.TgwWanVPort` IsUint64=false incorrectly").SetRequestId(requestId));
+        }
+        m_tgwWanVPort = value["TgwWanVPort"].GetUint64();
+        m_tgwWanVPortHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -317,6 +339,22 @@ void ReadOnlyGroup::ToJsonObject(rapidjson::Value &value, rapidjson::Document::A
             value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
             (*itr).ToJsonObject(value[key.c_str()][i], allocator);
         }
+    }
+
+    if (m_dnsPodDomainHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "DnsPodDomain";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_dnsPodDomain.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_tgwWanVPortHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "TgwWanVPort";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_tgwWanVPort, allocator);
     }
 
 }
@@ -544,5 +582,37 @@ void ReadOnlyGroup::SetReadOnlyInstanceSet(const vector<ReadOnlyInstance>& _read
 bool ReadOnlyGroup::ReadOnlyInstanceSetHasBeenSet() const
 {
     return m_readOnlyInstanceSetHasBeenSet;
+}
+
+string ReadOnlyGroup::GetDnsPodDomain() const
+{
+    return m_dnsPodDomain;
+}
+
+void ReadOnlyGroup::SetDnsPodDomain(const string& _dnsPodDomain)
+{
+    m_dnsPodDomain = _dnsPodDomain;
+    m_dnsPodDomainHasBeenSet = true;
+}
+
+bool ReadOnlyGroup::DnsPodDomainHasBeenSet() const
+{
+    return m_dnsPodDomainHasBeenSet;
+}
+
+uint64_t ReadOnlyGroup::GetTgwWanVPort() const
+{
+    return m_tgwWanVPort;
+}
+
+void ReadOnlyGroup::SetTgwWanVPort(const uint64_t& _tgwWanVPort)
+{
+    m_tgwWanVPort = _tgwWanVPort;
+    m_tgwWanVPortHasBeenSet = true;
+}
+
+bool ReadOnlyGroup::TgwWanVPortHasBeenSet() const
+{
+    return m_tgwWanVPortHasBeenSet;
 }
 

@@ -106,6 +106,7 @@ set(sqlserver_public_header_model
   include/tencentcloud/sqlserver/v20180328/model/ModifyBackupNameRequest.h
   include/tencentcloud/sqlserver/v20180328/model/CreateDBRequest.h
   include/tencentcloud/sqlserver/v20180328/model/RollbackInstanceRequest.h
+  include/tencentcloud/sqlserver/v20180328/model/DrReadableInfo.h
   include/tencentcloud/sqlserver/v20180328/model/DescribeRollbackTimeRequest.h
   include/tencentcloud/sqlserver/v20180328/model/DescribeIncrementalMigrationResponse.h
   include/tencentcloud/sqlserver/v20180328/model/CreateDBInstancesResponse.h
@@ -471,6 +472,7 @@ set(sqlserver_src
   src/v20180328/model/ModifyBackupNameRequest.cpp
   src/v20180328/model/CreateDBRequest.cpp
   src/v20180328/model/RollbackInstanceRequest.cpp
+  src/v20180328/model/DrReadableInfo.cpp
   src/v20180328/model/DescribeRollbackTimeRequest.cpp
   src/v20180328/model/DescribeIncrementalMigrationResponse.cpp
   src/v20180328/model/CreateDBInstancesResponse.cpp

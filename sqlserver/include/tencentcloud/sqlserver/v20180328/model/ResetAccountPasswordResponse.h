@@ -44,8 +44,8 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取修改帐号密码的异步任务流程ID
-                     * @return FlowId 修改帐号密码的异步任务流程ID
+                     * 获取修改账号密码的异步任务流程ID
+                     * @return FlowId 修改账号密码的异步任务流程ID
                      * 
                      */
                     int64_t GetFlowId() const;
@@ -60,7 +60,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 修改帐号密码的异步任务流程ID
+                     * 修改账号密码的异步任务流程ID
                      */
                     int64_t m_flowId;
                     bool m_flowIdHasBeenSet;

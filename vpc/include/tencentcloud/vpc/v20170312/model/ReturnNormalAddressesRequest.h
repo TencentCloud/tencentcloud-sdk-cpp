@@ -43,15 +43,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取EIP 的 IP 地址,示例：101.35.139.183
-                     * @return AddressIps EIP 的 IP 地址,示例：101.35.139.183
+                     * 获取普通公网IP 的 IP 地址,示例：101.35.139.183
+                     * @return AddressIps 普通公网IP 的 IP 地址,示例：101.35.139.183
                      * 
                      */
                     std::vector<std::string> GetAddressIps() const;
 
                     /**
-                     * 设置EIP 的 IP 地址,示例：101.35.139.183
-                     * @param _addressIps EIP 的 IP 地址,示例：101.35.139.183
+                     * 设置普通公网IP 的 IP 地址,示例：101.35.139.183
+                     * @param _addressIps 普通公网IP 的 IP 地址,示例：101.35.139.183
                      * 
                      */
                     void SetAddressIps(const std::vector<std::string>& _addressIps);
@@ -66,7 +66,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * EIP 的 IP 地址,示例：101.35.139.183
+                     * 普通公网IP 的 IP 地址,示例：101.35.139.183
                      */
                     std::vector<std::string> m_addressIps;
                     bool m_addressIpsHasBeenSet;

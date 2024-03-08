@@ -30,7 +30,8 @@ CreateFileSystemRequest::CreateFileSystemRequest() :
     m_subnetIdHasBeenSet(false),
     m_zoneHasBeenSet(false),
     m_tagHasBeenSet(false),
-    m_gooseFSxBuildElementsHasBeenSet(false)
+    m_gooseFSxBuildElementsHasBeenSet(false),
+    m_securityGroupIdHasBeenSet(false)
 {
 }
 
@@ -111,6 +112,14 @@ string CreateFileSystemRequest::ToJsonString() const
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
         m_gooseFSxBuildElements.ToJsonObject(d[key.c_str()], allocator);
+    }
+
+    if (m_securityGroupIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "SecurityGroupId";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_securityGroupId.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -247,6 +256,22 @@ void CreateFileSystemRequest::SetGooseFSxBuildElements(const GooseFSxBuildElemen
 bool CreateFileSystemRequest::GooseFSxBuildElementsHasBeenSet() const
 {
     return m_gooseFSxBuildElementsHasBeenSet;
+}
+
+string CreateFileSystemRequest::GetSecurityGroupId() const
+{
+    return m_securityGroupId;
+}
+
+void CreateFileSystemRequest::SetSecurityGroupId(const string& _securityGroupId)
+{
+    m_securityGroupId = _securityGroupId;
+    m_securityGroupIdHasBeenSet = true;
+}
+
+bool CreateFileSystemRequest::SecurityGroupIdHasBeenSet() const
+{
+    return m_securityGroupIdHasBeenSet;
 }
 
 

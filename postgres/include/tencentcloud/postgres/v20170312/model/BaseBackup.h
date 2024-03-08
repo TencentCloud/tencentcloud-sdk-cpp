@@ -35,7 +35,7 @@ namespace TencentCloud
             namespace Model
             {
                 /**
-                * 数据库基础备份信息
+                * 数据库数据备份信息
                 */
                 class BaseBackup : public AbstractModel
                 {

@@ -300,6 +300,56 @@ namespace TencentCloud
                      */
                     bool AutoRetryTimeRangeMinutesHasBeenSet() const;
 
+                    /**
+                     * 获取同步到kafka链路是否过滤掉begin和commit消息。目前仅mysql2kafka链路支持
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return FilterBeginCommit 同步到kafka链路是否过滤掉begin和commit消息。目前仅mysql2kafka链路支持
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    bool GetFilterBeginCommit() const;
+
+                    /**
+                     * 设置同步到kafka链路是否过滤掉begin和commit消息。目前仅mysql2kafka链路支持
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _filterBeginCommit 同步到kafka链路是否过滤掉begin和commit消息。目前仅mysql2kafka链路支持
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetFilterBeginCommit(const bool& _filterBeginCommit);
+
+                    /**
+                     * 判断参数 FilterBeginCommit 是否已赋值
+                     * @return FilterBeginCommit 是否已赋值
+                     * 
+                     */
+                    bool FilterBeginCommitHasBeenSet() const;
+
+                    /**
+                     * 获取同步到kafka链路是否过滤掉checkpoint消息。目前仅mysql2kafka链路支持
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return FilterCheckpoint 同步到kafka链路是否过滤掉checkpoint消息。目前仅mysql2kafka链路支持
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    bool GetFilterCheckpoint() const;
+
+                    /**
+                     * 设置同步到kafka链路是否过滤掉checkpoint消息。目前仅mysql2kafka链路支持
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _filterCheckpoint 同步到kafka链路是否过滤掉checkpoint消息。目前仅mysql2kafka链路支持
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetFilterCheckpoint(const bool& _filterCheckpoint);
+
+                    /**
+                     * 判断参数 FilterCheckpoint 是否已赋值
+                     * @return FilterCheckpoint 是否已赋值
+                     * 
+                     */
+                    bool FilterCheckpointHasBeenSet() const;
+
                 private:
 
                     /**
@@ -371,6 +421,20 @@ namespace TencentCloud
                      */
                     int64_t m_autoRetryTimeRangeMinutes;
                     bool m_autoRetryTimeRangeMinutesHasBeenSet;
+
+                    /**
+                     * 同步到kafka链路是否过滤掉begin和commit消息。目前仅mysql2kafka链路支持
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    bool m_filterBeginCommit;
+                    bool m_filterBeginCommitHasBeenSet;
+
+                    /**
+                     * 同步到kafka链路是否过滤掉checkpoint消息。目前仅mysql2kafka链路支持
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    bool m_filterCheckpoint;
+                    bool m_filterCheckpointHasBeenSet;
 
                 };
             }

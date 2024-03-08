@@ -68,15 +68,15 @@ namespace TencentCloud
                     bool BackupPeriodHasBeenSet() const;
 
                     /**
-                     * 获取基础备份保留时长
-                     * @return BaseBackupRetentionPeriod 基础备份保留时长
+                     * 获取数据备份保留时长
+                     * @return BaseBackupRetentionPeriod 数据备份保留时长
                      * 
                      */
                     uint64_t GetBaseBackupRetentionPeriod() const;
 
                     /**
-                     * 设置基础备份保留时长
-                     * @param _baseBackupRetentionPeriod 基础备份保留时长
+                     * 设置数据备份保留时长
+                     * @param _baseBackupRetentionPeriod 数据备份保留时长
                      * 
                      */
                     void SetBaseBackupRetentionPeriod(const uint64_t& _baseBackupRetentionPeriod);
@@ -139,7 +139,7 @@ namespace TencentCloud
                     bool m_backupPeriodHasBeenSet;
 
                     /**
-                     * 基础备份保留时长
+                     * 数据备份保留时长
                      */
                     uint64_t m_baseBackupRetentionPeriod;
                     bool m_baseBackupRetentionPeriodHasBeenSet;

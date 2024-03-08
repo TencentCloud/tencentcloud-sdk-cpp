@@ -68,15 +68,39 @@ namespace TencentCloud
                     bool GroupHasBeenSet() const;
 
                     /**
-                     * 获取消费状态
-                     * @return ConsumeStatus 消费状态
+                     * 获取消费状态,
+CONSUMED: 已消费
+CONSUMED_BUT_FILTERED: 已过滤
+NOT_CONSUME: 未消费
+ENTER_RETRY: 进入重试队列
+ENTER_DLQ: 进入死信队列
+UNKNOWN: 查询不到消费状态
+                     * @return ConsumeStatus 消费状态,
+CONSUMED: 已消费
+CONSUMED_BUT_FILTERED: 已过滤
+NOT_CONSUME: 未消费
+ENTER_RETRY: 进入重试队列
+ENTER_DLQ: 进入死信队列
+UNKNOWN: 查询不到消费状态
                      * 
                      */
                     std::string GetConsumeStatus() const;
 
                     /**
-                     * 设置消费状态
-                     * @param _consumeStatus 消费状态
+                     * 设置消费状态,
+CONSUMED: 已消费
+CONSUMED_BUT_FILTERED: 已过滤
+NOT_CONSUME: 未消费
+ENTER_RETRY: 进入重试队列
+ENTER_DLQ: 进入死信队列
+UNKNOWN: 查询不到消费状态
+                     * @param _consumeStatus 消费状态,
+CONSUMED: 已消费
+CONSUMED_BUT_FILTERED: 已过滤
+NOT_CONSUME: 未消费
+ENTER_RETRY: 进入重试队列
+ENTER_DLQ: 进入死信队列
+UNKNOWN: 查询不到消费状态
                      * 
                      */
                     void SetConsumeStatus(const std::string& _consumeStatus);
@@ -143,7 +167,13 @@ namespace TencentCloud
                     bool m_groupHasBeenSet;
 
                     /**
-                     * 消费状态
+                     * 消费状态,
+CONSUMED: 已消费
+CONSUMED_BUT_FILTERED: 已过滤
+NOT_CONSUME: 未消费
+ENTER_RETRY: 进入重试队列
+ENTER_DLQ: 进入死信队列
+UNKNOWN: 查询不到消费状态
                      */
                     std::string m_consumeStatus;
                     bool m_consumeStatusHasBeenSet;

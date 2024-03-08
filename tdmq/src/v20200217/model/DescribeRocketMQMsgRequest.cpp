@@ -28,7 +28,11 @@ DescribeRocketMQMsgRequest::DescribeRocketMQMsgRequest() :
     m_topicNameHasBeenSet(false),
     m_msgIdHasBeenSet(false),
     m_pulsarMsgIdHasBeenSet(false),
-    m_queryDlqMsgHasBeenSet(false)
+    m_queryDlqMsgHasBeenSet(false),
+    m_queryDeadLetterMessageHasBeenSet(false),
+    m_offsetHasBeenSet(false),
+    m_limitHasBeenSet(false),
+    m_filterTrackGroupHasBeenSet(false)
 {
 }
 
@@ -85,6 +89,38 @@ string DescribeRocketMQMsgRequest::ToJsonString() const
         string key = "QueryDlqMsg";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_queryDlqMsg, allocator);
+    }
+
+    if (m_queryDeadLetterMessageHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "QueryDeadLetterMessage";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_queryDeadLetterMessage, allocator);
+    }
+
+    if (m_offsetHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Offset";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_offset, allocator);
+    }
+
+    if (m_limitHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Limit";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_limit, allocator);
+    }
+
+    if (m_filterTrackGroupHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "FilterTrackGroup";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_filterTrackGroup.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -189,6 +225,70 @@ void DescribeRocketMQMsgRequest::SetQueryDlqMsg(const bool& _queryDlqMsg)
 bool DescribeRocketMQMsgRequest::QueryDlqMsgHasBeenSet() const
 {
     return m_queryDlqMsgHasBeenSet;
+}
+
+bool DescribeRocketMQMsgRequest::GetQueryDeadLetterMessage() const
+{
+    return m_queryDeadLetterMessage;
+}
+
+void DescribeRocketMQMsgRequest::SetQueryDeadLetterMessage(const bool& _queryDeadLetterMessage)
+{
+    m_queryDeadLetterMessage = _queryDeadLetterMessage;
+    m_queryDeadLetterMessageHasBeenSet = true;
+}
+
+bool DescribeRocketMQMsgRequest::QueryDeadLetterMessageHasBeenSet() const
+{
+    return m_queryDeadLetterMessageHasBeenSet;
+}
+
+int64_t DescribeRocketMQMsgRequest::GetOffset() const
+{
+    return m_offset;
+}
+
+void DescribeRocketMQMsgRequest::SetOffset(const int64_t& _offset)
+{
+    m_offset = _offset;
+    m_offsetHasBeenSet = true;
+}
+
+bool DescribeRocketMQMsgRequest::OffsetHasBeenSet() const
+{
+    return m_offsetHasBeenSet;
+}
+
+int64_t DescribeRocketMQMsgRequest::GetLimit() const
+{
+    return m_limit;
+}
+
+void DescribeRocketMQMsgRequest::SetLimit(const int64_t& _limit)
+{
+    m_limit = _limit;
+    m_limitHasBeenSet = true;
+}
+
+bool DescribeRocketMQMsgRequest::LimitHasBeenSet() const
+{
+    return m_limitHasBeenSet;
+}
+
+string DescribeRocketMQMsgRequest::GetFilterTrackGroup() const
+{
+    return m_filterTrackGroup;
+}
+
+void DescribeRocketMQMsgRequest::SetFilterTrackGroup(const string& _filterTrackGroup)
+{
+    m_filterTrackGroup = _filterTrackGroup;
+    m_filterTrackGroupHasBeenSet = true;
+}
+
+bool DescribeRocketMQMsgRequest::FilterTrackGroupHasBeenSet() const
+{
+    return m_filterTrackGroupHasBeenSet;
 }
 
 

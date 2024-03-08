@@ -27,7 +27,8 @@ ModifyDBInstanceNetworkRequest::ModifyDBInstanceNetworkRequest() :
     m_newVpcIdHasBeenSet(false),
     m_newSubnetIdHasBeenSet(false),
     m_oldIpRetainTimeHasBeenSet(false),
-    m_vipHasBeenSet(false)
+    m_vipHasBeenSet(false),
+    m_dRNetworkHasBeenSet(false)
 {
 }
 
@@ -76,6 +77,14 @@ string ModifyDBInstanceNetworkRequest::ToJsonString() const
         string key = "Vip";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_vip.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_dRNetworkHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "DRNetwork";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_dRNetwork, allocator);
     }
 
 
@@ -164,6 +173,22 @@ void ModifyDBInstanceNetworkRequest::SetVip(const string& _vip)
 bool ModifyDBInstanceNetworkRequest::VipHasBeenSet() const
 {
     return m_vipHasBeenSet;
+}
+
+uint64_t ModifyDBInstanceNetworkRequest::GetDRNetwork() const
+{
+    return m_dRNetwork;
+}
+
+void ModifyDBInstanceNetworkRequest::SetDRNetwork(const uint64_t& _dRNetwork)
+{
+    m_dRNetwork = _dRNetwork;
+    m_dRNetworkHasBeenSet = true;
+}
+
+bool ModifyDBInstanceNetworkRequest::DRNetworkHasBeenSet() const
+{
+    return m_dRNetworkHasBeenSet;
 }
 
 

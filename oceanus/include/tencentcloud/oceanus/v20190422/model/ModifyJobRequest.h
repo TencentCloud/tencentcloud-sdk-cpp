@@ -147,6 +147,27 @@ namespace TencentCloud
                      */
                     bool WorkSpaceIdHasBeenSet() const;
 
+                    /**
+                     * 获取作业描述
+                     * @return Description 作业描述
+                     * 
+                     */
+                    std::string GetDescription() const;
+
+                    /**
+                     * 设置作业描述
+                     * @param _description 作业描述
+                     * 
+                     */
+                    void SetDescription(const std::string& _description);
+
+                    /**
+                     * 判断参数 Description 是否已赋值
+                     * @return Description 是否已赋值
+                     * 
+                     */
+                    bool DescriptionHasBeenSet() const;
+
                 private:
 
                     /**
@@ -178,6 +199,12 @@ namespace TencentCloud
                      */
                     std::string m_workSpaceId;
                     bool m_workSpaceIdHasBeenSet;
+
+                    /**
+                     * 作业描述
+                     */
+                    std::string m_description;
+                    bool m_descriptionHasBeenSet;
 
                 };
             }

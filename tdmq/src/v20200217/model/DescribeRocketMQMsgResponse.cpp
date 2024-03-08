@@ -30,7 +30,8 @@ DescribeRocketMQMsgResponse::DescribeRocketMQMsgResponse() :
     m_msgIdHasBeenSet(false),
     m_producerAddrHasBeenSet(false),
     m_messageTracksHasBeenSet(false),
-    m_showTopicNameHasBeenSet(false)
+    m_showTopicNameHasBeenSet(false),
+    m_messageTracksCountHasBeenSet(false)
 {
 }
 
@@ -148,6 +149,16 @@ CoreInternalOutcome DescribeRocketMQMsgResponse::Deserialize(const string &paylo
         m_showTopicNameHasBeenSet = true;
     }
 
+    if (rsp.HasMember("MessageTracksCount") && !rsp["MessageTracksCount"].IsNull())
+    {
+        if (!rsp["MessageTracksCount"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `MessageTracksCount` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_messageTracksCount = rsp["MessageTracksCount"].GetInt64();
+        m_messageTracksCountHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -219,6 +230,14 @@ string DescribeRocketMQMsgResponse::ToJsonString() const
         string key = "ShowTopicName";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_showTopicName.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_messageTracksCountHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "MessageTracksCount";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_messageTracksCount, allocator);
     }
 
     rapidjson::Value iKey(rapidjson::kStringType);
@@ -301,6 +320,16 @@ string DescribeRocketMQMsgResponse::GetShowTopicName() const
 bool DescribeRocketMQMsgResponse::ShowTopicNameHasBeenSet() const
 {
     return m_showTopicNameHasBeenSet;
+}
+
+int64_t DescribeRocketMQMsgResponse::GetMessageTracksCount() const
+{
+    return m_messageTracksCount;
+}
+
+bool DescribeRocketMQMsgResponse::MessageTracksCountHasBeenSet() const
+{
+    return m_messageTracksCountHasBeenSet;
 }
 
 

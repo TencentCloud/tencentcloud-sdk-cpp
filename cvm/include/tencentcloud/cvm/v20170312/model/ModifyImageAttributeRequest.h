@@ -43,15 +43,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取镜像ID，形如`img-gvbnzy6f`。镜像ID可以通过如下方式获取：<br><li>通过[DescribeImages](https://cloud.tencent.com/document/api/213/15715)接口返回的`ImageId`获取。<br><li>通过[镜像控制台](https://console.cloud.tencent.com/cvm/image)获取。
-                     * @return ImageId 镜像ID，形如`img-gvbnzy6f`。镜像ID可以通过如下方式获取：<br><li>通过[DescribeImages](https://cloud.tencent.com/document/api/213/15715)接口返回的`ImageId`获取。<br><li>通过[镜像控制台](https://console.cloud.tencent.com/cvm/image)获取。
+                     * 获取镜像ID，形如`img-gvbnzy6f`。镜像ID可以通过如下方式获取：<li>通过[DescribeImages](https://cloud.tencent.com/document/api/213/15715)接口返回的`ImageId`获取。</li><li>通过[镜像控制台](https://console.cloud.tencent.com/cvm/image)获取。</li>
+                     * @return ImageId 镜像ID，形如`img-gvbnzy6f`。镜像ID可以通过如下方式获取：<li>通过[DescribeImages](https://cloud.tencent.com/document/api/213/15715)接口返回的`ImageId`获取。</li><li>通过[镜像控制台](https://console.cloud.tencent.com/cvm/image)获取。</li>
                      * 
                      */
                     std::string GetImageId() const;
 
                     /**
-                     * 设置镜像ID，形如`img-gvbnzy6f`。镜像ID可以通过如下方式获取：<br><li>通过[DescribeImages](https://cloud.tencent.com/document/api/213/15715)接口返回的`ImageId`获取。<br><li>通过[镜像控制台](https://console.cloud.tencent.com/cvm/image)获取。
-                     * @param _imageId 镜像ID，形如`img-gvbnzy6f`。镜像ID可以通过如下方式获取：<br><li>通过[DescribeImages](https://cloud.tencent.com/document/api/213/15715)接口返回的`ImageId`获取。<br><li>通过[镜像控制台](https://console.cloud.tencent.com/cvm/image)获取。
+                     * 设置镜像ID，形如`img-gvbnzy6f`。镜像ID可以通过如下方式获取：<li>通过[DescribeImages](https://cloud.tencent.com/document/api/213/15715)接口返回的`ImageId`获取。</li><li>通过[镜像控制台](https://console.cloud.tencent.com/cvm/image)获取。</li>
+                     * @param _imageId 镜像ID，形如`img-gvbnzy6f`。镜像ID可以通过如下方式获取：<li>通过[DescribeImages](https://cloud.tencent.com/document/api/213/15715)接口返回的`ImageId`获取。</li><li>通过[镜像控制台](https://console.cloud.tencent.com/cvm/image)获取。</li>
                      * 
                      */
                     void SetImageId(const std::string& _imageId);
@@ -64,15 +64,15 @@ namespace TencentCloud
                     bool ImageIdHasBeenSet() const;
 
                     /**
-                     * 获取设置新的镜像名称；必须满足下列限制：<br> <li> 不得超过60个字符。<br> <li> 镜像名称不能与已有镜像重复。
-                     * @return ImageName 设置新的镜像名称；必须满足下列限制：<br> <li> 不得超过60个字符。<br> <li> 镜像名称不能与已有镜像重复。
+                     * 获取设置新的镜像名称；必须满足下列限制 <li> 不得超过60个字符。</li><li> 镜像名称不能与已有镜像重复。</li>
+                     * @return ImageName 设置新的镜像名称；必须满足下列限制 <li> 不得超过60个字符。</li><li> 镜像名称不能与已有镜像重复。</li>
                      * 
                      */
                     std::string GetImageName() const;
 
                     /**
-                     * 设置设置新的镜像名称；必须满足下列限制：<br> <li> 不得超过60个字符。<br> <li> 镜像名称不能与已有镜像重复。
-                     * @param _imageName 设置新的镜像名称；必须满足下列限制：<br> <li> 不得超过60个字符。<br> <li> 镜像名称不能与已有镜像重复。
+                     * 设置设置新的镜像名称；必须满足下列限制 <li> 不得超过60个字符。</li><li> 镜像名称不能与已有镜像重复。</li>
+                     * @param _imageName 设置新的镜像名称；必须满足下列限制 <li> 不得超过60个字符。</li><li> 镜像名称不能与已有镜像重复。</li>
                      * 
                      */
                     void SetImageName(const std::string& _imageName);
@@ -85,15 +85,15 @@ namespace TencentCloud
                     bool ImageNameHasBeenSet() const;
 
                     /**
-                     * 获取设置新的镜像描述；必须满足下列限制：<br> <li> 不得超过60个字符。
-                     * @return ImageDescription 设置新的镜像描述；必须满足下列限制：<br> <li> 不得超过60个字符。
+                     * 获取设置新的镜像描述；必须满足下列限制： <li> 不得超过 256 个字符。</li>
+                     * @return ImageDescription 设置新的镜像描述；必须满足下列限制： <li> 不得超过 256 个字符。</li>
                      * 
                      */
                     std::string GetImageDescription() const;
 
                     /**
-                     * 设置设置新的镜像描述；必须满足下列限制：<br> <li> 不得超过60个字符。
-                     * @param _imageDescription 设置新的镜像描述；必须满足下列限制：<br> <li> 不得超过60个字符。
+                     * 设置设置新的镜像描述；必须满足下列限制： <li> 不得超过 256 个字符。</li>
+                     * @param _imageDescription 设置新的镜像描述；必须满足下列限制： <li> 不得超过 256 个字符。</li>
                      * 
                      */
                     void SetImageDescription(const std::string& _imageDescription);
@@ -108,19 +108,19 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 镜像ID，形如`img-gvbnzy6f`。镜像ID可以通过如下方式获取：<br><li>通过[DescribeImages](https://cloud.tencent.com/document/api/213/15715)接口返回的`ImageId`获取。<br><li>通过[镜像控制台](https://console.cloud.tencent.com/cvm/image)获取。
+                     * 镜像ID，形如`img-gvbnzy6f`。镜像ID可以通过如下方式获取：<li>通过[DescribeImages](https://cloud.tencent.com/document/api/213/15715)接口返回的`ImageId`获取。</li><li>通过[镜像控制台](https://console.cloud.tencent.com/cvm/image)获取。</li>
                      */
                     std::string m_imageId;
                     bool m_imageIdHasBeenSet;
 
                     /**
-                     * 设置新的镜像名称；必须满足下列限制：<br> <li> 不得超过60个字符。<br> <li> 镜像名称不能与已有镜像重复。
+                     * 设置新的镜像名称；必须满足下列限制 <li> 不得超过60个字符。</li><li> 镜像名称不能与已有镜像重复。</li>
                      */
                     std::string m_imageName;
                     bool m_imageNameHasBeenSet;
 
                     /**
-                     * 设置新的镜像描述；必须满足下列限制：<br> <li> 不得超过60个字符。
+                     * 设置新的镜像描述；必须满足下列限制： <li> 不得超过 256 个字符。</li>
                      */
                     std::string m_imageDescription;
                     bool m_imageDescriptionHasBeenSet;

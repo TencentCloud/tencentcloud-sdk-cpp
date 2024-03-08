@@ -63,6 +63,27 @@ namespace TencentCloud
                      */
                     bool InstanceIdHasBeenSet() const;
 
+                    /**
+                     * 获取RO只读组Id
+                     * @return RoGroupId RO只读组Id
+                     * 
+                     */
+                    std::string GetRoGroupId() const;
+
+                    /**
+                     * 设置RO只读组Id
+                     * @param _roGroupId RO只读组Id
+                     * 
+                     */
+                    void SetRoGroupId(const std::string& _roGroupId);
+
+                    /**
+                     * 判断参数 RoGroupId 是否已赋值
+                     * @return RoGroupId 是否已赋值
+                     * 
+                     */
+                    bool RoGroupIdHasBeenSet() const;
+
                 private:
 
                     /**
@@ -70,6 +91,12 @@ namespace TencentCloud
                      */
                     std::string m_instanceId;
                     bool m_instanceIdHasBeenSet;
+
+                    /**
+                     * RO只读组Id
+                     */
+                    std::string m_roGroupId;
+                    bool m_roGroupIdHasBeenSet;
 
                 };
             }

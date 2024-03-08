@@ -59,8 +59,8 @@ namespace TencentCloud
                     bool TotalCountHasBeenSet() const;
 
                     /**
-                     * 获取帐号列表详细信息。
-                     * @return Details 帐号列表详细信息。
+                     * 获取账号列表详细信息。
+                     * @return Details 账号列表详细信息。
                      * 
                      */
                     std::vector<AccountInfo> GetDetails() const;
@@ -81,7 +81,7 @@ namespace TencentCloud
                     bool m_totalCountHasBeenSet;
 
                     /**
-                     * 帐号列表详细信息。
+                     * 账号列表详细信息。
                      */
                     std::vector<AccountInfo> m_details;
                     bool m_detailsHasBeenSet;

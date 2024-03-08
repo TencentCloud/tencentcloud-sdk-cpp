@@ -64,15 +64,15 @@ namespace TencentCloud
                     bool AddressIdHasBeenSet() const;
 
                     /**
-                     * 获取修改后的 EIP 名称。长度上限为20个字符。
-                     * @return AddressName 修改后的 EIP 名称。长度上限为20个字符。
+                     * 获取修改后的 EIP 名称。长度上限为128个字符。
+                     * @return AddressName 修改后的 EIP 名称。长度上限为128个字符。
                      * 
                      */
                     std::string GetAddressName() const;
 
                     /**
-                     * 设置修改后的 EIP 名称。长度上限为20个字符。
-                     * @param _addressName 修改后的 EIP 名称。长度上限为20个字符。
+                     * 设置修改后的 EIP 名称。长度上限为128个字符。
+                     * @param _addressName 修改后的 EIP 名称。长度上限为128个字符。
                      * 
                      */
                     void SetAddressName(const std::string& _addressName);
@@ -114,7 +114,7 @@ namespace TencentCloud
                     bool m_addressIdHasBeenSet;
 
                     /**
-                     * 修改后的 EIP 名称。长度上限为20个字符。
+                     * 修改后的 EIP 名称。长度上限为128个字符。
                      */
                     std::string m_addressName;
                     bool m_addressNameHasBeenSet;

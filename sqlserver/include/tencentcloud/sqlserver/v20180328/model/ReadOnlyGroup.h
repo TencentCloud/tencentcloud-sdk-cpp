@@ -341,6 +341,48 @@ namespace TencentCloud
                      */
                     bool ReadOnlyInstanceSetHasBeenSet() const;
 
+                    /**
+                     * 获取RO组外网地址域名
+                     * @return DnsPodDomain RO组外网地址域名
+                     * 
+                     */
+                    std::string GetDnsPodDomain() const;
+
+                    /**
+                     * 设置RO组外网地址域名
+                     * @param _dnsPodDomain RO组外网地址域名
+                     * 
+                     */
+                    void SetDnsPodDomain(const std::string& _dnsPodDomain);
+
+                    /**
+                     * 判断参数 DnsPodDomain 是否已赋值
+                     * @return DnsPodDomain 是否已赋值
+                     * 
+                     */
+                    bool DnsPodDomainHasBeenSet() const;
+
+                    /**
+                     * 获取RO组外网地址端口
+                     * @return TgwWanVPort RO组外网地址端口
+                     * 
+                     */
+                    uint64_t GetTgwWanVPort() const;
+
+                    /**
+                     * 设置RO组外网地址端口
+                     * @param _tgwWanVPort RO组外网地址端口
+                     * 
+                     */
+                    void SetTgwWanVPort(const uint64_t& _tgwWanVPort);
+
+                    /**
+                     * 判断参数 TgwWanVPort 是否已赋值
+                     * @return TgwWanVPort 是否已赋值
+                     * 
+                     */
+                    bool TgwWanVPortHasBeenSet() const;
+
                 private:
 
                     /**
@@ -426,6 +468,18 @@ namespace TencentCloud
                      */
                     std::vector<ReadOnlyInstance> m_readOnlyInstanceSet;
                     bool m_readOnlyInstanceSetHasBeenSet;
+
+                    /**
+                     * RO组外网地址域名
+                     */
+                    std::string m_dnsPodDomain;
+                    bool m_dnsPodDomainHasBeenSet;
+
+                    /**
+                     * RO组外网地址端口
+                     */
+                    uint64_t m_tgwWanVPort;
+                    bool m_tgwWanVPortHasBeenSet;
 
                 };
             }

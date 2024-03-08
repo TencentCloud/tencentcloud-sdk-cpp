@@ -30,7 +30,9 @@ Options::Options() :
     m_ddlOptionsHasBeenSet(false),
     m_kafkaOptionHasBeenSet(false),
     m_rateLimitOptionHasBeenSet(false),
-    m_autoRetryTimeRangeMinutesHasBeenSet(false)
+    m_autoRetryTimeRangeMinutesHasBeenSet(false),
+    m_filterBeginCommitHasBeenSet(false),
+    m_filterCheckpointHasBeenSet(false)
 {
 }
 
@@ -173,6 +175,26 @@ CoreInternalOutcome Options::Deserialize(const rapidjson::Value &value)
         m_autoRetryTimeRangeMinutesHasBeenSet = true;
     }
 
+    if (value.HasMember("FilterBeginCommit") && !value["FilterBeginCommit"].IsNull())
+    {
+        if (!value["FilterBeginCommit"].IsBool())
+        {
+            return CoreInternalOutcome(Core::Error("response `Options.FilterBeginCommit` IsBool=false incorrectly").SetRequestId(requestId));
+        }
+        m_filterBeginCommit = value["FilterBeginCommit"].GetBool();
+        m_filterBeginCommitHasBeenSet = true;
+    }
+
+    if (value.HasMember("FilterCheckpoint") && !value["FilterCheckpoint"].IsNull())
+    {
+        if (!value["FilterCheckpoint"].IsBool())
+        {
+            return CoreInternalOutcome(Core::Error("response `Options.FilterCheckpoint` IsBool=false incorrectly").SetRequestId(requestId));
+        }
+        m_filterCheckpoint = value["FilterCheckpoint"].GetBool();
+        m_filterCheckpointHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -273,6 +295,22 @@ void Options::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Allocat
         string key = "AutoRetryTimeRangeMinutes";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_autoRetryTimeRangeMinutes, allocator);
+    }
+
+    if (m_filterBeginCommitHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "FilterBeginCommit";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_filterBeginCommit, allocator);
+    }
+
+    if (m_filterCheckpointHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "FilterCheckpoint";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_filterCheckpoint, allocator);
     }
 
 }
@@ -436,5 +474,37 @@ void Options::SetAutoRetryTimeRangeMinutes(const int64_t& _autoRetryTimeRangeMin
 bool Options::AutoRetryTimeRangeMinutesHasBeenSet() const
 {
     return m_autoRetryTimeRangeMinutesHasBeenSet;
+}
+
+bool Options::GetFilterBeginCommit() const
+{
+    return m_filterBeginCommit;
+}
+
+void Options::SetFilterBeginCommit(const bool& _filterBeginCommit)
+{
+    m_filterBeginCommit = _filterBeginCommit;
+    m_filterBeginCommitHasBeenSet = true;
+}
+
+bool Options::FilterBeginCommitHasBeenSet() const
+{
+    return m_filterBeginCommitHasBeenSet;
+}
+
+bool Options::GetFilterCheckpoint() const
+{
+    return m_filterCheckpoint;
+}
+
+void Options::SetFilterCheckpoint(const bool& _filterCheckpoint)
+{
+    m_filterCheckpoint = _filterCheckpoint;
+    m_filterCheckpointHasBeenSet = true;
+}
+
+bool Options::FilterCheckpointHasBeenSet() const
+{
+    return m_filterCheckpointHasBeenSet;
 }
 

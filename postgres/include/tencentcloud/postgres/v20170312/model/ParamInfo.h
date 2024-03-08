@@ -486,18 +486,18 @@ namespace TencentCloud
                     bool LastModifyTimeHasBeenSet() const;
 
                     /**
-                     * 获取参数存在主备制约，0：无主备制约关系，1:备机参数值需比主机大，2:主机参数值需比备机大
+                     * 获取参数主备制约，0：无主备制约关系，1:备机参数值需比主机大，2:主机参数值需比备机大
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return StandbyRelated 参数存在主备制约，0：无主备制约关系，1:备机参数值需比主机大，2:主机参数值需比备机大
+                     * @return StandbyRelated 参数主备制约，0：无主备制约关系，1:备机参数值需比主机大，2:主机参数值需比备机大
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetStandbyRelated() const;
 
                     /**
-                     * 设置参数存在主备制约，0：无主备制约关系，1:备机参数值需比主机大，2:主机参数值需比备机大
+                     * 设置参数主备制约，0：无主备制约关系，1:备机参数值需比主机大，2:主机参数值需比备机大
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _standbyRelated 参数存在主备制约，0：无主备制约关系，1:备机参数值需比主机大，2:主机参数值需比备机大
+                     * @param _standbyRelated 参数主备制约，0：无主备制约关系，1:备机参数值需比主机大，2:主机参数值需比备机大
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -511,18 +511,18 @@ namespace TencentCloud
                     bool StandbyRelatedHasBeenSet() const;
 
                     /**
-                     * 获取参数版本关联信息，存储具体内核版本下的具体参数信息
+                     * 获取参数版本关联信息，内容为相应内核版本下的参数详细信息
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return VersionRelationSet 参数版本关联信息，存储具体内核版本下的具体参数信息
+                     * @return VersionRelationSet 参数版本关联信息，内容为相应内核版本下的参数详细信息
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<ParamVersionRelation> GetVersionRelationSet() const;
 
                     /**
-                     * 设置参数版本关联信息，存储具体内核版本下的具体参数信息
+                     * 设置参数版本关联信息，内容为相应内核版本下的参数详细信息
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _versionRelationSet 参数版本关联信息，存储具体内核版本下的具体参数信息
+                     * @param _versionRelationSet 参数版本关联信息，内容为相应内核版本下的参数详细信息
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -536,18 +536,18 @@ namespace TencentCloud
                     bool VersionRelationSetHasBeenSet() const;
 
                     /**
-                     * 获取参数规格关联信息，存储具体规格下具体的参数信息
+                     * 获取参数规格关联信息，内容为相应规格下的参数详细信息
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return SpecRelationSet 参数规格关联信息，存储具体规格下具体的参数信息
+                     * @return SpecRelationSet 参数规格关联信息，内容为相应规格下的参数详细信息
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<ParamSpecRelation> GetSpecRelationSet() const;
 
                     /**
-                     * 设置参数规格关联信息，存储具体规格下具体的参数信息
+                     * 设置参数规格关联信息，内容为相应规格下的参数详细信息
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _specRelationSet 参数规格关联信息，存储具体规格下具体的参数信息
+                     * @param _specRelationSet 参数规格关联信息，内容为相应规格下的参数详细信息
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -685,21 +685,21 @@ namespace TencentCloud
                     bool m_lastModifyTimeHasBeenSet;
 
                     /**
-                     * 参数存在主备制约，0：无主备制约关系，1:备机参数值需比主机大，2:主机参数值需比备机大
+                     * 参数主备制约，0：无主备制约关系，1:备机参数值需比主机大，2:主机参数值需比备机大
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_standbyRelated;
                     bool m_standbyRelatedHasBeenSet;
 
                     /**
-                     * 参数版本关联信息，存储具体内核版本下的具体参数信息
+                     * 参数版本关联信息，内容为相应内核版本下的参数详细信息
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<ParamVersionRelation> m_versionRelationSet;
                     bool m_versionRelationSetHasBeenSet;
 
                     /**
-                     * 参数规格关联信息，存储具体规格下具体的参数信息
+                     * 参数规格关联信息，内容为相应规格下的参数详细信息
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<ParamSpecRelation> m_specRelationSet;

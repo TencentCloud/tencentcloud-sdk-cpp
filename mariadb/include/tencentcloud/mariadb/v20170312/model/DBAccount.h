@@ -173,18 +173,18 @@ namespace TencentCloud
                     bool ReadOnlyHasBeenSet() const;
 
                     /**
-                     * 获取该字段对只读帐号有意义，表示选择主备延迟小于该值的备机
+                     * 获取该字段对只读账号有意义，表示选择主备延迟小于该值的备机
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return DelayThresh 该字段对只读帐号有意义，表示选择主备延迟小于该值的备机
+                     * @return DelayThresh 该字段对只读账号有意义，表示选择主备延迟小于该值的备机
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetDelayThresh() const;
 
                     /**
-                     * 设置该字段对只读帐号有意义，表示选择主备延迟小于该值的备机
+                     * 设置该字段对只读账号有意义，表示选择主备延迟小于该值的备机
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _delayThresh 该字段对只读帐号有意义，表示选择主备延迟小于该值的备机
+                     * @param _delayThresh 该字段对只读账号有意义，表示选择主备延迟小于该值的备机
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -278,7 +278,7 @@ namespace TencentCloud
                     bool m_readOnlyHasBeenSet;
 
                     /**
-                     * 该字段对只读帐号有意义，表示选择主备延迟小于该值的备机
+                     * 该字段对只读账号有意义，表示选择主备延迟小于该值的备机
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_delayThresh;

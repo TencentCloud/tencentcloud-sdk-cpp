@@ -35,7 +35,7 @@ namespace TencentCloud
             namespace Model
             {
                 /**
-                * 订阅的的数据库表信息，用于配置和查询订阅任务接口。
+                * 订阅的数据库表信息，用于配置和查询订阅任务接口。
                 */
                 class SubscribeObject : public AbstractModel
                 {

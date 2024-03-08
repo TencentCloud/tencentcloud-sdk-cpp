@@ -1,0 +1,664 @@
+/*
+ * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *    http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+
+#ifndef TENCENTCLOUD_BILLING_V20180709_MODEL_ALLOCATIONOVERVIEWDETAIL_H_
+#define TENCENTCLOUD_BILLING_V20180709_MODEL_ALLOCATIONOVERVIEWDETAIL_H_
+
+#include <string>
+#include <vector>
+#include <map>
+#include <tencentcloud/core/utils/rapidjson/document.h>
+#include <tencentcloud/core/utils/rapidjson/writer.h>
+#include <tencentcloud/core/utils/rapidjson/stringbuffer.h>
+#include <tencentcloud/core/AbstractModel.h>
+
+
+namespace TencentCloud
+{
+    namespace Billing
+    {
+        namespace V20180709
+        {
+            namespace Model
+            {
+                /**
+                * 分账概览明细
+                */
+                class AllocationOverviewDetail : public AbstractModel
+                {
+                public:
+                    AllocationOverviewDetail();
+                    ~AllocationOverviewDetail() = default;
+                    void ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const;
+                    CoreInternalOutcome Deserialize(const rapidjson::Value &value);
+
+
+                    /**
+                     * 获取分账单元唯一标识
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return TreeNodeUniqKey 分账单元唯一标识
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::string GetTreeNodeUniqKey() const;
+
+                    /**
+                     * 设置分账单元唯一标识
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _treeNodeUniqKey 分账单元唯一标识
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetTreeNodeUniqKey(const std::string& _treeNodeUniqKey);
+
+                    /**
+                     * 判断参数 TreeNodeUniqKey 是否已赋值
+                     * @return TreeNodeUniqKey 是否已赋值
+                     * 
+                     */
+                    bool TreeNodeUniqKeyHasBeenSet() const;
+
+                    /**
+                     * 获取分账单元名称
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return TreeNodeUniqKeyName 分账单元名称
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::string GetTreeNodeUniqKeyName() const;
+
+                    /**
+                     * 设置分账单元名称
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _treeNodeUniqKeyName 分账单元名称
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetTreeNodeUniqKeyName(const std::string& _treeNodeUniqKeyName);
+
+                    /**
+                     * 判断参数 TreeNodeUniqKeyName 是否已赋值
+                     * @return TreeNodeUniqKeyName 是否已赋值
+                     * 
+                     */
+                    bool TreeNodeUniqKeyNameHasBeenSet() const;
+
+                    /**
+                     * 获取日期：结算日期
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return BillDate 日期：结算日期
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::string GetBillDate() const;
+
+                    /**
+                     * 设置日期：结算日期
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _billDate 日期：结算日期
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetBillDate(const std::string& _billDate);
+
+                    /**
+                     * 判断参数 BillDate 是否已赋值
+                     * @return BillDate 是否已赋值
+                     * 
+                     */
+                    bool BillDateHasBeenSet() const;
+
+                    /**
+                     * 获取归集费用(现金)：基于归集规则直接归集到分账单元的现金
+                     * @return GatherCashPayAmount 归集费用(现金)：基于归集规则直接归集到分账单元的现金
+                     * 
+                     */
+                    std::string GetGatherCashPayAmount() const;
+
+                    /**
+                     * 设置归集费用(现金)：基于归集规则直接归集到分账单元的现金
+                     * @param _gatherCashPayAmount 归集费用(现金)：基于归集规则直接归集到分账单元的现金
+                     * 
+                     */
+                    void SetGatherCashPayAmount(const std::string& _gatherCashPayAmount);
+
+                    /**
+                     * 判断参数 GatherCashPayAmount 是否已赋值
+                     * @return GatherCashPayAmount 是否已赋值
+                     * 
+                     */
+                    bool GatherCashPayAmountHasBeenSet() const;
+
+                    /**
+                     * 获取归集费用(优惠券)：基于归集规则直接归集到分账单元的资源优惠券
+                     * @return GatherVoucherPayAmount 归集费用(优惠券)：基于归集规则直接归集到分账单元的资源优惠券
+                     * 
+                     */
+                    std::string GetGatherVoucherPayAmount() const;
+
+                    /**
+                     * 设置归集费用(优惠券)：基于归集规则直接归集到分账单元的资源优惠券
+                     * @param _gatherVoucherPayAmount 归集费用(优惠券)：基于归集规则直接归集到分账单元的资源优惠券
+                     * 
+                     */
+                    void SetGatherVoucherPayAmount(const std::string& _gatherVoucherPayAmount);
+
+                    /**
+                     * 判断参数 GatherVoucherPayAmount 是否已赋值
+                     * @return GatherVoucherPayAmount 是否已赋值
+                     * 
+                     */
+                    bool GatherVoucherPayAmountHasBeenSet() const;
+
+                    /**
+                     * 获取归集费用(赠送金)：基于归集规则直接归集到分账单元的资源赠送金
+                     * @return GatherIncentivePayAmount 归集费用(赠送金)：基于归集规则直接归集到分账单元的资源赠送金
+                     * 
+                     */
+                    std::string GetGatherIncentivePayAmount() const;
+
+                    /**
+                     * 设置归集费用(赠送金)：基于归集规则直接归集到分账单元的资源赠送金
+                     * @param _gatherIncentivePayAmount 归集费用(赠送金)：基于归集规则直接归集到分账单元的资源赠送金
+                     * 
+                     */
+                    void SetGatherIncentivePayAmount(const std::string& _gatherIncentivePayAmount);
+
+                    /**
+                     * 判断参数 GatherIncentivePayAmount 是否已赋值
+                     * @return GatherIncentivePayAmount 是否已赋值
+                     * 
+                     */
+                    bool GatherIncentivePayAmountHasBeenSet() const;
+
+                    /**
+                     * 获取归集费用(分成金)：基于归集规则直接归集到分账单元的资源分成金
+                     * @return GatherTransferPayAmount 归集费用(分成金)：基于归集规则直接归集到分账单元的资源分成金
+                     * 
+                     */
+                    std::string GetGatherTransferPayAmount() const;
+
+                    /**
+                     * 设置归集费用(分成金)：基于归集规则直接归集到分账单元的资源分成金
+                     * @param _gatherTransferPayAmount 归集费用(分成金)：基于归集规则直接归集到分账单元的资源分成金
+                     * 
+                     */
+                    void SetGatherTransferPayAmount(const std::string& _gatherTransferPayAmount);
+
+                    /**
+                     * 判断参数 GatherTransferPayAmount 是否已赋值
+                     * @return GatherTransferPayAmount 是否已赋值
+                     * 
+                     */
+                    bool GatherTransferPayAmountHasBeenSet() const;
+
+                    /**
+                     * 获取分摊费用(现金)：基于分摊规则分摊到分账单元的资源现金
+                     * @return AllocateCashPayAmount 分摊费用(现金)：基于分摊规则分摊到分账单元的资源现金
+                     * 
+                     */
+                    std::string GetAllocateCashPayAmount() const;
+
+                    /**
+                     * 设置分摊费用(现金)：基于分摊规则分摊到分账单元的资源现金
+                     * @param _allocateCashPayAmount 分摊费用(现金)：基于分摊规则分摊到分账单元的资源现金
+                     * 
+                     */
+                    void SetAllocateCashPayAmount(const std::string& _allocateCashPayAmount);
+
+                    /**
+                     * 判断参数 AllocateCashPayAmount 是否已赋值
+                     * @return AllocateCashPayAmount 是否已赋值
+                     * 
+                     */
+                    bool AllocateCashPayAmountHasBeenSet() const;
+
+                    /**
+                     * 获取分摊费用(优惠券)：基于分摊规则分摊到分账单元的资源优惠券
+                     * @return AllocateVoucherPayAmount 分摊费用(优惠券)：基于分摊规则分摊到分账单元的资源优惠券
+                     * 
+                     */
+                    std::string GetAllocateVoucherPayAmount() const;
+
+                    /**
+                     * 设置分摊费用(优惠券)：基于分摊规则分摊到分账单元的资源优惠券
+                     * @param _allocateVoucherPayAmount 分摊费用(优惠券)：基于分摊规则分摊到分账单元的资源优惠券
+                     * 
+                     */
+                    void SetAllocateVoucherPayAmount(const std::string& _allocateVoucherPayAmount);
+
+                    /**
+                     * 判断参数 AllocateVoucherPayAmount 是否已赋值
+                     * @return AllocateVoucherPayAmount 是否已赋值
+                     * 
+                     */
+                    bool AllocateVoucherPayAmountHasBeenSet() const;
+
+                    /**
+                     * 获取分摊费用(赠送金)：基于分摊规则分摊到分账单元的资源赠送金
+                     * @return AllocateIncentivePayAmount 分摊费用(赠送金)：基于分摊规则分摊到分账单元的资源赠送金
+                     * 
+                     */
+                    std::string GetAllocateIncentivePayAmount() const;
+
+                    /**
+                     * 设置分摊费用(赠送金)：基于分摊规则分摊到分账单元的资源赠送金
+                     * @param _allocateIncentivePayAmount 分摊费用(赠送金)：基于分摊规则分摊到分账单元的资源赠送金
+                     * 
+                     */
+                    void SetAllocateIncentivePayAmount(const std::string& _allocateIncentivePayAmount);
+
+                    /**
+                     * 判断参数 AllocateIncentivePayAmount 是否已赋值
+                     * @return AllocateIncentivePayAmount 是否已赋值
+                     * 
+                     */
+                    bool AllocateIncentivePayAmountHasBeenSet() const;
+
+                    /**
+                     * 获取分摊费用(分成金)：基于分摊规则分摊到分账单元的资源分成金
+                     * @return AllocateTransferPayAmount 分摊费用(分成金)：基于分摊规则分摊到分账单元的资源分成金
+                     * 
+                     */
+                    std::string GetAllocateTransferPayAmount() const;
+
+                    /**
+                     * 设置分摊费用(分成金)：基于分摊规则分摊到分账单元的资源分成金
+                     * @param _allocateTransferPayAmount 分摊费用(分成金)：基于分摊规则分摊到分账单元的资源分成金
+                     * 
+                     */
+                    void SetAllocateTransferPayAmount(const std::string& _allocateTransferPayAmount);
+
+                    /**
+                     * 判断参数 AllocateTransferPayAmount 是否已赋值
+                     * @return AllocateTransferPayAmount 是否已赋值
+                     * 
+                     */
+                    bool AllocateTransferPayAmountHasBeenSet() const;
+
+                    /**
+                     * 获取合计费用(现金)：分账单元总费用，归集费用(现金) + 分摊费用(现金)
+                     * @return TotalCashPayAmount 合计费用(现金)：分账单元总费用，归集费用(现金) + 分摊费用(现金)
+                     * 
+                     */
+                    std::string GetTotalCashPayAmount() const;
+
+                    /**
+                     * 设置合计费用(现金)：分账单元总费用，归集费用(现金) + 分摊费用(现金)
+                     * @param _totalCashPayAmount 合计费用(现金)：分账单元总费用，归集费用(现金) + 分摊费用(现金)
+                     * 
+                     */
+                    void SetTotalCashPayAmount(const std::string& _totalCashPayAmount);
+
+                    /**
+                     * 判断参数 TotalCashPayAmount 是否已赋值
+                     * @return TotalCashPayAmount 是否已赋值
+                     * 
+                     */
+                    bool TotalCashPayAmountHasBeenSet() const;
+
+                    /**
+                     * 获取合计费用(优惠券)：分账单元总费用，归集费用(优惠券) + 分摊费用(优惠券)
+                     * @return TotalVoucherPayAmount 合计费用(优惠券)：分账单元总费用，归集费用(优惠券) + 分摊费用(优惠券)
+                     * 
+                     */
+                    std::string GetTotalVoucherPayAmount() const;
+
+                    /**
+                     * 设置合计费用(优惠券)：分账单元总费用，归集费用(优惠券) + 分摊费用(优惠券)
+                     * @param _totalVoucherPayAmount 合计费用(优惠券)：分账单元总费用，归集费用(优惠券) + 分摊费用(优惠券)
+                     * 
+                     */
+                    void SetTotalVoucherPayAmount(const std::string& _totalVoucherPayAmount);
+
+                    /**
+                     * 判断参数 TotalVoucherPayAmount 是否已赋值
+                     * @return TotalVoucherPayAmount 是否已赋值
+                     * 
+                     */
+                    bool TotalVoucherPayAmountHasBeenSet() const;
+
+                    /**
+                     * 获取合计费用(赠送金)：分账单元总费用，归集费用(赠送金) + 分摊费用(赠送金)
+                     * @return TotalIncentivePayAmount 合计费用(赠送金)：分账单元总费用，归集费用(赠送金) + 分摊费用(赠送金)
+                     * 
+                     */
+                    std::string GetTotalIncentivePayAmount() const;
+
+                    /**
+                     * 设置合计费用(赠送金)：分账单元总费用，归集费用(赠送金) + 分摊费用(赠送金)
+                     * @param _totalIncentivePayAmount 合计费用(赠送金)：分账单元总费用，归集费用(赠送金) + 分摊费用(赠送金)
+                     * 
+                     */
+                    void SetTotalIncentivePayAmount(const std::string& _totalIncentivePayAmount);
+
+                    /**
+                     * 判断参数 TotalIncentivePayAmount 是否已赋值
+                     * @return TotalIncentivePayAmount 是否已赋值
+                     * 
+                     */
+                    bool TotalIncentivePayAmountHasBeenSet() const;
+
+                    /**
+                     * 获取合计费用(分成金)：分账单元总费用，归集费用(分成金)+分摊费用(分成金)
+                     * @return TotalTransferPayAmount 合计费用(分成金)：分账单元总费用，归集费用(分成金)+分摊费用(分成金)
+                     * 
+                     */
+                    std::string GetTotalTransferPayAmount() const;
+
+                    /**
+                     * 设置合计费用(分成金)：分账单元总费用，归集费用(分成金)+分摊费用(分成金)
+                     * @param _totalTransferPayAmount 合计费用(分成金)：分账单元总费用，归集费用(分成金)+分摊费用(分成金)
+                     * 
+                     */
+                    void SetTotalTransferPayAmount(const std::string& _totalTransferPayAmount);
+
+                    /**
+                     * 判断参数 TotalTransferPayAmount 是否已赋值
+                     * @return TotalTransferPayAmount 是否已赋值
+                     * 
+                     */
+                    bool TotalTransferPayAmountHasBeenSet() const;
+
+                    /**
+                     * 获取归集费用(折后总额)：基于归集规则直接归集到分账单元的资源优惠后总价
+                     * @return GatherRealCost 归集费用(折后总额)：基于归集规则直接归集到分账单元的资源优惠后总价
+                     * 
+                     */
+                    std::string GetGatherRealCost() const;
+
+                    /**
+                     * 设置归集费用(折后总额)：基于归集规则直接归集到分账单元的资源优惠后总价
+                     * @param _gatherRealCost 归集费用(折后总额)：基于归集规则直接归集到分账单元的资源优惠后总价
+                     * 
+                     */
+                    void SetGatherRealCost(const std::string& _gatherRealCost);
+
+                    /**
+                     * 判断参数 GatherRealCost 是否已赋值
+                     * @return GatherRealCost 是否已赋值
+                     * 
+                     */
+                    bool GatherRealCostHasBeenSet() const;
+
+                    /**
+                     * 获取分摊费用(折后总额)：基于分摊规则分摊到分账单元的资源优惠后总价
+                     * @return AllocateRealCost 分摊费用(折后总额)：基于分摊规则分摊到分账单元的资源优惠后总价
+                     * 
+                     */
+                    std::string GetAllocateRealCost() const;
+
+                    /**
+                     * 设置分摊费用(折后总额)：基于分摊规则分摊到分账单元的资源优惠后总价
+                     * @param _allocateRealCost 分摊费用(折后总额)：基于分摊规则分摊到分账单元的资源优惠后总价
+                     * 
+                     */
+                    void SetAllocateRealCost(const std::string& _allocateRealCost);
+
+                    /**
+                     * 判断参数 AllocateRealCost 是否已赋值
+                     * @return AllocateRealCost 是否已赋值
+                     * 
+                     */
+                    bool AllocateRealCostHasBeenSet() const;
+
+                    /**
+                     * 获取合计费用(折后总额)：分账单元总费用，归集费用(折后总额) + 分摊费用(折后总额)
+                     * @return RealTotalCost 合计费用(折后总额)：分账单元总费用，归集费用(折后总额) + 分摊费用(折后总额)
+                     * 
+                     */
+                    std::string GetRealTotalCost() const;
+
+                    /**
+                     * 设置合计费用(折后总额)：分账单元总费用，归集费用(折后总额) + 分摊费用(折后总额)
+                     * @param _realTotalCost 合计费用(折后总额)：分账单元总费用，归集费用(折后总额) + 分摊费用(折后总额)
+                     * 
+                     */
+                    void SetRealTotalCost(const std::string& _realTotalCost);
+
+                    /**
+                     * 判断参数 RealTotalCost 是否已赋值
+                     * @return RealTotalCost 是否已赋值
+                     * 
+                     */
+                    bool RealTotalCostHasBeenSet() const;
+
+                    /**
+                     * 获取占比(折后总额)：本分账单元合计费用(折后总额)/合计费用(折后总额)*100%
+                     * @return Ratio 占比(折后总额)：本分账单元合计费用(折后总额)/合计费用(折后总额)*100%
+                     * 
+                     */
+                    std::string GetRatio() const;
+
+                    /**
+                     * 设置占比(折后总额)：本分账单元合计费用(折后总额)/合计费用(折后总额)*100%
+                     * @param _ratio 占比(折后总额)：本分账单元合计费用(折后总额)/合计费用(折后总额)*100%
+                     * 
+                     */
+                    void SetRatio(const std::string& _ratio);
+
+                    /**
+                     * 判断参数 Ratio 是否已赋值
+                     * @return Ratio 是否已赋值
+                     * 
+                     */
+                    bool RatioHasBeenSet() const;
+
+                    /**
+                     * 获取环比(折后总额)：[本月分账单元合计费用(折后总额) - 上月分账单元合计费用(折后总额)] / 上月分账单元合计费用(折后总额) * 100%
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return Trend 环比(折后总额)：[本月分账单元合计费用(折后总额) - 上月分账单元合计费用(折后总额)] / 上月分账单元合计费用(折后总额) * 100%
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::string GetTrend() const;
+
+                    /**
+                     * 设置环比(折后总额)：[本月分账单元合计费用(折后总额) - 上月分账单元合计费用(折后总额)] / 上月分账单元合计费用(折后总额) * 100%
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _trend 环比(折后总额)：[本月分账单元合计费用(折后总额) - 上月分账单元合计费用(折后总额)] / 上月分账单元合计费用(折后总额) * 100%
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetTrend(const std::string& _trend);
+
+                    /**
+                     * 判断参数 Trend 是否已赋值
+                     * @return Trend 是否已赋值
+                     * 
+                     */
+                    bool TrendHasBeenSet() const;
+
+                    /**
+                     * 获取环比箭头
+upward -上升
+downward - 下降
+none - 平稳
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return TrendType 环比箭头
+upward -上升
+downward - 下降
+none - 平稳
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::string GetTrendType() const;
+
+                    /**
+                     * 设置环比箭头
+upward -上升
+downward - 下降
+none - 平稳
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _trendType 环比箭头
+upward -上升
+downward - 下降
+none - 平稳
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetTrendType(const std::string& _trendType);
+
+                    /**
+                     * 判断参数 TrendType 是否已赋值
+                     * @return TrendType 是否已赋值
+                     * 
+                     */
+                    bool TrendTypeHasBeenSet() const;
+
+                private:
+
+                    /**
+                     * 分账单元唯一标识
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_treeNodeUniqKey;
+                    bool m_treeNodeUniqKeyHasBeenSet;
+
+                    /**
+                     * 分账单元名称
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_treeNodeUniqKeyName;
+                    bool m_treeNodeUniqKeyNameHasBeenSet;
+
+                    /**
+                     * 日期：结算日期
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_billDate;
+                    bool m_billDateHasBeenSet;
+
+                    /**
+                     * 归集费用(现金)：基于归集规则直接归集到分账单元的现金
+                     */
+                    std::string m_gatherCashPayAmount;
+                    bool m_gatherCashPayAmountHasBeenSet;
+
+                    /**
+                     * 归集费用(优惠券)：基于归集规则直接归集到分账单元的资源优惠券
+                     */
+                    std::string m_gatherVoucherPayAmount;
+                    bool m_gatherVoucherPayAmountHasBeenSet;
+
+                    /**
+                     * 归集费用(赠送金)：基于归集规则直接归集到分账单元的资源赠送金
+                     */
+                    std::string m_gatherIncentivePayAmount;
+                    bool m_gatherIncentivePayAmountHasBeenSet;
+
+                    /**
+                     * 归集费用(分成金)：基于归集规则直接归集到分账单元的资源分成金
+                     */
+                    std::string m_gatherTransferPayAmount;
+                    bool m_gatherTransferPayAmountHasBeenSet;
+
+                    /**
+                     * 分摊费用(现金)：基于分摊规则分摊到分账单元的资源现金
+                     */
+                    std::string m_allocateCashPayAmount;
+                    bool m_allocateCashPayAmountHasBeenSet;
+
+                    /**
+                     * 分摊费用(优惠券)：基于分摊规则分摊到分账单元的资源优惠券
+                     */
+                    std::string m_allocateVoucherPayAmount;
+                    bool m_allocateVoucherPayAmountHasBeenSet;
+
+                    /**
+                     * 分摊费用(赠送金)：基于分摊规则分摊到分账单元的资源赠送金
+                     */
+                    std::string m_allocateIncentivePayAmount;
+                    bool m_allocateIncentivePayAmountHasBeenSet;
+
+                    /**
+                     * 分摊费用(分成金)：基于分摊规则分摊到分账单元的资源分成金
+                     */
+                    std::string m_allocateTransferPayAmount;
+                    bool m_allocateTransferPayAmountHasBeenSet;
+
+                    /**
+                     * 合计费用(现金)：分账单元总费用，归集费用(现金) + 分摊费用(现金)
+                     */
+                    std::string m_totalCashPayAmount;
+                    bool m_totalCashPayAmountHasBeenSet;
+
+                    /**
+                     * 合计费用(优惠券)：分账单元总费用，归集费用(优惠券) + 分摊费用(优惠券)
+                     */
+                    std::string m_totalVoucherPayAmount;
+                    bool m_totalVoucherPayAmountHasBeenSet;
+
+                    /**
+                     * 合计费用(赠送金)：分账单元总费用，归集费用(赠送金) + 分摊费用(赠送金)
+                     */
+                    std::string m_totalIncentivePayAmount;
+                    bool m_totalIncentivePayAmountHasBeenSet;
+
+                    /**
+                     * 合计费用(分成金)：分账单元总费用，归集费用(分成金)+分摊费用(分成金)
+                     */
+                    std::string m_totalTransferPayAmount;
+                    bool m_totalTransferPayAmountHasBeenSet;
+
+                    /**
+                     * 归集费用(折后总额)：基于归集规则直接归集到分账单元的资源优惠后总价
+                     */
+                    std::string m_gatherRealCost;
+                    bool m_gatherRealCostHasBeenSet;
+
+                    /**
+                     * 分摊费用(折后总额)：基于分摊规则分摊到分账单元的资源优惠后总价
+                     */
+                    std::string m_allocateRealCost;
+                    bool m_allocateRealCostHasBeenSet;
+
+                    /**
+                     * 合计费用(折后总额)：分账单元总费用，归集费用(折后总额) + 分摊费用(折后总额)
+                     */
+                    std::string m_realTotalCost;
+                    bool m_realTotalCostHasBeenSet;
+
+                    /**
+                     * 占比(折后总额)：本分账单元合计费用(折后总额)/合计费用(折后总额)*100%
+                     */
+                    std::string m_ratio;
+                    bool m_ratioHasBeenSet;
+
+                    /**
+                     * 环比(折后总额)：[本月分账单元合计费用(折后总额) - 上月分账单元合计费用(折后总额)] / 上月分账单元合计费用(折后总额) * 100%
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_trend;
+                    bool m_trendHasBeenSet;
+
+                    /**
+                     * 环比箭头
+upward -上升
+downward - 下降
+none - 平稳
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_trendType;
+                    bool m_trendTypeHasBeenSet;
+
+                };
+            }
+        }
+    }
+}
+
+#endif // !TENCENTCLOUD_BILLING_V20180709_MODEL_ALLOCATIONOVERVIEWDETAIL_H_

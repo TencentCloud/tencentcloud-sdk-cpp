@@ -170,15 +170,15 @@ namespace TencentCloud
                     bool EndTimeHasBeenSet() const;
 
                     /**
-                     * 获取分页参数
-                     * @return Offset 分页参数
+                     * 获取偏移量，默认为0。关于Offset的更进一步介绍请参考 API 中的相关小节
+                     * @return Offset 偏移量，默认为0。关于Offset的更进一步介绍请参考 API 中的相关小节
                      * 
                      */
                     int64_t GetOffset() const;
 
                     /**
-                     * 设置分页参数
-                     * @param _offset 分页参数
+                     * 设置偏移量，默认为0。关于Offset的更进一步介绍请参考 API 中的相关小节
+                     * @param _offset 偏移量，默认为0。关于Offset的更进一步介绍请参考 API 中的相关小节
                      * 
                      */
                     void SetOffset(const int64_t& _offset);
@@ -191,15 +191,15 @@ namespace TencentCloud
                     bool OffsetHasBeenSet() const;
 
                     /**
-                     * 获取分页参数
-                     * @return Limit 分页参数
+                     * 获取返回数量，默认为20。关于Limit的更进一步介绍请参考 API 中的相关小节。
+                     * @return Limit 返回数量，默认为20。关于Limit的更进一步介绍请参考 API 中的相关小节。
                      * 
                      */
                     int64_t GetLimit() const;
 
                     /**
-                     * 设置分页参数
-                     * @param _limit 分页参数
+                     * 设置返回数量，默认为20。关于Limit的更进一步介绍请参考 API 中的相关小节。
+                     * @param _limit 返回数量，默认为20。关于Limit的更进一步介绍请参考 API 中的相关小节。
                      * 
                      */
                     void SetLimit(const int64_t& _limit);
@@ -250,13 +250,13 @@ namespace TencentCloud
                     bool m_endTimeHasBeenSet;
 
                     /**
-                     * 分页参数
+                     * 偏移量，默认为0。关于Offset的更进一步介绍请参考 API 中的相关小节
                      */
                     int64_t m_offset;
                     bool m_offsetHasBeenSet;
 
                     /**
-                     * 分页参数
+                     * 返回数量，默认为20。关于Limit的更进一步介绍请参考 API 中的相关小节。
                      */
                     int64_t m_limit;
                     bool m_limitHasBeenSet;

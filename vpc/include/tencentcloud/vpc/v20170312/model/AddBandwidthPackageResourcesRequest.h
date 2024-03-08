@@ -85,15 +85,15 @@ namespace TencentCloud
                     bool BandwidthPackageIdHasBeenSet() const;
 
                     /**
-                     * 获取带宽包类型，当前支持'BGP'类型，表示内部资源是BGP IP。
-                     * @return NetworkType 带宽包类型，当前支持'BGP'类型，表示内部资源是BGP IP。
+                     * 获取带宽包类型，当前支持'BGP'、'HIGH_QUALITY_BGP'、'ANYCAST'、'SINGLEISP_CUCC'、'SINGLEISP_CMCC'、'SINGLEISP_CTCC'等类型。
+                     * @return NetworkType 带宽包类型，当前支持'BGP'、'HIGH_QUALITY_BGP'、'ANYCAST'、'SINGLEISP_CUCC'、'SINGLEISP_CMCC'、'SINGLEISP_CTCC'等类型。
                      * 
                      */
                     std::string GetNetworkType() const;
 
                     /**
-                     * 设置带宽包类型，当前支持'BGP'类型，表示内部资源是BGP IP。
-                     * @param _networkType 带宽包类型，当前支持'BGP'类型，表示内部资源是BGP IP。
+                     * 设置带宽包类型，当前支持'BGP'、'HIGH_QUALITY_BGP'、'ANYCAST'、'SINGLEISP_CUCC'、'SINGLEISP_CMCC'、'SINGLEISP_CTCC'等类型。
+                     * @param _networkType 带宽包类型，当前支持'BGP'、'HIGH_QUALITY_BGP'、'ANYCAST'、'SINGLEISP_CUCC'、'SINGLEISP_CMCC'、'SINGLEISP_CTCC'等类型。
                      * 
                      */
                     void SetNetworkType(const std::string& _networkType);
@@ -162,7 +162,7 @@ namespace TencentCloud
                     bool m_bandwidthPackageIdHasBeenSet;
 
                     /**
-                     * 带宽包类型，当前支持'BGP'类型，表示内部资源是BGP IP。
+                     * 带宽包类型，当前支持'BGP'、'HIGH_QUALITY_BGP'、'ANYCAST'、'SINGLEISP_CUCC'、'SINGLEISP_CMCC'、'SINGLEISP_CTCC'等类型。
                      */
                     std::string m_networkType;
                     bool m_networkTypeHasBeenSet;

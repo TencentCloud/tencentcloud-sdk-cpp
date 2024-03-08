@@ -32,7 +32,8 @@ CreateJobRequest::CreateJobRequest() :
     m_folderIdHasBeenSet(false),
     m_flinkVersionHasBeenSet(false),
     m_workSpaceIdHasBeenSet(false),
-    m_tagsHasBeenSet(false)
+    m_tagsHasBeenSet(false),
+    m_descriptionHasBeenSet(false)
 {
 }
 
@@ -128,6 +129,14 @@ string CreateJobRequest::ToJsonString() const
             d[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
             (*itr).ToJsonObject(d[key.c_str()][i], allocator);
         }
+    }
+
+    if (m_descriptionHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Description";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_description.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -296,6 +305,22 @@ void CreateJobRequest::SetTags(const vector<Tag>& _tags)
 bool CreateJobRequest::TagsHasBeenSet() const
 {
     return m_tagsHasBeenSet;
+}
+
+string CreateJobRequest::GetDescription() const
+{
+    return m_description;
+}
+
+void CreateJobRequest::SetDescription(const string& _description)
+{
+    m_description = _description;
+    m_descriptionHasBeenSet = true;
+}
+
+bool CreateJobRequest::DescriptionHasBeenSet() const
+{
+    return m_descriptionHasBeenSet;
 }
 
 

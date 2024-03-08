@@ -383,15 +383,15 @@ namespace TencentCloud
                     bool TsMinHasBeenSet() const;
 
                     /**
-                     * 获取帐号
-                     * @return User 帐号
+                     * 获取账号
+                     * @return User 账号
                      * 
                      */
                     std::string GetUser() const;
 
                     /**
-                     * 设置帐号
-                     * @param _user 帐号
+                     * 设置账号
+                     * @param _user 账号
                      * 
                      */
                     void SetUser(const std::string& _user);
@@ -548,7 +548,7 @@ namespace TencentCloud
                     bool m_tsMinHasBeenSet;
 
                     /**
-                     * 帐号
+                     * 账号
                      */
                     std::string m_user;
                     bool m_userHasBeenSet;

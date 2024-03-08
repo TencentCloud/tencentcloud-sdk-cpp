@@ -69,7 +69,7 @@ namespace TencentCloud
 <li>vpc-id - String - （过滤条件）VPC实例ID形如：vpc-f49l6u0z。</li>
 <li>vpn-gateway-id - String - （过滤条件）VPN实例ID形如：vpngw-5aluhh9t。</li>
 <li>vpn-gateway-name - String - （过滤条件）VPN实例名称。</li>
-<li>type - String - （过滤条件）VPN网关类型：'IPSEC', 'SSL'。</li>
+<li>type - String - （过滤条件）VPN网关类型：'IPSEC', 'SSL', 'CCN', 'SSL_CCN'。</li>
 <li>public-ip-address- String - （过滤条件）公网IP。</li>
 <li>renew-flag - String - （过滤条件）网关续费类型，手动续费：'NOTIFY_AND_MANUAL_RENEW'、自动续费：'NOTIFY_AND_AUTO_RENEW'。</li>
 <li>zone - String - （过滤条件）VPN所在可用区，形如：ap-guangzhou-2。</li>
@@ -77,7 +77,7 @@ namespace TencentCloud
 <li>vpc-id - String - （过滤条件）VPC实例ID形如：vpc-f49l6u0z。</li>
 <li>vpn-gateway-id - String - （过滤条件）VPN实例ID形如：vpngw-5aluhh9t。</li>
 <li>vpn-gateway-name - String - （过滤条件）VPN实例名称。</li>
-<li>type - String - （过滤条件）VPN网关类型：'IPSEC', 'SSL'。</li>
+<li>type - String - （过滤条件）VPN网关类型：'IPSEC', 'SSL', 'CCN', 'SSL_CCN'。</li>
 <li>public-ip-address- String - （过滤条件）公网IP。</li>
 <li>renew-flag - String - （过滤条件）网关续费类型，手动续费：'NOTIFY_AND_MANUAL_RENEW'、自动续费：'NOTIFY_AND_AUTO_RENEW'。</li>
 <li>zone - String - （过滤条件）VPN所在可用区，形如：ap-guangzhou-2。</li>
@@ -90,7 +90,7 @@ namespace TencentCloud
 <li>vpc-id - String - （过滤条件）VPC实例ID形如：vpc-f49l6u0z。</li>
 <li>vpn-gateway-id - String - （过滤条件）VPN实例ID形如：vpngw-5aluhh9t。</li>
 <li>vpn-gateway-name - String - （过滤条件）VPN实例名称。</li>
-<li>type - String - （过滤条件）VPN网关类型：'IPSEC', 'SSL'。</li>
+<li>type - String - （过滤条件）VPN网关类型：'IPSEC', 'SSL', 'CCN', 'SSL_CCN'。</li>
 <li>public-ip-address- String - （过滤条件）公网IP。</li>
 <li>renew-flag - String - （过滤条件）网关续费类型，手动续费：'NOTIFY_AND_MANUAL_RENEW'、自动续费：'NOTIFY_AND_AUTO_RENEW'。</li>
 <li>zone - String - （过滤条件）VPN所在可用区，形如：ap-guangzhou-2。</li>
@@ -98,7 +98,7 @@ namespace TencentCloud
 <li>vpc-id - String - （过滤条件）VPC实例ID形如：vpc-f49l6u0z。</li>
 <li>vpn-gateway-id - String - （过滤条件）VPN实例ID形如：vpngw-5aluhh9t。</li>
 <li>vpn-gateway-name - String - （过滤条件）VPN实例名称。</li>
-<li>type - String - （过滤条件）VPN网关类型：'IPSEC', 'SSL'。</li>
+<li>type - String - （过滤条件）VPN网关类型：'IPSEC', 'SSL', 'CCN', 'SSL_CCN'。</li>
 <li>public-ip-address- String - （过滤条件）公网IP。</li>
 <li>renew-flag - String - （过滤条件）网关续费类型，手动续费：'NOTIFY_AND_MANUAL_RENEW'、自动续费：'NOTIFY_AND_AUTO_RENEW'。</li>
 <li>zone - String - （过滤条件）VPN所在可用区，形如：ap-guangzhou-2。</li>
@@ -114,15 +114,15 @@ namespace TencentCloud
                     bool FiltersHasBeenSet() const;
 
                     /**
-                     * 获取偏移量
-                     * @return Offset 偏移量
+                     * 获取偏移量，默认值为0。
+                     * @return Offset 偏移量，默认值为0。
                      * 
                      */
                     uint64_t GetOffset() const;
 
                     /**
-                     * 设置偏移量
-                     * @param _offset 偏移量
+                     * 设置偏移量，默认值为0。
+                     * @param _offset 偏移量，默认值为0。
                      * 
                      */
                     void SetOffset(const uint64_t& _offset);
@@ -135,15 +135,15 @@ namespace TencentCloud
                     bool OffsetHasBeenSet() const;
 
                     /**
-                     * 获取请求对象个数
-                     * @return Limit 请求对象个数
+                     * 获取请求对象个数，默认值为20。
+                     * @return Limit 请求对象个数，默认值为20。
                      * 
                      */
                     uint64_t GetLimit() const;
 
                     /**
-                     * 设置请求对象个数
-                     * @param _limit 请求对象个数
+                     * 设置请求对象个数，默认值为20。
+                     * @param _limit 请求对象个数，默认值为20。
                      * 
                      */
                     void SetLimit(const uint64_t& _limit);
@@ -168,7 +168,7 @@ namespace TencentCloud
 <li>vpc-id - String - （过滤条件）VPC实例ID形如：vpc-f49l6u0z。</li>
 <li>vpn-gateway-id - String - （过滤条件）VPN实例ID形如：vpngw-5aluhh9t。</li>
 <li>vpn-gateway-name - String - （过滤条件）VPN实例名称。</li>
-<li>type - String - （过滤条件）VPN网关类型：'IPSEC', 'SSL'。</li>
+<li>type - String - （过滤条件）VPN网关类型：'IPSEC', 'SSL', 'CCN', 'SSL_CCN'。</li>
 <li>public-ip-address- String - （过滤条件）公网IP。</li>
 <li>renew-flag - String - （过滤条件）网关续费类型，手动续费：'NOTIFY_AND_MANUAL_RENEW'、自动续费：'NOTIFY_AND_AUTO_RENEW'。</li>
 <li>zone - String - （过滤条件）VPN所在可用区，形如：ap-guangzhou-2。</li>
@@ -177,13 +177,13 @@ namespace TencentCloud
                     bool m_filtersHasBeenSet;
 
                     /**
-                     * 偏移量
+                     * 偏移量，默认值为0。
                      */
                     uint64_t m_offset;
                     bool m_offsetHasBeenSet;
 
                     /**
-                     * 请求对象个数
+                     * 请求对象个数，默认值为20。
                      */
                     uint64_t m_limit;
                     bool m_limitHasBeenSet;

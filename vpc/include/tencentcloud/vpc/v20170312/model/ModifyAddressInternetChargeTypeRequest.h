@@ -65,15 +65,15 @@ namespace TencentCloud
                     bool AddressIdHasBeenSet() const;
 
                     /**
-                     * 获取弹性公网IP调整目标计费模式，只支持"BANDWIDTH_PREPAID_BY_MONTH"和"TRAFFIC_POSTPAID_BY_HOUR"
-                     * @return InternetChargeType 弹性公网IP调整目标计费模式，只支持"BANDWIDTH_PREPAID_BY_MONTH"和"TRAFFIC_POSTPAID_BY_HOUR"
+                     * 获取弹性公网IP调整目标计费模式，支持 "BANDWIDTH_PREPAID_BY_MONTH"、"TRAFFIC_POSTPAID_BY_HOUR"、"BANDWIDTH_POSTPAID_BY_HOUR"
+                     * @return InternetChargeType 弹性公网IP调整目标计费模式，支持 "BANDWIDTH_PREPAID_BY_MONTH"、"TRAFFIC_POSTPAID_BY_HOUR"、"BANDWIDTH_POSTPAID_BY_HOUR"
                      * 
                      */
                     std::string GetInternetChargeType() const;
 
                     /**
-                     * 设置弹性公网IP调整目标计费模式，只支持"BANDWIDTH_PREPAID_BY_MONTH"和"TRAFFIC_POSTPAID_BY_HOUR"
-                     * @param _internetChargeType 弹性公网IP调整目标计费模式，只支持"BANDWIDTH_PREPAID_BY_MONTH"和"TRAFFIC_POSTPAID_BY_HOUR"
+                     * 设置弹性公网IP调整目标计费模式，支持 "BANDWIDTH_PREPAID_BY_MONTH"、"TRAFFIC_POSTPAID_BY_HOUR"、"BANDWIDTH_POSTPAID_BY_HOUR"
+                     * @param _internetChargeType 弹性公网IP调整目标计费模式，支持 "BANDWIDTH_PREPAID_BY_MONTH"、"TRAFFIC_POSTPAID_BY_HOUR"、"BANDWIDTH_POSTPAID_BY_HOUR"
                      * 
                      */
                     void SetInternetChargeType(const std::string& _internetChargeType);
@@ -136,7 +136,7 @@ namespace TencentCloud
                     bool m_addressIdHasBeenSet;
 
                     /**
-                     * 弹性公网IP调整目标计费模式，只支持"BANDWIDTH_PREPAID_BY_MONTH"和"TRAFFIC_POSTPAID_BY_HOUR"
+                     * 弹性公网IP调整目标计费模式，支持 "BANDWIDTH_PREPAID_BY_MONTH"、"TRAFFIC_POSTPAID_BY_HOUR"、"BANDWIDTH_POSTPAID_BY_HOUR"
                      */
                     std::string m_internetChargeType;
                     bool m_internetChargeTypeHasBeenSet;

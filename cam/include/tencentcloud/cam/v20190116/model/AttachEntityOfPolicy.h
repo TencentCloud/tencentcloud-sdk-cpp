@@ -118,15 +118,15 @@ namespace TencentCloud
                     bool UinHasBeenSet() const;
 
                     /**
-                     * 获取关联类型。1 用户关联 ； 2 用户组关联
-                     * @return RelatedType 关联类型。1 用户关联 ； 2 用户组关联
+                     * 获取关联类型。1 用户关联 ； 2 用户组关联 3 角色关联
+                     * @return RelatedType 关联类型。1 用户关联 ； 2 用户组关联 3 角色关联
                      * 
                      */
                     uint64_t GetRelatedType() const;
 
                     /**
-                     * 设置关联类型。1 用户关联 ； 2 用户组关联
-                     * @param _relatedType 关联类型。1 用户关联 ； 2 用户组关联
+                     * 设置关联类型。1 用户关联 ； 2 用户组关联 3 角色关联
+                     * @param _relatedType 关联类型。1 用户关联 ； 2 用户组关联 3 角色关联
                      * 
                      */
                     void SetRelatedType(const uint64_t& _relatedType);
@@ -186,7 +186,7 @@ namespace TencentCloud
                     bool m_uinHasBeenSet;
 
                     /**
-                     * 关联类型。1 用户关联 ； 2 用户组关联
+                     * 关联类型。1 用户关联 ； 2 用户组关联 3 角色关联
                      */
                     uint64_t m_relatedType;
                     bool m_relatedTypeHasBeenSet;

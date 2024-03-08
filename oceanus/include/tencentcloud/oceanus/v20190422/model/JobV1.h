@@ -873,6 +873,31 @@ namespace TencentCloud
                      */
                     bool EventInfoHasBeenSet() const;
 
+                    /**
+                     * 获取描述信息
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return Description 描述信息
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::string GetDescription() const;
+
+                    /**
+                     * 设置描述信息
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _description 描述信息
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetDescription(const std::string& _description);
+
+                    /**
+                     * 判断参数 Description 是否已赋值
+                     * @return Description 是否已赋值
+                     * 
+                     */
+                    bool DescriptionHasBeenSet() const;
+
                 private:
 
                     /**
@@ -1105,6 +1130,13 @@ namespace TencentCloud
                      */
                     JobEventInfo m_eventInfo;
                     bool m_eventInfoHasBeenSet;
+
+                    /**
+                     * 描述信息
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_description;
+                    bool m_descriptionHasBeenSet;
 
                 };
             }

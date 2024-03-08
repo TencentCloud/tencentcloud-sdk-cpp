@@ -212,6 +212,27 @@ namespace TencentCloud
                      */
                     bool GooseFSxBuildElementsHasBeenSet() const;
 
+                    /**
+                     * 获取客户端集群所属的安全组
+                     * @return SecurityGroupId 客户端集群所属的安全组
+                     * 
+                     */
+                    std::string GetSecurityGroupId() const;
+
+                    /**
+                     * 设置客户端集群所属的安全组
+                     * @param _securityGroupId 客户端集群所属的安全组
+                     * 
+                     */
+                    void SetSecurityGroupId(const std::string& _securityGroupId);
+
+                    /**
+                     * 判断参数 SecurityGroupId 是否已赋值
+                     * @return SecurityGroupId 是否已赋值
+                     * 
+                     */
+                    bool SecurityGroupIdHasBeenSet() const;
+
                 private:
 
                     /**
@@ -261,6 +282,12 @@ namespace TencentCloud
                      */
                     GooseFSxBuildElement m_gooseFSxBuildElements;
                     bool m_gooseFSxBuildElementsHasBeenSet;
+
+                    /**
+                     * 客户端集群所属的安全组
+                     */
+                    std::string m_securityGroupId;
+                    bool m_securityGroupIdHasBeenSet;
 
                 };
             }

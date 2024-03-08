@@ -85,14 +85,14 @@ namespace TencentCloud
                     bool NetworkTypeHasBeenSet() const;
 
                     /**
-                     * 获取带宽包计费类型, 默认为: TOP5_POSTPAID_BY_MONTH, 可选值:
+                     * 获取带宽包计费类型, 默认为: ENHANCED95_POSTPAID_BY_MONTH, 可选值:
 <li>TOP5_POSTPAID_BY_MONTH: 按月后付费TOP5计费</li>
 <li>PERCENT95_POSTPAID_BY_MONTH: 按月后付费月95计费</li>
 <li>FIXED_PREPAID_BY_MONTH: 包月预付费计费</li>
 <li>ENHANCED95_POSTPAID_BY_MONTH: 按月后付费增强型95计费</li>
 <li>PEAK_BANDWIDTH_POSTPAID_BY_DAY: 后付费日结按带宽计费</li>
 
-                     * @return ChargeType 带宽包计费类型, 默认为: TOP5_POSTPAID_BY_MONTH, 可选值:
+                     * @return ChargeType 带宽包计费类型, 默认为: ENHANCED95_POSTPAID_BY_MONTH, 可选值:
 <li>TOP5_POSTPAID_BY_MONTH: 按月后付费TOP5计费</li>
 <li>PERCENT95_POSTPAID_BY_MONTH: 按月后付费月95计费</li>
 <li>FIXED_PREPAID_BY_MONTH: 包月预付费计费</li>
@@ -104,14 +104,14 @@ namespace TencentCloud
                     std::string GetChargeType() const;
 
                     /**
-                     * 设置带宽包计费类型, 默认为: TOP5_POSTPAID_BY_MONTH, 可选值:
+                     * 设置带宽包计费类型, 默认为: ENHANCED95_POSTPAID_BY_MONTH, 可选值:
 <li>TOP5_POSTPAID_BY_MONTH: 按月后付费TOP5计费</li>
 <li>PERCENT95_POSTPAID_BY_MONTH: 按月后付费月95计费</li>
 <li>FIXED_PREPAID_BY_MONTH: 包月预付费计费</li>
 <li>ENHANCED95_POSTPAID_BY_MONTH: 按月后付费增强型95计费</li>
 <li>PEAK_BANDWIDTH_POSTPAID_BY_DAY: 后付费日结按带宽计费</li>
 
-                     * @param _chargeType 带宽包计费类型, 默认为: TOP5_POSTPAID_BY_MONTH, 可选值:
+                     * @param _chargeType 带宽包计费类型, 默认为: ENHANCED95_POSTPAID_BY_MONTH, 可选值:
 <li>TOP5_POSTPAID_BY_MONTH: 按月后付费TOP5计费</li>
 <li>PERCENT95_POSTPAID_BY_MONTH: 按月后付费月95计费</li>
 <li>FIXED_PREPAID_BY_MONTH: 包月预付费计费</li>
@@ -172,15 +172,15 @@ namespace TencentCloud
                     bool BandwidthPackageCountHasBeenSet() const;
 
                     /**
-                     * 获取带宽包限速大小。单位：Mbps，-1表示不限速。该功能当前内测中，暂不对外开放。
-                     * @return InternetMaxBandwidth 带宽包限速大小。单位：Mbps，-1表示不限速。该功能当前内测中，暂不对外开放。
+                     * 获取带宽包限速大小。单位：Mbps，-1表示不限速。不同计费类型的带宽包对应不同的带宽上下限。
+                     * @return InternetMaxBandwidth 带宽包限速大小。单位：Mbps，-1表示不限速。不同计费类型的带宽包对应不同的带宽上下限。
                      * 
                      */
                     int64_t GetInternetMaxBandwidth() const;
 
                     /**
-                     * 设置带宽包限速大小。单位：Mbps，-1表示不限速。该功能当前内测中，暂不对外开放。
-                     * @param _internetMaxBandwidth 带宽包限速大小。单位：Mbps，-1表示不限速。该功能当前内测中，暂不对外开放。
+                     * 设置带宽包限速大小。单位：Mbps，-1表示不限速。不同计费类型的带宽包对应不同的带宽上下限。
+                     * @param _internetMaxBandwidth 带宽包限速大小。单位：Mbps，-1表示不限速。不同计费类型的带宽包对应不同的带宽上下限。
                      * 
                      */
                     void SetInternetMaxBandwidth(const int64_t& _internetMaxBandwidth);
@@ -290,7 +290,7 @@ namespace TencentCloud
                     bool m_networkTypeHasBeenSet;
 
                     /**
-                     * 带宽包计费类型, 默认为: TOP5_POSTPAID_BY_MONTH, 可选值:
+                     * 带宽包计费类型, 默认为: ENHANCED95_POSTPAID_BY_MONTH, 可选值:
 <li>TOP5_POSTPAID_BY_MONTH: 按月后付费TOP5计费</li>
 <li>PERCENT95_POSTPAID_BY_MONTH: 按月后付费月95计费</li>
 <li>FIXED_PREPAID_BY_MONTH: 包月预付费计费</li>
@@ -314,7 +314,7 @@ namespace TencentCloud
                     bool m_bandwidthPackageCountHasBeenSet;
 
                     /**
-                     * 带宽包限速大小。单位：Mbps，-1表示不限速。该功能当前内测中，暂不对外开放。
+                     * 带宽包限速大小。单位：Mbps，-1表示不限速。不同计费类型的带宽包对应不同的带宽上下限。
                      */
                     int64_t m_internetMaxBandwidth;
                     bool m_internetMaxBandwidthHasBeenSet;

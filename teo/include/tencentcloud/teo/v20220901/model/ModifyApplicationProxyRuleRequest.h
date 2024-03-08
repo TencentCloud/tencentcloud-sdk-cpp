@@ -108,10 +108,10 @@ namespace TencentCloud
                     /**
                      * 获取源站类型，取值有：
 <li>custom：手动添加；</li>
-<li>origins：源站组。</li>不填保持原有值。
+<li>origins：源站组。</li>
                      * @return OriginType 源站类型，取值有：
 <li>custom：手动添加；</li>
-<li>origins：源站组。</li>不填保持原有值。
+<li>origins：源站组。</li>
                      * 
                      */
                     std::string GetOriginType() const;
@@ -119,10 +119,10 @@ namespace TencentCloud
                     /**
                      * 设置源站类型，取值有：
 <li>custom：手动添加；</li>
-<li>origins：源站组。</li>不填保持原有值。
+<li>origins：源站组。</li>
                      * @param _originType 源站类型，取值有：
 <li>custom：手动添加；</li>
-<li>origins：源站组。</li>不填保持原有值。
+<li>origins：源站组。</li>
                      * 
                      */
                     void SetOriginType(const std::string& _originType);
@@ -389,7 +389,7 @@ namespace TencentCloud
                     /**
                      * 源站类型，取值有：
 <li>custom：手动添加；</li>
-<li>origins：源站组。</li>不填保持原有值。
+<li>origins：源站组。</li>
                      */
                     std::string m_originType;
                     bool m_originTypeHasBeenSet;

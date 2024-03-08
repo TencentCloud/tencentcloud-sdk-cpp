@@ -253,6 +253,27 @@ namespace TencentCloud
                      */
                     bool TagsHasBeenSet() const;
 
+                    /**
+                     * 获取作业描述
+                     * @return Description 作业描述
+                     * 
+                     */
+                    std::string GetDescription() const;
+
+                    /**
+                     * 设置作业描述
+                     * @param _description 作业描述
+                     * 
+                     */
+                    void SetDescription(const std::string& _description);
+
+                    /**
+                     * 判断参数 Description 是否已赋值
+                     * @return Description 是否已赋值
+                     * 
+                     */
+                    bool DescriptionHasBeenSet() const;
+
                 private:
 
                     /**
@@ -314,6 +335,12 @@ namespace TencentCloud
                      */
                     std::vector<Tag> m_tags;
                     bool m_tagsHasBeenSet;
+
+                    /**
+                     * 作业描述
+                     */
+                    std::string m_description;
+                    bool m_descriptionHasBeenSet;
 
                 };
             }

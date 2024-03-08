@@ -53,7 +53,8 @@ JobV1::JobV1() :
     m_workSpaceIdHasBeenSet(false),
     m_workSpaceNameHasBeenSet(false),
     m_tagsHasBeenSet(false),
-    m_eventInfoHasBeenSet(false)
+    m_eventInfoHasBeenSet(false),
+    m_descriptionHasBeenSet(false)
 {
 }
 
@@ -409,6 +410,16 @@ CoreInternalOutcome JobV1::Deserialize(const rapidjson::Value &value)
         m_eventInfoHasBeenSet = true;
     }
 
+    if (value.HasMember("Description") && !value["Description"].IsNull())
+    {
+        if (!value["Description"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `JobV1.Description` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_description = string(value["Description"].GetString());
+        m_descriptionHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -686,6 +697,14 @@ void JobV1::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Allocator
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
         m_eventInfo.ToJsonObject(value[key.c_str()], allocator);
+    }
+
+    if (m_descriptionHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Description";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_description.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -1217,5 +1236,21 @@ void JobV1::SetEventInfo(const JobEventInfo& _eventInfo)
 bool JobV1::EventInfoHasBeenSet() const
 {
     return m_eventInfoHasBeenSet;
+}
+
+string JobV1::GetDescription() const
+{
+    return m_description;
+}
+
+void JobV1::SetDescription(const string& _description)
+{
+    m_description = _description;
+    m_descriptionHasBeenSet = true;
+}
+
+bool JobV1::DescriptionHasBeenSet() const
+{
+    return m_descriptionHasBeenSet;
 }
 

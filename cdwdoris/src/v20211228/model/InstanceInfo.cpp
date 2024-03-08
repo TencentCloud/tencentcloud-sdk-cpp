@@ -61,7 +61,9 @@ InstanceInfo::InstanceInfo() :
     m_characteristicHasBeenSet(false),
     m_restartTimeoutHasBeenSet(false),
     m_graceShutdownWaitSecondsHasBeenSet(false),
-    m_caseSensitiveHasBeenSet(false)
+    m_caseSensitiveHasBeenSet(false),
+    m_isWhiteSGsHasBeenSet(false),
+    m_bindSGsHasBeenSet(false)
 {
 }
 
@@ -507,6 +509,29 @@ CoreInternalOutcome InstanceInfo::Deserialize(const rapidjson::Value &value)
         m_caseSensitiveHasBeenSet = true;
     }
 
+    if (value.HasMember("IsWhiteSGs") && !value["IsWhiteSGs"].IsNull())
+    {
+        if (!value["IsWhiteSGs"].IsBool())
+        {
+            return CoreInternalOutcome(Core::Error("response `InstanceInfo.IsWhiteSGs` IsBool=false incorrectly").SetRequestId(requestId));
+        }
+        m_isWhiteSGs = value["IsWhiteSGs"].GetBool();
+        m_isWhiteSGsHasBeenSet = true;
+    }
+
+    if (value.HasMember("BindSGs") && !value["BindSGs"].IsNull())
+    {
+        if (!value["BindSGs"].IsArray())
+            return CoreInternalOutcome(Core::Error("response `InstanceInfo.BindSGs` is not array type"));
+
+        const rapidjson::Value &tmpValue = value["BindSGs"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            m_bindSGs.push_back((*itr).GetString());
+        }
+        m_bindSGsHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -854,6 +879,27 @@ void InstanceInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Al
         string key = "CaseSensitive";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_caseSensitive, allocator);
+    }
+
+    if (m_isWhiteSGsHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "IsWhiteSGs";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_isWhiteSGs, allocator);
+    }
+
+    if (m_bindSGsHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "BindSGs";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        for (auto itr = m_bindSGs.begin(); itr != m_bindSGs.end(); ++itr)
+        {
+            value[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
+        }
     }
 
 }
@@ -1513,5 +1559,37 @@ void InstanceInfo::SetCaseSensitive(const int64_t& _caseSensitive)
 bool InstanceInfo::CaseSensitiveHasBeenSet() const
 {
     return m_caseSensitiveHasBeenSet;
+}
+
+bool InstanceInfo::GetIsWhiteSGs() const
+{
+    return m_isWhiteSGs;
+}
+
+void InstanceInfo::SetIsWhiteSGs(const bool& _isWhiteSGs)
+{
+    m_isWhiteSGs = _isWhiteSGs;
+    m_isWhiteSGsHasBeenSet = true;
+}
+
+bool InstanceInfo::IsWhiteSGsHasBeenSet() const
+{
+    return m_isWhiteSGsHasBeenSet;
+}
+
+vector<string> InstanceInfo::GetBindSGs() const
+{
+    return m_bindSGs;
+}
+
+void InstanceInfo::SetBindSGs(const vector<string>& _bindSGs)
+{
+    m_bindSGs = _bindSGs;
+    m_bindSGsHasBeenSet = true;
+}
+
+bool InstanceInfo::BindSGsHasBeenSet() const
+{
+    return m_bindSGsHasBeenSet;
 }
 

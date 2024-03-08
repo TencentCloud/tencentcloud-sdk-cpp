@@ -43,15 +43,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取子用户 UID
-                     * @return Uid 子用户 UID
+                     * 获取子用户 UID，入参Uid和SubUin二选一
+                     * @return Uid 子用户 UID，入参Uid和SubUin二选一
                      * 
                      */
                     uint64_t GetUid() const;
 
                     /**
-                     * 设置子用户 UID
-                     * @param _uid 子用户 UID
+                     * 设置子用户 UID，入参Uid和SubUin二选一
+                     * @param _uid 子用户 UID，入参Uid和SubUin二选一
                      * 
                      */
                     void SetUid(const uint64_t& _uid);
@@ -106,15 +106,15 @@ namespace TencentCloud
                     bool PageHasBeenSet() const;
 
                     /**
-                     * 获取子账号UIN
-                     * @return SubUin 子账号UIN
+                     * 获取子账号UIN，入参Uid和SubUin二选一
+                     * @return SubUin 子账号UIN，入参Uid和SubUin二选一
                      * 
                      */
                     uint64_t GetSubUin() const;
 
                     /**
-                     * 设置子账号UIN
-                     * @param _subUin 子账号UIN
+                     * 设置子账号UIN，入参Uid和SubUin二选一
+                     * @param _subUin 子账号UIN，入参Uid和SubUin二选一
                      * 
                      */
                     void SetSubUin(const uint64_t& _subUin);
@@ -129,7 +129,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 子用户 UID
+                     * 子用户 UID，入参Uid和SubUin二选一
                      */
                     uint64_t m_uid;
                     bool m_uidHasBeenSet;
@@ -147,7 +147,7 @@ namespace TencentCloud
                     bool m_pageHasBeenSet;
 
                     /**
-                     * 子账号UIN
+                     * 子账号UIN，入参Uid和SubUin二选一
                      */
                     uint64_t m_subUin;
                     bool m_subUinHasBeenSet;

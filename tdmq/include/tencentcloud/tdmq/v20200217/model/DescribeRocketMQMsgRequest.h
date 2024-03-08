@@ -150,23 +150,107 @@ namespace TencentCloud
                     /**
                      * 获取查询死信时该值为true，只对Rocketmq有效
                      * @return QueryDlqMsg 查询死信时该值为true，只对Rocketmq有效
-                     * 
+                     * @deprecated
                      */
                     bool GetQueryDlqMsg() const;
 
                     /**
                      * 设置查询死信时该值为true，只对Rocketmq有效
                      * @param _queryDlqMsg 查询死信时该值为true，只对Rocketmq有效
-                     * 
+                     * @deprecated
                      */
                     void SetQueryDlqMsg(const bool& _queryDlqMsg);
 
                     /**
                      * 判断参数 QueryDlqMsg 是否已赋值
                      * @return QueryDlqMsg 是否已赋值
-                     * 
+                     * @deprecated
                      */
                     bool QueryDlqMsgHasBeenSet() const;
+
+                    /**
+                     * 获取查询死信时该值为true，只对Rocketmq有效
+                     * @return QueryDeadLetterMessage 查询死信时该值为true，只对Rocketmq有效
+                     * 
+                     */
+                    bool GetQueryDeadLetterMessage() const;
+
+                    /**
+                     * 设置查询死信时该值为true，只对Rocketmq有效
+                     * @param _queryDeadLetterMessage 查询死信时该值为true，只对Rocketmq有效
+                     * 
+                     */
+                    void SetQueryDeadLetterMessage(const bool& _queryDeadLetterMessage);
+
+                    /**
+                     * 判断参数 QueryDeadLetterMessage 是否已赋值
+                     * @return QueryDeadLetterMessage 是否已赋值
+                     * 
+                     */
+                    bool QueryDeadLetterMessageHasBeenSet() const;
+
+                    /**
+                     * 获取分页Offset
+                     * @return Offset 分页Offset
+                     * 
+                     */
+                    int64_t GetOffset() const;
+
+                    /**
+                     * 设置分页Offset
+                     * @param _offset 分页Offset
+                     * 
+                     */
+                    void SetOffset(const int64_t& _offset);
+
+                    /**
+                     * 判断参数 Offset 是否已赋值
+                     * @return Offset 是否已赋值
+                     * 
+                     */
+                    bool OffsetHasBeenSet() const;
+
+                    /**
+                     * 获取分页Limit
+                     * @return Limit 分页Limit
+                     * 
+                     */
+                    int64_t GetLimit() const;
+
+                    /**
+                     * 设置分页Limit
+                     * @param _limit 分页Limit
+                     * 
+                     */
+                    void SetLimit(const int64_t& _limit);
+
+                    /**
+                     * 判断参数 Limit 是否已赋值
+                     * @return Limit 是否已赋值
+                     * 
+                     */
+                    bool LimitHasBeenSet() const;
+
+                    /**
+                     * 获取根据消费组名称过滤消费详情
+                     * @return FilterTrackGroup 根据消费组名称过滤消费详情
+                     * 
+                     */
+                    std::string GetFilterTrackGroup() const;
+
+                    /**
+                     * 设置根据消费组名称过滤消费详情
+                     * @param _filterTrackGroup 根据消费组名称过滤消费详情
+                     * 
+                     */
+                    void SetFilterTrackGroup(const std::string& _filterTrackGroup);
+
+                    /**
+                     * 判断参数 FilterTrackGroup 是否已赋值
+                     * @return FilterTrackGroup 是否已赋值
+                     * 
+                     */
+                    bool FilterTrackGroupHasBeenSet() const;
 
                 private:
 
@@ -205,6 +289,30 @@ namespace TencentCloud
                      */
                     bool m_queryDlqMsg;
                     bool m_queryDlqMsgHasBeenSet;
+
+                    /**
+                     * 查询死信时该值为true，只对Rocketmq有效
+                     */
+                    bool m_queryDeadLetterMessage;
+                    bool m_queryDeadLetterMessageHasBeenSet;
+
+                    /**
+                     * 分页Offset
+                     */
+                    int64_t m_offset;
+                    bool m_offsetHasBeenSet;
+
+                    /**
+                     * 分页Limit
+                     */
+                    int64_t m_limit;
+                    bool m_limitHasBeenSet;
+
+                    /**
+                     * 根据消费组名称过滤消费详情
+                     */
+                    std::string m_filterTrackGroup;
+                    bool m_filterTrackGroupHasBeenSet;
 
                 };
             }

@@ -35,7 +35,7 @@ namespace TencentCloud
             namespace Model
             {
                 /**
-                * 单topic和自定义topic的描述
+                * 单topic和自定义topic的描述。投递到单topic时，该数组的最后一项会被视为默认分区策略，所有未匹配到的数据都会按该策略投递，默认策略只支持 投递至partition0、按表名、表名+主键三种。
                 */
                 class TopicRule : public AbstractModel
                 {
@@ -47,15 +47,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取topic名
-                     * @return TopicName topic名
+                     * 获取topic名。单topic时，所有的TopicName必须相同
+                     * @return TopicName topic名。单topic时，所有的TopicName必须相同
                      * 
                      */
                     std::string GetTopicName() const;
 
                     /**
-                     * 设置topic名
-                     * @param _topicName topic名
+                     * 设置topic名。单topic时，所有的TopicName必须相同
+                     * @param _topicName topic名。单topic时，所有的TopicName必须相同
                      * 
                      */
                     void SetTopicName(const std::string& _topicName);
@@ -68,15 +68,15 @@ namespace TencentCloud
                     bool TopicNameHasBeenSet() const;
 
                     /**
-                     * 获取topic分区策略，如 自定义topic：Random（随机投递），集中投递到单Topic：AllInPartitionZero（全部投递至partition0）、PartitionByTable(按表名分区)、PartitionByTableAndKey(按表名加主键分区)
-                     * @return PartitionType topic分区策略，如 自定义topic：Random（随机投递），集中投递到单Topic：AllInPartitionZero（全部投递至partition0）、PartitionByTable(按表名分区)、PartitionByTableAndKey(按表名加主键分区)
+                     * 获取topic分区策略，自定义topic时支持：Random（随机投递），集中投递到单Topic时支持：AllInPartitionZero（全部投递至partition0）、PartitionByTable(按表名分区)、PartitionByTableAndKey(按表名加主键分区)、PartitionByCols(按列分区)
+                     * @return PartitionType topic分区策略，自定义topic时支持：Random（随机投递），集中投递到单Topic时支持：AllInPartitionZero（全部投递至partition0）、PartitionByTable(按表名分区)、PartitionByTableAndKey(按表名加主键分区)、PartitionByCols(按列分区)
                      * 
                      */
                     std::string GetPartitionType() const;
 
                     /**
-                     * 设置topic分区策略，如 自定义topic：Random（随机投递），集中投递到单Topic：AllInPartitionZero（全部投递至partition0）、PartitionByTable(按表名分区)、PartitionByTableAndKey(按表名加主键分区)
-                     * @param _partitionType topic分区策略，如 自定义topic：Random（随机投递），集中投递到单Topic：AllInPartitionZero（全部投递至partition0）、PartitionByTable(按表名分区)、PartitionByTableAndKey(按表名加主键分区)
+                     * 设置topic分区策略，自定义topic时支持：Random（随机投递），集中投递到单Topic时支持：AllInPartitionZero（全部投递至partition0）、PartitionByTable(按表名分区)、PartitionByTableAndKey(按表名加主键分区)、PartitionByCols(按列分区)
+                     * @param _partitionType topic分区策略，自定义topic时支持：Random（随机投递），集中投递到单Topic时支持：AllInPartitionZero（全部投递至partition0）、PartitionByTable(按表名分区)、PartitionByTableAndKey(按表名加主键分区)、PartitionByCols(按列分区)
                      * 
                      */
                     void SetPartitionType(const std::string& _partitionType);
@@ -89,15 +89,15 @@ namespace TencentCloud
                     bool PartitionTypeHasBeenSet() const;
 
                     /**
-                     * 获取库名匹配规则，仅“自定义topic”生效，如Regular（正则匹配）, Default(不符合匹配规则的剩余库)，数组中必须有一项为‘Default’
-                     * @return DbMatchMode 库名匹配规则，仅“自定义topic”生效，如Regular（正则匹配）, Default(不符合匹配规则的剩余库)，数组中必须有一项为‘Default’
+                     * 获取库名匹配规则，如Regular（正则匹配）, Default(不符合匹配规则的剩余库)，数组中最后一项必须为‘Default’
+                     * @return DbMatchMode 库名匹配规则，如Regular（正则匹配）, Default(不符合匹配规则的剩余库)，数组中最后一项必须为‘Default’
                      * 
                      */
                     std::string GetDbMatchMode() const;
 
                     /**
-                     * 设置库名匹配规则，仅“自定义topic”生效，如Regular（正则匹配）, Default(不符合匹配规则的剩余库)，数组中必须有一项为‘Default’
-                     * @param _dbMatchMode 库名匹配规则，仅“自定义topic”生效，如Regular（正则匹配）, Default(不符合匹配规则的剩余库)，数组中必须有一项为‘Default’
+                     * 设置库名匹配规则，如Regular（正则匹配）, Default(不符合匹配规则的剩余库)，数组中最后一项必须为‘Default’
+                     * @param _dbMatchMode 库名匹配规则，如Regular（正则匹配）, Default(不符合匹配规则的剩余库)，数组中最后一项必须为‘Default’
                      * 
                      */
                     void SetDbMatchMode(const std::string& _dbMatchMode);
@@ -110,15 +110,15 @@ namespace TencentCloud
                     bool DbMatchModeHasBeenSet() const;
 
                     /**
-                     * 获取库名，仅“自定义topic”时，DbMatchMode=Regular生效
-                     * @return DbName 库名，仅“自定义topic”时，DbMatchMode=Regular生效
+                     * 获取库名，DbMatchMode=Regular时生效
+                     * @return DbName 库名，DbMatchMode=Regular时生效
                      * 
                      */
                     std::string GetDbName() const;
 
                     /**
-                     * 设置库名，仅“自定义topic”时，DbMatchMode=Regular生效
-                     * @param _dbName 库名，仅“自定义topic”时，DbMatchMode=Regular生效
+                     * 设置库名，DbMatchMode=Regular时生效
+                     * @param _dbName 库名，DbMatchMode=Regular时生效
                      * 
                      */
                     void SetDbName(const std::string& _dbName);
@@ -131,15 +131,15 @@ namespace TencentCloud
                     bool DbNameHasBeenSet() const;
 
                     /**
-                     * 获取表名匹配规则，仅“自定义topic”生效，如Regular（正则匹配）, Default(不符合匹配规则的剩余表)，数组中必须有一项为‘Default’
-                     * @return TableMatchMode 表名匹配规则，仅“自定义topic”生效，如Regular（正则匹配）, Default(不符合匹配规则的剩余表)，数组中必须有一项为‘Default’
+                     * 获取表名匹配规则，如Regular（正则匹配）, Default(不符合匹配规则的剩余表)，数组中最后一项必须为‘Default’
+                     * @return TableMatchMode 表名匹配规则，如Regular（正则匹配）, Default(不符合匹配规则的剩余表)，数组中最后一项必须为‘Default’
                      * 
                      */
                     std::string GetTableMatchMode() const;
 
                     /**
-                     * 设置表名匹配规则，仅“自定义topic”生效，如Regular（正则匹配）, Default(不符合匹配规则的剩余表)，数组中必须有一项为‘Default’
-                     * @param _tableMatchMode 表名匹配规则，仅“自定义topic”生效，如Regular（正则匹配）, Default(不符合匹配规则的剩余表)，数组中必须有一项为‘Default’
+                     * 设置表名匹配规则，如Regular（正则匹配）, Default(不符合匹配规则的剩余表)，数组中最后一项必须为‘Default’
+                     * @param _tableMatchMode 表名匹配规则，如Regular（正则匹配）, Default(不符合匹配规则的剩余表)，数组中最后一项必须为‘Default’
                      * 
                      */
                     void SetTableMatchMode(const std::string& _tableMatchMode);
@@ -152,15 +152,15 @@ namespace TencentCloud
                     bool TableMatchModeHasBeenSet() const;
 
                     /**
-                     * 获取表名，仅“自定义topic”时，TableMatchMode=Regular生效
-                     * @return TableName 表名，仅“自定义topic”时，TableMatchMode=Regular生效
+                     * 获取表名，仅TableMatchMode=Regular时生效
+                     * @return TableName 表名，仅TableMatchMode=Regular时生效
                      * 
                      */
                     std::string GetTableName() const;
 
                     /**
-                     * 设置表名，仅“自定义topic”时，TableMatchMode=Regular生效
-                     * @param _tableName 表名，仅“自定义topic”时，TableMatchMode=Regular生效
+                     * 设置表名，仅TableMatchMode=Regular时生效
+                     * @param _tableName 表名，仅TableMatchMode=Regular时生效
                      * 
                      */
                     void SetTableName(const std::string& _tableName);
@@ -172,43 +172,75 @@ namespace TencentCloud
                      */
                     bool TableNameHasBeenSet() const;
 
+                    /**
+                     * 获取按列分区时需要选择配置列名，可以选择多列
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return Columns 按列分区时需要选择配置列名，可以选择多列
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::vector<std::string> GetColumns() const;
+
+                    /**
+                     * 设置按列分区时需要选择配置列名，可以选择多列
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _columns 按列分区时需要选择配置列名，可以选择多列
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetColumns(const std::vector<std::string>& _columns);
+
+                    /**
+                     * 判断参数 Columns 是否已赋值
+                     * @return Columns 是否已赋值
+                     * 
+                     */
+                    bool ColumnsHasBeenSet() const;
+
                 private:
 
                     /**
-                     * topic名
+                     * topic名。单topic时，所有的TopicName必须相同
                      */
                     std::string m_topicName;
                     bool m_topicNameHasBeenSet;
 
                     /**
-                     * topic分区策略，如 自定义topic：Random（随机投递），集中投递到单Topic：AllInPartitionZero（全部投递至partition0）、PartitionByTable(按表名分区)、PartitionByTableAndKey(按表名加主键分区)
+                     * topic分区策略，自定义topic时支持：Random（随机投递），集中投递到单Topic时支持：AllInPartitionZero（全部投递至partition0）、PartitionByTable(按表名分区)、PartitionByTableAndKey(按表名加主键分区)、PartitionByCols(按列分区)
                      */
                     std::string m_partitionType;
                     bool m_partitionTypeHasBeenSet;
 
                     /**
-                     * 库名匹配规则，仅“自定义topic”生效，如Regular（正则匹配）, Default(不符合匹配规则的剩余库)，数组中必须有一项为‘Default’
+                     * 库名匹配规则，如Regular（正则匹配）, Default(不符合匹配规则的剩余库)，数组中最后一项必须为‘Default’
                      */
                     std::string m_dbMatchMode;
                     bool m_dbMatchModeHasBeenSet;
 
                     /**
-                     * 库名，仅“自定义topic”时，DbMatchMode=Regular生效
+                     * 库名，DbMatchMode=Regular时生效
                      */
                     std::string m_dbName;
                     bool m_dbNameHasBeenSet;
 
                     /**
-                     * 表名匹配规则，仅“自定义topic”生效，如Regular（正则匹配）, Default(不符合匹配规则的剩余表)，数组中必须有一项为‘Default’
+                     * 表名匹配规则，如Regular（正则匹配）, Default(不符合匹配规则的剩余表)，数组中最后一项必须为‘Default’
                      */
                     std::string m_tableMatchMode;
                     bool m_tableMatchModeHasBeenSet;
 
                     /**
-                     * 表名，仅“自定义topic”时，TableMatchMode=Regular生效
+                     * 表名，仅TableMatchMode=Regular时生效
                      */
                     std::string m_tableName;
                     bool m_tableNameHasBeenSet;
+
+                    /**
+                     * 按列分区时需要选择配置列名，可以选择多列
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::vector<std::string> m_columns;
+                    bool m_columnsHasBeenSet;
 
                 };
             }

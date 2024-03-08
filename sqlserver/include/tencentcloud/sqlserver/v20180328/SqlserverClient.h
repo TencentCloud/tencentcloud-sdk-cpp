@@ -1943,7 +1943,7 @@ namespace TencentCloud
                 RenewPostpaidDBInstanceOutcomeCallable RenewPostpaidDBInstanceCallable(const Model::RenewPostpaidDBInstanceRequest& request);
 
                 /**
-                 *本接口（ResetAccountPassword）用于重置实例的账户密码。
+                 *本接口（ResetAccountPassword）用于重置实例的账号密码。
                  * @param req ResetAccountPasswordRequest
                  * @return ResetAccountPasswordOutcome
                  */

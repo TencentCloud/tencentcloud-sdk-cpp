@@ -64,6 +64,35 @@ namespace TencentCloud
                      */
                     bool PdfInfoHasBeenSet() const;
 
+                    /**
+                     * 获取PDF文件中的文字是否为文本内容.
+如果该字段为true,那么就会自动判断是电子版还是图片，自动选择直接读取文字还是 OCR 方式.
+如果该字段为false, 那么始终采用 OCR 方式
+                     * @return TextBasedPdfFlag PDF文件中的文字是否为文本内容.
+如果该字段为true,那么就会自动判断是电子版还是图片，自动选择直接读取文字还是 OCR 方式.
+如果该字段为false, 那么始终采用 OCR 方式
+                     * 
+                     */
+                    bool GetTextBasedPdfFlag() const;
+
+                    /**
+                     * 设置PDF文件中的文字是否为文本内容.
+如果该字段为true,那么就会自动判断是电子版还是图片，自动选择直接读取文字还是 OCR 方式.
+如果该字段为false, 那么始终采用 OCR 方式
+                     * @param _textBasedPdfFlag PDF文件中的文字是否为文本内容.
+如果该字段为true,那么就会自动判断是电子版还是图片，自动选择直接读取文字还是 OCR 方式.
+如果该字段为false, 那么始终采用 OCR 方式
+                     * 
+                     */
+                    void SetTextBasedPdfFlag(const bool& _textBasedPdfFlag);
+
+                    /**
+                     * 判断参数 TextBasedPdfFlag 是否已赋值
+                     * @return TextBasedPdfFlag 是否已赋值
+                     * 
+                     */
+                    bool TextBasedPdfFlagHasBeenSet() const;
+
                 private:
 
                     /**
@@ -71,6 +100,14 @@ namespace TencentCloud
                      */
                     PdfInfo m_pdfInfo;
                     bool m_pdfInfoHasBeenSet;
+
+                    /**
+                     * PDF文件中的文字是否为文本内容.
+如果该字段为true,那么就会自动判断是电子版还是图片，自动选择直接读取文字还是 OCR 方式.
+如果该字段为false, 那么始终采用 OCR 方式
+                     */
+                    bool m_textBasedPdfFlag;
+                    bool m_textBasedPdfFlagHasBeenSet;
 
                 };
             }

@@ -115,9 +115,9 @@ namespace TencentCloud
                     bool ProducerAddrHasBeenSet() const;
 
                     /**
-                     * 获取消费组消费情况
+                     * 获取消费组消费情况列表
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return MessageTracks 消费组消费情况
+                     * @return MessageTracks 消费组消费情况列表
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -145,6 +145,20 @@ namespace TencentCloud
                      * 
                      */
                     bool ShowTopicNameHasBeenSet() const;
+
+                    /**
+                     * 获取消费组消费情况列表总数
+                     * @return MessageTracksCount 消费组消费情况列表总数
+                     * 
+                     */
+                    int64_t GetMessageTracksCount() const;
+
+                    /**
+                     * 判断参数 MessageTracksCount 是否已赋值
+                     * @return MessageTracksCount 是否已赋值
+                     * 
+                     */
+                    bool MessageTracksCountHasBeenSet() const;
 
                 private:
 
@@ -179,7 +193,7 @@ namespace TencentCloud
                     bool m_producerAddrHasBeenSet;
 
                     /**
-                     * 消费组消费情况
+                     * 消费组消费情况列表
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<RocketMQMessageTrack> m_messageTracks;
@@ -191,6 +205,12 @@ namespace TencentCloud
                      */
                     std::string m_showTopicName;
                     bool m_showTopicNameHasBeenSet;
+
+                    /**
+                     * 消费组消费情况列表总数
+                     */
+                    int64_t m_messageTracksCount;
+                    bool m_messageTracksCountHasBeenSet;
 
                 };
             }

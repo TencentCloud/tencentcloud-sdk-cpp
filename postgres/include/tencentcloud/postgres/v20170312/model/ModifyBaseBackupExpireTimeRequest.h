@@ -64,15 +64,15 @@ namespace TencentCloud
                     bool DBInstanceIdHasBeenSet() const;
 
                     /**
-                     * 获取基础备份ID。
-                     * @return BaseBackupId 基础备份ID。
+                     * 获取数据备份ID。
+                     * @return BaseBackupId 数据备份ID。
                      * 
                      */
                     std::string GetBaseBackupId() const;
 
                     /**
-                     * 设置基础备份ID。
-                     * @param _baseBackupId 基础备份ID。
+                     * 设置数据备份ID。
+                     * @param _baseBackupId 数据备份ID。
                      * 
                      */
                     void SetBaseBackupId(const std::string& _baseBackupId);
@@ -114,7 +114,7 @@ namespace TencentCloud
                     bool m_dBInstanceIdHasBeenSet;
 
                     /**
-                     * 基础备份ID。
+                     * 数据备份ID。
                      */
                     std::string m_baseBackupId;
                     bool m_baseBackupIdHasBeenSet;

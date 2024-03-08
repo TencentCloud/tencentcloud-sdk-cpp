@@ -23,7 +23,8 @@ using namespace TencentCloud::Mrs::V20200910::Model;
 using namespace std;
 
 TurnPDFToObjectAsyncRequest::TurnPDFToObjectAsyncRequest() :
-    m_pdfInfoHasBeenSet(false)
+    m_pdfInfoHasBeenSet(false),
+    m_textBasedPdfFlagHasBeenSet(false)
 {
 }
 
@@ -41,6 +42,14 @@ string TurnPDFToObjectAsyncRequest::ToJsonString() const
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
         m_pdfInfo.ToJsonObject(d[key.c_str()], allocator);
+    }
+
+    if (m_textBasedPdfFlagHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "TextBasedPdfFlag";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_textBasedPdfFlag, allocator);
     }
 
 
@@ -65,6 +74,22 @@ void TurnPDFToObjectAsyncRequest::SetPdfInfo(const PdfInfo& _pdfInfo)
 bool TurnPDFToObjectAsyncRequest::PdfInfoHasBeenSet() const
 {
     return m_pdfInfoHasBeenSet;
+}
+
+bool TurnPDFToObjectAsyncRequest::GetTextBasedPdfFlag() const
+{
+    return m_textBasedPdfFlag;
+}
+
+void TurnPDFToObjectAsyncRequest::SetTextBasedPdfFlag(const bool& _textBasedPdfFlag)
+{
+    m_textBasedPdfFlag = _textBasedPdfFlag;
+    m_textBasedPdfFlagHasBeenSet = true;
+}
+
+bool TurnPDFToObjectAsyncRequest::TextBasedPdfFlagHasBeenSet() const
+{
+    return m_textBasedPdfFlagHasBeenSet;
 }
 
 

@@ -31,6 +31,24 @@
 #include <tencentcloud/billing/v20180709/model/DeleteAllocationTagResponse.h>
 #include <tencentcloud/billing/v20180709/model/DescribeAccountBalanceRequest.h>
 #include <tencentcloud/billing/v20180709/model/DescribeAccountBalanceResponse.h>
+#include <tencentcloud/billing/v20180709/model/DescribeAllocateConditionsRequest.h>
+#include <tencentcloud/billing/v20180709/model/DescribeAllocateConditionsResponse.h>
+#include <tencentcloud/billing/v20180709/model/DescribeAllocationBillConditionsRequest.h>
+#include <tencentcloud/billing/v20180709/model/DescribeAllocationBillConditionsResponse.h>
+#include <tencentcloud/billing/v20180709/model/DescribeAllocationBillDetailRequest.h>
+#include <tencentcloud/billing/v20180709/model/DescribeAllocationBillDetailResponse.h>
+#include <tencentcloud/billing/v20180709/model/DescribeAllocationMonthOverviewRequest.h>
+#include <tencentcloud/billing/v20180709/model/DescribeAllocationMonthOverviewResponse.h>
+#include <tencentcloud/billing/v20180709/model/DescribeAllocationOverviewRequest.h>
+#include <tencentcloud/billing/v20180709/model/DescribeAllocationOverviewResponse.h>
+#include <tencentcloud/billing/v20180709/model/DescribeAllocationSummaryByBusinessRequest.h>
+#include <tencentcloud/billing/v20180709/model/DescribeAllocationSummaryByBusinessResponse.h>
+#include <tencentcloud/billing/v20180709/model/DescribeAllocationSummaryByItemRequest.h>
+#include <tencentcloud/billing/v20180709/model/DescribeAllocationSummaryByItemResponse.h>
+#include <tencentcloud/billing/v20180709/model/DescribeAllocationSummaryByResourceRequest.h>
+#include <tencentcloud/billing/v20180709/model/DescribeAllocationSummaryByResourceResponse.h>
+#include <tencentcloud/billing/v20180709/model/DescribeAllocationTrendByMonthRequest.h>
+#include <tencentcloud/billing/v20180709/model/DescribeAllocationTrendByMonthResponse.h>
 #include <tencentcloud/billing/v20180709/model/DescribeBillDetailRequest.h>
 #include <tencentcloud/billing/v20180709/model/DescribeBillDetailResponse.h>
 #include <tencentcloud/billing/v20180709/model/DescribeBillDetailForOrganizationRequest.h>
@@ -77,6 +95,8 @@
 #include <tencentcloud/billing/v20180709/model/DescribeDosageDetailByDateResponse.h>
 #include <tencentcloud/billing/v20180709/model/DescribeDosageDetailListRequest.h>
 #include <tencentcloud/billing/v20180709/model/DescribeDosageDetailListResponse.h>
+#include <tencentcloud/billing/v20180709/model/DescribeGatherResourceRequest.h>
+#include <tencentcloud/billing/v20180709/model/DescribeGatherResourceResponse.h>
 #include <tencentcloud/billing/v20180709/model/DescribeSavingPlanCoverageRequest.h>
 #include <tencentcloud/billing/v20180709/model/DescribeSavingPlanCoverageResponse.h>
 #include <tencentcloud/billing/v20180709/model/DescribeSavingPlanOverviewRequest.h>
@@ -119,6 +139,33 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeAccountBalanceResponse> DescribeAccountBalanceOutcome;
                 typedef std::future<DescribeAccountBalanceOutcome> DescribeAccountBalanceOutcomeCallable;
                 typedef std::function<void(const BillingClient*, const Model::DescribeAccountBalanceRequest&, DescribeAccountBalanceOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeAccountBalanceAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeAllocateConditionsResponse> DescribeAllocateConditionsOutcome;
+                typedef std::future<DescribeAllocateConditionsOutcome> DescribeAllocateConditionsOutcomeCallable;
+                typedef std::function<void(const BillingClient*, const Model::DescribeAllocateConditionsRequest&, DescribeAllocateConditionsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeAllocateConditionsAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeAllocationBillConditionsResponse> DescribeAllocationBillConditionsOutcome;
+                typedef std::future<DescribeAllocationBillConditionsOutcome> DescribeAllocationBillConditionsOutcomeCallable;
+                typedef std::function<void(const BillingClient*, const Model::DescribeAllocationBillConditionsRequest&, DescribeAllocationBillConditionsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeAllocationBillConditionsAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeAllocationBillDetailResponse> DescribeAllocationBillDetailOutcome;
+                typedef std::future<DescribeAllocationBillDetailOutcome> DescribeAllocationBillDetailOutcomeCallable;
+                typedef std::function<void(const BillingClient*, const Model::DescribeAllocationBillDetailRequest&, DescribeAllocationBillDetailOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeAllocationBillDetailAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeAllocationMonthOverviewResponse> DescribeAllocationMonthOverviewOutcome;
+                typedef std::future<DescribeAllocationMonthOverviewOutcome> DescribeAllocationMonthOverviewOutcomeCallable;
+                typedef std::function<void(const BillingClient*, const Model::DescribeAllocationMonthOverviewRequest&, DescribeAllocationMonthOverviewOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeAllocationMonthOverviewAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeAllocationOverviewResponse> DescribeAllocationOverviewOutcome;
+                typedef std::future<DescribeAllocationOverviewOutcome> DescribeAllocationOverviewOutcomeCallable;
+                typedef std::function<void(const BillingClient*, const Model::DescribeAllocationOverviewRequest&, DescribeAllocationOverviewOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeAllocationOverviewAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeAllocationSummaryByBusinessResponse> DescribeAllocationSummaryByBusinessOutcome;
+                typedef std::future<DescribeAllocationSummaryByBusinessOutcome> DescribeAllocationSummaryByBusinessOutcomeCallable;
+                typedef std::function<void(const BillingClient*, const Model::DescribeAllocationSummaryByBusinessRequest&, DescribeAllocationSummaryByBusinessOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeAllocationSummaryByBusinessAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeAllocationSummaryByItemResponse> DescribeAllocationSummaryByItemOutcome;
+                typedef std::future<DescribeAllocationSummaryByItemOutcome> DescribeAllocationSummaryByItemOutcomeCallable;
+                typedef std::function<void(const BillingClient*, const Model::DescribeAllocationSummaryByItemRequest&, DescribeAllocationSummaryByItemOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeAllocationSummaryByItemAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeAllocationSummaryByResourceResponse> DescribeAllocationSummaryByResourceOutcome;
+                typedef std::future<DescribeAllocationSummaryByResourceOutcome> DescribeAllocationSummaryByResourceOutcomeCallable;
+                typedef std::function<void(const BillingClient*, const Model::DescribeAllocationSummaryByResourceRequest&, DescribeAllocationSummaryByResourceOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeAllocationSummaryByResourceAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeAllocationTrendByMonthResponse> DescribeAllocationTrendByMonthOutcome;
+                typedef std::future<DescribeAllocationTrendByMonthOutcome> DescribeAllocationTrendByMonthOutcomeCallable;
+                typedef std::function<void(const BillingClient*, const Model::DescribeAllocationTrendByMonthRequest&, DescribeAllocationTrendByMonthOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeAllocationTrendByMonthAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeBillDetailResponse> DescribeBillDetailOutcome;
                 typedef std::future<DescribeBillDetailOutcome> DescribeBillDetailOutcomeCallable;
                 typedef std::function<void(const BillingClient*, const Model::DescribeBillDetailRequest&, DescribeBillDetailOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeBillDetailAsyncHandler;
@@ -188,6 +235,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeDosageDetailListResponse> DescribeDosageDetailListOutcome;
                 typedef std::future<DescribeDosageDetailListOutcome> DescribeDosageDetailListOutcomeCallable;
                 typedef std::function<void(const BillingClient*, const Model::DescribeDosageDetailListRequest&, DescribeDosageDetailListOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeDosageDetailListAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeGatherResourceResponse> DescribeGatherResourceOutcome;
+                typedef std::future<DescribeGatherResourceOutcome> DescribeGatherResourceOutcomeCallable;
+                typedef std::function<void(const BillingClient*, const Model::DescribeGatherResourceRequest&, DescribeGatherResourceOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeGatherResourceAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeSavingPlanCoverageResponse> DescribeSavingPlanCoverageOutcome;
                 typedef std::future<DescribeSavingPlanCoverageOutcome> DescribeSavingPlanCoverageOutcomeCallable;
                 typedef std::function<void(const BillingClient*, const Model::DescribeSavingPlanCoverageRequest&, DescribeSavingPlanCoverageOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeSavingPlanCoverageAsyncHandler;
@@ -250,6 +300,87 @@ namespace TencentCloud
                 DescribeAccountBalanceOutcome DescribeAccountBalance(const Model::DescribeAccountBalanceRequest &request);
                 void DescribeAccountBalanceAsync(const Model::DescribeAccountBalanceRequest& request, const DescribeAccountBalanceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DescribeAccountBalanceOutcomeCallable DescribeAccountBalanceCallable(const Model::DescribeAccountBalanceRequest& request);
+
+                /**
+                 *查询资源目录筛选条件
+                 * @param req DescribeAllocateConditionsRequest
+                 * @return DescribeAllocateConditionsOutcome
+                 */
+                DescribeAllocateConditionsOutcome DescribeAllocateConditions(const Model::DescribeAllocateConditionsRequest &request);
+                void DescribeAllocateConditionsAsync(const Model::DescribeAllocateConditionsRequest& request, const DescribeAllocateConditionsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeAllocateConditionsOutcomeCallable DescribeAllocateConditionsCallable(const Model::DescribeAllocateConditionsRequest& request);
+
+                /**
+                 *查询分账账单筛选条件
+                 * @param req DescribeAllocationBillConditionsRequest
+                 * @return DescribeAllocationBillConditionsOutcome
+                 */
+                DescribeAllocationBillConditionsOutcome DescribeAllocationBillConditions(const Model::DescribeAllocationBillConditionsRequest &request);
+                void DescribeAllocationBillConditionsAsync(const Model::DescribeAllocationBillConditionsRequest& request, const DescribeAllocationBillConditionsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeAllocationBillConditionsOutcomeCallable DescribeAllocationBillConditionsCallable(const Model::DescribeAllocationBillConditionsRequest& request);
+
+                /**
+                 *查询分账账单明细
+                 * @param req DescribeAllocationBillDetailRequest
+                 * @return DescribeAllocationBillDetailOutcome
+                 */
+                DescribeAllocationBillDetailOutcome DescribeAllocationBillDetail(const Model::DescribeAllocationBillDetailRequest &request);
+                void DescribeAllocationBillDetailAsync(const Model::DescribeAllocationBillDetailRequest& request, const DescribeAllocationBillDetailAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeAllocationBillDetailOutcomeCallable DescribeAllocationBillDetailCallable(const Model::DescribeAllocationBillDetailRequest& request);
+
+                /**
+                 *查询分账账单月概览
+                 * @param req DescribeAllocationMonthOverviewRequest
+                 * @return DescribeAllocationMonthOverviewOutcome
+                 */
+                DescribeAllocationMonthOverviewOutcome DescribeAllocationMonthOverview(const Model::DescribeAllocationMonthOverviewRequest &request);
+                void DescribeAllocationMonthOverviewAsync(const Model::DescribeAllocationMonthOverviewRequest& request, const DescribeAllocationMonthOverviewAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeAllocationMonthOverviewOutcomeCallable DescribeAllocationMonthOverviewCallable(const Model::DescribeAllocationMonthOverviewRequest& request);
+
+                /**
+                 *查询分账账单日概览
+                 * @param req DescribeAllocationOverviewRequest
+                 * @return DescribeAllocationOverviewOutcome
+                 */
+                DescribeAllocationOverviewOutcome DescribeAllocationOverview(const Model::DescribeAllocationOverviewRequest &request);
+                void DescribeAllocationOverviewAsync(const Model::DescribeAllocationOverviewRequest& request, const DescribeAllocationOverviewAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeAllocationOverviewOutcomeCallable DescribeAllocationOverviewCallable(const Model::DescribeAllocationOverviewRequest& request);
+
+                /**
+                 *查询分账账单按产品汇总
+                 * @param req DescribeAllocationSummaryByBusinessRequest
+                 * @return DescribeAllocationSummaryByBusinessOutcome
+                 */
+                DescribeAllocationSummaryByBusinessOutcome DescribeAllocationSummaryByBusiness(const Model::DescribeAllocationSummaryByBusinessRequest &request);
+                void DescribeAllocationSummaryByBusinessAsync(const Model::DescribeAllocationSummaryByBusinessRequest& request, const DescribeAllocationSummaryByBusinessAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeAllocationSummaryByBusinessOutcomeCallable DescribeAllocationSummaryByBusinessCallable(const Model::DescribeAllocationSummaryByBusinessRequest& request);
+
+                /**
+                 *查询分账账单按组件汇总
+                 * @param req DescribeAllocationSummaryByItemRequest
+                 * @return DescribeAllocationSummaryByItemOutcome
+                 */
+                DescribeAllocationSummaryByItemOutcome DescribeAllocationSummaryByItem(const Model::DescribeAllocationSummaryByItemRequest &request);
+                void DescribeAllocationSummaryByItemAsync(const Model::DescribeAllocationSummaryByItemRequest& request, const DescribeAllocationSummaryByItemAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeAllocationSummaryByItemOutcomeCallable DescribeAllocationSummaryByItemCallable(const Model::DescribeAllocationSummaryByItemRequest& request);
+
+                /**
+                 *查询分账账单按资源汇总
+                 * @param req DescribeAllocationSummaryByResourceRequest
+                 * @return DescribeAllocationSummaryByResourceOutcome
+                 */
+                DescribeAllocationSummaryByResourceOutcome DescribeAllocationSummaryByResource(const Model::DescribeAllocationSummaryByResourceRequest &request);
+                void DescribeAllocationSummaryByResourceAsync(const Model::DescribeAllocationSummaryByResourceRequest& request, const DescribeAllocationSummaryByResourceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeAllocationSummaryByResourceOutcomeCallable DescribeAllocationSummaryByResourceCallable(const Model::DescribeAllocationSummaryByResourceRequest& request);
+
+                /**
+                 *查询分账账单费用趋势
+                 * @param req DescribeAllocationTrendByMonthRequest
+                 * @return DescribeAllocationTrendByMonthOutcome
+                 */
+                DescribeAllocationTrendByMonthOutcome DescribeAllocationTrendByMonth(const Model::DescribeAllocationTrendByMonthRequest &request);
+                void DescribeAllocationTrendByMonthAsync(const Model::DescribeAllocationTrendByMonthRequest& request, const DescribeAllocationTrendByMonthAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeAllocationTrendByMonthOutcomeCallable DescribeAllocationTrendByMonthCallable(const Model::DescribeAllocationTrendByMonthRequest& request);
 
                 /**
                  *获取账单明细数据。
@@ -461,6 +592,15 @@ namespace TencentCloud
                 DescribeDosageDetailListOutcome DescribeDosageDetailList(const Model::DescribeDosageDetailListRequest &request);
                 void DescribeDosageDetailListAsync(const Model::DescribeDosageDetailListRequest& request, const DescribeDosageDetailListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DescribeDosageDetailListOutcomeCallable DescribeDosageDetailListCallable(const Model::DescribeDosageDetailListRequest& request);
+
+                /**
+                 *查询分账账单资源归集汇总
+                 * @param req DescribeGatherResourceRequest
+                 * @return DescribeGatherResourceOutcome
+                 */
+                DescribeGatherResourceOutcome DescribeGatherResource(const Model::DescribeGatherResourceRequest &request);
+                void DescribeGatherResourceAsync(const Model::DescribeGatherResourceRequest& request, const DescribeGatherResourceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeGatherResourceOutcomeCallable DescribeGatherResourceCallable(const Model::DescribeGatherResourceRequest& request);
 
                 /**
                  *查询当前用户节省计划覆盖率明细数据，如无特别说明，金额单位均为元（国内站）或者美元（国际站）。

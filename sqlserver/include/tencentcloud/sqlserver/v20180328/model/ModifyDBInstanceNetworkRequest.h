@@ -147,6 +147,31 @@ namespace TencentCloud
                      */
                     bool VipHasBeenSet() const;
 
+                    /**
+                     * 获取目标节点，0-修改主节点网络，1-修改备节点网络，默认取值0
+
+                     * @return DRNetwork 目标节点，0-修改主节点网络，1-修改备节点网络，默认取值0
+
+                     * 
+                     */
+                    uint64_t GetDRNetwork() const;
+
+                    /**
+                     * 设置目标节点，0-修改主节点网络，1-修改备节点网络，默认取值0
+
+                     * @param _dRNetwork 目标节点，0-修改主节点网络，1-修改备节点网络，默认取值0
+
+                     * 
+                     */
+                    void SetDRNetwork(const uint64_t& _dRNetwork);
+
+                    /**
+                     * 判断参数 DRNetwork 是否已赋值
+                     * @return DRNetwork 是否已赋值
+                     * 
+                     */
+                    bool DRNetworkHasBeenSet() const;
+
                 private:
 
                     /**
@@ -178,6 +203,13 @@ namespace TencentCloud
                      */
                     std::string m_vip;
                     bool m_vipHasBeenSet;
+
+                    /**
+                     * 目标节点，0-修改主节点网络，1-修改备节点网络，默认取值0
+
+                     */
+                    uint64_t m_dRNetwork;
+                    bool m_dRNetworkHasBeenSet;
 
                 };
             }

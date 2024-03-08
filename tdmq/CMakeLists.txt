@@ -46,6 +46,7 @@ set(tdmq_public_header_model
   include/tencentcloud/tdmq/v20200217/model/CreateCmqSubscribeResponse.h
   include/tencentcloud/tdmq/v20200217/model/DescribeClustersRequest.h
   include/tencentcloud/tdmq/v20200217/model/ModifyEnvironmentAttributesRequest.h
+  include/tencentcloud/tdmq/v20200217/model/RocketMQDataPoint.h
   include/tencentcloud/tdmq/v20200217/model/DescribeSubscriptionsResponse.h
   include/tencentcloud/tdmq/v20200217/model/ModifyRocketMQClusterRequest.h
   include/tencentcloud/tdmq/v20200217/model/SendBatchMessagesResponse.h
@@ -196,7 +197,7 @@ set(tdmq_public_header_model
   include/tencentcloud/tdmq/v20200217/model/CreateCmqQueueResponse.h
   include/tencentcloud/tdmq/v20200217/model/DeleteRabbitMQVipInstanceRequest.h
   include/tencentcloud/tdmq/v20200217/model/ModifyEnvironmentAttributesResponse.h
-  include/tencentcloud/tdmq/v20200217/model/DescribeAllTenantsRequest.h
+  include/tencentcloud/tdmq/v20200217/model/DescribeRocketMQPublicAccessMonitorDataRequest.h
   include/tencentcloud/tdmq/v20200217/model/DescribeRolesResponse.h
   include/tencentcloud/tdmq/v20200217/model/DeleteRabbitMQUserRequest.h
   include/tencentcloud/tdmq/v20200217/model/DescribeSubscriptionsRequest.h
@@ -293,6 +294,7 @@ set(tdmq_public_header_model
   include/tencentcloud/tdmq/v20200217/model/ModifyPublicNetworkAccessPointRequest.h
   include/tencentcloud/tdmq/v20200217/model/DescribeRocketMQSourceClusterGroupListResponse.h
   include/tencentcloud/tdmq/v20200217/model/DescribeRocketMQConsumeStatsResponse.h
+  include/tencentcloud/tdmq/v20200217/model/DescribeRocketMQPublicAccessMonitorDataResponse.h
   include/tencentcloud/tdmq/v20200217/model/RabbitMQVirtualHostInfo.h
   include/tencentcloud/tdmq/v20200217/model/CmqQueue.h
   include/tencentcloud/tdmq/v20200217/model/CreateEnvironmentResponse.h
@@ -358,6 +360,7 @@ set(tdmq_public_header_model
   include/tencentcloud/tdmq/v20200217/model/UnbindCmqDeadLetterRequest.h
   include/tencentcloud/tdmq/v20200217/model/DescribeRolesRequest.h
   include/tencentcloud/tdmq/v20200217/model/DeleteSubscriptionsRequest.h
+  include/tencentcloud/tdmq/v20200217/model/DescribeAllTenantsRequest.h
   include/tencentcloud/tdmq/v20200217/model/ResetRocketMQConsumerOffSetRequest.h
   include/tencentcloud/tdmq/v20200217/model/AMQPClusterDetail.h
   include/tencentcloud/tdmq/v20200217/model/CreateEnvironmentRoleRequest.h
@@ -392,6 +395,7 @@ set(tdmq_src
   src/v20200217/model/CreateCmqSubscribeResponse.cpp
   src/v20200217/model/DescribeClustersRequest.cpp
   src/v20200217/model/ModifyEnvironmentAttributesRequest.cpp
+  src/v20200217/model/RocketMQDataPoint.cpp
   src/v20200217/model/DescribeSubscriptionsResponse.cpp
   src/v20200217/model/ModifyRocketMQClusterRequest.cpp
   src/v20200217/model/SendBatchMessagesResponse.cpp
@@ -542,7 +546,7 @@ set(tdmq_src
   src/v20200217/model/CreateCmqQueueResponse.cpp
   src/v20200217/model/DeleteRabbitMQVipInstanceRequest.cpp
   src/v20200217/model/ModifyEnvironmentAttributesResponse.cpp
-  src/v20200217/model/DescribeAllTenantsRequest.cpp
+  src/v20200217/model/DescribeRocketMQPublicAccessMonitorDataRequest.cpp
   src/v20200217/model/DescribeRolesResponse.cpp
   src/v20200217/model/DeleteRabbitMQUserRequest.cpp
   src/v20200217/model/DescribeSubscriptionsRequest.cpp
@@ -639,6 +643,7 @@ set(tdmq_src
   src/v20200217/model/ModifyPublicNetworkAccessPointRequest.cpp
   src/v20200217/model/DescribeRocketMQSourceClusterGroupListResponse.cpp
   src/v20200217/model/DescribeRocketMQConsumeStatsResponse.cpp
+  src/v20200217/model/DescribeRocketMQPublicAccessMonitorDataResponse.cpp
   src/v20200217/model/RabbitMQVirtualHostInfo.cpp
   src/v20200217/model/CmqQueue.cpp
   src/v20200217/model/CreateEnvironmentResponse.cpp
@@ -704,6 +709,7 @@ set(tdmq_src
   src/v20200217/model/UnbindCmqDeadLetterRequest.cpp
   src/v20200217/model/DescribeRolesRequest.cpp
   src/v20200217/model/DeleteSubscriptionsRequest.cpp
+  src/v20200217/model/DescribeAllTenantsRequest.cpp
   src/v20200217/model/ResetRocketMQConsumerOffSetRequest.cpp
   src/v20200217/model/AMQPClusterDetail.cpp
   src/v20200217/model/CreateEnvironmentRoleRequest.cpp

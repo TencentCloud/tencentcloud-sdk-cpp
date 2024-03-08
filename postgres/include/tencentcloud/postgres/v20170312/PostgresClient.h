@@ -527,7 +527,7 @@ namespace TencentCloud
                 CloseServerlessDBExtranetAccessOutcomeCallable CloseServerlessDBExtranetAccessCallable(const Model::CloseServerlessDBExtranetAccessRequest& request);
 
                 /**
-                 *本接口（CreateBaseBackup）用于创建实例的全量备份。
+                 *本接口（CreateBaseBackup）用于创建实例的数据备份。
                  * @param req CreateBaseBackupRequest
                  * @return CreateBaseBackupOutcome
                  */
@@ -610,7 +610,7 @@ namespace TencentCloud
                 CreateServerlessDBInstanceOutcomeCallable CreateServerlessDBInstanceCallable(const Model::CreateServerlessDBInstanceRequest& request);
 
                 /**
-                 *本接口（DeleteBaseBackup）用于删除实例指定全量备份。
+                 *本接口（DeleteBaseBackup）用于删除实例指定数据备份。
                  * @param req DeleteBaseBackupRequest
                  * @return DeleteBaseBackupOutcome
                  */
@@ -736,7 +736,7 @@ namespace TencentCloud
                 DescribeBackupSummariesOutcomeCallable DescribeBackupSummariesCallable(const Model::DescribeBackupSummariesRequest& request);
 
                 /**
-                 *本接口（DescribeBaseBackups）用于查询基础备份列表。
+                 *本接口（DescribeBaseBackups）用于查询数据备份列表。
                  * @param req DescribeBaseBackupsRequest
                  * @return DescribeBaseBackupsOutcome
                  */
@@ -1053,7 +1053,7 @@ namespace TencentCloud
                 IsolateDBInstancesOutcomeCallable IsolateDBInstancesCallable(const Model::IsolateDBInstancesRequest& request);
 
                 /**
-                 *本接口（ModifyAccountRemark）用于修改帐号备注。
+                 *本接口（ModifyAccountRemark）用于修改账号备注。
                  * @param req ModifyAccountRemarkRequest
                  * @return ModifyAccountRemarkOutcome
                  */
@@ -1080,7 +1080,7 @@ namespace TencentCloud
                 ModifyBackupPlanOutcomeCallable ModifyBackupPlanCallable(const Model::ModifyBackupPlanRequest& request);
 
                 /**
-                 *本接口（ModifyBaseBackupExpireTime）用于修改实例指定全量备份的过期时间。
+                 *本接口（ModifyBaseBackupExpireTime）用于修改实例指定数据备份的过期时间。
                  * @param req ModifyBaseBackupExpireTimeRequest
                  * @return ModifyBaseBackupExpireTimeOutcome
                  */

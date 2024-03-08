@@ -26,7 +26,8 @@ TopicRule::TopicRule() :
     m_dbMatchModeHasBeenSet(false),
     m_dbNameHasBeenSet(false),
     m_tableMatchModeHasBeenSet(false),
-    m_tableNameHasBeenSet(false)
+    m_tableNameHasBeenSet(false),
+    m_columnsHasBeenSet(false)
 {
 }
 
@@ -95,6 +96,19 @@ CoreInternalOutcome TopicRule::Deserialize(const rapidjson::Value &value)
         m_tableNameHasBeenSet = true;
     }
 
+    if (value.HasMember("Columns") && !value["Columns"].IsNull())
+    {
+        if (!value["Columns"].IsArray())
+            return CoreInternalOutcome(Core::Error("response `TopicRule.Columns` is not array type"));
+
+        const rapidjson::Value &tmpValue = value["Columns"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            m_columns.push_back((*itr).GetString());
+        }
+        m_columnsHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -148,6 +162,19 @@ void TopicRule::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Alloc
         string key = "TableName";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_tableName.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_columnsHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Columns";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        for (auto itr = m_columns.begin(); itr != m_columns.end(); ++itr)
+        {
+            value[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
+        }
     }
 
 }
@@ -247,5 +274,21 @@ void TopicRule::SetTableName(const string& _tableName)
 bool TopicRule::TableNameHasBeenSet() const
 {
     return m_tableNameHasBeenSet;
+}
+
+vector<string> TopicRule::GetColumns() const
+{
+    return m_columns;
+}
+
+void TopicRule::SetColumns(const vector<string>& _columns)
+{
+    m_columns = _columns;
+    m_columnsHasBeenSet = true;
+}
+
+bool TopicRule::ColumnsHasBeenSet() const
+{
+    return m_columnsHasBeenSet;
 }
 

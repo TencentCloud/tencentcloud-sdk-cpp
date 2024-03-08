@@ -33,7 +33,8 @@ DescribeDBInstancesAttributeResponse::DescribeDBInstancesAttributeResponse() :
     m_blockedThresholdHasBeenSet(false),
     m_eventSaveDaysHasBeenSet(false),
     m_tDEConfigHasBeenSet(false),
-    m_sSLConfigHasBeenSet(false)
+    m_sSLConfigHasBeenSet(false),
+    m_drReadableInfoHasBeenSet(false)
 {
 }
 
@@ -185,6 +186,23 @@ CoreInternalOutcome DescribeDBInstancesAttributeResponse::Deserialize(const stri
         m_sSLConfigHasBeenSet = true;
     }
 
+    if (rsp.HasMember("DrReadableInfo") && !rsp["DrReadableInfo"].IsNull())
+    {
+        if (!rsp["DrReadableInfo"].IsObject())
+        {
+            return CoreInternalOutcome(Core::Error("response `DrReadableInfo` is not object type").SetRequestId(requestId));
+        }
+
+        CoreInternalOutcome outcome = m_drReadableInfo.Deserialize(rsp["DrReadableInfo"]);
+        if (!outcome.IsSuccess())
+        {
+            outcome.GetError().SetRequestId(requestId);
+            return outcome;
+        }
+
+        m_drReadableInfoHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -275,6 +293,15 @@ string DescribeDBInstancesAttributeResponse::ToJsonString() const
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
         m_sSLConfig.ToJsonObject(value[key.c_str()], allocator);
+    }
+
+    if (m_drReadableInfoHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "DrReadableInfo";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_drReadableInfo.ToJsonObject(value[key.c_str()], allocator);
     }
 
     rapidjson::Value iKey(rapidjson::kStringType);
@@ -387,6 +414,16 @@ SSLConfig DescribeDBInstancesAttributeResponse::GetSSLConfig() const
 bool DescribeDBInstancesAttributeResponse::SSLConfigHasBeenSet() const
 {
     return m_sSLConfigHasBeenSet;
+}
+
+DrReadableInfo DescribeDBInstancesAttributeResponse::GetDrReadableInfo() const
+{
+    return m_drReadableInfo;
+}
+
+bool DescribeDBInstancesAttributeResponse::DrReadableInfoHasBeenSet() const
+{
+    return m_drReadableInfoHasBeenSet;
 }
 
 

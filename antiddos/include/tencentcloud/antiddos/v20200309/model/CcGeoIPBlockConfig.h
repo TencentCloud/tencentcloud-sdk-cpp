@@ -48,12 +48,12 @@ namespace TencentCloud
 
                     /**
                      * 获取区域类型，取值[
-oversea(海外)
+oversea(境外)
 china(国内)
 customized(自定义地区)
 ]
                      * @return RegionType 区域类型，取值[
-oversea(海外)
+oversea(境外)
 china(国内)
 customized(自定义地区)
 ]
@@ -63,12 +63,12 @@ customized(自定义地区)
 
                     /**
                      * 设置区域类型，取值[
-oversea(海外)
+oversea(境外)
 china(国内)
 customized(自定义地区)
 ]
                      * @param _regionType 区域类型，取值[
-oversea(海外)
+oversea(境外)
 china(国内)
 customized(自定义地区)
 ]
@@ -162,7 +162,7 @@ alg(人机校验)
 
                     /**
                      * 区域类型，取值[
-oversea(海外)
+oversea(境外)
 china(国内)
 customized(自定义地区)
 ]
