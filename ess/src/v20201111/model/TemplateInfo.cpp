@@ -40,6 +40,7 @@ TemplateInfo::TemplateInfo() :
     m_organizationIdHasBeenSet(false),
     m_creatorIdHasBeenSet(false),
     m_previewUrlHasBeenSet(false),
+    m_userFlowTypeHasBeenSet(false),
     m_templateVersionHasBeenSet(false),
     m_publishedHasBeenSet(false),
     m_shareTemplateIdHasBeenSet(false),
@@ -297,6 +298,23 @@ CoreInternalOutcome TemplateInfo::Deserialize(const rapidjson::Value &value)
         }
         m_previewUrl = string(value["PreviewUrl"].GetString());
         m_previewUrlHasBeenSet = true;
+    }
+
+    if (value.HasMember("UserFlowType") && !value["UserFlowType"].IsNull())
+    {
+        if (!value["UserFlowType"].IsObject())
+        {
+            return CoreInternalOutcome(Core::Error("response `TemplateInfo.UserFlowType` is not object type").SetRequestId(requestId));
+        }
+
+        CoreInternalOutcome outcome = m_userFlowType.Deserialize(value["UserFlowType"]);
+        if (!outcome.IsSuccess())
+        {
+            outcome.GetError().SetRequestId(requestId);
+            return outcome;
+        }
+
+        m_userFlowTypeHasBeenSet = true;
     }
 
     if (value.HasMember("TemplateVersion") && !value["TemplateVersion"].IsNull())
@@ -570,6 +588,15 @@ void TemplateInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Al
         string key = "PreviewUrl";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_previewUrl.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_userFlowTypeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "UserFlowType";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_userFlowType.ToJsonObject(value[key.c_str()], allocator);
     }
 
     if (m_templateVersionHasBeenSet)
@@ -931,6 +958,22 @@ void TemplateInfo::SetPreviewUrl(const string& _previewUrl)
 bool TemplateInfo::PreviewUrlHasBeenSet() const
 {
     return m_previewUrlHasBeenSet;
+}
+
+UserFlowType TemplateInfo::GetUserFlowType() const
+{
+    return m_userFlowType;
+}
+
+void TemplateInfo::SetUserFlowType(const UserFlowType& _userFlowType)
+{
+    m_userFlowType = _userFlowType;
+    m_userFlowTypeHasBeenSet = true;
+}
+
+bool TemplateInfo::UserFlowTypeHasBeenSet() const
+{
+    return m_userFlowTypeHasBeenSet;
 }
 
 string TemplateInfo::GetTemplateVersion() const

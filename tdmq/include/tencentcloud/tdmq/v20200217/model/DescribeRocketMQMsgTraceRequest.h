@@ -150,23 +150,44 @@ namespace TencentCloud
                     /**
                      * 获取查询死信时该值为true
                      * @return QueryDLQMsg 查询死信时该值为true
-                     * 
+                     * @deprecated
                      */
                     bool GetQueryDLQMsg() const;
 
                     /**
                      * 设置查询死信时该值为true
                      * @param _queryDLQMsg 查询死信时该值为true
-                     * 
+                     * @deprecated
                      */
                     void SetQueryDLQMsg(const bool& _queryDLQMsg);
 
                     /**
                      * 判断参数 QueryDLQMsg 是否已赋值
                      * @return QueryDLQMsg 是否已赋值
-                     * 
+                     * @deprecated
                      */
                     bool QueryDLQMsgHasBeenSet() const;
+
+                    /**
+                     * 获取查询死信时该值为true
+                     * @return QueryDeadLetterMessage 查询死信时该值为true
+                     * 
+                     */
+                    std::string GetQueryDeadLetterMessage() const;
+
+                    /**
+                     * 设置查询死信时该值为true
+                     * @param _queryDeadLetterMessage 查询死信时该值为true
+                     * 
+                     */
+                    void SetQueryDeadLetterMessage(const std::string& _queryDeadLetterMessage);
+
+                    /**
+                     * 判断参数 QueryDeadLetterMessage 是否已赋值
+                     * @return QueryDeadLetterMessage 是否已赋值
+                     * 
+                     */
+                    bool QueryDeadLetterMessageHasBeenSet() const;
 
                 private:
 
@@ -205,6 +226,12 @@ namespace TencentCloud
                      */
                     bool m_queryDLQMsg;
                     bool m_queryDLQMsgHasBeenSet;
+
+                    /**
+                     * 查询死信时该值为true
+                     */
+                    std::string m_queryDeadLetterMessage;
+                    bool m_queryDeadLetterMessageHasBeenSet;
 
                 };
             }

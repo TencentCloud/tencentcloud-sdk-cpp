@@ -134,6 +134,7 @@ set(lighthouse_public_header_model
   include/tencentcloud/lighthouse/v20200324/model/DisassociateInstancesKeyPairsRequest.h
   include/tencentcloud/lighthouse/v20200324/model/DescribeFirewallTemplateQuotaRequest.h
   include/tencentcloud/lighthouse/v20200324/model/DataDiskPrice.h
+  include/tencentcloud/lighthouse/v20200324/model/Command.h
   include/tencentcloud/lighthouse/v20200324/model/SceneInfo.h
   include/tencentcloud/lighthouse/v20200324/model/ImportKeyPairRequest.h
   include/tencentcloud/lighthouse/v20200324/model/DescribeDockerActivitiesRequest.h
@@ -419,6 +420,7 @@ set(lighthouse_src
   src/v20200324/model/DisassociateInstancesKeyPairsRequest.cpp
   src/v20200324/model/DescribeFirewallTemplateQuotaRequest.cpp
   src/v20200324/model/DataDiskPrice.cpp
+  src/v20200324/model/Command.cpp
   src/v20200324/model/SceneInfo.cpp
   src/v20200324/model/ImportKeyPairRequest.cpp
   src/v20200324/model/DescribeDockerActivitiesRequest.cpp

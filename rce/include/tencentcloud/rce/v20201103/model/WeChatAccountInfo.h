@@ -47,15 +47,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取微信的OpenID/UnionID 。
-                     * @return WeChatOpenId 微信的OpenID/UnionID 。
+                     * 获取微信的OpenId/UnionId。
+                     * @return WeChatOpenId 微信的OpenId/UnionId。
                      * 
                      */
                     std::string GetWeChatOpenId() const;
 
                     /**
-                     * 设置微信的OpenID/UnionID 。
-                     * @param _weChatOpenId 微信的OpenID/UnionID 。
+                     * 设置微信的OpenId/UnionId。
+                     * @param _weChatOpenId 微信的OpenId/UnionId。
                      * 
                      */
                     void SetWeChatOpenId(const std::string& _weChatOpenId);
@@ -189,19 +189,19 @@ namespace TencentCloud
                     bool MobilePhoneHasBeenSet() const;
 
                     /**
-                     * 获取用户设备号，支持imei/imeiMD5/Idfa/IdfaMd5
-注释：imeiMD5/IdfaMd5加密方式，对imei/IdfaMd5明文进行MD5加密，加密后取32位小写值。
-                     * @return DeviceId 用户设备号，支持imei/imeiMD5/Idfa/IdfaMd5
-注释：imeiMD5/IdfaMd5加密方式，对imei/IdfaMd5明文进行MD5加密，加密后取32位小写值。
+                     * 获取用户设备号，支持IMEI、IMEIMD5、IDFA、IDFAMD5
+注释：IMEIMD5、IDFAMD5加密方式，对IMEI、IDFA明文进行MD5加密，加密后取32位小写值。
+                     * @return DeviceId 用户设备号，支持IMEI、IMEIMD5、IDFA、IDFAMD5
+注释：IMEIMD5、IDFAMD5加密方式，对IMEI、IDFA明文进行MD5加密，加密后取32位小写值。
                      * 
                      */
                     std::string GetDeviceId() const;
 
                     /**
-                     * 设置用户设备号，支持imei/imeiMD5/Idfa/IdfaMd5
-注释：imeiMD5/IdfaMd5加密方式，对imei/IdfaMd5明文进行MD5加密，加密后取32位小写值。
-                     * @param _deviceId 用户设备号，支持imei/imeiMD5/Idfa/IdfaMd5
-注释：imeiMD5/IdfaMd5加密方式，对imei/IdfaMd5明文进行MD5加密，加密后取32位小写值。
+                     * 设置用户设备号，支持IMEI、IMEIMD5、IDFA、IDFAMD5
+注释：IMEIMD5、IDFAMD5加密方式，对IMEI、IDFA明文进行MD5加密，加密后取32位小写值。
+                     * @param _deviceId 用户设备号，支持IMEI、IMEIMD5、IDFA、IDFAMD5
+注释：IMEIMD5、IDFAMD5加密方式，对IMEI、IDFA明文进行MD5加密，加密后取32位小写值。
                      * 
                      */
                     void SetDeviceId(const std::string& _deviceId);
@@ -216,7 +216,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 微信的OpenID/UnionID 。
+                     * 微信的OpenId/UnionId。
                      */
                     std::string m_weChatOpenId;
                     bool m_weChatOpenIdHasBeenSet;
@@ -256,8 +256,8 @@ namespace TencentCloud
                     bool m_mobilePhoneHasBeenSet;
 
                     /**
-                     * 用户设备号，支持imei/imeiMD5/Idfa/IdfaMd5
-注释：imeiMD5/IdfaMd5加密方式，对imei/IdfaMd5明文进行MD5加密，加密后取32位小写值。
+                     * 用户设备号，支持IMEI、IMEIMD5、IDFA、IDFAMD5
+注释：IMEIMD5、IDFAMD5加密方式，对IMEI、IDFA明文进行MD5加密，加密后取32位小写值。
                      */
                     std::string m_deviceId;
                     bool m_deviceIdHasBeenSet;

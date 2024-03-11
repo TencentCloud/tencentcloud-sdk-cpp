@@ -47,15 +47,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取QQ的OpenID。
-                     * @return QQOpenId QQ的OpenID。
+                     * 获取QQ的OpenId。
+                     * @return QQOpenId QQ的OpenId。
                      * 
                      */
                     std::string GetQQOpenId() const;
 
                     /**
-                     * 设置QQ的OpenID。
-                     * @param _qQOpenId QQ的OpenID。
+                     * 设置QQ的OpenId。
+                     * @param _qQOpenId QQ的OpenId。
                      * 
                      */
                     void SetQQOpenId(const std::string& _qQOpenId);
@@ -135,19 +135,23 @@ namespace TencentCloud
                     bool MobilePhoneHasBeenSet() const;
 
                     /**
-                     * 获取用户设备号，支持imei/imeiMD5/Idfa/IdfaMd5
-注释：imeiMD5/IdfaMd5加密方式，对imei/IdfaMd5明文进行MD5加密，加密后取32位小写值。
-                     * @return DeviceId 用户设备号，支持imei/imeiMD5/Idfa/IdfaMd5
-注释：imeiMD5/IdfaMd5加密方式，对imei/IdfaMd5明文进行MD5加密，加密后取32位小写值。
+                     * 获取用户设备号，支持IMEI、IMEIMD5、IDFA、IDFAMD5
+注释：IMEIMD5、IDFAMD5加密方式，对IMEI、IDFA明文进行MD5加密，加密后取32位小写值。
+
+                     * @return DeviceId 用户设备号，支持IMEI、IMEIMD5、IDFA、IDFAMD5
+注释：IMEIMD5、IDFAMD5加密方式，对IMEI、IDFA明文进行MD5加密，加密后取32位小写值。
+
                      * 
                      */
                     std::string GetDeviceId() const;
 
                     /**
-                     * 设置用户设备号，支持imei/imeiMD5/Idfa/IdfaMd5
-注释：imeiMD5/IdfaMd5加密方式，对imei/IdfaMd5明文进行MD5加密，加密后取32位小写值。
-                     * @param _deviceId 用户设备号，支持imei/imeiMD5/Idfa/IdfaMd5
-注释：imeiMD5/IdfaMd5加密方式，对imei/IdfaMd5明文进行MD5加密，加密后取32位小写值。
+                     * 设置用户设备号，支持IMEI、IMEIMD5、IDFA、IDFAMD5
+注释：IMEIMD5、IDFAMD5加密方式，对IMEI、IDFA明文进行MD5加密，加密后取32位小写值。
+
+                     * @param _deviceId 用户设备号，支持IMEI、IMEIMD5、IDFA、IDFAMD5
+注释：IMEIMD5、IDFAMD5加密方式，对IMEI、IDFA明文进行MD5加密，加密后取32位小写值。
+
                      * 
                      */
                     void SetDeviceId(const std::string& _deviceId);
@@ -162,7 +166,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * QQ的OpenID。
+                     * QQ的OpenId。
                      */
                     std::string m_qQOpenId;
                     bool m_qQOpenIdHasBeenSet;
@@ -187,8 +191,9 @@ namespace TencentCloud
                     bool m_mobilePhoneHasBeenSet;
 
                     /**
-                     * 用户设备号，支持imei/imeiMD5/Idfa/IdfaMd5
-注释：imeiMD5/IdfaMd5加密方式，对imei/IdfaMd5明文进行MD5加密，加密后取32位小写值。
+                     * 用户设备号，支持IMEI、IMEIMD5、IDFA、IDFAMD5
+注释：IMEIMD5、IDFAMD5加密方式，对IMEI、IDFA明文进行MD5加密，加密后取32位小写值。
+
                      */
                     std::string m_deviceId;
                     bool m_deviceIdHasBeenSet;

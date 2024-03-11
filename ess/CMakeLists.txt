@@ -188,7 +188,7 @@ set(ess_public_header_model
   include/tencentcloud/ess/v20201111/model/GetTaskResultApiResponse.h
   include/tencentcloud/ess/v20201111/model/CancelMultiFlowSignQRCodeRequest.h
   include/tencentcloud/ess/v20201111/model/DeleteIntegrationDepartmentRequest.h
-  include/tencentcloud/ess/v20201111/model/WebThemeConfig.h
+  include/tencentcloud/ess/v20201111/model/UserFlowType.h
   include/tencentcloud/ess/v20201111/model/ModifyApplicationCallbackInfoRequest.h
   include/tencentcloud/ess/v20201111/model/StartFlowRequest.h
   include/tencentcloud/ess/v20201111/model/CreateSealResponse.h
@@ -226,6 +226,7 @@ set(ess_public_header_model
   include/tencentcloud/ess/v20201111/model/RelieveInfo.h
   include/tencentcloud/ess/v20201111/model/EmbedUrlOption.h
   include/tencentcloud/ess/v20201111/model/CreateBatchCancelFlowUrlRequest.h
+  include/tencentcloud/ess/v20201111/model/WebThemeConfig.h
   include/tencentcloud/ess/v20201111/model/CreateMultiFlowSignQRCodeRequest.h
   include/tencentcloud/ess/v20201111/model/VerifyPdfRequest.h
   include/tencentcloud/ess/v20201111/model/DescribeFlowInfoRequest.h
@@ -416,7 +417,7 @@ set(ess_src
   src/v20201111/model/GetTaskResultApiResponse.cpp
   src/v20201111/model/CancelMultiFlowSignQRCodeRequest.cpp
   src/v20201111/model/DeleteIntegrationDepartmentRequest.cpp
-  src/v20201111/model/WebThemeConfig.cpp
+  src/v20201111/model/UserFlowType.cpp
   src/v20201111/model/ModifyApplicationCallbackInfoRequest.cpp
   src/v20201111/model/StartFlowRequest.cpp
   src/v20201111/model/CreateSealResponse.cpp
@@ -454,6 +455,7 @@ set(ess_src
   src/v20201111/model/RelieveInfo.cpp
   src/v20201111/model/EmbedUrlOption.cpp
   src/v20201111/model/CreateBatchCancelFlowUrlRequest.cpp
+  src/v20201111/model/WebThemeConfig.cpp
   src/v20201111/model/CreateMultiFlowSignQRCodeRequest.cpp
   src/v20201111/model/VerifyPdfRequest.cpp
   src/v20201111/model/DescribeFlowInfoRequest.cpp

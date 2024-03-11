@@ -51,31 +51,31 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取用户账号类型（默认开通 QQ 开放账号，手机 MD5 账号类型查询。如需使用微信开放账号，则需要 提交工单 由腾讯云进行资格审核，审核通过后方可正常使用微信开放账号）： 
-1：QQ 开放账号；
-2：微信开放账号；
-8：设备号（imei/imeiMD5/idfa/idfaMd5）；
-10004：手机号 MD5。
-                     * @return Account 用户账号类型（默认开通 QQ 开放账号，手机 MD5 账号类型查询。如需使用微信开放账号，则需要 提交工单 由腾讯云进行资格审核，审核通过后方可正常使用微信开放账号）： 
-1：QQ 开放账号；
-2：微信开放账号；
-8：设备号（imei/imeiMD5/idfa/idfaMd5）；
-10004：手机号 MD5。
+                     * 获取用户账号类型；默认开通QQOpenId、手机号MD5权限；如果需要使用微信OpenId入参，则需要"提交工单"或联系对接人进行资格审核，审核通过后方可正常使用微信开放账号。
+1：QQ开放账号
+2：微信开放账号
+8：设备号，仅支持IMEI、IMEIMD5、IDFA、IDFAMD5
+10004：手机号MD5，中国大陆11位手机号进行MD5加密，取32位小写值。
+                     * @return Account 用户账号类型；默认开通QQOpenId、手机号MD5权限；如果需要使用微信OpenId入参，则需要"提交工单"或联系对接人进行资格审核，审核通过后方可正常使用微信开放账号。
+1：QQ开放账号
+2：微信开放账号
+8：设备号，仅支持IMEI、IMEIMD5、IDFA、IDFAMD5
+10004：手机号MD5，中国大陆11位手机号进行MD5加密，取32位小写值。
                      * 
                      */
                     AccountInfo GetAccount() const;
 
                     /**
-                     * 设置用户账号类型（默认开通 QQ 开放账号，手机 MD5 账号类型查询。如需使用微信开放账号，则需要 提交工单 由腾讯云进行资格审核，审核通过后方可正常使用微信开放账号）： 
-1：QQ 开放账号；
-2：微信开放账号；
-8：设备号（imei/imeiMD5/idfa/idfaMd5）；
-10004：手机号 MD5。
-                     * @param _account 用户账号类型（默认开通 QQ 开放账号，手机 MD5 账号类型查询。如需使用微信开放账号，则需要 提交工单 由腾讯云进行资格审核，审核通过后方可正常使用微信开放账号）： 
-1：QQ 开放账号；
-2：微信开放账号；
-8：设备号（imei/imeiMD5/idfa/idfaMd5）；
-10004：手机号 MD5。
+                     * 设置用户账号类型；默认开通QQOpenId、手机号MD5权限；如果需要使用微信OpenId入参，则需要"提交工单"或联系对接人进行资格审核，审核通过后方可正常使用微信开放账号。
+1：QQ开放账号
+2：微信开放账号
+8：设备号，仅支持IMEI、IMEIMD5、IDFA、IDFAMD5
+10004：手机号MD5，中国大陆11位手机号进行MD5加密，取32位小写值。
+                     * @param _account 用户账号类型；默认开通QQOpenId、手机号MD5权限；如果需要使用微信OpenId入参，则需要"提交工单"或联系对接人进行资格审核，审核通过后方可正常使用微信开放账号。
+1：QQ开放账号
+2：微信开放账号
+8：设备号，仅支持IMEI、IMEIMD5、IDFA、IDFAMD5
+10004：手机号MD5，中国大陆11位手机号进行MD5加密，取32位小写值。
                      * 
                      */
                     void SetAccount(const AccountInfo& _account);
@@ -167,15 +167,15 @@ namespace TencentCloud
                     bool PostTimeHasBeenSet() const;
 
                     /**
-                     * 获取业务平台用户唯一标识。
-                     * @return UserId 业务平台用户唯一标识。
+                     * 获取业务平台用户唯一标识，支持自定义。
+                     * @return UserId 业务平台用户唯一标识，支持自定义。
                      * 
                      */
                     std::string GetUserId() const;
 
                     /**
-                     * 设置业务平台用户唯一标识。
-                     * @param _userId 业务平台用户唯一标识。
+                     * 设置业务平台用户唯一标识，支持自定义。
+                     * @param _userId 业务平台用户唯一标识，支持自定义。
                      * 
                      */
                     void SetUserId(const std::string& _userId);
@@ -188,19 +188,15 @@ namespace TencentCloud
                     bool UserIdHasBeenSet() const;
 
                     /**
-                     * 获取设备指纹Devicetoken值，集成设备指纹后获取，
-如果集成了相应的设备指纹，该字段必填。
-                     * @return DeviceToken 设备指纹Devicetoken值，集成设备指纹后获取，
-如果集成了相应的设备指纹，该字段必填。
+                     * 获取设备指纹DeviceToken值，集成设备指纹后获取；如果集成了相应的设备指纹，该字段必填。
+                     * @return DeviceToken 设备指纹DeviceToken值，集成设备指纹后获取；如果集成了相应的设备指纹，该字段必填。
                      * 
                      */
                     std::string GetDeviceToken() const;
 
                     /**
-                     * 设置设备指纹Devicetoken值，集成设备指纹后获取，
-如果集成了相应的设备指纹，该字段必填。
-                     * @param _deviceToken 设备指纹Devicetoken值，集成设备指纹后获取，
-如果集成了相应的设备指纹，该字段必填。
+                     * 设置设备指纹DeviceToken值，集成设备指纹后获取；如果集成了相应的设备指纹，该字段必填。
+                     * @param _deviceToken 设备指纹DeviceToken值，集成设备指纹后获取；如果集成了相应的设备指纹，该字段必填。
                      * 
                      */
                     void SetDeviceToken(const std::string& _deviceToken);
@@ -276,15 +272,15 @@ namespace TencentCloud
                     bool NicknameHasBeenSet() const;
 
                     /**
-                     * 获取用户邮箱地址（非系统自动生成）。
-                     * @return EmailAddress 用户邮箱地址（非系统自动生成）。
+                     * 获取用户邮箱地址。
+                     * @return EmailAddress 用户邮箱地址。
                      * 
                      */
                     std::string GetEmailAddress() const;
 
                     /**
-                     * 设置用户邮箱地址（非系统自动生成）。
-                     * @param _emailAddress 用户邮箱地址（非系统自动生成）。
+                     * 设置用户邮箱地址。
+                     * @param _emailAddress 用户邮箱地址。
                      * 
                      */
                     void SetEmailAddress(const std::string& _emailAddress);
@@ -453,30 +449,30 @@ namespace TencentCloud
 
                     /**
                      * 获取设备类型，账号类型（AccountType）为8时填写。
-1:Imei；国际移动设备识别号（15-17位数字）；
-2:ImeiMd5；国际移动设备识别号，通过MD5加密后取32位小写值；
-3:Idfa；
-4:IdfaMD5； 国际移动设备识别号，通过MD5加密后取32位小写值。
+1:IMEI；国际移动设备识别号（15-17位数字）；
+2:IMEIMD5；国际移动设备识别号，通过MD5加密后取32位小写值；
+3:IDFA；
+4:IDFAMD5；国际移动设备识别号，通过MD5加密后取32位小写值。
                      * @return DeviceType 设备类型，账号类型（AccountType）为8时填写。
-1:Imei；国际移动设备识别号（15-17位数字）；
-2:ImeiMd5；国际移动设备识别号，通过MD5加密后取32位小写值；
-3:Idfa；
-4:IdfaMD5； 国际移动设备识别号，通过MD5加密后取32位小写值。
+1:IMEI；国际移动设备识别号（15-17位数字）；
+2:IMEIMD5；国际移动设备识别号，通过MD5加密后取32位小写值；
+3:IDFA；
+4:IDFAMD5；国际移动设备识别号，通过MD5加密后取32位小写值。
                      * 
                      */
                     int64_t GetDeviceType() const;
 
                     /**
                      * 设置设备类型，账号类型（AccountType）为8时填写。
-1:Imei；国际移动设备识别号（15-17位数字）；
-2:ImeiMd5；国际移动设备识别号，通过MD5加密后取32位小写值；
-3:Idfa；
-4:IdfaMD5； 国际移动设备识别号，通过MD5加密后取32位小写值。
+1:IMEI；国际移动设备识别号（15-17位数字）；
+2:IMEIMD5；国际移动设备识别号，通过MD5加密后取32位小写值；
+3:IDFA；
+4:IDFAMD5；国际移动设备识别号，通过MD5加密后取32位小写值。
                      * @param _deviceType 设备类型，账号类型（AccountType）为8时填写。
-1:Imei；国际移动设备识别号（15-17位数字）；
-2:ImeiMd5；国际移动设备识别号，通过MD5加密后取32位小写值；
-3:Idfa；
-4:IdfaMD5； 国际移动设备识别号，通过MD5加密后取32位小写值。
+1:IMEI；国际移动设备识别号（15-17位数字）；
+2:IMEIMD5；国际移动设备识别号，通过MD5加密后取32位小写值；
+3:IDFA；
+4:IDFAMD5；国际移动设备识别号，通过MD5加密后取32位小写值。
                      * 
                      */
                     void SetDeviceType(const int64_t& _deviceType);
@@ -552,30 +548,30 @@ namespace TencentCloud
                     bool OnlineScamHasBeenSet() const;
 
                     /**
-                     * 获取1：安卓；
-2：iOS ；
-3：H5 ；
-4：小程序 。
+                     * 获取1：Android
+2：iOS
+3：H5
+4：小程序
 
-                     * @return Platform 1：安卓；
-2：iOS ；
-3：H5 ；
-4：小程序 。
+                     * @return Platform 1：Android
+2：iOS
+3：H5
+4：小程序
 
                      * 
                      */
                     std::string GetPlatform() const;
 
                     /**
-                     * 设置1：安卓；
-2：iOS ；
-3：H5 ；
-4：小程序 。
+                     * 设置1：Android
+2：iOS
+3：H5
+4：小程序
 
-                     * @param _platform 1：安卓；
-2：iOS ；
-3：H5 ；
-4：小程序 。
+                     * @param _platform 1：Android
+2：iOS
+3：H5
+4：小程序
 
                      * 
                      */
@@ -591,11 +587,11 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 用户账号类型（默认开通 QQ 开放账号，手机 MD5 账号类型查询。如需使用微信开放账号，则需要 提交工单 由腾讯云进行资格审核，审核通过后方可正常使用微信开放账号）： 
-1：QQ 开放账号；
-2：微信开放账号；
-8：设备号（imei/imeiMD5/idfa/idfaMd5）；
-10004：手机号 MD5。
+                     * 用户账号类型；默认开通QQOpenId、手机号MD5权限；如果需要使用微信OpenId入参，则需要"提交工单"或联系对接人进行资格审核，审核通过后方可正常使用微信开放账号。
+1：QQ开放账号
+2：微信开放账号
+8：设备号，仅支持IMEI、IMEIMD5、IDFA、IDFAMD5
+10004：手机号MD5，中国大陆11位手机号进行MD5加密，取32位小写值。
                      */
                     AccountInfo m_account;
                     bool m_accountHasBeenSet;
@@ -623,14 +619,13 @@ namespace TencentCloud
                     bool m_postTimeHasBeenSet;
 
                     /**
-                     * 业务平台用户唯一标识。
+                     * 业务平台用户唯一标识，支持自定义。
                      */
                     std::string m_userId;
                     bool m_userIdHasBeenSet;
 
                     /**
-                     * 设备指纹Devicetoken值，集成设备指纹后获取，
-如果集成了相应的设备指纹，该字段必填。
+                     * 设备指纹DeviceToken值，集成设备指纹后获取；如果集成了相应的设备指纹，该字段必填。
                      */
                     std::string m_deviceToken;
                     bool m_deviceTokenHasBeenSet;
@@ -654,7 +649,7 @@ namespace TencentCloud
                     bool m_nicknameHasBeenSet;
 
                     /**
-                     * 用户邮箱地址（非系统自动生成）。
+                     * 用户邮箱地址。
                      */
                     std::string m_emailAddress;
                     bool m_emailAddressHasBeenSet;
@@ -705,10 +700,10 @@ namespace TencentCloud
 
                     /**
                      * 设备类型，账号类型（AccountType）为8时填写。
-1:Imei；国际移动设备识别号（15-17位数字）；
-2:ImeiMd5；国际移动设备识别号，通过MD5加密后取32位小写值；
-3:Idfa；
-4:IdfaMD5； 国际移动设备识别号，通过MD5加密后取32位小写值。
+1:IMEI；国际移动设备识别号（15-17位数字）；
+2:IMEIMD5；国际移动设备识别号，通过MD5加密后取32位小写值；
+3:IDFA；
+4:IDFAMD5；国际移动设备识别号，通过MD5加密后取32位小写值。
                      */
                     int64_t m_deviceType;
                     bool m_deviceTypeHasBeenSet;
@@ -732,10 +727,10 @@ namespace TencentCloud
                     bool m_onlineScamHasBeenSet;
 
                     /**
-                     * 1：安卓；
-2：iOS ；
-3：H5 ；
-4：小程序 。
+                     * 1：Android
+2：iOS
+3：H5
+4：小程序
 
                      */
                     std::string m_platform;

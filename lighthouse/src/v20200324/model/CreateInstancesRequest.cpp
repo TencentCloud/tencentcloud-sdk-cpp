@@ -35,7 +35,8 @@ CreateInstancesRequest::CreateInstancesRequest() :
     m_containersHasBeenSet(false),
     m_autoVoucherHasBeenSet(false),
     m_firewallTemplateIdHasBeenSet(false),
-    m_tagsHasBeenSet(false)
+    m_tagsHasBeenSet(false),
+    m_initCommandHasBeenSet(false)
 {
 }
 
@@ -169,6 +170,15 @@ string CreateInstancesRequest::ToJsonString() const
             d[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
             (*itr).ToJsonObject(d[key.c_str()][i], allocator);
         }
+    }
+
+    if (m_initCommandHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "InitCommand";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_initCommand.ToJsonObject(d[key.c_str()], allocator);
     }
 
 
@@ -385,6 +395,22 @@ void CreateInstancesRequest::SetTags(const vector<Tag>& _tags)
 bool CreateInstancesRequest::TagsHasBeenSet() const
 {
     return m_tagsHasBeenSet;
+}
+
+Command CreateInstancesRequest::GetInitCommand() const
+{
+    return m_initCommand;
+}
+
+void CreateInstancesRequest::SetInitCommand(const Command& _initCommand)
+{
+    m_initCommand = _initCommand;
+    m_initCommandHasBeenSet = true;
+}
+
+bool CreateInstancesRequest::InitCommandHasBeenSet() const
+{
+    return m_initCommandHasBeenSet;
 }
 
 

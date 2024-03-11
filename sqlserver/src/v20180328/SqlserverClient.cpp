@@ -4813,6 +4813,49 @@ SqlserverClient::ModifyDBRemarkOutcomeCallable SqlserverClient::ModifyDBRemarkCa
     return task->get_future();
 }
 
+SqlserverClient::ModifyDReadableOutcome SqlserverClient::ModifyDReadable(const ModifyDReadableRequest &request)
+{
+    auto outcome = MakeRequest(request, "ModifyDReadable");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ModifyDReadableResponse rsp = ModifyDReadableResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ModifyDReadableOutcome(rsp);
+        else
+            return ModifyDReadableOutcome(o.GetError());
+    }
+    else
+    {
+        return ModifyDReadableOutcome(outcome.GetError());
+    }
+}
+
+void SqlserverClient::ModifyDReadableAsync(const ModifyDReadableRequest& request, const ModifyDReadableAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->ModifyDReadable(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+SqlserverClient::ModifyDReadableOutcomeCallable SqlserverClient::ModifyDReadableCallable(const ModifyDReadableRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<ModifyDReadableOutcome()>>(
+        [this, request]()
+        {
+            return this->ModifyDReadable(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 SqlserverClient::ModifyDatabaseCDCOutcome SqlserverClient::ModifyDatabaseCDC(const ModifyDatabaseCDCRequest &request)
 {
     auto outcome = MakeRequest(request, "ModifyDatabaseCDC");

@@ -28,7 +28,8 @@ DescribeRocketMQMsgTraceRequest::DescribeRocketMQMsgTraceRequest() :
     m_topicNameHasBeenSet(false),
     m_msgIdHasBeenSet(false),
     m_groupNameHasBeenSet(false),
-    m_queryDLQMsgHasBeenSet(false)
+    m_queryDLQMsgHasBeenSet(false),
+    m_queryDeadLetterMessageHasBeenSet(false)
 {
 }
 
@@ -85,6 +86,14 @@ string DescribeRocketMQMsgTraceRequest::ToJsonString() const
         string key = "QueryDLQMsg";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_queryDLQMsg, allocator);
+    }
+
+    if (m_queryDeadLetterMessageHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "QueryDeadLetterMessage";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_queryDeadLetterMessage.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -189,6 +198,22 @@ void DescribeRocketMQMsgTraceRequest::SetQueryDLQMsg(const bool& _queryDLQMsg)
 bool DescribeRocketMQMsgTraceRequest::QueryDLQMsgHasBeenSet() const
 {
     return m_queryDLQMsgHasBeenSet;
+}
+
+string DescribeRocketMQMsgTraceRequest::GetQueryDeadLetterMessage() const
+{
+    return m_queryDeadLetterMessage;
+}
+
+void DescribeRocketMQMsgTraceRequest::SetQueryDeadLetterMessage(const string& _queryDeadLetterMessage)
+{
+    m_queryDeadLetterMessage = _queryDeadLetterMessage;
+    m_queryDeadLetterMessageHasBeenSet = true;
+}
+
+bool DescribeRocketMQMsgTraceRequest::QueryDeadLetterMessageHasBeenSet() const
+{
+    return m_queryDeadLetterMessageHasBeenSet;
 }
 
 

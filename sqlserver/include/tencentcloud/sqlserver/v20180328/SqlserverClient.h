@@ -245,6 +245,8 @@
 #include <tencentcloud/sqlserver/v20180328/model/ModifyDBNameResponse.h>
 #include <tencentcloud/sqlserver/v20180328/model/ModifyDBRemarkRequest.h>
 #include <tencentcloud/sqlserver/v20180328/model/ModifyDBRemarkResponse.h>
+#include <tencentcloud/sqlserver/v20180328/model/ModifyDReadableRequest.h>
+#include <tencentcloud/sqlserver/v20180328/model/ModifyDReadableResponse.h>
 #include <tencentcloud/sqlserver/v20180328/model/ModifyDatabaseCDCRequest.h>
 #include <tencentcloud/sqlserver/v20180328/model/ModifyDatabaseCDCResponse.h>
 #include <tencentcloud/sqlserver/v20180328/model/ModifyDatabaseCTRequest.h>
@@ -658,6 +660,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::ModifyDBRemarkResponse> ModifyDBRemarkOutcome;
                 typedef std::future<ModifyDBRemarkOutcome> ModifyDBRemarkOutcomeCallable;
                 typedef std::function<void(const SqlserverClient*, const Model::ModifyDBRemarkRequest&, ModifyDBRemarkOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyDBRemarkAsyncHandler;
+                typedef Outcome<Core::Error, Model::ModifyDReadableResponse> ModifyDReadableOutcome;
+                typedef std::future<ModifyDReadableOutcome> ModifyDReadableOutcomeCallable;
+                typedef std::function<void(const SqlserverClient*, const Model::ModifyDReadableRequest&, ModifyDReadableOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyDReadableAsyncHandler;
                 typedef Outcome<Core::Error, Model::ModifyDatabaseCDCResponse> ModifyDatabaseCDCOutcome;
                 typedef std::future<ModifyDatabaseCDCOutcome> ModifyDatabaseCDCOutcomeCallable;
                 typedef std::function<void(const SqlserverClient*, const Model::ModifyDatabaseCDCRequest&, ModifyDatabaseCDCOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyDatabaseCDCAsyncHandler;
@@ -1758,6 +1763,15 @@ namespace TencentCloud
                 ModifyDBRemarkOutcome ModifyDBRemark(const Model::ModifyDBRemarkRequest &request);
                 void ModifyDBRemarkAsync(const Model::ModifyDBRemarkRequest& request, const ModifyDBRemarkAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 ModifyDBRemarkOutcomeCallable ModifyDBRemarkCallable(const Model::ModifyDBRemarkRequest& request);
+
+                /**
+                 *本接口（ModifyDReadable）用于开通或者关闭备机只读
+                 * @param req ModifyDReadableRequest
+                 * @return ModifyDReadableOutcome
+                 */
+                ModifyDReadableOutcome ModifyDReadable(const Model::ModifyDReadableRequest &request);
+                void ModifyDReadableAsync(const Model::ModifyDReadableRequest& request, const ModifyDReadableAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                ModifyDReadableOutcomeCallable ModifyDReadableCallable(const Model::ModifyDReadableRequest& request);
 
                 /**
                  *本接口(ModifyDatabaseCDC)用于开启、关闭数据库数据变更捕获(CDC)

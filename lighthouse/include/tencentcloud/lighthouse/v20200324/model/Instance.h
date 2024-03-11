@@ -689,6 +689,27 @@ FAILED：表示操作失败
                      */
                     bool InstanceRestrictStateHasBeenSet() const;
 
+                    /**
+                     * 获取创建实例后自动执行TAT命令的调用ID。
+                     * @return InitInvocationId 创建实例后自动执行TAT命令的调用ID。
+                     * 
+                     */
+                    std::string GetInitInvocationId() const;
+
+                    /**
+                     * 设置创建实例后自动执行TAT命令的调用ID。
+                     * @param _initInvocationId 创建实例后自动执行TAT命令的调用ID。
+                     * 
+                     */
+                    void SetInitInvocationId(const std::string& _initInvocationId);
+
+                    /**
+                     * 判断参数 InitInvocationId 是否已赋值
+                     * @return InitInvocationId 是否已赋值
+                     * 
+                     */
+                    bool InitInvocationIdHasBeenSet() const;
+
                 private:
 
                     /**
@@ -870,6 +891,12 @@ FAILED：表示操作失败
                      */
                     std::string m_instanceRestrictState;
                     bool m_instanceRestrictStateHasBeenSet;
+
+                    /**
+                     * 创建实例后自动执行TAT命令的调用ID。
+                     */
+                    std::string m_initInvocationId;
+                    bool m_initInvocationIdHasBeenSet;
 
                 };
             }

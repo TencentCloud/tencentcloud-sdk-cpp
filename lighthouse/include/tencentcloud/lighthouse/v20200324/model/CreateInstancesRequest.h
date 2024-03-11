@@ -25,6 +25,7 @@
 #include <tencentcloud/lighthouse/v20200324/model/LoginConfiguration.h>
 #include <tencentcloud/lighthouse/v20200324/model/DockerContainerConfiguration.h>
 #include <tencentcloud/lighthouse/v20200324/model/Tag.h>
+#include <tencentcloud/lighthouse/v20200324/model/Command.h>
 
 
 namespace TencentCloud
@@ -355,6 +356,27 @@ false（默认）：发送正常请求，通过检查后直接创建实例
                      */
                     bool TagsHasBeenSet() const;
 
+                    /**
+                     * 获取创建实例后自动执行的命令。
+                     * @return InitCommand 创建实例后自动执行的命令。
+                     * 
+                     */
+                    Command GetInitCommand() const;
+
+                    /**
+                     * 设置创建实例后自动执行的命令。
+                     * @param _initCommand 创建实例后自动执行的命令。
+                     * 
+                     */
+                    void SetInitCommand(const Command& _initCommand);
+
+                    /**
+                     * 判断参数 InitCommand 是否已赋值
+                     * @return InitCommand 是否已赋值
+                     * 
+                     */
+                    bool InitCommandHasBeenSet() const;
+
                 private:
 
                     /**
@@ -443,6 +465,12 @@ false（默认）：发送正常请求，通过检查后直接创建实例
                      */
                     std::vector<Tag> m_tags;
                     bool m_tagsHasBeenSet;
+
+                    /**
+                     * 创建实例后自动执行的命令。
+                     */
+                    Command m_initCommand;
+                    bool m_initCommandHasBeenSet;
 
                 };
             }

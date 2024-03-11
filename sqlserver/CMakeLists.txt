@@ -113,11 +113,12 @@ set(sqlserver_public_header_model
   include/tencentcloud/sqlserver/v20180328/model/DeleteAccountResponse.h
   include/tencentcloud/sqlserver/v20180328/model/TDEConfigAttribute.h
   include/tencentcloud/sqlserver/v20180328/model/SummaryDetailRes.h
-  include/tencentcloud/sqlserver/v20180328/model/DescribeBackupUploadSizeRequest.h
+  include/tencentcloud/sqlserver/v20180328/model/ModifyDReadableRequest.h
   include/tencentcloud/sqlserver/v20180328/model/DeleteBusinessIntelligenceFileRequest.h
   include/tencentcloud/sqlserver/v20180328/model/AssociateSecurityGroupsRequest.h
   include/tencentcloud/sqlserver/v20180328/model/ModifyBackupStrategyResponse.h
   include/tencentcloud/sqlserver/v20180328/model/SlaveZones.h
+  include/tencentcloud/sqlserver/v20180328/model/DescribeBackupUploadSizeRequest.h
   include/tencentcloud/sqlserver/v20180328/model/StartInstanceXEventResponse.h
   include/tencentcloud/sqlserver/v20180328/model/DescribeDBInstanceInterResponse.h
   include/tencentcloud/sqlserver/v20180328/model/ModifyPublishSubscribeNameResponse.h
@@ -374,6 +375,7 @@ set(sqlserver_public_header_model
   include/tencentcloud/sqlserver/v20180328/model/CreateBusinessDBInstancesRequest.h
   include/tencentcloud/sqlserver/v20180328/model/ResetAccountPasswordRequest.h
   include/tencentcloud/sqlserver/v20180328/model/DescribeSlowlogsRequest.h
+  include/tencentcloud/sqlserver/v20180328/model/ModifyDReadableResponse.h
   include/tencentcloud/sqlserver/v20180328/model/StopMigrationResponse.h
   include/tencentcloud/sqlserver/v20180328/model/UpgradeDBInstanceResponse.h
   include/tencentcloud/sqlserver/v20180328/model/DescribePublishSubscribeResponse.h
@@ -479,11 +481,12 @@ set(sqlserver_src
   src/v20180328/model/DeleteAccountResponse.cpp
   src/v20180328/model/TDEConfigAttribute.cpp
   src/v20180328/model/SummaryDetailRes.cpp
-  src/v20180328/model/DescribeBackupUploadSizeRequest.cpp
+  src/v20180328/model/ModifyDReadableRequest.cpp
   src/v20180328/model/DeleteBusinessIntelligenceFileRequest.cpp
   src/v20180328/model/AssociateSecurityGroupsRequest.cpp
   src/v20180328/model/ModifyBackupStrategyResponse.cpp
   src/v20180328/model/SlaveZones.cpp
+  src/v20180328/model/DescribeBackupUploadSizeRequest.cpp
   src/v20180328/model/StartInstanceXEventResponse.cpp
   src/v20180328/model/DescribeDBInstanceInterResponse.cpp
   src/v20180328/model/ModifyPublishSubscribeNameResponse.cpp
@@ -740,6 +743,7 @@ set(sqlserver_src
   src/v20180328/model/CreateBusinessDBInstancesRequest.cpp
   src/v20180328/model/ResetAccountPasswordRequest.cpp
   src/v20180328/model/DescribeSlowlogsRequest.cpp
+  src/v20180328/model/ModifyDReadableResponse.cpp
   src/v20180328/model/StopMigrationResponse.cpp
   src/v20180328/model/UpgradeDBInstanceResponse.cpp
   src/v20180328/model/DescribePublishSubscribeResponse.cpp

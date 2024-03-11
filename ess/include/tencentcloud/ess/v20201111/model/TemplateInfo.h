@@ -27,6 +27,7 @@
 #include <tencentcloud/ess/v20201111/model/Recipient.h>
 #include <tencentcloud/ess/v20201111/model/Component.h>
 #include <tencentcloud/ess/v20201111/model/FileInfo.h>
+#include <tencentcloud/ess/v20201111/model/UserFlowType.h>
 #include <tencentcloud/ess/v20201111/model/SealInfo.h>
 
 
@@ -579,6 +580,51 @@ namespace TencentCloud
                     bool PreviewUrlHasBeenSet() const;
 
                     /**
+                     * 获取用户自定义合同类型。
+
+返回配置模板的时候选择的合同类型。[点击查看配置的位置](https://qcloudimg.tencent-cloud.cn/raw/4a766f0540253bf2a05d50c58bd14990.png)
+
+自定义合同类型配置的地方如链接图所示。[点击查看自定义合同类型管理的位置](https://qcloudimg.tencent-cloud.cn/raw/36582cea03ae6a2559894844942b5d5c.png)
+
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return UserFlowType 用户自定义合同类型。
+
+返回配置模板的时候选择的合同类型。[点击查看配置的位置](https://qcloudimg.tencent-cloud.cn/raw/4a766f0540253bf2a05d50c58bd14990.png)
+
+自定义合同类型配置的地方如链接图所示。[点击查看自定义合同类型管理的位置](https://qcloudimg.tencent-cloud.cn/raw/36582cea03ae6a2559894844942b5d5c.png)
+
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    UserFlowType GetUserFlowType() const;
+
+                    /**
+                     * 设置用户自定义合同类型。
+
+返回配置模板的时候选择的合同类型。[点击查看配置的位置](https://qcloudimg.tencent-cloud.cn/raw/4a766f0540253bf2a05d50c58bd14990.png)
+
+自定义合同类型配置的地方如链接图所示。[点击查看自定义合同类型管理的位置](https://qcloudimg.tencent-cloud.cn/raw/36582cea03ae6a2559894844942b5d5c.png)
+
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _userFlowType 用户自定义合同类型。
+
+返回配置模板的时候选择的合同类型。[点击查看配置的位置](https://qcloudimg.tencent-cloud.cn/raw/4a766f0540253bf2a05d50c58bd14990.png)
+
+自定义合同类型配置的地方如链接图所示。[点击查看自定义合同类型管理的位置](https://qcloudimg.tencent-cloud.cn/raw/36582cea03ae6a2559894844942b5d5c.png)
+
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetUserFlowType(const UserFlowType& _userFlowType);
+
+                    /**
+                     * 判断参数 UserFlowType 是否已赋值
+                     * @return UserFlowType 是否已赋值
+                     * 
+                     */
+                    bool UserFlowTypeHasBeenSet() const;
+
+                    /**
                      * 获取模板版本的编号，旨在标识其独特的版本信息，通常呈现为一串字符串，由日期和递增的数字组成
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return TemplateVersion 模板版本的编号，旨在标识其独特的版本信息，通常呈现为一串字符串，由日期和递增的数字组成
@@ -860,6 +906,18 @@ namespace TencentCloud
                      */
                     std::string m_previewUrl;
                     bool m_previewUrlHasBeenSet;
+
+                    /**
+                     * 用户自定义合同类型。
+
+返回配置模板的时候选择的合同类型。[点击查看配置的位置](https://qcloudimg.tencent-cloud.cn/raw/4a766f0540253bf2a05d50c58bd14990.png)
+
+自定义合同类型配置的地方如链接图所示。[点击查看自定义合同类型管理的位置](https://qcloudimg.tencent-cloud.cn/raw/36582cea03ae6a2559894844942b5d5c.png)
+
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    UserFlowType m_userFlowType;
+                    bool m_userFlowTypeHasBeenSet;
 
                     /**
                      * 模板版本的编号，旨在标识其独特的版本信息，通常呈现为一串字符串，由日期和递增的数字组成

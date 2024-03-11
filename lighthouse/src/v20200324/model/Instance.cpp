@@ -47,7 +47,8 @@ Instance::Instance() :
     m_osNameHasBeenSet(false),
     m_zoneHasBeenSet(false),
     m_tagsHasBeenSet(false),
-    m_instanceRestrictStateHasBeenSet(false)
+    m_instanceRestrictStateHasBeenSet(false),
+    m_initInvocationIdHasBeenSet(false)
 {
 }
 
@@ -363,6 +364,16 @@ CoreInternalOutcome Instance::Deserialize(const rapidjson::Value &value)
         m_instanceRestrictStateHasBeenSet = true;
     }
 
+    if (value.HasMember("InitInvocationId") && !value["InitInvocationId"].IsNull())
+    {
+        if (!value["InitInvocationId"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `Instance.InitInvocationId` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_initInvocationId = string(value["InitInvocationId"].GetString());
+        m_initInvocationIdHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -604,6 +615,14 @@ void Instance::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Alloca
         string key = "InstanceRestrictState";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_instanceRestrictState.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_initInvocationIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "InitInvocationId";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_initInvocationId.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -1039,5 +1058,21 @@ void Instance::SetInstanceRestrictState(const string& _instanceRestrictState)
 bool Instance::InstanceRestrictStateHasBeenSet() const
 {
     return m_instanceRestrictStateHasBeenSet;
+}
+
+string Instance::GetInitInvocationId() const
+{
+    return m_initInvocationId;
+}
+
+void Instance::SetInitInvocationId(const string& _initInvocationId)
+{
+    m_initInvocationId = _initInvocationId;
+    m_initInvocationIdHasBeenSet = true;
+}
+
+bool Instance::InitInvocationIdHasBeenSet() const
+{
+    return m_initInvocationIdHasBeenSet;
 }
 

@@ -47,15 +47,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取助力场景建议填写：活动发起人微信 OpenID
-                     * @return SponsorOpenId 助力场景建议填写：活动发起人微信 OpenID
+                     * 获取助力场景建议填写：活动发起人微信OpenId。
+                     * @return SponsorOpenId 助力场景建议填写：活动发起人微信OpenId。
                      * 
                      */
                     std::string GetSponsorOpenId() const;
 
                     /**
-                     * 设置助力场景建议填写：活动发起人微信 OpenID
-                     * @param _sponsorOpenId 助力场景建议填写：活动发起人微信 OpenID
+                     * 设置助力场景建议填写：活动发起人微信OpenId。
+                     * @param _sponsorOpenId 助力场景建议填写：活动发起人微信OpenId。
                      * 
                      */
                     void SetSponsorOpenId(const std::string& _sponsorOpenId);
@@ -154,7 +154,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 助力场景建议填写：活动发起人微信 OpenID
+                     * 助力场景建议填写：活动发起人微信OpenId。
                      */
                     std::string m_sponsorOpenId;
                     bool m_sponsorOpenIdHasBeenSet;
