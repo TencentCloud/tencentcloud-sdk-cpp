@@ -23,7 +23,6 @@ using namespace std;
 GovernanceInstanceUpdate::GovernanceInstanceUpdate() :
     m_serviceHasBeenSet(false),
     m_namespaceHasBeenSet(false),
-    m_idHasBeenSet(false),
     m_weightHasBeenSet(false),
     m_healthyHasBeenSet(false),
     m_isolateHasBeenSet(false),
@@ -33,6 +32,7 @@ GovernanceInstanceUpdate::GovernanceInstanceUpdate() :
     m_instanceVersionHasBeenSet(false),
     m_enableHealthCheckHasBeenSet(false),
     m_ttlHasBeenSet(false),
+    m_idHasBeenSet(false),
     m_metadatasHasBeenSet(false)
 {
 }
@@ -60,16 +60,6 @@ CoreInternalOutcome GovernanceInstanceUpdate::Deserialize(const rapidjson::Value
         }
         m_namespace = string(value["Namespace"].GetString());
         m_namespaceHasBeenSet = true;
-    }
-
-    if (value.HasMember("Id") && !value["Id"].IsNull())
-    {
-        if (!value["Id"].IsString())
-        {
-            return CoreInternalOutcome(Core::Error("response `GovernanceInstanceUpdate.Id` IsString=false incorrectly").SetRequestId(requestId));
-        }
-        m_id = string(value["Id"].GetString());
-        m_idHasBeenSet = true;
     }
 
     if (value.HasMember("Weight") && !value["Weight"].IsNull())
@@ -162,6 +152,16 @@ CoreInternalOutcome GovernanceInstanceUpdate::Deserialize(const rapidjson::Value
         m_ttlHasBeenSet = true;
     }
 
+    if (value.HasMember("Id") && !value["Id"].IsNull())
+    {
+        if (!value["Id"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `GovernanceInstanceUpdate.Id` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_id = string(value["Id"].GetString());
+        m_idHasBeenSet = true;
+    }
+
     if (value.HasMember("Metadatas") && !value["Metadatas"].IsNull())
     {
         if (!value["Metadatas"].IsArray())
@@ -203,14 +203,6 @@ void GovernanceInstanceUpdate::ToJsonObject(rapidjson::Value &value, rapidjson::
         string key = "Namespace";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_namespace.c_str(), allocator).Move(), allocator);
-    }
-
-    if (m_idHasBeenSet)
-    {
-        rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "Id";
-        iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, rapidjson::Value(m_id.c_str(), allocator).Move(), allocator);
     }
 
     if (m_weightHasBeenSet)
@@ -285,6 +277,14 @@ void GovernanceInstanceUpdate::ToJsonObject(rapidjson::Value &value, rapidjson::
         value.AddMember(iKey, m_ttl, allocator);
     }
 
+    if (m_idHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Id";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_id.c_str(), allocator).Move(), allocator);
+    }
+
     if (m_metadatasHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
@@ -333,22 +333,6 @@ void GovernanceInstanceUpdate::SetNamespace(const string& _namespace)
 bool GovernanceInstanceUpdate::NamespaceHasBeenSet() const
 {
     return m_namespaceHasBeenSet;
-}
-
-string GovernanceInstanceUpdate::GetId() const
-{
-    return m_id;
-}
-
-void GovernanceInstanceUpdate::SetId(const string& _id)
-{
-    m_id = _id;
-    m_idHasBeenSet = true;
-}
-
-bool GovernanceInstanceUpdate::IdHasBeenSet() const
-{
-    return m_idHasBeenSet;
 }
 
 uint64_t GovernanceInstanceUpdate::GetWeight() const
@@ -493,6 +477,22 @@ void GovernanceInstanceUpdate::SetTtl(const uint64_t& _ttl)
 bool GovernanceInstanceUpdate::TtlHasBeenSet() const
 {
     return m_ttlHasBeenSet;
+}
+
+string GovernanceInstanceUpdate::GetId() const
+{
+    return m_id;
+}
+
+void GovernanceInstanceUpdate::SetId(const string& _id)
+{
+    m_id = _id;
+    m_idHasBeenSet = true;
+}
+
+bool GovernanceInstanceUpdate::IdHasBeenSet() const
+{
+    return m_idHasBeenSet;
 }
 
 vector<Metadata> GovernanceInstanceUpdate::GetMetadatas() const

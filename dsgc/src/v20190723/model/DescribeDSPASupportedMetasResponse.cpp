@@ -24,7 +24,8 @@ using namespace TencentCloud::Dsgc::V20190723::Model;
 using namespace std;
 
 DescribeDSPASupportedMetasResponse::DescribeDSPASupportedMetasResponse() :
-    m_metasHasBeenSet(false)
+    m_metasHasBeenSet(false),
+    m_maxDBInstanceLimitHasBeenSet(false)
 {
 }
 
@@ -82,6 +83,16 @@ CoreInternalOutcome DescribeDSPASupportedMetasResponse::Deserialize(const string
         m_metasHasBeenSet = true;
     }
 
+    if (rsp.HasMember("MaxDBInstanceLimit") && !rsp["MaxDBInstanceLimit"].IsNull())
+    {
+        if (!rsp["MaxDBInstanceLimit"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `MaxDBInstanceLimit` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_maxDBInstanceLimit = rsp["MaxDBInstanceLimit"].GetInt64();
+        m_maxDBInstanceLimitHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -107,6 +118,14 @@ string DescribeDSPASupportedMetasResponse::ToJsonString() const
         }
     }
 
+    if (m_maxDBInstanceLimitHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "MaxDBInstanceLimit";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_maxDBInstanceLimit, allocator);
+    }
+
     rapidjson::Value iKey(rapidjson::kStringType);
     string key = "RequestId";
     iKey.SetString(key.c_str(), allocator);
@@ -127,6 +146,16 @@ vector<DSPAMetaType> DescribeDSPASupportedMetasResponse::GetMetas() const
 bool DescribeDSPASupportedMetasResponse::MetasHasBeenSet() const
 {
     return m_metasHasBeenSet;
+}
+
+int64_t DescribeDSPASupportedMetasResponse::GetMaxDBInstanceLimit() const
+{
+    return m_maxDBInstanceLimit;
+}
+
+bool DescribeDSPASupportedMetasResponse::MaxDBInstanceLimitHasBeenSet() const
+{
+    return m_maxDBInstanceLimitHasBeenSet;
 }
 
 

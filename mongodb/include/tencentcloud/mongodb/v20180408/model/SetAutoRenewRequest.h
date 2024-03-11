@@ -64,15 +64,27 @@ namespace TencentCloud
                     bool InstanceIdsHasBeenSet() const;
 
                     /**
-                     * 获取续费选项，取值范围：0-手动续费，1-自动续费，2-确认不续费
-                     * @return AutoRenewFlag 续费选项，取值范围：0-手动续费，1-自动续费，2-确认不续费
+                     * 获取配置自动续费标识。
+- 0：手动续费。
+- 1：自动续费。
+- 2：确认不续费。
+                     * @return AutoRenewFlag 配置自动续费标识。
+- 0：手动续费。
+- 1：自动续费。
+- 2：确认不续费。
                      * 
                      */
                     uint64_t GetAutoRenewFlag() const;
 
                     /**
-                     * 设置续费选项，取值范围：0-手动续费，1-自动续费，2-确认不续费
-                     * @param _autoRenewFlag 续费选项，取值范围：0-手动续费，1-自动续费，2-确认不续费
+                     * 设置配置自动续费标识。
+- 0：手动续费。
+- 1：自动续费。
+- 2：确认不续费。
+                     * @param _autoRenewFlag 配置自动续费标识。
+- 0：手动续费。
+- 1：自动续费。
+- 2：确认不续费。
                      * 
                      */
                     void SetAutoRenewFlag(const uint64_t& _autoRenewFlag);
@@ -93,7 +105,10 @@ namespace TencentCloud
                     bool m_instanceIdsHasBeenSet;
 
                     /**
-                     * 续费选项，取值范围：0-手动续费，1-自动续费，2-确认不续费
+                     * 配置自动续费标识。
+- 0：手动续费。
+- 1：自动续费。
+- 2：确认不续费。
                      */
                     uint64_t m_autoRenewFlag;
                     bool m_autoRenewFlagHasBeenSet;

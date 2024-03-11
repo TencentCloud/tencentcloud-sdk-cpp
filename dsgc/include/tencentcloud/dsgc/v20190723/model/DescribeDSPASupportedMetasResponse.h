@@ -60,6 +60,20 @@ namespace TencentCloud
                      */
                     bool MetasHasBeenSet() const;
 
+                    /**
+                     * 获取最大支持每批次同步数量
+                     * @return MaxDBInstanceLimit 最大支持每批次同步数量
+                     * 
+                     */
+                    int64_t GetMaxDBInstanceLimit() const;
+
+                    /**
+                     * 判断参数 MaxDBInstanceLimit 是否已赋值
+                     * @return MaxDBInstanceLimit 是否已赋值
+                     * 
+                     */
+                    bool MaxDBInstanceLimitHasBeenSet() const;
+
                 private:
 
                     /**
@@ -68,6 +82,12 @@ namespace TencentCloud
                      */
                     std::vector<DSPAMetaType> m_metas;
                     bool m_metasHasBeenSet;
+
+                    /**
+                     * 最大支持每批次同步数量
+                     */
+                    int64_t m_maxDBInstanceLimit;
+                    bool m_maxDBInstanceLimitHasBeenSet;
 
                 };
             }

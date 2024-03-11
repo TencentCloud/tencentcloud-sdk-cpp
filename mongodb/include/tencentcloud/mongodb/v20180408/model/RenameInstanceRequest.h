@@ -64,15 +64,15 @@ namespace TencentCloud
                     bool InstanceIdHasBeenSet() const;
 
                     /**
-                     * 获取实例名称
-                     * @return NewName 实例名称
+                     * 获取实例自定义名称
+                     * @return NewName 实例自定义名称
                      * 
                      */
                     std::string GetNewName() const;
 
                     /**
-                     * 设置实例名称
-                     * @param _newName 实例名称
+                     * 设置实例自定义名称
+                     * @param _newName 实例自定义名称
                      * 
                      */
                     void SetNewName(const std::string& _newName);
@@ -93,7 +93,7 @@ namespace TencentCloud
                     bool m_instanceIdHasBeenSet;
 
                     /**
-                     * 实例名称
+                     * 实例自定义名称
                      */
                     std::string m_newName;
                     bool m_newNameHasBeenSet;

@@ -255,6 +255,49 @@ CdcClient::DeleteSitesOutcomeCallable CdcClient::DeleteSitesCallable(const Delet
     return task->get_future();
 }
 
+CdcClient::DescribeDedicatedClusterCbsStatisticsOutcome CdcClient::DescribeDedicatedClusterCbsStatistics(const DescribeDedicatedClusterCbsStatisticsRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeDedicatedClusterCbsStatistics");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeDedicatedClusterCbsStatisticsResponse rsp = DescribeDedicatedClusterCbsStatisticsResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeDedicatedClusterCbsStatisticsOutcome(rsp);
+        else
+            return DescribeDedicatedClusterCbsStatisticsOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeDedicatedClusterCbsStatisticsOutcome(outcome.GetError());
+    }
+}
+
+void CdcClient::DescribeDedicatedClusterCbsStatisticsAsync(const DescribeDedicatedClusterCbsStatisticsRequest& request, const DescribeDedicatedClusterCbsStatisticsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeDedicatedClusterCbsStatistics(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+CdcClient::DescribeDedicatedClusterCbsStatisticsOutcomeCallable CdcClient::DescribeDedicatedClusterCbsStatisticsCallable(const DescribeDedicatedClusterCbsStatisticsRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeDedicatedClusterCbsStatisticsOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeDedicatedClusterCbsStatistics(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 CdcClient::DescribeDedicatedClusterCosCapacityOutcome CdcClient::DescribeDedicatedClusterCosCapacity(const DescribeDedicatedClusterCosCapacityRequest &request)
 {
     auto outcome = MakeRequest(request, "DescribeDedicatedClusterCosCapacity");

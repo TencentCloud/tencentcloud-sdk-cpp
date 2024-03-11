@@ -60,6 +60,22 @@ namespace TencentCloud
                      */
                     bool ClientsHasBeenSet() const;
 
+                    /**
+                     * 获取连接数总结
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return TotalCount 连接数总结
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    int64_t GetTotalCount() const;
+
+                    /**
+                     * 判断参数 TotalCount 是否已赋值
+                     * @return TotalCount 是否已赋值
+                     * 
+                     */
+                    bool TotalCountHasBeenSet() const;
+
                 private:
 
                     /**
@@ -68,6 +84,13 @@ namespace TencentCloud
                      */
                     std::vector<ClientConnection> m_clients;
                     bool m_clientsHasBeenSet;
+
+                    /**
+                     * 连接数总结
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    int64_t m_totalCount;
+                    bool m_totalCountHasBeenSet;
 
                 };
             }

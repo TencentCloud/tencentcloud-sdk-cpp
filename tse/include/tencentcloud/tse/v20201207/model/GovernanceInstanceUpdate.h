@@ -90,27 +90,6 @@ namespace TencentCloud
                     bool NamespaceHasBeenSet() const;
 
                     /**
-                     * 获取治理中心服务实例id。
-                     * @return Id 治理中心服务实例id。
-                     * 
-                     */
-                    std::string GetId() const;
-
-                    /**
-                     * 设置治理中心服务实例id。
-                     * @param _id 治理中心服务实例id。
-                     * 
-                     */
-                    void SetId(const std::string& _id);
-
-                    /**
-                     * 判断参数 Id 是否已赋值
-                     * @return Id 是否已赋值
-                     * 
-                     */
-                    bool IdHasBeenSet() const;
-
-                    /**
                      * 获取实例负载均衡权重信息。不填默认为100。
                      * @return Weight 实例负载均衡权重信息。不填默认为100。
                      * 
@@ -300,6 +279,27 @@ namespace TencentCloud
                     bool TtlHasBeenSet() const;
 
                     /**
+                     * 获取治理中心服务实例id。
+                     * @return Id 治理中心服务实例id。
+                     * 
+                     */
+                    std::string GetId() const;
+
+                    /**
+                     * 设置治理中心服务实例id。
+                     * @param _id 治理中心服务实例id。
+                     * 
+                     */
+                    void SetId(const std::string& _id);
+
+                    /**
+                     * 判断参数 Id 是否已赋值
+                     * @return Id 是否已赋值
+                     * 
+                     */
+                    bool IdHasBeenSet() const;
+
+                    /**
                      * 获取元数据信息。
                      * @return Metadatas 元数据信息。
                      * 
@@ -333,12 +333,6 @@ namespace TencentCloud
                      */
                     std::string m_namespace;
                     bool m_namespaceHasBeenSet;
-
-                    /**
-                     * 治理中心服务实例id。
-                     */
-                    std::string m_id;
-                    bool m_idHasBeenSet;
 
                     /**
                      * 实例负载均衡权重信息。不填默认为100。
@@ -393,6 +387,12 @@ namespace TencentCloud
                      */
                     uint64_t m_ttl;
                     bool m_ttlHasBeenSet;
+
+                    /**
+                     * 治理中心服务实例id。
+                     */
+                    std::string m_id;
+                    bool m_idHasBeenSet;
 
                     /**
                      * 元数据信息。

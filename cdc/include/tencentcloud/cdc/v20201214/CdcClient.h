@@ -33,6 +33,8 @@
 #include <tencentcloud/cdc/v20201214/model/DeleteDedicatedClustersResponse.h>
 #include <tencentcloud/cdc/v20201214/model/DeleteSitesRequest.h>
 #include <tencentcloud/cdc/v20201214/model/DeleteSitesResponse.h>
+#include <tencentcloud/cdc/v20201214/model/DescribeDedicatedClusterCbsStatisticsRequest.h>
+#include <tencentcloud/cdc/v20201214/model/DescribeDedicatedClusterCbsStatisticsResponse.h>
 #include <tencentcloud/cdc/v20201214/model/DescribeDedicatedClusterCosCapacityRequest.h>
 #include <tencentcloud/cdc/v20201214/model/DescribeDedicatedClusterCosCapacityResponse.h>
 #include <tencentcloud/cdc/v20201214/model/DescribeDedicatedClusterHostStatisticsRequest.h>
@@ -92,6 +94,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DeleteSitesResponse> DeleteSitesOutcome;
                 typedef std::future<DeleteSitesOutcome> DeleteSitesOutcomeCallable;
                 typedef std::function<void(const CdcClient*, const Model::DeleteSitesRequest&, DeleteSitesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteSitesAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeDedicatedClusterCbsStatisticsResponse> DescribeDedicatedClusterCbsStatisticsOutcome;
+                typedef std::future<DescribeDedicatedClusterCbsStatisticsOutcome> DescribeDedicatedClusterCbsStatisticsOutcomeCallable;
+                typedef std::function<void(const CdcClient*, const Model::DescribeDedicatedClusterCbsStatisticsRequest&, DescribeDedicatedClusterCbsStatisticsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeDedicatedClusterCbsStatisticsAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeDedicatedClusterCosCapacityResponse> DescribeDedicatedClusterCosCapacityOutcome;
                 typedef std::future<DescribeDedicatedClusterCosCapacityOutcome> DescribeDedicatedClusterCosCapacityOutcomeCallable;
                 typedef std::function<void(const CdcClient*, const Model::DescribeDedicatedClusterCosCapacityRequest&, DescribeDedicatedClusterCosCapacityOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeDedicatedClusterCosCapacityAsyncHandler;
@@ -184,6 +189,15 @@ namespace TencentCloud
                 DeleteSitesOutcome DeleteSites(const Model::DeleteSitesRequest &request);
                 void DeleteSitesAsync(const Model::DeleteSitesRequest& request, const DeleteSitesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DeleteSitesOutcomeCallable DeleteSitesCallable(const Model::DeleteSitesRequest& request);
+
+                /**
+                 *查询本地专用集群云硬盘仓库信息
+                 * @param req DescribeDedicatedClusterCbsStatisticsRequest
+                 * @return DescribeDedicatedClusterCbsStatisticsOutcome
+                 */
+                DescribeDedicatedClusterCbsStatisticsOutcome DescribeDedicatedClusterCbsStatistics(const Model::DescribeDedicatedClusterCbsStatisticsRequest &request);
+                void DescribeDedicatedClusterCbsStatisticsAsync(const Model::DescribeDedicatedClusterCbsStatisticsRequest& request, const DescribeDedicatedClusterCbsStatisticsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeDedicatedClusterCbsStatisticsOutcomeCallable DescribeDedicatedClusterCbsStatisticsCallable(const Model::DescribeDedicatedClusterCbsStatisticsRequest& request);
 
                 /**
                  *查询专用集群内cos的容量信息

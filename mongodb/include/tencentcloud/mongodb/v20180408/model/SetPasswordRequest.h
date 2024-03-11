@@ -64,15 +64,15 @@ namespace TencentCloud
                     bool InstanceIdHasBeenSet() const;
 
                     /**
-                     * 获取实例账户名称
-                     * @return UserName 实例账户名称
+                     * 获取实例账户名。初始化实例密码，本参数传mongouser。
+                     * @return UserName 实例账户名。初始化实例密码，本参数传mongouser。
                      * 
                      */
                     std::string GetUserName() const;
 
                     /**
-                     * 设置实例账户名称
-                     * @param _userName 实例账户名称
+                     * 设置实例账户名。初始化实例密码，本参数传mongouser。
+                     * @param _userName 实例账户名。初始化实例密码，本参数传mongouser。
                      * 
                      */
                     void SetUserName(const std::string& _userName);
@@ -114,7 +114,7 @@ namespace TencentCloud
                     bool m_instanceIdHasBeenSet;
 
                     /**
-                     * 实例账户名称
+                     * 实例账户名。初始化实例密码，本参数传mongouser。
                      */
                     std::string m_userName;
                     bool m_userNameHasBeenSet;

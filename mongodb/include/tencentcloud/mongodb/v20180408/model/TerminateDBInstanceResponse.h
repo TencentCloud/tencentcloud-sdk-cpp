@@ -44,8 +44,8 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取订单ID，表示注销实例成功
-                     * @return AsyncRequestId 订单ID，表示注销实例成功
+                     * 获取订单ID，表示注销实例成功。
+                     * @return AsyncRequestId 订单ID，表示注销实例成功。
                      * 
                      */
                     std::string GetAsyncRequestId() const;
@@ -60,7 +60,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 订单ID，表示注销实例成功
+                     * 订单ID，表示注销实例成功。
                      */
                     std::string m_asyncRequestId;
                     bool m_asyncRequestIdHasBeenSet;
