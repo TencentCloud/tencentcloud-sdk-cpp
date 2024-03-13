@@ -169,6 +169,92 @@ EsClient::CreateLogstashInstanceOutcomeCallable EsClient::CreateLogstashInstance
     return task->get_future();
 }
 
+EsClient::CreateServerlessInstanceOutcome EsClient::CreateServerlessInstance(const CreateServerlessInstanceRequest &request)
+{
+    auto outcome = MakeRequest(request, "CreateServerlessInstance");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        CreateServerlessInstanceResponse rsp = CreateServerlessInstanceResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return CreateServerlessInstanceOutcome(rsp);
+        else
+            return CreateServerlessInstanceOutcome(o.GetError());
+    }
+    else
+    {
+        return CreateServerlessInstanceOutcome(outcome.GetError());
+    }
+}
+
+void EsClient::CreateServerlessInstanceAsync(const CreateServerlessInstanceRequest& request, const CreateServerlessInstanceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->CreateServerlessInstance(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+EsClient::CreateServerlessInstanceOutcomeCallable EsClient::CreateServerlessInstanceCallable(const CreateServerlessInstanceRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<CreateServerlessInstanceOutcome()>>(
+        [this, request]()
+        {
+            return this->CreateServerlessInstance(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+EsClient::CreateServerlessSpaceV2Outcome EsClient::CreateServerlessSpaceV2(const CreateServerlessSpaceV2Request &request)
+{
+    auto outcome = MakeRequest(request, "CreateServerlessSpaceV2");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        CreateServerlessSpaceV2Response rsp = CreateServerlessSpaceV2Response();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return CreateServerlessSpaceV2Outcome(rsp);
+        else
+            return CreateServerlessSpaceV2Outcome(o.GetError());
+    }
+    else
+    {
+        return CreateServerlessSpaceV2Outcome(outcome.GetError());
+    }
+}
+
+void EsClient::CreateServerlessSpaceV2Async(const CreateServerlessSpaceV2Request& request, const CreateServerlessSpaceV2AsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->CreateServerlessSpaceV2(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+EsClient::CreateServerlessSpaceV2OutcomeCallable EsClient::CreateServerlessSpaceV2Callable(const CreateServerlessSpaceV2Request &request)
+{
+    auto task = std::make_shared<std::packaged_task<CreateServerlessSpaceV2Outcome()>>(
+        [this, request]()
+        {
+            return this->CreateServerlessSpaceV2(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 EsClient::DeleteIndexOutcome EsClient::DeleteIndex(const DeleteIndexRequest &request)
 {
     auto outcome = MakeRequest(request, "DeleteIndex");
@@ -334,6 +420,92 @@ EsClient::DeleteLogstashPipelinesOutcomeCallable EsClient::DeleteLogstashPipelin
         [this, request]()
         {
             return this->DeleteLogstashPipelines(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+EsClient::DeleteServerlessInstanceOutcome EsClient::DeleteServerlessInstance(const DeleteServerlessInstanceRequest &request)
+{
+    auto outcome = MakeRequest(request, "DeleteServerlessInstance");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DeleteServerlessInstanceResponse rsp = DeleteServerlessInstanceResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DeleteServerlessInstanceOutcome(rsp);
+        else
+            return DeleteServerlessInstanceOutcome(o.GetError());
+    }
+    else
+    {
+        return DeleteServerlessInstanceOutcome(outcome.GetError());
+    }
+}
+
+void EsClient::DeleteServerlessInstanceAsync(const DeleteServerlessInstanceRequest& request, const DeleteServerlessInstanceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DeleteServerlessInstance(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+EsClient::DeleteServerlessInstanceOutcomeCallable EsClient::DeleteServerlessInstanceCallable(const DeleteServerlessInstanceRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DeleteServerlessInstanceOutcome()>>(
+        [this, request]()
+        {
+            return this->DeleteServerlessInstance(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+EsClient::DeleteServerlessSpaceUserOutcome EsClient::DeleteServerlessSpaceUser(const DeleteServerlessSpaceUserRequest &request)
+{
+    auto outcome = MakeRequest(request, "DeleteServerlessSpaceUser");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DeleteServerlessSpaceUserResponse rsp = DeleteServerlessSpaceUserResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DeleteServerlessSpaceUserOutcome(rsp);
+        else
+            return DeleteServerlessSpaceUserOutcome(o.GetError());
+    }
+    else
+    {
+        return DeleteServerlessSpaceUserOutcome(outcome.GetError());
+    }
+}
+
+void EsClient::DeleteServerlessSpaceUserAsync(const DeleteServerlessSpaceUserRequest& request, const DeleteServerlessSpaceUserAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DeleteServerlessSpaceUser(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+EsClient::DeleteServerlessSpaceUserOutcomeCallable EsClient::DeleteServerlessSpaceUserCallable(const DeleteServerlessSpaceUserRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DeleteServerlessSpaceUserOutcome()>>(
+        [this, request]()
+        {
+            return this->DeleteServerlessSpaceUser(request);
         }
     );
 
@@ -807,6 +979,92 @@ EsClient::DescribeLogstashPipelinesOutcomeCallable EsClient::DescribeLogstashPip
         [this, request]()
         {
             return this->DescribeLogstashPipelines(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+EsClient::DescribeServerlessSpaceUserOutcome EsClient::DescribeServerlessSpaceUser(const DescribeServerlessSpaceUserRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeServerlessSpaceUser");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeServerlessSpaceUserResponse rsp = DescribeServerlessSpaceUserResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeServerlessSpaceUserOutcome(rsp);
+        else
+            return DescribeServerlessSpaceUserOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeServerlessSpaceUserOutcome(outcome.GetError());
+    }
+}
+
+void EsClient::DescribeServerlessSpaceUserAsync(const DescribeServerlessSpaceUserRequest& request, const DescribeServerlessSpaceUserAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeServerlessSpaceUser(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+EsClient::DescribeServerlessSpaceUserOutcomeCallable EsClient::DescribeServerlessSpaceUserCallable(const DescribeServerlessSpaceUserRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeServerlessSpaceUserOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeServerlessSpaceUser(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+EsClient::DescribeServerlessSpacesOutcome EsClient::DescribeServerlessSpaces(const DescribeServerlessSpacesRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeServerlessSpaces");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeServerlessSpacesResponse rsp = DescribeServerlessSpacesResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeServerlessSpacesOutcome(rsp);
+        else
+            return DescribeServerlessSpacesOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeServerlessSpacesOutcome(outcome.GetError());
+    }
+}
+
+void EsClient::DescribeServerlessSpacesAsync(const DescribeServerlessSpacesRequest& request, const DescribeServerlessSpacesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeServerlessSpaces(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+EsClient::DescribeServerlessSpacesOutcomeCallable EsClient::DescribeServerlessSpacesCallable(const DescribeServerlessSpacesRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeServerlessSpacesOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeServerlessSpaces(request);
         }
     );
 
@@ -1753,6 +2011,92 @@ EsClient::UpdateRequestTargetNodeTypesOutcomeCallable EsClient::UpdateRequestTar
         [this, request]()
         {
             return this->UpdateRequestTargetNodeTypes(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+EsClient::UpdateServerlessInstanceOutcome EsClient::UpdateServerlessInstance(const UpdateServerlessInstanceRequest &request)
+{
+    auto outcome = MakeRequest(request, "UpdateServerlessInstance");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        UpdateServerlessInstanceResponse rsp = UpdateServerlessInstanceResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return UpdateServerlessInstanceOutcome(rsp);
+        else
+            return UpdateServerlessInstanceOutcome(o.GetError());
+    }
+    else
+    {
+        return UpdateServerlessInstanceOutcome(outcome.GetError());
+    }
+}
+
+void EsClient::UpdateServerlessInstanceAsync(const UpdateServerlessInstanceRequest& request, const UpdateServerlessInstanceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->UpdateServerlessInstance(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+EsClient::UpdateServerlessInstanceOutcomeCallable EsClient::UpdateServerlessInstanceCallable(const UpdateServerlessInstanceRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<UpdateServerlessInstanceOutcome()>>(
+        [this, request]()
+        {
+            return this->UpdateServerlessInstance(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+EsClient::UpdateServerlessSpaceOutcome EsClient::UpdateServerlessSpace(const UpdateServerlessSpaceRequest &request)
+{
+    auto outcome = MakeRequest(request, "UpdateServerlessSpace");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        UpdateServerlessSpaceResponse rsp = UpdateServerlessSpaceResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return UpdateServerlessSpaceOutcome(rsp);
+        else
+            return UpdateServerlessSpaceOutcome(o.GetError());
+    }
+    else
+    {
+        return UpdateServerlessSpaceOutcome(outcome.GetError());
+    }
+}
+
+void EsClient::UpdateServerlessSpaceAsync(const UpdateServerlessSpaceRequest& request, const UpdateServerlessSpaceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->UpdateServerlessSpace(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+EsClient::UpdateServerlessSpaceOutcomeCallable EsClient::UpdateServerlessSpaceCallable(const UpdateServerlessSpaceRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<UpdateServerlessSpaceOutcome()>>(
+        [this, request]()
+        {
+            return this->UpdateServerlessSpace(request);
         }
     );
 

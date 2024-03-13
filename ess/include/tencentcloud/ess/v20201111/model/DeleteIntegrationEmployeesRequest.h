@@ -71,23 +71,31 @@ namespace TencentCloud
                     bool OperatorHasBeenSet() const;
 
                     /**
-                     * 获取待移除员工的信息。应符合以下规则：
-<ul><li>UserId和OpenId不可同时为空。</li>
-<li>若需要进行离职交接，交接人信息ReceiveUserId和ReceiveOpenId不可同时为空。否则视为不进行离职交接。</li></ul>
-                     * @return Employees 待移除员工的信息。应符合以下规则：
-<ul><li>UserId和OpenId不可同时为空。</li>
-<li>若需要进行离职交接，交接人信息ReceiveUserId和ReceiveOpenId不可同时为空。否则视为不进行离职交接。</li></ul>
+                     * 获取待离职员工的信息最多不超过100个。应符合以下规则：
+
+1. UserId和OpenId不可同时为空，必须填写其中一个，优先使用UserId。
+
+2. **若需要进行离职交接**，交接人信息ReceiveUserId和ReceiveOpenId不可同时为空，必须填写其中一个，优先使用ReceiveUserId。
+                     * @return Employees 待离职员工的信息最多不超过100个。应符合以下规则：
+
+1. UserId和OpenId不可同时为空，必须填写其中一个，优先使用UserId。
+
+2. **若需要进行离职交接**，交接人信息ReceiveUserId和ReceiveOpenId不可同时为空，必须填写其中一个，优先使用ReceiveUserId。
                      * 
                      */
                     std::vector<Staff> GetEmployees() const;
 
                     /**
-                     * 设置待移除员工的信息。应符合以下规则：
-<ul><li>UserId和OpenId不可同时为空。</li>
-<li>若需要进行离职交接，交接人信息ReceiveUserId和ReceiveOpenId不可同时为空。否则视为不进行离职交接。</li></ul>
-                     * @param _employees 待移除员工的信息。应符合以下规则：
-<ul><li>UserId和OpenId不可同时为空。</li>
-<li>若需要进行离职交接，交接人信息ReceiveUserId和ReceiveOpenId不可同时为空。否则视为不进行离职交接。</li></ul>
+                     * 设置待离职员工的信息最多不超过100个。应符合以下规则：
+
+1. UserId和OpenId不可同时为空，必须填写其中一个，优先使用UserId。
+
+2. **若需要进行离职交接**，交接人信息ReceiveUserId和ReceiveOpenId不可同时为空，必须填写其中一个，优先使用ReceiveUserId。
+                     * @param _employees 待离职员工的信息最多不超过100个。应符合以下规则：
+
+1. UserId和OpenId不可同时为空，必须填写其中一个，优先使用UserId。
+
+2. **若需要进行离职交接**，交接人信息ReceiveUserId和ReceiveOpenId不可同时为空，必须填写其中一个，优先使用ReceiveUserId。
                      * 
                      */
                     void SetEmployees(const std::vector<Staff>& _employees);
@@ -134,9 +142,11 @@ namespace TencentCloud
                     bool m_operatorHasBeenSet;
 
                     /**
-                     * 待移除员工的信息。应符合以下规则：
-<ul><li>UserId和OpenId不可同时为空。</li>
-<li>若需要进行离职交接，交接人信息ReceiveUserId和ReceiveOpenId不可同时为空。否则视为不进行离职交接。</li></ul>
+                     * 待离职员工的信息最多不超过100个。应符合以下规则：
+
+1. UserId和OpenId不可同时为空，必须填写其中一个，优先使用UserId。
+
+2. **若需要进行离职交接**，交接人信息ReceiveUserId和ReceiveOpenId不可同时为空，必须填写其中一个，优先使用ReceiveUserId。
                      */
                     std::vector<Staff> m_employees;
                     bool m_employeesHasBeenSet;

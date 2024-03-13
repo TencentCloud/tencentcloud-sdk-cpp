@@ -29,6 +29,10 @@
 #include <tencentcloud/es/v20180416/model/CreateInstanceResponse.h>
 #include <tencentcloud/es/v20180416/model/CreateLogstashInstanceRequest.h>
 #include <tencentcloud/es/v20180416/model/CreateLogstashInstanceResponse.h>
+#include <tencentcloud/es/v20180416/model/CreateServerlessInstanceRequest.h>
+#include <tencentcloud/es/v20180416/model/CreateServerlessInstanceResponse.h>
+#include <tencentcloud/es/v20180416/model/CreateServerlessSpaceV2Request.h>
+#include <tencentcloud/es/v20180416/model/CreateServerlessSpaceV2Response.h>
 #include <tencentcloud/es/v20180416/model/DeleteIndexRequest.h>
 #include <tencentcloud/es/v20180416/model/DeleteIndexResponse.h>
 #include <tencentcloud/es/v20180416/model/DeleteInstanceRequest.h>
@@ -37,6 +41,10 @@
 #include <tencentcloud/es/v20180416/model/DeleteLogstashInstanceResponse.h>
 #include <tencentcloud/es/v20180416/model/DeleteLogstashPipelinesRequest.h>
 #include <tencentcloud/es/v20180416/model/DeleteLogstashPipelinesResponse.h>
+#include <tencentcloud/es/v20180416/model/DeleteServerlessInstanceRequest.h>
+#include <tencentcloud/es/v20180416/model/DeleteServerlessInstanceResponse.h>
+#include <tencentcloud/es/v20180416/model/DeleteServerlessSpaceUserRequest.h>
+#include <tencentcloud/es/v20180416/model/DeleteServerlessSpaceUserResponse.h>
 #include <tencentcloud/es/v20180416/model/DescribeDiagnoseRequest.h>
 #include <tencentcloud/es/v20180416/model/DescribeDiagnoseResponse.h>
 #include <tencentcloud/es/v20180416/model/DescribeIndexListRequest.h>
@@ -59,6 +67,10 @@
 #include <tencentcloud/es/v20180416/model/DescribeLogstashInstancesResponse.h>
 #include <tencentcloud/es/v20180416/model/DescribeLogstashPipelinesRequest.h>
 #include <tencentcloud/es/v20180416/model/DescribeLogstashPipelinesResponse.h>
+#include <tencentcloud/es/v20180416/model/DescribeServerlessSpaceUserRequest.h>
+#include <tencentcloud/es/v20180416/model/DescribeServerlessSpaceUserResponse.h>
+#include <tencentcloud/es/v20180416/model/DescribeServerlessSpacesRequest.h>
+#include <tencentcloud/es/v20180416/model/DescribeServerlessSpacesResponse.h>
 #include <tencentcloud/es/v20180416/model/DescribeViewsRequest.h>
 #include <tencentcloud/es/v20180416/model/DescribeViewsResponse.h>
 #include <tencentcloud/es/v20180416/model/DiagnoseInstanceRequest.h>
@@ -103,6 +115,10 @@
 #include <tencentcloud/es/v20180416/model/UpdatePluginsResponse.h>
 #include <tencentcloud/es/v20180416/model/UpdateRequestTargetNodeTypesRequest.h>
 #include <tencentcloud/es/v20180416/model/UpdateRequestTargetNodeTypesResponse.h>
+#include <tencentcloud/es/v20180416/model/UpdateServerlessInstanceRequest.h>
+#include <tencentcloud/es/v20180416/model/UpdateServerlessInstanceResponse.h>
+#include <tencentcloud/es/v20180416/model/UpdateServerlessSpaceRequest.h>
+#include <tencentcloud/es/v20180416/model/UpdateServerlessSpaceResponse.h>
 #include <tencentcloud/es/v20180416/model/UpgradeInstanceRequest.h>
 #include <tencentcloud/es/v20180416/model/UpgradeInstanceResponse.h>
 #include <tencentcloud/es/v20180416/model/UpgradeLicenseRequest.h>
@@ -130,6 +146,12 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::CreateLogstashInstanceResponse> CreateLogstashInstanceOutcome;
                 typedef std::future<CreateLogstashInstanceOutcome> CreateLogstashInstanceOutcomeCallable;
                 typedef std::function<void(const EsClient*, const Model::CreateLogstashInstanceRequest&, CreateLogstashInstanceOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateLogstashInstanceAsyncHandler;
+                typedef Outcome<Core::Error, Model::CreateServerlessInstanceResponse> CreateServerlessInstanceOutcome;
+                typedef std::future<CreateServerlessInstanceOutcome> CreateServerlessInstanceOutcomeCallable;
+                typedef std::function<void(const EsClient*, const Model::CreateServerlessInstanceRequest&, CreateServerlessInstanceOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateServerlessInstanceAsyncHandler;
+                typedef Outcome<Core::Error, Model::CreateServerlessSpaceV2Response> CreateServerlessSpaceV2Outcome;
+                typedef std::future<CreateServerlessSpaceV2Outcome> CreateServerlessSpaceV2OutcomeCallable;
+                typedef std::function<void(const EsClient*, const Model::CreateServerlessSpaceV2Request&, CreateServerlessSpaceV2Outcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateServerlessSpaceV2AsyncHandler;
                 typedef Outcome<Core::Error, Model::DeleteIndexResponse> DeleteIndexOutcome;
                 typedef std::future<DeleteIndexOutcome> DeleteIndexOutcomeCallable;
                 typedef std::function<void(const EsClient*, const Model::DeleteIndexRequest&, DeleteIndexOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteIndexAsyncHandler;
@@ -142,6 +164,12 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DeleteLogstashPipelinesResponse> DeleteLogstashPipelinesOutcome;
                 typedef std::future<DeleteLogstashPipelinesOutcome> DeleteLogstashPipelinesOutcomeCallable;
                 typedef std::function<void(const EsClient*, const Model::DeleteLogstashPipelinesRequest&, DeleteLogstashPipelinesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteLogstashPipelinesAsyncHandler;
+                typedef Outcome<Core::Error, Model::DeleteServerlessInstanceResponse> DeleteServerlessInstanceOutcome;
+                typedef std::future<DeleteServerlessInstanceOutcome> DeleteServerlessInstanceOutcomeCallable;
+                typedef std::function<void(const EsClient*, const Model::DeleteServerlessInstanceRequest&, DeleteServerlessInstanceOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteServerlessInstanceAsyncHandler;
+                typedef Outcome<Core::Error, Model::DeleteServerlessSpaceUserResponse> DeleteServerlessSpaceUserOutcome;
+                typedef std::future<DeleteServerlessSpaceUserOutcome> DeleteServerlessSpaceUserOutcomeCallable;
+                typedef std::function<void(const EsClient*, const Model::DeleteServerlessSpaceUserRequest&, DeleteServerlessSpaceUserOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteServerlessSpaceUserAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeDiagnoseResponse> DescribeDiagnoseOutcome;
                 typedef std::future<DescribeDiagnoseOutcome> DescribeDiagnoseOutcomeCallable;
                 typedef std::function<void(const EsClient*, const Model::DescribeDiagnoseRequest&, DescribeDiagnoseOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeDiagnoseAsyncHandler;
@@ -175,6 +203,12 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeLogstashPipelinesResponse> DescribeLogstashPipelinesOutcome;
                 typedef std::future<DescribeLogstashPipelinesOutcome> DescribeLogstashPipelinesOutcomeCallable;
                 typedef std::function<void(const EsClient*, const Model::DescribeLogstashPipelinesRequest&, DescribeLogstashPipelinesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeLogstashPipelinesAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeServerlessSpaceUserResponse> DescribeServerlessSpaceUserOutcome;
+                typedef std::future<DescribeServerlessSpaceUserOutcome> DescribeServerlessSpaceUserOutcomeCallable;
+                typedef std::function<void(const EsClient*, const Model::DescribeServerlessSpaceUserRequest&, DescribeServerlessSpaceUserOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeServerlessSpaceUserAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeServerlessSpacesResponse> DescribeServerlessSpacesOutcome;
+                typedef std::future<DescribeServerlessSpacesOutcome> DescribeServerlessSpacesOutcomeCallable;
+                typedef std::function<void(const EsClient*, const Model::DescribeServerlessSpacesRequest&, DescribeServerlessSpacesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeServerlessSpacesAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeViewsResponse> DescribeViewsOutcome;
                 typedef std::future<DescribeViewsOutcome> DescribeViewsOutcomeCallable;
                 typedef std::function<void(const EsClient*, const Model::DescribeViewsRequest&, DescribeViewsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeViewsAsyncHandler;
@@ -241,6 +275,12 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::UpdateRequestTargetNodeTypesResponse> UpdateRequestTargetNodeTypesOutcome;
                 typedef std::future<UpdateRequestTargetNodeTypesOutcome> UpdateRequestTargetNodeTypesOutcomeCallable;
                 typedef std::function<void(const EsClient*, const Model::UpdateRequestTargetNodeTypesRequest&, UpdateRequestTargetNodeTypesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> UpdateRequestTargetNodeTypesAsyncHandler;
+                typedef Outcome<Core::Error, Model::UpdateServerlessInstanceResponse> UpdateServerlessInstanceOutcome;
+                typedef std::future<UpdateServerlessInstanceOutcome> UpdateServerlessInstanceOutcomeCallable;
+                typedef std::function<void(const EsClient*, const Model::UpdateServerlessInstanceRequest&, UpdateServerlessInstanceOutcome, const std::shared_ptr<const AsyncCallerContext>&)> UpdateServerlessInstanceAsyncHandler;
+                typedef Outcome<Core::Error, Model::UpdateServerlessSpaceResponse> UpdateServerlessSpaceOutcome;
+                typedef std::future<UpdateServerlessSpaceOutcome> UpdateServerlessSpaceOutcomeCallable;
+                typedef std::function<void(const EsClient*, const Model::UpdateServerlessSpaceRequest&, UpdateServerlessSpaceOutcome, const std::shared_ptr<const AsyncCallerContext>&)> UpdateServerlessSpaceAsyncHandler;
                 typedef Outcome<Core::Error, Model::UpgradeInstanceResponse> UpgradeInstanceOutcome;
                 typedef std::future<UpgradeInstanceOutcome> UpgradeInstanceOutcomeCallable;
                 typedef std::function<void(const EsClient*, const Model::UpgradeInstanceRequest&, UpgradeInstanceOutcome, const std::shared_ptr<const AsyncCallerContext>&)> UpgradeInstanceAsyncHandler;
@@ -278,6 +318,24 @@ namespace TencentCloud
                 CreateLogstashInstanceOutcomeCallable CreateLogstashInstanceCallable(const Model::CreateLogstashInstanceRequest& request);
 
                 /**
+                 *创建Serverless索引
+                 * @param req CreateServerlessInstanceRequest
+                 * @return CreateServerlessInstanceOutcome
+                 */
+                CreateServerlessInstanceOutcome CreateServerlessInstance(const Model::CreateServerlessInstanceRequest &request);
+                void CreateServerlessInstanceAsync(const Model::CreateServerlessInstanceRequest& request, const CreateServerlessInstanceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                CreateServerlessInstanceOutcomeCallable CreateServerlessInstanceCallable(const Model::CreateServerlessInstanceRequest& request);
+
+                /**
+                 *创建Serverless索引空间
+                 * @param req CreateServerlessSpaceV2Request
+                 * @return CreateServerlessSpaceV2Outcome
+                 */
+                CreateServerlessSpaceV2Outcome CreateServerlessSpaceV2(const Model::CreateServerlessSpaceV2Request &request);
+                void CreateServerlessSpaceV2Async(const Model::CreateServerlessSpaceV2Request& request, const CreateServerlessSpaceV2AsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                CreateServerlessSpaceV2OutcomeCallable CreateServerlessSpaceV2Callable(const Model::CreateServerlessSpaceV2Request& request);
+
+                /**
                  *删除索引
                  * @param req DeleteIndexRequest
                  * @return DeleteIndexOutcome
@@ -312,6 +370,24 @@ namespace TencentCloud
                 DeleteLogstashPipelinesOutcome DeleteLogstashPipelines(const Model::DeleteLogstashPipelinesRequest &request);
                 void DeleteLogstashPipelinesAsync(const Model::DeleteLogstashPipelinesRequest& request, const DeleteLogstashPipelinesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DeleteLogstashPipelinesOutcomeCallable DeleteLogstashPipelinesCallable(const Model::DeleteLogstashPipelinesRequest& request);
+
+                /**
+                 *删除Serverless索引
+                 * @param req DeleteServerlessInstanceRequest
+                 * @return DeleteServerlessInstanceOutcome
+                 */
+                DeleteServerlessInstanceOutcome DeleteServerlessInstance(const Model::DeleteServerlessInstanceRequest &request);
+                void DeleteServerlessInstanceAsync(const Model::DeleteServerlessInstanceRequest& request, const DeleteServerlessInstanceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DeleteServerlessInstanceOutcomeCallable DeleteServerlessInstanceCallable(const Model::DeleteServerlessInstanceRequest& request);
+
+                /**
+                 *删除Serverless空间子用户
+                 * @param req DeleteServerlessSpaceUserRequest
+                 * @return DeleteServerlessSpaceUserOutcome
+                 */
+                DeleteServerlessSpaceUserOutcome DeleteServerlessSpaceUser(const Model::DeleteServerlessSpaceUserRequest &request);
+                void DeleteServerlessSpaceUserAsync(const Model::DeleteServerlessSpaceUserRequest& request, const DeleteServerlessSpaceUserAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DeleteServerlessSpaceUserOutcomeCallable DeleteServerlessSpaceUserCallable(const Model::DeleteServerlessSpaceUserRequest& request);
 
                 /**
                  *查询智能运维诊断结果报告
@@ -411,6 +487,24 @@ namespace TencentCloud
                 DescribeLogstashPipelinesOutcome DescribeLogstashPipelines(const Model::DescribeLogstashPipelinesRequest &request);
                 void DescribeLogstashPipelinesAsync(const Model::DescribeLogstashPipelinesRequest& request, const DescribeLogstashPipelinesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DescribeLogstashPipelinesOutcomeCallable DescribeLogstashPipelinesCallable(const Model::DescribeLogstashPipelinesRequest& request);
+
+                /**
+                 *查看Serverless空间子用户
+                 * @param req DescribeServerlessSpaceUserRequest
+                 * @return DescribeServerlessSpaceUserOutcome
+                 */
+                DescribeServerlessSpaceUserOutcome DescribeServerlessSpaceUser(const Model::DescribeServerlessSpaceUserRequest &request);
+                void DescribeServerlessSpaceUserAsync(const Model::DescribeServerlessSpaceUserRequest& request, const DescribeServerlessSpaceUserAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeServerlessSpaceUserOutcomeCallable DescribeServerlessSpaceUserCallable(const Model::DescribeServerlessSpaceUserRequest& request);
+
+                /**
+                 *获取Serverless索引空间列表
+                 * @param req DescribeServerlessSpacesRequest
+                 * @return DescribeServerlessSpacesOutcome
+                 */
+                DescribeServerlessSpacesOutcome DescribeServerlessSpaces(const Model::DescribeServerlessSpacesRequest &request);
+                void DescribeServerlessSpacesAsync(const Model::DescribeServerlessSpacesRequest& request, const DescribeServerlessSpacesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeServerlessSpacesOutcomeCallable DescribeServerlessSpacesCallable(const Model::DescribeServerlessSpacesRequest& request);
 
                 /**
                  *查询集群各视图数据，包括集群维度、节点维度、Kibana维度
@@ -621,6 +715,24 @@ namespace TencentCloud
                 UpdateRequestTargetNodeTypesOutcome UpdateRequestTargetNodeTypes(const Model::UpdateRequestTargetNodeTypesRequest &request);
                 void UpdateRequestTargetNodeTypesAsync(const Model::UpdateRequestTargetNodeTypesRequest& request, const UpdateRequestTargetNodeTypesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 UpdateRequestTargetNodeTypesOutcomeCallable UpdateRequestTargetNodeTypesCallable(const Model::UpdateRequestTargetNodeTypesRequest& request);
+
+                /**
+                 *更新Serverless索引
+                 * @param req UpdateServerlessInstanceRequest
+                 * @return UpdateServerlessInstanceOutcome
+                 */
+                UpdateServerlessInstanceOutcome UpdateServerlessInstance(const Model::UpdateServerlessInstanceRequest &request);
+                void UpdateServerlessInstanceAsync(const Model::UpdateServerlessInstanceRequest& request, const UpdateServerlessInstanceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                UpdateServerlessInstanceOutcomeCallable UpdateServerlessInstanceCallable(const Model::UpdateServerlessInstanceRequest& request);
+
+                /**
+                 *更新Serverless索引空间
+                 * @param req UpdateServerlessSpaceRequest
+                 * @return UpdateServerlessSpaceOutcome
+                 */
+                UpdateServerlessSpaceOutcome UpdateServerlessSpace(const Model::UpdateServerlessSpaceRequest &request);
+                void UpdateServerlessSpaceAsync(const Model::UpdateServerlessSpaceRequest& request, const UpdateServerlessSpaceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                UpdateServerlessSpaceOutcomeCallable UpdateServerlessSpaceCallable(const Model::UpdateServerlessSpaceRequest& request);
 
                 /**
                  *升级ES集群版本
