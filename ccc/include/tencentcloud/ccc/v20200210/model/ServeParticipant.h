@@ -47,18 +47,18 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取坐席邮箱
+                     * 获取座席邮箱
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return Mail 坐席邮箱
+                     * @return Mail 座席邮箱
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetMail() const;
 
                     /**
-                     * 设置坐席邮箱
+                     * 设置座席邮箱
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _mail 坐席邮箱
+                     * @param _mail 座席邮箱
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -72,18 +72,18 @@ namespace TencentCloud
                     bool MailHasBeenSet() const;
 
                     /**
-                     * 获取坐席电话
+                     * 获取座席电话
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return Phone 坐席电话
+                     * @return Phone 座席电话
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetPhone() const;
 
                     /**
-                     * 设置坐席电话
+                     * 设置座席电话
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _phone 坐席电话
+                     * @param _phone 座席电话
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -172,18 +172,18 @@ namespace TencentCloud
                     bool EndedTimestampHasBeenSet() const;
 
                     /**
-                     * 获取录音 ID，能够索引到坐席侧的录音
+                     * 获取录音 ID，能够索引到座席侧的录音
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return RecordId 录音 ID，能够索引到坐席侧的录音
+                     * @return RecordId 录音 ID，能够索引到座席侧的录音
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetRecordId() const;
 
                     /**
-                     * 设置录音 ID，能够索引到坐席侧的录音
+                     * 设置录音 ID，能够索引到座席侧的录音
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _recordId 录音 ID，能够索引到坐席侧的录音
+                     * @param _recordId 录音 ID，能够索引到座席侧的录音
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -222,18 +222,18 @@ namespace TencentCloud
                     bool TypeHasBeenSet() const;
 
                     /**
-                     * 获取转接来源坐席信息
+                     * 获取转接来源座席信息
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return TransferFrom 转接来源坐席信息
+                     * @return TransferFrom 转接来源座席信息
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetTransferFrom() const;
 
                     /**
-                     * 设置转接来源坐席信息
+                     * 设置转接来源座席信息
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _transferFrom 转接来源坐席信息
+                     * @param _transferFrom 转接来源座席信息
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -272,18 +272,18 @@ namespace TencentCloud
                     bool TransferFromTypeHasBeenSet() const;
 
                     /**
-                     * 获取转接去向坐席信息
+                     * 获取转接去向座席信息
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return TransferTo 转接去向坐席信息
+                     * @return TransferTo 转接去向座席信息
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetTransferTo() const;
 
                     /**
-                     * 设置转接去向坐席信息
+                     * 设置转接去向座席信息
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _transferTo 转接去向坐席信息
+                     * @param _transferTo 转接去向座席信息
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -499,14 +499,14 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 坐席邮箱
+                     * 座席邮箱
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_mail;
                     bool m_mailHasBeenSet;
 
                     /**
-                     * 坐席电话
+                     * 座席电话
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_phone;
@@ -534,7 +534,7 @@ namespace TencentCloud
                     bool m_endedTimestampHasBeenSet;
 
                     /**
-                     * 录音 ID，能够索引到坐席侧的录音
+                     * 录音 ID，能够索引到座席侧的录音
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_recordId;
@@ -548,7 +548,7 @@ namespace TencentCloud
                     bool m_typeHasBeenSet;
 
                     /**
-                     * 转接来源坐席信息
+                     * 转接来源座席信息
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_transferFrom;
@@ -562,7 +562,7 @@ namespace TencentCloud
                     bool m_transferFromTypeHasBeenSet;
 
                     /**
-                     * 转接去向坐席信息
+                     * 转接去向座席信息
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_transferTo;

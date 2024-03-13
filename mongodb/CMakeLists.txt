@@ -24,6 +24,7 @@ set(mongodb_public_header_model
   include/tencentcloud/mongodb/v20190725/model/CreateDBInstanceRequest.h
   include/tencentcloud/mongodb/v20190725/model/DescribeCurrentOpResponse.h
   include/tencentcloud/mongodb/v20190725/model/DescribeAccountUsersRequest.h
+  include/tencentcloud/mongodb/v20190725/model/SetInstanceMaintenanceResponse.h
   include/tencentcloud/mongodb/v20190725/model/CreateBackupDBInstanceResponse.h
   include/tencentcloud/mongodb/v20190725/model/DBInstancePrice.h
   include/tencentcloud/mongodb/v20190725/model/KillOpsRequest.h
@@ -118,6 +119,7 @@ set(mongodb_public_header_model
   include/tencentcloud/mongodb/v20190725/model/InquirePriceCreateDBInstancesRequest.h
   include/tencentcloud/mongodb/v20190725/model/DescribeInstanceParamsResponse.h
   include/tencentcloud/mongodb/v20190725/model/DescribeInstanceParamsRequest.h
+  include/tencentcloud/mongodb/v20190725/model/SetInstanceMaintenanceRequest.h
   include/tencentcloud/mongodb/v20190725/model/InstanceDetail.h
   include/tencentcloud/mongodb/v20190725/model/ModifyDBInstanceSpecResponse.h
   include/tencentcloud/mongodb/v20190725/model/InstanceChargePrepaid.h
@@ -164,6 +166,7 @@ set(mongodb_src
   src/v20190725/model/CreateDBInstanceRequest.cpp
   src/v20190725/model/DescribeCurrentOpResponse.cpp
   src/v20190725/model/DescribeAccountUsersRequest.cpp
+  src/v20190725/model/SetInstanceMaintenanceResponse.cpp
   src/v20190725/model/CreateBackupDBInstanceResponse.cpp
   src/v20190725/model/DBInstancePrice.cpp
   src/v20190725/model/KillOpsRequest.cpp
@@ -258,6 +261,7 @@ set(mongodb_src
   src/v20190725/model/InquirePriceCreateDBInstancesRequest.cpp
   src/v20190725/model/DescribeInstanceParamsResponse.cpp
   src/v20190725/model/DescribeInstanceParamsRequest.cpp
+  src/v20190725/model/SetInstanceMaintenanceRequest.cpp
   src/v20190725/model/InstanceDetail.cpp
   src/v20190725/model/ModifyDBInstanceSpecResponse.cpp
   src/v20190725/model/InstanceChargePrepaid.cpp

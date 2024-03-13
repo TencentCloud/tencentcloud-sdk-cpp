@@ -25,7 +25,8 @@ using namespace std;
 
 GetClusterLevelPriceResponse::GetClusterLevelPriceResponse() :
     m_costHasBeenSet(false),
-    m_totalCostHasBeenSet(false)
+    m_totalCostHasBeenSet(false),
+    m_policyHasBeenSet(false)
 {
 }
 
@@ -83,6 +84,16 @@ CoreInternalOutcome GetClusterLevelPriceResponse::Deserialize(const string &payl
         m_totalCostHasBeenSet = true;
     }
 
+    if (rsp.HasMember("Policy") && !rsp["Policy"].IsNull())
+    {
+        if (!rsp["Policy"].IsLosslessDouble())
+        {
+            return CoreInternalOutcome(Core::Error("response `Policy` IsLosslessDouble=false incorrectly").SetRequestId(requestId));
+        }
+        m_policy = rsp["Policy"].GetDouble();
+        m_policyHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -107,6 +118,14 @@ string GetClusterLevelPriceResponse::ToJsonString() const
         string key = "TotalCost";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_totalCost, allocator);
+    }
+
+    if (m_policyHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Policy";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_policy, allocator);
     }
 
     rapidjson::Value iKey(rapidjson::kStringType);
@@ -139,6 +158,16 @@ uint64_t GetClusterLevelPriceResponse::GetTotalCost() const
 bool GetClusterLevelPriceResponse::TotalCostHasBeenSet() const
 {
     return m_totalCostHasBeenSet;
+}
+
+double GetClusterLevelPriceResponse::GetPolicy() const
+{
+    return m_policy;
+}
+
+bool GetClusterLevelPriceResponse::PolicyHasBeenSet() const
+{
+    return m_policyHasBeenSet;
 }
 
 

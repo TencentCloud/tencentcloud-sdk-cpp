@@ -2663,6 +2663,49 @@ TeoClient::DescribeRulesSettingOutcomeCallable TeoClient::DescribeRulesSettingCa
     return task->get_future();
 }
 
+TeoClient::DescribeSecurityIPGroupInfoOutcome TeoClient::DescribeSecurityIPGroupInfo(const DescribeSecurityIPGroupInfoRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeSecurityIPGroupInfo");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeSecurityIPGroupInfoResponse rsp = DescribeSecurityIPGroupInfoResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeSecurityIPGroupInfoOutcome(rsp);
+        else
+            return DescribeSecurityIPGroupInfoOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeSecurityIPGroupInfoOutcome(outcome.GetError());
+    }
+}
+
+void TeoClient::DescribeSecurityIPGroupInfoAsync(const DescribeSecurityIPGroupInfoRequest& request, const DescribeSecurityIPGroupInfoAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeSecurityIPGroupInfo(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+TeoClient::DescribeSecurityIPGroupInfoOutcomeCallable TeoClient::DescribeSecurityIPGroupInfoCallable(const DescribeSecurityIPGroupInfoRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeSecurityIPGroupInfoOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeSecurityIPGroupInfo(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 TeoClient::DescribeSecurityTemplateBindingsOutcome TeoClient::DescribeSecurityTemplateBindings(const DescribeSecurityTemplateBindingsRequest &request)
 {
     auto outcome = MakeRequest(request, "DescribeSecurityTemplateBindings");

@@ -36,7 +36,7 @@ namespace TencentCloud
             namespace Model
             {
                 /**
-                * 坐席状态相关信息
+                * 座席状态相关信息
                 */
                 class StaffStatusMetrics : public AbstractModel
                 {
@@ -48,15 +48,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取坐席邮箱
-                     * @return Email 坐席邮箱
+                     * 获取座席邮箱
+                     * @return Email 座席邮箱
                      * 
                      */
                     std::string GetEmail() const;
 
                     /**
-                     * 设置坐席邮箱
-                     * @param _email 坐席邮箱
+                     * 设置座席邮箱
+                     * @param _email 座席邮箱
                      * 
                      */
                     void SetEmail(const std::string& _email);
@@ -69,15 +69,15 @@ namespace TencentCloud
                     bool EmailHasBeenSet() const;
 
                     /**
-                     * 获取坐席状态 free 示闲 | busy 忙碌 | rest 小休 | notReady 示忙 | afterCallWork 话后调整 | offline 离线
-                     * @return Status 坐席状态 free 示闲 | busy 忙碌 | rest 小休 | notReady 示忙 | afterCallWork 话后调整 | offline 离线
+                     * 获取座席状态 free 示闲 | busy 忙碌 | rest 小休 | notReady 示忙 | afterCallWork 话后调整 | offline 离线
+                     * @return Status 座席状态 free 示闲 | busy 忙碌 | rest 小休 | notReady 示忙 | afterCallWork 话后调整 | offline 离线
                      * 
                      */
                     std::string GetStatus() const;
 
                     /**
-                     * 设置坐席状态 free 示闲 | busy 忙碌 | rest 小休 | notReady 示忙 | afterCallWork 话后调整 | offline 离线
-                     * @param _status 坐席状态 free 示闲 | busy 忙碌 | rest 小休 | notReady 示忙 | afterCallWork 话后调整 | offline 离线
+                     * 设置座席状态 free 示闲 | busy 忙碌 | rest 小休 | notReady 示忙 | afterCallWork 话后调整 | offline 离线
+                     * @param _status 座席状态 free 示闲 | busy 忙碌 | rest 小休 | notReady 示忙 | afterCallWork 话后调整 | offline 离线
                      * 
                      */
                     void SetStatus(const std::string& _status);
@@ -90,15 +90,15 @@ namespace TencentCloud
                     bool StatusHasBeenSet() const;
 
                     /**
-                     * 获取坐席状态补充信息
-                     * @return StatusExtra 坐席状态补充信息
+                     * 获取座席状态补充信息
+                     * @return StatusExtra 座席状态补充信息
                      * 
                      */
                     StaffStatusExtra GetStatusExtra() const;
 
                     /**
-                     * 设置坐席状态补充信息
-                     * @param _statusExtra 坐席状态补充信息
+                     * 设置座席状态补充信息
+                     * @param _statusExtra 座席状态补充信息
                      * 
                      */
                     void SetStatusExtra(const StaffStatusExtra& _statusExtra);
@@ -394,19 +394,19 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 坐席邮箱
+                     * 座席邮箱
                      */
                     std::string m_email;
                     bool m_emailHasBeenSet;
 
                     /**
-                     * 坐席状态 free 示闲 | busy 忙碌 | rest 小休 | notReady 示忙 | afterCallWork 话后调整 | offline 离线
+                     * 座席状态 free 示闲 | busy 忙碌 | rest 小休 | notReady 示忙 | afterCallWork 话后调整 | offline 离线
                      */
                     std::string m_status;
                     bool m_statusHasBeenSet;
 
                     /**
-                     * 坐席状态补充信息
+                     * 座席状态补充信息
                      */
                     StaffStatusExtra m_statusExtra;
                     bool m_statusExtraHasBeenSet;

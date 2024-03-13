@@ -47,15 +47,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取坐席邮箱地址
-                     * @return StaffEmail 坐席邮箱地址
+                     * 获取座席邮箱地址
+                     * @return StaffEmail 座席邮箱地址
                      * 
                      */
                     std::string GetStaffEmail() const;
 
                     /**
-                     * 设置坐席邮箱地址
-                     * @param _staffEmail 坐席邮箱地址
+                     * 设置座席邮箱地址
+                     * @param _staffEmail 座席邮箱地址
                      * 
                      */
                     void SetStaffEmail(const std::string& _staffEmail);
@@ -112,7 +112,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 坐席邮箱地址
+                     * 座席邮箱地址
                      */
                     std::string m_staffEmail;
                     bool m_staffEmailHasBeenSet;

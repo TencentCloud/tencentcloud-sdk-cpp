@@ -146,6 +146,43 @@ namespace TencentCloud
                      */
                     bool AuthorizedOrganizationNameHasBeenSet() const;
 
+                    /**
+                     * 获取是否给平台应用授权:
+- true: 是（无需设置AuthorizedOrganizationId和AuthorizedOrganizationName）
+- false: 否（默认）
+ 注：该参数需要开通“基于子客授权第三方应用可文件发起子客自动签署”，请联系运营经理开通
+
+                     * @return PlatformAppAuthorization 是否给平台应用授权:
+- true: 是（无需设置AuthorizedOrganizationId和AuthorizedOrganizationName）
+- false: 否（默认）
+ 注：该参数需要开通“基于子客授权第三方应用可文件发起子客自动签署”，请联系运营经理开通
+
+                     * 
+                     */
+                    bool GetPlatformAppAuthorization() const;
+
+                    /**
+                     * 设置是否给平台应用授权:
+- true: 是（无需设置AuthorizedOrganizationId和AuthorizedOrganizationName）
+- false: 否（默认）
+ 注：该参数需要开通“基于子客授权第三方应用可文件发起子客自动签署”，请联系运营经理开通
+
+                     * @param _platformAppAuthorization 是否给平台应用授权:
+- true: 是（无需设置AuthorizedOrganizationId和AuthorizedOrganizationName）
+- false: 否（默认）
+ 注：该参数需要开通“基于子客授权第三方应用可文件发起子客自动签署”，请联系运营经理开通
+
+                     * 
+                     */
+                    void SetPlatformAppAuthorization(const bool& _platformAppAuthorization);
+
+                    /**
+                     * 判断参数 PlatformAppAuthorization 是否已赋值
+                     * @return PlatformAppAuthorization 是否已赋值
+                     * 
+                     */
+                    bool PlatformAppAuthorizationHasBeenSet() const;
+
                 private:
 
                     /**
@@ -175,6 +212,16 @@ namespace TencentCloud
                      */
                     std::string m_authorizedOrganizationName;
                     bool m_authorizedOrganizationNameHasBeenSet;
+
+                    /**
+                     * 是否给平台应用授权:
+- true: 是（无需设置AuthorizedOrganizationId和AuthorizedOrganizationName）
+- false: 否（默认）
+ 注：该参数需要开通“基于子客授权第三方应用可文件发起子客自动签署”，请联系运营经理开通
+
+                     */
+                    bool m_platformAppAuthorization;
+                    bool m_platformAppAuthorizationHasBeenSet;
 
                 };
             }

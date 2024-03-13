@@ -148,15 +148,15 @@ namespace TencentCloud
                     bool OffsetHasBeenSet() const;
 
                     /**
-                     * 获取按照某字断排序。支持值包括："AllConn"，"ActiveConn"，"Ip"。
-                     * @return SortBy 按照某字断排序。支持值包括："AllConn"，"ActiveConn"，"Ip"。
+                     * 获取按照某字段排序。支持值包括："AllConn"，"ActiveConn"，"Ip"。
+                     * @return SortBy 按照某字段排序。支持值包括："AllConn"，"ActiveConn"，"Ip"。
                      * 
                      */
                     std::string GetSortBy() const;
 
                     /**
-                     * 设置按照某字断排序。支持值包括："AllConn"，"ActiveConn"，"Ip"。
-                     * @param _sortBy 按照某字断排序。支持值包括："AllConn"，"ActiveConn"，"Ip"。
+                     * 设置按照某字段排序。支持值包括："AllConn"，"ActiveConn"，"Ip"。
+                     * @param _sortBy 按照某字段排序。支持值包括："AllConn"，"ActiveConn"，"Ip"。
                      * 
                      */
                     void SetSortBy(const std::string& _sortBy);
@@ -222,7 +222,7 @@ namespace TencentCloud
                     bool m_offsetHasBeenSet;
 
                     /**
-                     * 按照某字断排序。支持值包括："AllConn"，"ActiveConn"，"Ip"。
+                     * 按照某字段排序。支持值包括："AllConn"，"ActiveConn"，"Ip"。
                      */
                     std::string m_sortBy;
                     bool m_sortByHasBeenSet;

@@ -298,6 +298,31 @@ namespace TencentCloud
                      */
                     bool InstanceLogListOpsDtoHasBeenSet() const;
 
+                    /**
+                     * 获取实例状态
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return InstanceState 实例状态
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::string GetInstanceState() const;
+
+                    /**
+                     * 设置实例状态
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _instanceState 实例状态
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetInstanceState(const std::string& _instanceState);
+
+                    /**
+                     * 判断参数 InstanceState 是否已赋值
+                     * @return InstanceState 是否已赋值
+                     * 
+                     */
+                    bool InstanceStateHasBeenSet() const;
+
                 private:
 
                     /**
@@ -369,6 +394,13 @@ namespace TencentCloud
                      */
                     InstanceLogInfo m_instanceLogListOpsDto;
                     bool m_instanceLogListOpsDtoHasBeenSet;
+
+                    /**
+                     * 实例状态
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_instanceState;
+                    bool m_instanceStateHasBeenSet;
 
                 };
             }

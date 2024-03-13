@@ -266,18 +266,18 @@ namespace TencentCloud
                     bool HotPeriodHasBeenSet() const;
 
                     /**
-                     * 获取免鉴权开关。 false：关闭； true：开启。
+                     * 获取免鉴权开关。 false：关闭； true：开启。默认为false。
 开启后将支持指定操作匿名访问该日志主题。详情请参见[日志主题](https://cloud.tencent.com/document/product/614/41035)。
-                     * @return IsWebTracking 免鉴权开关。 false：关闭； true：开启。
+                     * @return IsWebTracking 免鉴权开关。 false：关闭； true：开启。默认为false。
 开启后将支持指定操作匿名访问该日志主题。详情请参见[日志主题](https://cloud.tencent.com/document/product/614/41035)。
                      * 
                      */
                     bool GetIsWebTracking() const;
 
                     /**
-                     * 设置免鉴权开关。 false：关闭； true：开启。
+                     * 设置免鉴权开关。 false：关闭； true：开启。默认为false。
 开启后将支持指定操作匿名访问该日志主题。详情请参见[日志主题](https://cloud.tencent.com/document/product/614/41035)。
-                     * @param _isWebTracking 免鉴权开关。 false：关闭； true：开启。
+                     * @param _isWebTracking 免鉴权开关。 false：关闭； true：开启。默认为false。
 开启后将支持指定操作匿名访问该日志主题。详情请参见[日志主题](https://cloud.tencent.com/document/product/614/41035)。
                      * 
                      */
@@ -356,7 +356,7 @@ namespace TencentCloud
                     bool m_hotPeriodHasBeenSet;
 
                     /**
-                     * 免鉴权开关。 false：关闭； true：开启。
+                     * 免鉴权开关。 false：关闭； true：开启。默认为false。
 开启后将支持指定操作匿名访问该日志主题。详情请参见[日志主题](https://cloud.tencent.com/document/product/614/41035)。
                      */
                     bool m_isWebTracking;

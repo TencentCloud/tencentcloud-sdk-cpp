@@ -200,18 +200,26 @@ namespace TencentCloud
                     bool KeysHasBeenSet() const;
 
                     /**
-                     * 获取需要过滤日志的key，及其对应的regex
+                     * 获取日志过滤规则列表（旧版），需要过滤日志的key，及其对应的regex。
+ 注意：2.9.3及以上版本LogListener ，建议使用AdvanceFilterRules配置日志过滤规则。
+
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return FilterKeyRegex 需要过滤日志的key，及其对应的regex
+                     * @return FilterKeyRegex 日志过滤规则列表（旧版），需要过滤日志的key，及其对应的regex。
+ 注意：2.9.3及以上版本LogListener ，建议使用AdvanceFilterRules配置日志过滤规则。
+
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<KeyRegexInfo> GetFilterKeyRegex() const;
 
                     /**
-                     * 设置需要过滤日志的key，及其对应的regex
+                     * 设置日志过滤规则列表（旧版），需要过滤日志的key，及其对应的regex。
+ 注意：2.9.3及以上版本LogListener ，建议使用AdvanceFilterRules配置日志过滤规则。
+
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _filterKeyRegex 需要过滤日志的key，及其对应的regex
+                     * @param _filterKeyRegex 日志过滤规则列表（旧版），需要过滤日志的key，及其对应的regex。
+ 注意：2.9.3及以上版本LogListener ，建议使用AdvanceFilterRules配置日志过滤规则。
+
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -577,7 +585,9 @@ auto：自动匹配rfc3164或者rfc5424其中一种协议
                     bool m_keysHasBeenSet;
 
                     /**
-                     * 需要过滤日志的key，及其对应的regex
+                     * 日志过滤规则列表（旧版），需要过滤日志的key，及其对应的regex。
+ 注意：2.9.3及以上版本LogListener ，建议使用AdvanceFilterRules配置日志过滤规则。
+
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<KeyRegexInfo> m_filterKeyRegex;

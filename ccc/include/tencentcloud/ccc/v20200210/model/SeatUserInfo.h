@@ -35,7 +35,7 @@ namespace TencentCloud
             namespace Model
             {
                 /**
-                * 坐席用户信息
+                * 座席用户信息
                 */
                 class SeatUserInfo : public AbstractModel
                 {
@@ -47,15 +47,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取坐席名称
-                     * @return Name 坐席名称
+                     * 获取座席名称
+                     * @return Name 座席名称
                      * 
                      */
                     std::string GetName() const;
 
                     /**
-                     * 设置坐席名称
-                     * @param _name 坐席名称
+                     * 设置座席名称
+                     * @param _name 座席名称
                      * 
                      */
                     void SetName(const std::string& _name);
@@ -68,15 +68,15 @@ namespace TencentCloud
                     bool NameHasBeenSet() const;
 
                     /**
-                     * 获取坐席邮箱
-                     * @return Mail 坐席邮箱
+                     * 获取座席邮箱
+                     * @return Mail 座席邮箱
                      * 
                      */
                     std::string GetMail() const;
 
                     /**
-                     * 设置坐席邮箱
-                     * @param _mail 坐席邮箱
+                     * 设置座席邮箱
+                     * @param _mail 座席邮箱
                      * 
                      */
                     void SetMail(const std::string& _mail);
@@ -114,15 +114,15 @@ namespace TencentCloud
                     bool StaffNumberHasBeenSet() const;
 
                     /**
-                     * 获取坐席电话号码（带0086前缀）
-                     * @return Phone 坐席电话号码（带0086前缀）
+                     * 获取座席电话号码（带0086前缀）
+                     * @return Phone 座席电话号码（带0086前缀）
                      * 
                      */
                     std::string GetPhone() const;
 
                     /**
-                     * 设置坐席电话号码（带0086前缀）
-                     * @param _phone 坐席电话号码（带0086前缀）
+                     * 设置座席电话号码（带0086前缀）
+                     * @param _phone 座席电话号码（带0086前缀）
                      * 
                      */
                     void SetPhone(const std::string& _phone);
@@ -135,15 +135,15 @@ namespace TencentCloud
                     bool PhoneHasBeenSet() const;
 
                     /**
-                     * 获取坐席昵称
-                     * @return Nick 坐席昵称
+                     * 获取座席昵称
+                     * @return Nick 座席昵称
                      * 
                      */
                     std::string GetNick() const;
 
                     /**
-                     * 设置坐席昵称
-                     * @param _nick 坐席昵称
+                     * 设置座席昵称
+                     * @param _nick 座席昵称
                      * 
                      */
                     void SetNick(const std::string& _nick);
@@ -177,18 +177,18 @@ namespace TencentCloud
                     bool UserIdHasBeenSet() const;
 
                     /**
-                     * 获取坐席关联的技能组列表
+                     * 获取座席关联的技能组列表
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return SkillGroupNameList 坐席关联的技能组列表
+                     * @return SkillGroupNameList 座席关联的技能组列表
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<std::string> GetSkillGroupNameList() const;
 
                     /**
-                     * 设置坐席关联的技能组列表
+                     * 设置座席关联的技能组列表
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _skillGroupNameList 坐席关联的技能组列表
+                     * @param _skillGroupNameList 座席关联的技能组列表
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -241,13 +241,13 @@ else:自定义角色ID
                 private:
 
                     /**
-                     * 坐席名称
+                     * 座席名称
                      */
                     std::string m_name;
                     bool m_nameHasBeenSet;
 
                     /**
-                     * 坐席邮箱
+                     * 座席邮箱
                      */
                     std::string m_mail;
                     bool m_mailHasBeenSet;
@@ -260,13 +260,13 @@ else:自定义角色ID
                     bool m_staffNumberHasBeenSet;
 
                     /**
-                     * 坐席电话号码（带0086前缀）
+                     * 座席电话号码（带0086前缀）
                      */
                     std::string m_phone;
                     bool m_phoneHasBeenSet;
 
                     /**
-                     * 坐席昵称
+                     * 座席昵称
                      */
                     std::string m_nick;
                     bool m_nickHasBeenSet;
@@ -278,7 +278,7 @@ else:自定义角色ID
                     bool m_userIdHasBeenSet;
 
                     /**
-                     * 坐席关联的技能组列表
+                     * 座席关联的技能组列表
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<std::string> m_skillGroupNameList;

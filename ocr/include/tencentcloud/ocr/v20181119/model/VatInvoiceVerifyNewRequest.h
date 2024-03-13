@@ -239,6 +239,35 @@ namespace TencentCloud
                      */
                     bool EnableCommonElectronicHasBeenSet() const;
 
+                    /**
+                     * 获取是否允许查验当日发票，默认值为false。
+
+请注意，发票从开具到录入税局需要一定的时间来更新和验证发票信息，打开后仅支持查验已成功录入到税局中的发票。
+                     * @return EnableTodayInvoice 是否允许查验当日发票，默认值为false。
+
+请注意，发票从开具到录入税局需要一定的时间来更新和验证发票信息，打开后仅支持查验已成功录入到税局中的发票。
+                     * 
+                     */
+                    bool GetEnableTodayInvoice() const;
+
+                    /**
+                     * 设置是否允许查验当日发票，默认值为false。
+
+请注意，发票从开具到录入税局需要一定的时间来更新和验证发票信息，打开后仅支持查验已成功录入到税局中的发票。
+                     * @param _enableTodayInvoice 是否允许查验当日发票，默认值为false。
+
+请注意，发票从开具到录入税局需要一定的时间来更新和验证发票信息，打开后仅支持查验已成功录入到税局中的发票。
+                     * 
+                     */
+                    void SetEnableTodayInvoice(const bool& _enableTodayInvoice);
+
+                    /**
+                     * 判断参数 EnableTodayInvoice 是否已赋值
+                     * @return EnableTodayInvoice 是否已赋值
+                     * 
+                     */
+                    bool EnableTodayInvoiceHasBeenSet() const;
+
                 private:
 
                     /**
@@ -296,6 +325,14 @@ namespace TencentCloud
                      */
                     bool m_enableCommonElectronic;
                     bool m_enableCommonElectronicHasBeenSet;
+
+                    /**
+                     * 是否允许查验当日发票，默认值为false。
+
+请注意，发票从开具到录入税局需要一定的时间来更新和验证发票信息，打开后仅支持查验已成功录入到税局中的发票。
+                     */
+                    bool m_enableTodayInvoice;
+                    bool m_enableTodayInvoiceHasBeenSet;
 
                 };
             }

@@ -25,7 +25,8 @@ using namespace std;
 CreatePartnerAutoSignAuthUrlRequest::CreatePartnerAutoSignAuthUrlRequest() :
     m_agentHasBeenSet(false),
     m_authorizedOrganizationIdHasBeenSet(false),
-    m_authorizedOrganizationNameHasBeenSet(false)
+    m_authorizedOrganizationNameHasBeenSet(false),
+    m_platformAppAuthorizationHasBeenSet(false)
 {
 }
 
@@ -59,6 +60,14 @@ string CreatePartnerAutoSignAuthUrlRequest::ToJsonString() const
         string key = "AuthorizedOrganizationName";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_authorizedOrganizationName.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_platformAppAuthorizationHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "PlatformAppAuthorization";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_platformAppAuthorization, allocator);
     }
 
 
@@ -115,6 +124,22 @@ void CreatePartnerAutoSignAuthUrlRequest::SetAuthorizedOrganizationName(const st
 bool CreatePartnerAutoSignAuthUrlRequest::AuthorizedOrganizationNameHasBeenSet() const
 {
     return m_authorizedOrganizationNameHasBeenSet;
+}
+
+bool CreatePartnerAutoSignAuthUrlRequest::GetPlatformAppAuthorization() const
+{
+    return m_platformAppAuthorization;
+}
+
+void CreatePartnerAutoSignAuthUrlRequest::SetPlatformAppAuthorization(const bool& _platformAppAuthorization)
+{
+    m_platformAppAuthorization = _platformAppAuthorization;
+    m_platformAppAuthorizationHasBeenSet = true;
+}
+
+bool CreatePartnerAutoSignAuthUrlRequest::PlatformAppAuthorizationHasBeenSet() const
+{
+    return m_platformAppAuthorizationHasBeenSet;
 }
 
 

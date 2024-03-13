@@ -39,6 +39,8 @@
 #include <tencentcloud/tione/v20211111/model/CreateNotebookImageResponse.h>
 #include <tencentcloud/tione/v20211111/model/CreateOptimizedModelRequest.h>
 #include <tencentcloud/tione/v20211111/model/CreateOptimizedModelResponse.h>
+#include <tencentcloud/tione/v20211111/model/CreatePresignedNotebookUrlRequest.h>
+#include <tencentcloud/tione/v20211111/model/CreatePresignedNotebookUrlResponse.h>
 #include <tencentcloud/tione/v20211111/model/CreateTrainingModelRequest.h>
 #include <tencentcloud/tione/v20211111/model/CreateTrainingModelResponse.h>
 #include <tencentcloud/tione/v20211111/model/CreateTrainingTaskRequest.h>
@@ -209,6 +211,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::CreateOptimizedModelResponse> CreateOptimizedModelOutcome;
                 typedef std::future<CreateOptimizedModelOutcome> CreateOptimizedModelOutcomeCallable;
                 typedef std::function<void(const TioneClient*, const Model::CreateOptimizedModelRequest&, CreateOptimizedModelOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateOptimizedModelAsyncHandler;
+                typedef Outcome<Core::Error, Model::CreatePresignedNotebookUrlResponse> CreatePresignedNotebookUrlOutcome;
+                typedef std::future<CreatePresignedNotebookUrlOutcome> CreatePresignedNotebookUrlOutcomeCallable;
+                typedef std::function<void(const TioneClient*, const Model::CreatePresignedNotebookUrlRequest&, CreatePresignedNotebookUrlOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreatePresignedNotebookUrlAsyncHandler;
                 typedef Outcome<Core::Error, Model::CreateTrainingModelResponse> CreateTrainingModelOutcome;
                 typedef std::future<CreateTrainingModelOutcome> CreateTrainingModelOutcomeCallable;
                 typedef std::function<void(const TioneClient*, const Model::CreateTrainingModelRequest&, CreateTrainingModelOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateTrainingModelAsyncHandler;
@@ -481,6 +486,15 @@ namespace TencentCloud
                 CreateOptimizedModelOutcome CreateOptimizedModel(const Model::CreateOptimizedModelRequest &request);
                 void CreateOptimizedModelAsync(const Model::CreateOptimizedModelRequest& request, const CreateOptimizedModelAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 CreateOptimizedModelOutcomeCallable CreateOptimizedModelCallable(const Model::CreateOptimizedModelRequest& request);
+
+                /**
+                 *生成Notebook访问链接
+                 * @param req CreatePresignedNotebookUrlRequest
+                 * @return CreatePresignedNotebookUrlOutcome
+                 */
+                CreatePresignedNotebookUrlOutcome CreatePresignedNotebookUrl(const Model::CreatePresignedNotebookUrlRequest &request);
+                void CreatePresignedNotebookUrlAsync(const Model::CreatePresignedNotebookUrlRequest& request, const CreatePresignedNotebookUrlAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                CreatePresignedNotebookUrlOutcomeCallable CreatePresignedNotebookUrlCallable(const Model::CreatePresignedNotebookUrlRequest& request);
 
                 /**
                  *导入模型

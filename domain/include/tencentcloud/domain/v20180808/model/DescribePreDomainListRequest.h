@@ -105,6 +105,27 @@ namespace TencentCloud
                      */
                     bool EndTimeHasBeenSet() const;
 
+                    /**
+                     * 获取用户指定上架时间筛选
+                     * @return UpTime 用户指定上架时间筛选
+                     * 
+                     */
+                    std::string GetUpTime() const;
+
+                    /**
+                     * 设置用户指定上架时间筛选
+                     * @param _upTime 用户指定上架时间筛选
+                     * 
+                     */
+                    void SetUpTime(const std::string& _upTime);
+
+                    /**
+                     * 判断参数 UpTime 是否已赋值
+                     * @return UpTime 是否已赋值
+                     * 
+                     */
+                    bool UpTimeHasBeenSet() const;
+
                 private:
 
                     /**
@@ -124,6 +145,12 @@ namespace TencentCloud
                      */
                     std::string m_endTime;
                     bool m_endTimeHasBeenSet;
+
+                    /**
+                     * 用户指定上架时间筛选
+                     */
+                    std::string m_upTime;
+                    bool m_upTimeHasBeenSet;
 
                 };
             }

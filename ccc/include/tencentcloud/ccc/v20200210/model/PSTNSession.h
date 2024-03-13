@@ -194,15 +194,15 @@ namespace TencentCloud
                     bool AcceptTimestampHasBeenSet() const;
 
                     /**
-                     * 获取坐席邮箱
-                     * @return StaffEmail 坐席邮箱
+                     * 获取座席邮箱
+                     * @return StaffEmail 座席邮箱
                      * 
                      */
                     std::string GetStaffEmail() const;
 
                     /**
-                     * 设置坐席邮箱
-                     * @param _staffEmail 坐席邮箱
+                     * 设置座席邮箱
+                     * @param _staffEmail 座席邮箱
                      * 
                      */
                     void SetStaffEmail(const std::string& _staffEmail);
@@ -215,15 +215,15 @@ namespace TencentCloud
                     bool StaffEmailHasBeenSet() const;
 
                     /**
-                     * 获取坐席工号
-                     * @return StaffNumber 坐席工号
+                     * 获取座席工号
+                     * @return StaffNumber 座席工号
                      * 
                      */
                     std::string GetStaffNumber() const;
 
                     /**
-                     * 设置坐席工号
-                     * @param _staffNumber 坐席工号
+                     * 设置座席工号
+                     * @param _staffNumber 座席工号
                      * 
                      */
                     void SetStaffNumber(const std::string& _staffNumber);
@@ -238,12 +238,12 @@ namespace TencentCloud
                     /**
                      * 获取会话状态
 ringing 振铃中
-seatJoining  等待坐席接听
+seatJoining  等待座席接听
 inProgress 进行中
 finished 已完成
                      * @return SessionStatus 会话状态
 ringing 振铃中
-seatJoining  等待坐席接听
+seatJoining  等待座席接听
 inProgress 进行中
 finished 已完成
                      * 
@@ -253,12 +253,12 @@ finished 已完成
                     /**
                      * 设置会话状态
 ringing 振铃中
-seatJoining  等待坐席接听
+seatJoining  等待座席接听
 inProgress 进行中
 finished 已完成
                      * @param _sessionStatus 会话状态
 ringing 振铃中
-seatJoining  等待坐席接听
+seatJoining  等待座席接听
 inProgress 进行中
 finished 已完成
                      * 
@@ -422,13 +422,13 @@ finished 已完成
                     bool m_acceptTimestampHasBeenSet;
 
                     /**
-                     * 坐席邮箱
+                     * 座席邮箱
                      */
                     std::string m_staffEmail;
                     bool m_staffEmailHasBeenSet;
 
                     /**
-                     * 坐席工号
+                     * 座席工号
                      */
                     std::string m_staffNumber;
                     bool m_staffNumberHasBeenSet;
@@ -436,7 +436,7 @@ finished 已完成
                     /**
                      * 会话状态
 ringing 振铃中
-seatJoining  等待坐席接听
+seatJoining  等待座席接听
 inProgress 进行中
 finished 已完成
                      */

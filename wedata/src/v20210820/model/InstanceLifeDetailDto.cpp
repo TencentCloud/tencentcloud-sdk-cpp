@@ -22,7 +22,9 @@ using namespace std;
 
 InstanceLifeDetailDto::InstanceLifeDetailDto() :
     m_stateHasBeenSet(false),
-    m_startTimeHasBeenSet(false)
+    m_startTimeHasBeenSet(false),
+    m_detailStateHasBeenSet(false),
+    m_endTimeHasBeenSet(false)
 {
 }
 
@@ -51,6 +53,26 @@ CoreInternalOutcome InstanceLifeDetailDto::Deserialize(const rapidjson::Value &v
         m_startTimeHasBeenSet = true;
     }
 
+    if (value.HasMember("DetailState") && !value["DetailState"].IsNull())
+    {
+        if (!value["DetailState"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `InstanceLifeDetailDto.DetailState` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_detailState = string(value["DetailState"].GetString());
+        m_detailStateHasBeenSet = true;
+    }
+
+    if (value.HasMember("EndTime") && !value["EndTime"].IsNull())
+    {
+        if (!value["EndTime"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `InstanceLifeDetailDto.EndTime` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_endTime = string(value["EndTime"].GetString());
+        m_endTimeHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -72,6 +94,22 @@ void InstanceLifeDetailDto::ToJsonObject(rapidjson::Value &value, rapidjson::Doc
         string key = "StartTime";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_startTime.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_detailStateHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "DetailState";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_detailState.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_endTimeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "EndTime";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_endTime.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -107,5 +145,37 @@ void InstanceLifeDetailDto::SetStartTime(const string& _startTime)
 bool InstanceLifeDetailDto::StartTimeHasBeenSet() const
 {
     return m_startTimeHasBeenSet;
+}
+
+string InstanceLifeDetailDto::GetDetailState() const
+{
+    return m_detailState;
+}
+
+void InstanceLifeDetailDto::SetDetailState(const string& _detailState)
+{
+    m_detailState = _detailState;
+    m_detailStateHasBeenSet = true;
+}
+
+bool InstanceLifeDetailDto::DetailStateHasBeenSet() const
+{
+    return m_detailStateHasBeenSet;
+}
+
+string InstanceLifeDetailDto::GetEndTime() const
+{
+    return m_endTime;
+}
+
+void InstanceLifeDetailDto::SetEndTime(const string& _endTime)
+{
+    m_endTime = _endTime;
+    m_endTimeHasBeenSet = true;
+}
+
+bool InstanceLifeDetailDto::EndTimeHasBeenSet() const
+{
+    return m_endTimeHasBeenSet;
 }
 

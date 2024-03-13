@@ -173,15 +173,15 @@ namespace TencentCloud
                     bool AcceptTimestampHasBeenSet() const;
 
                     /**
-                     * 获取坐席邮箱
-                     * @return StaffEmail 坐席邮箱
+                     * 获取座席邮箱
+                     * @return StaffEmail 座席邮箱
                      * 
                      */
                     std::string GetStaffEmail() const;
 
                     /**
-                     * 设置坐席邮箱
-                     * @param _staffEmail 坐席邮箱
+                     * 设置座席邮箱
+                     * @param _staffEmail 座席邮箱
                      * 
                      */
                     void SetStaffEmail(const std::string& _staffEmail);
@@ -194,15 +194,15 @@ namespace TencentCloud
                     bool StaffEmailHasBeenSet() const;
 
                     /**
-                     * 获取坐席工号
-                     * @return StaffNumber 坐席工号
+                     * 获取座席工号
+                     * @return StaffNumber 座席工号
                      * 
                      */
                     std::string GetStaffNumber() const;
 
                     /**
-                     * 设置坐席工号
-                     * @param _staffNumber 坐席工号
+                     * 设置座席工号
+                     * @param _staffNumber 座席工号
                      * 
                      */
                     void SetStaffNumber(const std::string& _staffNumber);
@@ -215,15 +215,15 @@ namespace TencentCloud
                     bool StaffNumberHasBeenSet() const;
 
                     /**
-                     * 获取坐席状态 inProgress 进行中
-                     * @return SessionStatus 坐席状态 inProgress 进行中
+                     * 获取座席状态 inProgress 进行中
+                     * @return SessionStatus 座席状态 inProgress 进行中
                      * 
                      */
                     std::string GetSessionStatus() const;
 
                     /**
-                     * 设置坐席状态 inProgress 进行中
-                     * @param _sessionStatus 坐席状态 inProgress 进行中
+                     * 设置座席状态 inProgress 进行中
+                     * @param _sessionStatus 座席状态 inProgress 进行中
                      * 
                      */
                     void SetSessionStatus(const std::string& _sessionStatus);
@@ -358,19 +358,19 @@ namespace TencentCloud
                     bool m_acceptTimestampHasBeenSet;
 
                     /**
-                     * 坐席邮箱
+                     * 座席邮箱
                      */
                     std::string m_staffEmail;
                     bool m_staffEmailHasBeenSet;
 
                     /**
-                     * 坐席工号
+                     * 座席工号
                      */
                     std::string m_staffNumber;
                     bool m_staffNumberHasBeenSet;
 
                     /**
-                     * 坐席状态 inProgress 进行中
+                     * 座席状态 inProgress 进行中
                      */
                     std::string m_sessionStatus;
                     bool m_sessionStatusHasBeenSet;

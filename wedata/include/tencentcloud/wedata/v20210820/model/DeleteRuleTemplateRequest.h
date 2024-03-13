@@ -64,15 +64,15 @@ namespace TencentCloud
                     bool ProjectIdHasBeenSet() const;
 
                     /**
-                     * 获取模版Id列表
-                     * @return Ids 模版Id列表
+                     * 获取模板Id列表
+                     * @return Ids 模板Id列表
                      * 
                      */
                     std::vector<uint64_t> GetIds() const;
 
                     /**
-                     * 设置模版Id列表
-                     * @param _ids 模版Id列表
+                     * 设置模板Id列表
+                     * @param _ids 模板Id列表
                      * 
                      */
                     void SetIds(const std::vector<uint64_t>& _ids);
@@ -93,7 +93,7 @@ namespace TencentCloud
                     bool m_projectIdHasBeenSet;
 
                     /**
-                     * 模版Id列表
+                     * 模板Id列表
                      */
                     std::vector<uint64_t> m_ids;
                     bool m_idsHasBeenSet;

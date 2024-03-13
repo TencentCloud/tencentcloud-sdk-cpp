@@ -25,7 +25,8 @@ using namespace std;
 DescribePreDomainListRequest::DescribePreDomainListRequest() :
     m_pageHasBeenSet(false),
     m_sizeHasBeenSet(false),
-    m_endTimeHasBeenSet(false)
+    m_endTimeHasBeenSet(false),
+    m_upTimeHasBeenSet(false)
 {
 }
 
@@ -58,6 +59,14 @@ string DescribePreDomainListRequest::ToJsonString() const
         string key = "EndTime";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_endTime.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_upTimeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "UpTime";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_upTime.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -114,6 +123,22 @@ void DescribePreDomainListRequest::SetEndTime(const string& _endTime)
 bool DescribePreDomainListRequest::EndTimeHasBeenSet() const
 {
     return m_endTimeHasBeenSet;
+}
+
+string DescribePreDomainListRequest::GetUpTime() const
+{
+    return m_upTime;
+}
+
+void DescribePreDomainListRequest::SetUpTime(const string& _upTime)
+{
+    m_upTime = _upTime;
+    m_upTimeHasBeenSet = true;
+}
+
+bool DescribePreDomainListRequest::UpTimeHasBeenSet() const
+{
+    return m_upTimeHasBeenSet;
 }
 
 

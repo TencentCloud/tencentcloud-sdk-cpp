@@ -43,15 +43,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取要查询的执行详情的起始时间，Unix时间戳，单位ms
-                     * @return From 要查询的执行详情的起始时间，Unix时间戳，单位ms
+                     * 获取要查询的执行详情的起始时间，Unix时间戳，单位ms。
+                     * @return From 要查询的执行详情的起始时间，Unix时间戳，单位ms。
                      * 
                      */
                     int64_t GetFrom() const;
 
                     /**
-                     * 设置要查询的执行详情的起始时间，Unix时间戳，单位ms
-                     * @param _from 要查询的执行详情的起始时间，Unix时间戳，单位ms
+                     * 设置要查询的执行详情的起始时间，Unix时间戳，单位ms。
+                     * @param _from 要查询的执行详情的起始时间，Unix时间戳，单位ms。
                      * 
                      */
                     void SetFrom(const int64_t& _from);
@@ -64,15 +64,15 @@ namespace TencentCloud
                     bool FromHasBeenSet() const;
 
                     /**
-                     * 获取要查询的执行详情的结束时间，Unix时间戳，单位ms
-                     * @return To 要查询的执行详情的结束时间，Unix时间戳，单位ms
+                     * 获取要查询的执行详情的结束时间，Unix时间戳，单位ms。
+                     * @return To 要查询的执行详情的结束时间，Unix时间戳，单位ms。
                      * 
                      */
                     int64_t GetTo() const;
 
                     /**
-                     * 设置要查询的执行详情的结束时间，Unix时间戳，单位ms
-                     * @param _to 要查询的执行详情的结束时间，Unix时间戳，单位ms
+                     * 设置要查询的执行详情的结束时间，Unix时间戳，单位ms。
+                     * @param _to 要查询的执行详情的结束时间，Unix时间戳，单位ms。
                      * 
                      */
                     void SetTo(const int64_t& _to);
@@ -143,15 +143,27 @@ namespace TencentCloud
                     bool LimitHasBeenSet() const;
 
                     /**
-                     * 获取加载更多详情时使用，透传上次返回的Context值，获取后续的执行详情
-                     * @return Context 加载更多详情时使用，透传上次返回的Context值，获取后续的执行详情
+                     * 获取透传上次接口返回的Context值，可获取后续更多日志，总计最多可获取1万条原始日志，过期时间1小时。
+注意：
+* 透传该参数时，请勿修改除该参数外的其它参数
+* 仅当检索分析语句(Query)不包含SQL时有效，SQL获取后续结果参考<a href="https://cloud.tencent.com/document/product/614/58977" target="_blank">SQL LIMIT语法</a>
+                     * @return Context 透传上次接口返回的Context值，可获取后续更多日志，总计最多可获取1万条原始日志，过期时间1小时。
+注意：
+* 透传该参数时，请勿修改除该参数外的其它参数
+* 仅当检索分析语句(Query)不包含SQL时有效，SQL获取后续结果参考<a href="https://cloud.tencent.com/document/product/614/58977" target="_blank">SQL LIMIT语法</a>
                      * 
                      */
                     std::string GetContext() const;
 
                     /**
-                     * 设置加载更多详情时使用，透传上次返回的Context值，获取后续的执行详情
-                     * @param _context 加载更多详情时使用，透传上次返回的Context值，获取后续的执行详情
+                     * 设置透传上次接口返回的Context值，可获取后续更多日志，总计最多可获取1万条原始日志，过期时间1小时。
+注意：
+* 透传该参数时，请勿修改除该参数外的其它参数
+* 仅当检索分析语句(Query)不包含SQL时有效，SQL获取后续结果参考<a href="https://cloud.tencent.com/document/product/614/58977" target="_blank">SQL LIMIT语法</a>
+                     * @param _context 透传上次接口返回的Context值，可获取后续更多日志，总计最多可获取1万条原始日志，过期时间1小时。
+注意：
+* 透传该参数时，请勿修改除该参数外的其它参数
+* 仅当检索分析语句(Query)不包含SQL时有效，SQL获取后续结果参考<a href="https://cloud.tencent.com/document/product/614/58977" target="_blank">SQL LIMIT语法</a>
                      * 
                      */
                     void SetContext(const std::string& _context);
@@ -164,15 +176,27 @@ namespace TencentCloud
                     bool ContextHasBeenSet() const;
 
                     /**
-                     * 获取执行详情是否按时间排序返回；可选值：asc(升序)、desc(降序)，默认为 desc
-                     * @return Sort 执行详情是否按时间排序返回；可选值：asc(升序)、desc(降序)，默认为 desc
+                     * 获取原始日志是否按时间排序返回；可选值：asc(升序)、desc(降序)，默认为 desc
+注意：
+* 仅当检索分析语句(Query)不包含SQL时有效
+* SQL结果排序方式参考<a href="https://cloud.tencent.com/document/product/614/58978" target="_blank">SQL ORDER BY语法</a>
+                     * @return Sort 原始日志是否按时间排序返回；可选值：asc(升序)、desc(降序)，默认为 desc
+注意：
+* 仅当检索分析语句(Query)不包含SQL时有效
+* SQL结果排序方式参考<a href="https://cloud.tencent.com/document/product/614/58978" target="_blank">SQL ORDER BY语法</a>
                      * 
                      */
                     std::string GetSort() const;
 
                     /**
-                     * 设置执行详情是否按时间排序返回；可选值：asc(升序)、desc(降序)，默认为 desc
-                     * @param _sort 执行详情是否按时间排序返回；可选值：asc(升序)、desc(降序)，默认为 desc
+                     * 设置原始日志是否按时间排序返回；可选值：asc(升序)、desc(降序)，默认为 desc
+注意：
+* 仅当检索分析语句(Query)不包含SQL时有效
+* SQL结果排序方式参考<a href="https://cloud.tencent.com/document/product/614/58978" target="_blank">SQL ORDER BY语法</a>
+                     * @param _sort 原始日志是否按时间排序返回；可选值：asc(升序)、desc(降序)，默认为 desc
+注意：
+* 仅当检索分析语句(Query)不包含SQL时有效
+* SQL结果排序方式参考<a href="https://cloud.tencent.com/document/product/614/58978" target="_blank">SQL ORDER BY语法</a>
                      * 
                      */
                     void SetSort(const std::string& _sort);
@@ -185,27 +209,23 @@ namespace TencentCloud
                     bool SortHasBeenSet() const;
 
                     /**
-                     * 获取为true代表使用新的检索结果返回方式，输出参数AnalysisRecords和Columns有效；
-为false代表使用老的检索结果返回方式，输出AnalysisResults和ColNames有效；
+                     * 获取true：代表使用新的检索结果返回方式，输出参数AnalysisRecords和Columns有效；
+false：代表使用老的检索结果返回方式，输出AnalysisResults和ColNames有效；
 两种返回方式在编码格式上有少量区别，建议使用true。
-示例值：false
-                     * @return UseNewAnalysis 为true代表使用新的检索结果返回方式，输出参数AnalysisRecords和Columns有效；
-为false代表使用老的检索结果返回方式，输出AnalysisResults和ColNames有效；
+                     * @return UseNewAnalysis true：代表使用新的检索结果返回方式，输出参数AnalysisRecords和Columns有效；
+false：代表使用老的检索结果返回方式，输出AnalysisResults和ColNames有效；
 两种返回方式在编码格式上有少量区别，建议使用true。
-示例值：false
                      * 
                      */
                     bool GetUseNewAnalysis() const;
 
                     /**
-                     * 设置为true代表使用新的检索结果返回方式，输出参数AnalysisRecords和Columns有效；
-为false代表使用老的检索结果返回方式，输出AnalysisResults和ColNames有效；
+                     * 设置true：代表使用新的检索结果返回方式，输出参数AnalysisRecords和Columns有效；
+false：代表使用老的检索结果返回方式，输出AnalysisResults和ColNames有效；
 两种返回方式在编码格式上有少量区别，建议使用true。
-示例值：false
-                     * @param _useNewAnalysis 为true代表使用新的检索结果返回方式，输出参数AnalysisRecords和Columns有效；
-为false代表使用老的检索结果返回方式，输出AnalysisResults和ColNames有效；
+                     * @param _useNewAnalysis true：代表使用新的检索结果返回方式，输出参数AnalysisRecords和Columns有效；
+false：代表使用老的检索结果返回方式，输出AnalysisResults和ColNames有效；
 两种返回方式在编码格式上有少量区别，建议使用true。
-示例值：false
                      * 
                      */
                     void SetUseNewAnalysis(const bool& _useNewAnalysis);
@@ -220,13 +240,13 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 要查询的执行详情的起始时间，Unix时间戳，单位ms
+                     * 要查询的执行详情的起始时间，Unix时间戳，单位ms。
                      */
                     int64_t m_from;
                     bool m_fromHasBeenSet;
 
                     /**
-                     * 要查询的执行详情的结束时间，Unix时间戳，单位ms
+                     * 要查询的执行详情的结束时间，Unix时间戳，单位ms。
                      */
                     int64_t m_to;
                     bool m_toHasBeenSet;
@@ -248,22 +268,27 @@ namespace TencentCloud
                     bool m_limitHasBeenSet;
 
                     /**
-                     * 加载更多详情时使用，透传上次返回的Context值，获取后续的执行详情
+                     * 透传上次接口返回的Context值，可获取后续更多日志，总计最多可获取1万条原始日志，过期时间1小时。
+注意：
+* 透传该参数时，请勿修改除该参数外的其它参数
+* 仅当检索分析语句(Query)不包含SQL时有效，SQL获取后续结果参考<a href="https://cloud.tencent.com/document/product/614/58977" target="_blank">SQL LIMIT语法</a>
                      */
                     std::string m_context;
                     bool m_contextHasBeenSet;
 
                     /**
-                     * 执行详情是否按时间排序返回；可选值：asc(升序)、desc(降序)，默认为 desc
+                     * 原始日志是否按时间排序返回；可选值：asc(升序)、desc(降序)，默认为 desc
+注意：
+* 仅当检索分析语句(Query)不包含SQL时有效
+* SQL结果排序方式参考<a href="https://cloud.tencent.com/document/product/614/58978" target="_blank">SQL ORDER BY语法</a>
                      */
                     std::string m_sort;
                     bool m_sortHasBeenSet;
 
                     /**
-                     * 为true代表使用新的检索结果返回方式，输出参数AnalysisRecords和Columns有效；
-为false代表使用老的检索结果返回方式，输出AnalysisResults和ColNames有效；
+                     * true：代表使用新的检索结果返回方式，输出参数AnalysisRecords和Columns有效；
+false：代表使用老的检索结果返回方式，输出AnalysisResults和ColNames有效；
 两种返回方式在编码格式上有少量区别，建议使用true。
-示例值：false
                      */
                     bool m_useNewAnalysis;
                     bool m_useNewAnalysisHasBeenSet;

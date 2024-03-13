@@ -35,7 +35,7 @@ namespace TencentCloud
             namespace Model
             {
                 /**
-                * 坐席购买信息
+                * 座席购买信息
                 */
                 class StaffBuyInfo : public AbstractModel
                 {
@@ -47,15 +47,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取购买坐席数量
-                     * @return Num 购买坐席数量
+                     * 获取购买座席数量
+                     * @return Num 购买座席数量
                      * 
                      */
                     int64_t GetNum() const;
 
                     /**
-                     * 设置购买坐席数量
-                     * @param _num 购买坐席数量
+                     * 设置购买座席数量
+                     * @param _num 购买座席数量
                      * 
                      */
                     void SetNum(const int64_t& _num);
@@ -137,7 +137,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 购买坐席数量
+                     * 购买座席数量
                      */
                     int64_t m_num;
                     bool m_numHasBeenSet;

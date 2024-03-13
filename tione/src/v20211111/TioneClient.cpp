@@ -384,6 +384,49 @@ TioneClient::CreateOptimizedModelOutcomeCallable TioneClient::CreateOptimizedMod
     return task->get_future();
 }
 
+TioneClient::CreatePresignedNotebookUrlOutcome TioneClient::CreatePresignedNotebookUrl(const CreatePresignedNotebookUrlRequest &request)
+{
+    auto outcome = MakeRequest(request, "CreatePresignedNotebookUrl");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        CreatePresignedNotebookUrlResponse rsp = CreatePresignedNotebookUrlResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return CreatePresignedNotebookUrlOutcome(rsp);
+        else
+            return CreatePresignedNotebookUrlOutcome(o.GetError());
+    }
+    else
+    {
+        return CreatePresignedNotebookUrlOutcome(outcome.GetError());
+    }
+}
+
+void TioneClient::CreatePresignedNotebookUrlAsync(const CreatePresignedNotebookUrlRequest& request, const CreatePresignedNotebookUrlAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->CreatePresignedNotebookUrl(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+TioneClient::CreatePresignedNotebookUrlOutcomeCallable TioneClient::CreatePresignedNotebookUrlCallable(const CreatePresignedNotebookUrlRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<CreatePresignedNotebookUrlOutcome()>>(
+        [this, request]()
+        {
+            return this->CreatePresignedNotebookUrl(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 TioneClient::CreateTrainingModelOutcome TioneClient::CreateTrainingModel(const CreateTrainingModelRequest &request)
 {
     auto outcome = MakeRequest(request, "CreateTrainingModel");

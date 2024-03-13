@@ -93,6 +93,8 @@
 #include <tencentcloud/mongodb/v20190725/model/ResetDBInstancePasswordResponse.h>
 #include <tencentcloud/mongodb/v20190725/model/SetAccountUserPrivilegeRequest.h>
 #include <tencentcloud/mongodb/v20190725/model/SetAccountUserPrivilegeResponse.h>
+#include <tencentcloud/mongodb/v20190725/model/SetInstanceMaintenanceRequest.h>
+#include <tencentcloud/mongodb/v20190725/model/SetInstanceMaintenanceResponse.h>
 #include <tencentcloud/mongodb/v20190725/model/TerminateDBInstancesRequest.h>
 #include <tencentcloud/mongodb/v20190725/model/TerminateDBInstancesResponse.h>
 
@@ -214,6 +216,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::SetAccountUserPrivilegeResponse> SetAccountUserPrivilegeOutcome;
                 typedef std::future<SetAccountUserPrivilegeOutcome> SetAccountUserPrivilegeOutcomeCallable;
                 typedef std::function<void(const MongodbClient*, const Model::SetAccountUserPrivilegeRequest&, SetAccountUserPrivilegeOutcome, const std::shared_ptr<const AsyncCallerContext>&)> SetAccountUserPrivilegeAsyncHandler;
+                typedef Outcome<Core::Error, Model::SetInstanceMaintenanceResponse> SetInstanceMaintenanceOutcome;
+                typedef std::future<SetInstanceMaintenanceOutcome> SetInstanceMaintenanceOutcomeCallable;
+                typedef std::function<void(const MongodbClient*, const Model::SetInstanceMaintenanceRequest&, SetInstanceMaintenanceOutcome, const std::shared_ptr<const AsyncCallerContext>&)> SetInstanceMaintenanceAsyncHandler;
                 typedef Outcome<Core::Error, Model::TerminateDBInstancesResponse> TerminateDBInstancesOutcome;
                 typedef std::future<TerminateDBInstancesOutcome> TerminateDBInstancesOutcomeCallable;
                 typedef std::function<void(const MongodbClient*, const Model::TerminateDBInstancesRequest&, TerminateDBInstancesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> TerminateDBInstancesAsyncHandler;
@@ -535,6 +540,15 @@ namespace TencentCloud
                 SetAccountUserPrivilegeOutcome SetAccountUserPrivilege(const Model::SetAccountUserPrivilegeRequest &request);
                 void SetAccountUserPrivilegeAsync(const Model::SetAccountUserPrivilegeRequest& request, const SetAccountUserPrivilegeAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 SetAccountUserPrivilegeOutcomeCallable SetAccountUserPrivilegeCallable(const Model::SetAccountUserPrivilegeRequest& request);
+
+                /**
+                 *本接口（SetInstanceMaintenance ） 用于设置实例维护时间窗。
+                 * @param req SetInstanceMaintenanceRequest
+                 * @return SetInstanceMaintenanceOutcome
+                 */
+                SetInstanceMaintenanceOutcome SetInstanceMaintenance(const Model::SetInstanceMaintenanceRequest &request);
+                void SetInstanceMaintenanceAsync(const Model::SetInstanceMaintenanceRequest& request, const SetInstanceMaintenanceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                SetInstanceMaintenanceOutcomeCallable SetInstanceMaintenanceCallable(const Model::SetInstanceMaintenanceRequest& request);
 
                 /**
                  *本接口（TerminateDBInstances）可将包年包月实例退还隔离。

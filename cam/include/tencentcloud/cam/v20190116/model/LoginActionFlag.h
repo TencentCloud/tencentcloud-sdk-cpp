@@ -172,6 +172,31 @@ namespace TencentCloud
                      */
                     bool MailHasBeenSet() const;
 
+                    /**
+                     * 获取u2f硬件token
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return U2FToken u2f硬件token
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    uint64_t GetU2FToken() const;
+
+                    /**
+                     * 设置u2f硬件token
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _u2FToken u2f硬件token
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetU2FToken(const uint64_t& _u2FToken);
+
+                    /**
+                     * 判断参数 U2FToken 是否已赋值
+                     * @return U2FToken 是否已赋值
+                     * 
+                     */
+                    bool U2FTokenHasBeenSet() const;
+
                 private:
 
                     /**
@@ -209,6 +234,13 @@ namespace TencentCloud
                      */
                     uint64_t m_mail;
                     bool m_mailHasBeenSet;
+
+                    /**
+                     * u2f硬件token
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    uint64_t m_u2FToken;
+                    bool m_u2FTokenHasBeenSet;
 
                 };
             }

@@ -2060,7 +2060,7 @@ namespace TencentCloud
                 CreateRuleOutcomeCallable CreateRuleCallable(const Model::CreateRuleRequest& request);
 
                 /**
-                 *创建规则模版
+                 *创建规则模板
                  * @param req CreateRuleTemplateRequest
                  * @return CreateRuleTemplateOutcome
                  */
@@ -2271,7 +2271,7 @@ namespace TencentCloud
                 DeleteRuleOutcomeCallable DeleteRuleCallable(const Model::DeleteRuleRequest& request);
 
                 /**
-                 *删除规则模版
+                 *删除规则模板
                  * @param req DeleteRuleTemplateRequest
                  * @return DeleteRuleTemplateOutcome
                  */
@@ -3389,7 +3389,7 @@ namespace TencentCloud
                 DescribeRuleTemplateOutcomeCallable DescribeRuleTemplateCallable(const Model::DescribeRuleTemplateRequest& request);
 
                 /**
-                 *查询规则模版列表
+                 *查询规则模板列表
                  * @param req DescribeRuleTemplatesRequest
                  * @return DescribeRuleTemplatesOutcome
                  */
@@ -3398,7 +3398,7 @@ namespace TencentCloud
                 DescribeRuleTemplatesOutcomeCallable DescribeRuleTemplatesCallable(const Model::DescribeRuleTemplatesRequest& request);
 
                 /**
-                 *过滤条件】 {模版名称Name,支持模糊匹配} {模版类型type，1.系统模版 2.自定义模版} {质量检测维度QualityDims, 1.准确性 2.唯一性 3.完整性 4.一致性 5.及时性 6.有效性} 【排序字段】 { 引用数排序类型CitationOrderType，根据引用数量排序 ASC DESC}
+                 *【过滤条件】 {模板名称Name,支持模糊匹配} {模板类型type，1.系统模板 2.自定义模板} {质量检测维度QualityDims, 1.准确性 2.唯一性 3.完整性 4.一致性 5.及时性 6.有效性} 【排序字段】 { 引用数排序类型CitationOrderType，根据引用数量排序 ASC DESC}
                  * @param req DescribeRuleTemplatesByPageRequest
                  * @return DescribeRuleTemplatesByPageOutcome
                  */

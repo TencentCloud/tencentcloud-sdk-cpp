@@ -201,15 +201,15 @@ namespace TencentCloud
                     bool RecordIdHasBeenSet() const;
 
                     /**
-                     * 获取坐席信息
-                     * @return SeatUser 坐席信息
+                     * 获取座席信息
+                     * @return SeatUser 座席信息
                      * 
                      */
                     SeatUserInfo GetSeatUser() const;
 
                     /**
-                     * 设置坐席信息
-                     * @param _seatUser 坐席信息
+                     * 设置座席信息
+                     * @param _seatUser 座席信息
                      * 
                      */
                     void SetSeatUser(const SeatUserInfo& _seatUser);
@@ -236,7 +236,7 @@ namespace TencentCloud
 
 电话呼入	             104	        ringingGiveUp	       会话振铃期间用户放弃
 
-电话呼入	             105	        noSeatOnline	       无坐席在线
+电话呼入	             105	        noSeatOnline	       无座席在线
 
 电话呼入              106	       notWorkTime	       非工作时间   
 
@@ -282,7 +282,7 @@ namespace TencentCloud
 
 电话呼入	             104	        ringingGiveUp	       会话振铃期间用户放弃
 
-电话呼入	             105	        noSeatOnline	       无坐席在线
+电话呼入	             105	        noSeatOnline	       无座席在线
 
 电话呼入              106	       notWorkTime	       非工作时间   
 
@@ -333,7 +333,7 @@ namespace TencentCloud
 
 电话呼入	             104	        ringingGiveUp	       会话振铃期间用户放弃
 
-电话呼入	             105	        noSeatOnline	       无坐席在线
+电话呼入	             105	        noSeatOnline	       无座席在线
 
 电话呼入              106	       notWorkTime	       非工作时间   
 
@@ -379,7 +379,7 @@ namespace TencentCloud
 
 电话呼入	             104	        ringingGiveUp	       会话振铃期间用户放弃
 
-电话呼入	             105	        noSeatOnline	       无坐席在线
+电话呼入	             105	        noSeatOnline	       无座席在线
 
 电话呼入              106	       notWorkTime	       非工作时间   
 
@@ -590,18 +590,18 @@ namespace TencentCloud
                     bool IVRKeyPressedHasBeenSet() const;
 
                     /**
-                     * 获取挂机方 seat 坐席 user 用户 system 系统
+                     * 获取挂机方 seat 座席 user 用户 system 系统
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return HungUpSide 挂机方 seat 坐席 user 用户 system 系统
+                     * @return HungUpSide 挂机方 seat 座席 user 用户 system 系统
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetHungUpSide() const;
 
                     /**
-                     * 设置挂机方 seat 坐席 user 用户 system 系统
+                     * 设置挂机方 seat 座席 user 用户 system 系统
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _hungUpSide 挂机方 seat 坐席 user 用户 system 系统
+                     * @param _hungUpSide 挂机方 seat 座席 user 用户 system 系统
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -679,7 +679,7 @@ namespace TencentCloud
 
 电话呼入	             104	        ringingGiveUp	       会话振铃期间用户放弃
 
-电话呼入	             105	        noSeatOnline	       无坐席在线
+电话呼入	             105	        noSeatOnline	       无座席在线
 
 电话呼入              106	       notWorkTime	       非工作时间   
 
@@ -726,7 +726,7 @@ namespace TencentCloud
 
 电话呼入	             104	        ringingGiveUp	       会话振铃期间用户放弃
 
-电话呼入	             105	        noSeatOnline	       无坐席在线
+电话呼入	             105	        noSeatOnline	       无座席在线
 
 电话呼入              106	       notWorkTime	       非工作时间   
 
@@ -778,7 +778,7 @@ namespace TencentCloud
 
 电话呼入	             104	        ringingGiveUp	       会话振铃期间用户放弃
 
-电话呼入	             105	        noSeatOnline	       无坐席在线
+电话呼入	             105	        noSeatOnline	       无座席在线
 
 电话呼入              106	       notWorkTime	       非工作时间   
 
@@ -825,7 +825,7 @@ namespace TencentCloud
 
 电话呼入	             104	        ringingGiveUp	       会话振铃期间用户放弃
 
-电话呼入	             105	        noSeatOnline	       无坐席在线
+电话呼入	             105	        noSeatOnline	       无座席在线
 
 电话呼入              106	       notWorkTime	       非工作时间   
 
@@ -1315,7 +1315,7 @@ namespace TencentCloud
                     bool m_recordIdHasBeenSet;
 
                     /**
-                     * 坐席信息
+                     * 座席信息
                      */
                     SeatUserInfo m_seatUser;
                     bool m_seatUserHasBeenSet;
@@ -1335,7 +1335,7 @@ namespace TencentCloud
 
 电话呼入	             104	        ringingGiveUp	       会话振铃期间用户放弃
 
-电话呼入	             105	        noSeatOnline	       无坐席在线
+电话呼入	             105	        noSeatOnline	       无座席在线
 
 电话呼入              106	       notWorkTime	       非工作时间   
 
@@ -1419,7 +1419,7 @@ namespace TencentCloud
                     bool m_iVRKeyPressedHasBeenSet;
 
                     /**
-                     * 挂机方 seat 坐席 user 用户 system 系统
+                     * 挂机方 seat 座席 user 用户 system 系统
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_hungUpSide;
@@ -1454,7 +1454,7 @@ namespace TencentCloud
 
 电话呼入	             104	        ringingGiveUp	       会话振铃期间用户放弃
 
-电话呼入	             105	        noSeatOnline	       无坐席在线
+电话呼入	             105	        noSeatOnline	       无座席在线
 
 电话呼入              106	       notWorkTime	       非工作时间   
 

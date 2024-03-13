@@ -26,6 +26,7 @@
 #include <tencentcloud/cls/v20201016/model/ContainerStdoutInfo.h>
 #include <tencentcloud/cls/v20201016/model/ExtractRuleInfo.h>
 #include <tencentcloud/cls/v20201016/model/ExcludePathInfo.h>
+#include <tencentcloud/cls/v20201016/model/CollectInfo.h>
 
 
 namespace TencentCloud
@@ -405,6 +406,27 @@ namespace TencentCloud
                     bool GroupIdsHasBeenSet() const;
 
                     /**
+                     * 获取采集相关配置信息。详情见CollectInfo复杂类型配置。
+                     * @return CollectInfos 采集相关配置信息。详情见CollectInfo复杂类型配置。
+                     * 
+                     */
+                    std::vector<CollectInfo> GetCollectInfos() const;
+
+                    /**
+                     * 设置采集相关配置信息。详情见CollectInfo复杂类型配置。
+                     * @param _collectInfos 采集相关配置信息。详情见CollectInfo复杂类型配置。
+                     * 
+                     */
+                    void SetCollectInfos(const std::vector<CollectInfo>& _collectInfos);
+
+                    /**
+                     * 判断参数 CollectInfos 是否已赋值
+                     * @return CollectInfos 是否已赋值
+                     * 
+                     */
+                    bool CollectInfosHasBeenSet() const;
+
+                    /**
                      * 获取高级采集配置。 Json字符串， Key/Value定义为如下：
 - ClsAgentFileTimeout(超时属性), 取值范围: 大于等于0的整数， 0为不超时
 - ClsAgentMaxDepth(最大目录深度)，取值范围: 大于等于0的整数
@@ -544,6 +566,12 @@ namespace TencentCloud
                      */
                     std::vector<std::string> m_groupIds;
                     bool m_groupIdsHasBeenSet;
+
+                    /**
+                     * 采集相关配置信息。详情见CollectInfo复杂类型配置。
+                     */
+                    std::vector<CollectInfo> m_collectInfos;
+                    bool m_collectInfosHasBeenSet;
 
                     /**
                      * 高级采集配置。 Json字符串， Key/Value定义为如下：

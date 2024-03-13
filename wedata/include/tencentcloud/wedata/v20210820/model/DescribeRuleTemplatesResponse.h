@@ -45,9 +45,9 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取规则模版列表
+                     * 获取规则模板列表
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return Data 规则模版列表
+                     * @return Data 规则模板列表
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -63,7 +63,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 规则模版列表
+                     * 规则模板列表
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<RuleTemplate> m_data;

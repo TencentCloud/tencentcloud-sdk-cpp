@@ -71,6 +71,20 @@ namespace TencentCloud
                      */
                     bool TotalCostHasBeenSet() const;
 
+                    /**
+                     * 获取总的折扣，100表示100%不打折
+                     * @return Policy 总的折扣，100表示100%不打折
+                     * 
+                     */
+                    double GetPolicy() const;
+
+                    /**
+                     * 判断参数 Policy 是否已赋值
+                     * @return Policy 是否已赋值
+                     * 
+                     */
+                    bool PolicyHasBeenSet() const;
+
                 private:
 
                     /**
@@ -84,6 +98,12 @@ namespace TencentCloud
                      */
                     uint64_t m_totalCost;
                     bool m_totalCostHasBeenSet;
+
+                    /**
+                     * 总的折扣，100表示100%不打折
+                     */
+                    double m_policy;
+                    bool m_policyHasBeenSet;
 
                 };
             }

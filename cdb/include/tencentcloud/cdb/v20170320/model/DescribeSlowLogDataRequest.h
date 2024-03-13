@@ -211,15 +211,15 @@ namespace TencentCloud
                     bool OrderByHasBeenSet() const;
 
                     /**
-                     * 获取偏移量，默认为0。
-                     * @return Offset 偏移量，默认为0。
+                     * 获取偏移量，默认为0，最大为9999。
+                     * @return Offset 偏移量，默认为0，最大为9999。
                      * 
                      */
                     int64_t GetOffset() const;
 
                     /**
-                     * 设置偏移量，默认为0。
-                     * @param _offset 偏移量，默认为0。
+                     * 设置偏移量，默认为0，最大为9999。
+                     * @param _offset 偏移量，默认为0，最大为9999。
                      * 
                      */
                     void SetOffset(const int64_t& _offset);
@@ -324,7 +324,7 @@ namespace TencentCloud
                     bool m_orderByHasBeenSet;
 
                     /**
-                     * 偏移量，默认为0。
+                     * 偏移量，默认为0，最大为9999。
                      */
                     int64_t m_offset;
                     bool m_offsetHasBeenSet;

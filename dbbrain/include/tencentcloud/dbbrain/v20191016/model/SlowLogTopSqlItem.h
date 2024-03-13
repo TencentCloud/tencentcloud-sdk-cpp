@@ -551,15 +551,15 @@ namespace TencentCloud
                     bool RowsExaminedAvgHasBeenSet() const;
 
                     /**
-                     * 获取SOL模板的MD5值
-                     * @return Md5 SOL模板的MD5值
+                     * 获取SQL模板的MD5值
+                     * @return Md5 SQL模板的MD5值
                      * 
                      */
                     std::string GetMd5() const;
 
                     /**
-                     * 设置SOL模板的MD5值
-                     * @param _md5 SOL模板的MD5值
+                     * 设置SQL模板的MD5值
+                     * @param _md5 SQL模板的MD5值
                      * 
                      */
                     void SetMd5(const std::string& _md5);
@@ -718,7 +718,7 @@ namespace TencentCloud
                     bool m_rowsExaminedAvgHasBeenSet;
 
                     /**
-                     * SOL模板的MD5值
+                     * SQL模板的MD5值
                      */
                     std::string m_md5;
                     bool m_md5HasBeenSet;

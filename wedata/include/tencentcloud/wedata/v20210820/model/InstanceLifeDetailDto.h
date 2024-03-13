@@ -96,6 +96,56 @@ namespace TencentCloud
                      */
                     bool StartTimeHasBeenSet() const;
 
+                    /**
+                     * 获取实例生命周期阶段状态
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return DetailState 实例生命周期阶段状态
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::string GetDetailState() const;
+
+                    /**
+                     * 设置实例生命周期阶段状态
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _detailState 实例生命周期阶段状态
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetDetailState(const std::string& _detailState);
+
+                    /**
+                     * 判断参数 DetailState 是否已赋值
+                     * @return DetailState 是否已赋值
+                     * 
+                     */
+                    bool DetailStateHasBeenSet() const;
+
+                    /**
+                     * 获取该状态结束时间
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return EndTime 该状态结束时间
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::string GetEndTime() const;
+
+                    /**
+                     * 设置该状态结束时间
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _endTime 该状态结束时间
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetEndTime(const std::string& _endTime);
+
+                    /**
+                     * 判断参数 EndTime 是否已赋值
+                     * @return EndTime 是否已赋值
+                     * 
+                     */
+                    bool EndTimeHasBeenSet() const;
+
                 private:
 
                     /**
@@ -111,6 +161,20 @@ namespace TencentCloud
                      */
                     std::string m_startTime;
                     bool m_startTimeHasBeenSet;
+
+                    /**
+                     * 实例生命周期阶段状态
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_detailState;
+                    bool m_detailStateHasBeenSet;
+
+                    /**
+                     * 该状态结束时间
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_endTime;
+                    bool m_endTimeHasBeenSet;
 
                 };
             }

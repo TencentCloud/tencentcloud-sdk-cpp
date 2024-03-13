@@ -36,7 +36,7 @@ namespace TencentCloud
             namespace Model
             {
                 /**
-                * 带有技能组优先级的坐席信息
+                * 带有技能组优先级的座席信息
                 */
                 class StaffInfo : public AbstractModel
                 {
@@ -48,18 +48,18 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取坐席名称
+                     * 获取座席名称
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return Name 坐席名称
+                     * @return Name 座席名称
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetName() const;
 
                     /**
-                     * 设置坐席名称
+                     * 设置座席名称
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _name 坐席名称
+                     * @param _name 座席名称
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -73,15 +73,15 @@ namespace TencentCloud
                     bool NameHasBeenSet() const;
 
                     /**
-                     * 获取坐席邮箱
-                     * @return Mail 坐席邮箱
+                     * 获取座席邮箱
+                     * @return Mail 座席邮箱
                      * 
                      */
                     std::string GetMail() const;
 
                     /**
-                     * 设置坐席邮箱
-                     * @param _mail 坐席邮箱
+                     * 设置座席邮箱
+                     * @param _mail 座席邮箱
                      * 
                      */
                     void SetMail(const std::string& _mail);
@@ -94,18 +94,18 @@ namespace TencentCloud
                     bool MailHasBeenSet() const;
 
                     /**
-                     * 获取坐席电话号码
+                     * 获取座席电话号码
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return Phone 坐席电话号码
+                     * @return Phone 座席电话号码
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetPhone() const;
 
                     /**
-                     * 设置坐席电话号码
+                     * 设置座席电话号码
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _phone 坐席电话号码
+                     * @param _phone 座席电话号码
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -119,18 +119,18 @@ namespace TencentCloud
                     bool PhoneHasBeenSet() const;
 
                     /**
-                     * 获取坐席昵称
+                     * 获取座席昵称
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return Nick 坐席昵称
+                     * @return Nick 座席昵称
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetNick() const;
 
                     /**
-                     * 设置坐席昵称
+                     * 设置座席昵称
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _nick 坐席昵称
+                     * @param _nick 座席昵称
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -144,18 +144,18 @@ namespace TencentCloud
                     bool NickHasBeenSet() const;
 
                     /**
-                     * 获取坐席工号
+                     * 获取座席工号
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return StaffNumber 坐席工号
+                     * @return StaffNumber 座席工号
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetStaffNumber() const;
 
                     /**
-                     * 设置坐席工号
+                     * 设置座席工号
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _staffNumber 坐席工号
+                     * @param _staffNumber 座席工号
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -242,34 +242,34 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 坐席名称
+                     * 座席名称
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_name;
                     bool m_nameHasBeenSet;
 
                     /**
-                     * 坐席邮箱
+                     * 座席邮箱
                      */
                     std::string m_mail;
                     bool m_mailHasBeenSet;
 
                     /**
-                     * 坐席电话号码
+                     * 座席电话号码
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_phone;
                     bool m_phoneHasBeenSet;
 
                     /**
-                     * 坐席昵称
+                     * 座席昵称
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_nick;
                     bool m_nickHasBeenSet;
 
                     /**
-                     * 坐席工号
+                     * 座席工号
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_staffNumber;

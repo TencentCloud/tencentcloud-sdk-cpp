@@ -135,18 +135,18 @@ namespace TencentCloud
                     bool RoutePolicyHasBeenSet() const;
 
                     /**
-                     * 获取会话分配是否优先上次服务坐席
+                     * 获取会话分配是否优先上次服务座席
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return UsingLastSeat 会话分配是否优先上次服务坐席
+                     * @return UsingLastSeat 会话分配是否优先上次服务座席
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetUsingLastSeat() const;
 
                     /**
-                     * 设置会话分配是否优先上次服务坐席
+                     * 设置会话分配是否优先上次服务座席
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _usingLastSeat 会话分配是否优先上次服务坐席
+                     * @param _usingLastSeat 会话分配是否优先上次服务座席
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -262,7 +262,7 @@ namespace TencentCloud
                     bool m_routePolicyHasBeenSet;
 
                     /**
-                     * 会话分配是否优先上次服务坐席
+                     * 会话分配是否优先上次服务座席
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_usingLastSeat;

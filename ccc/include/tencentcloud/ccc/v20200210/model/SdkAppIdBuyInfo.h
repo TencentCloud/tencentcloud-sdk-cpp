@@ -91,15 +91,15 @@ namespace TencentCloud
                     bool NameHasBeenSet() const;
 
                     /**
-                     * 获取坐席购买数（还在有效期内）
-                     * @return StaffBuyNum 坐席购买数（还在有效期内）
+                     * 获取座席购买数（还在有效期内）
+                     * @return StaffBuyNum 座席购买数（还在有效期内）
                      * 
                      */
                     int64_t GetStaffBuyNum() const;
 
                     /**
-                     * 设置坐席购买数（还在有效期内）
-                     * @param _staffBuyNum 坐席购买数（还在有效期内）
+                     * 设置座席购买数（还在有效期内）
+                     * @param _staffBuyNum 座席购买数（还在有效期内）
                      * 
                      */
                     void SetStaffBuyNum(const int64_t& _staffBuyNum);
@@ -112,15 +112,15 @@ namespace TencentCloud
                     bool StaffBuyNumHasBeenSet() const;
 
                     /**
-                     * 获取坐席购买列表 （还在有效期内）
-                     * @return StaffBuyList 坐席购买列表 （还在有效期内）
+                     * 获取座席购买列表 （还在有效期内）
+                     * @return StaffBuyList 座席购买列表 （还在有效期内）
                      * 
                      */
                     std::vector<StaffBuyInfo> GetStaffBuyList() const;
 
                     /**
-                     * 设置坐席购买列表 （还在有效期内）
-                     * @param _staffBuyList 坐席购买列表 （还在有效期内）
+                     * 设置座席购买列表 （还在有效期内）
+                     * @param _staffBuyList 座席购买列表 （还在有效期内）
                      * 
                      */
                     void SetStaffBuyList(const std::vector<StaffBuyInfo>& _staffBuyList);
@@ -193,13 +193,13 @@ namespace TencentCloud
                     bool m_nameHasBeenSet;
 
                     /**
-                     * 坐席购买数（还在有效期内）
+                     * 座席购买数（还在有效期内）
                      */
                     int64_t m_staffBuyNum;
                     bool m_staffBuyNumHasBeenSet;
 
                     /**
-                     * 坐席购买列表 （还在有效期内）
+                     * 座席购买列表 （还在有效期内）
                      */
                     std::vector<StaffBuyInfo> m_staffBuyList;
                     bool m_staffBuyListHasBeenSet;

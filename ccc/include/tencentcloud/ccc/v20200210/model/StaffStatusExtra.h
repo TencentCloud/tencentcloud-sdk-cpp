@@ -35,7 +35,7 @@ namespace TencentCloud
             namespace Model
             {
                 /**
-                * 坐席状态补充信息
+                * 座席状态补充信息
                 */
                 class StaffStatusExtra : public AbstractModel
                 {

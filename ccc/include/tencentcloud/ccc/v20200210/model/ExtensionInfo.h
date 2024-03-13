@@ -236,15 +236,15 @@ namespace TencentCloud
                     bool RegisterHasBeenSet() const;
 
                     /**
-                     * 获取绑定坐席邮箱
-                     * @return Relation 绑定坐席邮箱
+                     * 获取绑定座席邮箱
+                     * @return Relation 绑定座席邮箱
                      * 
                      */
                     std::string GetRelation() const;
 
                     /**
-                     * 设置绑定坐席邮箱
-                     * @param _relation 绑定坐席邮箱
+                     * 设置绑定座席邮箱
+                     * @param _relation 绑定座席邮箱
                      * 
                      */
                     void SetRelation(const std::string& _relation);
@@ -257,15 +257,15 @@ namespace TencentCloud
                     bool RelationHasBeenSet() const;
 
                     /**
-                     * 获取绑定坐席名称
-                     * @return RelationName 绑定坐席名称
+                     * 获取绑定座席名称
+                     * @return RelationName 绑定座席名称
                      * 
                      */
                     std::string GetRelationName() const;
 
                     /**
-                     * 设置绑定坐席名称
-                     * @param _relationName 绑定坐席名称
+                     * 设置绑定座席名称
+                     * @param _relationName 绑定座席名称
                      * 
                      */
                     void SetRelationName(const std::string& _relationName);
@@ -334,13 +334,13 @@ namespace TencentCloud
                     bool m_registerHasBeenSet;
 
                     /**
-                     * 绑定坐席邮箱
+                     * 绑定座席邮箱
                      */
                     std::string m_relation;
                     bool m_relationHasBeenSet;
 
                     /**
-                     * 绑定坐席名称
+                     * 绑定座席名称
                      */
                     std::string m_relationName;
                     bool m_relationNameHasBeenSet;

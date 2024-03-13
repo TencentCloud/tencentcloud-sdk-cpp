@@ -30,7 +30,8 @@ InstanceLifeCycleOpsDto::InstanceLifeCycleOpsDto() :
     m_runnerStateHasBeenSet(false),
     m_errorDescHasBeenSet(false),
     m_errorCodeLevelHasBeenSet(false),
-    m_instanceLogListOpsDtoHasBeenSet(false)
+    m_instanceLogListOpsDtoHasBeenSet(false),
+    m_instanceStateHasBeenSet(false)
 {
 }
 
@@ -156,6 +157,16 @@ CoreInternalOutcome InstanceLifeCycleOpsDto::Deserialize(const rapidjson::Value 
         m_instanceLogListOpsDtoHasBeenSet = true;
     }
 
+    if (value.HasMember("InstanceState") && !value["InstanceState"].IsNull())
+    {
+        if (!value["InstanceState"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `InstanceLifeCycleOpsDto.InstanceState` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_instanceState = string(value["InstanceState"].GetString());
+        m_instanceStateHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -249,6 +260,14 @@ void InstanceLifeCycleOpsDto::ToJsonObject(rapidjson::Value &value, rapidjson::D
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
         m_instanceLogListOpsDto.ToJsonObject(value[key.c_str()], allocator);
+    }
+
+    if (m_instanceStateHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "InstanceState";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_instanceState.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -412,5 +431,21 @@ void InstanceLifeCycleOpsDto::SetInstanceLogListOpsDto(const InstanceLogInfo& _i
 bool InstanceLifeCycleOpsDto::InstanceLogListOpsDtoHasBeenSet() const
 {
     return m_instanceLogListOpsDtoHasBeenSet;
+}
+
+string InstanceLifeCycleOpsDto::GetInstanceState() const
+{
+    return m_instanceState;
+}
+
+void InstanceLifeCycleOpsDto::SetInstanceState(const string& _instanceState)
+{
+    m_instanceState = _instanceState;
+    m_instanceStateHasBeenSet = true;
+}
+
+bool InstanceLifeCycleOpsDto::InstanceStateHasBeenSet() const
+{
+    return m_instanceStateHasBeenSet;
 }
 

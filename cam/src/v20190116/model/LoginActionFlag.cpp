@@ -26,7 +26,8 @@ LoginActionFlag::LoginActionFlag() :
     m_stokenHasBeenSet(false),
     m_wechatHasBeenSet(false),
     m_customHasBeenSet(false),
-    m_mailHasBeenSet(false)
+    m_mailHasBeenSet(false),
+    m_u2FTokenHasBeenSet(false)
 {
 }
 
@@ -95,6 +96,16 @@ CoreInternalOutcome LoginActionFlag::Deserialize(const rapidjson::Value &value)
         m_mailHasBeenSet = true;
     }
 
+    if (value.HasMember("U2FToken") && !value["U2FToken"].IsNull())
+    {
+        if (!value["U2FToken"].IsUint64())
+        {
+            return CoreInternalOutcome(Core::Error("response `LoginActionFlag.U2FToken` IsUint64=false incorrectly").SetRequestId(requestId));
+        }
+        m_u2FToken = value["U2FToken"].GetUint64();
+        m_u2FTokenHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -148,6 +159,14 @@ void LoginActionFlag::ToJsonObject(rapidjson::Value &value, rapidjson::Document:
         string key = "Mail";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_mail, allocator);
+    }
+
+    if (m_u2FTokenHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "U2FToken";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_u2FToken, allocator);
     }
 
 }
@@ -247,5 +266,21 @@ void LoginActionFlag::SetMail(const uint64_t& _mail)
 bool LoginActionFlag::MailHasBeenSet() const
 {
     return m_mailHasBeenSet;
+}
+
+uint64_t LoginActionFlag::GetU2FToken() const
+{
+    return m_u2FToken;
+}
+
+void LoginActionFlag::SetU2FToken(const uint64_t& _u2FToken)
+{
+    m_u2FToken = _u2FToken;
+    m_u2FTokenHasBeenSet = true;
+}
+
+bool LoginActionFlag::U2FTokenHasBeenSet() const
+{
+    return m_u2FTokenHasBeenSet;
 }
 

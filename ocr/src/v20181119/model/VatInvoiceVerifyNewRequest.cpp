@@ -31,7 +31,8 @@ VatInvoiceVerifyNewRequest::VatInvoiceVerifyNewRequest() :
     m_amountHasBeenSet(false),
     m_regionCodeHasBeenSet(false),
     m_sellerTaxCodeHasBeenSet(false),
-    m_enableCommonElectronicHasBeenSet(false)
+    m_enableCommonElectronicHasBeenSet(false),
+    m_enableTodayInvoiceHasBeenSet(false)
 {
 }
 
@@ -112,6 +113,14 @@ string VatInvoiceVerifyNewRequest::ToJsonString() const
         string key = "EnableCommonElectronic";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_enableCommonElectronic, allocator);
+    }
+
+    if (m_enableTodayInvoiceHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "EnableTodayInvoice";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_enableTodayInvoice, allocator);
     }
 
 
@@ -264,6 +273,22 @@ void VatInvoiceVerifyNewRequest::SetEnableCommonElectronic(const bool& _enableCo
 bool VatInvoiceVerifyNewRequest::EnableCommonElectronicHasBeenSet() const
 {
     return m_enableCommonElectronicHasBeenSet;
+}
+
+bool VatInvoiceVerifyNewRequest::GetEnableTodayInvoice() const
+{
+    return m_enableTodayInvoice;
+}
+
+void VatInvoiceVerifyNewRequest::SetEnableTodayInvoice(const bool& _enableTodayInvoice)
+{
+    m_enableTodayInvoice = _enableTodayInvoice;
+    m_enableTodayInvoiceHasBeenSet = true;
+}
+
+bool VatInvoiceVerifyNewRequest::EnableTodayInvoiceHasBeenSet() const
+{
+    return m_enableTodayInvoiceHasBeenSet;
 }
 
 

@@ -40,6 +40,7 @@ CreateConfigExtraRequest::CreateConfigExtraRequest() :
     m_userDefineRuleHasBeenSet(false),
     m_groupIdHasBeenSet(false),
     m_groupIdsHasBeenSet(false),
+    m_collectInfosHasBeenSet(false),
     m_advancedConfigHasBeenSet(false)
 {
 }
@@ -200,6 +201,21 @@ string CreateConfigExtraRequest::ToJsonString() const
         for (auto itr = m_groupIds.begin(); itr != m_groupIds.end(); ++itr)
         {
             d[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
+        }
+    }
+
+    if (m_collectInfosHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "CollectInfos";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_collectInfos.begin(); itr != m_collectInfos.end(); ++itr, ++i)
+        {
+            d[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(d[key.c_str()][i], allocator);
         }
     }
 
@@ -489,6 +505,22 @@ void CreateConfigExtraRequest::SetGroupIds(const vector<string>& _groupIds)
 bool CreateConfigExtraRequest::GroupIdsHasBeenSet() const
 {
     return m_groupIdsHasBeenSet;
+}
+
+vector<CollectInfo> CreateConfigExtraRequest::GetCollectInfos() const
+{
+    return m_collectInfos;
+}
+
+void CreateConfigExtraRequest::SetCollectInfos(const vector<CollectInfo>& _collectInfos)
+{
+    m_collectInfos = _collectInfos;
+    m_collectInfosHasBeenSet = true;
+}
+
+bool CreateConfigExtraRequest::CollectInfosHasBeenSet() const
+{
+    return m_collectInfosHasBeenSet;
 }
 
 string CreateConfigExtraRequest::GetAdvancedConfig() const

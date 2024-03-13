@@ -1545,6 +1545,49 @@ MongodbClient::SetAccountUserPrivilegeOutcomeCallable MongodbClient::SetAccountU
     return task->get_future();
 }
 
+MongodbClient::SetInstanceMaintenanceOutcome MongodbClient::SetInstanceMaintenance(const SetInstanceMaintenanceRequest &request)
+{
+    auto outcome = MakeRequest(request, "SetInstanceMaintenance");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        SetInstanceMaintenanceResponse rsp = SetInstanceMaintenanceResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return SetInstanceMaintenanceOutcome(rsp);
+        else
+            return SetInstanceMaintenanceOutcome(o.GetError());
+    }
+    else
+    {
+        return SetInstanceMaintenanceOutcome(outcome.GetError());
+    }
+}
+
+void MongodbClient::SetInstanceMaintenanceAsync(const SetInstanceMaintenanceRequest& request, const SetInstanceMaintenanceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->SetInstanceMaintenance(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+MongodbClient::SetInstanceMaintenanceOutcomeCallable MongodbClient::SetInstanceMaintenanceCallable(const SetInstanceMaintenanceRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<SetInstanceMaintenanceOutcome()>>(
+        [this, request]()
+        {
+            return this->SetInstanceMaintenance(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 MongodbClient::TerminateDBInstancesOutcome MongodbClient::TerminateDBInstances(const TerminateDBInstancesRequest &request)
 {
     auto outcome = MakeRequest(request, "TerminateDBInstances");
