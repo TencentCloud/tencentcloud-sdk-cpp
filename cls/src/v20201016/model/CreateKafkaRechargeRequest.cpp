@@ -28,12 +28,12 @@ CreateKafkaRechargeRequest::CreateKafkaRechargeRequest() :
     m_kafkaTypeHasBeenSet(false),
     m_userKafkaTopicsHasBeenSet(false),
     m_offsetHasBeenSet(false),
+    m_logRechargeRuleHasBeenSet(false),
     m_kafkaInstanceHasBeenSet(false),
     m_serverAddrHasBeenSet(false),
     m_isEncryptionAddrHasBeenSet(false),
     m_protocolHasBeenSet(false),
-    m_consumerGroupNameHasBeenSet(false),
-    m_logRechargeRuleHasBeenSet(false)
+    m_consumerGroupNameHasBeenSet(false)
 {
 }
 
@@ -84,6 +84,15 @@ string CreateKafkaRechargeRequest::ToJsonString() const
         d.AddMember(iKey, m_offset, allocator);
     }
 
+    if (m_logRechargeRuleHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "LogRechargeRule";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_logRechargeRule.ToJsonObject(d[key.c_str()], allocator);
+    }
+
     if (m_kafkaInstanceHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
@@ -123,15 +132,6 @@ string CreateKafkaRechargeRequest::ToJsonString() const
         string key = "ConsumerGroupName";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_consumerGroupName.c_str(), allocator).Move(), allocator);
-    }
-
-    if (m_logRechargeRuleHasBeenSet)
-    {
-        rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "LogRechargeRule";
-        iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
-        m_logRechargeRule.ToJsonObject(d[key.c_str()], allocator);
     }
 
 
@@ -222,6 +222,22 @@ bool CreateKafkaRechargeRequest::OffsetHasBeenSet() const
     return m_offsetHasBeenSet;
 }
 
+LogRechargeRuleInfo CreateKafkaRechargeRequest::GetLogRechargeRule() const
+{
+    return m_logRechargeRule;
+}
+
+void CreateKafkaRechargeRequest::SetLogRechargeRule(const LogRechargeRuleInfo& _logRechargeRule)
+{
+    m_logRechargeRule = _logRechargeRule;
+    m_logRechargeRuleHasBeenSet = true;
+}
+
+bool CreateKafkaRechargeRequest::LogRechargeRuleHasBeenSet() const
+{
+    return m_logRechargeRuleHasBeenSet;
+}
+
 string CreateKafkaRechargeRequest::GetKafkaInstance() const
 {
     return m_kafkaInstance;
@@ -300,22 +316,6 @@ void CreateKafkaRechargeRequest::SetConsumerGroupName(const string& _consumerGro
 bool CreateKafkaRechargeRequest::ConsumerGroupNameHasBeenSet() const
 {
     return m_consumerGroupNameHasBeenSet;
-}
-
-LogRechargeRuleInfo CreateKafkaRechargeRequest::GetLogRechargeRule() const
-{
-    return m_logRechargeRule;
-}
-
-void CreateKafkaRechargeRequest::SetLogRechargeRule(const LogRechargeRuleInfo& _logRechargeRule)
-{
-    m_logRechargeRule = _logRechargeRule;
-    m_logRechargeRuleHasBeenSet = true;
-}
-
-bool CreateKafkaRechargeRequest::LogRechargeRuleHasBeenSet() const
-{
-    return m_logRechargeRuleHasBeenSet;
 }
 
 

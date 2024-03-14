@@ -42,7 +42,9 @@ RoomItem::RoomItem() :
     m_liveTypeHasBeenSet(false),
     m_recordLiveUrlHasBeenSet(false),
     m_enableAutoStartHasBeenSet(false),
-    m_recordBackgroundHasBeenSet(false)
+    m_recordBackgroundHasBeenSet(false),
+    m_recordSceneHasBeenSet(false),
+    m_recordLangHasBeenSet(false)
 {
 }
 
@@ -271,6 +273,26 @@ CoreInternalOutcome RoomItem::Deserialize(const rapidjson::Value &value)
         m_recordBackgroundHasBeenSet = true;
     }
 
+    if (value.HasMember("RecordScene") && !value["RecordScene"].IsNull())
+    {
+        if (!value["RecordScene"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `RoomItem.RecordScene` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_recordScene = string(value["RecordScene"].GetString());
+        m_recordSceneHasBeenSet = true;
+    }
+
+    if (value.HasMember("RecordLang") && !value["RecordLang"].IsNull())
+    {
+        if (!value["RecordLang"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `RoomItem.RecordLang` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_recordLang = string(value["RecordLang"].GetString());
+        m_recordLangHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -452,6 +474,22 @@ void RoomItem::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Alloca
         string key = "RecordBackground";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_recordBackground.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_recordSceneHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "RecordScene";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_recordScene.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_recordLangHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "RecordLang";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_recordLang.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -807,5 +845,37 @@ void RoomItem::SetRecordBackground(const string& _recordBackground)
 bool RoomItem::RecordBackgroundHasBeenSet() const
 {
     return m_recordBackgroundHasBeenSet;
+}
+
+string RoomItem::GetRecordScene() const
+{
+    return m_recordScene;
+}
+
+void RoomItem::SetRecordScene(const string& _recordScene)
+{
+    m_recordScene = _recordScene;
+    m_recordSceneHasBeenSet = true;
+}
+
+bool RoomItem::RecordSceneHasBeenSet() const
+{
+    return m_recordSceneHasBeenSet;
+}
+
+string RoomItem::GetRecordLang() const
+{
+    return m_recordLang;
+}
+
+void RoomItem::SetRecordLang(const string& _recordLang)
+{
+    m_recordLang = _recordLang;
+    m_recordLangHasBeenSet = true;
+}
+
+bool RoomItem::RecordLangHasBeenSet() const
+{
+    return m_recordLangHasBeenSet;
 }
 

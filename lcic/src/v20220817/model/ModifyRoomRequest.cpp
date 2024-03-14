@@ -46,7 +46,9 @@ ModifyRoomRequest::ModifyRoomRequest() :
     m_endDelayTimeHasBeenSet(false),
     m_liveTypeHasBeenSet(false),
     m_recordLiveUrlHasBeenSet(false),
-    m_enableAutoStartHasBeenSet(false)
+    m_enableAutoStartHasBeenSet(false),
+    m_recordSceneHasBeenSet(false),
+    m_recordLangHasBeenSet(false)
 {
 }
 
@@ -252,6 +254,22 @@ string ModifyRoomRequest::ToJsonString() const
         string key = "EnableAutoStart";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_enableAutoStart, allocator);
+    }
+
+    if (m_recordSceneHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "RecordScene";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_recordScene.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_recordLangHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "RecordLang";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_recordLang.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -644,6 +662,38 @@ void ModifyRoomRequest::SetEnableAutoStart(const uint64_t& _enableAutoStart)
 bool ModifyRoomRequest::EnableAutoStartHasBeenSet() const
 {
     return m_enableAutoStartHasBeenSet;
+}
+
+string ModifyRoomRequest::GetRecordScene() const
+{
+    return m_recordScene;
+}
+
+void ModifyRoomRequest::SetRecordScene(const string& _recordScene)
+{
+    m_recordScene = _recordScene;
+    m_recordSceneHasBeenSet = true;
+}
+
+bool ModifyRoomRequest::RecordSceneHasBeenSet() const
+{
+    return m_recordSceneHasBeenSet;
+}
+
+string ModifyRoomRequest::GetRecordLang() const
+{
+    return m_recordLang;
+}
+
+void ModifyRoomRequest::SetRecordLang(const string& _recordLang)
+{
+    m_recordLang = _recordLang;
+    m_recordLangHasBeenSet = true;
+}
+
+bool ModifyRoomRequest::RecordLangHasBeenSet() const
+{
+    return m_recordLangHasBeenSet;
 }
 
 

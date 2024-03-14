@@ -24,7 +24,8 @@ StrategyConfig::StrategyConfig() :
     m_rollingRestartSwitchHasBeenSet(false),
     m_batchSizeHasBeenSet(false),
     m_timeWaitHasBeenSet(false),
-    m_dealOnFailHasBeenSet(false)
+    m_dealOnFailHasBeenSet(false),
+    m_argsHasBeenSet(false)
 {
 }
 
@@ -73,6 +74,26 @@ CoreInternalOutcome StrategyConfig::Deserialize(const rapidjson::Value &value)
         m_dealOnFailHasBeenSet = true;
     }
 
+    if (value.HasMember("Args") && !value["Args"].IsNull())
+    {
+        if (!value["Args"].IsArray())
+            return CoreInternalOutcome(Core::Error("response `StrategyConfig.Args` is not array type"));
+
+        const rapidjson::Value &tmpValue = value["Args"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            Arg item;
+            CoreInternalOutcome outcome = item.Deserialize(*itr);
+            if (!outcome.IsSuccess())
+            {
+                outcome.GetError().SetRequestId(requestId);
+                return outcome;
+            }
+            m_args.push_back(item);
+        }
+        m_argsHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -110,6 +131,21 @@ void StrategyConfig::ToJsonObject(rapidjson::Value &value, rapidjson::Document::
         string key = "DealOnFail";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_dealOnFail, allocator);
+    }
+
+    if (m_argsHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Args";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_args.begin(); itr != m_args.end(); ++itr, ++i)
+        {
+            value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(value[key.c_str()][i], allocator);
+        }
     }
 
 }
@@ -177,5 +213,21 @@ void StrategyConfig::SetDealOnFail(const int64_t& _dealOnFail)
 bool StrategyConfig::DealOnFailHasBeenSet() const
 {
     return m_dealOnFailHasBeenSet;
+}
+
+vector<Arg> StrategyConfig::GetArgs() const
+{
+    return m_args;
+}
+
+void StrategyConfig::SetArgs(const vector<Arg>& _args)
+{
+    m_args = _args;
+    m_argsHasBeenSet = true;
+}
+
+bool StrategyConfig::ArgsHasBeenSet() const
+{
+    return m_argsHasBeenSet;
 }
 

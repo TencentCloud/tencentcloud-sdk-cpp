@@ -67,6 +67,27 @@ CLOUD_SSD-云服务器SSD云盘,CLOUD_HSSD-云服务器加强型SSD云盘，CLOU
                      */
                     bool MachineTypeHasBeenSet() const;
 
+                    /**
+                     * 获取购买实例版本号
+                     * @return DBVersion 购买实例版本号
+                     * 
+                     */
+                    std::string GetDBVersion() const;
+
+                    /**
+                     * 设置购买实例版本号
+                     * @param _dBVersion 购买实例版本号
+                     * 
+                     */
+                    void SetDBVersion(const std::string& _dBVersion);
+
+                    /**
+                     * 判断参数 DBVersion 是否已赋值
+                     * @return DBVersion 是否已赋值
+                     * 
+                     */
+                    bool DBVersionHasBeenSet() const;
+
                 private:
 
                     /**
@@ -75,6 +96,12 @@ CLOUD_SSD-云服务器SSD云盘,CLOUD_HSSD-云服务器加强型SSD云盘，CLOU
                      */
                     std::string m_machineType;
                     bool m_machineTypeHasBeenSet;
+
+                    /**
+                     * 购买实例版本号
+                     */
+                    std::string m_dBVersion;
+                    bool m_dBVersionHasBeenSet;
 
                 };
             }

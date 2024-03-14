@@ -2964,6 +2964,49 @@ EssClient::ModifyIntegrationRoleOutcomeCallable EssClient::ModifyIntegrationRole
     return task->get_future();
 }
 
+EssClient::RenewAutoSignLicenseOutcome EssClient::RenewAutoSignLicense(const RenewAutoSignLicenseRequest &request)
+{
+    auto outcome = MakeRequest(request, "RenewAutoSignLicense");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        RenewAutoSignLicenseResponse rsp = RenewAutoSignLicenseResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return RenewAutoSignLicenseOutcome(rsp);
+        else
+            return RenewAutoSignLicenseOutcome(o.GetError());
+    }
+    else
+    {
+        return RenewAutoSignLicenseOutcome(outcome.GetError());
+    }
+}
+
+void EssClient::RenewAutoSignLicenseAsync(const RenewAutoSignLicenseRequest& request, const RenewAutoSignLicenseAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->RenewAutoSignLicense(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+EssClient::RenewAutoSignLicenseOutcomeCallable EssClient::RenewAutoSignLicenseCallable(const RenewAutoSignLicenseRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<RenewAutoSignLicenseOutcome()>>(
+        [this, request]()
+        {
+            return this->RenewAutoSignLicense(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 EssClient::StartFlowOutcome EssClient::StartFlow(const StartFlowRequest &request)
 {
     auto outcome = MakeRequest(request, "StartFlow");

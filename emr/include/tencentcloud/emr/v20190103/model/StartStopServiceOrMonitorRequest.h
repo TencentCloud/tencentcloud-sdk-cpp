@@ -23,6 +23,7 @@
 #include <tencentcloud/core/AbstractModel.h>
 #include <tencentcloud/emr/v20190103/model/OpScope.h>
 #include <tencentcloud/emr/v20190103/model/StrategyConfig.h>
+#include <tencentcloud/emr/v20190103/model/StopParams.h>
 
 
 namespace TencentCloud
@@ -148,6 +149,27 @@ namespace TencentCloud
                      */
                     bool StrategyConfigHasBeenSet() const;
 
+                    /**
+                     * 获取暂停服务时用的参数
+                     * @return StopParams 暂停服务时用的参数
+                     * 
+                     */
+                    StopParams GetStopParams() const;
+
+                    /**
+                     * 设置暂停服务时用的参数
+                     * @param _stopParams 暂停服务时用的参数
+                     * 
+                     */
+                    void SetStopParams(const StopParams& _stopParams);
+
+                    /**
+                     * 判断参数 StopParams 是否已赋值
+                     * @return StopParams 是否已赋值
+                     * 
+                     */
+                    bool StopParamsHasBeenSet() const;
+
                 private:
 
                     /**
@@ -178,6 +200,12 @@ namespace TencentCloud
                      */
                     StrategyConfig m_strategyConfig;
                     bool m_strategyConfigHasBeenSet;
+
+                    /**
+                     * 暂停服务时用的参数
+                     */
+                    StopParams m_stopParams;
+                    bool m_stopParamsHasBeenSet;
 
                 };
             }

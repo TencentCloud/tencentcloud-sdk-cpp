@@ -107,6 +107,8 @@
 #include <tencentcloud/essbasic/v20210526/model/ChannelGetTaskResultApiResponse.h>
 #include <tencentcloud/essbasic/v20210526/model/ChannelModifyRoleRequest.h>
 #include <tencentcloud/essbasic/v20210526/model/ChannelModifyRoleResponse.h>
+#include <tencentcloud/essbasic/v20210526/model/ChannelRenewAutoSignLicenseRequest.h>
+#include <tencentcloud/essbasic/v20210526/model/ChannelRenewAutoSignLicenseResponse.h>
 #include <tencentcloud/essbasic/v20210526/model/ChannelUpdateSealStatusRequest.h>
 #include <tencentcloud/essbasic/v20210526/model/ChannelUpdateSealStatusResponse.h>
 #include <tencentcloud/essbasic/v20210526/model/ChannelVerifyPdfRequest.h>
@@ -305,6 +307,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::ChannelModifyRoleResponse> ChannelModifyRoleOutcome;
                 typedef std::future<ChannelModifyRoleOutcome> ChannelModifyRoleOutcomeCallable;
                 typedef std::function<void(const EssbasicClient*, const Model::ChannelModifyRoleRequest&, ChannelModifyRoleOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ChannelModifyRoleAsyncHandler;
+                typedef Outcome<Core::Error, Model::ChannelRenewAutoSignLicenseResponse> ChannelRenewAutoSignLicenseOutcome;
+                typedef std::future<ChannelRenewAutoSignLicenseOutcome> ChannelRenewAutoSignLicenseOutcomeCallable;
+                typedef std::function<void(const EssbasicClient*, const Model::ChannelRenewAutoSignLicenseRequest&, ChannelRenewAutoSignLicenseOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ChannelRenewAutoSignLicenseAsyncHandler;
                 typedef Outcome<Core::Error, Model::ChannelUpdateSealStatusResponse> ChannelUpdateSealStatusOutcome;
                 typedef std::future<ChannelUpdateSealStatusOutcome> ChannelUpdateSealStatusOutcomeCallable;
                 typedef std::function<void(const EssbasicClient*, const Model::ChannelUpdateSealStatusRequest&, ChannelUpdateSealStatusOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ChannelUpdateSealStatusAsyncHandler;
@@ -1075,7 +1080,11 @@ namespace TencentCloud
                 ChannelDeleteSealPoliciesOutcomeCallable ChannelDeleteSealPoliciesCallable(const Model::ChannelDeleteSealPoliciesRequest& request);
 
                 /**
-                 *通过此接口（ChannelDescribeBillUsageDetail）查询该第三方平台子客企业的套餐消耗详情。
+                 *通过此接口（ChannelDescribeBillUsageDetail）查询该第三方平台子客企业的套餐消耗详情。可以支持单个子客和整个应用下所有子客的查询。
+<ul>
+<li>对于单个子客企业的查询，通过指定子客的唯一标识(Agent.ProxyOrganizationOpenId)来查询该子客消耗详情</li>
+<li>对于整个应用下所有企业的查询，不需要指定子客的唯一标识，只需要传入渠道应用标识(Agent.AppId)直接查询整个应用下所有子客企业消耗详情</li>
+</ul>
                  * @param req ChannelDescribeBillUsageDetailRequest
                  * @return ChannelDescribeBillUsageDetailOutcome
                  */
@@ -1218,6 +1227,17 @@ namespace TencentCloud
                 ChannelModifyRoleOutcome ChannelModifyRole(const Model::ChannelModifyRoleRequest &request);
                 void ChannelModifyRoleAsync(const Model::ChannelModifyRoleRequest& request, const ChannelModifyRoleAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 ChannelModifyRoleOutcomeCallable ChannelModifyRoleCallable(const Model::ChannelModifyRoleRequest& request);
+
+                /**
+                 *给医疗个人自动签许可续期。续期成功后，可对医疗自动签许可追加一年有效期，只可续期一次。
+
+注意: `处方单等特殊场景专用，此接口为白名单功能，使用前请联系对接的客户经理沟通。`
+                 * @param req ChannelRenewAutoSignLicenseRequest
+                 * @return ChannelRenewAutoSignLicenseOutcome
+                 */
+                ChannelRenewAutoSignLicenseOutcome ChannelRenewAutoSignLicense(const Model::ChannelRenewAutoSignLicenseRequest &request);
+                void ChannelRenewAutoSignLicenseAsync(const Model::ChannelRenewAutoSignLicenseRequest& request, const ChannelRenewAutoSignLicenseAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                ChannelRenewAutoSignLicenseOutcomeCallable ChannelRenewAutoSignLicenseCallable(const Model::ChannelRenewAutoSignLicenseRequest& request);
 
                 /**
                  *此接口（ChannelUpdateSealStatus）用于第三方应用平台为子客企业更新印章状态。

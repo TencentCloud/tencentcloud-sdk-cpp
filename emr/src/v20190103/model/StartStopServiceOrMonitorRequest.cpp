@@ -26,7 +26,8 @@ StartStopServiceOrMonitorRequest::StartStopServiceOrMonitorRequest() :
     m_instanceIdHasBeenSet(false),
     m_opTypeHasBeenSet(false),
     m_opScopeHasBeenSet(false),
-    m_strategyConfigHasBeenSet(false)
+    m_strategyConfigHasBeenSet(false),
+    m_stopParamsHasBeenSet(false)
 {
 }
 
@@ -69,6 +70,15 @@ string StartStopServiceOrMonitorRequest::ToJsonString() const
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
         m_strategyConfig.ToJsonObject(d[key.c_str()], allocator);
+    }
+
+    if (m_stopParamsHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "StopParams";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_stopParams.ToJsonObject(d[key.c_str()], allocator);
     }
 
 
@@ -141,6 +151,22 @@ void StartStopServiceOrMonitorRequest::SetStrategyConfig(const StrategyConfig& _
 bool StartStopServiceOrMonitorRequest::StrategyConfigHasBeenSet() const
 {
     return m_strategyConfigHasBeenSet;
+}
+
+StopParams StartStopServiceOrMonitorRequest::GetStopParams() const
+{
+    return m_stopParams;
+}
+
+void StartStopServiceOrMonitorRequest::SetStopParams(const StopParams& _stopParams)
+{
+    m_stopParams = _stopParams;
+    m_stopParamsHasBeenSet = true;
+}
+
+bool StartStopServiceOrMonitorRequest::StopParamsHasBeenSet() const
+{
+    return m_stopParamsHasBeenSet;
 }
 
 

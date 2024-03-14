@@ -31,7 +31,8 @@ UpgradeInstanceRequest::UpgradeInstanceRequest() :
     m_autoVoucherHasBeenSet(false),
     m_dbTypeHasBeenSet(false),
     m_dealModeHasBeenSet(false),
-    m_upgradeModeHasBeenSet(false)
+    m_upgradeModeHasBeenSet(false),
+    m_upgradeProxyHasBeenSet(false)
 {
 }
 
@@ -112,6 +113,15 @@ string UpgradeInstanceRequest::ToJsonString() const
         string key = "UpgradeMode";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_upgradeMode.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_upgradeProxyHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "UpgradeProxy";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_upgradeProxy.ToJsonObject(d[key.c_str()], allocator);
     }
 
 
@@ -264,6 +274,22 @@ void UpgradeInstanceRequest::SetUpgradeMode(const string& _upgradeMode)
 bool UpgradeInstanceRequest::UpgradeModeHasBeenSet() const
 {
     return m_upgradeModeHasBeenSet;
+}
+
+UpgradeProxy UpgradeInstanceRequest::GetUpgradeProxy() const
+{
+    return m_upgradeProxy;
+}
+
+void UpgradeInstanceRequest::SetUpgradeProxy(const UpgradeProxy& _upgradeProxy)
+{
+    m_upgradeProxy = _upgradeProxy;
+    m_upgradeProxyHasBeenSet = true;
+}
+
+bool UpgradeInstanceRequest::UpgradeProxyHasBeenSet() const
+{
+    return m_upgradeProxyHasBeenSet;
 }
 
 

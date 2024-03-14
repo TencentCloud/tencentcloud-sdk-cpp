@@ -159,6 +159,8 @@
 #include <tencentcloud/ess/v20201111/model/ModifyIntegrationDepartmentResponse.h>
 #include <tencentcloud/ess/v20201111/model/ModifyIntegrationRoleRequest.h>
 #include <tencentcloud/ess/v20201111/model/ModifyIntegrationRoleResponse.h>
+#include <tencentcloud/ess/v20201111/model/RenewAutoSignLicenseRequest.h>
+#include <tencentcloud/ess/v20201111/model/RenewAutoSignLicenseResponse.h>
 #include <tencentcloud/ess/v20201111/model/StartFlowRequest.h>
 #include <tencentcloud/ess/v20201111/model/StartFlowResponse.h>
 #include <tencentcloud/ess/v20201111/model/UnbindEmployeeUserIdWithClientOpenIdRequest.h>
@@ -387,6 +389,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::ModifyIntegrationRoleResponse> ModifyIntegrationRoleOutcome;
                 typedef std::future<ModifyIntegrationRoleOutcome> ModifyIntegrationRoleOutcomeCallable;
                 typedef std::function<void(const EssClient*, const Model::ModifyIntegrationRoleRequest&, ModifyIntegrationRoleOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyIntegrationRoleAsyncHandler;
+                typedef Outcome<Core::Error, Model::RenewAutoSignLicenseResponse> RenewAutoSignLicenseOutcome;
+                typedef std::future<RenewAutoSignLicenseOutcome> RenewAutoSignLicenseOutcomeCallable;
+                typedef std::function<void(const EssClient*, const Model::RenewAutoSignLicenseRequest&, RenewAutoSignLicenseOutcome, const std::shared_ptr<const AsyncCallerContext>&)> RenewAutoSignLicenseAsyncHandler;
                 typedef Outcome<Core::Error, Model::StartFlowResponse> StartFlowOutcome;
                 typedef std::future<StartFlowOutcome> StartFlowOutcomeCallable;
                 typedef std::function<void(const EssClient*, const Model::StartFlowRequest&, StartFlowOutcome, const std::shared_ptr<const AsyncCallerContext>&)> StartFlowAsyncHandler;
@@ -1575,6 +1580,17 @@ namespace TencentCloud
                 ModifyIntegrationRoleOutcome ModifyIntegrationRole(const Model::ModifyIntegrationRoleRequest &request);
                 void ModifyIntegrationRoleAsync(const Model::ModifyIntegrationRoleRequest& request, const ModifyIntegrationRoleAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 ModifyIntegrationRoleOutcomeCallable ModifyIntegrationRoleCallable(const Model::ModifyIntegrationRoleRequest& request);
+
+                /**
+                 *给医疗个人自动签许可续期。续期成功后，可对医疗自动签许可追加一年有效期，只可续期一次。
+
+注意: `处方单等特殊场景专用，此接口为白名单功能，使用前请联系对接的客户经理沟通。`
+                 * @param req RenewAutoSignLicenseRequest
+                 * @return RenewAutoSignLicenseOutcome
+                 */
+                RenewAutoSignLicenseOutcome RenewAutoSignLicense(const Model::RenewAutoSignLicenseRequest &request);
+                void RenewAutoSignLicenseAsync(const Model::RenewAutoSignLicenseRequest& request, const RenewAutoSignLicenseAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                RenewAutoSignLicenseOutcomeCallable RenewAutoSignLicenseCallable(const Model::RenewAutoSignLicenseRequest& request);
 
                 /**
                  *此接口用于启动流程。它是模板发起合同的最后一步。

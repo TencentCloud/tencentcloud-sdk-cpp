@@ -73,8 +73,8 @@ namespace TencentCloud
                     bool IdFoundHasBeenSet() const;
 
                     /**
-                     * 获取0~100;值越高 欺诈可能性越大
-                     * @return RiskScore 0~100;值越高 欺诈可能性越大
+                     * 获取0~100;值越高 欺诈可能性越大（注：该字段真实类型为有符号整型）
+                     * @return RiskScore 0~100;值越高 欺诈可能性越大（注：该字段真实类型为有符号整型）
                      * 
                      */
                     uint64_t GetRiskScore() const;
@@ -133,7 +133,7 @@ namespace TencentCloud
                     bool m_idFoundHasBeenSet;
 
                     /**
-                     * 0~100;值越高 欺诈可能性越大
+                     * 0~100;值越高 欺诈可能性越大（注：该字段真实类型为有符号整型）
                      */
                     uint64_t m_riskScore;
                     bool m_riskScoreHasBeenSet;

@@ -322,6 +322,56 @@ namespace TencentCloud
                     bool RiskQuotaHasBeenSet() const;
 
                     /**
+                     * 获取AI文字数量
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return AigcTextQuota AI文字数量
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    int64_t GetAigcTextQuota() const;
+
+                    /**
+                     * 设置AI文字数量
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _aigcTextQuota AI文字数量
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetAigcTextQuota(const int64_t& _aigcTextQuota);
+
+                    /**
+                     * 判断参数 AigcTextQuota 是否已赋值
+                     * @return AigcTextQuota 是否已赋值
+                     * 
+                     */
+                    bool AigcTextQuotaHasBeenSet() const;
+
+                    /**
+                     * 获取AI图片数量
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return AigcImageQuota AI图片数量
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    int64_t GetAigcImageQuota() const;
+
+                    /**
+                     * 设置AI图片数量
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _aigcImageQuota AI图片数量
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetAigcImageQuota(const int64_t& _aigcImageQuota);
+
+                    /**
+                     * 判断参数 AigcImageQuota 是否已赋值
+                     * @return AigcImageQuota 是否已赋值
+                     * 
+                     */
+                    bool AigcImageQuotaHasBeenSet() const;
+
+                    /**
                      * 获取溯源类型
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return TrackType 溯源类型
@@ -474,6 +524,20 @@ namespace TencentCloud
                      */
                     int64_t m_riskQuota;
                     bool m_riskQuotaHasBeenSet;
+
+                    /**
+                     * AI文字数量
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    int64_t m_aigcTextQuota;
+                    bool m_aigcTextQuotaHasBeenSet;
+
+                    /**
+                     * AI图片数量
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    int64_t m_aigcImageQuota;
+                    bool m_aigcImageQuotaHasBeenSet;
 
                     /**
                      * 溯源类型

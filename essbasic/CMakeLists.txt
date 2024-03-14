@@ -77,6 +77,7 @@ set(essbasic_public_header_model
   include/tencentcloud/essbasic/v20210526/model/DescribeResourceUrlsByFlowsResponse.h
   include/tencentcloud/essbasic/v20210526/model/ChannelCreateFlowGroupByFilesRequest.h
   include/tencentcloud/essbasic/v20210526/model/ChannelCreateOrganizationModifyQrCodeRequest.h
+  include/tencentcloud/essbasic/v20210526/model/ChannelRenewAutoSignLicenseResponse.h
   include/tencentcloud/essbasic/v20210526/model/ChannelCreateFlowByFilesResponse.h
   include/tencentcloud/essbasic/v20210526/model/DescribeFlowDetailInfoResponse.h
   include/tencentcloud/essbasic/v20210526/model/RecipientComponentInfo.h
@@ -150,6 +151,7 @@ set(essbasic_public_header_model
   include/tencentcloud/essbasic/v20210526/model/DescribeChannelOrganizationsRequest.h
   include/tencentcloud/essbasic/v20210526/model/ChannelCreatePreparedPersonalEsignRequest.h
   include/tencentcloud/essbasic/v20210526/model/FillError.h
+  include/tencentcloud/essbasic/v20210526/model/ChannelRenewAutoSignLicenseRequest.h
   include/tencentcloud/essbasic/v20210526/model/ChannelDescribeBillUsageDetailResponse.h
   include/tencentcloud/essbasic/v20210526/model/FlowDetailInfo.h
   include/tencentcloud/essbasic/v20210526/model/CreateFlowsByTemplatesResponse.h
@@ -424,6 +426,7 @@ set(essbasic_src
   src/v20210526/model/DescribeResourceUrlsByFlowsResponse.cpp
   src/v20210526/model/ChannelCreateFlowGroupByFilesRequest.cpp
   src/v20210526/model/ChannelCreateOrganizationModifyQrCodeRequest.cpp
+  src/v20210526/model/ChannelRenewAutoSignLicenseResponse.cpp
   src/v20210526/model/ChannelCreateFlowByFilesResponse.cpp
   src/v20210526/model/DescribeFlowDetailInfoResponse.cpp
   src/v20210526/model/RecipientComponentInfo.cpp
@@ -497,6 +500,7 @@ set(essbasic_src
   src/v20210526/model/DescribeChannelOrganizationsRequest.cpp
   src/v20210526/model/ChannelCreatePreparedPersonalEsignRequest.cpp
   src/v20210526/model/FillError.cpp
+  src/v20210526/model/ChannelRenewAutoSignLicenseRequest.cpp
   src/v20210526/model/ChannelDescribeBillUsageDetailResponse.cpp
   src/v20210526/model/FlowDetailInfo.cpp
   src/v20210526/model/CreateFlowsByTemplatesResponse.cpp

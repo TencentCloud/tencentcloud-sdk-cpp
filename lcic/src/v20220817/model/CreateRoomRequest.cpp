@@ -49,7 +49,9 @@ CreateRoomRequest::CreateRoomRequest() :
     m_liveTypeHasBeenSet(false),
     m_recordLiveUrlHasBeenSet(false),
     m_enableAutoStartHasBeenSet(false),
-    m_recordBackgroundHasBeenSet(false)
+    m_recordBackgroundHasBeenSet(false),
+    m_recordSceneHasBeenSet(false),
+    m_recordLangHasBeenSet(false)
 {
 }
 
@@ -279,6 +281,22 @@ string CreateRoomRequest::ToJsonString() const
         string key = "RecordBackground";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_recordBackground.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_recordSceneHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "RecordScene";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_recordScene.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_recordLangHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "RecordLang";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_recordLang.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -719,6 +737,38 @@ void CreateRoomRequest::SetRecordBackground(const string& _recordBackground)
 bool CreateRoomRequest::RecordBackgroundHasBeenSet() const
 {
     return m_recordBackgroundHasBeenSet;
+}
+
+string CreateRoomRequest::GetRecordScene() const
+{
+    return m_recordScene;
+}
+
+void CreateRoomRequest::SetRecordScene(const string& _recordScene)
+{
+    m_recordScene = _recordScene;
+    m_recordSceneHasBeenSet = true;
+}
+
+bool CreateRoomRequest::RecordSceneHasBeenSet() const
+{
+    return m_recordSceneHasBeenSet;
+}
+
+string CreateRoomRequest::GetRecordLang() const
+{
+    return m_recordLang;
+}
+
+void CreateRoomRequest::SetRecordLang(const string& _recordLang)
+{
+    m_recordLang = _recordLang;
+    m_recordLangHasBeenSet = true;
+}
+
+bool CreateRoomRequest::RecordLangHasBeenSet() const
+{
+    return m_recordLangHasBeenSet;
 }
 
 

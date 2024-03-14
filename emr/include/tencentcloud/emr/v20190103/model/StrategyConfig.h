@@ -24,6 +24,7 @@
 #include <tencentcloud/core/utils/rapidjson/writer.h>
 #include <tencentcloud/core/utils/rapidjson/stringbuffer.h>
 #include <tencentcloud/core/AbstractModel.h>
+#include <tencentcloud/emr/v20190103/model/Arg.h>
 
 
 namespace TencentCloud
@@ -150,6 +151,31 @@ namespace TencentCloud
                      */
                     bool DealOnFailHasBeenSet() const;
 
+                    /**
+                     * 获取指令需要指定的参数
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return Args 指令需要指定的参数
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::vector<Arg> GetArgs() const;
+
+                    /**
+                     * 设置指令需要指定的参数
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _args 指令需要指定的参数
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetArgs(const std::vector<Arg>& _args);
+
+                    /**
+                     * 判断参数 Args 是否已赋值
+                     * @return Args 是否已赋值
+                     * 
+                     */
+                    bool ArgsHasBeenSet() const;
+
                 private:
 
                     /**
@@ -180,6 +206,13 @@ namespace TencentCloud
                      */
                     int64_t m_dealOnFail;
                     bool m_dealOnFailHasBeenSet;
+
+                    /**
+                     * 指令需要指定的参数
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::vector<Arg> m_args;
+                    bool m_argsHasBeenSet;
 
                 };
             }

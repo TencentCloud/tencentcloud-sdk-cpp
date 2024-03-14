@@ -43,15 +43,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取需要查询的 IP 列表
-                     * @return Ips 需要查询的 IP 列表
+                     * 获取需要查询的 IP 列表，单次可支持1-20个IP查询。
+                     * @return Ips 需要查询的 IP 列表，单次可支持1-20个IP查询。
                      * 
                      */
                     std::vector<std::string> GetIps() const;
 
                     /**
-                     * 设置需要查询的 IP 列表
-                     * @param _ips 需要查询的 IP 列表
+                     * 设置需要查询的 IP 列表，单次可支持1-20个IP查询。
+                     * @param _ips 需要查询的 IP 列表，单次可支持1-20个IP查询。
                      * 
                      */
                     void SetIps(const std::vector<std::string>& _ips);
@@ -66,7 +66,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 需要查询的 IP 列表
+                     * 需要查询的 IP 列表，单次可支持1-20个IP查询。
                      */
                     std::vector<std::string> m_ips;
                     bool m_ipsHasBeenSet;

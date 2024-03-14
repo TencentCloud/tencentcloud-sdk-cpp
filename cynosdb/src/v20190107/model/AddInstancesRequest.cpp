@@ -38,7 +38,8 @@ AddInstancesRequest::AddInstancesRequest() :
     m_dealModeHasBeenSet(false),
     m_paramTemplateIdHasBeenSet(false),
     m_instanceParamsHasBeenSet(false),
-    m_securityGroupIdsHasBeenSet(false)
+    m_securityGroupIdsHasBeenSet(false),
+    m_upgradeProxyHasBeenSet(false)
 {
 }
 
@@ -187,6 +188,15 @@ string AddInstancesRequest::ToJsonString() const
         {
             d[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
         }
+    }
+
+    if (m_upgradeProxyHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "UpgradeProxy";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_upgradeProxy.ToJsonObject(d[key.c_str()], allocator);
     }
 
 
@@ -451,6 +461,22 @@ void AddInstancesRequest::SetSecurityGroupIds(const vector<string>& _securityGro
 bool AddInstancesRequest::SecurityGroupIdsHasBeenSet() const
 {
     return m_securityGroupIdsHasBeenSet;
+}
+
+UpgradeProxy AddInstancesRequest::GetUpgradeProxy() const
+{
+    return m_upgradeProxy;
+}
+
+void AddInstancesRequest::SetUpgradeProxy(const UpgradeProxy& _upgradeProxy)
+{
+    m_upgradeProxy = _upgradeProxy;
+    m_upgradeProxyHasBeenSet = true;
+}
+
+bool AddInstancesRequest::UpgradeProxyHasBeenSet() const
+{
+    return m_upgradeProxyHasBeenSet;
 }
 
 

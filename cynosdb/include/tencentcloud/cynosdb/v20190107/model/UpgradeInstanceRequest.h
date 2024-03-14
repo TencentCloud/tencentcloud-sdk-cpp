@@ -21,6 +21,7 @@
 #include <vector>
 #include <map>
 #include <tencentcloud/core/AbstractModel.h>
+#include <tencentcloud/cynosdb/v20190107/model/UpgradeProxy.h>
 
 
 namespace TencentCloud
@@ -231,6 +232,27 @@ namespace TencentCloud
                      */
                     bool UpgradeModeHasBeenSet() const;
 
+                    /**
+                     * 获取proxy同步升级
+                     * @return UpgradeProxy proxy同步升级
+                     * 
+                     */
+                    UpgradeProxy GetUpgradeProxy() const;
+
+                    /**
+                     * 设置proxy同步升级
+                     * @param _upgradeProxy proxy同步升级
+                     * 
+                     */
+                    void SetUpgradeProxy(const UpgradeProxy& _upgradeProxy);
+
+                    /**
+                     * 判断参数 UpgradeProxy 是否已赋值
+                     * @return UpgradeProxy 是否已赋值
+                     * 
+                     */
+                    bool UpgradeProxyHasBeenSet() const;
+
                 private:
 
                     /**
@@ -286,6 +308,12 @@ namespace TencentCloud
                      */
                     std::string m_upgradeMode;
                     bool m_upgradeModeHasBeenSet;
+
+                    /**
+                     * proxy同步升级
+                     */
+                    UpgradeProxy m_upgradeProxy;
+                    bool m_upgradeProxyHasBeenSet;
 
                 };
             }

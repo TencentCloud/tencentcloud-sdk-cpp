@@ -23,7 +23,8 @@ using namespace TencentCloud::Sqlserver::V20180328::Model;
 using namespace std;
 
 DescribeCollationTimeZoneRequest::DescribeCollationTimeZoneRequest() :
-    m_machineTypeHasBeenSet(false)
+    m_machineTypeHasBeenSet(false),
+    m_dBVersionHasBeenSet(false)
 {
 }
 
@@ -40,6 +41,14 @@ string DescribeCollationTimeZoneRequest::ToJsonString() const
         string key = "MachineType";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_machineType.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_dBVersionHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "DBVersion";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_dBVersion.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -64,6 +73,22 @@ void DescribeCollationTimeZoneRequest::SetMachineType(const string& _machineType
 bool DescribeCollationTimeZoneRequest::MachineTypeHasBeenSet() const
 {
     return m_machineTypeHasBeenSet;
+}
+
+string DescribeCollationTimeZoneRequest::GetDBVersion() const
+{
+    return m_dBVersion;
+}
+
+void DescribeCollationTimeZoneRequest::SetDBVersion(const string& _dBVersion)
+{
+    m_dBVersion = _dBVersion;
+    m_dBVersionHasBeenSet = true;
+}
+
+bool DescribeCollationTimeZoneRequest::DBVersionHasBeenSet() const
+{
+    return m_dBVersionHasBeenSet;
 }
 
 

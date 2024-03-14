@@ -21,8 +21,8 @@
 #include <vector>
 #include <map>
 #include <tencentcloud/core/AbstractModel.h>
-#include <tencentcloud/cls/v20201016/model/KafkaProtocolInfo.h>
 #include <tencentcloud/cls/v20201016/model/LogRechargeRuleInfo.h>
+#include <tencentcloud/cls/v20201016/model/KafkaProtocolInfo.h>
 
 
 namespace TencentCloud
@@ -150,6 +150,27 @@ namespace TencentCloud
                     bool OffsetHasBeenSet() const;
 
                     /**
+                     * 获取日志导入规则。
+                     * @return LogRechargeRule 日志导入规则。
+                     * 
+                     */
+                    LogRechargeRuleInfo GetLogRechargeRule() const;
+
+                    /**
+                     * 设置日志导入规则。
+                     * @param _logRechargeRule 日志导入规则。
+                     * 
+                     */
+                    void SetLogRechargeRule(const LogRechargeRuleInfo& _logRechargeRule);
+
+                    /**
+                     * 判断参数 LogRechargeRule 是否已赋值
+                     * @return LogRechargeRule 是否已赋值
+                     * 
+                     */
+                    bool LogRechargeRuleHasBeenSet() const;
+
+                    /**
                      * 获取腾讯云CKafka实例ID，KafkaType为0时必填
                      * @return KafkaInstance 腾讯云CKafka实例ID，KafkaType为0时必填
                      * 
@@ -258,31 +279,6 @@ KafkaType为1并且IsEncryptionAddr为true时Protocol必填
                      */
                     bool ConsumerGroupNameHasBeenSet() const;
 
-                    /**
-                     * 获取日志导入规则。
-必填字段。
-                     * @return LogRechargeRule 日志导入规则。
-必填字段。
-                     * 
-                     */
-                    LogRechargeRuleInfo GetLogRechargeRule() const;
-
-                    /**
-                     * 设置日志导入规则。
-必填字段。
-                     * @param _logRechargeRule 日志导入规则。
-必填字段。
-                     * 
-                     */
-                    void SetLogRechargeRule(const LogRechargeRuleInfo& _logRechargeRule);
-
-                    /**
-                     * 判断参数 LogRechargeRule 是否已赋值
-                     * @return LogRechargeRule 是否已赋值
-                     * 
-                     */
-                    bool LogRechargeRuleHasBeenSet() const;
-
                 private:
 
                     /**
@@ -316,6 +312,12 @@ KafkaType为1并且IsEncryptionAddr为true时Protocol必填
                     bool m_offsetHasBeenSet;
 
                     /**
+                     * 日志导入规则。
+                     */
+                    LogRechargeRuleInfo m_logRechargeRule;
+                    bool m_logRechargeRuleHasBeenSet;
+
+                    /**
                      * 腾讯云CKafka实例ID，KafkaType为0时必填
                      */
                     std::string m_kafkaInstance;
@@ -345,13 +347,6 @@ KafkaType为1并且IsEncryptionAddr为true时Protocol必填
                      */
                     std::string m_consumerGroupName;
                     bool m_consumerGroupNameHasBeenSet;
-
-                    /**
-                     * 日志导入规则。
-必填字段。
-                     */
-                    LogRechargeRuleInfo m_logRechargeRule;
-                    bool m_logRechargeRuleHasBeenSet;
 
                 };
             }

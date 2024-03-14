@@ -1846,6 +1846,49 @@ EssbasicClient::ChannelModifyRoleOutcomeCallable EssbasicClient::ChannelModifyRo
     return task->get_future();
 }
 
+EssbasicClient::ChannelRenewAutoSignLicenseOutcome EssbasicClient::ChannelRenewAutoSignLicense(const ChannelRenewAutoSignLicenseRequest &request)
+{
+    auto outcome = MakeRequest(request, "ChannelRenewAutoSignLicense");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ChannelRenewAutoSignLicenseResponse rsp = ChannelRenewAutoSignLicenseResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ChannelRenewAutoSignLicenseOutcome(rsp);
+        else
+            return ChannelRenewAutoSignLicenseOutcome(o.GetError());
+    }
+    else
+    {
+        return ChannelRenewAutoSignLicenseOutcome(outcome.GetError());
+    }
+}
+
+void EssbasicClient::ChannelRenewAutoSignLicenseAsync(const ChannelRenewAutoSignLicenseRequest& request, const ChannelRenewAutoSignLicenseAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->ChannelRenewAutoSignLicense(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+EssbasicClient::ChannelRenewAutoSignLicenseOutcomeCallable EssbasicClient::ChannelRenewAutoSignLicenseCallable(const ChannelRenewAutoSignLicenseRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<ChannelRenewAutoSignLicenseOutcome()>>(
+        [this, request]()
+        {
+            return this->ChannelRenewAutoSignLicense(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 EssbasicClient::ChannelUpdateSealStatusOutcome EssbasicClient::ChannelUpdateSealStatus(const ChannelUpdateSealStatusRequest &request)
 {
     auto outcome = MakeRequest(request, "ChannelUpdateSealStatus");

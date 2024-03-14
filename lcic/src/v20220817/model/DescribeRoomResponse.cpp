@@ -51,7 +51,9 @@ DescribeRoomResponse::DescribeRoomResponse() :
     m_recordLiveUrlHasBeenSet(false),
     m_enableAutoStartHasBeenSet(false),
     m_recordBackgroundHasBeenSet(false),
-    m_rTMPStreamingURLHasBeenSet(false)
+    m_rTMPStreamingURLHasBeenSet(false),
+    m_recordSceneHasBeenSet(false),
+    m_recordLangHasBeenSet(false)
 {
 }
 
@@ -372,6 +374,26 @@ CoreInternalOutcome DescribeRoomResponse::Deserialize(const string &payload)
         m_rTMPStreamingURLHasBeenSet = true;
     }
 
+    if (rsp.HasMember("RecordScene") && !rsp["RecordScene"].IsNull())
+    {
+        if (!rsp["RecordScene"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `RecordScene` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_recordScene = string(rsp["RecordScene"].GetString());
+        m_recordSceneHasBeenSet = true;
+    }
+
+    if (rsp.HasMember("RecordLang") && !rsp["RecordLang"].IsNull())
+    {
+        if (!rsp["RecordLang"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `RecordLang` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_recordLang = string(rsp["RecordLang"].GetString());
+        m_recordLangHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -609,6 +631,22 @@ string DescribeRoomResponse::ToJsonString() const
         string key = "RTMPStreamingURL";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_rTMPStreamingURL.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_recordSceneHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "RecordScene";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_recordScene.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_recordLangHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "RecordLang";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_recordLang.c_str(), allocator).Move(), allocator);
     }
 
     rapidjson::Value iKey(rapidjson::kStringType);
@@ -901,6 +939,26 @@ string DescribeRoomResponse::GetRTMPStreamingURL() const
 bool DescribeRoomResponse::RTMPStreamingURLHasBeenSet() const
 {
     return m_rTMPStreamingURLHasBeenSet;
+}
+
+string DescribeRoomResponse::GetRecordScene() const
+{
+    return m_recordScene;
+}
+
+bool DescribeRoomResponse::RecordSceneHasBeenSet() const
+{
+    return m_recordSceneHasBeenSet;
+}
+
+string DescribeRoomResponse::GetRecordLang() const
+{
+    return m_recordLang;
+}
+
+bool DescribeRoomResponse::RecordLangHasBeenSet() const
+{
+    return m_recordLangHasBeenSet;
 }
 
 

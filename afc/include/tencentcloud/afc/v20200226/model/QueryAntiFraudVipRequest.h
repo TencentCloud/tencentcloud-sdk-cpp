@@ -127,15 +127,15 @@ namespace TencentCloud
                     bool UserIpHasBeenSet() const;
 
                     /**
-                     * 获取国际移动设备识别码(五选二)
-                     * @return Imei 国际移动设备识别码(五选二)
+                     * 获取国际移动设备识别码，和Idfa同时传入时，只看作一个关键入参(五选二)
+                     * @return Imei 国际移动设备识别码，和Idfa同时传入时，只看作一个关键入参(五选二)
                      * 
                      */
                     std::string GetImei() const;
 
                     /**
-                     * 设置国际移动设备识别码(五选二)
-                     * @param _imei 国际移动设备识别码(五选二)
+                     * 设置国际移动设备识别码，和Idfa同时传入时，只看作一个关键入参(五选二)
+                     * @param _imei 国际移动设备识别码，和Idfa同时传入时，只看作一个关键入参(五选二)
                      * 
                      */
                     void SetImei(const std::string& _imei);
@@ -148,15 +148,15 @@ namespace TencentCloud
                     bool ImeiHasBeenSet() const;
 
                     /**
-                     * 获取ios 系统广告标示符(五选二)
-                     * @return Idfa ios 系统广告标示符(五选二)
+                     * 获取ios 系统广告标示符，和Imei同时传入时，只看作一个关键入参(五选二)
+                     * @return Idfa ios 系统广告标示符，和Imei同时传入时，只看作一个关键入参(五选二)
                      * 
                      */
                     std::string GetIdfa() const;
 
                     /**
-                     * 设置ios 系统广告标示符(五选二)
-                     * @param _idfa ios 系统广告标示符(五选二)
+                     * 设置ios 系统广告标示符，和Imei同时传入时，只看作一个关键入参(五选二)
+                     * @param _idfa ios 系统广告标示符，和Imei同时传入时，只看作一个关键入参(五选二)
                      * 
                      */
                     void SetIdfa(const std::string& _idfa);
@@ -524,31 +524,15 @@ ID 区分统计数据
                     bool ImsiHasBeenSet() const;
 
                     /**
-                     * 获取姓名加密类型
-0：不加密（默认值）
-1：md5
-2：sha256
-3：SM3
-                     * @return NameCryptoType 姓名加密类型
-0：不加密（默认值）
-1：md5
-2：sha256
-3：SM3
+                     * 获取姓名加密类型0：不加密（默认值）1：md5
+                     * @return NameCryptoType 姓名加密类型0：不加密（默认值）1：md5
                      * 
                      */
                     std::string GetNameCryptoType() const;
 
                     /**
-                     * 设置姓名加密类型
-0：不加密（默认值）
-1：md5
-2：sha256
-3：SM3
-                     * @param _nameCryptoType 姓名加密类型
-0：不加密（默认值）
-1：md5
-2：sha256
-3：SM3
+                     * 设置姓名加密类型0：不加密（默认值）1：md5
+                     * @param _nameCryptoType 姓名加密类型0：不加密（默认值）1：md5
                      * 
                      */
                     void SetNameCryptoType(const std::string& _nameCryptoType);
@@ -587,13 +571,13 @@ ID 区分统计数据
                     bool m_userIpHasBeenSet;
 
                     /**
-                     * 国际移动设备识别码(五选二)
+                     * 国际移动设备识别码，和Idfa同时传入时，只看作一个关键入参(五选二)
                      */
                     std::string m_imei;
                     bool m_imeiHasBeenSet;
 
                     /**
-                     * ios 系统广告标示符(五选二)
+                     * ios 系统广告标示符，和Imei同时传入时，只看作一个关键入参(五选二)
                      */
                     std::string m_idfa;
                     bool m_idfaHasBeenSet;
@@ -699,11 +683,7 @@ ID 区分统计数据
                     bool m_imsiHasBeenSet;
 
                     /**
-                     * 姓名加密类型
-0：不加密（默认值）
-1：md5
-2：sha256
-3：SM3
+                     * 姓名加密类型0：不加密（默认值）1：md5
                      */
                     std::string m_nameCryptoType;
                     bool m_nameCryptoTypeHasBeenSet;

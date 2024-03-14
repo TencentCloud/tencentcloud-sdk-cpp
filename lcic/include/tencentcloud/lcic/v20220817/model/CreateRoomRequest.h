@@ -681,6 +681,48 @@ video 纯视频
                      */
                     bool RecordBackgroundHasBeenSet() const;
 
+                    /**
+                     * 获取录制自定义场景，仅recordlayout=9的时候此参数有效
+                     * @return RecordScene 录制自定义场景，仅recordlayout=9的时候此参数有效
+                     * 
+                     */
+                    std::string GetRecordScene() const;
+
+                    /**
+                     * 设置录制自定义场景，仅recordlayout=9的时候此参数有效
+                     * @param _recordScene 录制自定义场景，仅recordlayout=9的时候此参数有效
+                     * 
+                     */
+                    void SetRecordScene(const std::string& _recordScene);
+
+                    /**
+                     * 判断参数 RecordScene 是否已赋值
+                     * @return RecordScene 是否已赋值
+                     * 
+                     */
+                    bool RecordSceneHasBeenSet() const;
+
+                    /**
+                     * 获取录制自定义语言，仅recordlayout=9的时候此参数有效
+                     * @return RecordLang 录制自定义语言，仅recordlayout=9的时候此参数有效
+                     * 
+                     */
+                    std::string GetRecordLang() const;
+
+                    /**
+                     * 设置录制自定义语言，仅recordlayout=9的时候此参数有效
+                     * @param _recordLang 录制自定义语言，仅recordlayout=9的时候此参数有效
+                     * 
+                     */
+                    void SetRecordLang(const std::string& _recordLang);
+
+                    /**
+                     * 判断参数 RecordLang 是否已赋值
+                     * @return RecordLang 是否已赋值
+                     * 
+                     */
+                    bool RecordLangHasBeenSet() const;
+
                 private:
 
                     /**
@@ -862,6 +904,18 @@ video 纯视频
                      */
                     std::string m_recordBackground;
                     bool m_recordBackgroundHasBeenSet;
+
+                    /**
+                     * 录制自定义场景，仅recordlayout=9的时候此参数有效
+                     */
+                    std::string m_recordScene;
+                    bool m_recordSceneHasBeenSet;
+
+                    /**
+                     * 录制自定义语言，仅recordlayout=9的时候此参数有效
+                     */
+                    std::string m_recordLang;
+                    bool m_recordLangHasBeenSet;
 
                 };
             }

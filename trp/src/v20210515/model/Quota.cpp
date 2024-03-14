@@ -32,6 +32,8 @@ Quota::Quota() :
     m_saleQuotaHasBeenSet(false),
     m_chainQuotaHasBeenSet(false),
     m_riskQuotaHasBeenSet(false),
+    m_aigcTextQuotaHasBeenSet(false),
+    m_aigcImageQuotaHasBeenSet(false),
     m_trackTypeHasBeenSet(false),
     m_versionHasBeenSet(false),
     m_productCertifyHasBeenSet(false)
@@ -154,6 +156,26 @@ CoreInternalOutcome Quota::Deserialize(const rapidjson::Value &value)
         }
         m_riskQuota = value["RiskQuota"].GetInt64();
         m_riskQuotaHasBeenSet = true;
+    }
+
+    if (value.HasMember("AigcTextQuota") && !value["AigcTextQuota"].IsNull())
+    {
+        if (!value["AigcTextQuota"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `Quota.AigcTextQuota` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_aigcTextQuota = value["AigcTextQuota"].GetInt64();
+        m_aigcTextQuotaHasBeenSet = true;
+    }
+
+    if (value.HasMember("AigcImageQuota") && !value["AigcImageQuota"].IsNull())
+    {
+        if (!value["AigcImageQuota"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `Quota.AigcImageQuota` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_aigcImageQuota = value["AigcImageQuota"].GetInt64();
+        m_aigcImageQuotaHasBeenSet = true;
     }
 
     if (value.HasMember("TrackType") && !value["TrackType"].IsNull())
@@ -284,6 +306,22 @@ void Quota::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Allocator
         string key = "RiskQuota";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_riskQuota, allocator);
+    }
+
+    if (m_aigcTextQuotaHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "AigcTextQuota";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_aigcTextQuota, allocator);
+    }
+
+    if (m_aigcImageQuotaHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "AigcImageQuota";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_aigcImageQuota, allocator);
     }
 
     if (m_trackTypeHasBeenSet)
@@ -487,6 +525,38 @@ void Quota::SetRiskQuota(const int64_t& _riskQuota)
 bool Quota::RiskQuotaHasBeenSet() const
 {
     return m_riskQuotaHasBeenSet;
+}
+
+int64_t Quota::GetAigcTextQuota() const
+{
+    return m_aigcTextQuota;
+}
+
+void Quota::SetAigcTextQuota(const int64_t& _aigcTextQuota)
+{
+    m_aigcTextQuota = _aigcTextQuota;
+    m_aigcTextQuotaHasBeenSet = true;
+}
+
+bool Quota::AigcTextQuotaHasBeenSet() const
+{
+    return m_aigcTextQuotaHasBeenSet;
+}
+
+int64_t Quota::GetAigcImageQuota() const
+{
+    return m_aigcImageQuota;
+}
+
+void Quota::SetAigcImageQuota(const int64_t& _aigcImageQuota)
+{
+    m_aigcImageQuota = _aigcImageQuota;
+    m_aigcImageQuotaHasBeenSet = true;
+}
+
+bool Quota::AigcImageQuotaHasBeenSet() const
+{
+    return m_aigcImageQuotaHasBeenSet;
 }
 
 int64_t Quota::GetTrackType() const

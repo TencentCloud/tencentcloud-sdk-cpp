@@ -171,6 +171,7 @@ set(ess_public_header_model
   include/tencentcloud/ess/v20201111/model/ApproverInfo.h
   include/tencentcloud/ess/v20201111/model/CreateFlowSignReviewResponse.h
   include/tencentcloud/ess/v20201111/model/ModifyIntegrationDepartmentRequest.h
+  include/tencentcloud/ess/v20201111/model/RenewAutoSignLicenseRequest.h
   include/tencentcloud/ess/v20201111/model/Filter.h
   include/tencentcloud/ess/v20201111/model/CreateStaffResult.h
   include/tencentcloud/ess/v20201111/model/CreateUserAutoSignEnableUrlRequest.h
@@ -233,6 +234,7 @@ set(ess_public_header_model
   include/tencentcloud/ess/v20201111/model/DeleteExtendedServiceAuthInfosRequest.h
   include/tencentcloud/ess/v20201111/model/DescribeIntegrationDepartmentsRequest.h
   include/tencentcloud/ess/v20201111/model/DescribeFlowInfoResponse.h
+  include/tencentcloud/ess/v20201111/model/RenewAutoSignLicenseResponse.h
   include/tencentcloud/ess/v20201111/model/CancelMultiFlowSignQRCodeResponse.h
   include/tencentcloud/ess/v20201111/model/CreateFlowResponse.h
   include/tencentcloud/ess/v20201111/model/DescribeUserAutoSignStatusRequest.h
@@ -400,6 +402,7 @@ set(ess_src
   src/v20201111/model/ApproverInfo.cpp
   src/v20201111/model/CreateFlowSignReviewResponse.cpp
   src/v20201111/model/ModifyIntegrationDepartmentRequest.cpp
+  src/v20201111/model/RenewAutoSignLicenseRequest.cpp
   src/v20201111/model/Filter.cpp
   src/v20201111/model/CreateStaffResult.cpp
   src/v20201111/model/CreateUserAutoSignEnableUrlRequest.cpp
@@ -462,6 +465,7 @@ set(ess_src
   src/v20201111/model/DeleteExtendedServiceAuthInfosRequest.cpp
   src/v20201111/model/DescribeIntegrationDepartmentsRequest.cpp
   src/v20201111/model/DescribeFlowInfoResponse.cpp
+  src/v20201111/model/RenewAutoSignLicenseResponse.cpp
   src/v20201111/model/CancelMultiFlowSignQRCodeResponse.cpp
   src/v20201111/model/CreateFlowResponse.cpp
   src/v20201111/model/DescribeUserAutoSignStatusRequest.cpp
