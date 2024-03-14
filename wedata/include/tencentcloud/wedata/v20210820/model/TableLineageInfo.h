@@ -623,6 +623,81 @@ namespace TencentCloud
                      */
                     bool TableTypeHasBeenSet() const;
 
+                    /**
+                     * 获取datasourceName
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return DatasourceName datasourceName
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::string GetDatasourceName() const;
+
+                    /**
+                     * 设置datasourceName
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _datasourceName datasourceName
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetDatasourceName(const std::string& _datasourceName);
+
+                    /**
+                     * 判断参数 DatasourceName 是否已赋值
+                     * @return DatasourceName 是否已赋值
+                     * 
+                     */
+                    bool DatasourceNameHasBeenSet() const;
+
+                    /**
+                     * 获取DatabaseName
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return DatabaseName DatabaseName
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::string GetDatabaseName() const;
+
+                    /**
+                     * 设置DatabaseName
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _databaseName DatabaseName
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetDatabaseName(const std::string& _databaseName);
+
+                    /**
+                     * 判断参数 DatabaseName 是否已赋值
+                     * @return DatabaseName 是否已赋值
+                     * 
+                     */
+                    bool DatabaseNameHasBeenSet() const;
+
+                    /**
+                     * 获取DatabaseId
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return DatabaseId DatabaseId
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::string GetDatabaseId() const;
+
+                    /**
+                     * 设置DatabaseId
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _databaseId DatabaseId
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetDatabaseId(const std::string& _databaseId);
+
+                    /**
+                     * 判断参数 DatabaseId 是否已赋值
+                     * @return DatabaseId 是否已赋值
+                     * 
+                     */
+                    bool DatabaseIdHasBeenSet() const;
+
                 private:
 
                     /**
@@ -785,6 +860,27 @@ namespace TencentCloud
                      */
                     std::string m_tableType;
                     bool m_tableTypeHasBeenSet;
+
+                    /**
+                     * datasourceName
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_datasourceName;
+                    bool m_datasourceNameHasBeenSet;
+
+                    /**
+                     * DatabaseName
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_databaseName;
+                    bool m_databaseNameHasBeenSet;
+
+                    /**
+                     * DatabaseId
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_databaseId;
+                    bool m_databaseIdHasBeenSet;
 
                 };
             }

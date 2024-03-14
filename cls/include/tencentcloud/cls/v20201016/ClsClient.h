@@ -131,8 +131,6 @@
 #include <tencentcloud/cls/v20201016/model/DescribeKafkaConsumerResponse.h>
 #include <tencentcloud/cls/v20201016/model/DescribeKafkaRechargesRequest.h>
 #include <tencentcloud/cls/v20201016/model/DescribeKafkaRechargesResponse.h>
-#include <tencentcloud/cls/v20201016/model/DescribeKafkaUserRequest.h>
-#include <tencentcloud/cls/v20201016/model/DescribeKafkaUserResponse.h>
 #include <tencentcloud/cls/v20201016/model/DescribeLogContextRequest.h>
 #include <tencentcloud/cls/v20201016/model/DescribeLogContextResponse.h>
 #include <tencentcloud/cls/v20201016/model/DescribeLogHistogramRequest.h>
@@ -385,9 +383,6 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeKafkaRechargesResponse> DescribeKafkaRechargesOutcome;
                 typedef std::future<DescribeKafkaRechargesOutcome> DescribeKafkaRechargesOutcomeCallable;
                 typedef std::function<void(const ClsClient*, const Model::DescribeKafkaRechargesRequest&, DescribeKafkaRechargesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeKafkaRechargesAsyncHandler;
-                typedef Outcome<Core::Error, Model::DescribeKafkaUserResponse> DescribeKafkaUserOutcome;
-                typedef std::future<DescribeKafkaUserOutcome> DescribeKafkaUserOutcomeCallable;
-                typedef std::function<void(const ClsClient*, const Model::DescribeKafkaUserRequest&, DescribeKafkaUserOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeKafkaUserAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeLogContextResponse> DescribeLogContextOutcome;
                 typedef std::future<DescribeLogContextOutcome> DescribeLogContextOutcomeCallable;
                 typedef std::function<void(const ClsClient*, const Model::DescribeLogContextRequest&, DescribeLogContextOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeLogContextAsyncHandler;
@@ -990,15 +985,6 @@ namespace TencentCloud
                 DescribeKafkaRechargesOutcome DescribeKafkaRecharges(const Model::DescribeKafkaRechargesRequest &request);
                 void DescribeKafkaRechargesAsync(const Model::DescribeKafkaRechargesRequest& request, const DescribeKafkaRechargesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DescribeKafkaRechargesOutcomeCallable DescribeKafkaRechargesCallable(const Model::DescribeKafkaRechargesRequest& request);
-
-                /**
-                 *本接口用于获取kafka用户信息
-                 * @param req DescribeKafkaUserRequest
-                 * @return DescribeKafkaUserOutcome
-                 */
-                DescribeKafkaUserOutcome DescribeKafkaUser(const Model::DescribeKafkaUserRequest &request);
-                void DescribeKafkaUserAsync(const Model::DescribeKafkaUserRequest& request, const DescribeKafkaUserAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
-                DescribeKafkaUserOutcomeCallable DescribeKafkaUserCallable(const Model::DescribeKafkaUserRequest& request);
 
                 /**
                  *本接口用于搜索日志上下文附近的内容，详情参考[上下文检索](https://cloud.tencent.com/document/product/614/53248)。

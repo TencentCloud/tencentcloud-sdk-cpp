@@ -241,6 +241,8 @@
 #include <tencentcloud/live/v20180801/model/DescribeProvinceIspPlayInfoListResponse.h>
 #include <tencentcloud/live/v20180801/model/DescribePullStreamConfigsRequest.h>
 #include <tencentcloud/live/v20180801/model/DescribePullStreamConfigsResponse.h>
+#include <tencentcloud/live/v20180801/model/DescribePullTransformPushInfoRequest.h>
+#include <tencentcloud/live/v20180801/model/DescribePullTransformPushInfoResponse.h>
 #include <tencentcloud/live/v20180801/model/DescribePushBandwidthAndFluxListRequest.h>
 #include <tencentcloud/live/v20180801/model/DescribePushBandwidthAndFluxListResponse.h>
 #include <tencentcloud/live/v20180801/model/DescribeRecordTaskRequest.h>
@@ -670,6 +672,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribePullStreamConfigsResponse> DescribePullStreamConfigsOutcome;
                 typedef std::future<DescribePullStreamConfigsOutcome> DescribePullStreamConfigsOutcomeCallable;
                 typedef std::function<void(const LiveClient*, const Model::DescribePullStreamConfigsRequest&, DescribePullStreamConfigsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribePullStreamConfigsAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribePullTransformPushInfoResponse> DescribePullTransformPushInfoOutcome;
+                typedef std::future<DescribePullTransformPushInfoOutcome> DescribePullTransformPushInfoOutcomeCallable;
+                typedef std::function<void(const LiveClient*, const Model::DescribePullTransformPushInfoRequest&, DescribePullTransformPushInfoOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribePullTransformPushInfoAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribePushBandwidthAndFluxListResponse> DescribePushBandwidthAndFluxListOutcome;
                 typedef std::future<DescribePushBandwidthAndFluxListOutcome> DescribePushBandwidthAndFluxListOutcomeCallable;
                 typedef std::function<void(const LiveClient*, const Model::DescribePushBandwidthAndFluxListRequest&, DescribePushBandwidthAndFluxListOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribePushBandwidthAndFluxListAsyncHandler;
@@ -1888,6 +1893,15 @@ DomainName+AppName+StreamName+TemplateId唯一标识单个转码规则，如需�
                 DescribePullStreamConfigsOutcome DescribePullStreamConfigs(const Model::DescribePullStreamConfigsRequest &request);
                 void DescribePullStreamConfigsAsync(const Model::DescribePullStreamConfigsRequest& request, const DescribePullStreamConfigsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DescribePullStreamConfigsOutcomeCallable DescribePullStreamConfigsCallable(const Model::DescribePullStreamConfigsRequest& request);
+
+                /**
+                 *查询拉流转推任务的时长信息。
+                 * @param req DescribePullTransformPushInfoRequest
+                 * @return DescribePullTransformPushInfoOutcome
+                 */
+                DescribePullTransformPushInfoOutcome DescribePullTransformPushInfo(const Model::DescribePullTransformPushInfoRequest &request);
+                void DescribePullTransformPushInfoAsync(const Model::DescribePullTransformPushInfoRequest& request, const DescribePullTransformPushInfoAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribePullTransformPushInfoOutcomeCallable DescribePullTransformPushInfoCallable(const Model::DescribePullTransformPushInfoRequest& request);
 
                 /**
                  *直播推流带宽和流量数据查询。

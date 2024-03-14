@@ -27,7 +27,10 @@ DescribeHiveQueriesRequest::DescribeHiveQueriesRequest() :
     m_startTimeHasBeenSet(false),
     m_endTimeHasBeenSet(false),
     m_offsetHasBeenSet(false),
-    m_limitHasBeenSet(false)
+    m_limitHasBeenSet(false),
+    m_stateHasBeenSet(false),
+    m_endTimeGteHasBeenSet(false),
+    m_endTimeLteHasBeenSet(false)
 {
 }
 
@@ -76,6 +79,35 @@ string DescribeHiveQueriesRequest::ToJsonString() const
         string key = "Limit";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_limit, allocator);
+    }
+
+    if (m_stateHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "State";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        for (auto itr = m_state.begin(); itr != m_state.end(); ++itr)
+        {
+            d[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
+        }
+    }
+
+    if (m_endTimeGteHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "EndTimeGte";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_endTimeGte, allocator);
+    }
+
+    if (m_endTimeLteHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "EndTimeLte";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_endTimeLte, allocator);
     }
 
 
@@ -164,6 +196,54 @@ void DescribeHiveQueriesRequest::SetLimit(const uint64_t& _limit)
 bool DescribeHiveQueriesRequest::LimitHasBeenSet() const
 {
     return m_limitHasBeenSet;
+}
+
+vector<string> DescribeHiveQueriesRequest::GetState() const
+{
+    return m_state;
+}
+
+void DescribeHiveQueriesRequest::SetState(const vector<string>& _state)
+{
+    m_state = _state;
+    m_stateHasBeenSet = true;
+}
+
+bool DescribeHiveQueriesRequest::StateHasBeenSet() const
+{
+    return m_stateHasBeenSet;
+}
+
+uint64_t DescribeHiveQueriesRequest::GetEndTimeGte() const
+{
+    return m_endTimeGte;
+}
+
+void DescribeHiveQueriesRequest::SetEndTimeGte(const uint64_t& _endTimeGte)
+{
+    m_endTimeGte = _endTimeGte;
+    m_endTimeGteHasBeenSet = true;
+}
+
+bool DescribeHiveQueriesRequest::EndTimeGteHasBeenSet() const
+{
+    return m_endTimeGteHasBeenSet;
+}
+
+uint64_t DescribeHiveQueriesRequest::GetEndTimeLte() const
+{
+    return m_endTimeLte;
+}
+
+void DescribeHiveQueriesRequest::SetEndTimeLte(const uint64_t& _endTimeLte)
+{
+    m_endTimeLte = _endTimeLte;
+    m_endTimeLteHasBeenSet = true;
+}
+
+bool DescribeHiveQueriesRequest::EndTimeLteHasBeenSet() const
+{
+    return m_endTimeLteHasBeenSet;
 }
 
 

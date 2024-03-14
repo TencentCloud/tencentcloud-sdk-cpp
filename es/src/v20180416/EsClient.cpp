@@ -40,6 +40,92 @@ EsClient::EsClient(const Credential &credential, const string &region, const Cli
 }
 
 
+EsClient::CheckMigrateIndexMetaDataOutcome EsClient::CheckMigrateIndexMetaData(const CheckMigrateIndexMetaDataRequest &request)
+{
+    auto outcome = MakeRequest(request, "CheckMigrateIndexMetaData");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        CheckMigrateIndexMetaDataResponse rsp = CheckMigrateIndexMetaDataResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return CheckMigrateIndexMetaDataOutcome(rsp);
+        else
+            return CheckMigrateIndexMetaDataOutcome(o.GetError());
+    }
+    else
+    {
+        return CheckMigrateIndexMetaDataOutcome(outcome.GetError());
+    }
+}
+
+void EsClient::CheckMigrateIndexMetaDataAsync(const CheckMigrateIndexMetaDataRequest& request, const CheckMigrateIndexMetaDataAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->CheckMigrateIndexMetaData(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+EsClient::CheckMigrateIndexMetaDataOutcomeCallable EsClient::CheckMigrateIndexMetaDataCallable(const CheckMigrateIndexMetaDataRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<CheckMigrateIndexMetaDataOutcome()>>(
+        [this, request]()
+        {
+            return this->CheckMigrateIndexMetaData(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+EsClient::CreateCosMigrateToServerlessInstanceOutcome EsClient::CreateCosMigrateToServerlessInstance(const CreateCosMigrateToServerlessInstanceRequest &request)
+{
+    auto outcome = MakeRequest(request, "CreateCosMigrateToServerlessInstance");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        CreateCosMigrateToServerlessInstanceResponse rsp = CreateCosMigrateToServerlessInstanceResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return CreateCosMigrateToServerlessInstanceOutcome(rsp);
+        else
+            return CreateCosMigrateToServerlessInstanceOutcome(o.GetError());
+    }
+    else
+    {
+        return CreateCosMigrateToServerlessInstanceOutcome(outcome.GetError());
+    }
+}
+
+void EsClient::CreateCosMigrateToServerlessInstanceAsync(const CreateCosMigrateToServerlessInstanceRequest& request, const CreateCosMigrateToServerlessInstanceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->CreateCosMigrateToServerlessInstance(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+EsClient::CreateCosMigrateToServerlessInstanceOutcomeCallable EsClient::CreateCosMigrateToServerlessInstanceCallable(const CreateCosMigrateToServerlessInstanceRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<CreateCosMigrateToServerlessInstanceOutcome()>>(
+        [this, request]()
+        {
+            return this->CreateCosMigrateToServerlessInstance(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 EsClient::CreateIndexOutcome EsClient::CreateIndex(const CreateIndexRequest &request)
 {
     auto outcome = MakeRequest(request, "CreateIndex");
@@ -1065,6 +1151,49 @@ EsClient::DescribeServerlessSpacesOutcomeCallable EsClient::DescribeServerlessSp
         [this, request]()
         {
             return this->DescribeServerlessSpaces(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+EsClient::DescribeUserCosSnapshotListOutcome EsClient::DescribeUserCosSnapshotList(const DescribeUserCosSnapshotListRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeUserCosSnapshotList");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeUserCosSnapshotListResponse rsp = DescribeUserCosSnapshotListResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeUserCosSnapshotListOutcome(rsp);
+        else
+            return DescribeUserCosSnapshotListOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeUserCosSnapshotListOutcome(outcome.GetError());
+    }
+}
+
+void EsClient::DescribeUserCosSnapshotListAsync(const DescribeUserCosSnapshotListRequest& request, const DescribeUserCosSnapshotListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeUserCosSnapshotList(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+EsClient::DescribeUserCosSnapshotListOutcomeCallable EsClient::DescribeUserCosSnapshotListCallable(const DescribeUserCosSnapshotListRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeUserCosSnapshotListOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeUserCosSnapshotList(request);
         }
     );
 

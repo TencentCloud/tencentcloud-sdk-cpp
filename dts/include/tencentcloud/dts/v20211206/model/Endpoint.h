@@ -72,18 +72,18 @@ namespace TencentCloud
                     bool RegionHasBeenSet() const;
 
                     /**
-                     * 获取tdsql mysql版的节点类型，枚举值为proxy、set
+                     * 获取tdsql mysql版的节点类型，枚举值为proxy、set。tdsqlmysql必填
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return Role tdsql mysql版的节点类型，枚举值为proxy、set
+                     * @return Role tdsql mysql版的节点类型，枚举值为proxy、set。tdsqlmysql必填
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetRole() const;
 
                     /**
-                     * 设置tdsql mysql版的节点类型，枚举值为proxy、set
+                     * 设置tdsql mysql版的节点类型，枚举值为proxy、set。tdsqlmysql必填
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _role tdsql mysql版的节点类型，枚举值为proxy、set
+                     * @param _role tdsql mysql版的节点类型，枚举值为proxy、set。tdsqlmysql必填
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -731,7 +731,7 @@ namespace TencentCloud
                     bool m_regionHasBeenSet;
 
                     /**
-                     * tdsql mysql版的节点类型，枚举值为proxy、set
+                     * tdsql mysql版的节点类型，枚举值为proxy、set。tdsqlmysql必填
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_role;

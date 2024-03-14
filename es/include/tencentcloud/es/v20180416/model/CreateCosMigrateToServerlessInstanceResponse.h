@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef TENCENTCLOUD_CLS_V20201016_MODEL_DESCRIBEKAFKAUSERREQUEST_H_
-#define TENCENTCLOUD_CLS_V20201016_MODEL_DESCRIBEKAFKAUSERREQUEST_H_
+#ifndef TENCENTCLOUD_ES_V20180416_MODEL_CREATECOSMIGRATETOSERVERLESSINSTANCERESPONSE_H_
+#define TENCENTCLOUD_ES_V20180416_MODEL_CREATECOSMIGRATETOSERVERLESSINSTANCERESPONSE_H_
 
 #include <string>
 #include <vector>
@@ -25,51 +25,45 @@
 
 namespace TencentCloud
 {
-    namespace Cls
+    namespace Es
     {
-        namespace V20201016
+        namespace V20180416
         {
             namespace Model
             {
                 /**
-                * DescribeKafkaUser请求参数结构体
+                * CreateCosMigrateToServerlessInstance返回参数结构体
                 */
-                class DescribeKafkaUserRequest : public AbstractModel
+                class CreateCosMigrateToServerlessInstanceResponse : public AbstractModel
                 {
                 public:
-                    DescribeKafkaUserRequest();
-                    ~DescribeKafkaUserRequest() = default;
+                    CreateCosMigrateToServerlessInstanceResponse();
+                    ~CreateCosMigrateToServerlessInstanceResponse() = default;
+                    CoreInternalOutcome Deserialize(const std::string &payload);
                     std::string ToJsonString() const;
 
 
                     /**
-                     * 获取kafka用户名。
-                     * @return UserName kafka用户名。
+                     * 获取迁移 taskid
+                     * @return TaskId 迁移 taskid
                      * 
                      */
-                    std::string GetUserName() const;
+                    std::string GetTaskId() const;
 
                     /**
-                     * 设置kafka用户名。
-                     * @param _userName kafka用户名。
+                     * 判断参数 TaskId 是否已赋值
+                     * @return TaskId 是否已赋值
                      * 
                      */
-                    void SetUserName(const std::string& _userName);
-
-                    /**
-                     * 判断参数 UserName 是否已赋值
-                     * @return UserName 是否已赋值
-                     * 
-                     */
-                    bool UserNameHasBeenSet() const;
+                    bool TaskIdHasBeenSet() const;
 
                 private:
 
                     /**
-                     * kafka用户名。
+                     * 迁移 taskid
                      */
-                    std::string m_userName;
-                    bool m_userNameHasBeenSet;
+                    std::string m_taskId;
+                    bool m_taskIdHasBeenSet;
 
                 };
             }
@@ -77,4 +71,4 @@ namespace TencentCloud
     }
 }
 
-#endif // !TENCENTCLOUD_CLS_V20201016_MODEL_DESCRIBEKAFKAUSERREQUEST_H_
+#endif // !TENCENTCLOUD_ES_V20180416_MODEL_CREATECOSMIGRATETOSERVERLESSINSTANCERESPONSE_H_

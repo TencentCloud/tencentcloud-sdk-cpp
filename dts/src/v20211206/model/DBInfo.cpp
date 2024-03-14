@@ -40,7 +40,8 @@ DBInfo::DBInfo() :
     m_accountModeHasBeenSet(false),
     m_tmpSecretIdHasBeenSet(false),
     m_tmpSecretKeyHasBeenSet(false),
-    m_tmpTokenHasBeenSet(false)
+    m_tmpTokenHasBeenSet(false),
+    m_setIdHasBeenSet(false)
 {
 }
 
@@ -249,6 +250,16 @@ CoreInternalOutcome DBInfo::Deserialize(const rapidjson::Value &value)
         m_tmpTokenHasBeenSet = true;
     }
 
+    if (value.HasMember("SetId") && !value["SetId"].IsNull())
+    {
+        if (!value["SetId"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `DBInfo.SetId` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_setId = string(value["SetId"].GetString());
+        m_setIdHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -414,6 +425,14 @@ void DBInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Allocato
         string key = "TmpToken";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_tmpToken.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_setIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "SetId";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_setId.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -737,5 +756,21 @@ void DBInfo::SetTmpToken(const string& _tmpToken)
 bool DBInfo::TmpTokenHasBeenSet() const
 {
     return m_tmpTokenHasBeenSet;
+}
+
+string DBInfo::GetSetId() const
+{
+    return m_setId;
+}
+
+void DBInfo::SetSetId(const string& _setId)
+{
+    m_setId = _setId;
+    m_setIdHasBeenSet = true;
+}
+
+bool DBInfo::SetIdHasBeenSet() const
+{
+    return m_setIdHasBeenSet;
 }
 

@@ -161,15 +161,15 @@ namespace TencentCloud
                     bool ProtocolHasBeenSet() const;
 
                     /**
-                     * 获取投递日志时携带的自定义请求头，注意 Content-Type、Accept-Encoding 不支持添加修改。
-                     * @return Headers 投递日志时携带的自定义请求头，注意 Content-Type、Accept-Encoding 不支持添加修改。
+                     * 获取投递日志时携带的自定义请求头。若您填写的头部名称为 Content-Type 等 EdgeOne 日志推送默认携带的头部，那么您填写的头部值将覆盖默认值。头部值引用单个变量${batchSize}，以获取每次 POST 请求中包含的日志条数。
+                     * @return Headers 投递日志时携带的自定义请求头。若您填写的头部名称为 Content-Type 等 EdgeOne 日志推送默认携带的头部，那么您填写的头部值将覆盖默认值。头部值引用单个变量${batchSize}，以获取每次 POST 请求中包含的日志条数。
                      * 
                      */
                     std::vector<Header> GetHeaders() const;
 
                     /**
-                     * 设置投递日志时携带的自定义请求头，注意 Content-Type、Accept-Encoding 不支持添加修改。
-                     * @param _headers 投递日志时携带的自定义请求头，注意 Content-Type、Accept-Encoding 不支持添加修改。
+                     * 设置投递日志时携带的自定义请求头。若您填写的头部名称为 Content-Type 等 EdgeOne 日志推送默认携带的头部，那么您填写的头部值将覆盖默认值。头部值引用单个变量${batchSize}，以获取每次 POST 请求中包含的日志条数。
+                     * @param _headers 投递日志时携带的自定义请求头。若您填写的头部名称为 Content-Type 等 EdgeOne 日志推送默认携带的头部，那么您填写的头部值将覆盖默认值。头部值引用单个变量${batchSize}，以获取每次 POST 请求中包含的日志条数。
                      * 
                      */
                     void SetHeaders(const std::vector<Header>& _headers);
@@ -216,7 +216,7 @@ namespace TencentCloud
                     bool m_protocolHasBeenSet;
 
                     /**
-                     * 投递日志时携带的自定义请求头，注意 Content-Type、Accept-Encoding 不支持添加修改。
+                     * 投递日志时携带的自定义请求头。若您填写的头部名称为 Content-Type 等 EdgeOne 日志推送默认携带的头部，那么您填写的头部值将覆盖默认值。头部值引用单个变量${batchSize}，以获取每次 POST 请求中包含的日志条数。
                      */
                     std::vector<Header> m_headers;
                     bool m_headersHasBeenSet;

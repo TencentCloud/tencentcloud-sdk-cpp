@@ -47,18 +47,18 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取表示节点角色，针对分布式数据库，如mongodb中的mongos节点
+                     * 获取表示节点角色，针对分布式数据库，如mongodb中的mongos节点。如数据库是tdsql，枚举值为：proxy、set
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return Role 表示节点角色，针对分布式数据库，如mongodb中的mongos节点
+                     * @return Role 表示节点角色，针对分布式数据库，如mongodb中的mongos节点。如数据库是tdsql，枚举值为：proxy、set
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetRole() const;
 
                     /**
-                     * 设置表示节点角色，针对分布式数据库，如mongodb中的mongos节点
+                     * 设置表示节点角色，针对分布式数据库，如mongodb中的mongos节点。如数据库是tdsql，枚举值为：proxy、set
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _role 表示节点角色，针对分布式数据库，如mongodb中的mongos节点
+                     * @param _role 表示节点角色，针对分布式数据库，如mongodb中的mongos节点。如数据库是tdsql，枚举值为：proxy、set
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -546,10 +546,35 @@ namespace TencentCloud
                      */
                     bool TmpTokenHasBeenSet() const;
 
+                    /**
+                     * 获取tdsql分片id。tdsql set节点必填
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return SetId tdsql分片id。tdsql set节点必填
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::string GetSetId() const;
+
+                    /**
+                     * 设置tdsql分片id。tdsql set节点必填
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _setId tdsql分片id。tdsql set节点必填
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetSetId(const std::string& _setId);
+
+                    /**
+                     * 判断参数 SetId 是否已赋值
+                     * @return SetId 是否已赋值
+                     * 
+                     */
+                    bool SetIdHasBeenSet() const;
+
                 private:
 
                     /**
-                     * 表示节点角色，针对分布式数据库，如mongodb中的mongos节点
+                     * 表示节点角色，针对分布式数据库，如mongodb中的mongos节点。如数据库是tdsql，枚举值为：proxy、set
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_role;
@@ -687,6 +712,13 @@ namespace TencentCloud
                      */
                     std::string m_tmpToken;
                     bool m_tmpTokenHasBeenSet;
+
+                    /**
+                     * tdsql分片id。tdsql set节点必填
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_setId;
+                    bool m_setIdHasBeenSet;
 
                 };
             }

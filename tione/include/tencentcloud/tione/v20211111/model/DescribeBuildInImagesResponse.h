@@ -14,56 +14,57 @@
  * limitations under the License.
  */
 
-#ifndef TENCENTCLOUD_CLS_V20201016_MODEL_DESCRIBEKAFKAUSERRESPONSE_H_
-#define TENCENTCLOUD_CLS_V20201016_MODEL_DESCRIBEKAFKAUSERRESPONSE_H_
+#ifndef TENCENTCLOUD_TIONE_V20211111_MODEL_DESCRIBEBUILDINIMAGESRESPONSE_H_
+#define TENCENTCLOUD_TIONE_V20211111_MODEL_DESCRIBEBUILDINIMAGESRESPONSE_H_
 
 #include <string>
 #include <vector>
 #include <map>
 #include <tencentcloud/core/AbstractModel.h>
+#include <tencentcloud/tione/v20211111/model/ImageInfo.h>
 
 
 namespace TencentCloud
 {
-    namespace Cls
+    namespace Tione
     {
-        namespace V20201016
+        namespace V20211111
         {
             namespace Model
             {
                 /**
-                * DescribeKafkaUser返回参数结构体
+                * DescribeBuildInImages返回参数结构体
                 */
-                class DescribeKafkaUserResponse : public AbstractModel
+                class DescribeBuildInImagesResponse : public AbstractModel
                 {
                 public:
-                    DescribeKafkaUserResponse();
-                    ~DescribeKafkaUserResponse() = default;
+                    DescribeBuildInImagesResponse();
+                    ~DescribeBuildInImagesResponse() = default;
                     CoreInternalOutcome Deserialize(const std::string &payload);
                     std::string ToJsonString() const;
 
 
                     /**
-                     * 获取如果返回不为空，代表用户名UserName已经创建成功。
-                     * @return UserName 如果返回不为空，代表用户名UserName已经创建成功。
+                     * 获取内置镜像详情列表
+                     * @return BuildInImageInfos 内置镜像详情列表
                      * 
                      */
-                    std::string GetUserName() const;
+                    std::vector<ImageInfo> GetBuildInImageInfos() const;
 
                     /**
-                     * 判断参数 UserName 是否已赋值
-                     * @return UserName 是否已赋值
+                     * 判断参数 BuildInImageInfos 是否已赋值
+                     * @return BuildInImageInfos 是否已赋值
                      * 
                      */
-                    bool UserNameHasBeenSet() const;
+                    bool BuildInImageInfosHasBeenSet() const;
 
                 private:
 
                     /**
-                     * 如果返回不为空，代表用户名UserName已经创建成功。
+                     * 内置镜像详情列表
                      */
-                    std::string m_userName;
-                    bool m_userNameHasBeenSet;
+                    std::vector<ImageInfo> m_buildInImageInfos;
+                    bool m_buildInImageInfosHasBeenSet;
 
                 };
             }
@@ -71,4 +72,4 @@ namespace TencentCloud
     }
 }
 
-#endif // !TENCENTCLOUD_CLS_V20201016_MODEL_DESCRIBEKAFKAUSERRESPONSE_H_
+#endif // !TENCENTCLOUD_TIONE_V20211111_MODEL_DESCRIBEBUILDINIMAGESRESPONSE_H_

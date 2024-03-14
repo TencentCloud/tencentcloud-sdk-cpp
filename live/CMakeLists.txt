@@ -93,6 +93,7 @@ set(live_public_header_model
   include/tencentcloud/live/v20180801/model/ModifyLiveTranscodeTemplateRequest.h
   include/tencentcloud/live/v20180801/model/ForbidLiveDomainResponse.h
   include/tencentcloud/live/v20180801/model/CreateRecordTaskRequest.h
+  include/tencentcloud/live/v20180801/model/TaskDurationInfo.h
   include/tencentcloud/live/v20180801/model/CallBackRuleInfo.h
   include/tencentcloud/live/v20180801/model/DescribeLivePadTemplateResponse.h
   include/tencentcloud/live/v20180801/model/ResumeLiveStreamRequest.h
@@ -217,6 +218,7 @@ set(live_public_header_model
   include/tencentcloud/live/v20180801/model/DeleteLiveRecordRuleResponse.h
   include/tencentcloud/live/v20180801/model/DeleteLiveRecordRuleRequest.h
   include/tencentcloud/live/v20180801/model/StopScreenshotTaskRequest.h
+  include/tencentcloud/live/v20180801/model/DescribePullTransformPushInfoRequest.h
   include/tencentcloud/live/v20180801/model/PublishTime.h
   include/tencentcloud/live/v20180801/model/FlvSpecialParam.h
   include/tencentcloud/live/v20180801/model/DescribeLiveCallbackTemplateResponse.h
@@ -281,6 +283,7 @@ set(live_public_header_model
   include/tencentcloud/live/v20180801/model/DescribeLiveCallbackRulesRequest.h
   include/tencentcloud/live/v20180801/model/DescribeConcurrentRecordStreamNumRequest.h
   include/tencentcloud/live/v20180801/model/DeleteScreenshotTaskResponse.h
+  include/tencentcloud/live/v20180801/model/DescribePullTransformPushInfoResponse.h
   include/tencentcloud/live/v20180801/model/DescribeLiveStreamStateRequest.h
   include/tencentcloud/live/v20180801/model/CreateLiveRecordTemplateResponse.h
   include/tencentcloud/live/v20180801/model/EnableLiveDomainRequest.h
@@ -487,6 +490,7 @@ set(live_src
   src/v20180801/model/ModifyLiveTranscodeTemplateRequest.cpp
   src/v20180801/model/ForbidLiveDomainResponse.cpp
   src/v20180801/model/CreateRecordTaskRequest.cpp
+  src/v20180801/model/TaskDurationInfo.cpp
   src/v20180801/model/CallBackRuleInfo.cpp
   src/v20180801/model/DescribeLivePadTemplateResponse.cpp
   src/v20180801/model/ResumeLiveStreamRequest.cpp
@@ -611,6 +615,7 @@ set(live_src
   src/v20180801/model/DeleteLiveRecordRuleResponse.cpp
   src/v20180801/model/DeleteLiveRecordRuleRequest.cpp
   src/v20180801/model/StopScreenshotTaskRequest.cpp
+  src/v20180801/model/DescribePullTransformPushInfoRequest.cpp
   src/v20180801/model/PublishTime.cpp
   src/v20180801/model/FlvSpecialParam.cpp
   src/v20180801/model/DescribeLiveCallbackTemplateResponse.cpp
@@ -675,6 +680,7 @@ set(live_src
   src/v20180801/model/DescribeLiveCallbackRulesRequest.cpp
   src/v20180801/model/DescribeConcurrentRecordStreamNumRequest.cpp
   src/v20180801/model/DeleteScreenshotTaskResponse.cpp
+  src/v20180801/model/DescribePullTransformPushInfoResponse.cpp
   src/v20180801/model/DescribeLiveStreamStateRequest.cpp
   src/v20180801/model/CreateLiveRecordTemplateResponse.cpp
   src/v20180801/model/EnableLiveDomainRequest.cpp

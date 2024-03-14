@@ -34,7 +34,8 @@ CreateRecordRequest::CreateRecordRequest() :
     m_tTLHasBeenSet(false),
     m_weightHasBeenSet(false),
     m_statusHasBeenSet(false),
-    m_remarkHasBeenSet(false)
+    m_remarkHasBeenSet(false),
+    m_dnssecConflictModeHasBeenSet(false)
 {
 }
 
@@ -139,6 +140,14 @@ string CreateRecordRequest::ToJsonString() const
         string key = "Remark";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_remark.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_dnssecConflictModeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "DnssecConflictMode";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_dnssecConflictMode.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -339,6 +348,22 @@ void CreateRecordRequest::SetRemark(const string& _remark)
 bool CreateRecordRequest::RemarkHasBeenSet() const
 {
     return m_remarkHasBeenSet;
+}
+
+string CreateRecordRequest::GetDnssecConflictMode() const
+{
+    return m_dnssecConflictMode;
+}
+
+void CreateRecordRequest::SetDnssecConflictMode(const string& _dnssecConflictMode)
+{
+    m_dnssecConflictMode = _dnssecConflictMode;
+    m_dnssecConflictModeHasBeenSet = true;
+}
+
+bool CreateRecordRequest::DnssecConflictModeHasBeenSet() const
+{
+    return m_dnssecConflictModeHasBeenSet;
 }
 
 

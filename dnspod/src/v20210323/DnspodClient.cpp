@@ -1717,6 +1717,49 @@ DnspodClient::DescribeRecordGroupListOutcomeCallable DnspodClient::DescribeRecor
     return task->get_future();
 }
 
+DnspodClient::DescribeRecordLineCategoryListOutcome DnspodClient::DescribeRecordLineCategoryList(const DescribeRecordLineCategoryListRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeRecordLineCategoryList");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeRecordLineCategoryListResponse rsp = DescribeRecordLineCategoryListResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeRecordLineCategoryListOutcome(rsp);
+        else
+            return DescribeRecordLineCategoryListOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeRecordLineCategoryListOutcome(outcome.GetError());
+    }
+}
+
+void DnspodClient::DescribeRecordLineCategoryListAsync(const DescribeRecordLineCategoryListRequest& request, const DescribeRecordLineCategoryListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeRecordLineCategoryList(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+DnspodClient::DescribeRecordLineCategoryListOutcomeCallable DnspodClient::DescribeRecordLineCategoryListCallable(const DescribeRecordLineCategoryListRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeRecordLineCategoryListOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeRecordLineCategoryList(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 DnspodClient::DescribeRecordLineListOutcome DnspodClient::DescribeRecordLineList(const DescribeRecordLineListRequest &request)
 {
     auto outcome = MakeRequest(request, "DescribeRecordLineList");

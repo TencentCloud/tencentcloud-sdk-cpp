@@ -35,7 +35,15 @@ InstanceDetail::InstanceDetail() :
     m_totalDeviceHasBeenSet(false),
     m_activateDeviceHasBeenSet(false),
     m_descriptionHasBeenSet(false),
-    m_statusHasBeenSet(false)
+    m_statusHasBeenSet(false),
+    m_upDownTPSHasBeenSet(false),
+    m_upDownCurrentTPSHasBeenSet(false),
+    m_forwardTPSHasBeenSet(false),
+    m_forwardCurrentTPSHasBeenSet(false),
+    m_cellNumHasBeenSet(false),
+    m_billingTagHasBeenSet(false),
+    m_everydayFreeMessageCountHasBeenSet(false),
+    m_maxDeviceOnlineCountHasBeenSet(false)
 {
 }
 
@@ -194,6 +202,86 @@ CoreInternalOutcome InstanceDetail::Deserialize(const rapidjson::Value &value)
         m_statusHasBeenSet = true;
     }
 
+    if (value.HasMember("UpDownTPS") && !value["UpDownTPS"].IsNull())
+    {
+        if (!value["UpDownTPS"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `InstanceDetail.UpDownTPS` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_upDownTPS = value["UpDownTPS"].GetInt64();
+        m_upDownTPSHasBeenSet = true;
+    }
+
+    if (value.HasMember("UpDownCurrentTPS") && !value["UpDownCurrentTPS"].IsNull())
+    {
+        if (!value["UpDownCurrentTPS"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `InstanceDetail.UpDownCurrentTPS` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_upDownCurrentTPS = value["UpDownCurrentTPS"].GetInt64();
+        m_upDownCurrentTPSHasBeenSet = true;
+    }
+
+    if (value.HasMember("ForwardTPS") && !value["ForwardTPS"].IsNull())
+    {
+        if (!value["ForwardTPS"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `InstanceDetail.ForwardTPS` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_forwardTPS = value["ForwardTPS"].GetInt64();
+        m_forwardTPSHasBeenSet = true;
+    }
+
+    if (value.HasMember("ForwardCurrentTPS") && !value["ForwardCurrentTPS"].IsNull())
+    {
+        if (!value["ForwardCurrentTPS"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `InstanceDetail.ForwardCurrentTPS` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_forwardCurrentTPS = value["ForwardCurrentTPS"].GetInt64();
+        m_forwardCurrentTPSHasBeenSet = true;
+    }
+
+    if (value.HasMember("CellNum") && !value["CellNum"].IsNull())
+    {
+        if (!value["CellNum"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `InstanceDetail.CellNum` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_cellNum = value["CellNum"].GetInt64();
+        m_cellNumHasBeenSet = true;
+    }
+
+    if (value.HasMember("BillingTag") && !value["BillingTag"].IsNull())
+    {
+        if (!value["BillingTag"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `InstanceDetail.BillingTag` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_billingTag = string(value["BillingTag"].GetString());
+        m_billingTagHasBeenSet = true;
+    }
+
+    if (value.HasMember("EverydayFreeMessageCount") && !value["EverydayFreeMessageCount"].IsNull())
+    {
+        if (!value["EverydayFreeMessageCount"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `InstanceDetail.EverydayFreeMessageCount` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_everydayFreeMessageCount = value["EverydayFreeMessageCount"].GetInt64();
+        m_everydayFreeMessageCountHasBeenSet = true;
+    }
+
+    if (value.HasMember("MaxDeviceOnlineCount") && !value["MaxDeviceOnlineCount"].IsNull())
+    {
+        if (!value["MaxDeviceOnlineCount"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `InstanceDetail.MaxDeviceOnlineCount` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_maxDeviceOnlineCount = value["MaxDeviceOnlineCount"].GetInt64();
+        m_maxDeviceOnlineCountHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -319,6 +407,70 @@ void InstanceDetail::ToJsonObject(rapidjson::Value &value, rapidjson::Document::
         string key = "Status";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_status, allocator);
+    }
+
+    if (m_upDownTPSHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "UpDownTPS";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_upDownTPS, allocator);
+    }
+
+    if (m_upDownCurrentTPSHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "UpDownCurrentTPS";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_upDownCurrentTPS, allocator);
+    }
+
+    if (m_forwardTPSHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ForwardTPS";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_forwardTPS, allocator);
+    }
+
+    if (m_forwardCurrentTPSHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ForwardCurrentTPS";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_forwardCurrentTPS, allocator);
+    }
+
+    if (m_cellNumHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "CellNum";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_cellNum, allocator);
+    }
+
+    if (m_billingTagHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "BillingTag";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_billingTag.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_everydayFreeMessageCountHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "EverydayFreeMessageCount";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_everydayFreeMessageCount, allocator);
+    }
+
+    if (m_maxDeviceOnlineCountHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "MaxDeviceOnlineCount";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_maxDeviceOnlineCount, allocator);
     }
 
 }
@@ -562,5 +714,133 @@ void InstanceDetail::SetStatus(const int64_t& _status)
 bool InstanceDetail::StatusHasBeenSet() const
 {
     return m_statusHasBeenSet;
+}
+
+int64_t InstanceDetail::GetUpDownTPS() const
+{
+    return m_upDownTPS;
+}
+
+void InstanceDetail::SetUpDownTPS(const int64_t& _upDownTPS)
+{
+    m_upDownTPS = _upDownTPS;
+    m_upDownTPSHasBeenSet = true;
+}
+
+bool InstanceDetail::UpDownTPSHasBeenSet() const
+{
+    return m_upDownTPSHasBeenSet;
+}
+
+int64_t InstanceDetail::GetUpDownCurrentTPS() const
+{
+    return m_upDownCurrentTPS;
+}
+
+void InstanceDetail::SetUpDownCurrentTPS(const int64_t& _upDownCurrentTPS)
+{
+    m_upDownCurrentTPS = _upDownCurrentTPS;
+    m_upDownCurrentTPSHasBeenSet = true;
+}
+
+bool InstanceDetail::UpDownCurrentTPSHasBeenSet() const
+{
+    return m_upDownCurrentTPSHasBeenSet;
+}
+
+int64_t InstanceDetail::GetForwardTPS() const
+{
+    return m_forwardTPS;
+}
+
+void InstanceDetail::SetForwardTPS(const int64_t& _forwardTPS)
+{
+    m_forwardTPS = _forwardTPS;
+    m_forwardTPSHasBeenSet = true;
+}
+
+bool InstanceDetail::ForwardTPSHasBeenSet() const
+{
+    return m_forwardTPSHasBeenSet;
+}
+
+int64_t InstanceDetail::GetForwardCurrentTPS() const
+{
+    return m_forwardCurrentTPS;
+}
+
+void InstanceDetail::SetForwardCurrentTPS(const int64_t& _forwardCurrentTPS)
+{
+    m_forwardCurrentTPS = _forwardCurrentTPS;
+    m_forwardCurrentTPSHasBeenSet = true;
+}
+
+bool InstanceDetail::ForwardCurrentTPSHasBeenSet() const
+{
+    return m_forwardCurrentTPSHasBeenSet;
+}
+
+int64_t InstanceDetail::GetCellNum() const
+{
+    return m_cellNum;
+}
+
+void InstanceDetail::SetCellNum(const int64_t& _cellNum)
+{
+    m_cellNum = _cellNum;
+    m_cellNumHasBeenSet = true;
+}
+
+bool InstanceDetail::CellNumHasBeenSet() const
+{
+    return m_cellNumHasBeenSet;
+}
+
+string InstanceDetail::GetBillingTag() const
+{
+    return m_billingTag;
+}
+
+void InstanceDetail::SetBillingTag(const string& _billingTag)
+{
+    m_billingTag = _billingTag;
+    m_billingTagHasBeenSet = true;
+}
+
+bool InstanceDetail::BillingTagHasBeenSet() const
+{
+    return m_billingTagHasBeenSet;
+}
+
+int64_t InstanceDetail::GetEverydayFreeMessageCount() const
+{
+    return m_everydayFreeMessageCount;
+}
+
+void InstanceDetail::SetEverydayFreeMessageCount(const int64_t& _everydayFreeMessageCount)
+{
+    m_everydayFreeMessageCount = _everydayFreeMessageCount;
+    m_everydayFreeMessageCountHasBeenSet = true;
+}
+
+bool InstanceDetail::EverydayFreeMessageCountHasBeenSet() const
+{
+    return m_everydayFreeMessageCountHasBeenSet;
+}
+
+int64_t InstanceDetail::GetMaxDeviceOnlineCount() const
+{
+    return m_maxDeviceOnlineCount;
+}
+
+void InstanceDetail::SetMaxDeviceOnlineCount(const int64_t& _maxDeviceOnlineCount)
+{
+    m_maxDeviceOnlineCount = _maxDeviceOnlineCount;
+    m_maxDeviceOnlineCountHasBeenSet = true;
+}
+
+bool InstanceDetail::MaxDeviceOnlineCountHasBeenSet() const
+{
+    return m_maxDeviceOnlineCountHasBeenSet;
 }
 

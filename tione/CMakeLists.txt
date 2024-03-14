@@ -141,10 +141,11 @@ set(tione_public_header_model
   include/tencentcloud/tione/v20211111/model/CFSConfig.h
   include/tencentcloud/tione/v20211111/model/DescribeTrainingMetricsRequest.h
   include/tencentcloud/tione/v20211111/model/CreateNotebookImageRequest.h
+  include/tencentcloud/tione/v20211111/model/StartNotebookRequest.h
   include/tencentcloud/tione/v20211111/model/APIConfigDetail.h
   include/tencentcloud/tione/v20211111/model/InferTemplate.h
   include/tencentcloud/tione/v20211111/model/DescribeModelAccelerateVersionsResponse.h
-  include/tencentcloud/tione/v20211111/model/StartNotebookRequest.h
+  include/tencentcloud/tione/v20211111/model/DescribeBuildInImagesRequest.h
   include/tencentcloud/tione/v20211111/model/SSHConfig.h
   include/tencentcloud/tione/v20211111/model/StartTrainingTaskRequest.h
   include/tencentcloud/tione/v20211111/model/StopBatchTaskRequest.h
@@ -228,6 +229,7 @@ set(tione_public_header_model
   include/tencentcloud/tione/v20211111/model/CreatePresignedNotebookUrlRequest.h
   include/tencentcloud/tione/v20211111/model/ModifyNotebookResponse.h
   include/tencentcloud/tione/v20211111/model/DescribeModelServiceResponse.h
+  include/tencentcloud/tione/v20211111/model/DescribeBuildInImagesResponse.h
   include/tencentcloud/tione/v20211111/model/DescribeDatasetsResponse.h
   include/tencentcloud/tione/v20211111/model/ModelSource.h
   include/tencentcloud/tione/v20211111/model/CreateBatchModelAccTasksRequest.h
@@ -473,10 +475,11 @@ set(tione_src
   src/v20211111/model/CFSConfig.cpp
   src/v20211111/model/DescribeTrainingMetricsRequest.cpp
   src/v20211111/model/CreateNotebookImageRequest.cpp
+  src/v20211111/model/StartNotebookRequest.cpp
   src/v20211111/model/APIConfigDetail.cpp
   src/v20211111/model/InferTemplate.cpp
   src/v20211111/model/DescribeModelAccelerateVersionsResponse.cpp
-  src/v20211111/model/StartNotebookRequest.cpp
+  src/v20211111/model/DescribeBuildInImagesRequest.cpp
   src/v20211111/model/SSHConfig.cpp
   src/v20211111/model/StartTrainingTaskRequest.cpp
   src/v20211111/model/StopBatchTaskRequest.cpp
@@ -560,6 +563,7 @@ set(tione_src
   src/v20211111/model/CreatePresignedNotebookUrlRequest.cpp
   src/v20211111/model/ModifyNotebookResponse.cpp
   src/v20211111/model/DescribeModelServiceResponse.cpp
+  src/v20211111/model/DescribeBuildInImagesResponse.cpp
   src/v20211111/model/DescribeDatasetsResponse.cpp
   src/v20211111/model/ModelSource.cpp
   src/v20211111/model/CreateBatchModelAccTasksRequest.cpp

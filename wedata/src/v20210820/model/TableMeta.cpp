@@ -70,7 +70,10 @@ TableMeta::TableMeta() :
     m_columnsHasBeenSet(false),
     m_metaCrawlTypeHasBeenSet(false),
     m_isViewHasBeenSet(false),
-    m_locationHasBeenSet(false)
+    m_locationHasBeenSet(false),
+    m_isPartitionTableHasBeenSet(false),
+    m_partitionColumnsHasBeenSet(false),
+    m_partitionExpireDaysHasBeenSet(false)
 {
 }
 
@@ -609,6 +612,39 @@ CoreInternalOutcome TableMeta::Deserialize(const rapidjson::Value &value)
         m_locationHasBeenSet = true;
     }
 
+    if (value.HasMember("IsPartitionTable") && !value["IsPartitionTable"].IsNull())
+    {
+        if (!value["IsPartitionTable"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `TableMeta.IsPartitionTable` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_isPartitionTable = value["IsPartitionTable"].GetInt64();
+        m_isPartitionTableHasBeenSet = true;
+    }
+
+    if (value.HasMember("PartitionColumns") && !value["PartitionColumns"].IsNull())
+    {
+        if (!value["PartitionColumns"].IsArray())
+            return CoreInternalOutcome(Core::Error("response `TableMeta.PartitionColumns` is not array type"));
+
+        const rapidjson::Value &tmpValue = value["PartitionColumns"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            m_partitionColumns.push_back((*itr).GetString());
+        }
+        m_partitionColumnsHasBeenSet = true;
+    }
+
+    if (value.HasMember("PartitionExpireDays") && !value["PartitionExpireDays"].IsNull())
+    {
+        if (!value["PartitionExpireDays"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `TableMeta.PartitionExpireDays` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_partitionExpireDays = value["PartitionExpireDays"].GetInt64();
+        m_partitionExpireDaysHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -1033,6 +1069,35 @@ void TableMeta::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Alloc
         string key = "Location";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_location.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_isPartitionTableHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "IsPartitionTable";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_isPartitionTable, allocator);
+    }
+
+    if (m_partitionColumnsHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "PartitionColumns";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        for (auto itr = m_partitionColumns.begin(); itr != m_partitionColumns.end(); ++itr)
+        {
+            value[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
+        }
+    }
+
+    if (m_partitionExpireDaysHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "PartitionExpireDays";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_partitionExpireDays, allocator);
     }
 
 }
@@ -1836,5 +1901,53 @@ void TableMeta::SetLocation(const string& _location)
 bool TableMeta::LocationHasBeenSet() const
 {
     return m_locationHasBeenSet;
+}
+
+int64_t TableMeta::GetIsPartitionTable() const
+{
+    return m_isPartitionTable;
+}
+
+void TableMeta::SetIsPartitionTable(const int64_t& _isPartitionTable)
+{
+    m_isPartitionTable = _isPartitionTable;
+    m_isPartitionTableHasBeenSet = true;
+}
+
+bool TableMeta::IsPartitionTableHasBeenSet() const
+{
+    return m_isPartitionTableHasBeenSet;
+}
+
+vector<string> TableMeta::GetPartitionColumns() const
+{
+    return m_partitionColumns;
+}
+
+void TableMeta::SetPartitionColumns(const vector<string>& _partitionColumns)
+{
+    m_partitionColumns = _partitionColumns;
+    m_partitionColumnsHasBeenSet = true;
+}
+
+bool TableMeta::PartitionColumnsHasBeenSet() const
+{
+    return m_partitionColumnsHasBeenSet;
+}
+
+int64_t TableMeta::GetPartitionExpireDays() const
+{
+    return m_partitionExpireDays;
+}
+
+void TableMeta::SetPartitionExpireDays(const int64_t& _partitionExpireDays)
+{
+    m_partitionExpireDays = _partitionExpireDays;
+    m_partitionExpireDaysHasBeenSet = true;
+}
+
+bool TableMeta::PartitionExpireDaysHasBeenSet() const
+{
+    return m_partitionExpireDaysHasBeenSet;
 }
 

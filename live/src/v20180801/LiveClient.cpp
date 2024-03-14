@@ -4727,6 +4727,49 @@ LiveClient::DescribePullStreamConfigsOutcomeCallable LiveClient::DescribePullStr
     return task->get_future();
 }
 
+LiveClient::DescribePullTransformPushInfoOutcome LiveClient::DescribePullTransformPushInfo(const DescribePullTransformPushInfoRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribePullTransformPushInfo");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribePullTransformPushInfoResponse rsp = DescribePullTransformPushInfoResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribePullTransformPushInfoOutcome(rsp);
+        else
+            return DescribePullTransformPushInfoOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribePullTransformPushInfoOutcome(outcome.GetError());
+    }
+}
+
+void LiveClient::DescribePullTransformPushInfoAsync(const DescribePullTransformPushInfoRequest& request, const DescribePullTransformPushInfoAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribePullTransformPushInfo(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+LiveClient::DescribePullTransformPushInfoOutcomeCallable LiveClient::DescribePullTransformPushInfoCallable(const DescribePullTransformPushInfoRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribePullTransformPushInfoOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribePullTransformPushInfo(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 LiveClient::DescribePushBandwidthAndFluxListOutcome LiveClient::DescribePushBandwidthAndFluxList(const DescribePushBandwidthAndFluxListRequest &request)
 {
     auto outcome = MakeRequest(request, "DescribePushBandwidthAndFluxList");

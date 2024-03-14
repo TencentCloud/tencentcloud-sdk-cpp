@@ -83,6 +83,8 @@
 #include <tencentcloud/tione/v20211111/model/DescribeBillingSpecsResponse.h>
 #include <tencentcloud/tione/v20211111/model/DescribeBillingSpecsPriceRequest.h>
 #include <tencentcloud/tione/v20211111/model/DescribeBillingSpecsPriceResponse.h>
+#include <tencentcloud/tione/v20211111/model/DescribeBuildInImagesRequest.h>
+#include <tencentcloud/tione/v20211111/model/DescribeBuildInImagesResponse.h>
 #include <tencentcloud/tione/v20211111/model/DescribeDatasetDetailStructuredRequest.h>
 #include <tencentcloud/tione/v20211111/model/DescribeDatasetDetailStructuredResponse.h>
 #include <tencentcloud/tione/v20211111/model/DescribeDatasetDetailUnstructuredRequest.h>
@@ -277,6 +279,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeBillingSpecsPriceResponse> DescribeBillingSpecsPriceOutcome;
                 typedef std::future<DescribeBillingSpecsPriceOutcome> DescribeBillingSpecsPriceOutcomeCallable;
                 typedef std::function<void(const TioneClient*, const Model::DescribeBillingSpecsPriceRequest&, DescribeBillingSpecsPriceOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeBillingSpecsPriceAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeBuildInImagesResponse> DescribeBuildInImagesOutcome;
+                typedef std::future<DescribeBuildInImagesOutcome> DescribeBuildInImagesOutcomeCallable;
+                typedef std::function<void(const TioneClient*, const Model::DescribeBuildInImagesRequest&, DescribeBuildInImagesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeBuildInImagesAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeDatasetDetailStructuredResponse> DescribeDatasetDetailStructuredOutcome;
                 typedef std::future<DescribeDatasetDetailStructuredOutcome> DescribeDatasetDetailStructuredOutcomeCallable;
                 typedef std::function<void(const TioneClient*, const Model::DescribeDatasetDetailStructuredRequest&, DescribeDatasetDetailStructuredOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeDatasetDetailStructuredAsyncHandler;
@@ -684,6 +689,15 @@ namespace TencentCloud
                 DescribeBillingSpecsPriceOutcome DescribeBillingSpecsPrice(const Model::DescribeBillingSpecsPriceRequest &request);
                 void DescribeBillingSpecsPriceAsync(const Model::DescribeBillingSpecsPriceRequest& request, const DescribeBillingSpecsPriceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DescribeBillingSpecsPriceOutcomeCallable DescribeBillingSpecsPriceCallable(const Model::DescribeBillingSpecsPriceRequest& request);
+
+                /**
+                 *获取内置镜像列表
+                 * @param req DescribeBuildInImagesRequest
+                 * @return DescribeBuildInImagesOutcome
+                 */
+                DescribeBuildInImagesOutcome DescribeBuildInImages(const Model::DescribeBuildInImagesRequest &request);
+                void DescribeBuildInImagesAsync(const Model::DescribeBuildInImagesRequest& request, const DescribeBuildInImagesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeBuildInImagesOutcomeCallable DescribeBuildInImagesCallable(const Model::DescribeBuildInImagesRequest& request);
 
                 /**
                  *查询结构化数据集详情

@@ -294,6 +294,27 @@ namespace TencentCloud
                      */
                     bool RemarkHasBeenSet() const;
 
+                    /**
+                     * 获取开启DNSSEC时，强制添加CNAME/URL记录
+                     * @return DnssecConflictMode 开启DNSSEC时，强制添加CNAME/URL记录
+                     * 
+                     */
+                    std::string GetDnssecConflictMode() const;
+
+                    /**
+                     * 设置开启DNSSEC时，强制添加CNAME/URL记录
+                     * @param _dnssecConflictMode 开启DNSSEC时，强制添加CNAME/URL记录
+                     * 
+                     */
+                    void SetDnssecConflictMode(const std::string& _dnssecConflictMode);
+
+                    /**
+                     * 判断参数 DnssecConflictMode 是否已赋值
+                     * @return DnssecConflictMode 是否已赋值
+                     * 
+                     */
+                    bool DnssecConflictModeHasBeenSet() const;
+
                 private:
 
                     /**
@@ -367,6 +388,12 @@ namespace TencentCloud
                      */
                     std::string m_remark;
                     bool m_remarkHasBeenSet;
+
+                    /**
+                     * 开启DNSSEC时，强制添加CNAME/URL记录
+                     */
+                    std::string m_dnssecConflictMode;
+                    bool m_dnssecConflictModeHasBeenSet;
 
                 };
             }

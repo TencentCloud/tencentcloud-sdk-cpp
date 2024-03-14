@@ -23,6 +23,10 @@
 #include <tencentcloud/core/Credential.h>
 #include <tencentcloud/core/profile/ClientProfile.h>
 #include <tencentcloud/core/AsyncCallerContext.h>
+#include <tencentcloud/es/v20180416/model/CheckMigrateIndexMetaDataRequest.h>
+#include <tencentcloud/es/v20180416/model/CheckMigrateIndexMetaDataResponse.h>
+#include <tencentcloud/es/v20180416/model/CreateCosMigrateToServerlessInstanceRequest.h>
+#include <tencentcloud/es/v20180416/model/CreateCosMigrateToServerlessInstanceResponse.h>
 #include <tencentcloud/es/v20180416/model/CreateIndexRequest.h>
 #include <tencentcloud/es/v20180416/model/CreateIndexResponse.h>
 #include <tencentcloud/es/v20180416/model/CreateInstanceRequest.h>
@@ -71,6 +75,8 @@
 #include <tencentcloud/es/v20180416/model/DescribeServerlessSpaceUserResponse.h>
 #include <tencentcloud/es/v20180416/model/DescribeServerlessSpacesRequest.h>
 #include <tencentcloud/es/v20180416/model/DescribeServerlessSpacesResponse.h>
+#include <tencentcloud/es/v20180416/model/DescribeUserCosSnapshotListRequest.h>
+#include <tencentcloud/es/v20180416/model/DescribeUserCosSnapshotListResponse.h>
 #include <tencentcloud/es/v20180416/model/DescribeViewsRequest.h>
 #include <tencentcloud/es/v20180416/model/DescribeViewsResponse.h>
 #include <tencentcloud/es/v20180416/model/DiagnoseInstanceRequest.h>
@@ -137,6 +143,12 @@ namespace TencentCloud
                 EsClient(const Credential &credential, const std::string &region);
                 EsClient(const Credential &credential, const std::string &region, const ClientProfile &profile);
 
+                typedef Outcome<Core::Error, Model::CheckMigrateIndexMetaDataResponse> CheckMigrateIndexMetaDataOutcome;
+                typedef std::future<CheckMigrateIndexMetaDataOutcome> CheckMigrateIndexMetaDataOutcomeCallable;
+                typedef std::function<void(const EsClient*, const Model::CheckMigrateIndexMetaDataRequest&, CheckMigrateIndexMetaDataOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CheckMigrateIndexMetaDataAsyncHandler;
+                typedef Outcome<Core::Error, Model::CreateCosMigrateToServerlessInstanceResponse> CreateCosMigrateToServerlessInstanceOutcome;
+                typedef std::future<CreateCosMigrateToServerlessInstanceOutcome> CreateCosMigrateToServerlessInstanceOutcomeCallable;
+                typedef std::function<void(const EsClient*, const Model::CreateCosMigrateToServerlessInstanceRequest&, CreateCosMigrateToServerlessInstanceOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateCosMigrateToServerlessInstanceAsyncHandler;
                 typedef Outcome<Core::Error, Model::CreateIndexResponse> CreateIndexOutcome;
                 typedef std::future<CreateIndexOutcome> CreateIndexOutcomeCallable;
                 typedef std::function<void(const EsClient*, const Model::CreateIndexRequest&, CreateIndexOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateIndexAsyncHandler;
@@ -209,6 +221,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeServerlessSpacesResponse> DescribeServerlessSpacesOutcome;
                 typedef std::future<DescribeServerlessSpacesOutcome> DescribeServerlessSpacesOutcomeCallable;
                 typedef std::function<void(const EsClient*, const Model::DescribeServerlessSpacesRequest&, DescribeServerlessSpacesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeServerlessSpacesAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeUserCosSnapshotListResponse> DescribeUserCosSnapshotListOutcome;
+                typedef std::future<DescribeUserCosSnapshotListOutcome> DescribeUserCosSnapshotListOutcomeCallable;
+                typedef std::function<void(const EsClient*, const Model::DescribeUserCosSnapshotListRequest&, DescribeUserCosSnapshotListOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeUserCosSnapshotListAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeViewsResponse> DescribeViewsOutcome;
                 typedef std::future<DescribeViewsOutcome> DescribeViewsOutcomeCallable;
                 typedef std::function<void(const EsClient*, const Model::DescribeViewsRequest&, DescribeViewsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeViewsAsyncHandler;
@@ -289,6 +304,24 @@ namespace TencentCloud
                 typedef std::function<void(const EsClient*, const Model::UpgradeLicenseRequest&, UpgradeLicenseOutcome, const std::shared_ptr<const AsyncCallerContext>&)> UpgradeLicenseAsyncHandler;
 
 
+
+                /**
+                 *检查cos迁移索引元数据
+                 * @param req CheckMigrateIndexMetaDataRequest
+                 * @return CheckMigrateIndexMetaDataOutcome
+                 */
+                CheckMigrateIndexMetaDataOutcome CheckMigrateIndexMetaData(const Model::CheckMigrateIndexMetaDataRequest &request);
+                void CheckMigrateIndexMetaDataAsync(const Model::CheckMigrateIndexMetaDataRequest& request, const CheckMigrateIndexMetaDataAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                CheckMigrateIndexMetaDataOutcomeCallable CheckMigrateIndexMetaDataCallable(const Model::CheckMigrateIndexMetaDataRequest& request);
+
+                /**
+                 *cos迁移流程
+                 * @param req CreateCosMigrateToServerlessInstanceRequest
+                 * @return CreateCosMigrateToServerlessInstanceOutcome
+                 */
+                CreateCosMigrateToServerlessInstanceOutcome CreateCosMigrateToServerlessInstance(const Model::CreateCosMigrateToServerlessInstanceRequest &request);
+                void CreateCosMigrateToServerlessInstanceAsync(const Model::CreateCosMigrateToServerlessInstanceRequest& request, const CreateCosMigrateToServerlessInstanceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                CreateCosMigrateToServerlessInstanceOutcomeCallable CreateCosMigrateToServerlessInstanceCallable(const Model::CreateCosMigrateToServerlessInstanceRequest& request);
 
                 /**
                  *创建索引
@@ -505,6 +538,15 @@ namespace TencentCloud
                 DescribeServerlessSpacesOutcome DescribeServerlessSpaces(const Model::DescribeServerlessSpacesRequest &request);
                 void DescribeServerlessSpacesAsync(const Model::DescribeServerlessSpacesRequest& request, const DescribeServerlessSpacesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DescribeServerlessSpacesOutcomeCallable DescribeServerlessSpacesCallable(const Model::DescribeServerlessSpacesRequest& request);
+
+                /**
+                 *查询快照信息接口
+                 * @param req DescribeUserCosSnapshotListRequest
+                 * @return DescribeUserCosSnapshotListOutcome
+                 */
+                DescribeUserCosSnapshotListOutcome DescribeUserCosSnapshotList(const Model::DescribeUserCosSnapshotListRequest &request);
+                void DescribeUserCosSnapshotListAsync(const Model::DescribeUserCosSnapshotListRequest& request, const DescribeUserCosSnapshotListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeUserCosSnapshotListOutcomeCallable DescribeUserCosSnapshotListCallable(const Model::DescribeUserCosSnapshotListRequest& request);
 
                 /**
                  *查询集群各视图数据，包括集群维度、节点维度、Kibana维度

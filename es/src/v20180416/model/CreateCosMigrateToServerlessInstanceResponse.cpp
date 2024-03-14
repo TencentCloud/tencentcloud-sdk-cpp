@@ -14,21 +14,21 @@
  * limitations under the License.
  */
 
-#include <tencentcloud/cls/v20201016/model/DescribeKafkaUserResponse.h>
+#include <tencentcloud/es/v20180416/model/CreateCosMigrateToServerlessInstanceResponse.h>
 #include <tencentcloud/core/utils/rapidjson/document.h>
 #include <tencentcloud/core/utils/rapidjson/writer.h>
 #include <tencentcloud/core/utils/rapidjson/stringbuffer.h>
 
 using TencentCloud::CoreInternalOutcome;
-using namespace TencentCloud::Cls::V20201016::Model;
+using namespace TencentCloud::Es::V20180416::Model;
 using namespace std;
 
-DescribeKafkaUserResponse::DescribeKafkaUserResponse() :
-    m_userNameHasBeenSet(false)
+CreateCosMigrateToServerlessInstanceResponse::CreateCosMigrateToServerlessInstanceResponse() :
+    m_taskIdHasBeenSet(false)
 {
 }
 
-CoreInternalOutcome DescribeKafkaUserResponse::Deserialize(const string &payload)
+CoreInternalOutcome CreateCosMigrateToServerlessInstanceResponse::Deserialize(const string &payload)
 {
     rapidjson::Document d;
     d.Parse(payload.c_str());
@@ -62,32 +62,32 @@ CoreInternalOutcome DescribeKafkaUserResponse::Deserialize(const string &payload
     }
 
 
-    if (rsp.HasMember("UserName") && !rsp["UserName"].IsNull())
+    if (rsp.HasMember("TaskId") && !rsp["TaskId"].IsNull())
     {
-        if (!rsp["UserName"].IsString())
+        if (!rsp["TaskId"].IsString())
         {
-            return CoreInternalOutcome(Core::Error("response `UserName` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `TaskId` IsString=false incorrectly").SetRequestId(requestId));
         }
-        m_userName = string(rsp["UserName"].GetString());
-        m_userNameHasBeenSet = true;
+        m_taskId = string(rsp["TaskId"].GetString());
+        m_taskIdHasBeenSet = true;
     }
 
 
     return CoreInternalOutcome(true);
 }
 
-string DescribeKafkaUserResponse::ToJsonString() const
+string CreateCosMigrateToServerlessInstanceResponse::ToJsonString() const
 {
     rapidjson::Document value;
     value.SetObject();
     rapidjson::Document::AllocatorType& allocator = value.GetAllocator();
 
-    if (m_userNameHasBeenSet)
+    if (m_taskIdHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "UserName";
+        string key = "TaskId";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, rapidjson::Value(m_userName.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_taskId.c_str(), allocator).Move(), allocator);
     }
 
     rapidjson::Value iKey(rapidjson::kStringType);
@@ -102,14 +102,14 @@ string DescribeKafkaUserResponse::ToJsonString() const
 }
 
 
-string DescribeKafkaUserResponse::GetUserName() const
+string CreateCosMigrateToServerlessInstanceResponse::GetTaskId() const
 {
-    return m_userName;
+    return m_taskId;
 }
 
-bool DescribeKafkaUserResponse::UserNameHasBeenSet() const
+bool CreateCosMigrateToServerlessInstanceResponse::TaskIdHasBeenSet() const
 {
-    return m_userNameHasBeenSet;
+    return m_taskIdHasBeenSet;
 }
 
 

@@ -68,15 +68,15 @@ namespace TencentCloud
                     bool IdHasBeenSet() const;
 
                     /**
-                     * 获取图片url
-                     * @return Url 图片url
+                     * 获取图片url(暂不支持传图片Url信息,请使用Base64字段传递图片的Base64编码)
+                     * @return Url 图片url(暂不支持传图片Url信息,请使用Base64字段传递图片的Base64编码)
                      * 
                      */
                     std::string GetUrl() const;
 
                     /**
-                     * 设置图片url
-                     * @param _url 图片url
+                     * 设置图片url(暂不支持传图片Url信息,请使用Base64字段传递图片的Base64编码)
+                     * @param _url 图片url(暂不支持传图片Url信息,请使用Base64字段传递图片的Base64编码)
                      * 
                      */
                     void SetUrl(const std::string& _url);
@@ -118,7 +118,7 @@ namespace TencentCloud
                     bool m_idHasBeenSet;
 
                     /**
-                     * 图片url
+                     * 图片url(暂不支持传图片Url信息,请使用Base64字段传递图片的Base64编码)
                      */
                     std::string m_url;
                     bool m_urlHasBeenSet;

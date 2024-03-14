@@ -43,7 +43,10 @@ TableLineageInfo::TableLineageInfo() :
     m_channelTypeHasBeenSet(false),
     m_displayTypeHasBeenSet(false),
     m_engineTypeHasBeenSet(false),
-    m_tableTypeHasBeenSet(false)
+    m_tableTypeHasBeenSet(false),
+    m_datasourceNameHasBeenSet(false),
+    m_databaseNameHasBeenSet(false),
+    m_databaseIdHasBeenSet(false)
 {
 }
 
@@ -305,6 +308,36 @@ CoreInternalOutcome TableLineageInfo::Deserialize(const rapidjson::Value &value)
         m_tableTypeHasBeenSet = true;
     }
 
+    if (value.HasMember("DatasourceName") && !value["DatasourceName"].IsNull())
+    {
+        if (!value["DatasourceName"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `TableLineageInfo.DatasourceName` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_datasourceName = string(value["DatasourceName"].GetString());
+        m_datasourceNameHasBeenSet = true;
+    }
+
+    if (value.HasMember("DatabaseName") && !value["DatabaseName"].IsNull())
+    {
+        if (!value["DatabaseName"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `TableLineageInfo.DatabaseName` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_databaseName = string(value["DatabaseName"].GetString());
+        m_databaseNameHasBeenSet = true;
+    }
+
+    if (value.HasMember("DatabaseId") && !value["DatabaseId"].IsNull())
+    {
+        if (!value["DatabaseId"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `TableLineageInfo.DatabaseId` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_databaseId = string(value["DatabaseId"].GetString());
+        m_databaseIdHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -513,6 +546,30 @@ void TableLineageInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Document
         string key = "TableType";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_tableType.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_datasourceNameHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "DatasourceName";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_datasourceName.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_databaseNameHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "DatabaseName";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_databaseName.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_databaseIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "DatabaseId";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_databaseId.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -884,5 +941,53 @@ void TableLineageInfo::SetTableType(const string& _tableType)
 bool TableLineageInfo::TableTypeHasBeenSet() const
 {
     return m_tableTypeHasBeenSet;
+}
+
+string TableLineageInfo::GetDatasourceName() const
+{
+    return m_datasourceName;
+}
+
+void TableLineageInfo::SetDatasourceName(const string& _datasourceName)
+{
+    m_datasourceName = _datasourceName;
+    m_datasourceNameHasBeenSet = true;
+}
+
+bool TableLineageInfo::DatasourceNameHasBeenSet() const
+{
+    return m_datasourceNameHasBeenSet;
+}
+
+string TableLineageInfo::GetDatabaseName() const
+{
+    return m_databaseName;
+}
+
+void TableLineageInfo::SetDatabaseName(const string& _databaseName)
+{
+    m_databaseName = _databaseName;
+    m_databaseNameHasBeenSet = true;
+}
+
+bool TableLineageInfo::DatabaseNameHasBeenSet() const
+{
+    return m_databaseNameHasBeenSet;
+}
+
+string TableLineageInfo::GetDatabaseId() const
+{
+    return m_databaseId;
+}
+
+void TableLineageInfo::SetDatabaseId(const string& _databaseId)
+{
+    m_databaseId = _databaseId;
+    m_databaseIdHasBeenSet = true;
+}
+
+bool TableLineageInfo::DatabaseIdHasBeenSet() const
+{
+    return m_databaseIdHasBeenSet;
 }
 

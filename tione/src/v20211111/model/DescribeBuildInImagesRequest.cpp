@@ -14,33 +14,24 @@
  * limitations under the License.
  */
 
-#include <tencentcloud/cls/v20201016/model/DescribeKafkaUserRequest.h>
+#include <tencentcloud/tione/v20211111/model/DescribeBuildInImagesRequest.h>
 #include <tencentcloud/core/utils/rapidjson/document.h>
 #include <tencentcloud/core/utils/rapidjson/writer.h>
 #include <tencentcloud/core/utils/rapidjson/stringbuffer.h>
 
-using namespace TencentCloud::Cls::V20201016::Model;
+using namespace TencentCloud::Tione::V20211111::Model;
 using namespace std;
 
-DescribeKafkaUserRequest::DescribeKafkaUserRequest() :
-    m_userNameHasBeenSet(false)
+DescribeBuildInImagesRequest::DescribeBuildInImagesRequest()
 {
 }
 
-string DescribeKafkaUserRequest::ToJsonString() const
+string DescribeBuildInImagesRequest::ToJsonString() const
 {
     rapidjson::Document d;
     d.SetObject();
     rapidjson::Document::AllocatorType& allocator = d.GetAllocator();
 
-
-    if (m_userNameHasBeenSet)
-    {
-        rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "UserName";
-        iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, rapidjson::Value(m_userName.c_str(), allocator).Move(), allocator);
-    }
 
 
     rapidjson::StringBuffer buffer;
@@ -49,21 +40,5 @@ string DescribeKafkaUserRequest::ToJsonString() const
     return buffer.GetString();
 }
 
-
-string DescribeKafkaUserRequest::GetUserName() const
-{
-    return m_userName;
-}
-
-void DescribeKafkaUserRequest::SetUserName(const string& _userName)
-{
-    m_userName = _userName;
-    m_userNameHasBeenSet = true;
-}
-
-bool DescribeKafkaUserRequest::UserNameHasBeenSet() const
-{
-    return m_userNameHasBeenSet;
-}
 
 

@@ -1303,6 +1303,81 @@ TABLE, VIEW, MANAGED_TABLE(Hive管理表), EXTERNAL_TABLE(Hive外部表), VIRTUA
                      */
                     bool LocationHasBeenSet() const;
 
+                    /**
+                     * 获取判断是否是分区表1 是 0否
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return IsPartitionTable 判断是否是分区表1 是 0否
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    int64_t GetIsPartitionTable() const;
+
+                    /**
+                     * 设置判断是否是分区表1 是 0否
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _isPartitionTable 判断是否是分区表1 是 0否
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetIsPartitionTable(const int64_t& _isPartitionTable);
+
+                    /**
+                     * 判断参数 IsPartitionTable 是否已赋值
+                     * @return IsPartitionTable 是否已赋值
+                     * 
+                     */
+                    bool IsPartitionTableHasBeenSet() const;
+
+                    /**
+                     * 获取分区字段 key
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return PartitionColumns 分区字段 key
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::vector<std::string> GetPartitionColumns() const;
+
+                    /**
+                     * 设置分区字段 key
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _partitionColumns 分区字段 key
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetPartitionColumns(const std::vector<std::string>& _partitionColumns);
+
+                    /**
+                     * 判断参数 PartitionColumns 是否已赋值
+                     * @return PartitionColumns 是否已赋值
+                     * 
+                     */
+                    bool PartitionColumnsHasBeenSet() const;
+
+                    /**
+                     * 获取生命周期-分区保留天数【分区保留策略时有效】
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return PartitionExpireDays 生命周期-分区保留天数【分区保留策略时有效】
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    int64_t GetPartitionExpireDays() const;
+
+                    /**
+                     * 设置生命周期-分区保留天数【分区保留策略时有效】
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _partitionExpireDays 生命周期-分区保留天数【分区保留策略时有效】
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetPartitionExpireDays(const int64_t& _partitionExpireDays);
+
+                    /**
+                     * 判断参数 PartitionExpireDays 是否已赋值
+                     * @return PartitionExpireDays 是否已赋值
+                     * 
+                     */
+                    bool PartitionExpireDaysHasBeenSet() const;
+
                 private:
 
                     /**
@@ -1655,6 +1730,27 @@ TABLE, VIEW, MANAGED_TABLE(Hive管理表), EXTERNAL_TABLE(Hive外部表), VIRTUA
                      */
                     std::string m_location;
                     bool m_locationHasBeenSet;
+
+                    /**
+                     * 判断是否是分区表1 是 0否
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    int64_t m_isPartitionTable;
+                    bool m_isPartitionTableHasBeenSet;
+
+                    /**
+                     * 分区字段 key
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::vector<std::string> m_partitionColumns;
+                    bool m_partitionColumnsHasBeenSet;
+
+                    /**
+                     * 生命周期-分区保留天数【分区保留策略时有效】
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    int64_t m_partitionExpireDays;
+                    bool m_partitionExpireDaysHasBeenSet;
 
                 };
             }

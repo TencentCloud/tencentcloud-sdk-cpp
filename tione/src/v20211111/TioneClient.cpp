@@ -1330,6 +1330,49 @@ TioneClient::DescribeBillingSpecsPriceOutcomeCallable TioneClient::DescribeBilli
     return task->get_future();
 }
 
+TioneClient::DescribeBuildInImagesOutcome TioneClient::DescribeBuildInImages(const DescribeBuildInImagesRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeBuildInImages");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeBuildInImagesResponse rsp = DescribeBuildInImagesResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeBuildInImagesOutcome(rsp);
+        else
+            return DescribeBuildInImagesOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeBuildInImagesOutcome(outcome.GetError());
+    }
+}
+
+void TioneClient::DescribeBuildInImagesAsync(const DescribeBuildInImagesRequest& request, const DescribeBuildInImagesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeBuildInImages(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+TioneClient::DescribeBuildInImagesOutcomeCallable TioneClient::DescribeBuildInImagesCallable(const DescribeBuildInImagesRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeBuildInImagesOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeBuildInImages(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 TioneClient::DescribeDatasetDetailStructuredOutcome TioneClient::DescribeDatasetDetailStructured(const DescribeDatasetDetailStructuredRequest &request)
 {
     auto outcome = MakeRequest(request, "DescribeDatasetDetailStructured");

@@ -147,6 +147,69 @@ namespace TencentCloud
                      */
                     bool LimitHasBeenSet() const;
 
+                    /**
+                     * 获取执行状态，CREATED、INITIALIZED、COMPILED、RUNNING、FINISHED、EXCEPTION
+                     * @return State 执行状态，CREATED、INITIALIZED、COMPILED、RUNNING、FINISHED、EXCEPTION
+                     * 
+                     */
+                    std::vector<std::string> GetState() const;
+
+                    /**
+                     * 设置执行状态，CREATED、INITIALIZED、COMPILED、RUNNING、FINISHED、EXCEPTION
+                     * @param _state 执行状态，CREATED、INITIALIZED、COMPILED、RUNNING、FINISHED、EXCEPTION
+                     * 
+                     */
+                    void SetState(const std::vector<std::string>& _state);
+
+                    /**
+                     * 判断参数 State 是否已赋值
+                     * @return State 是否已赋值
+                     * 
+                     */
+                    bool StateHasBeenSet() const;
+
+                    /**
+                     * 获取结束时间大于的时间点
+                     * @return EndTimeGte 结束时间大于的时间点
+                     * 
+                     */
+                    uint64_t GetEndTimeGte() const;
+
+                    /**
+                     * 设置结束时间大于的时间点
+                     * @param _endTimeGte 结束时间大于的时间点
+                     * 
+                     */
+                    void SetEndTimeGte(const uint64_t& _endTimeGte);
+
+                    /**
+                     * 判断参数 EndTimeGte 是否已赋值
+                     * @return EndTimeGte 是否已赋值
+                     * 
+                     */
+                    bool EndTimeGteHasBeenSet() const;
+
+                    /**
+                     * 获取结束时间小于的时间点
+                     * @return EndTimeLte 结束时间小于的时间点
+                     * 
+                     */
+                    uint64_t GetEndTimeLte() const;
+
+                    /**
+                     * 设置结束时间小于的时间点
+                     * @param _endTimeLte 结束时间小于的时间点
+                     * 
+                     */
+                    void SetEndTimeLte(const uint64_t& _endTimeLte);
+
+                    /**
+                     * 判断参数 EndTimeLte 是否已赋值
+                     * @return EndTimeLte 是否已赋值
+                     * 
+                     */
+                    bool EndTimeLteHasBeenSet() const;
+
                 private:
 
                     /**
@@ -178,6 +241,24 @@ namespace TencentCloud
                      */
                     int64_t m_limit;
                     bool m_limitHasBeenSet;
+
+                    /**
+                     * 执行状态，CREATED、INITIALIZED、COMPILED、RUNNING、FINISHED、EXCEPTION
+                     */
+                    std::vector<std::string> m_state;
+                    bool m_stateHasBeenSet;
+
+                    /**
+                     * 结束时间大于的时间点
+                     */
+                    uint64_t m_endTimeGte;
+                    bool m_endTimeGteHasBeenSet;
+
+                    /**
+                     * 结束时间小于的时间点
+                     */
+                    uint64_t m_endTimeLte;
+                    bool m_endTimeLteHasBeenSet;
 
                 };
             }
