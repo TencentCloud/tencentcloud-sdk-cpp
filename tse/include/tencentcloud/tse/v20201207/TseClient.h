@@ -45,12 +45,24 @@
 #include <tencentcloud/tse/v20201207/model/CreateCloudNativeAPIGatewayServiceResponse.h>
 #include <tencentcloud/tse/v20201207/model/CreateCloudNativeAPIGatewayServiceRateLimitRequest.h>
 #include <tencentcloud/tse/v20201207/model/CreateCloudNativeAPIGatewayServiceRateLimitResponse.h>
+#include <tencentcloud/tse/v20201207/model/CreateConfigFileRequest.h>
+#include <tencentcloud/tse/v20201207/model/CreateConfigFileResponse.h>
+#include <tencentcloud/tse/v20201207/model/CreateConfigFileGroupRequest.h>
+#include <tencentcloud/tse/v20201207/model/CreateConfigFileGroupResponse.h>
 #include <tencentcloud/tse/v20201207/model/CreateEngineRequest.h>
 #include <tencentcloud/tse/v20201207/model/CreateEngineResponse.h>
+#include <tencentcloud/tse/v20201207/model/CreateGovernanceAliasRequest.h>
+#include <tencentcloud/tse/v20201207/model/CreateGovernanceAliasResponse.h>
 #include <tencentcloud/tse/v20201207/model/CreateGovernanceInstancesRequest.h>
 #include <tencentcloud/tse/v20201207/model/CreateGovernanceInstancesResponse.h>
+#include <tencentcloud/tse/v20201207/model/CreateGovernanceNamespacesRequest.h>
+#include <tencentcloud/tse/v20201207/model/CreateGovernanceNamespacesResponse.h>
+#include <tencentcloud/tse/v20201207/model/CreateGovernanceServicesRequest.h>
+#include <tencentcloud/tse/v20201207/model/CreateGovernanceServicesResponse.h>
 #include <tencentcloud/tse/v20201207/model/CreateNativeGatewayServerGroupRequest.h>
 #include <tencentcloud/tse/v20201207/model/CreateNativeGatewayServerGroupResponse.h>
+#include <tencentcloud/tse/v20201207/model/CreateOrUpdateConfigFileAndReleaseRequest.h>
+#include <tencentcloud/tse/v20201207/model/CreateOrUpdateConfigFileAndReleaseResponse.h>
 #include <tencentcloud/tse/v20201207/model/CreateWafDomainsRequest.h>
 #include <tencentcloud/tse/v20201207/model/CreateWafDomainsResponse.h>
 #include <tencentcloud/tse/v20201207/model/DeleteAutoScalerResourceStrategyRequest.h>
@@ -71,14 +83,30 @@
 #include <tencentcloud/tse/v20201207/model/DeleteCloudNativeAPIGatewayServiceResponse.h>
 #include <tencentcloud/tse/v20201207/model/DeleteCloudNativeAPIGatewayServiceRateLimitRequest.h>
 #include <tencentcloud/tse/v20201207/model/DeleteCloudNativeAPIGatewayServiceRateLimitResponse.h>
+#include <tencentcloud/tse/v20201207/model/DeleteConfigFileGroupRequest.h>
+#include <tencentcloud/tse/v20201207/model/DeleteConfigFileGroupResponse.h>
+#include <tencentcloud/tse/v20201207/model/DeleteConfigFileReleasesRequest.h>
+#include <tencentcloud/tse/v20201207/model/DeleteConfigFileReleasesResponse.h>
+#include <tencentcloud/tse/v20201207/model/DeleteConfigFilesRequest.h>
+#include <tencentcloud/tse/v20201207/model/DeleteConfigFilesResponse.h>
 #include <tencentcloud/tse/v20201207/model/DeleteEngineRequest.h>
 #include <tencentcloud/tse/v20201207/model/DeleteEngineResponse.h>
+#include <tencentcloud/tse/v20201207/model/DeleteGovernanceAliasesRequest.h>
+#include <tencentcloud/tse/v20201207/model/DeleteGovernanceAliasesResponse.h>
 #include <tencentcloud/tse/v20201207/model/DeleteGovernanceInstancesRequest.h>
 #include <tencentcloud/tse/v20201207/model/DeleteGovernanceInstancesResponse.h>
+#include <tencentcloud/tse/v20201207/model/DeleteGovernanceInstancesByHostRequest.h>
+#include <tencentcloud/tse/v20201207/model/DeleteGovernanceInstancesByHostResponse.h>
+#include <tencentcloud/tse/v20201207/model/DeleteGovernanceNamespacesRequest.h>
+#include <tencentcloud/tse/v20201207/model/DeleteGovernanceNamespacesResponse.h>
+#include <tencentcloud/tse/v20201207/model/DeleteGovernanceServicesRequest.h>
+#include <tencentcloud/tse/v20201207/model/DeleteGovernanceServicesResponse.h>
 #include <tencentcloud/tse/v20201207/model/DeleteNativeGatewayServerGroupRequest.h>
 #include <tencentcloud/tse/v20201207/model/DeleteNativeGatewayServerGroupResponse.h>
 #include <tencentcloud/tse/v20201207/model/DeleteWafDomainsRequest.h>
 #include <tencentcloud/tse/v20201207/model/DeleteWafDomainsResponse.h>
+#include <tencentcloud/tse/v20201207/model/DescribeAllConfigFileTemplatesRequest.h>
+#include <tencentcloud/tse/v20201207/model/DescribeAllConfigFileTemplatesResponse.h>
 #include <tencentcloud/tse/v20201207/model/DescribeAutoScalerResourceStrategiesRequest.h>
 #include <tencentcloud/tse/v20201207/model/DescribeAutoScalerResourceStrategiesResponse.h>
 #include <tencentcloud/tse/v20201207/model/DescribeAutoScalerResourceStrategyBindingGroupsRequest.h>
@@ -109,8 +137,34 @@
 #include <tencentcloud/tse/v20201207/model/DescribeCloudNativeAPIGatewayUpstreamResponse.h>
 #include <tencentcloud/tse/v20201207/model/DescribeCloudNativeAPIGatewaysRequest.h>
 #include <tencentcloud/tse/v20201207/model/DescribeCloudNativeAPIGatewaysResponse.h>
+#include <tencentcloud/tse/v20201207/model/DescribeConfigFileRequest.h>
+#include <tencentcloud/tse/v20201207/model/DescribeConfigFileResponse.h>
+#include <tencentcloud/tse/v20201207/model/DescribeConfigFileGroupsRequest.h>
+#include <tencentcloud/tse/v20201207/model/DescribeConfigFileGroupsResponse.h>
+#include <tencentcloud/tse/v20201207/model/DescribeConfigFileReleaseRequest.h>
+#include <tencentcloud/tse/v20201207/model/DescribeConfigFileReleaseResponse.h>
+#include <tencentcloud/tse/v20201207/model/DescribeConfigFileReleaseHistoriesRequest.h>
+#include <tencentcloud/tse/v20201207/model/DescribeConfigFileReleaseHistoriesResponse.h>
+#include <tencentcloud/tse/v20201207/model/DescribeConfigFileReleaseVersionsRequest.h>
+#include <tencentcloud/tse/v20201207/model/DescribeConfigFileReleaseVersionsResponse.h>
+#include <tencentcloud/tse/v20201207/model/DescribeConfigFileReleasesRequest.h>
+#include <tencentcloud/tse/v20201207/model/DescribeConfigFileReleasesResponse.h>
+#include <tencentcloud/tse/v20201207/model/DescribeConfigFilesRequest.h>
+#include <tencentcloud/tse/v20201207/model/DescribeConfigFilesResponse.h>
+#include <tencentcloud/tse/v20201207/model/DescribeConfigFilesByGroupRequest.h>
+#include <tencentcloud/tse/v20201207/model/DescribeConfigFilesByGroupResponse.h>
+#include <tencentcloud/tse/v20201207/model/DescribeGovernanceAliasesRequest.h>
+#include <tencentcloud/tse/v20201207/model/DescribeGovernanceAliasesResponse.h>
 #include <tencentcloud/tse/v20201207/model/DescribeGovernanceInstancesRequest.h>
 #include <tencentcloud/tse/v20201207/model/DescribeGovernanceInstancesResponse.h>
+#include <tencentcloud/tse/v20201207/model/DescribeGovernanceNamespacesRequest.h>
+#include <tencentcloud/tse/v20201207/model/DescribeGovernanceNamespacesResponse.h>
+#include <tencentcloud/tse/v20201207/model/DescribeGovernanceServiceContractVersionsRequest.h>
+#include <tencentcloud/tse/v20201207/model/DescribeGovernanceServiceContractVersionsResponse.h>
+#include <tencentcloud/tse/v20201207/model/DescribeGovernanceServiceContractsRequest.h>
+#include <tencentcloud/tse/v20201207/model/DescribeGovernanceServiceContractsResponse.h>
+#include <tencentcloud/tse/v20201207/model/DescribeGovernanceServicesRequest.h>
+#include <tencentcloud/tse/v20201207/model/DescribeGovernanceServicesResponse.h>
 #include <tencentcloud/tse/v20201207/model/DescribeNacosReplicasRequest.h>
 #include <tencentcloud/tse/v20201207/model/DescribeNacosReplicasResponse.h>
 #include <tencentcloud/tse/v20201207/model/DescribeNacosServerInterfacesRequest.h>
@@ -151,10 +205,20 @@
 #include <tencentcloud/tse/v20201207/model/ModifyCloudNativeAPIGatewayServiceResponse.h>
 #include <tencentcloud/tse/v20201207/model/ModifyCloudNativeAPIGatewayServiceRateLimitRequest.h>
 #include <tencentcloud/tse/v20201207/model/ModifyCloudNativeAPIGatewayServiceRateLimitResponse.h>
+#include <tencentcloud/tse/v20201207/model/ModifyConfigFileGroupRequest.h>
+#include <tencentcloud/tse/v20201207/model/ModifyConfigFileGroupResponse.h>
+#include <tencentcloud/tse/v20201207/model/ModifyConfigFilesRequest.h>
+#include <tencentcloud/tse/v20201207/model/ModifyConfigFilesResponse.h>
 #include <tencentcloud/tse/v20201207/model/ModifyConsoleNetworkRequest.h>
 #include <tencentcloud/tse/v20201207/model/ModifyConsoleNetworkResponse.h>
+#include <tencentcloud/tse/v20201207/model/ModifyGovernanceAliasRequest.h>
+#include <tencentcloud/tse/v20201207/model/ModifyGovernanceAliasResponse.h>
 #include <tencentcloud/tse/v20201207/model/ModifyGovernanceInstancesRequest.h>
 #include <tencentcloud/tse/v20201207/model/ModifyGovernanceInstancesResponse.h>
+#include <tencentcloud/tse/v20201207/model/ModifyGovernanceNamespacesRequest.h>
+#include <tencentcloud/tse/v20201207/model/ModifyGovernanceNamespacesResponse.h>
+#include <tencentcloud/tse/v20201207/model/ModifyGovernanceServicesRequest.h>
+#include <tencentcloud/tse/v20201207/model/ModifyGovernanceServicesResponse.h>
 #include <tencentcloud/tse/v20201207/model/ModifyNativeGatewayServerGroupRequest.h>
 #include <tencentcloud/tse/v20201207/model/ModifyNativeGatewayServerGroupResponse.h>
 #include <tencentcloud/tse/v20201207/model/ModifyNetworkAccessStrategyRequest.h>
@@ -165,6 +229,10 @@
 #include <tencentcloud/tse/v20201207/model/ModifyUpstreamNodeStatusResponse.h>
 #include <tencentcloud/tse/v20201207/model/OpenWafProtectionRequest.h>
 #include <tencentcloud/tse/v20201207/model/OpenWafProtectionResponse.h>
+#include <tencentcloud/tse/v20201207/model/PublishConfigFilesRequest.h>
+#include <tencentcloud/tse/v20201207/model/PublishConfigFilesResponse.h>
+#include <tencentcloud/tse/v20201207/model/RollbackConfigFileReleasesRequest.h>
+#include <tencentcloud/tse/v20201207/model/RollbackConfigFileReleasesResponse.h>
 #include <tencentcloud/tse/v20201207/model/UnbindAutoScalerResourceStrategyFromGroupsRequest.h>
 #include <tencentcloud/tse/v20201207/model/UnbindAutoScalerResourceStrategyFromGroupsResponse.h>
 #include <tencentcloud/tse/v20201207/model/UpdateCloudNativeAPIGatewayCertificateInfoRequest.h>
@@ -224,15 +292,33 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::CreateCloudNativeAPIGatewayServiceRateLimitResponse> CreateCloudNativeAPIGatewayServiceRateLimitOutcome;
                 typedef std::future<CreateCloudNativeAPIGatewayServiceRateLimitOutcome> CreateCloudNativeAPIGatewayServiceRateLimitOutcomeCallable;
                 typedef std::function<void(const TseClient*, const Model::CreateCloudNativeAPIGatewayServiceRateLimitRequest&, CreateCloudNativeAPIGatewayServiceRateLimitOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateCloudNativeAPIGatewayServiceRateLimitAsyncHandler;
+                typedef Outcome<Core::Error, Model::CreateConfigFileResponse> CreateConfigFileOutcome;
+                typedef std::future<CreateConfigFileOutcome> CreateConfigFileOutcomeCallable;
+                typedef std::function<void(const TseClient*, const Model::CreateConfigFileRequest&, CreateConfigFileOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateConfigFileAsyncHandler;
+                typedef Outcome<Core::Error, Model::CreateConfigFileGroupResponse> CreateConfigFileGroupOutcome;
+                typedef std::future<CreateConfigFileGroupOutcome> CreateConfigFileGroupOutcomeCallable;
+                typedef std::function<void(const TseClient*, const Model::CreateConfigFileGroupRequest&, CreateConfigFileGroupOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateConfigFileGroupAsyncHandler;
                 typedef Outcome<Core::Error, Model::CreateEngineResponse> CreateEngineOutcome;
                 typedef std::future<CreateEngineOutcome> CreateEngineOutcomeCallable;
                 typedef std::function<void(const TseClient*, const Model::CreateEngineRequest&, CreateEngineOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateEngineAsyncHandler;
+                typedef Outcome<Core::Error, Model::CreateGovernanceAliasResponse> CreateGovernanceAliasOutcome;
+                typedef std::future<CreateGovernanceAliasOutcome> CreateGovernanceAliasOutcomeCallable;
+                typedef std::function<void(const TseClient*, const Model::CreateGovernanceAliasRequest&, CreateGovernanceAliasOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateGovernanceAliasAsyncHandler;
                 typedef Outcome<Core::Error, Model::CreateGovernanceInstancesResponse> CreateGovernanceInstancesOutcome;
                 typedef std::future<CreateGovernanceInstancesOutcome> CreateGovernanceInstancesOutcomeCallable;
                 typedef std::function<void(const TseClient*, const Model::CreateGovernanceInstancesRequest&, CreateGovernanceInstancesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateGovernanceInstancesAsyncHandler;
+                typedef Outcome<Core::Error, Model::CreateGovernanceNamespacesResponse> CreateGovernanceNamespacesOutcome;
+                typedef std::future<CreateGovernanceNamespacesOutcome> CreateGovernanceNamespacesOutcomeCallable;
+                typedef std::function<void(const TseClient*, const Model::CreateGovernanceNamespacesRequest&, CreateGovernanceNamespacesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateGovernanceNamespacesAsyncHandler;
+                typedef Outcome<Core::Error, Model::CreateGovernanceServicesResponse> CreateGovernanceServicesOutcome;
+                typedef std::future<CreateGovernanceServicesOutcome> CreateGovernanceServicesOutcomeCallable;
+                typedef std::function<void(const TseClient*, const Model::CreateGovernanceServicesRequest&, CreateGovernanceServicesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateGovernanceServicesAsyncHandler;
                 typedef Outcome<Core::Error, Model::CreateNativeGatewayServerGroupResponse> CreateNativeGatewayServerGroupOutcome;
                 typedef std::future<CreateNativeGatewayServerGroupOutcome> CreateNativeGatewayServerGroupOutcomeCallable;
                 typedef std::function<void(const TseClient*, const Model::CreateNativeGatewayServerGroupRequest&, CreateNativeGatewayServerGroupOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateNativeGatewayServerGroupAsyncHandler;
+                typedef Outcome<Core::Error, Model::CreateOrUpdateConfigFileAndReleaseResponse> CreateOrUpdateConfigFileAndReleaseOutcome;
+                typedef std::future<CreateOrUpdateConfigFileAndReleaseOutcome> CreateOrUpdateConfigFileAndReleaseOutcomeCallable;
+                typedef std::function<void(const TseClient*, const Model::CreateOrUpdateConfigFileAndReleaseRequest&, CreateOrUpdateConfigFileAndReleaseOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateOrUpdateConfigFileAndReleaseAsyncHandler;
                 typedef Outcome<Core::Error, Model::CreateWafDomainsResponse> CreateWafDomainsOutcome;
                 typedef std::future<CreateWafDomainsOutcome> CreateWafDomainsOutcomeCallable;
                 typedef std::function<void(const TseClient*, const Model::CreateWafDomainsRequest&, CreateWafDomainsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateWafDomainsAsyncHandler;
@@ -263,18 +349,42 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DeleteCloudNativeAPIGatewayServiceRateLimitResponse> DeleteCloudNativeAPIGatewayServiceRateLimitOutcome;
                 typedef std::future<DeleteCloudNativeAPIGatewayServiceRateLimitOutcome> DeleteCloudNativeAPIGatewayServiceRateLimitOutcomeCallable;
                 typedef std::function<void(const TseClient*, const Model::DeleteCloudNativeAPIGatewayServiceRateLimitRequest&, DeleteCloudNativeAPIGatewayServiceRateLimitOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteCloudNativeAPIGatewayServiceRateLimitAsyncHandler;
+                typedef Outcome<Core::Error, Model::DeleteConfigFileGroupResponse> DeleteConfigFileGroupOutcome;
+                typedef std::future<DeleteConfigFileGroupOutcome> DeleteConfigFileGroupOutcomeCallable;
+                typedef std::function<void(const TseClient*, const Model::DeleteConfigFileGroupRequest&, DeleteConfigFileGroupOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteConfigFileGroupAsyncHandler;
+                typedef Outcome<Core::Error, Model::DeleteConfigFileReleasesResponse> DeleteConfigFileReleasesOutcome;
+                typedef std::future<DeleteConfigFileReleasesOutcome> DeleteConfigFileReleasesOutcomeCallable;
+                typedef std::function<void(const TseClient*, const Model::DeleteConfigFileReleasesRequest&, DeleteConfigFileReleasesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteConfigFileReleasesAsyncHandler;
+                typedef Outcome<Core::Error, Model::DeleteConfigFilesResponse> DeleteConfigFilesOutcome;
+                typedef std::future<DeleteConfigFilesOutcome> DeleteConfigFilesOutcomeCallable;
+                typedef std::function<void(const TseClient*, const Model::DeleteConfigFilesRequest&, DeleteConfigFilesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteConfigFilesAsyncHandler;
                 typedef Outcome<Core::Error, Model::DeleteEngineResponse> DeleteEngineOutcome;
                 typedef std::future<DeleteEngineOutcome> DeleteEngineOutcomeCallable;
                 typedef std::function<void(const TseClient*, const Model::DeleteEngineRequest&, DeleteEngineOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteEngineAsyncHandler;
+                typedef Outcome<Core::Error, Model::DeleteGovernanceAliasesResponse> DeleteGovernanceAliasesOutcome;
+                typedef std::future<DeleteGovernanceAliasesOutcome> DeleteGovernanceAliasesOutcomeCallable;
+                typedef std::function<void(const TseClient*, const Model::DeleteGovernanceAliasesRequest&, DeleteGovernanceAliasesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteGovernanceAliasesAsyncHandler;
                 typedef Outcome<Core::Error, Model::DeleteGovernanceInstancesResponse> DeleteGovernanceInstancesOutcome;
                 typedef std::future<DeleteGovernanceInstancesOutcome> DeleteGovernanceInstancesOutcomeCallable;
                 typedef std::function<void(const TseClient*, const Model::DeleteGovernanceInstancesRequest&, DeleteGovernanceInstancesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteGovernanceInstancesAsyncHandler;
+                typedef Outcome<Core::Error, Model::DeleteGovernanceInstancesByHostResponse> DeleteGovernanceInstancesByHostOutcome;
+                typedef std::future<DeleteGovernanceInstancesByHostOutcome> DeleteGovernanceInstancesByHostOutcomeCallable;
+                typedef std::function<void(const TseClient*, const Model::DeleteGovernanceInstancesByHostRequest&, DeleteGovernanceInstancesByHostOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteGovernanceInstancesByHostAsyncHandler;
+                typedef Outcome<Core::Error, Model::DeleteGovernanceNamespacesResponse> DeleteGovernanceNamespacesOutcome;
+                typedef std::future<DeleteGovernanceNamespacesOutcome> DeleteGovernanceNamespacesOutcomeCallable;
+                typedef std::function<void(const TseClient*, const Model::DeleteGovernanceNamespacesRequest&, DeleteGovernanceNamespacesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteGovernanceNamespacesAsyncHandler;
+                typedef Outcome<Core::Error, Model::DeleteGovernanceServicesResponse> DeleteGovernanceServicesOutcome;
+                typedef std::future<DeleteGovernanceServicesOutcome> DeleteGovernanceServicesOutcomeCallable;
+                typedef std::function<void(const TseClient*, const Model::DeleteGovernanceServicesRequest&, DeleteGovernanceServicesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteGovernanceServicesAsyncHandler;
                 typedef Outcome<Core::Error, Model::DeleteNativeGatewayServerGroupResponse> DeleteNativeGatewayServerGroupOutcome;
                 typedef std::future<DeleteNativeGatewayServerGroupOutcome> DeleteNativeGatewayServerGroupOutcomeCallable;
                 typedef std::function<void(const TseClient*, const Model::DeleteNativeGatewayServerGroupRequest&, DeleteNativeGatewayServerGroupOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteNativeGatewayServerGroupAsyncHandler;
                 typedef Outcome<Core::Error, Model::DeleteWafDomainsResponse> DeleteWafDomainsOutcome;
                 typedef std::future<DeleteWafDomainsOutcome> DeleteWafDomainsOutcomeCallable;
                 typedef std::function<void(const TseClient*, const Model::DeleteWafDomainsRequest&, DeleteWafDomainsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteWafDomainsAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeAllConfigFileTemplatesResponse> DescribeAllConfigFileTemplatesOutcome;
+                typedef std::future<DescribeAllConfigFileTemplatesOutcome> DescribeAllConfigFileTemplatesOutcomeCallable;
+                typedef std::function<void(const TseClient*, const Model::DescribeAllConfigFileTemplatesRequest&, DescribeAllConfigFileTemplatesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeAllConfigFileTemplatesAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeAutoScalerResourceStrategiesResponse> DescribeAutoScalerResourceStrategiesOutcome;
                 typedef std::future<DescribeAutoScalerResourceStrategiesOutcome> DescribeAutoScalerResourceStrategiesOutcomeCallable;
                 typedef std::function<void(const TseClient*, const Model::DescribeAutoScalerResourceStrategiesRequest&, DescribeAutoScalerResourceStrategiesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeAutoScalerResourceStrategiesAsyncHandler;
@@ -320,9 +430,48 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeCloudNativeAPIGatewaysResponse> DescribeCloudNativeAPIGatewaysOutcome;
                 typedef std::future<DescribeCloudNativeAPIGatewaysOutcome> DescribeCloudNativeAPIGatewaysOutcomeCallable;
                 typedef std::function<void(const TseClient*, const Model::DescribeCloudNativeAPIGatewaysRequest&, DescribeCloudNativeAPIGatewaysOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeCloudNativeAPIGatewaysAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeConfigFileResponse> DescribeConfigFileOutcome;
+                typedef std::future<DescribeConfigFileOutcome> DescribeConfigFileOutcomeCallable;
+                typedef std::function<void(const TseClient*, const Model::DescribeConfigFileRequest&, DescribeConfigFileOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeConfigFileAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeConfigFileGroupsResponse> DescribeConfigFileGroupsOutcome;
+                typedef std::future<DescribeConfigFileGroupsOutcome> DescribeConfigFileGroupsOutcomeCallable;
+                typedef std::function<void(const TseClient*, const Model::DescribeConfigFileGroupsRequest&, DescribeConfigFileGroupsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeConfigFileGroupsAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeConfigFileReleaseResponse> DescribeConfigFileReleaseOutcome;
+                typedef std::future<DescribeConfigFileReleaseOutcome> DescribeConfigFileReleaseOutcomeCallable;
+                typedef std::function<void(const TseClient*, const Model::DescribeConfigFileReleaseRequest&, DescribeConfigFileReleaseOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeConfigFileReleaseAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeConfigFileReleaseHistoriesResponse> DescribeConfigFileReleaseHistoriesOutcome;
+                typedef std::future<DescribeConfigFileReleaseHistoriesOutcome> DescribeConfigFileReleaseHistoriesOutcomeCallable;
+                typedef std::function<void(const TseClient*, const Model::DescribeConfigFileReleaseHistoriesRequest&, DescribeConfigFileReleaseHistoriesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeConfigFileReleaseHistoriesAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeConfigFileReleaseVersionsResponse> DescribeConfigFileReleaseVersionsOutcome;
+                typedef std::future<DescribeConfigFileReleaseVersionsOutcome> DescribeConfigFileReleaseVersionsOutcomeCallable;
+                typedef std::function<void(const TseClient*, const Model::DescribeConfigFileReleaseVersionsRequest&, DescribeConfigFileReleaseVersionsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeConfigFileReleaseVersionsAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeConfigFileReleasesResponse> DescribeConfigFileReleasesOutcome;
+                typedef std::future<DescribeConfigFileReleasesOutcome> DescribeConfigFileReleasesOutcomeCallable;
+                typedef std::function<void(const TseClient*, const Model::DescribeConfigFileReleasesRequest&, DescribeConfigFileReleasesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeConfigFileReleasesAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeConfigFilesResponse> DescribeConfigFilesOutcome;
+                typedef std::future<DescribeConfigFilesOutcome> DescribeConfigFilesOutcomeCallable;
+                typedef std::function<void(const TseClient*, const Model::DescribeConfigFilesRequest&, DescribeConfigFilesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeConfigFilesAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeConfigFilesByGroupResponse> DescribeConfigFilesByGroupOutcome;
+                typedef std::future<DescribeConfigFilesByGroupOutcome> DescribeConfigFilesByGroupOutcomeCallable;
+                typedef std::function<void(const TseClient*, const Model::DescribeConfigFilesByGroupRequest&, DescribeConfigFilesByGroupOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeConfigFilesByGroupAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeGovernanceAliasesResponse> DescribeGovernanceAliasesOutcome;
+                typedef std::future<DescribeGovernanceAliasesOutcome> DescribeGovernanceAliasesOutcomeCallable;
+                typedef std::function<void(const TseClient*, const Model::DescribeGovernanceAliasesRequest&, DescribeGovernanceAliasesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeGovernanceAliasesAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeGovernanceInstancesResponse> DescribeGovernanceInstancesOutcome;
                 typedef std::future<DescribeGovernanceInstancesOutcome> DescribeGovernanceInstancesOutcomeCallable;
                 typedef std::function<void(const TseClient*, const Model::DescribeGovernanceInstancesRequest&, DescribeGovernanceInstancesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeGovernanceInstancesAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeGovernanceNamespacesResponse> DescribeGovernanceNamespacesOutcome;
+                typedef std::future<DescribeGovernanceNamespacesOutcome> DescribeGovernanceNamespacesOutcomeCallable;
+                typedef std::function<void(const TseClient*, const Model::DescribeGovernanceNamespacesRequest&, DescribeGovernanceNamespacesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeGovernanceNamespacesAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeGovernanceServiceContractVersionsResponse> DescribeGovernanceServiceContractVersionsOutcome;
+                typedef std::future<DescribeGovernanceServiceContractVersionsOutcome> DescribeGovernanceServiceContractVersionsOutcomeCallable;
+                typedef std::function<void(const TseClient*, const Model::DescribeGovernanceServiceContractVersionsRequest&, DescribeGovernanceServiceContractVersionsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeGovernanceServiceContractVersionsAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeGovernanceServiceContractsResponse> DescribeGovernanceServiceContractsOutcome;
+                typedef std::future<DescribeGovernanceServiceContractsOutcome> DescribeGovernanceServiceContractsOutcomeCallable;
+                typedef std::function<void(const TseClient*, const Model::DescribeGovernanceServiceContractsRequest&, DescribeGovernanceServiceContractsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeGovernanceServiceContractsAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeGovernanceServicesResponse> DescribeGovernanceServicesOutcome;
+                typedef std::future<DescribeGovernanceServicesOutcome> DescribeGovernanceServicesOutcomeCallable;
+                typedef std::function<void(const TseClient*, const Model::DescribeGovernanceServicesRequest&, DescribeGovernanceServicesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeGovernanceServicesAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeNacosReplicasResponse> DescribeNacosReplicasOutcome;
                 typedef std::future<DescribeNacosReplicasOutcome> DescribeNacosReplicasOutcomeCallable;
                 typedef std::function<void(const TseClient*, const Model::DescribeNacosReplicasRequest&, DescribeNacosReplicasOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeNacosReplicasAsyncHandler;
@@ -383,12 +532,27 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::ModifyCloudNativeAPIGatewayServiceRateLimitResponse> ModifyCloudNativeAPIGatewayServiceRateLimitOutcome;
                 typedef std::future<ModifyCloudNativeAPIGatewayServiceRateLimitOutcome> ModifyCloudNativeAPIGatewayServiceRateLimitOutcomeCallable;
                 typedef std::function<void(const TseClient*, const Model::ModifyCloudNativeAPIGatewayServiceRateLimitRequest&, ModifyCloudNativeAPIGatewayServiceRateLimitOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyCloudNativeAPIGatewayServiceRateLimitAsyncHandler;
+                typedef Outcome<Core::Error, Model::ModifyConfigFileGroupResponse> ModifyConfigFileGroupOutcome;
+                typedef std::future<ModifyConfigFileGroupOutcome> ModifyConfigFileGroupOutcomeCallable;
+                typedef std::function<void(const TseClient*, const Model::ModifyConfigFileGroupRequest&, ModifyConfigFileGroupOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyConfigFileGroupAsyncHandler;
+                typedef Outcome<Core::Error, Model::ModifyConfigFilesResponse> ModifyConfigFilesOutcome;
+                typedef std::future<ModifyConfigFilesOutcome> ModifyConfigFilesOutcomeCallable;
+                typedef std::function<void(const TseClient*, const Model::ModifyConfigFilesRequest&, ModifyConfigFilesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyConfigFilesAsyncHandler;
                 typedef Outcome<Core::Error, Model::ModifyConsoleNetworkResponse> ModifyConsoleNetworkOutcome;
                 typedef std::future<ModifyConsoleNetworkOutcome> ModifyConsoleNetworkOutcomeCallable;
                 typedef std::function<void(const TseClient*, const Model::ModifyConsoleNetworkRequest&, ModifyConsoleNetworkOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyConsoleNetworkAsyncHandler;
+                typedef Outcome<Core::Error, Model::ModifyGovernanceAliasResponse> ModifyGovernanceAliasOutcome;
+                typedef std::future<ModifyGovernanceAliasOutcome> ModifyGovernanceAliasOutcomeCallable;
+                typedef std::function<void(const TseClient*, const Model::ModifyGovernanceAliasRequest&, ModifyGovernanceAliasOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyGovernanceAliasAsyncHandler;
                 typedef Outcome<Core::Error, Model::ModifyGovernanceInstancesResponse> ModifyGovernanceInstancesOutcome;
                 typedef std::future<ModifyGovernanceInstancesOutcome> ModifyGovernanceInstancesOutcomeCallable;
                 typedef std::function<void(const TseClient*, const Model::ModifyGovernanceInstancesRequest&, ModifyGovernanceInstancesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyGovernanceInstancesAsyncHandler;
+                typedef Outcome<Core::Error, Model::ModifyGovernanceNamespacesResponse> ModifyGovernanceNamespacesOutcome;
+                typedef std::future<ModifyGovernanceNamespacesOutcome> ModifyGovernanceNamespacesOutcomeCallable;
+                typedef std::function<void(const TseClient*, const Model::ModifyGovernanceNamespacesRequest&, ModifyGovernanceNamespacesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyGovernanceNamespacesAsyncHandler;
+                typedef Outcome<Core::Error, Model::ModifyGovernanceServicesResponse> ModifyGovernanceServicesOutcome;
+                typedef std::future<ModifyGovernanceServicesOutcome> ModifyGovernanceServicesOutcomeCallable;
+                typedef std::function<void(const TseClient*, const Model::ModifyGovernanceServicesRequest&, ModifyGovernanceServicesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyGovernanceServicesAsyncHandler;
                 typedef Outcome<Core::Error, Model::ModifyNativeGatewayServerGroupResponse> ModifyNativeGatewayServerGroupOutcome;
                 typedef std::future<ModifyNativeGatewayServerGroupOutcome> ModifyNativeGatewayServerGroupOutcomeCallable;
                 typedef std::function<void(const TseClient*, const Model::ModifyNativeGatewayServerGroupRequest&, ModifyNativeGatewayServerGroupOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyNativeGatewayServerGroupAsyncHandler;
@@ -404,6 +568,12 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::OpenWafProtectionResponse> OpenWafProtectionOutcome;
                 typedef std::future<OpenWafProtectionOutcome> OpenWafProtectionOutcomeCallable;
                 typedef std::function<void(const TseClient*, const Model::OpenWafProtectionRequest&, OpenWafProtectionOutcome, const std::shared_ptr<const AsyncCallerContext>&)> OpenWafProtectionAsyncHandler;
+                typedef Outcome<Core::Error, Model::PublishConfigFilesResponse> PublishConfigFilesOutcome;
+                typedef std::future<PublishConfigFilesOutcome> PublishConfigFilesOutcomeCallable;
+                typedef std::function<void(const TseClient*, const Model::PublishConfigFilesRequest&, PublishConfigFilesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> PublishConfigFilesAsyncHandler;
+                typedef Outcome<Core::Error, Model::RollbackConfigFileReleasesResponse> RollbackConfigFileReleasesOutcome;
+                typedef std::future<RollbackConfigFileReleasesOutcome> RollbackConfigFileReleasesOutcomeCallable;
+                typedef std::function<void(const TseClient*, const Model::RollbackConfigFileReleasesRequest&, RollbackConfigFileReleasesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> RollbackConfigFileReleasesAsyncHandler;
                 typedef Outcome<Core::Error, Model::UnbindAutoScalerResourceStrategyFromGroupsResponse> UnbindAutoScalerResourceStrategyFromGroupsOutcome;
                 typedef std::future<UnbindAutoScalerResourceStrategyFromGroupsOutcome> UnbindAutoScalerResourceStrategyFromGroupsOutcomeCallable;
                 typedef std::function<void(const TseClient*, const Model::UnbindAutoScalerResourceStrategyFromGroupsRequest&, UnbindAutoScalerResourceStrategyFromGroupsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> UnbindAutoScalerResourceStrategyFromGroupsAsyncHandler;
@@ -525,6 +695,24 @@ namespace TencentCloud
                 CreateCloudNativeAPIGatewayServiceRateLimitOutcomeCallable CreateCloudNativeAPIGatewayServiceRateLimitCallable(const Model::CreateCloudNativeAPIGatewayServiceRateLimitRequest& request);
 
                 /**
+                 *创建配置文件
+                 * @param req CreateConfigFileRequest
+                 * @return CreateConfigFileOutcome
+                 */
+                CreateConfigFileOutcome CreateConfigFile(const Model::CreateConfigFileRequest &request);
+                void CreateConfigFileAsync(const Model::CreateConfigFileRequest& request, const CreateConfigFileAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                CreateConfigFileOutcomeCallable CreateConfigFileCallable(const Model::CreateConfigFileRequest& request);
+
+                /**
+                 *创建服务治理中心配置文件组
+                 * @param req CreateConfigFileGroupRequest
+                 * @return CreateConfigFileGroupOutcome
+                 */
+                CreateConfigFileGroupOutcome CreateConfigFileGroup(const Model::CreateConfigFileGroupRequest &request);
+                void CreateConfigFileGroupAsync(const Model::CreateConfigFileGroupRequest& request, const CreateConfigFileGroupAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                CreateConfigFileGroupOutcomeCallable CreateConfigFileGroupCallable(const Model::CreateConfigFileGroupRequest& request);
+
+                /**
                  *创建引擎实例
                  * @param req CreateEngineRequest
                  * @return CreateEngineOutcome
@@ -534,13 +722,40 @@ namespace TencentCloud
                 CreateEngineOutcomeCallable CreateEngineCallable(const Model::CreateEngineRequest& request);
 
                 /**
-                 *创建治理中心服务实例
+                 *创建治理中心服务别名
+                 * @param req CreateGovernanceAliasRequest
+                 * @return CreateGovernanceAliasOutcome
+                 */
+                CreateGovernanceAliasOutcome CreateGovernanceAlias(const Model::CreateGovernanceAliasRequest &request);
+                void CreateGovernanceAliasAsync(const Model::CreateGovernanceAliasRequest& request, const CreateGovernanceAliasAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                CreateGovernanceAliasOutcomeCallable CreateGovernanceAliasCallable(const Model::CreateGovernanceAliasRequest& request);
+
+                /**
+                 *创建服务实例
                  * @param req CreateGovernanceInstancesRequest
                  * @return CreateGovernanceInstancesOutcome
                  */
                 CreateGovernanceInstancesOutcome CreateGovernanceInstances(const Model::CreateGovernanceInstancesRequest &request);
                 void CreateGovernanceInstancesAsync(const Model::CreateGovernanceInstancesRequest& request, const CreateGovernanceInstancesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 CreateGovernanceInstancesOutcomeCallable CreateGovernanceInstancesCallable(const Model::CreateGovernanceInstancesRequest& request);
+
+                /**
+                 *创建治理中心命名空间
+                 * @param req CreateGovernanceNamespacesRequest
+                 * @return CreateGovernanceNamespacesOutcome
+                 */
+                CreateGovernanceNamespacesOutcome CreateGovernanceNamespaces(const Model::CreateGovernanceNamespacesRequest &request);
+                void CreateGovernanceNamespacesAsync(const Model::CreateGovernanceNamespacesRequest& request, const CreateGovernanceNamespacesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                CreateGovernanceNamespacesOutcomeCallable CreateGovernanceNamespacesCallable(const Model::CreateGovernanceNamespacesRequest& request);
+
+                /**
+                 *创建治理中心服务
+                 * @param req CreateGovernanceServicesRequest
+                 * @return CreateGovernanceServicesOutcome
+                 */
+                CreateGovernanceServicesOutcome CreateGovernanceServices(const Model::CreateGovernanceServicesRequest &request);
+                void CreateGovernanceServicesAsync(const Model::CreateGovernanceServicesRequest& request, const CreateGovernanceServicesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                CreateGovernanceServicesOutcomeCallable CreateGovernanceServicesCallable(const Model::CreateGovernanceServicesRequest& request);
 
                 /**
                  *创建云原生网关引擎分组
@@ -550,6 +765,15 @@ namespace TencentCloud
                 CreateNativeGatewayServerGroupOutcome CreateNativeGatewayServerGroup(const Model::CreateNativeGatewayServerGroupRequest &request);
                 void CreateNativeGatewayServerGroupAsync(const Model::CreateNativeGatewayServerGroupRequest& request, const CreateNativeGatewayServerGroupAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 CreateNativeGatewayServerGroupOutcomeCallable CreateNativeGatewayServerGroupCallable(const Model::CreateNativeGatewayServerGroupRequest& request);
+
+                /**
+                 *创建或更新配置文件并发布配置
+                 * @param req CreateOrUpdateConfigFileAndReleaseRequest
+                 * @return CreateOrUpdateConfigFileAndReleaseOutcome
+                 */
+                CreateOrUpdateConfigFileAndReleaseOutcome CreateOrUpdateConfigFileAndRelease(const Model::CreateOrUpdateConfigFileAndReleaseRequest &request);
+                void CreateOrUpdateConfigFileAndReleaseAsync(const Model::CreateOrUpdateConfigFileAndReleaseRequest& request, const CreateOrUpdateConfigFileAndReleaseAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                CreateOrUpdateConfigFileAndReleaseOutcomeCallable CreateOrUpdateConfigFileAndReleaseCallable(const Model::CreateOrUpdateConfigFileAndReleaseRequest& request);
 
                 /**
                  *新建 WAF 防护域名
@@ -642,6 +866,33 @@ namespace TencentCloud
                 DeleteCloudNativeAPIGatewayServiceRateLimitOutcomeCallable DeleteCloudNativeAPIGatewayServiceRateLimitCallable(const Model::DeleteCloudNativeAPIGatewayServiceRateLimitRequest& request);
 
                 /**
+                 *删除配置文件分组
+                 * @param req DeleteConfigFileGroupRequest
+                 * @return DeleteConfigFileGroupOutcome
+                 */
+                DeleteConfigFileGroupOutcome DeleteConfigFileGroup(const Model::DeleteConfigFileGroupRequest &request);
+                void DeleteConfigFileGroupAsync(const Model::DeleteConfigFileGroupRequest& request, const DeleteConfigFileGroupAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DeleteConfigFileGroupOutcomeCallable DeleteConfigFileGroupCallable(const Model::DeleteConfigFileGroupRequest& request);
+
+                /**
+                 *删除配置发布
+                 * @param req DeleteConfigFileReleasesRequest
+                 * @return DeleteConfigFileReleasesOutcome
+                 */
+                DeleteConfigFileReleasesOutcome DeleteConfigFileReleases(const Model::DeleteConfigFileReleasesRequest &request);
+                void DeleteConfigFileReleasesAsync(const Model::DeleteConfigFileReleasesRequest& request, const DeleteConfigFileReleasesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DeleteConfigFileReleasesOutcomeCallable DeleteConfigFileReleasesCallable(const Model::DeleteConfigFileReleasesRequest& request);
+
+                /**
+                 *删除配置文件
+                 * @param req DeleteConfigFilesRequest
+                 * @return DeleteConfigFilesOutcome
+                 */
+                DeleteConfigFilesOutcome DeleteConfigFiles(const Model::DeleteConfigFilesRequest &request);
+                void DeleteConfigFilesAsync(const Model::DeleteConfigFilesRequest& request, const DeleteConfigFilesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DeleteConfigFilesOutcomeCallable DeleteConfigFilesCallable(const Model::DeleteConfigFilesRequest& request);
+
+                /**
                  *删除引擎实例
                  * @param req DeleteEngineRequest
                  * @return DeleteEngineOutcome
@@ -651,13 +902,49 @@ namespace TencentCloud
                 DeleteEngineOutcomeCallable DeleteEngineCallable(const Model::DeleteEngineRequest& request);
 
                 /**
-                 *删除治理中心服务实例
+                 *删除治理中心服务别名
+                 * @param req DeleteGovernanceAliasesRequest
+                 * @return DeleteGovernanceAliasesOutcome
+                 */
+                DeleteGovernanceAliasesOutcome DeleteGovernanceAliases(const Model::DeleteGovernanceAliasesRequest &request);
+                void DeleteGovernanceAliasesAsync(const Model::DeleteGovernanceAliasesRequest& request, const DeleteGovernanceAliasesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DeleteGovernanceAliasesOutcomeCallable DeleteGovernanceAliasesCallable(const Model::DeleteGovernanceAliasesRequest& request);
+
+                /**
+                 *删除服务实例
                  * @param req DeleteGovernanceInstancesRequest
                  * @return DeleteGovernanceInstancesOutcome
                  */
                 DeleteGovernanceInstancesOutcome DeleteGovernanceInstances(const Model::DeleteGovernanceInstancesRequest &request);
                 void DeleteGovernanceInstancesAsync(const Model::DeleteGovernanceInstancesRequest& request, const DeleteGovernanceInstancesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DeleteGovernanceInstancesOutcomeCallable DeleteGovernanceInstancesCallable(const Model::DeleteGovernanceInstancesRequest& request);
+
+                /**
+                 *删除治理中心服务实例
+                 * @param req DeleteGovernanceInstancesByHostRequest
+                 * @return DeleteGovernanceInstancesByHostOutcome
+                 */
+                DeleteGovernanceInstancesByHostOutcome DeleteGovernanceInstancesByHost(const Model::DeleteGovernanceInstancesByHostRequest &request);
+                void DeleteGovernanceInstancesByHostAsync(const Model::DeleteGovernanceInstancesByHostRequest& request, const DeleteGovernanceInstancesByHostAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DeleteGovernanceInstancesByHostOutcomeCallable DeleteGovernanceInstancesByHostCallable(const Model::DeleteGovernanceInstancesByHostRequest& request);
+
+                /**
+                 *删除治理中心命名空间
+                 * @param req DeleteGovernanceNamespacesRequest
+                 * @return DeleteGovernanceNamespacesOutcome
+                 */
+                DeleteGovernanceNamespacesOutcome DeleteGovernanceNamespaces(const Model::DeleteGovernanceNamespacesRequest &request);
+                void DeleteGovernanceNamespacesAsync(const Model::DeleteGovernanceNamespacesRequest& request, const DeleteGovernanceNamespacesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DeleteGovernanceNamespacesOutcomeCallable DeleteGovernanceNamespacesCallable(const Model::DeleteGovernanceNamespacesRequest& request);
+
+                /**
+                 *删除治理中心服务
+                 * @param req DeleteGovernanceServicesRequest
+                 * @return DeleteGovernanceServicesOutcome
+                 */
+                DeleteGovernanceServicesOutcome DeleteGovernanceServices(const Model::DeleteGovernanceServicesRequest &request);
+                void DeleteGovernanceServicesAsync(const Model::DeleteGovernanceServicesRequest& request, const DeleteGovernanceServicesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DeleteGovernanceServicesOutcomeCallable DeleteGovernanceServicesCallable(const Model::DeleteGovernanceServicesRequest& request);
 
                 /**
                  *删除网关实例分组
@@ -676,6 +963,15 @@ namespace TencentCloud
                 DeleteWafDomainsOutcome DeleteWafDomains(const Model::DeleteWafDomainsRequest &request);
                 void DeleteWafDomainsAsync(const Model::DeleteWafDomainsRequest& request, const DeleteWafDomainsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DeleteWafDomainsOutcomeCallable DeleteWafDomainsCallable(const Model::DeleteWafDomainsRequest& request);
+
+                /**
+                 *获取全量配置文件模板列表
+                 * @param req DescribeAllConfigFileTemplatesRequest
+                 * @return DescribeAllConfigFileTemplatesOutcome
+                 */
+                DescribeAllConfigFileTemplatesOutcome DescribeAllConfigFileTemplates(const Model::DescribeAllConfigFileTemplatesRequest &request);
+                void DescribeAllConfigFileTemplatesAsync(const Model::DescribeAllConfigFileTemplatesRequest& request, const DescribeAllConfigFileTemplatesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeAllConfigFileTemplatesOutcomeCallable DescribeAllConfigFileTemplatesCallable(const Model::DescribeAllConfigFileTemplatesRequest& request);
 
                 /**
                  *查看弹性伸缩策略列表
@@ -813,13 +1109,130 @@ namespace TencentCloud
                 DescribeCloudNativeAPIGatewaysOutcomeCallable DescribeCloudNativeAPIGatewaysCallable(const Model::DescribeCloudNativeAPIGatewaysRequest& request);
 
                 /**
-                 *查询治理中心服务实例
+                 *根据命名空间、组、名字查找配置文件
+                 * @param req DescribeConfigFileRequest
+                 * @return DescribeConfigFileOutcome
+                 */
+                DescribeConfigFileOutcome DescribeConfigFile(const Model::DescribeConfigFileRequest &request);
+                void DescribeConfigFileAsync(const Model::DescribeConfigFileRequest& request, const DescribeConfigFileAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeConfigFileOutcomeCallable DescribeConfigFileCallable(const Model::DescribeConfigFileRequest& request);
+
+                /**
+                 *根据条件分页查询配置文件组
+                 * @param req DescribeConfigFileGroupsRequest
+                 * @return DescribeConfigFileGroupsOutcome
+                 */
+                DescribeConfigFileGroupsOutcome DescribeConfigFileGroups(const Model::DescribeConfigFileGroupsRequest &request);
+                void DescribeConfigFileGroupsAsync(const Model::DescribeConfigFileGroupsRequest& request, const DescribeConfigFileGroupsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeConfigFileGroupsOutcomeCallable DescribeConfigFileGroupsCallable(const Model::DescribeConfigFileGroupsRequest& request);
+
+                /**
+                 *获取配置文件发布
+                 * @param req DescribeConfigFileReleaseRequest
+                 * @return DescribeConfigFileReleaseOutcome
+                 */
+                DescribeConfigFileReleaseOutcome DescribeConfigFileRelease(const Model::DescribeConfigFileReleaseRequest &request);
+                void DescribeConfigFileReleaseAsync(const Model::DescribeConfigFileReleaseRequest& request, const DescribeConfigFileReleaseAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeConfigFileReleaseOutcomeCallable DescribeConfigFileReleaseCallable(const Model::DescribeConfigFileReleaseRequest& request);
+
+                /**
+                 *获取配置文件发布历史列表
+                 * @param req DescribeConfigFileReleaseHistoriesRequest
+                 * @return DescribeConfigFileReleaseHistoriesOutcome
+                 */
+                DescribeConfigFileReleaseHistoriesOutcome DescribeConfigFileReleaseHistories(const Model::DescribeConfigFileReleaseHistoriesRequest &request);
+                void DescribeConfigFileReleaseHistoriesAsync(const Model::DescribeConfigFileReleaseHistoriesRequest& request, const DescribeConfigFileReleaseHistoriesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeConfigFileReleaseHistoriesOutcomeCallable DescribeConfigFileReleaseHistoriesCallable(const Model::DescribeConfigFileReleaseHistoriesRequest& request);
+
+                /**
+                 *查询某个配置所有版本信息
+                 * @param req DescribeConfigFileReleaseVersionsRequest
+                 * @return DescribeConfigFileReleaseVersionsOutcome
+                 */
+                DescribeConfigFileReleaseVersionsOutcome DescribeConfigFileReleaseVersions(const Model::DescribeConfigFileReleaseVersionsRequest &request);
+                void DescribeConfigFileReleaseVersionsAsync(const Model::DescribeConfigFileReleaseVersionsRequest& request, const DescribeConfigFileReleaseVersionsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeConfigFileReleaseVersionsOutcomeCallable DescribeConfigFileReleaseVersionsCallable(const Model::DescribeConfigFileReleaseVersionsRequest& request);
+
+                /**
+                 *查询配置版本列表
+                 * @param req DescribeConfigFileReleasesRequest
+                 * @return DescribeConfigFileReleasesOutcome
+                 */
+                DescribeConfigFileReleasesOutcome DescribeConfigFileReleases(const Model::DescribeConfigFileReleasesRequest &request);
+                void DescribeConfigFileReleasesAsync(const Model::DescribeConfigFileReleasesRequest& request, const DescribeConfigFileReleasesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeConfigFileReleasesOutcomeCallable DescribeConfigFileReleasesCallable(const Model::DescribeConfigFileReleasesRequest& request);
+
+                /**
+                 *根据命名空间、组名、名称、标签查询配置文件列表
+                 * @param req DescribeConfigFilesRequest
+                 * @return DescribeConfigFilesOutcome
+                 */
+                DescribeConfigFilesOutcome DescribeConfigFiles(const Model::DescribeConfigFilesRequest &request);
+                void DescribeConfigFilesAsync(const Model::DescribeConfigFilesRequest& request, const DescribeConfigFilesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeConfigFilesOutcomeCallable DescribeConfigFilesCallable(const Model::DescribeConfigFilesRequest& request);
+
+                /**
+                 *根据group查询配置文件列表
+                 * @param req DescribeConfigFilesByGroupRequest
+                 * @return DescribeConfigFilesByGroupOutcome
+                 */
+                DescribeConfigFilesByGroupOutcome DescribeConfigFilesByGroup(const Model::DescribeConfigFilesByGroupRequest &request);
+                void DescribeConfigFilesByGroupAsync(const Model::DescribeConfigFilesByGroupRequest& request, const DescribeConfigFilesByGroupAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeConfigFilesByGroupOutcomeCallable DescribeConfigFilesByGroupCallable(const Model::DescribeConfigFilesByGroupRequest& request);
+
+                /**
+                 *查询治理中心服务别名列表
+                 * @param req DescribeGovernanceAliasesRequest
+                 * @return DescribeGovernanceAliasesOutcome
+                 */
+                DescribeGovernanceAliasesOutcome DescribeGovernanceAliases(const Model::DescribeGovernanceAliasesRequest &request);
+                void DescribeGovernanceAliasesAsync(const Model::DescribeGovernanceAliasesRequest& request, const DescribeGovernanceAliasesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeGovernanceAliasesOutcomeCallable DescribeGovernanceAliasesCallable(const Model::DescribeGovernanceAliasesRequest& request);
+
+                /**
+                 *查询服务实例
                  * @param req DescribeGovernanceInstancesRequest
                  * @return DescribeGovernanceInstancesOutcome
                  */
                 DescribeGovernanceInstancesOutcome DescribeGovernanceInstances(const Model::DescribeGovernanceInstancesRequest &request);
                 void DescribeGovernanceInstancesAsync(const Model::DescribeGovernanceInstancesRequest& request, const DescribeGovernanceInstancesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DescribeGovernanceInstancesOutcomeCallable DescribeGovernanceInstancesCallable(const Model::DescribeGovernanceInstancesRequest& request);
+
+                /**
+                 *查询服务治理中心命名空间列表
+                 * @param req DescribeGovernanceNamespacesRequest
+                 * @return DescribeGovernanceNamespacesOutcome
+                 */
+                DescribeGovernanceNamespacesOutcome DescribeGovernanceNamespaces(const Model::DescribeGovernanceNamespacesRequest &request);
+                void DescribeGovernanceNamespacesAsync(const Model::DescribeGovernanceNamespacesRequest& request, const DescribeGovernanceNamespacesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeGovernanceNamespacesOutcomeCallable DescribeGovernanceNamespacesCallable(const Model::DescribeGovernanceNamespacesRequest& request);
+
+                /**
+                 *查询服务下契约版本列表
+                 * @param req DescribeGovernanceServiceContractVersionsRequest
+                 * @return DescribeGovernanceServiceContractVersionsOutcome
+                 */
+                DescribeGovernanceServiceContractVersionsOutcome DescribeGovernanceServiceContractVersions(const Model::DescribeGovernanceServiceContractVersionsRequest &request);
+                void DescribeGovernanceServiceContractVersionsAsync(const Model::DescribeGovernanceServiceContractVersionsRequest& request, const DescribeGovernanceServiceContractVersionsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeGovernanceServiceContractVersionsOutcomeCallable DescribeGovernanceServiceContractVersionsCallable(const Model::DescribeGovernanceServiceContractVersionsRequest& request);
+
+                /**
+                 *查询服务契约定义列表
+                 * @param req DescribeGovernanceServiceContractsRequest
+                 * @return DescribeGovernanceServiceContractsOutcome
+                 */
+                DescribeGovernanceServiceContractsOutcome DescribeGovernanceServiceContracts(const Model::DescribeGovernanceServiceContractsRequest &request);
+                void DescribeGovernanceServiceContractsAsync(const Model::DescribeGovernanceServiceContractsRequest& request, const DescribeGovernanceServiceContractsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeGovernanceServiceContractsOutcomeCallable DescribeGovernanceServiceContractsCallable(const Model::DescribeGovernanceServiceContractsRequest& request);
+
+                /**
+                 *查询治理中心服务列表
+                 * @param req DescribeGovernanceServicesRequest
+                 * @return DescribeGovernanceServicesOutcome
+                 */
+                DescribeGovernanceServicesOutcome DescribeGovernanceServices(const Model::DescribeGovernanceServicesRequest &request);
+                void DescribeGovernanceServicesAsync(const Model::DescribeGovernanceServicesRequest& request, const DescribeGovernanceServicesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeGovernanceServicesOutcomeCallable DescribeGovernanceServicesCallable(const Model::DescribeGovernanceServicesRequest& request);
 
                 /**
                  *查询Nacos类型引擎实例副本信息
@@ -1002,6 +1415,24 @@ namespace TencentCloud
                 ModifyCloudNativeAPIGatewayServiceRateLimitOutcomeCallable ModifyCloudNativeAPIGatewayServiceRateLimitCallable(const Model::ModifyCloudNativeAPIGatewayServiceRateLimitRequest& request);
 
                 /**
+                 *批量修改配置文件组
+                 * @param req ModifyConfigFileGroupRequest
+                 * @return ModifyConfigFileGroupOutcome
+                 */
+                ModifyConfigFileGroupOutcome ModifyConfigFileGroup(const Model::ModifyConfigFileGroupRequest &request);
+                void ModifyConfigFileGroupAsync(const Model::ModifyConfigFileGroupRequest& request, const ModifyConfigFileGroupAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                ModifyConfigFileGroupOutcomeCallable ModifyConfigFileGroupCallable(const Model::ModifyConfigFileGroupRequest& request);
+
+                /**
+                 *修改配置文件
+                 * @param req ModifyConfigFilesRequest
+                 * @return ModifyConfigFilesOutcome
+                 */
+                ModifyConfigFilesOutcome ModifyConfigFiles(const Model::ModifyConfigFilesRequest &request);
+                void ModifyConfigFilesAsync(const Model::ModifyConfigFilesRequest& request, const ModifyConfigFilesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                ModifyConfigFilesOutcomeCallable ModifyConfigFilesCallable(const Model::ModifyConfigFilesRequest& request);
+
+                /**
                  *修改网关实例Konga网络配置
                  * @param req ModifyConsoleNetworkRequest
                  * @return ModifyConsoleNetworkOutcome
@@ -1011,6 +1442,15 @@ namespace TencentCloud
                 ModifyConsoleNetworkOutcomeCallable ModifyConsoleNetworkCallable(const Model::ModifyConsoleNetworkRequest& request);
 
                 /**
+                 *修改治理中心服务别名
+                 * @param req ModifyGovernanceAliasRequest
+                 * @return ModifyGovernanceAliasOutcome
+                 */
+                ModifyGovernanceAliasOutcome ModifyGovernanceAlias(const Model::ModifyGovernanceAliasRequest &request);
+                void ModifyGovernanceAliasAsync(const Model::ModifyGovernanceAliasRequest& request, const ModifyGovernanceAliasAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                ModifyGovernanceAliasOutcomeCallable ModifyGovernanceAliasCallable(const Model::ModifyGovernanceAliasRequest& request);
+
+                /**
                  *修改治理中心服务实例
                  * @param req ModifyGovernanceInstancesRequest
                  * @return ModifyGovernanceInstancesOutcome
@@ -1018,6 +1458,24 @@ namespace TencentCloud
                 ModifyGovernanceInstancesOutcome ModifyGovernanceInstances(const Model::ModifyGovernanceInstancesRequest &request);
                 void ModifyGovernanceInstancesAsync(const Model::ModifyGovernanceInstancesRequest& request, const ModifyGovernanceInstancesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 ModifyGovernanceInstancesOutcomeCallable ModifyGovernanceInstancesCallable(const Model::ModifyGovernanceInstancesRequest& request);
+
+                /**
+                 *修改治理中心命名空间
+                 * @param req ModifyGovernanceNamespacesRequest
+                 * @return ModifyGovernanceNamespacesOutcome
+                 */
+                ModifyGovernanceNamespacesOutcome ModifyGovernanceNamespaces(const Model::ModifyGovernanceNamespacesRequest &request);
+                void ModifyGovernanceNamespacesAsync(const Model::ModifyGovernanceNamespacesRequest& request, const ModifyGovernanceNamespacesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                ModifyGovernanceNamespacesOutcomeCallable ModifyGovernanceNamespacesCallable(const Model::ModifyGovernanceNamespacesRequest& request);
+
+                /**
+                 *修改治理中心服务
+                 * @param req ModifyGovernanceServicesRequest
+                 * @return ModifyGovernanceServicesOutcome
+                 */
+                ModifyGovernanceServicesOutcome ModifyGovernanceServices(const Model::ModifyGovernanceServicesRequest &request);
+                void ModifyGovernanceServicesAsync(const Model::ModifyGovernanceServicesRequest& request, const ModifyGovernanceServicesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                ModifyGovernanceServicesOutcomeCallable ModifyGovernanceServicesCallable(const Model::ModifyGovernanceServicesRequest& request);
 
                 /**
                  *修改云原生API网关实例分组基础信息
@@ -1063,6 +1521,24 @@ namespace TencentCloud
                 OpenWafProtectionOutcome OpenWafProtection(const Model::OpenWafProtectionRequest &request);
                 void OpenWafProtectionAsync(const Model::OpenWafProtectionRequest& request, const OpenWafProtectionAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 OpenWafProtectionOutcomeCallable OpenWafProtectionCallable(const Model::OpenWafProtectionRequest& request);
+
+                /**
+                 *发布配置文件
+                 * @param req PublishConfigFilesRequest
+                 * @return PublishConfigFilesOutcome
+                 */
+                PublishConfigFilesOutcome PublishConfigFiles(const Model::PublishConfigFilesRequest &request);
+                void PublishConfigFilesAsync(const Model::PublishConfigFilesRequest& request, const PublishConfigFilesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                PublishConfigFilesOutcomeCallable PublishConfigFilesCallable(const Model::PublishConfigFilesRequest& request);
+
+                /**
+                 *回滚配置发布
+                 * @param req RollbackConfigFileReleasesRequest
+                 * @return RollbackConfigFileReleasesOutcome
+                 */
+                RollbackConfigFileReleasesOutcome RollbackConfigFileReleases(const Model::RollbackConfigFileReleasesRequest &request);
+                void RollbackConfigFileReleasesAsync(const Model::RollbackConfigFileReleasesRequest& request, const RollbackConfigFileReleasesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                RollbackConfigFileReleasesOutcomeCallable RollbackConfigFileReleasesCallable(const Model::RollbackConfigFileReleasesRequest& request);
 
                 /**
                  *弹性伸缩策略批量解绑网关分组

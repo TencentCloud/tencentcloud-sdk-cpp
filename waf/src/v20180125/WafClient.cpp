@@ -3437,49 +3437,6 @@ WafClient::DescribeWafAutoDenyStatusOutcomeCallable WafClient::DescribeWafAutoDe
     return task->get_future();
 }
 
-WafClient::DescribeWafInfoOutcome WafClient::DescribeWafInfo(const DescribeWafInfoRequest &request)
-{
-    auto outcome = MakeRequest(request, "DescribeWafInfo");
-    if (outcome.IsSuccess())
-    {
-        auto r = outcome.GetResult();
-        string payload = string(r.Body(), r.BodySize());
-        DescribeWafInfoResponse rsp = DescribeWafInfoResponse();
-        auto o = rsp.Deserialize(payload);
-        if (o.IsSuccess())
-            return DescribeWafInfoOutcome(rsp);
-        else
-            return DescribeWafInfoOutcome(o.GetError());
-    }
-    else
-    {
-        return DescribeWafInfoOutcome(outcome.GetError());
-    }
-}
-
-void WafClient::DescribeWafInfoAsync(const DescribeWafInfoRequest& request, const DescribeWafInfoAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
-{
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeWafInfo(request), context);
-    };
-
-    Executor::GetInstance()->Submit(new Runnable(fn));
-}
-
-WafClient::DescribeWafInfoOutcomeCallable WafClient::DescribeWafInfoCallable(const DescribeWafInfoRequest &request)
-{
-    auto task = std::make_shared<std::packaged_task<DescribeWafInfoOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeWafInfo(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
-}
-
 WafClient::DescribeWafThreatenIntelligenceOutcome WafClient::DescribeWafThreatenIntelligence(const DescribeWafThreatenIntelligenceRequest &request)
 {
     auto outcome = MakeRequest(request, "DescribeWafThreatenIntelligence");

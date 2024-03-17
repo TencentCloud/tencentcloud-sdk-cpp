@@ -44,15 +44,19 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取实例ID
-                     * @return InstanceId 实例ID
+                     * 获取指定需修改网络的实例 ID。例如：cmgo-p8vn****。请登录 [MongoDB 控制台](https://console.cloud.tencent.com/mongodb)在实例列表复制实例 ID。
+
+                     * @return InstanceId 指定需修改网络的实例 ID。例如：cmgo-p8vn****。请登录 [MongoDB 控制台](https://console.cloud.tencent.com/mongodb)在实例列表复制实例 ID。
+
                      * 
                      */
                     std::string GetInstanceId() const;
 
                     /**
-                     * 设置实例ID
-                     * @param _instanceId 实例ID
+                     * 设置指定需修改网络的实例 ID。例如：cmgo-p8vn****。请登录 [MongoDB 控制台](https://console.cloud.tencent.com/mongodb)在实例列表复制实例 ID。
+
+                     * @param _instanceId 指定需修改网络的实例 ID。例如：cmgo-p8vn****。请登录 [MongoDB 控制台](https://console.cloud.tencent.com/mongodb)在实例列表复制实例 ID。
+
                      * 
                      */
                     void SetInstanceId(const std::string& _instanceId);
@@ -65,15 +69,27 @@ namespace TencentCloud
                     bool InstanceIdHasBeenSet() const;
 
                     /**
-                     * 获取原IP保留时长，单位为分钟；原IP会在约定时间后释放，在释放前原IP和新IP均可访问；0表示立即回收原IP
-                     * @return OldIpExpiredTime 原IP保留时长，单位为分钟；原IP会在约定时间后释放，在释放前原IP和新IP均可访问；0表示立即回收原IP
+                     * 获取原 IP 地址保留时长。
+- 单位为分钟，0表示立即回收原 IP 地址。
+- 原 IP 将在约定时间后释放，在释放前原 IP和新 IP均可访问。
+
+                     * @return OldIpExpiredTime 原 IP 地址保留时长。
+- 单位为分钟，0表示立即回收原 IP 地址。
+- 原 IP 将在约定时间后释放，在释放前原 IP和新 IP均可访问。
+
                      * 
                      */
                     uint64_t GetOldIpExpiredTime() const;
 
                     /**
-                     * 设置原IP保留时长，单位为分钟；原IP会在约定时间后释放，在释放前原IP和新IP均可访问；0表示立即回收原IP
-                     * @param _oldIpExpiredTime 原IP保留时长，单位为分钟；原IP会在约定时间后释放，在释放前原IP和新IP均可访问；0表示立即回收原IP
+                     * 设置原 IP 地址保留时长。
+- 单位为分钟，0表示立即回收原 IP 地址。
+- 原 IP 将在约定时间后释放，在释放前原 IP和新 IP均可访问。
+
+                     * @param _oldIpExpiredTime 原 IP 地址保留时长。
+- 单位为分钟，0表示立即回收原 IP 地址。
+- 原 IP 将在约定时间后释放，在释放前原 IP和新 IP均可访问。
+
                      * 
                      */
                     void SetOldIpExpiredTime(const uint64_t& _oldIpExpiredTime);
@@ -86,15 +102,15 @@ namespace TencentCloud
                     bool OldIpExpiredTimeHasBeenSet() const;
 
                     /**
-                     * 获取切换后IP地址的归属私有网络统一ID，若为基础网络，该字段为空
-                     * @return NewUniqVpcId 切换后IP地址的归属私有网络统一ID，若为基础网络，该字段为空
+                     * 获取切换后的私有网络 ID，若实例当前为基础网络，该字段无需配置。
+                     * @return NewUniqVpcId 切换后的私有网络 ID，若实例当前为基础网络，该字段无需配置。
                      * 
                      */
                     std::string GetNewUniqVpcId() const;
 
                     /**
-                     * 设置切换后IP地址的归属私有网络统一ID，若为基础网络，该字段为空
-                     * @param _newUniqVpcId 切换后IP地址的归属私有网络统一ID，若为基础网络，该字段为空
+                     * 设置切换后的私有网络 ID，若实例当前为基础网络，该字段无需配置。
+                     * @param _newUniqVpcId 切换后的私有网络 ID，若实例当前为基础网络，该字段无需配置。
                      * 
                      */
                     void SetNewUniqVpcId(const std::string& _newUniqVpcId);
@@ -107,15 +123,15 @@ namespace TencentCloud
                     bool NewUniqVpcIdHasBeenSet() const;
 
                     /**
-                     * 获取切换后IP地址的归属子网统一ID，若为基础网络，该字段为空
-                     * @return NewUniqSubnetId 切换后IP地址的归属子网统一ID，若为基础网络，该字段为空
+                     * 获取切换私有网络的子网 ID。若实例当前为基础网络，该字段无需配置。
+                     * @return NewUniqSubnetId 切换私有网络的子网 ID。若实例当前为基础网络，该字段无需配置。
                      * 
                      */
                     std::string GetNewUniqSubnetId() const;
 
                     /**
-                     * 设置切换后IP地址的归属子网统一ID，若为基础网络，该字段为空
-                     * @param _newUniqSubnetId 切换后IP地址的归属子网统一ID，若为基础网络，该字段为空
+                     * 设置切换私有网络的子网 ID。若实例当前为基础网络，该字段无需配置。
+                     * @param _newUniqSubnetId 切换私有网络的子网 ID。若实例当前为基础网络，该字段无需配置。
                      * 
                      */
                     void SetNewUniqSubnetId(const std::string& _newUniqSubnetId);
@@ -128,15 +144,15 @@ namespace TencentCloud
                     bool NewUniqSubnetIdHasBeenSet() const;
 
                     /**
-                     * 获取待修改IP信息
-                     * @return NetworkAddresses 待修改IP信息
+                     * 获取IP 地址信息，包含新 IP 地址与 原 IP 地址。
+                     * @return NetworkAddresses IP 地址信息，包含新 IP 地址与 原 IP 地址。
                      * 
                      */
                     std::vector<ModifyNetworkAddress> GetNetworkAddresses() const;
 
                     /**
-                     * 设置待修改IP信息
-                     * @param _networkAddresses 待修改IP信息
+                     * 设置IP 地址信息，包含新 IP 地址与 原 IP 地址。
+                     * @param _networkAddresses IP 地址信息，包含新 IP 地址与 原 IP 地址。
                      * 
                      */
                     void SetNetworkAddresses(const std::vector<ModifyNetworkAddress>& _networkAddresses);
@@ -151,31 +167,35 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 实例ID
+                     * 指定需修改网络的实例 ID。例如：cmgo-p8vn****。请登录 [MongoDB 控制台](https://console.cloud.tencent.com/mongodb)在实例列表复制实例 ID。
+
                      */
                     std::string m_instanceId;
                     bool m_instanceIdHasBeenSet;
 
                     /**
-                     * 原IP保留时长，单位为分钟；原IP会在约定时间后释放，在释放前原IP和新IP均可访问；0表示立即回收原IP
+                     * 原 IP 地址保留时长。
+- 单位为分钟，0表示立即回收原 IP 地址。
+- 原 IP 将在约定时间后释放，在释放前原 IP和新 IP均可访问。
+
                      */
                     uint64_t m_oldIpExpiredTime;
                     bool m_oldIpExpiredTimeHasBeenSet;
 
                     /**
-                     * 切换后IP地址的归属私有网络统一ID，若为基础网络，该字段为空
+                     * 切换后的私有网络 ID，若实例当前为基础网络，该字段无需配置。
                      */
                     std::string m_newUniqVpcId;
                     bool m_newUniqVpcIdHasBeenSet;
 
                     /**
-                     * 切换后IP地址的归属子网统一ID，若为基础网络，该字段为空
+                     * 切换私有网络的子网 ID。若实例当前为基础网络，该字段无需配置。
                      */
                     std::string m_newUniqSubnetId;
                     bool m_newUniqSubnetIdHasBeenSet;
 
                     /**
-                     * 待修改IP信息
+                     * IP 地址信息，包含新 IP 地址与 原 IP 地址。
                      */
                     std::vector<ModifyNetworkAddress> m_networkAddresses;
                     bool m_networkAddressesHasBeenSet;

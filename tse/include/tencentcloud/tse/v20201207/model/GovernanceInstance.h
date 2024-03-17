@@ -410,6 +410,81 @@ namespace TencentCloud
                      */
                     bool TtlHasBeenSet() const;
 
+                    /**
+                     * 获取版本信息。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return InstanceVersion 版本信息。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::string GetInstanceVersion() const;
+
+                    /**
+                     * 设置版本信息。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _instanceVersion 版本信息。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetInstanceVersion(const std::string& _instanceVersion);
+
+                    /**
+                     * 判断参数 InstanceVersion 是否已赋值
+                     * @return InstanceVersion 是否已赋值
+                     * 
+                     */
+                    bool InstanceVersionHasBeenSet() const;
+
+                    /**
+                     * 获取状态信息
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return HealthStatus 状态信息
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::string GetHealthStatus() const;
+
+                    /**
+                     * 设置状态信息
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _healthStatus 状态信息
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetHealthStatus(const std::string& _healthStatus);
+
+                    /**
+                     * 判断参数 HealthStatus 是否已赋值
+                     * @return HealthStatus 是否已赋值
+                     * 
+                     */
+                    bool HealthStatusHasBeenSet() const;
+
+                    /**
+                     * 获取描述
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return Comment 描述
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::string GetComment() const;
+
+                    /**
+                     * 设置描述
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _comment 描述
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetComment(const std::string& _comment);
+
+                    /**
+                     * 判断参数 Comment 是否已赋值
+                     * @return Comment 是否已赋值
+                     * 
+                     */
+                    bool CommentHasBeenSet() const;
+
                 private:
 
                     /**
@@ -513,6 +588,27 @@ namespace TencentCloud
                      */
                     uint64_t m_ttl;
                     bool m_ttlHasBeenSet;
+
+                    /**
+                     * 版本信息。
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_instanceVersion;
+                    bool m_instanceVersionHasBeenSet;
+
+                    /**
+                     * 状态信息
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_healthStatus;
+                    bool m_healthStatusHasBeenSet;
+
+                    /**
+                     * 描述
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_comment;
+                    bool m_commentHasBeenSet;
 
                 };
             }

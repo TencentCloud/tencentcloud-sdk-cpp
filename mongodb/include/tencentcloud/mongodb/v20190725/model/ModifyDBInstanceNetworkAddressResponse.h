@@ -43,7 +43,27 @@ namespace TencentCloud
                     std::string ToJsonString() const;
 
 
+                    /**
+                     * 获取修改网络异步流程任务ID。
+                     * @return FlowId 修改网络异步流程任务ID。
+                     * 
+                     */
+                    uint64_t GetFlowId() const;
+
+                    /**
+                     * 判断参数 FlowId 是否已赋值
+                     * @return FlowId 是否已赋值
+                     * 
+                     */
+                    bool FlowIdHasBeenSet() const;
+
                 private:
+
+                    /**
+                     * 修改网络异步流程任务ID。
+                     */
+                    uint64_t m_flowId;
+                    bool m_flowIdHasBeenSet;
 
                 };
             }

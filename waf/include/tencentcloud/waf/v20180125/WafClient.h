@@ -181,8 +181,6 @@
 #include <tencentcloud/waf/v20180125/model/DescribeWafAutoDenyRulesResponse.h>
 #include <tencentcloud/waf/v20180125/model/DescribeWafAutoDenyStatusRequest.h>
 #include <tencentcloud/waf/v20180125/model/DescribeWafAutoDenyStatusResponse.h>
-#include <tencentcloud/waf/v20180125/model/DescribeWafInfoRequest.h>
-#include <tencentcloud/waf/v20180125/model/DescribeWafInfoResponse.h>
 #include <tencentcloud/waf/v20180125/model/DescribeWafThreatenIntelligenceRequest.h>
 #include <tencentcloud/waf/v20180125/model/DescribeWafThreatenIntelligenceResponse.h>
 #include <tencentcloud/waf/v20180125/model/DescribeWebshellStatusRequest.h>
@@ -542,9 +540,6 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeWafAutoDenyStatusResponse> DescribeWafAutoDenyStatusOutcome;
                 typedef std::future<DescribeWafAutoDenyStatusOutcome> DescribeWafAutoDenyStatusOutcomeCallable;
                 typedef std::function<void(const WafClient*, const Model::DescribeWafAutoDenyStatusRequest&, DescribeWafAutoDenyStatusOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeWafAutoDenyStatusAsyncHandler;
-                typedef Outcome<Core::Error, Model::DescribeWafInfoResponse> DescribeWafInfoOutcome;
-                typedef std::future<DescribeWafInfoOutcome> DescribeWafInfoOutcomeCallable;
-                typedef std::function<void(const WafClient*, const Model::DescribeWafInfoRequest&, DescribeWafInfoOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeWafInfoAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeWafThreatenIntelligenceResponse> DescribeWafThreatenIntelligenceOutcome;
                 typedef std::future<DescribeWafThreatenIntelligenceOutcome> DescribeWafThreatenIntelligenceOutcomeCallable;
                 typedef std::function<void(const WafClient*, const Model::DescribeWafThreatenIntelligenceRequest&, DescribeWafThreatenIntelligenceOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeWafThreatenIntelligenceAsyncHandler;
@@ -1426,18 +1421,6 @@ namespace TencentCloud
                 DescribeWafAutoDenyStatusOutcome DescribeWafAutoDenyStatus(const Model::DescribeWafAutoDenyStatusRequest &request);
                 void DescribeWafAutoDenyStatusAsync(const Model::DescribeWafAutoDenyStatusRequest& request, const DescribeWafAutoDenyStatusAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DescribeWafAutoDenyStatusOutcomeCallable DescribeWafAutoDenyStatusCallable(const Model::DescribeWafAutoDenyStatusRequest& request);
-
-                /**
-                 *获取负载均衡绑定的WAF信息，可以根据租户负载均衡实例ID、负载均衡监听器ID、负载均衡的域名信息来查询对应绑定的 Waf的状态信息。
-查询的范围：负载均衡实例ID、负载均衡实例ID+监听器ID、负载均衡实例ID+监听器ID+域名。
-可能的错误码：ResourceNotFound（没有找到对应的资源）、UnsupportedRegion（目前clb-waf只支持北京、广州、上海、成都、重庆、香港地域）。
-
-                 * @param req DescribeWafInfoRequest
-                 * @return DescribeWafInfoOutcome
-                 */
-                DescribeWafInfoOutcome DescribeWafInfo(const Model::DescribeWafInfoRequest &request);
-                void DescribeWafInfoAsync(const Model::DescribeWafInfoRequest& request, const DescribeWafInfoAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
-                DescribeWafInfoOutcomeCallable DescribeWafInfoCallable(const Model::DescribeWafInfoRequest& request);
 
                 /**
                  *描述WAF威胁情报封禁模块配置详情

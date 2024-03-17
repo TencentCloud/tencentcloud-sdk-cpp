@@ -513,6 +513,92 @@ TseClient::CreateCloudNativeAPIGatewayServiceRateLimitOutcomeCallable TseClient:
     return task->get_future();
 }
 
+TseClient::CreateConfigFileOutcome TseClient::CreateConfigFile(const CreateConfigFileRequest &request)
+{
+    auto outcome = MakeRequest(request, "CreateConfigFile");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        CreateConfigFileResponse rsp = CreateConfigFileResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return CreateConfigFileOutcome(rsp);
+        else
+            return CreateConfigFileOutcome(o.GetError());
+    }
+    else
+    {
+        return CreateConfigFileOutcome(outcome.GetError());
+    }
+}
+
+void TseClient::CreateConfigFileAsync(const CreateConfigFileRequest& request, const CreateConfigFileAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->CreateConfigFile(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+TseClient::CreateConfigFileOutcomeCallable TseClient::CreateConfigFileCallable(const CreateConfigFileRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<CreateConfigFileOutcome()>>(
+        [this, request]()
+        {
+            return this->CreateConfigFile(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+TseClient::CreateConfigFileGroupOutcome TseClient::CreateConfigFileGroup(const CreateConfigFileGroupRequest &request)
+{
+    auto outcome = MakeRequest(request, "CreateConfigFileGroup");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        CreateConfigFileGroupResponse rsp = CreateConfigFileGroupResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return CreateConfigFileGroupOutcome(rsp);
+        else
+            return CreateConfigFileGroupOutcome(o.GetError());
+    }
+    else
+    {
+        return CreateConfigFileGroupOutcome(outcome.GetError());
+    }
+}
+
+void TseClient::CreateConfigFileGroupAsync(const CreateConfigFileGroupRequest& request, const CreateConfigFileGroupAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->CreateConfigFileGroup(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+TseClient::CreateConfigFileGroupOutcomeCallable TseClient::CreateConfigFileGroupCallable(const CreateConfigFileGroupRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<CreateConfigFileGroupOutcome()>>(
+        [this, request]()
+        {
+            return this->CreateConfigFileGroup(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 TseClient::CreateEngineOutcome TseClient::CreateEngine(const CreateEngineRequest &request)
 {
     auto outcome = MakeRequest(request, "CreateEngine");
@@ -549,6 +635,49 @@ TseClient::CreateEngineOutcomeCallable TseClient::CreateEngineCallable(const Cre
         [this, request]()
         {
             return this->CreateEngine(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+TseClient::CreateGovernanceAliasOutcome TseClient::CreateGovernanceAlias(const CreateGovernanceAliasRequest &request)
+{
+    auto outcome = MakeRequest(request, "CreateGovernanceAlias");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        CreateGovernanceAliasResponse rsp = CreateGovernanceAliasResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return CreateGovernanceAliasOutcome(rsp);
+        else
+            return CreateGovernanceAliasOutcome(o.GetError());
+    }
+    else
+    {
+        return CreateGovernanceAliasOutcome(outcome.GetError());
+    }
+}
+
+void TseClient::CreateGovernanceAliasAsync(const CreateGovernanceAliasRequest& request, const CreateGovernanceAliasAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->CreateGovernanceAlias(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+TseClient::CreateGovernanceAliasOutcomeCallable TseClient::CreateGovernanceAliasCallable(const CreateGovernanceAliasRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<CreateGovernanceAliasOutcome()>>(
+        [this, request]()
+        {
+            return this->CreateGovernanceAlias(request);
         }
     );
 
@@ -599,6 +728,92 @@ TseClient::CreateGovernanceInstancesOutcomeCallable TseClient::CreateGovernanceI
     return task->get_future();
 }
 
+TseClient::CreateGovernanceNamespacesOutcome TseClient::CreateGovernanceNamespaces(const CreateGovernanceNamespacesRequest &request)
+{
+    auto outcome = MakeRequest(request, "CreateGovernanceNamespaces");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        CreateGovernanceNamespacesResponse rsp = CreateGovernanceNamespacesResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return CreateGovernanceNamespacesOutcome(rsp);
+        else
+            return CreateGovernanceNamespacesOutcome(o.GetError());
+    }
+    else
+    {
+        return CreateGovernanceNamespacesOutcome(outcome.GetError());
+    }
+}
+
+void TseClient::CreateGovernanceNamespacesAsync(const CreateGovernanceNamespacesRequest& request, const CreateGovernanceNamespacesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->CreateGovernanceNamespaces(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+TseClient::CreateGovernanceNamespacesOutcomeCallable TseClient::CreateGovernanceNamespacesCallable(const CreateGovernanceNamespacesRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<CreateGovernanceNamespacesOutcome()>>(
+        [this, request]()
+        {
+            return this->CreateGovernanceNamespaces(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+TseClient::CreateGovernanceServicesOutcome TseClient::CreateGovernanceServices(const CreateGovernanceServicesRequest &request)
+{
+    auto outcome = MakeRequest(request, "CreateGovernanceServices");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        CreateGovernanceServicesResponse rsp = CreateGovernanceServicesResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return CreateGovernanceServicesOutcome(rsp);
+        else
+            return CreateGovernanceServicesOutcome(o.GetError());
+    }
+    else
+    {
+        return CreateGovernanceServicesOutcome(outcome.GetError());
+    }
+}
+
+void TseClient::CreateGovernanceServicesAsync(const CreateGovernanceServicesRequest& request, const CreateGovernanceServicesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->CreateGovernanceServices(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+TseClient::CreateGovernanceServicesOutcomeCallable TseClient::CreateGovernanceServicesCallable(const CreateGovernanceServicesRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<CreateGovernanceServicesOutcome()>>(
+        [this, request]()
+        {
+            return this->CreateGovernanceServices(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 TseClient::CreateNativeGatewayServerGroupOutcome TseClient::CreateNativeGatewayServerGroup(const CreateNativeGatewayServerGroupRequest &request)
 {
     auto outcome = MakeRequest(request, "CreateNativeGatewayServerGroup");
@@ -635,6 +850,49 @@ TseClient::CreateNativeGatewayServerGroupOutcomeCallable TseClient::CreateNative
         [this, request]()
         {
             return this->CreateNativeGatewayServerGroup(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+TseClient::CreateOrUpdateConfigFileAndReleaseOutcome TseClient::CreateOrUpdateConfigFileAndRelease(const CreateOrUpdateConfigFileAndReleaseRequest &request)
+{
+    auto outcome = MakeRequest(request, "CreateOrUpdateConfigFileAndRelease");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        CreateOrUpdateConfigFileAndReleaseResponse rsp = CreateOrUpdateConfigFileAndReleaseResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return CreateOrUpdateConfigFileAndReleaseOutcome(rsp);
+        else
+            return CreateOrUpdateConfigFileAndReleaseOutcome(o.GetError());
+    }
+    else
+    {
+        return CreateOrUpdateConfigFileAndReleaseOutcome(outcome.GetError());
+    }
+}
+
+void TseClient::CreateOrUpdateConfigFileAndReleaseAsync(const CreateOrUpdateConfigFileAndReleaseRequest& request, const CreateOrUpdateConfigFileAndReleaseAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->CreateOrUpdateConfigFileAndRelease(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+TseClient::CreateOrUpdateConfigFileAndReleaseOutcomeCallable TseClient::CreateOrUpdateConfigFileAndReleaseCallable(const CreateOrUpdateConfigFileAndReleaseRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<CreateOrUpdateConfigFileAndReleaseOutcome()>>(
+        [this, request]()
+        {
+            return this->CreateOrUpdateConfigFileAndRelease(request);
         }
     );
 
@@ -1072,6 +1330,135 @@ TseClient::DeleteCloudNativeAPIGatewayServiceRateLimitOutcomeCallable TseClient:
     return task->get_future();
 }
 
+TseClient::DeleteConfigFileGroupOutcome TseClient::DeleteConfigFileGroup(const DeleteConfigFileGroupRequest &request)
+{
+    auto outcome = MakeRequest(request, "DeleteConfigFileGroup");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DeleteConfigFileGroupResponse rsp = DeleteConfigFileGroupResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DeleteConfigFileGroupOutcome(rsp);
+        else
+            return DeleteConfigFileGroupOutcome(o.GetError());
+    }
+    else
+    {
+        return DeleteConfigFileGroupOutcome(outcome.GetError());
+    }
+}
+
+void TseClient::DeleteConfigFileGroupAsync(const DeleteConfigFileGroupRequest& request, const DeleteConfigFileGroupAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DeleteConfigFileGroup(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+TseClient::DeleteConfigFileGroupOutcomeCallable TseClient::DeleteConfigFileGroupCallable(const DeleteConfigFileGroupRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DeleteConfigFileGroupOutcome()>>(
+        [this, request]()
+        {
+            return this->DeleteConfigFileGroup(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+TseClient::DeleteConfigFileReleasesOutcome TseClient::DeleteConfigFileReleases(const DeleteConfigFileReleasesRequest &request)
+{
+    auto outcome = MakeRequest(request, "DeleteConfigFileReleases");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DeleteConfigFileReleasesResponse rsp = DeleteConfigFileReleasesResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DeleteConfigFileReleasesOutcome(rsp);
+        else
+            return DeleteConfigFileReleasesOutcome(o.GetError());
+    }
+    else
+    {
+        return DeleteConfigFileReleasesOutcome(outcome.GetError());
+    }
+}
+
+void TseClient::DeleteConfigFileReleasesAsync(const DeleteConfigFileReleasesRequest& request, const DeleteConfigFileReleasesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DeleteConfigFileReleases(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+TseClient::DeleteConfigFileReleasesOutcomeCallable TseClient::DeleteConfigFileReleasesCallable(const DeleteConfigFileReleasesRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DeleteConfigFileReleasesOutcome()>>(
+        [this, request]()
+        {
+            return this->DeleteConfigFileReleases(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+TseClient::DeleteConfigFilesOutcome TseClient::DeleteConfigFiles(const DeleteConfigFilesRequest &request)
+{
+    auto outcome = MakeRequest(request, "DeleteConfigFiles");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DeleteConfigFilesResponse rsp = DeleteConfigFilesResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DeleteConfigFilesOutcome(rsp);
+        else
+            return DeleteConfigFilesOutcome(o.GetError());
+    }
+    else
+    {
+        return DeleteConfigFilesOutcome(outcome.GetError());
+    }
+}
+
+void TseClient::DeleteConfigFilesAsync(const DeleteConfigFilesRequest& request, const DeleteConfigFilesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DeleteConfigFiles(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+TseClient::DeleteConfigFilesOutcomeCallable TseClient::DeleteConfigFilesCallable(const DeleteConfigFilesRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DeleteConfigFilesOutcome()>>(
+        [this, request]()
+        {
+            return this->DeleteConfigFiles(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 TseClient::DeleteEngineOutcome TseClient::DeleteEngine(const DeleteEngineRequest &request)
 {
     auto outcome = MakeRequest(request, "DeleteEngine");
@@ -1115,6 +1502,49 @@ TseClient::DeleteEngineOutcomeCallable TseClient::DeleteEngineCallable(const Del
     return task->get_future();
 }
 
+TseClient::DeleteGovernanceAliasesOutcome TseClient::DeleteGovernanceAliases(const DeleteGovernanceAliasesRequest &request)
+{
+    auto outcome = MakeRequest(request, "DeleteGovernanceAliases");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DeleteGovernanceAliasesResponse rsp = DeleteGovernanceAliasesResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DeleteGovernanceAliasesOutcome(rsp);
+        else
+            return DeleteGovernanceAliasesOutcome(o.GetError());
+    }
+    else
+    {
+        return DeleteGovernanceAliasesOutcome(outcome.GetError());
+    }
+}
+
+void TseClient::DeleteGovernanceAliasesAsync(const DeleteGovernanceAliasesRequest& request, const DeleteGovernanceAliasesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DeleteGovernanceAliases(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+TseClient::DeleteGovernanceAliasesOutcomeCallable TseClient::DeleteGovernanceAliasesCallable(const DeleteGovernanceAliasesRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DeleteGovernanceAliasesOutcome()>>(
+        [this, request]()
+        {
+            return this->DeleteGovernanceAliases(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 TseClient::DeleteGovernanceInstancesOutcome TseClient::DeleteGovernanceInstances(const DeleteGovernanceInstancesRequest &request)
 {
     auto outcome = MakeRequest(request, "DeleteGovernanceInstances");
@@ -1151,6 +1581,135 @@ TseClient::DeleteGovernanceInstancesOutcomeCallable TseClient::DeleteGovernanceI
         [this, request]()
         {
             return this->DeleteGovernanceInstances(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+TseClient::DeleteGovernanceInstancesByHostOutcome TseClient::DeleteGovernanceInstancesByHost(const DeleteGovernanceInstancesByHostRequest &request)
+{
+    auto outcome = MakeRequest(request, "DeleteGovernanceInstancesByHost");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DeleteGovernanceInstancesByHostResponse rsp = DeleteGovernanceInstancesByHostResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DeleteGovernanceInstancesByHostOutcome(rsp);
+        else
+            return DeleteGovernanceInstancesByHostOutcome(o.GetError());
+    }
+    else
+    {
+        return DeleteGovernanceInstancesByHostOutcome(outcome.GetError());
+    }
+}
+
+void TseClient::DeleteGovernanceInstancesByHostAsync(const DeleteGovernanceInstancesByHostRequest& request, const DeleteGovernanceInstancesByHostAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DeleteGovernanceInstancesByHost(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+TseClient::DeleteGovernanceInstancesByHostOutcomeCallable TseClient::DeleteGovernanceInstancesByHostCallable(const DeleteGovernanceInstancesByHostRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DeleteGovernanceInstancesByHostOutcome()>>(
+        [this, request]()
+        {
+            return this->DeleteGovernanceInstancesByHost(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+TseClient::DeleteGovernanceNamespacesOutcome TseClient::DeleteGovernanceNamespaces(const DeleteGovernanceNamespacesRequest &request)
+{
+    auto outcome = MakeRequest(request, "DeleteGovernanceNamespaces");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DeleteGovernanceNamespacesResponse rsp = DeleteGovernanceNamespacesResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DeleteGovernanceNamespacesOutcome(rsp);
+        else
+            return DeleteGovernanceNamespacesOutcome(o.GetError());
+    }
+    else
+    {
+        return DeleteGovernanceNamespacesOutcome(outcome.GetError());
+    }
+}
+
+void TseClient::DeleteGovernanceNamespacesAsync(const DeleteGovernanceNamespacesRequest& request, const DeleteGovernanceNamespacesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DeleteGovernanceNamespaces(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+TseClient::DeleteGovernanceNamespacesOutcomeCallable TseClient::DeleteGovernanceNamespacesCallable(const DeleteGovernanceNamespacesRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DeleteGovernanceNamespacesOutcome()>>(
+        [this, request]()
+        {
+            return this->DeleteGovernanceNamespaces(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+TseClient::DeleteGovernanceServicesOutcome TseClient::DeleteGovernanceServices(const DeleteGovernanceServicesRequest &request)
+{
+    auto outcome = MakeRequest(request, "DeleteGovernanceServices");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DeleteGovernanceServicesResponse rsp = DeleteGovernanceServicesResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DeleteGovernanceServicesOutcome(rsp);
+        else
+            return DeleteGovernanceServicesOutcome(o.GetError());
+    }
+    else
+    {
+        return DeleteGovernanceServicesOutcome(outcome.GetError());
+    }
+}
+
+void TseClient::DeleteGovernanceServicesAsync(const DeleteGovernanceServicesRequest& request, const DeleteGovernanceServicesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DeleteGovernanceServices(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+TseClient::DeleteGovernanceServicesOutcomeCallable TseClient::DeleteGovernanceServicesCallable(const DeleteGovernanceServicesRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DeleteGovernanceServicesOutcome()>>(
+        [this, request]()
+        {
+            return this->DeleteGovernanceServices(request);
         }
     );
 
@@ -1237,6 +1796,49 @@ TseClient::DeleteWafDomainsOutcomeCallable TseClient::DeleteWafDomainsCallable(c
         [this, request]()
         {
             return this->DeleteWafDomains(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+TseClient::DescribeAllConfigFileTemplatesOutcome TseClient::DescribeAllConfigFileTemplates(const DescribeAllConfigFileTemplatesRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeAllConfigFileTemplates");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeAllConfigFileTemplatesResponse rsp = DescribeAllConfigFileTemplatesResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeAllConfigFileTemplatesOutcome(rsp);
+        else
+            return DescribeAllConfigFileTemplatesOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeAllConfigFileTemplatesOutcome(outcome.GetError());
+    }
+}
+
+void TseClient::DescribeAllConfigFileTemplatesAsync(const DescribeAllConfigFileTemplatesRequest& request, const DescribeAllConfigFileTemplatesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeAllConfigFileTemplates(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+TseClient::DescribeAllConfigFileTemplatesOutcomeCallable TseClient::DescribeAllConfigFileTemplatesCallable(const DescribeAllConfigFileTemplatesRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeAllConfigFileTemplatesOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeAllConfigFileTemplates(request);
         }
     );
 
@@ -1889,6 +2491,393 @@ TseClient::DescribeCloudNativeAPIGatewaysOutcomeCallable TseClient::DescribeClou
     return task->get_future();
 }
 
+TseClient::DescribeConfigFileOutcome TseClient::DescribeConfigFile(const DescribeConfigFileRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeConfigFile");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeConfigFileResponse rsp = DescribeConfigFileResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeConfigFileOutcome(rsp);
+        else
+            return DescribeConfigFileOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeConfigFileOutcome(outcome.GetError());
+    }
+}
+
+void TseClient::DescribeConfigFileAsync(const DescribeConfigFileRequest& request, const DescribeConfigFileAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeConfigFile(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+TseClient::DescribeConfigFileOutcomeCallable TseClient::DescribeConfigFileCallable(const DescribeConfigFileRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeConfigFileOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeConfigFile(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+TseClient::DescribeConfigFileGroupsOutcome TseClient::DescribeConfigFileGroups(const DescribeConfigFileGroupsRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeConfigFileGroups");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeConfigFileGroupsResponse rsp = DescribeConfigFileGroupsResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeConfigFileGroupsOutcome(rsp);
+        else
+            return DescribeConfigFileGroupsOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeConfigFileGroupsOutcome(outcome.GetError());
+    }
+}
+
+void TseClient::DescribeConfigFileGroupsAsync(const DescribeConfigFileGroupsRequest& request, const DescribeConfigFileGroupsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeConfigFileGroups(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+TseClient::DescribeConfigFileGroupsOutcomeCallable TseClient::DescribeConfigFileGroupsCallable(const DescribeConfigFileGroupsRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeConfigFileGroupsOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeConfigFileGroups(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+TseClient::DescribeConfigFileReleaseOutcome TseClient::DescribeConfigFileRelease(const DescribeConfigFileReleaseRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeConfigFileRelease");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeConfigFileReleaseResponse rsp = DescribeConfigFileReleaseResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeConfigFileReleaseOutcome(rsp);
+        else
+            return DescribeConfigFileReleaseOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeConfigFileReleaseOutcome(outcome.GetError());
+    }
+}
+
+void TseClient::DescribeConfigFileReleaseAsync(const DescribeConfigFileReleaseRequest& request, const DescribeConfigFileReleaseAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeConfigFileRelease(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+TseClient::DescribeConfigFileReleaseOutcomeCallable TseClient::DescribeConfigFileReleaseCallable(const DescribeConfigFileReleaseRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeConfigFileReleaseOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeConfigFileRelease(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+TseClient::DescribeConfigFileReleaseHistoriesOutcome TseClient::DescribeConfigFileReleaseHistories(const DescribeConfigFileReleaseHistoriesRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeConfigFileReleaseHistories");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeConfigFileReleaseHistoriesResponse rsp = DescribeConfigFileReleaseHistoriesResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeConfigFileReleaseHistoriesOutcome(rsp);
+        else
+            return DescribeConfigFileReleaseHistoriesOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeConfigFileReleaseHistoriesOutcome(outcome.GetError());
+    }
+}
+
+void TseClient::DescribeConfigFileReleaseHistoriesAsync(const DescribeConfigFileReleaseHistoriesRequest& request, const DescribeConfigFileReleaseHistoriesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeConfigFileReleaseHistories(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+TseClient::DescribeConfigFileReleaseHistoriesOutcomeCallable TseClient::DescribeConfigFileReleaseHistoriesCallable(const DescribeConfigFileReleaseHistoriesRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeConfigFileReleaseHistoriesOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeConfigFileReleaseHistories(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+TseClient::DescribeConfigFileReleaseVersionsOutcome TseClient::DescribeConfigFileReleaseVersions(const DescribeConfigFileReleaseVersionsRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeConfigFileReleaseVersions");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeConfigFileReleaseVersionsResponse rsp = DescribeConfigFileReleaseVersionsResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeConfigFileReleaseVersionsOutcome(rsp);
+        else
+            return DescribeConfigFileReleaseVersionsOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeConfigFileReleaseVersionsOutcome(outcome.GetError());
+    }
+}
+
+void TseClient::DescribeConfigFileReleaseVersionsAsync(const DescribeConfigFileReleaseVersionsRequest& request, const DescribeConfigFileReleaseVersionsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeConfigFileReleaseVersions(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+TseClient::DescribeConfigFileReleaseVersionsOutcomeCallable TseClient::DescribeConfigFileReleaseVersionsCallable(const DescribeConfigFileReleaseVersionsRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeConfigFileReleaseVersionsOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeConfigFileReleaseVersions(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+TseClient::DescribeConfigFileReleasesOutcome TseClient::DescribeConfigFileReleases(const DescribeConfigFileReleasesRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeConfigFileReleases");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeConfigFileReleasesResponse rsp = DescribeConfigFileReleasesResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeConfigFileReleasesOutcome(rsp);
+        else
+            return DescribeConfigFileReleasesOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeConfigFileReleasesOutcome(outcome.GetError());
+    }
+}
+
+void TseClient::DescribeConfigFileReleasesAsync(const DescribeConfigFileReleasesRequest& request, const DescribeConfigFileReleasesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeConfigFileReleases(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+TseClient::DescribeConfigFileReleasesOutcomeCallable TseClient::DescribeConfigFileReleasesCallable(const DescribeConfigFileReleasesRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeConfigFileReleasesOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeConfigFileReleases(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+TseClient::DescribeConfigFilesOutcome TseClient::DescribeConfigFiles(const DescribeConfigFilesRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeConfigFiles");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeConfigFilesResponse rsp = DescribeConfigFilesResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeConfigFilesOutcome(rsp);
+        else
+            return DescribeConfigFilesOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeConfigFilesOutcome(outcome.GetError());
+    }
+}
+
+void TseClient::DescribeConfigFilesAsync(const DescribeConfigFilesRequest& request, const DescribeConfigFilesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeConfigFiles(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+TseClient::DescribeConfigFilesOutcomeCallable TseClient::DescribeConfigFilesCallable(const DescribeConfigFilesRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeConfigFilesOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeConfigFiles(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+TseClient::DescribeConfigFilesByGroupOutcome TseClient::DescribeConfigFilesByGroup(const DescribeConfigFilesByGroupRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeConfigFilesByGroup");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeConfigFilesByGroupResponse rsp = DescribeConfigFilesByGroupResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeConfigFilesByGroupOutcome(rsp);
+        else
+            return DescribeConfigFilesByGroupOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeConfigFilesByGroupOutcome(outcome.GetError());
+    }
+}
+
+void TseClient::DescribeConfigFilesByGroupAsync(const DescribeConfigFilesByGroupRequest& request, const DescribeConfigFilesByGroupAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeConfigFilesByGroup(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+TseClient::DescribeConfigFilesByGroupOutcomeCallable TseClient::DescribeConfigFilesByGroupCallable(const DescribeConfigFilesByGroupRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeConfigFilesByGroupOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeConfigFilesByGroup(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+TseClient::DescribeGovernanceAliasesOutcome TseClient::DescribeGovernanceAliases(const DescribeGovernanceAliasesRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeGovernanceAliases");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeGovernanceAliasesResponse rsp = DescribeGovernanceAliasesResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeGovernanceAliasesOutcome(rsp);
+        else
+            return DescribeGovernanceAliasesOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeGovernanceAliasesOutcome(outcome.GetError());
+    }
+}
+
+void TseClient::DescribeGovernanceAliasesAsync(const DescribeGovernanceAliasesRequest& request, const DescribeGovernanceAliasesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeGovernanceAliases(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+TseClient::DescribeGovernanceAliasesOutcomeCallable TseClient::DescribeGovernanceAliasesCallable(const DescribeGovernanceAliasesRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeGovernanceAliasesOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeGovernanceAliases(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 TseClient::DescribeGovernanceInstancesOutcome TseClient::DescribeGovernanceInstances(const DescribeGovernanceInstancesRequest &request)
 {
     auto outcome = MakeRequest(request, "DescribeGovernanceInstances");
@@ -1925,6 +2914,178 @@ TseClient::DescribeGovernanceInstancesOutcomeCallable TseClient::DescribeGoverna
         [this, request]()
         {
             return this->DescribeGovernanceInstances(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+TseClient::DescribeGovernanceNamespacesOutcome TseClient::DescribeGovernanceNamespaces(const DescribeGovernanceNamespacesRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeGovernanceNamespaces");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeGovernanceNamespacesResponse rsp = DescribeGovernanceNamespacesResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeGovernanceNamespacesOutcome(rsp);
+        else
+            return DescribeGovernanceNamespacesOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeGovernanceNamespacesOutcome(outcome.GetError());
+    }
+}
+
+void TseClient::DescribeGovernanceNamespacesAsync(const DescribeGovernanceNamespacesRequest& request, const DescribeGovernanceNamespacesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeGovernanceNamespaces(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+TseClient::DescribeGovernanceNamespacesOutcomeCallable TseClient::DescribeGovernanceNamespacesCallable(const DescribeGovernanceNamespacesRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeGovernanceNamespacesOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeGovernanceNamespaces(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+TseClient::DescribeGovernanceServiceContractVersionsOutcome TseClient::DescribeGovernanceServiceContractVersions(const DescribeGovernanceServiceContractVersionsRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeGovernanceServiceContractVersions");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeGovernanceServiceContractVersionsResponse rsp = DescribeGovernanceServiceContractVersionsResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeGovernanceServiceContractVersionsOutcome(rsp);
+        else
+            return DescribeGovernanceServiceContractVersionsOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeGovernanceServiceContractVersionsOutcome(outcome.GetError());
+    }
+}
+
+void TseClient::DescribeGovernanceServiceContractVersionsAsync(const DescribeGovernanceServiceContractVersionsRequest& request, const DescribeGovernanceServiceContractVersionsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeGovernanceServiceContractVersions(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+TseClient::DescribeGovernanceServiceContractVersionsOutcomeCallable TseClient::DescribeGovernanceServiceContractVersionsCallable(const DescribeGovernanceServiceContractVersionsRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeGovernanceServiceContractVersionsOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeGovernanceServiceContractVersions(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+TseClient::DescribeGovernanceServiceContractsOutcome TseClient::DescribeGovernanceServiceContracts(const DescribeGovernanceServiceContractsRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeGovernanceServiceContracts");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeGovernanceServiceContractsResponse rsp = DescribeGovernanceServiceContractsResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeGovernanceServiceContractsOutcome(rsp);
+        else
+            return DescribeGovernanceServiceContractsOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeGovernanceServiceContractsOutcome(outcome.GetError());
+    }
+}
+
+void TseClient::DescribeGovernanceServiceContractsAsync(const DescribeGovernanceServiceContractsRequest& request, const DescribeGovernanceServiceContractsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeGovernanceServiceContracts(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+TseClient::DescribeGovernanceServiceContractsOutcomeCallable TseClient::DescribeGovernanceServiceContractsCallable(const DescribeGovernanceServiceContractsRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeGovernanceServiceContractsOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeGovernanceServiceContracts(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+TseClient::DescribeGovernanceServicesOutcome TseClient::DescribeGovernanceServices(const DescribeGovernanceServicesRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeGovernanceServices");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeGovernanceServicesResponse rsp = DescribeGovernanceServicesResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeGovernanceServicesOutcome(rsp);
+        else
+            return DescribeGovernanceServicesOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeGovernanceServicesOutcome(outcome.GetError());
+    }
+}
+
+void TseClient::DescribeGovernanceServicesAsync(const DescribeGovernanceServicesRequest& request, const DescribeGovernanceServicesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeGovernanceServices(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+TseClient::DescribeGovernanceServicesOutcomeCallable TseClient::DescribeGovernanceServicesCallable(const DescribeGovernanceServicesRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeGovernanceServicesOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeGovernanceServices(request);
         }
     );
 
@@ -2792,6 +3953,92 @@ TseClient::ModifyCloudNativeAPIGatewayServiceRateLimitOutcomeCallable TseClient:
     return task->get_future();
 }
 
+TseClient::ModifyConfigFileGroupOutcome TseClient::ModifyConfigFileGroup(const ModifyConfigFileGroupRequest &request)
+{
+    auto outcome = MakeRequest(request, "ModifyConfigFileGroup");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ModifyConfigFileGroupResponse rsp = ModifyConfigFileGroupResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ModifyConfigFileGroupOutcome(rsp);
+        else
+            return ModifyConfigFileGroupOutcome(o.GetError());
+    }
+    else
+    {
+        return ModifyConfigFileGroupOutcome(outcome.GetError());
+    }
+}
+
+void TseClient::ModifyConfigFileGroupAsync(const ModifyConfigFileGroupRequest& request, const ModifyConfigFileGroupAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->ModifyConfigFileGroup(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+TseClient::ModifyConfigFileGroupOutcomeCallable TseClient::ModifyConfigFileGroupCallable(const ModifyConfigFileGroupRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<ModifyConfigFileGroupOutcome()>>(
+        [this, request]()
+        {
+            return this->ModifyConfigFileGroup(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+TseClient::ModifyConfigFilesOutcome TseClient::ModifyConfigFiles(const ModifyConfigFilesRequest &request)
+{
+    auto outcome = MakeRequest(request, "ModifyConfigFiles");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ModifyConfigFilesResponse rsp = ModifyConfigFilesResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ModifyConfigFilesOutcome(rsp);
+        else
+            return ModifyConfigFilesOutcome(o.GetError());
+    }
+    else
+    {
+        return ModifyConfigFilesOutcome(outcome.GetError());
+    }
+}
+
+void TseClient::ModifyConfigFilesAsync(const ModifyConfigFilesRequest& request, const ModifyConfigFilesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->ModifyConfigFiles(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+TseClient::ModifyConfigFilesOutcomeCallable TseClient::ModifyConfigFilesCallable(const ModifyConfigFilesRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<ModifyConfigFilesOutcome()>>(
+        [this, request]()
+        {
+            return this->ModifyConfigFiles(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 TseClient::ModifyConsoleNetworkOutcome TseClient::ModifyConsoleNetwork(const ModifyConsoleNetworkRequest &request)
 {
     auto outcome = MakeRequest(request, "ModifyConsoleNetwork");
@@ -2835,6 +4082,49 @@ TseClient::ModifyConsoleNetworkOutcomeCallable TseClient::ModifyConsoleNetworkCa
     return task->get_future();
 }
 
+TseClient::ModifyGovernanceAliasOutcome TseClient::ModifyGovernanceAlias(const ModifyGovernanceAliasRequest &request)
+{
+    auto outcome = MakeRequest(request, "ModifyGovernanceAlias");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ModifyGovernanceAliasResponse rsp = ModifyGovernanceAliasResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ModifyGovernanceAliasOutcome(rsp);
+        else
+            return ModifyGovernanceAliasOutcome(o.GetError());
+    }
+    else
+    {
+        return ModifyGovernanceAliasOutcome(outcome.GetError());
+    }
+}
+
+void TseClient::ModifyGovernanceAliasAsync(const ModifyGovernanceAliasRequest& request, const ModifyGovernanceAliasAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->ModifyGovernanceAlias(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+TseClient::ModifyGovernanceAliasOutcomeCallable TseClient::ModifyGovernanceAliasCallable(const ModifyGovernanceAliasRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<ModifyGovernanceAliasOutcome()>>(
+        [this, request]()
+        {
+            return this->ModifyGovernanceAlias(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 TseClient::ModifyGovernanceInstancesOutcome TseClient::ModifyGovernanceInstances(const ModifyGovernanceInstancesRequest &request)
 {
     auto outcome = MakeRequest(request, "ModifyGovernanceInstances");
@@ -2871,6 +4161,92 @@ TseClient::ModifyGovernanceInstancesOutcomeCallable TseClient::ModifyGovernanceI
         [this, request]()
         {
             return this->ModifyGovernanceInstances(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+TseClient::ModifyGovernanceNamespacesOutcome TseClient::ModifyGovernanceNamespaces(const ModifyGovernanceNamespacesRequest &request)
+{
+    auto outcome = MakeRequest(request, "ModifyGovernanceNamespaces");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ModifyGovernanceNamespacesResponse rsp = ModifyGovernanceNamespacesResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ModifyGovernanceNamespacesOutcome(rsp);
+        else
+            return ModifyGovernanceNamespacesOutcome(o.GetError());
+    }
+    else
+    {
+        return ModifyGovernanceNamespacesOutcome(outcome.GetError());
+    }
+}
+
+void TseClient::ModifyGovernanceNamespacesAsync(const ModifyGovernanceNamespacesRequest& request, const ModifyGovernanceNamespacesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->ModifyGovernanceNamespaces(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+TseClient::ModifyGovernanceNamespacesOutcomeCallable TseClient::ModifyGovernanceNamespacesCallable(const ModifyGovernanceNamespacesRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<ModifyGovernanceNamespacesOutcome()>>(
+        [this, request]()
+        {
+            return this->ModifyGovernanceNamespaces(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+TseClient::ModifyGovernanceServicesOutcome TseClient::ModifyGovernanceServices(const ModifyGovernanceServicesRequest &request)
+{
+    auto outcome = MakeRequest(request, "ModifyGovernanceServices");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ModifyGovernanceServicesResponse rsp = ModifyGovernanceServicesResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ModifyGovernanceServicesOutcome(rsp);
+        else
+            return ModifyGovernanceServicesOutcome(o.GetError());
+    }
+    else
+    {
+        return ModifyGovernanceServicesOutcome(outcome.GetError());
+    }
+}
+
+void TseClient::ModifyGovernanceServicesAsync(const ModifyGovernanceServicesRequest& request, const ModifyGovernanceServicesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->ModifyGovernanceServices(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+TseClient::ModifyGovernanceServicesOutcomeCallable TseClient::ModifyGovernanceServicesCallable(const ModifyGovernanceServicesRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<ModifyGovernanceServicesOutcome()>>(
+        [this, request]()
+        {
+            return this->ModifyGovernanceServices(request);
         }
     );
 
@@ -3086,6 +4462,92 @@ TseClient::OpenWafProtectionOutcomeCallable TseClient::OpenWafProtectionCallable
         [this, request]()
         {
             return this->OpenWafProtection(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+TseClient::PublishConfigFilesOutcome TseClient::PublishConfigFiles(const PublishConfigFilesRequest &request)
+{
+    auto outcome = MakeRequest(request, "PublishConfigFiles");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        PublishConfigFilesResponse rsp = PublishConfigFilesResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return PublishConfigFilesOutcome(rsp);
+        else
+            return PublishConfigFilesOutcome(o.GetError());
+    }
+    else
+    {
+        return PublishConfigFilesOutcome(outcome.GetError());
+    }
+}
+
+void TseClient::PublishConfigFilesAsync(const PublishConfigFilesRequest& request, const PublishConfigFilesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->PublishConfigFiles(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+TseClient::PublishConfigFilesOutcomeCallable TseClient::PublishConfigFilesCallable(const PublishConfigFilesRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<PublishConfigFilesOutcome()>>(
+        [this, request]()
+        {
+            return this->PublishConfigFiles(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+TseClient::RollbackConfigFileReleasesOutcome TseClient::RollbackConfigFileReleases(const RollbackConfigFileReleasesRequest &request)
+{
+    auto outcome = MakeRequest(request, "RollbackConfigFileReleases");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        RollbackConfigFileReleasesResponse rsp = RollbackConfigFileReleasesResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return RollbackConfigFileReleasesOutcome(rsp);
+        else
+            return RollbackConfigFileReleasesOutcome(o.GetError());
+    }
+    else
+    {
+        return RollbackConfigFileReleasesOutcome(outcome.GetError());
+    }
+}
+
+void TseClient::RollbackConfigFileReleasesAsync(const RollbackConfigFileReleasesRequest& request, const RollbackConfigFileReleasesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->RollbackConfigFileReleases(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+TseClient::RollbackConfigFileReleasesOutcomeCallable TseClient::RollbackConfigFileReleasesCallable(const RollbackConfigFileReleasesRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<RollbackConfigFileReleasesOutcome()>>(
+        [this, request]()
+        {
+            return this->RollbackConfigFileReleases(request);
         }
     );
 

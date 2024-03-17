@@ -23,7 +23,8 @@ using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Mongodb::V20190725::Model;
 using namespace std;
 
-ModifyDBInstanceNetworkAddressResponse::ModifyDBInstanceNetworkAddressResponse()
+ModifyDBInstanceNetworkAddressResponse::ModifyDBInstanceNetworkAddressResponse() :
+    m_flowIdHasBeenSet(false)
 {
 }
 
@@ -61,6 +62,16 @@ CoreInternalOutcome ModifyDBInstanceNetworkAddressResponse::Deserialize(const st
     }
 
 
+    if (rsp.HasMember("FlowId") && !rsp["FlowId"].IsNull())
+    {
+        if (!rsp["FlowId"].IsUint64())
+        {
+            return CoreInternalOutcome(Core::Error("response `FlowId` IsUint64=false incorrectly").SetRequestId(requestId));
+        }
+        m_flowId = rsp["FlowId"].GetUint64();
+        m_flowIdHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -70,6 +81,14 @@ string ModifyDBInstanceNetworkAddressResponse::ToJsonString() const
     rapidjson::Document value;
     value.SetObject();
     rapidjson::Document::AllocatorType& allocator = value.GetAllocator();
+
+    if (m_flowIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "FlowId";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_flowId, allocator);
+    }
 
     rapidjson::Value iKey(rapidjson::kStringType);
     string key = "RequestId";
@@ -82,5 +101,15 @@ string ModifyDBInstanceNetworkAddressResponse::ToJsonString() const
     return buffer.GetString();
 }
 
+
+uint64_t ModifyDBInstanceNetworkAddressResponse::GetFlowId() const
+{
+    return m_flowId;
+}
+
+bool ModifyDBInstanceNetworkAddressResponse::FlowIdHasBeenSet() const
+{
+    return m_flowIdHasBeenSet;
+}
 
 

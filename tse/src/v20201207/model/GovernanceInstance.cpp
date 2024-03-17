@@ -35,7 +35,10 @@ GovernanceInstance::GovernanceInstance() :
     m_createTimeHasBeenSet(false),
     m_modifyTimeHasBeenSet(false),
     m_metadatasHasBeenSet(false),
-    m_ttlHasBeenSet(false)
+    m_ttlHasBeenSet(false),
+    m_instanceVersionHasBeenSet(false),
+    m_healthStatusHasBeenSet(false),
+    m_commentHasBeenSet(false)
 {
 }
 
@@ -204,6 +207,36 @@ CoreInternalOutcome GovernanceInstance::Deserialize(const rapidjson::Value &valu
         m_ttlHasBeenSet = true;
     }
 
+    if (value.HasMember("InstanceVersion") && !value["InstanceVersion"].IsNull())
+    {
+        if (!value["InstanceVersion"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `GovernanceInstance.InstanceVersion` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_instanceVersion = string(value["InstanceVersion"].GetString());
+        m_instanceVersionHasBeenSet = true;
+    }
+
+    if (value.HasMember("HealthStatus") && !value["HealthStatus"].IsNull())
+    {
+        if (!value["HealthStatus"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `GovernanceInstance.HealthStatus` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_healthStatus = string(value["HealthStatus"].GetString());
+        m_healthStatusHasBeenSet = true;
+    }
+
+    if (value.HasMember("Comment") && !value["Comment"].IsNull())
+    {
+        if (!value["Comment"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `GovernanceInstance.Comment` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_comment = string(value["Comment"].GetString());
+        m_commentHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -336,6 +369,30 @@ void GovernanceInstance::ToJsonObject(rapidjson::Value &value, rapidjson::Docume
         string key = "Ttl";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_ttl, allocator);
+    }
+
+    if (m_instanceVersionHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "InstanceVersion";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_instanceVersion.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_healthStatusHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "HealthStatus";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_healthStatus.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_commentHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Comment";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_comment.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -579,5 +636,53 @@ void GovernanceInstance::SetTtl(const uint64_t& _ttl)
 bool GovernanceInstance::TtlHasBeenSet() const
 {
     return m_ttlHasBeenSet;
+}
+
+string GovernanceInstance::GetInstanceVersion() const
+{
+    return m_instanceVersion;
+}
+
+void GovernanceInstance::SetInstanceVersion(const string& _instanceVersion)
+{
+    m_instanceVersion = _instanceVersion;
+    m_instanceVersionHasBeenSet = true;
+}
+
+bool GovernanceInstance::InstanceVersionHasBeenSet() const
+{
+    return m_instanceVersionHasBeenSet;
+}
+
+string GovernanceInstance::GetHealthStatus() const
+{
+    return m_healthStatus;
+}
+
+void GovernanceInstance::SetHealthStatus(const string& _healthStatus)
+{
+    m_healthStatus = _healthStatus;
+    m_healthStatusHasBeenSet = true;
+}
+
+bool GovernanceInstance::HealthStatusHasBeenSet() const
+{
+    return m_healthStatusHasBeenSet;
+}
+
+string GovernanceInstance::GetComment() const
+{
+    return m_comment;
+}
+
+void GovernanceInstance::SetComment(const string& _comment)
+{
+    m_comment = _comment;
+    m_commentHasBeenSet = true;
+}
+
+bool GovernanceInstance::CommentHasBeenSet() const
+{
+    return m_commentHasBeenSet;
 }
 
