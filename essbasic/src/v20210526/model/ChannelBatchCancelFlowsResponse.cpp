@@ -24,7 +24,8 @@ using namespace TencentCloud::Essbasic::V20210526::Model;
 using namespace std;
 
 ChannelBatchCancelFlowsResponse::ChannelBatchCancelFlowsResponse() :
-    m_failMessagesHasBeenSet(false)
+    m_failMessagesHasBeenSet(false),
+    m_taskIdHasBeenSet(false)
 {
 }
 
@@ -75,6 +76,16 @@ CoreInternalOutcome ChannelBatchCancelFlowsResponse::Deserialize(const string &p
         m_failMessagesHasBeenSet = true;
     }
 
+    if (rsp.HasMember("TaskId") && !rsp["TaskId"].IsNull())
+    {
+        if (!rsp["TaskId"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `TaskId` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_taskId = string(rsp["TaskId"].GetString());
+        m_taskIdHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -98,6 +109,14 @@ string ChannelBatchCancelFlowsResponse::ToJsonString() const
         }
     }
 
+    if (m_taskIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "TaskId";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_taskId.c_str(), allocator).Move(), allocator);
+    }
+
     rapidjson::Value iKey(rapidjson::kStringType);
     string key = "RequestId";
     iKey.SetString(key.c_str(), allocator);
@@ -118,6 +137,16 @@ vector<string> ChannelBatchCancelFlowsResponse::GetFailMessages() const
 bool ChannelBatchCancelFlowsResponse::FailMessagesHasBeenSet() const
 {
     return m_failMessagesHasBeenSet;
+}
+
+string ChannelBatchCancelFlowsResponse::GetTaskId() const
+{
+    return m_taskId;
+}
+
+bool ChannelBatchCancelFlowsResponse::TaskIdHasBeenSet() const
+{
+    return m_taskIdHasBeenSet;
 }
 
 

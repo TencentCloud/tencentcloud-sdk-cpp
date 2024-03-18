@@ -25,6 +25,7 @@ using namespace std;
 CreateLiveTranscodeRuleRequest::CreateLiveTranscodeRuleRequest() :
     m_domainNameHasBeenSet(false),
     m_appNameHasBeenSet(false),
+    m_streamNameHasBeenSet(false),
     m_templateIdHasBeenSet(false)
 {
 }
@@ -50,6 +51,14 @@ string CreateLiveTranscodeRuleRequest::ToJsonString() const
         string key = "AppName";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_appName.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_streamNameHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "StreamName";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_streamName.c_str(), allocator).Move(), allocator);
     }
 
     if (m_templateIdHasBeenSet)
@@ -98,6 +107,22 @@ void CreateLiveTranscodeRuleRequest::SetAppName(const string& _appName)
 bool CreateLiveTranscodeRuleRequest::AppNameHasBeenSet() const
 {
     return m_appNameHasBeenSet;
+}
+
+string CreateLiveTranscodeRuleRequest::GetStreamName() const
+{
+    return m_streamName;
+}
+
+void CreateLiveTranscodeRuleRequest::SetStreamName(const string& _streamName)
+{
+    m_streamName = _streamName;
+    m_streamNameHasBeenSet = true;
+}
+
+bool CreateLiveTranscodeRuleRequest::StreamNameHasBeenSet() const
+{
+    return m_streamNameHasBeenSet;
 }
 
 int64_t CreateLiveTranscodeRuleRequest::GetTemplateId() const

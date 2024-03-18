@@ -85,6 +85,27 @@ namespace TencentCloud
                     bool AppNameHasBeenSet() const;
 
                     /**
+                     * 获取流名称。已废弃该字段，请传入空字符串。
+                     * @return StreamName 流名称。已废弃该字段，请传入空字符串。
+                     * 
+                     */
+                    std::string GetStreamName() const;
+
+                    /**
+                     * 设置流名称。已废弃该字段，请传入空字符串。
+                     * @param _streamName 流名称。已废弃该字段，请传入空字符串。
+                     * 
+                     */
+                    void SetStreamName(const std::string& _streamName);
+
+                    /**
+                     * 判断参数 StreamName 是否已赋值
+                     * @return StreamName 是否已赋值
+                     * 
+                     */
+                    bool StreamNameHasBeenSet() const;
+
+                    /**
                      * 获取指定已有的模板Id。
                      * @return TemplateId 指定已有的模板Id。
                      * 
@@ -118,6 +139,12 @@ namespace TencentCloud
                      */
                     std::string m_appName;
                     bool m_appNameHasBeenSet;
+
+                    /**
+                     * 流名称。已废弃该字段，请传入空字符串。
+                     */
+                    std::string m_streamName;
+                    bool m_streamNameHasBeenSet;
 
                     /**
                      * 指定已有的模板Id。

@@ -26,7 +26,8 @@ using namespace std;
 ChannelCreateBatchCancelFlowUrlResponse::ChannelCreateBatchCancelFlowUrlResponse() :
     m_batchCancelFlowUrlHasBeenSet(false),
     m_failMessagesHasBeenSet(false),
-    m_urlExpireOnHasBeenSet(false)
+    m_urlExpireOnHasBeenSet(false),
+    m_taskIdHasBeenSet(false)
 {
 }
 
@@ -97,6 +98,16 @@ CoreInternalOutcome ChannelCreateBatchCancelFlowUrlResponse::Deserialize(const s
         m_urlExpireOnHasBeenSet = true;
     }
 
+    if (rsp.HasMember("TaskId") && !rsp["TaskId"].IsNull())
+    {
+        if (!rsp["TaskId"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `TaskId` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_taskId = string(rsp["TaskId"].GetString());
+        m_taskIdHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -134,6 +145,14 @@ string ChannelCreateBatchCancelFlowUrlResponse::ToJsonString() const
         string key = "UrlExpireOn";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_urlExpireOn.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_taskIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "TaskId";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_taskId.c_str(), allocator).Move(), allocator);
     }
 
     rapidjson::Value iKey(rapidjson::kStringType);
@@ -176,6 +195,16 @@ string ChannelCreateBatchCancelFlowUrlResponse::GetUrlExpireOn() const
 bool ChannelCreateBatchCancelFlowUrlResponse::UrlExpireOnHasBeenSet() const
 {
     return m_urlExpireOnHasBeenSet;
+}
+
+string ChannelCreateBatchCancelFlowUrlResponse::GetTaskId() const
+{
+    return m_taskId;
+}
+
+bool ChannelCreateBatchCancelFlowUrlResponse::TaskIdHasBeenSet() const
+{
+    return m_taskIdHasBeenSet;
 }
 
 
