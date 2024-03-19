@@ -121,6 +121,31 @@ namespace TencentCloud
                      */
                     bool TKEDirectENIHasBeenSet() const;
 
+                    /**
+                     * 获取TKE中继网卡模式可支持的Pod数量
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return TKESubENI TKE中继网卡模式可支持的Pod数量
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    int64_t GetTKESubENI() const;
+
+                    /**
+                     * 设置TKE中继网卡模式可支持的Pod数量
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _tKESubENI TKE中继网卡模式可支持的Pod数量
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetTKESubENI(const int64_t& _tKESubENI);
+
+                    /**
+                     * 判断参数 TKESubENI 是否已赋值
+                     * @return TKESubENI 是否已赋值
+                     * 
+                     */
+                    bool TKESubENIHasBeenSet() const;
+
                 private:
 
                     /**
@@ -143,6 +168,13 @@ namespace TencentCloud
                      */
                     int64_t m_tKEDirectENI;
                     bool m_tKEDirectENIHasBeenSet;
+
+                    /**
+                     * TKE中继网卡模式可支持的Pod数量
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    int64_t m_tKESubENI;
+                    bool m_tKESubENIHasBeenSet;
 
                 };
             }

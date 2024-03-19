@@ -33,7 +33,8 @@ DescribeAttackOverviewResponse::DescribeAttackOverviewResponse() :
     m_apiRiskEventCountHasBeenSet(false),
     m_iPBlackCountHasBeenSet(false),
     m_tamperCountHasBeenSet(false),
-    m_leakCountHasBeenSet(false)
+    m_leakCountHasBeenSet(false),
+    m_apiRiskEventCircleCountHasBeenSet(false)
 {
 }
 
@@ -171,6 +172,16 @@ CoreInternalOutcome DescribeAttackOverviewResponse::Deserialize(const string &pa
         m_leakCountHasBeenSet = true;
     }
 
+    if (rsp.HasMember("ApiRiskEventCircleCount") && !rsp["ApiRiskEventCircleCount"].IsNull())
+    {
+        if (!rsp["ApiRiskEventCircleCount"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `ApiRiskEventCircleCount` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_apiRiskEventCircleCount = rsp["ApiRiskEventCircleCount"].GetInt64();
+        m_apiRiskEventCircleCountHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -259,6 +270,14 @@ string DescribeAttackOverviewResponse::ToJsonString() const
         string key = "LeakCount";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_leakCount, allocator);
+    }
+
+    if (m_apiRiskEventCircleCountHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ApiRiskEventCircleCount";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_apiRiskEventCircleCount, allocator);
     }
 
     rapidjson::Value iKey(rapidjson::kStringType);
@@ -371,6 +390,16 @@ uint64_t DescribeAttackOverviewResponse::GetLeakCount() const
 bool DescribeAttackOverviewResponse::LeakCountHasBeenSet() const
 {
     return m_leakCountHasBeenSet;
+}
+
+int64_t DescribeAttackOverviewResponse::GetApiRiskEventCircleCount() const
+{
+    return m_apiRiskEventCircleCount;
+}
+
+bool DescribeAttackOverviewResponse::ApiRiskEventCircleCountHasBeenSet() const
+{
+    return m_apiRiskEventCircleCountHasBeenSet;
 }
 
 

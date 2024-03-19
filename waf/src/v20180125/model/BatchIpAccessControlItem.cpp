@@ -28,7 +28,9 @@ BatchIpAccessControlItem::BatchIpAccessControlItem() :
     m_sourceHasBeenSet(false),
     m_tsVersionHasBeenSet(false),
     m_validTsHasBeenSet(false),
-    m_hostsHasBeenSet(false)
+    m_hostsHasBeenSet(false),
+    m_ruleIdHasBeenSet(false),
+    m_ipListHasBeenSet(false)
 {
 }
 
@@ -120,6 +122,29 @@ CoreInternalOutcome BatchIpAccessControlItem::Deserialize(const rapidjson::Value
         m_hostsHasBeenSet = true;
     }
 
+    if (value.HasMember("RuleId") && !value["RuleId"].IsNull())
+    {
+        if (!value["RuleId"].IsUint64())
+        {
+            return CoreInternalOutcome(Core::Error("response `BatchIpAccessControlItem.RuleId` IsUint64=false incorrectly").SetRequestId(requestId));
+        }
+        m_ruleId = value["RuleId"].GetUint64();
+        m_ruleIdHasBeenSet = true;
+    }
+
+    if (value.HasMember("IpList") && !value["IpList"].IsNull())
+    {
+        if (!value["IpList"].IsArray())
+            return CoreInternalOutcome(Core::Error("response `BatchIpAccessControlItem.IpList` is not array type"));
+
+        const rapidjson::Value &tmpValue = value["IpList"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            m_ipList.push_back((*itr).GetString());
+        }
+        m_ipListHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -191,6 +216,27 @@ void BatchIpAccessControlItem::ToJsonObject(rapidjson::Value &value, rapidjson::
         value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
 
         for (auto itr = m_hosts.begin(); itr != m_hosts.end(); ++itr)
+        {
+            value[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
+        }
+    }
+
+    if (m_ruleIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "RuleId";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_ruleId, allocator);
+    }
+
+    if (m_ipListHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "IpList";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        for (auto itr = m_ipList.begin(); itr != m_ipList.end(); ++itr)
         {
             value[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
         }
@@ -325,5 +371,37 @@ void BatchIpAccessControlItem::SetHosts(const vector<string>& _hosts)
 bool BatchIpAccessControlItem::HostsHasBeenSet() const
 {
     return m_hostsHasBeenSet;
+}
+
+uint64_t BatchIpAccessControlItem::GetRuleId() const
+{
+    return m_ruleId;
+}
+
+void BatchIpAccessControlItem::SetRuleId(const uint64_t& _ruleId)
+{
+    m_ruleId = _ruleId;
+    m_ruleIdHasBeenSet = true;
+}
+
+bool BatchIpAccessControlItem::RuleIdHasBeenSet() const
+{
+    return m_ruleIdHasBeenSet;
+}
+
+vector<string> BatchIpAccessControlItem::GetIpList() const
+{
+    return m_ipList;
+}
+
+void BatchIpAccessControlItem::SetIpList(const vector<string>& _ipList)
+{
+    m_ipList = _ipList;
+    m_ipListHasBeenSet = true;
+}
+
+bool BatchIpAccessControlItem::IpListHasBeenSet() const
+{
+    return m_ipListHasBeenSet;
 }
 

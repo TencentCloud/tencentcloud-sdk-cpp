@@ -274,15 +274,15 @@ namespace TencentCloud
                     bool SortHasBeenSet() const;
 
                     /**
-                     * 获取ip
-                     * @return Ip ip
+                     * 获取IP
+                     * @return Ip IP
                      * 
                      */
                     std::string GetIp() const;
 
                     /**
-                     * 设置ip
-                     * @param _ip ip
+                     * 设置IP
+                     * @param _ip IP
                      * 
                      */
                     void SetIp(const std::string& _ip);
@@ -357,6 +357,27 @@ namespace TencentCloud
                      */
                     bool ValidTimeStampMaxHasBeenSet() const;
 
+                    /**
+                     * 获取规则ID
+                     * @return RuleId 规则ID
+                     * 
+                     */
+                    uint64_t GetRuleId() const;
+
+                    /**
+                     * 设置规则ID
+                     * @param _ruleId 规则ID
+                     * 
+                     */
+                    void SetRuleId(const uint64_t& _ruleId);
+
+                    /**
+                     * 判断参数 RuleId 是否已赋值
+                     * @return RuleId 是否已赋值
+                     * 
+                     */
+                    bool RuleIdHasBeenSet() const;
+
                 private:
 
                     /**
@@ -426,7 +447,7 @@ namespace TencentCloud
                     bool m_sortHasBeenSet;
 
                     /**
-                     * ip
+                     * IP
                      */
                     std::string m_ip;
                     bool m_ipHasBeenSet;
@@ -448,6 +469,12 @@ namespace TencentCloud
                      */
                     std::string m_validTimeStampMax;
                     bool m_validTimeStampMaxHasBeenSet;
+
+                    /**
+                     * 规则ID
+                     */
+                    uint64_t m_ruleId;
+                    bool m_ruleIdHasBeenSet;
 
                 };
             }

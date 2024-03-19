@@ -49,18 +49,18 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取主键ID
+                     * 获取Kafka数据订阅配置的ID。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return Id 主键ID
+                     * @return Id Kafka数据订阅配置的ID。
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetId() const;
 
                     /**
-                     * 设置主键ID
+                     * 设置Kafka数据订阅配置的ID。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _id 主键ID
+                     * @param _id Kafka数据订阅配置的ID。
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -422,7 +422,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 主键ID
+                     * Kafka数据订阅配置的ID。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_id;

@@ -86,6 +86,27 @@ namespace TencentCloud
                     bool DomainIdHasBeenSet() const;
 
                     /**
+                     * 获取必填项。域名所属实例id
+                     * @return InstanceID 必填项。域名所属实例id
+                     * 
+                     */
+                    std::string GetInstanceID() const;
+
+                    /**
+                     * 设置必填项。域名所属实例id
+                     * @param _instanceID 必填项。域名所属实例id
+                     * 
+                     */
+                    void SetInstanceID(const std::string& _instanceID);
+
+                    /**
+                     * 判断参数 InstanceID 是否已赋值
+                     * @return InstanceID 是否已赋值
+                     * 
+                     */
+                    bool InstanceIDHasBeenSet() const;
+
+                    /**
                      * 获取必填项。证书类型。
 0：仅配置HTTP监听端口，没有证书
 1：证书来源为自有证书
@@ -552,27 +573,6 @@ https：使用https协议回源
                     bool IsKeepAliveHasBeenSet() const;
 
                     /**
-                     * 获取必填项。域名所属实例id
-                     * @return InstanceID 必填项。域名所属实例id
-                     * 
-                     */
-                    std::string GetInstanceID() const;
-
-                    /**
-                     * 设置必填项。域名所属实例id
-                     * @param _instanceID 必填项。域名所属实例id
-                     * 
-                     */
-                    void SetInstanceID(const std::string& _instanceID);
-
-                    /**
-                     * 判断参数 InstanceID 是否已赋值
-                     * @return InstanceID 是否已赋值
-                     * 
-                     */
-                    bool InstanceIDHasBeenSet() const;
-
-                    /**
                      * 获取必填项，待废弃。目前填0即可。anycast IP类型开关： 0 普通IP 1 Anycast IP
                      * @return Anycast 必填项，待废弃。目前填0即可。anycast IP类型开关： 0 普通IP 1 Anycast IP
                      * 
@@ -914,6 +914,27 @@ https：使用https协议回源
                      */
                     bool UpstreamHostHasBeenSet() const;
 
+                    /**
+                     * 获取是否开启缓存 0-关闭 1-开启
+                     * @return ProxyBuffer 是否开启缓存 0-关闭 1-开启
+                     * 
+                     */
+                    int64_t GetProxyBuffer() const;
+
+                    /**
+                     * 设置是否开启缓存 0-关闭 1-开启
+                     * @param _proxyBuffer 是否开启缓存 0-关闭 1-开启
+                     * 
+                     */
+                    void SetProxyBuffer(const int64_t& _proxyBuffer);
+
+                    /**
+                     * 判断参数 ProxyBuffer 是否已赋值
+                     * @return ProxyBuffer 是否已赋值
+                     * 
+                     */
+                    bool ProxyBufferHasBeenSet() const;
+
                 private:
 
                     /**
@@ -927,6 +948,12 @@ https：使用https协议回源
                      */
                     std::string m_domainId;
                     bool m_domainIdHasBeenSet;
+
+                    /**
+                     * 必填项。域名所属实例id
+                     */
+                    std::string m_instanceID;
+                    bool m_instanceIDHasBeenSet;
 
                     /**
                      * 必填项。证书类型。
@@ -1059,12 +1086,6 @@ https：使用https协议回源
                     bool m_isKeepAliveHasBeenSet;
 
                     /**
-                     * 必填项。域名所属实例id
-                     */
-                    std::string m_instanceID;
-                    bool m_instanceIDHasBeenSet;
-
-                    /**
                      * 必填项，待废弃。目前填0即可。anycast IP类型开关： 0 普通IP 1 Anycast IP
                      */
                     int64_t m_anycast;
@@ -1159,6 +1180,12 @@ https：使用https协议回源
                      */
                     std::string m_upstreamHost;
                     bool m_upstreamHostHasBeenSet;
+
+                    /**
+                     * 是否开启缓存 0-关闭 1-开启
+                     */
+                    int64_t m_proxyBuffer;
+                    bool m_proxyBufferHasBeenSet;
 
                 };
             }

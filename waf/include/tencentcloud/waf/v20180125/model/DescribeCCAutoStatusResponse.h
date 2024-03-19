@@ -44,8 +44,8 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取配置状态
-                     * @return AutoCCSwitch 配置状态
+                     * 获取配置状态，0表示关闭，1表示开启
+                     * @return AutoCCSwitch 配置状态，0表示关闭，1表示开启
                      * 
                      */
                     int64_t GetAutoCCSwitch() const;
@@ -60,7 +60,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 配置状态
+                     * 配置状态，0表示关闭，1表示开启
                      */
                     int64_t m_autoCCSwitch;
                     bool m_autoCCSwitchHasBeenSet;

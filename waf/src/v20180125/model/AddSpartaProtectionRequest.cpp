@@ -29,6 +29,9 @@ AddSpartaProtectionRequest::AddSpartaProtectionRequest() :
     m_upstreamTypeHasBeenSet(false),
     m_isWebsocketHasBeenSet(false),
     m_loadBalanceHasBeenSet(false),
+    m_portsHasBeenSet(false),
+    m_isKeepAliveHasBeenSet(false),
+    m_instanceIDHasBeenSet(false),
     m_certHasBeenSet(false),
     m_privateKeyHasBeenSet(false),
     m_sSLIdHasBeenSet(false),
@@ -42,10 +45,7 @@ AddSpartaProtectionRequest::AddSpartaProtectionRequest() :
     m_upstreamDomainHasBeenSet(false),
     m_srcListHasBeenSet(false),
     m_isHttp2HasBeenSet(false),
-    m_portsHasBeenSet(false),
     m_editionHasBeenSet(false),
-    m_isKeepAliveHasBeenSet(false),
-    m_instanceIDHasBeenSet(false),
     m_anycastHasBeenSet(false),
     m_weightsHasBeenSet(false),
     m_activeCheckHasBeenSet(false),
@@ -58,7 +58,8 @@ AddSpartaProtectionRequest::AddSpartaProtectionRequest() :
     m_sniHostHasBeenSet(false),
     m_xFFResetHasBeenSet(false),
     m_noteHasBeenSet(false),
-    m_upstreamHostHasBeenSet(false)
+    m_upstreamHostHasBeenSet(false),
+    m_proxyBufferHasBeenSet(false)
 {
 }
 
@@ -115,6 +116,37 @@ string AddSpartaProtectionRequest::ToJsonString() const
         string key = "LoadBalance";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_loadBalance.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_portsHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Ports";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_ports.begin(); itr != m_ports.end(); ++itr, ++i)
+        {
+            d[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(d[key.c_str()][i], allocator);
+        }
+    }
+
+    if (m_isKeepAliveHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "IsKeepAlive";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_isKeepAlive.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_instanceIDHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "InstanceID";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_instanceID.c_str(), allocator).Move(), allocator);
     }
 
     if (m_certHasBeenSet)
@@ -236,43 +268,12 @@ string AddSpartaProtectionRequest::ToJsonString() const
         d.AddMember(iKey, m_isHttp2, allocator);
     }
 
-    if (m_portsHasBeenSet)
-    {
-        rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "Ports";
-        iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
-
-        int i=0;
-        for (auto itr = m_ports.begin(); itr != m_ports.end(); ++itr, ++i)
-        {
-            d[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
-            (*itr).ToJsonObject(d[key.c_str()][i], allocator);
-        }
-    }
-
     if (m_editionHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Edition";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_edition.c_str(), allocator).Move(), allocator);
-    }
-
-    if (m_isKeepAliveHasBeenSet)
-    {
-        rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "IsKeepAlive";
-        iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, rapidjson::Value(m_isKeepAlive.c_str(), allocator).Move(), allocator);
-    }
-
-    if (m_instanceIDHasBeenSet)
-    {
-        rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "InstanceID";
-        iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, rapidjson::Value(m_instanceID.c_str(), allocator).Move(), allocator);
     }
 
     if (m_anycastHasBeenSet)
@@ -389,6 +390,14 @@ string AddSpartaProtectionRequest::ToJsonString() const
         d.AddMember(iKey, rapidjson::Value(m_upstreamHost.c_str(), allocator).Move(), allocator);
     }
 
+    if (m_proxyBufferHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ProxyBuffer";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_proxyBuffer, allocator);
+    }
+
 
     rapidjson::StringBuffer buffer;
     rapidjson::Writer<rapidjson::StringBuffer> writer(buffer);
@@ -491,6 +500,54 @@ void AddSpartaProtectionRequest::SetLoadBalance(const string& _loadBalance)
 bool AddSpartaProtectionRequest::LoadBalanceHasBeenSet() const
 {
     return m_loadBalanceHasBeenSet;
+}
+
+vector<PortItem> AddSpartaProtectionRequest::GetPorts() const
+{
+    return m_ports;
+}
+
+void AddSpartaProtectionRequest::SetPorts(const vector<PortItem>& _ports)
+{
+    m_ports = _ports;
+    m_portsHasBeenSet = true;
+}
+
+bool AddSpartaProtectionRequest::PortsHasBeenSet() const
+{
+    return m_portsHasBeenSet;
+}
+
+string AddSpartaProtectionRequest::GetIsKeepAlive() const
+{
+    return m_isKeepAlive;
+}
+
+void AddSpartaProtectionRequest::SetIsKeepAlive(const string& _isKeepAlive)
+{
+    m_isKeepAlive = _isKeepAlive;
+    m_isKeepAliveHasBeenSet = true;
+}
+
+bool AddSpartaProtectionRequest::IsKeepAliveHasBeenSet() const
+{
+    return m_isKeepAliveHasBeenSet;
+}
+
+string AddSpartaProtectionRequest::GetInstanceID() const
+{
+    return m_instanceID;
+}
+
+void AddSpartaProtectionRequest::SetInstanceID(const string& _instanceID)
+{
+    m_instanceID = _instanceID;
+    m_instanceIDHasBeenSet = true;
+}
+
+bool AddSpartaProtectionRequest::InstanceIDHasBeenSet() const
+{
+    return m_instanceIDHasBeenSet;
 }
 
 string AddSpartaProtectionRequest::GetCert() const
@@ -701,22 +758,6 @@ bool AddSpartaProtectionRequest::IsHttp2HasBeenSet() const
     return m_isHttp2HasBeenSet;
 }
 
-vector<PortItem> AddSpartaProtectionRequest::GetPorts() const
-{
-    return m_ports;
-}
-
-void AddSpartaProtectionRequest::SetPorts(const vector<PortItem>& _ports)
-{
-    m_ports = _ports;
-    m_portsHasBeenSet = true;
-}
-
-bool AddSpartaProtectionRequest::PortsHasBeenSet() const
-{
-    return m_portsHasBeenSet;
-}
-
 string AddSpartaProtectionRequest::GetEdition() const
 {
     return m_edition;
@@ -731,38 +772,6 @@ void AddSpartaProtectionRequest::SetEdition(const string& _edition)
 bool AddSpartaProtectionRequest::EditionHasBeenSet() const
 {
     return m_editionHasBeenSet;
-}
-
-string AddSpartaProtectionRequest::GetIsKeepAlive() const
-{
-    return m_isKeepAlive;
-}
-
-void AddSpartaProtectionRequest::SetIsKeepAlive(const string& _isKeepAlive)
-{
-    m_isKeepAlive = _isKeepAlive;
-    m_isKeepAliveHasBeenSet = true;
-}
-
-bool AddSpartaProtectionRequest::IsKeepAliveHasBeenSet() const
-{
-    return m_isKeepAliveHasBeenSet;
-}
-
-string AddSpartaProtectionRequest::GetInstanceID() const
-{
-    return m_instanceID;
-}
-
-void AddSpartaProtectionRequest::SetInstanceID(const string& _instanceID)
-{
-    m_instanceID = _instanceID;
-    m_instanceIDHasBeenSet = true;
-}
-
-bool AddSpartaProtectionRequest::InstanceIDHasBeenSet() const
-{
-    return m_instanceIDHasBeenSet;
 }
 
 int64_t AddSpartaProtectionRequest::GetAnycast() const
@@ -971,6 +980,22 @@ void AddSpartaProtectionRequest::SetUpstreamHost(const string& _upstreamHost)
 bool AddSpartaProtectionRequest::UpstreamHostHasBeenSet() const
 {
     return m_upstreamHostHasBeenSet;
+}
+
+int64_t AddSpartaProtectionRequest::GetProxyBuffer() const
+{
+    return m_proxyBuffer;
+}
+
+void AddSpartaProtectionRequest::SetProxyBuffer(const int64_t& _proxyBuffer)
+{
+    m_proxyBuffer = _proxyBuffer;
+    m_proxyBufferHasBeenSet = true;
+}
+
+bool AddSpartaProtectionRequest::ProxyBufferHasBeenSet() const
+{
+    return m_proxyBufferHasBeenSet;
 }
 
 

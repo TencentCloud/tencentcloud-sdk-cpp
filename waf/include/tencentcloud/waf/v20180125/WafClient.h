@@ -1036,7 +1036,7 @@ namespace TencentCloud
                 DescribeAutoDenyIPOutcomeCallable DescribeAutoDenyIPCallable(const Model::DescribeAutoDenyIPRequest& request);
 
                 /**
-                 *Waf 多域名ip黑白名单查询
+                 *Waf 批量防护IP黑白名单查询
                  * @param req DescribeBatchIpAccessControlRequest
                  * @return DescribeBatchIpAccessControlOutcome
                  */
@@ -1045,7 +1045,7 @@ namespace TencentCloud
                 DescribeBatchIpAccessControlOutcomeCallable DescribeBatchIpAccessControlCallable(const Model::DescribeBatchIpAccessControlRequest& request);
 
                 /**
-                 *Waf 斯巴达版本查询cc自动封堵状态
+                 *获取SAAS型接入的紧急CC防护状态
                  * @param req DescribeCCAutoStatusRequest
                  * @return DescribeCCAutoStatusOutcome
                  */
@@ -1748,7 +1748,7 @@ namespace TencentCloud
                 ModifyObjectOutcomeCallable ModifyObjectCallable(const Model::ModifyObjectRequest& request);
 
                 /**
-                 *waf斯巴达-waf开关
+                 *获取基础安全防护（WAF开关）状态
                  * @param req ModifyProtectionStatusRequest
                  * @return ModifyProtectionStatusOutcome
                  */
@@ -1874,7 +1874,7 @@ namespace TencentCloud
                 SwitchElasticModeOutcomeCallable SwitchElasticModeCallable(const Model::SwitchElasticModeRequest& request);
 
                 /**
-                 *Waf 斯巴达版本更新cc自动封堵状态
+                 *编辑SAAS型接入的紧急CC防护状态
                  * @param req UpsertCCAutoStatusRequest
                  * @return UpsertCCAutoStatusOutcome
                  */

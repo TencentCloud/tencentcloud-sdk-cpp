@@ -25,6 +25,7 @@ using namespace std;
 ModifySpartaProtectionRequest::ModifySpartaProtectionRequest() :
     m_domainHasBeenSet(false),
     m_domainIdHasBeenSet(false),
+    m_instanceIDHasBeenSet(false),
     m_certTypeHasBeenSet(false),
     m_certHasBeenSet(false),
     m_privateKeyHasBeenSet(false),
@@ -43,7 +44,6 @@ ModifySpartaProtectionRequest::ModifySpartaProtectionRequest() :
     m_editionHasBeenSet(false),
     m_portsHasBeenSet(false),
     m_isKeepAliveHasBeenSet(false),
-    m_instanceIDHasBeenSet(false),
     m_anycastHasBeenSet(false),
     m_weightsHasBeenSet(false),
     m_activeCheckHasBeenSet(false),
@@ -57,7 +57,8 @@ ModifySpartaProtectionRequest::ModifySpartaProtectionRequest() :
     m_ipHeadersHasBeenSet(false),
     m_xFFResetHasBeenSet(false),
     m_noteHasBeenSet(false),
-    m_upstreamHostHasBeenSet(false)
+    m_upstreamHostHasBeenSet(false),
+    m_proxyBufferHasBeenSet(false)
 {
 }
 
@@ -82,6 +83,14 @@ string ModifySpartaProtectionRequest::ToJsonString() const
         string key = "DomainId";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_domainId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_instanceIDHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "InstanceID";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_instanceID.c_str(), allocator).Move(), allocator);
     }
 
     if (m_certTypeHasBeenSet)
@@ -240,14 +249,6 @@ string ModifySpartaProtectionRequest::ToJsonString() const
         d.AddMember(iKey, rapidjson::Value(m_isKeepAlive.c_str(), allocator).Move(), allocator);
     }
 
-    if (m_instanceIDHasBeenSet)
-    {
-        rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "InstanceID";
-        iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, rapidjson::Value(m_instanceID.c_str(), allocator).Move(), allocator);
-    }
-
     if (m_anycastHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
@@ -375,6 +376,14 @@ string ModifySpartaProtectionRequest::ToJsonString() const
         d.AddMember(iKey, rapidjson::Value(m_upstreamHost.c_str(), allocator).Move(), allocator);
     }
 
+    if (m_proxyBufferHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ProxyBuffer";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_proxyBuffer, allocator);
+    }
+
 
     rapidjson::StringBuffer buffer;
     rapidjson::Writer<rapidjson::StringBuffer> writer(buffer);
@@ -413,6 +422,22 @@ void ModifySpartaProtectionRequest::SetDomainId(const string& _domainId)
 bool ModifySpartaProtectionRequest::DomainIdHasBeenSet() const
 {
     return m_domainIdHasBeenSet;
+}
+
+string ModifySpartaProtectionRequest::GetInstanceID() const
+{
+    return m_instanceID;
+}
+
+void ModifySpartaProtectionRequest::SetInstanceID(const string& _instanceID)
+{
+    m_instanceID = _instanceID;
+    m_instanceIDHasBeenSet = true;
+}
+
+bool ModifySpartaProtectionRequest::InstanceIDHasBeenSet() const
+{
+    return m_instanceIDHasBeenSet;
 }
 
 int64_t ModifySpartaProtectionRequest::GetCertType() const
@@ -703,22 +728,6 @@ bool ModifySpartaProtectionRequest::IsKeepAliveHasBeenSet() const
     return m_isKeepAliveHasBeenSet;
 }
 
-string ModifySpartaProtectionRequest::GetInstanceID() const
-{
-    return m_instanceID;
-}
-
-void ModifySpartaProtectionRequest::SetInstanceID(const string& _instanceID)
-{
-    m_instanceID = _instanceID;
-    m_instanceIDHasBeenSet = true;
-}
-
-bool ModifySpartaProtectionRequest::InstanceIDHasBeenSet() const
-{
-    return m_instanceIDHasBeenSet;
-}
-
 int64_t ModifySpartaProtectionRequest::GetAnycast() const
 {
     return m_anycast;
@@ -941,6 +950,22 @@ void ModifySpartaProtectionRequest::SetUpstreamHost(const string& _upstreamHost)
 bool ModifySpartaProtectionRequest::UpstreamHostHasBeenSet() const
 {
     return m_upstreamHostHasBeenSet;
+}
+
+int64_t ModifySpartaProtectionRequest::GetProxyBuffer() const
+{
+    return m_proxyBuffer;
+}
+
+void ModifySpartaProtectionRequest::SetProxyBuffer(const int64_t& _proxyBuffer)
+{
+    m_proxyBuffer = _proxyBuffer;
+    m_proxyBufferHasBeenSet = true;
+}
+
+bool ModifySpartaProtectionRequest::ProxyBufferHasBeenSet() const
+{
+    return m_proxyBufferHasBeenSet;
 }
 
 

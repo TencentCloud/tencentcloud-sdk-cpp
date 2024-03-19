@@ -1144,6 +1144,31 @@ https：使用https协议回源
                      */
                     bool LevelHasBeenSet() const;
 
+                    /**
+                     * 获取是否开启缓存 0-关闭 1-开启
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return ProxyBuffer 是否开启缓存 0-关闭 1-开启
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    int64_t GetProxyBuffer() const;
+
+                    /**
+                     * 设置是否开启缓存 0-关闭 1-开启
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _proxyBuffer 是否开启缓存 0-关闭 1-开启
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetProxyBuffer(const int64_t& _proxyBuffer);
+
+                    /**
+                     * 判断参数 ProxyBuffer 是否已赋值
+                     * @return ProxyBuffer 是否已赋值
+                     * 
+                     */
+                    bool ProxyBufferHasBeenSet() const;
+
                 private:
 
                     /**
@@ -1450,6 +1475,13 @@ https：使用https协议回源
                      */
                     std::string m_level;
                     bool m_levelHasBeenSet;
+
+                    /**
+                     * 是否开启缓存 0-关闭 1-开启
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    int64_t m_proxyBuffer;
+                    bool m_proxyBufferHasBeenSet;
 
                 };
             }

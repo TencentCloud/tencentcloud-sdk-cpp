@@ -27,7 +27,8 @@ UpdateIntegrationEmployeesRequest::UpdateIntegrationEmployeesRequest() :
     m_employeesHasBeenSet(false),
     m_agentHasBeenSet(false),
     m_invitationNotifyTypeHasBeenSet(false),
-    m_jumpUrlHasBeenSet(false)
+    m_jumpUrlHasBeenSet(false),
+    m_endpointHasBeenSet(false)
 {
 }
 
@@ -85,6 +86,14 @@ string UpdateIntegrationEmployeesRequest::ToJsonString() const
         string key = "JumpUrl";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_jumpUrl.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_endpointHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Endpoint";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_endpoint.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -173,6 +182,22 @@ void UpdateIntegrationEmployeesRequest::SetJumpUrl(const string& _jumpUrl)
 bool UpdateIntegrationEmployeesRequest::JumpUrlHasBeenSet() const
 {
     return m_jumpUrlHasBeenSet;
+}
+
+string UpdateIntegrationEmployeesRequest::GetEndpoint() const
+{
+    return m_endpoint;
+}
+
+void UpdateIntegrationEmployeesRequest::SetEndpoint(const string& _endpoint)
+{
+    m_endpoint = _endpoint;
+    m_endpointHasBeenSet = true;
+}
+
+bool UpdateIntegrationEmployeesRequest::EndpointHasBeenSet() const
+{
+    return m_endpointHasBeenSet;
 }
 
 

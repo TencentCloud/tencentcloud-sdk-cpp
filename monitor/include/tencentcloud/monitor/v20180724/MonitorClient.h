@@ -131,6 +131,8 @@
 #include <tencentcloud/monitor/v20180724/model/DescribeAlarmPoliciesResponse.h>
 #include <tencentcloud/monitor/v20180724/model/DescribeAlarmPolicyRequest.h>
 #include <tencentcloud/monitor/v20180724/model/DescribeAlarmPolicyResponse.h>
+#include <tencentcloud/monitor/v20180724/model/DescribeAlarmSmsQuotaRequest.h>
+#include <tencentcloud/monitor/v20180724/model/DescribeAlarmSmsQuotaResponse.h>
 #include <tencentcloud/monitor/v20180724/model/DescribeAlertRulesRequest.h>
 #include <tencentcloud/monitor/v20180724/model/DescribeAlertRulesResponse.h>
 #include <tencentcloud/monitor/v20180724/model/DescribeAllNamespacesRequest.h>
@@ -165,8 +167,12 @@
 #include <tencentcloud/monitor/v20180724/model/DescribeGrafanaWhiteListResponse.h>
 #include <tencentcloud/monitor/v20180724/model/DescribeInstalledPluginsRequest.h>
 #include <tencentcloud/monitor/v20180724/model/DescribeInstalledPluginsResponse.h>
+#include <tencentcloud/monitor/v20180724/model/DescribeMonitorResourceInfoRequest.h>
+#include <tencentcloud/monitor/v20180724/model/DescribeMonitorResourceInfoResponse.h>
 #include <tencentcloud/monitor/v20180724/model/DescribeMonitorTypesRequest.h>
 #include <tencentcloud/monitor/v20180724/model/DescribeMonitorTypesResponse.h>
+#include <tencentcloud/monitor/v20180724/model/DescribePhoneAlarmFlowTotalCountRequest.h>
+#include <tencentcloud/monitor/v20180724/model/DescribePhoneAlarmFlowTotalCountResponse.h>
 #include <tencentcloud/monitor/v20180724/model/DescribePluginOverviewsRequest.h>
 #include <tencentcloud/monitor/v20180724/model/DescribePluginOverviewsResponse.h>
 #include <tencentcloud/monitor/v20180724/model/DescribePolicyConditionListRequest.h>
@@ -509,6 +515,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeAlarmPolicyResponse> DescribeAlarmPolicyOutcome;
                 typedef std::future<DescribeAlarmPolicyOutcome> DescribeAlarmPolicyOutcomeCallable;
                 typedef std::function<void(const MonitorClient*, const Model::DescribeAlarmPolicyRequest&, DescribeAlarmPolicyOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeAlarmPolicyAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeAlarmSmsQuotaResponse> DescribeAlarmSmsQuotaOutcome;
+                typedef std::future<DescribeAlarmSmsQuotaOutcome> DescribeAlarmSmsQuotaOutcomeCallable;
+                typedef std::function<void(const MonitorClient*, const Model::DescribeAlarmSmsQuotaRequest&, DescribeAlarmSmsQuotaOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeAlarmSmsQuotaAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeAlertRulesResponse> DescribeAlertRulesOutcome;
                 typedef std::future<DescribeAlertRulesOutcome> DescribeAlertRulesOutcomeCallable;
                 typedef std::function<void(const MonitorClient*, const Model::DescribeAlertRulesRequest&, DescribeAlertRulesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeAlertRulesAsyncHandler;
@@ -560,9 +569,15 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeInstalledPluginsResponse> DescribeInstalledPluginsOutcome;
                 typedef std::future<DescribeInstalledPluginsOutcome> DescribeInstalledPluginsOutcomeCallable;
                 typedef std::function<void(const MonitorClient*, const Model::DescribeInstalledPluginsRequest&, DescribeInstalledPluginsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeInstalledPluginsAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeMonitorResourceInfoResponse> DescribeMonitorResourceInfoOutcome;
+                typedef std::future<DescribeMonitorResourceInfoOutcome> DescribeMonitorResourceInfoOutcomeCallable;
+                typedef std::function<void(const MonitorClient*, const Model::DescribeMonitorResourceInfoRequest&, DescribeMonitorResourceInfoOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeMonitorResourceInfoAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeMonitorTypesResponse> DescribeMonitorTypesOutcome;
                 typedef std::future<DescribeMonitorTypesOutcome> DescribeMonitorTypesOutcomeCallable;
                 typedef std::function<void(const MonitorClient*, const Model::DescribeMonitorTypesRequest&, DescribeMonitorTypesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeMonitorTypesAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribePhoneAlarmFlowTotalCountResponse> DescribePhoneAlarmFlowTotalCountOutcome;
+                typedef std::future<DescribePhoneAlarmFlowTotalCountOutcome> DescribePhoneAlarmFlowTotalCountOutcomeCallable;
+                typedef std::function<void(const MonitorClient*, const Model::DescribePhoneAlarmFlowTotalCountRequest&, DescribePhoneAlarmFlowTotalCountOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribePhoneAlarmFlowTotalCountAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribePluginOverviewsResponse> DescribePluginOverviewsOutcome;
                 typedef std::future<DescribePluginOverviewsOutcome> DescribePluginOverviewsOutcomeCallable;
                 typedef std::function<void(const MonitorClient*, const Model::DescribePluginOverviewsRequest&, DescribePluginOverviewsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribePluginOverviewsAsyncHandler;
@@ -1313,6 +1328,15 @@ namespace TencentCloud
                 DescribeAlarmPolicyOutcomeCallable DescribeAlarmPolicyCallable(const Model::DescribeAlarmPolicyRequest& request);
 
                 /**
+                 *获取告警短信配额
+                 * @param req DescribeAlarmSmsQuotaRequest
+                 * @return DescribeAlarmSmsQuotaOutcome
+                 */
+                DescribeAlarmSmsQuotaOutcome DescribeAlarmSmsQuota(const Model::DescribeAlarmSmsQuotaRequest &request);
+                void DescribeAlarmSmsQuotaAsync(const Model::DescribeAlarmSmsQuotaRequest& request, const DescribeAlarmSmsQuotaAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeAlarmSmsQuotaOutcomeCallable DescribeAlarmSmsQuotaCallable(const Model::DescribeAlarmSmsQuotaRequest& request);
+
+                /**
                  *Prometheus 报警规则查询接口
                  * @param req DescribeAlertRulesRequest
                  * @return DescribeAlertRulesOutcome
@@ -1466,6 +1490,15 @@ namespace TencentCloud
                 DescribeInstalledPluginsOutcomeCallable DescribeInstalledPluginsCallable(const Model::DescribeInstalledPluginsRequest& request);
 
                 /**
+                 *获取资源消耗页概览
+                 * @param req DescribeMonitorResourceInfoRequest
+                 * @return DescribeMonitorResourceInfoOutcome
+                 */
+                DescribeMonitorResourceInfoOutcome DescribeMonitorResourceInfo(const Model::DescribeMonitorResourceInfoRequest &request);
+                void DescribeMonitorResourceInfoAsync(const Model::DescribeMonitorResourceInfoRequest& request, const DescribeMonitorResourceInfoAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeMonitorResourceInfoOutcomeCallable DescribeMonitorResourceInfoCallable(const Model::DescribeMonitorResourceInfoRequest& request);
+
+                /**
                  *腾讯云可观测平台支持多种类型的监控，此接口列出支持的所有类型
                  * @param req DescribeMonitorTypesRequest
                  * @return DescribeMonitorTypesOutcome
@@ -1473,6 +1506,15 @@ namespace TencentCloud
                 DescribeMonitorTypesOutcome DescribeMonitorTypes(const Model::DescribeMonitorTypesRequest &request);
                 void DescribeMonitorTypesAsync(const Model::DescribeMonitorTypesRequest& request, const DescribeMonitorTypesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DescribeMonitorTypesOutcomeCallable DescribeMonitorTypesCallable(const Model::DescribeMonitorTypesRequest& request);
+
+                /**
+                 *查询周期内电话流水总数
+                 * @param req DescribePhoneAlarmFlowTotalCountRequest
+                 * @return DescribePhoneAlarmFlowTotalCountOutcome
+                 */
+                DescribePhoneAlarmFlowTotalCountOutcome DescribePhoneAlarmFlowTotalCount(const Model::DescribePhoneAlarmFlowTotalCountRequest &request);
+                void DescribePhoneAlarmFlowTotalCountAsync(const Model::DescribePhoneAlarmFlowTotalCountRequest& request, const DescribePhoneAlarmFlowTotalCountAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribePhoneAlarmFlowTotalCountOutcomeCallable DescribePhoneAlarmFlowTotalCountCallable(const Model::DescribePhoneAlarmFlowTotalCountRequest& request);
 
                 /**
                  *列出可安装的所有 Grafana 插件

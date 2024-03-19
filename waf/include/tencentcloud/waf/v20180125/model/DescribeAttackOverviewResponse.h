@@ -191,6 +191,22 @@ namespace TencentCloud
                      */
                     bool LeakCountHasBeenSet() const;
 
+                    /**
+                     * 获取API风险事件周环比
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return ApiRiskEventCircleCount API风险事件周环比
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    int64_t GetApiRiskEventCircleCount() const;
+
+                    /**
+                     * 判断参数 ApiRiskEventCircleCount 是否已赋值
+                     * @return ApiRiskEventCircleCount 是否已赋值
+                     * 
+                     */
+                    bool ApiRiskEventCircleCountHasBeenSet() const;
+
                 private:
 
                     /**
@@ -256,6 +272,13 @@ namespace TencentCloud
                      */
                     uint64_t m_leakCount;
                     bool m_leakCountHasBeenSet;
+
+                    /**
+                     * API风险事件周环比
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    int64_t m_apiRiskEventCircleCount;
+                    bool m_apiRiskEventCircleCountHasBeenSet;
 
                 };
             }

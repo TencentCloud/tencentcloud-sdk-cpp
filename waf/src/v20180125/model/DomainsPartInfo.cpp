@@ -61,7 +61,8 @@ DomainsPartInfo::DomainsPartInfo() :
     m_xFFResetHasBeenSet(false),
     m_noteHasBeenSet(false),
     m_upstreamHostHasBeenSet(false),
-    m_levelHasBeenSet(false)
+    m_levelHasBeenSet(false),
+    m_proxyBufferHasBeenSet(false)
 {
 }
 
@@ -502,6 +503,16 @@ CoreInternalOutcome DomainsPartInfo::Deserialize(const rapidjson::Value &value)
         m_levelHasBeenSet = true;
     }
 
+    if (value.HasMember("ProxyBuffer") && !value["ProxyBuffer"].IsNull())
+    {
+        if (!value["ProxyBuffer"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `DomainsPartInfo.ProxyBuffer` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_proxyBuffer = value["ProxyBuffer"].GetInt64();
+        m_proxyBufferHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -862,6 +873,14 @@ void DomainsPartInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Document:
         string key = "Level";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_level.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_proxyBufferHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ProxyBuffer";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_proxyBuffer, allocator);
     }
 
 }
@@ -1521,5 +1540,21 @@ void DomainsPartInfo::SetLevel(const string& _level)
 bool DomainsPartInfo::LevelHasBeenSet() const
 {
     return m_levelHasBeenSet;
+}
+
+int64_t DomainsPartInfo::GetProxyBuffer() const
+{
+    return m_proxyBuffer;
+}
+
+void DomainsPartInfo::SetProxyBuffer(const int64_t& _proxyBuffer)
+{
+    m_proxyBuffer = _proxyBuffer;
+    m_proxyBufferHasBeenSet = true;
+}
+
+bool DomainsPartInfo::ProxyBufferHasBeenSet() const
+{
+    return m_proxyBufferHasBeenSet;
 }
 

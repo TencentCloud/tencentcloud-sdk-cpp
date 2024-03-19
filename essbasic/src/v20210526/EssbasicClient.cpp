@@ -2405,6 +2405,49 @@ EssbasicClient::DescribeBatchOrganizationRegistrationUrlsOutcomeCallable Essbasi
     return task->get_future();
 }
 
+EssbasicClient::DescribeCancelFlowsTaskOutcome EssbasicClient::DescribeCancelFlowsTask(const DescribeCancelFlowsTaskRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeCancelFlowsTask");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeCancelFlowsTaskResponse rsp = DescribeCancelFlowsTaskResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeCancelFlowsTaskOutcome(rsp);
+        else
+            return DescribeCancelFlowsTaskOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeCancelFlowsTaskOutcome(outcome.GetError());
+    }
+}
+
+void EssbasicClient::DescribeCancelFlowsTaskAsync(const DescribeCancelFlowsTaskRequest& request, const DescribeCancelFlowsTaskAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeCancelFlowsTask(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+EssbasicClient::DescribeCancelFlowsTaskOutcomeCallable EssbasicClient::DescribeCancelFlowsTaskCallable(const DescribeCancelFlowsTaskRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeCancelFlowsTaskOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeCancelFlowsTask(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 EssbasicClient::DescribeChannelFlowEvidenceReportOutcome EssbasicClient::DescribeChannelFlowEvidenceReport(const DescribeChannelFlowEvidenceReportRequest &request)
 {
     auto outcome = MakeRequest(request, "DescribeChannelFlowEvidenceReport");

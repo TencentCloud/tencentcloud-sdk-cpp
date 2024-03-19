@@ -111,6 +111,8 @@
 #include <tencentcloud/ess/v20201111/model/DeleteSealPoliciesResponse.h>
 #include <tencentcloud/ess/v20201111/model/DescribeBillUsageDetailRequest.h>
 #include <tencentcloud/ess/v20201111/model/DescribeBillUsageDetailResponse.h>
+#include <tencentcloud/ess/v20201111/model/DescribeCancelFlowsTaskRequest.h>
+#include <tencentcloud/ess/v20201111/model/DescribeCancelFlowsTaskResponse.h>
 #include <tencentcloud/ess/v20201111/model/DescribeExtendedServiceAuthDetailRequest.h>
 #include <tencentcloud/ess/v20201111/model/DescribeExtendedServiceAuthDetailResponse.h>
 #include <tencentcloud/ess/v20201111/model/DescribeExtendedServiceAuthInfosRequest.h>
@@ -317,6 +319,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeBillUsageDetailResponse> DescribeBillUsageDetailOutcome;
                 typedef std::future<DescribeBillUsageDetailOutcome> DescribeBillUsageDetailOutcomeCallable;
                 typedef std::function<void(const EssClient*, const Model::DescribeBillUsageDetailRequest&, DescribeBillUsageDetailOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeBillUsageDetailAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeCancelFlowsTaskResponse> DescribeCancelFlowsTaskOutcome;
+                typedef std::future<DescribeCancelFlowsTaskOutcome> DescribeCancelFlowsTaskOutcomeCallable;
+                typedef std::function<void(const EssClient*, const Model::DescribeCancelFlowsTaskRequest&, DescribeCancelFlowsTaskOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeCancelFlowsTaskAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeExtendedServiceAuthDetailResponse> DescribeExtendedServiceAuthDetailOutcome;
                 typedef std::future<DescribeExtendedServiceAuthDetailOutcome> DescribeExtendedServiceAuthDetailOutcomeCallable;
                 typedef std::function<void(const EssClient*, const Model::DescribeExtendedServiceAuthDetailRequest&, DescribeExtendedServiceAuthDetailOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeExtendedServiceAuthDetailAsyncHandler;
@@ -1242,6 +1247,15 @@ namespace TencentCloud
                 DescribeBillUsageDetailOutcome DescribeBillUsageDetail(const Model::DescribeBillUsageDetailRequest &request);
                 void DescribeBillUsageDetailAsync(const Model::DescribeBillUsageDetailRequest& request, const DescribeBillUsageDetailAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DescribeBillUsageDetailOutcomeCallable DescribeBillUsageDetailCallable(const Model::DescribeBillUsageDetailRequest& request);
+
+                /**
+                 *通过[获取批量撤销签署流程腾讯电子签小程序链接](https://qian.tencent.com/developers/companyApis/operateFlows/CreateBatchCancelFlowUrl)发起批量撤销任务后，可通过此接口查询批量撤销任务的结果。
+                 * @param req DescribeCancelFlowsTaskRequest
+                 * @return DescribeCancelFlowsTaskOutcome
+                 */
+                DescribeCancelFlowsTaskOutcome DescribeCancelFlowsTask(const Model::DescribeCancelFlowsTaskRequest &request);
+                void DescribeCancelFlowsTaskAsync(const Model::DescribeCancelFlowsTaskRequest& request, const DescribeCancelFlowsTaskAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeCancelFlowsTaskOutcomeCallable DescribeCancelFlowsTaskCallable(const Model::DescribeCancelFlowsTaskRequest& request);
 
                 /**
                  *查询企业扩展服务的授权详情（列表），当前支持查询以下内容：

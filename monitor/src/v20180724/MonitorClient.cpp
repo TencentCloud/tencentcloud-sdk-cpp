@@ -2362,6 +2362,49 @@ MonitorClient::DescribeAlarmPolicyOutcomeCallable MonitorClient::DescribeAlarmPo
     return task->get_future();
 }
 
+MonitorClient::DescribeAlarmSmsQuotaOutcome MonitorClient::DescribeAlarmSmsQuota(const DescribeAlarmSmsQuotaRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeAlarmSmsQuota");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeAlarmSmsQuotaResponse rsp = DescribeAlarmSmsQuotaResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeAlarmSmsQuotaOutcome(rsp);
+        else
+            return DescribeAlarmSmsQuotaOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeAlarmSmsQuotaOutcome(outcome.GetError());
+    }
+}
+
+void MonitorClient::DescribeAlarmSmsQuotaAsync(const DescribeAlarmSmsQuotaRequest& request, const DescribeAlarmSmsQuotaAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeAlarmSmsQuota(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+MonitorClient::DescribeAlarmSmsQuotaOutcomeCallable MonitorClient::DescribeAlarmSmsQuotaCallable(const DescribeAlarmSmsQuotaRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeAlarmSmsQuotaOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeAlarmSmsQuota(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 MonitorClient::DescribeAlertRulesOutcome MonitorClient::DescribeAlertRules(const DescribeAlertRulesRequest &request)
 {
     auto outcome = MakeRequest(request, "DescribeAlertRules");
@@ -3093,6 +3136,49 @@ MonitorClient::DescribeInstalledPluginsOutcomeCallable MonitorClient::DescribeIn
     return task->get_future();
 }
 
+MonitorClient::DescribeMonitorResourceInfoOutcome MonitorClient::DescribeMonitorResourceInfo(const DescribeMonitorResourceInfoRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeMonitorResourceInfo");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeMonitorResourceInfoResponse rsp = DescribeMonitorResourceInfoResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeMonitorResourceInfoOutcome(rsp);
+        else
+            return DescribeMonitorResourceInfoOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeMonitorResourceInfoOutcome(outcome.GetError());
+    }
+}
+
+void MonitorClient::DescribeMonitorResourceInfoAsync(const DescribeMonitorResourceInfoRequest& request, const DescribeMonitorResourceInfoAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeMonitorResourceInfo(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+MonitorClient::DescribeMonitorResourceInfoOutcomeCallable MonitorClient::DescribeMonitorResourceInfoCallable(const DescribeMonitorResourceInfoRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeMonitorResourceInfoOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeMonitorResourceInfo(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 MonitorClient::DescribeMonitorTypesOutcome MonitorClient::DescribeMonitorTypes(const DescribeMonitorTypesRequest &request)
 {
     auto outcome = MakeRequest(request, "DescribeMonitorTypes");
@@ -3129,6 +3215,49 @@ MonitorClient::DescribeMonitorTypesOutcomeCallable MonitorClient::DescribeMonito
         [this, request]()
         {
             return this->DescribeMonitorTypes(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+MonitorClient::DescribePhoneAlarmFlowTotalCountOutcome MonitorClient::DescribePhoneAlarmFlowTotalCount(const DescribePhoneAlarmFlowTotalCountRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribePhoneAlarmFlowTotalCount");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribePhoneAlarmFlowTotalCountResponse rsp = DescribePhoneAlarmFlowTotalCountResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribePhoneAlarmFlowTotalCountOutcome(rsp);
+        else
+            return DescribePhoneAlarmFlowTotalCountOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribePhoneAlarmFlowTotalCountOutcome(outcome.GetError());
+    }
+}
+
+void MonitorClient::DescribePhoneAlarmFlowTotalCountAsync(const DescribePhoneAlarmFlowTotalCountRequest& request, const DescribePhoneAlarmFlowTotalCountAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribePhoneAlarmFlowTotalCount(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+MonitorClient::DescribePhoneAlarmFlowTotalCountOutcomeCallable MonitorClient::DescribePhoneAlarmFlowTotalCountCallable(const DescribePhoneAlarmFlowTotalCountRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribePhoneAlarmFlowTotalCountOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribePhoneAlarmFlowTotalCount(request);
         }
     );
 

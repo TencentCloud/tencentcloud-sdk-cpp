@@ -133,6 +133,8 @@
 #include <tencentcloud/essbasic/v20210526/model/CreateSignUrlsResponse.h>
 #include <tencentcloud/essbasic/v20210526/model/DescribeBatchOrganizationRegistrationUrlsRequest.h>
 #include <tencentcloud/essbasic/v20210526/model/DescribeBatchOrganizationRegistrationUrlsResponse.h>
+#include <tencentcloud/essbasic/v20210526/model/DescribeCancelFlowsTaskRequest.h>
+#include <tencentcloud/essbasic/v20210526/model/DescribeCancelFlowsTaskResponse.h>
 #include <tencentcloud/essbasic/v20210526/model/DescribeChannelFlowEvidenceReportRequest.h>
 #include <tencentcloud/essbasic/v20210526/model/DescribeChannelFlowEvidenceReportResponse.h>
 #include <tencentcloud/essbasic/v20210526/model/DescribeChannelOrganizationsRequest.h>
@@ -346,6 +348,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeBatchOrganizationRegistrationUrlsResponse> DescribeBatchOrganizationRegistrationUrlsOutcome;
                 typedef std::future<DescribeBatchOrganizationRegistrationUrlsOutcome> DescribeBatchOrganizationRegistrationUrlsOutcomeCallable;
                 typedef std::function<void(const EssbasicClient*, const Model::DescribeBatchOrganizationRegistrationUrlsRequest&, DescribeBatchOrganizationRegistrationUrlsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeBatchOrganizationRegistrationUrlsAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeCancelFlowsTaskResponse> DescribeCancelFlowsTaskOutcome;
+                typedef std::future<DescribeCancelFlowsTaskOutcome> DescribeCancelFlowsTaskOutcomeCallable;
+                typedef std::function<void(const EssbasicClient*, const Model::DescribeCancelFlowsTaskRequest&, DescribeCancelFlowsTaskOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeCancelFlowsTaskAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeChannelFlowEvidenceReportResponse> DescribeChannelFlowEvidenceReportOutcome;
                 typedef std::future<DescribeChannelFlowEvidenceReportOutcome> DescribeChannelFlowEvidenceReportOutcomeCallable;
                 typedef std::function<void(const EssbasicClient*, const Model::DescribeChannelFlowEvidenceReportRequest&, DescribeChannelFlowEvidenceReportOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeChannelFlowEvidenceReportAsyncHandler;
@@ -1597,6 +1602,15 @@ Web链接访问后，会根据子客企业(**Agent中ProxyOrganizationOpenId表�
                 DescribeBatchOrganizationRegistrationUrlsOutcome DescribeBatchOrganizationRegistrationUrls(const Model::DescribeBatchOrganizationRegistrationUrlsRequest &request);
                 void DescribeBatchOrganizationRegistrationUrlsAsync(const Model::DescribeBatchOrganizationRegistrationUrlsRequest& request, const DescribeBatchOrganizationRegistrationUrlsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DescribeBatchOrganizationRegistrationUrlsOutcomeCallable DescribeBatchOrganizationRegistrationUrlsCallable(const Model::DescribeBatchOrganizationRegistrationUrlsRequest& request);
+
+                /**
+                 *通过接口[批量撤销合同流程](https://qian.tencent.com/developers/partnerApis/operateFlows/ChannelBatchCancelFlows)或者[获取批量撤销签署流程腾讯电子签小程序链接](https://qian.tencent.com/developers/partnerApis/operateFlows/ChannelCreateBatchCancelFlowUrl)发起批量撤销任务后，可通过此接口查询批量撤销任务的结果。
+                 * @param req DescribeCancelFlowsTaskRequest
+                 * @return DescribeCancelFlowsTaskOutcome
+                 */
+                DescribeCancelFlowsTaskOutcome DescribeCancelFlowsTask(const Model::DescribeCancelFlowsTaskRequest &request);
+                void DescribeCancelFlowsTaskAsync(const Model::DescribeCancelFlowsTaskRequest& request, const DescribeCancelFlowsTaskAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeCancelFlowsTaskOutcomeCallable DescribeCancelFlowsTaskCallable(const Model::DescribeCancelFlowsTaskRequest& request);
 
                 /**
                  *获取出证报告任务执行结果，返回报告 URL。

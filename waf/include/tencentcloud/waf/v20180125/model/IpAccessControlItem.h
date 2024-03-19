@@ -226,6 +226,56 @@ namespace TencentCloud
                      */
                     bool ValidStatusHasBeenSet() const;
 
+                    /**
+                     * 获取55000001
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return RuleId 55000001
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    uint64_t GetRuleId() const;
+
+                    /**
+                     * 设置55000001
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _ruleId 55000001
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetRuleId(const uint64_t& _ruleId);
+
+                    /**
+                     * 判断参数 RuleId 是否已赋值
+                     * @return RuleId 是否已赋值
+                     * 
+                     */
+                    bool RuleIdHasBeenSet() const;
+
+                    /**
+                     * 获取IP列表
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return IpList IP列表
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::vector<std::string> GetIpList() const;
+
+                    /**
+                     * 设置IP列表
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _ipList IP列表
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetIpList(const std::vector<std::string>& _ipList);
+
+                    /**
+                     * 判断参数 IpList 是否已赋值
+                     * @return IpList 是否已赋值
+                     * 
+                     */
+                    bool IpListHasBeenSet() const;
+
                 private:
 
                     /**
@@ -278,6 +328,20 @@ namespace TencentCloud
                      */
                     int64_t m_validStatus;
                     bool m_validStatusHasBeenSet;
+
+                    /**
+                     * 55000001
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    uint64_t m_ruleId;
+                    bool m_ruleIdHasBeenSet;
+
+                    /**
+                     * IP列表
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::vector<std::string> m_ipList;
+                    bool m_ipListHasBeenSet;
 
                 };
             }

@@ -36,7 +36,6 @@ namespace TencentCloud
             {
                 /**
                 * 版本控制-协议详情
-
                 */
                 class AvailableProtoStatus : public AbstractModel
                 {
@@ -69,15 +68,15 @@ namespace TencentCloud
                     bool SaleStatusHasBeenSet() const;
 
                     /**
-                     * 获取协议类型。可选值有 NFS、CIFS
-                     * @return Protocol 协议类型。可选值有 NFS、CIFS
+                     * 获取协议类型。可选值有 NFS、CIFS、TURBO
+                     * @return Protocol 协议类型。可选值有 NFS、CIFS、TURBO
                      * 
                      */
                     std::string GetProtocol() const;
 
                     /**
-                     * 设置协议类型。可选值有 NFS、CIFS
-                     * @param _protocol 协议类型。可选值有 NFS、CIFS
+                     * 设置协议类型。可选值有 NFS、CIFS、TURBO
+                     * @param _protocol 协议类型。可选值有 NFS、CIFS、TURBO
                      * 
                      */
                     void SetProtocol(const std::string& _protocol);
@@ -98,7 +97,7 @@ namespace TencentCloud
                     bool m_saleStatusHasBeenSet;
 
                     /**
-                     * 协议类型。可选值有 NFS、CIFS
+                     * 协议类型。可选值有 NFS、CIFS、TURBO
                      */
                     std::string m_protocol;
                     bool m_protocolHasBeenSet;

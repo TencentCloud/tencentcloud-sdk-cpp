@@ -31,6 +31,7 @@ set(essbasic_public_header_model
   include/tencentcloud/essbasic/v20210526/model/DescribeExtendedServiceAuthDetailResponse.h
   include/tencentcloud/essbasic/v20210526/model/Department.h
   include/tencentcloud/essbasic/v20210526/model/CommonApproverOption.h
+  include/tencentcloud/essbasic/v20210526/model/DescribeCancelFlowsTaskResponse.h
   include/tencentcloud/essbasic/v20210526/model/ChannelCreateFlowGroupByTemplatesResponse.h
   include/tencentcloud/essbasic/v20210526/model/ChannelCreateFlowSignReviewRequest.h
   include/tencentcloud/essbasic/v20210526/model/AuthFailMessage.h
@@ -47,6 +48,7 @@ set(essbasic_public_header_model
   include/tencentcloud/essbasic/v20210526/model/ChannelCreateBatchSignUrlResponse.h
   include/tencentcloud/essbasic/v20210526/model/ChannelCreatePrepareFlowResponse.h
   include/tencentcloud/essbasic/v20210526/model/WebThemeConfig.h
+  include/tencentcloud/essbasic/v20210526/model/DetectInfoVideoData.h
   include/tencentcloud/essbasic/v20210526/model/OperateChannelTemplateResponse.h
   include/tencentcloud/essbasic/v20210526/model/FlowFileInfo.h
   include/tencentcloud/essbasic/v20210526/model/CreateFlowOption.h
@@ -81,7 +83,7 @@ set(essbasic_public_header_model
   include/tencentcloud/essbasic/v20210526/model/ChannelCreateFlowByFilesResponse.h
   include/tencentcloud/essbasic/v20210526/model/DescribeFlowDetailInfoResponse.h
   include/tencentcloud/essbasic/v20210526/model/RecipientComponentInfo.h
-  include/tencentcloud/essbasic/v20210526/model/DetectInfoVideoData.h
+  include/tencentcloud/essbasic/v20210526/model/CancelFailureFlow.h
   include/tencentcloud/essbasic/v20210526/model/ChannelDescribeRolesRequest.h
   include/tencentcloud/essbasic/v20210526/model/DescribeBatchOrganizationRegistrationUrlsRequest.h
   include/tencentcloud/essbasic/v20210526/model/PrepareFlowsResponse.h
@@ -189,6 +191,7 @@ set(essbasic_public_header_model
   include/tencentcloud/essbasic/v20210526/model/ChannelCreateFlowGroupByFilesResponse.h
   include/tencentcloud/essbasic/v20210526/model/ChannelCreateMultiFlowSignQRCodeResponse.h
   include/tencentcloud/essbasic/v20210526/model/ApproverOption.h
+  include/tencentcloud/essbasic/v20210526/model/DescribeCancelFlowsTaskRequest.h
   include/tencentcloud/essbasic/v20210526/model/ChannelDescribeUserAutoSignStatusResponse.h
   include/tencentcloud/essbasic/v20210526/model/ProxyOrganizationOperator.h
   include/tencentcloud/essbasic/v20210526/model/ModifyExtendedServiceResponse.h
@@ -380,6 +383,7 @@ set(essbasic_src
   src/v20210526/model/DescribeExtendedServiceAuthDetailResponse.cpp
   src/v20210526/model/Department.cpp
   src/v20210526/model/CommonApproverOption.cpp
+  src/v20210526/model/DescribeCancelFlowsTaskResponse.cpp
   src/v20210526/model/ChannelCreateFlowGroupByTemplatesResponse.cpp
   src/v20210526/model/ChannelCreateFlowSignReviewRequest.cpp
   src/v20210526/model/AuthFailMessage.cpp
@@ -396,6 +400,7 @@ set(essbasic_src
   src/v20210526/model/ChannelCreateBatchSignUrlResponse.cpp
   src/v20210526/model/ChannelCreatePrepareFlowResponse.cpp
   src/v20210526/model/WebThemeConfig.cpp
+  src/v20210526/model/DetectInfoVideoData.cpp
   src/v20210526/model/OperateChannelTemplateResponse.cpp
   src/v20210526/model/FlowFileInfo.cpp
   src/v20210526/model/CreateFlowOption.cpp
@@ -430,7 +435,7 @@ set(essbasic_src
   src/v20210526/model/ChannelCreateFlowByFilesResponse.cpp
   src/v20210526/model/DescribeFlowDetailInfoResponse.cpp
   src/v20210526/model/RecipientComponentInfo.cpp
-  src/v20210526/model/DetectInfoVideoData.cpp
+  src/v20210526/model/CancelFailureFlow.cpp
   src/v20210526/model/ChannelDescribeRolesRequest.cpp
   src/v20210526/model/DescribeBatchOrganizationRegistrationUrlsRequest.cpp
   src/v20210526/model/PrepareFlowsResponse.cpp
@@ -538,6 +543,7 @@ set(essbasic_src
   src/v20210526/model/ChannelCreateFlowGroupByFilesResponse.cpp
   src/v20210526/model/ChannelCreateMultiFlowSignQRCodeResponse.cpp
   src/v20210526/model/ApproverOption.cpp
+  src/v20210526/model/DescribeCancelFlowsTaskRequest.cpp
   src/v20210526/model/ChannelDescribeUserAutoSignStatusResponse.cpp
   src/v20210526/model/ProxyOrganizationOperator.cpp
   src/v20210526/model/ModifyExtendedServiceResponse.cpp

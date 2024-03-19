@@ -24,7 +24,8 @@ using namespace TencentCloud::Waf::V20180125::Model;
 using namespace std;
 
 DescribeIpAccessControlResponse::DescribeIpAccessControlResponse() :
-    m_dataHasBeenSet(false)
+    m_dataHasBeenSet(false),
+    m_usedTotalHasBeenSet(false)
 {
 }
 
@@ -79,6 +80,16 @@ CoreInternalOutcome DescribeIpAccessControlResponse::Deserialize(const string &p
         m_dataHasBeenSet = true;
     }
 
+    if (rsp.HasMember("UsedTotal") && !rsp["UsedTotal"].IsNull())
+    {
+        if (!rsp["UsedTotal"].IsUint64())
+        {
+            return CoreInternalOutcome(Core::Error("response `UsedTotal` IsUint64=false incorrectly").SetRequestId(requestId));
+        }
+        m_usedTotal = rsp["UsedTotal"].GetUint64();
+        m_usedTotalHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -96,6 +107,14 @@ string DescribeIpAccessControlResponse::ToJsonString() const
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
         m_data.ToJsonObject(value[key.c_str()], allocator);
+    }
+
+    if (m_usedTotalHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "UsedTotal";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_usedTotal, allocator);
     }
 
     rapidjson::Value iKey(rapidjson::kStringType);
@@ -118,6 +137,16 @@ IpAccessControlData DescribeIpAccessControlResponse::GetData() const
 bool DescribeIpAccessControlResponse::DataHasBeenSet() const
 {
     return m_dataHasBeenSet;
+}
+
+uint64_t DescribeIpAccessControlResponse::GetUsedTotal() const
+{
+    return m_usedTotal;
+}
+
+bool DescribeIpAccessControlResponse::UsedTotalHasBeenSet() const
+{
+    return m_usedTotalHasBeenSet;
 }
 
 

@@ -186,7 +186,7 @@ cdc-clb-waf：CDC环境下负载均衡型WAF实例
 "日本": "jp"
 "弗吉尼亚": "use"
 "北京": "bj"
-"香港": "hk"
+"中国香港": "hk"
 "杭州": "hzec"
 "北京金融": "bjjr"
 "上海金融": "shjr"
@@ -215,7 +215,7 @@ cdc-clb-waf：CDC环境下负载均衡型WAF实例
 "日本": "jp"
 "弗吉尼亚": "use"
 "北京": "bj"
-"香港": "hk"
+"中国香港": "hk"
 "杭州": "hzec"
 "北京金融": "bjjr"
 "上海金融": "shjr"
@@ -249,7 +249,7 @@ cdc-clb-waf：CDC环境下负载均衡型WAF实例
 "日本": "jp"
 "弗吉尼亚": "use"
 "北京": "bj"
-"香港": "hk"
+"中国香港": "hk"
 "杭州": "hzec"
 "北京金融": "bjjr"
 "上海金融": "shjr"
@@ -278,7 +278,7 @@ cdc-clb-waf：CDC环境下负载均衡型WAF实例
 "日本": "jp"
 "弗吉尼亚": "use"
 "北京": "bj"
-"香港": "hk"
+"中国香港": "hk"
 "杭州": "hzec"
 "北京金融": "bjjr"
 "上海金融": "shjr"
@@ -1110,6 +1110,31 @@ public：公有云域名
                      */
                     bool SgIDHasBeenSet() const;
 
+                    /**
+                     * 获取clbwaf接入状态
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return AccessStatus clbwaf接入状态
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    int64_t GetAccessStatus() const;
+
+                    /**
+                     * 设置clbwaf接入状态
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _accessStatus clbwaf接入状态
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetAccessStatus(const int64_t& _accessStatus);
+
+                    /**
+                     * 判断参数 AccessStatus 是否已赋值
+                     * @return AccessStatus 是否已赋值
+                     * 
+                     */
+                    bool AccessStatusHasBeenSet() const;
+
                 private:
 
                     /**
@@ -1166,7 +1191,7 @@ cdc-clb-waf：CDC环境下负载均衡型WAF实例
 "日本": "jp"
 "弗吉尼亚": "use"
 "北京": "bj"
-"香港": "hk"
+"中国香港": "hk"
 "杭州": "hzec"
 "北京金融": "bjjr"
 "上海金融": "shjr"
@@ -1402,6 +1427,13 @@ public：公有云域名
                      */
                     std::string m_sgID;
                     bool m_sgIDHasBeenSet;
+
+                    /**
+                     * clbwaf接入状态
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    int64_t m_accessStatus;
+                    bool m_accessStatusHasBeenSet;
 
                 };
             }

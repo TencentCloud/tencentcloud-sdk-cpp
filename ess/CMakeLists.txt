@@ -21,6 +21,7 @@ set(ess_public_header
 set(ess_public_header_model
   include/tencentcloud/ess/v20201111/model/DescribePersonCertificateResponse.h
   include/tencentcloud/ess/v20201111/model/BillUsageDetail.h
+  include/tencentcloud/ess/v20201111/model/DescribeCancelFlowsTaskResponse.h
   include/tencentcloud/ess/v20201111/model/IntentionActionResult.h
   include/tencentcloud/ess/v20201111/model/CreateSealRequest.h
   include/tencentcloud/ess/v20201111/model/ModifyIntegrationDepartmentResponse.h
@@ -76,7 +77,7 @@ set(ess_public_header_model
   include/tencentcloud/ess/v20201111/model/DescribeSignFaceVideoRequest.h
   include/tencentcloud/ess/v20201111/model/DeleteSealPoliciesRequest.h
   include/tencentcloud/ess/v20201111/model/CreateFlowGroupByTemplatesResponse.h
-  include/tencentcloud/ess/v20201111/model/DetectInfoVideoData.h
+  include/tencentcloud/ess/v20201111/model/CancelFailureFlow.h
   include/tencentcloud/ess/v20201111/model/TemplateInfo.h
   include/tencentcloud/ess/v20201111/model/CreateDocumentResponse.h
   include/tencentcloud/ess/v20201111/model/DescribeIntegrationEmployeesRequest.h
@@ -136,6 +137,7 @@ set(ess_public_header_model
   include/tencentcloud/ess/v20201111/model/RecipientComponentInfo.h
   include/tencentcloud/ess/v20201111/model/CreateFlowEvidenceReportResponse.h
   include/tencentcloud/ess/v20201111/model/CreateIntegrationRoleResponse.h
+  include/tencentcloud/ess/v20201111/model/DetectInfoVideoData.h
   include/tencentcloud/ess/v20201111/model/DescribeFlowComponentsRequest.h
   include/tencentcloud/ess/v20201111/model/CreateIntegrationDepartmentRequest.h
   include/tencentcloud/ess/v20201111/model/GroupOrganization.h
@@ -195,6 +197,7 @@ set(ess_public_header_model
   include/tencentcloud/ess/v20201111/model/CreateSealResponse.h
   include/tencentcloud/ess/v20201111/model/CreatePrepareFlowRequest.h
   include/tencentcloud/ess/v20201111/model/ApproverOption.h
+  include/tencentcloud/ess/v20201111/model/DescribeCancelFlowsTaskRequest.h
   include/tencentcloud/ess/v20201111/model/CreateEmbedWebUrlResponse.h
   include/tencentcloud/ess/v20201111/model/ModifyExtendedServiceResponse.h
   include/tencentcloud/ess/v20201111/model/CreateSealPolicyRequest.h
@@ -252,6 +255,7 @@ set(ess_src
   src/v20201111/EssClient.cpp
   src/v20201111/model/DescribePersonCertificateResponse.cpp
   src/v20201111/model/BillUsageDetail.cpp
+  src/v20201111/model/DescribeCancelFlowsTaskResponse.cpp
   src/v20201111/model/IntentionActionResult.cpp
   src/v20201111/model/CreateSealRequest.cpp
   src/v20201111/model/ModifyIntegrationDepartmentResponse.cpp
@@ -307,7 +311,7 @@ set(ess_src
   src/v20201111/model/DescribeSignFaceVideoRequest.cpp
   src/v20201111/model/DeleteSealPoliciesRequest.cpp
   src/v20201111/model/CreateFlowGroupByTemplatesResponse.cpp
-  src/v20201111/model/DetectInfoVideoData.cpp
+  src/v20201111/model/CancelFailureFlow.cpp
   src/v20201111/model/TemplateInfo.cpp
   src/v20201111/model/CreateDocumentResponse.cpp
   src/v20201111/model/DescribeIntegrationEmployeesRequest.cpp
@@ -367,6 +371,7 @@ set(ess_src
   src/v20201111/model/RecipientComponentInfo.cpp
   src/v20201111/model/CreateFlowEvidenceReportResponse.cpp
   src/v20201111/model/CreateIntegrationRoleResponse.cpp
+  src/v20201111/model/DetectInfoVideoData.cpp
   src/v20201111/model/DescribeFlowComponentsRequest.cpp
   src/v20201111/model/CreateIntegrationDepartmentRequest.cpp
   src/v20201111/model/GroupOrganization.cpp
@@ -426,6 +431,7 @@ set(ess_src
   src/v20201111/model/CreateSealResponse.cpp
   src/v20201111/model/CreatePrepareFlowRequest.cpp
   src/v20201111/model/ApproverOption.cpp
+  src/v20201111/model/DescribeCancelFlowsTaskRequest.cpp
   src/v20201111/model/CreateEmbedWebUrlResponse.cpp
   src/v20201111/model/ModifyExtendedServiceResponse.cpp
   src/v20201111/model/CreateSealPolicyRequest.cpp

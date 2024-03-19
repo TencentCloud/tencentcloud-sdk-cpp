@@ -226,6 +226,97 @@ namespace TencentCloud
                     bool LoadBalanceHasBeenSet() const;
 
                     /**
+                     * 获取服务端口列表配置。
+NginxServerId：新增域名时填'0'
+Port：监听端口号
+Protocol：端口协议
+UpstreamPort：与Port相同
+UpstreamProtocol：与Protocol相同
+                     * @return Ports 服务端口列表配置。
+NginxServerId：新增域名时填'0'
+Port：监听端口号
+Protocol：端口协议
+UpstreamPort：与Port相同
+UpstreamProtocol：与Protocol相同
+                     * 
+                     */
+                    std::vector<PortItem> GetPorts() const;
+
+                    /**
+                     * 设置服务端口列表配置。
+NginxServerId：新增域名时填'0'
+Port：监听端口号
+Protocol：端口协议
+UpstreamPort：与Port相同
+UpstreamProtocol：与Protocol相同
+                     * @param _ports 服务端口列表配置。
+NginxServerId：新增域名时填'0'
+Port：监听端口号
+Protocol：端口协议
+UpstreamPort：与Port相同
+UpstreamProtocol：与Protocol相同
+                     * 
+                     */
+                    void SetPorts(const std::vector<PortItem>& _ports);
+
+                    /**
+                     * 判断参数 Ports 是否已赋值
+                     * @return Ports 是否已赋值
+                     * 
+                     */
+                    bool PortsHasBeenSet() const;
+
+                    /**
+                     * 获取必填项，是否开启长连接。
+0： 短连接
+1： 长连接
+                     * @return IsKeepAlive 必填项，是否开启长连接。
+0： 短连接
+1： 长连接
+                     * 
+                     */
+                    std::string GetIsKeepAlive() const;
+
+                    /**
+                     * 设置必填项，是否开启长连接。
+0： 短连接
+1： 长连接
+                     * @param _isKeepAlive 必填项，是否开启长连接。
+0： 短连接
+1： 长连接
+                     * 
+                     */
+                    void SetIsKeepAlive(const std::string& _isKeepAlive);
+
+                    /**
+                     * 判断参数 IsKeepAlive 是否已赋值
+                     * @return IsKeepAlive 是否已赋值
+                     * 
+                     */
+                    bool IsKeepAliveHasBeenSet() const;
+
+                    /**
+                     * 获取必填项，域名所属实例id
+                     * @return InstanceID 必填项，域名所属实例id
+                     * 
+                     */
+                    std::string GetInstanceID() const;
+
+                    /**
+                     * 设置必填项，域名所属实例id
+                     * @param _instanceID 必填项，域名所属实例id
+                     * 
+                     */
+                    void SetInstanceID(const std::string& _instanceID);
+
+                    /**
+                     * 判断参数 InstanceID 是否已赋值
+                     * @return InstanceID 是否已赋值
+                     * 
+                     */
+                    bool InstanceIDHasBeenSet() const;
+
+                    /**
                      * 获取CertType为1时，需要填充此参数，表示自有证书的证书链
                      * @return Cert CertType为1时，需要填充此参数，表示自有证书的证书链
                      * 
@@ -523,47 +614,6 @@ https：使用https协议回源
                     bool IsHttp2HasBeenSet() const;
 
                     /**
-                     * 获取服务端口列表配置。
-NginxServerId：新增域名时填'0'
-Port：监听端口号
-Protocol：端口协议
-UpstreamPort：与Port相同
-UpstreamProtocol：与Protocol相同
-                     * @return Ports 服务端口列表配置。
-NginxServerId：新增域名时填'0'
-Port：监听端口号
-Protocol：端口协议
-UpstreamPort：与Port相同
-UpstreamProtocol：与Protocol相同
-                     * 
-                     */
-                    std::vector<PortItem> GetPorts() const;
-
-                    /**
-                     * 设置服务端口列表配置。
-NginxServerId：新增域名时填'0'
-Port：监听端口号
-Protocol：端口协议
-UpstreamPort：与Port相同
-UpstreamProtocol：与Protocol相同
-                     * @param _ports 服务端口列表配置。
-NginxServerId：新增域名时填'0'
-Port：监听端口号
-Protocol：端口协议
-UpstreamPort：与Port相同
-UpstreamProtocol：与Protocol相同
-                     * 
-                     */
-                    void SetPorts(const std::vector<PortItem>& _ports);
-
-                    /**
-                     * 判断参数 Ports 是否已赋值
-                     * @return Ports 是否已赋值
-                     * 
-                     */
-                    bool PortsHasBeenSet() const;
-
-                    /**
                      * 获取待废弃，可不填。WAF实例类型。
 sparta-waf：SAAS型WAF
 clb-waf：负载均衡型WAF
@@ -595,56 +645,6 @@ cdn-waf：CDN上的Web防护能力
                      * 
                      */
                     bool EditionHasBeenSet() const;
-
-                    /**
-                     * 获取必填项，是否开启长连接。
-0： 短连接
-1： 长连接
-                     * @return IsKeepAlive 必填项，是否开启长连接。
-0： 短连接
-1： 长连接
-                     * 
-                     */
-                    std::string GetIsKeepAlive() const;
-
-                    /**
-                     * 设置必填项，是否开启长连接。
-0： 短连接
-1： 长连接
-                     * @param _isKeepAlive 必填项，是否开启长连接。
-0： 短连接
-1： 长连接
-                     * 
-                     */
-                    void SetIsKeepAlive(const std::string& _isKeepAlive);
-
-                    /**
-                     * 判断参数 IsKeepAlive 是否已赋值
-                     * @return IsKeepAlive 是否已赋值
-                     * 
-                     */
-                    bool IsKeepAliveHasBeenSet() const;
-
-                    /**
-                     * 获取必填项，域名所属实例id
-                     * @return InstanceID 必填项，域名所属实例id
-                     * 
-                     */
-                    std::string GetInstanceID() const;
-
-                    /**
-                     * 设置必填项，域名所属实例id
-                     * @param _instanceID 必填项，域名所属实例id
-                     * 
-                     */
-                    void SetInstanceID(const std::string& _instanceID);
-
-                    /**
-                     * 判断参数 InstanceID 是否已赋值
-                     * @return InstanceID 是否已赋值
-                     * 
-                     */
-                    bool InstanceIDHasBeenSet() const;
 
                     /**
                      * 获取待废弃，目前填0即可。anycast IP类型开关： 0 普通IP 1 Anycast IP
@@ -967,6 +967,27 @@ cdn-waf：CDN上的Web防护能力
                      */
                     bool UpstreamHostHasBeenSet() const;
 
+                    /**
+                     * 获取是否开启缓存 0-关闭 1-开启
+                     * @return ProxyBuffer 是否开启缓存 0-关闭 1-开启
+                     * 
+                     */
+                    int64_t GetProxyBuffer() const;
+
+                    /**
+                     * 设置是否开启缓存 0-关闭 1-开启
+                     * @param _proxyBuffer 是否开启缓存 0-关闭 1-开启
+                     * 
+                     */
+                    void SetProxyBuffer(const int64_t& _proxyBuffer);
+
+                    /**
+                     * 判断参数 ProxyBuffer 是否已赋值
+                     * @return ProxyBuffer 是否已赋值
+                     * 
+                     */
+                    bool ProxyBufferHasBeenSet() const;
+
                 private:
 
                     /**
@@ -1018,6 +1039,31 @@ cdn-waf：CDN上的Web防护能力
                      */
                     std::string m_loadBalance;
                     bool m_loadBalanceHasBeenSet;
+
+                    /**
+                     * 服务端口列表配置。
+NginxServerId：新增域名时填'0'
+Port：监听端口号
+Protocol：端口协议
+UpstreamPort：与Port相同
+UpstreamProtocol：与Protocol相同
+                     */
+                    std::vector<PortItem> m_ports;
+                    bool m_portsHasBeenSet;
+
+                    /**
+                     * 必填项，是否开启长连接。
+0： 短连接
+1： 长连接
+                     */
+                    std::string m_isKeepAlive;
+                    bool m_isKeepAliveHasBeenSet;
+
+                    /**
+                     * 必填项，域名所属实例id
+                     */
+                    std::string m_instanceID;
+                    bool m_instanceIDHasBeenSet;
 
                     /**
                      * CertType为1时，需要填充此参数，表示自有证书的证书链
@@ -1104,17 +1150,6 @@ https：使用https协议回源
                     bool m_isHttp2HasBeenSet;
 
                     /**
-                     * 服务端口列表配置。
-NginxServerId：新增域名时填'0'
-Port：监听端口号
-Protocol：端口协议
-UpstreamPort：与Port相同
-UpstreamProtocol：与Protocol相同
-                     */
-                    std::vector<PortItem> m_ports;
-                    bool m_portsHasBeenSet;
-
-                    /**
                      * 待废弃，可不填。WAF实例类型。
 sparta-waf：SAAS型WAF
 clb-waf：负载均衡型WAF
@@ -1122,20 +1157,6 @@ cdn-waf：CDN上的Web防护能力
                      */
                     std::string m_edition;
                     bool m_editionHasBeenSet;
-
-                    /**
-                     * 必填项，是否开启长连接。
-0： 短连接
-1： 长连接
-                     */
-                    std::string m_isKeepAlive;
-                    bool m_isKeepAliveHasBeenSet;
-
-                    /**
-                     * 必填项，域名所属实例id
-                     */
-                    std::string m_instanceID;
-                    bool m_instanceIDHasBeenSet;
 
                     /**
                      * 待废弃，目前填0即可。anycast IP类型开关： 0 普通IP 1 Anycast IP
@@ -1226,6 +1247,12 @@ cdn-waf：CDN上的Web防护能力
                      */
                     std::string m_upstreamHost;
                     bool m_upstreamHostHasBeenSet;
+
+                    /**
+                     * 是否开启缓存 0-关闭 1-开启
+                     */
+                    int64_t m_proxyBuffer;
+                    bool m_proxyBufferHasBeenSet;
 
                 };
             }

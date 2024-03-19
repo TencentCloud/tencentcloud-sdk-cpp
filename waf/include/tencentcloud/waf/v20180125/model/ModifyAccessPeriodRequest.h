@@ -66,21 +66,21 @@ namespace TencentCloud
                     /**
                      * 获取日志主题，新版本不需要再传
                      * @return TopicId 日志主题，新版本不需要再传
-                     * 
+                     * @deprecated
                      */
                     std::string GetTopicId() const;
 
                     /**
                      * 设置日志主题，新版本不需要再传
                      * @param _topicId 日志主题，新版本不需要再传
-                     * 
+                     * @deprecated
                      */
                     void SetTopicId(const std::string& _topicId);
 
                     /**
                      * 判断参数 TopicId 是否已赋值
                      * @return TopicId 是否已赋值
-                     * 
+                     * @deprecated
                      */
                     bool TopicIdHasBeenSet() const;
 

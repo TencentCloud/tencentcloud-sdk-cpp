@@ -54,7 +54,8 @@ DomainInfo::DomainInfo() :
     m_noteHasBeenSet(false),
     m_srcListHasBeenSet(false),
     m_upstreamDomainListHasBeenSet(false),
-    m_sgIDHasBeenSet(false)
+    m_sgIDHasBeenSet(false),
+    m_accessStatusHasBeenSet(false)
 {
 }
 
@@ -435,6 +436,16 @@ CoreInternalOutcome DomainInfo::Deserialize(const rapidjson::Value &value)
         m_sgIDHasBeenSet = true;
     }
 
+    if (value.HasMember("AccessStatus") && !value["AccessStatus"].IsNull())
+    {
+        if (!value["AccessStatus"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `DomainInfo.AccessStatus` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_accessStatus = value["AccessStatus"].GetInt64();
+        m_accessStatusHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -746,6 +757,14 @@ void DomainInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Allo
         string key = "SgID";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_sgID.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_accessStatusHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "AccessStatus";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_accessStatus, allocator);
     }
 
 }
@@ -1293,5 +1312,21 @@ void DomainInfo::SetSgID(const string& _sgID)
 bool DomainInfo::SgIDHasBeenSet() const
 {
     return m_sgIDHasBeenSet;
+}
+
+int64_t DomainInfo::GetAccessStatus() const
+{
+    return m_accessStatus;
+}
+
+void DomainInfo::SetAccessStatus(const int64_t& _accessStatus)
+{
+    m_accessStatus = _accessStatus;
+    m_accessStatusHasBeenSet = true;
+}
+
+bool DomainInfo::AccessStatusHasBeenSet() const
+{
+    return m_accessStatusHasBeenSet;
 }
 

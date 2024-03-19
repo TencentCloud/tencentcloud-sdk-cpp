@@ -37,7 +37,8 @@ DescribeIpAccessControlRequest::DescribeIpAccessControlRequest() :
     m_ipHasBeenSet(false),
     m_validStatusHasBeenSet(false),
     m_validTimeStampMinHasBeenSet(false),
-    m_validTimeStampMaxHasBeenSet(false)
+    m_validTimeStampMaxHasBeenSet(false),
+    m_ruleIdHasBeenSet(false)
 {
 }
 
@@ -166,6 +167,14 @@ string DescribeIpAccessControlRequest::ToJsonString() const
         string key = "ValidTimeStampMax";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_validTimeStampMax.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_ruleIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "RuleId";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_ruleId, allocator);
     }
 
 
@@ -414,6 +423,22 @@ void DescribeIpAccessControlRequest::SetValidTimeStampMax(const string& _validTi
 bool DescribeIpAccessControlRequest::ValidTimeStampMaxHasBeenSet() const
 {
     return m_validTimeStampMaxHasBeenSet;
+}
+
+uint64_t DescribeIpAccessControlRequest::GetRuleId() const
+{
+    return m_ruleId;
+}
+
+void DescribeIpAccessControlRequest::SetRuleId(const uint64_t& _ruleId)
+{
+    m_ruleId = _ruleId;
+    m_ruleIdHasBeenSet = true;
+}
+
+bool DescribeIpAccessControlRequest::RuleIdHasBeenSet() const
+{
+    return m_ruleIdHasBeenSet;
 }
 
 
