@@ -1198,6 +1198,31 @@ namespace TencentCloud
                      */
                     bool EngineTypeDetailHasBeenSet() const;
 
+                    /**
+                     * 获取引擎网络ID
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return EngineNetworkId 引擎网络ID
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::string GetEngineNetworkId() const;
+
+                    /**
+                     * 设置引擎网络ID
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _engineNetworkId 引擎网络ID
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetEngineNetworkId(const std::string& _engineNetworkId);
+
+                    /**
+                     * 判断参数 EngineNetworkId 是否已赋值
+                     * @return EngineNetworkId 是否已赋值
+                     * 
+                     */
+                    bool EngineNetworkIdHasBeenSet() const;
+
                 private:
 
                     /**
@@ -1522,6 +1547,13 @@ namespace TencentCloud
                      */
                     std::string m_engineTypeDetail;
                     bool m_engineTypeDetailHasBeenSet;
+
+                    /**
+                     * 引擎网络ID
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_engineNetworkId;
+                    bool m_engineNetworkIdHasBeenSet;
 
                 };
             }

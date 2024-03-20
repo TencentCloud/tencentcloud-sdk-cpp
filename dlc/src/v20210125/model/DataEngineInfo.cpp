@@ -68,7 +68,8 @@ DataEngineInfo::DataEngineInfo() :
     m_sessionResourceTemplateHasBeenSet(false),
     m_autoAuthorizationHasBeenSet(false),
     m_engineGenerationHasBeenSet(false),
-    m_engineTypeDetailHasBeenSet(false)
+    m_engineTypeDetailHasBeenSet(false),
+    m_engineNetworkIdHasBeenSet(false)
 {
 }
 
@@ -594,6 +595,16 @@ CoreInternalOutcome DataEngineInfo::Deserialize(const rapidjson::Value &value)
         m_engineTypeDetailHasBeenSet = true;
     }
 
+    if (value.HasMember("EngineNetworkId") && !value["EngineNetworkId"].IsNull())
+    {
+        if (!value["EngineNetworkId"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `DataEngineInfo.EngineNetworkId` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_engineNetworkId = string(value["EngineNetworkId"].GetString());
+        m_engineNetworkIdHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -1004,6 +1015,14 @@ void DataEngineInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Document::
         string key = "EngineTypeDetail";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_engineTypeDetail.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_engineNetworkIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "EngineNetworkId";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_engineNetworkId.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -1775,5 +1794,21 @@ void DataEngineInfo::SetEngineTypeDetail(const string& _engineTypeDetail)
 bool DataEngineInfo::EngineTypeDetailHasBeenSet() const
 {
     return m_engineTypeDetailHasBeenSet;
+}
+
+string DataEngineInfo::GetEngineNetworkId() const
+{
+    return m_engineNetworkId;
+}
+
+void DataEngineInfo::SetEngineNetworkId(const string& _engineNetworkId)
+{
+    m_engineNetworkId = _engineNetworkId;
+    m_engineNetworkIdHasBeenSet = true;
+}
+
+bool DataEngineInfo::EngineNetworkIdHasBeenSet() const
+{
+    return m_engineNetworkIdHasBeenSet;
 }
 

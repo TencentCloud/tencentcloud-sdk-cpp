@@ -64,15 +64,15 @@ namespace TencentCloud
                     bool DiskIdsHasBeenSet() const;
 
                     /**
-                     * 获取云盘的续费标识。取值范围：<br><li>NOTIFY_AND_AUTO_RENEW：通知过期且自动续费<br><li>NOTIFY_AND_MANUAL_RENEW：通知过期不自动续费<br><li>DISABLE_NOTIFY_AND_MANUAL_RENEW：不通知过期不自动续费。
-                     * @return RenewFlag 云盘的续费标识。取值范围：<br><li>NOTIFY_AND_AUTO_RENEW：通知过期且自动续费<br><li>NOTIFY_AND_MANUAL_RENEW：通知过期不自动续费<br><li>DISABLE_NOTIFY_AND_MANUAL_RENEW：不通知过期不自动续费。
+                     * 获取	云硬盘的自动续费标识。取值范围：<ul><li>NOTIFY_AND_AUTO_RENEW：通知过期且自动续费</li><li>NOTIFY_AND_MANUAL_RENEW：通知过期不自动续费</li><li>DISABLE_NOTIFY_AND_MANUAL_RENEW：不通知过期不自动续费</li></ul>
+                     * @return RenewFlag 	云硬盘的自动续费标识。取值范围：<ul><li>NOTIFY_AND_AUTO_RENEW：通知过期且自动续费</li><li>NOTIFY_AND_MANUAL_RENEW：通知过期不自动续费</li><li>DISABLE_NOTIFY_AND_MANUAL_RENEW：不通知过期不自动续费</li></ul>
                      * 
                      */
                     std::string GetRenewFlag() const;
 
                     /**
-                     * 设置云盘的续费标识。取值范围：<br><li>NOTIFY_AND_AUTO_RENEW：通知过期且自动续费<br><li>NOTIFY_AND_MANUAL_RENEW：通知过期不自动续费<br><li>DISABLE_NOTIFY_AND_MANUAL_RENEW：不通知过期不自动续费。
-                     * @param _renewFlag 云盘的续费标识。取值范围：<br><li>NOTIFY_AND_AUTO_RENEW：通知过期且自动续费<br><li>NOTIFY_AND_MANUAL_RENEW：通知过期不自动续费<br><li>DISABLE_NOTIFY_AND_MANUAL_RENEW：不通知过期不自动续费。
+                     * 设置	云硬盘的自动续费标识。取值范围：<ul><li>NOTIFY_AND_AUTO_RENEW：通知过期且自动续费</li><li>NOTIFY_AND_MANUAL_RENEW：通知过期不自动续费</li><li>DISABLE_NOTIFY_AND_MANUAL_RENEW：不通知过期不自动续费</li></ul>
+                     * @param _renewFlag 	云硬盘的自动续费标识。取值范围：<ul><li>NOTIFY_AND_AUTO_RENEW：通知过期且自动续费</li><li>NOTIFY_AND_MANUAL_RENEW：通知过期不自动续费</li><li>DISABLE_NOTIFY_AND_MANUAL_RENEW：不通知过期不自动续费</li></ul>
                      * 
                      */
                     void SetRenewFlag(const std::string& _renewFlag);
@@ -84,6 +84,27 @@ namespace TencentCloud
                      */
                     bool RenewFlagHasBeenSet() const;
 
+                    /**
+                     * 获取该参数支持设置云硬盘的自动续费周期，单位为月。
+                     * @return AutoRenewPeriod 该参数支持设置云硬盘的自动续费周期，单位为月。
+                     * 
+                     */
+                    uint64_t GetAutoRenewPeriod() const;
+
+                    /**
+                     * 设置该参数支持设置云硬盘的自动续费周期，单位为月。
+                     * @param _autoRenewPeriod 该参数支持设置云硬盘的自动续费周期，单位为月。
+                     * 
+                     */
+                    void SetAutoRenewPeriod(const uint64_t& _autoRenewPeriod);
+
+                    /**
+                     * 判断参数 AutoRenewPeriod 是否已赋值
+                     * @return AutoRenewPeriod 是否已赋值
+                     * 
+                     */
+                    bool AutoRenewPeriodHasBeenSet() const;
+
                 private:
 
                     /**
@@ -93,10 +114,16 @@ namespace TencentCloud
                     bool m_diskIdsHasBeenSet;
 
                     /**
-                     * 云盘的续费标识。取值范围：<br><li>NOTIFY_AND_AUTO_RENEW：通知过期且自动续费<br><li>NOTIFY_AND_MANUAL_RENEW：通知过期不自动续费<br><li>DISABLE_NOTIFY_AND_MANUAL_RENEW：不通知过期不自动续费。
+                     * 	云硬盘的自动续费标识。取值范围：<ul><li>NOTIFY_AND_AUTO_RENEW：通知过期且自动续费</li><li>NOTIFY_AND_MANUAL_RENEW：通知过期不自动续费</li><li>DISABLE_NOTIFY_AND_MANUAL_RENEW：不通知过期不自动续费</li></ul>
                      */
                     std::string m_renewFlag;
                     bool m_renewFlagHasBeenSet;
+
+                    /**
+                     * 该参数支持设置云硬盘的自动续费周期，单位为月。
+                     */
+                    uint64_t m_autoRenewPeriod;
+                    bool m_autoRenewPeriodHasBeenSet;
 
                 };
             }

@@ -605,18 +605,18 @@ namespace TencentCloud
                     bool RecordBackgroundHasBeenSet() const;
 
                     /**
-                     * 获取录制自定义场景，仅recordlayout=9的时候此参数有效
+                     * 获取录制自定义场景，仅recordlayout=9的时候此参数有效,数据内容为用户自定义场景参数，数据格式为json键值对方式，其中键值对的value为string类型。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return RecordScene 录制自定义场景，仅recordlayout=9的时候此参数有效
+                     * @return RecordScene 录制自定义场景，仅recordlayout=9的时候此参数有效,数据内容为用户自定义场景参数，数据格式为json键值对方式，其中键值对的value为string类型。
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetRecordScene() const;
 
                     /**
-                     * 设置录制自定义场景，仅recordlayout=9的时候此参数有效
+                     * 设置录制自定义场景，仅recordlayout=9的时候此参数有效,数据内容为用户自定义场景参数，数据格式为json键值对方式，其中键值对的value为string类型。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _recordScene 录制自定义场景，仅recordlayout=9的时候此参数有效
+                     * @param _recordScene 录制自定义场景，仅recordlayout=9的时候此参数有效,数据内容为用户自定义场景参数，数据格式为json键值对方式，其中键值对的value为string类型。
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -631,18 +631,14 @@ namespace TencentCloud
 
                     /**
                      * 获取录制自定义语言，仅recordlayout=9的时候此参数有效
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return RecordLang 录制自定义语言，仅recordlayout=9的时候此参数有效
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetRecordLang() const;
 
                     /**
                      * 设置录制自定义语言，仅recordlayout=9的时候此参数有效
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _recordLang 录制自定义语言，仅recordlayout=9的时候此参数有效
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetRecordLang(const std::string& _recordLang);
@@ -813,7 +809,7 @@ namespace TencentCloud
                     bool m_recordBackgroundHasBeenSet;
 
                     /**
-                     * 录制自定义场景，仅recordlayout=9的时候此参数有效
+                     * 录制自定义场景，仅recordlayout=9的时候此参数有效,数据内容为用户自定义场景参数，数据格式为json键值对方式，其中键值对的value为string类型。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_recordScene;
@@ -821,7 +817,6 @@ namespace TencentCloud
 
                     /**
                      * 录制自定义语言，仅recordlayout=9的时候此参数有效
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_recordLang;
                     bool m_recordLangHasBeenSet;
