@@ -25,7 +25,8 @@ using namespace std;
 
 DescribeBanStatusResponse::DescribeBanStatusResponse() :
     m_statusHasBeenSet(false),
-    m_showTipsHasBeenSet(false)
+    m_showTipsHasBeenSet(false),
+    m_openSmartModeHasBeenSet(false)
 {
 }
 
@@ -83,6 +84,16 @@ CoreInternalOutcome DescribeBanStatusResponse::Deserialize(const string &payload
         m_showTipsHasBeenSet = true;
     }
 
+    if (rsp.HasMember("OpenSmartMode") && !rsp["OpenSmartMode"].IsNull())
+    {
+        if (!rsp["OpenSmartMode"].IsBool())
+        {
+            return CoreInternalOutcome(Core::Error("response `OpenSmartMode` IsBool=false incorrectly").SetRequestId(requestId));
+        }
+        m_openSmartMode = rsp["OpenSmartMode"].GetBool();
+        m_openSmartModeHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -107,6 +118,14 @@ string DescribeBanStatusResponse::ToJsonString() const
         string key = "ShowTips";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_showTips, allocator);
+    }
+
+    if (m_openSmartModeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "OpenSmartMode";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_openSmartMode, allocator);
     }
 
     rapidjson::Value iKey(rapidjson::kStringType);
@@ -139,6 +158,16 @@ bool DescribeBanStatusResponse::GetShowTips() const
 bool DescribeBanStatusResponse::ShowTipsHasBeenSet() const
 {
     return m_showTipsHasBeenSet;
+}
+
+bool DescribeBanStatusResponse::GetOpenSmartMode() const
+{
+    return m_openSmartMode;
+}
+
+bool DescribeBanStatusResponse::OpenSmartModeHasBeenSet() const
+{
+    return m_openSmartModeHasBeenSet;
 }
 
 

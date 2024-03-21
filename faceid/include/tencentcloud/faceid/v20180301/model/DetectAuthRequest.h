@@ -89,18 +89,18 @@ namespace TencentCloud
                     bool TerminalTypeHasBeenSet() const;
 
                     /**
-                     * 获取身份标识（未使用OCR服务时，必须传入）。
+                     * 获取身份标识（是否必传基于[控制台](https://console.cloud.tencent.com/faceid/access)申请业务流程时配置的提示）。
 规则：a-z，A-Z，0-9组合。最长长度32位。
-                     * @return IdCard 身份标识（未使用OCR服务时，必须传入）。
+                     * @return IdCard 身份标识（是否必传基于[控制台](https://console.cloud.tencent.com/faceid/access)申请业务流程时配置的提示）。
 规则：a-z，A-Z，0-9组合。最长长度32位。
                      * 
                      */
                     std::string GetIdCard() const;
 
                     /**
-                     * 设置身份标识（未使用OCR服务时，必须传入）。
+                     * 设置身份标识（是否必传基于[控制台](https://console.cloud.tencent.com/faceid/access)申请业务流程时配置的提示）。
 规则：a-z，A-Z，0-9组合。最长长度32位。
-                     * @param _idCard 身份标识（未使用OCR服务时，必须传入）。
+                     * @param _idCard 身份标识（是否必传基于[控制台](https://console.cloud.tencent.com/faceid/access)申请业务流程时配置的提示）。
 规则：a-z，A-Z，0-9组合。最长长度32位。
                      * 
                      */
@@ -114,15 +114,19 @@ namespace TencentCloud
                     bool IdCardHasBeenSet() const;
 
                     /**
-                     * 获取姓名。（未使用OCR服务时，必须传入）最长长度32位。中文请使用UTF-8编码。
-                     * @return Name 姓名。（未使用OCR服务时，必须传入）最长长度32位。中文请使用UTF-8编码。
+                     * 获取姓名。（是否必传基于[控制台](https://console.cloud.tencent.com/faceid/access)申请业务流程时配置的提示）。
+最长长度32位。中文请使用UTF-8编码。
+                     * @return Name 姓名。（是否必传基于[控制台](https://console.cloud.tencent.com/faceid/access)申请业务流程时配置的提示）。
+最长长度32位。中文请使用UTF-8编码。
                      * 
                      */
                     std::string GetName() const;
 
                     /**
-                     * 设置姓名。（未使用OCR服务时，必须传入）最长长度32位。中文请使用UTF-8编码。
-                     * @param _name 姓名。（未使用OCR服务时，必须传入）最长长度32位。中文请使用UTF-8编码。
+                     * 设置姓名。（是否必传基于[控制台](https://console.cloud.tencent.com/faceid/access)申请业务流程时配置的提示）。
+最长长度32位。中文请使用UTF-8编码。
+                     * @param _name 姓名。（是否必传基于[控制台](https://console.cloud.tencent.com/faceid/access)申请业务流程时配置的提示）。
+最长长度32位。中文请使用UTF-8编码。
                      * 
                      */
                     void SetName(const std::string& _name);
@@ -321,14 +325,15 @@ Base64编码后的图片数据大小不超过3M，仅支持jpg、png格式。请
                     bool m_terminalTypeHasBeenSet;
 
                     /**
-                     * 身份标识（未使用OCR服务时，必须传入）。
+                     * 身份标识（是否必传基于[控制台](https://console.cloud.tencent.com/faceid/access)申请业务流程时配置的提示）。
 规则：a-z，A-Z，0-9组合。最长长度32位。
                      */
                     std::string m_idCard;
                     bool m_idCardHasBeenSet;
 
                     /**
-                     * 姓名。（未使用OCR服务时，必须传入）最长长度32位。中文请使用UTF-8编码。
+                     * 姓名。（是否必传基于[控制台](https://console.cloud.tencent.com/faceid/access)申请业务流程时配置的提示）。
+最长长度32位。中文请使用UTF-8编码。
                      */
                     std::string m_name;
                     bool m_nameHasBeenSet;

@@ -44,8 +44,8 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取获取的下一页的Token值
-                     * @return PaginationToken 获取的下一页的Token值
+                     * 获取获取的下一页的Token值，如果当前是最后一页，返回为空
+                     * @return PaginationToken 获取的下一页的Token值，如果当前是最后一页，返回为空
                      * 
                      */
                     std::string GetPaginationToken() const;
@@ -74,7 +74,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 获取的下一页的Token值
+                     * 获取的下一页的Token值，如果当前是最后一页，返回为空
                      */
                     std::string m_paginationToken;
                     bool m_paginationTokenHasBeenSet;

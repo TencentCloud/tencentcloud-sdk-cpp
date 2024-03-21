@@ -41,7 +41,8 @@ Instance::Instance() :
     m_maxOutBandwidthHasBeenSet(false),
     m_maxFreeTrafficHasBeenSet(false),
     m_configurationEnvironmentHasBeenSet(false),
-    m_loginServicesHasBeenSet(false)
+    m_loginServicesHasBeenSet(false),
+    m_oSTypeHasBeenSet(false)
 {
 }
 
@@ -286,6 +287,16 @@ CoreInternalOutcome Instance::Deserialize(const rapidjson::Value &value)
         m_loginServicesHasBeenSet = true;
     }
 
+    if (value.HasMember("OSType") && !value["OSType"].IsNull())
+    {
+        if (!value["OSType"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `Instance.OSType` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_oSType = string(value["OSType"].GetString());
+        m_oSTypeHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -482,6 +493,14 @@ void Instance::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Alloca
             value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
             (*itr).ToJsonObject(value[key.c_str()][i], allocator);
         }
+    }
+
+    if (m_oSTypeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "OSType";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_oSType.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -821,5 +840,21 @@ void Instance::SetLoginServices(const vector<LoginService>& _loginServices)
 bool Instance::LoginServicesHasBeenSet() const
 {
     return m_loginServicesHasBeenSet;
+}
+
+string Instance::GetOSType() const
+{
+    return m_oSType;
+}
+
+void Instance::SetOSType(const string& _oSType)
+{
+    m_oSType = _oSType;
+    m_oSTypeHasBeenSet = true;
+}
+
+bool Instance::OSTypeHasBeenSet() const
+{
+    return m_oSTypeHasBeenSet;
 }
 

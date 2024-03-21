@@ -58,8 +58,8 @@ namespace TencentCloud
                     bool ProjectIdHasBeenSet() const;
 
                     /**
-                     * 获取是否为新项目
-                     * @return IsNew 是否为新项目
+                     * 获取是否为新项目，1是新项目，0不是新项目
+                     * @return IsNew 是否为新项目，1是新项目，0不是新项目
                      * 
                      */
                     int64_t GetIsNew() const;
@@ -80,7 +80,7 @@ namespace TencentCloud
                     bool m_projectIdHasBeenSet;
 
                     /**
-                     * 是否为新项目
+                     * 是否为新项目，1是新项目，0不是新项目
                      */
                     int64_t m_isNew;
                     bool m_isNewHasBeenSet;

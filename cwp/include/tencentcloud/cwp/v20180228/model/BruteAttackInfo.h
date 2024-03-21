@@ -319,18 +319,58 @@ namespace TencentCloud
                     bool CreateTimeHasBeenSet() const;
 
                     /**
-                     * 获取阻断状态：1-阻断成功；非1-阻断失败
+                     * 获取0 -不阻断(客户端版本不支持)
+1 -已阻断
+2 -阻断失败(程序异常)
+3 -不阻断(内网不阻断)
+4 -可用区不支持阻断
+10-阻断中
+81-不阻断(未开启阻断)
+82-不阻断(非专业版)
+83-不阻断(已加白名单)
+86-不阻断(系统白名单)
+87-不阻断(客户端离线)
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return BanStatus 阻断状态：1-阻断成功；非1-阻断失败
+                     * @return BanStatus 0 -不阻断(客户端版本不支持)
+1 -已阻断
+2 -阻断失败(程序异常)
+3 -不阻断(内网不阻断)
+4 -可用区不支持阻断
+10-阻断中
+81-不阻断(未开启阻断)
+82-不阻断(非专业版)
+83-不阻断(已加白名单)
+86-不阻断(系统白名单)
+87-不阻断(客户端离线)
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     uint64_t GetBanStatus() const;
 
                     /**
-                     * 设置阻断状态：1-阻断成功；非1-阻断失败
+                     * 设置0 -不阻断(客户端版本不支持)
+1 -已阻断
+2 -阻断失败(程序异常)
+3 -不阻断(内网不阻断)
+4 -可用区不支持阻断
+10-阻断中
+81-不阻断(未开启阻断)
+82-不阻断(非专业版)
+83-不阻断(已加白名单)
+86-不阻断(系统白名单)
+87-不阻断(客户端离线)
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _banStatus 阻断状态：1-阻断成功；非1-阻断失败
+                     * @param _banStatus 0 -不阻断(客户端版本不支持)
+1 -已阻断
+2 -阻断失败(程序异常)
+3 -不阻断(内网不阻断)
+4 -可用区不支持阻断
+10-阻断中
+81-不阻断(未开启阻断)
+82-不阻断(非专业版)
+83-不阻断(已加白名单)
+86-不阻断(系统白名单)
+87-不阻断(客户端离线)
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -668,6 +708,56 @@ namespace TencentCloud
                      */
                     bool DataFromHasBeenSet() const;
 
+                    /**
+                     * 获取破解状态说明
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return AttackStatusDesc 破解状态说明
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::string GetAttackStatusDesc() const;
+
+                    /**
+                     * 设置破解状态说明
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _attackStatusDesc 破解状态说明
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetAttackStatusDesc(const std::string& _attackStatusDesc);
+
+                    /**
+                     * 判断参数 AttackStatusDesc 是否已赋值
+                     * @return AttackStatusDesc 是否已赋值
+                     * 
+                     */
+                    bool AttackStatusDescHasBeenSet() const;
+
+                    /**
+                     * 获取阻断过期时间（仅阻断中事件有效）
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return BanExpiredTime 阻断过期时间（仅阻断中事件有效）
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::string GetBanExpiredTime() const;
+
+                    /**
+                     * 设置阻断过期时间（仅阻断中事件有效）
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _banExpiredTime 阻断过期时间（仅阻断中事件有效）
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetBanExpiredTime(const std::string& _banExpiredTime);
+
+                    /**
+                     * 判断参数 BanExpiredTime 是否已赋值
+                     * @return BanExpiredTime 是否已赋值
+                     * 
+                     */
+                    bool BanExpiredTimeHasBeenSet() const;
+
                 private:
 
                     /**
@@ -747,7 +837,17 @@ namespace TencentCloud
                     bool m_createTimeHasBeenSet;
 
                     /**
-                     * 阻断状态：1-阻断成功；非1-阻断失败
+                     * 0 -不阻断(客户端版本不支持)
+1 -已阻断
+2 -阻断失败(程序异常)
+3 -不阻断(内网不阻断)
+4 -可用区不支持阻断
+10-阻断中
+81-不阻断(未开启阻断)
+82-不阻断(非专业版)
+83-不阻断(已加白名单)
+86-不阻断(系统白名单)
+87-不阻断(客户端离线)
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     uint64_t m_banStatus;
@@ -843,6 +943,20 @@ namespace TencentCloud
                      */
                     int64_t m_dataFrom;
                     bool m_dataFromHasBeenSet;
+
+                    /**
+                     * 破解状态说明
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_attackStatusDesc;
+                    bool m_attackStatusDescHasBeenSet;
+
+                    /**
+                     * 阻断过期时间（仅阻断中事件有效）
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_banExpiredTime;
+                    bool m_banExpiredTimeHasBeenSet;
 
                 };
             }

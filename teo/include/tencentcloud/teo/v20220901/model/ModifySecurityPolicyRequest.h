@@ -86,15 +86,23 @@ namespace TencentCloud
                     bool SecurityConfigHasBeenSet() const;
 
                     /**
-                     * 获取子域名/应用名。当使用Entity时可不填写TemplateId，否则必须填写TemplateId。
-                     * @return Entity 子域名/应用名。当使用Entity时可不填写TemplateId，否则必须填写TemplateId。
+                     * 获取子域名/应用名。
+
+注意：当同时指定本参数和 TemplateId 参数时，本参数不生效。请勿同时指定本参数和 TemplateId 参数。
+                     * @return Entity 子域名/应用名。
+
+注意：当同时指定本参数和 TemplateId 参数时，本参数不生效。请勿同时指定本参数和 TemplateId 参数。
                      * 
                      */
                     std::string GetEntity() const;
 
                     /**
-                     * 设置子域名/应用名。当使用Entity时可不填写TemplateId，否则必须填写TemplateId。
-                     * @param _entity 子域名/应用名。当使用Entity时可不填写TemplateId，否则必须填写TemplateId。
+                     * 设置子域名/应用名。
+
+注意：当同时指定本参数和 TemplateId 参数时，本参数不生效。请勿同时指定本参数和 TemplateId 参数。
+                     * @param _entity 子域名/应用名。
+
+注意：当同时指定本参数和 TemplateId 参数时，本参数不生效。请勿同时指定本参数和 TemplateId 参数。
                      * 
                      */
                     void SetEntity(const std::string& _entity);
@@ -107,15 +115,31 @@ namespace TencentCloud
                     bool EntityHasBeenSet() const;
 
                     /**
-                     * 获取模板策略id。当使用模板Id时可不填Entity，否则必须填写Entity。
-                     * @return TemplateId 模板策略id。当使用模板Id时可不填Entity，否则必须填写Entity。
+                     * 获取指定模板策略 ID，或指定站点全局策略。
+- 如需配置策略模板，请指定策略模板 ID。
+- 如需配置站点全局策略，请使用 @ZoneLevel@Domain 参数值
+
+注意：当使用本参数时，Entity 参数不生效。请勿同时使用本参数和 Entity 参数。
+                     * @return TemplateId 指定模板策略 ID，或指定站点全局策略。
+- 如需配置策略模板，请指定策略模板 ID。
+- 如需配置站点全局策略，请使用 @ZoneLevel@Domain 参数值
+
+注意：当使用本参数时，Entity 参数不生效。请勿同时使用本参数和 Entity 参数。
                      * 
                      */
                     std::string GetTemplateId() const;
 
                     /**
-                     * 设置模板策略id。当使用模板Id时可不填Entity，否则必须填写Entity。
-                     * @param _templateId 模板策略id。当使用模板Id时可不填Entity，否则必须填写Entity。
+                     * 设置指定模板策略 ID，或指定站点全局策略。
+- 如需配置策略模板，请指定策略模板 ID。
+- 如需配置站点全局策略，请使用 @ZoneLevel@Domain 参数值
+
+注意：当使用本参数时，Entity 参数不生效。请勿同时使用本参数和 Entity 参数。
+                     * @param _templateId 指定模板策略 ID，或指定站点全局策略。
+- 如需配置策略模板，请指定策略模板 ID。
+- 如需配置站点全局策略，请使用 @ZoneLevel@Domain 参数值
+
+注意：当使用本参数时，Entity 参数不生效。请勿同时使用本参数和 Entity 参数。
                      * 
                      */
                     void SetTemplateId(const std::string& _templateId);
@@ -142,13 +166,19 @@ namespace TencentCloud
                     bool m_securityConfigHasBeenSet;
 
                     /**
-                     * 子域名/应用名。当使用Entity时可不填写TemplateId，否则必须填写TemplateId。
+                     * 子域名/应用名。
+
+注意：当同时指定本参数和 TemplateId 参数时，本参数不生效。请勿同时指定本参数和 TemplateId 参数。
                      */
                     std::string m_entity;
                     bool m_entityHasBeenSet;
 
                     /**
-                     * 模板策略id。当使用模板Id时可不填Entity，否则必须填写Entity。
+                     * 指定模板策略 ID，或指定站点全局策略。
+- 如需配置策略模板，请指定策略模板 ID。
+- 如需配置站点全局策略，请使用 @ZoneLevel@Domain 参数值
+
+注意：当使用本参数时，Entity 参数不生效。请勿同时使用本参数和 Entity 参数。
                      */
                     std::string m_templateId;
                     bool m_templateIdHasBeenSet;

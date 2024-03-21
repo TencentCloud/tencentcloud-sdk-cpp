@@ -79,6 +79,8 @@
 #include <tencentcloud/trtc/v20190722/model/DescribeUserEventResponse.h>
 #include <tencentcloud/trtc/v20190722/model/DescribeUserInfoRequest.h>
 #include <tencentcloud/trtc/v20190722/model/DescribeUserInfoResponse.h>
+#include <tencentcloud/trtc/v20190722/model/DescribeWebRecordRequest.h>
+#include <tencentcloud/trtc/v20190722/model/DescribeWebRecordResponse.h>
 #include <tencentcloud/trtc/v20190722/model/DismissRoomRequest.h>
 #include <tencentcloud/trtc/v20190722/model/DismissRoomResponse.h>
 #include <tencentcloud/trtc/v20190722/model/DismissRoomByStrRoomIdRequest.h>
@@ -99,6 +101,8 @@
 #include <tencentcloud/trtc/v20190722/model/StartPublishCdnStreamResponse.h>
 #include <tencentcloud/trtc/v20190722/model/StartStreamIngestRequest.h>
 #include <tencentcloud/trtc/v20190722/model/StartStreamIngestResponse.h>
+#include <tencentcloud/trtc/v20190722/model/StartWebRecordRequest.h>
+#include <tencentcloud/trtc/v20190722/model/StartWebRecordResponse.h>
 #include <tencentcloud/trtc/v20190722/model/StopMCUMixTranscodeRequest.h>
 #include <tencentcloud/trtc/v20190722/model/StopMCUMixTranscodeResponse.h>
 #include <tencentcloud/trtc/v20190722/model/StopMCUMixTranscodeByStrRoomIdRequest.h>
@@ -107,6 +111,8 @@
 #include <tencentcloud/trtc/v20190722/model/StopPublishCdnStreamResponse.h>
 #include <tencentcloud/trtc/v20190722/model/StopStreamIngestRequest.h>
 #include <tencentcloud/trtc/v20190722/model/StopStreamIngestResponse.h>
+#include <tencentcloud/trtc/v20190722/model/StopWebRecordRequest.h>
+#include <tencentcloud/trtc/v20190722/model/StopWebRecordResponse.h>
 #include <tencentcloud/trtc/v20190722/model/UpdatePublishCdnStreamRequest.h>
 #include <tencentcloud/trtc/v20190722/model/UpdatePublishCdnStreamResponse.h>
 
@@ -207,6 +213,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeUserInfoResponse> DescribeUserInfoOutcome;
                 typedef std::future<DescribeUserInfoOutcome> DescribeUserInfoOutcomeCallable;
                 typedef std::function<void(const TrtcClient*, const Model::DescribeUserInfoRequest&, DescribeUserInfoOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeUserInfoAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeWebRecordResponse> DescribeWebRecordOutcome;
+                typedef std::future<DescribeWebRecordOutcome> DescribeWebRecordOutcomeCallable;
+                typedef std::function<void(const TrtcClient*, const Model::DescribeWebRecordRequest&, DescribeWebRecordOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeWebRecordAsyncHandler;
                 typedef Outcome<Core::Error, Model::DismissRoomResponse> DismissRoomOutcome;
                 typedef std::future<DismissRoomOutcome> DismissRoomOutcomeCallable;
                 typedef std::function<void(const TrtcClient*, const Model::DismissRoomRequest&, DismissRoomOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DismissRoomAsyncHandler;
@@ -237,6 +246,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::StartStreamIngestResponse> StartStreamIngestOutcome;
                 typedef std::future<StartStreamIngestOutcome> StartStreamIngestOutcomeCallable;
                 typedef std::function<void(const TrtcClient*, const Model::StartStreamIngestRequest&, StartStreamIngestOutcome, const std::shared_ptr<const AsyncCallerContext>&)> StartStreamIngestAsyncHandler;
+                typedef Outcome<Core::Error, Model::StartWebRecordResponse> StartWebRecordOutcome;
+                typedef std::future<StartWebRecordOutcome> StartWebRecordOutcomeCallable;
+                typedef std::function<void(const TrtcClient*, const Model::StartWebRecordRequest&, StartWebRecordOutcome, const std::shared_ptr<const AsyncCallerContext>&)> StartWebRecordAsyncHandler;
                 typedef Outcome<Core::Error, Model::StopMCUMixTranscodeResponse> StopMCUMixTranscodeOutcome;
                 typedef std::future<StopMCUMixTranscodeOutcome> StopMCUMixTranscodeOutcomeCallable;
                 typedef std::function<void(const TrtcClient*, const Model::StopMCUMixTranscodeRequest&, StopMCUMixTranscodeOutcome, const std::shared_ptr<const AsyncCallerContext>&)> StopMCUMixTranscodeAsyncHandler;
@@ -249,6 +261,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::StopStreamIngestResponse> StopStreamIngestOutcome;
                 typedef std::future<StopStreamIngestOutcome> StopStreamIngestOutcomeCallable;
                 typedef std::function<void(const TrtcClient*, const Model::StopStreamIngestRequest&, StopStreamIngestOutcome, const std::shared_ptr<const AsyncCallerContext>&)> StopStreamIngestAsyncHandler;
+                typedef Outcome<Core::Error, Model::StopWebRecordResponse> StopWebRecordOutcome;
+                typedef std::future<StopWebRecordOutcome> StopWebRecordOutcomeCallable;
+                typedef std::function<void(const TrtcClient*, const Model::StopWebRecordRequest&, StopWebRecordOutcome, const std::shared_ptr<const AsyncCallerContext>&)> StopWebRecordAsyncHandler;
                 typedef Outcome<Core::Error, Model::UpdatePublishCdnStreamResponse> UpdatePublishCdnStreamOutcome;
                 typedef std::future<UpdatePublishCdnStreamOutcome> UpdatePublishCdnStreamOutcomeCallable;
                 typedef std::function<void(const TrtcClient*, const Model::UpdatePublishCdnStreamRequest&, UpdatePublishCdnStreamOutcome, const std::shared_ptr<const AsyncCallerContext>&)> UpdatePublishCdnStreamAsyncHandler;
@@ -616,6 +631,15 @@ xa0
                 DescribeUserInfoOutcomeCallable DescribeUserInfoCallable(const Model::DescribeUserInfoRequest& request);
 
                 /**
+                 *查询页面录制任务
+                 * @param req DescribeWebRecordRequest
+                 * @return DescribeWebRecordOutcome
+                 */
+                DescribeWebRecordOutcome DescribeWebRecord(const Model::DescribeWebRecordRequest &request);
+                void DescribeWebRecordAsync(const Model::DescribeWebRecordRequest& request, const DescribeWebRecordAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeWebRecordOutcomeCallable DescribeWebRecordCallable(const Model::DescribeWebRecordRequest& request);
+
+                /**
                  *接口说明：把房间所有用户从房间移出，解散房间。支持所有平台，Android、iOS、Windows 和 macOS 需升级到 TRTC SDK 6.6及以上版本。
                  * @param req DismissRoomRequest
                  * @return DismissRoomOutcome
@@ -843,6 +867,16 @@ ver：可以忽略。
                 StartStreamIngestOutcomeCallable StartStreamIngestCallable(const Model::StartStreamIngestRequest& request);
 
                 /**
+                 *通过此接口可以发起 WEB 页面录制任务，在接口参数中指定录制 URL，录制分辨率，录制结果存储等参数。
+因为参数或API逻辑问题会立即返回结果。而因为页面问题，如页面无法访问，会在回调中返回结果，请关注。
+                 * @param req StartWebRecordRequest
+                 * @return StartWebRecordOutcome
+                 */
+                StartWebRecordOutcome StartWebRecord(const Model::StartWebRecordRequest &request);
+                void StartWebRecordAsync(const Model::StartWebRecordRequest& request, const StartWebRecordAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                StartWebRecordOutcomeCallable StartWebRecordCallable(const Model::StartWebRecordRequest& request);
+
+                /**
                  *接口说明：结束云端混流
                  * @param req StopMCUMixTranscodeRequest
                  * @return StopMCUMixTranscodeOutcome
@@ -877,6 +911,15 @@ ver：可以忽略。
                 StopStreamIngestOutcome StopStreamIngest(const Model::StopStreamIngestRequest &request);
                 void StopStreamIngestAsync(const Model::StopStreamIngestRequest& request, const StopStreamIngestAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 StopStreamIngestOutcomeCallable StopStreamIngestCallable(const Model::StopStreamIngestRequest& request);
+
+                /**
+                 *停止页面录制任务
+                 * @param req StopWebRecordRequest
+                 * @return StopWebRecordOutcome
+                 */
+                StopWebRecordOutcome StopWebRecord(const Model::StopWebRecordRequest &request);
+                void StopWebRecordAsync(const Model::StopWebRecordRequest& request, const StopWebRecordAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                StopWebRecordOutcomeCallable StopWebRecordCallable(const Model::StopWebRecordRequest& request);
 
                 /**
                  *更新转推任务。

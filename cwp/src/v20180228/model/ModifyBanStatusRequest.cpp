@@ -23,7 +23,8 @@ using namespace TencentCloud::Cwp::V20180228::Model;
 using namespace std;
 
 ModifyBanStatusRequest::ModifyBanStatusRequest() :
-    m_statusHasBeenSet(false)
+    m_statusHasBeenSet(false),
+    m_openSmartModeHasBeenSet(false)
 {
 }
 
@@ -40,6 +41,14 @@ string ModifyBanStatusRequest::ToJsonString() const
         string key = "Status";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_status, allocator);
+    }
+
+    if (m_openSmartModeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "OpenSmartMode";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_openSmartMode, allocator);
     }
 
 
@@ -64,6 +73,22 @@ void ModifyBanStatusRequest::SetStatus(const uint64_t& _status)
 bool ModifyBanStatusRequest::StatusHasBeenSet() const
 {
     return m_statusHasBeenSet;
+}
+
+bool ModifyBanStatusRequest::GetOpenSmartMode() const
+{
+    return m_openSmartMode;
+}
+
+void ModifyBanStatusRequest::SetOpenSmartMode(const bool& _openSmartMode)
+{
+    m_openSmartMode = _openSmartMode;
+    m_openSmartModeHasBeenSet = true;
+}
+
+bool ModifyBanStatusRequest::OpenSmartModeHasBeenSet() const
+{
+    return m_openSmartModeHasBeenSet;
 }
 
 

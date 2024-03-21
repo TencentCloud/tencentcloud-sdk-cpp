@@ -1244,6 +1244,49 @@ TrtcClient::DescribeUserInfoOutcomeCallable TrtcClient::DescribeUserInfoCallable
     return task->get_future();
 }
 
+TrtcClient::DescribeWebRecordOutcome TrtcClient::DescribeWebRecord(const DescribeWebRecordRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeWebRecord");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeWebRecordResponse rsp = DescribeWebRecordResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeWebRecordOutcome(rsp);
+        else
+            return DescribeWebRecordOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeWebRecordOutcome(outcome.GetError());
+    }
+}
+
+void TrtcClient::DescribeWebRecordAsync(const DescribeWebRecordRequest& request, const DescribeWebRecordAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeWebRecord(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+TrtcClient::DescribeWebRecordOutcomeCallable TrtcClient::DescribeWebRecordCallable(const DescribeWebRecordRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeWebRecordOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeWebRecord(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 TrtcClient::DismissRoomOutcome TrtcClient::DismissRoom(const DismissRoomRequest &request)
 {
     auto outcome = MakeRequest(request, "DismissRoom");
@@ -1674,6 +1717,49 @@ TrtcClient::StartStreamIngestOutcomeCallable TrtcClient::StartStreamIngestCallab
     return task->get_future();
 }
 
+TrtcClient::StartWebRecordOutcome TrtcClient::StartWebRecord(const StartWebRecordRequest &request)
+{
+    auto outcome = MakeRequest(request, "StartWebRecord");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        StartWebRecordResponse rsp = StartWebRecordResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return StartWebRecordOutcome(rsp);
+        else
+            return StartWebRecordOutcome(o.GetError());
+    }
+    else
+    {
+        return StartWebRecordOutcome(outcome.GetError());
+    }
+}
+
+void TrtcClient::StartWebRecordAsync(const StartWebRecordRequest& request, const StartWebRecordAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->StartWebRecord(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+TrtcClient::StartWebRecordOutcomeCallable TrtcClient::StartWebRecordCallable(const StartWebRecordRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<StartWebRecordOutcome()>>(
+        [this, request]()
+        {
+            return this->StartWebRecord(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 TrtcClient::StopMCUMixTranscodeOutcome TrtcClient::StopMCUMixTranscode(const StopMCUMixTranscodeRequest &request)
 {
     auto outcome = MakeRequest(request, "StopMCUMixTranscode");
@@ -1839,6 +1925,49 @@ TrtcClient::StopStreamIngestOutcomeCallable TrtcClient::StopStreamIngestCallable
         [this, request]()
         {
             return this->StopStreamIngest(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+TrtcClient::StopWebRecordOutcome TrtcClient::StopWebRecord(const StopWebRecordRequest &request)
+{
+    auto outcome = MakeRequest(request, "StopWebRecord");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        StopWebRecordResponse rsp = StopWebRecordResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return StopWebRecordOutcome(rsp);
+        else
+            return StopWebRecordOutcome(o.GetError());
+    }
+    else
+    {
+        return StopWebRecordOutcome(outcome.GetError());
+    }
+}
+
+void TrtcClient::StopWebRecordAsync(const StopWebRecordRequest& request, const StopWebRecordAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->StopWebRecord(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+TrtcClient::StopWebRecordOutcomeCallable TrtcClient::StopWebRecordCallable(const StopWebRecordRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<StopWebRecordOutcome()>>(
+        [this, request]()
+        {
+            return this->StopWebRecord(request);
         }
     );
 

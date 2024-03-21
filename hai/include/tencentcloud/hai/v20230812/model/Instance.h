@@ -633,6 +633,31 @@ FAILED：表示操作失败
                      */
                     bool LoginServicesHasBeenSet() const;
 
+                    /**
+                     * 获取应用服务的操作系统类型
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return OSType 应用服务的操作系统类型
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::string GetOSType() const;
+
+                    /**
+                     * 设置应用服务的操作系统类型
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _oSType 应用服务的操作系统类型
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetOSType(const std::string& _oSType);
+
+                    /**
+                     * 判断参数 OSType 是否已赋值
+                     * @return OSType 是否已赋值
+                     * 
+                     */
+                    bool OSTypeHasBeenSet() const;
+
                 private:
 
                     /**
@@ -796,6 +821,13 @@ FAILED：表示操作失败
                      */
                     std::vector<LoginService> m_loginServices;
                     bool m_loginServicesHasBeenSet;
+
+                    /**
+                     * 应用服务的操作系统类型
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_oSType;
+                    bool m_oSTypeHasBeenSet;
 
                 };
             }

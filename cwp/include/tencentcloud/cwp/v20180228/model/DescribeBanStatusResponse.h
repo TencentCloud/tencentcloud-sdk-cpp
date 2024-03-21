@@ -77,6 +77,20 @@ namespace TencentCloud
                      */
                     bool ShowTipsHasBeenSet() const;
 
+                    /**
+                     * 获取是否开启智能过白模式
+                     * @return OpenSmartMode 是否开启智能过白模式
+                     * 
+                     */
+                    bool GetOpenSmartMode() const;
+
+                    /**
+                     * 判断参数 OpenSmartMode 是否已赋值
+                     * @return OpenSmartMode 是否已赋值
+                     * 
+                     */
+                    bool OpenSmartModeHasBeenSet() const;
+
                 private:
 
                     /**
@@ -93,6 +107,12 @@ namespace TencentCloud
                      */
                     bool m_showTips;
                     bool m_showTipsHasBeenSet;
+
+                    /**
+                     * 是否开启智能过白模式
+                     */
+                    bool m_openSmartMode;
+                    bool m_openSmartModeHasBeenSet;
 
                 };
             }

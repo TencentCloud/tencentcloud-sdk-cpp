@@ -45,7 +45,9 @@ BruteAttackInfo::BruteAttackInfo() :
     m_machineExtraInfoHasBeenSet(false),
     m_locationHasBeenSet(false),
     m_riskLevelHasBeenSet(false),
-    m_dataFromHasBeenSet(false)
+    m_dataFromHasBeenSet(false),
+    m_attackStatusDescHasBeenSet(false),
+    m_banExpiredTimeHasBeenSet(false)
 {
 }
 
@@ -311,6 +313,26 @@ CoreInternalOutcome BruteAttackInfo::Deserialize(const rapidjson::Value &value)
         m_dataFromHasBeenSet = true;
     }
 
+    if (value.HasMember("AttackStatusDesc") && !value["AttackStatusDesc"].IsNull())
+    {
+        if (!value["AttackStatusDesc"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `BruteAttackInfo.AttackStatusDesc` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_attackStatusDesc = string(value["AttackStatusDesc"].GetString());
+        m_attackStatusDescHasBeenSet = true;
+    }
+
+    if (value.HasMember("BanExpiredTime") && !value["BanExpiredTime"].IsNull())
+    {
+        if (!value["BanExpiredTime"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `BruteAttackInfo.BanExpiredTime` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_banExpiredTime = string(value["BanExpiredTime"].GetString());
+        m_banExpiredTimeHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -517,6 +539,22 @@ void BruteAttackInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Document:
         string key = "DataFrom";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_dataFrom, allocator);
+    }
+
+    if (m_attackStatusDescHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "AttackStatusDesc";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_attackStatusDesc.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_banExpiredTimeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "BanExpiredTime";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_banExpiredTime.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -920,5 +958,37 @@ void BruteAttackInfo::SetDataFrom(const int64_t& _dataFrom)
 bool BruteAttackInfo::DataFromHasBeenSet() const
 {
     return m_dataFromHasBeenSet;
+}
+
+string BruteAttackInfo::GetAttackStatusDesc() const
+{
+    return m_attackStatusDesc;
+}
+
+void BruteAttackInfo::SetAttackStatusDesc(const string& _attackStatusDesc)
+{
+    m_attackStatusDesc = _attackStatusDesc;
+    m_attackStatusDescHasBeenSet = true;
+}
+
+bool BruteAttackInfo::AttackStatusDescHasBeenSet() const
+{
+    return m_attackStatusDescHasBeenSet;
+}
+
+string BruteAttackInfo::GetBanExpiredTime() const
+{
+    return m_banExpiredTime;
+}
+
+void BruteAttackInfo::SetBanExpiredTime(const string& _banExpiredTime)
+{
+    m_banExpiredTime = _banExpiredTime;
+    m_banExpiredTimeHasBeenSet = true;
+}
+
+bool BruteAttackInfo::BanExpiredTimeHasBeenSet() const
+{
+    return m_banExpiredTimeHasBeenSet;
 }
 

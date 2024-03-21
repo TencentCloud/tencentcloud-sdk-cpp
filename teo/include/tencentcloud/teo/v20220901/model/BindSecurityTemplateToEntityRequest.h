@@ -118,15 +118,31 @@ namespace TencentCloud
                     bool OperateHasBeenSet() const;
 
                     /**
-                     * 获取指定绑定或解绑的策略模板 ID 。
-                     * @return TemplateId 指定绑定或解绑的策略模板 ID 。
+                     * 获取指定绑定或解绑的策略模板 ID 或站点全局策略
+- 如需绑定至策略模板，或从策略模板解绑，请指定策略模板 ID。
+- 如需绑定至站点全局策略，或从站点全局策略解绑，请使用 @ZoneLevel@domain 参数值。
+
+注意：解绑后，域名将使用独立策略，并单独计算规则配额，请确保解绑前套餐规则配额充足。
+                     * @return TemplateId 指定绑定或解绑的策略模板 ID 或站点全局策略
+- 如需绑定至策略模板，或从策略模板解绑，请指定策略模板 ID。
+- 如需绑定至站点全局策略，或从站点全局策略解绑，请使用 @ZoneLevel@domain 参数值。
+
+注意：解绑后，域名将使用独立策略，并单独计算规则配额，请确保解绑前套餐规则配额充足。
                      * 
                      */
                     std::string GetTemplateId() const;
 
                     /**
-                     * 设置指定绑定或解绑的策略模板 ID 。
-                     * @param _templateId 指定绑定或解绑的策略模板 ID 。
+                     * 设置指定绑定或解绑的策略模板 ID 或站点全局策略
+- 如需绑定至策略模板，或从策略模板解绑，请指定策略模板 ID。
+- 如需绑定至站点全局策略，或从站点全局策略解绑，请使用 @ZoneLevel@domain 参数值。
+
+注意：解绑后，域名将使用独立策略，并单独计算规则配额，请确保解绑前套餐规则配额充足。
+                     * @param _templateId 指定绑定或解绑的策略模板 ID 或站点全局策略
+- 如需绑定至策略模板，或从策略模板解绑，请指定策略模板 ID。
+- 如需绑定至站点全局策略，或从站点全局策略解绑，请使用 @ZoneLevel@domain 参数值。
+
+注意：解绑后，域名将使用独立策略，并单独计算规则配额，请确保解绑前套餐规则配额充足。
                      * 
                      */
                     void SetTemplateId(const std::string& _templateId);
@@ -191,7 +207,11 @@ namespace TencentCloud
                     bool m_operateHasBeenSet;
 
                     /**
-                     * 指定绑定或解绑的策略模板 ID 。
+                     * 指定绑定或解绑的策略模板 ID 或站点全局策略
+- 如需绑定至策略模板，或从策略模板解绑，请指定策略模板 ID。
+- 如需绑定至站点全局策略，或从站点全局策略解绑，请使用 @ZoneLevel@domain 参数值。
+
+注意：解绑后，域名将使用独立策略，并单独计算规则配额，请确保解绑前套餐规则配额充足。
                      */
                     std::string m_templateId;
                     bool m_templateIdHasBeenSet;
