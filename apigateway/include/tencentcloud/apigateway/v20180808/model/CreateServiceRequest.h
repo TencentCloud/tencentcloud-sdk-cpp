@@ -128,15 +128,15 @@ namespace TencentCloud
                     bool NetTypesHasBeenSet() const;
 
                     /**
-                     * 获取IP版本号，支持IPv4和IPv6，默认为IPv4。
-                     * @return IpVersion IP版本号，支持IPv4和IPv6，默认为IPv4。
+                     * 获取IP版本号，仅支持IPv4。
+                     * @return IpVersion IP版本号，仅支持IPv4。
                      * 
                      */
                     std::string GetIpVersion() const;
 
                     /**
-                     * 设置IP版本号，支持IPv4和IPv6，默认为IPv4。
-                     * @param _ipVersion IP版本号，支持IPv4和IPv6，默认为IPv4。
+                     * 设置IP版本号，仅支持IPv4。
+                     * @param _ipVersion IP版本号，仅支持IPv4。
                      * 
                      */
                     void SetIpVersion(const std::string& _ipVersion);
@@ -280,7 +280,7 @@ namespace TencentCloud
                     bool m_netTypesHasBeenSet;
 
                     /**
-                     * IP版本号，支持IPv4和IPv6，默认为IPv4。
+                     * IP版本号，仅支持IPv4。
                      */
                     std::string m_ipVersion;
                     bool m_ipVersionHasBeenSet;

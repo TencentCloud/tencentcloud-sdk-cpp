@@ -480,6 +480,31 @@ namespace TencentCloud
                      */
                     bool MachineExtraInfoHasBeenSet() const;
 
+                    /**
+                     * 获取cpu负载读数（仅linux系统有效）
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return CpuLoadNum cpu负载读数（仅linux系统有效）
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::string GetCpuLoadNum() const;
+
+                    /**
+                     * 设置cpu负载读数（仅linux系统有效）
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _cpuLoadNum cpu负载读数（仅linux系统有效）
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetCpuLoadNum(const std::string& _cpuLoadNum);
+
+                    /**
+                     * 判断参数 CpuLoadNum 是否已赋值
+                     * @return CpuLoadNum 是否已赋值
+                     * 
+                     */
+                    bool CpuLoadNumHasBeenSet() const;
+
                 private:
 
                     /**
@@ -604,6 +629,13 @@ namespace TencentCloud
                      */
                     MachineExtraInfo m_machineExtraInfo;
                     bool m_machineExtraInfoHasBeenSet;
+
+                    /**
+                     * cpu负载读数（仅linux系统有效）
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_cpuLoadNum;
+                    bool m_cpuLoadNumHasBeenSet;
 
                 };
             }

@@ -455,6 +455,56 @@ namespace TencentCloud
                      */
                     bool GroupIdHasBeenSet() const;
 
+                    /**
+                     * 获取支持的TLS版本
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return TLSSupportVersion 支持的TLS版本
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::vector<std::string> GetTLSSupportVersion() const;
+
+                    /**
+                     * 设置支持的TLS版本
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _tLSSupportVersion 支持的TLS版本
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetTLSSupportVersion(const std::vector<std::string>& _tLSSupportVersion);
+
+                    /**
+                     * 判断参数 TLSSupportVersion 是否已赋值
+                     * @return TLSSupportVersion 是否已赋值
+                     * 
+                     */
+                    bool TLSSupportVersionHasBeenSet() const;
+
+                    /**
+                     * 获取支持的TLS密码套件
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return TLSCiphers 支持的TLS密码套件
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::string GetTLSCiphers() const;
+
+                    /**
+                     * 设置支持的TLS密码套件
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _tLSCiphers 支持的TLS密码套件
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetTLSCiphers(const std::string& _tLSCiphers);
+
+                    /**
+                     * 判断参数 TLSCiphers 是否已赋值
+                     * @return TLSCiphers 是否已赋值
+                     * 
+                     */
+                    bool TLSCiphersHasBeenSet() const;
+
                 private:
 
                     /**
@@ -570,6 +620,20 @@ namespace TencentCloud
                      */
                     std::string m_groupId;
                     bool m_groupIdHasBeenSet;
+
+                    /**
+                     * 支持的TLS版本
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::vector<std::string> m_tLSSupportVersion;
+                    bool m_tLSSupportVersionHasBeenSet;
+
+                    /**
+                     * 支持的TLS密码套件
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_tLSCiphers;
+                    bool m_tLSCiphersHasBeenSet;
 
                 };
             }

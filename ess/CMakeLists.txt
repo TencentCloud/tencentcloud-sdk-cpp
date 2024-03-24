@@ -249,6 +249,7 @@ set(ess_public_header_model
   include/tencentcloud/ess/v20201111/model/DescribeExtendedServiceAuthInfosResponse.h
   include/tencentcloud/ess/v20201111/model/CcInfo.h
   include/tencentcloud/ess/v20201111/model/IntentionQuestion.h
+  include/tencentcloud/ess/v20201111/model/CreateResultPageConfig.h
   )
 
 set(ess_src
@@ -483,6 +484,7 @@ set(ess_src
   src/v20201111/model/DescribeExtendedServiceAuthInfosResponse.cpp
   src/v20201111/model/CcInfo.cpp
   src/v20201111/model/IntentionQuestion.cpp
+  src/v20201111/model/CreateResultPageConfig.cpp
   )
 
 set(ess_include

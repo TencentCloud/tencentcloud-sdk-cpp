@@ -56,7 +56,8 @@ ProxyInfo::ProxyInfo() :
     m_http3SupportedHasBeenSet(false),
     m_inBanBlacklistHasBeenSet(false),
     m_featureBitmapHasBeenSet(false),
-    m_isAutoScaleProxyHasBeenSet(false)
+    m_isAutoScaleProxyHasBeenSet(false),
+    m_isSupportTLSChoiceHasBeenSet(false)
 {
 }
 
@@ -468,6 +469,16 @@ CoreInternalOutcome ProxyInfo::Deserialize(const rapidjson::Value &value)
         m_isAutoScaleProxyHasBeenSet = true;
     }
 
+    if (value.HasMember("IsSupportTLSChoice") && !value["IsSupportTLSChoice"].IsNull())
+    {
+        if (!value["IsSupportTLSChoice"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `ProxyInfo.IsSupportTLSChoice` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_isSupportTLSChoice = value["IsSupportTLSChoice"].GetInt64();
+        m_isSupportTLSChoiceHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -792,6 +803,14 @@ void ProxyInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Alloc
         string key = "IsAutoScaleProxy";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_isAutoScaleProxy, allocator);
+    }
+
+    if (m_isSupportTLSChoiceHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "IsSupportTLSChoice";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_isSupportTLSChoice, allocator);
     }
 
 }
@@ -1371,5 +1390,21 @@ void ProxyInfo::SetIsAutoScaleProxy(const int64_t& _isAutoScaleProxy)
 bool ProxyInfo::IsAutoScaleProxyHasBeenSet() const
 {
     return m_isAutoScaleProxyHasBeenSet;
+}
+
+int64_t ProxyInfo::GetIsSupportTLSChoice() const
+{
+    return m_isSupportTLSChoice;
+}
+
+void ProxyInfo::SetIsSupportTLSChoice(const int64_t& _isSupportTLSChoice)
+{
+    m_isSupportTLSChoice = _isSupportTLSChoice;
+    m_isSupportTLSChoiceHasBeenSet = true;
+}
+
+bool ProxyInfo::IsSupportTLSChoiceHasBeenSet() const
+{
+    return m_isSupportTLSChoiceHasBeenSet;
 }
 

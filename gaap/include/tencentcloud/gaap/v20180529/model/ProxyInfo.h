@@ -997,6 +997,39 @@ CrossBorder表示跨境通道。
                      */
                     bool IsAutoScaleProxyHasBeenSet() const;
 
+                    /**
+                     * 获取是否允许设置TLS配置
+0表示不支持；
+1表示支持。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return IsSupportTLSChoice 是否允许设置TLS配置
+0表示不支持；
+1表示支持。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    int64_t GetIsSupportTLSChoice() const;
+
+                    /**
+                     * 设置是否允许设置TLS配置
+0表示不支持；
+1表示支持。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _isSupportTLSChoice 是否允许设置TLS配置
+0表示不支持；
+1表示支持。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetIsSupportTLSChoice(const int64_t& _isSupportTLSChoice);
+
+                    /**
+                     * 判断参数 IsSupportTLSChoice 是否已赋值
+                     * @return IsSupportTLSChoice 是否已赋值
+                     * 
+                     */
+                    bool IsSupportTLSChoiceHasBeenSet() const;
+
                 private:
 
                     /**
@@ -1262,6 +1295,15 @@ CrossBorder表示跨境通道。
                      */
                     int64_t m_isAutoScaleProxy;
                     bool m_isAutoScaleProxyHasBeenSet;
+
+                    /**
+                     * 是否允许设置TLS配置
+0表示不支持；
+1表示支持。
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    int64_t m_isSupportTLSChoice;
+                    bool m_isSupportTLSChoiceHasBeenSet;
 
                 };
             }

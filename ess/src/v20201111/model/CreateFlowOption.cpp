@@ -29,7 +29,12 @@ CreateFlowOption::CreateFlowOption() :
     m_canSkipAddApproverHasBeenSet(false),
     m_skipUploadFileHasBeenSet(false),
     m_forbidEditFillComponentHasBeenSet(false),
-    m_customCreateFlowDescriptionHasBeenSet(false)
+    m_customCreateFlowDescriptionHasBeenSet(false),
+    m_forbidAddApproverHasBeenSet(false),
+    m_forbidEditFlowPropertiesHasBeenSet(false),
+    m_hideComponentTypesHasBeenSet(false),
+    m_showComponentTypesHasBeenSet(false),
+    m_resultPageConfigHasBeenSet(false)
 {
 }
 
@@ -128,6 +133,72 @@ CoreInternalOutcome CreateFlowOption::Deserialize(const rapidjson::Value &value)
         m_customCreateFlowDescriptionHasBeenSet = true;
     }
 
+    if (value.HasMember("ForbidAddApprover") && !value["ForbidAddApprover"].IsNull())
+    {
+        if (!value["ForbidAddApprover"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `CreateFlowOption.ForbidAddApprover` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_forbidAddApprover = string(value["ForbidAddApprover"].GetString());
+        m_forbidAddApproverHasBeenSet = true;
+    }
+
+    if (value.HasMember("ForbidEditFlowProperties") && !value["ForbidEditFlowProperties"].IsNull())
+    {
+        if (!value["ForbidEditFlowProperties"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `CreateFlowOption.ForbidEditFlowProperties` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_forbidEditFlowProperties = string(value["ForbidEditFlowProperties"].GetString());
+        m_forbidEditFlowPropertiesHasBeenSet = true;
+    }
+
+    if (value.HasMember("HideComponentTypes") && !value["HideComponentTypes"].IsNull())
+    {
+        if (!value["HideComponentTypes"].IsArray())
+            return CoreInternalOutcome(Core::Error("response `CreateFlowOption.HideComponentTypes` is not array type"));
+
+        const rapidjson::Value &tmpValue = value["HideComponentTypes"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            m_hideComponentTypes.push_back((*itr).GetString());
+        }
+        m_hideComponentTypesHasBeenSet = true;
+    }
+
+    if (value.HasMember("ShowComponentTypes") && !value["ShowComponentTypes"].IsNull())
+    {
+        if (!value["ShowComponentTypes"].IsArray())
+            return CoreInternalOutcome(Core::Error("response `CreateFlowOption.ShowComponentTypes` is not array type"));
+
+        const rapidjson::Value &tmpValue = value["ShowComponentTypes"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            m_showComponentTypes.push_back((*itr).GetString());
+        }
+        m_showComponentTypesHasBeenSet = true;
+    }
+
+    if (value.HasMember("ResultPageConfig") && !value["ResultPageConfig"].IsNull())
+    {
+        if (!value["ResultPageConfig"].IsArray())
+            return CoreInternalOutcome(Core::Error("response `CreateFlowOption.ResultPageConfig` is not array type"));
+
+        const rapidjson::Value &tmpValue = value["ResultPageConfig"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            CreateResultPageConfig item;
+            CoreInternalOutcome outcome = item.Deserialize(*itr);
+            if (!outcome.IsSuccess())
+            {
+                outcome.GetError().SetRequestId(requestId);
+                return outcome;
+            }
+            m_resultPageConfig.push_back(item);
+        }
+        m_resultPageConfigHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -205,6 +276,63 @@ void CreateFlowOption::ToJsonObject(rapidjson::Value &value, rapidjson::Document
         string key = "CustomCreateFlowDescription";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_customCreateFlowDescription.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_forbidAddApproverHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ForbidAddApprover";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_forbidAddApprover.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_forbidEditFlowPropertiesHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ForbidEditFlowProperties";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_forbidEditFlowProperties.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_hideComponentTypesHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "HideComponentTypes";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        for (auto itr = m_hideComponentTypes.begin(); itr != m_hideComponentTypes.end(); ++itr)
+        {
+            value[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
+        }
+    }
+
+    if (m_showComponentTypesHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ShowComponentTypes";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        for (auto itr = m_showComponentTypes.begin(); itr != m_showComponentTypes.end(); ++itr)
+        {
+            value[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
+        }
+    }
+
+    if (m_resultPageConfigHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ResultPageConfig";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_resultPageConfig.begin(); itr != m_resultPageConfig.end(); ++itr, ++i)
+        {
+            value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(value[key.c_str()][i], allocator);
+        }
     }
 
 }
@@ -352,5 +480,85 @@ void CreateFlowOption::SetCustomCreateFlowDescription(const string& _customCreat
 bool CreateFlowOption::CustomCreateFlowDescriptionHasBeenSet() const
 {
     return m_customCreateFlowDescriptionHasBeenSet;
+}
+
+string CreateFlowOption::GetForbidAddApprover() const
+{
+    return m_forbidAddApprover;
+}
+
+void CreateFlowOption::SetForbidAddApprover(const string& _forbidAddApprover)
+{
+    m_forbidAddApprover = _forbidAddApprover;
+    m_forbidAddApproverHasBeenSet = true;
+}
+
+bool CreateFlowOption::ForbidAddApproverHasBeenSet() const
+{
+    return m_forbidAddApproverHasBeenSet;
+}
+
+string CreateFlowOption::GetForbidEditFlowProperties() const
+{
+    return m_forbidEditFlowProperties;
+}
+
+void CreateFlowOption::SetForbidEditFlowProperties(const string& _forbidEditFlowProperties)
+{
+    m_forbidEditFlowProperties = _forbidEditFlowProperties;
+    m_forbidEditFlowPropertiesHasBeenSet = true;
+}
+
+bool CreateFlowOption::ForbidEditFlowPropertiesHasBeenSet() const
+{
+    return m_forbidEditFlowPropertiesHasBeenSet;
+}
+
+vector<string> CreateFlowOption::GetHideComponentTypes() const
+{
+    return m_hideComponentTypes;
+}
+
+void CreateFlowOption::SetHideComponentTypes(const vector<string>& _hideComponentTypes)
+{
+    m_hideComponentTypes = _hideComponentTypes;
+    m_hideComponentTypesHasBeenSet = true;
+}
+
+bool CreateFlowOption::HideComponentTypesHasBeenSet() const
+{
+    return m_hideComponentTypesHasBeenSet;
+}
+
+vector<string> CreateFlowOption::GetShowComponentTypes() const
+{
+    return m_showComponentTypes;
+}
+
+void CreateFlowOption::SetShowComponentTypes(const vector<string>& _showComponentTypes)
+{
+    m_showComponentTypes = _showComponentTypes;
+    m_showComponentTypesHasBeenSet = true;
+}
+
+bool CreateFlowOption::ShowComponentTypesHasBeenSet() const
+{
+    return m_showComponentTypesHasBeenSet;
+}
+
+vector<CreateResultPageConfig> CreateFlowOption::GetResultPageConfig() const
+{
+    return m_resultPageConfig;
+}
+
+void CreateFlowOption::SetResultPageConfig(const vector<CreateResultPageConfig>& _resultPageConfig)
+{
+    m_resultPageConfig = _resultPageConfig;
+    m_resultPageConfigHasBeenSet = true;
+}
+
+bool CreateFlowOption::ResultPageConfigHasBeenSet() const
+{
+    return m_resultPageConfigHasBeenSet;
 }
 

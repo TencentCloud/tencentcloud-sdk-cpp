@@ -576,6 +576,39 @@ namespace TencentCloud
                      */
                     bool FeatureBitmapHasBeenSet() const;
 
+                    /**
+                     * 获取是否支持设置TSL设置
+0表示不支持；
+1表示支持。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return IsSupportTLSChoice 是否支持设置TSL设置
+0表示不支持；
+1表示支持。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    uint64_t GetIsSupportTLSChoice() const;
+
+                    /**
+                     * 设置是否支持设置TSL设置
+0表示不支持；
+1表示支持。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _isSupportTLSChoice 是否支持设置TSL设置
+0表示不支持；
+1表示支持。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetIsSupportTLSChoice(const uint64_t& _isSupportTLSChoice);
+
+                    /**
+                     * 判断参数 IsSupportTLSChoice 是否已赋值
+                     * @return IsSupportTLSChoice 是否已赋值
+                     * 
+                     */
+                    bool IsSupportTLSChoiceHasBeenSet() const;
+
                 private:
 
                     /**
@@ -724,6 +757,15 @@ namespace TencentCloud
                      */
                     int64_t m_featureBitmap;
                     bool m_featureBitmapHasBeenSet;
+
+                    /**
+                     * 是否支持设置TSL设置
+0表示不支持；
+1表示支持。
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    uint64_t m_isSupportTLSChoice;
+                    bool m_isSupportTLSChoiceHasBeenSet;
 
                 };
             }

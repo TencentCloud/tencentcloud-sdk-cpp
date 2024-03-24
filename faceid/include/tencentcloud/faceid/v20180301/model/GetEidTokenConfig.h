@@ -240,6 +240,27 @@ namespace TencentCloud
                      */
                     bool IsSupportHMTResidentPermitOCRHasBeenSet() const;
 
+                    /**
+                     * 获取用户语音回答过程中是否开启张嘴识别检测，默认不开启，仅在意愿核身问答模式中使用。
+                     * @return MouthOpenRecognition 用户语音回答过程中是否开启张嘴识别检测，默认不开启，仅在意愿核身问答模式中使用。
+                     * 
+                     */
+                    bool GetMouthOpenRecognition() const;
+
+                    /**
+                     * 设置用户语音回答过程中是否开启张嘴识别检测，默认不开启，仅在意愿核身问答模式中使用。
+                     * @param _mouthOpenRecognition 用户语音回答过程中是否开启张嘴识别检测，默认不开启，仅在意愿核身问答模式中使用。
+                     * 
+                     */
+                    void SetMouthOpenRecognition(const bool& _mouthOpenRecognition);
+
+                    /**
+                     * 判断参数 MouthOpenRecognition 是否已赋值
+                     * @return MouthOpenRecognition 是否已赋值
+                     * 
+                     */
+                    bool MouthOpenRecognitionHasBeenSet() const;
+
                 private:
 
                     /**
@@ -295,6 +316,12 @@ namespace TencentCloud
                      */
                     bool m_isSupportHMTResidentPermitOCR;
                     bool m_isSupportHMTResidentPermitOCRHasBeenSet;
+
+                    /**
+                     * 用户语音回答过程中是否开启张嘴识别检测，默认不开启，仅在意愿核身问答模式中使用。
+                     */
+                    bool m_mouthOpenRecognition;
+                    bool m_mouthOpenRecognitionHasBeenSet;
 
                 };
             }

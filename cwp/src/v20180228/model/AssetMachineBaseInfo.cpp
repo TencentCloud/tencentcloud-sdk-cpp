@@ -40,7 +40,8 @@ AssetMachineBaseInfo::AssetMachineBaseInfo() :
     m_updateTimeHasBeenSet(false),
     m_isNewHasBeenSet(false),
     m_firstTimeHasBeenSet(false),
-    m_machineExtraInfoHasBeenSet(false)
+    m_machineExtraInfoHasBeenSet(false),
+    m_cpuLoadNumHasBeenSet(false)
 {
 }
 
@@ -266,6 +267,16 @@ CoreInternalOutcome AssetMachineBaseInfo::Deserialize(const rapidjson::Value &va
         m_machineExtraInfoHasBeenSet = true;
     }
 
+    if (value.HasMember("CpuLoadNum") && !value["CpuLoadNum"].IsNull())
+    {
+        if (!value["CpuLoadNum"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `AssetMachineBaseInfo.CpuLoadNum` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_cpuLoadNum = string(value["CpuLoadNum"].GetString());
+        m_cpuLoadNumHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -439,6 +450,14 @@ void AssetMachineBaseInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Docu
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
         m_machineExtraInfo.ToJsonObject(value[key.c_str()], allocator);
+    }
+
+    if (m_cpuLoadNumHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "CpuLoadNum";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_cpuLoadNum.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -762,5 +781,21 @@ void AssetMachineBaseInfo::SetMachineExtraInfo(const MachineExtraInfo& _machineE
 bool AssetMachineBaseInfo::MachineExtraInfoHasBeenSet() const
 {
     return m_machineExtraInfoHasBeenSet;
+}
+
+string AssetMachineBaseInfo::GetCpuLoadNum() const
+{
+    return m_cpuLoadNum;
+}
+
+void AssetMachineBaseInfo::SetCpuLoadNum(const string& _cpuLoadNum)
+{
+    m_cpuLoadNum = _cpuLoadNum;
+    m_cpuLoadNumHasBeenSet = true;
+}
+
+bool AssetMachineBaseInfo::CpuLoadNumHasBeenSet() const
+{
+    return m_cpuLoadNumHasBeenSet;
 }
 

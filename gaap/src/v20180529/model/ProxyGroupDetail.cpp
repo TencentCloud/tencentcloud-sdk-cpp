@@ -40,7 +40,8 @@ ProxyGroupDetail::ProxyGroupDetail() :
     m_iPAddressVersionHasBeenSet(false),
     m_packageTypeHasBeenSet(false),
     m_http3SupportedHasBeenSet(false),
-    m_featureBitmapHasBeenSet(false)
+    m_featureBitmapHasBeenSet(false),
+    m_isSupportTLSChoiceHasBeenSet(false)
 {
 }
 
@@ -269,6 +270,16 @@ CoreInternalOutcome ProxyGroupDetail::Deserialize(const rapidjson::Value &value)
         m_featureBitmapHasBeenSet = true;
     }
 
+    if (value.HasMember("IsSupportTLSChoice") && !value["IsSupportTLSChoice"].IsNull())
+    {
+        if (!value["IsSupportTLSChoice"].IsUint64())
+        {
+            return CoreInternalOutcome(Core::Error("response `ProxyGroupDetail.IsSupportTLSChoice` IsUint64=false incorrectly").SetRequestId(requestId));
+        }
+        m_isSupportTLSChoice = value["IsSupportTLSChoice"].GetUint64();
+        m_isSupportTLSChoiceHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -447,6 +458,14 @@ void ProxyGroupDetail::ToJsonObject(rapidjson::Value &value, rapidjson::Document
         string key = "FeatureBitmap";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_featureBitmap, allocator);
+    }
+
+    if (m_isSupportTLSChoiceHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "IsSupportTLSChoice";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_isSupportTLSChoice, allocator);
     }
 
 }
@@ -770,5 +789,21 @@ void ProxyGroupDetail::SetFeatureBitmap(const int64_t& _featureBitmap)
 bool ProxyGroupDetail::FeatureBitmapHasBeenSet() const
 {
     return m_featureBitmapHasBeenSet;
+}
+
+uint64_t ProxyGroupDetail::GetIsSupportTLSChoice() const
+{
+    return m_isSupportTLSChoice;
+}
+
+void ProxyGroupDetail::SetIsSupportTLSChoice(const uint64_t& _isSupportTLSChoice)
+{
+    m_isSupportTLSChoice = _isSupportTLSChoice;
+    m_isSupportTLSChoiceHasBeenSet = true;
+}
+
+bool ProxyGroupDetail::IsSupportTLSChoiceHasBeenSet() const
+{
+    return m_isSupportTLSChoiceHasBeenSet;
 }
 

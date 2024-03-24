@@ -113,6 +113,27 @@ namespace TencentCloud
                     bool NoTransferHasBeenSet() const;
 
                     /**
+                     * 获取允许编辑签署人信息（嵌入式使用） 默认true-可以编辑 false-不可以编辑
+                     * @return CanEditApprover 允许编辑签署人信息（嵌入式使用） 默认true-可以编辑 false-不可以编辑
+                     * 
+                     */
+                    bool GetCanEditApprover() const;
+
+                    /**
+                     * 设置允许编辑签署人信息（嵌入式使用） 默认true-可以编辑 false-不可以编辑
+                     * @param _canEditApprover 允许编辑签署人信息（嵌入式使用） 默认true-可以编辑 false-不可以编辑
+                     * 
+                     */
+                    void SetCanEditApprover(const bool& _canEditApprover);
+
+                    /**
+                     * 判断参数 CanEditApprover 是否已赋值
+                     * @return CanEditApprover 是否已赋值
+                     * 
+                     */
+                    bool CanEditApproverHasBeenSet() const;
+
+                    /**
                      * 获取签署人信息补充类型，默认无需补充。
 
 <ul><li> **1** : ( 动态签署人（可发起合同后再补充签署人信息）注：`企业自动签不支持动态补充`</li>
@@ -213,6 +234,12 @@ namespace TencentCloud
                      */
                     bool m_noTransfer;
                     bool m_noTransferHasBeenSet;
+
+                    /**
+                     * 允许编辑签署人信息（嵌入式使用） 默认true-可以编辑 false-不可以编辑
+                     */
+                    bool m_canEditApprover;
+                    bool m_canEditApproverHasBeenSet;
 
                     /**
                      * 签署人信息补充类型，默认无需补充。

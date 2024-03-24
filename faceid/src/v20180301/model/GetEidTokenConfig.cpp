@@ -28,7 +28,8 @@ GetEidTokenConfig::GetEidTokenConfig() :
     m_intentionQuestionsHasBeenSet(false),
     m_intentionActionsHasBeenSet(false),
     m_intentionRecognitionHasBeenSet(false),
-    m_isSupportHMTResidentPermitOCRHasBeenSet(false)
+    m_isSupportHMTResidentPermitOCRHasBeenSet(false),
+    m_mouthOpenRecognitionHasBeenSet(false)
 {
 }
 
@@ -137,6 +138,16 @@ CoreInternalOutcome GetEidTokenConfig::Deserialize(const rapidjson::Value &value
         m_isSupportHMTResidentPermitOCRHasBeenSet = true;
     }
 
+    if (value.HasMember("MouthOpenRecognition") && !value["MouthOpenRecognition"].IsNull())
+    {
+        if (!value["MouthOpenRecognition"].IsBool())
+        {
+            return CoreInternalOutcome(Core::Error("response `GetEidTokenConfig.MouthOpenRecognition` IsBool=false incorrectly").SetRequestId(requestId));
+        }
+        m_mouthOpenRecognition = value["MouthOpenRecognition"].GetBool();
+        m_mouthOpenRecognitionHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -220,6 +231,14 @@ void GetEidTokenConfig::ToJsonObject(rapidjson::Value &value, rapidjson::Documen
         string key = "IsSupportHMTResidentPermitOCR";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_isSupportHMTResidentPermitOCR, allocator);
+    }
+
+    if (m_mouthOpenRecognitionHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "MouthOpenRecognition";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_mouthOpenRecognition, allocator);
     }
 
 }
@@ -351,5 +370,21 @@ void GetEidTokenConfig::SetIsSupportHMTResidentPermitOCR(const bool& _isSupportH
 bool GetEidTokenConfig::IsSupportHMTResidentPermitOCRHasBeenSet() const
 {
     return m_isSupportHMTResidentPermitOCRHasBeenSet;
+}
+
+bool GetEidTokenConfig::GetMouthOpenRecognition() const
+{
+    return m_mouthOpenRecognition;
+}
+
+void GetEidTokenConfig::SetMouthOpenRecognition(const bool& _mouthOpenRecognition)
+{
+    m_mouthOpenRecognition = _mouthOpenRecognition;
+    m_mouthOpenRecognitionHasBeenSet = true;
+}
+
+bool GetEidTokenConfig::MouthOpenRecognitionHasBeenSet() const
+{
+    return m_mouthOpenRecognitionHasBeenSet;
 }
 

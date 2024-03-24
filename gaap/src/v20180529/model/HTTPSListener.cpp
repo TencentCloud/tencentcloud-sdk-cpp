@@ -36,7 +36,9 @@ HTTPSListener::HTTPSListener() :
     m_polyClientCertificateAliasInfoHasBeenSet(false),
     m_http3SupportedHasBeenSet(false),
     m_proxyIdHasBeenSet(false),
-    m_groupIdHasBeenSet(false)
+    m_groupIdHasBeenSet(false),
+    m_tLSSupportVersionHasBeenSet(false),
+    m_tLSCiphersHasBeenSet(false)
 {
 }
 
@@ -215,6 +217,29 @@ CoreInternalOutcome HTTPSListener::Deserialize(const rapidjson::Value &value)
         m_groupIdHasBeenSet = true;
     }
 
+    if (value.HasMember("TLSSupportVersion") && !value["TLSSupportVersion"].IsNull())
+    {
+        if (!value["TLSSupportVersion"].IsArray())
+            return CoreInternalOutcome(Core::Error("response `HTTPSListener.TLSSupportVersion` is not array type"));
+
+        const rapidjson::Value &tmpValue = value["TLSSupportVersion"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            m_tLSSupportVersion.push_back((*itr).GetString());
+        }
+        m_tLSSupportVersionHasBeenSet = true;
+    }
+
+    if (value.HasMember("TLSCiphers") && !value["TLSCiphers"].IsNull())
+    {
+        if (!value["TLSCiphers"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `HTTPSListener.TLSCiphers` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_tLSCiphers = string(value["TLSCiphers"].GetString());
+        m_tLSCiphersHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -355,6 +380,27 @@ void HTTPSListener::ToJsonObject(rapidjson::Value &value, rapidjson::Document::A
         string key = "GroupId";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_groupId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_tLSSupportVersionHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "TLSSupportVersion";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        for (auto itr = m_tLSSupportVersion.begin(); itr != m_tLSSupportVersion.end(); ++itr)
+        {
+            value[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
+        }
+    }
+
+    if (m_tLSCiphersHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "TLSCiphers";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_tLSCiphers.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -614,5 +660,37 @@ void HTTPSListener::SetGroupId(const string& _groupId)
 bool HTTPSListener::GroupIdHasBeenSet() const
 {
     return m_groupIdHasBeenSet;
+}
+
+vector<string> HTTPSListener::GetTLSSupportVersion() const
+{
+    return m_tLSSupportVersion;
+}
+
+void HTTPSListener::SetTLSSupportVersion(const vector<string>& _tLSSupportVersion)
+{
+    m_tLSSupportVersion = _tLSSupportVersion;
+    m_tLSSupportVersionHasBeenSet = true;
+}
+
+bool HTTPSListener::TLSSupportVersionHasBeenSet() const
+{
+    return m_tLSSupportVersionHasBeenSet;
+}
+
+string HTTPSListener::GetTLSCiphers() const
+{
+    return m_tLSCiphers;
+}
+
+void HTTPSListener::SetTLSCiphers(const string& _tLSCiphers)
+{
+    m_tLSCiphers = _tLSCiphers;
+    m_tLSCiphersHasBeenSet = true;
+}
+
+bool HTTPSListener::TLSCiphersHasBeenSet() const
+{
+    return m_tLSCiphersHasBeenSet;
 }
 

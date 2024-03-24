@@ -23,6 +23,7 @@ using namespace std;
 ApproverOption::ApproverOption() :
     m_noRefuseHasBeenSet(false),
     m_noTransferHasBeenSet(false),
+    m_canEditApproverHasBeenSet(false),
     m_fillTypeHasBeenSet(false),
     m_flowReadLimitHasBeenSet(false)
 {
@@ -51,6 +52,16 @@ CoreInternalOutcome ApproverOption::Deserialize(const rapidjson::Value &value)
         }
         m_noTransfer = value["NoTransfer"].GetBool();
         m_noTransferHasBeenSet = true;
+    }
+
+    if (value.HasMember("CanEditApprover") && !value["CanEditApprover"].IsNull())
+    {
+        if (!value["CanEditApprover"].IsBool())
+        {
+            return CoreInternalOutcome(Core::Error("response `ApproverOption.CanEditApprover` IsBool=false incorrectly").SetRequestId(requestId));
+        }
+        m_canEditApprover = value["CanEditApprover"].GetBool();
+        m_canEditApproverHasBeenSet = true;
     }
 
     if (value.HasMember("FillType") && !value["FillType"].IsNull())
@@ -94,6 +105,14 @@ void ApproverOption::ToJsonObject(rapidjson::Value &value, rapidjson::Document::
         string key = "NoTransfer";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_noTransfer, allocator);
+    }
+
+    if (m_canEditApproverHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "CanEditApprover";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_canEditApprover, allocator);
     }
 
     if (m_fillTypeHasBeenSet)
@@ -145,6 +164,22 @@ void ApproverOption::SetNoTransfer(const bool& _noTransfer)
 bool ApproverOption::NoTransferHasBeenSet() const
 {
     return m_noTransferHasBeenSet;
+}
+
+bool ApproverOption::GetCanEditApprover() const
+{
+    return m_canEditApprover;
+}
+
+void ApproverOption::SetCanEditApprover(const bool& _canEditApprover)
+{
+    m_canEditApprover = _canEditApprover;
+    m_canEditApproverHasBeenSet = true;
+}
+
+bool ApproverOption::CanEditApproverHasBeenSet() const
+{
+    return m_canEditApproverHasBeenSet;
 }
 
 int64_t ApproverOption::GetFillType() const
