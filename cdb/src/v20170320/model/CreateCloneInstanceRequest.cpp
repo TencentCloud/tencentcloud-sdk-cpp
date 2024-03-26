@@ -43,7 +43,9 @@ CreateCloneInstanceRequest::CreateCloneInstanceRequest() :
     m_deployGroupIdHasBeenSet(false),
     m_dryRunHasBeenSet(false),
     m_cageIdHasBeenSet(false),
-    m_projectIdHasBeenSet(false)
+    m_projectIdHasBeenSet(false),
+    m_payTypeHasBeenSet(false),
+    m_periodHasBeenSet(false)
 {
 }
 
@@ -232,6 +234,22 @@ string CreateCloneInstanceRequest::ToJsonString() const
         string key = "ProjectId";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_projectId, allocator);
+    }
+
+    if (m_payTypeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "PayType";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_payType.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_periodHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Period";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_period, allocator);
     }
 
 
@@ -576,6 +594,38 @@ void CreateCloneInstanceRequest::SetProjectId(const uint64_t& _projectId)
 bool CreateCloneInstanceRequest::ProjectIdHasBeenSet() const
 {
     return m_projectIdHasBeenSet;
+}
+
+string CreateCloneInstanceRequest::GetPayType() const
+{
+    return m_payType;
+}
+
+void CreateCloneInstanceRequest::SetPayType(const string& _payType)
+{
+    m_payType = _payType;
+    m_payTypeHasBeenSet = true;
+}
+
+bool CreateCloneInstanceRequest::PayTypeHasBeenSet() const
+{
+    return m_payTypeHasBeenSet;
+}
+
+int64_t CreateCloneInstanceRequest::GetPeriod() const
+{
+    return m_period;
+}
+
+void CreateCloneInstanceRequest::SetPeriod(const int64_t& _period)
+{
+    m_period = _period;
+    m_periodHasBeenSet = true;
+}
+
+bool CreateCloneInstanceRequest::PeriodHasBeenSet() const
+{
+    return m_periodHasBeenSet;
 }
 
 

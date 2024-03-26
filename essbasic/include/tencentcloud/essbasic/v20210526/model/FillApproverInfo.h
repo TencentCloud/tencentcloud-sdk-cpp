@@ -289,6 +289,27 @@ namespace TencentCloud
                      */
                     bool ApproverIdCardNumberHasBeenSet() const;
 
+                    /**
+                     * 获取合同流程ID，补充合同组子合同动态签署人时必传。
+                     * @return FlowId 合同流程ID，补充合同组子合同动态签署人时必传。
+                     * 
+                     */
+                    std::string GetFlowId() const;
+
+                    /**
+                     * 设置合同流程ID，补充合同组子合同动态签署人时必传。
+                     * @param _flowId 合同流程ID，补充合同组子合同动态签署人时必传。
+                     * 
+                     */
+                    void SetFlowId(const std::string& _flowId);
+
+                    /**
+                     * 判断参数 FlowId 是否已赋值
+                     * @return FlowId 是否已赋值
+                     * 
+                     */
+                    bool FlowIdHasBeenSet() const;
+
                 private:
 
                     /**
@@ -357,6 +378,12 @@ namespace TencentCloud
                      */
                     std::string m_approverIdCardNumber;
                     bool m_approverIdCardNumberHasBeenSet;
+
+                    /**
+                     * 合同流程ID，补充合同组子合同动态签署人时必传。
+                     */
+                    std::string m_flowId;
+                    bool m_flowIdHasBeenSet;
 
                 };
             }

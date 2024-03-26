@@ -23,6 +23,7 @@
 #include <tencentcloud/core/AbstractModel.h>
 #include <tencentcloud/ess/v20201111/model/UserInfo.h>
 #include <tencentcloud/ess/v20201111/model/Agent.h>
+#include <tencentcloud/ess/v20201111/model/FlowGroupUrlInfo.h>
 
 
 namespace TencentCloud
@@ -474,6 +475,27 @@ namespace TencentCloud
                      */
                     bool RecipientIdHasBeenSet() const;
 
+                    /**
+                     * 获取合同组相关信息，指定合同组子合同和签署方的信息，用于补充动态签署人。
+                     * @return FlowGroupUrlInfo 合同组相关信息，指定合同组子合同和签署方的信息，用于补充动态签署人。
+                     * 
+                     */
+                    FlowGroupUrlInfo GetFlowGroupUrlInfo() const;
+
+                    /**
+                     * 设置合同组相关信息，指定合同组子合同和签署方的信息，用于补充动态签署人。
+                     * @param _flowGroupUrlInfo 合同组相关信息，指定合同组子合同和签署方的信息，用于补充动态签署人。
+                     * 
+                     */
+                    void SetFlowGroupUrlInfo(const FlowGroupUrlInfo& _flowGroupUrlInfo);
+
+                    /**
+                     * 判断参数 FlowGroupUrlInfo 是否已赋值
+                     * @return FlowGroupUrlInfo 是否已赋值
+                     * 
+                     */
+                    bool FlowGroupUrlInfoHasBeenSet() const;
+
                 private:
 
                     /**
@@ -593,6 +615,12 @@ namespace TencentCloud
                      */
                     std::string m_recipientId;
                     bool m_recipientIdHasBeenSet;
+
+                    /**
+                     * 合同组相关信息，指定合同组子合同和签署方的信息，用于补充动态签署人。
+                     */
+                    FlowGroupUrlInfo m_flowGroupUrlInfo;
+                    bool m_flowGroupUrlInfoHasBeenSet;
 
                 };
             }

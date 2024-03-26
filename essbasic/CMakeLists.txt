@@ -26,6 +26,7 @@ set(essbasic_public_header_model
   include/tencentcloud/essbasic/v20210526/model/Component.h
   include/tencentcloud/essbasic/v20210526/model/ChannelDeleteSealPoliciesRequest.h
   include/tencentcloud/essbasic/v20210526/model/ChannelBatchCancelFlowsResponse.h
+  include/tencentcloud/essbasic/v20210526/model/FlowGroupUrlInfo.h
   include/tencentcloud/essbasic/v20210526/model/ChannelDescribeSignFaceVideoRequest.h
   include/tencentcloud/essbasic/v20210526/model/ChannelDisableUserAutoSignResponse.h
   include/tencentcloud/essbasic/v20210526/model/DescribeExtendedServiceAuthDetailResponse.h
@@ -93,6 +94,7 @@ set(essbasic_public_header_model
   include/tencentcloud/essbasic/v20210526/model/ChannelCreateOrganizationBatchSignUrlRequest.h
   include/tencentcloud/essbasic/v20210526/model/GetDownloadFlowUrlResponse.h
   include/tencentcloud/essbasic/v20210526/model/ChannelRole.h
+  include/tencentcloud/essbasic/v20210526/model/FlowGroupApproverInfo.h
   include/tencentcloud/essbasic/v20210526/model/Recipient.h
   include/tencentcloud/essbasic/v20210526/model/DescribeTemplatesResponse.h
   include/tencentcloud/essbasic/v20210526/model/AutoSignConfig.h
@@ -207,6 +209,7 @@ set(essbasic_public_header_model
   include/tencentcloud/essbasic/v20210526/model/ChannelBatchCancelFlowsRequest.h
   include/tencentcloud/essbasic/v20210526/model/CreateChannelOrganizationInfoChangeUrlRequest.h
   include/tencentcloud/essbasic/v20210526/model/ChannelModifyRoleRequest.h
+  include/tencentcloud/essbasic/v20210526/model/FlowGroupApprovers.h
   include/tencentcloud/essbasic/v20210526/model/ModifyFlowDeadlineRequest.h
   include/tencentcloud/essbasic/v20210526/model/ChannelUpdateSealStatusRequest.h
   include/tencentcloud/essbasic/v20210526/model/ChannelCreateFlowGroupByTemplatesRequest.h
@@ -378,6 +381,7 @@ set(essbasic_src
   src/v20210526/model/Component.cpp
   src/v20210526/model/ChannelDeleteSealPoliciesRequest.cpp
   src/v20210526/model/ChannelBatchCancelFlowsResponse.cpp
+  src/v20210526/model/FlowGroupUrlInfo.cpp
   src/v20210526/model/ChannelDescribeSignFaceVideoRequest.cpp
   src/v20210526/model/ChannelDisableUserAutoSignResponse.cpp
   src/v20210526/model/DescribeExtendedServiceAuthDetailResponse.cpp
@@ -445,6 +449,7 @@ set(essbasic_src
   src/v20210526/model/ChannelCreateOrganizationBatchSignUrlRequest.cpp
   src/v20210526/model/GetDownloadFlowUrlResponse.cpp
   src/v20210526/model/ChannelRole.cpp
+  src/v20210526/model/FlowGroupApproverInfo.cpp
   src/v20210526/model/Recipient.cpp
   src/v20210526/model/DescribeTemplatesResponse.cpp
   src/v20210526/model/AutoSignConfig.cpp
@@ -559,6 +564,7 @@ set(essbasic_src
   src/v20210526/model/ChannelBatchCancelFlowsRequest.cpp
   src/v20210526/model/CreateChannelOrganizationInfoChangeUrlRequest.cpp
   src/v20210526/model/ChannelModifyRoleRequest.cpp
+  src/v20210526/model/FlowGroupApprovers.cpp
   src/v20210526/model/ModifyFlowDeadlineRequest.cpp
   src/v20210526/model/ChannelUpdateSealStatusRequest.cpp
   src/v20210526/model/ChannelCreateFlowGroupByTemplatesRequest.cpp

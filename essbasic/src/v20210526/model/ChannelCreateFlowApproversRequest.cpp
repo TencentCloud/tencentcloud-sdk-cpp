@@ -24,10 +24,11 @@ using namespace std;
 
 ChannelCreateFlowApproversRequest::ChannelCreateFlowApproversRequest() :
     m_agentHasBeenSet(false),
-    m_flowIdHasBeenSet(false),
     m_approversHasBeenSet(false),
+    m_flowIdHasBeenSet(false),
     m_fillApproverTypeHasBeenSet(false),
-    m_operatorHasBeenSet(false)
+    m_operatorHasBeenSet(false),
+    m_flowGroupIdHasBeenSet(false)
 {
 }
 
@@ -47,14 +48,6 @@ string ChannelCreateFlowApproversRequest::ToJsonString() const
         m_agent.ToJsonObject(d[key.c_str()], allocator);
     }
 
-    if (m_flowIdHasBeenSet)
-    {
-        rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "FlowId";
-        iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, rapidjson::Value(m_flowId.c_str(), allocator).Move(), allocator);
-    }
-
     if (m_approversHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
@@ -68,6 +61,14 @@ string ChannelCreateFlowApproversRequest::ToJsonString() const
             d[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
             (*itr).ToJsonObject(d[key.c_str()][i], allocator);
         }
+    }
+
+    if (m_flowIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "FlowId";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_flowId.c_str(), allocator).Move(), allocator);
     }
 
     if (m_fillApproverTypeHasBeenSet)
@@ -85,6 +86,14 @@ string ChannelCreateFlowApproversRequest::ToJsonString() const
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
         m_operator.ToJsonObject(d[key.c_str()], allocator);
+    }
+
+    if (m_flowGroupIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "FlowGroupId";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_flowGroupId.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -111,22 +120,6 @@ bool ChannelCreateFlowApproversRequest::AgentHasBeenSet() const
     return m_agentHasBeenSet;
 }
 
-string ChannelCreateFlowApproversRequest::GetFlowId() const
-{
-    return m_flowId;
-}
-
-void ChannelCreateFlowApproversRequest::SetFlowId(const string& _flowId)
-{
-    m_flowId = _flowId;
-    m_flowIdHasBeenSet = true;
-}
-
-bool ChannelCreateFlowApproversRequest::FlowIdHasBeenSet() const
-{
-    return m_flowIdHasBeenSet;
-}
-
 vector<FillApproverInfo> ChannelCreateFlowApproversRequest::GetApprovers() const
 {
     return m_approvers;
@@ -141,6 +134,22 @@ void ChannelCreateFlowApproversRequest::SetApprovers(const vector<FillApproverIn
 bool ChannelCreateFlowApproversRequest::ApproversHasBeenSet() const
 {
     return m_approversHasBeenSet;
+}
+
+string ChannelCreateFlowApproversRequest::GetFlowId() const
+{
+    return m_flowId;
+}
+
+void ChannelCreateFlowApproversRequest::SetFlowId(const string& _flowId)
+{
+    m_flowId = _flowId;
+    m_flowIdHasBeenSet = true;
+}
+
+bool ChannelCreateFlowApproversRequest::FlowIdHasBeenSet() const
+{
+    return m_flowIdHasBeenSet;
 }
 
 int64_t ChannelCreateFlowApproversRequest::GetFillApproverType() const
@@ -173,6 +182,22 @@ void ChannelCreateFlowApproversRequest::SetOperator(const UserInfo& _operator)
 bool ChannelCreateFlowApproversRequest::OperatorHasBeenSet() const
 {
     return m_operatorHasBeenSet;
+}
+
+string ChannelCreateFlowApproversRequest::GetFlowGroupId() const
+{
+    return m_flowGroupId;
+}
+
+void ChannelCreateFlowApproversRequest::SetFlowGroupId(const string& _flowGroupId)
+{
+    m_flowGroupId = _flowGroupId;
+    m_flowGroupIdHasBeenSet = true;
+}
+
+bool ChannelCreateFlowApproversRequest::FlowGroupIdHasBeenSet() const
+{
+    return m_flowGroupIdHasBeenSet;
 }
 
 

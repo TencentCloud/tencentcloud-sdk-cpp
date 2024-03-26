@@ -25,7 +25,8 @@ using namespace std;
 
 CreateFlowGroupByFilesResponse::CreateFlowGroupByFilesResponse() :
     m_flowGroupIdHasBeenSet(false),
-    m_flowIdsHasBeenSet(false)
+    m_flowIdsHasBeenSet(false),
+    m_approversHasBeenSet(false)
 {
 }
 
@@ -86,6 +87,26 @@ CoreInternalOutcome CreateFlowGroupByFilesResponse::Deserialize(const string &pa
         m_flowIdsHasBeenSet = true;
     }
 
+    if (rsp.HasMember("Approvers") && !rsp["Approvers"].IsNull())
+    {
+        if (!rsp["Approvers"].IsArray())
+            return CoreInternalOutcome(Core::Error("response `Approvers` is not array type"));
+
+        const rapidjson::Value &tmpValue = rsp["Approvers"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            FlowGroupApprovers item;
+            CoreInternalOutcome outcome = item.Deserialize(*itr);
+            if (!outcome.IsSuccess())
+            {
+                outcome.GetError().SetRequestId(requestId);
+                return outcome;
+            }
+            m_approvers.push_back(item);
+        }
+        m_approversHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -114,6 +135,21 @@ string CreateFlowGroupByFilesResponse::ToJsonString() const
         for (auto itr = m_flowIds.begin(); itr != m_flowIds.end(); ++itr)
         {
             value[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
+        }
+    }
+
+    if (m_approversHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Approvers";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_approvers.begin(); itr != m_approvers.end(); ++itr, ++i)
+        {
+            value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(value[key.c_str()][i], allocator);
         }
     }
 
@@ -147,6 +183,16 @@ vector<string> CreateFlowGroupByFilesResponse::GetFlowIds() const
 bool CreateFlowGroupByFilesResponse::FlowIdsHasBeenSet() const
 {
     return m_flowIdsHasBeenSet;
+}
+
+vector<FlowGroupApprovers> CreateFlowGroupByFilesResponse::GetApprovers() const
+{
+    return m_approvers;
+}
+
+bool CreateFlowGroupByFilesResponse::ApproversHasBeenSet() const
+{
+    return m_approversHasBeenSet;
 }
 
 

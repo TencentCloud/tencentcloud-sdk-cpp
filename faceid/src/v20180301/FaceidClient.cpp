@@ -771,6 +771,49 @@ FaceidClient::GetFaceIdResultOutcomeCallable FaceidClient::GetFaceIdResultCallab
     return task->get_future();
 }
 
+FaceidClient::GetFaceIdRiskInfoOutcome FaceidClient::GetFaceIdRiskInfo(const GetFaceIdRiskInfoRequest &request)
+{
+    auto outcome = MakeRequest(request, "GetFaceIdRiskInfo");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        GetFaceIdRiskInfoResponse rsp = GetFaceIdRiskInfoResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return GetFaceIdRiskInfoOutcome(rsp);
+        else
+            return GetFaceIdRiskInfoOutcome(o.GetError());
+    }
+    else
+    {
+        return GetFaceIdRiskInfoOutcome(outcome.GetError());
+    }
+}
+
+void FaceidClient::GetFaceIdRiskInfoAsync(const GetFaceIdRiskInfoRequest& request, const GetFaceIdRiskInfoAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->GetFaceIdRiskInfo(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+FaceidClient::GetFaceIdRiskInfoOutcomeCallable FaceidClient::GetFaceIdRiskInfoCallable(const GetFaceIdRiskInfoRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<GetFaceIdRiskInfoOutcome()>>(
+        [this, request]()
+        {
+            return this->GetFaceIdRiskInfo(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 FaceidClient::GetFaceIdTokenOutcome FaceidClient::GetFaceIdToken(const GetFaceIdTokenRequest &request)
 {
     auto outcome = MakeRequest(request, "GetFaceIdToken");
@@ -807,6 +850,49 @@ FaceidClient::GetFaceIdTokenOutcomeCallable FaceidClient::GetFaceIdTokenCallable
         [this, request]()
         {
             return this->GetFaceIdToken(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+FaceidClient::GetFaceidRiskInfoTokenOutcome FaceidClient::GetFaceidRiskInfoToken(const GetFaceidRiskInfoTokenRequest &request)
+{
+    auto outcome = MakeRequest(request, "GetFaceidRiskInfoToken");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        GetFaceidRiskInfoTokenResponse rsp = GetFaceidRiskInfoTokenResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return GetFaceidRiskInfoTokenOutcome(rsp);
+        else
+            return GetFaceidRiskInfoTokenOutcome(o.GetError());
+    }
+    else
+    {
+        return GetFaceidRiskInfoTokenOutcome(outcome.GetError());
+    }
+}
+
+void FaceidClient::GetFaceidRiskInfoTokenAsync(const GetFaceidRiskInfoTokenRequest& request, const GetFaceidRiskInfoTokenAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->GetFaceidRiskInfoToken(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+FaceidClient::GetFaceidRiskInfoTokenOutcomeCallable FaceidClient::GetFaceidRiskInfoTokenCallable(const GetFaceidRiskInfoTokenRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<GetFaceidRiskInfoTokenOutcome()>>(
+        [this, request]()
+        {
+            return this->GetFaceidRiskInfoToken(request);
         }
     );
 

@@ -64,15 +64,15 @@ namespace TencentCloud
                     bool FolderNameHasBeenSet() const;
 
                     /**
-                     * 获取新建文件夹的父目录ID
-                     * @return ParentId 新建文件夹的父目录ID
+                     * 获取新建文件夹的父目录ID（根目录为"root"）
+                     * @return ParentId 新建文件夹的父目录ID（根目录为"root"）
                      * 
                      */
                     std::string GetParentId() const;
 
                     /**
-                     * 设置新建文件夹的父目录ID
-                     * @param _parentId 新建文件夹的父目录ID
+                     * 设置新建文件夹的父目录ID（根目录为"root"）
+                     * @param _parentId 新建文件夹的父目录ID（根目录为"root"）
                      * 
                      */
                     void SetParentId(const std::string& _parentId);
@@ -135,7 +135,7 @@ namespace TencentCloud
                     bool m_folderNameHasBeenSet;
 
                     /**
-                     * 新建文件夹的父目录ID
+                     * 新建文件夹的父目录ID（根目录为"root"）
                      */
                     std::string m_parentId;
                     bool m_parentIdHasBeenSet;

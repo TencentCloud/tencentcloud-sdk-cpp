@@ -25,6 +25,10 @@
 #include <tencentcloud/core/AsyncCallerContext.h>
 #include <tencentcloud/aiart/v20221229/model/ImageToImageRequest.h>
 #include <tencentcloud/aiart/v20221229/model/ImageToImageResponse.h>
+#include <tencentcloud/aiart/v20221229/model/QueryTextToImageProJobRequest.h>
+#include <tencentcloud/aiart/v20221229/model/QueryTextToImageProJobResponse.h>
+#include <tencentcloud/aiart/v20221229/model/SubmitTextToImageProJobRequest.h>
+#include <tencentcloud/aiart/v20221229/model/SubmitTextToImageProJobResponse.h>
 #include <tencentcloud/aiart/v20221229/model/TextToImageRequest.h>
 #include <tencentcloud/aiart/v20221229/model/TextToImageResponse.h>
 
@@ -44,6 +48,12 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::ImageToImageResponse> ImageToImageOutcome;
                 typedef std::future<ImageToImageOutcome> ImageToImageOutcomeCallable;
                 typedef std::function<void(const AiartClient*, const Model::ImageToImageRequest&, ImageToImageOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ImageToImageAsyncHandler;
+                typedef Outcome<Core::Error, Model::QueryTextToImageProJobResponse> QueryTextToImageProJobOutcome;
+                typedef std::future<QueryTextToImageProJobOutcome> QueryTextToImageProJobOutcomeCallable;
+                typedef std::function<void(const AiartClient*, const Model::QueryTextToImageProJobRequest&, QueryTextToImageProJobOutcome, const std::shared_ptr<const AsyncCallerContext>&)> QueryTextToImageProJobAsyncHandler;
+                typedef Outcome<Core::Error, Model::SubmitTextToImageProJobResponse> SubmitTextToImageProJobOutcome;
+                typedef std::future<SubmitTextToImageProJobOutcome> SubmitTextToImageProJobOutcomeCallable;
+                typedef std::function<void(const AiartClient*, const Model::SubmitTextToImageProJobRequest&, SubmitTextToImageProJobOutcome, const std::shared_ptr<const AsyncCallerContext>&)> SubmitTextToImageProJobAsyncHandler;
                 typedef Outcome<Core::Error, Model::TextToImageResponse> TextToImageOutcome;
                 typedef std::future<TextToImageOutcome> TextToImageOutcomeCallable;
                 typedef std::function<void(const AiartClient*, const Model::TextToImageRequest&, TextToImageOutcome, const std::shared_ptr<const AsyncCallerContext>&)> TextToImageAsyncHandler;
@@ -63,6 +73,30 @@ namespace TencentCloud
                 ImageToImageOutcome ImageToImage(const Model::ImageToImageRequest &request);
                 void ImageToImageAsync(const Model::ImageToImageRequest& request, const ImageToImageAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 ImageToImageOutcomeCallable ImageToImageCallable(const Model::ImageToImageRequest& request);
+
+                /**
+                 *文生图（高级版）接口基于高级版文生图大模型，将根据输入的文本描述，智能生成与之相关的结果图。分为提交任务和查询任务2个接口。
+提交任务：输入文本等，提交一个文生图（高级版）异步任务，获得任务 ID。
+查询任务：根据任务 ID 查询任务的处理状态、处理结果，任务处理完成后可获得生成图像结果。
+并发任务数（并发）说明：并发任务数指能同时处理的任务数量。文生图（高级版）默认提供1个并发任务数，代表最多能同时处理1个已提交的任务，上一个任务处理完毕后才能开始处理下一个任务。
+                 * @param req QueryTextToImageProJobRequest
+                 * @return QueryTextToImageProJobOutcome
+                 */
+                QueryTextToImageProJobOutcome QueryTextToImageProJob(const Model::QueryTextToImageProJobRequest &request);
+                void QueryTextToImageProJobAsync(const Model::QueryTextToImageProJobRequest& request, const QueryTextToImageProJobAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                QueryTextToImageProJobOutcomeCallable QueryTextToImageProJobCallable(const Model::QueryTextToImageProJobRequest& request);
+
+                /**
+                 *文生图（高级版）接口基于高级版文生图大模型，将根据输入的文本描述，智能生成与之相关的结果图。分为提交任务和查询任务2个接口。
+提交任务：输入文本等，提交一个文生图（高级版）异步任务，获得任务 ID。
+查询任务：根据任务 ID 查询任务的处理状态、处理结果，任务处理完成后可获得生成图像结果。
+并发任务数（并发）说明：并发任务数指能同时处理的任务数量。文生图（高级版）默认提供1个并发任务数，代表最多能同时处理1个已提交的任务，上一个任务处理完毕后才能开始处理下一个任务。
+                 * @param req SubmitTextToImageProJobRequest
+                 * @return SubmitTextToImageProJobOutcome
+                 */
+                SubmitTextToImageProJobOutcome SubmitTextToImageProJob(const Model::SubmitTextToImageProJobRequest &request);
+                void SubmitTextToImageProJobAsync(const Model::SubmitTextToImageProJobRequest& request, const SubmitTextToImageProJobAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                SubmitTextToImageProJobOutcomeCallable SubmitTextToImageProJobCallable(const Model::SubmitTextToImageProJobRequest& request);
 
                 /**
                  *智能文生图接口将根据输入的描述文本，智能生成与之相关的结果图。

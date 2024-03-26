@@ -71,35 +71,6 @@ namespace TencentCloud
                     bool OperatorHasBeenSet() const;
 
                     /**
-                     * 获取合同流程ID，为32位字符串。
-建议开发者妥善保存此流程ID，以便于顺利进行后续操作。
-可登录腾讯电子签控制台，在 "合同"->"合同中心" 中查看某个合同的FlowId(在页面中展示为合同ID)。
-                     * @return FlowId 合同流程ID，为32位字符串。
-建议开发者妥善保存此流程ID，以便于顺利进行后续操作。
-可登录腾讯电子签控制台，在 "合同"->"合同中心" 中查看某个合同的FlowId(在页面中展示为合同ID)。
-                     * 
-                     */
-                    std::string GetFlowId() const;
-
-                    /**
-                     * 设置合同流程ID，为32位字符串。
-建议开发者妥善保存此流程ID，以便于顺利进行后续操作。
-可登录腾讯电子签控制台，在 "合同"->"合同中心" 中查看某个合同的FlowId(在页面中展示为合同ID)。
-                     * @param _flowId 合同流程ID，为32位字符串。
-建议开发者妥善保存此流程ID，以便于顺利进行后续操作。
-可登录腾讯电子签控制台，在 "合同"->"合同中心" 中查看某个合同的FlowId(在页面中展示为合同ID)。
-                     * 
-                     */
-                    void SetFlowId(const std::string& _flowId);
-
-                    /**
-                     * 判断参数 FlowId 是否已赋值
-                     * @return FlowId 是否已赋值
-                     * 
-                     */
-                    bool FlowIdHasBeenSet() const;
-
-                    /**
                      * 获取补充企业签署人信息。
 
 - 如果发起方指定的补充签署人是企业微信签署人（ApproverSource=WEWORKAPP），则需要提供企业微信UserId进行补充；
@@ -135,6 +106,35 @@ namespace TencentCloud
                      * 
                      */
                     bool ApproversHasBeenSet() const;
+
+                    /**
+                     * 获取合同流程ID，为32位字符串。
+建议开发者妥善保存此流程ID，以便于顺利进行后续操作。
+可登录腾讯电子签控制台，在 "合同"->"合同中心" 中查看某个合同的FlowId(在页面中展示为合同ID)。
+                     * @return FlowId 合同流程ID，为32位字符串。
+建议开发者妥善保存此流程ID，以便于顺利进行后续操作。
+可登录腾讯电子签控制台，在 "合同"->"合同中心" 中查看某个合同的FlowId(在页面中展示为合同ID)。
+                     * 
+                     */
+                    std::string GetFlowId() const;
+
+                    /**
+                     * 设置合同流程ID，为32位字符串。
+建议开发者妥善保存此流程ID，以便于顺利进行后续操作。
+可登录腾讯电子签控制台，在 "合同"->"合同中心" 中查看某个合同的FlowId(在页面中展示为合同ID)。
+                     * @param _flowId 合同流程ID，为32位字符串。
+建议开发者妥善保存此流程ID，以便于顺利进行后续操作。
+可登录腾讯电子签控制台，在 "合同"->"合同中心" 中查看某个合同的FlowId(在页面中展示为合同ID)。
+                     * 
+                     */
+                    void SetFlowId(const std::string& _flowId);
+
+                    /**
+                     * 判断参数 FlowId 是否已赋值
+                     * @return FlowId 是否已赋值
+                     * 
+                     */
+                    bool FlowIdHasBeenSet() const;
 
                     /**
                      * 获取签署人信息补充方式
@@ -219,6 +219,27 @@ namespace TencentCloud
                      */
                     bool AgentHasBeenSet() const;
 
+                    /**
+                     * 获取合同流程组的组ID, 在合同流程组场景下，生成合同流程组的签署链接时需要赋值
+                     * @return FlowGroupId 合同流程组的组ID, 在合同流程组场景下，生成合同流程组的签署链接时需要赋值
+                     * 
+                     */
+                    std::string GetFlowGroupId() const;
+
+                    /**
+                     * 设置合同流程组的组ID, 在合同流程组场景下，生成合同流程组的签署链接时需要赋值
+                     * @param _flowGroupId 合同流程组的组ID, 在合同流程组场景下，生成合同流程组的签署链接时需要赋值
+                     * 
+                     */
+                    void SetFlowGroupId(const std::string& _flowGroupId);
+
+                    /**
+                     * 判断参数 FlowGroupId 是否已赋值
+                     * @return FlowGroupId 是否已赋值
+                     * 
+                     */
+                    bool FlowGroupIdHasBeenSet() const;
+
                 private:
 
                     /**
@@ -229,14 +250,6 @@ namespace TencentCloud
                     bool m_operatorHasBeenSet;
 
                     /**
-                     * 合同流程ID，为32位字符串。
-建议开发者妥善保存此流程ID，以便于顺利进行后续操作。
-可登录腾讯电子签控制台，在 "合同"->"合同中心" 中查看某个合同的FlowId(在页面中展示为合同ID)。
-                     */
-                    std::string m_flowId;
-                    bool m_flowIdHasBeenSet;
-
-                    /**
                      * 补充企业签署人信息。
 
 - 如果发起方指定的补充签署人是企业微信签署人（ApproverSource=WEWORKAPP），则需要提供企业微信UserId进行补充；
@@ -245,6 +258,14 @@ namespace TencentCloud
                      */
                     std::vector<FillApproverInfo> m_approvers;
                     bool m_approversHasBeenSet;
+
+                    /**
+                     * 合同流程ID，为32位字符串。
+建议开发者妥善保存此流程ID，以便于顺利进行后续操作。
+可登录腾讯电子签控制台，在 "合同"->"合同中心" 中查看某个合同的FlowId(在页面中展示为合同ID)。
+                     */
+                    std::string m_flowId;
+                    bool m_flowIdHasBeenSet;
 
                     /**
                      * 签署人信息补充方式
@@ -268,6 +289,12 @@ namespace TencentCloud
                      */
                     Agent m_agent;
                     bool m_agentHasBeenSet;
+
+                    /**
+                     * 合同流程组的组ID, 在合同流程组场景下，生成合同流程组的签署链接时需要赋值
+                     */
+                    std::string m_flowGroupId;
+                    bool m_flowGroupIdHasBeenSet;
 
                 };
             }

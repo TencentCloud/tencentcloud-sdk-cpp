@@ -83,6 +83,92 @@ AiartClient::ImageToImageOutcomeCallable AiartClient::ImageToImageCallable(const
     return task->get_future();
 }
 
+AiartClient::QueryTextToImageProJobOutcome AiartClient::QueryTextToImageProJob(const QueryTextToImageProJobRequest &request)
+{
+    auto outcome = MakeRequest(request, "QueryTextToImageProJob");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        QueryTextToImageProJobResponse rsp = QueryTextToImageProJobResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return QueryTextToImageProJobOutcome(rsp);
+        else
+            return QueryTextToImageProJobOutcome(o.GetError());
+    }
+    else
+    {
+        return QueryTextToImageProJobOutcome(outcome.GetError());
+    }
+}
+
+void AiartClient::QueryTextToImageProJobAsync(const QueryTextToImageProJobRequest& request, const QueryTextToImageProJobAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->QueryTextToImageProJob(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+AiartClient::QueryTextToImageProJobOutcomeCallable AiartClient::QueryTextToImageProJobCallable(const QueryTextToImageProJobRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<QueryTextToImageProJobOutcome()>>(
+        [this, request]()
+        {
+            return this->QueryTextToImageProJob(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+AiartClient::SubmitTextToImageProJobOutcome AiartClient::SubmitTextToImageProJob(const SubmitTextToImageProJobRequest &request)
+{
+    auto outcome = MakeRequest(request, "SubmitTextToImageProJob");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        SubmitTextToImageProJobResponse rsp = SubmitTextToImageProJobResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return SubmitTextToImageProJobOutcome(rsp);
+        else
+            return SubmitTextToImageProJobOutcome(o.GetError());
+    }
+    else
+    {
+        return SubmitTextToImageProJobOutcome(outcome.GetError());
+    }
+}
+
+void AiartClient::SubmitTextToImageProJobAsync(const SubmitTextToImageProJobRequest& request, const SubmitTextToImageProJobAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->SubmitTextToImageProJob(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+AiartClient::SubmitTextToImageProJobOutcomeCallable AiartClient::SubmitTextToImageProJobCallable(const SubmitTextToImageProJobRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<SubmitTextToImageProJobOutcome()>>(
+        [this, request]()
+        {
+            return this->SubmitTextToImageProJob(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 AiartClient::TextToImageOutcome AiartClient::TextToImage(const TextToImageRequest &request)
 {
     auto outcome = MakeRequest(request, "TextToImage");

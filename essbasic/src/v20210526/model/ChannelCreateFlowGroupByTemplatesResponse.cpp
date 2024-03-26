@@ -26,7 +26,8 @@ using namespace std;
 ChannelCreateFlowGroupByTemplatesResponse::ChannelCreateFlowGroupByTemplatesResponse() :
     m_flowGroupIdHasBeenSet(false),
     m_flowIdsHasBeenSet(false),
-    m_taskInfosHasBeenSet(false)
+    m_taskInfosHasBeenSet(false),
+    m_approversHasBeenSet(false)
 {
 }
 
@@ -107,6 +108,26 @@ CoreInternalOutcome ChannelCreateFlowGroupByTemplatesResponse::Deserialize(const
         m_taskInfosHasBeenSet = true;
     }
 
+    if (rsp.HasMember("Approvers") && !rsp["Approvers"].IsNull())
+    {
+        if (!rsp["Approvers"].IsArray())
+            return CoreInternalOutcome(Core::Error("response `Approvers` is not array type"));
+
+        const rapidjson::Value &tmpValue = rsp["Approvers"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            FlowGroupApprovers item;
+            CoreInternalOutcome outcome = item.Deserialize(*itr);
+            if (!outcome.IsSuccess())
+            {
+                outcome.GetError().SetRequestId(requestId);
+                return outcome;
+            }
+            m_approvers.push_back(item);
+        }
+        m_approversHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -153,6 +174,21 @@ string ChannelCreateFlowGroupByTemplatesResponse::ToJsonString() const
         }
     }
 
+    if (m_approversHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Approvers";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_approvers.begin(); itr != m_approvers.end(); ++itr, ++i)
+        {
+            value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(value[key.c_str()][i], allocator);
+        }
+    }
+
     rapidjson::Value iKey(rapidjson::kStringType);
     string key = "RequestId";
     iKey.SetString(key.c_str(), allocator);
@@ -193,6 +229,16 @@ vector<TaskInfo> ChannelCreateFlowGroupByTemplatesResponse::GetTaskInfos() const
 bool ChannelCreateFlowGroupByTemplatesResponse::TaskInfosHasBeenSet() const
 {
     return m_taskInfosHasBeenSet;
+}
+
+vector<FlowGroupApprovers> ChannelCreateFlowGroupByTemplatesResponse::GetApprovers() const
+{
+    return m_approvers;
+}
+
+bool ChannelCreateFlowGroupByTemplatesResponse::ApproversHasBeenSet() const
+{
+    return m_approversHasBeenSet;
 }
 
 

@@ -85,15 +85,15 @@ namespace TencentCloud
                     bool RuleNameHasBeenSet() const;
 
                     /**
-                     * 获取是否应用到新增的Topic
-                     * @return IsApplied 是否应用到新增的Topic
+                     * 获取修改预设规则时传入,是否应用到新增的Topic
+                     * @return IsApplied 修改预设规则时传入,是否应用到新增的Topic
                      * 
                      */
                     int64_t GetIsApplied() const;
 
                     /**
-                     * 设置是否应用到新增的Topic
-                     * @param _isApplied 是否应用到新增的Topic
+                     * 设置修改预设规则时传入,是否应用到新增的Topic
+                     * @param _isApplied 修改预设规则时传入,是否应用到新增的Topic
                      * 
                      */
                     void SetIsApplied(const int64_t& _isApplied);
@@ -120,7 +120,7 @@ namespace TencentCloud
                     bool m_ruleNameHasBeenSet;
 
                     /**
-                     * 是否应用到新增的Topic
+                     * 修改预设规则时传入,是否应用到新增的Topic
                      */
                     int64_t m_isApplied;
                     bool m_isAppliedHasBeenSet;

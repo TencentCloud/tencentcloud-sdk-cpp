@@ -484,6 +484,48 @@ namespace TencentCloud
                      */
                     bool ProjectIdHasBeenSet() const;
 
+                    /**
+                     * 获取付费类型，PRE_PAID：包年包月，USED_PAID：按量计费。默认为按量计费
+                     * @return PayType 付费类型，PRE_PAID：包年包月，USED_PAID：按量计费。默认为按量计费
+                     * 
+                     */
+                    std::string GetPayType() const;
+
+                    /**
+                     * 设置付费类型，PRE_PAID：包年包月，USED_PAID：按量计费。默认为按量计费
+                     * @param _payType 付费类型，PRE_PAID：包年包月，USED_PAID：按量计费。默认为按量计费
+                     * 
+                     */
+                    void SetPayType(const std::string& _payType);
+
+                    /**
+                     * 判断参数 PayType 是否已赋值
+                     * @return PayType 是否已赋值
+                     * 
+                     */
+                    bool PayTypeHasBeenSet() const;
+
+                    /**
+                     * 获取实例时长，PayType为PRE_PAID时必传，单位：月，可选值包括 [1,2,3,4,5,6,7,8,9,10,11,12,24,36]。
+                     * @return Period 实例时长，PayType为PRE_PAID时必传，单位：月，可选值包括 [1,2,3,4,5,6,7,8,9,10,11,12,24,36]。
+                     * 
+                     */
+                    int64_t GetPeriod() const;
+
+                    /**
+                     * 设置实例时长，PayType为PRE_PAID时必传，单位：月，可选值包括 [1,2,3,4,5,6,7,8,9,10,11,12,24,36]。
+                     * @param _period 实例时长，PayType为PRE_PAID时必传，单位：月，可选值包括 [1,2,3,4,5,6,7,8,9,10,11,12,24,36]。
+                     * 
+                     */
+                    void SetPeriod(const int64_t& _period);
+
+                    /**
+                     * 判断参数 Period 是否已赋值
+                     * @return Period 是否已赋值
+                     * 
+                     */
+                    bool PeriodHasBeenSet() const;
+
                 private:
 
                     /**
@@ -611,6 +653,18 @@ namespace TencentCloud
                      */
                     uint64_t m_projectId;
                     bool m_projectIdHasBeenSet;
+
+                    /**
+                     * 付费类型，PRE_PAID：包年包月，USED_PAID：按量计费。默认为按量计费
+                     */
+                    std::string m_payType;
+                    bool m_payTypeHasBeenSet;
+
+                    /**
+                     * 实例时长，PayType为PRE_PAID时必传，单位：月，可选值包括 [1,2,3,4,5,6,7,8,9,10,11,12,24,36]。
+                     */
+                    int64_t m_period;
+                    bool m_periodHasBeenSet;
 
                 };
             }

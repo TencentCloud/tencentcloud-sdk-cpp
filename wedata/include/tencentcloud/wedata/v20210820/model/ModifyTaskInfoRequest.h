@@ -510,21 +510,21 @@ namespace TencentCloud
                     /**
                      * 获取责任人
                      * @return InCharge 责任人
-                     * 
+                     * @deprecated
                      */
                     std::string GetInCharge() const;
 
                     /**
                      * 设置责任人
                      * @param _inCharge 责任人
-                     * 
+                     * @deprecated
                      */
                     void SetInCharge(const std::string& _inCharge);
 
                     /**
                      * 判断参数 InCharge 是否已赋值
                      * @return InCharge 是否已赋值
-                     * 
+                     * @deprecated
                      */
                     bool InChargeHasBeenSet() const;
 
@@ -653,6 +653,69 @@ namespace TencentCloud
                      * 
                      */
                     bool DependencyConfigDTOsHasBeenSet() const;
+
+                    /**
+                     * 获取执行耗时
+                     * @return ExecutionTTL 执行耗时
+                     * 
+                     */
+                    int64_t GetExecutionTTL() const;
+
+                    /**
+                     * 设置执行耗时
+                     * @param _executionTTL 执行耗时
+                     * 
+                     */
+                    void SetExecutionTTL(const int64_t& _executionTTL);
+
+                    /**
+                     * 判断参数 ExecutionTTL 是否已赋值
+                     * @return ExecutionTTL 是否已赋值
+                     * 
+                     */
+                    bool ExecutionTTLHasBeenSet() const;
+
+                    /**
+                     * 获取脚本是否改变
+                     * @return ScriptChange 脚本是否改变
+                     * 
+                     */
+                    bool GetScriptChange() const;
+
+                    /**
+                     * 设置脚本是否改变
+                     * @param _scriptChange 脚本是否改变
+                     * 
+                     */
+                    void SetScriptChange(const bool& _scriptChange);
+
+                    /**
+                     * 判断参数 ScriptChange 是否已赋值
+                     * @return ScriptChange 是否已赋值
+                     * 
+                     */
+                    bool ScriptChangeHasBeenSet() const;
+
+                    /**
+                     * 获取责任人id
+                     * @return InChargeIds 责任人id
+                     * 
+                     */
+                    std::vector<std::string> GetInChargeIds() const;
+
+                    /**
+                     * 设置责任人id
+                     * @param _inChargeIds 责任人id
+                     * 
+                     */
+                    void SetInChargeIds(const std::vector<std::string>& _inChargeIds);
+
+                    /**
+                     * 判断参数 InChargeIds 是否已赋值
+                     * @return InChargeIds 是否已赋值
+                     * 
+                     */
+                    bool InChargeIdsHasBeenSet() const;
 
                 private:
 
@@ -829,6 +892,24 @@ namespace TencentCloud
                      */
                     std::vector<DependencyConfig> m_dependencyConfigDTOs;
                     bool m_dependencyConfigDTOsHasBeenSet;
+
+                    /**
+                     * 执行耗时
+                     */
+                    int64_t m_executionTTL;
+                    bool m_executionTTLHasBeenSet;
+
+                    /**
+                     * 脚本是否改变
+                     */
+                    bool m_scriptChange;
+                    bool m_scriptChangeHasBeenSet;
+
+                    /**
+                     * 责任人id
+                     */
+                    std::vector<std::string> m_inChargeIds;
+                    bool m_inChargeIdsHasBeenSet;
 
                 };
             }

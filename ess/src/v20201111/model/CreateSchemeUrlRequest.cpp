@@ -36,7 +36,8 @@ CreateSchemeUrlRequest::CreateSchemeUrlRequest() :
     m_autoJumpBackHasBeenSet(false),
     m_agentHasBeenSet(false),
     m_hidesHasBeenSet(false),
-    m_recipientIdHasBeenSet(false)
+    m_recipientIdHasBeenSet(false),
+    m_flowGroupUrlInfoHasBeenSet(false)
 {
 }
 
@@ -164,6 +165,15 @@ string CreateSchemeUrlRequest::ToJsonString() const
         string key = "RecipientId";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_recipientId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_flowGroupUrlInfoHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "FlowGroupUrlInfo";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_flowGroupUrlInfo.ToJsonObject(d[key.c_str()], allocator);
     }
 
 
@@ -396,6 +406,22 @@ void CreateSchemeUrlRequest::SetRecipientId(const string& _recipientId)
 bool CreateSchemeUrlRequest::RecipientIdHasBeenSet() const
 {
     return m_recipientIdHasBeenSet;
+}
+
+FlowGroupUrlInfo CreateSchemeUrlRequest::GetFlowGroupUrlInfo() const
+{
+    return m_flowGroupUrlInfo;
+}
+
+void CreateSchemeUrlRequest::SetFlowGroupUrlInfo(const FlowGroupUrlInfo& _flowGroupUrlInfo)
+{
+    m_flowGroupUrlInfo = _flowGroupUrlInfo;
+    m_flowGroupUrlInfoHasBeenSet = true;
+}
+
+bool CreateSchemeUrlRequest::FlowGroupUrlInfoHasBeenSet() const
+{
+    return m_flowGroupUrlInfoHasBeenSet;
 }
 
 

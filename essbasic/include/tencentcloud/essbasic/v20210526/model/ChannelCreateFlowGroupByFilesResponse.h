@@ -21,6 +21,7 @@
 #include <vector>
 #include <map>
 #include <tencentcloud/core/AbstractModel.h>
+#include <tencentcloud/essbasic/v20210526/model/FlowGroupApprovers.h>
 
 
 namespace TencentCloud
@@ -83,6 +84,20 @@ namespace TencentCloud
                      */
                     bool FlowIdsHasBeenSet() const;
 
+                    /**
+                     * 获取合同组签署方信息。
+                     * @return Approvers 合同组签署方信息。
+                     * 
+                     */
+                    std::vector<FlowGroupApprovers> GetApprovers() const;
+
+                    /**
+                     * 判断参数 Approvers 是否已赋值
+                     * @return Approvers 是否已赋值
+                     * 
+                     */
+                    bool ApproversHasBeenSet() const;
+
                 private:
 
                     /**
@@ -102,6 +117,12 @@ namespace TencentCloud
                      */
                     std::vector<std::string> m_flowIds;
                     bool m_flowIdsHasBeenSet;
+
+                    /**
+                     * 合同组签署方信息。
+                     */
+                    std::vector<FlowGroupApprovers> m_approvers;
+                    bool m_approversHasBeenSet;
 
                 };
             }

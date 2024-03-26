@@ -30,7 +30,8 @@ TaskDetail::TaskDetail() :
     m_startTimeHasBeenSet(false),
     m_endTimeHasBeenSet(false),
     m_instanceIdsHasBeenSet(false),
-    m_asyncRequestIdHasBeenSet(false)
+    m_asyncRequestIdHasBeenSet(false),
+    m_taskAttachInfoHasBeenSet(false)
 {
 }
 
@@ -142,6 +143,26 @@ CoreInternalOutcome TaskDetail::Deserialize(const rapidjson::Value &value)
         m_asyncRequestIdHasBeenSet = true;
     }
 
+    if (value.HasMember("TaskAttachInfo") && !value["TaskAttachInfo"].IsNull())
+    {
+        if (!value["TaskAttachInfo"].IsArray())
+            return CoreInternalOutcome(Core::Error("response `TaskDetail.TaskAttachInfo` is not array type"));
+
+        const rapidjson::Value &tmpValue = value["TaskAttachInfo"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            TaskAttachInfo item;
+            CoreInternalOutcome outcome = item.Deserialize(*itr);
+            if (!outcome.IsSuccess())
+            {
+                outcome.GetError().SetRequestId(requestId);
+                return outcome;
+            }
+            m_taskAttachInfo.push_back(item);
+        }
+        m_taskAttachInfoHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -232,6 +253,21 @@ void TaskDetail::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Allo
         string key = "AsyncRequestId";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_asyncRequestId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_taskAttachInfoHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "TaskAttachInfo";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_taskAttachInfo.begin(); itr != m_taskAttachInfo.end(); ++itr, ++i)
+        {
+            value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(value[key.c_str()][i], allocator);
+        }
     }
 
 }
@@ -395,5 +431,21 @@ void TaskDetail::SetAsyncRequestId(const string& _asyncRequestId)
 bool TaskDetail::AsyncRequestIdHasBeenSet() const
 {
     return m_asyncRequestIdHasBeenSet;
+}
+
+vector<TaskAttachInfo> TaskDetail::GetTaskAttachInfo() const
+{
+    return m_taskAttachInfo;
+}
+
+void TaskDetail::SetTaskAttachInfo(const vector<TaskAttachInfo>& _taskAttachInfo)
+{
+    m_taskAttachInfo = _taskAttachInfo;
+    m_taskAttachInfoHasBeenSet = true;
+}
+
+bool TaskDetail::TaskAttachInfoHasBeenSet() const
+{
+    return m_taskAttachInfoHasBeenSet;
 }
 

@@ -57,8 +57,12 @@
 #include <tencentcloud/faceid/v20180301/model/GetEidTokenResponse.h>
 #include <tencentcloud/faceid/v20180301/model/GetFaceIdResultRequest.h>
 #include <tencentcloud/faceid/v20180301/model/GetFaceIdResultResponse.h>
+#include <tencentcloud/faceid/v20180301/model/GetFaceIdRiskInfoRequest.h>
+#include <tencentcloud/faceid/v20180301/model/GetFaceIdRiskInfoResponse.h>
 #include <tencentcloud/faceid/v20180301/model/GetFaceIdTokenRequest.h>
 #include <tencentcloud/faceid/v20180301/model/GetFaceIdTokenResponse.h>
+#include <tencentcloud/faceid/v20180301/model/GetFaceidRiskInfoTokenRequest.h>
+#include <tencentcloud/faceid/v20180301/model/GetFaceidRiskInfoTokenResponse.h>
 #include <tencentcloud/faceid/v20180301/model/GetLiveCodeRequest.h>
 #include <tencentcloud/faceid/v20180301/model/GetLiveCodeResponse.h>
 #include <tencentcloud/faceid/v20180301/model/GetWeChatBillDetailsRequest.h>
@@ -158,9 +162,15 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::GetFaceIdResultResponse> GetFaceIdResultOutcome;
                 typedef std::future<GetFaceIdResultOutcome> GetFaceIdResultOutcomeCallable;
                 typedef std::function<void(const FaceidClient*, const Model::GetFaceIdResultRequest&, GetFaceIdResultOutcome, const std::shared_ptr<const AsyncCallerContext>&)> GetFaceIdResultAsyncHandler;
+                typedef Outcome<Core::Error, Model::GetFaceIdRiskInfoResponse> GetFaceIdRiskInfoOutcome;
+                typedef std::future<GetFaceIdRiskInfoOutcome> GetFaceIdRiskInfoOutcomeCallable;
+                typedef std::function<void(const FaceidClient*, const Model::GetFaceIdRiskInfoRequest&, GetFaceIdRiskInfoOutcome, const std::shared_ptr<const AsyncCallerContext>&)> GetFaceIdRiskInfoAsyncHandler;
                 typedef Outcome<Core::Error, Model::GetFaceIdTokenResponse> GetFaceIdTokenOutcome;
                 typedef std::future<GetFaceIdTokenOutcome> GetFaceIdTokenOutcomeCallable;
                 typedef std::function<void(const FaceidClient*, const Model::GetFaceIdTokenRequest&, GetFaceIdTokenOutcome, const std::shared_ptr<const AsyncCallerContext>&)> GetFaceIdTokenAsyncHandler;
+                typedef Outcome<Core::Error, Model::GetFaceidRiskInfoTokenResponse> GetFaceidRiskInfoTokenOutcome;
+                typedef std::future<GetFaceidRiskInfoTokenOutcome> GetFaceidRiskInfoTokenOutcomeCallable;
+                typedef std::function<void(const FaceidClient*, const Model::GetFaceidRiskInfoTokenRequest&, GetFaceidRiskInfoTokenOutcome, const std::shared_ptr<const AsyncCallerContext>&)> GetFaceidRiskInfoTokenAsyncHandler;
                 typedef Outcome<Core::Error, Model::GetLiveCodeResponse> GetLiveCodeOutcome;
                 typedef std::future<GetLiveCodeOutcome> GetLiveCodeOutcomeCallable;
                 typedef std::function<void(const FaceidClient*, const Model::GetLiveCodeRequest&, GetLiveCodeOutcome, const std::shared_ptr<const AsyncCallerContext>&)> GetLiveCodeAsyncHandler;
@@ -370,6 +380,15 @@ namespace TencentCloud
                 GetFaceIdResultOutcomeCallable GetFaceIdResultCallable(const Model::GetFaceIdResultRequest& request);
 
                 /**
+                 *完成验证后，用FaceIdToken调用本接口获取设备风险相关信息，FaceIdToken生成后三天内（3\*24\*3,600秒）可多次拉取。
+                 * @param req GetFaceIdRiskInfoRequest
+                 * @return GetFaceIdRiskInfoOutcome
+                 */
+                GetFaceIdRiskInfoOutcome GetFaceIdRiskInfo(const Model::GetFaceIdRiskInfoRequest &request);
+                void GetFaceIdRiskInfoAsync(const Model::GetFaceIdRiskInfoRequest& request, const GetFaceIdRiskInfoAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                GetFaceIdRiskInfoOutcomeCallable GetFaceIdRiskInfoCallable(const Model::GetFaceIdRiskInfoRequest& request);
+
+                /**
                  *每次调用人脸核身SDK服务前，需先调用本接口获取SDKToken，用来串联核身流程，在验证完成后，用于获取验证结果信息，该token仅能核身一次。
                  * @param req GetFaceIdTokenRequest
                  * @return GetFaceIdTokenOutcome
@@ -377,6 +396,15 @@ namespace TencentCloud
                 GetFaceIdTokenOutcome GetFaceIdToken(const Model::GetFaceIdTokenRequest &request);
                 void GetFaceIdTokenAsync(const Model::GetFaceIdTokenRequest& request, const GetFaceIdTokenAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 GetFaceIdTokenOutcomeCallable GetFaceIdTokenCallable(const Model::GetFaceIdTokenRequest& request);
+
+                /**
+                 *每次调用人脸核身SDK服务前，需先调用本接口获取SDKToken，用来串联核身流程，在验证完成后，用于获取风险结果信息，该Token仅能核身一次。
+                 * @param req GetFaceidRiskInfoTokenRequest
+                 * @return GetFaceidRiskInfoTokenOutcome
+                 */
+                GetFaceidRiskInfoTokenOutcome GetFaceidRiskInfoToken(const Model::GetFaceidRiskInfoTokenRequest &request);
+                void GetFaceidRiskInfoTokenAsync(const Model::GetFaceidRiskInfoTokenRequest& request, const GetFaceidRiskInfoTokenAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                GetFaceidRiskInfoTokenOutcomeCallable GetFaceidRiskInfoTokenCallable(const Model::GetFaceidRiskInfoTokenRequest& request);
 
                 /**
                  *使用数字活体检测模式前，需调用本接口获取数字验证码。

@@ -298,6 +298,7 @@ set(cdb_public_header_model
   include/tencentcloud/cdb/v20170320/model/DescribeAuditPoliciesRequest.h
   include/tencentcloud/cdb/v20170320/model/AdjustCdbProxyAddressRequest.h
   include/tencentcloud/cdb/v20170320/model/DescribeDatabasesResponse.h
+  include/tencentcloud/cdb/v20170320/model/TaskAttachInfo.h
   include/tencentcloud/cdb/v20170320/model/DescribeRoGroupsResponse.h
   include/tencentcloud/cdb/v20170320/model/CloseCdbProxyAddressResponse.h
   include/tencentcloud/cdb/v20170320/model/DescribeAuditRulesResponse.h
@@ -719,6 +720,7 @@ set(cdb_src
   src/v20170320/model/DescribeAuditPoliciesRequest.cpp
   src/v20170320/model/AdjustCdbProxyAddressRequest.cpp
   src/v20170320/model/DescribeDatabasesResponse.cpp
+  src/v20170320/model/TaskAttachInfo.cpp
   src/v20170320/model/DescribeRoGroupsResponse.cpp
   src/v20170320/model/CloseCdbProxyAddressResponse.cpp
   src/v20170320/model/DescribeAuditRulesResponse.cpp

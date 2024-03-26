@@ -20,10 +20,14 @@ set(aiart_public_header
 
 set(aiart_public_header_model
   include/tencentcloud/aiart/v20221229/model/ImageToImageResponse.h
+  include/tencentcloud/aiart/v20221229/model/SubmitTextToImageProJobRequest.h
   include/tencentcloud/aiart/v20221229/model/LogoParam.h
   include/tencentcloud/aiart/v20221229/model/ImageToImageRequest.h
   include/tencentcloud/aiart/v20221229/model/LogoRect.h
+  include/tencentcloud/aiart/v20221229/model/QueryTextToImageProJobResponse.h
+  include/tencentcloud/aiart/v20221229/model/QueryTextToImageProJobRequest.h
   include/tencentcloud/aiart/v20221229/model/ResultConfig.h
+  include/tencentcloud/aiart/v20221229/model/SubmitTextToImageProJobResponse.h
   include/tencentcloud/aiart/v20221229/model/TextToImageRequest.h
   include/tencentcloud/aiart/v20221229/model/TextToImageResponse.h
   )
@@ -31,10 +35,14 @@ set(aiart_public_header_model
 set(aiart_src
   src/v20221229/AiartClient.cpp
   src/v20221229/model/ImageToImageResponse.cpp
+  src/v20221229/model/SubmitTextToImageProJobRequest.cpp
   src/v20221229/model/LogoParam.cpp
   src/v20221229/model/ImageToImageRequest.cpp
   src/v20221229/model/LogoRect.cpp
+  src/v20221229/model/QueryTextToImageProJobResponse.cpp
+  src/v20221229/model/QueryTextToImageProJobRequest.cpp
   src/v20221229/model/ResultConfig.cpp
+  src/v20221229/model/SubmitTextToImageProJobResponse.cpp
   src/v20221229/model/TextToImageRequest.cpp
   src/v20221229/model/TextToImageResponse.cpp
   )

@@ -29,7 +29,8 @@ FillApproverInfo::FillApproverInfo() :
     m_organizationOpenIdHasBeenSet(false),
     m_notChannelOrganizationHasBeenSet(false),
     m_approverIdCardTypeHasBeenSet(false),
-    m_approverIdCardNumberHasBeenSet(false)
+    m_approverIdCardNumberHasBeenSet(false),
+    m_flowIdHasBeenSet(false)
 {
 }
 
@@ -128,6 +129,16 @@ CoreInternalOutcome FillApproverInfo::Deserialize(const rapidjson::Value &value)
         m_approverIdCardNumberHasBeenSet = true;
     }
 
+    if (value.HasMember("FlowId") && !value["FlowId"].IsNull())
+    {
+        if (!value["FlowId"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `FillApproverInfo.FlowId` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_flowId = string(value["FlowId"].GetString());
+        m_flowIdHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -205,6 +216,14 @@ void FillApproverInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Document
         string key = "ApproverIdCardNumber";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_approverIdCardNumber.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_flowIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "FlowId";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_flowId.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -352,5 +371,21 @@ void FillApproverInfo::SetApproverIdCardNumber(const string& _approverIdCardNumb
 bool FillApproverInfo::ApproverIdCardNumberHasBeenSet() const
 {
     return m_approverIdCardNumberHasBeenSet;
+}
+
+string FillApproverInfo::GetFlowId() const
+{
+    return m_flowId;
+}
+
+void FillApproverInfo::SetFlowId(const string& _flowId)
+{
+    m_flowId = _flowId;
+    m_flowIdHasBeenSet = true;
+}
+
+bool FillApproverInfo::FlowIdHasBeenSet() const
+{
+    return m_flowIdHasBeenSet;
 }
 

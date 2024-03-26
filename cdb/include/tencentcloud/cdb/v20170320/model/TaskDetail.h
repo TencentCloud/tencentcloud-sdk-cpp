@@ -24,6 +24,7 @@
 #include <tencentcloud/core/utils/rapidjson/writer.h>
 #include <tencentcloud/core/utils/rapidjson/stringbuffer.h>
 #include <tencentcloud/core/AbstractModel.h>
+#include <tencentcloud/cdb/v20170320/model/TaskAttachInfo.h>
 
 
 namespace TencentCloud
@@ -344,6 +345,31 @@ namespace TencentCloud
                      */
                     bool AsyncRequestIdHasBeenSet() const;
 
+                    /**
+                     * 获取任务的附加信息。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return TaskAttachInfo 任务的附加信息。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::vector<TaskAttachInfo> GetTaskAttachInfo() const;
+
+                    /**
+                     * 设置任务的附加信息。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _taskAttachInfo 任务的附加信息。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetTaskAttachInfo(const std::vector<TaskAttachInfo>& _taskAttachInfo);
+
+                    /**
+                     * 判断参数 TaskAttachInfo 是否已赋值
+                     * @return TaskAttachInfo 是否已赋值
+                     * 
+                     */
+                    bool TaskAttachInfoHasBeenSet() const;
+
                 private:
 
                     /**
@@ -427,6 +453,13 @@ namespace TencentCloud
                      */
                     std::string m_asyncRequestId;
                     bool m_asyncRequestIdHasBeenSet;
+
+                    /**
+                     * 任务的附加信息。
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::vector<TaskAttachInfo> m_taskAttachInfo;
+                    bool m_taskAttachInfoHasBeenSet;
 
                 };
             }

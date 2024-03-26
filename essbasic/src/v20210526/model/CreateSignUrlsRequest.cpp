@@ -39,7 +39,8 @@ CreateSignUrlsRequest::CreateSignUrlsRequest() :
     m_jumpUrlHasBeenSet(false),
     m_operatorHasBeenSet(false),
     m_hidesHasBeenSet(false),
-    m_recipientIdsHasBeenSet(false)
+    m_recipientIdsHasBeenSet(false),
+    m_flowGroupUrlInfoHasBeenSet(false)
 {
 }
 
@@ -201,6 +202,15 @@ string CreateSignUrlsRequest::ToJsonString() const
         {
             d[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
         }
+    }
+
+    if (m_flowGroupUrlInfoHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "FlowGroupUrlInfo";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_flowGroupUrlInfo.ToJsonObject(d[key.c_str()], allocator);
     }
 
 
@@ -481,6 +491,22 @@ void CreateSignUrlsRequest::SetRecipientIds(const vector<string>& _recipientIds)
 bool CreateSignUrlsRequest::RecipientIdsHasBeenSet() const
 {
     return m_recipientIdsHasBeenSet;
+}
+
+FlowGroupUrlInfo CreateSignUrlsRequest::GetFlowGroupUrlInfo() const
+{
+    return m_flowGroupUrlInfo;
+}
+
+void CreateSignUrlsRequest::SetFlowGroupUrlInfo(const FlowGroupUrlInfo& _flowGroupUrlInfo)
+{
+    m_flowGroupUrlInfo = _flowGroupUrlInfo;
+    m_flowGroupUrlInfoHasBeenSet = true;
+}
+
+bool CreateSignUrlsRequest::FlowGroupUrlInfoHasBeenSet() const
+{
+    return m_flowGroupUrlInfoHasBeenSet;
 }
 
 

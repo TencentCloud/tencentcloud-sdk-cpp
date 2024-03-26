@@ -51,7 +51,10 @@ ModifyTaskInfoRequest::ModifyTaskInfoRequest() :
     m_sourceServerHasBeenSet(false),
     m_targetServerHasBeenSet(false),
     m_dependencyWorkflowHasBeenSet(false),
-    m_dependencyConfigDTOsHasBeenSet(false)
+    m_dependencyConfigDTOsHasBeenSet(false),
+    m_executionTTLHasBeenSet(false),
+    m_scriptChangeHasBeenSet(false),
+    m_inChargeIdsHasBeenSet(false)
 {
 }
 
@@ -312,6 +315,35 @@ string ModifyTaskInfoRequest::ToJsonString() const
         {
             d[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
             (*itr).ToJsonObject(d[key.c_str()][i], allocator);
+        }
+    }
+
+    if (m_executionTTLHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ExecutionTTL";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_executionTTL, allocator);
+    }
+
+    if (m_scriptChangeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ScriptChange";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_scriptChange, allocator);
+    }
+
+    if (m_inChargeIdsHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "InChargeIds";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        for (auto itr = m_inChargeIds.begin(); itr != m_inChargeIds.end(); ++itr)
+        {
+            d[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
         }
     }
 
@@ -785,6 +817,54 @@ void ModifyTaskInfoRequest::SetDependencyConfigDTOs(const vector<DependencyConfi
 bool ModifyTaskInfoRequest::DependencyConfigDTOsHasBeenSet() const
 {
     return m_dependencyConfigDTOsHasBeenSet;
+}
+
+int64_t ModifyTaskInfoRequest::GetExecutionTTL() const
+{
+    return m_executionTTL;
+}
+
+void ModifyTaskInfoRequest::SetExecutionTTL(const int64_t& _executionTTL)
+{
+    m_executionTTL = _executionTTL;
+    m_executionTTLHasBeenSet = true;
+}
+
+bool ModifyTaskInfoRequest::ExecutionTTLHasBeenSet() const
+{
+    return m_executionTTLHasBeenSet;
+}
+
+bool ModifyTaskInfoRequest::GetScriptChange() const
+{
+    return m_scriptChange;
+}
+
+void ModifyTaskInfoRequest::SetScriptChange(const bool& _scriptChange)
+{
+    m_scriptChange = _scriptChange;
+    m_scriptChangeHasBeenSet = true;
+}
+
+bool ModifyTaskInfoRequest::ScriptChangeHasBeenSet() const
+{
+    return m_scriptChangeHasBeenSet;
+}
+
+vector<string> ModifyTaskInfoRequest::GetInChargeIds() const
+{
+    return m_inChargeIds;
+}
+
+void ModifyTaskInfoRequest::SetInChargeIds(const vector<string>& _inChargeIds)
+{
+    m_inChargeIds = _inChargeIds;
+    m_inChargeIdsHasBeenSet = true;
+}
+
+bool ModifyTaskInfoRequest::InChargeIdsHasBeenSet() const
+{
+    return m_inChargeIdsHasBeenSet;
 }
 
 
