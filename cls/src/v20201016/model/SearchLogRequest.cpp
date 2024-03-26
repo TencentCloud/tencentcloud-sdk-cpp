@@ -26,14 +26,14 @@ SearchLogRequest::SearchLogRequest() :
     m_fromHasBeenSet(false),
     m_toHasBeenSet(false),
     m_queryHasBeenSet(false),
-    m_topicIdHasBeenSet(false),
-    m_limitHasBeenSet(false),
-    m_contextHasBeenSet(false),
-    m_sortHasBeenSet(false),
-    m_useNewAnalysisHasBeenSet(false),
-    m_samplingRateHasBeenSet(false),
     m_syntaxRuleHasBeenSet(false),
-    m_topicsHasBeenSet(false)
+    m_topicIdHasBeenSet(false),
+    m_topicsHasBeenSet(false),
+    m_limitHasBeenSet(false),
+    m_sortHasBeenSet(false),
+    m_contextHasBeenSet(false),
+    m_samplingRateHasBeenSet(false),
+    m_useNewAnalysisHasBeenSet(false)
 {
 }
 
@@ -68,60 +68,20 @@ string SearchLogRequest::ToJsonString() const
         d.AddMember(iKey, rapidjson::Value(m_query.c_str(), allocator).Move(), allocator);
     }
 
-    if (m_topicIdHasBeenSet)
-    {
-        rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "TopicId";
-        iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, rapidjson::Value(m_topicId.c_str(), allocator).Move(), allocator);
-    }
-
-    if (m_limitHasBeenSet)
-    {
-        rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "Limit";
-        iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, m_limit, allocator);
-    }
-
-    if (m_contextHasBeenSet)
-    {
-        rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "Context";
-        iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, rapidjson::Value(m_context.c_str(), allocator).Move(), allocator);
-    }
-
-    if (m_sortHasBeenSet)
-    {
-        rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "Sort";
-        iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, rapidjson::Value(m_sort.c_str(), allocator).Move(), allocator);
-    }
-
-    if (m_useNewAnalysisHasBeenSet)
-    {
-        rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "UseNewAnalysis";
-        iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, m_useNewAnalysis, allocator);
-    }
-
-    if (m_samplingRateHasBeenSet)
-    {
-        rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "SamplingRate";
-        iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, m_samplingRate, allocator);
-    }
-
     if (m_syntaxRuleHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
         string key = "SyntaxRule";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_syntaxRule, allocator);
+    }
+
+    if (m_topicIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "TopicId";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_topicId.c_str(), allocator).Move(), allocator);
     }
 
     if (m_topicsHasBeenSet)
@@ -137,6 +97,46 @@ string SearchLogRequest::ToJsonString() const
             d[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
             (*itr).ToJsonObject(d[key.c_str()][i], allocator);
         }
+    }
+
+    if (m_limitHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Limit";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_limit, allocator);
+    }
+
+    if (m_sortHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Sort";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_sort.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_contextHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Context";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_context.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_samplingRateHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "SamplingRate";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_samplingRate, allocator);
+    }
+
+    if (m_useNewAnalysisHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "UseNewAnalysis";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_useNewAnalysis, allocator);
     }
 
 
@@ -195,6 +195,22 @@ bool SearchLogRequest::QueryHasBeenSet() const
     return m_queryHasBeenSet;
 }
 
+uint64_t SearchLogRequest::GetSyntaxRule() const
+{
+    return m_syntaxRule;
+}
+
+void SearchLogRequest::SetSyntaxRule(const uint64_t& _syntaxRule)
+{
+    m_syntaxRule = _syntaxRule;
+    m_syntaxRuleHasBeenSet = true;
+}
+
+bool SearchLogRequest::SyntaxRuleHasBeenSet() const
+{
+    return m_syntaxRuleHasBeenSet;
+}
+
 string SearchLogRequest::GetTopicId() const
 {
     return m_topicId;
@@ -209,6 +225,22 @@ void SearchLogRequest::SetTopicId(const string& _topicId)
 bool SearchLogRequest::TopicIdHasBeenSet() const
 {
     return m_topicIdHasBeenSet;
+}
+
+vector<MultiTopicSearchInformation> SearchLogRequest::GetTopics() const
+{
+    return m_topics;
+}
+
+void SearchLogRequest::SetTopics(const vector<MultiTopicSearchInformation>& _topics)
+{
+    m_topics = _topics;
+    m_topicsHasBeenSet = true;
+}
+
+bool SearchLogRequest::TopicsHasBeenSet() const
+{
+    return m_topicsHasBeenSet;
 }
 
 int64_t SearchLogRequest::GetLimit() const
@@ -227,22 +259,6 @@ bool SearchLogRequest::LimitHasBeenSet() const
     return m_limitHasBeenSet;
 }
 
-string SearchLogRequest::GetContext() const
-{
-    return m_context;
-}
-
-void SearchLogRequest::SetContext(const string& _context)
-{
-    m_context = _context;
-    m_contextHasBeenSet = true;
-}
-
-bool SearchLogRequest::ContextHasBeenSet() const
-{
-    return m_contextHasBeenSet;
-}
-
 string SearchLogRequest::GetSort() const
 {
     return m_sort;
@@ -259,20 +275,20 @@ bool SearchLogRequest::SortHasBeenSet() const
     return m_sortHasBeenSet;
 }
 
-bool SearchLogRequest::GetUseNewAnalysis() const
+string SearchLogRequest::GetContext() const
 {
-    return m_useNewAnalysis;
+    return m_context;
 }
 
-void SearchLogRequest::SetUseNewAnalysis(const bool& _useNewAnalysis)
+void SearchLogRequest::SetContext(const string& _context)
 {
-    m_useNewAnalysis = _useNewAnalysis;
-    m_useNewAnalysisHasBeenSet = true;
+    m_context = _context;
+    m_contextHasBeenSet = true;
 }
 
-bool SearchLogRequest::UseNewAnalysisHasBeenSet() const
+bool SearchLogRequest::ContextHasBeenSet() const
 {
-    return m_useNewAnalysisHasBeenSet;
+    return m_contextHasBeenSet;
 }
 
 double SearchLogRequest::GetSamplingRate() const
@@ -291,36 +307,20 @@ bool SearchLogRequest::SamplingRateHasBeenSet() const
     return m_samplingRateHasBeenSet;
 }
 
-uint64_t SearchLogRequest::GetSyntaxRule() const
+bool SearchLogRequest::GetUseNewAnalysis() const
 {
-    return m_syntaxRule;
+    return m_useNewAnalysis;
 }
 
-void SearchLogRequest::SetSyntaxRule(const uint64_t& _syntaxRule)
+void SearchLogRequest::SetUseNewAnalysis(const bool& _useNewAnalysis)
 {
-    m_syntaxRule = _syntaxRule;
-    m_syntaxRuleHasBeenSet = true;
+    m_useNewAnalysis = _useNewAnalysis;
+    m_useNewAnalysisHasBeenSet = true;
 }
 
-bool SearchLogRequest::SyntaxRuleHasBeenSet() const
+bool SearchLogRequest::UseNewAnalysisHasBeenSet() const
 {
-    return m_syntaxRuleHasBeenSet;
-}
-
-vector<MultiTopicSearchInformation> SearchLogRequest::GetTopics() const
-{
-    return m_topics;
-}
-
-void SearchLogRequest::SetTopics(const vector<MultiTopicSearchInformation>& _topics)
-{
-    m_topics = _topics;
-    m_topicsHasBeenSet = true;
-}
-
-bool SearchLogRequest::TopicsHasBeenSet() const
-{
-    return m_topicsHasBeenSet;
+    return m_useNewAnalysisHasBeenSet;
 }
 
 

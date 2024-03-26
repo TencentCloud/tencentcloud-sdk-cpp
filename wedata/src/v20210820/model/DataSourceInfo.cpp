@@ -51,7 +51,10 @@ DataSourceInfo::DataSourceInfo() :
     m_paramsStringHasBeenSet(false),
     m_bizParamsStringHasBeenSet(false),
     m_modifiedTimeHasBeenSet(false),
-    m_showTypeHasBeenSet(false)
+    m_showTypeHasBeenSet(false),
+    m_productIdHasBeenSet(false),
+    m_developmentIdHasBeenSet(false),
+    m_developmentParamsHasBeenSet(false)
 {
 }
 
@@ -370,6 +373,36 @@ CoreInternalOutcome DataSourceInfo::Deserialize(const rapidjson::Value &value)
         m_showTypeHasBeenSet = true;
     }
 
+    if (value.HasMember("ProductId") && !value["ProductId"].IsNull())
+    {
+        if (!value["ProductId"].IsUint64())
+        {
+            return CoreInternalOutcome(Core::Error("response `DataSourceInfo.ProductId` IsUint64=false incorrectly").SetRequestId(requestId));
+        }
+        m_productId = value["ProductId"].GetUint64();
+        m_productIdHasBeenSet = true;
+    }
+
+    if (value.HasMember("DevelopmentId") && !value["DevelopmentId"].IsNull())
+    {
+        if (!value["DevelopmentId"].IsUint64())
+        {
+            return CoreInternalOutcome(Core::Error("response `DataSourceInfo.DevelopmentId` IsUint64=false incorrectly").SetRequestId(requestId));
+        }
+        m_developmentId = value["DevelopmentId"].GetUint64();
+        m_developmentIdHasBeenSet = true;
+    }
+
+    if (value.HasMember("DevelopmentParams") && !value["DevelopmentParams"].IsNull())
+    {
+        if (!value["DevelopmentParams"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `DataSourceInfo.DevelopmentParams` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_developmentParams = string(value["DevelopmentParams"].GetString());
+        m_developmentParamsHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -623,6 +656,30 @@ void DataSourceInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Document::
         string key = "ShowType";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_showType.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_productIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ProductId";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_productId, allocator);
+    }
+
+    if (m_developmentIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "DevelopmentId";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_developmentId, allocator);
+    }
+
+    if (m_developmentParamsHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "DevelopmentParams";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_developmentParams.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -1122,5 +1179,53 @@ void DataSourceInfo::SetShowType(const string& _showType)
 bool DataSourceInfo::ShowTypeHasBeenSet() const
 {
     return m_showTypeHasBeenSet;
+}
+
+uint64_t DataSourceInfo::GetProductId() const
+{
+    return m_productId;
+}
+
+void DataSourceInfo::SetProductId(const uint64_t& _productId)
+{
+    m_productId = _productId;
+    m_productIdHasBeenSet = true;
+}
+
+bool DataSourceInfo::ProductIdHasBeenSet() const
+{
+    return m_productIdHasBeenSet;
+}
+
+uint64_t DataSourceInfo::GetDevelopmentId() const
+{
+    return m_developmentId;
+}
+
+void DataSourceInfo::SetDevelopmentId(const uint64_t& _developmentId)
+{
+    m_developmentId = _developmentId;
+    m_developmentIdHasBeenSet = true;
+}
+
+bool DataSourceInfo::DevelopmentIdHasBeenSet() const
+{
+    return m_developmentIdHasBeenSet;
+}
+
+string DataSourceInfo::GetDevelopmentParams() const
+{
+    return m_developmentParams;
+}
+
+void DataSourceInfo::SetDevelopmentParams(const string& _developmentParams)
+{
+    m_developmentParams = _developmentParams;
+    m_developmentParamsHasBeenSet = true;
+}
+
+bool DataSourceInfo::DevelopmentParamsHasBeenSet() const
+{
+    return m_developmentParamsHasBeenSet;
 }
 

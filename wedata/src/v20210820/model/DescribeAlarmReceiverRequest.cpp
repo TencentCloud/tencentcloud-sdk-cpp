@@ -27,11 +27,12 @@ DescribeAlarmReceiverRequest::DescribeAlarmReceiverRequest() :
     m_pageNumberHasBeenSet(false),
     m_pageSizeHasBeenSet(false),
     m_projectIdHasBeenSet(false),
-    m_messageIdHasBeenSet(false),
     m_taskTypeHasBeenSet(false),
     m_alarmRecipientHasBeenSet(false),
     m_alarmRecipientNameHasBeenSet(false),
     m_alarmTimeHasBeenSet(false),
+    m_messageIdHasBeenSet(false),
+    m_recordIdHasBeenSet(false),
     m_monitorTypeHasBeenSet(false)
 {
 }
@@ -75,14 +76,6 @@ string DescribeAlarmReceiverRequest::ToJsonString() const
         d.AddMember(iKey, rapidjson::Value(m_projectId.c_str(), allocator).Move(), allocator);
     }
 
-    if (m_messageIdHasBeenSet)
-    {
-        rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "MessageId";
-        iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, rapidjson::Value(m_messageId.c_str(), allocator).Move(), allocator);
-    }
-
     if (m_taskTypeHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
@@ -113,6 +106,22 @@ string DescribeAlarmReceiverRequest::ToJsonString() const
         string key = "AlarmTime";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_alarmTime.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_messageIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "MessageId";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_messageId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_recordIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "RecordId";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_recordId, allocator);
     }
 
     if (m_monitorTypeHasBeenSet)
@@ -195,22 +204,6 @@ bool DescribeAlarmReceiverRequest::ProjectIdHasBeenSet() const
     return m_projectIdHasBeenSet;
 }
 
-string DescribeAlarmReceiverRequest::GetMessageId() const
-{
-    return m_messageId;
-}
-
-void DescribeAlarmReceiverRequest::SetMessageId(const string& _messageId)
-{
-    m_messageId = _messageId;
-    m_messageIdHasBeenSet = true;
-}
-
-bool DescribeAlarmReceiverRequest::MessageIdHasBeenSet() const
-{
-    return m_messageIdHasBeenSet;
-}
-
 uint64_t DescribeAlarmReceiverRequest::GetTaskType() const
 {
     return m_taskType;
@@ -273,6 +266,38 @@ void DescribeAlarmReceiverRequest::SetAlarmTime(const string& _alarmTime)
 bool DescribeAlarmReceiverRequest::AlarmTimeHasBeenSet() const
 {
     return m_alarmTimeHasBeenSet;
+}
+
+string DescribeAlarmReceiverRequest::GetMessageId() const
+{
+    return m_messageId;
+}
+
+void DescribeAlarmReceiverRequest::SetMessageId(const string& _messageId)
+{
+    m_messageId = _messageId;
+    m_messageIdHasBeenSet = true;
+}
+
+bool DescribeAlarmReceiverRequest::MessageIdHasBeenSet() const
+{
+    return m_messageIdHasBeenSet;
+}
+
+uint64_t DescribeAlarmReceiverRequest::GetRecordId() const
+{
+    return m_recordId;
+}
+
+void DescribeAlarmReceiverRequest::SetRecordId(const uint64_t& _recordId)
+{
+    m_recordId = _recordId;
+    m_recordIdHasBeenSet = true;
+}
+
+bool DescribeAlarmReceiverRequest::RecordIdHasBeenSet() const
+{
+    return m_recordIdHasBeenSet;
 }
 
 uint64_t DescribeAlarmReceiverRequest::GetMonitorType() const

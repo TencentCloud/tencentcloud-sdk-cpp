@@ -72,18 +72,18 @@ namespace TencentCloud
                     bool RegionHasBeenSet() const;
 
                     /**
-                     * 获取tdsql mysql版的节点类型，枚举值为proxy、set。tdsqlmysql必填
+                     * 获取节点类型，proxy表示节点类型为主机，set表示节点类型为节点。proxy类型必须填在数组第一项。tdsqlmysql类型的源/目标配置必填
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return Role tdsql mysql版的节点类型，枚举值为proxy、set。tdsqlmysql必填
+                     * @return Role 节点类型，proxy表示节点类型为主机，set表示节点类型为节点。proxy类型必须填在数组第一项。tdsqlmysql类型的源/目标配置必填
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetRole() const;
 
                     /**
-                     * 设置tdsql mysql版的节点类型，枚举值为proxy、set。tdsqlmysql必填
+                     * 设置节点类型，proxy表示节点类型为主机，set表示节点类型为节点。proxy类型必须填在数组第一项。tdsqlmysql类型的源/目标配置必填
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _role tdsql mysql版的节点类型，枚举值为proxy、set。tdsqlmysql必填
+                     * @param _role 节点类型，proxy表示节点类型为主机，set表示节点类型为节点。proxy类型必须填在数组第一项。tdsqlmysql类型的源/目标配置必填
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -731,7 +731,7 @@ namespace TencentCloud
                     bool m_regionHasBeenSet;
 
                     /**
-                     * tdsql mysql版的节点类型，枚举值为proxy、set。tdsqlmysql必填
+                     * 节点类型，proxy表示节点类型为主机，set表示节点类型为节点。proxy类型必须填在数组第一项。tdsqlmysql类型的源/目标配置必填
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_role;

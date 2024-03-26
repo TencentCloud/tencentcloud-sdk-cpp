@@ -24,7 +24,8 @@ MakePlanTaskOpsDto::MakePlanTaskOpsDto() :
     m_taskBaseInfoHasBeenSet(false),
     m_instanceCountHasBeenSet(false),
     m_completePercentHasBeenSet(false),
-    m_successPercentHasBeenSet(false)
+    m_successPercentHasBeenSet(false),
+    m_instanceTotalCountHasBeenSet(false)
 {
 }
 
@@ -80,6 +81,16 @@ CoreInternalOutcome MakePlanTaskOpsDto::Deserialize(const rapidjson::Value &valu
         m_successPercentHasBeenSet = true;
     }
 
+    if (value.HasMember("InstanceTotalCount") && !value["InstanceTotalCount"].IsNull())
+    {
+        if (!value["InstanceTotalCount"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `MakePlanTaskOpsDto.InstanceTotalCount` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_instanceTotalCount = value["InstanceTotalCount"].GetInt64();
+        m_instanceTotalCountHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -118,6 +129,14 @@ void MakePlanTaskOpsDto::ToJsonObject(rapidjson::Value &value, rapidjson::Docume
         string key = "SuccessPercent";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_successPercent, allocator);
+    }
+
+    if (m_instanceTotalCountHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "InstanceTotalCount";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_instanceTotalCount, allocator);
     }
 
 }
@@ -185,5 +204,21 @@ void MakePlanTaskOpsDto::SetSuccessPercent(const int64_t& _successPercent)
 bool MakePlanTaskOpsDto::SuccessPercentHasBeenSet() const
 {
     return m_successPercentHasBeenSet;
+}
+
+int64_t MakePlanTaskOpsDto::GetInstanceTotalCount() const
+{
+    return m_instanceTotalCount;
+}
+
+void MakePlanTaskOpsDto::SetInstanceTotalCount(const int64_t& _instanceTotalCount)
+{
+    m_instanceTotalCount = _instanceTotalCount;
+    m_instanceTotalCountHasBeenSet = true;
+}
+
+bool MakePlanTaskOpsDto::InstanceTotalCountHasBeenSet() const
+{
+    return m_instanceTotalCountHasBeenSet;
 }
 

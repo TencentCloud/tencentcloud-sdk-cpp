@@ -73,18 +73,18 @@ namespace TencentCloud
                     bool TaskBaseInfoHasBeenSet() const;
 
                     /**
-                     * 获取补录计划该任务实例数
+                     * 获取补录该任务当前已生成的实例数
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return InstanceCount 补录计划该任务实例数
+                     * @return InstanceCount 补录该任务当前已生成的实例数
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetInstanceCount() const;
 
                     /**
-                     * 设置补录计划该任务实例数
+                     * 设置补录该任务当前已生成的实例数
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _instanceCount 补录计划该任务实例数
+                     * @param _instanceCount 补录该任务当前已生成的实例数
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -147,6 +147,31 @@ namespace TencentCloud
                      */
                     bool SuccessPercentHasBeenSet() const;
 
+                    /**
+                     * 获取预计生成的总实例个数，由于是异步生成，-1代表实例还未完完全生成
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return InstanceTotalCount 预计生成的总实例个数，由于是异步生成，-1代表实例还未完完全生成
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    int64_t GetInstanceTotalCount() const;
+
+                    /**
+                     * 设置预计生成的总实例个数，由于是异步生成，-1代表实例还未完完全生成
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _instanceTotalCount 预计生成的总实例个数，由于是异步生成，-1代表实例还未完完全生成
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetInstanceTotalCount(const int64_t& _instanceTotalCount);
+
+                    /**
+                     * 判断参数 InstanceTotalCount 是否已赋值
+                     * @return InstanceTotalCount 是否已赋值
+                     * 
+                     */
+                    bool InstanceTotalCountHasBeenSet() const;
+
                 private:
 
                     /**
@@ -157,7 +182,7 @@ namespace TencentCloud
                     bool m_taskBaseInfoHasBeenSet;
 
                     /**
-                     * 补录计划该任务实例数
+                     * 补录该任务当前已生成的实例数
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_instanceCount;
@@ -176,6 +201,13 @@ namespace TencentCloud
                      */
                     int64_t m_successPercent;
                     bool m_successPercentHasBeenSet;
+
+                    /**
+                     * 预计生成的总实例个数，由于是异步生成，-1代表实例还未完完全生成
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    int64_t m_instanceTotalCount;
+                    bool m_instanceTotalCountHasBeenSet;
 
                 };
             }

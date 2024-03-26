@@ -241,6 +241,8 @@
 #include <tencentcloud/dlc/v20210125/model/ModifyWorkGroupResponse.h>
 #include <tencentcloud/dlc/v20210125/model/QueryResultRequest.h>
 #include <tencentcloud/dlc/v20210125/model/QueryResultResponse.h>
+#include <tencentcloud/dlc/v20210125/model/QueryTaskCostDetailRequest.h>
+#include <tencentcloud/dlc/v20210125/model/QueryTaskCostDetailResponse.h>
 #include <tencentcloud/dlc/v20210125/model/RenewDataEngineRequest.h>
 #include <tencentcloud/dlc/v20210125/model/RenewDataEngineResponse.h>
 #include <tencentcloud/dlc/v20210125/model/ReportHeartbeatMetaDataRequest.h>
@@ -610,6 +612,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::QueryResultResponse> QueryResultOutcome;
                 typedef std::future<QueryResultOutcome> QueryResultOutcomeCallable;
                 typedef std::function<void(const DlcClient*, const Model::QueryResultRequest&, QueryResultOutcome, const std::shared_ptr<const AsyncCallerContext>&)> QueryResultAsyncHandler;
+                typedef Outcome<Core::Error, Model::QueryTaskCostDetailResponse> QueryTaskCostDetailOutcome;
+                typedef std::future<QueryTaskCostDetailOutcome> QueryTaskCostDetailOutcomeCallable;
+                typedef std::function<void(const DlcClient*, const Model::QueryTaskCostDetailRequest&, QueryTaskCostDetailOutcome, const std::shared_ptr<const AsyncCallerContext>&)> QueryTaskCostDetailAsyncHandler;
                 typedef Outcome<Core::Error, Model::RenewDataEngineResponse> RenewDataEngineOutcome;
                 typedef std::future<RenewDataEngineOutcome> RenewDataEngineOutcomeCallable;
                 typedef std::function<void(const DlcClient*, const Model::RenewDataEngineRequest&, RenewDataEngineOutcome, const std::shared_ptr<const AsyncCallerContext>&)> RenewDataEngineAsyncHandler;
@@ -1635,6 +1640,15 @@ namespace TencentCloud
                 QueryResultOutcome QueryResult(const Model::QueryResultRequest &request);
                 void QueryResultAsync(const Model::QueryResultRequest& request, const QueryResultAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 QueryResultOutcomeCallable QueryResultCallable(const Model::QueryResultRequest& request);
+
+                /**
+                 *该接口（QueryTaskCostDetail）用于查询任务消耗明细
+                 * @param req QueryTaskCostDetailRequest
+                 * @return QueryTaskCostDetailOutcome
+                 */
+                QueryTaskCostDetailOutcome QueryTaskCostDetail(const Model::QueryTaskCostDetailRequest &request);
+                void QueryTaskCostDetailAsync(const Model::QueryTaskCostDetailRequest& request, const QueryTaskCostDetailAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                QueryTaskCostDetailOutcomeCallable QueryTaskCostDetailCallable(const Model::QueryTaskCostDetailRequest& request);
 
                 /**
                  *续费数据引擎

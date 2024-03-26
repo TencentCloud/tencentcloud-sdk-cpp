@@ -298,6 +298,49 @@ PtsClient::CreateCronJobOutcomeCallable PtsClient::CreateCronJobCallable(const C
     return task->get_future();
 }
 
+PtsClient::CreateEnvironmentOutcome PtsClient::CreateEnvironment(const CreateEnvironmentRequest &request)
+{
+    auto outcome = MakeRequest(request, "CreateEnvironment");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        CreateEnvironmentResponse rsp = CreateEnvironmentResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return CreateEnvironmentOutcome(rsp);
+        else
+            return CreateEnvironmentOutcome(o.GetError());
+    }
+    else
+    {
+        return CreateEnvironmentOutcome(outcome.GetError());
+    }
+}
+
+void PtsClient::CreateEnvironmentAsync(const CreateEnvironmentRequest& request, const CreateEnvironmentAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->CreateEnvironment(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+PtsClient::CreateEnvironmentOutcomeCallable PtsClient::CreateEnvironmentCallable(const CreateEnvironmentRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<CreateEnvironmentOutcome()>>(
+        [this, request]()
+        {
+            return this->CreateEnvironment(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 PtsClient::CreateFileOutcome PtsClient::CreateFile(const CreateFileRequest &request)
 {
     auto outcome = MakeRequest(request, "CreateFile");
@@ -506,6 +549,49 @@ PtsClient::DeleteCronJobsOutcomeCallable PtsClient::DeleteCronJobsCallable(const
         [this, request]()
         {
             return this->DeleteCronJobs(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+PtsClient::DeleteEnvironmentsOutcome PtsClient::DeleteEnvironments(const DeleteEnvironmentsRequest &request)
+{
+    auto outcome = MakeRequest(request, "DeleteEnvironments");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DeleteEnvironmentsResponse rsp = DeleteEnvironmentsResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DeleteEnvironmentsOutcome(rsp);
+        else
+            return DeleteEnvironmentsOutcome(o.GetError());
+    }
+    else
+    {
+        return DeleteEnvironmentsOutcome(outcome.GetError());
+    }
+}
+
+void PtsClient::DeleteEnvironmentsAsync(const DeleteEnvironmentsRequest& request, const DeleteEnvironmentsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DeleteEnvironments(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+PtsClient::DeleteEnvironmentsOutcomeCallable PtsClient::DeleteEnvironmentsCallable(const DeleteEnvironmentsRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DeleteEnvironmentsOutcome()>>(
+        [this, request]()
+        {
+            return this->DeleteEnvironments(request);
         }
     );
 
@@ -893,6 +979,49 @@ PtsClient::DescribeCronJobsOutcomeCallable PtsClient::DescribeCronJobsCallable(c
         [this, request]()
         {
             return this->DescribeCronJobs(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+PtsClient::DescribeEnvironmentsOutcome PtsClient::DescribeEnvironments(const DescribeEnvironmentsRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeEnvironments");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeEnvironmentsResponse rsp = DescribeEnvironmentsResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeEnvironmentsOutcome(rsp);
+        else
+            return DescribeEnvironmentsOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeEnvironmentsOutcome(outcome.GetError());
+    }
+}
+
+void PtsClient::DescribeEnvironmentsAsync(const DescribeEnvironmentsRequest& request, const DescribeEnvironmentsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeEnvironments(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+PtsClient::DescribeEnvironmentsOutcomeCallable PtsClient::DescribeEnvironmentsCallable(const DescribeEnvironmentsRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeEnvironmentsOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeEnvironments(request);
         }
     );
 
@@ -1753,6 +1882,49 @@ PtsClient::UpdateCronJobOutcomeCallable PtsClient::UpdateCronJobCallable(const U
         [this, request]()
         {
             return this->UpdateCronJob(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+PtsClient::UpdateEnvironmentOutcome PtsClient::UpdateEnvironment(const UpdateEnvironmentRequest &request)
+{
+    auto outcome = MakeRequest(request, "UpdateEnvironment");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        UpdateEnvironmentResponse rsp = UpdateEnvironmentResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return UpdateEnvironmentOutcome(rsp);
+        else
+            return UpdateEnvironmentOutcome(o.GetError());
+    }
+    else
+    {
+        return UpdateEnvironmentOutcome(outcome.GetError());
+    }
+}
+
+void PtsClient::UpdateEnvironmentAsync(const UpdateEnvironmentRequest& request, const UpdateEnvironmentAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->UpdateEnvironment(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+PtsClient::UpdateEnvironmentOutcomeCallable PtsClient::UpdateEnvironmentCallable(const UpdateEnvironmentRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<UpdateEnvironmentOutcome()>>(
+        [this, request]()
+        {
+            return this->UpdateEnvironment(request);
         }
     );
 

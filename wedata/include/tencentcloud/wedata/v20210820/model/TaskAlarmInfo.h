@@ -25,6 +25,7 @@
 #include <tencentcloud/core/utils/rapidjson/stringbuffer.h>
 #include <tencentcloud/core/AbstractModel.h>
 #include <tencentcloud/wedata/v20210820/model/AlarmIndicatorInfo.h>
+#include <tencentcloud/wedata/v20210820/model/QuietPeriod.h>
 
 
 namespace TencentCloud
@@ -541,6 +542,31 @@ namespace TencentCloud
                     bool AlarmRecipientTypeHasBeenSet() const;
 
                     /**
+                     * 获取免打扰时间
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return QuietPeriods 免打扰时间
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::vector<QuietPeriod> GetQuietPeriods() const;
+
+                    /**
+                     * 设置免打扰时间
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _quietPeriods 免打扰时间
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetQuietPeriods(const std::vector<QuietPeriod>& _quietPeriods);
+
+                    /**
+                     * 判断参数 QuietPeriods 是否已赋值
+                     * @return QuietPeriods 是否已赋值
+                     * 
+                     */
+                    bool QuietPeriodsHasBeenSet() const;
+
+                    /**
                      * 获取企业微信群Hook地址，多个hook地址使用,隔开
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return WeComHook 企业微信群Hook地址，多个hook地址使用,隔开
@@ -930,6 +956,13 @@ namespace TencentCloud
                      */
                     uint64_t m_alarmRecipientType;
                     bool m_alarmRecipientTypeHasBeenSet;
+
+                    /**
+                     * 免打扰时间
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::vector<QuietPeriod> m_quietPeriods;
+                    bool m_quietPeriodsHasBeenSet;
 
                     /**
                      * 企业微信群Hook地址，多个hook地址使用,隔开

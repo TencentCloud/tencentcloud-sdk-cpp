@@ -371,6 +371,22 @@ namespace TencentCloud
                     bool KafkaConfigHasBeenSet() const;
 
                     /**
+                     * 获取订阅内置kafka的版本信息
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return KafkaVersion 订阅内置kafka的版本信息
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::string GetKafkaVersion() const;
+
+                    /**
+                     * 判断参数 KafkaVersion 是否已赋值
+                     * @return KafkaVersion 是否已赋值
+                     * 
+                     */
+                    bool KafkaVersionHasBeenSet() const;
+
+                    /**
                      * 获取源数据库接入类型，如：extranet(公网)、vpncloud(vpn接入)、dcg(专线接入)、ccn(云联网)、cdb(云数据库)、cvm(云服务器自建)、intranet(自研上云)、vpc(私有网络vpc)。注意具体可选值依赖当前链路支持能力
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return AccessType 源数据库接入类型，如：extranet(公网)、vpncloud(vpn接入)、dcg(专线接入)、ccn(云联网)、cdb(云数据库)、cvm(云服务器自建)、intranet(自研上云)、vpc(私有网络vpc)。注意具体可选值依赖当前链路支持能力
@@ -610,6 +626,13 @@ mongo选填参数：SubscribeType-订阅类型，目前只支持changeStream。
                      */
                     SubscribeKafkaConfig m_kafkaConfig;
                     bool m_kafkaConfigHasBeenSet;
+
+                    /**
+                     * 订阅内置kafka的版本信息
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_kafkaVersion;
+                    bool m_kafkaVersionHasBeenSet;
 
                     /**
                      * 源数据库接入类型，如：extranet(公网)、vpncloud(vpn接入)、dcg(专线接入)、ccn(云联网)、cdb(云数据库)、cvm(云服务器自建)、intranet(自研上云)、vpc(私有网络vpc)。注意具体可选值依赖当前链路支持能力

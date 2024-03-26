@@ -36,6 +36,8 @@ AlarmEventInfo::AlarmEventInfo() :
     m_instanceIdHasBeenSet(false),
     m_taskNameHasBeenSet(false),
     m_isSendSuccessHasBeenSet(false),
+    m_inQuitePeriodsHasBeenSet(false),
+    m_recordIdHasBeenSet(false),
     m_messageIdHasBeenSet(false),
     m_operatorHasBeenSet(false),
     m_regularIdHasBeenSet(false),
@@ -201,6 +203,26 @@ CoreInternalOutcome AlarmEventInfo::Deserialize(const rapidjson::Value &value)
         }
         m_isSendSuccess = value["IsSendSuccess"].GetUint64();
         m_isSendSuccessHasBeenSet = true;
+    }
+
+    if (value.HasMember("InQuitePeriods") && !value["InQuitePeriods"].IsNull())
+    {
+        if (!value["InQuitePeriods"].IsUint64())
+        {
+            return CoreInternalOutcome(Core::Error("response `AlarmEventInfo.InQuitePeriods` IsUint64=false incorrectly").SetRequestId(requestId));
+        }
+        m_inQuitePeriods = value["InQuitePeriods"].GetUint64();
+        m_inQuitePeriodsHasBeenSet = true;
+    }
+
+    if (value.HasMember("RecordId") && !value["RecordId"].IsNull())
+    {
+        if (!value["RecordId"].IsUint64())
+        {
+            return CoreInternalOutcome(Core::Error("response `AlarmEventInfo.RecordId` IsUint64=false incorrectly").SetRequestId(requestId));
+        }
+        m_recordId = value["RecordId"].GetUint64();
+        m_recordIdHasBeenSet = true;
     }
 
     if (value.HasMember("MessageId") && !value["MessageId"].IsNull())
@@ -418,6 +440,22 @@ void AlarmEventInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Document::
         string key = "IsSendSuccess";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_isSendSuccess, allocator);
+    }
+
+    if (m_inQuitePeriodsHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "InQuitePeriods";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_inQuitePeriods, allocator);
+    }
+
+    if (m_recordIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "RecordId";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_recordId, allocator);
     }
 
     if (m_messageIdHasBeenSet)
@@ -733,6 +771,38 @@ void AlarmEventInfo::SetIsSendSuccess(const uint64_t& _isSendSuccess)
 bool AlarmEventInfo::IsSendSuccessHasBeenSet() const
 {
     return m_isSendSuccessHasBeenSet;
+}
+
+uint64_t AlarmEventInfo::GetInQuitePeriods() const
+{
+    return m_inQuitePeriods;
+}
+
+void AlarmEventInfo::SetInQuitePeriods(const uint64_t& _inQuitePeriods)
+{
+    m_inQuitePeriods = _inQuitePeriods;
+    m_inQuitePeriodsHasBeenSet = true;
+}
+
+bool AlarmEventInfo::InQuitePeriodsHasBeenSet() const
+{
+    return m_inQuitePeriodsHasBeenSet;
+}
+
+uint64_t AlarmEventInfo::GetRecordId() const
+{
+    return m_recordId;
+}
+
+void AlarmEventInfo::SetRecordId(const uint64_t& _recordId)
+{
+    m_recordId = _recordId;
+    m_recordIdHasBeenSet = true;
+}
+
+bool AlarmEventInfo::RecordIdHasBeenSet() const
+{
+    return m_recordIdHasBeenSet;
 }
 
 string AlarmEventInfo::GetMessageId() const

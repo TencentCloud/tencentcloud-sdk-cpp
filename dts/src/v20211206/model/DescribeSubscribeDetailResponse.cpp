@@ -45,6 +45,7 @@ DescribeSubscribeDetailResponse::DescribeSubscribeDetailResponse() :
     m_protocolHasBeenSet(false),
     m_subscribeObjectsHasBeenSet(false),
     m_kafkaConfigHasBeenSet(false),
+    m_kafkaVersionHasBeenSet(false),
     m_accessTypeHasBeenSet(false),
     m_endpointsHasBeenSet(false),
     m_pipelineInfoHasBeenSet(false),
@@ -313,6 +314,16 @@ CoreInternalOutcome DescribeSubscribeDetailResponse::Deserialize(const string &p
         }
 
         m_kafkaConfigHasBeenSet = true;
+    }
+
+    if (rsp.HasMember("KafkaVersion") && !rsp["KafkaVersion"].IsNull())
+    {
+        if (!rsp["KafkaVersion"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `KafkaVersion` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_kafkaVersion = string(rsp["KafkaVersion"].GetString());
+        m_kafkaVersionHasBeenSet = true;
     }
 
     if (rsp.HasMember("AccessType") && !rsp["AccessType"].IsNull())
@@ -609,6 +620,14 @@ string DescribeSubscribeDetailResponse::ToJsonString() const
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
         m_kafkaConfig.ToJsonObject(value[key.c_str()], allocator);
+    }
+
+    if (m_kafkaVersionHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "KafkaVersion";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_kafkaVersion.c_str(), allocator).Move(), allocator);
     }
 
     if (m_accessTypeHasBeenSet)
@@ -914,6 +933,16 @@ SubscribeKafkaConfig DescribeSubscribeDetailResponse::GetKafkaConfig() const
 bool DescribeSubscribeDetailResponse::KafkaConfigHasBeenSet() const
 {
     return m_kafkaConfigHasBeenSet;
+}
+
+string DescribeSubscribeDetailResponse::GetKafkaVersion() const
+{
+    return m_kafkaVersion;
+}
+
+bool DescribeSubscribeDetailResponse::KafkaVersionHasBeenSet() const
+{
+    return m_kafkaVersionHasBeenSet;
 }
 
 string DescribeSubscribeDetailResponse::GetAccessType() const

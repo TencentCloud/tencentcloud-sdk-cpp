@@ -40,7 +40,8 @@ CreateDataSourceRequest::CreateDataSourceRequest() :
     m_collectHasBeenSet(false),
     m_cOSBucketHasBeenSet(false),
     m_cOSRegionHasBeenSet(false),
-    m_connectResultHasBeenSet(false)
+    m_connectResultHasBeenSet(false),
+    m_developmentParamsHasBeenSet(false)
 {
 }
 
@@ -193,6 +194,14 @@ string CreateDataSourceRequest::ToJsonString() const
         string key = "ConnectResult";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_connectResult.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_developmentParamsHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "DevelopmentParams";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_developmentParams.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -489,6 +498,22 @@ void CreateDataSourceRequest::SetConnectResult(const string& _connectResult)
 bool CreateDataSourceRequest::ConnectResultHasBeenSet() const
 {
     return m_connectResultHasBeenSet;
+}
+
+string CreateDataSourceRequest::GetDevelopmentParams() const
+{
+    return m_developmentParams;
+}
+
+void CreateDataSourceRequest::SetDevelopmentParams(const string& _developmentParams)
+{
+    m_developmentParams = _developmentParams;
+    m_developmentParamsHasBeenSet = true;
+}
+
+bool CreateDataSourceRequest::DevelopmentParamsHasBeenSet() const
+{
+    return m_developmentParamsHasBeenSet;
 }
 
 

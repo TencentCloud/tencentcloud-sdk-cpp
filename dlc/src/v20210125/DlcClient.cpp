@@ -4727,6 +4727,49 @@ DlcClient::QueryResultOutcomeCallable DlcClient::QueryResultCallable(const Query
     return task->get_future();
 }
 
+DlcClient::QueryTaskCostDetailOutcome DlcClient::QueryTaskCostDetail(const QueryTaskCostDetailRequest &request)
+{
+    auto outcome = MakeRequest(request, "QueryTaskCostDetail");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        QueryTaskCostDetailResponse rsp = QueryTaskCostDetailResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return QueryTaskCostDetailOutcome(rsp);
+        else
+            return QueryTaskCostDetailOutcome(o.GetError());
+    }
+    else
+    {
+        return QueryTaskCostDetailOutcome(outcome.GetError());
+    }
+}
+
+void DlcClient::QueryTaskCostDetailAsync(const QueryTaskCostDetailRequest& request, const QueryTaskCostDetailAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->QueryTaskCostDetail(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+DlcClient::QueryTaskCostDetailOutcomeCallable DlcClient::QueryTaskCostDetailCallable(const QueryTaskCostDetailRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<QueryTaskCostDetailOutcome()>>(
+        [this, request]()
+        {
+            return this->QueryTaskCostDetail(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 DlcClient::RenewDataEngineOutcome DlcClient::RenewDataEngine(const RenewDataEngineRequest &request)
 {
     auto outcome = MakeRequest(request, "RenewDataEngine");

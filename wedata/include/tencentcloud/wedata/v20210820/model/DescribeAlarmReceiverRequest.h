@@ -127,27 +127,6 @@ namespace TencentCloud
                     bool ProjectIdHasBeenSet() const;
 
                     /**
-                     * 获取消息ID
-                     * @return MessageId 消息ID
-                     * 
-                     */
-                    std::string GetMessageId() const;
-
-                    /**
-                     * 设置消息ID
-                     * @param _messageId 消息ID
-                     * 
-                     */
-                    void SetMessageId(const std::string& _messageId);
-
-                    /**
-                     * 判断参数 MessageId 是否已赋值
-                     * @return MessageId 是否已赋值
-                     * 
-                     */
-                    bool MessageIdHasBeenSet() const;
-
-                    /**
                      * 获取类型
                      * @return TaskType 类型
                      * 
@@ -232,6 +211,48 @@ namespace TencentCloud
                     bool AlarmTimeHasBeenSet() const;
 
                     /**
+                     * 获取消息ID
+                     * @return MessageId 消息ID
+                     * 
+                     */
+                    std::string GetMessageId() const;
+
+                    /**
+                     * 设置消息ID
+                     * @param _messageId 消息ID
+                     * 
+                     */
+                    void SetMessageId(const std::string& _messageId);
+
+                    /**
+                     * 判断参数 MessageId 是否已赋值
+                     * @return MessageId 是否已赋值
+                     * 
+                     */
+                    bool MessageIdHasBeenSet() const;
+
+                    /**
+                     * 获取告警记录id
+                     * @return RecordId 告警记录id
+                     * 
+                     */
+                    uint64_t GetRecordId() const;
+
+                    /**
+                     * 设置告警记录id
+                     * @param _recordId 告警记录id
+                     * 
+                     */
+                    void SetRecordId(const uint64_t& _recordId);
+
+                    /**
+                     * 判断参数 RecordId 是否已赋值
+                     * @return RecordId 是否已赋值
+                     * 
+                     */
+                    bool RecordIdHasBeenSet() const;
+
+                    /**
                      * 获取监控对象类型(1:所有任务,2:指定任务,3:指定责任人,4:指定资源组)
                      * @return MonitorType 监控对象类型(1:所有任务,2:指定任务,3:指定责任人,4:指定资源组)
                      * 
@@ -279,12 +300,6 @@ namespace TencentCloud
                     bool m_projectIdHasBeenSet;
 
                     /**
-                     * 消息ID
-                     */
-                    std::string m_messageId;
-                    bool m_messageIdHasBeenSet;
-
-                    /**
                      * 类型
                      */
                     uint64_t m_taskType;
@@ -307,6 +322,18 @@ namespace TencentCloud
                      */
                     std::string m_alarmTime;
                     bool m_alarmTimeHasBeenSet;
+
+                    /**
+                     * 消息ID
+                     */
+                    std::string m_messageId;
+                    bool m_messageIdHasBeenSet;
+
+                    /**
+                     * 告警记录id
+                     */
+                    uint64_t m_recordId;
+                    bool m_recordIdHasBeenSet;
 
                     /**
                      * 监控对象类型(1:所有任务,2:指定任务,3:指定责任人,4:指定资源组)

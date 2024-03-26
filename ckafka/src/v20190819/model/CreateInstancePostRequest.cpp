@@ -24,9 +24,9 @@ using namespace std;
 
 CreateInstancePostRequest::CreateInstancePostRequest() :
     m_instanceNameHasBeenSet(false),
-    m_bandWidthHasBeenSet(false),
     m_vpcIdHasBeenSet(false),
     m_subnetIdHasBeenSet(false),
+    m_bandWidthHasBeenSet(false),
     m_instanceTypeHasBeenSet(false),
     m_msgRetentionTimeHasBeenSet(false),
     m_clusterIdHasBeenSet(false),
@@ -59,14 +59,6 @@ string CreateInstancePostRequest::ToJsonString() const
         d.AddMember(iKey, rapidjson::Value(m_instanceName.c_str(), allocator).Move(), allocator);
     }
 
-    if (m_bandWidthHasBeenSet)
-    {
-        rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "BandWidth";
-        iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, m_bandWidth, allocator);
-    }
-
     if (m_vpcIdHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
@@ -81,6 +73,14 @@ string CreateInstancePostRequest::ToJsonString() const
         string key = "SubnetId";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_subnetId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_bandWidthHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "BandWidth";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_bandWidth, allocator);
     }
 
     if (m_instanceTypeHasBeenSet)
@@ -224,22 +224,6 @@ bool CreateInstancePostRequest::InstanceNameHasBeenSet() const
     return m_instanceNameHasBeenSet;
 }
 
-int64_t CreateInstancePostRequest::GetBandWidth() const
-{
-    return m_bandWidth;
-}
-
-void CreateInstancePostRequest::SetBandWidth(const int64_t& _bandWidth)
-{
-    m_bandWidth = _bandWidth;
-    m_bandWidthHasBeenSet = true;
-}
-
-bool CreateInstancePostRequest::BandWidthHasBeenSet() const
-{
-    return m_bandWidthHasBeenSet;
-}
-
 string CreateInstancePostRequest::GetVpcId() const
 {
     return m_vpcId;
@@ -270,6 +254,22 @@ void CreateInstancePostRequest::SetSubnetId(const string& _subnetId)
 bool CreateInstancePostRequest::SubnetIdHasBeenSet() const
 {
     return m_subnetIdHasBeenSet;
+}
+
+int64_t CreateInstancePostRequest::GetBandWidth() const
+{
+    return m_bandWidth;
+}
+
+void CreateInstancePostRequest::SetBandWidth(const int64_t& _bandWidth)
+{
+    m_bandWidth = _bandWidth;
+    m_bandWidthHasBeenSet = true;
+}
+
+bool CreateInstancePostRequest::BandWidthHasBeenSet() const
+{
+    return m_bandWidthHasBeenSet;
 }
 
 int64_t CreateInstancePostRequest::GetInstanceType() const

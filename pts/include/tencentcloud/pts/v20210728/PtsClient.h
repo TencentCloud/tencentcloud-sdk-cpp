@@ -35,6 +35,8 @@
 #include <tencentcloud/pts/v20210728/model/CreateAlertChannelResponse.h>
 #include <tencentcloud/pts/v20210728/model/CreateCronJobRequest.h>
 #include <tencentcloud/pts/v20210728/model/CreateCronJobResponse.h>
+#include <tencentcloud/pts/v20210728/model/CreateEnvironmentRequest.h>
+#include <tencentcloud/pts/v20210728/model/CreateEnvironmentResponse.h>
 #include <tencentcloud/pts/v20210728/model/CreateFileRequest.h>
 #include <tencentcloud/pts/v20210728/model/CreateFileResponse.h>
 #include <tencentcloud/pts/v20210728/model/CreateProjectRequest.h>
@@ -45,6 +47,8 @@
 #include <tencentcloud/pts/v20210728/model/DeleteAlertChannelResponse.h>
 #include <tencentcloud/pts/v20210728/model/DeleteCronJobsRequest.h>
 #include <tencentcloud/pts/v20210728/model/DeleteCronJobsResponse.h>
+#include <tencentcloud/pts/v20210728/model/DeleteEnvironmentsRequest.h>
+#include <tencentcloud/pts/v20210728/model/DeleteEnvironmentsResponse.h>
 #include <tencentcloud/pts/v20210728/model/DeleteFilesRequest.h>
 #include <tencentcloud/pts/v20210728/model/DeleteFilesResponse.h>
 #include <tencentcloud/pts/v20210728/model/DeleteJobsRequest.h>
@@ -63,6 +67,8 @@
 #include <tencentcloud/pts/v20210728/model/DescribeCheckSummaryResponse.h>
 #include <tencentcloud/pts/v20210728/model/DescribeCronJobsRequest.h>
 #include <tencentcloud/pts/v20210728/model/DescribeCronJobsResponse.h>
+#include <tencentcloud/pts/v20210728/model/DescribeEnvironmentsRequest.h>
+#include <tencentcloud/pts/v20210728/model/DescribeEnvironmentsResponse.h>
 #include <tencentcloud/pts/v20210728/model/DescribeErrorSummaryRequest.h>
 #include <tencentcloud/pts/v20210728/model/DescribeErrorSummaryResponse.h>
 #include <tencentcloud/pts/v20210728/model/DescribeFilesRequest.h>
@@ -103,6 +109,8 @@
 #include <tencentcloud/pts/v20210728/model/StartJobResponse.h>
 #include <tencentcloud/pts/v20210728/model/UpdateCronJobRequest.h>
 #include <tencentcloud/pts/v20210728/model/UpdateCronJobResponse.h>
+#include <tencentcloud/pts/v20210728/model/UpdateEnvironmentRequest.h>
+#include <tencentcloud/pts/v20210728/model/UpdateEnvironmentResponse.h>
 #include <tencentcloud/pts/v20210728/model/UpdateFileScenarioRelationRequest.h>
 #include <tencentcloud/pts/v20210728/model/UpdateFileScenarioRelationResponse.h>
 #include <tencentcloud/pts/v20210728/model/UpdateJobRequest.h>
@@ -143,6 +151,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::CreateCronJobResponse> CreateCronJobOutcome;
                 typedef std::future<CreateCronJobOutcome> CreateCronJobOutcomeCallable;
                 typedef std::function<void(const PtsClient*, const Model::CreateCronJobRequest&, CreateCronJobOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateCronJobAsyncHandler;
+                typedef Outcome<Core::Error, Model::CreateEnvironmentResponse> CreateEnvironmentOutcome;
+                typedef std::future<CreateEnvironmentOutcome> CreateEnvironmentOutcomeCallable;
+                typedef std::function<void(const PtsClient*, const Model::CreateEnvironmentRequest&, CreateEnvironmentOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateEnvironmentAsyncHandler;
                 typedef Outcome<Core::Error, Model::CreateFileResponse> CreateFileOutcome;
                 typedef std::future<CreateFileOutcome> CreateFileOutcomeCallable;
                 typedef std::function<void(const PtsClient*, const Model::CreateFileRequest&, CreateFileOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateFileAsyncHandler;
@@ -158,6 +169,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DeleteCronJobsResponse> DeleteCronJobsOutcome;
                 typedef std::future<DeleteCronJobsOutcome> DeleteCronJobsOutcomeCallable;
                 typedef std::function<void(const PtsClient*, const Model::DeleteCronJobsRequest&, DeleteCronJobsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteCronJobsAsyncHandler;
+                typedef Outcome<Core::Error, Model::DeleteEnvironmentsResponse> DeleteEnvironmentsOutcome;
+                typedef std::future<DeleteEnvironmentsOutcome> DeleteEnvironmentsOutcomeCallable;
+                typedef std::function<void(const PtsClient*, const Model::DeleteEnvironmentsRequest&, DeleteEnvironmentsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteEnvironmentsAsyncHandler;
                 typedef Outcome<Core::Error, Model::DeleteFilesResponse> DeleteFilesOutcome;
                 typedef std::future<DeleteFilesOutcome> DeleteFilesOutcomeCallable;
                 typedef std::function<void(const PtsClient*, const Model::DeleteFilesRequest&, DeleteFilesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteFilesAsyncHandler;
@@ -185,6 +199,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeCronJobsResponse> DescribeCronJobsOutcome;
                 typedef std::future<DescribeCronJobsOutcome> DescribeCronJobsOutcomeCallable;
                 typedef std::function<void(const PtsClient*, const Model::DescribeCronJobsRequest&, DescribeCronJobsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeCronJobsAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeEnvironmentsResponse> DescribeEnvironmentsOutcome;
+                typedef std::future<DescribeEnvironmentsOutcome> DescribeEnvironmentsOutcomeCallable;
+                typedef std::function<void(const PtsClient*, const Model::DescribeEnvironmentsRequest&, DescribeEnvironmentsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeEnvironmentsAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeErrorSummaryResponse> DescribeErrorSummaryOutcome;
                 typedef std::future<DescribeErrorSummaryOutcome> DescribeErrorSummaryOutcomeCallable;
                 typedef std::function<void(const PtsClient*, const Model::DescribeErrorSummaryRequest&, DescribeErrorSummaryOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeErrorSummaryAsyncHandler;
@@ -245,6 +262,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::UpdateCronJobResponse> UpdateCronJobOutcome;
                 typedef std::future<UpdateCronJobOutcome> UpdateCronJobOutcomeCallable;
                 typedef std::function<void(const PtsClient*, const Model::UpdateCronJobRequest&, UpdateCronJobOutcome, const std::shared_ptr<const AsyncCallerContext>&)> UpdateCronJobAsyncHandler;
+                typedef Outcome<Core::Error, Model::UpdateEnvironmentResponse> UpdateEnvironmentOutcome;
+                typedef std::future<UpdateEnvironmentOutcome> UpdateEnvironmentOutcomeCallable;
+                typedef std::function<void(const PtsClient*, const Model::UpdateEnvironmentRequest&, UpdateEnvironmentOutcome, const std::shared_ptr<const AsyncCallerContext>&)> UpdateEnvironmentAsyncHandler;
                 typedef Outcome<Core::Error, Model::UpdateFileScenarioRelationResponse> UpdateFileScenarioRelationOutcome;
                 typedef std::future<UpdateFileScenarioRelationOutcome> UpdateFileScenarioRelationOutcomeCallable;
                 typedef std::function<void(const PtsClient*, const Model::UpdateFileScenarioRelationRequest&, UpdateFileScenarioRelationOutcome, const std::shared_ptr<const AsyncCallerContext>&)> UpdateFileScenarioRelationAsyncHandler;
@@ -315,6 +335,15 @@ namespace TencentCloud
                 CreateCronJobOutcomeCallable CreateCronJobCallable(const Model::CreateCronJobRequest& request);
 
                 /**
+                 *创建环境
+                 * @param req CreateEnvironmentRequest
+                 * @return CreateEnvironmentOutcome
+                 */
+                CreateEnvironmentOutcome CreateEnvironment(const Model::CreateEnvironmentRequest &request);
+                void CreateEnvironmentAsync(const Model::CreateEnvironmentRequest& request, const CreateEnvironmentAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                CreateEnvironmentOutcomeCallable CreateEnvironmentCallable(const Model::CreateEnvironmentRequest& request);
+
+                /**
                  *创建文件
                  * @param req CreateFileRequest
                  * @return CreateFileOutcome
@@ -358,6 +387,15 @@ namespace TencentCloud
                 DeleteCronJobsOutcome DeleteCronJobs(const Model::DeleteCronJobsRequest &request);
                 void DeleteCronJobsAsync(const Model::DeleteCronJobsRequest& request, const DeleteCronJobsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DeleteCronJobsOutcomeCallable DeleteCronJobsCallable(const Model::DeleteCronJobsRequest& request);
+
+                /**
+                 *删除环境
+                 * @param req DeleteEnvironmentsRequest
+                 * @return DeleteEnvironmentsOutcome
+                 */
+                DeleteEnvironmentsOutcome DeleteEnvironments(const Model::DeleteEnvironmentsRequest &request);
+                void DeleteEnvironmentsAsync(const Model::DeleteEnvironmentsRequest& request, const DeleteEnvironmentsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DeleteEnvironmentsOutcomeCallable DeleteEnvironmentsCallable(const Model::DeleteEnvironmentsRequest& request);
 
                 /**
                  *删除文件
@@ -439,6 +477,15 @@ namespace TencentCloud
                 DescribeCronJobsOutcome DescribeCronJobs(const Model::DescribeCronJobsRequest &request);
                 void DescribeCronJobsAsync(const Model::DescribeCronJobsRequest& request, const DescribeCronJobsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DescribeCronJobsOutcomeCallable DescribeCronJobsCallable(const Model::DescribeCronJobsRequest& request);
+
+                /**
+                 *查看环境列表
+                 * @param req DescribeEnvironmentsRequest
+                 * @return DescribeEnvironmentsOutcome
+                 */
+                DescribeEnvironmentsOutcome DescribeEnvironments(const Model::DescribeEnvironmentsRequest &request);
+                void DescribeEnvironmentsAsync(const Model::DescribeEnvironmentsRequest& request, const DescribeEnvironmentsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeEnvironmentsOutcomeCallable DescribeEnvironmentsCallable(const Model::DescribeEnvironmentsRequest& request);
 
                 /**
                  *查询错误详情汇总信息
@@ -619,6 +666,15 @@ namespace TencentCloud
                 UpdateCronJobOutcome UpdateCronJob(const Model::UpdateCronJobRequest &request);
                 void UpdateCronJobAsync(const Model::UpdateCronJobRequest& request, const UpdateCronJobAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 UpdateCronJobOutcomeCallable UpdateCronJobCallable(const Model::UpdateCronJobRequest& request);
+
+                /**
+                 *更新环境
+                 * @param req UpdateEnvironmentRequest
+                 * @return UpdateEnvironmentOutcome
+                 */
+                UpdateEnvironmentOutcome UpdateEnvironment(const Model::UpdateEnvironmentRequest &request);
+                void UpdateEnvironmentAsync(const Model::UpdateEnvironmentRequest& request, const UpdateEnvironmentAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                UpdateEnvironmentOutcomeCallable UpdateEnvironmentCallable(const Model::UpdateEnvironmentRequest& request);
 
                 /**
                  *更新关联文件场景

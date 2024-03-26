@@ -821,6 +821,81 @@ namespace TencentCloud
                      */
                     bool ShowTypeHasBeenSet() const;
 
+                    /**
+                     * 获取当前数据源生产源Id
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return ProductId 当前数据源生产源Id
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    uint64_t GetProductId() const;
+
+                    /**
+                     * 设置当前数据源生产源Id
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _productId 当前数据源生产源Id
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetProductId(const uint64_t& _productId);
+
+                    /**
+                     * 判断参数 ProductId 是否已赋值
+                     * @return ProductId 是否已赋值
+                     * 
+                     */
+                    bool ProductIdHasBeenSet() const;
+
+                    /**
+                     * 获取当前数据源开发源Id
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return DevelopmentId 当前数据源开发源Id
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    uint64_t GetDevelopmentId() const;
+
+                    /**
+                     * 设置当前数据源开发源Id
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _developmentId 当前数据源开发源Id
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetDevelopmentId(const uint64_t& _developmentId);
+
+                    /**
+                     * 判断参数 DevelopmentId 是否已赋值
+                     * @return DevelopmentId 是否已赋值
+                     * 
+                     */
+                    bool DevelopmentIdHasBeenSet() const;
+
+                    /**
+                     * 获取同params 内容为开发数据源的数据
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return DevelopmentParams 同params 内容为开发数据源的数据
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::string GetDevelopmentParams() const;
+
+                    /**
+                     * 设置同params 内容为开发数据源的数据
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _developmentParams 同params 内容为开发数据源的数据
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetDevelopmentParams(const std::string& _developmentParams);
+
+                    /**
+                     * 判断参数 DevelopmentParams 是否已赋值
+                     * @return DevelopmentParams 是否已赋值
+                     * 
+                     */
+                    bool DevelopmentParamsHasBeenSet() const;
+
                 private:
 
                     /**
@@ -1039,6 +1114,27 @@ namespace TencentCloud
                      */
                     std::string m_showType;
                     bool m_showTypeHasBeenSet;
+
+                    /**
+                     * 当前数据源生产源Id
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    uint64_t m_productId;
+                    bool m_productIdHasBeenSet;
+
+                    /**
+                     * 当前数据源开发源Id
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    uint64_t m_developmentId;
+                    bool m_developmentIdHasBeenSet;
+
+                    /**
+                     * 同params 内容为开发数据源的数据
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_developmentParams;
+                    bool m_developmentParamsHasBeenSet;
 
                 };
             }

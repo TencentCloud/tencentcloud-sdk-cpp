@@ -392,6 +392,7 @@ set(wedata_public_header_model
   include/tencentcloud/wedata/v20210820/model/DeleteWorkflowNewRequest.h
   include/tencentcloud/wedata/v20210820/model/BatchUpdateIntegrationTasksResponse.h
   include/tencentcloud/wedata/v20210820/model/TaskLogResponse.h
+  include/tencentcloud/wedata/v20210820/model/QuietPeriod.h
   include/tencentcloud/wedata/v20210820/model/CheckDuplicateRuleNameRequest.h
   include/tencentcloud/wedata/v20210820/model/AdhocDetail.h
   include/tencentcloud/wedata/v20210820/model/ModifyRuleTemplateResponse.h
@@ -1323,6 +1324,7 @@ set(wedata_src
   src/v20210820/model/DeleteWorkflowNewRequest.cpp
   src/v20210820/model/BatchUpdateIntegrationTasksResponse.cpp
   src/v20210820/model/TaskLogResponse.cpp
+  src/v20210820/model/QuietPeriod.cpp
   src/v20210820/model/CheckDuplicateRuleNameRequest.cpp
   src/v20210820/model/AdhocDetail.cpp
   src/v20210820/model/ModifyRuleTemplateResponse.cpp

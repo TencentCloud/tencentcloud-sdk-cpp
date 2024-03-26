@@ -115,6 +115,35 @@ namespace TencentCloud
                     bool QueryHasBeenSet() const;
 
                     /**
+                     * 获取检索语法规则，默认值为0，推荐使用1 (CQL语法)。
+0：Lucene语法，1：CQL语法。
+详细说明参见<a href="https://cloud.tencent.com/document/product/614/47044#RetrievesConditionalRules" target="_blank">检索条件语法规则</a>
+                     * @return SyntaxRule 检索语法规则，默认值为0，推荐使用1 (CQL语法)。
+0：Lucene语法，1：CQL语法。
+详细说明参见<a href="https://cloud.tencent.com/document/product/614/47044#RetrievesConditionalRules" target="_blank">检索条件语法规则</a>
+                     * 
+                     */
+                    uint64_t GetSyntaxRule() const;
+
+                    /**
+                     * 设置检索语法规则，默认值为0，推荐使用1 (CQL语法)。
+0：Lucene语法，1：CQL语法。
+详细说明参见<a href="https://cloud.tencent.com/document/product/614/47044#RetrievesConditionalRules" target="_blank">检索条件语法规则</a>
+                     * @param _syntaxRule 检索语法规则，默认值为0，推荐使用1 (CQL语法)。
+0：Lucene语法，1：CQL语法。
+详细说明参见<a href="https://cloud.tencent.com/document/product/614/47044#RetrievesConditionalRules" target="_blank">检索条件语法规则</a>
+                     * 
+                     */
+                    void SetSyntaxRule(const uint64_t& _syntaxRule);
+
+                    /**
+                     * 判断参数 SyntaxRule 是否已赋值
+                     * @return SyntaxRule 是否已赋值
+                     * 
+                     */
+                    bool SyntaxRuleHasBeenSet() const;
+
+                    /**
                      * 获取- 要检索分析的日志主题ID，仅能指定一个日志主题。
 - 如需同时检索多个日志主题，请使用Topics参数。
                      * @return TopicId - 要检索分析的日志主题ID，仅能指定一个日志主题。
@@ -138,6 +167,35 @@ namespace TencentCloud
                      * 
                      */
                     bool TopicIdHasBeenSet() const;
+
+                    /**
+                     * 获取- 要检索分析的日志主题列表，最大支持20个日志主题。
+- 检索单个日志主题时请使用TopicId。
+- 不能同时使用TopicId和Topics。
+                     * @return Topics - 要检索分析的日志主题列表，最大支持20个日志主题。
+- 检索单个日志主题时请使用TopicId。
+- 不能同时使用TopicId和Topics。
+                     * 
+                     */
+                    std::vector<MultiTopicSearchInformation> GetTopics() const;
+
+                    /**
+                     * 设置- 要检索分析的日志主题列表，最大支持20个日志主题。
+- 检索单个日志主题时请使用TopicId。
+- 不能同时使用TopicId和Topics。
+                     * @param _topics - 要检索分析的日志主题列表，最大支持20个日志主题。
+- 检索单个日志主题时请使用TopicId。
+- 不能同时使用TopicId和Topics。
+                     * 
+                     */
+                    void SetTopics(const std::vector<MultiTopicSearchInformation>& _topics);
+
+                    /**
+                     * 判断参数 Topics 是否已赋值
+                     * @return Topics 是否已赋值
+                     * 
+                     */
+                    bool TopicsHasBeenSet() const;
 
                     /**
                      * 获取表示单次查询返回的原始日志条数，默认为100，最大值为1000，获取后续日志需使用Context参数
@@ -171,6 +229,39 @@ namespace TencentCloud
                      * 
                      */
                     bool LimitHasBeenSet() const;
+
+                    /**
+                     * 获取原始日志是否按时间排序返回；可选值：asc(升序)、desc(降序)，默认为 desc
+注意：
+* 仅当检索分析语句(Query)不包含SQL时有效
+* SQL结果排序方式参考<a href="https://cloud.tencent.com/document/product/614/58978" target="_blank">SQL ORDER BY语法</a>
+                     * @return Sort 原始日志是否按时间排序返回；可选值：asc(升序)、desc(降序)，默认为 desc
+注意：
+* 仅当检索分析语句(Query)不包含SQL时有效
+* SQL结果排序方式参考<a href="https://cloud.tencent.com/document/product/614/58978" target="_blank">SQL ORDER BY语法</a>
+                     * 
+                     */
+                    std::string GetSort() const;
+
+                    /**
+                     * 设置原始日志是否按时间排序返回；可选值：asc(升序)、desc(降序)，默认为 desc
+注意：
+* 仅当检索分析语句(Query)不包含SQL时有效
+* SQL结果排序方式参考<a href="https://cloud.tencent.com/document/product/614/58978" target="_blank">SQL ORDER BY语法</a>
+                     * @param _sort 原始日志是否按时间排序返回；可选值：asc(升序)、desc(降序)，默认为 desc
+注意：
+* 仅当检索分析语句(Query)不包含SQL时有效
+* SQL结果排序方式参考<a href="https://cloud.tencent.com/document/product/614/58978" target="_blank">SQL ORDER BY语法</a>
+                     * 
+                     */
+                    void SetSort(const std::string& _sort);
+
+                    /**
+                     * 判断参数 Sort 是否已赋值
+                     * @return Sort 是否已赋值
+                     * 
+                     */
+                    bool SortHasBeenSet() const;
 
                     /**
                      * 获取透传上次接口返回的Context值，可获取后续更多日志，总计最多可获取1万条原始日志，过期时间1小时。
@@ -210,68 +301,6 @@ namespace TencentCloud
                     bool ContextHasBeenSet() const;
 
                     /**
-                     * 获取原始日志是否按时间排序返回；可选值：asc(升序)、desc(降序)，默认为 desc
-注意：
-* 仅当检索分析语句(Query)不包含SQL时有效
-* SQL结果排序方式参考<a href="https://cloud.tencent.com/document/product/614/58978" target="_blank">SQL ORDER BY语法</a>
-                     * @return Sort 原始日志是否按时间排序返回；可选值：asc(升序)、desc(降序)，默认为 desc
-注意：
-* 仅当检索分析语句(Query)不包含SQL时有效
-* SQL结果排序方式参考<a href="https://cloud.tencent.com/document/product/614/58978" target="_blank">SQL ORDER BY语法</a>
-                     * 
-                     */
-                    std::string GetSort() const;
-
-                    /**
-                     * 设置原始日志是否按时间排序返回；可选值：asc(升序)、desc(降序)，默认为 desc
-注意：
-* 仅当检索分析语句(Query)不包含SQL时有效
-* SQL结果排序方式参考<a href="https://cloud.tencent.com/document/product/614/58978" target="_blank">SQL ORDER BY语法</a>
-                     * @param _sort 原始日志是否按时间排序返回；可选值：asc(升序)、desc(降序)，默认为 desc
-注意：
-* 仅当检索分析语句(Query)不包含SQL时有效
-* SQL结果排序方式参考<a href="https://cloud.tencent.com/document/product/614/58978" target="_blank">SQL ORDER BY语法</a>
-                     * 
-                     */
-                    void SetSort(const std::string& _sort);
-
-                    /**
-                     * 判断参数 Sort 是否已赋值
-                     * @return Sort 是否已赋值
-                     * 
-                     */
-                    bool SortHasBeenSet() const;
-
-                    /**
-                     * 获取为true代表使用新的检索结果返回方式，输出参数AnalysisRecords和Columns有效
-为false时代表使用老的检索结果返回方式, 输出AnalysisResults和ColNames有效
-两种返回方式在编码格式上有少量区别，建议使用true
-                     * @return UseNewAnalysis 为true代表使用新的检索结果返回方式，输出参数AnalysisRecords和Columns有效
-为false时代表使用老的检索结果返回方式, 输出AnalysisResults和ColNames有效
-两种返回方式在编码格式上有少量区别，建议使用true
-                     * 
-                     */
-                    bool GetUseNewAnalysis() const;
-
-                    /**
-                     * 设置为true代表使用新的检索结果返回方式，输出参数AnalysisRecords和Columns有效
-为false时代表使用老的检索结果返回方式, 输出AnalysisResults和ColNames有效
-两种返回方式在编码格式上有少量区别，建议使用true
-                     * @param _useNewAnalysis 为true代表使用新的检索结果返回方式，输出参数AnalysisRecords和Columns有效
-为false时代表使用老的检索结果返回方式, 输出AnalysisResults和ColNames有效
-两种返回方式在编码格式上有少量区别，建议使用true
-                     * 
-                     */
-                    void SetUseNewAnalysis(const bool& _useNewAnalysis);
-
-                    /**
-                     * 判断参数 UseNewAnalysis 是否已赋值
-                     * @return UseNewAnalysis 是否已赋值
-                     * 
-                     */
-                    bool UseNewAnalysisHasBeenSet() const;
-
-                    /**
                      * 获取执行统计分析（Query中包含SQL）时，是否对原始日志先进行采样，再进行统计分析。
 0：自动采样;
 0～1：按指定采样率采样，例如0.02;
@@ -309,62 +338,33 @@ namespace TencentCloud
                     bool SamplingRateHasBeenSet() const;
 
                     /**
-                     * 获取检索语法规则，默认值为0。
-0：Lucene语法，1：CQL语法。
-详细说明参见<a href="https://cloud.tencent.com/document/product/614/47044#RetrievesConditionalRules" target="_blank">检索条件语法规则</a>
-                     * @return SyntaxRule 检索语法规则，默认值为0。
-0：Lucene语法，1：CQL语法。
-详细说明参见<a href="https://cloud.tencent.com/document/product/614/47044#RetrievesConditionalRules" target="_blank">检索条件语法规则</a>
+                     * 获取为true代表使用新的检索结果返回方式，输出参数AnalysisRecords和Columns有效
+为false时代表使用老的检索结果返回方式, 输出AnalysisResults和ColNames有效
+两种返回方式在编码格式上有少量区别，建议使用true
+                     * @return UseNewAnalysis 为true代表使用新的检索结果返回方式，输出参数AnalysisRecords和Columns有效
+为false时代表使用老的检索结果返回方式, 输出AnalysisResults和ColNames有效
+两种返回方式在编码格式上有少量区别，建议使用true
                      * 
                      */
-                    uint64_t GetSyntaxRule() const;
+                    bool GetUseNewAnalysis() const;
 
                     /**
-                     * 设置检索语法规则，默认值为0。
-0：Lucene语法，1：CQL语法。
-详细说明参见<a href="https://cloud.tencent.com/document/product/614/47044#RetrievesConditionalRules" target="_blank">检索条件语法规则</a>
-                     * @param _syntaxRule 检索语法规则，默认值为0。
-0：Lucene语法，1：CQL语法。
-详细说明参见<a href="https://cloud.tencent.com/document/product/614/47044#RetrievesConditionalRules" target="_blank">检索条件语法规则</a>
+                     * 设置为true代表使用新的检索结果返回方式，输出参数AnalysisRecords和Columns有效
+为false时代表使用老的检索结果返回方式, 输出AnalysisResults和ColNames有效
+两种返回方式在编码格式上有少量区别，建议使用true
+                     * @param _useNewAnalysis 为true代表使用新的检索结果返回方式，输出参数AnalysisRecords和Columns有效
+为false时代表使用老的检索结果返回方式, 输出AnalysisResults和ColNames有效
+两种返回方式在编码格式上有少量区别，建议使用true
                      * 
                      */
-                    void SetSyntaxRule(const uint64_t& _syntaxRule);
+                    void SetUseNewAnalysis(const bool& _useNewAnalysis);
 
                     /**
-                     * 判断参数 SyntaxRule 是否已赋值
-                     * @return SyntaxRule 是否已赋值
+                     * 判断参数 UseNewAnalysis 是否已赋值
+                     * @return UseNewAnalysis 是否已赋值
                      * 
                      */
-                    bool SyntaxRuleHasBeenSet() const;
-
-                    /**
-                     * 获取- 要检索分析的日志主题列表，最大支持20个日志主题。
-- 检索单个日志主题时请使用TopicId。
-- 不能同时使用TopicId和Topics。
-                     * @return Topics - 要检索分析的日志主题列表，最大支持20个日志主题。
-- 检索单个日志主题时请使用TopicId。
-- 不能同时使用TopicId和Topics。
-                     * 
-                     */
-                    std::vector<MultiTopicSearchInformation> GetTopics() const;
-
-                    /**
-                     * 设置- 要检索分析的日志主题列表，最大支持20个日志主题。
-- 检索单个日志主题时请使用TopicId。
-- 不能同时使用TopicId和Topics。
-                     * @param _topics - 要检索分析的日志主题列表，最大支持20个日志主题。
-- 检索单个日志主题时请使用TopicId。
-- 不能同时使用TopicId和Topics。
-                     * 
-                     */
-                    void SetTopics(const std::vector<MultiTopicSearchInformation>& _topics);
-
-                    /**
-                     * 判断参数 Topics 是否已赋值
-                     * @return Topics 是否已赋值
-                     * 
-                     */
-                    bool TopicsHasBeenSet() const;
+                    bool UseNewAnalysisHasBeenSet() const;
 
                 private:
 
@@ -389,11 +389,27 @@ namespace TencentCloud
                     bool m_queryHasBeenSet;
 
                     /**
+                     * 检索语法规则，默认值为0，推荐使用1 (CQL语法)。
+0：Lucene语法，1：CQL语法。
+详细说明参见<a href="https://cloud.tencent.com/document/product/614/47044#RetrievesConditionalRules" target="_blank">检索条件语法规则</a>
+                     */
+                    uint64_t m_syntaxRule;
+                    bool m_syntaxRuleHasBeenSet;
+
+                    /**
                      * - 要检索分析的日志主题ID，仅能指定一个日志主题。
 - 如需同时检索多个日志主题，请使用Topics参数。
                      */
                     std::string m_topicId;
                     bool m_topicIdHasBeenSet;
+
+                    /**
+                     * - 要检索分析的日志主题列表，最大支持20个日志主题。
+- 检索单个日志主题时请使用TopicId。
+- 不能同时使用TopicId和Topics。
+                     */
+                    std::vector<MultiTopicSearchInformation> m_topics;
+                    bool m_topicsHasBeenSet;
 
                     /**
                      * 表示单次查询返回的原始日志条数，默认为100，最大值为1000，获取后续日志需使用Context参数
@@ -403,6 +419,15 @@ namespace TencentCloud
                      */
                     int64_t m_limit;
                     bool m_limitHasBeenSet;
+
+                    /**
+                     * 原始日志是否按时间排序返回；可选值：asc(升序)、desc(降序)，默认为 desc
+注意：
+* 仅当检索分析语句(Query)不包含SQL时有效
+* SQL结果排序方式参考<a href="https://cloud.tencent.com/document/product/614/58978" target="_blank">SQL ORDER BY语法</a>
+                     */
+                    std::string m_sort;
+                    bool m_sortHasBeenSet;
 
                     /**
                      * 透传上次接口返回的Context值，可获取后续更多日志，总计最多可获取1万条原始日志，过期时间1小时。
@@ -415,23 +440,6 @@ namespace TencentCloud
                     bool m_contextHasBeenSet;
 
                     /**
-                     * 原始日志是否按时间排序返回；可选值：asc(升序)、desc(降序)，默认为 desc
-注意：
-* 仅当检索分析语句(Query)不包含SQL时有效
-* SQL结果排序方式参考<a href="https://cloud.tencent.com/document/product/614/58978" target="_blank">SQL ORDER BY语法</a>
-                     */
-                    std::string m_sort;
-                    bool m_sortHasBeenSet;
-
-                    /**
-                     * 为true代表使用新的检索结果返回方式，输出参数AnalysisRecords和Columns有效
-为false时代表使用老的检索结果返回方式, 输出AnalysisResults和ColNames有效
-两种返回方式在编码格式上有少量区别，建议使用true
-                     */
-                    bool m_useNewAnalysis;
-                    bool m_useNewAnalysisHasBeenSet;
-
-                    /**
                      * 执行统计分析（Query中包含SQL）时，是否对原始日志先进行采样，再进行统计分析。
 0：自动采样;
 0～1：按指定采样率采样，例如0.02;
@@ -442,20 +450,12 @@ namespace TencentCloud
                     bool m_samplingRateHasBeenSet;
 
                     /**
-                     * 检索语法规则，默认值为0。
-0：Lucene语法，1：CQL语法。
-详细说明参见<a href="https://cloud.tencent.com/document/product/614/47044#RetrievesConditionalRules" target="_blank">检索条件语法规则</a>
+                     * 为true代表使用新的检索结果返回方式，输出参数AnalysisRecords和Columns有效
+为false时代表使用老的检索结果返回方式, 输出AnalysisResults和ColNames有效
+两种返回方式在编码格式上有少量区别，建议使用true
                      */
-                    uint64_t m_syntaxRule;
-                    bool m_syntaxRuleHasBeenSet;
-
-                    /**
-                     * - 要检索分析的日志主题列表，最大支持20个日志主题。
-- 检索单个日志主题时请使用TopicId。
-- 不能同时使用TopicId和Topics。
-                     */
-                    std::vector<MultiTopicSearchInformation> m_topics;
-                    bool m_topicsHasBeenSet;
+                    bool m_useNewAnalysis;
+                    bool m_useNewAnalysisHasBeenSet;
 
                 };
             }

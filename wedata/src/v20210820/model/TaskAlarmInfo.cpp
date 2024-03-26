@@ -42,6 +42,7 @@ TaskAlarmInfo::TaskAlarmInfo() :
     m_nodeNameHasBeenSet(false),
     m_alarmIndicatorInfosHasBeenSet(false),
     m_alarmRecipientTypeHasBeenSet(false),
+    m_quietPeriodsHasBeenSet(false),
     m_weComHookHasBeenSet(false),
     m_updateTimeHasBeenSet(false),
     m_operatorUinHasBeenSet(false),
@@ -278,6 +279,26 @@ CoreInternalOutcome TaskAlarmInfo::Deserialize(const rapidjson::Value &value)
         }
         m_alarmRecipientType = value["AlarmRecipientType"].GetUint64();
         m_alarmRecipientTypeHasBeenSet = true;
+    }
+
+    if (value.HasMember("QuietPeriods") && !value["QuietPeriods"].IsNull())
+    {
+        if (!value["QuietPeriods"].IsArray())
+            return CoreInternalOutcome(Core::Error("response `TaskAlarmInfo.QuietPeriods` is not array type"));
+
+        const rapidjson::Value &tmpValue = value["QuietPeriods"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            QuietPeriod item;
+            CoreInternalOutcome outcome = item.Deserialize(*itr);
+            if (!outcome.IsSuccess())
+            {
+                outcome.GetError().SetRequestId(requestId);
+                return outcome;
+            }
+            m_quietPeriods.push_back(item);
+        }
+        m_quietPeriodsHasBeenSet = true;
     }
 
     if (value.HasMember("WeComHook") && !value["WeComHook"].IsNull())
@@ -563,6 +584,21 @@ void TaskAlarmInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Document::A
         string key = "AlarmRecipientType";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_alarmRecipientType, allocator);
+    }
+
+    if (m_quietPeriodsHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "QuietPeriods";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_quietPeriods.begin(); itr != m_quietPeriods.end(); ++itr, ++i)
+        {
+            value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(value[key.c_str()][i], allocator);
+        }
     }
 
     if (m_weComHookHasBeenSet)
@@ -987,6 +1023,22 @@ void TaskAlarmInfo::SetAlarmRecipientType(const uint64_t& _alarmRecipientType)
 bool TaskAlarmInfo::AlarmRecipientTypeHasBeenSet() const
 {
     return m_alarmRecipientTypeHasBeenSet;
+}
+
+vector<QuietPeriod> TaskAlarmInfo::GetQuietPeriods() const
+{
+    return m_quietPeriods;
+}
+
+void TaskAlarmInfo::SetQuietPeriods(const vector<QuietPeriod>& _quietPeriods)
+{
+    m_quietPeriods = _quietPeriods;
+    m_quietPeriodsHasBeenSet = true;
+}
+
+bool TaskAlarmInfo::QuietPeriodsHasBeenSet() const
+{
+    return m_quietPeriodsHasBeenSet;
 }
 
 string TaskAlarmInfo::GetWeComHook() const

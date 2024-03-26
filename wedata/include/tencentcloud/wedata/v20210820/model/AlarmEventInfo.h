@@ -386,6 +386,56 @@ namespace TencentCloud
                     bool IsSendSuccessHasBeenSet() const;
 
                     /**
+                     * 获取是否在免打扰时间内，0:否, 1:是
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return InQuitePeriods 是否在免打扰时间内，0:否, 1:是
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    uint64_t GetInQuitePeriods() const;
+
+                    /**
+                     * 设置是否在免打扰时间内，0:否, 1:是
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _inQuitePeriods 是否在免打扰时间内，0:否, 1:是
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetInQuitePeriods(const uint64_t& _inQuitePeriods);
+
+                    /**
+                     * 判断参数 InQuitePeriods 是否已赋值
+                     * @return InQuitePeriods 是否已赋值
+                     * 
+                     */
+                    bool InQuitePeriodsHasBeenSet() const;
+
+                    /**
+                     * 获取告警记录id
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return RecordId 告警记录id
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    uint64_t GetRecordId() const;
+
+                    /**
+                     * 设置告警记录id
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _recordId 告警记录id
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetRecordId(const uint64_t& _recordId);
+
+                    /**
+                     * 判断参数 RecordId 是否已赋值
+                     * @return RecordId 是否已赋值
+                     * 
+                     */
+                    bool RecordIdHasBeenSet() const;
+
+                    /**
                      * 获取消息ID
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return MessageId 消息ID
@@ -707,6 +757,20 @@ namespace TencentCloud
                      */
                     uint64_t m_isSendSuccess;
                     bool m_isSendSuccessHasBeenSet;
+
+                    /**
+                     * 是否在免打扰时间内，0:否, 1:是
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    uint64_t m_inQuitePeriods;
+                    bool m_inQuitePeriodsHasBeenSet;
+
+                    /**
+                     * 告警记录id
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    uint64_t m_recordId;
+                    bool m_recordIdHasBeenSet;
 
                     /**
                      * 消息ID

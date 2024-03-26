@@ -85,6 +85,20 @@ namespace TencentCloud
                      */
                     bool TotalCountHasBeenSet() const;
 
+                    /**
+                     * 获取实际传的为taskId
+                     * @return TaskNames 实际传的为taskId
+                     * 
+                     */
+                    std::vector<std::string> GetTaskNames() const;
+
+                    /**
+                     * 判断参数 TaskNames 是否已赋值
+                     * @return TaskNames 是否已赋值
+                     * 
+                     */
+                    bool TaskNamesHasBeenSet() const;
+
                 private:
 
                     /**
@@ -104,6 +118,12 @@ namespace TencentCloud
                      */
                     int64_t m_totalCount;
                     bool m_totalCountHasBeenSet;
+
+                    /**
+                     * 实际传的为taskId
+                     */
+                    std::vector<std::string> m_taskNames;
+                    bool m_taskNamesHasBeenSet;
 
                 };
             }

@@ -41,11 +41,13 @@ set(pts_public_header_model
   include/tencentcloud/pts/v20210728/model/UpdateProjectRequest.h
   include/tencentcloud/pts/v20210728/model/AbortJobResponse.h
   include/tencentcloud/pts/v20210728/model/Project.h
-  include/tencentcloud/pts/v20210728/model/UpdateScenarioRequest.h
+  include/tencentcloud/pts/v20210728/model/UpdateEnvironmentRequest.h
   include/tencentcloud/pts/v20210728/model/DescribeRegionsResponse.h
   include/tencentcloud/pts/v20210728/model/Attributes.h
+  include/tencentcloud/pts/v20210728/model/CreateEnvironmentResponse.h
   include/tencentcloud/pts/v20210728/model/UpdateScenarioResponse.h
   include/tencentcloud/pts/v20210728/model/File.h
+  include/tencentcloud/pts/v20210728/model/DescribeEnvironmentsRequest.h
   include/tencentcloud/pts/v20210728/model/CustomSample.h
   include/tencentcloud/pts/v20210728/model/CreateProjectRequest.h
   include/tencentcloud/pts/v20210728/model/AdjustJobSpeedRequest.h
@@ -54,6 +56,7 @@ set(pts_public_header_model
   include/tencentcloud/pts/v20210728/model/CreateFileResponse.h
   include/tencentcloud/pts/v20210728/model/DeleteProjectsResponse.h
   include/tencentcloud/pts/v20210728/model/GeoRegionsLoadItem.h
+  include/tencentcloud/pts/v20210728/model/UpdateEnvironmentResponse.h
   include/tencentcloud/pts/v20210728/model/LabelWithValues.h
   include/tencentcloud/pts/v20210728/model/Label.h
   include/tencentcloud/pts/v20210728/model/ProtocolInfo.h
@@ -79,12 +82,14 @@ set(pts_public_header_model
   include/tencentcloud/pts/v20210728/model/CreateProjectResponse.h
   include/tencentcloud/pts/v20210728/model/DescribeSampleQueryRequest.h
   include/tencentcloud/pts/v20210728/model/DescribeSampleMatrixBatchQueryResponse.h
+  include/tencentcloud/pts/v20210728/model/DeleteEnvironmentsResponse.h
   include/tencentcloud/pts/v20210728/model/SLALabel.h
   include/tencentcloud/pts/v20210728/model/AlertRecord.h
   include/tencentcloud/pts/v20210728/model/RequestsPerSecond.h
   include/tencentcloud/pts/v20210728/model/DescribeRegionsRequest.h
   include/tencentcloud/pts/v20210728/model/DeleteScenariosResponse.h
-  include/tencentcloud/pts/v20210728/model/DeleteFilesRequest.h
+  include/tencentcloud/pts/v20210728/model/CreateEnvironmentRequest.h
+  include/tencentcloud/pts/v20210728/model/DescribeErrorSummaryRequest.h
   include/tencentcloud/pts/v20210728/model/CopyScenarioRequest.h
   include/tencentcloud/pts/v20210728/model/TestData.h
   include/tencentcloud/pts/v20210728/model/SampleLog.h
@@ -105,6 +110,7 @@ set(pts_public_header_model
   include/tencentcloud/pts/v20210728/model/FileInfo.h
   include/tencentcloud/pts/v20210728/model/LoadSpec.h
   include/tencentcloud/pts/v20210728/model/AlertChannel.h
+  include/tencentcloud/pts/v20210728/model/DescribeEnvironmentsResponse.h
   include/tencentcloud/pts/v20210728/model/ScriptOrigin.h
   include/tencentcloud/pts/v20210728/model/ScenarioRelatedJobsParams.h
   include/tencentcloud/pts/v20210728/model/Credentials.h
@@ -131,6 +137,7 @@ set(pts_public_header_model
   include/tencentcloud/pts/v20210728/model/DescribeAlertRecordsResponse.h
   include/tencentcloud/pts/v20210728/model/DescribeProjectsRequest.h
   include/tencentcloud/pts/v20210728/model/DescribeSampleQueryResponse.h
+  include/tencentcloud/pts/v20210728/model/DeleteEnvironmentsRequest.h
   include/tencentcloud/pts/v20210728/model/CreateScenarioRequest.h
   include/tencentcloud/pts/v20210728/model/DescribeMetricLabelWithValuesRequest.h
   include/tencentcloud/pts/v20210728/model/Scenario.h
@@ -143,13 +150,14 @@ set(pts_public_header_model
   include/tencentcloud/pts/v20210728/model/DescribeScenariosResponse.h
   include/tencentcloud/pts/v20210728/model/CreateScenarioResponse.h
   include/tencentcloud/pts/v20210728/model/AbortJobRequest.h
-  include/tencentcloud/pts/v20210728/model/DescribeErrorSummaryRequest.h
+  include/tencentcloud/pts/v20210728/model/DeleteFilesRequest.h
   include/tencentcloud/pts/v20210728/model/CheckSummary.h
   include/tencentcloud/pts/v20210728/model/NotificationHook.h
   include/tencentcloud/pts/v20210728/model/DescribeJobsResponse.h
   include/tencentcloud/pts/v20210728/model/GenerateTmpKeyRequest.h
   include/tencentcloud/pts/v20210728/model/DescribeSampleBatchQueryResponse.h
   include/tencentcloud/pts/v20210728/model/StartJobResponse.h
+  include/tencentcloud/pts/v20210728/model/UpdateScenarioRequest.h
   include/tencentcloud/pts/v20210728/model/MetricLabelWithValues.h
   include/tencentcloud/pts/v20210728/model/DeleteCronJobsResponse.h
   include/tencentcloud/pts/v20210728/model/StartJobRequest.h
@@ -186,11 +194,13 @@ set(pts_src
   src/v20210728/model/UpdateProjectRequest.cpp
   src/v20210728/model/AbortJobResponse.cpp
   src/v20210728/model/Project.cpp
-  src/v20210728/model/UpdateScenarioRequest.cpp
+  src/v20210728/model/UpdateEnvironmentRequest.cpp
   src/v20210728/model/DescribeRegionsResponse.cpp
   src/v20210728/model/Attributes.cpp
+  src/v20210728/model/CreateEnvironmentResponse.cpp
   src/v20210728/model/UpdateScenarioResponse.cpp
   src/v20210728/model/File.cpp
+  src/v20210728/model/DescribeEnvironmentsRequest.cpp
   src/v20210728/model/CustomSample.cpp
   src/v20210728/model/CreateProjectRequest.cpp
   src/v20210728/model/AdjustJobSpeedRequest.cpp
@@ -199,6 +209,7 @@ set(pts_src
   src/v20210728/model/CreateFileResponse.cpp
   src/v20210728/model/DeleteProjectsResponse.cpp
   src/v20210728/model/GeoRegionsLoadItem.cpp
+  src/v20210728/model/UpdateEnvironmentResponse.cpp
   src/v20210728/model/LabelWithValues.cpp
   src/v20210728/model/Label.cpp
   src/v20210728/model/ProtocolInfo.cpp
@@ -224,12 +235,14 @@ set(pts_src
   src/v20210728/model/CreateProjectResponse.cpp
   src/v20210728/model/DescribeSampleQueryRequest.cpp
   src/v20210728/model/DescribeSampleMatrixBatchQueryResponse.cpp
+  src/v20210728/model/DeleteEnvironmentsResponse.cpp
   src/v20210728/model/SLALabel.cpp
   src/v20210728/model/AlertRecord.cpp
   src/v20210728/model/RequestsPerSecond.cpp
   src/v20210728/model/DescribeRegionsRequest.cpp
   src/v20210728/model/DeleteScenariosResponse.cpp
-  src/v20210728/model/DeleteFilesRequest.cpp
+  src/v20210728/model/CreateEnvironmentRequest.cpp
+  src/v20210728/model/DescribeErrorSummaryRequest.cpp
   src/v20210728/model/CopyScenarioRequest.cpp
   src/v20210728/model/TestData.cpp
   src/v20210728/model/SampleLog.cpp
@@ -250,6 +263,7 @@ set(pts_src
   src/v20210728/model/FileInfo.cpp
   src/v20210728/model/LoadSpec.cpp
   src/v20210728/model/AlertChannel.cpp
+  src/v20210728/model/DescribeEnvironmentsResponse.cpp
   src/v20210728/model/ScriptOrigin.cpp
   src/v20210728/model/ScenarioRelatedJobsParams.cpp
   src/v20210728/model/Credentials.cpp
@@ -276,6 +290,7 @@ set(pts_src
   src/v20210728/model/DescribeAlertRecordsResponse.cpp
   src/v20210728/model/DescribeProjectsRequest.cpp
   src/v20210728/model/DescribeSampleQueryResponse.cpp
+  src/v20210728/model/DeleteEnvironmentsRequest.cpp
   src/v20210728/model/CreateScenarioRequest.cpp
   src/v20210728/model/DescribeMetricLabelWithValuesRequest.cpp
   src/v20210728/model/Scenario.cpp
@@ -288,13 +303,14 @@ set(pts_src
   src/v20210728/model/DescribeScenariosResponse.cpp
   src/v20210728/model/CreateScenarioResponse.cpp
   src/v20210728/model/AbortJobRequest.cpp
-  src/v20210728/model/DescribeErrorSummaryRequest.cpp
+  src/v20210728/model/DeleteFilesRequest.cpp
   src/v20210728/model/CheckSummary.cpp
   src/v20210728/model/NotificationHook.cpp
   src/v20210728/model/DescribeJobsResponse.cpp
   src/v20210728/model/GenerateTmpKeyRequest.cpp
   src/v20210728/model/DescribeSampleBatchQueryResponse.cpp
   src/v20210728/model/StartJobResponse.cpp
+  src/v20210728/model/UpdateScenarioRequest.cpp
   src/v20210728/model/MetricLabelWithValues.cpp
   src/v20210728/model/DeleteCronJobsResponse.cpp
   src/v20210728/model/StartJobRequest.cpp

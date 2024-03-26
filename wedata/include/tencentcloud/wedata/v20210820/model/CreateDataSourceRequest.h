@@ -420,6 +420,27 @@ namespace TencentCloud
                      */
                     bool ConnectResultHasBeenSet() const;
 
+                    /**
+                     * 获取开发环境数据源配置
+                     * @return DevelopmentParams 开发环境数据源配置
+                     * 
+                     */
+                    std::string GetDevelopmentParams() const;
+
+                    /**
+                     * 设置开发环境数据源配置
+                     * @param _developmentParams 开发环境数据源配置
+                     * 
+                     */
+                    void SetDevelopmentParams(const std::string& _developmentParams);
+
+                    /**
+                     * 判断参数 DevelopmentParams 是否已赋值
+                     * @return DevelopmentParams 是否已赋值
+                     * 
+                     */
+                    bool DevelopmentParamsHasBeenSet() const;
+
                 private:
 
                     /**
@@ -529,6 +550,12 @@ namespace TencentCloud
                      */
                     std::string m_connectResult;
                     bool m_connectResultHasBeenSet;
+
+                    /**
+                     * 开发环境数据源配置
+                     */
+                    std::string m_developmentParams;
+                    bool m_developmentParamsHasBeenSet;
 
                 };
             }
