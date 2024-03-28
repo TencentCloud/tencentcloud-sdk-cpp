@@ -30,7 +30,8 @@ UpgradeInstanceRequest::UpgradeInstanceRequest() :
     m_basicSecurityTypeHasBeenSet(false),
     m_upgradeModeHasBeenSet(false),
     m_cosBackupHasBeenSet(false),
-    m_skipCheckForceRestartHasBeenSet(false)
+    m_skipCheckForceRestartHasBeenSet(false),
+    m_cvmDelayOnlineTimeHasBeenSet(false)
 {
 }
 
@@ -103,6 +104,14 @@ string UpgradeInstanceRequest::ToJsonString() const
         string key = "SkipCheckForceRestart";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_skipCheckForceRestart, allocator);
+    }
+
+    if (m_cvmDelayOnlineTimeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "CvmDelayOnlineTime";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_cvmDelayOnlineTime, allocator);
     }
 
 
@@ -239,6 +248,22 @@ void UpgradeInstanceRequest::SetSkipCheckForceRestart(const bool& _skipCheckForc
 bool UpgradeInstanceRequest::SkipCheckForceRestartHasBeenSet() const
 {
     return m_skipCheckForceRestartHasBeenSet;
+}
+
+uint64_t UpgradeInstanceRequest::GetCvmDelayOnlineTime() const
+{
+    return m_cvmDelayOnlineTime;
+}
+
+void UpgradeInstanceRequest::SetCvmDelayOnlineTime(const uint64_t& _cvmDelayOnlineTime)
+{
+    m_cvmDelayOnlineTime = _cvmDelayOnlineTime;
+    m_cvmDelayOnlineTimeHasBeenSet = true;
+}
+
+bool UpgradeInstanceRequest::CvmDelayOnlineTimeHasBeenSet() const
+{
+    return m_cvmDelayOnlineTimeHasBeenSet;
 }
 
 

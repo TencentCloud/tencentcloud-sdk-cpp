@@ -57,7 +57,10 @@ UpdateInstanceRequest::UpdateInstanceRequest() :
     m_kibanaAlteringPublicAccessHasBeenSet(false),
     m_kibanaPrivateDomainHasBeenSet(false),
     m_cerebroPrivateDomainHasBeenSet(false),
-    m_protocolHasBeenSet(false)
+    m_protocolHasBeenSet(false),
+    m_outboundPublicAclsHasBeenSet(false),
+    m_outboundPublicAccessHasBeenSet(false),
+    m_cvmDelayOnlineTimeHasBeenSet(false)
 {
 }
 
@@ -366,6 +369,37 @@ string UpdateInstanceRequest::ToJsonString() const
         string key = "Protocol";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_protocol.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_outboundPublicAclsHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "OutboundPublicAcls";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_outboundPublicAcls.begin(); itr != m_outboundPublicAcls.end(); ++itr, ++i)
+        {
+            d[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(d[key.c_str()][i], allocator);
+        }
+    }
+
+    if (m_outboundPublicAccessHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "OutboundPublicAccess";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_outboundPublicAccess.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_cvmDelayOnlineTimeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "CvmDelayOnlineTime";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_cvmDelayOnlineTime, allocator);
     }
 
 
@@ -934,6 +968,54 @@ void UpdateInstanceRequest::SetProtocol(const string& _protocol)
 bool UpdateInstanceRequest::ProtocolHasBeenSet() const
 {
     return m_protocolHasBeenSet;
+}
+
+vector<OutboundPublicAcl> UpdateInstanceRequest::GetOutboundPublicAcls() const
+{
+    return m_outboundPublicAcls;
+}
+
+void UpdateInstanceRequest::SetOutboundPublicAcls(const vector<OutboundPublicAcl>& _outboundPublicAcls)
+{
+    m_outboundPublicAcls = _outboundPublicAcls;
+    m_outboundPublicAclsHasBeenSet = true;
+}
+
+bool UpdateInstanceRequest::OutboundPublicAclsHasBeenSet() const
+{
+    return m_outboundPublicAclsHasBeenSet;
+}
+
+string UpdateInstanceRequest::GetOutboundPublicAccess() const
+{
+    return m_outboundPublicAccess;
+}
+
+void UpdateInstanceRequest::SetOutboundPublicAccess(const string& _outboundPublicAccess)
+{
+    m_outboundPublicAccess = _outboundPublicAccess;
+    m_outboundPublicAccessHasBeenSet = true;
+}
+
+bool UpdateInstanceRequest::OutboundPublicAccessHasBeenSet() const
+{
+    return m_outboundPublicAccessHasBeenSet;
+}
+
+uint64_t UpdateInstanceRequest::GetCvmDelayOnlineTime() const
+{
+    return m_cvmDelayOnlineTime;
+}
+
+void UpdateInstanceRequest::SetCvmDelayOnlineTime(const uint64_t& _cvmDelayOnlineTime)
+{
+    m_cvmDelayOnlineTime = _cvmDelayOnlineTime;
+    m_cvmDelayOnlineTimeHasBeenSet = true;
+}
+
+bool UpdateInstanceRequest::CvmDelayOnlineTimeHasBeenSet() const
+{
+    return m_cvmDelayOnlineTimeHasBeenSet;
 }
 
 

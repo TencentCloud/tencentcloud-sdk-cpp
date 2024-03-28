@@ -2706,6 +2706,49 @@ OcrClient::RecognizeTravelCardOCROutcomeCallable OcrClient::RecognizeTravelCardO
     return task->get_future();
 }
 
+OcrClient::ReconstructDocumentOutcome OcrClient::ReconstructDocument(const ReconstructDocumentRequest &request)
+{
+    auto outcome = MakeRequest(request, "ReconstructDocument");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ReconstructDocumentResponse rsp = ReconstructDocumentResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ReconstructDocumentOutcome(rsp);
+        else
+            return ReconstructDocumentOutcome(o.GetError());
+    }
+    else
+    {
+        return ReconstructDocumentOutcome(outcome.GetError());
+    }
+}
+
+void OcrClient::ReconstructDocumentAsync(const ReconstructDocumentRequest& request, const ReconstructDocumentAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->ReconstructDocument(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+OcrClient::ReconstructDocumentOutcomeCallable OcrClient::ReconstructDocumentCallable(const ReconstructDocumentRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<ReconstructDocumentOutcome()>>(
+        [this, request]()
+        {
+            return this->ReconstructDocument(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 OcrClient::ResidenceBookletOCROutcome OcrClient::ResidenceBookletOCR(const ResidenceBookletOCRRequest &request)
 {
     auto outcome = MakeRequest(request, "ResidenceBookletOCR");

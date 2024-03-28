@@ -188,6 +188,31 @@ namespace TencentCloud
                      */
                     bool ImageNameHasBeenSet() const;
 
+                    /**
+                     * 获取是否支持数据构建
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return SupportDataPipeline 是否支持数据构建
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    bool GetSupportDataPipeline() const;
+
+                    /**
+                     * 设置是否支持数据构建
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _supportDataPipeline 是否支持数据构建
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetSupportDataPipeline(const bool& _supportDataPipeline);
+
+                    /**
+                     * 判断参数 SupportDataPipeline 是否已赋值
+                     * @return SupportDataPipeline 是否已赋值
+                     * 
+                     */
+                    bool SupportDataPipelineHasBeenSet() const;
+
                 private:
 
                     /**
@@ -229,6 +254,13 @@ namespace TencentCloud
                      */
                     std::string m_imageName;
                     bool m_imageNameHasBeenSet;
+
+                    /**
+                     * 是否支持数据构建
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    bool m_supportDataPipeline;
+                    bool m_supportDataPipelineHasBeenSet;
 
                 };
             }

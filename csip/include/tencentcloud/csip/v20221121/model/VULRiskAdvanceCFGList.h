@@ -90,15 +90,15 @@ namespace TencentCloud
                     bool VULNameHasBeenSet() const;
 
                     /**
-                     * 获取风险等级
-                     * @return RiskLevel 风险等级
+                     * 获取风险等级，low-低危，high-高危，middle-中危，info-提示，extreme-严重。
+                     * @return RiskLevel 风险等级，low-低危，high-高危，middle-中危，info-提示，extreme-严重。
                      * 
                      */
                     std::string GetRiskLevel() const;
 
                     /**
-                     * 设置风险等级
-                     * @param _riskLevel 风险等级
+                     * 设置风险等级，low-低危，high-高危，middle-中危，info-提示，extreme-严重。
+                     * @param _riskLevel 风险等级，low-低危，high-高危，middle-中危，info-提示，extreme-严重。
                      * 
                      */
                     void SetRiskLevel(const std::string& _riskLevel);
@@ -534,7 +534,7 @@ namespace TencentCloud
                     bool m_vULNameHasBeenSet;
 
                     /**
-                     * 风险等级
+                     * 风险等级，low-低危，high-高危，middle-中危，info-提示，extreme-严重。
                      */
                     std::string m_riskLevel;
                     bool m_riskLevelHasBeenSet;

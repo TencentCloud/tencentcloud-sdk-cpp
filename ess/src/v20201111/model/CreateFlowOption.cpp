@@ -135,21 +135,21 @@ CoreInternalOutcome CreateFlowOption::Deserialize(const rapidjson::Value &value)
 
     if (value.HasMember("ForbidAddApprover") && !value["ForbidAddApprover"].IsNull())
     {
-        if (!value["ForbidAddApprover"].IsString())
+        if (!value["ForbidAddApprover"].IsBool())
         {
-            return CoreInternalOutcome(Core::Error("response `CreateFlowOption.ForbidAddApprover` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `CreateFlowOption.ForbidAddApprover` IsBool=false incorrectly").SetRequestId(requestId));
         }
-        m_forbidAddApprover = string(value["ForbidAddApprover"].GetString());
+        m_forbidAddApprover = value["ForbidAddApprover"].GetBool();
         m_forbidAddApproverHasBeenSet = true;
     }
 
     if (value.HasMember("ForbidEditFlowProperties") && !value["ForbidEditFlowProperties"].IsNull())
     {
-        if (!value["ForbidEditFlowProperties"].IsString())
+        if (!value["ForbidEditFlowProperties"].IsBool())
         {
-            return CoreInternalOutcome(Core::Error("response `CreateFlowOption.ForbidEditFlowProperties` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `CreateFlowOption.ForbidEditFlowProperties` IsBool=false incorrectly").SetRequestId(requestId));
         }
-        m_forbidEditFlowProperties = string(value["ForbidEditFlowProperties"].GetString());
+        m_forbidEditFlowProperties = value["ForbidEditFlowProperties"].GetBool();
         m_forbidEditFlowPropertiesHasBeenSet = true;
     }
 
@@ -283,7 +283,7 @@ void CreateFlowOption::ToJsonObject(rapidjson::Value &value, rapidjson::Document
         rapidjson::Value iKey(rapidjson::kStringType);
         string key = "ForbidAddApprover";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, rapidjson::Value(m_forbidAddApprover.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, m_forbidAddApprover, allocator);
     }
 
     if (m_forbidEditFlowPropertiesHasBeenSet)
@@ -291,7 +291,7 @@ void CreateFlowOption::ToJsonObject(rapidjson::Value &value, rapidjson::Document
         rapidjson::Value iKey(rapidjson::kStringType);
         string key = "ForbidEditFlowProperties";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, rapidjson::Value(m_forbidEditFlowProperties.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, m_forbidEditFlowProperties, allocator);
     }
 
     if (m_hideComponentTypesHasBeenSet)
@@ -482,12 +482,12 @@ bool CreateFlowOption::CustomCreateFlowDescriptionHasBeenSet() const
     return m_customCreateFlowDescriptionHasBeenSet;
 }
 
-string CreateFlowOption::GetForbidAddApprover() const
+bool CreateFlowOption::GetForbidAddApprover() const
 {
     return m_forbidAddApprover;
 }
 
-void CreateFlowOption::SetForbidAddApprover(const string& _forbidAddApprover)
+void CreateFlowOption::SetForbidAddApprover(const bool& _forbidAddApprover)
 {
     m_forbidAddApprover = _forbidAddApprover;
     m_forbidAddApproverHasBeenSet = true;
@@ -498,12 +498,12 @@ bool CreateFlowOption::ForbidAddApproverHasBeenSet() const
     return m_forbidAddApproverHasBeenSet;
 }
 
-string CreateFlowOption::GetForbidEditFlowProperties() const
+bool CreateFlowOption::GetForbidEditFlowProperties() const
 {
     return m_forbidEditFlowProperties;
 }
 
-void CreateFlowOption::SetForbidEditFlowProperties(const string& _forbidEditFlowProperties)
+void CreateFlowOption::SetForbidEditFlowProperties(const bool& _forbidEditFlowProperties)
 {
     m_forbidEditFlowProperties = _forbidEditFlowProperties;
     m_forbidEditFlowPropertiesHasBeenSet = true;

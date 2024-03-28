@@ -424,6 +424,27 @@ namespace TencentCloud
                      */
                     bool IsCoordinationNodeHasBeenSet() const;
 
+                    /**
+                     * 获取CVM运行状态
+                     * @return CVMStatus CVM运行状态
+                     * 
+                     */
+                    std::string GetCVMStatus() const;
+
+                    /**
+                     * 设置CVM运行状态
+                     * @param _cVMStatus CVM运行状态
+                     * 
+                     */
+                    void SetCVMStatus(const std::string& _cVMStatus);
+
+                    /**
+                     * 判断参数 CVMStatus 是否已赋值
+                     * @return CVMStatus 是否已赋值
+                     * 
+                     */
+                    bool CVMStatusHasBeenSet() const;
+
                 private:
 
                     /**
@@ -533,6 +554,12 @@ namespace TencentCloud
                      */
                     bool m_isCoordinationNode;
                     bool m_isCoordinationNodeHasBeenSet;
+
+                    /**
+                     * CVM运行状态
+                     */
+                    std::string m_cVMStatus;
+                    bool m_cVMStatusHasBeenSet;
 
                 };
             }

@@ -130,7 +130,7 @@ set(es_public_header_model
   include/tencentcloud/es/v20180416/model/CheckMigrateIndexMetaDataRequest.h
   include/tencentcloud/es/v20180416/model/EsDictionaryInfo.h
   include/tencentcloud/es/v20180416/model/DescribeLogstashPipelinesRequest.h
-  include/tencentcloud/es/v20180416/model/RestartNodesRequest.h
+  include/tencentcloud/es/v20180416/model/OutboundPublicAcl.h
   include/tencentcloud/es/v20180416/model/DataStreamInfo.h
   include/tencentcloud/es/v20180416/model/DescribeIndexMetaResponse.h
   include/tencentcloud/es/v20180416/model/ModifyEsVipSecurityGroupRequest.h
@@ -182,6 +182,7 @@ set(es_public_header_model
   include/tencentcloud/es/v20180416/model/GetDiagnoseSettingsRequest.h
   include/tencentcloud/es/v20180416/model/EsAcl.h
   include/tencentcloud/es/v20180416/model/DescribeInstancePluginListRequest.h
+  include/tencentcloud/es/v20180416/model/RestartNodesRequest.h
   include/tencentcloud/es/v20180416/model/DescribeUserCosSnapshotListResponse.h
   include/tencentcloud/es/v20180416/model/DeleteLogstashInstanceRequest.h
   include/tencentcloud/es/v20180416/model/UpgradeInstanceRequest.h
@@ -304,7 +305,7 @@ set(es_src
   src/v20180416/model/CheckMigrateIndexMetaDataRequest.cpp
   src/v20180416/model/EsDictionaryInfo.cpp
   src/v20180416/model/DescribeLogstashPipelinesRequest.cpp
-  src/v20180416/model/RestartNodesRequest.cpp
+  src/v20180416/model/OutboundPublicAcl.cpp
   src/v20180416/model/DataStreamInfo.cpp
   src/v20180416/model/DescribeIndexMetaResponse.cpp
   src/v20180416/model/ModifyEsVipSecurityGroupRequest.cpp
@@ -356,6 +357,7 @@ set(es_src
   src/v20180416/model/GetDiagnoseSettingsRequest.cpp
   src/v20180416/model/EsAcl.cpp
   src/v20180416/model/DescribeInstancePluginListRequest.cpp
+  src/v20180416/model/RestartNodesRequest.cpp
   src/v20180416/model/DescribeUserCosSnapshotListResponse.cpp
   src/v20180416/model/DeleteLogstashInstanceRequest.cpp
   src/v20180416/model/UpgradeInstanceRequest.cpp

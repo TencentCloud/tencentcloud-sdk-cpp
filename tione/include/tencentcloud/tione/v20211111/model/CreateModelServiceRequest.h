@@ -777,15 +777,15 @@ HYBRID_PAID:
                     bool CommandHasBeenSet() const;
 
                     /**
-                     * 获取是否开启TIONE内网访问外部
-                     * @return ServiceEIP 是否开启TIONE内网访问外部
+                     * 获取是否开启TIONE内网访问外部，此功能仅支持后付费机型与从TIONE平台购买的预付费机型；使用从CVM选择资源组时此配置不生效。
+                     * @return ServiceEIP 是否开启TIONE内网访问外部，此功能仅支持后付费机型与从TIONE平台购买的预付费机型；使用从CVM选择资源组时此配置不生效。
                      * 
                      */
                     ServiceEIP GetServiceEIP() const;
 
                     /**
-                     * 设置是否开启TIONE内网访问外部
-                     * @param _serviceEIP 是否开启TIONE内网访问外部
+                     * 设置是否开启TIONE内网访问外部，此功能仅支持后付费机型与从TIONE平台购买的预付费机型；使用从CVM选择资源组时此配置不生效。
+                     * @param _serviceEIP 是否开启TIONE内网访问外部，此功能仅支持后付费机型与从TIONE平台购买的预付费机型；使用从CVM选择资源组时此配置不生效。
                      * 
                      */
                     void SetServiceEIP(const ServiceEIP& _serviceEIP);
@@ -1003,7 +1003,7 @@ HYBRID_PAID:
                     bool m_commandHasBeenSet;
 
                     /**
-                     * 是否开启TIONE内网访问外部
+                     * 是否开启TIONE内网访问外部，此功能仅支持后付费机型与从TIONE平台购买的预付费机型；使用从CVM选择资源组时此配置不生效。
                      */
                     ServiceEIP m_serviceEIP;
                     bool m_serviceEIPHasBeenSet;

@@ -39,6 +39,8 @@
 #include <tencentcloud/ccc/v20200210/model/CreateCallOutSessionResponse.h>
 #include <tencentcloud/ccc/v20200210/model/CreateCarrierPrivilegeNumberApplicantRequest.h>
 #include <tencentcloud/ccc/v20200210/model/CreateCarrierPrivilegeNumberApplicantResponse.h>
+#include <tencentcloud/ccc/v20200210/model/CreateCompanyApplyRequest.h>
+#include <tencentcloud/ccc/v20200210/model/CreateCompanyApplyResponse.h>
 #include <tencentcloud/ccc/v20200210/model/CreateExtensionRequest.h>
 #include <tencentcloud/ccc/v20200210/model/CreateExtensionResponse.h>
 #include <tencentcloud/ccc/v20200210/model/CreatePredictiveDialingCampaignRequest.h>
@@ -69,6 +71,8 @@
 #include <tencentcloud/ccc/v20200210/model/DescribeCarrierPrivilegeNumberApplicantsResponse.h>
 #include <tencentcloud/ccc/v20200210/model/DescribeChatMessagesRequest.h>
 #include <tencentcloud/ccc/v20200210/model/DescribeChatMessagesResponse.h>
+#include <tencentcloud/ccc/v20200210/model/DescribeCompanyListRequest.h>
+#include <tencentcloud/ccc/v20200210/model/DescribeCompanyListResponse.h>
 #include <tencentcloud/ccc/v20200210/model/DescribeExtensionRequest.h>
 #include <tencentcloud/ccc/v20200210/model/DescribeExtensionResponse.h>
 #include <tencentcloud/ccc/v20200210/model/DescribeExtensionsRequest.h>
@@ -105,6 +109,8 @@
 #include <tencentcloud/ccc/v20200210/model/DisableCCCPhoneNumberResponse.h>
 #include <tencentcloud/ccc/v20200210/model/HangUpCallRequest.h>
 #include <tencentcloud/ccc/v20200210/model/HangUpCallResponse.h>
+#include <tencentcloud/ccc/v20200210/model/ModifyCompanyApplyRequest.h>
+#include <tencentcloud/ccc/v20200210/model/ModifyCompanyApplyResponse.h>
 #include <tencentcloud/ccc/v20200210/model/ModifyExtensionRequest.h>
 #include <tencentcloud/ccc/v20200210/model/ModifyExtensionResponse.h>
 #include <tencentcloud/ccc/v20200210/model/ModifyStaffRequest.h>
@@ -163,6 +169,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::CreateCarrierPrivilegeNumberApplicantResponse> CreateCarrierPrivilegeNumberApplicantOutcome;
                 typedef std::future<CreateCarrierPrivilegeNumberApplicantOutcome> CreateCarrierPrivilegeNumberApplicantOutcomeCallable;
                 typedef std::function<void(const CccClient*, const Model::CreateCarrierPrivilegeNumberApplicantRequest&, CreateCarrierPrivilegeNumberApplicantOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateCarrierPrivilegeNumberApplicantAsyncHandler;
+                typedef Outcome<Core::Error, Model::CreateCompanyApplyResponse> CreateCompanyApplyOutcome;
+                typedef std::future<CreateCompanyApplyOutcome> CreateCompanyApplyOutcomeCallable;
+                typedef std::function<void(const CccClient*, const Model::CreateCompanyApplyRequest&, CreateCompanyApplyOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateCompanyApplyAsyncHandler;
                 typedef Outcome<Core::Error, Model::CreateExtensionResponse> CreateExtensionOutcome;
                 typedef std::future<CreateExtensionOutcome> CreateExtensionOutcomeCallable;
                 typedef std::function<void(const CccClient*, const Model::CreateExtensionRequest&, CreateExtensionOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateExtensionAsyncHandler;
@@ -208,6 +217,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeChatMessagesResponse> DescribeChatMessagesOutcome;
                 typedef std::future<DescribeChatMessagesOutcome> DescribeChatMessagesOutcomeCallable;
                 typedef std::function<void(const CccClient*, const Model::DescribeChatMessagesRequest&, DescribeChatMessagesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeChatMessagesAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeCompanyListResponse> DescribeCompanyListOutcome;
+                typedef std::future<DescribeCompanyListOutcome> DescribeCompanyListOutcomeCallable;
+                typedef std::function<void(const CccClient*, const Model::DescribeCompanyListRequest&, DescribeCompanyListOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeCompanyListAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeExtensionResponse> DescribeExtensionOutcome;
                 typedef std::future<DescribeExtensionOutcome> DescribeExtensionOutcomeCallable;
                 typedef std::function<void(const CccClient*, const Model::DescribeExtensionRequest&, DescribeExtensionOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeExtensionAsyncHandler;
@@ -262,6 +274,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::HangUpCallResponse> HangUpCallOutcome;
                 typedef std::future<HangUpCallOutcome> HangUpCallOutcomeCallable;
                 typedef std::function<void(const CccClient*, const Model::HangUpCallRequest&, HangUpCallOutcome, const std::shared_ptr<const AsyncCallerContext>&)> HangUpCallAsyncHandler;
+                typedef Outcome<Core::Error, Model::ModifyCompanyApplyResponse> ModifyCompanyApplyOutcome;
+                typedef std::future<ModifyCompanyApplyOutcome> ModifyCompanyApplyOutcomeCallable;
+                typedef std::function<void(const CccClient*, const Model::ModifyCompanyApplyRequest&, ModifyCompanyApplyOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyCompanyApplyAsyncHandler;
                 typedef Outcome<Core::Error, Model::ModifyExtensionResponse> ModifyExtensionOutcome;
                 typedef std::future<ModifyExtensionOutcome> ModifyExtensionOutcomeCallable;
                 typedef std::function<void(const CccClient*, const Model::ModifyExtensionRequest&, ModifyExtensionOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyExtensionAsyncHandler;
@@ -366,6 +381,15 @@ namespace TencentCloud
                 CreateCarrierPrivilegeNumberApplicantOutcome CreateCarrierPrivilegeNumberApplicant(const Model::CreateCarrierPrivilegeNumberApplicantRequest &request);
                 void CreateCarrierPrivilegeNumberApplicantAsync(const Model::CreateCarrierPrivilegeNumberApplicantRequest& request, const CreateCarrierPrivilegeNumberApplicantAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 CreateCarrierPrivilegeNumberApplicantOutcomeCallable CreateCarrierPrivilegeNumberApplicantCallable(const Model::CreateCarrierPrivilegeNumberApplicantRequest& request);
+
+                /**
+                 *创建公司资质申请（1、首次使用接口，建议先在云联络中心控制台查看各个资料模版:https://console.cloud.tencent.com/ccc/enterprise/update。2、参数中图片Url建议使用腾讯云Cos存储的临时链接）
+                 * @param req CreateCompanyApplyRequest
+                 * @return CreateCompanyApplyOutcome
+                 */
+                CreateCompanyApplyOutcome CreateCompanyApply(const Model::CreateCompanyApplyRequest &request);
+                void CreateCompanyApplyAsync(const Model::CreateCompanyApplyRequest& request, const CreateCompanyApplyAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                CreateCompanyApplyOutcomeCallable CreateCompanyApplyCallable(const Model::CreateCompanyApplyRequest& request);
 
                 /**
                  *创建话机账号
@@ -503,6 +527,15 @@ namespace TencentCloud
                 DescribeChatMessagesOutcome DescribeChatMessages(const Model::DescribeChatMessagesRequest &request);
                 void DescribeChatMessagesAsync(const Model::DescribeChatMessagesRequest& request, const DescribeChatMessagesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DescribeChatMessagesOutcomeCallable DescribeChatMessagesCallable(const Model::DescribeChatMessagesRequest& request);
+
+                /**
+                 *查询公司资质申请列表
+                 * @param req DescribeCompanyListRequest
+                 * @return DescribeCompanyListOutcome
+                 */
+                DescribeCompanyListOutcome DescribeCompanyList(const Model::DescribeCompanyListRequest &request);
+                void DescribeCompanyListAsync(const Model::DescribeCompanyListRequest& request, const DescribeCompanyListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeCompanyListOutcomeCallable DescribeCompanyListCallable(const Model::DescribeCompanyListRequest& request);
 
                 /**
                  *获取话机信息
@@ -665,6 +698,15 @@ namespace TencentCloud
                 HangUpCallOutcome HangUpCall(const Model::HangUpCallRequest &request);
                 void HangUpCallAsync(const Model::HangUpCallRequest& request, const HangUpCallAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 HangUpCallOutcomeCallable HangUpCallCallable(const Model::HangUpCallRequest& request);
+
+                /**
+                 *修改公司资质申请，只能修改状态为驳回或待审核的申请单。（1、首次使用接口，建议先在云联络中心控制台查看各个资料模版:https://console.cloud.tencent.com/ccc/enterprise/update。2、参数中图片Url建议使用腾讯云Cos存储的临时链接）
+                 * @param req ModifyCompanyApplyRequest
+                 * @return ModifyCompanyApplyOutcome
+                 */
+                ModifyCompanyApplyOutcome ModifyCompanyApply(const Model::ModifyCompanyApplyRequest &request);
+                void ModifyCompanyApplyAsync(const Model::ModifyCompanyApplyRequest& request, const ModifyCompanyApplyAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                ModifyCompanyApplyOutcomeCallable ModifyCompanyApplyCallable(const Model::ModifyCompanyApplyRequest& request);
 
                 /**
                  *修改话机账号(绑定技能组、绑定坐席账号)

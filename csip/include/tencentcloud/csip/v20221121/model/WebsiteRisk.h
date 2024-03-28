@@ -68,15 +68,15 @@ namespace TencentCloud
                     bool AffectAssetHasBeenSet() const;
 
                     /**
-                     * 获取风险等级
-                     * @return Level 风险等级
+                     * 获取风险等级，low-低危，high-高危，middle-中危，info-提示，extreme-严重。
+                     * @return Level 风险等级，low-低危，high-高危，middle-中危，info-提示，extreme-严重。
                      * 
                      */
                     std::string GetLevel() const;
 
                     /**
-                     * 设置风险等级
-                     * @param _level 风险等级
+                     * 设置风险等级，low-低危，high-高危，middle-中危，info-提示，extreme-严重。
+                     * @param _level 风险等级，low-低危，high-高危，middle-中危，info-提示，extreme-严重。
                      * 
                      */
                     void SetLevel(const std::string& _level);
@@ -462,7 +462,7 @@ namespace TencentCloud
                     bool m_affectAssetHasBeenSet;
 
                     /**
-                     * 风险等级
+                     * 风险等级，low-低危，high-高危，middle-中危，info-提示，extreme-严重。
                      */
                     std::string m_level;
                     bool m_levelHasBeenSet;

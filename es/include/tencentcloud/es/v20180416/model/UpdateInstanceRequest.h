@@ -29,6 +29,7 @@
 #include <tencentcloud/es/v20180416/model/WebNodeTypeInfo.h>
 #include <tencentcloud/es/v20180416/model/EsConfigSetInfo.h>
 #include <tencentcloud/es/v20180416/model/OperationDurationUpdated.h>
+#include <tencentcloud/es/v20180416/model/OutboundPublicAcl.h>
 
 
 namespace TencentCloud
@@ -857,6 +858,81 @@ CLOSE 关闭
                      */
                     bool ProtocolHasBeenSet() const;
 
+                    /**
+                     * 获取节点出站访问详细信息
+
+                     * @return OutboundPublicAcls 节点出站访问详细信息
+
+                     * 
+                     */
+                    std::vector<OutboundPublicAcl> GetOutboundPublicAcls() const;
+
+                    /**
+                     * 设置节点出站访问详细信息
+
+                     * @param _outboundPublicAcls 节点出站访问详细信息
+
+                     * 
+                     */
+                    void SetOutboundPublicAcls(const std::vector<OutboundPublicAcl>& _outboundPublicAcls);
+
+                    /**
+                     * 判断参数 OutboundPublicAcls 是否已赋值
+                     * @return OutboundPublicAcls 是否已赋值
+                     * 
+                     */
+                    bool OutboundPublicAclsHasBeenSet() const;
+
+                    /**
+                     * 获取节点出站访问操作
+OPEN 开启
+CLOSE 关闭
+                     * @return OutboundPublicAccess 节点出站访问操作
+OPEN 开启
+CLOSE 关闭
+                     * 
+                     */
+                    std::string GetOutboundPublicAccess() const;
+
+                    /**
+                     * 设置节点出站访问操作
+OPEN 开启
+CLOSE 关闭
+                     * @param _outboundPublicAccess 节点出站访问操作
+OPEN 开启
+CLOSE 关闭
+                     * 
+                     */
+                    void SetOutboundPublicAccess(const std::string& _outboundPublicAccess);
+
+                    /**
+                     * 判断参数 OutboundPublicAccess 是否已赋值
+                     * @return OutboundPublicAccess 是否已赋值
+                     * 
+                     */
+                    bool OutboundPublicAccessHasBeenSet() const;
+
+                    /**
+                     * 获取cvm延迟上架参数
+                     * @return CvmDelayOnlineTime cvm延迟上架参数
+                     * 
+                     */
+                    uint64_t GetCvmDelayOnlineTime() const;
+
+                    /**
+                     * 设置cvm延迟上架参数
+                     * @param _cvmDelayOnlineTime cvm延迟上架参数
+                     * 
+                     */
+                    void SetCvmDelayOnlineTime(const uint64_t& _cvmDelayOnlineTime);
+
+                    /**
+                     * 判断参数 CvmDelayOnlineTime 是否已赋值
+                     * @return CvmDelayOnlineTime 是否已赋值
+                     * 
+                     */
+                    bool CvmDelayOnlineTimeHasBeenSet() const;
+
                 private:
 
                     /**
@@ -1086,6 +1162,27 @@ CLOSE 关闭
                      */
                     std::string m_protocol;
                     bool m_protocolHasBeenSet;
+
+                    /**
+                     * 节点出站访问详细信息
+
+                     */
+                    std::vector<OutboundPublicAcl> m_outboundPublicAcls;
+                    bool m_outboundPublicAclsHasBeenSet;
+
+                    /**
+                     * 节点出站访问操作
+OPEN 开启
+CLOSE 关闭
+                     */
+                    std::string m_outboundPublicAccess;
+                    bool m_outboundPublicAccessHasBeenSet;
+
+                    /**
+                     * cvm延迟上架参数
+                     */
+                    uint64_t m_cvmDelayOnlineTime;
+                    bool m_cvmDelayOnlineTimeHasBeenSet;
 
                 };
             }

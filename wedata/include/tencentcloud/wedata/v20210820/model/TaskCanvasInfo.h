@@ -1100,6 +1100,356 @@ namespace TencentCloud
                      */
                     bool TenantIdHasBeenSet() const;
 
+                    /**
+                     * 获取自依赖类型
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return SelfDepend 自依赖类型
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    int64_t GetSelfDepend() const;
+
+                    /**
+                     * 设置自依赖类型
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _selfDepend 自依赖类型
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetSelfDepend(const int64_t& _selfDepend);
+
+                    /**
+                     * 判断参数 SelfDepend 是否已赋值
+                     * @return SelfDepend 是否已赋值
+                     * 
+                     */
+                    bool SelfDependHasBeenSet() const;
+
+                    /**
+                     * 获取资源组id
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return ExecutorGroupId 资源组id
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::string GetExecutorGroupId() const;
+
+                    /**
+                     * 设置资源组id
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _executorGroupId 资源组id
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetExecutorGroupId(const std::string& _executorGroupId);
+
+                    /**
+                     * 判断参数 ExecutorGroupId 是否已赋值
+                     * @return ExecutorGroupId 是否已赋值
+                     * 
+                     */
+                    bool ExecutorGroupIdHasBeenSet() const;
+
+                    /**
+                     * 获取资源组名称
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return ExecutorGroupName 资源组名称
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::string GetExecutorGroupName() const;
+
+                    /**
+                     * 设置资源组名称
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _executorGroupName 资源组名称
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetExecutorGroupName(const std::string& _executorGroupName);
+
+                    /**
+                     * 判断参数 ExecutorGroupName 是否已赋值
+                     * @return ExecutorGroupName 是否已赋值
+                     * 
+                     */
+                    bool ExecutorGroupNameHasBeenSet() const;
+
+                    /**
+                     * 获取优先级
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return RunPriority 优先级
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::string GetRunPriority() const;
+
+                    /**
+                     * 设置优先级
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _runPriority 优先级
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetRunPriority(const std::string& _runPriority);
+
+                    /**
+                     * 判断参数 RunPriority 是否已赋值
+                     * @return RunPriority 是否已赋值
+                     * 
+                     */
+                    bool RunPriorityHasBeenSet() const;
+
+                    /**
+                     * 获取可充实次数
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return TryLimit 可充实次数
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::string GetTryLimit() const;
+
+                    /**
+                     * 设置可充实次数
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _tryLimit 可充实次数
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetTryLimit(const std::string& _tryLimit);
+
+                    /**
+                     * 判断参数 TryLimit 是否已赋值
+                     * @return TryLimit 是否已赋值
+                     * 
+                     */
+                    bool TryLimitHasBeenSet() const;
+
+                    /**
+                     * 获取可充实
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return RetryAble 可充实
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::string GetRetryAble() const;
+
+                    /**
+                     * 设置可充实
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _retryAble 可充实
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetRetryAble(const std::string& _retryAble);
+
+                    /**
+                     * 判断参数 RetryAble 是否已赋值
+                     * @return RetryAble 是否已赋值
+                     * 
+                     */
+                    bool RetryAbleHasBeenSet() const;
+
+                    /**
+                     * 获取重试等待事件
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return RetryWait 重试等待事件
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::string GetRetryWait() const;
+
+                    /**
+                     * 设置重试等待事件
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _retryWait 重试等待事件
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetRetryWait(const std::string& _retryWait);
+
+                    /**
+                     * 判断参数 RetryWait 是否已赋值
+                     * @return RetryWait 是否已赋值
+                     * 
+                     */
+                    bool RetryWaitHasBeenSet() const;
+
+                    /**
+                     * 获取最近提交时间
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return LastSchedulerCommitTime 最近提交时间
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::string GetLastSchedulerCommitTime() const;
+
+                    /**
+                     * 设置最近提交时间
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _lastSchedulerCommitTime 最近提交时间
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetLastSchedulerCommitTime(const std::string& _lastSchedulerCommitTime);
+
+                    /**
+                     * 判断参数 LastSchedulerCommitTime 是否已赋值
+                     * @return LastSchedulerCommitTime 是否已赋值
+                     * 
+                     */
+                    bool LastSchedulerCommitTimeHasBeenSet() const;
+
+                    /**
+                     * 获取备注
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return Notes 备注
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::string GetNotes() const;
+
+                    /**
+                     * 设置备注
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _notes 备注
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetNotes(const std::string& _notes);
+
+                    /**
+                     * 判断参数 Notes 是否已赋值
+                     * @return Notes 是否已赋值
+                     * 
+                     */
+                    bool NotesHasBeenSet() const;
+
+                    /**
+                     * 获取创建人
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return Creator 创建人
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::string GetCreator() const;
+
+                    /**
+                     * 设置创建人
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _creator 创建人
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetCreator(const std::string& _creator);
+
+                    /**
+                     * 判断参数 Creator 是否已赋值
+                     * @return Creator 是否已赋值
+                     * 
+                     */
+                    bool CreatorHasBeenSet() const;
+
+                    /**
+                     * 获取创建人id
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return UpdateUser 创建人id
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::string GetUpdateUser() const;
+
+                    /**
+                     * 设置创建人id
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _updateUser 创建人id
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetUpdateUser(const std::string& _updateUser);
+
+                    /**
+                     * 判断参数 UpdateUser 是否已赋值
+                     * @return UpdateUser 是否已赋值
+                     * 
+                     */
+                    bool UpdateUserHasBeenSet() const;
+
+                    /**
+                     * 获取更新人id
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return UpdateUserId 更新人id
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::string GetUpdateUserId() const;
+
+                    /**
+                     * 设置更新人id
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _updateUserId 更新人id
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetUpdateUserId(const std::string& _updateUserId);
+
+                    /**
+                     * 判断参数 UpdateUserId 是否已赋值
+                     * @return UpdateUserId 是否已赋值
+                     * 
+                     */
+                    bool UpdateUserIdHasBeenSet() const;
+
+                    /**
+                     * 获取yarn队列
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return YarnQueue yarn队列
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::string GetYarnQueue() const;
+
+                    /**
+                     * 设置yarn队列
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _yarnQueue yarn队列
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetYarnQueue(const std::string& _yarnQueue);
+
+                    /**
+                     * 判断参数 YarnQueue 是否已赋值
+                     * @return YarnQueue 是否已赋值
+                     * 
+                     */
+                    bool YarnQueueHasBeenSet() const;
+
+                    /**
+                     * 获取可执行的timeToLive
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return ExecutionTTL 可执行的timeToLive
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    int64_t GetExecutionTTL() const;
+
+                    /**
+                     * 设置可执行的timeToLive
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _executionTTL 可执行的timeToLive
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetExecutionTTL(const int64_t& _executionTTL);
+
+                    /**
+                     * 判断参数 ExecutionTTL 是否已赋值
+                     * @return ExecutionTTL 是否已赋值
+                     * 
+                     */
+                    bool ExecutionTTLHasBeenSet() const;
+
                 private:
 
                     /**
@@ -1390,6 +1740,104 @@ namespace TencentCloud
                      */
                     std::string m_tenantId;
                     bool m_tenantIdHasBeenSet;
+
+                    /**
+                     * 自依赖类型
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    int64_t m_selfDepend;
+                    bool m_selfDependHasBeenSet;
+
+                    /**
+                     * 资源组id
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_executorGroupId;
+                    bool m_executorGroupIdHasBeenSet;
+
+                    /**
+                     * 资源组名称
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_executorGroupName;
+                    bool m_executorGroupNameHasBeenSet;
+
+                    /**
+                     * 优先级
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_runPriority;
+                    bool m_runPriorityHasBeenSet;
+
+                    /**
+                     * 可充实次数
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_tryLimit;
+                    bool m_tryLimitHasBeenSet;
+
+                    /**
+                     * 可充实
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_retryAble;
+                    bool m_retryAbleHasBeenSet;
+
+                    /**
+                     * 重试等待事件
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_retryWait;
+                    bool m_retryWaitHasBeenSet;
+
+                    /**
+                     * 最近提交时间
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_lastSchedulerCommitTime;
+                    bool m_lastSchedulerCommitTimeHasBeenSet;
+
+                    /**
+                     * 备注
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_notes;
+                    bool m_notesHasBeenSet;
+
+                    /**
+                     * 创建人
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_creator;
+                    bool m_creatorHasBeenSet;
+
+                    /**
+                     * 创建人id
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_updateUser;
+                    bool m_updateUserHasBeenSet;
+
+                    /**
+                     * 更新人id
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_updateUserId;
+                    bool m_updateUserIdHasBeenSet;
+
+                    /**
+                     * yarn队列
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_yarnQueue;
+                    bool m_yarnQueueHasBeenSet;
+
+                    /**
+                     * 可执行的timeToLive
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    int64_t m_executionTTL;
+                    bool m_executionTTLHasBeenSet;
 
                 };
             }

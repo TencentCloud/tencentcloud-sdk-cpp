@@ -213,6 +213,27 @@ namespace TencentCloud
                      */
                     bool TagsHasBeenSet() const;
 
+                    /**
+                     * 获取版本
+                     * @return ProductVersion 版本
+                     * 
+                     */
+                    std::string GetProductVersion() const;
+
+                    /**
+                     * 设置版本
+                     * @param _productVersion 版本
+                     * 
+                     */
+                    void SetProductVersion(const std::string& _productVersion);
+
+                    /**
+                     * 判断参数 ProductVersion 是否已赋值
+                     * @return ProductVersion 是否已赋值
+                     * 
+                     */
+                    bool ProductVersionHasBeenSet() const;
+
                 private:
 
                     /**
@@ -262,6 +283,12 @@ namespace TencentCloud
                      */
                     Tag m_tags;
                     bool m_tagsHasBeenSet;
+
+                    /**
+                     * 版本
+                     */
+                    std::string m_productVersion;
+                    bool m_productVersionHasBeenSet;
 
                 };
             }

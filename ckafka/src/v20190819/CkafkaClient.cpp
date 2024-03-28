@@ -771,6 +771,49 @@ CkafkaClient::CreatePostPaidInstanceOutcomeCallable CkafkaClient::CreatePostPaid
     return task->get_future();
 }
 
+CkafkaClient::CreatePrometheusOutcome CkafkaClient::CreatePrometheus(const CreatePrometheusRequest &request)
+{
+    auto outcome = MakeRequest(request, "CreatePrometheus");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        CreatePrometheusResponse rsp = CreatePrometheusResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return CreatePrometheusOutcome(rsp);
+        else
+            return CreatePrometheusOutcome(o.GetError());
+    }
+    else
+    {
+        return CreatePrometheusOutcome(outcome.GetError());
+    }
+}
+
+void CkafkaClient::CreatePrometheusAsync(const CreatePrometheusRequest& request, const CreatePrometheusAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->CreatePrometheus(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+CkafkaClient::CreatePrometheusOutcomeCallable CkafkaClient::CreatePrometheusCallable(const CreatePrometheusRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<CreatePrometheusOutcome()>>(
+        [this, request]()
+        {
+            return this->CreatePrometheus(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 CkafkaClient::CreateRouteOutcome CkafkaClient::CreateRoute(const CreateRouteRequest &request)
 {
     auto outcome = MakeRequest(request, "CreateRoute");
@@ -2312,6 +2355,49 @@ CkafkaClient::DescribeInstancesDetailOutcomeCallable CkafkaClient::DescribeInsta
         [this, request]()
         {
             return this->DescribeInstancesDetail(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+CkafkaClient::DescribePrometheusOutcome CkafkaClient::DescribePrometheus(const DescribePrometheusRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribePrometheus");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribePrometheusResponse rsp = DescribePrometheusResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribePrometheusOutcome(rsp);
+        else
+            return DescribePrometheusOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribePrometheusOutcome(outcome.GetError());
+    }
+}
+
+void CkafkaClient::DescribePrometheusAsync(const DescribePrometheusRequest& request, const DescribePrometheusAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribePrometheus(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+CkafkaClient::DescribePrometheusOutcomeCallable CkafkaClient::DescribePrometheusCallable(const DescribePrometheusRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribePrometheusOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribePrometheus(request);
         }
     );
 

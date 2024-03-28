@@ -343,7 +343,7 @@ namespace TencentCloud
 
                      * 
                      */
-                    std::string GetForbidAddApprover() const;
+                    bool GetForbidAddApprover() const;
 
                     /**
                      * 设置  禁止添加签署方，若为true则在发起流程的可嵌入页面隐藏“添加签署人按钮”
@@ -352,7 +352,7 @@ namespace TencentCloud
 
                      * 
                      */
-                    void SetForbidAddApprover(const std::string& _forbidAddApprover);
+                    void SetForbidAddApprover(const bool& _forbidAddApprover);
 
                     /**
                      * 判断参数 ForbidAddApprover 是否已赋值
@@ -368,7 +368,7 @@ namespace TencentCloud
 
                      * 
                      */
-                    std::string GetForbidEditFlowProperties() const;
+                    bool GetForbidEditFlowProperties() const;
 
                     /**
                      * 设置  禁止设置设置签署流程属性 (顺序、合同签署认证方式等)，若为true则在发起流程的可嵌入页面隐藏签署流程设置面板
@@ -377,7 +377,7 @@ namespace TencentCloud
 
                      * 
                      */
-                    void SetForbidEditFlowProperties(const std::string& _forbidEditFlowProperties);
+                    void SetForbidEditFlowProperties(const bool& _forbidEditFlowProperties);
 
                     /**
                      * 判断参数 ForbidEditFlowProperties 是否已赋值
@@ -742,14 +742,14 @@ namespace TencentCloud
                      *   禁止添加签署方，若为true则在发起流程的可嵌入页面隐藏“添加签署人按钮”
 
                      */
-                    std::string m_forbidAddApprover;
+                    bool m_forbidAddApprover;
                     bool m_forbidAddApproverHasBeenSet;
 
                     /**
                      *   禁止设置设置签署流程属性 (顺序、合同签署认证方式等)，若为true则在发起流程的可嵌入页面隐藏签署流程设置面板
 
                      */
-                    std::string m_forbidEditFlowProperties;
+                    bool m_forbidEditFlowProperties;
                     bool m_forbidEditFlowPropertiesHasBeenSet;
 
                     /**

@@ -64,15 +64,15 @@ namespace TencentCloud
                     bool InstanceIdHasBeenSet() const;
 
                     /**
-                     * 获取Kafka 消费分组，Consumer-group，这里是数组形式，格式：GroupList.0=xxx&GroupList.1=yyy。
-                     * @return GroupList Kafka 消费分组，Consumer-group，这里是数组形式，格式：GroupList.0=xxx&GroupList.1=yyy。
+                     * 获取Kafka 消费分组，Consumer-group，这里是数组形式，示例：["xxx","yyy"]
+                     * @return GroupList Kafka 消费分组，Consumer-group，这里是数组形式，示例：["xxx","yyy"]
                      * 
                      */
                     std::vector<std::string> GetGroupList() const;
 
                     /**
-                     * 设置Kafka 消费分组，Consumer-group，这里是数组形式，格式：GroupList.0=xxx&GroupList.1=yyy。
-                     * @param _groupList Kafka 消费分组，Consumer-group，这里是数组形式，格式：GroupList.0=xxx&GroupList.1=yyy。
+                     * 设置Kafka 消费分组，Consumer-group，这里是数组形式，示例：["xxx","yyy"]
+                     * @param _groupList Kafka 消费分组，Consumer-group，这里是数组形式，示例：["xxx","yyy"]
                      * 
                      */
                     void SetGroupList(const std::vector<std::string>& _groupList);
@@ -93,7 +93,7 @@ namespace TencentCloud
                     bool m_instanceIdHasBeenSet;
 
                     /**
-                     * Kafka 消费分组，Consumer-group，这里是数组形式，格式：GroupList.0=xxx&GroupList.1=yyy。
+                     * Kafka 消费分组，Consumer-group，这里是数组形式，示例：["xxx","yyy"]
                      */
                     std::vector<std::string> m_groupList;
                     bool m_groupListHasBeenSet;

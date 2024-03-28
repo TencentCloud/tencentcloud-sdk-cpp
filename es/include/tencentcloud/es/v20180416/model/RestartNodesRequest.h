@@ -147,6 +147,27 @@ namespace TencentCloud
                      */
                     bool IsOfflineHasBeenSet() const;
 
+                    /**
+                     * 获取cvm延迟上架时间
+                     * @return CvmDelayOnlineTime cvm延迟上架时间
+                     * 
+                     */
+                    uint64_t GetCvmDelayOnlineTime() const;
+
+                    /**
+                     * 设置cvm延迟上架时间
+                     * @param _cvmDelayOnlineTime cvm延迟上架时间
+                     * 
+                     */
+                    void SetCvmDelayOnlineTime(const uint64_t& _cvmDelayOnlineTime);
+
+                    /**
+                     * 判断参数 CvmDelayOnlineTime 是否已赋值
+                     * @return CvmDelayOnlineTime 是否已赋值
+                     * 
+                     */
+                    bool CvmDelayOnlineTimeHasBeenSet() const;
+
                 private:
 
                     /**
@@ -178,6 +199,12 @@ namespace TencentCloud
                      */
                     bool m_isOffline;
                     bool m_isOfflineHasBeenSet;
+
+                    /**
+                     * cvm延迟上架时间
+                     */
+                    uint64_t m_cvmDelayOnlineTime;
+                    bool m_cvmDelayOnlineTimeHasBeenSet;
 
                 };
             }

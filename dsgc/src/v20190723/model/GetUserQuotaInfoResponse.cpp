@@ -29,7 +29,9 @@ GetUserQuotaInfoResponse::GetUserQuotaInfoResponse() :
     m_cosTotalQuotaHasBeenSet(false),
     m_dbRemainQuotaHasBeenSet(false),
     m_cosRemainQuotaHasBeenSet(false),
-    m_cosQuotaUnitHasBeenSet(false)
+    m_cosQuotaUnitHasBeenSet(false),
+    m_dBUnbindNumHasBeenSet(false),
+    m_cOSUnbindNumHasBeenSet(false)
 {
 }
 
@@ -127,6 +129,26 @@ CoreInternalOutcome GetUserQuotaInfoResponse::Deserialize(const string &payload)
         m_cosQuotaUnitHasBeenSet = true;
     }
 
+    if (rsp.HasMember("DBUnbindNum") && !rsp["DBUnbindNum"].IsNull())
+    {
+        if (!rsp["DBUnbindNum"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `DBUnbindNum` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_dBUnbindNum = rsp["DBUnbindNum"].GetInt64();
+        m_dBUnbindNumHasBeenSet = true;
+    }
+
+    if (rsp.HasMember("COSUnbindNum") && !rsp["COSUnbindNum"].IsNull())
+    {
+        if (!rsp["COSUnbindNum"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `COSUnbindNum` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_cOSUnbindNum = rsp["COSUnbindNum"].GetInt64();
+        m_cOSUnbindNumHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -183,6 +205,22 @@ string GetUserQuotaInfoResponse::ToJsonString() const
         string key = "CosQuotaUnit";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_cosQuotaUnit.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_dBUnbindNumHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "DBUnbindNum";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_dBUnbindNum, allocator);
+    }
+
+    if (m_cOSUnbindNumHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "COSUnbindNum";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_cOSUnbindNum, allocator);
     }
 
     rapidjson::Value iKey(rapidjson::kStringType);
@@ -255,6 +293,26 @@ string GetUserQuotaInfoResponse::GetCosQuotaUnit() const
 bool GetUserQuotaInfoResponse::CosQuotaUnitHasBeenSet() const
 {
     return m_cosQuotaUnitHasBeenSet;
+}
+
+int64_t GetUserQuotaInfoResponse::GetDBUnbindNum() const
+{
+    return m_dBUnbindNum;
+}
+
+bool GetUserQuotaInfoResponse::DBUnbindNumHasBeenSet() const
+{
+    return m_dBUnbindNumHasBeenSet;
+}
+
+int64_t GetUserQuotaInfoResponse::GetCOSUnbindNum() const
+{
+    return m_cOSUnbindNum;
+}
+
+bool GetUserQuotaInfoResponse::COSUnbindNumHasBeenSet() const
+{
+    return m_cOSUnbindNumHasBeenSet;
 }
 
 

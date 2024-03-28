@@ -105,7 +105,9 @@ InstanceInfo::InstanceInfo() :
     m_hasKernelUpgradeHasBeenSet(false),
     m_cdcIdHasBeenSet(false),
     m_kibanaPrivateVipHasBeenSet(false),
-    m_customKibanaPrivateUrlHasBeenSet(false)
+    m_customKibanaPrivateUrlHasBeenSet(false),
+    m_outboundPublicAclsHasBeenSet(false),
+    m_netConnectSchemeHasBeenSet(false)
 {
 }
 
@@ -1073,6 +1075,36 @@ CoreInternalOutcome InstanceInfo::Deserialize(const rapidjson::Value &value)
         m_customKibanaPrivateUrlHasBeenSet = true;
     }
 
+    if (value.HasMember("OutboundPublicAcls") && !value["OutboundPublicAcls"].IsNull())
+    {
+        if (!value["OutboundPublicAcls"].IsArray())
+            return CoreInternalOutcome(Core::Error("response `InstanceInfo.OutboundPublicAcls` is not array type"));
+
+        const rapidjson::Value &tmpValue = value["OutboundPublicAcls"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            OutboundPublicAcl item;
+            CoreInternalOutcome outcome = item.Deserialize(*itr);
+            if (!outcome.IsSuccess())
+            {
+                outcome.GetError().SetRequestId(requestId);
+                return outcome;
+            }
+            m_outboundPublicAcls.push_back(item);
+        }
+        m_outboundPublicAclsHasBeenSet = true;
+    }
+
+    if (value.HasMember("NetConnectScheme") && !value["NetConnectScheme"].IsNull())
+    {
+        if (!value["NetConnectScheme"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `InstanceInfo.NetConnectScheme` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_netConnectScheme = string(value["NetConnectScheme"].GetString());
+        m_netConnectSchemeHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -1806,6 +1838,29 @@ void InstanceInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Al
         string key = "CustomKibanaPrivateUrl";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_customKibanaPrivateUrl.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_outboundPublicAclsHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "OutboundPublicAcls";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_outboundPublicAcls.begin(); itr != m_outboundPublicAcls.end(); ++itr, ++i)
+        {
+            value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(value[key.c_str()][i], allocator);
+        }
+    }
+
+    if (m_netConnectSchemeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "NetConnectScheme";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_netConnectScheme.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -3169,5 +3224,37 @@ void InstanceInfo::SetCustomKibanaPrivateUrl(const string& _customKibanaPrivateU
 bool InstanceInfo::CustomKibanaPrivateUrlHasBeenSet() const
 {
     return m_customKibanaPrivateUrlHasBeenSet;
+}
+
+vector<OutboundPublicAcl> InstanceInfo::GetOutboundPublicAcls() const
+{
+    return m_outboundPublicAcls;
+}
+
+void InstanceInfo::SetOutboundPublicAcls(const vector<OutboundPublicAcl>& _outboundPublicAcls)
+{
+    m_outboundPublicAcls = _outboundPublicAcls;
+    m_outboundPublicAclsHasBeenSet = true;
+}
+
+bool InstanceInfo::OutboundPublicAclsHasBeenSet() const
+{
+    return m_outboundPublicAclsHasBeenSet;
+}
+
+string InstanceInfo::GetNetConnectScheme() const
+{
+    return m_netConnectScheme;
+}
+
+void InstanceInfo::SetNetConnectScheme(const string& _netConnectScheme)
+{
+    m_netConnectScheme = _netConnectScheme;
+    m_netConnectSchemeHasBeenSet = true;
+}
+
+bool InstanceInfo::NetConnectSchemeHasBeenSet() const
+{
+    return m_netConnectSchemeHasBeenSet;
 }
 

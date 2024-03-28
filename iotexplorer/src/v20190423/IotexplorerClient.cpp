@@ -40,6 +40,49 @@ IotexplorerClient::IotexplorerClient(const Credential &credential, const string 
 }
 
 
+IotexplorerClient::BindCloudStorageUserOutcome IotexplorerClient::BindCloudStorageUser(const BindCloudStorageUserRequest &request)
+{
+    auto outcome = MakeRequest(request, "BindCloudStorageUser");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        BindCloudStorageUserResponse rsp = BindCloudStorageUserResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return BindCloudStorageUserOutcome(rsp);
+        else
+            return BindCloudStorageUserOutcome(o.GetError());
+    }
+    else
+    {
+        return BindCloudStorageUserOutcome(outcome.GetError());
+    }
+}
+
+void IotexplorerClient::BindCloudStorageUserAsync(const BindCloudStorageUserRequest& request, const BindCloudStorageUserAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->BindCloudStorageUser(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+IotexplorerClient::BindCloudStorageUserOutcomeCallable IotexplorerClient::BindCloudStorageUserCallable(const BindCloudStorageUserRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<BindCloudStorageUserOutcome()>>(
+        [this, request]()
+        {
+            return this->BindCloudStorageUser(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 IotexplorerClient::BindDevicesOutcome IotexplorerClient::BindDevices(const BindDevicesRequest &request)
 {
     auto outcome = MakeRequest(request, "BindDevices");
@@ -384,6 +427,49 @@ IotexplorerClient::CreateFenceBindOutcomeCallable IotexplorerClient::CreateFence
     return task->get_future();
 }
 
+IotexplorerClient::CreateIotVideoCloudStorageOutcome IotexplorerClient::CreateIotVideoCloudStorage(const CreateIotVideoCloudStorageRequest &request)
+{
+    auto outcome = MakeRequest(request, "CreateIotVideoCloudStorage");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        CreateIotVideoCloudStorageResponse rsp = CreateIotVideoCloudStorageResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return CreateIotVideoCloudStorageOutcome(rsp);
+        else
+            return CreateIotVideoCloudStorageOutcome(o.GetError());
+    }
+    else
+    {
+        return CreateIotVideoCloudStorageOutcome(outcome.GetError());
+    }
+}
+
+void IotexplorerClient::CreateIotVideoCloudStorageAsync(const CreateIotVideoCloudStorageRequest& request, const CreateIotVideoCloudStorageAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->CreateIotVideoCloudStorage(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+IotexplorerClient::CreateIotVideoCloudStorageOutcomeCallable IotexplorerClient::CreateIotVideoCloudStorageCallable(const CreateIotVideoCloudStorageRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<CreateIotVideoCloudStorageOutcome()>>(
+        [this, request]()
+        {
+            return this->CreateIotVideoCloudStorage(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 IotexplorerClient::CreateLoRaFrequencyOutcome IotexplorerClient::CreateLoRaFrequency(const CreateLoRaFrequencyRequest &request)
 {
     auto outcome = MakeRequest(request, "CreateLoRaFrequency");
@@ -721,6 +807,49 @@ IotexplorerClient::CreateTopicRuleOutcomeCallable IotexplorerClient::CreateTopic
         [this, request]()
         {
             return this->CreateTopicRule(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+IotexplorerClient::DeleteCloudStorageEventOutcome IotexplorerClient::DeleteCloudStorageEvent(const DeleteCloudStorageEventRequest &request)
+{
+    auto outcome = MakeRequest(request, "DeleteCloudStorageEvent");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DeleteCloudStorageEventResponse rsp = DeleteCloudStorageEventResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DeleteCloudStorageEventOutcome(rsp);
+        else
+            return DeleteCloudStorageEventOutcome(o.GetError());
+    }
+    else
+    {
+        return DeleteCloudStorageEventOutcome(outcome.GetError());
+    }
+}
+
+void IotexplorerClient::DeleteCloudStorageEventAsync(const DeleteCloudStorageEventRequest& request, const DeleteCloudStorageEventAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DeleteCloudStorageEvent(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+IotexplorerClient::DeleteCloudStorageEventOutcomeCallable IotexplorerClient::DeleteCloudStorageEventCallable(const DeleteCloudStorageEventRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DeleteCloudStorageEventOutcome()>>(
+        [this, request]()
+        {
+            return this->DeleteCloudStorageEvent(request);
         }
     );
 
@@ -1287,6 +1416,522 @@ IotexplorerClient::DescribeBindedProductsOutcomeCallable IotexplorerClient::Desc
     return task->get_future();
 }
 
+IotexplorerClient::DescribeCloudStorageOutcome IotexplorerClient::DescribeCloudStorage(const DescribeCloudStorageRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeCloudStorage");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeCloudStorageResponse rsp = DescribeCloudStorageResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeCloudStorageOutcome(rsp);
+        else
+            return DescribeCloudStorageOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeCloudStorageOutcome(outcome.GetError());
+    }
+}
+
+void IotexplorerClient::DescribeCloudStorageAsync(const DescribeCloudStorageRequest& request, const DescribeCloudStorageAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeCloudStorage(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+IotexplorerClient::DescribeCloudStorageOutcomeCallable IotexplorerClient::DescribeCloudStorageCallable(const DescribeCloudStorageRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeCloudStorageOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeCloudStorage(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+IotexplorerClient::DescribeCloudStorageDateOutcome IotexplorerClient::DescribeCloudStorageDate(const DescribeCloudStorageDateRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeCloudStorageDate");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeCloudStorageDateResponse rsp = DescribeCloudStorageDateResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeCloudStorageDateOutcome(rsp);
+        else
+            return DescribeCloudStorageDateOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeCloudStorageDateOutcome(outcome.GetError());
+    }
+}
+
+void IotexplorerClient::DescribeCloudStorageDateAsync(const DescribeCloudStorageDateRequest& request, const DescribeCloudStorageDateAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeCloudStorageDate(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+IotexplorerClient::DescribeCloudStorageDateOutcomeCallable IotexplorerClient::DescribeCloudStorageDateCallable(const DescribeCloudStorageDateRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeCloudStorageDateOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeCloudStorageDate(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+IotexplorerClient::DescribeCloudStorageEventsOutcome IotexplorerClient::DescribeCloudStorageEvents(const DescribeCloudStorageEventsRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeCloudStorageEvents");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeCloudStorageEventsResponse rsp = DescribeCloudStorageEventsResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeCloudStorageEventsOutcome(rsp);
+        else
+            return DescribeCloudStorageEventsOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeCloudStorageEventsOutcome(outcome.GetError());
+    }
+}
+
+void IotexplorerClient::DescribeCloudStorageEventsAsync(const DescribeCloudStorageEventsRequest& request, const DescribeCloudStorageEventsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeCloudStorageEvents(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+IotexplorerClient::DescribeCloudStorageEventsOutcomeCallable IotexplorerClient::DescribeCloudStorageEventsCallable(const DescribeCloudStorageEventsRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeCloudStorageEventsOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeCloudStorageEvents(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+IotexplorerClient::DescribeCloudStorageMultiThumbnailOutcome IotexplorerClient::DescribeCloudStorageMultiThumbnail(const DescribeCloudStorageMultiThumbnailRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeCloudStorageMultiThumbnail");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeCloudStorageMultiThumbnailResponse rsp = DescribeCloudStorageMultiThumbnailResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeCloudStorageMultiThumbnailOutcome(rsp);
+        else
+            return DescribeCloudStorageMultiThumbnailOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeCloudStorageMultiThumbnailOutcome(outcome.GetError());
+    }
+}
+
+void IotexplorerClient::DescribeCloudStorageMultiThumbnailAsync(const DescribeCloudStorageMultiThumbnailRequest& request, const DescribeCloudStorageMultiThumbnailAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeCloudStorageMultiThumbnail(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+IotexplorerClient::DescribeCloudStorageMultiThumbnailOutcomeCallable IotexplorerClient::DescribeCloudStorageMultiThumbnailCallable(const DescribeCloudStorageMultiThumbnailRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeCloudStorageMultiThumbnailOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeCloudStorageMultiThumbnail(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+IotexplorerClient::DescribeCloudStorageOrderOutcome IotexplorerClient::DescribeCloudStorageOrder(const DescribeCloudStorageOrderRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeCloudStorageOrder");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeCloudStorageOrderResponse rsp = DescribeCloudStorageOrderResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeCloudStorageOrderOutcome(rsp);
+        else
+            return DescribeCloudStorageOrderOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeCloudStorageOrderOutcome(outcome.GetError());
+    }
+}
+
+void IotexplorerClient::DescribeCloudStorageOrderAsync(const DescribeCloudStorageOrderRequest& request, const DescribeCloudStorageOrderAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeCloudStorageOrder(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+IotexplorerClient::DescribeCloudStorageOrderOutcomeCallable IotexplorerClient::DescribeCloudStorageOrderCallable(const DescribeCloudStorageOrderRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeCloudStorageOrderOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeCloudStorageOrder(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+IotexplorerClient::DescribeCloudStoragePackageConsumeDetailsOutcome IotexplorerClient::DescribeCloudStoragePackageConsumeDetails(const DescribeCloudStoragePackageConsumeDetailsRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeCloudStoragePackageConsumeDetails");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeCloudStoragePackageConsumeDetailsResponse rsp = DescribeCloudStoragePackageConsumeDetailsResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeCloudStoragePackageConsumeDetailsOutcome(rsp);
+        else
+            return DescribeCloudStoragePackageConsumeDetailsOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeCloudStoragePackageConsumeDetailsOutcome(outcome.GetError());
+    }
+}
+
+void IotexplorerClient::DescribeCloudStoragePackageConsumeDetailsAsync(const DescribeCloudStoragePackageConsumeDetailsRequest& request, const DescribeCloudStoragePackageConsumeDetailsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeCloudStoragePackageConsumeDetails(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+IotexplorerClient::DescribeCloudStoragePackageConsumeDetailsOutcomeCallable IotexplorerClient::DescribeCloudStoragePackageConsumeDetailsCallable(const DescribeCloudStoragePackageConsumeDetailsRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeCloudStoragePackageConsumeDetailsOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeCloudStoragePackageConsumeDetails(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+IotexplorerClient::DescribeCloudStoragePackageConsumeStatsOutcome IotexplorerClient::DescribeCloudStoragePackageConsumeStats(const DescribeCloudStoragePackageConsumeStatsRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeCloudStoragePackageConsumeStats");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeCloudStoragePackageConsumeStatsResponse rsp = DescribeCloudStoragePackageConsumeStatsResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeCloudStoragePackageConsumeStatsOutcome(rsp);
+        else
+            return DescribeCloudStoragePackageConsumeStatsOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeCloudStoragePackageConsumeStatsOutcome(outcome.GetError());
+    }
+}
+
+void IotexplorerClient::DescribeCloudStoragePackageConsumeStatsAsync(const DescribeCloudStoragePackageConsumeStatsRequest& request, const DescribeCloudStoragePackageConsumeStatsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeCloudStoragePackageConsumeStats(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+IotexplorerClient::DescribeCloudStoragePackageConsumeStatsOutcomeCallable IotexplorerClient::DescribeCloudStoragePackageConsumeStatsCallable(const DescribeCloudStoragePackageConsumeStatsRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeCloudStoragePackageConsumeStatsOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeCloudStoragePackageConsumeStats(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+IotexplorerClient::DescribeCloudStorageStreamDataOutcome IotexplorerClient::DescribeCloudStorageStreamData(const DescribeCloudStorageStreamDataRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeCloudStorageStreamData");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeCloudStorageStreamDataResponse rsp = DescribeCloudStorageStreamDataResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeCloudStorageStreamDataOutcome(rsp);
+        else
+            return DescribeCloudStorageStreamDataOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeCloudStorageStreamDataOutcome(outcome.GetError());
+    }
+}
+
+void IotexplorerClient::DescribeCloudStorageStreamDataAsync(const DescribeCloudStorageStreamDataRequest& request, const DescribeCloudStorageStreamDataAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeCloudStorageStreamData(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+IotexplorerClient::DescribeCloudStorageStreamDataOutcomeCallable IotexplorerClient::DescribeCloudStorageStreamDataCallable(const DescribeCloudStorageStreamDataRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeCloudStorageStreamDataOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeCloudStorageStreamData(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+IotexplorerClient::DescribeCloudStorageThumbnailOutcome IotexplorerClient::DescribeCloudStorageThumbnail(const DescribeCloudStorageThumbnailRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeCloudStorageThumbnail");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeCloudStorageThumbnailResponse rsp = DescribeCloudStorageThumbnailResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeCloudStorageThumbnailOutcome(rsp);
+        else
+            return DescribeCloudStorageThumbnailOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeCloudStorageThumbnailOutcome(outcome.GetError());
+    }
+}
+
+void IotexplorerClient::DescribeCloudStorageThumbnailAsync(const DescribeCloudStorageThumbnailRequest& request, const DescribeCloudStorageThumbnailAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeCloudStorageThumbnail(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+IotexplorerClient::DescribeCloudStorageThumbnailOutcomeCallable IotexplorerClient::DescribeCloudStorageThumbnailCallable(const DescribeCloudStorageThumbnailRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeCloudStorageThumbnailOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeCloudStorageThumbnail(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+IotexplorerClient::DescribeCloudStorageThumbnailListOutcome IotexplorerClient::DescribeCloudStorageThumbnailList(const DescribeCloudStorageThumbnailListRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeCloudStorageThumbnailList");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeCloudStorageThumbnailListResponse rsp = DescribeCloudStorageThumbnailListResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeCloudStorageThumbnailListOutcome(rsp);
+        else
+            return DescribeCloudStorageThumbnailListOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeCloudStorageThumbnailListOutcome(outcome.GetError());
+    }
+}
+
+void IotexplorerClient::DescribeCloudStorageThumbnailListAsync(const DescribeCloudStorageThumbnailListRequest& request, const DescribeCloudStorageThumbnailListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeCloudStorageThumbnailList(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+IotexplorerClient::DescribeCloudStorageThumbnailListOutcomeCallable IotexplorerClient::DescribeCloudStorageThumbnailListCallable(const DescribeCloudStorageThumbnailListRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeCloudStorageThumbnailListOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeCloudStorageThumbnailList(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+IotexplorerClient::DescribeCloudStorageTimeOutcome IotexplorerClient::DescribeCloudStorageTime(const DescribeCloudStorageTimeRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeCloudStorageTime");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeCloudStorageTimeResponse rsp = DescribeCloudStorageTimeResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeCloudStorageTimeOutcome(rsp);
+        else
+            return DescribeCloudStorageTimeOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeCloudStorageTimeOutcome(outcome.GetError());
+    }
+}
+
+void IotexplorerClient::DescribeCloudStorageTimeAsync(const DescribeCloudStorageTimeRequest& request, const DescribeCloudStorageTimeAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeCloudStorageTime(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+IotexplorerClient::DescribeCloudStorageTimeOutcomeCallable IotexplorerClient::DescribeCloudStorageTimeCallable(const DescribeCloudStorageTimeRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeCloudStorageTimeOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeCloudStorageTime(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+IotexplorerClient::DescribeCloudStorageUsersOutcome IotexplorerClient::DescribeCloudStorageUsers(const DescribeCloudStorageUsersRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeCloudStorageUsers");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeCloudStorageUsersResponse rsp = DescribeCloudStorageUsersResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeCloudStorageUsersOutcome(rsp);
+        else
+            return DescribeCloudStorageUsersOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeCloudStorageUsersOutcome(outcome.GetError());
+    }
+}
+
+void IotexplorerClient::DescribeCloudStorageUsersAsync(const DescribeCloudStorageUsersRequest& request, const DescribeCloudStorageUsersAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeCloudStorageUsers(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+IotexplorerClient::DescribeCloudStorageUsersOutcomeCallable IotexplorerClient::DescribeCloudStorageUsersCallable(const DescribeCloudStorageUsersRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeCloudStorageUsersOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeCloudStorageUsers(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 IotexplorerClient::DescribeDeviceOutcome IotexplorerClient::DescribeDevice(const DescribeDeviceRequest &request)
 {
     auto outcome = MakeRequest(request, "DescribeDevice");
@@ -1538,6 +2183,49 @@ IotexplorerClient::DescribeDeviceLocationSolveOutcomeCallable IotexplorerClient:
         [this, request]()
         {
             return this->DescribeDeviceLocationSolve(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+IotexplorerClient::DescribeDevicePackagesOutcome IotexplorerClient::DescribeDevicePackages(const DescribeDevicePackagesRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeDevicePackages");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeDevicePackagesResponse rsp = DescribeDevicePackagesResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeDevicePackagesOutcome(rsp);
+        else
+            return DescribeDevicePackagesOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeDevicePackagesOutcome(outcome.GetError());
+    }
+}
+
+void IotexplorerClient::DescribeDevicePackagesAsync(const DescribeDevicePackagesRequest& request, const DescribeDevicePackagesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeDevicePackages(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+IotexplorerClient::DescribeDevicePackagesOutcomeCallable IotexplorerClient::DescribeDevicePackagesCallable(const DescribeDevicePackagesRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeDevicePackagesOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeDevicePackages(request);
         }
     );
 
@@ -1975,6 +2663,92 @@ IotexplorerClient::DescribeModelDefinitionOutcomeCallable IotexplorerClient::Des
     return task->get_future();
 }
 
+IotexplorerClient::DescribePackageConsumeTaskOutcome IotexplorerClient::DescribePackageConsumeTask(const DescribePackageConsumeTaskRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribePackageConsumeTask");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribePackageConsumeTaskResponse rsp = DescribePackageConsumeTaskResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribePackageConsumeTaskOutcome(rsp);
+        else
+            return DescribePackageConsumeTaskOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribePackageConsumeTaskOutcome(outcome.GetError());
+    }
+}
+
+void IotexplorerClient::DescribePackageConsumeTaskAsync(const DescribePackageConsumeTaskRequest& request, const DescribePackageConsumeTaskAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribePackageConsumeTask(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+IotexplorerClient::DescribePackageConsumeTaskOutcomeCallable IotexplorerClient::DescribePackageConsumeTaskCallable(const DescribePackageConsumeTaskRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribePackageConsumeTaskOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribePackageConsumeTask(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+IotexplorerClient::DescribePackageConsumeTasksOutcome IotexplorerClient::DescribePackageConsumeTasks(const DescribePackageConsumeTasksRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribePackageConsumeTasks");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribePackageConsumeTasksResponse rsp = DescribePackageConsumeTasksResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribePackageConsumeTasksOutcome(rsp);
+        else
+            return DescribePackageConsumeTasksOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribePackageConsumeTasksOutcome(outcome.GetError());
+    }
+}
+
+void IotexplorerClient::DescribePackageConsumeTasksAsync(const DescribePackageConsumeTasksRequest& request, const DescribePackageConsumeTasksAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribePackageConsumeTasks(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+IotexplorerClient::DescribePackageConsumeTasksOutcomeCallable IotexplorerClient::DescribePackageConsumeTasksCallable(const DescribePackageConsumeTasksRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribePackageConsumeTasksOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribePackageConsumeTasks(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 IotexplorerClient::DescribePositionFenceListOutcome IotexplorerClient::DescribePositionFenceList(const DescribePositionFenceListRequest &request)
 {
     auto outcome = MakeRequest(request, "DescribePositionFenceList");
@@ -2398,6 +3172,49 @@ IotexplorerClient::GenSingleDeviceSignatureOfPublicOutcomeCallable IotexplorerCl
         [this, request]()
         {
             return this->GenSingleDeviceSignatureOfPublic(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+IotexplorerClient::GenerateSignedVideoURLOutcome IotexplorerClient::GenerateSignedVideoURL(const GenerateSignedVideoURLRequest &request)
+{
+    auto outcome = MakeRequest(request, "GenerateSignedVideoURL");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        GenerateSignedVideoURLResponse rsp = GenerateSignedVideoURLResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return GenerateSignedVideoURLOutcome(rsp);
+        else
+            return GenerateSignedVideoURLOutcome(o.GetError());
+    }
+    else
+    {
+        return GenerateSignedVideoURLOutcome(outcome.GetError());
+    }
+}
+
+void IotexplorerClient::GenerateSignedVideoURLAsync(const GenerateSignedVideoURLRequest& request, const GenerateSignedVideoURLAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->GenerateSignedVideoURL(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+IotexplorerClient::GenerateSignedVideoURLOutcomeCallable IotexplorerClient::GenerateSignedVideoURLCallable(const GenerateSignedVideoURLRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<GenerateSignedVideoURLOutcome()>>(
+        [this, request]()
+        {
+            return this->GenerateSignedVideoURL(request);
         }
     );
 
@@ -2914,6 +3731,49 @@ IotexplorerClient::GetTopicRuleListOutcomeCallable IotexplorerClient::GetTopicRu
         [this, request]()
         {
             return this->GetTopicRuleList(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+IotexplorerClient::InheritCloudStorageUserOutcome IotexplorerClient::InheritCloudStorageUser(const InheritCloudStorageUserRequest &request)
+{
+    auto outcome = MakeRequest(request, "InheritCloudStorageUser");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        InheritCloudStorageUserResponse rsp = InheritCloudStorageUserResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return InheritCloudStorageUserOutcome(rsp);
+        else
+            return InheritCloudStorageUserOutcome(o.GetError());
+    }
+    else
+    {
+        return InheritCloudStorageUserOutcome(outcome.GetError());
+    }
+}
+
+void IotexplorerClient::InheritCloudStorageUserAsync(const InheritCloudStorageUserRequest& request, const InheritCloudStorageUserAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->InheritCloudStorageUser(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+IotexplorerClient::InheritCloudStorageUserOutcomeCallable IotexplorerClient::InheritCloudStorageUserCallable(const InheritCloudStorageUserRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<InheritCloudStorageUserOutcome()>>(
+        [this, request]()
+        {
+            return this->InheritCloudStorageUser(request);
         }
     );
 
@@ -3695,6 +4555,92 @@ IotexplorerClient::ReleaseStudioProductOutcomeCallable IotexplorerClient::Releas
     return task->get_future();
 }
 
+IotexplorerClient::ResetCloudStorageOutcome IotexplorerClient::ResetCloudStorage(const ResetCloudStorageRequest &request)
+{
+    auto outcome = MakeRequest(request, "ResetCloudStorage");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ResetCloudStorageResponse rsp = ResetCloudStorageResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ResetCloudStorageOutcome(rsp);
+        else
+            return ResetCloudStorageOutcome(o.GetError());
+    }
+    else
+    {
+        return ResetCloudStorageOutcome(outcome.GetError());
+    }
+}
+
+void IotexplorerClient::ResetCloudStorageAsync(const ResetCloudStorageRequest& request, const ResetCloudStorageAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->ResetCloudStorage(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+IotexplorerClient::ResetCloudStorageOutcomeCallable IotexplorerClient::ResetCloudStorageCallable(const ResetCloudStorageRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<ResetCloudStorageOutcome()>>(
+        [this, request]()
+        {
+            return this->ResetCloudStorage(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+IotexplorerClient::ResetCloudStorageEventOutcome IotexplorerClient::ResetCloudStorageEvent(const ResetCloudStorageEventRequest &request)
+{
+    auto outcome = MakeRequest(request, "ResetCloudStorageEvent");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ResetCloudStorageEventResponse rsp = ResetCloudStorageEventResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ResetCloudStorageEventOutcome(rsp);
+        else
+            return ResetCloudStorageEventOutcome(o.GetError());
+    }
+    else
+    {
+        return ResetCloudStorageEventOutcome(outcome.GetError());
+    }
+}
+
+void IotexplorerClient::ResetCloudStorageEventAsync(const ResetCloudStorageEventRequest& request, const ResetCloudStorageEventAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->ResetCloudStorageEvent(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+IotexplorerClient::ResetCloudStorageEventOutcomeCallable IotexplorerClient::ResetCloudStorageEventCallable(const ResetCloudStorageEventRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<ResetCloudStorageEventOutcome()>>(
+        [this, request]()
+        {
+            return this->ResetCloudStorageEvent(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 IotexplorerClient::SearchPositionSpaceOutcome IotexplorerClient::SearchPositionSpace(const SearchPositionSpaceRequest &request)
 {
     auto outcome = MakeRequest(request, "SearchPositionSpace");
@@ -3817,6 +4763,49 @@ IotexplorerClient::SearchTopicRuleOutcomeCallable IotexplorerClient::SearchTopic
         [this, request]()
         {
             return this->SearchTopicRule(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+IotexplorerClient::TransferCloudStorageOutcome IotexplorerClient::TransferCloudStorage(const TransferCloudStorageRequest &request)
+{
+    auto outcome = MakeRequest(request, "TransferCloudStorage");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        TransferCloudStorageResponse rsp = TransferCloudStorageResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return TransferCloudStorageOutcome(rsp);
+        else
+            return TransferCloudStorageOutcome(o.GetError());
+    }
+    else
+    {
+        return TransferCloudStorageOutcome(outcome.GetError());
+    }
+}
+
+void IotexplorerClient::TransferCloudStorageAsync(const TransferCloudStorageRequest& request, const TransferCloudStorageAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->TransferCloudStorage(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+IotexplorerClient::TransferCloudStorageOutcomeCallable IotexplorerClient::TransferCloudStorageCallable(const TransferCloudStorageRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<TransferCloudStorageOutcome()>>(
+        [this, request]()
+        {
+            return this->TransferCloudStorage(request);
         }
     );
 

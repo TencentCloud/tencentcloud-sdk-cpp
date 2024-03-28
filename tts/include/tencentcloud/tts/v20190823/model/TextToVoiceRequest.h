@@ -312,14 +312,18 @@ namespace TencentCloud
 
                     /**
                      * 获取控制合成音频的情感，仅支持多情感音色使用。取值: neutral(中性)、sad(悲伤)、happy(高兴)、angry(生气)、fear(恐惧)、news(新闻)、story(故事)、radio(广播)、poetry(诗歌)、call(客服)、撒娇(sajiao)、厌恶(disgusted)、震惊(amaze)、平静(peaceful)、兴奋(exciting)、傲娇(aojiao)、解说(jieshuo)
+示例值：neutral
                      * @return EmotionCategory 控制合成音频的情感，仅支持多情感音色使用。取值: neutral(中性)、sad(悲伤)、happy(高兴)、angry(生气)、fear(恐惧)、news(新闻)、story(故事)、radio(广播)、poetry(诗歌)、call(客服)、撒娇(sajiao)、厌恶(disgusted)、震惊(amaze)、平静(peaceful)、兴奋(exciting)、傲娇(aojiao)、解说(jieshuo)
+示例值：neutral
                      * 
                      */
                     std::string GetEmotionCategory() const;
 
                     /**
                      * 设置控制合成音频的情感，仅支持多情感音色使用。取值: neutral(中性)、sad(悲伤)、happy(高兴)、angry(生气)、fear(恐惧)、news(新闻)、story(故事)、radio(广播)、poetry(诗歌)、call(客服)、撒娇(sajiao)、厌恶(disgusted)、震惊(amaze)、平静(peaceful)、兴奋(exciting)、傲娇(aojiao)、解说(jieshuo)
+示例值：neutral
                      * @param _emotionCategory 控制合成音频的情感，仅支持多情感音色使用。取值: neutral(中性)、sad(悲伤)、happy(高兴)、angry(生气)、fear(恐惧)、news(新闻)、story(故事)、radio(广播)、poetry(诗歌)、call(客服)、撒娇(sajiao)、厌恶(disgusted)、震惊(amaze)、平静(peaceful)、兴奋(exciting)、傲娇(aojiao)、解说(jieshuo)
+示例值：neutral
                      * 
                      */
                     void SetEmotionCategory(const std::string& _emotionCategory);
@@ -351,6 +355,27 @@ namespace TencentCloud
                      * 
                      */
                     bool EmotionIntensityHasBeenSet() const;
+
+                    /**
+                     * 获取一句话复刻音色id，使用一句话复刻音色时需填写。若使用一句话复刻，VoiceType请填入固定值“200000000”
+                     * @return FastVoiceType 一句话复刻音色id，使用一句话复刻音色时需填写。若使用一句话复刻，VoiceType请填入固定值“200000000”
+                     * 
+                     */
+                    std::string GetFastVoiceType() const;
+
+                    /**
+                     * 设置一句话复刻音色id，使用一句话复刻音色时需填写。若使用一句话复刻，VoiceType请填入固定值“200000000”
+                     * @param _fastVoiceType 一句话复刻音色id，使用一句话复刻音色时需填写。若使用一句话复刻，VoiceType请填入固定值“200000000”
+                     * 
+                     */
+                    void SetFastVoiceType(const std::string& _fastVoiceType);
+
+                    /**
+                     * 判断参数 FastVoiceType 是否已赋值
+                     * @return FastVoiceType 是否已赋值
+                     * 
+                     */
+                    bool FastVoiceTypeHasBeenSet() const;
 
                 private:
 
@@ -432,6 +457,7 @@ namespace TencentCloud
 
                     /**
                      * 控制合成音频的情感，仅支持多情感音色使用。取值: neutral(中性)、sad(悲伤)、happy(高兴)、angry(生气)、fear(恐惧)、news(新闻)、story(故事)、radio(广播)、poetry(诗歌)、call(客服)、撒娇(sajiao)、厌恶(disgusted)、震惊(amaze)、平静(peaceful)、兴奋(exciting)、傲娇(aojiao)、解说(jieshuo)
+示例值：neutral
                      */
                     std::string m_emotionCategory;
                     bool m_emotionCategoryHasBeenSet;
@@ -441,6 +467,12 @@ namespace TencentCloud
                      */
                     int64_t m_emotionIntensity;
                     bool m_emotionIntensityHasBeenSet;
+
+                    /**
+                     * 一句话复刻音色id，使用一句话复刻音色时需填写。若使用一句话复刻，VoiceType请填入固定值“200000000”
+                     */
+                    std::string m_fastVoiceType;
+                    bool m_fastVoiceTypeHasBeenSet;
 
                 };
             }

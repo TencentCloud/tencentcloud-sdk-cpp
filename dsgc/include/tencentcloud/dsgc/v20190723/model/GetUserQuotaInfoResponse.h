@@ -127,6 +127,34 @@ namespace TencentCloud
                      */
                     bool CosQuotaUnitHasBeenSet() const;
 
+                    /**
+                     * 获取db月解绑次数
+                     * @return DBUnbindNum db月解绑次数
+                     * 
+                     */
+                    int64_t GetDBUnbindNum() const;
+
+                    /**
+                     * 判断参数 DBUnbindNum 是否已赋值
+                     * @return DBUnbindNum 是否已赋值
+                     * 
+                     */
+                    bool DBUnbindNumHasBeenSet() const;
+
+                    /**
+                     * 获取cos月解绑次数
+                     * @return COSUnbindNum cos月解绑次数
+                     * 
+                     */
+                    int64_t GetCOSUnbindNum() const;
+
+                    /**
+                     * 判断参数 COSUnbindNum 是否已赋值
+                     * @return COSUnbindNum 是否已赋值
+                     * 
+                     */
+                    bool COSUnbindNumHasBeenSet() const;
+
                 private:
 
                     /**
@@ -164,6 +192,18 @@ namespace TencentCloud
                      */
                     std::string m_cosQuotaUnit;
                     bool m_cosQuotaUnitHasBeenSet;
+
+                    /**
+                     * db月解绑次数
+                     */
+                    int64_t m_dBUnbindNum;
+                    bool m_dBUnbindNumHasBeenSet;
+
+                    /**
+                     * cos月解绑次数
+                     */
+                    int64_t m_cOSUnbindNum;
+                    bool m_cOSUnbindNumHasBeenSet;
 
                 };
             }

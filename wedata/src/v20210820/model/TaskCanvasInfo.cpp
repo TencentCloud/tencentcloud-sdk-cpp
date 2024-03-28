@@ -54,7 +54,21 @@ TaskCanvasInfo::TaskCanvasInfo() :
     m_createTimeHasBeenSet(false),
     m_userIdHasBeenSet(false),
     m_ownerIdHasBeenSet(false),
-    m_tenantIdHasBeenSet(false)
+    m_tenantIdHasBeenSet(false),
+    m_selfDependHasBeenSet(false),
+    m_executorGroupIdHasBeenSet(false),
+    m_executorGroupNameHasBeenSet(false),
+    m_runPriorityHasBeenSet(false),
+    m_tryLimitHasBeenSet(false),
+    m_retryAbleHasBeenSet(false),
+    m_retryWaitHasBeenSet(false),
+    m_lastSchedulerCommitTimeHasBeenSet(false),
+    m_notesHasBeenSet(false),
+    m_creatorHasBeenSet(false),
+    m_updateUserHasBeenSet(false),
+    m_updateUserIdHasBeenSet(false),
+    m_yarnQueueHasBeenSet(false),
+    m_executionTTLHasBeenSet(false)
 {
 }
 
@@ -403,6 +417,146 @@ CoreInternalOutcome TaskCanvasInfo::Deserialize(const rapidjson::Value &value)
         m_tenantIdHasBeenSet = true;
     }
 
+    if (value.HasMember("SelfDepend") && !value["SelfDepend"].IsNull())
+    {
+        if (!value["SelfDepend"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `TaskCanvasInfo.SelfDepend` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_selfDepend = value["SelfDepend"].GetInt64();
+        m_selfDependHasBeenSet = true;
+    }
+
+    if (value.HasMember("ExecutorGroupId") && !value["ExecutorGroupId"].IsNull())
+    {
+        if (!value["ExecutorGroupId"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `TaskCanvasInfo.ExecutorGroupId` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_executorGroupId = string(value["ExecutorGroupId"].GetString());
+        m_executorGroupIdHasBeenSet = true;
+    }
+
+    if (value.HasMember("ExecutorGroupName") && !value["ExecutorGroupName"].IsNull())
+    {
+        if (!value["ExecutorGroupName"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `TaskCanvasInfo.ExecutorGroupName` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_executorGroupName = string(value["ExecutorGroupName"].GetString());
+        m_executorGroupNameHasBeenSet = true;
+    }
+
+    if (value.HasMember("RunPriority") && !value["RunPriority"].IsNull())
+    {
+        if (!value["RunPriority"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `TaskCanvasInfo.RunPriority` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_runPriority = string(value["RunPriority"].GetString());
+        m_runPriorityHasBeenSet = true;
+    }
+
+    if (value.HasMember("TryLimit") && !value["TryLimit"].IsNull())
+    {
+        if (!value["TryLimit"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `TaskCanvasInfo.TryLimit` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_tryLimit = string(value["TryLimit"].GetString());
+        m_tryLimitHasBeenSet = true;
+    }
+
+    if (value.HasMember("RetryAble") && !value["RetryAble"].IsNull())
+    {
+        if (!value["RetryAble"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `TaskCanvasInfo.RetryAble` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_retryAble = string(value["RetryAble"].GetString());
+        m_retryAbleHasBeenSet = true;
+    }
+
+    if (value.HasMember("RetryWait") && !value["RetryWait"].IsNull())
+    {
+        if (!value["RetryWait"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `TaskCanvasInfo.RetryWait` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_retryWait = string(value["RetryWait"].GetString());
+        m_retryWaitHasBeenSet = true;
+    }
+
+    if (value.HasMember("LastSchedulerCommitTime") && !value["LastSchedulerCommitTime"].IsNull())
+    {
+        if (!value["LastSchedulerCommitTime"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `TaskCanvasInfo.LastSchedulerCommitTime` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_lastSchedulerCommitTime = string(value["LastSchedulerCommitTime"].GetString());
+        m_lastSchedulerCommitTimeHasBeenSet = true;
+    }
+
+    if (value.HasMember("Notes") && !value["Notes"].IsNull())
+    {
+        if (!value["Notes"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `TaskCanvasInfo.Notes` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_notes = string(value["Notes"].GetString());
+        m_notesHasBeenSet = true;
+    }
+
+    if (value.HasMember("Creator") && !value["Creator"].IsNull())
+    {
+        if (!value["Creator"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `TaskCanvasInfo.Creator` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_creator = string(value["Creator"].GetString());
+        m_creatorHasBeenSet = true;
+    }
+
+    if (value.HasMember("UpdateUser") && !value["UpdateUser"].IsNull())
+    {
+        if (!value["UpdateUser"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `TaskCanvasInfo.UpdateUser` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_updateUser = string(value["UpdateUser"].GetString());
+        m_updateUserHasBeenSet = true;
+    }
+
+    if (value.HasMember("UpdateUserId") && !value["UpdateUserId"].IsNull())
+    {
+        if (!value["UpdateUserId"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `TaskCanvasInfo.UpdateUserId` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_updateUserId = string(value["UpdateUserId"].GetString());
+        m_updateUserIdHasBeenSet = true;
+    }
+
+    if (value.HasMember("YarnQueue") && !value["YarnQueue"].IsNull())
+    {
+        if (!value["YarnQueue"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `TaskCanvasInfo.YarnQueue` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_yarnQueue = string(value["YarnQueue"].GetString());
+        m_yarnQueueHasBeenSet = true;
+    }
+
+    if (value.HasMember("ExecutionTTL") && !value["ExecutionTTL"].IsNull())
+    {
+        if (!value["ExecutionTTL"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `TaskCanvasInfo.ExecutionTTL` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_executionTTL = value["ExecutionTTL"].GetInt64();
+        m_executionTTLHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -680,6 +834,118 @@ void TaskCanvasInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Document::
         string key = "TenantId";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_tenantId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_selfDependHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "SelfDepend";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_selfDepend, allocator);
+    }
+
+    if (m_executorGroupIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ExecutorGroupId";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_executorGroupId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_executorGroupNameHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ExecutorGroupName";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_executorGroupName.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_runPriorityHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "RunPriority";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_runPriority.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_tryLimitHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "TryLimit";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_tryLimit.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_retryAbleHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "RetryAble";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_retryAble.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_retryWaitHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "RetryWait";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_retryWait.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_lastSchedulerCommitTimeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "LastSchedulerCommitTime";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_lastSchedulerCommitTime.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_notesHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Notes";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_notes.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_creatorHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Creator";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_creator.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_updateUserHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "UpdateUser";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_updateUser.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_updateUserIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "UpdateUserId";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_updateUserId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_yarnQueueHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "YarnQueue";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_yarnQueue.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_executionTTLHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ExecutionTTL";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_executionTTL, allocator);
     }
 
 }
@@ -1227,5 +1493,229 @@ void TaskCanvasInfo::SetTenantId(const string& _tenantId)
 bool TaskCanvasInfo::TenantIdHasBeenSet() const
 {
     return m_tenantIdHasBeenSet;
+}
+
+int64_t TaskCanvasInfo::GetSelfDepend() const
+{
+    return m_selfDepend;
+}
+
+void TaskCanvasInfo::SetSelfDepend(const int64_t& _selfDepend)
+{
+    m_selfDepend = _selfDepend;
+    m_selfDependHasBeenSet = true;
+}
+
+bool TaskCanvasInfo::SelfDependHasBeenSet() const
+{
+    return m_selfDependHasBeenSet;
+}
+
+string TaskCanvasInfo::GetExecutorGroupId() const
+{
+    return m_executorGroupId;
+}
+
+void TaskCanvasInfo::SetExecutorGroupId(const string& _executorGroupId)
+{
+    m_executorGroupId = _executorGroupId;
+    m_executorGroupIdHasBeenSet = true;
+}
+
+bool TaskCanvasInfo::ExecutorGroupIdHasBeenSet() const
+{
+    return m_executorGroupIdHasBeenSet;
+}
+
+string TaskCanvasInfo::GetExecutorGroupName() const
+{
+    return m_executorGroupName;
+}
+
+void TaskCanvasInfo::SetExecutorGroupName(const string& _executorGroupName)
+{
+    m_executorGroupName = _executorGroupName;
+    m_executorGroupNameHasBeenSet = true;
+}
+
+bool TaskCanvasInfo::ExecutorGroupNameHasBeenSet() const
+{
+    return m_executorGroupNameHasBeenSet;
+}
+
+string TaskCanvasInfo::GetRunPriority() const
+{
+    return m_runPriority;
+}
+
+void TaskCanvasInfo::SetRunPriority(const string& _runPriority)
+{
+    m_runPriority = _runPriority;
+    m_runPriorityHasBeenSet = true;
+}
+
+bool TaskCanvasInfo::RunPriorityHasBeenSet() const
+{
+    return m_runPriorityHasBeenSet;
+}
+
+string TaskCanvasInfo::GetTryLimit() const
+{
+    return m_tryLimit;
+}
+
+void TaskCanvasInfo::SetTryLimit(const string& _tryLimit)
+{
+    m_tryLimit = _tryLimit;
+    m_tryLimitHasBeenSet = true;
+}
+
+bool TaskCanvasInfo::TryLimitHasBeenSet() const
+{
+    return m_tryLimitHasBeenSet;
+}
+
+string TaskCanvasInfo::GetRetryAble() const
+{
+    return m_retryAble;
+}
+
+void TaskCanvasInfo::SetRetryAble(const string& _retryAble)
+{
+    m_retryAble = _retryAble;
+    m_retryAbleHasBeenSet = true;
+}
+
+bool TaskCanvasInfo::RetryAbleHasBeenSet() const
+{
+    return m_retryAbleHasBeenSet;
+}
+
+string TaskCanvasInfo::GetRetryWait() const
+{
+    return m_retryWait;
+}
+
+void TaskCanvasInfo::SetRetryWait(const string& _retryWait)
+{
+    m_retryWait = _retryWait;
+    m_retryWaitHasBeenSet = true;
+}
+
+bool TaskCanvasInfo::RetryWaitHasBeenSet() const
+{
+    return m_retryWaitHasBeenSet;
+}
+
+string TaskCanvasInfo::GetLastSchedulerCommitTime() const
+{
+    return m_lastSchedulerCommitTime;
+}
+
+void TaskCanvasInfo::SetLastSchedulerCommitTime(const string& _lastSchedulerCommitTime)
+{
+    m_lastSchedulerCommitTime = _lastSchedulerCommitTime;
+    m_lastSchedulerCommitTimeHasBeenSet = true;
+}
+
+bool TaskCanvasInfo::LastSchedulerCommitTimeHasBeenSet() const
+{
+    return m_lastSchedulerCommitTimeHasBeenSet;
+}
+
+string TaskCanvasInfo::GetNotes() const
+{
+    return m_notes;
+}
+
+void TaskCanvasInfo::SetNotes(const string& _notes)
+{
+    m_notes = _notes;
+    m_notesHasBeenSet = true;
+}
+
+bool TaskCanvasInfo::NotesHasBeenSet() const
+{
+    return m_notesHasBeenSet;
+}
+
+string TaskCanvasInfo::GetCreator() const
+{
+    return m_creator;
+}
+
+void TaskCanvasInfo::SetCreator(const string& _creator)
+{
+    m_creator = _creator;
+    m_creatorHasBeenSet = true;
+}
+
+bool TaskCanvasInfo::CreatorHasBeenSet() const
+{
+    return m_creatorHasBeenSet;
+}
+
+string TaskCanvasInfo::GetUpdateUser() const
+{
+    return m_updateUser;
+}
+
+void TaskCanvasInfo::SetUpdateUser(const string& _updateUser)
+{
+    m_updateUser = _updateUser;
+    m_updateUserHasBeenSet = true;
+}
+
+bool TaskCanvasInfo::UpdateUserHasBeenSet() const
+{
+    return m_updateUserHasBeenSet;
+}
+
+string TaskCanvasInfo::GetUpdateUserId() const
+{
+    return m_updateUserId;
+}
+
+void TaskCanvasInfo::SetUpdateUserId(const string& _updateUserId)
+{
+    m_updateUserId = _updateUserId;
+    m_updateUserIdHasBeenSet = true;
+}
+
+bool TaskCanvasInfo::UpdateUserIdHasBeenSet() const
+{
+    return m_updateUserIdHasBeenSet;
+}
+
+string TaskCanvasInfo::GetYarnQueue() const
+{
+    return m_yarnQueue;
+}
+
+void TaskCanvasInfo::SetYarnQueue(const string& _yarnQueue)
+{
+    m_yarnQueue = _yarnQueue;
+    m_yarnQueueHasBeenSet = true;
+}
+
+bool TaskCanvasInfo::YarnQueueHasBeenSet() const
+{
+    return m_yarnQueueHasBeenSet;
+}
+
+int64_t TaskCanvasInfo::GetExecutionTTL() const
+{
+    return m_executionTTL;
+}
+
+void TaskCanvasInfo::SetExecutionTTL(const int64_t& _executionTTL)
+{
+    m_executionTTL = _executionTTL;
+    m_executionTTLHasBeenSet = true;
+}
+
+bool TaskCanvasInfo::ExecutionTTLHasBeenSet() const
+{
+    return m_executionTTLHasBeenSet;
 }
 

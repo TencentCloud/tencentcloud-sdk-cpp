@@ -38,7 +38,8 @@ NodeView::NodeView() :
     m_shardNumHasBeenSet(false),
     m_diskIdsHasBeenSet(false),
     m_hiddenHasBeenSet(false),
-    m_isCoordinationNodeHasBeenSet(false)
+    m_isCoordinationNodeHasBeenSet(false),
+    m_cVMStatusHasBeenSet(false)
 {
 }
 
@@ -230,6 +231,16 @@ CoreInternalOutcome NodeView::Deserialize(const rapidjson::Value &value)
         m_isCoordinationNodeHasBeenSet = true;
     }
 
+    if (value.HasMember("CVMStatus") && !value["CVMStatus"].IsNull())
+    {
+        if (!value["CVMStatus"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `NodeView.CVMStatus` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_cVMStatus = string(value["CVMStatus"].GetString());
+        m_cVMStatusHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -384,6 +395,14 @@ void NodeView::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Alloca
         string key = "IsCoordinationNode";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_isCoordinationNode, allocator);
+    }
+
+    if (m_cVMStatusHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "CVMStatus";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_cVMStatus.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -675,5 +694,21 @@ void NodeView::SetIsCoordinationNode(const bool& _isCoordinationNode)
 bool NodeView::IsCoordinationNodeHasBeenSet() const
 {
     return m_isCoordinationNodeHasBeenSet;
+}
+
+string NodeView::GetCVMStatus() const
+{
+    return m_cVMStatus;
+}
+
+void NodeView::SetCVMStatus(const string& _cVMStatus)
+{
+    m_cVMStatus = _cVMStatus;
+    m_cVMStatusHasBeenSet = true;
+}
+
+bool NodeView::CVMStatusHasBeenSet() const
+{
+    return m_cVMStatusHasBeenSet;
 }
 

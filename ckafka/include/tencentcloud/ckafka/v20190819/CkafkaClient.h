@@ -57,6 +57,8 @@
 #include <tencentcloud/ckafka/v20190819/model/CreatePartitionResponse.h>
 #include <tencentcloud/ckafka/v20190819/model/CreatePostPaidInstanceRequest.h>
 #include <tencentcloud/ckafka/v20190819/model/CreatePostPaidInstanceResponse.h>
+#include <tencentcloud/ckafka/v20190819/model/CreatePrometheusRequest.h>
+#include <tencentcloud/ckafka/v20190819/model/CreatePrometheusResponse.h>
 #include <tencentcloud/ckafka/v20190819/model/CreateRouteRequest.h>
 #include <tencentcloud/ckafka/v20190819/model/CreateRouteResponse.h>
 #include <tencentcloud/ckafka/v20190819/model/CreateTokenRequest.h>
@@ -129,6 +131,8 @@
 #include <tencentcloud/ckafka/v20190819/model/DescribeInstancesResponse.h>
 #include <tencentcloud/ckafka/v20190819/model/DescribeInstancesDetailRequest.h>
 #include <tencentcloud/ckafka/v20190819/model/DescribeInstancesDetailResponse.h>
+#include <tencentcloud/ckafka/v20190819/model/DescribePrometheusRequest.h>
+#include <tencentcloud/ckafka/v20190819/model/DescribePrometheusResponse.h>
 #include <tencentcloud/ckafka/v20190819/model/DescribeRegionRequest.h>
 #include <tencentcloud/ckafka/v20190819/model/DescribeRegionResponse.h>
 #include <tencentcloud/ckafka/v20190819/model/DescribeRouteRequest.h>
@@ -250,6 +254,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::CreatePostPaidInstanceResponse> CreatePostPaidInstanceOutcome;
                 typedef std::future<CreatePostPaidInstanceOutcome> CreatePostPaidInstanceOutcomeCallable;
                 typedef std::function<void(const CkafkaClient*, const Model::CreatePostPaidInstanceRequest&, CreatePostPaidInstanceOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreatePostPaidInstanceAsyncHandler;
+                typedef Outcome<Core::Error, Model::CreatePrometheusResponse> CreatePrometheusOutcome;
+                typedef std::future<CreatePrometheusOutcome> CreatePrometheusOutcomeCallable;
+                typedef std::function<void(const CkafkaClient*, const Model::CreatePrometheusRequest&, CreatePrometheusOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreatePrometheusAsyncHandler;
                 typedef Outcome<Core::Error, Model::CreateRouteResponse> CreateRouteOutcome;
                 typedef std::future<CreateRouteOutcome> CreateRouteOutcomeCallable;
                 typedef std::function<void(const CkafkaClient*, const Model::CreateRouteRequest&, CreateRouteOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateRouteAsyncHandler;
@@ -358,6 +365,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeInstancesDetailResponse> DescribeInstancesDetailOutcome;
                 typedef std::future<DescribeInstancesDetailOutcome> DescribeInstancesDetailOutcomeCallable;
                 typedef std::function<void(const CkafkaClient*, const Model::DescribeInstancesDetailRequest&, DescribeInstancesDetailOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeInstancesDetailAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribePrometheusResponse> DescribePrometheusOutcome;
+                typedef std::future<DescribePrometheusOutcome> DescribePrometheusOutcomeCallable;
+                typedef std::function<void(const CkafkaClient*, const Model::DescribePrometheusRequest&, DescribePrometheusOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribePrometheusAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeRegionResponse> DescribeRegionOutcome;
                 typedef std::future<DescribeRegionOutcome> DescribeRegionOutcomeCallable;
                 typedef std::function<void(const CkafkaClient*, const Model::DescribeRegionRequest&, DescribeRegionOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeRegionAsyncHandler;
@@ -597,6 +607,15 @@ namespace TencentCloud
                 CreatePostPaidInstanceOutcome CreatePostPaidInstance(const Model::CreatePostPaidInstanceRequest &request);
                 void CreatePostPaidInstanceAsync(const Model::CreatePostPaidInstanceRequest& request, const CreatePostPaidInstanceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 CreatePostPaidInstanceOutcomeCallable CreatePostPaidInstanceCallable(const Model::CreatePostPaidInstanceRequest& request);
+
+                /**
+                 *添加普罗米修斯监控1
+                 * @param req CreatePrometheusRequest
+                 * @return CreatePrometheusOutcome
+                 */
+                CreatePrometheusOutcome CreatePrometheus(const Model::CreatePrometheusRequest &request);
+                void CreatePrometheusAsync(const Model::CreatePrometheusRequest& request, const CreatePrometheusAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                CreatePrometheusOutcomeCallable CreatePrometheusCallable(const Model::CreatePrometheusRequest& request);
 
                 /**
                  *添加实例路由
@@ -921,6 +940,15 @@ namespace TencentCloud
                 DescribeInstancesDetailOutcome DescribeInstancesDetail(const Model::DescribeInstancesDetailRequest &request);
                 void DescribeInstancesDetailAsync(const Model::DescribeInstancesDetailRequest& request, const DescribeInstancesDetailAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DescribeInstancesDetailOutcomeCallable DescribeInstancesDetailCallable(const Model::DescribeInstancesDetailRequest& request);
+
+                /**
+                 *获取实例Prometheus信息
+                 * @param req DescribePrometheusRequest
+                 * @return DescribePrometheusOutcome
+                 */
+                DescribePrometheusOutcome DescribePrometheus(const Model::DescribePrometheusRequest &request);
+                void DescribePrometheusAsync(const Model::DescribePrometheusRequest& request, const DescribePrometheusAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribePrometheusOutcomeCallable DescribePrometheusCallable(const Model::DescribePrometheusRequest& request);
 
                 /**
                  *枚举地域,只支持广州地域

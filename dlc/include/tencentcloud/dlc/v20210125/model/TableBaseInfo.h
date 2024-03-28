@@ -245,7 +245,7 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return GovernPolicy 数据治理配置项
 注意：此字段可能返回 null，表示取不到有效值。
-                     * 
+                     * @deprecated
                      */
                     DataGovernPolicy GetGovernPolicy() const;
 
@@ -254,14 +254,14 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @param _governPolicy 数据治理配置项
 注意：此字段可能返回 null，表示取不到有效值。
-                     * 
+                     * @deprecated
                      */
                     void SetGovernPolicy(const DataGovernPolicy& _governPolicy);
 
                     /**
                      * 判断参数 GovernPolicy 是否已赋值
                      * @return GovernPolicy 是否已赋值
-                     * 
+                     * @deprecated
                      */
                     bool GovernPolicyHasBeenSet() const;
 
@@ -270,7 +270,7 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return DbGovernPolicyIsDisable 库数据治理是否关闭，关闭：true，开启：false
 注意：此字段可能返回 null，表示取不到有效值。
-                     * 
+                     * @deprecated
                      */
                     std::string GetDbGovernPolicyIsDisable() const;
 
@@ -279,14 +279,14 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @param _dbGovernPolicyIsDisable 库数据治理是否关闭，关闭：true，开启：false
 注意：此字段可能返回 null，表示取不到有效值。
-                     * 
+                     * @deprecated
                      */
                     void SetDbGovernPolicyIsDisable(const std::string& _dbGovernPolicyIsDisable);
 
                     /**
                      * 判断参数 DbGovernPolicyIsDisable 是否已赋值
                      * @return DbGovernPolicyIsDisable 是否已赋值
-                     * 
+                     * @deprecated
                      */
                     bool DbGovernPolicyIsDisableHasBeenSet() const;
 

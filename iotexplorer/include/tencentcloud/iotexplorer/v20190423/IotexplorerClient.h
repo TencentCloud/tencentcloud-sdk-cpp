@@ -23,6 +23,8 @@
 #include <tencentcloud/core/Credential.h>
 #include <tencentcloud/core/profile/ClientProfile.h>
 #include <tencentcloud/core/AsyncCallerContext.h>
+#include <tencentcloud/iotexplorer/v20190423/model/BindCloudStorageUserRequest.h>
+#include <tencentcloud/iotexplorer/v20190423/model/BindCloudStorageUserResponse.h>
 #include <tencentcloud/iotexplorer/v20190423/model/BindDevicesRequest.h>
 #include <tencentcloud/iotexplorer/v20190423/model/BindDevicesResponse.h>
 #include <tencentcloud/iotexplorer/v20190423/model/BindProductsRequest.h>
@@ -39,6 +41,8 @@
 #include <tencentcloud/iotexplorer/v20190423/model/CreateDeviceResponse.h>
 #include <tencentcloud/iotexplorer/v20190423/model/CreateFenceBindRequest.h>
 #include <tencentcloud/iotexplorer/v20190423/model/CreateFenceBindResponse.h>
+#include <tencentcloud/iotexplorer/v20190423/model/CreateIotVideoCloudStorageRequest.h>
+#include <tencentcloud/iotexplorer/v20190423/model/CreateIotVideoCloudStorageResponse.h>
 #include <tencentcloud/iotexplorer/v20190423/model/CreateLoRaFrequencyRequest.h>
 #include <tencentcloud/iotexplorer/v20190423/model/CreateLoRaFrequencyResponse.h>
 #include <tencentcloud/iotexplorer/v20190423/model/CreateLoRaGatewayRequest.h>
@@ -55,6 +59,8 @@
 #include <tencentcloud/iotexplorer/v20190423/model/CreateTopicPolicyResponse.h>
 #include <tencentcloud/iotexplorer/v20190423/model/CreateTopicRuleRequest.h>
 #include <tencentcloud/iotexplorer/v20190423/model/CreateTopicRuleResponse.h>
+#include <tencentcloud/iotexplorer/v20190423/model/DeleteCloudStorageEventRequest.h>
+#include <tencentcloud/iotexplorer/v20190423/model/DeleteCloudStorageEventResponse.h>
 #include <tencentcloud/iotexplorer/v20190423/model/DeleteDeviceRequest.h>
 #include <tencentcloud/iotexplorer/v20190423/model/DeleteDeviceResponse.h>
 #include <tencentcloud/iotexplorer/v20190423/model/DeleteDevicesRequest.h>
@@ -81,6 +87,30 @@
 #include <tencentcloud/iotexplorer/v20190423/model/DescribeBatchProductionResponse.h>
 #include <tencentcloud/iotexplorer/v20190423/model/DescribeBindedProductsRequest.h>
 #include <tencentcloud/iotexplorer/v20190423/model/DescribeBindedProductsResponse.h>
+#include <tencentcloud/iotexplorer/v20190423/model/DescribeCloudStorageRequest.h>
+#include <tencentcloud/iotexplorer/v20190423/model/DescribeCloudStorageResponse.h>
+#include <tencentcloud/iotexplorer/v20190423/model/DescribeCloudStorageDateRequest.h>
+#include <tencentcloud/iotexplorer/v20190423/model/DescribeCloudStorageDateResponse.h>
+#include <tencentcloud/iotexplorer/v20190423/model/DescribeCloudStorageEventsRequest.h>
+#include <tencentcloud/iotexplorer/v20190423/model/DescribeCloudStorageEventsResponse.h>
+#include <tencentcloud/iotexplorer/v20190423/model/DescribeCloudStorageMultiThumbnailRequest.h>
+#include <tencentcloud/iotexplorer/v20190423/model/DescribeCloudStorageMultiThumbnailResponse.h>
+#include <tencentcloud/iotexplorer/v20190423/model/DescribeCloudStorageOrderRequest.h>
+#include <tencentcloud/iotexplorer/v20190423/model/DescribeCloudStorageOrderResponse.h>
+#include <tencentcloud/iotexplorer/v20190423/model/DescribeCloudStoragePackageConsumeDetailsRequest.h>
+#include <tencentcloud/iotexplorer/v20190423/model/DescribeCloudStoragePackageConsumeDetailsResponse.h>
+#include <tencentcloud/iotexplorer/v20190423/model/DescribeCloudStoragePackageConsumeStatsRequest.h>
+#include <tencentcloud/iotexplorer/v20190423/model/DescribeCloudStoragePackageConsumeStatsResponse.h>
+#include <tencentcloud/iotexplorer/v20190423/model/DescribeCloudStorageStreamDataRequest.h>
+#include <tencentcloud/iotexplorer/v20190423/model/DescribeCloudStorageStreamDataResponse.h>
+#include <tencentcloud/iotexplorer/v20190423/model/DescribeCloudStorageThumbnailRequest.h>
+#include <tencentcloud/iotexplorer/v20190423/model/DescribeCloudStorageThumbnailResponse.h>
+#include <tencentcloud/iotexplorer/v20190423/model/DescribeCloudStorageThumbnailListRequest.h>
+#include <tencentcloud/iotexplorer/v20190423/model/DescribeCloudStorageThumbnailListResponse.h>
+#include <tencentcloud/iotexplorer/v20190423/model/DescribeCloudStorageTimeRequest.h>
+#include <tencentcloud/iotexplorer/v20190423/model/DescribeCloudStorageTimeResponse.h>
+#include <tencentcloud/iotexplorer/v20190423/model/DescribeCloudStorageUsersRequest.h>
+#include <tencentcloud/iotexplorer/v20190423/model/DescribeCloudStorageUsersResponse.h>
 #include <tencentcloud/iotexplorer/v20190423/model/DescribeDeviceRequest.h>
 #include <tencentcloud/iotexplorer/v20190423/model/DescribeDeviceResponse.h>
 #include <tencentcloud/iotexplorer/v20190423/model/DescribeDeviceBindGatewayRequest.h>
@@ -93,6 +123,8 @@
 #include <tencentcloud/iotexplorer/v20190423/model/DescribeDeviceFirmWareResponse.h>
 #include <tencentcloud/iotexplorer/v20190423/model/DescribeDeviceLocationSolveRequest.h>
 #include <tencentcloud/iotexplorer/v20190423/model/DescribeDeviceLocationSolveResponse.h>
+#include <tencentcloud/iotexplorer/v20190423/model/DescribeDevicePackagesRequest.h>
+#include <tencentcloud/iotexplorer/v20190423/model/DescribeDevicePackagesResponse.h>
 #include <tencentcloud/iotexplorer/v20190423/model/DescribeDevicePositionListRequest.h>
 #include <tencentcloud/iotexplorer/v20190423/model/DescribeDevicePositionListResponse.h>
 #include <tencentcloud/iotexplorer/v20190423/model/DescribeFenceBindListRequest.h>
@@ -113,6 +145,10 @@
 #include <tencentcloud/iotexplorer/v20190423/model/DescribeLoRaFrequencyResponse.h>
 #include <tencentcloud/iotexplorer/v20190423/model/DescribeModelDefinitionRequest.h>
 #include <tencentcloud/iotexplorer/v20190423/model/DescribeModelDefinitionResponse.h>
+#include <tencentcloud/iotexplorer/v20190423/model/DescribePackageConsumeTaskRequest.h>
+#include <tencentcloud/iotexplorer/v20190423/model/DescribePackageConsumeTaskResponse.h>
+#include <tencentcloud/iotexplorer/v20190423/model/DescribePackageConsumeTasksRequest.h>
+#include <tencentcloud/iotexplorer/v20190423/model/DescribePackageConsumeTasksResponse.h>
 #include <tencentcloud/iotexplorer/v20190423/model/DescribePositionFenceListRequest.h>
 #include <tencentcloud/iotexplorer/v20190423/model/DescribePositionFenceListResponse.h>
 #include <tencentcloud/iotexplorer/v20190423/model/DescribeProjectRequest.h>
@@ -133,6 +169,8 @@
 #include <tencentcloud/iotexplorer/v20190423/model/EnableTopicRuleResponse.h>
 #include <tencentcloud/iotexplorer/v20190423/model/GenSingleDeviceSignatureOfPublicRequest.h>
 #include <tencentcloud/iotexplorer/v20190423/model/GenSingleDeviceSignatureOfPublicResponse.h>
+#include <tencentcloud/iotexplorer/v20190423/model/GenerateSignedVideoURLRequest.h>
+#include <tencentcloud/iotexplorer/v20190423/model/GenerateSignedVideoURLResponse.h>
 #include <tencentcloud/iotexplorer/v20190423/model/GetBatchProductionsListRequest.h>
 #include <tencentcloud/iotexplorer/v20190423/model/GetBatchProductionsListResponse.h>
 #include <tencentcloud/iotexplorer/v20190423/model/GetCOSURLRequest.h>
@@ -157,6 +195,8 @@
 #include <tencentcloud/iotexplorer/v20190423/model/GetStudioProductListResponse.h>
 #include <tencentcloud/iotexplorer/v20190423/model/GetTopicRuleListRequest.h>
 #include <tencentcloud/iotexplorer/v20190423/model/GetTopicRuleListResponse.h>
+#include <tencentcloud/iotexplorer/v20190423/model/InheritCloudStorageUserRequest.h>
+#include <tencentcloud/iotexplorer/v20190423/model/InheritCloudStorageUserResponse.h>
 #include <tencentcloud/iotexplorer/v20190423/model/ListEventHistoryRequest.h>
 #include <tencentcloud/iotexplorer/v20190423/model/ListEventHistoryResponse.h>
 #include <tencentcloud/iotexplorer/v20190423/model/ListFirmwaresRequest.h>
@@ -193,12 +233,18 @@
 #include <tencentcloud/iotexplorer/v20190423/model/PublishRRPCMessageResponse.h>
 #include <tencentcloud/iotexplorer/v20190423/model/ReleaseStudioProductRequest.h>
 #include <tencentcloud/iotexplorer/v20190423/model/ReleaseStudioProductResponse.h>
+#include <tencentcloud/iotexplorer/v20190423/model/ResetCloudStorageRequest.h>
+#include <tencentcloud/iotexplorer/v20190423/model/ResetCloudStorageResponse.h>
+#include <tencentcloud/iotexplorer/v20190423/model/ResetCloudStorageEventRequest.h>
+#include <tencentcloud/iotexplorer/v20190423/model/ResetCloudStorageEventResponse.h>
 #include <tencentcloud/iotexplorer/v20190423/model/SearchPositionSpaceRequest.h>
 #include <tencentcloud/iotexplorer/v20190423/model/SearchPositionSpaceResponse.h>
 #include <tencentcloud/iotexplorer/v20190423/model/SearchStudioProductRequest.h>
 #include <tencentcloud/iotexplorer/v20190423/model/SearchStudioProductResponse.h>
 #include <tencentcloud/iotexplorer/v20190423/model/SearchTopicRuleRequest.h>
 #include <tencentcloud/iotexplorer/v20190423/model/SearchTopicRuleResponse.h>
+#include <tencentcloud/iotexplorer/v20190423/model/TransferCloudStorageRequest.h>
+#include <tencentcloud/iotexplorer/v20190423/model/TransferCloudStorageResponse.h>
 #include <tencentcloud/iotexplorer/v20190423/model/UnbindDevicesRequest.h>
 #include <tencentcloud/iotexplorer/v20190423/model/UnbindDevicesResponse.h>
 #include <tencentcloud/iotexplorer/v20190423/model/UnbindProductsRequest.h>
@@ -223,6 +269,9 @@ namespace TencentCloud
                 IotexplorerClient(const Credential &credential, const std::string &region);
                 IotexplorerClient(const Credential &credential, const std::string &region, const ClientProfile &profile);
 
+                typedef Outcome<Core::Error, Model::BindCloudStorageUserResponse> BindCloudStorageUserOutcome;
+                typedef std::future<BindCloudStorageUserOutcome> BindCloudStorageUserOutcomeCallable;
+                typedef std::function<void(const IotexplorerClient*, const Model::BindCloudStorageUserRequest&, BindCloudStorageUserOutcome, const std::shared_ptr<const AsyncCallerContext>&)> BindCloudStorageUserAsyncHandler;
                 typedef Outcome<Core::Error, Model::BindDevicesResponse> BindDevicesOutcome;
                 typedef std::future<BindDevicesOutcome> BindDevicesOutcomeCallable;
                 typedef std::function<void(const IotexplorerClient*, const Model::BindDevicesRequest&, BindDevicesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> BindDevicesAsyncHandler;
@@ -247,6 +296,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::CreateFenceBindResponse> CreateFenceBindOutcome;
                 typedef std::future<CreateFenceBindOutcome> CreateFenceBindOutcomeCallable;
                 typedef std::function<void(const IotexplorerClient*, const Model::CreateFenceBindRequest&, CreateFenceBindOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateFenceBindAsyncHandler;
+                typedef Outcome<Core::Error, Model::CreateIotVideoCloudStorageResponse> CreateIotVideoCloudStorageOutcome;
+                typedef std::future<CreateIotVideoCloudStorageOutcome> CreateIotVideoCloudStorageOutcomeCallable;
+                typedef std::function<void(const IotexplorerClient*, const Model::CreateIotVideoCloudStorageRequest&, CreateIotVideoCloudStorageOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateIotVideoCloudStorageAsyncHandler;
                 typedef Outcome<Core::Error, Model::CreateLoRaFrequencyResponse> CreateLoRaFrequencyOutcome;
                 typedef std::future<CreateLoRaFrequencyOutcome> CreateLoRaFrequencyOutcomeCallable;
                 typedef std::function<void(const IotexplorerClient*, const Model::CreateLoRaFrequencyRequest&, CreateLoRaFrequencyOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateLoRaFrequencyAsyncHandler;
@@ -271,6 +323,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::CreateTopicRuleResponse> CreateTopicRuleOutcome;
                 typedef std::future<CreateTopicRuleOutcome> CreateTopicRuleOutcomeCallable;
                 typedef std::function<void(const IotexplorerClient*, const Model::CreateTopicRuleRequest&, CreateTopicRuleOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateTopicRuleAsyncHandler;
+                typedef Outcome<Core::Error, Model::DeleteCloudStorageEventResponse> DeleteCloudStorageEventOutcome;
+                typedef std::future<DeleteCloudStorageEventOutcome> DeleteCloudStorageEventOutcomeCallable;
+                typedef std::function<void(const IotexplorerClient*, const Model::DeleteCloudStorageEventRequest&, DeleteCloudStorageEventOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteCloudStorageEventAsyncHandler;
                 typedef Outcome<Core::Error, Model::DeleteDeviceResponse> DeleteDeviceOutcome;
                 typedef std::future<DeleteDeviceOutcome> DeleteDeviceOutcomeCallable;
                 typedef std::function<void(const IotexplorerClient*, const Model::DeleteDeviceRequest&, DeleteDeviceOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteDeviceAsyncHandler;
@@ -310,6 +365,42 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeBindedProductsResponse> DescribeBindedProductsOutcome;
                 typedef std::future<DescribeBindedProductsOutcome> DescribeBindedProductsOutcomeCallable;
                 typedef std::function<void(const IotexplorerClient*, const Model::DescribeBindedProductsRequest&, DescribeBindedProductsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeBindedProductsAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeCloudStorageResponse> DescribeCloudStorageOutcome;
+                typedef std::future<DescribeCloudStorageOutcome> DescribeCloudStorageOutcomeCallable;
+                typedef std::function<void(const IotexplorerClient*, const Model::DescribeCloudStorageRequest&, DescribeCloudStorageOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeCloudStorageAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeCloudStorageDateResponse> DescribeCloudStorageDateOutcome;
+                typedef std::future<DescribeCloudStorageDateOutcome> DescribeCloudStorageDateOutcomeCallable;
+                typedef std::function<void(const IotexplorerClient*, const Model::DescribeCloudStorageDateRequest&, DescribeCloudStorageDateOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeCloudStorageDateAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeCloudStorageEventsResponse> DescribeCloudStorageEventsOutcome;
+                typedef std::future<DescribeCloudStorageEventsOutcome> DescribeCloudStorageEventsOutcomeCallable;
+                typedef std::function<void(const IotexplorerClient*, const Model::DescribeCloudStorageEventsRequest&, DescribeCloudStorageEventsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeCloudStorageEventsAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeCloudStorageMultiThumbnailResponse> DescribeCloudStorageMultiThumbnailOutcome;
+                typedef std::future<DescribeCloudStorageMultiThumbnailOutcome> DescribeCloudStorageMultiThumbnailOutcomeCallable;
+                typedef std::function<void(const IotexplorerClient*, const Model::DescribeCloudStorageMultiThumbnailRequest&, DescribeCloudStorageMultiThumbnailOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeCloudStorageMultiThumbnailAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeCloudStorageOrderResponse> DescribeCloudStorageOrderOutcome;
+                typedef std::future<DescribeCloudStorageOrderOutcome> DescribeCloudStorageOrderOutcomeCallable;
+                typedef std::function<void(const IotexplorerClient*, const Model::DescribeCloudStorageOrderRequest&, DescribeCloudStorageOrderOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeCloudStorageOrderAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeCloudStoragePackageConsumeDetailsResponse> DescribeCloudStoragePackageConsumeDetailsOutcome;
+                typedef std::future<DescribeCloudStoragePackageConsumeDetailsOutcome> DescribeCloudStoragePackageConsumeDetailsOutcomeCallable;
+                typedef std::function<void(const IotexplorerClient*, const Model::DescribeCloudStoragePackageConsumeDetailsRequest&, DescribeCloudStoragePackageConsumeDetailsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeCloudStoragePackageConsumeDetailsAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeCloudStoragePackageConsumeStatsResponse> DescribeCloudStoragePackageConsumeStatsOutcome;
+                typedef std::future<DescribeCloudStoragePackageConsumeStatsOutcome> DescribeCloudStoragePackageConsumeStatsOutcomeCallable;
+                typedef std::function<void(const IotexplorerClient*, const Model::DescribeCloudStoragePackageConsumeStatsRequest&, DescribeCloudStoragePackageConsumeStatsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeCloudStoragePackageConsumeStatsAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeCloudStorageStreamDataResponse> DescribeCloudStorageStreamDataOutcome;
+                typedef std::future<DescribeCloudStorageStreamDataOutcome> DescribeCloudStorageStreamDataOutcomeCallable;
+                typedef std::function<void(const IotexplorerClient*, const Model::DescribeCloudStorageStreamDataRequest&, DescribeCloudStorageStreamDataOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeCloudStorageStreamDataAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeCloudStorageThumbnailResponse> DescribeCloudStorageThumbnailOutcome;
+                typedef std::future<DescribeCloudStorageThumbnailOutcome> DescribeCloudStorageThumbnailOutcomeCallable;
+                typedef std::function<void(const IotexplorerClient*, const Model::DescribeCloudStorageThumbnailRequest&, DescribeCloudStorageThumbnailOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeCloudStorageThumbnailAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeCloudStorageThumbnailListResponse> DescribeCloudStorageThumbnailListOutcome;
+                typedef std::future<DescribeCloudStorageThumbnailListOutcome> DescribeCloudStorageThumbnailListOutcomeCallable;
+                typedef std::function<void(const IotexplorerClient*, const Model::DescribeCloudStorageThumbnailListRequest&, DescribeCloudStorageThumbnailListOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeCloudStorageThumbnailListAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeCloudStorageTimeResponse> DescribeCloudStorageTimeOutcome;
+                typedef std::future<DescribeCloudStorageTimeOutcome> DescribeCloudStorageTimeOutcomeCallable;
+                typedef std::function<void(const IotexplorerClient*, const Model::DescribeCloudStorageTimeRequest&, DescribeCloudStorageTimeOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeCloudStorageTimeAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeCloudStorageUsersResponse> DescribeCloudStorageUsersOutcome;
+                typedef std::future<DescribeCloudStorageUsersOutcome> DescribeCloudStorageUsersOutcomeCallable;
+                typedef std::function<void(const IotexplorerClient*, const Model::DescribeCloudStorageUsersRequest&, DescribeCloudStorageUsersOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeCloudStorageUsersAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeDeviceResponse> DescribeDeviceOutcome;
                 typedef std::future<DescribeDeviceOutcome> DescribeDeviceOutcomeCallable;
                 typedef std::function<void(const IotexplorerClient*, const Model::DescribeDeviceRequest&, DescribeDeviceOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeDeviceAsyncHandler;
@@ -328,6 +419,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeDeviceLocationSolveResponse> DescribeDeviceLocationSolveOutcome;
                 typedef std::future<DescribeDeviceLocationSolveOutcome> DescribeDeviceLocationSolveOutcomeCallable;
                 typedef std::function<void(const IotexplorerClient*, const Model::DescribeDeviceLocationSolveRequest&, DescribeDeviceLocationSolveOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeDeviceLocationSolveAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeDevicePackagesResponse> DescribeDevicePackagesOutcome;
+                typedef std::future<DescribeDevicePackagesOutcome> DescribeDevicePackagesOutcomeCallable;
+                typedef std::function<void(const IotexplorerClient*, const Model::DescribeDevicePackagesRequest&, DescribeDevicePackagesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeDevicePackagesAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeDevicePositionListResponse> DescribeDevicePositionListOutcome;
                 typedef std::future<DescribeDevicePositionListOutcome> DescribeDevicePositionListOutcomeCallable;
                 typedef std::function<void(const IotexplorerClient*, const Model::DescribeDevicePositionListRequest&, DescribeDevicePositionListOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeDevicePositionListAsyncHandler;
@@ -358,6 +452,12 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeModelDefinitionResponse> DescribeModelDefinitionOutcome;
                 typedef std::future<DescribeModelDefinitionOutcome> DescribeModelDefinitionOutcomeCallable;
                 typedef std::function<void(const IotexplorerClient*, const Model::DescribeModelDefinitionRequest&, DescribeModelDefinitionOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeModelDefinitionAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribePackageConsumeTaskResponse> DescribePackageConsumeTaskOutcome;
+                typedef std::future<DescribePackageConsumeTaskOutcome> DescribePackageConsumeTaskOutcomeCallable;
+                typedef std::function<void(const IotexplorerClient*, const Model::DescribePackageConsumeTaskRequest&, DescribePackageConsumeTaskOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribePackageConsumeTaskAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribePackageConsumeTasksResponse> DescribePackageConsumeTasksOutcome;
+                typedef std::future<DescribePackageConsumeTasksOutcome> DescribePackageConsumeTasksOutcomeCallable;
+                typedef std::function<void(const IotexplorerClient*, const Model::DescribePackageConsumeTasksRequest&, DescribePackageConsumeTasksOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribePackageConsumeTasksAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribePositionFenceListResponse> DescribePositionFenceListOutcome;
                 typedef std::future<DescribePositionFenceListOutcome> DescribePositionFenceListOutcomeCallable;
                 typedef std::function<void(const IotexplorerClient*, const Model::DescribePositionFenceListRequest&, DescribePositionFenceListOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribePositionFenceListAsyncHandler;
@@ -388,6 +488,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::GenSingleDeviceSignatureOfPublicResponse> GenSingleDeviceSignatureOfPublicOutcome;
                 typedef std::future<GenSingleDeviceSignatureOfPublicOutcome> GenSingleDeviceSignatureOfPublicOutcomeCallable;
                 typedef std::function<void(const IotexplorerClient*, const Model::GenSingleDeviceSignatureOfPublicRequest&, GenSingleDeviceSignatureOfPublicOutcome, const std::shared_ptr<const AsyncCallerContext>&)> GenSingleDeviceSignatureOfPublicAsyncHandler;
+                typedef Outcome<Core::Error, Model::GenerateSignedVideoURLResponse> GenerateSignedVideoURLOutcome;
+                typedef std::future<GenerateSignedVideoURLOutcome> GenerateSignedVideoURLOutcomeCallable;
+                typedef std::function<void(const IotexplorerClient*, const Model::GenerateSignedVideoURLRequest&, GenerateSignedVideoURLOutcome, const std::shared_ptr<const AsyncCallerContext>&)> GenerateSignedVideoURLAsyncHandler;
                 typedef Outcome<Core::Error, Model::GetBatchProductionsListResponse> GetBatchProductionsListOutcome;
                 typedef std::future<GetBatchProductionsListOutcome> GetBatchProductionsListOutcomeCallable;
                 typedef std::function<void(const IotexplorerClient*, const Model::GetBatchProductionsListRequest&, GetBatchProductionsListOutcome, const std::shared_ptr<const AsyncCallerContext>&)> GetBatchProductionsListAsyncHandler;
@@ -424,6 +527,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::GetTopicRuleListResponse> GetTopicRuleListOutcome;
                 typedef std::future<GetTopicRuleListOutcome> GetTopicRuleListOutcomeCallable;
                 typedef std::function<void(const IotexplorerClient*, const Model::GetTopicRuleListRequest&, GetTopicRuleListOutcome, const std::shared_ptr<const AsyncCallerContext>&)> GetTopicRuleListAsyncHandler;
+                typedef Outcome<Core::Error, Model::InheritCloudStorageUserResponse> InheritCloudStorageUserOutcome;
+                typedef std::future<InheritCloudStorageUserOutcome> InheritCloudStorageUserOutcomeCallable;
+                typedef std::function<void(const IotexplorerClient*, const Model::InheritCloudStorageUserRequest&, InheritCloudStorageUserOutcome, const std::shared_ptr<const AsyncCallerContext>&)> InheritCloudStorageUserAsyncHandler;
                 typedef Outcome<Core::Error, Model::ListEventHistoryResponse> ListEventHistoryOutcome;
                 typedef std::future<ListEventHistoryOutcome> ListEventHistoryOutcomeCallable;
                 typedef std::function<void(const IotexplorerClient*, const Model::ListEventHistoryRequest&, ListEventHistoryOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ListEventHistoryAsyncHandler;
@@ -478,6 +584,12 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::ReleaseStudioProductResponse> ReleaseStudioProductOutcome;
                 typedef std::future<ReleaseStudioProductOutcome> ReleaseStudioProductOutcomeCallable;
                 typedef std::function<void(const IotexplorerClient*, const Model::ReleaseStudioProductRequest&, ReleaseStudioProductOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ReleaseStudioProductAsyncHandler;
+                typedef Outcome<Core::Error, Model::ResetCloudStorageResponse> ResetCloudStorageOutcome;
+                typedef std::future<ResetCloudStorageOutcome> ResetCloudStorageOutcomeCallable;
+                typedef std::function<void(const IotexplorerClient*, const Model::ResetCloudStorageRequest&, ResetCloudStorageOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ResetCloudStorageAsyncHandler;
+                typedef Outcome<Core::Error, Model::ResetCloudStorageEventResponse> ResetCloudStorageEventOutcome;
+                typedef std::future<ResetCloudStorageEventOutcome> ResetCloudStorageEventOutcomeCallable;
+                typedef std::function<void(const IotexplorerClient*, const Model::ResetCloudStorageEventRequest&, ResetCloudStorageEventOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ResetCloudStorageEventAsyncHandler;
                 typedef Outcome<Core::Error, Model::SearchPositionSpaceResponse> SearchPositionSpaceOutcome;
                 typedef std::future<SearchPositionSpaceOutcome> SearchPositionSpaceOutcomeCallable;
                 typedef std::function<void(const IotexplorerClient*, const Model::SearchPositionSpaceRequest&, SearchPositionSpaceOutcome, const std::shared_ptr<const AsyncCallerContext>&)> SearchPositionSpaceAsyncHandler;
@@ -487,6 +599,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::SearchTopicRuleResponse> SearchTopicRuleOutcome;
                 typedef std::future<SearchTopicRuleOutcome> SearchTopicRuleOutcomeCallable;
                 typedef std::function<void(const IotexplorerClient*, const Model::SearchTopicRuleRequest&, SearchTopicRuleOutcome, const std::shared_ptr<const AsyncCallerContext>&)> SearchTopicRuleAsyncHandler;
+                typedef Outcome<Core::Error, Model::TransferCloudStorageResponse> TransferCloudStorageOutcome;
+                typedef std::future<TransferCloudStorageOutcome> TransferCloudStorageOutcomeCallable;
+                typedef std::function<void(const IotexplorerClient*, const Model::TransferCloudStorageRequest&, TransferCloudStorageOutcome, const std::shared_ptr<const AsyncCallerContext>&)> TransferCloudStorageAsyncHandler;
                 typedef Outcome<Core::Error, Model::UnbindDevicesResponse> UnbindDevicesOutcome;
                 typedef std::future<UnbindDevicesOutcome> UnbindDevicesOutcomeCallable;
                 typedef std::function<void(const IotexplorerClient*, const Model::UnbindDevicesRequest&, UnbindDevicesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> UnbindDevicesAsyncHandler;
@@ -504,6 +619,15 @@ namespace TencentCloud
                 typedef std::function<void(const IotexplorerClient*, const Model::UploadFirmwareRequest&, UploadFirmwareOutcome, const std::shared_ptr<const AsyncCallerContext>&)> UploadFirmwareAsyncHandler;
 
 
+
+                /**
+                 *绑定云存用户
+                 * @param req BindCloudStorageUserRequest
+                 * @return BindCloudStorageUserOutcome
+                 */
+                BindCloudStorageUserOutcome BindCloudStorageUser(const Model::BindCloudStorageUserRequest &request);
+                void BindCloudStorageUserAsync(const Model::BindCloudStorageUserRequest& request, const BindCloudStorageUserAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                BindCloudStorageUserOutcomeCallable BindCloudStorageUserCallable(const Model::BindCloudStorageUserRequest& request);
 
                 /**
                  *批量绑定子设备
@@ -578,6 +702,15 @@ namespace TencentCloud
                 CreateFenceBindOutcomeCallable CreateFenceBindCallable(const Model::CreateFenceBindRequest& request);
 
                 /**
+                 *开通云存服务
+                 * @param req CreateIotVideoCloudStorageRequest
+                 * @return CreateIotVideoCloudStorageOutcome
+                 */
+                CreateIotVideoCloudStorageOutcome CreateIotVideoCloudStorage(const Model::CreateIotVideoCloudStorageRequest &request);
+                void CreateIotVideoCloudStorageAsync(const Model::CreateIotVideoCloudStorageRequest& request, const CreateIotVideoCloudStorageAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                CreateIotVideoCloudStorageOutcomeCallable CreateIotVideoCloudStorageCallable(const Model::CreateIotVideoCloudStorageRequest& request);
+
+                /**
                  *创建 LoRa 自定义频点
                  * @param req CreateLoRaFrequencyRequest
                  * @return CreateLoRaFrequencyOutcome
@@ -648,6 +781,15 @@ namespace TencentCloud
                 CreateTopicRuleOutcome CreateTopicRule(const Model::CreateTopicRuleRequest &request);
                 void CreateTopicRuleAsync(const Model::CreateTopicRuleRequest& request, const CreateTopicRuleAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 CreateTopicRuleOutcomeCallable CreateTopicRuleCallable(const Model::CreateTopicRuleRequest& request);
+
+                /**
+                 *删除云存事件
+                 * @param req DeleteCloudStorageEventRequest
+                 * @return DeleteCloudStorageEventOutcome
+                 */
+                DeleteCloudStorageEventOutcome DeleteCloudStorageEvent(const Model::DeleteCloudStorageEventRequest &request);
+                void DeleteCloudStorageEventAsync(const Model::DeleteCloudStorageEventRequest& request, const DeleteCloudStorageEventAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DeleteCloudStorageEventOutcomeCallable DeleteCloudStorageEventCallable(const Model::DeleteCloudStorageEventRequest& request);
 
                 /**
                  *删除设备
@@ -767,6 +909,114 @@ namespace TencentCloud
                 DescribeBindedProductsOutcomeCallable DescribeBindedProductsCallable(const Model::DescribeBindedProductsRequest& request);
 
                 /**
+                 *获取设备云存服务详情
+                 * @param req DescribeCloudStorageRequest
+                 * @return DescribeCloudStorageOutcome
+                 */
+                DescribeCloudStorageOutcome DescribeCloudStorage(const Model::DescribeCloudStorageRequest &request);
+                void DescribeCloudStorageAsync(const Model::DescribeCloudStorageRequest& request, const DescribeCloudStorageAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeCloudStorageOutcomeCallable DescribeCloudStorageCallable(const Model::DescribeCloudStorageRequest& request);
+
+                /**
+                 *获取具有云存的日期
+                 * @param req DescribeCloudStorageDateRequest
+                 * @return DescribeCloudStorageDateOutcome
+                 */
+                DescribeCloudStorageDateOutcome DescribeCloudStorageDate(const Model::DescribeCloudStorageDateRequest &request);
+                void DescribeCloudStorageDateAsync(const Model::DescribeCloudStorageDateRequest& request, const DescribeCloudStorageDateAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeCloudStorageDateOutcomeCallable DescribeCloudStorageDateCallable(const Model::DescribeCloudStorageDateRequest& request);
+
+                /**
+                 *拉取云存事件列表
+                 * @param req DescribeCloudStorageEventsRequest
+                 * @return DescribeCloudStorageEventsOutcome
+                 */
+                DescribeCloudStorageEventsOutcome DescribeCloudStorageEvents(const Model::DescribeCloudStorageEventsRequest &request);
+                void DescribeCloudStorageEventsAsync(const Model::DescribeCloudStorageEventsRequest& request, const DescribeCloudStorageEventsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeCloudStorageEventsOutcomeCallable DescribeCloudStorageEventsCallable(const Model::DescribeCloudStorageEventsRequest& request);
+
+                /**
+                 *拉取多个云存事件缩略图
+                 * @param req DescribeCloudStorageMultiThumbnailRequest
+                 * @return DescribeCloudStorageMultiThumbnailOutcome
+                 */
+                DescribeCloudStorageMultiThumbnailOutcome DescribeCloudStorageMultiThumbnail(const Model::DescribeCloudStorageMultiThumbnailRequest &request);
+                void DescribeCloudStorageMultiThumbnailAsync(const Model::DescribeCloudStorageMultiThumbnailRequest& request, const DescribeCloudStorageMultiThumbnailAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeCloudStorageMultiThumbnailOutcomeCallable DescribeCloudStorageMultiThumbnailCallable(const Model::DescribeCloudStorageMultiThumbnailRequest& request);
+
+                /**
+                 *查询云存服务详情
+                 * @param req DescribeCloudStorageOrderRequest
+                 * @return DescribeCloudStorageOrderOutcome
+                 */
+                DescribeCloudStorageOrderOutcome DescribeCloudStorageOrder(const Model::DescribeCloudStorageOrderRequest &request);
+                void DescribeCloudStorageOrderAsync(const Model::DescribeCloudStorageOrderRequest& request, const DescribeCloudStorageOrderAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeCloudStorageOrderOutcomeCallable DescribeCloudStorageOrderCallable(const Model::DescribeCloudStorageOrderRequest& request);
+
+                /**
+                 *获取云存套餐包消耗详细记录
+                 * @param req DescribeCloudStoragePackageConsumeDetailsRequest
+                 * @return DescribeCloudStoragePackageConsumeDetailsOutcome
+                 */
+                DescribeCloudStoragePackageConsumeDetailsOutcome DescribeCloudStoragePackageConsumeDetails(const Model::DescribeCloudStoragePackageConsumeDetailsRequest &request);
+                void DescribeCloudStoragePackageConsumeDetailsAsync(const Model::DescribeCloudStoragePackageConsumeDetailsRequest& request, const DescribeCloudStoragePackageConsumeDetailsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeCloudStoragePackageConsumeDetailsOutcomeCallable DescribeCloudStoragePackageConsumeDetailsCallable(const Model::DescribeCloudStoragePackageConsumeDetailsRequest& request);
+
+                /**
+                 *获取云存套餐包消耗统计
+                 * @param req DescribeCloudStoragePackageConsumeStatsRequest
+                 * @return DescribeCloudStoragePackageConsumeStatsOutcome
+                 */
+                DescribeCloudStoragePackageConsumeStatsOutcome DescribeCloudStoragePackageConsumeStats(const Model::DescribeCloudStoragePackageConsumeStatsRequest &request);
+                void DescribeCloudStoragePackageConsumeStatsAsync(const Model::DescribeCloudStoragePackageConsumeStatsRequest& request, const DescribeCloudStoragePackageConsumeStatsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeCloudStoragePackageConsumeStatsOutcomeCallable DescribeCloudStoragePackageConsumeStatsCallable(const Model::DescribeCloudStoragePackageConsumeStatsRequest& request);
+
+                /**
+                 *获取设备图片流数据
+                 * @param req DescribeCloudStorageStreamDataRequest
+                 * @return DescribeCloudStorageStreamDataOutcome
+                 */
+                DescribeCloudStorageStreamDataOutcome DescribeCloudStorageStreamData(const Model::DescribeCloudStorageStreamDataRequest &request);
+                void DescribeCloudStorageStreamDataAsync(const Model::DescribeCloudStorageStreamDataRequest& request, const DescribeCloudStorageStreamDataAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeCloudStorageStreamDataOutcomeCallable DescribeCloudStorageStreamDataCallable(const Model::DescribeCloudStorageStreamDataRequest& request);
+
+                /**
+                 *拉取云存事件缩略图
+                 * @param req DescribeCloudStorageThumbnailRequest
+                 * @return DescribeCloudStorageThumbnailOutcome
+                 */
+                DescribeCloudStorageThumbnailOutcome DescribeCloudStorageThumbnail(const Model::DescribeCloudStorageThumbnailRequest &request);
+                void DescribeCloudStorageThumbnailAsync(const Model::DescribeCloudStorageThumbnailRequest& request, const DescribeCloudStorageThumbnailAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeCloudStorageThumbnailOutcomeCallable DescribeCloudStorageThumbnailCallable(const Model::DescribeCloudStorageThumbnailRequest& request);
+
+                /**
+                 *批量拉取云存事件缩略图
+                 * @param req DescribeCloudStorageThumbnailListRequest
+                 * @return DescribeCloudStorageThumbnailListOutcome
+                 */
+                DescribeCloudStorageThumbnailListOutcome DescribeCloudStorageThumbnailList(const Model::DescribeCloudStorageThumbnailListRequest &request);
+                void DescribeCloudStorageThumbnailListAsync(const Model::DescribeCloudStorageThumbnailListRequest& request, const DescribeCloudStorageThumbnailListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeCloudStorageThumbnailListOutcomeCallable DescribeCloudStorageThumbnailListCallable(const Model::DescribeCloudStorageThumbnailListRequest& request);
+
+                /**
+                 *获取某一天云存时间轴
+                 * @param req DescribeCloudStorageTimeRequest
+                 * @return DescribeCloudStorageTimeOutcome
+                 */
+                DescribeCloudStorageTimeOutcome DescribeCloudStorageTime(const Model::DescribeCloudStorageTimeRequest &request);
+                void DescribeCloudStorageTimeAsync(const Model::DescribeCloudStorageTimeRequest& request, const DescribeCloudStorageTimeAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeCloudStorageTimeOutcomeCallable DescribeCloudStorageTimeCallable(const Model::DescribeCloudStorageTimeRequest& request);
+
+                /**
+                 *拉取云存用户列表
+                 * @param req DescribeCloudStorageUsersRequest
+                 * @return DescribeCloudStorageUsersOutcome
+                 */
+                DescribeCloudStorageUsersOutcome DescribeCloudStorageUsers(const Model::DescribeCloudStorageUsersRequest &request);
+                void DescribeCloudStorageUsersAsync(const Model::DescribeCloudStorageUsersRequest& request, const DescribeCloudStorageUsersAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeCloudStorageUsersOutcomeCallable DescribeCloudStorageUsersCallable(const Model::DescribeCloudStorageUsersRequest& request);
+
+                /**
                  *用于查看某个设备的详细信息
                  * @param req DescribeDeviceRequest
                  * @return DescribeDeviceOutcome
@@ -819,6 +1069,15 @@ namespace TencentCloud
                 DescribeDeviceLocationSolveOutcome DescribeDeviceLocationSolve(const Model::DescribeDeviceLocationSolveRequest &request);
                 void DescribeDeviceLocationSolveAsync(const Model::DescribeDeviceLocationSolveRequest& request, const DescribeDeviceLocationSolveAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DescribeDeviceLocationSolveOutcomeCallable DescribeDeviceLocationSolveCallable(const Model::DescribeDeviceLocationSolveRequest& request);
+
+                /**
+                 *根据设备信息拉取有效套餐列表
+                 * @param req DescribeDevicePackagesRequest
+                 * @return DescribeDevicePackagesOutcome
+                 */
+                DescribeDevicePackagesOutcome DescribeDevicePackages(const Model::DescribeDevicePackagesRequest &request);
+                void DescribeDevicePackagesAsync(const Model::DescribeDevicePackagesRequest& request, const DescribeDevicePackagesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeDevicePackagesOutcomeCallable DescribeDevicePackagesCallable(const Model::DescribeDevicePackagesRequest& request);
 
                 /**
                  *获取设备位置列表
@@ -911,6 +1170,24 @@ namespace TencentCloud
                 DescribeModelDefinitionOutcomeCallable DescribeModelDefinitionCallable(const Model::DescribeModelDefinitionRequest& request);
 
                 /**
+                 *查询套餐消耗记录详情
+                 * @param req DescribePackageConsumeTaskRequest
+                 * @return DescribePackageConsumeTaskOutcome
+                 */
+                DescribePackageConsumeTaskOutcome DescribePackageConsumeTask(const Model::DescribePackageConsumeTaskRequest &request);
+                void DescribePackageConsumeTaskAsync(const Model::DescribePackageConsumeTaskRequest& request, const DescribePackageConsumeTaskAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribePackageConsumeTaskOutcomeCallable DescribePackageConsumeTaskCallable(const Model::DescribePackageConsumeTaskRequest& request);
+
+                /**
+                 *查询套餐消耗记录列表
+                 * @param req DescribePackageConsumeTasksRequest
+                 * @return DescribePackageConsumeTasksOutcome
+                 */
+                DescribePackageConsumeTasksOutcome DescribePackageConsumeTasks(const Model::DescribePackageConsumeTasksRequest &request);
+                void DescribePackageConsumeTasksAsync(const Model::DescribePackageConsumeTasksRequest& request, const DescribePackageConsumeTasksAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribePackageConsumeTasksOutcomeCallable DescribePackageConsumeTasksCallable(const Model::DescribePackageConsumeTasksRequest& request);
+
+                /**
                  *获取围栏列表
                  * @param req DescribePositionFenceListRequest
                  * @return DescribePositionFenceListOutcome
@@ -999,6 +1276,15 @@ namespace TencentCloud
                 GenSingleDeviceSignatureOfPublicOutcome GenSingleDeviceSignatureOfPublic(const Model::GenSingleDeviceSignatureOfPublicRequest &request);
                 void GenSingleDeviceSignatureOfPublicAsync(const Model::GenSingleDeviceSignatureOfPublicRequest& request, const GenSingleDeviceSignatureOfPublicAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 GenSingleDeviceSignatureOfPublicOutcomeCallable GenSingleDeviceSignatureOfPublicCallable(const Model::GenSingleDeviceSignatureOfPublicRequest& request);
+
+                /**
+                 *获取视频防盗链播放URL
+                 * @param req GenerateSignedVideoURLRequest
+                 * @return GenerateSignedVideoURLOutcome
+                 */
+                GenerateSignedVideoURLOutcome GenerateSignedVideoURL(const Model::GenerateSignedVideoURLRequest &request);
+                void GenerateSignedVideoURLAsync(const Model::GenerateSignedVideoURLRequest& request, const GenerateSignedVideoURLAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                GenerateSignedVideoURLOutcomeCallable GenerateSignedVideoURLCallable(const Model::GenerateSignedVideoURLRequest& request);
 
                 /**
                  *列出量产数据列表信息。
@@ -1107,6 +1393,15 @@ namespace TencentCloud
                 GetTopicRuleListOutcome GetTopicRuleList(const Model::GetTopicRuleListRequest &request);
                 void GetTopicRuleListAsync(const Model::GetTopicRuleListRequest& request, const GetTopicRuleListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 GetTopicRuleListOutcomeCallable GetTopicRuleListCallable(const Model::GetTopicRuleListRequest& request);
+
+                /**
+                 *继承云存用户
+                 * @param req InheritCloudStorageUserRequest
+                 * @return InheritCloudStorageUserOutcome
+                 */
+                InheritCloudStorageUserOutcome InheritCloudStorageUser(const Model::InheritCloudStorageUserRequest &request);
+                void InheritCloudStorageUserAsync(const Model::InheritCloudStorageUserRequest& request, const InheritCloudStorageUserAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                InheritCloudStorageUserOutcomeCallable InheritCloudStorageUserCallable(const Model::InheritCloudStorageUserRequest& request);
 
                 /**
                  *获取设备的历史事件
@@ -1271,6 +1566,24 @@ namespace TencentCloud
                 ReleaseStudioProductOutcomeCallable ReleaseStudioProductCallable(const Model::ReleaseStudioProductRequest& request);
 
                 /**
+                 *重置云存服务
+                 * @param req ResetCloudStorageRequest
+                 * @return ResetCloudStorageOutcome
+                 */
+                ResetCloudStorageOutcome ResetCloudStorage(const Model::ResetCloudStorageRequest &request);
+                void ResetCloudStorageAsync(const Model::ResetCloudStorageRequest& request, const ResetCloudStorageAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                ResetCloudStorageOutcomeCallable ResetCloudStorageCallable(const Model::ResetCloudStorageRequest& request);
+
+                /**
+                 *重置云存事件
+                 * @param req ResetCloudStorageEventRequest
+                 * @return ResetCloudStorageEventOutcome
+                 */
+                ResetCloudStorageEventOutcome ResetCloudStorageEvent(const Model::ResetCloudStorageEventRequest &request);
+                void ResetCloudStorageEventAsync(const Model::ResetCloudStorageEventRequest& request, const ResetCloudStorageEventAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                ResetCloudStorageEventOutcomeCallable ResetCloudStorageEventCallable(const Model::ResetCloudStorageEventRequest& request);
+
+                /**
                  *搜索位置空间
                  * @param req SearchPositionSpaceRequest
                  * @return SearchPositionSpaceOutcome
@@ -1296,6 +1609,15 @@ namespace TencentCloud
                 SearchTopicRuleOutcome SearchTopicRule(const Model::SearchTopicRuleRequest &request);
                 void SearchTopicRuleAsync(const Model::SearchTopicRuleRequest& request, const SearchTopicRuleAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 SearchTopicRuleOutcomeCallable SearchTopicRuleCallable(const Model::SearchTopicRuleRequest& request);
+
+                /**
+                 *转移云存服务
+                 * @param req TransferCloudStorageRequest
+                 * @return TransferCloudStorageOutcome
+                 */
+                TransferCloudStorageOutcome TransferCloudStorage(const Model::TransferCloudStorageRequest &request);
+                void TransferCloudStorageAsync(const Model::TransferCloudStorageRequest& request, const TransferCloudStorageAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                TransferCloudStorageOutcomeCallable TransferCloudStorageCallable(const Model::TransferCloudStorageRequest& request);
 
                 /**
                  *批量解绑子设备

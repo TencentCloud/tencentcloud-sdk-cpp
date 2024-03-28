@@ -36,6 +36,7 @@
 #include <tencentcloud/es/v20180416/model/EsConfigSetInfo.h>
 #include <tencentcloud/es/v20180416/model/OperationDuration.h>
 #include <tencentcloud/es/v20180416/model/OptionalWebServiceInfo.h>
+#include <tencentcloud/es/v20180416/model/OutboundPublicAcl.h>
 
 
 namespace TencentCloud
@@ -227,15 +228,15 @@ namespace TencentCloud
                     bool SubnetUidHasBeenSet() const;
 
                     /**
-                     * 获取实例状态，0:处理中,1:正常,-1停止,-2:销毁中,-3:已销毁, 2:创建集群时初始化中
-                     * @return Status 实例状态，0:处理中,1:正常,-1停止,-2:销毁中,-3:已销毁, 2:创建集群时初始化中
+                     * 获取实例状态，0:处理中,1:正常,-1:停止,-2:销毁中,-3:已销毁, -4:隔离中,2:创建集群时初始化中
+                     * @return Status 实例状态，0:处理中,1:正常,-1:停止,-2:销毁中,-3:已销毁, -4:隔离中,2:创建集群时初始化中
                      * 
                      */
                     int64_t GetStatus() const;
 
                     /**
-                     * 设置实例状态，0:处理中,1:正常,-1停止,-2:销毁中,-3:已销毁, 2:创建集群时初始化中
-                     * @param _status 实例状态，0:处理中,1:正常,-1停止,-2:销毁中,-3:已销毁, 2:创建集群时初始化中
+                     * 设置实例状态，0:处理中,1:正常,-1:停止,-2:销毁中,-3:已销毁, -4:隔离中,2:创建集群时初始化中
+                     * @param _status 实例状态，0:处理中,1:正常,-1:停止,-2:销毁中,-3:已销毁, -4:隔离中,2:创建集群时初始化中
                      * 
                      */
                     void SetStatus(const int64_t& _status);
@@ -1089,18 +1090,18 @@ RENEW_FLAG_DEFAULT：不自动续费
                     bool DeployModeHasBeenSet() const;
 
                     /**
-                     * 获取ES公网访问状态<li>OPEN：开启</li><li>CLOSE：关闭
+                     * 获取ES公网访问状态<li>OPEN：开启</li><li>CLOSE：关闭</li>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return PublicAccess ES公网访问状态<li>OPEN：开启</li><li>CLOSE：关闭
+                     * @return PublicAccess ES公网访问状态<li>OPEN：开启</li><li>CLOSE：关闭</li>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetPublicAccess() const;
 
                     /**
-                     * 设置ES公网访问状态<li>OPEN：开启</li><li>CLOSE：关闭
+                     * 设置ES公网访问状态<li>OPEN：开启</li><li>CLOSE：关闭</li>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _publicAccess ES公网访问状态<li>OPEN：开启</li><li>CLOSE：关闭
+                     * @param _publicAccess ES公网访问状态<li>OPEN：开启</li><li>CLOSE：关闭</li>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -1160,18 +1161,18 @@ RENEW_FLAG_DEFAULT：不自动续费
                     bool KibanaPrivateUrlHasBeenSet() const;
 
                     /**
-                     * 获取Kibana公网访问状态<li>OPEN：开启</li><li>CLOSE：关闭
+                     * 获取Kibana公网访问状态<li>OPEN：开启</li><li>CLOSE：关闭</li>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return KibanaPublicAccess Kibana公网访问状态<li>OPEN：开启</li><li>CLOSE：关闭
+                     * @return KibanaPublicAccess Kibana公网访问状态<li>OPEN：开启</li><li>CLOSE：关闭</li>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetKibanaPublicAccess() const;
 
                     /**
-                     * 设置Kibana公网访问状态<li>OPEN：开启</li><li>CLOSE：关闭
+                     * 设置Kibana公网访问状态<li>OPEN：开启</li><li>CLOSE：关闭</li>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _kibanaPublicAccess Kibana公网访问状态<li>OPEN：开启</li><li>CLOSE：关闭
+                     * @param _kibanaPublicAccess Kibana公网访问状态<li>OPEN：开启</li><li>CLOSE：关闭</li>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -1185,18 +1186,18 @@ RENEW_FLAG_DEFAULT：不自动续费
                     bool KibanaPublicAccessHasBeenSet() const;
 
                     /**
-                     * 获取Kibana内网访问状态<li>OPEN：开启</li><li>CLOSE：关闭
+                     * 获取Kibana内网访问状态<li>OPEN：开启</li><li>CLOSE：关闭</li>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return KibanaPrivateAccess Kibana内网访问状态<li>OPEN：开启</li><li>CLOSE：关闭
+                     * @return KibanaPrivateAccess Kibana内网访问状态<li>OPEN：开启</li><li>CLOSE：关闭</li>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetKibanaPrivateAccess() const;
 
                     /**
-                     * 设置Kibana内网访问状态<li>OPEN：开启</li><li>CLOSE：关闭
+                     * 设置Kibana内网访问状态<li>OPEN：开启</li><li>CLOSE：关闭</li>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _kibanaPrivateAccess Kibana内网访问状态<li>OPEN：开启</li><li>CLOSE：关闭
+                     * @param _kibanaPrivateAccess Kibana内网访问状态<li>OPEN：开启</li><li>CLOSE：关闭</li>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -1935,18 +1936,18 @@ RENEW_FLAG_DEFAULT：不自动续费
                     bool ProcessPercentHasBeenSet() const;
 
                     /**
-                     * 获取Kibana的alerting外网告警策略<li>OPEN：开启</li><li>CLOSE：关闭
+                     * 获取Kibana的alerting外网告警策略<li>OPEN：开启</li><li>CLOSE：关闭</li>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return KibanaAlteringPublicAccess Kibana的alerting外网告警策略<li>OPEN：开启</li><li>CLOSE：关闭
+                     * @return KibanaAlteringPublicAccess Kibana的alerting外网告警策略<li>OPEN：开启</li><li>CLOSE：关闭</li>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetKibanaAlteringPublicAccess() const;
 
                     /**
-                     * 设置Kibana的alerting外网告警策略<li>OPEN：开启</li><li>CLOSE：关闭
+                     * 设置Kibana的alerting外网告警策略<li>OPEN：开启</li><li>CLOSE：关闭</li>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _kibanaAlteringPublicAccess Kibana的alerting外网告警策略<li>OPEN：开启</li><li>CLOSE：关闭
+                     * @param _kibanaAlteringPublicAccess Kibana的alerting外网告警策略<li>OPEN：开启</li><li>CLOSE：关闭</li>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -2059,6 +2060,56 @@ RENEW_FLAG_DEFAULT：不自动续费
                      */
                     bool CustomKibanaPrivateUrlHasBeenSet() const;
 
+                    /**
+                     * 获取节点出站访问详细信息
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return OutboundPublicAcls 节点出站访问详细信息
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::vector<OutboundPublicAcl> GetOutboundPublicAcls() const;
+
+                    /**
+                     * 设置节点出站访问详细信息
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _outboundPublicAcls 节点出站访问详细信息
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetOutboundPublicAcls(const std::vector<OutboundPublicAcl>& _outboundPublicAcls);
+
+                    /**
+                     * 判断参数 OutboundPublicAcls 是否已赋值
+                     * @return OutboundPublicAcls 是否已赋值
+                     * 
+                     */
+                    bool OutboundPublicAclsHasBeenSet() const;
+
+                    /**
+                     * 获取网络连接方案
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return NetConnectScheme 网络连接方案
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::string GetNetConnectScheme() const;
+
+                    /**
+                     * 设置网络连接方案
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _netConnectScheme 网络连接方案
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetNetConnectScheme(const std::string& _netConnectScheme);
+
+                    /**
+                     * 判断参数 NetConnectScheme 是否已赋值
+                     * @return NetConnectScheme 是否已赋值
+                     * 
+                     */
+                    bool NetConnectSchemeHasBeenSet() const;
+
                 private:
 
                     /**
@@ -2110,7 +2161,7 @@ RENEW_FLAG_DEFAULT：不自动续费
                     bool m_subnetUidHasBeenSet;
 
                     /**
-                     * 实例状态，0:处理中,1:正常,-1停止,-2:销毁中,-3:已销毁, 2:创建集群时初始化中
+                     * 实例状态，0:处理中,1:正常,-1:停止,-2:销毁中,-3:已销毁, -4:隔离中,2:创建集群时初始化中
                      */
                     int64_t m_status;
                     bool m_statusHasBeenSet;
@@ -2354,7 +2405,7 @@ RENEW_FLAG_DEFAULT：不自动续费
                     bool m_deployModeHasBeenSet;
 
                     /**
-                     * ES公网访问状态<li>OPEN：开启</li><li>CLOSE：关闭
+                     * ES公网访问状态<li>OPEN：开启</li><li>CLOSE：关闭</li>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_publicAccess;
@@ -2374,14 +2425,14 @@ RENEW_FLAG_DEFAULT：不自动续费
                     bool m_kibanaPrivateUrlHasBeenSet;
 
                     /**
-                     * Kibana公网访问状态<li>OPEN：开启</li><li>CLOSE：关闭
+                     * Kibana公网访问状态<li>OPEN：开启</li><li>CLOSE：关闭</li>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_kibanaPublicAccess;
                     bool m_kibanaPublicAccessHasBeenSet;
 
                     /**
-                     * Kibana内网访问状态<li>OPEN：开启</li><li>CLOSE：关闭
+                     * Kibana内网访问状态<li>OPEN：开启</li><li>CLOSE：关闭</li>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_kibanaPrivateAccess;
@@ -2591,7 +2642,7 @@ RENEW_FLAG_DEFAULT：不自动续费
                     bool m_processPercentHasBeenSet;
 
                     /**
-                     * Kibana的alerting外网告警策略<li>OPEN：开启</li><li>CLOSE：关闭
+                     * Kibana的alerting外网告警策略<li>OPEN：开启</li><li>CLOSE：关闭</li>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_kibanaAlteringPublicAccess;
@@ -2624,6 +2675,20 @@ RENEW_FLAG_DEFAULT：不自动续费
                      */
                     std::string m_customKibanaPrivateUrl;
                     bool m_customKibanaPrivateUrlHasBeenSet;
+
+                    /**
+                     * 节点出站访问详细信息
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::vector<OutboundPublicAcl> m_outboundPublicAcls;
+                    bool m_outboundPublicAclsHasBeenSet;
+
+                    /**
+                     * 网络连接方案
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_netConnectScheme;
+                    bool m_netConnectSchemeHasBeenSet;
 
                 };
             }

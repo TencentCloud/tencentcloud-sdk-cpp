@@ -27,7 +27,8 @@ RestartNodesRequest::RestartNodesRequest() :
     m_nodeNamesHasBeenSet(false),
     m_forceRestartHasBeenSet(false),
     m_restartModeHasBeenSet(false),
-    m_isOfflineHasBeenSet(false)
+    m_isOfflineHasBeenSet(false),
+    m_cvmDelayOnlineTimeHasBeenSet(false)
 {
 }
 
@@ -81,6 +82,14 @@ string RestartNodesRequest::ToJsonString() const
         string key = "IsOffline";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_isOffline, allocator);
+    }
+
+    if (m_cvmDelayOnlineTimeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "CvmDelayOnlineTime";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_cvmDelayOnlineTime, allocator);
     }
 
 
@@ -169,6 +178,22 @@ void RestartNodesRequest::SetIsOffline(const bool& _isOffline)
 bool RestartNodesRequest::IsOfflineHasBeenSet() const
 {
     return m_isOfflineHasBeenSet;
+}
+
+uint64_t RestartNodesRequest::GetCvmDelayOnlineTime() const
+{
+    return m_cvmDelayOnlineTime;
+}
+
+void RestartNodesRequest::SetCvmDelayOnlineTime(const uint64_t& _cvmDelayOnlineTime)
+{
+    m_cvmDelayOnlineTime = _cvmDelayOnlineTime;
+    m_cvmDelayOnlineTimeHasBeenSet = true;
+}
+
+bool RestartNodesRequest::CvmDelayOnlineTimeHasBeenSet() const
+{
+    return m_cvmDelayOnlineTimeHasBeenSet;
 }
 
 

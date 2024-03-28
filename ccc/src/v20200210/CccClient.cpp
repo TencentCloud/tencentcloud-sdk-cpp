@@ -384,6 +384,49 @@ CccClient::CreateCarrierPrivilegeNumberApplicantOutcomeCallable CccClient::Creat
     return task->get_future();
 }
 
+CccClient::CreateCompanyApplyOutcome CccClient::CreateCompanyApply(const CreateCompanyApplyRequest &request)
+{
+    auto outcome = MakeRequest(request, "CreateCompanyApply");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        CreateCompanyApplyResponse rsp = CreateCompanyApplyResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return CreateCompanyApplyOutcome(rsp);
+        else
+            return CreateCompanyApplyOutcome(o.GetError());
+    }
+    else
+    {
+        return CreateCompanyApplyOutcome(outcome.GetError());
+    }
+}
+
+void CccClient::CreateCompanyApplyAsync(const CreateCompanyApplyRequest& request, const CreateCompanyApplyAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->CreateCompanyApply(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+CccClient::CreateCompanyApplyOutcomeCallable CccClient::CreateCompanyApplyCallable(const CreateCompanyApplyRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<CreateCompanyApplyOutcome()>>(
+        [this, request]()
+        {
+            return this->CreateCompanyApply(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 CccClient::CreateExtensionOutcome CccClient::CreateExtension(const CreateExtensionRequest &request)
 {
     auto outcome = MakeRequest(request, "CreateExtension");
@@ -1022,6 +1065,49 @@ CccClient::DescribeChatMessagesOutcomeCallable CccClient::DescribeChatMessagesCa
         [this, request]()
         {
             return this->DescribeChatMessages(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+CccClient::DescribeCompanyListOutcome CccClient::DescribeCompanyList(const DescribeCompanyListRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeCompanyList");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeCompanyListResponse rsp = DescribeCompanyListResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeCompanyListOutcome(rsp);
+        else
+            return DescribeCompanyListOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeCompanyListOutcome(outcome.GetError());
+    }
+}
+
+void CccClient::DescribeCompanyListAsync(const DescribeCompanyListRequest& request, const DescribeCompanyListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeCompanyList(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+CccClient::DescribeCompanyListOutcomeCallable CccClient::DescribeCompanyListCallable(const DescribeCompanyListRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeCompanyListOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeCompanyList(request);
         }
     );
 
@@ -1796,6 +1882,49 @@ CccClient::HangUpCallOutcomeCallable CccClient::HangUpCallCallable(const HangUpC
         [this, request]()
         {
             return this->HangUpCall(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+CccClient::ModifyCompanyApplyOutcome CccClient::ModifyCompanyApply(const ModifyCompanyApplyRequest &request)
+{
+    auto outcome = MakeRequest(request, "ModifyCompanyApply");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ModifyCompanyApplyResponse rsp = ModifyCompanyApplyResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ModifyCompanyApplyOutcome(rsp);
+        else
+            return ModifyCompanyApplyOutcome(o.GetError());
+    }
+    else
+    {
+        return ModifyCompanyApplyOutcome(outcome.GetError());
+    }
+}
+
+void CccClient::ModifyCompanyApplyAsync(const ModifyCompanyApplyRequest& request, const ModifyCompanyApplyAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->ModifyCompanyApply(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+CccClient::ModifyCompanyApplyOutcomeCallable CccClient::ModifyCompanyApplyCallable(const ModifyCompanyApplyRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<ModifyCompanyApplyOutcome()>>(
+        [this, request]()
+        {
+            return this->ModifyCompanyApply(request);
         }
     );
 

@@ -26,7 +26,8 @@ ImageInfo::ImageInfo() :
     m_registryRegionHasBeenSet(false),
     m_registryIdHasBeenSet(false),
     m_allowSaveAllContentHasBeenSet(false),
-    m_imageNameHasBeenSet(false)
+    m_imageNameHasBeenSet(false),
+    m_supportDataPipelineHasBeenSet(false)
 {
 }
 
@@ -95,6 +96,16 @@ CoreInternalOutcome ImageInfo::Deserialize(const rapidjson::Value &value)
         m_imageNameHasBeenSet = true;
     }
 
+    if (value.HasMember("SupportDataPipeline") && !value["SupportDataPipeline"].IsNull())
+    {
+        if (!value["SupportDataPipeline"].IsBool())
+        {
+            return CoreInternalOutcome(Core::Error("response `ImageInfo.SupportDataPipeline` IsBool=false incorrectly").SetRequestId(requestId));
+        }
+        m_supportDataPipeline = value["SupportDataPipeline"].GetBool();
+        m_supportDataPipelineHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -148,6 +159,14 @@ void ImageInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Alloc
         string key = "ImageName";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_imageName.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_supportDataPipelineHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "SupportDataPipeline";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_supportDataPipeline, allocator);
     }
 
 }
@@ -247,5 +266,21 @@ void ImageInfo::SetImageName(const string& _imageName)
 bool ImageInfo::ImageNameHasBeenSet() const
 {
     return m_imageNameHasBeenSet;
+}
+
+bool ImageInfo::GetSupportDataPipeline() const
+{
+    return m_supportDataPipeline;
+}
+
+void ImageInfo::SetSupportDataPipeline(const bool& _supportDataPipeline)
+{
+    m_supportDataPipeline = _supportDataPipeline;
+    m_supportDataPipelineHasBeenSet = true;
+}
+
+bool ImageInfo::SupportDataPipelineHasBeenSet() const
+{
+    return m_supportDataPipelineHasBeenSet;
 }
 
