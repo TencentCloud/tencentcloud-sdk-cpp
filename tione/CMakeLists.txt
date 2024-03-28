@@ -134,6 +134,7 @@ set(tione_public_header_model
   include/tencentcloud/tione/v20211111/model/RowValue.h
   include/tencentcloud/tione/v20211111/model/CreateBatchTaskRequest.h
   include/tencentcloud/tione/v20211111/model/ResourceInstanceRunningJobInfo.h
+  include/tencentcloud/tione/v20211111/model/ImageFIlter.h
   include/tencentcloud/tione/v20211111/model/DescribeLatestTrainingMetricsResponse.h
   include/tencentcloud/tione/v20211111/model/DefaultNginxGatewayCallInfo.h
   include/tencentcloud/tione/v20211111/model/FilterLabelInfo.h
@@ -468,6 +469,7 @@ set(tione_src
   src/v20211111/model/RowValue.cpp
   src/v20211111/model/CreateBatchTaskRequest.cpp
   src/v20211111/model/ResourceInstanceRunningJobInfo.cpp
+  src/v20211111/model/ImageFIlter.cpp
   src/v20211111/model/DescribeLatestTrainingMetricsResponse.cpp
   src/v20211111/model/DefaultNginxGatewayCallInfo.cpp
   src/v20211111/model/FilterLabelInfo.cpp

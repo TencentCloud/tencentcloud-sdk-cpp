@@ -24,6 +24,7 @@
 #include <tencentcloud/core/utils/rapidjson/writer.h>
 #include <tencentcloud/core/utils/rapidjson/stringbuffer.h>
 #include <tencentcloud/core/AbstractModel.h>
+#include <tencentcloud/wedata/v20210820/model/RuleExecResult.h>
 
 
 namespace TencentCloud
@@ -421,6 +422,31 @@ namespace TencentCloud
                      */
                     bool EngineTypeHasBeenSet() const;
 
+                    /**
+                     * 获取规则执行结果
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return RuleExecResultVOList 规则执行结果
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::vector<RuleExecResult> GetRuleExecResultVOList() const;
+
+                    /**
+                     * 设置规则执行结果
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _ruleExecResultVOList 规则执行结果
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetRuleExecResultVOList(const std::vector<RuleExecResult>& _ruleExecResultVOList);
+
+                    /**
+                     * 判断参数 RuleExecResultVOList 是否已赋值
+                     * @return RuleExecResultVOList 是否已赋值
+                     * 
+                     */
+                    bool RuleExecResultVOListHasBeenSet() const;
+
                 private:
 
                     /**
@@ -527,6 +553,13 @@ namespace TencentCloud
                      */
                     std::string m_engineType;
                     bool m_engineTypeHasBeenSet;
+
+                    /**
+                     * 规则执行结果
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::vector<RuleExecResult> m_ruleExecResultVOList;
+                    bool m_ruleExecResultVOListHasBeenSet;
 
                 };
             }

@@ -448,18 +448,18 @@ namespace TencentCloud
                     bool ZoneNameHasBeenSet() const;
 
                     /**
-                     * 获取资源ID：账单中出账对象 ID，不同产品因资源形态不同，资源内容不完全相同，如云服务器 CVM 为对应的实例 ID
+                     * 获取资源ID：不同产品因资源形态不同，资源内容不完全相同，如云服务器 CVM 为对应的实例 ID； 若该产品被分拆，则展示产品分拆后的分拆项 ID，如 COS 桶 ID，CDN 域名
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return ResourceId 资源ID：账单中出账对象 ID，不同产品因资源形态不同，资源内容不完全相同，如云服务器 CVM 为对应的实例 ID
+                     * @return ResourceId 资源ID：不同产品因资源形态不同，资源内容不完全相同，如云服务器 CVM 为对应的实例 ID； 若该产品被分拆，则展示产品分拆后的分拆项 ID，如 COS 桶 ID，CDN 域名
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetResourceId() const;
 
                     /**
-                     * 设置资源ID：账单中出账对象 ID，不同产品因资源形态不同，资源内容不完全相同，如云服务器 CVM 为对应的实例 ID
+                     * 设置资源ID：不同产品因资源形态不同，资源内容不完全相同，如云服务器 CVM 为对应的实例 ID； 若该产品被分拆，则展示产品分拆后的分拆项 ID，如 COS 桶 ID，CDN 域名
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _resourceId 资源ID：账单中出账对象 ID，不同产品因资源形态不同，资源内容不完全相同，如云服务器 CVM 为对应的实例 ID
+                     * @param _resourceId 资源ID：不同产品因资源形态不同，资源内容不完全相同，如云服务器 CVM 为对应的实例 ID； 若该产品被分拆，则展示产品分拆后的分拆项 ID，如 COS 桶 ID，CDN 域名
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -473,18 +473,18 @@ namespace TencentCloud
                     bool ResourceIdHasBeenSet() const;
 
                     /**
-                     * 获取实例名称：用户在控制台为资源设置的名称，如未设置默认为空
+                     * 获取实例名称：用户在控制台为资源设置的名称，如未设置默认为空；若该产品被分拆，则展示分拆产品分拆后的分拆项资源别名
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return ResourceName 实例名称：用户在控制台为资源设置的名称，如未设置默认为空
+                     * @return ResourceName 实例名称：用户在控制台为资源设置的名称，如未设置默认为空；若该产品被分拆，则展示分拆产品分拆后的分拆项资源别名
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetResourceName() const;
 
                     /**
-                     * 设置实例名称：用户在控制台为资源设置的名称，如未设置默认为空
+                     * 设置实例名称：用户在控制台为资源设置的名称，如未设置默认为空；若该产品被分拆，则展示分拆产品分拆后的分拆项资源别名
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _resourceName 实例名称：用户在控制台为资源设置的名称，如未设置默认为空
+                     * @param _resourceName 实例名称：用户在控制台为资源设置的名称，如未设置默认为空；若该产品被分拆，则展示分拆产品分拆后的分拆项资源别名
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -552,7 +552,7 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return SplitItemId 分拆项 ID：涉及分拆产品的分拆后的分拆项 ID，如 COS 桶 ID，CDN 域名
 注意：此字段可能返回 null，表示取不到有效值。
-                     * 
+                     * @deprecated
                      */
                     std::string GetSplitItemId() const;
 
@@ -561,14 +561,14 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @param _splitItemId 分拆项 ID：涉及分拆产品的分拆后的分拆项 ID，如 COS 桶 ID，CDN 域名
 注意：此字段可能返回 null，表示取不到有效值。
-                     * 
+                     * @deprecated
                      */
                     void SetSplitItemId(const std::string& _splitItemId);
 
                     /**
                      * 判断参数 SplitItemId 是否已赋值
                      * @return SplitItemId 是否已赋值
-                     * 
+                     * @deprecated
                      */
                     bool SplitItemIdHasBeenSet() const;
 
@@ -577,7 +577,7 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return SplitItemName 分拆项名称：涉及分拆产品的分拆后的分拆项
 注意：此字段可能返回 null，表示取不到有效值。
-                     * 
+                     * @deprecated
                      */
                     std::string GetSplitItemName() const;
 
@@ -586,14 +586,14 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @param _splitItemName 分拆项名称：涉及分拆产品的分拆后的分拆项
 注意：此字段可能返回 null，表示取不到有效值。
-                     * 
+                     * @deprecated
                      */
                     void SetSplitItemName(const std::string& _splitItemName);
 
                     /**
                      * 判断参数 SplitItemName 是否已赋值
                      * @return SplitItemName 是否已赋值
-                     * 
+                     * @deprecated
                      */
                     bool SplitItemNameHasBeenSet() const;
 
@@ -1832,14 +1832,14 @@ namespace TencentCloud
                     bool m_zoneNameHasBeenSet;
 
                     /**
-                     * 资源ID：账单中出账对象 ID，不同产品因资源形态不同，资源内容不完全相同，如云服务器 CVM 为对应的实例 ID
+                     * 资源ID：不同产品因资源形态不同，资源内容不完全相同，如云服务器 CVM 为对应的实例 ID； 若该产品被分拆，则展示产品分拆后的分拆项 ID，如 COS 桶 ID，CDN 域名
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_resourceId;
                     bool m_resourceIdHasBeenSet;
 
                     /**
-                     * 实例名称：用户在控制台为资源设置的名称，如未设置默认为空
+                     * 实例名称：用户在控制台为资源设置的名称，如未设置默认为空；若该产品被分拆，则展示分拆产品分拆后的分拆项资源别名
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_resourceName;

@@ -22,7 +22,8 @@ using namespace std;
 
 Item::Item() :
     m_itemIdHasBeenSet(false),
-    m_itemNameHasBeenSet(false)
+    m_itemNameHasBeenSet(false),
+    m_customItemValuesHasBeenSet(false)
 {
 }
 
@@ -51,6 +52,19 @@ CoreInternalOutcome Item::Deserialize(const rapidjson::Value &value)
         m_itemNameHasBeenSet = true;
     }
 
+    if (value.HasMember("CustomItemValues") && !value["CustomItemValues"].IsNull())
+    {
+        if (!value["CustomItemValues"].IsArray())
+            return CoreInternalOutcome(Core::Error("response `Item.CustomItemValues` is not array type"));
+
+        const rapidjson::Value &tmpValue = value["CustomItemValues"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            m_customItemValues.push_back((*itr).GetUint64());
+        }
+        m_customItemValuesHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -72,6 +86,19 @@ void Item::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorT
         string key = "ItemName";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_itemName.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_customItemValuesHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "CustomItemValues";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        for (auto itr = m_customItemValues.begin(); itr != m_customItemValues.end(); ++itr)
+        {
+            value[key.c_str()].PushBack(rapidjson::Value().SetUint64(*itr), allocator);
+        }
     }
 
 }
@@ -107,5 +134,21 @@ void Item::SetItemName(const string& _itemName)
 bool Item::ItemNameHasBeenSet() const
 {
     return m_itemNameHasBeenSet;
+}
+
+vector<uint64_t> Item::GetCustomItemValues() const
+{
+    return m_customItemValues;
+}
+
+void Item::SetCustomItemValues(const vector<uint64_t>& _customItemValues)
+{
+    m_customItemValues = _customItemValues;
+    m_customItemValuesHasBeenSet = true;
+}
+
+bool Item::CustomItemValuesHasBeenSet() const
+{
+    return m_customItemValuesHasBeenSet;
 }
 

@@ -29,7 +29,12 @@ ExportTaskInfo::ExportTaskInfo() :
     m_statusHasBeenSet(false),
     m_schedulerTaskIdHasBeenSet(false),
     m_schedulerCurRunDateHasBeenSet(false),
-    m_filePathHasBeenSet(false)
+    m_filePathHasBeenSet(false),
+    m_expireHasBeenSet(false),
+    m_datasourceNameHasBeenSet(false),
+    m_dbTableNameHasBeenSet(false),
+    m_ruleNameHasBeenSet(false),
+    m_ruleExecIdHasBeenSet(false)
 {
 }
 
@@ -128,6 +133,56 @@ CoreInternalOutcome ExportTaskInfo::Deserialize(const rapidjson::Value &value)
         m_filePathHasBeenSet = true;
     }
 
+    if (value.HasMember("Expire") && !value["Expire"].IsNull())
+    {
+        if (!value["Expire"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `ExportTaskInfo.Expire` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_expire = value["Expire"].GetInt64();
+        m_expireHasBeenSet = true;
+    }
+
+    if (value.HasMember("DatasourceName") && !value["DatasourceName"].IsNull())
+    {
+        if (!value["DatasourceName"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `ExportTaskInfo.DatasourceName` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_datasourceName = string(value["DatasourceName"].GetString());
+        m_datasourceNameHasBeenSet = true;
+    }
+
+    if (value.HasMember("DbTableName") && !value["DbTableName"].IsNull())
+    {
+        if (!value["DbTableName"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `ExportTaskInfo.DbTableName` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_dbTableName = string(value["DbTableName"].GetString());
+        m_dbTableNameHasBeenSet = true;
+    }
+
+    if (value.HasMember("RuleName") && !value["RuleName"].IsNull())
+    {
+        if (!value["RuleName"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `ExportTaskInfo.RuleName` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_ruleName = string(value["RuleName"].GetString());
+        m_ruleNameHasBeenSet = true;
+    }
+
+    if (value.HasMember("RuleExecId") && !value["RuleExecId"].IsNull())
+    {
+        if (!value["RuleExecId"].IsUint64())
+        {
+            return CoreInternalOutcome(Core::Error("response `ExportTaskInfo.RuleExecId` IsUint64=false incorrectly").SetRequestId(requestId));
+        }
+        m_ruleExecId = value["RuleExecId"].GetUint64();
+        m_ruleExecIdHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -205,6 +260,46 @@ void ExportTaskInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Document::
         string key = "FilePath";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_filePath.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_expireHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Expire";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_expire, allocator);
+    }
+
+    if (m_datasourceNameHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "DatasourceName";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_datasourceName.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_dbTableNameHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "DbTableName";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_dbTableName.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_ruleNameHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "RuleName";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_ruleName.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_ruleExecIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "RuleExecId";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_ruleExecId, allocator);
     }
 
 }
@@ -352,5 +447,85 @@ void ExportTaskInfo::SetFilePath(const string& _filePath)
 bool ExportTaskInfo::FilePathHasBeenSet() const
 {
     return m_filePathHasBeenSet;
+}
+
+int64_t ExportTaskInfo::GetExpire() const
+{
+    return m_expire;
+}
+
+void ExportTaskInfo::SetExpire(const int64_t& _expire)
+{
+    m_expire = _expire;
+    m_expireHasBeenSet = true;
+}
+
+bool ExportTaskInfo::ExpireHasBeenSet() const
+{
+    return m_expireHasBeenSet;
+}
+
+string ExportTaskInfo::GetDatasourceName() const
+{
+    return m_datasourceName;
+}
+
+void ExportTaskInfo::SetDatasourceName(const string& _datasourceName)
+{
+    m_datasourceName = _datasourceName;
+    m_datasourceNameHasBeenSet = true;
+}
+
+bool ExportTaskInfo::DatasourceNameHasBeenSet() const
+{
+    return m_datasourceNameHasBeenSet;
+}
+
+string ExportTaskInfo::GetDbTableName() const
+{
+    return m_dbTableName;
+}
+
+void ExportTaskInfo::SetDbTableName(const string& _dbTableName)
+{
+    m_dbTableName = _dbTableName;
+    m_dbTableNameHasBeenSet = true;
+}
+
+bool ExportTaskInfo::DbTableNameHasBeenSet() const
+{
+    return m_dbTableNameHasBeenSet;
+}
+
+string ExportTaskInfo::GetRuleName() const
+{
+    return m_ruleName;
+}
+
+void ExportTaskInfo::SetRuleName(const string& _ruleName)
+{
+    m_ruleName = _ruleName;
+    m_ruleNameHasBeenSet = true;
+}
+
+bool ExportTaskInfo::RuleNameHasBeenSet() const
+{
+    return m_ruleNameHasBeenSet;
+}
+
+uint64_t ExportTaskInfo::GetRuleExecId() const
+{
+    return m_ruleExecId;
+}
+
+void ExportTaskInfo::SetRuleExecId(const uint64_t& _ruleExecId)
+{
+    m_ruleExecId = _ruleExecId;
+    m_ruleExecIdHasBeenSet = true;
+}
+
+bool ExportTaskInfo::RuleExecIdHasBeenSet() const
+{
+    return m_ruleExecIdHasBeenSet;
 }
 

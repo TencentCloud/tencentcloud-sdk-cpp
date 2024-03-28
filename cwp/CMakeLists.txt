@@ -1235,6 +1235,7 @@ set(cwp_public_header_model
   include/tencentcloud/cwp/v20180228/model/DescribeLicenseGeneralRequest.h
   include/tencentcloud/cwp/v20180228/model/DescribeAssetJarInfoRequest.h
   include/tencentcloud/cwp/v20180228/model/OrderModifyObject.h
+  include/tencentcloud/cwp/v20180228/model/BaselineItemsCategory.h
   include/tencentcloud/cwp/v20180228/model/AccountStatistics.h
   include/tencentcloud/cwp/v20180228/model/AssetUserKeyInfo.h
   include/tencentcloud/cwp/v20180228/model/DescribeMachinesResponse.h
@@ -2533,6 +2534,7 @@ set(cwp_src
   src/v20180228/model/DescribeLicenseGeneralRequest.cpp
   src/v20180228/model/DescribeAssetJarInfoRequest.cpp
   src/v20180228/model/OrderModifyObject.cpp
+  src/v20180228/model/BaselineItemsCategory.cpp
   src/v20180228/model/AccountStatistics.cpp
   src/v20180228/model/AssetUserKeyInfo.cpp
   src/v20180228/model/DescribeMachinesResponse.cpp

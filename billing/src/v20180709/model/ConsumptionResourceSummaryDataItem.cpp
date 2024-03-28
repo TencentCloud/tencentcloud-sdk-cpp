@@ -42,7 +42,24 @@ ConsumptionResourceSummaryDataItem::ConsumptionResourceSummaryDataItem() :
     m_orderIdHasBeenSet(false),
     m_voucherPayAmountHasBeenSet(false),
     m_incentivePayAmountHasBeenSet(false),
-    m_transferPayAmountHasBeenSet(false)
+    m_transferPayAmountHasBeenSet(false),
+    m_payerUinHasBeenSet(false),
+    m_ownerUinHasBeenSet(false),
+    m_operateUinHasBeenSet(false),
+    m_productCodeHasBeenSet(false),
+    m_productCodeNameHasBeenSet(false),
+    m_regionTypeHasBeenSet(false),
+    m_regionTypeNameHasBeenSet(false),
+    m_extend1HasBeenSet(false),
+    m_extend2HasBeenSet(false),
+    m_extend3HasBeenSet(false),
+    m_extend4HasBeenSet(false),
+    m_extend5HasBeenSet(false),
+    m_instanceTypeHasBeenSet(false),
+    m_instanceTypeNameHasBeenSet(false),
+    m_payTimeHasBeenSet(false),
+    m_zoneNameHasBeenSet(false),
+    m_componentConfigHasBeenSet(false)
 {
 }
 
@@ -271,6 +288,176 @@ CoreInternalOutcome ConsumptionResourceSummaryDataItem::Deserialize(const rapidj
         m_transferPayAmountHasBeenSet = true;
     }
 
+    if (value.HasMember("PayerUin") && !value["PayerUin"].IsNull())
+    {
+        if (!value["PayerUin"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `ConsumptionResourceSummaryDataItem.PayerUin` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_payerUin = string(value["PayerUin"].GetString());
+        m_payerUinHasBeenSet = true;
+    }
+
+    if (value.HasMember("OwnerUin") && !value["OwnerUin"].IsNull())
+    {
+        if (!value["OwnerUin"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `ConsumptionResourceSummaryDataItem.OwnerUin` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_ownerUin = string(value["OwnerUin"].GetString());
+        m_ownerUinHasBeenSet = true;
+    }
+
+    if (value.HasMember("OperateUin") && !value["OperateUin"].IsNull())
+    {
+        if (!value["OperateUin"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `ConsumptionResourceSummaryDataItem.OperateUin` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_operateUin = string(value["OperateUin"].GetString());
+        m_operateUinHasBeenSet = true;
+    }
+
+    if (value.HasMember("ProductCode") && !value["ProductCode"].IsNull())
+    {
+        if (!value["ProductCode"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `ConsumptionResourceSummaryDataItem.ProductCode` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_productCode = string(value["ProductCode"].GetString());
+        m_productCodeHasBeenSet = true;
+    }
+
+    if (value.HasMember("ProductCodeName") && !value["ProductCodeName"].IsNull())
+    {
+        if (!value["ProductCodeName"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `ConsumptionResourceSummaryDataItem.ProductCodeName` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_productCodeName = string(value["ProductCodeName"].GetString());
+        m_productCodeNameHasBeenSet = true;
+    }
+
+    if (value.HasMember("RegionType") && !value["RegionType"].IsNull())
+    {
+        if (!value["RegionType"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `ConsumptionResourceSummaryDataItem.RegionType` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_regionType = string(value["RegionType"].GetString());
+        m_regionTypeHasBeenSet = true;
+    }
+
+    if (value.HasMember("RegionTypeName") && !value["RegionTypeName"].IsNull())
+    {
+        if (!value["RegionTypeName"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `ConsumptionResourceSummaryDataItem.RegionTypeName` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_regionTypeName = string(value["RegionTypeName"].GetString());
+        m_regionTypeNameHasBeenSet = true;
+    }
+
+    if (value.HasMember("Extend1") && !value["Extend1"].IsNull())
+    {
+        if (!value["Extend1"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `ConsumptionResourceSummaryDataItem.Extend1` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_extend1 = string(value["Extend1"].GetString());
+        m_extend1HasBeenSet = true;
+    }
+
+    if (value.HasMember("Extend2") && !value["Extend2"].IsNull())
+    {
+        if (!value["Extend2"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `ConsumptionResourceSummaryDataItem.Extend2` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_extend2 = string(value["Extend2"].GetString());
+        m_extend2HasBeenSet = true;
+    }
+
+    if (value.HasMember("Extend3") && !value["Extend3"].IsNull())
+    {
+        if (!value["Extend3"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `ConsumptionResourceSummaryDataItem.Extend3` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_extend3 = string(value["Extend3"].GetString());
+        m_extend3HasBeenSet = true;
+    }
+
+    if (value.HasMember("Extend4") && !value["Extend4"].IsNull())
+    {
+        if (!value["Extend4"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `ConsumptionResourceSummaryDataItem.Extend4` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_extend4 = string(value["Extend4"].GetString());
+        m_extend4HasBeenSet = true;
+    }
+
+    if (value.HasMember("Extend5") && !value["Extend5"].IsNull())
+    {
+        if (!value["Extend5"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `ConsumptionResourceSummaryDataItem.Extend5` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_extend5 = string(value["Extend5"].GetString());
+        m_extend5HasBeenSet = true;
+    }
+
+    if (value.HasMember("InstanceType") && !value["InstanceType"].IsNull())
+    {
+        if (!value["InstanceType"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `ConsumptionResourceSummaryDataItem.InstanceType` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_instanceType = string(value["InstanceType"].GetString());
+        m_instanceTypeHasBeenSet = true;
+    }
+
+    if (value.HasMember("InstanceTypeName") && !value["InstanceTypeName"].IsNull())
+    {
+        if (!value["InstanceTypeName"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `ConsumptionResourceSummaryDataItem.InstanceTypeName` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_instanceTypeName = string(value["InstanceTypeName"].GetString());
+        m_instanceTypeNameHasBeenSet = true;
+    }
+
+    if (value.HasMember("PayTime") && !value["PayTime"].IsNull())
+    {
+        if (!value["PayTime"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `ConsumptionResourceSummaryDataItem.PayTime` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_payTime = string(value["PayTime"].GetString());
+        m_payTimeHasBeenSet = true;
+    }
+
+    if (value.HasMember("ZoneName") && !value["ZoneName"].IsNull())
+    {
+        if (!value["ZoneName"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `ConsumptionResourceSummaryDataItem.ZoneName` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_zoneName = string(value["ZoneName"].GetString());
+        m_zoneNameHasBeenSet = true;
+    }
+
+    if (value.HasMember("ComponentConfig") && !value["ComponentConfig"].IsNull())
+    {
+        if (!value["ComponentConfig"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `ConsumptionResourceSummaryDataItem.ComponentConfig` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_componentConfig = string(value["ComponentConfig"].GetString());
+        m_componentConfigHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -452,6 +639,142 @@ void ConsumptionResourceSummaryDataItem::ToJsonObject(rapidjson::Value &value, r
         string key = "TransferPayAmount";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_transferPayAmount.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_payerUinHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "PayerUin";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_payerUin.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_ownerUinHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "OwnerUin";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_ownerUin.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_operateUinHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "OperateUin";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_operateUin.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_productCodeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ProductCode";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_productCode.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_productCodeNameHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ProductCodeName";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_productCodeName.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_regionTypeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "RegionType";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_regionType.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_regionTypeNameHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "RegionTypeName";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_regionTypeName.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_extend1HasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Extend1";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_extend1.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_extend2HasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Extend2";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_extend2.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_extend3HasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Extend3";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_extend3.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_extend4HasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Extend4";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_extend4.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_extend5HasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Extend5";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_extend5.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_instanceTypeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "InstanceType";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_instanceType.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_instanceTypeNameHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "InstanceTypeName";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_instanceTypeName.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_payTimeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "PayTime";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_payTime.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_zoneNameHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ZoneName";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_zoneName.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_componentConfigHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ComponentConfig";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_componentConfig.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -807,5 +1130,277 @@ void ConsumptionResourceSummaryDataItem::SetTransferPayAmount(const string& _tra
 bool ConsumptionResourceSummaryDataItem::TransferPayAmountHasBeenSet() const
 {
     return m_transferPayAmountHasBeenSet;
+}
+
+string ConsumptionResourceSummaryDataItem::GetPayerUin() const
+{
+    return m_payerUin;
+}
+
+void ConsumptionResourceSummaryDataItem::SetPayerUin(const string& _payerUin)
+{
+    m_payerUin = _payerUin;
+    m_payerUinHasBeenSet = true;
+}
+
+bool ConsumptionResourceSummaryDataItem::PayerUinHasBeenSet() const
+{
+    return m_payerUinHasBeenSet;
+}
+
+string ConsumptionResourceSummaryDataItem::GetOwnerUin() const
+{
+    return m_ownerUin;
+}
+
+void ConsumptionResourceSummaryDataItem::SetOwnerUin(const string& _ownerUin)
+{
+    m_ownerUin = _ownerUin;
+    m_ownerUinHasBeenSet = true;
+}
+
+bool ConsumptionResourceSummaryDataItem::OwnerUinHasBeenSet() const
+{
+    return m_ownerUinHasBeenSet;
+}
+
+string ConsumptionResourceSummaryDataItem::GetOperateUin() const
+{
+    return m_operateUin;
+}
+
+void ConsumptionResourceSummaryDataItem::SetOperateUin(const string& _operateUin)
+{
+    m_operateUin = _operateUin;
+    m_operateUinHasBeenSet = true;
+}
+
+bool ConsumptionResourceSummaryDataItem::OperateUinHasBeenSet() const
+{
+    return m_operateUinHasBeenSet;
+}
+
+string ConsumptionResourceSummaryDataItem::GetProductCode() const
+{
+    return m_productCode;
+}
+
+void ConsumptionResourceSummaryDataItem::SetProductCode(const string& _productCode)
+{
+    m_productCode = _productCode;
+    m_productCodeHasBeenSet = true;
+}
+
+bool ConsumptionResourceSummaryDataItem::ProductCodeHasBeenSet() const
+{
+    return m_productCodeHasBeenSet;
+}
+
+string ConsumptionResourceSummaryDataItem::GetProductCodeName() const
+{
+    return m_productCodeName;
+}
+
+void ConsumptionResourceSummaryDataItem::SetProductCodeName(const string& _productCodeName)
+{
+    m_productCodeName = _productCodeName;
+    m_productCodeNameHasBeenSet = true;
+}
+
+bool ConsumptionResourceSummaryDataItem::ProductCodeNameHasBeenSet() const
+{
+    return m_productCodeNameHasBeenSet;
+}
+
+string ConsumptionResourceSummaryDataItem::GetRegionType() const
+{
+    return m_regionType;
+}
+
+void ConsumptionResourceSummaryDataItem::SetRegionType(const string& _regionType)
+{
+    m_regionType = _regionType;
+    m_regionTypeHasBeenSet = true;
+}
+
+bool ConsumptionResourceSummaryDataItem::RegionTypeHasBeenSet() const
+{
+    return m_regionTypeHasBeenSet;
+}
+
+string ConsumptionResourceSummaryDataItem::GetRegionTypeName() const
+{
+    return m_regionTypeName;
+}
+
+void ConsumptionResourceSummaryDataItem::SetRegionTypeName(const string& _regionTypeName)
+{
+    m_regionTypeName = _regionTypeName;
+    m_regionTypeNameHasBeenSet = true;
+}
+
+bool ConsumptionResourceSummaryDataItem::RegionTypeNameHasBeenSet() const
+{
+    return m_regionTypeNameHasBeenSet;
+}
+
+string ConsumptionResourceSummaryDataItem::GetExtend1() const
+{
+    return m_extend1;
+}
+
+void ConsumptionResourceSummaryDataItem::SetExtend1(const string& _extend1)
+{
+    m_extend1 = _extend1;
+    m_extend1HasBeenSet = true;
+}
+
+bool ConsumptionResourceSummaryDataItem::Extend1HasBeenSet() const
+{
+    return m_extend1HasBeenSet;
+}
+
+string ConsumptionResourceSummaryDataItem::GetExtend2() const
+{
+    return m_extend2;
+}
+
+void ConsumptionResourceSummaryDataItem::SetExtend2(const string& _extend2)
+{
+    m_extend2 = _extend2;
+    m_extend2HasBeenSet = true;
+}
+
+bool ConsumptionResourceSummaryDataItem::Extend2HasBeenSet() const
+{
+    return m_extend2HasBeenSet;
+}
+
+string ConsumptionResourceSummaryDataItem::GetExtend3() const
+{
+    return m_extend3;
+}
+
+void ConsumptionResourceSummaryDataItem::SetExtend3(const string& _extend3)
+{
+    m_extend3 = _extend3;
+    m_extend3HasBeenSet = true;
+}
+
+bool ConsumptionResourceSummaryDataItem::Extend3HasBeenSet() const
+{
+    return m_extend3HasBeenSet;
+}
+
+string ConsumptionResourceSummaryDataItem::GetExtend4() const
+{
+    return m_extend4;
+}
+
+void ConsumptionResourceSummaryDataItem::SetExtend4(const string& _extend4)
+{
+    m_extend4 = _extend4;
+    m_extend4HasBeenSet = true;
+}
+
+bool ConsumptionResourceSummaryDataItem::Extend4HasBeenSet() const
+{
+    return m_extend4HasBeenSet;
+}
+
+string ConsumptionResourceSummaryDataItem::GetExtend5() const
+{
+    return m_extend5;
+}
+
+void ConsumptionResourceSummaryDataItem::SetExtend5(const string& _extend5)
+{
+    m_extend5 = _extend5;
+    m_extend5HasBeenSet = true;
+}
+
+bool ConsumptionResourceSummaryDataItem::Extend5HasBeenSet() const
+{
+    return m_extend5HasBeenSet;
+}
+
+string ConsumptionResourceSummaryDataItem::GetInstanceType() const
+{
+    return m_instanceType;
+}
+
+void ConsumptionResourceSummaryDataItem::SetInstanceType(const string& _instanceType)
+{
+    m_instanceType = _instanceType;
+    m_instanceTypeHasBeenSet = true;
+}
+
+bool ConsumptionResourceSummaryDataItem::InstanceTypeHasBeenSet() const
+{
+    return m_instanceTypeHasBeenSet;
+}
+
+string ConsumptionResourceSummaryDataItem::GetInstanceTypeName() const
+{
+    return m_instanceTypeName;
+}
+
+void ConsumptionResourceSummaryDataItem::SetInstanceTypeName(const string& _instanceTypeName)
+{
+    m_instanceTypeName = _instanceTypeName;
+    m_instanceTypeNameHasBeenSet = true;
+}
+
+bool ConsumptionResourceSummaryDataItem::InstanceTypeNameHasBeenSet() const
+{
+    return m_instanceTypeNameHasBeenSet;
+}
+
+string ConsumptionResourceSummaryDataItem::GetPayTime() const
+{
+    return m_payTime;
+}
+
+void ConsumptionResourceSummaryDataItem::SetPayTime(const string& _payTime)
+{
+    m_payTime = _payTime;
+    m_payTimeHasBeenSet = true;
+}
+
+bool ConsumptionResourceSummaryDataItem::PayTimeHasBeenSet() const
+{
+    return m_payTimeHasBeenSet;
+}
+
+string ConsumptionResourceSummaryDataItem::GetZoneName() const
+{
+    return m_zoneName;
+}
+
+void ConsumptionResourceSummaryDataItem::SetZoneName(const string& _zoneName)
+{
+    m_zoneName = _zoneName;
+    m_zoneNameHasBeenSet = true;
+}
+
+bool ConsumptionResourceSummaryDataItem::ZoneNameHasBeenSet() const
+{
+    return m_zoneNameHasBeenSet;
+}
+
+string ConsumptionResourceSummaryDataItem::GetComponentConfig() const
+{
+    return m_componentConfig;
+}
+
+void ConsumptionResourceSummaryDataItem::SetComponentConfig(const string& _componentConfig)
+{
+    m_componentConfig = _componentConfig;
+    m_componentConfigHasBeenSet = true;
+}
+
+bool ConsumptionResourceSummaryDataItem::ComponentConfigHasBeenSet() const
+{
+    return m_componentConfigHasBeenSet;
 }
 

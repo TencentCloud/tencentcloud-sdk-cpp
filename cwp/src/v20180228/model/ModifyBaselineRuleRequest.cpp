@@ -25,7 +25,10 @@ using namespace std;
 ModifyBaselineRuleRequest::ModifyBaselineRuleRequest() :
     m_dataHasBeenSet(false),
     m_selectAllHasBeenSet(false),
-    m_filtersHasBeenSet(false)
+    m_filtersHasBeenSet(false),
+    m_idTypeHasBeenSet(false),
+    m_excludeIdsHasBeenSet(false),
+    m_categoryIdsHasBeenSet(false)
 {
 }
 
@@ -65,6 +68,40 @@ string ModifyBaselineRuleRequest::ToJsonString() const
         {
             d[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
             (*itr).ToJsonObject(d[key.c_str()][i], allocator);
+        }
+    }
+
+    if (m_idTypeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "IdType";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_idType, allocator);
+    }
+
+    if (m_excludeIdsHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ExcludeIds";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        for (auto itr = m_excludeIds.begin(); itr != m_excludeIds.end(); ++itr)
+        {
+            d[key.c_str()].PushBack(rapidjson::Value().SetUint64(*itr), allocator);
+        }
+    }
+
+    if (m_categoryIdsHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "CategoryIds";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        for (auto itr = m_categoryIds.begin(); itr != m_categoryIds.end(); ++itr)
+        {
+            d[key.c_str()].PushBack(rapidjson::Value().SetUint64(*itr), allocator);
         }
     }
 
@@ -122,6 +159,54 @@ void ModifyBaselineRuleRequest::SetFilters(const vector<Filter>& _filters)
 bool ModifyBaselineRuleRequest::FiltersHasBeenSet() const
 {
     return m_filtersHasBeenSet;
+}
+
+uint64_t ModifyBaselineRuleRequest::GetIdType() const
+{
+    return m_idType;
+}
+
+void ModifyBaselineRuleRequest::SetIdType(const uint64_t& _idType)
+{
+    m_idType = _idType;
+    m_idTypeHasBeenSet = true;
+}
+
+bool ModifyBaselineRuleRequest::IdTypeHasBeenSet() const
+{
+    return m_idTypeHasBeenSet;
+}
+
+vector<uint64_t> ModifyBaselineRuleRequest::GetExcludeIds() const
+{
+    return m_excludeIds;
+}
+
+void ModifyBaselineRuleRequest::SetExcludeIds(const vector<uint64_t>& _excludeIds)
+{
+    m_excludeIds = _excludeIds;
+    m_excludeIdsHasBeenSet = true;
+}
+
+bool ModifyBaselineRuleRequest::ExcludeIdsHasBeenSet() const
+{
+    return m_excludeIdsHasBeenSet;
+}
+
+vector<uint64_t> ModifyBaselineRuleRequest::GetCategoryIds() const
+{
+    return m_categoryIds;
+}
+
+void ModifyBaselineRuleRequest::SetCategoryIds(const vector<uint64_t>& _categoryIds)
+{
+    m_categoryIds = _categoryIds;
+    m_categoryIdsHasBeenSet = true;
+}
+
+bool ModifyBaselineRuleRequest::CategoryIdsHasBeenSet() const
+{
+    return m_categoryIdsHasBeenSet;
 }
 
 

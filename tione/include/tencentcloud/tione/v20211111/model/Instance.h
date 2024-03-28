@@ -387,6 +387,56 @@ DISABLE_NOTIFY_AND_MANUAL_RENEW：手动续费(取消自动续费)且到期不�
                      */
                     bool CvmInstanceIdHasBeenSet() const;
 
+                    /**
+                     * 获取部署失败错误码
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return ErrCode 部署失败错误码
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::string GetErrCode() const;
+
+                    /**
+                     * 设置部署失败错误码
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _errCode 部署失败错误码
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetErrCode(const std::string& _errCode);
+
+                    /**
+                     * 判断参数 ErrCode 是否已赋值
+                     * @return ErrCode 是否已赋值
+                     * 
+                     */
+                    bool ErrCodeHasBeenSet() const;
+
+                    /**
+                     * 获取部署失败错误信息
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return ErrMsg 部署失败错误信息
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::string GetErrMsg() const;
+
+                    /**
+                     * 设置部署失败错误信息
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _errMsg 部署失败错误信息
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetErrMsg(const std::string& _errMsg);
+
+                    /**
+                     * 判断参数 ErrMsg 是否已赋值
+                     * @return ErrMsg 是否已赋值
+                     * 
+                     */
+                    bool ErrMsgHasBeenSet() const;
+
                 private:
 
                     /**
@@ -482,6 +532,20 @@ DISABLE_NOTIFY_AND_MANUAL_RENEW：手动续费(取消自动续费)且到期不�
                      */
                     std::string m_cvmInstanceId;
                     bool m_cvmInstanceIdHasBeenSet;
+
+                    /**
+                     * 部署失败错误码
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_errCode;
+                    bool m_errCodeHasBeenSet;
+
+                    /**
+                     * 部署失败错误信息
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_errMsg;
+                    bool m_errMsgHasBeenSet;
 
                 };
             }

@@ -25,7 +25,11 @@ ConsumptionRegionSummaryDataItem::ConsumptionRegionSummaryDataItem() :
     m_regionNameHasBeenSet(false),
     m_realTotalCostHasBeenSet(false),
     m_trendHasBeenSet(false),
-    m_businessHasBeenSet(false)
+    m_businessHasBeenSet(false),
+    m_cashPayAmountHasBeenSet(false),
+    m_voucherPayAmountHasBeenSet(false),
+    m_incentivePayAmountHasBeenSet(false),
+    m_transferPayAmountHasBeenSet(false)
 {
 }
 
@@ -101,6 +105,46 @@ CoreInternalOutcome ConsumptionRegionSummaryDataItem::Deserialize(const rapidjso
         m_businessHasBeenSet = true;
     }
 
+    if (value.HasMember("CashPayAmount") && !value["CashPayAmount"].IsNull())
+    {
+        if (!value["CashPayAmount"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `ConsumptionRegionSummaryDataItem.CashPayAmount` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_cashPayAmount = string(value["CashPayAmount"].GetString());
+        m_cashPayAmountHasBeenSet = true;
+    }
+
+    if (value.HasMember("VoucherPayAmount") && !value["VoucherPayAmount"].IsNull())
+    {
+        if (!value["VoucherPayAmount"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `ConsumptionRegionSummaryDataItem.VoucherPayAmount` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_voucherPayAmount = string(value["VoucherPayAmount"].GetString());
+        m_voucherPayAmountHasBeenSet = true;
+    }
+
+    if (value.HasMember("IncentivePayAmount") && !value["IncentivePayAmount"].IsNull())
+    {
+        if (!value["IncentivePayAmount"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `ConsumptionRegionSummaryDataItem.IncentivePayAmount` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_incentivePayAmount = string(value["IncentivePayAmount"].GetString());
+        m_incentivePayAmountHasBeenSet = true;
+    }
+
+    if (value.HasMember("TransferPayAmount") && !value["TransferPayAmount"].IsNull())
+    {
+        if (!value["TransferPayAmount"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `ConsumptionRegionSummaryDataItem.TransferPayAmount` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_transferPayAmount = string(value["TransferPayAmount"].GetString());
+        m_transferPayAmountHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -154,6 +198,38 @@ void ConsumptionRegionSummaryDataItem::ToJsonObject(rapidjson::Value &value, rap
             value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
             (*itr).ToJsonObject(value[key.c_str()][i], allocator);
         }
+    }
+
+    if (m_cashPayAmountHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "CashPayAmount";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_cashPayAmount.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_voucherPayAmountHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "VoucherPayAmount";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_voucherPayAmount.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_incentivePayAmountHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "IncentivePayAmount";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_incentivePayAmount.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_transferPayAmountHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "TransferPayAmount";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_transferPayAmount.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -237,5 +313,69 @@ void ConsumptionRegionSummaryDataItem::SetBusiness(const vector<ConsumptionBusin
 bool ConsumptionRegionSummaryDataItem::BusinessHasBeenSet() const
 {
     return m_businessHasBeenSet;
+}
+
+string ConsumptionRegionSummaryDataItem::GetCashPayAmount() const
+{
+    return m_cashPayAmount;
+}
+
+void ConsumptionRegionSummaryDataItem::SetCashPayAmount(const string& _cashPayAmount)
+{
+    m_cashPayAmount = _cashPayAmount;
+    m_cashPayAmountHasBeenSet = true;
+}
+
+bool ConsumptionRegionSummaryDataItem::CashPayAmountHasBeenSet() const
+{
+    return m_cashPayAmountHasBeenSet;
+}
+
+string ConsumptionRegionSummaryDataItem::GetVoucherPayAmount() const
+{
+    return m_voucherPayAmount;
+}
+
+void ConsumptionRegionSummaryDataItem::SetVoucherPayAmount(const string& _voucherPayAmount)
+{
+    m_voucherPayAmount = _voucherPayAmount;
+    m_voucherPayAmountHasBeenSet = true;
+}
+
+bool ConsumptionRegionSummaryDataItem::VoucherPayAmountHasBeenSet() const
+{
+    return m_voucherPayAmountHasBeenSet;
+}
+
+string ConsumptionRegionSummaryDataItem::GetIncentivePayAmount() const
+{
+    return m_incentivePayAmount;
+}
+
+void ConsumptionRegionSummaryDataItem::SetIncentivePayAmount(const string& _incentivePayAmount)
+{
+    m_incentivePayAmount = _incentivePayAmount;
+    m_incentivePayAmountHasBeenSet = true;
+}
+
+bool ConsumptionRegionSummaryDataItem::IncentivePayAmountHasBeenSet() const
+{
+    return m_incentivePayAmountHasBeenSet;
+}
+
+string ConsumptionRegionSummaryDataItem::GetTransferPayAmount() const
+{
+    return m_transferPayAmount;
+}
+
+void ConsumptionRegionSummaryDataItem::SetTransferPayAmount(const string& _transferPayAmount)
+{
+    m_transferPayAmount = _transferPayAmount;
+    m_transferPayAmountHasBeenSet = true;
+}
+
+bool ConsumptionRegionSummaryDataItem::TransferPayAmountHasBeenSet() const
+{
+    return m_transferPayAmountHasBeenSet;
 }
 

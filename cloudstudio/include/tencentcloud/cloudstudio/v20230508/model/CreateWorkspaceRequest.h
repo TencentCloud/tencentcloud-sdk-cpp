@@ -46,15 +46,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取工作空间名称
-                     * @return Name 工作空间名称
+                     * 获取工作空间名称, 长度限制 2~64
+                     * @return Name 工作空间名称, 长度限制 2~64
                      * 
                      */
                     std::string GetName() const;
 
                     /**
-                     * 设置工作空间名称
-                     * @param _name 工作空间名称
+                     * 设置工作空间名称, 长度限制 2~64
+                     * @param _name 工作空间名称, 长度限制 2~64
                      * 
                      */
                     void SetName(const std::string& _name);
@@ -67,15 +67,15 @@ namespace TencentCloud
                     bool NameHasBeenSet() const;
 
                     /**
-                     * 获取工作空间描述
-                     * @return Description 工作空间描述
+                     * 获取工作空间描述, 长度限制 0~255
+                     * @return Description 工作空间描述, 长度限制 0~255
                      * 
                      */
                     std::string GetDescription() const;
 
                     /**
-                     * 设置工作空间描述
-                     * @param _description 工作空间描述
+                     * 设置工作空间描述, 长度限制 0~255
+                     * @param _description 工作空间描述, 长度限制 0~255
                      * 
                      */
                     void SetDescription(const std::string& _description);
@@ -109,15 +109,15 @@ namespace TencentCloud
                     bool SpecsHasBeenSet() const;
 
                     /**
-                     * 获取工作空间基础镜像名称, 默认会使用 All In One 镜像
-                     * @return Image 工作空间基础镜像名称, 默认会使用 All In One 镜像
+                     * 获取工作空间基础镜像名称, 默认会使用 All In One 镜像, 长度限制 1~255
+                     * @return Image 工作空间基础镜像名称, 默认会使用 All In One 镜像, 长度限制 1~255
                      * 
                      */
                     std::string GetImage() const;
 
                     /**
-                     * 设置工作空间基础镜像名称, 默认会使用 All In One 镜像
-                     * @param _image 工作空间基础镜像名称, 默认会使用 All In One 镜像
+                     * 设置工作空间基础镜像名称, 默认会使用 All In One 镜像, 长度限制 1~255
+                     * @param _image 工作空间基础镜像名称, 默认会使用 All In One 镜像, 长度限制 1~255
                      * 
                      */
                     void SetImage(const std::string& _image);
@@ -172,15 +172,15 @@ namespace TencentCloud
                     bool EnvsHasBeenSet() const;
 
                     /**
-                     * 获取预装插件. 工作空间启动时, 会自动安装这些插件 
-                     * @return Extensions 预装插件. 工作空间启动时, 会自动安装这些插件 
+                     * 获取预装插件. 工作空间启动时, 会自动安装这些插件。长度限制: 0~10
+                     * @return Extensions 预装插件. 工作空间启动时, 会自动安装这些插件。长度限制: 0~10
                      * 
                      */
                     std::vector<std::string> GetExtensions() const;
 
                     /**
-                     * 设置预装插件. 工作空间启动时, 会自动安装这些插件 
-                     * @param _extensions 预装插件. 工作空间启动时, 会自动安装这些插件 
+                     * 设置预装插件. 工作空间启动时, 会自动安装这些插件。长度限制: 0~10
+                     * @param _extensions 预装插件. 工作空间启动时, 会自动安装这些插件。长度限制: 0~10
                      * 
                      */
                     void SetExtensions(const std::vector<std::string>& _extensions);
@@ -213,16 +213,100 @@ namespace TencentCloud
                      */
                     bool LifecycleHasBeenSet() const;
 
+                    /**
+                     * 获取应用名称
+                     * @return AppId 应用名称
+                     * 
+                     */
+                    int64_t GetAppId() const;
+
+                    /**
+                     * 设置应用名称
+                     * @param _appId 应用名称
+                     * 
+                     */
+                    void SetAppId(const int64_t& _appId);
+
+                    /**
+                     * 判断参数 AppId 是否已赋值
+                     * @return AppId 是否已赋值
+                     * 
+                     */
+                    bool AppIdHasBeenSet() const;
+
+                    /**
+                     * 获取用户UIN
+                     * @return Uin 用户UIN
+                     * 
+                     */
+                    std::string GetUin() const;
+
+                    /**
+                     * 设置用户UIN
+                     * @param _uin 用户UIN
+                     * 
+                     */
+                    void SetUin(const std::string& _uin);
+
+                    /**
+                     * 判断参数 Uin 是否已赋值
+                     * @return Uin 是否已赋值
+                     * 
+                     */
+                    bool UinHasBeenSet() const;
+
+                    /**
+                     * 获取VPCID
+                     * @return UniqVpcId VPCID
+                     * 
+                     */
+                    std::string GetUniqVpcId() const;
+
+                    /**
+                     * 设置VPCID
+                     * @param _uniqVpcId VPCID
+                     * 
+                     */
+                    void SetUniqVpcId(const std::string& _uniqVpcId);
+
+                    /**
+                     * 判断参数 UniqVpcId 是否已赋值
+                     * @return UniqVpcId 是否已赋值
+                     * 
+                     */
+                    bool UniqVpcIdHasBeenSet() const;
+
+                    /**
+                     * 获取子网ID
+                     * @return SubnetId 子网ID
+                     * 
+                     */
+                    std::string GetSubnetId() const;
+
+                    /**
+                     * 设置子网ID
+                     * @param _subnetId 子网ID
+                     * 
+                     */
+                    void SetSubnetId(const std::string& _subnetId);
+
+                    /**
+                     * 判断参数 SubnetId 是否已赋值
+                     * @return SubnetId 是否已赋值
+                     * 
+                     */
+                    bool SubnetIdHasBeenSet() const;
+
                 private:
 
                     /**
-                     * 工作空间名称
+                     * 工作空间名称, 长度限制 2~64
                      */
                     std::string m_name;
                     bool m_nameHasBeenSet;
 
                     /**
-                     * 工作空间描述
+                     * 工作空间描述, 长度限制 0~255
                      */
                     std::string m_description;
                     bool m_descriptionHasBeenSet;
@@ -234,7 +318,7 @@ namespace TencentCloud
                     bool m_specsHasBeenSet;
 
                     /**
-                     * 工作空间基础镜像名称, 默认会使用 All In One 镜像
+                     * 工作空间基础镜像名称, 默认会使用 All In One 镜像, 长度限制 1~255
                      */
                     std::string m_image;
                     bool m_imageHasBeenSet;
@@ -252,7 +336,7 @@ namespace TencentCloud
                     bool m_envsHasBeenSet;
 
                     /**
-                     * 预装插件. 工作空间启动时, 会自动安装这些插件 
+                     * 预装插件. 工作空间启动时, 会自动安装这些插件。长度限制: 0~10
                      */
                     std::vector<std::string> m_extensions;
                     bool m_extensionsHasBeenSet;
@@ -262,6 +346,30 @@ namespace TencentCloud
                      */
                     LifeCycle m_lifecycle;
                     bool m_lifecycleHasBeenSet;
+
+                    /**
+                     * 应用名称
+                     */
+                    int64_t m_appId;
+                    bool m_appIdHasBeenSet;
+
+                    /**
+                     * 用户UIN
+                     */
+                    std::string m_uin;
+                    bool m_uinHasBeenSet;
+
+                    /**
+                     * VPCID
+                     */
+                    std::string m_uniqVpcId;
+                    bool m_uniqVpcIdHasBeenSet;
+
+                    /**
+                     * 子网ID
+                     */
+                    std::string m_subnetId;
+                    bool m_subnetIdHasBeenSet;
 
                 };
             }

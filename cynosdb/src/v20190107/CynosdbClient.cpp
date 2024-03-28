@@ -5286,6 +5286,49 @@ CynosdbClient::RollBackClusterOutcomeCallable CynosdbClient::RollBackClusterCall
     return task->get_future();
 }
 
+CynosdbClient::RollbackToNewClusterOutcome CynosdbClient::RollbackToNewCluster(const RollbackToNewClusterRequest &request)
+{
+    auto outcome = MakeRequest(request, "RollbackToNewCluster");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        RollbackToNewClusterResponse rsp = RollbackToNewClusterResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return RollbackToNewClusterOutcome(rsp);
+        else
+            return RollbackToNewClusterOutcome(o.GetError());
+    }
+    else
+    {
+        return RollbackToNewClusterOutcome(outcome.GetError());
+    }
+}
+
+void CynosdbClient::RollbackToNewClusterAsync(const RollbackToNewClusterRequest& request, const RollbackToNewClusterAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->RollbackToNewCluster(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+CynosdbClient::RollbackToNewClusterOutcomeCallable CynosdbClient::RollbackToNewClusterCallable(const RollbackToNewClusterRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<RollbackToNewClusterOutcome()>>(
+        [this, request]()
+        {
+            return this->RollbackToNewCluster(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 CynosdbClient::SearchClusterDatabasesOutcome CynosdbClient::SearchClusterDatabases(const SearchClusterDatabasesRequest &request)
 {
     auto outcome = MakeRequest(request, "SearchClusterDatabases");

@@ -28,7 +28,8 @@ CreateProjectRequest::CreateProjectRequest() :
     m_logoHasBeenSet(false),
     m_markHasBeenSet(false),
     m_isApplyHasBeenSet(false),
-    m_defaultPanelTypeHasBeenSet(false)
+    m_defaultPanelTypeHasBeenSet(false),
+    m_managePlatformHasBeenSet(false)
 {
 }
 
@@ -85,6 +86,14 @@ string CreateProjectRequest::ToJsonString() const
         string key = "DefaultPanelType";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_defaultPanelType, allocator);
+    }
+
+    if (m_managePlatformHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ManagePlatform";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_managePlatform.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -189,6 +198,22 @@ void CreateProjectRequest::SetDefaultPanelType(const int64_t& _defaultPanelType)
 bool CreateProjectRequest::DefaultPanelTypeHasBeenSet() const
 {
     return m_defaultPanelTypeHasBeenSet;
+}
+
+string CreateProjectRequest::GetManagePlatform() const
+{
+    return m_managePlatform;
+}
+
+void CreateProjectRequest::SetManagePlatform(const string& _managePlatform)
+{
+    m_managePlatform = _managePlatform;
+    m_managePlatformHasBeenSet = true;
+}
+
+bool CreateProjectRequest::ManagePlatformHasBeenSet() const
+{
+    return m_managePlatformHasBeenSet;
 }
 
 

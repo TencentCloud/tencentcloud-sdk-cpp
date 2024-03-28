@@ -25,7 +25,8 @@ using namespace std;
 
 DescribeBaselineItemInfoResponse::DescribeBaselineItemInfoResponse() :
     m_listHasBeenSet(false),
-    m_totalHasBeenSet(false)
+    m_totalHasBeenSet(false),
+    m_categoryListHasBeenSet(false)
 {
 }
 
@@ -93,6 +94,26 @@ CoreInternalOutcome DescribeBaselineItemInfoResponse::Deserialize(const string &
         m_totalHasBeenSet = true;
     }
 
+    if (rsp.HasMember("CategoryList") && !rsp["CategoryList"].IsNull())
+    {
+        if (!rsp["CategoryList"].IsArray())
+            return CoreInternalOutcome(Core::Error("response `CategoryList` is not array type"));
+
+        const rapidjson::Value &tmpValue = rsp["CategoryList"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            BaselineItemsCategory item;
+            CoreInternalOutcome outcome = item.Deserialize(*itr);
+            if (!outcome.IsSuccess())
+            {
+                outcome.GetError().SetRequestId(requestId);
+                return outcome;
+            }
+            m_categoryList.push_back(item);
+        }
+        m_categoryListHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -126,6 +147,21 @@ string DescribeBaselineItemInfoResponse::ToJsonString() const
         value.AddMember(iKey, m_total, allocator);
     }
 
+    if (m_categoryListHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "CategoryList";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_categoryList.begin(); itr != m_categoryList.end(); ++itr, ++i)
+        {
+            value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(value[key.c_str()][i], allocator);
+        }
+    }
+
     rapidjson::Value iKey(rapidjson::kStringType);
     string key = "RequestId";
     iKey.SetString(key.c_str(), allocator);
@@ -156,6 +192,16 @@ int64_t DescribeBaselineItemInfoResponse::GetTotal() const
 bool DescribeBaselineItemInfoResponse::TotalHasBeenSet() const
 {
     return m_totalHasBeenSet;
+}
+
+vector<BaselineItemsCategory> DescribeBaselineItemInfoResponse::GetCategoryList() const
+{
+    return m_categoryList;
+}
+
+bool DescribeBaselineItemInfoResponse::CategoryListHasBeenSet() const
+{
+    return m_categoryListHasBeenSet;
 }
 
 

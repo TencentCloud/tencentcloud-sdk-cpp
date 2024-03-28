@@ -68,15 +68,15 @@ namespace TencentCloud
                     bool LimitHasBeenSet() const;
 
                     /**
-                     * 获取分页偏移量，Offset=0表示第一页，如果Limit=100，则Offset=100表示第二页，Offset=200表示第三页，依次类推
-                     * @return Offset 分页偏移量，Offset=0表示第一页，如果Limit=100，则Offset=100表示第二页，Offset=200表示第三页，依次类推
+                     * 获取分页偏移量，Offset=0表示第一页，如果Limit=100，则Offset=100表示第二页，Offset=200表示第三页，以此类推
+                     * @return Offset 分页偏移量，Offset=0表示第一页，如果Limit=100，则Offset=100表示第二页，Offset=200表示第三页，以此类推
                      * 
                      */
                     uint64_t GetOffset() const;
 
                     /**
-                     * 设置分页偏移量，Offset=0表示第一页，如果Limit=100，则Offset=100表示第二页，Offset=200表示第三页，依次类推
-                     * @param _offset 分页偏移量，Offset=0表示第一页，如果Limit=100，则Offset=100表示第二页，Offset=200表示第三页，依次类推
+                     * 设置分页偏移量，Offset=0表示第一页，如果Limit=100，则Offset=100表示第二页，Offset=200表示第三页，以此类推
+                     * @param _offset 分页偏移量，Offset=0表示第一页，如果Limit=100，则Offset=100表示第二页，Offset=200表示第三页，以此类推
                      * 
                      */
                     void SetOffset(const uint64_t& _offset);
@@ -567,19 +567,15 @@ desc - 降序
                     bool ItemCodesHasBeenSet() const;
 
                     /**
-                     * 获取模糊搜索：支持标签、资源id、资源别名、分拆项id和分拆项名称
-
-                     * @return SearchKey 模糊搜索：支持标签、资源id、资源别名、分拆项id和分拆项名称
-
+                     * 获取模糊搜索：支持标签、资源id、资源别名
+                     * @return SearchKey 模糊搜索：支持标签、资源id、资源别名
                      * 
                      */
                     std::string GetSearchKey() const;
 
                     /**
-                     * 设置模糊搜索：支持标签、资源id、资源别名、分拆项id和分拆项名称
-
-                     * @param _searchKey 模糊搜索：支持标签、资源id、资源别名、分拆项id和分拆项名称
-
+                     * 设置模糊搜索：支持标签、资源id、资源别名
+                     * @param _searchKey 模糊搜索：支持标签、资源id、资源别名
                      * 
                      */
                     void SetSearchKey(const std::string& _searchKey);
@@ -659,7 +655,7 @@ desc - 降序
                     bool m_limitHasBeenSet;
 
                     /**
-                     * 分页偏移量，Offset=0表示第一页，如果Limit=100，则Offset=100表示第二页，Offset=200表示第三页，依次类推
+                     * 分页偏移量，Offset=0表示第一页，如果Limit=100，则Offset=100表示第二页，Offset=200表示第三页，以此类推
                      */
                     uint64_t m_offset;
                     bool m_offsetHasBeenSet;
@@ -798,8 +794,7 @@ desc - 降序
                     bool m_itemCodesHasBeenSet;
 
                     /**
-                     * 模糊搜索：支持标签、资源id、资源别名、分拆项id和分拆项名称
-
+                     * 模糊搜索：支持标签、资源id、资源别名
                      */
                     std::string m_searchKey;
                     bool m_searchKeyHasBeenSet;

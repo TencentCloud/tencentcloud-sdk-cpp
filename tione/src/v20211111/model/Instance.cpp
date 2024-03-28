@@ -32,7 +32,9 @@ Instance::Instance() :
     m_specIdHasBeenSet(false),
     m_specAliasHasBeenSet(false),
     m_specFeaturesHasBeenSet(false),
-    m_cvmInstanceIdHasBeenSet(false)
+    m_cvmInstanceIdHasBeenSet(false),
+    m_errCodeHasBeenSet(false),
+    m_errMsgHasBeenSet(false)
 {
 }
 
@@ -178,6 +180,26 @@ CoreInternalOutcome Instance::Deserialize(const rapidjson::Value &value)
         m_cvmInstanceIdHasBeenSet = true;
     }
 
+    if (value.HasMember("ErrCode") && !value["ErrCode"].IsNull())
+    {
+        if (!value["ErrCode"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `Instance.ErrCode` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_errCode = string(value["ErrCode"].GetString());
+        m_errCodeHasBeenSet = true;
+    }
+
+    if (value.HasMember("ErrMsg") && !value["ErrMsg"].IsNull())
+    {
+        if (!value["ErrMsg"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `Instance.ErrMsg` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_errMsg = string(value["ErrMsg"].GetString());
+        m_errMsgHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -286,6 +308,22 @@ void Instance::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Alloca
         string key = "CvmInstanceId";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_cvmInstanceId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_errCodeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ErrCode";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_errCode.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_errMsgHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ErrMsg";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_errMsg.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -481,5 +519,37 @@ void Instance::SetCvmInstanceId(const string& _cvmInstanceId)
 bool Instance::CvmInstanceIdHasBeenSet() const
 {
     return m_cvmInstanceIdHasBeenSet;
+}
+
+string Instance::GetErrCode() const
+{
+    return m_errCode;
+}
+
+void Instance::SetErrCode(const string& _errCode)
+{
+    m_errCode = _errCode;
+    m_errCodeHasBeenSet = true;
+}
+
+bool Instance::ErrCodeHasBeenSet() const
+{
+    return m_errCodeHasBeenSet;
+}
+
+string Instance::GetErrMsg() const
+{
+    return m_errMsg;
+}
+
+void Instance::SetErrMsg(const string& _errMsg)
+{
+    m_errMsg = _errMsg;
+    m_errMsgHasBeenSet = true;
+}
+
+bool Instance::ErrMsgHasBeenSet() const
+{
+    return m_errMsgHasBeenSet;
 }
 

@@ -65,15 +65,15 @@ namespace TencentCloud
                     bool ProjectIdHasBeenSet() const;
 
                     /**
-                     * 获取页数
-                     * @return PageNumber 页数
+                     * 获取页数:默认1
+                     * @return PageNumber 页数:默认1
                      * 
                      */
                     uint64_t GetPageNumber() const;
 
                     /**
-                     * 设置页数
-                     * @param _pageNumber 页数
+                     * 设置页数:默认1
+                     * @param _pageNumber 页数:默认1
                      * 
                      */
                     void SetPageNumber(const uint64_t& _pageNumber);
@@ -86,15 +86,15 @@ namespace TencentCloud
                     bool PageNumberHasBeenSet() const;
 
                     /**
-                     * 获取分页大小
-                     * @return PageSize 分页大小
+                     * 获取分页大小,默认最小10
+                     * @return PageSize 分页大小,默认最小10
                      * 
                      */
                     uint64_t GetPageSize() const;
 
                     /**
-                     * 设置分页大小
-                     * @param _pageSize 分页大小
+                     * 设置分页大小,默认最小10
+                     * @param _pageSize 分页大小,默认最小10
                      * 
                      */
                     void SetPageSize(const uint64_t& _pageSize);
@@ -136,13 +136,13 @@ namespace TencentCloud
                     bool m_projectIdHasBeenSet;
 
                     /**
-                     * 页数
+                     * 页数:默认1
                      */
                     uint64_t m_pageNumber;
                     bool m_pageNumberHasBeenSet;
 
                     /**
-                     * 分页大小
+                     * 分页大小,默认最小10
                      */
                     uint64_t m_pageSize;
                     bool m_pageSizeHasBeenSet;

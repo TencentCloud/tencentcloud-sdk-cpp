@@ -23,7 +23,8 @@ using namespace std;
 MessageItem::MessageItem() :
     m_messageTypeHasBeenSet(false),
     m_textMessageHasBeenSet(false),
-    m_imageMessageHasBeenSet(false)
+    m_imageMessageHasBeenSet(false),
+    m_customMessageHasBeenSet(false)
 {
 }
 
@@ -62,6 +63,23 @@ CoreInternalOutcome MessageItem::Deserialize(const rapidjson::Value &value)
         m_imageMessageHasBeenSet = true;
     }
 
+    if (value.HasMember("CustomMessage") && !value["CustomMessage"].IsNull())
+    {
+        if (!value["CustomMessage"].IsObject())
+        {
+            return CoreInternalOutcome(Core::Error("response `MessageItem.CustomMessage` is not object type").SetRequestId(requestId));
+        }
+
+        CoreInternalOutcome outcome = m_customMessage.Deserialize(value["CustomMessage"]);
+        if (!outcome.IsSuccess())
+        {
+            outcome.GetError().SetRequestId(requestId);
+            return outcome;
+        }
+
+        m_customMessageHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -91,6 +109,15 @@ void MessageItem::ToJsonObject(rapidjson::Value &value, rapidjson::Document::All
         string key = "ImageMessage";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_imageMessage.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_customMessageHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "CustomMessage";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_customMessage.ToJsonObject(value[key.c_str()], allocator);
     }
 
 }
@@ -142,5 +169,21 @@ void MessageItem::SetImageMessage(const string& _imageMessage)
 bool MessageItem::ImageMessageHasBeenSet() const
 {
     return m_imageMessageHasBeenSet;
+}
+
+CustomMsgContent MessageItem::GetCustomMessage() const
+{
+    return m_customMessage;
+}
+
+void MessageItem::SetCustomMessage(const CustomMsgContent& _customMessage)
+{
+    m_customMessage = _customMessage;
+    m_customMessageHasBeenSet = true;
+}
+
+bool MessageItem::CustomMessageHasBeenSet() const
+{
+    return m_customMessageHasBeenSet;
 }
 

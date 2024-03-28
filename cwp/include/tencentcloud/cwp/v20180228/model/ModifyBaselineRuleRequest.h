@@ -107,6 +107,69 @@ namespace TencentCloud
                      */
                     bool FiltersHasBeenSet() const;
 
+                    /**
+                     * 获取0:检测项，1:检测项分类
+                     * @return IdType 0:检测项，1:检测项分类
+                     * 
+                     */
+                    uint64_t GetIdType() const;
+
+                    /**
+                     * 设置0:检测项，1:检测项分类
+                     * @param _idType 0:检测项，1:检测项分类
+                     * 
+                     */
+                    void SetIdType(const uint64_t& _idType);
+
+                    /**
+                     * 判断参数 IdType 是否已赋值
+                     * @return IdType 是否已赋值
+                     * 
+                     */
+                    bool IdTypeHasBeenSet() const;
+
+                    /**
+                     * 获取需要排除的检测项id
+                     * @return ExcludeIds 需要排除的检测项id
+                     * 
+                     */
+                    std::vector<uint64_t> GetExcludeIds() const;
+
+                    /**
+                     * 设置需要排除的检测项id
+                     * @param _excludeIds 需要排除的检测项id
+                     * 
+                     */
+                    void SetExcludeIds(const std::vector<uint64_t>& _excludeIds);
+
+                    /**
+                     * 判断参数 ExcludeIds 是否已赋值
+                     * @return ExcludeIds 是否已赋值
+                     * 
+                     */
+                    bool ExcludeIdsHasBeenSet() const;
+
+                    /**
+                     * 获取勾选的检测项分类
+                     * @return CategoryIds 勾选的检测项分类
+                     * 
+                     */
+                    std::vector<uint64_t> GetCategoryIds() const;
+
+                    /**
+                     * 设置勾选的检测项分类
+                     * @param _categoryIds 勾选的检测项分类
+                     * 
+                     */
+                    void SetCategoryIds(const std::vector<uint64_t>& _categoryIds);
+
+                    /**
+                     * 判断参数 CategoryIds 是否已赋值
+                     * @return CategoryIds 是否已赋值
+                     * 
+                     */
+                    bool CategoryIdsHasBeenSet() const;
+
                 private:
 
                     /**
@@ -126,6 +189,24 @@ namespace TencentCloud
                      */
                     std::vector<Filter> m_filters;
                     bool m_filtersHasBeenSet;
+
+                    /**
+                     * 0:检测项，1:检测项分类
+                     */
+                    uint64_t m_idType;
+                    bool m_idTypeHasBeenSet;
+
+                    /**
+                     * 需要排除的检测项id
+                     */
+                    std::vector<uint64_t> m_excludeIds;
+                    bool m_excludeIdsHasBeenSet;
+
+                    /**
+                     * 勾选的检测项分类
+                     */
+                    std::vector<uint64_t> m_categoryIds;
+                    bool m_categoryIdsHasBeenSet;
 
                 };
             }

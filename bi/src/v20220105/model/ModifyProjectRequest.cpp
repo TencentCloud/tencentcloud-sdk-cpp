@@ -31,7 +31,8 @@ ModifyProjectRequest::ModifyProjectRequest() :
     m_isApplyHasBeenSet(false),
     m_seedHasBeenSet(false),
     m_defaultPanelTypeHasBeenSet(false),
-    m_panelScopeHasBeenSet(false)
+    m_panelScopeHasBeenSet(false),
+    m_managePlatformHasBeenSet(false)
 {
 }
 
@@ -112,6 +113,14 @@ string ModifyProjectRequest::ToJsonString() const
         string key = "PanelScope";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_panelScope.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_managePlatformHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ManagePlatform";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_managePlatform.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -264,6 +273,22 @@ void ModifyProjectRequest::SetPanelScope(const string& _panelScope)
 bool ModifyProjectRequest::PanelScopeHasBeenSet() const
 {
     return m_panelScopeHasBeenSet;
+}
+
+string ModifyProjectRequest::GetManagePlatform() const
+{
+    return m_managePlatform;
+}
+
+void ModifyProjectRequest::SetManagePlatform(const string& _managePlatform)
+{
+    m_managePlatform = _managePlatform;
+    m_managePlatformHasBeenSet = true;
+}
+
+bool ModifyProjectRequest::ManagePlatformHasBeenSet() const
+{
+    return m_managePlatformHasBeenSet;
 }
 
 

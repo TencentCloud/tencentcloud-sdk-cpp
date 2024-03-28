@@ -137,6 +137,7 @@ set(lcic_public_header_model
   include/tencentcloud/lcic/v20220817/model/ModifyRoomRequest.h
   include/tencentcloud/lcic/v20220817/model/AnswerInfo.h
   include/tencentcloud/lcic/v20220817/model/DescribeRoomStatisticsRequest.h
+  include/tencentcloud/lcic/v20220817/model/CustomMsgContent.h
   include/tencentcloud/lcic/v20220817/model/DescribeDocumentsByRoomResponse.h
   include/tencentcloud/lcic/v20220817/model/LoginOriginIdResponse.h
   include/tencentcloud/lcic/v20220817/model/DescribeQuestionListResponse.h
@@ -291,6 +292,7 @@ set(lcic_src
   src/v20220817/model/ModifyRoomRequest.cpp
   src/v20220817/model/AnswerInfo.cpp
   src/v20220817/model/DescribeRoomStatisticsRequest.cpp
+  src/v20220817/model/CustomMsgContent.cpp
   src/v20220817/model/DescribeDocumentsByRoomResponse.cpp
   src/v20220817/model/LoginOriginIdResponse.cpp
   src/v20220817/model/DescribeQuestionListResponse.cpp

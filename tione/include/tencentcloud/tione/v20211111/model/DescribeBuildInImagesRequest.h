@@ -21,6 +21,7 @@
 #include <vector>
 #include <map>
 #include <tencentcloud/core/AbstractModel.h>
+#include <tencentcloud/tione/v20211111/model/ImageFIlter.h>
 
 
 namespace TencentCloud
@@ -42,7 +43,34 @@ namespace TencentCloud
                     std::string ToJsonString() const;
 
 
+                    /**
+                     * 获取镜像过滤器
+                     * @return ImageFilters 镜像过滤器
+                     * 
+                     */
+                    std::vector<ImageFIlter> GetImageFilters() const;
+
+                    /**
+                     * 设置镜像过滤器
+                     * @param _imageFilters 镜像过滤器
+                     * 
+                     */
+                    void SetImageFilters(const std::vector<ImageFIlter>& _imageFilters);
+
+                    /**
+                     * 判断参数 ImageFilters 是否已赋值
+                     * @return ImageFilters 是否已赋值
+                     * 
+                     */
+                    bool ImageFiltersHasBeenSet() const;
+
                 private:
+
+                    /**
+                     * 镜像过滤器
+                     */
+                    std::vector<ImageFIlter> m_imageFilters;
+                    bool m_imageFiltersHasBeenSet;
 
                 };
             }

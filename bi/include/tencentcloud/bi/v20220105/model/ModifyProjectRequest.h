@@ -231,6 +231,27 @@ namespace TencentCloud
                      */
                     bool PanelScopeHasBeenSet() const;
 
+                    /**
+                     * 获取项目管理平台
+                     * @return ManagePlatform 项目管理平台
+                     * 
+                     */
+                    std::string GetManagePlatform() const;
+
+                    /**
+                     * 设置项目管理平台
+                     * @param _managePlatform 项目管理平台
+                     * 
+                     */
+                    void SetManagePlatform(const std::string& _managePlatform);
+
+                    /**
+                     * 判断参数 ManagePlatform 是否已赋值
+                     * @return ManagePlatform 是否已赋值
+                     * 
+                     */
+                    bool ManagePlatformHasBeenSet() const;
+
                 private:
 
                     /**
@@ -286,6 +307,12 @@ namespace TencentCloud
                      */
                     std::string m_panelScope;
                     bool m_panelScopeHasBeenSet;
+
+                    /**
+                     * 项目管理平台
+                     */
+                    std::string m_managePlatform;
+                    bool m_managePlatformHasBeenSet;
 
                 };
             }

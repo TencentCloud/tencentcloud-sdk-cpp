@@ -2895,7 +2895,9 @@ namespace TencentCloud
                 DeleteAllJavaMemShellsOutcomeCallable DeleteAllJavaMemShellsCallable(const Model::DeleteAllJavaMemShellsRequest& request);
 
                 /**
-                 *删除网络攻击日志
+                 *ModifyEventAttackStatus 接口替代
+
+删除网络攻击日志
                  * @param req DeleteAttackLogsRequest
                  * @return DeleteAttackLogsOutcome
                  */
@@ -6102,7 +6104,9 @@ namespace TencentCloud
                 ExportAttackEventsOutcomeCallable ExportAttackEventsCallable(const Model::ExportAttackEventsRequest& request);
 
                 /**
-                 *导出网络攻击日志
+                 *ExportAttackEvents接口替代
+
+导出网络攻击日志
                  * @param req ExportAttackLogsRequest
                  * @return ExportAttackLogsOutcome
                  */

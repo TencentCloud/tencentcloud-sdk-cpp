@@ -36,7 +36,9 @@ EndpointItem::EndpointItem() :
     m_encryptConnHasBeenSet(false),
     m_databaseNetEnvHasBeenSet(false),
     m_ccnOwnerUinHasBeenSet(false),
-    m_extraAttrHasBeenSet(false)
+    m_extraAttrHasBeenSet(false),
+    m_childInstanceIdHasBeenSet(false),
+    m_childInstanceTypeHasBeenSet(false)
 {
 }
 
@@ -215,6 +217,26 @@ CoreInternalOutcome EndpointItem::Deserialize(const rapidjson::Value &value)
         m_extraAttrHasBeenSet = true;
     }
 
+    if (value.HasMember("ChildInstanceId") && !value["ChildInstanceId"].IsNull())
+    {
+        if (!value["ChildInstanceId"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `EndpointItem.ChildInstanceId` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_childInstanceId = string(value["ChildInstanceId"].GetString());
+        m_childInstanceIdHasBeenSet = true;
+    }
+
+    if (value.HasMember("ChildInstanceType") && !value["ChildInstanceType"].IsNull())
+    {
+        if (!value["ChildInstanceType"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `EndpointItem.ChildInstanceType` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_childInstanceType = string(value["ChildInstanceType"].GetString());
+        m_childInstanceTypeHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -355,6 +377,22 @@ void EndpointItem::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Al
             value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
             (*itr).ToJsonObject(value[key.c_str()][i], allocator);
         }
+    }
+
+    if (m_childInstanceIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ChildInstanceId";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_childInstanceId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_childInstanceTypeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ChildInstanceType";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_childInstanceType.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -614,5 +652,37 @@ void EndpointItem::SetExtraAttr(const vector<KeyValuePairOption>& _extraAttr)
 bool EndpointItem::ExtraAttrHasBeenSet() const
 {
     return m_extraAttrHasBeenSet;
+}
+
+string EndpointItem::GetChildInstanceId() const
+{
+    return m_childInstanceId;
+}
+
+void EndpointItem::SetChildInstanceId(const string& _childInstanceId)
+{
+    m_childInstanceId = _childInstanceId;
+    m_childInstanceIdHasBeenSet = true;
+}
+
+bool EndpointItem::ChildInstanceIdHasBeenSet() const
+{
+    return m_childInstanceIdHasBeenSet;
+}
+
+string EndpointItem::GetChildInstanceType() const
+{
+    return m_childInstanceType;
+}
+
+void EndpointItem::SetChildInstanceType(const string& _childInstanceType)
+{
+    m_childInstanceType = _childInstanceType;
+    m_childInstanceTypeHasBeenSet = true;
+}
+
+bool EndpointItem::ChildInstanceTypeHasBeenSet() const
+{
+    return m_childInstanceTypeHasBeenSet;
 }
 

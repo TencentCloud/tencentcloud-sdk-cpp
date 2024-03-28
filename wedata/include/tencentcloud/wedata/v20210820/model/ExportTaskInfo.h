@@ -271,6 +271,131 @@ namespace TencentCloud
                      */
                     bool FilePathHasBeenSet() const;
 
+                    /**
+                     * 获取是否过期(1.已过期 2.未过期) 
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return Expire 是否过期(1.已过期 2.未过期) 
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    int64_t GetExpire() const;
+
+                    /**
+                     * 设置是否过期(1.已过期 2.未过期) 
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _expire 是否过期(1.已过期 2.未过期) 
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetExpire(const int64_t& _expire);
+
+                    /**
+                     * 判断参数 Expire 是否已赋值
+                     * @return Expire 是否已赋值
+                     * 
+                     */
+                    bool ExpireHasBeenSet() const;
+
+                    /**
+                     * 获取数据源名称
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return DatasourceName 数据源名称
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::string GetDatasourceName() const;
+
+                    /**
+                     * 设置数据源名称
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _datasourceName 数据源名称
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetDatasourceName(const std::string& _datasourceName);
+
+                    /**
+                     * 判断参数 DatasourceName 是否已赋值
+                     * @return DatasourceName 是否已赋值
+                     * 
+                     */
+                    bool DatasourceNameHasBeenSet() const;
+
+                    /**
+                     * 获取库名+表名
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return DbTableName 库名+表名
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::string GetDbTableName() const;
+
+                    /**
+                     * 设置库名+表名
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _dbTableName 库名+表名
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetDbTableName(const std::string& _dbTableName);
+
+                    /**
+                     * 判断参数 DbTableName 是否已赋值
+                     * @return DbTableName 是否已赋值
+                     * 
+                     */
+                    bool DbTableNameHasBeenSet() const;
+
+                    /**
+                     * 获取规则名称
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return RuleName 规则名称
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::string GetRuleName() const;
+
+                    /**
+                     * 设置规则名称
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _ruleName 规则名称
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetRuleName(const std::string& _ruleName);
+
+                    /**
+                     * 判断参数 RuleName 是否已赋值
+                     * @return RuleName 是否已赋值
+                     * 
+                     */
+                    bool RuleNameHasBeenSet() const;
+
+                    /**
+                     * 获取规则执行id
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return RuleExecId 规则执行id
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    uint64_t GetRuleExecId() const;
+
+                    /**
+                     * 设置规则执行id
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _ruleExecId 规则执行id
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetRuleExecId(const uint64_t& _ruleExecId);
+
+                    /**
+                     * 判断参数 RuleExecId 是否已赋值
+                     * @return RuleExecId 是否已赋值
+                     * 
+                     */
+                    bool RuleExecIdHasBeenSet() const;
+
                 private:
 
                     /**
@@ -335,6 +460,41 @@ namespace TencentCloud
                      */
                     std::string m_filePath;
                     bool m_filePathHasBeenSet;
+
+                    /**
+                     * 是否过期(1.已过期 2.未过期) 
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    int64_t m_expire;
+                    bool m_expireHasBeenSet;
+
+                    /**
+                     * 数据源名称
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_datasourceName;
+                    bool m_datasourceNameHasBeenSet;
+
+                    /**
+                     * 库名+表名
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_dbTableName;
+                    bool m_dbTableNameHasBeenSet;
+
+                    /**
+                     * 规则名称
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_ruleName;
+                    bool m_ruleNameHasBeenSet;
+
+                    /**
+                     * 规则执行id
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    uint64_t m_ruleExecId;
+                    bool m_ruleExecIdHasBeenSet;
 
                 };
             }

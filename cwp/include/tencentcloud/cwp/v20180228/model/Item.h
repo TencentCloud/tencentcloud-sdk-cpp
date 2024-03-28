@@ -88,6 +88,31 @@ namespace TencentCloud
                      */
                     bool ItemNameHasBeenSet() const;
 
+                    /**
+                     * 获取自定义阈值
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return CustomItemValues 自定义阈值
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::vector<uint64_t> GetCustomItemValues() const;
+
+                    /**
+                     * 设置自定义阈值
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _customItemValues 自定义阈值
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetCustomItemValues(const std::vector<uint64_t>& _customItemValues);
+
+                    /**
+                     * 判断参数 CustomItemValues 是否已赋值
+                     * @return CustomItemValues 是否已赋值
+                     * 
+                     */
+                    bool CustomItemValuesHasBeenSet() const;
+
                 private:
 
                     /**
@@ -101,6 +126,13 @@ namespace TencentCloud
                      */
                     std::string m_itemName;
                     bool m_itemNameHasBeenSet;
+
+                    /**
+                     * 自定义阈值
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::vector<uint64_t> m_customItemValues;
+                    bool m_customItemValuesHasBeenSet;
 
                 };
             }

@@ -23,7 +23,8 @@ using namespace std;
 BaselineCategory::BaselineCategory() :
     m_categoryIdHasBeenSet(false),
     m_categoryNameHasBeenSet(false),
-    m_parentCategoryIdHasBeenSet(false)
+    m_parentCategoryIdHasBeenSet(false),
+    m_itemCountHasBeenSet(false)
 {
 }
 
@@ -62,6 +63,16 @@ CoreInternalOutcome BaselineCategory::Deserialize(const rapidjson::Value &value)
         m_parentCategoryIdHasBeenSet = true;
     }
 
+    if (value.HasMember("ItemCount") && !value["ItemCount"].IsNull())
+    {
+        if (!value["ItemCount"].IsUint64())
+        {
+            return CoreInternalOutcome(Core::Error("response `BaselineCategory.ItemCount` IsUint64=false incorrectly").SetRequestId(requestId));
+        }
+        m_itemCount = value["ItemCount"].GetUint64();
+        m_itemCountHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -91,6 +102,14 @@ void BaselineCategory::ToJsonObject(rapidjson::Value &value, rapidjson::Document
         string key = "ParentCategoryId";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_parentCategoryId, allocator);
+    }
+
+    if (m_itemCountHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ItemCount";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_itemCount, allocator);
     }
 
 }
@@ -142,5 +161,21 @@ void BaselineCategory::SetParentCategoryId(const int64_t& _parentCategoryId)
 bool BaselineCategory::ParentCategoryIdHasBeenSet() const
 {
     return m_parentCategoryIdHasBeenSet;
+}
+
+uint64_t BaselineCategory::GetItemCount() const
+{
+    return m_itemCount;
+}
+
+void BaselineCategory::SetItemCount(const uint64_t& _itemCount)
+{
+    m_itemCount = _itemCount;
+    m_itemCountHasBeenSet = true;
+}
+
+bool BaselineCategory::ItemCountHasBeenSet() const
+{
+    return m_itemCountHasBeenSet;
 }
 

@@ -63,7 +63,8 @@ Rule::Rule() :
     m_createTimeHasBeenSet(false),
     m_datasourceIdHasBeenSet(false),
     m_databaseIdHasBeenSet(false),
-    m_monitorStatusHasBeenSet(false)
+    m_monitorStatusHasBeenSet(false),
+    m_triggerConditionHasBeenSet(false)
 {
 }
 
@@ -533,6 +534,16 @@ CoreInternalOutcome Rule::Deserialize(const rapidjson::Value &value)
         m_monitorStatusHasBeenSet = true;
     }
 
+    if (value.HasMember("TriggerCondition") && !value["TriggerCondition"].IsNull())
+    {
+        if (!value["TriggerCondition"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `Rule.TriggerCondition` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_triggerCondition = string(value["TriggerCondition"].GetString());
+        m_triggerConditionHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -891,6 +902,14 @@ void Rule::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorT
         string key = "MonitorStatus";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_monitorStatus, allocator);
+    }
+
+    if (m_triggerConditionHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "TriggerCondition";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_triggerCondition.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -1582,5 +1601,21 @@ void Rule::SetMonitorStatus(const int64_t& _monitorStatus)
 bool Rule::MonitorStatusHasBeenSet() const
 {
     return m_monitorStatusHasBeenSet;
+}
+
+string Rule::GetTriggerCondition() const
+{
+    return m_triggerCondition;
+}
+
+void Rule::SetTriggerCondition(const string& _triggerCondition)
+{
+    m_triggerCondition = _triggerCondition;
+    m_triggerConditionHasBeenSet = true;
+}
+
+bool Rule::TriggerConditionHasBeenSet() const
+{
+    return m_triggerConditionHasBeenSet;
 }
 

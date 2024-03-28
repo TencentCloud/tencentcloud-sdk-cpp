@@ -441,6 +441,27 @@ namespace TencentCloud
                      */
                     bool VpcIdHasBeenSet() const;
 
+                    /**
+                     * 获取操作权限限制
+                     * @return OperationAuthLimit 操作权限限制
+                     * 
+                     */
+                    std::vector<std::string> GetOperationAuthLimit() const;
+
+                    /**
+                     * 设置操作权限限制
+                     * @param _operationAuthLimit 操作权限限制
+                     * 
+                     */
+                    void SetOperationAuthLimit(const std::vector<std::string>& _operationAuthLimit);
+
+                    /**
+                     * 判断参数 OperationAuthLimit 是否已赋值
+                     * @return OperationAuthLimit 是否已赋值
+                     * 
+                     */
+                    bool OperationAuthLimitHasBeenSet() const;
+
                 private:
 
                     /**
@@ -556,6 +577,12 @@ namespace TencentCloud
                      */
                     std::string m_vpcId;
                     bool m_vpcIdHasBeenSet;
+
+                    /**
+                     * 操作权限限制
+                     */
+                    std::vector<std::string> m_operationAuthLimit;
+                    bool m_operationAuthLimitHasBeenSet;
 
                 };
             }

@@ -24,7 +24,8 @@ MsgBody::MsgBody() :
     m_msgTypeHasBeenSet(false),
     m_textMsgContentHasBeenSet(false),
     m_faceMsgContentHasBeenSet(false),
-    m_imageMsgContentHasBeenSet(false)
+    m_imageMsgContentHasBeenSet(false),
+    m_customMsgContentHasBeenSet(false)
 {
 }
 
@@ -94,6 +95,23 @@ CoreInternalOutcome MsgBody::Deserialize(const rapidjson::Value &value)
         m_imageMsgContentHasBeenSet = true;
     }
 
+    if (value.HasMember("CustomMsgContent") && !value["CustomMsgContent"].IsNull())
+    {
+        if (!value["CustomMsgContent"].IsObject())
+        {
+            return CoreInternalOutcome(Core::Error("response `MsgBody.CustomMsgContent` is not object type").SetRequestId(requestId));
+        }
+
+        CoreInternalOutcome outcome = m_customMsgContent.Deserialize(value["CustomMsgContent"]);
+        if (!outcome.IsSuccess())
+        {
+            outcome.GetError().SetRequestId(requestId);
+            return outcome;
+        }
+
+        m_customMsgContentHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -134,6 +152,15 @@ void MsgBody::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Allocat
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
         m_imageMsgContent.ToJsonObject(value[key.c_str()], allocator);
+    }
+
+    if (m_customMsgContentHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "CustomMsgContent";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_customMsgContent.ToJsonObject(value[key.c_str()], allocator);
     }
 
 }
@@ -201,5 +228,21 @@ void MsgBody::SetImageMsgContent(const ImageMsgContent& _imageMsgContent)
 bool MsgBody::ImageMsgContentHasBeenSet() const
 {
     return m_imageMsgContentHasBeenSet;
+}
+
+CustomMsgContent MsgBody::GetCustomMsgContent() const
+{
+    return m_customMsgContent;
+}
+
+void MsgBody::SetCustomMsgContent(const CustomMsgContent& _customMsgContent)
+{
+    m_customMsgContent = _customMsgContent;
+    m_customMsgContentHasBeenSet = true;
+}
+
+bool MsgBody::CustomMsgContentHasBeenSet() const
+{
+    return m_customMsgContentHasBeenSet;
 }
 

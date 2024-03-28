@@ -168,6 +168,27 @@ namespace TencentCloud
                      */
                     bool DefaultPanelTypeHasBeenSet() const;
 
+                    /**
+                     * 获取管理平台
+                     * @return ManagePlatform 管理平台
+                     * 
+                     */
+                    std::string GetManagePlatform() const;
+
+                    /**
+                     * 设置管理平台
+                     * @param _managePlatform 管理平台
+                     * 
+                     */
+                    void SetManagePlatform(const std::string& _managePlatform);
+
+                    /**
+                     * 判断参数 ManagePlatform 是否已赋值
+                     * @return ManagePlatform 是否已赋值
+                     * 
+                     */
+                    bool ManagePlatformHasBeenSet() const;
+
                 private:
 
                     /**
@@ -205,6 +226,12 @@ namespace TencentCloud
                      */
                     int64_t m_defaultPanelType;
                     bool m_defaultPanelTypeHasBeenSet;
+
+                    /**
+                     * 管理平台
+                     */
+                    std::string m_managePlatform;
+                    bool m_managePlatformHasBeenSet;
 
                 };
             }

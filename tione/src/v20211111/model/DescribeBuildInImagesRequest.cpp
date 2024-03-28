@@ -22,7 +22,8 @@
 using namespace TencentCloud::Tione::V20211111::Model;
 using namespace std;
 
-DescribeBuildInImagesRequest::DescribeBuildInImagesRequest()
+DescribeBuildInImagesRequest::DescribeBuildInImagesRequest() :
+    m_imageFiltersHasBeenSet(false)
 {
 }
 
@@ -33,6 +34,21 @@ string DescribeBuildInImagesRequest::ToJsonString() const
     rapidjson::Document::AllocatorType& allocator = d.GetAllocator();
 
 
+    if (m_imageFiltersHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ImageFilters";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_imageFilters.begin(); itr != m_imageFilters.end(); ++itr, ++i)
+        {
+            d[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(d[key.c_str()][i], allocator);
+        }
+    }
+
 
     rapidjson::StringBuffer buffer;
     rapidjson::Writer<rapidjson::StringBuffer> writer(buffer);
@@ -40,5 +56,21 @@ string DescribeBuildInImagesRequest::ToJsonString() const
     return buffer.GetString();
 }
 
+
+vector<ImageFIlter> DescribeBuildInImagesRequest::GetImageFilters() const
+{
+    return m_imageFilters;
+}
+
+void DescribeBuildInImagesRequest::SetImageFilters(const vector<ImageFIlter>& _imageFilters)
+{
+    m_imageFilters = _imageFilters;
+    m_imageFiltersHasBeenSet = true;
+}
+
+bool DescribeBuildInImagesRequest::ImageFiltersHasBeenSet() const
+{
+    return m_imageFiltersHasBeenSet;
+}
 
 

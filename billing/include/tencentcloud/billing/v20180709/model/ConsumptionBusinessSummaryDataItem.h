@@ -231,6 +231,31 @@ namespace TencentCloud
                      */
                     bool TransferPayAmountHasBeenSet() const;
 
+                    /**
+                     * 获取地域名称（仅在地域汇总总展示）
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return RegionName 地域名称（仅在地域汇总总展示）
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::string GetRegionName() const;
+
+                    /**
+                     * 设置地域名称（仅在地域汇总总展示）
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _regionName 地域名称（仅在地域汇总总展示）
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetRegionName(const std::string& _regionName);
+
+                    /**
+                     * 判断参数 RegionName 是否已赋值
+                     * @return RegionName 是否已赋值
+                     * 
+                     */
+                    bool RegionNameHasBeenSet() const;
+
                 private:
 
                     /**
@@ -284,6 +309,13 @@ namespace TencentCloud
                      */
                     std::string m_transferPayAmount;
                     bool m_transferPayAmountHasBeenSet;
+
+                    /**
+                     * 地域名称（仅在地域汇总总展示）
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_regionName;
+                    bool m_regionNameHasBeenSet;
 
                 };
             }

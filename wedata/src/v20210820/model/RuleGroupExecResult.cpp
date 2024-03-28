@@ -35,7 +35,8 @@ RuleGroupExecResult::RuleGroupExecResult() :
     m_datasourceIdHasBeenSet(false),
     m_permissionHasBeenSet(false),
     m_execDetailHasBeenSet(false),
-    m_engineTypeHasBeenSet(false)
+    m_engineTypeHasBeenSet(false),
+    m_ruleExecResultVOListHasBeenSet(false)
 {
 }
 
@@ -194,6 +195,26 @@ CoreInternalOutcome RuleGroupExecResult::Deserialize(const rapidjson::Value &val
         m_engineTypeHasBeenSet = true;
     }
 
+    if (value.HasMember("RuleExecResultVOList") && !value["RuleExecResultVOList"].IsNull())
+    {
+        if (!value["RuleExecResultVOList"].IsArray())
+            return CoreInternalOutcome(Core::Error("response `RuleGroupExecResult.RuleExecResultVOList` is not array type"));
+
+        const rapidjson::Value &tmpValue = value["RuleExecResultVOList"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            RuleExecResult item;
+            CoreInternalOutcome outcome = item.Deserialize(*itr);
+            if (!outcome.IsSuccess())
+            {
+                outcome.GetError().SetRequestId(requestId);
+                return outcome;
+            }
+            m_ruleExecResultVOList.push_back(item);
+        }
+        m_ruleExecResultVOListHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -319,6 +340,21 @@ void RuleGroupExecResult::ToJsonObject(rapidjson::Value &value, rapidjson::Docum
         string key = "EngineType";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_engineType.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_ruleExecResultVOListHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "RuleExecResultVOList";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_ruleExecResultVOList.begin(); itr != m_ruleExecResultVOList.end(); ++itr, ++i)
+        {
+            value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(value[key.c_str()][i], allocator);
+        }
     }
 
 }
@@ -562,5 +598,21 @@ void RuleGroupExecResult::SetEngineType(const string& _engineType)
 bool RuleGroupExecResult::EngineTypeHasBeenSet() const
 {
     return m_engineTypeHasBeenSet;
+}
+
+vector<RuleExecResult> RuleGroupExecResult::GetRuleExecResultVOList() const
+{
+    return m_ruleExecResultVOList;
+}
+
+void RuleGroupExecResult::SetRuleExecResultVOList(const vector<RuleExecResult>& _ruleExecResultVOList)
+{
+    m_ruleExecResultVOList = _ruleExecResultVOList;
+    m_ruleExecResultVOListHasBeenSet = true;
+}
+
+bool RuleGroupExecResult::RuleExecResultVOListHasBeenSet() const
+{
+    return m_ruleExecResultVOListHasBeenSet;
 }
 

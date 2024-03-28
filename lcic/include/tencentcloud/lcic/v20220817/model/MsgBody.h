@@ -27,6 +27,7 @@
 #include <tencentcloud/lcic/v20220817/model/TextMsgContent.h>
 #include <tencentcloud/lcic/v20220817/model/FaceMsgContent.h>
 #include <tencentcloud/lcic/v20220817/model/ImageMsgContent.h>
+#include <tencentcloud/lcic/v20220817/model/CustomMsgContent.h>
 
 
 namespace TencentCloud
@@ -54,10 +55,12 @@ namespace TencentCloud
 TIMTextElem（文本消息）
 TIMFaceElem（表情消息）
 TIMImageElem（图像消息）
+TIMCustomElem（自定义消息）
                      * @return MsgType TIM 消息对象类型，目前支持的消息对象包括：
 TIMTextElem（文本消息）
 TIMFaceElem（表情消息）
 TIMImageElem（图像消息）
+TIMCustomElem（自定义消息）
                      * 
                      */
                     std::string GetMsgType() const;
@@ -67,10 +70,12 @@ TIMImageElem（图像消息）
 TIMTextElem（文本消息）
 TIMFaceElem（表情消息）
 TIMImageElem（图像消息）
+TIMCustomElem（自定义消息）
                      * @param _msgType TIM 消息对象类型，目前支持的消息对象包括：
 TIMTextElem（文本消息）
 TIMFaceElem（表情消息）
 TIMImageElem（图像消息）
+TIMCustomElem（自定义消息）
                      * 
                      */
                     void SetMsgType(const std::string& _msgType);
@@ -145,6 +150,27 @@ TIMImageElem（图像消息）
                      */
                     bool ImageMsgContentHasBeenSet() const;
 
+                    /**
+                     * 获取自定义消息，TIMCustomElem（自定义消息）必选。
+                     * @return CustomMsgContent 自定义消息，TIMCustomElem（自定义消息）必选。
+                     * 
+                     */
+                    CustomMsgContent GetCustomMsgContent() const;
+
+                    /**
+                     * 设置自定义消息，TIMCustomElem（自定义消息）必选。
+                     * @param _customMsgContent 自定义消息，TIMCustomElem（自定义消息）必选。
+                     * 
+                     */
+                    void SetCustomMsgContent(const CustomMsgContent& _customMsgContent);
+
+                    /**
+                     * 判断参数 CustomMsgContent 是否已赋值
+                     * @return CustomMsgContent 是否已赋值
+                     * 
+                     */
+                    bool CustomMsgContentHasBeenSet() const;
+
                 private:
 
                     /**
@@ -152,6 +178,7 @@ TIMImageElem（图像消息）
 TIMTextElem（文本消息）
 TIMFaceElem（表情消息）
 TIMImageElem（图像消息）
+TIMCustomElem（自定义消息）
                      */
                     std::string m_msgType;
                     bool m_msgTypeHasBeenSet;
@@ -173,6 +200,12 @@ TIMImageElem（图像消息）
                      */
                     ImageMsgContent m_imageMsgContent;
                     bool m_imageMsgContentHasBeenSet;
+
+                    /**
+                     * 自定义消息，TIMCustomElem（自定义消息）必选。
+                     */
+                    CustomMsgContent m_customMsgContent;
+                    bool m_customMsgContentHasBeenSet;
 
                 };
             }

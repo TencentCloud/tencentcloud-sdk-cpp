@@ -1125,6 +1125,31 @@ namespace TencentCloud
                      */
                     bool MonitorStatusHasBeenSet() const;
 
+                    /**
+                     * 获取触发条件
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return TriggerCondition 触发条件
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::string GetTriggerCondition() const;
+
+                    /**
+                     * 设置触发条件
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _triggerCondition 触发条件
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetTriggerCondition(const std::string& _triggerCondition);
+
+                    /**
+                     * 判断参数 TriggerCondition 是否已赋值
+                     * @return TriggerCondition 是否已赋值
+                     * 
+                     */
+                    bool TriggerConditionHasBeenSet() const;
+
                 private:
 
                     /**
@@ -1427,6 +1452,13 @@ namespace TencentCloud
                      */
                     int64_t m_monitorStatus;
                     bool m_monitorStatusHasBeenSet;
+
+                    /**
+                     * 触发条件
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_triggerCondition;
+                    bool m_triggerConditionHasBeenSet;
 
                 };
             }

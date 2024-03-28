@@ -41,7 +41,8 @@ CreateDatasourceRequest::CreateDatasourceRequest() :
     m_uniqVpcIdHasBeenSet(false),
     m_vipHasBeenSet(false),
     m_vportHasBeenSet(false),
-    m_vpcIdHasBeenSet(false)
+    m_vpcIdHasBeenSet(false),
+    m_operationAuthLimitHasBeenSet(false)
 {
 }
 
@@ -202,6 +203,19 @@ string CreateDatasourceRequest::ToJsonString() const
         string key = "VpcId";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_vpcId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_operationAuthLimitHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "OperationAuthLimit";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        for (auto itr = m_operationAuthLimit.begin(); itr != m_operationAuthLimit.end(); ++itr)
+        {
+            d[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
+        }
     }
 
 
@@ -514,6 +528,22 @@ void CreateDatasourceRequest::SetVpcId(const string& _vpcId)
 bool CreateDatasourceRequest::VpcIdHasBeenSet() const
 {
     return m_vpcIdHasBeenSet;
+}
+
+vector<string> CreateDatasourceRequest::GetOperationAuthLimit() const
+{
+    return m_operationAuthLimit;
+}
+
+void CreateDatasourceRequest::SetOperationAuthLimit(const vector<string>& _operationAuthLimit)
+{
+    m_operationAuthLimit = _operationAuthLimit;
+    m_operationAuthLimitHasBeenSet = true;
+}
+
+bool CreateDatasourceRequest::OperationAuthLimitHasBeenSet() const
+{
+    return m_operationAuthLimitHasBeenSet;
 }
 
 

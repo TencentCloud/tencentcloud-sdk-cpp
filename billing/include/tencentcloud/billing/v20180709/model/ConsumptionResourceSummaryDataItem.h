@@ -544,6 +544,431 @@ namespace TencentCloud
                      */
                     bool TransferPayAmountHasBeenSet() const;
 
+                    /**
+                     * 获取支付者UIN：支付者的账号 ID，账号 ID 是用户在腾讯云的唯一账号标识
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return PayerUin 支付者UIN：支付者的账号 ID，账号 ID 是用户在腾讯云的唯一账号标识
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::string GetPayerUin() const;
+
+                    /**
+                     * 设置支付者UIN：支付者的账号 ID，账号 ID 是用户在腾讯云的唯一账号标识
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _payerUin 支付者UIN：支付者的账号 ID，账号 ID 是用户在腾讯云的唯一账号标识
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetPayerUin(const std::string& _payerUin);
+
+                    /**
+                     * 判断参数 PayerUin 是否已赋值
+                     * @return PayerUin 是否已赋值
+                     * 
+                     */
+                    bool PayerUinHasBeenSet() const;
+
+                    /**
+                     * 获取使用者UIN：实际使用资源的账号 ID
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return OwnerUin 使用者UIN：实际使用资源的账号 ID
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::string GetOwnerUin() const;
+
+                    /**
+                     * 设置使用者UIN：实际使用资源的账号 ID
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _ownerUin 使用者UIN：实际使用资源的账号 ID
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetOwnerUin(const std::string& _ownerUin);
+
+                    /**
+                     * 判断参数 OwnerUin 是否已赋值
+                     * @return OwnerUin 是否已赋值
+                     * 
+                     */
+                    bool OwnerUinHasBeenSet() const;
+
+                    /**
+                     * 获取操作者UIN：操作者账号 ID（预付费资源下单或后付费操作开通资源账号的 ID 或者角色 ID ）
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return OperateUin 操作者UIN：操作者账号 ID（预付费资源下单或后付费操作开通资源账号的 ID 或者角色 ID ）
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::string GetOperateUin() const;
+
+                    /**
+                     * 设置操作者UIN：操作者账号 ID（预付费资源下单或后付费操作开通资源账号的 ID 或者角色 ID ）
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _operateUin 操作者UIN：操作者账号 ID（预付费资源下单或后付费操作开通资源账号的 ID 或者角色 ID ）
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetOperateUin(const std::string& _operateUin);
+
+                    /**
+                     * 判断参数 OperateUin 是否已赋值
+                     * @return OperateUin 是否已赋值
+                     * 
+                     */
+                    bool OperateUinHasBeenSet() const;
+
+                    /**
+                     * 获取子产品编码
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return ProductCode 子产品编码
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::string GetProductCode() const;
+
+                    /**
+                     * 设置子产品编码
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _productCode 子产品编码
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetProductCode(const std::string& _productCode);
+
+                    /**
+                     * 判断参数 ProductCode 是否已赋值
+                     * @return ProductCode 是否已赋值
+                     * 
+                     */
+                    bool ProductCodeHasBeenSet() const;
+
+                    /**
+                     * 获取子产品名称：用户采购的具体产品细分类型，例如：云服务器 CVM-标准型 S1
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return ProductCodeName 子产品名称：用户采购的具体产品细分类型，例如：云服务器 CVM-标准型 S1
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::string GetProductCodeName() const;
+
+                    /**
+                     * 设置子产品名称：用户采购的具体产品细分类型，例如：云服务器 CVM-标准型 S1
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _productCodeName 子产品名称：用户采购的具体产品细分类型，例如：云服务器 CVM-标准型 S1
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetProductCodeName(const std::string& _productCodeName);
+
+                    /**
+                     * 判断参数 ProductCodeName 是否已赋值
+                     * @return ProductCodeName 是否已赋值
+                     * 
+                     */
+                    bool ProductCodeNameHasBeenSet() const;
+
+                    /**
+                     * 获取地域类型
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return RegionType 地域类型
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::string GetRegionType() const;
+
+                    /**
+                     * 设置地域类型
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _regionType 地域类型
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetRegionType(const std::string& _regionType);
+
+                    /**
+                     * 判断参数 RegionType 是否已赋值
+                     * @return RegionType 是否已赋值
+                     * 
+                     */
+                    bool RegionTypeHasBeenSet() const;
+
+                    /**
+                     * 获取地域类型名称
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return RegionTypeName 地域类型名称
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::string GetRegionTypeName() const;
+
+                    /**
+                     * 设置地域类型名称
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _regionTypeName 地域类型名称
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetRegionTypeName(const std::string& _regionTypeName);
+
+                    /**
+                     * 判断参数 RegionTypeName 是否已赋值
+                     * @return RegionTypeName 是否已赋值
+                     * 
+                     */
+                    bool RegionTypeNameHasBeenSet() const;
+
+                    /**
+                     * 获取扩展字段1
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return Extend1 扩展字段1
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::string GetExtend1() const;
+
+                    /**
+                     * 设置扩展字段1
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _extend1 扩展字段1
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetExtend1(const std::string& _extend1);
+
+                    /**
+                     * 判断参数 Extend1 是否已赋值
+                     * @return Extend1 是否已赋值
+                     * 
+                     */
+                    bool Extend1HasBeenSet() const;
+
+                    /**
+                     * 获取扩展字段2
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return Extend2 扩展字段2
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::string GetExtend2() const;
+
+                    /**
+                     * 设置扩展字段2
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _extend2 扩展字段2
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetExtend2(const std::string& _extend2);
+
+                    /**
+                     * 判断参数 Extend2 是否已赋值
+                     * @return Extend2 是否已赋值
+                     * 
+                     */
+                    bool Extend2HasBeenSet() const;
+
+                    /**
+                     * 获取扩展字段3
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return Extend3 扩展字段3
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::string GetExtend3() const;
+
+                    /**
+                     * 设置扩展字段3
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _extend3 扩展字段3
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetExtend3(const std::string& _extend3);
+
+                    /**
+                     * 判断参数 Extend3 是否已赋值
+                     * @return Extend3 是否已赋值
+                     * 
+                     */
+                    bool Extend3HasBeenSet() const;
+
+                    /**
+                     * 获取扩展字段4
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return Extend4 扩展字段4
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::string GetExtend4() const;
+
+                    /**
+                     * 设置扩展字段4
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _extend4 扩展字段4
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetExtend4(const std::string& _extend4);
+
+                    /**
+                     * 判断参数 Extend4 是否已赋值
+                     * @return Extend4 是否已赋值
+                     * 
+                     */
+                    bool Extend4HasBeenSet() const;
+
+                    /**
+                     * 获取扩展字段5
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return Extend5 扩展字段5
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::string GetExtend5() const;
+
+                    /**
+                     * 设置扩展字段5
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _extend5 扩展字段5
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetExtend5(const std::string& _extend5);
+
+                    /**
+                     * 判断参数 Extend5 是否已赋值
+                     * @return Extend5 是否已赋值
+                     * 
+                     */
+                    bool Extend5HasBeenSet() const;
+
+                    /**
+                     * 获取实例类型
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return InstanceType 实例类型
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::string GetInstanceType() const;
+
+                    /**
+                     * 设置实例类型
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _instanceType 实例类型
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetInstanceType(const std::string& _instanceType);
+
+                    /**
+                     * 判断参数 InstanceType 是否已赋值
+                     * @return InstanceType 是否已赋值
+                     * 
+                     */
+                    bool InstanceTypeHasBeenSet() const;
+
+                    /**
+                     * 获取实例类型名称
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return InstanceTypeName 实例类型名称
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::string GetInstanceTypeName() const;
+
+                    /**
+                     * 设置实例类型名称
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _instanceTypeName 实例类型名称
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetInstanceTypeName(const std::string& _instanceTypeName);
+
+                    /**
+                     * 判断参数 InstanceTypeName 是否已赋值
+                     * @return InstanceTypeName 是否已赋值
+                     * 
+                     */
+                    bool InstanceTypeNameHasBeenSet() const;
+
+                    /**
+                     * 获取扣费时间：结算扣费时间
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return PayTime 扣费时间：结算扣费时间
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::string GetPayTime() const;
+
+                    /**
+                     * 设置扣费时间：结算扣费时间
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _payTime 扣费时间：结算扣费时间
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetPayTime(const std::string& _payTime);
+
+                    /**
+                     * 判断参数 PayTime 是否已赋值
+                     * @return PayTime 是否已赋值
+                     * 
+                     */
+                    bool PayTimeHasBeenSet() const;
+
+                    /**
+                     * 获取可用区：资源所属可用区，如广州三区
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return ZoneName 可用区：资源所属可用区，如广州三区
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::string GetZoneName() const;
+
+                    /**
+                     * 设置可用区：资源所属可用区，如广州三区
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _zoneName 可用区：资源所属可用区，如广州三区
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetZoneName(const std::string& _zoneName);
+
+                    /**
+                     * 判断参数 ZoneName 是否已赋值
+                     * @return ZoneName 是否已赋值
+                     * 
+                     */
+                    bool ZoneNameHasBeenSet() const;
+
+                    /**
+                     * 获取配置描述
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return ComponentConfig 配置描述
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::string GetComponentConfig() const;
+
+                    /**
+                     * 设置配置描述
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _componentConfig 配置描述
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetComponentConfig(const std::string& _componentConfig);
+
+                    /**
+                     * 判断参数 ComponentConfig 是否已赋值
+                     * @return ComponentConfig 是否已赋值
+                     * 
+                     */
+                    bool ComponentConfigHasBeenSet() const;
+
                 private:
 
                     /**
@@ -686,6 +1111,125 @@ namespace TencentCloud
                      */
                     std::string m_transferPayAmount;
                     bool m_transferPayAmountHasBeenSet;
+
+                    /**
+                     * 支付者UIN：支付者的账号 ID，账号 ID 是用户在腾讯云的唯一账号标识
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_payerUin;
+                    bool m_payerUinHasBeenSet;
+
+                    /**
+                     * 使用者UIN：实际使用资源的账号 ID
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_ownerUin;
+                    bool m_ownerUinHasBeenSet;
+
+                    /**
+                     * 操作者UIN：操作者账号 ID（预付费资源下单或后付费操作开通资源账号的 ID 或者角色 ID ）
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_operateUin;
+                    bool m_operateUinHasBeenSet;
+
+                    /**
+                     * 子产品编码
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_productCode;
+                    bool m_productCodeHasBeenSet;
+
+                    /**
+                     * 子产品名称：用户采购的具体产品细分类型，例如：云服务器 CVM-标准型 S1
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_productCodeName;
+                    bool m_productCodeNameHasBeenSet;
+
+                    /**
+                     * 地域类型
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_regionType;
+                    bool m_regionTypeHasBeenSet;
+
+                    /**
+                     * 地域类型名称
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_regionTypeName;
+                    bool m_regionTypeNameHasBeenSet;
+
+                    /**
+                     * 扩展字段1
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_extend1;
+                    bool m_extend1HasBeenSet;
+
+                    /**
+                     * 扩展字段2
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_extend2;
+                    bool m_extend2HasBeenSet;
+
+                    /**
+                     * 扩展字段3
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_extend3;
+                    bool m_extend3HasBeenSet;
+
+                    /**
+                     * 扩展字段4
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_extend4;
+                    bool m_extend4HasBeenSet;
+
+                    /**
+                     * 扩展字段5
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_extend5;
+                    bool m_extend5HasBeenSet;
+
+                    /**
+                     * 实例类型
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_instanceType;
+                    bool m_instanceTypeHasBeenSet;
+
+                    /**
+                     * 实例类型名称
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_instanceTypeName;
+                    bool m_instanceTypeNameHasBeenSet;
+
+                    /**
+                     * 扣费时间：结算扣费时间
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_payTime;
+                    bool m_payTimeHasBeenSet;
+
+                    /**
+                     * 可用区：资源所属可用区，如广州三区
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_zoneName;
+                    bool m_zoneNameHasBeenSet;
+
+                    /**
+                     * 配置描述
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_componentConfig;
+                    bool m_componentConfigHasBeenSet;
 
                 };
             }

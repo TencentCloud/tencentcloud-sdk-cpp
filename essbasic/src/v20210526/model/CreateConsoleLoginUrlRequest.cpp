@@ -27,6 +27,7 @@ CreateConsoleLoginUrlRequest::CreateConsoleLoginUrlRequest() :
     m_proxyOrganizationNameHasBeenSet(false),
     m_uniformSocialCreditCodeHasBeenSet(false),
     m_proxyOperatorNameHasBeenSet(false),
+    m_proxyOperatorMobileHasBeenSet(false),
     m_moduleHasBeenSet(false),
     m_moduleIdHasBeenSet(false),
     m_menuStatusHasBeenSet(false),
@@ -77,6 +78,14 @@ string CreateConsoleLoginUrlRequest::ToJsonString() const
         string key = "ProxyOperatorName";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_proxyOperatorName.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_proxyOperatorMobileHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ProxyOperatorMobile";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_proxyOperatorMobile.c_str(), allocator).Move(), allocator);
     }
 
     if (m_moduleHasBeenSet)
@@ -227,6 +236,22 @@ void CreateConsoleLoginUrlRequest::SetProxyOperatorName(const string& _proxyOper
 bool CreateConsoleLoginUrlRequest::ProxyOperatorNameHasBeenSet() const
 {
     return m_proxyOperatorNameHasBeenSet;
+}
+
+string CreateConsoleLoginUrlRequest::GetProxyOperatorMobile() const
+{
+    return m_proxyOperatorMobile;
+}
+
+void CreateConsoleLoginUrlRequest::SetProxyOperatorMobile(const string& _proxyOperatorMobile)
+{
+    m_proxyOperatorMobile = _proxyOperatorMobile;
+    m_proxyOperatorMobileHasBeenSet = true;
+}
+
+bool CreateConsoleLoginUrlRequest::ProxyOperatorMobileHasBeenSet() const
+{
+    return m_proxyOperatorMobileHasBeenSet;
 }
 
 string CreateConsoleLoginUrlRequest::GetModule() const

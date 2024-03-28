@@ -193,6 +193,27 @@ namespace TencentCloud
                     bool ProxyOperatorNameHasBeenSet() const;
 
                     /**
+                     * 获取子客企业员工的手机码,  支持国内手机号11位数字(无需加+86前缀或其他字符)。注：`该手机号需要和Agent.ProxyOperator.OpenId相匹配,  当员工完成认证后该手机号会和Agent.ProxyOperator.OpenId一一绑定, 若员工已认证加入企业，这里修改经办人手机号传入将不会生效`
+                     * @return ProxyOperatorMobile 子客企业员工的手机码,  支持国内手机号11位数字(无需加+86前缀或其他字符)。注：`该手机号需要和Agent.ProxyOperator.OpenId相匹配,  当员工完成认证后该手机号会和Agent.ProxyOperator.OpenId一一绑定, 若员工已认证加入企业，这里修改经办人手机号传入将不会生效`
+                     * 
+                     */
+                    std::string GetProxyOperatorMobile() const;
+
+                    /**
+                     * 设置子客企业员工的手机码,  支持国内手机号11位数字(无需加+86前缀或其他字符)。注：`该手机号需要和Agent.ProxyOperator.OpenId相匹配,  当员工完成认证后该手机号会和Agent.ProxyOperator.OpenId一一绑定, 若员工已认证加入企业，这里修改经办人手机号传入将不会生效`
+                     * @param _proxyOperatorMobile 子客企业员工的手机码,  支持国内手机号11位数字(无需加+86前缀或其他字符)。注：`该手机号需要和Agent.ProxyOperator.OpenId相匹配,  当员工完成认证后该手机号会和Agent.ProxyOperator.OpenId一一绑定, 若员工已认证加入企业，这里修改经办人手机号传入将不会生效`
+                     * 
+                     */
+                    void SetProxyOperatorMobile(const std::string& _proxyOperatorMobile);
+
+                    /**
+                     * 判断参数 ProxyOperatorMobile 是否已赋值
+                     * @return ProxyOperatorMobile 是否已赋值
+                     * 
+                     */
+                    bool ProxyOperatorMobileHasBeenSet() const;
+
+                    /**
                      * 获取Web控制台登录后进入的功能模块,  支持的模块包括：
 <ul>
 <li> **空值** :(默认)企业中心模块</li>
@@ -558,6 +579,12 @@ namespace TencentCloud
                      */
                     std::string m_proxyOperatorName;
                     bool m_proxyOperatorNameHasBeenSet;
+
+                    /**
+                     * 子客企业员工的手机码,  支持国内手机号11位数字(无需加+86前缀或其他字符)。注：`该手机号需要和Agent.ProxyOperator.OpenId相匹配,  当员工完成认证后该手机号会和Agent.ProxyOperator.OpenId一一绑定, 若员工已认证加入企业，这里修改经办人手机号传入将不会生效`
+                     */
+                    std::string m_proxyOperatorMobile;
+                    bool m_proxyOperatorMobileHasBeenSet;
 
                     /**
                      * Web控制台登录后进入的功能模块,  支持的模块包括：

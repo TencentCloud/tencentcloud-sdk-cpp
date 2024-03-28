@@ -245,6 +245,7 @@ set(cynosdb_public_header_model
   include/tencentcloud/cynosdb/v20190107/model/ModifyProxyDescResponse.h
   include/tencentcloud/cynosdb/v20190107/model/DbTable.h
   include/tencentcloud/cynosdb/v20190107/model/ModifyClusterSlaveZoneResponse.h
+  include/tencentcloud/cynosdb/v20190107/model/RollbackToNewClusterRequest.h
   include/tencentcloud/cynosdb/v20190107/model/BinlogItem.h
   include/tencentcloud/cynosdb/v20190107/model/ModifyProxyDescRequest.h
   include/tencentcloud/cynosdb/v20190107/model/ReloadBalanceProxyNodeResponse.h
@@ -348,6 +349,7 @@ set(cynosdb_public_header_model
   include/tencentcloud/cynosdb/v20190107/model/ModifyInstanceParamResponse.h
   include/tencentcloud/cynosdb/v20190107/model/TemplateParamInfo.h
   include/tencentcloud/cynosdb/v20190107/model/CreateBackupResponse.h
+  include/tencentcloud/cynosdb/v20190107/model/RollbackToNewClusterResponse.h
   include/tencentcloud/cynosdb/v20190107/model/ResourcePackage.h
   include/tencentcloud/cynosdb/v20190107/model/DescribeBinlogSaveDaysResponse.h
   include/tencentcloud/cynosdb/v20190107/model/BillingResourceInfo.h
@@ -612,6 +614,7 @@ set(cynosdb_src
   src/v20190107/model/ModifyProxyDescResponse.cpp
   src/v20190107/model/DbTable.cpp
   src/v20190107/model/ModifyClusterSlaveZoneResponse.cpp
+  src/v20190107/model/RollbackToNewClusterRequest.cpp
   src/v20190107/model/BinlogItem.cpp
   src/v20190107/model/ModifyProxyDescRequest.cpp
   src/v20190107/model/ReloadBalanceProxyNodeResponse.cpp
@@ -715,6 +718,7 @@ set(cynosdb_src
   src/v20190107/model/ModifyInstanceParamResponse.cpp
   src/v20190107/model/TemplateParamInfo.cpp
   src/v20190107/model/CreateBackupResponse.cpp
+  src/v20190107/model/RollbackToNewClusterResponse.cpp
   src/v20190107/model/ResourcePackage.cpp
   src/v20190107/model/DescribeBinlogSaveDaysResponse.cpp
   src/v20190107/model/BillingResourceInfo.cpp

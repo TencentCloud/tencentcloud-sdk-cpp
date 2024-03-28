@@ -721,6 +721,56 @@ namespace TencentCloud
                      */
                     bool CcnOwnerUinHasBeenSet() const;
 
+                    /**
+                     * 获取数据库为cynos、且是cynos集群内的一个子数据库实例时、该参数为该子实例的ID
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return ChildInstanceId 数据库为cynos、且是cynos集群内的一个子数据库实例时、该参数为该子实例的ID
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::string GetChildInstanceId() const;
+
+                    /**
+                     * 设置数据库为cynos、且是cynos集群内的一个子数据库实例时、该参数为该子实例的ID
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _childInstanceId 数据库为cynos、且是cynos集群内的一个子数据库实例时、该参数为该子实例的ID
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetChildInstanceId(const std::string& _childInstanceId);
+
+                    /**
+                     * 判断参数 ChildInstanceId 是否已赋值
+                     * @return ChildInstanceId 是否已赋值
+                     * 
+                     */
+                    bool ChildInstanceIdHasBeenSet() const;
+
+                    /**
+                     * 获取数据库为cynos、且是cynos集群内的一个子数据库实例时、该参数为该子实例的类型、比如：只读实例传ro、读写实例传rw
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return ChildInstanceType 数据库为cynos、且是cynos集群内的一个子数据库实例时、该参数为该子实例的类型、比如：只读实例传ro、读写实例传rw
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::string GetChildInstanceType() const;
+
+                    /**
+                     * 设置数据库为cynos、且是cynos集群内的一个子数据库实例时、该参数为该子实例的类型、比如：只读实例传ro、读写实例传rw
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _childInstanceType 数据库为cynos、且是cynos集群内的一个子数据库实例时、该参数为该子实例的类型、比如：只读实例传ro、读写实例传rw
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetChildInstanceType(const std::string& _childInstanceType);
+
+                    /**
+                     * 判断参数 ChildInstanceType 是否已赋值
+                     * @return ChildInstanceType 是否已赋值
+                     * 
+                     */
+                    bool ChildInstanceTypeHasBeenSet() const;
+
                 private:
 
                     /**
@@ -911,6 +961,20 @@ namespace TencentCloud
                      */
                     std::string m_ccnOwnerUin;
                     bool m_ccnOwnerUinHasBeenSet;
+
+                    /**
+                     * 数据库为cynos、且是cynos集群内的一个子数据库实例时、该参数为该子实例的ID
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_childInstanceId;
+                    bool m_childInstanceIdHasBeenSet;
+
+                    /**
+                     * 数据库为cynos、且是cynos集群内的一个子数据库实例时、该参数为该子实例的类型、比如：只读实例传ro、读写实例传rw
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_childInstanceType;
+                    bool m_childInstanceTypeHasBeenSet;
 
                 };
             }

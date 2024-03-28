@@ -22,6 +22,7 @@
 #include <map>
 #include <tencentcloud/core/AbstractModel.h>
 #include <tencentcloud/cwp/v20180228/model/BaselineItemInfo.h>
+#include <tencentcloud/cwp/v20180228/model/BaselineItemsCategory.h>
 
 
 namespace TencentCloud
@@ -72,6 +73,22 @@ namespace TencentCloud
                      */
                     bool TotalHasBeenSet() const;
 
+                    /**
+                     * 获取基线分类列表
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return CategoryList 基线分类列表
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::vector<BaselineItemsCategory> GetCategoryList() const;
+
+                    /**
+                     * 判断参数 CategoryList 是否已赋值
+                     * @return CategoryList 是否已赋值
+                     * 
+                     */
+                    bool CategoryListHasBeenSet() const;
+
                 private:
 
                     /**
@@ -85,6 +102,13 @@ namespace TencentCloud
                      */
                     int64_t m_total;
                     bool m_totalHasBeenSet;
+
+                    /**
+                     * 基线分类列表
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::vector<BaselineItemsCategory> m_categoryList;
+                    bool m_categoryListHasBeenSet;
 
                 };
             }

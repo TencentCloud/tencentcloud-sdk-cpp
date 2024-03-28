@@ -267,6 +267,8 @@
 #include <tencentcloud/cynosdb/v20190107/model/RevokeAccountPrivilegesResponse.h>
 #include <tencentcloud/cynosdb/v20190107/model/RollBackClusterRequest.h>
 #include <tencentcloud/cynosdb/v20190107/model/RollBackClusterResponse.h>
+#include <tencentcloud/cynosdb/v20190107/model/RollbackToNewClusterRequest.h>
+#include <tencentcloud/cynosdb/v20190107/model/RollbackToNewClusterResponse.h>
 #include <tencentcloud/cynosdb/v20190107/model/SearchClusterDatabasesRequest.h>
 #include <tencentcloud/cynosdb/v20190107/model/SearchClusterDatabasesResponse.h>
 #include <tencentcloud/cynosdb/v20190107/model/SearchClusterTablesRequest.h>
@@ -669,6 +671,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::RollBackClusterResponse> RollBackClusterOutcome;
                 typedef std::future<RollBackClusterOutcome> RollBackClusterOutcomeCallable;
                 typedef std::function<void(const CynosdbClient*, const Model::RollBackClusterRequest&, RollBackClusterOutcome, const std::shared_ptr<const AsyncCallerContext>&)> RollBackClusterAsyncHandler;
+                typedef Outcome<Core::Error, Model::RollbackToNewClusterResponse> RollbackToNewClusterOutcome;
+                typedef std::future<RollbackToNewClusterOutcome> RollbackToNewClusterOutcomeCallable;
+                typedef std::function<void(const CynosdbClient*, const Model::RollbackToNewClusterRequest&, RollbackToNewClusterOutcome, const std::shared_ptr<const AsyncCallerContext>&)> RollbackToNewClusterAsyncHandler;
                 typedef Outcome<Core::Error, Model::SearchClusterDatabasesResponse> SearchClusterDatabasesOutcome;
                 typedef std::future<SearchClusterDatabasesOutcome> SearchClusterDatabasesOutcomeCallable;
                 typedef std::function<void(const CynosdbClient*, const Model::SearchClusterDatabasesRequest&, SearchClusterDatabasesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> SearchClusterDatabasesAsyncHandler;
@@ -1802,6 +1807,15 @@ namespace TencentCloud
                 RollBackClusterOutcome RollBackCluster(const Model::RollBackClusterRequest &request);
                 void RollBackClusterAsync(const Model::RollBackClusterRequest& request, const RollBackClusterAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 RollBackClusterOutcomeCallable RollBackClusterCallable(const Model::RollBackClusterRequest& request);
+
+                /**
+                 *回档到新集群
+                 * @param req RollbackToNewClusterRequest
+                 * @return RollbackToNewClusterOutcome
+                 */
+                RollbackToNewClusterOutcome RollbackToNewCluster(const Model::RollbackToNewClusterRequest &request);
+                void RollbackToNewClusterAsync(const Model::RollbackToNewClusterRequest& request, const RollbackToNewClusterAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                RollbackToNewClusterOutcomeCallable RollbackToNewClusterCallable(const Model::RollbackToNewClusterRequest& request);
 
                 /**
                  *本接口(SearchClusterDatabases)搜索集群数据库列表

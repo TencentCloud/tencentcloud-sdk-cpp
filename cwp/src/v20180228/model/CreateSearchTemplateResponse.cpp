@@ -24,7 +24,8 @@ using namespace TencentCloud::Cwp::V20180228::Model;
 using namespace std;
 
 CreateSearchTemplateResponse::CreateSearchTemplateResponse() :
-    m_statusHasBeenSet(false)
+    m_statusHasBeenSet(false),
+    m_messageHasBeenSet(false)
 {
 }
 
@@ -72,6 +73,16 @@ CoreInternalOutcome CreateSearchTemplateResponse::Deserialize(const string &payl
         m_statusHasBeenSet = true;
     }
 
+    if (rsp.HasMember("Message") && !rsp["Message"].IsNull())
+    {
+        if (!rsp["Message"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `Message` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_message = string(rsp["Message"].GetString());
+        m_messageHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -88,6 +99,14 @@ string CreateSearchTemplateResponse::ToJsonString() const
         string key = "Status";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_status, allocator);
+    }
+
+    if (m_messageHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Message";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_message.c_str(), allocator).Move(), allocator);
     }
 
     rapidjson::Value iKey(rapidjson::kStringType);
@@ -110,6 +129,16 @@ uint64_t CreateSearchTemplateResponse::GetStatus() const
 bool CreateSearchTemplateResponse::StatusHasBeenSet() const
 {
     return m_statusHasBeenSet;
+}
+
+string CreateSearchTemplateResponse::GetMessage() const
+{
+    return m_message;
+}
+
+bool CreateSearchTemplateResponse::MessageHasBeenSet() const
+{
+    return m_messageHasBeenSet;
 }
 
 

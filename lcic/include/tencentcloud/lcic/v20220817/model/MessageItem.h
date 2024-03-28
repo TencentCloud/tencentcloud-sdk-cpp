@@ -24,6 +24,7 @@
 #include <tencentcloud/core/utils/rapidjson/writer.h>
 #include <tencentcloud/core/utils/rapidjson/stringbuffer.h>
 #include <tencentcloud/core/AbstractModel.h>
+#include <tencentcloud/lcic/v20220817/model/CustomMsgContent.h>
 
 
 namespace TencentCloud
@@ -121,6 +122,31 @@ namespace TencentCloud
                      */
                     bool ImageMessageHasBeenSet() const;
 
+                    /**
+                     * 获取自定义消息内容。message type为2时有效。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return CustomMessage 自定义消息内容。message type为2时有效。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    CustomMsgContent GetCustomMessage() const;
+
+                    /**
+                     * 设置自定义消息内容。message type为2时有效。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _customMessage 自定义消息内容。message type为2时有效。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetCustomMessage(const CustomMsgContent& _customMessage);
+
+                    /**
+                     * 判断参数 CustomMessage 是否已赋值
+                     * @return CustomMessage 是否已赋值
+                     * 
+                     */
+                    bool CustomMessageHasBeenSet() const;
+
                 private:
 
                     /**
@@ -143,6 +169,13 @@ namespace TencentCloud
                      */
                     std::string m_imageMessage;
                     bool m_imageMessageHasBeenSet;
+
+                    /**
+                     * 自定义消息内容。message type为2时有效。
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    CustomMsgContent m_customMessage;
+                    bool m_customMessageHasBeenSet;
 
                 };
             }
