@@ -29,7 +29,8 @@ CreateOrUpdateResourceRequest::CreateOrUpdateResourceRequest() :
     m_cosBucketNameHasBeenSet(false),
     m_cosRegionHasBeenSet(false),
     m_newFileHasBeenSet(false),
-    m_filesSizeHasBeenSet(false)
+    m_filesSizeHasBeenSet(false),
+    m_fileMd5HasBeenSet(false)
 {
 }
 
@@ -104,6 +105,14 @@ string CreateOrUpdateResourceRequest::ToJsonString() const
         {
             d[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
         }
+    }
+
+    if (m_fileMd5HasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "FileMd5";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_fileMd5.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -224,6 +233,22 @@ void CreateOrUpdateResourceRequest::SetFilesSize(const vector<string>& _filesSiz
 bool CreateOrUpdateResourceRequest::FilesSizeHasBeenSet() const
 {
     return m_filesSizeHasBeenSet;
+}
+
+string CreateOrUpdateResourceRequest::GetFileMd5() const
+{
+    return m_fileMd5;
+}
+
+void CreateOrUpdateResourceRequest::SetFileMd5(const string& _fileMd5)
+{
+    m_fileMd5 = _fileMd5;
+    m_fileMd5HasBeenSet = true;
+}
+
+bool CreateOrUpdateResourceRequest::FileMd5HasBeenSet() const
+{
+    return m_fileMd5HasBeenSet;
 }
 
 

@@ -45,9 +45,7 @@ namespace TencentCloud
 
                     /**
                      * 获取1: 正在录制中
-2: 任务不存在
                      * @return Status 1: 正在录制中
-2: 任务不存在
                      * 
                      */
                     int64_t GetStatus() const;
@@ -63,7 +61,6 @@ namespace TencentCloud
 
                     /**
                      * 1: 正在录制中
-2: 任务不存在
                      */
                     int64_t m_status;
                     bool m_statusHasBeenSet;

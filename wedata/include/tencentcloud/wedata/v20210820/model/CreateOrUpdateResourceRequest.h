@@ -189,6 +189,27 @@ namespace TencentCloud
                      */
                     bool FilesSizeHasBeenSet() const;
 
+                    /**
+                     * 获取必填项，资源的Md5值（COS中的ETag）
+                     * @return FileMd5 必填项，资源的Md5值（COS中的ETag）
+                     * 
+                     */
+                    std::string GetFileMd5() const;
+
+                    /**
+                     * 设置必填项，资源的Md5值（COS中的ETag）
+                     * @param _fileMd5 必填项，资源的Md5值（COS中的ETag）
+                     * 
+                     */
+                    void SetFileMd5(const std::string& _fileMd5);
+
+                    /**
+                     * 判断参数 FileMd5 是否已赋值
+                     * @return FileMd5 是否已赋值
+                     * 
+                     */
+                    bool FileMd5HasBeenSet() const;
+
                 private:
 
                     /**
@@ -232,6 +253,12 @@ namespace TencentCloud
                      */
                     std::vector<std::string> m_filesSize;
                     bool m_filesSizeHasBeenSet;
+
+                    /**
+                     * 必填项，资源的Md5值（COS中的ETag）
+                     */
+                    std::string m_fileMd5;
+                    bool m_fileMd5HasBeenSet;
 
                 };
             }
