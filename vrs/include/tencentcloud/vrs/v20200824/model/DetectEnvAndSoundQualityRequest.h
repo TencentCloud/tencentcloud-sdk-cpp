@@ -85,27 +85,6 @@ namespace TencentCloud
                     bool AudioDataHasBeenSet() const;
 
                     /**
-                     * 获取音频格式，音频类型(wav,mp3,aac,m4a)
-                     * @return Codec 音频格式，音频类型(wav,mp3,aac,m4a)
-                     * 
-                     */
-                    std::string GetCodec() const;
-
-                    /**
-                     * 设置音频格式，音频类型(wav,mp3,aac,m4a)
-                     * @param _codec 音频格式，音频类型(wav,mp3,aac,m4a)
-                     * 
-                     */
-                    void SetCodec(const std::string& _codec);
-
-                    /**
-                     * 判断参数 Codec 是否已赋值
-                     * @return Codec 是否已赋值
-                     * 
-                     */
-                    bool CodecHasBeenSet() const;
-
-                    /**
                      * 获取1:环境检测 2:音质检测
                      * @return TypeId 1:环境检测 2:音质检测
                      * 
@@ -125,6 +104,27 @@ namespace TencentCloud
                      * 
                      */
                     bool TypeIdHasBeenSet() const;
+
+                    /**
+                     * 获取音频格式，音频类型(wav,mp3,aac,m4a)
+                     * @return Codec 音频格式，音频类型(wav,mp3,aac,m4a)
+                     * 
+                     */
+                    std::string GetCodec() const;
+
+                    /**
+                     * 设置音频格式，音频类型(wav,mp3,aac,m4a)
+                     * @param _codec 音频格式，音频类型(wav,mp3,aac,m4a)
+                     * 
+                     */
+                    void SetCodec(const std::string& _codec);
+
+                    /**
+                     * 判断参数 Codec 是否已赋值
+                     * @return Codec 是否已赋值
+                     * 
+                     */
+                    bool CodecHasBeenSet() const;
 
                     /**
                      * 获取音频采样率：
@@ -170,16 +170,16 @@ namespace TencentCloud
                     bool m_audioDataHasBeenSet;
 
                     /**
-                     * 音频格式，音频类型(wav,mp3,aac,m4a)
-                     */
-                    std::string m_codec;
-                    bool m_codecHasBeenSet;
-
-                    /**
                      * 1:环境检测 2:音质检测
                      */
                     int64_t m_typeId;
                     bool m_typeIdHasBeenSet;
+
+                    /**
+                     * 音频格式，音频类型(wav,mp3,aac,m4a)
+                     */
+                    std::string m_codec;
+                    bool m_codecHasBeenSet;
 
                     /**
                      * 音频采样率：

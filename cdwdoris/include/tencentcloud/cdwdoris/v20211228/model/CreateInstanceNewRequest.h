@@ -24,6 +24,7 @@
 #include <tencentcloud/cdwdoris/v20211228/model/CreateInstanceSpec.h>
 #include <tencentcloud/cdwdoris/v20211228/model/ChargeProperties.h>
 #include <tencentcloud/cdwdoris/v20211228/model/Tag.h>
+#include <tencentcloud/cdwdoris/v20211228/model/NetworkInfo.h>
 
 
 namespace TencentCloud
@@ -330,6 +331,48 @@ namespace TencentCloud
                      */
                     bool CaseSensitiveHasBeenSet() const;
 
+                    /**
+                     * 获取是否开启多可用区
+                     * @return EnableMultiZones 是否开启多可用区
+                     * 
+                     */
+                    bool GetEnableMultiZones() const;
+
+                    /**
+                     * 设置是否开启多可用区
+                     * @param _enableMultiZones 是否开启多可用区
+                     * 
+                     */
+                    void SetEnableMultiZones(const bool& _enableMultiZones);
+
+                    /**
+                     * 判断参数 EnableMultiZones 是否已赋值
+                     * @return EnableMultiZones 是否已赋值
+                     * 
+                     */
+                    bool EnableMultiZonesHasBeenSet() const;
+
+                    /**
+                     * 获取开启多可用区后，用户的所有可用区和子网信息
+                     * @return UserMultiZoneInfos 开启多可用区后，用户的所有可用区和子网信息
+                     * 
+                     */
+                    NetworkInfo GetUserMultiZoneInfos() const;
+
+                    /**
+                     * 设置开启多可用区后，用户的所有可用区和子网信息
+                     * @param _userMultiZoneInfos 开启多可用区后，用户的所有可用区和子网信息
+                     * 
+                     */
+                    void SetUserMultiZoneInfos(const NetworkInfo& _userMultiZoneInfos);
+
+                    /**
+                     * 判断参数 UserMultiZoneInfos 是否已赋值
+                     * @return UserMultiZoneInfos 是否已赋值
+                     * 
+                     */
+                    bool UserMultiZoneInfosHasBeenSet() const;
+
                 private:
 
                     /**
@@ -412,6 +455,18 @@ namespace TencentCloud
                      */
                     int64_t m_caseSensitive;
                     bool m_caseSensitiveHasBeenSet;
+
+                    /**
+                     * 是否开启多可用区
+                     */
+                    bool m_enableMultiZones;
+                    bool m_enableMultiZonesHasBeenSet;
+
+                    /**
+                     * 开启多可用区后，用户的所有可用区和子网信息
+                     */
+                    NetworkInfo m_userMultiZoneInfos;
+                    bool m_userMultiZoneInfosHasBeenSet;
 
                 };
             }

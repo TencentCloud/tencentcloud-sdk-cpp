@@ -1151,6 +1151,56 @@ Modify 集群变更中；
                      */
                     bool BindSGsHasBeenSet() const;
 
+                    /**
+                     * 获取是否为多可用区
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return EnableMultiZones 是否为多可用区
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    bool GetEnableMultiZones() const;
+
+                    /**
+                     * 设置是否为多可用区
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _enableMultiZones 是否为多可用区
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetEnableMultiZones(const bool& _enableMultiZones);
+
+                    /**
+                     * 判断参数 EnableMultiZones 是否已赋值
+                     * @return EnableMultiZones 是否已赋值
+                     * 
+                     */
+                    bool EnableMultiZonesHasBeenSet() const;
+
+                    /**
+                     * 获取用户可用区和子网信息
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return UserNetworkInfos 用户可用区和子网信息
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::string GetUserNetworkInfos() const;
+
+                    /**
+                     * 设置用户可用区和子网信息
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _userNetworkInfos 用户可用区和子网信息
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetUserNetworkInfos(const std::string& _userNetworkInfos);
+
+                    /**
+                     * 判断参数 UserNetworkInfos 是否已赋值
+                     * @return UserNetworkInfos 是否已赋值
+                     * 
+                     */
+                    bool UserNetworkInfosHasBeenSet() const;
+
                 private:
 
                     /**
@@ -1460,6 +1510,20 @@ Modify 集群变更中；
                      */
                     std::vector<std::string> m_bindSGs;
                     bool m_bindSGsHasBeenSet;
+
+                    /**
+                     * 是否为多可用区
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    bool m_enableMultiZones;
+                    bool m_enableMultiZonesHasBeenSet;
+
+                    /**
+                     * 用户可用区和子网信息
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_userNetworkInfos;
+                    bool m_userNetworkInfosHasBeenSet;
 
                 };
             }

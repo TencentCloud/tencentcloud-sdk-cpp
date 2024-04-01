@@ -50,6 +50,7 @@ set(tse_public_header_model
   include/tencentcloud/tse/v20201207/model/CloudNativeAPIGatewayNodeConfig.h
   include/tencentcloud/tse/v20201207/model/DeleteConfigFileGroupResponse.h
   include/tencentcloud/tse/v20201207/model/DescribeAutoScalerResourceStrategyBindingGroupsRequest.h
+  include/tencentcloud/tse/v20201207/model/KeyValue.h
   include/tencentcloud/tse/v20201207/model/CreateNativeGatewayServerGroupRequest.h
   include/tencentcloud/tse/v20201207/model/DescribeAllConfigFileTemplatesResponse.h
   include/tencentcloud/tse/v20201207/model/ConfigFilePublishInfo.h
@@ -260,6 +261,7 @@ set(tse_public_header_model
   include/tencentcloud/tse/v20201207/model/DescribeCloudNativeAPIGatewayRouteRateLimitResponse.h
   include/tencentcloud/tse/v20201207/model/UpdateCloudNativeAPIGatewayResult.h
   include/tencentcloud/tse/v20201207/model/ModifyGovernanceServicesRequest.h
+  include/tencentcloud/tse/v20201207/model/RuleFilter.h
   include/tencentcloud/tse/v20201207/model/DescribeCloudNativeAPIGatewayCertificateDetailsResponse.h
   include/tencentcloud/tse/v20201207/model/DeleteConfigFileGroupRequest.h
   include/tencentcloud/tse/v20201207/model/DescribeNativeGatewayServerGroupsResponse.h
@@ -271,6 +273,7 @@ set(tse_public_header_model
   include/tencentcloud/tse/v20201207/model/DeleteGovernanceServicesRequest.h
   include/tencentcloud/tse/v20201207/model/UnbindAutoScalerResourceStrategyFromGroupsRequest.h
   include/tencentcloud/tse/v20201207/model/ModifyConfigFileGroupResponse.h
+  include/tencentcloud/tse/v20201207/model/LimitRule.h
   include/tencentcloud/tse/v20201207/model/CreateCloudNativeAPIGatewayServiceRateLimitResponse.h
   include/tencentcloud/tse/v20201207/model/DescribeNacosServerInterfacesResponse.h
   include/tencentcloud/tse/v20201207/model/DeleteConfigFileReleasesRequest.h
@@ -383,6 +386,7 @@ set(tse_src
   src/v20201207/model/CloudNativeAPIGatewayNodeConfig.cpp
   src/v20201207/model/DeleteConfigFileGroupResponse.cpp
   src/v20201207/model/DescribeAutoScalerResourceStrategyBindingGroupsRequest.cpp
+  src/v20201207/model/KeyValue.cpp
   src/v20201207/model/CreateNativeGatewayServerGroupRequest.cpp
   src/v20201207/model/DescribeAllConfigFileTemplatesResponse.cpp
   src/v20201207/model/ConfigFilePublishInfo.cpp
@@ -593,6 +597,7 @@ set(tse_src
   src/v20201207/model/DescribeCloudNativeAPIGatewayRouteRateLimitResponse.cpp
   src/v20201207/model/UpdateCloudNativeAPIGatewayResult.cpp
   src/v20201207/model/ModifyGovernanceServicesRequest.cpp
+  src/v20201207/model/RuleFilter.cpp
   src/v20201207/model/DescribeCloudNativeAPIGatewayCertificateDetailsResponse.cpp
   src/v20201207/model/DeleteConfigFileGroupRequest.cpp
   src/v20201207/model/DescribeNativeGatewayServerGroupsResponse.cpp
@@ -604,6 +609,7 @@ set(tse_src
   src/v20201207/model/DeleteGovernanceServicesRequest.cpp
   src/v20201207/model/UnbindAutoScalerResourceStrategyFromGroupsRequest.cpp
   src/v20201207/model/ModifyConfigFileGroupResponse.cpp
+  src/v20201207/model/LimitRule.cpp
   src/v20201207/model/CreateCloudNativeAPIGatewayServiceRateLimitResponse.cpp
   src/v20201207/model/DescribeNacosServerInterfacesResponse.cpp
   src/v20201207/model/DeleteConfigFileReleasesRequest.cpp

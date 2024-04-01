@@ -85,35 +85,6 @@ namespace TencentCloud
                     bool VoiceNameHasBeenSet() const;
 
                     /**
-                     * 获取音频采样率：
-
-16000：16k
-                     * @return SampleRate 音频采样率：
-
-16000：16k
-                     * 
-                     */
-                    int64_t GetSampleRate() const;
-
-                    /**
-                     * 设置音频采样率：
-
-16000：16k
-                     * @param _sampleRate 音频采样率：
-
-16000：16k
-                     * 
-                     */
-                    void SetSampleRate(const int64_t& _sampleRate);
-
-                    /**
-                     * 判断参数 SampleRate 是否已赋值
-                     * @return SampleRate 是否已赋值
-                     * 
-                     */
-                    bool SampleRateHasBeenSet() const;
-
-                    /**
                      * 获取音色性别:
 
 1-male
@@ -180,27 +151,6 @@ namespace TencentCloud
                     bool VoiceLanguageHasBeenSet() const;
 
                     /**
-                     * 获取音频格式，音频类型(wav,mp3,aac,m4a)
-                     * @return Codec 音频格式，音频类型(wav,mp3,aac,m4a)
-                     * 
-                     */
-                    std::string GetCodec() const;
-
-                    /**
-                     * 设置音频格式，音频类型(wav,mp3,aac,m4a)
-                     * @param _codec 音频格式，音频类型(wav,mp3,aac,m4a)
-                     * 
-                     */
-                    void SetCodec(const std::string& _codec);
-
-                    /**
-                     * 判断参数 Codec 是否已赋值
-                     * @return Codec 是否已赋值
-                     * 
-                     */
-                    bool CodecHasBeenSet() const;
-
-                    /**
                      * 获取音频ID集合
                      * @return AudioIdList 音频ID集合
                      * 
@@ -220,6 +170,56 @@ namespace TencentCloud
                      * 
                      */
                     bool AudioIdListHasBeenSet() const;
+
+                    /**
+                     * 获取音频采样率：
+
+16000：16k
+                     * @return SampleRate 音频采样率：
+
+16000：16k
+                     * 
+                     */
+                    int64_t GetSampleRate() const;
+
+                    /**
+                     * 设置音频采样率：
+
+16000：16k
+                     * @param _sampleRate 音频采样率：
+
+16000：16k
+                     * 
+                     */
+                    void SetSampleRate(const int64_t& _sampleRate);
+
+                    /**
+                     * 判断参数 SampleRate 是否已赋值
+                     * @return SampleRate 是否已赋值
+                     * 
+                     */
+                    bool SampleRateHasBeenSet() const;
+
+                    /**
+                     * 获取音频格式，音频类型(wav,mp3,aac,m4a)
+                     * @return Codec 音频格式，音频类型(wav,mp3,aac,m4a)
+                     * 
+                     */
+                    std::string GetCodec() const;
+
+                    /**
+                     * 设置音频格式，音频类型(wav,mp3,aac,m4a)
+                     * @param _codec 音频格式，音频类型(wav,mp3,aac,m4a)
+                     * 
+                     */
+                    void SetCodec(const std::string& _codec);
+
+                    /**
+                     * 判断参数 Codec 是否已赋值
+                     * @return Codec 是否已赋值
+                     * 
+                     */
+                    bool CodecHasBeenSet() const;
 
                     /**
                      * 获取回调 URL，用户自行搭建的用于接收结果的服务URL。如果用户使用轮询方式获取识别结果，则无需提交该参数。
@@ -268,19 +268,15 @@ namespace TencentCloud
                     bool ModelTypeHasBeenSet() const;
 
                     /**
-                     * 获取任务类型 0:轻量版复刻
-默认为0
-                     * @return TaskType 任务类型 0:轻量版复刻
-默认为0
+                     * 获取复刻类型。 0 - 轻量版声音复刻（默认）。
+                     * @return TaskType 复刻类型。 0 - 轻量版声音复刻（默认）。
                      * 
                      */
                     int64_t GetTaskType() const;
 
                     /**
-                     * 设置任务类型 0:轻量版复刻
-默认为0
-                     * @param _taskType 任务类型 0:轻量版复刻
-默认为0
+                     * 设置复刻类型。 0 - 轻量版声音复刻（默认）。
+                     * @param _taskType 复刻类型。 0 - 轻量版声音复刻（默认）。
                      * 
                      */
                     void SetTaskType(const int64_t& _taskType);
@@ -293,15 +289,15 @@ namespace TencentCloud
                     bool TaskTypeHasBeenSet() const;
 
                     /**
-                     * 获取校验音频ID
-                     * @return VPRAudioId 校验音频ID
+                     * 获取校验音频ID。
+                     * @return VPRAudioId 校验音频ID。
                      * 
                      */
                     std::string GetVPRAudioId() const;
 
                     /**
-                     * 设置校验音频ID
-                     * @param _vPRAudioId 校验音频ID
+                     * 设置校验音频ID。
+                     * @param _vPRAudioId 校验音频ID。
                      * 
                      */
                     void SetVPRAudioId(const std::string& _vPRAudioId);
@@ -328,14 +324,6 @@ namespace TencentCloud
                     bool m_voiceNameHasBeenSet;
 
                     /**
-                     * 音频采样率：
-
-16000：16k
-                     */
-                    int64_t m_sampleRate;
-                    bool m_sampleRateHasBeenSet;
-
-                    /**
                      * 音色性别:
 
 1-male
@@ -354,16 +342,24 @@ namespace TencentCloud
                     bool m_voiceLanguageHasBeenSet;
 
                     /**
-                     * 音频格式，音频类型(wav,mp3,aac,m4a)
-                     */
-                    std::string m_codec;
-                    bool m_codecHasBeenSet;
-
-                    /**
                      * 音频ID集合
                      */
                     std::vector<std::string> m_audioIdList;
                     bool m_audioIdListHasBeenSet;
+
+                    /**
+                     * 音频采样率：
+
+16000：16k
+                     */
+                    int64_t m_sampleRate;
+                    bool m_sampleRateHasBeenSet;
+
+                    /**
+                     * 音频格式，音频类型(wav,mp3,aac,m4a)
+                     */
+                    std::string m_codec;
+                    bool m_codecHasBeenSet;
 
                     /**
                      * 回调 URL，用户自行搭建的用于接收结果的服务URL。如果用户使用轮询方式获取识别结果，则无需提交该参数。
@@ -379,14 +375,13 @@ namespace TencentCloud
                     bool m_modelTypeHasBeenSet;
 
                     /**
-                     * 任务类型 0:轻量版复刻
-默认为0
+                     * 复刻类型。 0 - 轻量版声音复刻（默认）。
                      */
                     int64_t m_taskType;
                     bool m_taskTypeHasBeenSet;
 
                     /**
-                     * 校验音频ID
+                     * 校验音频ID。
                      */
                     std::string m_vPRAudioId;
                     bool m_vPRAudioIdHasBeenSet;

@@ -64,27 +64,6 @@ namespace TencentCloud
                     bool TextHasBeenSet() const;
 
                     /**
-                     * 获取模型类型，1-默认模型。
-                     * @return ModelType 模型类型，1-默认模型。
-                     * 
-                     */
-                    int64_t GetModelType() const;
-
-                    /**
-                     * 设置模型类型，1-默认模型。
-                     * @param _modelType 模型类型，1-默认模型。
-                     * 
-                     */
-                    void SetModelType(const int64_t& _modelType);
-
-                    /**
-                     * 判断参数 ModelType 是否已赋值
-                     * @return ModelType 是否已赋值
-                     * 
-                     */
-                    bool ModelTypeHasBeenSet() const;
-
-                    /**
                      * 获取音量大小，范围：[0，10]，分别对应11个等级的音量，默认为0，代表正常音量。没有静音选项。
                      * @return Volume 音量大小，范围：[0，10]，分别对应11个等级的音量，默认为0，代表正常音量。没有静音选项。
                      * 
@@ -146,6 +125,27 @@ namespace TencentCloud
                      * 
                      */
                     bool ProjectIdHasBeenSet() const;
+
+                    /**
+                     * 获取模型类型，1-默认模型。
+                     * @return ModelType 模型类型，1-默认模型。
+                     * 
+                     */
+                    int64_t GetModelType() const;
+
+                    /**
+                     * 设置模型类型，1-默认模型。
+                     * @param _modelType 模型类型，1-默认模型。
+                     * 
+                     */
+                    void SetModelType(const int64_t& _modelType);
+
+                    /**
+                     * 判断参数 ModelType 是否已赋值
+                     * @return ModelType 是否已赋值
+                     * 
+                     */
+                    bool ModelTypeHasBeenSet() const;
 
                     /**
                      * 获取音色 ID，包括标准音色与精品音色，精品音色拟真度更高，价格不同于标准音色，请参见[购买指南](https://cloud.tencent.com/document/product/1073/34112)。完整的音色 ID 列表请参见[音色列表](https://cloud.tencent.com/document/product/1073/92668)。
@@ -345,12 +345,6 @@ namespace TencentCloud
                     bool m_textHasBeenSet;
 
                     /**
-                     * 模型类型，1-默认模型。
-                     */
-                    int64_t m_modelType;
-                    bool m_modelTypeHasBeenSet;
-
-                    /**
                      * 音量大小，范围：[0，10]，分别对应11个等级的音量，默认为0，代表正常音量。没有静音选项。
                      */
                     double m_volume;
@@ -367,6 +361,12 @@ namespace TencentCloud
                      */
                     int64_t m_projectId;
                     bool m_projectIdHasBeenSet;
+
+                    /**
+                     * 模型类型，1-默认模型。
+                     */
+                    int64_t m_modelType;
+                    bool m_modelTypeHasBeenSet;
 
                     /**
                      * 音色 ID，包括标准音色与精品音色，精品音色拟真度更高，价格不同于标准音色，请参见[购买指南](https://cloud.tencent.com/document/product/1073/34112)。完整的音色 ID 列表请参见[音色列表](https://cloud.tencent.com/document/product/1073/92668)。

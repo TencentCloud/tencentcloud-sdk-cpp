@@ -96,6 +96,131 @@ namespace TencentCloud
                      */
                     bool StatusHasBeenSet() const;
 
+                    /**
+                     * 获取节点角色名
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return NodeName 节点角色名
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::string GetNodeName() const;
+
+                    /**
+                     * 设置节点角色名
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _nodeName 节点角色名
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetNodeName(const std::string& _nodeName);
+
+                    /**
+                     * 判断参数 NodeName 是否已赋值
+                     * @return NodeName 是否已赋值
+                     * 
+                     */
+                    bool NodeNameHasBeenSet() const;
+
+                    /**
+                     * 获取组件名
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return ComponentName 组件名
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::string GetComponentName() const;
+
+                    /**
+                     * 设置组件名
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _componentName 组件名
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetComponentName(const std::string& _componentName);
+
+                    /**
+                     * 判断参数 ComponentName 是否已赋值
+                     * @return ComponentName 是否已赋值
+                     * 
+                     */
+                    bool ComponentNameHasBeenSet() const;
+
+                    /**
+                     * 获取节点角色
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return NodeRole 节点角色
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::string GetNodeRole() const;
+
+                    /**
+                     * 设置节点角色
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _nodeRole 节点角色
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetNodeRole(const std::string& _nodeRole);
+
+                    /**
+                     * 判断参数 NodeRole 是否已赋值
+                     * @return NodeRole 是否已赋值
+                     * 
+                     */
+                    bool NodeRoleHasBeenSet() const;
+
+                    /**
+                     * 获取节点上次重启的时间
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return LastRestartTime 节点上次重启的时间
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::string GetLastRestartTime() const;
+
+                    /**
+                     * 设置节点上次重启的时间
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _lastRestartTime 节点上次重启的时间
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetLastRestartTime(const std::string& _lastRestartTime);
+
+                    /**
+                     * 判断参数 LastRestartTime 是否已赋值
+                     * @return LastRestartTime 是否已赋值
+                     * 
+                     */
+                    bool LastRestartTimeHasBeenSet() const;
+
+                    /**
+                     * 获取节点所在可用区
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return Zone 节点所在可用区
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::string GetZone() const;
+
+                    /**
+                     * 设置节点所在可用区
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _zone 节点所在可用区
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetZone(const std::string& _zone);
+
+                    /**
+                     * 判断参数 Zone 是否已赋值
+                     * @return Zone 是否已赋值
+                     * 
+                     */
+                    bool ZoneHasBeenSet() const;
+
                 private:
 
                     /**
@@ -111,6 +236,41 @@ namespace TencentCloud
                      */
                     int64_t m_status;
                     bool m_statusHasBeenSet;
+
+                    /**
+                     * 节点角色名
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_nodeName;
+                    bool m_nodeNameHasBeenSet;
+
+                    /**
+                     * 组件名
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_componentName;
+                    bool m_componentNameHasBeenSet;
+
+                    /**
+                     * 节点角色
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_nodeRole;
+                    bool m_nodeRoleHasBeenSet;
+
+                    /**
+                     * 节点上次重启的时间
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_lastRestartTime;
+                    bool m_lastRestartTimeHasBeenSet;
+
+                    /**
+                     * 节点所在可用区
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_zone;
+                    bool m_zoneHasBeenSet;
 
                 };
             }

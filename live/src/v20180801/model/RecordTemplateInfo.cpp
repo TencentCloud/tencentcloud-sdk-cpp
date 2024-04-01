@@ -32,6 +32,7 @@ RecordTemplateInfo::RecordTemplateInfo() :
     m_hlsSpecialParamHasBeenSet(false),
     m_mp3ParamHasBeenSet(false),
     m_removeWatermarkHasBeenSet(false),
+    m_cosStoreHasBeenSet(false),
     m_flvSpecialParamHasBeenSet(false)
 {
 }
@@ -193,6 +194,16 @@ CoreInternalOutcome RecordTemplateInfo::Deserialize(const rapidjson::Value &valu
         m_removeWatermarkHasBeenSet = true;
     }
 
+    if (value.HasMember("CosStore") && !value["CosStore"].IsNull())
+    {
+        if (!value["CosStore"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `RecordTemplateInfo.CosStore` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_cosStore = value["CosStore"].GetInt64();
+        m_cosStoreHasBeenSet = true;
+    }
+
     if (value.HasMember("FlvSpecialParam") && !value["FlvSpecialParam"].IsNull())
     {
         if (!value["FlvSpecialParam"].IsObject())
@@ -309,6 +320,14 @@ void RecordTemplateInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Docume
         string key = "RemoveWatermark";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_removeWatermark, allocator);
+    }
+
+    if (m_cosStoreHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "CosStore";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_cosStore, allocator);
     }
 
     if (m_flvSpecialParamHasBeenSet)
@@ -497,6 +516,22 @@ void RecordTemplateInfo::SetRemoveWatermark(const bool& _removeWatermark)
 bool RecordTemplateInfo::RemoveWatermarkHasBeenSet() const
 {
     return m_removeWatermarkHasBeenSet;
+}
+
+int64_t RecordTemplateInfo::GetCosStore() const
+{
+    return m_cosStore;
+}
+
+void RecordTemplateInfo::SetCosStore(const int64_t& _cosStore)
+{
+    m_cosStore = _cosStore;
+    m_cosStoreHasBeenSet = true;
+}
+
+bool RecordTemplateInfo::CosStoreHasBeenSet() const
+{
+    return m_cosStoreHasBeenSet;
 }
 
 FlvSpecialParam RecordTemplateInfo::GetFlvSpecialParam() const

@@ -85,6 +85,27 @@ namespace TencentCloud
                     bool ServiceIdHasBeenSet() const;
 
                     /**
+                     * 获取灰度规则类别 Standard｜Lane
+                     * @return RuleType 灰度规则类别 Standard｜Lane
+                     * 
+                     */
+                    std::string GetRuleType() const;
+
+                    /**
+                     * 设置灰度规则类别 Standard｜Lane
+                     * @param _ruleType 灰度规则类别 Standard｜Lane
+                     * 
+                     */
+                    void SetRuleType(const std::string& _ruleType);
+
+                    /**
+                     * 判断参数 RuleType 是否已赋值
+                     * @return RuleType 是否已赋值
+                     * 
+                     */
+                    bool RuleTypeHasBeenSet() const;
+
+                    /**
                      * 获取列表数量
                      * @return Limit 列表数量
                      * 
@@ -139,6 +160,12 @@ namespace TencentCloud
                      */
                     std::string m_serviceId;
                     bool m_serviceIdHasBeenSet;
+
+                    /**
+                     * 灰度规则类别 Standard｜Lane
+                     */
+                    std::string m_ruleType;
+                    bool m_ruleTypeHasBeenSet;
 
                     /**
                      * 列表数量

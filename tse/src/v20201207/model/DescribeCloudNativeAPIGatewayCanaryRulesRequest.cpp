@@ -25,6 +25,7 @@ using namespace std;
 DescribeCloudNativeAPIGatewayCanaryRulesRequest::DescribeCloudNativeAPIGatewayCanaryRulesRequest() :
     m_gatewayIdHasBeenSet(false),
     m_serviceIdHasBeenSet(false),
+    m_ruleTypeHasBeenSet(false),
     m_limitHasBeenSet(false),
     m_offsetHasBeenSet(false)
 {
@@ -51,6 +52,14 @@ string DescribeCloudNativeAPIGatewayCanaryRulesRequest::ToJsonString() const
         string key = "ServiceId";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_serviceId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_ruleTypeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "RuleType";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_ruleType.c_str(), allocator).Move(), allocator);
     }
 
     if (m_limitHasBeenSet)
@@ -107,6 +116,22 @@ void DescribeCloudNativeAPIGatewayCanaryRulesRequest::SetServiceId(const string&
 bool DescribeCloudNativeAPIGatewayCanaryRulesRequest::ServiceIdHasBeenSet() const
 {
     return m_serviceIdHasBeenSet;
+}
+
+string DescribeCloudNativeAPIGatewayCanaryRulesRequest::GetRuleType() const
+{
+    return m_ruleType;
+}
+
+void DescribeCloudNativeAPIGatewayCanaryRulesRequest::SetRuleType(const string& _ruleType)
+{
+    m_ruleType = _ruleType;
+    m_ruleTypeHasBeenSet = true;
+}
+
+bool DescribeCloudNativeAPIGatewayCanaryRulesRequest::RuleTypeHasBeenSet() const
+{
+    return m_ruleTypeHasBeenSet;
 }
 
 int64_t DescribeCloudNativeAPIGatewayCanaryRulesRequest::GetLimit() const

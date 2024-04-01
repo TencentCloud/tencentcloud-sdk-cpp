@@ -23,17 +23,19 @@ using namespace std;
 CloudNativeAPIGatewayRateLimitDetail::CloudNativeAPIGatewayRateLimitDetail() :
     m_enabledHasBeenSet(false),
     m_qpsThresholdsHasBeenSet(false),
-    m_limitByHasBeenSet(false),
-    m_responseTypeHasBeenSet(false),
-    m_hideClientHeadersHasBeenSet(false),
-    m_isDelayHasBeenSet(false),
     m_pathHasBeenSet(false),
     m_headerHasBeenSet(false),
+    m_limitByHasBeenSet(false),
     m_externalRedisHasBeenSet(false),
     m_policyHasBeenSet(false),
     m_rateLimitResponseHasBeenSet(false),
     m_rateLimitResponseUrlHasBeenSet(false),
-    m_lineUpTimeHasBeenSet(false)
+    m_responseTypeHasBeenSet(false),
+    m_hideClientHeadersHasBeenSet(false),
+    m_lineUpTimeHasBeenSet(false),
+    m_isDelayHasBeenSet(false),
+    m_basicLimitQpsThresholdsHasBeenSet(false),
+    m_limitRulesHasBeenSet(false)
 {
 }
 
@@ -72,46 +74,6 @@ CoreInternalOutcome CloudNativeAPIGatewayRateLimitDetail::Deserialize(const rapi
         m_qpsThresholdsHasBeenSet = true;
     }
 
-    if (value.HasMember("LimitBy") && !value["LimitBy"].IsNull())
-    {
-        if (!value["LimitBy"].IsString())
-        {
-            return CoreInternalOutcome(Core::Error("response `CloudNativeAPIGatewayRateLimitDetail.LimitBy` IsString=false incorrectly").SetRequestId(requestId));
-        }
-        m_limitBy = string(value["LimitBy"].GetString());
-        m_limitByHasBeenSet = true;
-    }
-
-    if (value.HasMember("ResponseType") && !value["ResponseType"].IsNull())
-    {
-        if (!value["ResponseType"].IsString())
-        {
-            return CoreInternalOutcome(Core::Error("response `CloudNativeAPIGatewayRateLimitDetail.ResponseType` IsString=false incorrectly").SetRequestId(requestId));
-        }
-        m_responseType = string(value["ResponseType"].GetString());
-        m_responseTypeHasBeenSet = true;
-    }
-
-    if (value.HasMember("HideClientHeaders") && !value["HideClientHeaders"].IsNull())
-    {
-        if (!value["HideClientHeaders"].IsBool())
-        {
-            return CoreInternalOutcome(Core::Error("response `CloudNativeAPIGatewayRateLimitDetail.HideClientHeaders` IsBool=false incorrectly").SetRequestId(requestId));
-        }
-        m_hideClientHeaders = value["HideClientHeaders"].GetBool();
-        m_hideClientHeadersHasBeenSet = true;
-    }
-
-    if (value.HasMember("IsDelay") && !value["IsDelay"].IsNull())
-    {
-        if (!value["IsDelay"].IsBool())
-        {
-            return CoreInternalOutcome(Core::Error("response `CloudNativeAPIGatewayRateLimitDetail.IsDelay` IsBool=false incorrectly").SetRequestId(requestId));
-        }
-        m_isDelay = value["IsDelay"].GetBool();
-        m_isDelayHasBeenSet = true;
-    }
-
     if (value.HasMember("Path") && !value["Path"].IsNull())
     {
         if (!value["Path"].IsString())
@@ -130,6 +92,16 @@ CoreInternalOutcome CloudNativeAPIGatewayRateLimitDetail::Deserialize(const rapi
         }
         m_header = string(value["Header"].GetString());
         m_headerHasBeenSet = true;
+    }
+
+    if (value.HasMember("LimitBy") && !value["LimitBy"].IsNull())
+    {
+        if (!value["LimitBy"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `CloudNativeAPIGatewayRateLimitDetail.LimitBy` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_limitBy = string(value["LimitBy"].GetString());
+        m_limitByHasBeenSet = true;
     }
 
     if (value.HasMember("ExternalRedis") && !value["ExternalRedis"].IsNull())
@@ -186,6 +158,26 @@ CoreInternalOutcome CloudNativeAPIGatewayRateLimitDetail::Deserialize(const rapi
         m_rateLimitResponseUrlHasBeenSet = true;
     }
 
+    if (value.HasMember("ResponseType") && !value["ResponseType"].IsNull())
+    {
+        if (!value["ResponseType"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `CloudNativeAPIGatewayRateLimitDetail.ResponseType` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_responseType = string(value["ResponseType"].GetString());
+        m_responseTypeHasBeenSet = true;
+    }
+
+    if (value.HasMember("HideClientHeaders") && !value["HideClientHeaders"].IsNull())
+    {
+        if (!value["HideClientHeaders"].IsBool())
+        {
+            return CoreInternalOutcome(Core::Error("response `CloudNativeAPIGatewayRateLimitDetail.HideClientHeaders` IsBool=false incorrectly").SetRequestId(requestId));
+        }
+        m_hideClientHeaders = value["HideClientHeaders"].GetBool();
+        m_hideClientHeadersHasBeenSet = true;
+    }
+
     if (value.HasMember("LineUpTime") && !value["LineUpTime"].IsNull())
     {
         if (!value["LineUpTime"].IsInt64())
@@ -194,6 +186,56 @@ CoreInternalOutcome CloudNativeAPIGatewayRateLimitDetail::Deserialize(const rapi
         }
         m_lineUpTime = value["LineUpTime"].GetInt64();
         m_lineUpTimeHasBeenSet = true;
+    }
+
+    if (value.HasMember("IsDelay") && !value["IsDelay"].IsNull())
+    {
+        if (!value["IsDelay"].IsBool())
+        {
+            return CoreInternalOutcome(Core::Error("response `CloudNativeAPIGatewayRateLimitDetail.IsDelay` IsBool=false incorrectly").SetRequestId(requestId));
+        }
+        m_isDelay = value["IsDelay"].GetBool();
+        m_isDelayHasBeenSet = true;
+    }
+
+    if (value.HasMember("BasicLimitQpsThresholds") && !value["BasicLimitQpsThresholds"].IsNull())
+    {
+        if (!value["BasicLimitQpsThresholds"].IsArray())
+            return CoreInternalOutcome(Core::Error("response `CloudNativeAPIGatewayRateLimitDetail.BasicLimitQpsThresholds` is not array type"));
+
+        const rapidjson::Value &tmpValue = value["BasicLimitQpsThresholds"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            QpsThreshold item;
+            CoreInternalOutcome outcome = item.Deserialize(*itr);
+            if (!outcome.IsSuccess())
+            {
+                outcome.GetError().SetRequestId(requestId);
+                return outcome;
+            }
+            m_basicLimitQpsThresholds.push_back(item);
+        }
+        m_basicLimitQpsThresholdsHasBeenSet = true;
+    }
+
+    if (value.HasMember("LimitRules") && !value["LimitRules"].IsNull())
+    {
+        if (!value["LimitRules"].IsArray())
+            return CoreInternalOutcome(Core::Error("response `CloudNativeAPIGatewayRateLimitDetail.LimitRules` is not array type"));
+
+        const rapidjson::Value &tmpValue = value["LimitRules"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            LimitRule item;
+            CoreInternalOutcome outcome = item.Deserialize(*itr);
+            if (!outcome.IsSuccess())
+            {
+                outcome.GetError().SetRequestId(requestId);
+                return outcome;
+            }
+            m_limitRules.push_back(item);
+        }
+        m_limitRulesHasBeenSet = true;
     }
 
 
@@ -226,38 +268,6 @@ void CloudNativeAPIGatewayRateLimitDetail::ToJsonObject(rapidjson::Value &value,
         }
     }
 
-    if (m_limitByHasBeenSet)
-    {
-        rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "LimitBy";
-        iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, rapidjson::Value(m_limitBy.c_str(), allocator).Move(), allocator);
-    }
-
-    if (m_responseTypeHasBeenSet)
-    {
-        rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "ResponseType";
-        iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, rapidjson::Value(m_responseType.c_str(), allocator).Move(), allocator);
-    }
-
-    if (m_hideClientHeadersHasBeenSet)
-    {
-        rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "HideClientHeaders";
-        iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, m_hideClientHeaders, allocator);
-    }
-
-    if (m_isDelayHasBeenSet)
-    {
-        rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "IsDelay";
-        iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, m_isDelay, allocator);
-    }
-
     if (m_pathHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
@@ -272,6 +282,14 @@ void CloudNativeAPIGatewayRateLimitDetail::ToJsonObject(rapidjson::Value &value,
         string key = "Header";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_header.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_limitByHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "LimitBy";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_limitBy.c_str(), allocator).Move(), allocator);
     }
 
     if (m_externalRedisHasBeenSet)
@@ -308,12 +326,66 @@ void CloudNativeAPIGatewayRateLimitDetail::ToJsonObject(rapidjson::Value &value,
         value.AddMember(iKey, rapidjson::Value(m_rateLimitResponseUrl.c_str(), allocator).Move(), allocator);
     }
 
+    if (m_responseTypeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ResponseType";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_responseType.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_hideClientHeadersHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "HideClientHeaders";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_hideClientHeaders, allocator);
+    }
+
     if (m_lineUpTimeHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
         string key = "LineUpTime";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_lineUpTime, allocator);
+    }
+
+    if (m_isDelayHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "IsDelay";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_isDelay, allocator);
+    }
+
+    if (m_basicLimitQpsThresholdsHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "BasicLimitQpsThresholds";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_basicLimitQpsThresholds.begin(); itr != m_basicLimitQpsThresholds.end(); ++itr, ++i)
+        {
+            value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(value[key.c_str()][i], allocator);
+        }
+    }
+
+    if (m_limitRulesHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "LimitRules";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_limitRules.begin(); itr != m_limitRules.end(); ++itr, ++i)
+        {
+            value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(value[key.c_str()][i], allocator);
+        }
     }
 
 }
@@ -351,70 +423,6 @@ bool CloudNativeAPIGatewayRateLimitDetail::QpsThresholdsHasBeenSet() const
     return m_qpsThresholdsHasBeenSet;
 }
 
-string CloudNativeAPIGatewayRateLimitDetail::GetLimitBy() const
-{
-    return m_limitBy;
-}
-
-void CloudNativeAPIGatewayRateLimitDetail::SetLimitBy(const string& _limitBy)
-{
-    m_limitBy = _limitBy;
-    m_limitByHasBeenSet = true;
-}
-
-bool CloudNativeAPIGatewayRateLimitDetail::LimitByHasBeenSet() const
-{
-    return m_limitByHasBeenSet;
-}
-
-string CloudNativeAPIGatewayRateLimitDetail::GetResponseType() const
-{
-    return m_responseType;
-}
-
-void CloudNativeAPIGatewayRateLimitDetail::SetResponseType(const string& _responseType)
-{
-    m_responseType = _responseType;
-    m_responseTypeHasBeenSet = true;
-}
-
-bool CloudNativeAPIGatewayRateLimitDetail::ResponseTypeHasBeenSet() const
-{
-    return m_responseTypeHasBeenSet;
-}
-
-bool CloudNativeAPIGatewayRateLimitDetail::GetHideClientHeaders() const
-{
-    return m_hideClientHeaders;
-}
-
-void CloudNativeAPIGatewayRateLimitDetail::SetHideClientHeaders(const bool& _hideClientHeaders)
-{
-    m_hideClientHeaders = _hideClientHeaders;
-    m_hideClientHeadersHasBeenSet = true;
-}
-
-bool CloudNativeAPIGatewayRateLimitDetail::HideClientHeadersHasBeenSet() const
-{
-    return m_hideClientHeadersHasBeenSet;
-}
-
-bool CloudNativeAPIGatewayRateLimitDetail::GetIsDelay() const
-{
-    return m_isDelay;
-}
-
-void CloudNativeAPIGatewayRateLimitDetail::SetIsDelay(const bool& _isDelay)
-{
-    m_isDelay = _isDelay;
-    m_isDelayHasBeenSet = true;
-}
-
-bool CloudNativeAPIGatewayRateLimitDetail::IsDelayHasBeenSet() const
-{
-    return m_isDelayHasBeenSet;
-}
-
 string CloudNativeAPIGatewayRateLimitDetail::GetPath() const
 {
     return m_path;
@@ -445,6 +453,22 @@ void CloudNativeAPIGatewayRateLimitDetail::SetHeader(const string& _header)
 bool CloudNativeAPIGatewayRateLimitDetail::HeaderHasBeenSet() const
 {
     return m_headerHasBeenSet;
+}
+
+string CloudNativeAPIGatewayRateLimitDetail::GetLimitBy() const
+{
+    return m_limitBy;
+}
+
+void CloudNativeAPIGatewayRateLimitDetail::SetLimitBy(const string& _limitBy)
+{
+    m_limitBy = _limitBy;
+    m_limitByHasBeenSet = true;
+}
+
+bool CloudNativeAPIGatewayRateLimitDetail::LimitByHasBeenSet() const
+{
+    return m_limitByHasBeenSet;
 }
 
 ExternalRedis CloudNativeAPIGatewayRateLimitDetail::GetExternalRedis() const
@@ -511,6 +535,38 @@ bool CloudNativeAPIGatewayRateLimitDetail::RateLimitResponseUrlHasBeenSet() cons
     return m_rateLimitResponseUrlHasBeenSet;
 }
 
+string CloudNativeAPIGatewayRateLimitDetail::GetResponseType() const
+{
+    return m_responseType;
+}
+
+void CloudNativeAPIGatewayRateLimitDetail::SetResponseType(const string& _responseType)
+{
+    m_responseType = _responseType;
+    m_responseTypeHasBeenSet = true;
+}
+
+bool CloudNativeAPIGatewayRateLimitDetail::ResponseTypeHasBeenSet() const
+{
+    return m_responseTypeHasBeenSet;
+}
+
+bool CloudNativeAPIGatewayRateLimitDetail::GetHideClientHeaders() const
+{
+    return m_hideClientHeaders;
+}
+
+void CloudNativeAPIGatewayRateLimitDetail::SetHideClientHeaders(const bool& _hideClientHeaders)
+{
+    m_hideClientHeaders = _hideClientHeaders;
+    m_hideClientHeadersHasBeenSet = true;
+}
+
+bool CloudNativeAPIGatewayRateLimitDetail::HideClientHeadersHasBeenSet() const
+{
+    return m_hideClientHeadersHasBeenSet;
+}
+
 int64_t CloudNativeAPIGatewayRateLimitDetail::GetLineUpTime() const
 {
     return m_lineUpTime;
@@ -525,5 +581,53 @@ void CloudNativeAPIGatewayRateLimitDetail::SetLineUpTime(const int64_t& _lineUpT
 bool CloudNativeAPIGatewayRateLimitDetail::LineUpTimeHasBeenSet() const
 {
     return m_lineUpTimeHasBeenSet;
+}
+
+bool CloudNativeAPIGatewayRateLimitDetail::GetIsDelay() const
+{
+    return m_isDelay;
+}
+
+void CloudNativeAPIGatewayRateLimitDetail::SetIsDelay(const bool& _isDelay)
+{
+    m_isDelay = _isDelay;
+    m_isDelayHasBeenSet = true;
+}
+
+bool CloudNativeAPIGatewayRateLimitDetail::IsDelayHasBeenSet() const
+{
+    return m_isDelayHasBeenSet;
+}
+
+vector<QpsThreshold> CloudNativeAPIGatewayRateLimitDetail::GetBasicLimitQpsThresholds() const
+{
+    return m_basicLimitQpsThresholds;
+}
+
+void CloudNativeAPIGatewayRateLimitDetail::SetBasicLimitQpsThresholds(const vector<QpsThreshold>& _basicLimitQpsThresholds)
+{
+    m_basicLimitQpsThresholds = _basicLimitQpsThresholds;
+    m_basicLimitQpsThresholdsHasBeenSet = true;
+}
+
+bool CloudNativeAPIGatewayRateLimitDetail::BasicLimitQpsThresholdsHasBeenSet() const
+{
+    return m_basicLimitQpsThresholdsHasBeenSet;
+}
+
+vector<LimitRule> CloudNativeAPIGatewayRateLimitDetail::GetLimitRules() const
+{
+    return m_limitRules;
+}
+
+void CloudNativeAPIGatewayRateLimitDetail::SetLimitRules(const vector<LimitRule>& _limitRules)
+{
+    m_limitRules = _limitRules;
+    m_limitRulesHasBeenSet = true;
+}
+
+bool CloudNativeAPIGatewayRateLimitDetail::LimitRulesHasBeenSet() const
+{
+    return m_limitRulesHasBeenSet;
 }
 

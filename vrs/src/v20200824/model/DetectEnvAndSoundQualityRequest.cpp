@@ -25,8 +25,8 @@ using namespace std;
 DetectEnvAndSoundQualityRequest::DetectEnvAndSoundQualityRequest() :
     m_textIdHasBeenSet(false),
     m_audioDataHasBeenSet(false),
-    m_codecHasBeenSet(false),
     m_typeIdHasBeenSet(false),
+    m_codecHasBeenSet(false),
     m_sampleRateHasBeenSet(false)
 {
 }
@@ -54,20 +54,20 @@ string DetectEnvAndSoundQualityRequest::ToJsonString() const
         d.AddMember(iKey, rapidjson::Value(m_audioData.c_str(), allocator).Move(), allocator);
     }
 
-    if (m_codecHasBeenSet)
-    {
-        rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "Codec";
-        iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, rapidjson::Value(m_codec.c_str(), allocator).Move(), allocator);
-    }
-
     if (m_typeIdHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
         string key = "TypeId";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_typeId, allocator);
+    }
+
+    if (m_codecHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Codec";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_codec.c_str(), allocator).Move(), allocator);
     }
 
     if (m_sampleRateHasBeenSet)
@@ -118,22 +118,6 @@ bool DetectEnvAndSoundQualityRequest::AudioDataHasBeenSet() const
     return m_audioDataHasBeenSet;
 }
 
-string DetectEnvAndSoundQualityRequest::GetCodec() const
-{
-    return m_codec;
-}
-
-void DetectEnvAndSoundQualityRequest::SetCodec(const string& _codec)
-{
-    m_codec = _codec;
-    m_codecHasBeenSet = true;
-}
-
-bool DetectEnvAndSoundQualityRequest::CodecHasBeenSet() const
-{
-    return m_codecHasBeenSet;
-}
-
 int64_t DetectEnvAndSoundQualityRequest::GetTypeId() const
 {
     return m_typeId;
@@ -148,6 +132,22 @@ void DetectEnvAndSoundQualityRequest::SetTypeId(const int64_t& _typeId)
 bool DetectEnvAndSoundQualityRequest::TypeIdHasBeenSet() const
 {
     return m_typeIdHasBeenSet;
+}
+
+string DetectEnvAndSoundQualityRequest::GetCodec() const
+{
+    return m_codec;
+}
+
+void DetectEnvAndSoundQualityRequest::SetCodec(const string& _codec)
+{
+    m_codec = _codec;
+    m_codecHasBeenSet = true;
+}
+
+bool DetectEnvAndSoundQualityRequest::CodecHasBeenSet() const
+{
+    return m_codecHasBeenSet;
 }
 
 int64_t DetectEnvAndSoundQualityRequest::GetSampleRate() const

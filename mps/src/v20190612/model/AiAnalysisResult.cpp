@@ -28,6 +28,7 @@ AiAnalysisResult::AiAnalysisResult() :
     m_frameTagTaskHasBeenSet(false),
     m_highlightTaskHasBeenSet(false),
     m_deLogoTaskHasBeenSet(false),
+    m_headTailTaskHasBeenSet(false),
     m_descriptionTaskHasBeenSet(false)
 {
 }
@@ -149,6 +150,23 @@ CoreInternalOutcome AiAnalysisResult::Deserialize(const rapidjson::Value &value)
         m_deLogoTaskHasBeenSet = true;
     }
 
+    if (value.HasMember("HeadTailTask") && !value["HeadTailTask"].IsNull())
+    {
+        if (!value["HeadTailTask"].IsObject())
+        {
+            return CoreInternalOutcome(Core::Error("response `AiAnalysisResult.HeadTailTask` is not object type").SetRequestId(requestId));
+        }
+
+        CoreInternalOutcome outcome = m_headTailTask.Deserialize(value["HeadTailTask"]);
+        if (!outcome.IsSuccess())
+        {
+            outcome.GetError().SetRequestId(requestId);
+            return outcome;
+        }
+
+        m_headTailTaskHasBeenSet = true;
+    }
+
     if (value.HasMember("DescriptionTask") && !value["DescriptionTask"].IsNull())
     {
         if (!value["DescriptionTask"].IsObject())
@@ -233,6 +251,15 @@ void AiAnalysisResult::ToJsonObject(rapidjson::Value &value, rapidjson::Document
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
         m_deLogoTask.ToJsonObject(value[key.c_str()], allocator);
+    }
+
+    if (m_headTailTaskHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "HeadTailTask";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_headTailTask.ToJsonObject(value[key.c_str()], allocator);
     }
 
     if (m_descriptionTaskHasBeenSet)
@@ -357,6 +384,22 @@ void AiAnalysisResult::SetDeLogoTask(const AiAnalysisTaskDelLogoResult& _deLogoT
 bool AiAnalysisResult::DeLogoTaskHasBeenSet() const
 {
     return m_deLogoTaskHasBeenSet;
+}
+
+AiAnalysisTaskHeadTailResult AiAnalysisResult::GetHeadTailTask() const
+{
+    return m_headTailTask;
+}
+
+void AiAnalysisResult::SetHeadTailTask(const AiAnalysisTaskHeadTailResult& _headTailTask)
+{
+    m_headTailTask = _headTailTask;
+    m_headTailTaskHasBeenSet = true;
+}
+
+bool AiAnalysisResult::HeadTailTaskHasBeenSet() const
+{
+    return m_headTailTaskHasBeenSet;
 }
 
 AiAnalysisTaskDescriptionResult AiAnalysisResult::GetDescriptionTask() const

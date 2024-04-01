@@ -246,6 +246,31 @@ namespace TencentCloud
                      */
                     bool CvmInstanceNameHasBeenSet() const;
 
+                    /**
+                     * 获取target标签
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return Tags target标签
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::vector<std::string> GetTags() const;
+
+                    /**
+                     * 设置target标签
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _tags target标签
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetTags(const std::vector<std::string>& _tags);
+
+                    /**
+                     * 判断参数 Tags 是否已赋值
+                     * @return Tags 是否已赋值
+                     * 
+                     */
+                    bool TagsHasBeenSet() const;
+
                 private:
 
                     /**
@@ -303,6 +328,13 @@ namespace TencentCloud
                      */
                     std::string m_cvmInstanceName;
                     bool m_cvmInstanceNameHasBeenSet;
+
+                    /**
+                     * target标签
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::vector<std::string> m_tags;
+                    bool m_tagsHasBeenSet;
 
                 };
             }

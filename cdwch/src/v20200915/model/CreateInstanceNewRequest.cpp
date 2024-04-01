@@ -36,7 +36,8 @@ CreateInstanceNewRequest::CreateInstanceNewRequest() :
     m_cosBucketNameHasBeenSet(false),
     m_mountDiskTypeHasBeenSet(false),
     m_hAZkHasBeenSet(false),
-    m_commonSpecHasBeenSet(false)
+    m_commonSpecHasBeenSet(false),
+    m_tagItemsHasBeenSet(false)
 {
 }
 
@@ -161,6 +162,21 @@ string CreateInstanceNewRequest::ToJsonString() const
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
         m_commonSpec.ToJsonObject(d[key.c_str()], allocator);
+    }
+
+    if (m_tagItemsHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "TagItems";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_tagItems.begin(); itr != m_tagItems.end(); ++itr, ++i)
+        {
+            d[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(d[key.c_str()][i], allocator);
+        }
     }
 
 
@@ -393,6 +409,22 @@ void CreateInstanceNewRequest::SetCommonSpec(const NodeSpec& _commonSpec)
 bool CreateInstanceNewRequest::CommonSpecHasBeenSet() const
 {
     return m_commonSpecHasBeenSet;
+}
+
+vector<Tag> CreateInstanceNewRequest::GetTagItems() const
+{
+    return m_tagItems;
+}
+
+void CreateInstanceNewRequest::SetTagItems(const vector<Tag>& _tagItems)
+{
+    m_tagItems = _tagItems;
+    m_tagItemsHasBeenSet = true;
+}
+
+bool CreateInstanceNewRequest::TagItemsHasBeenSet() const
+{
+    return m_tagItemsHasBeenSet;
 }
 
 

@@ -30,6 +30,7 @@
 #include <tencentcloud/mps/v20190612/model/AiAnalysisTaskFrameTagResult.h>
 #include <tencentcloud/mps/v20190612/model/AiAnalysisTaskHighlightResult.h>
 #include <tencentcloud/mps/v20190612/model/AiAnalysisTaskDelLogoResult.h>
+#include <tencentcloud/mps/v20190612/model/AiAnalysisTaskHeadTailResult.h>
 #include <tencentcloud/mps/v20190612/model/AiAnalysisTaskDescriptionResult.h>
 
 
@@ -253,6 +254,31 @@ namespace TencentCloud
                     bool DeLogoTaskHasBeenSet() const;
 
                     /**
+                     * 获取视频内容分析片头片尾任务的查询结果，当任务类型为 HeadTailRecognition 时有效。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return HeadTailTask 视频内容分析片头片尾任务的查询结果，当任务类型为 HeadTailRecognition 时有效。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    AiAnalysisTaskHeadTailResult GetHeadTailTask() const;
+
+                    /**
+                     * 设置视频内容分析片头片尾任务的查询结果，当任务类型为 HeadTailRecognition 时有效。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _headTailTask 视频内容分析片头片尾任务的查询结果，当任务类型为 HeadTailRecognition 时有效。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetHeadTailTask(const AiAnalysisTaskHeadTailResult& _headTailTask);
+
+                    /**
+                     * 判断参数 HeadTailTask 是否已赋值
+                     * @return HeadTailTask 是否已赋值
+                     * 
+                     */
+                    bool HeadTailTaskHasBeenSet() const;
+
+                    /**
                      * 获取视频内容分析摘要任务的查询结果，当任务类型为 Description 时有效。
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return DescriptionTask 视频内容分析摘要任务的查询结果，当任务类型为 Description 时有效。
@@ -333,6 +359,13 @@ namespace TencentCloud
                      */
                     AiAnalysisTaskDelLogoResult m_deLogoTask;
                     bool m_deLogoTaskHasBeenSet;
+
+                    /**
+                     * 视频内容分析片头片尾任务的查询结果，当任务类型为 HeadTailRecognition 时有效。
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    AiAnalysisTaskHeadTailResult m_headTailTask;
+                    bool m_headTailTaskHasBeenSet;
 
                     /**
                      * 视频内容分析摘要任务的查询结果，当任务类型为 Description 时有效。

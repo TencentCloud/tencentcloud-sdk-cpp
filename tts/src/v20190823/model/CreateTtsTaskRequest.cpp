@@ -24,10 +24,10 @@ using namespace std;
 
 CreateTtsTaskRequest::CreateTtsTaskRequest() :
     m_textHasBeenSet(false),
-    m_modelTypeHasBeenSet(false),
     m_volumeHasBeenSet(false),
     m_speedHasBeenSet(false),
     m_projectIdHasBeenSet(false),
+    m_modelTypeHasBeenSet(false),
     m_voiceTypeHasBeenSet(false),
     m_primaryLanguageHasBeenSet(false),
     m_sampleRateHasBeenSet(false),
@@ -55,14 +55,6 @@ string CreateTtsTaskRequest::ToJsonString() const
         d.AddMember(iKey, rapidjson::Value(m_text.c_str(), allocator).Move(), allocator);
     }
 
-    if (m_modelTypeHasBeenSet)
-    {
-        rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "ModelType";
-        iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, m_modelType, allocator);
-    }
-
     if (m_volumeHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
@@ -85,6 +77,14 @@ string CreateTtsTaskRequest::ToJsonString() const
         string key = "ProjectId";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_projectId, allocator);
+    }
+
+    if (m_modelTypeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ModelType";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_modelType, allocator);
     }
 
     if (m_voiceTypeHasBeenSet)
@@ -183,22 +183,6 @@ bool CreateTtsTaskRequest::TextHasBeenSet() const
     return m_textHasBeenSet;
 }
 
-int64_t CreateTtsTaskRequest::GetModelType() const
-{
-    return m_modelType;
-}
-
-void CreateTtsTaskRequest::SetModelType(const int64_t& _modelType)
-{
-    m_modelType = _modelType;
-    m_modelTypeHasBeenSet = true;
-}
-
-bool CreateTtsTaskRequest::ModelTypeHasBeenSet() const
-{
-    return m_modelTypeHasBeenSet;
-}
-
 double CreateTtsTaskRequest::GetVolume() const
 {
     return m_volume;
@@ -245,6 +229,22 @@ void CreateTtsTaskRequest::SetProjectId(const int64_t& _projectId)
 bool CreateTtsTaskRequest::ProjectIdHasBeenSet() const
 {
     return m_projectIdHasBeenSet;
+}
+
+int64_t CreateTtsTaskRequest::GetModelType() const
+{
+    return m_modelType;
+}
+
+void CreateTtsTaskRequest::SetModelType(const int64_t& _modelType)
+{
+    m_modelType = _modelType;
+    m_modelTypeHasBeenSet = true;
+}
+
+bool CreateTtsTaskRequest::ModelTypeHasBeenSet() const
+{
+    return m_modelTypeHasBeenSet;
 }
 
 int64_t CreateTtsTaskRequest::GetVoiceType() const

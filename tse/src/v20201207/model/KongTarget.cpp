@@ -28,7 +28,8 @@ KongTarget::KongTarget() :
     m_createdTimeHasBeenSet(false),
     m_sourceHasBeenSet(false),
     m_cvmInstanceIdHasBeenSet(false),
-    m_cvmInstanceNameHasBeenSet(false)
+    m_cvmInstanceNameHasBeenSet(false),
+    m_tagsHasBeenSet(false)
 {
 }
 
@@ -117,6 +118,19 @@ CoreInternalOutcome KongTarget::Deserialize(const rapidjson::Value &value)
         m_cvmInstanceNameHasBeenSet = true;
     }
 
+    if (value.HasMember("Tags") && !value["Tags"].IsNull())
+    {
+        if (!value["Tags"].IsArray())
+            return CoreInternalOutcome(Core::Error("response `KongTarget.Tags` is not array type"));
+
+        const rapidjson::Value &tmpValue = value["Tags"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            m_tags.push_back((*itr).GetString());
+        }
+        m_tagsHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -186,6 +200,19 @@ void KongTarget::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Allo
         string key = "CvmInstanceName";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_cvmInstanceName.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_tagsHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Tags";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        for (auto itr = m_tags.begin(); itr != m_tags.end(); ++itr)
+        {
+            value[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
+        }
     }
 
 }
@@ -317,5 +344,21 @@ void KongTarget::SetCvmInstanceName(const string& _cvmInstanceName)
 bool KongTarget::CvmInstanceNameHasBeenSet() const
 {
     return m_cvmInstanceNameHasBeenSet;
+}
+
+vector<string> KongTarget::GetTags() const
+{
+    return m_tags;
+}
+
+void KongTarget::SetTags(const vector<string>& _tags)
+{
+    m_tags = _tags;
+    m_tagsHasBeenSet = true;
+}
+
+bool KongTarget::TagsHasBeenSet() const
+{
+    return m_tagsHasBeenSet;
 }
 

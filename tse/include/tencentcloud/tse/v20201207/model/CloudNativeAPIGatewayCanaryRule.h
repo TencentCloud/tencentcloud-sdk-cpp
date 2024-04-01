@@ -198,6 +198,210 @@ namespace TencentCloud
                      */
                     bool ServiceNameHasBeenSet() const;
 
+                    /**
+                     * 获取灰度规则类别
+Standard｜Lane
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return RuleType 灰度规则类别
+Standard｜Lane
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::string GetRuleType() const;
+
+                    /**
+                     * 设置灰度规则类别
+Standard｜Lane
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _ruleType 灰度规则类别
+Standard｜Lane
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetRuleType(const std::string& _ruleType);
+
+                    /**
+                     * 判断参数 RuleType 是否已赋值
+                     * @return RuleType 是否已赋值
+                     * 
+                     */
+                    bool RuleTypeHasBeenSet() const;
+
+                    /**
+                     * 获取全链路灰度策略多个条件之间的匹配方式，与AND，或OR
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return MatchType 全链路灰度策略多个条件之间的匹配方式，与AND，或OR
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::string GetMatchType() const;
+
+                    /**
+                     * 设置全链路灰度策略多个条件之间的匹配方式，与AND，或OR
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _matchType 全链路灰度策略多个条件之间的匹配方式，与AND，或OR
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetMatchType(const std::string& _matchType);
+
+                    /**
+                     * 判断参数 MatchType 是否已赋值
+                     * @return MatchType 是否已赋值
+                     * 
+                     */
+                    bool MatchTypeHasBeenSet() const;
+
+                    /**
+                     * 获取泳道组ID
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return GroupId 泳道组ID
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::string GetGroupId() const;
+
+                    /**
+                     * 设置泳道组ID
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _groupId 泳道组ID
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetGroupId(const std::string& _groupId);
+
+                    /**
+                     * 判断参数 GroupId 是否已赋值
+                     * @return GroupId 是否已赋值
+                     * 
+                     */
+                    bool GroupIdHasBeenSet() const;
+
+                    /**
+                     * 获取泳道组名称
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return GroupName 泳道组名称
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::string GetGroupName() const;
+
+                    /**
+                     * 设置泳道组名称
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _groupName 泳道组名称
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetGroupName(const std::string& _groupName);
+
+                    /**
+                     * 判断参数 GroupName 是否已赋值
+                     * @return GroupName 是否已赋值
+                     * 
+                     */
+                    bool GroupNameHasBeenSet() const;
+
+                    /**
+                     * 获取泳道ID
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return LaneId 泳道ID
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::string GetLaneId() const;
+
+                    /**
+                     * 设置泳道ID
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _laneId 泳道ID
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetLaneId(const std::string& _laneId);
+
+                    /**
+                     * 判断参数 LaneId 是否已赋值
+                     * @return LaneId 是否已赋值
+                     * 
+                     */
+                    bool LaneIdHasBeenSet() const;
+
+                    /**
+                     * 获取泳道名称
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return LaneName 泳道名称
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::string GetLaneName() const;
+
+                    /**
+                     * 设置泳道名称
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _laneName 泳道名称
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetLaneName(const std::string& _laneName);
+
+                    /**
+                     * 判断参数 LaneName 是否已赋值
+                     * @return LaneName 是否已赋值
+                     * 
+                     */
+                    bool LaneNameHasBeenSet() const;
+
+                    /**
+                     * 获取泳道匹配规则：严格STRICT｜宽松PERMISSIVE
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return MatchMode 泳道匹配规则：严格STRICT｜宽松PERMISSIVE
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::string GetMatchMode() const;
+
+                    /**
+                     * 设置泳道匹配规则：严格STRICT｜宽松PERMISSIVE
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _matchMode 泳道匹配规则：严格STRICT｜宽松PERMISSIVE
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetMatchMode(const std::string& _matchMode);
+
+                    /**
+                     * 判断参数 MatchMode 是否已赋值
+                     * @return MatchMode 是否已赋值
+                     * 
+                     */
+                    bool MatchModeHasBeenSet() const;
+
+                    /**
+                     * 获取泳道标签
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return LaneTag 泳道标签
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::string GetLaneTag() const;
+
+                    /**
+                     * 设置泳道标签
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _laneTag 泳道标签
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetLaneTag(const std::string& _laneTag);
+
+                    /**
+                     * 判断参数 LaneTag 是否已赋值
+                     * @return LaneTag 是否已赋值
+                     * 
+                     */
+                    bool LaneTagHasBeenSet() const;
+
                 private:
 
                     /**
@@ -241,6 +445,63 @@ namespace TencentCloud
                      */
                     std::string m_serviceName;
                     bool m_serviceNameHasBeenSet;
+
+                    /**
+                     * 灰度规则类别
+Standard｜Lane
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_ruleType;
+                    bool m_ruleTypeHasBeenSet;
+
+                    /**
+                     * 全链路灰度策略多个条件之间的匹配方式，与AND，或OR
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_matchType;
+                    bool m_matchTypeHasBeenSet;
+
+                    /**
+                     * 泳道组ID
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_groupId;
+                    bool m_groupIdHasBeenSet;
+
+                    /**
+                     * 泳道组名称
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_groupName;
+                    bool m_groupNameHasBeenSet;
+
+                    /**
+                     * 泳道ID
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_laneId;
+                    bool m_laneIdHasBeenSet;
+
+                    /**
+                     * 泳道名称
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_laneName;
+                    bool m_laneNameHasBeenSet;
+
+                    /**
+                     * 泳道匹配规则：严格STRICT｜宽松PERMISSIVE
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_matchMode;
+                    bool m_matchModeHasBeenSet;
+
+                    /**
+                     * 泳道标签
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_laneTag;
+                    bool m_laneTagHasBeenSet;
 
                 };
             }

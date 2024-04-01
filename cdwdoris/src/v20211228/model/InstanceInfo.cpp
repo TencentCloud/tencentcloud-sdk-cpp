@@ -63,7 +63,9 @@ InstanceInfo::InstanceInfo() :
     m_graceShutdownWaitSecondsHasBeenSet(false),
     m_caseSensitiveHasBeenSet(false),
     m_isWhiteSGsHasBeenSet(false),
-    m_bindSGsHasBeenSet(false)
+    m_bindSGsHasBeenSet(false),
+    m_enableMultiZonesHasBeenSet(false),
+    m_userNetworkInfosHasBeenSet(false)
 {
 }
 
@@ -532,6 +534,26 @@ CoreInternalOutcome InstanceInfo::Deserialize(const rapidjson::Value &value)
         m_bindSGsHasBeenSet = true;
     }
 
+    if (value.HasMember("EnableMultiZones") && !value["EnableMultiZones"].IsNull())
+    {
+        if (!value["EnableMultiZones"].IsBool())
+        {
+            return CoreInternalOutcome(Core::Error("response `InstanceInfo.EnableMultiZones` IsBool=false incorrectly").SetRequestId(requestId));
+        }
+        m_enableMultiZones = value["EnableMultiZones"].GetBool();
+        m_enableMultiZonesHasBeenSet = true;
+    }
+
+    if (value.HasMember("UserNetworkInfos") && !value["UserNetworkInfos"].IsNull())
+    {
+        if (!value["UserNetworkInfos"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `InstanceInfo.UserNetworkInfos` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_userNetworkInfos = string(value["UserNetworkInfos"].GetString());
+        m_userNetworkInfosHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -900,6 +922,22 @@ void InstanceInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Al
         {
             value[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
         }
+    }
+
+    if (m_enableMultiZonesHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "EnableMultiZones";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_enableMultiZones, allocator);
+    }
+
+    if (m_userNetworkInfosHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "UserNetworkInfos";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_userNetworkInfos.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -1591,5 +1629,37 @@ void InstanceInfo::SetBindSGs(const vector<string>& _bindSGs)
 bool InstanceInfo::BindSGsHasBeenSet() const
 {
     return m_bindSGsHasBeenSet;
+}
+
+bool InstanceInfo::GetEnableMultiZones() const
+{
+    return m_enableMultiZones;
+}
+
+void InstanceInfo::SetEnableMultiZones(const bool& _enableMultiZones)
+{
+    m_enableMultiZones = _enableMultiZones;
+    m_enableMultiZonesHasBeenSet = true;
+}
+
+bool InstanceInfo::EnableMultiZonesHasBeenSet() const
+{
+    return m_enableMultiZonesHasBeenSet;
+}
+
+string InstanceInfo::GetUserNetworkInfos() const
+{
+    return m_userNetworkInfos;
+}
+
+void InstanceInfo::SetUserNetworkInfos(const string& _userNetworkInfos)
+{
+    m_userNetworkInfos = _userNetworkInfos;
+    m_userNetworkInfosHasBeenSet = true;
+}
+
+bool InstanceInfo::UserNetworkInfosHasBeenSet() const
+{
+    return m_userNetworkInfosHasBeenSet;
 }
 

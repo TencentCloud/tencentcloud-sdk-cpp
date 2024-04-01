@@ -29,7 +29,12 @@ CreateRocketMQVipInstanceRequest::CreateRocketMQVipInstanceRequest() :
     m_storageSizeHasBeenSet(false),
     m_zoneIdsHasBeenSet(false),
     m_vpcInfoHasBeenSet(false),
-    m_timeSpanHasBeenSet(false)
+    m_timeSpanHasBeenSet(false),
+    m_supportsMigrateToCloudHasBeenSet(false),
+    m_enablePublicHasBeenSet(false),
+    m_bandwidthHasBeenSet(false),
+    m_ipRulesHasBeenSet(false),
+    m_tagsHasBeenSet(false)
 {
 }
 
@@ -100,6 +105,60 @@ string CreateRocketMQVipInstanceRequest::ToJsonString() const
         string key = "TimeSpan";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_timeSpan, allocator);
+    }
+
+    if (m_supportsMigrateToCloudHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "SupportsMigrateToCloud";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_supportsMigrateToCloud, allocator);
+    }
+
+    if (m_enablePublicHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "EnablePublic";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_enablePublic, allocator);
+    }
+
+    if (m_bandwidthHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Bandwidth";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_bandwidth, allocator);
+    }
+
+    if (m_ipRulesHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "IpRules";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_ipRules.begin(); itr != m_ipRules.end(); ++itr, ++i)
+        {
+            d[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(d[key.c_str()][i], allocator);
+        }
+    }
+
+    if (m_tagsHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Tags";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_tags.begin(); itr != m_tags.end(); ++itr, ++i)
+        {
+            d[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(d[key.c_str()][i], allocator);
+        }
     }
 
 
@@ -220,6 +279,86 @@ void CreateRocketMQVipInstanceRequest::SetTimeSpan(const int64_t& _timeSpan)
 bool CreateRocketMQVipInstanceRequest::TimeSpanHasBeenSet() const
 {
     return m_timeSpanHasBeenSet;
+}
+
+bool CreateRocketMQVipInstanceRequest::GetSupportsMigrateToCloud() const
+{
+    return m_supportsMigrateToCloud;
+}
+
+void CreateRocketMQVipInstanceRequest::SetSupportsMigrateToCloud(const bool& _supportsMigrateToCloud)
+{
+    m_supportsMigrateToCloud = _supportsMigrateToCloud;
+    m_supportsMigrateToCloudHasBeenSet = true;
+}
+
+bool CreateRocketMQVipInstanceRequest::SupportsMigrateToCloudHasBeenSet() const
+{
+    return m_supportsMigrateToCloudHasBeenSet;
+}
+
+bool CreateRocketMQVipInstanceRequest::GetEnablePublic() const
+{
+    return m_enablePublic;
+}
+
+void CreateRocketMQVipInstanceRequest::SetEnablePublic(const bool& _enablePublic)
+{
+    m_enablePublic = _enablePublic;
+    m_enablePublicHasBeenSet = true;
+}
+
+bool CreateRocketMQVipInstanceRequest::EnablePublicHasBeenSet() const
+{
+    return m_enablePublicHasBeenSet;
+}
+
+int64_t CreateRocketMQVipInstanceRequest::GetBandwidth() const
+{
+    return m_bandwidth;
+}
+
+void CreateRocketMQVipInstanceRequest::SetBandwidth(const int64_t& _bandwidth)
+{
+    m_bandwidth = _bandwidth;
+    m_bandwidthHasBeenSet = true;
+}
+
+bool CreateRocketMQVipInstanceRequest::BandwidthHasBeenSet() const
+{
+    return m_bandwidthHasBeenSet;
+}
+
+vector<PublicAccessRule> CreateRocketMQVipInstanceRequest::GetIpRules() const
+{
+    return m_ipRules;
+}
+
+void CreateRocketMQVipInstanceRequest::SetIpRules(const vector<PublicAccessRule>& _ipRules)
+{
+    m_ipRules = _ipRules;
+    m_ipRulesHasBeenSet = true;
+}
+
+bool CreateRocketMQVipInstanceRequest::IpRulesHasBeenSet() const
+{
+    return m_ipRulesHasBeenSet;
+}
+
+vector<Tag> CreateRocketMQVipInstanceRequest::GetTags() const
+{
+    return m_tags;
+}
+
+void CreateRocketMQVipInstanceRequest::SetTags(const vector<Tag>& _tags)
+{
+    m_tags = _tags;
+    m_tagsHasBeenSet = true;
+}
+
+bool CreateRocketMQVipInstanceRequest::TagsHasBeenSet() const
+{
+    return m_tagsHasBeenSet;
 }
 
 

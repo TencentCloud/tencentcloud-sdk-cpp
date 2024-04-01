@@ -25,11 +25,11 @@ using namespace std;
 CreateVRSTaskRequest::CreateVRSTaskRequest() :
     m_sessionIdHasBeenSet(false),
     m_voiceNameHasBeenSet(false),
-    m_sampleRateHasBeenSet(false),
     m_voiceGenderHasBeenSet(false),
     m_voiceLanguageHasBeenSet(false),
-    m_codecHasBeenSet(false),
     m_audioIdListHasBeenSet(false),
+    m_sampleRateHasBeenSet(false),
+    m_codecHasBeenSet(false),
     m_callbackUrlHasBeenSet(false),
     m_modelTypeHasBeenSet(false),
     m_taskTypeHasBeenSet(false),
@@ -60,14 +60,6 @@ string CreateVRSTaskRequest::ToJsonString() const
         d.AddMember(iKey, rapidjson::Value(m_voiceName.c_str(), allocator).Move(), allocator);
     }
 
-    if (m_sampleRateHasBeenSet)
-    {
-        rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "SampleRate";
-        iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, m_sampleRate, allocator);
-    }
-
     if (m_voiceGenderHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
@@ -84,14 +76,6 @@ string CreateVRSTaskRequest::ToJsonString() const
         d.AddMember(iKey, m_voiceLanguage, allocator);
     }
 
-    if (m_codecHasBeenSet)
-    {
-        rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "Codec";
-        iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, rapidjson::Value(m_codec.c_str(), allocator).Move(), allocator);
-    }
-
     if (m_audioIdListHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
@@ -103,6 +87,22 @@ string CreateVRSTaskRequest::ToJsonString() const
         {
             d[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
         }
+    }
+
+    if (m_sampleRateHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "SampleRate";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_sampleRate, allocator);
+    }
+
+    if (m_codecHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Codec";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_codec.c_str(), allocator).Move(), allocator);
     }
 
     if (m_callbackUrlHasBeenSet)
@@ -177,22 +177,6 @@ bool CreateVRSTaskRequest::VoiceNameHasBeenSet() const
     return m_voiceNameHasBeenSet;
 }
 
-int64_t CreateVRSTaskRequest::GetSampleRate() const
-{
-    return m_sampleRate;
-}
-
-void CreateVRSTaskRequest::SetSampleRate(const int64_t& _sampleRate)
-{
-    m_sampleRate = _sampleRate;
-    m_sampleRateHasBeenSet = true;
-}
-
-bool CreateVRSTaskRequest::SampleRateHasBeenSet() const
-{
-    return m_sampleRateHasBeenSet;
-}
-
 int64_t CreateVRSTaskRequest::GetVoiceGender() const
 {
     return m_voiceGender;
@@ -225,22 +209,6 @@ bool CreateVRSTaskRequest::VoiceLanguageHasBeenSet() const
     return m_voiceLanguageHasBeenSet;
 }
 
-string CreateVRSTaskRequest::GetCodec() const
-{
-    return m_codec;
-}
-
-void CreateVRSTaskRequest::SetCodec(const string& _codec)
-{
-    m_codec = _codec;
-    m_codecHasBeenSet = true;
-}
-
-bool CreateVRSTaskRequest::CodecHasBeenSet() const
-{
-    return m_codecHasBeenSet;
-}
-
 vector<string> CreateVRSTaskRequest::GetAudioIdList() const
 {
     return m_audioIdList;
@@ -255,6 +223,38 @@ void CreateVRSTaskRequest::SetAudioIdList(const vector<string>& _audioIdList)
 bool CreateVRSTaskRequest::AudioIdListHasBeenSet() const
 {
     return m_audioIdListHasBeenSet;
+}
+
+int64_t CreateVRSTaskRequest::GetSampleRate() const
+{
+    return m_sampleRate;
+}
+
+void CreateVRSTaskRequest::SetSampleRate(const int64_t& _sampleRate)
+{
+    m_sampleRate = _sampleRate;
+    m_sampleRateHasBeenSet = true;
+}
+
+bool CreateVRSTaskRequest::SampleRateHasBeenSet() const
+{
+    return m_sampleRateHasBeenSet;
+}
+
+string CreateVRSTaskRequest::GetCodec() const
+{
+    return m_codec;
+}
+
+void CreateVRSTaskRequest::SetCodec(const string& _codec)
+{
+    m_codec = _codec;
+    m_codecHasBeenSet = true;
+}
+
+bool CreateVRSTaskRequest::CodecHasBeenSet() const
+{
+    return m_codecHasBeenSet;
 }
 
 string CreateVRSTaskRequest::GetCallbackUrl() const

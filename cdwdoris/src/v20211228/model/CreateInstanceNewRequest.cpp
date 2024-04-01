@@ -35,7 +35,9 @@ CreateInstanceNewRequest::CreateInstanceNewRequest() :
     m_dorisUserPwdHasBeenSet(false),
     m_tagsHasBeenSet(false),
     m_haTypeHasBeenSet(false),
-    m_caseSensitiveHasBeenSet(false)
+    m_caseSensitiveHasBeenSet(false),
+    m_enableMultiZonesHasBeenSet(false),
+    m_userMultiZoneInfosHasBeenSet(false)
 {
 }
 
@@ -158,6 +160,23 @@ string CreateInstanceNewRequest::ToJsonString() const
         string key = "CaseSensitive";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_caseSensitive, allocator);
+    }
+
+    if (m_enableMultiZonesHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "EnableMultiZones";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_enableMultiZones, allocator);
+    }
+
+    if (m_userMultiZoneInfosHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "UserMultiZoneInfos";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_userMultiZoneInfos.ToJsonObject(d[key.c_str()], allocator);
     }
 
 
@@ -374,6 +393,38 @@ void CreateInstanceNewRequest::SetCaseSensitive(const int64_t& _caseSensitive)
 bool CreateInstanceNewRequest::CaseSensitiveHasBeenSet() const
 {
     return m_caseSensitiveHasBeenSet;
+}
+
+bool CreateInstanceNewRequest::GetEnableMultiZones() const
+{
+    return m_enableMultiZones;
+}
+
+void CreateInstanceNewRequest::SetEnableMultiZones(const bool& _enableMultiZones)
+{
+    m_enableMultiZones = _enableMultiZones;
+    m_enableMultiZonesHasBeenSet = true;
+}
+
+bool CreateInstanceNewRequest::EnableMultiZonesHasBeenSet() const
+{
+    return m_enableMultiZonesHasBeenSet;
+}
+
+NetworkInfo CreateInstanceNewRequest::GetUserMultiZoneInfos() const
+{
+    return m_userMultiZoneInfos;
+}
+
+void CreateInstanceNewRequest::SetUserMultiZoneInfos(const NetworkInfo& _userMultiZoneInfos)
+{
+    m_userMultiZoneInfos = _userMultiZoneInfos;
+    m_userMultiZoneInfosHasBeenSet = true;
+}
+
+bool CreateInstanceNewRequest::UserMultiZoneInfosHasBeenSet() const
+{
+    return m_userMultiZoneInfosHasBeenSet;
 }
 
 

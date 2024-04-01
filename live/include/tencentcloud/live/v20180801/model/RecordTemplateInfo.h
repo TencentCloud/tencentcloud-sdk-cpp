@@ -289,6 +289,31 @@ namespace TencentCloud
                     bool RemoveWatermarkHasBeenSet() const;
 
                     /**
+                     * 获取是否存储至cos
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return CosStore 是否存储至cos
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    int64_t GetCosStore() const;
+
+                    /**
+                     * 设置是否存储至cos
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _cosStore 是否存储至cos
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetCosStore(const int64_t& _cosStore);
+
+                    /**
+                     * 判断参数 CosStore 是否已赋值
+                     * @return CosStore 是否已赋值
+                     * 
+                     */
+                    bool CosStoreHasBeenSet() const;
+
+                    /**
                      * 获取FLV 录制定制参数。
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return FlvSpecialParam FLV 录制定制参数。
@@ -382,6 +407,13 @@ namespace TencentCloud
                      */
                     bool m_removeWatermark;
                     bool m_removeWatermarkHasBeenSet;
+
+                    /**
+                     * 是否存储至cos
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    int64_t m_cosStore;
+                    bool m_cosStoreHasBeenSet;
 
                     /**
                      * FLV 录制定制参数。

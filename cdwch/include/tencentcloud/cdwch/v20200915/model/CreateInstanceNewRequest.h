@@ -194,14 +194,18 @@ namespace TencentCloud
 
                     /**
                      * 获取数据节点
+SpecName从DescribeSpec接口中返回的DataSpec.Name获取
                      * @return DataSpec 数据节点
+SpecName从DescribeSpec接口中返回的DataSpec.Name获取
                      * 
                      */
                     NodeSpec GetDataSpec() const;
 
                     /**
                      * 设置数据节点
+SpecName从DescribeSpec接口中返回的DataSpec.Name获取
                      * @param _dataSpec 数据节点
+SpecName从DescribeSpec接口中返回的DataSpec.Name获取
                      * 
                      */
                     void SetDataSpec(const NodeSpec& _dataSpec);
@@ -214,23 +218,23 @@ namespace TencentCloud
                     bool DataSpecHasBeenSet() const;
 
                     /**
-                     * 获取标签列表
-                     * @return Tags 标签列表
-                     * 
+                     * 获取标签列表（废弃）
+                     * @return Tags 标签列表（废弃）
+                     * @deprecated
                      */
                     Tag GetTags() const;
 
                     /**
-                     * 设置标签列表
-                     * @param _tags 标签列表
-                     * 
+                     * 设置标签列表（废弃）
+                     * @param _tags 标签列表（废弃）
+                     * @deprecated
                      */
                     void SetTags(const Tag& _tags);
 
                     /**
                      * 判断参数 Tags 是否已赋值
                      * @return Tags 是否已赋值
-                     * 
+                     * @deprecated
                      */
                     bool TagsHasBeenSet() const;
 
@@ -320,14 +324,18 @@ namespace TencentCloud
 
                     /**
                      * 获取ZK节点
+SpecName从DescribeSpec接口中返回的CommonSpec.Name（ZK节点）获取
                      * @return CommonSpec ZK节点
+SpecName从DescribeSpec接口中返回的CommonSpec.Name（ZK节点）获取
                      * 
                      */
                     NodeSpec GetCommonSpec() const;
 
                     /**
                      * 设置ZK节点
+SpecName从DescribeSpec接口中返回的CommonSpec.Name（ZK节点）获取
                      * @param _commonSpec ZK节点
+SpecName从DescribeSpec接口中返回的CommonSpec.Name（ZK节点）获取
                      * 
                      */
                     void SetCommonSpec(const NodeSpec& _commonSpec);
@@ -338,6 +346,27 @@ namespace TencentCloud
                      * 
                      */
                     bool CommonSpecHasBeenSet() const;
+
+                    /**
+                     * 获取标签列表
+                     * @return TagItems 标签列表
+                     * 
+                     */
+                    std::vector<Tag> GetTagItems() const;
+
+                    /**
+                     * 设置标签列表
+                     * @param _tagItems 标签列表
+                     * 
+                     */
+                    void SetTagItems(const std::vector<Tag>& _tagItems);
+
+                    /**
+                     * 判断参数 TagItems 是否已赋值
+                     * @return TagItems 是否已赋值
+                     * 
+                     */
+                    bool TagItemsHasBeenSet() const;
 
                 private:
 
@@ -385,12 +414,13 @@ namespace TencentCloud
 
                     /**
                      * 数据节点
+SpecName从DescribeSpec接口中返回的DataSpec.Name获取
                      */
                     NodeSpec m_dataSpec;
                     bool m_dataSpecHasBeenSet;
 
                     /**
-                     * 标签列表
+                     * 标签列表（废弃）
                      */
                     Tag m_tags;
                     bool m_tagsHasBeenSet;
@@ -421,9 +451,16 @@ namespace TencentCloud
 
                     /**
                      * ZK节点
+SpecName从DescribeSpec接口中返回的CommonSpec.Name（ZK节点）获取
                      */
                     NodeSpec m_commonSpec;
                     bool m_commonSpecHasBeenSet;
+
+                    /**
+                     * 标签列表
+                     */
+                    std::vector<Tag> m_tagItems;
+                    bool m_tagItemsHasBeenSet;
 
                 };
             }

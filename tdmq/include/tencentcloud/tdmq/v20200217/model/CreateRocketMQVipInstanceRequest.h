@@ -22,6 +22,8 @@
 #include <map>
 #include <tencentcloud/core/AbstractModel.h>
 #include <tencentcloud/tdmq/v20200217/model/VpcInfo.h>
+#include <tencentcloud/tdmq/v20200217/model/PublicAccessRule.h>
+#include <tencentcloud/tdmq/v20200217/model/Tag.h>
 
 
 namespace TencentCloud
@@ -206,6 +208,111 @@ namespace TencentCloud
                      */
                     bool TimeSpanHasBeenSet() const;
 
+                    /**
+                     * 获取是否用于迁移上云，默认为false
+                     * @return SupportsMigrateToCloud 是否用于迁移上云，默认为false
+                     * 
+                     */
+                    bool GetSupportsMigrateToCloud() const;
+
+                    /**
+                     * 设置是否用于迁移上云，默认为false
+                     * @param _supportsMigrateToCloud 是否用于迁移上云，默认为false
+                     * 
+                     */
+                    void SetSupportsMigrateToCloud(const bool& _supportsMigrateToCloud);
+
+                    /**
+                     * 判断参数 SupportsMigrateToCloud 是否已赋值
+                     * @return SupportsMigrateToCloud 是否已赋值
+                     * 
+                     */
+                    bool SupportsMigrateToCloudHasBeenSet() const;
+
+                    /**
+                     * 获取是否开启公网
+                     * @return EnablePublic 是否开启公网
+                     * 
+                     */
+                    bool GetEnablePublic() const;
+
+                    /**
+                     * 设置是否开启公网
+                     * @param _enablePublic 是否开启公网
+                     * 
+                     */
+                    void SetEnablePublic(const bool& _enablePublic);
+
+                    /**
+                     * 判断参数 EnablePublic 是否已赋值
+                     * @return EnablePublic 是否已赋值
+                     * 
+                     */
+                    bool EnablePublicHasBeenSet() const;
+
+                    /**
+                     * 获取公网带宽，在开启公网情况下为必传字段
+                     * @return Bandwidth 公网带宽，在开启公网情况下为必传字段
+                     * 
+                     */
+                    int64_t GetBandwidth() const;
+
+                    /**
+                     * 设置公网带宽，在开启公网情况下为必传字段
+                     * @param _bandwidth 公网带宽，在开启公网情况下为必传字段
+                     * 
+                     */
+                    void SetBandwidth(const int64_t& _bandwidth);
+
+                    /**
+                     * 判断参数 Bandwidth 是否已赋值
+                     * @return Bandwidth 是否已赋值
+                     * 
+                     */
+                    bool BandwidthHasBeenSet() const;
+
+                    /**
+                     * 获取公网白名单
+                     * @return IpRules 公网白名单
+                     * 
+                     */
+                    std::vector<PublicAccessRule> GetIpRules() const;
+
+                    /**
+                     * 设置公网白名单
+                     * @param _ipRules 公网白名单
+                     * 
+                     */
+                    void SetIpRules(const std::vector<PublicAccessRule>& _ipRules);
+
+                    /**
+                     * 判断参数 IpRules 是否已赋值
+                     * @return IpRules 是否已赋值
+                     * 
+                     */
+                    bool IpRulesHasBeenSet() const;
+
+                    /**
+                     * 获取标签
+                     * @return Tags 标签
+                     * 
+                     */
+                    std::vector<Tag> GetTags() const;
+
+                    /**
+                     * 设置标签
+                     * @param _tags 标签
+                     * 
+                     */
+                    void SetTags(const std::vector<Tag>& _tags);
+
+                    /**
+                     * 判断参数 Tags 是否已赋值
+                     * @return Tags 是否已赋值
+                     * 
+                     */
+                    bool TagsHasBeenSet() const;
+
                 private:
 
                     /**
@@ -253,6 +360,36 @@ namespace TencentCloud
                      */
                     int64_t m_timeSpan;
                     bool m_timeSpanHasBeenSet;
+
+                    /**
+                     * 是否用于迁移上云，默认为false
+                     */
+                    bool m_supportsMigrateToCloud;
+                    bool m_supportsMigrateToCloudHasBeenSet;
+
+                    /**
+                     * 是否开启公网
+                     */
+                    bool m_enablePublic;
+                    bool m_enablePublicHasBeenSet;
+
+                    /**
+                     * 公网带宽，在开启公网情况下为必传字段
+                     */
+                    int64_t m_bandwidth;
+                    bool m_bandwidthHasBeenSet;
+
+                    /**
+                     * 公网白名单
+                     */
+                    std::vector<PublicAccessRule> m_ipRules;
+                    bool m_ipRulesHasBeenSet;
+
+                    /**
+                     * 标签
+                     */
+                    std::vector<Tag> m_tags;
+                    bool m_tagsHasBeenSet;
 
                 };
             }

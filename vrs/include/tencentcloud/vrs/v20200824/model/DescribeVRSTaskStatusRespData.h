@@ -122,18 +122,18 @@ namespace TencentCloud
                     bool StatusStrHasBeenSet() const;
 
                     /**
-                     * 获取音色id
+                     * 获取音色id。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return VoiceType 音色id
+                     * @return VoiceType 音色id。
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetVoiceType() const;
 
                     /**
-                     * 设置音色id
+                     * 设置音色id。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _voiceType 音色id
+                     * @param _voiceType 音色id。
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -195,7 +195,7 @@ namespace TencentCloud
                     bool m_statusStrHasBeenSet;
 
                     /**
-                     * 音色id
+                     * 音色id。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_voiceType;

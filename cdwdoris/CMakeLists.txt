@@ -51,9 +51,10 @@ set(cdwdoris_public_header_model
   include/tencentcloud/cdwdoris/v20211228/model/DescribeSlowQueryRecordsResponse.h
   include/tencentcloud/cdwdoris/v20211228/model/DescribeDatabaseAuditRecordsResponse.h
   include/tencentcloud/cdwdoris/v20211228/model/DescribeInstanceResponse.h
+  include/tencentcloud/cdwdoris/v20211228/model/RestartClusterForNodeRequest.h
   include/tencentcloud/cdwdoris/v20211228/model/ScaleUpInstanceRequest.h
   include/tencentcloud/cdwdoris/v20211228/model/NodesSummary.h
-  include/tencentcloud/cdwdoris/v20211228/model/RestartClusterForNodeRequest.h
+  include/tencentcloud/cdwdoris/v20211228/model/NetworkInfo.h
   include/tencentcloud/cdwdoris/v20211228/model/CreateInstanceSpec.h
   include/tencentcloud/cdwdoris/v20211228/model/SearchTags.h
   include/tencentcloud/cdwdoris/v20211228/model/DescribeInstanceRequest.h
@@ -102,9 +103,10 @@ set(cdwdoris_src
   src/v20211228/model/DescribeSlowQueryRecordsResponse.cpp
   src/v20211228/model/DescribeDatabaseAuditRecordsResponse.cpp
   src/v20211228/model/DescribeInstanceResponse.cpp
+  src/v20211228/model/RestartClusterForNodeRequest.cpp
   src/v20211228/model/ScaleUpInstanceRequest.cpp
   src/v20211228/model/NodesSummary.cpp
-  src/v20211228/model/RestartClusterForNodeRequest.cpp
+  src/v20211228/model/NetworkInfo.cpp
   src/v20211228/model/CreateInstanceSpec.cpp
   src/v20211228/model/SearchTags.cpp
   src/v20211228/model/DescribeInstanceRequest.cpp

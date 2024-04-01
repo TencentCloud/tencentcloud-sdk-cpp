@@ -27,6 +27,7 @@
 #include <tencentcloud/tse/v20201207/model/QpsThreshold.h>
 #include <tencentcloud/tse/v20201207/model/ExternalRedis.h>
 #include <tencentcloud/tse/v20201207/model/RateLimitResponse.h>
+#include <tencentcloud/tse/v20201207/model/LimitRule.h>
 
 
 namespace TencentCloud
@@ -92,110 +93,6 @@ namespace TencentCloud
                     bool QpsThresholdsHasBeenSet() const;
 
                     /**
-                     * 获取限流依据
-ip service consumer credential path header
-                     * @return LimitBy 限流依据
-ip service consumer credential path header
-                     * 
-                     */
-                    std::string GetLimitBy() const;
-
-                    /**
-                     * 设置限流依据
-ip service consumer credential path header
-                     * @param _limitBy 限流依据
-ip service consumer credential path header
-                     * 
-                     */
-                    void SetLimitBy(const std::string& _limitBy);
-
-                    /**
-                     * 判断参数 LimitBy 是否已赋值
-                     * @return LimitBy 是否已赋值
-                     * 
-                     */
-                    bool LimitByHasBeenSet() const;
-
-                    /**
-                     * 获取响应策略
-url请求转发
-text 响应配置
-default 直接返回
-
-                     * @return ResponseType 响应策略
-url请求转发
-text 响应配置
-default 直接返回
-
-                     * 
-                     */
-                    std::string GetResponseType() const;
-
-                    /**
-                     * 设置响应策略
-url请求转发
-text 响应配置
-default 直接返回
-
-                     * @param _responseType 响应策略
-url请求转发
-text 响应配置
-default 直接返回
-
-                     * 
-                     */
-                    void SetResponseType(const std::string& _responseType);
-
-                    /**
-                     * 判断参数 ResponseType 是否已赋值
-                     * @return ResponseType 是否已赋值
-                     * 
-                     */
-                    bool ResponseTypeHasBeenSet() const;
-
-                    /**
-                     * 获取是否隐藏限流客户端响应头
-                     * @return HideClientHeaders 是否隐藏限流客户端响应头
-                     * 
-                     */
-                    bool GetHideClientHeaders() const;
-
-                    /**
-                     * 设置是否隐藏限流客户端响应头
-                     * @param _hideClientHeaders 是否隐藏限流客户端响应头
-                     * 
-                     */
-                    void SetHideClientHeaders(const bool& _hideClientHeaders);
-
-                    /**
-                     * 判断参数 HideClientHeaders 是否已赋值
-                     * @return HideClientHeaders 是否已赋值
-                     * 
-                     */
-                    bool HideClientHeadersHasBeenSet() const;
-
-                    /**
-                     * 获取是否开启请求排队
-                     * @return IsDelay 是否开启请求排队
-                     * 
-                     */
-                    bool GetIsDelay() const;
-
-                    /**
-                     * 设置是否开启请求排队
-                     * @param _isDelay 是否开启请求排队
-                     * 
-                     */
-                    void SetIsDelay(const bool& _isDelay);
-
-                    /**
-                     * 判断参数 IsDelay 是否已赋值
-                     * @return IsDelay 是否已赋值
-                     * 
-                     */
-                    bool IsDelayHasBeenSet() const;
-
-                    /**
                      * 获取需要进行流量控制的请求路径
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Path 需要进行流量控制的请求路径
@@ -244,6 +141,31 @@ default 直接返回
                      * 
                      */
                     bool HeaderHasBeenSet() const;
+
+                    /**
+                     * 获取限流依据
+ip service consumer credential path header
+                     * @return LimitBy 限流依据
+ip service consumer credential path header
+                     * 
+                     */
+                    std::string GetLimitBy() const;
+
+                    /**
+                     * 设置限流依据
+ip service consumer credential path header
+                     * @param _limitBy 限流依据
+ip service consumer credential path header
+                     * 
+                     */
+                    void SetLimitBy(const std::string& _limitBy);
+
+                    /**
+                     * 判断参数 LimitBy 是否已赋值
+                     * @return LimitBy 是否已赋值
+                     * 
+                     */
+                    bool LimitByHasBeenSet() const;
 
                     /**
                      * 获取外部redis配置
@@ -366,6 +288,64 @@ external_redis 外部redis
                     bool RateLimitResponseUrlHasBeenSet() const;
 
                     /**
+                     * 获取响应策略
+url请求转发
+text 响应配置
+default 直接返回
+
+                     * @return ResponseType 响应策略
+url请求转发
+text 响应配置
+default 直接返回
+
+                     * 
+                     */
+                    std::string GetResponseType() const;
+
+                    /**
+                     * 设置响应策略
+url请求转发
+text 响应配置
+default 直接返回
+
+                     * @param _responseType 响应策略
+url请求转发
+text 响应配置
+default 直接返回
+
+                     * 
+                     */
+                    void SetResponseType(const std::string& _responseType);
+
+                    /**
+                     * 判断参数 ResponseType 是否已赋值
+                     * @return ResponseType 是否已赋值
+                     * 
+                     */
+                    bool ResponseTypeHasBeenSet() const;
+
+                    /**
+                     * 获取是否隐藏限流客户端响应头
+                     * @return HideClientHeaders 是否隐藏限流客户端响应头
+                     * 
+                     */
+                    bool GetHideClientHeaders() const;
+
+                    /**
+                     * 设置是否隐藏限流客户端响应头
+                     * @param _hideClientHeaders 是否隐藏限流客户端响应头
+                     * 
+                     */
+                    void SetHideClientHeaders(const bool& _hideClientHeaders);
+
+                    /**
+                     * 判断参数 HideClientHeaders 是否已赋值
+                     * @return HideClientHeaders 是否已赋值
+                     * 
+                     */
+                    bool HideClientHeadersHasBeenSet() const;
+
+                    /**
                      * 获取排队时间
                      * @return LineUpTime 排队时间
                      * 
@@ -386,6 +366,77 @@ external_redis 外部redis
                      */
                     bool LineUpTimeHasBeenSet() const;
 
+                    /**
+                     * 获取是否开启请求排队
+                     * @return IsDelay 是否开启请求排队
+                     * 
+                     */
+                    bool GetIsDelay() const;
+
+                    /**
+                     * 设置是否开启请求排队
+                     * @param _isDelay 是否开启请求排队
+                     * 
+                     */
+                    void SetIsDelay(const bool& _isDelay);
+
+                    /**
+                     * 判断参数 IsDelay 是否已赋值
+                     * @return IsDelay 是否已赋值
+                     * 
+                     */
+                    bool IsDelayHasBeenSet() const;
+
+                    /**
+                     * 获取基础限流
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return BasicLimitQpsThresholds 基础限流
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::vector<QpsThreshold> GetBasicLimitQpsThresholds() const;
+
+                    /**
+                     * 设置基础限流
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _basicLimitQpsThresholds 基础限流
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetBasicLimitQpsThresholds(const std::vector<QpsThreshold>& _basicLimitQpsThresholds);
+
+                    /**
+                     * 判断参数 BasicLimitQpsThresholds 是否已赋值
+                     * @return BasicLimitQpsThresholds 是否已赋值
+                     * 
+                     */
+                    bool BasicLimitQpsThresholdsHasBeenSet() const;
+
+                    /**
+                     * 获取参数限流的规则
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return LimitRules 参数限流的规则
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::vector<LimitRule> GetLimitRules() const;
+
+                    /**
+                     * 设置参数限流的规则
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _limitRules 参数限流的规则
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetLimitRules(const std::vector<LimitRule>& _limitRules);
+
+                    /**
+                     * 判断参数 LimitRules 是否已赋值
+                     * @return LimitRules 是否已赋值
+                     * 
+                     */
+                    bool LimitRulesHasBeenSet() const;
+
                 private:
 
                     /**
@@ -401,35 +452,6 @@ external_redis 外部redis
                     bool m_qpsThresholdsHasBeenSet;
 
                     /**
-                     * 限流依据
-ip service consumer credential path header
-                     */
-                    std::string m_limitBy;
-                    bool m_limitByHasBeenSet;
-
-                    /**
-                     * 响应策略
-url请求转发
-text 响应配置
-default 直接返回
-
-                     */
-                    std::string m_responseType;
-                    bool m_responseTypeHasBeenSet;
-
-                    /**
-                     * 是否隐藏限流客户端响应头
-                     */
-                    bool m_hideClientHeaders;
-                    bool m_hideClientHeadersHasBeenSet;
-
-                    /**
-                     * 是否开启请求排队
-                     */
-                    bool m_isDelay;
-                    bool m_isDelayHasBeenSet;
-
-                    /**
                      * 需要进行流量控制的请求路径
 注意：此字段可能返回 null，表示取不到有效值。
                      */
@@ -442,6 +464,13 @@ default 直接返回
                      */
                     std::string m_header;
                     bool m_headerHasBeenSet;
+
+                    /**
+                     * 限流依据
+ip service consumer credential path header
+                     */
+                    std::string m_limitBy;
+                    bool m_limitByHasBeenSet;
 
                     /**
                      * 外部redis配置
@@ -477,10 +506,46 @@ external_redis 外部redis
                     bool m_rateLimitResponseUrlHasBeenSet;
 
                     /**
+                     * 响应策略
+url请求转发
+text 响应配置
+default 直接返回
+
+                     */
+                    std::string m_responseType;
+                    bool m_responseTypeHasBeenSet;
+
+                    /**
+                     * 是否隐藏限流客户端响应头
+                     */
+                    bool m_hideClientHeaders;
+                    bool m_hideClientHeadersHasBeenSet;
+
+                    /**
                      * 排队时间
                      */
                     int64_t m_lineUpTime;
                     bool m_lineUpTimeHasBeenSet;
+
+                    /**
+                     * 是否开启请求排队
+                     */
+                    bool m_isDelay;
+                    bool m_isDelayHasBeenSet;
+
+                    /**
+                     * 基础限流
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::vector<QpsThreshold> m_basicLimitQpsThresholds;
+                    bool m_basicLimitQpsThresholdsHasBeenSet;
+
+                    /**
+                     * 参数限流的规则
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::vector<LimitRule> m_limitRules;
+                    bool m_limitRulesHasBeenSet;
 
                 };
             }
