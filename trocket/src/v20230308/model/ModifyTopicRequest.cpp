@@ -26,7 +26,8 @@ ModifyTopicRequest::ModifyTopicRequest() :
     m_instanceIdHasBeenSet(false),
     m_topicHasBeenSet(false),
     m_queueNumHasBeenSet(false),
-    m_remarkHasBeenSet(false)
+    m_remarkHasBeenSet(false),
+    m_msgTTLHasBeenSet(false)
 {
 }
 
@@ -67,6 +68,14 @@ string ModifyTopicRequest::ToJsonString() const
         string key = "Remark";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_remark.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_msgTTLHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "MsgTTL";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_msgTTL, allocator);
     }
 
 
@@ -139,6 +148,22 @@ void ModifyTopicRequest::SetRemark(const string& _remark)
 bool ModifyTopicRequest::RemarkHasBeenSet() const
 {
     return m_remarkHasBeenSet;
+}
+
+int64_t ModifyTopicRequest::GetMsgTTL() const
+{
+    return m_msgTTL;
+}
+
+void ModifyTopicRequest::SetMsgTTL(const int64_t& _msgTTL)
+{
+    m_msgTTL = _msgTTL;
+    m_msgTTLHasBeenSet = true;
+}
+
+bool ModifyTopicRequest::MsgTTLHasBeenSet() const
+{
+    return m_msgTTLHasBeenSet;
 }
 
 
