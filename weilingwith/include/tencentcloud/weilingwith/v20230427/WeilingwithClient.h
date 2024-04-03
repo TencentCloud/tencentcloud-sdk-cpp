@@ -27,6 +27,8 @@
 #include <tencentcloud/weilingwith/v20230427/model/AddAlarmProcessRecordResponse.h>
 #include <tencentcloud/weilingwith/v20230427/model/BatchCreateDeviceRequest.h>
 #include <tencentcloud/weilingwith/v20230427/model/BatchCreateDeviceResponse.h>
+#include <tencentcloud/weilingwith/v20230427/model/BatchDeleteDeviceRequest.h>
+#include <tencentcloud/weilingwith/v20230427/model/BatchDeleteDeviceResponse.h>
 #include <tencentcloud/weilingwith/v20230427/model/BatchKillAlarmRequest.h>
 #include <tencentcloud/weilingwith/v20230427/model/BatchKillAlarmResponse.h>
 #include <tencentcloud/weilingwith/v20230427/model/BatchReportAppMessageRequest.h>
@@ -39,6 +41,8 @@
 #include <tencentcloud/weilingwith/v20230427/model/ControlDeviceResponse.h>
 #include <tencentcloud/weilingwith/v20230427/model/CreateApplicationTokenRequest.h>
 #include <tencentcloud/weilingwith/v20230427/model/CreateApplicationTokenResponse.h>
+#include <tencentcloud/weilingwith/v20230427/model/DeleteDeviceGroupRequest.h>
+#include <tencentcloud/weilingwith/v20230427/model/DeleteDeviceGroupResponse.h>
 #include <tencentcloud/weilingwith/v20230427/model/DescribeActionListRequest.h>
 #include <tencentcloud/weilingwith/v20230427/model/DescribeActionListResponse.h>
 #include <tencentcloud/weilingwith/v20230427/model/DescribeAdministrationByTagRequest.h>
@@ -63,6 +67,8 @@
 #include <tencentcloud/weilingwith/v20230427/model/DescribeCameraExtendInfoResponse.h>
 #include <tencentcloud/weilingwith/v20230427/model/DescribeCityWorkspaceListRequest.h>
 #include <tencentcloud/weilingwith/v20230427/model/DescribeCityWorkspaceListResponse.h>
+#include <tencentcloud/weilingwith/v20230427/model/DescribeDeviceGroupListRequest.h>
+#include <tencentcloud/weilingwith/v20230427/model/DescribeDeviceGroupListResponse.h>
 #include <tencentcloud/weilingwith/v20230427/model/DescribeDeviceListRequest.h>
 #include <tencentcloud/weilingwith/v20230427/model/DescribeDeviceListResponse.h>
 #include <tencentcloud/weilingwith/v20230427/model/DescribeDeviceShadowListRequest.h>
@@ -129,10 +135,18 @@
 #include <tencentcloud/weilingwith/v20230427/model/DescribeWorkspaceListResponse.h>
 #include <tencentcloud/weilingwith/v20230427/model/DescribeWorkspaceUserListRequest.h>
 #include <tencentcloud/weilingwith/v20230427/model/DescribeWorkspaceUserListResponse.h>
+#include <tencentcloud/weilingwith/v20230427/model/ModifyDeviceFieldRequest.h>
+#include <tencentcloud/weilingwith/v20230427/model/ModifyDeviceFieldResponse.h>
+#include <tencentcloud/weilingwith/v20230427/model/ModifyDeviceGroupRequest.h>
+#include <tencentcloud/weilingwith/v20230427/model/ModifyDeviceGroupResponse.h>
 #include <tencentcloud/weilingwith/v20230427/model/ModifyDeviceNameRequest.h>
 #include <tencentcloud/weilingwith/v20230427/model/ModifyDeviceNameResponse.h>
+#include <tencentcloud/weilingwith/v20230427/model/ModifyDeviceTagRequest.h>
+#include <tencentcloud/weilingwith/v20230427/model/ModifyDeviceTagResponse.h>
 #include <tencentcloud/weilingwith/v20230427/model/ReportAppMessageRequest.h>
 #include <tencentcloud/weilingwith/v20230427/model/ReportAppMessageResponse.h>
+#include <tencentcloud/weilingwith/v20230427/model/SaveDeviceGroupRequest.h>
+#include <tencentcloud/weilingwith/v20230427/model/SaveDeviceGroupResponse.h>
 #include <tencentcloud/weilingwith/v20230427/model/StopVideoStreamingRequest.h>
 #include <tencentcloud/weilingwith/v20230427/model/StopVideoStreamingResponse.h>
 #include <tencentcloud/weilingwith/v20230427/model/UpdateWorkspaceParkAttributesRequest.h>
@@ -157,6 +171,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::BatchCreateDeviceResponse> BatchCreateDeviceOutcome;
                 typedef std::future<BatchCreateDeviceOutcome> BatchCreateDeviceOutcomeCallable;
                 typedef std::function<void(const WeilingwithClient*, const Model::BatchCreateDeviceRequest&, BatchCreateDeviceOutcome, const std::shared_ptr<const AsyncCallerContext>&)> BatchCreateDeviceAsyncHandler;
+                typedef Outcome<Core::Error, Model::BatchDeleteDeviceResponse> BatchDeleteDeviceOutcome;
+                typedef std::future<BatchDeleteDeviceOutcome> BatchDeleteDeviceOutcomeCallable;
+                typedef std::function<void(const WeilingwithClient*, const Model::BatchDeleteDeviceRequest&, BatchDeleteDeviceOutcome, const std::shared_ptr<const AsyncCallerContext>&)> BatchDeleteDeviceAsyncHandler;
                 typedef Outcome<Core::Error, Model::BatchKillAlarmResponse> BatchKillAlarmOutcome;
                 typedef std::future<BatchKillAlarmOutcome> BatchKillAlarmOutcomeCallable;
                 typedef std::function<void(const WeilingwithClient*, const Model::BatchKillAlarmRequest&, BatchKillAlarmOutcome, const std::shared_ptr<const AsyncCallerContext>&)> BatchKillAlarmAsyncHandler;
@@ -175,6 +192,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::CreateApplicationTokenResponse> CreateApplicationTokenOutcome;
                 typedef std::future<CreateApplicationTokenOutcome> CreateApplicationTokenOutcomeCallable;
                 typedef std::function<void(const WeilingwithClient*, const Model::CreateApplicationTokenRequest&, CreateApplicationTokenOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateApplicationTokenAsyncHandler;
+                typedef Outcome<Core::Error, Model::DeleteDeviceGroupResponse> DeleteDeviceGroupOutcome;
+                typedef std::future<DeleteDeviceGroupOutcome> DeleteDeviceGroupOutcomeCallable;
+                typedef std::function<void(const WeilingwithClient*, const Model::DeleteDeviceGroupRequest&, DeleteDeviceGroupOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteDeviceGroupAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeActionListResponse> DescribeActionListOutcome;
                 typedef std::future<DescribeActionListOutcome> DescribeActionListOutcomeCallable;
                 typedef std::function<void(const WeilingwithClient*, const Model::DescribeActionListRequest&, DescribeActionListOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeActionListAsyncHandler;
@@ -211,6 +231,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeCityWorkspaceListResponse> DescribeCityWorkspaceListOutcome;
                 typedef std::future<DescribeCityWorkspaceListOutcome> DescribeCityWorkspaceListOutcomeCallable;
                 typedef std::function<void(const WeilingwithClient*, const Model::DescribeCityWorkspaceListRequest&, DescribeCityWorkspaceListOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeCityWorkspaceListAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeDeviceGroupListResponse> DescribeDeviceGroupListOutcome;
+                typedef std::future<DescribeDeviceGroupListOutcome> DescribeDeviceGroupListOutcomeCallable;
+                typedef std::function<void(const WeilingwithClient*, const Model::DescribeDeviceGroupListRequest&, DescribeDeviceGroupListOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeDeviceGroupListAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeDeviceListResponse> DescribeDeviceListOutcome;
                 typedef std::future<DescribeDeviceListOutcome> DescribeDeviceListOutcomeCallable;
                 typedef std::function<void(const WeilingwithClient*, const Model::DescribeDeviceListRequest&, DescribeDeviceListOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeDeviceListAsyncHandler;
@@ -310,12 +333,24 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeWorkspaceUserListResponse> DescribeWorkspaceUserListOutcome;
                 typedef std::future<DescribeWorkspaceUserListOutcome> DescribeWorkspaceUserListOutcomeCallable;
                 typedef std::function<void(const WeilingwithClient*, const Model::DescribeWorkspaceUserListRequest&, DescribeWorkspaceUserListOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeWorkspaceUserListAsyncHandler;
+                typedef Outcome<Core::Error, Model::ModifyDeviceFieldResponse> ModifyDeviceFieldOutcome;
+                typedef std::future<ModifyDeviceFieldOutcome> ModifyDeviceFieldOutcomeCallable;
+                typedef std::function<void(const WeilingwithClient*, const Model::ModifyDeviceFieldRequest&, ModifyDeviceFieldOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyDeviceFieldAsyncHandler;
+                typedef Outcome<Core::Error, Model::ModifyDeviceGroupResponse> ModifyDeviceGroupOutcome;
+                typedef std::future<ModifyDeviceGroupOutcome> ModifyDeviceGroupOutcomeCallable;
+                typedef std::function<void(const WeilingwithClient*, const Model::ModifyDeviceGroupRequest&, ModifyDeviceGroupOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyDeviceGroupAsyncHandler;
                 typedef Outcome<Core::Error, Model::ModifyDeviceNameResponse> ModifyDeviceNameOutcome;
                 typedef std::future<ModifyDeviceNameOutcome> ModifyDeviceNameOutcomeCallable;
                 typedef std::function<void(const WeilingwithClient*, const Model::ModifyDeviceNameRequest&, ModifyDeviceNameOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyDeviceNameAsyncHandler;
+                typedef Outcome<Core::Error, Model::ModifyDeviceTagResponse> ModifyDeviceTagOutcome;
+                typedef std::future<ModifyDeviceTagOutcome> ModifyDeviceTagOutcomeCallable;
+                typedef std::function<void(const WeilingwithClient*, const Model::ModifyDeviceTagRequest&, ModifyDeviceTagOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyDeviceTagAsyncHandler;
                 typedef Outcome<Core::Error, Model::ReportAppMessageResponse> ReportAppMessageOutcome;
                 typedef std::future<ReportAppMessageOutcome> ReportAppMessageOutcomeCallable;
                 typedef std::function<void(const WeilingwithClient*, const Model::ReportAppMessageRequest&, ReportAppMessageOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ReportAppMessageAsyncHandler;
+                typedef Outcome<Core::Error, Model::SaveDeviceGroupResponse> SaveDeviceGroupOutcome;
+                typedef std::future<SaveDeviceGroupOutcome> SaveDeviceGroupOutcomeCallable;
+                typedef std::function<void(const WeilingwithClient*, const Model::SaveDeviceGroupRequest&, SaveDeviceGroupOutcome, const std::shared_ptr<const AsyncCallerContext>&)> SaveDeviceGroupAsyncHandler;
                 typedef Outcome<Core::Error, Model::StopVideoStreamingResponse> StopVideoStreamingOutcome;
                 typedef std::future<StopVideoStreamingOutcome> StopVideoStreamingOutcomeCallable;
                 typedef std::function<void(const WeilingwithClient*, const Model::StopVideoStreamingRequest&, StopVideoStreamingOutcome, const std::shared_ptr<const AsyncCallerContext>&)> StopVideoStreamingAsyncHandler;
@@ -342,6 +377,15 @@ namespace TencentCloud
                 BatchCreateDeviceOutcome BatchCreateDevice(const Model::BatchCreateDeviceRequest &request);
                 void BatchCreateDeviceAsync(const Model::BatchCreateDeviceRequest& request, const BatchCreateDeviceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 BatchCreateDeviceOutcomeCallable BatchCreateDeviceCallable(const Model::BatchCreateDeviceRequest& request);
+
+                /**
+                 *批量删除设备
+                 * @param req BatchDeleteDeviceRequest
+                 * @return BatchDeleteDeviceOutcome
+                 */
+                BatchDeleteDeviceOutcome BatchDeleteDevice(const Model::BatchDeleteDeviceRequest &request);
+                void BatchDeleteDeviceAsync(const Model::BatchDeleteDeviceRequest& request, const BatchDeleteDeviceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                BatchDeleteDeviceOutcomeCallable BatchDeleteDeviceCallable(const Model::BatchDeleteDeviceRequest& request);
 
                 /**
                  *批量消警
@@ -396,6 +440,15 @@ namespace TencentCloud
                 CreateApplicationTokenOutcome CreateApplicationToken(const Model::CreateApplicationTokenRequest &request);
                 void CreateApplicationTokenAsync(const Model::CreateApplicationTokenRequest& request, const CreateApplicationTokenAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 CreateApplicationTokenOutcomeCallable CreateApplicationTokenCallable(const Model::CreateApplicationTokenRequest& request);
+
+                /**
+                 *删除设备分组
+                 * @param req DeleteDeviceGroupRequest
+                 * @return DeleteDeviceGroupOutcome
+                 */
+                DeleteDeviceGroupOutcome DeleteDeviceGroup(const Model::DeleteDeviceGroupRequest &request);
+                void DeleteDeviceGroupAsync(const Model::DeleteDeviceGroupRequest& request, const DeleteDeviceGroupAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DeleteDeviceGroupOutcomeCallable DeleteDeviceGroupCallable(const Model::DeleteDeviceGroupRequest& request);
 
                 /**
                  *动作列表查询
@@ -504,6 +557,15 @@ namespace TencentCloud
                 DescribeCityWorkspaceListOutcome DescribeCityWorkspaceList(const Model::DescribeCityWorkspaceListRequest &request);
                 void DescribeCityWorkspaceListAsync(const Model::DescribeCityWorkspaceListRequest& request, const DescribeCityWorkspaceListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DescribeCityWorkspaceListOutcomeCallable DescribeCityWorkspaceListCallable(const Model::DescribeCityWorkspaceListRequest& request);
+
+                /**
+                 *设备分组列表
+                 * @param req DescribeDeviceGroupListRequest
+                 * @return DescribeDeviceGroupListOutcome
+                 */
+                DescribeDeviceGroupListOutcome DescribeDeviceGroupList(const Model::DescribeDeviceGroupListRequest &request);
+                void DescribeDeviceGroupListAsync(const Model::DescribeDeviceGroupListRequest& request, const DescribeDeviceGroupListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeDeviceGroupListOutcomeCallable DescribeDeviceGroupListCallable(const Model::DescribeDeviceGroupListRequest& request);
 
                 /**
                  *设备列表查询/单个查询（支持通过筛选条件查询，设备类型、标签、PID、空间）
@@ -803,6 +865,24 @@ namespace TencentCloud
                 DescribeWorkspaceUserListOutcomeCallable DescribeWorkspaceUserListCallable(const Model::DescribeWorkspaceUserListRequest& request);
 
                 /**
+                 *批量修改设备自定义字段值
+                 * @param req ModifyDeviceFieldRequest
+                 * @return ModifyDeviceFieldOutcome
+                 */
+                ModifyDeviceFieldOutcome ModifyDeviceField(const Model::ModifyDeviceFieldRequest &request);
+                void ModifyDeviceFieldAsync(const Model::ModifyDeviceFieldRequest& request, const ModifyDeviceFieldAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                ModifyDeviceFieldOutcomeCallable ModifyDeviceFieldCallable(const Model::ModifyDeviceFieldRequest& request);
+
+                /**
+                 *批量修改设备组
+                 * @param req ModifyDeviceGroupRequest
+                 * @return ModifyDeviceGroupOutcome
+                 */
+                ModifyDeviceGroupOutcome ModifyDeviceGroup(const Model::ModifyDeviceGroupRequest &request);
+                void ModifyDeviceGroupAsync(const Model::ModifyDeviceGroupRequest& request, const ModifyDeviceGroupAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                ModifyDeviceGroupOutcomeCallable ModifyDeviceGroupCallable(const Model::ModifyDeviceGroupRequest& request);
+
+                /**
                  *批量修改设备名字
                  * @param req ModifyDeviceNameRequest
                  * @return ModifyDeviceNameOutcome
@@ -812,6 +892,15 @@ namespace TencentCloud
                 ModifyDeviceNameOutcomeCallable ModifyDeviceNameCallable(const Model::ModifyDeviceNameRequest& request);
 
                 /**
+                 *批量修改设备标签
+                 * @param req ModifyDeviceTagRequest
+                 * @return ModifyDeviceTagOutcome
+                 */
+                ModifyDeviceTagOutcome ModifyDeviceTag(const Model::ModifyDeviceTagRequest &request);
+                void ModifyDeviceTagAsync(const Model::ModifyDeviceTagRequest& request, const ModifyDeviceTagAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                ModifyDeviceTagOutcomeCallable ModifyDeviceTagCallable(const Model::ModifyDeviceTagRequest& request);
+
+                /**
                  *上报应用消息
                  * @param req ReportAppMessageRequest
                  * @return ReportAppMessageOutcome
@@ -819,6 +908,15 @@ namespace TencentCloud
                 ReportAppMessageOutcome ReportAppMessage(const Model::ReportAppMessageRequest &request);
                 void ReportAppMessageAsync(const Model::ReportAppMessageRequest& request, const ReportAppMessageAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 ReportAppMessageOutcomeCallable ReportAppMessageCallable(const Model::ReportAppMessageRequest& request);
+
+                /**
+                 *设备分组新增/修改
+                 * @param req SaveDeviceGroupRequest
+                 * @return SaveDeviceGroupOutcome
+                 */
+                SaveDeviceGroupOutcome SaveDeviceGroup(const Model::SaveDeviceGroupRequest &request);
+                void SaveDeviceGroupAsync(const Model::SaveDeviceGroupRequest& request, const SaveDeviceGroupAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                SaveDeviceGroupOutcomeCallable SaveDeviceGroupCallable(const Model::SaveDeviceGroupRequest& request);
 
                 /**
                  *断流接口

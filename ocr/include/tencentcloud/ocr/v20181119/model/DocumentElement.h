@@ -186,6 +186,31 @@ namespace TencentCloud
                     bool LevelHasBeenSet() const;
 
                     /**
+                     * 获取入参开启EnableInsetImage后返回，表示在InsetImagePackage中的内嵌图片名称
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return InsetImageName 入参开启EnableInsetImage后返回，表示在InsetImagePackage中的内嵌图片名称
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::string GetInsetImageName() const;
+
+                    /**
+                     * 设置入参开启EnableInsetImage后返回，表示在InsetImagePackage中的内嵌图片名称
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _insetImageName 入参开启EnableInsetImage后返回，表示在InsetImagePackage中的内嵌图片名称
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetInsetImageName(const std::string& _insetImageName);
+
+                    /**
+                     * 判断参数 InsetImageName 是否已赋值
+                     * @return InsetImageName 是否已赋值
+                     * 
+                     */
+                    bool InsetImageNameHasBeenSet() const;
+
+                    /**
                      * 获取嵌套的文档元素信息，一般包含的是文档内嵌入图片的文字识别结果
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Elements 嵌套的文档元素信息，一般包含的是文档内嵌入图片的文字识别结果
@@ -249,6 +274,13 @@ namespace TencentCloud
                      */
                     int64_t m_level;
                     bool m_levelHasBeenSet;
+
+                    /**
+                     * 入参开启EnableInsetImage后返回，表示在InsetImagePackage中的内嵌图片名称
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_insetImageName;
+                    bool m_insetImageNameHasBeenSet;
 
                     /**
                      * 嵌套的文档元素信息，一般包含的是文档内嵌入图片的文字识别结果

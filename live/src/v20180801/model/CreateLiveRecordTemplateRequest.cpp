@@ -32,6 +32,7 @@ CreateLiveRecordTemplateRequest::CreateLiveRecordTemplateRequest() :
     m_isDelayLiveHasBeenSet(false),
     m_hlsSpecialParamHasBeenSet(false),
     m_mp3ParamHasBeenSet(false),
+    m_cosStoreHasBeenSet(false),
     m_removeWatermarkHasBeenSet(false),
     m_flvSpecialParamHasBeenSet(false)
 {
@@ -120,6 +121,14 @@ string CreateLiveRecordTemplateRequest::ToJsonString() const
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
         m_mp3Param.ToJsonObject(d[key.c_str()], allocator);
+    }
+
+    if (m_cosStoreHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "CosStore";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_cosStore, allocator);
     }
 
     if (m_removeWatermarkHasBeenSet)
@@ -289,6 +298,22 @@ void CreateLiveRecordTemplateRequest::SetMp3Param(const RecordParam& _mp3Param)
 bool CreateLiveRecordTemplateRequest::Mp3ParamHasBeenSet() const
 {
     return m_mp3ParamHasBeenSet;
+}
+
+int64_t CreateLiveRecordTemplateRequest::GetCosStore() const
+{
+    return m_cosStore;
+}
+
+void CreateLiveRecordTemplateRequest::SetCosStore(const int64_t& _cosStore)
+{
+    m_cosStore = _cosStore;
+    m_cosStoreHasBeenSet = true;
+}
+
+bool CreateLiveRecordTemplateRequest::CosStoreHasBeenSet() const
+{
+    return m_cosStoreHasBeenSet;
 }
 
 bool CreateLiveRecordTemplateRequest::GetRemoveWatermark() const

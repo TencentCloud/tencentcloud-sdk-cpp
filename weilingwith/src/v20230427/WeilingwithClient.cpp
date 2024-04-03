@@ -126,6 +126,49 @@ WeilingwithClient::BatchCreateDeviceOutcomeCallable WeilingwithClient::BatchCrea
     return task->get_future();
 }
 
+WeilingwithClient::BatchDeleteDeviceOutcome WeilingwithClient::BatchDeleteDevice(const BatchDeleteDeviceRequest &request)
+{
+    auto outcome = MakeRequest(request, "BatchDeleteDevice");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        BatchDeleteDeviceResponse rsp = BatchDeleteDeviceResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return BatchDeleteDeviceOutcome(rsp);
+        else
+            return BatchDeleteDeviceOutcome(o.GetError());
+    }
+    else
+    {
+        return BatchDeleteDeviceOutcome(outcome.GetError());
+    }
+}
+
+void WeilingwithClient::BatchDeleteDeviceAsync(const BatchDeleteDeviceRequest& request, const BatchDeleteDeviceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->BatchDeleteDevice(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+WeilingwithClient::BatchDeleteDeviceOutcomeCallable WeilingwithClient::BatchDeleteDeviceCallable(const BatchDeleteDeviceRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<BatchDeleteDeviceOutcome()>>(
+        [this, request]()
+        {
+            return this->BatchDeleteDevice(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 WeilingwithClient::BatchKillAlarmOutcome WeilingwithClient::BatchKillAlarm(const BatchKillAlarmRequest &request)
 {
     auto outcome = MakeRequest(request, "BatchKillAlarm");
@@ -377,6 +420,49 @@ WeilingwithClient::CreateApplicationTokenOutcomeCallable WeilingwithClient::Crea
         [this, request]()
         {
             return this->CreateApplicationToken(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+WeilingwithClient::DeleteDeviceGroupOutcome WeilingwithClient::DeleteDeviceGroup(const DeleteDeviceGroupRequest &request)
+{
+    auto outcome = MakeRequest(request, "DeleteDeviceGroup");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DeleteDeviceGroupResponse rsp = DeleteDeviceGroupResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DeleteDeviceGroupOutcome(rsp);
+        else
+            return DeleteDeviceGroupOutcome(o.GetError());
+    }
+    else
+    {
+        return DeleteDeviceGroupOutcome(outcome.GetError());
+    }
+}
+
+void WeilingwithClient::DeleteDeviceGroupAsync(const DeleteDeviceGroupRequest& request, const DeleteDeviceGroupAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DeleteDeviceGroup(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+WeilingwithClient::DeleteDeviceGroupOutcomeCallable WeilingwithClient::DeleteDeviceGroupCallable(const DeleteDeviceGroupRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DeleteDeviceGroupOutcome()>>(
+        [this, request]()
+        {
+            return this->DeleteDeviceGroup(request);
         }
     );
 
@@ -893,6 +979,49 @@ WeilingwithClient::DescribeCityWorkspaceListOutcomeCallable WeilingwithClient::D
         [this, request]()
         {
             return this->DescribeCityWorkspaceList(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+WeilingwithClient::DescribeDeviceGroupListOutcome WeilingwithClient::DescribeDeviceGroupList(const DescribeDeviceGroupListRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeDeviceGroupList");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeDeviceGroupListResponse rsp = DescribeDeviceGroupListResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeDeviceGroupListOutcome(rsp);
+        else
+            return DescribeDeviceGroupListOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeDeviceGroupListOutcome(outcome.GetError());
+    }
+}
+
+void WeilingwithClient::DescribeDeviceGroupListAsync(const DescribeDeviceGroupListRequest& request, const DescribeDeviceGroupListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeDeviceGroupList(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+WeilingwithClient::DescribeDeviceGroupListOutcomeCallable WeilingwithClient::DescribeDeviceGroupListCallable(const DescribeDeviceGroupListRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeDeviceGroupListOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeDeviceGroupList(request);
         }
     );
 
@@ -2319,6 +2448,92 @@ WeilingwithClient::DescribeWorkspaceUserListOutcomeCallable WeilingwithClient::D
     return task->get_future();
 }
 
+WeilingwithClient::ModifyDeviceFieldOutcome WeilingwithClient::ModifyDeviceField(const ModifyDeviceFieldRequest &request)
+{
+    auto outcome = MakeRequest(request, "ModifyDeviceField");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ModifyDeviceFieldResponse rsp = ModifyDeviceFieldResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ModifyDeviceFieldOutcome(rsp);
+        else
+            return ModifyDeviceFieldOutcome(o.GetError());
+    }
+    else
+    {
+        return ModifyDeviceFieldOutcome(outcome.GetError());
+    }
+}
+
+void WeilingwithClient::ModifyDeviceFieldAsync(const ModifyDeviceFieldRequest& request, const ModifyDeviceFieldAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->ModifyDeviceField(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+WeilingwithClient::ModifyDeviceFieldOutcomeCallable WeilingwithClient::ModifyDeviceFieldCallable(const ModifyDeviceFieldRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<ModifyDeviceFieldOutcome()>>(
+        [this, request]()
+        {
+            return this->ModifyDeviceField(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+WeilingwithClient::ModifyDeviceGroupOutcome WeilingwithClient::ModifyDeviceGroup(const ModifyDeviceGroupRequest &request)
+{
+    auto outcome = MakeRequest(request, "ModifyDeviceGroup");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ModifyDeviceGroupResponse rsp = ModifyDeviceGroupResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ModifyDeviceGroupOutcome(rsp);
+        else
+            return ModifyDeviceGroupOutcome(o.GetError());
+    }
+    else
+    {
+        return ModifyDeviceGroupOutcome(outcome.GetError());
+    }
+}
+
+void WeilingwithClient::ModifyDeviceGroupAsync(const ModifyDeviceGroupRequest& request, const ModifyDeviceGroupAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->ModifyDeviceGroup(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+WeilingwithClient::ModifyDeviceGroupOutcomeCallable WeilingwithClient::ModifyDeviceGroupCallable(const ModifyDeviceGroupRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<ModifyDeviceGroupOutcome()>>(
+        [this, request]()
+        {
+            return this->ModifyDeviceGroup(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 WeilingwithClient::ModifyDeviceNameOutcome WeilingwithClient::ModifyDeviceName(const ModifyDeviceNameRequest &request)
 {
     auto outcome = MakeRequest(request, "ModifyDeviceName");
@@ -2362,6 +2577,49 @@ WeilingwithClient::ModifyDeviceNameOutcomeCallable WeilingwithClient::ModifyDevi
     return task->get_future();
 }
 
+WeilingwithClient::ModifyDeviceTagOutcome WeilingwithClient::ModifyDeviceTag(const ModifyDeviceTagRequest &request)
+{
+    auto outcome = MakeRequest(request, "ModifyDeviceTag");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ModifyDeviceTagResponse rsp = ModifyDeviceTagResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ModifyDeviceTagOutcome(rsp);
+        else
+            return ModifyDeviceTagOutcome(o.GetError());
+    }
+    else
+    {
+        return ModifyDeviceTagOutcome(outcome.GetError());
+    }
+}
+
+void WeilingwithClient::ModifyDeviceTagAsync(const ModifyDeviceTagRequest& request, const ModifyDeviceTagAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->ModifyDeviceTag(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+WeilingwithClient::ModifyDeviceTagOutcomeCallable WeilingwithClient::ModifyDeviceTagCallable(const ModifyDeviceTagRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<ModifyDeviceTagOutcome()>>(
+        [this, request]()
+        {
+            return this->ModifyDeviceTag(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 WeilingwithClient::ReportAppMessageOutcome WeilingwithClient::ReportAppMessage(const ReportAppMessageRequest &request)
 {
     auto outcome = MakeRequest(request, "ReportAppMessage");
@@ -2398,6 +2656,49 @@ WeilingwithClient::ReportAppMessageOutcomeCallable WeilingwithClient::ReportAppM
         [this, request]()
         {
             return this->ReportAppMessage(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+WeilingwithClient::SaveDeviceGroupOutcome WeilingwithClient::SaveDeviceGroup(const SaveDeviceGroupRequest &request)
+{
+    auto outcome = MakeRequest(request, "SaveDeviceGroup");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        SaveDeviceGroupResponse rsp = SaveDeviceGroupResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return SaveDeviceGroupOutcome(rsp);
+        else
+            return SaveDeviceGroupOutcome(o.GetError());
+    }
+    else
+    {
+        return SaveDeviceGroupOutcome(outcome.GetError());
+    }
+}
+
+void WeilingwithClient::SaveDeviceGroupAsync(const SaveDeviceGroupRequest& request, const SaveDeviceGroupAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->SaveDeviceGroup(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+WeilingwithClient::SaveDeviceGroupOutcomeCallable WeilingwithClient::SaveDeviceGroupCallable(const SaveDeviceGroupRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<SaveDeviceGroupOutcome()>>(
+        [this, request]()
+        {
+            return this->SaveDeviceGroup(request);
         }
     );
 

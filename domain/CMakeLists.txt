@@ -91,6 +91,7 @@ set(domain_public_header_model
   include/tencentcloud/domain/v20180808/model/CreatePhoneEmailRequest.h
   include/tencentcloud/domain/v20180808/model/PriceInfo.h
   include/tencentcloud/domain/v20180808/model/DescribeTemplateRequest.h
+  include/tencentcloud/domain/v20180808/model/DescribeTldListRequest.h
   include/tencentcloud/domain/v20180808/model/DescribeBatchOperationLogDetailsRequest.h
   include/tencentcloud/domain/v20180808/model/DescribeDomainNameListResponse.h
   include/tencentcloud/domain/v20180808/model/SyncCustomDnsHostRequest.h
@@ -101,6 +102,7 @@ set(domain_public_header_model
   include/tencentcloud/domain/v20180808/model/DomainList.h
   include/tencentcloud/domain/v20180808/model/DescribePhoneEmailListRequest.h
   include/tencentcloud/domain/v20180808/model/DomainBaseInfo.h
+  include/tencentcloud/domain/v20180808/model/DescribeTldListResponse.h
   include/tencentcloud/domain/v20180808/model/CreateCustomDnsHostRequest.h
   include/tencentcloud/domain/v20180808/model/DeleteCustomDnsHostRequest.h
   include/tencentcloud/domain/v20180808/model/CheckBatchStatusResponse.h
@@ -184,6 +186,7 @@ set(domain_src
   src/v20180808/model/CreatePhoneEmailRequest.cpp
   src/v20180808/model/PriceInfo.cpp
   src/v20180808/model/DescribeTemplateRequest.cpp
+  src/v20180808/model/DescribeTldListRequest.cpp
   src/v20180808/model/DescribeBatchOperationLogDetailsRequest.cpp
   src/v20180808/model/DescribeDomainNameListResponse.cpp
   src/v20180808/model/SyncCustomDnsHostRequest.cpp
@@ -194,6 +197,7 @@ set(domain_src
   src/v20180808/model/DomainList.cpp
   src/v20180808/model/DescribePhoneEmailListRequest.cpp
   src/v20180808/model/DomainBaseInfo.cpp
+  src/v20180808/model/DescribeTldListResponse.cpp
   src/v20180808/model/CreateCustomDnsHostRequest.cpp
   src/v20180808/model/DeleteCustomDnsHostRequest.cpp
   src/v20180808/model/CheckBatchStatusResponse.cpp

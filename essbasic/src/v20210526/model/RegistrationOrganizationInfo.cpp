@@ -32,7 +32,8 @@ RegistrationOrganizationInfo::RegistrationOrganizationInfo() :
     m_authorizationTypesHasBeenSet(false),
     m_adminIdCardTypeHasBeenSet(false),
     m_adminIdCardNumberHasBeenSet(false),
-    m_businessLicenseHasBeenSet(false)
+    m_businessLicenseHasBeenSet(false),
+    m_powerOfAttorneysHasBeenSet(false)
 {
 }
 
@@ -164,6 +165,19 @@ CoreInternalOutcome RegistrationOrganizationInfo::Deserialize(const rapidjson::V
         m_businessLicenseHasBeenSet = true;
     }
 
+    if (value.HasMember("PowerOfAttorneys") && !value["PowerOfAttorneys"].IsNull())
+    {
+        if (!value["PowerOfAttorneys"].IsArray())
+            return CoreInternalOutcome(Core::Error("response `RegistrationOrganizationInfo.PowerOfAttorneys` is not array type"));
+
+        const rapidjson::Value &tmpValue = value["PowerOfAttorneys"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            m_powerOfAttorneys.push_back((*itr).GetString());
+        }
+        m_powerOfAttorneysHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -270,6 +284,19 @@ void RegistrationOrganizationInfo::ToJsonObject(rapidjson::Value &value, rapidjs
         string key = "BusinessLicense";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_businessLicense.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_powerOfAttorneysHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "PowerOfAttorneys";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        for (auto itr = m_powerOfAttorneys.begin(); itr != m_powerOfAttorneys.end(); ++itr)
+        {
+            value[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
+        }
     }
 
 }
@@ -465,5 +492,21 @@ void RegistrationOrganizationInfo::SetBusinessLicense(const string& _businessLic
 bool RegistrationOrganizationInfo::BusinessLicenseHasBeenSet() const
 {
     return m_businessLicenseHasBeenSet;
+}
+
+vector<string> RegistrationOrganizationInfo::GetPowerOfAttorneys() const
+{
+    return m_powerOfAttorneys;
+}
+
+void RegistrationOrganizationInfo::SetPowerOfAttorneys(const vector<string>& _powerOfAttorneys)
+{
+    m_powerOfAttorneys = _powerOfAttorneys;
+    m_powerOfAttorneysHasBeenSet = true;
+}
+
+bool RegistrationOrganizationInfo::PowerOfAttorneysHasBeenSet() const
+{
+    return m_powerOfAttorneysHasBeenSet;
 }
 

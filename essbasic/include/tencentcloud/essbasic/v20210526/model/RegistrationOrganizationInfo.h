@@ -390,6 +390,27 @@ namespace TencentCloud
                      */
                     bool BusinessLicenseHasBeenSet() const;
 
+                    /**
+                     * 获取授权书(PNG或JPG或PDF) base64格式, 大小不超过8M
+                     * @return PowerOfAttorneys 授权书(PNG或JPG或PDF) base64格式, 大小不超过8M
+                     * 
+                     */
+                    std::vector<std::string> GetPowerOfAttorneys() const;
+
+                    /**
+                     * 设置授权书(PNG或JPG或PDF) base64格式, 大小不超过8M
+                     * @param _powerOfAttorneys 授权书(PNG或JPG或PDF) base64格式, 大小不超过8M
+                     * 
+                     */
+                    void SetPowerOfAttorneys(const std::vector<std::string>& _powerOfAttorneys);
+
+                    /**
+                     * 判断参数 PowerOfAttorneys 是否已赋值
+                     * @return PowerOfAttorneys 是否已赋值
+                     * 
+                     */
+                    bool PowerOfAttorneysHasBeenSet() const;
+
                 private:
 
                     /**
@@ -486,6 +507,12 @@ namespace TencentCloud
                      */
                     std::string m_businessLicense;
                     bool m_businessLicenseHasBeenSet;
+
+                    /**
+                     * 授权书(PNG或JPG或PDF) base64格式, 大小不超过8M
+                     */
+                    std::vector<std::string> m_powerOfAttorneys;
+                    bool m_powerOfAttorneysHasBeenSet;
 
                 };
             }

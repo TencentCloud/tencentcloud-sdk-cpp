@@ -108,27 +108,6 @@ namespace TencentCloud
                     bool EnvironmentIdHasBeenSet() const;
 
                     /**
-                     * 获取任务输入JSON。需要进行base64编码。
-                     * @return InputBase64 任务输入JSON。需要进行base64编码。
-                     * 
-                     */
-                    std::string GetInputBase64() const;
-
-                    /**
-                     * 设置任务输入JSON。需要进行base64编码。
-                     * @param _inputBase64 任务输入JSON。需要进行base64编码。
-                     * 
-                     */
-                    void SetInputBase64(const std::string& _inputBase64);
-
-                    /**
-                     * 判断参数 InputBase64 是否已赋值
-                     * @return InputBase64 是否已赋值
-                     * 
-                     */
-                    bool InputBase64HasBeenSet() const;
-
-                    /**
                      * 获取项目ID。（不填使用指定地域下的默认项目）
                      * @return ProjectId 项目ID。（不填使用指定地域下的默认项目）
                      * 
@@ -169,6 +148,48 @@ namespace TencentCloud
                      * 
                      */
                     bool DescriptionHasBeenSet() const;
+
+                    /**
+                     * 获取任务输入COS地址。（InputBase64和InputCosUri必选其一）
+                     * @return InputCosUri 任务输入COS地址。（InputBase64和InputCosUri必选其一）
+                     * 
+                     */
+                    std::string GetInputCosUri() const;
+
+                    /**
+                     * 设置任务输入COS地址。（InputBase64和InputCosUri必选其一）
+                     * @param _inputCosUri 任务输入COS地址。（InputBase64和InputCosUri必选其一）
+                     * 
+                     */
+                    void SetInputCosUri(const std::string& _inputCosUri);
+
+                    /**
+                     * 判断参数 InputCosUri 是否已赋值
+                     * @return InputCosUri 是否已赋值
+                     * 
+                     */
+                    bool InputCosUriHasBeenSet() const;
+
+                    /**
+                     * 获取任务输入JSON。需要进行base64编码。（InputBase64和InputCosUri必选其一）
+                     * @return InputBase64 任务输入JSON。需要进行base64编码。（InputBase64和InputCosUri必选其一）
+                     * 
+                     */
+                    std::string GetInputBase64() const;
+
+                    /**
+                     * 设置任务输入JSON。需要进行base64编码。（InputBase64和InputCosUri必选其一）
+                     * @param _inputBase64 任务输入JSON。需要进行base64编码。（InputBase64和InputCosUri必选其一）
+                     * 
+                     */
+                    void SetInputBase64(const std::string& _inputBase64);
+
+                    /**
+                     * 判断参数 InputBase64 是否已赋值
+                     * @return InputBase64 是否已赋值
+                     * 
+                     */
+                    bool InputBase64HasBeenSet() const;
 
                     /**
                      * 获取批量投递表格ID，不填表示单例投递。
@@ -317,6 +338,35 @@ namespace TencentCloud
                      */
                     bool WorkDirHasBeenSet() const;
 
+                    /**
+                     * 获取访问模式，不填默认私有。取值范围
+- PRIVATE：私有应用
+- PUBLIC：公共应用
+                     * @return AccessMode 访问模式，不填默认私有。取值范围
+- PRIVATE：私有应用
+- PUBLIC：公共应用
+                     * 
+                     */
+                    std::string GetAccessMode() const;
+
+                    /**
+                     * 设置访问模式，不填默认私有。取值范围
+- PRIVATE：私有应用
+- PUBLIC：公共应用
+                     * @param _accessMode 访问模式，不填默认私有。取值范围
+- PRIVATE：私有应用
+- PUBLIC：公共应用
+                     * 
+                     */
+                    void SetAccessMode(const std::string& _accessMode);
+
+                    /**
+                     * 判断参数 AccessMode 是否已赋值
+                     * @return AccessMode 是否已赋值
+                     * 
+                     */
+                    bool AccessModeHasBeenSet() const;
+
                 private:
 
                     /**
@@ -338,12 +388,6 @@ namespace TencentCloud
                     bool m_environmentIdHasBeenSet;
 
                     /**
-                     * 任务输入JSON。需要进行base64编码。
-                     */
-                    std::string m_inputBase64;
-                    bool m_inputBase64HasBeenSet;
-
-                    /**
                      * 项目ID。（不填使用指定地域下的默认项目）
                      */
                     std::string m_projectId;
@@ -354,6 +398,18 @@ namespace TencentCloud
                      */
                     std::string m_description;
                     bool m_descriptionHasBeenSet;
+
+                    /**
+                     * 任务输入COS地址。（InputBase64和InputCosUri必选其一）
+                     */
+                    std::string m_inputCosUri;
+                    bool m_inputCosUriHasBeenSet;
+
+                    /**
+                     * 任务输入JSON。需要进行base64编码。（InputBase64和InputCosUri必选其一）
+                     */
+                    std::string m_inputBase64;
+                    bool m_inputBase64HasBeenSet;
 
                     /**
                      * 批量投递表格ID，不填表示单例投递。
@@ -396,6 +452,14 @@ namespace TencentCloud
                      */
                     std::string m_workDir;
                     bool m_workDirHasBeenSet;
+
+                    /**
+                     * 访问模式，不填默认私有。取值范围
+- PRIVATE：私有应用
+- PUBLIC：公共应用
+                     */
+                    std::string m_accessMode;
+                    bool m_accessModeHasBeenSet;
 
                 };
             }

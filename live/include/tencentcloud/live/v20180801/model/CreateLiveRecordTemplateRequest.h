@@ -243,6 +243,27 @@ namespace TencentCloud
                     bool Mp3ParamHasBeenSet() const;
 
                     /**
+                     * 获取是否存储至 cos，值为 1 时表示存储至 cos。
+                     * @return CosStore 是否存储至 cos，值为 1 时表示存储至 cos。
+                     * 
+                     */
+                    int64_t GetCosStore() const;
+
+                    /**
+                     * 设置是否存储至 cos，值为 1 时表示存储至 cos。
+                     * @param _cosStore 是否存储至 cos，值为 1 时表示存储至 cos。
+                     * 
+                     */
+                    void SetCosStore(const int64_t& _cosStore);
+
+                    /**
+                     * 判断参数 CosStore 是否已赋值
+                     * @return CosStore 是否已赋值
+                     * 
+                     */
+                    bool CosStoreHasBeenSet() const;
+
+                    /**
                      * 获取是否去除水印，类型为慢直播时此参数无效。
 如果为false，则录制水印流或转码流；如果为true，则录制原始流。
                      * @return RemoveWatermark 是否去除水印，类型为慢直播时此参数无效。
@@ -345,6 +366,12 @@ namespace TencentCloud
                      */
                     RecordParam m_mp3Param;
                     bool m_mp3ParamHasBeenSet;
+
+                    /**
+                     * 是否存储至 cos，值为 1 时表示存储至 cos。
+                     */
+                    int64_t m_cosStore;
+                    bool m_cosStoreHasBeenSet;
 
                     /**
                      * 是否去除水印，类型为慢直播时此参数无效。

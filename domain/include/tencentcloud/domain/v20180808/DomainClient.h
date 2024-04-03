@@ -71,6 +71,8 @@
 #include <tencentcloud/domain/v20180808/model/DescribeTemplateResponse.h>
 #include <tencentcloud/domain/v20180808/model/DescribeTemplateListRequest.h>
 #include <tencentcloud/domain/v20180808/model/DescribeTemplateListResponse.h>
+#include <tencentcloud/domain/v20180808/model/DescribeTldListRequest.h>
+#include <tencentcloud/domain/v20180808/model/DescribeTldListResponse.h>
 #include <tencentcloud/domain/v20180808/model/ModifyCustomDnsHostRequest.h>
 #include <tencentcloud/domain/v20180808/model/ModifyCustomDnsHostResponse.h>
 #include <tencentcloud/domain/v20180808/model/ModifyDomainDNSBatchRequest.h>
@@ -183,6 +185,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeTemplateListResponse> DescribeTemplateListOutcome;
                 typedef std::future<DescribeTemplateListOutcome> DescribeTemplateListOutcomeCallable;
                 typedef std::function<void(const DomainClient*, const Model::DescribeTemplateListRequest&, DescribeTemplateListOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeTemplateListAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeTldListResponse> DescribeTldListOutcome;
+                typedef std::future<DescribeTldListOutcome> DescribeTldListOutcomeCallable;
+                typedef std::function<void(const DomainClient*, const Model::DescribeTldListRequest&, DescribeTldListOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeTldListAsyncHandler;
                 typedef Outcome<Core::Error, Model::ModifyCustomDnsHostResponse> ModifyCustomDnsHostOutcome;
                 typedef std::future<ModifyCustomDnsHostOutcome> ModifyCustomDnsHostOutcomeCallable;
                 typedef std::function<void(const DomainClient*, const Model::ModifyCustomDnsHostRequest&, ModifyCustomDnsHostOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyCustomDnsHostAsyncHandler;
@@ -440,6 +445,15 @@ namespace TencentCloud
                 DescribeTemplateListOutcome DescribeTemplateList(const Model::DescribeTemplateListRequest &request);
                 void DescribeTemplateListAsync(const Model::DescribeTemplateListRequest& request, const DescribeTemplateListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DescribeTemplateListOutcomeCallable DescribeTemplateListCallable(const Model::DescribeTemplateListRequest& request);
+
+                /**
+                 *用于获取域名注册当前支持注册的后缀
+                 * @param req DescribeTldListRequest
+                 * @return DescribeTldListOutcome
+                 */
+                DescribeTldListOutcome DescribeTldList(const Model::DescribeTldListRequest &request);
+                void DescribeTldListAsync(const Model::DescribeTldListRequest& request, const DescribeTldListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeTldListOutcomeCallable DescribeTldListCallable(const Model::DescribeTldListRequest& request);
 
                 /**
                  *修改自定义DNS Host

@@ -35,7 +35,7 @@ namespace TencentCloud
             namespace Model
             {
                 /**
-                * 数据分页信息
+                * 页码
                 */
                 class Paging : public AbstractModel
                 {

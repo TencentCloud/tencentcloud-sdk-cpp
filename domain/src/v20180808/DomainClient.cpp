@@ -1072,6 +1072,49 @@ DomainClient::DescribeTemplateListOutcomeCallable DomainClient::DescribeTemplate
     return task->get_future();
 }
 
+DomainClient::DescribeTldListOutcome DomainClient::DescribeTldList(const DescribeTldListRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeTldList");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeTldListResponse rsp = DescribeTldListResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeTldListOutcome(rsp);
+        else
+            return DescribeTldListOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeTldListOutcome(outcome.GetError());
+    }
+}
+
+void DomainClient::DescribeTldListAsync(const DescribeTldListRequest& request, const DescribeTldListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeTldList(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+DomainClient::DescribeTldListOutcomeCallable DomainClient::DescribeTldListCallable(const DescribeTldListRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeTldListOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeTldList(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 DomainClient::ModifyCustomDnsHostOutcome DomainClient::ModifyCustomDnsHost(const ModifyCustomDnsHostRequest &request)
 {
     auto outcome = MakeRequest(request, "ModifyCustomDnsHost");

@@ -26,16 +26,18 @@ RunApplicationRequest::RunApplicationRequest() :
     m_applicationIdHasBeenSet(false),
     m_nameHasBeenSet(false),
     m_environmentIdHasBeenSet(false),
-    m_inputBase64HasBeenSet(false),
     m_projectIdHasBeenSet(false),
     m_descriptionHasBeenSet(false),
+    m_inputCosUriHasBeenSet(false),
+    m_inputBase64HasBeenSet(false),
     m_tableIdHasBeenSet(false),
     m_tableRowUuidsHasBeenSet(false),
     m_cacheClearDelayHasBeenSet(false),
     m_applicationVersionIdHasBeenSet(false),
     m_optionHasBeenSet(false),
     m_nFOptionHasBeenSet(false),
-    m_workDirHasBeenSet(false)
+    m_workDirHasBeenSet(false),
+    m_accessModeHasBeenSet(false)
 {
 }
 
@@ -70,14 +72,6 @@ string RunApplicationRequest::ToJsonString() const
         d.AddMember(iKey, rapidjson::Value(m_environmentId.c_str(), allocator).Move(), allocator);
     }
 
-    if (m_inputBase64HasBeenSet)
-    {
-        rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "InputBase64";
-        iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, rapidjson::Value(m_inputBase64.c_str(), allocator).Move(), allocator);
-    }
-
     if (m_projectIdHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
@@ -92,6 +86,22 @@ string RunApplicationRequest::ToJsonString() const
         string key = "Description";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_description.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_inputCosUriHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "InputCosUri";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_inputCosUri.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_inputBase64HasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "InputBase64";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_inputBase64.c_str(), allocator).Move(), allocator);
     }
 
     if (m_tableIdHasBeenSet)
@@ -157,6 +167,14 @@ string RunApplicationRequest::ToJsonString() const
         d.AddMember(iKey, rapidjson::Value(m_workDir.c_str(), allocator).Move(), allocator);
     }
 
+    if (m_accessModeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "AccessMode";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_accessMode.c_str(), allocator).Move(), allocator);
+    }
+
 
     rapidjson::StringBuffer buffer;
     rapidjson::Writer<rapidjson::StringBuffer> writer(buffer);
@@ -213,22 +231,6 @@ bool RunApplicationRequest::EnvironmentIdHasBeenSet() const
     return m_environmentIdHasBeenSet;
 }
 
-string RunApplicationRequest::GetInputBase64() const
-{
-    return m_inputBase64;
-}
-
-void RunApplicationRequest::SetInputBase64(const string& _inputBase64)
-{
-    m_inputBase64 = _inputBase64;
-    m_inputBase64HasBeenSet = true;
-}
-
-bool RunApplicationRequest::InputBase64HasBeenSet() const
-{
-    return m_inputBase64HasBeenSet;
-}
-
 string RunApplicationRequest::GetProjectId() const
 {
     return m_projectId;
@@ -259,6 +261,38 @@ void RunApplicationRequest::SetDescription(const string& _description)
 bool RunApplicationRequest::DescriptionHasBeenSet() const
 {
     return m_descriptionHasBeenSet;
+}
+
+string RunApplicationRequest::GetInputCosUri() const
+{
+    return m_inputCosUri;
+}
+
+void RunApplicationRequest::SetInputCosUri(const string& _inputCosUri)
+{
+    m_inputCosUri = _inputCosUri;
+    m_inputCosUriHasBeenSet = true;
+}
+
+bool RunApplicationRequest::InputCosUriHasBeenSet() const
+{
+    return m_inputCosUriHasBeenSet;
+}
+
+string RunApplicationRequest::GetInputBase64() const
+{
+    return m_inputBase64;
+}
+
+void RunApplicationRequest::SetInputBase64(const string& _inputBase64)
+{
+    m_inputBase64 = _inputBase64;
+    m_inputBase64HasBeenSet = true;
+}
+
+bool RunApplicationRequest::InputBase64HasBeenSet() const
+{
+    return m_inputBase64HasBeenSet;
 }
 
 string RunApplicationRequest::GetTableId() const
@@ -371,6 +405,22 @@ void RunApplicationRequest::SetWorkDir(const string& _workDir)
 bool RunApplicationRequest::WorkDirHasBeenSet() const
 {
     return m_workDirHasBeenSet;
+}
+
+string RunApplicationRequest::GetAccessMode() const
+{
+    return m_accessMode;
+}
+
+void RunApplicationRequest::SetAccessMode(const string& _accessMode)
+{
+    m_accessMode = _accessMode;
+    m_accessModeHasBeenSet = true;
+}
+
+bool RunApplicationRequest::AccessModeHasBeenSet() const
+{
+    return m_accessModeHasBeenSet;
 }
 
 

@@ -26,6 +26,7 @@ DocumentElement::DocumentElement() :
     m_textHasBeenSet(false),
     m_polygonHasBeenSet(false),
     m_levelHasBeenSet(false),
+    m_insetImageNameHasBeenSet(false),
     m_elementsHasBeenSet(false)
 {
 }
@@ -90,6 +91,16 @@ CoreInternalOutcome DocumentElement::Deserialize(const rapidjson::Value &value)
         }
         m_level = value["Level"].GetInt64();
         m_levelHasBeenSet = true;
+    }
+
+    if (value.HasMember("InsetImageName") && !value["InsetImageName"].IsNull())
+    {
+        if (!value["InsetImageName"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `DocumentElement.InsetImageName` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_insetImageName = string(value["InsetImageName"].GetString());
+        m_insetImageNameHasBeenSet = true;
     }
 
     if (value.HasMember("Elements") && !value["Elements"].IsNull())
@@ -158,6 +169,14 @@ void DocumentElement::ToJsonObject(rapidjson::Value &value, rapidjson::Document:
         string key = "Level";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_level, allocator);
+    }
+
+    if (m_insetImageNameHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "InsetImageName";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_insetImageName.c_str(), allocator).Move(), allocator);
     }
 
     if (m_elementsHasBeenSet)
@@ -256,6 +275,22 @@ void DocumentElement::SetLevel(const int64_t& _level)
 bool DocumentElement::LevelHasBeenSet() const
 {
     return m_levelHasBeenSet;
+}
+
+string DocumentElement::GetInsetImageName() const
+{
+    return m_insetImageName;
+}
+
+void DocumentElement::SetInsetImageName(const string& _insetImageName)
+{
+    m_insetImageName = _insetImageName;
+    m_insetImageNameHasBeenSet = true;
+}
+
+bool DocumentElement::InsetImageNameHasBeenSet() const
+{
+    return m_insetImageNameHasBeenSet;
 }
 
 vector<DocumentElement> DocumentElement::GetElements() const
