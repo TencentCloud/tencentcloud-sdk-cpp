@@ -326,6 +326,81 @@ cold：低频存储。
                      */
                     bool ClassIdHasBeenSet() const;
 
+                    /**
+                     * 获取存储至 cos 的 bucket 桶名称。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return CosBucketName 存储至 cos 的 bucket 桶名称。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::string GetCosBucketName() const;
+
+                    /**
+                     * 设置存储至 cos 的 bucket 桶名称。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _cosBucketName 存储至 cos 的 bucket 桶名称。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetCosBucketName(const std::string& _cosBucketName);
+
+                    /**
+                     * 判断参数 CosBucketName 是否已赋值
+                     * @return CosBucketName 是否已赋值
+                     * 
+                     */
+                    bool CosBucketNameHasBeenSet() const;
+
+                    /**
+                     * 获取存储至 cos 的 bucket 区域。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return CosBucketRegion 存储至 cos 的 bucket 区域。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::string GetCosBucketRegion() const;
+
+                    /**
+                     * 设置存储至 cos 的 bucket 区域。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _cosBucketRegion 存储至 cos 的 bucket 区域。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetCosBucketRegion(const std::string& _cosBucketRegion);
+
+                    /**
+                     * 判断参数 CosBucketRegion 是否已赋值
+                     * @return CosBucketRegion 是否已赋值
+                     * 
+                     */
+                    bool CosBucketRegionHasBeenSet() const;
+
+                    /**
+                     * 获取存储至 cos 的 bucket 路径。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return CosBucketPath 存储至 cos 的 bucket 路径。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::string GetCosBucketPath() const;
+
+                    /**
+                     * 设置存储至 cos 的 bucket 路径。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _cosBucketPath 存储至 cos 的 bucket 路径。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetCosBucketPath(const std::string& _cosBucketPath);
+
+                    /**
+                     * 判断参数 CosBucketPath 是否已赋值
+                     * @return CosBucketPath 是否已赋值
+                     * 
+                     */
+                    bool CosBucketPathHasBeenSet() const;
+
                 private:
 
                     /**
@@ -403,6 +478,27 @@ cold：低频存储。
                      */
                     int64_t m_classId;
                     bool m_classIdHasBeenSet;
+
+                    /**
+                     * 存储至 cos 的 bucket 桶名称。
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_cosBucketName;
+                    bool m_cosBucketNameHasBeenSet;
+
+                    /**
+                     * 存储至 cos 的 bucket 区域。
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_cosBucketRegion;
+                    bool m_cosBucketRegionHasBeenSet;
+
+                    /**
+                     * 存储至 cos 的 bucket 路径。
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_cosBucketPath;
+                    bool m_cosBucketPathHasBeenSet;
 
                 };
             }

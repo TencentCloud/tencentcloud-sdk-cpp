@@ -28,7 +28,10 @@ RecordParam::RecordParam() :
     m_vodFileNameHasBeenSet(false),
     m_procedureHasBeenSet(false),
     m_storageModeHasBeenSet(false),
-    m_classIdHasBeenSet(false)
+    m_classIdHasBeenSet(false),
+    m_cosBucketNameHasBeenSet(false),
+    m_cosBucketRegionHasBeenSet(false),
+    m_cosBucketPathHasBeenSet(false)
 {
 }
 
@@ -117,6 +120,36 @@ CoreInternalOutcome RecordParam::Deserialize(const rapidjson::Value &value)
         m_classIdHasBeenSet = true;
     }
 
+    if (value.HasMember("CosBucketName") && !value["CosBucketName"].IsNull())
+    {
+        if (!value["CosBucketName"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `RecordParam.CosBucketName` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_cosBucketName = string(value["CosBucketName"].GetString());
+        m_cosBucketNameHasBeenSet = true;
+    }
+
+    if (value.HasMember("CosBucketRegion") && !value["CosBucketRegion"].IsNull())
+    {
+        if (!value["CosBucketRegion"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `RecordParam.CosBucketRegion` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_cosBucketRegion = string(value["CosBucketRegion"].GetString());
+        m_cosBucketRegionHasBeenSet = true;
+    }
+
+    if (value.HasMember("CosBucketPath") && !value["CosBucketPath"].IsNull())
+    {
+        if (!value["CosBucketPath"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `RecordParam.CosBucketPath` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_cosBucketPath = string(value["CosBucketPath"].GetString());
+        m_cosBucketPathHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -186,6 +219,30 @@ void RecordParam::ToJsonObject(rapidjson::Value &value, rapidjson::Document::All
         string key = "ClassId";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_classId, allocator);
+    }
+
+    if (m_cosBucketNameHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "CosBucketName";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_cosBucketName.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_cosBucketRegionHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "CosBucketRegion";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_cosBucketRegion.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_cosBucketPathHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "CosBucketPath";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_cosBucketPath.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -317,5 +374,53 @@ void RecordParam::SetClassId(const int64_t& _classId)
 bool RecordParam::ClassIdHasBeenSet() const
 {
     return m_classIdHasBeenSet;
+}
+
+string RecordParam::GetCosBucketName() const
+{
+    return m_cosBucketName;
+}
+
+void RecordParam::SetCosBucketName(const string& _cosBucketName)
+{
+    m_cosBucketName = _cosBucketName;
+    m_cosBucketNameHasBeenSet = true;
+}
+
+bool RecordParam::CosBucketNameHasBeenSet() const
+{
+    return m_cosBucketNameHasBeenSet;
+}
+
+string RecordParam::GetCosBucketRegion() const
+{
+    return m_cosBucketRegion;
+}
+
+void RecordParam::SetCosBucketRegion(const string& _cosBucketRegion)
+{
+    m_cosBucketRegion = _cosBucketRegion;
+    m_cosBucketRegionHasBeenSet = true;
+}
+
+bool RecordParam::CosBucketRegionHasBeenSet() const
+{
+    return m_cosBucketRegionHasBeenSet;
+}
+
+string RecordParam::GetCosBucketPath() const
+{
+    return m_cosBucketPath;
+}
+
+void RecordParam::SetCosBucketPath(const string& _cosBucketPath)
+{
+    m_cosBucketPath = _cosBucketPath;
+    m_cosBucketPathHasBeenSet = true;
+}
+
+bool RecordParam::CosBucketPathHasBeenSet() const
+{
+    return m_cosBucketPathHasBeenSet;
 }
 

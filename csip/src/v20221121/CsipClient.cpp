@@ -255,6 +255,49 @@ CsipClient::DeleteRiskScanTaskOutcomeCallable CsipClient::DeleteRiskScanTaskCall
     return task->get_future();
 }
 
+CsipClient::DescribeAssetViewVulRiskListOutcome CsipClient::DescribeAssetViewVulRiskList(const DescribeAssetViewVulRiskListRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeAssetViewVulRiskList");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeAssetViewVulRiskListResponse rsp = DescribeAssetViewVulRiskListResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeAssetViewVulRiskListOutcome(rsp);
+        else
+            return DescribeAssetViewVulRiskListOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeAssetViewVulRiskListOutcome(outcome.GetError());
+    }
+}
+
+void CsipClient::DescribeAssetViewVulRiskListAsync(const DescribeAssetViewVulRiskListRequest& request, const DescribeAssetViewVulRiskListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeAssetViewVulRiskList(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+CsipClient::DescribeAssetViewVulRiskListOutcomeCallable CsipClient::DescribeAssetViewVulRiskListCallable(const DescribeAssetViewVulRiskListRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeAssetViewVulRiskListOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeAssetViewVulRiskList(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 CsipClient::DescribeCVMAssetInfoOutcome CsipClient::DescribeCVMAssetInfo(const DescribeCVMAssetInfoRequest &request)
 {
     auto outcome = MakeRequest(request, "DescribeCVMAssetInfo");

@@ -81,6 +81,8 @@
 #include <tencentcloud/ccc/v20200210/model/DescribeIMCdrListResponse.h>
 #include <tencentcloud/ccc/v20200210/model/DescribeIMCdrsRequest.h>
 #include <tencentcloud/ccc/v20200210/model/DescribeIMCdrsResponse.h>
+#include <tencentcloud/ccc/v20200210/model/DescribeIvrAudioListRequest.h>
+#include <tencentcloud/ccc/v20200210/model/DescribeIvrAudioListResponse.h>
 #include <tencentcloud/ccc/v20200210/model/DescribeNumbersRequest.h>
 #include <tencentcloud/ccc/v20200210/model/DescribeNumbersResponse.h>
 #include <tencentcloud/ccc/v20200210/model/DescribePSTNActiveSessionListRequest.h>
@@ -131,6 +133,8 @@
 #include <tencentcloud/ccc/v20200210/model/UpdateCCCSkillGroupResponse.h>
 #include <tencentcloud/ccc/v20200210/model/UpdatePredictiveDialingCampaignRequest.h>
 #include <tencentcloud/ccc/v20200210/model/UpdatePredictiveDialingCampaignResponse.h>
+#include <tencentcloud/ccc/v20200210/model/UploadIvrAudioRequest.h>
+#include <tencentcloud/ccc/v20200210/model/UploadIvrAudioResponse.h>
 
 
 namespace TencentCloud
@@ -232,6 +236,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeIMCdrsResponse> DescribeIMCdrsOutcome;
                 typedef std::future<DescribeIMCdrsOutcome> DescribeIMCdrsOutcomeCallable;
                 typedef std::function<void(const CccClient*, const Model::DescribeIMCdrsRequest&, DescribeIMCdrsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeIMCdrsAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeIvrAudioListResponse> DescribeIvrAudioListOutcome;
+                typedef std::future<DescribeIvrAudioListOutcome> DescribeIvrAudioListOutcomeCallable;
+                typedef std::function<void(const CccClient*, const Model::DescribeIvrAudioListRequest&, DescribeIvrAudioListOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeIvrAudioListAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeNumbersResponse> DescribeNumbersOutcome;
                 typedef std::future<DescribeNumbersOutcome> DescribeNumbersOutcomeCallable;
                 typedef std::function<void(const CccClient*, const Model::DescribeNumbersRequest&, DescribeNumbersOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeNumbersAsyncHandler;
@@ -307,6 +314,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::UpdatePredictiveDialingCampaignResponse> UpdatePredictiveDialingCampaignOutcome;
                 typedef std::future<UpdatePredictiveDialingCampaignOutcome> UpdatePredictiveDialingCampaignOutcomeCallable;
                 typedef std::function<void(const CccClient*, const Model::UpdatePredictiveDialingCampaignRequest&, UpdatePredictiveDialingCampaignOutcome, const std::shared_ptr<const AsyncCallerContext>&)> UpdatePredictiveDialingCampaignAsyncHandler;
+                typedef Outcome<Core::Error, Model::UploadIvrAudioResponse> UploadIvrAudioOutcome;
+                typedef std::future<UploadIvrAudioOutcome> UploadIvrAudioOutcomeCallable;
+                typedef std::function<void(const CccClient*, const Model::UploadIvrAudioRequest&, UploadIvrAudioOutcome, const std::shared_ptr<const AsyncCallerContext>&)> UploadIvrAudioAsyncHandler;
 
 
 
@@ -574,6 +584,15 @@ namespace TencentCloud
                 DescribeIMCdrsOutcomeCallable DescribeIMCdrsCallable(const Model::DescribeIMCdrsRequest& request);
 
                 /**
+                 *查询IVR音频文件列表信息
+                 * @param req DescribeIvrAudioListRequest
+                 * @return DescribeIvrAudioListOutcome
+                 */
+                DescribeIvrAudioListOutcome DescribeIvrAudioList(const Model::DescribeIvrAudioListRequest &request);
+                void DescribeIvrAudioListAsync(const Model::DescribeIvrAudioListRequest& request, const DescribeIvrAudioListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeIvrAudioListOutcomeCallable DescribeIvrAudioListCallable(const Model::DescribeIvrAudioListRequest& request);
+
+                /**
                  *查询号码列表
                  * @param req DescribeNumbersRequest
                  * @return DescribeNumbersOutcome
@@ -797,6 +816,15 @@ namespace TencentCloud
                 UpdatePredictiveDialingCampaignOutcome UpdatePredictiveDialingCampaign(const Model::UpdatePredictiveDialingCampaignRequest &request);
                 void UpdatePredictiveDialingCampaignAsync(const Model::UpdatePredictiveDialingCampaignRequest& request, const UpdatePredictiveDialingCampaignAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 UpdatePredictiveDialingCampaignOutcomeCallable UpdatePredictiveDialingCampaignCallable(const Model::UpdatePredictiveDialingCampaignRequest& request);
+
+                /**
+                 *上传IVR中使用的音频文件，每日上传文件限制50个。（参数中音频文件Url建议使用腾讯云Cos存储的临时链接）
+                 * @param req UploadIvrAudioRequest
+                 * @return UploadIvrAudioOutcome
+                 */
+                UploadIvrAudioOutcome UploadIvrAudio(const Model::UploadIvrAudioRequest &request);
+                void UploadIvrAudioAsync(const Model::UploadIvrAudioRequest& request, const UploadIvrAudioAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                UploadIvrAudioOutcomeCallable UploadIvrAudioCallable(const Model::UploadIvrAudioRequest& request);
 
             };
         }

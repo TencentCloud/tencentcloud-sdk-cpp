@@ -1287,6 +1287,49 @@ CccClient::DescribeIMCdrsOutcomeCallable CccClient::DescribeIMCdrsCallable(const
     return task->get_future();
 }
 
+CccClient::DescribeIvrAudioListOutcome CccClient::DescribeIvrAudioList(const DescribeIvrAudioListRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeIvrAudioList");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeIvrAudioListResponse rsp = DescribeIvrAudioListResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeIvrAudioListOutcome(rsp);
+        else
+            return DescribeIvrAudioListOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeIvrAudioListOutcome(outcome.GetError());
+    }
+}
+
+void CccClient::DescribeIvrAudioListAsync(const DescribeIvrAudioListRequest& request, const DescribeIvrAudioListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeIvrAudioList(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+CccClient::DescribeIvrAudioListOutcomeCallable CccClient::DescribeIvrAudioListCallable(const DescribeIvrAudioListRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeIvrAudioListOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeIvrAudioList(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 CccClient::DescribeNumbersOutcome CccClient::DescribeNumbers(const DescribeNumbersRequest &request)
 {
     auto outcome = MakeRequest(request, "DescribeNumbers");
@@ -2355,6 +2398,49 @@ CccClient::UpdatePredictiveDialingCampaignOutcomeCallable CccClient::UpdatePredi
         [this, request]()
         {
             return this->UpdatePredictiveDialingCampaign(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+CccClient::UploadIvrAudioOutcome CccClient::UploadIvrAudio(const UploadIvrAudioRequest &request)
+{
+    auto outcome = MakeRequest(request, "UploadIvrAudio");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        UploadIvrAudioResponse rsp = UploadIvrAudioResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return UploadIvrAudioOutcome(rsp);
+        else
+            return UploadIvrAudioOutcome(o.GetError());
+    }
+    else
+    {
+        return UploadIvrAudioOutcome(outcome.GetError());
+    }
+}
+
+void CccClient::UploadIvrAudioAsync(const UploadIvrAudioRequest& request, const UploadIvrAudioAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->UploadIvrAudio(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+CccClient::UploadIvrAudioOutcomeCallable CccClient::UploadIvrAudioCallable(const UploadIvrAudioRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<UploadIvrAudioOutcome()>>(
+        [this, request]()
+        {
+            return this->UploadIvrAudio(request);
         }
     );
 

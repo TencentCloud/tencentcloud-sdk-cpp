@@ -624,6 +624,31 @@ namespace TencentCloud
                      */
                     bool RenewFlagHasBeenSet() const;
 
+                    /**
+                     * 获取当前公网IP所关联的带宽包ID，如果该公网IP未使用带宽包计费，则返回为空
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return BandwidthPackageId 当前公网IP所关联的带宽包ID，如果该公网IP未使用带宽包计费，则返回为空
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::string GetBandwidthPackageId() const;
+
+                    /**
+                     * 设置当前公网IP所关联的带宽包ID，如果该公网IP未使用带宽包计费，则返回为空
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _bandwidthPackageId 当前公网IP所关联的带宽包ID，如果该公网IP未使用带宽包计费，则返回为空
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetBandwidthPackageId(const std::string& _bandwidthPackageId);
+
+                    /**
+                     * 判断参数 BandwidthPackageId 是否已赋值
+                     * @return BandwidthPackageId 是否已赋值
+                     * 
+                     */
+                    bool BandwidthPackageIdHasBeenSet() const;
+
                 private:
 
                     /**
@@ -787,6 +812,13 @@ namespace TencentCloud
                      */
                     std::string m_renewFlag;
                     bool m_renewFlagHasBeenSet;
+
+                    /**
+                     * 当前公网IP所关联的带宽包ID，如果该公网IP未使用带宽包计费，则返回为空
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_bandwidthPackageId;
+                    bool m_bandwidthPackageIdHasBeenSet;
 
                 };
             }

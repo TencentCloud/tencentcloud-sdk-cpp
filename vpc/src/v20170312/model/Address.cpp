@@ -44,7 +44,8 @@ Address::Address() :
     m_instanceTypeHasBeenSet(false),
     m_egressHasBeenSet(false),
     m_antiDDoSPackageIdHasBeenSet(false),
-    m_renewFlagHasBeenSet(false)
+    m_renewFlagHasBeenSet(false),
+    m_bandwidthPackageIdHasBeenSet(false)
 {
 }
 
@@ -310,6 +311,16 @@ CoreInternalOutcome Address::Deserialize(const rapidjson::Value &value)
         m_renewFlagHasBeenSet = true;
     }
 
+    if (value.HasMember("BandwidthPackageId") && !value["BandwidthPackageId"].IsNull())
+    {
+        if (!value["BandwidthPackageId"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `Address.BandwidthPackageId` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_bandwidthPackageId = string(value["BandwidthPackageId"].GetString());
+        m_bandwidthPackageIdHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -515,6 +526,14 @@ void Address::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Allocat
         string key = "RenewFlag";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_renewFlag.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_bandwidthPackageIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "BandwidthPackageId";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_bandwidthPackageId.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -902,5 +921,21 @@ void Address::SetRenewFlag(const string& _renewFlag)
 bool Address::RenewFlagHasBeenSet() const
 {
     return m_renewFlagHasBeenSet;
+}
+
+string Address::GetBandwidthPackageId() const
+{
+    return m_bandwidthPackageId;
+}
+
+void Address::SetBandwidthPackageId(const string& _bandwidthPackageId)
+{
+    m_bandwidthPackageId = _bandwidthPackageId;
+    m_bandwidthPackageIdHasBeenSet = true;
+}
+
+bool Address::BandwidthPackageIdHasBeenSet() const
+{
+    return m_bandwidthPackageIdHasBeenSet;
 }
 
