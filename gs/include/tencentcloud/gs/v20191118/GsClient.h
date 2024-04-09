@@ -31,6 +31,8 @@
 #include <tencentcloud/gs/v20191118/model/SaveGameArchiveResponse.h>
 #include <tencentcloud/gs/v20191118/model/StartPublishStreamRequest.h>
 #include <tencentcloud/gs/v20191118/model/StartPublishStreamResponse.h>
+#include <tencentcloud/gs/v20191118/model/StartPublishStreamToCSSRequest.h>
+#include <tencentcloud/gs/v20191118/model/StartPublishStreamToCSSResponse.h>
 #include <tencentcloud/gs/v20191118/model/StopGameRequest.h>
 #include <tencentcloud/gs/v20191118/model/StopGameResponse.h>
 #include <tencentcloud/gs/v20191118/model/StopPublishStreamRequest.h>
@@ -65,6 +67,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::StartPublishStreamResponse> StartPublishStreamOutcome;
                 typedef std::future<StartPublishStreamOutcome> StartPublishStreamOutcomeCallable;
                 typedef std::function<void(const GsClient*, const Model::StartPublishStreamRequest&, StartPublishStreamOutcome, const std::shared_ptr<const AsyncCallerContext>&)> StartPublishStreamAsyncHandler;
+                typedef Outcome<Core::Error, Model::StartPublishStreamToCSSResponse> StartPublishStreamToCSSOutcome;
+                typedef std::future<StartPublishStreamToCSSOutcome> StartPublishStreamToCSSOutcomeCallable;
+                typedef std::function<void(const GsClient*, const Model::StartPublishStreamToCSSRequest&, StartPublishStreamToCSSOutcome, const std::shared_ptr<const AsyncCallerContext>&)> StartPublishStreamToCSSAsyncHandler;
                 typedef Outcome<Core::Error, Model::StopGameResponse> StopGameOutcome;
                 typedef std::future<StopGameOutcome> StopGameOutcomeCallable;
                 typedef std::function<void(const GsClient*, const Model::StopGameRequest&, StopGameOutcome, const std::shared_ptr<const AsyncCallerContext>&)> StopGameAsyncHandler;
@@ -115,6 +120,15 @@ namespace TencentCloud
                 StartPublishStreamOutcome StartPublishStream(const Model::StartPublishStreamRequest &request);
                 void StartPublishStreamAsync(const Model::StartPublishStreamRequest& request, const StartPublishStreamAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 StartPublishStreamOutcomeCallable StartPublishStreamCallable(const Model::StartPublishStreamRequest& request);
+
+                /**
+                 *开始云端推流
+                 * @param req StartPublishStreamToCSSRequest
+                 * @return StartPublishStreamToCSSOutcome
+                 */
+                StartPublishStreamToCSSOutcome StartPublishStreamToCSS(const Model::StartPublishStreamToCSSRequest &request);
+                void StartPublishStreamToCSSAsync(const Model::StartPublishStreamToCSSRequest& request, const StartPublishStreamToCSSAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                StartPublishStreamToCSSOutcomeCallable StartPublishStreamToCSSCallable(const Model::StartPublishStreamToCSSRequest& request);
 
                 /**
                  *强制退出游戏

@@ -85,15 +85,15 @@ namespace TencentCloud
                     bool PolicyNameHasBeenSet() const;
 
                     /**
-                     * 获取成员访问身份ID。
-                     * @return IdentityId 成员访问身份ID。
+                     * 获取成员访问身份ID。可以通过[ListOrganizationIdentity](https://cloud.tencent.com/document/product/850/82934)获取
+                     * @return IdentityId 成员访问身份ID。可以通过[ListOrganizationIdentity](https://cloud.tencent.com/document/product/850/82934)获取
                      * 
                      */
                     int64_t GetIdentityId() const;
 
                     /**
-                     * 设置成员访问身份ID。
-                     * @param _identityId 成员访问身份ID。
+                     * 设置成员访问身份ID。可以通过[ListOrganizationIdentity](https://cloud.tencent.com/document/product/850/82934)获取
+                     * @param _identityId 成员访问身份ID。可以通过[ListOrganizationIdentity](https://cloud.tencent.com/document/product/850/82934)获取
                      * 
                      */
                     void SetIdentityId(const int64_t& _identityId);
@@ -141,7 +141,7 @@ namespace TencentCloud
                     bool m_policyNameHasBeenSet;
 
                     /**
-                     * 成员访问身份ID。
+                     * 成员访问身份ID。可以通过[ListOrganizationIdentity](https://cloud.tencent.com/document/product/850/82934)获取
                      */
                     int64_t m_identityId;
                     bool m_identityIdHasBeenSet;

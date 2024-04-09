@@ -34,7 +34,8 @@ DescribeDBInstancesAttributeResponse::DescribeDBInstancesAttributeResponse() :
     m_eventSaveDaysHasBeenSet(false),
     m_tDEConfigHasBeenSet(false),
     m_sSLConfigHasBeenSet(false),
-    m_drReadableInfoHasBeenSet(false)
+    m_drReadableInfoHasBeenSet(false),
+    m_oldVipListHasBeenSet(false)
 {
 }
 
@@ -203,6 +204,26 @@ CoreInternalOutcome DescribeDBInstancesAttributeResponse::Deserialize(const stri
         m_drReadableInfoHasBeenSet = true;
     }
 
+    if (rsp.HasMember("OldVipList") && !rsp["OldVipList"].IsNull())
+    {
+        if (!rsp["OldVipList"].IsArray())
+            return CoreInternalOutcome(Core::Error("response `OldVipList` is not array type"));
+
+        const rapidjson::Value &tmpValue = rsp["OldVipList"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            OldVip item;
+            CoreInternalOutcome outcome = item.Deserialize(*itr);
+            if (!outcome.IsSuccess())
+            {
+                outcome.GetError().SetRequestId(requestId);
+                return outcome;
+            }
+            m_oldVipList.push_back(item);
+        }
+        m_oldVipListHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -302,6 +323,21 @@ string DescribeDBInstancesAttributeResponse::ToJsonString() const
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
         m_drReadableInfo.ToJsonObject(value[key.c_str()], allocator);
+    }
+
+    if (m_oldVipListHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "OldVipList";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_oldVipList.begin(); itr != m_oldVipList.end(); ++itr, ++i)
+        {
+            value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(value[key.c_str()][i], allocator);
+        }
     }
 
     rapidjson::Value iKey(rapidjson::kStringType);
@@ -424,6 +460,16 @@ DrReadableInfo DescribeDBInstancesAttributeResponse::GetDrReadableInfo() const
 bool DescribeDBInstancesAttributeResponse::DrReadableInfoHasBeenSet() const
 {
     return m_drReadableInfoHasBeenSet;
+}
+
+vector<OldVip> DescribeDBInstancesAttributeResponse::GetOldVipList() const
+{
+    return m_oldVipList;
+}
+
+bool DescribeDBInstancesAttributeResponse::OldVipListHasBeenSet() const
+{
+    return m_oldVipListHasBeenSet;
 }
 
 

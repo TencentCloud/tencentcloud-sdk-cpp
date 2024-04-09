@@ -24,6 +24,7 @@
 #include <tencentcloud/sqlserver/v20180328/model/TDEConfigAttribute.h>
 #include <tencentcloud/sqlserver/v20180328/model/SSLConfig.h>
 #include <tencentcloud/sqlserver/v20180328/model/DrReadableInfo.h>
+#include <tencentcloud/sqlserver/v20180328/model/OldVip.h>
 
 
 namespace TencentCloud
@@ -200,6 +201,20 @@ namespace TencentCloud
                      */
                     bool DrReadableInfoHasBeenSet() const;
 
+                    /**
+                     * 获取等待回收的IP列表
+                     * @return OldVipList 等待回收的IP列表
+                     * 
+                     */
+                    std::vector<OldVip> GetOldVipList() const;
+
+                    /**
+                     * 判断参数 OldVipList 是否已赋值
+                     * @return OldVipList 是否已赋值
+                     * 
+                     */
+                    bool OldVipListHasBeenSet() const;
+
                 private:
 
                     /**
@@ -267,6 +282,12 @@ namespace TencentCloud
                      */
                     DrReadableInfo m_drReadableInfo;
                     bool m_drReadableInfoHasBeenSet;
+
+                    /**
+                     * 等待回收的IP列表
+                     */
+                    std::vector<OldVip> m_oldVipList;
+                    bool m_oldVipListHasBeenSet;
 
                 };
             }

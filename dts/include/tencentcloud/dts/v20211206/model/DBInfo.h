@@ -47,18 +47,18 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取表示节点角色，针对分布式数据库，如mongodb中的mongos节点。如数据库是tdsql，枚举值为：proxy、set
+                     * 获取表示节点角色，针对分布式数据库，如mongodb中的mongos节点。tdsqlmysql的可选项：proxy表示节点类型为主机，set表示节点类型为节点。proxy类型必须填在数组第一项。tdsqlmysql类型的源/目标配置必填。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return Role 表示节点角色，针对分布式数据库，如mongodb中的mongos节点。如数据库是tdsql，枚举值为：proxy、set
+                     * @return Role 表示节点角色，针对分布式数据库，如mongodb中的mongos节点。tdsqlmysql的可选项：proxy表示节点类型为主机，set表示节点类型为节点。proxy类型必须填在数组第一项。tdsqlmysql类型的源/目标配置必填。
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetRole() const;
 
                     /**
-                     * 设置表示节点角色，针对分布式数据库，如mongodb中的mongos节点。如数据库是tdsql，枚举值为：proxy、set
+                     * 设置表示节点角色，针对分布式数据库，如mongodb中的mongos节点。tdsqlmysql的可选项：proxy表示节点类型为主机，set表示节点类型为节点。proxy类型必须填在数组第一项。tdsqlmysql类型的源/目标配置必填。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _role 表示节点角色，针对分布式数据库，如mongodb中的mongos节点。如数据库是tdsql，枚举值为：proxy、set
+                     * @param _role 表示节点角色，针对分布式数据库，如mongodb中的mongos节点。tdsqlmysql的可选项：proxy表示节点类型为主机，set表示节点类型为节点。proxy类型必须填在数组第一项。tdsqlmysql类型的源/目标配置必填。
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -547,18 +547,18 @@ namespace TencentCloud
                     bool TmpTokenHasBeenSet() const;
 
                     /**
-                     * 获取tdsql分片id。tdsql set节点必填
+                     * 获取tdsql的分片id。如节点类型为set必填。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return SetId tdsql分片id。tdsql set节点必填
+                     * @return SetId tdsql的分片id。如节点类型为set必填。
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetSetId() const;
 
                     /**
-                     * 设置tdsql分片id。tdsql set节点必填
+                     * 设置tdsql的分片id。如节点类型为set必填。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _setId tdsql分片id。tdsql set节点必填
+                     * @param _setId tdsql的分片id。如节点类型为set必填。
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -574,7 +574,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 表示节点角色，针对分布式数据库，如mongodb中的mongos节点。如数据库是tdsql，枚举值为：proxy、set
+                     * 表示节点角色，针对分布式数据库，如mongodb中的mongos节点。tdsqlmysql的可选项：proxy表示节点类型为主机，set表示节点类型为节点。proxy类型必须填在数组第一项。tdsqlmysql类型的源/目标配置必填。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_role;
@@ -714,7 +714,7 @@ namespace TencentCloud
                     bool m_tmpTokenHasBeenSet;
 
                     /**
-                     * tdsql分片id。tdsql set节点必填
+                     * tdsql的分片id。如节点类型为set必填。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_setId;

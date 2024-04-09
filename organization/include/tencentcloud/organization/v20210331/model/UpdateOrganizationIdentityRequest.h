@@ -44,15 +44,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取身份ID
-                     * @return IdentityId 身份ID
+                     * 获取身份ID。可以通过[ListOrganizationIdentity](https://cloud.tencent.com/document/product/850/82934)获取
+                     * @return IdentityId 身份ID。可以通过[ListOrganizationIdentity](https://cloud.tencent.com/document/product/850/82934)获取
                      * 
                      */
                     uint64_t GetIdentityId() const;
 
                     /**
-                     * 设置身份ID
-                     * @param _identityId 身份ID
+                     * 设置身份ID。可以通过[ListOrganizationIdentity](https://cloud.tencent.com/document/product/850/82934)获取
+                     * @param _identityId 身份ID。可以通过[ListOrganizationIdentity](https://cloud.tencent.com/document/product/850/82934)获取
                      * 
                      */
                     void SetIdentityId(const uint64_t& _identityId);
@@ -65,15 +65,15 @@ namespace TencentCloud
                     bool IdentityIdHasBeenSet() const;
 
                     /**
-                     * 获取身份描述
-                     * @return Description 身份描述
+                     * 获取身份描述。
+                     * @return Description 身份描述。
                      * 
                      */
                     std::string GetDescription() const;
 
                     /**
-                     * 设置身份描述
-                     * @param _description 身份描述
+                     * 设置身份描述。
+                     * @param _description 身份描述。
                      * 
                      */
                     void SetDescription(const std::string& _description);
@@ -86,15 +86,15 @@ namespace TencentCloud
                     bool DescriptionHasBeenSet() const;
 
                     /**
-                     * 获取身份策略
-                     * @return IdentityPolicy 身份策略
+                     * 获取身份策略。
+                     * @return IdentityPolicy 身份策略。
                      * 
                      */
                     std::vector<IdentityPolicy> GetIdentityPolicy() const;
 
                     /**
-                     * 设置身份策略
-                     * @param _identityPolicy 身份策略
+                     * 设置身份策略。
+                     * @param _identityPolicy 身份策略。
                      * 
                      */
                     void SetIdentityPolicy(const std::vector<IdentityPolicy>& _identityPolicy);
@@ -109,19 +109,19 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 身份ID
+                     * 身份ID。可以通过[ListOrganizationIdentity](https://cloud.tencent.com/document/product/850/82934)获取
                      */
                     uint64_t m_identityId;
                     bool m_identityIdHasBeenSet;
 
                     /**
-                     * 身份描述
+                     * 身份描述。
                      */
                     std::string m_description;
                     bool m_descriptionHasBeenSet;
 
                     /**
-                     * 身份策略
+                     * 身份策略。
                      */
                     std::vector<IdentityPolicy> m_identityPolicy;
                     bool m_identityPolicyHasBeenSet;

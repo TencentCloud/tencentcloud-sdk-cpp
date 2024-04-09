@@ -22,6 +22,7 @@
 #include <map>
 #include <tencentcloud/core/AbstractModel.h>
 #include <tencentcloud/ccc/v20200210/model/UploadIvrAudioFailedInfo.h>
+#include <tencentcloud/ccc/v20200210/model/AudioFileInfo.h>
 
 
 namespace TencentCloud
@@ -60,6 +61,22 @@ namespace TencentCloud
                      */
                     bool FailedFileListHasBeenSet() const;
 
+                    /**
+                     * 获取上传成功文件列表
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return SuccessFileList 上传成功文件列表
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::vector<AudioFileInfo> GetSuccessFileList() const;
+
+                    /**
+                     * 判断参数 SuccessFileList 是否已赋值
+                     * @return SuccessFileList 是否已赋值
+                     * 
+                     */
+                    bool SuccessFileListHasBeenSet() const;
+
                 private:
 
                     /**
@@ -68,6 +85,13 @@ namespace TencentCloud
                      */
                     std::vector<UploadIvrAudioFailedInfo> m_failedFileList;
                     bool m_failedFileListHasBeenSet;
+
+                    /**
+                     * 上传成功文件列表
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::vector<AudioFileInfo> m_successFileList;
+                    bool m_successFileListHasBeenSet;
 
                 };
             }

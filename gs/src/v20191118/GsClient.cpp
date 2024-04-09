@@ -212,6 +212,49 @@ GsClient::StartPublishStreamOutcomeCallable GsClient::StartPublishStreamCallable
     return task->get_future();
 }
 
+GsClient::StartPublishStreamToCSSOutcome GsClient::StartPublishStreamToCSS(const StartPublishStreamToCSSRequest &request)
+{
+    auto outcome = MakeRequest(request, "StartPublishStreamToCSS");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        StartPublishStreamToCSSResponse rsp = StartPublishStreamToCSSResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return StartPublishStreamToCSSOutcome(rsp);
+        else
+            return StartPublishStreamToCSSOutcome(o.GetError());
+    }
+    else
+    {
+        return StartPublishStreamToCSSOutcome(outcome.GetError());
+    }
+}
+
+void GsClient::StartPublishStreamToCSSAsync(const StartPublishStreamToCSSRequest& request, const StartPublishStreamToCSSAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->StartPublishStreamToCSS(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+GsClient::StartPublishStreamToCSSOutcomeCallable GsClient::StartPublishStreamToCSSCallable(const StartPublishStreamToCSSRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<StartPublishStreamToCSSOutcome()>>(
+        [this, request]()
+        {
+            return this->StartPublishStreamToCSS(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 GsClient::StopGameOutcome GsClient::StopGame(const StopGameRequest &request)
 {
     auto outcome = MakeRequest(request, "StopGame");

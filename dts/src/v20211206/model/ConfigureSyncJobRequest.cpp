@@ -31,6 +31,7 @@ ConfigureSyncJobRequest::ConfigureSyncJobRequest() :
     m_jobModeHasBeenSet(false),
     m_runModeHasBeenSet(false),
     m_expectRunTimeHasBeenSet(false),
+    m_srcConnectTypeHasBeenSet(false),
     m_srcInfoHasBeenSet(false),
     m_srcInfosHasBeenSet(false),
     m_srcNodeTypeHasBeenSet(false),
@@ -112,6 +113,14 @@ string ConfigureSyncJobRequest::ToJsonString() const
         string key = "ExpectRunTime";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_expectRunTime.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_srcConnectTypeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "SrcConnectType";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_srcConnectType.c_str(), allocator).Move(), allocator);
     }
 
     if (m_srcInfoHasBeenSet)
@@ -317,6 +326,22 @@ void ConfigureSyncJobRequest::SetExpectRunTime(const string& _expectRunTime)
 bool ConfigureSyncJobRequest::ExpectRunTimeHasBeenSet() const
 {
     return m_expectRunTimeHasBeenSet;
+}
+
+string ConfigureSyncJobRequest::GetSrcConnectType() const
+{
+    return m_srcConnectType;
+}
+
+void ConfigureSyncJobRequest::SetSrcConnectType(const string& _srcConnectType)
+{
+    m_srcConnectType = _srcConnectType;
+    m_srcConnectTypeHasBeenSet = true;
+}
+
+bool ConfigureSyncJobRequest::SrcConnectTypeHasBeenSet() const
+{
+    return m_srcConnectTypeHasBeenSet;
 }
 
 Endpoint ConfigureSyncJobRequest::GetSrcInfo() const

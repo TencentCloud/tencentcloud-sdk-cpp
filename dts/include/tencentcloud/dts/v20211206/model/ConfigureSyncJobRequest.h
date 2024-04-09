@@ -215,6 +215,27 @@ namespace TencentCloud
                     bool ExpectRunTimeHasBeenSet() const;
 
                     /**
+                     * 获取源端tdsql连接方式：proxy-通过tdsql proxy主机访问各个set节点，注意只有在自研上云的网络环境下才能通过这种方式连接，SrcInfos中只需要提供proxy主机信息。set-直连set节点，如选择直连set方式，需要正确填写proxy主机信息及所有set节点信息。源端是tdsqlmysql类型必填。
+                     * @return SrcConnectType 源端tdsql连接方式：proxy-通过tdsql proxy主机访问各个set节点，注意只有在自研上云的网络环境下才能通过这种方式连接，SrcInfos中只需要提供proxy主机信息。set-直连set节点，如选择直连set方式，需要正确填写proxy主机信息及所有set节点信息。源端是tdsqlmysql类型必填。
+                     * 
+                     */
+                    std::string GetSrcConnectType() const;
+
+                    /**
+                     * 设置源端tdsql连接方式：proxy-通过tdsql proxy主机访问各个set节点，注意只有在自研上云的网络环境下才能通过这种方式连接，SrcInfos中只需要提供proxy主机信息。set-直连set节点，如选择直连set方式，需要正确填写proxy主机信息及所有set节点信息。源端是tdsqlmysql类型必填。
+                     * @param _srcConnectType 源端tdsql连接方式：proxy-通过tdsql proxy主机访问各个set节点，注意只有在自研上云的网络环境下才能通过这种方式连接，SrcInfos中只需要提供proxy主机信息。set-直连set节点，如选择直连set方式，需要正确填写proxy主机信息及所有set节点信息。源端是tdsqlmysql类型必填。
+                     * 
+                     */
+                    void SetSrcConnectType(const std::string& _srcConnectType);
+
+                    /**
+                     * 判断参数 SrcConnectType 是否已赋值
+                     * @return SrcConnectType 是否已赋值
+                     * 
+                     */
+                    bool SrcConnectTypeHasBeenSet() const;
+
+                    /**
                      * 获取源端信息，单节点数据库使用，且SrcNodeType传single
                      * @return SrcInfo 源端信息，单节点数据库使用，且SrcNodeType传single
                      * 
@@ -431,6 +452,12 @@ namespace TencentCloud
                      */
                     std::string m_expectRunTime;
                     bool m_expectRunTimeHasBeenSet;
+
+                    /**
+                     * 源端tdsql连接方式：proxy-通过tdsql proxy主机访问各个set节点，注意只有在自研上云的网络环境下才能通过这种方式连接，SrcInfos中只需要提供proxy主机信息。set-直连set节点，如选择直连set方式，需要正确填写proxy主机信息及所有set节点信息。源端是tdsqlmysql类型必填。
+                     */
+                    std::string m_srcConnectType;
+                    bool m_srcConnectTypeHasBeenSet;
 
                     /**
                      * 源端信息，单节点数据库使用，且SrcNodeType传single

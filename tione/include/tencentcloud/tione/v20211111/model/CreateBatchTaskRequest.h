@@ -305,21 +305,21 @@ namespace TencentCloud
                     /**
                      * 获取启动命令
                      * @return StartCmd 启动命令
-                     * 
+                     * @deprecated
                      */
                     std::string GetStartCmd() const;
 
                     /**
                      * 设置启动命令
                      * @param _startCmd 启动命令
-                     * 
+                     * @deprecated
                      */
                     void SetStartCmd(const std::string& _startCmd);
 
                     /**
                      * 判断参数 StartCmd 是否已赋值
                      * @return StartCmd 是否已赋值
-                     * 
+                     * @deprecated
                      */
                     bool StartCmdHasBeenSet() const;
 
@@ -449,6 +449,27 @@ namespace TencentCloud
                      */
                     bool CallbackUrlHasBeenSet() const;
 
+                    /**
+                     * 获取以Base64方式编码的启动命令。假设启动命令是/app/run.sh，则此处输入参数应该为L2FwcC9ydW4uc2g=。
+                     * @return StartCmdBase64 以Base64方式编码的启动命令。假设启动命令是/app/run.sh，则此处输入参数应该为L2FwcC9ydW4uc2g=。
+                     * 
+                     */
+                    std::string GetStartCmdBase64() const;
+
+                    /**
+                     * 设置以Base64方式编码的启动命令。假设启动命令是/app/run.sh，则此处输入参数应该为L2FwcC9ydW4uc2g=。
+                     * @param _startCmdBase64 以Base64方式编码的启动命令。假设启动命令是/app/run.sh，则此处输入参数应该为L2FwcC9ydW4uc2g=。
+                     * 
+                     */
+                    void SetStartCmdBase64(const std::string& _startCmdBase64);
+
+                    /**
+                     * 判断参数 StartCmdBase64 是否已赋值
+                     * @return StartCmdBase64 是否已赋值
+                     * 
+                     */
+                    bool StartCmdBase64HasBeenSet() const;
+
                 private:
 
                     /**
@@ -564,6 +585,12 @@ namespace TencentCloud
                      */
                     std::string m_callbackUrl;
                     bool m_callbackUrlHasBeenSet;
+
+                    /**
+                     * 以Base64方式编码的启动命令。假设启动命令是/app/run.sh，则此处输入参数应该为L2FwcC9ydW4uc2g=。
+                     */
+                    std::string m_startCmdBase64;
+                    bool m_startCmdBase64HasBeenSet;
 
                 };
             }

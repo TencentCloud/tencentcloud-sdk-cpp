@@ -106,15 +106,15 @@ namespace TencentCloud
                     bool SearchKeyHasBeenSet() const;
 
                     /**
-                     * 获取身份ID搜索。
-                     * @return IdentityId 身份ID搜索。
+                     * 获取身份ID。可以通过身份ID搜索
+                     * @return IdentityId 身份ID。可以通过身份ID搜索
                      * 
                      */
                     uint64_t GetIdentityId() const;
 
                     /**
-                     * 设置身份ID搜索。
-                     * @param _identityId 身份ID搜索。
+                     * 设置身份ID。可以通过身份ID搜索
+                     * @param _identityId 身份ID。可以通过身份ID搜索
                      * 
                      */
                     void SetIdentityId(const uint64_t& _identityId);
@@ -168,7 +168,7 @@ namespace TencentCloud
                     bool m_searchKeyHasBeenSet;
 
                     /**
-                     * 身份ID搜索。
+                     * 身份ID。可以通过身份ID搜索
                      */
                     uint64_t m_identityId;
                     bool m_identityIdHasBeenSet;

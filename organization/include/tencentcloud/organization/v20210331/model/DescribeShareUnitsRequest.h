@@ -43,15 +43,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取共享单元地域。可通过接口DescribeShareAreas获取支持共享的地域。
-                     * @return Area 共享单元地域。可通过接口DescribeShareAreas获取支持共享的地域。
+                     * 获取共享单元地域。可通过接口[DescribeShareAreas](https://cloud.tencent.com/document/product/850/103050)获取支持共享的地域。
+                     * @return Area 共享单元地域。可通过接口[DescribeShareAreas](https://cloud.tencent.com/document/product/850/103050)获取支持共享的地域。
                      * 
                      */
                     std::string GetArea() const;
 
                     /**
-                     * 设置共享单元地域。可通过接口DescribeShareAreas获取支持共享的地域。
-                     * @param _area 共享单元地域。可通过接口DescribeShareAreas获取支持共享的地域。
+                     * 设置共享单元地域。可通过接口[DescribeShareAreas](https://cloud.tencent.com/document/product/850/103050)获取支持共享的地域。
+                     * @param _area 共享单元地域。可通过接口[DescribeShareAreas](https://cloud.tencent.com/document/product/850/103050)获取支持共享的地域。
                      * 
                      */
                     void SetArea(const std::string& _area);
@@ -129,7 +129,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 共享单元地域。可通过接口DescribeShareAreas获取支持共享的地域。
+                     * 共享单元地域。可通过接口[DescribeShareAreas](https://cloud.tencent.com/document/product/850/103050)获取支持共享的地域。
                      */
                     std::string m_area;
                     bool m_areaHasBeenSet;

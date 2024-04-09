@@ -86,15 +86,15 @@ namespace TencentCloud
                     bool AreaHasBeenSet() const;
 
                     /**
-                     * 获取资源类型。支持共享的资源类型。
-                     * @return Type 资源类型。支持共享的资源类型。
+                     * 获取共享资源类型。支持共享的资源类型,请参见[资源共享概述](https://cloud.tencent.com/document/product/850/59489)
+                     * @return Type 共享资源类型。支持共享的资源类型,请参见[资源共享概述](https://cloud.tencent.com/document/product/850/59489)
                      * 
                      */
                     std::string GetType() const;
 
                     /**
-                     * 设置资源类型。支持共享的资源类型。
-                     * @param _type 资源类型。支持共享的资源类型。
+                     * 设置共享资源类型。支持共享的资源类型,请参见[资源共享概述](https://cloud.tencent.com/document/product/850/59489)
+                     * @param _type 共享资源类型。支持共享的资源类型,请参见[资源共享概述](https://cloud.tencent.com/document/product/850/59489)
                      * 
                      */
                     void SetType(const std::string& _type);
@@ -142,7 +142,7 @@ namespace TencentCloud
                     bool m_areaHasBeenSet;
 
                     /**
-                     * 资源类型。支持共享的资源类型。
+                     * 共享资源类型。支持共享的资源类型,请参见[资源共享概述](https://cloud.tencent.com/document/product/850/59489)
                      */
                     std::string m_type;
                     bool m_typeHasBeenSet;

@@ -52,6 +52,8 @@ namespace TencentCloud
 -1:查无记录
 -2:引擎未知错误
 -3:引擎服务异常
+-4:姓名校验不通过
+-5:手机号码不合法
                      * @return Result 认证结果码，收费情况如下。
 收费结果码：
 0: 验证结果一致
@@ -60,6 +62,8 @@ namespace TencentCloud
 -1:查无记录
 -2:引擎未知错误
 -3:引擎服务异常
+-4:姓名校验不通过
+-5:手机号码不合法
                      * 
                      */
                     std::string GetResult() const;
@@ -96,6 +100,8 @@ namespace TencentCloud
 -1:查无记录
 -2:引擎未知错误
 -3:引擎服务异常
+-4:姓名校验不通过
+-5:手机号码不合法
                      */
                     std::string m_result;
                     bool m_resultHasBeenSet;

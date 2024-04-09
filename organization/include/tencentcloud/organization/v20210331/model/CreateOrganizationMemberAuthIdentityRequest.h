@@ -43,15 +43,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取成员uin列表。最多10个
-                     * @return MemberUins 成员uin列表。最多10个
+                     * 获取成员Uin列表。最多10个
+                     * @return MemberUins 成员Uin列表。最多10个
                      * 
                      */
                     std::vector<uint64_t> GetMemberUins() const;
 
                     /**
-                     * 设置成员uin列表。最多10个
-                     * @param _memberUins 成员uin列表。最多10个
+                     * 设置成员Uin列表。最多10个
+                     * @param _memberUins 成员Uin列表。最多10个
                      * 
                      */
                     void SetMemberUins(const std::vector<uint64_t>& _memberUins);
@@ -64,15 +64,15 @@ namespace TencentCloud
                     bool MemberUinsHasBeenSet() const;
 
                     /**
-                     * 获取身份Id列表。最多5个
-                     * @return IdentityIds 身份Id列表。最多5个
+                     * 获取身份Id列表。最多5个，可以通过[ListOrganizationIdentity](https://cloud.tencent.com/document/product/850/82934)获取
+                     * @return IdentityIds 身份Id列表。最多5个，可以通过[ListOrganizationIdentity](https://cloud.tencent.com/document/product/850/82934)获取
                      * 
                      */
                     std::vector<uint64_t> GetIdentityIds() const;
 
                     /**
-                     * 设置身份Id列表。最多5个
-                     * @param _identityIds 身份Id列表。最多5个
+                     * 设置身份Id列表。最多5个，可以通过[ListOrganizationIdentity](https://cloud.tencent.com/document/product/850/82934)获取
+                     * @param _identityIds 身份Id列表。最多5个，可以通过[ListOrganizationIdentity](https://cloud.tencent.com/document/product/850/82934)获取
                      * 
                      */
                     void SetIdentityIds(const std::vector<uint64_t>& _identityIds);
@@ -87,13 +87,13 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 成员uin列表。最多10个
+                     * 成员Uin列表。最多10个
                      */
                     std::vector<uint64_t> m_memberUins;
                     bool m_memberUinsHasBeenSet;
 
                     /**
-                     * 身份Id列表。最多5个
+                     * 身份Id列表。最多5个，可以通过[ListOrganizationIdentity](https://cloud.tencent.com/document/product/850/82934)获取
                      */
                     std::vector<uint64_t> m_identityIds;
                     bool m_identityIdsHasBeenSet;

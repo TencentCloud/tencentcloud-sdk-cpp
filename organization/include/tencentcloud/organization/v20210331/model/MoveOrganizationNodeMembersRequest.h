@@ -43,15 +43,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取组织节点ID。
-                     * @return NodeId 组织节点ID。
+                     * 获取组织节点ID。可以通过[DescribeOrganizationNodes](https://cloud.tencent.com/document/product/850/82926)获取
+                     * @return NodeId 组织节点ID。可以通过[DescribeOrganizationNodes](https://cloud.tencent.com/document/product/850/82926)获取
                      * 
                      */
                     int64_t GetNodeId() const;
 
                     /**
-                     * 设置组织节点ID。
-                     * @param _nodeId 组织节点ID。
+                     * 设置组织节点ID。可以通过[DescribeOrganizationNodes](https://cloud.tencent.com/document/product/850/82926)获取
+                     * @param _nodeId 组织节点ID。可以通过[DescribeOrganizationNodes](https://cloud.tencent.com/document/product/850/82926)获取
                      * 
                      */
                     void SetNodeId(const int64_t& _nodeId);
@@ -64,15 +64,15 @@ namespace TencentCloud
                     bool NodeIdHasBeenSet() const;
 
                     /**
-                     * 获取成员UIN列表。
-                     * @return MemberUin 成员UIN列表。
+                     * 获取成员Uin列表。
+                     * @return MemberUin 成员Uin列表。
                      * 
                      */
                     std::vector<int64_t> GetMemberUin() const;
 
                     /**
-                     * 设置成员UIN列表。
-                     * @param _memberUin 成员UIN列表。
+                     * 设置成员Uin列表。
+                     * @param _memberUin 成员Uin列表。
                      * 
                      */
                     void SetMemberUin(const std::vector<int64_t>& _memberUin);
@@ -87,13 +87,13 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 组织节点ID。
+                     * 组织节点ID。可以通过[DescribeOrganizationNodes](https://cloud.tencent.com/document/product/850/82926)获取
                      */
                     int64_t m_nodeId;
                     bool m_nodeIdHasBeenSet;
 
                     /**
-                     * 成员UIN列表。
+                     * 成员Uin列表。
                      */
                     std::vector<int64_t> m_memberUin;
                     bool m_memberUinHasBeenSet;

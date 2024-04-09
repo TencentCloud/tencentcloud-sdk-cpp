@@ -354,6 +354,7 @@ set(sqlserver_public_header_model
   include/tencentcloud/sqlserver/v20180328/model/DescribeBackupMigrationResponse.h
   include/tencentcloud/sqlserver/v20180328/model/RestoreTask.h
   include/tencentcloud/sqlserver/v20180328/model/DescribeUploadBackupInfoResponse.h
+  include/tencentcloud/sqlserver/v20180328/model/OldVip.h
   include/tencentcloud/sqlserver/v20180328/model/StartMigrationCheckRequest.h
   include/tencentcloud/sqlserver/v20180328/model/DescribeBackupCommandRequest.h
   include/tencentcloud/sqlserver/v20180328/model/CrossSummaryDetailRes.h
@@ -722,6 +723,7 @@ set(sqlserver_src
   src/v20180328/model/DescribeBackupMigrationResponse.cpp
   src/v20180328/model/RestoreTask.cpp
   src/v20180328/model/DescribeUploadBackupInfoResponse.cpp
+  src/v20180328/model/OldVip.cpp
   src/v20180328/model/StartMigrationCheckRequest.cpp
   src/v20180328/model/DescribeBackupCommandRequest.cpp
   src/v20180328/model/CrossSummaryDetailRes.cpp

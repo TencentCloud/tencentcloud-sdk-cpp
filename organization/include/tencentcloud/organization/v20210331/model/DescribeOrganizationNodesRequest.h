@@ -64,15 +64,15 @@ namespace TencentCloud
                     bool LimitHasBeenSet() const;
 
                     /**
-                     * 获取偏移量。
-                     * @return Offset 偏移量。
+                     * 获取偏移量。取值是limit的整数倍。默认值 : 0。
+                     * @return Offset 偏移量。取值是limit的整数倍。默认值 : 0。
                      * 
                      */
                     int64_t GetOffset() const;
 
                     /**
-                     * 设置偏移量。
-                     * @param _offset 偏移量。
+                     * 设置偏移量。取值是limit的整数倍。默认值 : 0。
+                     * @param _offset 偏移量。取值是limit的整数倍。默认值 : 0。
                      * 
                      */
                     void SetOffset(const int64_t& _offset);
@@ -93,7 +93,7 @@ namespace TencentCloud
                     bool m_limitHasBeenSet;
 
                     /**
-                     * 偏移量。
+                     * 偏移量。取值是limit的整数倍。默认值 : 0。
                      */
                     int64_t m_offset;
                     bool m_offsetHasBeenSet;

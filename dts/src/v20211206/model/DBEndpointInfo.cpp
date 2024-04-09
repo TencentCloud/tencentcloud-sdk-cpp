@@ -28,7 +28,8 @@ DBEndpointInfo::DBEndpointInfo() :
     m_infoHasBeenSet(false),
     m_supplierHasBeenSet(false),
     m_extraAttrHasBeenSet(false),
-    m_databaseNetEnvHasBeenSet(false)
+    m_databaseNetEnvHasBeenSet(false),
+    m_connectTypeHasBeenSet(false)
 {
 }
 
@@ -137,6 +138,16 @@ CoreInternalOutcome DBEndpointInfo::Deserialize(const rapidjson::Value &value)
         m_databaseNetEnvHasBeenSet = true;
     }
 
+    if (value.HasMember("ConnectType") && !value["ConnectType"].IsNull())
+    {
+        if (!value["ConnectType"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `DBEndpointInfo.ConnectType` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_connectType = string(value["ConnectType"].GetString());
+        m_connectTypeHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -220,6 +231,14 @@ void DBEndpointInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Document::
         string key = "DatabaseNetEnv";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_databaseNetEnv.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_connectTypeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ConnectType";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_connectType.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -351,5 +370,21 @@ void DBEndpointInfo::SetDatabaseNetEnv(const string& _databaseNetEnv)
 bool DBEndpointInfo::DatabaseNetEnvHasBeenSet() const
 {
     return m_databaseNetEnvHasBeenSet;
+}
+
+string DBEndpointInfo::GetConnectType() const
+{
+    return m_connectType;
+}
+
+void DBEndpointInfo::SetConnectType(const string& _connectType)
+{
+    m_connectType = _connectType;
+    m_connectTypeHasBeenSet = true;
+}
+
+bool DBEndpointInfo::ConnectTypeHasBeenSet() const
+{
+    return m_connectTypeHasBeenSet;
 }
 

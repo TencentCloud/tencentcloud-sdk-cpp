@@ -53,7 +53,8 @@ CreateModelServiceRequest::CreateModelServiceRequest() :
     m_modelTurboEnableHasBeenSet(false),
     m_serviceCategoryHasBeenSet(false),
     m_commandHasBeenSet(false),
-    m_serviceEIPHasBeenSet(false)
+    m_serviceEIPHasBeenSet(false),
+    m_commandBase64HasBeenSet(false)
 {
 }
 
@@ -340,6 +341,14 @@ string CreateModelServiceRequest::ToJsonString() const
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
         m_serviceEIP.ToJsonObject(d[key.c_str()], allocator);
+    }
+
+    if (m_commandBase64HasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "CommandBase64";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_commandBase64.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -844,6 +853,22 @@ void CreateModelServiceRequest::SetServiceEIP(const ServiceEIP& _serviceEIP)
 bool CreateModelServiceRequest::ServiceEIPHasBeenSet() const
 {
     return m_serviceEIPHasBeenSet;
+}
+
+string CreateModelServiceRequest::GetCommandBase64() const
+{
+    return m_commandBase64;
+}
+
+void CreateModelServiceRequest::SetCommandBase64(const string& _commandBase64)
+{
+    m_commandBase64 = _commandBase64;
+    m_commandBase64HasBeenSet = true;
+}
+
+bool CreateModelServiceRequest::CommandBase64HasBeenSet() const
+{
+    return m_commandBase64HasBeenSet;
 }
 
 

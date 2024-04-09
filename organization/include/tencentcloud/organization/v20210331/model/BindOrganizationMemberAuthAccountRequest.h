@@ -64,15 +64,15 @@ namespace TencentCloud
                     bool MemberUinHasBeenSet() const;
 
                     /**
-                     * 获取策略ID。可以调用DescribeOrganizationMemberPolicies获取
-                     * @return PolicyId 策略ID。可以调用DescribeOrganizationMemberPolicies获取
+                     * 获取策略ID。可以调用[DescribeOrganizationMemberPolicies](https://cloud.tencent.com/document/product/850/82935)获取
+                     * @return PolicyId 策略ID。可以调用[DescribeOrganizationMemberPolicies](https://cloud.tencent.com/document/product/850/82935)获取
                      * 
                      */
                     int64_t GetPolicyId() const;
 
                     /**
-                     * 设置策略ID。可以调用DescribeOrganizationMemberPolicies获取
-                     * @param _policyId 策略ID。可以调用DescribeOrganizationMemberPolicies获取
+                     * 设置策略ID。可以调用[DescribeOrganizationMemberPolicies](https://cloud.tencent.com/document/product/850/82935)获取
+                     * @param _policyId 策略ID。可以调用[DescribeOrganizationMemberPolicies](https://cloud.tencent.com/document/product/850/82935)获取
                      * 
                      */
                     void SetPolicyId(const int64_t& _policyId);
@@ -114,7 +114,7 @@ namespace TencentCloud
                     bool m_memberUinHasBeenSet;
 
                     /**
-                     * 策略ID。可以调用DescribeOrganizationMemberPolicies获取
+                     * 策略ID。可以调用[DescribeOrganizationMemberPolicies](https://cloud.tencent.com/document/product/850/82935)获取
                      */
                     int64_t m_policyId;
                     bool m_policyIdHasBeenSet;

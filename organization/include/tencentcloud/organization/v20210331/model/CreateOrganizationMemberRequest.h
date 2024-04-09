@@ -106,15 +106,15 @@ namespace TencentCloud
                     bool PermissionIdsHasBeenSet() const;
 
                     /**
-                     * 获取成员所属部门的节点ID。可以调用DescribeOrganizationNodes获取
-                     * @return NodeId 成员所属部门的节点ID。可以调用DescribeOrganizationNodes获取
+                     * 获取成员所属部门的节点ID。可以通过[DescribeOrganizationNodes](https://cloud.tencent.com/document/product/850/82926)获取
+                     * @return NodeId 成员所属部门的节点ID。可以通过[DescribeOrganizationNodes](https://cloud.tencent.com/document/product/850/82926)获取
                      * 
                      */
                     int64_t GetNodeId() const;
 
                     /**
-                     * 设置成员所属部门的节点ID。可以调用DescribeOrganizationNodes获取
-                     * @param _nodeId 成员所属部门的节点ID。可以调用DescribeOrganizationNodes获取
+                     * 设置成员所属部门的节点ID。可以通过[DescribeOrganizationNodes](https://cloud.tencent.com/document/product/850/82926)获取
+                     * @param _nodeId 成员所属部门的节点ID。可以通过[DescribeOrganizationNodes](https://cloud.tencent.com/document/product/850/82926)获取
                      * 
                      */
                     void SetNodeId(const int64_t& _nodeId);
@@ -273,7 +273,7 @@ namespace TencentCloud
                     bool m_permissionIdsHasBeenSet;
 
                     /**
-                     * 成员所属部门的节点ID。可以调用DescribeOrganizationNodes获取
+                     * 成员所属部门的节点ID。可以通过[DescribeOrganizationNodes](https://cloud.tencent.com/document/product/850/82926)获取
                      */
                     int64_t m_nodeId;
                     bool m_nodeIdHasBeenSet;

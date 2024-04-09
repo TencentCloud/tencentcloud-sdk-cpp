@@ -43,15 +43,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取成员Uin
-                     * @return MemberUin 成员Uin
+                     * 获取成员Uin。
+                     * @return MemberUin 成员Uin。
                      * 
                      */
                     int64_t GetMemberUin() const;
 
                     /**
-                     * 设置成员Uin
-                     * @param _memberUin 成员Uin
+                     * 设置成员Uin。
+                     * @param _memberUin 成员Uin。
                      * 
                      */
                     void SetMemberUin(const int64_t& _memberUin);
@@ -64,15 +64,15 @@ namespace TencentCloud
                     bool MemberUinHasBeenSet() const;
 
                     /**
-                     * 获取绑定ID
-                     * @return BindId 绑定ID
+                     * 获取绑定ID。可以通过[DescribeOrganizationMemberEmailBind](https://cloud.tencent.com/document/product/850/93332)获取
+                     * @return BindId 绑定ID。可以通过[DescribeOrganizationMemberEmailBind](https://cloud.tencent.com/document/product/850/93332)获取
                      * 
                      */
                     int64_t GetBindId() const;
 
                     /**
-                     * 设置绑定ID
-                     * @param _bindId 绑定ID
+                     * 设置绑定ID。可以通过[DescribeOrganizationMemberEmailBind](https://cloud.tencent.com/document/product/850/93332)获取
+                     * @param _bindId 绑定ID。可以通过[DescribeOrganizationMemberEmailBind](https://cloud.tencent.com/document/product/850/93332)获取
                      * 
                      */
                     void SetBindId(const int64_t& _bindId);
@@ -85,15 +85,15 @@ namespace TencentCloud
                     bool BindIdHasBeenSet() const;
 
                     /**
-                     * 获取邮箱
-                     * @return Email 邮箱
+                     * 获取邮箱地址。
+                     * @return Email 邮箱地址。
                      * 
                      */
                     std::string GetEmail() const;
 
                     /**
-                     * 设置邮箱
-                     * @param _email 邮箱
+                     * 设置邮箱地址。
+                     * @param _email 邮箱地址。
                      * 
                      */
                     void SetEmail(const std::string& _email);
@@ -106,15 +106,15 @@ namespace TencentCloud
                     bool EmailHasBeenSet() const;
 
                     /**
-                     * 获取国际区号
-                     * @return CountryCode 国际区号
+                     * 获取国际区号。
+                     * @return CountryCode 国际区号。
                      * 
                      */
                     std::string GetCountryCode() const;
 
                     /**
-                     * 设置国际区号
-                     * @param _countryCode 国际区号
+                     * 设置国际区号。
+                     * @param _countryCode 国际区号。
                      * 
                      */
                     void SetCountryCode(const std::string& _countryCode);
@@ -127,15 +127,15 @@ namespace TencentCloud
                     bool CountryCodeHasBeenSet() const;
 
                     /**
-                     * 获取手机号
-                     * @return Phone 手机号
+                     * 获取手机号。
+                     * @return Phone 手机号。
                      * 
                      */
                     std::string GetPhone() const;
 
                     /**
-                     * 设置手机号
-                     * @param _phone 手机号
+                     * 设置手机号。
+                     * @param _phone 手机号。
                      * 
                      */
                     void SetPhone(const std::string& _phone);
@@ -150,31 +150,31 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 成员Uin
+                     * 成员Uin。
                      */
                     int64_t m_memberUin;
                     bool m_memberUinHasBeenSet;
 
                     /**
-                     * 绑定ID
+                     * 绑定ID。可以通过[DescribeOrganizationMemberEmailBind](https://cloud.tencent.com/document/product/850/93332)获取
                      */
                     int64_t m_bindId;
                     bool m_bindIdHasBeenSet;
 
                     /**
-                     * 邮箱
+                     * 邮箱地址。
                      */
                     std::string m_email;
                     bool m_emailHasBeenSet;
 
                     /**
-                     * 国际区号
+                     * 国际区号。
                      */
                     std::string m_countryCode;
                     bool m_countryCodeHasBeenSet;
 
                     /**
-                     * 手机号
+                     * 手机号。
                      */
                     std::string m_phone;
                     bool m_phoneHasBeenSet;

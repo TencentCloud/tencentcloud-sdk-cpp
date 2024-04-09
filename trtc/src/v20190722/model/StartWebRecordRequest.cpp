@@ -28,7 +28,8 @@ StartWebRecordRequest::StartWebRecordRequest() :
     m_storageParamsHasBeenSet(false),
     m_webRecordVideoParamsHasBeenSet(false),
     m_sdkAppIdHasBeenSet(false),
-    m_recordIdHasBeenSet(false)
+    m_recordIdHasBeenSet(false),
+    m_publishCdnParamsHasBeenSet(false)
 {
 }
 
@@ -87,6 +88,21 @@ string StartWebRecordRequest::ToJsonString() const
         string key = "RecordId";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_recordId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_publishCdnParamsHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "PublishCdnParams";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_publishCdnParams.begin(); itr != m_publishCdnParams.end(); ++itr, ++i)
+        {
+            d[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(d[key.c_str()][i], allocator);
+        }
     }
 
 
@@ -191,6 +207,22 @@ void StartWebRecordRequest::SetRecordId(const string& _recordId)
 bool StartWebRecordRequest::RecordIdHasBeenSet() const
 {
     return m_recordIdHasBeenSet;
+}
+
+vector<McuPublishCdnParam> StartWebRecordRequest::GetPublishCdnParams() const
+{
+    return m_publishCdnParams;
+}
+
+void StartWebRecordRequest::SetPublishCdnParams(const vector<McuPublishCdnParam>& _publishCdnParams)
+{
+    m_publishCdnParams = _publishCdnParams;
+    m_publishCdnParamsHasBeenSet = true;
+}
+
+bool StartWebRecordRequest::PublishCdnParamsHasBeenSet() const
+{
+    return m_publishCdnParamsHasBeenSet;
 }
 
 

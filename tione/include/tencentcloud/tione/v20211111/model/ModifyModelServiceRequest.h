@@ -587,15 +587,15 @@ HYBRID_PAID:
                     bool ModelTurboEnableHasBeenSet() const;
 
                     /**
-                     * 获取服务的启动命令
-                     * @return Command 服务的启动命令
+                     * 获取服务的启动命令，如遇特殊字符导致配置失败，可使用CommandBase64参数
+                     * @return Command 服务的启动命令，如遇特殊字符导致配置失败，可使用CommandBase64参数
                      * 
                      */
                     std::string GetCommand() const;
 
                     /**
-                     * 设置服务的启动命令
-                     * @param _command 服务的启动命令
+                     * 设置服务的启动命令，如遇特殊字符导致配置失败，可使用CommandBase64参数
+                     * @param _command 服务的启动命令，如遇特殊字符导致配置失败，可使用CommandBase64参数
                      * 
                      */
                     void SetCommand(const std::string& _command);
@@ -627,6 +627,27 @@ HYBRID_PAID:
                      * 
                      */
                     bool ServiceEIPHasBeenSet() const;
+
+                    /**
+                     * 获取服务的启动命令，以base64格式进行输入
+                     * @return CommandBase64 服务的启动命令，以base64格式进行输入
+                     * 
+                     */
+                    std::string GetCommandBase64() const;
+
+                    /**
+                     * 设置服务的启动命令，以base64格式进行输入
+                     * @param _commandBase64 服务的启动命令，以base64格式进行输入
+                     * 
+                     */
+                    void SetCommandBase64(const std::string& _commandBase64);
+
+                    /**
+                     * 判断参数 CommandBase64 是否已赋值
+                     * @return CommandBase64 是否已赋值
+                     * 
+                     */
+                    bool CommandBase64HasBeenSet() const;
 
                 private:
 
@@ -780,7 +801,7 @@ HYBRID_PAID:
                     bool m_modelTurboEnableHasBeenSet;
 
                     /**
-                     * 服务的启动命令
+                     * 服务的启动命令，如遇特殊字符导致配置失败，可使用CommandBase64参数
                      */
                     std::string m_command;
                     bool m_commandHasBeenSet;
@@ -790,6 +811,12 @@ HYBRID_PAID:
                      */
                     ServiceEIP m_serviceEIP;
                     bool m_serviceEIPHasBeenSet;
+
+                    /**
+                     * 服务的启动命令，以base64格式进行输入
+                     */
+                    std::string m_commandBase64;
+                    bool m_commandBase64HasBeenSet;
 
                 };
             }

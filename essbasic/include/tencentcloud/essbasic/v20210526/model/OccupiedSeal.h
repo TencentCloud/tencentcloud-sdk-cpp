@@ -220,15 +220,39 @@ namespace TencentCloud
                     bool UrlHasBeenSet() const;
 
                     /**
-                     * 获取印章类型，OFFICIAL-企业公章，CONTRACT-合同专用章，LEGAL_PERSON_SEAL-法人章
-                     * @return SealType 印章类型，OFFICIAL-企业公章，CONTRACT-合同专用章，LEGAL_PERSON_SEAL-法人章
+                     * 获取电子印章类型 , 可选类型如下: 
+<ul><li>**OFFICIAL**: (默认)公章</li>
+<li>**CONTRACT**: 合同专用章;</li>
+<li>**FINANCE**: 财务专用章;</li>
+<li>**PERSONNEL**: 人事专用章</li>
+<li>**INVOICE**: 发票专用章</li>
+</ul>
+                     * @return SealType 电子印章类型 , 可选类型如下: 
+<ul><li>**OFFICIAL**: (默认)公章</li>
+<li>**CONTRACT**: 合同专用章;</li>
+<li>**FINANCE**: 财务专用章;</li>
+<li>**PERSONNEL**: 人事专用章</li>
+<li>**INVOICE**: 发票专用章</li>
+</ul>
                      * 
                      */
                     std::string GetSealType() const;
 
                     /**
-                     * 设置印章类型，OFFICIAL-企业公章，CONTRACT-合同专用章，LEGAL_PERSON_SEAL-法人章
-                     * @param _sealType 印章类型，OFFICIAL-企业公章，CONTRACT-合同专用章，LEGAL_PERSON_SEAL-法人章
+                     * 设置电子印章类型 , 可选类型如下: 
+<ul><li>**OFFICIAL**: (默认)公章</li>
+<li>**CONTRACT**: 合同专用章;</li>
+<li>**FINANCE**: 财务专用章;</li>
+<li>**PERSONNEL**: 人事专用章</li>
+<li>**INVOICE**: 发票专用章</li>
+</ul>
+                     * @param _sealType 电子印章类型 , 可选类型如下: 
+<ul><li>**OFFICIAL**: (默认)公章</li>
+<li>**CONTRACT**: 合同专用章;</li>
+<li>**FINANCE**: 财务专用章;</li>
+<li>**PERSONNEL**: 人事专用章</li>
+<li>**INVOICE**: 发票专用章</li>
+</ul>
                      * 
                      */
                     void SetSealType(const std::string& _sealType);
@@ -334,7 +358,13 @@ namespace TencentCloud
                     bool m_urlHasBeenSet;
 
                     /**
-                     * 印章类型，OFFICIAL-企业公章，CONTRACT-合同专用章，LEGAL_PERSON_SEAL-法人章
+                     * 电子印章类型 , 可选类型如下: 
+<ul><li>**OFFICIAL**: (默认)公章</li>
+<li>**CONTRACT**: 合同专用章;</li>
+<li>**FINANCE**: 财务专用章;</li>
+<li>**PERSONNEL**: 人事专用章</li>
+<li>**INVOICE**: 发票专用章</li>
+</ul>
                      */
                     std::string m_sealType;
                     bool m_sealTypeHasBeenSet;

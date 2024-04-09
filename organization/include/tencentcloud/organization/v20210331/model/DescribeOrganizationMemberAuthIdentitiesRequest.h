@@ -106,15 +106,15 @@ namespace TencentCloud
                     bool MemberUinHasBeenSet() const;
 
                     /**
-                     * 获取身份ID。入参MemberUin与IdentityId至少填写一个
-                     * @return IdentityId 身份ID。入参MemberUin与IdentityId至少填写一个
+                     * 获取身份ID。入参MemberUin与IdentityId至少填写一个, 可以通过[ListOrganizationIdentity](https://cloud.tencent.com/document/product/850/82934)获取
+                     * @return IdentityId 身份ID。入参MemberUin与IdentityId至少填写一个, 可以通过[ListOrganizationIdentity](https://cloud.tencent.com/document/product/850/82934)获取
                      * 
                      */
                     uint64_t GetIdentityId() const;
 
                     /**
-                     * 设置身份ID。入参MemberUin与IdentityId至少填写一个
-                     * @param _identityId 身份ID。入参MemberUin与IdentityId至少填写一个
+                     * 设置身份ID。入参MemberUin与IdentityId至少填写一个, 可以通过[ListOrganizationIdentity](https://cloud.tencent.com/document/product/850/82934)获取
+                     * @param _identityId 身份ID。入参MemberUin与IdentityId至少填写一个, 可以通过[ListOrganizationIdentity](https://cloud.tencent.com/document/product/850/82934)获取
                      * 
                      */
                     void SetIdentityId(const uint64_t& _identityId);
@@ -147,7 +147,7 @@ namespace TencentCloud
                     bool m_memberUinHasBeenSet;
 
                     /**
-                     * 身份ID。入参MemberUin与IdentityId至少填写一个
+                     * 身份ID。入参MemberUin与IdentityId至少填写一个, 可以通过[ListOrganizationIdentity](https://cloud.tencent.com/document/product/850/82934)获取
                      */
                     uint64_t m_identityId;
                     bool m_identityIdHasBeenSet;

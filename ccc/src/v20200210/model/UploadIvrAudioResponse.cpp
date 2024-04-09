@@ -24,7 +24,8 @@ using namespace TencentCloud::Ccc::V20200210::Model;
 using namespace std;
 
 UploadIvrAudioResponse::UploadIvrAudioResponse() :
-    m_failedFileListHasBeenSet(false)
+    m_failedFileListHasBeenSet(false),
+    m_successFileListHasBeenSet(false)
 {
 }
 
@@ -82,6 +83,26 @@ CoreInternalOutcome UploadIvrAudioResponse::Deserialize(const string &payload)
         m_failedFileListHasBeenSet = true;
     }
 
+    if (rsp.HasMember("SuccessFileList") && !rsp["SuccessFileList"].IsNull())
+    {
+        if (!rsp["SuccessFileList"].IsArray())
+            return CoreInternalOutcome(Core::Error("response `SuccessFileList` is not array type"));
+
+        const rapidjson::Value &tmpValue = rsp["SuccessFileList"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            AudioFileInfo item;
+            CoreInternalOutcome outcome = item.Deserialize(*itr);
+            if (!outcome.IsSuccess())
+            {
+                outcome.GetError().SetRequestId(requestId);
+                return outcome;
+            }
+            m_successFileList.push_back(item);
+        }
+        m_successFileListHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -101,6 +122,21 @@ string UploadIvrAudioResponse::ToJsonString() const
 
         int i=0;
         for (auto itr = m_failedFileList.begin(); itr != m_failedFileList.end(); ++itr, ++i)
+        {
+            value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(value[key.c_str()][i], allocator);
+        }
+    }
+
+    if (m_successFileListHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "SuccessFileList";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_successFileList.begin(); itr != m_successFileList.end(); ++itr, ++i)
         {
             value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
             (*itr).ToJsonObject(value[key.c_str()][i], allocator);
@@ -127,6 +163,16 @@ vector<UploadIvrAudioFailedInfo> UploadIvrAudioResponse::GetFailedFileList() con
 bool UploadIvrAudioResponse::FailedFileListHasBeenSet() const
 {
     return m_failedFileListHasBeenSet;
+}
+
+vector<AudioFileInfo> UploadIvrAudioResponse::GetSuccessFileList() const
+{
+    return m_successFileList;
+}
+
+bool UploadIvrAudioResponse::SuccessFileListHasBeenSet() const
+{
+    return m_successFileListHasBeenSet;
 }
 
 

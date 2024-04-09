@@ -43,15 +43,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取偏移量。
-                     * @return Offset 偏移量。
+                     * 获取偏移量。取值是limit的整数倍。默认值 : 0。
+                     * @return Offset 偏移量。取值是limit的整数倍。默认值 : 0。
                      * 
                      */
                     int64_t GetOffset() const;
 
                     /**
-                     * 设置偏移量。
-                     * @param _offset 偏移量。
+                     * 设置偏移量。取值是limit的整数倍。默认值 : 0。
+                     * @param _offset 偏移量。取值是limit的整数倍。默认值 : 0。
                      * 
                      */
                     void SetOffset(const int64_t& _offset);
@@ -64,15 +64,15 @@ namespace TencentCloud
                     bool OffsetHasBeenSet() const;
 
                     /**
-                     * 获取限制数目。
-                     * @return Limit 限制数目。
+                     * 获取限制数目。取值范围：1~50。默认值：10。
+                     * @return Limit 限制数目。取值范围：1~50。默认值：10。
                      * 
                      */
                     int64_t GetLimit() const;
 
                     /**
-                     * 设置限制数目。
-                     * @param _limit 限制数目。
+                     * 设置限制数目。取值范围：1~50。默认值：10。
+                     * @param _limit 限制数目。取值范围：1~50。默认值：10。
                      * 
                      */
                     void SetLimit(const int64_t& _limit);
@@ -106,15 +106,15 @@ namespace TencentCloud
                     bool MemberUinHasBeenSet() const;
 
                     /**
-                     * 获取策略ID。
-                     * @return PolicyId 策略ID。
+                     * 获取策略ID。可以通过[DescribeOrganizationMemberPolicies](https://cloud.tencent.com/document/product/850/82935)
+                     * @return PolicyId 策略ID。可以通过[DescribeOrganizationMemberPolicies](https://cloud.tencent.com/document/product/850/82935)
                      * 
                      */
                     int64_t GetPolicyId() const;
 
                     /**
-                     * 设置策略ID。
-                     * @param _policyId 策略ID。
+                     * 设置策略ID。可以通过[DescribeOrganizationMemberPolicies](https://cloud.tencent.com/document/product/850/82935)
+                     * @param _policyId 策略ID。可以通过[DescribeOrganizationMemberPolicies](https://cloud.tencent.com/document/product/850/82935)
                      * 
                      */
                     void SetPolicyId(const int64_t& _policyId);
@@ -129,13 +129,13 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 偏移量。
+                     * 偏移量。取值是limit的整数倍。默认值 : 0。
                      */
                     int64_t m_offset;
                     bool m_offsetHasBeenSet;
 
                     /**
-                     * 限制数目。
+                     * 限制数目。取值范围：1~50。默认值：10。
                      */
                     int64_t m_limit;
                     bool m_limitHasBeenSet;
@@ -147,7 +147,7 @@ namespace TencentCloud
                     bool m_memberUinHasBeenSet;
 
                     /**
-                     * 策略ID。
+                     * 策略ID。可以通过[DescribeOrganizationMemberPolicies](https://cloud.tencent.com/document/product/850/82935)
                      */
                     int64_t m_policyId;
                     bool m_policyIdHasBeenSet;

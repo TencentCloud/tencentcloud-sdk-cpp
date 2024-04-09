@@ -23,6 +23,7 @@
 #include <tencentcloud/core/AbstractModel.h>
 #include <tencentcloud/trtc/v20190722/model/StorageParams.h>
 #include <tencentcloud/trtc/v20190722/model/WebRecordVideoParams.h>
+#include <tencentcloud/trtc/v20190722/model/McuPublishCdnParam.h>
 
 
 namespace TencentCloud
@@ -182,6 +183,27 @@ namespace TencentCloud
                      */
                     bool RecordIdHasBeenSet() const;
 
+                    /**
+                     * 获取若您想要推流到CDN，可以使用PublishCdnParams.N参数设置，支持最多同时推流到10个CDN地址。若转推地址是腾讯云CDN时，请将IsTencentCdn明确设置为1
+                     * @return PublishCdnParams 若您想要推流到CDN，可以使用PublishCdnParams.N参数设置，支持最多同时推流到10个CDN地址。若转推地址是腾讯云CDN时，请将IsTencentCdn明确设置为1
+                     * 
+                     */
+                    std::vector<McuPublishCdnParam> GetPublishCdnParams() const;
+
+                    /**
+                     * 设置若您想要推流到CDN，可以使用PublishCdnParams.N参数设置，支持最多同时推流到10个CDN地址。若转推地址是腾讯云CDN时，请将IsTencentCdn明确设置为1
+                     * @param _publishCdnParams 若您想要推流到CDN，可以使用PublishCdnParams.N参数设置，支持最多同时推流到10个CDN地址。若转推地址是腾讯云CDN时，请将IsTencentCdn明确设置为1
+                     * 
+                     */
+                    void SetPublishCdnParams(const std::vector<McuPublishCdnParam>& _publishCdnParams);
+
+                    /**
+                     * 判断参数 PublishCdnParams 是否已赋值
+                     * @return PublishCdnParams 是否已赋值
+                     * 
+                     */
+                    bool PublishCdnParamsHasBeenSet() const;
+
                 private:
 
                     /**
@@ -222,6 +244,12 @@ namespace TencentCloud
                      */
                     std::string m_recordId;
                     bool m_recordIdHasBeenSet;
+
+                    /**
+                     * 若您想要推流到CDN，可以使用PublishCdnParams.N参数设置，支持最多同时推流到10个CDN地址。若转推地址是腾讯云CDN时，请将IsTencentCdn明确设置为1
+                     */
+                    std::vector<McuPublishCdnParam> m_publishCdnParams;
+                    bool m_publishCdnParamsHasBeenSet;
 
                 };
             }

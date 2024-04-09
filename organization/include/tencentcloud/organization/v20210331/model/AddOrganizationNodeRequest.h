@@ -43,15 +43,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取父节点ID。可以调用DescribeOrganizationNodes获取
-                     * @return ParentNodeId 父节点ID。可以调用DescribeOrganizationNodes获取
+                     * 获取父节点ID。可以通过[DescribeOrganizationNodes](https://cloud.tencent.com/document/product/850/82926)获取
+                     * @return ParentNodeId 父节点ID。可以通过[DescribeOrganizationNodes](https://cloud.tencent.com/document/product/850/82926)获取
                      * 
                      */
                     uint64_t GetParentNodeId() const;
 
                     /**
-                     * 设置父节点ID。可以调用DescribeOrganizationNodes获取
-                     * @param _parentNodeId 父节点ID。可以调用DescribeOrganizationNodes获取
+                     * 设置父节点ID。可以通过[DescribeOrganizationNodes](https://cloud.tencent.com/document/product/850/82926)获取
+                     * @param _parentNodeId 父节点ID。可以通过[DescribeOrganizationNodes](https://cloud.tencent.com/document/product/850/82926)获取
                      * 
                      */
                     void SetParentNodeId(const uint64_t& _parentNodeId);
@@ -108,7 +108,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 父节点ID。可以调用DescribeOrganizationNodes获取
+                     * 父节点ID。可以通过[DescribeOrganizationNodes](https://cloud.tencent.com/document/product/850/82926)获取
                      */
                     uint64_t m_parentNodeId;
                     bool m_parentNodeIdHasBeenSet;

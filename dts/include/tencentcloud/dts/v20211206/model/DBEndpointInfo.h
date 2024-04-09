@@ -252,6 +252,31 @@ namespace TencentCloud
                      */
                     bool DatabaseNetEnvHasBeenSet() const;
 
+                    /**
+                     * 获取tdsql连接方式：proxy-通过tdsql proxy主机访问各个set节点，注意只有在自研上云的网络环境下才能通过这种方式连接，Info中只需要提供proxy主机信息。set-直连set节点，如选择直连set方式，Info中需要正确填写proxy主机信息及所有set节点信息。源端是tdsqlmysql类型必填。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return ConnectType tdsql连接方式：proxy-通过tdsql proxy主机访问各个set节点，注意只有在自研上云的网络环境下才能通过这种方式连接，Info中只需要提供proxy主机信息。set-直连set节点，如选择直连set方式，Info中需要正确填写proxy主机信息及所有set节点信息。源端是tdsqlmysql类型必填。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::string GetConnectType() const;
+
+                    /**
+                     * 设置tdsql连接方式：proxy-通过tdsql proxy主机访问各个set节点，注意只有在自研上云的网络环境下才能通过这种方式连接，Info中只需要提供proxy主机信息。set-直连set节点，如选择直连set方式，Info中需要正确填写proxy主机信息及所有set节点信息。源端是tdsqlmysql类型必填。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _connectType tdsql连接方式：proxy-通过tdsql proxy主机访问各个set节点，注意只有在自研上云的网络环境下才能通过这种方式连接，Info中只需要提供proxy主机信息。set-直连set节点，如选择直连set方式，Info中需要正确填写proxy主机信息及所有set节点信息。源端是tdsqlmysql类型必填。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetConnectType(const std::string& _connectType);
+
+                    /**
+                     * 判断参数 ConnectType 是否已赋值
+                     * @return ConnectType 是否已赋值
+                     * 
+                     */
+                    bool ConnectTypeHasBeenSet() const;
+
                 private:
 
                     /**
@@ -310,6 +335,13 @@ namespace TencentCloud
                      */
                     std::string m_databaseNetEnv;
                     bool m_databaseNetEnvHasBeenSet;
+
+                    /**
+                     * tdsql连接方式：proxy-通过tdsql proxy主机访问各个set节点，注意只有在自研上云的网络环境下才能通过这种方式连接，Info中只需要提供proxy主机信息。set-直连set节点，如选择直连set方式，Info中需要正确填写proxy主机信息及所有set节点信息。源端是tdsqlmysql类型必填。
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_connectType;
+                    bool m_connectTypeHasBeenSet;
 
                 };
             }

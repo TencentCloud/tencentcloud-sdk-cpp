@@ -43,15 +43,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取身份ID
-                     * @return IdentityId 身份ID
+                     * 获取身份ID。可以通过[ListOrganizationIdentity](https://cloud.tencent.com/document/product/850/82934)获取
+                     * @return IdentityId 身份ID。可以通过[ListOrganizationIdentity](https://cloud.tencent.com/document/product/850/82934)获取
                      * 
                      */
                     uint64_t GetIdentityId() const;
 
                     /**
-                     * 设置身份ID
-                     * @param _identityId 身份ID
+                     * 设置身份ID。可以通过[ListOrganizationIdentity](https://cloud.tencent.com/document/product/850/82934)获取
+                     * @param _identityId 身份ID。可以通过[ListOrganizationIdentity](https://cloud.tencent.com/document/product/850/82934)获取
                      * 
                      */
                     void SetIdentityId(const uint64_t& _identityId);
@@ -66,7 +66,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 身份ID
+                     * 身份ID。可以通过[ListOrganizationIdentity](https://cloud.tencent.com/document/product/850/82934)获取
                      */
                     uint64_t m_identityId;
                     bool m_identityIdHasBeenSet;

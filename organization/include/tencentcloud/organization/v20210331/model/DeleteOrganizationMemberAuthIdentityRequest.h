@@ -43,15 +43,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取成员uin。
-                     * @return MemberUin 成员uin。
+                     * 获取成员Uin。
+                     * @return MemberUin 成员Uin。
                      * 
                      */
                     uint64_t GetMemberUin() const;
 
                     /**
-                     * 设置成员uin。
-                     * @param _memberUin 成员uin。
+                     * 设置成员Uin。
+                     * @param _memberUin 成员Uin。
                      * 
                      */
                     void SetMemberUin(const uint64_t& _memberUin);
@@ -64,15 +64,15 @@ namespace TencentCloud
                     bool MemberUinHasBeenSet() const;
 
                     /**
-                     * 获取身份Id。
-                     * @return IdentityId 身份Id。
+                     * 获取身份ID。可以通过[ListOrganizationIdentity](https://cloud.tencent.com/document/product/850/82934)获取
+                     * @return IdentityId 身份ID。可以通过[ListOrganizationIdentity](https://cloud.tencent.com/document/product/850/82934)获取
                      * 
                      */
                     uint64_t GetIdentityId() const;
 
                     /**
-                     * 设置身份Id。
-                     * @param _identityId 身份Id。
+                     * 设置身份ID。可以通过[ListOrganizationIdentity](https://cloud.tencent.com/document/product/850/82934)获取
+                     * @param _identityId 身份ID。可以通过[ListOrganizationIdentity](https://cloud.tencent.com/document/product/850/82934)获取
                      * 
                      */
                     void SetIdentityId(const uint64_t& _identityId);
@@ -87,13 +87,13 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 成员uin。
+                     * 成员Uin。
                      */
                     uint64_t m_memberUin;
                     bool m_memberUinHasBeenSet;
 
                     /**
-                     * 身份Id。
+                     * 身份ID。可以通过[ListOrganizationIdentity](https://cloud.tencent.com/document/product/850/82934)获取
                      */
                     uint64_t m_identityId;
                     bool m_identityIdHasBeenSet;

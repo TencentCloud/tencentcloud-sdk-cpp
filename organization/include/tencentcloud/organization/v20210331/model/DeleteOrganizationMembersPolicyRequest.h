@@ -43,15 +43,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取访问策略ID。
-                     * @return PolicyId 访问策略ID。
+                     * 获取访问策略ID。可以通过[DescribeOrganizationMemberPolicies](https://cloud.tencent.com/document/product/850/82935)获取
+                     * @return PolicyId 访问策略ID。可以通过[DescribeOrganizationMemberPolicies](https://cloud.tencent.com/document/product/850/82935)获取
                      * 
                      */
                     uint64_t GetPolicyId() const;
 
                     /**
-                     * 设置访问策略ID。
-                     * @param _policyId 访问策略ID。
+                     * 设置访问策略ID。可以通过[DescribeOrganizationMemberPolicies](https://cloud.tencent.com/document/product/850/82935)获取
+                     * @param _policyId 访问策略ID。可以通过[DescribeOrganizationMemberPolicies](https://cloud.tencent.com/document/product/850/82935)获取
                      * 
                      */
                     void SetPolicyId(const uint64_t& _policyId);
@@ -66,7 +66,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 访问策略ID。
+                     * 访问策略ID。可以通过[DescribeOrganizationMemberPolicies](https://cloud.tencent.com/document/product/850/82935)获取
                      */
                     uint64_t m_policyId;
                     bool m_policyIdHasBeenSet;

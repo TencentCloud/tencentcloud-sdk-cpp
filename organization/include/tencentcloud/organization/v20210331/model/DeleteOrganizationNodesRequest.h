@@ -43,15 +43,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取节点ID列表。
-                     * @return NodeId 节点ID列表。
+                     * 获取节点ID列表。可以通过[DescribeOrganizationNodes](https://cloud.tencent.com/document/product/850/82926)获取
+                     * @return NodeId 节点ID列表。可以通过[DescribeOrganizationNodes](https://cloud.tencent.com/document/product/850/82926)获取
                      * 
                      */
                     std::vector<int64_t> GetNodeId() const;
 
                     /**
-                     * 设置节点ID列表。
-                     * @param _nodeId 节点ID列表。
+                     * 设置节点ID列表。可以通过[DescribeOrganizationNodes](https://cloud.tencent.com/document/product/850/82926)获取
+                     * @param _nodeId 节点ID列表。可以通过[DescribeOrganizationNodes](https://cloud.tencent.com/document/product/850/82926)获取
                      * 
                      */
                     void SetNodeId(const std::vector<int64_t>& _nodeId);
@@ -66,7 +66,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 节点ID列表。
+                     * 节点ID列表。可以通过[DescribeOrganizationNodes](https://cloud.tencent.com/document/product/850/82926)获取
                      */
                     std::vector<int64_t> m_nodeId;
                     bool m_nodeIdHasBeenSet;

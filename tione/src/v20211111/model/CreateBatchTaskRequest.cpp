@@ -41,7 +41,8 @@ CreateBatchTaskRequest::CreateBatchTaskRequest() :
     m_vpcIdHasBeenSet(false),
     m_subnetIdHasBeenSet(false),
     m_remarkHasBeenSet(false),
-    m_callbackUrlHasBeenSet(false)
+    m_callbackUrlHasBeenSet(false),
+    m_startCmdBase64HasBeenSet(false)
 {
 }
 
@@ -229,6 +230,14 @@ string CreateBatchTaskRequest::ToJsonString() const
         string key = "CallbackUrl";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_callbackUrl.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_startCmdBase64HasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "StartCmdBase64";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_startCmdBase64.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -541,6 +550,22 @@ void CreateBatchTaskRequest::SetCallbackUrl(const string& _callbackUrl)
 bool CreateBatchTaskRequest::CallbackUrlHasBeenSet() const
 {
     return m_callbackUrlHasBeenSet;
+}
+
+string CreateBatchTaskRequest::GetStartCmdBase64() const
+{
+    return m_startCmdBase64;
+}
+
+void CreateBatchTaskRequest::SetStartCmdBase64(const string& _startCmdBase64)
+{
+    m_startCmdBase64 = _startCmdBase64;
+    m_startCmdBase64HasBeenSet = true;
+}
+
+bool CreateBatchTaskRequest::StartCmdBase64HasBeenSet() const
+{
+    return m_startCmdBase64HasBeenSet;
 }
 
 
