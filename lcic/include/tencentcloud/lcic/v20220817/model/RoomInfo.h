@@ -468,14 +468,18 @@ namespace TencentCloud
 
                     /**
                      * 获取房间类型: 0 小班课（默认值）; 1 大班课; 2 1V1 (后续扩展)
+注：大班课的布局(layout)只有三分屏
                      * @return RoomType 房间类型: 0 小班课（默认值）; 1 大班课; 2 1V1 (后续扩展)
+注：大班课的布局(layout)只有三分屏
                      * 
                      */
                     int64_t GetRoomType() const;
 
                     /**
                      * 设置房间类型: 0 小班课（默认值）; 1 大班课; 2 1V1 (后续扩展)
+注：大班课的布局(layout)只有三分屏
                      * @param _roomType 房间类型: 0 小班课（默认值）; 1 大班课; 2 1V1 (后续扩展)
+注：大班课的布局(layout)只有三分屏
                      * 
                      */
                     void SetRoomType(const int64_t& _roomType);
@@ -758,6 +762,7 @@ namespace TencentCloud
 
                     /**
                      * 房间类型: 0 小班课（默认值）; 1 大班课; 2 1V1 (后续扩展)
+注：大班课的布局(layout)只有三分屏
                      */
                     int64_t m_roomType;
                     bool m_roomTypeHasBeenSet;

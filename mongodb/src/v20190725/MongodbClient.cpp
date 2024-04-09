@@ -943,6 +943,49 @@ MongodbClient::DescribeSpecInfoOutcomeCallable MongodbClient::DescribeSpecInfoCa
     return task->get_future();
 }
 
+MongodbClient::FlashBackDBInstanceOutcome MongodbClient::FlashBackDBInstance(const FlashBackDBInstanceRequest &request)
+{
+    auto outcome = MakeRequest(request, "FlashBackDBInstance");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        FlashBackDBInstanceResponse rsp = FlashBackDBInstanceResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return FlashBackDBInstanceOutcome(rsp);
+        else
+            return FlashBackDBInstanceOutcome(o.GetError());
+    }
+    else
+    {
+        return FlashBackDBInstanceOutcome(outcome.GetError());
+    }
+}
+
+void MongodbClient::FlashBackDBInstanceAsync(const FlashBackDBInstanceRequest& request, const FlashBackDBInstanceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->FlashBackDBInstance(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+MongodbClient::FlashBackDBInstanceOutcomeCallable MongodbClient::FlashBackDBInstanceCallable(const FlashBackDBInstanceRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<FlashBackDBInstanceOutcome()>>(
+        [this, request]()
+        {
+            return this->FlashBackDBInstance(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 MongodbClient::FlushInstanceRouterConfigOutcome MongodbClient::FlushInstanceRouterConfig(const FlushInstanceRouterConfigRequest &request)
 {
     auto outcome = MakeRequest(request, "FlushInstanceRouterConfig");

@@ -64,15 +64,39 @@ namespace TencentCloud
                     bool InstanceIdsHasBeenSet() const;
 
                     /**
-                     * 获取自动续费标识。取值范围：<br><li>NOTIFY_AND_AUTO_RENEW：通知过期且自动续费<br><li>NOTIFY_AND_MANUAL_RENEW：通知过期不自动续费<br><li>DISABLE_NOTIFY_AND_MANUAL_RENEW：不通知过期不自动续费<br><br>若该参数指定为NOTIFY_AND_AUTO_RENEW，在账户余额充足的情况下，实例到期后将按月自动续费。
-                     * @return RenewFlag 自动续费标识。取值范围：<br><li>NOTIFY_AND_AUTO_RENEW：通知过期且自动续费<br><li>NOTIFY_AND_MANUAL_RENEW：通知过期不自动续费<br><li>DISABLE_NOTIFY_AND_MANUAL_RENEW：不通知过期不自动续费<br><br>若该参数指定为NOTIFY_AND_AUTO_RENEW，在账户余额充足的情况下，实例到期后将按月自动续费。
+                     * 获取自动续费标识。取值范围：
+
+- NOTIFY_AND_AUTO_RENEW：通知过期且自动续费
+- NOTIFY_AND_MANUAL_RENEW：通知过期不自动续费
+- DISABLE_NOTIFY_AND_MANUAL_RENEW：不通知过期不自动续费
+
+若该参数指定为NOTIFY_AND_AUTO_RENEW，在账户余额充足的情况下，实例到期后将按月自动续费。
+                     * @return RenewFlag 自动续费标识。取值范围：
+
+- NOTIFY_AND_AUTO_RENEW：通知过期且自动续费
+- NOTIFY_AND_MANUAL_RENEW：通知过期不自动续费
+- DISABLE_NOTIFY_AND_MANUAL_RENEW：不通知过期不自动续费
+
+若该参数指定为NOTIFY_AND_AUTO_RENEW，在账户余额充足的情况下，实例到期后将按月自动续费。
                      * 
                      */
                     std::string GetRenewFlag() const;
 
                     /**
-                     * 设置自动续费标识。取值范围：<br><li>NOTIFY_AND_AUTO_RENEW：通知过期且自动续费<br><li>NOTIFY_AND_MANUAL_RENEW：通知过期不自动续费<br><li>DISABLE_NOTIFY_AND_MANUAL_RENEW：不通知过期不自动续费<br><br>若该参数指定为NOTIFY_AND_AUTO_RENEW，在账户余额充足的情况下，实例到期后将按月自动续费。
-                     * @param _renewFlag 自动续费标识。取值范围：<br><li>NOTIFY_AND_AUTO_RENEW：通知过期且自动续费<br><li>NOTIFY_AND_MANUAL_RENEW：通知过期不自动续费<br><li>DISABLE_NOTIFY_AND_MANUAL_RENEW：不通知过期不自动续费<br><br>若该参数指定为NOTIFY_AND_AUTO_RENEW，在账户余额充足的情况下，实例到期后将按月自动续费。
+                     * 设置自动续费标识。取值范围：
+
+- NOTIFY_AND_AUTO_RENEW：通知过期且自动续费
+- NOTIFY_AND_MANUAL_RENEW：通知过期不自动续费
+- DISABLE_NOTIFY_AND_MANUAL_RENEW：不通知过期不自动续费
+
+若该参数指定为NOTIFY_AND_AUTO_RENEW，在账户余额充足的情况下，实例到期后将按月自动续费。
+                     * @param _renewFlag 自动续费标识。取值范围：
+
+- NOTIFY_AND_AUTO_RENEW：通知过期且自动续费
+- NOTIFY_AND_MANUAL_RENEW：通知过期不自动续费
+- DISABLE_NOTIFY_AND_MANUAL_RENEW：不通知过期不自动续费
+
+若该参数指定为NOTIFY_AND_AUTO_RENEW，在账户余额充足的情况下，实例到期后将按月自动续费。
                      * 
                      */
                     void SetRenewFlag(const std::string& _renewFlag);
@@ -93,7 +117,13 @@ namespace TencentCloud
                     bool m_instanceIdsHasBeenSet;
 
                     /**
-                     * 自动续费标识。取值范围：<br><li>NOTIFY_AND_AUTO_RENEW：通知过期且自动续费<br><li>NOTIFY_AND_MANUAL_RENEW：通知过期不自动续费<br><li>DISABLE_NOTIFY_AND_MANUAL_RENEW：不通知过期不自动续费<br><br>若该参数指定为NOTIFY_AND_AUTO_RENEW，在账户余额充足的情况下，实例到期后将按月自动续费。
+                     * 自动续费标识。取值范围：
+
+- NOTIFY_AND_AUTO_RENEW：通知过期且自动续费
+- NOTIFY_AND_MANUAL_RENEW：通知过期不自动续费
+- DISABLE_NOTIFY_AND_MANUAL_RENEW：不通知过期不自动续费
+
+若该参数指定为NOTIFY_AND_AUTO_RENEW，在账户余额充足的情况下，实例到期后将按月自动续费。
                      */
                     std::string m_renewFlag;
                     bool m_renewFlagHasBeenSet;

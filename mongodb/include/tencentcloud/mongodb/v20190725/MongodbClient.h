@@ -65,6 +65,8 @@
 #include <tencentcloud/mongodb/v20190725/model/DescribeSlowLogsResponse.h>
 #include <tencentcloud/mongodb/v20190725/model/DescribeSpecInfoRequest.h>
 #include <tencentcloud/mongodb/v20190725/model/DescribeSpecInfoResponse.h>
+#include <tencentcloud/mongodb/v20190725/model/FlashBackDBInstanceRequest.h>
+#include <tencentcloud/mongodb/v20190725/model/FlashBackDBInstanceResponse.h>
 #include <tencentcloud/mongodb/v20190725/model/FlushInstanceRouterConfigRequest.h>
 #include <tencentcloud/mongodb/v20190725/model/FlushInstanceRouterConfigResponse.h>
 #include <tencentcloud/mongodb/v20190725/model/InquirePriceCreateDBInstancesRequest.h>
@@ -174,6 +176,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeSpecInfoResponse> DescribeSpecInfoOutcome;
                 typedef std::future<DescribeSpecInfoOutcome> DescribeSpecInfoOutcomeCallable;
                 typedef std::function<void(const MongodbClient*, const Model::DescribeSpecInfoRequest&, DescribeSpecInfoOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeSpecInfoAsyncHandler;
+                typedef Outcome<Core::Error, Model::FlashBackDBInstanceResponse> FlashBackDBInstanceOutcome;
+                typedef std::future<FlashBackDBInstanceOutcome> FlashBackDBInstanceOutcomeCallable;
+                typedef std::function<void(const MongodbClient*, const Model::FlashBackDBInstanceRequest&, FlashBackDBInstanceOutcome, const std::shared_ptr<const AsyncCallerContext>&)> FlashBackDBInstanceAsyncHandler;
                 typedef Outcome<Core::Error, Model::FlushInstanceRouterConfigResponse> FlushInstanceRouterConfigOutcome;
                 typedef std::future<FlushInstanceRouterConfigOutcome> FlushInstanceRouterConfigOutcomeCallable;
                 typedef std::function<void(const MongodbClient*, const Model::FlushInstanceRouterConfigRequest&, FlushInstanceRouterConfigOutcome, const std::shared_ptr<const AsyncCallerContext>&)> FlushInstanceRouterConfigAsyncHandler;
@@ -414,6 +419,16 @@ namespace TencentCloud
                 DescribeSpecInfoOutcome DescribeSpecInfo(const Model::DescribeSpecInfoRequest &request);
                 void DescribeSpecInfoAsync(const Model::DescribeSpecInfoRequest& request, const DescribeSpecInfoAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DescribeSpecInfoOutcomeCallable DescribeSpecInfoCallable(const Model::DescribeSpecInfoRequest& request);
+
+                /**
+                 *该接口用于发起按 Key 闪回任务，依据数据的闪回 Key（默认为 id）对数据进行极速回档，快速恢复业务。
+**说明：按 Key 闪回于2023年09月11日正式进行公测，在此期间，该接口仅对公测用户开放。**
+                 * @param req FlashBackDBInstanceRequest
+                 * @return FlashBackDBInstanceOutcome
+                 */
+                FlashBackDBInstanceOutcome FlashBackDBInstance(const Model::FlashBackDBInstanceRequest &request);
+                void FlashBackDBInstanceAsync(const Model::FlashBackDBInstanceRequest& request, const FlashBackDBInstanceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                FlashBackDBInstanceOutcomeCallable FlashBackDBInstanceCallable(const Model::FlashBackDBInstanceRequest& request);
 
                 /**
                  *在所有mongos上执行FlushRouterConfig命令

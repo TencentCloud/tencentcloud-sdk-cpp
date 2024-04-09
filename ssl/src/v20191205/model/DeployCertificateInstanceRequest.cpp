@@ -26,7 +26,8 @@ DeployCertificateInstanceRequest::DeployCertificateInstanceRequest() :
     m_certificateIdHasBeenSet(false),
     m_instanceIdListHasBeenSet(false),
     m_resourceTypeHasBeenSet(false),
-    m_statusHasBeenSet(false)
+    m_statusHasBeenSet(false),
+    m_isCacheHasBeenSet(false)
 {
 }
 
@@ -72,6 +73,14 @@ string DeployCertificateInstanceRequest::ToJsonString() const
         string key = "Status";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_status, allocator);
+    }
+
+    if (m_isCacheHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "IsCache";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_isCache, allocator);
     }
 
 
@@ -144,6 +153,22 @@ void DeployCertificateInstanceRequest::SetStatus(const int64_t& _status)
 bool DeployCertificateInstanceRequest::StatusHasBeenSet() const
 {
     return m_statusHasBeenSet;
+}
+
+uint64_t DeployCertificateInstanceRequest::GetIsCache() const
+{
+    return m_isCache;
+}
+
+void DeployCertificateInstanceRequest::SetIsCache(const uint64_t& _isCache)
+{
+    m_isCache = _isCache;
+    m_isCacheHasBeenSet = true;
+}
+
+bool DeployCertificateInstanceRequest::IsCacheHasBeenSet() const
+{
+    return m_isCacheHasBeenSet;
 }
 
 

@@ -30,7 +30,8 @@ ChannelCreateUserAutoSignEnableUrlRequest::ChannelCreateUserAutoSignEnableUrlReq
     m_urlTypeHasBeenSet(false),
     m_notifyTypeHasBeenSet(false),
     m_notifyAddressHasBeenSet(false),
-    m_expiredTimeHasBeenSet(false)
+    m_expiredTimeHasBeenSet(false),
+    m_userDataHasBeenSet(false)
 {
 }
 
@@ -106,6 +107,14 @@ string ChannelCreateUserAutoSignEnableUrlRequest::ToJsonString() const
         string key = "ExpiredTime";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_expiredTime, allocator);
+    }
+
+    if (m_userDataHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "UserData";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_userData.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -242,6 +251,22 @@ void ChannelCreateUserAutoSignEnableUrlRequest::SetExpiredTime(const int64_t& _e
 bool ChannelCreateUserAutoSignEnableUrlRequest::ExpiredTimeHasBeenSet() const
 {
     return m_expiredTimeHasBeenSet;
+}
+
+string ChannelCreateUserAutoSignEnableUrlRequest::GetUserData() const
+{
+    return m_userData;
+}
+
+void ChannelCreateUserAutoSignEnableUrlRequest::SetUserData(const string& _userData)
+{
+    m_userData = _userData;
+    m_userDataHasBeenSet = true;
+}
+
+bool ChannelCreateUserAutoSignEnableUrlRequest::UserDataHasBeenSet() const
+{
+    return m_userDataHasBeenSet;
 }
 
 

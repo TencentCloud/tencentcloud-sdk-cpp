@@ -27,7 +27,8 @@ AutoSignConfig::AutoSignConfig() :
     m_sealImgCallbackHasBeenSet(false),
     m_callbackUrlHasBeenSet(false),
     m_verifyChannelsHasBeenSet(false),
-    m_licenseTypeHasBeenSet(false)
+    m_licenseTypeHasBeenSet(false),
+    m_jumpUrlHasBeenSet(false)
 {
 }
 
@@ -116,6 +117,16 @@ CoreInternalOutcome AutoSignConfig::Deserialize(const rapidjson::Value &value)
         m_licenseTypeHasBeenSet = true;
     }
 
+    if (value.HasMember("JumpUrl") && !value["JumpUrl"].IsNull())
+    {
+        if (!value["JumpUrl"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `AutoSignConfig.JumpUrl` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_jumpUrl = string(value["JumpUrl"].GetString());
+        m_jumpUrlHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -183,6 +194,14 @@ void AutoSignConfig::ToJsonObject(rapidjson::Value &value, rapidjson::Document::
         string key = "LicenseType";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_licenseType, allocator);
+    }
+
+    if (m_jumpUrlHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "JumpUrl";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_jumpUrl.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -298,5 +317,21 @@ void AutoSignConfig::SetLicenseType(const int64_t& _licenseType)
 bool AutoSignConfig::LicenseTypeHasBeenSet() const
 {
     return m_licenseTypeHasBeenSet;
+}
+
+string AutoSignConfig::GetJumpUrl() const
+{
+    return m_jumpUrl;
+}
+
+void AutoSignConfig::SetJumpUrl(const string& _jumpUrl)
+{
+    m_jumpUrl = _jumpUrl;
+    m_jumpUrlHasBeenSet = true;
+}
+
+bool AutoSignConfig::JumpUrlHasBeenSet() const
+{
+    return m_jumpUrlHasBeenSet;
 }
 

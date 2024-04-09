@@ -142,6 +142,27 @@ namespace TencentCloud
                      */
                     bool StatusHasBeenSet() const;
 
+                    /**
+                     * 获取是否查询缓存，1：是； 0：否， 默认为查询缓存，缓存半小时
+                     * @return IsCache 是否查询缓存，1：是； 0：否， 默认为查询缓存，缓存半小时
+                     * 
+                     */
+                    uint64_t GetIsCache() const;
+
+                    /**
+                     * 设置是否查询缓存，1：是； 0：否， 默认为查询缓存，缓存半小时
+                     * @param _isCache 是否查询缓存，1：是； 0：否， 默认为查询缓存，缓存半小时
+                     * 
+                     */
+                    void SetIsCache(const uint64_t& _isCache);
+
+                    /**
+                     * 判断参数 IsCache 是否已赋值
+                     * @return IsCache 是否已赋值
+                     * 
+                     */
+                    bool IsCacheHasBeenSet() const;
+
                 private:
 
                     /**
@@ -171,6 +192,12 @@ namespace TencentCloud
                      */
                     int64_t m_status;
                     bool m_statusHasBeenSet;
+
+                    /**
+                     * 是否查询缓存，1：是； 0：否， 默认为查询缓存，缓存半小时
+                     */
+                    uint64_t m_isCache;
+                    bool m_isCacheHasBeenSet;
 
                 };
             }
