@@ -48,14 +48,18 @@ namespace TencentCloud
 
                     /**
                      * 获取过滤的项
+注意：此字段可能返回 null，表示取不到有效值。
                      * @return Name 过滤的项
+注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetName() const;
 
                     /**
                      * 设置过滤的项
+注意：此字段可能返回 null，表示取不到有效值。
                      * @param _name 过滤的项
+注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetName(const std::string& _name);
@@ -69,14 +73,18 @@ namespace TencentCloud
 
                     /**
                      * 获取过滤的值
+注意：此字段可能返回 null，表示取不到有效值。
                      * @return Values 过滤的值
+注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<std::string> GetValues() const;
 
                     /**
                      * 设置过滤的值
+注意：此字段可能返回 null，表示取不到有效值。
                      * @param _values 过滤的值
+注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetValues(const std::vector<std::string>& _values);
@@ -93,10 +101,12 @@ namespace TencentCloud
 1等于 2大于 3小于 4大于等于 5小于等于 6不等于 9模糊匹配 13非模糊匹配 14按位与
 精确匹配填 7 模糊匹配填9 
 
+注意：此字段可能返回 null，表示取不到有效值。
                      * @return OperatorType 中台定义：
 1等于 2大于 3小于 4大于等于 5小于等于 6不等于 9模糊匹配 13非模糊匹配 14按位与
 精确匹配填 7 模糊匹配填9 
 
+注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetOperatorType() const;
@@ -106,10 +116,12 @@ namespace TencentCloud
 1等于 2大于 3小于 4大于等于 5小于等于 6不等于 9模糊匹配 13非模糊匹配 14按位与
 精确匹配填 7 模糊匹配填9 
 
+注意：此字段可能返回 null，表示取不到有效值。
                      * @param _operatorType 中台定义：
 1等于 2大于 3小于 4大于等于 5小于等于 6不等于 9模糊匹配 13非模糊匹配 14按位与
 精确匹配填 7 模糊匹配填9 
 
+注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetOperatorType(const int64_t& _operatorType);
@@ -125,12 +137,14 @@ namespace TencentCloud
 
                     /**
                      * 过滤的项
+注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_name;
                     bool m_nameHasBeenSet;
 
                     /**
                      * 过滤的值
+注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<std::string> m_values;
                     bool m_valuesHasBeenSet;
@@ -140,6 +154,7 @@ namespace TencentCloud
 1等于 2大于 3小于 4大于等于 5小于等于 6不等于 9模糊匹配 13非模糊匹配 14按位与
 精确匹配填 7 模糊匹配填9 
 
+注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_operatorType;
                     bool m_operatorTypeHasBeenSet;

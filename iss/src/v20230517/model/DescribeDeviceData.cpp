@@ -46,7 +46,9 @@ DescribeDeviceData::DescribeDeviceData() :
     m_portHasBeenSet(false),
     m_usernameHasBeenSet(false),
     m_regionHasBeenSet(false),
-    m_manufacturerHasBeenSet(false)
+    m_manufacturerHasBeenSet(false),
+    m_audioSwitchHasBeenSet(false),
+    m_subscribeSwitchHasBeenSet(false)
 {
 }
 
@@ -315,6 +317,26 @@ CoreInternalOutcome DescribeDeviceData::Deserialize(const rapidjson::Value &valu
         m_manufacturerHasBeenSet = true;
     }
 
+    if (value.HasMember("AudioSwitch") && !value["AudioSwitch"].IsNull())
+    {
+        if (!value["AudioSwitch"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `DescribeDeviceData.AudioSwitch` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_audioSwitch = value["AudioSwitch"].GetInt64();
+        m_audioSwitchHasBeenSet = true;
+    }
+
+    if (value.HasMember("SubscribeSwitch") && !value["SubscribeSwitch"].IsNull())
+    {
+        if (!value["SubscribeSwitch"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `DescribeDeviceData.SubscribeSwitch` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_subscribeSwitch = value["SubscribeSwitch"].GetInt64();
+        m_subscribeSwitchHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -528,6 +550,22 @@ void DescribeDeviceData::ToJsonObject(rapidjson::Value &value, rapidjson::Docume
         string key = "Manufacturer";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_manufacturer.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_audioSwitchHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "AudioSwitch";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_audioSwitch, allocator);
+    }
+
+    if (m_subscribeSwitchHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "SubscribeSwitch";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_subscribeSwitch, allocator);
     }
 
 }
@@ -947,5 +985,37 @@ void DescribeDeviceData::SetManufacturer(const string& _manufacturer)
 bool DescribeDeviceData::ManufacturerHasBeenSet() const
 {
     return m_manufacturerHasBeenSet;
+}
+
+int64_t DescribeDeviceData::GetAudioSwitch() const
+{
+    return m_audioSwitch;
+}
+
+void DescribeDeviceData::SetAudioSwitch(const int64_t& _audioSwitch)
+{
+    m_audioSwitch = _audioSwitch;
+    m_audioSwitchHasBeenSet = true;
+}
+
+bool DescribeDeviceData::AudioSwitchHasBeenSet() const
+{
+    return m_audioSwitchHasBeenSet;
+}
+
+int64_t DescribeDeviceData::GetSubscribeSwitch() const
+{
+    return m_subscribeSwitch;
+}
+
+void DescribeDeviceData::SetSubscribeSwitch(const int64_t& _subscribeSwitch)
+{
+    m_subscribeSwitch = _subscribeSwitch;
+    m_subscribeSwitchHasBeenSet = true;
+}
+
+bool DescribeDeviceData::SubscribeSwitchHasBeenSet() const
+{
+    return m_subscribeSwitchHasBeenSet;
 }
 

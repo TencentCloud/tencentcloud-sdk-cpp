@@ -71,18 +71,18 @@ namespace TencentCloud
                     bool RecordUrlHasBeenSet() const;
 
                     /**
-                     * 获取录制最大时长限制， 单位 s, 合法取值范围[0, 36000], 默认 36000s(10 小时)
+                     * 获取录制最大时长限制， 单位 s, 合法取值范围[1800, 36000], 默认 36000s(10 小时)
 
-                     * @return MaxDurationLimit 录制最大时长限制， 单位 s, 合法取值范围[0, 36000], 默认 36000s(10 小时)
+                     * @return MaxDurationLimit 录制最大时长限制， 单位 s, 合法取值范围[1800, 36000], 默认 36000s(10 小时)
 
                      * 
                      */
                     uint64_t GetMaxDurationLimit() const;
 
                     /**
-                     * 设置录制最大时长限制， 单位 s, 合法取值范围[0, 36000], 默认 36000s(10 小时)
+                     * 设置录制最大时长限制， 单位 s, 合法取值范围[1800, 36000], 默认 36000s(10 小时)
 
-                     * @param _maxDurationLimit 录制最大时长限制， 单位 s, 合法取值范围[0, 36000], 默认 36000s(10 小时)
+                     * @param _maxDurationLimit 录制最大时长限制， 单位 s, 合法取值范围[1800, 36000], 默认 36000s(10 小时)
 
                      * 
                      */
@@ -214,7 +214,7 @@ namespace TencentCloud
                     bool m_recordUrlHasBeenSet;
 
                     /**
-                     * 录制最大时长限制， 单位 s, 合法取值范围[0, 36000], 默认 36000s(10 小时)
+                     * 录制最大时长限制， 单位 s, 合法取值范围[1800, 36000], 默认 36000s(10 小时)
 
                      */
                     uint64_t m_maxDurationLimit;

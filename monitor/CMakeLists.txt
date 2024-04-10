@@ -38,7 +38,6 @@ set(monitor_public_header_model
   include/tencentcloud/monitor/v20180724/model/CreatePrometheusMultiTenantInstancePostPayModeRequest.h
   include/tencentcloud/monitor/v20180724/model/DescribePolicyConditionListResponseDeprecatingInfo.h
   include/tencentcloud/monitor/v20180724/model/PrometheusTempModify.h
-  include/tencentcloud/monitor/v20180724/model/SendCustomAlarmMsgRequest.h
   include/tencentcloud/monitor/v20180724/model/UnBindingPolicyObjectRequest.h
   include/tencentcloud/monitor/v20180724/model/CommonNamespaceNew.h
   include/tencentcloud/monitor/v20180724/model/Tag.h
@@ -130,7 +129,6 @@ set(monitor_public_header_model
   include/tencentcloud/monitor/v20180724/model/UpdateGrafanaNotificationChannelResponse.h
   include/tencentcloud/monitor/v20180724/model/CreateExporterIntegrationResponse.h
   include/tencentcloud/monitor/v20180724/model/UnBindingAllPolicyObjectRequest.h
-  include/tencentcloud/monitor/v20180724/model/SendCustomAlarmMsgResponse.h
   include/tencentcloud/monitor/v20180724/model/AlarmPolicyCondition.h
   include/tencentcloud/monitor/v20180724/model/ModifyPolicyGroupCondition.h
   include/tencentcloud/monitor/v20180724/model/NoticeBindPolicys.h
@@ -490,7 +488,6 @@ set(monitor_src
   src/v20180724/model/CreatePrometheusMultiTenantInstancePostPayModeRequest.cpp
   src/v20180724/model/DescribePolicyConditionListResponseDeprecatingInfo.cpp
   src/v20180724/model/PrometheusTempModify.cpp
-  src/v20180724/model/SendCustomAlarmMsgRequest.cpp
   src/v20180724/model/UnBindingPolicyObjectRequest.cpp
   src/v20180724/model/CommonNamespaceNew.cpp
   src/v20180724/model/Tag.cpp
@@ -582,7 +579,6 @@ set(monitor_src
   src/v20180724/model/UpdateGrafanaNotificationChannelResponse.cpp
   src/v20180724/model/CreateExporterIntegrationResponse.cpp
   src/v20180724/model/UnBindingAllPolicyObjectRequest.cpp
-  src/v20180724/model/SendCustomAlarmMsgResponse.cpp
   src/v20180724/model/AlarmPolicyCondition.cpp
   src/v20180724/model/ModifyPolicyGroupCondition.cpp
   src/v20180724/model/NoticeBindPolicys.cpp

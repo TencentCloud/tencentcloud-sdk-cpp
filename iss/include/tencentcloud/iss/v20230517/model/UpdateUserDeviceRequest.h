@@ -231,6 +231,48 @@ namespace TencentCloud
                      */
                     bool ProtocolTypeHasBeenSet() const;
 
+                    /**
+                     * 获取音频关开（0：关闭；1：开启）默认开启，关闭时丢弃音频
+                     * @return AudioSwitch 音频关开（0：关闭；1：开启）默认开启，关闭时丢弃音频
+                     * 
+                     */
+                    int64_t GetAudioSwitch() const;
+
+                    /**
+                     * 设置音频关开（0：关闭；1：开启）默认开启，关闭时丢弃音频
+                     * @param _audioSwitch 音频关开（0：关闭；1：开启）默认开启，关闭时丢弃音频
+                     * 
+                     */
+                    void SetAudioSwitch(const int64_t& _audioSwitch);
+
+                    /**
+                     * 判断参数 AudioSwitch 是否已赋值
+                     * @return AudioSwitch 是否已赋值
+                     * 
+                     */
+                    bool AudioSwitchHasBeenSet() const;
+
+                    /**
+                     * 获取订阅开关（0：关闭；1：开启）默认开启，开启状态下会订阅设备通道变化，仅国标NVR设备有效
+                     * @return SubscribeSwitch 订阅开关（0：关闭；1：开启）默认开启，开启状态下会订阅设备通道变化，仅国标NVR设备有效
+                     * 
+                     */
+                    int64_t GetSubscribeSwitch() const;
+
+                    /**
+                     * 设置订阅开关（0：关闭；1：开启）默认开启，开启状态下会订阅设备通道变化，仅国标NVR设备有效
+                     * @param _subscribeSwitch 订阅开关（0：关闭；1：开启）默认开启，开启状态下会订阅设备通道变化，仅国标NVR设备有效
+                     * 
+                     */
+                    void SetSubscribeSwitch(const int64_t& _subscribeSwitch);
+
+                    /**
+                     * 判断参数 SubscribeSwitch 是否已赋值
+                     * @return SubscribeSwitch 是否已赋值
+                     * 
+                     */
+                    bool SubscribeSwitchHasBeenSet() const;
+
                 private:
 
                     /**
@@ -286,6 +328,18 @@ namespace TencentCloud
                      */
                     int64_t m_protocolType;
                     bool m_protocolTypeHasBeenSet;
+
+                    /**
+                     * 音频关开（0：关闭；1：开启）默认开启，关闭时丢弃音频
+                     */
+                    int64_t m_audioSwitch;
+                    bool m_audioSwitchHasBeenSet;
+
+                    /**
+                     * 订阅开关（0：关闭；1：开启）默认开启，开启状态下会订阅设备通道变化，仅国标NVR设备有效
+                     */
+                    int64_t m_subscribeSwitch;
+                    bool m_subscribeSwitchHasBeenSet;
 
                 };
             }

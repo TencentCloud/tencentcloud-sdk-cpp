@@ -23,7 +23,9 @@ using namespace TencentCloud::Trtc::V20190722::Model;
 using namespace std;
 
 DescribeWebRecordRequest::DescribeWebRecordRequest() :
-    m_taskIdHasBeenSet(false)
+    m_taskIdHasBeenSet(false),
+    m_sdkAppIdHasBeenSet(false),
+    m_recordIdHasBeenSet(false)
 {
 }
 
@@ -40,6 +42,22 @@ string DescribeWebRecordRequest::ToJsonString() const
         string key = "TaskId";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_taskId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_sdkAppIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "SdkAppId";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_sdkAppId, allocator);
+    }
+
+    if (m_recordIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "RecordId";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_recordId.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -64,6 +82,38 @@ void DescribeWebRecordRequest::SetTaskId(const string& _taskId)
 bool DescribeWebRecordRequest::TaskIdHasBeenSet() const
 {
     return m_taskIdHasBeenSet;
+}
+
+int64_t DescribeWebRecordRequest::GetSdkAppId() const
+{
+    return m_sdkAppId;
+}
+
+void DescribeWebRecordRequest::SetSdkAppId(const int64_t& _sdkAppId)
+{
+    m_sdkAppId = _sdkAppId;
+    m_sdkAppIdHasBeenSet = true;
+}
+
+bool DescribeWebRecordRequest::SdkAppIdHasBeenSet() const
+{
+    return m_sdkAppIdHasBeenSet;
+}
+
+string DescribeWebRecordRequest::GetRecordId() const
+{
+    return m_recordId;
+}
+
+void DescribeWebRecordRequest::SetRecordId(const string& _recordId)
+{
+    m_recordId = _recordId;
+    m_recordIdHasBeenSet = true;
+}
+
+bool DescribeWebRecordRequest::RecordIdHasBeenSet() const
+{
+    return m_recordIdHasBeenSet;
 }
 
 

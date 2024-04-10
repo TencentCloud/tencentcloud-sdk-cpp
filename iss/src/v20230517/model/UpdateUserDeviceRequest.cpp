@@ -31,7 +31,9 @@ UpdateUserDeviceRequest::UpdateUserDeviceRequest() :
     m_ipHasBeenSet(false),
     m_portHasBeenSet(false),
     m_usernameHasBeenSet(false),
-    m_protocolTypeHasBeenSet(false)
+    m_protocolTypeHasBeenSet(false),
+    m_audioSwitchHasBeenSet(false),
+    m_subscribeSwitchHasBeenSet(false)
 {
 }
 
@@ -112,6 +114,22 @@ string UpdateUserDeviceRequest::ToJsonString() const
         string key = "ProtocolType";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_protocolType, allocator);
+    }
+
+    if (m_audioSwitchHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "AudioSwitch";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_audioSwitch, allocator);
+    }
+
+    if (m_subscribeSwitchHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "SubscribeSwitch";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_subscribeSwitch, allocator);
     }
 
 
@@ -264,6 +282,38 @@ void UpdateUserDeviceRequest::SetProtocolType(const int64_t& _protocolType)
 bool UpdateUserDeviceRequest::ProtocolTypeHasBeenSet() const
 {
     return m_protocolTypeHasBeenSet;
+}
+
+int64_t UpdateUserDeviceRequest::GetAudioSwitch() const
+{
+    return m_audioSwitch;
+}
+
+void UpdateUserDeviceRequest::SetAudioSwitch(const int64_t& _audioSwitch)
+{
+    m_audioSwitch = _audioSwitch;
+    m_audioSwitchHasBeenSet = true;
+}
+
+bool UpdateUserDeviceRequest::AudioSwitchHasBeenSet() const
+{
+    return m_audioSwitchHasBeenSet;
+}
+
+int64_t UpdateUserDeviceRequest::GetSubscribeSwitch() const
+{
+    return m_subscribeSwitch;
+}
+
+void UpdateUserDeviceRequest::SetSubscribeSwitch(const int64_t& _subscribeSwitch)
+{
+    m_subscribeSwitch = _subscribeSwitch;
+    m_subscribeSwitchHasBeenSet = true;
+}
+
+bool UpdateUserDeviceRequest::SubscribeSwitchHasBeenSet() const
+{
+    return m_subscribeSwitchHasBeenSet;
 }
 
 

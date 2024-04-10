@@ -285,8 +285,6 @@
 #include <tencentcloud/monitor/v20180724/model/ResumeGrafanaInstanceResponse.h>
 #include <tencentcloud/monitor/v20180724/model/RunPrometheusInstanceRequest.h>
 #include <tencentcloud/monitor/v20180724/model/RunPrometheusInstanceResponse.h>
-#include <tencentcloud/monitor/v20180724/model/SendCustomAlarmMsgRequest.h>
-#include <tencentcloud/monitor/v20180724/model/SendCustomAlarmMsgResponse.h>
 #include <tencentcloud/monitor/v20180724/model/SetDefaultAlarmPolicyRequest.h>
 #include <tencentcloud/monitor/v20180724/model/SetDefaultAlarmPolicyResponse.h>
 #include <tencentcloud/monitor/v20180724/model/SyncPrometheusTempRequest.h>
@@ -746,9 +744,6 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::RunPrometheusInstanceResponse> RunPrometheusInstanceOutcome;
                 typedef std::future<RunPrometheusInstanceOutcome> RunPrometheusInstanceOutcomeCallable;
                 typedef std::function<void(const MonitorClient*, const Model::RunPrometheusInstanceRequest&, RunPrometheusInstanceOutcome, const std::shared_ptr<const AsyncCallerContext>&)> RunPrometheusInstanceAsyncHandler;
-                typedef Outcome<Core::Error, Model::SendCustomAlarmMsgResponse> SendCustomAlarmMsgOutcome;
-                typedef std::future<SendCustomAlarmMsgOutcome> SendCustomAlarmMsgOutcomeCallable;
-                typedef std::function<void(const MonitorClient*, const Model::SendCustomAlarmMsgRequest&, SendCustomAlarmMsgOutcome, const std::shared_ptr<const AsyncCallerContext>&)> SendCustomAlarmMsgAsyncHandler;
                 typedef Outcome<Core::Error, Model::SetDefaultAlarmPolicyResponse> SetDefaultAlarmPolicyOutcome;
                 typedef std::future<SetDefaultAlarmPolicyOutcome> SetDefaultAlarmPolicyOutcomeCallable;
                 typedef std::function<void(const MonitorClient*, const Model::SetDefaultAlarmPolicyRequest&, SetDefaultAlarmPolicyOutcome, const std::shared_ptr<const AsyncCallerContext>&)> SetDefaultAlarmPolicyAsyncHandler;
@@ -2034,15 +2029,6 @@ namespace TencentCloud
                 RunPrometheusInstanceOutcome RunPrometheusInstance(const Model::RunPrometheusInstanceRequest &request);
                 void RunPrometheusInstanceAsync(const Model::RunPrometheusInstanceRequest& request, const RunPrometheusInstanceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 RunPrometheusInstanceOutcomeCallable RunPrometheusInstanceCallable(const Model::RunPrometheusInstanceRequest& request);
-
-                /**
-                 *发送自定义消息告警
-                 * @param req SendCustomAlarmMsgRequest
-                 * @return SendCustomAlarmMsgOutcome
-                 */
-                SendCustomAlarmMsgOutcome SendCustomAlarmMsg(const Model::SendCustomAlarmMsgRequest &request);
-                void SendCustomAlarmMsgAsync(const Model::SendCustomAlarmMsgRequest& request, const SendCustomAlarmMsgAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
-                SendCustomAlarmMsgOutcomeCallable SendCustomAlarmMsgCallable(const Model::SendCustomAlarmMsgRequest& request);
 
                 /**
                  *设置一个策略为该告警策略类型、该项目的默认告警策略。
