@@ -45,6 +45,27 @@ namespace TencentCloud
 
 
                     /**
+                     * 获取索引名，需以-AppId结尾
+                     * @return IndexName 索引名，需以-AppId结尾
+                     * 
+                     */
+                    std::string GetIndexName() const;
+
+                    /**
+                     * 设置索引名，需以-AppId结尾
+                     * @param _indexName 索引名，需以-AppId结尾
+                     * 
+                     */
+                    void SetIndexName(const std::string& _indexName);
+
+                    /**
+                     * 判断参数 IndexName 是否已赋值
+                     * @return IndexName 是否已赋值
+                     * 
+                     */
+                    bool IndexNameHasBeenSet() const;
+
+                    /**
                      * 获取可用区
                      * @return Zone 可用区
                      * 
@@ -106,27 +127,6 @@ namespace TencentCloud
                      * 
                      */
                     bool SubnetIdHasBeenSet() const;
-
-                    /**
-                     * 获取索引名，需以-AppId结尾
-                     * @return IndexName 索引名，需以-AppId结尾
-                     * 
-                     */
-                    std::string GetIndexName() const;
-
-                    /**
-                     * 设置索引名，需以-AppId结尾
-                     * @param _indexName 索引名，需以-AppId结尾
-                     * 
-                     */
-                    void SetIndexName(const std::string& _indexName);
-
-                    /**
-                     * 判断参数 IndexName 是否已赋值
-                     * @return IndexName 是否已赋值
-                     * 
-                     */
-                    bool IndexNameHasBeenSet() const;
 
                     /**
                      * 获取创建的索引元数据JSON，如mappings、settings
@@ -299,6 +299,12 @@ namespace TencentCloud
                 private:
 
                     /**
+                     * 索引名，需以-AppId结尾
+                     */
+                    std::string m_indexName;
+                    bool m_indexNameHasBeenSet;
+
+                    /**
                      * 可用区
                      */
                     std::string m_zone;
@@ -315,12 +321,6 @@ namespace TencentCloud
                      */
                     std::string m_subnetId;
                     bool m_subnetIdHasBeenSet;
-
-                    /**
-                     * 索引名，需以-AppId结尾
-                     */
-                    std::string m_indexName;
-                    bool m_indexNameHasBeenSet;
 
                     /**
                      * 创建的索引元数据JSON，如mappings、settings

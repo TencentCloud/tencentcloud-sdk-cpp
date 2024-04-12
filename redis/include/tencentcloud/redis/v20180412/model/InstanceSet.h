@@ -1287,18 +1287,18 @@ namespace TencentCloud
                     bool CurrentProxyVersionHasBeenSet() const;
 
                     /**
-                     * 获取实例当前Cache小版本。
+                     * 获取实例当前Cache小版本。如果实例加入全球复制组，显示全球复制的内核版本。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return CurrentRedisVersion 实例当前Cache小版本。
+                     * @return CurrentRedisVersion 实例当前Cache小版本。如果实例加入全球复制组，显示全球复制的内核版本。
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetCurrentRedisVersion() const;
 
                     /**
-                     * 设置实例当前Cache小版本。
+                     * 设置实例当前Cache小版本。如果实例加入全球复制组，显示全球复制的内核版本。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _currentRedisVersion 实例当前Cache小版本。
+                     * @param _currentRedisVersion 实例当前Cache小版本。如果实例加入全球复制组，显示全球复制的内核版本。
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -1713,7 +1713,7 @@ namespace TencentCloud
                     bool m_currentProxyVersionHasBeenSet;
 
                     /**
-                     * 实例当前Cache小版本。
+                     * 实例当前Cache小版本。如果实例加入全球复制组，显示全球复制的内核版本。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_currentRedisVersion;

@@ -48,15 +48,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取schema id
-                     * @return Id schema id
+                     * 获取schema id 随机唯一
+                     * @return Id schema id 随机唯一
                      * 
                      */
                     std::string GetId() const;
 
                     /**
-                     * 设置schema id
-                     * @param _id schema id
+                     * 设置schema id 随机唯一
+                     * @param _id schema id 随机唯一
                      * 
                      */
                     void SetId(const std::string& _id);
@@ -213,7 +213,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * schema id
+                     * schema id 随机唯一
                      */
                     std::string m_id;
                     bool m_idHasBeenSet;

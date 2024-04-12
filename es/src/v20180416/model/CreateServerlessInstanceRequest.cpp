@@ -23,10 +23,10 @@ using namespace TencentCloud::Es::V20180416::Model;
 using namespace std;
 
 CreateServerlessInstanceRequest::CreateServerlessInstanceRequest() :
+    m_indexNameHasBeenSet(false),
     m_zoneHasBeenSet(false),
     m_vpcIdHasBeenSet(false),
     m_subnetIdHasBeenSet(false),
-    m_indexNameHasBeenSet(false),
     m_indexMetaJsonHasBeenSet(false),
     m_spaceIdHasBeenSet(false),
     m_usernameHasBeenSet(false),
@@ -44,6 +44,14 @@ string CreateServerlessInstanceRequest::ToJsonString() const
     d.SetObject();
     rapidjson::Document::AllocatorType& allocator = d.GetAllocator();
 
+
+    if (m_indexNameHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "IndexName";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_indexName.c_str(), allocator).Move(), allocator);
+    }
 
     if (m_zoneHasBeenSet)
     {
@@ -67,14 +75,6 @@ string CreateServerlessInstanceRequest::ToJsonString() const
         string key = "SubnetId";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_subnetId.c_str(), allocator).Move(), allocator);
-    }
-
-    if (m_indexNameHasBeenSet)
-    {
-        rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "IndexName";
-        iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, rapidjson::Value(m_indexName.c_str(), allocator).Move(), allocator);
     }
 
     if (m_indexMetaJsonHasBeenSet)
@@ -162,6 +162,22 @@ string CreateServerlessInstanceRequest::ToJsonString() const
 }
 
 
+string CreateServerlessInstanceRequest::GetIndexName() const
+{
+    return m_indexName;
+}
+
+void CreateServerlessInstanceRequest::SetIndexName(const string& _indexName)
+{
+    m_indexName = _indexName;
+    m_indexNameHasBeenSet = true;
+}
+
+bool CreateServerlessInstanceRequest::IndexNameHasBeenSet() const
+{
+    return m_indexNameHasBeenSet;
+}
+
 string CreateServerlessInstanceRequest::GetZone() const
 {
     return m_zone;
@@ -208,22 +224,6 @@ void CreateServerlessInstanceRequest::SetSubnetId(const string& _subnetId)
 bool CreateServerlessInstanceRequest::SubnetIdHasBeenSet() const
 {
     return m_subnetIdHasBeenSet;
-}
-
-string CreateServerlessInstanceRequest::GetIndexName() const
-{
-    return m_indexName;
-}
-
-void CreateServerlessInstanceRequest::SetIndexName(const string& _indexName)
-{
-    m_indexName = _indexName;
-    m_indexNameHasBeenSet = true;
-}
-
-bool CreateServerlessInstanceRequest::IndexNameHasBeenSet() const
-{
-    return m_indexNameHasBeenSet;
 }
 
 string CreateServerlessInstanceRequest::GetIndexMetaJson() const

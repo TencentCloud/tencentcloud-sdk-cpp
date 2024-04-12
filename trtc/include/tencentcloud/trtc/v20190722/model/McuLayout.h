@@ -26,6 +26,7 @@
 #include <tencentcloud/core/AbstractModel.h>
 #include <tencentcloud/trtc/v20190722/model/UserMediaStream.h>
 #include <tencentcloud/trtc/v20190722/model/McuCustomCrop.h>
+#include <tencentcloud/trtc/v20190722/model/McuBackgroundCustomRender.h>
 
 
 namespace TencentCloud
@@ -291,15 +292,15 @@ namespace TencentCloud
                     bool CustomCropHasBeenSet() const;
 
                     /**
-                     * 获取子背景图在输出时的显示模式：0为裁剪，1为缩放并显示背景，2为缩放并显示黑底，3为变比例伸缩。不填默认为3。
-                     * @return BackgroundRenderMode 子背景图在输出时的显示模式：0为裁剪，1为缩放并显示背景，2为缩放并显示黑底，3为变比例伸缩。不填默认为3。
+                     * 获取子背景图在输出时的显示模式：0为裁剪，1为缩放并显示背景，2为缩放并显示黑底，3为变比例伸缩，4为自定义渲染。不填默认为3。
+                     * @return BackgroundRenderMode 子背景图在输出时的显示模式：0为裁剪，1为缩放并显示背景，2为缩放并显示黑底，3为变比例伸缩，4为自定义渲染。不填默认为3。
                      * 
                      */
                     uint64_t GetBackgroundRenderMode() const;
 
                     /**
-                     * 设置子背景图在输出时的显示模式：0为裁剪，1为缩放并显示背景，2为缩放并显示黑底，3为变比例伸缩。不填默认为3。
-                     * @param _backgroundRenderMode 子背景图在输出时的显示模式：0为裁剪，1为缩放并显示背景，2为缩放并显示黑底，3为变比例伸缩。不填默认为3。
+                     * 设置子背景图在输出时的显示模式：0为裁剪，1为缩放并显示背景，2为缩放并显示黑底，3为变比例伸缩，4为自定义渲染。不填默认为3。
+                     * @param _backgroundRenderMode 子背景图在输出时的显示模式：0为裁剪，1为缩放并显示背景，2为缩放并显示黑底，3为变比例伸缩，4为自定义渲染。不填默认为3。
                      * 
                      */
                     void SetBackgroundRenderMode(const uint64_t& _backgroundRenderMode);
@@ -335,6 +336,27 @@ namespace TencentCloud
                      * 
                      */
                     bool TransparentUrlHasBeenSet() const;
+
+                    /**
+                     * 获取子背景图的自定义渲染参数，当BackgroundRenderMode为4时必须配置。
+                     * @return BackgroundCustomRender 子背景图的自定义渲染参数，当BackgroundRenderMode为4时必须配置。
+                     * 
+                     */
+                    McuBackgroundCustomRender GetBackgroundCustomRender() const;
+
+                    /**
+                     * 设置子背景图的自定义渲染参数，当BackgroundRenderMode为4时必须配置。
+                     * @param _backgroundCustomRender 子背景图的自定义渲染参数，当BackgroundRenderMode为4时必须配置。
+                     * 
+                     */
+                    void SetBackgroundCustomRender(const McuBackgroundCustomRender& _backgroundCustomRender);
+
+                    /**
+                     * 判断参数 BackgroundCustomRender 是否已赋值
+                     * @return BackgroundCustomRender 是否已赋值
+                     * 
+                     */
+                    bool BackgroundCustomRenderHasBeenSet() const;
 
                 private:
 
@@ -407,7 +429,7 @@ namespace TencentCloud
                     bool m_customCropHasBeenSet;
 
                     /**
-                     * 子背景图在输出时的显示模式：0为裁剪，1为缩放并显示背景，2为缩放并显示黑底，3为变比例伸缩。不填默认为3。
+                     * 子背景图在输出时的显示模式：0为裁剪，1为缩放并显示背景，2为缩放并显示黑底，3为变比例伸缩，4为自定义渲染。不填默认为3。
                      */
                     uint64_t m_backgroundRenderMode;
                     bool m_backgroundRenderModeHasBeenSet;
@@ -418,6 +440,12 @@ namespace TencentCloud
                      */
                     std::string m_transparentUrl;
                     bool m_transparentUrlHasBeenSet;
+
+                    /**
+                     * 子背景图的自定义渲染参数，当BackgroundRenderMode为4时必须配置。
+                     */
+                    McuBackgroundCustomRender m_backgroundCustomRender;
+                    bool m_backgroundCustomRenderHasBeenSet;
 
                 };
             }

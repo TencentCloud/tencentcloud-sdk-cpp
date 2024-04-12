@@ -307,6 +307,7 @@ set(tione_public_header_model
   include/tencentcloud/tione/v20211111/model/CronInfo.h
   include/tencentcloud/tione/v20211111/model/FrameworkInfo.h
   include/tencentcloud/tione/v20211111/model/DescribeLogsResponse.h
+  include/tencentcloud/tione/v20211111/model/EncodedStartCmdInfo.h
   include/tencentcloud/tione/v20211111/model/CreateOptimizedModelRequest.h
   include/tencentcloud/tione/v20211111/model/StopNotebookRequest.h
   include/tencentcloud/tione/v20211111/model/DeleteModelServiceGroupRequest.h
@@ -642,6 +643,7 @@ set(tione_src
   src/v20211111/model/CronInfo.cpp
   src/v20211111/model/FrameworkInfo.cpp
   src/v20211111/model/DescribeLogsResponse.cpp
+  src/v20211111/model/EncodedStartCmdInfo.cpp
   src/v20211111/model/CreateOptimizedModelRequest.cpp
   src/v20211111/model/StopNotebookRequest.cpp
   src/v20211111/model/DeleteModelServiceGroupRequest.cpp

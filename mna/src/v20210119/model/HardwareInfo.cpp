@@ -29,7 +29,11 @@ HardwareInfo::HardwareInfo() :
     m_vendorDescriptionHasBeenSet(false),
     m_licenseChargingModeHasBeenSet(false),
     m_createTimeHasBeenSet(false),
-    m_sNHasBeenSet(false)
+    m_sNHasBeenSet(false),
+    m_licensePayModeHasBeenSet(false),
+    m_payerHasBeenSet(false),
+    m_groupIdHasBeenSet(false),
+    m_groupNameHasBeenSet(false)
 {
 }
 
@@ -128,6 +132,46 @@ CoreInternalOutcome HardwareInfo::Deserialize(const rapidjson::Value &value)
         m_sNHasBeenSet = true;
     }
 
+    if (value.HasMember("LicensePayMode") && !value["LicensePayMode"].IsNull())
+    {
+        if (!value["LicensePayMode"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `HardwareInfo.LicensePayMode` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_licensePayMode = value["LicensePayMode"].GetInt64();
+        m_licensePayModeHasBeenSet = true;
+    }
+
+    if (value.HasMember("Payer") && !value["Payer"].IsNull())
+    {
+        if (!value["Payer"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `HardwareInfo.Payer` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_payer = value["Payer"].GetInt64();
+        m_payerHasBeenSet = true;
+    }
+
+    if (value.HasMember("GroupId") && !value["GroupId"].IsNull())
+    {
+        if (!value["GroupId"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `HardwareInfo.GroupId` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_groupId = string(value["GroupId"].GetString());
+        m_groupIdHasBeenSet = true;
+    }
+
+    if (value.HasMember("GroupName") && !value["GroupName"].IsNull())
+    {
+        if (!value["GroupName"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `HardwareInfo.GroupName` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_groupName = string(value["GroupName"].GetString());
+        m_groupNameHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -205,6 +249,38 @@ void HardwareInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Al
         string key = "SN";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_sN.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_licensePayModeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "LicensePayMode";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_licensePayMode, allocator);
+    }
+
+    if (m_payerHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Payer";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_payer, allocator);
+    }
+
+    if (m_groupIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "GroupId";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_groupId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_groupNameHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "GroupName";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_groupName.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -352,5 +428,69 @@ void HardwareInfo::SetSN(const string& _sN)
 bool HardwareInfo::SNHasBeenSet() const
 {
     return m_sNHasBeenSet;
+}
+
+int64_t HardwareInfo::GetLicensePayMode() const
+{
+    return m_licensePayMode;
+}
+
+void HardwareInfo::SetLicensePayMode(const int64_t& _licensePayMode)
+{
+    m_licensePayMode = _licensePayMode;
+    m_licensePayModeHasBeenSet = true;
+}
+
+bool HardwareInfo::LicensePayModeHasBeenSet() const
+{
+    return m_licensePayModeHasBeenSet;
+}
+
+int64_t HardwareInfo::GetPayer() const
+{
+    return m_payer;
+}
+
+void HardwareInfo::SetPayer(const int64_t& _payer)
+{
+    m_payer = _payer;
+    m_payerHasBeenSet = true;
+}
+
+bool HardwareInfo::PayerHasBeenSet() const
+{
+    return m_payerHasBeenSet;
+}
+
+string HardwareInfo::GetGroupId() const
+{
+    return m_groupId;
+}
+
+void HardwareInfo::SetGroupId(const string& _groupId)
+{
+    m_groupId = _groupId;
+    m_groupIdHasBeenSet = true;
+}
+
+bool HardwareInfo::GroupIdHasBeenSet() const
+{
+    return m_groupIdHasBeenSet;
+}
+
+string HardwareInfo::GetGroupName() const
+{
+    return m_groupName;
+}
+
+void HardwareInfo::SetGroupName(const string& _groupName)
+{
+    m_groupName = _groupName;
+    m_groupNameHasBeenSet = true;
+}
+
+bool HardwareInfo::GroupNameHasBeenSet() const
+{
+    return m_groupNameHasBeenSet;
 }
 

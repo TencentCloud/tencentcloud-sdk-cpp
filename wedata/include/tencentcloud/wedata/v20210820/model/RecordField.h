@@ -35,7 +35,7 @@ namespace TencentCloud
             namespace Model
             {
                 /**
-                * 通用记录字段
+                * 通用记录字段，与服务端约定传入合法的键值对
                 */
                 class RecordField : public AbstractModel
                 {
@@ -47,15 +47,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取字段名称
-                     * @return Name 字段名称
+                     * 获取字段名称，拓展字段名称
+                     * @return Name 字段名称，拓展字段名称
                      * 
                      */
                     std::string GetName() const;
 
                     /**
-                     * 设置字段名称
-                     * @param _name 字段名称
+                     * 设置字段名称，拓展字段名称
+                     * @param _name 字段名称，拓展字段名称
                      * 
                      */
                     void SetName(const std::string& _name);
@@ -68,15 +68,15 @@ namespace TencentCloud
                     bool NameHasBeenSet() const;
 
                     /**
-                     * 获取字段值
-                     * @return Value 字段值
+                     * 获取字段值，拓展字段值
+                     * @return Value 字段值，拓展字段值
                      * 
                      */
                     std::string GetValue() const;
 
                     /**
-                     * 设置字段值
-                     * @param _value 字段值
+                     * 设置字段值，拓展字段值
+                     * @param _value 字段值，拓展字段值
                      * 
                      */
                     void SetValue(const std::string& _value);
@@ -91,13 +91,13 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 字段名称
+                     * 字段名称，拓展字段名称
                      */
                     std::string m_name;
                     bool m_nameHasBeenSet;
 
                     /**
-                     * 字段值
+                     * 字段值，拓展字段值
                      */
                     std::string m_value;
                     bool m_valueHasBeenSet;

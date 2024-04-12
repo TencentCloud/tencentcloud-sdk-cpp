@@ -22,7 +22,8 @@ using namespace std;
 
 RuleIdConfig::RuleIdConfig() :
     m_intentionRecognitionHasBeenSet(false),
-    m_intentionTypeHasBeenSet(false)
+    m_intentionTypeHasBeenSet(false),
+    m_mouthOpenRecognitionHasBeenSet(false)
 {
 }
 
@@ -51,6 +52,16 @@ CoreInternalOutcome RuleIdConfig::Deserialize(const rapidjson::Value &value)
         m_intentionTypeHasBeenSet = true;
     }
 
+    if (value.HasMember("MouthOpenRecognition") && !value["MouthOpenRecognition"].IsNull())
+    {
+        if (!value["MouthOpenRecognition"].IsBool())
+        {
+            return CoreInternalOutcome(Core::Error("response `RuleIdConfig.MouthOpenRecognition` IsBool=false incorrectly").SetRequestId(requestId));
+        }
+        m_mouthOpenRecognition = value["MouthOpenRecognition"].GetBool();
+        m_mouthOpenRecognitionHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -72,6 +83,14 @@ void RuleIdConfig::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Al
         string key = "IntentionType";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_intentionType, allocator);
+    }
+
+    if (m_mouthOpenRecognitionHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "MouthOpenRecognition";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_mouthOpenRecognition, allocator);
     }
 
 }
@@ -107,5 +126,21 @@ void RuleIdConfig::SetIntentionType(const int64_t& _intentionType)
 bool RuleIdConfig::IntentionTypeHasBeenSet() const
 {
     return m_intentionTypeHasBeenSet;
+}
+
+bool RuleIdConfig::GetMouthOpenRecognition() const
+{
+    return m_mouthOpenRecognition;
+}
+
+void RuleIdConfig::SetMouthOpenRecognition(const bool& _mouthOpenRecognition)
+{
+    m_mouthOpenRecognition = _mouthOpenRecognition;
+    m_mouthOpenRecognitionHasBeenSet = true;
+}
+
+bool RuleIdConfig::MouthOpenRecognitionHasBeenSet() const
+{
+    return m_mouthOpenRecognitionHasBeenSet;
 }
 

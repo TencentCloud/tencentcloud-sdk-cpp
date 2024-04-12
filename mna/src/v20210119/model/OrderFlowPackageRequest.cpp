@@ -27,6 +27,7 @@ OrderFlowPackageRequest::OrderFlowPackageRequest() :
     m_deviceListHasBeenSet(false),
     m_autoRenewFlagHasBeenSet(false),
     m_packageRegionHasBeenSet(false),
+    m_flowTruncFlagHasBeenSet(false),
     m_autoVoucherHasBeenSet(false),
     m_voucherIdsHasBeenSet(false)
 {
@@ -74,6 +75,14 @@ string OrderFlowPackageRequest::ToJsonString() const
         string key = "PackageRegion";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_packageRegion, allocator);
+    }
+
+    if (m_flowTruncFlagHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "FlowTruncFlag";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_flowTruncFlag, allocator);
     }
 
     if (m_autoVoucherHasBeenSet)
@@ -167,6 +176,22 @@ void OrderFlowPackageRequest::SetPackageRegion(const int64_t& _packageRegion)
 bool OrderFlowPackageRequest::PackageRegionHasBeenSet() const
 {
     return m_packageRegionHasBeenSet;
+}
+
+bool OrderFlowPackageRequest::GetFlowTruncFlag() const
+{
+    return m_flowTruncFlag;
+}
+
+void OrderFlowPackageRequest::SetFlowTruncFlag(const bool& _flowTruncFlag)
+{
+    m_flowTruncFlag = _flowTruncFlag;
+    m_flowTruncFlagHasBeenSet = true;
+}
+
+bool OrderFlowPackageRequest::FlowTruncFlagHasBeenSet() const
+{
+    return m_flowTruncFlagHasBeenSet;
 }
 
 bool OrderFlowPackageRequest::GetAutoVoucher() const

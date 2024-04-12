@@ -47,15 +47,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取源schema id
-                     * @return SourceSchemaId 源schema id
+                     * 获取任务节点的源schema id
+                     * @return SourceSchemaId 任务节点的源schema id
                      * 
                      */
                     std::string GetSourceSchemaId() const;
 
                     /**
-                     * 设置源schema id
-                     * @param _sourceSchemaId 源schema id
+                     * 设置任务节点的源schema id
+                     * @param _sourceSchemaId 任务节点的源schema id
                      * 
                      */
                     void SetSourceSchemaId(const std::string& _sourceSchemaId);
@@ -68,15 +68,15 @@ namespace TencentCloud
                     bool SourceSchemaIdHasBeenSet() const;
 
                     /**
-                     * 获取目标schema id
-                     * @return SinkSchemaId 目标schema id
+                     * 获取任务节点目标schema id
+                     * @return SinkSchemaId 任务节点目标schema id
                      * 
                      */
                     std::string GetSinkSchemaId() const;
 
                     /**
-                     * 设置目标schema id
-                     * @param _sinkSchemaId 目标schema id
+                     * 设置任务节点目标schema id
+                     * @param _sinkSchemaId 任务节点目标schema id
                      * 
                      */
                     void SetSinkSchemaId(const std::string& _sinkSchemaId);
@@ -91,13 +91,13 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 源schema id
+                     * 任务节点的源schema id
                      */
                     std::string m_sourceSchemaId;
                     bool m_sourceSchemaIdHasBeenSet;
 
                     /**
-                     * 目标schema id
+                     * 任务节点目标schema id
                      */
                     std::string m_sinkSchemaId;
                     bool m_sinkSchemaIdHasBeenSet;

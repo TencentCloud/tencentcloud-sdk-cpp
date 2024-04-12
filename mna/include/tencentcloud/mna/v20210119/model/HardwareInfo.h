@@ -198,8 +198,10 @@ namespace TencentCloud
 
                     /**
                      * 获取license计费模式： 1，租户月付费 2，厂商月付费 3，license永久授权
+注：后续将废弃此参数，新接入请使用LicensePayMode和Payer
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return LicenseChargingMode license计费模式： 1，租户月付费 2，厂商月付费 3，license永久授权
+注：后续将废弃此参数，新接入请使用LicensePayMode和Payer
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -207,8 +209,10 @@ namespace TencentCloud
 
                     /**
                      * 设置license计费模式： 1，租户月付费 2，厂商月付费 3，license永久授权
+注：后续将废弃此参数，新接入请使用LicensePayMode和Payer
 注意：此字段可能返回 null，表示取不到有效值。
                      * @param _licenseChargingMode license计费模式： 1，租户月付费 2，厂商月付费 3，license永久授权
+注：后续将废弃此参数，新接入请使用LicensePayMode和Payer
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -271,6 +275,122 @@ namespace TencentCloud
                      */
                     bool SNHasBeenSet() const;
 
+                    /**
+                     * 获取license授权有效期 
+0：月度授权 
+1：永久授权
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return LicensePayMode license授权有效期 
+0：月度授权 
+1：永久授权
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    int64_t GetLicensePayMode() const;
+
+                    /**
+                     * 设置license授权有效期 
+0：月度授权 
+1：永久授权
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _licensePayMode license授权有效期 
+0：月度授权 
+1：永久授权
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetLicensePayMode(const int64_t& _licensePayMode);
+
+                    /**
+                     * 判断参数 LicensePayMode 是否已赋值
+                     * @return LicensePayMode 是否已赋值
+                     * 
+                     */
+                    bool LicensePayModeHasBeenSet() const;
+
+                    /**
+                     * 获取付费方 
+0：客户付费 
+1：厂商付费
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return Payer 付费方 
+0：客户付费 
+1：厂商付费
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    int64_t GetPayer() const;
+
+                    /**
+                     * 设置付费方 
+0：客户付费 
+1：厂商付费
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _payer 付费方 
+0：客户付费 
+1：厂商付费
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetPayer(const int64_t& _payer);
+
+                    /**
+                     * 判断参数 Payer 是否已赋值
+                     * @return Payer 是否已赋值
+                     * 
+                     */
+                    bool PayerHasBeenSet() const;
+
+                    /**
+                     * 获取设备分组ID
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return GroupId 设备分组ID
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::string GetGroupId() const;
+
+                    /**
+                     * 设置设备分组ID
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _groupId 设备分组ID
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetGroupId(const std::string& _groupId);
+
+                    /**
+                     * 判断参数 GroupId 是否已赋值
+                     * @return GroupId 是否已赋值
+                     * 
+                     */
+                    bool GroupIdHasBeenSet() const;
+
+                    /**
+                     * 获取设备分组名称
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return GroupName 设备分组名称
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::string GetGroupName() const;
+
+                    /**
+                     * 设置设备分组名称
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _groupName 设备分组名称
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetGroupName(const std::string& _groupName);
+
+                    /**
+                     * 判断参数 GroupName 是否已赋值
+                     * @return GroupName 是否已赋值
+                     * 
+                     */
+                    bool GroupNameHasBeenSet() const;
+
                 private:
 
                     /**
@@ -317,6 +437,7 @@ namespace TencentCloud
 
                     /**
                      * license计费模式： 1，租户月付费 2，厂商月付费 3，license永久授权
+注：后续将废弃此参数，新接入请使用LicensePayMode和Payer
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_licenseChargingMode;
@@ -335,6 +456,38 @@ namespace TencentCloud
                      */
                     std::string m_sN;
                     bool m_sNHasBeenSet;
+
+                    /**
+                     * license授权有效期 
+0：月度授权 
+1：永久授权
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    int64_t m_licensePayMode;
+                    bool m_licensePayModeHasBeenSet;
+
+                    /**
+                     * 付费方 
+0：客户付费 
+1：厂商付费
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    int64_t m_payer;
+                    bool m_payerHasBeenSet;
+
+                    /**
+                     * 设备分组ID
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_groupId;
+                    bool m_groupIdHasBeenSet;
+
+                    /**
+                     * 设备分组名称
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_groupName;
+                    bool m_groupNameHasBeenSet;
 
                 };
             }

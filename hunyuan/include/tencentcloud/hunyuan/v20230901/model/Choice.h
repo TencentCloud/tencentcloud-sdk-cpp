@@ -25,6 +25,7 @@
 #include <tencentcloud/core/utils/rapidjson/stringbuffer.h>
 #include <tencentcloud/core/AbstractModel.h>
 #include <tencentcloud/hunyuan/v20230901/model/Delta.h>
+#include <tencentcloud/hunyuan/v20230901/model/Message.h>
 
 
 namespace TencentCloud
@@ -48,15 +49,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取流式结束标志位，为 stop 则表示尾包。
-                     * @return FinishReason 流式结束标志位，为 stop 则表示尾包。
+                     * 获取结束标志位，为 stop 则表示尾包。
+                     * @return FinishReason 结束标志位，为 stop 则表示尾包。
                      * 
                      */
                     std::string GetFinishReason() const;
 
                     /**
-                     * 设置流式结束标志位，为 stop 则表示尾包。
-                     * @param _finishReason 流式结束标志位，为 stop 则表示尾包。
+                     * 设置结束标志位，为 stop 则表示尾包。
+                     * @param _finishReason 结束标志位，为 stop 则表示尾包。
                      * 
                      */
                     void SetFinishReason(const std::string& _finishReason);
@@ -69,15 +70,19 @@ namespace TencentCloud
                     bool FinishReasonHasBeenSet() const;
 
                     /**
-                     * 获取返回值。
-                     * @return Delta 返回值。
+                     * 获取增量返回值，流式调用时使用该字段。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return Delta 增量返回值，流式调用时使用该字段。
+注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     Delta GetDelta() const;
 
                     /**
-                     * 设置返回值。
-                     * @param _delta 返回值。
+                     * 设置增量返回值，流式调用时使用该字段。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _delta 增量返回值，流式调用时使用该字段。
+注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetDelta(const Delta& _delta);
@@ -89,19 +94,52 @@ namespace TencentCloud
                      */
                     bool DeltaHasBeenSet() const;
 
+                    /**
+                     * 获取返回值，非流式调用时使用该字段。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return Message 返回值，非流式调用时使用该字段。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    Message GetMessage() const;
+
+                    /**
+                     * 设置返回值，非流式调用时使用该字段。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _message 返回值，非流式调用时使用该字段。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetMessage(const Message& _message);
+
+                    /**
+                     * 判断参数 Message 是否已赋值
+                     * @return Message 是否已赋值
+                     * 
+                     */
+                    bool MessageHasBeenSet() const;
+
                 private:
 
                     /**
-                     * 流式结束标志位，为 stop 则表示尾包。
+                     * 结束标志位，为 stop 则表示尾包。
                      */
                     std::string m_finishReason;
                     bool m_finishReasonHasBeenSet;
 
                     /**
-                     * 返回值。
+                     * 增量返回值，流式调用时使用该字段。
+注意：此字段可能返回 null，表示取不到有效值。
                      */
                     Delta m_delta;
                     bool m_deltaHasBeenSet;
+
+                    /**
+                     * 返回值，非流式调用时使用该字段。
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    Message m_message;
+                    bool m_messageHasBeenSet;
 
                 };
             }

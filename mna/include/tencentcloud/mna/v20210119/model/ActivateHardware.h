@@ -184,6 +184,101 @@ namespace TencentCloud
                      */
                     bool AccessScopeHasBeenSet() const;
 
+                    /**
+                     * 获取当付费方为租户时，可选择租户license付费方式：
+0，月度授权
+1，永久授权
+若不传则默认为月度授权。
+当付费方为厂商时，此参数无效
+
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return LicensePayMode 当付费方为租户时，可选择租户license付费方式：
+0，月度授权
+1，永久授权
+若不传则默认为月度授权。
+当付费方为厂商时，此参数无效
+
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    int64_t GetLicensePayMode() const;
+
+                    /**
+                     * 设置当付费方为租户时，可选择租户license付费方式：
+0，月度授权
+1，永久授权
+若不传则默认为月度授权。
+当付费方为厂商时，此参数无效
+
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _licensePayMode 当付费方为租户时，可选择租户license付费方式：
+0，月度授权
+1，永久授权
+若不传则默认为月度授权。
+当付费方为厂商时，此参数无效
+
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetLicensePayMode(const int64_t& _licensePayMode);
+
+                    /**
+                     * 判断参数 LicensePayMode 是否已赋值
+                     * @return LicensePayMode 是否已赋值
+                     * 
+                     */
+                    bool LicensePayModeHasBeenSet() const;
+
+                    /**
+                     * 获取设备分组ID
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return GroupId 设备分组ID
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::string GetGroupId() const;
+
+                    /**
+                     * 设置设备分组ID
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _groupId 设备分组ID
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetGroupId(const std::string& _groupId);
+
+                    /**
+                     * 判断参数 GroupId 是否已赋值
+                     * @return GroupId 是否已赋值
+                     * 
+                     */
+                    bool GroupIdHasBeenSet() const;
+
+                    /**
+                     * 获取设备分组名称，预留参数，需要分组时传入GroupId
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return GroupName 设备分组名称，预留参数，需要分组时传入GroupId
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::string GetGroupName() const;
+
+                    /**
+                     * 设置设备分组名称，预留参数，需要分组时传入GroupId
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _groupName 设备分组名称，预留参数，需要分组时传入GroupId
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetGroupName(const std::string& _groupName);
+
+                    /**
+                     * 判断参数 GroupName 是否已赋值
+                     * @return GroupName 是否已赋值
+                     * 
+                     */
+                    bool GroupNameHasBeenSet() const;
+
                 private:
 
                     /**
@@ -224,6 +319,32 @@ namespace TencentCloud
                      */
                     int64_t m_accessScope;
                     bool m_accessScopeHasBeenSet;
+
+                    /**
+                     * 当付费方为租户时，可选择租户license付费方式：
+0，月度授权
+1，永久授权
+若不传则默认为月度授权。
+当付费方为厂商时，此参数无效
+
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    int64_t m_licensePayMode;
+                    bool m_licensePayModeHasBeenSet;
+
+                    /**
+                     * 设备分组ID
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_groupId;
+                    bool m_groupIdHasBeenSet;
+
+                    /**
+                     * 设备分组名称，预留参数，需要分组时传入GroupId
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_groupName;
+                    bool m_groupNameHasBeenSet;
 
                 };
             }

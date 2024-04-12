@@ -604,6 +604,31 @@ namespace TencentCloud
                      */
                     bool PlanCntFlagHasBeenSet() const;
 
+                    /**
+                     * 获取是否为超级高防包
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return SuperPackFlag 是否为超级高防包
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    uint64_t GetSuperPackFlag() const;
+
+                    /**
+                     * 设置是否为超级高防包
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _superPackFlag 是否为超级高防包
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetSuperPackFlag(const uint64_t& _superPackFlag);
+
+                    /**
+                     * 判断参数 SuperPackFlag 是否已赋值
+                     * @return SuperPackFlag 是否已赋值
+                     * 
+                     */
+                    bool SuperPackFlagHasBeenSet() const;
+
                 private:
 
                     /**
@@ -760,6 +785,13 @@ namespace TencentCloud
                      */
                     uint64_t m_planCntFlag;
                     bool m_planCntFlagHasBeenSet;
+
+                    /**
+                     * 是否为超级高防包
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    uint64_t m_superPackFlag;
+                    bool m_superPackFlagHasBeenSet;
 
                 };
             }

@@ -1717,49 +1717,6 @@ WedataClient::CreateHiveTableByDDLOutcomeCallable WedataClient::CreateHiveTableB
     return task->get_future();
 }
 
-WedataClient::CreateInLongAgentOutcome WedataClient::CreateInLongAgent(const CreateInLongAgentRequest &request)
-{
-    auto outcome = MakeRequest(request, "CreateInLongAgent");
-    if (outcome.IsSuccess())
-    {
-        auto r = outcome.GetResult();
-        string payload = string(r.Body(), r.BodySize());
-        CreateInLongAgentResponse rsp = CreateInLongAgentResponse();
-        auto o = rsp.Deserialize(payload);
-        if (o.IsSuccess())
-            return CreateInLongAgentOutcome(rsp);
-        else
-            return CreateInLongAgentOutcome(o.GetError());
-    }
-    else
-    {
-        return CreateInLongAgentOutcome(outcome.GetError());
-    }
-}
-
-void WedataClient::CreateInLongAgentAsync(const CreateInLongAgentRequest& request, const CreateInLongAgentAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
-{
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->CreateInLongAgent(request), context);
-    };
-
-    Executor::GetInstance()->Submit(new Runnable(fn));
-}
-
-WedataClient::CreateInLongAgentOutcomeCallable WedataClient::CreateInLongAgentCallable(const CreateInLongAgentRequest &request)
-{
-    auto task = std::make_shared<std::packaged_task<CreateInLongAgentOutcome()>>(
-        [this, request]()
-        {
-            return this->CreateInLongAgent(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
-}
-
 WedataClient::CreateIntegrationNodeOutcome WedataClient::CreateIntegrationNode(const CreateIntegrationNodeRequest &request)
 {
     auto outcome = MakeRequest(request, "CreateIntegrationNode");
@@ -2613,49 +2570,6 @@ WedataClient::DeleteFolderOutcomeCallable WedataClient::DeleteFolderCallable(con
         [this, request]()
         {
             return this->DeleteFolder(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
-}
-
-WedataClient::DeleteInLongAgentOutcome WedataClient::DeleteInLongAgent(const DeleteInLongAgentRequest &request)
-{
-    auto outcome = MakeRequest(request, "DeleteInLongAgent");
-    if (outcome.IsSuccess())
-    {
-        auto r = outcome.GetResult();
-        string payload = string(r.Body(), r.BodySize());
-        DeleteInLongAgentResponse rsp = DeleteInLongAgentResponse();
-        auto o = rsp.Deserialize(payload);
-        if (o.IsSuccess())
-            return DeleteInLongAgentOutcome(rsp);
-        else
-            return DeleteInLongAgentOutcome(o.GetError());
-    }
-    else
-    {
-        return DeleteInLongAgentOutcome(outcome.GetError());
-    }
-}
-
-void WedataClient::DeleteInLongAgentAsync(const DeleteInLongAgentRequest& request, const DeleteInLongAgentAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
-{
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DeleteInLongAgent(request), context);
-    };
-
-    Executor::GetInstance()->Submit(new Runnable(fn));
-}
-
-WedataClient::DeleteInLongAgentOutcomeCallable WedataClient::DeleteInLongAgentCallable(const DeleteInLongAgentRequest &request)
-{
-    auto task = std::make_shared<std::packaged_task<DeleteInLongAgentOutcome()>>(
-        [this, request]()
-        {
-            return this->DeleteInLongAgent(request);
         }
     );
 
@@ -3903,49 +3817,6 @@ WedataClient::DescribeBelongToOutcomeCallable WedataClient::DescribeBelongToCall
         [this, request]()
         {
             return this->DescribeBelongTo(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
-}
-
-WedataClient::DescribeClusterNamespaceListOutcome WedataClient::DescribeClusterNamespaceList(const DescribeClusterNamespaceListRequest &request)
-{
-    auto outcome = MakeRequest(request, "DescribeClusterNamespaceList");
-    if (outcome.IsSuccess())
-    {
-        auto r = outcome.GetResult();
-        string payload = string(r.Body(), r.BodySize());
-        DescribeClusterNamespaceListResponse rsp = DescribeClusterNamespaceListResponse();
-        auto o = rsp.Deserialize(payload);
-        if (o.IsSuccess())
-            return DescribeClusterNamespaceListOutcome(rsp);
-        else
-            return DescribeClusterNamespaceListOutcome(o.GetError());
-    }
-    else
-    {
-        return DescribeClusterNamespaceListOutcome(outcome.GetError());
-    }
-}
-
-void WedataClient::DescribeClusterNamespaceListAsync(const DescribeClusterNamespaceListRequest& request, const DescribeClusterNamespaceListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
-{
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeClusterNamespaceList(request), context);
-    };
-
-    Executor::GetInstance()->Submit(new Runnable(fn));
-}
-
-WedataClient::DescribeClusterNamespaceListOutcomeCallable WedataClient::DescribeClusterNamespaceListCallable(const DescribeClusterNamespaceListRequest &request)
-{
-    auto task = std::make_shared<std::packaged_task<DescribeClusterNamespaceListOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeClusterNamespaceList(request);
         }
     );
 
@@ -5544,178 +5415,6 @@ WedataClient::DescribeFunctionTypesOutcomeCallable WedataClient::DescribeFunctio
     return task->get_future();
 }
 
-WedataClient::DescribeInLongAgentListOutcome WedataClient::DescribeInLongAgentList(const DescribeInLongAgentListRequest &request)
-{
-    auto outcome = MakeRequest(request, "DescribeInLongAgentList");
-    if (outcome.IsSuccess())
-    {
-        auto r = outcome.GetResult();
-        string payload = string(r.Body(), r.BodySize());
-        DescribeInLongAgentListResponse rsp = DescribeInLongAgentListResponse();
-        auto o = rsp.Deserialize(payload);
-        if (o.IsSuccess())
-            return DescribeInLongAgentListOutcome(rsp);
-        else
-            return DescribeInLongAgentListOutcome(o.GetError());
-    }
-    else
-    {
-        return DescribeInLongAgentListOutcome(outcome.GetError());
-    }
-}
-
-void WedataClient::DescribeInLongAgentListAsync(const DescribeInLongAgentListRequest& request, const DescribeInLongAgentListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
-{
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeInLongAgentList(request), context);
-    };
-
-    Executor::GetInstance()->Submit(new Runnable(fn));
-}
-
-WedataClient::DescribeInLongAgentListOutcomeCallable WedataClient::DescribeInLongAgentListCallable(const DescribeInLongAgentListRequest &request)
-{
-    auto task = std::make_shared<std::packaged_task<DescribeInLongAgentListOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeInLongAgentList(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
-}
-
-WedataClient::DescribeInLongAgentTaskListOutcome WedataClient::DescribeInLongAgentTaskList(const DescribeInLongAgentTaskListRequest &request)
-{
-    auto outcome = MakeRequest(request, "DescribeInLongAgentTaskList");
-    if (outcome.IsSuccess())
-    {
-        auto r = outcome.GetResult();
-        string payload = string(r.Body(), r.BodySize());
-        DescribeInLongAgentTaskListResponse rsp = DescribeInLongAgentTaskListResponse();
-        auto o = rsp.Deserialize(payload);
-        if (o.IsSuccess())
-            return DescribeInLongAgentTaskListOutcome(rsp);
-        else
-            return DescribeInLongAgentTaskListOutcome(o.GetError());
-    }
-    else
-    {
-        return DescribeInLongAgentTaskListOutcome(outcome.GetError());
-    }
-}
-
-void WedataClient::DescribeInLongAgentTaskListAsync(const DescribeInLongAgentTaskListRequest& request, const DescribeInLongAgentTaskListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
-{
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeInLongAgentTaskList(request), context);
-    };
-
-    Executor::GetInstance()->Submit(new Runnable(fn));
-}
-
-WedataClient::DescribeInLongAgentTaskListOutcomeCallable WedataClient::DescribeInLongAgentTaskListCallable(const DescribeInLongAgentTaskListRequest &request)
-{
-    auto task = std::make_shared<std::packaged_task<DescribeInLongAgentTaskListOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeInLongAgentTaskList(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
-}
-
-WedataClient::DescribeInLongAgentVpcListOutcome WedataClient::DescribeInLongAgentVpcList(const DescribeInLongAgentVpcListRequest &request)
-{
-    auto outcome = MakeRequest(request, "DescribeInLongAgentVpcList");
-    if (outcome.IsSuccess())
-    {
-        auto r = outcome.GetResult();
-        string payload = string(r.Body(), r.BodySize());
-        DescribeInLongAgentVpcListResponse rsp = DescribeInLongAgentVpcListResponse();
-        auto o = rsp.Deserialize(payload);
-        if (o.IsSuccess())
-            return DescribeInLongAgentVpcListOutcome(rsp);
-        else
-            return DescribeInLongAgentVpcListOutcome(o.GetError());
-    }
-    else
-    {
-        return DescribeInLongAgentVpcListOutcome(outcome.GetError());
-    }
-}
-
-void WedataClient::DescribeInLongAgentVpcListAsync(const DescribeInLongAgentVpcListRequest& request, const DescribeInLongAgentVpcListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
-{
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeInLongAgentVpcList(request), context);
-    };
-
-    Executor::GetInstance()->Submit(new Runnable(fn));
-}
-
-WedataClient::DescribeInLongAgentVpcListOutcomeCallable WedataClient::DescribeInLongAgentVpcListCallable(const DescribeInLongAgentVpcListRequest &request)
-{
-    auto task = std::make_shared<std::packaged_task<DescribeInLongAgentVpcListOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeInLongAgentVpcList(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
-}
-
-WedataClient::DescribeInLongTkeClusterListOutcome WedataClient::DescribeInLongTkeClusterList(const DescribeInLongTkeClusterListRequest &request)
-{
-    auto outcome = MakeRequest(request, "DescribeInLongTkeClusterList");
-    if (outcome.IsSuccess())
-    {
-        auto r = outcome.GetResult();
-        string payload = string(r.Body(), r.BodySize());
-        DescribeInLongTkeClusterListResponse rsp = DescribeInLongTkeClusterListResponse();
-        auto o = rsp.Deserialize(payload);
-        if (o.IsSuccess())
-            return DescribeInLongTkeClusterListOutcome(rsp);
-        else
-            return DescribeInLongTkeClusterListOutcome(o.GetError());
-    }
-    else
-    {
-        return DescribeInLongTkeClusterListOutcome(outcome.GetError());
-    }
-}
-
-void WedataClient::DescribeInLongTkeClusterListAsync(const DescribeInLongTkeClusterListRequest& request, const DescribeInLongTkeClusterListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
-{
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeInLongTkeClusterList(request), context);
-    };
-
-    Executor::GetInstance()->Submit(new Runnable(fn));
-}
-
-WedataClient::DescribeInLongTkeClusterListOutcomeCallable WedataClient::DescribeInLongTkeClusterListCallable(const DescribeInLongTkeClusterListRequest &request)
-{
-    auto task = std::make_shared<std::packaged_task<DescribeInLongTkeClusterListOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeInLongTkeClusterList(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
-}
-
 WedataClient::DescribeInstanceByCycleOutcome WedataClient::DescribeInstanceByCycle(const DescribeInstanceByCycleRequest &request)
 {
     auto outcome = MakeRequest(request, "DescribeInstanceByCycle");
@@ -6268,49 +5967,6 @@ WedataClient::DescribeIntegrationStatisticsOutcomeCallable WedataClient::Describ
         [this, request]()
         {
             return this->DescribeIntegrationStatistics(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
-}
-
-WedataClient::DescribeIntegrationStatisticsAgentStatusOutcome WedataClient::DescribeIntegrationStatisticsAgentStatus(const DescribeIntegrationStatisticsAgentStatusRequest &request)
-{
-    auto outcome = MakeRequest(request, "DescribeIntegrationStatisticsAgentStatus");
-    if (outcome.IsSuccess())
-    {
-        auto r = outcome.GetResult();
-        string payload = string(r.Body(), r.BodySize());
-        DescribeIntegrationStatisticsAgentStatusResponse rsp = DescribeIntegrationStatisticsAgentStatusResponse();
-        auto o = rsp.Deserialize(payload);
-        if (o.IsSuccess())
-            return DescribeIntegrationStatisticsAgentStatusOutcome(rsp);
-        else
-            return DescribeIntegrationStatisticsAgentStatusOutcome(o.GetError());
-    }
-    else
-    {
-        return DescribeIntegrationStatisticsAgentStatusOutcome(outcome.GetError());
-    }
-}
-
-void WedataClient::DescribeIntegrationStatisticsAgentStatusAsync(const DescribeIntegrationStatisticsAgentStatusRequest& request, const DescribeIntegrationStatisticsAgentStatusAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
-{
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeIntegrationStatisticsAgentStatus(request), context);
-    };
-
-    Executor::GetInstance()->Submit(new Runnable(fn));
-}
-
-WedataClient::DescribeIntegrationStatisticsAgentStatusOutcomeCallable WedataClient::DescribeIntegrationStatisticsAgentStatusCallable(const DescribeIntegrationStatisticsAgentStatusRequest &request)
-{
-    auto task = std::make_shared<std::packaged_task<DescribeIntegrationStatisticsAgentStatusOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeIntegrationStatisticsAgentStatus(request);
         }
     );
 
@@ -8805,49 +8461,6 @@ WedataClient::DescribeSonInstancesOutcomeCallable WedataClient::DescribeSonInsta
         [this, request]()
         {
             return this->DescribeSonInstances(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
-}
-
-WedataClient::DescribeStandardRuleDetailInfoListOutcome WedataClient::DescribeStandardRuleDetailInfoList(const DescribeStandardRuleDetailInfoListRequest &request)
-{
-    auto outcome = MakeRequest(request, "DescribeStandardRuleDetailInfoList");
-    if (outcome.IsSuccess())
-    {
-        auto r = outcome.GetResult();
-        string payload = string(r.Body(), r.BodySize());
-        DescribeStandardRuleDetailInfoListResponse rsp = DescribeStandardRuleDetailInfoListResponse();
-        auto o = rsp.Deserialize(payload);
-        if (o.IsSuccess())
-            return DescribeStandardRuleDetailInfoListOutcome(rsp);
-        else
-            return DescribeStandardRuleDetailInfoListOutcome(o.GetError());
-    }
-    else
-    {
-        return DescribeStandardRuleDetailInfoListOutcome(outcome.GetError());
-    }
-}
-
-void WedataClient::DescribeStandardRuleDetailInfoListAsync(const DescribeStandardRuleDetailInfoListRequest& request, const DescribeStandardRuleDetailInfoListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
-{
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeStandardRuleDetailInfoList(request), context);
-    };
-
-    Executor::GetInstance()->Submit(new Runnable(fn));
-}
-
-WedataClient::DescribeStandardRuleDetailInfoListOutcomeCallable WedataClient::DescribeStandardRuleDetailInfoListCallable(const DescribeStandardRuleDetailInfoListRequest &request)
-{
-    auto task = std::make_shared<std::packaged_task<DescribeStandardRuleDetailInfoListOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeStandardRuleDetailInfoList(request);
         }
     );
 
@@ -12596,49 +12209,6 @@ WedataClient::RerunScheduleInstancesOutcomeCallable WedataClient::RerunScheduleI
     return task->get_future();
 }
 
-WedataClient::RestartInLongAgentOutcome WedataClient::RestartInLongAgent(const RestartInLongAgentRequest &request)
-{
-    auto outcome = MakeRequest(request, "RestartInLongAgent");
-    if (outcome.IsSuccess())
-    {
-        auto r = outcome.GetResult();
-        string payload = string(r.Body(), r.BodySize());
-        RestartInLongAgentResponse rsp = RestartInLongAgentResponse();
-        auto o = rsp.Deserialize(payload);
-        if (o.IsSuccess())
-            return RestartInLongAgentOutcome(rsp);
-        else
-            return RestartInLongAgentOutcome(o.GetError());
-    }
-    else
-    {
-        return RestartInLongAgentOutcome(outcome.GetError());
-    }
-}
-
-void WedataClient::RestartInLongAgentAsync(const RestartInLongAgentRequest& request, const RestartInLongAgentAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
-{
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->RestartInLongAgent(request), context);
-    };
-
-    Executor::GetInstance()->Submit(new Runnable(fn));
-}
-
-WedataClient::RestartInLongAgentOutcomeCallable WedataClient::RestartInLongAgentCallable(const RestartInLongAgentRequest &request)
-{
-    auto task = std::make_shared<std::packaged_task<RestartInLongAgentOutcome()>>(
-        [this, request]()
-        {
-            return this->RestartInLongAgent(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
-}
-
 WedataClient::ResumeIntegrationTaskOutcome WedataClient::ResumeIntegrationTask(const ResumeIntegrationTaskRequest &request)
 {
     auto outcome = MakeRequest(request, "ResumeIntegrationTask");
@@ -13578,49 +13148,6 @@ WedataClient::UnlockIntegrationTaskOutcomeCallable WedataClient::UnlockIntegrati
         [this, request]()
         {
             return this->UnlockIntegrationTask(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
-}
-
-WedataClient::UpdateInLongAgentOutcome WedataClient::UpdateInLongAgent(const UpdateInLongAgentRequest &request)
-{
-    auto outcome = MakeRequest(request, "UpdateInLongAgent");
-    if (outcome.IsSuccess())
-    {
-        auto r = outcome.GetResult();
-        string payload = string(r.Body(), r.BodySize());
-        UpdateInLongAgentResponse rsp = UpdateInLongAgentResponse();
-        auto o = rsp.Deserialize(payload);
-        if (o.IsSuccess())
-            return UpdateInLongAgentOutcome(rsp);
-        else
-            return UpdateInLongAgentOutcome(o.GetError());
-    }
-    else
-    {
-        return UpdateInLongAgentOutcome(outcome.GetError());
-    }
-}
-
-void WedataClient::UpdateInLongAgentAsync(const UpdateInLongAgentRequest& request, const UpdateInLongAgentAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
-{
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->UpdateInLongAgent(request), context);
-    };
-
-    Executor::GetInstance()->Submit(new Runnable(fn));
-}
-
-WedataClient::UpdateInLongAgentOutcomeCallable WedataClient::UpdateInLongAgentCallable(const UpdateInLongAgentRequest &request)
-{
-    auto task = std::make_shared<std::packaged_task<UpdateInLongAgentOutcome()>>(
-        [this, request]()
-        {
-            return this->UpdateInLongAgent(request);
         }
     );
 

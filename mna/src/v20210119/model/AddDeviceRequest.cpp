@@ -27,7 +27,10 @@ AddDeviceRequest::AddDeviceRequest() :
     m_remarkHasBeenSet(false),
     m_dataKeyHasBeenSet(false),
     m_encryptedHasBeenSet(false),
-    m_accessScopeHasBeenSet(false)
+    m_accessScopeHasBeenSet(false),
+    m_licensePayModeHasBeenSet(false),
+    m_groupNameHasBeenSet(false),
+    m_groupIdHasBeenSet(false)
 {
 }
 
@@ -76,6 +79,30 @@ string AddDeviceRequest::ToJsonString() const
         string key = "AccessScope";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_accessScope, allocator);
+    }
+
+    if (m_licensePayModeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "LicensePayMode";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_licensePayMode, allocator);
+    }
+
+    if (m_groupNameHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "GroupName";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_groupName.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_groupIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "GroupId";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_groupId.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -164,6 +191,54 @@ void AddDeviceRequest::SetAccessScope(const int64_t& _accessScope)
 bool AddDeviceRequest::AccessScopeHasBeenSet() const
 {
     return m_accessScopeHasBeenSet;
+}
+
+int64_t AddDeviceRequest::GetLicensePayMode() const
+{
+    return m_licensePayMode;
+}
+
+void AddDeviceRequest::SetLicensePayMode(const int64_t& _licensePayMode)
+{
+    m_licensePayMode = _licensePayMode;
+    m_licensePayModeHasBeenSet = true;
+}
+
+bool AddDeviceRequest::LicensePayModeHasBeenSet() const
+{
+    return m_licensePayModeHasBeenSet;
+}
+
+string AddDeviceRequest::GetGroupName() const
+{
+    return m_groupName;
+}
+
+void AddDeviceRequest::SetGroupName(const string& _groupName)
+{
+    m_groupName = _groupName;
+    m_groupNameHasBeenSet = true;
+}
+
+bool AddDeviceRequest::GroupNameHasBeenSet() const
+{
+    return m_groupNameHasBeenSet;
+}
+
+string AddDeviceRequest::GetGroupId() const
+{
+    return m_groupId;
+}
+
+void AddDeviceRequest::SetGroupId(const string& _groupId)
+{
+    m_groupId = _groupId;
+    m_groupIdHasBeenSet = true;
+}
+
+bool AddDeviceRequest::GroupIdHasBeenSet() const
+{
+    return m_groupIdHasBeenSet;
 }
 
 

@@ -35,7 +35,7 @@ namespace TencentCloud
             namespace Model
             {
                 /**
-                * 会话内容,  按对话时间序排列，长度最多为40
+                * 单条消息
                 */
                 class Message : public AbstractModel
                 {
@@ -68,15 +68,15 @@ namespace TencentCloud
                     bool RoleHasBeenSet() const;
 
                     /**
-                     * 获取消息的内容
-                     * @return Content 消息的内容
+                     * 获取消息内容
+                     * @return Content 消息内容
                      * 
                      */
                     std::string GetContent() const;
 
                     /**
-                     * 设置消息的内容
-                     * @param _content 消息的内容
+                     * 设置消息内容
+                     * @param _content 消息内容
                      * 
                      */
                     void SetContent(const std::string& _content);
@@ -97,7 +97,7 @@ namespace TencentCloud
                     bool m_roleHasBeenSet;
 
                     /**
-                     * 消息的内容
+                     * 消息内容
                      */
                     std::string m_content;
                     bool m_contentHasBeenSet;

@@ -28,7 +28,9 @@ GetStatisticDataRequest::GetStatisticDataRequest() :
     m_endTimeHasBeenSet(false),
     m_timeGranularityHasBeenSet(false),
     m_accessRegionHasBeenSet(false),
-    m_gatewayTypeHasBeenSet(false)
+    m_gatewayTypeHasBeenSet(false),
+    m_deviceListHasBeenSet(false),
+    m_groupIdHasBeenSet(false)
 {
 }
 
@@ -85,6 +87,27 @@ string GetStatisticDataRequest::ToJsonString() const
         string key = "GatewayType";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_gatewayType, allocator);
+    }
+
+    if (m_deviceListHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "DeviceList";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        for (auto itr = m_deviceList.begin(); itr != m_deviceList.end(); ++itr)
+        {
+            d[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
+        }
+    }
+
+    if (m_groupIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "GroupId";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_groupId.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -189,6 +212,38 @@ void GetStatisticDataRequest::SetGatewayType(const int64_t& _gatewayType)
 bool GetStatisticDataRequest::GatewayTypeHasBeenSet() const
 {
     return m_gatewayTypeHasBeenSet;
+}
+
+vector<string> GetStatisticDataRequest::GetDeviceList() const
+{
+    return m_deviceList;
+}
+
+void GetStatisticDataRequest::SetDeviceList(const vector<string>& _deviceList)
+{
+    m_deviceList = _deviceList;
+    m_deviceListHasBeenSet = true;
+}
+
+bool GetStatisticDataRequest::DeviceListHasBeenSet() const
+{
+    return m_deviceListHasBeenSet;
+}
+
+string GetStatisticDataRequest::GetGroupId() const
+{
+    return m_groupId;
+}
+
+void GetStatisticDataRequest::SetGroupId(const string& _groupId)
+{
+    m_groupId = _groupId;
+    m_groupIdHasBeenSet = true;
+}
+
+bool GetStatisticDataRequest::GroupIdHasBeenSet() const
+{
+    return m_groupIdHasBeenSet;
 }
 
 

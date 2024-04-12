@@ -68,15 +68,15 @@ namespace TencentCloud
                     bool WorkflowNameHasBeenSet() const;
 
                     /**
-                     * 获取依赖
-                     * @return DependencyWorkflow 依赖
+                     * 获取依赖：yes、no
+                     * @return DependencyWorkflow 依赖：yes、no
                      * 
                      */
                     std::string GetDependencyWorkflow() const;
 
                     /**
-                     * 设置依赖
-                     * @param _dependencyWorkflow 依赖
+                     * 设置依赖：yes、no
+                     * @param _dependencyWorkflow 依赖：yes、no
                      * 
                      */
                     void SetDependencyWorkflow(const std::string& _dependencyWorkflow);
@@ -89,15 +89,15 @@ namespace TencentCloud
                     bool DependencyWorkflowHasBeenSet() const;
 
                     /**
-                     * 获取开始时间
-                     * @return StartTime 开始时间
+                     * 获取任务开始数据时间。非空。默认当前时间
+                     * @return StartTime 任务开始数据时间。非空。默认当前时间
                      * 
                      */
                     std::string GetStartTime() const;
 
                     /**
-                     * 设置开始时间
-                     * @param _startTime 开始时间
+                     * 设置任务开始数据时间。非空。默认当前时间
+                     * @param _startTime 任务开始数据时间。非空。默认当前时间
                      * 
                      */
                     void SetStartTime(const std::string& _startTime);
@@ -110,15 +110,15 @@ namespace TencentCloud
                     bool StartTimeHasBeenSet() const;
 
                     /**
-                     * 获取结束时间
-                     * @return EndTime 结束时间
+                     * 获取任务结束数据时间。非空。默认当前时间
+                     * @return EndTime 任务结束数据时间。非空。默认当前时间
                      * 
                      */
                     std::string GetEndTime() const;
 
                     /**
-                     * 设置结束时间
-                     * @param _endTime 结束时间
+                     * 设置任务结束数据时间。非空。默认当前时间
+                     * @param _endTime 任务结束数据时间。非空。默认当前时间
                      * 
                      */
                     void SetEndTime(const std::string& _endTime);
@@ -131,15 +131,15 @@ namespace TencentCloud
                     bool EndTimeHasBeenSet() const;
 
                     /**
-                     * 获取周期
-                     * @return CycleType 周期
+                     * 获取周期类型。一次性任务:6、分钟任务：1、小时任务：2、天任务：3、周任务：4、月任务：5、crontab任务：0
+                     * @return CycleType 周期类型。一次性任务:6、分钟任务：1、小时任务：2、天任务：3、周任务：4、月任务：5、crontab任务：0
                      * 
                      */
                     uint64_t GetCycleType() const;
 
                     /**
-                     * 设置周期
-                     * @param _cycleType 周期
+                     * 设置周期类型。一次性任务:6、分钟任务：1、小时任务：2、天任务：3、周任务：4、月任务：5、crontab任务：0
+                     * @param _cycleType 周期类型。一次性任务:6、分钟任务：1、小时任务：2、天任务：3、周任务：4、月任务：5、crontab任务：0
                      * 
                      */
                     void SetCycleType(const uint64_t& _cycleType);
@@ -152,15 +152,15 @@ namespace TencentCloud
                     bool CycleTypeHasBeenSet() const;
 
                     /**
-                     * 获取周期间隔
-                     * @return CycleStep 周期间隔
+                     * 获取间隔，可选，默认1。非空。默认 1
+                     * @return CycleStep 间隔，可选，默认1。非空。默认 1
                      * 
                      */
                     uint64_t GetCycleStep() const;
 
                     /**
-                     * 设置周期间隔
-                     * @param _cycleStep 周期间隔
+                     * 设置间隔，可选，默认1。非空。默认 1
+                     * @param _cycleStep 间隔，可选，默认1。非空。默认 1
                      * 
                      */
                     void SetCycleStep(const uint64_t& _cycleStep);
@@ -173,15 +173,15 @@ namespace TencentCloud
                     bool CycleStepHasBeenSet() const;
 
                     /**
-                     * 获取延迟时间
-                     * @return DelayTime 延迟时间
+                     * 获取延时执行时间，单位分钟
+                     * @return DelayTime 延时执行时间，单位分钟
                      * 
                      */
                     uint64_t GetDelayTime() const;
 
                     /**
-                     * 设置延迟时间
-                     * @param _delayTime 延迟时间
+                     * 设置延时执行时间，单位分钟
+                     * @param _delayTime 延时执行时间，单位分钟
                      * 
                      */
                     void SetDelayTime(const uint64_t& _delayTime);
@@ -194,18 +194,18 @@ namespace TencentCloud
                     bool DelayTimeHasBeenSet() const;
 
                     /**
-                     * 获取crontab
+                     * 获取任务cron表达式，仅cron任务使用，其他时候默认为空
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return CrontabExpression crontab
+                     * @return CrontabExpression 任务cron表达式，仅cron任务使用，其他时候默认为空
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetCrontabExpression() const;
 
                     /**
-                     * 设置crontab
+                     * 设置任务cron表达式，仅cron任务使用，其他时候默认为空
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _crontabExpression crontab
+                     * @param _crontabExpression 任务cron表达式，仅cron任务使用，其他时候默认为空
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -353,10 +353,10 @@ namespace TencentCloud
                     bool SelfDependHasBeenSet() const;
 
                     /**
-                     * 获取周任务：1是周天，2是周1，7是周6 。
+                     * 获取时间指定，如月任务指定1，3号，则填入 1，3。非空。默认 ""
 月任务：如具体1，3号则写 "1,3"，指定月末不可和具体号数一起输入，仅能为 "L"
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return TaskAction 周任务：1是周天，2是周1，7是周6 。
+                     * @return TaskAction 时间指定，如月任务指定1，3号，则填入 1，3。非空。默认 ""
 月任务：如具体1，3号则写 "1,3"，指定月末不可和具体号数一起输入，仅能为 "L"
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
@@ -364,10 +364,10 @@ namespace TencentCloud
                     std::string GetTaskAction() const;
 
                     /**
-                     * 设置周任务：1是周天，2是周1，7是周6 。
+                     * 设置时间指定，如月任务指定1，3号，则填入 1，3。非空。默认 ""
 月任务：如具体1，3号则写 "1,3"，指定月末不可和具体号数一起输入，仅能为 "L"
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _taskAction 周任务：1是周天，2是周1，7是周6 。
+                     * @param _taskAction 时间指定，如月任务指定1，3号，则填入 1，3。非空。默认 ""
 月任务：如具体1，3号则写 "1,3"，指定月末不可和具体号数一起输入，仅能为 "L"
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
@@ -457,18 +457,18 @@ namespace TencentCloud
                     bool TaskAutoSubmitHasBeenSet() const;
 
                     /**
-                     * 获取实例初始化策略
+                     * 获取实例生成方式，T_PLUS_0 当天任务当天调度 / T_PLUS_1 当天任务后一天调度
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return InstanceInitStrategy 实例初始化策略
+                     * @return InstanceInitStrategy 实例生成方式，T_PLUS_0 当天任务当天调度 / T_PLUS_1 当天任务后一天调度
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetInstanceInitStrategy() const;
 
                     /**
-                     * 设置实例初始化策略
+                     * 设置实例生成方式，T_PLUS_0 当天任务当天调度 / T_PLUS_1 当天任务后一天调度
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _instanceInitStrategy 实例初始化策略
+                     * @param _instanceInitStrategy 实例生成方式，T_PLUS_0 当天任务当天调度 / T_PLUS_1 当天任务后一天调度
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -490,43 +490,43 @@ namespace TencentCloud
                     bool m_workflowNameHasBeenSet;
 
                     /**
-                     * 依赖
+                     * 依赖：yes、no
                      */
                     std::string m_dependencyWorkflow;
                     bool m_dependencyWorkflowHasBeenSet;
 
                     /**
-                     * 开始时间
+                     * 任务开始数据时间。非空。默认当前时间
                      */
                     std::string m_startTime;
                     bool m_startTimeHasBeenSet;
 
                     /**
-                     * 结束时间
+                     * 任务结束数据时间。非空。默认当前时间
                      */
                     std::string m_endTime;
                     bool m_endTimeHasBeenSet;
 
                     /**
-                     * 周期
+                     * 周期类型。一次性任务:6、分钟任务：1、小时任务：2、天任务：3、周任务：4、月任务：5、crontab任务：0
                      */
                     uint64_t m_cycleType;
                     bool m_cycleTypeHasBeenSet;
 
                     /**
-                     * 周期间隔
+                     * 间隔，可选，默认1。非空。默认 1
                      */
                     uint64_t m_cycleStep;
                     bool m_cycleStepHasBeenSet;
 
                     /**
-                     * 延迟时间
+                     * 延时执行时间，单位分钟
                      */
                     uint64_t m_delayTime;
                     bool m_delayTimeHasBeenSet;
 
                     /**
-                     * crontab
+                     * 任务cron表达式，仅cron任务使用，其他时候默认为空
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_crontabExpression;
@@ -571,7 +571,7 @@ namespace TencentCloud
                     bool m_selfDependHasBeenSet;
 
                     /**
-                     * 周任务：1是周天，2是周1，7是周6 。
+                     * 时间指定，如月任务指定1，3号，则填入 1，3。非空。默认 ""
 月任务：如具体1，3号则写 "1,3"，指定月末不可和具体号数一起输入，仅能为 "L"
 注意：此字段可能返回 null，表示取不到有效值。
                      */
@@ -600,7 +600,7 @@ namespace TencentCloud
                     bool m_taskAutoSubmitHasBeenSet;
 
                     /**
-                     * 实例初始化策略
+                     * 实例生成方式，T_PLUS_0 当天任务当天调度 / T_PLUS_1 当天任务后一天调度
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_instanceInitStrategy;

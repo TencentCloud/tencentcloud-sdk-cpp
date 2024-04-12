@@ -298,6 +298,49 @@ CdbClient::BalanceRoGroupLoadOutcomeCallable CdbClient::BalanceRoGroupLoadCallab
     return task->get_future();
 }
 
+CdbClient::CheckMigrateClusterOutcome CdbClient::CheckMigrateCluster(const CheckMigrateClusterRequest &request)
+{
+    auto outcome = MakeRequest(request, "CheckMigrateCluster");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        CheckMigrateClusterResponse rsp = CheckMigrateClusterResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return CheckMigrateClusterOutcome(rsp);
+        else
+            return CheckMigrateClusterOutcome(o.GetError());
+    }
+    else
+    {
+        return CheckMigrateClusterOutcome(outcome.GetError());
+    }
+}
+
+void CdbClient::CheckMigrateClusterAsync(const CheckMigrateClusterRequest& request, const CheckMigrateClusterAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->CheckMigrateCluster(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+CdbClient::CheckMigrateClusterOutcomeCallable CdbClient::CheckMigrateClusterCallable(const CheckMigrateClusterRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<CheckMigrateClusterOutcome()>>(
+        [this, request]()
+        {
+            return this->CheckMigrateCluster(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 CdbClient::CloseAuditServiceOutcome CdbClient::CloseAuditService(const CloseAuditServiceRequest &request)
 {
     auto outcome = MakeRequest(request, "CloseAuditService");
@@ -2570,6 +2613,49 @@ CdbClient::DescribeCloneListOutcomeCallable CdbClient::DescribeCloneListCallable
         [this, request]()
         {
             return this->DescribeCloneList(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+CdbClient::DescribeClusterInfoOutcome CdbClient::DescribeClusterInfo(const DescribeClusterInfoRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeClusterInfo");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeClusterInfoResponse rsp = DescribeClusterInfoResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeClusterInfoOutcome(rsp);
+        else
+            return DescribeClusterInfoOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeClusterInfoOutcome(outcome.GetError());
+    }
+}
+
+void CdbClient::DescribeClusterInfoAsync(const DescribeClusterInfoRequest& request, const DescribeClusterInfoAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeClusterInfo(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+CdbClient::DescribeClusterInfoOutcomeCallable CdbClient::DescribeClusterInfoCallable(const DescribeClusterInfoRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeClusterInfoOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeClusterInfo(request);
         }
     );
 

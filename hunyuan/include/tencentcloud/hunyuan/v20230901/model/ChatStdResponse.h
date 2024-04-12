@@ -47,8 +47,8 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取unix 时间戳，单位为秒。
-                     * @return Created unix 时间戳，单位为秒。
+                     * 获取Unix 时间戳，单位为秒。
+                     * @return Created Unix 时间戳，单位为秒。
                      * 
                      */
                     int64_t GetCreated() const;
@@ -61,10 +61,10 @@ namespace TencentCloud
                     bool CreatedHasBeenSet() const;
 
                     /**
-                     * 获取token统计信息。
-按照总token数量计费。
-                     * @return Usage token统计信息。
-按照总token数量计费。
+                     * 获取Token 统计信息。
+按照总 Token 数量计费。
+                     * @return Usage Token 统计信息。
+按照总 Token 数量计费。
                      * 
                      */
                     Usage GetUsage() const;
@@ -91,8 +91,8 @@ namespace TencentCloud
                     bool NoteHasBeenSet() const;
 
                     /**
-                     * 获取本轮对话的id。
-                     * @return Id 本轮对话的id。
+                     * 获取本轮对话的 ID。
+                     * @return Id 本轮对话的 ID。
                      * 
                      */
                     std::string GetId() const;
@@ -139,14 +139,14 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * unix 时间戳，单位为秒。
+                     * Unix 时间戳，单位为秒。
                      */
                     int64_t m_created;
                     bool m_createdHasBeenSet;
 
                     /**
-                     * token统计信息。
-按照总token数量计费。
+                     * Token 统计信息。
+按照总 Token 数量计费。
                      */
                     Usage m_usage;
                     bool m_usageHasBeenSet;
@@ -158,7 +158,7 @@ namespace TencentCloud
                     bool m_noteHasBeenSet;
 
                     /**
-                     * 本轮对话的id。
+                     * 本轮对话的 ID。
                      */
                     std::string m_id;
                     bool m_idHasBeenSet;

@@ -163,6 +163,81 @@ namespace TencentCloud
                      */
                     bool AccessScopeHasBeenSet() const;
 
+                    /**
+                     * 获取license付费方式： 
+0，月度授权 
+1，永久授权 
+若不传则默认为月度授权
+                     * @return LicensePayMode license付费方式： 
+0，月度授权 
+1，永久授权 
+若不传则默认为月度授权
+                     * 
+                     */
+                    int64_t GetLicensePayMode() const;
+
+                    /**
+                     * 设置license付费方式： 
+0，月度授权 
+1，永久授权 
+若不传则默认为月度授权
+                     * @param _licensePayMode license付费方式： 
+0，月度授权 
+1，永久授权 
+若不传则默认为月度授权
+                     * 
+                     */
+                    void SetLicensePayMode(const int64_t& _licensePayMode);
+
+                    /**
+                     * 判断参数 LicensePayMode 是否已赋值
+                     * @return LicensePayMode 是否已赋值
+                     * 
+                     */
+                    bool LicensePayModeHasBeenSet() const;
+
+                    /**
+                     * 获取设备分组名称，非必选，预留参数，需要分组时传入GroupId
+                     * @return GroupName 设备分组名称，非必选，预留参数，需要分组时传入GroupId
+                     * 
+                     */
+                    std::string GetGroupName() const;
+
+                    /**
+                     * 设置设备分组名称，非必选，预留参数，需要分组时传入GroupId
+                     * @param _groupName 设备分组名称，非必选，预留参数，需要分组时传入GroupId
+                     * 
+                     */
+                    void SetGroupName(const std::string& _groupName);
+
+                    /**
+                     * 判断参数 GroupName 是否已赋值
+                     * @return GroupName 是否已赋值
+                     * 
+                     */
+                    bool GroupNameHasBeenSet() const;
+
+                    /**
+                     * 获取设备分组ID，非必选，如果不填写则默认设备无分组
+                     * @return GroupId 设备分组ID，非必选，如果不填写则默认设备无分组
+                     * 
+                     */
+                    std::string GetGroupId() const;
+
+                    /**
+                     * 设置设备分组ID，非必选，如果不填写则默认设备无分组
+                     * @param _groupId 设备分组ID，非必选，如果不填写则默认设备无分组
+                     * 
+                     */
+                    void SetGroupId(const std::string& _groupId);
+
+                    /**
+                     * 判断参数 GroupId 是否已赋值
+                     * @return GroupId 是否已赋值
+                     * 
+                     */
+                    bool GroupIdHasBeenSet() const;
+
                 private:
 
                     /**
@@ -198,6 +273,27 @@ namespace TencentCloud
                      */
                     int64_t m_accessScope;
                     bool m_accessScopeHasBeenSet;
+
+                    /**
+                     * license付费方式： 
+0，月度授权 
+1，永久授权 
+若不传则默认为月度授权
+                     */
+                    int64_t m_licensePayMode;
+                    bool m_licensePayModeHasBeenSet;
+
+                    /**
+                     * 设备分组名称，非必选，预留参数，需要分组时传入GroupId
+                     */
+                    std::string m_groupName;
+                    bool m_groupNameHasBeenSet;
+
+                    /**
+                     * 设备分组ID，非必选，如果不填写则默认设备无分组
+                     */
+                    std::string m_groupId;
+                    bool m_groupIdHasBeenSet;
 
                 };
             }

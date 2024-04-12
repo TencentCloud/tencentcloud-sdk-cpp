@@ -29,7 +29,9 @@ VendorHardware::VendorHardware() :
     m_descriptionHasBeenSet(false),
     m_deviceIdHasBeenSet(false),
     m_licenseChargingModeHasBeenSet(false),
-    m_lastOnlineTimeHasBeenSet(false)
+    m_lastOnlineTimeHasBeenSet(false),
+    m_licensePayModeHasBeenSet(false),
+    m_payerHasBeenSet(false)
 {
 }
 
@@ -128,6 +130,26 @@ CoreInternalOutcome VendorHardware::Deserialize(const rapidjson::Value &value)
         m_lastOnlineTimeHasBeenSet = true;
     }
 
+    if (value.HasMember("LicensePayMode") && !value["LicensePayMode"].IsNull())
+    {
+        if (!value["LicensePayMode"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `VendorHardware.LicensePayMode` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_licensePayMode = value["LicensePayMode"].GetInt64();
+        m_licensePayModeHasBeenSet = true;
+    }
+
+    if (value.HasMember("Payer") && !value["Payer"].IsNull())
+    {
+        if (!value["Payer"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `VendorHardware.Payer` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_payer = value["Payer"].GetInt64();
+        m_payerHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -205,6 +227,22 @@ void VendorHardware::ToJsonObject(rapidjson::Value &value, rapidjson::Document::
         string key = "LastOnlineTime";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_lastOnlineTime.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_licensePayModeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "LicensePayMode";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_licensePayMode, allocator);
+    }
+
+    if (m_payerHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Payer";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_payer, allocator);
     }
 
 }
@@ -352,5 +390,37 @@ void VendorHardware::SetLastOnlineTime(const string& _lastOnlineTime)
 bool VendorHardware::LastOnlineTimeHasBeenSet() const
 {
     return m_lastOnlineTimeHasBeenSet;
+}
+
+int64_t VendorHardware::GetLicensePayMode() const
+{
+    return m_licensePayMode;
+}
+
+void VendorHardware::SetLicensePayMode(const int64_t& _licensePayMode)
+{
+    m_licensePayMode = _licensePayMode;
+    m_licensePayModeHasBeenSet = true;
+}
+
+bool VendorHardware::LicensePayModeHasBeenSet() const
+{
+    return m_licensePayModeHasBeenSet;
+}
+
+int64_t VendorHardware::GetPayer() const
+{
+    return m_payer;
+}
+
+void VendorHardware::SetPayer(const int64_t& _payer)
+{
+    m_payer = _payer;
+    m_payerHasBeenSet = true;
+}
+
+bool VendorHardware::PayerHasBeenSet() const
+{
+    return m_payerHasBeenSet;
 }
 

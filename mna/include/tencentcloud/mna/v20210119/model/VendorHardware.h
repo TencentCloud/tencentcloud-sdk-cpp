@@ -223,8 +223,10 @@ namespace TencentCloud
 
                     /**
                      * 获取license计费模式： 1，租户月付费 2，厂商月付费 3，license永久授权
+注：设备为租户付费且未激活（未选择月付还是永久付费）时，此参数返回1，仅代表租户付费。后续将废弃此参数，新接入请使用LicensePayMode和Payer
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return LicenseChargingMode license计费模式： 1，租户月付费 2，厂商月付费 3，license永久授权
+注：设备为租户付费且未激活（未选择月付还是永久付费）时，此参数返回1，仅代表租户付费。后续将废弃此参数，新接入请使用LicensePayMode和Payer
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -232,8 +234,10 @@ namespace TencentCloud
 
                     /**
                      * 设置license计费模式： 1，租户月付费 2，厂商月付费 3，license永久授权
+注：设备为租户付费且未激活（未选择月付还是永久付费）时，此参数返回1，仅代表租户付费。后续将废弃此参数，新接入请使用LicensePayMode和Payer
 注意：此字段可能返回 null，表示取不到有效值。
                      * @param _licenseChargingMode license计费模式： 1，租户月付费 2，厂商月付费 3，license永久授权
+注：设备为租户付费且未激活（未选择月付还是永久付费）时，此参数返回1，仅代表租户付费。后续将废弃此参数，新接入请使用LicensePayMode和Payer
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -270,6 +274,76 @@ namespace TencentCloud
                      * 
                      */
                     bool LastOnlineTimeHasBeenSet() const;
+
+                    /**
+                     * 获取license授权有效期
+0：月度授权
+1：永久授权
+-1：未知
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return LicensePayMode license授权有效期
+0：月度授权
+1：永久授权
+-1：未知
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    int64_t GetLicensePayMode() const;
+
+                    /**
+                     * 设置license授权有效期
+0：月度授权
+1：永久授权
+-1：未知
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _licensePayMode license授权有效期
+0：月度授权
+1：永久授权
+-1：未知
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetLicensePayMode(const int64_t& _licensePayMode);
+
+                    /**
+                     * 判断参数 LicensePayMode 是否已赋值
+                     * @return LicensePayMode 是否已赋值
+                     * 
+                     */
+                    bool LicensePayModeHasBeenSet() const;
+
+                    /**
+                     * 获取付费方
+0：客户付费
+1：厂商付费
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return Payer 付费方
+0：客户付费
+1：厂商付费
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    int64_t GetPayer() const;
+
+                    /**
+                     * 设置付费方
+0：客户付费
+1：厂商付费
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _payer 付费方
+0：客户付费
+1：厂商付费
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetPayer(const int64_t& _payer);
+
+                    /**
+                     * 判断参数 Payer 是否已赋值
+                     * @return Payer 是否已赋值
+                     * 
+                     */
+                    bool PayerHasBeenSet() const;
 
                 private:
 
@@ -324,6 +398,7 @@ namespace TencentCloud
 
                     /**
                      * license计费模式： 1，租户月付费 2，厂商月付费 3，license永久授权
+注：设备为租户付费且未激活（未选择月付还是永久付费）时，此参数返回1，仅代表租户付费。后续将废弃此参数，新接入请使用LicensePayMode和Payer
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_licenseChargingMode;
@@ -335,6 +410,25 @@ namespace TencentCloud
                      */
                     std::string m_lastOnlineTime;
                     bool m_lastOnlineTimeHasBeenSet;
+
+                    /**
+                     * license授权有效期
+0：月度授权
+1：永久授权
+-1：未知
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    int64_t m_licensePayMode;
+                    bool m_licensePayModeHasBeenSet;
+
+                    /**
+                     * 付费方
+0：客户付费
+1：厂商付费
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    int64_t m_payer;
+                    bool m_payerHasBeenSet;
 
                 };
             }

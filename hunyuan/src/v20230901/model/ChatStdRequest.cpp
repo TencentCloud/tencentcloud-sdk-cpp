@@ -25,7 +25,9 @@ using namespace std;
 ChatStdRequest::ChatStdRequest() :
     m_messagesHasBeenSet(false),
     m_topPHasBeenSet(false),
-    m_temperatureHasBeenSet(false)
+    m_temperatureHasBeenSet(false),
+    m_streamHasBeenSet(false),
+    m_streamModerationHasBeenSet(false)
 {
 }
 
@@ -65,6 +67,22 @@ string ChatStdRequest::ToJsonString() const
         string key = "Temperature";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_temperature, allocator);
+    }
+
+    if (m_streamHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Stream";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_stream, allocator);
+    }
+
+    if (m_streamModerationHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "StreamModeration";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_streamModeration, allocator);
     }
 
 
@@ -121,6 +139,38 @@ void ChatStdRequest::SetTemperature(const double& _temperature)
 bool ChatStdRequest::TemperatureHasBeenSet() const
 {
     return m_temperatureHasBeenSet;
+}
+
+bool ChatStdRequest::GetStream() const
+{
+    return m_stream;
+}
+
+void ChatStdRequest::SetStream(const bool& _stream)
+{
+    m_stream = _stream;
+    m_streamHasBeenSet = true;
+}
+
+bool ChatStdRequest::StreamHasBeenSet() const
+{
+    return m_streamHasBeenSet;
+}
+
+bool ChatStdRequest::GetStreamModeration() const
+{
+    return m_streamModeration;
+}
+
+void ChatStdRequest::SetStreamModeration(const bool& _streamModeration)
+{
+    m_streamModeration = _streamModeration;
+    m_streamModerationHasBeenSet = true;
+}
+
+bool ChatStdRequest::StreamModerationHasBeenSet() const
+{
+    return m_streamModerationHasBeenSet;
 }
 
 

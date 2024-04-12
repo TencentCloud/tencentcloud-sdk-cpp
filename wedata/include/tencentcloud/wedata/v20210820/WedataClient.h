@@ -101,8 +101,6 @@
 #include <tencentcloud/wedata/v20210820/model/CreateHiveTableResponse.h>
 #include <tencentcloud/wedata/v20210820/model/CreateHiveTableByDDLRequest.h>
 #include <tencentcloud/wedata/v20210820/model/CreateHiveTableByDDLResponse.h>
-#include <tencentcloud/wedata/v20210820/model/CreateInLongAgentRequest.h>
-#include <tencentcloud/wedata/v20210820/model/CreateInLongAgentResponse.h>
 #include <tencentcloud/wedata/v20210820/model/CreateIntegrationNodeRequest.h>
 #include <tencentcloud/wedata/v20210820/model/CreateIntegrationNodeResponse.h>
 #include <tencentcloud/wedata/v20210820/model/CreateIntegrationTaskRequest.h>
@@ -143,8 +141,6 @@
 #include <tencentcloud/wedata/v20210820/model/DeleteFilePathResponse.h>
 #include <tencentcloud/wedata/v20210820/model/DeleteFolderRequest.h>
 #include <tencentcloud/wedata/v20210820/model/DeleteFolderResponse.h>
-#include <tencentcloud/wedata/v20210820/model/DeleteInLongAgentRequest.h>
-#include <tencentcloud/wedata/v20210820/model/DeleteInLongAgentResponse.h>
 #include <tencentcloud/wedata/v20210820/model/DeleteIntegrationNodeRequest.h>
 #include <tencentcloud/wedata/v20210820/model/DeleteIntegrationNodeResponse.h>
 #include <tencentcloud/wedata/v20210820/model/DeleteIntegrationTaskRequest.h>
@@ -203,8 +199,6 @@
 #include <tencentcloud/wedata/v20210820/model/DescribeBatchOperateTaskResponse.h>
 #include <tencentcloud/wedata/v20210820/model/DescribeBelongToRequest.h>
 #include <tencentcloud/wedata/v20210820/model/DescribeBelongToResponse.h>
-#include <tencentcloud/wedata/v20210820/model/DescribeClusterNamespaceListRequest.h>
-#include <tencentcloud/wedata/v20210820/model/DescribeClusterNamespaceListResponse.h>
 #include <tencentcloud/wedata/v20210820/model/DescribeColumnLineageRequest.h>
 #include <tencentcloud/wedata/v20210820/model/DescribeColumnLineageResponse.h>
 #include <tencentcloud/wedata/v20210820/model/DescribeColumnsMetaRequest.h>
@@ -279,14 +273,6 @@
 #include <tencentcloud/wedata/v20210820/model/DescribeFunctionKindsResponse.h>
 #include <tencentcloud/wedata/v20210820/model/DescribeFunctionTypesRequest.h>
 #include <tencentcloud/wedata/v20210820/model/DescribeFunctionTypesResponse.h>
-#include <tencentcloud/wedata/v20210820/model/DescribeInLongAgentListRequest.h>
-#include <tencentcloud/wedata/v20210820/model/DescribeInLongAgentListResponse.h>
-#include <tencentcloud/wedata/v20210820/model/DescribeInLongAgentTaskListRequest.h>
-#include <tencentcloud/wedata/v20210820/model/DescribeInLongAgentTaskListResponse.h>
-#include <tencentcloud/wedata/v20210820/model/DescribeInLongAgentVpcListRequest.h>
-#include <tencentcloud/wedata/v20210820/model/DescribeInLongAgentVpcListResponse.h>
-#include <tencentcloud/wedata/v20210820/model/DescribeInLongTkeClusterListRequest.h>
-#include <tencentcloud/wedata/v20210820/model/DescribeInLongTkeClusterListResponse.h>
 #include <tencentcloud/wedata/v20210820/model/DescribeInstanceByCycleRequest.h>
 #include <tencentcloud/wedata/v20210820/model/DescribeInstanceByCycleResponse.h>
 #include <tencentcloud/wedata/v20210820/model/DescribeInstanceByCycleReportRequest.h>
@@ -313,8 +299,6 @@
 #include <tencentcloud/wedata/v20210820/model/DescribeIntegrationNodeResponse.h>
 #include <tencentcloud/wedata/v20210820/model/DescribeIntegrationStatisticsRequest.h>
 #include <tencentcloud/wedata/v20210820/model/DescribeIntegrationStatisticsResponse.h>
-#include <tencentcloud/wedata/v20210820/model/DescribeIntegrationStatisticsAgentStatusRequest.h>
-#include <tencentcloud/wedata/v20210820/model/DescribeIntegrationStatisticsAgentStatusResponse.h>
 #include <tencentcloud/wedata/v20210820/model/DescribeIntegrationStatisticsInstanceTrendRequest.h>
 #include <tencentcloud/wedata/v20210820/model/DescribeIntegrationStatisticsInstanceTrendResponse.h>
 #include <tencentcloud/wedata/v20210820/model/DescribeIntegrationStatisticsRecordsTrendRequest.h>
@@ -431,8 +415,6 @@
 #include <tencentcloud/wedata/v20210820/model/DescribeSchedulerTaskTypeCntResponse.h>
 #include <tencentcloud/wedata/v20210820/model/DescribeSonInstancesRequest.h>
 #include <tencentcloud/wedata/v20210820/model/DescribeSonInstancesResponse.h>
-#include <tencentcloud/wedata/v20210820/model/DescribeStandardRuleDetailInfoListRequest.h>
-#include <tencentcloud/wedata/v20210820/model/DescribeStandardRuleDetailInfoListResponse.h>
 #include <tencentcloud/wedata/v20210820/model/DescribeStatisticInstanceStatusTrendOpsRequest.h>
 #include <tencentcloud/wedata/v20210820/model/DescribeStatisticInstanceStatusTrendOpsResponse.h>
 #include <tencentcloud/wedata/v20210820/model/DescribeStreamTaskLogListRequest.h>
@@ -607,8 +589,6 @@
 #include <tencentcloud/wedata/v20210820/model/RerunOpsMakePlanInstancesResponse.h>
 #include <tencentcloud/wedata/v20210820/model/RerunScheduleInstancesRequest.h>
 #include <tencentcloud/wedata/v20210820/model/RerunScheduleInstancesResponse.h>
-#include <tencentcloud/wedata/v20210820/model/RestartInLongAgentRequest.h>
-#include <tencentcloud/wedata/v20210820/model/RestartInLongAgentResponse.h>
 #include <tencentcloud/wedata/v20210820/model/ResumeIntegrationTaskRequest.h>
 #include <tencentcloud/wedata/v20210820/model/ResumeIntegrationTaskResponse.h>
 #include <tencentcloud/wedata/v20210820/model/RobAndLockIntegrationTaskRequest.h>
@@ -653,8 +633,6 @@
 #include <tencentcloud/wedata/v20210820/model/TriggerEventResponse.h>
 #include <tencentcloud/wedata/v20210820/model/UnlockIntegrationTaskRequest.h>
 #include <tencentcloud/wedata/v20210820/model/UnlockIntegrationTaskResponse.h>
-#include <tencentcloud/wedata/v20210820/model/UpdateInLongAgentRequest.h>
-#include <tencentcloud/wedata/v20210820/model/UpdateInLongAgentResponse.h>
 #include <tencentcloud/wedata/v20210820/model/UpdateWorkflowOwnerRequest.h>
 #include <tencentcloud/wedata/v20210820/model/UpdateWorkflowOwnerResponse.h>
 #include <tencentcloud/wedata/v20210820/model/UploadContentRequest.h>
@@ -790,9 +768,6 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::CreateHiveTableByDDLResponse> CreateHiveTableByDDLOutcome;
                 typedef std::future<CreateHiveTableByDDLOutcome> CreateHiveTableByDDLOutcomeCallable;
                 typedef std::function<void(const WedataClient*, const Model::CreateHiveTableByDDLRequest&, CreateHiveTableByDDLOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateHiveTableByDDLAsyncHandler;
-                typedef Outcome<Core::Error, Model::CreateInLongAgentResponse> CreateInLongAgentOutcome;
-                typedef std::future<CreateInLongAgentOutcome> CreateInLongAgentOutcomeCallable;
-                typedef std::function<void(const WedataClient*, const Model::CreateInLongAgentRequest&, CreateInLongAgentOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateInLongAgentAsyncHandler;
                 typedef Outcome<Core::Error, Model::CreateIntegrationNodeResponse> CreateIntegrationNodeOutcome;
                 typedef std::future<CreateIntegrationNodeOutcome> CreateIntegrationNodeOutcomeCallable;
                 typedef std::function<void(const WedataClient*, const Model::CreateIntegrationNodeRequest&, CreateIntegrationNodeOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateIntegrationNodeAsyncHandler;
@@ -853,9 +828,6 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DeleteFolderResponse> DeleteFolderOutcome;
                 typedef std::future<DeleteFolderOutcome> DeleteFolderOutcomeCallable;
                 typedef std::function<void(const WedataClient*, const Model::DeleteFolderRequest&, DeleteFolderOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteFolderAsyncHandler;
-                typedef Outcome<Core::Error, Model::DeleteInLongAgentResponse> DeleteInLongAgentOutcome;
-                typedef std::future<DeleteInLongAgentOutcome> DeleteInLongAgentOutcomeCallable;
-                typedef std::function<void(const WedataClient*, const Model::DeleteInLongAgentRequest&, DeleteInLongAgentOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteInLongAgentAsyncHandler;
                 typedef Outcome<Core::Error, Model::DeleteIntegrationNodeResponse> DeleteIntegrationNodeOutcome;
                 typedef std::future<DeleteIntegrationNodeOutcome> DeleteIntegrationNodeOutcomeCallable;
                 typedef std::function<void(const WedataClient*, const Model::DeleteIntegrationNodeRequest&, DeleteIntegrationNodeOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteIntegrationNodeAsyncHandler;
@@ -943,9 +915,6 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeBelongToResponse> DescribeBelongToOutcome;
                 typedef std::future<DescribeBelongToOutcome> DescribeBelongToOutcomeCallable;
                 typedef std::function<void(const WedataClient*, const Model::DescribeBelongToRequest&, DescribeBelongToOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeBelongToAsyncHandler;
-                typedef Outcome<Core::Error, Model::DescribeClusterNamespaceListResponse> DescribeClusterNamespaceListOutcome;
-                typedef std::future<DescribeClusterNamespaceListOutcome> DescribeClusterNamespaceListOutcomeCallable;
-                typedef std::function<void(const WedataClient*, const Model::DescribeClusterNamespaceListRequest&, DescribeClusterNamespaceListOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeClusterNamespaceListAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeColumnLineageResponse> DescribeColumnLineageOutcome;
                 typedef std::future<DescribeColumnLineageOutcome> DescribeColumnLineageOutcomeCallable;
                 typedef std::function<void(const WedataClient*, const Model::DescribeColumnLineageRequest&, DescribeColumnLineageOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeColumnLineageAsyncHandler;
@@ -1057,18 +1026,6 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeFunctionTypesResponse> DescribeFunctionTypesOutcome;
                 typedef std::future<DescribeFunctionTypesOutcome> DescribeFunctionTypesOutcomeCallable;
                 typedef std::function<void(const WedataClient*, const Model::DescribeFunctionTypesRequest&, DescribeFunctionTypesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeFunctionTypesAsyncHandler;
-                typedef Outcome<Core::Error, Model::DescribeInLongAgentListResponse> DescribeInLongAgentListOutcome;
-                typedef std::future<DescribeInLongAgentListOutcome> DescribeInLongAgentListOutcomeCallable;
-                typedef std::function<void(const WedataClient*, const Model::DescribeInLongAgentListRequest&, DescribeInLongAgentListOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeInLongAgentListAsyncHandler;
-                typedef Outcome<Core::Error, Model::DescribeInLongAgentTaskListResponse> DescribeInLongAgentTaskListOutcome;
-                typedef std::future<DescribeInLongAgentTaskListOutcome> DescribeInLongAgentTaskListOutcomeCallable;
-                typedef std::function<void(const WedataClient*, const Model::DescribeInLongAgentTaskListRequest&, DescribeInLongAgentTaskListOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeInLongAgentTaskListAsyncHandler;
-                typedef Outcome<Core::Error, Model::DescribeInLongAgentVpcListResponse> DescribeInLongAgentVpcListOutcome;
-                typedef std::future<DescribeInLongAgentVpcListOutcome> DescribeInLongAgentVpcListOutcomeCallable;
-                typedef std::function<void(const WedataClient*, const Model::DescribeInLongAgentVpcListRequest&, DescribeInLongAgentVpcListOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeInLongAgentVpcListAsyncHandler;
-                typedef Outcome<Core::Error, Model::DescribeInLongTkeClusterListResponse> DescribeInLongTkeClusterListOutcome;
-                typedef std::future<DescribeInLongTkeClusterListOutcome> DescribeInLongTkeClusterListOutcomeCallable;
-                typedef std::function<void(const WedataClient*, const Model::DescribeInLongTkeClusterListRequest&, DescribeInLongTkeClusterListOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeInLongTkeClusterListAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeInstanceByCycleResponse> DescribeInstanceByCycleOutcome;
                 typedef std::future<DescribeInstanceByCycleOutcome> DescribeInstanceByCycleOutcomeCallable;
                 typedef std::function<void(const WedataClient*, const Model::DescribeInstanceByCycleRequest&, DescribeInstanceByCycleOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeInstanceByCycleAsyncHandler;
@@ -1108,9 +1065,6 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeIntegrationStatisticsResponse> DescribeIntegrationStatisticsOutcome;
                 typedef std::future<DescribeIntegrationStatisticsOutcome> DescribeIntegrationStatisticsOutcomeCallable;
                 typedef std::function<void(const WedataClient*, const Model::DescribeIntegrationStatisticsRequest&, DescribeIntegrationStatisticsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeIntegrationStatisticsAsyncHandler;
-                typedef Outcome<Core::Error, Model::DescribeIntegrationStatisticsAgentStatusResponse> DescribeIntegrationStatisticsAgentStatusOutcome;
-                typedef std::future<DescribeIntegrationStatisticsAgentStatusOutcome> DescribeIntegrationStatisticsAgentStatusOutcomeCallable;
-                typedef std::function<void(const WedataClient*, const Model::DescribeIntegrationStatisticsAgentStatusRequest&, DescribeIntegrationStatisticsAgentStatusOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeIntegrationStatisticsAgentStatusAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeIntegrationStatisticsInstanceTrendResponse> DescribeIntegrationStatisticsInstanceTrendOutcome;
                 typedef std::future<DescribeIntegrationStatisticsInstanceTrendOutcome> DescribeIntegrationStatisticsInstanceTrendOutcomeCallable;
                 typedef std::function<void(const WedataClient*, const Model::DescribeIntegrationStatisticsInstanceTrendRequest&, DescribeIntegrationStatisticsInstanceTrendOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeIntegrationStatisticsInstanceTrendAsyncHandler;
@@ -1285,9 +1239,6 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeSonInstancesResponse> DescribeSonInstancesOutcome;
                 typedef std::future<DescribeSonInstancesOutcome> DescribeSonInstancesOutcomeCallable;
                 typedef std::function<void(const WedataClient*, const Model::DescribeSonInstancesRequest&, DescribeSonInstancesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeSonInstancesAsyncHandler;
-                typedef Outcome<Core::Error, Model::DescribeStandardRuleDetailInfoListResponse> DescribeStandardRuleDetailInfoListOutcome;
-                typedef std::future<DescribeStandardRuleDetailInfoListOutcome> DescribeStandardRuleDetailInfoListOutcomeCallable;
-                typedef std::function<void(const WedataClient*, const Model::DescribeStandardRuleDetailInfoListRequest&, DescribeStandardRuleDetailInfoListOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeStandardRuleDetailInfoListAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeStatisticInstanceStatusTrendOpsResponse> DescribeStatisticInstanceStatusTrendOpsOutcome;
                 typedef std::future<DescribeStatisticInstanceStatusTrendOpsOutcome> DescribeStatisticInstanceStatusTrendOpsOutcomeCallable;
                 typedef std::function<void(const WedataClient*, const Model::DescribeStatisticInstanceStatusTrendOpsRequest&, DescribeStatisticInstanceStatusTrendOpsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeStatisticInstanceStatusTrendOpsAsyncHandler;
@@ -1549,9 +1500,6 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::RerunScheduleInstancesResponse> RerunScheduleInstancesOutcome;
                 typedef std::future<RerunScheduleInstancesOutcome> RerunScheduleInstancesOutcomeCallable;
                 typedef std::function<void(const WedataClient*, const Model::RerunScheduleInstancesRequest&, RerunScheduleInstancesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> RerunScheduleInstancesAsyncHandler;
-                typedef Outcome<Core::Error, Model::RestartInLongAgentResponse> RestartInLongAgentOutcome;
-                typedef std::future<RestartInLongAgentOutcome> RestartInLongAgentOutcomeCallable;
-                typedef std::function<void(const WedataClient*, const Model::RestartInLongAgentRequest&, RestartInLongAgentOutcome, const std::shared_ptr<const AsyncCallerContext>&)> RestartInLongAgentAsyncHandler;
                 typedef Outcome<Core::Error, Model::ResumeIntegrationTaskResponse> ResumeIntegrationTaskOutcome;
                 typedef std::future<ResumeIntegrationTaskOutcome> ResumeIntegrationTaskOutcomeCallable;
                 typedef std::function<void(const WedataClient*, const Model::ResumeIntegrationTaskRequest&, ResumeIntegrationTaskOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ResumeIntegrationTaskAsyncHandler;
@@ -1618,9 +1566,6 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::UnlockIntegrationTaskResponse> UnlockIntegrationTaskOutcome;
                 typedef std::future<UnlockIntegrationTaskOutcome> UnlockIntegrationTaskOutcomeCallable;
                 typedef std::function<void(const WedataClient*, const Model::UnlockIntegrationTaskRequest&, UnlockIntegrationTaskOutcome, const std::shared_ptr<const AsyncCallerContext>&)> UnlockIntegrationTaskAsyncHandler;
-                typedef Outcome<Core::Error, Model::UpdateInLongAgentResponse> UpdateInLongAgentOutcome;
-                typedef std::future<UpdateInLongAgentOutcome> UpdateInLongAgentOutcomeCallable;
-                typedef std::function<void(const WedataClient*, const Model::UpdateInLongAgentRequest&, UpdateInLongAgentOutcome, const std::shared_ptr<const AsyncCallerContext>&)> UpdateInLongAgentAsyncHandler;
                 typedef Outcome<Core::Error, Model::UpdateWorkflowOwnerResponse> UpdateWorkflowOwnerOutcome;
                 typedef std::future<UpdateWorkflowOwnerOutcome> UpdateWorkflowOwnerOutcomeCallable;
                 typedef std::function<void(const WedataClient*, const Model::UpdateWorkflowOwnerRequest&, UpdateWorkflowOwnerOutcome, const std::shared_ptr<const AsyncCallerContext>&)> UpdateWorkflowOwnerAsyncHandler;
@@ -1988,15 +1933,6 @@ namespace TencentCloud
                 CreateHiveTableByDDLOutcomeCallable CreateHiveTableByDDLCallable(const Model::CreateHiveTableByDDLRequest& request);
 
                 /**
-                 *注册采集器
-                 * @param req CreateInLongAgentRequest
-                 * @return CreateInLongAgentOutcome
-                 */
-                CreateInLongAgentOutcome CreateInLongAgent(const Model::CreateInLongAgentRequest &request);
-                void CreateInLongAgentAsync(const Model::CreateInLongAgentRequest& request, const CreateInLongAgentAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
-                CreateInLongAgentOutcomeCallable CreateInLongAgentCallable(const Model::CreateInLongAgentRequest& request);
-
-                /**
                  *创建集成节点
                  * @param req CreateIntegrationNodeRequest
                  * @return CreateIntegrationNodeOutcome
@@ -2179,15 +2115,6 @@ namespace TencentCloud
                 DeleteFolderOutcome DeleteFolder(const Model::DeleteFolderRequest &request);
                 void DeleteFolderAsync(const Model::DeleteFolderRequest& request, const DeleteFolderAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DeleteFolderOutcomeCallable DeleteFolderCallable(const Model::DeleteFolderRequest& request);
-
-                /**
-                 *删除采集器
-                 * @param req DeleteInLongAgentRequest
-                 * @return DeleteInLongAgentOutcome
-                 */
-                DeleteInLongAgentOutcome DeleteInLongAgent(const Model::DeleteInLongAgentRequest &request);
-                void DeleteInLongAgentAsync(const Model::DeleteInLongAgentRequest& request, const DeleteInLongAgentAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
-                DeleteInLongAgentOutcomeCallable DeleteInLongAgentCallable(const Model::DeleteInLongAgentRequest& request);
 
                 /**
                  *删除集成节点
@@ -2450,15 +2377,6 @@ namespace TencentCloud
                 DescribeBelongToOutcome DescribeBelongTo(const Model::DescribeBelongToRequest &request);
                 void DescribeBelongToAsync(const Model::DescribeBelongToRequest& request, const DescribeBelongToAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DescribeBelongToOutcomeCallable DescribeBelongToCallable(const Model::DescribeBelongToRequest& request);
-
-                /**
-                 *获取集群命名空间列表
-                 * @param req DescribeClusterNamespaceListRequest
-                 * @return DescribeClusterNamespaceListOutcome
-                 */
-                DescribeClusterNamespaceListOutcome DescribeClusterNamespaceList(const Model::DescribeClusterNamespaceListRequest &request);
-                void DescribeClusterNamespaceListAsync(const Model::DescribeClusterNamespaceListRequest& request, const DescribeClusterNamespaceListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
-                DescribeClusterNamespaceListOutcomeCallable DescribeClusterNamespaceListCallable(const Model::DescribeClusterNamespaceListRequest& request);
 
                 /**
                  *列出字段血缘信息
@@ -2800,42 +2718,6 @@ namespace TencentCloud
                 DescribeFunctionTypesOutcomeCallable DescribeFunctionTypesCallable(const Model::DescribeFunctionTypesRequest& request);
 
                 /**
-                 *获取采集器列表
-                 * @param req DescribeInLongAgentListRequest
-                 * @return DescribeInLongAgentListOutcome
-                 */
-                DescribeInLongAgentListOutcome DescribeInLongAgentList(const Model::DescribeInLongAgentListRequest &request);
-                void DescribeInLongAgentListAsync(const Model::DescribeInLongAgentListRequest& request, const DescribeInLongAgentListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
-                DescribeInLongAgentListOutcomeCallable DescribeInLongAgentListCallable(const Model::DescribeInLongAgentListRequest& request);
-
-                /**
-                 *查询采集器关联的任务列表
-                 * @param req DescribeInLongAgentTaskListRequest
-                 * @return DescribeInLongAgentTaskListOutcome
-                 */
-                DescribeInLongAgentTaskListOutcome DescribeInLongAgentTaskList(const Model::DescribeInLongAgentTaskListRequest &request);
-                void DescribeInLongAgentTaskListAsync(const Model::DescribeInLongAgentTaskListRequest& request, const DescribeInLongAgentTaskListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
-                DescribeInLongAgentTaskListOutcomeCallable DescribeInLongAgentTaskListCallable(const Model::DescribeInLongAgentTaskListRequest& request);
-
-                /**
-                 *获取采集器所在集群的VPC列表
-                 * @param req DescribeInLongAgentVpcListRequest
-                 * @return DescribeInLongAgentVpcListOutcome
-                 */
-                DescribeInLongAgentVpcListOutcome DescribeInLongAgentVpcList(const Model::DescribeInLongAgentVpcListRequest &request);
-                void DescribeInLongAgentVpcListAsync(const Model::DescribeInLongAgentVpcListRequest& request, const DescribeInLongAgentVpcListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
-                DescribeInLongAgentVpcListOutcomeCallable DescribeInLongAgentVpcListCallable(const Model::DescribeInLongAgentVpcListRequest& request);
-
-                /**
-                 *获取TKE集群列表
-                 * @param req DescribeInLongTkeClusterListRequest
-                 * @return DescribeInLongTkeClusterListOutcome
-                 */
-                DescribeInLongTkeClusterListOutcome DescribeInLongTkeClusterList(const Model::DescribeInLongTkeClusterListRequest &request);
-                void DescribeInLongTkeClusterListAsync(const Model::DescribeInLongTkeClusterListRequest& request, const DescribeInLongTkeClusterListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
-                DescribeInLongTkeClusterListOutcomeCallable DescribeInLongTkeClusterListCallable(const Model::DescribeInLongTkeClusterListRequest& request);
-
-                /**
                  *根据周期类型查询所有实例
                  * @param req DescribeInstanceByCycleRequest
                  * @return DescribeInstanceByCycleOutcome
@@ -2952,15 +2834,6 @@ namespace TencentCloud
                 DescribeIntegrationStatisticsOutcome DescribeIntegrationStatistics(const Model::DescribeIntegrationStatisticsRequest &request);
                 void DescribeIntegrationStatisticsAsync(const Model::DescribeIntegrationStatisticsRequest& request, const DescribeIntegrationStatisticsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DescribeIntegrationStatisticsOutcomeCallable DescribeIntegrationStatisticsCallable(const Model::DescribeIntegrationStatisticsRequest& request);
-
-                /**
-                 *数据集成大屏采集器状态分布统计
-                 * @param req DescribeIntegrationStatisticsAgentStatusRequest
-                 * @return DescribeIntegrationStatisticsAgentStatusOutcome
-                 */
-                DescribeIntegrationStatisticsAgentStatusOutcome DescribeIntegrationStatisticsAgentStatus(const Model::DescribeIntegrationStatisticsAgentStatusRequest &request);
-                void DescribeIntegrationStatisticsAgentStatusAsync(const Model::DescribeIntegrationStatisticsAgentStatusRequest& request, const DescribeIntegrationStatisticsAgentStatusAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
-                DescribeIntegrationStatisticsAgentStatusOutcomeCallable DescribeIntegrationStatisticsAgentStatusCallable(const Model::DescribeIntegrationStatisticsAgentStatusRequest& request);
 
                 /**
                  *数据集成大屏实例状态统计趋势
@@ -3486,15 +3359,6 @@ namespace TencentCloud
                 DescribeSonInstancesOutcome DescribeSonInstances(const Model::DescribeSonInstancesRequest &request);
                 void DescribeSonInstancesAsync(const Model::DescribeSonInstancesRequest& request, const DescribeSonInstancesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DescribeSonInstancesOutcomeCallable DescribeSonInstancesCallable(const Model::DescribeSonInstancesRequest& request);
-
-                /**
-                 *获取数据标准规则详情
-                 * @param req DescribeStandardRuleDetailInfoListRequest
-                 * @return DescribeStandardRuleDetailInfoListOutcome
-                 */
-                DescribeStandardRuleDetailInfoListOutcome DescribeStandardRuleDetailInfoList(const Model::DescribeStandardRuleDetailInfoListRequest &request);
-                void DescribeStandardRuleDetailInfoListAsync(const Model::DescribeStandardRuleDetailInfoListRequest& request, const DescribeStandardRuleDetailInfoListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
-                DescribeStandardRuleDetailInfoListOutcomeCallable DescribeStandardRuleDetailInfoListCallable(const Model::DescribeStandardRuleDetailInfoListRequest& request);
 
                 /**
                  *任务状态趋势
@@ -4302,15 +4166,6 @@ namespace TencentCloud
                 RerunScheduleInstancesOutcomeCallable RerunScheduleInstancesCallable(const Model::RerunScheduleInstancesRequest& request);
 
                 /**
-                 *重启采集器
-                 * @param req RestartInLongAgentRequest
-                 * @return RestartInLongAgentOutcome
-                 */
-                RestartInLongAgentOutcome RestartInLongAgent(const Model::RestartInLongAgentRequest &request);
-                void RestartInLongAgentAsync(const Model::RestartInLongAgentRequest& request, const RestartInLongAgentAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
-                RestartInLongAgentOutcomeCallable RestartInLongAgentCallable(const Model::RestartInLongAgentRequest& request);
-
-                /**
                  *继续集成任务
                  * @param req ResumeIntegrationTaskRequest
                  * @return ResumeIntegrationTaskOutcome
@@ -4512,15 +4367,6 @@ namespace TencentCloud
                 UnlockIntegrationTaskOutcome UnlockIntegrationTask(const Model::UnlockIntegrationTaskRequest &request);
                 void UnlockIntegrationTaskAsync(const Model::UnlockIntegrationTaskRequest& request, const UnlockIntegrationTaskAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 UnlockIntegrationTaskOutcomeCallable UnlockIntegrationTaskCallable(const Model::UnlockIntegrationTaskRequest& request);
-
-                /**
-                 *更新采集器
-                 * @param req UpdateInLongAgentRequest
-                 * @return UpdateInLongAgentOutcome
-                 */
-                UpdateInLongAgentOutcome UpdateInLongAgent(const Model::UpdateInLongAgentRequest &request);
-                void UpdateInLongAgentAsync(const Model::UpdateInLongAgentRequest& request, const UpdateInLongAgentAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
-                UpdateInLongAgentOutcomeCallable UpdateInLongAgentCallable(const Model::UpdateInLongAgentRequest& request);
 
                 /**
                  *修改工作流责任人

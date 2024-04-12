@@ -122,18 +122,18 @@ namespace TencentCloud
                     bool TriesHasBeenSet() const;
 
                     /**
-                     * 获取最后更新事件
+                     * 获取最后更新时间
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return LastUpdate 最后更新事件
+                     * @return LastUpdate 最后更新时间
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetLastUpdate() const;
 
                     /**
-                     * 设置最后更新事件
+                     * 设置最后更新时间
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _lastUpdate 最后更新事件
+                     * @param _lastUpdate 最后更新时间
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -345,7 +345,7 @@ namespace TencentCloud
                     bool m_triesHasBeenSet;
 
                     /**
-                     * 最后更新事件
+                     * 最后更新时间
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_lastUpdate;

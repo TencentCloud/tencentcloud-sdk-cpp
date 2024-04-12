@@ -189,18 +189,18 @@ namespace TencentCloud
                     bool TaskIdHasBeenSet() const;
 
                     /**
-                     * 获取任务调度id(oceanus or us等作业id)
+                     * 获取任务调度id(oceanus or us等作业id)，非填项
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return ScheduleTaskId 任务调度id(oceanus or us等作业id)
+                     * @return ScheduleTaskId 任务调度id(oceanus or us等作业id)，非填项
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetScheduleTaskId() const;
 
                     /**
-                     * 设置任务调度id(oceanus or us等作业id)
+                     * 设置任务调度id(oceanus or us等作业id)，非填项
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _scheduleTaskId 任务调度id(oceanus or us等作业id)
+                     * @param _scheduleTaskId 任务调度id(oceanus or us等作业id)，非填项
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -214,18 +214,18 @@ namespace TencentCloud
                     bool ScheduleTaskIdHasBeenSet() const;
 
                     /**
-                     * 获取任务组id
+                     * 获取inlong任务id
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return TaskGroupId 任务组id
+                     * @return TaskGroupId inlong任务id
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetTaskGroupId() const;
 
                     /**
-                     * 设置任务组id
+                     * 设置inlong任务id
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _taskGroupId 任务组id
+                     * @param _taskGroupId inlong任务id
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -364,18 +364,18 @@ namespace TencentCloud
                     bool AppIdHasBeenSet() const;
 
                     /**
-                     * 获取任务状态1.初始化,2.操作中,3.运行中,4.暂停,5.任务停止中,6.停止,7.执行失败,8.已删除,9.已锁定,10.配置过期,11.提交中,12.提交成功,13.提交失败
+                     * 获取1:未开始|2:操作中|3:运行中|4:暂停|5:任务停止中|6:停止|7:执行失败|20:异常|21:未知|
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return Status 任务状态1.初始化,2.操作中,3.运行中,4.暂停,5.任务停止中,6.停止,7.执行失败,8.已删除,9.已锁定,10.配置过期,11.提交中,12.提交成功,13.提交失败
+                     * @return Status 1:未开始|2:操作中|3:运行中|4:暂停|5:任务停止中|6:停止|7:执行失败|20:异常|21:未知|
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetStatus() const;
 
                     /**
-                     * 设置任务状态1.初始化,2.操作中,3.运行中,4.暂停,5.任务停止中,6.停止,7.执行失败,8.已删除,9.已锁定,10.配置过期,11.提交中,12.提交成功,13.提交失败
+                     * 设置1:未开始|2:操作中|3:运行中|4:暂停|5:任务停止中|6:停止|7:执行失败|20:异常|21:未知|
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _status 任务状态1.初始化,2.操作中,3.运行中,4.暂停,5.任务停止中,6.停止,7.执行失败,8.已删除,9.已锁定,10.配置过期,11.提交中,12.提交成功,13.提交失败
+                     * @param _status 1:未开始|2:操作中|3:运行中|4:暂停|5:任务停止中|6:停止|7:执行失败|20:异常|21:未知|
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -539,18 +539,18 @@ namespace TencentCloud
                     bool MappingsHasBeenSet() const;
 
                     /**
-                     * 获取任务模式：1.画布模式，2.flink jar
+                     * 获取任务配置模式，0:画布 1:表单 3:脚本
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return TaskMode 任务模式：1.画布模式，2.flink jar
+                     * @return TaskMode 任务配置模式，0:画布 1:表单 3:脚本
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetTaskMode() const;
 
                     /**
-                     * 设置任务模式：1.画布模式，2.flink jar
+                     * 设置任务配置模式，0:画布 1:表单 3:脚本
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _taskMode 任务模式：1.画布模式，2.flink jar
+                     * @param _taskMode 任务配置模式，0:画布 1:表单 3:脚本
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -639,18 +639,18 @@ namespace TencentCloud
                     bool ExecutorGroupNameHasBeenSet() const;
 
                     /**
-                     * 获取url
+                     * 获取inlong manager url
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return InLongManagerUrl url
+                     * @return InLongManagerUrl inlong manager url
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetInLongManagerUrl() const;
 
                     /**
-                     * 设置url
+                     * 设置inlong manager url
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _inLongManagerUrl url
+                     * @param _inLongManagerUrl inlong manager url
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -714,18 +714,18 @@ namespace TencentCloud
                     bool InLongManagerVersionHasBeenSet() const;
 
                     /**
-                     * 获取dataproxy url
+                     * 获取inlong dataproxy url
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return DataProxyUrl dataproxy url
+                     * @return DataProxyUrl inlong dataproxy url
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<std::string> GetDataProxyUrl() const;
 
                     /**
-                     * 设置dataproxy url
+                     * 设置inlong dataproxy url
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _dataProxyUrl dataproxy url
+                     * @param _dataProxyUrl inlong dataproxy url
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -764,18 +764,18 @@ namespace TencentCloud
                     bool SubmitHasBeenSet() const;
 
                     /**
-                     * 获取MYSQL
+                     * 获取数据源类型：MYSQL|POSTGRE|ORACLE|SQLSERVER|FTP|HIVE|HDFS|ICEBERG|KAFKA|HBASE|SPARK|VIRTUAL|TBASE|DB2|DM|GAUSSDB|GBASE|IMPALA|ES|S3_DATAINSIGHT|GREENPLUM|PHOENIX|SAP_HANA|SFTP|OCEANBASE|CLICKHOUSE|KUDU|VERTICA|REDIS|COS|DLC|DLCV1|DORIS|CKAFKA|DTS_KAFKA|S3|CDW|LOCAL|TDSQLC|TDSQL|TDSQL_MYSQL|MONGODB|INFORMIX|SYBASE|REST_API|SuperSQL|PRESTO|DR_SUM|TiDB|StarRocks|Trino|Kyuubi|GDB|TCHOUSE_X|TCHOUSE_P|TDSQL_POSTGRE
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return InputDatasourceType MYSQL
+                     * @return InputDatasourceType 数据源类型：MYSQL|POSTGRE|ORACLE|SQLSERVER|FTP|HIVE|HDFS|ICEBERG|KAFKA|HBASE|SPARK|VIRTUAL|TBASE|DB2|DM|GAUSSDB|GBASE|IMPALA|ES|S3_DATAINSIGHT|GREENPLUM|PHOENIX|SAP_HANA|SFTP|OCEANBASE|CLICKHOUSE|KUDU|VERTICA|REDIS|COS|DLC|DLCV1|DORIS|CKAFKA|DTS_KAFKA|S3|CDW|LOCAL|TDSQLC|TDSQL|TDSQL_MYSQL|MONGODB|INFORMIX|SYBASE|REST_API|SuperSQL|PRESTO|DR_SUM|TiDB|StarRocks|Trino|Kyuubi|GDB|TCHOUSE_X|TCHOUSE_P|TDSQL_POSTGRE
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetInputDatasourceType() const;
 
                     /**
-                     * 设置MYSQL
+                     * 设置数据源类型：MYSQL|POSTGRE|ORACLE|SQLSERVER|FTP|HIVE|HDFS|ICEBERG|KAFKA|HBASE|SPARK|VIRTUAL|TBASE|DB2|DM|GAUSSDB|GBASE|IMPALA|ES|S3_DATAINSIGHT|GREENPLUM|PHOENIX|SAP_HANA|SFTP|OCEANBASE|CLICKHOUSE|KUDU|VERTICA|REDIS|COS|DLC|DLCV1|DORIS|CKAFKA|DTS_KAFKA|S3|CDW|LOCAL|TDSQLC|TDSQL|TDSQL_MYSQL|MONGODB|INFORMIX|SYBASE|REST_API|SuperSQL|PRESTO|DR_SUM|TiDB|StarRocks|Trino|Kyuubi|GDB|TCHOUSE_X|TCHOUSE_P|TDSQL_POSTGRE
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _inputDatasourceType MYSQL
+                     * @param _inputDatasourceType 数据源类型：MYSQL|POSTGRE|ORACLE|SQLSERVER|FTP|HIVE|HDFS|ICEBERG|KAFKA|HBASE|SPARK|VIRTUAL|TBASE|DB2|DM|GAUSSDB|GBASE|IMPALA|ES|S3_DATAINSIGHT|GREENPLUM|PHOENIX|SAP_HANA|SFTP|OCEANBASE|CLICKHOUSE|KUDU|VERTICA|REDIS|COS|DLC|DLCV1|DORIS|CKAFKA|DTS_KAFKA|S3|CDW|LOCAL|TDSQLC|TDSQL|TDSQL_MYSQL|MONGODB|INFORMIX|SYBASE|REST_API|SuperSQL|PRESTO|DR_SUM|TiDB|StarRocks|Trino|Kyuubi|GDB|TCHOUSE_X|TCHOUSE_P|TDSQL_POSTGRE
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -789,18 +789,18 @@ namespace TencentCloud
                     bool InputDatasourceTypeHasBeenSet() const;
 
                     /**
-                     * 获取DLC
+                     * 获取数据源类型：MYSQL|POSTGRE|ORACLE|SQLSERVER|FTP|HIVE|HDFS|ICEBERG|KAFKA|HBASE|SPARK|VIRTUAL|TBASE|DB2|DM|GAUSSDB|GBASE|IMPALA|ES|S3_DATAINSIGHT|GREENPLUM|PHOENIX|SAP_HANA|SFTP|OCEANBASE|CLICKHOUSE|KUDU|VERTICA|REDIS|COS|DLC|DLCV1|DORIS|CKAFKA|DTS_KAFKA|S3|CDW|LOCAL|TDSQLC|TDSQL|TDSQL_MYSQL|MONGODB|INFORMIX|SYBASE|REST_API|SuperSQL|PRESTO|DR_SUM|TiDB|StarRocks|Trino|Kyuubi|GDB|TCHOUSE_X|TCHOUSE_P|TDSQL_POSTGRE
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return OutputDatasourceType DLC
+                     * @return OutputDatasourceType 数据源类型：MYSQL|POSTGRE|ORACLE|SQLSERVER|FTP|HIVE|HDFS|ICEBERG|KAFKA|HBASE|SPARK|VIRTUAL|TBASE|DB2|DM|GAUSSDB|GBASE|IMPALA|ES|S3_DATAINSIGHT|GREENPLUM|PHOENIX|SAP_HANA|SFTP|OCEANBASE|CLICKHOUSE|KUDU|VERTICA|REDIS|COS|DLC|DLCV1|DORIS|CKAFKA|DTS_KAFKA|S3|CDW|LOCAL|TDSQLC|TDSQL|TDSQL_MYSQL|MONGODB|INFORMIX|SYBASE|REST_API|SuperSQL|PRESTO|DR_SUM|TiDB|StarRocks|Trino|Kyuubi|GDB|TCHOUSE_X|TCHOUSE_P|TDSQL_POSTGRE
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetOutputDatasourceType() const;
 
                     /**
-                     * 设置DLC
+                     * 设置数据源类型：MYSQL|POSTGRE|ORACLE|SQLSERVER|FTP|HIVE|HDFS|ICEBERG|KAFKA|HBASE|SPARK|VIRTUAL|TBASE|DB2|DM|GAUSSDB|GBASE|IMPALA|ES|S3_DATAINSIGHT|GREENPLUM|PHOENIX|SAP_HANA|SFTP|OCEANBASE|CLICKHOUSE|KUDU|VERTICA|REDIS|COS|DLC|DLCV1|DORIS|CKAFKA|DTS_KAFKA|S3|CDW|LOCAL|TDSQLC|TDSQL|TDSQL_MYSQL|MONGODB|INFORMIX|SYBASE|REST_API|SuperSQL|PRESTO|DR_SUM|TiDB|StarRocks|Trino|Kyuubi|GDB|TCHOUSE_X|TCHOUSE_P|TDSQL_POSTGRE
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _outputDatasourceType DLC
+                     * @param _outputDatasourceType 数据源类型：MYSQL|POSTGRE|ORACLE|SQLSERVER|FTP|HIVE|HDFS|ICEBERG|KAFKA|HBASE|SPARK|VIRTUAL|TBASE|DB2|DM|GAUSSDB|GBASE|IMPALA|ES|S3_DATAINSIGHT|GREENPLUM|PHOENIX|SAP_HANA|SFTP|OCEANBASE|CLICKHOUSE|KUDU|VERTICA|REDIS|COS|DLC|DLCV1|DORIS|CKAFKA|DTS_KAFKA|S3|CDW|LOCAL|TDSQLC|TDSQL|TDSQL_MYSQL|MONGODB|INFORMIX|SYBASE|REST_API|SuperSQL|PRESTO|DR_SUM|TiDB|StarRocks|Trino|Kyuubi|GDB|TCHOUSE_X|TCHOUSE_P|TDSQL_POSTGRE
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -1139,18 +1139,18 @@ namespace TencentCloud
                     bool TaskAlarmRegularListHasBeenSet() const;
 
                     /**
-                     * 获取资源分层情况： 0：进行中,1：成功 ,2：失败
+                     * 获取实时任务资源分层情况： 0：进行中,1：成功 ,2：失败
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return SwitchResource 资源分层情况： 0：进行中,1：成功 ,2：失败
+                     * @return SwitchResource 实时任务资源分层情况： 0：进行中,1：成功 ,2：失败
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetSwitchResource() const;
 
                     /**
-                     * 设置资源分层情况： 0：进行中,1：成功 ,2：失败
+                     * 设置实时任务资源分层情况： 0：进行中,1：成功 ,2：失败
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _switchResource 资源分层情况： 0：进行中,1：成功 ,2：失败
+                     * @param _switchResource 实时任务资源分层情况： 0：进行中,1：成功 ,2：失败
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -1164,18 +1164,18 @@ namespace TencentCloud
                     bool SwitchResourceHasBeenSet() const;
 
                     /**
-                     * 获取读取阶段：0：全部全量,1：部分全量,2：全部增量
+                     * 获取实时任务读取阶段：0：全部全量,1：部分全量,2：全部增量
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return ReadPhase 读取阶段：0：全部全量,1：部分全量,2：全部增量
+                     * @return ReadPhase 实时任务读取阶段：0：全部全量,1：部分全量,2：全部增量
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetReadPhase() const;
 
                     /**
-                     * 设置读取阶段：0：全部全量,1：部分全量,2：全部增量
+                     * 设置实时任务读取阶段：0：全部全量,1：部分全量,2：全部增量
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _readPhase 读取阶段：0：全部全量,1：部分全量,2：全部增量
+                     * @param _readPhase 实时任务读取阶段：0：全部全量,1：部分全量,2：全部增量
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -1189,18 +1189,18 @@ namespace TencentCloud
                     bool ReadPhaseHasBeenSet() const;
 
                     /**
-                     * 获取版本号
+                     * 获取实时任务版本号
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return InstanceVersion 版本号
+                     * @return InstanceVersion 实时任务版本号
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetInstanceVersion() const;
 
                     /**
-                     * 设置版本号
+                     * 设置实时任务版本号
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _instanceVersion 版本号
+                     * @param _instanceVersion 实时任务版本号
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -1305,14 +1305,14 @@ namespace TencentCloud
                     bool m_taskIdHasBeenSet;
 
                     /**
-                     * 任务调度id(oceanus or us等作业id)
+                     * 任务调度id(oceanus or us等作业id)，非填项
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_scheduleTaskId;
                     bool m_scheduleTaskIdHasBeenSet;
 
                     /**
-                     * 任务组id
+                     * inlong任务id
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_taskGroupId;
@@ -1354,7 +1354,7 @@ namespace TencentCloud
                     bool m_appIdHasBeenSet;
 
                     /**
-                     * 任务状态1.初始化,2.操作中,3.运行中,4.暂停,5.任务停止中,6.停止,7.执行失败,8.已删除,9.已锁定,10.配置过期,11.提交中,12.提交成功,13.提交失败
+                     * 1:未开始|2:操作中|3:运行中|4:暂停|5:任务停止中|6:停止|7:执行失败|20:异常|21:未知|
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_status;
@@ -1403,7 +1403,7 @@ namespace TencentCloud
                     bool m_mappingsHasBeenSet;
 
                     /**
-                     * 任务模式：1.画布模式，2.flink jar
+                     * 任务配置模式，0:画布 1:表单 3:脚本
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_taskMode;
@@ -1431,7 +1431,7 @@ namespace TencentCloud
                     bool m_executorGroupNameHasBeenSet;
 
                     /**
-                     * url
+                     * inlong manager url
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_inLongManagerUrl;
@@ -1452,7 +1452,7 @@ namespace TencentCloud
                     bool m_inLongManagerVersionHasBeenSet;
 
                     /**
-                     * dataproxy url
+                     * inlong dataproxy url
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<std::string> m_dataProxyUrl;
@@ -1466,14 +1466,14 @@ namespace TencentCloud
                     bool m_submitHasBeenSet;
 
                     /**
-                     * MYSQL
+                     * 数据源类型：MYSQL|POSTGRE|ORACLE|SQLSERVER|FTP|HIVE|HDFS|ICEBERG|KAFKA|HBASE|SPARK|VIRTUAL|TBASE|DB2|DM|GAUSSDB|GBASE|IMPALA|ES|S3_DATAINSIGHT|GREENPLUM|PHOENIX|SAP_HANA|SFTP|OCEANBASE|CLICKHOUSE|KUDU|VERTICA|REDIS|COS|DLC|DLCV1|DORIS|CKAFKA|DTS_KAFKA|S3|CDW|LOCAL|TDSQLC|TDSQL|TDSQL_MYSQL|MONGODB|INFORMIX|SYBASE|REST_API|SuperSQL|PRESTO|DR_SUM|TiDB|StarRocks|Trino|Kyuubi|GDB|TCHOUSE_X|TCHOUSE_P|TDSQL_POSTGRE
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_inputDatasourceType;
                     bool m_inputDatasourceTypeHasBeenSet;
 
                     /**
-                     * DLC
+                     * 数据源类型：MYSQL|POSTGRE|ORACLE|SQLSERVER|FTP|HIVE|HDFS|ICEBERG|KAFKA|HBASE|SPARK|VIRTUAL|TBASE|DB2|DM|GAUSSDB|GBASE|IMPALA|ES|S3_DATAINSIGHT|GREENPLUM|PHOENIX|SAP_HANA|SFTP|OCEANBASE|CLICKHOUSE|KUDU|VERTICA|REDIS|COS|DLC|DLCV1|DORIS|CKAFKA|DTS_KAFKA|S3|CDW|LOCAL|TDSQLC|TDSQL|TDSQL_MYSQL|MONGODB|INFORMIX|SYBASE|REST_API|SuperSQL|PRESTO|DR_SUM|TiDB|StarRocks|Trino|Kyuubi|GDB|TCHOUSE_X|TCHOUSE_P|TDSQL_POSTGRE
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_outputDatasourceType;
@@ -1571,21 +1571,21 @@ namespace TencentCloud
                     bool m_taskAlarmRegularListHasBeenSet;
 
                     /**
-                     * 资源分层情况： 0：进行中,1：成功 ,2：失败
+                     * 实时任务资源分层情况： 0：进行中,1：成功 ,2：失败
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_switchResource;
                     bool m_switchResourceHasBeenSet;
 
                     /**
-                     * 读取阶段：0：全部全量,1：部分全量,2：全部增量
+                     * 实时任务读取阶段：0：全部全量,1：部分全量,2：全部增量
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_readPhase;
                     bool m_readPhaseHasBeenSet;
 
                     /**
-                     * 版本号
+                     * 实时任务版本号
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_instanceVersion;

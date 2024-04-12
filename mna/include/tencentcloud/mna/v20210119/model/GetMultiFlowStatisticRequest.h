@@ -106,15 +106,15 @@ namespace TencentCloud
                     bool EndTimeHasBeenSet() const;
 
                     /**
-                     * 获取统计流量类型（1：上行流量，2：下行流量）
-                     * @return Type 统计流量类型（1：上行流量，2：下行流量）
+                     * 获取统计流量类型（1：上行流量，2：下行流量， 3: 上下行总和）
+                     * @return Type 统计流量类型（1：上行流量，2：下行流量， 3: 上下行总和）
                      * 
                      */
                     int64_t GetType() const;
 
                     /**
-                     * 设置统计流量类型（1：上行流量，2：下行流量）
-                     * @param _type 统计流量类型（1：上行流量，2：下行流量）
+                     * 设置统计流量类型（1：上行流量，2：下行流量， 3: 上下行总和）
+                     * @param _type 统计流量类型（1：上行流量，2：下行流量， 3: 上下行总和）
                      * 
                      */
                     void SetType(const int64_t& _type);
@@ -210,7 +210,7 @@ namespace TencentCloud
                     bool m_endTimeHasBeenSet;
 
                     /**
-                     * 统计流量类型（1：上行流量，2：下行流量）
+                     * 统计流量类型（1：上行流量，2：下行流量， 3: 上下行总和）
                      */
                     int64_t m_type;
                     bool m_typeHasBeenSet;

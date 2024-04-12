@@ -29,7 +29,8 @@ GetFlowStatisticRequest::GetFlowStatisticRequest() :
     m_typeHasBeenSet(false),
     m_timeGranularityHasBeenSet(false),
     m_accessRegionHasBeenSet(false),
-    m_gatewayTypeHasBeenSet(false)
+    m_gatewayTypeHasBeenSet(false),
+    m_deviceListHasBeenSet(false)
 {
 }
 
@@ -94,6 +95,19 @@ string GetFlowStatisticRequest::ToJsonString() const
         string key = "GatewayType";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_gatewayType, allocator);
+    }
+
+    if (m_deviceListHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "DeviceList";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        for (auto itr = m_deviceList.begin(); itr != m_deviceList.end(); ++itr)
+        {
+            d[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
+        }
     }
 
 
@@ -214,6 +228,22 @@ void GetFlowStatisticRequest::SetGatewayType(const int64_t& _gatewayType)
 bool GetFlowStatisticRequest::GatewayTypeHasBeenSet() const
 {
     return m_gatewayTypeHasBeenSet;
+}
+
+vector<string> GetFlowStatisticRequest::GetDeviceList() const
+{
+    return m_deviceList;
+}
+
+void GetFlowStatisticRequest::SetDeviceList(const vector<string>& _deviceList)
+{
+    m_deviceList = _deviceList;
+    m_deviceListHasBeenSet = true;
+}
+
+bool GetFlowStatisticRequest::DeviceListHasBeenSet() const
+{
+    return m_deviceListHasBeenSet;
 }
 
 

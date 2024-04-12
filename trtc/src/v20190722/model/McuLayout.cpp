@@ -32,7 +32,8 @@ McuLayout::McuLayout() :
     m_backgroundImageUrlHasBeenSet(false),
     m_customCropHasBeenSet(false),
     m_backgroundRenderModeHasBeenSet(false),
-    m_transparentUrlHasBeenSet(false)
+    m_transparentUrlHasBeenSet(false),
+    m_backgroundCustomRenderHasBeenSet(false)
 {
 }
 
@@ -175,6 +176,23 @@ CoreInternalOutcome McuLayout::Deserialize(const rapidjson::Value &value)
         m_transparentUrlHasBeenSet = true;
     }
 
+    if (value.HasMember("BackgroundCustomRender") && !value["BackgroundCustomRender"].IsNull())
+    {
+        if (!value["BackgroundCustomRender"].IsObject())
+        {
+            return CoreInternalOutcome(Core::Error("response `McuLayout.BackgroundCustomRender` is not object type").SetRequestId(requestId));
+        }
+
+        CoreInternalOutcome outcome = m_backgroundCustomRender.Deserialize(value["BackgroundCustomRender"]);
+        if (!outcome.IsSuccess())
+        {
+            outcome.GetError().SetRequestId(requestId);
+            return outcome;
+        }
+
+        m_backgroundCustomRenderHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -278,6 +296,15 @@ void McuLayout::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Alloc
         string key = "TransparentUrl";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_transparentUrl.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_backgroundCustomRenderHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "BackgroundCustomRender";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_backgroundCustomRender.ToJsonObject(value[key.c_str()], allocator);
     }
 
 }
@@ -473,5 +500,21 @@ void McuLayout::SetTransparentUrl(const string& _transparentUrl)
 bool McuLayout::TransparentUrlHasBeenSet() const
 {
     return m_transparentUrlHasBeenSet;
+}
+
+McuBackgroundCustomRender McuLayout::GetBackgroundCustomRender() const
+{
+    return m_backgroundCustomRender;
+}
+
+void McuLayout::SetBackgroundCustomRender(const McuBackgroundCustomRender& _backgroundCustomRender)
+{
+    m_backgroundCustomRender = _backgroundCustomRender;
+    m_backgroundCustomRenderHasBeenSet = true;
+}
+
+bool McuLayout::BackgroundCustomRenderHasBeenSet() const
+{
+    return m_backgroundCustomRenderHasBeenSet;
 }
 

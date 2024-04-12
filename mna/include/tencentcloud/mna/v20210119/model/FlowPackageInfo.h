@@ -334,6 +334,48 @@ DEVICE_5_FLOW_500G，分别代表20G、50G、100G、500G档位的流量包。
                      */
                     bool ModifyStatusHasBeenSet() const;
 
+                    /**
+                     * 获取流量截断标识。true代表开启流量截断，false代表不开启流量截断
+                     * @return TruncFlag 流量截断标识。true代表开启流量截断，false代表不开启流量截断
+                     * 
+                     */
+                    bool GetTruncFlag() const;
+
+                    /**
+                     * 设置流量截断标识。true代表开启流量截断，false代表不开启流量截断
+                     * @param _truncFlag 流量截断标识。true代表开启流量截断，false代表不开启流量截断
+                     * 
+                     */
+                    void SetTruncFlag(const bool& _truncFlag);
+
+                    /**
+                     * 判断参数 TruncFlag 是否已赋值
+                     * @return TruncFlag 是否已赋值
+                     * 
+                     */
+                    bool TruncFlagHasBeenSet() const;
+
+                    /**
+                     * 获取流量包精确余量，单位：MB
+                     * @return CapacityRemainPrecise 流量包精确余量，单位：MB
+                     * 
+                     */
+                    uint64_t GetCapacityRemainPrecise() const;
+
+                    /**
+                     * 设置流量包精确余量，单位：MB
+                     * @param _capacityRemainPrecise 流量包精确余量，单位：MB
+                     * 
+                     */
+                    void SetCapacityRemainPrecise(const uint64_t& _capacityRemainPrecise);
+
+                    /**
+                     * 判断参数 CapacityRemainPrecise 是否已赋值
+                     * @return CapacityRemainPrecise 是否已赋值
+                     * 
+                     */
+                    bool CapacityRemainPreciseHasBeenSet() const;
+
                 private:
 
                     /**
@@ -416,6 +458,18 @@ DEVICE_5_FLOW_500G，分别代表20G、50G、100G、500G档位的流量包。
                      */
                     int64_t m_modifyStatus;
                     bool m_modifyStatusHasBeenSet;
+
+                    /**
+                     * 流量截断标识。true代表开启流量截断，false代表不开启流量截断
+                     */
+                    bool m_truncFlag;
+                    bool m_truncFlagHasBeenSet;
+
+                    /**
+                     * 流量包精确余量，单位：MB
+                     */
+                    uint64_t m_capacityRemainPrecise;
+                    bool m_capacityRemainPreciseHasBeenSet;
 
                 };
             }

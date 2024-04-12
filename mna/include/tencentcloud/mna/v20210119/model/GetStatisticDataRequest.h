@@ -176,6 +176,48 @@ namespace TencentCloud
                      */
                     bool GatewayTypeHasBeenSet() const;
 
+                    /**
+                     * 获取设备ID列表，最多10个设备，下载多个设备流量和时使用，此时DeviceId可传"-1"
+                     * @return DeviceList 设备ID列表，最多10个设备，下载多个设备流量和时使用，此时DeviceId可传"-1"
+                     * 
+                     */
+                    std::vector<std::string> GetDeviceList() const;
+
+                    /**
+                     * 设置设备ID列表，最多10个设备，下载多个设备流量和时使用，此时DeviceId可传"-1"
+                     * @param _deviceList 设备ID列表，最多10个设备，下载多个设备流量和时使用，此时DeviceId可传"-1"
+                     * 
+                     */
+                    void SetDeviceList(const std::vector<std::string>& _deviceList);
+
+                    /**
+                     * 判断参数 DeviceList 是否已赋值
+                     * @return DeviceList 是否已赋值
+                     * 
+                     */
+                    bool DeviceListHasBeenSet() const;
+
+                    /**
+                     * 获取设备分组ID，若不指定分组则不传，按分组下载数据时使用
+                     * @return GroupId 设备分组ID，若不指定分组则不传，按分组下载数据时使用
+                     * 
+                     */
+                    std::string GetGroupId() const;
+
+                    /**
+                     * 设置设备分组ID，若不指定分组则不传，按分组下载数据时使用
+                     * @param _groupId 设备分组ID，若不指定分组则不传，按分组下载数据时使用
+                     * 
+                     */
+                    void SetGroupId(const std::string& _groupId);
+
+                    /**
+                     * 判断参数 GroupId 是否已赋值
+                     * @return GroupId 是否已赋值
+                     * 
+                     */
+                    bool GroupIdHasBeenSet() const;
+
                 private:
 
                     /**
@@ -215,6 +257,18 @@ namespace TencentCloud
                      */
                     int64_t m_gatewayType;
                     bool m_gatewayTypeHasBeenSet;
+
+                    /**
+                     * 设备ID列表，最多10个设备，下载多个设备流量和时使用，此时DeviceId可传"-1"
+                     */
+                    std::vector<std::string> m_deviceList;
+                    bool m_deviceListHasBeenSet;
+
+                    /**
+                     * 设备分组ID，若不指定分组则不传，按分组下载数据时使用
+                     */
+                    std::string m_groupId;
+                    bool m_groupIdHasBeenSet;
 
                 };
             }

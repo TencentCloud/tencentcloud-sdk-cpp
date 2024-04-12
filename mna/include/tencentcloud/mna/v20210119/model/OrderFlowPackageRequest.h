@@ -133,15 +133,15 @@ DEVICE_5_FLOW_500G，分别代表20G、50G、100G、500G档位的流量包。
                     bool DeviceListHasBeenSet() const;
 
                     /**
-                     * 获取是否自动续费
-                     * @return AutoRenewFlag 是否自动续费
+                     * 获取是否自动续费，该选项和流量截断冲突，只能开启一个
+                     * @return AutoRenewFlag 是否自动续费，该选项和流量截断冲突，只能开启一个
                      * 
                      */
                     bool GetAutoRenewFlag() const;
 
                     /**
-                     * 设置是否自动续费
-                     * @param _autoRenewFlag 是否自动续费
+                     * 设置是否自动续费，该选项和流量截断冲突，只能开启一个
+                     * @param _autoRenewFlag 是否自动续费，该选项和流量截断冲突，只能开启一个
                      * 
                      */
                     void SetAutoRenewFlag(const bool& _autoRenewFlag);
@@ -173,6 +173,27 @@ DEVICE_5_FLOW_500G，分别代表20G、50G、100G、500G档位的流量包。
                      * 
                      */
                     bool PackageRegionHasBeenSet() const;
+
+                    /**
+                     * 获取是否开启流量截断功能，该选项和自动续费冲突
+                     * @return FlowTruncFlag 是否开启流量截断功能，该选项和自动续费冲突
+                     * 
+                     */
+                    bool GetFlowTruncFlag() const;
+
+                    /**
+                     * 设置是否开启流量截断功能，该选项和自动续费冲突
+                     * @param _flowTruncFlag 是否开启流量截断功能，该选项和自动续费冲突
+                     * 
+                     */
+                    void SetFlowTruncFlag(const bool& _flowTruncFlag);
+
+                    /**
+                     * 判断参数 FlowTruncFlag 是否已赋值
+                     * @return FlowTruncFlag 是否已赋值
+                     * 
+                     */
+                    bool FlowTruncFlagHasBeenSet() const;
 
                     /**
                      * 获取是否自动选择代金券，默认false。
@@ -251,7 +272,7 @@ DEVICE_5_FLOW_500G，分别代表20G、50G、100G、500G档位的流量包。
                     bool m_deviceListHasBeenSet;
 
                     /**
-                     * 是否自动续费
+                     * 是否自动续费，该选项和流量截断冲突，只能开启一个
                      */
                     bool m_autoRenewFlag;
                     bool m_autoRenewFlagHasBeenSet;
@@ -261,6 +282,12 @@ DEVICE_5_FLOW_500G，分别代表20G、50G、100G、500G档位的流量包。
                      */
                     int64_t m_packageRegion;
                     bool m_packageRegionHasBeenSet;
+
+                    /**
+                     * 是否开启流量截断功能，该选项和自动续费冲突
+                     */
+                    bool m_flowTruncFlag;
+                    bool m_flowTruncFlagHasBeenSet;
 
                     /**
                      * 是否自动选择代金券，默认false。

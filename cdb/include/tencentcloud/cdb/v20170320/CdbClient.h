@@ -35,6 +35,8 @@
 #include <tencentcloud/cdb/v20170320/model/AssociateSecurityGroupsResponse.h>
 #include <tencentcloud/cdb/v20170320/model/BalanceRoGroupLoadRequest.h>
 #include <tencentcloud/cdb/v20170320/model/BalanceRoGroupLoadResponse.h>
+#include <tencentcloud/cdb/v20170320/model/CheckMigrateClusterRequest.h>
+#include <tencentcloud/cdb/v20170320/model/CheckMigrateClusterResponse.h>
 #include <tencentcloud/cdb/v20170320/model/CloseAuditServiceRequest.h>
 #include <tencentcloud/cdb/v20170320/model/CloseAuditServiceResponse.h>
 #include <tencentcloud/cdb/v20170320/model/CloseCDBProxyRequest.h>
@@ -141,6 +143,8 @@
 #include <tencentcloud/cdb/v20170320/model/DescribeCdbZoneConfigResponse.h>
 #include <tencentcloud/cdb/v20170320/model/DescribeCloneListRequest.h>
 #include <tencentcloud/cdb/v20170320/model/DescribeCloneListResponse.h>
+#include <tencentcloud/cdb/v20170320/model/DescribeClusterInfoRequest.h>
+#include <tencentcloud/cdb/v20170320/model/DescribeClusterInfoResponse.h>
 #include <tencentcloud/cdb/v20170320/model/DescribeCpuExpandStrategyRequest.h>
 #include <tencentcloud/cdb/v20170320/model/DescribeCpuExpandStrategyResponse.h>
 #include <tencentcloud/cdb/v20170320/model/DescribeDBFeaturesRequest.h>
@@ -373,6 +377,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::BalanceRoGroupLoadResponse> BalanceRoGroupLoadOutcome;
                 typedef std::future<BalanceRoGroupLoadOutcome> BalanceRoGroupLoadOutcomeCallable;
                 typedef std::function<void(const CdbClient*, const Model::BalanceRoGroupLoadRequest&, BalanceRoGroupLoadOutcome, const std::shared_ptr<const AsyncCallerContext>&)> BalanceRoGroupLoadAsyncHandler;
+                typedef Outcome<Core::Error, Model::CheckMigrateClusterResponse> CheckMigrateClusterOutcome;
+                typedef std::future<CheckMigrateClusterOutcome> CheckMigrateClusterOutcomeCallable;
+                typedef std::function<void(const CdbClient*, const Model::CheckMigrateClusterRequest&, CheckMigrateClusterOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CheckMigrateClusterAsyncHandler;
                 typedef Outcome<Core::Error, Model::CloseAuditServiceResponse> CloseAuditServiceOutcome;
                 typedef std::future<CloseAuditServiceOutcome> CloseAuditServiceOutcomeCallable;
                 typedef std::function<void(const CdbClient*, const Model::CloseAuditServiceRequest&, CloseAuditServiceOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CloseAuditServiceAsyncHandler;
@@ -532,6 +539,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeCloneListResponse> DescribeCloneListOutcome;
                 typedef std::future<DescribeCloneListOutcome> DescribeCloneListOutcomeCallable;
                 typedef std::function<void(const CdbClient*, const Model::DescribeCloneListRequest&, DescribeCloneListOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeCloneListAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeClusterInfoResponse> DescribeClusterInfoOutcome;
+                typedef std::future<DescribeClusterInfoOutcome> DescribeClusterInfoOutcomeCallable;
+                typedef std::function<void(const CdbClient*, const Model::DescribeClusterInfoRequest&, DescribeClusterInfoOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeClusterInfoAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeCpuExpandStrategyResponse> DescribeCpuExpandStrategyOutcome;
                 typedef std::future<DescribeCpuExpandStrategyOutcome> DescribeCpuExpandStrategyOutcomeCallable;
                 typedef std::function<void(const CdbClient*, const Model::DescribeCpuExpandStrategyRequest&, DescribeCpuExpandStrategyOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeCpuExpandStrategyAsyncHandler;
@@ -888,6 +898,15 @@ namespace TencentCloud
                 BalanceRoGroupLoadOutcome BalanceRoGroupLoad(const Model::BalanceRoGroupLoadRequest &request);
                 void BalanceRoGroupLoadAsync(const Model::BalanceRoGroupLoadRequest& request, const BalanceRoGroupLoadAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 BalanceRoGroupLoadOutcomeCallable BalanceRoGroupLoadCallable(const Model::BalanceRoGroupLoadRequest& request);
+
+                /**
+                 *高可用实例一键迁移到集群版校验
+                 * @param req CheckMigrateClusterRequest
+                 * @return CheckMigrateClusterOutcome
+                 */
+                CheckMigrateClusterOutcome CheckMigrateCluster(const Model::CheckMigrateClusterRequest &request);
+                void CheckMigrateClusterAsync(const Model::CheckMigrateClusterRequest& request, const CheckMigrateClusterAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                CheckMigrateClusterOutcomeCallable CheckMigrateClusterCallable(const Model::CheckMigrateClusterRequest& request);
 
                 /**
                  *实例关闭审计服务
@@ -1384,6 +1403,15 @@ namespace TencentCloud
                 DescribeCloneListOutcome DescribeCloneList(const Model::DescribeCloneListRequest &request);
                 void DescribeCloneListAsync(const Model::DescribeCloneListRequest& request, const DescribeCloneListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DescribeCloneListOutcomeCallable DescribeCloneListCallable(const Model::DescribeCloneListRequest& request);
+
+                /**
+                 *本接口(DescribeClusterInfo)用于查询集群版实例信息。
+                 * @param req DescribeClusterInfoRequest
+                 * @return DescribeClusterInfoOutcome
+                 */
+                DescribeClusterInfoOutcome DescribeClusterInfo(const Model::DescribeClusterInfoRequest &request);
+                void DescribeClusterInfoAsync(const Model::DescribeClusterInfoRequest& request, const DescribeClusterInfoAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeClusterInfoOutcomeCallable DescribeClusterInfoCallable(const Model::DescribeClusterInfoRequest& request);
 
                 /**
                  *通过该 API 可以查询实例的 CPU 弹性扩容策略

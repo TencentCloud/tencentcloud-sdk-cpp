@@ -47,18 +47,18 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取创建账号
+                     * 获取创建账号sub uin
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return CreateUin 创建账号
+                     * @return CreateUin 创建账号sub uin
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetCreateUin() const;
 
                     /**
-                     * 设置创建账号
+                     * 设置创建账号sub uin
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _createUin 创建账号
+                     * @param _createUin 创建账号sub uin
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -72,18 +72,18 @@ namespace TencentCloud
                     bool CreateUinHasBeenSet() const;
 
                     /**
-                     * 获取操作账号
+                     * 获取操作账号sub uin
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return OperatorUin 操作账号
+                     * @return OperatorUin 操作账号sub uin
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetOperatorUin() const;
 
                     /**
-                     * 设置操作账号
+                     * 设置操作账号sub uin
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _operatorUin 操作账号
+                     * @param _operatorUin 操作账号sub uin
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -235,18 +235,18 @@ namespace TencentCloud
                     bool IssueIdHasBeenSet() const;
 
                     /**
-                     * 获取资源组id
+                     * 获取下发资源组id，非传入项
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return InlongTaskId 资源组id
+                     * @return InlongTaskId 下发资源组id，非传入项
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetInlongTaskId() const;
 
                     /**
-                     * 设置资源组id
+                     * 设置下发资源组id，非传入项
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _inlongTaskId 资源组id
+                     * @param _inlongTaskId 下发资源组id，非传入项
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -285,15 +285,15 @@ namespace TencentCloud
                     bool ResourceGroupHasBeenSet() const;
 
                     /**
-                     * 获取实例类型
-                     * @return TaskRunType 实例类型
+                     * 获取任务类型(1 调试运行,2 调度执行)
+                     * @return TaskRunType 任务类型(1 调试运行,2 调度执行)
                      * 
                      */
                     uint64_t GetTaskRunType() const;
 
                     /**
-                     * 设置实例类型
-                     * @param _taskRunType 实例类型
+                     * 设置任务类型(1 调试运行,2 调度执行)
+                     * @param _taskRunType 任务类型(1 调试运行,2 调度执行)
                      * 
                      */
                     void SetTaskRunType(const uint64_t& _taskRunType);
@@ -306,15 +306,15 @@ namespace TencentCloud
                     bool TaskRunTypeHasBeenSet() const;
 
                     /**
-                     * 获取实例状态
-                     * @return State 实例状态
+                     * 获取实例状态 EVENT_LISTENING|DEPENDENCE|BEFORE_ASPECT|ALLOCATED|LAUNCHED|KILL|SNAP_STATE_SAVING|ISSUED|RUNNING|AFTER_ASPECT|PENDING|KILLING|FINAL_STATE_SAVING|FAILED|KILL_FAILED| COMPLETED|EXPIRED|KILL_EXPIRED|DELETED
+                     * @return State 实例状态 EVENT_LISTENING|DEPENDENCE|BEFORE_ASPECT|ALLOCATED|LAUNCHED|KILL|SNAP_STATE_SAVING|ISSUED|RUNNING|AFTER_ASPECT|PENDING|KILLING|FINAL_STATE_SAVING|FAILED|KILL_FAILED| COMPLETED|EXPIRED|KILL_EXPIRED|DELETED
                      * 
                      */
                     std::string GetState() const;
 
                     /**
-                     * 设置实例状态
-                     * @param _state 实例状态
+                     * 设置实例状态 EVENT_LISTENING|DEPENDENCE|BEFORE_ASPECT|ALLOCATED|LAUNCHED|KILL|SNAP_STATE_SAVING|ISSUED|RUNNING|AFTER_ASPECT|PENDING|KILLING|FINAL_STATE_SAVING|FAILED|KILL_FAILED| COMPLETED|EXPIRED|KILL_EXPIRED|DELETED
+                     * @param _state 实例状态 EVENT_LISTENING|DEPENDENCE|BEFORE_ASPECT|ALLOCATED|LAUNCHED|KILL|SNAP_STATE_SAVING|ISSUED|RUNNING|AFTER_ASPECT|PENDING|KILLING|FINAL_STATE_SAVING|FAILED|KILL_FAILED| COMPLETED|EXPIRED|KILL_EXPIRED|DELETED
                      * 
                      */
                     void SetState(const std::string& _state);
@@ -450,14 +450,14 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 创建账号
+                     * 创建账号sub uin
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_createUin;
                     bool m_createUinHasBeenSet;
 
                     /**
-                     * 操作账号
+                     * 操作账号sub uin
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_operatorUin;
@@ -503,7 +503,7 @@ namespace TencentCloud
                     bool m_issueIdHasBeenSet;
 
                     /**
-                     * 资源组id
+                     * 下发资源组id，非传入项
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_inlongTaskId;
@@ -517,13 +517,13 @@ namespace TencentCloud
                     bool m_resourceGroupHasBeenSet;
 
                     /**
-                     * 实例类型
+                     * 任务类型(1 调试运行,2 调度执行)
                      */
                     uint64_t m_taskRunType;
                     bool m_taskRunTypeHasBeenSet;
 
                     /**
-                     * 实例状态
+                     * 实例状态 EVENT_LISTENING|DEPENDENCE|BEFORE_ASPECT|ALLOCATED|LAUNCHED|KILL|SNAP_STATE_SAVING|ISSUED|RUNNING|AFTER_ASPECT|PENDING|KILLING|FINAL_STATE_SAVING|FAILED|KILL_FAILED| COMPLETED|EXPIRED|KILL_EXPIRED|DELETED
                      */
                     std::string m_state;
                     bool m_stateHasBeenSet;

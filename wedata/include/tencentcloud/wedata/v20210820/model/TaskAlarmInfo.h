@@ -175,18 +175,18 @@ namespace TencentCloud
                     bool TaskTypeHasBeenSet() const;
 
                     /**
-                     * 获取主键ID
+                     * 获取ID
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return Id 主键ID
+                     * @return Id ID
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetId() const;
 
                     /**
-                     * 设置主键ID
+                     * 设置ID
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _id 主键ID
+                     * @param _id ID
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -855,7 +855,7 @@ namespace TencentCloud
                     bool m_taskTypeHasBeenSet;
 
                     /**
-                     * 主键ID
+                     * ID
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_id;

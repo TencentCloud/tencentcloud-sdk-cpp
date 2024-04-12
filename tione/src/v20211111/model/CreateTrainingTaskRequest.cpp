@@ -45,7 +45,8 @@ CreateTrainingTaskRequest::CreateTrainingTaskRequest() :
     m_remarkHasBeenSet(false),
     m_dataSourceHasBeenSet(false),
     m_callbackUrlHasBeenSet(false),
-    m_preTrainModelHasBeenSet(false)
+    m_preTrainModelHasBeenSet(false),
+    m_encodedStartCmdInfoHasBeenSet(false)
 {
 }
 
@@ -265,6 +266,15 @@ string CreateTrainingTaskRequest::ToJsonString() const
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
         m_preTrainModel.ToJsonObject(d[key.c_str()], allocator);
+    }
+
+    if (m_encodedStartCmdInfoHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "EncodedStartCmdInfo";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_encodedStartCmdInfo.ToJsonObject(d[key.c_str()], allocator);
     }
 
 
@@ -641,6 +651,22 @@ void CreateTrainingTaskRequest::SetPreTrainModel(const PreTrainModel& _preTrainM
 bool CreateTrainingTaskRequest::PreTrainModelHasBeenSet() const
 {
     return m_preTrainModelHasBeenSet;
+}
+
+EncodedStartCmdInfo CreateTrainingTaskRequest::GetEncodedStartCmdInfo() const
+{
+    return m_encodedStartCmdInfo;
+}
+
+void CreateTrainingTaskRequest::SetEncodedStartCmdInfo(const EncodedStartCmdInfo& _encodedStartCmdInfo)
+{
+    m_encodedStartCmdInfo = _encodedStartCmdInfo;
+    m_encodedStartCmdInfoHasBeenSet = true;
+}
+
+bool CreateTrainingTaskRequest::EncodedStartCmdInfoHasBeenSet() const
+{
+    return m_encodedStartCmdInfoHasBeenSet;
 }
 
 

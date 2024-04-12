@@ -38,7 +38,7 @@ namespace TencentCloud
             namespace Model
             {
                 /**
-                * 集成节点
+                * 集成任务节点
                 */
                 class IntegrationNodeInfo : public AbstractModel
                 {
@@ -117,15 +117,15 @@ namespace TencentCloud
                     bool NameHasBeenSet() const;
 
                     /**
-                     * 获取集成节点类型
-                     * @return NodeType 集成节点类型
+                     * 获取集成节点类型,INPUT: 输入节点，OUTPUT:输出节点 
+                     * @return NodeType 集成节点类型,INPUT: 输入节点，OUTPUT:输出节点 
                      * 
                      */
                     std::string GetNodeType() const;
 
                     /**
-                     * 设置集成节点类型
-                     * @param _nodeType 集成节点类型
+                     * 设置集成节点类型,INPUT: 输入节点，OUTPUT:输出节点 
+                     * @param _nodeType 集成节点类型,INPUT: 输入节点，OUTPUT:输出节点 
                      * 
                      */
                     void SetNodeType(const std::string& _nodeType);
@@ -138,15 +138,15 @@ namespace TencentCloud
                     bool NodeTypeHasBeenSet() const;
 
                     /**
-                     * 获取节点数据源类型
-                     * @return DataSourceType 节点数据源类型
+                     * 获取节点数据源类型：MYSQL|POSTGRE|ORACLE|SQLSERVER|FTP|HIVE|HDFS|ICEBERG|KAFKA|HBASE|SPARK|VIRTUAL|TBASE|DB2|DM|GAUSSDB|GBASE|IMPALA|ES|S3_DATAINSIGHT|GREENPLUM|PHOENIX|SAP_HANA|SFTP|OCEANBASE|CLICKHOUSE|KUDU|VERTICA|REDIS|COS|DLC|DLCV1|DORIS|CKAFKA|DTS_KAFKA|S3|CDW|LOCAL|TDSQLC|TDSQL|TDSQL_MYSQL|MONGODB|INFORMIX|SYBASE|REST_API|SuperSQL|PRESTO|DR_SUM|TiDB|StarRocks|Trino|Kyuubi|GDB|TCHOUSE_X|TCHOUSE_P|TDSQL_POSTGRE
+                     * @return DataSourceType 节点数据源类型：MYSQL|POSTGRE|ORACLE|SQLSERVER|FTP|HIVE|HDFS|ICEBERG|KAFKA|HBASE|SPARK|VIRTUAL|TBASE|DB2|DM|GAUSSDB|GBASE|IMPALA|ES|S3_DATAINSIGHT|GREENPLUM|PHOENIX|SAP_HANA|SFTP|OCEANBASE|CLICKHOUSE|KUDU|VERTICA|REDIS|COS|DLC|DLCV1|DORIS|CKAFKA|DTS_KAFKA|S3|CDW|LOCAL|TDSQLC|TDSQL|TDSQL_MYSQL|MONGODB|INFORMIX|SYBASE|REST_API|SuperSQL|PRESTO|DR_SUM|TiDB|StarRocks|Trino|Kyuubi|GDB|TCHOUSE_X|TCHOUSE_P|TDSQL_POSTGRE
                      * 
                      */
                     std::string GetDataSourceType() const;
 
                     /**
-                     * 设置节点数据源类型
-                     * @param _dataSourceType 节点数据源类型
+                     * 设置节点数据源类型：MYSQL|POSTGRE|ORACLE|SQLSERVER|FTP|HIVE|HDFS|ICEBERG|KAFKA|HBASE|SPARK|VIRTUAL|TBASE|DB2|DM|GAUSSDB|GBASE|IMPALA|ES|S3_DATAINSIGHT|GREENPLUM|PHOENIX|SAP_HANA|SFTP|OCEANBASE|CLICKHOUSE|KUDU|VERTICA|REDIS|COS|DLC|DLCV1|DORIS|CKAFKA|DTS_KAFKA|S3|CDW|LOCAL|TDSQLC|TDSQL|TDSQL_MYSQL|MONGODB|INFORMIX|SYBASE|REST_API|SuperSQL|PRESTO|DR_SUM|TiDB|StarRocks|Trino|Kyuubi|GDB|TCHOUSE_X|TCHOUSE_P|TDSQL_POSTGRE
+                     * @param _dataSourceType 节点数据源类型：MYSQL|POSTGRE|ORACLE|SQLSERVER|FTP|HIVE|HDFS|ICEBERG|KAFKA|HBASE|SPARK|VIRTUAL|TBASE|DB2|DM|GAUSSDB|GBASE|IMPALA|ES|S3_DATAINSIGHT|GREENPLUM|PHOENIX|SAP_HANA|SFTP|OCEANBASE|CLICKHOUSE|KUDU|VERTICA|REDIS|COS|DLC|DLCV1|DORIS|CKAFKA|DTS_KAFKA|S3|CDW|LOCAL|TDSQLC|TDSQL|TDSQL_MYSQL|MONGODB|INFORMIX|SYBASE|REST_API|SuperSQL|PRESTO|DR_SUM|TiDB|StarRocks|Trino|Kyuubi|GDB|TCHOUSE_X|TCHOUSE_P|TDSQL_POSTGRE
                      * 
                      */
                     void SetDataSourceType(const std::string& _dataSourceType);
@@ -309,15 +309,15 @@ namespace TencentCloud
                     bool NodeMappingHasBeenSet() const;
 
                     /**
-                     * 获取应用id
-                     * @return AppId 应用id
+                     * 获取归属用户AppId,展示字段 非传入
+                     * @return AppId 归属用户AppId,展示字段 非传入
                      * 
                      */
                     std::string GetAppId() const;
 
                     /**
-                     * 设置应用id
-                     * @param _appId 应用id
+                     * 设置归属用户AppId,展示字段 非传入
+                     * @param _appId 归属用户AppId,展示字段 非传入
                      * 
                      */
                     void SetAppId(const std::string& _appId);
@@ -351,18 +351,18 @@ namespace TencentCloud
                     bool ProjectIdHasBeenSet() const;
 
                     /**
-                     * 获取创建人uin
+                     * 获取创建人uin,展示字段 非传入
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return CreatorUin 创建人uin
+                     * @return CreatorUin 创建人uin,展示字段 非传入
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetCreatorUin() const;
 
                     /**
-                     * 设置创建人uin
+                     * 设置创建人uin,展示字段 非传入
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _creatorUin 创建人uin
+                     * @param _creatorUin 创建人uin,展示字段 非传入
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -376,18 +376,18 @@ namespace TencentCloud
                     bool CreatorUinHasBeenSet() const;
 
                     /**
-                     * 获取操作人uin
+                     * 获取操作人uin，展示字段 非传入
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return OperatorUin 操作人uin
+                     * @return OperatorUin 操作人uin，展示字段 非传入
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetOperatorUin() const;
 
                     /**
-                     * 设置操作人uin
+                     * 设置操作人uin，展示字段 非传入
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _operatorUin 操作人uin
+                     * @param _operatorUin 操作人uin，展示字段 非传入
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -401,15 +401,15 @@ namespace TencentCloud
                     bool OperatorUinHasBeenSet() const;
 
                     /**
-                     * 获取owner uin
-                     * @return OwnerUin owner uin
+                     * 获取owner uin 展示字段 非传入
+                     * @return OwnerUin owner uin 展示字段 非传入
                      * 
                      */
                     std::string GetOwnerUin() const;
 
                     /**
-                     * 设置owner uin
-                     * @param _ownerUin owner uin
+                     * 设置owner uin 展示字段 非传入
+                     * @param _ownerUin owner uin 展示字段 非传入
                      * 
                      */
                     void SetOwnerUin(const std::string& _ownerUin);
@@ -493,13 +493,13 @@ namespace TencentCloud
                     bool m_nameHasBeenSet;
 
                     /**
-                     * 集成节点类型
+                     * 集成节点类型,INPUT: 输入节点，OUTPUT:输出节点 
                      */
                     std::string m_nodeType;
                     bool m_nodeTypeHasBeenSet;
 
                     /**
-                     * 节点数据源类型
+                     * 节点数据源类型：MYSQL|POSTGRE|ORACLE|SQLSERVER|FTP|HIVE|HDFS|ICEBERG|KAFKA|HBASE|SPARK|VIRTUAL|TBASE|DB2|DM|GAUSSDB|GBASE|IMPALA|ES|S3_DATAINSIGHT|GREENPLUM|PHOENIX|SAP_HANA|SFTP|OCEANBASE|CLICKHOUSE|KUDU|VERTICA|REDIS|COS|DLC|DLCV1|DORIS|CKAFKA|DTS_KAFKA|S3|CDW|LOCAL|TDSQLC|TDSQL|TDSQL_MYSQL|MONGODB|INFORMIX|SYBASE|REST_API|SuperSQL|PRESTO|DR_SUM|TiDB|StarRocks|Trino|Kyuubi|GDB|TCHOUSE_X|TCHOUSE_P|TDSQL_POSTGRE
                      */
                     std::string m_dataSourceType;
                     bool m_dataSourceTypeHasBeenSet;
@@ -547,7 +547,7 @@ namespace TencentCloud
                     bool m_nodeMappingHasBeenSet;
 
                     /**
-                     * 应用id
+                     * 归属用户AppId,展示字段 非传入
                      */
                     std::string m_appId;
                     bool m_appIdHasBeenSet;
@@ -559,21 +559,21 @@ namespace TencentCloud
                     bool m_projectIdHasBeenSet;
 
                     /**
-                     * 创建人uin
+                     * 创建人uin,展示字段 非传入
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_creatorUin;
                     bool m_creatorUinHasBeenSet;
 
                     /**
-                     * 操作人uin
+                     * 操作人uin，展示字段 非传入
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_operatorUin;
                     bool m_operatorUinHasBeenSet;
 
                     /**
-                     * owner uin
+                     * owner uin 展示字段 非传入
                      */
                     std::string m_ownerUin;
                     bool m_ownerUinHasBeenSet;

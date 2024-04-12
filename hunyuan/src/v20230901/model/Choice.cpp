@@ -22,7 +22,8 @@ using namespace std;
 
 Choice::Choice() :
     m_finishReasonHasBeenSet(false),
-    m_deltaHasBeenSet(false)
+    m_deltaHasBeenSet(false),
+    m_messageHasBeenSet(false)
 {
 }
 
@@ -58,6 +59,23 @@ CoreInternalOutcome Choice::Deserialize(const rapidjson::Value &value)
         m_deltaHasBeenSet = true;
     }
 
+    if (value.HasMember("Message") && !value["Message"].IsNull())
+    {
+        if (!value["Message"].IsObject())
+        {
+            return CoreInternalOutcome(Core::Error("response `Choice.Message` is not object type").SetRequestId(requestId));
+        }
+
+        CoreInternalOutcome outcome = m_message.Deserialize(value["Message"]);
+        if (!outcome.IsSuccess())
+        {
+            outcome.GetError().SetRequestId(requestId);
+            return outcome;
+        }
+
+        m_messageHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -80,6 +98,15 @@ void Choice::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Allocato
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
         m_delta.ToJsonObject(value[key.c_str()], allocator);
+    }
+
+    if (m_messageHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Message";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_message.ToJsonObject(value[key.c_str()], allocator);
     }
 
 }
@@ -115,5 +142,21 @@ void Choice::SetDelta(const Delta& _delta)
 bool Choice::DeltaHasBeenSet() const
 {
     return m_deltaHasBeenSet;
+}
+
+Message Choice::GetMessage() const
+{
+    return m_message;
+}
+
+void Choice::SetMessage(const Message& _message)
+{
+    m_message = _message;
+    m_messageHasBeenSet = true;
+}
+
+bool Choice::MessageHasBeenSet() const
+{
+    return m_messageHasBeenSet;
 }
 

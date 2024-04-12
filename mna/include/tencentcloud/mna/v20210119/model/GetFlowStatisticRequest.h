@@ -106,15 +106,15 @@ namespace TencentCloud
                     bool EndTimeHasBeenSet() const;
 
                     /**
-                     * 获取流量种类（1：上行流量，2：下行流量）
-                     * @return Type 流量种类（1：上行流量，2：下行流量）
+                     * 获取流量种类（1：上行流量，2：下行流量，3：上下行总和）
+                     * @return Type 流量种类（1：上行流量，2：下行流量，3：上下行总和）
                      * 
                      */
                     int64_t GetType() const;
 
                     /**
-                     * 设置流量种类（1：上行流量，2：下行流量）
-                     * @param _type 流量种类（1：上行流量，2：下行流量）
+                     * 设置流量种类（1：上行流量，2：下行流量，3：上下行总和）
+                     * @param _type 流量种类（1：上行流量，2：下行流量，3：上下行总和）
                      * 
                      */
                     void SetType(const int64_t& _type);
@@ -189,6 +189,27 @@ namespace TencentCloud
                      */
                     bool GatewayTypeHasBeenSet() const;
 
+                    /**
+                     * 获取设备ID列表，用于查询多设备流量，该字段启用时DeviceId可传"-1"
+                     * @return DeviceList 设备ID列表，用于查询多设备流量，该字段启用时DeviceId可传"-1"
+                     * 
+                     */
+                    std::vector<std::string> GetDeviceList() const;
+
+                    /**
+                     * 设置设备ID列表，用于查询多设备流量，该字段启用时DeviceId可传"-1"
+                     * @param _deviceList 设备ID列表，用于查询多设备流量，该字段启用时DeviceId可传"-1"
+                     * 
+                     */
+                    void SetDeviceList(const std::vector<std::string>& _deviceList);
+
+                    /**
+                     * 判断参数 DeviceList 是否已赋值
+                     * @return DeviceList 是否已赋值
+                     * 
+                     */
+                    bool DeviceListHasBeenSet() const;
+
                 private:
 
                     /**
@@ -210,7 +231,7 @@ namespace TencentCloud
                     bool m_endTimeHasBeenSet;
 
                     /**
-                     * 流量种类（1：上行流量，2：下行流量）
+                     * 流量种类（1：上行流量，2：下行流量，3：上下行总和）
                      */
                     int64_t m_type;
                     bool m_typeHasBeenSet;
@@ -232,6 +253,12 @@ namespace TencentCloud
                      */
                     int64_t m_gatewayType;
                     bool m_gatewayTypeHasBeenSet;
+
+                    /**
+                     * 设备ID列表，用于查询多设备流量，该字段启用时DeviceId可传"-1"
+                     */
+                    std::vector<std::string> m_deviceList;
+                    bool m_deviceListHasBeenSet;
 
                 };
             }

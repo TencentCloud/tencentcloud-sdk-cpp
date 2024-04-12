@@ -32,7 +32,9 @@ FlowPackageInfo::FlowPackageInfo() :
     m_capacitySizeHasBeenSet(false),
     m_capacityRemainHasBeenSet(false),
     m_renewFlagHasBeenSet(false),
-    m_modifyStatusHasBeenSet(false)
+    m_modifyStatusHasBeenSet(false),
+    m_truncFlagHasBeenSet(false),
+    m_capacityRemainPreciseHasBeenSet(false)
 {
 }
 
@@ -164,6 +166,26 @@ CoreInternalOutcome FlowPackageInfo::Deserialize(const rapidjson::Value &value)
         m_modifyStatusHasBeenSet = true;
     }
 
+    if (value.HasMember("TruncFlag") && !value["TruncFlag"].IsNull())
+    {
+        if (!value["TruncFlag"].IsBool())
+        {
+            return CoreInternalOutcome(Core::Error("response `FlowPackageInfo.TruncFlag` IsBool=false incorrectly").SetRequestId(requestId));
+        }
+        m_truncFlag = value["TruncFlag"].GetBool();
+        m_truncFlagHasBeenSet = true;
+    }
+
+    if (value.HasMember("CapacityRemainPrecise") && !value["CapacityRemainPrecise"].IsNull())
+    {
+        if (!value["CapacityRemainPrecise"].IsUint64())
+        {
+            return CoreInternalOutcome(Core::Error("response `FlowPackageInfo.CapacityRemainPrecise` IsUint64=false incorrectly").SetRequestId(requestId));
+        }
+        m_capacityRemainPrecise = value["CapacityRemainPrecise"].GetUint64();
+        m_capacityRemainPreciseHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -270,6 +292,22 @@ void FlowPackageInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Document:
         string key = "ModifyStatus";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_modifyStatus, allocator);
+    }
+
+    if (m_truncFlagHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "TruncFlag";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_truncFlag, allocator);
+    }
+
+    if (m_capacityRemainPreciseHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "CapacityRemainPrecise";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_capacityRemainPrecise, allocator);
     }
 
 }
@@ -465,5 +503,37 @@ void FlowPackageInfo::SetModifyStatus(const int64_t& _modifyStatus)
 bool FlowPackageInfo::ModifyStatusHasBeenSet() const
 {
     return m_modifyStatusHasBeenSet;
+}
+
+bool FlowPackageInfo::GetTruncFlag() const
+{
+    return m_truncFlag;
+}
+
+void FlowPackageInfo::SetTruncFlag(const bool& _truncFlag)
+{
+    m_truncFlag = _truncFlag;
+    m_truncFlagHasBeenSet = true;
+}
+
+bool FlowPackageInfo::TruncFlagHasBeenSet() const
+{
+    return m_truncFlagHasBeenSet;
+}
+
+uint64_t FlowPackageInfo::GetCapacityRemainPrecise() const
+{
+    return m_capacityRemainPrecise;
+}
+
+void FlowPackageInfo::SetCapacityRemainPrecise(const uint64_t& _capacityRemainPrecise)
+{
+    m_capacityRemainPrecise = _capacityRemainPrecise;
+    m_capacityRemainPreciseHasBeenSet = true;
+}
+
+bool FlowPackageInfo::CapacityRemainPreciseHasBeenSet() const
+{
+    return m_capacityRemainPreciseHasBeenSet;
 }
 

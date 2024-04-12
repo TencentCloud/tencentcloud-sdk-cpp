@@ -43,7 +43,8 @@ BGPInstance::BGPInstance() :
     m_giftServiceBandWidthHasBeenSet(false),
     m_modifyTimeHasBeenSet(false),
     m_basicPlusFlagHasBeenSet(false),
-    m_planCntFlagHasBeenSet(false)
+    m_planCntFlagHasBeenSet(false),
+    m_superPackFlagHasBeenSet(false)
 {
 }
 
@@ -337,6 +338,16 @@ CoreInternalOutcome BGPInstance::Deserialize(const rapidjson::Value &value)
         m_planCntFlagHasBeenSet = true;
     }
 
+    if (value.HasMember("SuperPackFlag") && !value["SuperPackFlag"].IsNull())
+    {
+        if (!value["SuperPackFlag"].IsUint64())
+        {
+            return CoreInternalOutcome(Core::Error("response `BGPInstance.SuperPackFlag` IsUint64=false incorrectly").SetRequestId(requestId));
+        }
+        m_superPackFlag = value["SuperPackFlag"].GetUint64();
+        m_superPackFlagHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -545,6 +556,14 @@ void BGPInstance::ToJsonObject(rapidjson::Value &value, rapidjson::Document::All
         string key = "PlanCntFlag";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_planCntFlag, allocator);
+    }
+
+    if (m_superPackFlagHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "SuperPackFlag";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_superPackFlag, allocator);
     }
 
 }
@@ -916,5 +935,21 @@ void BGPInstance::SetPlanCntFlag(const uint64_t& _planCntFlag)
 bool BGPInstance::PlanCntFlagHasBeenSet() const
 {
     return m_planCntFlagHasBeenSet;
+}
+
+uint64_t BGPInstance::GetSuperPackFlag() const
+{
+    return m_superPackFlag;
+}
+
+void BGPInstance::SetSuperPackFlag(const uint64_t& _superPackFlag)
+{
+    m_superPackFlag = _superPackFlag;
+    m_superPackFlagHasBeenSet = true;
+}
+
+bool BGPInstance::SuperPackFlagHasBeenSet() const
+{
+    return m_superPackFlagHasBeenSet;
 }
 

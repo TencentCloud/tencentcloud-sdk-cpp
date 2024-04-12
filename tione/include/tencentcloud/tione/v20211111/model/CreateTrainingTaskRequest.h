@@ -29,6 +29,7 @@
 #include <tencentcloud/tione/v20211111/model/DataConfig.h>
 #include <tencentcloud/tione/v20211111/model/LogConfig.h>
 #include <tencentcloud/tione/v20211111/model/PreTrainModel.h>
+#include <tencentcloud/tione/v20211111/model/EncodedStartCmdInfo.h>
 
 
 namespace TencentCloud
@@ -265,15 +266,15 @@ POSTPAID_BY_HOUR 按量计费
                     bool CodePackagePathHasBeenSet() const;
 
                     /**
-                     * 获取启动命令信息，默认为sh start.sh
-                     * @return StartCmdInfo 启动命令信息，默认为sh start.sh
+                     * 获取任务的启动命令，按任务训练模式输入，如遇特殊字符导致配置失败，可使用EncodedStartCmdInfo参数
+                     * @return StartCmdInfo 任务的启动命令，按任务训练模式输入，如遇特殊字符导致配置失败，可使用EncodedStartCmdInfo参数
                      * 
                      */
                     StartCmdInfo GetStartCmdInfo() const;
 
                     /**
-                     * 设置启动命令信息，默认为sh start.sh
-                     * @param _startCmdInfo 启动命令信息，默认为sh start.sh
+                     * 设置任务的启动命令，按任务训练模式输入，如遇特殊字符导致配置失败，可使用EncodedStartCmdInfo参数
+                     * @param _startCmdInfo 任务的启动命令，按任务训练模式输入，如遇特殊字符导致配置失败，可使用EncodedStartCmdInfo参数
                      * 
                      */
                     void SetStartCmdInfo(const StartCmdInfo& _startCmdInfo);
@@ -537,6 +538,27 @@ POSTPAID_BY_HOUR 按量计费
                      */
                     bool PreTrainModelHasBeenSet() const;
 
+                    /**
+                     * 获取编码后的任务启动命令，与StartCmdInfo同时配置时，仅当前参数生效
+                     * @return EncodedStartCmdInfo 编码后的任务启动命令，与StartCmdInfo同时配置时，仅当前参数生效
+                     * 
+                     */
+                    EncodedStartCmdInfo GetEncodedStartCmdInfo() const;
+
+                    /**
+                     * 设置编码后的任务启动命令，与StartCmdInfo同时配置时，仅当前参数生效
+                     * @param _encodedStartCmdInfo 编码后的任务启动命令，与StartCmdInfo同时配置时，仅当前参数生效
+                     * 
+                     */
+                    void SetEncodedStartCmdInfo(const EncodedStartCmdInfo& _encodedStartCmdInfo);
+
+                    /**
+                     * 判断参数 EncodedStartCmdInfo 是否已赋值
+                     * @return EncodedStartCmdInfo 是否已赋值
+                     * 
+                     */
+                    bool EncodedStartCmdInfoHasBeenSet() const;
+
                 private:
 
                     /**
@@ -601,7 +623,7 @@ POSTPAID_BY_HOUR 按量计费
                     bool m_codePackagePathHasBeenSet;
 
                     /**
-                     * 启动命令信息，默认为sh start.sh
+                     * 任务的启动命令，按任务训练模式输入，如遇特殊字符导致配置失败，可使用EncodedStartCmdInfo参数
                      */
                     StartCmdInfo m_startCmdInfo;
                     bool m_startCmdInfoHasBeenSet;
@@ -677,6 +699,12 @@ POSTPAID_BY_HOUR 按量计费
                      */
                     PreTrainModel m_preTrainModel;
                     bool m_preTrainModelHasBeenSet;
+
+                    /**
+                     * 编码后的任务启动命令，与StartCmdInfo同时配置时，仅当前参数生效
+                     */
+                    EncodedStartCmdInfo m_encodedStartCmdInfo;
+                    bool m_encodedStartCmdInfoHasBeenSet;
 
                 };
             }
