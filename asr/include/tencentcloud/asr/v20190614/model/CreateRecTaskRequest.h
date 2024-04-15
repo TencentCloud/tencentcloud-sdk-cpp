@@ -74,6 +74,7 @@ namespace TencentCloud
 • **16k_hi：**印地语；
 • **16k_fr：**法语；
 • **16k_zh_medical：**中文医疗引擎；
+• **16k_de：**德语；
                      * @return EngineModelType 引擎模型类型
 识别引擎采用分级计费方案，标记为“大模型版”的引擎适用大模型计费方案，[点击这里](https://cloud.tencent.com/document/product/1093/35686) 查看产品计费说明
 
@@ -105,6 +106,7 @@ namespace TencentCloud
 • **16k_hi：**印地语；
 • **16k_fr：**法语；
 • **16k_zh_medical：**中文医疗引擎；
+• **16k_de：**德语；
                      * 
                      */
                     std::string GetEngineModelType() const;
@@ -141,6 +143,7 @@ namespace TencentCloud
 • **16k_hi：**印地语；
 • **16k_fr：**法语；
 • **16k_zh_medical：**中文医疗引擎；
+• **16k_de：**德语；
                      * @param _engineModelType 引擎模型类型
 识别引擎采用分级计费方案，标记为“大模型版”的引擎适用大模型计费方案，[点击这里](https://cloud.tencent.com/document/product/1093/35686) 查看产品计费说明
 
@@ -172,6 +175,7 @@ namespace TencentCloud
 • **16k_hi：**印地语；
 • **16k_fr：**法语；
 • **16k_zh_medical：**中文医疗引擎；
+• **16k_de：**德语；
                      * 
                      */
                     void SetEngineModelType(const std::string& _engineModelType);
@@ -973,6 +977,7 @@ namespace TencentCloud
 • **16k_hi：**印地语；
 • **16k_fr：**法语；
 • **16k_zh_medical：**中文医疗引擎；
+• **16k_de：**德语；
                      */
                     std::string m_engineModelType;
                     bool m_engineModelTypeHasBeenSet;

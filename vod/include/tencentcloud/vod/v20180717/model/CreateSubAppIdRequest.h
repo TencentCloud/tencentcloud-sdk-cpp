@@ -43,15 +43,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取子应用名称，长度限制：40个字符。
-                     * @return Name 子应用名称，长度限制：40个字符。
+                     * 获取应用名称，长度限制：40个字符。
+                     * @return Name 应用名称，长度限制：40个字符。
                      * 
                      */
                     std::string GetName() const;
 
                     /**
-                     * 设置子应用名称，长度限制：40个字符。
-                     * @param _name 子应用名称，长度限制：40个字符。
+                     * 设置应用名称，长度限制：40个字符。
+                     * @param _name 应用名称，长度限制：40个字符。
                      * 
                      */
                     void SetName(const std::string& _name);
@@ -64,15 +64,15 @@ namespace TencentCloud
                     bool NameHasBeenSet() const;
 
                     /**
-                     * 获取子应用简介，长度限制： 300个字符。
-                     * @return Description 子应用简介，长度限制： 300个字符。
+                     * 获取应用简介，长度限制： 300个字符。
+                     * @return Description 应用简介，长度限制： 300个字符。
                      * 
                      */
                     std::string GetDescription() const;
 
                     /**
-                     * 设置子应用简介，长度限制： 300个字符。
-                     * @param _description 子应用简介，长度限制： 300个字符。
+                     * 设置应用简介，长度限制： 300个字符。
+                     * @param _description 应用简介，长度限制： 300个字符。
                      * 
                      */
                     void SetDescription(const std::string& _description);
@@ -87,13 +87,13 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 子应用名称，长度限制：40个字符。
+                     * 应用名称，长度限制：40个字符。
                      */
                     std::string m_name;
                     bool m_nameHasBeenSet;
 
                     /**
-                     * 子应用简介，长度限制： 300个字符。
+                     * 应用简介，长度限制： 300个字符。
                      */
                     std::string m_description;
                     bool m_descriptionHasBeenSet;

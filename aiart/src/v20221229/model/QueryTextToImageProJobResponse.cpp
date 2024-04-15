@@ -29,7 +29,8 @@ QueryTextToImageProJobResponse::QueryTextToImageProJobResponse() :
     m_jobErrorCodeHasBeenSet(false),
     m_jobErrorMsgHasBeenSet(false),
     m_resultImageHasBeenSet(false),
-    m_resultDetailsHasBeenSet(false)
+    m_resultDetailsHasBeenSet(false),
+    m_revisedPromptHasBeenSet(false)
 {
 }
 
@@ -133,6 +134,19 @@ CoreInternalOutcome QueryTextToImageProJobResponse::Deserialize(const string &pa
         m_resultDetailsHasBeenSet = true;
     }
 
+    if (rsp.HasMember("RevisedPrompt") && !rsp["RevisedPrompt"].IsNull())
+    {
+        if (!rsp["RevisedPrompt"].IsArray())
+            return CoreInternalOutcome(Core::Error("response `RevisedPrompt` is not array type"));
+
+        const rapidjson::Value &tmpValue = rsp["RevisedPrompt"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            m_revisedPrompt.push_back((*itr).GetString());
+        }
+        m_revisedPromptHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -196,6 +210,19 @@ string QueryTextToImageProJobResponse::ToJsonString() const
         value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
 
         for (auto itr = m_resultDetails.begin(); itr != m_resultDetails.end(); ++itr)
+        {
+            value[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
+        }
+    }
+
+    if (m_revisedPromptHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "RevisedPrompt";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        for (auto itr = m_revisedPrompt.begin(); itr != m_revisedPrompt.end(); ++itr)
         {
             value[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
         }
@@ -271,6 +298,16 @@ vector<string> QueryTextToImageProJobResponse::GetResultDetails() const
 bool QueryTextToImageProJobResponse::ResultDetailsHasBeenSet() const
 {
     return m_resultDetailsHasBeenSet;
+}
+
+vector<string> QueryTextToImageProJobResponse::GetRevisedPrompt() const
+{
+    return m_revisedPrompt;
+}
+
+bool QueryTextToImageProJobResponse::RevisedPromptHasBeenSet() const
+{
+    return m_revisedPromptHasBeenSet;
 }
 
 

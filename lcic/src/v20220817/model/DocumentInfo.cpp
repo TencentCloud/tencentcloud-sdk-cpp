@@ -39,7 +39,9 @@ DocumentInfo::DocumentInfo() :
     m_widthHasBeenSet(false),
     m_heightHasBeenSet(false),
     m_coverHasBeenSet(false),
-    m_previewHasBeenSet(false)
+    m_previewHasBeenSet(false),
+    m_resolutionHasBeenSet(false),
+    m_minScaleResolutionHasBeenSet(false)
 {
 }
 
@@ -238,6 +240,26 @@ CoreInternalOutcome DocumentInfo::Deserialize(const rapidjson::Value &value)
         m_previewHasBeenSet = true;
     }
 
+    if (value.HasMember("Resolution") && !value["Resolution"].IsNull())
+    {
+        if (!value["Resolution"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `DocumentInfo.Resolution` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_resolution = string(value["Resolution"].GetString());
+        m_resolutionHasBeenSet = true;
+    }
+
+    if (value.HasMember("MinScaleResolution") && !value["MinScaleResolution"].IsNull())
+    {
+        if (!value["MinScaleResolution"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `DocumentInfo.MinScaleResolution` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_minScaleResolution = string(value["MinScaleResolution"].GetString());
+        m_minScaleResolutionHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -395,6 +417,22 @@ void DocumentInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Al
         string key = "Preview";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_preview.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_resolutionHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Resolution";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_resolution.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_minScaleResolutionHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "MinScaleResolution";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_minScaleResolution.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -702,5 +740,37 @@ void DocumentInfo::SetPreview(const string& _preview)
 bool DocumentInfo::PreviewHasBeenSet() const
 {
     return m_previewHasBeenSet;
+}
+
+string DocumentInfo::GetResolution() const
+{
+    return m_resolution;
+}
+
+void DocumentInfo::SetResolution(const string& _resolution)
+{
+    m_resolution = _resolution;
+    m_resolutionHasBeenSet = true;
+}
+
+bool DocumentInfo::ResolutionHasBeenSet() const
+{
+    return m_resolutionHasBeenSet;
+}
+
+string DocumentInfo::GetMinScaleResolution() const
+{
+    return m_minScaleResolution;
+}
+
+void DocumentInfo::SetMinScaleResolution(const string& _minScaleResolution)
+{
+    m_minScaleResolution = _minScaleResolution;
+    m_minScaleResolutionHasBeenSet = true;
+}
+
+bool DocumentInfo::MinScaleResolutionHasBeenSet() const
+{
+    return m_minScaleResolutionHasBeenSet;
 }
 

@@ -23,7 +23,9 @@ using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Ess::V20201111::Model;
 using namespace std;
 
-CreateOrganizationAuthUrlResponse::CreateOrganizationAuthUrlResponse()
+CreateOrganizationAuthUrlResponse::CreateOrganizationAuthUrlResponse() :
+    m_authUrlHasBeenSet(false),
+    m_expiredTimeHasBeenSet(false)
 {
 }
 
@@ -61,6 +63,26 @@ CoreInternalOutcome CreateOrganizationAuthUrlResponse::Deserialize(const string 
     }
 
 
+    if (rsp.HasMember("AuthUrl") && !rsp["AuthUrl"].IsNull())
+    {
+        if (!rsp["AuthUrl"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `AuthUrl` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_authUrl = string(rsp["AuthUrl"].GetString());
+        m_authUrlHasBeenSet = true;
+    }
+
+    if (rsp.HasMember("ExpiredTime") && !rsp["ExpiredTime"].IsNull())
+    {
+        if (!rsp["ExpiredTime"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `ExpiredTime` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_expiredTime = rsp["ExpiredTime"].GetInt64();
+        m_expiredTimeHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -70,6 +92,22 @@ string CreateOrganizationAuthUrlResponse::ToJsonString() const
     rapidjson::Document value;
     value.SetObject();
     rapidjson::Document::AllocatorType& allocator = value.GetAllocator();
+
+    if (m_authUrlHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "AuthUrl";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_authUrl.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_expiredTimeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ExpiredTime";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_expiredTime, allocator);
+    }
 
     rapidjson::Value iKey(rapidjson::kStringType);
     string key = "RequestId";
@@ -82,5 +120,25 @@ string CreateOrganizationAuthUrlResponse::ToJsonString() const
     return buffer.GetString();
 }
 
+
+string CreateOrganizationAuthUrlResponse::GetAuthUrl() const
+{
+    return m_authUrl;
+}
+
+bool CreateOrganizationAuthUrlResponse::AuthUrlHasBeenSet() const
+{
+    return m_authUrlHasBeenSet;
+}
+
+int64_t CreateOrganizationAuthUrlResponse::GetExpiredTime() const
+{
+    return m_expiredTime;
+}
+
+bool CreateOrganizationAuthUrlResponse::ExpiredTimeHasBeenSet() const
+{
+    return m_expiredTimeHasBeenSet;
+}
 
 

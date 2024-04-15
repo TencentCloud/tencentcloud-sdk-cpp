@@ -115,8 +115,8 @@ namespace TencentCloud
                     bool RegionHasBeenSet() const;
 
                     /**
-                     * 获取目录
-                     * @return FilePath 目录
+                     * 获取文件存储目录
+                     * @return FilePath 文件存储目录
                      * 
                      */
                     std::string GetFilePath() const;
@@ -156,6 +156,20 @@ namespace TencentCloud
                      */
                     bool CorpUinHasBeenSet() const;
 
+                    /**
+                     * 获取图片存储目录
+                     * @return ImagePath 图片存储目录
+                     * 
+                     */
+                    std::string GetImagePath() const;
+
+                    /**
+                     * 判断参数 ImagePath 是否已赋值
+                     * @return ImagePath 是否已赋值
+                     * 
+                     */
+                    bool ImagePathHasBeenSet() const;
+
                 private:
 
                     /**
@@ -189,7 +203,7 @@ namespace TencentCloud
                     bool m_regionHasBeenSet;
 
                     /**
-                     * 目录
+                     * 文件存储目录
                      */
                     std::string m_filePath;
                     bool m_filePathHasBeenSet;
@@ -205,6 +219,12 @@ namespace TencentCloud
                      */
                     std::string m_corpUin;
                     bool m_corpUinHasBeenSet;
+
+                    /**
+                     * 图片存储目录
+                     */
+                    std::string m_imagePath;
+                    bool m_imagePathHasBeenSet;
 
                 };
             }

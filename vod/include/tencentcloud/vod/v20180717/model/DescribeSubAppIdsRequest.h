@@ -44,15 +44,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取子应用名称。
-                     * @return Name 子应用名称。
+                     * 获取应用名称。
+                     * @return Name 应用名称。
                      * 
                      */
                     std::string GetName() const;
 
                     /**
-                     * 设置子应用名称。
-                     * @param _name 子应用名称。
+                     * 设置应用名称。
+                     * @param _name 应用名称。
                      * 
                      */
                     void SetName(const std::string& _name);
@@ -65,15 +65,15 @@ namespace TencentCloud
                     bool NameHasBeenSet() const;
 
                     /**
-                     * 获取标签信息，查询指定标签的子应用列表。
-                     * @return Tags 标签信息，查询指定标签的子应用列表。
+                     * 获取标签信息，查询指定标签的应用列表。
+                     * @return Tags 标签信息，查询指定标签的应用列表。
                      * 
                      */
                     std::vector<ResourceTag> GetTags() const;
 
                     /**
-                     * 设置标签信息，查询指定标签的子应用列表。
-                     * @param _tags 标签信息，查询指定标签的子应用列表。
+                     * 设置标签信息，查询指定标签的应用列表。
+                     * @param _tags 标签信息，查询指定标签的应用列表。
                      * 
                      */
                     void SetTags(const std::vector<ResourceTag>& _tags);
@@ -130,13 +130,13 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 子应用名称。
+                     * 应用名称。
                      */
                     std::string m_name;
                     bool m_nameHasBeenSet;
 
                     /**
-                     * 标签信息，查询指定标签的子应用列表。
+                     * 标签信息，查询指定标签的应用列表。
                      */
                     std::vector<ResourceTag> m_tags;
                     bool m_tagsHasBeenSet;

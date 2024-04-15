@@ -64,15 +64,15 @@ namespace TencentCloud
                     bool RouteTableNameHasBeenSet() const;
 
                     /**
-                     * 获取目的端CIDR。
-                     * @return DestinationCidrBlock 目的端CIDR。
+                     * 获取目的节点的 PodCIDR
+                     * @return DestinationCidrBlock 目的节点的 PodCIDR
                      * 
                      */
                     std::string GetDestinationCidrBlock() const;
 
                     /**
-                     * 设置目的端CIDR。
-                     * @param _destinationCidrBlock 目的端CIDR。
+                     * 设置目的节点的 PodCIDR
+                     * @param _destinationCidrBlock 目的节点的 PodCIDR
                      * 
                      */
                     void SetDestinationCidrBlock(const std::string& _destinationCidrBlock);
@@ -85,15 +85,15 @@ namespace TencentCloud
                     bool DestinationCidrBlockHasBeenSet() const;
 
                     /**
-                     * 获取下一跳地址。
-                     * @return GatewayIp 下一跳地址。
+                     * 获取下一跳地址，即目的节点的内网 IP 地址
+                     * @return GatewayIp 下一跳地址，即目的节点的内网 IP 地址
                      * 
                      */
                     std::string GetGatewayIp() const;
 
                     /**
-                     * 设置下一跳地址。
-                     * @param _gatewayIp 下一跳地址。
+                     * 设置下一跳地址，即目的节点的内网 IP 地址
+                     * @param _gatewayIp 下一跳地址，即目的节点的内网 IP 地址
                      * 
                      */
                     void SetGatewayIp(const std::string& _gatewayIp);
@@ -114,13 +114,13 @@ namespace TencentCloud
                     bool m_routeTableNameHasBeenSet;
 
                     /**
-                     * 目的端CIDR。
+                     * 目的节点的 PodCIDR
                      */
                     std::string m_destinationCidrBlock;
                     bool m_destinationCidrBlockHasBeenSet;
 
                     /**
-                     * 下一跳地址。
+                     * 下一跳地址，即目的节点的内网 IP 地址
                      */
                     std::string m_gatewayIp;
                     bool m_gatewayIpHasBeenSet;

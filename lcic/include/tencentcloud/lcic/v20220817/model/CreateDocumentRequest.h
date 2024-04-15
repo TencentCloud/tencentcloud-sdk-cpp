@@ -271,6 +271,27 @@ namespace TencentCloud
                      */
                     bool AutoHandleUnsupportedElementHasBeenSet() const;
 
+                    /**
+                     * 获取转码后文档的最小分辨率，不传、传空字符串或分辨率格式错误则使用文档原分辨率。示例：1280x720，注意分辨率宽高中间为英文字母"xyz"的"x"
+                     * @return MinScaleResolution 转码后文档的最小分辨率，不传、传空字符串或分辨率格式错误则使用文档原分辨率。示例：1280x720，注意分辨率宽高中间为英文字母"xyz"的"x"
+                     * 
+                     */
+                    std::string GetMinScaleResolution() const;
+
+                    /**
+                     * 设置转码后文档的最小分辨率，不传、传空字符串或分辨率格式错误则使用文档原分辨率。示例：1280x720，注意分辨率宽高中间为英文字母"xyz"的"x"
+                     * @param _minScaleResolution 转码后文档的最小分辨率，不传、传空字符串或分辨率格式错误则使用文档原分辨率。示例：1280x720，注意分辨率宽高中间为英文字母"xyz"的"x"
+                     * 
+                     */
+                    void SetMinScaleResolution(const std::string& _minScaleResolution);
+
+                    /**
+                     * 判断参数 MinScaleResolution 是否已赋值
+                     * @return MinScaleResolution 是否已赋值
+                     * 
+                     */
+                    bool MinScaleResolutionHasBeenSet() const;
+
                 private:
 
                     /**
@@ -336,6 +357,12 @@ namespace TencentCloud
                      */
                     bool m_autoHandleUnsupportedElement;
                     bool m_autoHandleUnsupportedElementHasBeenSet;
+
+                    /**
+                     * 转码后文档的最小分辨率，不传、传空字符串或分辨率格式错误则使用文档原分辨率。示例：1280x720，注意分辨率宽高中间为英文字母"xyz"的"x"
+                     */
+                    std::string m_minScaleResolution;
+                    bool m_minScaleResolutionHasBeenSet;
 
                 };
             }

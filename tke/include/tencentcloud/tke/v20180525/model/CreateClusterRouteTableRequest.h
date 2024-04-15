@@ -43,15 +43,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取路由表名称
-                     * @return RouteTableName 路由表名称
+                     * 获取路由表名称，一般为集群ID
+                     * @return RouteTableName 路由表名称，一般为集群ID
                      * 
                      */
                     std::string GetRouteTableName() const;
 
                     /**
-                     * 设置路由表名称
-                     * @param _routeTableName 路由表名称
+                     * 设置路由表名称，一般为集群ID
+                     * @param _routeTableName 路由表名称，一般为集群ID
                      * 
                      */
                     void SetRouteTableName(const std::string& _routeTableName);
@@ -106,15 +106,15 @@ namespace TencentCloud
                     bool VpcIdHasBeenSet() const;
 
                     /**
-                     * 获取是否忽略CIDR冲突
-                     * @return IgnoreClusterCidrConflict 是否忽略CIDR冲突
+                     * 获取是否忽略CIDR与 vpc 路由表的冲突， 0 表示不忽略，1表示忽略。默认不忽略
+                     * @return IgnoreClusterCidrConflict 是否忽略CIDR与 vpc 路由表的冲突， 0 表示不忽略，1表示忽略。默认不忽略
                      * 
                      */
                     int64_t GetIgnoreClusterCidrConflict() const;
 
                     /**
-                     * 设置是否忽略CIDR冲突
-                     * @param _ignoreClusterCidrConflict 是否忽略CIDR冲突
+                     * 设置是否忽略CIDR与 vpc 路由表的冲突， 0 表示不忽略，1表示忽略。默认不忽略
+                     * @param _ignoreClusterCidrConflict 是否忽略CIDR与 vpc 路由表的冲突， 0 表示不忽略，1表示忽略。默认不忽略
                      * 
                      */
                     void SetIgnoreClusterCidrConflict(const int64_t& _ignoreClusterCidrConflict);
@@ -129,7 +129,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 路由表名称
+                     * 路由表名称，一般为集群ID
                      */
                     std::string m_routeTableName;
                     bool m_routeTableNameHasBeenSet;
@@ -147,7 +147,7 @@ namespace TencentCloud
                     bool m_vpcIdHasBeenSet;
 
                     /**
-                     * 是否忽略CIDR冲突
+                     * 是否忽略CIDR与 vpc 路由表的冲突， 0 表示不忽略，1表示忽略。默认不忽略
                      */
                     int64_t m_ignoreClusterCidrConflict;
                     bool m_ignoreClusterCidrConflictHasBeenSet;

@@ -86,62 +86,6 @@ namespace TencentCloud
                     bool EnFirstNameHasBeenSet() const;
 
                     /**
-                     * 获取地址
-                     * @return Address 地址
-                     * 
-                     */
-                    std::string GetAddress() const;
-
-                    /**
-                     * 判断参数 Address 是否已赋值
-                     * @return Address 是否已赋值
-                     * 
-                     */
-                    bool AddressHasBeenSet() const;
-
-                    /**
-                     * 获取出生日期
-                     * @return Birthday 出生日期
-                     * 
-                     */
-                    std::string GetBirthday() const;
-
-                    /**
-                     * 判断参数 Birthday 是否已赋值
-                     * @return Birthday 是否已赋值
-                     * 
-                     */
-                    bool BirthdayHasBeenSet() const;
-
-                    /**
-                     * 获取签发日期
-                     * @return IssueDate 签发日期
-                     * 
-                     */
-                    std::string GetIssueDate() const;
-
-                    /**
-                     * 判断参数 IssueDate 是否已赋值
-                     * @return IssueDate 是否已赋值
-                     * 
-                     */
-                    bool IssueDateHasBeenSet() const;
-
-                    /**
-                     * 获取到期日期
-                     * @return ExpirationDate 到期日期
-                     * 
-                     */
-                    std::string GetExpirationDate() const;
-
-                    /**
-                     * 判断参数 ExpirationDate 是否已赋值
-                     * @return ExpirationDate 是否已赋值
-                     * 
-                     */
-                    bool ExpirationDateHasBeenSet() const;
-
-                    /**
                      * 获取英文姓名
                      * @return EnLastName 英文姓名
                      * 
@@ -154,6 +98,62 @@ namespace TencentCloud
                      * 
                      */
                     bool EnLastNameHasBeenSet() const;
+
+                    /**
+                     * 获取泰文签发日期
+                     * @return IssueDate 泰文签发日期
+                     * 
+                     */
+                    std::string GetIssueDate() const;
+
+                    /**
+                     * 判断参数 IssueDate 是否已赋值
+                     * @return IssueDate 是否已赋值
+                     * 
+                     */
+                    bool IssueDateHasBeenSet() const;
+
+                    /**
+                     * 获取泰文到期日期
+                     * @return ExpirationDate 泰文到期日期
+                     * 
+                     */
+                    std::string GetExpirationDate() const;
+
+                    /**
+                     * 判断参数 ExpirationDate 是否已赋值
+                     * @return ExpirationDate 是否已赋值
+                     * 
+                     */
+                    bool ExpirationDateHasBeenSet() const;
+
+                    /**
+                     * 获取泰文出生日期
+                     * @return Birthday 泰文出生日期
+                     * 
+                     */
+                    std::string GetBirthday() const;
+
+                    /**
+                     * 判断参数 Birthday 是否已赋值
+                     * @return Birthday 是否已赋值
+                     * 
+                     */
+                    bool BirthdayHasBeenSet() const;
+
+                    /**
+                     * 获取地址
+                     * @return Address 地址
+                     * 
+                     */
+                    std::string GetAddress() const;
+
+                    /**
+                     * 判断参数 Address 是否已赋值
+                     * @return Address 是否已赋值
+                     * 
+                     */
+                    bool AddressHasBeenSet() const;
 
                     /**
                      * 获取证件人像照片抠取
@@ -190,34 +190,34 @@ namespace TencentCloud
                     bool m_enFirstNameHasBeenSet;
 
                     /**
-                     * 地址
+                     * 英文姓名
                      */
-                    std::string m_address;
-                    bool m_addressHasBeenSet;
+                    std::string m_enLastName;
+                    bool m_enLastNameHasBeenSet;
 
                     /**
-                     * 出生日期
-                     */
-                    std::string m_birthday;
-                    bool m_birthdayHasBeenSet;
-
-                    /**
-                     * 签发日期
+                     * 泰文签发日期
                      */
                     std::string m_issueDate;
                     bool m_issueDateHasBeenSet;
 
                     /**
-                     * 到期日期
+                     * 泰文到期日期
                      */
                     std::string m_expirationDate;
                     bool m_expirationDateHasBeenSet;
 
                     /**
-                     * 英文姓名
+                     * 泰文出生日期
                      */
-                    std::string m_enLastName;
-                    bool m_enLastNameHasBeenSet;
+                    std::string m_birthday;
+                    bool m_birthdayHasBeenSet;
+
+                    /**
+                     * 地址
+                     */
+                    std::string m_address;
+                    bool m_addressHasBeenSet;
 
                     /**
                      * 证件人像照片抠取

@@ -31,7 +31,8 @@ CreateDocumentRequest::CreateDocumentRequest() :
     m_permissionHasBeenSet(false),
     m_documentTypeHasBeenSet(false),
     m_documentSizeHasBeenSet(false),
-    m_autoHandleUnsupportedElementHasBeenSet(false)
+    m_autoHandleUnsupportedElementHasBeenSet(false),
+    m_minScaleResolutionHasBeenSet(false)
 {
 }
 
@@ -112,6 +113,14 @@ string CreateDocumentRequest::ToJsonString() const
         string key = "AutoHandleUnsupportedElement";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_autoHandleUnsupportedElement, allocator);
+    }
+
+    if (m_minScaleResolutionHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "MinScaleResolution";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_minScaleResolution.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -264,6 +273,22 @@ void CreateDocumentRequest::SetAutoHandleUnsupportedElement(const bool& _autoHan
 bool CreateDocumentRequest::AutoHandleUnsupportedElementHasBeenSet() const
 {
     return m_autoHandleUnsupportedElementHasBeenSet;
+}
+
+string CreateDocumentRequest::GetMinScaleResolution() const
+{
+    return m_minScaleResolution;
+}
+
+void CreateDocumentRequest::SetMinScaleResolution(const string& _minScaleResolution)
+{
+    m_minScaleResolution = _minScaleResolution;
+    m_minScaleResolutionHasBeenSet = true;
+}
+
+bool CreateDocumentRequest::MinScaleResolutionHasBeenSet() const
+{
+    return m_minScaleResolutionHasBeenSet;
 }
 
 

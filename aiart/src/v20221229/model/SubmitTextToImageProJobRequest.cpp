@@ -27,7 +27,8 @@ SubmitTextToImageProJobRequest::SubmitTextToImageProJobRequest() :
     m_styleHasBeenSet(false),
     m_resolutionHasBeenSet(false),
     m_logoAddHasBeenSet(false),
-    m_engineHasBeenSet(false)
+    m_engineHasBeenSet(false),
+    m_reviseHasBeenSet(false)
 {
 }
 
@@ -76,6 +77,14 @@ string SubmitTextToImageProJobRequest::ToJsonString() const
         string key = "Engine";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_engine.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_reviseHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Revise";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_revise, allocator);
     }
 
 
@@ -164,6 +173,22 @@ void SubmitTextToImageProJobRequest::SetEngine(const string& _engine)
 bool SubmitTextToImageProJobRequest::EngineHasBeenSet() const
 {
     return m_engineHasBeenSet;
+}
+
+int64_t SubmitTextToImageProJobRequest::GetRevise() const
+{
+    return m_revise;
+}
+
+void SubmitTextToImageProJobRequest::SetRevise(const int64_t& _revise)
+{
+    m_revise = _revise;
+    m_reviseHasBeenSet = true;
+}
+
+bool SubmitTextToImageProJobRequest::ReviseHasBeenSet() const
+{
+    return m_reviseHasBeenSet;
 }
 
 

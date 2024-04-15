@@ -521,6 +521,56 @@ namespace TencentCloud
                      */
                     bool PreviewHasBeenSet() const;
 
+                    /**
+                     * 获取文档的分辨率
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return Resolution 文档的分辨率
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::string GetResolution() const;
+
+                    /**
+                     * 设置文档的分辨率
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _resolution 文档的分辨率
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetResolution(const std::string& _resolution);
+
+                    /**
+                     * 判断参数 Resolution 是否已赋值
+                     * @return Resolution 是否已赋值
+                     * 
+                     */
+                    bool ResolutionHasBeenSet() const;
+
+                    /**
+                     * 获取转码后文档的最小分辨率，和创建文档时传入的参数一致。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return MinScaleResolution 转码后文档的最小分辨率，和创建文档时传入的参数一致。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::string GetMinScaleResolution() const;
+
+                    /**
+                     * 设置转码后文档的最小分辨率，和创建文档时传入的参数一致。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _minScaleResolution 转码后文档的最小分辨率，和创建文档时传入的参数一致。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetMinScaleResolution(const std::string& _minScaleResolution);
+
+                    /**
+                     * 判断参数 MinScaleResolution 是否已赋值
+                     * @return MinScaleResolution 是否已赋值
+                     * 
+                     */
+                    bool MinScaleResolutionHasBeenSet() const;
+
                 private:
 
                     /**
@@ -655,6 +705,20 @@ namespace TencentCloud
                      */
                     std::string m_preview;
                     bool m_previewHasBeenSet;
+
+                    /**
+                     * 文档的分辨率
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_resolution;
+                    bool m_resolutionHasBeenSet;
+
+                    /**
+                     * 转码后文档的最小分辨率，和创建文档时传入的参数一致。
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_minScaleResolution;
+                    bool m_minScaleResolutionHasBeenSet;
 
                 };
             }

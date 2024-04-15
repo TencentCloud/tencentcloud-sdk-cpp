@@ -195,6 +195,39 @@ engine2
                      */
                     bool EngineHasBeenSet() const;
 
+                    /**
+                     * 获取prompt 扩写开关。1为开启，0为关闭，不传默认开启。
+开启扩写后，将自动扩写原始输入的 prompt 并使用扩写后的 prompt 生成图片，返回生成图片结果时将一并返回扩写后的 prompt 文本。
+如果关闭扩写，将直接使用原始输入的 prompt 生成图片。
+建议开启，在多数场景下可提升生成图片效果、丰富生成图片细节。
+                     * @return Revise prompt 扩写开关。1为开启，0为关闭，不传默认开启。
+开启扩写后，将自动扩写原始输入的 prompt 并使用扩写后的 prompt 生成图片，返回生成图片结果时将一并返回扩写后的 prompt 文本。
+如果关闭扩写，将直接使用原始输入的 prompt 生成图片。
+建议开启，在多数场景下可提升生成图片效果、丰富生成图片细节。
+                     * 
+                     */
+                    int64_t GetRevise() const;
+
+                    /**
+                     * 设置prompt 扩写开关。1为开启，0为关闭，不传默认开启。
+开启扩写后，将自动扩写原始输入的 prompt 并使用扩写后的 prompt 生成图片，返回生成图片结果时将一并返回扩写后的 prompt 文本。
+如果关闭扩写，将直接使用原始输入的 prompt 生成图片。
+建议开启，在多数场景下可提升生成图片效果、丰富生成图片细节。
+                     * @param _revise prompt 扩写开关。1为开启，0为关闭，不传默认开启。
+开启扩写后，将自动扩写原始输入的 prompt 并使用扩写后的 prompt 生成图片，返回生成图片结果时将一并返回扩写后的 prompt 文本。
+如果关闭扩写，将直接使用原始输入的 prompt 生成图片。
+建议开启，在多数场景下可提升生成图片效果、丰富生成图片细节。
+                     * 
+                     */
+                    void SetRevise(const int64_t& _revise);
+
+                    /**
+                     * 判断参数 Revise 是否已赋值
+                     * @return Revise 是否已赋值
+                     * 
+                     */
+                    bool ReviseHasBeenSet() const;
+
                 private:
 
                     /**
@@ -238,6 +271,15 @@ engine2
                      */
                     std::string m_engine;
                     bool m_engineHasBeenSet;
+
+                    /**
+                     * prompt 扩写开关。1为开启，0为关闭，不传默认开启。
+开启扩写后，将自动扩写原始输入的 prompt 并使用扩写后的 prompt 生成图片，返回生成图片结果时将一并返回扩写后的 prompt 文本。
+如果关闭扩写，将直接使用原始输入的 prompt 生成图片。
+建议开启，在多数场景下可提升生成图片效果、丰富生成图片细节。
+                     */
+                    int64_t m_revise;
+                    bool m_reviseHasBeenSet;
 
                 };
             }

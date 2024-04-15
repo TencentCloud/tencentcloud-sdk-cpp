@@ -1205,7 +1205,7 @@ namespace TencentCloud
                 CreateStorageRegionOutcomeCallable CreateStorageRegionCallable(const Model::CreateStorageRegionRequest& request);
 
                 /**
-                 *该接口用于创建点播子应用。
+                 *该接口用于创建点播应用。
                  * @param req CreateSubAppIdRequest
                  * @return CreateSubAppIdOutcome
                  */
@@ -1988,7 +1988,7 @@ namespace TencentCloud
                 DescribeStorageRegionsOutcomeCallable DescribeStorageRegionsCallable(const Model::DescribeStorageRegionsRequest& request);
 
                 /**
-                 *该接口用于获取当前账号的子应用列表，包含主应用。
+                 *该接口用于获取当前账号的应用列表。
                  * @param req DescribeSubAppIdsRequest
                  * @return DescribeSubAppIdsOutcome
                  */

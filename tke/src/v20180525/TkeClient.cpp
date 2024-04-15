@@ -6404,6 +6404,49 @@ TkeClient::DescribeRouteTableConflictsOutcomeCallable TkeClient::DescribeRouteTa
     return task->get_future();
 }
 
+TkeClient::DescribeSupportedRuntimeOutcome TkeClient::DescribeSupportedRuntime(const DescribeSupportedRuntimeRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeSupportedRuntime");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeSupportedRuntimeResponse rsp = DescribeSupportedRuntimeResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeSupportedRuntimeOutcome(rsp);
+        else
+            return DescribeSupportedRuntimeOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeSupportedRuntimeOutcome(outcome.GetError());
+    }
+}
+
+void TkeClient::DescribeSupportedRuntimeAsync(const DescribeSupportedRuntimeRequest& request, const DescribeSupportedRuntimeAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeSupportedRuntime(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+TkeClient::DescribeSupportedRuntimeOutcomeCallable TkeClient::DescribeSupportedRuntimeCallable(const DescribeSupportedRuntimeRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeSupportedRuntimeOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeSupportedRuntime(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 TkeClient::DescribeTKEEdgeClusterCredentialOutcome TkeClient::DescribeTKEEdgeClusterCredential(const DescribeTKEEdgeClusterCredentialRequest &request)
 {
     auto outcome = MakeRequest(request, "DescribeTKEEdgeClusterCredential");
@@ -7902,6 +7945,49 @@ TkeClient::ModifyClusterNodePoolOutcomeCallable TkeClient::ModifyClusterNodePool
         [this, request]()
         {
             return this->ModifyClusterNodePool(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+TkeClient::ModifyClusterRuntimeConfigOutcome TkeClient::ModifyClusterRuntimeConfig(const ModifyClusterRuntimeConfigRequest &request)
+{
+    auto outcome = MakeRequest(request, "ModifyClusterRuntimeConfig");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ModifyClusterRuntimeConfigResponse rsp = ModifyClusterRuntimeConfigResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ModifyClusterRuntimeConfigOutcome(rsp);
+        else
+            return ModifyClusterRuntimeConfigOutcome(o.GetError());
+    }
+    else
+    {
+        return ModifyClusterRuntimeConfigOutcome(outcome.GetError());
+    }
+}
+
+void TkeClient::ModifyClusterRuntimeConfigAsync(const ModifyClusterRuntimeConfigRequest& request, const ModifyClusterRuntimeConfigAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->ModifyClusterRuntimeConfig(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+TkeClient::ModifyClusterRuntimeConfigOutcomeCallable TkeClient::ModifyClusterRuntimeConfigCallable(const ModifyClusterRuntimeConfigRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<ModifyClusterRuntimeConfigOutcome()>>(
+        [this, request]()
+        {
+            return this->ModifyClusterRuntimeConfig(request);
         }
     );
 

@@ -43,7 +43,59 @@ namespace TencentCloud
                     std::string ToJsonString() const;
 
 
+                    /**
+                     * 获取“H5”-H5长连接
+"SHORT_H5"- H5短链
+"APP"-小程序
+"PC"-PC浏览器
+链接有效期统一30天
+                     * @return AuthUrl “H5”-H5长连接
+"SHORT_H5"- H5短链
+"APP"-小程序
+"PC"-PC浏览器
+链接有效期统一30天
+                     * 
+                     */
+                    std::string GetAuthUrl() const;
+
+                    /**
+                     * 判断参数 AuthUrl 是否已赋值
+                     * @return AuthUrl 是否已赋值
+                     * 
+                     */
+                    bool AuthUrlHasBeenSet() const;
+
+                    /**
+                     * 获取链接过期时间戳
+                     * @return ExpiredTime 链接过期时间戳
+                     * 
+                     */
+                    int64_t GetExpiredTime() const;
+
+                    /**
+                     * 判断参数 ExpiredTime 是否已赋值
+                     * @return ExpiredTime 是否已赋值
+                     * 
+                     */
+                    bool ExpiredTimeHasBeenSet() const;
+
                 private:
+
+                    /**
+                     * “H5”-H5长连接
+"SHORT_H5"- H5短链
+"APP"-小程序
+"PC"-PC浏览器
+链接有效期统一30天
+                     */
+                    std::string m_authUrl;
+                    bool m_authUrlHasBeenSet;
+
+                    /**
+                     * 链接过期时间戳
+                     */
+                    int64_t m_expiredTime;
+                    bool m_expiredTimeHasBeenSet;
 
                 };
             }

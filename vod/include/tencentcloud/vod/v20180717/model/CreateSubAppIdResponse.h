@@ -44,8 +44,8 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取新创建的子应用 ID。
-                     * @return SubAppId 新创建的子应用 ID。
+                     * 获取新创建的应用 ID。
+                     * @return SubAppId 新创建的应用 ID。
                      * 
                      */
                     uint64_t GetSubAppId() const;
@@ -60,7 +60,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 新创建的子应用 ID。
+                     * 新创建的应用 ID。
                      */
                     uint64_t m_subAppId;
                     bool m_subAppIdHasBeenSet;

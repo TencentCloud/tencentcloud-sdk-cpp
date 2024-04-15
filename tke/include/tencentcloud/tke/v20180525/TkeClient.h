@@ -319,6 +319,8 @@
 #include <tencentcloud/tke/v20180525/model/DescribeResourceUsageResponse.h>
 #include <tencentcloud/tke/v20180525/model/DescribeRouteTableConflictsRequest.h>
 #include <tencentcloud/tke/v20180525/model/DescribeRouteTableConflictsResponse.h>
+#include <tencentcloud/tke/v20180525/model/DescribeSupportedRuntimeRequest.h>
+#include <tencentcloud/tke/v20180525/model/DescribeSupportedRuntimeResponse.h>
 #include <tencentcloud/tke/v20180525/model/DescribeTKEEdgeClusterCredentialRequest.h>
 #include <tencentcloud/tke/v20180525/model/DescribeTKEEdgeClusterCredentialResponse.h>
 #include <tencentcloud/tke/v20180525/model/DescribeTKEEdgeClusterStatusRequest.h>
@@ -389,6 +391,8 @@
 #include <tencentcloud/tke/v20180525/model/ModifyClusterEndpointSPResponse.h>
 #include <tencentcloud/tke/v20180525/model/ModifyClusterNodePoolRequest.h>
 #include <tencentcloud/tke/v20180525/model/ModifyClusterNodePoolResponse.h>
+#include <tencentcloud/tke/v20180525/model/ModifyClusterRuntimeConfigRequest.h>
+#include <tencentcloud/tke/v20180525/model/ModifyClusterRuntimeConfigResponse.h>
 #include <tencentcloud/tke/v20180525/model/ModifyClusterVirtualNodePoolRequest.h>
 #include <tencentcloud/tke/v20180525/model/ModifyClusterVirtualNodePoolResponse.h>
 #include <tencentcloud/tke/v20180525/model/ModifyNodePoolDesiredCapacityAboutAsgRequest.h>
@@ -917,6 +921,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeRouteTableConflictsResponse> DescribeRouteTableConflictsOutcome;
                 typedef std::future<DescribeRouteTableConflictsOutcome> DescribeRouteTableConflictsOutcomeCallable;
                 typedef std::function<void(const TkeClient*, const Model::DescribeRouteTableConflictsRequest&, DescribeRouteTableConflictsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeRouteTableConflictsAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeSupportedRuntimeResponse> DescribeSupportedRuntimeOutcome;
+                typedef std::future<DescribeSupportedRuntimeOutcome> DescribeSupportedRuntimeOutcomeCallable;
+                typedef std::function<void(const TkeClient*, const Model::DescribeSupportedRuntimeRequest&, DescribeSupportedRuntimeOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeSupportedRuntimeAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeTKEEdgeClusterCredentialResponse> DescribeTKEEdgeClusterCredentialOutcome;
                 typedef std::future<DescribeTKEEdgeClusterCredentialOutcome> DescribeTKEEdgeClusterCredentialOutcomeCallable;
                 typedef std::function<void(const TkeClient*, const Model::DescribeTKEEdgeClusterCredentialRequest&, DescribeTKEEdgeClusterCredentialOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeTKEEdgeClusterCredentialAsyncHandler;
@@ -1022,6 +1029,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::ModifyClusterNodePoolResponse> ModifyClusterNodePoolOutcome;
                 typedef std::future<ModifyClusterNodePoolOutcome> ModifyClusterNodePoolOutcomeCallable;
                 typedef std::function<void(const TkeClient*, const Model::ModifyClusterNodePoolRequest&, ModifyClusterNodePoolOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyClusterNodePoolAsyncHandler;
+                typedef Outcome<Core::Error, Model::ModifyClusterRuntimeConfigResponse> ModifyClusterRuntimeConfigOutcome;
+                typedef std::future<ModifyClusterRuntimeConfigOutcome> ModifyClusterRuntimeConfigOutcomeCallable;
+                typedef std::function<void(const TkeClient*, const Model::ModifyClusterRuntimeConfigRequest&, ModifyClusterRuntimeConfigOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyClusterRuntimeConfigAsyncHandler;
                 typedef Outcome<Core::Error, Model::ModifyClusterVirtualNodePoolResponse> ModifyClusterVirtualNodePoolOutcome;
                 typedef std::future<ModifyClusterVirtualNodePoolOutcome> ModifyClusterVirtualNodePoolOutcomeCallable;
                 typedef std::function<void(const TkeClient*, const Model::ModifyClusterVirtualNodePoolRequest&, ModifyClusterVirtualNodePoolOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyClusterVirtualNodePoolAsyncHandler;
@@ -2463,6 +2473,15 @@ namespace TencentCloud
                 DescribeRouteTableConflictsOutcomeCallable DescribeRouteTableConflictsCallable(const Model::DescribeRouteTableConflictsRequest& request);
 
                 /**
+                 *根据K8S版本获取可选运行时版本
+                 * @param req DescribeSupportedRuntimeRequest
+                 * @return DescribeSupportedRuntimeOutcome
+                 */
+                DescribeSupportedRuntimeOutcome DescribeSupportedRuntime(const Model::DescribeSupportedRuntimeRequest &request);
+                void DescribeSupportedRuntimeAsync(const Model::DescribeSupportedRuntimeRequest& request, const DescribeSupportedRuntimeAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeSupportedRuntimeOutcomeCallable DescribeSupportedRuntimeCallable(const Model::DescribeSupportedRuntimeRequest& request);
+
+                /**
                  *获取边缘计算集群的认证信息
                  * @param req DescribeTKEEdgeClusterCredentialRequest
                  * @return DescribeTKEEdgeClusterCredentialOutcome
@@ -2776,6 +2795,15 @@ namespace TencentCloud
                 ModifyClusterNodePoolOutcome ModifyClusterNodePool(const Model::ModifyClusterNodePoolRequest &request);
                 void ModifyClusterNodePoolAsync(const Model::ModifyClusterNodePoolRequest& request, const ModifyClusterNodePoolAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 ModifyClusterNodePoolOutcomeCallable ModifyClusterNodePoolCallable(const Model::ModifyClusterNodePoolRequest& request);
+
+                /**
+                 *修改集群及节点池纬度运行时配置
+                 * @param req ModifyClusterRuntimeConfigRequest
+                 * @return ModifyClusterRuntimeConfigOutcome
+                 */
+                ModifyClusterRuntimeConfigOutcome ModifyClusterRuntimeConfig(const Model::ModifyClusterRuntimeConfigRequest &request);
+                void ModifyClusterRuntimeConfigAsync(const Model::ModifyClusterRuntimeConfigRequest& request, const ModifyClusterRuntimeConfigAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                ModifyClusterRuntimeConfigOutcomeCallable ModifyClusterRuntimeConfigCallable(const Model::ModifyClusterRuntimeConfigRequest& request);
 
                 /**
                  *修改超级节点池
