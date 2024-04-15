@@ -27,7 +27,8 @@ ReservedPreDomainInfo::ReservedPreDomainInfo() :
     m_changeOwnerTimeHasBeenSet(false),
     m_regTimeHasBeenSet(false),
     m_expireTimeHasBeenSet(false),
-    m_resourceIdHasBeenSet(false)
+    m_resourceIdHasBeenSet(false),
+    m_businessIdHasBeenSet(false)
 {
 }
 
@@ -106,6 +107,16 @@ CoreInternalOutcome ReservedPreDomainInfo::Deserialize(const rapidjson::Value &v
         m_resourceIdHasBeenSet = true;
     }
 
+    if (value.HasMember("BusinessId") && !value["BusinessId"].IsNull())
+    {
+        if (!value["BusinessId"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `ReservedPreDomainInfo.BusinessId` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_businessId = string(value["BusinessId"].GetString());
+        m_businessIdHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -167,6 +178,14 @@ void ReservedPreDomainInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Doc
         string key = "ResourceId";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_resourceId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_businessIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "BusinessId";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_businessId.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -282,5 +301,21 @@ void ReservedPreDomainInfo::SetResourceId(const string& _resourceId)
 bool ReservedPreDomainInfo::ResourceIdHasBeenSet() const
 {
     return m_resourceIdHasBeenSet;
+}
+
+string ReservedPreDomainInfo::GetBusinessId() const
+{
+    return m_businessId;
+}
+
+void ReservedPreDomainInfo::SetBusinessId(const string& _businessId)
+{
+    m_businessId = _businessId;
+    m_businessIdHasBeenSet = true;
+}
+
+bool ReservedPreDomainInfo::BusinessIdHasBeenSet() const
+{
+    return m_businessIdHasBeenSet;
 }
 

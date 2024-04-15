@@ -37,6 +37,7 @@ namespace TencentCloud
             {
                 /**
                 * 五官定位（人脸关键点）具体信息。
+![image](https://iai-face-demo-default-1254418846.cos.ap-guangzhou.myqcloud.com/130pts.jpg)
                 */
                 class FaceShape : public AbstractModel
                 {

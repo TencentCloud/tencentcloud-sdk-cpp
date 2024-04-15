@@ -25,7 +25,8 @@ EventCondition::EventCondition() :
     m_alarmNotifyTypeHasBeenSet(false),
     m_eventIDHasBeenSet(false),
     m_eventDisplayNameHasBeenSet(false),
-    m_ruleIDHasBeenSet(false)
+    m_ruleIDHasBeenSet(false),
+    m_metricNameHasBeenSet(false)
 {
 }
 
@@ -84,6 +85,16 @@ CoreInternalOutcome EventCondition::Deserialize(const rapidjson::Value &value)
         m_ruleIDHasBeenSet = true;
     }
 
+    if (value.HasMember("MetricName") && !value["MetricName"].IsNull())
+    {
+        if (!value["MetricName"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `EventCondition.MetricName` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_metricName = string(value["MetricName"].GetString());
+        m_metricNameHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -129,6 +140,14 @@ void EventCondition::ToJsonObject(rapidjson::Value &value, rapidjson::Document::
         string key = "RuleID";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_ruleID.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_metricNameHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "MetricName";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_metricName.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -212,5 +231,21 @@ void EventCondition::SetRuleID(const string& _ruleID)
 bool EventCondition::RuleIDHasBeenSet() const
 {
     return m_ruleIDHasBeenSet;
+}
+
+string EventCondition::GetMetricName() const
+{
+    return m_metricName;
+}
+
+void EventCondition::SetMetricName(const string& _metricName)
+{
+    m_metricName = _metricName;
+    m_metricNameHasBeenSet = true;
+}
+
+bool EventCondition::MetricNameHasBeenSet() const
+{
+    return m_metricNameHasBeenSet;
 }
 

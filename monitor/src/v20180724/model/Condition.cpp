@@ -33,7 +33,8 @@ Condition::Condition() :
     m_unitHasBeenSet(false),
     m_isAdvancedHasBeenSet(false),
     m_isOpenHasBeenSet(false),
-    m_productIdHasBeenSet(false)
+    m_productIdHasBeenSet(false),
+    m_hierarchicalValueHasBeenSet(false)
 {
 }
 
@@ -172,6 +173,23 @@ CoreInternalOutcome Condition::Deserialize(const rapidjson::Value &value)
         m_productIdHasBeenSet = true;
     }
 
+    if (value.HasMember("HierarchicalValue") && !value["HierarchicalValue"].IsNull())
+    {
+        if (!value["HierarchicalValue"].IsObject())
+        {
+            return CoreInternalOutcome(Core::Error("response `Condition.HierarchicalValue` is not object type").SetRequestId(requestId));
+        }
+
+        CoreInternalOutcome outcome = m_hierarchicalValue.Deserialize(value["HierarchicalValue"]);
+        if (!outcome.IsSuccess())
+        {
+            outcome.GetError().SetRequestId(requestId);
+            return outcome;
+        }
+
+        m_hierarchicalValueHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -281,6 +299,15 @@ void Condition::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Alloc
         string key = "ProductId";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_productId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_hierarchicalValueHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "HierarchicalValue";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_hierarchicalValue.ToJsonObject(value[key.c_str()], allocator);
     }
 
 }
@@ -492,5 +519,21 @@ void Condition::SetProductId(const string& _productId)
 bool Condition::ProductIdHasBeenSet() const
 {
     return m_productIdHasBeenSet;
+}
+
+AlarmHierarchicalValue Condition::GetHierarchicalValue() const
+{
+    return m_hierarchicalValue;
+}
+
+void Condition::SetHierarchicalValue(const AlarmHierarchicalValue& _hierarchicalValue)
+{
+    m_hierarchicalValue = _hierarchicalValue;
+    m_hierarchicalValueHasBeenSet = true;
+}
+
+bool Condition::HierarchicalValueHasBeenSet() const
+{
+    return m_hierarchicalValueHasBeenSet;
 }
 

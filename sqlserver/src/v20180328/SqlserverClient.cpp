@@ -3566,6 +3566,49 @@ SqlserverClient::DescribeRestoreTaskOutcomeCallable SqlserverClient::DescribeRes
     return task->get_future();
 }
 
+SqlserverClient::DescribeRestoreTimeRangeOutcome SqlserverClient::DescribeRestoreTimeRange(const DescribeRestoreTimeRangeRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeRestoreTimeRange");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeRestoreTimeRangeResponse rsp = DescribeRestoreTimeRangeResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeRestoreTimeRangeOutcome(rsp);
+        else
+            return DescribeRestoreTimeRangeOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeRestoreTimeRangeOutcome(outcome.GetError());
+    }
+}
+
+void SqlserverClient::DescribeRestoreTimeRangeAsync(const DescribeRestoreTimeRangeRequest& request, const DescribeRestoreTimeRangeAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeRestoreTimeRange(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+SqlserverClient::DescribeRestoreTimeRangeOutcomeCallable SqlserverClient::DescribeRestoreTimeRangeCallable(const DescribeRestoreTimeRangeRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeRestoreTimeRangeOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeRestoreTimeRange(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 SqlserverClient::DescribeRollbackTimeOutcome SqlserverClient::DescribeRollbackTime(const DescribeRollbackTimeRequest &request)
 {
     auto outcome = MakeRequest(request, "DescribeRollbackTime");

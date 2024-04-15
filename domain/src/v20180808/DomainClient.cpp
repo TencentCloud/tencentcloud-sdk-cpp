@@ -83,6 +83,49 @@ DomainClient::BatchModifyDomainInfoOutcomeCallable DomainClient::BatchModifyDoma
     return task->get_future();
 }
 
+DomainClient::BidPreDomainsOutcome DomainClient::BidPreDomains(const BidPreDomainsRequest &request)
+{
+    auto outcome = MakeRequest(request, "BidPreDomains");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        BidPreDomainsResponse rsp = BidPreDomainsResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return BidPreDomainsOutcome(rsp);
+        else
+            return BidPreDomainsOutcome(o.GetError());
+    }
+    else
+    {
+        return BidPreDomainsOutcome(outcome.GetError());
+    }
+}
+
+void DomainClient::BidPreDomainsAsync(const BidPreDomainsRequest& request, const BidPreDomainsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->BidPreDomains(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+DomainClient::BidPreDomainsOutcomeCallable DomainClient::BidPreDomainsCallable(const BidPreDomainsRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<BidPreDomainsOutcome()>>(
+        [this, request]()
+        {
+            return this->BidPreDomains(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 DomainClient::CheckBatchStatusOutcome DomainClient::CheckBatchStatus(const CheckBatchStatusRequest &request)
 {
     auto outcome = MakeRequest(request, "CheckBatchStatus");
@@ -936,6 +979,49 @@ DomainClient::DescribePreDomainListOutcomeCallable DomainClient::DescribePreDoma
         [this, request]()
         {
             return this->DescribePreDomainList(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+DomainClient::DescribeReservedBidInfoOutcome DomainClient::DescribeReservedBidInfo(const DescribeReservedBidInfoRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeReservedBidInfo");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeReservedBidInfoResponse rsp = DescribeReservedBidInfoResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeReservedBidInfoOutcome(rsp);
+        else
+            return DescribeReservedBidInfoOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeReservedBidInfoOutcome(outcome.GetError());
+    }
+}
+
+void DomainClient::DescribeReservedBidInfoAsync(const DescribeReservedBidInfoRequest& request, const DescribeReservedBidInfoAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeReservedBidInfo(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+DomainClient::DescribeReservedBidInfoOutcomeCallable DomainClient::DescribeReservedBidInfoCallable(const DescribeReservedBidInfoRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeReservedBidInfoOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeReservedBidInfo(request);
         }
     );
 

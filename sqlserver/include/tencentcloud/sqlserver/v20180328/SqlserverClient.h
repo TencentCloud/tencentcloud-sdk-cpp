@@ -187,6 +187,8 @@
 #include <tencentcloud/sqlserver/v20180328/model/DescribeRegularBackupPlanResponse.h>
 #include <tencentcloud/sqlserver/v20180328/model/DescribeRestoreTaskRequest.h>
 #include <tencentcloud/sqlserver/v20180328/model/DescribeRestoreTaskResponse.h>
+#include <tencentcloud/sqlserver/v20180328/model/DescribeRestoreTimeRangeRequest.h>
+#include <tencentcloud/sqlserver/v20180328/model/DescribeRestoreTimeRangeResponse.h>
 #include <tencentcloud/sqlserver/v20180328/model/DescribeRollbackTimeRequest.h>
 #include <tencentcloud/sqlserver/v20180328/model/DescribeRollbackTimeResponse.h>
 #include <tencentcloud/sqlserver/v20180328/model/DescribeSlowlogsRequest.h>
@@ -573,6 +575,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeRestoreTaskResponse> DescribeRestoreTaskOutcome;
                 typedef std::future<DescribeRestoreTaskOutcome> DescribeRestoreTaskOutcomeCallable;
                 typedef std::function<void(const SqlserverClient*, const Model::DescribeRestoreTaskRequest&, DescribeRestoreTaskOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeRestoreTaskAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeRestoreTimeRangeResponse> DescribeRestoreTimeRangeOutcome;
+                typedef std::future<DescribeRestoreTimeRangeOutcome> DescribeRestoreTimeRangeOutcomeCallable;
+                typedef std::function<void(const SqlserverClient*, const Model::DescribeRestoreTimeRangeRequest&, DescribeRestoreTimeRangeOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeRestoreTimeRangeAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeRollbackTimeResponse> DescribeRollbackTimeOutcome;
                 typedef std::future<DescribeRollbackTimeOutcome> DescribeRollbackTimeOutcomeCallable;
                 typedef std::function<void(const SqlserverClient*, const Model::DescribeRollbackTimeRequest&, DescribeRollbackTimeOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeRollbackTimeAsyncHandler;
@@ -1502,6 +1507,15 @@ namespace TencentCloud
                 DescribeRestoreTaskOutcome DescribeRestoreTask(const Model::DescribeRestoreTaskRequest &request);
                 void DescribeRestoreTaskAsync(const Model::DescribeRestoreTaskRequest& request, const DescribeRestoreTaskAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DescribeRestoreTaskOutcomeCallable DescribeRestoreTaskCallable(const Model::DescribeRestoreTaskRequest& request);
+
+                /**
+                 *本接口(DescribeRestoreTimeRange)用于查询按照时间点可回档的时间范围。
+                 * @param req DescribeRestoreTimeRangeRequest
+                 * @return DescribeRestoreTimeRangeOutcome
+                 */
+                DescribeRestoreTimeRangeOutcome DescribeRestoreTimeRange(const Model::DescribeRestoreTimeRangeRequest &request);
+                void DescribeRestoreTimeRangeAsync(const Model::DescribeRestoreTimeRangeRequest& request, const DescribeRestoreTimeRangeAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeRestoreTimeRangeOutcomeCallable DescribeRestoreTimeRangeCallable(const Model::DescribeRestoreTimeRangeRequest& request);
 
                 /**
                  *本接口（DescribeRollbackTime）用于查询实例可回档时间范围

@@ -218,6 +218,35 @@ UserId必须是传入合同（FlowId）中的签署人。
                      */
                     bool MobileHasBeenSet() const;
 
+                    /**
+                     * 获取为签署方经办人在签署合同中的参与方ID，必须与参数FlowIds数组一一对应。
+您可以通过查询合同接口（DescribeFlowInfo）查询此参数。
+若传了此参数，则可以不传 UserId, Name, Mobile等参数
+                     * @return RecipientIds 为签署方经办人在签署合同中的参与方ID，必须与参数FlowIds数组一一对应。
+您可以通过查询合同接口（DescribeFlowInfo）查询此参数。
+若传了此参数，则可以不传 UserId, Name, Mobile等参数
+                     * 
+                     */
+                    std::vector<std::string> GetRecipientIds() const;
+
+                    /**
+                     * 设置为签署方经办人在签署合同中的参与方ID，必须与参数FlowIds数组一一对应。
+您可以通过查询合同接口（DescribeFlowInfo）查询此参数。
+若传了此参数，则可以不传 UserId, Name, Mobile等参数
+                     * @param _recipientIds 为签署方经办人在签署合同中的参与方ID，必须与参数FlowIds数组一一对应。
+您可以通过查询合同接口（DescribeFlowInfo）查询此参数。
+若传了此参数，则可以不传 UserId, Name, Mobile等参数
+                     * 
+                     */
+                    void SetRecipientIds(const std::vector<std::string>& _recipientIds);
+
+                    /**
+                     * 判断参数 RecipientIds 是否已赋值
+                     * @return RecipientIds 是否已赋值
+                     * 
+                     */
+                    bool RecipientIdsHasBeenSet() const;
+
                 private:
 
                     /**
@@ -267,6 +296,14 @@ UserId必须是传入合同（FlowId）中的签署人。
                      */
                     std::string m_mobile;
                     bool m_mobileHasBeenSet;
+
+                    /**
+                     * 为签署方经办人在签署合同中的参与方ID，必须与参数FlowIds数组一一对应。
+您可以通过查询合同接口（DescribeFlowInfo）查询此参数。
+若传了此参数，则可以不传 UserId, Name, Mobile等参数
+                     */
+                    std::vector<std::string> m_recipientIds;
+                    bool m_recipientIdsHasBeenSet;
 
                 };
             }

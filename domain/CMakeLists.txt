@@ -32,17 +32,20 @@ set(domain_public_header_model
   include/tencentcloud/domain/v20180808/model/ModifyCustomDnsHostRequest.h
   include/tencentcloud/domain/v20180808/model/DescribeDomainPriceListResponse.h
   include/tencentcloud/domain/v20180808/model/CheckBatchStatusRequest.h
-  include/tencentcloud/domain/v20180808/model/SetDomainAutoRenewResponse.h
+  include/tencentcloud/domain/v20180808/model/ReserveBidInfo.h
+  include/tencentcloud/domain/v20180808/model/CreateDomainBatchRequest.h
   include/tencentcloud/domain/v20180808/model/DescribeBatchOperationLogsRequest.h
   include/tencentcloud/domain/v20180808/model/UploadImageRequest.h
   include/tencentcloud/domain/v20180808/model/ModifyCustomDnsHostResponse.h
+  include/tencentcloud/domain/v20180808/model/BidPreDomainsResponse.h
   include/tencentcloud/domain/v20180808/model/ModifyDomainDNSBatchRequest.h
   include/tencentcloud/domain/v20180808/model/DescribeBatchOperationLogDetailsResponse.h
+  include/tencentcloud/domain/v20180808/model/DescribeReservedBidInfoRequest.h
   include/tencentcloud/domain/v20180808/model/DeletePhoneEmailResponse.h
   include/tencentcloud/domain/v20180808/model/ReservedPreDomainsResponse.h
   include/tencentcloud/domain/v20180808/model/DomainBatchDetailSet.h
   include/tencentcloud/domain/v20180808/model/UploadImageResponse.h
-  include/tencentcloud/domain/v20180808/model/TemplateInfo.h
+  include/tencentcloud/domain/v20180808/model/DomainSimpleInfo.h
   include/tencentcloud/domain/v20180808/model/CreateDomainRedemptionResponse.h
   include/tencentcloud/domain/v20180808/model/DeletePhoneEmailRequest.h
   include/tencentcloud/domain/v20180808/model/DescribeReservedPreDomainInfoResponse.h
@@ -73,31 +76,33 @@ set(domain_public_header_model
   include/tencentcloud/domain/v20180808/model/DescribeTemplateResponse.h
   include/tencentcloud/domain/v20180808/model/DescribeDomainSimpleInfoRequest.h
   include/tencentcloud/domain/v20180808/model/DescribeDomainSimpleInfoResponse.h
-  include/tencentcloud/domain/v20180808/model/DomainSimpleInfo.h
+  include/tencentcloud/domain/v20180808/model/TemplateInfo.h
   include/tencentcloud/domain/v20180808/model/ModifyDomainOwnerBatchResponse.h
   include/tencentcloud/domain/v20180808/model/TransferInDomainBatchRequest.h
   include/tencentcloud/domain/v20180808/model/ModifyDomainDNSBatchResponse.h
   include/tencentcloud/domain/v20180808/model/DescribeReservedPreDomainInfoRequest.h
   include/tencentcloud/domain/v20180808/model/DescribeDomainPriceListRequest.h
   include/tencentcloud/domain/v20180808/model/ModifyIntlCustomDnsHostRequest.h
+  include/tencentcloud/domain/v20180808/model/ReservedPreDomainInfo.h
   include/tencentcloud/domain/v20180808/model/CheckDomainRequest.h
   include/tencentcloud/domain/v20180808/model/TransferProhibitionBatchResponse.h
   include/tencentcloud/domain/v20180808/model/ModifyIntlCustomDnsHostResponse.h
   include/tencentcloud/domain/v20180808/model/DescribeTemplateListRequest.h
   include/tencentcloud/domain/v20180808/model/CertificateInfo.h
-  include/tencentcloud/domain/v20180808/model/ReservedPreDomainInfo.h
+  include/tencentcloud/domain/v20180808/model/BidPreDomainsRequest.h
   include/tencentcloud/domain/v20180808/model/CreateTemplateRequest.h
   include/tencentcloud/domain/v20180808/model/UpdateProhibitionBatchResponse.h
   include/tencentcloud/domain/v20180808/model/CreatePhoneEmailRequest.h
   include/tencentcloud/domain/v20180808/model/PriceInfo.h
   include/tencentcloud/domain/v20180808/model/DescribeTemplateRequest.h
+  include/tencentcloud/domain/v20180808/model/DescribeReservedBidInfoResponse.h
   include/tencentcloud/domain/v20180808/model/DescribeTldListRequest.h
   include/tencentcloud/domain/v20180808/model/DescribeBatchOperationLogDetailsRequest.h
   include/tencentcloud/domain/v20180808/model/DescribeDomainNameListResponse.h
   include/tencentcloud/domain/v20180808/model/SyncCustomDnsHostRequest.h
   include/tencentcloud/domain/v20180808/model/ContactInfo.h
   include/tencentcloud/domain/v20180808/model/DeleteTemplateRequest.h
-  include/tencentcloud/domain/v20180808/model/CreateDomainBatchRequest.h
+  include/tencentcloud/domain/v20180808/model/SetDomainAutoRenewResponse.h
   include/tencentcloud/domain/v20180808/model/CustomDnsHost.h
   include/tencentcloud/domain/v20180808/model/DomainList.h
   include/tencentcloud/domain/v20180808/model/DescribePhoneEmailListRequest.h
@@ -127,17 +132,20 @@ set(domain_src
   src/v20180808/model/ModifyCustomDnsHostRequest.cpp
   src/v20180808/model/DescribeDomainPriceListResponse.cpp
   src/v20180808/model/CheckBatchStatusRequest.cpp
-  src/v20180808/model/SetDomainAutoRenewResponse.cpp
+  src/v20180808/model/ReserveBidInfo.cpp
+  src/v20180808/model/CreateDomainBatchRequest.cpp
   src/v20180808/model/DescribeBatchOperationLogsRequest.cpp
   src/v20180808/model/UploadImageRequest.cpp
   src/v20180808/model/ModifyCustomDnsHostResponse.cpp
+  src/v20180808/model/BidPreDomainsResponse.cpp
   src/v20180808/model/ModifyDomainDNSBatchRequest.cpp
   src/v20180808/model/DescribeBatchOperationLogDetailsResponse.cpp
+  src/v20180808/model/DescribeReservedBidInfoRequest.cpp
   src/v20180808/model/DeletePhoneEmailResponse.cpp
   src/v20180808/model/ReservedPreDomainsResponse.cpp
   src/v20180808/model/DomainBatchDetailSet.cpp
   src/v20180808/model/UploadImageResponse.cpp
-  src/v20180808/model/TemplateInfo.cpp
+  src/v20180808/model/DomainSimpleInfo.cpp
   src/v20180808/model/CreateDomainRedemptionResponse.cpp
   src/v20180808/model/DeletePhoneEmailRequest.cpp
   src/v20180808/model/DescribeReservedPreDomainInfoResponse.cpp
@@ -168,31 +176,33 @@ set(domain_src
   src/v20180808/model/DescribeTemplateResponse.cpp
   src/v20180808/model/DescribeDomainSimpleInfoRequest.cpp
   src/v20180808/model/DescribeDomainSimpleInfoResponse.cpp
-  src/v20180808/model/DomainSimpleInfo.cpp
+  src/v20180808/model/TemplateInfo.cpp
   src/v20180808/model/ModifyDomainOwnerBatchResponse.cpp
   src/v20180808/model/TransferInDomainBatchRequest.cpp
   src/v20180808/model/ModifyDomainDNSBatchResponse.cpp
   src/v20180808/model/DescribeReservedPreDomainInfoRequest.cpp
   src/v20180808/model/DescribeDomainPriceListRequest.cpp
   src/v20180808/model/ModifyIntlCustomDnsHostRequest.cpp
+  src/v20180808/model/ReservedPreDomainInfo.cpp
   src/v20180808/model/CheckDomainRequest.cpp
   src/v20180808/model/TransferProhibitionBatchResponse.cpp
   src/v20180808/model/ModifyIntlCustomDnsHostResponse.cpp
   src/v20180808/model/DescribeTemplateListRequest.cpp
   src/v20180808/model/CertificateInfo.cpp
-  src/v20180808/model/ReservedPreDomainInfo.cpp
+  src/v20180808/model/BidPreDomainsRequest.cpp
   src/v20180808/model/CreateTemplateRequest.cpp
   src/v20180808/model/UpdateProhibitionBatchResponse.cpp
   src/v20180808/model/CreatePhoneEmailRequest.cpp
   src/v20180808/model/PriceInfo.cpp
   src/v20180808/model/DescribeTemplateRequest.cpp
+  src/v20180808/model/DescribeReservedBidInfoResponse.cpp
   src/v20180808/model/DescribeTldListRequest.cpp
   src/v20180808/model/DescribeBatchOperationLogDetailsRequest.cpp
   src/v20180808/model/DescribeDomainNameListResponse.cpp
   src/v20180808/model/SyncCustomDnsHostRequest.cpp
   src/v20180808/model/ContactInfo.cpp
   src/v20180808/model/DeleteTemplateRequest.cpp
-  src/v20180808/model/CreateDomainBatchRequest.cpp
+  src/v20180808/model/SetDomainAutoRenewResponse.cpp
   src/v20180808/model/CustomDnsHost.cpp
   src/v20180808/model/DomainList.cpp
   src/v20180808/model/DescribePhoneEmailListRequest.cpp

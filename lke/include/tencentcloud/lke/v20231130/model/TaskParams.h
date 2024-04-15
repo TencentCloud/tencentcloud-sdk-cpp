@@ -47,18 +47,18 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取下载地址,需要通过cos桶临时秘钥去下载
+                     * 获取下载地址,需要通过cos桶临时密钥去下载
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return CosPath 下载地址,需要通过cos桶临时秘钥去下载
+                     * @return CosPath 下载地址,需要通过cos桶临时密钥去下载
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetCosPath() const;
 
                     /**
-                     * 设置下载地址,需要通过cos桶临时秘钥去下载
+                     * 设置下载地址,需要通过cos桶临时密钥去下载
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _cosPath 下载地址,需要通过cos桶临时秘钥去下载
+                     * @param _cosPath 下载地址,需要通过cos桶临时密钥去下载
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -74,7 +74,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 下载地址,需要通过cos桶临时秘钥去下载
+                     * 下载地址,需要通过cos桶临时密钥去下载
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_cosPath;

@@ -255,6 +255,49 @@ EssClient::CreateBatchCancelFlowUrlOutcomeCallable EssClient::CreateBatchCancelF
     return task->get_future();
 }
 
+EssClient::CreateBatchOrganizationRegistrationTasksOutcome EssClient::CreateBatchOrganizationRegistrationTasks(const CreateBatchOrganizationRegistrationTasksRequest &request)
+{
+    auto outcome = MakeRequest(request, "CreateBatchOrganizationRegistrationTasks");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        CreateBatchOrganizationRegistrationTasksResponse rsp = CreateBatchOrganizationRegistrationTasksResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return CreateBatchOrganizationRegistrationTasksOutcome(rsp);
+        else
+            return CreateBatchOrganizationRegistrationTasksOutcome(o.GetError());
+    }
+    else
+    {
+        return CreateBatchOrganizationRegistrationTasksOutcome(outcome.GetError());
+    }
+}
+
+void EssClient::CreateBatchOrganizationRegistrationTasksAsync(const CreateBatchOrganizationRegistrationTasksRequest& request, const CreateBatchOrganizationRegistrationTasksAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->CreateBatchOrganizationRegistrationTasks(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+EssClient::CreateBatchOrganizationRegistrationTasksOutcomeCallable EssClient::CreateBatchOrganizationRegistrationTasksCallable(const CreateBatchOrganizationRegistrationTasksRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<CreateBatchOrganizationRegistrationTasksOutcome()>>(
+        [this, request]()
+        {
+            return this->CreateBatchOrganizationRegistrationTasks(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 EssClient::CreateBatchQuickSignUrlOutcome EssClient::CreateBatchQuickSignUrl(const CreateBatchQuickSignUrlRequest &request)
 {
     auto outcome = MakeRequest(request, "CreateBatchQuickSignUrl");
@@ -1151,6 +1194,49 @@ EssClient::CreateMultiFlowSignQRCodeOutcomeCallable EssClient::CreateMultiFlowSi
         [this, request]()
         {
             return this->CreateMultiFlowSignQRCode(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+EssClient::CreateOrganizationAuthUrlOutcome EssClient::CreateOrganizationAuthUrl(const CreateOrganizationAuthUrlRequest &request)
+{
+    auto outcome = MakeRequest(request, "CreateOrganizationAuthUrl");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        CreateOrganizationAuthUrlResponse rsp = CreateOrganizationAuthUrlResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return CreateOrganizationAuthUrlOutcome(rsp);
+        else
+            return CreateOrganizationAuthUrlOutcome(o.GetError());
+    }
+    else
+    {
+        return CreateOrganizationAuthUrlOutcome(outcome.GetError());
+    }
+}
+
+void EssClient::CreateOrganizationAuthUrlAsync(const CreateOrganizationAuthUrlRequest& request, const CreateOrganizationAuthUrlAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->CreateOrganizationAuthUrl(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+EssClient::CreateOrganizationAuthUrlOutcomeCallable EssClient::CreateOrganizationAuthUrlCallable(const CreateOrganizationAuthUrlRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<CreateOrganizationAuthUrlOutcome()>>(
+        [this, request]()
+        {
+            return this->CreateOrganizationAuthUrl(request);
         }
     );
 

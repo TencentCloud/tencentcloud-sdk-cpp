@@ -33,6 +33,8 @@
 #include <tencentcloud/ess/v20201111/model/CancelUserAutoSignEnableUrlResponse.h>
 #include <tencentcloud/ess/v20201111/model/CreateBatchCancelFlowUrlRequest.h>
 #include <tencentcloud/ess/v20201111/model/CreateBatchCancelFlowUrlResponse.h>
+#include <tencentcloud/ess/v20201111/model/CreateBatchOrganizationRegistrationTasksRequest.h>
+#include <tencentcloud/ess/v20201111/model/CreateBatchOrganizationRegistrationTasksResponse.h>
 #include <tencentcloud/ess/v20201111/model/CreateBatchQuickSignUrlRequest.h>
 #include <tencentcloud/ess/v20201111/model/CreateBatchQuickSignUrlResponse.h>
 #include <tencentcloud/ess/v20201111/model/CreateBatchSignUrlRequest.h>
@@ -75,6 +77,8 @@
 #include <tencentcloud/ess/v20201111/model/CreateIntegrationUserRolesResponse.h>
 #include <tencentcloud/ess/v20201111/model/CreateMultiFlowSignQRCodeRequest.h>
 #include <tencentcloud/ess/v20201111/model/CreateMultiFlowSignQRCodeResponse.h>
+#include <tencentcloud/ess/v20201111/model/CreateOrganizationAuthUrlRequest.h>
+#include <tencentcloud/ess/v20201111/model/CreateOrganizationAuthUrlResponse.h>
 #include <tencentcloud/ess/v20201111/model/CreateOrganizationBatchSignUrlRequest.h>
 #include <tencentcloud/ess/v20201111/model/CreateOrganizationBatchSignUrlResponse.h>
 #include <tencentcloud/ess/v20201111/model/CreateOrganizationInfoChangeUrlRequest.h>
@@ -202,6 +206,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::CreateBatchCancelFlowUrlResponse> CreateBatchCancelFlowUrlOutcome;
                 typedef std::future<CreateBatchCancelFlowUrlOutcome> CreateBatchCancelFlowUrlOutcomeCallable;
                 typedef std::function<void(const EssClient*, const Model::CreateBatchCancelFlowUrlRequest&, CreateBatchCancelFlowUrlOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateBatchCancelFlowUrlAsyncHandler;
+                typedef Outcome<Core::Error, Model::CreateBatchOrganizationRegistrationTasksResponse> CreateBatchOrganizationRegistrationTasksOutcome;
+                typedef std::future<CreateBatchOrganizationRegistrationTasksOutcome> CreateBatchOrganizationRegistrationTasksOutcomeCallable;
+                typedef std::function<void(const EssClient*, const Model::CreateBatchOrganizationRegistrationTasksRequest&, CreateBatchOrganizationRegistrationTasksOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateBatchOrganizationRegistrationTasksAsyncHandler;
                 typedef Outcome<Core::Error, Model::CreateBatchQuickSignUrlResponse> CreateBatchQuickSignUrlOutcome;
                 typedef std::future<CreateBatchQuickSignUrlOutcome> CreateBatchQuickSignUrlOutcomeCallable;
                 typedef std::function<void(const EssClient*, const Model::CreateBatchQuickSignUrlRequest&, CreateBatchQuickSignUrlOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateBatchQuickSignUrlAsyncHandler;
@@ -265,6 +272,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::CreateMultiFlowSignQRCodeResponse> CreateMultiFlowSignQRCodeOutcome;
                 typedef std::future<CreateMultiFlowSignQRCodeOutcome> CreateMultiFlowSignQRCodeOutcomeCallable;
                 typedef std::function<void(const EssClient*, const Model::CreateMultiFlowSignQRCodeRequest&, CreateMultiFlowSignQRCodeOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateMultiFlowSignQRCodeAsyncHandler;
+                typedef Outcome<Core::Error, Model::CreateOrganizationAuthUrlResponse> CreateOrganizationAuthUrlOutcome;
+                typedef std::future<CreateOrganizationAuthUrlOutcome> CreateOrganizationAuthUrlOutcomeCallable;
+                typedef std::function<void(const EssClient*, const Model::CreateOrganizationAuthUrlRequest&, CreateOrganizationAuthUrlOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateOrganizationAuthUrlAsyncHandler;
                 typedef Outcome<Core::Error, Model::CreateOrganizationBatchSignUrlResponse> CreateOrganizationBatchSignUrlOutcome;
                 typedef std::future<CreateOrganizationBatchSignUrlOutcome> CreateOrganizationBatchSignUrlOutcomeCallable;
                 typedef std::function<void(const EssClient*, const Model::CreateOrganizationBatchSignUrlRequest&, CreateOrganizationBatchSignUrlOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateOrganizationBatchSignUrlAsyncHandler;
@@ -496,6 +506,37 @@ namespace TencentCloud
                 CreateBatchCancelFlowUrlOutcome CreateBatchCancelFlowUrl(const Model::CreateBatchCancelFlowUrlRequest &request);
                 void CreateBatchCancelFlowUrlAsync(const Model::CreateBatchCancelFlowUrlRequest& request, const CreateBatchCancelFlowUrlAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 CreateBatchCancelFlowUrlOutcomeCallable CreateBatchCancelFlowUrlCallable(const Model::CreateBatchCancelFlowUrlRequest& request);
+
+                /**
+                 *本接口（CreateBatchOrganizationRegistrationTasks）用于批量创建企业认证链接
+该接口为异步提交任务接口,需要跟查询企业批量认证链接(DescribeBatchOrganizationRegistrationUrls) 配合使用.
+
+批量创建链接有以下限制：
+
+1. 单次最多创建10个企业。
+2. 一天同一家企业最多创建8000家企业。
+3. 同一批创建的企业不能重复 其中包括 企业名称，企业统一信用代码
+4. 跳转到小程序的实现，参考微信官方文档（分为全屏、半屏两种方式），如何配置也可以请参考: 跳转电子签小程序配置
+
+注：
+
+1. **此接口需要购买单独的实名套餐包方可调用，如有需求请联系对接人员评估**
+  
+2. 如果生成的链接是APP链接，跳转到小程序的实现，参考微信官方文档（分为<a href="https://developers.weixin.qq.com/miniprogram/dev/api/navigate/wx.navigateToMiniProgram.html">全屏</a>、<a href="https://developers.weixin.qq.com/miniprogram/dev/framework/open-ability/openEmbeddedMiniProgram.html">半屏</a>两种方式），如何配置也可以请参考: <a href="https://qian.tencent.com/developers/company/openwxminiprogram">跳转电子签小程序配置</a>
+  
+
+**腾讯电子签小程序的AppID 和 原始Id如下:**
+
+| 小程序 | AppID | 原始ID |
+| --- | --- | --- |
+| 腾讯电子签（正式版） | wxa023b292fd19d41d | gh_da88f6188665 |
+| 腾讯电子签Demo | wx371151823f6f3edf | gh_39a5d3de69fa |
+                 * @param req CreateBatchOrganizationRegistrationTasksRequest
+                 * @return CreateBatchOrganizationRegistrationTasksOutcome
+                 */
+                CreateBatchOrganizationRegistrationTasksOutcome CreateBatchOrganizationRegistrationTasks(const Model::CreateBatchOrganizationRegistrationTasksRequest &request);
+                void CreateBatchOrganizationRegistrationTasksAsync(const Model::CreateBatchOrganizationRegistrationTasksRequest& request, const CreateBatchOrganizationRegistrationTasksAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                CreateBatchOrganizationRegistrationTasksOutcomeCallable CreateBatchOrganizationRegistrationTasksCallable(const Model::CreateBatchOrganizationRegistrationTasksRequest& request);
 
                 /**
                  *该接口用于发起合同后，生成个人用户的批量签署链接, 暂时不支持企业端签署。
@@ -978,11 +1019,24 @@ namespace TencentCloud
                 CreateMultiFlowSignQRCodeOutcomeCallable CreateMultiFlowSignQRCodeCallable(const Model::CreateMultiFlowSignQRCodeRequest& request);
 
                 /**
+                 *本接口（CreateOrganizationAuthUrl）用于生成创建企业认证链接。
+用于业务方系统自己生成认证链接进行跳转.而不用电子签自带的生成链接
+
+注： **此接口需要购买单独的实名套餐包方可调用，如有需求请联系对接人员评估**
+                 * @param req CreateOrganizationAuthUrlRequest
+                 * @return CreateOrganizationAuthUrlOutcome
+                 */
+                CreateOrganizationAuthUrlOutcome CreateOrganizationAuthUrl(const Model::CreateOrganizationAuthUrlRequest &request);
+                void CreateOrganizationAuthUrlAsync(const Model::CreateOrganizationAuthUrlRequest& request, const CreateOrganizationAuthUrlAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                CreateOrganizationAuthUrlOutcomeCallable CreateOrganizationAuthUrlCallable(const Model::CreateOrganizationAuthUrlRequest& request);
+
+                /**
                  *使用此接口，您可以创建企业批量签署链接，员工只需点击链接即可跳转至控制台进行批量签署。<br/>
 附注：
-- 员工必须在企业下完成实名认证，且需作为批量签署合同的签署方。
-- 如有UserId，应以UserId为主要标识；如果没有UserId，则必须填写Name和Mobile信息。
-- 仅支持待签署状态的合同生成签署链接。
+- 员工必须需作为批量签署合同的签署方，or或签合同的候选人之一。
+- 对于本方企业：如有UserId，应以UserId为主要标识；如果没有UserId，则必须填写Name和Mobile信息。
+- 若要生成他发企业签署链接：应传RecipientIds，且制定的合同必须是接口调用方发起的。
+- 支持待签署、待填写状态的合同生成签署链接。
                  * @param req CreateOrganizationBatchSignUrlRequest
                  * @return CreateOrganizationBatchSignUrlOutcome
                  */

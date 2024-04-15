@@ -28,7 +28,8 @@ CreateOrganizationBatchSignUrlRequest::CreateOrganizationBatchSignUrlRequest() :
     m_agentHasBeenSet(false),
     m_userIdHasBeenSet(false),
     m_nameHasBeenSet(false),
-    m_mobileHasBeenSet(false)
+    m_mobileHasBeenSet(false),
+    m_recipientIdsHasBeenSet(false)
 {
 }
 
@@ -92,6 +93,19 @@ string CreateOrganizationBatchSignUrlRequest::ToJsonString() const
         string key = "Mobile";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_mobile.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_recipientIdsHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "RecipientIds";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        for (auto itr = m_recipientIds.begin(); itr != m_recipientIds.end(); ++itr)
+        {
+            d[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
+        }
     }
 
 
@@ -196,6 +210,22 @@ void CreateOrganizationBatchSignUrlRequest::SetMobile(const string& _mobile)
 bool CreateOrganizationBatchSignUrlRequest::MobileHasBeenSet() const
 {
     return m_mobileHasBeenSet;
+}
+
+vector<string> CreateOrganizationBatchSignUrlRequest::GetRecipientIds() const
+{
+    return m_recipientIds;
+}
+
+void CreateOrganizationBatchSignUrlRequest::SetRecipientIds(const vector<string>& _recipientIds)
+{
+    m_recipientIds = _recipientIds;
+    m_recipientIdsHasBeenSet = true;
+}
+
+bool CreateOrganizationBatchSignUrlRequest::RecipientIdsHasBeenSet() const
+{
+    return m_recipientIdsHasBeenSet;
 }
 
 

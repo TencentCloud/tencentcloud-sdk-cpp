@@ -25,6 +25,8 @@
 #include <tencentcloud/core/AsyncCallerContext.h>
 #include <tencentcloud/domain/v20180808/model/BatchModifyDomainInfoRequest.h>
 #include <tencentcloud/domain/v20180808/model/BatchModifyDomainInfoResponse.h>
+#include <tencentcloud/domain/v20180808/model/BidPreDomainsRequest.h>
+#include <tencentcloud/domain/v20180808/model/BidPreDomainsResponse.h>
 #include <tencentcloud/domain/v20180808/model/CheckBatchStatusRequest.h>
 #include <tencentcloud/domain/v20180808/model/CheckBatchStatusResponse.h>
 #include <tencentcloud/domain/v20180808/model/CheckDomainRequest.h>
@@ -65,6 +67,8 @@
 #include <tencentcloud/domain/v20180808/model/DescribePhoneEmailListResponse.h>
 #include <tencentcloud/domain/v20180808/model/DescribePreDomainListRequest.h>
 #include <tencentcloud/domain/v20180808/model/DescribePreDomainListResponse.h>
+#include <tencentcloud/domain/v20180808/model/DescribeReservedBidInfoRequest.h>
+#include <tencentcloud/domain/v20180808/model/DescribeReservedBidInfoResponse.h>
 #include <tencentcloud/domain/v20180808/model/DescribeReservedPreDomainInfoRequest.h>
 #include <tencentcloud/domain/v20180808/model/DescribeReservedPreDomainInfoResponse.h>
 #include <tencentcloud/domain/v20180808/model/DescribeTemplateRequest.h>
@@ -116,6 +120,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::BatchModifyDomainInfoResponse> BatchModifyDomainInfoOutcome;
                 typedef std::future<BatchModifyDomainInfoOutcome> BatchModifyDomainInfoOutcomeCallable;
                 typedef std::function<void(const DomainClient*, const Model::BatchModifyDomainInfoRequest&, BatchModifyDomainInfoOutcome, const std::shared_ptr<const AsyncCallerContext>&)> BatchModifyDomainInfoAsyncHandler;
+                typedef Outcome<Core::Error, Model::BidPreDomainsResponse> BidPreDomainsOutcome;
+                typedef std::future<BidPreDomainsOutcome> BidPreDomainsOutcomeCallable;
+                typedef std::function<void(const DomainClient*, const Model::BidPreDomainsRequest&, BidPreDomainsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> BidPreDomainsAsyncHandler;
                 typedef Outcome<Core::Error, Model::CheckBatchStatusResponse> CheckBatchStatusOutcome;
                 typedef std::future<CheckBatchStatusOutcome> CheckBatchStatusOutcomeCallable;
                 typedef std::function<void(const DomainClient*, const Model::CheckBatchStatusRequest&, CheckBatchStatusOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CheckBatchStatusAsyncHandler;
@@ -176,6 +183,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribePreDomainListResponse> DescribePreDomainListOutcome;
                 typedef std::future<DescribePreDomainListOutcome> DescribePreDomainListOutcomeCallable;
                 typedef std::function<void(const DomainClient*, const Model::DescribePreDomainListRequest&, DescribePreDomainListOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribePreDomainListAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeReservedBidInfoResponse> DescribeReservedBidInfoOutcome;
+                typedef std::future<DescribeReservedBidInfoOutcome> DescribeReservedBidInfoOutcomeCallable;
+                typedef std::function<void(const DomainClient*, const Model::DescribeReservedBidInfoRequest&, DescribeReservedBidInfoOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeReservedBidInfoAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeReservedPreDomainInfoResponse> DescribeReservedPreDomainInfoOutcome;
                 typedef std::future<DescribeReservedPreDomainInfoOutcome> DescribeReservedPreDomainInfoOutcomeCallable;
                 typedef std::function<void(const DomainClient*, const Model::DescribeReservedPreDomainInfoRequest&, DescribeReservedPreDomainInfoOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeReservedPreDomainInfoAsyncHandler;
@@ -238,6 +248,15 @@ namespace TencentCloud
                 BatchModifyDomainInfoOutcome BatchModifyDomainInfo(const Model::BatchModifyDomainInfoRequest &request);
                 void BatchModifyDomainInfoAsync(const Model::BatchModifyDomainInfoRequest& request, const BatchModifyDomainInfoAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 BatchModifyDomainInfoOutcomeCallable BatchModifyDomainInfoCallable(const Model::BatchModifyDomainInfoRequest& request);
+
+                /**
+                 *用户合作商预释放出价
+                 * @param req BidPreDomainsRequest
+                 * @return BidPreDomainsOutcome
+                 */
+                BidPreDomainsOutcome BidPreDomains(const Model::BidPreDomainsRequest &request);
+                void BidPreDomainsAsync(const Model::BidPreDomainsRequest& request, const BidPreDomainsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                BidPreDomainsOutcomeCallable BidPreDomainsCallable(const Model::BidPreDomainsRequest& request);
 
                 /**
                  *本接口 ( CheckBatchStatus ) 用于查询批量操作日志状态 。
@@ -418,6 +437,15 @@ namespace TencentCloud
                 DescribePreDomainListOutcome DescribePreDomainList(const Model::DescribePreDomainListRequest &request);
                 void DescribePreDomainListAsync(const Model::DescribePreDomainListRequest& request, const DescribePreDomainListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DescribePreDomainListOutcomeCallable DescribePreDomainListCallable(const Model::DescribePreDomainListRequest& request);
+
+                /**
+                 *接口用于获取合作商竞价过程中竞价详情数据
+                 * @param req DescribeReservedBidInfoRequest
+                 * @return DescribeReservedBidInfoOutcome
+                 */
+                DescribeReservedBidInfoOutcome DescribeReservedBidInfo(const Model::DescribeReservedBidInfoRequest &request);
+                void DescribeReservedBidInfoAsync(const Model::DescribeReservedBidInfoRequest& request, const DescribeReservedBidInfoAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeReservedBidInfoOutcomeCallable DescribeReservedBidInfoCallable(const Model::DescribeReservedBidInfoRequest& request);
 
                 /**
                  *合作商用于查询预约预释放状态信息内容

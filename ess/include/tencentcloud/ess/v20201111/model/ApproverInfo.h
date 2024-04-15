@@ -296,17 +296,15 @@ namespace TencentCloud
                      * 获取通知签署方经办人的方式,  有以下途径:
 <ul><li>  **sms**  :  (默认)短信</li>
 <li>   **none**   : 不通知</li></ul>
-```
+
 注意：
-如果使用的是通过文件发起合同（CreateFlowByFiles），NotifyType必须 是 sms 才会发送短信
-```
+`如果使用的是通过文件发起合同（CreateFlowByFiles），NotifyType必须 是 sms 才会发送短信`
                      * @return NotifyType 通知签署方经办人的方式,  有以下途径:
 <ul><li>  **sms**  :  (默认)短信</li>
 <li>   **none**   : 不通知</li></ul>
-```
+
 注意：
-如果使用的是通过文件发起合同（CreateFlowByFiles），NotifyType必须 是 sms 才会发送短信
-```
+`如果使用的是通过文件发起合同（CreateFlowByFiles），NotifyType必须 是 sms 才会发送短信`
                      * 
                      */
                     std::string GetNotifyType() const;
@@ -315,17 +313,15 @@ namespace TencentCloud
                      * 设置通知签署方经办人的方式,  有以下途径:
 <ul><li>  **sms**  :  (默认)短信</li>
 <li>   **none**   : 不通知</li></ul>
-```
+
 注意：
-如果使用的是通过文件发起合同（CreateFlowByFiles），NotifyType必须 是 sms 才会发送短信
-```
+`如果使用的是通过文件发起合同（CreateFlowByFiles），NotifyType必须 是 sms 才会发送短信`
                      * @param _notifyType 通知签署方经办人的方式,  有以下途径:
 <ul><li>  **sms**  :  (默认)短信</li>
 <li>   **none**   : 不通知</li></ul>
-```
+
 注意：
-如果使用的是通过文件发起合同（CreateFlowByFiles），NotifyType必须 是 sms 才会发送短信
-```
+`如果使用的是通过文件发起合同（CreateFlowByFiles），NotifyType必须 是 sms 才会发送短信`
                      * 
                      */
                     void SetNotifyType(const std::string& _notifyType);
@@ -948,10 +944,9 @@ namespace TencentCloud
                      * 通知签署方经办人的方式,  有以下途径:
 <ul><li>  **sms**  :  (默认)短信</li>
 <li>   **none**   : 不通知</li></ul>
-```
+
 注意：
-如果使用的是通过文件发起合同（CreateFlowByFiles），NotifyType必须 是 sms 才会发送短信
-```
+`如果使用的是通过文件发起合同（CreateFlowByFiles），NotifyType必须 是 sms 才会发送短信`
                      */
                     std::string m_notifyType;
                     bool m_notifyTypeHasBeenSet;

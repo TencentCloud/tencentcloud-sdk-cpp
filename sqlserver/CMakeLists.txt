@@ -80,6 +80,7 @@ set(sqlserver_public_header_model
   include/tencentcloud/sqlserver/v20180328/model/ModifyDBNameRequest.h
   include/tencentcloud/sqlserver/v20180328/model/ModifyDBInstanceRenewFlagRequest.h
   include/tencentcloud/sqlserver/v20180328/model/DescribeUpgradeInstanceCheckResponse.h
+  include/tencentcloud/sqlserver/v20180328/model/DescribeRestoreTimeRangeResponse.h
   include/tencentcloud/sqlserver/v20180328/model/CreateIncrementalMigrationResponse.h
   include/tencentcloud/sqlserver/v20180328/model/DescribeZonesResponse.h
   include/tencentcloud/sqlserver/v20180328/model/UpgradeDBInstanceRequest.h
@@ -347,6 +348,7 @@ set(sqlserver_public_header_model
   include/tencentcloud/sqlserver/v20180328/model/InstanceDBDetail.h
   include/tencentcloud/sqlserver/v20180328/model/BalanceReadOnlyGroupRequest.h
   include/tencentcloud/sqlserver/v20180328/model/ModifyInstanceParamResponse.h
+  include/tencentcloud/sqlserver/v20180328/model/DescribeRestoreTimeRangeRequest.h
   include/tencentcloud/sqlserver/v20180328/model/DbRollbackTimeInfo.h
   include/tencentcloud/sqlserver/v20180328/model/CreateCloudReadOnlyDBInstancesResponse.h
   include/tencentcloud/sqlserver/v20180328/model/DbNormalDetail.h
@@ -449,6 +451,7 @@ set(sqlserver_src
   src/v20180328/model/ModifyDBNameRequest.cpp
   src/v20180328/model/ModifyDBInstanceRenewFlagRequest.cpp
   src/v20180328/model/DescribeUpgradeInstanceCheckResponse.cpp
+  src/v20180328/model/DescribeRestoreTimeRangeResponse.cpp
   src/v20180328/model/CreateIncrementalMigrationResponse.cpp
   src/v20180328/model/DescribeZonesResponse.cpp
   src/v20180328/model/UpgradeDBInstanceRequest.cpp
@@ -716,6 +719,7 @@ set(sqlserver_src
   src/v20180328/model/InstanceDBDetail.cpp
   src/v20180328/model/BalanceReadOnlyGroupRequest.cpp
   src/v20180328/model/ModifyInstanceParamResponse.cpp
+  src/v20180328/model/DescribeRestoreTimeRangeRequest.cpp
   src/v20180328/model/DbRollbackTimeInfo.cpp
   src/v20180328/model/CreateCloudReadOnlyDBInstancesResponse.cpp
   src/v20180328/model/DbNormalDetail.cpp

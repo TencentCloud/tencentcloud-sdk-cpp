@@ -159,6 +159,31 @@ namespace TencentCloud
                      */
                     bool RuleIDHasBeenSet() const;
 
+                    /**
+                     * 获取指标名
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return MetricName 指标名
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::string GetMetricName() const;
+
+                    /**
+                     * 设置指标名
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _metricName 指标名
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetMetricName(const std::string& _metricName);
+
+                    /**
+                     * 判断参数 MetricName 是否已赋值
+                     * @return MetricName 是否已赋值
+                     * 
+                     */
+                    bool MetricNameHasBeenSet() const;
+
                 private:
 
                     /**
@@ -192,6 +217,13 @@ namespace TencentCloud
                      */
                     std::string m_ruleID;
                     bool m_ruleIDHasBeenSet;
+
+                    /**
+                     * 指标名
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_metricName;
+                    bool m_metricNameHasBeenSet;
 
                 };
             }
