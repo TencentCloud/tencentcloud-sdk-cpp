@@ -85,15 +85,15 @@ namespace TencentCloud
                     bool PageHasBeenSet() const;
 
                     /**
-                     * 获取每页数据量，最大1000
-                     * @return Limit 每页数据量，最大1000
+                     * 获取每页数据量，最大200
+                     * @return Limit 每页数据量，最大200
                      * 
                      */
                     int64_t GetLimit() const;
 
                     /**
-                     * 设置每页数据量，最大1000
-                     * @param _limit 每页数据量，最大1000
+                     * 设置每页数据量，最大200
+                     * @param _limit 每页数据量，最大200
                      * 
                      */
                     void SetLimit(const int64_t& _limit);
@@ -204,7 +204,7 @@ namespace TencentCloud
                     bool m_pageHasBeenSet;
 
                     /**
-                     * 每页数据量，最大1000
+                     * 每页数据量，最大200
                      */
                     int64_t m_limit;
                     bool m_limitHasBeenSet;

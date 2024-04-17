@@ -447,6 +447,31 @@ namespace TencentCloud
                      */
                     bool RuleNameHasBeenSet() const;
 
+                    /**
+                     * 获取触发类型
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return TriggerTypes 触发类型
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::vector<std::string> GetTriggerTypes() const;
+
+                    /**
+                     * 设置触发类型
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _triggerTypes 触发类型
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetTriggerTypes(const std::vector<std::string>& _triggerTypes);
+
+                    /**
+                     * 判断参数 TriggerTypes 是否已赋值
+                     * @return TriggerTypes 是否已赋值
+                     * 
+                     */
+                    bool TriggerTypesHasBeenSet() const;
+
                 private:
 
                     /**
@@ -560,6 +585,13 @@ namespace TencentCloud
                      */
                     std::string m_ruleName;
                     bool m_ruleNameHasBeenSet;
+
+                    /**
+                     * 触发类型
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::vector<std::string> m_triggerTypes;
+                    bool m_triggerTypesHasBeenSet;
 
                 };
             }

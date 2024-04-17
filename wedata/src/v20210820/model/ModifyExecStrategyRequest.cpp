@@ -39,7 +39,8 @@ ModifyExecStrategyRequest::ModifyExecStrategyRequest() :
     m_databaseIdHasBeenSet(false),
     m_datasourceIdHasBeenSet(false),
     m_tableIdHasBeenSet(false),
-    m_execEngineTypeHasBeenSet(false)
+    m_execEngineTypeHasBeenSet(false),
+    m_triggerTypesHasBeenSet(false)
 {
 }
 
@@ -191,6 +192,19 @@ string ModifyExecStrategyRequest::ToJsonString() const
         string key = "ExecEngineType";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_execEngineType.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_triggerTypesHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "TriggerTypes";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        for (auto itr = m_triggerTypes.begin(); itr != m_triggerTypes.end(); ++itr)
+        {
+            d[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
+        }
     }
 
 
@@ -471,6 +485,22 @@ void ModifyExecStrategyRequest::SetExecEngineType(const string& _execEngineType)
 bool ModifyExecStrategyRequest::ExecEngineTypeHasBeenSet() const
 {
     return m_execEngineTypeHasBeenSet;
+}
+
+vector<string> ModifyExecStrategyRequest::GetTriggerTypes() const
+{
+    return m_triggerTypes;
+}
+
+void ModifyExecStrategyRequest::SetTriggerTypes(const vector<string>& _triggerTypes)
+{
+    m_triggerTypes = _triggerTypes;
+    m_triggerTypesHasBeenSet = true;
+}
+
+bool ModifyExecStrategyRequest::TriggerTypesHasBeenSet() const
+{
+    return m_triggerTypesHasBeenSet;
 }
 
 

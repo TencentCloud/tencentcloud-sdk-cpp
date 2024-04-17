@@ -36,7 +36,8 @@ RuleGroupExecStrategy::RuleGroupExecStrategy() :
     m_execEngineTypeHasBeenSet(false),
     m_execPlanHasBeenSet(false),
     m_ruleIdHasBeenSet(false),
-    m_ruleNameHasBeenSet(false)
+    m_ruleNameHasBeenSet(false),
+    m_triggerTypesHasBeenSet(false)
 {
 }
 
@@ -215,6 +216,19 @@ CoreInternalOutcome RuleGroupExecStrategy::Deserialize(const rapidjson::Value &v
         m_ruleNameHasBeenSet = true;
     }
 
+    if (value.HasMember("TriggerTypes") && !value["TriggerTypes"].IsNull())
+    {
+        if (!value["TriggerTypes"].IsArray())
+            return CoreInternalOutcome(Core::Error("response `RuleGroupExecStrategy.TriggerTypes` is not array type"));
+
+        const rapidjson::Value &tmpValue = value["TriggerTypes"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            m_triggerTypes.push_back((*itr).GetString());
+        }
+        m_triggerTypesHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -355,6 +369,19 @@ void RuleGroupExecStrategy::ToJsonObject(rapidjson::Value &value, rapidjson::Doc
         string key = "RuleName";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_ruleName.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_triggerTypesHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "TriggerTypes";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        for (auto itr = m_triggerTypes.begin(); itr != m_triggerTypes.end(); ++itr)
+        {
+            value[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
+        }
     }
 
 }
@@ -614,5 +641,21 @@ void RuleGroupExecStrategy::SetRuleName(const string& _ruleName)
 bool RuleGroupExecStrategy::RuleNameHasBeenSet() const
 {
     return m_ruleNameHasBeenSet;
+}
+
+vector<string> RuleGroupExecStrategy::GetTriggerTypes() const
+{
+    return m_triggerTypes;
+}
+
+void RuleGroupExecStrategy::SetTriggerTypes(const vector<string>& _triggerTypes)
+{
+    m_triggerTypes = _triggerTypes;
+    m_triggerTypesHasBeenSet = true;
+}
+
+bool RuleGroupExecStrategy::TriggerTypesHasBeenSet() const
+{
+    return m_triggerTypesHasBeenSet;
 }
 

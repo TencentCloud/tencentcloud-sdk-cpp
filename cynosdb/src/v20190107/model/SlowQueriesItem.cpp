@@ -31,7 +31,14 @@ SlowQueriesItem::SlowQueriesItem() :
     m_rowsExaminedHasBeenSet(false),
     m_rowsSentHasBeenSet(false),
     m_sqlTemplateHasBeenSet(false),
-    m_sqlMd5HasBeenSet(false)
+    m_sqlMd5HasBeenSet(false),
+    m_syncReadCountRemoteHasBeenSet(false),
+    m_syncReadBytesRemoteHasBeenSet(false),
+    m_syncReadTimeRemoteHasBeenSet(false),
+    m_syncWriteCountRemoteHasBeenSet(false),
+    m_syncWriteBytesRemoteHasBeenSet(false),
+    m_syncWriteTimeRemoteHasBeenSet(false),
+    m_trxCommitDelayHasBeenSet(false)
 {
 }
 
@@ -150,6 +157,76 @@ CoreInternalOutcome SlowQueriesItem::Deserialize(const rapidjson::Value &value)
         m_sqlMd5HasBeenSet = true;
     }
 
+    if (value.HasMember("SyncReadCountRemote") && !value["SyncReadCountRemote"].IsNull())
+    {
+        if (!value["SyncReadCountRemote"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `SlowQueriesItem.SyncReadCountRemote` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_syncReadCountRemote = value["SyncReadCountRemote"].GetInt64();
+        m_syncReadCountRemoteHasBeenSet = true;
+    }
+
+    if (value.HasMember("SyncReadBytesRemote") && !value["SyncReadBytesRemote"].IsNull())
+    {
+        if (!value["SyncReadBytesRemote"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `SlowQueriesItem.SyncReadBytesRemote` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_syncReadBytesRemote = value["SyncReadBytesRemote"].GetInt64();
+        m_syncReadBytesRemoteHasBeenSet = true;
+    }
+
+    if (value.HasMember("SyncReadTimeRemote") && !value["SyncReadTimeRemote"].IsNull())
+    {
+        if (!value["SyncReadTimeRemote"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `SlowQueriesItem.SyncReadTimeRemote` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_syncReadTimeRemote = value["SyncReadTimeRemote"].GetInt64();
+        m_syncReadTimeRemoteHasBeenSet = true;
+    }
+
+    if (value.HasMember("SyncWriteCountRemote") && !value["SyncWriteCountRemote"].IsNull())
+    {
+        if (!value["SyncWriteCountRemote"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `SlowQueriesItem.SyncWriteCountRemote` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_syncWriteCountRemote = value["SyncWriteCountRemote"].GetInt64();
+        m_syncWriteCountRemoteHasBeenSet = true;
+    }
+
+    if (value.HasMember("SyncWriteBytesRemote") && !value["SyncWriteBytesRemote"].IsNull())
+    {
+        if (!value["SyncWriteBytesRemote"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `SlowQueriesItem.SyncWriteBytesRemote` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_syncWriteBytesRemote = value["SyncWriteBytesRemote"].GetInt64();
+        m_syncWriteBytesRemoteHasBeenSet = true;
+    }
+
+    if (value.HasMember("SyncWriteTimeRemote") && !value["SyncWriteTimeRemote"].IsNull())
+    {
+        if (!value["SyncWriteTimeRemote"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `SlowQueriesItem.SyncWriteTimeRemote` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_syncWriteTimeRemote = value["SyncWriteTimeRemote"].GetInt64();
+        m_syncWriteTimeRemoteHasBeenSet = true;
+    }
+
+    if (value.HasMember("TrxCommitDelay") && !value["TrxCommitDelay"].IsNull())
+    {
+        if (!value["TrxCommitDelay"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `SlowQueriesItem.TrxCommitDelay` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_trxCommitDelay = value["TrxCommitDelay"].GetInt64();
+        m_trxCommitDelayHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -243,6 +320,62 @@ void SlowQueriesItem::ToJsonObject(rapidjson::Value &value, rapidjson::Document:
         string key = "SqlMd5";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_sqlMd5.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_syncReadCountRemoteHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "SyncReadCountRemote";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_syncReadCountRemote, allocator);
+    }
+
+    if (m_syncReadBytesRemoteHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "SyncReadBytesRemote";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_syncReadBytesRemote, allocator);
+    }
+
+    if (m_syncReadTimeRemoteHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "SyncReadTimeRemote";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_syncReadTimeRemote, allocator);
+    }
+
+    if (m_syncWriteCountRemoteHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "SyncWriteCountRemote";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_syncWriteCountRemote, allocator);
+    }
+
+    if (m_syncWriteBytesRemoteHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "SyncWriteBytesRemote";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_syncWriteBytesRemote, allocator);
+    }
+
+    if (m_syncWriteTimeRemoteHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "SyncWriteTimeRemote";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_syncWriteTimeRemote, allocator);
+    }
+
+    if (m_trxCommitDelayHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "TrxCommitDelay";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_trxCommitDelay, allocator);
     }
 
 }
@@ -422,5 +555,117 @@ void SlowQueriesItem::SetSqlMd5(const string& _sqlMd5)
 bool SlowQueriesItem::SqlMd5HasBeenSet() const
 {
     return m_sqlMd5HasBeenSet;
+}
+
+int64_t SlowQueriesItem::GetSyncReadCountRemote() const
+{
+    return m_syncReadCountRemote;
+}
+
+void SlowQueriesItem::SetSyncReadCountRemote(const int64_t& _syncReadCountRemote)
+{
+    m_syncReadCountRemote = _syncReadCountRemote;
+    m_syncReadCountRemoteHasBeenSet = true;
+}
+
+bool SlowQueriesItem::SyncReadCountRemoteHasBeenSet() const
+{
+    return m_syncReadCountRemoteHasBeenSet;
+}
+
+int64_t SlowQueriesItem::GetSyncReadBytesRemote() const
+{
+    return m_syncReadBytesRemote;
+}
+
+void SlowQueriesItem::SetSyncReadBytesRemote(const int64_t& _syncReadBytesRemote)
+{
+    m_syncReadBytesRemote = _syncReadBytesRemote;
+    m_syncReadBytesRemoteHasBeenSet = true;
+}
+
+bool SlowQueriesItem::SyncReadBytesRemoteHasBeenSet() const
+{
+    return m_syncReadBytesRemoteHasBeenSet;
+}
+
+int64_t SlowQueriesItem::GetSyncReadTimeRemote() const
+{
+    return m_syncReadTimeRemote;
+}
+
+void SlowQueriesItem::SetSyncReadTimeRemote(const int64_t& _syncReadTimeRemote)
+{
+    m_syncReadTimeRemote = _syncReadTimeRemote;
+    m_syncReadTimeRemoteHasBeenSet = true;
+}
+
+bool SlowQueriesItem::SyncReadTimeRemoteHasBeenSet() const
+{
+    return m_syncReadTimeRemoteHasBeenSet;
+}
+
+int64_t SlowQueriesItem::GetSyncWriteCountRemote() const
+{
+    return m_syncWriteCountRemote;
+}
+
+void SlowQueriesItem::SetSyncWriteCountRemote(const int64_t& _syncWriteCountRemote)
+{
+    m_syncWriteCountRemote = _syncWriteCountRemote;
+    m_syncWriteCountRemoteHasBeenSet = true;
+}
+
+bool SlowQueriesItem::SyncWriteCountRemoteHasBeenSet() const
+{
+    return m_syncWriteCountRemoteHasBeenSet;
+}
+
+int64_t SlowQueriesItem::GetSyncWriteBytesRemote() const
+{
+    return m_syncWriteBytesRemote;
+}
+
+void SlowQueriesItem::SetSyncWriteBytesRemote(const int64_t& _syncWriteBytesRemote)
+{
+    m_syncWriteBytesRemote = _syncWriteBytesRemote;
+    m_syncWriteBytesRemoteHasBeenSet = true;
+}
+
+bool SlowQueriesItem::SyncWriteBytesRemoteHasBeenSet() const
+{
+    return m_syncWriteBytesRemoteHasBeenSet;
+}
+
+int64_t SlowQueriesItem::GetSyncWriteTimeRemote() const
+{
+    return m_syncWriteTimeRemote;
+}
+
+void SlowQueriesItem::SetSyncWriteTimeRemote(const int64_t& _syncWriteTimeRemote)
+{
+    m_syncWriteTimeRemote = _syncWriteTimeRemote;
+    m_syncWriteTimeRemoteHasBeenSet = true;
+}
+
+bool SlowQueriesItem::SyncWriteTimeRemoteHasBeenSet() const
+{
+    return m_syncWriteTimeRemoteHasBeenSet;
+}
+
+int64_t SlowQueriesItem::GetTrxCommitDelay() const
+{
+    return m_trxCommitDelay;
+}
+
+void SlowQueriesItem::SetTrxCommitDelay(const int64_t& _trxCommitDelay)
+{
+    m_trxCommitDelay = _trxCommitDelay;
+    m_trxCommitDelayHasBeenSet = true;
+}
+
+bool SlowQueriesItem::TrxCommitDelayHasBeenSet() const
+{
+    return m_trxCommitDelayHasBeenSet;
 }
 

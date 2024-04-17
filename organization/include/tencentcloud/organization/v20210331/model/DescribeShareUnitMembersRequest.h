@@ -127,15 +127,15 @@ namespace TencentCloud
                     bool LimitHasBeenSet() const;
 
                     /**
-                     * 获取搜索关键字。支持成员uin搜索。
-                     * @return SearchKey 搜索关键字。支持成员uin搜索。
+                     * 获取搜索关键字。支持成员Uin搜索。
+                     * @return SearchKey 搜索关键字。支持成员Uin搜索。
                      * 
                      */
                     std::string GetSearchKey() const;
 
                     /**
-                     * 设置搜索关键字。支持成员uin搜索。
-                     * @param _searchKey 搜索关键字。支持成员uin搜索。
+                     * 设置搜索关键字。支持成员Uin搜索。
+                     * @param _searchKey 搜索关键字。支持成员Uin搜索。
                      * 
                      */
                     void SetSearchKey(const std::string& _searchKey);
@@ -174,7 +174,7 @@ namespace TencentCloud
                     bool m_limitHasBeenSet;
 
                     /**
-                     * 搜索关键字。支持成员uin搜索。
+                     * 搜索关键字。支持成员Uin搜索。
                      */
                     std::string m_searchKey;
                     bool m_searchKeyHasBeenSet;

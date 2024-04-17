@@ -121,6 +121,31 @@ namespace TencentCloud
                      */
                     bool TaskNameHasBeenSet() const;
 
+                    /**
+                     * 获取生产调度任务任务类型
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return CycleType 生产调度任务任务类型
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    int64_t GetCycleType() const;
+
+                    /**
+                     * 设置生产调度任务任务类型
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _cycleType 生产调度任务任务类型
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetCycleType(const int64_t& _cycleType);
+
+                    /**
+                     * 判断参数 CycleType 是否已赋值
+                     * @return CycleType 是否已赋值
+                     * 
+                     */
+                    bool CycleTypeHasBeenSet() const;
+
                 private:
 
                     /**
@@ -143,6 +168,13 @@ namespace TencentCloud
                      */
                     std::string m_taskName;
                     bool m_taskNameHasBeenSet;
+
+                    /**
+                     * 生产调度任务任务类型
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    int64_t m_cycleType;
+                    bool m_cycleTypeHasBeenSet;
 
                 };
             }

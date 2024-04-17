@@ -420,6 +420,27 @@ MONTH_CYCLE:M
                      */
                     bool ExecEngineTypeHasBeenSet() const;
 
+                    /**
+                     * 获取触发场景
+                     * @return TriggerTypes 触发场景
+                     * 
+                     */
+                    std::vector<std::string> GetTriggerTypes() const;
+
+                    /**
+                     * 设置触发场景
+                     * @param _triggerTypes 触发场景
+                     * 
+                     */
+                    void SetTriggerTypes(const std::vector<std::string>& _triggerTypes);
+
+                    /**
+                     * 判断参数 TriggerTypes 是否已赋值
+                     * @return TriggerTypes 是否已赋值
+                     * 
+                     */
+                    bool TriggerTypesHasBeenSet() const;
+
                 private:
 
                     /**
@@ -528,6 +549,12 @@ MONTH_CYCLE:M
                      */
                     std::string m_execEngineType;
                     bool m_execEngineTypeHasBeenSet;
+
+                    /**
+                     * 触发场景
+                     */
+                    std::vector<std::string> m_triggerTypes;
+                    bool m_triggerTypesHasBeenSet;
 
                 };
             }

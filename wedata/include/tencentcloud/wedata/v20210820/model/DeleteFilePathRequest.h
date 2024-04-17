@@ -86,14 +86,22 @@ namespace TencentCloud
 
                     /**
                      * 获取使用状态
+- true
+- false
                      * @return UseStatus 使用状态
+- true
+- false
                      * 
                      */
                     std::string GetUseStatus() const;
 
                     /**
                      * 设置使用状态
+- true
+- false
                      * @param _useStatus 使用状态
+- true
+- false
                      * 
                      */
                     void SetUseStatus(const std::string& _useStatus);
@@ -142,6 +150,8 @@ namespace TencentCloud
 
                     /**
                      * 使用状态
+- true
+- false
                      */
                     std::string m_useStatus;
                     bool m_useStatusHasBeenSet;

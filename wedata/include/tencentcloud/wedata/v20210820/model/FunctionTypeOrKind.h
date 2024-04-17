@@ -47,15 +47,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取无
-                     * @return Name 无
+                     * 获取名称
+                     * @return Name 名称
                      * 
                      */
                     std::string GetName() const;
 
                     /**
-                     * 设置无
-                     * @param _name 无
+                     * 设置名称
+                     * @param _name 名称
                      * 
                      */
                     void SetName(const std::string& _name);
@@ -68,15 +68,15 @@ namespace TencentCloud
                     bool NameHasBeenSet() const;
 
                     /**
-                     * 获取无
-                     * @return ZhName 无
+                     * 获取函数分类英文名
+                     * @return ZhName 函数分类英文名
                      * 
                      */
                     std::string GetZhName() const;
 
                     /**
-                     * 设置无
-                     * @param _zhName 无
+                     * 设置函数分类英文名
+                     * @param _zhName 函数分类英文名
                      * 
                      */
                     void SetZhName(const std::string& _zhName);
@@ -89,15 +89,15 @@ namespace TencentCloud
                     bool ZhNameHasBeenSet() const;
 
                     /**
-                     * 获取无
-                     * @return EnName 无
+                     * 获取函数分类中文名
+                     * @return EnName 函数分类中文名
                      * 
                      */
                     std::string GetEnName() const;
 
                     /**
-                     * 设置无
-                     * @param _enName 无
+                     * 设置函数分类中文名
+                     * @param _enName 函数分类中文名
                      * 
                      */
                     void SetEnName(const std::string& _enName);
@@ -112,19 +112,19 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 无
+                     * 名称
                      */
                     std::string m_name;
                     bool m_nameHasBeenSet;
 
                     /**
-                     * 无
+                     * 函数分类英文名
                      */
                     std::string m_zhName;
                     bool m_zhNameHasBeenSet;
 
                     /**
-                     * 无
+                     * 函数分类中文名
                      */
                     std::string m_enName;
                     bool m_enNameHasBeenSet;

@@ -573,6 +573,31 @@ namespace TencentCloud
                      */
                     bool SubscribeConfigHasBeenSet() const;
 
+                    /**
+                     * 获取数据源环境：0或者未返回.未定义，1.生产 2.开发
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return DsEnvType 数据源环境：0或者未返回.未定义，1.生产 2.开发
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    int64_t GetDsEnvType() const;
+
+                    /**
+                     * 设置数据源环境：0或者未返回.未定义，1.生产 2.开发
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _dsEnvType 数据源环境：0或者未返回.未定义，1.生产 2.开发
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetDsEnvType(const int64_t& _dsEnvType);
+
+                    /**
+                     * 判断参数 DsEnvType 是否已赋值
+                     * @return DsEnvType 是否已赋值
+                     * 
+                     */
+                    bool DsEnvTypeHasBeenSet() const;
+
                 private:
 
                     /**
@@ -721,6 +746,13 @@ namespace TencentCloud
                      */
                     bool m_subscribeConfig;
                     bool m_subscribeConfigHasBeenSet;
+
+                    /**
+                     * 数据源环境：0或者未返回.未定义，1.生产 2.开发
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    int64_t m_dsEnvType;
+                    bool m_dsEnvTypeHasBeenSet;
 
                 };
             }

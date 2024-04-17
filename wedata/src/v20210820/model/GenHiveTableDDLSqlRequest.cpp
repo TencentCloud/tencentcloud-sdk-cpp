@@ -45,7 +45,8 @@ GenHiveTableDDLSqlRequest::GenHiveTableDDLSqlRequest() :
     m_addDeleteFilesHasBeenSet(false),
     m_targetDatasourceIdHasBeenSet(false),
     m_upsertKeysHasBeenSet(false),
-    m_tableBaseInfoHasBeenSet(false)
+    m_tableBaseInfoHasBeenSet(false),
+    m_sinkSchemaNameHasBeenSet(false)
 {
 }
 
@@ -265,6 +266,14 @@ string GenHiveTableDDLSqlRequest::ToJsonString() const
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
         m_tableBaseInfo.ToJsonObject(d[key.c_str()], allocator);
+    }
+
+    if (m_sinkSchemaNameHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "SinkSchemaName";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_sinkSchemaName.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -641,6 +650,22 @@ void GenHiveTableDDLSqlRequest::SetTableBaseInfo(const TableBaseInfo& _tableBase
 bool GenHiveTableDDLSqlRequest::TableBaseInfoHasBeenSet() const
 {
     return m_tableBaseInfoHasBeenSet;
+}
+
+string GenHiveTableDDLSqlRequest::GetSinkSchemaName() const
+{
+    return m_sinkSchemaName;
+}
+
+void GenHiveTableDDLSqlRequest::SetSinkSchemaName(const string& _sinkSchemaName)
+{
+    m_sinkSchemaName = _sinkSchemaName;
+    m_sinkSchemaNameHasBeenSet = true;
+}
+
+bool GenHiveTableDDLSqlRequest::SinkSchemaNameHasBeenSet() const
+{
+    return m_sinkSchemaNameHasBeenSet;
 }
 
 

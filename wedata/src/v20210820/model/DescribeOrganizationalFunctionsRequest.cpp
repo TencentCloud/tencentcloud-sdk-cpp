@@ -26,7 +26,8 @@ DescribeOrganizationalFunctionsRequest::DescribeOrganizationalFunctionsRequest()
     m_typeHasBeenSet(false),
     m_projectIdHasBeenSet(false),
     m_nameHasBeenSet(false),
-    m_displayNameHasBeenSet(false)
+    m_displayNameHasBeenSet(false),
+    m_envTypeHasBeenSet(false)
 {
 }
 
@@ -67,6 +68,14 @@ string DescribeOrganizationalFunctionsRequest::ToJsonString() const
         string key = "DisplayName";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_displayName.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_envTypeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "EnvType";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_envType.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -139,6 +148,22 @@ void DescribeOrganizationalFunctionsRequest::SetDisplayName(const string& _displ
 bool DescribeOrganizationalFunctionsRequest::DisplayNameHasBeenSet() const
 {
     return m_displayNameHasBeenSet;
+}
+
+string DescribeOrganizationalFunctionsRequest::GetEnvType() const
+{
+    return m_envType;
+}
+
+void DescribeOrganizationalFunctionsRequest::SetEnvType(const string& _envType)
+{
+    m_envType = _envType;
+    m_envTypeHasBeenSet = true;
+}
+
+bool DescribeOrganizationalFunctionsRequest::EnvTypeHasBeenSet() const
+{
+    return m_envTypeHasBeenSet;
 }
 
 

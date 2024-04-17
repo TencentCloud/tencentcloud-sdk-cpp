@@ -188,6 +188,27 @@ namespace TencentCloud
                      */
                     bool Http3SupportedHasBeenSet() const;
 
+                    /**
+                     * 获取是否作为默认域名，默认为“否”
+                     * @return IsDefaultServer 是否作为默认域名，默认为“否”
+                     * 
+                     */
+                    bool GetIsDefaultServer() const;
+
+                    /**
+                     * 设置是否作为默认域名，默认为“否”
+                     * @param _isDefaultServer 是否作为默认域名，默认为“否”
+                     * 
+                     */
+                    void SetIsDefaultServer(const bool& _isDefaultServer);
+
+                    /**
+                     * 判断参数 IsDefaultServer 是否已赋值
+                     * @return IsDefaultServer 是否已赋值
+                     * 
+                     */
+                    bool IsDefaultServerHasBeenSet() const;
+
                 private:
 
                     /**
@@ -230,6 +251,12 @@ namespace TencentCloud
                      */
                     int64_t m_http3Supported;
                     bool m_http3SupportedHasBeenSet;
+
+                    /**
+                     * 是否作为默认域名，默认为“否”
+                     */
+                    bool m_isDefaultServer;
+                    bool m_isDefaultServerHasBeenSet;
 
                 };
             }

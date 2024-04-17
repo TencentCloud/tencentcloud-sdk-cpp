@@ -45,9 +45,9 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取无
+                     * 获取类型
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return Types 无
+                     * @return Types 类型
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -61,9 +61,9 @@ namespace TencentCloud
                     bool TypesHasBeenSet() const;
 
                     /**
-                     * 获取无
+                     * 获取错误信息
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return ErrorMessage 无
+                     * @return ErrorMessage 错误信息
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -79,14 +79,14 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 无
+                     * 类型
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<FunctionTypeOrKind> m_types;
                     bool m_typesHasBeenSet;
 
                     /**
-                     * 无
+                     * 错误信息
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_errorMessage;

@@ -43,15 +43,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取无
-                     * @return TaskId 无
+                     * 获取任务id
+                     * @return TaskId 任务id
                      * 
                      */
                     std::string GetTaskId() const;
 
                     /**
-                     * 设置无
-                     * @param _taskId 无
+                     * 设置任务id
+                     * @param _taskId 任务id
                      * 
                      */
                     void SetTaskId(const std::string& _taskId);
@@ -127,15 +127,15 @@ namespace TencentCloud
                     bool GranularityHasBeenSet() const;
 
                     /**
-                     * 获取无
-                     * @return ProjectId 无
+                     * 获取项目id
+                     * @return ProjectId 项目id
                      * 
                      */
                     std::string GetProjectId() const;
 
                     /**
-                     * 设置无
-                     * @param _projectId 无
+                     * 设置项目id
+                     * @param _projectId 项目id
                      * 
                      */
                     void SetProjectId(const std::string& _projectId);
@@ -150,7 +150,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 无
+                     * 任务id
                      */
                     std::string m_taskId;
                     bool m_taskIdHasBeenSet;
@@ -174,7 +174,7 @@ namespace TencentCloud
                     bool m_granularityHasBeenSet;
 
                     /**
-                     * 无
+                     * 项目id
                      */
                     std::string m_projectId;
                     bool m_projectIdHasBeenSet;

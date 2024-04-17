@@ -263,6 +263,31 @@ namespace TencentCloud
                      */
                     bool VersionHasBeenSet() const;
 
+                    /**
+                     * 获取数据源附带参数信息Params json字符串
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return ParamsString 数据源附带参数信息Params json字符串
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::string GetParamsString() const;
+
+                    /**
+                     * 设置数据源附带参数信息Params json字符串
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _paramsString 数据源附带参数信息Params json字符串
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetParamsString(const std::string& _paramsString);
+
+                    /**
+                     * 判断参数 ParamsString 是否已赋值
+                     * @return ParamsString 是否已赋值
+                     * 
+                     */
+                    bool ParamsStringHasBeenSet() const;
+
                 private:
 
                     /**
@@ -325,6 +350,13 @@ namespace TencentCloud
                      */
                     std::string m_version;
                     bool m_versionHasBeenSet;
+
+                    /**
+                     * 数据源附带参数信息Params json字符串
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_paramsString;
+                    bool m_paramsStringHasBeenSet;
 
                 };
             }

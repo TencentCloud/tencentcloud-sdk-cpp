@@ -47,15 +47,19 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取执行空间 "DRY_RUN"
-                     * @return ExecutionSpace 执行空间 "DRY_RUN"
+                     * 获取执行空间，可选 
+ "DRY_RUN"
+                     * @return ExecutionSpace 执行空间，可选 
+ "DRY_RUN"
                      * 
                      */
                     std::string GetExecutionSpace() const;
 
                     /**
-                     * 设置执行空间 "DRY_RUN"
-                     * @param _executionSpace 执行空间 "DRY_RUN"
+                     * 设置执行空间，可选 
+ "DRY_RUN"
+                     * @param _executionSpace 执行空间，可选 
+ "DRY_RUN"
                      * 
                      */
                     void SetExecutionSpace(const std::string& _executionSpace);
@@ -68,15 +72,15 @@ namespace TencentCloud
                     bool ExecutionSpaceHasBeenSet() const;
 
                     /**
-                     * 获取产品名称，可选
-                     * @return ProductName 产品名称，可选
+                     * 获取业务产品，可选: <DATA_DEV / DATA_QUALITY / DATA_INTEGRATION，默认DATA_DEV。非空。默认 自身项目
+                     * @return ProductName 业务产品，可选: <DATA_DEV / DATA_QUALITY / DATA_INTEGRATION，默认DATA_DEV。非空。默认 自身项目
                      * 
                      */
                     std::string GetProductName() const;
 
                     /**
-                     * 设置产品名称，可选
-                     * @param _productName 产品名称，可选
+                     * 设置业务产品，可选: <DATA_DEV / DATA_QUALITY / DATA_INTEGRATION，默认DATA_DEV。非空。默认 自身项目
+                     * @param _productName 业务产品，可选: <DATA_DEV / DATA_QUALITY / DATA_INTEGRATION，默认DATA_DEV。非空。默认 自身项目
                      * 
                      */
                     void SetProductName(const std::string& _productName);
@@ -89,15 +93,15 @@ namespace TencentCloud
                     bool ProductNameHasBeenSet() const;
 
                     /**
-                     * 获取资源组
-                     * @return ResourceGroup 资源组
+                     * 获取资源组信息，可选
+                     * @return ResourceGroup 资源组信息，可选
                      * 
                      */
                     std::string GetResourceGroup() const;
 
                     /**
-                     * 设置资源组
-                     * @param _resourceGroup 资源组
+                     * 设置资源组信息，可选
+                     * @param _resourceGroup 资源组信息，可选
                      * 
                      */
                     void SetResourceGroup(const std::string& _resourceGroup);
@@ -112,19 +116,20 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 执行空间 "DRY_RUN"
+                     * 执行空间，可选 
+ "DRY_RUN"
                      */
                     std::string m_executionSpace;
                     bool m_executionSpaceHasBeenSet;
 
                     /**
-                     * 产品名称，可选
+                     * 业务产品，可选: <DATA_DEV / DATA_QUALITY / DATA_INTEGRATION，默认DATA_DEV。非空。默认 自身项目
                      */
                     std::string m_productName;
                     bool m_productNameHasBeenSet;
 
                     /**
-                     * 资源组
+                     * 资源组信息，可选
                      */
                     std::string m_resourceGroup;
                     bool m_resourceGroupHasBeenSet;

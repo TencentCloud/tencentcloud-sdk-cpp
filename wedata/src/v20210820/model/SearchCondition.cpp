@@ -123,12 +123,12 @@ void SearchCondition::ToJsonObject(rapidjson::Value &value, rapidjson::Document:
 }
 
 
-SearchConditionInstance SearchCondition::GetInstance() const
+SearchConditionInstanceNew SearchCondition::GetInstance() const
 {
     return m_instance;
 }
 
-void SearchCondition::SetInstance(const SearchConditionInstance& _instance)
+void SearchCondition::SetInstance(const SearchConditionInstanceNew& _instance)
 {
     m_instance = _instance;
     m_instanceHasBeenSet = true;

@@ -41,7 +41,8 @@ RuleGroup::RuleGroup() :
     m_instanceIdHasBeenSet(false),
     m_createTimeHasBeenSet(false),
     m_strategyConfigHasBeenSet(false),
-    m_subscribeConfigHasBeenSet(false)
+    m_subscribeConfigHasBeenSet(false),
+    m_dsEnvTypeHasBeenSet(false)
 {
 }
 
@@ -274,6 +275,16 @@ CoreInternalOutcome RuleGroup::Deserialize(const rapidjson::Value &value)
         m_subscribeConfigHasBeenSet = true;
     }
 
+    if (value.HasMember("DsEnvType") && !value["DsEnvType"].IsNull())
+    {
+        if (!value["DsEnvType"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `RuleGroup.DsEnvType` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_dsEnvType = value["DsEnvType"].GetInt64();
+        m_dsEnvTypeHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -449,6 +460,14 @@ void RuleGroup::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Alloc
         string key = "SubscribeConfig";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_subscribeConfig, allocator);
+    }
+
+    if (m_dsEnvTypeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "DsEnvType";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_dsEnvType, allocator);
     }
 
 }
@@ -788,5 +807,21 @@ void RuleGroup::SetSubscribeConfig(const bool& _subscribeConfig)
 bool RuleGroup::SubscribeConfigHasBeenSet() const
 {
     return m_subscribeConfigHasBeenSet;
+}
+
+int64_t RuleGroup::GetDsEnvType() const
+{
+    return m_dsEnvType;
+}
+
+void RuleGroup::SetDsEnvType(const int64_t& _dsEnvType)
+{
+    m_dsEnvType = _dsEnvType;
+    m_dsEnvTypeHasBeenSet = true;
+}
+
+bool RuleGroup::DsEnvTypeHasBeenSet() const
+{
+    return m_dsEnvTypeHasBeenSet;
 }
 

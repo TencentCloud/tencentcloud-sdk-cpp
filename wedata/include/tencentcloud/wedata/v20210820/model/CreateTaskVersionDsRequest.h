@@ -190,6 +190,27 @@ namespace TencentCloud
                      */
                     bool AlarmRecipientTypesHasBeenSet() const;
 
+                    /**
+                     * 获取是否需要校验循环依赖，默认为 true，如果使用了 CheckTaskCycleLink 和 CheckTaskCycleConfiguration 两个接口校验成功可以传 false，后台服务器不再做校验
+                     * @return EnableCheckTaskCycleLink 是否需要校验循环依赖，默认为 true，如果使用了 CheckTaskCycleLink 和 CheckTaskCycleConfiguration 两个接口校验成功可以传 false，后台服务器不再做校验
+                     * 
+                     */
+                    bool GetEnableCheckTaskCycleLink() const;
+
+                    /**
+                     * 设置是否需要校验循环依赖，默认为 true，如果使用了 CheckTaskCycleLink 和 CheckTaskCycleConfiguration 两个接口校验成功可以传 false，后台服务器不再做校验
+                     * @param _enableCheckTaskCycleLink 是否需要校验循环依赖，默认为 true，如果使用了 CheckTaskCycleLink 和 CheckTaskCycleConfiguration 两个接口校验成功可以传 false，后台服务器不再做校验
+                     * 
+                     */
+                    void SetEnableCheckTaskCycleLink(const bool& _enableCheckTaskCycleLink);
+
+                    /**
+                     * 判断参数 EnableCheckTaskCycleLink 是否已赋值
+                     * @return EnableCheckTaskCycleLink 是否已赋值
+                     * 
+                     */
+                    bool EnableCheckTaskCycleLinkHasBeenSet() const;
+
                 private:
 
                     /**
@@ -233,6 +254,12 @@ namespace TencentCloud
                      */
                     std::string m_alarmRecipientTypes;
                     bool m_alarmRecipientTypesHasBeenSet;
+
+                    /**
+                     * 是否需要校验循环依赖，默认为 true，如果使用了 CheckTaskCycleLink 和 CheckTaskCycleConfiguration 两个接口校验成功可以传 false，后台服务器不再做校验
+                     */
+                    bool m_enableCheckTaskCycleLink;
+                    bool m_enableCheckTaskCycleLinkHasBeenSet;
 
                 };
             }

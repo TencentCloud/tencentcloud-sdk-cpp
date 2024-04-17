@@ -127,15 +127,23 @@ namespace TencentCloud
                     bool TaskIdHasBeenSet() const;
 
                     /**
-                     * 获取 classification:分类展示  catalog:目录展示
-                     * @return DisplayType  classification:分类展示  catalog:目录展示
+                     * 获取任务展示形式, 示例取值
+-    classification:分类展示
+-    catalog:目录展示
+                     * @return DisplayType 任务展示形式, 示例取值
+-    classification:分类展示
+-    catalog:目录展示
                      * 
                      */
                     std::string GetDisplayType() const;
 
                     /**
-                     * 设置 classification:分类展示  catalog:目录展示
-                     * @param _displayType  classification:分类展示  catalog:目录展示
+                     * 设置任务展示形式, 示例取值
+-    classification:分类展示
+-    catalog:目录展示
+                     * @param _displayType 任务展示形式, 示例取值
+-    classification:分类展示
+-    catalog:目录展示
                      * 
                      */
                     void SetDisplayType(const std::string& _displayType);
@@ -174,7 +182,9 @@ namespace TencentCloud
                     bool m_taskIdHasBeenSet;
 
                     /**
-                     *  classification:分类展示  catalog:目录展示
+                     * 任务展示形式, 示例取值
+-    classification:分类展示
+-    catalog:目录展示
                      */
                     std::string m_displayType;
                     bool m_displayTypeHasBeenSet;

@@ -28,7 +28,8 @@ CreateDomainRequest::CreateDomainRequest() :
     m_certificateIdHasBeenSet(false),
     m_clientCertificateIdHasBeenSet(false),
     m_polyClientCertificateIdsHasBeenSet(false),
-    m_http3SupportedHasBeenSet(false)
+    m_http3SupportedHasBeenSet(false),
+    m_isDefaultServerHasBeenSet(false)
 {
 }
 
@@ -90,6 +91,14 @@ string CreateDomainRequest::ToJsonString() const
         string key = "Http3Supported";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_http3Supported, allocator);
+    }
+
+    if (m_isDefaultServerHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "IsDefaultServer";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_isDefaultServer, allocator);
     }
 
 
@@ -194,6 +203,22 @@ void CreateDomainRequest::SetHttp3Supported(const int64_t& _http3Supported)
 bool CreateDomainRequest::Http3SupportedHasBeenSet() const
 {
     return m_http3SupportedHasBeenSet;
+}
+
+bool CreateDomainRequest::GetIsDefaultServer() const
+{
+    return m_isDefaultServer;
+}
+
+void CreateDomainRequest::SetIsDefaultServer(const bool& _isDefaultServer)
+{
+    m_isDefaultServer = _isDefaultServer;
+    m_isDefaultServerHasBeenSet = true;
+}
+
+bool CreateDomainRequest::IsDefaultServerHasBeenSet() const
+{
+    return m_isDefaultServerHasBeenSet;
 }
 
 

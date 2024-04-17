@@ -47,6 +47,7 @@ set(ess_public_header_model
   include/tencentcloud/ess/v20201111/model/DescribeThirdPartyAuthCodeResponse.h
   include/tencentcloud/ess/v20201111/model/HasAuthUser.h
   include/tencentcloud/ess/v20201111/model/DisableUserAutoSignResponse.h
+  include/tencentcloud/ess/v20201111/model/OrgBillSummary.h
   include/tencentcloud/ess/v20201111/model/ModifyExtendedServiceRequest.h
   include/tencentcloud/ess/v20201111/model/CancelUserAutoSignEnableUrlResponse.h
   include/tencentcloud/ess/v20201111/model/BindEmployeeUserIdWithClientOpenIdResponse.h
@@ -175,6 +176,8 @@ set(ess_public_header_model
   include/tencentcloud/ess/v20201111/model/Recipient.h
   include/tencentcloud/ess/v20201111/model/DescribeFlowEvidenceReportRequest.h
   include/tencentcloud/ess/v20201111/model/FailedCreateRoleData.h
+  include/tencentcloud/ess/v20201111/model/DescribeBillUsageRequest.h
+  include/tencentcloud/ess/v20201111/model/DescribeBillUsageResponse.h
   include/tencentcloud/ess/v20201111/model/ApproverInfo.h
   include/tencentcloud/ess/v20201111/model/CreateFlowSignReviewResponse.h
   include/tencentcloud/ess/v20201111/model/ModifyIntegrationDepartmentRequest.h
@@ -187,6 +190,7 @@ set(ess_public_header_model
   include/tencentcloud/ess/v20201111/model/CreateBatchOrganizationRegistrationTasksRequest.h
   include/tencentcloud/ess/v20201111/model/FailedCreateStaffData.h
   include/tencentcloud/ess/v20201111/model/CreateExtendedServiceAuthInfosResponse.h
+  include/tencentcloud/ess/v20201111/model/SubOrgBillUsage.h
   include/tencentcloud/ess/v20201111/model/ApproverRestriction.h
   include/tencentcloud/ess/v20201111/model/CreateWebThemeConfigRequest.h
   include/tencentcloud/ess/v20201111/model/ApproverItem.h
@@ -195,6 +199,7 @@ set(ess_public_header_model
   include/tencentcloud/ess/v20201111/model/CreatePrepareFlowResponse.h
   include/tencentcloud/ess/v20201111/model/ModifyIntegrationDepartmentResponse.h
   include/tencentcloud/ess/v20201111/model/GetTaskResultApiResponse.h
+  include/tencentcloud/ess/v20201111/model/SubOrgBillSummary.h
   include/tencentcloud/ess/v20201111/model/CancelMultiFlowSignQRCodeRequest.h
   include/tencentcloud/ess/v20201111/model/DeleteIntegrationDepartmentRequest.h
   include/tencentcloud/ess/v20201111/model/UserFlowType.h
@@ -290,6 +295,7 @@ set(ess_src
   src/v20201111/model/DescribeThirdPartyAuthCodeResponse.cpp
   src/v20201111/model/HasAuthUser.cpp
   src/v20201111/model/DisableUserAutoSignResponse.cpp
+  src/v20201111/model/OrgBillSummary.cpp
   src/v20201111/model/ModifyExtendedServiceRequest.cpp
   src/v20201111/model/CancelUserAutoSignEnableUrlResponse.cpp
   src/v20201111/model/BindEmployeeUserIdWithClientOpenIdResponse.cpp
@@ -418,6 +424,8 @@ set(ess_src
   src/v20201111/model/Recipient.cpp
   src/v20201111/model/DescribeFlowEvidenceReportRequest.cpp
   src/v20201111/model/FailedCreateRoleData.cpp
+  src/v20201111/model/DescribeBillUsageRequest.cpp
+  src/v20201111/model/DescribeBillUsageResponse.cpp
   src/v20201111/model/ApproverInfo.cpp
   src/v20201111/model/CreateFlowSignReviewResponse.cpp
   src/v20201111/model/ModifyIntegrationDepartmentRequest.cpp
@@ -430,6 +438,7 @@ set(ess_src
   src/v20201111/model/CreateBatchOrganizationRegistrationTasksRequest.cpp
   src/v20201111/model/FailedCreateStaffData.cpp
   src/v20201111/model/CreateExtendedServiceAuthInfosResponse.cpp
+  src/v20201111/model/SubOrgBillUsage.cpp
   src/v20201111/model/ApproverRestriction.cpp
   src/v20201111/model/CreateWebThemeConfigRequest.cpp
   src/v20201111/model/ApproverItem.cpp
@@ -438,6 +447,7 @@ set(ess_src
   src/v20201111/model/CreatePrepareFlowResponse.cpp
   src/v20201111/model/ModifyIntegrationDepartmentResponse.cpp
   src/v20201111/model/GetTaskResultApiResponse.cpp
+  src/v20201111/model/SubOrgBillSummary.cpp
   src/v20201111/model/CancelMultiFlowSignQRCodeRequest.cpp
   src/v20201111/model/DeleteIntegrationDepartmentRequest.cpp
   src/v20201111/model/UserFlowType.cpp

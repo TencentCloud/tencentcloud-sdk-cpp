@@ -44,9 +44,9 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取1
+                     * 获取版本
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return Data 1
+                     * @return Data 版本
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -62,7 +62,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 1
+                     * 版本
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_data;

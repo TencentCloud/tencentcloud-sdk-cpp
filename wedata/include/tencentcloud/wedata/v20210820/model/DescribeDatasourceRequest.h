@@ -63,6 +63,27 @@ namespace TencentCloud
                      */
                     bool IdHasBeenSet() const;
 
+                    /**
+                     * 获取production：生产，development开发
+                     * @return Env production：生产，development开发
+                     * 
+                     */
+                    std::string GetEnv() const;
+
+                    /**
+                     * 设置production：生产，development开发
+                     * @param _env production：生产，development开发
+                     * 
+                     */
+                    void SetEnv(const std::string& _env);
+
+                    /**
+                     * 判断参数 Env 是否已赋值
+                     * @return Env 是否已赋值
+                     * 
+                     */
+                    bool EnvHasBeenSet() const;
+
                 private:
 
                     /**
@@ -70,6 +91,12 @@ namespace TencentCloud
                      */
                     uint64_t m_id;
                     bool m_idHasBeenSet;
+
+                    /**
+                     * production：生产，development开发
+                     */
+                    std::string m_env;
+                    bool m_envHasBeenSet;
 
                 };
             }

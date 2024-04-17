@@ -39,6 +39,7 @@ set(eb_public_header_model
   include/tencentcloud/eb/v20210416/model/GetEventBusRequest.h
   include/tencentcloud/eb/v20210416/model/UpdateConnectionRequest.h
   include/tencentcloud/eb/v20210416/model/OutputStructParam.h
+  include/tencentcloud/eb/v20210416/model/Tag.h
   include/tencentcloud/eb/v20210416/model/GetRuleRequest.h
   include/tencentcloud/eb/v20210416/model/LogFilter.h
   include/tencentcloud/eb/v20210416/model/APIGWParams.h
@@ -139,6 +140,7 @@ set(eb_src
   src/v20210416/model/GetEventBusRequest.cpp
   src/v20210416/model/UpdateConnectionRequest.cpp
   src/v20210416/model/OutputStructParam.cpp
+  src/v20210416/model/Tag.cpp
   src/v20210416/model/GetRuleRequest.cpp
   src/v20210416/model/LogFilter.cpp
   src/v20210416/model/APIGWParams.cpp

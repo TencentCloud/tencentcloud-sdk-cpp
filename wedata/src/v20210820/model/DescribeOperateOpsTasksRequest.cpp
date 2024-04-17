@@ -44,7 +44,8 @@ DescribeOperateOpsTasksRequest::DescribeOperateOpsTasksRequest() :
     m_targetServiceTypeHasBeenSet(false),
     m_alarmTypeHasBeenSet(false),
     m_executorGroupIdListHasBeenSet(false),
-    m_taskTagsHasBeenSet(false)
+    m_taskTagsHasBeenSet(false),
+    m_keyWordHasBeenSet(false)
 {
 }
 
@@ -236,6 +237,14 @@ string DescribeOperateOpsTasksRequest::ToJsonString() const
             d[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
             (*itr).ToJsonObject(d[key.c_str()][i], allocator);
         }
+    }
+
+    if (m_keyWordHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "KeyWord";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_keyWord.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -596,6 +605,22 @@ void DescribeOperateOpsTasksRequest::SetTaskTags(const vector<TaskTag>& _taskTag
 bool DescribeOperateOpsTasksRequest::TaskTagsHasBeenSet() const
 {
     return m_taskTagsHasBeenSet;
+}
+
+string DescribeOperateOpsTasksRequest::GetKeyWord() const
+{
+    return m_keyWord;
+}
+
+void DescribeOperateOpsTasksRequest::SetKeyWord(const string& _keyWord)
+{
+    m_keyWord = _keyWord;
+    m_keyWordHasBeenSet = true;
+}
+
+bool DescribeOperateOpsTasksRequest::KeyWordHasBeenSet() const
+{
+    return m_keyWordHasBeenSet;
 }
 
 

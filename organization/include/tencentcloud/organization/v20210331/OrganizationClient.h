@@ -33,6 +33,8 @@
 #include <tencentcloud/organization/v20210331/model/AddShareUnitMembersResponse.h>
 #include <tencentcloud/organization/v20210331/model/AddShareUnitResourcesRequest.h>
 #include <tencentcloud/organization/v20210331/model/AddShareUnitResourcesResponse.h>
+#include <tencentcloud/organization/v20210331/model/AttachPolicyRequest.h>
+#include <tencentcloud/organization/v20210331/model/AttachPolicyResponse.h>
 #include <tencentcloud/organization/v20210331/model/BindOrganizationMemberAuthAccountRequest.h>
 #include <tencentcloud/organization/v20210331/model/BindOrganizationMemberAuthAccountResponse.h>
 #include <tencentcloud/organization/v20210331/model/CancelOrganizationMemberAuthAccountRequest.h>
@@ -51,6 +53,8 @@
 #include <tencentcloud/organization/v20210331/model/CreateOrganizationMemberPolicyResponse.h>
 #include <tencentcloud/organization/v20210331/model/CreateOrganizationMembersPolicyRequest.h>
 #include <tencentcloud/organization/v20210331/model/CreateOrganizationMembersPolicyResponse.h>
+#include <tencentcloud/organization/v20210331/model/CreatePolicyRequest.h>
+#include <tencentcloud/organization/v20210331/model/CreatePolicyResponse.h>
 #include <tencentcloud/organization/v20210331/model/DeleteAccountRequest.h>
 #include <tencentcloud/organization/v20210331/model/DeleteAccountResponse.h>
 #include <tencentcloud/organization/v20210331/model/DeleteOrganizationRequest.h>
@@ -65,6 +69,8 @@
 #include <tencentcloud/organization/v20210331/model/DeleteOrganizationMembersPolicyResponse.h>
 #include <tencentcloud/organization/v20210331/model/DeleteOrganizationNodesRequest.h>
 #include <tencentcloud/organization/v20210331/model/DeleteOrganizationNodesResponse.h>
+#include <tencentcloud/organization/v20210331/model/DeletePolicyRequest.h>
+#include <tencentcloud/organization/v20210331/model/DeletePolicyResponse.h>
 #include <tencentcloud/organization/v20210331/model/DeleteShareUnitRequest.h>
 #include <tencentcloud/organization/v20210331/model/DeleteShareUnitResponse.h>
 #include <tencentcloud/organization/v20210331/model/DeleteShareUnitMembersRequest.h>
@@ -93,6 +99,10 @@
 #include <tencentcloud/organization/v20210331/model/DescribeOrganizationMembersResponse.h>
 #include <tencentcloud/organization/v20210331/model/DescribeOrganizationNodesRequest.h>
 #include <tencentcloud/organization/v20210331/model/DescribeOrganizationNodesResponse.h>
+#include <tencentcloud/organization/v20210331/model/DescribePolicyRequest.h>
+#include <tencentcloud/organization/v20210331/model/DescribePolicyResponse.h>
+#include <tencentcloud/organization/v20210331/model/DescribePolicyConfigRequest.h>
+#include <tencentcloud/organization/v20210331/model/DescribePolicyConfigResponse.h>
 #include <tencentcloud/organization/v20210331/model/DescribeShareAreasRequest.h>
 #include <tencentcloud/organization/v20210331/model/DescribeShareAreasResponse.h>
 #include <tencentcloud/organization/v20210331/model/DescribeShareUnitMembersRequest.h>
@@ -101,8 +111,20 @@
 #include <tencentcloud/organization/v20210331/model/DescribeShareUnitResourcesResponse.h>
 #include <tencentcloud/organization/v20210331/model/DescribeShareUnitsRequest.h>
 #include <tencentcloud/organization/v20210331/model/DescribeShareUnitsResponse.h>
+#include <tencentcloud/organization/v20210331/model/DetachPolicyRequest.h>
+#include <tencentcloud/organization/v20210331/model/DetachPolicyResponse.h>
+#include <tencentcloud/organization/v20210331/model/DisablePolicyTypeRequest.h>
+#include <tencentcloud/organization/v20210331/model/DisablePolicyTypeResponse.h>
+#include <tencentcloud/organization/v20210331/model/EnablePolicyTypeRequest.h>
+#include <tencentcloud/organization/v20210331/model/EnablePolicyTypeResponse.h>
 #include <tencentcloud/organization/v20210331/model/ListOrganizationIdentityRequest.h>
 #include <tencentcloud/organization/v20210331/model/ListOrganizationIdentityResponse.h>
+#include <tencentcloud/organization/v20210331/model/ListPoliciesRequest.h>
+#include <tencentcloud/organization/v20210331/model/ListPoliciesResponse.h>
+#include <tencentcloud/organization/v20210331/model/ListPoliciesForTargetRequest.h>
+#include <tencentcloud/organization/v20210331/model/ListPoliciesForTargetResponse.h>
+#include <tencentcloud/organization/v20210331/model/ListTargetsForPolicyRequest.h>
+#include <tencentcloud/organization/v20210331/model/ListTargetsForPolicyResponse.h>
 #include <tencentcloud/organization/v20210331/model/MoveOrganizationNodeMembersRequest.h>
 #include <tencentcloud/organization/v20210331/model/MoveOrganizationNodeMembersResponse.h>
 #include <tencentcloud/organization/v20210331/model/QuitOrganizationRequest.h>
@@ -115,6 +137,8 @@
 #include <tencentcloud/organization/v20210331/model/UpdateOrganizationMemberEmailBindResponse.h>
 #include <tencentcloud/organization/v20210331/model/UpdateOrganizationNodeRequest.h>
 #include <tencentcloud/organization/v20210331/model/UpdateOrganizationNodeResponse.h>
+#include <tencentcloud/organization/v20210331/model/UpdatePolicyRequest.h>
+#include <tencentcloud/organization/v20210331/model/UpdatePolicyResponse.h>
 #include <tencentcloud/organization/v20210331/model/UpdateShareUnitRequest.h>
 #include <tencentcloud/organization/v20210331/model/UpdateShareUnitResponse.h>
 
@@ -146,6 +170,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::AddShareUnitResourcesResponse> AddShareUnitResourcesOutcome;
                 typedef std::future<AddShareUnitResourcesOutcome> AddShareUnitResourcesOutcomeCallable;
                 typedef std::function<void(const OrganizationClient*, const Model::AddShareUnitResourcesRequest&, AddShareUnitResourcesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> AddShareUnitResourcesAsyncHandler;
+                typedef Outcome<Core::Error, Model::AttachPolicyResponse> AttachPolicyOutcome;
+                typedef std::future<AttachPolicyOutcome> AttachPolicyOutcomeCallable;
+                typedef std::function<void(const OrganizationClient*, const Model::AttachPolicyRequest&, AttachPolicyOutcome, const std::shared_ptr<const AsyncCallerContext>&)> AttachPolicyAsyncHandler;
                 typedef Outcome<Core::Error, Model::BindOrganizationMemberAuthAccountResponse> BindOrganizationMemberAuthAccountOutcome;
                 typedef std::future<BindOrganizationMemberAuthAccountOutcome> BindOrganizationMemberAuthAccountOutcomeCallable;
                 typedef std::function<void(const OrganizationClient*, const Model::BindOrganizationMemberAuthAccountRequest&, BindOrganizationMemberAuthAccountOutcome, const std::shared_ptr<const AsyncCallerContext>&)> BindOrganizationMemberAuthAccountAsyncHandler;
@@ -173,6 +200,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::CreateOrganizationMembersPolicyResponse> CreateOrganizationMembersPolicyOutcome;
                 typedef std::future<CreateOrganizationMembersPolicyOutcome> CreateOrganizationMembersPolicyOutcomeCallable;
                 typedef std::function<void(const OrganizationClient*, const Model::CreateOrganizationMembersPolicyRequest&, CreateOrganizationMembersPolicyOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateOrganizationMembersPolicyAsyncHandler;
+                typedef Outcome<Core::Error, Model::CreatePolicyResponse> CreatePolicyOutcome;
+                typedef std::future<CreatePolicyOutcome> CreatePolicyOutcomeCallable;
+                typedef std::function<void(const OrganizationClient*, const Model::CreatePolicyRequest&, CreatePolicyOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreatePolicyAsyncHandler;
                 typedef Outcome<Core::Error, Model::DeleteAccountResponse> DeleteAccountOutcome;
                 typedef std::future<DeleteAccountOutcome> DeleteAccountOutcomeCallable;
                 typedef std::function<void(const OrganizationClient*, const Model::DeleteAccountRequest&, DeleteAccountOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteAccountAsyncHandler;
@@ -194,6 +224,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DeleteOrganizationNodesResponse> DeleteOrganizationNodesOutcome;
                 typedef std::future<DeleteOrganizationNodesOutcome> DeleteOrganizationNodesOutcomeCallable;
                 typedef std::function<void(const OrganizationClient*, const Model::DeleteOrganizationNodesRequest&, DeleteOrganizationNodesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteOrganizationNodesAsyncHandler;
+                typedef Outcome<Core::Error, Model::DeletePolicyResponse> DeletePolicyOutcome;
+                typedef std::future<DeletePolicyOutcome> DeletePolicyOutcomeCallable;
+                typedef std::function<void(const OrganizationClient*, const Model::DeletePolicyRequest&, DeletePolicyOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeletePolicyAsyncHandler;
                 typedef Outcome<Core::Error, Model::DeleteShareUnitResponse> DeleteShareUnitOutcome;
                 typedef std::future<DeleteShareUnitOutcome> DeleteShareUnitOutcomeCallable;
                 typedef std::function<void(const OrganizationClient*, const Model::DeleteShareUnitRequest&, DeleteShareUnitOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteShareUnitAsyncHandler;
@@ -236,6 +269,12 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeOrganizationNodesResponse> DescribeOrganizationNodesOutcome;
                 typedef std::future<DescribeOrganizationNodesOutcome> DescribeOrganizationNodesOutcomeCallable;
                 typedef std::function<void(const OrganizationClient*, const Model::DescribeOrganizationNodesRequest&, DescribeOrganizationNodesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeOrganizationNodesAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribePolicyResponse> DescribePolicyOutcome;
+                typedef std::future<DescribePolicyOutcome> DescribePolicyOutcomeCallable;
+                typedef std::function<void(const OrganizationClient*, const Model::DescribePolicyRequest&, DescribePolicyOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribePolicyAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribePolicyConfigResponse> DescribePolicyConfigOutcome;
+                typedef std::future<DescribePolicyConfigOutcome> DescribePolicyConfigOutcomeCallable;
+                typedef std::function<void(const OrganizationClient*, const Model::DescribePolicyConfigRequest&, DescribePolicyConfigOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribePolicyConfigAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeShareAreasResponse> DescribeShareAreasOutcome;
                 typedef std::future<DescribeShareAreasOutcome> DescribeShareAreasOutcomeCallable;
                 typedef std::function<void(const OrganizationClient*, const Model::DescribeShareAreasRequest&, DescribeShareAreasOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeShareAreasAsyncHandler;
@@ -248,9 +287,27 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeShareUnitsResponse> DescribeShareUnitsOutcome;
                 typedef std::future<DescribeShareUnitsOutcome> DescribeShareUnitsOutcomeCallable;
                 typedef std::function<void(const OrganizationClient*, const Model::DescribeShareUnitsRequest&, DescribeShareUnitsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeShareUnitsAsyncHandler;
+                typedef Outcome<Core::Error, Model::DetachPolicyResponse> DetachPolicyOutcome;
+                typedef std::future<DetachPolicyOutcome> DetachPolicyOutcomeCallable;
+                typedef std::function<void(const OrganizationClient*, const Model::DetachPolicyRequest&, DetachPolicyOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DetachPolicyAsyncHandler;
+                typedef Outcome<Core::Error, Model::DisablePolicyTypeResponse> DisablePolicyTypeOutcome;
+                typedef std::future<DisablePolicyTypeOutcome> DisablePolicyTypeOutcomeCallable;
+                typedef std::function<void(const OrganizationClient*, const Model::DisablePolicyTypeRequest&, DisablePolicyTypeOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DisablePolicyTypeAsyncHandler;
+                typedef Outcome<Core::Error, Model::EnablePolicyTypeResponse> EnablePolicyTypeOutcome;
+                typedef std::future<EnablePolicyTypeOutcome> EnablePolicyTypeOutcomeCallable;
+                typedef std::function<void(const OrganizationClient*, const Model::EnablePolicyTypeRequest&, EnablePolicyTypeOutcome, const std::shared_ptr<const AsyncCallerContext>&)> EnablePolicyTypeAsyncHandler;
                 typedef Outcome<Core::Error, Model::ListOrganizationIdentityResponse> ListOrganizationIdentityOutcome;
                 typedef std::future<ListOrganizationIdentityOutcome> ListOrganizationIdentityOutcomeCallable;
                 typedef std::function<void(const OrganizationClient*, const Model::ListOrganizationIdentityRequest&, ListOrganizationIdentityOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ListOrganizationIdentityAsyncHandler;
+                typedef Outcome<Core::Error, Model::ListPoliciesResponse> ListPoliciesOutcome;
+                typedef std::future<ListPoliciesOutcome> ListPoliciesOutcomeCallable;
+                typedef std::function<void(const OrganizationClient*, const Model::ListPoliciesRequest&, ListPoliciesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ListPoliciesAsyncHandler;
+                typedef Outcome<Core::Error, Model::ListPoliciesForTargetResponse> ListPoliciesForTargetOutcome;
+                typedef std::future<ListPoliciesForTargetOutcome> ListPoliciesForTargetOutcomeCallable;
+                typedef std::function<void(const OrganizationClient*, const Model::ListPoliciesForTargetRequest&, ListPoliciesForTargetOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ListPoliciesForTargetAsyncHandler;
+                typedef Outcome<Core::Error, Model::ListTargetsForPolicyResponse> ListTargetsForPolicyOutcome;
+                typedef std::future<ListTargetsForPolicyOutcome> ListTargetsForPolicyOutcomeCallable;
+                typedef std::function<void(const OrganizationClient*, const Model::ListTargetsForPolicyRequest&, ListTargetsForPolicyOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ListTargetsForPolicyAsyncHandler;
                 typedef Outcome<Core::Error, Model::MoveOrganizationNodeMembersResponse> MoveOrganizationNodeMembersOutcome;
                 typedef std::future<MoveOrganizationNodeMembersOutcome> MoveOrganizationNodeMembersOutcomeCallable;
                 typedef std::function<void(const OrganizationClient*, const Model::MoveOrganizationNodeMembersRequest&, MoveOrganizationNodeMembersOutcome, const std::shared_ptr<const AsyncCallerContext>&)> MoveOrganizationNodeMembersAsyncHandler;
@@ -269,6 +326,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::UpdateOrganizationNodeResponse> UpdateOrganizationNodeOutcome;
                 typedef std::future<UpdateOrganizationNodeOutcome> UpdateOrganizationNodeOutcomeCallable;
                 typedef std::function<void(const OrganizationClient*, const Model::UpdateOrganizationNodeRequest&, UpdateOrganizationNodeOutcome, const std::shared_ptr<const AsyncCallerContext>&)> UpdateOrganizationNodeAsyncHandler;
+                typedef Outcome<Core::Error, Model::UpdatePolicyResponse> UpdatePolicyOutcome;
+                typedef std::future<UpdatePolicyOutcome> UpdatePolicyOutcomeCallable;
+                typedef std::function<void(const OrganizationClient*, const Model::UpdatePolicyRequest&, UpdatePolicyOutcome, const std::shared_ptr<const AsyncCallerContext>&)> UpdatePolicyAsyncHandler;
                 typedef Outcome<Core::Error, Model::UpdateShareUnitResponse> UpdateShareUnitOutcome;
                 typedef std::future<UpdateShareUnitOutcome> UpdateShareUnitOutcomeCallable;
                 typedef std::function<void(const OrganizationClient*, const Model::UpdateShareUnitRequest&, UpdateShareUnitOutcome, const std::shared_ptr<const AsyncCallerContext>&)> UpdateShareUnitAsyncHandler;
@@ -319,6 +379,15 @@ namespace TencentCloud
                 AddShareUnitResourcesOutcome AddShareUnitResources(const Model::AddShareUnitResourcesRequest &request);
                 void AddShareUnitResourcesAsync(const Model::AddShareUnitResourcesRequest& request, const AddShareUnitResourcesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 AddShareUnitResourcesOutcomeCallable AddShareUnitResourcesCallable(const Model::AddShareUnitResourcesRequest& request);
+
+                /**
+                 *绑定策略
+                 * @param req AttachPolicyRequest
+                 * @return AttachPolicyOutcome
+                 */
+                AttachPolicyOutcome AttachPolicy(const Model::AttachPolicyRequest &request);
+                void AttachPolicyAsync(const Model::AttachPolicyRequest& request, const AttachPolicyAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                AttachPolicyOutcomeCallable AttachPolicyCallable(const Model::AttachPolicyRequest& request);
 
                 /**
                  *绑定组织成员和组织管理员子账号的授权关系
@@ -402,6 +471,15 @@ namespace TencentCloud
                 CreateOrganizationMembersPolicyOutcomeCallable CreateOrganizationMembersPolicyCallable(const Model::CreateOrganizationMembersPolicyRequest& request);
 
                 /**
+                 *创建一个特殊类型的策略，你可以关联到企业组织Root节点、企业单元或者企业的成员账号。
+                 * @param req CreatePolicyRequest
+                 * @return CreatePolicyOutcome
+                 */
+                CreatePolicyOutcome CreatePolicy(const Model::CreatePolicyRequest &request);
+                void CreatePolicyAsync(const Model::CreatePolicyRequest& request, const CreatePolicyAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                CreatePolicyOutcomeCallable CreatePolicyCallable(const Model::CreatePolicyRequest& request);
+
+                /**
                  *删除成员账号
                  * @param req DeleteAccountRequest
                  * @return DeleteAccountOutcome
@@ -463,6 +541,15 @@ namespace TencentCloud
                 DeleteOrganizationNodesOutcome DeleteOrganizationNodes(const Model::DeleteOrganizationNodesRequest &request);
                 void DeleteOrganizationNodesAsync(const Model::DeleteOrganizationNodesRequest& request, const DeleteOrganizationNodesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DeleteOrganizationNodesOutcomeCallable DeleteOrganizationNodesCallable(const Model::DeleteOrganizationNodesRequest& request);
+
+                /**
+                 *删除策略
+                 * @param req DeletePolicyRequest
+                 * @return DeletePolicyOutcome
+                 */
+                DeletePolicyOutcome DeletePolicy(const Model::DeletePolicyRequest &request);
+                void DeletePolicyAsync(const Model::DeletePolicyRequest& request, const DeletePolicyAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DeletePolicyOutcomeCallable DeletePolicyCallable(const Model::DeletePolicyRequest& request);
 
                 /**
                  *删除共享单元。
@@ -591,6 +678,24 @@ namespace TencentCloud
                 DescribeOrganizationNodesOutcomeCallable DescribeOrganizationNodesCallable(const Model::DescribeOrganizationNodesRequest& request);
 
                 /**
+                 *本接口（DescribePolicy）可用于查询查看策略详情。
+                 * @param req DescribePolicyRequest
+                 * @return DescribePolicyOutcome
+                 */
+                DescribePolicyOutcome DescribePolicy(const Model::DescribePolicyRequest &request);
+                void DescribePolicyAsync(const Model::DescribePolicyRequest& request, const DescribePolicyAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribePolicyOutcomeCallable DescribePolicyCallable(const Model::DescribePolicyRequest& request);
+
+                /**
+                 *本接口（DescribePolicyConfig）可用于查询企业组织策略配置
+                 * @param req DescribePolicyConfigRequest
+                 * @return DescribePolicyConfigOutcome
+                 */
+                DescribePolicyConfigOutcome DescribePolicyConfig(const Model::DescribePolicyConfigRequest &request);
+                void DescribePolicyConfigAsync(const Model::DescribePolicyConfigRequest& request, const DescribePolicyConfigAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribePolicyConfigOutcomeCallable DescribePolicyConfigCallable(const Model::DescribePolicyConfigRequest& request);
+
+                /**
                  *获取可共享地域列表
                  * @param req DescribeShareAreasRequest
                  * @return DescribeShareAreasOutcome
@@ -627,6 +732,33 @@ namespace TencentCloud
                 DescribeShareUnitsOutcomeCallable DescribeShareUnitsCallable(const Model::DescribeShareUnitsRequest& request);
 
                 /**
+                 *解绑策略
+                 * @param req DetachPolicyRequest
+                 * @return DetachPolicyOutcome
+                 */
+                DetachPolicyOutcome DetachPolicy(const Model::DetachPolicyRequest &request);
+                void DetachPolicyAsync(const Model::DetachPolicyRequest& request, const DetachPolicyAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DetachPolicyOutcomeCallable DetachPolicyCallable(const Model::DetachPolicyRequest& request);
+
+                /**
+                 *禁用策略类型
+                 * @param req DisablePolicyTypeRequest
+                 * @return DisablePolicyTypeOutcome
+                 */
+                DisablePolicyTypeOutcome DisablePolicyType(const Model::DisablePolicyTypeRequest &request);
+                void DisablePolicyTypeAsync(const Model::DisablePolicyTypeRequest& request, const DisablePolicyTypeAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DisablePolicyTypeOutcomeCallable DisablePolicyTypeCallable(const Model::DisablePolicyTypeRequest& request);
+
+                /**
+                 *启用策略类型
+                 * @param req EnablePolicyTypeRequest
+                 * @return EnablePolicyTypeOutcome
+                 */
+                EnablePolicyTypeOutcome EnablePolicyType(const Model::EnablePolicyTypeRequest &request);
+                void EnablePolicyTypeAsync(const Model::EnablePolicyTypeRequest& request, const EnablePolicyTypeAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                EnablePolicyTypeOutcomeCallable EnablePolicyTypeCallable(const Model::EnablePolicyTypeRequest& request);
+
+                /**
                  *获取组织成员访问身份列表
                  * @param req ListOrganizationIdentityRequest
                  * @return ListOrganizationIdentityOutcome
@@ -634,6 +766,33 @@ namespace TencentCloud
                 ListOrganizationIdentityOutcome ListOrganizationIdentity(const Model::ListOrganizationIdentityRequest &request);
                 void ListOrganizationIdentityAsync(const Model::ListOrganizationIdentityRequest& request, const ListOrganizationIdentityAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 ListOrganizationIdentityOutcomeCallable ListOrganizationIdentityCallable(const Model::ListOrganizationIdentityRequest& request);
+
+                /**
+                 *本接口（ListPolicies）可用于查询查看策略列表数据
+                 * @param req ListPoliciesRequest
+                 * @return ListPoliciesOutcome
+                 */
+                ListPoliciesOutcome ListPolicies(const Model::ListPoliciesRequest &request);
+                void ListPoliciesAsync(const Model::ListPoliciesRequest& request, const ListPoliciesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                ListPoliciesOutcomeCallable ListPoliciesCallable(const Model::ListPoliciesRequest& request);
+
+                /**
+                 *本接口（ListPoliciesForTarget）查询目标关联的策略列表
+                 * @param req ListPoliciesForTargetRequest
+                 * @return ListPoliciesForTargetOutcome
+                 */
+                ListPoliciesForTargetOutcome ListPoliciesForTarget(const Model::ListPoliciesForTargetRequest &request);
+                void ListPoliciesForTargetAsync(const Model::ListPoliciesForTargetRequest& request, const ListPoliciesForTargetAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                ListPoliciesForTargetOutcomeCallable ListPoliciesForTargetCallable(const Model::ListPoliciesForTargetRequest& request);
+
+                /**
+                 *本接口（ListTargetsForPolicy）查询某个指定策略关联的目标列表
+                 * @param req ListTargetsForPolicyRequest
+                 * @return ListTargetsForPolicyOutcome
+                 */
+                ListTargetsForPolicyOutcome ListTargetsForPolicy(const Model::ListTargetsForPolicyRequest &request);
+                void ListTargetsForPolicyAsync(const Model::ListTargetsForPolicyRequest& request, const ListTargetsForPolicyAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                ListTargetsForPolicyOutcomeCallable ListTargetsForPolicyCallable(const Model::ListTargetsForPolicyRequest& request);
 
                 /**
                  *移动成员到指定企业组织节点
@@ -688,6 +847,15 @@ namespace TencentCloud
                 UpdateOrganizationNodeOutcome UpdateOrganizationNode(const Model::UpdateOrganizationNodeRequest &request);
                 void UpdateOrganizationNodeAsync(const Model::UpdateOrganizationNodeRequest& request, const UpdateOrganizationNodeAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 UpdateOrganizationNodeOutcomeCallable UpdateOrganizationNodeCallable(const Model::UpdateOrganizationNodeRequest& request);
+
+                /**
+                 *编辑策略
+                 * @param req UpdatePolicyRequest
+                 * @return UpdatePolicyOutcome
+                 */
+                UpdatePolicyOutcome UpdatePolicy(const Model::UpdatePolicyRequest &request);
+                void UpdatePolicyAsync(const Model::UpdatePolicyRequest& request, const UpdatePolicyAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                UpdatePolicyOutcomeCallable UpdatePolicyCallable(const Model::UpdatePolicyRequest& request);
 
                 /**
                  *更新共享单元。

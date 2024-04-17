@@ -456,15 +456,15 @@ namespace TencentCloud
                     bool SourceTaskCycleHasBeenSet() const;
 
                     /**
-                     * 获取重新指定的调度资源组ID
-                     * @return SchedulerResourceGroup 重新指定的调度资源组ID
+                     * 获取补录指定的调度资源组（ID） 为空则表示使用任务原有调度执行资源组
+                     * @return SchedulerResourceGroup 补录指定的调度资源组（ID） 为空则表示使用任务原有调度执行资源组
                      * 
                      */
                     std::string GetSchedulerResourceGroup() const;
 
                     /**
-                     * 设置重新指定的调度资源组ID
-                     * @param _schedulerResourceGroup 重新指定的调度资源组ID
+                     * 设置补录指定的调度资源组（ID） 为空则表示使用任务原有调度执行资源组
+                     * @param _schedulerResourceGroup 补录指定的调度资源组（ID） 为空则表示使用任务原有调度执行资源组
                      * 
                      */
                     void SetSchedulerResourceGroup(const std::string& _schedulerResourceGroup);
@@ -477,15 +477,15 @@ namespace TencentCloud
                     bool SchedulerResourceGroupHasBeenSet() const;
 
                     /**
-                     * 获取重新指定的集成资源组ID
-                     * @return IntegrationResourceGroup 重新指定的集成资源组ID
+                     * 获取补录指定的集成资源组（ID） 为空则表示使用任务原有集成执行资源组
+                     * @return IntegrationResourceGroup 补录指定的集成资源组（ID） 为空则表示使用任务原有集成执行资源组
                      * 
                      */
                     std::string GetIntegrationResourceGroup() const;
 
                     /**
-                     * 设置重新指定的集成资源组ID
-                     * @param _integrationResourceGroup 重新指定的集成资源组ID
+                     * 设置补录指定的集成资源组（ID） 为空则表示使用任务原有集成执行资源组
+                     * @param _integrationResourceGroup 补录指定的集成资源组（ID） 为空则表示使用任务原有集成执行资源组
                      * 
                      */
                     void SetIntegrationResourceGroup(const std::string& _integrationResourceGroup);
@@ -498,15 +498,15 @@ namespace TencentCloud
                     bool IntegrationResourceGroupHasBeenSet() const;
 
                     /**
-                     * 获取重新指定的调度资源组名称
-                     * @return SchedulerResourceGroupName 重新指定的调度资源组名称
+                     * 获取补录指定的调度资源组名称 为空则表示使用任务原有调度执行资源组
+                     * @return SchedulerResourceGroupName 补录指定的调度资源组名称 为空则表示使用任务原有调度执行资源组
                      * 
                      */
                     std::string GetSchedulerResourceGroupName() const;
 
                     /**
-                     * 设置重新指定的调度资源组名称
-                     * @param _schedulerResourceGroupName 重新指定的调度资源组名称
+                     * 设置补录指定的调度资源组名称 为空则表示使用任务原有调度执行资源组
+                     * @param _schedulerResourceGroupName 补录指定的调度资源组名称 为空则表示使用任务原有调度执行资源组
                      * 
                      */
                     void SetSchedulerResourceGroupName(const std::string& _schedulerResourceGroupName);
@@ -519,15 +519,15 @@ namespace TencentCloud
                     bool SchedulerResourceGroupNameHasBeenSet() const;
 
                     /**
-                     * 获取重新指定的集成资源组名称
-                     * @return IntegrationResourceGroupName 重新指定的集成资源组名称
+                     * 获取补录指定的集成资源组名称 为空则表示使用任务原有集成执行资源组
+                     * @return IntegrationResourceGroupName 补录指定的集成资源组名称 为空则表示使用任务原有集成执行资源组
                      * 
                      */
                     std::string GetIntegrationResourceGroupName() const;
 
                     /**
-                     * 设置重新指定的集成资源组名称
-                     * @param _integrationResourceGroupName 重新指定的集成资源组名称
+                     * 设置补录指定的集成资源组名称 为空则表示使用任务原有集成执行资源组
+                     * @param _integrationResourceGroupName 补录指定的集成资源组名称 为空则表示使用任务原有集成执行资源组
                      * 
                      */
                     void SetIntegrationResourceGroupName(const std::string& _integrationResourceGroupName);
@@ -659,25 +659,25 @@ namespace TencentCloud
                     bool m_sourceTaskCycleHasBeenSet;
 
                     /**
-                     * 重新指定的调度资源组ID
+                     * 补录指定的调度资源组（ID） 为空则表示使用任务原有调度执行资源组
                      */
                     std::string m_schedulerResourceGroup;
                     bool m_schedulerResourceGroupHasBeenSet;
 
                     /**
-                     * 重新指定的集成资源组ID
+                     * 补录指定的集成资源组（ID） 为空则表示使用任务原有集成执行资源组
                      */
                     std::string m_integrationResourceGroup;
                     bool m_integrationResourceGroupHasBeenSet;
 
                     /**
-                     * 重新指定的调度资源组名称
+                     * 补录指定的调度资源组名称 为空则表示使用任务原有调度执行资源组
                      */
                     std::string m_schedulerResourceGroupName;
                     bool m_schedulerResourceGroupNameHasBeenSet;
 
                     /**
-                     * 重新指定的集成资源组名称
+                     * 补录指定的集成资源组名称 为空则表示使用任务原有集成执行资源组
                      */
                     std::string m_integrationResourceGroupName;
                     bool m_integrationResourceGroupNameHasBeenSet;

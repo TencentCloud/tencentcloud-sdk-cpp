@@ -28,7 +28,8 @@ ModifyDomainRequest::ModifyDomainRequest() :
     m_newDomainHasBeenSet(false),
     m_certificateIdHasBeenSet(false),
     m_clientCertificateIdHasBeenSet(false),
-    m_polyClientCertificateIdsHasBeenSet(false)
+    m_polyClientCertificateIdsHasBeenSet(false),
+    m_isDefaultServerHasBeenSet(false)
 {
 }
 
@@ -90,6 +91,14 @@ string ModifyDomainRequest::ToJsonString() const
         {
             d[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
         }
+    }
+
+    if (m_isDefaultServerHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "IsDefaultServer";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_isDefaultServer, allocator);
     }
 
 
@@ -194,6 +203,22 @@ void ModifyDomainRequest::SetPolyClientCertificateIds(const vector<string>& _pol
 bool ModifyDomainRequest::PolyClientCertificateIdsHasBeenSet() const
 {
     return m_polyClientCertificateIdsHasBeenSet;
+}
+
+bool ModifyDomainRequest::GetIsDefaultServer() const
+{
+    return m_isDefaultServer;
+}
+
+void ModifyDomainRequest::SetIsDefaultServer(const bool& _isDefaultServer)
+{
+    m_isDefaultServer = _isDefaultServer;
+    m_isDefaultServerHasBeenSet = true;
+}
+
+bool ModifyDomainRequest::IsDefaultServerHasBeenSet() const
+{
+    return m_isDefaultServerHasBeenSet;
 }
 
 

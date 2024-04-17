@@ -152,15 +152,15 @@ namespace TencentCloud
                     bool DatasourceIdHasBeenSet() const;
 
                     /**
-                     * 获取来源库
-                     * @return SourceDatabase 来源库
+                     * 获取来源库名
+                     * @return SourceDatabase 来源库名
                      * 
                      */
                     std::string GetSourceDatabase() const;
 
                     /**
-                     * 设置来源库
-                     * @param _sourceDatabase 来源库
+                     * 设置来源库名
+                     * @param _sourceDatabase 来源库名
                      * 
                      */
                     void SetSourceDatabase(const std::string& _sourceDatabase);
@@ -173,15 +173,15 @@ namespace TencentCloud
                     bool SourceDatabaseHasBeenSet() const;
 
                     /**
-                     * 获取来源表
-                     * @return TableName 来源表
+                     * 获取来源表名
+                     * @return TableName 来源表名
                      * 
                      */
                     std::string GetTableName() const;
 
                     /**
-                     * 设置来源表
-                     * @param _tableName 来源表
+                     * 设置来源表名
+                     * @param _tableName 来源表名
                      * 
                      */
                     void SetTableName(const std::string& _tableName);
@@ -215,15 +215,15 @@ namespace TencentCloud
                     bool SinkTypeHasBeenSet() const;
 
                     /**
-                     * 获取schema名称
-                     * @return SchemaName schema名称
+                     * 获取源端schema名称
+                     * @return SchemaName 源端schema名称
                      * 
                      */
                     std::string GetSchemaName() const;
 
                     /**
-                     * 设置schema名称
-                     * @param _schemaName schema名称
+                     * 设置源端schema名称
+                     * @param _schemaName 源端schema名称
                      * 
                      */
                     void SetSchemaName(const std::string& _schemaName);
@@ -529,6 +529,27 @@ namespace TencentCloud
                      */
                     bool TableBaseInfoHasBeenSet() const;
 
+                    /**
+                     * 获取目标端schema名称
+                     * @return SinkSchemaName 目标端schema名称
+                     * 
+                     */
+                    std::string GetSinkSchemaName() const;
+
+                    /**
+                     * 设置目标端schema名称
+                     * @param _sinkSchemaName 目标端schema名称
+                     * 
+                     */
+                    void SetSinkSchemaName(const std::string& _sinkSchemaName);
+
+                    /**
+                     * 判断参数 SinkSchemaName 是否已赋值
+                     * @return SinkSchemaName 是否已赋值
+                     * 
+                     */
+                    bool SinkSchemaNameHasBeenSet() const;
+
                 private:
 
                     /**
@@ -562,13 +583,13 @@ namespace TencentCloud
                     bool m_datasourceIdHasBeenSet;
 
                     /**
-                     * 来源库
+                     * 来源库名
                      */
                     std::string m_sourceDatabase;
                     bool m_sourceDatabaseHasBeenSet;
 
                     /**
-                     * 来源表
+                     * 来源表名
                      */
                     std::string m_tableName;
                     bool m_tableNameHasBeenSet;
@@ -580,7 +601,7 @@ namespace TencentCloud
                     bool m_sinkTypeHasBeenSet;
 
                     /**
-                     * schema名称
+                     * 源端schema名称
                      */
                     std::string m_schemaName;
                     bool m_schemaNameHasBeenSet;
@@ -668,6 +689,12 @@ namespace TencentCloud
                      */
                     TableBaseInfo m_tableBaseInfo;
                     bool m_tableBaseInfoHasBeenSet;
+
+                    /**
+                     * 目标端schema名称
+                     */
+                    std::string m_sinkSchemaName;
+                    bool m_sinkSchemaNameHasBeenSet;
 
                 };
             }

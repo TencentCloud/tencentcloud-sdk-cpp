@@ -102,6 +102,62 @@ namespace TencentCloud
                      */
                     bool BidListHasBeenSet() const;
 
+                    /**
+                     * 获取竞价结束时间
+                     * @return BidEndTime 竞价结束时间
+                     * 
+                     */
+                    std::string GetBidEndTime() const;
+
+                    /**
+                     * 判断参数 BidEndTime 是否已赋值
+                     * @return BidEndTime 是否已赋值
+                     * 
+                     */
+                    bool BidEndTimeHasBeenSet() const;
+
+                    /**
+                     * 获取是否领先
+                     * @return IsUp 是否领先
+                     * 
+                     */
+                    bool GetIsUp() const;
+
+                    /**
+                     * 判断参数 IsUp 是否已赋值
+                     * @return IsUp 是否已赋值
+                     * 
+                     */
+                    bool IsUpHasBeenSet() const;
+
+                    /**
+                     * 获取下次出价金额
+                     * @return NextPrice 下次出价金额
+                     * 
+                     */
+                    int64_t GetNextPrice() const;
+
+                    /**
+                     * 判断参数 NextPrice 是否已赋值
+                     * @return NextPrice 是否已赋值
+                     * 
+                     */
+                    bool NextPriceHasBeenSet() const;
+
+                    /**
+                     * 获取状态：1. 等待竞价 2.竞价中 3.竞价结束
+                     * @return Status 状态：1. 等待竞价 2.竞价中 3.竞价结束
+                     * 
+                     */
+                    int64_t GetStatus() const;
+
+                    /**
+                     * 判断参数 Status 是否已赋值
+                     * @return Status 是否已赋值
+                     * 
+                     */
+                    bool StatusHasBeenSet() const;
+
                 private:
 
                     /**
@@ -128,6 +184,30 @@ namespace TencentCloud
                      */
                     std::vector<ReserveBidInfo> m_bidList;
                     bool m_bidListHasBeenSet;
+
+                    /**
+                     * 竞价结束时间
+                     */
+                    std::string m_bidEndTime;
+                    bool m_bidEndTimeHasBeenSet;
+
+                    /**
+                     * 是否领先
+                     */
+                    bool m_isUp;
+                    bool m_isUpHasBeenSet;
+
+                    /**
+                     * 下次出价金额
+                     */
+                    int64_t m_nextPrice;
+                    bool m_nextPriceHasBeenSet;
+
+                    /**
+                     * 状态：1. 等待竞价 2.竞价中 3.竞价结束
+                     */
+                    int64_t m_status;
+                    bool m_statusHasBeenSet;
 
                 };
             }

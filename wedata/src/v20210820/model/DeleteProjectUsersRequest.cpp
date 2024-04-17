@@ -22,7 +22,9 @@
 using namespace TencentCloud::Wedata::V20210820::Model;
 using namespace std;
 
-DeleteProjectUsersRequest::DeleteProjectUsersRequest()
+DeleteProjectUsersRequest::DeleteProjectUsersRequest() :
+    m_projectIdHasBeenSet(false),
+    m_userIdsHasBeenSet(false)
 {
 }
 
@@ -33,6 +35,27 @@ string DeleteProjectUsersRequest::ToJsonString() const
     rapidjson::Document::AllocatorType& allocator = d.GetAllocator();
 
 
+    if (m_projectIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ProjectId";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_projectId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_userIdsHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "UserIds";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        for (auto itr = m_userIds.begin(); itr != m_userIds.end(); ++itr)
+        {
+            d[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
+        }
+    }
+
 
     rapidjson::StringBuffer buffer;
     rapidjson::Writer<rapidjson::StringBuffer> writer(buffer);
@@ -40,5 +63,37 @@ string DeleteProjectUsersRequest::ToJsonString() const
     return buffer.GetString();
 }
 
+
+string DeleteProjectUsersRequest::GetProjectId() const
+{
+    return m_projectId;
+}
+
+void DeleteProjectUsersRequest::SetProjectId(const string& _projectId)
+{
+    m_projectId = _projectId;
+    m_projectIdHasBeenSet = true;
+}
+
+bool DeleteProjectUsersRequest::ProjectIdHasBeenSet() const
+{
+    return m_projectIdHasBeenSet;
+}
+
+vector<string> DeleteProjectUsersRequest::GetUserIds() const
+{
+    return m_userIds;
+}
+
+void DeleteProjectUsersRequest::SetUserIds(const vector<string>& _userIds)
+{
+    m_userIds = _userIds;
+    m_userIdsHasBeenSet = true;
+}
+
+bool DeleteProjectUsersRequest::UserIdsHasBeenSet() const
+{
+    return m_userIdsHasBeenSet;
+}
 
 

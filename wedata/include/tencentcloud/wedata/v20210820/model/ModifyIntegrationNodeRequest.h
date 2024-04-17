@@ -86,15 +86,15 @@ namespace TencentCloud
                     bool ProjectIdHasBeenSet() const;
 
                     /**
-                     * 获取任务类型
-                     * @return TaskType 任务类型
+                     * 获取任务类型 "201. stream, 202. offline"
+                     * @return TaskType 任务类型 "201. stream, 202. offline"
                      * 
                      */
                     uint64_t GetTaskType() const;
 
                     /**
-                     * 设置任务类型
-                     * @param _taskType 任务类型
+                     * 设置任务类型 "201. stream, 202. offline"
+                     * @param _taskType 任务类型 "201. stream, 202. offline"
                      * 
                      */
                     void SetTaskType(const uint64_t& _taskType);
@@ -107,15 +107,15 @@ namespace TencentCloud
                     bool TaskTypeHasBeenSet() const;
 
                     /**
-                     * 获取区分画布模式和表单模式
-                     * @return TaskMode 区分画布模式和表单模式
+                     * 获取区分画布模式和表单 "1. 画布, 2. 表单"模式
+                     * @return TaskMode 区分画布模式和表单 "1. 画布, 2. 表单"模式
                      * 
                      */
                     uint64_t GetTaskMode() const;
 
                     /**
-                     * 设置区分画布模式和表单模式
-                     * @param _taskMode 区分画布模式和表单模式
+                     * 设置区分画布模式和表单 "1. 画布, 2. 表单"模式
+                     * @param _taskMode 区分画布模式和表单 "1. 画布, 2. 表单"模式
                      * 
                      */
                     void SetTaskMode(const uint64_t& _taskMode);
@@ -142,13 +142,13 @@ namespace TencentCloud
                     bool m_projectIdHasBeenSet;
 
                     /**
-                     * 任务类型
+                     * 任务类型 "201. stream, 202. offline"
                      */
                     uint64_t m_taskType;
                     bool m_taskTypeHasBeenSet;
 
                     /**
-                     * 区分画布模式和表单模式
+                     * 区分画布模式和表单 "1. 画布, 2. 表单"模式
                      */
                     uint64_t m_taskMode;
                     bool m_taskModeHasBeenSet;

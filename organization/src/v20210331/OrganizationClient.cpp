@@ -255,6 +255,49 @@ OrganizationClient::AddShareUnitResourcesOutcomeCallable OrganizationClient::Add
     return task->get_future();
 }
 
+OrganizationClient::AttachPolicyOutcome OrganizationClient::AttachPolicy(const AttachPolicyRequest &request)
+{
+    auto outcome = MakeRequest(request, "AttachPolicy");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        AttachPolicyResponse rsp = AttachPolicyResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return AttachPolicyOutcome(rsp);
+        else
+            return AttachPolicyOutcome(o.GetError());
+    }
+    else
+    {
+        return AttachPolicyOutcome(outcome.GetError());
+    }
+}
+
+void OrganizationClient::AttachPolicyAsync(const AttachPolicyRequest& request, const AttachPolicyAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->AttachPolicy(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+OrganizationClient::AttachPolicyOutcomeCallable OrganizationClient::AttachPolicyCallable(const AttachPolicyRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<AttachPolicyOutcome()>>(
+        [this, request]()
+        {
+            return this->AttachPolicy(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 OrganizationClient::BindOrganizationMemberAuthAccountOutcome OrganizationClient::BindOrganizationMemberAuthAccount(const BindOrganizationMemberAuthAccountRequest &request)
 {
     auto outcome = MakeRequest(request, "BindOrganizationMemberAuthAccount");
@@ -642,6 +685,49 @@ OrganizationClient::CreateOrganizationMembersPolicyOutcomeCallable OrganizationC
     return task->get_future();
 }
 
+OrganizationClient::CreatePolicyOutcome OrganizationClient::CreatePolicy(const CreatePolicyRequest &request)
+{
+    auto outcome = MakeRequest(request, "CreatePolicy");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        CreatePolicyResponse rsp = CreatePolicyResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return CreatePolicyOutcome(rsp);
+        else
+            return CreatePolicyOutcome(o.GetError());
+    }
+    else
+    {
+        return CreatePolicyOutcome(outcome.GetError());
+    }
+}
+
+void OrganizationClient::CreatePolicyAsync(const CreatePolicyRequest& request, const CreatePolicyAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->CreatePolicy(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+OrganizationClient::CreatePolicyOutcomeCallable OrganizationClient::CreatePolicyCallable(const CreatePolicyRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<CreatePolicyOutcome()>>(
+        [this, request]()
+        {
+            return this->CreatePolicy(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 OrganizationClient::DeleteAccountOutcome OrganizationClient::DeleteAccount(const DeleteAccountRequest &request)
 {
     auto outcome = MakeRequest(request, "DeleteAccount");
@@ -936,6 +1022,49 @@ OrganizationClient::DeleteOrganizationNodesOutcomeCallable OrganizationClient::D
         [this, request]()
         {
             return this->DeleteOrganizationNodes(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+OrganizationClient::DeletePolicyOutcome OrganizationClient::DeletePolicy(const DeletePolicyRequest &request)
+{
+    auto outcome = MakeRequest(request, "DeletePolicy");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DeletePolicyResponse rsp = DeletePolicyResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DeletePolicyOutcome(rsp);
+        else
+            return DeletePolicyOutcome(o.GetError());
+    }
+    else
+    {
+        return DeletePolicyOutcome(outcome.GetError());
+    }
+}
+
+void OrganizationClient::DeletePolicyAsync(const DeletePolicyRequest& request, const DeletePolicyAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DeletePolicy(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+OrganizationClient::DeletePolicyOutcomeCallable OrganizationClient::DeletePolicyCallable(const DeletePolicyRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DeletePolicyOutcome()>>(
+        [this, request]()
+        {
+            return this->DeletePolicy(request);
         }
     );
 
@@ -1545,6 +1674,92 @@ OrganizationClient::DescribeOrganizationNodesOutcomeCallable OrganizationClient:
     return task->get_future();
 }
 
+OrganizationClient::DescribePolicyOutcome OrganizationClient::DescribePolicy(const DescribePolicyRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribePolicy");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribePolicyResponse rsp = DescribePolicyResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribePolicyOutcome(rsp);
+        else
+            return DescribePolicyOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribePolicyOutcome(outcome.GetError());
+    }
+}
+
+void OrganizationClient::DescribePolicyAsync(const DescribePolicyRequest& request, const DescribePolicyAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribePolicy(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+OrganizationClient::DescribePolicyOutcomeCallable OrganizationClient::DescribePolicyCallable(const DescribePolicyRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribePolicyOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribePolicy(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+OrganizationClient::DescribePolicyConfigOutcome OrganizationClient::DescribePolicyConfig(const DescribePolicyConfigRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribePolicyConfig");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribePolicyConfigResponse rsp = DescribePolicyConfigResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribePolicyConfigOutcome(rsp);
+        else
+            return DescribePolicyConfigOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribePolicyConfigOutcome(outcome.GetError());
+    }
+}
+
+void OrganizationClient::DescribePolicyConfigAsync(const DescribePolicyConfigRequest& request, const DescribePolicyConfigAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribePolicyConfig(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+OrganizationClient::DescribePolicyConfigOutcomeCallable OrganizationClient::DescribePolicyConfigCallable(const DescribePolicyConfigRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribePolicyConfigOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribePolicyConfig(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 OrganizationClient::DescribeShareAreasOutcome OrganizationClient::DescribeShareAreas(const DescribeShareAreasRequest &request)
 {
     auto outcome = MakeRequest(request, "DescribeShareAreas");
@@ -1717,6 +1932,135 @@ OrganizationClient::DescribeShareUnitsOutcomeCallable OrganizationClient::Descri
     return task->get_future();
 }
 
+OrganizationClient::DetachPolicyOutcome OrganizationClient::DetachPolicy(const DetachPolicyRequest &request)
+{
+    auto outcome = MakeRequest(request, "DetachPolicy");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DetachPolicyResponse rsp = DetachPolicyResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DetachPolicyOutcome(rsp);
+        else
+            return DetachPolicyOutcome(o.GetError());
+    }
+    else
+    {
+        return DetachPolicyOutcome(outcome.GetError());
+    }
+}
+
+void OrganizationClient::DetachPolicyAsync(const DetachPolicyRequest& request, const DetachPolicyAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DetachPolicy(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+OrganizationClient::DetachPolicyOutcomeCallable OrganizationClient::DetachPolicyCallable(const DetachPolicyRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DetachPolicyOutcome()>>(
+        [this, request]()
+        {
+            return this->DetachPolicy(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+OrganizationClient::DisablePolicyTypeOutcome OrganizationClient::DisablePolicyType(const DisablePolicyTypeRequest &request)
+{
+    auto outcome = MakeRequest(request, "DisablePolicyType");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DisablePolicyTypeResponse rsp = DisablePolicyTypeResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DisablePolicyTypeOutcome(rsp);
+        else
+            return DisablePolicyTypeOutcome(o.GetError());
+    }
+    else
+    {
+        return DisablePolicyTypeOutcome(outcome.GetError());
+    }
+}
+
+void OrganizationClient::DisablePolicyTypeAsync(const DisablePolicyTypeRequest& request, const DisablePolicyTypeAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DisablePolicyType(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+OrganizationClient::DisablePolicyTypeOutcomeCallable OrganizationClient::DisablePolicyTypeCallable(const DisablePolicyTypeRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DisablePolicyTypeOutcome()>>(
+        [this, request]()
+        {
+            return this->DisablePolicyType(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+OrganizationClient::EnablePolicyTypeOutcome OrganizationClient::EnablePolicyType(const EnablePolicyTypeRequest &request)
+{
+    auto outcome = MakeRequest(request, "EnablePolicyType");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        EnablePolicyTypeResponse rsp = EnablePolicyTypeResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return EnablePolicyTypeOutcome(rsp);
+        else
+            return EnablePolicyTypeOutcome(o.GetError());
+    }
+    else
+    {
+        return EnablePolicyTypeOutcome(outcome.GetError());
+    }
+}
+
+void OrganizationClient::EnablePolicyTypeAsync(const EnablePolicyTypeRequest& request, const EnablePolicyTypeAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->EnablePolicyType(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+OrganizationClient::EnablePolicyTypeOutcomeCallable OrganizationClient::EnablePolicyTypeCallable(const EnablePolicyTypeRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<EnablePolicyTypeOutcome()>>(
+        [this, request]()
+        {
+            return this->EnablePolicyType(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 OrganizationClient::ListOrganizationIdentityOutcome OrganizationClient::ListOrganizationIdentity(const ListOrganizationIdentityRequest &request)
 {
     auto outcome = MakeRequest(request, "ListOrganizationIdentity");
@@ -1753,6 +2097,135 @@ OrganizationClient::ListOrganizationIdentityOutcomeCallable OrganizationClient::
         [this, request]()
         {
             return this->ListOrganizationIdentity(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+OrganizationClient::ListPoliciesOutcome OrganizationClient::ListPolicies(const ListPoliciesRequest &request)
+{
+    auto outcome = MakeRequest(request, "ListPolicies");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ListPoliciesResponse rsp = ListPoliciesResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ListPoliciesOutcome(rsp);
+        else
+            return ListPoliciesOutcome(o.GetError());
+    }
+    else
+    {
+        return ListPoliciesOutcome(outcome.GetError());
+    }
+}
+
+void OrganizationClient::ListPoliciesAsync(const ListPoliciesRequest& request, const ListPoliciesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->ListPolicies(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+OrganizationClient::ListPoliciesOutcomeCallable OrganizationClient::ListPoliciesCallable(const ListPoliciesRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<ListPoliciesOutcome()>>(
+        [this, request]()
+        {
+            return this->ListPolicies(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+OrganizationClient::ListPoliciesForTargetOutcome OrganizationClient::ListPoliciesForTarget(const ListPoliciesForTargetRequest &request)
+{
+    auto outcome = MakeRequest(request, "ListPoliciesForTarget");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ListPoliciesForTargetResponse rsp = ListPoliciesForTargetResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ListPoliciesForTargetOutcome(rsp);
+        else
+            return ListPoliciesForTargetOutcome(o.GetError());
+    }
+    else
+    {
+        return ListPoliciesForTargetOutcome(outcome.GetError());
+    }
+}
+
+void OrganizationClient::ListPoliciesForTargetAsync(const ListPoliciesForTargetRequest& request, const ListPoliciesForTargetAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->ListPoliciesForTarget(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+OrganizationClient::ListPoliciesForTargetOutcomeCallable OrganizationClient::ListPoliciesForTargetCallable(const ListPoliciesForTargetRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<ListPoliciesForTargetOutcome()>>(
+        [this, request]()
+        {
+            return this->ListPoliciesForTarget(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+OrganizationClient::ListTargetsForPolicyOutcome OrganizationClient::ListTargetsForPolicy(const ListTargetsForPolicyRequest &request)
+{
+    auto outcome = MakeRequest(request, "ListTargetsForPolicy");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ListTargetsForPolicyResponse rsp = ListTargetsForPolicyResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ListTargetsForPolicyOutcome(rsp);
+        else
+            return ListTargetsForPolicyOutcome(o.GetError());
+    }
+    else
+    {
+        return ListTargetsForPolicyOutcome(outcome.GetError());
+    }
+}
+
+void OrganizationClient::ListTargetsForPolicyAsync(const ListTargetsForPolicyRequest& request, const ListTargetsForPolicyAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->ListTargetsForPolicy(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+OrganizationClient::ListTargetsForPolicyOutcomeCallable OrganizationClient::ListTargetsForPolicyCallable(const ListTargetsForPolicyRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<ListTargetsForPolicyOutcome()>>(
+        [this, request]()
+        {
+            return this->ListTargetsForPolicy(request);
         }
     );
 
@@ -2011,6 +2484,49 @@ OrganizationClient::UpdateOrganizationNodeOutcomeCallable OrganizationClient::Up
         [this, request]()
         {
             return this->UpdateOrganizationNode(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+OrganizationClient::UpdatePolicyOutcome OrganizationClient::UpdatePolicy(const UpdatePolicyRequest &request)
+{
+    auto outcome = MakeRequest(request, "UpdatePolicy");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        UpdatePolicyResponse rsp = UpdatePolicyResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return UpdatePolicyOutcome(rsp);
+        else
+            return UpdatePolicyOutcome(o.GetError());
+    }
+    else
+    {
+        return UpdatePolicyOutcome(outcome.GetError());
+    }
+}
+
+void OrganizationClient::UpdatePolicyAsync(const UpdatePolicyRequest& request, const UpdatePolicyAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->UpdatePolicy(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+OrganizationClient::UpdatePolicyOutcomeCallable OrganizationClient::UpdatePolicyCallable(const UpdatePolicyRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<UpdatePolicyOutcome()>>(
+        [this, request]()
+        {
+            return this->UpdatePolicy(request);
         }
     );
 

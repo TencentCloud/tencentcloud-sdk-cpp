@@ -24,6 +24,7 @@
 #include <tencentcloud/core/utils/rapidjson/writer.h>
 #include <tencentcloud/core/utils/rapidjson/stringbuffer.h>
 #include <tencentcloud/core/AbstractModel.h>
+#include <tencentcloud/eb/v20210416/model/Tag.h>
 
 
 namespace TencentCloud
@@ -155,6 +156,90 @@ time.Now().UnixNano()/1e6
                      */
                     bool TimeHasBeenSet() const;
 
+                    /**
+                     * 获取事件的地域信息，没有则默认是EB所在的地域信息
+                     * @return Region 事件的地域信息，没有则默认是EB所在的地域信息
+                     * 
+                     */
+                    std::string GetRegion() const;
+
+                    /**
+                     * 设置事件的地域信息，没有则默认是EB所在的地域信息
+                     * @param _region 事件的地域信息，没有则默认是EB所在的地域信息
+                     * 
+                     */
+                    void SetRegion(const std::string& _region);
+
+                    /**
+                     * 判断参数 Region 是否已赋值
+                     * @return Region 是否已赋值
+                     * 
+                     */
+                    bool RegionHasBeenSet() const;
+
+                    /**
+                     * 获取用于描述事件状态，非必须，默认是""
+                     * @return Status 用于描述事件状态，非必须，默认是""
+                     * 
+                     */
+                    std::string GetStatus() const;
+
+                    /**
+                     * 设置用于描述事件状态，非必须，默认是""
+                     * @param _status 用于描述事件状态，非必须，默认是""
+                     * 
+                     */
+                    void SetStatus(const std::string& _status);
+
+                    /**
+                     * 判断参数 Status 是否已赋值
+                     * @return Status 是否已赋值
+                     * 
+                     */
+                    bool StatusHasBeenSet() const;
+
+                    /**
+                     * 获取事件的唯一id，用户侧主动上传则需要保证风格一致
+                     * @return Id 事件的唯一id，用户侧主动上传则需要保证风格一致
+                     * 
+                     */
+                    std::string GetId() const;
+
+                    /**
+                     * 设置事件的唯一id，用户侧主动上传则需要保证风格一致
+                     * @param _id 事件的唯一id，用户侧主动上传则需要保证风格一致
+                     * 
+                     */
+                    void SetId(const std::string& _id);
+
+                    /**
+                     * 判断参数 Id 是否已赋值
+                     * @return Id 是否已赋值
+                     * 
+                     */
+                    bool IdHasBeenSet() const;
+
+                    /**
+                     * 获取标签列表
+                     * @return TagList 标签列表
+                     * 
+                     */
+                    std::vector<Tag> GetTagList() const;
+
+                    /**
+                     * 设置标签列表
+                     * @param _tagList 标签列表
+                     * 
+                     */
+                    void SetTagList(const std::vector<Tag>& _tagList);
+
+                    /**
+                     * 判断参数 TagList 是否已赋值
+                     * @return TagList 是否已赋值
+                     * 
+                     */
+                    bool TagListHasBeenSet() const;
+
                 private:
 
                     /**
@@ -187,6 +272,30 @@ time.Now().UnixNano()/1e6
                      */
                     int64_t m_time;
                     bool m_timeHasBeenSet;
+
+                    /**
+                     * 事件的地域信息，没有则默认是EB所在的地域信息
+                     */
+                    std::string m_region;
+                    bool m_regionHasBeenSet;
+
+                    /**
+                     * 用于描述事件状态，非必须，默认是""
+                     */
+                    std::string m_status;
+                    bool m_statusHasBeenSet;
+
+                    /**
+                     * 事件的唯一id，用户侧主动上传则需要保证风格一致
+                     */
+                    std::string m_id;
+                    bool m_idHasBeenSet;
+
+                    /**
+                     * 标签列表
+                     */
+                    std::vector<Tag> m_tagList;
+                    bool m_tagListHasBeenSet;
 
                 };
             }

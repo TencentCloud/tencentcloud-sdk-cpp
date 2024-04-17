@@ -22,6 +22,7 @@
 #include <map>
 #include <tencentcloud/core/AbstractModel.h>
 #include <tencentcloud/dsgc/v20190723/model/DspaCloudResourceMeta.h>
+#include <tencentcloud/dsgc/v20190723/model/CloudResourceItem.h>
 
 
 namespace TencentCloud
@@ -88,86 +89,107 @@ namespace TencentCloud
                     /**
                      * 获取资源所处地域。
                      * @return ResourceRegion 资源所处地域。
-                     * 
+                     * @deprecated
                      */
                     std::string GetResourceRegion() const;
 
                     /**
                      * 设置资源所处地域。
                      * @param _resourceRegion 资源所处地域。
-                     * 
+                     * @deprecated
                      */
                     void SetResourceRegion(const std::string& _resourceRegion);
 
                     /**
                      * 判断参数 ResourceRegion 是否已赋值
                      * @return ResourceRegion 是否已赋值
-                     * 
+                     * @deprecated
                      */
                     bool ResourceRegionHasBeenSet() const;
 
                     /**
                      * 获取用来标记本次更新是否已经是最后一次，可选值：continue（后续还需要更新）、finished（本次是最后一次更新）。
                      * @return UpdateStatus 用来标记本次更新是否已经是最后一次，可选值：continue（后续还需要更新）、finished（本次是最后一次更新）。
-                     * 
+                     * @deprecated
                      */
                     std::string GetUpdateStatus() const;
 
                     /**
                      * 设置用来标记本次更新是否已经是最后一次，可选值：continue（后续还需要更新）、finished（本次是最后一次更新）。
                      * @param _updateStatus 用来标记本次更新是否已经是最后一次，可选值：continue（后续还需要更新）、finished（本次是最后一次更新）。
-                     * 
+                     * @deprecated
                      */
                     void SetUpdateStatus(const std::string& _updateStatus);
 
                     /**
                      * 判断参数 UpdateStatus 是否已赋值
                      * @return UpdateStatus 是否已赋值
-                     * 
+                     * @deprecated
                      */
                     bool UpdateStatusHasBeenSet() const;
 
                     /**
                      * 获取本次更新的ID号，用来标记一次完整的更新过程。
                      * @return UpdateId 本次更新的ID号，用来标记一次完整的更新过程。
-                     * 
+                     * @deprecated
                      */
                     std::string GetUpdateId() const;
 
                     /**
                      * 设置本次更新的ID号，用来标记一次完整的更新过程。
                      * @param _updateId 本次更新的ID号，用来标记一次完整的更新过程。
-                     * 
+                     * @deprecated
                      */
                     void SetUpdateId(const std::string& _updateId);
 
                     /**
                      * 判断参数 UpdateId 是否已赋值
                      * @return UpdateId 是否已赋值
-                     * 
+                     * @deprecated
                      */
                     bool UpdateIdHasBeenSet() const;
 
                     /**
                      * 获取云上资源列表。
                      * @return Items 云上资源列表。
-                     * 
+                     * @deprecated
                      */
                     std::vector<DspaCloudResourceMeta> GetItems() const;
 
                     /**
                      * 设置云上资源列表。
                      * @param _items 云上资源列表。
-                     * 
+                     * @deprecated
                      */
                     void SetItems(const std::vector<DspaCloudResourceMeta>& _items);
 
                     /**
                      * 判断参数 Items 是否已赋值
                      * @return Items 是否已赋值
-                     * 
+                     * @deprecated
                      */
                     bool ItemsHasBeenSet() const;
+
+                    /**
+                     * 获取必填，云数据库资源列表。
+                     * @return CloudResourceItems 必填，云数据库资源列表。
+                     * 
+                     */
+                    std::vector<CloudResourceItem> GetCloudResourceItems() const;
+
+                    /**
+                     * 设置必填，云数据库资源列表。
+                     * @param _cloudResourceItems 必填，云数据库资源列表。
+                     * 
+                     */
+                    void SetCloudResourceItems(const std::vector<CloudResourceItem>& _cloudResourceItems);
+
+                    /**
+                     * 判断参数 CloudResourceItems 是否已赋值
+                     * @return CloudResourceItems 是否已赋值
+                     * 
+                     */
+                    bool CloudResourceItemsHasBeenSet() const;
 
                 private:
 
@@ -206,6 +228,12 @@ namespace TencentCloud
                      */
                     std::vector<DspaCloudResourceMeta> m_items;
                     bool m_itemsHasBeenSet;
+
+                    /**
+                     * 必填，云数据库资源列表。
+                     */
+                    std::vector<CloudResourceItem> m_cloudResourceItems;
+                    bool m_cloudResourceItemsHasBeenSet;
 
                 };
             }

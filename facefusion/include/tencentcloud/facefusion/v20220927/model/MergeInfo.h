@@ -132,15 +132,15 @@ namespace TencentCloud
                     bool TemplateFaceIDHasBeenSet() const;
 
                     /**
-                     * 获取模版中人脸位置信息(人脸框)，不填默认取最大人脸。此字段仅适用于图片融合自定义模版素材场景。
-                     * @return TemplateFaceRect 模版中人脸位置信息(人脸框)，不填默认取最大人脸。此字段仅适用于图片融合自定义模版素材场景。
+                     * 获取模板中人脸位置信息(人脸框)，不填默认取最大人脸。此字段仅适用于图片融合自定义模板素材场景。
+                     * @return TemplateFaceRect 模板中人脸位置信息(人脸框)，不填默认取最大人脸。此字段仅适用于图片融合自定义模板素材场景。
                      * 
                      */
                     FaceRect GetTemplateFaceRect() const;
 
                     /**
-                     * 设置模版中人脸位置信息(人脸框)，不填默认取最大人脸。此字段仅适用于图片融合自定义模版素材场景。
-                     * @param _templateFaceRect 模版中人脸位置信息(人脸框)，不填默认取最大人脸。此字段仅适用于图片融合自定义模版素材场景。
+                     * 设置模板中人脸位置信息(人脸框)，不填默认取最大人脸。此字段仅适用于图片融合自定义模板素材场景。
+                     * @param _templateFaceRect 模板中人脸位置信息(人脸框)，不填默认取最大人脸。此字段仅适用于图片融合自定义模板素材场景。
                      * 
                      */
                     void SetTemplateFaceRect(const FaceRect& _templateFaceRect);
@@ -179,7 +179,7 @@ namespace TencentCloud
                     bool m_templateFaceIDHasBeenSet;
 
                     /**
-                     * 模版中人脸位置信息(人脸框)，不填默认取最大人脸。此字段仅适用于图片融合自定义模版素材场景。
+                     * 模板中人脸位置信息(人脸框)，不填默认取最大人脸。此字段仅适用于图片融合自定义模板素材场景。
                      */
                     FaceRect m_templateFaceRect;
                     bool m_templateFaceRectHasBeenSet;

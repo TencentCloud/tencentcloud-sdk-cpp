@@ -89,6 +89,12 @@
 #include <tencentcloud/iotexplorer/v20190423/model/DescribeBindedProductsResponse.h>
 #include <tencentcloud/iotexplorer/v20190423/model/DescribeCloudStorageRequest.h>
 #include <tencentcloud/iotexplorer/v20190423/model/DescribeCloudStorageResponse.h>
+#include <tencentcloud/iotexplorer/v20190423/model/DescribeCloudStorageAIServiceRequest.h>
+#include <tencentcloud/iotexplorer/v20190423/model/DescribeCloudStorageAIServiceResponse.h>
+#include <tencentcloud/iotexplorer/v20190423/model/DescribeCloudStorageAIServiceCallbackRequest.h>
+#include <tencentcloud/iotexplorer/v20190423/model/DescribeCloudStorageAIServiceCallbackResponse.h>
+#include <tencentcloud/iotexplorer/v20190423/model/DescribeCloudStorageAIServiceTasksRequest.h>
+#include <tencentcloud/iotexplorer/v20190423/model/DescribeCloudStorageAIServiceTasksResponse.h>
 #include <tencentcloud/iotexplorer/v20190423/model/DescribeCloudStorageDateRequest.h>
 #include <tencentcloud/iotexplorer/v20190423/model/DescribeCloudStorageDateResponse.h>
 #include <tencentcloud/iotexplorer/v20190423/model/DescribeCloudStorageEventsRequest.h>
@@ -151,6 +157,8 @@
 #include <tencentcloud/iotexplorer/v20190423/model/DescribePackageConsumeTasksResponse.h>
 #include <tencentcloud/iotexplorer/v20190423/model/DescribePositionFenceListRequest.h>
 #include <tencentcloud/iotexplorer/v20190423/model/DescribePositionFenceListResponse.h>
+#include <tencentcloud/iotexplorer/v20190423/model/DescribeProductCloudStorageAIServiceRequest.h>
+#include <tencentcloud/iotexplorer/v20190423/model/DescribeProductCloudStorageAIServiceResponse.h>
 #include <tencentcloud/iotexplorer/v20190423/model/DescribeProjectRequest.h>
 #include <tencentcloud/iotexplorer/v20190423/model/DescribeProjectResponse.h>
 #include <tencentcloud/iotexplorer/v20190423/model/DescribeSpaceFenceEventListRequest.h>
@@ -203,6 +211,10 @@
 #include <tencentcloud/iotexplorer/v20190423/model/ListFirmwaresResponse.h>
 #include <tencentcloud/iotexplorer/v20190423/model/ListTopicPolicyRequest.h>
 #include <tencentcloud/iotexplorer/v20190423/model/ListTopicPolicyResponse.h>
+#include <tencentcloud/iotexplorer/v20190423/model/ModifyCloudStorageAIServiceRequest.h>
+#include <tencentcloud/iotexplorer/v20190423/model/ModifyCloudStorageAIServiceResponse.h>
+#include <tencentcloud/iotexplorer/v20190423/model/ModifyCloudStorageAIServiceCallbackRequest.h>
+#include <tencentcloud/iotexplorer/v20190423/model/ModifyCloudStorageAIServiceCallbackResponse.h>
 #include <tencentcloud/iotexplorer/v20190423/model/ModifyFenceBindRequest.h>
 #include <tencentcloud/iotexplorer/v20190423/model/ModifyFenceBindResponse.h>
 #include <tencentcloud/iotexplorer/v20190423/model/ModifyLoRaFrequencyRequest.h>
@@ -215,6 +227,8 @@
 #include <tencentcloud/iotexplorer/v20190423/model/ModifyPositionFenceResponse.h>
 #include <tencentcloud/iotexplorer/v20190423/model/ModifyPositionSpaceRequest.h>
 #include <tencentcloud/iotexplorer/v20190423/model/ModifyPositionSpaceResponse.h>
+#include <tencentcloud/iotexplorer/v20190423/model/ModifyProductCloudStorageAIServiceRequest.h>
+#include <tencentcloud/iotexplorer/v20190423/model/ModifyProductCloudStorageAIServiceResponse.h>
 #include <tencentcloud/iotexplorer/v20190423/model/ModifyProjectRequest.h>
 #include <tencentcloud/iotexplorer/v20190423/model/ModifyProjectResponse.h>
 #include <tencentcloud/iotexplorer/v20190423/model/ModifySpacePropertyRequest.h>
@@ -368,6 +382,15 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeCloudStorageResponse> DescribeCloudStorageOutcome;
                 typedef std::future<DescribeCloudStorageOutcome> DescribeCloudStorageOutcomeCallable;
                 typedef std::function<void(const IotexplorerClient*, const Model::DescribeCloudStorageRequest&, DescribeCloudStorageOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeCloudStorageAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeCloudStorageAIServiceResponse> DescribeCloudStorageAIServiceOutcome;
+                typedef std::future<DescribeCloudStorageAIServiceOutcome> DescribeCloudStorageAIServiceOutcomeCallable;
+                typedef std::function<void(const IotexplorerClient*, const Model::DescribeCloudStorageAIServiceRequest&, DescribeCloudStorageAIServiceOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeCloudStorageAIServiceAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeCloudStorageAIServiceCallbackResponse> DescribeCloudStorageAIServiceCallbackOutcome;
+                typedef std::future<DescribeCloudStorageAIServiceCallbackOutcome> DescribeCloudStorageAIServiceCallbackOutcomeCallable;
+                typedef std::function<void(const IotexplorerClient*, const Model::DescribeCloudStorageAIServiceCallbackRequest&, DescribeCloudStorageAIServiceCallbackOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeCloudStorageAIServiceCallbackAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeCloudStorageAIServiceTasksResponse> DescribeCloudStorageAIServiceTasksOutcome;
+                typedef std::future<DescribeCloudStorageAIServiceTasksOutcome> DescribeCloudStorageAIServiceTasksOutcomeCallable;
+                typedef std::function<void(const IotexplorerClient*, const Model::DescribeCloudStorageAIServiceTasksRequest&, DescribeCloudStorageAIServiceTasksOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeCloudStorageAIServiceTasksAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeCloudStorageDateResponse> DescribeCloudStorageDateOutcome;
                 typedef std::future<DescribeCloudStorageDateOutcome> DescribeCloudStorageDateOutcomeCallable;
                 typedef std::function<void(const IotexplorerClient*, const Model::DescribeCloudStorageDateRequest&, DescribeCloudStorageDateOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeCloudStorageDateAsyncHandler;
@@ -461,6 +484,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribePositionFenceListResponse> DescribePositionFenceListOutcome;
                 typedef std::future<DescribePositionFenceListOutcome> DescribePositionFenceListOutcomeCallable;
                 typedef std::function<void(const IotexplorerClient*, const Model::DescribePositionFenceListRequest&, DescribePositionFenceListOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribePositionFenceListAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeProductCloudStorageAIServiceResponse> DescribeProductCloudStorageAIServiceOutcome;
+                typedef std::future<DescribeProductCloudStorageAIServiceOutcome> DescribeProductCloudStorageAIServiceOutcomeCallable;
+                typedef std::function<void(const IotexplorerClient*, const Model::DescribeProductCloudStorageAIServiceRequest&, DescribeProductCloudStorageAIServiceOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeProductCloudStorageAIServiceAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeProjectResponse> DescribeProjectOutcome;
                 typedef std::future<DescribeProjectOutcome> DescribeProjectOutcomeCallable;
                 typedef std::function<void(const IotexplorerClient*, const Model::DescribeProjectRequest&, DescribeProjectOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeProjectAsyncHandler;
@@ -539,6 +565,12 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::ListTopicPolicyResponse> ListTopicPolicyOutcome;
                 typedef std::future<ListTopicPolicyOutcome> ListTopicPolicyOutcomeCallable;
                 typedef std::function<void(const IotexplorerClient*, const Model::ListTopicPolicyRequest&, ListTopicPolicyOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ListTopicPolicyAsyncHandler;
+                typedef Outcome<Core::Error, Model::ModifyCloudStorageAIServiceResponse> ModifyCloudStorageAIServiceOutcome;
+                typedef std::future<ModifyCloudStorageAIServiceOutcome> ModifyCloudStorageAIServiceOutcomeCallable;
+                typedef std::function<void(const IotexplorerClient*, const Model::ModifyCloudStorageAIServiceRequest&, ModifyCloudStorageAIServiceOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyCloudStorageAIServiceAsyncHandler;
+                typedef Outcome<Core::Error, Model::ModifyCloudStorageAIServiceCallbackResponse> ModifyCloudStorageAIServiceCallbackOutcome;
+                typedef std::future<ModifyCloudStorageAIServiceCallbackOutcome> ModifyCloudStorageAIServiceCallbackOutcomeCallable;
+                typedef std::function<void(const IotexplorerClient*, const Model::ModifyCloudStorageAIServiceCallbackRequest&, ModifyCloudStorageAIServiceCallbackOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyCloudStorageAIServiceCallbackAsyncHandler;
                 typedef Outcome<Core::Error, Model::ModifyFenceBindResponse> ModifyFenceBindOutcome;
                 typedef std::future<ModifyFenceBindOutcome> ModifyFenceBindOutcomeCallable;
                 typedef std::function<void(const IotexplorerClient*, const Model::ModifyFenceBindRequest&, ModifyFenceBindOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyFenceBindAsyncHandler;
@@ -557,6 +589,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::ModifyPositionSpaceResponse> ModifyPositionSpaceOutcome;
                 typedef std::future<ModifyPositionSpaceOutcome> ModifyPositionSpaceOutcomeCallable;
                 typedef std::function<void(const IotexplorerClient*, const Model::ModifyPositionSpaceRequest&, ModifyPositionSpaceOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyPositionSpaceAsyncHandler;
+                typedef Outcome<Core::Error, Model::ModifyProductCloudStorageAIServiceResponse> ModifyProductCloudStorageAIServiceOutcome;
+                typedef std::future<ModifyProductCloudStorageAIServiceOutcome> ModifyProductCloudStorageAIServiceOutcomeCallable;
+                typedef std::function<void(const IotexplorerClient*, const Model::ModifyProductCloudStorageAIServiceRequest&, ModifyProductCloudStorageAIServiceOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyProductCloudStorageAIServiceAsyncHandler;
                 typedef Outcome<Core::Error, Model::ModifyProjectResponse> ModifyProjectOutcome;
                 typedef std::future<ModifyProjectOutcome> ModifyProjectOutcomeCallable;
                 typedef std::function<void(const IotexplorerClient*, const Model::ModifyProjectRequest&, ModifyProjectOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyProjectAsyncHandler;
@@ -918,6 +953,33 @@ namespace TencentCloud
                 DescribeCloudStorageOutcomeCallable DescribeCloudStorageCallable(const Model::DescribeCloudStorageRequest& request);
 
                 /**
+                 *查询指定设备的云存 AI 服务开通状态与参数配置
+                 * @param req DescribeCloudStorageAIServiceRequest
+                 * @return DescribeCloudStorageAIServiceOutcome
+                 */
+                DescribeCloudStorageAIServiceOutcome DescribeCloudStorageAIService(const Model::DescribeCloudStorageAIServiceRequest &request);
+                void DescribeCloudStorageAIServiceAsync(const Model::DescribeCloudStorageAIServiceRequest& request, const DescribeCloudStorageAIServiceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeCloudStorageAIServiceOutcomeCallable DescribeCloudStorageAIServiceCallable(const Model::DescribeCloudStorageAIServiceRequest& request);
+
+                /**
+                 *查询云存AI分析回调配置
+                 * @param req DescribeCloudStorageAIServiceCallbackRequest
+                 * @return DescribeCloudStorageAIServiceCallbackOutcome
+                 */
+                DescribeCloudStorageAIServiceCallbackOutcome DescribeCloudStorageAIServiceCallback(const Model::DescribeCloudStorageAIServiceCallbackRequest &request);
+                void DescribeCloudStorageAIServiceCallbackAsync(const Model::DescribeCloudStorageAIServiceCallbackRequest& request, const DescribeCloudStorageAIServiceCallbackAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeCloudStorageAIServiceCallbackOutcomeCallable DescribeCloudStorageAIServiceCallbackCallable(const Model::DescribeCloudStorageAIServiceCallbackRequest& request);
+
+                /**
+                 *查询指定设备的云存 AI 分析任务列表
+                 * @param req DescribeCloudStorageAIServiceTasksRequest
+                 * @return DescribeCloudStorageAIServiceTasksOutcome
+                 */
+                DescribeCloudStorageAIServiceTasksOutcome DescribeCloudStorageAIServiceTasks(const Model::DescribeCloudStorageAIServiceTasksRequest &request);
+                void DescribeCloudStorageAIServiceTasksAsync(const Model::DescribeCloudStorageAIServiceTasksRequest& request, const DescribeCloudStorageAIServiceTasksAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeCloudStorageAIServiceTasksOutcomeCallable DescribeCloudStorageAIServiceTasksCallable(const Model::DescribeCloudStorageAIServiceTasksRequest& request);
+
+                /**
                  *获取具有云存的日期
                  * @param req DescribeCloudStorageDateRequest
                  * @return DescribeCloudStorageDateOutcome
@@ -1197,6 +1259,15 @@ namespace TencentCloud
                 DescribePositionFenceListOutcomeCallable DescribePositionFenceListCallable(const Model::DescribePositionFenceListRequest& request);
 
                 /**
+                 *查询指定产品的云存 AI 服务开通状态
+                 * @param req DescribeProductCloudStorageAIServiceRequest
+                 * @return DescribeProductCloudStorageAIServiceOutcome
+                 */
+                DescribeProductCloudStorageAIServiceOutcome DescribeProductCloudStorageAIService(const Model::DescribeProductCloudStorageAIServiceRequest &request);
+                void DescribeProductCloudStorageAIServiceAsync(const Model::DescribeProductCloudStorageAIServiceRequest& request, const DescribeProductCloudStorageAIServiceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeProductCloudStorageAIServiceOutcomeCallable DescribeProductCloudStorageAIServiceCallable(const Model::DescribeProductCloudStorageAIServiceRequest& request);
+
+                /**
                  *查询项目详情
                  * @param req DescribeProjectRequest
                  * @return DescribeProjectOutcome
@@ -1431,6 +1502,24 @@ namespace TencentCloud
                 ListTopicPolicyOutcomeCallable ListTopicPolicyCallable(const Model::ListTopicPolicyRequest& request);
 
                 /**
+                 *修改指定设备的云存 AI 服务开通状态与参数配置
+                 * @param req ModifyCloudStorageAIServiceRequest
+                 * @return ModifyCloudStorageAIServiceOutcome
+                 */
+                ModifyCloudStorageAIServiceOutcome ModifyCloudStorageAIService(const Model::ModifyCloudStorageAIServiceRequest &request);
+                void ModifyCloudStorageAIServiceAsync(const Model::ModifyCloudStorageAIServiceRequest& request, const ModifyCloudStorageAIServiceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                ModifyCloudStorageAIServiceOutcomeCallable ModifyCloudStorageAIServiceCallable(const Model::ModifyCloudStorageAIServiceRequest& request);
+
+                /**
+                 *修改云存AI分析回调配置
+                 * @param req ModifyCloudStorageAIServiceCallbackRequest
+                 * @return ModifyCloudStorageAIServiceCallbackOutcome
+                 */
+                ModifyCloudStorageAIServiceCallbackOutcome ModifyCloudStorageAIServiceCallback(const Model::ModifyCloudStorageAIServiceCallbackRequest &request);
+                void ModifyCloudStorageAIServiceCallbackAsync(const Model::ModifyCloudStorageAIServiceCallbackRequest& request, const ModifyCloudStorageAIServiceCallbackAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                ModifyCloudStorageAIServiceCallbackOutcomeCallable ModifyCloudStorageAIServiceCallbackCallable(const Model::ModifyCloudStorageAIServiceCallbackRequest& request);
+
+                /**
                  *更新围栏绑定信息
                  * @param req ModifyFenceBindRequest
                  * @return ModifyFenceBindOutcome
@@ -1483,6 +1572,15 @@ namespace TencentCloud
                 ModifyPositionSpaceOutcome ModifyPositionSpace(const Model::ModifyPositionSpaceRequest &request);
                 void ModifyPositionSpaceAsync(const Model::ModifyPositionSpaceRequest& request, const ModifyPositionSpaceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 ModifyPositionSpaceOutcomeCallable ModifyPositionSpaceCallable(const Model::ModifyPositionSpaceRequest& request);
+
+                /**
+                 *修改指定产品的云存 AI 服务开通状态
+                 * @param req ModifyProductCloudStorageAIServiceRequest
+                 * @return ModifyProductCloudStorageAIServiceOutcome
+                 */
+                ModifyProductCloudStorageAIServiceOutcome ModifyProductCloudStorageAIService(const Model::ModifyProductCloudStorageAIServiceRequest &request);
+                void ModifyProductCloudStorageAIServiceAsync(const Model::ModifyProductCloudStorageAIServiceRequest& request, const ModifyProductCloudStorageAIServiceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                ModifyProductCloudStorageAIServiceOutcomeCallable ModifyProductCloudStorageAIServiceCallable(const Model::ModifyProductCloudStorageAIServiceRequest& request);
 
                 /**
                  *修改项目

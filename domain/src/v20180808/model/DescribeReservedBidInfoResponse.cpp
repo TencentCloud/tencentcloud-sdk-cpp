@@ -27,7 +27,11 @@ DescribeReservedBidInfoResponse::DescribeReservedBidInfoResponse() :
     m_upPriceHasBeenSet(false),
     m_priceHasBeenSet(false),
     m_upUserHasBeenSet(false),
-    m_bidListHasBeenSet(false)
+    m_bidListHasBeenSet(false),
+    m_bidEndTimeHasBeenSet(false),
+    m_isUpHasBeenSet(false),
+    m_nextPriceHasBeenSet(false),
+    m_statusHasBeenSet(false)
 {
 }
 
@@ -115,6 +119,46 @@ CoreInternalOutcome DescribeReservedBidInfoResponse::Deserialize(const string &p
         m_bidListHasBeenSet = true;
     }
 
+    if (rsp.HasMember("BidEndTime") && !rsp["BidEndTime"].IsNull())
+    {
+        if (!rsp["BidEndTime"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `BidEndTime` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_bidEndTime = string(rsp["BidEndTime"].GetString());
+        m_bidEndTimeHasBeenSet = true;
+    }
+
+    if (rsp.HasMember("IsUp") && !rsp["IsUp"].IsNull())
+    {
+        if (!rsp["IsUp"].IsBool())
+        {
+            return CoreInternalOutcome(Core::Error("response `IsUp` IsBool=false incorrectly").SetRequestId(requestId));
+        }
+        m_isUp = rsp["IsUp"].GetBool();
+        m_isUpHasBeenSet = true;
+    }
+
+    if (rsp.HasMember("NextPrice") && !rsp["NextPrice"].IsNull())
+    {
+        if (!rsp["NextPrice"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `NextPrice` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_nextPrice = rsp["NextPrice"].GetInt64();
+        m_nextPriceHasBeenSet = true;
+    }
+
+    if (rsp.HasMember("Status") && !rsp["Status"].IsNull())
+    {
+        if (!rsp["Status"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `Status` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_status = rsp["Status"].GetInt64();
+        m_statusHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -162,6 +206,38 @@ string DescribeReservedBidInfoResponse::ToJsonString() const
             value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
             (*itr).ToJsonObject(value[key.c_str()][i], allocator);
         }
+    }
+
+    if (m_bidEndTimeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "BidEndTime";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_bidEndTime.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_isUpHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "IsUp";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_isUp, allocator);
+    }
+
+    if (m_nextPriceHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "NextPrice";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_nextPrice, allocator);
+    }
+
+    if (m_statusHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Status";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_status, allocator);
     }
 
     rapidjson::Value iKey(rapidjson::kStringType);
@@ -214,6 +290,46 @@ vector<ReserveBidInfo> DescribeReservedBidInfoResponse::GetBidList() const
 bool DescribeReservedBidInfoResponse::BidListHasBeenSet() const
 {
     return m_bidListHasBeenSet;
+}
+
+string DescribeReservedBidInfoResponse::GetBidEndTime() const
+{
+    return m_bidEndTime;
+}
+
+bool DescribeReservedBidInfoResponse::BidEndTimeHasBeenSet() const
+{
+    return m_bidEndTimeHasBeenSet;
+}
+
+bool DescribeReservedBidInfoResponse::GetIsUp() const
+{
+    return m_isUp;
+}
+
+bool DescribeReservedBidInfoResponse::IsUpHasBeenSet() const
+{
+    return m_isUpHasBeenSet;
+}
+
+int64_t DescribeReservedBidInfoResponse::GetNextPrice() const
+{
+    return m_nextPrice;
+}
+
+bool DescribeReservedBidInfoResponse::NextPriceHasBeenSet() const
+{
+    return m_nextPriceHasBeenSet;
+}
+
+int64_t DescribeReservedBidInfoResponse::GetStatus() const
+{
+    return m_status;
+}
+
+bool DescribeReservedBidInfoResponse::StatusHasBeenSet() const
+{
+    return m_statusHasBeenSet;
 }
 
 

@@ -253,6 +253,69 @@ namespace TencentCloud
                      */
                     bool ExampleHasBeenSet() const;
 
+                    /**
+                     * 获取项目id，不支持修改，dlc侧创建函数保存时用
+                     * @return ProjectId 项目id，不支持修改，dlc侧创建函数保存时用
+                     * 
+                     */
+                    std::string GetProjectId() const;
+
+                    /**
+                     * 设置项目id，不支持修改，dlc侧创建函数保存时用
+                     * @param _projectId 项目id，不支持修改，dlc侧创建函数保存时用
+                     * 
+                     */
+                    void SetProjectId(const std::string& _projectId);
+
+                    /**
+                     * 判断参数 ProjectId 是否已赋值
+                     * @return ProjectId 是否已赋值
+                     * 
+                     */
+                    bool ProjectIdHasBeenSet() const;
+
+                    /**
+                     * 获取数据库名称，不支持修改，dlc侧创建函数保存时用
+                     * @return DbName 数据库名称，不支持修改，dlc侧创建函数保存时用
+                     * 
+                     */
+                    std::string GetDbName() const;
+
+                    /**
+                     * 设置数据库名称，不支持修改，dlc侧创建函数保存时用
+                     * @param _dbName 数据库名称，不支持修改，dlc侧创建函数保存时用
+                     * 
+                     */
+                    void SetDbName(const std::string& _dbName);
+
+                    /**
+                     * 判断参数 DbName 是否已赋值
+                     * @return DbName 是否已赋值
+                     * 
+                     */
+                    bool DbNameHasBeenSet() const;
+
+                    /**
+                     * 获取函数名称，不支持修改，dlc侧创建函数保存时用
+                     * @return Name 函数名称，不支持修改，dlc侧创建函数保存时用
+                     * 
+                     */
+                    std::string GetName() const;
+
+                    /**
+                     * 设置函数名称，不支持修改，dlc侧创建函数保存时用
+                     * @param _name 函数名称，不支持修改，dlc侧创建函数保存时用
+                     * 
+                     */
+                    void SetName(const std::string& _name);
+
+                    /**
+                     * 判断参数 Name 是否已赋值
+                     * @return Name 是否已赋值
+                     * 
+                     */
+                    bool NameHasBeenSet() const;
+
                 private:
 
                     /**
@@ -314,6 +377,24 @@ namespace TencentCloud
                      */
                     std::string m_example;
                     bool m_exampleHasBeenSet;
+
+                    /**
+                     * 项目id，不支持修改，dlc侧创建函数保存时用
+                     */
+                    std::string m_projectId;
+                    bool m_projectIdHasBeenSet;
+
+                    /**
+                     * 数据库名称，不支持修改，dlc侧创建函数保存时用
+                     */
+                    std::string m_dbName;
+                    bool m_dbNameHasBeenSet;
+
+                    /**
+                     * 函数名称，不支持修改，dlc侧创建函数保存时用
+                     */
+                    std::string m_name;
+                    bool m_nameHasBeenSet;
 
                 };
             }

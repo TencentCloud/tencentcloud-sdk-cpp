@@ -126,6 +126,39 @@ namespace TencentCloud
                      */
                     bool DisplayNameHasBeenSet() const;
 
+                    /**
+                     * 获取标准模式开发环境：DEV
+标准模式生产环境：PROD
+简单模式：ALL
+
+                     * @return EnvType 标准模式开发环境：DEV
+标准模式生产环境：PROD
+简单模式：ALL
+
+                     * 
+                     */
+                    std::string GetEnvType() const;
+
+                    /**
+                     * 设置标准模式开发环境：DEV
+标准模式生产环境：PROD
+简单模式：ALL
+
+                     * @param _envType 标准模式开发环境：DEV
+标准模式生产环境：PROD
+简单模式：ALL
+
+                     * 
+                     */
+                    void SetEnvType(const std::string& _envType);
+
+                    /**
+                     * 判断参数 EnvType 是否已赋值
+                     * @return EnvType 是否已赋值
+                     * 
+                     */
+                    bool EnvTypeHasBeenSet() const;
+
                 private:
 
                     /**
@@ -151,6 +184,15 @@ namespace TencentCloud
                      */
                     std::string m_displayName;
                     bool m_displayNameHasBeenSet;
+
+                    /**
+                     * 标准模式开发环境：DEV
+标准模式生产环境：PROD
+简单模式：ALL
+
+                     */
+                    std::string m_envType;
+                    bool m_envTypeHasBeenSet;
 
                 };
             }

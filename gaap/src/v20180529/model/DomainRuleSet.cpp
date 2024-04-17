@@ -41,7 +41,8 @@ DomainRuleSet::DomainRuleSet() :
     m_polyRealServerCertificateAliasInfoHasBeenSet(false),
     m_domainStatusHasBeenSet(false),
     m_banStatusHasBeenSet(false),
-    m_http3SupportedHasBeenSet(false)
+    m_http3SupportedHasBeenSet(false),
+    m_isDefaultServerHasBeenSet(false)
 {
 }
 
@@ -290,6 +291,16 @@ CoreInternalOutcome DomainRuleSet::Deserialize(const rapidjson::Value &value)
         m_http3SupportedHasBeenSet = true;
     }
 
+    if (value.HasMember("IsDefaultServer") && !value["IsDefaultServer"].IsNull())
+    {
+        if (!value["IsDefaultServer"].IsBool())
+        {
+            return CoreInternalOutcome(Core::Error("response `DomainRuleSet.IsDefaultServer` IsBool=false incorrectly").SetRequestId(requestId));
+        }
+        m_isDefaultServer = value["IsDefaultServer"].GetBool();
+        m_isDefaultServerHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -484,6 +495,14 @@ void DomainRuleSet::ToJsonObject(rapidjson::Value &value, rapidjson::Document::A
         string key = "Http3Supported";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_http3Supported, allocator);
+    }
+
+    if (m_isDefaultServerHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "IsDefaultServer";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_isDefaultServer, allocator);
     }
 
 }
@@ -823,5 +842,21 @@ void DomainRuleSet::SetHttp3Supported(const int64_t& _http3Supported)
 bool DomainRuleSet::Http3SupportedHasBeenSet() const
 {
     return m_http3SupportedHasBeenSet;
+}
+
+bool DomainRuleSet::GetIsDefaultServer() const
+{
+    return m_isDefaultServer;
+}
+
+void DomainRuleSet::SetIsDefaultServer(const bool& _isDefaultServer)
+{
+    m_isDefaultServer = _isDefaultServer;
+    m_isDefaultServerHasBeenSet = true;
+}
+
+bool DomainRuleSet::IsDefaultServerHasBeenSet() const
+{
+    return m_isDefaultServerHasBeenSet;
 }
 

@@ -64,15 +64,15 @@ namespace TencentCloud
                     bool ProjectIdHasBeenSet() const;
 
                     /**
-                     * 获取1
-                     * @return InCharge 1
+                     * 获取责任人
+                     * @return InCharge 责任人
                      * 
                      */
                     std::string GetInCharge() const;
 
                     /**
-                     * 设置1
-                     * @param _inCharge 1
+                     * 设置责任人
+                     * @param _inCharge 责任人
                      * 
                      */
                     void SetInCharge(const std::string& _inCharge);
@@ -93,7 +93,7 @@ namespace TencentCloud
                     bool m_projectIdHasBeenSet;
 
                     /**
-                     * 1
+                     * 责任人
                      */
                     std::string m_inCharge;
                     bool m_inChargeHasBeenSet;

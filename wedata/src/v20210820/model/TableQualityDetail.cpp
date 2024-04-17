@@ -29,7 +29,8 @@ TableQualityDetail::TableQualityDetail() :
     m_ownerUserNameHasBeenSet(false),
     m_databaseScoreHasBeenSet(false),
     m_tableScoreHasBeenSet(false),
-    m_lastPeriodRatioHasBeenSet(false)
+    m_lastPeriodRatioHasBeenSet(false),
+    m_dsEnvTypeHasBeenSet(false)
 {
 }
 
@@ -128,6 +129,16 @@ CoreInternalOutcome TableQualityDetail::Deserialize(const rapidjson::Value &valu
         m_lastPeriodRatioHasBeenSet = true;
     }
 
+    if (value.HasMember("DsEnvType") && !value["DsEnvType"].IsNull())
+    {
+        if (!value["DsEnvType"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `TableQualityDetail.DsEnvType` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_dsEnvType = value["DsEnvType"].GetInt64();
+        m_dsEnvTypeHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -205,6 +216,14 @@ void TableQualityDetail::ToJsonObject(rapidjson::Value &value, rapidjson::Docume
         string key = "LastPeriodRatio";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_lastPeriodRatio, allocator);
+    }
+
+    if (m_dsEnvTypeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "DsEnvType";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_dsEnvType, allocator);
     }
 
 }
@@ -352,5 +371,21 @@ void TableQualityDetail::SetLastPeriodRatio(const double& _lastPeriodRatio)
 bool TableQualityDetail::LastPeriodRatioHasBeenSet() const
 {
     return m_lastPeriodRatioHasBeenSet;
+}
+
+int64_t TableQualityDetail::GetDsEnvType() const
+{
+    return m_dsEnvType;
+}
+
+void TableQualityDetail::SetDsEnvType(const int64_t& _dsEnvType)
+{
+    m_dsEnvType = _dsEnvType;
+    m_dsEnvTypeHasBeenSet = true;
+}
+
+bool TableQualityDetail::DsEnvTypeHasBeenSet() const
+{
+    return m_dsEnvTypeHasBeenSet;
 }
 

@@ -43,15 +43,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取项目/工作
-                     * @return ProjectId 项目/工作
+                     * 获取项目ID
+                     * @return ProjectId 项目ID
                      * 
                      */
                     std::string GetProjectId() const;
 
                     /**
-                     * 设置项目/工作
-                     * @param _projectId 项目/工作
+                     * 设置项目ID
+                     * @param _projectId 项目ID
                      * 
                      */
                     void SetProjectId(const std::string& _projectId);
@@ -64,15 +64,15 @@ namespace TencentCloud
                     bool ProjectIdHasBeenSet() const;
 
                     /**
-                     * 获取1
-                     * @return CycleStep 1
+                     * 获取间隔，可选，默认1。非空。默认 1
+                     * @return CycleStep 间隔，可选，默认1。非空。默认 1
                      * 
                      */
                     int64_t GetCycleStep() const;
 
                     /**
-                     * 设置1
-                     * @param _cycleStep 1
+                     * 设置间隔，可选，默认1。非空。默认 1
+                     * @param _cycleStep 间隔，可选，默认1。非空。默认 1
                      * 
                      */
                     void SetCycleStep(const int64_t& _cycleStep);
@@ -85,15 +85,15 @@ namespace TencentCloud
                     bool CycleStepHasBeenSet() const;
 
                     /**
-                     * 获取0
-                     * @return DelayTime 0
+                     * 获取延时执行时间，单位分钟
+                     * @return DelayTime 延时执行时间，单位分钟
                      * 
                      */
                     int64_t GetDelayTime() const;
 
                     /**
-                     * 设置0
-                     * @param _delayTime 0
+                     * 设置延时执行时间，单位分钟
+                     * @param _delayTime 延时执行时间，单位分钟
                      * 
                      */
                     void SetDelayTime(const int64_t& _delayTime);
@@ -106,15 +106,15 @@ namespace TencentCloud
                     bool DelayTimeHasBeenSet() const;
 
                     /**
-                     * 获取2099-12-31 00:00:00
-                     * @return EndTime 2099-12-31 00:00:00
+                     * 获取任务结束数据时间。非空。默认当前时间
+                     * @return EndTime 任务结束数据时间。非空。默认当前时间
                      * 
                      */
                     std::string GetEndTime() const;
 
                     /**
-                     * 设置2099-12-31 00:00:00
-                     * @param _endTime 2099-12-31 00:00:00
+                     * 设置任务结束数据时间。非空。默认当前时间
+                     * @param _endTime 任务结束数据时间。非空。默认当前时间
                      * 
                      */
                     void SetEndTime(const std::string& _endTime);
@@ -211,15 +211,15 @@ namespace TencentCloud
                     bool TypeIdHasBeenSet() const;
 
                     /**
-                     * 获取默认 ""
-                     * @return TaskAction 默认 ""
+                     * 获取时间指定，如月任务指定1，3号，则填入 1，3。非空。默认 "" 月任务：如具体1，3号则写 "1,3"，指定月末不可和具体号数一起输入，仅能为 "L"
+                     * @return TaskAction 时间指定，如月任务指定1，3号，则填入 1，3。非空。默认 "" 月任务：如具体1，3号则写 "1,3"，指定月末不可和具体号数一起输入，仅能为 "L"
                      * 
                      */
                     std::string GetTaskAction() const;
 
                     /**
-                     * 设置默认 ""
-                     * @param _taskAction 默认 ""
+                     * 设置时间指定，如月任务指定1，3号，则填入 1，3。非空。默认 "" 月任务：如具体1，3号则写 "1,3"，指定月末不可和具体号数一起输入，仅能为 "L"
+                     * @param _taskAction 时间指定，如月任务指定1，3号，则填入 1，3。非空。默认 "" 月任务：如具体1，3号则写 "1,3"，指定月末不可和具体号数一起输入，仅能为 "L"
                      * 
                      */
                     void SetTaskAction(const std::string& _taskAction);
@@ -255,25 +255,25 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 项目/工作
+                     * 项目ID
                      */
                     std::string m_projectId;
                     bool m_projectIdHasBeenSet;
 
                     /**
-                     * 1
+                     * 间隔，可选，默认1。非空。默认 1
                      */
                     int64_t m_cycleStep;
                     bool m_cycleStepHasBeenSet;
 
                     /**
-                     * 0
+                     * 延时执行时间，单位分钟
                      */
                     int64_t m_delayTime;
                     bool m_delayTimeHasBeenSet;
 
                     /**
-                     * 2099-12-31 00:00:00
+                     * 任务结束数据时间。非空。默认当前时间
                      */
                     std::string m_endTime;
                     bool m_endTimeHasBeenSet;
@@ -303,7 +303,7 @@ namespace TencentCloud
                     bool m_typeIdHasBeenSet;
 
                     /**
-                     * 默认 ""
+                     * 时间指定，如月任务指定1，3号，则填入 1，3。非空。默认 "" 月任务：如具体1，3号则写 "1,3"，指定月末不可和具体号数一起输入，仅能为 "L"
                      */
                     std::string m_taskAction;
                     bool m_taskActionHasBeenSet;

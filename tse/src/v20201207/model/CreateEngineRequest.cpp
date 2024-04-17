@@ -38,7 +38,8 @@ CreateEngineRequest::CreateEngineRequest() :
     m_engineAdminHasBeenSet(false),
     m_prepaidPeriodHasBeenSet(false),
     m_prepaidRenewFlagHasBeenSet(false),
-    m_engineRegionInfosHasBeenSet(false)
+    m_engineRegionInfosHasBeenSet(false),
+    m_storageOptionHasBeenSet(false)
 {
 }
 
@@ -193,6 +194,21 @@ string CreateEngineRequest::ToJsonString() const
 
         int i=0;
         for (auto itr = m_engineRegionInfos.begin(); itr != m_engineRegionInfos.end(); ++itr, ++i)
+        {
+            d[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(d[key.c_str()][i], allocator);
+        }
+    }
+
+    if (m_storageOptionHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "StorageOption";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_storageOption.begin(); itr != m_storageOption.end(); ++itr, ++i)
         {
             d[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
             (*itr).ToJsonObject(d[key.c_str()][i], allocator);
@@ -461,6 +477,22 @@ void CreateEngineRequest::SetEngineRegionInfos(const vector<EngineRegionInfo>& _
 bool CreateEngineRequest::EngineRegionInfosHasBeenSet() const
 {
     return m_engineRegionInfosHasBeenSet;
+}
+
+vector<StorageOption> CreateEngineRequest::GetStorageOption() const
+{
+    return m_storageOption;
+}
+
+void CreateEngineRequest::SetStorageOption(const vector<StorageOption>& _storageOption)
+{
+    m_storageOption = _storageOption;
+    m_storageOptionHasBeenSet = true;
+}
+
+bool CreateEngineRequest::StorageOptionHasBeenSet() const
+{
+    return m_storageOptionHasBeenSet;
 }
 
 

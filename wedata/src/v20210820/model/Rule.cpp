@@ -64,7 +64,8 @@ Rule::Rule() :
     m_datasourceIdHasBeenSet(false),
     m_databaseIdHasBeenSet(false),
     m_monitorStatusHasBeenSet(false),
-    m_triggerConditionHasBeenSet(false)
+    m_triggerConditionHasBeenSet(false),
+    m_dsEnvTypeHasBeenSet(false)
 {
 }
 
@@ -544,6 +545,16 @@ CoreInternalOutcome Rule::Deserialize(const rapidjson::Value &value)
         m_triggerConditionHasBeenSet = true;
     }
 
+    if (value.HasMember("DsEnvType") && !value["DsEnvType"].IsNull())
+    {
+        if (!value["DsEnvType"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `Rule.DsEnvType` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_dsEnvType = value["DsEnvType"].GetInt64();
+        m_dsEnvTypeHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -910,6 +921,14 @@ void Rule::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorT
         string key = "TriggerCondition";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_triggerCondition.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_dsEnvTypeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "DsEnvType";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_dsEnvType, allocator);
     }
 
 }
@@ -1617,5 +1636,21 @@ void Rule::SetTriggerCondition(const string& _triggerCondition)
 bool Rule::TriggerConditionHasBeenSet() const
 {
     return m_triggerConditionHasBeenSet;
+}
+
+int64_t Rule::GetDsEnvType() const
+{
+    return m_dsEnvType;
+}
+
+void Rule::SetDsEnvType(const int64_t& _dsEnvType)
+{
+    m_dsEnvType = _dsEnvType;
+    m_dsEnvTypeHasBeenSet = true;
+}
+
+bool Rule::DsEnvTypeHasBeenSet() const
+{
+    return m_dsEnvTypeHasBeenSet;
 }
 

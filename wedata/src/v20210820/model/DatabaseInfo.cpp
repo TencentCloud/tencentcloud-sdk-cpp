@@ -28,7 +28,8 @@ DatabaseInfo::DatabaseInfo() :
     m_instanceIdHasBeenSet(false),
     m_datasourceTypeHasBeenSet(false),
     m_originDatabaseNameHasBeenSet(false),
-    m_originSchemaNameHasBeenSet(false)
+    m_originSchemaNameHasBeenSet(false),
+    m_dsEnvTypeHasBeenSet(false)
 {
 }
 
@@ -117,6 +118,16 @@ CoreInternalOutcome DatabaseInfo::Deserialize(const rapidjson::Value &value)
         m_originSchemaNameHasBeenSet = true;
     }
 
+    if (value.HasMember("DsEnvType") && !value["DsEnvType"].IsNull())
+    {
+        if (!value["DsEnvType"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `DatabaseInfo.DsEnvType` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_dsEnvType = value["DsEnvType"].GetInt64();
+        m_dsEnvTypeHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -186,6 +197,14 @@ void DatabaseInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Al
         string key = "OriginSchemaName";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_originSchemaName.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_dsEnvTypeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "DsEnvType";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_dsEnvType, allocator);
     }
 
 }
@@ -317,5 +336,21 @@ void DatabaseInfo::SetOriginSchemaName(const string& _originSchemaName)
 bool DatabaseInfo::OriginSchemaNameHasBeenSet() const
 {
     return m_originSchemaNameHasBeenSet;
+}
+
+int64_t DatabaseInfo::GetDsEnvType() const
+{
+    return m_dsEnvType;
+}
+
+void DatabaseInfo::SetDsEnvType(const int64_t& _dsEnvType)
+{
+    m_dsEnvType = _dsEnvType;
+    m_dsEnvTypeHasBeenSet = true;
+}
+
+bool DatabaseInfo::DsEnvTypeHasBeenSet() const
+{
+    return m_dsEnvTypeHasBeenSet;
 }
 

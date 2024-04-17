@@ -179,15 +179,15 @@ namespace TencentCloud
                     bool SizeByteHasBeenSet() const;
 
                     /**
-                     * 获取文件系统最大空间限制。单位:GiB
-                     * @return SizeLimit 文件系统最大空间限制。单位:GiB
+                     * 获取文件系统空间限制。单位:GiB
+                     * @return SizeLimit 文件系统空间限制。单位:GiB
                      * 
                      */
                     uint64_t GetSizeLimit() const;
 
                     /**
-                     * 设置文件系统最大空间限制。单位:GiB
-                     * @param _sizeLimit 文件系统最大空间限制。单位:GiB
+                     * 设置文件系统空间限制。单位:GiB
+                     * @param _sizeLimit 文件系统空间限制。单位:GiB
                      * 
                      */
                     void SetSizeLimit(const uint64_t& _sizeLimit);
@@ -452,18 +452,18 @@ namespace TencentCloud
                     bool BandwidthLimitHasBeenSet() const;
 
                     /**
-                     * 获取文件系统总容量
+                     * 获取文件系统容量规格上限
 单位:GiB
-                     * @return Capacity 文件系统总容量
+                     * @return Capacity 文件系统容量规格上限
 单位:GiB
                      * 
                      */
                     uint64_t GetCapacity() const;
 
                     /**
-                     * 设置文件系统总容量
+                     * 设置文件系统容量规格上限
 单位:GiB
-                     * @param _capacity 文件系统总容量
+                     * @param _capacity 文件系统容量规格上限
 单位:GiB
                      * 
                      */
@@ -590,7 +590,7 @@ Available:可用
                     bool m_sizeByteHasBeenSet;
 
                     /**
-                     * 文件系统最大空间限制。单位:GiB
+                     * 文件系统空间限制。单位:GiB
                      */
                     uint64_t m_sizeLimit;
                     bool m_sizeLimitHasBeenSet;
@@ -668,7 +668,7 @@ Available:可用
                     bool m_bandwidthLimitHasBeenSet;
 
                     /**
-                     * 文件系统总容量
+                     * 文件系统容量规格上限
 单位:GiB
                      */
                     uint64_t m_capacity;

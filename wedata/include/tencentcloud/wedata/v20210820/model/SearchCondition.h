@@ -24,7 +24,7 @@
 #include <tencentcloud/core/utils/rapidjson/writer.h>
 #include <tencentcloud/core/utils/rapidjson/stringbuffer.h>
 #include <tencentcloud/core/AbstractModel.h>
-#include <tencentcloud/wedata/v20210820/model/SearchConditionInstance.h>
+#include <tencentcloud/wedata/v20210820/model/SearchConditionInstanceNew.h>
 
 
 namespace TencentCloud
@@ -52,14 +52,14 @@ namespace TencentCloud
                      * @return Instance 查询框架，必选
                      * 
                      */
-                    SearchConditionInstance GetInstance() const;
+                    SearchConditionInstanceNew GetInstance() const;
 
                     /**
                      * 设置查询框架，必选
                      * @param _instance 查询框架，必选
                      * 
                      */
-                    void SetInstance(const SearchConditionInstance& _instance);
+                    void SetInstance(const SearchConditionInstanceNew& _instance);
 
                     /**
                      * 判断参数 Instance 是否已赋值
@@ -136,7 +136,7 @@ namespace TencentCloud
                     /**
                      * 查询框架，必选
                      */
-                    SearchConditionInstance m_instance;
+                    SearchConditionInstanceNew m_instance;
                     bool m_instanceHasBeenSet;
 
                     /**

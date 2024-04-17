@@ -148,15 +148,15 @@ namespace TencentCloud
                     bool TimeUnitHasBeenSet() const;
 
                     /**
-                     * 获取TBDS 事件所属人
-                     * @return Owner TBDS 事件所属人
+                     * 获取事件所属人
+                     * @return Owner 事件所属人
                      * 
                      */
                     std::string GetOwner() const;
 
                     /**
-                     * 设置TBDS 事件所属人
-                     * @param _owner TBDS 事件所属人
+                     * 设置事件所属人
+                     * @param _owner 事件所属人
                      * 
                      */
                     void SetOwner(const std::string& _owner);
@@ -285,7 +285,7 @@ namespace TencentCloud
                     bool m_timeUnitHasBeenSet;
 
                     /**
-                     * TBDS 事件所属人
+                     * 事件所属人
                      */
                     std::string m_owner;
                     bool m_ownerHasBeenSet;

@@ -46,14 +46,14 @@ namespace TencentCloud
                     /**
                      * 获取本次更新的ID号，用来标记一次完整的更新过程。
                      * @return UpdateId 本次更新的ID号，用来标记一次完整的更新过程。
-                     * 
+                     * @deprecated
                      */
                     std::string GetUpdateId() const;
 
                     /**
                      * 判断参数 UpdateId 是否已赋值
                      * @return UpdateId 是否已赋值
-                     * 
+                     * @deprecated
                      */
                     bool UpdateIdHasBeenSet() const;
 
@@ -88,14 +88,14 @@ namespace TencentCloud
                     /**
                      * 获取资源所处地域。
                      * @return ResourceRegion 资源所处地域。
-                     * 
+                     * @deprecated
                      */
                     std::string GetResourceRegion() const;
 
                     /**
                      * 判断参数 ResourceRegion 是否已赋值
                      * @return ResourceRegion 是否已赋值
-                     * 
+                     * @deprecated
                      */
                     bool ResourceRegionHasBeenSet() const;
 

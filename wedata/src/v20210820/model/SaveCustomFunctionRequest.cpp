@@ -32,7 +32,10 @@ SaveCustomFunctionRequest::SaveCustomFunctionRequest() :
     m_usageHasBeenSet(false),
     m_paramDescHasBeenSet(false),
     m_returnDescHasBeenSet(false),
-    m_exampleHasBeenSet(false)
+    m_exampleHasBeenSet(false),
+    m_projectIdHasBeenSet(false),
+    m_dbNameHasBeenSet(false),
+    m_nameHasBeenSet(false)
 {
 }
 
@@ -128,6 +131,30 @@ string SaveCustomFunctionRequest::ToJsonString() const
         string key = "Example";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_example.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_projectIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ProjectId";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_projectId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_dbNameHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "DbName";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_dbName.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_nameHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Name";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_name.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -296,6 +323,54 @@ void SaveCustomFunctionRequest::SetExample(const string& _example)
 bool SaveCustomFunctionRequest::ExampleHasBeenSet() const
 {
     return m_exampleHasBeenSet;
+}
+
+string SaveCustomFunctionRequest::GetProjectId() const
+{
+    return m_projectId;
+}
+
+void SaveCustomFunctionRequest::SetProjectId(const string& _projectId)
+{
+    m_projectId = _projectId;
+    m_projectIdHasBeenSet = true;
+}
+
+bool SaveCustomFunctionRequest::ProjectIdHasBeenSet() const
+{
+    return m_projectIdHasBeenSet;
+}
+
+string SaveCustomFunctionRequest::GetDbName() const
+{
+    return m_dbName;
+}
+
+void SaveCustomFunctionRequest::SetDbName(const string& _dbName)
+{
+    m_dbName = _dbName;
+    m_dbNameHasBeenSet = true;
+}
+
+bool SaveCustomFunctionRequest::DbNameHasBeenSet() const
+{
+    return m_dbNameHasBeenSet;
+}
+
+string SaveCustomFunctionRequest::GetName() const
+{
+    return m_name;
+}
+
+void SaveCustomFunctionRequest::SetName(const string& _name)
+{
+    m_name = _name;
+    m_nameHasBeenSet = true;
+}
+
+bool SaveCustomFunctionRequest::NameHasBeenSet() const
+{
+    return m_nameHasBeenSet;
 }
 
 

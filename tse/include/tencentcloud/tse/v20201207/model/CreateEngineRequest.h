@@ -25,6 +25,7 @@
 #include <tencentcloud/tse/v20201207/model/InstanceTagInfo.h>
 #include <tencentcloud/tse/v20201207/model/EngineAdmin.h>
 #include <tencentcloud/tse/v20201207/model/EngineRegionInfo.h>
+#include <tencentcloud/tse/v20201207/model/StorageOption.h>
 
 
 namespace TencentCloud
@@ -587,14 +588,18 @@ polarismesh - STANDARD版本
 
                     /**
                      * 获取跨地域部署的引擎地域配置详情
+zk标准版没有跨地域部署，请不要填写
                      * @return EngineRegionInfos 跨地域部署的引擎地域配置详情
+zk标准版没有跨地域部署，请不要填写
                      * 
                      */
                     std::vector<EngineRegionInfo> GetEngineRegionInfos() const;
 
                     /**
                      * 设置跨地域部署的引擎地域配置详情
+zk标准版没有跨地域部署，请不要填写
                      * @param _engineRegionInfos 跨地域部署的引擎地域配置详情
+zk标准版没有跨地域部署，请不要填写
                      * 
                      */
                     void SetEngineRegionInfos(const std::vector<EngineRegionInfo>& _engineRegionInfos);
@@ -605,6 +610,31 @@ polarismesh - STANDARD版本
                      * 
                      */
                     bool EngineRegionInfosHasBeenSet() const;
+
+                    /**
+                     * 获取zk专业版至多有两个盘，且磁盘的容量在50-3200之间
+如果只有一个磁盘，storageCapacity与storageOption里面的capacity应该一致
+                     * @return StorageOption zk专业版至多有两个盘，且磁盘的容量在50-3200之间
+如果只有一个磁盘，storageCapacity与storageOption里面的capacity应该一致
+                     * 
+                     */
+                    std::vector<StorageOption> GetStorageOption() const;
+
+                    /**
+                     * 设置zk专业版至多有两个盘，且磁盘的容量在50-3200之间
+如果只有一个磁盘，storageCapacity与storageOption里面的capacity应该一致
+                     * @param _storageOption zk专业版至多有两个盘，且磁盘的容量在50-3200之间
+如果只有一个磁盘，storageCapacity与storageOption里面的capacity应该一致
+                     * 
+                     */
+                    void SetStorageOption(const std::vector<StorageOption>& _storageOption);
+
+                    /**
+                     * 判断参数 StorageOption 是否已赋值
+                     * @return StorageOption 是否已赋值
+                     * 
+                     */
+                    bool StorageOptionHasBeenSet() const;
 
                 private:
 
@@ -756,9 +786,17 @@ polarismesh - STANDARD版本
 
                     /**
                      * 跨地域部署的引擎地域配置详情
+zk标准版没有跨地域部署，请不要填写
                      */
                     std::vector<EngineRegionInfo> m_engineRegionInfos;
                     bool m_engineRegionInfosHasBeenSet;
+
+                    /**
+                     * zk专业版至多有两个盘，且磁盘的容量在50-3200之间
+如果只有一个磁盘，storageCapacity与storageOption里面的capacity应该一致
+                     */
+                    std::vector<StorageOption> m_storageOption;
+                    bool m_storageOptionHasBeenSet;
 
                 };
             }

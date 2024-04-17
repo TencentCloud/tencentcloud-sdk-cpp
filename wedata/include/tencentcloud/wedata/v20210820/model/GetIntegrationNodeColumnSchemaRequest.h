@@ -64,15 +64,15 @@ namespace TencentCloud
                     bool ColumnContentHasBeenSet() const;
 
                     /**
-                     * 获取数据源类型
-                     * @return DatasourceType 数据源类型
+                     * 获取数据源类型 MYSQL|HIVE|KAFKA|ES|MONGODB|REST_API|SYBASE|TIDB|DORIS|DM|
+                     * @return DatasourceType 数据源类型 MYSQL|HIVE|KAFKA|ES|MONGODB|REST_API|SYBASE|TIDB|DORIS|DM|
                      * 
                      */
                     std::string GetDatasourceType() const;
 
                     /**
-                     * 设置数据源类型
-                     * @param _datasourceType 数据源类型
+                     * 设置数据源类型 MYSQL|HIVE|KAFKA|ES|MONGODB|REST_API|SYBASE|TIDB|DORIS|DM|
+                     * @param _datasourceType 数据源类型 MYSQL|HIVE|KAFKA|ES|MONGODB|REST_API|SYBASE|TIDB|DORIS|DM|
                      * 
                      */
                     void SetDatasourceType(const std::string& _datasourceType);
@@ -93,7 +93,7 @@ namespace TencentCloud
                     bool m_columnContentHasBeenSet;
 
                     /**
-                     * 数据源类型
+                     * 数据源类型 MYSQL|HIVE|KAFKA|ES|MONGODB|REST_API|SYBASE|TIDB|DORIS|DM|
                      */
                     std::string m_datasourceType;
                     bool m_datasourceTypeHasBeenSet;

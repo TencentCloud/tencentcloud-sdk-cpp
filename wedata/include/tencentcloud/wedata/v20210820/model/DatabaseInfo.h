@@ -246,6 +246,31 @@ namespace TencentCloud
                      */
                     bool OriginSchemaNameHasBeenSet() const;
 
+                    /**
+                     * 获取0或者未返回.未定义，1.生产 2.开发
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return DsEnvType 0或者未返回.未定义，1.生产 2.开发
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    int64_t GetDsEnvType() const;
+
+                    /**
+                     * 设置0或者未返回.未定义，1.生产 2.开发
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _dsEnvType 0或者未返回.未定义，1.生产 2.开发
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetDsEnvType(const int64_t& _dsEnvType);
+
+                    /**
+                     * 判断参数 DsEnvType 是否已赋值
+                     * @return DsEnvType 是否已赋值
+                     * 
+                     */
+                    bool DsEnvTypeHasBeenSet() const;
+
                 private:
 
                     /**
@@ -303,6 +328,13 @@ namespace TencentCloud
                      */
                     std::string m_originSchemaName;
                     bool m_originSchemaNameHasBeenSet;
+
+                    /**
+                     * 0或者未返回.未定义，1.生产 2.开发
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    int64_t m_dsEnvType;
+                    bool m_dsEnvTypeHasBeenSet;
 
                 };
             }

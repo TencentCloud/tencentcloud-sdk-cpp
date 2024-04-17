@@ -64,15 +64,15 @@ namespace TencentCloud
                     bool TaskIdListHasBeenSet() const;
 
                     /**
-                     * 获取需要更新的责任人
-                     * @return Owners 需要更新的责任人
+                     * 获取需要更新的责任人userId信息，多个责任人用;连接
+                     * @return Owners 需要更新的责任人userId信息，多个责任人用;连接
                      * 
                      */
                     std::string GetOwners() const;
 
                     /**
-                     * 设置需要更新的责任人
-                     * @param _owners 需要更新的责任人
+                     * 设置需要更新的责任人userId信息，多个责任人用;连接
+                     * @param _owners 需要更新的责任人userId信息，多个责任人用;连接
                      * 
                      */
                     void SetOwners(const std::string& _owners);
@@ -114,7 +114,7 @@ namespace TencentCloud
                     bool m_taskIdListHasBeenSet;
 
                     /**
-                     * 需要更新的责任人
+                     * 需要更新的责任人userId信息，多个责任人用;连接
                      */
                     std::string m_owners;
                     bool m_ownersHasBeenSet;

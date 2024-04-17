@@ -21,6 +21,7 @@
 #include <vector>
 #include <map>
 #include <tencentcloud/core/AbstractModel.h>
+#include <tencentcloud/dsgc/v20190723/model/CosBucketItem.h>
 
 
 namespace TencentCloud
@@ -41,27 +42,6 @@ namespace TencentCloud
                     ~CreateDSPACosMetaResourcesRequest() = default;
                     std::string ToJsonString() const;
 
-
-                    /**
-                     * 获取资源所处地域。
-                     * @return ResourceRegion 资源所处地域。
-                     * 
-                     */
-                    std::string GetResourceRegion() const;
-
-                    /**
-                     * 设置资源所处地域。
-                     * @param _resourceRegion 资源所处地域。
-                     * 
-                     */
-                    void SetResourceRegion(const std::string& _resourceRegion);
-
-                    /**
-                     * 判断参数 ResourceRegion 是否已赋值
-                     * @return ResourceRegion 是否已赋值
-                     * 
-                     */
-                    bool ResourceRegionHasBeenSet() const;
 
                     /**
                      * 获取DSPA实例ID。
@@ -85,33 +65,69 @@ namespace TencentCloud
                     bool DspaIdHasBeenSet() const;
 
                     /**
+                     * 获取资源所处地域。
+                     * @return ResourceRegion 资源所处地域。
+                     * @deprecated
+                     */
+                    std::string GetResourceRegion() const;
+
+                    /**
+                     * 设置资源所处地域。
+                     * @param _resourceRegion 资源所处地域。
+                     * @deprecated
+                     */
+                    void SetResourceRegion(const std::string& _resourceRegion);
+
+                    /**
+                     * 判断参数 ResourceRegion 是否已赋值
+                     * @return ResourceRegion 是否已赋值
+                     * @deprecated
+                     */
+                    bool ResourceRegionHasBeenSet() const;
+
+                    /**
                      * 获取COS桶列表
                      * @return Buckets COS桶列表
-                     * 
+                     * @deprecated
                      */
                     std::vector<std::string> GetBuckets() const;
 
                     /**
                      * 设置COS桶列表
                      * @param _buckets COS桶列表
-                     * 
+                     * @deprecated
                      */
                     void SetBuckets(const std::vector<std::string>& _buckets);
 
                     /**
                      * 判断参数 Buckets 是否已赋值
                      * @return Buckets 是否已赋值
-                     * 
+                     * @deprecated
                      */
                     bool BucketsHasBeenSet() const;
 
-                private:
+                    /**
+                     * 获取必填，COS资源列表
+                     * @return CosBucketItems 必填，COS资源列表
+                     * 
+                     */
+                    std::vector<CosBucketItem> GetCosBucketItems() const;
 
                     /**
-                     * 资源所处地域。
+                     * 设置必填，COS资源列表
+                     * @param _cosBucketItems 必填，COS资源列表
+                     * 
                      */
-                    std::string m_resourceRegion;
-                    bool m_resourceRegionHasBeenSet;
+                    void SetCosBucketItems(const std::vector<CosBucketItem>& _cosBucketItems);
+
+                    /**
+                     * 判断参数 CosBucketItems 是否已赋值
+                     * @return CosBucketItems 是否已赋值
+                     * 
+                     */
+                    bool CosBucketItemsHasBeenSet() const;
+
+                private:
 
                     /**
                      * DSPA实例ID。
@@ -120,10 +136,22 @@ namespace TencentCloud
                     bool m_dspaIdHasBeenSet;
 
                     /**
+                     * 资源所处地域。
+                     */
+                    std::string m_resourceRegion;
+                    bool m_resourceRegionHasBeenSet;
+
+                    /**
                      * COS桶列表
                      */
                     std::vector<std::string> m_buckets;
                     bool m_bucketsHasBeenSet;
+
+                    /**
+                     * 必填，COS资源列表
+                     */
+                    std::vector<CosBucketItem> m_cosBucketItems;
+                    bool m_cosBucketItemsHasBeenSet;
 
                 };
             }

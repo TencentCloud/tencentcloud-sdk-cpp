@@ -277,6 +277,209 @@ namespace TencentCloud
                      */
                     bool SqlMd5HasBeenSet() const;
 
+                    /**
+                     * 获取远程读取次数
+数据库内核版本大于3.1.12
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return SyncReadCountRemote 远程读取次数
+数据库内核版本大于3.1.12
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    int64_t GetSyncReadCountRemote() const;
+
+                    /**
+                     * 设置远程读取次数
+数据库内核版本大于3.1.12
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _syncReadCountRemote 远程读取次数
+数据库内核版本大于3.1.12
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetSyncReadCountRemote(const int64_t& _syncReadCountRemote);
+
+                    /**
+                     * 判断参数 SyncReadCountRemote 是否已赋值
+                     * @return SyncReadCountRemote 是否已赋值
+                     * 
+                     */
+                    bool SyncReadCountRemoteHasBeenSet() const;
+
+                    /**
+                     * 获取远程读取的字节数
+数据库内核版本大于3.1.12
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return SyncReadBytesRemote 远程读取的字节数
+数据库内核版本大于3.1.12
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    int64_t GetSyncReadBytesRemote() const;
+
+                    /**
+                     * 设置远程读取的字节数
+数据库内核版本大于3.1.12
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _syncReadBytesRemote 远程读取的字节数
+数据库内核版本大于3.1.12
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetSyncReadBytesRemote(const int64_t& _syncReadBytesRemote);
+
+                    /**
+                     * 判断参数 SyncReadBytesRemote 是否已赋值
+                     * @return SyncReadBytesRemote 是否已赋值
+                     * 
+                     */
+                    bool SyncReadBytesRemoteHasBeenSet() const;
+
+                    /**
+                     * 获取远程读取所花费的时间（微秒）
+数据库内核版本大于3.1.12
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return SyncReadTimeRemote 远程读取所花费的时间（微秒）
+数据库内核版本大于3.1.12
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    int64_t GetSyncReadTimeRemote() const;
+
+                    /**
+                     * 设置远程读取所花费的时间（微秒）
+数据库内核版本大于3.1.12
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _syncReadTimeRemote 远程读取所花费的时间（微秒）
+数据库内核版本大于3.1.12
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetSyncReadTimeRemote(const int64_t& _syncReadTimeRemote);
+
+                    /**
+                     * 判断参数 SyncReadTimeRemote 是否已赋值
+                     * @return SyncReadTimeRemote 是否已赋值
+                     * 
+                     */
+                    bool SyncReadTimeRemoteHasBeenSet() const;
+
+                    /**
+                     * 获取远程写入次数
+数据库内核版本大于3.1.12
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return SyncWriteCountRemote 远程写入次数
+数据库内核版本大于3.1.12
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    int64_t GetSyncWriteCountRemote() const;
+
+                    /**
+                     * 设置远程写入次数
+数据库内核版本大于3.1.12
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _syncWriteCountRemote 远程写入次数
+数据库内核版本大于3.1.12
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetSyncWriteCountRemote(const int64_t& _syncWriteCountRemote);
+
+                    /**
+                     * 判断参数 SyncWriteCountRemote 是否已赋值
+                     * @return SyncWriteCountRemote 是否已赋值
+                     * 
+                     */
+                    bool SyncWriteCountRemoteHasBeenSet() const;
+
+                    /**
+                     * 获取远程写入的字节数。
+数据库内核版本大于3.1.12
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return SyncWriteBytesRemote 远程写入的字节数。
+数据库内核版本大于3.1.12
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    int64_t GetSyncWriteBytesRemote() const;
+
+                    /**
+                     * 设置远程写入的字节数。
+数据库内核版本大于3.1.12
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _syncWriteBytesRemote 远程写入的字节数。
+数据库内核版本大于3.1.12
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetSyncWriteBytesRemote(const int64_t& _syncWriteBytesRemote);
+
+                    /**
+                     * 判断参数 SyncWriteBytesRemote 是否已赋值
+                     * @return SyncWriteBytesRemote 是否已赋值
+                     * 
+                     */
+                    bool SyncWriteBytesRemoteHasBeenSet() const;
+
+                    /**
+                     * 获取远程写入所花费的时间（微秒）。
+数据库内核版本大于3.1.12
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return SyncWriteTimeRemote 远程写入所花费的时间（微秒）。
+数据库内核版本大于3.1.12
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    int64_t GetSyncWriteTimeRemote() const;
+
+                    /**
+                     * 设置远程写入所花费的时间（微秒）。
+数据库内核版本大于3.1.12
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _syncWriteTimeRemote 远程写入所花费的时间（微秒）。
+数据库内核版本大于3.1.12
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetSyncWriteTimeRemote(const int64_t& _syncWriteTimeRemote);
+
+                    /**
+                     * 判断参数 SyncWriteTimeRemote 是否已赋值
+                     * @return SyncWriteTimeRemote 是否已赋值
+                     * 
+                     */
+                    bool SyncWriteTimeRemoteHasBeenSet() const;
+
+                    /**
+                     * 获取事务提交延迟（微秒）
+数据库内核版本大于3.1.12
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return TrxCommitDelay 事务提交延迟（微秒）
+数据库内核版本大于3.1.12
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    int64_t GetTrxCommitDelay() const;
+
+                    /**
+                     * 设置事务提交延迟（微秒）
+数据库内核版本大于3.1.12
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _trxCommitDelay 事务提交延迟（微秒）
+数据库内核版本大于3.1.12
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetTrxCommitDelay(const int64_t& _trxCommitDelay);
+
+                    /**
+                     * 判断参数 TrxCommitDelay 是否已赋值
+                     * @return TrxCommitDelay 是否已赋值
+                     * 
+                     */
+                    bool TrxCommitDelayHasBeenSet() const;
+
                 private:
 
                     /**
@@ -344,6 +547,62 @@ namespace TencentCloud
                      */
                     std::string m_sqlMd5;
                     bool m_sqlMd5HasBeenSet;
+
+                    /**
+                     * 远程读取次数
+数据库内核版本大于3.1.12
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    int64_t m_syncReadCountRemote;
+                    bool m_syncReadCountRemoteHasBeenSet;
+
+                    /**
+                     * 远程读取的字节数
+数据库内核版本大于3.1.12
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    int64_t m_syncReadBytesRemote;
+                    bool m_syncReadBytesRemoteHasBeenSet;
+
+                    /**
+                     * 远程读取所花费的时间（微秒）
+数据库内核版本大于3.1.12
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    int64_t m_syncReadTimeRemote;
+                    bool m_syncReadTimeRemoteHasBeenSet;
+
+                    /**
+                     * 远程写入次数
+数据库内核版本大于3.1.12
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    int64_t m_syncWriteCountRemote;
+                    bool m_syncWriteCountRemoteHasBeenSet;
+
+                    /**
+                     * 远程写入的字节数。
+数据库内核版本大于3.1.12
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    int64_t m_syncWriteBytesRemote;
+                    bool m_syncWriteBytesRemoteHasBeenSet;
+
+                    /**
+                     * 远程写入所花费的时间（微秒）。
+数据库内核版本大于3.1.12
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    int64_t m_syncWriteTimeRemote;
+                    bool m_syncWriteTimeRemoteHasBeenSet;
+
+                    /**
+                     * 事务提交延迟（微秒）
+数据库内核版本大于3.1.12
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    int64_t m_trxCommitDelay;
+                    bool m_trxCommitDelayHasBeenSet;
 
                 };
             }

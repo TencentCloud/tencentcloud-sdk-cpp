@@ -60,9 +60,9 @@ namespace TencentCloud
                     bool FunctionIdHasBeenSet() const;
 
                     /**
-                     * 获取无
+                     * 获取错误提示
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return ErrorMessage 无
+                     * @return ErrorMessage 错误提示
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -85,7 +85,7 @@ namespace TencentCloud
                     bool m_functionIdHasBeenSet;
 
                     /**
-                     * 无
+                     * 错误提示
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_errorMessage;

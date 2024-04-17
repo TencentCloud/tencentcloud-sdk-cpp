@@ -656,6 +656,31 @@ namespace TencentCloud
                      */
                     bool SubmitTimestampHasBeenSet() const;
 
+                    /**
+                     * 获取函数tag
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return Tag 函数tag
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::string GetTag() const;
+
+                    /**
+                     * 设置函数tag
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _tag 函数tag
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetTag(const std::string& _tag);
+
+                    /**
+                     * 判断参数 Tag 是否已赋值
+                     * @return Tag 是否已赋值
+                     * 
+                     */
+                    bool TagHasBeenSet() const;
+
                 private:
 
                     /**
@@ -828,6 +853,13 @@ namespace TencentCloud
                      */
                     std::string m_submitTimestamp;
                     bool m_submitTimestampHasBeenSet;
+
+                    /**
+                     * 函数tag
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_tag;
+                    bool m_tagHasBeenSet;
 
                 };
             }

@@ -28,6 +28,7 @@
 #include <tencentcloud/tke/v20180525/model/Taint.h>
 #include <tencentcloud/tke/v20180525/model/AnnotationValue.h>
 #include <tencentcloud/tke/v20180525/model/NodeCountSummary.h>
+#include <tencentcloud/tke/v20180525/model/RuntimeConfig.h>
 #include <tencentcloud/tke/v20180525/model/Tag.h>
 #include <tencentcloud/tke/v20180525/model/InstanceExtraArgs.h>
 #include <tencentcloud/tke/v20180525/model/GPUArgs.h>
@@ -363,6 +364,31 @@ namespace TencentCloud
                      * 
                      */
                     bool DesiredNodesNumHasBeenSet() const;
+
+                    /**
+                     * 获取运行时描述
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return RuntimeConfig 运行时描述
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    RuntimeConfig GetRuntimeConfig() const;
+
+                    /**
+                     * 设置运行时描述
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _runtimeConfig 运行时描述
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetRuntimeConfig(const RuntimeConfig& _runtimeConfig);
+
+                    /**
+                     * 判断参数 RuntimeConfig 是否已赋值
+                     * @return RuntimeConfig 是否已赋值
+                     * 
+                     */
+                    bool RuntimeConfigHasBeenSet() const;
 
                     /**
                      * 获取节点池osName
@@ -778,6 +804,13 @@ namespace TencentCloud
                      */
                     int64_t m_desiredNodesNum;
                     bool m_desiredNodesNumHasBeenSet;
+
+                    /**
+                     * 运行时描述
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    RuntimeConfig m_runtimeConfig;
+                    bool m_runtimeConfigHasBeenSet;
 
                     /**
                      * 节点池osName

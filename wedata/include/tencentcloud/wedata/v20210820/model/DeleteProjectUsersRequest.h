@@ -42,7 +42,61 @@ namespace TencentCloud
                     std::string ToJsonString() const;
 
 
+                    /**
+                     * 获取项目ID
+                     * @return ProjectId 项目ID
+                     * 
+                     */
+                    std::string GetProjectId() const;
+
+                    /**
+                     * 设置项目ID
+                     * @param _projectId 项目ID
+                     * 
+                     */
+                    void SetProjectId(const std::string& _projectId);
+
+                    /**
+                     * 判断参数 ProjectId 是否已赋值
+                     * @return ProjectId 是否已赋值
+                     * 
+                     */
+                    bool ProjectIdHasBeenSet() const;
+
+                    /**
+                     * 获取用户ID列表
+                     * @return UserIds 用户ID列表
+                     * 
+                     */
+                    std::vector<std::string> GetUserIds() const;
+
+                    /**
+                     * 设置用户ID列表
+                     * @param _userIds 用户ID列表
+                     * 
+                     */
+                    void SetUserIds(const std::vector<std::string>& _userIds);
+
+                    /**
+                     * 判断参数 UserIds 是否已赋值
+                     * @return UserIds 是否已赋值
+                     * 
+                     */
+                    bool UserIdsHasBeenSet() const;
+
                 private:
+
+                    /**
+                     * 项目ID
+                     */
+                    std::string m_projectId;
+                    bool m_projectIdHasBeenSet;
+
+                    /**
+                     * 用户ID列表
+                     */
+                    std::vector<std::string> m_userIds;
+                    bool m_userIdsHasBeenSet;
 
                 };
             }

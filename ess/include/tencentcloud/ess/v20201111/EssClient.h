@@ -113,6 +113,8 @@
 #include <tencentcloud/ess/v20201111/model/DeleteIntegrationRoleUsersResponse.h>
 #include <tencentcloud/ess/v20201111/model/DeleteSealPoliciesRequest.h>
 #include <tencentcloud/ess/v20201111/model/DeleteSealPoliciesResponse.h>
+#include <tencentcloud/ess/v20201111/model/DescribeBillUsageRequest.h>
+#include <tencentcloud/ess/v20201111/model/DescribeBillUsageResponse.h>
 #include <tencentcloud/ess/v20201111/model/DescribeBillUsageDetailRequest.h>
 #include <tencentcloud/ess/v20201111/model/DescribeBillUsageDetailResponse.h>
 #include <tencentcloud/ess/v20201111/model/DescribeCancelFlowsTaskRequest.h>
@@ -326,6 +328,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DeleteSealPoliciesResponse> DeleteSealPoliciesOutcome;
                 typedef std::future<DeleteSealPoliciesOutcome> DeleteSealPoliciesOutcomeCallable;
                 typedef std::function<void(const EssClient*, const Model::DeleteSealPoliciesRequest&, DeleteSealPoliciesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteSealPoliciesAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeBillUsageResponse> DescribeBillUsageOutcome;
+                typedef std::future<DescribeBillUsageOutcome> DescribeBillUsageOutcomeCallable;
+                typedef std::function<void(const EssClient*, const Model::DescribeBillUsageRequest&, DescribeBillUsageOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeBillUsageAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeBillUsageDetailResponse> DescribeBillUsageDetailOutcome;
                 typedef std::future<DescribeBillUsageDetailOutcome> DescribeBillUsageDetailOutcomeCallable;
                 typedef std::function<void(const EssClient*, const Model::DescribeBillUsageDetailRequest&, DescribeBillUsageDetailOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeBillUsageDetailAsyncHandler;
@@ -1294,6 +1299,15 @@ namespace TencentCloud
                 DeleteSealPoliciesOutcome DeleteSealPolicies(const Model::DeleteSealPoliciesRequest &request);
                 void DeleteSealPoliciesAsync(const Model::DeleteSealPoliciesRequest& request, const DeleteSealPoliciesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DeleteSealPoliciesOutcomeCallable DeleteSealPoliciesCallable(const Model::DeleteSealPoliciesRequest& request);
+
+                /**
+                 *通过此接口（DescribeBillUsage）查询该企业的套餐套餐使用情况。
+                 * @param req DescribeBillUsageRequest
+                 * @return DescribeBillUsageOutcome
+                 */
+                DescribeBillUsageOutcome DescribeBillUsage(const Model::DescribeBillUsageRequest &request);
+                void DescribeBillUsageAsync(const Model::DescribeBillUsageRequest& request, const DescribeBillUsageAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeBillUsageOutcomeCallable DescribeBillUsageCallable(const Model::DescribeBillUsageRequest& request);
 
                 /**
                  *通过此接口（DescribeBillUsageDetail）查询该企业的套餐消耗详情。

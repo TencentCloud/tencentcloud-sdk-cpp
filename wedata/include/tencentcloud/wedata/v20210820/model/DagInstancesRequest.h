@@ -172,15 +172,15 @@ namespace TencentCloud
                     bool SonInstanceTypeHasBeenSet() const;
 
                     /**
-                     * 获取查询条件
-                     * @return SearchCondition 查询条件
+                     * 获取查询条件,当前接口需要把要查询的示例信息放在该字段
+                     * @return SearchCondition 查询条件,当前接口需要把要查询的示例信息放在该字段
                      * 
                      */
                     InstanceApiOpsRequest GetSearchCondition() const;
 
                     /**
-                     * 设置查询条件
-                     * @param _searchCondition 查询条件
+                     * 设置查询条件,当前接口需要把要查询的示例信息放在该字段
+                     * @param _searchCondition 查询条件,当前接口需要把要查询的示例信息放在该字段
                      * 
                      */
                     void SetSearchCondition(const InstanceApiOpsRequest& _searchCondition);
@@ -462,7 +462,7 @@ namespace TencentCloud
                     bool m_sonInstanceTypeHasBeenSet;
 
                     /**
-                     * 查询条件
+                     * 查询条件,当前接口需要把要查询的示例信息放在该字段
                      */
                     InstanceApiOpsRequest m_searchCondition;
                     bool m_searchConditionHasBeenSet;

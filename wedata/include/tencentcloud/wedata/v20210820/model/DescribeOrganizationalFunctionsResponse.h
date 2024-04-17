@@ -45,9 +45,9 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取无
+                     * 获取函数信息
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return Content 无
+                     * @return Content 函数信息
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -61,9 +61,9 @@ namespace TencentCloud
                     bool ContentHasBeenSet() const;
 
                     /**
-                     * 获取无
+                     * 获取操作失败
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return ErrorMessage 无
+                     * @return ErrorMessage 操作失败
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -79,14 +79,14 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 无
+                     * 函数信息
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<OrganizationalFunction> m_content;
                     bool m_contentHasBeenSet;
 
                     /**
-                     * 无
+                     * 操作失败
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_errorMessage;

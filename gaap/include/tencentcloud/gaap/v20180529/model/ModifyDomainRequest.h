@@ -204,6 +204,27 @@ namespace TencentCloud
                      */
                     bool PolyClientCertificateIdsHasBeenSet() const;
 
+                    /**
+                     * 获取是否作为默认域名，默认为“否”
+                     * @return IsDefaultServer 是否作为默认域名，默认为“否”
+                     * 
+                     */
+                    bool GetIsDefaultServer() const;
+
+                    /**
+                     * 设置是否作为默认域名，默认为“否”
+                     * @param _isDefaultServer 是否作为默认域名，默认为“否”
+                     * 
+                     */
+                    void SetIsDefaultServer(const bool& _isDefaultServer);
+
+                    /**
+                     * 判断参数 IsDefaultServer 是否已赋值
+                     * @return IsDefaultServer 是否已赋值
+                     * 
+                     */
+                    bool IsDefaultServerHasBeenSet() const;
+
                 private:
 
                     /**
@@ -250,6 +271,12 @@ namespace TencentCloud
                      */
                     std::vector<std::string> m_polyClientCertificateIds;
                     bool m_polyClientCertificateIdsHasBeenSet;
+
+                    /**
+                     * 是否作为默认域名，默认为“否”
+                     */
+                    bool m_isDefaultServer;
+                    bool m_isDefaultServerHasBeenSet;
 
                 };
             }

@@ -23,7 +23,8 @@ using namespace TencentCloud::Wedata::V20210820::Model;
 using namespace std;
 
 DescribeDatasourceRequest::DescribeDatasourceRequest() :
-    m_idHasBeenSet(false)
+    m_idHasBeenSet(false),
+    m_envHasBeenSet(false)
 {
 }
 
@@ -40,6 +41,14 @@ string DescribeDatasourceRequest::ToJsonString() const
         string key = "Id";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_id, allocator);
+    }
+
+    if (m_envHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Env";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_env.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -64,6 +73,22 @@ void DescribeDatasourceRequest::SetId(const uint64_t& _id)
 bool DescribeDatasourceRequest::IdHasBeenSet() const
 {
     return m_idHasBeenSet;
+}
+
+string DescribeDatasourceRequest::GetEnv() const
+{
+    return m_env;
+}
+
+void DescribeDatasourceRequest::SetEnv(const string& _env)
+{
+    m_env = _env;
+    m_envHasBeenSet = true;
+}
+
+bool DescribeDatasourceRequest::EnvHasBeenSet() const
+{
+    return m_envHasBeenSet;
 }
 
 

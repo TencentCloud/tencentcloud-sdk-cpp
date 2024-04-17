@@ -47,15 +47,63 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取回调时的Body
-                     * @return Body 回调时的Body
+                     * 获取回调时的Body。
+可将各类告警变量放在请求内容中，详见[帮助文档](https://cloud.tencent.com/document/product/614/74718)。
+如下示例：
+
+```
+{
+"TopicId": "{{ .QueryLog[0][0].topicId }}",
+"key": "{{.Alarm}}",
+"time": "{{ .QueryLog[0][0].time }}",
+"log": "{{ .QueryLog[0][0].content.__CONTENT__ }}",
+"namespace": "{{ .QueryLog[0][0].content.__TAG__.namespace }}"
+}
+```
+                     * @return Body 回调时的Body。
+可将各类告警变量放在请求内容中，详见[帮助文档](https://cloud.tencent.com/document/product/614/74718)。
+如下示例：
+
+```
+{
+"TopicId": "{{ .QueryLog[0][0].topicId }}",
+"key": "{{.Alarm}}",
+"time": "{{ .QueryLog[0][0].time }}",
+"log": "{{ .QueryLog[0][0].content.__CONTENT__ }}",
+"namespace": "{{ .QueryLog[0][0].content.__TAG__.namespace }}"
+}
+```
                      * 
                      */
                     std::string GetBody() const;
 
                     /**
-                     * 设置回调时的Body
-                     * @param _body 回调时的Body
+                     * 设置回调时的Body。
+可将各类告警变量放在请求内容中，详见[帮助文档](https://cloud.tencent.com/document/product/614/74718)。
+如下示例：
+
+```
+{
+"TopicId": "{{ .QueryLog[0][0].topicId }}",
+"key": "{{.Alarm}}",
+"time": "{{ .QueryLog[0][0].time }}",
+"log": "{{ .QueryLog[0][0].content.__CONTENT__ }}",
+"namespace": "{{ .QueryLog[0][0].content.__TAG__.namespace }}"
+}
+```
+                     * @param _body 回调时的Body。
+可将各类告警变量放在请求内容中，详见[帮助文档](https://cloud.tencent.com/document/product/614/74718)。
+如下示例：
+
+```
+{
+"TopicId": "{{ .QueryLog[0][0].topicId }}",
+"key": "{{.Alarm}}",
+"time": "{{ .QueryLog[0][0].time }}",
+"log": "{{ .QueryLog[0][0].content.__CONTENT__ }}",
+"namespace": "{{ .QueryLog[0][0].content.__TAG__.namespace }}"
+}
+```
                      * 
                      */
                     void SetBody(const std::string& _body);
@@ -68,18 +116,34 @@ namespace TencentCloud
                     bool BodyHasBeenSet() const;
 
                     /**
-                     * 获取回调时的Headers
+                     * 获取回调时的HTTP请求头部字段。
+例如：下面请求头部字段来告知服务器请求主体的内容类型为JSON。
+```
+"Content-Type: application/json"
+```
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return Headers 回调时的Headers
+                     * @return Headers 回调时的HTTP请求头部字段。
+例如：下面请求头部字段来告知服务器请求主体的内容类型为JSON。
+```
+"Content-Type: application/json"
+```
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<std::string> GetHeaders() const;
 
                     /**
-                     * 设置回调时的Headers
+                     * 设置回调时的HTTP请求头部字段。
+例如：下面请求头部字段来告知服务器请求主体的内容类型为JSON。
+```
+"Content-Type: application/json"
+```
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _headers 回调时的Headers
+                     * @param _headers 回调时的HTTP请求头部字段。
+例如：下面请求头部字段来告知服务器请求主体的内容类型为JSON。
+```
+"Content-Type: application/json"
+```
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -95,13 +159,29 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 回调时的Body
+                     * 回调时的Body。
+可将各类告警变量放在请求内容中，详见[帮助文档](https://cloud.tencent.com/document/product/614/74718)。
+如下示例：
+
+```
+{
+"TopicId": "{{ .QueryLog[0][0].topicId }}",
+"key": "{{.Alarm}}",
+"time": "{{ .QueryLog[0][0].time }}",
+"log": "{{ .QueryLog[0][0].content.__CONTENT__ }}",
+"namespace": "{{ .QueryLog[0][0].content.__TAG__.namespace }}"
+}
+```
                      */
                     std::string m_body;
                     bool m_bodyHasBeenSet;
 
                     /**
-                     * 回调时的Headers
+                     * 回调时的HTTP请求头部字段。
+例如：下面请求头部字段来告知服务器请求主体的内容类型为JSON。
+```
+"Content-Type: application/json"
+```
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<std::string> m_headers;

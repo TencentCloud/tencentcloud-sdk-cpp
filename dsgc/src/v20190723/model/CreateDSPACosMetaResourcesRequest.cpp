@@ -23,9 +23,10 @@ using namespace TencentCloud::Dsgc::V20190723::Model;
 using namespace std;
 
 CreateDSPACosMetaResourcesRequest::CreateDSPACosMetaResourcesRequest() :
-    m_resourceRegionHasBeenSet(false),
     m_dspaIdHasBeenSet(false),
-    m_bucketsHasBeenSet(false)
+    m_resourceRegionHasBeenSet(false),
+    m_bucketsHasBeenSet(false),
+    m_cosBucketItemsHasBeenSet(false)
 {
 }
 
@@ -36,20 +37,20 @@ string CreateDSPACosMetaResourcesRequest::ToJsonString() const
     rapidjson::Document::AllocatorType& allocator = d.GetAllocator();
 
 
-    if (m_resourceRegionHasBeenSet)
-    {
-        rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "ResourceRegion";
-        iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, rapidjson::Value(m_resourceRegion.c_str(), allocator).Move(), allocator);
-    }
-
     if (m_dspaIdHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
         string key = "DspaId";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_dspaId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_resourceRegionHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ResourceRegion";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_resourceRegion.c_str(), allocator).Move(), allocator);
     }
 
     if (m_bucketsHasBeenSet)
@@ -65,6 +66,21 @@ string CreateDSPACosMetaResourcesRequest::ToJsonString() const
         }
     }
 
+    if (m_cosBucketItemsHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "CosBucketItems";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_cosBucketItems.begin(); itr != m_cosBucketItems.end(); ++itr, ++i)
+        {
+            d[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(d[key.c_str()][i], allocator);
+        }
+    }
+
 
     rapidjson::StringBuffer buffer;
     rapidjson::Writer<rapidjson::StringBuffer> writer(buffer);
@@ -72,22 +88,6 @@ string CreateDSPACosMetaResourcesRequest::ToJsonString() const
     return buffer.GetString();
 }
 
-
-string CreateDSPACosMetaResourcesRequest::GetResourceRegion() const
-{
-    return m_resourceRegion;
-}
-
-void CreateDSPACosMetaResourcesRequest::SetResourceRegion(const string& _resourceRegion)
-{
-    m_resourceRegion = _resourceRegion;
-    m_resourceRegionHasBeenSet = true;
-}
-
-bool CreateDSPACosMetaResourcesRequest::ResourceRegionHasBeenSet() const
-{
-    return m_resourceRegionHasBeenSet;
-}
 
 string CreateDSPACosMetaResourcesRequest::GetDspaId() const
 {
@@ -105,6 +105,22 @@ bool CreateDSPACosMetaResourcesRequest::DspaIdHasBeenSet() const
     return m_dspaIdHasBeenSet;
 }
 
+string CreateDSPACosMetaResourcesRequest::GetResourceRegion() const
+{
+    return m_resourceRegion;
+}
+
+void CreateDSPACosMetaResourcesRequest::SetResourceRegion(const string& _resourceRegion)
+{
+    m_resourceRegion = _resourceRegion;
+    m_resourceRegionHasBeenSet = true;
+}
+
+bool CreateDSPACosMetaResourcesRequest::ResourceRegionHasBeenSet() const
+{
+    return m_resourceRegionHasBeenSet;
+}
+
 vector<string> CreateDSPACosMetaResourcesRequest::GetBuckets() const
 {
     return m_buckets;
@@ -119,6 +135,22 @@ void CreateDSPACosMetaResourcesRequest::SetBuckets(const vector<string>& _bucket
 bool CreateDSPACosMetaResourcesRequest::BucketsHasBeenSet() const
 {
     return m_bucketsHasBeenSet;
+}
+
+vector<CosBucketItem> CreateDSPACosMetaResourcesRequest::GetCosBucketItems() const
+{
+    return m_cosBucketItems;
+}
+
+void CreateDSPACosMetaResourcesRequest::SetCosBucketItems(const vector<CosBucketItem>& _cosBucketItems)
+{
+    m_cosBucketItems = _cosBucketItems;
+    m_cosBucketItemsHasBeenSet = true;
+}
+
+bool CreateDSPACosMetaResourcesRequest::CosBucketItemsHasBeenSet() const
+{
+    return m_cosBucketItemsHasBeenSet;
 }
 
 

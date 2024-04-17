@@ -64,15 +64,15 @@ namespace TencentCloud
                     bool TaskIdsHasBeenSet() const;
 
                     /**
-                     * 获取任务类型
-                     * @return TaskType 任务类型
+                     * 获取任务类型，201为实时任务，202为离线任务
+                     * @return TaskType 任务类型，201为实时任务，202为离线任务
                      * 
                      */
                     int64_t GetTaskType() const;
 
                     /**
-                     * 设置任务类型
-                     * @param _taskType 任务类型
+                     * 设置任务类型，201为实时任务，202为离线任务
+                     * @param _taskType 任务类型，201为实时任务，202为离线任务
                      * 
                      */
                     void SetTaskType(const int64_t& _taskType);
@@ -114,7 +114,7 @@ namespace TencentCloud
                     bool m_taskIdsHasBeenSet;
 
                     /**
-                     * 任务类型
+                     * 任务类型，201为实时任务，202为离线任务
                      */
                     int64_t m_taskType;
                     bool m_taskTypeHasBeenSet;

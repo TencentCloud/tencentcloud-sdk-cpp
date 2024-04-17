@@ -192,15 +192,15 @@ namespace TencentCloud
                     bool EndTimeHasBeenSet() const;
 
                     /**
-                     * 获取201. stream, 202. offline 默认实时
-                     * @return TaskType 201. stream, 202. offline 默认实时
+                     * 获取201. 实时同步, 202. 离线同步 默认实时
+                     * @return TaskType 201. 实时同步, 202. 离线同步 默认实时
                      * 
                      */
                     uint64_t GetTaskType() const;
 
                     /**
-                     * 设置201. stream, 202. offline 默认实时
-                     * @param _taskType 201. stream, 202. offline 默认实时
+                     * 设置201. 实时同步, 202. 离线同步 默认实时
+                     * @param _taskType 201. 实时同步, 202. 离线同步 默认实时
                      * 
                      */
                     void SetTaskType(const uint64_t& _taskType);
@@ -257,7 +257,7 @@ namespace TencentCloud
                     bool m_endTimeHasBeenSet;
 
                     /**
-                     * 201. stream, 202. offline 默认实时
+                     * 201. 实时同步, 202. 离线同步 默认实时
                      */
                     uint64_t m_taskType;
                     bool m_taskTypeHasBeenSet;

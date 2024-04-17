@@ -505,6 +505,27 @@ namespace TencentCloud
                      */
                     bool TaskTagsHasBeenSet() const;
 
+                    /**
+                     * 获取查询关键字
+                     * @return KeyWord 查询关键字
+                     * 
+                     */
+                    std::string GetKeyWord() const;
+
+                    /**
+                     * 设置查询关键字
+                     * @param _keyWord 查询关键字
+                     * 
+                     */
+                    void SetKeyWord(const std::string& _keyWord);
+
+                    /**
+                     * 判断参数 KeyWord 是否已赋值
+                     * @return KeyWord 是否已赋值
+                     * 
+                     */
+                    bool KeyWordHasBeenSet() const;
+
                 private:
 
                     /**
@@ -638,6 +659,12 @@ namespace TencentCloud
                      */
                     std::vector<TaskTag> m_taskTags;
                     bool m_taskTagsHasBeenSet;
+
+                    /**
+                     * 查询关键字
+                     */
+                    std::string m_keyWord;
+                    bool m_keyWordHasBeenSet;
 
                 };
             }

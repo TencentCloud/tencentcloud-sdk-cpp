@@ -24,8 +24,8 @@ using namespace std;
 
 RestoreMediaRequest::RestoreMediaRequest() :
     m_fileIdsHasBeenSet(false),
-    m_subAppIdHasBeenSet(false),
     m_restoreDayHasBeenSet(false),
+    m_subAppIdHasBeenSet(false),
     m_restoreTierHasBeenSet(false)
 {
 }
@@ -50,20 +50,20 @@ string RestoreMediaRequest::ToJsonString() const
         }
     }
 
-    if (m_subAppIdHasBeenSet)
-    {
-        rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "SubAppId";
-        iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, m_subAppId, allocator);
-    }
-
     if (m_restoreDayHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
         string key = "RestoreDay";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_restoreDay, allocator);
+    }
+
+    if (m_subAppIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "SubAppId";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_subAppId, allocator);
     }
 
     if (m_restoreTierHasBeenSet)
@@ -98,22 +98,6 @@ bool RestoreMediaRequest::FileIdsHasBeenSet() const
     return m_fileIdsHasBeenSet;
 }
 
-uint64_t RestoreMediaRequest::GetSubAppId() const
-{
-    return m_subAppId;
-}
-
-void RestoreMediaRequest::SetSubAppId(const uint64_t& _subAppId)
-{
-    m_subAppId = _subAppId;
-    m_subAppIdHasBeenSet = true;
-}
-
-bool RestoreMediaRequest::SubAppIdHasBeenSet() const
-{
-    return m_subAppIdHasBeenSet;
-}
-
 uint64_t RestoreMediaRequest::GetRestoreDay() const
 {
     return m_restoreDay;
@@ -128,6 +112,22 @@ void RestoreMediaRequest::SetRestoreDay(const uint64_t& _restoreDay)
 bool RestoreMediaRequest::RestoreDayHasBeenSet() const
 {
     return m_restoreDayHasBeenSet;
+}
+
+uint64_t RestoreMediaRequest::GetSubAppId() const
+{
+    return m_subAppId;
+}
+
+void RestoreMediaRequest::SetSubAppId(const uint64_t& _subAppId)
+{
+    m_subAppId = _subAppId;
+    m_subAppIdHasBeenSet = true;
+}
+
+bool RestoreMediaRequest::SubAppIdHasBeenSet() const
+{
+    return m_subAppIdHasBeenSet;
 }
 
 string RestoreMediaRequest::GetRestoreTier() const

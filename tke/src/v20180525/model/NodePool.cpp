@@ -35,6 +35,7 @@ NodePool::NodePool() :
     m_maxNodesNumHasBeenSet(false),
     m_minNodesNumHasBeenSet(false),
     m_desiredNodesNumHasBeenSet(false),
+    m_runtimeConfigHasBeenSet(false),
     m_nodePoolOsHasBeenSet(false),
     m_osCustomizeTypeHasBeenSet(false),
     m_imageIdHasBeenSet(false),
@@ -231,6 +232,23 @@ CoreInternalOutcome NodePool::Deserialize(const rapidjson::Value &value)
         }
         m_desiredNodesNum = value["DesiredNodesNum"].GetInt64();
         m_desiredNodesNumHasBeenSet = true;
+    }
+
+    if (value.HasMember("RuntimeConfig") && !value["RuntimeConfig"].IsNull())
+    {
+        if (!value["RuntimeConfig"].IsObject())
+        {
+            return CoreInternalOutcome(Core::Error("response `NodePool.RuntimeConfig` is not object type").SetRequestId(requestId));
+        }
+
+        CoreInternalOutcome outcome = m_runtimeConfig.Deserialize(value["RuntimeConfig"]);
+        if (!outcome.IsSuccess())
+        {
+            outcome.GetError().SetRequestId(requestId);
+            return outcome;
+        }
+
+        m_runtimeConfigHasBeenSet = true;
     }
 
     if (value.HasMember("NodePoolOs") && !value["NodePoolOs"].IsNull())
@@ -536,6 +554,15 @@ void NodePool::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Alloca
         string key = "DesiredNodesNum";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_desiredNodesNum, allocator);
+    }
+
+    if (m_runtimeConfigHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "RuntimeConfig";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_runtimeConfig.ToJsonObject(value[key.c_str()], allocator);
     }
 
     if (m_nodePoolOsHasBeenSet)
@@ -883,6 +910,22 @@ void NodePool::SetDesiredNodesNum(const int64_t& _desiredNodesNum)
 bool NodePool::DesiredNodesNumHasBeenSet() const
 {
     return m_desiredNodesNumHasBeenSet;
+}
+
+RuntimeConfig NodePool::GetRuntimeConfig() const
+{
+    return m_runtimeConfig;
+}
+
+void NodePool::SetRuntimeConfig(const RuntimeConfig& _runtimeConfig)
+{
+    m_runtimeConfig = _runtimeConfig;
+    m_runtimeConfigHasBeenSet = true;
+}
+
+bool NodePool::RuntimeConfigHasBeenSet() const
+{
+    return m_runtimeConfigHasBeenSet;
 }
 
 string NodePool::GetNodePoolOs() const

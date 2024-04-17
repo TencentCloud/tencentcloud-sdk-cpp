@@ -44,15 +44,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取主键ID
-                     * @return Id 主键ID
+                     * 获取规则ID
+                     * @return Id 规则ID
                      * 
                      */
                     std::string GetId() const;
 
                     /**
-                     * 设置主键ID
-                     * @param _id 主键ID
+                     * 设置规则ID
+                     * @param _id 规则ID
                      * 
                      */
                     void SetId(const std::string& _id);
@@ -109,7 +109,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 主键ID
+                     * 规则ID
                      */
                     std::string m_id;
                     bool m_idHasBeenSet;

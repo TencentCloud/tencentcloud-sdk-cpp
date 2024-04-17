@@ -29,7 +29,8 @@ CreateTaskVersionDsRequest::CreateTaskVersionDsRequest() :
     m_projectIdHasBeenSet(false),
     m_requestFromSourceHasBeenSet(false),
     m_alarmWaysHasBeenSet(false),
-    m_alarmRecipientTypesHasBeenSet(false)
+    m_alarmRecipientTypesHasBeenSet(false),
+    m_enableCheckTaskCycleLinkHasBeenSet(false)
 {
 }
 
@@ -95,6 +96,14 @@ string CreateTaskVersionDsRequest::ToJsonString() const
         string key = "AlarmRecipientTypes";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_alarmRecipientTypes.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_enableCheckTaskCycleLinkHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "EnableCheckTaskCycleLink";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_enableCheckTaskCycleLink, allocator);
     }
 
 
@@ -215,6 +224,22 @@ void CreateTaskVersionDsRequest::SetAlarmRecipientTypes(const string& _alarmReci
 bool CreateTaskVersionDsRequest::AlarmRecipientTypesHasBeenSet() const
 {
     return m_alarmRecipientTypesHasBeenSet;
+}
+
+bool CreateTaskVersionDsRequest::GetEnableCheckTaskCycleLink() const
+{
+    return m_enableCheckTaskCycleLink;
+}
+
+void CreateTaskVersionDsRequest::SetEnableCheckTaskCycleLink(const bool& _enableCheckTaskCycleLink)
+{
+    m_enableCheckTaskCycleLink = _enableCheckTaskCycleLink;
+    m_enableCheckTaskCycleLinkHasBeenSet = true;
+}
+
+bool CreateTaskVersionDsRequest::EnableCheckTaskCycleLinkHasBeenSet() const
+{
+    return m_enableCheckTaskCycleLinkHasBeenSet;
 }
 
 
