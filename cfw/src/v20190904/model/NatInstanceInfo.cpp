@@ -43,7 +43,13 @@ NatInstanceInfo::NatInstanceInfo() :
     m_needProbeEngineUpdateHasBeenSet(false),
     m_trafficModeHasBeenSet(false),
     m_zoneHasBeenSet(false),
-    m_zoneBakHasBeenSet(false)
+    m_zoneBakHasBeenSet(false),
+    m_reserveTimeHasBeenSet(false),
+    m_reserveVersionHasBeenSet(false),
+    m_reserveVersionStateHasBeenSet(false),
+    m_elasticSwitchHasBeenSet(false),
+    m_elasticBandwidthHasBeenSet(false),
+    m_isFirstAfterPayHasBeenSet(false)
 {
 }
 
@@ -291,6 +297,66 @@ CoreInternalOutcome NatInstanceInfo::Deserialize(const rapidjson::Value &value)
         m_zoneBakHasBeenSet = true;
     }
 
+    if (value.HasMember("ReserveTime") && !value["ReserveTime"].IsNull())
+    {
+        if (!value["ReserveTime"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `NatInstanceInfo.ReserveTime` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_reserveTime = string(value["ReserveTime"].GetString());
+        m_reserveTimeHasBeenSet = true;
+    }
+
+    if (value.HasMember("ReserveVersion") && !value["ReserveVersion"].IsNull())
+    {
+        if (!value["ReserveVersion"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `NatInstanceInfo.ReserveVersion` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_reserveVersion = string(value["ReserveVersion"].GetString());
+        m_reserveVersionHasBeenSet = true;
+    }
+
+    if (value.HasMember("ReserveVersionState") && !value["ReserveVersionState"].IsNull())
+    {
+        if (!value["ReserveVersionState"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `NatInstanceInfo.ReserveVersionState` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_reserveVersionState = string(value["ReserveVersionState"].GetString());
+        m_reserveVersionStateHasBeenSet = true;
+    }
+
+    if (value.HasMember("ElasticSwitch") && !value["ElasticSwitch"].IsNull())
+    {
+        if (!value["ElasticSwitch"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `NatInstanceInfo.ElasticSwitch` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_elasticSwitch = value["ElasticSwitch"].GetInt64();
+        m_elasticSwitchHasBeenSet = true;
+    }
+
+    if (value.HasMember("ElasticBandwidth") && !value["ElasticBandwidth"].IsNull())
+    {
+        if (!value["ElasticBandwidth"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `NatInstanceInfo.ElasticBandwidth` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_elasticBandwidth = value["ElasticBandwidth"].GetInt64();
+        m_elasticBandwidthHasBeenSet = true;
+    }
+
+    if (value.HasMember("IsFirstAfterPay") && !value["IsFirstAfterPay"].IsNull())
+    {
+        if (!value["IsFirstAfterPay"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `NatInstanceInfo.IsFirstAfterPay` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_isFirstAfterPay = value["IsFirstAfterPay"].GetInt64();
+        m_isFirstAfterPayHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -495,6 +561,54 @@ void NatInstanceInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Document:
         string key = "ZoneBak";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_zoneBak.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_reserveTimeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ReserveTime";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_reserveTime.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_reserveVersionHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ReserveVersion";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_reserveVersion.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_reserveVersionStateHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ReserveVersionState";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_reserveVersionState.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_elasticSwitchHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ElasticSwitch";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_elasticSwitch, allocator);
+    }
+
+    if (m_elasticBandwidthHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ElasticBandwidth";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_elasticBandwidth, allocator);
+    }
+
+    if (m_isFirstAfterPayHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "IsFirstAfterPay";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_isFirstAfterPay, allocator);
     }
 
 }
@@ -866,5 +980,101 @@ void NatInstanceInfo::SetZoneBak(const string& _zoneBak)
 bool NatInstanceInfo::ZoneBakHasBeenSet() const
 {
     return m_zoneBakHasBeenSet;
+}
+
+string NatInstanceInfo::GetReserveTime() const
+{
+    return m_reserveTime;
+}
+
+void NatInstanceInfo::SetReserveTime(const string& _reserveTime)
+{
+    m_reserveTime = _reserveTime;
+    m_reserveTimeHasBeenSet = true;
+}
+
+bool NatInstanceInfo::ReserveTimeHasBeenSet() const
+{
+    return m_reserveTimeHasBeenSet;
+}
+
+string NatInstanceInfo::GetReserveVersion() const
+{
+    return m_reserveVersion;
+}
+
+void NatInstanceInfo::SetReserveVersion(const string& _reserveVersion)
+{
+    m_reserveVersion = _reserveVersion;
+    m_reserveVersionHasBeenSet = true;
+}
+
+bool NatInstanceInfo::ReserveVersionHasBeenSet() const
+{
+    return m_reserveVersionHasBeenSet;
+}
+
+string NatInstanceInfo::GetReserveVersionState() const
+{
+    return m_reserveVersionState;
+}
+
+void NatInstanceInfo::SetReserveVersionState(const string& _reserveVersionState)
+{
+    m_reserveVersionState = _reserveVersionState;
+    m_reserveVersionStateHasBeenSet = true;
+}
+
+bool NatInstanceInfo::ReserveVersionStateHasBeenSet() const
+{
+    return m_reserveVersionStateHasBeenSet;
+}
+
+int64_t NatInstanceInfo::GetElasticSwitch() const
+{
+    return m_elasticSwitch;
+}
+
+void NatInstanceInfo::SetElasticSwitch(const int64_t& _elasticSwitch)
+{
+    m_elasticSwitch = _elasticSwitch;
+    m_elasticSwitchHasBeenSet = true;
+}
+
+bool NatInstanceInfo::ElasticSwitchHasBeenSet() const
+{
+    return m_elasticSwitchHasBeenSet;
+}
+
+int64_t NatInstanceInfo::GetElasticBandwidth() const
+{
+    return m_elasticBandwidth;
+}
+
+void NatInstanceInfo::SetElasticBandwidth(const int64_t& _elasticBandwidth)
+{
+    m_elasticBandwidth = _elasticBandwidth;
+    m_elasticBandwidthHasBeenSet = true;
+}
+
+bool NatInstanceInfo::ElasticBandwidthHasBeenSet() const
+{
+    return m_elasticBandwidthHasBeenSet;
+}
+
+int64_t NatInstanceInfo::GetIsFirstAfterPay() const
+{
+    return m_isFirstAfterPay;
+}
+
+void NatInstanceInfo::SetIsFirstAfterPay(const int64_t& _isFirstAfterPay)
+{
+    m_isFirstAfterPay = _isFirstAfterPay;
+    m_isFirstAfterPayHasBeenSet = true;
+}
+
+bool NatInstanceInfo::IsFirstAfterPayHasBeenSet() const
+{
+    return m_isFirstAfterPayHasBeenSet;
 }
 

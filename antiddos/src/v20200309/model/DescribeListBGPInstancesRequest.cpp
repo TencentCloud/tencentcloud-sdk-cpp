@@ -42,7 +42,8 @@ DescribeListBGPInstancesRequest::DescribeListBGPInstancesRequest() :
     m_excludeAdvancedInfoHasBeenSet(false),
     m_filterAssetIpListHasBeenSet(false),
     m_filterBasicPlusFlagHasBeenSet(false),
-    m_filterPlanCntFlagHasBeenSet(false)
+    m_filterPlanCntFlagHasBeenSet(false),
+    m_filterTransRegionFlagHasBeenSet(false)
 {
 }
 
@@ -222,6 +223,14 @@ string DescribeListBGPInstancesRequest::ToJsonString() const
         string key = "FilterPlanCntFlag";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_filterPlanCntFlag, allocator);
+    }
+
+    if (m_filterTransRegionFlagHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "FilterTransRegionFlag";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_filterTransRegionFlag, allocator);
     }
 
 
@@ -550,6 +559,22 @@ void DescribeListBGPInstancesRequest::SetFilterPlanCntFlag(const uint64_t& _filt
 bool DescribeListBGPInstancesRequest::FilterPlanCntFlagHasBeenSet() const
 {
     return m_filterPlanCntFlagHasBeenSet;
+}
+
+uint64_t DescribeListBGPInstancesRequest::GetFilterTransRegionFlag() const
+{
+    return m_filterTransRegionFlag;
+}
+
+void DescribeListBGPInstancesRequest::SetFilterTransRegionFlag(const uint64_t& _filterTransRegionFlag)
+{
+    m_filterTransRegionFlag = _filterTransRegionFlag;
+    m_filterTransRegionFlagHasBeenSet = true;
+}
+
+bool DescribeListBGPInstancesRequest::FilterTransRegionFlagHasBeenSet() const
+{
+    return m_filterTransRegionFlagHasBeenSet;
 }
 
 

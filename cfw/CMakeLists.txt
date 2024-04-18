@@ -267,6 +267,7 @@ set(cfw_public_header_model
   include/tencentcloud/cfw/v20190904/model/CreateVpcFwGroupRequest.h
   include/tencentcloud/cfw/v20190904/model/CreateNatFwInstanceWithDomainRequest.h
   include/tencentcloud/cfw/v20190904/model/RemoveVpcAcRuleRequest.h
+  include/tencentcloud/cfw/v20190904/model/TagInfo.h
   include/tencentcloud/cfw/v20190904/model/DescribeResourceGroupResponse.h
   include/tencentcloud/cfw/v20190904/model/DeleteAddressTemplateResponse.h
   include/tencentcloud/cfw/v20190904/model/CreateBlockIgnoreRuleListResponse.h
@@ -558,6 +559,7 @@ set(cfw_src
   src/v20190904/model/CreateVpcFwGroupRequest.cpp
   src/v20190904/model/CreateNatFwInstanceWithDomainRequest.cpp
   src/v20190904/model/RemoveVpcAcRuleRequest.cpp
+  src/v20190904/model/TagInfo.cpp
   src/v20190904/model/DescribeResourceGroupResponse.cpp
   src/v20190904/model/DeleteAddressTemplateResponse.cpp
   src/v20190904/model/CreateBlockIgnoreRuleListResponse.cpp

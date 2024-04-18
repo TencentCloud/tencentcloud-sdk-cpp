@@ -25,7 +25,10 @@ using namespace std;
 ExpandCfwVerticalRequest::ExpandCfwVerticalRequest() :
     m_fwTypeHasBeenSet(false),
     m_widthHasBeenSet(false),
-    m_cfwInstanceHasBeenSet(false)
+    m_cfwInstanceHasBeenSet(false),
+    m_elasticSwitchHasBeenSet(false),
+    m_elasticBandwidthHasBeenSet(false),
+    m_tagsHasBeenSet(false)
 {
 }
 
@@ -58,6 +61,37 @@ string ExpandCfwVerticalRequest::ToJsonString() const
         string key = "CfwInstance";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_cfwInstance.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_elasticSwitchHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ElasticSwitch";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_elasticSwitch, allocator);
+    }
+
+    if (m_elasticBandwidthHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ElasticBandwidth";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_elasticBandwidth, allocator);
+    }
+
+    if (m_tagsHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Tags";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_tags.begin(); itr != m_tags.end(); ++itr, ++i)
+        {
+            d[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(d[key.c_str()][i], allocator);
+        }
     }
 
 
@@ -114,6 +148,54 @@ void ExpandCfwVerticalRequest::SetCfwInstance(const string& _cfwInstance)
 bool ExpandCfwVerticalRequest::CfwInstanceHasBeenSet() const
 {
     return m_cfwInstanceHasBeenSet;
+}
+
+int64_t ExpandCfwVerticalRequest::GetElasticSwitch() const
+{
+    return m_elasticSwitch;
+}
+
+void ExpandCfwVerticalRequest::SetElasticSwitch(const int64_t& _elasticSwitch)
+{
+    m_elasticSwitch = _elasticSwitch;
+    m_elasticSwitchHasBeenSet = true;
+}
+
+bool ExpandCfwVerticalRequest::ElasticSwitchHasBeenSet() const
+{
+    return m_elasticSwitchHasBeenSet;
+}
+
+int64_t ExpandCfwVerticalRequest::GetElasticBandwidth() const
+{
+    return m_elasticBandwidth;
+}
+
+void ExpandCfwVerticalRequest::SetElasticBandwidth(const int64_t& _elasticBandwidth)
+{
+    m_elasticBandwidth = _elasticBandwidth;
+    m_elasticBandwidthHasBeenSet = true;
+}
+
+bool ExpandCfwVerticalRequest::ElasticBandwidthHasBeenSet() const
+{
+    return m_elasticBandwidthHasBeenSet;
+}
+
+vector<TagInfo> ExpandCfwVerticalRequest::GetTags() const
+{
+    return m_tags;
+}
+
+void ExpandCfwVerticalRequest::SetTags(const vector<TagInfo>& _tags)
+{
+    m_tags = _tags;
+    m_tagsHasBeenSet = true;
+}
+
+bool ExpandCfwVerticalRequest::TagsHasBeenSet() const
+{
+    return m_tagsHasBeenSet;
 }
 
 

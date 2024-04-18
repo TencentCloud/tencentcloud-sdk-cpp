@@ -39,7 +39,8 @@ LiveStreamMonitorInfo::LiveStreamMonitorInfo() :
     m_ocrLanguageHasBeenSet(false),
     m_aiOcrInputIndexListHasBeenSet(false),
     m_allowMonitorReportHasBeenSet(false),
-    m_aiFormatDiagnoseHasBeenSet(false)
+    m_aiFormatDiagnoseHasBeenSet(false),
+    m_aiQualityControlHasBeenSet(false)
 {
 }
 
@@ -271,6 +272,16 @@ CoreInternalOutcome LiveStreamMonitorInfo::Deserialize(const rapidjson::Value &v
         m_aiFormatDiagnoseHasBeenSet = true;
     }
 
+    if (value.HasMember("AiQualityControl") && !value["AiQualityControl"].IsNull())
+    {
+        if (!value["AiQualityControl"].IsUint64())
+        {
+            return CoreInternalOutcome(Core::Error("response `LiveStreamMonitorInfo.AiQualityControl` IsUint64=false incorrectly").SetRequestId(requestId));
+        }
+        m_aiQualityControl = value["AiQualityControl"].GetUint64();
+        m_aiQualityControlHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -452,6 +463,14 @@ void LiveStreamMonitorInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Doc
         string key = "AiFormatDiagnose";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_aiFormatDiagnose, allocator);
+    }
+
+    if (m_aiQualityControlHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "AiQualityControl";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_aiQualityControl, allocator);
     }
 
 }
@@ -759,5 +778,21 @@ void LiveStreamMonitorInfo::SetAiFormatDiagnose(const uint64_t& _aiFormatDiagnos
 bool LiveStreamMonitorInfo::AiFormatDiagnoseHasBeenSet() const
 {
     return m_aiFormatDiagnoseHasBeenSet;
+}
+
+uint64_t LiveStreamMonitorInfo::GetAiQualityControl() const
+{
+    return m_aiQualityControl;
+}
+
+void LiveStreamMonitorInfo::SetAiQualityControl(const uint64_t& _aiQualityControl)
+{
+    m_aiQualityControl = _aiQualityControl;
+    m_aiQualityControlHasBeenSet = true;
+}
+
+bool LiveStreamMonitorInfo::AiQualityControlHasBeenSet() const
+{
+    return m_aiQualityControlHasBeenSet;
 }
 

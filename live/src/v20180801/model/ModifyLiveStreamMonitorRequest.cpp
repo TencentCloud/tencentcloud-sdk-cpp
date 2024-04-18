@@ -35,7 +35,8 @@ ModifyLiveStreamMonitorRequest::ModifyLiveStreamMonitorRequest() :
     m_checkStreamBrokenHasBeenSet(false),
     m_checkStreamLowFrameRateHasBeenSet(false),
     m_allowMonitorReportHasBeenSet(false),
-    m_aiFormatDiagnoseHasBeenSet(false)
+    m_aiFormatDiagnoseHasBeenSet(false),
+    m_aiQualityControlHasBeenSet(false)
 {
 }
 
@@ -167,6 +168,14 @@ string ModifyLiveStreamMonitorRequest::ToJsonString() const
         string key = "AiFormatDiagnose";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_aiFormatDiagnose, allocator);
+    }
+
+    if (m_aiQualityControlHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "AiQualityControl";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_aiQualityControl, allocator);
     }
 
 
@@ -383,6 +392,22 @@ void ModifyLiveStreamMonitorRequest::SetAiFormatDiagnose(const uint64_t& _aiForm
 bool ModifyLiveStreamMonitorRequest::AiFormatDiagnoseHasBeenSet() const
 {
     return m_aiFormatDiagnoseHasBeenSet;
+}
+
+uint64_t ModifyLiveStreamMonitorRequest::GetAiQualityControl() const
+{
+    return m_aiQualityControl;
+}
+
+void ModifyLiveStreamMonitorRequest::SetAiQualityControl(const uint64_t& _aiQualityControl)
+{
+    m_aiQualityControl = _aiQualityControl;
+    m_aiQualityControlHasBeenSet = true;
+}
+
+bool ModifyLiveStreamMonitorRequest::AiQualityControlHasBeenSet() const
+{
+    return m_aiQualityControlHasBeenSet;
 }
 
 

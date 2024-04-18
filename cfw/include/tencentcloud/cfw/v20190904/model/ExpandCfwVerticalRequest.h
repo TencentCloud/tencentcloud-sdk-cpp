@@ -21,6 +21,7 @@
 #include <vector>
 #include <map>
 #include <tencentcloud/core/AbstractModel.h>
+#include <tencentcloud/cfw/v20190904/model/TagInfo.h>
 
 
 namespace TencentCloud
@@ -105,6 +106,69 @@ namespace TencentCloud
                      */
                     bool CfwInstanceHasBeenSet() const;
 
+                    /**
+                     * 获取弹性开关 1打开 0 关闭
+                     * @return ElasticSwitch 弹性开关 1打开 0 关闭
+                     * 
+                     */
+                    int64_t GetElasticSwitch() const;
+
+                    /**
+                     * 设置弹性开关 1打开 0 关闭
+                     * @param _elasticSwitch 弹性开关 1打开 0 关闭
+                     * 
+                     */
+                    void SetElasticSwitch(const int64_t& _elasticSwitch);
+
+                    /**
+                     * 判断参数 ElasticSwitch 是否已赋值
+                     * @return ElasticSwitch 是否已赋值
+                     * 
+                     */
+                    bool ElasticSwitchHasBeenSet() const;
+
+                    /**
+                     * 获取弹性带宽上限，单位Mbps
+                     * @return ElasticBandwidth 弹性带宽上限，单位Mbps
+                     * 
+                     */
+                    int64_t GetElasticBandwidth() const;
+
+                    /**
+                     * 设置弹性带宽上限，单位Mbps
+                     * @param _elasticBandwidth 弹性带宽上限，单位Mbps
+                     * 
+                     */
+                    void SetElasticBandwidth(const int64_t& _elasticBandwidth);
+
+                    /**
+                     * 判断参数 ElasticBandwidth 是否已赋值
+                     * @return ElasticBandwidth 是否已赋值
+                     * 
+                     */
+                    bool ElasticBandwidthHasBeenSet() const;
+
+                    /**
+                     * 获取按量计费标签
+                     * @return Tags 按量计费标签
+                     * 
+                     */
+                    std::vector<TagInfo> GetTags() const;
+
+                    /**
+                     * 设置按量计费标签
+                     * @param _tags 按量计费标签
+                     * 
+                     */
+                    void SetTags(const std::vector<TagInfo>& _tags);
+
+                    /**
+                     * 判断参数 Tags 是否已赋值
+                     * @return Tags 是否已赋值
+                     * 
+                     */
+                    bool TagsHasBeenSet() const;
+
                 private:
 
                     /**
@@ -124,6 +188,24 @@ namespace TencentCloud
                      */
                     std::string m_cfwInstance;
                     bool m_cfwInstanceHasBeenSet;
+
+                    /**
+                     * 弹性开关 1打开 0 关闭
+                     */
+                    int64_t m_elasticSwitch;
+                    bool m_elasticSwitchHasBeenSet;
+
+                    /**
+                     * 弹性带宽上限，单位Mbps
+                     */
+                    int64_t m_elasticBandwidth;
+                    bool m_elasticBandwidthHasBeenSet;
+
+                    /**
+                     * 按量计费标签
+                     */
+                    std::vector<TagInfo> m_tags;
+                    bool m_tagsHasBeenSet;
 
                 };
             }

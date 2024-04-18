@@ -44,6 +44,7 @@ BGPInstance::BGPInstance() :
     m_modifyTimeHasBeenSet(false),
     m_basicPlusFlagHasBeenSet(false),
     m_planCntFlagHasBeenSet(false),
+    m_transRegionFlagHasBeenSet(false),
     m_superPackFlagHasBeenSet(false)
 {
 }
@@ -338,6 +339,16 @@ CoreInternalOutcome BGPInstance::Deserialize(const rapidjson::Value &value)
         m_planCntFlagHasBeenSet = true;
     }
 
+    if (value.HasMember("TransRegionFlag") && !value["TransRegionFlag"].IsNull())
+    {
+        if (!value["TransRegionFlag"].IsUint64())
+        {
+            return CoreInternalOutcome(Core::Error("response `BGPInstance.TransRegionFlag` IsUint64=false incorrectly").SetRequestId(requestId));
+        }
+        m_transRegionFlag = value["TransRegionFlag"].GetUint64();
+        m_transRegionFlagHasBeenSet = true;
+    }
+
     if (value.HasMember("SuperPackFlag") && !value["SuperPackFlag"].IsNull())
     {
         if (!value["SuperPackFlag"].IsUint64())
@@ -556,6 +567,14 @@ void BGPInstance::ToJsonObject(rapidjson::Value &value, rapidjson::Document::All
         string key = "PlanCntFlag";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_planCntFlag, allocator);
+    }
+
+    if (m_transRegionFlagHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "TransRegionFlag";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_transRegionFlag, allocator);
     }
 
     if (m_superPackFlagHasBeenSet)
@@ -935,6 +954,22 @@ void BGPInstance::SetPlanCntFlag(const uint64_t& _planCntFlag)
 bool BGPInstance::PlanCntFlagHasBeenSet() const
 {
     return m_planCntFlagHasBeenSet;
+}
+
+uint64_t BGPInstance::GetTransRegionFlag() const
+{
+    return m_transRegionFlag;
+}
+
+void BGPInstance::SetTransRegionFlag(const uint64_t& _transRegionFlag)
+{
+    m_transRegionFlag = _transRegionFlag;
+    m_transRegionFlagHasBeenSet = true;
+}
+
+bool BGPInstance::TransRegionFlagHasBeenSet() const
+{
+    return m_transRegionFlagHasBeenSet;
 }
 
 uint64_t BGPInstance::GetSuperPackFlag() const

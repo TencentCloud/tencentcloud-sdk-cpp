@@ -1072,6 +1072,49 @@ EsClient::DescribeLogstashPipelinesOutcomeCallable EsClient::DescribeLogstashPip
     return task->get_future();
 }
 
+EsClient::DescribeServerlessInstancesOutcome EsClient::DescribeServerlessInstances(const DescribeServerlessInstancesRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeServerlessInstances");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeServerlessInstancesResponse rsp = DescribeServerlessInstancesResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeServerlessInstancesOutcome(rsp);
+        else
+            return DescribeServerlessInstancesOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeServerlessInstancesOutcome(outcome.GetError());
+    }
+}
+
+void EsClient::DescribeServerlessInstancesAsync(const DescribeServerlessInstancesRequest& request, const DescribeServerlessInstancesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeServerlessInstances(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+EsClient::DescribeServerlessInstancesOutcomeCallable EsClient::DescribeServerlessInstancesCallable(const DescribeServerlessInstancesRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeServerlessInstancesOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeServerlessInstances(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 EsClient::DescribeServerlessSpaceUserOutcome EsClient::DescribeServerlessSpaceUser(const DescribeServerlessSpaceUserRequest &request)
 {
     auto outcome = MakeRequest(request, "DescribeServerlessSpaceUser");

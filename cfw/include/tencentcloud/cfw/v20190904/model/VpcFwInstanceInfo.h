@@ -645,6 +645,164 @@ namespace TencentCloud
                      */
                     bool TrafficModeHasBeenSet() const;
 
+                    /**
+                     * 获取引擎预约升级时间
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return ReserveTime 引擎预约升级时间
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::string GetReserveTime() const;
+
+                    /**
+                     * 设置引擎预约升级时间
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _reserveTime 引擎预约升级时间
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetReserveTime(const std::string& _reserveTime);
+
+                    /**
+                     * 判断参数 ReserveTime 是否已赋值
+                     * @return ReserveTime 是否已赋值
+                     * 
+                     */
+                    bool ReserveTimeHasBeenSet() const;
+
+                    /**
+                     * 获取预约引擎升级版本
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return ReserveVersion 预约引擎升级版本
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::string GetReserveVersion() const;
+
+                    /**
+                     * 设置预约引擎升级版本
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _reserveVersion 预约引擎升级版本
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetReserveVersion(const std::string& _reserveVersion);
+
+                    /**
+                     * 判断参数 ReserveVersion 是否已赋值
+                     * @return ReserveVersion 是否已赋值
+                     * 
+                     */
+                    bool ReserveVersionHasBeenSet() const;
+
+                    /**
+                     * 获取引擎预约升级版本状态
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return ReserveVersionState 引擎预约升级版本状态
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::string GetReserveVersionState() const;
+
+                    /**
+                     * 设置引擎预约升级版本状态
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _reserveVersionState 引擎预约升级版本状态
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetReserveVersionState(const std::string& _reserveVersionState);
+
+                    /**
+                     * 判断参数 ReserveVersionState 是否已赋值
+                     * @return ReserveVersionState 是否已赋值
+                     * 
+                     */
+                    bool ReserveVersionStateHasBeenSet() const;
+
+                    /**
+                     * 获取弹性开关 1打开 0关闭
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return ElasticSwitch 弹性开关 1打开 0关闭
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    int64_t GetElasticSwitch() const;
+
+                    /**
+                     * 设置弹性开关 1打开 0关闭
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _elasticSwitch 弹性开关 1打开 0关闭
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetElasticSwitch(const int64_t& _elasticSwitch);
+
+                    /**
+                     * 判断参数 ElasticSwitch 是否已赋值
+                     * @return ElasticSwitch 是否已赋值
+                     * 
+                     */
+                    bool ElasticSwitchHasBeenSet() const;
+
+                    /**
+                     * 获取弹性带宽，单位Mbps
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return ElasticBandwidth 弹性带宽，单位Mbps
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    int64_t GetElasticBandwidth() const;
+
+                    /**
+                     * 设置弹性带宽，单位Mbps
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _elasticBandwidth 弹性带宽，单位Mbps
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetElasticBandwidth(const int64_t& _elasticBandwidth);
+
+                    /**
+                     * 判断参数 ElasticBandwidth 是否已赋值
+                     * @return ElasticBandwidth 是否已赋值
+                     * 
+                     */
+                    bool ElasticBandwidthHasBeenSet() const;
+
+                    /**
+                     * 获取是否首次开通按量付费
+1 是
+0 不是
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return IsFirstAfterPay 是否首次开通按量付费
+1 是
+0 不是
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    int64_t GetIsFirstAfterPay() const;
+
+                    /**
+                     * 设置是否首次开通按量付费
+1 是
+0 不是
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _isFirstAfterPay 是否首次开通按量付费
+1 是
+0 不是
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetIsFirstAfterPay(const int64_t& _isFirstAfterPay);
+
+                    /**
+                     * 判断参数 IsFirstAfterPay 是否已赋值
+                     * @return IsFirstAfterPay 是否已赋值
+                     * 
+                     */
+                    bool IsFirstAfterPayHasBeenSet() const;
+
                 private:
 
                     /**
@@ -813,6 +971,50 @@ namespace TencentCloud
                      */
                     std::string m_trafficMode;
                     bool m_trafficModeHasBeenSet;
+
+                    /**
+                     * 引擎预约升级时间
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_reserveTime;
+                    bool m_reserveTimeHasBeenSet;
+
+                    /**
+                     * 预约引擎升级版本
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_reserveVersion;
+                    bool m_reserveVersionHasBeenSet;
+
+                    /**
+                     * 引擎预约升级版本状态
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_reserveVersionState;
+                    bool m_reserveVersionStateHasBeenSet;
+
+                    /**
+                     * 弹性开关 1打开 0关闭
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    int64_t m_elasticSwitch;
+                    bool m_elasticSwitchHasBeenSet;
+
+                    /**
+                     * 弹性带宽，单位Mbps
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    int64_t m_elasticBandwidth;
+                    bool m_elasticBandwidthHasBeenSet;
+
+                    /**
+                     * 是否首次开通按量付费
+1 是
+0 不是
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    int64_t m_isFirstAfterPay;
+                    bool m_isFirstAfterPayHasBeenSet;
 
                 };
             }

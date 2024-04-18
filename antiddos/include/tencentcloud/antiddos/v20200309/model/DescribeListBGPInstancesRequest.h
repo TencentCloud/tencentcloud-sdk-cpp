@@ -467,6 +467,27 @@ namespace TencentCloud
                      */
                     bool FilterPlanCntFlagHasBeenSet() const;
 
+                    /**
+                     * 获取是否跨区域产品 0: 不包含跨区域产品 1: 中国大陆跨区域产品 2: 非中国大陆跨区域产品 3: 包含全部
+                     * @return FilterTransRegionFlag 是否跨区域产品 0: 不包含跨区域产品 1: 中国大陆跨区域产品 2: 非中国大陆跨区域产品 3: 包含全部
+                     * 
+                     */
+                    uint64_t GetFilterTransRegionFlag() const;
+
+                    /**
+                     * 设置是否跨区域产品 0: 不包含跨区域产品 1: 中国大陆跨区域产品 2: 非中国大陆跨区域产品 3: 包含全部
+                     * @param _filterTransRegionFlag 是否跨区域产品 0: 不包含跨区域产品 1: 中国大陆跨区域产品 2: 非中国大陆跨区域产品 3: 包含全部
+                     * 
+                     */
+                    void SetFilterTransRegionFlag(const uint64_t& _filterTransRegionFlag);
+
+                    /**
+                     * 判断参数 FilterTransRegionFlag 是否已赋值
+                     * @return FilterTransRegionFlag 是否已赋值
+                     * 
+                     */
+                    bool FilterTransRegionFlagHasBeenSet() const;
+
                 private:
 
                     /**
@@ -589,6 +610,12 @@ namespace TencentCloud
                      */
                     uint64_t m_filterPlanCntFlag;
                     bool m_filterPlanCntFlagHasBeenSet;
+
+                    /**
+                     * 是否跨区域产品 0: 不包含跨区域产品 1: 中国大陆跨区域产品 2: 非中国大陆跨区域产品 3: 包含全部
+                     */
+                    uint64_t m_filterTransRegionFlag;
+                    bool m_filterTransRegionFlagHasBeenSet;
 
                 };
             }

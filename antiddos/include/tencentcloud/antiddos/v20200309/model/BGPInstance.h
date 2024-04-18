@@ -605,6 +605,31 @@ namespace TencentCloud
                     bool PlanCntFlagHasBeenSet() const;
 
                     /**
+                     * 获取是否跨区域产品 0: 不包含跨区域产品 1: 中国大陆跨区域产品 2: 非中国大陆跨区域产品
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return TransRegionFlag 是否跨区域产品 0: 不包含跨区域产品 1: 中国大陆跨区域产品 2: 非中国大陆跨区域产品
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    uint64_t GetTransRegionFlag() const;
+
+                    /**
+                     * 设置是否跨区域产品 0: 不包含跨区域产品 1: 中国大陆跨区域产品 2: 非中国大陆跨区域产品
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _transRegionFlag 是否跨区域产品 0: 不包含跨区域产品 1: 中国大陆跨区域产品 2: 非中国大陆跨区域产品
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetTransRegionFlag(const uint64_t& _transRegionFlag);
+
+                    /**
+                     * 判断参数 TransRegionFlag 是否已赋值
+                     * @return TransRegionFlag 是否已赋值
+                     * 
+                     */
+                    bool TransRegionFlagHasBeenSet() const;
+
+                    /**
                      * 获取是否为超级高防包
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return SuperPackFlag 是否为超级高防包
@@ -785,6 +810,13 @@ namespace TencentCloud
                      */
                     uint64_t m_planCntFlag;
                     bool m_planCntFlagHasBeenSet;
+
+                    /**
+                     * 是否跨区域产品 0: 不包含跨区域产品 1: 中国大陆跨区域产品 2: 非中国大陆跨区域产品
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    uint64_t m_transRegionFlag;
+                    bool m_transRegionFlagHasBeenSet;
 
                     /**
                      * 是否为超级高防包

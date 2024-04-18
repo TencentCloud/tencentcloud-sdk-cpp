@@ -689,6 +689,39 @@ namespace TencentCloud
                      */
                     bool RedisClusterIdHasBeenSet() const;
 
+                    /**
+                     * 获取告警策略 ID 数组。
+
+- 请登录[腾讯云可观测平台-告警管理-策略管理](https://console.cloud.tencent.com/monitor/alarm/policy)获取告警策略 ID。
+- 若不配置该参数，则绑定默认告警策略。默认告警策略具体信息，请登录[腾讯云可观测平台-告警管理-策略管理](https://console.cloud.tencent.com/monitor/alarm/policy)查看。
+                     * @return AlarmPolicyList 告警策略 ID 数组。
+
+- 请登录[腾讯云可观测平台-告警管理-策略管理](https://console.cloud.tencent.com/monitor/alarm/policy)获取告警策略 ID。
+- 若不配置该参数，则绑定默认告警策略。默认告警策略具体信息，请登录[腾讯云可观测平台-告警管理-策略管理](https://console.cloud.tencent.com/monitor/alarm/policy)查看。
+                     * 
+                     */
+                    std::vector<std::string> GetAlarmPolicyList() const;
+
+                    /**
+                     * 设置告警策略 ID 数组。
+
+- 请登录[腾讯云可观测平台-告警管理-策略管理](https://console.cloud.tencent.com/monitor/alarm/policy)获取告警策略 ID。
+- 若不配置该参数，则绑定默认告警策略。默认告警策略具体信息，请登录[腾讯云可观测平台-告警管理-策略管理](https://console.cloud.tencent.com/monitor/alarm/policy)查看。
+                     * @param _alarmPolicyList 告警策略 ID 数组。
+
+- 请登录[腾讯云可观测平台-告警管理-策略管理](https://console.cloud.tencent.com/monitor/alarm/policy)获取告警策略 ID。
+- 若不配置该参数，则绑定默认告警策略。默认告警策略具体信息，请登录[腾讯云可观测平台-告警管理-策略管理](https://console.cloud.tencent.com/monitor/alarm/policy)查看。
+                     * 
+                     */
+                    void SetAlarmPolicyList(const std::vector<std::string>& _alarmPolicyList);
+
+                    /**
+                     * 判断参数 AlarmPolicyList 是否已赋值
+                     * @return AlarmPolicyList 是否已赋值
+                     * 
+                     */
+                    bool AlarmPolicyListHasBeenSet() const;
+
                 private:
 
                     /**
@@ -870,6 +903,15 @@ namespace TencentCloud
                      */
                     std::string m_redisClusterId;
                     bool m_redisClusterIdHasBeenSet;
+
+                    /**
+                     * 告警策略 ID 数组。
+
+- 请登录[腾讯云可观测平台-告警管理-策略管理](https://console.cloud.tencent.com/monitor/alarm/policy)获取告警策略 ID。
+- 若不配置该参数，则绑定默认告警策略。默认告警策略具体信息，请登录[腾讯云可观测平台-告警管理-策略管理](https://console.cloud.tencent.com/monitor/alarm/policy)查看。
+                     */
+                    std::vector<std::string> m_alarmPolicyList;
+                    bool m_alarmPolicyListHasBeenSet;
 
                 };
             }

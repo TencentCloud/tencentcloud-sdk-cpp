@@ -100,18 +100,18 @@ namespace TencentCloud
                     bool VpcLoadDistributionHasBeenSet() const;
 
                     /**
-                     * 获取压力分布
+                     * 获取多地域压力分布
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return GeoRegionsLoadDistribution 压力分布
+                     * @return GeoRegionsLoadDistribution 多地域压力分布
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<GeoRegionsLoadItem> GetGeoRegionsLoadDistribution() const;
 
                     /**
-                     * 设置压力分布
+                     * 设置多地域压力分布
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _geoRegionsLoadDistribution 压力分布
+                     * @param _geoRegionsLoadDistribution 多地域压力分布
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -141,7 +141,7 @@ namespace TencentCloud
                     bool m_vpcLoadDistributionHasBeenSet;
 
                     /**
-                     * 压力分布
+                     * 多地域压力分布
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<GeoRegionsLoadItem> m_geoRegionsLoadDistribution;

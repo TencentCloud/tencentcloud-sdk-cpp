@@ -22,7 +22,8 @@
 using namespace TencentCloud::Pts::V20210728::Model;
 using namespace std;
 
-DescribeRegionsRequest::DescribeRegionsRequest()
+DescribeRegionsRequest::DescribeRegionsRequest() :
+    m_loadTypeHasBeenSet(false)
 {
 }
 
@@ -33,6 +34,14 @@ string DescribeRegionsRequest::ToJsonString() const
     rapidjson::Document::AllocatorType& allocator = d.GetAllocator();
 
 
+    if (m_loadTypeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "LoadType";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_loadType, allocator);
+    }
+
 
     rapidjson::StringBuffer buffer;
     rapidjson::Writer<rapidjson::StringBuffer> writer(buffer);
@@ -40,5 +49,21 @@ string DescribeRegionsRequest::ToJsonString() const
     return buffer.GetString();
 }
 
+
+uint64_t DescribeRegionsRequest::GetLoadType() const
+{
+    return m_loadType;
+}
+
+void DescribeRegionsRequest::SetLoadType(const uint64_t& _loadType)
+{
+    m_loadType = _loadType;
+    m_loadTypeHasBeenSet = true;
+}
+
+bool DescribeRegionsRequest::LoadTypeHasBeenSet() const
+{
+    return m_loadTypeHasBeenSet;
+}
 
 

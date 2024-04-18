@@ -26,7 +26,9 @@ DescribePrometheusTargetsTMPRequest::DescribePrometheusTargetsTMPRequest() :
     m_instanceIdHasBeenSet(false),
     m_clusterIdHasBeenSet(false),
     m_clusterTypeHasBeenSet(false),
-    m_filtersHasBeenSet(false)
+    m_filtersHasBeenSet(false),
+    m_offsetHasBeenSet(false),
+    m_limitHasBeenSet(false)
 {
 }
 
@@ -74,6 +76,22 @@ string DescribePrometheusTargetsTMPRequest::ToJsonString() const
             d[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
             (*itr).ToJsonObject(d[key.c_str()][i], allocator);
         }
+    }
+
+    if (m_offsetHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Offset";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_offset, allocator);
+    }
+
+    if (m_limitHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Limit";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_limit, allocator);
     }
 
 
@@ -146,6 +164,38 @@ void DescribePrometheusTargetsTMPRequest::SetFilters(const vector<Filter>& _filt
 bool DescribePrometheusTargetsTMPRequest::FiltersHasBeenSet() const
 {
     return m_filtersHasBeenSet;
+}
+
+uint64_t DescribePrometheusTargetsTMPRequest::GetOffset() const
+{
+    return m_offset;
+}
+
+void DescribePrometheusTargetsTMPRequest::SetOffset(const uint64_t& _offset)
+{
+    m_offset = _offset;
+    m_offsetHasBeenSet = true;
+}
+
+bool DescribePrometheusTargetsTMPRequest::OffsetHasBeenSet() const
+{
+    return m_offsetHasBeenSet;
+}
+
+uint64_t DescribePrometheusTargetsTMPRequest::GetLimit() const
+{
+    return m_limit;
+}
+
+void DescribePrometheusTargetsTMPRequest::SetLimit(const uint64_t& _limit)
+{
+    m_limit = _limit;
+    m_limitHasBeenSet = true;
+}
+
+bool DescribePrometheusTargetsTMPRequest::LimitHasBeenSet() const
+{
+    return m_limitHasBeenSet;
 }
 
 

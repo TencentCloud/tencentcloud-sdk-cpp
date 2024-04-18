@@ -47,7 +47,8 @@ CreateInstancesRequest::CreateInstancesRequest() :
     m_templateIdHasBeenSet(false),
     m_dryRunHasBeenSet(false),
     m_productVersionHasBeenSet(false),
-    m_redisClusterIdHasBeenSet(false)
+    m_redisClusterIdHasBeenSet(false),
+    m_alarmPolicyListHasBeenSet(false)
 {
 }
 
@@ -275,6 +276,19 @@ string CreateInstancesRequest::ToJsonString() const
         string key = "RedisClusterId";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_redisClusterId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_alarmPolicyListHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "AlarmPolicyList";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        for (auto itr = m_alarmPolicyList.begin(); itr != m_alarmPolicyList.end(); ++itr)
+        {
+            d[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
+        }
     }
 
 
@@ -683,6 +697,22 @@ void CreateInstancesRequest::SetRedisClusterId(const string& _redisClusterId)
 bool CreateInstancesRequest::RedisClusterIdHasBeenSet() const
 {
     return m_redisClusterIdHasBeenSet;
+}
+
+vector<string> CreateInstancesRequest::GetAlarmPolicyList() const
+{
+    return m_alarmPolicyList;
+}
+
+void CreateInstancesRequest::SetAlarmPolicyList(const vector<string>& _alarmPolicyList)
+{
+    m_alarmPolicyList = _alarmPolicyList;
+    m_alarmPolicyListHasBeenSet = true;
+}
+
+bool CreateInstancesRequest::AlarmPolicyListHasBeenSet() const
+{
+    return m_alarmPolicyListHasBeenSet;
 }
 
 

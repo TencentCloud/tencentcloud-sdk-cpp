@@ -540,6 +540,31 @@ namespace TencentCloud
                      */
                     bool AiFormatDiagnoseHasBeenSet() const;
 
+                    /**
+                     * 获取是否开启内容质检。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return AiQualityControl 是否开启内容质检。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    uint64_t GetAiQualityControl() const;
+
+                    /**
+                     * 设置是否开启内容质检。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _aiQualityControl 是否开启内容质检。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetAiQualityControl(const uint64_t& _aiQualityControl);
+
+                    /**
+                     * 判断参数 AiQualityControl 是否已赋值
+                     * @return AiQualityControl 是否已赋值
+                     * 
+                     */
+                    bool AiQualityControlHasBeenSet() const;
+
                 private:
 
                     /**
@@ -678,6 +703,13 @@ namespace TencentCloud
                      */
                     uint64_t m_aiFormatDiagnose;
                     bool m_aiFormatDiagnoseHasBeenSet;
+
+                    /**
+                     * 是否开启内容质检。
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    uint64_t m_aiQualityControl;
+                    bool m_aiQualityControlHasBeenSet;
 
                 };
             }

@@ -111,23 +111,15 @@ namespace TencentCloud
                     bool ClusterTypeHasBeenSet() const;
 
                     /**
-                     * 获取过滤条件，当前支持
-Name=state
-Value=up, down, unknown
-                     * @return Filters 过滤条件，当前支持
-Name=state
-Value=up, down, unknown
+                     * 获取过滤条件，支持Name=ServiceMonitor/PodMonitor/Probe/RawJob/Job, Value为采集配置名称；Name=Health, Value=up, down, unknown；Name=EndPoint, Value为EndPoint地址
+                     * @return Filters 过滤条件，支持Name=ServiceMonitor/PodMonitor/Probe/RawJob/Job, Value为采集配置名称；Name=Health, Value=up, down, unknown；Name=EndPoint, Value为EndPoint地址
                      * 
                      */
                     std::vector<Filter> GetFilters() const;
 
                     /**
-                     * 设置过滤条件，当前支持
-Name=state
-Value=up, down, unknown
-                     * @param _filters 过滤条件，当前支持
-Name=state
-Value=up, down, unknown
+                     * 设置过滤条件，支持Name=ServiceMonitor/PodMonitor/Probe/RawJob/Job, Value为采集配置名称；Name=Health, Value=up, down, unknown；Name=EndPoint, Value为EndPoint地址
+                     * @param _filters 过滤条件，支持Name=ServiceMonitor/PodMonitor/Probe/RawJob/Job, Value为采集配置名称；Name=Health, Value=up, down, unknown；Name=EndPoint, Value为EndPoint地址
                      * 
                      */
                     void SetFilters(const std::vector<Filter>& _filters);
@@ -138,6 +130,48 @@ Value=up, down, unknown
                      * 
                      */
                     bool FiltersHasBeenSet() const;
+
+                    /**
+                     * 获取targets偏移量，默认为0
+                     * @return Offset targets偏移量，默认为0
+                     * 
+                     */
+                    uint64_t GetOffset() const;
+
+                    /**
+                     * 设置targets偏移量，默认为0
+                     * @param _offset targets偏移量，默认为0
+                     * 
+                     */
+                    void SetOffset(const uint64_t& _offset);
+
+                    /**
+                     * 判断参数 Offset 是否已赋值
+                     * @return Offset 是否已赋值
+                     * 
+                     */
+                    bool OffsetHasBeenSet() const;
+
+                    /**
+                     * 获取targets返回数量，默认为20，最大值200
+                     * @return Limit targets返回数量，默认为20，最大值200
+                     * 
+                     */
+                    uint64_t GetLimit() const;
+
+                    /**
+                     * 设置targets返回数量，默认为20，最大值200
+                     * @param _limit targets返回数量，默认为20，最大值200
+                     * 
+                     */
+                    void SetLimit(const uint64_t& _limit);
+
+                    /**
+                     * 判断参数 Limit 是否已赋值
+                     * @return Limit 是否已赋值
+                     * 
+                     */
+                    bool LimitHasBeenSet() const;
 
                 private:
 
@@ -161,12 +195,22 @@ Value=up, down, unknown
                     bool m_clusterTypeHasBeenSet;
 
                     /**
-                     * 过滤条件，当前支持
-Name=state
-Value=up, down, unknown
+                     * 过滤条件，支持Name=ServiceMonitor/PodMonitor/Probe/RawJob/Job, Value为采集配置名称；Name=Health, Value=up, down, unknown；Name=EndPoint, Value为EndPoint地址
                      */
                     std::vector<Filter> m_filters;
                     bool m_filtersHasBeenSet;
+
+                    /**
+                     * targets偏移量，默认为0
+                     */
+                    uint64_t m_offset;
+                    bool m_offsetHasBeenSet;
+
+                    /**
+                     * targets返回数量，默认为20，最大值200
+                     */
+                    uint64_t m_limit;
+                    bool m_limitHasBeenSet;
 
                 };
             }

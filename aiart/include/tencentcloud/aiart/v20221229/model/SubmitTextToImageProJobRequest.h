@@ -163,27 +163,23 @@ namespace TencentCloud
                     bool LogoAddHasBeenSet() const;
 
                     /**
-                     * 获取文生图引擎，默认使用engine1。 
-取值：  
-engine1  
-engine2
-                     * @return Engine 文生图引擎，默认使用engine1。 
-取值：  
-engine1  
-engine2
+                     * 获取文生图模型，默认使用engine1。
+engine1：文生图（高级版）-混元
+engine2：文生图（高级版）
+                     * @return Engine 文生图模型，默认使用engine1。
+engine1：文生图（高级版）-混元
+engine2：文生图（高级版）
                      * 
                      */
                     std::string GetEngine() const;
 
                     /**
-                     * 设置文生图引擎，默认使用engine1。 
-取值：  
-engine1  
-engine2
-                     * @param _engine 文生图引擎，默认使用engine1。 
-取值：  
-engine1  
-engine2
+                     * 设置文生图模型，默认使用engine1。
+engine1：文生图（高级版）-混元
+engine2：文生图（高级版）
+                     * @param _engine 文生图模型，默认使用engine1。
+engine1：文生图（高级版）-混元
+engine2：文生图（高级版）
                      * 
                      */
                     void SetEngine(const std::string& _engine);
@@ -264,10 +260,9 @@ engine2
                     bool m_logoAddHasBeenSet;
 
                     /**
-                     * 文生图引擎，默认使用engine1。 
-取值：  
-engine1  
-engine2
+                     * 文生图模型，默认使用engine1。
+engine1：文生图（高级版）-混元
+engine2：文生图（高级版）
                      */
                     std::string m_engine;
                     bool m_engineHasBeenSet;
