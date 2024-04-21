@@ -76,15 +76,15 @@ namespace TencentCloud
                     bool FontTypeHasBeenSet() const;
 
                     /**
-                     * 获取字体大小，格式：Npx，N 为数值。
-                     * @return FontSize 字体大小，格式：Npx，N 为数值。
+                     * 获取字体大小，格式：Npx，N 为数值。N的取值范围：[0,1] 和 [8, 4096]
+                     * @return FontSize 字体大小，格式：Npx，N 为数值。N的取值范围：[0,1] 和 [8, 4096]
                      * 
                      */
                     std::string GetFontSize() const;
 
                     /**
-                     * 设置字体大小，格式：Npx，N 为数值。
-                     * @param _fontSize 字体大小，格式：Npx，N 为数值。
+                     * 设置字体大小，格式：Npx，N 为数值。N的取值范围：[0,1] 和 [8, 4096]
+                     * @param _fontSize 字体大小，格式：Npx，N 为数值。N的取值范围：[0,1] 和 [8, 4096]
                      * 
                      */
                     void SetFontSize(const std::string& _fontSize);
@@ -146,6 +146,27 @@ namespace TencentCloud
                      */
                     bool FontAlphaHasBeenSet() const;
 
+                    /**
+                     * 获取文字内容，长度不超过100个字符。
+                     * @return TextContent 文字内容，长度不超过100个字符。
+                     * 
+                     */
+                    std::string GetTextContent() const;
+
+                    /**
+                     * 设置文字内容，长度不超过100个字符。
+                     * @param _textContent 文字内容，长度不超过100个字符。
+                     * 
+                     */
+                    void SetTextContent(const std::string& _textContent);
+
+                    /**
+                     * 判断参数 TextContent 是否已赋值
+                     * @return TextContent 是否已赋值
+                     * 
+                     */
+                    bool TextContentHasBeenSet() const;
+
                 private:
 
                     /**
@@ -157,7 +178,7 @@ namespace TencentCloud
                     bool m_fontTypeHasBeenSet;
 
                     /**
-                     * 字体大小，格式：Npx，N 为数值。
+                     * 字体大小，格式：Npx，N 为数值。N的取值范围：[0,1] 和 [8, 4096]
                      */
                     std::string m_fontSize;
                     bool m_fontSizeHasBeenSet;
@@ -175,6 +196,12 @@ namespace TencentCloud
                      */
                     double m_fontAlpha;
                     bool m_fontAlphaHasBeenSet;
+
+                    /**
+                     * 文字内容，长度不超过100个字符。
+                     */
+                    std::string m_textContent;
+                    bool m_textContentHasBeenSet;
 
                 };
             }

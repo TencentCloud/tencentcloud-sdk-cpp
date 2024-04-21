@@ -27,7 +27,8 @@ DescribeMQTTInsPublicEndpointsResponse::DescribeMQTTInsPublicEndpointsResponse()
     m_endpointsHasBeenSet(false),
     m_instanceIdHasBeenSet(false),
     m_bandwidthHasBeenSet(false),
-    m_rulesHasBeenSet(false)
+    m_rulesHasBeenSet(false),
+    m_statusHasBeenSet(false)
 {
 }
 
@@ -125,6 +126,16 @@ CoreInternalOutcome DescribeMQTTInsPublicEndpointsResponse::Deserialize(const st
         m_rulesHasBeenSet = true;
     }
 
+    if (rsp.HasMember("Status") && !rsp["Status"].IsNull())
+    {
+        if (!rsp["Status"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `Status` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_status = string(rsp["Status"].GetString());
+        m_statusHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -181,6 +192,14 @@ string DescribeMQTTInsPublicEndpointsResponse::ToJsonString() const
         }
     }
 
+    if (m_statusHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Status";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_status.c_str(), allocator).Move(), allocator);
+    }
+
     rapidjson::Value iKey(rapidjson::kStringType);
     string key = "RequestId";
     iKey.SetString(key.c_str(), allocator);
@@ -231,6 +250,16 @@ vector<PublicAccessRule> DescribeMQTTInsPublicEndpointsResponse::GetRules() cons
 bool DescribeMQTTInsPublicEndpointsResponse::RulesHasBeenSet() const
 {
     return m_rulesHasBeenSet;
+}
+
+string DescribeMQTTInsPublicEndpointsResponse::GetStatus() const
+{
+    return m_status;
+}
+
+bool DescribeMQTTInsPublicEndpointsResponse::StatusHasBeenSet() const
+{
+    return m_statusHasBeenSet;
 }
 
 

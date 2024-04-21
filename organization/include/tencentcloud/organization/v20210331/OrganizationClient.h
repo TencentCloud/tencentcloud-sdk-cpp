@@ -77,6 +77,8 @@
 #include <tencentcloud/organization/v20210331/model/DeleteShareUnitMembersResponse.h>
 #include <tencentcloud/organization/v20210331/model/DeleteShareUnitResourcesRequest.h>
 #include <tencentcloud/organization/v20210331/model/DeleteShareUnitResourcesResponse.h>
+#include <tencentcloud/organization/v20210331/model/DescribeEffectivePolicyRequest.h>
+#include <tencentcloud/organization/v20210331/model/DescribeEffectivePolicyResponse.h>
 #include <tencentcloud/organization/v20210331/model/DescribeOrganizationRequest.h>
 #include <tencentcloud/organization/v20210331/model/DescribeOrganizationResponse.h>
 #include <tencentcloud/organization/v20210331/model/DescribeOrganizationAuthNodeRequest.h>
@@ -117,6 +119,8 @@
 #include <tencentcloud/organization/v20210331/model/DisablePolicyTypeResponse.h>
 #include <tencentcloud/organization/v20210331/model/EnablePolicyTypeRequest.h>
 #include <tencentcloud/organization/v20210331/model/EnablePolicyTypeResponse.h>
+#include <tencentcloud/organization/v20210331/model/ListNonCompliantResourceRequest.h>
+#include <tencentcloud/organization/v20210331/model/ListNonCompliantResourceResponse.h>
 #include <tencentcloud/organization/v20210331/model/ListOrganizationIdentityRequest.h>
 #include <tencentcloud/organization/v20210331/model/ListOrganizationIdentityResponse.h>
 #include <tencentcloud/organization/v20210331/model/ListPoliciesRequest.h>
@@ -236,6 +240,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DeleteShareUnitResourcesResponse> DeleteShareUnitResourcesOutcome;
                 typedef std::future<DeleteShareUnitResourcesOutcome> DeleteShareUnitResourcesOutcomeCallable;
                 typedef std::function<void(const OrganizationClient*, const Model::DeleteShareUnitResourcesRequest&, DeleteShareUnitResourcesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteShareUnitResourcesAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeEffectivePolicyResponse> DescribeEffectivePolicyOutcome;
+                typedef std::future<DescribeEffectivePolicyOutcome> DescribeEffectivePolicyOutcomeCallable;
+                typedef std::function<void(const OrganizationClient*, const Model::DescribeEffectivePolicyRequest&, DescribeEffectivePolicyOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeEffectivePolicyAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeOrganizationResponse> DescribeOrganizationOutcome;
                 typedef std::future<DescribeOrganizationOutcome> DescribeOrganizationOutcomeCallable;
                 typedef std::function<void(const OrganizationClient*, const Model::DescribeOrganizationRequest&, DescribeOrganizationOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeOrganizationAsyncHandler;
@@ -296,6 +303,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::EnablePolicyTypeResponse> EnablePolicyTypeOutcome;
                 typedef std::future<EnablePolicyTypeOutcome> EnablePolicyTypeOutcomeCallable;
                 typedef std::function<void(const OrganizationClient*, const Model::EnablePolicyTypeRequest&, EnablePolicyTypeOutcome, const std::shared_ptr<const AsyncCallerContext>&)> EnablePolicyTypeAsyncHandler;
+                typedef Outcome<Core::Error, Model::ListNonCompliantResourceResponse> ListNonCompliantResourceOutcome;
+                typedef std::future<ListNonCompliantResourceOutcome> ListNonCompliantResourceOutcomeCallable;
+                typedef std::function<void(const OrganizationClient*, const Model::ListNonCompliantResourceRequest&, ListNonCompliantResourceOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ListNonCompliantResourceAsyncHandler;
                 typedef Outcome<Core::Error, Model::ListOrganizationIdentityResponse> ListOrganizationIdentityOutcome;
                 typedef std::future<ListOrganizationIdentityOutcome> ListOrganizationIdentityOutcomeCallable;
                 typedef std::function<void(const OrganizationClient*, const Model::ListOrganizationIdentityRequest&, ListOrganizationIdentityOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ListOrganizationIdentityAsyncHandler;
@@ -579,6 +589,15 @@ namespace TencentCloud
                 DeleteShareUnitResourcesOutcomeCallable DeleteShareUnitResourcesCallable(const Model::DeleteShareUnitResourcesRequest& request);
 
                 /**
+                 *查询目标关联的有效策略
+                 * @param req DescribeEffectivePolicyRequest
+                 * @return DescribeEffectivePolicyOutcome
+                 */
+                DescribeEffectivePolicyOutcome DescribeEffectivePolicy(const Model::DescribeEffectivePolicyRequest &request);
+                void DescribeEffectivePolicyAsync(const Model::DescribeEffectivePolicyRequest& request, const DescribeEffectivePolicyAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeEffectivePolicyOutcomeCallable DescribeEffectivePolicyCallable(const Model::DescribeEffectivePolicyRequest& request);
+
+                /**
                  *获取企业组织信息
                  * @param req DescribeOrganizationRequest
                  * @return DescribeOrganizationOutcome
@@ -757,6 +776,15 @@ namespace TencentCloud
                 EnablePolicyTypeOutcome EnablePolicyType(const Model::EnablePolicyTypeRequest &request);
                 void EnablePolicyTypeAsync(const Model::EnablePolicyTypeRequest& request, const EnablePolicyTypeAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 EnablePolicyTypeOutcomeCallable EnablePolicyTypeCallable(const Model::EnablePolicyTypeRequest& request);
+
+                /**
+                 *获取成员标签检测不合规资源列表
+                 * @param req ListNonCompliantResourceRequest
+                 * @return ListNonCompliantResourceOutcome
+                 */
+                ListNonCompliantResourceOutcome ListNonCompliantResource(const Model::ListNonCompliantResourceRequest &request);
+                void ListNonCompliantResourceAsync(const Model::ListNonCompliantResourceRequest& request, const ListNonCompliantResourceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                ListNonCompliantResourceOutcomeCallable ListNonCompliantResourceCallable(const Model::ListNonCompliantResourceRequest& request);
 
                 /**
                  *获取组织成员访问身份列表

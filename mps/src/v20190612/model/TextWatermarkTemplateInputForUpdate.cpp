@@ -24,7 +24,8 @@ TextWatermarkTemplateInputForUpdate::TextWatermarkTemplateInputForUpdate() :
     m_fontTypeHasBeenSet(false),
     m_fontSizeHasBeenSet(false),
     m_fontColorHasBeenSet(false),
-    m_fontAlphaHasBeenSet(false)
+    m_fontAlphaHasBeenSet(false),
+    m_textContentHasBeenSet(false)
 {
 }
 
@@ -73,6 +74,16 @@ CoreInternalOutcome TextWatermarkTemplateInputForUpdate::Deserialize(const rapid
         m_fontAlphaHasBeenSet = true;
     }
 
+    if (value.HasMember("TextContent") && !value["TextContent"].IsNull())
+    {
+        if (!value["TextContent"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `TextWatermarkTemplateInputForUpdate.TextContent` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_textContent = string(value["TextContent"].GetString());
+        m_textContentHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -110,6 +121,14 @@ void TextWatermarkTemplateInputForUpdate::ToJsonObject(rapidjson::Value &value, 
         string key = "FontAlpha";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_fontAlpha, allocator);
+    }
+
+    if (m_textContentHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "TextContent";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_textContent.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -177,5 +196,21 @@ void TextWatermarkTemplateInputForUpdate::SetFontAlpha(const double& _fontAlpha)
 bool TextWatermarkTemplateInputForUpdate::FontAlphaHasBeenSet() const
 {
     return m_fontAlphaHasBeenSet;
+}
+
+string TextWatermarkTemplateInputForUpdate::GetTextContent() const
+{
+    return m_textContent;
+}
+
+void TextWatermarkTemplateInputForUpdate::SetTextContent(const string& _textContent)
+{
+    m_textContent = _textContent;
+    m_textContentHasBeenSet = true;
+}
+
+bool TextWatermarkTemplateInputForUpdate::TextContentHasBeenSet() const
+{
+    return m_textContentHasBeenSet;
 }
 

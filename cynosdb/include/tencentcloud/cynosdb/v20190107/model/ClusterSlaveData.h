@@ -24,6 +24,7 @@
 #include <tencentcloud/core/utils/rapidjson/writer.h>
 #include <tencentcloud/core/utils/rapidjson/stringbuffer.h>
 #include <tencentcloud/core/AbstractModel.h>
+#include <tencentcloud/cynosdb/v20190107/model/SlaveZoneAttrItem.h>
 
 
 namespace TencentCloud
@@ -146,6 +147,56 @@ namespace TencentCloud
                      */
                     bool NewSlaveZoneHasBeenSet() const;
 
+                    /**
+                     * 获取新从可用区属性
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return NewSlaveZoneAttr 新从可用区属性
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::vector<SlaveZoneAttrItem> GetNewSlaveZoneAttr() const;
+
+                    /**
+                     * 设置新从可用区属性
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _newSlaveZoneAttr 新从可用区属性
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetNewSlaveZoneAttr(const std::vector<SlaveZoneAttrItem>& _newSlaveZoneAttr);
+
+                    /**
+                     * 判断参数 NewSlaveZoneAttr 是否已赋值
+                     * @return NewSlaveZoneAttr 是否已赋值
+                     * 
+                     */
+                    bool NewSlaveZoneAttrHasBeenSet() const;
+
+                    /**
+                     * 获取旧可用区属性
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return OldSlaveZoneAttr 旧可用区属性
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::vector<SlaveZoneAttrItem> GetOldSlaveZoneAttr() const;
+
+                    /**
+                     * 设置旧可用区属性
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _oldSlaveZoneAttr 旧可用区属性
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetOldSlaveZoneAttr(const std::vector<SlaveZoneAttrItem>& _oldSlaveZoneAttr);
+
+                    /**
+                     * 判断参数 OldSlaveZoneAttr 是否已赋值
+                     * @return OldSlaveZoneAttr 是否已赋值
+                     * 
+                     */
+                    bool OldSlaveZoneAttrHasBeenSet() const;
+
                 private:
 
                     /**
@@ -175,6 +226,20 @@ namespace TencentCloud
                      */
                     std::vector<std::string> m_newSlaveZone;
                     bool m_newSlaveZoneHasBeenSet;
+
+                    /**
+                     * 新从可用区属性
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::vector<SlaveZoneAttrItem> m_newSlaveZoneAttr;
+                    bool m_newSlaveZoneAttrHasBeenSet;
+
+                    /**
+                     * 旧可用区属性
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::vector<SlaveZoneAttrItem> m_oldSlaveZoneAttr;
+                    bool m_oldSlaveZoneAttrHasBeenSet;
 
                 };
             }

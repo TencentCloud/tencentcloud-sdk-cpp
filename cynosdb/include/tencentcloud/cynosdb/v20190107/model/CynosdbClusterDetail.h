@@ -30,6 +30,7 @@
 #include <tencentcloud/cynosdb/v20190107/model/ClusterInstanceDetail.h>
 #include <tencentcloud/cynosdb/v20190107/model/Tag.h>
 #include <tencentcloud/cynosdb/v20190107/model/ResourcePackage.h>
+#include <tencentcloud/cynosdb/v20190107/model/SlaveZoneAttrItem.h>
 
 
 namespace TencentCloud
@@ -1197,6 +1198,31 @@ pausing
                      */
                     bool NetworkTypeHasBeenSet() const;
 
+                    /**
+                     * 获取备可用区属性
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return SlaveZoneAttr 备可用区属性
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::vector<SlaveZoneAttrItem> GetSlaveZoneAttr() const;
+
+                    /**
+                     * 设置备可用区属性
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _slaveZoneAttr 备可用区属性
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetSlaveZoneAttr(const std::vector<SlaveZoneAttrItem>& _slaveZoneAttr);
+
+                    /**
+                     * 判断参数 SlaveZoneAttr 是否已赋值
+                     * @return SlaveZoneAttr 是否已赋值
+                     * 
+                     */
+                    bool SlaveZoneAttrHasBeenSet() const;
+
                 private:
 
                     /**
@@ -1521,6 +1547,13 @@ pausing
                      */
                     std::string m_networkType;
                     bool m_networkTypeHasBeenSet;
+
+                    /**
+                     * 备可用区属性
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::vector<SlaveZoneAttrItem> m_slaveZoneAttr;
+                    bool m_slaveZoneAttrHasBeenSet;
 
                 };
             }

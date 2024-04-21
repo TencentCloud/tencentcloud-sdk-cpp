@@ -318,15 +318,15 @@ namespace TencentCloud
                     bool NFOptionHasBeenSet() const;
 
                     /**
-                     * 获取工作目录，使用缓存卷内的相对路径 (暂时仅支持Nextflow)
-                     * @return WorkDir 工作目录，使用缓存卷内的相对路径 (暂时仅支持Nextflow)
+                     * 获取工作目录，可填写指定缓存卷内的绝对路径，不填使用默认缓存卷内的默认路径，暂时仅支持Nextflow。
+                     * @return WorkDir 工作目录，可填写指定缓存卷内的绝对路径，不填使用默认缓存卷内的默认路径，暂时仅支持Nextflow。
                      * 
                      */
                     std::string GetWorkDir() const;
 
                     /**
-                     * 设置工作目录，使用缓存卷内的相对路径 (暂时仅支持Nextflow)
-                     * @param _workDir 工作目录，使用缓存卷内的相对路径 (暂时仅支持Nextflow)
+                     * 设置工作目录，可填写指定缓存卷内的绝对路径，不填使用默认缓存卷内的默认路径，暂时仅支持Nextflow。
+                     * @param _workDir 工作目录，可填写指定缓存卷内的绝对路径，不填使用默认缓存卷内的默认路径，暂时仅支持Nextflow。
                      * 
                      */
                     void SetWorkDir(const std::string& _workDir);
@@ -366,6 +366,27 @@ namespace TencentCloud
                      * 
                      */
                     bool AccessModeHasBeenSet() const;
+
+                    /**
+                     * 获取缓存卷ID，不填使用默认缓存卷，暂时仅支持Nextflow。
+                     * @return VolumeIds 缓存卷ID，不填使用默认缓存卷，暂时仅支持Nextflow。
+                     * 
+                     */
+                    std::vector<std::string> GetVolumeIds() const;
+
+                    /**
+                     * 设置缓存卷ID，不填使用默认缓存卷，暂时仅支持Nextflow。
+                     * @param _volumeIds 缓存卷ID，不填使用默认缓存卷，暂时仅支持Nextflow。
+                     * 
+                     */
+                    void SetVolumeIds(const std::vector<std::string>& _volumeIds);
+
+                    /**
+                     * 判断参数 VolumeIds 是否已赋值
+                     * @return VolumeIds 是否已赋值
+                     * 
+                     */
+                    bool VolumeIdsHasBeenSet() const;
 
                 private:
 
@@ -448,7 +469,7 @@ namespace TencentCloud
                     bool m_nFOptionHasBeenSet;
 
                     /**
-                     * 工作目录，使用缓存卷内的相对路径 (暂时仅支持Nextflow)
+                     * 工作目录，可填写指定缓存卷内的绝对路径，不填使用默认缓存卷内的默认路径，暂时仅支持Nextflow。
                      */
                     std::string m_workDir;
                     bool m_workDirHasBeenSet;
@@ -460,6 +481,12 @@ namespace TencentCloud
                      */
                     std::string m_accessMode;
                     bool m_accessModeHasBeenSet;
+
+                    /**
+                     * 缓存卷ID，不填使用默认缓存卷，暂时仅支持Nextflow。
+                     */
+                    std::vector<std::string> m_volumeIds;
+                    bool m_volumeIdsHasBeenSet;
 
                 };
             }

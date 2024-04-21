@@ -84,6 +84,27 @@ namespace TencentCloud
                      */
                     bool SlaveZoneHasBeenSet() const;
 
+                    /**
+                     * 获取binlog同步方式。默认值：async。可选值：sync、semisync、async
+                     * @return BinlogSyncWay binlog同步方式。默认值：async。可选值：sync、semisync、async
+                     * 
+                     */
+                    std::string GetBinlogSyncWay() const;
+
+                    /**
+                     * 设置binlog同步方式。默认值：async。可选值：sync、semisync、async
+                     * @param _binlogSyncWay binlog同步方式。默认值：async。可选值：sync、semisync、async
+                     * 
+                     */
+                    void SetBinlogSyncWay(const std::string& _binlogSyncWay);
+
+                    /**
+                     * 判断参数 BinlogSyncWay 是否已赋值
+                     * @return BinlogSyncWay 是否已赋值
+                     * 
+                     */
+                    bool BinlogSyncWayHasBeenSet() const;
+
                 private:
 
                     /**
@@ -97,6 +118,12 @@ namespace TencentCloud
                      */
                     std::string m_slaveZone;
                     bool m_slaveZoneHasBeenSet;
+
+                    /**
+                     * binlog同步方式。默认值：async。可选值：sync、semisync、async
+                     */
+                    std::string m_binlogSyncWay;
+                    bool m_binlogSyncWayHasBeenSet;
 
                 };
             }

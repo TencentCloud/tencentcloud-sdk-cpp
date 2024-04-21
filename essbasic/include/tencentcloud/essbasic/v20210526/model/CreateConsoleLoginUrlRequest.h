@@ -538,6 +538,27 @@ namespace TencentCloud
                      */
                     bool AutoJumpUrlHasBeenSet() const;
 
+                    /**
+                     * 获取是否展示头顶导航栏  <ul><li> **ENABLE** : (默认)进入web控制台展示头顶导航栏</li> <li> **DISABLE** : 进入web控制台不展示头顶导航栏</li></ul> 注：该参数**仅在企业和员工激活完成，登录控制台场景才生效**。
+                     * @return TopNavigationStatus 是否展示头顶导航栏  <ul><li> **ENABLE** : (默认)进入web控制台展示头顶导航栏</li> <li> **DISABLE** : 进入web控制台不展示头顶导航栏</li></ul> 注：该参数**仅在企业和员工激活完成，登录控制台场景才生效**。
+                     * 
+                     */
+                    std::string GetTopNavigationStatus() const;
+
+                    /**
+                     * 设置是否展示头顶导航栏  <ul><li> **ENABLE** : (默认)进入web控制台展示头顶导航栏</li> <li> **DISABLE** : 进入web控制台不展示头顶导航栏</li></ul> 注：该参数**仅在企业和员工激活完成，登录控制台场景才生效**。
+                     * @param _topNavigationStatus 是否展示头顶导航栏  <ul><li> **ENABLE** : (默认)进入web控制台展示头顶导航栏</li> <li> **DISABLE** : 进入web控制台不展示头顶导航栏</li></ul> 注：该参数**仅在企业和员工激活完成，登录控制台场景才生效**。
+                     * 
+                     */
+                    void SetTopNavigationStatus(const std::string& _topNavigationStatus);
+
+                    /**
+                     * 判断参数 TopNavigationStatus 是否已赋值
+                     * @return TopNavigationStatus 是否已赋值
+                     * 
+                     */
+                    bool TopNavigationStatusHasBeenSet() const;
+
                 private:
 
                     /**
@@ -673,6 +694,12 @@ namespace TencentCloud
                      */
                     std::string m_autoJumpUrl;
                     bool m_autoJumpUrlHasBeenSet;
+
+                    /**
+                     * 是否展示头顶导航栏  <ul><li> **ENABLE** : (默认)进入web控制台展示头顶导航栏</li> <li> **DISABLE** : 进入web控制台不展示头顶导航栏</li></ul> 注：该参数**仅在企业和员工激活完成，登录控制台场景才生效**。
+                     */
+                    std::string m_topNavigationStatus;
+                    bool m_topNavigationStatusHasBeenSet;
 
                 };
             }

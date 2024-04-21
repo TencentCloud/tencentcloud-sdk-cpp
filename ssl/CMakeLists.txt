@@ -83,6 +83,7 @@ set(ssl_public_header_model
   include/tencentcloud/ssl/v20191205/model/DescribeCertificateResponse.h
   include/tencentcloud/ssl/v20191205/model/PackageTransferOutInfo.h
   include/tencentcloud/ssl/v20191205/model/TSEInstanceDetail.h
+  include/tencentcloud/ssl/v20191205/model/DescribeDeleteCertificatesTaskResultResponse.h
   include/tencentcloud/ssl/v20191205/model/ResourceTypeRegions.h
   include/tencentcloud/ssl/v20191205/model/DeleteManagerRequest.h
   include/tencentcloud/ssl/v20191205/model/DescribeHostUpdateRecordResponse.h
@@ -118,7 +119,7 @@ set(ssl_public_header_model
   include/tencentcloud/ssl/v20191205/model/Certificate.h
   include/tencentcloud/ssl/v20191205/model/CreateCertificateByPackageRequest.h
   include/tencentcloud/ssl/v20191205/model/CommitCertificateInformationRequest.h
-  include/tencentcloud/ssl/v20191205/model/SubmitAuditManagerResponse.h
+  include/tencentcloud/ssl/v20191205/model/DeleteTaskResult.h
   include/tencentcloud/ssl/v20191205/model/DescribeHostDeployRecordDetailRequest.h
   include/tencentcloud/ssl/v20191205/model/UpdateCertificateInstanceRequest.h
   include/tencentcloud/ssl/v20191205/model/ReplaceCertificateRequest.h
@@ -140,6 +141,7 @@ set(ssl_public_header_model
   include/tencentcloud/ssl/v20191205/model/Filter.h
   include/tencentcloud/ssl/v20191205/model/RevokeDomainValidateAuths.h
   include/tencentcloud/ssl/v20191205/model/DescribeHostUpdateRecordDetailResponse.h
+  include/tencentcloud/ssl/v20191205/model/DescribeDeleteCertificatesTaskResultRequest.h
   include/tencentcloud/ssl/v20191205/model/DescribeHostUpdateRecordRequest.h
   include/tencentcloud/ssl/v20191205/model/DescribeHostClbInstanceListRequest.h
   include/tencentcloud/ssl/v20191205/model/VerifyManagerRequest.h
@@ -166,6 +168,7 @@ set(ssl_public_header_model
   include/tencentcloud/ssl/v20191205/model/UploadRevokeLetterResponse.h
   include/tencentcloud/ssl/v20191205/model/CancelAuditCertificateRequest.h
   include/tencentcloud/ssl/v20191205/model/ModifyCertificateResubmitResponse.h
+  include/tencentcloud/ssl/v20191205/model/SubmitAuditManagerResponse.h
   include/tencentcloud/ssl/v20191205/model/UpdateCertificateInstanceResponse.h
   include/tencentcloud/ssl/v20191205/model/UploadCertificateRequest.h
   include/tencentcloud/ssl/v20191205/model/OperationLog.h
@@ -267,6 +270,7 @@ set(ssl_src
   src/v20191205/model/DescribeCertificateResponse.cpp
   src/v20191205/model/PackageTransferOutInfo.cpp
   src/v20191205/model/TSEInstanceDetail.cpp
+  src/v20191205/model/DescribeDeleteCertificatesTaskResultResponse.cpp
   src/v20191205/model/ResourceTypeRegions.cpp
   src/v20191205/model/DeleteManagerRequest.cpp
   src/v20191205/model/DescribeHostUpdateRecordResponse.cpp
@@ -302,7 +306,7 @@ set(ssl_src
   src/v20191205/model/Certificate.cpp
   src/v20191205/model/CreateCertificateByPackageRequest.cpp
   src/v20191205/model/CommitCertificateInformationRequest.cpp
-  src/v20191205/model/SubmitAuditManagerResponse.cpp
+  src/v20191205/model/DeleteTaskResult.cpp
   src/v20191205/model/DescribeHostDeployRecordDetailRequest.cpp
   src/v20191205/model/UpdateCertificateInstanceRequest.cpp
   src/v20191205/model/ReplaceCertificateRequest.cpp
@@ -324,6 +328,7 @@ set(ssl_src
   src/v20191205/model/Filter.cpp
   src/v20191205/model/RevokeDomainValidateAuths.cpp
   src/v20191205/model/DescribeHostUpdateRecordDetailResponse.cpp
+  src/v20191205/model/DescribeDeleteCertificatesTaskResultRequest.cpp
   src/v20191205/model/DescribeHostUpdateRecordRequest.cpp
   src/v20191205/model/DescribeHostClbInstanceListRequest.cpp
   src/v20191205/model/VerifyManagerRequest.cpp
@@ -350,6 +355,7 @@ set(ssl_src
   src/v20191205/model/UploadRevokeLetterResponse.cpp
   src/v20191205/model/CancelAuditCertificateRequest.cpp
   src/v20191205/model/ModifyCertificateResubmitResponse.cpp
+  src/v20191205/model/SubmitAuditManagerResponse.cpp
   src/v20191205/model/UpdateCertificateInstanceResponse.cpp
   src/v20191205/model/UploadCertificateRequest.cpp
   src/v20191205/model/OperationLog.cpp

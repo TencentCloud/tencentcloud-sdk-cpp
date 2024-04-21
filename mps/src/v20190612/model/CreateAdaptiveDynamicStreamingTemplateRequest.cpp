@@ -28,7 +28,8 @@ CreateAdaptiveDynamicStreamingTemplateRequest::CreateAdaptiveDynamicStreamingTem
     m_nameHasBeenSet(false),
     m_disableHigherVideoBitrateHasBeenSet(false),
     m_disableHigherVideoResolutionHasBeenSet(false),
-    m_commentHasBeenSet(false)
+    m_commentHasBeenSet(false),
+    m_pureAudioHasBeenSet(false)
 {
 }
 
@@ -92,6 +93,14 @@ string CreateAdaptiveDynamicStreamingTemplateRequest::ToJsonString() const
         string key = "Comment";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_comment.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_pureAudioHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "PureAudio";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_pureAudio, allocator);
     }
 
 
@@ -196,6 +205,22 @@ void CreateAdaptiveDynamicStreamingTemplateRequest::SetComment(const string& _co
 bool CreateAdaptiveDynamicStreamingTemplateRequest::CommentHasBeenSet() const
 {
     return m_commentHasBeenSet;
+}
+
+uint64_t CreateAdaptiveDynamicStreamingTemplateRequest::GetPureAudio() const
+{
+    return m_pureAudio;
+}
+
+void CreateAdaptiveDynamicStreamingTemplateRequest::SetPureAudio(const uint64_t& _pureAudio)
+{
+    m_pureAudio = _pureAudio;
+    m_pureAudioHasBeenSet = true;
+}
+
+bool CreateAdaptiveDynamicStreamingTemplateRequest::PureAudioHasBeenSet() const
+{
+    return m_pureAudioHasBeenSet;
 }
 
 

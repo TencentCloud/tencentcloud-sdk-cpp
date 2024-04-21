@@ -45,15 +45,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取预览类型，1:源数据预览，2:导出结果预览
-                     * @return PreviewType 预览类型，1:源数据预览，2:导出结果预览
+                     * 获取预览类型，1：源数据预览；2：导出结果预览。
+                     * @return PreviewType 预览类型，1：源数据预览；2：导出结果预览。
                      * 
                      */
                     uint64_t GetPreviewType() const;
 
                     /**
-                     * 设置预览类型，1:源数据预览，2:导出结果预览
-                     * @param _previewType 预览类型，1:源数据预览，2:导出结果预览
+                     * 设置预览类型，1：源数据预览；2：导出结果预览。
+                     * @param _previewType 预览类型，1：源数据预览；2：导出结果预览。
                      * 
                      */
                     void SetPreviewType(const uint64_t& _previewType);
@@ -66,15 +66,15 @@ namespace TencentCloud
                     bool PreviewTypeHasBeenSet() const;
 
                     /**
-                     * 获取导入Kafka类型，0: 腾讯云CKafka，1: 用户自建Kafka
-                     * @return KafkaType 导入Kafka类型，0: 腾讯云CKafka，1: 用户自建Kafka
+                     * 获取导入Kafka类型，0：腾讯云CKafka；1：用户自建Kafka。
+                     * @return KafkaType 导入Kafka类型，0：腾讯云CKafka；1：用户自建Kafka。
                      * 
                      */
                     uint64_t GetKafkaType() const;
 
                     /**
-                     * 设置导入Kafka类型，0: 腾讯云CKafka，1: 用户自建Kafka
-                     * @param _kafkaType 导入Kafka类型，0: 腾讯云CKafka，1: 用户自建Kafka
+                     * 设置导入Kafka类型，0：腾讯云CKafka；1：用户自建Kafka。
+                     * @param _kafkaType 导入Kafka类型，0：腾讯云CKafka；1：用户自建Kafka。
                      * 
                      */
                     void SetKafkaType(const uint64_t& _kafkaType);
@@ -87,15 +87,19 @@ namespace TencentCloud
                     bool KafkaTypeHasBeenSet() const;
 
                     /**
-                     * 获取用户需要导入的Kafka相关topic列表，多个topic之间使用半角逗号隔开。最多支持100个。
-                     * @return UserKafkaTopics 用户需要导入的Kafka相关topic列表，多个topic之间使用半角逗号隔开。最多支持100个。
+                     * 获取用户需要导入的Kafka相关topic列表，多个topic之间使用半角逗号隔开。
+最多支持100个。
+                     * @return UserKafkaTopics 用户需要导入的Kafka相关topic列表，多个topic之间使用半角逗号隔开。
+最多支持100个。
                      * 
                      */
                     std::string GetUserKafkaTopics() const;
 
                     /**
-                     * 设置用户需要导入的Kafka相关topic列表，多个topic之间使用半角逗号隔开。最多支持100个。
-                     * @param _userKafkaTopics 用户需要导入的Kafka相关topic列表，多个topic之间使用半角逗号隔开。最多支持100个。
+                     * 设置用户需要导入的Kafka相关topic列表，多个topic之间使用半角逗号隔开。
+最多支持100个。
+                     * @param _userKafkaTopics 用户需要导入的Kafka相关topic列表，多个topic之间使用半角逗号隔开。
+最多支持100个。
                      * 
                      */
                     void SetUserKafkaTopics(const std::string& _userKafkaTopics);
@@ -108,15 +112,15 @@ namespace TencentCloud
                     bool UserKafkaTopicsHasBeenSet() const;
 
                     /**
-                     * 获取导入数据位置，-2:最早（默认），-1：最晚
-                     * @return Offset 导入数据位置，-2:最早（默认），-1：最晚
+                     * 获取导入数据位置，-2：最早；-1：最晚。
+                     * @return Offset 导入数据位置，-2：最早；-1：最晚。
                      * 
                      */
                     int64_t GetOffset() const;
 
                     /**
-                     * 设置导入数据位置，-2:最早（默认），-1：最晚
-                     * @param _offset 导入数据位置，-2:最早（默认），-1：最晚
+                     * 设置导入数据位置，-2：最早；-1：最晚。
+                     * @param _offset 导入数据位置，-2：最早；-1：最晚。
                      * 
                      */
                     void SetOffset(const int64_t& _offset);
@@ -129,19 +133,15 @@ namespace TencentCloud
                     bool OffsetHasBeenSet() const;
 
                     /**
-                     * 获取腾讯云CKafka实例ID。
-KafkaType为0时KafkaInstance必填
-                     * @return KafkaInstance 腾讯云CKafka实例ID。
-KafkaType为0时KafkaInstance必填
+                     * 获取腾讯云CKafka实例ID，当KafkaType为0时参数KafkaInstance有效且必填。
+                     * @return KafkaInstance 腾讯云CKafka实例ID，当KafkaType为0时参数KafkaInstance有效且必填。
                      * 
                      */
                     std::string GetKafkaInstance() const;
 
                     /**
-                     * 设置腾讯云CKafka实例ID。
-KafkaType为0时KafkaInstance必填
-                     * @param _kafkaInstance 腾讯云CKafka实例ID。
-KafkaType为0时KafkaInstance必填
+                     * 设置腾讯云CKafka实例ID，当KafkaType为0时参数KafkaInstance有效且必填。
+                     * @param _kafkaInstance 腾讯云CKafka实例ID，当KafkaType为0时参数KafkaInstance有效且必填。
                      * 
                      */
                     void SetKafkaInstance(const std::string& _kafkaInstance);
@@ -155,18 +155,18 @@ KafkaType为0时KafkaInstance必填
 
                     /**
                      * 获取服务地址。
-KafkaType为1时ServerAddr必填
+KafkaType为1时ServerAddr必填。
                      * @return ServerAddr 服务地址。
-KafkaType为1时ServerAddr必填
+KafkaType为1时ServerAddr必填。
                      * 
                      */
                     std::string GetServerAddr() const;
 
                     /**
                      * 设置服务地址。
-KafkaType为1时ServerAddr必填
+KafkaType为1时ServerAddr必填。
                      * @param _serverAddr 服务地址。
-KafkaType为1时ServerAddr必填
+KafkaType为1时ServerAddr必填。
                      * 
                      */
                     void SetServerAddr(const std::string& _serverAddr);
@@ -205,18 +205,18 @@ KafkaType为1时有效。
 
                     /**
                      * 获取加密访问协议。
-KafkaType为1并且IsEncryptionAddr为true时Protocol必填
+KafkaType为1并且IsEncryptionAddr为true时Protocol必填。
                      * @return Protocol 加密访问协议。
-KafkaType为1并且IsEncryptionAddr为true时Protocol必填
+KafkaType为1并且IsEncryptionAddr为true时Protocol必填。
                      * 
                      */
                     KafkaProtocolInfo GetProtocol() const;
 
                     /**
                      * 设置加密访问协议。
-KafkaType为1并且IsEncryptionAddr为true时Protocol必填
+KafkaType为1并且IsEncryptionAddr为true时Protocol必填。
                      * @param _protocol 加密访问协议。
-KafkaType为1并且IsEncryptionAddr为true时Protocol必填
+KafkaType为1并且IsEncryptionAddr为true时Protocol必填。
                      * 
                      */
                     void SetProtocol(const KafkaProtocolInfo& _protocol);
@@ -273,39 +273,39 @@ KafkaType为1并且IsEncryptionAddr为true时Protocol必填
                 private:
 
                     /**
-                     * 预览类型，1:源数据预览，2:导出结果预览
+                     * 预览类型，1：源数据预览；2：导出结果预览。
                      */
                     uint64_t m_previewType;
                     bool m_previewTypeHasBeenSet;
 
                     /**
-                     * 导入Kafka类型，0: 腾讯云CKafka，1: 用户自建Kafka
+                     * 导入Kafka类型，0：腾讯云CKafka；1：用户自建Kafka。
                      */
                     uint64_t m_kafkaType;
                     bool m_kafkaTypeHasBeenSet;
 
                     /**
-                     * 用户需要导入的Kafka相关topic列表，多个topic之间使用半角逗号隔开。最多支持100个。
+                     * 用户需要导入的Kafka相关topic列表，多个topic之间使用半角逗号隔开。
+最多支持100个。
                      */
                     std::string m_userKafkaTopics;
                     bool m_userKafkaTopicsHasBeenSet;
 
                     /**
-                     * 导入数据位置，-2:最早（默认），-1：最晚
+                     * 导入数据位置，-2：最早；-1：最晚。
                      */
                     int64_t m_offset;
                     bool m_offsetHasBeenSet;
 
                     /**
-                     * 腾讯云CKafka实例ID。
-KafkaType为0时KafkaInstance必填
+                     * 腾讯云CKafka实例ID，当KafkaType为0时参数KafkaInstance有效且必填。
                      */
                     std::string m_kafkaInstance;
                     bool m_kafkaInstanceHasBeenSet;
 
                     /**
                      * 服务地址。
-KafkaType为1时ServerAddr必填
+KafkaType为1时ServerAddr必填。
                      */
                     std::string m_serverAddr;
                     bool m_serverAddrHasBeenSet;
@@ -319,7 +319,7 @@ KafkaType为1时有效。
 
                     /**
                      * 加密访问协议。
-KafkaType为1并且IsEncryptionAddr为true时Protocol必填
+KafkaType为1并且IsEncryptionAddr为true时Protocol必填。
                      */
                     KafkaProtocolInfo m_protocol;
                     bool m_protocolHasBeenSet;

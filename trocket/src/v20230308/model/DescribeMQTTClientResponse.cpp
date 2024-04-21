@@ -32,7 +32,10 @@ DescribeMQTTClientResponse::DescribeMQTTClientResponse() :
     m_createTimeHasBeenSet(false),
     m_connectTimeHasBeenSet(false),
     m_disconnectTimeHasBeenSet(false),
-    m_mQTTClientSubscriptionsHasBeenSet(false)
+    m_mQTTClientSubscriptionsHasBeenSet(false),
+    m_inboundHasBeenSet(false),
+    m_outBoundHasBeenSet(false),
+    m_cleanSessionHasBeenSet(false)
 {
 }
 
@@ -170,6 +173,50 @@ CoreInternalOutcome DescribeMQTTClientResponse::Deserialize(const string &payloa
         m_mQTTClientSubscriptionsHasBeenSet = true;
     }
 
+    if (rsp.HasMember("Inbound") && !rsp["Inbound"].IsNull())
+    {
+        if (!rsp["Inbound"].IsObject())
+        {
+            return CoreInternalOutcome(Core::Error("response `Inbound` is not object type").SetRequestId(requestId));
+        }
+
+        CoreInternalOutcome outcome = m_inbound.Deserialize(rsp["Inbound"]);
+        if (!outcome.IsSuccess())
+        {
+            outcome.GetError().SetRequestId(requestId);
+            return outcome;
+        }
+
+        m_inboundHasBeenSet = true;
+    }
+
+    if (rsp.HasMember("OutBound") && !rsp["OutBound"].IsNull())
+    {
+        if (!rsp["OutBound"].IsObject())
+        {
+            return CoreInternalOutcome(Core::Error("response `OutBound` is not object type").SetRequestId(requestId));
+        }
+
+        CoreInternalOutcome outcome = m_outBound.Deserialize(rsp["OutBound"]);
+        if (!outcome.IsSuccess())
+        {
+            outcome.GetError().SetRequestId(requestId);
+            return outcome;
+        }
+
+        m_outBoundHasBeenSet = true;
+    }
+
+    if (rsp.HasMember("CleanSession") && !rsp["CleanSession"].IsNull())
+    {
+        if (!rsp["CleanSession"].IsBool())
+        {
+            return CoreInternalOutcome(Core::Error("response `CleanSession` IsBool=false incorrectly").SetRequestId(requestId));
+        }
+        m_cleanSession = rsp["CleanSession"].GetBool();
+        m_cleanSessionHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -257,6 +304,32 @@ string DescribeMQTTClientResponse::ToJsonString() const
             value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
             (*itr).ToJsonObject(value[key.c_str()][i], allocator);
         }
+    }
+
+    if (m_inboundHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Inbound";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_inbound.ToJsonObject(value[key.c_str()], allocator);
+    }
+
+    if (m_outBoundHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "OutBound";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_outBound.ToJsonObject(value[key.c_str()], allocator);
+    }
+
+    if (m_cleanSessionHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "CleanSession";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_cleanSession, allocator);
     }
 
     rapidjson::Value iKey(rapidjson::kStringType);
@@ -359,6 +432,36 @@ vector<MQTTClientSubscription> DescribeMQTTClientResponse::GetMQTTClientSubscrip
 bool DescribeMQTTClientResponse::MQTTClientSubscriptionsHasBeenSet() const
 {
     return m_mQTTClientSubscriptionsHasBeenSet;
+}
+
+StatisticsReport DescribeMQTTClientResponse::GetInbound() const
+{
+    return m_inbound;
+}
+
+bool DescribeMQTTClientResponse::InboundHasBeenSet() const
+{
+    return m_inboundHasBeenSet;
+}
+
+StatisticsReport DescribeMQTTClientResponse::GetOutBound() const
+{
+    return m_outBound;
+}
+
+bool DescribeMQTTClientResponse::OutBoundHasBeenSet() const
+{
+    return m_outBoundHasBeenSet;
+}
+
+bool DescribeMQTTClientResponse::GetCleanSession() const
+{
+    return m_cleanSession;
+}
+
+bool DescribeMQTTClientResponse::CleanSessionHasBeenSet() const
+{
+    return m_cleanSessionHasBeenSet;
 }
 
 

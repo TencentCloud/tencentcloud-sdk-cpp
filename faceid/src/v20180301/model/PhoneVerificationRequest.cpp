@@ -26,6 +26,7 @@ PhoneVerificationRequest::PhoneVerificationRequest() :
     m_idCardHasBeenSet(false),
     m_nameHasBeenSet(false),
     m_phoneHasBeenSet(false),
+    m_verifyModeHasBeenSet(false),
     m_ciphertextBlobHasBeenSet(false),
     m_encryptListHasBeenSet(false),
     m_ivHasBeenSet(false)
@@ -61,6 +62,14 @@ string PhoneVerificationRequest::ToJsonString() const
         string key = "Phone";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_phone.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_verifyModeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "VerifyMode";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_verifyMode.c_str(), allocator).Move(), allocator);
     }
 
     if (m_ciphertextBlobHasBeenSet)
@@ -146,6 +155,22 @@ void PhoneVerificationRequest::SetPhone(const string& _phone)
 bool PhoneVerificationRequest::PhoneHasBeenSet() const
 {
     return m_phoneHasBeenSet;
+}
+
+string PhoneVerificationRequest::GetVerifyMode() const
+{
+    return m_verifyMode;
+}
+
+void PhoneVerificationRequest::SetVerifyMode(const string& _verifyMode)
+{
+    m_verifyMode = _verifyMode;
+    m_verifyModeHasBeenSet = true;
+}
+
+bool PhoneVerificationRequest::VerifyModeHasBeenSet() const
+{
+    return m_verifyModeHasBeenSet;
 }
 
 string PhoneVerificationRequest::GetCiphertextBlob() const

@@ -28,7 +28,8 @@ AdaptiveDynamicStreamingTaskInput::AdaptiveDynamicStreamingTaskInput() :
     m_subStreamObjectNameHasBeenSet(false),
     m_segmentObjectNameHasBeenSet(false),
     m_addOnSubtitlesHasBeenSet(false),
-    m_drmInfoHasBeenSet(false)
+    m_drmInfoHasBeenSet(false),
+    m_definitionTypeHasBeenSet(false)
 {
 }
 
@@ -151,6 +152,16 @@ CoreInternalOutcome AdaptiveDynamicStreamingTaskInput::Deserialize(const rapidjs
         m_drmInfoHasBeenSet = true;
     }
 
+    if (value.HasMember("DefinitionType") && !value["DefinitionType"].IsNull())
+    {
+        if (!value["DefinitionType"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `AdaptiveDynamicStreamingTaskInput.DefinitionType` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_definitionType = string(value["DefinitionType"].GetString());
+        m_definitionTypeHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -236,6 +247,14 @@ void AdaptiveDynamicStreamingTaskInput::ToJsonObject(rapidjson::Value &value, ra
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
         m_drmInfo.ToJsonObject(value[key.c_str()], allocator);
+    }
+
+    if (m_definitionTypeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "DefinitionType";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_definitionType.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -367,5 +386,21 @@ void AdaptiveDynamicStreamingTaskInput::SetDrmInfo(const DrmInfo& _drmInfo)
 bool AdaptiveDynamicStreamingTaskInput::DrmInfoHasBeenSet() const
 {
     return m_drmInfoHasBeenSet;
+}
+
+string AdaptiveDynamicStreamingTaskInput::GetDefinitionType() const
+{
+    return m_definitionType;
+}
+
+void AdaptiveDynamicStreamingTaskInput::SetDefinitionType(const string& _definitionType)
+{
+    m_definitionType = _definitionType;
+    m_definitionTypeHasBeenSet = true;
+}
+
+bool AdaptiveDynamicStreamingTaskInput::DefinitionTypeHasBeenSet() const
+{
+    return m_definitionTypeHasBeenSet;
 }
 

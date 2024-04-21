@@ -370,7 +370,7 @@ namespace TencentCloud
                 DeleteMQTTInsPublicEndpointOutcomeCallable DeleteMQTTInsPublicEndpointCallable(const Model::DeleteMQTTInsPublicEndpointRequest& request);
 
                 /**
-                 *删除实例
+                 *删除MQTT实例
                  * @param req DeleteMQTTInstanceRequest
                  * @return DeleteMQTTInstanceOutcome
                  */
@@ -379,7 +379,7 @@ namespace TencentCloud
                 DeleteMQTTInstanceOutcomeCallable DeleteMQTTInstanceCallable(const Model::DeleteMQTTInstanceRequest& request);
 
                 /**
-                 *删除主题
+                 *删除MQTT主题
                  * @param req DeleteMQTTTopicRequest
                  * @return DeleteMQTTTopicOutcome
                  */
@@ -538,7 +538,7 @@ namespace TencentCloud
                 DescribeMQTTMessageListOutcomeCallable DescribeMQTTMessageListCallable(const Model::DescribeMQTTMessageListRequest& request);
 
                 /**
-                 *非对外接口，获取产品售卖规格
+                 *获取产品售卖规格
                  * @param req DescribeMQTTProductSKUListRequest
                  * @return DescribeMQTTProductSKUListOutcome
                  */
@@ -649,7 +649,7 @@ ConsumerGroup，消费组名称过滤
                 ModifyInstanceOutcomeCallable ModifyInstanceCallable(const Model::ModifyInstanceRequest& request);
 
                 /**
-                 *为MQTT实例创建公网接入点
+                 *更新MQTT实例公网接入点
                  * @param req ModifyMQTTInsPublicEndpointRequest
                  * @return ModifyMQTTInsPublicEndpointOutcome
                  */

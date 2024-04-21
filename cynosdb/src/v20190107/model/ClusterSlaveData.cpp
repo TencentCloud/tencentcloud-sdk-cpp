@@ -24,7 +24,9 @@ ClusterSlaveData::ClusterSlaveData() :
     m_oldMasterZoneHasBeenSet(false),
     m_oldSlaveZoneHasBeenSet(false),
     m_newMasterZoneHasBeenSet(false),
-    m_newSlaveZoneHasBeenSet(false)
+    m_newSlaveZoneHasBeenSet(false),
+    m_newSlaveZoneAttrHasBeenSet(false),
+    m_oldSlaveZoneAttrHasBeenSet(false)
 {
 }
 
@@ -79,6 +81,46 @@ CoreInternalOutcome ClusterSlaveData::Deserialize(const rapidjson::Value &value)
         m_newSlaveZoneHasBeenSet = true;
     }
 
+    if (value.HasMember("NewSlaveZoneAttr") && !value["NewSlaveZoneAttr"].IsNull())
+    {
+        if (!value["NewSlaveZoneAttr"].IsArray())
+            return CoreInternalOutcome(Core::Error("response `ClusterSlaveData.NewSlaveZoneAttr` is not array type"));
+
+        const rapidjson::Value &tmpValue = value["NewSlaveZoneAttr"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            SlaveZoneAttrItem item;
+            CoreInternalOutcome outcome = item.Deserialize(*itr);
+            if (!outcome.IsSuccess())
+            {
+                outcome.GetError().SetRequestId(requestId);
+                return outcome;
+            }
+            m_newSlaveZoneAttr.push_back(item);
+        }
+        m_newSlaveZoneAttrHasBeenSet = true;
+    }
+
+    if (value.HasMember("OldSlaveZoneAttr") && !value["OldSlaveZoneAttr"].IsNull())
+    {
+        if (!value["OldSlaveZoneAttr"].IsArray())
+            return CoreInternalOutcome(Core::Error("response `ClusterSlaveData.OldSlaveZoneAttr` is not array type"));
+
+        const rapidjson::Value &tmpValue = value["OldSlaveZoneAttr"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            SlaveZoneAttrItem item;
+            CoreInternalOutcome outcome = item.Deserialize(*itr);
+            if (!outcome.IsSuccess())
+            {
+                outcome.GetError().SetRequestId(requestId);
+                return outcome;
+            }
+            m_oldSlaveZoneAttr.push_back(item);
+        }
+        m_oldSlaveZoneAttrHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -125,6 +167,36 @@ void ClusterSlaveData::ToJsonObject(rapidjson::Value &value, rapidjson::Document
         for (auto itr = m_newSlaveZone.begin(); itr != m_newSlaveZone.end(); ++itr)
         {
             value[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
+        }
+    }
+
+    if (m_newSlaveZoneAttrHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "NewSlaveZoneAttr";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_newSlaveZoneAttr.begin(); itr != m_newSlaveZoneAttr.end(); ++itr, ++i)
+        {
+            value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(value[key.c_str()][i], allocator);
+        }
+    }
+
+    if (m_oldSlaveZoneAttrHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "OldSlaveZoneAttr";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_oldSlaveZoneAttr.begin(); itr != m_oldSlaveZoneAttr.end(); ++itr, ++i)
+        {
+            value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(value[key.c_str()][i], allocator);
         }
     }
 
@@ -193,5 +265,37 @@ void ClusterSlaveData::SetNewSlaveZone(const vector<string>& _newSlaveZone)
 bool ClusterSlaveData::NewSlaveZoneHasBeenSet() const
 {
     return m_newSlaveZoneHasBeenSet;
+}
+
+vector<SlaveZoneAttrItem> ClusterSlaveData::GetNewSlaveZoneAttr() const
+{
+    return m_newSlaveZoneAttr;
+}
+
+void ClusterSlaveData::SetNewSlaveZoneAttr(const vector<SlaveZoneAttrItem>& _newSlaveZoneAttr)
+{
+    m_newSlaveZoneAttr = _newSlaveZoneAttr;
+    m_newSlaveZoneAttrHasBeenSet = true;
+}
+
+bool ClusterSlaveData::NewSlaveZoneAttrHasBeenSet() const
+{
+    return m_newSlaveZoneAttrHasBeenSet;
+}
+
+vector<SlaveZoneAttrItem> ClusterSlaveData::GetOldSlaveZoneAttr() const
+{
+    return m_oldSlaveZoneAttr;
+}
+
+void ClusterSlaveData::SetOldSlaveZoneAttr(const vector<SlaveZoneAttrItem>& _oldSlaveZoneAttr)
+{
+    m_oldSlaveZoneAttr = _oldSlaveZoneAttr;
+    m_oldSlaveZoneAttrHasBeenSet = true;
+}
+
+bool ClusterSlaveData::OldSlaveZoneAttrHasBeenSet() const
+{
+    return m_oldSlaveZoneAttrHasBeenSet;
 }
 

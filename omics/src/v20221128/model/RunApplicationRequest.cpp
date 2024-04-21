@@ -37,7 +37,8 @@ RunApplicationRequest::RunApplicationRequest() :
     m_optionHasBeenSet(false),
     m_nFOptionHasBeenSet(false),
     m_workDirHasBeenSet(false),
-    m_accessModeHasBeenSet(false)
+    m_accessModeHasBeenSet(false),
+    m_volumeIdsHasBeenSet(false)
 {
 }
 
@@ -173,6 +174,19 @@ string RunApplicationRequest::ToJsonString() const
         string key = "AccessMode";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_accessMode.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_volumeIdsHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "VolumeIds";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        for (auto itr = m_volumeIds.begin(); itr != m_volumeIds.end(); ++itr)
+        {
+            d[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
+        }
     }
 
 
@@ -421,6 +435,22 @@ void RunApplicationRequest::SetAccessMode(const string& _accessMode)
 bool RunApplicationRequest::AccessModeHasBeenSet() const
 {
     return m_accessModeHasBeenSet;
+}
+
+vector<string> RunApplicationRequest::GetVolumeIds() const
+{
+    return m_volumeIds;
+}
+
+void RunApplicationRequest::SetVolumeIds(const vector<string>& _volumeIds)
+{
+    m_volumeIds = _volumeIds;
+    m_volumeIdsHasBeenSet = true;
+}
+
+bool RunApplicationRequest::VolumeIdsHasBeenSet() const
+{
+    return m_volumeIdsHasBeenSet;
 }
 
 

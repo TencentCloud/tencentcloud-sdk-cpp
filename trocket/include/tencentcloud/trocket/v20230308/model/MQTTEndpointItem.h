@@ -196,6 +196,31 @@ namespace TencentCloud
                      */
                     bool PortHasBeenSet() const;
 
+                    /**
+                     * 获取接入点ip
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return Ip 接入点ip
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::string GetIp() const;
+
+                    /**
+                     * 设置接入点ip
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _ip 接入点ip
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetIp(const std::string& _ip);
+
+                    /**
+                     * 判断参数 Ip 是否已赋值
+                     * @return Ip 是否已赋值
+                     * 
+                     */
+                    bool IpHasBeenSet() const;
+
                 private:
 
                     /**
@@ -239,6 +264,13 @@ namespace TencentCloud
                      */
                     int64_t m_port;
                     bool m_portHasBeenSet;
+
+                    /**
+                     * 接入点ip
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_ip;
+                    bool m_ipHasBeenSet;
 
                 };
             }

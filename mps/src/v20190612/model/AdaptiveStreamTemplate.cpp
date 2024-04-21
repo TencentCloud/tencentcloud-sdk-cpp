@@ -21,8 +21,8 @@ using namespace TencentCloud::Mps::V20190612::Model;
 using namespace std;
 
 AdaptiveStreamTemplate::AdaptiveStreamTemplate() :
-    m_videoHasBeenSet(false),
     m_audioHasBeenSet(false),
+    m_videoHasBeenSet(false),
     m_removeAudioHasBeenSet(false),
     m_removeVideoHasBeenSet(false)
 {
@@ -32,23 +32,6 @@ CoreInternalOutcome AdaptiveStreamTemplate::Deserialize(const rapidjson::Value &
 {
     string requestId = "";
 
-
-    if (value.HasMember("Video") && !value["Video"].IsNull())
-    {
-        if (!value["Video"].IsObject())
-        {
-            return CoreInternalOutcome(Core::Error("response `AdaptiveStreamTemplate.Video` is not object type").SetRequestId(requestId));
-        }
-
-        CoreInternalOutcome outcome = m_video.Deserialize(value["Video"]);
-        if (!outcome.IsSuccess())
-        {
-            outcome.GetError().SetRequestId(requestId);
-            return outcome;
-        }
-
-        m_videoHasBeenSet = true;
-    }
 
     if (value.HasMember("Audio") && !value["Audio"].IsNull())
     {
@@ -65,6 +48,23 @@ CoreInternalOutcome AdaptiveStreamTemplate::Deserialize(const rapidjson::Value &
         }
 
         m_audioHasBeenSet = true;
+    }
+
+    if (value.HasMember("Video") && !value["Video"].IsNull())
+    {
+        if (!value["Video"].IsObject())
+        {
+            return CoreInternalOutcome(Core::Error("response `AdaptiveStreamTemplate.Video` is not object type").SetRequestId(requestId));
+        }
+
+        CoreInternalOutcome outcome = m_video.Deserialize(value["Video"]);
+        if (!outcome.IsSuccess())
+        {
+            outcome.GetError().SetRequestId(requestId);
+            return outcome;
+        }
+
+        m_videoHasBeenSet = true;
     }
 
     if (value.HasMember("RemoveAudio") && !value["RemoveAudio"].IsNull())
@@ -94,15 +94,6 @@ CoreInternalOutcome AdaptiveStreamTemplate::Deserialize(const rapidjson::Value &
 void AdaptiveStreamTemplate::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const
 {
 
-    if (m_videoHasBeenSet)
-    {
-        rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "Video";
-        iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
-        m_video.ToJsonObject(value[key.c_str()], allocator);
-    }
-
     if (m_audioHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
@@ -110,6 +101,15 @@ void AdaptiveStreamTemplate::ToJsonObject(rapidjson::Value &value, rapidjson::Do
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
         m_audio.ToJsonObject(value[key.c_str()], allocator);
+    }
+
+    if (m_videoHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Video";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_video.ToJsonObject(value[key.c_str()], allocator);
     }
 
     if (m_removeAudioHasBeenSet)
@@ -131,22 +131,6 @@ void AdaptiveStreamTemplate::ToJsonObject(rapidjson::Value &value, rapidjson::Do
 }
 
 
-VideoTemplateInfo AdaptiveStreamTemplate::GetVideo() const
-{
-    return m_video;
-}
-
-void AdaptiveStreamTemplate::SetVideo(const VideoTemplateInfo& _video)
-{
-    m_video = _video;
-    m_videoHasBeenSet = true;
-}
-
-bool AdaptiveStreamTemplate::VideoHasBeenSet() const
-{
-    return m_videoHasBeenSet;
-}
-
 AudioTemplateInfo AdaptiveStreamTemplate::GetAudio() const
 {
     return m_audio;
@@ -161,6 +145,22 @@ void AdaptiveStreamTemplate::SetAudio(const AudioTemplateInfo& _audio)
 bool AdaptiveStreamTemplate::AudioHasBeenSet() const
 {
     return m_audioHasBeenSet;
+}
+
+VideoTemplateInfo AdaptiveStreamTemplate::GetVideo() const
+{
+    return m_video;
+}
+
+void AdaptiveStreamTemplate::SetVideo(const VideoTemplateInfo& _video)
+{
+    m_video = _video;
+    m_videoHasBeenSet = true;
+}
+
+bool AdaptiveStreamTemplate::VideoHasBeenSet() const
+{
+    return m_videoHasBeenSet;
 }
 
 uint64_t AdaptiveStreamTemplate::GetRemoveAudio() const

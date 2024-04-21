@@ -108,15 +108,15 @@ namespace TencentCloud
                     bool NameHasBeenSet() const;
 
                     /**
-                     * 获取导入Kafka类型，0: 腾讯云CKafka，1: 用户自建Kafka
-                     * @return KafkaType 导入Kafka类型，0: 腾讯云CKafka，1: 用户自建Kafka
+                     * 获取导入Kafka类型，0：腾讯云CKafka：1：用户自建Kafka。
+                     * @return KafkaType 导入Kafka类型，0：腾讯云CKafka：1：用户自建Kafka。
                      * 
                      */
                     uint64_t GetKafkaType() const;
 
                     /**
-                     * 设置导入Kafka类型，0: 腾讯云CKafka，1: 用户自建Kafka
-                     * @param _kafkaType 导入Kafka类型，0: 腾讯云CKafka，1: 用户自建Kafka
+                     * 设置导入Kafka类型，0：腾讯云CKafka：1：用户自建Kafka。
+                     * @param _kafkaType 导入Kafka类型，0：腾讯云CKafka：1：用户自建Kafka。
                      * 
                      */
                     void SetKafkaType(const uint64_t& _kafkaType);
@@ -129,15 +129,15 @@ namespace TencentCloud
                     bool KafkaTypeHasBeenSet() const;
 
                     /**
-                     * 获取腾讯云CKafka实例ID，KafkaType为0时必填
-                     * @return KafkaInstance 腾讯云CKafka实例ID，KafkaType为0时必填
+                     * 获取腾讯云CKafka实例ID，KafkaType为0时必填。
+                     * @return KafkaInstance 腾讯云CKafka实例ID，KafkaType为0时必填。
                      * 
                      */
                     std::string GetKafkaInstance() const;
 
                     /**
-                     * 设置腾讯云CKafka实例ID，KafkaType为0时必填
-                     * @param _kafkaInstance 腾讯云CKafka实例ID，KafkaType为0时必填
+                     * 设置腾讯云CKafka实例ID，KafkaType为0时必填。
+                     * @param _kafkaInstance 腾讯云CKafka实例ID，KafkaType为0时必填。
                      * 
                      */
                     void SetKafkaInstance(const std::string& _kafkaInstance);
@@ -150,15 +150,15 @@ namespace TencentCloud
                     bool KafkaInstanceHasBeenSet() const;
 
                     /**
-                     * 获取服务地址
-                     * @return ServerAddr 服务地址
+                     * 获取服务地址，KafkaType为1时必填。
+                     * @return ServerAddr 服务地址，KafkaType为1时必填。
                      * 
                      */
                     std::string GetServerAddr() const;
 
                     /**
-                     * 设置服务地址
-                     * @param _serverAddr 服务地址
+                     * 设置服务地址，KafkaType为1时必填。
+                     * @param _serverAddr 服务地址，KafkaType为1时必填。
                      * 
                      */
                     void SetServerAddr(const std::string& _serverAddr);
@@ -171,15 +171,15 @@ namespace TencentCloud
                     bool ServerAddrHasBeenSet() const;
 
                     /**
-                     * 获取ServerAddr是否为加密连接
-                     * @return IsEncryptionAddr ServerAddr是否为加密连接
+                     * 获取ServerAddr是否为加密连接，KafkaType为1时必填。
+                     * @return IsEncryptionAddr ServerAddr是否为加密连接，KafkaType为1时必填。
                      * 
                      */
                     bool GetIsEncryptionAddr() const;
 
                     /**
-                     * 设置ServerAddr是否为加密连接
-                     * @param _isEncryptionAddr ServerAddr是否为加密连接
+                     * 设置ServerAddr是否为加密连接，KafkaType为1时必填。
+                     * @param _isEncryptionAddr ServerAddr是否为加密连接，KafkaType为1时必填。
                      * 
                      */
                     void SetIsEncryptionAddr(const bool& _isEncryptionAddr);
@@ -192,15 +192,15 @@ namespace TencentCloud
                     bool IsEncryptionAddrHasBeenSet() const;
 
                     /**
-                     * 获取加密访问协议，IsEncryptionAddr参数为true时必填
-                     * @return Protocol 加密访问协议，IsEncryptionAddr参数为true时必填
+                     * 获取加密访问协议，KafkaType参数为1并且IsEncryptionAddr参数为true时必填。
+                     * @return Protocol 加密访问协议，KafkaType参数为1并且IsEncryptionAddr参数为true时必填。
                      * 
                      */
                     KafkaProtocolInfo GetProtocol() const;
 
                     /**
-                     * 设置加密访问协议，IsEncryptionAddr参数为true时必填
-                     * @param _protocol 加密访问协议，IsEncryptionAddr参数为true时必填
+                     * 设置加密访问协议，KafkaType参数为1并且IsEncryptionAddr参数为true时必填。
+                     * @param _protocol 加密访问协议，KafkaType参数为1并且IsEncryptionAddr参数为true时必填。
                      * 
                      */
                     void SetProtocol(const KafkaProtocolInfo& _protocol);
@@ -276,15 +276,15 @@ namespace TencentCloud
                     bool LogRechargeRuleHasBeenSet() const;
 
                     /**
-                     * 获取导入控制，1：暂停，2：继续
-                     * @return StatusControl 导入控制，1：暂停，2：继续
+                     * 获取导入控制，1：暂停；2：继续。
+                     * @return StatusControl 导入控制，1：暂停；2：继续。
                      * 
                      */
                     uint64_t GetStatusControl() const;
 
                     /**
-                     * 设置导入控制，1：暂停，2：继续
-                     * @param _statusControl 导入控制，1：暂停，2：继续
+                     * 设置导入控制，1：暂停；2：继续。
+                     * @param _statusControl 导入控制，1：暂停；2：继续。
                      * 
                      */
                     void SetStatusControl(const uint64_t& _statusControl);
@@ -317,31 +317,31 @@ namespace TencentCloud
                     bool m_nameHasBeenSet;
 
                     /**
-                     * 导入Kafka类型，0: 腾讯云CKafka，1: 用户自建Kafka
+                     * 导入Kafka类型，0：腾讯云CKafka：1：用户自建Kafka。
                      */
                     uint64_t m_kafkaType;
                     bool m_kafkaTypeHasBeenSet;
 
                     /**
-                     * 腾讯云CKafka实例ID，KafkaType为0时必填
+                     * 腾讯云CKafka实例ID，KafkaType为0时必填。
                      */
                     std::string m_kafkaInstance;
                     bool m_kafkaInstanceHasBeenSet;
 
                     /**
-                     * 服务地址
+                     * 服务地址，KafkaType为1时必填。
                      */
                     std::string m_serverAddr;
                     bool m_serverAddrHasBeenSet;
 
                     /**
-                     * ServerAddr是否为加密连接
+                     * ServerAddr是否为加密连接，KafkaType为1时必填。
                      */
                     bool m_isEncryptionAddr;
                     bool m_isEncryptionAddrHasBeenSet;
 
                     /**
-                     * 加密访问协议，IsEncryptionAddr参数为true时必填
+                     * 加密访问协议，KafkaType参数为1并且IsEncryptionAddr参数为true时必填。
                      */
                     KafkaProtocolInfo m_protocol;
                     bool m_protocolHasBeenSet;
@@ -365,7 +365,7 @@ namespace TencentCloud
                     bool m_logRechargeRuleHasBeenSet;
 
                     /**
-                     * 导入控制，1：暂停，2：继续
+                     * 导入控制，1：暂停；2：继续。
                      */
                     uint64_t m_statusControl;
                     bool m_statusControlHasBeenSet;

@@ -24,8 +24,8 @@
 #include <tencentcloud/core/utils/rapidjson/writer.h>
 #include <tencentcloud/core/utils/rapidjson/stringbuffer.h>
 #include <tencentcloud/core/AbstractModel.h>
-#include <tencentcloud/mps/v20190612/model/VideoTemplateInfo.h>
 #include <tencentcloud/mps/v20190612/model/AudioTemplateInfo.h>
+#include <tencentcloud/mps/v20190612/model/VideoTemplateInfo.h>
 
 
 namespace TencentCloud
@@ -49,27 +49,6 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取视频参数信息。
-                     * @return Video 视频参数信息。
-                     * 
-                     */
-                    VideoTemplateInfo GetVideo() const;
-
-                    /**
-                     * 设置视频参数信息。
-                     * @param _video 视频参数信息。
-                     * 
-                     */
-                    void SetVideo(const VideoTemplateInfo& _video);
-
-                    /**
-                     * 判断参数 Video 是否已赋值
-                     * @return Video 是否已赋值
-                     * 
-                     */
-                    bool VideoHasBeenSet() const;
-
-                    /**
                      * 获取音频参数信息。
                      * @return Audio 音频参数信息。
                      * 
@@ -89,6 +68,27 @@ namespace TencentCloud
                      * 
                      */
                     bool AudioHasBeenSet() const;
+
+                    /**
+                     * 获取视频参数信息。
+                     * @return Video 视频参数信息。
+                     * 
+                     */
+                    VideoTemplateInfo GetVideo() const;
+
+                    /**
+                     * 设置视频参数信息。
+                     * @param _video 视频参数信息。
+                     * 
+                     */
+                    void SetVideo(const VideoTemplateInfo& _video);
+
+                    /**
+                     * 判断参数 Video 是否已赋值
+                     * @return Video 是否已赋值
+                     * 
+                     */
+                    bool VideoHasBeenSet() const;
 
                     /**
                      * 获取是否移除音频流，取值范围：
@@ -151,16 +151,16 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 视频参数信息。
-                     */
-                    VideoTemplateInfo m_video;
-                    bool m_videoHasBeenSet;
-
-                    /**
                      * 音频参数信息。
                      */
                     AudioTemplateInfo m_audio;
                     bool m_audioHasBeenSet;
+
+                    /**
+                     * 视频参数信息。
+                     */
+                    VideoTemplateInfo m_video;
+                    bool m_videoHasBeenSet;
 
                     /**
                      * 是否移除音频流，取值范围：

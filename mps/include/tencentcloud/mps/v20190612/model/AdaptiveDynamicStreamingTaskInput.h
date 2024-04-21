@@ -258,6 +258,39 @@ namespace TencentCloud
                      */
                     bool DrmInfoHasBeenSet() const;
 
+                    /**
+                     * 获取自适应转码模板类型：
+Common：音视频类型
+PureAudio：纯音频类型
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return DefinitionType 自适应转码模板类型：
+Common：音视频类型
+PureAudio：纯音频类型
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::string GetDefinitionType() const;
+
+                    /**
+                     * 设置自适应转码模板类型：
+Common：音视频类型
+PureAudio：纯音频类型
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _definitionType 自适应转码模板类型：
+Common：音视频类型
+PureAudio：纯音频类型
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetDefinitionType(const std::string& _definitionType);
+
+                    /**
+                     * 判断参数 DefinitionType 是否已赋值
+                     * @return DefinitionType 是否已赋值
+                     * 
+                     */
+                    bool DefinitionTypeHasBeenSet() const;
+
                 private:
 
                     /**
@@ -317,6 +350,15 @@ namespace TencentCloud
                      */
                     DrmInfo m_drmInfo;
                     bool m_drmInfoHasBeenSet;
+
+                    /**
+                     * 自适应转码模板类型：
+Common：音视频类型
+PureAudio：纯音频类型
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_definitionType;
+                    bool m_definitionTypeHasBeenSet;
 
                 };
             }

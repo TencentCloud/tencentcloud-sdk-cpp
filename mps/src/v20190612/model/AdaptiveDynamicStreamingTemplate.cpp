@@ -30,7 +30,8 @@ AdaptiveDynamicStreamingTemplate::AdaptiveDynamicStreamingTemplate() :
     m_disableHigherVideoBitrateHasBeenSet(false),
     m_disableHigherVideoResolutionHasBeenSet(false),
     m_createTimeHasBeenSet(false),
-    m_updateTimeHasBeenSet(false)
+    m_updateTimeHasBeenSet(false),
+    m_pureAudioHasBeenSet(false)
 {
 }
 
@@ -149,6 +150,16 @@ CoreInternalOutcome AdaptiveDynamicStreamingTemplate::Deserialize(const rapidjso
         m_updateTimeHasBeenSet = true;
     }
 
+    if (value.HasMember("PureAudio") && !value["PureAudio"].IsNull())
+    {
+        if (!value["PureAudio"].IsUint64())
+        {
+            return CoreInternalOutcome(Core::Error("response `AdaptiveDynamicStreamingTemplate.PureAudio` IsUint64=false incorrectly").SetRequestId(requestId));
+        }
+        m_pureAudio = value["PureAudio"].GetUint64();
+        m_pureAudioHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -241,6 +252,14 @@ void AdaptiveDynamicStreamingTemplate::ToJsonObject(rapidjson::Value &value, rap
         string key = "UpdateTime";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_updateTime.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_pureAudioHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "PureAudio";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_pureAudio, allocator);
     }
 
 }
@@ -404,5 +423,21 @@ void AdaptiveDynamicStreamingTemplate::SetUpdateTime(const string& _updateTime)
 bool AdaptiveDynamicStreamingTemplate::UpdateTimeHasBeenSet() const
 {
     return m_updateTimeHasBeenSet;
+}
+
+uint64_t AdaptiveDynamicStreamingTemplate::GetPureAudio() const
+{
+    return m_pureAudio;
+}
+
+void AdaptiveDynamicStreamingTemplate::SetPureAudio(const uint64_t& _pureAudio)
+{
+    m_pureAudio = _pureAudio;
+    m_pureAudioHasBeenSet = true;
+}
+
+bool AdaptiveDynamicStreamingTemplate::PureAudioHasBeenSet() const
+{
+    return m_pureAudioHasBeenSet;
 }
 

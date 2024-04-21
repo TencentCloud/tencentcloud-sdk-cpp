@@ -289,6 +289,31 @@ namespace TencentCloud
                      */
                     bool UpdateTimeHasBeenSet() const;
 
+                    /**
+                     * 获取是否为纯音频，0表示视频，1表示纯音频
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return PureAudio 是否为纯音频，0表示视频，1表示纯音频
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    uint64_t GetPureAudio() const;
+
+                    /**
+                     * 设置是否为纯音频，0表示视频，1表示纯音频
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _pureAudio 是否为纯音频，0表示视频，1表示纯音频
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetPureAudio(const uint64_t& _pureAudio);
+
+                    /**
+                     * 判断参数 PureAudio 是否已赋值
+                     * @return PureAudio 是否已赋值
+                     * 
+                     */
+                    bool PureAudioHasBeenSet() const;
+
                 private:
 
                     /**
@@ -358,6 +383,13 @@ namespace TencentCloud
                      */
                     std::string m_updateTime;
                     bool m_updateTimeHasBeenSet;
+
+                    /**
+                     * 是否为纯音频，0表示视频，1表示纯音频
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    uint64_t m_pureAudio;
+                    bool m_pureAudioHasBeenSet;
 
                 };
             }

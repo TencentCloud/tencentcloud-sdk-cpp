@@ -24,7 +24,8 @@ using namespace std;
 
 AddClusterSlaveZoneRequest::AddClusterSlaveZoneRequest() :
     m_clusterIdHasBeenSet(false),
-    m_slaveZoneHasBeenSet(false)
+    m_slaveZoneHasBeenSet(false),
+    m_binlogSyncWayHasBeenSet(false)
 {
 }
 
@@ -49,6 +50,14 @@ string AddClusterSlaveZoneRequest::ToJsonString() const
         string key = "SlaveZone";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_slaveZone.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_binlogSyncWayHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "BinlogSyncWay";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_binlogSyncWay.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -89,6 +98,22 @@ void AddClusterSlaveZoneRequest::SetSlaveZone(const string& _slaveZone)
 bool AddClusterSlaveZoneRequest::SlaveZoneHasBeenSet() const
 {
     return m_slaveZoneHasBeenSet;
+}
+
+string AddClusterSlaveZoneRequest::GetBinlogSyncWay() const
+{
+    return m_binlogSyncWay;
+}
+
+void AddClusterSlaveZoneRequest::SetBinlogSyncWay(const string& _binlogSyncWay)
+{
+    m_binlogSyncWay = _binlogSyncWay;
+    m_binlogSyncWayHasBeenSet = true;
+}
+
+bool AddClusterSlaveZoneRequest::BinlogSyncWayHasBeenSet() const
+{
+    return m_binlogSyncWayHasBeenSet;
 }
 
 

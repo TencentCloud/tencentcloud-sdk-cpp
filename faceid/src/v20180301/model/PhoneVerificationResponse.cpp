@@ -26,7 +26,8 @@ using namespace std;
 PhoneVerificationResponse::PhoneVerificationResponse() :
     m_resultHasBeenSet(false),
     m_descriptionHasBeenSet(false),
-    m_ispHasBeenSet(false)
+    m_ispHasBeenSet(false),
+    m_resultDetailHasBeenSet(false)
 {
 }
 
@@ -94,6 +95,16 @@ CoreInternalOutcome PhoneVerificationResponse::Deserialize(const string &payload
         m_ispHasBeenSet = true;
     }
 
+    if (rsp.HasMember("ResultDetail") && !rsp["ResultDetail"].IsNull())
+    {
+        if (!rsp["ResultDetail"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `ResultDetail` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_resultDetail = string(rsp["ResultDetail"].GetString());
+        m_resultDetailHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -126,6 +137,14 @@ string PhoneVerificationResponse::ToJsonString() const
         string key = "Isp";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_isp.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_resultDetailHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ResultDetail";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_resultDetail.c_str(), allocator).Move(), allocator);
     }
 
     rapidjson::Value iKey(rapidjson::kStringType);
@@ -168,6 +187,16 @@ string PhoneVerificationResponse::GetIsp() const
 bool PhoneVerificationResponse::IspHasBeenSet() const
 {
     return m_ispHasBeenSet;
+}
+
+string PhoneVerificationResponse::GetResultDetail() const
+{
+    return m_resultDetail;
+}
+
+bool PhoneVerificationResponse::ResultDetailHasBeenSet() const
+{
+    return m_resultDetailHasBeenSet;
 }
 
 

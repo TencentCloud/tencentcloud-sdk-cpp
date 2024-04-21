@@ -106,6 +106,35 @@ namespace TencentCloud
                     bool PhoneHasBeenSet() const;
 
                     /**
+                     * 获取验证模式（详版/简版）。简版与详版价格不一致，详见[价格说明](https://cloud.tencent.com/document/product/1007/84321)。
+
+枚举值：0（简版），1（详版）。默认值为0。
+                     * @return VerifyMode 验证模式（详版/简版）。简版与详版价格不一致，详见[价格说明](https://cloud.tencent.com/document/product/1007/84321)。
+
+枚举值：0（简版），1（详版）。默认值为0。
+                     * 
+                     */
+                    std::string GetVerifyMode() const;
+
+                    /**
+                     * 设置验证模式（详版/简版）。简版与详版价格不一致，详见[价格说明](https://cloud.tencent.com/document/product/1007/84321)。
+
+枚举值：0（简版），1（详版）。默认值为0。
+                     * @param _verifyMode 验证模式（详版/简版）。简版与详版价格不一致，详见[价格说明](https://cloud.tencent.com/document/product/1007/84321)。
+
+枚举值：0（简版），1（详版）。默认值为0。
+                     * 
+                     */
+                    void SetVerifyMode(const std::string& _verifyMode);
+
+                    /**
+                     * 判断参数 VerifyMode 是否已赋值
+                     * @return VerifyMode 是否已赋值
+                     * 
+                     */
+                    bool VerifyModeHasBeenSet() const;
+
+                    /**
                      * 获取有加密需求的用户，传入kms的CiphertextBlob，关于数据加密可查阅 <a href="https://cloud.tencent.com/document/product/1007/47180">数据加密</a> 文档。
                      * @return CiphertextBlob 有加密需求的用户，传入kms的CiphertextBlob，关于数据加密可查阅 <a href="https://cloud.tencent.com/document/product/1007/47180">数据加密</a> 文档。
                      * 
@@ -187,6 +216,14 @@ namespace TencentCloud
                      */
                     std::string m_phone;
                     bool m_phoneHasBeenSet;
+
+                    /**
+                     * 验证模式（详版/简版）。简版与详版价格不一致，详见[价格说明](https://cloud.tencent.com/document/product/1007/84321)。
+
+枚举值：0（简版），1（详版）。默认值为0。
+                     */
+                    std::string m_verifyMode;
+                    bool m_verifyModeHasBeenSet;
 
                     /**
                      * 有加密需求的用户，传入kms的CiphertextBlob，关于数据加密可查阅 <a href="https://cloud.tencent.com/document/product/1007/47180">数据加密</a> 文档。

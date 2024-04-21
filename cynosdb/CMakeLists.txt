@@ -166,6 +166,7 @@ set(cynosdb_public_header_model
   include/tencentcloud/cynosdb/v20190107/model/ResumeServerlessResponse.h
   include/tencentcloud/cynosdb/v20190107/model/SaleZone.h
   include/tencentcloud/cynosdb/v20190107/model/SwitchProxyVpcResponse.h
+  include/tencentcloud/cynosdb/v20190107/model/SlaveZoneAttrItem.h
   include/tencentcloud/cynosdb/v20190107/model/SwitchProxyVpcRequest.h
   include/tencentcloud/cynosdb/v20190107/model/RestartInstanceResponse.h
   include/tencentcloud/cynosdb/v20190107/model/DescribeBinlogSaveDaysRequest.h
@@ -535,6 +536,7 @@ set(cynosdb_src
   src/v20190107/model/ResumeServerlessResponse.cpp
   src/v20190107/model/SaleZone.cpp
   src/v20190107/model/SwitchProxyVpcResponse.cpp
+  src/v20190107/model/SlaveZoneAttrItem.cpp
   src/v20190107/model/SwitchProxyVpcRequest.cpp
   src/v20190107/model/RestartInstanceResponse.cpp
   src/v20190107/model/DescribeBinlogSaveDaysRequest.cpp

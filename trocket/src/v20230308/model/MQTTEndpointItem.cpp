@@ -26,7 +26,8 @@ MQTTEndpointItem::MQTTEndpointItem() :
     m_vpcIdHasBeenSet(false),
     m_subnetIdHasBeenSet(false),
     m_hostHasBeenSet(false),
-    m_portHasBeenSet(false)
+    m_portHasBeenSet(false),
+    m_ipHasBeenSet(false)
 {
 }
 
@@ -95,6 +96,16 @@ CoreInternalOutcome MQTTEndpointItem::Deserialize(const rapidjson::Value &value)
         m_portHasBeenSet = true;
     }
 
+    if (value.HasMember("Ip") && !value["Ip"].IsNull())
+    {
+        if (!value["Ip"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `MQTTEndpointItem.Ip` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_ip = string(value["Ip"].GetString());
+        m_ipHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -148,6 +159,14 @@ void MQTTEndpointItem::ToJsonObject(rapidjson::Value &value, rapidjson::Document
         string key = "Port";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_port, allocator);
+    }
+
+    if (m_ipHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Ip";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_ip.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -247,5 +266,21 @@ void MQTTEndpointItem::SetPort(const int64_t& _port)
 bool MQTTEndpointItem::PortHasBeenSet() const
 {
     return m_portHasBeenSet;
+}
+
+string MQTTEndpointItem::GetIp() const
+{
+    return m_ip;
+}
+
+void MQTTEndpointItem::SetIp(const string& _ip)
+{
+    m_ip = _ip;
+    m_ipHasBeenSet = true;
+}
+
+bool MQTTEndpointItem::IpHasBeenSet() const
+{
+    return m_ipHasBeenSet;
 }
 

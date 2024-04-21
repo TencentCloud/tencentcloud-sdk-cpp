@@ -671,6 +671,27 @@ PullVodPushLive -点播。
                      */
                     bool BackupToUrlHasBeenSet() const;
 
+                    /**
+                     * 获取点播垫片文件地址。注意：用于在主源拉不到时自动兜底到垫片文件，切到垫片文件后，每次播完垫片会尝试拉主源，如果主源恢复则自动切回主源。可根据需要的轮询检查时长来传入对应时长的垫片文件。
+                     * @return BackupVodUrl 点播垫片文件地址。注意：用于在主源拉不到时自动兜底到垫片文件，切到垫片文件后，每次播完垫片会尝试拉主源，如果主源恢复则自动切回主源。可根据需要的轮询检查时长来传入对应时长的垫片文件。
+                     * 
+                     */
+                    std::string GetBackupVodUrl() const;
+
+                    /**
+                     * 设置点播垫片文件地址。注意：用于在主源拉不到时自动兜底到垫片文件，切到垫片文件后，每次播完垫片会尝试拉主源，如果主源恢复则自动切回主源。可根据需要的轮询检查时长来传入对应时长的垫片文件。
+                     * @param _backupVodUrl 点播垫片文件地址。注意：用于在主源拉不到时自动兜底到垫片文件，切到垫片文件后，每次播完垫片会尝试拉主源，如果主源恢复则自动切回主源。可根据需要的轮询检查时长来传入对应时长的垫片文件。
+                     * 
+                     */
+                    void SetBackupVodUrl(const std::string& _backupVodUrl);
+
+                    /**
+                     * 判断参数 BackupVodUrl 是否已赋值
+                     * @return BackupVodUrl 是否已赋值
+                     * 
+                     */
+                    bool BackupVodUrlHasBeenSet() const;
+
                 private:
 
                     /**
@@ -844,6 +865,12 @@ PullVodPushLive -点播。
                      */
                     std::string m_backupToUrl;
                     bool m_backupToUrlHasBeenSet;
+
+                    /**
+                     * 点播垫片文件地址。注意：用于在主源拉不到时自动兜底到垫片文件，切到垫片文件后，每次播完垫片会尝试拉主源，如果主源恢复则自动切回主源。可根据需要的轮询检查时长来传入对应时长的垫片文件。
+                     */
+                    std::string m_backupVodUrl;
+                    bool m_backupVodUrlHasBeenSet;
 
                 };
             }

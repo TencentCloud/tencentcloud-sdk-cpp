@@ -1201,6 +1201,49 @@ OrganizationClient::DeleteShareUnitResourcesOutcomeCallable OrganizationClient::
     return task->get_future();
 }
 
+OrganizationClient::DescribeEffectivePolicyOutcome OrganizationClient::DescribeEffectivePolicy(const DescribeEffectivePolicyRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeEffectivePolicy");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeEffectivePolicyResponse rsp = DescribeEffectivePolicyResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeEffectivePolicyOutcome(rsp);
+        else
+            return DescribeEffectivePolicyOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeEffectivePolicyOutcome(outcome.GetError());
+    }
+}
+
+void OrganizationClient::DescribeEffectivePolicyAsync(const DescribeEffectivePolicyRequest& request, const DescribeEffectivePolicyAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeEffectivePolicy(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+OrganizationClient::DescribeEffectivePolicyOutcomeCallable OrganizationClient::DescribeEffectivePolicyCallable(const DescribeEffectivePolicyRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeEffectivePolicyOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeEffectivePolicy(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 OrganizationClient::DescribeOrganizationOutcome OrganizationClient::DescribeOrganization(const DescribeOrganizationRequest &request)
 {
     auto outcome = MakeRequest(request, "DescribeOrganization");
@@ -2054,6 +2097,49 @@ OrganizationClient::EnablePolicyTypeOutcomeCallable OrganizationClient::EnablePo
         [this, request]()
         {
             return this->EnablePolicyType(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+OrganizationClient::ListNonCompliantResourceOutcome OrganizationClient::ListNonCompliantResource(const ListNonCompliantResourceRequest &request)
+{
+    auto outcome = MakeRequest(request, "ListNonCompliantResource");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ListNonCompliantResourceResponse rsp = ListNonCompliantResourceResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ListNonCompliantResourceOutcome(rsp);
+        else
+            return ListNonCompliantResourceOutcome(o.GetError());
+    }
+    else
+    {
+        return ListNonCompliantResourceOutcome(outcome.GetError());
+    }
+}
+
+void OrganizationClient::ListNonCompliantResourceAsync(const ListNonCompliantResourceRequest& request, const ListNonCompliantResourceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->ListNonCompliantResource(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+OrganizationClient::ListNonCompliantResourceOutcomeCallable OrganizationClient::ListNonCompliantResourceCallable(const ListNonCompliantResourceRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<ListNonCompliantResourceOutcome()>>(
+        [this, request]()
+        {
+            return this->ListNonCompliantResource(request);
         }
     );
 

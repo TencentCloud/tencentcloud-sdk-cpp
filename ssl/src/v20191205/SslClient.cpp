@@ -943,6 +943,49 @@ SslClient::DescribeCompaniesOutcomeCallable SslClient::DescribeCompaniesCallable
     return task->get_future();
 }
 
+SslClient::DescribeDeleteCertificatesTaskResultOutcome SslClient::DescribeDeleteCertificatesTaskResult(const DescribeDeleteCertificatesTaskResultRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeDeleteCertificatesTaskResult");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeDeleteCertificatesTaskResultResponse rsp = DescribeDeleteCertificatesTaskResultResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeDeleteCertificatesTaskResultOutcome(rsp);
+        else
+            return DescribeDeleteCertificatesTaskResultOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeDeleteCertificatesTaskResultOutcome(outcome.GetError());
+    }
+}
+
+void SslClient::DescribeDeleteCertificatesTaskResultAsync(const DescribeDeleteCertificatesTaskResultRequest& request, const DescribeDeleteCertificatesTaskResultAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeDeleteCertificatesTaskResult(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+SslClient::DescribeDeleteCertificatesTaskResultOutcomeCallable SslClient::DescribeDeleteCertificatesTaskResultCallable(const DescribeDeleteCertificatesTaskResultRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeDeleteCertificatesTaskResultOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeDeleteCertificatesTaskResult(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 SslClient::DescribeDeployedResourcesOutcome SslClient::DescribeDeployedResources(const DescribeDeployedResourcesRequest &request)
 {
     auto outcome = MakeRequest(request, "DescribeDeployedResources");

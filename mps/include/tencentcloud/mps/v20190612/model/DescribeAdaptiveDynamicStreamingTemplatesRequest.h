@@ -134,6 +134,27 @@ namespace TencentCloud
                      */
                     bool TypeHasBeenSet() const;
 
+                    /**
+                     * 获取是否为纯音频，0表示视频，1表示纯音频
+                     * @return PureAudio 是否为纯音频，0表示视频，1表示纯音频
+                     * 
+                     */
+                    uint64_t GetPureAudio() const;
+
+                    /**
+                     * 设置是否为纯音频，0表示视频，1表示纯音频
+                     * @param _pureAudio 是否为纯音频，0表示视频，1表示纯音频
+                     * 
+                     */
+                    void SetPureAudio(const uint64_t& _pureAudio);
+
+                    /**
+                     * 判断参数 PureAudio 是否已赋值
+                     * @return PureAudio 是否已赋值
+                     * 
+                     */
+                    bool PureAudioHasBeenSet() const;
+
                 private:
 
                     /**
@@ -161,6 +182,12 @@ namespace TencentCloud
                      */
                     std::string m_type;
                     bool m_typeHasBeenSet;
+
+                    /**
+                     * 是否为纯音频，0表示视频，1表示纯音频
+                     */
+                    uint64_t m_pureAudio;
+                    bool m_pureAudioHasBeenSet;
 
                 };
             }

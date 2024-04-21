@@ -22,6 +22,7 @@
 #include <map>
 #include <tencentcloud/core/AbstractModel.h>
 #include <tencentcloud/trocket/v20230308/model/MQTTClientSubscription.h>
+#include <tencentcloud/trocket/v20230308/model/StatisticsReport.h>
 
 
 namespace TencentCloud
@@ -170,6 +171,48 @@ namespace TencentCloud
                      */
                     bool MQTTClientSubscriptionsHasBeenSet() const;
 
+                    /**
+                     * 获取服务端到客户端的流量统计
+                     * @return Inbound 服务端到客户端的流量统计
+                     * 
+                     */
+                    StatisticsReport GetInbound() const;
+
+                    /**
+                     * 判断参数 Inbound 是否已赋值
+                     * @return Inbound 是否已赋值
+                     * 
+                     */
+                    bool InboundHasBeenSet() const;
+
+                    /**
+                     * 获取客户端到服务端的流量统计
+                     * @return OutBound 客户端到服务端的流量统计
+                     * 
+                     */
+                    StatisticsReport GetOutBound() const;
+
+                    /**
+                     * 判断参数 OutBound 是否已赋值
+                     * @return OutBound 是否已赋值
+                     * 
+                     */
+                    bool OutBoundHasBeenSet() const;
+
+                    /**
+                     * 获取cleansession标志
+                     * @return CleanSession cleansession标志
+                     * 
+                     */
+                    bool GetCleanSession() const;
+
+                    /**
+                     * 判断参数 CleanSession 是否已赋值
+                     * @return CleanSession 是否已赋值
+                     * 
+                     */
+                    bool CleanSessionHasBeenSet() const;
+
                 private:
 
                     /**
@@ -225,6 +268,24 @@ namespace TencentCloud
                      */
                     std::vector<MQTTClientSubscription> m_mQTTClientSubscriptions;
                     bool m_mQTTClientSubscriptionsHasBeenSet;
+
+                    /**
+                     * 服务端到客户端的流量统计
+                     */
+                    StatisticsReport m_inbound;
+                    bool m_inboundHasBeenSet;
+
+                    /**
+                     * 客户端到服务端的流量统计
+                     */
+                    StatisticsReport m_outBound;
+                    bool m_outBoundHasBeenSet;
+
+                    /**
+                     * cleansession标志
+                     */
+                    bool m_cleanSession;
+                    bool m_cleanSessionHasBeenSet;
 
                 };
             }

@@ -67,15 +67,15 @@ namespace TencentCloud
                     bool ShipperIdHasBeenSet() const;
 
                     /**
-                     * 获取投递规则投递的新的bucket
-                     * @return Bucket 投递规则投递的新的bucket
+                     * 获取COS存储桶，详见产品支持的[存储桶命名规范](https://cloud.tencent.com/document/product/436/13312)。
+                     * @return Bucket COS存储桶，详见产品支持的[存储桶命名规范](https://cloud.tencent.com/document/product/436/13312)。
                      * 
                      */
                     std::string GetBucket() const;
 
                     /**
-                     * 设置投递规则投递的新的bucket
-                     * @param _bucket 投递规则投递的新的bucket
+                     * 设置COS存储桶，详见产品支持的[存储桶命名规范](https://cloud.tencent.com/document/product/436/13312)。
+                     * @param _bucket COS存储桶，详见产品支持的[存储桶命名规范](https://cloud.tencent.com/document/product/436/13312)。
                      * 
                      */
                     void SetBucket(const std::string& _bucket);
@@ -88,15 +88,23 @@ namespace TencentCloud
                     bool BucketHasBeenSet() const;
 
                     /**
-                     * 获取投递规则投递的新的目录前缀
-                     * @return Prefix 投递规则投递的新的目录前缀
+                     * 获取投递规则投递的新的目录前缀。
+- 仅支持0-9A-Za-z-_/
+- 最大支持256个字符
+                     * @return Prefix 投递规则投递的新的目录前缀。
+- 仅支持0-9A-Za-z-_/
+- 最大支持256个字符
                      * 
                      */
                     std::string GetPrefix() const;
 
                     /**
-                     * 设置投递规则投递的新的目录前缀
-                     * @param _prefix 投递规则投递的新的目录前缀
+                     * 设置投递规则投递的新的目录前缀。
+- 仅支持0-9A-Za-z-_/
+- 最大支持256个字符
+                     * @param _prefix 投递规则投递的新的目录前缀。
+- 仅支持0-9A-Za-z-_/
+- 最大支持256个字符
                      * 
                      */
                     void SetPrefix(const std::string& _prefix);
@@ -109,15 +117,15 @@ namespace TencentCloud
                     bool PrefixHasBeenSet() const;
 
                     /**
-                     * 获取投递规则的开关状态
-                     * @return Status 投递规则的开关状态
+                     * 获取投递规则的开关状态。true：开启投递任务；false：关闭投递任务。
+                     * @return Status 投递规则的开关状态。true：开启投递任务；false：关闭投递任务。
                      * 
                      */
                     bool GetStatus() const;
 
                     /**
-                     * 设置投递规则的开关状态
-                     * @param _status 投递规则的开关状态
+                     * 设置投递规则的开关状态。true：开启投递任务；false：关闭投递任务。
+                     * @param _status 投递规则的开关状态。true：开启投递任务；false：关闭投递任务。
                      * 
                      */
                     void SetStatus(const bool& _status);
@@ -277,15 +285,15 @@ namespace TencentCloud
                     bool ContentHasBeenSet() const;
 
                     /**
-                     * 获取投递文件命名配置，0：随机数命名，1：投递时间命名，默认0（随机数命名）
-                     * @return FilenameMode 投递文件命名配置，0：随机数命名，1：投递时间命名，默认0（随机数命名）
+                     * 获取投递文件命名配置，0：随机数命名，1：投递时间命名。
+                     * @return FilenameMode 投递文件命名配置，0：随机数命名，1：投递时间命名。
                      * 
                      */
                     uint64_t GetFilenameMode() const;
 
                     /**
-                     * 设置投递文件命名配置，0：随机数命名，1：投递时间命名，默认0（随机数命名）
-                     * @param _filenameMode 投递文件命名配置，0：随机数命名，1：投递时间命名，默认0（随机数命名）
+                     * 设置投递文件命名配置，0：随机数命名，1：投递时间命名。
+                     * @param _filenameMode 投递文件命名配置，0：随机数命名，1：投递时间命名。
                      * 
                      */
                     void SetFilenameMode(const uint64_t& _filenameMode);
@@ -298,15 +306,47 @@ namespace TencentCloud
                     bool FilenameModeHasBeenSet() const;
 
                     /**
-                     * 获取cos桶类型
-                     * @return StorageType cos桶类型
+                     * 获取cos桶存储类型。支持：STANDARD_IA、ARCHIVE、DEEP_ARCHIVE、STANDARD、MAZ_STANDARD、MAZ_STANDARD_IA、INTELLIGENT_TIERING。
+
+1. STANDARD_IA：低频存储；
+2. ARCHIVE：归档存储；
+3. DEEP_ARCHIVE：深度归档存储；
+4. STANDARD：标准存储；
+5. MAZ_STANDARD：标准存储（多 AZ）；
+6. MAZ_STANDARD_IA：低频存储（多 AZ）；
+7. INTELLIGENT_TIERING：智能分层存储。
+                     * @return StorageType cos桶存储类型。支持：STANDARD_IA、ARCHIVE、DEEP_ARCHIVE、STANDARD、MAZ_STANDARD、MAZ_STANDARD_IA、INTELLIGENT_TIERING。
+
+1. STANDARD_IA：低频存储；
+2. ARCHIVE：归档存储；
+3. DEEP_ARCHIVE：深度归档存储；
+4. STANDARD：标准存储；
+5. MAZ_STANDARD：标准存储（多 AZ）；
+6. MAZ_STANDARD_IA：低频存储（多 AZ）；
+7. INTELLIGENT_TIERING：智能分层存储。
                      * 
                      */
                     std::string GetStorageType() const;
 
                     /**
-                     * 设置cos桶类型
-                     * @param _storageType cos桶类型
+                     * 设置cos桶存储类型。支持：STANDARD_IA、ARCHIVE、DEEP_ARCHIVE、STANDARD、MAZ_STANDARD、MAZ_STANDARD_IA、INTELLIGENT_TIERING。
+
+1. STANDARD_IA：低频存储；
+2. ARCHIVE：归档存储；
+3. DEEP_ARCHIVE：深度归档存储；
+4. STANDARD：标准存储；
+5. MAZ_STANDARD：标准存储（多 AZ）；
+6. MAZ_STANDARD_IA：低频存储（多 AZ）；
+7. INTELLIGENT_TIERING：智能分层存储。
+                     * @param _storageType cos桶存储类型。支持：STANDARD_IA、ARCHIVE、DEEP_ARCHIVE、STANDARD、MAZ_STANDARD、MAZ_STANDARD_IA、INTELLIGENT_TIERING。
+
+1. STANDARD_IA：低频存储；
+2. ARCHIVE：归档存储；
+3. DEEP_ARCHIVE：深度归档存储；
+4. STANDARD：标准存储；
+5. MAZ_STANDARD：标准存储（多 AZ）；
+6. MAZ_STANDARD_IA：低频存储（多 AZ）；
+7. INTELLIGENT_TIERING：智能分层存储。
                      * 
                      */
                     void SetStorageType(const std::string& _storageType);
@@ -327,19 +367,21 @@ namespace TencentCloud
                     bool m_shipperIdHasBeenSet;
 
                     /**
-                     * 投递规则投递的新的bucket
+                     * COS存储桶，详见产品支持的[存储桶命名规范](https://cloud.tencent.com/document/product/436/13312)。
                      */
                     std::string m_bucket;
                     bool m_bucketHasBeenSet;
 
                     /**
-                     * 投递规则投递的新的目录前缀
+                     * 投递规则投递的新的目录前缀。
+- 仅支持0-9A-Za-z-_/
+- 最大支持256个字符
                      */
                     std::string m_prefix;
                     bool m_prefixHasBeenSet;
 
                     /**
-                     * 投递规则的开关状态
+                     * 投递规则的开关状态。true：开启投递任务；false：关闭投递任务。
                      */
                     bool m_status;
                     bool m_statusHasBeenSet;
@@ -387,13 +429,21 @@ namespace TencentCloud
                     bool m_contentHasBeenSet;
 
                     /**
-                     * 投递文件命名配置，0：随机数命名，1：投递时间命名，默认0（随机数命名）
+                     * 投递文件命名配置，0：随机数命名，1：投递时间命名。
                      */
                     uint64_t m_filenameMode;
                     bool m_filenameModeHasBeenSet;
 
                     /**
-                     * cos桶类型
+                     * cos桶存储类型。支持：STANDARD_IA、ARCHIVE、DEEP_ARCHIVE、STANDARD、MAZ_STANDARD、MAZ_STANDARD_IA、INTELLIGENT_TIERING。
+
+1. STANDARD_IA：低频存储；
+2. ARCHIVE：归档存储；
+3. DEEP_ARCHIVE：深度归档存储；
+4. STANDARD：标准存储；
+5. MAZ_STANDARD：标准存储（多 AZ）；
+6. MAZ_STANDARD_IA：低频存储（多 AZ）；
+7. INTELLIGENT_TIERING：智能分层存储。
                      */
                     std::string m_storageType;
                     bool m_storageTypeHasBeenSet;

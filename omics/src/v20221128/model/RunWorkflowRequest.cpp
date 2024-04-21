@@ -33,7 +33,8 @@ RunWorkflowRequest::RunWorkflowRequest() :
     m_inputBase64HasBeenSet(false),
     m_inputCosUriHasBeenSet(false),
     m_cacheClearDelayHasBeenSet(false),
-    m_workDirHasBeenSet(false)
+    m_workDirHasBeenSet(false),
+    m_volumeIdsHasBeenSet(false)
 {
 }
 
@@ -132,6 +133,19 @@ string RunWorkflowRequest::ToJsonString() const
         string key = "WorkDir";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_workDir.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_volumeIdsHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "VolumeIds";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        for (auto itr = m_volumeIds.begin(); itr != m_volumeIds.end(); ++itr)
+        {
+            d[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
+        }
     }
 
 
@@ -316,6 +330,22 @@ void RunWorkflowRequest::SetWorkDir(const string& _workDir)
 bool RunWorkflowRequest::WorkDirHasBeenSet() const
 {
     return m_workDirHasBeenSet;
+}
+
+vector<string> RunWorkflowRequest::GetVolumeIds() const
+{
+    return m_volumeIds;
+}
+
+void RunWorkflowRequest::SetVolumeIds(const vector<string>& _volumeIds)
+{
+    m_volumeIds = _volumeIds;
+    m_volumeIdsHasBeenSet = true;
+}
+
+bool RunWorkflowRequest::VolumeIdsHasBeenSet() const
+{
+    return m_volumeIdsHasBeenSet;
 }
 
 

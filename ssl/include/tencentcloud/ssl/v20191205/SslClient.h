@@ -65,6 +65,8 @@
 #include <tencentcloud/ssl/v20191205/model/DescribeCertificatesResponse.h>
 #include <tencentcloud/ssl/v20191205/model/DescribeCompaniesRequest.h>
 #include <tencentcloud/ssl/v20191205/model/DescribeCompaniesResponse.h>
+#include <tencentcloud/ssl/v20191205/model/DescribeDeleteCertificatesTaskResultRequest.h>
+#include <tencentcloud/ssl/v20191205/model/DescribeDeleteCertificatesTaskResultResponse.h>
 #include <tencentcloud/ssl/v20191205/model/DescribeDeployedResourcesRequest.h>
 #include <tencentcloud/ssl/v20191205/model/DescribeDeployedResourcesResponse.h>
 #include <tencentcloud/ssl/v20191205/model/DescribeHostApiGatewayInstanceListRequest.h>
@@ -212,6 +214,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeCompaniesResponse> DescribeCompaniesOutcome;
                 typedef std::future<DescribeCompaniesOutcome> DescribeCompaniesOutcomeCallable;
                 typedef std::function<void(const SslClient*, const Model::DescribeCompaniesRequest&, DescribeCompaniesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeCompaniesAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeDeleteCertificatesTaskResultResponse> DescribeDeleteCertificatesTaskResultOutcome;
+                typedef std::future<DescribeDeleteCertificatesTaskResultOutcome> DescribeDeleteCertificatesTaskResultOutcomeCallable;
+                typedef std::function<void(const SslClient*, const Model::DescribeDeleteCertificatesTaskResultRequest&, DescribeDeleteCertificatesTaskResultOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeDeleteCertificatesTaskResultAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeDeployedResourcesResponse> DescribeDeployedResourcesOutcome;
                 typedef std::future<DescribeDeployedResourcesOutcome> DescribeDeployedResourcesOutcomeCallable;
                 typedef std::function<void(const SslClient*, const Model::DescribeDeployedResourcesRequest&, DescribeDeployedResourcesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeDeployedResourcesAsyncHandler;
@@ -508,6 +513,15 @@ namespace TencentCloud
                 DescribeCompaniesOutcome DescribeCompanies(const Model::DescribeCompaniesRequest &request);
                 void DescribeCompaniesAsync(const Model::DescribeCompaniesRequest& request, const DescribeCompaniesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DescribeCompaniesOutcomeCallable DescribeCompaniesCallable(const Model::DescribeCompaniesRequest& request);
+
+                /**
+                 *查询批量删除任务结果
+                 * @param req DescribeDeleteCertificatesTaskResultRequest
+                 * @return DescribeDeleteCertificatesTaskResultOutcome
+                 */
+                DescribeDeleteCertificatesTaskResultOutcome DescribeDeleteCertificatesTaskResult(const Model::DescribeDeleteCertificatesTaskResultRequest &request);
+                void DescribeDeleteCertificatesTaskResultAsync(const Model::DescribeDeleteCertificatesTaskResultRequest& request, const DescribeDeleteCertificatesTaskResultAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeDeleteCertificatesTaskResultOutcomeCallable DescribeDeleteCertificatesTaskResultCallable(const Model::DescribeDeleteCertificatesTaskResultRequest& request);
 
                 /**
                  *证书查询关联资源， 最新查询接口请使用CreateCertificateBindResourceSyncTask， 可以查询更多支持的云资源

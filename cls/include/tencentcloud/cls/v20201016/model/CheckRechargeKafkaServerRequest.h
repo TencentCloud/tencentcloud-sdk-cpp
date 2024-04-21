@@ -44,15 +44,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取导入Kafka类型，0: 腾讯云CKafka，1: 用户自建Kafka
-                     * @return KafkaType 导入Kafka类型，0: 腾讯云CKafka，1: 用户自建Kafka
+                     * 获取导入Kafka类型，0: 腾讯云CKafka；1: 用户自建Kafka。
+                     * @return KafkaType 导入Kafka类型，0: 腾讯云CKafka；1: 用户自建Kafka。
                      * 
                      */
                     uint64_t GetKafkaType() const;
 
                     /**
-                     * 设置导入Kafka类型，0: 腾讯云CKafka，1: 用户自建Kafka
-                     * @param _kafkaType 导入Kafka类型，0: 腾讯云CKafka，1: 用户自建Kafka
+                     * 设置导入Kafka类型，0: 腾讯云CKafka；1: 用户自建Kafka。
+                     * @param _kafkaType 导入Kafka类型，0: 腾讯云CKafka；1: 用户自建Kafka。
                      * 
                      */
                     void SetKafkaType(const uint64_t& _kafkaType);
@@ -115,15 +115,15 @@ KafkaType为1时，ServerAddr必填
                     bool ServerAddrHasBeenSet() const;
 
                     /**
-                     * 获取ServerAddr是否为加密连接
-                     * @return IsEncryptionAddr ServerAddr是否为加密连接
+                     * 获取ServerAddr是否为加密连接，默认值false。当KafkaType为1用户自建kafka时生效。
+                     * @return IsEncryptionAddr ServerAddr是否为加密连接，默认值false。当KafkaType为1用户自建kafka时生效。
                      * 
                      */
                     bool GetIsEncryptionAddr() const;
 
                     /**
-                     * 设置ServerAddr是否为加密连接
-                     * @param _isEncryptionAddr ServerAddr是否为加密连接
+                     * 设置ServerAddr是否为加密连接，默认值false。当KafkaType为1用户自建kafka时生效。
+                     * @param _isEncryptionAddr ServerAddr是否为加密连接，默认值false。当KafkaType为1用户自建kafka时生效。
                      * 
                      */
                     void SetIsEncryptionAddr(const bool& _isEncryptionAddr);
@@ -136,15 +136,15 @@ KafkaType为1时，ServerAddr必填
                     bool IsEncryptionAddrHasBeenSet() const;
 
                     /**
-                     * 获取加密访问协议。IsEncryptionAddr参数为true时必填
-                     * @return Protocol 加密访问协议。IsEncryptionAddr参数为true时必填
+                     * 获取加密访问协议。KafkaType参数为1并且IsEncryptionAddr参数为true时必填。
+                     * @return Protocol 加密访问协议。KafkaType参数为1并且IsEncryptionAddr参数为true时必填。
                      * 
                      */
                     KafkaProtocolInfo GetProtocol() const;
 
                     /**
-                     * 设置加密访问协议。IsEncryptionAddr参数为true时必填
-                     * @param _protocol 加密访问协议。IsEncryptionAddr参数为true时必填
+                     * 设置加密访问协议。KafkaType参数为1并且IsEncryptionAddr参数为true时必填。
+                     * @param _protocol 加密访问协议。KafkaType参数为1并且IsEncryptionAddr参数为true时必填。
                      * 
                      */
                     void SetProtocol(const KafkaProtocolInfo& _protocol);
@@ -159,7 +159,7 @@ KafkaType为1时，ServerAddr必填
                 private:
 
                     /**
-                     * 导入Kafka类型，0: 腾讯云CKafka，1: 用户自建Kafka
+                     * 导入Kafka类型，0: 腾讯云CKafka；1: 用户自建Kafka。
                      */
                     uint64_t m_kafkaType;
                     bool m_kafkaTypeHasBeenSet;
@@ -179,13 +179,13 @@ KafkaType为1时，ServerAddr必填
                     bool m_serverAddrHasBeenSet;
 
                     /**
-                     * ServerAddr是否为加密连接
+                     * ServerAddr是否为加密连接，默认值false。当KafkaType为1用户自建kafka时生效。
                      */
                     bool m_isEncryptionAddr;
                     bool m_isEncryptionAddrHasBeenSet;
 
                     /**
-                     * 加密访问协议。IsEncryptionAddr参数为true时必填
+                     * 加密访问协议。KafkaType参数为1并且IsEncryptionAddr参数为true时必填。
                      */
                     KafkaProtocolInfo m_protocol;
                     bool m_protocolHasBeenSet;
