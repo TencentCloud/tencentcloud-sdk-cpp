@@ -118,6 +118,54 @@ namespace TencentCloud
                      */
                     bool OutputPathHasBeenSet() const;
 
+                    /**
+                     * 获取引擎计算耗时
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return UseTime 引擎计算耗时
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    int64_t GetUseTime() const;
+
+                    /**
+                     * 判断参数 UseTime 是否已赋值
+                     * @return UseTime 是否已赋值
+                     * 
+                     */
+                    bool UseTimeHasBeenSet() const;
+
+                    /**
+                     * 获取结果条数
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return AffectRows 结果条数
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    int64_t GetAffectRows() const;
+
+                    /**
+                     * 判断参数 AffectRows 是否已赋值
+                     * @return AffectRows 是否已赋值
+                     * 
+                     */
+                    bool AffectRowsHasBeenSet() const;
+
+                    /**
+                     * 获取数据扫描量
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return DataAmount 数据扫描量
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    int64_t GetDataAmount() const;
+
+                    /**
+                     * 判断参数 DataAmount 是否已赋值
+                     * @return DataAmount 是否已赋值
+                     * 
+                     */
+                    bool DataAmountHasBeenSet() const;
+
                 private:
 
                     /**
@@ -151,6 +199,27 @@ namespace TencentCloud
                      */
                     std::string m_outputPath;
                     bool m_outputPathHasBeenSet;
+
+                    /**
+                     * 引擎计算耗时
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    int64_t m_useTime;
+                    bool m_useTimeHasBeenSet;
+
+                    /**
+                     * 结果条数
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    int64_t m_affectRows;
+                    bool m_affectRowsHasBeenSet;
+
+                    /**
+                     * 数据扫描量
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    int64_t m_dataAmount;
+                    bool m_dataAmountHasBeenSet;
 
                 };
             }

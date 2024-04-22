@@ -31,7 +31,8 @@ DescribeGatewayFlowMonitorDetailRequest::DescribeGatewayFlowMonitorDetailRequest
     m_offsetHasBeenSet(false),
     m_limitHasBeenSet(false),
     m_orderFieldHasBeenSet(false),
-    m_orderDirectionHasBeenSet(false)
+    m_orderDirectionHasBeenSet(false),
+    m_privateIpAddressHasBeenSet(false)
 {
 }
 
@@ -112,6 +113,14 @@ string DescribeGatewayFlowMonitorDetailRequest::ToJsonString() const
         string key = "OrderDirection";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_orderDirection.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_privateIpAddressHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "PrivateIpAddress";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_privateIpAddress.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -264,6 +273,22 @@ void DescribeGatewayFlowMonitorDetailRequest::SetOrderDirection(const string& _o
 bool DescribeGatewayFlowMonitorDetailRequest::OrderDirectionHasBeenSet() const
 {
     return m_orderDirectionHasBeenSet;
+}
+
+string DescribeGatewayFlowMonitorDetailRequest::GetPrivateIpAddress() const
+{
+    return m_privateIpAddress;
+}
+
+void DescribeGatewayFlowMonitorDetailRequest::SetPrivateIpAddress(const string& _privateIpAddress)
+{
+    m_privateIpAddress = _privateIpAddress;
+    m_privateIpAddressHasBeenSet = true;
+}
+
+bool DescribeGatewayFlowMonitorDetailRequest::PrivateIpAddressHasBeenSet() const
+{
+    return m_privateIpAddressHasBeenSet;
 }
 
 

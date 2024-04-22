@@ -255,6 +255,49 @@ CsipClient::DeleteRiskScanTaskOutcomeCallable CsipClient::DeleteRiskScanTaskCall
     return task->get_future();
 }
 
+CsipClient::DescribeAlertListOutcome CsipClient::DescribeAlertList(const DescribeAlertListRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeAlertList");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeAlertListResponse rsp = DescribeAlertListResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeAlertListOutcome(rsp);
+        else
+            return DescribeAlertListOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeAlertListOutcome(outcome.GetError());
+    }
+}
+
+void CsipClient::DescribeAlertListAsync(const DescribeAlertListRequest& request, const DescribeAlertListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeAlertList(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+CsipClient::DescribeAlertListOutcomeCallable CsipClient::DescribeAlertListCallable(const DescribeAlertListRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeAlertListOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeAlertList(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 CsipClient::DescribeAssetViewVulRiskListOutcome CsipClient::DescribeAssetViewVulRiskList(const DescribeAssetViewVulRiskListRequest &request)
 {
     auto outcome = MakeRequest(request, "DescribeAssetViewVulRiskList");

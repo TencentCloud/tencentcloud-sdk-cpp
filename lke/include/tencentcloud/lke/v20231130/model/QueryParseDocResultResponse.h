@@ -21,6 +21,7 @@
 #include <vector>
 #include <map>
 #include <tencentcloud/core/AbstractModel.h>
+#include <tencentcloud/lke/v20231130/model/Usage.h>
 
 
 namespace TencentCloud
@@ -99,6 +100,20 @@ namespace TencentCloud
                      */
                     bool ReasonHasBeenSet() const;
 
+                    /**
+                     * 获取消耗量，输出页数
+                     * @return Usage 消耗量，输出页数
+                     * 
+                     */
+                    Usage GetUsage() const;
+
+                    /**
+                     * 判断参数 Usage 是否已赋值
+                     * @return Usage 是否已赋值
+                     * 
+                     */
+                    bool UsageHasBeenSet() const;
+
                 private:
 
                     /**
@@ -124,6 +139,12 @@ namespace TencentCloud
                      */
                     std::string m_reason;
                     bool m_reasonHasBeenSet;
+
+                    /**
+                     * 消耗量，输出页数
+                     */
+                    Usage m_usage;
+                    bool m_usageHasBeenSet;
 
                 };
             }

@@ -37,7 +37,7 @@ namespace TencentCloud
             namespace Model
             {
                 /**
-                * 第三方存储参数。
+                * 录制存储参数
                 */
                 class StorageParams : public AbstractModel
                 {
@@ -49,15 +49,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取第三方云存储的账号信息（特别说明：若您选择存储至对象存储COS将会收取录制文件投递至COS的费用，详见云端录制收费说明，存储至VOD将不收取此项费用。）。
-                     * @return CloudStorage 第三方云存储的账号信息（特别说明：若您选择存储至对象存储COS将会收取录制文件投递至COS的费用，详见云端录制收费说明，存储至VOD将不收取此项费用。）。
+                     * 获取腾讯云对象存储COS以及第三方云存储的账号信息
+                     * @return CloudStorage 腾讯云对象存储COS以及第三方云存储的账号信息
                      * 
                      */
                     CloudStorage GetCloudStorage() const;
 
                     /**
-                     * 设置第三方云存储的账号信息（特别说明：若您选择存储至对象存储COS将会收取录制文件投递至COS的费用，详见云端录制收费说明，存储至VOD将不收取此项费用。）。
-                     * @param _cloudStorage 第三方云存储的账号信息（特别说明：若您选择存储至对象存储COS将会收取录制文件投递至COS的费用，详见云端录制收费说明，存储至VOD将不收取此项费用。）。
+                     * 设置腾讯云对象存储COS以及第三方云存储的账号信息
+                     * @param _cloudStorage 腾讯云对象存储COS以及第三方云存储的账号信息
                      * 
                      */
                     void SetCloudStorage(const CloudStorage& _cloudStorage);
@@ -70,15 +70,15 @@ namespace TencentCloud
                     bool CloudStorageHasBeenSet() const;
 
                     /**
-                     * 获取腾讯云云点播的账号信息。
-                     * @return CloudVod 腾讯云云点播的账号信息。
+                     * 获取腾讯云云点播Vod的存储信息
+                     * @return CloudVod 腾讯云云点播Vod的存储信息
                      * 
                      */
                     CloudVod GetCloudVod() const;
 
                     /**
-                     * 设置腾讯云云点播的账号信息。
-                     * @param _cloudVod 腾讯云云点播的账号信息。
+                     * 设置腾讯云云点播Vod的存储信息
+                     * @param _cloudVod 腾讯云云点播Vod的存储信息
                      * 
                      */
                     void SetCloudVod(const CloudVod& _cloudVod);
@@ -93,13 +93,13 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 第三方云存储的账号信息（特别说明：若您选择存储至对象存储COS将会收取录制文件投递至COS的费用，详见云端录制收费说明，存储至VOD将不收取此项费用。）。
+                     * 腾讯云对象存储COS以及第三方云存储的账号信息
                      */
                     CloudStorage m_cloudStorage;
                     bool m_cloudStorageHasBeenSet;
 
                     /**
-                     * 腾讯云云点播的账号信息。
+                     * 腾讯云云点播Vod的存储信息
                      */
                     CloudVod m_cloudVod;
                     bool m_cloudVodHasBeenSet;

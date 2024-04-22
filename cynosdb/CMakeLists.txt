@@ -37,6 +37,7 @@ set(cynosdb_public_header_model
   include/tencentcloud/cynosdb/v20190107/model/CreateClustersResponse.h
   include/tencentcloud/cynosdb/v20190107/model/CynosdbInstanceGrp.h
   include/tencentcloud/cynosdb/v20190107/model/ModifyInstanceParamRequest.h
+  include/tencentcloud/cynosdb/v20190107/model/ModifyInstanceUpgradeLimitDaysResponse.h
   include/tencentcloud/cynosdb/v20190107/model/DatabaseTables.h
   include/tencentcloud/cynosdb/v20190107/model/UserHostPrivilege.h
   include/tencentcloud/cynosdb/v20190107/model/DescribeProxyNodesResponse.h
@@ -316,6 +317,7 @@ set(cynosdb_public_header_model
   include/tencentcloud/cynosdb/v20190107/model/RollbackDatabase.h
   include/tencentcloud/cynosdb/v20190107/model/DescribeTasksRequest.h
   include/tencentcloud/cynosdb/v20190107/model/ModifyClusterStorageResponse.h
+  include/tencentcloud/cynosdb/v20190107/model/ModifyInstanceUpgradeLimitDaysRequest.h
   include/tencentcloud/cynosdb/v20190107/model/CloseClusterPasswordComplexityRequest.h
   include/tencentcloud/cynosdb/v20190107/model/ModifyAccountParamsRequest.h
   include/tencentcloud/cynosdb/v20190107/model/AuditLogFile.h
@@ -407,6 +409,7 @@ set(cynosdb_src
   src/v20190107/model/CreateClustersResponse.cpp
   src/v20190107/model/CynosdbInstanceGrp.cpp
   src/v20190107/model/ModifyInstanceParamRequest.cpp
+  src/v20190107/model/ModifyInstanceUpgradeLimitDaysResponse.cpp
   src/v20190107/model/DatabaseTables.cpp
   src/v20190107/model/UserHostPrivilege.cpp
   src/v20190107/model/DescribeProxyNodesResponse.cpp
@@ -686,6 +689,7 @@ set(cynosdb_src
   src/v20190107/model/RollbackDatabase.cpp
   src/v20190107/model/DescribeTasksRequest.cpp
   src/v20190107/model/ModifyClusterStorageResponse.cpp
+  src/v20190107/model/ModifyInstanceUpgradeLimitDaysRequest.cpp
   src/v20190107/model/CloseClusterPasswordComplexityRequest.cpp
   src/v20190107/model/ModifyAccountParamsRequest.cpp
   src/v20190107/model/AuditLogFile.cpp

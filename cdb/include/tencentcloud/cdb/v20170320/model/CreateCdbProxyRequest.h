@@ -190,6 +190,27 @@ namespace TencentCloud
                      */
                     bool ConnectionPoolLimitHasBeenSet() const;
 
+                    /**
+                     * 获取指定要购买的 proxy 内核版本。不填则默认发货最新版本的 proxy。
+                     * @return ProxyVersion 指定要购买的 proxy 内核版本。不填则默认发货最新版本的 proxy。
+                     * 
+                     */
+                    std::string GetProxyVersion() const;
+
+                    /**
+                     * 设置指定要购买的 proxy 内核版本。不填则默认发货最新版本的 proxy。
+                     * @param _proxyVersion 指定要购买的 proxy 内核版本。不填则默认发货最新版本的 proxy。
+                     * 
+                     */
+                    void SetProxyVersion(const std::string& _proxyVersion);
+
+                    /**
+                     * 判断参数 ProxyVersion 是否已赋值
+                     * @return ProxyVersion 是否已赋值
+                     * 
+                     */
+                    bool ProxyVersionHasBeenSet() const;
+
                 private:
 
                     /**
@@ -233,6 +254,12 @@ namespace TencentCloud
                      */
                     uint64_t m_connectionPoolLimit;
                     bool m_connectionPoolLimitHasBeenSet;
+
+                    /**
+                     * 指定要购买的 proxy 内核版本。不填则默认发货最新版本的 proxy。
+                     */
+                    std::string m_proxyVersion;
+                    bool m_proxyVersionHasBeenSet;
 
                 };
             }

@@ -24,7 +24,8 @@ using namespace TencentCloud::Lke::V20231130::Model;
 using namespace std;
 
 GetEmbeddingResponse::GetEmbeddingResponse() :
-    m_dataHasBeenSet(false)
+    m_dataHasBeenSet(false),
+    m_usageHasBeenSet(false)
 {
 }
 
@@ -82,6 +83,23 @@ CoreInternalOutcome GetEmbeddingResponse::Deserialize(const string &payload)
         m_dataHasBeenSet = true;
     }
 
+    if (rsp.HasMember("Usage") && !rsp["Usage"].IsNull())
+    {
+        if (!rsp["Usage"].IsObject())
+        {
+            return CoreInternalOutcome(Core::Error("response `Usage` is not object type").SetRequestId(requestId));
+        }
+
+        CoreInternalOutcome outcome = m_usage.Deserialize(rsp["Usage"]);
+        if (!outcome.IsSuccess())
+        {
+            outcome.GetError().SetRequestId(requestId);
+            return outcome;
+        }
+
+        m_usageHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -107,6 +125,15 @@ string GetEmbeddingResponse::ToJsonString() const
         }
     }
 
+    if (m_usageHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Usage";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_usage.ToJsonObject(value[key.c_str()], allocator);
+    }
+
     rapidjson::Value iKey(rapidjson::kStringType);
     string key = "RequestId";
     iKey.SetString(key.c_str(), allocator);
@@ -127,6 +154,16 @@ vector<EmbeddingObject> GetEmbeddingResponse::GetData() const
 bool GetEmbeddingResponse::DataHasBeenSet() const
 {
     return m_dataHasBeenSet;
+}
+
+Usage GetEmbeddingResponse::GetUsage() const
+{
+    return m_usage;
+}
+
+bool GetEmbeddingResponse::UsageHasBeenSet() const
+{
+    return m_usageHasBeenSet;
 }
 
 

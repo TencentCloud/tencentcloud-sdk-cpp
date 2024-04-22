@@ -86,6 +86,7 @@ set(lke_public_header_model
   include/tencentcloud/lke/v20231130/model/VerifyQARequest.h
   include/tencentcloud/lke/v20231130/model/AttributeLabel.h
   include/tencentcloud/lke/v20231130/model/Option.h
+  include/tencentcloud/lke/v20231130/model/Usage.h
   include/tencentcloud/lke/v20231130/model/ResetSessionRequest.h
   include/tencentcloud/lke/v20231130/model/GetAppSecretRequest.h
   include/tencentcloud/lke/v20231130/model/DeleteQACateResponse.h
@@ -283,6 +284,7 @@ set(lke_src
   src/v20231130/model/VerifyQARequest.cpp
   src/v20231130/model/AttributeLabel.cpp
   src/v20231130/model/Option.cpp
+  src/v20231130/model/Usage.cpp
   src/v20231130/model/ResetSessionRequest.cpp
   src/v20231130/model/GetAppSecretRequest.cpp
   src/v20231130/model/DeleteQACateResponse.cpp

@@ -24,9 +24,13 @@ using namespace std;
 
 DescribeHostCosInstanceListRequest::DescribeHostCosInstanceListRequest() :
     m_certificateIdHasBeenSet(false),
-    m_resourceTypeHasBeenSet(false),
     m_isCacheHasBeenSet(false),
-    m_filtersHasBeenSet(false)
+    m_filtersHasBeenSet(false),
+    m_resourceTypeHasBeenSet(false),
+    m_oldCertificateIdHasBeenSet(false),
+    m_offsetHasBeenSet(false),
+    m_limitHasBeenSet(false),
+    m_asyncCacheHasBeenSet(false)
 {
 }
 
@@ -43,14 +47,6 @@ string DescribeHostCosInstanceListRequest::ToJsonString() const
         string key = "CertificateId";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_certificateId.c_str(), allocator).Move(), allocator);
-    }
-
-    if (m_resourceTypeHasBeenSet)
-    {
-        rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "ResourceType";
-        iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, rapidjson::Value(m_resourceType.c_str(), allocator).Move(), allocator);
     }
 
     if (m_isCacheHasBeenSet)
@@ -76,6 +72,46 @@ string DescribeHostCosInstanceListRequest::ToJsonString() const
         }
     }
 
+    if (m_resourceTypeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ResourceType";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_resourceType.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_oldCertificateIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "OldCertificateId";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_oldCertificateId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_offsetHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Offset";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_offset, allocator);
+    }
+
+    if (m_limitHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Limit";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_limit, allocator);
+    }
+
+    if (m_asyncCacheHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "AsyncCache";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_asyncCache, allocator);
+    }
+
 
     rapidjson::StringBuffer buffer;
     rapidjson::Writer<rapidjson::StringBuffer> writer(buffer);
@@ -98,22 +134,6 @@ void DescribeHostCosInstanceListRequest::SetCertificateId(const string& _certifi
 bool DescribeHostCosInstanceListRequest::CertificateIdHasBeenSet() const
 {
     return m_certificateIdHasBeenSet;
-}
-
-string DescribeHostCosInstanceListRequest::GetResourceType() const
-{
-    return m_resourceType;
-}
-
-void DescribeHostCosInstanceListRequest::SetResourceType(const string& _resourceType)
-{
-    m_resourceType = _resourceType;
-    m_resourceTypeHasBeenSet = true;
-}
-
-bool DescribeHostCosInstanceListRequest::ResourceTypeHasBeenSet() const
-{
-    return m_resourceTypeHasBeenSet;
 }
 
 uint64_t DescribeHostCosInstanceListRequest::GetIsCache() const
@@ -146,6 +166,86 @@ void DescribeHostCosInstanceListRequest::SetFilters(const vector<Filter>& _filte
 bool DescribeHostCosInstanceListRequest::FiltersHasBeenSet() const
 {
     return m_filtersHasBeenSet;
+}
+
+string DescribeHostCosInstanceListRequest::GetResourceType() const
+{
+    return m_resourceType;
+}
+
+void DescribeHostCosInstanceListRequest::SetResourceType(const string& _resourceType)
+{
+    m_resourceType = _resourceType;
+    m_resourceTypeHasBeenSet = true;
+}
+
+bool DescribeHostCosInstanceListRequest::ResourceTypeHasBeenSet() const
+{
+    return m_resourceTypeHasBeenSet;
+}
+
+string DescribeHostCosInstanceListRequest::GetOldCertificateId() const
+{
+    return m_oldCertificateId;
+}
+
+void DescribeHostCosInstanceListRequest::SetOldCertificateId(const string& _oldCertificateId)
+{
+    m_oldCertificateId = _oldCertificateId;
+    m_oldCertificateIdHasBeenSet = true;
+}
+
+bool DescribeHostCosInstanceListRequest::OldCertificateIdHasBeenSet() const
+{
+    return m_oldCertificateIdHasBeenSet;
+}
+
+int64_t DescribeHostCosInstanceListRequest::GetOffset() const
+{
+    return m_offset;
+}
+
+void DescribeHostCosInstanceListRequest::SetOffset(const int64_t& _offset)
+{
+    m_offset = _offset;
+    m_offsetHasBeenSet = true;
+}
+
+bool DescribeHostCosInstanceListRequest::OffsetHasBeenSet() const
+{
+    return m_offsetHasBeenSet;
+}
+
+int64_t DescribeHostCosInstanceListRequest::GetLimit() const
+{
+    return m_limit;
+}
+
+void DescribeHostCosInstanceListRequest::SetLimit(const int64_t& _limit)
+{
+    m_limit = _limit;
+    m_limitHasBeenSet = true;
+}
+
+bool DescribeHostCosInstanceListRequest::LimitHasBeenSet() const
+{
+    return m_limitHasBeenSet;
+}
+
+int64_t DescribeHostCosInstanceListRequest::GetAsyncCache() const
+{
+    return m_asyncCache;
+}
+
+void DescribeHostCosInstanceListRequest::SetAsyncCache(const int64_t& _asyncCache)
+{
+    m_asyncCache = _asyncCache;
+    m_asyncCacheHasBeenSet = true;
+}
+
+bool DescribeHostCosInstanceListRequest::AsyncCacheHasBeenSet() const
+{
+    return m_asyncCacheHasBeenSet;
 }
 
 

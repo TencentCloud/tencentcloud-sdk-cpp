@@ -127,23 +127,23 @@ namespace TencentCloud
                     bool PolicyHasBeenSet() const;
 
                     /**
-                     * 获取默认值: split
-                     * @return Operate 默认值: split
-                     * 
+                     * 获取默认值: parse
+                     * @return Operate 默认值: parse
+                     * @deprecated
                      */
                     std::string GetOperate() const;
 
                     /**
-                     * 设置默认值: split
-                     * @param _operate 默认值: split
-                     * 
+                     * 设置默认值: parse
+                     * @param _operate 默认值: parse
+                     * @deprecated
                      */
                     void SetOperate(const std::string& _operate);
 
                     /**
                      * 判断参数 Operate 是否已赋值
                      * @return Operate 是否已赋值
-                     * 
+                     * @deprecated
                      */
                     bool OperateHasBeenSet() const;
 
@@ -174,7 +174,7 @@ namespace TencentCloud
                     bool m_policyHasBeenSet;
 
                     /**
-                     * 默认值: split
+                     * 默认值: parse
                      */
                     std::string m_operate;
                     bool m_operateHasBeenSet;

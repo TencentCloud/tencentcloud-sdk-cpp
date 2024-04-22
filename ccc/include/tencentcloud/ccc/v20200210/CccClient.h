@@ -117,6 +117,8 @@
 #include <tencentcloud/ccc/v20200210/model/ModifyExtensionResponse.h>
 #include <tencentcloud/ccc/v20200210/model/ModifyStaffRequest.h>
 #include <tencentcloud/ccc/v20200210/model/ModifyStaffResponse.h>
+#include <tencentcloud/ccc/v20200210/model/ModifyStaffPasswordRequest.h>
+#include <tencentcloud/ccc/v20200210/model/ModifyStaffPasswordResponse.h>
 #include <tencentcloud/ccc/v20200210/model/PausePredictiveDialingCampaignRequest.h>
 #include <tencentcloud/ccc/v20200210/model/PausePredictiveDialingCampaignResponse.h>
 #include <tencentcloud/ccc/v20200210/model/ResetExtensionPasswordRequest.h>
@@ -290,6 +292,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::ModifyStaffResponse> ModifyStaffOutcome;
                 typedef std::future<ModifyStaffOutcome> ModifyStaffOutcomeCallable;
                 typedef std::function<void(const CccClient*, const Model::ModifyStaffRequest&, ModifyStaffOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyStaffAsyncHandler;
+                typedef Outcome<Core::Error, Model::ModifyStaffPasswordResponse> ModifyStaffPasswordOutcome;
+                typedef std::future<ModifyStaffPasswordOutcome> ModifyStaffPasswordOutcomeCallable;
+                typedef std::function<void(const CccClient*, const Model::ModifyStaffPasswordRequest&, ModifyStaffPasswordOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyStaffPasswordAsyncHandler;
                 typedef Outcome<Core::Error, Model::PausePredictiveDialingCampaignResponse> PausePredictiveDialingCampaignOutcome;
                 typedef std::future<PausePredictiveDialingCampaignOutcome> PausePredictiveDialingCampaignOutcomeCallable;
                 typedef std::function<void(const CccClient*, const Model::PausePredictiveDialingCampaignRequest&, PausePredictiveDialingCampaignOutcome, const std::shared_ptr<const AsyncCallerContext>&)> PausePredictiveDialingCampaignAsyncHandler;
@@ -492,7 +497,7 @@ namespace TencentCloud
                 DescribeAutoCalloutTaskOutcomeCallable DescribeAutoCalloutTaskCallable(const Model::DescribeAutoCalloutTaskRequest& request);
 
                 /**
-                 *批量查询自动任务外呼
+                 *批量查询自动外呼任务
                  * @param req DescribeAutoCalloutTasksRequest
                  * @return DescribeAutoCalloutTasksOutcome
                  */
@@ -744,6 +749,15 @@ namespace TencentCloud
                 ModifyStaffOutcome ModifyStaff(const Model::ModifyStaffRequest &request);
                 void ModifyStaffAsync(const Model::ModifyStaffRequest& request, const ModifyStaffAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 ModifyStaffOutcomeCallable ModifyStaffCallable(const Model::ModifyStaffRequest& request);
+
+                /**
+                 *修改座席的密码
+                 * @param req ModifyStaffPasswordRequest
+                 * @return ModifyStaffPasswordOutcome
+                 */
+                ModifyStaffPasswordOutcome ModifyStaffPassword(const Model::ModifyStaffPasswordRequest &request);
+                void ModifyStaffPasswordAsync(const Model::ModifyStaffPasswordRequest& request, const ModifyStaffPasswordAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                ModifyStaffPasswordOutcomeCallable ModifyStaffPasswordCallable(const Model::ModifyStaffPasswordRequest& request);
 
                 /**
                  *暂停预测式外呼任务

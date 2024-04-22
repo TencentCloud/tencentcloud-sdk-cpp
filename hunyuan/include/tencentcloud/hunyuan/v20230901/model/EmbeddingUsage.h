@@ -35,7 +35,7 @@ namespace TencentCloud
             namespace Model
             {
                 /**
-                * token 使用计数。
+                * Token 使用计数。
                 */
                 class EmbeddingUsage : public AbstractModel
                 {
@@ -47,15 +47,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取输入Token数。
-                     * @return PromptTokens 输入Token数。
+                     * 获取输入 Token 数。
+                     * @return PromptTokens 输入 Token 数。
                      * 
                      */
                     int64_t GetPromptTokens() const;
 
                     /**
-                     * 设置输入Token数。
-                     * @param _promptTokens 输入Token数。
+                     * 设置输入 Token 数。
+                     * @param _promptTokens 输入 Token 数。
                      * 
                      */
                     void SetPromptTokens(const int64_t& _promptTokens);
@@ -68,15 +68,15 @@ namespace TencentCloud
                     bool PromptTokensHasBeenSet() const;
 
                     /**
-                     * 获取总Token数。
-                     * @return TotalTokens 总Token数。
+                     * 获取总 Token 数。
+                     * @return TotalTokens 总 Token 数。
                      * 
                      */
                     int64_t GetTotalTokens() const;
 
                     /**
-                     * 设置总Token数。
-                     * @param _totalTokens 总Token数。
+                     * 设置总 Token 数。
+                     * @param _totalTokens 总 Token 数。
                      * 
                      */
                     void SetTotalTokens(const int64_t& _totalTokens);
@@ -91,13 +91,13 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 输入Token数。
+                     * 输入 Token 数。
                      */
                     int64_t m_promptTokens;
                     bool m_promptTokensHasBeenSet;
 
                     /**
-                     * 总Token数。
+                     * 总 Token 数。
                      */
                     int64_t m_totalTokens;
                     bool m_totalTokensHasBeenSet;

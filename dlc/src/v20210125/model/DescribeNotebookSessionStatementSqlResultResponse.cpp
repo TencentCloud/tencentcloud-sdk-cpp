@@ -28,7 +28,10 @@ DescribeNotebookSessionStatementSqlResultResponse::DescribeNotebookSessionStatem
     m_resultSetHasBeenSet(false),
     m_resultSchemaHasBeenSet(false),
     m_nextTokenHasBeenSet(false),
-    m_outputPathHasBeenSet(false)
+    m_outputPathHasBeenSet(false),
+    m_useTimeHasBeenSet(false),
+    m_affectRowsHasBeenSet(false),
+    m_dataAmountHasBeenSet(false)
 {
 }
 
@@ -126,6 +129,36 @@ CoreInternalOutcome DescribeNotebookSessionStatementSqlResultResponse::Deseriali
         m_outputPathHasBeenSet = true;
     }
 
+    if (rsp.HasMember("UseTime") && !rsp["UseTime"].IsNull())
+    {
+        if (!rsp["UseTime"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `UseTime` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_useTime = rsp["UseTime"].GetInt64();
+        m_useTimeHasBeenSet = true;
+    }
+
+    if (rsp.HasMember("AffectRows") && !rsp["AffectRows"].IsNull())
+    {
+        if (!rsp["AffectRows"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `AffectRows` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_affectRows = rsp["AffectRows"].GetInt64();
+        m_affectRowsHasBeenSet = true;
+    }
+
+    if (rsp.HasMember("DataAmount") && !rsp["DataAmount"].IsNull())
+    {
+        if (!rsp["DataAmount"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `DataAmount` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_dataAmount = rsp["DataAmount"].GetInt64();
+        m_dataAmountHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -181,6 +214,30 @@ string DescribeNotebookSessionStatementSqlResultResponse::ToJsonString() const
         string key = "OutputPath";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_outputPath.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_useTimeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "UseTime";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_useTime, allocator);
+    }
+
+    if (m_affectRowsHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "AffectRows";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_affectRows, allocator);
+    }
+
+    if (m_dataAmountHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "DataAmount";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_dataAmount, allocator);
     }
 
     rapidjson::Value iKey(rapidjson::kStringType);
@@ -243,6 +300,36 @@ string DescribeNotebookSessionStatementSqlResultResponse::GetOutputPath() const
 bool DescribeNotebookSessionStatementSqlResultResponse::OutputPathHasBeenSet() const
 {
     return m_outputPathHasBeenSet;
+}
+
+int64_t DescribeNotebookSessionStatementSqlResultResponse::GetUseTime() const
+{
+    return m_useTime;
+}
+
+bool DescribeNotebookSessionStatementSqlResultResponse::UseTimeHasBeenSet() const
+{
+    return m_useTimeHasBeenSet;
+}
+
+int64_t DescribeNotebookSessionStatementSqlResultResponse::GetAffectRows() const
+{
+    return m_affectRows;
+}
+
+bool DescribeNotebookSessionStatementSqlResultResponse::AffectRowsHasBeenSet() const
+{
+    return m_affectRowsHasBeenSet;
+}
+
+int64_t DescribeNotebookSessionStatementSqlResultResponse::GetDataAmount() const
+{
+    return m_dataAmount;
+}
+
+bool DescribeNotebookSessionStatementSqlResultResponse::DataAmountHasBeenSet() const
+{
+    return m_dataAmountHasBeenSet;
 }
 
 

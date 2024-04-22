@@ -37,6 +37,7 @@ set(ccc_public_header_model
   include/tencentcloud/ccc/v20200210/model/CreateCallOutSessionResponse.h
   include/tencentcloud/ccc/v20200210/model/DescribeCarrierPrivilegeNumberApplicantsRequest.h
   include/tencentcloud/ccc/v20200210/model/DisableCCCPhoneNumberRequest.h
+  include/tencentcloud/ccc/v20200210/model/ModifyStaffPasswordResponse.h
   include/tencentcloud/ccc/v20200210/model/CreatePredictiveDialingCampaignRequest.h
   include/tencentcloud/ccc/v20200210/model/DescribeChatMessagesResponse.h
   include/tencentcloud/ccc/v20200210/model/ServeParticipant.h
@@ -87,6 +88,7 @@ set(ccc_public_header_model
   include/tencentcloud/ccc/v20200210/model/SkillGroupInfoItem.h
   include/tencentcloud/ccc/v20200210/model/ResetExtensionPasswordResponse.h
   include/tencentcloud/ccc/v20200210/model/UpdateCCCSkillGroupRequest.h
+  include/tencentcloud/ccc/v20200210/model/ModifyStaffPasswordRequest.h
   include/tencentcloud/ccc/v20200210/model/ModifyStaffResponse.h
   include/tencentcloud/ccc/v20200210/model/ModifyExtensionRequest.h
   include/tencentcloud/ccc/v20200210/model/CreatePredictiveDialingCampaignResponse.h
@@ -192,6 +194,7 @@ set(ccc_src
   src/v20200210/model/CreateCallOutSessionResponse.cpp
   src/v20200210/model/DescribeCarrierPrivilegeNumberApplicantsRequest.cpp
   src/v20200210/model/DisableCCCPhoneNumberRequest.cpp
+  src/v20200210/model/ModifyStaffPasswordResponse.cpp
   src/v20200210/model/CreatePredictiveDialingCampaignRequest.cpp
   src/v20200210/model/DescribeChatMessagesResponse.cpp
   src/v20200210/model/ServeParticipant.cpp
@@ -242,6 +245,7 @@ set(ccc_src
   src/v20200210/model/SkillGroupInfoItem.cpp
   src/v20200210/model/ResetExtensionPasswordResponse.cpp
   src/v20200210/model/UpdateCCCSkillGroupRequest.cpp
+  src/v20200210/model/ModifyStaffPasswordRequest.cpp
   src/v20200210/model/ModifyStaffResponse.cpp
   src/v20200210/model/ModifyExtensionRequest.cpp
   src/v20200210/model/CreatePredictiveDialingCampaignResponse.cpp

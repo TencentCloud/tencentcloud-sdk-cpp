@@ -2061,6 +2061,49 @@ CccClient::ModifyStaffOutcomeCallable CccClient::ModifyStaffCallable(const Modif
     return task->get_future();
 }
 
+CccClient::ModifyStaffPasswordOutcome CccClient::ModifyStaffPassword(const ModifyStaffPasswordRequest &request)
+{
+    auto outcome = MakeRequest(request, "ModifyStaffPassword");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ModifyStaffPasswordResponse rsp = ModifyStaffPasswordResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ModifyStaffPasswordOutcome(rsp);
+        else
+            return ModifyStaffPasswordOutcome(o.GetError());
+    }
+    else
+    {
+        return ModifyStaffPasswordOutcome(outcome.GetError());
+    }
+}
+
+void CccClient::ModifyStaffPasswordAsync(const ModifyStaffPasswordRequest& request, const ModifyStaffPasswordAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->ModifyStaffPassword(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+CccClient::ModifyStaffPasswordOutcomeCallable CccClient::ModifyStaffPasswordCallable(const ModifyStaffPasswordRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<ModifyStaffPasswordOutcome()>>(
+        [this, request]()
+        {
+            return this->ModifyStaffPassword(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 CccClient::PausePredictiveDialingCampaignOutcome CccClient::PausePredictiveDialingCampaign(const PausePredictiveDialingCampaignRequest &request)
 {
     auto outcome = MakeRequest(request, "PausePredictiveDialingCampaign");

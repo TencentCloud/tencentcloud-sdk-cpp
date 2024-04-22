@@ -24,7 +24,9 @@ using namespace TencentCloud::Trtc::V20190722::Model;
 using namespace std;
 
 DescribeWebRecordResponse::DescribeWebRecordResponse() :
-    m_statusHasBeenSet(false)
+    m_statusHasBeenSet(false),
+    m_taskIdHasBeenSet(false),
+    m_recordIdHasBeenSet(false)
 {
 }
 
@@ -72,6 +74,26 @@ CoreInternalOutcome DescribeWebRecordResponse::Deserialize(const string &payload
         m_statusHasBeenSet = true;
     }
 
+    if (rsp.HasMember("TaskId") && !rsp["TaskId"].IsNull())
+    {
+        if (!rsp["TaskId"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `TaskId` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_taskId = string(rsp["TaskId"].GetString());
+        m_taskIdHasBeenSet = true;
+    }
+
+    if (rsp.HasMember("RecordId") && !rsp["RecordId"].IsNull())
+    {
+        if (!rsp["RecordId"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `RecordId` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_recordId = string(rsp["RecordId"].GetString());
+        m_recordIdHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -88,6 +110,22 @@ string DescribeWebRecordResponse::ToJsonString() const
         string key = "Status";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_status, allocator);
+    }
+
+    if (m_taskIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "TaskId";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_taskId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_recordIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "RecordId";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_recordId.c_str(), allocator).Move(), allocator);
     }
 
     rapidjson::Value iKey(rapidjson::kStringType);
@@ -110,6 +148,26 @@ int64_t DescribeWebRecordResponse::GetStatus() const
 bool DescribeWebRecordResponse::StatusHasBeenSet() const
 {
     return m_statusHasBeenSet;
+}
+
+string DescribeWebRecordResponse::GetTaskId() const
+{
+    return m_taskId;
+}
+
+bool DescribeWebRecordResponse::TaskIdHasBeenSet() const
+{
+    return m_taskIdHasBeenSet;
+}
+
+string DescribeWebRecordResponse::GetRecordId() const
+{
+    return m_recordId;
+}
+
+bool DescribeWebRecordResponse::RecordIdHasBeenSet() const
+{
+    return m_recordIdHasBeenSet;
 }
 
 

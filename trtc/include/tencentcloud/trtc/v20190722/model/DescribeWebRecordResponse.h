@@ -57,6 +57,38 @@ namespace TencentCloud
                      */
                     bool StatusHasBeenSet() const;
 
+                    /**
+                     * 获取在使用RecordId查询时返回
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return TaskId 在使用RecordId查询时返回
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::string GetTaskId() const;
+
+                    /**
+                     * 判断参数 TaskId 是否已赋值
+                     * @return TaskId 是否已赋值
+                     * 
+                     */
+                    bool TaskIdHasBeenSet() const;
+
+                    /**
+                     * 获取在使用TaskId查询时返回
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return RecordId 在使用TaskId查询时返回
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::string GetRecordId() const;
+
+                    /**
+                     * 判断参数 RecordId 是否已赋值
+                     * @return RecordId 是否已赋值
+                     * 
+                     */
+                    bool RecordIdHasBeenSet() const;
+
                 private:
 
                     /**
@@ -64,6 +96,20 @@ namespace TencentCloud
                      */
                     int64_t m_status;
                     bool m_statusHasBeenSet;
+
+                    /**
+                     * 在使用RecordId查询时返回
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_taskId;
+                    bool m_taskIdHasBeenSet;
+
+                    /**
+                     * 在使用TaskId查询时返回
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_recordId;
+                    bool m_recordIdHasBeenSet;
 
                 };
             }

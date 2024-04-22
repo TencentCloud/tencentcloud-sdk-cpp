@@ -22,6 +22,7 @@
 #include <map>
 #include <tencentcloud/core/AbstractModel.h>
 #include <tencentcloud/lke/v20231130/model/EmbeddingObject.h>
+#include <tencentcloud/lke/v20231130/model/Usage.h>
 
 
 namespace TencentCloud
@@ -58,6 +59,20 @@ namespace TencentCloud
                      */
                     bool DataHasBeenSet() const;
 
+                    /**
+                     * 获取消耗量，返回TotalToken
+                     * @return Usage 消耗量，返回TotalToken
+                     * 
+                     */
+                    Usage GetUsage() const;
+
+                    /**
+                     * 判断参数 Usage 是否已赋值
+                     * @return Usage 是否已赋值
+                     * 
+                     */
+                    bool UsageHasBeenSet() const;
+
                 private:
 
                     /**
@@ -65,6 +80,12 @@ namespace TencentCloud
                      */
                     std::vector<EmbeddingObject> m_data;
                     bool m_dataHasBeenSet;
+
+                    /**
+                     * 消耗量，返回TotalToken
+                     */
+                    Usage m_usage;
+                    bool m_usageHasBeenSet;
 
                 };
             }

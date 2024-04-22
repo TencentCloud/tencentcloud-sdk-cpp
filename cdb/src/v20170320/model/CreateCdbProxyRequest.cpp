@@ -29,7 +29,8 @@ CreateCdbProxyRequest::CreateCdbProxyRequest() :
     m_proxyNodeCustomHasBeenSet(false),
     m_securityGroupHasBeenSet(false),
     m_descHasBeenSet(false),
-    m_connectionPoolLimitHasBeenSet(false)
+    m_connectionPoolLimitHasBeenSet(false),
+    m_proxyVersionHasBeenSet(false)
 {
 }
 
@@ -106,6 +107,14 @@ string CreateCdbProxyRequest::ToJsonString() const
         string key = "ConnectionPoolLimit";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_connectionPoolLimit, allocator);
+    }
+
+    if (m_proxyVersionHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ProxyVersion";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_proxyVersion.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -226,6 +235,22 @@ void CreateCdbProxyRequest::SetConnectionPoolLimit(const uint64_t& _connectionPo
 bool CreateCdbProxyRequest::ConnectionPoolLimitHasBeenSet() const
 {
     return m_connectionPoolLimitHasBeenSet;
+}
+
+string CreateCdbProxyRequest::GetProxyVersion() const
+{
+    return m_proxyVersion;
+}
+
+void CreateCdbProxyRequest::SetProxyVersion(const string& _proxyVersion)
+{
+    m_proxyVersion = _proxyVersion;
+    m_proxyVersionHasBeenSet = true;
+}
+
+bool CreateCdbProxyRequest::ProxyVersionHasBeenSet() const
+{
+    return m_proxyVersionHasBeenSet;
 }
 
 

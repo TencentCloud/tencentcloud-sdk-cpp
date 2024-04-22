@@ -27,7 +27,8 @@ QueryParseDocResultResponse::QueryParseDocResultResponse() :
     m_statusHasBeenSet(false),
     m_nameHasBeenSet(false),
     m_urlHasBeenSet(false),
-    m_reasonHasBeenSet(false)
+    m_reasonHasBeenSet(false),
+    m_usageHasBeenSet(false)
 {
 }
 
@@ -105,6 +106,23 @@ CoreInternalOutcome QueryParseDocResultResponse::Deserialize(const string &paylo
         m_reasonHasBeenSet = true;
     }
 
+    if (rsp.HasMember("Usage") && !rsp["Usage"].IsNull())
+    {
+        if (!rsp["Usage"].IsObject())
+        {
+            return CoreInternalOutcome(Core::Error("response `Usage` is not object type").SetRequestId(requestId));
+        }
+
+        CoreInternalOutcome outcome = m_usage.Deserialize(rsp["Usage"]);
+        if (!outcome.IsSuccess())
+        {
+            outcome.GetError().SetRequestId(requestId);
+            return outcome;
+        }
+
+        m_usageHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -145,6 +163,15 @@ string QueryParseDocResultResponse::ToJsonString() const
         string key = "Reason";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_reason.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_usageHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Usage";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_usage.ToJsonObject(value[key.c_str()], allocator);
     }
 
     rapidjson::Value iKey(rapidjson::kStringType);
@@ -197,6 +224,16 @@ string QueryParseDocResultResponse::GetReason() const
 bool QueryParseDocResultResponse::ReasonHasBeenSet() const
 {
     return m_reasonHasBeenSet;
+}
+
+Usage QueryParseDocResultResponse::GetUsage() const
+{
+    return m_usage;
+}
+
+bool QueryParseDocResultResponse::UsageHasBeenSet() const
+{
+    return m_usageHasBeenSet;
 }
 
 

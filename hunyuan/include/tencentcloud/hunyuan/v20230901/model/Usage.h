@@ -35,7 +35,7 @@ namespace TencentCloud
             namespace Model
             {
                 /**
-                * token 数量
+                * Token 数量
                 */
                 class Usage : public AbstractModel
                 {
@@ -47,15 +47,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取输入 token 数量。
-                     * @return PromptTokens 输入 token 数量。
+                     * 获取输入 Token 数量。
+                     * @return PromptTokens 输入 Token 数量。
                      * 
                      */
                     int64_t GetPromptTokens() const;
 
                     /**
-                     * 设置输入 token 数量。
-                     * @param _promptTokens 输入 token 数量。
+                     * 设置输入 Token 数量。
+                     * @param _promptTokens 输入 Token 数量。
                      * 
                      */
                     void SetPromptTokens(const int64_t& _promptTokens);
@@ -68,15 +68,15 @@ namespace TencentCloud
                     bool PromptTokensHasBeenSet() const;
 
                     /**
-                     * 获取输出 token 数量。
-                     * @return CompletionTokens 输出 token 数量。
+                     * 获取输出 Token 数量。
+                     * @return CompletionTokens 输出 Token 数量。
                      * 
                      */
                     int64_t GetCompletionTokens() const;
 
                     /**
-                     * 设置输出 token 数量。
-                     * @param _completionTokens 输出 token 数量。
+                     * 设置输出 Token 数量。
+                     * @param _completionTokens 输出 Token 数量。
                      * 
                      */
                     void SetCompletionTokens(const int64_t& _completionTokens);
@@ -89,15 +89,15 @@ namespace TencentCloud
                     bool CompletionTokensHasBeenSet() const;
 
                     /**
-                     * 获取总 token 数量。
-                     * @return TotalTokens 总 token 数量。
+                     * 获取总 Token 数量。
+                     * @return TotalTokens 总 Token 数量。
                      * 
                      */
                     int64_t GetTotalTokens() const;
 
                     /**
-                     * 设置总 token 数量。
-                     * @param _totalTokens 总 token 数量。
+                     * 设置总 Token 数量。
+                     * @param _totalTokens 总 Token 数量。
                      * 
                      */
                     void SetTotalTokens(const int64_t& _totalTokens);
@@ -112,19 +112,19 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 输入 token 数量。
+                     * 输入 Token 数量。
                      */
                     int64_t m_promptTokens;
                     bool m_promptTokensHasBeenSet;
 
                     /**
-                     * 输出 token 数量。
+                     * 输出 Token 数量。
                      */
                     int64_t m_completionTokens;
                     bool m_completionTokensHasBeenSet;
 
                     /**
-                     * 总 token 数量。
+                     * 总 Token 数量。
                      */
                     int64_t m_totalTokens;
                     bool m_totalTokensHasBeenSet;

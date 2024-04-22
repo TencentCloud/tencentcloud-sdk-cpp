@@ -231,6 +231,27 @@ namespace TencentCloud
                      */
                     bool OrderDirectionHasBeenSet() const;
 
+                    /**
+                     * 获取VPC内部IPv4地址，精确匹配
+                     * @return PrivateIpAddress VPC内部IPv4地址，精确匹配
+                     * 
+                     */
+                    std::string GetPrivateIpAddress() const;
+
+                    /**
+                     * 设置VPC内部IPv4地址，精确匹配
+                     * @param _privateIpAddress VPC内部IPv4地址，精确匹配
+                     * 
+                     */
+                    void SetPrivateIpAddress(const std::string& _privateIpAddress);
+
+                    /**
+                     * 判断参数 PrivateIpAddress 是否已赋值
+                     * @return PrivateIpAddress 是否已赋值
+                     * 
+                     */
+                    bool PrivateIpAddressHasBeenSet() const;
+
                 private:
 
                     /**
@@ -286,6 +307,12 @@ namespace TencentCloud
                      */
                     std::string m_orderDirection;
                     bool m_orderDirectionHasBeenSet;
+
+                    /**
+                     * VPC内部IPv4地址，精确匹配
+                     */
+                    std::string m_privateIpAddress;
+                    bool m_privateIpAddressHasBeenSet;
 
                 };
             }

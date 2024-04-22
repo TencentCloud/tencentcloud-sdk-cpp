@@ -4297,6 +4297,49 @@ CynosdbClient::ModifyInstanceParamOutcomeCallable CynosdbClient::ModifyInstanceP
     return task->get_future();
 }
 
+CynosdbClient::ModifyInstanceUpgradeLimitDaysOutcome CynosdbClient::ModifyInstanceUpgradeLimitDays(const ModifyInstanceUpgradeLimitDaysRequest &request)
+{
+    auto outcome = MakeRequest(request, "ModifyInstanceUpgradeLimitDays");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ModifyInstanceUpgradeLimitDaysResponse rsp = ModifyInstanceUpgradeLimitDaysResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ModifyInstanceUpgradeLimitDaysOutcome(rsp);
+        else
+            return ModifyInstanceUpgradeLimitDaysOutcome(o.GetError());
+    }
+    else
+    {
+        return ModifyInstanceUpgradeLimitDaysOutcome(outcome.GetError());
+    }
+}
+
+void CynosdbClient::ModifyInstanceUpgradeLimitDaysAsync(const ModifyInstanceUpgradeLimitDaysRequest& request, const ModifyInstanceUpgradeLimitDaysAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->ModifyInstanceUpgradeLimitDays(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+CynosdbClient::ModifyInstanceUpgradeLimitDaysOutcomeCallable CynosdbClient::ModifyInstanceUpgradeLimitDaysCallable(const ModifyInstanceUpgradeLimitDaysRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<ModifyInstanceUpgradeLimitDaysOutcome()>>(
+        [this, request]()
+        {
+            return this->ModifyInstanceUpgradeLimitDays(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 CynosdbClient::ModifyMaintainPeriodConfigOutcome CynosdbClient::ModifyMaintainPeriodConfig(const ModifyMaintainPeriodConfigRequest &request)
 {
     auto outcome = MakeRequest(request, "ModifyMaintainPeriodConfig");
