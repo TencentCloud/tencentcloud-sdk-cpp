@@ -427,6 +427,54 @@ namespace TencentCloud
                      */
                     bool NodeHasBeenSet() const;
 
+                    /**
+                     * 获取仲裁队列死信一致性策略
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return DeadLetterStrategy 仲裁队列死信一致性策略
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::string GetDeadLetterStrategy() const;
+
+                    /**
+                     * 判断参数 DeadLetterStrategy 是否已赋值
+                     * @return DeadLetterStrategy 是否已赋值
+                     * 
+                     */
+                    bool DeadLetterStrategyHasBeenSet() const;
+
+                    /**
+                     * 获取仲裁队列的领导者选举策略
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return QueueLeaderLocator 仲裁队列的领导者选举策略
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::string GetQueueLeaderLocator() const;
+
+                    /**
+                     * 判断参数 QueueLeaderLocator 是否已赋值
+                     * @return QueueLeaderLocator 是否已赋值
+                     * 
+                     */
+                    bool QueueLeaderLocatorHasBeenSet() const;
+
+                    /**
+                     * 获取仲裁队列的初始副本组大小
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return QuorumInitialGroupSize 仲裁队列的初始副本组大小
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    int64_t GetQuorumInitialGroupSize() const;
+
+                    /**
+                     * 判断参数 QuorumInitialGroupSize 是否已赋值
+                     * @return QuorumInitialGroupSize 是否已赋值
+                     * 
+                     */
+                    bool QuorumInitialGroupSizeHasBeenSet() const;
+
                 private:
 
                     /**
@@ -596,6 +644,27 @@ namespace TencentCloud
                      */
                     std::string m_node;
                     bool m_nodeHasBeenSet;
+
+                    /**
+                     * 仲裁队列死信一致性策略
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_deadLetterStrategy;
+                    bool m_deadLetterStrategyHasBeenSet;
+
+                    /**
+                     * 仲裁队列的领导者选举策略
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_queueLeaderLocator;
+                    bool m_queueLeaderLocatorHasBeenSet;
+
+                    /**
+                     * 仲裁队列的初始副本组大小
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    int64_t m_quorumInitialGroupSize;
+                    bool m_quorumInitialGroupSizeHasBeenSet;
 
                 };
             }

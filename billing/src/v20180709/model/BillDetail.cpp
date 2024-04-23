@@ -51,7 +51,10 @@ BillDetail::BillDetail() :
     m_formulaUrlHasBeenSet(false),
     m_billDayHasBeenSet(false),
     m_billMonthHasBeenSet(false),
-    m_idHasBeenSet(false)
+    m_idHasBeenSet(false),
+    m_regionTypeHasBeenSet(false),
+    m_regionTypeNameHasBeenSet(false),
+    m_reserveDetailHasBeenSet(false)
 {
 }
 
@@ -400,6 +403,36 @@ CoreInternalOutcome BillDetail::Deserialize(const rapidjson::Value &value)
         m_idHasBeenSet = true;
     }
 
+    if (value.HasMember("RegionType") && !value["RegionType"].IsNull())
+    {
+        if (!value["RegionType"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `BillDetail.RegionType` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_regionType = string(value["RegionType"].GetString());
+        m_regionTypeHasBeenSet = true;
+    }
+
+    if (value.HasMember("RegionTypeName") && !value["RegionTypeName"].IsNull())
+    {
+        if (!value["RegionTypeName"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `BillDetail.RegionTypeName` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_regionTypeName = string(value["RegionTypeName"].GetString());
+        m_regionTypeNameHasBeenSet = true;
+    }
+
+    if (value.HasMember("ReserveDetail") && !value["ReserveDetail"].IsNull())
+    {
+        if (!value["ReserveDetail"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `BillDetail.ReserveDetail` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_reserveDetail = string(value["ReserveDetail"].GetString());
+        m_reserveDetailHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -673,6 +706,30 @@ void BillDetail::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Allo
         string key = "Id";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_id.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_regionTypeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "RegionType";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_regionType.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_regionTypeNameHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "RegionTypeName";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_regionTypeName.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_reserveDetailHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ReserveDetail";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_reserveDetail.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -1172,5 +1229,53 @@ void BillDetail::SetId(const string& _id)
 bool BillDetail::IdHasBeenSet() const
 {
     return m_idHasBeenSet;
+}
+
+string BillDetail::GetRegionType() const
+{
+    return m_regionType;
+}
+
+void BillDetail::SetRegionType(const string& _regionType)
+{
+    m_regionType = _regionType;
+    m_regionTypeHasBeenSet = true;
+}
+
+bool BillDetail::RegionTypeHasBeenSet() const
+{
+    return m_regionTypeHasBeenSet;
+}
+
+string BillDetail::GetRegionTypeName() const
+{
+    return m_regionTypeName;
+}
+
+void BillDetail::SetRegionTypeName(const string& _regionTypeName)
+{
+    m_regionTypeName = _regionTypeName;
+    m_regionTypeNameHasBeenSet = true;
+}
+
+bool BillDetail::RegionTypeNameHasBeenSet() const
+{
+    return m_regionTypeNameHasBeenSet;
+}
+
+string BillDetail::GetReserveDetail() const
+{
+    return m_reserveDetail;
+}
+
+void BillDetail::SetReserveDetail(const string& _reserveDetail)
+{
+    m_reserveDetail = _reserveDetail;
+    m_reserveDetailHasBeenSet = true;
+}
+
+bool BillDetail::ReserveDetailHasBeenSet() const
+{
+    return m_reserveDetailHasBeenSet;
 }
 

@@ -126,6 +126,27 @@ namespace TencentCloud
                      */
                     bool TraceFlagHasBeenSet() const;
 
+                    /**
+                     * 获取是否创建镜像队列策略，默认值 true
+                     * @return MirrorQueuePolicyFlag 是否创建镜像队列策略，默认值 true
+                     * 
+                     */
+                    bool GetMirrorQueuePolicyFlag() const;
+
+                    /**
+                     * 设置是否创建镜像队列策略，默认值 true
+                     * @param _mirrorQueuePolicyFlag 是否创建镜像队列策略，默认值 true
+                     * 
+                     */
+                    void SetMirrorQueuePolicyFlag(const bool& _mirrorQueuePolicyFlag);
+
+                    /**
+                     * 判断参数 MirrorQueuePolicyFlag 是否已赋值
+                     * @return MirrorQueuePolicyFlag 是否已赋值
+                     * 
+                     */
+                    bool MirrorQueuePolicyFlagHasBeenSet() const;
+
                 private:
 
                     /**
@@ -151,6 +172,12 @@ namespace TencentCloud
                      */
                     bool m_traceFlag;
                     bool m_traceFlagHasBeenSet;
+
+                    /**
+                     * 是否创建镜像队列策略，默认值 true
+                     */
+                    bool m_mirrorQueuePolicyFlag;
+                    bool m_mirrorQueuePolicyFlagHasBeenSet;
 
                 };
             }

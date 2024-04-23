@@ -87,21 +87,21 @@ namespace TencentCloud
                     /**
                      * 获取服务记录ID（废弃）
                      * @return CdrId 服务记录ID（废弃）
-                     * 
+                     * @deprecated
                      */
                     std::string GetCdrId() const;
 
                     /**
                      * 设置服务记录ID（废弃）
                      * @param _cdrId 服务记录ID（废弃）
-                     * 
+                     * @deprecated
                      */
                     void SetCdrId(const std::string& _cdrId);
 
                     /**
                      * 判断参数 CdrId 是否已赋值
                      * @return CdrId 是否已赋值
-                     * 
+                     * @deprecated
                      */
                     bool CdrIdHasBeenSet() const;
 
@@ -169,15 +169,15 @@ namespace TencentCloud
                     bool OrderHasBeenSet() const;
 
                     /**
-                     * 获取服务记录 SessionID（必填）
-                     * @return SessionId 服务记录 SessionID（必填）
+                     * 获取服务记录 SessionID
+                     * @return SessionId 服务记录 SessionID
                      * 
                      */
                     std::string GetSessionId() const;
 
                     /**
-                     * 设置服务记录 SessionID（必填）
-                     * @param _sessionId 服务记录 SessionID（必填）
+                     * 设置服务记录 SessionID
+                     * @param _sessionId 服务记录 SessionID
                      * 
                      */
                     void SetSessionId(const std::string& _sessionId);
@@ -228,7 +228,7 @@ namespace TencentCloud
                     bool m_orderHasBeenSet;
 
                     /**
-                     * 服务记录 SessionID（必填）
+                     * 服务记录 SessionID
                      */
                     std::string m_sessionId;
                     bool m_sessionIdHasBeenSet;

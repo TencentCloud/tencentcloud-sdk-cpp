@@ -912,6 +912,20 @@ namespace TencentCloud
                      */
                     bool IsDcnSwitchSupportedHasBeenSet() const;
 
+                    /**
+                     * 获取proxy版本号
+                     * @return ProxyVersion proxy版本号
+                     * 
+                     */
+                    std::string GetProxyVersion() const;
+
+                    /**
+                     * 判断参数 ProxyVersion 是否已赋值
+                     * @return ProxyVersion 是否已赋值
+                     * 
+                     */
+                    bool ProxyVersionHasBeenSet() const;
+
                 private:
 
                     /**
@@ -1286,6 +1300,12 @@ namespace TencentCloud
                      */
                     int64_t m_isDcnSwitchSupported;
                     bool m_isDcnSwitchSupportedHasBeenSet;
+
+                    /**
+                     * proxy版本号
+                     */
+                    std::string m_proxyVersion;
+                    bool m_proxyVersionHasBeenSet;
 
                 };
             }

@@ -51,6 +51,7 @@ set(dcdb_public_header_model
   include/tencentcloud/dcdb/v20180411/model/CreateAccountRequest.h
   include/tencentcloud/dcdb/v20180411/model/UpgradeDedicatedDCDBInstanceResponse.h
   include/tencentcloud/dcdb/v20180411/model/DescribeDBParametersResponse.h
+  include/tencentcloud/dcdb/v20180411/model/Tag.h
   include/tencentcloud/dcdb/v20180411/model/DescribeBackupFilesRequest.h
   include/tencentcloud/dcdb/v20180411/model/IsolateHourDCDBInstanceRequest.h
   include/tencentcloud/dcdb/v20180411/model/ModifyDBInstanceNameResponse.h
@@ -245,6 +246,7 @@ set(dcdb_src
   src/v20180411/model/CreateAccountRequest.cpp
   src/v20180411/model/UpgradeDedicatedDCDBInstanceResponse.cpp
   src/v20180411/model/DescribeDBParametersResponse.cpp
+  src/v20180411/model/Tag.cpp
   src/v20180411/model/DescribeBackupFilesRequest.cpp
   src/v20180411/model/IsolateHourDCDBInstanceRequest.cpp
   src/v20180411/model/ModifyDBInstanceNameResponse.cpp

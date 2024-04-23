@@ -38,6 +38,7 @@ DescribeDCDBInstancesRequest::DescribeDCDBInstancesRequest() :
     m_isFilterExclusterHasBeenSet(false),
     m_exclusterIdsHasBeenSet(false),
     m_tagKeysHasBeenSet(false),
+    m_tagsHasBeenSet(false),
     m_filterInstanceTypeHasBeenSet(false),
     m_statusHasBeenSet(false),
     m_excludeStatusHasBeenSet(false)
@@ -188,6 +189,21 @@ string DescribeDCDBInstancesRequest::ToJsonString() const
         for (auto itr = m_tagKeys.begin(); itr != m_tagKeys.end(); ++itr)
         {
             d[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
+        }
+    }
+
+    if (m_tagsHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Tags";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_tags.begin(); itr != m_tags.end(); ++itr, ++i)
+        {
+            d[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(d[key.c_str()][i], allocator);
         }
     }
 
@@ -471,6 +487,22 @@ void DescribeDCDBInstancesRequest::SetTagKeys(const vector<string>& _tagKeys)
 bool DescribeDCDBInstancesRequest::TagKeysHasBeenSet() const
 {
     return m_tagKeysHasBeenSet;
+}
+
+vector<Tag> DescribeDCDBInstancesRequest::GetTags() const
+{
+    return m_tags;
+}
+
+void DescribeDCDBInstancesRequest::SetTags(const vector<Tag>& _tags)
+{
+    m_tags = _tags;
+    m_tagsHasBeenSet = true;
+}
+
+bool DescribeDCDBInstancesRequest::TagsHasBeenSet() const
+{
+    return m_tagsHasBeenSet;
 }
 
 string DescribeDCDBInstancesRequest::GetFilterInstanceType() const

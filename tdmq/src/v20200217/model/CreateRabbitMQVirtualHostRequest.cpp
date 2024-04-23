@@ -26,7 +26,8 @@ CreateRabbitMQVirtualHostRequest::CreateRabbitMQVirtualHostRequest() :
     m_instanceIdHasBeenSet(false),
     m_virtualHostHasBeenSet(false),
     m_descriptionHasBeenSet(false),
-    m_traceFlagHasBeenSet(false)
+    m_traceFlagHasBeenSet(false),
+    m_mirrorQueuePolicyFlagHasBeenSet(false)
 {
 }
 
@@ -67,6 +68,14 @@ string CreateRabbitMQVirtualHostRequest::ToJsonString() const
         string key = "TraceFlag";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_traceFlag, allocator);
+    }
+
+    if (m_mirrorQueuePolicyFlagHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "MirrorQueuePolicyFlag";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_mirrorQueuePolicyFlag, allocator);
     }
 
 
@@ -139,6 +148,22 @@ void CreateRabbitMQVirtualHostRequest::SetTraceFlag(const bool& _traceFlag)
 bool CreateRabbitMQVirtualHostRequest::TraceFlagHasBeenSet() const
 {
     return m_traceFlagHasBeenSet;
+}
+
+bool CreateRabbitMQVirtualHostRequest::GetMirrorQueuePolicyFlag() const
+{
+    return m_mirrorQueuePolicyFlag;
+}
+
+void CreateRabbitMQVirtualHostRequest::SetMirrorQueuePolicyFlag(const bool& _mirrorQueuePolicyFlag)
+{
+    m_mirrorQueuePolicyFlag = _mirrorQueuePolicyFlag;
+    m_mirrorQueuePolicyFlagHasBeenSet = true;
+}
+
+bool CreateRabbitMQVirtualHostRequest::MirrorQueuePolicyFlagHasBeenSet() const
+{
+    return m_mirrorQueuePolicyFlagHasBeenSet;
 }
 
 

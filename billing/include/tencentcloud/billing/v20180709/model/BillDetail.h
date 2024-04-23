@@ -748,6 +748,81 @@ namespace TencentCloud
                      */
                     bool IdHasBeenSet() const;
 
+                    /**
+                     * 获取国内国际编码
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return RegionType 国内国际编码
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::string GetRegionType() const;
+
+                    /**
+                     * 设置国内国际编码
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _regionType 国内国际编码
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetRegionType(const std::string& _regionType);
+
+                    /**
+                     * 判断参数 RegionType 是否已赋值
+                     * @return RegionType 是否已赋值
+                     * 
+                     */
+                    bool RegionTypeHasBeenSet() const;
+
+                    /**
+                     * 获取国内国际：资源所属区域类型（国内、国际）
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return RegionTypeName 国内国际：资源所属区域类型（国内、国际）
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::string GetRegionTypeName() const;
+
+                    /**
+                     * 设置国内国际：资源所属区域类型（国内、国际）
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _regionTypeName 国内国际：资源所属区域类型（国内、国际）
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetRegionTypeName(const std::string& _regionTypeName);
+
+                    /**
+                     * 判断参数 RegionTypeName 是否已赋值
+                     * @return RegionTypeName 是否已赋值
+                     * 
+                     */
+                    bool RegionTypeNameHasBeenSet() const;
+
+                    /**
+                     * 获取备注属性（实例配置）：其他备注信息，如预留实例的预留实例类型和交易类型、CCN 产品的两端地域信息
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return ReserveDetail 备注属性（实例配置）：其他备注信息，如预留实例的预留实例类型和交易类型、CCN 产品的两端地域信息
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::string GetReserveDetail() const;
+
+                    /**
+                     * 设置备注属性（实例配置）：其他备注信息，如预留实例的预留实例类型和交易类型、CCN 产品的两端地域信息
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _reserveDetail 备注属性（实例配置）：其他备注信息，如预留实例的预留实例类型和交易类型、CCN 产品的两端地域信息
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetReserveDetail(const std::string& _reserveDetail);
+
+                    /**
+                     * 判断参数 ReserveDetail 是否已赋值
+                     * @return ReserveDetail 是否已赋值
+                     * 
+                     */
+                    bool ReserveDetailHasBeenSet() const;
+
                 private:
 
                     /**
@@ -947,6 +1022,27 @@ namespace TencentCloud
                      */
                     std::string m_id;
                     bool m_idHasBeenSet;
+
+                    /**
+                     * 国内国际编码
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_regionType;
+                    bool m_regionTypeHasBeenSet;
+
+                    /**
+                     * 国内国际：资源所属区域类型（国内、国际）
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_regionTypeName;
+                    bool m_regionTypeNameHasBeenSet;
+
+                    /**
+                     * 备注属性（实例配置）：其他备注信息，如预留实例的预留实例类型和交易类型、CCN 产品的两端地域信息
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_reserveDetail;
+                    bool m_reserveDetailHasBeenSet;
 
                 };
             }

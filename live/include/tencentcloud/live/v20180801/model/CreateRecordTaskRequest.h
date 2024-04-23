@@ -106,15 +106,15 @@ namespace TencentCloud
                     bool AppNameHasBeenSet() const;
 
                     /**
-                     * 获取录制任务结束时间，Unix时间戳。设置时间必须大于StartTime及当前时间，且EndTime - StartTime不能超过24小时。
-                     * @return EndTime 录制任务结束时间，Unix时间戳。设置时间必须大于StartTime及当前时间，且EndTime - StartTime不能超过24小时。
+                     * 获取录制任务结束时间，Unix时间戳。设置时间必须大于StartTime及当前时间，且小于当前时间+7天。
+                     * @return EndTime 录制任务结束时间，Unix时间戳。设置时间必须大于StartTime及当前时间，且小于当前时间+7天。
                      * 
                      */
                     uint64_t GetEndTime() const;
 
                     /**
-                     * 设置录制任务结束时间，Unix时间戳。设置时间必须大于StartTime及当前时间，且EndTime - StartTime不能超过24小时。
-                     * @param _endTime 录制任务结束时间，Unix时间戳。设置时间必须大于StartTime及当前时间，且EndTime - StartTime不能超过24小时。
+                     * 设置录制任务结束时间，Unix时间戳。设置时间必须大于StartTime及当前时间，且小于当前时间+7天。
+                     * @param _endTime 录制任务结束时间，Unix时间戳。设置时间必须大于StartTime及当前时间，且小于当前时间+7天。
                      * 
                      */
                     void SetEndTime(const uint64_t& _endTime);
@@ -127,15 +127,15 @@ namespace TencentCloud
                     bool EndTimeHasBeenSet() const;
 
                     /**
-                     * 获取录制任务开始时间，Unix时间戳。如果不填表示立即启动录制。StartTime不能超过当前时间+6天。
-                     * @return StartTime 录制任务开始时间，Unix时间戳。如果不填表示立即启动录制。StartTime不能超过当前时间+6天。
+                     * 获取录制任务开始时间，Unix时间戳。如果不填表示立即启动录制。EndTime - StartTime不能超过24小时。
+                     * @return StartTime 录制任务开始时间，Unix时间戳。如果不填表示立即启动录制。EndTime - StartTime不能超过24小时。
                      * 
                      */
                     uint64_t GetStartTime() const;
 
                     /**
-                     * 设置录制任务开始时间，Unix时间戳。如果不填表示立即启动录制。StartTime不能超过当前时间+6天。
-                     * @param _startTime 录制任务开始时间，Unix时间戳。如果不填表示立即启动录制。StartTime不能超过当前时间+6天。
+                     * 设置录制任务开始时间，Unix时间戳。如果不填表示立即启动录制。EndTime - StartTime不能超过24小时。
+                     * @param _startTime 录制任务开始时间，Unix时间戳。如果不填表示立即启动录制。EndTime - StartTime不能超过24小时。
                      * 
                      */
                     void SetStartTime(const uint64_t& _startTime);
@@ -239,13 +239,13 @@ namespace TencentCloud
                     bool m_appNameHasBeenSet;
 
                     /**
-                     * 录制任务结束时间，Unix时间戳。设置时间必须大于StartTime及当前时间，且EndTime - StartTime不能超过24小时。
+                     * 录制任务结束时间，Unix时间戳。设置时间必须大于StartTime及当前时间，且小于当前时间+7天。
                      */
                     uint64_t m_endTime;
                     bool m_endTimeHasBeenSet;
 
                     /**
-                     * 录制任务开始时间，Unix时间戳。如果不填表示立即启动录制。StartTime不能超过当前时间+6天。
+                     * 录制任务开始时间，Unix时间戳。如果不填表示立即启动录制。EndTime - StartTime不能超过24小时。
                      */
                     uint64_t m_startTime;
                     bool m_startTimeHasBeenSet;

@@ -58,6 +58,7 @@ set(mariadb_public_header_model
   include/tencentcloud/mariadb/v20170312/model/ZoneChooseInfo.h
   include/tencentcloud/mariadb/v20170312/model/IsolateDedicatedDBInstanceRequest.h
   include/tencentcloud/mariadb/v20170312/model/ModifyAccountDescriptionResponse.h
+  include/tencentcloud/mariadb/v20170312/model/Tag.h
   include/tencentcloud/mariadb/v20170312/model/ParamConstraint.h
   include/tencentcloud/mariadb/v20170312/model/ModifyDBInstancesProjectResponse.h
   include/tencentcloud/mariadb/v20170312/model/DBBackupTimeConfig.h
@@ -245,6 +246,7 @@ set(mariadb_src
   src/v20170312/model/ZoneChooseInfo.cpp
   src/v20170312/model/IsolateDedicatedDBInstanceRequest.cpp
   src/v20170312/model/ModifyAccountDescriptionResponse.cpp
+  src/v20170312/model/Tag.cpp
   src/v20170312/model/ParamConstraint.cpp
   src/v20170312/model/ModifyDBInstancesProjectResponse.cpp
   src/v20170312/model/DBBackupTimeConfig.cpp

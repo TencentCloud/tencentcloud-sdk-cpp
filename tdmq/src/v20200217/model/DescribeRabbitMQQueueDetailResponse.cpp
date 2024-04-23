@@ -47,7 +47,10 @@ DescribeRabbitMQQueueDetailResponse::DescribeRabbitMQQueueDetailResponse() :
     m_maxInMemoryLengthHasBeenSet(false),
     m_maxInMemoryBytesHasBeenSet(false),
     m_createTimeHasBeenSet(false),
-    m_nodeHasBeenSet(false)
+    m_nodeHasBeenSet(false),
+    m_deadLetterStrategyHasBeenSet(false),
+    m_queueLeaderLocatorHasBeenSet(false),
+    m_quorumInitialGroupSizeHasBeenSet(false)
 {
 }
 
@@ -325,6 +328,36 @@ CoreInternalOutcome DescribeRabbitMQQueueDetailResponse::Deserialize(const strin
         m_nodeHasBeenSet = true;
     }
 
+    if (rsp.HasMember("DeadLetterStrategy") && !rsp["DeadLetterStrategy"].IsNull())
+    {
+        if (!rsp["DeadLetterStrategy"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `DeadLetterStrategy` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_deadLetterStrategy = string(rsp["DeadLetterStrategy"].GetString());
+        m_deadLetterStrategyHasBeenSet = true;
+    }
+
+    if (rsp.HasMember("QueueLeaderLocator") && !rsp["QueueLeaderLocator"].IsNull())
+    {
+        if (!rsp["QueueLeaderLocator"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `QueueLeaderLocator` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_queueLeaderLocator = string(rsp["QueueLeaderLocator"].GetString());
+        m_queueLeaderLocatorHasBeenSet = true;
+    }
+
+    if (rsp.HasMember("QuorumInitialGroupSize") && !rsp["QuorumInitialGroupSize"].IsNull())
+    {
+        if (!rsp["QuorumInitialGroupSize"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `QuorumInitialGroupSize` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_quorumInitialGroupSize = rsp["QuorumInitialGroupSize"].GetInt64();
+        m_quorumInitialGroupSizeHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -525,6 +558,30 @@ string DescribeRabbitMQQueueDetailResponse::ToJsonString() const
         string key = "Node";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_node.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_deadLetterStrategyHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "DeadLetterStrategy";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_deadLetterStrategy.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_queueLeaderLocatorHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "QueueLeaderLocator";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_queueLeaderLocator.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_quorumInitialGroupSizeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "QuorumInitialGroupSize";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_quorumInitialGroupSize, allocator);
     }
 
     rapidjson::Value iKey(rapidjson::kStringType);
@@ -777,6 +834,36 @@ string DescribeRabbitMQQueueDetailResponse::GetNode() const
 bool DescribeRabbitMQQueueDetailResponse::NodeHasBeenSet() const
 {
     return m_nodeHasBeenSet;
+}
+
+string DescribeRabbitMQQueueDetailResponse::GetDeadLetterStrategy() const
+{
+    return m_deadLetterStrategy;
+}
+
+bool DescribeRabbitMQQueueDetailResponse::DeadLetterStrategyHasBeenSet() const
+{
+    return m_deadLetterStrategyHasBeenSet;
+}
+
+string DescribeRabbitMQQueueDetailResponse::GetQueueLeaderLocator() const
+{
+    return m_queueLeaderLocator;
+}
+
+bool DescribeRabbitMQQueueDetailResponse::QueueLeaderLocatorHasBeenSet() const
+{
+    return m_queueLeaderLocatorHasBeenSet;
+}
+
+int64_t DescribeRabbitMQQueueDetailResponse::GetQuorumInitialGroupSize() const
+{
+    return m_quorumInitialGroupSize;
+}
+
+bool DescribeRabbitMQQueueDetailResponse::QuorumInitialGroupSizeHasBeenSet() const
+{
+    return m_quorumInitialGroupSizeHasBeenSet;
 }
 
 

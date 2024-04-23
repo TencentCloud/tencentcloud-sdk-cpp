@@ -226,6 +226,7 @@ OnboardingDocuments -- 入职材料识别
 PropertyOwnershipCertificate -- 房产证识别
 RealEstateCertificate --不动产权证识别
 HouseEncumbranceCertificate -- 他权证识别
+CarInsurance -- 车险保单
                      * @return ConfigId 配置id支持：
 General -- 通用场景
 OnlineTaxiItinerary -- 网约车行程单
@@ -239,6 +240,7 @@ OnboardingDocuments -- 入职材料识别
 PropertyOwnershipCertificate -- 房产证识别
 RealEstateCertificate --不动产权证识别
 HouseEncumbranceCertificate -- 他权证识别
+CarInsurance -- 车险保单
                      * 
                      */
                     std::string GetConfigId() const;
@@ -257,6 +259,7 @@ OnboardingDocuments -- 入职材料识别
 PropertyOwnershipCertificate -- 房产证识别
 RealEstateCertificate --不动产权证识别
 HouseEncumbranceCertificate -- 他权证识别
+CarInsurance -- 车险保单
                      * @param _configId 配置id支持：
 General -- 通用场景
 OnlineTaxiItinerary -- 网约车行程单
@@ -270,6 +273,7 @@ OnboardingDocuments -- 入职材料识别
 PropertyOwnershipCertificate -- 房产证识别
 RealEstateCertificate --不动产权证识别
 HouseEncumbranceCertificate -- 他权证识别
+CarInsurance -- 车险保单
                      * 
                      */
                     void SetConfigId(const std::string& _configId);
@@ -365,6 +369,7 @@ OnboardingDocuments -- 入职材料识别
 PropertyOwnershipCertificate -- 房产证识别
 RealEstateCertificate --不动产权证识别
 HouseEncumbranceCertificate -- 他权证识别
+CarInsurance -- 车险保单
                      */
                     std::string m_configId;
                     bool m_configIdHasBeenSet;

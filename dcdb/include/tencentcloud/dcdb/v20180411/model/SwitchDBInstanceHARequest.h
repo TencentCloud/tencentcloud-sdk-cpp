@@ -84,6 +84,27 @@ namespace TencentCloud
                      */
                     bool ZoneHasBeenSet() const;
 
+                    /**
+                     * 获取指定分片实例id进行切换
+                     * @return ShardInstanceIds 指定分片实例id进行切换
+                     * 
+                     */
+                    std::vector<std::string> GetShardInstanceIds() const;
+
+                    /**
+                     * 设置指定分片实例id进行切换
+                     * @param _shardInstanceIds 指定分片实例id进行切换
+                     * 
+                     */
+                    void SetShardInstanceIds(const std::vector<std::string>& _shardInstanceIds);
+
+                    /**
+                     * 判断参数 ShardInstanceIds 是否已赋值
+                     * @return ShardInstanceIds 是否已赋值
+                     * 
+                     */
+                    bool ShardInstanceIdsHasBeenSet() const;
+
                 private:
 
                     /**
@@ -97,6 +118,12 @@ namespace TencentCloud
                      */
                     std::string m_zone;
                     bool m_zoneHasBeenSet;
+
+                    /**
+                     * 指定分片实例id进行切换
+                     */
+                    std::vector<std::string> m_shardInstanceIds;
+                    bool m_shardInstanceIdsHasBeenSet;
 
                 };
             }

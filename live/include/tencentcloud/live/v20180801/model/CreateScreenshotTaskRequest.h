@@ -106,15 +106,15 @@ namespace TencentCloud
                     bool AppNameHasBeenSet() const;
 
                     /**
-                     * 获取截图任务结束时间，Unix时间戳。设置时间必须大于StartTime及当前时间，且EndTime - StartTime不能超过24小时。
-                     * @return EndTime 截图任务结束时间，Unix时间戳。设置时间必须大于StartTime及当前时间，且EndTime - StartTime不能超过24小时。
+                     * 获取截图任务结束时间，Unix时间戳。设置时间必须大于StartTime及当前时间，且小于当前时间+7天。
+                     * @return EndTime 截图任务结束时间，Unix时间戳。设置时间必须大于StartTime及当前时间，且小于当前时间+7天。
                      * 
                      */
                     uint64_t GetEndTime() const;
 
                     /**
-                     * 设置截图任务结束时间，Unix时间戳。设置时间必须大于StartTime及当前时间，且EndTime - StartTime不能超过24小时。
-                     * @param _endTime 截图任务结束时间，Unix时间戳。设置时间必须大于StartTime及当前时间，且EndTime - StartTime不能超过24小时。
+                     * 设置截图任务结束时间，Unix时间戳。设置时间必须大于StartTime及当前时间，且小于当前时间+7天。
+                     * @param _endTime 截图任务结束时间，Unix时间戳。设置时间必须大于StartTime及当前时间，且小于当前时间+7天。
                      * 
                      */
                     void SetEndTime(const uint64_t& _endTime);
@@ -148,15 +148,15 @@ namespace TencentCloud
                     bool TemplateIdHasBeenSet() const;
 
                     /**
-                     * 获取截图任务开始时间，Unix时间戳。如果不填表示立即启动截图。StartTime不能超过当前时间+6天。
-                     * @return StartTime 截图任务开始时间，Unix时间戳。如果不填表示立即启动截图。StartTime不能超过当前时间+6天。
+                     * 获取截图任务开始时间，Unix时间戳。如果不填表示立即启动截图。EndTime - StartTime不能超过24小时。
+                     * @return StartTime 截图任务开始时间，Unix时间戳。如果不填表示立即启动截图。EndTime - StartTime不能超过24小时。
                      * 
                      */
                     uint64_t GetStartTime() const;
 
                     /**
-                     * 设置截图任务开始时间，Unix时间戳。如果不填表示立即启动截图。StartTime不能超过当前时间+6天。
-                     * @param _startTime 截图任务开始时间，Unix时间戳。如果不填表示立即启动截图。StartTime不能超过当前时间+6天。
+                     * 设置截图任务开始时间，Unix时间戳。如果不填表示立即启动截图。EndTime - StartTime不能超过24小时。
+                     * @param _startTime 截图任务开始时间，Unix时间戳。如果不填表示立即启动截图。EndTime - StartTime不能超过24小时。
                      * 
                      */
                     void SetStartTime(const uint64_t& _startTime);
@@ -239,7 +239,7 @@ namespace TencentCloud
                     bool m_appNameHasBeenSet;
 
                     /**
-                     * 截图任务结束时间，Unix时间戳。设置时间必须大于StartTime及当前时间，且EndTime - StartTime不能超过24小时。
+                     * 截图任务结束时间，Unix时间戳。设置时间必须大于StartTime及当前时间，且小于当前时间+7天。
                      */
                     uint64_t m_endTime;
                     bool m_endTimeHasBeenSet;
@@ -251,7 +251,7 @@ namespace TencentCloud
                     bool m_templateIdHasBeenSet;
 
                     /**
-                     * 截图任务开始时间，Unix时间戳。如果不填表示立即启动截图。StartTime不能超过当前时间+6天。
+                     * 截图任务开始时间，Unix时间戳。如果不填表示立即启动截图。EndTime - StartTime不能超过24小时。
                      */
                     uint64_t m_startTime;
                     bool m_startTimeHasBeenSet;

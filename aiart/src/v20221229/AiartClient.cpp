@@ -83,6 +83,49 @@ AiartClient::ImageToImageOutcomeCallable AiartClient::ImageToImageCallable(const
     return task->get_future();
 }
 
+AiartClient::QueryDrawPortraitJobOutcome AiartClient::QueryDrawPortraitJob(const QueryDrawPortraitJobRequest &request)
+{
+    auto outcome = MakeRequest(request, "QueryDrawPortraitJob");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        QueryDrawPortraitJobResponse rsp = QueryDrawPortraitJobResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return QueryDrawPortraitJobOutcome(rsp);
+        else
+            return QueryDrawPortraitJobOutcome(o.GetError());
+    }
+    else
+    {
+        return QueryDrawPortraitJobOutcome(outcome.GetError());
+    }
+}
+
+void AiartClient::QueryDrawPortraitJobAsync(const QueryDrawPortraitJobRequest& request, const QueryDrawPortraitJobAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->QueryDrawPortraitJob(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+AiartClient::QueryDrawPortraitJobOutcomeCallable AiartClient::QueryDrawPortraitJobCallable(const QueryDrawPortraitJobRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<QueryDrawPortraitJobOutcome()>>(
+        [this, request]()
+        {
+            return this->QueryDrawPortraitJob(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 AiartClient::QueryTextToImageProJobOutcome AiartClient::QueryTextToImageProJob(const QueryTextToImageProJobRequest &request)
 {
     auto outcome = MakeRequest(request, "QueryTextToImageProJob");
@@ -119,6 +162,92 @@ AiartClient::QueryTextToImageProJobOutcomeCallable AiartClient::QueryTextToImage
         [this, request]()
         {
             return this->QueryTextToImageProJob(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+AiartClient::QueryTrainPortraitModelJobOutcome AiartClient::QueryTrainPortraitModelJob(const QueryTrainPortraitModelJobRequest &request)
+{
+    auto outcome = MakeRequest(request, "QueryTrainPortraitModelJob");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        QueryTrainPortraitModelJobResponse rsp = QueryTrainPortraitModelJobResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return QueryTrainPortraitModelJobOutcome(rsp);
+        else
+            return QueryTrainPortraitModelJobOutcome(o.GetError());
+    }
+    else
+    {
+        return QueryTrainPortraitModelJobOutcome(outcome.GetError());
+    }
+}
+
+void AiartClient::QueryTrainPortraitModelJobAsync(const QueryTrainPortraitModelJobRequest& request, const QueryTrainPortraitModelJobAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->QueryTrainPortraitModelJob(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+AiartClient::QueryTrainPortraitModelJobOutcomeCallable AiartClient::QueryTrainPortraitModelJobCallable(const QueryTrainPortraitModelJobRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<QueryTrainPortraitModelJobOutcome()>>(
+        [this, request]()
+        {
+            return this->QueryTrainPortraitModelJob(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+AiartClient::SubmitDrawPortraitJobOutcome AiartClient::SubmitDrawPortraitJob(const SubmitDrawPortraitJobRequest &request)
+{
+    auto outcome = MakeRequest(request, "SubmitDrawPortraitJob");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        SubmitDrawPortraitJobResponse rsp = SubmitDrawPortraitJobResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return SubmitDrawPortraitJobOutcome(rsp);
+        else
+            return SubmitDrawPortraitJobOutcome(o.GetError());
+    }
+    else
+    {
+        return SubmitDrawPortraitJobOutcome(outcome.GetError());
+    }
+}
+
+void AiartClient::SubmitDrawPortraitJobAsync(const SubmitDrawPortraitJobRequest& request, const SubmitDrawPortraitJobAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->SubmitDrawPortraitJob(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+AiartClient::SubmitDrawPortraitJobOutcomeCallable AiartClient::SubmitDrawPortraitJobCallable(const SubmitDrawPortraitJobRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<SubmitDrawPortraitJobOutcome()>>(
+        [this, request]()
+        {
+            return this->SubmitDrawPortraitJob(request);
         }
     );
 
@@ -169,6 +298,49 @@ AiartClient::SubmitTextToImageProJobOutcomeCallable AiartClient::SubmitTextToIma
     return task->get_future();
 }
 
+AiartClient::SubmitTrainPortraitModelJobOutcome AiartClient::SubmitTrainPortraitModelJob(const SubmitTrainPortraitModelJobRequest &request)
+{
+    auto outcome = MakeRequest(request, "SubmitTrainPortraitModelJob");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        SubmitTrainPortraitModelJobResponse rsp = SubmitTrainPortraitModelJobResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return SubmitTrainPortraitModelJobOutcome(rsp);
+        else
+            return SubmitTrainPortraitModelJobOutcome(o.GetError());
+    }
+    else
+    {
+        return SubmitTrainPortraitModelJobOutcome(outcome.GetError());
+    }
+}
+
+void AiartClient::SubmitTrainPortraitModelJobAsync(const SubmitTrainPortraitModelJobRequest& request, const SubmitTrainPortraitModelJobAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->SubmitTrainPortraitModelJob(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+AiartClient::SubmitTrainPortraitModelJobOutcomeCallable AiartClient::SubmitTrainPortraitModelJobCallable(const SubmitTrainPortraitModelJobRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<SubmitTrainPortraitModelJobOutcome()>>(
+        [this, request]()
+        {
+            return this->SubmitTrainPortraitModelJob(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 AiartClient::TextToImageOutcome AiartClient::TextToImage(const TextToImageRequest &request)
 {
     auto outcome = MakeRequest(request, "TextToImage");
@@ -205,6 +377,49 @@ AiartClient::TextToImageOutcomeCallable AiartClient::TextToImageCallable(const T
         [this, request]()
         {
             return this->TextToImage(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+AiartClient::UploadTrainPortraitImagesOutcome AiartClient::UploadTrainPortraitImages(const UploadTrainPortraitImagesRequest &request)
+{
+    auto outcome = MakeRequest(request, "UploadTrainPortraitImages");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        UploadTrainPortraitImagesResponse rsp = UploadTrainPortraitImagesResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return UploadTrainPortraitImagesOutcome(rsp);
+        else
+            return UploadTrainPortraitImagesOutcome(o.GetError());
+    }
+    else
+    {
+        return UploadTrainPortraitImagesOutcome(outcome.GetError());
+    }
+}
+
+void AiartClient::UploadTrainPortraitImagesAsync(const UploadTrainPortraitImagesRequest& request, const UploadTrainPortraitImagesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->UploadTrainPortraitImages(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+AiartClient::UploadTrainPortraitImagesOutcomeCallable AiartClient::UploadTrainPortraitImagesCallable(const UploadTrainPortraitImagesRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<UploadTrainPortraitImagesOutcome()>>(
+        [this, request]()
+        {
+            return this->UploadTrainPortraitImages(request);
         }
     );
 

@@ -25,12 +25,22 @@
 #include <tencentcloud/core/AsyncCallerContext.h>
 #include <tencentcloud/aiart/v20221229/model/ImageToImageRequest.h>
 #include <tencentcloud/aiart/v20221229/model/ImageToImageResponse.h>
+#include <tencentcloud/aiart/v20221229/model/QueryDrawPortraitJobRequest.h>
+#include <tencentcloud/aiart/v20221229/model/QueryDrawPortraitJobResponse.h>
 #include <tencentcloud/aiart/v20221229/model/QueryTextToImageProJobRequest.h>
 #include <tencentcloud/aiart/v20221229/model/QueryTextToImageProJobResponse.h>
+#include <tencentcloud/aiart/v20221229/model/QueryTrainPortraitModelJobRequest.h>
+#include <tencentcloud/aiart/v20221229/model/QueryTrainPortraitModelJobResponse.h>
+#include <tencentcloud/aiart/v20221229/model/SubmitDrawPortraitJobRequest.h>
+#include <tencentcloud/aiart/v20221229/model/SubmitDrawPortraitJobResponse.h>
 #include <tencentcloud/aiart/v20221229/model/SubmitTextToImageProJobRequest.h>
 #include <tencentcloud/aiart/v20221229/model/SubmitTextToImageProJobResponse.h>
+#include <tencentcloud/aiart/v20221229/model/SubmitTrainPortraitModelJobRequest.h>
+#include <tencentcloud/aiart/v20221229/model/SubmitTrainPortraitModelJobResponse.h>
 #include <tencentcloud/aiart/v20221229/model/TextToImageRequest.h>
 #include <tencentcloud/aiart/v20221229/model/TextToImageResponse.h>
+#include <tencentcloud/aiart/v20221229/model/UploadTrainPortraitImagesRequest.h>
+#include <tencentcloud/aiart/v20221229/model/UploadTrainPortraitImagesResponse.h>
 
 
 namespace TencentCloud
@@ -48,15 +58,30 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::ImageToImageResponse> ImageToImageOutcome;
                 typedef std::future<ImageToImageOutcome> ImageToImageOutcomeCallable;
                 typedef std::function<void(const AiartClient*, const Model::ImageToImageRequest&, ImageToImageOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ImageToImageAsyncHandler;
+                typedef Outcome<Core::Error, Model::QueryDrawPortraitJobResponse> QueryDrawPortraitJobOutcome;
+                typedef std::future<QueryDrawPortraitJobOutcome> QueryDrawPortraitJobOutcomeCallable;
+                typedef std::function<void(const AiartClient*, const Model::QueryDrawPortraitJobRequest&, QueryDrawPortraitJobOutcome, const std::shared_ptr<const AsyncCallerContext>&)> QueryDrawPortraitJobAsyncHandler;
                 typedef Outcome<Core::Error, Model::QueryTextToImageProJobResponse> QueryTextToImageProJobOutcome;
                 typedef std::future<QueryTextToImageProJobOutcome> QueryTextToImageProJobOutcomeCallable;
                 typedef std::function<void(const AiartClient*, const Model::QueryTextToImageProJobRequest&, QueryTextToImageProJobOutcome, const std::shared_ptr<const AsyncCallerContext>&)> QueryTextToImageProJobAsyncHandler;
+                typedef Outcome<Core::Error, Model::QueryTrainPortraitModelJobResponse> QueryTrainPortraitModelJobOutcome;
+                typedef std::future<QueryTrainPortraitModelJobOutcome> QueryTrainPortraitModelJobOutcomeCallable;
+                typedef std::function<void(const AiartClient*, const Model::QueryTrainPortraitModelJobRequest&, QueryTrainPortraitModelJobOutcome, const std::shared_ptr<const AsyncCallerContext>&)> QueryTrainPortraitModelJobAsyncHandler;
+                typedef Outcome<Core::Error, Model::SubmitDrawPortraitJobResponse> SubmitDrawPortraitJobOutcome;
+                typedef std::future<SubmitDrawPortraitJobOutcome> SubmitDrawPortraitJobOutcomeCallable;
+                typedef std::function<void(const AiartClient*, const Model::SubmitDrawPortraitJobRequest&, SubmitDrawPortraitJobOutcome, const std::shared_ptr<const AsyncCallerContext>&)> SubmitDrawPortraitJobAsyncHandler;
                 typedef Outcome<Core::Error, Model::SubmitTextToImageProJobResponse> SubmitTextToImageProJobOutcome;
                 typedef std::future<SubmitTextToImageProJobOutcome> SubmitTextToImageProJobOutcomeCallable;
                 typedef std::function<void(const AiartClient*, const Model::SubmitTextToImageProJobRequest&, SubmitTextToImageProJobOutcome, const std::shared_ptr<const AsyncCallerContext>&)> SubmitTextToImageProJobAsyncHandler;
+                typedef Outcome<Core::Error, Model::SubmitTrainPortraitModelJobResponse> SubmitTrainPortraitModelJobOutcome;
+                typedef std::future<SubmitTrainPortraitModelJobOutcome> SubmitTrainPortraitModelJobOutcomeCallable;
+                typedef std::function<void(const AiartClient*, const Model::SubmitTrainPortraitModelJobRequest&, SubmitTrainPortraitModelJobOutcome, const std::shared_ptr<const AsyncCallerContext>&)> SubmitTrainPortraitModelJobAsyncHandler;
                 typedef Outcome<Core::Error, Model::TextToImageResponse> TextToImageOutcome;
                 typedef std::future<TextToImageOutcome> TextToImageOutcomeCallable;
                 typedef std::function<void(const AiartClient*, const Model::TextToImageRequest&, TextToImageOutcome, const std::shared_ptr<const AsyncCallerContext>&)> TextToImageAsyncHandler;
+                typedef Outcome<Core::Error, Model::UploadTrainPortraitImagesResponse> UploadTrainPortraitImagesOutcome;
+                typedef std::future<UploadTrainPortraitImagesOutcome> UploadTrainPortraitImagesOutcomeCallable;
+                typedef std::function<void(const AiartClient*, const Model::UploadTrainPortraitImagesRequest&, UploadTrainPortraitImagesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> UploadTrainPortraitImagesAsyncHandler;
 
 
 
@@ -71,6 +96,21 @@ namespace TencentCloud
                 ImageToImageOutcomeCallable ImageToImageCallable(const Model::ImageToImageRequest& request);
 
                 /**
+                 *AI 写真提供 AI 写真形象照的训练与生成能力，分为上传训练图片、训练模型、生成图片3个环节，需要依次调用对应接口。
+每个写真模型自训练完成起1年内有效，有效期内可使用写真模型 ID 生成图片，期满后需要重新训练。
+生成图片分为提交任务和查询任务2个接口。
+- 提交生成写真图片任务：完成训练写真模型后，选择写真风格模板，提交一个生成写真图片异步任务，根据写真模型 ID 开始生成人物形象在指定风格上的写真图片，获得任务 ID。
+- 查询生成写真图片任务：根据任务 ID 查询生成图片任务的处理状态、处理结果。
+
+默认接口请求频率限制：20次/秒。
+                 * @param req QueryDrawPortraitJobRequest
+                 * @return QueryDrawPortraitJobOutcome
+                 */
+                QueryDrawPortraitJobOutcome QueryDrawPortraitJob(const Model::QueryDrawPortraitJobRequest &request);
+                void QueryDrawPortraitJobAsync(const Model::QueryDrawPortraitJobRequest& request, const QueryDrawPortraitJobAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                QueryDrawPortraitJobOutcomeCallable QueryDrawPortraitJobCallable(const Model::QueryDrawPortraitJobRequest& request);
+
+                /**
                  *文生图（高级版）接口基于高级版文生图大模型，将根据输入的文本描述，智能生成与之相关的结果图。分为提交任务和查询任务2个接口。
 提交任务：输入文本等，提交一个文生图（高级版）异步任务，获得任务 ID。
 查询任务：根据任务 ID 查询任务的处理状态、处理结果，任务处理完成后可获得生成图像结果。
@@ -81,6 +121,36 @@ namespace TencentCloud
                 QueryTextToImageProJobOutcome QueryTextToImageProJob(const Model::QueryTextToImageProJobRequest &request);
                 void QueryTextToImageProJobAsync(const Model::QueryTextToImageProJobRequest& request, const QueryTextToImageProJobAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 QueryTextToImageProJobOutcomeCallable QueryTextToImageProJobCallable(const Model::QueryTextToImageProJobRequest& request);
+
+                /**
+                 *AI 写真提供 AI 写真形象照的训练与生成能力，分为上传训练图片、训练模型、生成图片3个环节，需要依次调用对应接口。
+每个写真模型自训练完成起1年内有效，有效期内可使用写真模型 ID 生成图片，期满后需要重新训练。
+训练模型分为提交任务和查询任务2个接口。
+- 提交训练写真模型任务：完成上传训练图片后，提交一个训练写真模型异步任务，根据写真模型 ID 开始训练模型。
+- 查询训练写真模型任务：根据写真模型 ID 查询训练任务的处理状态、处理结果。
+
+默认接口请求频率限制：20次/秒。
+                 * @param req QueryTrainPortraitModelJobRequest
+                 * @return QueryTrainPortraitModelJobOutcome
+                 */
+                QueryTrainPortraitModelJobOutcome QueryTrainPortraitModelJob(const Model::QueryTrainPortraitModelJobRequest &request);
+                void QueryTrainPortraitModelJobAsync(const Model::QueryTrainPortraitModelJobRequest& request, const QueryTrainPortraitModelJobAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                QueryTrainPortraitModelJobOutcomeCallable QueryTrainPortraitModelJobCallable(const Model::QueryTrainPortraitModelJobRequest& request);
+
+                /**
+                 *AI 写真提供 AI 写真形象照的训练与生成能力，分为上传训练图片、训练模型、生成图片3个环节，需要依次调用对应接口。
+每个写真模型自训练完成起1年内有效，有效期内可使用写真模型 ID 生成图片，期满后需要重新训练。
+生成图片分为提交任务和查询任务2个接口。
+- 提交生成写真图片任务：完成训练写真模型后，选择风格模板，提交一个生成写真图片异步任务，根据写真模型 ID 开始生成人物形象在指定风格上的写真图片，获得任务 ID。
+- 查询生成写真图片任务：根据任务 ID 查询生成图片任务的处理状态、处理结果。
+
+提交生成写真图片任务默认提供1个并发任务数。
+                 * @param req SubmitDrawPortraitJobRequest
+                 * @return SubmitDrawPortraitJobOutcome
+                 */
+                SubmitDrawPortraitJobOutcome SubmitDrawPortraitJob(const Model::SubmitDrawPortraitJobRequest &request);
+                void SubmitDrawPortraitJobAsync(const Model::SubmitDrawPortraitJobRequest& request, const SubmitDrawPortraitJobAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                SubmitDrawPortraitJobOutcomeCallable SubmitDrawPortraitJobCallable(const Model::SubmitDrawPortraitJobRequest& request);
 
                 /**
                  *文生图（高级版）接口基于高级版文生图大模型，将根据输入的文本描述，智能生成与之相关的结果图。分为提交任务和查询任务2个接口。
@@ -95,6 +165,20 @@ namespace TencentCloud
                 SubmitTextToImageProJobOutcomeCallable SubmitTextToImageProJobCallable(const Model::SubmitTextToImageProJobRequest& request);
 
                 /**
+                 *AI 写真提供 AI 写真形象照的训练与生成能力，分为上传训练图片、训练模型、生成图片3个环节，需要依次调用对应接口。
+每个写真模型自训练完成起1年内有效，有效期内可使用写真模型 ID 生成图片，期满后需要重新训练。
+训练模型分为提交任务和查询任务2个接口。
+- 提交训练写真模型任务：完成上传训练图片后，提交一个训练写真模型异步任务，根据写真模型 ID 开始训练模型。
+- 查询训练写真模型任务：根据写真模型 ID 查询训练任务的处理状态、处理结果。
+提交训练写真模型任务按并发任务数计费，无默认并发额度。
+                 * @param req SubmitTrainPortraitModelJobRequest
+                 * @return SubmitTrainPortraitModelJobOutcome
+                 */
+                SubmitTrainPortraitModelJobOutcome SubmitTrainPortraitModelJob(const Model::SubmitTrainPortraitModelJobRequest &request);
+                void SubmitTrainPortraitModelJobAsync(const Model::SubmitTrainPortraitModelJobRequest& request, const SubmitTrainPortraitModelJobAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                SubmitTrainPortraitModelJobOutcomeCallable SubmitTrainPortraitModelJobCallable(const Model::SubmitTrainPortraitModelJobRequest& request);
+
+                /**
                  *智能文生图接口基于文生图（标准版）模型，将根据输入的文本描述，智能生成与之相关的结果图。
 
 智能文生图默认提供3个并发任务数，代表最多能同时处理3个已提交的任务，上一个任务处理完毕后才能开始处理下一个任务。
@@ -104,6 +188,17 @@ namespace TencentCloud
                 TextToImageOutcome TextToImage(const Model::TextToImageRequest &request);
                 void TextToImageAsync(const Model::TextToImageRequest& request, const TextToImageAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 TextToImageOutcomeCallable TextToImageCallable(const Model::TextToImageRequest& request);
+
+                /**
+                 *AI 写真提供 AI 写真形象照的训练与生成能力，分为上传训练图片、训练模型、生成图片3个环节，需要依次调用对应接口。
+本接口用于指定一个人物形象的写真模型 ID，上传用于训练该模型的图片。一个写真模型仅用于一个人物形象的写真生成，上传的训练图片要求所属同一人，建议上传单人、正脸、脸部区域占比较大、脸部清晰无遮挡、无大角度偏转、无夸张表情的图片。
+上传写真训练图片默认提供1个并发任务数。
+                 * @param req UploadTrainPortraitImagesRequest
+                 * @return UploadTrainPortraitImagesOutcome
+                 */
+                UploadTrainPortraitImagesOutcome UploadTrainPortraitImages(const Model::UploadTrainPortraitImagesRequest &request);
+                void UploadTrainPortraitImagesAsync(const Model::UploadTrainPortraitImagesRequest& request, const UploadTrainPortraitImagesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                UploadTrainPortraitImagesOutcomeCallable UploadTrainPortraitImagesCallable(const Model::UploadTrainPortraitImagesRequest& request);
 
             };
         }

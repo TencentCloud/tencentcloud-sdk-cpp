@@ -82,7 +82,8 @@ DescribeDBInstanceDetailResponse::DescribeDBInstanceDetailResponse() :
     m_reservedNetResourcesHasBeenSet(false),
     m_isPhysicalReplicationSupportedHasBeenSet(false),
     m_isDcnStrongSyncSupportedHasBeenSet(false),
-    m_isDcnSwitchSupportedHasBeenSet(false)
+    m_isDcnSwitchSupportedHasBeenSet(false),
+    m_proxyVersionHasBeenSet(false)
 {
 }
 
@@ -757,6 +758,16 @@ CoreInternalOutcome DescribeDBInstanceDetailResponse::Deserialize(const string &
         m_isDcnSwitchSupportedHasBeenSet = true;
     }
 
+    if (rsp.HasMember("ProxyVersion") && !rsp["ProxyVersion"].IsNull())
+    {
+        if (!rsp["ProxyVersion"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `ProxyVersion` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_proxyVersion = string(rsp["ProxyVersion"].GetString());
+        m_proxyVersionHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -1265,6 +1276,14 @@ string DescribeDBInstanceDetailResponse::ToJsonString() const
         string key = "IsDcnSwitchSupported";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_isDcnSwitchSupported, allocator);
+    }
+
+    if (m_proxyVersionHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ProxyVersion";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_proxyVersion.c_str(), allocator).Move(), allocator);
     }
 
     rapidjson::Value iKey(rapidjson::kStringType);
@@ -1867,6 +1886,16 @@ int64_t DescribeDBInstanceDetailResponse::GetIsDcnSwitchSupported() const
 bool DescribeDBInstanceDetailResponse::IsDcnSwitchSupportedHasBeenSet() const
 {
     return m_isDcnSwitchSupportedHasBeenSet;
+}
+
+string DescribeDBInstanceDetailResponse::GetProxyVersion() const
+{
+    return m_proxyVersion;
+}
+
+bool DescribeDBInstanceDetailResponse::ProxyVersionHasBeenSet() const
+{
+    return m_proxyVersionHasBeenSet;
 }
 
 
