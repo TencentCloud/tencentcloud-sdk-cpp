@@ -147,6 +147,27 @@ namespace TencentCloud
                      */
                     bool ResolutionHasBeenSet() const;
 
+                    /**
+                     * 获取是否内网
+                     * @return IsInternal 是否内网
+                     * 
+                     */
+                    bool GetIsInternal() const;
+
+                    /**
+                     * 设置是否内网
+                     * @param _isInternal 是否内网
+                     * 
+                     */
+                    void SetIsInternal(const bool& _isInternal);
+
+                    /**
+                     * 判断参数 IsInternal 是否已赋值
+                     * @return IsInternal 是否已赋值
+                     * 
+                     */
+                    bool IsInternalHasBeenSet() const;
+
                 private:
 
                     /**
@@ -178,6 +199,12 @@ namespace TencentCloud
                      */
                     std::string m_resolution;
                     bool m_resolutionHasBeenSet;
+
+                    /**
+                     * 是否内网
+                     */
+                    bool m_isInternal;
+                    bool m_isInternalHasBeenSet;
 
                 };
             }

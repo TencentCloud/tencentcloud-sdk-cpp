@@ -25,7 +25,8 @@ using namespace std;
 DescribeRecordPlaybackUrlRequest::DescribeRecordPlaybackUrlRequest() :
     m_channelIdHasBeenSet(false),
     m_startTimeHasBeenSet(false),
-    m_endTimeHasBeenSet(false)
+    m_endTimeHasBeenSet(false),
+    m_isInternalHasBeenSet(false)
 {
 }
 
@@ -58,6 +59,14 @@ string DescribeRecordPlaybackUrlRequest::ToJsonString() const
         string key = "EndTime";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_endTime, allocator);
+    }
+
+    if (m_isInternalHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "IsInternal";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_isInternal, allocator);
     }
 
 
@@ -114,6 +123,22 @@ void DescribeRecordPlaybackUrlRequest::SetEndTime(const uint64_t& _endTime)
 bool DescribeRecordPlaybackUrlRequest::EndTimeHasBeenSet() const
 {
     return m_endTimeHasBeenSet;
+}
+
+bool DescribeRecordPlaybackUrlRequest::GetIsInternal() const
+{
+    return m_isInternal;
+}
+
+void DescribeRecordPlaybackUrlRequest::SetIsInternal(const bool& _isInternal)
+{
+    m_isInternal = _isInternal;
+    m_isInternalHasBeenSet = true;
+}
+
+bool DescribeRecordPlaybackUrlRequest::IsInternalHasBeenSet() const
+{
+    return m_isInternalHasBeenSet;
 }
 
 

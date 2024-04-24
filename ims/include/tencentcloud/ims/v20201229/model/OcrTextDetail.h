@@ -69,15 +69,15 @@ namespace TencentCloud
                     bool TextHasBeenSet() const;
 
                     /**
-                     * 获取该字段用于返回检测结果所对应的恶意标签。<br>返回值：**Normal**：正常，**Porn**：色情，**Abuse**：谩骂，**Ad**：广告，**Custom**：自定义违规；以及其他令人反感、不安全或不适宜的内容类型。
-                     * @return Label 该字段用于返回检测结果所对应的恶意标签。<br>返回值：**Normal**：正常，**Porn**：色情，**Abuse**：谩骂，**Ad**：广告，**Custom**：自定义违规；以及其他令人反感、不安全或不适宜的内容类型。
+                     * 获取该字段用于返回检测结果所对应的恶意标签。<br>返回值：**Normal**：正常，**Porn**：色情，**Abuse**：谩骂，**Ad**：广告；以及其他令人反感、不安全或不适宜的内容类型。
+                     * @return Label 该字段用于返回检测结果所对应的恶意标签。<br>返回值：**Normal**：正常，**Porn**：色情，**Abuse**：谩骂，**Ad**：广告；以及其他令人反感、不安全或不适宜的内容类型。
                      * 
                      */
                     std::string GetLabel() const;
 
                     /**
-                     * 设置该字段用于返回检测结果所对应的恶意标签。<br>返回值：**Normal**：正常，**Porn**：色情，**Abuse**：谩骂，**Ad**：广告，**Custom**：自定义违规；以及其他令人反感、不安全或不适宜的内容类型。
-                     * @param _label 该字段用于返回检测结果所对应的恶意标签。<br>返回值：**Normal**：正常，**Porn**：色情，**Abuse**：谩骂，**Ad**：广告，**Custom**：自定义违规；以及其他令人反感、不安全或不适宜的内容类型。
+                     * 设置该字段用于返回检测结果所对应的恶意标签。<br>返回值：**Normal**：正常，**Porn**：色情，**Abuse**：谩骂，**Ad**：广告；以及其他令人反感、不安全或不适宜的内容类型。
+                     * @param _label 该字段用于返回检测结果所对应的恶意标签。<br>返回值：**Normal**：正常，**Porn**：色情，**Abuse**：谩骂，**Ad**：广告；以及其他令人反感、不安全或不适宜的内容类型。
                      * 
                      */
                     void SetLabel(const std::string& _label);
@@ -90,15 +90,15 @@ namespace TencentCloud
                     bool LabelHasBeenSet() const;
 
                     /**
-                     * 获取该字段**仅当Label为Custom自定义关键词时有效**，用于返回自定义库的ID，以方便自定义库管理和配置。
-                     * @return LibId 该字段**仅当Label为Custom自定义关键词时有效**，用于返回自定义库的ID，以方便自定义库管理和配置。
+                     * 获取该字段用于返回自定义库的ID，以方便自定义库管理和配置。
+                     * @return LibId 该字段用于返回自定义库的ID，以方便自定义库管理和配置。
                      * 
                      */
                     std::string GetLibId() const;
 
                     /**
-                     * 设置该字段**仅当Label为Custom自定义关键词时有效**，用于返回自定义库的ID，以方便自定义库管理和配置。
-                     * @param _libId 该字段**仅当Label为Custom自定义关键词时有效**，用于返回自定义库的ID，以方便自定义库管理和配置。
+                     * 设置该字段用于返回自定义库的ID，以方便自定义库管理和配置。
+                     * @param _libId 该字段用于返回自定义库的ID，以方便自定义库管理和配置。
                      * 
                      */
                     void SetLibId(const std::string& _libId);
@@ -111,15 +111,15 @@ namespace TencentCloud
                     bool LibIdHasBeenSet() const;
 
                     /**
-                     * 获取该字段**仅当Label为Custom自定义关键词时有效**，用于返回自定义库的名称，以方便自定义库管理和配置。
-                     * @return LibName 该字段**仅当Label为Custom自定义关键词时有效**，用于返回自定义库的名称，以方便自定义库管理和配置。
+                     * 获取该字段用于返回自定义库的名称，以方便自定义库管理和配置。
+                     * @return LibName 该字段用于返回自定义库的名称，以方便自定义库管理和配置。
                      * 
                      */
                     std::string GetLibName() const;
 
                     /**
-                     * 设置该字段**仅当Label为Custom自定义关键词时有效**，用于返回自定义库的名称，以方便自定义库管理和配置。
-                     * @param _libName 该字段**仅当Label为Custom自定义关键词时有效**，用于返回自定义库的名称，以方便自定义库管理和配置。
+                     * 设置该字段用于返回自定义库的名称，以方便自定义库管理和配置。
+                     * @param _libName 该字段用于返回自定义库的名称，以方便自定义库管理和配置。
                      * 
                      */
                     void SetLibName(const std::string& _libName);
@@ -245,19 +245,19 @@ namespace TencentCloud
                     bool m_textHasBeenSet;
 
                     /**
-                     * 该字段用于返回检测结果所对应的恶意标签。<br>返回值：**Normal**：正常，**Porn**：色情，**Abuse**：谩骂，**Ad**：广告，**Custom**：自定义违规；以及其他令人反感、不安全或不适宜的内容类型。
+                     * 该字段用于返回检测结果所对应的恶意标签。<br>返回值：**Normal**：正常，**Porn**：色情，**Abuse**：谩骂，**Ad**：广告；以及其他令人反感、不安全或不适宜的内容类型。
                      */
                     std::string m_label;
                     bool m_labelHasBeenSet;
 
                     /**
-                     * 该字段**仅当Label为Custom自定义关键词时有效**，用于返回自定义库的ID，以方便自定义库管理和配置。
+                     * 该字段用于返回自定义库的ID，以方便自定义库管理和配置。
                      */
                     std::string m_libId;
                     bool m_libIdHasBeenSet;
 
                     /**
-                     * 该字段**仅当Label为Custom自定义关键词时有效**，用于返回自定义库的名称，以方便自定义库管理和配置。
+                     * 该字段用于返回自定义库的名称，以方便自定义库管理和配置。
                      */
                     std::string m_libName;
                     bool m_libNameHasBeenSet;

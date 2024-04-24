@@ -29,6 +29,8 @@
 #include <tencentcloud/apm/v20210622/model/DescribeApmAgentResponse.h>
 #include <tencentcloud/apm/v20210622/model/DescribeApmInstancesRequest.h>
 #include <tencentcloud/apm/v20210622/model/DescribeApmInstancesResponse.h>
+#include <tencentcloud/apm/v20210622/model/DescribeGeneralApmApplicationConfigRequest.h>
+#include <tencentcloud/apm/v20210622/model/DescribeGeneralApmApplicationConfigResponse.h>
 #include <tencentcloud/apm/v20210622/model/DescribeGeneralMetricDataRequest.h>
 #include <tencentcloud/apm/v20210622/model/DescribeGeneralMetricDataResponse.h>
 #include <tencentcloud/apm/v20210622/model/DescribeGeneralSpanListRequest.h>
@@ -37,8 +39,12 @@
 #include <tencentcloud/apm/v20210622/model/DescribeMetricRecordsResponse.h>
 #include <tencentcloud/apm/v20210622/model/DescribeServiceOverviewRequest.h>
 #include <tencentcloud/apm/v20210622/model/DescribeServiceOverviewResponse.h>
+#include <tencentcloud/apm/v20210622/model/DescribeTagValuesRequest.h>
+#include <tencentcloud/apm/v20210622/model/DescribeTagValuesResponse.h>
 #include <tencentcloud/apm/v20210622/model/ModifyApmInstanceRequest.h>
 #include <tencentcloud/apm/v20210622/model/ModifyApmInstanceResponse.h>
+#include <tencentcloud/apm/v20210622/model/ModifyGeneralApmApplicationConfigRequest.h>
+#include <tencentcloud/apm/v20210622/model/ModifyGeneralApmApplicationConfigResponse.h>
 #include <tencentcloud/apm/v20210622/model/TerminateApmInstanceRequest.h>
 #include <tencentcloud/apm/v20210622/model/TerminateApmInstanceResponse.h>
 
@@ -64,6 +70,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeApmInstancesResponse> DescribeApmInstancesOutcome;
                 typedef std::future<DescribeApmInstancesOutcome> DescribeApmInstancesOutcomeCallable;
                 typedef std::function<void(const ApmClient*, const Model::DescribeApmInstancesRequest&, DescribeApmInstancesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeApmInstancesAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeGeneralApmApplicationConfigResponse> DescribeGeneralApmApplicationConfigOutcome;
+                typedef std::future<DescribeGeneralApmApplicationConfigOutcome> DescribeGeneralApmApplicationConfigOutcomeCallable;
+                typedef std::function<void(const ApmClient*, const Model::DescribeGeneralApmApplicationConfigRequest&, DescribeGeneralApmApplicationConfigOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeGeneralApmApplicationConfigAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeGeneralMetricDataResponse> DescribeGeneralMetricDataOutcome;
                 typedef std::future<DescribeGeneralMetricDataOutcome> DescribeGeneralMetricDataOutcomeCallable;
                 typedef std::function<void(const ApmClient*, const Model::DescribeGeneralMetricDataRequest&, DescribeGeneralMetricDataOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeGeneralMetricDataAsyncHandler;
@@ -76,9 +85,15 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeServiceOverviewResponse> DescribeServiceOverviewOutcome;
                 typedef std::future<DescribeServiceOverviewOutcome> DescribeServiceOverviewOutcomeCallable;
                 typedef std::function<void(const ApmClient*, const Model::DescribeServiceOverviewRequest&, DescribeServiceOverviewOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeServiceOverviewAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeTagValuesResponse> DescribeTagValuesOutcome;
+                typedef std::future<DescribeTagValuesOutcome> DescribeTagValuesOutcomeCallable;
+                typedef std::function<void(const ApmClient*, const Model::DescribeTagValuesRequest&, DescribeTagValuesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeTagValuesAsyncHandler;
                 typedef Outcome<Core::Error, Model::ModifyApmInstanceResponse> ModifyApmInstanceOutcome;
                 typedef std::future<ModifyApmInstanceOutcome> ModifyApmInstanceOutcomeCallable;
                 typedef std::function<void(const ApmClient*, const Model::ModifyApmInstanceRequest&, ModifyApmInstanceOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyApmInstanceAsyncHandler;
+                typedef Outcome<Core::Error, Model::ModifyGeneralApmApplicationConfigResponse> ModifyGeneralApmApplicationConfigOutcome;
+                typedef std::future<ModifyGeneralApmApplicationConfigOutcome> ModifyGeneralApmApplicationConfigOutcomeCallable;
+                typedef std::function<void(const ApmClient*, const Model::ModifyGeneralApmApplicationConfigRequest&, ModifyGeneralApmApplicationConfigOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyGeneralApmApplicationConfigAsyncHandler;
                 typedef Outcome<Core::Error, Model::TerminateApmInstanceResponse> TerminateApmInstanceOutcome;
                 typedef std::future<TerminateApmInstanceOutcome> TerminateApmInstanceOutcomeCallable;
                 typedef std::function<void(const ApmClient*, const Model::TerminateApmInstanceRequest&, TerminateApmInstanceOutcome, const std::shared_ptr<const AsyncCallerContext>&)> TerminateApmInstanceAsyncHandler;
@@ -111,6 +126,15 @@ namespace TencentCloud
                 DescribeApmInstancesOutcome DescribeApmInstances(const Model::DescribeApmInstancesRequest &request);
                 void DescribeApmInstancesAsync(const Model::DescribeApmInstancesRequest& request, const DescribeApmInstancesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DescribeApmInstancesOutcomeCallable DescribeApmInstancesCallable(const Model::DescribeApmInstancesRequest& request);
+
+                /**
+                 *查询应用配置信息
+                 * @param req DescribeGeneralApmApplicationConfigRequest
+                 * @return DescribeGeneralApmApplicationConfigOutcome
+                 */
+                DescribeGeneralApmApplicationConfigOutcome DescribeGeneralApmApplicationConfig(const Model::DescribeGeneralApmApplicationConfigRequest &request);
+                void DescribeGeneralApmApplicationConfigAsync(const Model::DescribeGeneralApmApplicationConfigRequest& request, const DescribeGeneralApmApplicationConfigAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeGeneralApmApplicationConfigOutcomeCallable DescribeGeneralApmApplicationConfigCallable(const Model::DescribeGeneralApmApplicationConfigRequest& request);
 
                 /**
                  *获取指标数据通用接口。用户根据需要上送请求参数，返回对应的指标数据。
@@ -150,6 +174,15 @@ namespace TencentCloud
                 DescribeServiceOverviewOutcomeCallable DescribeServiceOverviewCallable(const Model::DescribeServiceOverviewRequest& request);
 
                 /**
+                 *根据维度名和过滤条件，查询维度数据.
+                 * @param req DescribeTagValuesRequest
+                 * @return DescribeTagValuesOutcome
+                 */
+                DescribeTagValuesOutcome DescribeTagValues(const Model::DescribeTagValuesRequest &request);
+                void DescribeTagValuesAsync(const Model::DescribeTagValuesRequest& request, const DescribeTagValuesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeTagValuesOutcomeCallable DescribeTagValuesCallable(const Model::DescribeTagValuesRequest& request);
+
+                /**
                  *修改APM实例接口
                  * @param req ModifyApmInstanceRequest
                  * @return ModifyApmInstanceOutcome
@@ -157,6 +190,15 @@ namespace TencentCloud
                 ModifyApmInstanceOutcome ModifyApmInstance(const Model::ModifyApmInstanceRequest &request);
                 void ModifyApmInstanceAsync(const Model::ModifyApmInstanceRequest& request, const ModifyApmInstanceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 ModifyApmInstanceOutcomeCallable ModifyApmInstanceCallable(const Model::ModifyApmInstanceRequest& request);
+
+                /**
+                 *对外开放的openApi，客户可以灵活的指定需要修改的字段，再加入需要修改的服务列表.
+                 * @param req ModifyGeneralApmApplicationConfigRequest
+                 * @return ModifyGeneralApmApplicationConfigOutcome
+                 */
+                ModifyGeneralApmApplicationConfigOutcome ModifyGeneralApmApplicationConfig(const Model::ModifyGeneralApmApplicationConfigRequest &request);
+                void ModifyGeneralApmApplicationConfigAsync(const Model::ModifyGeneralApmApplicationConfigRequest& request, const ModifyGeneralApmApplicationConfigAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                ModifyGeneralApmApplicationConfigOutcomeCallable ModifyGeneralApmApplicationConfigCallable(const Model::ModifyGeneralApmApplicationConfigRequest& request);
 
                 /**
                  *apm销毁实例

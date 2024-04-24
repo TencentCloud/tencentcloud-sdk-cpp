@@ -169,6 +169,49 @@ ApmClient::DescribeApmInstancesOutcomeCallable ApmClient::DescribeApmInstancesCa
     return task->get_future();
 }
 
+ApmClient::DescribeGeneralApmApplicationConfigOutcome ApmClient::DescribeGeneralApmApplicationConfig(const DescribeGeneralApmApplicationConfigRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeGeneralApmApplicationConfig");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeGeneralApmApplicationConfigResponse rsp = DescribeGeneralApmApplicationConfigResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeGeneralApmApplicationConfigOutcome(rsp);
+        else
+            return DescribeGeneralApmApplicationConfigOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeGeneralApmApplicationConfigOutcome(outcome.GetError());
+    }
+}
+
+void ApmClient::DescribeGeneralApmApplicationConfigAsync(const DescribeGeneralApmApplicationConfigRequest& request, const DescribeGeneralApmApplicationConfigAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeGeneralApmApplicationConfig(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+ApmClient::DescribeGeneralApmApplicationConfigOutcomeCallable ApmClient::DescribeGeneralApmApplicationConfigCallable(const DescribeGeneralApmApplicationConfigRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeGeneralApmApplicationConfigOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeGeneralApmApplicationConfig(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 ApmClient::DescribeGeneralMetricDataOutcome ApmClient::DescribeGeneralMetricData(const DescribeGeneralMetricDataRequest &request)
 {
     auto outcome = MakeRequest(request, "DescribeGeneralMetricData");
@@ -341,6 +384,49 @@ ApmClient::DescribeServiceOverviewOutcomeCallable ApmClient::DescribeServiceOver
     return task->get_future();
 }
 
+ApmClient::DescribeTagValuesOutcome ApmClient::DescribeTagValues(const DescribeTagValuesRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeTagValues");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeTagValuesResponse rsp = DescribeTagValuesResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeTagValuesOutcome(rsp);
+        else
+            return DescribeTagValuesOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeTagValuesOutcome(outcome.GetError());
+    }
+}
+
+void ApmClient::DescribeTagValuesAsync(const DescribeTagValuesRequest& request, const DescribeTagValuesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeTagValues(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+ApmClient::DescribeTagValuesOutcomeCallable ApmClient::DescribeTagValuesCallable(const DescribeTagValuesRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeTagValuesOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeTagValues(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 ApmClient::ModifyApmInstanceOutcome ApmClient::ModifyApmInstance(const ModifyApmInstanceRequest &request)
 {
     auto outcome = MakeRequest(request, "ModifyApmInstance");
@@ -377,6 +463,49 @@ ApmClient::ModifyApmInstanceOutcomeCallable ApmClient::ModifyApmInstanceCallable
         [this, request]()
         {
             return this->ModifyApmInstance(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+ApmClient::ModifyGeneralApmApplicationConfigOutcome ApmClient::ModifyGeneralApmApplicationConfig(const ModifyGeneralApmApplicationConfigRequest &request)
+{
+    auto outcome = MakeRequest(request, "ModifyGeneralApmApplicationConfig");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ModifyGeneralApmApplicationConfigResponse rsp = ModifyGeneralApmApplicationConfigResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ModifyGeneralApmApplicationConfigOutcome(rsp);
+        else
+            return ModifyGeneralApmApplicationConfigOutcome(o.GetError());
+    }
+    else
+    {
+        return ModifyGeneralApmApplicationConfigOutcome(outcome.GetError());
+    }
+}
+
+void ApmClient::ModifyGeneralApmApplicationConfigAsync(const ModifyGeneralApmApplicationConfigRequest& request, const ModifyGeneralApmApplicationConfigAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->ModifyGeneralApmApplicationConfig(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+ApmClient::ModifyGeneralApmApplicationConfigOutcomeCallable ApmClient::ModifyGeneralApmApplicationConfigCallable(const ModifyGeneralApmApplicationConfigRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<ModifyGeneralApmApplicationConfigOutcome()>>(
+        [this, request]()
+        {
+            return this->ModifyGeneralApmApplicationConfig(request);
         }
     );
 

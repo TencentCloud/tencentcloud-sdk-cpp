@@ -23,6 +23,7 @@
 #include <tencentcloud/core/AbstractModel.h>
 #include <tencentcloud/essbasic/v20210526/model/Agent.h>
 #include <tencentcloud/essbasic/v20210526/model/UserInfo.h>
+#include <tencentcloud/essbasic/v20210526/model/FlowBatchUrlInfo.h>
 
 
 namespace TencentCloud
@@ -422,6 +423,27 @@ namespace TencentCloud
                      */
                     bool JumpToDetailHasBeenSet() const;
 
+                    /**
+                     * 获取批量签署合同相关信息，指定合同和签署方的信息，用于补充动态签署人。	
+                     * @return FlowBatchUrlInfo 批量签署合同相关信息，指定合同和签署方的信息，用于补充动态签署人。	
+                     * 
+                     */
+                    FlowBatchUrlInfo GetFlowBatchUrlInfo() const;
+
+                    /**
+                     * 设置批量签署合同相关信息，指定合同和签署方的信息，用于补充动态签署人。	
+                     * @param _flowBatchUrlInfo 批量签署合同相关信息，指定合同和签署方的信息，用于补充动态签署人。	
+                     * 
+                     */
+                    void SetFlowBatchUrlInfo(const FlowBatchUrlInfo& _flowBatchUrlInfo);
+
+                    /**
+                     * 判断参数 FlowBatchUrlInfo 是否已赋值
+                     * @return FlowBatchUrlInfo 是否已赋值
+                     * 
+                     */
+                    bool FlowBatchUrlInfoHasBeenSet() const;
+
                 private:
 
                     /**
@@ -525,6 +547,12 @@ namespace TencentCloud
                      */
                     bool m_jumpToDetail;
                     bool m_jumpToDetailHasBeenSet;
+
+                    /**
+                     * 批量签署合同相关信息，指定合同和签署方的信息，用于补充动态签署人。	
+                     */
+                    FlowBatchUrlInfo m_flowBatchUrlInfo;
+                    bool m_flowBatchUrlInfoHasBeenSet;
 
                 };
             }

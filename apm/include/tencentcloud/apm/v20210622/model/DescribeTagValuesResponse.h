@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef TENCENTCLOUD_LKE_V20231130_MODEL_QUERYPARSEDOCRESULTREQUEST_H_
-#define TENCENTCLOUD_LKE_V20231130_MODEL_QUERYPARSEDOCRESULTREQUEST_H_
+#ifndef TENCENTCLOUD_APM_V20210622_MODEL_DESCRIBETAGVALUESRESPONSE_H_
+#define TENCENTCLOUD_APM_V20210622_MODEL_DESCRIBETAGVALUESRESPONSE_H_
 
 #include <string>
 #include <vector>
@@ -25,51 +25,45 @@
 
 namespace TencentCloud
 {
-    namespace Lke
+    namespace Apm
     {
-        namespace V20231130
+        namespace V20210622
         {
             namespace Model
             {
                 /**
-                * QueryParseDocResult请求参数结构体
+                * DescribeTagValues返回参数结构体
                 */
-                class QueryParseDocResultRequest : public AbstractModel
+                class DescribeTagValuesResponse : public AbstractModel
                 {
                 public:
-                    QueryParseDocResultRequest();
-                    ~QueryParseDocResultRequest() = default;
+                    DescribeTagValuesResponse();
+                    ~DescribeTagValuesResponse() = default;
+                    CoreInternalOutcome Deserialize(const std::string &payload);
                     std::string ToJsonString() const;
 
 
                     /**
-                     * 获取任务ID
-                     * @return TaskId 任务ID
+                     * 获取维度值列表
+                     * @return Values 维度值列表
                      * 
                      */
-                    std::string GetTaskId() const;
+                    std::vector<std::string> GetValues() const;
 
                     /**
-                     * 设置任务ID
-                     * @param _taskId 任务ID
+                     * 判断参数 Values 是否已赋值
+                     * @return Values 是否已赋值
                      * 
                      */
-                    void SetTaskId(const std::string& _taskId);
-
-                    /**
-                     * 判断参数 TaskId 是否已赋值
-                     * @return TaskId 是否已赋值
-                     * 
-                     */
-                    bool TaskIdHasBeenSet() const;
+                    bool ValuesHasBeenSet() const;
 
                 private:
 
                     /**
-                     * 任务ID
+                     * 维度值列表
                      */
-                    std::string m_taskId;
-                    bool m_taskIdHasBeenSet;
+                    std::vector<std::string> m_values;
+                    bool m_valuesHasBeenSet;
 
                 };
             }
@@ -77,4 +71,4 @@ namespace TencentCloud
     }
 }
 
-#endif // !TENCENTCLOUD_LKE_V20231130_MODEL_QUERYPARSEDOCRESULTREQUEST_H_
+#endif // !TENCENTCLOUD_APM_V20210622_MODEL_DESCRIBETAGVALUESRESPONSE_H_

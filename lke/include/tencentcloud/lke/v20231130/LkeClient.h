@@ -149,10 +149,6 @@
 #include <tencentcloud/lke/v20231130/model/ModifyQACateResponse.h>
 #include <tencentcloud/lke/v20231130/model/ModifyRejectedQuestionRequest.h>
 #include <tencentcloud/lke/v20231130/model/ModifyRejectedQuestionResponse.h>
-#include <tencentcloud/lke/v20231130/model/ParseDocRequest.h>
-#include <tencentcloud/lke/v20231130/model/ParseDocResponse.h>
-#include <tencentcloud/lke/v20231130/model/QueryParseDocResultRequest.h>
-#include <tencentcloud/lke/v20231130/model/QueryParseDocResultResponse.h>
 #include <tencentcloud/lke/v20231130/model/QueryRewriteRequest.h>
 #include <tencentcloud/lke/v20231130/model/QueryRewriteResponse.h>
 #include <tencentcloud/lke/v20231130/model/RateMsgRecordRequest.h>
@@ -376,12 +372,6 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::ModifyRejectedQuestionResponse> ModifyRejectedQuestionOutcome;
                 typedef std::future<ModifyRejectedQuestionOutcome> ModifyRejectedQuestionOutcomeCallable;
                 typedef std::function<void(const LkeClient*, const Model::ModifyRejectedQuestionRequest&, ModifyRejectedQuestionOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyRejectedQuestionAsyncHandler;
-                typedef Outcome<Core::Error, Model::ParseDocResponse> ParseDocOutcome;
-                typedef std::future<ParseDocOutcome> ParseDocOutcomeCallable;
-                typedef std::function<void(const LkeClient*, const Model::ParseDocRequest&, ParseDocOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ParseDocAsyncHandler;
-                typedef Outcome<Core::Error, Model::QueryParseDocResultResponse> QueryParseDocResultOutcome;
-                typedef std::future<QueryParseDocResultOutcome> QueryParseDocResultOutcomeCallable;
-                typedef std::function<void(const LkeClient*, const Model::QueryParseDocResultRequest&, QueryParseDocResultOutcome, const std::shared_ptr<const AsyncCallerContext>&)> QueryParseDocResultAsyncHandler;
                 typedef Outcome<Core::Error, Model::QueryRewriteResponse> QueryRewriteOutcome;
                 typedef std::future<QueryRewriteOutcome> QueryRewriteOutcomeCallable;
                 typedef std::function<void(const LkeClient*, const Model::QueryRewriteRequest&, QueryRewriteOutcome, const std::shared_ptr<const AsyncCallerContext>&)> QueryRewriteAsyncHandler;
@@ -982,24 +972,6 @@ namespace TencentCloud
                 ModifyRejectedQuestionOutcome ModifyRejectedQuestion(const Model::ModifyRejectedQuestionRequest &request);
                 void ModifyRejectedQuestionAsync(const Model::ModifyRejectedQuestionRequest& request, const ModifyRejectedQuestionAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 ModifyRejectedQuestionOutcomeCallable ModifyRejectedQuestionCallable(const Model::ModifyRejectedQuestionRequest& request);
-
-                /**
-                 *解析拆分文件
-                 * @param req ParseDocRequest
-                 * @return ParseDocOutcome
-                 */
-                ParseDocOutcome ParseDoc(const Model::ParseDocRequest &request);
-                void ParseDocAsync(const Model::ParseDocRequest& request, const ParseDocAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
-                ParseDocOutcomeCallable ParseDocCallable(const Model::ParseDocRequest& request);
-
-                /**
-                 *查询文件解析结果
-                 * @param req QueryParseDocResultRequest
-                 * @return QueryParseDocResultOutcome
-                 */
-                QueryParseDocResultOutcome QueryParseDocResult(const Model::QueryParseDocResultRequest &request);
-                void QueryParseDocResultAsync(const Model::QueryParseDocResultRequest& request, const QueryParseDocResultAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
-                QueryParseDocResultOutcomeCallable QueryParseDocResultCallable(const Model::QueryParseDocResultRequest& request);
 
                 /**
                  *多轮改写

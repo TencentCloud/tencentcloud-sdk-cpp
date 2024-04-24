@@ -108,15 +108,15 @@ namespace TencentCloud
                     bool FileContentHasBeenSet() const;
 
                     /**
-                     * 获取该字段表示待检测图片文件的访问链接，图片支持PNG、JPG、JPEG、BMP、GIF、WEBP格式，**大小不超过5MB**，建议**分辨率不低于256x256**；图片下载时间限制为3秒，超过则会返回下载超时；由于网络安全策略，**送审带重定向的链接，可能引起下载失败**，请尽量避免，比如Http返回302状态码的链接，可能导致接口返回ResourceUnavailable.ImageDownloadError。<br>备注：**该字段与FileContent必须选择输入其中一个**。
-                     * @return FileUrl 该字段表示待检测图片文件的访问链接，图片支持PNG、JPG、JPEG、BMP、GIF、WEBP格式，**大小不超过5MB**，建议**分辨率不低于256x256**；图片下载时间限制为3秒，超过则会返回下载超时；由于网络安全策略，**送审带重定向的链接，可能引起下载失败**，请尽量避免，比如Http返回302状态码的链接，可能导致接口返回ResourceUnavailable.ImageDownloadError。<br>备注：**该字段与FileContent必须选择输入其中一个**。
+                     * 获取该字段表示待检测图片文件的访问链接。图片支持PNG、JPG、JPEG、BMP、GIF、WEBP格式，且**大小不得超过5MB**，建议**分辨率不低于256x256**。**图片下载时间限制为3秒，超时将进行一次重试，若再次失败，则会返回下载超时**。由于网络安全策略，**送审带重定向的链接**可能引起下载失败，请尽量避免使用返回302或其他非200状态码的HTTP链接，会导致接口返回 ResourceUnavailable.ImageDownloadError 错误。<br>备注：该字段与FileContent必须选择输入其中一个。
+                     * @return FileUrl 该字段表示待检测图片文件的访问链接。图片支持PNG、JPG、JPEG、BMP、GIF、WEBP格式，且**大小不得超过5MB**，建议**分辨率不低于256x256**。**图片下载时间限制为3秒，超时将进行一次重试，若再次失败，则会返回下载超时**。由于网络安全策略，**送审带重定向的链接**可能引起下载失败，请尽量避免使用返回302或其他非200状态码的HTTP链接，会导致接口返回 ResourceUnavailable.ImageDownloadError 错误。<br>备注：该字段与FileContent必须选择输入其中一个。
                      * 
                      */
                     std::string GetFileUrl() const;
 
                     /**
-                     * 设置该字段表示待检测图片文件的访问链接，图片支持PNG、JPG、JPEG、BMP、GIF、WEBP格式，**大小不超过5MB**，建议**分辨率不低于256x256**；图片下载时间限制为3秒，超过则会返回下载超时；由于网络安全策略，**送审带重定向的链接，可能引起下载失败**，请尽量避免，比如Http返回302状态码的链接，可能导致接口返回ResourceUnavailable.ImageDownloadError。<br>备注：**该字段与FileContent必须选择输入其中一个**。
-                     * @param _fileUrl 该字段表示待检测图片文件的访问链接，图片支持PNG、JPG、JPEG、BMP、GIF、WEBP格式，**大小不超过5MB**，建议**分辨率不低于256x256**；图片下载时间限制为3秒，超过则会返回下载超时；由于网络安全策略，**送审带重定向的链接，可能引起下载失败**，请尽量避免，比如Http返回302状态码的链接，可能导致接口返回ResourceUnavailable.ImageDownloadError。<br>备注：**该字段与FileContent必须选择输入其中一个**。
+                     * 设置该字段表示待检测图片文件的访问链接。图片支持PNG、JPG、JPEG、BMP、GIF、WEBP格式，且**大小不得超过5MB**，建议**分辨率不低于256x256**。**图片下载时间限制为3秒，超时将进行一次重试，若再次失败，则会返回下载超时**。由于网络安全策略，**送审带重定向的链接**可能引起下载失败，请尽量避免使用返回302或其他非200状态码的HTTP链接，会导致接口返回 ResourceUnavailable.ImageDownloadError 错误。<br>备注：该字段与FileContent必须选择输入其中一个。
+                     * @param _fileUrl 该字段表示待检测图片文件的访问链接。图片支持PNG、JPG、JPEG、BMP、GIF、WEBP格式，且**大小不得超过5MB**，建议**分辨率不低于256x256**。**图片下载时间限制为3秒，超时将进行一次重试，若再次失败，则会返回下载超时**。由于网络安全策略，**送审带重定向的链接**可能引起下载失败，请尽量避免使用返回302或其他非200状态码的HTTP链接，会导致接口返回 ResourceUnavailable.ImageDownloadError 错误。<br>备注：该字段与FileContent必须选择输入其中一个。
                      * 
                      */
                     void SetFileUrl(const std::string& _fileUrl);
@@ -233,7 +233,7 @@ namespace TencentCloud
                     bool m_fileContentHasBeenSet;
 
                     /**
-                     * 该字段表示待检测图片文件的访问链接，图片支持PNG、JPG、JPEG、BMP、GIF、WEBP格式，**大小不超过5MB**，建议**分辨率不低于256x256**；图片下载时间限制为3秒，超过则会返回下载超时；由于网络安全策略，**送审带重定向的链接，可能引起下载失败**，请尽量避免，比如Http返回302状态码的链接，可能导致接口返回ResourceUnavailable.ImageDownloadError。<br>备注：**该字段与FileContent必须选择输入其中一个**。
+                     * 该字段表示待检测图片文件的访问链接。图片支持PNG、JPG、JPEG、BMP、GIF、WEBP格式，且**大小不得超过5MB**，建议**分辨率不低于256x256**。**图片下载时间限制为3秒，超时将进行一次重试，若再次失败，则会返回下载超时**。由于网络安全策略，**送审带重定向的链接**可能引起下载失败，请尽量避免使用返回302或其他非200状态码的HTTP链接，会导致接口返回 ResourceUnavailable.ImageDownloadError 错误。<br>备注：该字段与FileContent必须选择输入其中一个。
                      */
                     std::string m_fileUrl;
                     bool m_fileUrlHasBeenSet;

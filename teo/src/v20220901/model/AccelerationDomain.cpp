@@ -26,6 +26,7 @@ AccelerationDomain::AccelerationDomain() :
     m_domainStatusHasBeenSet(false),
     m_originDetailHasBeenSet(false),
     m_originProtocolHasBeenSet(false),
+    m_certificateHasBeenSet(false),
     m_httpOriginPortHasBeenSet(false),
     m_httpsOriginPortHasBeenSet(false),
     m_iPv6StatusHasBeenSet(false),
@@ -33,8 +34,7 @@ AccelerationDomain::AccelerationDomain() :
     m_identificationStatusHasBeenSet(false),
     m_createdOnHasBeenSet(false),
     m_modifiedOnHasBeenSet(false),
-    m_ownershipVerificationHasBeenSet(false),
-    m_certificateHasBeenSet(false)
+    m_ownershipVerificationHasBeenSet(false)
 {
 }
 
@@ -98,6 +98,23 @@ CoreInternalOutcome AccelerationDomain::Deserialize(const rapidjson::Value &valu
         }
         m_originProtocol = string(value["OriginProtocol"].GetString());
         m_originProtocolHasBeenSet = true;
+    }
+
+    if (value.HasMember("Certificate") && !value["Certificate"].IsNull())
+    {
+        if (!value["Certificate"].IsObject())
+        {
+            return CoreInternalOutcome(Core::Error("response `AccelerationDomain.Certificate` is not object type").SetRequestId(requestId));
+        }
+
+        CoreInternalOutcome outcome = m_certificate.Deserialize(value["Certificate"]);
+        if (!outcome.IsSuccess())
+        {
+            outcome.GetError().SetRequestId(requestId);
+            return outcome;
+        }
+
+        m_certificateHasBeenSet = true;
     }
 
     if (value.HasMember("HttpOriginPort") && !value["HttpOriginPort"].IsNull())
@@ -187,23 +204,6 @@ CoreInternalOutcome AccelerationDomain::Deserialize(const rapidjson::Value &valu
         m_ownershipVerificationHasBeenSet = true;
     }
 
-    if (value.HasMember("Certificate") && !value["Certificate"].IsNull())
-    {
-        if (!value["Certificate"].IsObject())
-        {
-            return CoreInternalOutcome(Core::Error("response `AccelerationDomain.Certificate` is not object type").SetRequestId(requestId));
-        }
-
-        CoreInternalOutcome outcome = m_certificate.Deserialize(value["Certificate"]);
-        if (!outcome.IsSuccess())
-        {
-            outcome.GetError().SetRequestId(requestId);
-            return outcome;
-        }
-
-        m_certificateHasBeenSet = true;
-    }
-
 
     return CoreInternalOutcome(true);
 }
@@ -250,6 +250,15 @@ void AccelerationDomain::ToJsonObject(rapidjson::Value &value, rapidjson::Docume
         string key = "OriginProtocol";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_originProtocol.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_certificateHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Certificate";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_certificate.ToJsonObject(value[key.c_str()], allocator);
     }
 
     if (m_httpOriginPortHasBeenSet)
@@ -315,15 +324,6 @@ void AccelerationDomain::ToJsonObject(rapidjson::Value &value, rapidjson::Docume
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
         m_ownershipVerification.ToJsonObject(value[key.c_str()], allocator);
-    }
-
-    if (m_certificateHasBeenSet)
-    {
-        rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "Certificate";
-        iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
-        m_certificate.ToJsonObject(value[key.c_str()], allocator);
     }
 
 }
@@ -407,6 +407,22 @@ void AccelerationDomain::SetOriginProtocol(const string& _originProtocol)
 bool AccelerationDomain::OriginProtocolHasBeenSet() const
 {
     return m_originProtocolHasBeenSet;
+}
+
+AccelerationDomainCertificate AccelerationDomain::GetCertificate() const
+{
+    return m_certificate;
+}
+
+void AccelerationDomain::SetCertificate(const AccelerationDomainCertificate& _certificate)
+{
+    m_certificate = _certificate;
+    m_certificateHasBeenSet = true;
+}
+
+bool AccelerationDomain::CertificateHasBeenSet() const
+{
+    return m_certificateHasBeenSet;
 }
 
 uint64_t AccelerationDomain::GetHttpOriginPort() const
@@ -535,21 +551,5 @@ void AccelerationDomain::SetOwnershipVerification(const OwnershipVerification& _
 bool AccelerationDomain::OwnershipVerificationHasBeenSet() const
 {
     return m_ownershipVerificationHasBeenSet;
-}
-
-AccelerationDomainCertificate AccelerationDomain::GetCertificate() const
-{
-    return m_certificate;
-}
-
-void AccelerationDomain::SetCertificate(const AccelerationDomainCertificate& _certificate)
-{
-    m_certificate = _certificate;
-    m_certificateHasBeenSet = true;
-}
-
-bool AccelerationDomain::CertificateHasBeenSet() const
-{
-    return m_certificateHasBeenSet;
 }
 

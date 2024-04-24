@@ -305,6 +305,7 @@ set(tione_public_header_model
   include/tencentcloud/tione/v20211111/model/NotebookDetail.h
   include/tencentcloud/tione/v20211111/model/DescribeTrainingTasksResponse.h
   include/tencentcloud/tione/v20211111/model/CronInfo.h
+  include/tencentcloud/tione/v20211111/model/LocalDisk.h
   include/tencentcloud/tione/v20211111/model/FrameworkInfo.h
   include/tencentcloud/tione/v20211111/model/DescribeLogsResponse.h
   include/tencentcloud/tione/v20211111/model/EncodedStartCmdInfo.h
@@ -641,6 +642,7 @@ set(tione_src
   src/v20211111/model/NotebookDetail.cpp
   src/v20211111/model/DescribeTrainingTasksResponse.cpp
   src/v20211111/model/CronInfo.cpp
+  src/v20211111/model/LocalDisk.cpp
   src/v20211111/model/FrameworkInfo.cpp
   src/v20211111/model/DescribeLogsResponse.cpp
   src/v20211111/model/EncodedStartCmdInfo.cpp

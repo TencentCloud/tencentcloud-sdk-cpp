@@ -20,6 +20,7 @@ set(ess_public_header
 
 set(ess_public_header_model
   include/tencentcloud/ess/v20201111/model/DescribePersonCertificateResponse.h
+  include/tencentcloud/ess/v20201111/model/FlowBatchUrlInfo.h
   include/tencentcloud/ess/v20201111/model/BillUsageDetail.h
   include/tencentcloud/ess/v20201111/model/DescribeCancelFlowsTaskResponse.h
   include/tencentcloud/ess/v20201111/model/IntentionActionResult.h
@@ -55,6 +56,7 @@ set(ess_public_header_model
   include/tencentcloud/ess/v20201111/model/CreateFlowOption.h
   include/tencentcloud/ess/v20201111/model/ReleasedApprover.h
   include/tencentcloud/ess/v20201111/model/DescribeIntegrationRolesRequest.h
+  include/tencentcloud/ess/v20201111/model/FlowBatchApproverInfo.h
   include/tencentcloud/ess/v20201111/model/CreateFlowEvidenceReportRequest.h
   include/tencentcloud/ess/v20201111/model/StartFlowResponse.h
   include/tencentcloud/ess/v20201111/model/SealInfo.h
@@ -268,6 +270,7 @@ set(ess_public_header_model
 set(ess_src
   src/v20201111/EssClient.cpp
   src/v20201111/model/DescribePersonCertificateResponse.cpp
+  src/v20201111/model/FlowBatchUrlInfo.cpp
   src/v20201111/model/BillUsageDetail.cpp
   src/v20201111/model/DescribeCancelFlowsTaskResponse.cpp
   src/v20201111/model/IntentionActionResult.cpp
@@ -303,6 +306,7 @@ set(ess_src
   src/v20201111/model/CreateFlowOption.cpp
   src/v20201111/model/ReleasedApprover.cpp
   src/v20201111/model/DescribeIntegrationRolesRequest.cpp
+  src/v20201111/model/FlowBatchApproverInfo.cpp
   src/v20201111/model/CreateFlowEvidenceReportRequest.cpp
   src/v20201111/model/StartFlowResponse.cpp
   src/v20201111/model/SealInfo.cpp

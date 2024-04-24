@@ -248,7 +248,7 @@ namespace TencentCloud
                 QueryAuthorityInfoOutcomeCallable QueryAuthorityInfoCallable(const Model::QueryAuthorityInfoRequest& request);
 
                 /**
-                 *查询凭证模版内容
+                 *查询凭证模板内容
                  * @param req QueryCPTRequest
                  * @return QueryCPTOutcome
                  */

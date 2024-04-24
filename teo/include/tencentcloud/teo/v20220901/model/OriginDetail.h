@@ -53,7 +53,7 @@ namespace TencentCloud
 <li>COS：腾讯云 COS 对象存储源站；</li>
 <li>AWS_S3：AWS S3 对象存储源站；</li>
 <li>ORIGIN_GROUP：源站组类型源站；</li>
- <li>VODEO：云点播（混合云版）；</li>
+<li>VODEO：云点播（混合云版）；</li>
 <li>SPACE：源站卸载，当前仅白名单开放；</li>
 <li>LB：负载均衡，当前仅白名单开放。</li>
                      * @return OriginType 源站类型，取值有：
@@ -61,7 +61,7 @@ namespace TencentCloud
 <li>COS：腾讯云 COS 对象存储源站；</li>
 <li>AWS_S3：AWS S3 对象存储源站；</li>
 <li>ORIGIN_GROUP：源站组类型源站；</li>
- <li>VODEO：云点播（混合云版）；</li>
+<li>VODEO：云点播（混合云版）；</li>
 <li>SPACE：源站卸载，当前仅白名单开放；</li>
 <li>LB：负载均衡，当前仅白名单开放。</li>
                      * 
@@ -74,7 +74,7 @@ namespace TencentCloud
 <li>COS：腾讯云 COS 对象存储源站；</li>
 <li>AWS_S3：AWS S3 对象存储源站；</li>
 <li>ORIGIN_GROUP：源站组类型源站；</li>
- <li>VODEO：云点播（混合云版）；</li>
+<li>VODEO：云点播（混合云版）；</li>
 <li>SPACE：源站卸载，当前仅白名单开放；</li>
 <li>LB：负载均衡，当前仅白名单开放。</li>
                      * @param _originType 源站类型，取值有：
@@ -82,7 +82,7 @@ namespace TencentCloud
 <li>COS：腾讯云 COS 对象存储源站；</li>
 <li>AWS_S3：AWS S3 对象存储源站；</li>
 <li>ORIGIN_GROUP：源站组类型源站；</li>
- <li>VODEO：云点播（混合云版）；</li>
+<li>VODEO：云点播（混合云版）；</li>
 <li>SPACE：源站卸载，当前仅白名单开放；</li>
 <li>LB：负载均衡，当前仅白名单开放。</li>
                      * 
@@ -103,14 +103,12 @@ namespace TencentCloud
 <li>当 OriginType = AWS_S3，该参数为 S3 桶的访问域名；</li>
 <li>当 OriginType = ORIGIN_GROUP 时，该参数为源站组 ID；</li>
 <li>当 OriginType = VODEO 时，如果 VodeoDistributionRange = ALL，则该参数为 "all-buckets-in-vodeo-application"；如果 VodeoDistributionRange = Bucket，则该参数为对应存储桶域名。</li>
-
                      * @return Origin 源站地址，根据 OriginType 的取值分为以下情况：
 <li>当 OriginType = IP_DOMAIN 时，该参数为 IPv4、IPv6 地址或域名；</li>
 <li>当 OriginType = COS 时，该参数为 COS 桶的访问域名；</li>
 <li>当 OriginType = AWS_S3，该参数为 S3 桶的访问域名；</li>
 <li>当 OriginType = ORIGIN_GROUP 时，该参数为源站组 ID；</li>
 <li>当 OriginType = VODEO 时，如果 VodeoDistributionRange = ALL，则该参数为 "all-buckets-in-vodeo-application"；如果 VodeoDistributionRange = Bucket，则该参数为对应存储桶域名。</li>
-
                      * 
                      */
                     std::string GetOrigin() const;
@@ -122,14 +120,12 @@ namespace TencentCloud
 <li>当 OriginType = AWS_S3，该参数为 S3 桶的访问域名；</li>
 <li>当 OriginType = ORIGIN_GROUP 时，该参数为源站组 ID；</li>
 <li>当 OriginType = VODEO 时，如果 VodeoDistributionRange = ALL，则该参数为 "all-buckets-in-vodeo-application"；如果 VodeoDistributionRange = Bucket，则该参数为对应存储桶域名。</li>
-
                      * @param _origin 源站地址，根据 OriginType 的取值分为以下情况：
 <li>当 OriginType = IP_DOMAIN 时，该参数为 IPv4、IPv6 地址或域名；</li>
 <li>当 OriginType = COS 时，该参数为 COS 桶的访问域名；</li>
 <li>当 OriginType = AWS_S3，该参数为 S3 桶的访问域名；</li>
 <li>当 OriginType = ORIGIN_GROUP 时，该参数为源站组 ID；</li>
 <li>当 OriginType = VODEO 时，如果 VodeoDistributionRange = ALL，则该参数为 "all-buckets-in-vodeo-application"；如果 VodeoDistributionRange = Bucket，则该参数为对应存储桶域名。</li>
-
                      * 
                      */
                     void SetOrigin(const std::string& _origin);
@@ -205,27 +201,27 @@ namespace TencentCloud
                     bool BackOriginGroupNameHasBeenSet() const;
 
                     /**
-                     * 获取指定是否允许访问私有对象存储源站，该参数仅当源站类型 OriginType = COS 或 AWS_S3 时会生效，取值有：
+                     * 获取指定是否允许访问私有对象存储源站，该参数仅当源站类型OriginType = COS 或 AWS_S3 时会生效，取值有：
 <li>on：使用私有鉴权；</li>
 <li>off：不使用私有鉴权。</li>
-不填写，默认值为off。
-                     * @return PrivateAccess 指定是否允许访问私有对象存储源站，该参数仅当源站类型 OriginType = COS 或 AWS_S3 时会生效，取值有：
+不填写，默认值为 off。
+                     * @return PrivateAccess 指定是否允许访问私有对象存储源站，该参数仅当源站类型OriginType = COS 或 AWS_S3 时会生效，取值有：
 <li>on：使用私有鉴权；</li>
 <li>off：不使用私有鉴权。</li>
-不填写，默认值为off。
+不填写，默认值为 off。
                      * 
                      */
                     std::string GetPrivateAccess() const;
 
                     /**
-                     * 设置指定是否允许访问私有对象存储源站，该参数仅当源站类型 OriginType = COS 或 AWS_S3 时会生效，取值有：
+                     * 设置指定是否允许访问私有对象存储源站，该参数仅当源站类型OriginType = COS 或 AWS_S3 时会生效，取值有：
 <li>on：使用私有鉴权；</li>
 <li>off：不使用私有鉴权。</li>
-不填写，默认值为off。
-                     * @param _privateAccess 指定是否允许访问私有对象存储源站，该参数仅当源站类型 OriginType = COS 或 AWS_S3 时会生效，取值有：
+不填写，默认值为 off。
+                     * @param _privateAccess 指定是否允许访问私有对象存储源站，该参数仅当源站类型OriginType = COS 或 AWS_S3 时会生效，取值有：
 <li>on：使用私有鉴权；</li>
 <li>off：不使用私有鉴权。</li>
-不填写，默认值为off。
+不填写，默认值为 off。
                      * 
                      */
                     void SetPrivateAccess(const std::string& _privateAccess);
@@ -284,15 +280,15 @@ namespace TencentCloud
                     bool VodeoSubAppIdHasBeenSet() const;
 
                     /**
-                     * 获取MO 分发范围，取值有： <li>All：全部</li> <li>Bucket：存储桶</li>	
-                     * @return VodeoDistributionRange MO 分发范围，取值有： <li>All：全部</li> <li>Bucket：存储桶</li>	
+                     * 获取MO 分发范围，取值有： <li>All：全部</li> <li>Bucket：存储桶</li>
+                     * @return VodeoDistributionRange MO 分发范围，取值有： <li>All：全部</li> <li>Bucket：存储桶</li>
                      * 
                      */
                     std::string GetVodeoDistributionRange() const;
 
                     /**
-                     * 设置MO 分发范围，取值有： <li>All：全部</li> <li>Bucket：存储桶</li>	
-                     * @param _vodeoDistributionRange MO 分发范围，取值有： <li>All：全部</li> <li>Bucket：存储桶</li>	
+                     * 设置MO 分发范围，取值有： <li>All：全部</li> <li>Bucket：存储桶</li>
+                     * @param _vodeoDistributionRange MO 分发范围，取值有： <li>All：全部</li> <li>Bucket：存储桶</li>
                      * 
                      */
                     void SetVodeoDistributionRange(const std::string& _vodeoDistributionRange);
@@ -333,7 +329,7 @@ namespace TencentCloud
 <li>COS：腾讯云 COS 对象存储源站；</li>
 <li>AWS_S3：AWS S3 对象存储源站；</li>
 <li>ORIGIN_GROUP：源站组类型源站；</li>
- <li>VODEO：云点播（混合云版）；</li>
+<li>VODEO：云点播（混合云版）；</li>
 <li>SPACE：源站卸载，当前仅白名单开放；</li>
 <li>LB：负载均衡，当前仅白名单开放。</li>
                      */
@@ -347,7 +343,6 @@ namespace TencentCloud
 <li>当 OriginType = AWS_S3，该参数为 S3 桶的访问域名；</li>
 <li>当 OriginType = ORIGIN_GROUP 时，该参数为源站组 ID；</li>
 <li>当 OriginType = VODEO 时，如果 VodeoDistributionRange = ALL，则该参数为 "all-buckets-in-vodeo-application"；如果 VodeoDistributionRange = Bucket，则该参数为对应存储桶域名。</li>
-
                      */
                     std::string m_origin;
                     bool m_originHasBeenSet;
@@ -371,10 +366,10 @@ namespace TencentCloud
                     bool m_backOriginGroupNameHasBeenSet;
 
                     /**
-                     * 指定是否允许访问私有对象存储源站，该参数仅当源站类型 OriginType = COS 或 AWS_S3 时会生效，取值有：
+                     * 指定是否允许访问私有对象存储源站，该参数仅当源站类型OriginType = COS 或 AWS_S3 时会生效，取值有：
 <li>on：使用私有鉴权；</li>
 <li>off：不使用私有鉴权。</li>
-不填写，默认值为off。
+不填写，默认值为 off。
                      */
                     std::string m_privateAccess;
                     bool m_privateAccessHasBeenSet;
@@ -393,7 +388,7 @@ namespace TencentCloud
                     bool m_vodeoSubAppIdHasBeenSet;
 
                     /**
-                     * MO 分发范围，取值有： <li>All：全部</li> <li>Bucket：存储桶</li>	
+                     * MO 分发范围，取值有： <li>All：全部</li> <li>Bucket：存储桶</li>
                      */
                     std::string m_vodeoDistributionRange;
                     bool m_vodeoDistributionRangeHasBeenSet;

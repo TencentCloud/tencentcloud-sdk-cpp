@@ -155,6 +155,27 @@ namespace TencentCloud
                      */
                     bool IsRespActualTimeHasBeenSet() const;
 
+                    /**
+                     * 获取是否返回内网下载URL，默认是false，返回公网下载URL，true则返回内网下载URL
+                     * @return IsInternal 是否返回内网下载URL，默认是false，返回公网下载URL，true则返回内网下载URL
+                     * 
+                     */
+                    bool GetIsInternal() const;
+
+                    /**
+                     * 设置是否返回内网下载URL，默认是false，返回公网下载URL，true则返回内网下载URL
+                     * @param _isInternal 是否返回内网下载URL，默认是false，返回公网下载URL，true则返回内网下载URL
+                     * 
+                     */
+                    void SetIsInternal(const bool& _isInternal);
+
+                    /**
+                     * 判断参数 IsInternal 是否已赋值
+                     * @return IsInternal 是否已赋值
+                     * 
+                     */
+                    bool IsInternalHasBeenSet() const;
+
                 private:
 
                     /**
@@ -188,6 +209,12 @@ namespace TencentCloud
                      */
                     bool m_isRespActualTime;
                     bool m_isRespActualTimeHasBeenSet;
+
+                    /**
+                     * 是否返回内网下载URL，默认是false，返回公网下载URL，true则返回内网下载URL
+                     */
+                    bool m_isInternal;
+                    bool m_isInternalHasBeenSet;
 
                 };
             }

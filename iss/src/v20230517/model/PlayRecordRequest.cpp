@@ -27,7 +27,8 @@ PlayRecordRequest::PlayRecordRequest() :
     m_startHasBeenSet(false),
     m_endHasBeenSet(false),
     m_streamTypeHasBeenSet(false),
-    m_resolutionHasBeenSet(false)
+    m_resolutionHasBeenSet(false),
+    m_isInternalHasBeenSet(false)
 {
 }
 
@@ -76,6 +77,14 @@ string PlayRecordRequest::ToJsonString() const
         string key = "Resolution";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_resolution.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_isInternalHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "IsInternal";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_isInternal, allocator);
     }
 
 
@@ -164,6 +173,22 @@ void PlayRecordRequest::SetResolution(const string& _resolution)
 bool PlayRecordRequest::ResolutionHasBeenSet() const
 {
     return m_resolutionHasBeenSet;
+}
+
+bool PlayRecordRequest::GetIsInternal() const
+{
+    return m_isInternal;
+}
+
+void PlayRecordRequest::SetIsInternal(const bool& _isInternal)
+{
+    m_isInternal = _isInternal;
+    m_isInternalHasBeenSet = true;
+}
+
+bool PlayRecordRequest::IsInternalHasBeenSet() const
+{
+    return m_isInternalHasBeenSet;
 }
 
 

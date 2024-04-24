@@ -27,7 +27,8 @@ DescribeVideoDownloadUrlRequest::DescribeVideoDownloadUrlRequest() :
     m_beginTimeHasBeenSet(false),
     m_endTimeHasBeenSet(false),
     m_fileTypeHasBeenSet(false),
-    m_isRespActualTimeHasBeenSet(false)
+    m_isRespActualTimeHasBeenSet(false),
+    m_isInternalHasBeenSet(false)
 {
 }
 
@@ -76,6 +77,14 @@ string DescribeVideoDownloadUrlRequest::ToJsonString() const
         string key = "IsRespActualTime";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_isRespActualTime, allocator);
+    }
+
+    if (m_isInternalHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "IsInternal";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_isInternal, allocator);
     }
 
 
@@ -164,6 +173,22 @@ void DescribeVideoDownloadUrlRequest::SetIsRespActualTime(const bool& _isRespAct
 bool DescribeVideoDownloadUrlRequest::IsRespActualTimeHasBeenSet() const
 {
     return m_isRespActualTimeHasBeenSet;
+}
+
+bool DescribeVideoDownloadUrlRequest::GetIsInternal() const
+{
+    return m_isInternal;
+}
+
+void DescribeVideoDownloadUrlRequest::SetIsInternal(const bool& _isInternal)
+{
+    m_isInternal = _isInternal;
+    m_isInternalHasBeenSet = true;
+}
+
+bool DescribeVideoDownloadUrlRequest::IsInternalHasBeenSet() const
+{
+    return m_isInternalHasBeenSet;
 }
 
 

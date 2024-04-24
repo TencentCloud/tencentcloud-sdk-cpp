@@ -30,6 +30,7 @@
 #include <tencentcloud/tione/v20211111/model/HDFSConfig.h>
 #include <tencentcloud/tione/v20211111/model/GooseFS.h>
 #include <tencentcloud/tione/v20211111/model/CFSTurbo.h>
+#include <tencentcloud/tione/v20211111/model/LocalDisk.h>
 
 
 namespace TencentCloud
@@ -248,6 +249,31 @@ namespace TencentCloud
                      */
                     bool CFSTurboSourceHasBeenSet() const;
 
+                    /**
+                     * 获取来自本地磁盘的信息
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return LocalDiskSource 来自本地磁盘的信息
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    LocalDisk GetLocalDiskSource() const;
+
+                    /**
+                     * 设置来自本地磁盘的信息
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _localDiskSource 来自本地磁盘的信息
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetLocalDiskSource(const LocalDisk& _localDiskSource);
+
+                    /**
+                     * 判断参数 LocalDiskSource 是否已赋值
+                     * @return LocalDiskSource 是否已赋值
+                     * 
+                     */
+                    bool LocalDiskSourceHasBeenSet() const;
+
                 private:
 
                     /**
@@ -304,6 +330,13 @@ namespace TencentCloud
                      */
                     CFSTurbo m_cFSTurboSource;
                     bool m_cFSTurboSourceHasBeenSet;
+
+                    /**
+                     * 来自本地磁盘的信息
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    LocalDisk m_localDiskSource;
+                    bool m_localDiskSourceHasBeenSet;
 
                 };
             }

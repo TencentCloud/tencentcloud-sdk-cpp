@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef TENCENTCLOUD_LKE_V20231130_MODEL_PARSEDOCRESPONSE_H_
-#define TENCENTCLOUD_LKE_V20231130_MODEL_PARSEDOCRESPONSE_H_
+#ifndef TENCENTCLOUD_APM_V20210622_MODEL_MODIFYGENERALAPMAPPLICATIONCONFIGRESPONSE_H_
+#define TENCENTCLOUD_APM_V20210622_MODEL_MODIFYGENERALAPMAPPLICATIONCONFIGRESPONSE_H_
 
 #include <string>
 #include <vector>
@@ -25,45 +25,45 @@
 
 namespace TencentCloud
 {
-    namespace Lke
+    namespace Apm
     {
-        namespace V20231130
+        namespace V20210622
         {
             namespace Model
             {
                 /**
-                * ParseDoc返回参数结构体
+                * ModifyGeneralApmApplicationConfig返回参数结构体
                 */
-                class ParseDocResponse : public AbstractModel
+                class ModifyGeneralApmApplicationConfigResponse : public AbstractModel
                 {
                 public:
-                    ParseDocResponse();
-                    ~ParseDocResponse() = default;
+                    ModifyGeneralApmApplicationConfigResponse();
+                    ~ModifyGeneralApmApplicationConfigResponse() = default;
                     CoreInternalOutcome Deserialize(const std::string &payload);
                     std::string ToJsonString() const;
 
 
                     /**
-                     * 获取任务ID
-                     * @return TaskId 任务ID
+                     * 获取返回值描述
+                     * @return Message 返回值描述
                      * 
                      */
-                    std::string GetTaskId() const;
+                    std::string GetMessage() const;
 
                     /**
-                     * 判断参数 TaskId 是否已赋值
-                     * @return TaskId 是否已赋值
+                     * 判断参数 Message 是否已赋值
+                     * @return Message 是否已赋值
                      * 
                      */
-                    bool TaskIdHasBeenSet() const;
+                    bool MessageHasBeenSet() const;
 
                 private:
 
                     /**
-                     * 任务ID
+                     * 返回值描述
                      */
-                    std::string m_taskId;
-                    bool m_taskIdHasBeenSet;
+                    std::string m_message;
+                    bool m_messageHasBeenSet;
 
                 };
             }
@@ -71,4 +71,4 @@ namespace TencentCloud
     }
 }
 
-#endif // !TENCENTCLOUD_LKE_V20231130_MODEL_PARSEDOCRESPONSE_H_
+#endif // !TENCENTCLOUD_APM_V20210622_MODEL_MODIFYGENERALAPMAPPLICATIONCONFIGRESPONSE_H_

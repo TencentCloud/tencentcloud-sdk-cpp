@@ -28,7 +28,8 @@ DataConfig::DataConfig() :
     m_cFSSourceHasBeenSet(false),
     m_hDFSSourceHasBeenSet(false),
     m_gooseFSSourceHasBeenSet(false),
-    m_cFSTurboSourceHasBeenSet(false)
+    m_cFSTurboSourceHasBeenSet(false),
+    m_localDiskSourceHasBeenSet(false)
 {
 }
 
@@ -159,6 +160,23 @@ CoreInternalOutcome DataConfig::Deserialize(const rapidjson::Value &value)
         m_cFSTurboSourceHasBeenSet = true;
     }
 
+    if (value.HasMember("LocalDiskSource") && !value["LocalDiskSource"].IsNull())
+    {
+        if (!value["LocalDiskSource"].IsObject())
+        {
+            return CoreInternalOutcome(Core::Error("response `DataConfig.LocalDiskSource` is not object type").SetRequestId(requestId));
+        }
+
+        CoreInternalOutcome outcome = m_localDiskSource.Deserialize(value["LocalDiskSource"]);
+        if (!outcome.IsSuccess())
+        {
+            outcome.GetError().SetRequestId(requestId);
+            return outcome;
+        }
+
+        m_localDiskSourceHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -234,6 +252,15 @@ void DataConfig::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Allo
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
         m_cFSTurboSource.ToJsonObject(value[key.c_str()], allocator);
+    }
+
+    if (m_localDiskSourceHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "LocalDiskSource";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_localDiskSource.ToJsonObject(value[key.c_str()], allocator);
     }
 
 }
@@ -365,5 +392,21 @@ void DataConfig::SetCFSTurboSource(const CFSTurbo& _cFSTurboSource)
 bool DataConfig::CFSTurboSourceHasBeenSet() const
 {
     return m_cFSTurboSourceHasBeenSet;
+}
+
+LocalDisk DataConfig::GetLocalDiskSource() const
+{
+    return m_localDiskSource;
+}
+
+void DataConfig::SetLocalDiskSource(const LocalDisk& _localDiskSource)
+{
+    m_localDiskSource = _localDiskSource;
+    m_localDiskSourceHasBeenSet = true;
+}
+
+bool DataConfig::LocalDiskSourceHasBeenSet() const
+{
+    return m_localDiskSourceHasBeenSet;
 }
 

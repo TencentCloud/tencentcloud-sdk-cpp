@@ -25,8 +25,8 @@
 #include <tencentcloud/core/utils/rapidjson/stringbuffer.h>
 #include <tencentcloud/core/AbstractModel.h>
 #include <tencentcloud/teo/v20220901/model/OriginDetail.h>
-#include <tencentcloud/teo/v20220901/model/OwnershipVerification.h>
 #include <tencentcloud/teo/v20220901/model/AccelerationDomainCertificate.h>
+#include <tencentcloud/teo/v20220901/model/OwnershipVerification.h>
 
 
 namespace TencentCloud
@@ -193,6 +193,31 @@ namespace TencentCloud
                      * 
                      */
                     bool OriginProtocolHasBeenSet() const;
+
+                    /**
+                     * 获取域名证书信息
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return Certificate 域名证书信息
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    AccelerationDomainCertificate GetCertificate() const;
+
+                    /**
+                     * 设置域名证书信息
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _certificate 域名证书信息
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetCertificate(const AccelerationDomainCertificate& _certificate);
+
+                    /**
+                     * 判断参数 Certificate 是否已赋值
+                     * @return Certificate 是否已赋值
+                     * 
+                     */
+                    bool CertificateHasBeenSet() const;
 
                     /**
                      * 获取HTTP回源端口。
@@ -394,31 +419,6 @@ namespace TencentCloud
                      */
                     bool OwnershipVerificationHasBeenSet() const;
 
-                    /**
-                     * 获取域名证书信息
-注意：此字段可能返回 null，表示取不到有效值。
-                     * @return Certificate 域名证书信息
-注意：此字段可能返回 null，表示取不到有效值。
-                     * 
-                     */
-                    AccelerationDomainCertificate GetCertificate() const;
-
-                    /**
-                     * 设置域名证书信息
-注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _certificate 域名证书信息
-注意：此字段可能返回 null，表示取不到有效值。
-                     * 
-                     */
-                    void SetCertificate(const AccelerationDomainCertificate& _certificate);
-
-                    /**
-                     * 判断参数 Certificate 是否已赋值
-                     * @return Certificate 是否已赋值
-                     * 
-                     */
-                    bool CertificateHasBeenSet() const;
-
                 private:
 
                     /**
@@ -460,6 +460,13 @@ namespace TencentCloud
                      */
                     std::string m_originProtocol;
                     bool m_originProtocolHasBeenSet;
+
+                    /**
+                     * 域名证书信息
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    AccelerationDomainCertificate m_certificate;
+                    bool m_certificateHasBeenSet;
 
                     /**
                      * HTTP回源端口。
@@ -516,13 +523,6 @@ namespace TencentCloud
                      */
                     OwnershipVerification m_ownershipVerification;
                     bool m_ownershipVerificationHasBeenSet;
-
-                    /**
-                     * 域名证书信息
-注意：此字段可能返回 null，表示取不到有效值。
-                     */
-                    AccelerationDomainCertificate m_certificate;
-                    bool m_certificateHasBeenSet;
 
                 };
             }

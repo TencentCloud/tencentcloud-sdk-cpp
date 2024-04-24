@@ -14,21 +14,21 @@
  * limitations under the License.
  */
 
-#include <tencentcloud/lke/v20231130/model/ParseDocResponse.h>
+#include <tencentcloud/iotexplorer/v20190423/model/DescribeDeviceFirmwaresResponse.h>
 #include <tencentcloud/core/utils/rapidjson/document.h>
 #include <tencentcloud/core/utils/rapidjson/writer.h>
 #include <tencentcloud/core/utils/rapidjson/stringbuffer.h>
 
 using TencentCloud::CoreInternalOutcome;
-using namespace TencentCloud::Lke::V20231130::Model;
+using namespace TencentCloud::Iotexplorer::V20190423::Model;
 using namespace std;
 
-ParseDocResponse::ParseDocResponse() :
-    m_taskIdHasBeenSet(false)
+DescribeDeviceFirmwaresResponse::DescribeDeviceFirmwaresResponse() :
+    m_firmwaresHasBeenSet(false)
 {
 }
 
-CoreInternalOutcome ParseDocResponse::Deserialize(const string &payload)
+CoreInternalOutcome DescribeDeviceFirmwaresResponse::Deserialize(const string &payload)
 {
     rapidjson::Document d;
     d.Parse(payload.c_str());
@@ -62,32 +62,49 @@ CoreInternalOutcome ParseDocResponse::Deserialize(const string &payload)
     }
 
 
-    if (rsp.HasMember("TaskId") && !rsp["TaskId"].IsNull())
+    if (rsp.HasMember("Firmwares") && !rsp["Firmwares"].IsNull())
     {
-        if (!rsp["TaskId"].IsString())
+        if (!rsp["Firmwares"].IsArray())
+            return CoreInternalOutcome(Core::Error("response `Firmwares` is not array type"));
+
+        const rapidjson::Value &tmpValue = rsp["Firmwares"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
         {
-            return CoreInternalOutcome(Core::Error("response `TaskId` IsString=false incorrectly").SetRequestId(requestId));
+            DeviceFirmwareInfo item;
+            CoreInternalOutcome outcome = item.Deserialize(*itr);
+            if (!outcome.IsSuccess())
+            {
+                outcome.GetError().SetRequestId(requestId);
+                return outcome;
+            }
+            m_firmwares.push_back(item);
         }
-        m_taskId = string(rsp["TaskId"].GetString());
-        m_taskIdHasBeenSet = true;
+        m_firmwaresHasBeenSet = true;
     }
 
 
     return CoreInternalOutcome(true);
 }
 
-string ParseDocResponse::ToJsonString() const
+string DescribeDeviceFirmwaresResponse::ToJsonString() const
 {
     rapidjson::Document value;
     value.SetObject();
     rapidjson::Document::AllocatorType& allocator = value.GetAllocator();
 
-    if (m_taskIdHasBeenSet)
+    if (m_firmwaresHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "TaskId";
+        string key = "Firmwares";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, rapidjson::Value(m_taskId.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_firmwares.begin(); itr != m_firmwares.end(); ++itr, ++i)
+        {
+            value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(value[key.c_str()][i], allocator);
+        }
     }
 
     rapidjson::Value iKey(rapidjson::kStringType);
@@ -102,14 +119,14 @@ string ParseDocResponse::ToJsonString() const
 }
 
 
-string ParseDocResponse::GetTaskId() const
+vector<DeviceFirmwareInfo> DescribeDeviceFirmwaresResponse::GetFirmwares() const
 {
-    return m_taskId;
+    return m_firmwares;
 }
 
-bool ParseDocResponse::TaskIdHasBeenSet() const
+bool DescribeDeviceFirmwaresResponse::FirmwaresHasBeenSet() const
 {
-    return m_taskIdHasBeenSet;
+    return m_firmwaresHasBeenSet;
 }
 
 

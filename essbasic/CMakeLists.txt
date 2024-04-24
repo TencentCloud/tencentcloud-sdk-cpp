@@ -21,6 +21,7 @@ set(essbasic_public_header
 
 set(essbasic_public_header_model
   include/tencentcloud/essbasic/v20210526/model/SyncProxyOrganizationResponse.h
+  include/tencentcloud/essbasic/v20210526/model/FlowBatchUrlInfo.h
   include/tencentcloud/essbasic/v20210526/model/ChannelCreateConvertTaskApiResponse.h
   include/tencentcloud/essbasic/v20210526/model/ChannelCreateFlowRemindsResponse.h
   include/tencentcloud/essbasic/v20210526/model/Component.h
@@ -107,6 +108,7 @@ set(essbasic_public_header_model
   include/tencentcloud/essbasic/v20210526/model/Permission.h
   include/tencentcloud/essbasic/v20210526/model/DescribeExtendedServiceAuthDetailRequest.h
   include/tencentcloud/essbasic/v20210526/model/OrganizationAuthUrl.h
+  include/tencentcloud/essbasic/v20210526/model/FlowBatchApproverInfo.h
   include/tencentcloud/essbasic/v20210526/model/Staff.h
   include/tencentcloud/essbasic/v20210526/model/ComponentLimit.h
   include/tencentcloud/essbasic/v20210526/model/ChannelVerifyPdfResponse.h
@@ -376,6 +378,7 @@ set(essbasic_src
   src/v20210526/EssbasicClient.cpp
   src/v20201222/EssbasicClient.cpp
   src/v20210526/model/SyncProxyOrganizationResponse.cpp
+  src/v20210526/model/FlowBatchUrlInfo.cpp
   src/v20210526/model/ChannelCreateConvertTaskApiResponse.cpp
   src/v20210526/model/ChannelCreateFlowRemindsResponse.cpp
   src/v20210526/model/Component.cpp
@@ -462,6 +465,7 @@ set(essbasic_src
   src/v20210526/model/Permission.cpp
   src/v20210526/model/DescribeExtendedServiceAuthDetailRequest.cpp
   src/v20210526/model/OrganizationAuthUrl.cpp
+  src/v20210526/model/FlowBatchApproverInfo.cpp
   src/v20210526/model/Staff.cpp
   src/v20210526/model/ComponentLimit.cpp
   src/v20210526/model/ChannelVerifyPdfResponse.cpp

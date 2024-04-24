@@ -105,6 +105,27 @@ namespace TencentCloud
                      */
                     bool EndTimeHasBeenSet() const;
 
+                    /**
+                     * 获取是否获取内网地址
+                     * @return IsInternal 是否获取内网地址
+                     * 
+                     */
+                    bool GetIsInternal() const;
+
+                    /**
+                     * 设置是否获取内网地址
+                     * @param _isInternal 是否获取内网地址
+                     * 
+                     */
+                    void SetIsInternal(const bool& _isInternal);
+
+                    /**
+                     * 判断参数 IsInternal 是否已赋值
+                     * @return IsInternal 是否已赋值
+                     * 
+                     */
+                    bool IsInternalHasBeenSet() const;
+
                 private:
 
                     /**
@@ -124,6 +145,12 @@ namespace TencentCloud
                      */
                     uint64_t m_endTime;
                     bool m_endTimeHasBeenSet;
+
+                    /**
+                     * 是否获取内网地址
+                     */
+                    bool m_isInternal;
+                    bool m_isInternalHasBeenSet;
 
                 };
             }
