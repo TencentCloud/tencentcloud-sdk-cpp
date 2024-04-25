@@ -32,6 +32,7 @@ RealtimeLogDeliveryTask::RealtimeLogDeliveryTask() :
     m_customFieldsHasBeenSet(false),
     m_deliveryConditionsHasBeenSet(false),
     m_sampleHasBeenSet(false),
+    m_logFormatHasBeenSet(false),
     m_cLSHasBeenSet(false),
     m_customEndpointHasBeenSet(false),
     m_s3HasBeenSet(false),
@@ -179,6 +180,23 @@ CoreInternalOutcome RealtimeLogDeliveryTask::Deserialize(const rapidjson::Value 
         }
         m_sample = value["Sample"].GetUint64();
         m_sampleHasBeenSet = true;
+    }
+
+    if (value.HasMember("LogFormat") && !value["LogFormat"].IsNull())
+    {
+        if (!value["LogFormat"].IsObject())
+        {
+            return CoreInternalOutcome(Core::Error("response `RealtimeLogDeliveryTask.LogFormat` is not object type").SetRequestId(requestId));
+        }
+
+        CoreInternalOutcome outcome = m_logFormat.Deserialize(value["LogFormat"]);
+        if (!outcome.IsSuccess())
+        {
+            outcome.GetError().SetRequestId(requestId);
+            return outcome;
+        }
+
+        m_logFormatHasBeenSet = true;
     }
 
     if (value.HasMember("CLS") && !value["CLS"].IsNull())
@@ -369,6 +387,15 @@ void RealtimeLogDeliveryTask::ToJsonObject(rapidjson::Value &value, rapidjson::D
         string key = "Sample";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_sample, allocator);
+    }
+
+    if (m_logFormatHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "LogFormat";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_logFormat.ToJsonObject(value[key.c_str()], allocator);
     }
 
     if (m_cLSHasBeenSet)
@@ -591,6 +618,22 @@ void RealtimeLogDeliveryTask::SetSample(const uint64_t& _sample)
 bool RealtimeLogDeliveryTask::SampleHasBeenSet() const
 {
     return m_sampleHasBeenSet;
+}
+
+LogFormat RealtimeLogDeliveryTask::GetLogFormat() const
+{
+    return m_logFormat;
+}
+
+void RealtimeLogDeliveryTask::SetLogFormat(const LogFormat& _logFormat)
+{
+    m_logFormat = _logFormat;
+    m_logFormatHasBeenSet = true;
+}
+
+bool RealtimeLogDeliveryTask::LogFormatHasBeenSet() const
+{
+    return m_logFormatHasBeenSet;
 }
 
 CLSTopic RealtimeLogDeliveryTask::GetCLS() const

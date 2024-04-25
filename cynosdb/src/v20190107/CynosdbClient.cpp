@@ -1760,6 +1760,49 @@ CynosdbClient::DescribeBinlogsOutcomeCallable CynosdbClient::DescribeBinlogsCall
     return task->get_future();
 }
 
+CynosdbClient::DescribeChangedParamsAfterUpgradeOutcome CynosdbClient::DescribeChangedParamsAfterUpgrade(const DescribeChangedParamsAfterUpgradeRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeChangedParamsAfterUpgrade");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeChangedParamsAfterUpgradeResponse rsp = DescribeChangedParamsAfterUpgradeResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeChangedParamsAfterUpgradeOutcome(rsp);
+        else
+            return DescribeChangedParamsAfterUpgradeOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeChangedParamsAfterUpgradeOutcome(outcome.GetError());
+    }
+}
+
+void CynosdbClient::DescribeChangedParamsAfterUpgradeAsync(const DescribeChangedParamsAfterUpgradeRequest& request, const DescribeChangedParamsAfterUpgradeAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeChangedParamsAfterUpgrade(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+CynosdbClient::DescribeChangedParamsAfterUpgradeOutcomeCallable CynosdbClient::DescribeChangedParamsAfterUpgradeCallable(const DescribeChangedParamsAfterUpgradeRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeChangedParamsAfterUpgradeOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeChangedParamsAfterUpgrade(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 CynosdbClient::DescribeClusterDatabasesOutcome CynosdbClient::DescribeClusterDatabases(const DescribeClusterDatabasesRequest &request)
 {
     auto outcome = MakeRequest(request, "DescribeClusterDatabases");

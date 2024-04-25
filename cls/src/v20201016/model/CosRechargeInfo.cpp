@@ -35,7 +35,9 @@ CosRechargeInfo::CosRechargeInfo() :
     m_updateTimeHasBeenSet(false),
     m_progressHasBeenSet(false),
     m_compressHasBeenSet(false),
-    m_extractRuleInfoHasBeenSet(false)
+    m_extractRuleInfoHasBeenSet(false),
+    m_taskTypeHasBeenSet(false),
+    m_metadataHasBeenSet(false)
 {
 }
 
@@ -201,6 +203,29 @@ CoreInternalOutcome CosRechargeInfo::Deserialize(const rapidjson::Value &value)
         m_extractRuleInfoHasBeenSet = true;
     }
 
+    if (value.HasMember("TaskType") && !value["TaskType"].IsNull())
+    {
+        if (!value["TaskType"].IsUint64())
+        {
+            return CoreInternalOutcome(Core::Error("response `CosRechargeInfo.TaskType` IsUint64=false incorrectly").SetRequestId(requestId));
+        }
+        m_taskType = value["TaskType"].GetUint64();
+        m_taskTypeHasBeenSet = true;
+    }
+
+    if (value.HasMember("Metadata") && !value["Metadata"].IsNull())
+    {
+        if (!value["Metadata"].IsArray())
+            return CoreInternalOutcome(Core::Error("response `CosRechargeInfo.Metadata` is not array type"));
+
+        const rapidjson::Value &tmpValue = value["Metadata"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            m_metadata.push_back((*itr).GetString());
+        }
+        m_metadataHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -327,6 +352,27 @@ void CosRechargeInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Document:
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
         m_extractRuleInfo.ToJsonObject(value[key.c_str()], allocator);
+    }
+
+    if (m_taskTypeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "TaskType";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_taskType, allocator);
+    }
+
+    if (m_metadataHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Metadata";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        for (auto itr = m_metadata.begin(); itr != m_metadata.end(); ++itr)
+        {
+            value[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
+        }
     }
 
 }
@@ -570,5 +616,37 @@ void CosRechargeInfo::SetExtractRuleInfo(const ExtractRuleInfo& _extractRuleInfo
 bool CosRechargeInfo::ExtractRuleInfoHasBeenSet() const
 {
     return m_extractRuleInfoHasBeenSet;
+}
+
+uint64_t CosRechargeInfo::GetTaskType() const
+{
+    return m_taskType;
+}
+
+void CosRechargeInfo::SetTaskType(const uint64_t& _taskType)
+{
+    m_taskType = _taskType;
+    m_taskTypeHasBeenSet = true;
+}
+
+bool CosRechargeInfo::TaskTypeHasBeenSet() const
+{
+    return m_taskTypeHasBeenSet;
+}
+
+vector<string> CosRechargeInfo::GetMetadata() const
+{
+    return m_metadata;
+}
+
+void CosRechargeInfo::SetMetadata(const vector<string>& _metadata)
+{
+    m_metadata = _metadata;
+    m_metadataHasBeenSet = true;
+}
+
+bool CosRechargeInfo::MetadataHasBeenSet() const
+{
+    return m_metadataHasBeenSet;
 }
 

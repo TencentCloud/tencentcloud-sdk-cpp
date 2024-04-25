@@ -31,6 +31,7 @@ ParseLiveStreamProcessNotificationResponse::ParseLiveStreamProcessNotificationRe
     m_aiRecognitionResultInfoHasBeenSet(false),
     m_aiAnalysisResultInfoHasBeenSet(false),
     m_aiQualityControlResultInfoHasBeenSet(false),
+    m_liveRecordResultInfoHasBeenSet(false),
     m_sessionIdHasBeenSet(false),
     m_sessionContextHasBeenSet(false)
 {
@@ -175,6 +176,23 @@ CoreInternalOutcome ParseLiveStreamProcessNotificationResponse::Deserialize(cons
         m_aiQualityControlResultInfoHasBeenSet = true;
     }
 
+    if (rsp.HasMember("LiveRecordResultInfo") && !rsp["LiveRecordResultInfo"].IsNull())
+    {
+        if (!rsp["LiveRecordResultInfo"].IsObject())
+        {
+            return CoreInternalOutcome(Core::Error("response `LiveRecordResultInfo` is not object type").SetRequestId(requestId));
+        }
+
+        CoreInternalOutcome outcome = m_liveRecordResultInfo.Deserialize(rsp["LiveRecordResultInfo"]);
+        if (!outcome.IsSuccess())
+        {
+            outcome.GetError().SetRequestId(requestId);
+            return outcome;
+        }
+
+        m_liveRecordResultInfoHasBeenSet = true;
+    }
+
     if (rsp.HasMember("SessionId") && !rsp["SessionId"].IsNull())
     {
         if (!rsp["SessionId"].IsString())
@@ -264,6 +282,15 @@ string ParseLiveStreamProcessNotificationResponse::ToJsonString() const
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
         m_aiQualityControlResultInfo.ToJsonObject(value[key.c_str()], allocator);
+    }
+
+    if (m_liveRecordResultInfoHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "LiveRecordResultInfo";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_liveRecordResultInfo.ToJsonObject(value[key.c_str()], allocator);
     }
 
     if (m_sessionIdHasBeenSet)
@@ -362,6 +389,16 @@ LiveStreamAiQualityControlResultInfo ParseLiveStreamProcessNotificationResponse:
 bool ParseLiveStreamProcessNotificationResponse::AiQualityControlResultInfoHasBeenSet() const
 {
     return m_aiQualityControlResultInfoHasBeenSet;
+}
+
+LiveStreamRecordResultInfo ParseLiveStreamProcessNotificationResponse::GetLiveRecordResultInfo() const
+{
+    return m_liveRecordResultInfo;
+}
+
+bool ParseLiveStreamProcessNotificationResponse::LiveRecordResultInfoHasBeenSet() const
+{
+    return m_liveRecordResultInfoHasBeenSet;
 }
 
 string ParseLiveStreamProcessNotificationResponse::GetSessionId() const

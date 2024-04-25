@@ -65,15 +65,15 @@ namespace TencentCloud
                     bool FromTopicIdHasBeenSet() const;
 
                     /**
-                     * 获取压缩方式[0:NONE；2:SNAPPY；3:LZ4]
-                     * @return Compression 压缩方式[0:NONE；2:SNAPPY；3:LZ4]
+                     * 获取压缩方式[0:NONE；2:SNAPPY；3:LZ4]，默认：0
+                     * @return Compression 压缩方式[0:NONE；2:SNAPPY；3:LZ4]，默认：0
                      * 
                      */
                     int64_t GetCompression() const;
 
                     /**
-                     * 设置压缩方式[0:NONE；2:SNAPPY；3:LZ4]
-                     * @param _compression 压缩方式[0:NONE；2:SNAPPY；3:LZ4]
+                     * 设置压缩方式[0:NONE；2:SNAPPY；3:LZ4]，默认：0
+                     * @param _compression 压缩方式[0:NONE；2:SNAPPY；3:LZ4]，默认：0
                      * 
                      */
                     void SetCompression(const int64_t& _compression);
@@ -115,7 +115,7 @@ namespace TencentCloud
                     bool m_fromTopicIdHasBeenSet;
 
                     /**
-                     * 压缩方式[0:NONE；2:SNAPPY；3:LZ4]
+                     * 压缩方式[0:NONE；2:SNAPPY；3:LZ4]，默认：0
                      */
                     int64_t m_compression;
                     bool m_compressionHasBeenSet;

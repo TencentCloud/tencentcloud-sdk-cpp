@@ -283,18 +283,26 @@ namespace TencentCloud
                     bool UnMatchLogKeyHasBeenSet() const;
 
                     /**
-                     * 获取增量采集模式下的回溯数据量，默认-1（全量采集）；其他非负数表示增量采集（从最新的位置，往前采集${Backtracking}字节（Byte）的日志）最大支持1073741824（1G）。
+                     * 获取增量采集模式下的回溯数据量，默认：-1（全量采集）；其他非负数表示增量采集（从最新的位置，往前采集${Backtracking}字节（Byte）的日志）最大支持1073741824（1G）。
+注意：
+- COS导入不支持此字段。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return Backtracking 增量采集模式下的回溯数据量，默认-1（全量采集）；其他非负数表示增量采集（从最新的位置，往前采集${Backtracking}字节（Byte）的日志）最大支持1073741824（1G）。
+                     * @return Backtracking 增量采集模式下的回溯数据量，默认：-1（全量采集）；其他非负数表示增量采集（从最新的位置，往前采集${Backtracking}字节（Byte）的日志）最大支持1073741824（1G）。
+注意：
+- COS导入不支持此字段。
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetBacktracking() const;
 
                     /**
-                     * 设置增量采集模式下的回溯数据量，默认-1（全量采集）；其他非负数表示增量采集（从最新的位置，往前采集${Backtracking}字节（Byte）的日志）最大支持1073741824（1G）。
+                     * 设置增量采集模式下的回溯数据量，默认：-1（全量采集）；其他非负数表示增量采集（从最新的位置，往前采集${Backtracking}字节（Byte）的日志）最大支持1073741824（1G）。
+注意：
+- COS导入不支持此字段。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _backtracking 增量采集模式下的回溯数据量，默认-1（全量采集）；其他非负数表示增量采集（从最新的位置，往前采集${Backtracking}字节（Byte）的日志）最大支持1073741824（1G）。
+                     * @param _backtracking 增量采集模式下的回溯数据量，默认：-1（全量采集）；其他非负数表示增量采集（从最新的位置，往前采集${Backtracking}字节（Byte）的日志）最大支持1073741824（1G）。
+注意：
+- COS导入不支持此字段。
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -308,18 +316,26 @@ namespace TencentCloud
                     bool BacktrackingHasBeenSet() const;
 
                     /**
-                     * 获取是否为Gbk编码.   0: 否, 1: 是
+                     * 获取是否为Gbk编码。 0：否；1：是。
+注意：
+- COS导入不支持此字段。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return IsGBK 是否为Gbk编码.   0: 否, 1: 是
+                     * @return IsGBK 是否为Gbk编码。 0：否；1：是。
+注意：
+- COS导入不支持此字段。
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetIsGBK() const;
 
                     /**
-                     * 设置是否为Gbk编码.   0: 否, 1: 是
+                     * 设置是否为Gbk编码。 0：否；1：是。
+注意：
+- COS导入不支持此字段。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _isGBK 是否为Gbk编码.   0: 否, 1: 是
+                     * @param _isGBK 是否为Gbk编码。 0：否；1：是。
+注意：
+- COS导入不支持此字段。
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -333,18 +349,18 @@ namespace TencentCloud
                     bool IsGBKHasBeenSet() const;
 
                     /**
-                     * 获取是否为标准json.   0: 否, 1: 是
+                     * 获取是否为标准json。  0：否； 1：是。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return JsonStandard 是否为标准json.   0: 否, 1: 是
+                     * @return JsonStandard 是否为标准json。  0：否； 1：是。
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetJsonStandard() const;
 
                     /**
-                     * 设置是否为标准json.   0: 否, 1: 是
+                     * 设置是否为标准json。  0：否； 1：是。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _jsonStandard 是否为标准json.   0: 否, 1: 是
+                     * @param _jsonStandard 是否为标准json。  0：否； 1：是。
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -359,10 +375,14 @@ namespace TencentCloud
 
                     /**
                      * 获取syslog传输协议，取值为tcp或者udp。
-该字段适用于：创建采集规则配置、修改采集规则配置
+注意：
+- 该字段适用于：创建采集规则配置、修改采集规则配置。
+- COS导入不支持此字段。
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Protocol syslog传输协议，取值为tcp或者udp。
-该字段适用于：创建采集规则配置、修改采集规则配置
+注意：
+- 该字段适用于：创建采集规则配置、修改采集规则配置。
+- COS导入不支持此字段。
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -370,10 +390,14 @@ namespace TencentCloud
 
                     /**
                      * 设置syslog传输协议，取值为tcp或者udp。
-该字段适用于：创建采集规则配置、修改采集规则配置
+注意：
+- 该字段适用于：创建采集规则配置、修改采集规则配置。
+- COS导入不支持此字段。
 注意：此字段可能返回 null，表示取不到有效值。
                      * @param _protocol syslog传输协议，取值为tcp或者udp。
-该字段适用于：创建采集规则配置、修改采集规则配置
+注意：
+- 该字段适用于：创建采集规则配置、修改采集规则配置。
+- COS导入不支持此字段。
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -388,10 +412,14 @@ namespace TencentCloud
 
                     /**
                      * 获取syslog系统日志采集指定采集器监听的地址和端口 ，形式：[ip]:[port]。举例：127.0.0.1:9000
-该字段适用于：创建采集规则配置、修改采集规则配置
+注意：
+- 该字段适用于：创建采集规则配置、修改采集规则配置。
+- COS导入不支持此字段。
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Address syslog系统日志采集指定采集器监听的地址和端口 ，形式：[ip]:[port]。举例：127.0.0.1:9000
-该字段适用于：创建采集规则配置、修改采集规则配置
+注意：
+- 该字段适用于：创建采集规则配置、修改采集规则配置。
+- COS导入不支持此字段。
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -399,10 +427,14 @@ namespace TencentCloud
 
                     /**
                      * 设置syslog系统日志采集指定采集器监听的地址和端口 ，形式：[ip]:[port]。举例：127.0.0.1:9000
-该字段适用于：创建采集规则配置、修改采集规则配置
+注意：
+- 该字段适用于：创建采集规则配置、修改采集规则配置。
+- COS导入不支持此字段。
 注意：此字段可能返回 null，表示取不到有效值。
                      * @param _address syslog系统日志采集指定采集器监听的地址和端口 ，形式：[ip]:[port]。举例：127.0.0.1:9000
-该字段适用于：创建采集规则配置、修改采集规则配置
+注意：
+- 该字段适用于：创建采集规则配置、修改采集规则配置。
+- COS导入不支持此字段。
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -418,13 +450,17 @@ namespace TencentCloud
                     /**
                      * 获取rfc3164：指定系统日志采集使用RFC3164协议解析日志。
 rfc5424：指定系统日志采集使用RFC5424协议解析日志。
-auto：自动匹配rfc3164或者rfc5424其中一种协议
-该字段适用于：创建采集规则配置、修改采集规则配置
+auto：自动匹配rfc3164或者rfc5424其中一种协议。
+注意：
+- 该字段适用于：创建采集规则配置、修改采集规则配置
+- COS导入不支持此字段。
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return ParseProtocol rfc3164：指定系统日志采集使用RFC3164协议解析日志。
 rfc5424：指定系统日志采集使用RFC5424协议解析日志。
-auto：自动匹配rfc3164或者rfc5424其中一种协议
-该字段适用于：创建采集规则配置、修改采集规则配置
+auto：自动匹配rfc3164或者rfc5424其中一种协议。
+注意：
+- 该字段适用于：创建采集规则配置、修改采集规则配置
+- COS导入不支持此字段。
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -433,13 +469,17 @@ auto：自动匹配rfc3164或者rfc5424其中一种协议
                     /**
                      * 设置rfc3164：指定系统日志采集使用RFC3164协议解析日志。
 rfc5424：指定系统日志采集使用RFC5424协议解析日志。
-auto：自动匹配rfc3164或者rfc5424其中一种协议
-该字段适用于：创建采集规则配置、修改采集规则配置
+auto：自动匹配rfc3164或者rfc5424其中一种协议。
+注意：
+- 该字段适用于：创建采集规则配置、修改采集规则配置
+- COS导入不支持此字段。
 注意：此字段可能返回 null，表示取不到有效值。
                      * @param _parseProtocol rfc3164：指定系统日志采集使用RFC3164协议解析日志。
 rfc5424：指定系统日志采集使用RFC5424协议解析日志。
-auto：自动匹配rfc3164或者rfc5424其中一种协议
-该字段适用于：创建采集规则配置、修改采集规则配置
+auto：自动匹配rfc3164或者rfc5424其中一种协议。
+注意：
+- 该字段适用于：创建采集规则配置、修改采集规则配置
+- COS导入不支持此字段。
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -453,15 +493,23 @@ auto：自动匹配rfc3164或者rfc5424其中一种协议
                     bool ParseProtocolHasBeenSet() const;
 
                     /**
-                     * 获取元数据类型，0: 不使用元数据信息，1:使用机器组元数据，2:使用用户自定义元数据，3:使用采集配置路径，
-                     * @return MetadataType 元数据类型，0: 不使用元数据信息，1:使用机器组元数据，2:使用用户自定义元数据，3:使用采集配置路径，
+                     * 获取元数据类型。0: 不使用元数据信息；1:使用机器组元数据；2:使用用户自定义元数据；3:使用采集配置路径。
+注意：
+- COS导入不支持此字段。
+                     * @return MetadataType 元数据类型。0: 不使用元数据信息；1:使用机器组元数据；2:使用用户自定义元数据；3:使用采集配置路径。
+注意：
+- COS导入不支持此字段。
                      * 
                      */
                     int64_t GetMetadataType() const;
 
                     /**
-                     * 设置元数据类型，0: 不使用元数据信息，1:使用机器组元数据，2:使用用户自定义元数据，3:使用采集配置路径，
-                     * @param _metadataType 元数据类型，0: 不使用元数据信息，1:使用机器组元数据，2:使用用户自定义元数据，3:使用采集配置路径，
+                     * 设置元数据类型。0: 不使用元数据信息；1:使用机器组元数据；2:使用用户自定义元数据；3:使用采集配置路径。
+注意：
+- COS导入不支持此字段。
+                     * @param _metadataType 元数据类型。0: 不使用元数据信息；1:使用机器组元数据；2:使用用户自定义元数据；3:使用采集配置路径。
+注意：
+- COS导入不支持此字段。
                      * 
                      */
                     void SetMetadataType(const int64_t& _metadataType);
@@ -474,18 +522,30 @@ auto：自动匹配rfc3164或者rfc5424其中一种协议
                     bool MetadataTypeHasBeenSet() const;
 
                     /**
-                     * 获取采集配置路径正则表达式，MetadataType为3时必填
+                     * 获取采集配置路径正则表达式。
+注意：
+- MetadataType为3时必填。
+- COS导入不支持此字段。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return PathRegex 采集配置路径正则表达式，MetadataType为3时必填
+                     * @return PathRegex 采集配置路径正则表达式。
+注意：
+- MetadataType为3时必填。
+- COS导入不支持此字段。
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetPathRegex() const;
 
                     /**
-                     * 设置采集配置路径正则表达式，MetadataType为3时必填
+                     * 设置采集配置路径正则表达式。
+注意：
+- MetadataType为3时必填。
+- COS导入不支持此字段。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _pathRegex 采集配置路径正则表达式，MetadataType为3时必填
+                     * @param _pathRegex 采集配置路径正则表达式。
+注意：
+- MetadataType为3时必填。
+- COS导入不支持此字段。
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -499,15 +559,27 @@ auto：自动匹配rfc3164或者rfc5424其中一种协议
                     bool PathRegexHasBeenSet() const;
 
                     /**
-                     * 获取用户自定义元数据信息，MetadataType为2时必填
-                     * @return MetaTags 用户自定义元数据信息，MetadataType为2时必填
+                     * 获取用户自定义元数据信息。
+注意：
+- MetadataType为2时必填。
+- COS导入不支持此字段。
+                     * @return MetaTags 用户自定义元数据信息。
+注意：
+- MetadataType为2时必填。
+- COS导入不支持此字段。
                      * 
                      */
                     std::vector<MetaTagInfo> GetMetaTags() const;
 
                     /**
-                     * 设置用户自定义元数据信息，MetadataType为2时必填
-                     * @param _metaTags 用户自定义元数据信息，MetadataType为2时必填
+                     * 设置用户自定义元数据信息。
+注意：
+- MetadataType为2时必填。
+- COS导入不支持此字段。
+                     * @param _metaTags 用户自定义元数据信息。
+注意：
+- MetadataType为2时必填。
+- COS导入不支持此字段。
                      * 
                      */
                     void SetMetaTags(const std::vector<MetaTagInfo>& _metaTags);
@@ -520,15 +592,23 @@ auto：自动匹配rfc3164或者rfc5424其中一种协议
                     bool MetaTagsHasBeenSet() const;
 
                     /**
-                     * 获取Windows事件日志采集
-                     * @return EventLogRules Windows事件日志采集
+                     * 获取Windows事件日志采集。
+注意：
+- COS导入不支持此字段。
+                     * @return EventLogRules Windows事件日志采集。
+注意：
+- COS导入不支持此字段。
                      * 
                      */
                     std::vector<EventLog> GetEventLogRules() const;
 
                     /**
-                     * 设置Windows事件日志采集
-                     * @param _eventLogRules Windows事件日志采集
+                     * 设置Windows事件日志采集。
+注意：
+- COS导入不支持此字段。
+                     * @param _eventLogRules Windows事件日志采集。
+注意：
+- COS导入不支持此字段。
                      * 
                      */
                     void SetEventLogRules(const std::vector<EventLog>& _eventLogRules);
@@ -608,21 +688,25 @@ auto：自动匹配rfc3164或者rfc5424其中一种协议
                     bool m_unMatchLogKeyHasBeenSet;
 
                     /**
-                     * 增量采集模式下的回溯数据量，默认-1（全量采集）；其他非负数表示增量采集（从最新的位置，往前采集${Backtracking}字节（Byte）的日志）最大支持1073741824（1G）。
+                     * 增量采集模式下的回溯数据量，默认：-1（全量采集）；其他非负数表示增量采集（从最新的位置，往前采集${Backtracking}字节（Byte）的日志）最大支持1073741824（1G）。
+注意：
+- COS导入不支持此字段。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_backtracking;
                     bool m_backtrackingHasBeenSet;
 
                     /**
-                     * 是否为Gbk编码.   0: 否, 1: 是
+                     * 是否为Gbk编码。 0：否；1：是。
+注意：
+- COS导入不支持此字段。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_isGBK;
                     bool m_isGBKHasBeenSet;
 
                     /**
-                     * 是否为标准json.   0: 否, 1: 是
+                     * 是否为标准json。  0：否； 1：是。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_jsonStandard;
@@ -630,7 +714,9 @@ auto：自动匹配rfc3164或者rfc5424其中一种协议
 
                     /**
                      * syslog传输协议，取值为tcp或者udp。
-该字段适用于：创建采集规则配置、修改采集规则配置
+注意：
+- 该字段适用于：创建采集规则配置、修改采集规则配置。
+- COS导入不支持此字段。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_protocol;
@@ -638,7 +724,9 @@ auto：自动匹配rfc3164或者rfc5424其中一种协议
 
                     /**
                      * syslog系统日志采集指定采集器监听的地址和端口 ，形式：[ip]:[port]。举例：127.0.0.1:9000
-该字段适用于：创建采集规则配置、修改采集规则配置
+注意：
+- 该字段适用于：创建采集规则配置、修改采集规则配置。
+- COS导入不支持此字段。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_address;
@@ -647,34 +735,46 @@ auto：自动匹配rfc3164或者rfc5424其中一种协议
                     /**
                      * rfc3164：指定系统日志采集使用RFC3164协议解析日志。
 rfc5424：指定系统日志采集使用RFC5424协议解析日志。
-auto：自动匹配rfc3164或者rfc5424其中一种协议
-该字段适用于：创建采集规则配置、修改采集规则配置
+auto：自动匹配rfc3164或者rfc5424其中一种协议。
+注意：
+- 该字段适用于：创建采集规则配置、修改采集规则配置
+- COS导入不支持此字段。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_parseProtocol;
                     bool m_parseProtocolHasBeenSet;
 
                     /**
-                     * 元数据类型，0: 不使用元数据信息，1:使用机器组元数据，2:使用用户自定义元数据，3:使用采集配置路径，
+                     * 元数据类型。0: 不使用元数据信息；1:使用机器组元数据；2:使用用户自定义元数据；3:使用采集配置路径。
+注意：
+- COS导入不支持此字段。
                      */
                     int64_t m_metadataType;
                     bool m_metadataTypeHasBeenSet;
 
                     /**
-                     * 采集配置路径正则表达式，MetadataType为3时必填
+                     * 采集配置路径正则表达式。
+注意：
+- MetadataType为3时必填。
+- COS导入不支持此字段。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_pathRegex;
                     bool m_pathRegexHasBeenSet;
 
                     /**
-                     * 用户自定义元数据信息，MetadataType为2时必填
+                     * 用户自定义元数据信息。
+注意：
+- MetadataType为2时必填。
+- COS导入不支持此字段。
                      */
                     std::vector<MetaTagInfo> m_metaTags;
                     bool m_metaTagsHasBeenSet;
 
                     /**
-                     * Windows事件日志采集
+                     * Windows事件日志采集。
+注意：
+- COS导入不支持此字段。
                      */
                     std::vector<EventLog> m_eventLogRules;
                     bool m_eventLogRulesHasBeenSet;

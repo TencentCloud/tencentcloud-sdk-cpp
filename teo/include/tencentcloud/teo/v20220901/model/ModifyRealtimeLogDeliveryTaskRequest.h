@@ -23,6 +23,7 @@
 #include <tencentcloud/core/AbstractModel.h>
 #include <tencentcloud/teo/v20220901/model/CustomField.h>
 #include <tencentcloud/teo/v20220901/model/DeliveryCondition.h>
+#include <tencentcloud/teo/v20220901/model/LogFormat.h>
 #include <tencentcloud/teo/v20220901/model/CustomEndpoint.h>
 #include <tencentcloud/teo/v20220901/model/S3.h>
 
@@ -252,6 +253,27 @@ namespace TencentCloud
                     bool SampleHasBeenSet() const;
 
                     /**
+                     * 获取日志投递的输出格式。不填保持原有配置。
+                     * @return LogFormat 日志投递的输出格式。不填保持原有配置。
+                     * 
+                     */
+                    LogFormat GetLogFormat() const;
+
+                    /**
+                     * 设置日志投递的输出格式。不填保持原有配置。
+                     * @param _logFormat 日志投递的输出格式。不填保持原有配置。
+                     * 
+                     */
+                    void SetLogFormat(const LogFormat& _logFormat);
+
+                    /**
+                     * 判断参数 LogFormat 是否已赋值
+                     * @return LogFormat 是否已赋值
+                     * 
+                     */
+                    bool LogFormatHasBeenSet() const;
+
+                    /**
                      * 获取自定义 HTTP 服务的配置信息，不填保持原有配置。 
                      * @return CustomEndpoint 自定义 HTTP 服务的配置信息，不填保持原有配置。 
                      * 
@@ -352,6 +374,12 @@ namespace TencentCloud
                      */
                     uint64_t m_sample;
                     bool m_sampleHasBeenSet;
+
+                    /**
+                     * 日志投递的输出格式。不填保持原有配置。
+                     */
+                    LogFormat m_logFormat;
+                    bool m_logFormatHasBeenSet;
 
                     /**
                      * 自定义 HTTP 服务的配置信息，不填保持原有配置。 

@@ -58,7 +58,7 @@ namespace TencentCloud
 
 必选：否
 
-<br><li> srctopicId
+<br><li> topicId
 
 按照【源topicId】进行过滤。
 类型：String
@@ -80,7 +80,7 @@ namespace TencentCloud
 
 必选：否
 
-<br><li> srctopicId
+<br><li> topicId
 
 按照【源topicId】进行过滤。
 类型：String
@@ -107,7 +107,7 @@ namespace TencentCloud
 
 必选：否
 
-<br><li> srctopicId
+<br><li> topicId
 
 按照【源topicId】进行过滤。
 类型：String
@@ -129,7 +129,7 @@ namespace TencentCloud
 
 必选：否
 
-<br><li> srctopicId
+<br><li> topicId
 
 按照【源topicId】进行过滤。
 类型：String
@@ -249,7 +249,7 @@ namespace TencentCloud
 
 必选：否
 
-<br><li> srctopicId
+<br><li> topicId
 
 按照【源topicId】进行过滤。
 类型：String

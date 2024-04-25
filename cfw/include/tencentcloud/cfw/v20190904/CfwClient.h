@@ -1022,7 +1022,7 @@ namespace TencentCloud
                 DescribeGuideScanInfoOutcomeCallable DescribeGuideScanInfoCallable(const Model::DescribeGuideScanInfoRequest& request);
 
                 /**
-                 *ip防护状态查询
+                 *IP防护状态查询
                  * @param req DescribeIPStatusListRequest
                  * @return DescribeIPStatusListOutcome
                  */

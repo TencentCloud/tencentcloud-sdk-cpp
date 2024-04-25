@@ -23,6 +23,7 @@
 #include <tencentcloud/core/AbstractModel.h>
 #include <tencentcloud/teo/v20220901/model/CustomField.h>
 #include <tencentcloud/teo/v20220901/model/DeliveryCondition.h>
+#include <tencentcloud/teo/v20220901/model/LogFormat.h>
 #include <tencentcloud/teo/v20220901/model/CLSTopic.h>
 #include <tencentcloud/teo/v20220901/model/CustomEndpoint.h>
 #include <tencentcloud/teo/v20220901/model/S3.h>
@@ -310,6 +311,35 @@ namespace TencentCloud
                     bool SampleHasBeenSet() const;
 
                     /**
+                     * 获取日志投递的输出格式。不填表示为默认格式，默认格式逻辑如下：
+<li>当 TaskType 取值为 custom_endpoint 时，默认格式为多个 JSON 对象组成的数组，每个 JSON 对象为一条日志；</li>
+<li>当 TaskType 取值为 s3 时，默认格式为 JSON Lines；</li>特别地，当 TaskType 取值为 cls 时，LogFormat.FormatType 的值只能为 json，且 LogFormat 中其他参数将被忽略，建议不传 LogFormat。
+                     * @return LogFormat 日志投递的输出格式。不填表示为默认格式，默认格式逻辑如下：
+<li>当 TaskType 取值为 custom_endpoint 时，默认格式为多个 JSON 对象组成的数组，每个 JSON 对象为一条日志；</li>
+<li>当 TaskType 取值为 s3 时，默认格式为 JSON Lines；</li>特别地，当 TaskType 取值为 cls 时，LogFormat.FormatType 的值只能为 json，且 LogFormat 中其他参数将被忽略，建议不传 LogFormat。
+                     * 
+                     */
+                    LogFormat GetLogFormat() const;
+
+                    /**
+                     * 设置日志投递的输出格式。不填表示为默认格式，默认格式逻辑如下：
+<li>当 TaskType 取值为 custom_endpoint 时，默认格式为多个 JSON 对象组成的数组，每个 JSON 对象为一条日志；</li>
+<li>当 TaskType 取值为 s3 时，默认格式为 JSON Lines；</li>特别地，当 TaskType 取值为 cls 时，LogFormat.FormatType 的值只能为 json，且 LogFormat 中其他参数将被忽略，建议不传 LogFormat。
+                     * @param _logFormat 日志投递的输出格式。不填表示为默认格式，默认格式逻辑如下：
+<li>当 TaskType 取值为 custom_endpoint 时，默认格式为多个 JSON 对象组成的数组，每个 JSON 对象为一条日志；</li>
+<li>当 TaskType 取值为 s3 时，默认格式为 JSON Lines；</li>特别地，当 TaskType 取值为 cls 时，LogFormat.FormatType 的值只能为 json，且 LogFormat 中其他参数将被忽略，建议不传 LogFormat。
+                     * 
+                     */
+                    void SetLogFormat(const LogFormat& _logFormat);
+
+                    /**
+                     * 判断参数 LogFormat 是否已赋值
+                     * @return LogFormat 是否已赋值
+                     * 
+                     */
+                    bool LogFormatHasBeenSet() const;
+
+                    /**
                      * 获取CLS 的配置信息。当 TaskType 取值为 cls 时，该参数必填。
                      * @return CLS CLS 的配置信息。当 TaskType 取值为 cls 时，该参数必填。
                      * 
@@ -446,6 +476,14 @@ namespace TencentCloud
                      */
                     uint64_t m_sample;
                     bool m_sampleHasBeenSet;
+
+                    /**
+                     * 日志投递的输出格式。不填表示为默认格式，默认格式逻辑如下：
+<li>当 TaskType 取值为 custom_endpoint 时，默认格式为多个 JSON 对象组成的数组，每个 JSON 对象为一条日志；</li>
+<li>当 TaskType 取值为 s3 时，默认格式为 JSON Lines；</li>特别地，当 TaskType 取值为 cls 时，LogFormat.FormatType 的值只能为 json，且 LogFormat 中其他参数将被忽略，建议不传 LogFormat。
+                     */
+                    LogFormat m_logFormat;
+                    bool m_logFormatHasBeenSet;
 
                     /**
                      * CLS 的配置信息。当 TaskType 取值为 cls 时，该参数必填。

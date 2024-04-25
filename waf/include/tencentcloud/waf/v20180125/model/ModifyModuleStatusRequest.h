@@ -64,15 +64,15 @@ namespace TencentCloud
                     bool DomainHasBeenSet() const;
 
                     /**
-                     * 获取WEB 安全模块开关，0或1
-                     * @return WebSecurity WEB 安全模块开关，0或1
+                     * 获取Web 安全模块开关，0或1
+                     * @return WebSecurity Web 安全模块开关，0或1
                      * 
                      */
                     uint64_t GetWebSecurity() const;
 
                     /**
-                     * 设置WEB 安全模块开关，0或1
-                     * @param _webSecurity WEB 安全模块开关，0或1
+                     * 设置Web 安全模块开关，0或1
+                     * @param _webSecurity Web 安全模块开关，0或1
                      * 
                      */
                     void SetWebSecurity(const uint64_t& _webSecurity);
@@ -219,7 +219,7 @@ namespace TencentCloud
                     bool m_domainHasBeenSet;
 
                     /**
-                     * WEB 安全模块开关，0或1
+                     * Web 安全模块开关，0或1
                      */
                     uint64_t m_webSecurity;
                     bool m_webSecurityHasBeenSet;

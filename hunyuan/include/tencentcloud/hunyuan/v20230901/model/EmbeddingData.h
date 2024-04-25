@@ -35,7 +35,7 @@ namespace TencentCloud
             namespace Model
             {
                 /**
-                * embedding 信息，当前不支持批量，所以数组元素数目为1。
+                * Embedding 信息。
                 */
                 class EmbeddingData : public AbstractModel
                 {

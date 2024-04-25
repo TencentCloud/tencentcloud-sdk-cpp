@@ -149,15 +149,15 @@ namespace TencentCloud
                     bool UniqueSubnetIdHasBeenSet() const;
 
                     /**
-                     * 获取数据库代理组节点个数
-                     * @return ProxyCount 数据库代理组节点个数
+                     * 获取数据库代理组节点个数（该参数不再建议使用，建议使用ProxyZones)
+                     * @return ProxyCount 数据库代理组节点个数（该参数不再建议使用，建议使用ProxyZones)
                      * 
                      */
                     int64_t GetProxyCount() const;
 
                     /**
-                     * 设置数据库代理组节点个数
-                     * @param _proxyCount 数据库代理组节点个数
+                     * 设置数据库代理组节点个数（该参数不再建议使用，建议使用ProxyZones)
+                     * @param _proxyCount 数据库代理组节点个数（该参数不再建议使用，建议使用ProxyZones)
                      * 
                      */
                     void SetProxyCount(const int64_t& _proxyCount);
@@ -275,15 +275,15 @@ namespace TencentCloud
                     bool DescriptionHasBeenSet() const;
 
                     /**
-                     * 获取数据库节点信息
-                     * @return ProxyZones 数据库节点信息
+                     * 获取数据库节点信息（该参数与ProxyCount需要任选一个输入）
+                     * @return ProxyZones 数据库节点信息（该参数与ProxyCount需要任选一个输入）
                      * 
                      */
                     std::vector<ProxyZone> GetProxyZones() const;
 
                     /**
-                     * 设置数据库节点信息
-                     * @param _proxyZones 数据库节点信息
+                     * 设置数据库节点信息（该参数与ProxyCount需要任选一个输入）
+                     * @param _proxyZones 数据库节点信息（该参数与ProxyCount需要任选一个输入）
                      * 
                      */
                     void SetProxyZones(const std::vector<ProxyZone>& _proxyZones);
@@ -328,7 +328,7 @@ namespace TencentCloud
                     bool m_uniqueSubnetIdHasBeenSet;
 
                     /**
-                     * 数据库代理组节点个数
+                     * 数据库代理组节点个数（该参数不再建议使用，建议使用ProxyZones)
                      */
                     int64_t m_proxyCount;
                     bool m_proxyCountHasBeenSet;
@@ -364,7 +364,7 @@ namespace TencentCloud
                     bool m_descriptionHasBeenSet;
 
                     /**
-                     * 数据库节点信息
+                     * 数据库节点信息（该参数与ProxyCount需要任选一个输入）
                      */
                     std::vector<ProxyZone> m_proxyZones;
                     bool m_proxyZonesHasBeenSet;

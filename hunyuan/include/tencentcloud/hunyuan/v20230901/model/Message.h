@@ -68,15 +68,15 @@ namespace TencentCloud
                     bool RoleHasBeenSet() const;
 
                     /**
-                     * 获取消息内容
-                     * @return Content 消息内容
+                     * 获取文本内容
+                     * @return Content 文本内容
                      * 
                      */
                     std::string GetContent() const;
 
                     /**
-                     * 设置消息内容
-                     * @param _content 消息内容
+                     * 设置文本内容
+                     * @param _content 文本内容
                      * 
                      */
                     void SetContent(const std::string& _content);
@@ -97,7 +97,7 @@ namespace TencentCloud
                     bool m_roleHasBeenSet;
 
                     /**
-                     * 消息内容
+                     * 文本内容
                      */
                     std::string m_content;
                     bool m_contentHasBeenSet;

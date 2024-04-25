@@ -255,15 +255,15 @@ lo（老挝语）：zh（简体中文）、zh-HK（繁体中文）、 zh-TW（�
                     bool SourceTypeHasBeenSet() const;
 
                     /**
-                     * 获取需要翻译文件url，文件需小于100MB。
-                     * @return Url 需要翻译文件url，文件需小于100MB。
+                     * 获取需要翻译文件url，文件限制如下：docx/xIsx/html/markdown文件不超过800万字符，doc/pdf/pptx文件不超过300页，txt/po文件不超过10MB，pdf/docx/pptx/xlsx不超过40MB
+                     * @return Url 需要翻译文件url，文件限制如下：docx/xIsx/html/markdown文件不超过800万字符，doc/pdf/pptx文件不超过300页，txt/po文件不超过10MB，pdf/docx/pptx/xlsx不超过40MB
                      * 
                      */
                     std::string GetUrl() const;
 
                     /**
-                     * 设置需要翻译文件url，文件需小于100MB。
-                     * @param _url 需要翻译文件url，文件需小于100MB。
+                     * 设置需要翻译文件url，文件限制如下：docx/xIsx/html/markdown文件不超过800万字符，doc/pdf/pptx文件不超过300页，txt/po文件不超过10MB，pdf/docx/pptx/xlsx不超过40MB
+                     * @param _url 需要翻译文件url，文件限制如下：docx/xIsx/html/markdown文件不超过800万字符，doc/pdf/pptx文件不超过300页，txt/po文件不超过10MB，pdf/docx/pptx/xlsx不超过40MB
                      * 
                      */
                     void SetUrl(const std::string& _url);
@@ -397,7 +397,7 @@ lo（老挝语）：zh（简体中文）、zh-HK（繁体中文）、 zh-TW（�
                     bool m_sourceTypeHasBeenSet;
 
                     /**
-                     * 需要翻译文件url，文件需小于100MB。
+                     * 需要翻译文件url，文件限制如下：docx/xIsx/html/markdown文件不超过800万字符，doc/pdf/pptx文件不超过300页，txt/po文件不超过10MB，pdf/docx/pptx/xlsx不超过40MB
                      */
                     std::string m_url;
                     bool m_urlHasBeenSet;

@@ -237,15 +237,15 @@ namespace TencentCloud
                     bool PercentHasBeenSet() const;
 
                     /**
-                     * 获取帐号ID
-                     * @return AppId 帐号ID
+                     * 获取账号ID
+                     * @return AppId 账号ID
                      * 
                      */
                     uint64_t GetAppId() const;
 
                     /**
-                     * 设置帐号ID
-                     * @param _appId 帐号ID
+                     * 设置账号ID
+                     * @param _appId 账号ID
                      * 
                      */
                     void SetAppId(const uint64_t& _appId);
@@ -427,7 +427,7 @@ namespace TencentCloud
                     bool m_percentHasBeenSet;
 
                     /**
-                     * 帐号ID
+                     * 账号ID
                      */
                     uint64_t m_appId;
                     bool m_appIdHasBeenSet;

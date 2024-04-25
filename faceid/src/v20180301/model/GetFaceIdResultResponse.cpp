@@ -33,7 +33,9 @@ GetFaceIdResultResponse::GetFaceIdResultResponse() :
     m_bestFrameBase64HasBeenSet(false),
     m_extraHasBeenSet(false),
     m_deviceInfoTagHasBeenSet(false),
-    m_riskInfoTagHasBeenSet(false)
+    m_riskInfoTagHasBeenSet(false),
+    m_livenessInfoTagHasBeenSet(false),
+    m_deviceInfoLevelHasBeenSet(false)
 {
 }
 
@@ -171,6 +173,26 @@ CoreInternalOutcome GetFaceIdResultResponse::Deserialize(const string &payload)
         m_riskInfoTagHasBeenSet = true;
     }
 
+    if (rsp.HasMember("LivenessInfoTag") && !rsp["LivenessInfoTag"].IsNull())
+    {
+        if (!rsp["LivenessInfoTag"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `LivenessInfoTag` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_livenessInfoTag = string(rsp["LivenessInfoTag"].GetString());
+        m_livenessInfoTagHasBeenSet = true;
+    }
+
+    if (rsp.HasMember("DeviceInfoLevel") && !rsp["DeviceInfoLevel"].IsNull())
+    {
+        if (!rsp["DeviceInfoLevel"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `DeviceInfoLevel` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_deviceInfoLevel = string(rsp["DeviceInfoLevel"].GetString());
+        m_deviceInfoLevelHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -259,6 +281,22 @@ string GetFaceIdResultResponse::ToJsonString() const
         string key = "RiskInfoTag";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_riskInfoTag.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_livenessInfoTagHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "LivenessInfoTag";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_livenessInfoTag.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_deviceInfoLevelHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "DeviceInfoLevel";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_deviceInfoLevel.c_str(), allocator).Move(), allocator);
     }
 
     rapidjson::Value iKey(rapidjson::kStringType);
@@ -371,6 +409,26 @@ string GetFaceIdResultResponse::GetRiskInfoTag() const
 bool GetFaceIdResultResponse::RiskInfoTagHasBeenSet() const
 {
     return m_riskInfoTagHasBeenSet;
+}
+
+string GetFaceIdResultResponse::GetLivenessInfoTag() const
+{
+    return m_livenessInfoTag;
+}
+
+bool GetFaceIdResultResponse::LivenessInfoTagHasBeenSet() const
+{
+    return m_livenessInfoTagHasBeenSet;
+}
+
+string GetFaceIdResultResponse::GetDeviceInfoLevel() const
+{
+    return m_deviceInfoLevel;
+}
+
+bool GetFaceIdResultResponse::DeviceInfoLevelHasBeenSet() const
+{
+    return m_deviceInfoLevelHasBeenSet;
 }
 
 

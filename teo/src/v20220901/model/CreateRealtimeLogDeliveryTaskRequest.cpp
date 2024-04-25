@@ -33,6 +33,7 @@ CreateRealtimeLogDeliveryTaskRequest::CreateRealtimeLogDeliveryTaskRequest() :
     m_customFieldsHasBeenSet(false),
     m_deliveryConditionsHasBeenSet(false),
     m_sampleHasBeenSet(false),
+    m_logFormatHasBeenSet(false),
     m_cLSHasBeenSet(false),
     m_customEndpointHasBeenSet(false),
     m_s3HasBeenSet(false)
@@ -148,6 +149,15 @@ string CreateRealtimeLogDeliveryTaskRequest::ToJsonString() const
         string key = "Sample";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_sample, allocator);
+    }
+
+    if (m_logFormatHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "LogFormat";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_logFormat.ToJsonObject(d[key.c_str()], allocator);
     }
 
     if (m_cLSHasBeenSet)
@@ -343,6 +353,22 @@ void CreateRealtimeLogDeliveryTaskRequest::SetSample(const uint64_t& _sample)
 bool CreateRealtimeLogDeliveryTaskRequest::SampleHasBeenSet() const
 {
     return m_sampleHasBeenSet;
+}
+
+LogFormat CreateRealtimeLogDeliveryTaskRequest::GetLogFormat() const
+{
+    return m_logFormat;
+}
+
+void CreateRealtimeLogDeliveryTaskRequest::SetLogFormat(const LogFormat& _logFormat)
+{
+    m_logFormat = _logFormat;
+    m_logFormatHasBeenSet = true;
+}
+
+bool CreateRealtimeLogDeliveryTaskRequest::LogFormatHasBeenSet() const
+{
+    return m_logFormatHasBeenSet;
 }
 
 CLSTopic CreateRealtimeLogDeliveryTaskRequest::GetCLS() const

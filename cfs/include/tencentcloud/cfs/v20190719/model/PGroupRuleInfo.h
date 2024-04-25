@@ -110,15 +110,31 @@ namespace TencentCloud
                     bool RWPermissionHasBeenSet() const;
 
                     /**
-                     * 获取用户权限。其中all_squash为所有访问用户都会被映射为匿名用户或用户组；no_all_squash为访问用户会先与本机用户匹配，匹配失败后再映射为匿名用户或用户组；root_squash为将来访的root用户映射为匿名用户或用户组；no_root_squash为来访的root用户保持root帐号权限。
-                     * @return UserPermission 用户权限。其中all_squash为所有访问用户都会被映射为匿名用户或用户组；no_all_squash为访问用户会先与本机用户匹配，匹配失败后再映射为匿名用户或用户组；root_squash为将来访的root用户映射为匿名用户或用户组；no_root_squash为来访的root用户保持root帐号权限。
+                     * 获取all_squash：所有访问用户（含 root 用户）都会被映射为匿名用户或用户组。
+no_all_squash：所有访问用户（含 root 用户）均保持原有的 UID/GID 信息。
+root_squash：将来访的 root 用户映射为匿名用户或用户组，非 root 用户保持原有的 UID/GID 信息。
+no_root_squash：与 no_all_squash 效果一致，所有访问用户（含 root 用户）均保持原有的 UID/GID 信息
+
+                     * @return UserPermission all_squash：所有访问用户（含 root 用户）都会被映射为匿名用户或用户组。
+no_all_squash：所有访问用户（含 root 用户）均保持原有的 UID/GID 信息。
+root_squash：将来访的 root 用户映射为匿名用户或用户组，非 root 用户保持原有的 UID/GID 信息。
+no_root_squash：与 no_all_squash 效果一致，所有访问用户（含 root 用户）均保持原有的 UID/GID 信息
+
                      * 
                      */
                     std::string GetUserPermission() const;
 
                     /**
-                     * 设置用户权限。其中all_squash为所有访问用户都会被映射为匿名用户或用户组；no_all_squash为访问用户会先与本机用户匹配，匹配失败后再映射为匿名用户或用户组；root_squash为将来访的root用户映射为匿名用户或用户组；no_root_squash为来访的root用户保持root帐号权限。
-                     * @param _userPermission 用户权限。其中all_squash为所有访问用户都会被映射为匿名用户或用户组；no_all_squash为访问用户会先与本机用户匹配，匹配失败后再映射为匿名用户或用户组；root_squash为将来访的root用户映射为匿名用户或用户组；no_root_squash为来访的root用户保持root帐号权限。
+                     * 设置all_squash：所有访问用户（含 root 用户）都会被映射为匿名用户或用户组。
+no_all_squash：所有访问用户（含 root 用户）均保持原有的 UID/GID 信息。
+root_squash：将来访的 root 用户映射为匿名用户或用户组，非 root 用户保持原有的 UID/GID 信息。
+no_root_squash：与 no_all_squash 效果一致，所有访问用户（含 root 用户）均保持原有的 UID/GID 信息
+
+                     * @param _userPermission all_squash：所有访问用户（含 root 用户）都会被映射为匿名用户或用户组。
+no_all_squash：所有访问用户（含 root 用户）均保持原有的 UID/GID 信息。
+root_squash：将来访的 root 用户映射为匿名用户或用户组，非 root 用户保持原有的 UID/GID 信息。
+no_root_squash：与 no_all_squash 效果一致，所有访问用户（含 root 用户）均保持原有的 UID/GID 信息
+
                      * 
                      */
                     void SetUserPermission(const std::string& _userPermission);
@@ -172,7 +188,11 @@ namespace TencentCloud
                     bool m_rWPermissionHasBeenSet;
 
                     /**
-                     * 用户权限。其中all_squash为所有访问用户都会被映射为匿名用户或用户组；no_all_squash为访问用户会先与本机用户匹配，匹配失败后再映射为匿名用户或用户组；root_squash为将来访的root用户映射为匿名用户或用户组；no_root_squash为来访的root用户保持root帐号权限。
+                     * all_squash：所有访问用户（含 root 用户）都会被映射为匿名用户或用户组。
+no_all_squash：所有访问用户（含 root 用户）均保持原有的 UID/GID 信息。
+root_squash：将来访的 root 用户映射为匿名用户或用户组，非 root 用户保持原有的 UID/GID 信息。
+no_root_squash：与 no_all_squash 效果一致，所有访问用户（含 root 用户）均保持原有的 UID/GID 信息
+
                      */
                     std::string m_userPermission;
                     bool m_userPermissionHasBeenSet;

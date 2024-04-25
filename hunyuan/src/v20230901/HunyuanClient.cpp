@@ -40,6 +40,49 @@ HunyuanClient::HunyuanClient(const Credential &credential, const string &region,
 }
 
 
+HunyuanClient::ChatCompletionsOutcome HunyuanClient::ChatCompletions(const ChatCompletionsRequest &request)
+{
+    auto outcome = MakeRequest(request, "ChatCompletions");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ChatCompletionsResponse rsp = ChatCompletionsResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ChatCompletionsOutcome(rsp);
+        else
+            return ChatCompletionsOutcome(o.GetError());
+    }
+    else
+    {
+        return ChatCompletionsOutcome(outcome.GetError());
+    }
+}
+
+void HunyuanClient::ChatCompletionsAsync(const ChatCompletionsRequest& request, const ChatCompletionsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->ChatCompletions(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+HunyuanClient::ChatCompletionsOutcomeCallable HunyuanClient::ChatCompletionsCallable(const ChatCompletionsRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<ChatCompletionsOutcome()>>(
+        [this, request]()
+        {
+            return this->ChatCompletions(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 HunyuanClient::ChatProOutcome HunyuanClient::ChatPro(const ChatProRequest &request)
 {
     auto outcome = MakeRequest(request, "ChatPro");

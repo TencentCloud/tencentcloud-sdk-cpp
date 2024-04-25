@@ -43,15 +43,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取输入文本。总长度不超过1024 个token, 超过则会截断最后面的内容。
-                     * @return Input 输入文本。总长度不超过1024 个token, 超过则会截断最后面的内容。
+                     * 获取输入文本。总长度不超过 1024 个 Token，超过则会截断最后面的内容。
+                     * @return Input 输入文本。总长度不超过 1024 个 Token，超过则会截断最后面的内容。
                      * 
                      */
                     std::string GetInput() const;
 
                     /**
-                     * 设置输入文本。总长度不超过1024 个token, 超过则会截断最后面的内容。
-                     * @param _input 输入文本。总长度不超过1024 个token, 超过则会截断最后面的内容。
+                     * 设置输入文本。总长度不超过 1024 个 Token，超过则会截断最后面的内容。
+                     * @param _input 输入文本。总长度不超过 1024 个 Token，超过则会截断最后面的内容。
                      * 
                      */
                     void SetInput(const std::string& _input);
@@ -66,7 +66,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 输入文本。总长度不超过1024 个token, 超过则会截断最后面的内容。
+                     * 输入文本。总长度不超过 1024 个 Token，超过则会截断最后面的内容。
                      */
                     std::string m_input;
                     bool m_inputHasBeenSet;

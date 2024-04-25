@@ -68,27 +68,6 @@ namespace TencentCloud
                     bool JobIdHasBeenSet() const;
 
                     /**
-                     * 获取状态。
-                     * @return Status 状态。
-                     * 
-                     */
-                    std::string GetStatus() const;
-
-                    /**
-                     * 设置状态。
-                     * @param _status 状态。
-                     * 
-                     */
-                    void SetStatus(const std::string& _status);
-
-                    /**
-                     * 判断参数 Status 是否已赋值
-                     * @return Status 是否已赋值
-                     * 
-                     */
-                    bool StatusHasBeenSet() const;
-
-                    /**
                      * 获取资源。
                      * @return Target 资源。
                      * 
@@ -129,6 +108,43 @@ namespace TencentCloud
                      * 
                      */
                     bool TypeHasBeenSet() const;
+
+                    /**
+                     * 获取状态。取值有：
+<li>processing：处理中；</li>
+<li>success：成功；</li>
+<li> failed：失败；</li>
+<li>timeout：超时。</li>
+                     * @return Status 状态。取值有：
+<li>processing：处理中；</li>
+<li>success：成功；</li>
+<li> failed：失败；</li>
+<li>timeout：超时。</li>
+                     * 
+                     */
+                    std::string GetStatus() const;
+
+                    /**
+                     * 设置状态。取值有：
+<li>processing：处理中；</li>
+<li>success：成功；</li>
+<li> failed：失败；</li>
+<li>timeout：超时。</li>
+                     * @param _status 状态。取值有：
+<li>processing：处理中；</li>
+<li>success：成功；</li>
+<li> failed：失败；</li>
+<li>timeout：超时。</li>
+                     * 
+                     */
+                    void SetStatus(const std::string& _status);
+
+                    /**
+                     * 判断参数 Status 是否已赋值
+                     * @return Status 是否已赋值
+                     * 
+                     */
+                    bool StatusHasBeenSet() const;
 
                     /**
                      * 获取任务创建时间。
@@ -181,12 +197,6 @@ namespace TencentCloud
                     bool m_jobIdHasBeenSet;
 
                     /**
-                     * 状态。
-                     */
-                    std::string m_status;
-                    bool m_statusHasBeenSet;
-
-                    /**
                      * 资源。
                      */
                     std::string m_target;
@@ -197,6 +207,16 @@ namespace TencentCloud
                      */
                     std::string m_type;
                     bool m_typeHasBeenSet;
+
+                    /**
+                     * 状态。取值有：
+<li>processing：处理中；</li>
+<li>success：成功；</li>
+<li> failed：失败；</li>
+<li>timeout：超时。</li>
+                     */
+                    std::string m_status;
+                    bool m_statusHasBeenSet;
 
                     /**
                      * 任务创建时间。

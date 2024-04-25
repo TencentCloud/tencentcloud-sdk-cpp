@@ -300,15 +300,15 @@ namespace TencentCloud
                     bool DstResourcesHasBeenSet() const;
 
                     /**
-                     * 获取加工逻辑函数
-                     * @return EtlContent 加工逻辑函数
+                     * 获取加工逻辑函数。
+                     * @return EtlContent 加工逻辑函数。
                      * 
                      */
                     std::string GetEtlContent() const;
 
                     /**
-                     * 设置加工逻辑函数
-                     * @param _etlContent 加工逻辑函数
+                     * 设置加工逻辑函数。
+                     * @param _etlContent 加工逻辑函数。
                      * 
                      */
                     void SetEtlContent(const std::string& _etlContent);
@@ -395,7 +395,7 @@ namespace TencentCloud
                     bool m_dstResourcesHasBeenSet;
 
                     /**
-                     * 加工逻辑函数
+                     * 加工逻辑函数。
                      */
                     std::string m_etlContent;
                     bool m_etlContentHasBeenSet;

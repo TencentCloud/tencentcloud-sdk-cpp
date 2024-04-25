@@ -419,7 +419,7 @@ namespace TencentCloud
                 AssociateSecurityGroupsOutcomeCallable AssociateSecurityGroupsCallable(const Model::AssociateSecurityGroupsRequest& request);
 
                 /**
-                 *取消DCN同步
+                 *本接口（CancelDcnJob）用于取消DCN同步
                  * @param req CancelDcnJobRequest
                  * @return CancelDcnJobOutcome
                  */

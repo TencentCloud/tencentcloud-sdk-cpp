@@ -120,15 +120,15 @@ namespace TencentCloud
                     bool SealIdHasBeenSet() const;
 
                     /**
-                     * 获取授权有效期。时间戳秒级
-                     * @return Expired 授权有效期。时间戳秒级
+                     * 获取授权有效期，时间戳秒级。可以传0，代表有效期到2099年12月12日23点59分59秒。
+                     * @return Expired 授权有效期，时间戳秒级。可以传0，代表有效期到2099年12月12日23点59分59秒。
                      * 
                      */
                     int64_t GetExpired() const;
 
                     /**
-                     * 设置授权有效期。时间戳秒级
-                     * @param _expired 授权有效期。时间戳秒级
+                     * 设置授权有效期，时间戳秒级。可以传0，代表有效期到2099年12月12日23点59分59秒。
+                     * @param _expired 授权有效期，时间戳秒级。可以传0，代表有效期到2099年12月12日23点59分59秒。
                      * 
                      */
                     void SetExpired(const int64_t& _expired);
@@ -231,7 +231,7 @@ namespace TencentCloud
                     bool m_sealIdHasBeenSet;
 
                     /**
-                     * 授权有效期。时间戳秒级
+                     * 授权有效期，时间戳秒级。可以传0，代表有效期到2099年12月12日23点59分59秒。
                      */
                     int64_t m_expired;
                     bool m_expiredHasBeenSet;

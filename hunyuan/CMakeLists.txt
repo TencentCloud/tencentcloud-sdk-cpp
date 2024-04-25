@@ -19,6 +19,7 @@ set(hunyuan_public_header
   )
 
 set(hunyuan_public_header_model
+  include/tencentcloud/hunyuan/v20230901/model/ChatCompletionsRequest.h
   include/tencentcloud/hunyuan/v20230901/model/GetTokenCountResponse.h
   include/tencentcloud/hunyuan/v20230901/model/GetEmbeddingResponse.h
   include/tencentcloud/hunyuan/v20230901/model/ErrorMsg.h
@@ -33,11 +34,13 @@ set(hunyuan_public_header_model
   include/tencentcloud/hunyuan/v20230901/model/Usage.h
   include/tencentcloud/hunyuan/v20230901/model/Message.h
   include/tencentcloud/hunyuan/v20230901/model/GetTokenCountRequest.h
+  include/tencentcloud/hunyuan/v20230901/model/ChatCompletionsResponse.h
   include/tencentcloud/hunyuan/v20230901/model/ChatStdRequest.h
   )
 
 set(hunyuan_src
   src/v20230901/HunyuanClient.cpp
+  src/v20230901/model/ChatCompletionsRequest.cpp
   src/v20230901/model/GetTokenCountResponse.cpp
   src/v20230901/model/GetEmbeddingResponse.cpp
   src/v20230901/model/ErrorMsg.cpp
@@ -52,6 +55,7 @@ set(hunyuan_src
   src/v20230901/model/Usage.cpp
   src/v20230901/model/Message.cpp
   src/v20230901/model/GetTokenCountRequest.cpp
+  src/v20230901/model/ChatCompletionsResponse.cpp
   src/v20230901/model/ChatStdRequest.cpp
   )
 

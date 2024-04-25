@@ -31,10 +31,11 @@ CreateWorkspaceRequest::CreateWorkspaceRequest() :
     m_envsHasBeenSet(false),
     m_extensionsHasBeenSet(false),
     m_lifecycleHasBeenSet(false),
-    m_appIdHasBeenSet(false),
-    m_uinHasBeenSet(false),
-    m_uniqVpcIdHasBeenSet(false),
-    m_subnetIdHasBeenSet(false)
+    m_tenantAppIdHasBeenSet(false),
+    m_tenantUinHasBeenSet(false),
+    m_tenantUniqVpcIdHasBeenSet(false),
+    m_tenantSubnetIdHasBeenSet(false),
+    m_regionHasBeenSet(false)
 {
 }
 
@@ -123,36 +124,44 @@ string CreateWorkspaceRequest::ToJsonString() const
         m_lifecycle.ToJsonObject(d[key.c_str()], allocator);
     }
 
-    if (m_appIdHasBeenSet)
+    if (m_tenantAppIdHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "AppId";
+        string key = "TenantAppId";
         iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, m_appId, allocator);
+        d.AddMember(iKey, m_tenantAppId, allocator);
     }
 
-    if (m_uinHasBeenSet)
+    if (m_tenantUinHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "Uin";
+        string key = "TenantUin";
         iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, rapidjson::Value(m_uin.c_str(), allocator).Move(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_tenantUin.c_str(), allocator).Move(), allocator);
     }
 
-    if (m_uniqVpcIdHasBeenSet)
+    if (m_tenantUniqVpcIdHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "UniqVpcId";
+        string key = "TenantUniqVpcId";
         iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, rapidjson::Value(m_uniqVpcId.c_str(), allocator).Move(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_tenantUniqVpcId.c_str(), allocator).Move(), allocator);
     }
 
-    if (m_subnetIdHasBeenSet)
+    if (m_tenantSubnetIdHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "SubnetId";
+        string key = "TenantSubnetId";
         iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, rapidjson::Value(m_subnetId.c_str(), allocator).Move(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_tenantSubnetId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_regionHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Region";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_region.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -291,68 +300,84 @@ bool CreateWorkspaceRequest::LifecycleHasBeenSet() const
     return m_lifecycleHasBeenSet;
 }
 
-int64_t CreateWorkspaceRequest::GetAppId() const
+int64_t CreateWorkspaceRequest::GetTenantAppId() const
 {
-    return m_appId;
+    return m_tenantAppId;
 }
 
-void CreateWorkspaceRequest::SetAppId(const int64_t& _appId)
+void CreateWorkspaceRequest::SetTenantAppId(const int64_t& _tenantAppId)
 {
-    m_appId = _appId;
-    m_appIdHasBeenSet = true;
+    m_tenantAppId = _tenantAppId;
+    m_tenantAppIdHasBeenSet = true;
 }
 
-bool CreateWorkspaceRequest::AppIdHasBeenSet() const
+bool CreateWorkspaceRequest::TenantAppIdHasBeenSet() const
 {
-    return m_appIdHasBeenSet;
+    return m_tenantAppIdHasBeenSet;
 }
 
-string CreateWorkspaceRequest::GetUin() const
+string CreateWorkspaceRequest::GetTenantUin() const
 {
-    return m_uin;
+    return m_tenantUin;
 }
 
-void CreateWorkspaceRequest::SetUin(const string& _uin)
+void CreateWorkspaceRequest::SetTenantUin(const string& _tenantUin)
 {
-    m_uin = _uin;
-    m_uinHasBeenSet = true;
+    m_tenantUin = _tenantUin;
+    m_tenantUinHasBeenSet = true;
 }
 
-bool CreateWorkspaceRequest::UinHasBeenSet() const
+bool CreateWorkspaceRequest::TenantUinHasBeenSet() const
 {
-    return m_uinHasBeenSet;
+    return m_tenantUinHasBeenSet;
 }
 
-string CreateWorkspaceRequest::GetUniqVpcId() const
+string CreateWorkspaceRequest::GetTenantUniqVpcId() const
 {
-    return m_uniqVpcId;
+    return m_tenantUniqVpcId;
 }
 
-void CreateWorkspaceRequest::SetUniqVpcId(const string& _uniqVpcId)
+void CreateWorkspaceRequest::SetTenantUniqVpcId(const string& _tenantUniqVpcId)
 {
-    m_uniqVpcId = _uniqVpcId;
-    m_uniqVpcIdHasBeenSet = true;
+    m_tenantUniqVpcId = _tenantUniqVpcId;
+    m_tenantUniqVpcIdHasBeenSet = true;
 }
 
-bool CreateWorkspaceRequest::UniqVpcIdHasBeenSet() const
+bool CreateWorkspaceRequest::TenantUniqVpcIdHasBeenSet() const
 {
-    return m_uniqVpcIdHasBeenSet;
+    return m_tenantUniqVpcIdHasBeenSet;
 }
 
-string CreateWorkspaceRequest::GetSubnetId() const
+string CreateWorkspaceRequest::GetTenantSubnetId() const
 {
-    return m_subnetId;
+    return m_tenantSubnetId;
 }
 
-void CreateWorkspaceRequest::SetSubnetId(const string& _subnetId)
+void CreateWorkspaceRequest::SetTenantSubnetId(const string& _tenantSubnetId)
 {
-    m_subnetId = _subnetId;
-    m_subnetIdHasBeenSet = true;
+    m_tenantSubnetId = _tenantSubnetId;
+    m_tenantSubnetIdHasBeenSet = true;
 }
 
-bool CreateWorkspaceRequest::SubnetIdHasBeenSet() const
+bool CreateWorkspaceRequest::TenantSubnetIdHasBeenSet() const
 {
-    return m_subnetIdHasBeenSet;
+    return m_tenantSubnetIdHasBeenSet;
+}
+
+string CreateWorkspaceRequest::GetRegion() const
+{
+    return m_region;
+}
+
+void CreateWorkspaceRequest::SetRegion(const string& _region)
+{
+    m_region = _region;
+    m_regionHasBeenSet = true;
+}
+
+bool CreateWorkspaceRequest::RegionHasBeenSet() const
+{
+    return m_regionHasBeenSet;
 }
 
 

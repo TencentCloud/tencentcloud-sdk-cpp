@@ -215,87 +215,108 @@ namespace TencentCloud
 
                     /**
                      * 获取应用名称
-                     * @return AppId 应用名称
+                     * @return TenantAppId 应用名称
                      * 
                      */
-                    int64_t GetAppId() const;
+                    int64_t GetTenantAppId() const;
 
                     /**
                      * 设置应用名称
-                     * @param _appId 应用名称
+                     * @param _tenantAppId 应用名称
                      * 
                      */
-                    void SetAppId(const int64_t& _appId);
+                    void SetTenantAppId(const int64_t& _tenantAppId);
 
                     /**
-                     * 判断参数 AppId 是否已赋值
-                     * @return AppId 是否已赋值
+                     * 判断参数 TenantAppId 是否已赋值
+                     * @return TenantAppId 是否已赋值
                      * 
                      */
-                    bool AppIdHasBeenSet() const;
+                    bool TenantAppIdHasBeenSet() const;
 
                     /**
                      * 获取用户UIN
-                     * @return Uin 用户UIN
+                     * @return TenantUin 用户UIN
                      * 
                      */
-                    std::string GetUin() const;
+                    std::string GetTenantUin() const;
 
                     /**
                      * 设置用户UIN
-                     * @param _uin 用户UIN
+                     * @param _tenantUin 用户UIN
                      * 
                      */
-                    void SetUin(const std::string& _uin);
+                    void SetTenantUin(const std::string& _tenantUin);
 
                     /**
-                     * 判断参数 Uin 是否已赋值
-                     * @return Uin 是否已赋值
+                     * 判断参数 TenantUin 是否已赋值
+                     * @return TenantUin 是否已赋值
                      * 
                      */
-                    bool UinHasBeenSet() const;
+                    bool TenantUinHasBeenSet() const;
 
                     /**
                      * 获取VPCID
-                     * @return UniqVpcId VPCID
+                     * @return TenantUniqVpcId VPCID
                      * 
                      */
-                    std::string GetUniqVpcId() const;
+                    std::string GetTenantUniqVpcId() const;
 
                     /**
                      * 设置VPCID
-                     * @param _uniqVpcId VPCID
+                     * @param _tenantUniqVpcId VPCID
                      * 
                      */
-                    void SetUniqVpcId(const std::string& _uniqVpcId);
+                    void SetTenantUniqVpcId(const std::string& _tenantUniqVpcId);
 
                     /**
-                     * 判断参数 UniqVpcId 是否已赋值
-                     * @return UniqVpcId 是否已赋值
+                     * 判断参数 TenantUniqVpcId 是否已赋值
+                     * @return TenantUniqVpcId 是否已赋值
                      * 
                      */
-                    bool UniqVpcIdHasBeenSet() const;
+                    bool TenantUniqVpcIdHasBeenSet() const;
 
                     /**
                      * 获取子网ID
-                     * @return SubnetId 子网ID
+                     * @return TenantSubnetId 子网ID
                      * 
                      */
-                    std::string GetSubnetId() const;
+                    std::string GetTenantSubnetId() const;
 
                     /**
                      * 设置子网ID
-                     * @param _subnetId 子网ID
+                     * @param _tenantSubnetId 子网ID
                      * 
                      */
-                    void SetSubnetId(const std::string& _subnetId);
+                    void SetTenantSubnetId(const std::string& _tenantSubnetId);
 
                     /**
-                     * 判断参数 SubnetId 是否已赋值
-                     * @return SubnetId 是否已赋值
+                     * 判断参数 TenantSubnetId 是否已赋值
+                     * @return TenantSubnetId 是否已赋值
                      * 
                      */
-                    bool SubnetIdHasBeenSet() const;
+                    bool TenantSubnetIdHasBeenSet() const;
+
+                    /**
+                     * 获取地域
+                     * @return Region 地域
+                     * 
+                     */
+                    std::string GetRegion() const;
+
+                    /**
+                     * 设置地域
+                     * @param _region 地域
+                     * 
+                     */
+                    void SetRegion(const std::string& _region);
+
+                    /**
+                     * 判断参数 Region 是否已赋值
+                     * @return Region 是否已赋值
+                     * 
+                     */
+                    bool RegionHasBeenSet() const;
 
                 private:
 
@@ -350,26 +371,32 @@ namespace TencentCloud
                     /**
                      * 应用名称
                      */
-                    int64_t m_appId;
-                    bool m_appIdHasBeenSet;
+                    int64_t m_tenantAppId;
+                    bool m_tenantAppIdHasBeenSet;
 
                     /**
                      * 用户UIN
                      */
-                    std::string m_uin;
-                    bool m_uinHasBeenSet;
+                    std::string m_tenantUin;
+                    bool m_tenantUinHasBeenSet;
 
                     /**
                      * VPCID
                      */
-                    std::string m_uniqVpcId;
-                    bool m_uniqVpcIdHasBeenSet;
+                    std::string m_tenantUniqVpcId;
+                    bool m_tenantUniqVpcIdHasBeenSet;
 
                     /**
                      * 子网ID
                      */
-                    std::string m_subnetId;
-                    bool m_subnetIdHasBeenSet;
+                    std::string m_tenantSubnetId;
+                    bool m_tenantSubnetIdHasBeenSet;
+
+                    /**
+                     * 地域
+                     */
+                    std::string m_region;
+                    bool m_regionHasBeenSet;
 
                 };
             }

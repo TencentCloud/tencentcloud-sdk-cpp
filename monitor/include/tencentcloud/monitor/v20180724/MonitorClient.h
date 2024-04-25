@@ -1723,7 +1723,7 @@ namespace TencentCloud
                 DescribePrometheusScrapeJobsOutcomeCallable DescribePrometheusScrapeJobsCallable(const Model::DescribePrometheusScrapeJobsRequest& request);
 
                 /**
-                 *获取targets信息
+                 *获取targets信息，在过滤条件中指定job名称时返回targets详情，否则仅返回数量
                  * @param req DescribePrometheusTargetsTMPRequest
                  * @return DescribePrometheusTargetsTMPOutcome
                  */
