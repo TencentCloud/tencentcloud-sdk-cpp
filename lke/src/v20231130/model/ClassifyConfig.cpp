@@ -22,7 +22,8 @@ using namespace std;
 
 ClassifyConfig::ClassifyConfig() :
     m_modelHasBeenSet(false),
-    m_labelsHasBeenSet(false)
+    m_labelsHasBeenSet(false),
+    m_greetingHasBeenSet(false)
 {
 }
 
@@ -68,6 +69,16 @@ CoreInternalOutcome ClassifyConfig::Deserialize(const rapidjson::Value &value)
         m_labelsHasBeenSet = true;
     }
 
+    if (value.HasMember("Greeting") && !value["Greeting"].IsNull())
+    {
+        if (!value["Greeting"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `ClassifyConfig.Greeting` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_greeting = string(value["Greeting"].GetString());
+        m_greetingHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -97,6 +108,14 @@ void ClassifyConfig::ToJsonObject(rapidjson::Value &value, rapidjson::Document::
             value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
             (*itr).ToJsonObject(value[key.c_str()][i], allocator);
         }
+    }
+
+    if (m_greetingHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Greeting";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_greeting.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -132,5 +151,21 @@ void ClassifyConfig::SetLabels(const vector<ClassifyLabel>& _labels)
 bool ClassifyConfig::LabelsHasBeenSet() const
 {
     return m_labelsHasBeenSet;
+}
+
+string ClassifyConfig::GetGreeting() const
+{
+    return m_greeting;
+}
+
+void ClassifyConfig::SetGreeting(const string& _greeting)
+{
+    m_greeting = _greeting;
+    m_greetingHasBeenSet = true;
+}
+
+bool ClassifyConfig::GreetingHasBeenSet() const
+{
+    return m_greetingHasBeenSet;
 }
 

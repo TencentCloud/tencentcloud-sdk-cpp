@@ -170,15 +170,15 @@ namespace TencentCloud
                     bool InstanceDescHasBeenSet() const;
 
                     /**
-                     * 获取每天数据上报量
-                     * @return CountNum 每天数据上报量
+                     * 获取每天数据上报量，（不作量级限制）
+                     * @return CountNum 每天数据上报量，（不作量级限制）
                      * 
                      */
                     std::string GetCountNum() const;
 
                     /**
-                     * 设置每天数据上报量
-                     * @param _countNum 每天数据上报量
+                     * 设置每天数据上报量，（不作量级限制）
+                     * @param _countNum 每天数据上报量，（不作量级限制）
                      * 
                      */
                     void SetCountNum(const std::string& _countNum);
@@ -334,7 +334,7 @@ namespace TencentCloud
                     bool m_instanceDescHasBeenSet;
 
                     /**
-                     * 每天数据上报量
+                     * 每天数据上报量，（不作量级限制）
                      */
                     std::string m_countNum;
                     bool m_countNumHasBeenSet;

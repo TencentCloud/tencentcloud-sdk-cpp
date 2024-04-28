@@ -63,6 +63,27 @@ namespace TencentCloud
                      */
                     bool SessionIdHasBeenSet() const;
 
+                    /**
+                     * 获取是否仅清空会话关联
+                     * @return IsOnlyEmptyTheDialog 是否仅清空会话关联
+                     * 
+                     */
+                    bool GetIsOnlyEmptyTheDialog() const;
+
+                    /**
+                     * 设置是否仅清空会话关联
+                     * @param _isOnlyEmptyTheDialog 是否仅清空会话关联
+                     * 
+                     */
+                    void SetIsOnlyEmptyTheDialog(const bool& _isOnlyEmptyTheDialog);
+
+                    /**
+                     * 判断参数 IsOnlyEmptyTheDialog 是否已赋值
+                     * @return IsOnlyEmptyTheDialog 是否已赋值
+                     * 
+                     */
+                    bool IsOnlyEmptyTheDialogHasBeenSet() const;
+
                 private:
 
                     /**
@@ -70,6 +91,12 @@ namespace TencentCloud
                      */
                     std::string m_sessionId;
                     bool m_sessionIdHasBeenSet;
+
+                    /**
+                     * 是否仅清空会话关联
+                     */
+                    bool m_isOnlyEmptyTheDialog;
+                    bool m_isOnlyEmptyTheDialogHasBeenSet;
 
                 };
             }

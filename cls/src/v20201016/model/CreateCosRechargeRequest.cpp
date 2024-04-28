@@ -31,7 +31,9 @@ CreateCosRechargeRequest::CreateCosRechargeRequest() :
     m_prefixHasBeenSet(false),
     m_logTypeHasBeenSet(false),
     m_compressHasBeenSet(false),
-    m_extractRuleInfoHasBeenSet(false)
+    m_extractRuleInfoHasBeenSet(false),
+    m_taskTypeHasBeenSet(false),
+    m_metadataHasBeenSet(false)
 {
 }
 
@@ -113,6 +115,27 @@ string CreateCosRechargeRequest::ToJsonString() const
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
         m_extractRuleInfo.ToJsonObject(d[key.c_str()], allocator);
+    }
+
+    if (m_taskTypeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "TaskType";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_taskType, allocator);
+    }
+
+    if (m_metadataHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Metadata";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        for (auto itr = m_metadata.begin(); itr != m_metadata.end(); ++itr)
+        {
+            d[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
+        }
     }
 
 
@@ -265,6 +288,38 @@ void CreateCosRechargeRequest::SetExtractRuleInfo(const ExtractRuleInfo& _extrac
 bool CreateCosRechargeRequest::ExtractRuleInfoHasBeenSet() const
 {
     return m_extractRuleInfoHasBeenSet;
+}
+
+uint64_t CreateCosRechargeRequest::GetTaskType() const
+{
+    return m_taskType;
+}
+
+void CreateCosRechargeRequest::SetTaskType(const uint64_t& _taskType)
+{
+    m_taskType = _taskType;
+    m_taskTypeHasBeenSet = true;
+}
+
+bool CreateCosRechargeRequest::TaskTypeHasBeenSet() const
+{
+    return m_taskTypeHasBeenSet;
+}
+
+vector<string> CreateCosRechargeRequest::GetMetadata() const
+{
+    return m_metadata;
+}
+
+void CreateCosRechargeRequest::SetMetadata(const vector<string>& _metadata)
+{
+    m_metadata = _metadata;
+    m_metadataHasBeenSet = true;
+}
+
+bool CreateCosRechargeRequest::MetadataHasBeenSet() const
+{
+    return m_metadataHasBeenSet;
 }
 
 

@@ -22,6 +22,7 @@ set(domain_public_header_model
   include/tencentcloud/domain/v20180808/model/DeleteReservedPreDomainInfoResponse.h
   include/tencentcloud/domain/v20180808/model/DeleteTemplateResponse.h
   include/tencentcloud/domain/v20180808/model/DescribeCustomDnsHostSetResponse.h
+  include/tencentcloud/domain/v20180808/model/ModifyTemplateRequest.h
   include/tencentcloud/domain/v20180808/model/CheckDomainResponse.h
   include/tencentcloud/domain/v20180808/model/DeleteCustomDnsHostResponse.h
   include/tencentcloud/domain/v20180808/model/RenewDomainBatchRequest.h
@@ -86,9 +87,10 @@ set(domain_public_header_model
   include/tencentcloud/domain/v20180808/model/ReservedPreDomainInfo.h
   include/tencentcloud/domain/v20180808/model/CheckDomainRequest.h
   include/tencentcloud/domain/v20180808/model/TransferProhibitionBatchResponse.h
-  include/tencentcloud/domain/v20180808/model/ModifyIntlCustomDnsHostResponse.h
+  include/tencentcloud/domain/v20180808/model/ModifyTemplateResponse.h
   include/tencentcloud/domain/v20180808/model/DescribeTemplateListRequest.h
   include/tencentcloud/domain/v20180808/model/CertificateInfo.h
+  include/tencentcloud/domain/v20180808/model/ModifyIntlCustomDnsHostResponse.h
   include/tencentcloud/domain/v20180808/model/BidPreDomainsRequest.h
   include/tencentcloud/domain/v20180808/model/CreateTemplateRequest.h
   include/tencentcloud/domain/v20180808/model/UpdateProhibitionBatchResponse.h
@@ -122,6 +124,7 @@ set(domain_src
   src/v20180808/model/DeleteReservedPreDomainInfoResponse.cpp
   src/v20180808/model/DeleteTemplateResponse.cpp
   src/v20180808/model/DescribeCustomDnsHostSetResponse.cpp
+  src/v20180808/model/ModifyTemplateRequest.cpp
   src/v20180808/model/CheckDomainResponse.cpp
   src/v20180808/model/DeleteCustomDnsHostResponse.cpp
   src/v20180808/model/RenewDomainBatchRequest.cpp
@@ -186,9 +189,10 @@ set(domain_src
   src/v20180808/model/ReservedPreDomainInfo.cpp
   src/v20180808/model/CheckDomainRequest.cpp
   src/v20180808/model/TransferProhibitionBatchResponse.cpp
-  src/v20180808/model/ModifyIntlCustomDnsHostResponse.cpp
+  src/v20180808/model/ModifyTemplateResponse.cpp
   src/v20180808/model/DescribeTemplateListRequest.cpp
   src/v20180808/model/CertificateInfo.cpp
+  src/v20180808/model/ModifyIntlCustomDnsHostResponse.cpp
   src/v20180808/model/BidPreDomainsRequest.cpp
   src/v20180808/model/CreateTemplateRequest.cpp
   src/v20180808/model/UpdateProhibitionBatchResponse.cpp

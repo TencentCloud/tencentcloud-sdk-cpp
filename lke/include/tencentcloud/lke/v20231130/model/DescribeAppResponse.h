@@ -199,6 +199,34 @@ namespace TencentCloud
                      */
                     bool AppKeyHasBeenSet() const;
 
+                    /**
+                     * 获取应用状态，1：未上线，2：运行中，3：停用
+                     * @return AppStatus 应用状态，1：未上线，2：运行中，3：停用
+                     * 
+                     */
+                    uint64_t GetAppStatus() const;
+
+                    /**
+                     * 判断参数 AppStatus 是否已赋值
+                     * @return AppStatus 是否已赋值
+                     * 
+                     */
+                    bool AppStatusHasBeenSet() const;
+
+                    /**
+                     * 获取状态说明
+                     * @return AppStatusDesc 状态说明
+                     * 
+                     */
+                    std::string GetAppStatusDesc() const;
+
+                    /**
+                     * 判断参数 AppStatusDesc 是否已赋值
+                     * @return AppStatusDesc 是否已赋值
+                     * 
+                     */
+                    bool AppStatusDescHasBeenSet() const;
+
                 private:
 
                     /**
@@ -266,6 +294,18 @@ namespace TencentCloud
                      */
                     std::string m_appKey;
                     bool m_appKeyHasBeenSet;
+
+                    /**
+                     * 应用状态，1：未上线，2：运行中，3：停用
+                     */
+                    uint64_t m_appStatus;
+                    bool m_appStatusHasBeenSet;
+
+                    /**
+                     * 状态说明
+                     */
+                    std::string m_appStatusDesc;
+                    bool m_appStatusDescHasBeenSet;
 
                 };
             }

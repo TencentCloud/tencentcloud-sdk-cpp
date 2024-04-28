@@ -1373,6 +1373,49 @@ DomainClient::ModifyIntlCustomDnsHostOutcomeCallable DomainClient::ModifyIntlCus
     return task->get_future();
 }
 
+DomainClient::ModifyTemplateOutcome DomainClient::ModifyTemplate(const ModifyTemplateRequest &request)
+{
+    auto outcome = MakeRequest(request, "ModifyTemplate");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ModifyTemplateResponse rsp = ModifyTemplateResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ModifyTemplateOutcome(rsp);
+        else
+            return ModifyTemplateOutcome(o.GetError());
+    }
+    else
+    {
+        return ModifyTemplateOutcome(outcome.GetError());
+    }
+}
+
+void DomainClient::ModifyTemplateAsync(const ModifyTemplateRequest& request, const ModifyTemplateAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->ModifyTemplate(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+DomainClient::ModifyTemplateOutcomeCallable DomainClient::ModifyTemplateCallable(const ModifyTemplateRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<ModifyTemplateOutcome()>>(
+        [this, request]()
+        {
+            return this->ModifyTemplate(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 DomainClient::RenewDomainBatchOutcome DomainClient::RenewDomainBatch(const RenewDomainBatchRequest &request)
 {
     auto outcome = MakeRequest(request, "RenewDomainBatch");

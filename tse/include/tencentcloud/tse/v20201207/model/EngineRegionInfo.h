@@ -111,15 +111,19 @@ namespace TencentCloud
                     bool VpcInfosHasBeenSet() const;
 
                     /**
-                     * 获取是否为主地域
-                     * @return MainRegion 是否为主地域
+                     * 获取Polaris: 是否为主地域
+Zookeeper: 是否为Leader固定地域
+                     * @return MainRegion Polaris: 是否为主地域
+Zookeeper: 是否为Leader固定地域
                      * 
                      */
                     bool GetMainRegion() const;
 
                     /**
-                     * 设置是否为主地域
-                     * @param _mainRegion 是否为主地域
+                     * 设置Polaris: 是否为主地域
+Zookeeper: 是否为Leader固定地域
+                     * @param _mainRegion Polaris: 是否为主地域
+Zookeeper: 是否为Leader固定地域
                      * 
                      */
                     void SetMainRegion(const bool& _mainRegion);
@@ -173,7 +177,8 @@ namespace TencentCloud
                     bool m_vpcInfosHasBeenSet;
 
                     /**
-                     * 是否为主地域
+                     * Polaris: 是否为主地域
+Zookeeper: 是否为Leader固定地域
                      */
                     bool m_mainRegion;
                     bool m_mainRegionHasBeenSet;

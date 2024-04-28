@@ -55,6 +55,7 @@ set(tse_public_header_model
   include/tencentcloud/tse/v20201207/model/DescribeAllConfigFileTemplatesResponse.h
   include/tencentcloud/tse/v20201207/model/ConfigFilePublishInfo.h
   include/tencentcloud/tse/v20201207/model/QpsThreshold.h
+  include/tencentcloud/tse/v20201207/model/DescribeCloudNativeAPIGatewayConfigResponse.h
   include/tencentcloud/tse/v20201207/model/ModifyCloudNativeAPIGatewayRouteRateLimitRequest.h
   include/tencentcloud/tse/v20201207/model/DeleteCloudNativeAPIGatewayResult.h
   include/tencentcloud/tse/v20201207/model/ListCloudNativeAPIGatewayStrategyResult.h
@@ -139,7 +140,7 @@ set(tse_public_header_model
   include/tencentcloud/tse/v20201207/model/DeleteCloudNativeAPIGatewayServiceRateLimitRequest.h
   include/tencentcloud/tse/v20201207/model/DescribeConfigFileReleasesResponse.h
   include/tencentcloud/tse/v20201207/model/KongPassiveHealthCheck.h
-  include/tencentcloud/tse/v20201207/model/DescribeCloudNativeAPIGatewayConfigResponse.h
+  include/tencentcloud/tse/v20201207/model/CreateGovernanceServicesRequest.h
   include/tencentcloud/tse/v20201207/model/DescribeCloudNativeAPIGatewayRequest.h
   include/tencentcloud/tse/v20201207/model/VpcInfo.h
   include/tencentcloud/tse/v20201207/model/CloudNativeAPIGatewayVpcConfig.h
@@ -192,7 +193,7 @@ set(tse_public_header_model
   include/tencentcloud/tse/v20201207/model/CloudNativeAPIGatewayStrategy.h
   include/tencentcloud/tse/v20201207/model/DeleteConfigFilesRequest.h
   include/tencentcloud/tse/v20201207/model/DescribeGovernanceServicesResponse.h
-  include/tencentcloud/tse/v20201207/model/CreateGovernanceServicesRequest.h
+  include/tencentcloud/tse/v20201207/model/AccurateQpsThreshold.h
   include/tencentcloud/tse/v20201207/model/CreateGovernanceNamespacesResponse.h
   include/tencentcloud/tse/v20201207/model/UpdateCloudNativeAPIGatewaySpecRequest.h
   include/tencentcloud/tse/v20201207/model/DescribeCloudNativeAPIGatewayServicesResponse.h
@@ -391,6 +392,7 @@ set(tse_src
   src/v20201207/model/DescribeAllConfigFileTemplatesResponse.cpp
   src/v20201207/model/ConfigFilePublishInfo.cpp
   src/v20201207/model/QpsThreshold.cpp
+  src/v20201207/model/DescribeCloudNativeAPIGatewayConfigResponse.cpp
   src/v20201207/model/ModifyCloudNativeAPIGatewayRouteRateLimitRequest.cpp
   src/v20201207/model/DeleteCloudNativeAPIGatewayResult.cpp
   src/v20201207/model/ListCloudNativeAPIGatewayStrategyResult.cpp
@@ -475,7 +477,7 @@ set(tse_src
   src/v20201207/model/DeleteCloudNativeAPIGatewayServiceRateLimitRequest.cpp
   src/v20201207/model/DescribeConfigFileReleasesResponse.cpp
   src/v20201207/model/KongPassiveHealthCheck.cpp
-  src/v20201207/model/DescribeCloudNativeAPIGatewayConfigResponse.cpp
+  src/v20201207/model/CreateGovernanceServicesRequest.cpp
   src/v20201207/model/DescribeCloudNativeAPIGatewayRequest.cpp
   src/v20201207/model/VpcInfo.cpp
   src/v20201207/model/CloudNativeAPIGatewayVpcConfig.cpp
@@ -528,7 +530,7 @@ set(tse_src
   src/v20201207/model/CloudNativeAPIGatewayStrategy.cpp
   src/v20201207/model/DeleteConfigFilesRequest.cpp
   src/v20201207/model/DescribeGovernanceServicesResponse.cpp
-  src/v20201207/model/CreateGovernanceServicesRequest.cpp
+  src/v20201207/model/AccurateQpsThreshold.cpp
   src/v20201207/model/CreateGovernanceNamespacesResponse.cpp
   src/v20201207/model/UpdateCloudNativeAPIGatewaySpecRequest.cpp
   src/v20201207/model/DescribeCloudNativeAPIGatewayServicesResponse.cpp

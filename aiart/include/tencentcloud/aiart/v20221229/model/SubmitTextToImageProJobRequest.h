@@ -164,22 +164,26 @@ namespace TencentCloud
 
                     /**
                      * 获取文生图模型，默认使用engine1。
-engine1：文生图（高级版）-混元
-engine2：文生图（高级版）
+取值：
+engine1
+engine2
                      * @return Engine 文生图模型，默认使用engine1。
-engine1：文生图（高级版）-混元
-engine2：文生图（高级版）
+取值：
+engine1
+engine2
                      * 
                      */
                     std::string GetEngine() const;
 
                     /**
                      * 设置文生图模型，默认使用engine1。
-engine1：文生图（高级版）-混元
-engine2：文生图（高级版）
+取值：
+engine1
+engine2
                      * @param _engine 文生图模型，默认使用engine1。
-engine1：文生图（高级版）-混元
-engine2：文生图（高级版）
+取值：
+engine1
+engine2
                      * 
                      */
                     void SetEngine(const std::string& _engine);
@@ -261,8 +265,9 @@ engine2：文生图（高级版）
 
                     /**
                      * 文生图模型，默认使用engine1。
-engine1：文生图（高级版）-混元
-engine2：文生图（高级版）
+取值：
+engine1
+engine2
                      */
                     std::string m_engine;
                     bool m_engineHasBeenSet;

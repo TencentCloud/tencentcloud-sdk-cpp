@@ -32,7 +32,8 @@ DescribeStorageCredentialResponse::DescribeStorageCredentialResponse() :
     m_filePathHasBeenSet(false),
     m_typeHasBeenSet(false),
     m_corpUinHasBeenSet(false),
-    m_imagePathHasBeenSet(false)
+    m_imagePathHasBeenSet(false),
+    m_uploadPathHasBeenSet(false)
 {
 }
 
@@ -167,6 +168,16 @@ CoreInternalOutcome DescribeStorageCredentialResponse::Deserialize(const string 
         m_imagePathHasBeenSet = true;
     }
 
+    if (rsp.HasMember("UploadPath") && !rsp["UploadPath"].IsNull())
+    {
+        if (!rsp["UploadPath"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `UploadPath` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_uploadPath = string(rsp["UploadPath"].GetString());
+        m_uploadPathHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -248,6 +259,14 @@ string DescribeStorageCredentialResponse::ToJsonString() const
         string key = "ImagePath";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_imagePath.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_uploadPathHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "UploadPath";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_uploadPath.c_str(), allocator).Move(), allocator);
     }
 
     rapidjson::Value iKey(rapidjson::kStringType);
@@ -350,6 +369,16 @@ string DescribeStorageCredentialResponse::GetImagePath() const
 bool DescribeStorageCredentialResponse::ImagePathHasBeenSet() const
 {
     return m_imagePathHasBeenSet;
+}
+
+string DescribeStorageCredentialResponse::GetUploadPath() const
+{
+    return m_uploadPath;
+}
+
+bool DescribeStorageCredentialResponse::UploadPathHasBeenSet() const
+{
+    return m_uploadPathHasBeenSet;
 }
 
 

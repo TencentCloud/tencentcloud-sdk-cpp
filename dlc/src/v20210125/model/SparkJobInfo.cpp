@@ -61,7 +61,8 @@ SparkJobInfo::SparkJobInfo() :
     m_dataEngineClusterTypeHasBeenSet(false),
     m_dataEngineImageVersionHasBeenSet(false),
     m_isInheritHasBeenSet(false),
-    m_isSessionStartedHasBeenSet(false)
+    m_isSessionStartedHasBeenSet(false),
+    m_engineTypeDetailHasBeenSet(false)
 {
 }
 
@@ -487,6 +488,16 @@ CoreInternalOutcome SparkJobInfo::Deserialize(const rapidjson::Value &value)
         m_isSessionStartedHasBeenSet = true;
     }
 
+    if (value.HasMember("EngineTypeDetail") && !value["EngineTypeDetail"].IsNull())
+    {
+        if (!value["EngineTypeDetail"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `SparkJobInfo.EngineTypeDetail` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_engineTypeDetail = string(value["EngineTypeDetail"].GetString());
+        m_engineTypeDetailHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -821,6 +832,14 @@ void SparkJobInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Al
         string key = "IsSessionStarted";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_isSessionStarted, allocator);
+    }
+
+    if (m_engineTypeDetailHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "EngineTypeDetail";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_engineTypeDetail.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -1480,5 +1499,21 @@ void SparkJobInfo::SetIsSessionStarted(const bool& _isSessionStarted)
 bool SparkJobInfo::IsSessionStartedHasBeenSet() const
 {
     return m_isSessionStartedHasBeenSet;
+}
+
+string SparkJobInfo::GetEngineTypeDetail() const
+{
+    return m_engineTypeDetail;
+}
+
+void SparkJobInfo::SetEngineTypeDetail(const string& _engineTypeDetail)
+{
+    m_engineTypeDetail = _engineTypeDetail;
+    m_engineTypeDetailHasBeenSet = true;
+}
+
+bool SparkJobInfo::EngineTypeDetailHasBeenSet() const
+{
+    return m_engineTypeDetailHasBeenSet;
 }
 

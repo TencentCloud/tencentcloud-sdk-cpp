@@ -44,9 +44,9 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取cos_recharge记录id
+                     * 获取COS导入任务id
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return Id cos_recharge记录id
+                     * @return Id COS导入任务id
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -62,7 +62,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * cos_recharge记录id
+                     * COS导入任务id
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_id;

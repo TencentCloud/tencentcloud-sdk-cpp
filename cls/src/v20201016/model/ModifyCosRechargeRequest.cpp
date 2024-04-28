@@ -26,7 +26,15 @@ ModifyCosRechargeRequest::ModifyCosRechargeRequest() :
     m_idHasBeenSet(false),
     m_topicIdHasBeenSet(false),
     m_nameHasBeenSet(false),
-    m_enableHasBeenSet(false)
+    m_enableHasBeenSet(false),
+    m_bucketHasBeenSet(false),
+    m_bucketRegionHasBeenSet(false),
+    m_prefixHasBeenSet(false),
+    m_logTypeHasBeenSet(false),
+    m_compressHasBeenSet(false),
+    m_extractRuleInfoHasBeenSet(false),
+    m_taskTypeHasBeenSet(false),
+    m_metadataHasBeenSet(false)
 {
 }
 
@@ -67,6 +75,76 @@ string ModifyCosRechargeRequest::ToJsonString() const
         string key = "Enable";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_enable, allocator);
+    }
+
+    if (m_bucketHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Bucket";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_bucket.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_bucketRegionHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "BucketRegion";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_bucketRegion.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_prefixHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Prefix";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_prefix.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_logTypeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "LogType";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_logType.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_compressHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Compress";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_compress.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_extractRuleInfoHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ExtractRuleInfo";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_extractRuleInfo.ToJsonObject(d[key.c_str()], allocator);
+    }
+
+    if (m_taskTypeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "TaskType";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_taskType, allocator);
+    }
+
+    if (m_metadataHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Metadata";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        for (auto itr = m_metadata.begin(); itr != m_metadata.end(); ++itr)
+        {
+            d[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
+        }
     }
 
 
@@ -139,6 +217,134 @@ void ModifyCosRechargeRequest::SetEnable(const uint64_t& _enable)
 bool ModifyCosRechargeRequest::EnableHasBeenSet() const
 {
     return m_enableHasBeenSet;
+}
+
+string ModifyCosRechargeRequest::GetBucket() const
+{
+    return m_bucket;
+}
+
+void ModifyCosRechargeRequest::SetBucket(const string& _bucket)
+{
+    m_bucket = _bucket;
+    m_bucketHasBeenSet = true;
+}
+
+bool ModifyCosRechargeRequest::BucketHasBeenSet() const
+{
+    return m_bucketHasBeenSet;
+}
+
+string ModifyCosRechargeRequest::GetBucketRegion() const
+{
+    return m_bucketRegion;
+}
+
+void ModifyCosRechargeRequest::SetBucketRegion(const string& _bucketRegion)
+{
+    m_bucketRegion = _bucketRegion;
+    m_bucketRegionHasBeenSet = true;
+}
+
+bool ModifyCosRechargeRequest::BucketRegionHasBeenSet() const
+{
+    return m_bucketRegionHasBeenSet;
+}
+
+string ModifyCosRechargeRequest::GetPrefix() const
+{
+    return m_prefix;
+}
+
+void ModifyCosRechargeRequest::SetPrefix(const string& _prefix)
+{
+    m_prefix = _prefix;
+    m_prefixHasBeenSet = true;
+}
+
+bool ModifyCosRechargeRequest::PrefixHasBeenSet() const
+{
+    return m_prefixHasBeenSet;
+}
+
+string ModifyCosRechargeRequest::GetLogType() const
+{
+    return m_logType;
+}
+
+void ModifyCosRechargeRequest::SetLogType(const string& _logType)
+{
+    m_logType = _logType;
+    m_logTypeHasBeenSet = true;
+}
+
+bool ModifyCosRechargeRequest::LogTypeHasBeenSet() const
+{
+    return m_logTypeHasBeenSet;
+}
+
+string ModifyCosRechargeRequest::GetCompress() const
+{
+    return m_compress;
+}
+
+void ModifyCosRechargeRequest::SetCompress(const string& _compress)
+{
+    m_compress = _compress;
+    m_compressHasBeenSet = true;
+}
+
+bool ModifyCosRechargeRequest::CompressHasBeenSet() const
+{
+    return m_compressHasBeenSet;
+}
+
+ExtractRuleInfo ModifyCosRechargeRequest::GetExtractRuleInfo() const
+{
+    return m_extractRuleInfo;
+}
+
+void ModifyCosRechargeRequest::SetExtractRuleInfo(const ExtractRuleInfo& _extractRuleInfo)
+{
+    m_extractRuleInfo = _extractRuleInfo;
+    m_extractRuleInfoHasBeenSet = true;
+}
+
+bool ModifyCosRechargeRequest::ExtractRuleInfoHasBeenSet() const
+{
+    return m_extractRuleInfoHasBeenSet;
+}
+
+uint64_t ModifyCosRechargeRequest::GetTaskType() const
+{
+    return m_taskType;
+}
+
+void ModifyCosRechargeRequest::SetTaskType(const uint64_t& _taskType)
+{
+    m_taskType = _taskType;
+    m_taskTypeHasBeenSet = true;
+}
+
+bool ModifyCosRechargeRequest::TaskTypeHasBeenSet() const
+{
+    return m_taskTypeHasBeenSet;
+}
+
+vector<string> ModifyCosRechargeRequest::GetMetadata() const
+{
+    return m_metadata;
+}
+
+void ModifyCosRechargeRequest::SetMetadata(const vector<string>& _metadata)
+{
+    m_metadata = _metadata;
+    m_metadataHasBeenSet = true;
+}
+
+bool ModifyCosRechargeRequest::MetadataHasBeenSet() const
+{
+    return m_metadataHasBeenSet;
 }
 
 

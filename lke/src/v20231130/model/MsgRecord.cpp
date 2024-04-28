@@ -34,7 +34,9 @@ MsgRecord::MsgRecord() :
     m_typeHasBeenSet(false),
     m_referencesHasBeenSet(false),
     m_reasonsHasBeenSet(false),
-    m_isLlmGeneratedHasBeenSet(false)
+    m_isLlmGeneratedHasBeenSet(false),
+    m_imageUrlsHasBeenSet(false),
+    m_tokenStatHasBeenSet(false)
 {
 }
 
@@ -196,6 +198,36 @@ CoreInternalOutcome MsgRecord::Deserialize(const rapidjson::Value &value)
         m_isLlmGeneratedHasBeenSet = true;
     }
 
+    if (value.HasMember("ImageUrls") && !value["ImageUrls"].IsNull())
+    {
+        if (!value["ImageUrls"].IsArray())
+            return CoreInternalOutcome(Core::Error("response `MsgRecord.ImageUrls` is not array type"));
+
+        const rapidjson::Value &tmpValue = value["ImageUrls"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            m_imageUrls.push_back((*itr).GetString());
+        }
+        m_imageUrlsHasBeenSet = true;
+    }
+
+    if (value.HasMember("TokenStat") && !value["TokenStat"].IsNull())
+    {
+        if (!value["TokenStat"].IsObject())
+        {
+            return CoreInternalOutcome(Core::Error("response `MsgRecord.TokenStat` is not object type").SetRequestId(requestId));
+        }
+
+        CoreInternalOutcome outcome = m_tokenStat.Deserialize(value["TokenStat"]);
+        if (!outcome.IsSuccess())
+        {
+            outcome.GetError().SetRequestId(requestId);
+            return outcome;
+        }
+
+        m_tokenStatHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -325,6 +357,28 @@ void MsgRecord::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Alloc
         string key = "IsLlmGenerated";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_isLlmGenerated, allocator);
+    }
+
+    if (m_imageUrlsHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ImageUrls";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        for (auto itr = m_imageUrls.begin(); itr != m_imageUrls.end(); ++itr)
+        {
+            value[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
+        }
+    }
+
+    if (m_tokenStatHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "TokenStat";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_tokenStat.ToJsonObject(value[key.c_str()], allocator);
     }
 
 }
@@ -552,5 +606,37 @@ void MsgRecord::SetIsLlmGenerated(const bool& _isLlmGenerated)
 bool MsgRecord::IsLlmGeneratedHasBeenSet() const
 {
     return m_isLlmGeneratedHasBeenSet;
+}
+
+vector<string> MsgRecord::GetImageUrls() const
+{
+    return m_imageUrls;
+}
+
+void MsgRecord::SetImageUrls(const vector<string>& _imageUrls)
+{
+    m_imageUrls = _imageUrls;
+    m_imageUrlsHasBeenSet = true;
+}
+
+bool MsgRecord::ImageUrlsHasBeenSet() const
+{
+    return m_imageUrlsHasBeenSet;
+}
+
+TokenStat MsgRecord::GetTokenStat() const
+{
+    return m_tokenStat;
+}
+
+void MsgRecord::SetTokenStat(const TokenStat& _tokenStat)
+{
+    m_tokenStat = _tokenStat;
+    m_tokenStatHasBeenSet = true;
+}
+
+bool MsgRecord::TokenStatHasBeenSet() const
+{
+    return m_tokenStatHasBeenSet;
 }
 

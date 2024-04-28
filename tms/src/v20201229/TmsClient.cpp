@@ -40,6 +40,49 @@ TmsClient::TmsClient(const Credential &credential, const string &region, const C
 }
 
 
+TmsClient::AnswerQuestionOutcome TmsClient::AnswerQuestion(const AnswerQuestionRequest &request)
+{
+    auto outcome = MakeRequest(request, "AnswerQuestion");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        AnswerQuestionResponse rsp = AnswerQuestionResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return AnswerQuestionOutcome(rsp);
+        else
+            return AnswerQuestionOutcome(o.GetError());
+    }
+    else
+    {
+        return AnswerQuestionOutcome(outcome.GetError());
+    }
+}
+
+void TmsClient::AnswerQuestionAsync(const AnswerQuestionRequest& request, const AnswerQuestionAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->AnswerQuestion(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+TmsClient::AnswerQuestionOutcomeCallable TmsClient::AnswerQuestionCallable(const AnswerQuestionRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<AnswerQuestionOutcome()>>(
+        [this, request]()
+        {
+            return this->AnswerQuestion(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 TmsClient::ModerateTextOutcome TmsClient::ModerateText(const ModerateTextRequest &request)
 {
     auto outcome = MakeRequest(request, "ModerateText");

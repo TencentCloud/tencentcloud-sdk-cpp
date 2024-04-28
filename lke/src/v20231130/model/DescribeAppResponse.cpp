@@ -34,7 +34,9 @@ DescribeAppResponse::DescribeAppResponse() :
     m_nameInAppealHasBeenSet(false),
     m_greetingInAppealHasBeenSet(false),
     m_bareAnswerInAppealHasBeenSet(false),
-    m_appKeyHasBeenSet(false)
+    m_appKeyHasBeenSet(false),
+    m_appStatusHasBeenSet(false),
+    m_appStatusDescHasBeenSet(false)
 {
 }
 
@@ -196,6 +198,26 @@ CoreInternalOutcome DescribeAppResponse::Deserialize(const string &payload)
         m_appKeyHasBeenSet = true;
     }
 
+    if (rsp.HasMember("AppStatus") && !rsp["AppStatus"].IsNull())
+    {
+        if (!rsp["AppStatus"].IsUint64())
+        {
+            return CoreInternalOutcome(Core::Error("response `AppStatus` IsUint64=false incorrectly").SetRequestId(requestId));
+        }
+        m_appStatus = rsp["AppStatus"].GetUint64();
+        m_appStatusHasBeenSet = true;
+    }
+
+    if (rsp.HasMember("AppStatusDesc") && !rsp["AppStatusDesc"].IsNull())
+    {
+        if (!rsp["AppStatusDesc"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `AppStatusDesc` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_appStatusDesc = string(rsp["AppStatusDesc"].GetString());
+        m_appStatusDescHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -294,6 +316,22 @@ string DescribeAppResponse::ToJsonString() const
         string key = "AppKey";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_appKey.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_appStatusHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "AppStatus";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_appStatus, allocator);
+    }
+
+    if (m_appStatusDescHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "AppStatusDesc";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_appStatusDesc.c_str(), allocator).Move(), allocator);
     }
 
     rapidjson::Value iKey(rapidjson::kStringType);
@@ -416,6 +454,26 @@ string DescribeAppResponse::GetAppKey() const
 bool DescribeAppResponse::AppKeyHasBeenSet() const
 {
     return m_appKeyHasBeenSet;
+}
+
+uint64_t DescribeAppResponse::GetAppStatus() const
+{
+    return m_appStatus;
+}
+
+bool DescribeAppResponse::AppStatusHasBeenSet() const
+{
+    return m_appStatusHasBeenSet;
+}
+
+string DescribeAppResponse::GetAppStatusDesc() const
+{
+    return m_appStatusDesc;
+}
+
+bool DescribeAppResponse::AppStatusDescHasBeenSet() const
+{
+    return m_appStatusDescHasBeenSet;
 }
 
 

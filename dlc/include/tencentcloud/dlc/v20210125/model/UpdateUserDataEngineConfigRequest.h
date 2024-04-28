@@ -87,15 +87,15 @@ namespace TencentCloud
                     bool DataEngineConfigPairsHasBeenSet() const;
 
                     /**
-                     * 获取作业引擎资源配置模版
-                     * @return SessionResourceTemplate 作业引擎资源配置模版
+                     * 获取作业引擎资源配置模板
+                     * @return SessionResourceTemplate 作业引擎资源配置模板
                      * 
                      */
                     SessionResourceTemplate GetSessionResourceTemplate() const;
 
                     /**
-                     * 设置作业引擎资源配置模版
-                     * @param _sessionResourceTemplate 作业引擎资源配置模版
+                     * 设置作业引擎资源配置模板
+                     * @param _sessionResourceTemplate 作业引擎资源配置模板
                      * 
                      */
                     void SetSessionResourceTemplate(const SessionResourceTemplate& _sessionResourceTemplate);
@@ -122,7 +122,7 @@ namespace TencentCloud
                     bool m_dataEngineConfigPairsHasBeenSet;
 
                     /**
-                     * 作业引擎资源配置模版
+                     * 作业引擎资源配置模板
                      */
                     SessionResourceTemplate m_sessionResourceTemplate;
                     bool m_sessionResourceTemplateHasBeenSet;

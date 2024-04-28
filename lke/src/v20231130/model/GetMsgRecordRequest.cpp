@@ -27,7 +27,8 @@ GetMsgRecordRequest::GetMsgRecordRequest() :
     m_countHasBeenSet(false),
     m_sessionIdHasBeenSet(false),
     m_lastRecordIdHasBeenSet(false),
-    m_botAppKeyHasBeenSet(false)
+    m_botAppKeyHasBeenSet(false),
+    m_sceneHasBeenSet(false)
 {
 }
 
@@ -76,6 +77,14 @@ string GetMsgRecordRequest::ToJsonString() const
         string key = "BotAppKey";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_botAppKey.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_sceneHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Scene";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_scene, allocator);
     }
 
 
@@ -164,6 +173,22 @@ void GetMsgRecordRequest::SetBotAppKey(const string& _botAppKey)
 bool GetMsgRecordRequest::BotAppKeyHasBeenSet() const
 {
     return m_botAppKeyHasBeenSet;
+}
+
+uint64_t GetMsgRecordRequest::GetScene() const
+{
+    return m_scene;
+}
+
+void GetMsgRecordRequest::SetScene(const uint64_t& _scene)
+{
+    m_scene = _scene;
+    m_sceneHasBeenSet = true;
+}
+
+bool GetMsgRecordRequest::SceneHasBeenSet() const
+{
+    return m_sceneHasBeenSet;
 }
 
 

@@ -49,15 +49,19 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取结束标志位，为 stop 则表示尾包。
-                     * @return FinishReason 结束标志位，为 stop 则表示尾包。
+                     * 获取结束标志位，可能为 stop 或 sensitive。
+stop 表示输出正常结束，sensitive 只在开启流式输出审核时会出现，表示安全审核未通过。
+                     * @return FinishReason 结束标志位，可能为 stop 或 sensitive。
+stop 表示输出正常结束，sensitive 只在开启流式输出审核时会出现，表示安全审核未通过。
                      * 
                      */
                     std::string GetFinishReason() const;
 
                     /**
-                     * 设置结束标志位，为 stop 则表示尾包。
-                     * @param _finishReason 结束标志位，为 stop 则表示尾包。
+                     * 设置结束标志位，可能为 stop 或 sensitive。
+stop 表示输出正常结束，sensitive 只在开启流式输出审核时会出现，表示安全审核未通过。
+                     * @param _finishReason 结束标志位，可能为 stop 或 sensitive。
+stop 表示输出正常结束，sensitive 只在开启流式输出审核时会出现，表示安全审核未通过。
                      * 
                      */
                     void SetFinishReason(const std::string& _finishReason);
@@ -122,7 +126,8 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 结束标志位，为 stop 则表示尾包。
+                     * 结束标志位，可能为 stop 或 sensitive。
+stop 表示输出正常结束，sensitive 只在开启流式输出审核时会出现，表示安全审核未通过。
                      */
                     std::string m_finishReason;
                     bool m_finishReasonHasBeenSet;

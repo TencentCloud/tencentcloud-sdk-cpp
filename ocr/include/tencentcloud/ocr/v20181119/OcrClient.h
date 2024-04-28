@@ -121,6 +121,8 @@
 #include <tencentcloud/ocr/v20181119/model/RecognizeForeignPermanentResidentIdCardResponse.h>
 #include <tencentcloud/ocr/v20181119/model/RecognizeGeneralInvoiceRequest.h>
 #include <tencentcloud/ocr/v20181119/model/RecognizeGeneralInvoiceResponse.h>
+#include <tencentcloud/ocr/v20181119/model/RecognizeGeneralTextImageWarnRequest.h>
+#include <tencentcloud/ocr/v20181119/model/RecognizeGeneralTextImageWarnResponse.h>
 #include <tencentcloud/ocr/v20181119/model/RecognizeHealthCodeOCRRequest.h>
 #include <tencentcloud/ocr/v20181119/model/RecognizeHealthCodeOCRResponse.h>
 #include <tencentcloud/ocr/v20181119/model/RecognizeIndonesiaIDCardOCRRequest.h>
@@ -352,6 +354,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::RecognizeGeneralInvoiceResponse> RecognizeGeneralInvoiceOutcome;
                 typedef std::future<RecognizeGeneralInvoiceOutcome> RecognizeGeneralInvoiceOutcomeCallable;
                 typedef std::function<void(const OcrClient*, const Model::RecognizeGeneralInvoiceRequest&, RecognizeGeneralInvoiceOutcome, const std::shared_ptr<const AsyncCallerContext>&)> RecognizeGeneralInvoiceAsyncHandler;
+                typedef Outcome<Core::Error, Model::RecognizeGeneralTextImageWarnResponse> RecognizeGeneralTextImageWarnOutcome;
+                typedef std::future<RecognizeGeneralTextImageWarnOutcome> RecognizeGeneralTextImageWarnOutcomeCallable;
+                typedef std::function<void(const OcrClient*, const Model::RecognizeGeneralTextImageWarnRequest&, RecognizeGeneralTextImageWarnOutcome, const std::shared_ptr<const AsyncCallerContext>&)> RecognizeGeneralTextImageWarnAsyncHandler;
                 typedef Outcome<Core::Error, Model::RecognizeHealthCodeOCRResponse> RecognizeHealthCodeOCROutcome;
                 typedef std::future<RecognizeHealthCodeOCROutcome> RecognizeHealthCodeOCROutcomeCallable;
                 typedef std::function<void(const OcrClient*, const Model::RecognizeHealthCodeOCRRequest&, RecognizeHealthCodeOCROutcome, const std::shared_ptr<const AsyncCallerContext>&)> RecognizeHealthCodeOCRAsyncHandler;
@@ -1428,6 +1433,17 @@ namespace TencentCloud
                 RecognizeGeneralInvoiceOutcome RecognizeGeneralInvoice(const Model::RecognizeGeneralInvoiceRequest &request);
                 void RecognizeGeneralInvoiceAsync(const Model::RecognizeGeneralInvoiceRequest& request, const RecognizeGeneralInvoiceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 RecognizeGeneralInvoiceOutcomeCallable RecognizeGeneralInvoiceCallable(const Model::RecognizeGeneralInvoiceRequest& request);
+
+                /**
+                 *本接口支持多种类型证件有效性检测告警，包括卡证复印件告警、卡证翻拍告警等功能。可以应用于各种证件信息有效性校验场景，例如银行开户、用户注册等场景。
+
+默认接口请求频率限制：10次/秒。
+                 * @param req RecognizeGeneralTextImageWarnRequest
+                 * @return RecognizeGeneralTextImageWarnOutcome
+                 */
+                RecognizeGeneralTextImageWarnOutcome RecognizeGeneralTextImageWarn(const Model::RecognizeGeneralTextImageWarnRequest &request);
+                void RecognizeGeneralTextImageWarnAsync(const Model::RecognizeGeneralTextImageWarnRequest& request, const RecognizeGeneralTextImageWarnAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                RecognizeGeneralTextImageWarnOutcomeCallable RecognizeGeneralTextImageWarnCallable(const Model::RecognizeGeneralTextImageWarnRequest& request);
 
                 /**
                  *本接口支持北京、上海、广东、江苏、吉林、黑龙江、天津、辽宁、浙江、河南、四川、贵州、山东、安徽、福建、江西、湖北、湖南等省份健康码的识别，包括持码人姓名、持码人身份证号、健康码更新时间、健康码颜色、核酸检测结果、核酸检测间隔时长、核酸检测时间，疫苗接种信息，八个字段的识别结果输出。不同省市健康码显示的字段信息有所不同，上述字段的识别结果可能为空，以图片上具体展示的信息为准。

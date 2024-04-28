@@ -23,7 +23,10 @@ using namespace std;
 KnowledgeQaOutput::KnowledgeQaOutput() :
     m_methodHasBeenSet(false),
     m_useGeneralKnowledgeHasBeenSet(false),
-    m_bareAnswerHasBeenSet(false)
+    m_bareAnswerHasBeenSet(false),
+    m_showQuestionClarifyHasBeenSet(false),
+    m_useQuestionClarifyHasBeenSet(false),
+    m_questionClarifyKeywordsHasBeenSet(false)
 {
 }
 
@@ -62,6 +65,39 @@ CoreInternalOutcome KnowledgeQaOutput::Deserialize(const rapidjson::Value &value
         m_bareAnswerHasBeenSet = true;
     }
 
+    if (value.HasMember("ShowQuestionClarify") && !value["ShowQuestionClarify"].IsNull())
+    {
+        if (!value["ShowQuestionClarify"].IsBool())
+        {
+            return CoreInternalOutcome(Core::Error("response `KnowledgeQaOutput.ShowQuestionClarify` IsBool=false incorrectly").SetRequestId(requestId));
+        }
+        m_showQuestionClarify = value["ShowQuestionClarify"].GetBool();
+        m_showQuestionClarifyHasBeenSet = true;
+    }
+
+    if (value.HasMember("UseQuestionClarify") && !value["UseQuestionClarify"].IsNull())
+    {
+        if (!value["UseQuestionClarify"].IsBool())
+        {
+            return CoreInternalOutcome(Core::Error("response `KnowledgeQaOutput.UseQuestionClarify` IsBool=false incorrectly").SetRequestId(requestId));
+        }
+        m_useQuestionClarify = value["UseQuestionClarify"].GetBool();
+        m_useQuestionClarifyHasBeenSet = true;
+    }
+
+    if (value.HasMember("QuestionClarifyKeywords") && !value["QuestionClarifyKeywords"].IsNull())
+    {
+        if (!value["QuestionClarifyKeywords"].IsArray())
+            return CoreInternalOutcome(Core::Error("response `KnowledgeQaOutput.QuestionClarifyKeywords` is not array type"));
+
+        const rapidjson::Value &tmpValue = value["QuestionClarifyKeywords"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            m_questionClarifyKeywords.push_back((*itr).GetString());
+        }
+        m_questionClarifyKeywordsHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -91,6 +127,35 @@ void KnowledgeQaOutput::ToJsonObject(rapidjson::Value &value, rapidjson::Documen
         string key = "BareAnswer";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_bareAnswer.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_showQuestionClarifyHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ShowQuestionClarify";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_showQuestionClarify, allocator);
+    }
+
+    if (m_useQuestionClarifyHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "UseQuestionClarify";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_useQuestionClarify, allocator);
+    }
+
+    if (m_questionClarifyKeywordsHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "QuestionClarifyKeywords";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        for (auto itr = m_questionClarifyKeywords.begin(); itr != m_questionClarifyKeywords.end(); ++itr)
+        {
+            value[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
+        }
     }
 
 }
@@ -142,5 +207,53 @@ void KnowledgeQaOutput::SetBareAnswer(const string& _bareAnswer)
 bool KnowledgeQaOutput::BareAnswerHasBeenSet() const
 {
     return m_bareAnswerHasBeenSet;
+}
+
+bool KnowledgeQaOutput::GetShowQuestionClarify() const
+{
+    return m_showQuestionClarify;
+}
+
+void KnowledgeQaOutput::SetShowQuestionClarify(const bool& _showQuestionClarify)
+{
+    m_showQuestionClarify = _showQuestionClarify;
+    m_showQuestionClarifyHasBeenSet = true;
+}
+
+bool KnowledgeQaOutput::ShowQuestionClarifyHasBeenSet() const
+{
+    return m_showQuestionClarifyHasBeenSet;
+}
+
+bool KnowledgeQaOutput::GetUseQuestionClarify() const
+{
+    return m_useQuestionClarify;
+}
+
+void KnowledgeQaOutput::SetUseQuestionClarify(const bool& _useQuestionClarify)
+{
+    m_useQuestionClarify = _useQuestionClarify;
+    m_useQuestionClarifyHasBeenSet = true;
+}
+
+bool KnowledgeQaOutput::UseQuestionClarifyHasBeenSet() const
+{
+    return m_useQuestionClarifyHasBeenSet;
+}
+
+vector<string> KnowledgeQaOutput::GetQuestionClarifyKeywords() const
+{
+    return m_questionClarifyKeywords;
+}
+
+void KnowledgeQaOutput::SetQuestionClarifyKeywords(const vector<string>& _questionClarifyKeywords)
+{
+    m_questionClarifyKeywords = _questionClarifyKeywords;
+    m_questionClarifyKeywordsHasBeenSet = true;
+}
+
+bool KnowledgeQaOutput::QuestionClarifyKeywordsHasBeenSet() const
+{
+    return m_questionClarifyKeywordsHasBeenSet;
 }
 

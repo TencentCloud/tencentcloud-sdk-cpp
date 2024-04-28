@@ -230,18 +230,18 @@ namespace TencentCloud
                     bool AdminNameHasBeenSet() const;
 
                     /**
-                     * 获取组织机构超管姓名。
+                     * 获取组织机构超管手机号。
 在注册流程中，这个手机号必须跟操作人在电子签注册的个人手机号一致。
-                     * @return AdminMobile 组织机构超管姓名。
+                     * @return AdminMobile 组织机构超管手机号。
 在注册流程中，这个手机号必须跟操作人在电子签注册的个人手机号一致。
                      * 
                      */
                     std::string GetAdminMobile() const;
 
                     /**
-                     * 设置组织机构超管姓名。
+                     * 设置组织机构超管手机号。
 在注册流程中，这个手机号必须跟操作人在电子签注册的个人手机号一致。
-                     * @param _adminMobile 组织机构超管姓名。
+                     * @param _adminMobile 组织机构超管手机号。
 在注册流程中，这个手机号必须跟操作人在电子签注册的个人手机号一致。
                      * 
                      */
@@ -465,7 +465,7 @@ namespace TencentCloud
                     bool m_adminNameHasBeenSet;
 
                     /**
-                     * 组织机构超管姓名。
+                     * 组织机构超管手机号。
 在注册流程中，这个手机号必须跟操作人在电子签注册的个人手机号一致。
                      */
                     std::string m_adminMobile;

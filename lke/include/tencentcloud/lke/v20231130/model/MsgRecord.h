@@ -25,6 +25,7 @@
 #include <tencentcloud/core/utils/rapidjson/stringbuffer.h>
 #include <tencentcloud/core/AbstractModel.h>
 #include <tencentcloud/lke/v20231130/model/MsgRecordReference.h>
+#include <tencentcloud/lke/v20231130/model/TokenStat.h>
 
 
 namespace TencentCloud
@@ -341,6 +342,52 @@ namespace TencentCloud
                      */
                     bool IsLlmGeneratedHasBeenSet() const;
 
+                    /**
+                     * 获取图片链接，可公有读
+                     * @return ImageUrls 图片链接，可公有读
+                     * 
+                     */
+                    std::vector<std::string> GetImageUrls() const;
+
+                    /**
+                     * 设置图片链接，可公有读
+                     * @param _imageUrls 图片链接，可公有读
+                     * 
+                     */
+                    void SetImageUrls(const std::vector<std::string>& _imageUrls);
+
+                    /**
+                     * 判断参数 ImageUrls 是否已赋值
+                     * @return ImageUrls 是否已赋值
+                     * 
+                     */
+                    bool ImageUrlsHasBeenSet() const;
+
+                    /**
+                     * 获取当次 token 统计信息
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return TokenStat 当次 token 统计信息
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    TokenStat GetTokenStat() const;
+
+                    /**
+                     * 设置当次 token 统计信息
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _tokenStat 当次 token 统计信息
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetTokenStat(const TokenStat& _tokenStat);
+
+                    /**
+                     * 判断参数 TokenStat 是否已赋值
+                     * @return TokenStat 是否已赋值
+                     * 
+                     */
+                    bool TokenStatHasBeenSet() const;
+
                 private:
 
                     /**
@@ -426,6 +473,19 @@ namespace TencentCloud
                      */
                     bool m_isLlmGenerated;
                     bool m_isLlmGeneratedHasBeenSet;
+
+                    /**
+                     * 图片链接，可公有读
+                     */
+                    std::vector<std::string> m_imageUrls;
+                    bool m_imageUrlsHasBeenSet;
+
+                    /**
+                     * 当次 token 统计信息
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    TokenStat m_tokenStat;
+                    bool m_tokenStatHasBeenSet;
 
                 };
             }

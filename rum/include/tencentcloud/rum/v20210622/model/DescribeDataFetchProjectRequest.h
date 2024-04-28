@@ -400,15 +400,15 @@ namespace TencentCloud
                     bool DeviceHasBeenSet() const;
 
                     /**
-                     * 获取是否海外
-                     * @return IsAbroad 是否海外
+                     * 获取是否海外,1表示海外，0表示非海外；默认值为空，查询所有。
+                     * @return IsAbroad 是否海外,1表示海外，0表示非海外；默认值为空，查询所有。
                      * 
                      */
                     std::string GetIsAbroad() const;
 
                     /**
-                     * 设置是否海外
-                     * @param _isAbroad 是否海外
+                     * 设置是否海外,1表示海外，0表示非海外；默认值为空，查询所有。
+                     * @param _isAbroad 是否海外,1表示海外，0表示非海外；默认值为空，查询所有。
                      * 
                      */
                     void SetIsAbroad(const std::string& _isAbroad);
@@ -672,7 +672,7 @@ namespace TencentCloud
                     bool m_deviceHasBeenSet;
 
                     /**
-                     * 是否海外
+                     * 是否海外,1表示海外，0表示非海外；默认值为空，查询所有。
                      */
                     std::string m_isAbroad;
                     bool m_isAbroadHasBeenSet;

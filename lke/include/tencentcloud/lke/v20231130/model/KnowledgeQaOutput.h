@@ -121,6 +121,81 @@ namespace TencentCloud
                      */
                     bool BareAnswerHasBeenSet() const;
 
+                    /**
+                     * 获取是否展示问题澄清开关
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return ShowQuestionClarify 是否展示问题澄清开关
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    bool GetShowQuestionClarify() const;
+
+                    /**
+                     * 设置是否展示问题澄清开关
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _showQuestionClarify 是否展示问题澄清开关
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetShowQuestionClarify(const bool& _showQuestionClarify);
+
+                    /**
+                     * 判断参数 ShowQuestionClarify 是否已赋值
+                     * @return ShowQuestionClarify 是否已赋值
+                     * 
+                     */
+                    bool ShowQuestionClarifyHasBeenSet() const;
+
+                    /**
+                     * 获取是否打开问题澄清
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return UseQuestionClarify 是否打开问题澄清
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    bool GetUseQuestionClarify() const;
+
+                    /**
+                     * 设置是否打开问题澄清
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _useQuestionClarify 是否打开问题澄清
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetUseQuestionClarify(const bool& _useQuestionClarify);
+
+                    /**
+                     * 判断参数 UseQuestionClarify 是否已赋值
+                     * @return UseQuestionClarify 是否已赋值
+                     * 
+                     */
+                    bool UseQuestionClarifyHasBeenSet() const;
+
+                    /**
+                     * 获取问题澄清关键词列表
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return QuestionClarifyKeywords 问题澄清关键词列表
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::vector<std::string> GetQuestionClarifyKeywords() const;
+
+                    /**
+                     * 设置问题澄清关键词列表
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _questionClarifyKeywords 问题澄清关键词列表
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetQuestionClarifyKeywords(const std::vector<std::string>& _questionClarifyKeywords);
+
+                    /**
+                     * 判断参数 QuestionClarifyKeywords 是否已赋值
+                     * @return QuestionClarifyKeywords 是否已赋值
+                     * 
+                     */
+                    bool QuestionClarifyKeywordsHasBeenSet() const;
+
                 private:
 
                     /**
@@ -143,6 +218,27 @@ namespace TencentCloud
                      */
                     std::string m_bareAnswer;
                     bool m_bareAnswerHasBeenSet;
+
+                    /**
+                     * 是否展示问题澄清开关
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    bool m_showQuestionClarify;
+                    bool m_showQuestionClarifyHasBeenSet;
+
+                    /**
+                     * 是否打开问题澄清
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    bool m_useQuestionClarify;
+                    bool m_useQuestionClarifyHasBeenSet;
+
+                    /**
+                     * 问题澄清关键词列表
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::vector<std::string> m_questionClarifyKeywords;
+                    bool m_questionClarifyKeywordsHasBeenSet;
 
                 };
             }

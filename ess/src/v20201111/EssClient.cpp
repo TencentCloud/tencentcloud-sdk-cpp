@@ -1975,6 +1975,49 @@ EssClient::DeleteSealPoliciesOutcomeCallable EssClient::DeleteSealPoliciesCallab
     return task->get_future();
 }
 
+EssClient::DescribeBatchOrganizationRegistrationUrlsOutcome EssClient::DescribeBatchOrganizationRegistrationUrls(const DescribeBatchOrganizationRegistrationUrlsRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeBatchOrganizationRegistrationUrls");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeBatchOrganizationRegistrationUrlsResponse rsp = DescribeBatchOrganizationRegistrationUrlsResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeBatchOrganizationRegistrationUrlsOutcome(rsp);
+        else
+            return DescribeBatchOrganizationRegistrationUrlsOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeBatchOrganizationRegistrationUrlsOutcome(outcome.GetError());
+    }
+}
+
+void EssClient::DescribeBatchOrganizationRegistrationUrlsAsync(const DescribeBatchOrganizationRegistrationUrlsRequest& request, const DescribeBatchOrganizationRegistrationUrlsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeBatchOrganizationRegistrationUrls(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+EssClient::DescribeBatchOrganizationRegistrationUrlsOutcomeCallable EssClient::DescribeBatchOrganizationRegistrationUrlsCallable(const DescribeBatchOrganizationRegistrationUrlsRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeBatchOrganizationRegistrationUrlsOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeBatchOrganizationRegistrationUrls(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 EssClient::DescribeBillUsageOutcome EssClient::DescribeBillUsage(const DescribeBillUsageRequest &request)
 {
     auto outcome = MakeRequest(request, "DescribeBillUsage");

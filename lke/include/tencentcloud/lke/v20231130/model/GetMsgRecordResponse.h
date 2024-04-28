@@ -58,6 +58,22 @@ namespace TencentCloud
                      */
                     bool RecordsHasBeenSet() const;
 
+                    /**
+                     * 获取session 清除关联上下文时间, 单位 ms
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return SessionDisassociatedTimestamp session 清除关联上下文时间, 单位 ms
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::string GetSessionDisassociatedTimestamp() const;
+
+                    /**
+                     * 判断参数 SessionDisassociatedTimestamp 是否已赋值
+                     * @return SessionDisassociatedTimestamp 是否已赋值
+                     * 
+                     */
+                    bool SessionDisassociatedTimestampHasBeenSet() const;
+
                 private:
 
                     /**
@@ -65,6 +81,13 @@ namespace TencentCloud
                      */
                     std::vector<MsgRecord> m_records;
                     bool m_recordsHasBeenSet;
+
+                    /**
+                     * session 清除关联上下文时间, 单位 ms
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_sessionDisassociatedTimestamp;
+                    bool m_sessionDisassociatedTimestampHasBeenSet;
 
                 };
             }

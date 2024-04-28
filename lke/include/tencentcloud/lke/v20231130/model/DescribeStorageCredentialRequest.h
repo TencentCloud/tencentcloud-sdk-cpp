@@ -63,6 +63,48 @@ namespace TencentCloud
                      */
                     bool BotBizIdHasBeenSet() const;
 
+                    /**
+                     * 获取文件类型
+                     * @return FileType 文件类型
+                     * 
+                     */
+                    std::string GetFileType() const;
+
+                    /**
+                     * 设置文件类型
+                     * @param _fileType 文件类型
+                     * 
+                     */
+                    void SetFileType(const std::string& _fileType);
+
+                    /**
+                     * 判断参数 FileType 是否已赋值
+                     * @return FileType 是否已赋值
+                     * 
+                     */
+                    bool FileTypeHasBeenSet() const;
+
+                    /**
+                     * 获取权限场景，是否公有权限
+                     * @return IsPublic 权限场景，是否公有权限
+                     * 
+                     */
+                    bool GetIsPublic() const;
+
+                    /**
+                     * 设置权限场景，是否公有权限
+                     * @param _isPublic 权限场景，是否公有权限
+                     * 
+                     */
+                    void SetIsPublic(const bool& _isPublic);
+
+                    /**
+                     * 判断参数 IsPublic 是否已赋值
+                     * @return IsPublic 是否已赋值
+                     * 
+                     */
+                    bool IsPublicHasBeenSet() const;
+
                 private:
 
                     /**
@@ -70,6 +112,18 @@ namespace TencentCloud
                      */
                     std::string m_botBizId;
                     bool m_botBizIdHasBeenSet;
+
+                    /**
+                     * 文件类型
+                     */
+                    std::string m_fileType;
+                    bool m_fileTypeHasBeenSet;
+
+                    /**
+                     * 权限场景，是否公有权限
+                     */
+                    bool m_isPublic;
+                    bool m_isPublicHasBeenSet;
 
                 };
             }

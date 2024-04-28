@@ -39,7 +39,8 @@ CreateEngineRequest::CreateEngineRequest() :
     m_prepaidPeriodHasBeenSet(false),
     m_prepaidRenewFlagHasBeenSet(false),
     m_engineRegionInfosHasBeenSet(false),
-    m_storageOptionHasBeenSet(false)
+    m_storageOptionHasBeenSet(false),
+    m_affinityConstraintHasBeenSet(false)
 {
 }
 
@@ -213,6 +214,14 @@ string CreateEngineRequest::ToJsonString() const
             d[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
             (*itr).ToJsonObject(d[key.c_str()][i], allocator);
         }
+    }
+
+    if (m_affinityConstraintHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "AffinityConstraint";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_affinityConstraint.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -493,6 +502,22 @@ void CreateEngineRequest::SetStorageOption(const vector<StorageOption>& _storage
 bool CreateEngineRequest::StorageOptionHasBeenSet() const
 {
     return m_storageOptionHasBeenSet;
+}
+
+string CreateEngineRequest::GetAffinityConstraint() const
+{
+    return m_affinityConstraint;
+}
+
+void CreateEngineRequest::SetAffinityConstraint(const string& _affinityConstraint)
+{
+    m_affinityConstraint = _affinityConstraint;
+    m_affinityConstraintHasBeenSet = true;
+}
+
+bool CreateEngineRequest::AffinityConstraintHasBeenSet() const
+{
+    return m_affinityConstraintHasBeenSet;
 }
 
 

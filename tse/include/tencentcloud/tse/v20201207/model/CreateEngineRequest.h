@@ -636,6 +636,27 @@ zk标准版没有跨地域部署，请不要填写
                      */
                     bool StorageOptionHasBeenSet() const;
 
+                    /**
+                     * 获取ZK引擎实例，可用区分布约束，STRICT:强约束，PERMISSIVE: 弱约束
+                     * @return AffinityConstraint ZK引擎实例，可用区分布约束，STRICT:强约束，PERMISSIVE: 弱约束
+                     * 
+                     */
+                    std::string GetAffinityConstraint() const;
+
+                    /**
+                     * 设置ZK引擎实例，可用区分布约束，STRICT:强约束，PERMISSIVE: 弱约束
+                     * @param _affinityConstraint ZK引擎实例，可用区分布约束，STRICT:强约束，PERMISSIVE: 弱约束
+                     * 
+                     */
+                    void SetAffinityConstraint(const std::string& _affinityConstraint);
+
+                    /**
+                     * 判断参数 AffinityConstraint 是否已赋值
+                     * @return AffinityConstraint 是否已赋值
+                     * 
+                     */
+                    bool AffinityConstraintHasBeenSet() const;
+
                 private:
 
                     /**
@@ -797,6 +818,12 @@ zk标准版没有跨地域部署，请不要填写
                      */
                     std::vector<StorageOption> m_storageOption;
                     bool m_storageOptionHasBeenSet;
+
+                    /**
+                     * ZK引擎实例，可用区分布约束，STRICT:强约束，PERMISSIVE: 弱约束
+                     */
+                    std::string m_affinityConstraint;
+                    bool m_affinityConstraintHasBeenSet;
 
                 };
             }

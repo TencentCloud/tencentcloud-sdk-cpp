@@ -23,7 +23,8 @@ using namespace TencentCloud::Lke::V20231130::Model;
 using namespace std;
 
 ResetSessionRequest::ResetSessionRequest() :
-    m_sessionIdHasBeenSet(false)
+    m_sessionIdHasBeenSet(false),
+    m_isOnlyEmptyTheDialogHasBeenSet(false)
 {
 }
 
@@ -40,6 +41,14 @@ string ResetSessionRequest::ToJsonString() const
         string key = "SessionId";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_sessionId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_isOnlyEmptyTheDialogHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "IsOnlyEmptyTheDialog";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_isOnlyEmptyTheDialog, allocator);
     }
 
 
@@ -64,6 +73,22 @@ void ResetSessionRequest::SetSessionId(const string& _sessionId)
 bool ResetSessionRequest::SessionIdHasBeenSet() const
 {
     return m_sessionIdHasBeenSet;
+}
+
+bool ResetSessionRequest::GetIsOnlyEmptyTheDialog() const
+{
+    return m_isOnlyEmptyTheDialog;
+}
+
+void ResetSessionRequest::SetIsOnlyEmptyTheDialog(const bool& _isOnlyEmptyTheDialog)
+{
+    m_isOnlyEmptyTheDialog = _isOnlyEmptyTheDialog;
+    m_isOnlyEmptyTheDialogHasBeenSet = true;
+}
+
+bool ResetSessionRequest::IsOnlyEmptyTheDialogHasBeenSet() const
+{
+    return m_isOnlyEmptyTheDialogHasBeenSet;
 }
 
 

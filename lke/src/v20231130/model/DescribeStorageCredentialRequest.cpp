@@ -23,7 +23,9 @@ using namespace TencentCloud::Lke::V20231130::Model;
 using namespace std;
 
 DescribeStorageCredentialRequest::DescribeStorageCredentialRequest() :
-    m_botBizIdHasBeenSet(false)
+    m_botBizIdHasBeenSet(false),
+    m_fileTypeHasBeenSet(false),
+    m_isPublicHasBeenSet(false)
 {
 }
 
@@ -40,6 +42,22 @@ string DescribeStorageCredentialRequest::ToJsonString() const
         string key = "BotBizId";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_botBizId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_fileTypeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "FileType";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_fileType.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_isPublicHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "IsPublic";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_isPublic, allocator);
     }
 
 
@@ -64,6 +82,38 @@ void DescribeStorageCredentialRequest::SetBotBizId(const string& _botBizId)
 bool DescribeStorageCredentialRequest::BotBizIdHasBeenSet() const
 {
     return m_botBizIdHasBeenSet;
+}
+
+string DescribeStorageCredentialRequest::GetFileType() const
+{
+    return m_fileType;
+}
+
+void DescribeStorageCredentialRequest::SetFileType(const string& _fileType)
+{
+    m_fileType = _fileType;
+    m_fileTypeHasBeenSet = true;
+}
+
+bool DescribeStorageCredentialRequest::FileTypeHasBeenSet() const
+{
+    return m_fileTypeHasBeenSet;
+}
+
+bool DescribeStorageCredentialRequest::GetIsPublic() const
+{
+    return m_isPublic;
+}
+
+void DescribeStorageCredentialRequest::SetIsPublic(const bool& _isPublic)
+{
+    m_isPublic = _isPublic;
+    m_isPublicHasBeenSet = true;
+}
+
+bool DescribeStorageCredentialRequest::IsPublicHasBeenSet() const
+{
+    return m_isPublicHasBeenSet;
 }
 
 

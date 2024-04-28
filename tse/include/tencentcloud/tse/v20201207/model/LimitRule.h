@@ -27,6 +27,7 @@
 #include <tencentcloud/tse/v20201207/model/RuleFilter.h>
 #include <tencentcloud/tse/v20201207/model/KeyValue.h>
 #include <tencentcloud/tse/v20201207/model/QpsThreshold.h>
+#include <tencentcloud/tse/v20201207/model/AccurateQpsThreshold.h>
 
 
 namespace TencentCloud
@@ -124,6 +125,31 @@ namespace TencentCloud
                      */
                     bool QpsThresholdsHasBeenSet() const;
 
+                    /**
+                     * 获取精确限流阈值
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return AccurateQpsThresholds 精确限流阈值
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::vector<AccurateQpsThreshold> GetAccurateQpsThresholds() const;
+
+                    /**
+                     * 设置精确限流阈值
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _accurateQpsThresholds 精确限流阈值
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetAccurateQpsThresholds(const std::vector<AccurateQpsThreshold>& _accurateQpsThresholds);
+
+                    /**
+                     * 判断参数 AccurateQpsThresholds 是否已赋值
+                     * @return AccurateQpsThresholds 是否已赋值
+                     * 
+                     */
+                    bool AccurateQpsThresholdsHasBeenSet() const;
+
                 private:
 
                     /**
@@ -146,6 +172,13 @@ namespace TencentCloud
                      */
                     std::vector<QpsThreshold> m_qpsThresholds;
                     bool m_qpsThresholdsHasBeenSet;
+
+                    /**
+                     * 精确限流阈值
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::vector<AccurateQpsThreshold> m_accurateQpsThresholds;
+                    bool m_accurateQpsThresholdsHasBeenSet;
 
                 };
             }

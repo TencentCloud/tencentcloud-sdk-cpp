@@ -98,6 +98,31 @@ namespace TencentCloud
                      */
                     bool LabelsHasBeenSet() const;
 
+                    /**
+                     * 获取欢迎语，200字符以内
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return Greeting 欢迎语，200字符以内
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::string GetGreeting() const;
+
+                    /**
+                     * 设置欢迎语，200字符以内
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _greeting 欢迎语，200字符以内
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetGreeting(const std::string& _greeting);
+
+                    /**
+                     * 判断参数 Greeting 是否已赋值
+                     * @return Greeting 是否已赋值
+                     * 
+                     */
+                    bool GreetingHasBeenSet() const;
+
                 private:
 
                     /**
@@ -113,6 +138,13 @@ namespace TencentCloud
                      */
                     std::vector<ClassifyLabel> m_labels;
                     bool m_labelsHasBeenSet;
+
+                    /**
+                     * 欢迎语，200字符以内
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_greeting;
+                    bool m_greetingHasBeenSet;
 
                 };
             }

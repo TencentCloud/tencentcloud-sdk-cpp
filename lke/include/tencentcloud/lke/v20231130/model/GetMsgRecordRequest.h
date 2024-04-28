@@ -147,6 +147,27 @@ namespace TencentCloud
                      */
                     bool BotAppKeyHasBeenSet() const;
 
+                    /**
+                     * 获取场景, 体验: 1; 正式: 2
+                     * @return Scene 场景, 体验: 1; 正式: 2
+                     * 
+                     */
+                    uint64_t GetScene() const;
+
+                    /**
+                     * 设置场景, 体验: 1; 正式: 2
+                     * @param _scene 场景, 体验: 1; 正式: 2
+                     * 
+                     */
+                    void SetScene(const uint64_t& _scene);
+
+                    /**
+                     * 判断参数 Scene 是否已赋值
+                     * @return Scene 是否已赋值
+                     * 
+                     */
+                    bool SceneHasBeenSet() const;
+
                 private:
 
                     /**
@@ -178,6 +199,12 @@ namespace TencentCloud
                      */
                     std::string m_botAppKey;
                     bool m_botAppKeyHasBeenSet;
+
+                    /**
+                     * 场景, 体验: 1; 正式: 2
+                     */
+                    uint64_t m_scene;
+                    bool m_sceneHasBeenSet;
 
                 };
             }

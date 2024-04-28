@@ -236,6 +236,48 @@ namespace TencentCloud
                      */
                     bool ExtractRuleInfoHasBeenSet() const;
 
+                    /**
+                     * 获取COS导入任务类型。1：一次性导入任务；2：持续性导入任务。默认为1：一次性导入任务
+                     * @return TaskType COS导入任务类型。1：一次性导入任务；2：持续性导入任务。默认为1：一次性导入任务
+                     * 
+                     */
+                    uint64_t GetTaskType() const;
+
+                    /**
+                     * 设置COS导入任务类型。1：一次性导入任务；2：持续性导入任务。默认为1：一次性导入任务
+                     * @param _taskType COS导入任务类型。1：一次性导入任务；2：持续性导入任务。默认为1：一次性导入任务
+                     * 
+                     */
+                    void SetTaskType(const uint64_t& _taskType);
+
+                    /**
+                     * 判断参数 TaskType 是否已赋值
+                     * @return TaskType 是否已赋值
+                     * 
+                     */
+                    bool TaskTypeHasBeenSet() const;
+
+                    /**
+                     * 获取元数据。
+                     * @return Metadata 元数据。
+                     * 
+                     */
+                    std::vector<std::string> GetMetadata() const;
+
+                    /**
+                     * 设置元数据。
+                     * @param _metadata 元数据。
+                     * 
+                     */
+                    void SetMetadata(const std::vector<std::string>& _metadata);
+
+                    /**
+                     * 判断参数 Metadata 是否已赋值
+                     * @return Metadata 是否已赋值
+                     * 
+                     */
+                    bool MetadataHasBeenSet() const;
+
                 private:
 
                     /**
@@ -292,6 +334,18 @@ namespace TencentCloud
                      */
                     ExtractRuleInfo m_extractRuleInfo;
                     bool m_extractRuleInfoHasBeenSet;
+
+                    /**
+                     * COS导入任务类型。1：一次性导入任务；2：持续性导入任务。默认为1：一次性导入任务
+                     */
+                    uint64_t m_taskType;
+                    bool m_taskTypeHasBeenSet;
+
+                    /**
+                     * 元数据。
+                     */
+                    std::vector<std::string> m_metadata;
+                    bool m_metadataHasBeenSet;
 
                 };
             }

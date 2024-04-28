@@ -2749,6 +2749,92 @@ LkeClient::ModifyRejectedQuestionOutcomeCallable LkeClient::ModifyRejectedQuesti
     return task->get_future();
 }
 
+LkeClient::ParseDocOutcome LkeClient::ParseDoc(const ParseDocRequest &request)
+{
+    auto outcome = MakeRequest(request, "ParseDoc");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ParseDocResponse rsp = ParseDocResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ParseDocOutcome(rsp);
+        else
+            return ParseDocOutcome(o.GetError());
+    }
+    else
+    {
+        return ParseDocOutcome(outcome.GetError());
+    }
+}
+
+void LkeClient::ParseDocAsync(const ParseDocRequest& request, const ParseDocAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->ParseDoc(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+LkeClient::ParseDocOutcomeCallable LkeClient::ParseDocCallable(const ParseDocRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<ParseDocOutcome()>>(
+        [this, request]()
+        {
+            return this->ParseDoc(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+LkeClient::QueryParseDocResultOutcome LkeClient::QueryParseDocResult(const QueryParseDocResultRequest &request)
+{
+    auto outcome = MakeRequest(request, "QueryParseDocResult");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        QueryParseDocResultResponse rsp = QueryParseDocResultResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return QueryParseDocResultOutcome(rsp);
+        else
+            return QueryParseDocResultOutcome(o.GetError());
+    }
+    else
+    {
+        return QueryParseDocResultOutcome(outcome.GetError());
+    }
+}
+
+void LkeClient::QueryParseDocResultAsync(const QueryParseDocResultRequest& request, const QueryParseDocResultAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->QueryParseDocResult(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+LkeClient::QueryParseDocResultOutcomeCallable LkeClient::QueryParseDocResultCallable(const QueryParseDocResultRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<QueryParseDocResultOutcome()>>(
+        [this, request]()
+        {
+            return this->QueryParseDocResult(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 LkeClient::QueryRewriteOutcome LkeClient::QueryRewrite(const QueryRewriteRequest &request)
 {
     auto outcome = MakeRequest(request, "QueryRewrite");

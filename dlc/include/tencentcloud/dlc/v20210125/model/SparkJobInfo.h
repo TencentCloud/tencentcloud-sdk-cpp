@@ -531,15 +531,15 @@ namespace TencentCloud
                     bool CurrentTaskIdHasBeenSet() const;
 
                     /**
-                     * 获取spark作业最近运行状态
-                     * @return JobStatus spark作业最近运行状态
+                     * 获取spark作业最近运行状态，初始化：0，运行中：1，成功：2，数据写入中： 3， 排队中： 4， 失败： -1， 已删除： -3，已过期： -5
+                     * @return JobStatus spark作业最近运行状态，初始化：0，运行中：1，成功：2，数据写入中： 3， 排队中： 4， 失败： -1， 已删除： -3，已过期： -5
                      * 
                      */
                     int64_t GetJobStatus() const;
 
                     /**
-                     * 设置spark作业最近运行状态
-                     * @param _jobStatus spark作业最近运行状态
+                     * 设置spark作业最近运行状态，初始化：0，运行中：1，成功：2，数据写入中： 3， 排队中： 4， 失败： -1， 已删除： -3，已过期： -5
+                     * @param _jobStatus spark作业最近运行状态，初始化：0，运行中：1，成功：2，数据写入中： 3， 排队中： 4， 失败： -1， 已删除： -3，已过期： -5
                      * 
                      */
                     void SetJobStatus(const int64_t& _jobStatus);
@@ -976,6 +976,31 @@ namespace TencentCloud
                      */
                     bool IsSessionStartedHasBeenSet() const;
 
+                    /**
+                     * 获取引擎详细类型：SparkSQL、PrestoSQL、SparkBatch、StandardSpark、StandardPresto
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return EngineTypeDetail 引擎详细类型：SparkSQL、PrestoSQL、SparkBatch、StandardSpark、StandardPresto
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::string GetEngineTypeDetail() const;
+
+                    /**
+                     * 设置引擎详细类型：SparkSQL、PrestoSQL、SparkBatch、StandardSpark、StandardPresto
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _engineTypeDetail 引擎详细类型：SparkSQL、PrestoSQL、SparkBatch、StandardSpark、StandardPresto
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetEngineTypeDetail(const std::string& _engineTypeDetail);
+
+                    /**
+                     * 判断参数 EngineTypeDetail 是否已赋值
+                     * @return EngineTypeDetail 是否已赋值
+                     * 
+                     */
+                    bool EngineTypeDetailHasBeenSet() const;
+
                 private:
 
                     /**
@@ -1117,7 +1142,7 @@ namespace TencentCloud
                     bool m_currentTaskIdHasBeenSet;
 
                     /**
-                     * spark作业最近运行状态
+                     * spark作业最近运行状态，初始化：0，运行中：1，成功：2，数据写入中： 3， 排队中： 4， 失败： -1， 已删除： -3，已过期： -5
                      */
                     int64_t m_jobStatus;
                     bool m_jobStatusHasBeenSet;
@@ -1240,6 +1265,13 @@ namespace TencentCloud
                      */
                     bool m_isSessionStarted;
                     bool m_isSessionStartedHasBeenSet;
+
+                    /**
+                     * 引擎详细类型：SparkSQL、PrestoSQL、SparkBatch、StandardSpark、StandardPresto
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_engineTypeDetail;
+                    bool m_engineTypeDetailHasBeenSet;
 
                 };
             }

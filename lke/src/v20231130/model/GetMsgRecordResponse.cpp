@@ -24,7 +24,8 @@ using namespace TencentCloud::Lke::V20231130::Model;
 using namespace std;
 
 GetMsgRecordResponse::GetMsgRecordResponse() :
-    m_recordsHasBeenSet(false)
+    m_recordsHasBeenSet(false),
+    m_sessionDisassociatedTimestampHasBeenSet(false)
 {
 }
 
@@ -82,6 +83,16 @@ CoreInternalOutcome GetMsgRecordResponse::Deserialize(const string &payload)
         m_recordsHasBeenSet = true;
     }
 
+    if (rsp.HasMember("SessionDisassociatedTimestamp") && !rsp["SessionDisassociatedTimestamp"].IsNull())
+    {
+        if (!rsp["SessionDisassociatedTimestamp"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `SessionDisassociatedTimestamp` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_sessionDisassociatedTimestamp = string(rsp["SessionDisassociatedTimestamp"].GetString());
+        m_sessionDisassociatedTimestampHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -107,6 +118,14 @@ string GetMsgRecordResponse::ToJsonString() const
         }
     }
 
+    if (m_sessionDisassociatedTimestampHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "SessionDisassociatedTimestamp";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_sessionDisassociatedTimestamp.c_str(), allocator).Move(), allocator);
+    }
+
     rapidjson::Value iKey(rapidjson::kStringType);
     string key = "RequestId";
     iKey.SetString(key.c_str(), allocator);
@@ -127,6 +146,16 @@ vector<MsgRecord> GetMsgRecordResponse::GetRecords() const
 bool GetMsgRecordResponse::RecordsHasBeenSet() const
 {
     return m_recordsHasBeenSet;
+}
+
+string GetMsgRecordResponse::GetSessionDisassociatedTimestamp() const
+{
+    return m_sessionDisassociatedTimestamp;
+}
+
+bool GetMsgRecordResponse::SessionDisassociatedTimestampHasBeenSet() const
+{
+    return m_sessionDisassociatedTimestampHasBeenSet;
 }
 
 

@@ -127,15 +127,15 @@ namespace TencentCloud
                     bool AppFileHasBeenSet() const;
 
                     /**
-                     * 获取数据访问策略，CAM Role arn
-                     * @return RoleArn 数据访问策略，CAM Role arn
+                     * 获取数据访问策略，CAM Role arn，控制台通过数据作业—>作业配置获取，SDK通过DescribeUserRoles接口获取对应的值；
+                     * @return RoleArn 数据访问策略，CAM Role arn，控制台通过数据作业—>作业配置获取，SDK通过DescribeUserRoles接口获取对应的值；
                      * 
                      */
                     int64_t GetRoleArn() const;
 
                     /**
-                     * 设置数据访问策略，CAM Role arn
-                     * @param _roleArn 数据访问策略，CAM Role arn
+                     * 设置数据访问策略，CAM Role arn，控制台通过数据作业—>作业配置获取，SDK通过DescribeUserRoles接口获取对应的值；
+                     * @param _roleArn 数据访问策略，CAM Role arn，控制台通过数据作业—>作业配置获取，SDK通过DescribeUserRoles接口获取对应的值；
                      * 
                      */
                     void SetRoleArn(const int64_t& _roleArn);
@@ -678,7 +678,7 @@ namespace TencentCloud
                     bool m_appFileHasBeenSet;
 
                     /**
-                     * 数据访问策略，CAM Role arn
+                     * 数据访问策略，CAM Role arn，控制台通过数据作业—>作业配置获取，SDK通过DescribeUserRoles接口获取对应的值；
                      */
                     int64_t m_roleArn;
                     bool m_roleArnHasBeenSet;

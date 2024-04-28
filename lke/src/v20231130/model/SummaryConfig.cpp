@@ -22,7 +22,8 @@ using namespace std;
 
 SummaryConfig::SummaryConfig() :
     m_modelHasBeenSet(false),
-    m_outputHasBeenSet(false)
+    m_outputHasBeenSet(false),
+    m_greetingHasBeenSet(false)
 {
 }
 
@@ -65,6 +66,16 @@ CoreInternalOutcome SummaryConfig::Deserialize(const rapidjson::Value &value)
         m_outputHasBeenSet = true;
     }
 
+    if (value.HasMember("Greeting") && !value["Greeting"].IsNull())
+    {
+        if (!value["Greeting"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `SummaryConfig.Greeting` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_greeting = string(value["Greeting"].GetString());
+        m_greetingHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -88,6 +99,14 @@ void SummaryConfig::ToJsonObject(rapidjson::Value &value, rapidjson::Document::A
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
         m_output.ToJsonObject(value[key.c_str()], allocator);
+    }
+
+    if (m_greetingHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Greeting";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_greeting.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -123,5 +142,21 @@ void SummaryConfig::SetOutput(const SummaryOutput& _output)
 bool SummaryConfig::OutputHasBeenSet() const
 {
     return m_outputHasBeenSet;
+}
+
+string SummaryConfig::GetGreeting() const
+{
+    return m_greeting;
+}
+
+void SummaryConfig::SetGreeting(const string& _greeting)
+{
+    m_greeting = _greeting;
+    m_greetingHasBeenSet = true;
+}
+
+bool SummaryConfig::GreetingHasBeenSet() const
+{
+    return m_greetingHasBeenSet;
 }
 

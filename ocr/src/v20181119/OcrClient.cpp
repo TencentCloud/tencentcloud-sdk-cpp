@@ -2147,6 +2147,49 @@ OcrClient::RecognizeGeneralInvoiceOutcomeCallable OcrClient::RecognizeGeneralInv
     return task->get_future();
 }
 
+OcrClient::RecognizeGeneralTextImageWarnOutcome OcrClient::RecognizeGeneralTextImageWarn(const RecognizeGeneralTextImageWarnRequest &request)
+{
+    auto outcome = MakeRequest(request, "RecognizeGeneralTextImageWarn");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        RecognizeGeneralTextImageWarnResponse rsp = RecognizeGeneralTextImageWarnResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return RecognizeGeneralTextImageWarnOutcome(rsp);
+        else
+            return RecognizeGeneralTextImageWarnOutcome(o.GetError());
+    }
+    else
+    {
+        return RecognizeGeneralTextImageWarnOutcome(outcome.GetError());
+    }
+}
+
+void OcrClient::RecognizeGeneralTextImageWarnAsync(const RecognizeGeneralTextImageWarnRequest& request, const RecognizeGeneralTextImageWarnAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->RecognizeGeneralTextImageWarn(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+OcrClient::RecognizeGeneralTextImageWarnOutcomeCallable OcrClient::RecognizeGeneralTextImageWarnCallable(const RecognizeGeneralTextImageWarnRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<RecognizeGeneralTextImageWarnOutcome()>>(
+        [this, request]()
+        {
+            return this->RecognizeGeneralTextImageWarn(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 OcrClient::RecognizeHealthCodeOCROutcome OcrClient::RecognizeHealthCodeOCR(const RecognizeHealthCodeOCRRequest &request)
 {
     auto outcome = MakeRequest(request, "RecognizeHealthCodeOCR");

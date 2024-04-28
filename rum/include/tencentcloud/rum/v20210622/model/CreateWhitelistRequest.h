@@ -64,15 +64,15 @@ namespace TencentCloud
                     bool InstanceIDHasBeenSet() const;
 
                     /**
-                     * 获取备注
-                     * @return Remark 备注
+                     * 获取备注（暂未作字节数限制）
+                     * @return Remark 备注（暂未作字节数限制）
                      * 
                      */
                     std::string GetRemark() const;
 
                     /**
-                     * 设置备注
-                     * @param _remark 备注
+                     * 设置备注（暂未作字节数限制）
+                     * @param _remark 备注（暂未作字节数限制）
                      * 
                      */
                     void SetRemark(const std::string& _remark);
@@ -135,7 +135,7 @@ namespace TencentCloud
                     bool m_instanceIDHasBeenSet;
 
                     /**
-                     * 备注
+                     * 备注（暂未作字节数限制）
                      */
                     std::string m_remark;
                     bool m_remarkHasBeenSet;
