@@ -88,15 +88,15 @@ namespace TencentCloud
                     bool GroupNameHasBeenSet() const;
 
                     /**
-                     * 获取机器组类型
-                     * @return MachineGroupType 机器组类型
+                     * 获取机器组类型。Type：ip，Values中为ip字符串列表机器组；Type：label，Values中为标签字符串列表机器组。
+                     * @return MachineGroupType 机器组类型。Type：ip，Values中为ip字符串列表机器组；Type：label，Values中为标签字符串列表机器组。
                      * 
                      */
                     MachineGroupTypeInfo GetMachineGroupType() const;
 
                     /**
-                     * 设置机器组类型
-                     * @param _machineGroupType 机器组类型
+                     * 设置机器组类型。Type：ip，Values中为ip字符串列表机器组；Type：label，Values中为标签字符串列表机器组。
+                     * @param _machineGroupType 机器组类型。Type：ip，Values中为ip字符串列表机器组；Type：label，Values中为标签字符串列表机器组。
                      * 
                      */
                     void SetMachineGroupType(const MachineGroupTypeInfo& _machineGroupType);
@@ -214,15 +214,15 @@ namespace TencentCloud
                     bool ServiceLoggingHasBeenSet() const;
 
                     /**
-                     * 获取机器组中机器定期离线清理时间
-                     * @return DelayCleanupTime 机器组中机器定期离线清理时间
+                     * 获取机器组中机器定期离线清理时间。单位：天
+                     * @return DelayCleanupTime 机器组中机器定期离线清理时间。单位：天
                      * 
                      */
                     int64_t GetDelayCleanupTime() const;
 
                     /**
-                     * 设置机器组中机器定期离线清理时间
-                     * @param _delayCleanupTime 机器组中机器定期离线清理时间
+                     * 设置机器组中机器定期离线清理时间。单位：天
+                     * @param _delayCleanupTime 机器组中机器定期离线清理时间。单位：天
                      * 
                      */
                     void SetDelayCleanupTime(const int64_t& _delayCleanupTime);
@@ -270,7 +270,7 @@ namespace TencentCloud
                     bool m_groupNameHasBeenSet;
 
                     /**
-                     * 机器组类型
+                     * 机器组类型。Type：ip，Values中为ip字符串列表机器组；Type：label，Values中为标签字符串列表机器组。
                      */
                     MachineGroupTypeInfo m_machineGroupType;
                     bool m_machineGroupTypeHasBeenSet;
@@ -306,7 +306,7 @@ namespace TencentCloud
                     bool m_serviceLoggingHasBeenSet;
 
                     /**
-                     * 机器组中机器定期离线清理时间
+                     * 机器组中机器定期离线清理时间。单位：天
                      */
                     int64_t m_delayCleanupTime;
                     bool m_delayCleanupTimeHasBeenSet;

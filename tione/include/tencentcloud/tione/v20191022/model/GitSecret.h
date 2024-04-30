@@ -47,15 +47,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取无秘钥，默认选项
-                     * @return NoSecret 无秘钥，默认选项
+                     * 获取无密钥，默认选项
+                     * @return NoSecret 无密钥，默认选项
                      * 
                      */
                     bool GetNoSecret() const;
 
                     /**
-                     * 设置无秘钥，默认选项
-                     * @param _noSecret 无秘钥，默认选项
+                     * 设置无密钥，默认选项
+                     * @param _noSecret 无密钥，默认选项
                      * 
                      */
                     void SetNoSecret(const bool& _noSecret);
@@ -99,7 +99,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 无秘钥，默认选项
+                     * 无密钥，默认选项
                      */
                     bool m_noSecret;
                     bool m_noSecretHasBeenSet;

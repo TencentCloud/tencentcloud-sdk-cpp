@@ -556,6 +556,49 @@ ClsClient::CreateCosRechargeOutcomeCallable ClsClient::CreateCosRechargeCallable
     return task->get_future();
 }
 
+ClsClient::CreateDashboardSubscribeOutcome ClsClient::CreateDashboardSubscribe(const CreateDashboardSubscribeRequest &request)
+{
+    auto outcome = MakeRequest(request, "CreateDashboardSubscribe");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        CreateDashboardSubscribeResponse rsp = CreateDashboardSubscribeResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return CreateDashboardSubscribeOutcome(rsp);
+        else
+            return CreateDashboardSubscribeOutcome(o.GetError());
+    }
+    else
+    {
+        return CreateDashboardSubscribeOutcome(outcome.GetError());
+    }
+}
+
+void ClsClient::CreateDashboardSubscribeAsync(const CreateDashboardSubscribeRequest& request, const CreateDashboardSubscribeAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->CreateDashboardSubscribe(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+ClsClient::CreateDashboardSubscribeOutcomeCallable ClsClient::CreateDashboardSubscribeCallable(const CreateDashboardSubscribeRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<CreateDashboardSubscribeOutcome()>>(
+        [this, request]()
+        {
+            return this->CreateDashboardSubscribe(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 ClsClient::CreateDataTransformOutcome ClsClient::CreateDataTransform(const CreateDataTransformRequest &request)
 {
     auto outcome = MakeRequest(request, "CreateDataTransform");
@@ -1280,6 +1323,49 @@ ClsClient::DeleteConsumerOutcomeCallable ClsClient::DeleteConsumerCallable(const
         [this, request]()
         {
             return this->DeleteConsumer(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+ClsClient::DeleteDashboardSubscribeOutcome ClsClient::DeleteDashboardSubscribe(const DeleteDashboardSubscribeRequest &request)
+{
+    auto outcome = MakeRequest(request, "DeleteDashboardSubscribe");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DeleteDashboardSubscribeResponse rsp = DeleteDashboardSubscribeResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DeleteDashboardSubscribeOutcome(rsp);
+        else
+            return DeleteDashboardSubscribeOutcome(o.GetError());
+    }
+    else
+    {
+        return DeleteDashboardSubscribeOutcome(outcome.GetError());
+    }
+}
+
+void ClsClient::DeleteDashboardSubscribeAsync(const DeleteDashboardSubscribeRequest& request, const DeleteDashboardSubscribeAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DeleteDashboardSubscribe(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+ClsClient::DeleteDashboardSubscribeOutcomeCallable ClsClient::DeleteDashboardSubscribeCallable(const DeleteDashboardSubscribeRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DeleteDashboardSubscribeOutcome()>>(
+        [this, request]()
+        {
+            return this->DeleteDashboardSubscribe(request);
         }
     );
 
@@ -2097,6 +2183,49 @@ ClsClient::DescribeCosRechargesOutcomeCallable ClsClient::DescribeCosRechargesCa
         [this, request]()
         {
             return this->DescribeCosRecharges(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+ClsClient::DescribeDashboardSubscribesOutcome ClsClient::DescribeDashboardSubscribes(const DescribeDashboardSubscribesRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeDashboardSubscribes");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeDashboardSubscribesResponse rsp = DescribeDashboardSubscribesResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeDashboardSubscribesOutcome(rsp);
+        else
+            return DescribeDashboardSubscribesOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeDashboardSubscribesOutcome(outcome.GetError());
+    }
+}
+
+void ClsClient::DescribeDashboardSubscribesAsync(const DescribeDashboardSubscribesRequest& request, const DescribeDashboardSubscribesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeDashboardSubscribes(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+ClsClient::DescribeDashboardSubscribesOutcomeCallable ClsClient::DescribeDashboardSubscribesCallable(const DescribeDashboardSubscribesRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeDashboardSubscribesOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeDashboardSubscribes(request);
         }
     );
 
@@ -3222,6 +3351,49 @@ ClsClient::ModifyCosRechargeOutcomeCallable ClsClient::ModifyCosRechargeCallable
     return task->get_future();
 }
 
+ClsClient::ModifyDashboardSubscribeOutcome ClsClient::ModifyDashboardSubscribe(const ModifyDashboardSubscribeRequest &request)
+{
+    auto outcome = MakeRequest(request, "ModifyDashboardSubscribe");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ModifyDashboardSubscribeResponse rsp = ModifyDashboardSubscribeResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ModifyDashboardSubscribeOutcome(rsp);
+        else
+            return ModifyDashboardSubscribeOutcome(o.GetError());
+    }
+    else
+    {
+        return ModifyDashboardSubscribeOutcome(outcome.GetError());
+    }
+}
+
+void ClsClient::ModifyDashboardSubscribeAsync(const ModifyDashboardSubscribeRequest& request, const ModifyDashboardSubscribeAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->ModifyDashboardSubscribe(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+ClsClient::ModifyDashboardSubscribeOutcomeCallable ClsClient::ModifyDashboardSubscribeCallable(const ModifyDashboardSubscribeRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<ModifyDashboardSubscribeOutcome()>>(
+        [this, request]()
+        {
+            return this->ModifyDashboardSubscribe(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 ClsClient::ModifyDataTransformOutcome ClsClient::ModifyDataTransform(const ModifyDataTransformRequest &request)
 {
     auto outcome = MakeRequest(request, "ModifyDataTransform");
@@ -3860,6 +4032,49 @@ ClsClient::SearchCosRechargeInfoOutcomeCallable ClsClient::SearchCosRechargeInfo
         [this, request]()
         {
             return this->SearchCosRechargeInfo(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+ClsClient::SearchDashboardSubscribeOutcome ClsClient::SearchDashboardSubscribe(const SearchDashboardSubscribeRequest &request)
+{
+    auto outcome = MakeRequest(request, "SearchDashboardSubscribe");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        SearchDashboardSubscribeResponse rsp = SearchDashboardSubscribeResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return SearchDashboardSubscribeOutcome(rsp);
+        else
+            return SearchDashboardSubscribeOutcome(o.GetError());
+    }
+    else
+    {
+        return SearchDashboardSubscribeOutcome(outcome.GetError());
+    }
+}
+
+void ClsClient::SearchDashboardSubscribeAsync(const SearchDashboardSubscribeRequest& request, const SearchDashboardSubscribeAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->SearchDashboardSubscribe(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+ClsClient::SearchDashboardSubscribeOutcomeCallable ClsClient::SearchDashboardSubscribeCallable(const SearchDashboardSubscribeRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<SearchDashboardSubscribeOutcome()>>(
+        [this, request]()
+        {
+            return this->SearchDashboardSubscribe(request);
         }
     );
 

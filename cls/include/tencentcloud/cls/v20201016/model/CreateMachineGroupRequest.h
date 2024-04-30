@@ -67,15 +67,15 @@ namespace TencentCloud
                     bool GroupNameHasBeenSet() const;
 
                     /**
-                     * 获取创建机器组类型，Type为ip，Values中为Ip字符串列表创建机器组，Type为label， Values中为标签字符串列表创建机器组
-                     * @return MachineGroupType 创建机器组类型，Type为ip，Values中为Ip字符串列表创建机器组，Type为label， Values中为标签字符串列表创建机器组
+                     * 获取创建机器组类型。Type：ip，Values中为ip字符串列表创建机器组；Type：label，Values中为标签字符串列表创建机器组。
+                     * @return MachineGroupType 创建机器组类型。Type：ip，Values中为ip字符串列表创建机器组；Type：label，Values中为标签字符串列表创建机器组。
                      * 
                      */
                     MachineGroupTypeInfo GetMachineGroupType() const;
 
                     /**
-                     * 设置创建机器组类型，Type为ip，Values中为Ip字符串列表创建机器组，Type为label， Values中为标签字符串列表创建机器组
-                     * @param _machineGroupType 创建机器组类型，Type为ip，Values中为Ip字符串列表创建机器组，Type为label， Values中为标签字符串列表创建机器组
+                     * 设置创建机器组类型。Type：ip，Values中为ip字符串列表创建机器组；Type：label，Values中为标签字符串列表创建机器组。
+                     * @param _machineGroupType 创建机器组类型。Type：ip，Values中为ip字符串列表创建机器组；Type：label，Values中为标签字符串列表创建机器组。
                      * 
                      */
                     void SetMachineGroupType(const MachineGroupTypeInfo& _machineGroupType);
@@ -109,15 +109,15 @@ namespace TencentCloud
                     bool TagsHasBeenSet() const;
 
                     /**
-                     * 获取是否开启机器组自动更新
-                     * @return AutoUpdate 是否开启机器组自动更新
+                     * 获取是否开启机器组自动更新。默认false
+                     * @return AutoUpdate 是否开启机器组自动更新。默认false
                      * 
                      */
                     bool GetAutoUpdate() const;
 
                     /**
-                     * 设置是否开启机器组自动更新
-                     * @param _autoUpdate 是否开启机器组自动更新
+                     * 设置是否开启机器组自动更新。默认false
+                     * @param _autoUpdate 是否开启机器组自动更新。默认false
                      * 
                      */
                     void SetAutoUpdate(const bool& _autoUpdate);
@@ -172,15 +172,15 @@ namespace TencentCloud
                     bool UpdateEndTimeHasBeenSet() const;
 
                     /**
-                     * 获取是否开启服务日志，用于记录因Loglistener 服务自身产生的log，开启后，会创建内部日志集cls_service_logging和日志主题loglistener_status,loglistener_alarm,loglistener_business，不产生计费
-                     * @return ServiceLogging 是否开启服务日志，用于记录因Loglistener 服务自身产生的log，开启后，会创建内部日志集cls_service_logging和日志主题loglistener_status,loglistener_alarm,loglistener_business，不产生计费
+                     * 获取是否开启服务日志，用于记录因Loglistener 服务自身产生的log，开启后，会创建内部日志集cls_service_logging和日志主题loglistener_status,loglistener_alarm,loglistener_business，不产生计费。默认false
+                     * @return ServiceLogging 是否开启服务日志，用于记录因Loglistener 服务自身产生的log，开启后，会创建内部日志集cls_service_logging和日志主题loglistener_status,loglistener_alarm,loglistener_business，不产生计费。默认false
                      * 
                      */
                     bool GetServiceLogging() const;
 
                     /**
-                     * 设置是否开启服务日志，用于记录因Loglistener 服务自身产生的log，开启后，会创建内部日志集cls_service_logging和日志主题loglistener_status,loglistener_alarm,loglistener_business，不产生计费
-                     * @param _serviceLogging 是否开启服务日志，用于记录因Loglistener 服务自身产生的log，开启后，会创建内部日志集cls_service_logging和日志主题loglistener_status,loglistener_alarm,loglistener_business，不产生计费
+                     * 设置是否开启服务日志，用于记录因Loglistener 服务自身产生的log，开启后，会创建内部日志集cls_service_logging和日志主题loglistener_status,loglistener_alarm,loglistener_business，不产生计费。默认false
+                     * @param _serviceLogging 是否开启服务日志，用于记录因Loglistener 服务自身产生的log，开启后，会创建内部日志集cls_service_logging和日志主题loglistener_status,loglistener_alarm,loglistener_business，不产生计费。默认false
                      * 
                      */
                     void SetServiceLogging(const bool& _serviceLogging);
@@ -193,15 +193,15 @@ namespace TencentCloud
                     bool ServiceLoggingHasBeenSet() const;
 
                     /**
-                     * 获取机器组中机器离线清理时间
-                     * @return DelayCleanupTime 机器组中机器离线清理时间
+                     * 获取机器组中机器离线清理时间。单位：天
+                     * @return DelayCleanupTime 机器组中机器离线清理时间。单位：天
                      * 
                      */
                     int64_t GetDelayCleanupTime() const;
 
                     /**
-                     * 设置机器组中机器离线清理时间
-                     * @param _delayCleanupTime 机器组中机器离线清理时间
+                     * 设置机器组中机器离线清理时间。单位：天
+                     * @param _delayCleanupTime 机器组中机器离线清理时间。单位：天
                      * 
                      */
                     void SetDelayCleanupTime(const int64_t& _delayCleanupTime);
@@ -264,7 +264,7 @@ namespace TencentCloud
                     bool m_groupNameHasBeenSet;
 
                     /**
-                     * 创建机器组类型，Type为ip，Values中为Ip字符串列表创建机器组，Type为label， Values中为标签字符串列表创建机器组
+                     * 创建机器组类型。Type：ip，Values中为ip字符串列表创建机器组；Type：label，Values中为标签字符串列表创建机器组。
                      */
                     MachineGroupTypeInfo m_machineGroupType;
                     bool m_machineGroupTypeHasBeenSet;
@@ -276,7 +276,7 @@ namespace TencentCloud
                     bool m_tagsHasBeenSet;
 
                     /**
-                     * 是否开启机器组自动更新
+                     * 是否开启机器组自动更新。默认false
                      */
                     bool m_autoUpdate;
                     bool m_autoUpdateHasBeenSet;
@@ -294,13 +294,13 @@ namespace TencentCloud
                     bool m_updateEndTimeHasBeenSet;
 
                     /**
-                     * 是否开启服务日志，用于记录因Loglistener 服务自身产生的log，开启后，会创建内部日志集cls_service_logging和日志主题loglistener_status,loglistener_alarm,loglistener_business，不产生计费
+                     * 是否开启服务日志，用于记录因Loglistener 服务自身产生的log，开启后，会创建内部日志集cls_service_logging和日志主题loglistener_status,loglistener_alarm,loglistener_business，不产生计费。默认false
                      */
                     bool m_serviceLogging;
                     bool m_serviceLoggingHasBeenSet;
 
                     /**
-                     * 机器组中机器离线清理时间
+                     * 机器组中机器离线清理时间。单位：天
                      */
                     int64_t m_delayCleanupTime;
                     bool m_delayCleanupTimeHasBeenSet;

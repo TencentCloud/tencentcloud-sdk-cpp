@@ -599,6 +599,49 @@ TeoClient::CreateOriginGroupOutcomeCallable TeoClient::CreateOriginGroupCallable
     return task->get_future();
 }
 
+TeoClient::CreatePlanOutcome TeoClient::CreatePlan(const CreatePlanRequest &request)
+{
+    auto outcome = MakeRequest(request, "CreatePlan");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        CreatePlanResponse rsp = CreatePlanResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return CreatePlanOutcome(rsp);
+        else
+            return CreatePlanOutcome(o.GetError());
+    }
+    else
+    {
+        return CreatePlanOutcome(outcome.GetError());
+    }
+}
+
+void TeoClient::CreatePlanAsync(const CreatePlanRequest& request, const CreatePlanAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->CreatePlan(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+TeoClient::CreatePlanOutcomeCallable TeoClient::CreatePlanCallable(const CreatePlanRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<CreatePlanOutcome()>>(
+        [this, request]()
+        {
+            return this->CreatePlan(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 TeoClient::CreatePlanForZoneOutcome TeoClient::CreatePlanForZone(const CreatePlanForZoneRequest &request)
 {
     auto outcome = MakeRequest(request, "CreatePlanForZone");
@@ -3050,6 +3093,49 @@ TeoClient::DescribeZonesOutcomeCallable TeoClient::DescribeZonesCallable(const D
     return task->get_future();
 }
 
+TeoClient::DestroyPlanOutcome TeoClient::DestroyPlan(const DestroyPlanRequest &request)
+{
+    auto outcome = MakeRequest(request, "DestroyPlan");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DestroyPlanResponse rsp = DestroyPlanResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DestroyPlanOutcome(rsp);
+        else
+            return DestroyPlanOutcome(o.GetError());
+    }
+    else
+    {
+        return DestroyPlanOutcome(outcome.GetError());
+    }
+}
+
+void TeoClient::DestroyPlanAsync(const DestroyPlanRequest& request, const DestroyPlanAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DestroyPlan(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+TeoClient::DestroyPlanOutcomeCallable TeoClient::DestroyPlanCallable(const DestroyPlanRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DestroyPlanOutcome()>>(
+        [this, request]()
+        {
+            return this->DestroyPlan(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 TeoClient::DownloadL4LogsOutcome TeoClient::DownloadL4Logs(const DownloadL4LogsRequest &request)
 {
     auto outcome = MakeRequest(request, "DownloadL4Logs");
@@ -3172,6 +3258,49 @@ TeoClient::IdentifyZoneOutcomeCallable TeoClient::IdentifyZoneCallable(const Ide
         [this, request]()
         {
             return this->IdentifyZone(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+TeoClient::IncreasePlanQuotaOutcome TeoClient::IncreasePlanQuota(const IncreasePlanQuotaRequest &request)
+{
+    auto outcome = MakeRequest(request, "IncreasePlanQuota");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        IncreasePlanQuotaResponse rsp = IncreasePlanQuotaResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return IncreasePlanQuotaOutcome(rsp);
+        else
+            return IncreasePlanQuotaOutcome(o.GetError());
+    }
+    else
+    {
+        return IncreasePlanQuotaOutcome(outcome.GetError());
+    }
+}
+
+void TeoClient::IncreasePlanQuotaAsync(const IncreasePlanQuotaRequest& request, const IncreasePlanQuotaAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->IncreasePlanQuota(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+TeoClient::IncreasePlanQuotaOutcomeCallable TeoClient::IncreasePlanQuotaCallable(const IncreasePlanQuotaRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<IncreasePlanQuotaOutcome()>>(
+        [this, request]()
+        {
+            return this->IncreasePlanQuota(request);
         }
     );
 
@@ -3781,6 +3910,49 @@ TeoClient::ModifyOriginGroupOutcomeCallable TeoClient::ModifyOriginGroupCallable
     return task->get_future();
 }
 
+TeoClient::ModifyPlanOutcome TeoClient::ModifyPlan(const ModifyPlanRequest &request)
+{
+    auto outcome = MakeRequest(request, "ModifyPlan");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ModifyPlanResponse rsp = ModifyPlanResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ModifyPlanOutcome(rsp);
+        else
+            return ModifyPlanOutcome(o.GetError());
+    }
+    else
+    {
+        return ModifyPlanOutcome(outcome.GetError());
+    }
+}
+
+void TeoClient::ModifyPlanAsync(const ModifyPlanRequest& request, const ModifyPlanAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->ModifyPlan(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+TeoClient::ModifyPlanOutcomeCallable TeoClient::ModifyPlanCallable(const ModifyPlanRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<ModifyPlanOutcome()>>(
+        [this, request]()
+        {
+            return this->ModifyPlan(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 TeoClient::ModifyRealtimeLogDeliveryTaskOutcome TeoClient::ModifyRealtimeLogDeliveryTask(const ModifyRealtimeLogDeliveryTaskRequest &request)
 {
     auto outcome = MakeRequest(request, "ModifyRealtimeLogDeliveryTask");
@@ -4075,6 +4247,92 @@ TeoClient::ModifyZoneStatusOutcomeCallable TeoClient::ModifyZoneStatusCallable(c
         [this, request]()
         {
             return this->ModifyZoneStatus(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+TeoClient::RenewPlanOutcome TeoClient::RenewPlan(const RenewPlanRequest &request)
+{
+    auto outcome = MakeRequest(request, "RenewPlan");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        RenewPlanResponse rsp = RenewPlanResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return RenewPlanOutcome(rsp);
+        else
+            return RenewPlanOutcome(o.GetError());
+    }
+    else
+    {
+        return RenewPlanOutcome(outcome.GetError());
+    }
+}
+
+void TeoClient::RenewPlanAsync(const RenewPlanRequest& request, const RenewPlanAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->RenewPlan(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+TeoClient::RenewPlanOutcomeCallable TeoClient::RenewPlanCallable(const RenewPlanRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<RenewPlanOutcome()>>(
+        [this, request]()
+        {
+            return this->RenewPlan(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+TeoClient::UpgradePlanOutcome TeoClient::UpgradePlan(const UpgradePlanRequest &request)
+{
+    auto outcome = MakeRequest(request, "UpgradePlan");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        UpgradePlanResponse rsp = UpgradePlanResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return UpgradePlanOutcome(rsp);
+        else
+            return UpgradePlanOutcome(o.GetError());
+    }
+    else
+    {
+        return UpgradePlanOutcome(outcome.GetError());
+    }
+}
+
+void TeoClient::UpgradePlanAsync(const UpgradePlanRequest& request, const UpgradePlanAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->UpgradePlan(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+TeoClient::UpgradePlanOutcomeCallable TeoClient::UpgradePlanCallable(const UpgradePlanRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<UpgradePlanOutcome()>>(
+        [this, request]()
+        {
+            return this->UpgradePlan(request);
         }
     );
 
