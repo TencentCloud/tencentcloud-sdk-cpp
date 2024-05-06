@@ -89,15 +89,15 @@ namespace TencentCloud
                     bool NodeRoleHasBeenSet() const;
 
                     /**
-                     * 获取实例的保留模式
-                     * @return InstanceDeleteMode 实例的保留模式
+                     * 获取实例删除时的策略：terminate（销毁实例，仅支持按量计费云主机实例） retain （仅移除，保留实例）
+                     * @return InstanceDeleteMode 实例删除时的策略：terminate（销毁实例，仅支持按量计费云主机实例） retain （仅移除，保留实例）
                      * 
                      */
                     std::string GetInstanceDeleteMode() const;
 
                     /**
-                     * 设置实例的保留模式
-                     * @param _instanceDeleteMode 实例的保留模式
+                     * 设置实例删除时的策略：terminate（销毁实例，仅支持按量计费云主机实例） retain （仅移除，保留实例）
+                     * @param _instanceDeleteMode 实例删除时的策略：terminate（销毁实例，仅支持按量计费云主机实例） retain （仅移除，保留实例）
                      * 
                      */
                     void SetInstanceDeleteMode(const std::string& _instanceDeleteMode);
@@ -124,7 +124,7 @@ namespace TencentCloud
                     bool m_nodeRoleHasBeenSet;
 
                     /**
-                     * 实例的保留模式
+                     * 实例删除时的策略：terminate（销毁实例，仅支持按量计费云主机实例） retain （仅移除，保留实例）
                      */
                     std::string m_instanceDeleteMode;
                     bool m_instanceDeleteModeHasBeenSet;

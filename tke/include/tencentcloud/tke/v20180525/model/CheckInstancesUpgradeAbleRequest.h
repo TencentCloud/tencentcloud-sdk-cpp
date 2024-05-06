@@ -86,15 +86,15 @@ namespace TencentCloud
                     bool InstanceIdsHasBeenSet() const;
 
                     /**
-                     * 获取升级类型
-                     * @return UpgradeType 升级类型
+                     * 获取升级类型，枚举值：reset(重装升级，支持大版本和小版本)，hot(原地滚动小版本升级)，major(原地滚动大版本升级)
+                     * @return UpgradeType 升级类型，枚举值：reset(重装升级，支持大版本和小版本)，hot(原地滚动小版本升级)，major(原地滚动大版本升级)
                      * 
                      */
                     std::string GetUpgradeType() const;
 
                     /**
-                     * 设置升级类型
-                     * @param _upgradeType 升级类型
+                     * 设置升级类型，枚举值：reset(重装升级，支持大版本和小版本)，hot(原地滚动小版本升级)，major(原地滚动大版本升级)
+                     * @param _upgradeType 升级类型，枚举值：reset(重装升级，支持大版本和小版本)，hot(原地滚动小版本升级)，major(原地滚动大版本升级)
                      * 
                      */
                     void SetUpgradeType(const std::string& _upgradeType);
@@ -184,7 +184,7 @@ namespace TencentCloud
                     bool m_instanceIdsHasBeenSet;
 
                     /**
-                     * 升级类型
+                     * 升级类型，枚举值：reset(重装升级，支持大版本和小版本)，hot(原地滚动小版本升级)，major(原地滚动大版本升级)
                      */
                     std::string m_upgradeType;
                     bool m_upgradeTypeHasBeenSet;

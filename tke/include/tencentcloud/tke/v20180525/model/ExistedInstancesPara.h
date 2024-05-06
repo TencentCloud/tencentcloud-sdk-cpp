@@ -71,15 +71,15 @@ namespace TencentCloud
                     bool InstanceIdsHasBeenSet() const;
 
                     /**
-                     * 获取实例额外需要设置参数信息
-                     * @return InstanceAdvancedSettings 实例额外需要设置参数信息
+                     * 获取实例额外需要设置参数信息（目前后端暂不支持此字段，我们将在未来的版本中实现）
+                     * @return InstanceAdvancedSettings 实例额外需要设置参数信息（目前后端暂不支持此字段，我们将在未来的版本中实现）
                      * 
                      */
                     InstanceAdvancedSettings GetInstanceAdvancedSettings() const;
 
                     /**
-                     * 设置实例额外需要设置参数信息
-                     * @param _instanceAdvancedSettings 实例额外需要设置参数信息
+                     * 设置实例额外需要设置参数信息（目前后端暂不支持此字段，我们将在未来的版本中实现）
+                     * @param _instanceAdvancedSettings 实例额外需要设置参数信息（目前后端暂不支持此字段，我们将在未来的版本中实现）
                      * 
                      */
                     void SetInstanceAdvancedSettings(const InstanceAdvancedSettings& _instanceAdvancedSettings);
@@ -184,7 +184,7 @@ namespace TencentCloud
                     bool m_instanceIdsHasBeenSet;
 
                     /**
-                     * 实例额外需要设置参数信息
+                     * 实例额外需要设置参数信息（目前后端暂不支持此字段，我们将在未来的版本中实现）
                      */
                     InstanceAdvancedSettings m_instanceAdvancedSettings;
                     bool m_instanceAdvancedSettingsHasBeenSet;

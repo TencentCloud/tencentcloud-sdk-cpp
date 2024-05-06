@@ -43,15 +43,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取集群 Id
-                     * @return ClusterId 集群 Id
+                     * 获取集群 Id。若只查询某个集群可升级的版本，需填写此项。
+                     * @return ClusterId 集群 Id。若只查询某个集群可升级的版本，需填写此项。
                      * 
                      */
                     std::string GetClusterId() const;
 
                     /**
-                     * 设置集群 Id
-                     * @param _clusterId 集群 Id
+                     * 设置集群 Id。若只查询某个集群可升级的版本，需填写此项。
+                     * @param _clusterId 集群 Id。若只查询某个集群可升级的版本，需填写此项。
                      * 
                      */
                     void SetClusterId(const std::string& _clusterId);
@@ -64,15 +64,15 @@ namespace TencentCloud
                     bool ClusterIdHasBeenSet() const;
 
                     /**
-                     * 获取集群 Id 列表
-                     * @return ClusterIds 集群 Id 列表
+                     * 获取集群 Id 列表。若查询多个集群可升级的版本，需填写此项。
+                     * @return ClusterIds 集群 Id 列表。若查询多个集群可升级的版本，需填写此项。
                      * 
                      */
                     std::vector<std::string> GetClusterIds() const;
 
                     /**
-                     * 设置集群 Id 列表
-                     * @param _clusterIds 集群 Id 列表
+                     * 设置集群 Id 列表。若查询多个集群可升级的版本，需填写此项。
+                     * @param _clusterIds 集群 Id 列表。若查询多个集群可升级的版本，需填写此项。
                      * 
                      */
                     void SetClusterIds(const std::vector<std::string>& _clusterIds);
@@ -87,13 +87,13 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 集群 Id
+                     * 集群 Id。若只查询某个集群可升级的版本，需填写此项。
                      */
                     std::string m_clusterId;
                     bool m_clusterIdHasBeenSet;
 
                     /**
-                     * 集群 Id 列表
+                     * 集群 Id 列表。若查询多个集群可升级的版本，需填写此项。
                      */
                     std::vector<std::string> m_clusterIds;
                     bool m_clusterIdsHasBeenSet;

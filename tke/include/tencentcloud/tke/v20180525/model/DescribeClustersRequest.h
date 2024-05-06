@@ -111,167 +111,15 @@ namespace TencentCloud
                     bool LimitHasBeenSet() const;
 
                     /**
-                     * 获取·  ClusterName
-    按照【集群名】进行过滤。
-    类型：String
-    必选：否
-
-·  ClusterType
-    按照【集群类型】进行过滤。
-    类型：String
-    必选：否
-
-·  ClusterStatus
-    按照【集群状态】进行过滤。
-    类型：String
-    必选：否
-
-·  Tags
-    按照【标签键值对】进行过滤。
-    类型：String
-    必选：否
-
-·  vpc-id
-    按照【VPC】进行过滤。
-    类型：String
-    必选：否
-
-·  tag-key
-    按照【标签键】进行过滤。
-    类型：String
-    必选：否
-
-·  tag-value
-    按照【标签值】进行过滤。
-    类型：String
-    必选：否
-
-·  tag:tag-key
-    按照【标签键值对】进行过滤。
-    类型：String
-    必选：否
-                     * @return Filters ·  ClusterName
-    按照【集群名】进行过滤。
-    类型：String
-    必选：否
-
-·  ClusterType
-    按照【集群类型】进行过滤。
-    类型：String
-    必选：否
-
-·  ClusterStatus
-    按照【集群状态】进行过滤。
-    类型：String
-    必选：否
-
-·  Tags
-    按照【标签键值对】进行过滤。
-    类型：String
-    必选：否
-
-·  vpc-id
-    按照【VPC】进行过滤。
-    类型：String
-    必选：否
-
-·  tag-key
-    按照【标签键】进行过滤。
-    类型：String
-    必选：否
-
-·  tag-value
-    按照【标签值】进行过滤。
-    类型：String
-    必选：否
-
-·  tag:tag-key
-    按照【标签键值对】进行过滤。
-    类型：String
-    必选：否
+                     * 获取· "Name":"ClusterName","Values": ["test"] 按照【集群名】进行过滤。 类型：String 必选：否 · "Name":"ClusterType","Values": ["MANAGED_CLUSTER"] 按照【集群类型】进行过滤。 类型：String 必选：否 · "Name":"ClusterStatus","Values": ["Running"] 按照【集群状态】进行过滤。 类型：String 必选：否 · "Name":"ClusterStatus","Values": ["Running"] 按照【集群状态】进行过滤。 类型：String 必选：否 · "Name":"vpc-id","Values": ["vpc-123qajzs"] 按照【VPC】进行过滤。 类型：String 必选：否 · "Name":"tag-key","Values": ["testKey"] 按照【标签键】进行过滤。 类型：String 必选：否 · "Name":"tag-value","Values": ["testValue"] 按照【标签值】进行过滤。 类型：String 必选：否 · "Name":"Tags","Values": ["abc:1"] 按照【标签键值对】进行过滤。 类型：String 必选：否
+                     * @return Filters · "Name":"ClusterName","Values": ["test"] 按照【集群名】进行过滤。 类型：String 必选：否 · "Name":"ClusterType","Values": ["MANAGED_CLUSTER"] 按照【集群类型】进行过滤。 类型：String 必选：否 · "Name":"ClusterStatus","Values": ["Running"] 按照【集群状态】进行过滤。 类型：String 必选：否 · "Name":"ClusterStatus","Values": ["Running"] 按照【集群状态】进行过滤。 类型：String 必选：否 · "Name":"vpc-id","Values": ["vpc-123qajzs"] 按照【VPC】进行过滤。 类型：String 必选：否 · "Name":"tag-key","Values": ["testKey"] 按照【标签键】进行过滤。 类型：String 必选：否 · "Name":"tag-value","Values": ["testValue"] 按照【标签值】进行过滤。 类型：String 必选：否 · "Name":"Tags","Values": ["abc:1"] 按照【标签键值对】进行过滤。 类型：String 必选：否
                      * 
                      */
                     std::vector<Filter> GetFilters() const;
 
                     /**
-                     * 设置·  ClusterName
-    按照【集群名】进行过滤。
-    类型：String
-    必选：否
-
-·  ClusterType
-    按照【集群类型】进行过滤。
-    类型：String
-    必选：否
-
-·  ClusterStatus
-    按照【集群状态】进行过滤。
-    类型：String
-    必选：否
-
-·  Tags
-    按照【标签键值对】进行过滤。
-    类型：String
-    必选：否
-
-·  vpc-id
-    按照【VPC】进行过滤。
-    类型：String
-    必选：否
-
-·  tag-key
-    按照【标签键】进行过滤。
-    类型：String
-    必选：否
-
-·  tag-value
-    按照【标签值】进行过滤。
-    类型：String
-    必选：否
-
-·  tag:tag-key
-    按照【标签键值对】进行过滤。
-    类型：String
-    必选：否
-                     * @param _filters ·  ClusterName
-    按照【集群名】进行过滤。
-    类型：String
-    必选：否
-
-·  ClusterType
-    按照【集群类型】进行过滤。
-    类型：String
-    必选：否
-
-·  ClusterStatus
-    按照【集群状态】进行过滤。
-    类型：String
-    必选：否
-
-·  Tags
-    按照【标签键值对】进行过滤。
-    类型：String
-    必选：否
-
-·  vpc-id
-    按照【VPC】进行过滤。
-    类型：String
-    必选：否
-
-·  tag-key
-    按照【标签键】进行过滤。
-    类型：String
-    必选：否
-
-·  tag-value
-    按照【标签值】进行过滤。
-    类型：String
-    必选：否
-
-·  tag:tag-key
-    按照【标签键值对】进行过滤。
-    类型：String
-    必选：否
+                     * 设置· "Name":"ClusterName","Values": ["test"] 按照【集群名】进行过滤。 类型：String 必选：否 · "Name":"ClusterType","Values": ["MANAGED_CLUSTER"] 按照【集群类型】进行过滤。 类型：String 必选：否 · "Name":"ClusterStatus","Values": ["Running"] 按照【集群状态】进行过滤。 类型：String 必选：否 · "Name":"ClusterStatus","Values": ["Running"] 按照【集群状态】进行过滤。 类型：String 必选：否 · "Name":"vpc-id","Values": ["vpc-123qajzs"] 按照【VPC】进行过滤。 类型：String 必选：否 · "Name":"tag-key","Values": ["testKey"] 按照【标签键】进行过滤。 类型：String 必选：否 · "Name":"tag-value","Values": ["testValue"] 按照【标签值】进行过滤。 类型：String 必选：否 · "Name":"Tags","Values": ["abc:1"] 按照【标签键值对】进行过滤。 类型：String 必选：否
+                     * @param _filters · "Name":"ClusterName","Values": ["test"] 按照【集群名】进行过滤。 类型：String 必选：否 · "Name":"ClusterType","Values": ["MANAGED_CLUSTER"] 按照【集群类型】进行过滤。 类型：String 必选：否 · "Name":"ClusterStatus","Values": ["Running"] 按照【集群状态】进行过滤。 类型：String 必选：否 · "Name":"ClusterStatus","Values": ["Running"] 按照【集群状态】进行过滤。 类型：String 必选：否 · "Name":"vpc-id","Values": ["vpc-123qajzs"] 按照【VPC】进行过滤。 类型：String 必选：否 · "Name":"tag-key","Values": ["testKey"] 按照【标签键】进行过滤。 类型：String 必选：否 · "Name":"tag-value","Values": ["testValue"] 按照【标签值】进行过滤。 类型：String 必选：否 · "Name":"Tags","Values": ["abc:1"] 按照【标签键值对】进行过滤。 类型：String 必选：否
                      * 
                      */
                     void SetFilters(const std::vector<Filter>& _filters);
@@ -326,45 +174,7 @@ namespace TencentCloud
                     bool m_limitHasBeenSet;
 
                     /**
-                     * ·  ClusterName
-    按照【集群名】进行过滤。
-    类型：String
-    必选：否
-
-·  ClusterType
-    按照【集群类型】进行过滤。
-    类型：String
-    必选：否
-
-·  ClusterStatus
-    按照【集群状态】进行过滤。
-    类型：String
-    必选：否
-
-·  Tags
-    按照【标签键值对】进行过滤。
-    类型：String
-    必选：否
-
-·  vpc-id
-    按照【VPC】进行过滤。
-    类型：String
-    必选：否
-
-·  tag-key
-    按照【标签键】进行过滤。
-    类型：String
-    必选：否
-
-·  tag-value
-    按照【标签值】进行过滤。
-    类型：String
-    必选：否
-
-·  tag:tag-key
-    按照【标签键值对】进行过滤。
-    类型：String
-    必选：否
+                     * · "Name":"ClusterName","Values": ["test"] 按照【集群名】进行过滤。 类型：String 必选：否 · "Name":"ClusterType","Values": ["MANAGED_CLUSTER"] 按照【集群类型】进行过滤。 类型：String 必选：否 · "Name":"ClusterStatus","Values": ["Running"] 按照【集群状态】进行过滤。 类型：String 必选：否 · "Name":"ClusterStatus","Values": ["Running"] 按照【集群状态】进行过滤。 类型：String 必选：否 · "Name":"vpc-id","Values": ["vpc-123qajzs"] 按照【VPC】进行过滤。 类型：String 必选：否 · "Name":"tag-key","Values": ["testKey"] 按照【标签键】进行过滤。 类型：String 必选：否 · "Name":"tag-value","Values": ["testValue"] 按照【标签值】进行过滤。 类型：String 必选：否 · "Name":"Tags","Values": ["abc:1"] 按照【标签键值对】进行过滤。 类型：String 必选：否
                      */
                     std::vector<Filter> m_filters;
                     bool m_filtersHasBeenSet;

@@ -2617,7 +2617,7 @@ namespace TencentCloud
                 EnableClusterDeletionProtectionOutcomeCallable EnableClusterDeletionProtectionCallable(const Model::EnableClusterDeletionProtectionRequest& request);
 
                 /**
-                 *开启加密数据保护
+                 *开启加密数据保护，需要先开启KMS能力，完成KMS授权
                  * @param req EnableEncryptionProtectionRequest
                  * @return EnableEncryptionProtectionOutcome
                  */
@@ -2689,7 +2689,7 @@ namespace TencentCloud
                 GetTkeAppChartListOutcomeCallable GetTkeAppChartListCallable(const Model::GetTkeAppChartListRequest& request);
 
                 /**
-                 *获得节点升级当前的进度
+                 *获得节点升级当前的进度，若集群未处于节点升级状态，则接口会报错：任务未找到。
                  * @param req GetUpgradeInstanceProgressRequest
                  * @return GetUpgradeInstanceProgressOutcome
                  */
@@ -2959,7 +2959,7 @@ namespace TencentCloud
                 RunPrometheusInstanceOutcomeCallable RunPrometheusInstanceCallable(const Model::RunPrometheusInstanceRequest& request);
 
                 /**
-                 *缩容独立集群master节点
+                 *缩容独立集群master节点，本功能为内测能力，使用之前请先提单联系我们。
                  * @param req ScaleInClusterMasterRequest
                  * @return ScaleInClusterMasterOutcome
                  */

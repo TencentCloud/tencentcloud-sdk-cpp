@@ -65,41 +65,31 @@ namespace TencentCloud
                     bool ClusterIdHasBeenSet() const;
 
                     /**
-                     * 获取·  NodePoolsName
+                     * 获取· "Name":"NodePoolsName","Values": ["test"]
     按照【节点池名】进行过滤。
     类型：String
     必选：否
 
-·  NodePoolsId
+·  "Name":"NodePoolsId","Values": ["np-d2mb2zb"]
     按照【节点池id】进行过滤。
     类型：String
     必选：否
 
-·  tags
+·  "Name":"Tags","Values": ["abc:1"]
     按照【标签键值对】进行过滤。
     类型：String
     必选：否
-
-·  tag:tag-key
-    按照【标签键值对】进行过滤。
-    类型：String
-    必选：否
-                     * @return Filters ·  NodePoolsName
+                     * @return Filters · "Name":"NodePoolsName","Values": ["test"]
     按照【节点池名】进行过滤。
     类型：String
     必选：否
 
-·  NodePoolsId
+·  "Name":"NodePoolsId","Values": ["np-d2mb2zb"]
     按照【节点池id】进行过滤。
     类型：String
     必选：否
 
-·  tags
-    按照【标签键值对】进行过滤。
-    类型：String
-    必选：否
-
-·  tag:tag-key
+·  "Name":"Tags","Values": ["abc:1"]
     按照【标签键值对】进行过滤。
     类型：String
     必选：否
@@ -108,41 +98,31 @@ namespace TencentCloud
                     std::vector<Filter> GetFilters() const;
 
                     /**
-                     * 设置·  NodePoolsName
+                     * 设置· "Name":"NodePoolsName","Values": ["test"]
     按照【节点池名】进行过滤。
     类型：String
     必选：否
 
-·  NodePoolsId
+·  "Name":"NodePoolsId","Values": ["np-d2mb2zb"]
     按照【节点池id】进行过滤。
     类型：String
     必选：否
 
-·  tags
+·  "Name":"Tags","Values": ["abc:1"]
     按照【标签键值对】进行过滤。
     类型：String
     必选：否
-
-·  tag:tag-key
-    按照【标签键值对】进行过滤。
-    类型：String
-    必选：否
-                     * @param _filters ·  NodePoolsName
+                     * @param _filters · "Name":"NodePoolsName","Values": ["test"]
     按照【节点池名】进行过滤。
     类型：String
     必选：否
 
-·  NodePoolsId
+·  "Name":"NodePoolsId","Values": ["np-d2mb2zb"]
     按照【节点池id】进行过滤。
     类型：String
     必选：否
 
-·  tags
-    按照【标签键值对】进行过滤。
-    类型：String
-    必选：否
-
-·  tag:tag-key
+·  "Name":"Tags","Values": ["abc:1"]
     按照【标签键值对】进行过滤。
     类型：String
     必选：否
@@ -166,22 +146,17 @@ namespace TencentCloud
                     bool m_clusterIdHasBeenSet;
 
                     /**
-                     * ·  NodePoolsName
+                     * · "Name":"NodePoolsName","Values": ["test"]
     按照【节点池名】进行过滤。
     类型：String
     必选：否
 
-·  NodePoolsId
+·  "Name":"NodePoolsId","Values": ["np-d2mb2zb"]
     按照【节点池id】进行过滤。
     类型：String
     必选：否
 
-·  tags
-    按照【标签键值对】进行过滤。
-    类型：String
-    必选：否
-
-·  tag:tag-key
+·  "Name":"Tags","Values": ["abc:1"]
     按照【标签键值对】进行过滤。
     类型：String
     必选：否

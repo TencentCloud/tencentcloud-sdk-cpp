@@ -21,6 +21,7 @@
 #include <vector>
 #include <map>
 #include <tencentcloud/core/AbstractModel.h>
+#include <tencentcloud/cls/v20201016/model/DashboardSubscribeData.h>
 
 
 namespace TencentCloud
@@ -42,7 +43,115 @@ namespace TencentCloud
                     std::string ToJsonString() const;
 
 
+                    /**
+                     * 获取仪表盘id。
+                     * @return DashboardId 仪表盘id。
+                     * 
+                     */
+                    std::string GetDashboardId() const;
+
+                    /**
+                     * 设置仪表盘id。
+                     * @param _dashboardId 仪表盘id。
+                     * 
+                     */
+                    void SetDashboardId(const std::string& _dashboardId);
+
+                    /**
+                     * 判断参数 DashboardId 是否已赋值
+                     * @return DashboardId 是否已赋值
+                     * 
+                     */
+                    bool DashboardIdHasBeenSet() const;
+
+                    /**
+                     * 获取仪表盘订阅数据。
+                     * @return SubscribeData 仪表盘订阅数据。
+                     * 
+                     */
+                    DashboardSubscribeData GetSubscribeData() const;
+
+                    /**
+                     * 设置仪表盘订阅数据。
+                     * @param _subscribeData 仪表盘订阅数据。
+                     * 
+                     */
+                    void SetSubscribeData(const DashboardSubscribeData& _subscribeData);
+
+                    /**
+                     * 判断参数 SubscribeData 是否已赋值
+                     * @return SubscribeData 是否已赋值
+                     * 
+                     */
+                    bool SubscribeDataHasBeenSet() const;
+
+                    /**
+                     * 获取仪表盘订阅Id。
+                     * @return Id 仪表盘订阅Id。
+                     * 
+                     */
+                    uint64_t GetId() const;
+
+                    /**
+                     * 设置仪表盘订阅Id。
+                     * @param _id 仪表盘订阅Id。
+                     * 
+                     */
+                    void SetId(const uint64_t& _id);
+
+                    /**
+                     * 判断参数 Id 是否已赋值
+                     * @return Id 是否已赋值
+                     * 
+                     */
+                    bool IdHasBeenSet() const;
+
+                    /**
+                     * 获取仪表盘订阅名称。
+                     * @return Name 仪表盘订阅名称。
+                     * 
+                     */
+                    std::string GetName() const;
+
+                    /**
+                     * 设置仪表盘订阅名称。
+                     * @param _name 仪表盘订阅名称。
+                     * 
+                     */
+                    void SetName(const std::string& _name);
+
+                    /**
+                     * 判断参数 Name 是否已赋值
+                     * @return Name 是否已赋值
+                     * 
+                     */
+                    bool NameHasBeenSet() const;
+
                 private:
+
+                    /**
+                     * 仪表盘id。
+                     */
+                    std::string m_dashboardId;
+                    bool m_dashboardIdHasBeenSet;
+
+                    /**
+                     * 仪表盘订阅数据。
+                     */
+                    DashboardSubscribeData m_subscribeData;
+                    bool m_subscribeDataHasBeenSet;
+
+                    /**
+                     * 仪表盘订阅Id。
+                     */
+                    uint64_t m_id;
+                    bool m_idHasBeenSet;
+
+                    /**
+                     * 仪表盘订阅名称。
+                     */
+                    std::string m_name;
+                    bool m_nameHasBeenSet;
 
                 };
             }

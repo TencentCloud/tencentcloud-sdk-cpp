@@ -85,15 +85,15 @@ namespace TencentCloud
                     bool NodePoolIdHasBeenSet() const;
 
                     /**
-                     * 获取机型列表
-                     * @return InstanceTypes 机型列表
+                     * 获取机型列表，主实例机型不支持修改
+                     * @return InstanceTypes 机型列表，主实例机型不支持修改
                      * 
                      */
                     std::vector<std::string> GetInstanceTypes() const;
 
                     /**
-                     * 设置机型列表
-                     * @param _instanceTypes 机型列表
+                     * 设置机型列表，主实例机型不支持修改
+                     * @param _instanceTypes 机型列表，主实例机型不支持修改
                      * 
                      */
                     void SetInstanceTypes(const std::vector<std::string>& _instanceTypes);
@@ -120,7 +120,7 @@ namespace TencentCloud
                     bool m_nodePoolIdHasBeenSet;
 
                     /**
-                     * 机型列表
+                     * 机型列表，主实例机型不支持修改
                      */
                     std::vector<std::string> m_instanceTypes;
                     bool m_instanceTypesHasBeenSet;
