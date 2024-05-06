@@ -23,6 +23,7 @@ using namespace TencentCloud::Csip::V20221121::Model;
 using namespace std;
 
 DescribeRiskCenterAssetViewWeakPasswordRiskListRequest::DescribeRiskCenterAssetViewWeakPasswordRiskListRequest() :
+    m_memberIdHasBeenSet(false),
     m_filterHasBeenSet(false),
     m_tagsHasBeenSet(false)
 {
@@ -34,6 +35,19 @@ string DescribeRiskCenterAssetViewWeakPasswordRiskListRequest::ToJsonString() co
     d.SetObject();
     rapidjson::Document::AllocatorType& allocator = d.GetAllocator();
 
+
+    if (m_memberIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "MemberId";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        for (auto itr = m_memberId.begin(); itr != m_memberId.end(); ++itr)
+        {
+            d[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
+        }
+    }
 
     if (m_filterHasBeenSet)
     {
@@ -66,6 +80,22 @@ string DescribeRiskCenterAssetViewWeakPasswordRiskListRequest::ToJsonString() co
     return buffer.GetString();
 }
 
+
+vector<string> DescribeRiskCenterAssetViewWeakPasswordRiskListRequest::GetMemberId() const
+{
+    return m_memberId;
+}
+
+void DescribeRiskCenterAssetViewWeakPasswordRiskListRequest::SetMemberId(const vector<string>& _memberId)
+{
+    m_memberId = _memberId;
+    m_memberIdHasBeenSet = true;
+}
+
+bool DescribeRiskCenterAssetViewWeakPasswordRiskListRequest::MemberIdHasBeenSet() const
+{
+    return m_memberIdHasBeenSet;
+}
 
 Filter DescribeRiskCenterAssetViewWeakPasswordRiskListRequest::GetFilter() const
 {

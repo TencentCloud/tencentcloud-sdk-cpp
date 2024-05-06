@@ -470,6 +470,49 @@ CdbClient::CloseCdbProxyAddressOutcomeCallable CdbClient::CloseCdbProxyAddressCa
     return task->get_future();
 }
 
+CdbClient::CloseSSLOutcome CdbClient::CloseSSL(const CloseSSLRequest &request)
+{
+    auto outcome = MakeRequest(request, "CloseSSL");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        CloseSSLResponse rsp = CloseSSLResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return CloseSSLOutcome(rsp);
+        else
+            return CloseSSLOutcome(o.GetError());
+    }
+    else
+    {
+        return CloseSSLOutcome(outcome.GetError());
+    }
+}
+
+void CdbClient::CloseSSLAsync(const CloseSSLRequest& request, const CloseSSLAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->CloseSSL(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+CdbClient::CloseSSLOutcomeCallable CdbClient::CloseSSLCallable(const CloseSSLRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<CloseSSLOutcome()>>(
+        [this, request]()
+        {
+            return this->CloseSSL(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 CdbClient::CloseWanServiceOutcome CdbClient::CloseWanService(const CloseWanServiceRequest &request)
 {
     auto outcome = MakeRequest(request, "CloseWanService");
@@ -4082,6 +4125,49 @@ CdbClient::DescribeRollbackTaskDetailOutcomeCallable CdbClient::DescribeRollback
     return task->get_future();
 }
 
+CdbClient::DescribeSSLStatusOutcome CdbClient::DescribeSSLStatus(const DescribeSSLStatusRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeSSLStatus");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeSSLStatusResponse rsp = DescribeSSLStatusResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeSSLStatusOutcome(rsp);
+        else
+            return DescribeSSLStatusOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeSSLStatusOutcome(outcome.GetError());
+    }
+}
+
+void CdbClient::DescribeSSLStatusAsync(const DescribeSSLStatusRequest& request, const DescribeSSLStatusAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeSSLStatus(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+CdbClient::DescribeSSLStatusOutcomeCallable CdbClient::DescribeSSLStatusCallable(const DescribeSSLStatusRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeSSLStatusOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeSSLStatus(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 CdbClient::DescribeSlowLogDataOutcome CdbClient::DescribeSlowLogData(const DescribeSlowLogDataRequest &request)
 {
     auto outcome = MakeRequest(request, "DescribeSlowLogData");
@@ -6053,6 +6139,49 @@ CdbClient::OpenDBInstanceGTIDOutcomeCallable CdbClient::OpenDBInstanceGTIDCallab
         [this, request]()
         {
             return this->OpenDBInstanceGTID(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+CdbClient::OpenSSLOutcome CdbClient::OpenSSL(const OpenSSLRequest &request)
+{
+    auto outcome = MakeRequest(request, "OpenSSL");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        OpenSSLResponse rsp = OpenSSLResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return OpenSSLOutcome(rsp);
+        else
+            return OpenSSLOutcome(o.GetError());
+    }
+    else
+    {
+        return OpenSSLOutcome(outcome.GetError());
+    }
+}
+
+void CdbClient::OpenSSLAsync(const OpenSSLRequest& request, const OpenSSLAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->OpenSSL(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+CdbClient::OpenSSLOutcomeCallable CdbClient::OpenSSLCallable(const OpenSSLRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<OpenSSLOutcome()>>(
+        [this, request]()
+        {
+            return this->OpenSSL(request);
         }
     );
 

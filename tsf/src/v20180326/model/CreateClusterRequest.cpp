@@ -38,7 +38,8 @@ CreateClusterRequest::CreateClusterRequest() :
     m_kuberneteApiServerHasBeenSet(false),
     m_kuberneteNativeTypeHasBeenSet(false),
     m_kuberneteNativeSecretHasBeenSet(false),
-    m_programIdListHasBeenSet(false)
+    m_programIdListHasBeenSet(false),
+    m_enableLogCollectionHasBeenSet(false)
 {
 }
 
@@ -180,6 +181,14 @@ string CreateClusterRequest::ToJsonString() const
         {
             d[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
         }
+    }
+
+    if (m_enableLogCollectionHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "EnableLogCollection";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_enableLogCollection, allocator);
     }
 
 
@@ -444,6 +453,22 @@ void CreateClusterRequest::SetProgramIdList(const vector<string>& _programIdList
 bool CreateClusterRequest::ProgramIdListHasBeenSet() const
 {
     return m_programIdListHasBeenSet;
+}
+
+bool CreateClusterRequest::GetEnableLogCollection() const
+{
+    return m_enableLogCollection;
+}
+
+void CreateClusterRequest::SetEnableLogCollection(const bool& _enableLogCollection)
+{
+    m_enableLogCollection = _enableLogCollection;
+    m_enableLogCollectionHasBeenSet = true;
+}
+
+bool CreateClusterRequest::EnableLogCollectionHasBeenSet() const
+{
+    return m_enableLogCollectionHasBeenSet;
 }
 
 

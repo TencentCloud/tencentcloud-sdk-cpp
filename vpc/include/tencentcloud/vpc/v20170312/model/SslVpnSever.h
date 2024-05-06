@@ -482,6 +482,31 @@ namespace TencentCloud
                      */
                     bool AccessPolicyHasBeenSet() const;
 
+                    /**
+                     * 获取CAM服务提供商Name
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return SpName CAM服务提供商Name
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::string GetSpName() const;
+
+                    /**
+                     * 设置CAM服务提供商Name
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _spName CAM服务提供商Name
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetSpName(const std::string& _spName);
+
+                    /**
+                     * 判断参数 SpName 是否已赋值
+                     * @return SpName 是否已赋值
+                     * 
+                     */
+                    bool SpNameHasBeenSet() const;
+
                 private:
 
                     /**
@@ -606,6 +631,13 @@ namespace TencentCloud
                      */
                     std::vector<AccessPolicy> m_accessPolicy;
                     bool m_accessPolicyHasBeenSet;
+
+                    /**
+                     * CAM服务提供商Name
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_spName;
+                    bool m_spNameHasBeenSet;
 
                 };
             }

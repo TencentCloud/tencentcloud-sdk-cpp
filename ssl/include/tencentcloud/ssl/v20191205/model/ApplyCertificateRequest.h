@@ -106,15 +106,15 @@ namespace TencentCloud
                     bool ProjectIdHasBeenSet() const;
 
                     /**
-                     * 获取证书类型，目前仅支持类型2。2 = TrustAsia TLS RSA CA。
-                     * @return PackageType 证书类型，目前仅支持类型2。2 = TrustAsia TLS RSA CA。
+                     * 获取证书类型，目前仅支持类型83。83 = TrustAsia C1 DV Free。
+                     * @return PackageType 证书类型，目前仅支持类型83。83 = TrustAsia C1 DV Free。
                      * 
                      */
                     std::string GetPackageType() const;
 
                     /**
-                     * 设置证书类型，目前仅支持类型2。2 = TrustAsia TLS RSA CA。
-                     * @param _packageType 证书类型，目前仅支持类型2。2 = TrustAsia TLS RSA CA。
+                     * 设置证书类型，目前仅支持类型83。83 = TrustAsia C1 DV Free。
+                     * @param _packageType 证书类型，目前仅支持类型83。83 = TrustAsia C1 DV Free。
                      * 
                      */
                     void SetPackageType(const std::string& _packageType);
@@ -169,15 +169,15 @@ namespace TencentCloud
                     bool ContactPhoneHasBeenSet() const;
 
                     /**
-                     * 获取有效期，默认12个月，目前仅支持12个月。
-                     * @return ValidityPeriod 有效期，默认12个月，目前仅支持12个月。
+                     * 获取有效期，默认3个月，目前仅支持3个月。
+                     * @return ValidityPeriod 有效期，默认3个月，目前仅支持3个月。
                      * 
                      */
                     std::string GetValidityPeriod() const;
 
                     /**
-                     * 设置有效期，默认12个月，目前仅支持12个月。
-                     * @param _validityPeriod 有效期，默认12个月，目前仅支持12个月。
+                     * 设置有效期，默认3个月，目前仅支持3个月。
+                     * @param _validityPeriod 有效期，默认3个月，目前仅支持3个月。
                      * 
                      */
                     void SetValidityPeriod(const std::string& _validityPeriod);
@@ -378,7 +378,7 @@ namespace TencentCloud
                     bool m_projectIdHasBeenSet;
 
                     /**
-                     * 证书类型，目前仅支持类型2。2 = TrustAsia TLS RSA CA。
+                     * 证书类型，目前仅支持类型83。83 = TrustAsia C1 DV Free。
                      */
                     std::string m_packageType;
                     bool m_packageTypeHasBeenSet;
@@ -396,7 +396,7 @@ namespace TencentCloud
                     bool m_contactPhoneHasBeenSet;
 
                     /**
-                     * 有效期，默认12个月，目前仅支持12个月。
+                     * 有效期，默认3个月，目前仅支持3个月。
                      */
                     std::string m_validityPeriod;
                     bool m_validityPeriodHasBeenSet;

@@ -24,6 +24,7 @@ using namespace std;
 
 DescribeTaskLogURLRequest::DescribeTaskLogURLRequest() :
     m_typeHasBeenSet(false),
+    m_memberIdHasBeenSet(false),
     m_reportItemKeyListHasBeenSet(false),
     m_reportTaskIdListHasBeenSet(false)
 {
@@ -42,6 +43,19 @@ string DescribeTaskLogURLRequest::ToJsonString() const
         string key = "Type";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_type, allocator);
+    }
+
+    if (m_memberIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "MemberId";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        for (auto itr = m_memberId.begin(); itr != m_memberId.end(); ++itr)
+        {
+            d[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
+        }
     }
 
     if (m_reportItemKeyListHasBeenSet)
@@ -96,6 +110,22 @@ void DescribeTaskLogURLRequest::SetType(const int64_t& _type)
 bool DescribeTaskLogURLRequest::TypeHasBeenSet() const
 {
     return m_typeHasBeenSet;
+}
+
+vector<string> DescribeTaskLogURLRequest::GetMemberId() const
+{
+    return m_memberId;
+}
+
+void DescribeTaskLogURLRequest::SetMemberId(const vector<string>& _memberId)
+{
+    m_memberId = _memberId;
+    m_memberIdHasBeenSet = true;
+}
+
+bool DescribeTaskLogURLRequest::MemberIdHasBeenSet() const
+{
+    return m_memberIdHasBeenSet;
 }
 
 vector<ReportItemKey> DescribeTaskLogURLRequest::GetReportItemKeyList() const

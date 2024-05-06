@@ -26,7 +26,9 @@ ModifyClusterRequest::ModifyClusterRequest() :
     m_clusterIdHasBeenSet(false),
     m_clusterNameHasBeenSet(false),
     m_clusterDescHasBeenSet(false),
-    m_clusterRemarkNameHasBeenSet(false)
+    m_clusterRemarkNameHasBeenSet(false),
+    m_enableLogCollectionHasBeenSet(false),
+    m_repairLogHasBeenSet(false)
 {
 }
 
@@ -67,6 +69,22 @@ string ModifyClusterRequest::ToJsonString() const
         string key = "ClusterRemarkName";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_clusterRemarkName.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_enableLogCollectionHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "EnableLogCollection";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_enableLogCollection, allocator);
+    }
+
+    if (m_repairLogHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "RepairLog";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_repairLog, allocator);
     }
 
 
@@ -139,6 +157,38 @@ void ModifyClusterRequest::SetClusterRemarkName(const string& _clusterRemarkName
 bool ModifyClusterRequest::ClusterRemarkNameHasBeenSet() const
 {
     return m_clusterRemarkNameHasBeenSet;
+}
+
+bool ModifyClusterRequest::GetEnableLogCollection() const
+{
+    return m_enableLogCollection;
+}
+
+void ModifyClusterRequest::SetEnableLogCollection(const bool& _enableLogCollection)
+{
+    m_enableLogCollection = _enableLogCollection;
+    m_enableLogCollectionHasBeenSet = true;
+}
+
+bool ModifyClusterRequest::EnableLogCollectionHasBeenSet() const
+{
+    return m_enableLogCollectionHasBeenSet;
+}
+
+bool ModifyClusterRequest::GetRepairLog() const
+{
+    return m_repairLog;
+}
+
+void ModifyClusterRequest::SetRepairLog(const bool& _repairLog)
+{
+    m_repairLog = _repairLog;
+    m_repairLogHasBeenSet = true;
+}
+
+bool ModifyClusterRequest::RepairLogHasBeenSet() const
+{
+    return m_repairLogHasBeenSet;
 }
 
 

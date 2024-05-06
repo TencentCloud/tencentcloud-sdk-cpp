@@ -947,6 +947,31 @@ namespace TencentCloud
                      */
                     bool KuberneteNativeSecretHasBeenSet() const;
 
+                    /**
+                     * 获取是否开启cls日志功能
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return EnableLogCollection 是否开启cls日志功能
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    bool GetEnableLogCollection() const;
+
+                    /**
+                     * 设置是否开启cls日志功能
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _enableLogCollection 是否开启cls日志功能
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetEnableLogCollection(const bool& _enableLogCollection);
+
+                    /**
+                     * 判断参数 EnableLogCollection 是否已赋值
+                     * @return EnableLogCollection 是否已赋值
+                     * 
+                     */
+                    bool EnableLogCollectionHasBeenSet() const;
+
                 private:
 
                     /**
@@ -1200,6 +1225,13 @@ namespace TencentCloud
                      */
                     std::string m_kuberneteNativeSecret;
                     bool m_kuberneteNativeSecretHasBeenSet;
+
+                    /**
+                     * 是否开启cls日志功能
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    bool m_enableLogCollection;
+                    bool m_enableLogCollectionHasBeenSet;
 
                 };
             }

@@ -68,26 +68,46 @@ namespace TencentCloud
 
                     /**
                      * 获取通知类型。可选值：
-<li> Trigger - 告警触发 </li>
-<li> Recovery - 告警恢复</li>
-<li> All - 告警触发和告警恢复</li>
+- Trigger - 告警触发
+- Recovery - 告警恢复
+- All - 告警触发和告警恢复
+
+
+ 注意:  
+- Type、NoticeReceivers和WebCallbacks是一组配置，其中Type必填，NoticeReceivers和WebCallbacks至少一个不为空，NoticeRules是另一组配置，其中rule不许为空，2组配置互斥。
+- Type、NoticeReceivers和WebCallbacks是一组配置，NoticeRules是另一组配置，必须填写一组配置。
                      * @return Type 通知类型。可选值：
-<li> Trigger - 告警触发 </li>
-<li> Recovery - 告警恢复</li>
-<li> All - 告警触发和告警恢复</li>
+- Trigger - 告警触发
+- Recovery - 告警恢复
+- All - 告警触发和告警恢复
+
+
+ 注意:  
+- Type、NoticeReceivers和WebCallbacks是一组配置，其中Type必填，NoticeReceivers和WebCallbacks至少一个不为空，NoticeRules是另一组配置，其中rule不许为空，2组配置互斥。
+- Type、NoticeReceivers和WebCallbacks是一组配置，NoticeRules是另一组配置，必须填写一组配置。
                      * 
                      */
                     std::string GetType() const;
 
                     /**
                      * 设置通知类型。可选值：
-<li> Trigger - 告警触发 </li>
-<li> Recovery - 告警恢复</li>
-<li> All - 告警触发和告警恢复</li>
+- Trigger - 告警触发
+- Recovery - 告警恢复
+- All - 告警触发和告警恢复
+
+
+ 注意:  
+- Type、NoticeReceivers和WebCallbacks是一组配置，其中Type必填，NoticeReceivers和WebCallbacks至少一个不为空，NoticeRules是另一组配置，其中rule不许为空，2组配置互斥。
+- Type、NoticeReceivers和WebCallbacks是一组配置，NoticeRules是另一组配置，必须填写一组配置。
                      * @param _type 通知类型。可选值：
-<li> Trigger - 告警触发 </li>
-<li> Recovery - 告警恢复</li>
-<li> All - 告警触发和告警恢复</li>
+- Trigger - 告警触发
+- Recovery - 告警恢复
+- All - 告警触发和告警恢复
+
+
+ 注意:  
+- Type、NoticeReceivers和WebCallbacks是一组配置，其中Type必填，NoticeReceivers和WebCallbacks至少一个不为空，NoticeRules是另一组配置，其中rule不许为空，2组配置互斥。
+- Type、NoticeReceivers和WebCallbacks是一组配置，NoticeRules是另一组配置，必须填写一组配置。
                      * 
                      */
                     void SetType(const std::string& _type);
@@ -101,14 +121,26 @@ namespace TencentCloud
 
                     /**
                      * 获取通知接收对象。
+ 注意:  
+- Type、NoticeReceivers和WebCallbacks是一组配置，其中Type必填，NoticeReceivers和WebCallbacks至少一个不为空，NoticeRules是另一组配置，其中rule不许为空，2组配置互斥。
+- Type、NoticeReceivers和WebCallbacks是一组配置，NoticeRules是另一组配置，必须填写一组配置。
                      * @return NoticeReceivers 通知接收对象。
+ 注意:  
+- Type、NoticeReceivers和WebCallbacks是一组配置，其中Type必填，NoticeReceivers和WebCallbacks至少一个不为空，NoticeRules是另一组配置，其中rule不许为空，2组配置互斥。
+- Type、NoticeReceivers和WebCallbacks是一组配置，NoticeRules是另一组配置，必须填写一组配置。
                      * 
                      */
                     std::vector<NoticeReceiver> GetNoticeReceivers() const;
 
                     /**
                      * 设置通知接收对象。
+ 注意:  
+- Type、NoticeReceivers和WebCallbacks是一组配置，其中Type必填，NoticeReceivers和WebCallbacks至少一个不为空，NoticeRules是另一组配置，其中rule不许为空，2组配置互斥。
+- Type、NoticeReceivers和WebCallbacks是一组配置，NoticeRules是另一组配置，必须填写一组配置。
                      * @param _noticeReceivers 通知接收对象。
+ 注意:  
+- Type、NoticeReceivers和WebCallbacks是一组配置，其中Type必填，NoticeReceivers和WebCallbacks至少一个不为空，NoticeRules是另一组配置，其中rule不许为空，2组配置互斥。
+- Type、NoticeReceivers和WebCallbacks是一组配置，NoticeRules是另一组配置，必须填写一组配置。
                      * 
                      */
                     void SetNoticeReceivers(const std::vector<NoticeReceiver>& _noticeReceivers);
@@ -122,14 +154,26 @@ namespace TencentCloud
 
                     /**
                      * 获取接口回调信息（包括企业微信）。
+ 注意:  
+- Type、NoticeReceivers和WebCallbacks是一组配置，其中Type必填，NoticeReceivers和WebCallbacks至少一个不为空，NoticeRules是另一组配置，其中rule不许为空，2组配置互斥。
+- Type、NoticeReceivers和WebCallbacks是一组配置，NoticeRules是另一组配置，必须填写一组配置。
                      * @return WebCallbacks 接口回调信息（包括企业微信）。
+ 注意:  
+- Type、NoticeReceivers和WebCallbacks是一组配置，其中Type必填，NoticeReceivers和WebCallbacks至少一个不为空，NoticeRules是另一组配置，其中rule不许为空，2组配置互斥。
+- Type、NoticeReceivers和WebCallbacks是一组配置，NoticeRules是另一组配置，必须填写一组配置。
                      * 
                      */
                     std::vector<WebCallback> GetWebCallbacks() const;
 
                     /**
                      * 设置接口回调信息（包括企业微信）。
+ 注意:  
+- Type、NoticeReceivers和WebCallbacks是一组配置，其中Type必填，NoticeReceivers和WebCallbacks至少一个不为空，NoticeRules是另一组配置，其中rule不许为空，2组配置互斥。
+- Type、NoticeReceivers和WebCallbacks是一组配置，NoticeRules是另一组配置，必须填写一组配置。
                      * @param _webCallbacks 接口回调信息（包括企业微信）。
+ 注意:  
+- Type、NoticeReceivers和WebCallbacks是一组配置，其中Type必填，NoticeReceivers和WebCallbacks至少一个不为空，NoticeRules是另一组配置，其中rule不许为空，2组配置互斥。
+- Type、NoticeReceivers和WebCallbacks是一组配置，NoticeRules是另一组配置，必须填写一组配置。
                      * 
                      */
                     void SetWebCallbacks(const std::vector<WebCallback>& _webCallbacks);
@@ -143,17 +187,15 @@ namespace TencentCloud
 
                     /**
                      * 获取通知规则。
-
  注意:  
-
-- Type、NoticeReceivers和WebCallbacks是一组配置，NoticeRules是另一组配置，2组配置互斥。
+- Type、NoticeReceivers和WebCallbacks是一组配置，其中Type必填，NoticeReceivers和WebCallbacks至少一个不为空，NoticeRules是另一组配置，其中rule不许为空，2组配置互斥。
+- Type、NoticeReceivers和WebCallbacks是一组配置，NoticeRules是另一组配置，必须填写一组配置。
 
 
                      * @return NoticeRules 通知规则。
-
  注意:  
-
-- Type、NoticeReceivers和WebCallbacks是一组配置，NoticeRules是另一组配置，2组配置互斥。
+- Type、NoticeReceivers和WebCallbacks是一组配置，其中Type必填，NoticeReceivers和WebCallbacks至少一个不为空，NoticeRules是另一组配置，其中rule不许为空，2组配置互斥。
+- Type、NoticeReceivers和WebCallbacks是一组配置，NoticeRules是另一组配置，必须填写一组配置。
 
 
                      * 
@@ -162,17 +204,15 @@ namespace TencentCloud
 
                     /**
                      * 设置通知规则。
-
  注意:  
-
-- Type、NoticeReceivers和WebCallbacks是一组配置，NoticeRules是另一组配置，2组配置互斥。
+- Type、NoticeReceivers和WebCallbacks是一组配置，其中Type必填，NoticeReceivers和WebCallbacks至少一个不为空，NoticeRules是另一组配置，其中rule不许为空，2组配置互斥。
+- Type、NoticeReceivers和WebCallbacks是一组配置，NoticeRules是另一组配置，必须填写一组配置。
 
 
                      * @param _noticeRules 通知规则。
-
  注意:  
-
-- Type、NoticeReceivers和WebCallbacks是一组配置，NoticeRules是另一组配置，2组配置互斥。
+- Type、NoticeReceivers和WebCallbacks是一组配置，其中Type必填，NoticeReceivers和WebCallbacks至少一个不为空，NoticeRules是另一组配置，其中rule不许为空，2组配置互斥。
+- Type、NoticeReceivers和WebCallbacks是一组配置，NoticeRules是另一组配置，必须填写一组配置。
 
 
                      * 
@@ -196,31 +236,41 @@ namespace TencentCloud
 
                     /**
                      * 通知类型。可选值：
-<li> Trigger - 告警触发 </li>
-<li> Recovery - 告警恢复</li>
-<li> All - 告警触发和告警恢复</li>
+- Trigger - 告警触发
+- Recovery - 告警恢复
+- All - 告警触发和告警恢复
+
+
+ 注意:  
+- Type、NoticeReceivers和WebCallbacks是一组配置，其中Type必填，NoticeReceivers和WebCallbacks至少一个不为空，NoticeRules是另一组配置，其中rule不许为空，2组配置互斥。
+- Type、NoticeReceivers和WebCallbacks是一组配置，NoticeRules是另一组配置，必须填写一组配置。
                      */
                     std::string m_type;
                     bool m_typeHasBeenSet;
 
                     /**
                      * 通知接收对象。
+ 注意:  
+- Type、NoticeReceivers和WebCallbacks是一组配置，其中Type必填，NoticeReceivers和WebCallbacks至少一个不为空，NoticeRules是另一组配置，其中rule不许为空，2组配置互斥。
+- Type、NoticeReceivers和WebCallbacks是一组配置，NoticeRules是另一组配置，必须填写一组配置。
                      */
                     std::vector<NoticeReceiver> m_noticeReceivers;
                     bool m_noticeReceiversHasBeenSet;
 
                     /**
                      * 接口回调信息（包括企业微信）。
+ 注意:  
+- Type、NoticeReceivers和WebCallbacks是一组配置，其中Type必填，NoticeReceivers和WebCallbacks至少一个不为空，NoticeRules是另一组配置，其中rule不许为空，2组配置互斥。
+- Type、NoticeReceivers和WebCallbacks是一组配置，NoticeRules是另一组配置，必须填写一组配置。
                      */
                     std::vector<WebCallback> m_webCallbacks;
                     bool m_webCallbacksHasBeenSet;
 
                     /**
                      * 通知规则。
-
  注意:  
-
-- Type、NoticeReceivers和WebCallbacks是一组配置，NoticeRules是另一组配置，2组配置互斥。
+- Type、NoticeReceivers和WebCallbacks是一组配置，其中Type必填，NoticeReceivers和WebCallbacks至少一个不为空，NoticeRules是另一组配置，其中rule不许为空，2组配置互斥。
+- Type、NoticeReceivers和WebCallbacks是一组配置，NoticeRules是另一组配置，必须填写一组配置。
 
 
                      */

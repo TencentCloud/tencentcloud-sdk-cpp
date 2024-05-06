@@ -28,6 +28,7 @@ ModifyRiskCenterScanTaskRequest::ModifyRiskCenterScanTaskRequest() :
     m_scanItemHasBeenSet(false),
     m_scanPlanTypeHasBeenSet(false),
     m_taskIdHasBeenSet(false),
+    m_memberIdHasBeenSet(false),
     m_assetsHasBeenSet(false),
     m_scanPlanContentHasBeenSet(false),
     m_selfDefiningAssetsHasBeenSet(false),
@@ -86,6 +87,19 @@ string ModifyRiskCenterScanTaskRequest::ToJsonString() const
         string key = "TaskId";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_taskId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_memberIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "MemberId";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        for (auto itr = m_memberId.begin(); itr != m_memberId.end(); ++itr)
+        {
+            d[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
+        }
     }
 
     if (m_assetsHasBeenSet)
@@ -227,6 +241,22 @@ void ModifyRiskCenterScanTaskRequest::SetTaskId(const string& _taskId)
 bool ModifyRiskCenterScanTaskRequest::TaskIdHasBeenSet() const
 {
     return m_taskIdHasBeenSet;
+}
+
+vector<string> ModifyRiskCenterScanTaskRequest::GetMemberId() const
+{
+    return m_memberId;
+}
+
+void ModifyRiskCenterScanTaskRequest::SetMemberId(const vector<string>& _memberId)
+{
+    m_memberId = _memberId;
+    m_memberIdHasBeenSet = true;
+}
+
+bool ModifyRiskCenterScanTaskRequest::MemberIdHasBeenSet() const
+{
+    return m_memberIdHasBeenSet;
 }
 
 vector<TaskAssetObject> ModifyRiskCenterScanTaskRequest::GetAssets() const

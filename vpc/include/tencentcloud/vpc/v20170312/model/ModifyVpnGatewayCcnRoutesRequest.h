@@ -65,15 +65,15 @@ namespace TencentCloud
                     bool VpnGatewayIdHasBeenSet() const;
 
                     /**
-                     * 获取云联网路由（IDC网段）列表。
-                     * @return Routes 云联网路由（IDC网段）列表。
+                     * 获取云联网路由（IDC网段）列表。其中RouteId可通过[DescribeVpnGatewayCcnRoutes](https://cloud.tencent.com/document/product/215/43514)接口获取。 
+                     * @return Routes 云联网路由（IDC网段）列表。其中RouteId可通过[DescribeVpnGatewayCcnRoutes](https://cloud.tencent.com/document/product/215/43514)接口获取。 
                      * 
                      */
                     std::vector<VpngwCcnRoutes> GetRoutes() const;
 
                     /**
-                     * 设置云联网路由（IDC网段）列表。
-                     * @param _routes 云联网路由（IDC网段）列表。
+                     * 设置云联网路由（IDC网段）列表。其中RouteId可通过[DescribeVpnGatewayCcnRoutes](https://cloud.tencent.com/document/product/215/43514)接口获取。 
+                     * @param _routes 云联网路由（IDC网段）列表。其中RouteId可通过[DescribeVpnGatewayCcnRoutes](https://cloud.tencent.com/document/product/215/43514)接口获取。 
                      * 
                      */
                     void SetRoutes(const std::vector<VpngwCcnRoutes>& _routes);
@@ -94,7 +94,7 @@ namespace TencentCloud
                     bool m_vpnGatewayIdHasBeenSet;
 
                     /**
-                     * 云联网路由（IDC网段）列表。
+                     * 云联网路由（IDC网段）列表。其中RouteId可通过[DescribeVpnGatewayCcnRoutes](https://cloud.tencent.com/document/product/215/43514)接口获取。 
                      */
                     std::vector<VpngwCcnRoutes> m_routes;
                     bool m_routesHasBeenSet;

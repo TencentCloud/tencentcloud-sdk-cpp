@@ -267,8 +267,6 @@
 #include <tencentcloud/cwp/v20180228/model/DescribeAttackEventInfoResponse.h>
 #include <tencentcloud/cwp/v20180228/model/DescribeAttackEventsRequest.h>
 #include <tencentcloud/cwp/v20180228/model/DescribeAttackEventsResponse.h>
-#include <tencentcloud/cwp/v20180228/model/DescribeAttackLogInfoRequest.h>
-#include <tencentcloud/cwp/v20180228/model/DescribeAttackLogInfoResponse.h>
 #include <tencentcloud/cwp/v20180228/model/DescribeAttackLogsRequest.h>
 #include <tencentcloud/cwp/v20180228/model/DescribeAttackLogsResponse.h>
 #include <tencentcloud/cwp/v20180228/model/DescribeAttackSourceRequest.h>
@@ -1439,9 +1437,6 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeAttackEventsResponse> DescribeAttackEventsOutcome;
                 typedef std::future<DescribeAttackEventsOutcome> DescribeAttackEventsOutcomeCallable;
                 typedef std::function<void(const CwpClient*, const Model::DescribeAttackEventsRequest&, DescribeAttackEventsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeAttackEventsAsyncHandler;
-                typedef Outcome<Core::Error, Model::DescribeAttackLogInfoResponse> DescribeAttackLogInfoOutcome;
-                typedef std::future<DescribeAttackLogInfoOutcome> DescribeAttackLogInfoOutcomeCallable;
-                typedef std::function<void(const CwpClient*, const Model::DescribeAttackLogInfoRequest&, DescribeAttackLogInfoOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeAttackLogInfoAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeAttackLogsResponse> DescribeAttackLogsOutcome;
                 typedef std::future<DescribeAttackLogsOutcome> DescribeAttackLogsOutcomeCallable;
                 typedef std::function<void(const CwpClient*, const Model::DescribeAttackLogsRequest&, DescribeAttackLogsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeAttackLogsAsyncHandler;
@@ -3732,17 +3727,6 @@ namespace TencentCloud
                 DescribeAttackEventsOutcome DescribeAttackEvents(const Model::DescribeAttackEventsRequest &request);
                 void DescribeAttackEventsAsync(const Model::DescribeAttackEventsRequest& request, const DescribeAttackEventsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DescribeAttackEventsOutcomeCallable DescribeAttackEventsCallable(const Model::DescribeAttackEventsRequest& request);
-
-                /**
-                 *DescribeAttackEventInfo 接口替代
-
-网络攻击日志详情
-                 * @param req DescribeAttackLogInfoRequest
-                 * @return DescribeAttackLogInfoOutcome
-                 */
-                DescribeAttackLogInfoOutcome DescribeAttackLogInfo(const Model::DescribeAttackLogInfoRequest &request);
-                void DescribeAttackLogInfoAsync(const Model::DescribeAttackLogInfoRequest& request, const DescribeAttackLogInfoAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
-                DescribeAttackLogInfoOutcomeCallable DescribeAttackLogInfoCallable(const Model::DescribeAttackLogInfoRequest& request);
 
                 /**
                  *按分页形式展示网络攻击日志列表

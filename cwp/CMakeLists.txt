@@ -118,7 +118,7 @@ set(cwp_public_header_model
   include/tencentcloud/cwp/v20180228/model/PrivilegeEventInfo.h
   include/tencentcloud/cwp/v20180228/model/RuleInfo.h
   include/tencentcloud/cwp/v20180228/model/RansomDefenseRollbackResponse.h
-  include/tencentcloud/cwp/v20180228/model/DescribeAttackLogInfoResponse.h
+  include/tencentcloud/cwp/v20180228/model/ExportAssetSystemPackageListRequest.h
   include/tencentcloud/cwp/v20180228/model/DescribePrivilegeEventsResponse.h
   include/tencentcloud/cwp/v20180228/model/DescribeNetAttackWhiteListRequest.h
   include/tencentcloud/cwp/v20180228/model/DescribeOverviewStatisticsResponse.h
@@ -822,7 +822,6 @@ set(cwp_public_header_model
   include/tencentcloud/cwp/v20180228/model/DescribeVulEffectHostListResponse.h
   include/tencentcloud/cwp/v20180228/model/RegionListDetail.h
   include/tencentcloud/cwp/v20180228/model/DescribeSearchLogsRequest.h
-  include/tencentcloud/cwp/v20180228/model/DescribeAttackLogInfoRequest.h
   include/tencentcloud/cwp/v20180228/model/ScanVulSettingResponse.h
   include/tencentcloud/cwp/v20180228/model/DescribeAssetJarInfoResponse.h
   include/tencentcloud/cwp/v20180228/model/DescribeVulInfoCvssRequest.h
@@ -839,7 +838,6 @@ set(cwp_public_header_model
   include/tencentcloud/cwp/v20180228/model/DescribeScanMalwareScheduleResponse.h
   include/tencentcloud/cwp/v20180228/model/ExportRansomDefenseEventsListRequest.h
   include/tencentcloud/cwp/v20180228/model/DescribeScreenProtectionCntRequest.h
-  include/tencentcloud/cwp/v20180228/model/ExportAssetSystemPackageListRequest.h
   include/tencentcloud/cwp/v20180228/model/AssetWebLocationBaseInfo.h
   include/tencentcloud/cwp/v20180228/model/DescribeBaselineItemListRequest.h
   include/tencentcloud/cwp/v20180228/model/DescribeScreenHostInvasionRequest.h
@@ -1417,7 +1415,7 @@ set(cwp_src
   src/v20180228/model/PrivilegeEventInfo.cpp
   src/v20180228/model/RuleInfo.cpp
   src/v20180228/model/RansomDefenseRollbackResponse.cpp
-  src/v20180228/model/DescribeAttackLogInfoResponse.cpp
+  src/v20180228/model/ExportAssetSystemPackageListRequest.cpp
   src/v20180228/model/DescribePrivilegeEventsResponse.cpp
   src/v20180228/model/DescribeNetAttackWhiteListRequest.cpp
   src/v20180228/model/DescribeOverviewStatisticsResponse.cpp
@@ -2121,7 +2119,6 @@ set(cwp_src
   src/v20180228/model/DescribeVulEffectHostListResponse.cpp
   src/v20180228/model/RegionListDetail.cpp
   src/v20180228/model/DescribeSearchLogsRequest.cpp
-  src/v20180228/model/DescribeAttackLogInfoRequest.cpp
   src/v20180228/model/ScanVulSettingResponse.cpp
   src/v20180228/model/DescribeAssetJarInfoResponse.cpp
   src/v20180228/model/DescribeVulInfoCvssRequest.cpp
@@ -2138,7 +2135,6 @@ set(cwp_src
   src/v20180228/model/DescribeScanMalwareScheduleResponse.cpp
   src/v20180228/model/ExportRansomDefenseEventsListRequest.cpp
   src/v20180228/model/DescribeScreenProtectionCntRequest.cpp
-  src/v20180228/model/ExportAssetSystemPackageListRequest.cpp
   src/v20180228/model/AssetWebLocationBaseInfo.cpp
   src/v20180228/model/DescribeBaselineItemListRequest.cpp
   src/v20180228/model/DescribeScreenHostInvasionRequest.cpp

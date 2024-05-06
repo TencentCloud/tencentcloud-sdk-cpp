@@ -99,18 +99,38 @@ namespace TencentCloud
                     bool WebCallbacksHasBeenSet() const;
 
                     /**
-                     * 获取匹配规则。
+                     * 获取匹配规则 JSON串。
+`{\"Value\":\"AND\",\"Type\":\"Operation\",\"Children\":[{\"Type\":\"Condition\",\"Value\":\"NotifyType\",\"Children\":[{\"Value\":\"In\",\"Type\":\"Compare\"},{\"Value\":\"[1,2]\",\"Type\":\"Value\"}]}]}
+`
+以上示例表示：
+规则：
+通知类型属于告警通知,恢复通知
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return Rule 匹配规则。
+                     * @return Rule 匹配规则 JSON串。
+`{\"Value\":\"AND\",\"Type\":\"Operation\",\"Children\":[{\"Type\":\"Condition\",\"Value\":\"NotifyType\",\"Children\":[{\"Value\":\"In\",\"Type\":\"Compare\"},{\"Value\":\"[1,2]\",\"Type\":\"Value\"}]}]}
+`
+以上示例表示：
+规则：
+通知类型属于告警通知,恢复通知
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetRule() const;
 
                     /**
-                     * 设置匹配规则。
+                     * 设置匹配规则 JSON串。
+`{\"Value\":\"AND\",\"Type\":\"Operation\",\"Children\":[{\"Type\":\"Condition\",\"Value\":\"NotifyType\",\"Children\":[{\"Value\":\"In\",\"Type\":\"Compare\"},{\"Value\":\"[1,2]\",\"Type\":\"Value\"}]}]}
+`
+以上示例表示：
+规则：
+通知类型属于告警通知,恢复通知
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _rule 匹配规则。
+                     * @param _rule 匹配规则 JSON串。
+`{\"Value\":\"AND\",\"Type\":\"Operation\",\"Children\":[{\"Type\":\"Condition\",\"Value\":\"NotifyType\",\"Children\":[{\"Value\":\"In\",\"Type\":\"Compare\"},{\"Value\":\"[1,2]\",\"Type\":\"Value\"}]}]}
+`
+以上示例表示：
+规则：
+通知类型属于告警通知,恢复通知
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -140,7 +160,12 @@ namespace TencentCloud
                     bool m_webCallbacksHasBeenSet;
 
                     /**
-                     * 匹配规则。
+                     * 匹配规则 JSON串。
+`{\"Value\":\"AND\",\"Type\":\"Operation\",\"Children\":[{\"Type\":\"Condition\",\"Value\":\"NotifyType\",\"Children\":[{\"Value\":\"In\",\"Type\":\"Compare\"},{\"Value\":\"[1,2]\",\"Type\":\"Value\"}]}]}
+`
+以上示例表示：
+规则：
+通知类型属于告警通知,恢复通知
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_rule;

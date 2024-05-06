@@ -107,15 +107,15 @@ namespace TencentCloud
                     bool AuditModeHasBeenSet() const;
 
                     /**
-                     * 获取单次请求返回的数量。默认值为30，最大值为 20000。
-                     * @return Limit 单次请求返回的数量。默认值为30，最大值为 20000。
+                     * 获取单次请求返回的数量。默认值为30，最大值为 100。
+                     * @return Limit 单次请求返回的数量。默认值为30，最大值为 100。
                      * 
                      */
                     uint64_t GetLimit() const;
 
                     /**
-                     * 设置单次请求返回的数量。默认值为30，最大值为 20000。
-                     * @param _limit 单次请求返回的数量。默认值为30，最大值为 20000。
+                     * 设置单次请求返回的数量。默认值为30，最大值为 100。
+                     * @param _limit 单次请求返回的数量。默认值为30，最大值为 100。
                      * 
                      */
                     void SetLimit(const uint64_t& _limit);
@@ -169,7 +169,7 @@ namespace TencentCloud
                     bool m_auditModeHasBeenSet;
 
                     /**
-                     * 单次请求返回的数量。默认值为30，最大值为 20000。
+                     * 单次请求返回的数量。默认值为30，最大值为 100。
                      */
                     uint64_t m_limit;
                     bool m_limitHasBeenSet;

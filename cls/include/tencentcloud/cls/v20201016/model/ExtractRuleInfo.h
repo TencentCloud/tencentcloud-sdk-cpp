@@ -258,18 +258,18 @@ namespace TencentCloud
                     bool UnMatchUpLoadSwitchHasBeenSet() const;
 
                     /**
-                     * 获取失败日志的key
+                     * 获取失败日志的key，当UnMatchUpLoadSwitch为true时必填
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return UnMatchLogKey 失败日志的key
+                     * @return UnMatchLogKey 失败日志的key，当UnMatchUpLoadSwitch为true时必填
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetUnMatchLogKey() const;
 
                     /**
-                     * 设置失败日志的key
+                     * 设置失败日志的key，当UnMatchUpLoadSwitch为true时必填
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _unMatchLogKey 失败日志的key
+                     * @param _unMatchLogKey 失败日志的key，当UnMatchUpLoadSwitch为true时必填
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -317,11 +317,13 @@ namespace TencentCloud
 
                     /**
                      * 获取是否为Gbk编码。 0：否；1：是。
-注意：
+注意
+- 目前取0值时，表示UTF-8编码
 - COS导入不支持此字段。
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return IsGBK 是否为Gbk编码。 0：否；1：是。
-注意：
+注意
+- 目前取0值时，表示UTF-8编码
 - COS导入不支持此字段。
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
@@ -330,11 +332,13 @@ namespace TencentCloud
 
                     /**
                      * 设置是否为Gbk编码。 0：否；1：是。
-注意：
+注意
+- 目前取0值时，表示UTF-8编码
 - COS导入不支持此字段。
 注意：此字段可能返回 null，表示取不到有效值。
                      * @param _isGBK 是否为Gbk编码。 0：否；1：是。
-注意：
+注意
+- 目前取0值时，表示UTF-8编码
 - COS导入不支持此字段。
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
@@ -350,8 +354,12 @@ namespace TencentCloud
 
                     /**
                      * 获取是否为标准json。  0：否； 1：是。
+注
+- 标准json指采集器使用业界标准开源解析器进行json解析，非标json指采集器使用CLS自研json解析器进行解析，两种解析器没有本质区别，建议客户使用标准json进行解析。
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return JsonStandard 是否为标准json。  0：否； 1：是。
+注
+- 标准json指采集器使用业界标准开源解析器进行json解析，非标json指采集器使用CLS自研json解析器进行解析，两种解析器没有本质区别，建议客户使用标准json进行解析。
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -359,8 +367,12 @@ namespace TencentCloud
 
                     /**
                      * 设置是否为标准json。  0：否； 1：是。
+注
+- 标准json指采集器使用业界标准开源解析器进行json解析，非标json指采集器使用CLS自研json解析器进行解析，两种解析器没有本质区别，建议客户使用标准json进行解析。
 注意：此字段可能返回 null，表示取不到有效值。
                      * @param _jsonStandard 是否为标准json。  0：否； 1：是。
+注
+- 标准json指采集器使用业界标准开源解析器进行json解析，非标json指采集器使用CLS自研json解析器进行解析，两种解析器没有本质区别，建议客户使用标准json进行解析。
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -374,12 +386,12 @@ namespace TencentCloud
                     bool JsonStandardHasBeenSet() const;
 
                     /**
-                     * 获取syslog传输协议，取值为tcp或者udp。
+                     * 获取syslog传输协议，取值为tcp或者udp，只有在LogType为service_syslog时生效，其余类型无需填写。
 注意：
 - 该字段适用于：创建采集规则配置、修改采集规则配置。
 - COS导入不支持此字段。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return Protocol syslog传输协议，取值为tcp或者udp。
+                     * @return Protocol syslog传输协议，取值为tcp或者udp，只有在LogType为service_syslog时生效，其余类型无需填写。
 注意：
 - 该字段适用于：创建采集规则配置、修改采集规则配置。
 - COS导入不支持此字段。
@@ -389,12 +401,12 @@ namespace TencentCloud
                     std::string GetProtocol() const;
 
                     /**
-                     * 设置syslog传输协议，取值为tcp或者udp。
+                     * 设置syslog传输协议，取值为tcp或者udp，只有在LogType为service_syslog时生效，其余类型无需填写。
 注意：
 - 该字段适用于：创建采集规则配置、修改采集规则配置。
 - COS导入不支持此字段。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _protocol syslog传输协议，取值为tcp或者udp。
+                     * @param _protocol syslog传输协议，取值为tcp或者udp，只有在LogType为service_syslog时生效，其余类型无需填写。
 注意：
 - 该字段适用于：创建采集规则配置、修改采集规则配置。
 - COS导入不支持此字段。
@@ -411,12 +423,12 @@ namespace TencentCloud
                     bool ProtocolHasBeenSet() const;
 
                     /**
-                     * 获取syslog系统日志采集指定采集器监听的地址和端口 ，形式：[ip]:[port]。举例：127.0.0.1:9000
+                     * 获取syslog系统日志采集指定采集器监听的地址和端口 ，形式：[ip]:[port]，只有在LogType为service_syslog时生效，其余类型无需填写。
 注意：
 - 该字段适用于：创建采集规则配置、修改采集规则配置。
 - COS导入不支持此字段。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return Address syslog系统日志采集指定采集器监听的地址和端口 ，形式：[ip]:[port]。举例：127.0.0.1:9000
+                     * @return Address syslog系统日志采集指定采集器监听的地址和端口 ，形式：[ip]:[port]，只有在LogType为service_syslog时生效，其余类型无需填写。
 注意：
 - 该字段适用于：创建采集规则配置、修改采集规则配置。
 - COS导入不支持此字段。
@@ -426,12 +438,12 @@ namespace TencentCloud
                     std::string GetAddress() const;
 
                     /**
-                     * 设置syslog系统日志采集指定采集器监听的地址和端口 ，形式：[ip]:[port]。举例：127.0.0.1:9000
+                     * 设置syslog系统日志采集指定采集器监听的地址和端口 ，形式：[ip]:[port]，只有在LogType为service_syslog时生效，其余类型无需填写。
 注意：
 - 该字段适用于：创建采集规则配置、修改采集规则配置。
 - COS导入不支持此字段。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _address syslog系统日志采集指定采集器监听的地址和端口 ，形式：[ip]:[port]。举例：127.0.0.1:9000
+                     * @param _address syslog系统日志采集指定采集器监听的地址和端口 ，形式：[ip]:[port]，只有在LogType为service_syslog时生效，其余类型无需填写。
 注意：
 - 该字段适用于：创建采集规则配置、修改采集规则配置。
 - COS导入不支持此字段。
@@ -451,6 +463,7 @@ namespace TencentCloud
                      * 获取rfc3164：指定系统日志采集使用RFC3164协议解析日志。
 rfc5424：指定系统日志采集使用RFC5424协议解析日志。
 auto：自动匹配rfc3164或者rfc5424其中一种协议。
+只有在LogType为service_syslog时生效，其余类型无需填写。
 注意：
 - 该字段适用于：创建采集规则配置、修改采集规则配置
 - COS导入不支持此字段。
@@ -458,6 +471,7 @@ auto：自动匹配rfc3164或者rfc5424其中一种协议。
                      * @return ParseProtocol rfc3164：指定系统日志采集使用RFC3164协议解析日志。
 rfc5424：指定系统日志采集使用RFC5424协议解析日志。
 auto：自动匹配rfc3164或者rfc5424其中一种协议。
+只有在LogType为service_syslog时生效，其余类型无需填写。
 注意：
 - 该字段适用于：创建采集规则配置、修改采集规则配置
 - COS导入不支持此字段。
@@ -470,6 +484,7 @@ auto：自动匹配rfc3164或者rfc5424其中一种协议。
                      * 设置rfc3164：指定系统日志采集使用RFC3164协议解析日志。
 rfc5424：指定系统日志采集使用RFC5424协议解析日志。
 auto：自动匹配rfc3164或者rfc5424其中一种协议。
+只有在LogType为service_syslog时生效，其余类型无需填写。
 注意：
 - 该字段适用于：创建采集规则配置、修改采集规则配置
 - COS导入不支持此字段。
@@ -477,6 +492,7 @@ auto：自动匹配rfc3164或者rfc5424其中一种协议。
                      * @param _parseProtocol rfc3164：指定系统日志采集使用RFC3164协议解析日志。
 rfc5424：指定系统日志采集使用RFC5424协议解析日志。
 auto：自动匹配rfc3164或者rfc5424其中一种协议。
+只有在LogType为service_syslog时生效，其余类型无需填写。
 注意：
 - 该字段适用于：创建采集规则配置、修改采集规则配置
 - COS导入不支持此字段。
@@ -592,23 +608,15 @@ auto：自动匹配rfc3164或者rfc5424其中一种协议。
                     bool MetaTagsHasBeenSet() const;
 
                     /**
-                     * 获取Windows事件日志采集。
-注意：
-- COS导入不支持此字段。
-                     * @return EventLogRules Windows事件日志采集。
-注意：
-- COS导入不支持此字段。
+                     * 获取Windows事件日志采集规则，只有在LogType为windows_event_log时生效，其余类型无需填写。
+                     * @return EventLogRules Windows事件日志采集规则，只有在LogType为windows_event_log时生效，其余类型无需填写。
                      * 
                      */
                     std::vector<EventLog> GetEventLogRules() const;
 
                     /**
-                     * 设置Windows事件日志采集。
-注意：
-- COS导入不支持此字段。
-                     * @param _eventLogRules Windows事件日志采集。
-注意：
-- COS导入不支持此字段。
+                     * 设置Windows事件日志采集规则，只有在LogType为windows_event_log时生效，其余类型无需填写。
+                     * @param _eventLogRules Windows事件日志采集规则，只有在LogType为windows_event_log时生效，其余类型无需填写。
                      * 
                      */
                     void SetEventLogRules(const std::vector<EventLog>& _eventLogRules);
@@ -681,7 +689,7 @@ auto：自动匹配rfc3164或者rfc5424其中一种协议。
                     bool m_unMatchUpLoadSwitchHasBeenSet;
 
                     /**
-                     * 失败日志的key
+                     * 失败日志的key，当UnMatchUpLoadSwitch为true时必填
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_unMatchLogKey;
@@ -698,7 +706,8 @@ auto：自动匹配rfc3164或者rfc5424其中一种协议。
 
                     /**
                      * 是否为Gbk编码。 0：否；1：是。
-注意：
+注意
+- 目前取0值时，表示UTF-8编码
 - COS导入不支持此字段。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
@@ -707,13 +716,15 @@ auto：自动匹配rfc3164或者rfc5424其中一种协议。
 
                     /**
                      * 是否为标准json。  0：否； 1：是。
+注
+- 标准json指采集器使用业界标准开源解析器进行json解析，非标json指采集器使用CLS自研json解析器进行解析，两种解析器没有本质区别，建议客户使用标准json进行解析。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_jsonStandard;
                     bool m_jsonStandardHasBeenSet;
 
                     /**
-                     * syslog传输协议，取值为tcp或者udp。
+                     * syslog传输协议，取值为tcp或者udp，只有在LogType为service_syslog时生效，其余类型无需填写。
 注意：
 - 该字段适用于：创建采集规则配置、修改采集规则配置。
 - COS导入不支持此字段。
@@ -723,7 +734,7 @@ auto：自动匹配rfc3164或者rfc5424其中一种协议。
                     bool m_protocolHasBeenSet;
 
                     /**
-                     * syslog系统日志采集指定采集器监听的地址和端口 ，形式：[ip]:[port]。举例：127.0.0.1:9000
+                     * syslog系统日志采集指定采集器监听的地址和端口 ，形式：[ip]:[port]，只有在LogType为service_syslog时生效，其余类型无需填写。
 注意：
 - 该字段适用于：创建采集规则配置、修改采集规则配置。
 - COS导入不支持此字段。
@@ -736,6 +747,7 @@ auto：自动匹配rfc3164或者rfc5424其中一种协议。
                      * rfc3164：指定系统日志采集使用RFC3164协议解析日志。
 rfc5424：指定系统日志采集使用RFC5424协议解析日志。
 auto：自动匹配rfc3164或者rfc5424其中一种协议。
+只有在LogType为service_syslog时生效，其余类型无需填写。
 注意：
 - 该字段适用于：创建采集规则配置、修改采集规则配置
 - COS导入不支持此字段。
@@ -772,9 +784,7 @@ auto：自动匹配rfc3164或者rfc5424其中一种协议。
                     bool m_metaTagsHasBeenSet;
 
                     /**
-                     * Windows事件日志采集。
-注意：
-- COS导入不支持此字段。
+                     * Windows事件日志采集规则，只有在LogType为windows_event_log时生效，其余类型无需填写。
                      */
                     std::vector<EventLog> m_eventLogRules;
                     bool m_eventLogRulesHasBeenSet;

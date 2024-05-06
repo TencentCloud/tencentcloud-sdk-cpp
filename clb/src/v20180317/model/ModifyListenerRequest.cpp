@@ -38,7 +38,8 @@ ModifyListenerRequest::ModifyListenerRequest() :
     m_multiCertInfoHasBeenSet(false),
     m_maxConnHasBeenSet(false),
     m_maxCpsHasBeenSet(false),
-    m_idleConnectTimeoutHasBeenSet(false)
+    m_idleConnectTimeoutHasBeenSet(false),
+    m_snatEnableHasBeenSet(false)
 {
 }
 
@@ -178,6 +179,14 @@ string ModifyListenerRequest::ToJsonString() const
         string key = "IdleConnectTimeout";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_idleConnectTimeout, allocator);
+    }
+
+    if (m_snatEnableHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "SnatEnable";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_snatEnable, allocator);
     }
 
 
@@ -442,6 +451,22 @@ void ModifyListenerRequest::SetIdleConnectTimeout(const int64_t& _idleConnectTim
 bool ModifyListenerRequest::IdleConnectTimeoutHasBeenSet() const
 {
     return m_idleConnectTimeoutHasBeenSet;
+}
+
+bool ModifyListenerRequest::GetSnatEnable() const
+{
+    return m_snatEnable;
+}
+
+void ModifyListenerRequest::SetSnatEnable(const bool& _snatEnable)
+{
+    m_snatEnable = _snatEnable;
+    m_snatEnableHasBeenSet = true;
+}
+
+bool ModifyListenerRequest::SnatEnableHasBeenSet() const
+{
+    return m_snatEnableHasBeenSet;
 }
 
 

@@ -56,7 +56,8 @@ ClusterV2::ClusterV2() :
     m_clusterRemarkNameHasBeenSet(false),
     m_kuberneteApiServerHasBeenSet(false),
     m_kuberneteNativeTypeHasBeenSet(false),
-    m_kuberneteNativeSecretHasBeenSet(false)
+    m_kuberneteNativeSecretHasBeenSet(false),
+    m_enableLogCollectionHasBeenSet(false)
 {
 }
 
@@ -432,6 +433,16 @@ CoreInternalOutcome ClusterV2::Deserialize(const rapidjson::Value &value)
         m_kuberneteNativeSecretHasBeenSet = true;
     }
 
+    if (value.HasMember("EnableLogCollection") && !value["EnableLogCollection"].IsNull())
+    {
+        if (!value["EnableLogCollection"].IsBool())
+        {
+            return CoreInternalOutcome(Core::Error("response `ClusterV2.EnableLogCollection` IsBool=false incorrectly").SetRequestId(requestId));
+        }
+        m_enableLogCollection = value["EnableLogCollection"].GetBool();
+        m_enableLogCollectionHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -726,6 +737,14 @@ void ClusterV2::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Alloc
         string key = "KuberneteNativeSecret";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_kuberneteNativeSecret.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_enableLogCollectionHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "EnableLogCollection";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_enableLogCollection, allocator);
     }
 
 }
@@ -1305,5 +1324,21 @@ void ClusterV2::SetKuberneteNativeSecret(const string& _kuberneteNativeSecret)
 bool ClusterV2::KuberneteNativeSecretHasBeenSet() const
 {
     return m_kuberneteNativeSecretHasBeenSet;
+}
+
+bool ClusterV2::GetEnableLogCollection() const
+{
+    return m_enableLogCollection;
+}
+
+void ClusterV2::SetEnableLogCollection(const bool& _enableLogCollection)
+{
+    m_enableLogCollection = _enableLogCollection;
+    m_enableLogCollectionHasBeenSet = true;
+}
+
+bool ClusterV2::EnableLogCollectionHasBeenSet() const
+{
+    return m_enableLogCollectionHasBeenSet;
 }
 

@@ -23,7 +23,8 @@ using namespace TencentCloud::Csip::V20221121::Model;
 using namespace std;
 
 DeleteRiskScanTaskRequest::DeleteRiskScanTaskRequest() :
-    m_taskIdListHasBeenSet(false)
+    m_taskIdListHasBeenSet(false),
+    m_memberIdHasBeenSet(false)
 {
 }
 
@@ -49,6 +50,19 @@ string DeleteRiskScanTaskRequest::ToJsonString() const
         }
     }
 
+    if (m_memberIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "MemberId";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        for (auto itr = m_memberId.begin(); itr != m_memberId.end(); ++itr)
+        {
+            d[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
+        }
+    }
+
 
     rapidjson::StringBuffer buffer;
     rapidjson::Writer<rapidjson::StringBuffer> writer(buffer);
@@ -71,6 +85,22 @@ void DeleteRiskScanTaskRequest::SetTaskIdList(const vector<TaskIdListKey>& _task
 bool DeleteRiskScanTaskRequest::TaskIdListHasBeenSet() const
 {
     return m_taskIdListHasBeenSet;
+}
+
+vector<string> DeleteRiskScanTaskRequest::GetMemberId() const
+{
+    return m_memberId;
+}
+
+void DeleteRiskScanTaskRequest::SetMemberId(const vector<string>& _memberId)
+{
+    m_memberId = _memberId;
+    m_memberIdHasBeenSet = true;
+}
+
+bool DeleteRiskScanTaskRequest::MemberIdHasBeenSet() const
+{
+    return m_memberIdHasBeenSet;
 }
 
 

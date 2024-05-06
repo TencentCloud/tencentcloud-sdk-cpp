@@ -126,6 +126,48 @@ namespace TencentCloud
                      */
                     bool ClusterRemarkNameHasBeenSet() const;
 
+                    /**
+                     * 获取是否开启cls日志功能
+                     * @return EnableLogCollection 是否开启cls日志功能
+                     * 
+                     */
+                    bool GetEnableLogCollection() const;
+
+                    /**
+                     * 设置是否开启cls日志功能
+                     * @param _enableLogCollection 是否开启cls日志功能
+                     * 
+                     */
+                    void SetEnableLogCollection(const bool& _enableLogCollection);
+
+                    /**
+                     * 判断参数 EnableLogCollection 是否已赋值
+                     * @return EnableLogCollection 是否已赋值
+                     * 
+                     */
+                    bool EnableLogCollectionHasBeenSet() const;
+
+                    /**
+                     * 获取是否修复cls日志功能
+                     * @return RepairLog 是否修复cls日志功能
+                     * 
+                     */
+                    bool GetRepairLog() const;
+
+                    /**
+                     * 设置是否修复cls日志功能
+                     * @param _repairLog 是否修复cls日志功能
+                     * 
+                     */
+                    void SetRepairLog(const bool& _repairLog);
+
+                    /**
+                     * 判断参数 RepairLog 是否已赋值
+                     * @return RepairLog 是否已赋值
+                     * 
+                     */
+                    bool RepairLogHasBeenSet() const;
+
                 private:
 
                     /**
@@ -151,6 +193,18 @@ namespace TencentCloud
                      */
                     std::string m_clusterRemarkName;
                     bool m_clusterRemarkNameHasBeenSet;
+
+                    /**
+                     * 是否开启cls日志功能
+                     */
+                    bool m_enableLogCollection;
+                    bool m_enableLogCollectionHasBeenSet;
+
+                    /**
+                     * 是否修复cls日志功能
+                     */
+                    bool m_repairLog;
+                    bool m_repairLogHasBeenSet;
 
                 };
             }

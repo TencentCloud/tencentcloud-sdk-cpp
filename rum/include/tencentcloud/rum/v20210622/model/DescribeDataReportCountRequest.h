@@ -106,15 +106,15 @@ namespace TencentCloud
                     bool IDHasBeenSet() const;
 
                     /**
-                     * 获取上报类型
-                     * @return ReportType 上报类型
+                     * 获取上报类型（custom，event，log，miniProgramData，performance，pv，speed，webvitals）
+                     * @return ReportType 上报类型（custom，event，log，miniProgramData，performance，pv，speed，webvitals）
                      * 
                      */
                     std::string GetReportType() const;
 
                     /**
-                     * 设置上报类型
-                     * @param _reportType 上报类型
+                     * 设置上报类型（custom，event，log，miniProgramData，performance，pv，speed，webvitals）
+                     * @param _reportType 上报类型（custom，event，log，miniProgramData，performance，pv，speed，webvitals）
                      * 
                      */
                     void SetReportType(const std::string& _reportType);
@@ -168,7 +168,7 @@ namespace TencentCloud
                     bool m_iDHasBeenSet;
 
                     /**
-                     * 上报类型
+                     * 上报类型（custom，event，log，miniProgramData，performance，pv，speed，webvitals）
                      */
                     std::string m_reportType;
                     bool m_reportTypeHasBeenSet;

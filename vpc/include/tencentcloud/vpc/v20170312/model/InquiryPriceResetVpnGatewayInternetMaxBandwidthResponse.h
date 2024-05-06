@@ -45,8 +45,8 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取商品价格。
-                     * @return Price 商品价格。
+                     * 获取商品价格。仅支持未过期的预付费网关。
+                     * @return Price 商品价格。仅支持未过期的预付费网关。
                      * 
                      */
                     Price GetPrice() const;
@@ -61,7 +61,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 商品价格。
+                     * 商品价格。仅支持未过期的预付费网关。
                      */
                     Price m_price;
                     bool m_priceHasBeenSet;

@@ -211,15 +211,15 @@ namespace TencentCloud
                     bool EncryptAlgorithmHasBeenSet() const;
 
                     /**
-                     * 获取是否支持压缩。当前仅支持不支持压缩，默认False。
-                     * @return Compress 是否支持压缩。当前仅支持不支持压缩，默认False。
+                     * 获取是否支持压缩。当前不支持压缩，默认False。
+                     * @return Compress 是否支持压缩。当前不支持压缩，默认False。
                      * 
                      */
                     bool GetCompress() const;
 
                     /**
-                     * 设置是否支持压缩。当前仅支持不支持压缩，默认False。
-                     * @param _compress 是否支持压缩。当前仅支持不支持压缩，默认False。
+                     * 设置是否支持压缩。当前不支持压缩，默认False。
+                     * @param _compress 是否支持压缩。当前不支持压缩，默认False。
                      * 
                      */
                     void SetCompress(const bool& _compress);
@@ -232,15 +232,15 @@ namespace TencentCloud
                     bool CompressHasBeenSet() const;
 
                     /**
-                     * 获取是否开启SSO认证。默认为False
-                     * @return SsoEnabled 是否开启SSO认证。默认为False
+                     * 获取是否开启SSO认证。默认为False。该功能当前需要申请开白使用。
+                     * @return SsoEnabled 是否开启SSO认证。默认为False。该功能当前需要申请开白使用。
                      * 
                      */
                     bool GetSsoEnabled() const;
 
                     /**
-                     * 设置是否开启SSO认证。默认为False
-                     * @param _ssoEnabled 是否开启SSO认证。默认为False
+                     * 设置是否开启SSO认证。默认为False。该功能当前需要申请开白使用。
+                     * @param _ssoEnabled 是否开启SSO认证。默认为False。该功能当前需要申请开白使用。
                      * 
                      */
                     void SetSsoEnabled(const bool& _ssoEnabled);
@@ -345,13 +345,13 @@ namespace TencentCloud
                     bool m_encryptAlgorithmHasBeenSet;
 
                     /**
-                     * 是否支持压缩。当前仅支持不支持压缩，默认False。
+                     * 是否支持压缩。当前不支持压缩，默认False。
                      */
                     bool m_compress;
                     bool m_compressHasBeenSet;
 
                     /**
-                     * 是否开启SSO认证。默认为False
+                     * 是否开启SSO认证。默认为False。该功能当前需要申请开白使用。
                      */
                     bool m_ssoEnabled;
                     bool m_ssoEnabledHasBeenSet;

@@ -47,15 +47,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取回调地址。
-                     * @return Url 回调地址。
+                     * 获取回调地址。最大支持1024个字节数。
+                     * @return Url 回调地址。最大支持1024个字节数。
                      * 
                      */
                     std::string GetUrl() const;
 
                     /**
-                     * 设置回调地址。
-                     * @param _url 回调地址。
+                     * 设置回调地址。最大支持1024个字节数。
+                     * @param _url 回调地址。最大支持1024个字节数。
                      * 
                      */
                     void SetUrl(const std::string& _url);
@@ -69,22 +69,30 @@ namespace TencentCloud
 
                     /**
                      * 获取回调的类型。可选值：
-<li> WeCom
-<li> Http
+- WeCom
+- Http
+- DingTalk
+- Lark
                      * @return CallbackType 回调的类型。可选值：
-<li> WeCom
-<li> Http
+- WeCom
+- Http
+- DingTalk
+- Lark
                      * 
                      */
                     std::string GetCallbackType() const;
 
                     /**
                      * 设置回调的类型。可选值：
-<li> WeCom
-<li> Http
+- WeCom
+- Http
+- DingTalk
+- Lark
                      * @param _callbackType 回调的类型。可选值：
-<li> WeCom
-<li> Http
+- WeCom
+- Http
+- DingTalk
+- Lark
                      * 
                      */
                     void SetCallbackType(const std::string& _callbackType);
@@ -98,13 +106,13 @@ namespace TencentCloud
 
                     /**
                      * 获取回调方法。可选值：
-<li> POST
-<li> PUT
+- POST
+- PUT
 默认值为POST。CallbackType为Http时为必选。
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Method 回调方法。可选值：
-<li> POST
-<li> PUT
+- POST
+- PUT
 默认值为POST。CallbackType为Http时为必选。
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
@@ -113,13 +121,13 @@ namespace TencentCloud
 
                     /**
                      * 设置回调方法。可选值：
-<li> POST
-<li> PUT
+- POST
+- PUT
 默认值为POST。CallbackType为Http时为必选。
 注意：此字段可能返回 null，表示取不到有效值。
                      * @param _method 回调方法。可选值：
-<li> POST
-<li> PUT
+- POST
+- PUT
 默认值为POST。CallbackType为Http时为必选。
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
@@ -192,15 +200,23 @@ namespace TencentCloud
                     bool BodyHasBeenSet() const;
 
                     /**
-                     * 获取序号
-                     * @return Index 序号
+                     * 获取序号。
+- 入参无效。
+- 出参有效。
+                     * @return Index 序号。
+- 入参无效。
+- 出参有效。
                      * 
                      */
                     int64_t GetIndex() const;
 
                     /**
-                     * 设置序号
-                     * @param _index 序号
+                     * 设置序号。
+- 入参无效。
+- 出参有效。
+                     * @param _index 序号。
+- 入参无效。
+- 出参有效。
                      * 
                      */
                     void SetIndex(const int64_t& _index);
@@ -215,23 +231,25 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 回调地址。
+                     * 回调地址。最大支持1024个字节数。
                      */
                     std::string m_url;
                     bool m_urlHasBeenSet;
 
                     /**
                      * 回调的类型。可选值：
-<li> WeCom
-<li> Http
+- WeCom
+- Http
+- DingTalk
+- Lark
                      */
                     std::string m_callbackType;
                     bool m_callbackTypeHasBeenSet;
 
                     /**
                      * 回调方法。可选值：
-<li> POST
-<li> PUT
+- POST
+- PUT
 默认值为POST。CallbackType为Http时为必选。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
@@ -255,7 +273,9 @@ namespace TencentCloud
                     bool m_bodyHasBeenSet;
 
                     /**
-                     * 序号
+                     * 序号。
+- 入参无效。
+- 出参有效。
                      */
                     int64_t m_index;
                     bool m_indexHasBeenSet;

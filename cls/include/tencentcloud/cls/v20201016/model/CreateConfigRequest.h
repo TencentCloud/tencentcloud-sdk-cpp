@@ -87,15 +87,15 @@ namespace TencentCloud
                     bool OutputHasBeenSet() const;
 
                     /**
-                     * 获取日志采集路径,包含文件名
-                     * @return Path 日志采集路径,包含文件名
+                     * 获取日志采集路径，包含文件名，支持多个路径，多个路径之间英文逗号分隔，文件采集情况下必填
+                     * @return Path 日志采集路径，包含文件名，支持多个路径，多个路径之间英文逗号分隔，文件采集情况下必填
                      * 
                      */
                     std::string GetPath() const;
 
                     /**
-                     * 设置日志采集路径,包含文件名
-                     * @param _path 日志采集路径,包含文件名
+                     * 设置日志采集路径，包含文件名，支持多个路径，多个路径之间英文逗号分隔，文件采集情况下必填
+                     * @param _path 日志采集路径，包含文件名，支持多个路径，多个路径之间英文逗号分隔，文件采集情况下必填
                      * 
                      */
                     void SetPath(const std::string& _path);
@@ -291,7 +291,7 @@ namespace TencentCloud
                     bool m_outputHasBeenSet;
 
                     /**
-                     * 日志采集路径,包含文件名
+                     * 日志采集路径，包含文件名，支持多个路径，多个路径之间英文逗号分隔，文件采集情况下必填
                      */
                     std::string m_path;
                     bool m_pathHasBeenSet;

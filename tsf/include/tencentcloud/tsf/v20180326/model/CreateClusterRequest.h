@@ -378,6 +378,27 @@ namespace TencentCloud
                      */
                     bool ProgramIdListHasBeenSet() const;
 
+                    /**
+                     * 获取是否开启cls日志功能
+                     * @return EnableLogCollection 是否开启cls日志功能
+                     * 
+                     */
+                    bool GetEnableLogCollection() const;
+
+                    /**
+                     * 设置是否开启cls日志功能
+                     * @param _enableLogCollection 是否开启cls日志功能
+                     * 
+                     */
+                    void SetEnableLogCollection(const bool& _enableLogCollection);
+
+                    /**
+                     * 判断参数 EnableLogCollection 是否已赋值
+                     * @return EnableLogCollection 是否已赋值
+                     * 
+                     */
+                    bool EnableLogCollectionHasBeenSet() const;
+
                 private:
 
                     /**
@@ -475,6 +496,12 @@ namespace TencentCloud
                      */
                     std::vector<std::string> m_programIdList;
                     bool m_programIdListHasBeenSet;
+
+                    /**
+                     * 是否开启cls日志功能
+                     */
+                    bool m_enableLogCollection;
+                    bool m_enableLogCollectionHasBeenSet;
 
                 };
             }

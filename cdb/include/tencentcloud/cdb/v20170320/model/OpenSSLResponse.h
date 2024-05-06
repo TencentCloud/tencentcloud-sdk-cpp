@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef TENCENTCLOUD_CWP_V20180228_MODEL_DESCRIBEATTACKLOGINFOREQUEST_H_
-#define TENCENTCLOUD_CWP_V20180228_MODEL_DESCRIBEATTACKLOGINFOREQUEST_H_
+#ifndef TENCENTCLOUD_CDB_V20170320_MODEL_OPENSSLRESPONSE_H_
+#define TENCENTCLOUD_CDB_V20170320_MODEL_OPENSSLRESPONSE_H_
 
 #include <string>
 #include <vector>
@@ -25,51 +25,45 @@
 
 namespace TencentCloud
 {
-    namespace Cwp
+    namespace Cdb
     {
-        namespace V20180228
+        namespace V20170320
         {
             namespace Model
             {
                 /**
-                * DescribeAttackLogInfo请求参数结构体
+                * OpenSSL返回参数结构体
                 */
-                class DescribeAttackLogInfoRequest : public AbstractModel
+                class OpenSSLResponse : public AbstractModel
                 {
                 public:
-                    DescribeAttackLogInfoRequest();
-                    ~DescribeAttackLogInfoRequest() = default;
+                    OpenSSLResponse();
+                    ~OpenSSLResponse() = default;
+                    CoreInternalOutcome Deserialize(const std::string &payload);
                     std::string ToJsonString() const;
 
 
                     /**
-                     * 获取日志ID
-                     * @return Id 日志ID
+                     * 获取异步请求 ID。
+                     * @return AsyncRequestId 异步请求 ID。
                      * 
                      */
-                    uint64_t GetId() const;
+                    std::string GetAsyncRequestId() const;
 
                     /**
-                     * 设置日志ID
-                     * @param _id 日志ID
+                     * 判断参数 AsyncRequestId 是否已赋值
+                     * @return AsyncRequestId 是否已赋值
                      * 
                      */
-                    void SetId(const uint64_t& _id);
-
-                    /**
-                     * 判断参数 Id 是否已赋值
-                     * @return Id 是否已赋值
-                     * 
-                     */
-                    bool IdHasBeenSet() const;
+                    bool AsyncRequestIdHasBeenSet() const;
 
                 private:
 
                     /**
-                     * 日志ID
+                     * 异步请求 ID。
                      */
-                    uint64_t m_id;
-                    bool m_idHasBeenSet;
+                    std::string m_asyncRequestId;
+                    bool m_asyncRequestIdHasBeenSet;
 
                 };
             }
@@ -77,4 +71,4 @@ namespace TencentCloud
     }
 }
 
-#endif // !TENCENTCLOUD_CWP_V20180228_MODEL_DESCRIBEATTACKLOGINFOREQUEST_H_
+#endif // !TENCENTCLOUD_CDB_V20170320_MODEL_OPENSSLRESPONSE_H_

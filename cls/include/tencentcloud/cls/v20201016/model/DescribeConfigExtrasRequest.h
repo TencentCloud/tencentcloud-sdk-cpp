@@ -44,15 +44,95 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取支持的key： topicId,name, configExtraId, machineGroupId
-                     * @return Filters 支持的key： topicId,name, configExtraId, machineGroupId
+                     * 获取name
+- 按照【特殊采集配置名称】进行模糊匹配过滤。
+- 类型：String
+- 必选：否
+
+configExtraId
+- 按照【特殊采集配置ID】进行过滤。
+- 类型：String
+- 必选：否
+
+topicId
+- 按照【日志主题】进行过滤。
+- 类型：String
+- 必选：否
+
+machineGroupId
+- 按照【机器组ID】进行过滤。
+- 类型：String
+- 必选：否
+
+每次请求的Filters的上限为10，Filter.Values的上限为5。
+                     * @return Filters name
+- 按照【特殊采集配置名称】进行模糊匹配过滤。
+- 类型：String
+- 必选：否
+
+configExtraId
+- 按照【特殊采集配置ID】进行过滤。
+- 类型：String
+- 必选：否
+
+topicId
+- 按照【日志主题】进行过滤。
+- 类型：String
+- 必选：否
+
+machineGroupId
+- 按照【机器组ID】进行过滤。
+- 类型：String
+- 必选：否
+
+每次请求的Filters的上限为10，Filter.Values的上限为5。
                      * 
                      */
                     std::vector<Filter> GetFilters() const;
 
                     /**
-                     * 设置支持的key： topicId,name, configExtraId, machineGroupId
-                     * @param _filters 支持的key： topicId,name, configExtraId, machineGroupId
+                     * 设置name
+- 按照【特殊采集配置名称】进行模糊匹配过滤。
+- 类型：String
+- 必选：否
+
+configExtraId
+- 按照【特殊采集配置ID】进行过滤。
+- 类型：String
+- 必选：否
+
+topicId
+- 按照【日志主题】进行过滤。
+- 类型：String
+- 必选：否
+
+machineGroupId
+- 按照【机器组ID】进行过滤。
+- 类型：String
+- 必选：否
+
+每次请求的Filters的上限为10，Filter.Values的上限为5。
+                     * @param _filters name
+- 按照【特殊采集配置名称】进行模糊匹配过滤。
+- 类型：String
+- 必选：否
+
+configExtraId
+- 按照【特殊采集配置ID】进行过滤。
+- 类型：String
+- 必选：否
+
+topicId
+- 按照【日志主题】进行过滤。
+- 类型：String
+- 必选：否
+
+machineGroupId
+- 按照【机器组ID】进行过滤。
+- 类型：String
+- 必选：否
+
+每次请求的Filters的上限为10，Filter.Values的上限为5。
                      * 
                      */
                     void SetFilters(const std::vector<Filter>& _filters);
@@ -109,7 +189,27 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 支持的key： topicId,name, configExtraId, machineGroupId
+                     * name
+- 按照【特殊采集配置名称】进行模糊匹配过滤。
+- 类型：String
+- 必选：否
+
+configExtraId
+- 按照【特殊采集配置ID】进行过滤。
+- 类型：String
+- 必选：否
+
+topicId
+- 按照【日志主题】进行过滤。
+- 类型：String
+- 必选：否
+
+machineGroupId
+- 按照【机器组ID】进行过滤。
+- 类型：String
+- 必选：否
+
+每次请求的Filters的上限为10，Filter.Values的上限为5。
                      */
                     std::vector<Filter> m_filters;
                     bool m_filtersHasBeenSet;

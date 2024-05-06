@@ -39,7 +39,8 @@ SslVpnSever::SslVpnSever() :
     m_ssoEnabledHasBeenSet(false),
     m_eiamApplicationIdHasBeenSet(false),
     m_accessPolicyEnabledHasBeenSet(false),
-    m_accessPolicyHasBeenSet(false)
+    m_accessPolicyHasBeenSet(false),
+    m_spNameHasBeenSet(false)
 {
 }
 
@@ -251,6 +252,16 @@ CoreInternalOutcome SslVpnSever::Deserialize(const rapidjson::Value &value)
         m_accessPolicyHasBeenSet = true;
     }
 
+    if (value.HasMember("SpName") && !value["SpName"].IsNull())
+    {
+        if (!value["SpName"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `SslVpnSever.SpName` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_spName = string(value["SpName"].GetString());
+        m_spNameHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -420,6 +431,14 @@ void SslVpnSever::ToJsonObject(rapidjson::Value &value, rapidjson::Document::All
             value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
             (*itr).ToJsonObject(value[key.c_str()][i], allocator);
         }
+    }
+
+    if (m_spNameHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "SpName";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_spName.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -727,5 +746,21 @@ void SslVpnSever::SetAccessPolicy(const vector<AccessPolicy>& _accessPolicy)
 bool SslVpnSever::AccessPolicyHasBeenSet() const
 {
     return m_accessPolicyHasBeenSet;
+}
+
+string SslVpnSever::GetSpName() const
+{
+    return m_spName;
+}
+
+void SslVpnSever::SetSpName(const string& _spName)
+{
+    m_spName = _spName;
+    m_spNameHasBeenSet = true;
+}
+
+bool SslVpnSever::SpNameHasBeenSet() const
+{
+    return m_spNameHasBeenSet;
 }
 

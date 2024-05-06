@@ -44,15 +44,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取公网带宽设置。可选带宽规格：5, 10, 20, 50, 100；单位：Mbps。
-                     * @return InternetMaxBandwidthOut 公网带宽设置。可选带宽规格：5, 10, 20, 50, 100；单位：Mbps。
+                     * 获取公网带宽设置。可选带宽规格：5, 10, 20, 50, 100, 200, 500, 1000, 3000；单位：Mbps。
+                     * @return InternetMaxBandwidthOut 公网带宽设置。可选带宽规格：5, 10, 20, 50, 100, 200, 500, 1000, 3000；单位：Mbps。
                      * 
                      */
                     uint64_t GetInternetMaxBandwidthOut() const;
 
                     /**
-                     * 设置公网带宽设置。可选带宽规格：5, 10, 20, 50, 100；单位：Mbps。
-                     * @param _internetMaxBandwidthOut 公网带宽设置。可选带宽规格：5, 10, 20, 50, 100；单位：Mbps。
+                     * 设置公网带宽设置。可选带宽规格：5, 10, 20, 50, 100, 200, 500, 1000, 3000；单位：Mbps。
+                     * @param _internetMaxBandwidthOut 公网带宽设置。可选带宽规格：5, 10, 20, 50, 100, 200, 500, 1000, 3000；单位：Mbps。
                      * 
                      */
                     void SetInternetMaxBandwidthOut(const uint64_t& _internetMaxBandwidthOut);
@@ -107,15 +107,15 @@ namespace TencentCloud
                     bool InstanceChargePrepaidHasBeenSet() const;
 
                     /**
-                     * 获取SSL VPN连接数设置，可选规格：5, 10, 20, 50, 100；单位：个。
-                     * @return MaxConnection SSL VPN连接数设置，可选规格：5, 10, 20, 50, 100；单位：个。
+                     * 获取SSL VPN连接数设置，可选规格：5, 10, 20, 50, 100, 200, 500, 1000；单位：个。
+                     * @return MaxConnection SSL VPN连接数设置，可选规格：5, 10, 20, 50, 100, 200, 500, 1000；单位：个。
                      * 
                      */
                     uint64_t GetMaxConnection() const;
 
                     /**
-                     * 设置SSL VPN连接数设置，可选规格：5, 10, 20, 50, 100；单位：个。
-                     * @param _maxConnection SSL VPN连接数设置，可选规格：5, 10, 20, 50, 100；单位：个。
+                     * 设置SSL VPN连接数设置，可选规格：5, 10, 20, 50, 100, 200, 500, 1000；单位：个。
+                     * @param _maxConnection SSL VPN连接数设置，可选规格：5, 10, 20, 50, 100, 200, 500, 1000；单位：个。
                      * 
                      */
                     void SetMaxConnection(const uint64_t& _maxConnection);
@@ -128,15 +128,15 @@ namespace TencentCloud
                     bool MaxConnectionHasBeenSet() const;
 
                     /**
-                     * 获取查询的VPN类型，支持IPSEC和SSL两种类型，为SSL类型时，MaxConnection参数必传。
-                     * @return Type 查询的VPN类型，支持IPSEC和SSL两种类型，为SSL类型时，MaxConnection参数必传。
+                     * 获取查询的VPN类型，支持IPSEC、SSL两种类型，为SSL类型时，MaxConnection参数必传。
+                     * @return Type 查询的VPN类型，支持IPSEC、SSL两种类型，为SSL类型时，MaxConnection参数必传。
                      * 
                      */
                     std::string GetType() const;
 
                     /**
-                     * 设置查询的VPN类型，支持IPSEC和SSL两种类型，为SSL类型时，MaxConnection参数必传。
-                     * @param _type 查询的VPN类型，支持IPSEC和SSL两种类型，为SSL类型时，MaxConnection参数必传。
+                     * 设置查询的VPN类型，支持IPSEC、SSL两种类型，为SSL类型时，MaxConnection参数必传。
+                     * @param _type 查询的VPN类型，支持IPSEC、SSL两种类型，为SSL类型时，MaxConnection参数必传。
                      * 
                      */
                     void SetType(const std::string& _type);
@@ -151,7 +151,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 公网带宽设置。可选带宽规格：5, 10, 20, 50, 100；单位：Mbps。
+                     * 公网带宽设置。可选带宽规格：5, 10, 20, 50, 100, 200, 500, 1000, 3000；单位：Mbps。
                      */
                     uint64_t m_internetMaxBandwidthOut;
                     bool m_internetMaxBandwidthOutHasBeenSet;
@@ -169,13 +169,13 @@ namespace TencentCloud
                     bool m_instanceChargePrepaidHasBeenSet;
 
                     /**
-                     * SSL VPN连接数设置，可选规格：5, 10, 20, 50, 100；单位：个。
+                     * SSL VPN连接数设置，可选规格：5, 10, 20, 50, 100, 200, 500, 1000；单位：个。
                      */
                     uint64_t m_maxConnection;
                     bool m_maxConnectionHasBeenSet;
 
                     /**
-                     * 查询的VPN类型，支持IPSEC和SSL两种类型，为SSL类型时，MaxConnection参数必传。
+                     * 查询的VPN类型，支持IPSEC、SSL两种类型，为SSL类型时，MaxConnection参数必传。
                      */
                     std::string m_type;
                     bool m_typeHasBeenSet;

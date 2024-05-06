@@ -23,7 +23,8 @@ using namespace TencentCloud::Csip::V20221121::Model;
 using namespace std;
 
 StopRiskCenterTaskRequest::StopRiskCenterTaskRequest() :
-    m_taskIdListHasBeenSet(false)
+    m_taskIdListHasBeenSet(false),
+    m_memberIdHasBeenSet(false)
 {
 }
 
@@ -49,6 +50,19 @@ string StopRiskCenterTaskRequest::ToJsonString() const
         }
     }
 
+    if (m_memberIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "MemberId";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        for (auto itr = m_memberId.begin(); itr != m_memberId.end(); ++itr)
+        {
+            d[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
+        }
+    }
+
 
     rapidjson::StringBuffer buffer;
     rapidjson::Writer<rapidjson::StringBuffer> writer(buffer);
@@ -71,6 +85,22 @@ void StopRiskCenterTaskRequest::SetTaskIdList(const vector<TaskIdListKey>& _task
 bool StopRiskCenterTaskRequest::TaskIdListHasBeenSet() const
 {
     return m_taskIdListHasBeenSet;
+}
+
+vector<string> StopRiskCenterTaskRequest::GetMemberId() const
+{
+    return m_memberId;
+}
+
+void StopRiskCenterTaskRequest::SetMemberId(const vector<string>& _memberId)
+{
+    m_memberId = _memberId;
+    m_memberIdHasBeenSet = true;
+}
+
+bool StopRiskCenterTaskRequest::MemberIdHasBeenSet() const
+{
+    return m_memberIdHasBeenSet;
 }
 
 

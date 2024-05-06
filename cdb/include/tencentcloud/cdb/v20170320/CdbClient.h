@@ -43,6 +43,8 @@
 #include <tencentcloud/cdb/v20170320/model/CloseCDBProxyResponse.h>
 #include <tencentcloud/cdb/v20170320/model/CloseCdbProxyAddressRequest.h>
 #include <tencentcloud/cdb/v20170320/model/CloseCdbProxyAddressResponse.h>
+#include <tencentcloud/cdb/v20170320/model/CloseSSLRequest.h>
+#include <tencentcloud/cdb/v20170320/model/CloseSSLResponse.h>
 #include <tencentcloud/cdb/v20170320/model/CloseWanServiceRequest.h>
 #include <tencentcloud/cdb/v20170320/model/CloseWanServiceResponse.h>
 #include <tencentcloud/cdb/v20170320/model/CreateAccountsRequest.h>
@@ -211,6 +213,8 @@
 #include <tencentcloud/cdb/v20170320/model/DescribeRollbackRangeTimeResponse.h>
 #include <tencentcloud/cdb/v20170320/model/DescribeRollbackTaskDetailRequest.h>
 #include <tencentcloud/cdb/v20170320/model/DescribeRollbackTaskDetailResponse.h>
+#include <tencentcloud/cdb/v20170320/model/DescribeSSLStatusRequest.h>
+#include <tencentcloud/cdb/v20170320/model/DescribeSSLStatusResponse.h>
 #include <tencentcloud/cdb/v20170320/model/DescribeSlowLogDataRequest.h>
 #include <tencentcloud/cdb/v20170320/model/DescribeSlowLogDataResponse.h>
 #include <tencentcloud/cdb/v20170320/model/DescribeSlowLogsRequest.h>
@@ -303,6 +307,8 @@
 #include <tencentcloud/cdb/v20170320/model/OpenDBInstanceEncryptionResponse.h>
 #include <tencentcloud/cdb/v20170320/model/OpenDBInstanceGTIDRequest.h>
 #include <tencentcloud/cdb/v20170320/model/OpenDBInstanceGTIDResponse.h>
+#include <tencentcloud/cdb/v20170320/model/OpenSSLRequest.h>
+#include <tencentcloud/cdb/v20170320/model/OpenSSLResponse.h>
 #include <tencentcloud/cdb/v20170320/model/OpenWanServiceRequest.h>
 #include <tencentcloud/cdb/v20170320/model/OpenWanServiceResponse.h>
 #include <tencentcloud/cdb/v20170320/model/ReleaseIsolatedDBInstancesRequest.h>
@@ -389,6 +395,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::CloseCdbProxyAddressResponse> CloseCdbProxyAddressOutcome;
                 typedef std::future<CloseCdbProxyAddressOutcome> CloseCdbProxyAddressOutcomeCallable;
                 typedef std::function<void(const CdbClient*, const Model::CloseCdbProxyAddressRequest&, CloseCdbProxyAddressOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CloseCdbProxyAddressAsyncHandler;
+                typedef Outcome<Core::Error, Model::CloseSSLResponse> CloseSSLOutcome;
+                typedef std::future<CloseSSLOutcome> CloseSSLOutcomeCallable;
+                typedef std::function<void(const CdbClient*, const Model::CloseSSLRequest&, CloseSSLOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CloseSSLAsyncHandler;
                 typedef Outcome<Core::Error, Model::CloseWanServiceResponse> CloseWanServiceOutcome;
                 typedef std::future<CloseWanServiceOutcome> CloseWanServiceOutcomeCallable;
                 typedef std::function<void(const CdbClient*, const Model::CloseWanServiceRequest&, CloseWanServiceOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CloseWanServiceAsyncHandler;
@@ -641,6 +650,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeRollbackTaskDetailResponse> DescribeRollbackTaskDetailOutcome;
                 typedef std::future<DescribeRollbackTaskDetailOutcome> DescribeRollbackTaskDetailOutcomeCallable;
                 typedef std::function<void(const CdbClient*, const Model::DescribeRollbackTaskDetailRequest&, DescribeRollbackTaskDetailOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeRollbackTaskDetailAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeSSLStatusResponse> DescribeSSLStatusOutcome;
+                typedef std::future<DescribeSSLStatusOutcome> DescribeSSLStatusOutcomeCallable;
+                typedef std::function<void(const CdbClient*, const Model::DescribeSSLStatusRequest&, DescribeSSLStatusOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeSSLStatusAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeSlowLogDataResponse> DescribeSlowLogDataOutcome;
                 typedef std::future<DescribeSlowLogDataOutcome> DescribeSlowLogDataOutcomeCallable;
                 typedef std::function<void(const CdbClient*, const Model::DescribeSlowLogDataRequest&, DescribeSlowLogDataOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeSlowLogDataAsyncHandler;
@@ -779,6 +791,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::OpenDBInstanceGTIDResponse> OpenDBInstanceGTIDOutcome;
                 typedef std::future<OpenDBInstanceGTIDOutcome> OpenDBInstanceGTIDOutcomeCallable;
                 typedef std::function<void(const CdbClient*, const Model::OpenDBInstanceGTIDRequest&, OpenDBInstanceGTIDOutcome, const std::shared_ptr<const AsyncCallerContext>&)> OpenDBInstanceGTIDAsyncHandler;
+                typedef Outcome<Core::Error, Model::OpenSSLResponse> OpenSSLOutcome;
+                typedef std::future<OpenSSLOutcome> OpenSSLOutcomeCallable;
+                typedef std::function<void(const CdbClient*, const Model::OpenSSLRequest&, OpenSSLOutcome, const std::shared_ptr<const AsyncCallerContext>&)> OpenSSLAsyncHandler;
                 typedef Outcome<Core::Error, Model::OpenWanServiceResponse> OpenWanServiceOutcome;
                 typedef std::future<OpenWanServiceOutcome> OpenWanServiceOutcomeCallable;
                 typedef std::function<void(const CdbClient*, const Model::OpenWanServiceRequest&, OpenWanServiceOutcome, const std::shared_ptr<const AsyncCallerContext>&)> OpenWanServiceAsyncHandler;
@@ -934,6 +949,15 @@ namespace TencentCloud
                 CloseCdbProxyAddressOutcome CloseCdbProxyAddress(const Model::CloseCdbProxyAddressRequest &request);
                 void CloseCdbProxyAddressAsync(const Model::CloseCdbProxyAddressRequest& request, const CloseCdbProxyAddressAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 CloseCdbProxyAddressOutcomeCallable CloseCdbProxyAddressCallable(const Model::CloseCdbProxyAddressRequest& request);
+
+                /**
+                 *关闭SSL连接功能。
+                 * @param req CloseSSLRequest
+                 * @return CloseSSLOutcome
+                 */
+                CloseSSLOutcome CloseSSL(const Model::CloseSSLRequest &request);
+                void CloseSSLAsync(const Model::CloseSSLRequest& request, const CloseSSLAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                CloseSSLOutcomeCallable CloseSSLCallable(const Model::CloseSSLRequest& request);
 
                 /**
                  *本接口(CloseWanService)用于关闭云数据库实例的外网访问。关闭外网访问后，外网地址将不可访问。
@@ -1714,6 +1738,15 @@ namespace TencentCloud
                 DescribeRollbackTaskDetailOutcomeCallable DescribeRollbackTaskDetailCallable(const Model::DescribeRollbackTaskDetailRequest& request);
 
                 /**
+                 *查询 SSL 开通情况。如果已经开通 SSL ，会同步返回证书下载链接。
+                 * @param req DescribeSSLStatusRequest
+                 * @return DescribeSSLStatusOutcome
+                 */
+                DescribeSSLStatusOutcome DescribeSSLStatus(const Model::DescribeSSLStatusRequest &request);
+                void DescribeSSLStatusAsync(const Model::DescribeSSLStatusRequest& request, const DescribeSSLStatusAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeSSLStatusOutcomeCallable DescribeSSLStatusCallable(const Model::DescribeSSLStatusRequest& request);
+
+                /**
                  *条件检索实例的慢日志。只允许查看一个月之内的慢日志。
 使用时需要注意：可能存在单条慢日志太大，导致整个http请求的回包太大，进而引发接口超时。一旦发生超时，建议您缩小查询时的Limit参数值，从而降低包的大小，让接口能够及时返回内容。
                  * @param req DescribeSlowLogDataRequest
@@ -2146,6 +2179,15 @@ namespace TencentCloud
                 OpenDBInstanceGTIDOutcome OpenDBInstanceGTID(const Model::OpenDBInstanceGTIDRequest &request);
                 void OpenDBInstanceGTIDAsync(const Model::OpenDBInstanceGTIDRequest& request, const OpenDBInstanceGTIDAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 OpenDBInstanceGTIDOutcomeCallable OpenDBInstanceGTIDCallable(const Model::OpenDBInstanceGTIDRequest& request);
+
+                /**
+                 *开启SSL连接功能。
+                 * @param req OpenSSLRequest
+                 * @return OpenSSLOutcome
+                 */
+                OpenSSLOutcome OpenSSL(const Model::OpenSSLRequest &request);
+                void OpenSSLAsync(const Model::OpenSSLRequest& request, const OpenSSLAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                OpenSSLOutcomeCallable OpenSSLCallable(const Model::OpenSSLRequest& request);
 
                 /**
                  *本接口(OpenWanService)用于开通实例外网访问。

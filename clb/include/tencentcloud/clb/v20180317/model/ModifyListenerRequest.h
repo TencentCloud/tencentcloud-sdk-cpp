@@ -397,6 +397,27 @@ namespace TencentCloud
                      */
                     bool IdleConnectTimeoutHasBeenSet() const;
 
+                    /**
+                     * 获取是否开启SNAT。
+                     * @return SnatEnable 是否开启SNAT。
+                     * 
+                     */
+                    bool GetSnatEnable() const;
+
+                    /**
+                     * 设置是否开启SNAT。
+                     * @param _snatEnable 是否开启SNAT。
+                     * 
+                     */
+                    void SetSnatEnable(const bool& _snatEnable);
+
+                    /**
+                     * 判断参数 SnatEnable 是否已赋值
+                     * @return SnatEnable 是否已赋值
+                     * 
+                     */
+                    bool SnatEnableHasBeenSet() const;
+
                 private:
 
                     /**
@@ -498,6 +519,12 @@ namespace TencentCloud
                      */
                     int64_t m_idleConnectTimeout;
                     bool m_idleConnectTimeoutHasBeenSet;
+
+                    /**
+                     * 是否开启SNAT。
+                     */
+                    bool m_snatEnable;
+                    bool m_snatEnableHasBeenSet;
 
                 };
             }
