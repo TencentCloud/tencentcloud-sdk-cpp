@@ -268,6 +268,206 @@ namespace TencentCloud
                      */
                     bool ModifyTimeHasBeenSet() const;
 
+                    /**
+                     * 获取队列是否持久化，true 为持久化，false 为非持久化
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return Durable 队列是否持久化，true 为持久化，false 为非持久化
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    bool GetDurable() const;
+
+                    /**
+                     * 设置队列是否持久化，true 为持久化，false 为非持久化
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _durable 队列是否持久化，true 为持久化，false 为非持久化
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetDurable(const bool& _durable);
+
+                    /**
+                     * 判断参数 Durable 是否已赋值
+                     * @return Durable 是否已赋值
+                     * 
+                     */
+                    bool DurableHasBeenSet() const;
+
+                    /**
+                     * 获取队列是否为自动删除队列，true 为自动删除，false 为非自动删除
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return AutoDelete 队列是否为自动删除队列，true 为自动删除，false 为非自动删除
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    bool GetAutoDelete() const;
+
+                    /**
+                     * 设置队列是否为自动删除队列，true 为自动删除，false 为非自动删除
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _autoDelete 队列是否为自动删除队列，true 为自动删除，false 为非自动删除
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetAutoDelete(const bool& _autoDelete);
+
+                    /**
+                     * 判断参数 AutoDelete 是否已赋值
+                     * @return AutoDelete 是否已赋值
+                     * 
+                     */
+                    bool AutoDeleteHasBeenSet() const;
+
+                    /**
+                     * 获取队列所属实例 ID
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return InstanceId 队列所属实例 ID
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::string GetInstanceId() const;
+
+                    /**
+                     * 设置队列所属实例 ID
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _instanceId 队列所属实例 ID
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetInstanceId(const std::string& _instanceId);
+
+                    /**
+                     * 判断参数 InstanceId 是否已赋值
+                     * @return InstanceId 是否已赋值
+                     * 
+                     */
+                    bool InstanceIdHasBeenSet() const;
+
+                    /**
+                     * 获取队列所属虚拟主机名称
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return VirtualHost 队列所属虚拟主机名称
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::string GetVirtualHost() const;
+
+                    /**
+                     * 设置队列所属虚拟主机名称
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _virtualHost 队列所属虚拟主机名称
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetVirtualHost(const std::string& _virtualHost);
+
+                    /**
+                     * 判断参数 VirtualHost 是否已赋值
+                     * @return VirtualHost 是否已赋值
+                     * 
+                     */
+                    bool VirtualHostHasBeenSet() const;
+
+                    /**
+                     * 获取队列所在主节点名称
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return Node 队列所在主节点名称
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::string GetNode() const;
+
+                    /**
+                     * 设置队列所在主节点名称
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _node 队列所在主节点名称
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetNode(const std::string& _node);
+
+                    /**
+                     * 判断参数 Node 是否已赋值
+                     * @return Node 是否已赋值
+                     * 
+                     */
+                    bool NodeHasBeenSet() const;
+
+                    /**
+                     * 获取生效的策略名称
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return Policy 生效的策略名称
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::string GetPolicy() const;
+
+                    /**
+                     * 设置生效的策略名称
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _policy 生效的策略名称
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetPolicy(const std::string& _policy);
+
+                    /**
+                     * 判断参数 Policy 是否已赋值
+                     * @return Policy 是否已赋值
+                     * 
+                     */
+                    bool PolicyHasBeenSet() const;
+
+                    /**
+                     * 获取扩展参数 key-value 对象
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return Arguments 扩展参数 key-value 对象
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::string GetArguments() const;
+
+                    /**
+                     * 设置扩展参数 key-value 对象
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _arguments 扩展参数 key-value 对象
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetArguments(const std::string& _arguments);
+
+                    /**
+                     * 判断参数 Arguments 是否已赋值
+                     * @return Arguments 是否已赋值
+                     * 
+                     */
+                    bool ArgumentsHasBeenSet() const;
+
+                    /**
+                     * 获取是否独占队列
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return Exclusive 是否独占队列
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    bool GetExclusive() const;
+
+                    /**
+                     * 设置是否独占队列
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _exclusive 是否独占队列
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetExclusive(const bool& _exclusive);
+
+                    /**
+                     * 判断参数 Exclusive 是否已赋值
+                     * @return Exclusive 是否已赋值
+                     * 
+                     */
+                    bool ExclusiveHasBeenSet() const;
+
                 private:
 
                     /**
@@ -331,6 +531,62 @@ namespace TencentCloud
                      */
                     std::string m_modifyTime;
                     bool m_modifyTimeHasBeenSet;
+
+                    /**
+                     * 队列是否持久化，true 为持久化，false 为非持久化
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    bool m_durable;
+                    bool m_durableHasBeenSet;
+
+                    /**
+                     * 队列是否为自动删除队列，true 为自动删除，false 为非自动删除
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    bool m_autoDelete;
+                    bool m_autoDeleteHasBeenSet;
+
+                    /**
+                     * 队列所属实例 ID
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_instanceId;
+                    bool m_instanceIdHasBeenSet;
+
+                    /**
+                     * 队列所属虚拟主机名称
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_virtualHost;
+                    bool m_virtualHostHasBeenSet;
+
+                    /**
+                     * 队列所在主节点名称
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_node;
+                    bool m_nodeHasBeenSet;
+
+                    /**
+                     * 生效的策略名称
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_policy;
+                    bool m_policyHasBeenSet;
+
+                    /**
+                     * 扩展参数 key-value 对象
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_arguments;
+                    bool m_argumentsHasBeenSet;
+
+                    /**
+                     * 是否独占队列
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    bool m_exclusive;
+                    bool m_exclusiveHasBeenSet;
 
                 };
             }

@@ -43,15 +43,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取创建的项目名(不为空且最长为 200)
-                     * @return Name 创建的项目名(不为空且最长为 200)
+                     * 获取应用名称(不为空且最长为 200)
+                     * @return Name 应用名称(不为空且最长为 200)
                      * 
                      */
                     std::string GetName() const;
 
                     /**
-                     * 设置创建的项目名(不为空且最长为 200)
-                     * @param _name 创建的项目名(不为空且最长为 200)
+                     * 设置应用名称(不为空且最长为 200)
+                     * @param _name 应用名称(不为空且最长为 200)
                      * 
                      */
                     void SetName(const std::string& _name);
@@ -190,15 +190,15 @@ namespace TencentCloud
                     bool URLHasBeenSet() const;
 
                     /**
-                     * 获取创建的项目描述(可选，最长为 1000)
-                     * @return Desc 创建的项目描述(可选，最长为 1000)
+                     * 获取应用描述(可选，最长为 1000)
+                     * @return Desc 应用描述(可选，最长为 1000)
                      * 
                      */
                     std::string GetDesc() const;
 
                     /**
-                     * 设置创建的项目描述(可选，最长为 1000)
-                     * @param _desc 创建的项目描述(可选，最长为 1000)
+                     * 设置应用描述(可选，最长为 1000)
+                     * @param _desc 应用描述(可选，最长为 1000)
                      * 
                      */
                     void SetDesc(const std::string& _desc);
@@ -213,7 +213,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 创建的项目名(不为空且最长为 200)
+                     * 应用名称(不为空且最长为 200)
                      */
                     std::string m_name;
                     bool m_nameHasBeenSet;
@@ -255,7 +255,7 @@ namespace TencentCloud
                     bool m_uRLHasBeenSet;
 
                     /**
-                     * 创建的项目描述(可选，最长为 1000)
+                     * 应用描述(可选，最长为 1000)
                      */
                     std::string m_desc;
                     bool m_descHasBeenSet;

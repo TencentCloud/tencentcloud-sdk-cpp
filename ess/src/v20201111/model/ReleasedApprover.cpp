@@ -26,7 +26,8 @@ ReleasedApprover::ReleasedApprover() :
     m_relievedApproverReceiptIdHasBeenSet(false),
     m_approverTypeHasBeenSet(false),
     m_approverSignComponentTypeHasBeenSet(false),
-    m_approverSignRoleHasBeenSet(false)
+    m_approverSignRoleHasBeenSet(false),
+    m_approverSignSealIdHasBeenSet(false)
 {
 }
 
@@ -95,6 +96,16 @@ CoreInternalOutcome ReleasedApprover::Deserialize(const rapidjson::Value &value)
         m_approverSignRoleHasBeenSet = true;
     }
 
+    if (value.HasMember("ApproverSignSealId") && !value["ApproverSignSealId"].IsNull())
+    {
+        if (!value["ApproverSignSealId"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `ReleasedApprover.ApproverSignSealId` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_approverSignSealId = string(value["ApproverSignSealId"].GetString());
+        m_approverSignSealIdHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -148,6 +159,14 @@ void ReleasedApprover::ToJsonObject(rapidjson::Value &value, rapidjson::Document
         string key = "ApproverSignRole";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_approverSignRole.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_approverSignSealIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ApproverSignSealId";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_approverSignSealId.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -247,5 +266,21 @@ void ReleasedApprover::SetApproverSignRole(const string& _approverSignRole)
 bool ReleasedApprover::ApproverSignRoleHasBeenSet() const
 {
     return m_approverSignRoleHasBeenSet;
+}
+
+string ReleasedApprover::GetApproverSignSealId() const
+{
+    return m_approverSignSealId;
+}
+
+void ReleasedApprover::SetApproverSignSealId(const string& _approverSignSealId)
+{
+    m_approverSignSealId = _approverSignSealId;
+    m_approverSignSealIdHasBeenSet = true;
+}
+
+bool ReleasedApprover::ApproverSignSealIdHasBeenSet() const
+{
+    return m_approverSignSealIdHasBeenSet;
 }
 

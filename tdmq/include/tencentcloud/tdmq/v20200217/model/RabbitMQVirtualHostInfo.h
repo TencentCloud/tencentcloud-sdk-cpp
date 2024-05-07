@@ -314,6 +314,31 @@ namespace TencentCloud
                      */
                     bool MessageRateOutHasBeenSet() const;
 
+                    /**
+                     * 获取是否存在镜像队列策略，true 为存在，false 为不存
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return MirrorQueuePolicyFlag 是否存在镜像队列策略，true 为存在，false 为不存
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    bool GetMirrorQueuePolicyFlag() const;
+
+                    /**
+                     * 设置是否存在镜像队列策略，true 为存在，false 为不存
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _mirrorQueuePolicyFlag 是否存在镜像队列策略，true 为存在，false 为不存
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetMirrorQueuePolicyFlag(const bool& _mirrorQueuePolicyFlag);
+
+                    /**
+                     * 判断参数 MirrorQueuePolicyFlag 是否已赋值
+                     * @return MirrorQueuePolicyFlag 是否已赋值
+                     * 
+                     */
+                    bool MirrorQueuePolicyFlagHasBeenSet() const;
+
                 private:
 
                     /**
@@ -390,6 +415,13 @@ namespace TencentCloud
                      */
                     double m_messageRateOut;
                     bool m_messageRateOutHasBeenSet;
+
+                    /**
+                     * 是否存在镜像队列策略，true 为存在，false 为不存
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    bool m_mirrorQueuePolicyFlag;
+                    bool m_mirrorQueuePolicyFlagHasBeenSet;
 
                 };
             }

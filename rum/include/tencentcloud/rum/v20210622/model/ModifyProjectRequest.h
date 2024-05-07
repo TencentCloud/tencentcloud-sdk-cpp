@@ -64,15 +64,15 @@ namespace TencentCloud
                     bool IDHasBeenSet() const;
 
                     /**
-                     * 获取项目名(可选，不为空且最长为 200)
-                     * @return Name 项目名(可选，不为空且最长为 200)
+                     * 获取应用名称(可选，不为空且最长为 200字符)
+                     * @return Name 应用名称(可选，不为空且最长为 200字符)
                      * 
                      */
                     std::string GetName() const;
 
                     /**
-                     * 设置项目名(可选，不为空且最长为 200)
-                     * @param _name 项目名(可选，不为空且最长为 200)
+                     * 设置应用名称(可选，不为空且最长为 200字符)
+                     * @param _name 应用名称(可选，不为空且最长为 200字符)
                      * 
                      */
                     void SetName(const std::string& _name);
@@ -211,15 +211,15 @@ namespace TencentCloud
                     bool TypeHasBeenSet() const;
 
                     /**
-                     * 获取项目描述(可选，最长为 1000)
-                     * @return Desc 项目描述(可选，最长为 1000)
+                     * 获取应用描述(可选，最长为 1000字符)
+                     * @return Desc 应用描述(可选，最长为 1000字符)
                      * 
                      */
                     std::string GetDesc() const;
 
                     /**
-                     * 设置项目描述(可选，最长为 1000)
-                     * @param _desc 项目描述(可选，最长为 1000)
+                     * 设置应用描述(可选，最长为 1000字符)
+                     * @param _desc 应用描述(可选，最长为 1000字符)
                      * 
                      */
                     void SetDesc(const std::string& _desc);
@@ -240,7 +240,7 @@ namespace TencentCloud
                     bool m_iDHasBeenSet;
 
                     /**
-                     * 项目名(可选，不为空且最长为 200)
+                     * 应用名称(可选，不为空且最长为 200字符)
                      */
                     std::string m_name;
                     bool m_nameHasBeenSet;
@@ -282,7 +282,7 @@ namespace TencentCloud
                     bool m_typeHasBeenSet;
 
                     /**
-                     * 项目描述(可选，最长为 1000)
+                     * 应用描述(可选，最长为 1000字符)
                      */
                     std::string m_desc;
                     bool m_descHasBeenSet;

@@ -437,6 +437,31 @@ namespace TencentCloud
                      */
                     bool SyntaxRuleHasBeenSet() const;
 
+                    /**
+                     * 获取是否开启投递服务日志。1：关闭，2：开启。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return HasServicesLog 是否开启投递服务日志。1：关闭，2：开启。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    uint64_t GetHasServicesLog() const;
+
+                    /**
+                     * 设置是否开启投递服务日志。1：关闭，2：开启。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _hasServicesLog 是否开启投递服务日志。1：关闭，2：开启。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetHasServicesLog(const uint64_t& _hasServicesLog);
+
+                    /**
+                     * 判断参数 HasServicesLog 是否已赋值
+                     * @return HasServicesLog 是否已赋值
+                     * 
+                     */
+                    bool HasServicesLogHasBeenSet() const;
+
                 private:
 
                     /**
@@ -549,6 +574,13 @@ namespace TencentCloud
                      */
                     uint64_t m_syntaxRule;
                     bool m_syntaxRuleHasBeenSet;
+
+                    /**
+                     * 是否开启投递服务日志。1：关闭，2：开启。
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    uint64_t m_hasServicesLog;
+                    bool m_hasServicesLogHasBeenSet;
 
                 };
             }

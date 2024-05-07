@@ -35,7 +35,7 @@ namespace TencentCloud
             namespace Model
             {
                 /**
-                * 页面录制视频参数
+                * 页面录制控制参数
                 */
                 class WebRecordVideoParams : public AbstractModel
                 {
@@ -113,6 +113,35 @@ namespace TencentCloud
                      */
                     bool FormatHasBeenSet() const;
 
+                    /**
+                     * 获取如果是aac或者mp4文件格式，超过长度限制后，系统会自动拆分视频文件。单位：分钟。默认为1440min（24h），取值范围为1-1440。【单文件限制最大为2G，满足文件大小 >2G 或录制时长度 > 24h任意一个条件，文件都会自动切分】
+Hls 格式录制此参数不生效。
+示例值：1440
+                     * @return MaxMediaFileDuration 如果是aac或者mp4文件格式，超过长度限制后，系统会自动拆分视频文件。单位：分钟。默认为1440min（24h），取值范围为1-1440。【单文件限制最大为2G，满足文件大小 >2G 或录制时长度 > 24h任意一个条件，文件都会自动切分】
+Hls 格式录制此参数不生效。
+示例值：1440
+                     * 
+                     */
+                    int64_t GetMaxMediaFileDuration() const;
+
+                    /**
+                     * 设置如果是aac或者mp4文件格式，超过长度限制后，系统会自动拆分视频文件。单位：分钟。默认为1440min（24h），取值范围为1-1440。【单文件限制最大为2G，满足文件大小 >2G 或录制时长度 > 24h任意一个条件，文件都会自动切分】
+Hls 格式录制此参数不生效。
+示例值：1440
+                     * @param _maxMediaFileDuration 如果是aac或者mp4文件格式，超过长度限制后，系统会自动拆分视频文件。单位：分钟。默认为1440min（24h），取值范围为1-1440。【单文件限制最大为2G，满足文件大小 >2G 或录制时长度 > 24h任意一个条件，文件都会自动切分】
+Hls 格式录制此参数不生效。
+示例值：1440
+                     * 
+                     */
+                    void SetMaxMediaFileDuration(const int64_t& _maxMediaFileDuration);
+
+                    /**
+                     * 判断参数 MaxMediaFileDuration 是否已赋值
+                     * @return MaxMediaFileDuration 是否已赋值
+                     * 
+                     */
+                    bool MaxMediaFileDurationHasBeenSet() const;
+
                 private:
 
                     /**
@@ -133,6 +162,14 @@ namespace TencentCloud
                      */
                     std::string m_format;
                     bool m_formatHasBeenSet;
+
+                    /**
+                     * 如果是aac或者mp4文件格式，超过长度限制后，系统会自动拆分视频文件。单位：分钟。默认为1440min（24h），取值范围为1-1440。【单文件限制最大为2G，满足文件大小 >2G 或录制时长度 > 24h任意一个条件，文件都会自动切分】
+Hls 格式录制此参数不生效。
+示例值：1440
+                     */
+                    int64_t m_maxMediaFileDuration;
+                    bool m_maxMediaFileDurationHasBeenSet;
 
                 };
             }

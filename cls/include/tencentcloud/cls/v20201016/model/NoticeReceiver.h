@@ -146,15 +146,15 @@ namespace TencentCloud
                     bool ReceiverChannelsHasBeenSet() const;
 
                     /**
-                     * 获取允许接收信息的开始时间。
-                     * @return StartTime 允许接收信息的开始时间。
+                     * 获取允许接收信息的开始时间。格式：`15:04:05`，必填。
+                     * @return StartTime 允许接收信息的开始时间。格式：`15:04:05`，必填。
                      * 
                      */
                     std::string GetStartTime() const;
 
                     /**
-                     * 设置允许接收信息的开始时间。
-                     * @param _startTime 允许接收信息的开始时间。
+                     * 设置允许接收信息的开始时间。格式：`15:04:05`，必填。
+                     * @param _startTime 允许接收信息的开始时间。格式：`15:04:05`，必填。
                      * 
                      */
                     void SetStartTime(const std::string& _startTime);
@@ -167,15 +167,15 @@ namespace TencentCloud
                     bool StartTimeHasBeenSet() const;
 
                     /**
-                     * 获取允许接收信息的结束时间。
-                     * @return EndTime 允许接收信息的结束时间。
+                     * 获取允许接收信息的结束时间。格式：`15:04:05`，必填。
+                     * @return EndTime 允许接收信息的结束时间。格式：`15:04:05`，必填。
                      * 
                      */
                     std::string GetEndTime() const;
 
                     /**
-                     * 设置允许接收信息的结束时间。
-                     * @param _endTime 允许接收信息的结束时间。
+                     * 设置允许接收信息的结束时间。格式：`15:04:05`，必填。
+                     * @param _endTime 允许接收信息的结束时间。格式：`15:04:05`，必填。
                      * 
                      */
                     void SetEndTime(const std::string& _endTime);
@@ -190,11 +190,11 @@ namespace TencentCloud
                     /**
                      * 获取位序。
 
-- 入参无效。
+- 入参时无效。
 - 出参时有效。
                      * @return Index 位序。
 
-- 入参无效。
+- 入参时无效。
 - 出参时有效。
                      * 
                      */
@@ -203,11 +203,11 @@ namespace TencentCloud
                     /**
                      * 设置位序。
 
-- 入参无效。
+- 入参时无效。
 - 出参时有效。
                      * @param _index 位序。
 
-- 入参无效。
+- 入参时无效。
 - 出参时有效。
                      * 
                      */
@@ -250,13 +250,13 @@ namespace TencentCloud
                     bool m_receiverChannelsHasBeenSet;
 
                     /**
-                     * 允许接收信息的开始时间。
+                     * 允许接收信息的开始时间。格式：`15:04:05`，必填。
                      */
                     std::string m_startTime;
                     bool m_startTimeHasBeenSet;
 
                     /**
-                     * 允许接收信息的结束时间。
+                     * 允许接收信息的结束时间。格式：`15:04:05`，必填。
                      */
                     std::string m_endTime;
                     bool m_endTimeHasBeenSet;
@@ -264,7 +264,7 @@ namespace TencentCloud
                     /**
                      * 位序。
 
-- 入参无效。
+- 入参时无效。
 - 出参时有效。
                      */
                     int64_t m_index;

@@ -64,15 +64,15 @@ namespace TencentCloud
                     bool TimeoutHasBeenSet() const;
 
                     /**
-                     * 获取bucket类型，不填默认web，2:app
-                     * @return FileType bucket类型，不填默认web，2:app
+                     * 获取bucket类型，不填默认1:web，2:app
+                     * @return FileType bucket类型，不填默认1:web，2:app
                      * 
                      */
                     int64_t GetFileType() const;
 
                     /**
-                     * 设置bucket类型，不填默认web，2:app
-                     * @param _fileType bucket类型，不填默认web，2:app
+                     * 设置bucket类型，不填默认1:web，2:app
+                     * @param _fileType bucket类型，不填默认1:web，2:app
                      * 
                      */
                     void SetFileType(const int64_t& _fileType);
@@ -93,7 +93,7 @@ namespace TencentCloud
                     bool m_timeoutHasBeenSet;
 
                     /**
-                     * bucket类型，不填默认web，2:app
+                     * bucket类型，不填默认1:web，2:app
                      */
                     int64_t m_fileType;
                     bool m_fileTypeHasBeenSet;

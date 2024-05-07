@@ -106,14 +106,18 @@ namespace TencentCloud
 
                     /**
                      * 获取回调方法。可选值：
-- POST
+- POST（默认值）
 - PUT
-默认值为POST。CallbackType为Http时为必选。
+
+注意：
+- 参数CallbackType为Http时为必选。
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Method 回调方法。可选值：
-- POST
+- POST（默认值）
 - PUT
-默认值为POST。CallbackType为Http时为必选。
+
+注意：
+- 参数CallbackType为Http时为必选。
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -121,14 +125,18 @@ namespace TencentCloud
 
                     /**
                      * 设置回调方法。可选值：
-- POST
+- POST（默认值）
 - PUT
-默认值为POST。CallbackType为Http时为必选。
+
+注意：
+- 参数CallbackType为Http时为必选。
 注意：此字段可能返回 null，表示取不到有效值。
                      * @param _method 回调方法。可选值：
-- POST
+- POST（默认值）
 - PUT
-默认值为POST。CallbackType为Http时为必选。
+
+注意：
+- 参数CallbackType为Http时为必选。
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -248,9 +256,11 @@ namespace TencentCloud
 
                     /**
                      * 回调方法。可选值：
-- POST
+- POST（默认值）
 - PUT
-默认值为POST。CallbackType为Http时为必选。
+
+注意：
+- 参数CallbackType为Http时为必选。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_method;

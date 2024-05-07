@@ -35,7 +35,7 @@ namespace TencentCloud
             namespace Model
             {
                 /**
-                * 单条消息
+                * 会话内容
                 */
                 class Message : public AbstractModel
                 {

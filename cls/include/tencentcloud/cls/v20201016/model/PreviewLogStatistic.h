@@ -68,15 +68,15 @@ namespace TencentCloud
                     bool LogContentHasBeenSet() const;
 
                     /**
-                     * 获取行号
-                     * @return LineNum 行号
+                     * 获取行号。从0开始
+                     * @return LineNum 行号。从0开始
                      * 
                      */
                     int64_t GetLineNum() const;
 
                     /**
-                     * 设置行号
-                     * @param _lineNum 行号
+                     * 设置行号。从0开始
+                     * @param _lineNum 行号。从0开始
                      * 
                      */
                     void SetLineNum(const int64_t& _lineNum);
@@ -110,15 +110,15 @@ namespace TencentCloud
                     bool DstTopicIdHasBeenSet() const;
 
                     /**
-                     * 获取失败错误码， 空字符串""表示正常
-                     * @return FailReason 失败错误码， 空字符串""表示正常
+                     * 获取失败错误信息， 空字符串""表示正常
+                     * @return FailReason 失败错误信息， 空字符串""表示正常
                      * 
                      */
                     std::string GetFailReason() const;
 
                     /**
-                     * 设置失败错误码， 空字符串""表示正常
-                     * @param _failReason 失败错误码， 空字符串""表示正常
+                     * 设置失败错误信息， 空字符串""表示正常
+                     * @param _failReason 失败错误信息， 空字符串""表示正常
                      * 
                      */
                     void SetFailReason(const std::string& _failReason);
@@ -131,15 +131,27 @@ namespace TencentCloud
                     bool FailReasonHasBeenSet() const;
 
                     /**
-                     * 获取日志时间戳
-                     * @return Time 日志时间戳
+                     * 获取日志时间，格式：`2024-05-07 17:13:17.105`
+
+- 入参时无效
+- 出参时有效，为日志中的时间格式
+                     * @return Time 日志时间，格式：`2024-05-07 17:13:17.105`
+
+- 入参时无效
+- 出参时有效，为日志中的时间格式
                      * 
                      */
                     std::string GetTime() const;
 
                     /**
-                     * 设置日志时间戳
-                     * @param _time 日志时间戳
+                     * 设置日志时间，格式：`2024-05-07 17:13:17.105`
+
+- 入参时无效
+- 出参时有效，为日志中的时间格式
+                     * @param _time 日志时间，格式：`2024-05-07 17:13:17.105`
+
+- 入参时无效
+- 出参时有效，为日志中的时间格式
                      * 
                      */
                     void SetTime(const std::string& _time);
@@ -156,7 +168,7 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return DstTopicName 目标topic-name
 注意：此字段可能返回 null，表示取不到有效值。
-                     * 
+                     * @deprecated
                      */
                     std::string GetDstTopicName() const;
 
@@ -165,14 +177,14 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @param _dstTopicName 目标topic-name
 注意：此字段可能返回 null，表示取不到有效值。
-                     * 
+                     * @deprecated
                      */
                     void SetDstTopicName(const std::string& _dstTopicName);
 
                     /**
                      * 判断参数 DstTopicName 是否已赋值
                      * @return DstTopicName 是否已赋值
-                     * 
+                     * @deprecated
                      */
                     bool DstTopicNameHasBeenSet() const;
 
@@ -185,7 +197,7 @@ namespace TencentCloud
                     bool m_logContentHasBeenSet;
 
                     /**
-                     * 行号
+                     * 行号。从0开始
                      */
                     int64_t m_lineNum;
                     bool m_lineNumHasBeenSet;
@@ -197,13 +209,16 @@ namespace TencentCloud
                     bool m_dstTopicIdHasBeenSet;
 
                     /**
-                     * 失败错误码， 空字符串""表示正常
+                     * 失败错误信息， 空字符串""表示正常
                      */
                     std::string m_failReason;
                     bool m_failReasonHasBeenSet;
 
                     /**
-                     * 日志时间戳
+                     * 日志时间，格式：`2024-05-07 17:13:17.105`
+
+- 入参时无效
+- 出参时有效，为日志中的时间格式
                      */
                     std::string m_time;
                     bool m_timeHasBeenSet;

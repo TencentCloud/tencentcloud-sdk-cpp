@@ -210,15 +210,15 @@ namespace TencentCloud
                     bool RoomIdTypeHasBeenSet() const;
 
                     /**
-                     * 获取混流的转码参数，录制模式为混流的时候可以设置。
-                     * @return MixTranscodeParams 混流的转码参数，录制模式为混流的时候可以设置。
+                     * 获取合流的转码参数，录制模式为合流的时候可以设置。
+                     * @return MixTranscodeParams 合流的转码参数，录制模式为合流的时候可以设置。
                      * 
                      */
                     MixTranscodeParams GetMixTranscodeParams() const;
 
                     /**
-                     * 设置混流的转码参数，录制模式为混流的时候可以设置。
-                     * @param _mixTranscodeParams 混流的转码参数，录制模式为混流的时候可以设置。
+                     * 设置合流的转码参数，录制模式为合流的时候可以设置。
+                     * @param _mixTranscodeParams 合流的转码参数，录制模式为合流的时候可以设置。
                      * 
                      */
                     void SetMixTranscodeParams(const MixTranscodeParams& _mixTranscodeParams);
@@ -231,15 +231,15 @@ namespace TencentCloud
                     bool MixTranscodeParamsHasBeenSet() const;
 
                     /**
-                     * 获取混流的布局参数，录制模式为混流的时候可以设置。
-                     * @return MixLayoutParams 混流的布局参数，录制模式为混流的时候可以设置。
+                     * 获取合流的布局参数，录制模式为合流的时候可以设置。
+                     * @return MixLayoutParams 合流的布局参数，录制模式为合流的时候可以设置。
                      * 
                      */
                     MixLayoutParams GetMixLayoutParams() const;
 
                     /**
-                     * 设置混流的布局参数，录制模式为混流的时候可以设置。
-                     * @param _mixLayoutParams 混流的布局参数，录制模式为混流的时候可以设置。
+                     * 设置合流的布局参数，录制模式为合流的时候可以设置。
+                     * @param _mixLayoutParams 合流的布局参数，录制模式为合流的时候可以设置。
                      * 
                      */
                     void SetMixLayoutParams(const MixLayoutParams& _mixLayoutParams);
@@ -342,13 +342,13 @@ namespace TencentCloud
                     bool m_roomIdTypeHasBeenSet;
 
                     /**
-                     * 混流的转码参数，录制模式为混流的时候可以设置。
+                     * 合流的转码参数，录制模式为合流的时候可以设置。
                      */
                     MixTranscodeParams m_mixTranscodeParams;
                     bool m_mixTranscodeParamsHasBeenSet;
 
                     /**
-                     * 混流的布局参数，录制模式为混流的时候可以设置。
+                     * 合流的布局参数，录制模式为合流的时候可以设置。
                      */
                     MixLayoutParams m_mixLayoutParams;
                     bool m_mixLayoutParamsHasBeenSet;

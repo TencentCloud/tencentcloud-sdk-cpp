@@ -40,7 +40,9 @@ RabbitMQClusterInfo::RabbitMQClusterInfo() :
     m_exceptionInformationHasBeenSet(false),
     m_clusterStatusHasBeenSet(false),
     m_autoRenewFlagHasBeenSet(false),
-    m_mirrorQueuePolicyFlagHasBeenSet(false)
+    m_mirrorQueuePolicyFlagHasBeenSet(false),
+    m_messageConsumeRateHasBeenSet(false),
+    m_clusterVersionHasBeenSet(false)
 {
 }
 
@@ -262,6 +264,26 @@ CoreInternalOutcome RabbitMQClusterInfo::Deserialize(const rapidjson::Value &val
         m_mirrorQueuePolicyFlagHasBeenSet = true;
     }
 
+    if (value.HasMember("MessageConsumeRate") && !value["MessageConsumeRate"].IsNull())
+    {
+        if (!value["MessageConsumeRate"].IsLosslessDouble())
+        {
+            return CoreInternalOutcome(Core::Error("response `RabbitMQClusterInfo.MessageConsumeRate` IsLosslessDouble=false incorrectly").SetRequestId(requestId));
+        }
+        m_messageConsumeRate = value["MessageConsumeRate"].GetDouble();
+        m_messageConsumeRateHasBeenSet = true;
+    }
+
+    if (value.HasMember("ClusterVersion") && !value["ClusterVersion"].IsNull())
+    {
+        if (!value["ClusterVersion"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `RabbitMQClusterInfo.ClusterVersion` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_clusterVersion = string(value["ClusterVersion"].GetString());
+        m_clusterVersionHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -439,6 +461,22 @@ void RabbitMQClusterInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Docum
         string key = "MirrorQueuePolicyFlag";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_mirrorQueuePolicyFlag, allocator);
+    }
+
+    if (m_messageConsumeRateHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "MessageConsumeRate";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_messageConsumeRate, allocator);
+    }
+
+    if (m_clusterVersionHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ClusterVersion";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_clusterVersion.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -762,5 +800,37 @@ void RabbitMQClusterInfo::SetMirrorQueuePolicyFlag(const int64_t& _mirrorQueuePo
 bool RabbitMQClusterInfo::MirrorQueuePolicyFlagHasBeenSet() const
 {
     return m_mirrorQueuePolicyFlagHasBeenSet;
+}
+
+double RabbitMQClusterInfo::GetMessageConsumeRate() const
+{
+    return m_messageConsumeRate;
+}
+
+void RabbitMQClusterInfo::SetMessageConsumeRate(const double& _messageConsumeRate)
+{
+    m_messageConsumeRate = _messageConsumeRate;
+    m_messageConsumeRateHasBeenSet = true;
+}
+
+bool RabbitMQClusterInfo::MessageConsumeRateHasBeenSet() const
+{
+    return m_messageConsumeRateHasBeenSet;
+}
+
+string RabbitMQClusterInfo::GetClusterVersion() const
+{
+    return m_clusterVersion;
+}
+
+void RabbitMQClusterInfo::SetClusterVersion(const string& _clusterVersion)
+{
+    m_clusterVersion = _clusterVersion;
+    m_clusterVersionHasBeenSet = true;
+}
+
+bool RabbitMQClusterInfo::ClusterVersionHasBeenSet() const
+{
+    return m_clusterVersionHasBeenSet;
 }
 

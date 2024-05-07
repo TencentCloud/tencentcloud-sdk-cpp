@@ -31,7 +31,8 @@ RabbitMQVirtualHostInfo::RabbitMQVirtualHostInfo() :
     m_statusHasBeenSet(false),
     m_messageHeapCountHasBeenSet(false),
     m_messageRateInHasBeenSet(false),
-    m_messageRateOutHasBeenSet(false)
+    m_messageRateOutHasBeenSet(false),
+    m_mirrorQueuePolicyFlagHasBeenSet(false)
 {
 }
 
@@ -160,6 +161,16 @@ CoreInternalOutcome RabbitMQVirtualHostInfo::Deserialize(const rapidjson::Value 
         m_messageRateOutHasBeenSet = true;
     }
 
+    if (value.HasMember("MirrorQueuePolicyFlag") && !value["MirrorQueuePolicyFlag"].IsNull())
+    {
+        if (!value["MirrorQueuePolicyFlag"].IsBool())
+        {
+            return CoreInternalOutcome(Core::Error("response `RabbitMQVirtualHostInfo.MirrorQueuePolicyFlag` IsBool=false incorrectly").SetRequestId(requestId));
+        }
+        m_mirrorQueuePolicyFlag = value["MirrorQueuePolicyFlag"].GetBool();
+        m_mirrorQueuePolicyFlagHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -259,6 +270,14 @@ void RabbitMQVirtualHostInfo::ToJsonObject(rapidjson::Value &value, rapidjson::D
         string key = "MessageRateOut";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_messageRateOut, allocator);
+    }
+
+    if (m_mirrorQueuePolicyFlagHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "MirrorQueuePolicyFlag";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_mirrorQueuePolicyFlag, allocator);
     }
 
 }
@@ -438,5 +457,21 @@ void RabbitMQVirtualHostInfo::SetMessageRateOut(const double& _messageRateOut)
 bool RabbitMQVirtualHostInfo::MessageRateOutHasBeenSet() const
 {
     return m_messageRateOutHasBeenSet;
+}
+
+bool RabbitMQVirtualHostInfo::GetMirrorQueuePolicyFlag() const
+{
+    return m_mirrorQueuePolicyFlag;
+}
+
+void RabbitMQVirtualHostInfo::SetMirrorQueuePolicyFlag(const bool& _mirrorQueuePolicyFlag)
+{
+    m_mirrorQueuePolicyFlag = _mirrorQueuePolicyFlag;
+    m_mirrorQueuePolicyFlagHasBeenSet = true;
+}
+
+bool RabbitMQVirtualHostInfo::MirrorQueuePolicyFlagHasBeenSet() const
+{
+    return m_mirrorQueuePolicyFlagHasBeenSet;
 }
 

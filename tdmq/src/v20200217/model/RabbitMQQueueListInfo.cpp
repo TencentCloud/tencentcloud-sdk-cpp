@@ -29,7 +29,15 @@ RabbitMQQueueListInfo::RabbitMQQueueListInfo() :
     m_messageRateInHasBeenSet(false),
     m_messageRateOutHasBeenSet(false),
     m_createTimeHasBeenSet(false),
-    m_modifyTimeHasBeenSet(false)
+    m_modifyTimeHasBeenSet(false),
+    m_durableHasBeenSet(false),
+    m_autoDeleteHasBeenSet(false),
+    m_instanceIdHasBeenSet(false),
+    m_virtualHostHasBeenSet(false),
+    m_nodeHasBeenSet(false),
+    m_policyHasBeenSet(false),
+    m_argumentsHasBeenSet(false),
+    m_exclusiveHasBeenSet(false)
 {
 }
 
@@ -135,6 +143,86 @@ CoreInternalOutcome RabbitMQQueueListInfo::Deserialize(const rapidjson::Value &v
         m_modifyTimeHasBeenSet = true;
     }
 
+    if (value.HasMember("Durable") && !value["Durable"].IsNull())
+    {
+        if (!value["Durable"].IsBool())
+        {
+            return CoreInternalOutcome(Core::Error("response `RabbitMQQueueListInfo.Durable` IsBool=false incorrectly").SetRequestId(requestId));
+        }
+        m_durable = value["Durable"].GetBool();
+        m_durableHasBeenSet = true;
+    }
+
+    if (value.HasMember("AutoDelete") && !value["AutoDelete"].IsNull())
+    {
+        if (!value["AutoDelete"].IsBool())
+        {
+            return CoreInternalOutcome(Core::Error("response `RabbitMQQueueListInfo.AutoDelete` IsBool=false incorrectly").SetRequestId(requestId));
+        }
+        m_autoDelete = value["AutoDelete"].GetBool();
+        m_autoDeleteHasBeenSet = true;
+    }
+
+    if (value.HasMember("InstanceId") && !value["InstanceId"].IsNull())
+    {
+        if (!value["InstanceId"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `RabbitMQQueueListInfo.InstanceId` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_instanceId = string(value["InstanceId"].GetString());
+        m_instanceIdHasBeenSet = true;
+    }
+
+    if (value.HasMember("VirtualHost") && !value["VirtualHost"].IsNull())
+    {
+        if (!value["VirtualHost"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `RabbitMQQueueListInfo.VirtualHost` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_virtualHost = string(value["VirtualHost"].GetString());
+        m_virtualHostHasBeenSet = true;
+    }
+
+    if (value.HasMember("Node") && !value["Node"].IsNull())
+    {
+        if (!value["Node"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `RabbitMQQueueListInfo.Node` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_node = string(value["Node"].GetString());
+        m_nodeHasBeenSet = true;
+    }
+
+    if (value.HasMember("Policy") && !value["Policy"].IsNull())
+    {
+        if (!value["Policy"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `RabbitMQQueueListInfo.Policy` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_policy = string(value["Policy"].GetString());
+        m_policyHasBeenSet = true;
+    }
+
+    if (value.HasMember("Arguments") && !value["Arguments"].IsNull())
+    {
+        if (!value["Arguments"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `RabbitMQQueueListInfo.Arguments` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_arguments = string(value["Arguments"].GetString());
+        m_argumentsHasBeenSet = true;
+    }
+
+    if (value.HasMember("Exclusive") && !value["Exclusive"].IsNull())
+    {
+        if (!value["Exclusive"].IsBool())
+        {
+            return CoreInternalOutcome(Core::Error("response `RabbitMQQueueListInfo.Exclusive` IsBool=false incorrectly").SetRequestId(requestId));
+        }
+        m_exclusive = value["Exclusive"].GetBool();
+        m_exclusiveHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -213,6 +301,70 @@ void RabbitMQQueueListInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Doc
         string key = "ModifyTime";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_modifyTime.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_durableHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Durable";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_durable, allocator);
+    }
+
+    if (m_autoDeleteHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "AutoDelete";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_autoDelete, allocator);
+    }
+
+    if (m_instanceIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "InstanceId";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_instanceId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_virtualHostHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "VirtualHost";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_virtualHost.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_nodeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Node";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_node.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_policyHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Policy";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_policy.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_argumentsHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Arguments";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_arguments.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_exclusiveHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Exclusive";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_exclusive, allocator);
     }
 
 }
@@ -360,5 +512,133 @@ void RabbitMQQueueListInfo::SetModifyTime(const string& _modifyTime)
 bool RabbitMQQueueListInfo::ModifyTimeHasBeenSet() const
 {
     return m_modifyTimeHasBeenSet;
+}
+
+bool RabbitMQQueueListInfo::GetDurable() const
+{
+    return m_durable;
+}
+
+void RabbitMQQueueListInfo::SetDurable(const bool& _durable)
+{
+    m_durable = _durable;
+    m_durableHasBeenSet = true;
+}
+
+bool RabbitMQQueueListInfo::DurableHasBeenSet() const
+{
+    return m_durableHasBeenSet;
+}
+
+bool RabbitMQQueueListInfo::GetAutoDelete() const
+{
+    return m_autoDelete;
+}
+
+void RabbitMQQueueListInfo::SetAutoDelete(const bool& _autoDelete)
+{
+    m_autoDelete = _autoDelete;
+    m_autoDeleteHasBeenSet = true;
+}
+
+bool RabbitMQQueueListInfo::AutoDeleteHasBeenSet() const
+{
+    return m_autoDeleteHasBeenSet;
+}
+
+string RabbitMQQueueListInfo::GetInstanceId() const
+{
+    return m_instanceId;
+}
+
+void RabbitMQQueueListInfo::SetInstanceId(const string& _instanceId)
+{
+    m_instanceId = _instanceId;
+    m_instanceIdHasBeenSet = true;
+}
+
+bool RabbitMQQueueListInfo::InstanceIdHasBeenSet() const
+{
+    return m_instanceIdHasBeenSet;
+}
+
+string RabbitMQQueueListInfo::GetVirtualHost() const
+{
+    return m_virtualHost;
+}
+
+void RabbitMQQueueListInfo::SetVirtualHost(const string& _virtualHost)
+{
+    m_virtualHost = _virtualHost;
+    m_virtualHostHasBeenSet = true;
+}
+
+bool RabbitMQQueueListInfo::VirtualHostHasBeenSet() const
+{
+    return m_virtualHostHasBeenSet;
+}
+
+string RabbitMQQueueListInfo::GetNode() const
+{
+    return m_node;
+}
+
+void RabbitMQQueueListInfo::SetNode(const string& _node)
+{
+    m_node = _node;
+    m_nodeHasBeenSet = true;
+}
+
+bool RabbitMQQueueListInfo::NodeHasBeenSet() const
+{
+    return m_nodeHasBeenSet;
+}
+
+string RabbitMQQueueListInfo::GetPolicy() const
+{
+    return m_policy;
+}
+
+void RabbitMQQueueListInfo::SetPolicy(const string& _policy)
+{
+    m_policy = _policy;
+    m_policyHasBeenSet = true;
+}
+
+bool RabbitMQQueueListInfo::PolicyHasBeenSet() const
+{
+    return m_policyHasBeenSet;
+}
+
+string RabbitMQQueueListInfo::GetArguments() const
+{
+    return m_arguments;
+}
+
+void RabbitMQQueueListInfo::SetArguments(const string& _arguments)
+{
+    m_arguments = _arguments;
+    m_argumentsHasBeenSet = true;
+}
+
+bool RabbitMQQueueListInfo::ArgumentsHasBeenSet() const
+{
+    return m_argumentsHasBeenSet;
+}
+
+bool RabbitMQQueueListInfo::GetExclusive() const
+{
+    return m_exclusive;
+}
+
+void RabbitMQQueueListInfo::SetExclusive(const bool& _exclusive)
+{
+    m_exclusive = _exclusive;
+    m_exclusiveHasBeenSet = true;
+}
+
+bool RabbitMQQueueListInfo::ExclusiveHasBeenSet() const
+{
+    return m_exclusiveHasBeenSet;
 }
 

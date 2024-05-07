@@ -67,15 +67,23 @@ namespace TencentCloud
                     bool GroupNameHasBeenSet() const;
 
                     /**
-                     * 获取创建机器组类型。Type：ip，Values中为ip字符串列表创建机器组；Type：label，Values中为标签字符串列表创建机器组。
-                     * @return MachineGroupType 创建机器组类型。Type：ip，Values中为ip字符串列表创建机器组；Type：label，Values中为标签字符串列表创建机器组。
+                     * 获取创建机器组类型。取值如下：
+- Type：ip，Values中为ip字符串列表创建机器组
+- Type：label，Values中为标签字符串列表创建机器组
+                     * @return MachineGroupType 创建机器组类型。取值如下：
+- Type：ip，Values中为ip字符串列表创建机器组
+- Type：label，Values中为标签字符串列表创建机器组
                      * 
                      */
                     MachineGroupTypeInfo GetMachineGroupType() const;
 
                     /**
-                     * 设置创建机器组类型。Type：ip，Values中为ip字符串列表创建机器组；Type：label，Values中为标签字符串列表创建机器组。
-                     * @param _machineGroupType 创建机器组类型。Type：ip，Values中为ip字符串列表创建机器组；Type：label，Values中为标签字符串列表创建机器组。
+                     * 设置创建机器组类型。取值如下：
+- Type：ip，Values中为ip字符串列表创建机器组
+- Type：label，Values中为标签字符串列表创建机器组
+                     * @param _machineGroupType 创建机器组类型。取值如下：
+- Type：ip，Values中为ip字符串列表创建机器组
+- Type：label，Values中为标签字符串列表创建机器组
                      * 
                      */
                     void SetMachineGroupType(const MachineGroupTypeInfo& _machineGroupType);
@@ -235,15 +243,23 @@ namespace TencentCloud
                     bool MetaTagsHasBeenSet() const;
 
                     /**
-                     * 获取系统类型，默认0，0：Linux，1: Windows
-                     * @return OSType 系统类型，默认0，0：Linux，1: Windows
+                     * 获取系统类型，取值如下：
+- 0：Linux （默认值）
+- 1：Windows
+                     * @return OSType 系统类型，取值如下：
+- 0：Linux （默认值）
+- 1：Windows
                      * 
                      */
                     uint64_t GetOSType() const;
 
                     /**
-                     * 设置系统类型，默认0，0：Linux，1: Windows
-                     * @param _oSType 系统类型，默认0，0：Linux，1: Windows
+                     * 设置系统类型，取值如下：
+- 0：Linux （默认值）
+- 1：Windows
+                     * @param _oSType 系统类型，取值如下：
+- 0：Linux （默认值）
+- 1：Windows
                      * 
                      */
                     void SetOSType(const uint64_t& _oSType);
@@ -264,7 +280,9 @@ namespace TencentCloud
                     bool m_groupNameHasBeenSet;
 
                     /**
-                     * 创建机器组类型。Type：ip，Values中为ip字符串列表创建机器组；Type：label，Values中为标签字符串列表创建机器组。
+                     * 创建机器组类型。取值如下：
+- Type：ip，Values中为ip字符串列表创建机器组
+- Type：label，Values中为标签字符串列表创建机器组
                      */
                     MachineGroupTypeInfo m_machineGroupType;
                     bool m_machineGroupTypeHasBeenSet;
@@ -312,7 +330,9 @@ namespace TencentCloud
                     bool m_metaTagsHasBeenSet;
 
                     /**
-                     * 系统类型，默认0，0：Linux，1: Windows
+                     * 系统类型，取值如下：
+- 0：Linux （默认值）
+- 1：Windows
                      */
                     uint64_t m_oSType;
                     bool m_oSTypeHasBeenSet;

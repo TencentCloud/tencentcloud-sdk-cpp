@@ -43,27 +43,6 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取实例名称
-                     * @return InstanceName 实例名称
-                     * 
-                     */
-                    std::string GetInstanceName() const;
-
-                    /**
-                     * 设置实例名称
-                     * @param _instanceName 实例名称
-                     * 
-                     */
-                    void SetInstanceName(const std::string& _instanceName);
-
-                    /**
-                     * 判断参数 InstanceName 是否已赋值
-                     * @return InstanceName 是否已赋值
-                     * 
-                     */
-                    bool InstanceNameHasBeenSet() const;
-
-                    /**
                      * 获取实例 ID
                      * @return InstanceId 实例 ID
                      * 
@@ -83,6 +62,27 @@ namespace TencentCloud
                      * 
                      */
                     bool InstanceIdHasBeenSet() const;
+
+                    /**
+                     * 获取实例名称
+                     * @return InstanceName 实例名称
+                     * 
+                     */
+                    std::string GetInstanceName() const;
+
+                    /**
+                     * 设置实例名称
+                     * @param _instanceName 实例名称
+                     * 
+                     */
+                    void SetInstanceName(const std::string& _instanceName);
+
+                    /**
+                     * 判断参数 InstanceName 是否已赋值
+                     * @return InstanceName 是否已赋值
+                     * 
+                     */
+                    bool InstanceNameHasBeenSet() const;
 
                     /**
                      * 获取存储时长（取值为 15、30、45。此参数不适用于包年包月实例）
@@ -108,16 +108,16 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 实例名称
-                     */
-                    std::string m_instanceName;
-                    bool m_instanceNameHasBeenSet;
-
-                    /**
                      * 实例 ID
                      */
                     std::string m_instanceId;
                     bool m_instanceIdHasBeenSet;
+
+                    /**
+                     * 实例名称
+                     */
+                    std::string m_instanceName;
+                    bool m_instanceNameHasBeenSet;
 
                     /**
                      * 存储时长（取值为 15、30、45。此参数不适用于包年包月实例）

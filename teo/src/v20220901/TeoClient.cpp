@@ -2706,6 +2706,49 @@ TeoClient::DescribeRulesSettingOutcomeCallable TeoClient::DescribeRulesSettingCa
     return task->get_future();
 }
 
+TeoClient::DescribeSecurityIPGroupOutcome TeoClient::DescribeSecurityIPGroup(const DescribeSecurityIPGroupRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeSecurityIPGroup");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeSecurityIPGroupResponse rsp = DescribeSecurityIPGroupResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeSecurityIPGroupOutcome(rsp);
+        else
+            return DescribeSecurityIPGroupOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeSecurityIPGroupOutcome(outcome.GetError());
+    }
+}
+
+void TeoClient::DescribeSecurityIPGroupAsync(const DescribeSecurityIPGroupRequest& request, const DescribeSecurityIPGroupAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeSecurityIPGroup(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+TeoClient::DescribeSecurityIPGroupOutcomeCallable TeoClient::DescribeSecurityIPGroupCallable(const DescribeSecurityIPGroupRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeSecurityIPGroupOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeSecurityIPGroup(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 TeoClient::DescribeSecurityIPGroupInfoOutcome TeoClient::DescribeSecurityIPGroupInfo(const DescribeSecurityIPGroupInfoRequest &request)
 {
     auto outcome = MakeRequest(request, "DescribeSecurityIPGroupInfo");

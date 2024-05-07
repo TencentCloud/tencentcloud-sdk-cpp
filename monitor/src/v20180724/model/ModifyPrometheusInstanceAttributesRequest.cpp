@@ -23,8 +23,8 @@ using namespace TencentCloud::Monitor::V20180724::Model;
 using namespace std;
 
 ModifyPrometheusInstanceAttributesRequest::ModifyPrometheusInstanceAttributesRequest() :
-    m_instanceNameHasBeenSet(false),
     m_instanceIdHasBeenSet(false),
+    m_instanceNameHasBeenSet(false),
     m_dataRetentionTimeHasBeenSet(false)
 {
 }
@@ -36,20 +36,20 @@ string ModifyPrometheusInstanceAttributesRequest::ToJsonString() const
     rapidjson::Document::AllocatorType& allocator = d.GetAllocator();
 
 
-    if (m_instanceNameHasBeenSet)
-    {
-        rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "InstanceName";
-        iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, rapidjson::Value(m_instanceName.c_str(), allocator).Move(), allocator);
-    }
-
     if (m_instanceIdHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
         string key = "InstanceId";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_instanceId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_instanceNameHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "InstanceName";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_instanceName.c_str(), allocator).Move(), allocator);
     }
 
     if (m_dataRetentionTimeHasBeenSet)
@@ -68,22 +68,6 @@ string ModifyPrometheusInstanceAttributesRequest::ToJsonString() const
 }
 
 
-string ModifyPrometheusInstanceAttributesRequest::GetInstanceName() const
-{
-    return m_instanceName;
-}
-
-void ModifyPrometheusInstanceAttributesRequest::SetInstanceName(const string& _instanceName)
-{
-    m_instanceName = _instanceName;
-    m_instanceNameHasBeenSet = true;
-}
-
-bool ModifyPrometheusInstanceAttributesRequest::InstanceNameHasBeenSet() const
-{
-    return m_instanceNameHasBeenSet;
-}
-
 string ModifyPrometheusInstanceAttributesRequest::GetInstanceId() const
 {
     return m_instanceId;
@@ -98,6 +82,22 @@ void ModifyPrometheusInstanceAttributesRequest::SetInstanceId(const string& _ins
 bool ModifyPrometheusInstanceAttributesRequest::InstanceIdHasBeenSet() const
 {
     return m_instanceIdHasBeenSet;
+}
+
+string ModifyPrometheusInstanceAttributesRequest::GetInstanceName() const
+{
+    return m_instanceName;
+}
+
+void ModifyPrometheusInstanceAttributesRequest::SetInstanceName(const string& _instanceName)
+{
+    m_instanceName = _instanceName;
+    m_instanceNameHasBeenSet = true;
+}
+
+bool ModifyPrometheusInstanceAttributesRequest::InstanceNameHasBeenSet() const
+{
+    return m_instanceNameHasBeenSet;
 }
 
 int64_t ModifyPrometheusInstanceAttributesRequest::GetDataRetentionTime() const

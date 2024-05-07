@@ -23,7 +23,8 @@ using namespace std;
 WebRecordVideoParams::WebRecordVideoParams() :
     m_widthHasBeenSet(false),
     m_heightHasBeenSet(false),
-    m_formatHasBeenSet(false)
+    m_formatHasBeenSet(false),
+    m_maxMediaFileDurationHasBeenSet(false)
 {
 }
 
@@ -62,6 +63,16 @@ CoreInternalOutcome WebRecordVideoParams::Deserialize(const rapidjson::Value &va
         m_formatHasBeenSet = true;
     }
 
+    if (value.HasMember("MaxMediaFileDuration") && !value["MaxMediaFileDuration"].IsNull())
+    {
+        if (!value["MaxMediaFileDuration"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `WebRecordVideoParams.MaxMediaFileDuration` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_maxMediaFileDuration = value["MaxMediaFileDuration"].GetInt64();
+        m_maxMediaFileDurationHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -91,6 +102,14 @@ void WebRecordVideoParams::ToJsonObject(rapidjson::Value &value, rapidjson::Docu
         string key = "Format";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_format.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_maxMediaFileDurationHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "MaxMediaFileDuration";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_maxMediaFileDuration, allocator);
     }
 
 }
@@ -142,5 +161,21 @@ void WebRecordVideoParams::SetFormat(const string& _format)
 bool WebRecordVideoParams::FormatHasBeenSet() const
 {
     return m_formatHasBeenSet;
+}
+
+int64_t WebRecordVideoParams::GetMaxMediaFileDuration() const
+{
+    return m_maxMediaFileDuration;
+}
+
+void WebRecordVideoParams::SetMaxMediaFileDuration(const int64_t& _maxMediaFileDuration)
+{
+    m_maxMediaFileDuration = _maxMediaFileDuration;
+    m_maxMediaFileDurationHasBeenSet = true;
+}
+
+bool WebRecordVideoParams::MaxMediaFileDurationHasBeenSet() const
+{
+    return m_maxMediaFileDurationHasBeenSet;
 }
 

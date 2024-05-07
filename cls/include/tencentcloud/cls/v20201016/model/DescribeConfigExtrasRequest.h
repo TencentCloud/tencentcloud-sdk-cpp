@@ -44,46 +44,40 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取name
+                     * 获取过滤器，支持如下选项：
+name
 - 按照【特殊采集配置名称】进行模糊匹配过滤。
 - 类型：String
-- 必选：否
 
 configExtraId
 - 按照【特殊采集配置ID】进行过滤。
 - 类型：String
-- 必选：否
 
 topicId
 - 按照【日志主题】进行过滤。
 - 类型：String
-- 必选：否
 
 machineGroupId
 - 按照【机器组ID】进行过滤。
 - 类型：String
-- 必选：否
 
 每次请求的Filters的上限为10，Filter.Values的上限为5。
-                     * @return Filters name
+                     * @return Filters 过滤器，支持如下选项：
+name
 - 按照【特殊采集配置名称】进行模糊匹配过滤。
 - 类型：String
-- 必选：否
 
 configExtraId
 - 按照【特殊采集配置ID】进行过滤。
 - 类型：String
-- 必选：否
 
 topicId
 - 按照【日志主题】进行过滤。
 - 类型：String
-- 必选：否
 
 machineGroupId
 - 按照【机器组ID】进行过滤。
 - 类型：String
-- 必选：否
 
 每次请求的Filters的上限为10，Filter.Values的上限为5。
                      * 
@@ -91,46 +85,40 @@ machineGroupId
                     std::vector<Filter> GetFilters() const;
 
                     /**
-                     * 设置name
+                     * 设置过滤器，支持如下选项：
+name
 - 按照【特殊采集配置名称】进行模糊匹配过滤。
 - 类型：String
-- 必选：否
 
 configExtraId
 - 按照【特殊采集配置ID】进行过滤。
 - 类型：String
-- 必选：否
 
 topicId
 - 按照【日志主题】进行过滤。
 - 类型：String
-- 必选：否
 
 machineGroupId
 - 按照【机器组ID】进行过滤。
 - 类型：String
-- 必选：否
 
 每次请求的Filters的上限为10，Filter.Values的上限为5。
-                     * @param _filters name
+                     * @param _filters 过滤器，支持如下选项：
+name
 - 按照【特殊采集配置名称】进行模糊匹配过滤。
 - 类型：String
-- 必选：否
 
 configExtraId
 - 按照【特殊采集配置ID】进行过滤。
 - 类型：String
-- 必选：否
 
 topicId
 - 按照【日志主题】进行过滤。
 - 类型：String
-- 必选：否
 
 machineGroupId
 - 按照【机器组ID】进行过滤。
 - 类型：String
-- 必选：否
 
 每次请求的Filters的上限为10，Filter.Values的上限为5。
                      * 
@@ -189,25 +177,22 @@ machineGroupId
                 private:
 
                     /**
-                     * name
+                     * 过滤器，支持如下选项：
+name
 - 按照【特殊采集配置名称】进行模糊匹配过滤。
 - 类型：String
-- 必选：否
 
 configExtraId
 - 按照【特殊采集配置ID】进行过滤。
 - 类型：String
-- 必选：否
 
 topicId
 - 按照【日志主题】进行过滤。
 - 类型：String
-- 必选：否
 
 machineGroupId
 - 按照【机器组ID】进行过滤。
 - 类型：String
-- 必选：否
 
 每次请求的Filters的上限为10，Filter.Values的上限为5。
                      */

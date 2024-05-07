@@ -392,18 +392,18 @@ namespace TencentCloud
                     bool ExchangeNumberHasBeenSet() const;
 
                     /**
-                     * 获取集群异常。
+                     * 获取集群异常信息
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return ExceptionInformation 集群异常。
+                     * @return ExceptionInformation 集群异常信息
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetExceptionInformation() const;
 
                     /**
-                     * 设置集群异常。
+                     * 设置集群异常信息
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _exceptionInformation 集群异常。
+                     * @param _exceptionInformation 集群异常信息
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -486,6 +486,56 @@ namespace TencentCloud
                      * 
                      */
                     bool MirrorQueuePolicyFlagHasBeenSet() const;
+
+                    /**
+                     * 获取每秒消费消息数 单位：条/秒
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return MessageConsumeRate 每秒消费消息数 单位：条/秒
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    double GetMessageConsumeRate() const;
+
+                    /**
+                     * 设置每秒消费消息数 单位：条/秒
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _messageConsumeRate 每秒消费消息数 单位：条/秒
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetMessageConsumeRate(const double& _messageConsumeRate);
+
+                    /**
+                     * 判断参数 MessageConsumeRate 是否已赋值
+                     * @return MessageConsumeRate 是否已赋值
+                     * 
+                     */
+                    bool MessageConsumeRateHasBeenSet() const;
+
+                    /**
+                     * 获取集群版本信息
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return ClusterVersion 集群版本信息
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::string GetClusterVersion() const;
+
+                    /**
+                     * 设置集群版本信息
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _clusterVersion 集群版本信息
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetClusterVersion(const std::string& _clusterVersion);
+
+                    /**
+                     * 判断参数 ClusterVersion 是否已赋值
+                     * @return ClusterVersion 是否已赋值
+                     * 
+                     */
+                    bool ClusterVersionHasBeenSet() const;
 
                 private:
 
@@ -588,7 +638,7 @@ namespace TencentCloud
                     bool m_exchangeNumberHasBeenSet;
 
                     /**
-                     * 集群异常。
+                     * 集群异常信息
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_exceptionInformation;
@@ -613,6 +663,20 @@ namespace TencentCloud
                      */
                     int64_t m_mirrorQueuePolicyFlag;
                     bool m_mirrorQueuePolicyFlagHasBeenSet;
+
+                    /**
+                     * 每秒消费消息数 单位：条/秒
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    double m_messageConsumeRate;
+                    bool m_messageConsumeRateHasBeenSet;
+
+                    /**
+                     * 集群版本信息
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_clusterVersion;
+                    bool m_clusterVersionHasBeenSet;
 
                 };
             }

@@ -207,6 +207,27 @@ namespace TencentCloud
                      */
                     bool ApproverSignRoleHasBeenSet() const;
 
+                    /**
+                     * 获取印章Id，签署控件类型为印章时，用于指定本企业签署方在解除协议中使用那个印章进行签署
+                     * @return ApproverSignSealId 印章Id，签署控件类型为印章时，用于指定本企业签署方在解除协议中使用那个印章进行签署
+                     * 
+                     */
+                    std::string GetApproverSignSealId() const;
+
+                    /**
+                     * 设置印章Id，签署控件类型为印章时，用于指定本企业签署方在解除协议中使用那个印章进行签署
+                     * @param _approverSignSealId 印章Id，签署控件类型为印章时，用于指定本企业签署方在解除协议中使用那个印章进行签署
+                     * 
+                     */
+                    void SetApproverSignSealId(const std::string& _approverSignSealId);
+
+                    /**
+                     * 判断参数 ApproverSignSealId 是否已赋值
+                     * @return ApproverSignSealId 是否已赋值
+                     * 
+                     */
+                    bool ApproverSignSealIdHasBeenSet() const;
+
                 private:
 
                     /**
@@ -252,6 +273,12 @@ namespace TencentCloud
                      */
                     std::string m_approverSignRole;
                     bool m_approverSignRoleHasBeenSet;
+
+                    /**
+                     * 印章Id，签署控件类型为印章时，用于指定本企业签署方在解除协议中使用那个印章进行签署
+                     */
+                    std::string m_approverSignSealId;
+                    bool m_approverSignSealIdHasBeenSet;
 
                 };
             }
