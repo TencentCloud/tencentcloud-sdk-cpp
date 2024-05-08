@@ -64,15 +64,19 @@ namespace TencentCloud
                     bool ProductIdHasBeenSet() const;
 
                     /**
-                     * 获取推送类型。http：HTTP 回调
-                     * @return Type 推送类型。http：HTTP 回调
+                     * 获取推送类型。可选值：
+- `http`：HTTP 回调
+                     * @return Type 推送类型。可选值：
+- `http`：HTTP 回调
                      * 
                      */
                     std::string GetType() const;
 
                     /**
-                     * 设置推送类型。http：HTTP 回调
-                     * @param _type 推送类型。http：HTTP 回调
+                     * 设置推送类型。可选值：
+- `http`：HTTP 回调
+                     * @param _type 推送类型。可选值：
+- `http`：HTTP 回调
                      * 
                      */
                     void SetType(const std::string& _type);
@@ -135,7 +139,8 @@ namespace TencentCloud
                     bool m_productIdHasBeenSet;
 
                     /**
-                     * 推送类型。http：HTTP 回调
+                     * 推送类型。可选值：
+- `http`：HTTP 回调
                      */
                     std::string m_type;
                     bool m_typeHasBeenSet;

@@ -43,6 +43,8 @@
 #include <tencentcloud/waf/v20180125/model/CreateDealsResponse.h>
 #include <tencentcloud/waf/v20180125/model/CreateHostRequest.h>
 #include <tencentcloud/waf/v20180125/model/CreateHostResponse.h>
+#include <tencentcloud/waf/v20180125/model/CreateIpAccessControlRequest.h>
+#include <tencentcloud/waf/v20180125/model/CreateIpAccessControlResponse.h>
 #include <tencentcloud/waf/v20180125/model/DeleteAccessExportRequest.h>
 #include <tencentcloud/waf/v20180125/model/DeleteAccessExportResponse.h>
 #include <tencentcloud/waf/v20180125/model/DeleteAntiFakeUrlRequest.h>
@@ -67,6 +69,8 @@
 #include <tencentcloud/waf/v20180125/model/DeleteHostResponse.h>
 #include <tencentcloud/waf/v20180125/model/DeleteIpAccessControlRequest.h>
 #include <tencentcloud/waf/v20180125/model/DeleteIpAccessControlResponse.h>
+#include <tencentcloud/waf/v20180125/model/DeleteIpAccessControlV2Request.h>
+#include <tencentcloud/waf/v20180125/model/DeleteIpAccessControlV2Response.h>
 #include <tencentcloud/waf/v20180125/model/DeleteSessionRequest.h>
 #include <tencentcloud/waf/v20180125/model/DeleteSessionResponse.h>
 #include <tencentcloud/waf/v20180125/model/DeleteSpartaProtectionRequest.h>
@@ -197,6 +201,8 @@
 #include <tencentcloud/waf/v20180125/model/GetAttackTotalCountResponse.h>
 #include <tencentcloud/waf/v20180125/model/GetInstanceQpsLimitRequest.h>
 #include <tencentcloud/waf/v20180125/model/GetInstanceQpsLimitResponse.h>
+#include <tencentcloud/waf/v20180125/model/ImportIpAccessControlRequest.h>
+#include <tencentcloud/waf/v20180125/model/ImportIpAccessControlResponse.h>
 #include <tencentcloud/waf/v20180125/model/ModifyAccessPeriodRequest.h>
 #include <tencentcloud/waf/v20180125/model/ModifyAccessPeriodResponse.h>
 #include <tencentcloud/waf/v20180125/model/ModifyAntiFakeUrlRequest.h>
@@ -249,6 +255,8 @@
 #include <tencentcloud/waf/v20180125/model/ModifyInstanceQpsLimitResponse.h>
 #include <tencentcloud/waf/v20180125/model/ModifyInstanceRenewFlagRequest.h>
 #include <tencentcloud/waf/v20180125/model/ModifyInstanceRenewFlagResponse.h>
+#include <tencentcloud/waf/v20180125/model/ModifyIpAccessControlRequest.h>
+#include <tencentcloud/waf/v20180125/model/ModifyIpAccessControlResponse.h>
 #include <tencentcloud/waf/v20180125/model/ModifyModuleStatusRequest.h>
 #include <tencentcloud/waf/v20180125/model/ModifyModuleStatusResponse.h>
 #include <tencentcloud/waf/v20180125/model/ModifyObjectRequest.h>
@@ -333,6 +341,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::CreateHostResponse> CreateHostOutcome;
                 typedef std::future<CreateHostOutcome> CreateHostOutcomeCallable;
                 typedef std::function<void(const WafClient*, const Model::CreateHostRequest&, CreateHostOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateHostAsyncHandler;
+                typedef Outcome<Core::Error, Model::CreateIpAccessControlResponse> CreateIpAccessControlOutcome;
+                typedef std::future<CreateIpAccessControlOutcome> CreateIpAccessControlOutcomeCallable;
+                typedef std::function<void(const WafClient*, const Model::CreateIpAccessControlRequest&, CreateIpAccessControlOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateIpAccessControlAsyncHandler;
                 typedef Outcome<Core::Error, Model::DeleteAccessExportResponse> DeleteAccessExportOutcome;
                 typedef std::future<DeleteAccessExportOutcome> DeleteAccessExportOutcomeCallable;
                 typedef std::function<void(const WafClient*, const Model::DeleteAccessExportRequest&, DeleteAccessExportOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteAccessExportAsyncHandler;
@@ -369,6 +380,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DeleteIpAccessControlResponse> DeleteIpAccessControlOutcome;
                 typedef std::future<DeleteIpAccessControlOutcome> DeleteIpAccessControlOutcomeCallable;
                 typedef std::function<void(const WafClient*, const Model::DeleteIpAccessControlRequest&, DeleteIpAccessControlOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteIpAccessControlAsyncHandler;
+                typedef Outcome<Core::Error, Model::DeleteIpAccessControlV2Response> DeleteIpAccessControlV2Outcome;
+                typedef std::future<DeleteIpAccessControlV2Outcome> DeleteIpAccessControlV2OutcomeCallable;
+                typedef std::function<void(const WafClient*, const Model::DeleteIpAccessControlV2Request&, DeleteIpAccessControlV2Outcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteIpAccessControlV2AsyncHandler;
                 typedef Outcome<Core::Error, Model::DeleteSessionResponse> DeleteSessionOutcome;
                 typedef std::future<DeleteSessionOutcome> DeleteSessionOutcomeCallable;
                 typedef std::function<void(const WafClient*, const Model::DeleteSessionRequest&, DeleteSessionOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteSessionAsyncHandler;
@@ -564,6 +578,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::GetInstanceQpsLimitResponse> GetInstanceQpsLimitOutcome;
                 typedef std::future<GetInstanceQpsLimitOutcome> GetInstanceQpsLimitOutcomeCallable;
                 typedef std::function<void(const WafClient*, const Model::GetInstanceQpsLimitRequest&, GetInstanceQpsLimitOutcome, const std::shared_ptr<const AsyncCallerContext>&)> GetInstanceQpsLimitAsyncHandler;
+                typedef Outcome<Core::Error, Model::ImportIpAccessControlResponse> ImportIpAccessControlOutcome;
+                typedef std::future<ImportIpAccessControlOutcome> ImportIpAccessControlOutcomeCallable;
+                typedef std::function<void(const WafClient*, const Model::ImportIpAccessControlRequest&, ImportIpAccessControlOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ImportIpAccessControlAsyncHandler;
                 typedef Outcome<Core::Error, Model::ModifyAccessPeriodResponse> ModifyAccessPeriodOutcome;
                 typedef std::future<ModifyAccessPeriodOutcome> ModifyAccessPeriodOutcomeCallable;
                 typedef std::function<void(const WafClient*, const Model::ModifyAccessPeriodRequest&, ModifyAccessPeriodOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyAccessPeriodAsyncHandler;
@@ -642,6 +659,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::ModifyInstanceRenewFlagResponse> ModifyInstanceRenewFlagOutcome;
                 typedef std::future<ModifyInstanceRenewFlagOutcome> ModifyInstanceRenewFlagOutcomeCallable;
                 typedef std::function<void(const WafClient*, const Model::ModifyInstanceRenewFlagRequest&, ModifyInstanceRenewFlagOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyInstanceRenewFlagAsyncHandler;
+                typedef Outcome<Core::Error, Model::ModifyIpAccessControlResponse> ModifyIpAccessControlOutcome;
+                typedef std::future<ModifyIpAccessControlOutcome> ModifyIpAccessControlOutcomeCallable;
+                typedef std::function<void(const WafClient*, const Model::ModifyIpAccessControlRequest&, ModifyIpAccessControlOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyIpAccessControlAsyncHandler;
                 typedef Outcome<Core::Error, Model::ModifyModuleStatusResponse> ModifyModuleStatusOutcome;
                 typedef std::future<ModifyModuleStatusOutcome> ModifyModuleStatusOutcomeCallable;
                 typedef std::function<void(const WafClient*, const Model::ModifyModuleStatusRequest&, ModifyModuleStatusOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyModuleStatusAsyncHandler;
@@ -796,6 +816,15 @@ namespace TencentCloud
                 CreateHostOutcomeCallable CreateHostCallable(const Model::CreateHostRequest& request);
 
                 /**
+                 *Waf IP黑白名单新增接口
+                 * @param req CreateIpAccessControlRequest
+                 * @return CreateIpAccessControlOutcome
+                 */
+                CreateIpAccessControlOutcome CreateIpAccessControl(const Model::CreateIpAccessControlRequest &request);
+                void CreateIpAccessControlAsync(const Model::CreateIpAccessControlRequest& request, const CreateIpAccessControlAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                CreateIpAccessControlOutcomeCallable CreateIpAccessControlCallable(const Model::CreateIpAccessControlRequest& request);
+
+                /**
                  *本接口用于删除访问日志导出
                  * @param req DeleteAccessExportRequest
                  * @return DeleteAccessExportOutcome
@@ -904,6 +933,15 @@ namespace TencentCloud
                 DeleteIpAccessControlOutcome DeleteIpAccessControl(const Model::DeleteIpAccessControlRequest &request);
                 void DeleteIpAccessControlAsync(const Model::DeleteIpAccessControlRequest& request, const DeleteIpAccessControlAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DeleteIpAccessControlOutcomeCallable DeleteIpAccessControlCallable(const Model::DeleteIpAccessControlRequest& request);
+
+                /**
+                 *Waf IP黑白名单最新版本删除接口
+                 * @param req DeleteIpAccessControlV2Request
+                 * @return DeleteIpAccessControlV2Outcome
+                 */
+                DeleteIpAccessControlV2Outcome DeleteIpAccessControlV2(const Model::DeleteIpAccessControlV2Request &request);
+                void DeleteIpAccessControlV2Async(const Model::DeleteIpAccessControlV2Request& request, const DeleteIpAccessControlV2AsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DeleteIpAccessControlV2OutcomeCallable DeleteIpAccessControlV2Callable(const Model::DeleteIpAccessControlV2Request& request);
 
                 /**
                  *删除CC攻击的session设置
@@ -1495,6 +1533,15 @@ namespace TencentCloud
                 GetInstanceQpsLimitOutcomeCallable GetInstanceQpsLimitCallable(const Model::GetInstanceQpsLimitRequest& request);
 
                 /**
+                 *导入IP黑白名单
+                 * @param req ImportIpAccessControlRequest
+                 * @return ImportIpAccessControlOutcome
+                 */
+                ImportIpAccessControlOutcome ImportIpAccessControl(const Model::ImportIpAccessControlRequest &request);
+                void ImportIpAccessControlAsync(const Model::ImportIpAccessControlRequest& request, const ImportIpAccessControlAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                ImportIpAccessControlOutcomeCallable ImportIpAccessControlCallable(const Model::ImportIpAccessControlRequest& request);
+
+                /**
                  *本接口用于修改访问日志保存期限等字段信息
                  * @param req ModifyAccessPeriodRequest
                  * @return ModifyAccessPeriodOutcome
@@ -1728,6 +1775,15 @@ namespace TencentCloud
                 ModifyInstanceRenewFlagOutcome ModifyInstanceRenewFlag(const Model::ModifyInstanceRenewFlagRequest &request);
                 void ModifyInstanceRenewFlagAsync(const Model::ModifyInstanceRenewFlagRequest& request, const ModifyInstanceRenewFlagAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 ModifyInstanceRenewFlagOutcomeCallable ModifyInstanceRenewFlagCallable(const Model::ModifyInstanceRenewFlagRequest& request);
+
+                /**
+                 *Waf IP黑白名单编辑接口
+                 * @param req ModifyIpAccessControlRequest
+                 * @return ModifyIpAccessControlOutcome
+                 */
+                ModifyIpAccessControlOutcome ModifyIpAccessControl(const Model::ModifyIpAccessControlRequest &request);
+                void ModifyIpAccessControlAsync(const Model::ModifyIpAccessControlRequest& request, const ModifyIpAccessControlAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                ModifyIpAccessControlOutcomeCallable ModifyIpAccessControlCallable(const Model::ModifyIpAccessControlRequest& request);
 
                 /**
                  *设置某个domain下基础安全模块的开关

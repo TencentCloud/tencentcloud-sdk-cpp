@@ -131,6 +131,39 @@ namespace TencentCloud
                     bool ChannelIdHasBeenSet() const;
 
                     /**
+                     * 获取云存 AI 服务类型。可能取值：
+
+- `PackageDetect`：包裹检测
+- `Highlight`：视频浓缩
+                     * @return ServiceType 云存 AI 服务类型。可能取值：
+
+- `PackageDetect`：包裹检测
+- `Highlight`：视频浓缩
+                     * 
+                     */
+                    std::string GetServiceType() const;
+
+                    /**
+                     * 设置云存 AI 服务类型。可能取值：
+
+- `PackageDetect`：包裹检测
+- `Highlight`：视频浓缩
+                     * @param _serviceType 云存 AI 服务类型。可能取值：
+
+- `PackageDetect`：包裹检测
+- `Highlight`：视频浓缩
+                     * 
+                     */
+                    void SetServiceType(const std::string& _serviceType);
+
+                    /**
+                     * 判断参数 ServiceType 是否已赋值
+                     * @return ServiceType 是否已赋值
+                     * 
+                     */
+                    bool ServiceTypeHasBeenSet() const;
+
+                    /**
                      * 获取对应云存视频的起始时间
                      * @return StartTime 对应云存视频的起始时间
                      * 
@@ -173,15 +206,15 @@ namespace TencentCloud
                     bool EndTimeHasBeenSet() const;
 
                     /**
-                     * 获取任务状态（1：失败；2：成功但结果为空；3：成功且结果非空）
-                     * @return Status 任务状态（1：失败；2：成功但结果为空；3：成功且结果非空）
+                     * 获取任务状态（1：失败；2：成功但结果为空；3：成功且结果非空；4：执行中）
+                     * @return Status 任务状态（1：失败；2：成功但结果为空；3：成功且结果非空；4：执行中）
                      * 
                      */
                     uint64_t GetStatus() const;
 
                     /**
-                     * 设置任务状态（1：失败；2：成功但结果为空；3：成功且结果非空）
-                     * @param _status 任务状态（1：失败；2：成功但结果为空；3：成功且结果非空）
+                     * 设置任务状态（1：失败；2：成功但结果为空；3：成功且结果非空；4：执行中）
+                     * @param _status 任务状态（1：失败；2：成功但结果为空；3：成功且结果非空；4：执行中）
                      * 
                      */
                     void SetStatus(const uint64_t& _status);
@@ -215,44 +248,36 @@ namespace TencentCloud
                     bool ResultHasBeenSet() const;
 
                     /**
-                     * 获取云存 AI 服务类型
-注意：此字段可能返回 null，表示取不到有效值。
-                     * @return ServiceType 云存 AI 服务类型
-注意：此字段可能返回 null，表示取不到有效值。
+                     * 获取任务输出文件列表
+                     * @return Files 任务输出文件列表
                      * 
                      */
-                    std::string GetServiceType() const;
+                    std::vector<std::string> GetFiles() const;
 
                     /**
-                     * 设置云存 AI 服务类型
-注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _serviceType 云存 AI 服务类型
-注意：此字段可能返回 null，表示取不到有效值。
+                     * 设置任务输出文件列表
+                     * @param _files 任务输出文件列表
                      * 
                      */
-                    void SetServiceType(const std::string& _serviceType);
+                    void SetFiles(const std::vector<std::string>& _files);
 
                     /**
-                     * 判断参数 ServiceType 是否已赋值
-                     * @return ServiceType 是否已赋值
+                     * 判断参数 Files 是否已赋值
+                     * @return Files 是否已赋值
                      * 
                      */
-                    bool ServiceTypeHasBeenSet() const;
+                    bool FilesHasBeenSet() const;
 
                     /**
                      * 获取创建时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return CreateTime 创建时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetCreateTime() const;
 
                     /**
                      * 设置创建时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _createTime 创建时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetCreateTime(const int64_t& _createTime);
@@ -266,18 +291,14 @@ namespace TencentCloud
 
                     /**
                      * 获取最后更新时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return UpdateTime 最后更新时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetUpdateTime() const;
 
                     /**
                      * 设置最后更新时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _updateTime 最后更新时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetUpdateTime(const int64_t& _updateTime);
@@ -316,6 +337,15 @@ namespace TencentCloud
                     bool m_channelIdHasBeenSet;
 
                     /**
+                     * 云存 AI 服务类型。可能取值：
+
+- `PackageDetect`：包裹检测
+- `Highlight`：视频浓缩
+                     */
+                    std::string m_serviceType;
+                    bool m_serviceTypeHasBeenSet;
+
+                    /**
                      * 对应云存视频的起始时间
                      */
                     int64_t m_startTime;
@@ -328,7 +358,7 @@ namespace TencentCloud
                     bool m_endTimeHasBeenSet;
 
                     /**
-                     * 任务状态（1：失败；2：成功但结果为空；3：成功且结果非空）
+                     * 任务状态（1：失败；2：成功但结果为空；3：成功且结果非空；4：执行中）
                      */
                     uint64_t m_status;
                     bool m_statusHasBeenSet;
@@ -340,22 +370,19 @@ namespace TencentCloud
                     bool m_resultHasBeenSet;
 
                     /**
-                     * 云存 AI 服务类型
-注意：此字段可能返回 null，表示取不到有效值。
+                     * 任务输出文件列表
                      */
-                    std::string m_serviceType;
-                    bool m_serviceTypeHasBeenSet;
+                    std::vector<std::string> m_files;
+                    bool m_filesHasBeenSet;
 
                     /**
                      * 创建时间
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_createTime;
                     bool m_createTimeHasBeenSet;
 
                     /**
                      * 最后更新时间
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_updateTime;
                     bool m_updateTimeHasBeenSet;

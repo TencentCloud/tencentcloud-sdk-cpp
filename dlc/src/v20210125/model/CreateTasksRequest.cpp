@@ -26,7 +26,8 @@ CreateTasksRequest::CreateTasksRequest() :
     m_databaseNameHasBeenSet(false),
     m_tasksHasBeenSet(false),
     m_datasourceConnectionNameHasBeenSet(false),
-    m_dataEngineNameHasBeenSet(false)
+    m_dataEngineNameHasBeenSet(false),
+    m_resourceGroupNameHasBeenSet(false)
 {
 }
 
@@ -68,6 +69,14 @@ string CreateTasksRequest::ToJsonString() const
         string key = "DataEngineName";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_dataEngineName.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_resourceGroupNameHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ResourceGroupName";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_resourceGroupName.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -140,6 +149,22 @@ void CreateTasksRequest::SetDataEngineName(const string& _dataEngineName)
 bool CreateTasksRequest::DataEngineNameHasBeenSet() const
 {
     return m_dataEngineNameHasBeenSet;
+}
+
+string CreateTasksRequest::GetResourceGroupName() const
+{
+    return m_resourceGroupName;
+}
+
+void CreateTasksRequest::SetResourceGroupName(const string& _resourceGroupName)
+{
+    m_resourceGroupName = _resourceGroupName;
+    m_resourceGroupNameHasBeenSet = true;
+}
+
+bool CreateTasksRequest::ResourceGroupNameHasBeenSet() const
+{
+    return m_resourceGroupNameHasBeenSet;
 }
 
 

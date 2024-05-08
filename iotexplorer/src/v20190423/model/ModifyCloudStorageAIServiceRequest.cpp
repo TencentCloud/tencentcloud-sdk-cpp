@@ -27,7 +27,8 @@ ModifyCloudStorageAIServiceRequest::ModifyCloudStorageAIServiceRequest() :
     m_deviceNameHasBeenSet(false),
     m_serviceTypeHasBeenSet(false),
     m_enabledHasBeenSet(false),
-    m_rOIHasBeenSet(false)
+    m_rOIHasBeenSet(false),
+    m_configHasBeenSet(false)
 {
 }
 
@@ -76,6 +77,14 @@ string ModifyCloudStorageAIServiceRequest::ToJsonString() const
         string key = "ROI";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_rOI.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_configHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Config";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_config.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -164,6 +173,22 @@ void ModifyCloudStorageAIServiceRequest::SetROI(const string& _rOI)
 bool ModifyCloudStorageAIServiceRequest::ROIHasBeenSet() const
 {
     return m_rOIHasBeenSet;
+}
+
+string ModifyCloudStorageAIServiceRequest::GetConfig() const
+{
+    return m_config;
+}
+
+void ModifyCloudStorageAIServiceRequest::SetConfig(const string& _config)
+{
+    m_config = _config;
+    m_configHasBeenSet = true;
+}
+
+bool ModifyCloudStorageAIServiceRequest::ConfigHasBeenSet() const
+{
+    return m_configHasBeenSet;
 }
 
 

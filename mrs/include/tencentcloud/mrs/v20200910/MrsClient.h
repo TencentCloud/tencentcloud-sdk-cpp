@@ -23,6 +23,8 @@
 #include <tencentcloud/core/Credential.h>
 #include <tencentcloud/core/profile/ClientProfile.h>
 #include <tencentcloud/core/AsyncCallerContext.h>
+#include <tencentcloud/mrs/v20200910/model/DrugInstructionObjectRequest.h>
+#include <tencentcloud/mrs/v20200910/model/DrugInstructionObjectResponse.h>
 #include <tencentcloud/mrs/v20200910/model/ImageMaskRequest.h>
 #include <tencentcloud/mrs/v20200910/model/ImageMaskResponse.h>
 #include <tencentcloud/mrs/v20200910/model/ImageMaskAsyncRequest.h>
@@ -57,6 +59,9 @@ namespace TencentCloud
                 MrsClient(const Credential &credential, const std::string &region);
                 MrsClient(const Credential &credential, const std::string &region, const ClientProfile &profile);
 
+                typedef Outcome<Core::Error, Model::DrugInstructionObjectResponse> DrugInstructionObjectOutcome;
+                typedef std::future<DrugInstructionObjectOutcome> DrugInstructionObjectOutcomeCallable;
+                typedef std::function<void(const MrsClient*, const Model::DrugInstructionObjectRequest&, DrugInstructionObjectOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DrugInstructionObjectAsyncHandler;
                 typedef Outcome<Core::Error, Model::ImageMaskResponse> ImageMaskOutcome;
                 typedef std::future<ImageMaskOutcome> ImageMaskOutcomeCallable;
                 typedef std::function<void(const MrsClient*, const Model::ImageMaskRequest&, ImageMaskOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ImageMaskAsyncHandler;
@@ -89,6 +94,15 @@ namespace TencentCloud
                 typedef std::function<void(const MrsClient*, const Model::TurnPDFToObjectAsyncGetResultRequest&, TurnPDFToObjectAsyncGetResultOutcome, const std::shared_ptr<const AsyncCallerContext>&)> TurnPDFToObjectAsyncGetResultAsyncHandler;
 
 
+
+                /**
+                 *药品说明书PDF文件结构化
+                 * @param req DrugInstructionObjectRequest
+                 * @return DrugInstructionObjectOutcome
+                 */
+                DrugInstructionObjectOutcome DrugInstructionObject(const Model::DrugInstructionObjectRequest &request);
+                void DrugInstructionObjectAsync(const Model::DrugInstructionObjectRequest& request, const DrugInstructionObjectAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DrugInstructionObjectOutcomeCallable DrugInstructionObjectCallable(const Model::DrugInstructionObjectRequest& request);
 
                 /**
                  *医疗报告图片脱敏接口

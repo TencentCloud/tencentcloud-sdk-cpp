@@ -30,7 +30,8 @@ DescribeTasksRequest::DescribeTasksRequest() :
     m_sortingHasBeenSet(false),
     m_startTimeHasBeenSet(false),
     m_endTimeHasBeenSet(false),
-    m_dataEngineNameHasBeenSet(false)
+    m_dataEngineNameHasBeenSet(false),
+    m_resourceGroupNameHasBeenSet(false)
 {
 }
 
@@ -110,6 +111,14 @@ string DescribeTasksRequest::ToJsonString() const
         string key = "DataEngineName";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_dataEngineName.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_resourceGroupNameHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ResourceGroupName";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_resourceGroupName.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -246,6 +255,22 @@ void DescribeTasksRequest::SetDataEngineName(const string& _dataEngineName)
 bool DescribeTasksRequest::DataEngineNameHasBeenSet() const
 {
     return m_dataEngineNameHasBeenSet;
+}
+
+string DescribeTasksRequest::GetResourceGroupName() const
+{
+    return m_resourceGroupName;
+}
+
+void DescribeTasksRequest::SetResourceGroupName(const string& _resourceGroupName)
+{
+    m_resourceGroupName = _resourceGroupName;
+    m_resourceGroupNameHasBeenSet = true;
+}
+
+bool DescribeTasksRequest::ResourceGroupNameHasBeenSet() const
+{
+    return m_resourceGroupNameHasBeenSet;
 }
 
 

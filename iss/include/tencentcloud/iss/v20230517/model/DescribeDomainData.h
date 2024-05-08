@@ -221,6 +221,31 @@ namespace TencentCloud
                      */
                     bool AppIdHasBeenSet() const;
 
+                    /**
+                     * 获取证书ID
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return CertId 证书ID
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::string GetCertId() const;
+
+                    /**
+                     * 设置证书ID
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _certId 证书ID
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetCertId(const std::string& _certId);
+
+                    /**
+                     * 判断参数 CertId 是否已赋值
+                     * @return CertId 是否已赋值
+                     * 
+                     */
+                    bool CertIdHasBeenSet() const;
+
                 private:
 
                     /**
@@ -271,6 +296,13 @@ namespace TencentCloud
                      */
                     int64_t m_appId;
                     bool m_appIdHasBeenSet;
+
+                    /**
+                     * 证书ID
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_certId;
+                    bool m_certIdHasBeenSet;
 
                 };
             }

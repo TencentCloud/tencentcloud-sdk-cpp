@@ -25,8 +25,6 @@
 #include <tencentcloud/core/AsyncCallerContext.h>
 #include <tencentcloud/rce/v20201103/model/DescribeRiskAssessmentRequest.h>
 #include <tencentcloud/rce/v20201103/model/DescribeRiskAssessmentResponse.h>
-#include <tencentcloud/rce/v20201103/model/DescribeRiskTrendsRequest.h>
-#include <tencentcloud/rce/v20201103/model/DescribeRiskTrendsResponse.h>
 #include <tencentcloud/rce/v20201103/model/ManageMarketingRiskRequest.h>
 #include <tencentcloud/rce/v20201103/model/ManageMarketingRiskResponse.h>
 
@@ -46,9 +44,6 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeRiskAssessmentResponse> DescribeRiskAssessmentOutcome;
                 typedef std::future<DescribeRiskAssessmentOutcome> DescribeRiskAssessmentOutcomeCallable;
                 typedef std::function<void(const RceClient*, const Model::DescribeRiskAssessmentRequest&, DescribeRiskAssessmentOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeRiskAssessmentAsyncHandler;
-                typedef Outcome<Core::Error, Model::DescribeRiskTrendsResponse> DescribeRiskTrendsOutcome;
-                typedef std::future<DescribeRiskTrendsOutcome> DescribeRiskTrendsOutcomeCallable;
-                typedef std::function<void(const RceClient*, const Model::DescribeRiskTrendsRequest&, DescribeRiskTrendsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeRiskTrendsAsyncHandler;
                 typedef Outcome<Core::Error, Model::ManageMarketingRiskResponse> ManageMarketingRiskOutcome;
                 typedef std::future<ManageMarketingRiskOutcome> ManageMarketingRiskOutcomeCallable;
                 typedef std::function<void(const RceClient*, const Model::ManageMarketingRiskRequest&, ManageMarketingRiskOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ManageMarketingRiskAsyncHandler;
@@ -63,15 +58,6 @@ namespace TencentCloud
                 DescribeRiskAssessmentOutcome DescribeRiskAssessment(const Model::DescribeRiskAssessmentRequest &request);
                 void DescribeRiskAssessmentAsync(const Model::DescribeRiskAssessmentRequest& request, const DescribeRiskAssessmentAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DescribeRiskAssessmentOutcomeCallable DescribeRiskAssessmentCallable(const Model::DescribeRiskAssessmentRequest& request);
-
-                /**
-                 *以图表形式展示三种请求状态的趋势变化
-                 * @param req DescribeRiskTrendsRequest
-                 * @return DescribeRiskTrendsOutcome
-                 */
-                DescribeRiskTrendsOutcome DescribeRiskTrends(const Model::DescribeRiskTrendsRequest &request);
-                void DescribeRiskTrendsAsync(const Model::DescribeRiskTrendsRequest& request, const DescribeRiskTrendsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
-                DescribeRiskTrendsOutcomeCallable DescribeRiskTrendsCallable(const Model::DescribeRiskTrendsRequest& request);
 
                 /**
                  *全栈式风控引擎（RiskControlEngine，RCE）是基于人工智能技术和腾讯20年风控实战沉淀，依托腾讯海量业务构建的风控引擎，以轻量级的 SaaS 服务方式接入，帮助您快速解决注册、登录、营销活动等关键场景遇到的欺诈问题，实时防御黑灰产作恶。

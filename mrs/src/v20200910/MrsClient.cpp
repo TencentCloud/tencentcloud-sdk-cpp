@@ -40,6 +40,49 @@ MrsClient::MrsClient(const Credential &credential, const string &region, const C
 }
 
 
+MrsClient::DrugInstructionObjectOutcome MrsClient::DrugInstructionObject(const DrugInstructionObjectRequest &request)
+{
+    auto outcome = MakeRequest(request, "DrugInstructionObject");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DrugInstructionObjectResponse rsp = DrugInstructionObjectResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DrugInstructionObjectOutcome(rsp);
+        else
+            return DrugInstructionObjectOutcome(o.GetError());
+    }
+    else
+    {
+        return DrugInstructionObjectOutcome(outcome.GetError());
+    }
+}
+
+void MrsClient::DrugInstructionObjectAsync(const DrugInstructionObjectRequest& request, const DrugInstructionObjectAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DrugInstructionObject(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+MrsClient::DrugInstructionObjectOutcomeCallable MrsClient::DrugInstructionObjectCallable(const DrugInstructionObjectRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DrugInstructionObjectOutcome()>>(
+        [this, request]()
+        {
+            return this->DrugInstructionObject(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 MrsClient::ImageMaskOutcome MrsClient::ImageMask(const ImageMaskRequest &request)
 {
     auto outcome = MakeRequest(request, "ImageMask");

@@ -1014,6 +1014,56 @@ namespace TencentCloud
                      */
                     bool ResultFormatHasBeenSet() const;
 
+                    /**
+                     * 获取引擎类型，SparkSQL：SparkSQL 引擎；SparkBatch：Spark作业引擎；PrestoSQL：Presto引擎
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return EngineTypeDetail 引擎类型，SparkSQL：SparkSQL 引擎；SparkBatch：Spark作业引擎；PrestoSQL：Presto引擎
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::string GetEngineTypeDetail() const;
+
+                    /**
+                     * 设置引擎类型，SparkSQL：SparkSQL 引擎；SparkBatch：Spark作业引擎；PrestoSQL：Presto引擎
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _engineTypeDetail 引擎类型，SparkSQL：SparkSQL 引擎；SparkBatch：Spark作业引擎；PrestoSQL：Presto引擎
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetEngineTypeDetail(const std::string& _engineTypeDetail);
+
+                    /**
+                     * 判断参数 EngineTypeDetail 是否已赋值
+                     * @return EngineTypeDetail 是否已赋值
+                     * 
+                     */
+                    bool EngineTypeDetailHasBeenSet() const;
+
+                    /**
+                     * 获取spark引擎资源组名称
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return ResourceGroupName spark引擎资源组名称
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::string GetResourceGroupName() const;
+
+                    /**
+                     * 设置spark引擎资源组名称
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _resourceGroupName spark引擎资源组名称
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetResourceGroupName(const std::string& _resourceGroupName);
+
+                    /**
+                     * 判断参数 ResourceGroupName 是否已赋值
+                     * @return ResourceGroupName 是否已赋值
+                     * 
+                     */
+                    bool ResourceGroupNameHasBeenSet() const;
+
                 private:
 
                     /**
@@ -1287,6 +1337,20 @@ namespace TencentCloud
                      */
                     std::string m_resultFormat;
                     bool m_resultFormatHasBeenSet;
+
+                    /**
+                     * 引擎类型，SparkSQL：SparkSQL 引擎；SparkBatch：Spark作业引擎；PrestoSQL：Presto引擎
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_engineTypeDetail;
+                    bool m_engineTypeDetailHasBeenSet;
+
+                    /**
+                     * spark引擎资源组名称
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_resourceGroupName;
+                    bool m_resourceGroupNameHasBeenSet;
 
                 };
             }

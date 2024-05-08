@@ -28,7 +28,9 @@ DescribeCloudStorageAIServiceTasksRequest::DescribeCloudStorageAIServiceTasksReq
     m_serviceTypeHasBeenSet(false),
     m_limitHasBeenSet(false),
     m_offsetHasBeenSet(false),
-    m_statusHasBeenSet(false)
+    m_statusHasBeenSet(false),
+    m_userIdHasBeenSet(false),
+    m_channelIdHasBeenSet(false)
 {
 }
 
@@ -85,6 +87,22 @@ string DescribeCloudStorageAIServiceTasksRequest::ToJsonString() const
         string key = "Status";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_status, allocator);
+    }
+
+    if (m_userIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "UserId";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_userId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_channelIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ChannelId";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_channelId, allocator);
     }
 
 
@@ -189,6 +207,38 @@ void DescribeCloudStorageAIServiceTasksRequest::SetStatus(const uint64_t& _statu
 bool DescribeCloudStorageAIServiceTasksRequest::StatusHasBeenSet() const
 {
     return m_statusHasBeenSet;
+}
+
+string DescribeCloudStorageAIServiceTasksRequest::GetUserId() const
+{
+    return m_userId;
+}
+
+void DescribeCloudStorageAIServiceTasksRequest::SetUserId(const string& _userId)
+{
+    m_userId = _userId;
+    m_userIdHasBeenSet = true;
+}
+
+bool DescribeCloudStorageAIServiceTasksRequest::UserIdHasBeenSet() const
+{
+    return m_userIdHasBeenSet;
+}
+
+uint64_t DescribeCloudStorageAIServiceTasksRequest::GetChannelId() const
+{
+    return m_channelId;
+}
+
+void DescribeCloudStorageAIServiceTasksRequest::SetChannelId(const uint64_t& _channelId)
+{
+    m_channelId = _channelId;
+    m_channelIdHasBeenSet = true;
+}
+
+bool DescribeCloudStorageAIServiceTasksRequest::ChannelIdHasBeenSet() const
+{
+    return m_channelIdHasBeenSet;
 }
 
 

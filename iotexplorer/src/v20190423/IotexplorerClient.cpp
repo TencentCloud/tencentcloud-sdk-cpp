@@ -728,6 +728,49 @@ IotexplorerClient::CreateStudioProductOutcomeCallable IotexplorerClient::CreateS
     return task->get_future();
 }
 
+IotexplorerClient::CreateTRTCSignaturesWithRoomIdOutcome IotexplorerClient::CreateTRTCSignaturesWithRoomId(const CreateTRTCSignaturesWithRoomIdRequest &request)
+{
+    auto outcome = MakeRequest(request, "CreateTRTCSignaturesWithRoomId");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        CreateTRTCSignaturesWithRoomIdResponse rsp = CreateTRTCSignaturesWithRoomIdResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return CreateTRTCSignaturesWithRoomIdOutcome(rsp);
+        else
+            return CreateTRTCSignaturesWithRoomIdOutcome(o.GetError());
+    }
+    else
+    {
+        return CreateTRTCSignaturesWithRoomIdOutcome(outcome.GetError());
+    }
+}
+
+void IotexplorerClient::CreateTRTCSignaturesWithRoomIdAsync(const CreateTRTCSignaturesWithRoomIdRequest& request, const CreateTRTCSignaturesWithRoomIdAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->CreateTRTCSignaturesWithRoomId(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+IotexplorerClient::CreateTRTCSignaturesWithRoomIdOutcomeCallable IotexplorerClient::CreateTRTCSignaturesWithRoomIdCallable(const CreateTRTCSignaturesWithRoomIdRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<CreateTRTCSignaturesWithRoomIdOutcome()>>(
+        [this, request]()
+        {
+            return this->CreateTRTCSignaturesWithRoomId(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 IotexplorerClient::CreateTopicPolicyOutcome IotexplorerClient::CreateTopicPolicy(const CreateTopicPolicyRequest &request)
 {
     auto outcome = MakeRequest(request, "CreateTopicPolicy");
@@ -1538,6 +1581,49 @@ IotexplorerClient::DescribeCloudStorageAIServiceCallbackOutcomeCallable Iotexplo
         [this, request]()
         {
             return this->DescribeCloudStorageAIServiceCallback(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+IotexplorerClient::DescribeCloudStorageAIServiceTaskOutcome IotexplorerClient::DescribeCloudStorageAIServiceTask(const DescribeCloudStorageAIServiceTaskRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeCloudStorageAIServiceTask");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeCloudStorageAIServiceTaskResponse rsp = DescribeCloudStorageAIServiceTaskResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeCloudStorageAIServiceTaskOutcome(rsp);
+        else
+            return DescribeCloudStorageAIServiceTaskOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeCloudStorageAIServiceTaskOutcome(outcome.GetError());
+    }
+}
+
+void IotexplorerClient::DescribeCloudStorageAIServiceTaskAsync(const DescribeCloudStorageAIServiceTaskRequest& request, const DescribeCloudStorageAIServiceTaskAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeCloudStorageAIServiceTask(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+IotexplorerClient::DescribeCloudStorageAIServiceTaskOutcomeCallable IotexplorerClient::DescribeCloudStorageAIServiceTaskCallable(const DescribeCloudStorageAIServiceTaskRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeCloudStorageAIServiceTaskOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeCloudStorageAIServiceTask(request);
         }
     );
 
@@ -3308,6 +3394,49 @@ IotexplorerClient::DisableTopicRuleOutcomeCallable IotexplorerClient::DisableTop
     return task->get_future();
 }
 
+IotexplorerClient::DismissRoomByStrRoomIdFromTRTCOutcome IotexplorerClient::DismissRoomByStrRoomIdFromTRTC(const DismissRoomByStrRoomIdFromTRTCRequest &request)
+{
+    auto outcome = MakeRequest(request, "DismissRoomByStrRoomIdFromTRTC");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DismissRoomByStrRoomIdFromTRTCResponse rsp = DismissRoomByStrRoomIdFromTRTCResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DismissRoomByStrRoomIdFromTRTCOutcome(rsp);
+        else
+            return DismissRoomByStrRoomIdFromTRTCOutcome(o.GetError());
+    }
+    else
+    {
+        return DismissRoomByStrRoomIdFromTRTCOutcome(outcome.GetError());
+    }
+}
+
+void IotexplorerClient::DismissRoomByStrRoomIdFromTRTCAsync(const DismissRoomByStrRoomIdFromTRTCRequest& request, const DismissRoomByStrRoomIdFromTRTCAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DismissRoomByStrRoomIdFromTRTC(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+IotexplorerClient::DismissRoomByStrRoomIdFromTRTCOutcomeCallable IotexplorerClient::DismissRoomByStrRoomIdFromTRTCCallable(const DismissRoomByStrRoomIdFromTRTCRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DismissRoomByStrRoomIdFromTRTCOutcome()>>(
+        [this, request]()
+        {
+            return this->DismissRoomByStrRoomIdFromTRTC(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 IotexplorerClient::EnableTopicRuleOutcome IotexplorerClient::EnableTopicRule(const EnableTopicRuleRequest &request)
 {
     auto outcome = MakeRequest(request, "EnableTopicRule");
@@ -3387,6 +3516,49 @@ IotexplorerClient::GenSingleDeviceSignatureOfPublicOutcomeCallable IotexplorerCl
         [this, request]()
         {
             return this->GenSingleDeviceSignatureOfPublic(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+IotexplorerClient::GenerateCloudStorageAIServiceTaskFileURLOutcome IotexplorerClient::GenerateCloudStorageAIServiceTaskFileURL(const GenerateCloudStorageAIServiceTaskFileURLRequest &request)
+{
+    auto outcome = MakeRequest(request, "GenerateCloudStorageAIServiceTaskFileURL");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        GenerateCloudStorageAIServiceTaskFileURLResponse rsp = GenerateCloudStorageAIServiceTaskFileURLResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return GenerateCloudStorageAIServiceTaskFileURLOutcome(rsp);
+        else
+            return GenerateCloudStorageAIServiceTaskFileURLOutcome(o.GetError());
+    }
+    else
+    {
+        return GenerateCloudStorageAIServiceTaskFileURLOutcome(outcome.GetError());
+    }
+}
+
+void IotexplorerClient::GenerateCloudStorageAIServiceTaskFileURLAsync(const GenerateCloudStorageAIServiceTaskFileURLRequest& request, const GenerateCloudStorageAIServiceTaskFileURLAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->GenerateCloudStorageAIServiceTaskFileURL(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+IotexplorerClient::GenerateCloudStorageAIServiceTaskFileURLOutcomeCallable IotexplorerClient::GenerateCloudStorageAIServiceTaskFileURLCallable(const GenerateCloudStorageAIServiceTaskFileURLRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<GenerateCloudStorageAIServiceTaskFileURLOutcome()>>(
+        [this, request]()
+        {
+            return this->GenerateCloudStorageAIServiceTaskFileURL(request);
         }
     );
 
@@ -4892,6 +5064,49 @@ IotexplorerClient::ReleaseStudioProductOutcomeCallable IotexplorerClient::Releas
         [this, request]()
         {
             return this->ReleaseStudioProduct(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+IotexplorerClient::RemoveUserByRoomIdFromTRTCOutcome IotexplorerClient::RemoveUserByRoomIdFromTRTC(const RemoveUserByRoomIdFromTRTCRequest &request)
+{
+    auto outcome = MakeRequest(request, "RemoveUserByRoomIdFromTRTC");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        RemoveUserByRoomIdFromTRTCResponse rsp = RemoveUserByRoomIdFromTRTCResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return RemoveUserByRoomIdFromTRTCOutcome(rsp);
+        else
+            return RemoveUserByRoomIdFromTRTCOutcome(o.GetError());
+    }
+    else
+    {
+        return RemoveUserByRoomIdFromTRTCOutcome(outcome.GetError());
+    }
+}
+
+void IotexplorerClient::RemoveUserByRoomIdFromTRTCAsync(const RemoveUserByRoomIdFromTRTCRequest& request, const RemoveUserByRoomIdFromTRTCAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->RemoveUserByRoomIdFromTRTC(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+IotexplorerClient::RemoveUserByRoomIdFromTRTCOutcomeCallable IotexplorerClient::RemoveUserByRoomIdFromTRTCCallable(const RemoveUserByRoomIdFromTRTCRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<RemoveUserByRoomIdFromTRTCOutcome()>>(
+        [this, request]()
+        {
+            return this->RemoveUserByRoomIdFromTRTC(request);
         }
     );
 

@@ -85,15 +85,23 @@ namespace TencentCloud
                     bool DeviceNameHasBeenSet() const;
 
                     /**
-                     * 获取云存 AI 服务类型。可选值：PackageDetect
-                     * @return ServiceType 云存 AI 服务类型。可选值：PackageDetect
+                     * 获取云存 AI 服务类型。可选值：
+- `PackageDetect`：包裹检测
+- `Highlight`：视频浓缩
+                     * @return ServiceType 云存 AI 服务类型。可选值：
+- `PackageDetect`：包裹检测
+- `Highlight`：视频浓缩
                      * 
                      */
                     std::string GetServiceType() const;
 
                     /**
-                     * 设置云存 AI 服务类型。可选值：PackageDetect
-                     * @param _serviceType 云存 AI 服务类型。可选值：PackageDetect
+                     * 设置云存 AI 服务类型。可选值：
+- `PackageDetect`：包裹检测
+- `Highlight`：视频浓缩
+                     * @param _serviceType 云存 AI 服务类型。可选值：
+- `PackageDetect`：包裹检测
+- `Highlight`：视频浓缩
                      * 
                      */
                     void SetServiceType(const std::string& _serviceType);
@@ -148,15 +156,35 @@ namespace TencentCloud
                     bool OffsetHasBeenSet() const;
 
                     /**
-                     * 获取任务状态（1：失败；2：成功但结果为空；3：成功且结果非空；不传则查询全部状态的任务）
-                     * @return Status 任务状态（1：失败；2：成功但结果为空；3：成功且结果非空；不传则查询全部状态的任务）
+                     * 获取任务状态。可选值：
+- （不传）：查询全部状态的任务
+- `1`：失败
+- `2`：成功但结果为空
+- `3`：成功且结果非空
+- `4`：执行中
+                     * @return Status 任务状态。可选值：
+- （不传）：查询全部状态的任务
+- `1`：失败
+- `2`：成功但结果为空
+- `3`：成功且结果非空
+- `4`：执行中
                      * 
                      */
                     uint64_t GetStatus() const;
 
                     /**
-                     * 设置任务状态（1：失败；2：成功但结果为空；3：成功且结果非空；不传则查询全部状态的任务）
-                     * @param _status 任务状态（1：失败；2：成功但结果为空；3：成功且结果非空；不传则查询全部状态的任务）
+                     * 设置任务状态。可选值：
+- （不传）：查询全部状态的任务
+- `1`：失败
+- `2`：成功但结果为空
+- `3`：成功且结果非空
+- `4`：执行中
+                     * @param _status 任务状态。可选值：
+- （不传）：查询全部状态的任务
+- `1`：失败
+- `2`：成功但结果为空
+- `3`：成功且结果非空
+- `4`：执行中
                      * 
                      */
                     void SetStatus(const uint64_t& _status);
@@ -167,6 +195,48 @@ namespace TencentCloud
                      * 
                      */
                     bool StatusHasBeenSet() const;
+
+                    /**
+                     * 获取用户ID
+                     * @return UserId 用户ID
+                     * 
+                     */
+                    std::string GetUserId() const;
+
+                    /**
+                     * 设置用户ID
+                     * @param _userId 用户ID
+                     * 
+                     */
+                    void SetUserId(const std::string& _userId);
+
+                    /**
+                     * 判断参数 UserId 是否已赋值
+                     * @return UserId 是否已赋值
+                     * 
+                     */
+                    bool UserIdHasBeenSet() const;
+
+                    /**
+                     * 获取通道ID 非NVR设备则不填 NVR设备则必填 默认为无
+                     * @return ChannelId 通道ID 非NVR设备则不填 NVR设备则必填 默认为无
+                     * 
+                     */
+                    uint64_t GetChannelId() const;
+
+                    /**
+                     * 设置通道ID 非NVR设备则不填 NVR设备则必填 默认为无
+                     * @param _channelId 通道ID 非NVR设备则不填 NVR设备则必填 默认为无
+                     * 
+                     */
+                    void SetChannelId(const uint64_t& _channelId);
+
+                    /**
+                     * 判断参数 ChannelId 是否已赋值
+                     * @return ChannelId 是否已赋值
+                     * 
+                     */
+                    bool ChannelIdHasBeenSet() const;
 
                 private:
 
@@ -183,7 +253,9 @@ namespace TencentCloud
                     bool m_deviceNameHasBeenSet;
 
                     /**
-                     * 云存 AI 服务类型。可选值：PackageDetect
+                     * 云存 AI 服务类型。可选值：
+- `PackageDetect`：包裹检测
+- `Highlight`：视频浓缩
                      */
                     std::string m_serviceType;
                     bool m_serviceTypeHasBeenSet;
@@ -201,10 +273,27 @@ namespace TencentCloud
                     bool m_offsetHasBeenSet;
 
                     /**
-                     * 任务状态（1：失败；2：成功但结果为空；3：成功且结果非空；不传则查询全部状态的任务）
+                     * 任务状态。可选值：
+- （不传）：查询全部状态的任务
+- `1`：失败
+- `2`：成功但结果为空
+- `3`：成功且结果非空
+- `4`：执行中
                      */
                     uint64_t m_status;
                     bool m_statusHasBeenSet;
+
+                    /**
+                     * 用户ID
+                     */
+                    std::string m_userId;
+                    bool m_userIdHasBeenSet;
+
+                    /**
+                     * 通道ID 非NVR设备则不填 NVR设备则必填 默认为无
+                     */
+                    uint64_t m_channelId;
+                    bool m_channelIdHasBeenSet;
 
                 };
             }

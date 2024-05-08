@@ -99,6 +99,7 @@ namespace TencentCloud
 101 座席手动转接
 102 IVR阶段放弃
 108 用户超时自动结束
+109 用户主动结束
                      * @return EndStatus 结束状态
 0 异常结束
 1 正常结束
@@ -108,6 +109,7 @@ namespace TencentCloud
 101 座席手动转接
 102 IVR阶段放弃
 108 用户超时自动结束
+109 用户主动结束
                      * 
                      */
                     int64_t GetEndStatus() const;
@@ -122,6 +124,7 @@ namespace TencentCloud
 101 座席手动转接
 102 IVR阶段放弃
 108 用户超时自动结束
+109 用户主动结束
                      * @param _endStatus 结束状态
 0 异常结束
 1 正常结束
@@ -131,6 +134,7 @@ namespace TencentCloud
 101 座席手动转接
 102 IVR阶段放弃
 108 用户超时自动结束
+109 用户主动结束
                      * 
                      */
                     void SetEndStatus(const int64_t& _endStatus);
@@ -350,6 +354,7 @@ namespace TencentCloud
 101 座席手动转接
 102 IVR阶段放弃
 108 用户超时自动结束
+109 用户主动结束
                      */
                     int64_t m_endStatus;
                     bool m_endStatusHasBeenSet;

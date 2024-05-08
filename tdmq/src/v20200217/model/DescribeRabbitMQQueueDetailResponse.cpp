@@ -50,7 +50,10 @@ DescribeRabbitMQQueueDetailResponse::DescribeRabbitMQQueueDetailResponse() :
     m_nodeHasBeenSet(false),
     m_deadLetterStrategyHasBeenSet(false),
     m_queueLeaderLocatorHasBeenSet(false),
-    m_quorumInitialGroupSizeHasBeenSet(false)
+    m_quorumInitialGroupSizeHasBeenSet(false),
+    m_exclusiveHasBeenSet(false),
+    m_policyHasBeenSet(false),
+    m_argumentsHasBeenSet(false)
 {
 }
 
@@ -358,6 +361,36 @@ CoreInternalOutcome DescribeRabbitMQQueueDetailResponse::Deserialize(const strin
         m_quorumInitialGroupSizeHasBeenSet = true;
     }
 
+    if (rsp.HasMember("Exclusive") && !rsp["Exclusive"].IsNull())
+    {
+        if (!rsp["Exclusive"].IsBool())
+        {
+            return CoreInternalOutcome(Core::Error("response `Exclusive` IsBool=false incorrectly").SetRequestId(requestId));
+        }
+        m_exclusive = rsp["Exclusive"].GetBool();
+        m_exclusiveHasBeenSet = true;
+    }
+
+    if (rsp.HasMember("Policy") && !rsp["Policy"].IsNull())
+    {
+        if (!rsp["Policy"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `Policy` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_policy = string(rsp["Policy"].GetString());
+        m_policyHasBeenSet = true;
+    }
+
+    if (rsp.HasMember("Arguments") && !rsp["Arguments"].IsNull())
+    {
+        if (!rsp["Arguments"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `Arguments` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_arguments = string(rsp["Arguments"].GetString());
+        m_argumentsHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -582,6 +615,30 @@ string DescribeRabbitMQQueueDetailResponse::ToJsonString() const
         string key = "QuorumInitialGroupSize";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_quorumInitialGroupSize, allocator);
+    }
+
+    if (m_exclusiveHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Exclusive";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_exclusive, allocator);
+    }
+
+    if (m_policyHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Policy";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_policy.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_argumentsHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Arguments";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_arguments.c_str(), allocator).Move(), allocator);
     }
 
     rapidjson::Value iKey(rapidjson::kStringType);
@@ -864,6 +921,36 @@ int64_t DescribeRabbitMQQueueDetailResponse::GetQuorumInitialGroupSize() const
 bool DescribeRabbitMQQueueDetailResponse::QuorumInitialGroupSizeHasBeenSet() const
 {
     return m_quorumInitialGroupSizeHasBeenSet;
+}
+
+bool DescribeRabbitMQQueueDetailResponse::GetExclusive() const
+{
+    return m_exclusive;
+}
+
+bool DescribeRabbitMQQueueDetailResponse::ExclusiveHasBeenSet() const
+{
+    return m_exclusiveHasBeenSet;
+}
+
+string DescribeRabbitMQQueueDetailResponse::GetPolicy() const
+{
+    return m_policy;
+}
+
+bool DescribeRabbitMQQueueDetailResponse::PolicyHasBeenSet() const
+{
+    return m_policyHasBeenSet;
+}
+
+string DescribeRabbitMQQueueDetailResponse::GetArguments() const
+{
+    return m_arguments;
+}
+
+bool DescribeRabbitMQQueueDetailResponse::ArgumentsHasBeenSet() const
+{
+    return m_argumentsHasBeenSet;
 }
 
 

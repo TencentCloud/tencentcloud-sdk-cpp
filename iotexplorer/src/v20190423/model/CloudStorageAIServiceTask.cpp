@@ -25,11 +25,12 @@ CloudStorageAIServiceTask::CloudStorageAIServiceTask() :
     m_productIdHasBeenSet(false),
     m_deviceNameHasBeenSet(false),
     m_channelIdHasBeenSet(false),
+    m_serviceTypeHasBeenSet(false),
     m_startTimeHasBeenSet(false),
     m_endTimeHasBeenSet(false),
     m_statusHasBeenSet(false),
     m_resultHasBeenSet(false),
-    m_serviceTypeHasBeenSet(false),
+    m_filesHasBeenSet(false),
     m_createTimeHasBeenSet(false),
     m_updateTimeHasBeenSet(false)
 {
@@ -80,6 +81,16 @@ CoreInternalOutcome CloudStorageAIServiceTask::Deserialize(const rapidjson::Valu
         m_channelIdHasBeenSet = true;
     }
 
+    if (value.HasMember("ServiceType") && !value["ServiceType"].IsNull())
+    {
+        if (!value["ServiceType"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `CloudStorageAIServiceTask.ServiceType` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_serviceType = string(value["ServiceType"].GetString());
+        m_serviceTypeHasBeenSet = true;
+    }
+
     if (value.HasMember("StartTime") && !value["StartTime"].IsNull())
     {
         if (!value["StartTime"].IsInt64())
@@ -120,14 +131,17 @@ CoreInternalOutcome CloudStorageAIServiceTask::Deserialize(const rapidjson::Valu
         m_resultHasBeenSet = true;
     }
 
-    if (value.HasMember("ServiceType") && !value["ServiceType"].IsNull())
+    if (value.HasMember("Files") && !value["Files"].IsNull())
     {
-        if (!value["ServiceType"].IsString())
+        if (!value["Files"].IsArray())
+            return CoreInternalOutcome(Core::Error("response `CloudStorageAIServiceTask.Files` is not array type"));
+
+        const rapidjson::Value &tmpValue = value["Files"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
         {
-            return CoreInternalOutcome(Core::Error("response `CloudStorageAIServiceTask.ServiceType` IsString=false incorrectly").SetRequestId(requestId));
+            m_files.push_back((*itr).GetString());
         }
-        m_serviceType = string(value["ServiceType"].GetString());
-        m_serviceTypeHasBeenSet = true;
+        m_filesHasBeenSet = true;
     }
 
     if (value.HasMember("CreateTime") && !value["CreateTime"].IsNull())
@@ -189,6 +203,14 @@ void CloudStorageAIServiceTask::ToJsonObject(rapidjson::Value &value, rapidjson:
         value.AddMember(iKey, m_channelId, allocator);
     }
 
+    if (m_serviceTypeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ServiceType";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_serviceType.c_str(), allocator).Move(), allocator);
+    }
+
     if (m_startTimeHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
@@ -221,12 +243,17 @@ void CloudStorageAIServiceTask::ToJsonObject(rapidjson::Value &value, rapidjson:
         value.AddMember(iKey, rapidjson::Value(m_result.c_str(), allocator).Move(), allocator);
     }
 
-    if (m_serviceTypeHasBeenSet)
+    if (m_filesHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "ServiceType";
+        string key = "Files";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, rapidjson::Value(m_serviceType.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        for (auto itr = m_files.begin(); itr != m_files.end(); ++itr)
+        {
+            value[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
+        }
     }
 
     if (m_createTimeHasBeenSet)
@@ -312,6 +339,22 @@ bool CloudStorageAIServiceTask::ChannelIdHasBeenSet() const
     return m_channelIdHasBeenSet;
 }
 
+string CloudStorageAIServiceTask::GetServiceType() const
+{
+    return m_serviceType;
+}
+
+void CloudStorageAIServiceTask::SetServiceType(const string& _serviceType)
+{
+    m_serviceType = _serviceType;
+    m_serviceTypeHasBeenSet = true;
+}
+
+bool CloudStorageAIServiceTask::ServiceTypeHasBeenSet() const
+{
+    return m_serviceTypeHasBeenSet;
+}
+
 int64_t CloudStorageAIServiceTask::GetStartTime() const
 {
     return m_startTime;
@@ -376,20 +419,20 @@ bool CloudStorageAIServiceTask::ResultHasBeenSet() const
     return m_resultHasBeenSet;
 }
 
-string CloudStorageAIServiceTask::GetServiceType() const
+vector<string> CloudStorageAIServiceTask::GetFiles() const
 {
-    return m_serviceType;
+    return m_files;
 }
 
-void CloudStorageAIServiceTask::SetServiceType(const string& _serviceType)
+void CloudStorageAIServiceTask::SetFiles(const vector<string>& _files)
 {
-    m_serviceType = _serviceType;
-    m_serviceTypeHasBeenSet = true;
+    m_files = _files;
+    m_filesHasBeenSet = true;
 }
 
-bool CloudStorageAIServiceTask::ServiceTypeHasBeenSet() const
+bool CloudStorageAIServiceTask::FilesHasBeenSet() const
 {
-    return m_serviceTypeHasBeenSet;
+    return m_filesHasBeenSet;
 }
 
 int64_t CloudStorageAIServiceTask::GetCreateTime() const

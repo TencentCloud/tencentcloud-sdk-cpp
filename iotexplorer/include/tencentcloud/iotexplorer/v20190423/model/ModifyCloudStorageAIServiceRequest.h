@@ -85,15 +85,23 @@ namespace TencentCloud
                     bool DeviceNameHasBeenSet() const;
 
                     /**
-                     * 获取云存 AI 服务类型。可选值：PackageDetect
-                     * @return ServiceType 云存 AI 服务类型。可选值：PackageDetect
+                     * 获取云存 AI 服务类型。可选值：
+- `PackageDetect`：包裹检测
+- `Highlight`：视频浓缩
+                     * @return ServiceType 云存 AI 服务类型。可选值：
+- `PackageDetect`：包裹检测
+- `Highlight`：视频浓缩
                      * 
                      */
                     std::string GetServiceType() const;
 
                     /**
-                     * 设置云存 AI 服务类型。可选值：PackageDetect
-                     * @param _serviceType 云存 AI 服务类型。可选值：PackageDetect
+                     * 设置云存 AI 服务类型。可选值：
+- `PackageDetect`：包裹检测
+- `Highlight`：视频浓缩
+                     * @param _serviceType 云存 AI 服务类型。可选值：
+- `PackageDetect`：包裹检测
+- `Highlight`：视频浓缩
                      * 
                      */
                     void SetServiceType(const std::string& _serviceType);
@@ -147,6 +155,27 @@ namespace TencentCloud
                      */
                     bool ROIHasBeenSet() const;
 
+                    /**
+                     * 获取云存 AI 服务的配置参数
+                     * @return Config 云存 AI 服务的配置参数
+                     * 
+                     */
+                    std::string GetConfig() const;
+
+                    /**
+                     * 设置云存 AI 服务的配置参数
+                     * @param _config 云存 AI 服务的配置参数
+                     * 
+                     */
+                    void SetConfig(const std::string& _config);
+
+                    /**
+                     * 判断参数 Config 是否已赋值
+                     * @return Config 是否已赋值
+                     * 
+                     */
+                    bool ConfigHasBeenSet() const;
+
                 private:
 
                     /**
@@ -162,7 +191,9 @@ namespace TencentCloud
                     bool m_deviceNameHasBeenSet;
 
                     /**
-                     * 云存 AI 服务类型。可选值：PackageDetect
+                     * 云存 AI 服务类型。可选值：
+- `PackageDetect`：包裹检测
+- `Highlight`：视频浓缩
                      */
                     std::string m_serviceType;
                     bool m_serviceTypeHasBeenSet;
@@ -178,6 +209,12 @@ namespace TencentCloud
                      */
                     std::string m_rOI;
                     bool m_rOIHasBeenSet;
+
+                    /**
+                     * 云存 AI 服务的配置参数
+                     */
+                    std::string m_config;
+                    bool m_configHasBeenSet;
 
                 };
             }

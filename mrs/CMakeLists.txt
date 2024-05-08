@@ -22,13 +22,17 @@ set(mrs_public_header_model
   include/tencentcloud/mrs/v20200910/model/Indicator.h
   include/tencentcloud/mrs/v20200910/model/LastMenstrualPeriodBlock.h
   include/tencentcloud/mrs/v20200910/model/Vaccination.h
+  include/tencentcloud/mrs/v20200910/model/BiologicalProductInfo.h
   include/tencentcloud/mrs/v20200910/model/TimelineEvent.h
+  include/tencentcloud/mrs/v20200910/model/ChemicalProductInfoIndications.h
+  include/tencentcloud/mrs/v20200910/model/BiologicalProductInfoPrecautions.h
   include/tencentcloud/mrs/v20200910/model/ImageMaskResponse.h
   include/tencentcloud/mrs/v20200910/model/IHCBlock.h
   include/tencentcloud/mrs/v20200910/model/GynaecologyVagina.h
   include/tencentcloud/mrs/v20200910/model/BodyTemperatureBlock.h
   include/tencentcloud/mrs/v20200910/model/PathologicalDiagnosisDetailBlock.h
   include/tencentcloud/mrs/v20200910/model/ImageToObjectRequest.h
+  include/tencentcloud/mrs/v20200910/model/ChemicalProductInfoStorage.h
   include/tencentcloud/mrs/v20200910/model/Molecular.h
   include/tencentcloud/mrs/v20200910/model/TuberInfo.h
   include/tencentcloud/mrs/v20200910/model/SurgeryListBlock.h
@@ -42,43 +46,49 @@ set(mrs_public_header_model
   include/tencentcloud/mrs/v20200910/model/GeneralExaminationBriefSummary.h
   include/tencentcloud/mrs/v20200910/model/PTNM.h
   include/tencentcloud/mrs/v20200910/model/TableIndicators.h
+  include/tencentcloud/mrs/v20200910/model/ChemicalProductInfoDosage.h
   include/tencentcloud/mrs/v20200910/model/BlockInfoV2.h
   include/tencentcloud/mrs/v20200910/model/ImageMaskAsyncGetResultResponse.h
   include/tencentcloud/mrs/v20200910/model/Lymph.h
+  include/tencentcloud/mrs/v20200910/model/BiologicalProductInfoApproval.h
   include/tencentcloud/mrs/v20200910/model/ImageMaskAsyncRequest.h
   include/tencentcloud/mrs/v20200910/model/BaseItem.h
+  include/tencentcloud/mrs/v20200910/model/StomatologyPeriodontics.h
   include/tencentcloud/mrs/v20200910/model/OtolaryngologyBaseItem.h
   include/tencentcloud/mrs/v20200910/model/Fp2NdItem.h
   include/tencentcloud/mrs/v20200910/model/SurgeryLymphNode.h
   include/tencentcloud/mrs/v20200910/model/SurgeryHeadNeck.h
-  include/tencentcloud/mrs/v20200910/model/Organ.h
-  include/tencentcloud/mrs/v20200910/model/DiseasePresentBlock.h
+  include/tencentcloud/mrs/v20200910/model/BiologicalProductInfoContraindications.h
+  include/tencentcloud/mrs/v20200910/model/GynaecologyPelvicCavity.h
+  include/tencentcloud/mrs/v20200910/model/ChemicalProductInfoAppearance.h
+  include/tencentcloud/mrs/v20200910/model/ChemicalProductInfoPharmacokinetics.h
   include/tencentcloud/mrs/v20200910/model/MenstrualPeriodBlock.h
-  include/tencentcloud/mrs/v20200910/model/TreatmentRecord.h
+  include/tencentcloud/mrs/v20200910/model/ChemicalProductInfoPackaging.h
   include/tencentcloud/mrs/v20200910/model/InternalMedicineVessel.h
   include/tencentcloud/mrs/v20200910/model/OphthalmologyBareEyeSight.h
   include/tencentcloud/mrs/v20200910/model/Value.h
   include/tencentcloud/mrs/v20200910/model/MainDiseaseHistoryBlock.h
   include/tencentcloud/mrs/v20200910/model/DiseaseMedicalHistory.h
-  include/tencentcloud/mrs/v20200910/model/GeneticHistoryBlock.h
-  include/tencentcloud/mrs/v20200910/model/OphthalmologyBriefSummary.h
+  include/tencentcloud/mrs/v20200910/model/DrugHistoryBlock.h
+  include/tencentcloud/mrs/v20200910/model/ChemicalProductInfo.h
   include/tencentcloud/mrs/v20200910/model/MenstrualHistoryDetailBlock.h
   include/tencentcloud/mrs/v20200910/model/InternalMedicineAbdomenGallBladder.h
+  include/tencentcloud/mrs/v20200910/model/PTNMBlock.h
   include/tencentcloud/mrs/v20200910/model/GynaecologyVulva.h
   include/tencentcloud/mrs/v20200910/model/OphthalmologyColourVision.h
   include/tencentcloud/mrs/v20200910/model/CovidItemsInfo.h
   include/tencentcloud/mrs/v20200910/model/BloodPressureBlock.h
   include/tencentcloud/mrs/v20200910/model/TurnPDFToObjectAsyncRequest.h
   include/tencentcloud/mrs/v20200910/model/HistologyLevel.h
-  include/tencentcloud/mrs/v20200910/model/EcgDescription.h
+  include/tencentcloud/mrs/v20200910/model/DiseasePresentBlock.h
   include/tencentcloud/mrs/v20200910/model/SurgeryThyroid.h
-  include/tencentcloud/mrs/v20200910/model/MedicalRecordInfo.h
+  include/tencentcloud/mrs/v20200910/model/MaternityDesc.h
   include/tencentcloud/mrs/v20200910/model/EyeItemsInfo.h
   include/tencentcloud/mrs/v20200910/model/SurgerySkin.h
   include/tencentcloud/mrs/v20200910/model/IndicatorItemV2.h
   include/tencentcloud/mrs/v20200910/model/TurnPDFToObjectAsyncResponse.h
   include/tencentcloud/mrs/v20200910/model/NormSize.h
-  include/tencentcloud/mrs/v20200910/model/GynaecologyBriefSummary.h
+  include/tencentcloud/mrs/v20200910/model/FirstPage.h
   include/tencentcloud/mrs/v20200910/model/TextToObjectResponse.h
   include/tencentcloud/mrs/v20200910/model/SurgeryConditionBlock.h
   include/tencentcloud/mrs/v20200910/model/FieldInfo.h
@@ -92,39 +102,43 @@ set(mrs_public_header_model
   include/tencentcloud/mrs/v20200910/model/TurnPDFToObjectResponse.h
   include/tencentcloud/mrs/v20200910/model/InternalMedicineHeart.h
   include/tencentcloud/mrs/v20200910/model/ReportInfo.h
-  include/tencentcloud/mrs/v20200910/model/GeneralExaminationVitalSign.h
+  include/tencentcloud/mrs/v20200910/model/Endoscopy.h
   include/tencentcloud/mrs/v20200910/model/TurnPDFToObjectAsyncGetResultResponse.h
   include/tencentcloud/mrs/v20200910/model/PhysicalBaseItem.h
-  include/tencentcloud/mrs/v20200910/model/Exame.h
+  include/tencentcloud/mrs/v20200910/model/ChemicalProductInfoBrochure.h
+  include/tencentcloud/mrs/v20200910/model/HistologyTypeV2.h
   include/tencentcloud/mrs/v20200910/model/PathologyV2.h
-  include/tencentcloud/mrs/v20200910/model/FirstPage.h
+  include/tencentcloud/mrs/v20200910/model/BlockTitle.h
   include/tencentcloud/mrs/v20200910/model/InvasiveV2.h
   include/tencentcloud/mrs/v20200910/model/TextToObjectRequest.h
   include/tencentcloud/mrs/v20200910/model/AspectRatio.h
   include/tencentcloud/mrs/v20200910/model/PersonalHistoryBlock.h
   include/tencentcloud/mrs/v20200910/model/NeonatalInfo.h
-  include/tencentcloud/mrs/v20200910/model/Size.h
   include/tencentcloud/mrs/v20200910/model/EyeItem.h
   include/tencentcloud/mrs/v20200910/model/FamilyMedicalHistory.h
+  include/tencentcloud/mrs/v20200910/model/BiologicalProductInfoBrochure.h
+  include/tencentcloud/mrs/v20200910/model/DiagCert.h
   include/tencentcloud/mrs/v20200910/model/OphthalmologyCorrectedVisualAcuity.h
   include/tencentcloud/mrs/v20200910/model/GeneralExaminationVitalSignBloodPressure.h
   include/tencentcloud/mrs/v20200910/model/Part.h
   include/tencentcloud/mrs/v20200910/model/ImageToClassResponse.h
+  include/tencentcloud/mrs/v20200910/model/DischargeDiagnosisBlock.h
   include/tencentcloud/mrs/v20200910/model/DrugListBlock.h
   include/tencentcloud/mrs/v20200910/model/Template.h
-  include/tencentcloud/mrs/v20200910/model/MaternityDesc.h
+  include/tencentcloud/mrs/v20200910/model/GynaecologyBriefSummary.h
+  include/tencentcloud/mrs/v20200910/model/RelativeHistoryBlock.h
   include/tencentcloud/mrs/v20200910/model/EndoscopyOrgan.h
   include/tencentcloud/mrs/v20200910/model/ClinicalStaging.h
   include/tencentcloud/mrs/v20200910/model/InternalMedicineAbdomenPancreas.h
   include/tencentcloud/mrs/v20200910/model/PersonalMedicalHistory.h
-  include/tencentcloud/mrs/v20200910/model/DiagCert.h
+  include/tencentcloud/mrs/v20200910/model/ChemicalProductInfoOverdose.h
   include/tencentcloud/mrs/v20200910/model/InternalMedicineAbdomen.h
-  include/tencentcloud/mrs/v20200910/model/PTNMBlock.h
+  include/tencentcloud/mrs/v20200910/model/DrugInstructionObjectResponse.h
   include/tencentcloud/mrs/v20200910/model/SmokeHistoryBlock.h
   include/tencentcloud/mrs/v20200910/model/AdmissionConditionBlock.h
   include/tencentcloud/mrs/v20200910/model/StomatologyToothDecay.h
   include/tencentcloud/mrs/v20200910/model/TextToClassResponse.h
-  include/tencentcloud/mrs/v20200910/model/StomatologyBriefSummary.h
+  include/tencentcloud/mrs/v20200910/model/ChemicalProductInfoInteractions.h
   include/tencentcloud/mrs/v20200910/model/HearingItem.h
   include/tencentcloud/mrs/v20200910/model/HistologyType.h
   include/tencentcloud/mrs/v20200910/model/BlockInfo.h
@@ -132,19 +146,23 @@ set(mrs_public_header_model
   include/tencentcloud/mrs/v20200910/model/Block.h
   include/tencentcloud/mrs/v20200910/model/TextType.h
   include/tencentcloud/mrs/v20200910/model/EcgItem.h
-  include/tencentcloud/mrs/v20200910/model/GynaecologyUterus.h
   include/tencentcloud/mrs/v20200910/model/Fetus.h
   include/tencentcloud/mrs/v20200910/model/OtolaryngologyEar.h
   include/tencentcloud/mrs/v20200910/model/ImageInfo.h
-  include/tencentcloud/mrs/v20200910/model/Point.h
+  include/tencentcloud/mrs/v20200910/model/EcgDescription.h
   include/tencentcloud/mrs/v20200910/model/MenstrualMedicalHistory.h
   include/tencentcloud/mrs/v20200910/model/Check.h
+  include/tencentcloud/mrs/v20200910/model/ChemicalProductInfoActiveIngredient.h
   include/tencentcloud/mrs/v20200910/model/EcgDiagnosis.h
   include/tencentcloud/mrs/v20200910/model/ImmunohistochemistryBlock.h
   include/tencentcloud/mrs/v20200910/model/OtolaryngologyLarynx.h
   include/tencentcloud/mrs/v20200910/model/SummaryInfo.h
-  include/tencentcloud/mrs/v20200910/model/DescInfo.h
   include/tencentcloud/mrs/v20200910/model/HistologyClass.h
+  include/tencentcloud/mrs/v20200910/model/DescInfo.h
+  include/tencentcloud/mrs/v20200910/model/Organ.h
+  include/tencentcloud/mrs/v20200910/model/GynaecologyUterus.h
+  include/tencentcloud/mrs/v20200910/model/BiologicalProductInfoIngredientAndAppearance.h
+  include/tencentcloud/mrs/v20200910/model/StomatologyBriefSummary.h
   include/tencentcloud/mrs/v20200910/model/FamilyHistoryBlock.h
   include/tencentcloud/mrs/v20200910/model/AdmissionDiagnosisBlock.h
   include/tencentcloud/mrs/v20200910/model/TreatmentRecordBlock.h
@@ -153,8 +171,9 @@ set(mrs_public_header_model
   include/tencentcloud/mrs/v20200910/model/ChestCircumferenceItem.h
   include/tencentcloud/mrs/v20200910/model/SurgeryAnorectal.h
   include/tencentcloud/mrs/v20200910/model/IHCInfo.h
-  include/tencentcloud/mrs/v20200910/model/PdfInfo.h
+  include/tencentcloud/mrs/v20200910/model/ChemicalProductInfoName.h
   include/tencentcloud/mrs/v20200910/model/OphthalmologyBaseItem.h
+  include/tencentcloud/mrs/v20200910/model/BiologicalProductInfoStorage.h
   include/tencentcloud/mrs/v20200910/model/HandleParam.h
   include/tencentcloud/mrs/v20200910/model/NeglistBlock.h
   include/tencentcloud/mrs/v20200910/model/Medicine.h
@@ -164,6 +183,7 @@ set(mrs_public_header_model
   include/tencentcloud/mrs/v20200910/model/Rectangle.h
   include/tencentcloud/mrs/v20200910/model/IHCV2.h
   include/tencentcloud/mrs/v20200910/model/ObstericalMedicalHistory.h
+  include/tencentcloud/mrs/v20200910/model/ChemicalProductInfoGeriatricUse.h
   include/tencentcloud/mrs/v20200910/model/StomatologyGingiva.h
   include/tencentcloud/mrs/v20200910/model/OtolaryngologyNose.h
   include/tencentcloud/mrs/v20200910/model/BaseItem3.h
@@ -176,70 +196,89 @@ set(mrs_public_header_model
   include/tencentcloud/mrs/v20200910/model/NormPart.h
   include/tencentcloud/mrs/v20200910/model/GynaecologyMenstrualHistory.h
   include/tencentcloud/mrs/v20200910/model/ImageMaskRequest.h
-  include/tencentcloud/mrs/v20200910/model/Endoscopy.h
+  include/tencentcloud/mrs/v20200910/model/GeneralExaminationVitalSign.h
   include/tencentcloud/mrs/v20200910/model/Prescription.h
   include/tencentcloud/mrs/v20200910/model/InternalMedicineBaseItem.h
-  include/tencentcloud/mrs/v20200910/model/SurgeryUrogenitalSystem.h
+  include/tencentcloud/mrs/v20200910/model/ChemicalProductInfoContraindications.h
+  include/tencentcloud/mrs/v20200910/model/BiologicalProductInfoDosage.h
   include/tencentcloud/mrs/v20200910/model/Coord.h
   include/tencentcloud/mrs/v20200910/model/Summary.h
-  include/tencentcloud/mrs/v20200910/model/ResultInfo.h
-  include/tencentcloud/mrs/v20200910/model/PathologyReport.h
+  include/tencentcloud/mrs/v20200910/model/ChemicalProductInfoManufacturer.h
+  include/tencentcloud/mrs/v20200910/model/ChemicalProductInfoPediatricUse.h
   include/tencentcloud/mrs/v20200910/model/MenstrualHistoryBlock.h
   include/tencentcloud/mrs/v20200910/model/Time.h
   include/tencentcloud/mrs/v20200910/model/Coordinate.h
   include/tencentcloud/mrs/v20200910/model/DosageBlock.h
-  include/tencentcloud/mrs/v20200910/model/RelativeHistoryBlock.h
-  include/tencentcloud/mrs/v20200910/model/StomatologyPeriodontics.h
+  include/tencentcloud/mrs/v20200910/model/Point.h
+  include/tencentcloud/mrs/v20200910/model/PathologyReport.h
+  include/tencentcloud/mrs/v20200910/model/BiologicalProductInfoValidityPeriod.h
+  include/tencentcloud/mrs/v20200910/model/DrugInstructionObjectRequest.h
   include/tencentcloud/mrs/v20200910/model/BiopsyPart.h
   include/tencentcloud/mrs/v20200910/model/Invas.h
   include/tencentcloud/mrs/v20200910/model/ImageToClassRequest.h
   include/tencentcloud/mrs/v20200910/model/InternalMedicineAbdomenLiver.h
   include/tencentcloud/mrs/v20200910/model/BaseInfo.h
+  include/tencentcloud/mrs/v20200910/model/ChemicalProductInfoPrecautions.h
   include/tencentcloud/mrs/v20200910/model/PhysicalExamination.h
   include/tencentcloud/mrs/v20200910/model/InternalMedicineRespiratorySystem.h
-  include/tencentcloud/mrs/v20200910/model/TurnPDFToObjectAsyncGetResultRequest.h
+  include/tencentcloud/mrs/v20200910/model/ChemicalProductInfoExecutiveStandards.h
   include/tencentcloud/mrs/v20200910/model/BloodPressureItem.h
   include/tencentcloud/mrs/v20200910/model/SymptomInfo.h
   include/tencentcloud/mrs/v20200910/model/TextToClassRequest.h
   include/tencentcloud/mrs/v20200910/model/TextTypeListBlock.h
   include/tencentcloud/mrs/v20200910/model/ObstetricalHistoryBlock.h
   include/tencentcloud/mrs/v20200910/model/SurgerySpinalExtremities.h
-  include/tencentcloud/mrs/v20200910/model/BlockTitle.h
+  include/tencentcloud/mrs/v20200910/model/Size.h
   include/tencentcloud/mrs/v20200910/model/DischargeConditionBlock.h
   include/tencentcloud/mrs/v20200910/model/LymphTotal.h
+  include/tencentcloud/mrs/v20200910/model/ChemicalProductInfoApproval.h
   include/tencentcloud/mrs/v20200910/model/OtherInfo.h
   include/tencentcloud/mrs/v20200910/model/TurnPDFToObjectRequest.h
   include/tencentcloud/mrs/v20200910/model/MenstrualFlowBlock.h
+  include/tencentcloud/mrs/v20200910/model/BiologicalProductInfoPackaging.h
   include/tencentcloud/mrs/v20200910/model/TimelineInformation.h
-  include/tencentcloud/mrs/v20200910/model/SurgeryHistory.h
+  include/tencentcloud/mrs/v20200910/model/RelapseDateBlock.h
   include/tencentcloud/mrs/v20200910/model/OphthalmologyFundoscopy.h
   include/tencentcloud/mrs/v20200910/model/SurgeryBreast.h
   include/tencentcloud/mrs/v20200910/model/InternalMedicineBriefSummary.h
+  include/tencentcloud/mrs/v20200910/model/TurnPDFToObjectAsyncGetResultRequest.h
+  include/tencentcloud/mrs/v20200910/model/SurgeryUrogenitalSystem.h
+  include/tencentcloud/mrs/v20200910/model/ChemicalProductInfoAdverseReaction.h
+  include/tencentcloud/mrs/v20200910/model/BiologicalProductInfoName.h
   include/tencentcloud/mrs/v20200910/model/ImageMaskAsyncResponse.h
   include/tencentcloud/mrs/v20200910/model/DeathDateBlock.h
   include/tencentcloud/mrs/v20200910/model/BirthCert.h
   include/tencentcloud/mrs/v20200910/model/KeyValueItem.h
   include/tencentcloud/mrs/v20200910/model/ChiefComplaintBlock.h
-  include/tencentcloud/mrs/v20200910/model/CovidItem.h
+  include/tencentcloud/mrs/v20200910/model/BiologicalProductInfoExecutiveStandards.h
   include/tencentcloud/mrs/v20200910/model/ValueBlock.h
+  include/tencentcloud/mrs/v20200910/model/BiologicalProductInfoVaccinationTarget.h
   include/tencentcloud/mrs/v20200910/model/InternalMedicineAbdomenSpleen.h
   include/tencentcloud/mrs/v20200910/model/InternalMedicineAbdomenKidney.h
   include/tencentcloud/mrs/v20200910/model/ParentInfo.h
+  include/tencentcloud/mrs/v20200910/model/BiologicalProductInfoAdverseReaction.h
+  include/tencentcloud/mrs/v20200910/model/PdfInfo.h
   include/tencentcloud/mrs/v20200910/model/DischargeInfoBlock.h
   include/tencentcloud/mrs/v20200910/model/Maternity.h
   include/tencentcloud/mrs/v20200910/model/LymphNode.h
   include/tencentcloud/mrs/v20200910/model/IssueInfo.h
+  include/tencentcloud/mrs/v20200910/model/ResultInfo.h
   include/tencentcloud/mrs/v20200910/model/MedDoc.h
   include/tencentcloud/mrs/v20200910/model/Desc.h
   include/tencentcloud/mrs/v20200910/model/PatientInfo.h
-  include/tencentcloud/mrs/v20200910/model/HistologyTypeV2.h
+  include/tencentcloud/mrs/v20200910/model/SurgeryHistory.h
+  include/tencentcloud/mrs/v20200910/model/Exame.h
   include/tencentcloud/mrs/v20200910/model/SurgeryBaseItem.h
+  include/tencentcloud/mrs/v20200910/model/BiologicalProductInfoManufacturer.h
   include/tencentcloud/mrs/v20200910/model/PartDesc.h
-  include/tencentcloud/mrs/v20200910/model/DischargeDiagnosisBlock.h
+  include/tencentcloud/mrs/v20200910/model/ChemicalProductInfoValidityPeriod.h
+  include/tencentcloud/mrs/v20200910/model/GeneralExaminationBaseItem.h
   include/tencentcloud/mrs/v20200910/model/FertilityHistoryBlock.h
+  include/tencentcloud/mrs/v20200910/model/SurgeryBriefSummary.h
   include/tencentcloud/mrs/v20200910/model/GeneralExaminationOthers.h
   include/tencentcloud/mrs/v20200910/model/DiseaseHistoryBlock.h
   include/tencentcloud/mrs/v20200910/model/NumValue.h
+  include/tencentcloud/mrs/v20200910/model/TreatmentRecord.h
   include/tencentcloud/mrs/v20200910/model/EyeChildItem.h
   include/tencentcloud/mrs/v20200910/model/SurgeryAttr.h
   include/tencentcloud/mrs/v20200910/model/IndicatorV3.h
@@ -248,16 +287,19 @@ set(mrs_public_header_model
   include/tencentcloud/mrs/v20200910/model/GynaecologyAdnexal.h
   include/tencentcloud/mrs/v20200910/model/IndicatorItem.h
   include/tencentcloud/mrs/v20200910/model/DiagCertItem.h
-  include/tencentcloud/mrs/v20200910/model/DrugHistoryBlock.h
+  include/tencentcloud/mrs/v20200910/model/GeneticHistoryBlock.h
   include/tencentcloud/mrs/v20200910/model/SurgeryHistoryBlock.h
-  include/tencentcloud/mrs/v20200910/model/SurgeryBriefSummary.h
-  include/tencentcloud/mrs/v20200910/model/GynaecologyPelvicCavity.h
-  include/tencentcloud/mrs/v20200910/model/RelapseDateBlock.h
+  include/tencentcloud/mrs/v20200910/model/ChemicalProductInfoPregnancyLactationUse.h
+  include/tencentcloud/mrs/v20200910/model/CovidItem.h
+  include/tencentcloud/mrs/v20200910/model/OphthalmologyBriefSummary.h
   include/tencentcloud/mrs/v20200910/model/ImageToObjectResponse.h
+  include/tencentcloud/mrs/v20200910/model/ChemicalProductInfoClinicalTrial.h
   include/tencentcloud/mrs/v20200910/model/ValueUnitItem.h
   include/tencentcloud/mrs/v20200910/model/GynaecologyBaseItem.h
-  include/tencentcloud/mrs/v20200910/model/GeneralExaminationBaseItem.h
+  include/tencentcloud/mrs/v20200910/model/BiologicalProductInfoIndications.h
+  include/tencentcloud/mrs/v20200910/model/ChemicalProductInfoPharmacologyToxicology.h
   include/tencentcloud/mrs/v20200910/model/MenstruationOrNotBlock.h
+  include/tencentcloud/mrs/v20200910/model/MedicalRecordInfo.h
   include/tencentcloud/mrs/v20200910/model/Electrocardiogram.h
   include/tencentcloud/mrs/v20200910/model/OtolaryngologyBriefSummary.h
   )
@@ -267,13 +309,17 @@ set(mrs_src
   src/v20200910/model/Indicator.cpp
   src/v20200910/model/LastMenstrualPeriodBlock.cpp
   src/v20200910/model/Vaccination.cpp
+  src/v20200910/model/BiologicalProductInfo.cpp
   src/v20200910/model/TimelineEvent.cpp
+  src/v20200910/model/ChemicalProductInfoIndications.cpp
+  src/v20200910/model/BiologicalProductInfoPrecautions.cpp
   src/v20200910/model/ImageMaskResponse.cpp
   src/v20200910/model/IHCBlock.cpp
   src/v20200910/model/GynaecologyVagina.cpp
   src/v20200910/model/BodyTemperatureBlock.cpp
   src/v20200910/model/PathologicalDiagnosisDetailBlock.cpp
   src/v20200910/model/ImageToObjectRequest.cpp
+  src/v20200910/model/ChemicalProductInfoStorage.cpp
   src/v20200910/model/Molecular.cpp
   src/v20200910/model/TuberInfo.cpp
   src/v20200910/model/SurgeryListBlock.cpp
@@ -287,43 +333,49 @@ set(mrs_src
   src/v20200910/model/GeneralExaminationBriefSummary.cpp
   src/v20200910/model/PTNM.cpp
   src/v20200910/model/TableIndicators.cpp
+  src/v20200910/model/ChemicalProductInfoDosage.cpp
   src/v20200910/model/BlockInfoV2.cpp
   src/v20200910/model/ImageMaskAsyncGetResultResponse.cpp
   src/v20200910/model/Lymph.cpp
+  src/v20200910/model/BiologicalProductInfoApproval.cpp
   src/v20200910/model/ImageMaskAsyncRequest.cpp
   src/v20200910/model/BaseItem.cpp
+  src/v20200910/model/StomatologyPeriodontics.cpp
   src/v20200910/model/OtolaryngologyBaseItem.cpp
   src/v20200910/model/Fp2NdItem.cpp
   src/v20200910/model/SurgeryLymphNode.cpp
   src/v20200910/model/SurgeryHeadNeck.cpp
-  src/v20200910/model/Organ.cpp
-  src/v20200910/model/DiseasePresentBlock.cpp
+  src/v20200910/model/BiologicalProductInfoContraindications.cpp
+  src/v20200910/model/GynaecologyPelvicCavity.cpp
+  src/v20200910/model/ChemicalProductInfoAppearance.cpp
+  src/v20200910/model/ChemicalProductInfoPharmacokinetics.cpp
   src/v20200910/model/MenstrualPeriodBlock.cpp
-  src/v20200910/model/TreatmentRecord.cpp
+  src/v20200910/model/ChemicalProductInfoPackaging.cpp
   src/v20200910/model/InternalMedicineVessel.cpp
   src/v20200910/model/OphthalmologyBareEyeSight.cpp
   src/v20200910/model/Value.cpp
   src/v20200910/model/MainDiseaseHistoryBlock.cpp
   src/v20200910/model/DiseaseMedicalHistory.cpp
-  src/v20200910/model/GeneticHistoryBlock.cpp
-  src/v20200910/model/OphthalmologyBriefSummary.cpp
+  src/v20200910/model/DrugHistoryBlock.cpp
+  src/v20200910/model/ChemicalProductInfo.cpp
   src/v20200910/model/MenstrualHistoryDetailBlock.cpp
   src/v20200910/model/InternalMedicineAbdomenGallBladder.cpp
+  src/v20200910/model/PTNMBlock.cpp
   src/v20200910/model/GynaecologyVulva.cpp
   src/v20200910/model/OphthalmologyColourVision.cpp
   src/v20200910/model/CovidItemsInfo.cpp
   src/v20200910/model/BloodPressureBlock.cpp
   src/v20200910/model/TurnPDFToObjectAsyncRequest.cpp
   src/v20200910/model/HistologyLevel.cpp
-  src/v20200910/model/EcgDescription.cpp
+  src/v20200910/model/DiseasePresentBlock.cpp
   src/v20200910/model/SurgeryThyroid.cpp
-  src/v20200910/model/MedicalRecordInfo.cpp
+  src/v20200910/model/MaternityDesc.cpp
   src/v20200910/model/EyeItemsInfo.cpp
   src/v20200910/model/SurgerySkin.cpp
   src/v20200910/model/IndicatorItemV2.cpp
   src/v20200910/model/TurnPDFToObjectAsyncResponse.cpp
   src/v20200910/model/NormSize.cpp
-  src/v20200910/model/GynaecologyBriefSummary.cpp
+  src/v20200910/model/FirstPage.cpp
   src/v20200910/model/TextToObjectResponse.cpp
   src/v20200910/model/SurgeryConditionBlock.cpp
   src/v20200910/model/FieldInfo.cpp
@@ -337,39 +389,43 @@ set(mrs_src
   src/v20200910/model/TurnPDFToObjectResponse.cpp
   src/v20200910/model/InternalMedicineHeart.cpp
   src/v20200910/model/ReportInfo.cpp
-  src/v20200910/model/GeneralExaminationVitalSign.cpp
+  src/v20200910/model/Endoscopy.cpp
   src/v20200910/model/TurnPDFToObjectAsyncGetResultResponse.cpp
   src/v20200910/model/PhysicalBaseItem.cpp
-  src/v20200910/model/Exame.cpp
+  src/v20200910/model/ChemicalProductInfoBrochure.cpp
+  src/v20200910/model/HistologyTypeV2.cpp
   src/v20200910/model/PathologyV2.cpp
-  src/v20200910/model/FirstPage.cpp
+  src/v20200910/model/BlockTitle.cpp
   src/v20200910/model/InvasiveV2.cpp
   src/v20200910/model/TextToObjectRequest.cpp
   src/v20200910/model/AspectRatio.cpp
   src/v20200910/model/PersonalHistoryBlock.cpp
   src/v20200910/model/NeonatalInfo.cpp
-  src/v20200910/model/Size.cpp
   src/v20200910/model/EyeItem.cpp
   src/v20200910/model/FamilyMedicalHistory.cpp
+  src/v20200910/model/BiologicalProductInfoBrochure.cpp
+  src/v20200910/model/DiagCert.cpp
   src/v20200910/model/OphthalmologyCorrectedVisualAcuity.cpp
   src/v20200910/model/GeneralExaminationVitalSignBloodPressure.cpp
   src/v20200910/model/Part.cpp
   src/v20200910/model/ImageToClassResponse.cpp
+  src/v20200910/model/DischargeDiagnosisBlock.cpp
   src/v20200910/model/DrugListBlock.cpp
   src/v20200910/model/Template.cpp
-  src/v20200910/model/MaternityDesc.cpp
+  src/v20200910/model/GynaecologyBriefSummary.cpp
+  src/v20200910/model/RelativeHistoryBlock.cpp
   src/v20200910/model/EndoscopyOrgan.cpp
   src/v20200910/model/ClinicalStaging.cpp
   src/v20200910/model/InternalMedicineAbdomenPancreas.cpp
   src/v20200910/model/PersonalMedicalHistory.cpp
-  src/v20200910/model/DiagCert.cpp
+  src/v20200910/model/ChemicalProductInfoOverdose.cpp
   src/v20200910/model/InternalMedicineAbdomen.cpp
-  src/v20200910/model/PTNMBlock.cpp
+  src/v20200910/model/DrugInstructionObjectResponse.cpp
   src/v20200910/model/SmokeHistoryBlock.cpp
   src/v20200910/model/AdmissionConditionBlock.cpp
   src/v20200910/model/StomatologyToothDecay.cpp
   src/v20200910/model/TextToClassResponse.cpp
-  src/v20200910/model/StomatologyBriefSummary.cpp
+  src/v20200910/model/ChemicalProductInfoInteractions.cpp
   src/v20200910/model/HearingItem.cpp
   src/v20200910/model/HistologyType.cpp
   src/v20200910/model/BlockInfo.cpp
@@ -377,19 +433,23 @@ set(mrs_src
   src/v20200910/model/Block.cpp
   src/v20200910/model/TextType.cpp
   src/v20200910/model/EcgItem.cpp
-  src/v20200910/model/GynaecologyUterus.cpp
   src/v20200910/model/Fetus.cpp
   src/v20200910/model/OtolaryngologyEar.cpp
   src/v20200910/model/ImageInfo.cpp
-  src/v20200910/model/Point.cpp
+  src/v20200910/model/EcgDescription.cpp
   src/v20200910/model/MenstrualMedicalHistory.cpp
   src/v20200910/model/Check.cpp
+  src/v20200910/model/ChemicalProductInfoActiveIngredient.cpp
   src/v20200910/model/EcgDiagnosis.cpp
   src/v20200910/model/ImmunohistochemistryBlock.cpp
   src/v20200910/model/OtolaryngologyLarynx.cpp
   src/v20200910/model/SummaryInfo.cpp
-  src/v20200910/model/DescInfo.cpp
   src/v20200910/model/HistologyClass.cpp
+  src/v20200910/model/DescInfo.cpp
+  src/v20200910/model/Organ.cpp
+  src/v20200910/model/GynaecologyUterus.cpp
+  src/v20200910/model/BiologicalProductInfoIngredientAndAppearance.cpp
+  src/v20200910/model/StomatologyBriefSummary.cpp
   src/v20200910/model/FamilyHistoryBlock.cpp
   src/v20200910/model/AdmissionDiagnosisBlock.cpp
   src/v20200910/model/TreatmentRecordBlock.cpp
@@ -398,8 +458,9 @@ set(mrs_src
   src/v20200910/model/ChestCircumferenceItem.cpp
   src/v20200910/model/SurgeryAnorectal.cpp
   src/v20200910/model/IHCInfo.cpp
-  src/v20200910/model/PdfInfo.cpp
+  src/v20200910/model/ChemicalProductInfoName.cpp
   src/v20200910/model/OphthalmologyBaseItem.cpp
+  src/v20200910/model/BiologicalProductInfoStorage.cpp
   src/v20200910/model/HandleParam.cpp
   src/v20200910/model/NeglistBlock.cpp
   src/v20200910/model/Medicine.cpp
@@ -409,6 +470,7 @@ set(mrs_src
   src/v20200910/model/Rectangle.cpp
   src/v20200910/model/IHCV2.cpp
   src/v20200910/model/ObstericalMedicalHistory.cpp
+  src/v20200910/model/ChemicalProductInfoGeriatricUse.cpp
   src/v20200910/model/StomatologyGingiva.cpp
   src/v20200910/model/OtolaryngologyNose.cpp
   src/v20200910/model/BaseItem3.cpp
@@ -421,70 +483,89 @@ set(mrs_src
   src/v20200910/model/NormPart.cpp
   src/v20200910/model/GynaecologyMenstrualHistory.cpp
   src/v20200910/model/ImageMaskRequest.cpp
-  src/v20200910/model/Endoscopy.cpp
+  src/v20200910/model/GeneralExaminationVitalSign.cpp
   src/v20200910/model/Prescription.cpp
   src/v20200910/model/InternalMedicineBaseItem.cpp
-  src/v20200910/model/SurgeryUrogenitalSystem.cpp
+  src/v20200910/model/ChemicalProductInfoContraindications.cpp
+  src/v20200910/model/BiologicalProductInfoDosage.cpp
   src/v20200910/model/Coord.cpp
   src/v20200910/model/Summary.cpp
-  src/v20200910/model/ResultInfo.cpp
-  src/v20200910/model/PathologyReport.cpp
+  src/v20200910/model/ChemicalProductInfoManufacturer.cpp
+  src/v20200910/model/ChemicalProductInfoPediatricUse.cpp
   src/v20200910/model/MenstrualHistoryBlock.cpp
   src/v20200910/model/Time.cpp
   src/v20200910/model/Coordinate.cpp
   src/v20200910/model/DosageBlock.cpp
-  src/v20200910/model/RelativeHistoryBlock.cpp
-  src/v20200910/model/StomatologyPeriodontics.cpp
+  src/v20200910/model/Point.cpp
+  src/v20200910/model/PathologyReport.cpp
+  src/v20200910/model/BiologicalProductInfoValidityPeriod.cpp
+  src/v20200910/model/DrugInstructionObjectRequest.cpp
   src/v20200910/model/BiopsyPart.cpp
   src/v20200910/model/Invas.cpp
   src/v20200910/model/ImageToClassRequest.cpp
   src/v20200910/model/InternalMedicineAbdomenLiver.cpp
   src/v20200910/model/BaseInfo.cpp
+  src/v20200910/model/ChemicalProductInfoPrecautions.cpp
   src/v20200910/model/PhysicalExamination.cpp
   src/v20200910/model/InternalMedicineRespiratorySystem.cpp
-  src/v20200910/model/TurnPDFToObjectAsyncGetResultRequest.cpp
+  src/v20200910/model/ChemicalProductInfoExecutiveStandards.cpp
   src/v20200910/model/BloodPressureItem.cpp
   src/v20200910/model/SymptomInfo.cpp
   src/v20200910/model/TextToClassRequest.cpp
   src/v20200910/model/TextTypeListBlock.cpp
   src/v20200910/model/ObstetricalHistoryBlock.cpp
   src/v20200910/model/SurgerySpinalExtremities.cpp
-  src/v20200910/model/BlockTitle.cpp
+  src/v20200910/model/Size.cpp
   src/v20200910/model/DischargeConditionBlock.cpp
   src/v20200910/model/LymphTotal.cpp
+  src/v20200910/model/ChemicalProductInfoApproval.cpp
   src/v20200910/model/OtherInfo.cpp
   src/v20200910/model/TurnPDFToObjectRequest.cpp
   src/v20200910/model/MenstrualFlowBlock.cpp
+  src/v20200910/model/BiologicalProductInfoPackaging.cpp
   src/v20200910/model/TimelineInformation.cpp
-  src/v20200910/model/SurgeryHistory.cpp
+  src/v20200910/model/RelapseDateBlock.cpp
   src/v20200910/model/OphthalmologyFundoscopy.cpp
   src/v20200910/model/SurgeryBreast.cpp
   src/v20200910/model/InternalMedicineBriefSummary.cpp
+  src/v20200910/model/TurnPDFToObjectAsyncGetResultRequest.cpp
+  src/v20200910/model/SurgeryUrogenitalSystem.cpp
+  src/v20200910/model/ChemicalProductInfoAdverseReaction.cpp
+  src/v20200910/model/BiologicalProductInfoName.cpp
   src/v20200910/model/ImageMaskAsyncResponse.cpp
   src/v20200910/model/DeathDateBlock.cpp
   src/v20200910/model/BirthCert.cpp
   src/v20200910/model/KeyValueItem.cpp
   src/v20200910/model/ChiefComplaintBlock.cpp
-  src/v20200910/model/CovidItem.cpp
+  src/v20200910/model/BiologicalProductInfoExecutiveStandards.cpp
   src/v20200910/model/ValueBlock.cpp
+  src/v20200910/model/BiologicalProductInfoVaccinationTarget.cpp
   src/v20200910/model/InternalMedicineAbdomenSpleen.cpp
   src/v20200910/model/InternalMedicineAbdomenKidney.cpp
   src/v20200910/model/ParentInfo.cpp
+  src/v20200910/model/BiologicalProductInfoAdverseReaction.cpp
+  src/v20200910/model/PdfInfo.cpp
   src/v20200910/model/DischargeInfoBlock.cpp
   src/v20200910/model/Maternity.cpp
   src/v20200910/model/LymphNode.cpp
   src/v20200910/model/IssueInfo.cpp
+  src/v20200910/model/ResultInfo.cpp
   src/v20200910/model/MedDoc.cpp
   src/v20200910/model/Desc.cpp
   src/v20200910/model/PatientInfo.cpp
-  src/v20200910/model/HistologyTypeV2.cpp
+  src/v20200910/model/SurgeryHistory.cpp
+  src/v20200910/model/Exame.cpp
   src/v20200910/model/SurgeryBaseItem.cpp
+  src/v20200910/model/BiologicalProductInfoManufacturer.cpp
   src/v20200910/model/PartDesc.cpp
-  src/v20200910/model/DischargeDiagnosisBlock.cpp
+  src/v20200910/model/ChemicalProductInfoValidityPeriod.cpp
+  src/v20200910/model/GeneralExaminationBaseItem.cpp
   src/v20200910/model/FertilityHistoryBlock.cpp
+  src/v20200910/model/SurgeryBriefSummary.cpp
   src/v20200910/model/GeneralExaminationOthers.cpp
   src/v20200910/model/DiseaseHistoryBlock.cpp
   src/v20200910/model/NumValue.cpp
+  src/v20200910/model/TreatmentRecord.cpp
   src/v20200910/model/EyeChildItem.cpp
   src/v20200910/model/SurgeryAttr.cpp
   src/v20200910/model/IndicatorV3.cpp
@@ -493,16 +574,19 @@ set(mrs_src
   src/v20200910/model/GynaecologyAdnexal.cpp
   src/v20200910/model/IndicatorItem.cpp
   src/v20200910/model/DiagCertItem.cpp
-  src/v20200910/model/DrugHistoryBlock.cpp
+  src/v20200910/model/GeneticHistoryBlock.cpp
   src/v20200910/model/SurgeryHistoryBlock.cpp
-  src/v20200910/model/SurgeryBriefSummary.cpp
-  src/v20200910/model/GynaecologyPelvicCavity.cpp
-  src/v20200910/model/RelapseDateBlock.cpp
+  src/v20200910/model/ChemicalProductInfoPregnancyLactationUse.cpp
+  src/v20200910/model/CovidItem.cpp
+  src/v20200910/model/OphthalmologyBriefSummary.cpp
   src/v20200910/model/ImageToObjectResponse.cpp
+  src/v20200910/model/ChemicalProductInfoClinicalTrial.cpp
   src/v20200910/model/ValueUnitItem.cpp
   src/v20200910/model/GynaecologyBaseItem.cpp
-  src/v20200910/model/GeneralExaminationBaseItem.cpp
+  src/v20200910/model/BiologicalProductInfoIndications.cpp
+  src/v20200910/model/ChemicalProductInfoPharmacologyToxicology.cpp
   src/v20200910/model/MenstruationOrNotBlock.cpp
+  src/v20200910/model/MedicalRecordInfo.cpp
   src/v20200910/model/Electrocardiogram.cpp
   src/v20200910/model/OtolaryngologyBriefSummary.cpp
   )

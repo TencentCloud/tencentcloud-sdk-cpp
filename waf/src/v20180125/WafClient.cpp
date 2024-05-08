@@ -470,6 +470,49 @@ WafClient::CreateHostOutcomeCallable WafClient::CreateHostCallable(const CreateH
     return task->get_future();
 }
 
+WafClient::CreateIpAccessControlOutcome WafClient::CreateIpAccessControl(const CreateIpAccessControlRequest &request)
+{
+    auto outcome = MakeRequest(request, "CreateIpAccessControl");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        CreateIpAccessControlResponse rsp = CreateIpAccessControlResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return CreateIpAccessControlOutcome(rsp);
+        else
+            return CreateIpAccessControlOutcome(o.GetError());
+    }
+    else
+    {
+        return CreateIpAccessControlOutcome(outcome.GetError());
+    }
+}
+
+void WafClient::CreateIpAccessControlAsync(const CreateIpAccessControlRequest& request, const CreateIpAccessControlAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->CreateIpAccessControl(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+WafClient::CreateIpAccessControlOutcomeCallable WafClient::CreateIpAccessControlCallable(const CreateIpAccessControlRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<CreateIpAccessControlOutcome()>>(
+        [this, request]()
+        {
+            return this->CreateIpAccessControl(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 WafClient::DeleteAccessExportOutcome WafClient::DeleteAccessExport(const DeleteAccessExportRequest &request)
 {
     auto outcome = MakeRequest(request, "DeleteAccessExport");
@@ -979,6 +1022,49 @@ WafClient::DeleteIpAccessControlOutcomeCallable WafClient::DeleteIpAccessControl
         [this, request]()
         {
             return this->DeleteIpAccessControl(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+WafClient::DeleteIpAccessControlV2Outcome WafClient::DeleteIpAccessControlV2(const DeleteIpAccessControlV2Request &request)
+{
+    auto outcome = MakeRequest(request, "DeleteIpAccessControlV2");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DeleteIpAccessControlV2Response rsp = DeleteIpAccessControlV2Response();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DeleteIpAccessControlV2Outcome(rsp);
+        else
+            return DeleteIpAccessControlV2Outcome(o.GetError());
+    }
+    else
+    {
+        return DeleteIpAccessControlV2Outcome(outcome.GetError());
+    }
+}
+
+void WafClient::DeleteIpAccessControlV2Async(const DeleteIpAccessControlV2Request& request, const DeleteIpAccessControlV2AsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DeleteIpAccessControlV2(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+WafClient::DeleteIpAccessControlV2OutcomeCallable WafClient::DeleteIpAccessControlV2Callable(const DeleteIpAccessControlV2Request &request)
+{
+    auto task = std::make_shared<std::packaged_task<DeleteIpAccessControlV2Outcome()>>(
+        [this, request]()
+        {
+            return this->DeleteIpAccessControlV2(request);
         }
     );
 
@@ -3781,6 +3867,49 @@ WafClient::GetInstanceQpsLimitOutcomeCallable WafClient::GetInstanceQpsLimitCall
     return task->get_future();
 }
 
+WafClient::ImportIpAccessControlOutcome WafClient::ImportIpAccessControl(const ImportIpAccessControlRequest &request)
+{
+    auto outcome = MakeRequest(request, "ImportIpAccessControl");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ImportIpAccessControlResponse rsp = ImportIpAccessControlResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ImportIpAccessControlOutcome(rsp);
+        else
+            return ImportIpAccessControlOutcome(o.GetError());
+    }
+    else
+    {
+        return ImportIpAccessControlOutcome(outcome.GetError());
+    }
+}
+
+void WafClient::ImportIpAccessControlAsync(const ImportIpAccessControlRequest& request, const ImportIpAccessControlAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->ImportIpAccessControl(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+WafClient::ImportIpAccessControlOutcomeCallable WafClient::ImportIpAccessControlCallable(const ImportIpAccessControlRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<ImportIpAccessControlOutcome()>>(
+        [this, request]()
+        {
+            return this->ImportIpAccessControl(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 WafClient::ModifyAccessPeriodOutcome WafClient::ModifyAccessPeriod(const ModifyAccessPeriodRequest &request)
 {
     auto outcome = MakeRequest(request, "ModifyAccessPeriod");
@@ -4892,6 +5021,49 @@ WafClient::ModifyInstanceRenewFlagOutcomeCallable WafClient::ModifyInstanceRenew
         [this, request]()
         {
             return this->ModifyInstanceRenewFlag(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+WafClient::ModifyIpAccessControlOutcome WafClient::ModifyIpAccessControl(const ModifyIpAccessControlRequest &request)
+{
+    auto outcome = MakeRequest(request, "ModifyIpAccessControl");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ModifyIpAccessControlResponse rsp = ModifyIpAccessControlResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ModifyIpAccessControlOutcome(rsp);
+        else
+            return ModifyIpAccessControlOutcome(o.GetError());
+    }
+    else
+    {
+        return ModifyIpAccessControlOutcome(outcome.GetError());
+    }
+}
+
+void WafClient::ModifyIpAccessControlAsync(const ModifyIpAccessControlRequest& request, const ModifyIpAccessControlAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->ModifyIpAccessControl(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+WafClient::ModifyIpAccessControlOutcomeCallable WafClient::ModifyIpAccessControlCallable(const ModifyIpAccessControlRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<ModifyIpAccessControlOutcome()>>(
+        [this, request]()
+        {
+            return this->ModifyIpAccessControl(request);
         }
     );
 

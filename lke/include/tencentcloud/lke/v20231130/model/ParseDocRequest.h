@@ -64,15 +64,15 @@ namespace TencentCloud
                     bool NameHasBeenSet() const;
 
                     /**
-                     * 获取文件下载链接 (支持的文件类型: docx, txt, markdown, pdf)
-                     * @return Url 文件下载链接 (支持的文件类型: docx, txt, markdown, pdf)
+                     * 获取文件下载链接 (支持的文件类型: docx, txt, markdown, pdf), 该地址需要外网可以直接无状态访问
+                     * @return Url 文件下载链接 (支持的文件类型: docx, txt, markdown, pdf), 该地址需要外网可以直接无状态访问
                      * 
                      */
                     std::string GetUrl() const;
 
                     /**
-                     * 设置文件下载链接 (支持的文件类型: docx, txt, markdown, pdf)
-                     * @param _url 文件下载链接 (支持的文件类型: docx, txt, markdown, pdf)
+                     * 设置文件下载链接 (支持的文件类型: docx, txt, markdown, pdf), 该地址需要外网可以直接无状态访问
+                     * @param _url 文件下载链接 (支持的文件类型: docx, txt, markdown, pdf), 该地址需要外网可以直接无状态访问
                      * 
                      */
                     void SetUrl(const std::string& _url);
@@ -156,7 +156,7 @@ namespace TencentCloud
                     bool m_nameHasBeenSet;
 
                     /**
-                     * 文件下载链接 (支持的文件类型: docx, txt, markdown, pdf)
+                     * 文件下载链接 (支持的文件类型: docx, txt, markdown, pdf), 该地址需要外网可以直接无状态访问
                      */
                     std::string m_url;
                     bool m_urlHasBeenSet;

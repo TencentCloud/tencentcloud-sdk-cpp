@@ -43,15 +43,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取引擎类型：SQL、SparkBatch
-                     * @return EngineType 引擎类型：SQL、SparkBatch
+                     * 获取引擎类型：SQL、SparkBatch、StandardSpark、StandardPresto
+                     * @return EngineType 引擎类型：SQL、SparkBatch、StandardSpark、StandardPresto
                      * 
                      */
                     std::string GetEngineType() const;
 
                     /**
-                     * 设置引擎类型：SQL、SparkBatch
-                     * @param _engineType 引擎类型：SQL、SparkBatch
+                     * 设置引擎类型：SQL、SparkBatch、StandardSpark、StandardPresto
+                     * @param _engineType 引擎类型：SQL、SparkBatch、StandardSpark、StandardPresto
                      * 
                      */
                     void SetEngineType(const std::string& _engineType);
@@ -66,7 +66,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 引擎类型：SQL、SparkBatch
+                     * 引擎类型：SQL、SparkBatch、StandardSpark、StandardPresto
                      */
                     std::string m_engineType;
                     bool m_engineTypeHasBeenSet;

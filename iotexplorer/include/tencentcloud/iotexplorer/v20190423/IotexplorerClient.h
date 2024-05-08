@@ -55,6 +55,8 @@
 #include <tencentcloud/iotexplorer/v20190423/model/CreateProjectResponse.h>
 #include <tencentcloud/iotexplorer/v20190423/model/CreateStudioProductRequest.h>
 #include <tencentcloud/iotexplorer/v20190423/model/CreateStudioProductResponse.h>
+#include <tencentcloud/iotexplorer/v20190423/model/CreateTRTCSignaturesWithRoomIdRequest.h>
+#include <tencentcloud/iotexplorer/v20190423/model/CreateTRTCSignaturesWithRoomIdResponse.h>
 #include <tencentcloud/iotexplorer/v20190423/model/CreateTopicPolicyRequest.h>
 #include <tencentcloud/iotexplorer/v20190423/model/CreateTopicPolicyResponse.h>
 #include <tencentcloud/iotexplorer/v20190423/model/CreateTopicRuleRequest.h>
@@ -93,6 +95,8 @@
 #include <tencentcloud/iotexplorer/v20190423/model/DescribeCloudStorageAIServiceResponse.h>
 #include <tencentcloud/iotexplorer/v20190423/model/DescribeCloudStorageAIServiceCallbackRequest.h>
 #include <tencentcloud/iotexplorer/v20190423/model/DescribeCloudStorageAIServiceCallbackResponse.h>
+#include <tencentcloud/iotexplorer/v20190423/model/DescribeCloudStorageAIServiceTaskRequest.h>
+#include <tencentcloud/iotexplorer/v20190423/model/DescribeCloudStorageAIServiceTaskResponse.h>
 #include <tencentcloud/iotexplorer/v20190423/model/DescribeCloudStorageAIServiceTasksRequest.h>
 #include <tencentcloud/iotexplorer/v20190423/model/DescribeCloudStorageAIServiceTasksResponse.h>
 #include <tencentcloud/iotexplorer/v20190423/model/DescribeCloudStorageDateRequest.h>
@@ -175,10 +179,14 @@
 #include <tencentcloud/iotexplorer/v20190423/model/DirectBindDeviceInFamilyResponse.h>
 #include <tencentcloud/iotexplorer/v20190423/model/DisableTopicRuleRequest.h>
 #include <tencentcloud/iotexplorer/v20190423/model/DisableTopicRuleResponse.h>
+#include <tencentcloud/iotexplorer/v20190423/model/DismissRoomByStrRoomIdFromTRTCRequest.h>
+#include <tencentcloud/iotexplorer/v20190423/model/DismissRoomByStrRoomIdFromTRTCResponse.h>
 #include <tencentcloud/iotexplorer/v20190423/model/EnableTopicRuleRequest.h>
 #include <tencentcloud/iotexplorer/v20190423/model/EnableTopicRuleResponse.h>
 #include <tencentcloud/iotexplorer/v20190423/model/GenSingleDeviceSignatureOfPublicRequest.h>
 #include <tencentcloud/iotexplorer/v20190423/model/GenSingleDeviceSignatureOfPublicResponse.h>
+#include <tencentcloud/iotexplorer/v20190423/model/GenerateCloudStorageAIServiceTaskFileURLRequest.h>
+#include <tencentcloud/iotexplorer/v20190423/model/GenerateCloudStorageAIServiceTaskFileURLResponse.h>
 #include <tencentcloud/iotexplorer/v20190423/model/GenerateSignedVideoURLRequest.h>
 #include <tencentcloud/iotexplorer/v20190423/model/GenerateSignedVideoURLResponse.h>
 #include <tencentcloud/iotexplorer/v20190423/model/GetBatchProductionsListRequest.h>
@@ -249,6 +257,8 @@
 #include <tencentcloud/iotexplorer/v20190423/model/PublishRRPCMessageResponse.h>
 #include <tencentcloud/iotexplorer/v20190423/model/ReleaseStudioProductRequest.h>
 #include <tencentcloud/iotexplorer/v20190423/model/ReleaseStudioProductResponse.h>
+#include <tencentcloud/iotexplorer/v20190423/model/RemoveUserByRoomIdFromTRTCRequest.h>
+#include <tencentcloud/iotexplorer/v20190423/model/RemoveUserByRoomIdFromTRTCResponse.h>
 #include <tencentcloud/iotexplorer/v20190423/model/ResetCloudStorageRequest.h>
 #include <tencentcloud/iotexplorer/v20190423/model/ResetCloudStorageResponse.h>
 #include <tencentcloud/iotexplorer/v20190423/model/ResetCloudStorageEventRequest.h>
@@ -333,6 +343,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::CreateStudioProductResponse> CreateStudioProductOutcome;
                 typedef std::future<CreateStudioProductOutcome> CreateStudioProductOutcomeCallable;
                 typedef std::function<void(const IotexplorerClient*, const Model::CreateStudioProductRequest&, CreateStudioProductOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateStudioProductAsyncHandler;
+                typedef Outcome<Core::Error, Model::CreateTRTCSignaturesWithRoomIdResponse> CreateTRTCSignaturesWithRoomIdOutcome;
+                typedef std::future<CreateTRTCSignaturesWithRoomIdOutcome> CreateTRTCSignaturesWithRoomIdOutcomeCallable;
+                typedef std::function<void(const IotexplorerClient*, const Model::CreateTRTCSignaturesWithRoomIdRequest&, CreateTRTCSignaturesWithRoomIdOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateTRTCSignaturesWithRoomIdAsyncHandler;
                 typedef Outcome<Core::Error, Model::CreateTopicPolicyResponse> CreateTopicPolicyOutcome;
                 typedef std::future<CreateTopicPolicyOutcome> CreateTopicPolicyOutcomeCallable;
                 typedef std::function<void(const IotexplorerClient*, const Model::CreateTopicPolicyRequest&, CreateTopicPolicyOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateTopicPolicyAsyncHandler;
@@ -390,6 +403,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeCloudStorageAIServiceCallbackResponse> DescribeCloudStorageAIServiceCallbackOutcome;
                 typedef std::future<DescribeCloudStorageAIServiceCallbackOutcome> DescribeCloudStorageAIServiceCallbackOutcomeCallable;
                 typedef std::function<void(const IotexplorerClient*, const Model::DescribeCloudStorageAIServiceCallbackRequest&, DescribeCloudStorageAIServiceCallbackOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeCloudStorageAIServiceCallbackAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeCloudStorageAIServiceTaskResponse> DescribeCloudStorageAIServiceTaskOutcome;
+                typedef std::future<DescribeCloudStorageAIServiceTaskOutcome> DescribeCloudStorageAIServiceTaskOutcomeCallable;
+                typedef std::function<void(const IotexplorerClient*, const Model::DescribeCloudStorageAIServiceTaskRequest&, DescribeCloudStorageAIServiceTaskOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeCloudStorageAIServiceTaskAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeCloudStorageAIServiceTasksResponse> DescribeCloudStorageAIServiceTasksOutcome;
                 typedef std::future<DescribeCloudStorageAIServiceTasksOutcome> DescribeCloudStorageAIServiceTasksOutcomeCallable;
                 typedef std::function<void(const IotexplorerClient*, const Model::DescribeCloudStorageAIServiceTasksRequest&, DescribeCloudStorageAIServiceTasksOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeCloudStorageAIServiceTasksAsyncHandler;
@@ -513,12 +529,18 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DisableTopicRuleResponse> DisableTopicRuleOutcome;
                 typedef std::future<DisableTopicRuleOutcome> DisableTopicRuleOutcomeCallable;
                 typedef std::function<void(const IotexplorerClient*, const Model::DisableTopicRuleRequest&, DisableTopicRuleOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DisableTopicRuleAsyncHandler;
+                typedef Outcome<Core::Error, Model::DismissRoomByStrRoomIdFromTRTCResponse> DismissRoomByStrRoomIdFromTRTCOutcome;
+                typedef std::future<DismissRoomByStrRoomIdFromTRTCOutcome> DismissRoomByStrRoomIdFromTRTCOutcomeCallable;
+                typedef std::function<void(const IotexplorerClient*, const Model::DismissRoomByStrRoomIdFromTRTCRequest&, DismissRoomByStrRoomIdFromTRTCOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DismissRoomByStrRoomIdFromTRTCAsyncHandler;
                 typedef Outcome<Core::Error, Model::EnableTopicRuleResponse> EnableTopicRuleOutcome;
                 typedef std::future<EnableTopicRuleOutcome> EnableTopicRuleOutcomeCallable;
                 typedef std::function<void(const IotexplorerClient*, const Model::EnableTopicRuleRequest&, EnableTopicRuleOutcome, const std::shared_ptr<const AsyncCallerContext>&)> EnableTopicRuleAsyncHandler;
                 typedef Outcome<Core::Error, Model::GenSingleDeviceSignatureOfPublicResponse> GenSingleDeviceSignatureOfPublicOutcome;
                 typedef std::future<GenSingleDeviceSignatureOfPublicOutcome> GenSingleDeviceSignatureOfPublicOutcomeCallable;
                 typedef std::function<void(const IotexplorerClient*, const Model::GenSingleDeviceSignatureOfPublicRequest&, GenSingleDeviceSignatureOfPublicOutcome, const std::shared_ptr<const AsyncCallerContext>&)> GenSingleDeviceSignatureOfPublicAsyncHandler;
+                typedef Outcome<Core::Error, Model::GenerateCloudStorageAIServiceTaskFileURLResponse> GenerateCloudStorageAIServiceTaskFileURLOutcome;
+                typedef std::future<GenerateCloudStorageAIServiceTaskFileURLOutcome> GenerateCloudStorageAIServiceTaskFileURLOutcomeCallable;
+                typedef std::function<void(const IotexplorerClient*, const Model::GenerateCloudStorageAIServiceTaskFileURLRequest&, GenerateCloudStorageAIServiceTaskFileURLOutcome, const std::shared_ptr<const AsyncCallerContext>&)> GenerateCloudStorageAIServiceTaskFileURLAsyncHandler;
                 typedef Outcome<Core::Error, Model::GenerateSignedVideoURLResponse> GenerateSignedVideoURLOutcome;
                 typedef std::future<GenerateSignedVideoURLOutcome> GenerateSignedVideoURLOutcomeCallable;
                 typedef std::function<void(const IotexplorerClient*, const Model::GenerateSignedVideoURLRequest&, GenerateSignedVideoURLOutcome, const std::shared_ptr<const AsyncCallerContext>&)> GenerateSignedVideoURLAsyncHandler;
@@ -624,6 +646,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::ReleaseStudioProductResponse> ReleaseStudioProductOutcome;
                 typedef std::future<ReleaseStudioProductOutcome> ReleaseStudioProductOutcomeCallable;
                 typedef std::function<void(const IotexplorerClient*, const Model::ReleaseStudioProductRequest&, ReleaseStudioProductOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ReleaseStudioProductAsyncHandler;
+                typedef Outcome<Core::Error, Model::RemoveUserByRoomIdFromTRTCResponse> RemoveUserByRoomIdFromTRTCOutcome;
+                typedef std::future<RemoveUserByRoomIdFromTRTCOutcome> RemoveUserByRoomIdFromTRTCOutcomeCallable;
+                typedef std::function<void(const IotexplorerClient*, const Model::RemoveUserByRoomIdFromTRTCRequest&, RemoveUserByRoomIdFromTRTCOutcome, const std::shared_ptr<const AsyncCallerContext>&)> RemoveUserByRoomIdFromTRTCAsyncHandler;
                 typedef Outcome<Core::Error, Model::ResetCloudStorageResponse> ResetCloudStorageOutcome;
                 typedef std::future<ResetCloudStorageOutcome> ResetCloudStorageOutcomeCallable;
                 typedef std::function<void(const IotexplorerClient*, const Model::ResetCloudStorageRequest&, ResetCloudStorageOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ResetCloudStorageAsyncHandler;
@@ -805,6 +830,15 @@ namespace TencentCloud
                 CreateStudioProductOutcomeCallable CreateStudioProductCallable(const Model::CreateStudioProductRequest& request);
 
                 /**
+                 *创建TRTC通话参数
+                 * @param req CreateTRTCSignaturesWithRoomIdRequest
+                 * @return CreateTRTCSignaturesWithRoomIdOutcome
+                 */
+                CreateTRTCSignaturesWithRoomIdOutcome CreateTRTCSignaturesWithRoomId(const Model::CreateTRTCSignaturesWithRoomIdRequest &request);
+                void CreateTRTCSignaturesWithRoomIdAsync(const Model::CreateTRTCSignaturesWithRoomIdRequest& request, const CreateTRTCSignaturesWithRoomIdAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                CreateTRTCSignaturesWithRoomIdOutcomeCallable CreateTRTCSignaturesWithRoomIdCallable(const Model::CreateTRTCSignaturesWithRoomIdRequest& request);
+
+                /**
                  *本接口（CreateTopicPolicy）用于创建一个Topic 
                  * @param req CreateTopicPolicyRequest
                  * @return CreateTopicPolicyOutcome
@@ -974,6 +1008,15 @@ namespace TencentCloud
                 DescribeCloudStorageAIServiceCallbackOutcome DescribeCloudStorageAIServiceCallback(const Model::DescribeCloudStorageAIServiceCallbackRequest &request);
                 void DescribeCloudStorageAIServiceCallbackAsync(const Model::DescribeCloudStorageAIServiceCallbackRequest& request, const DescribeCloudStorageAIServiceCallbackAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DescribeCloudStorageAIServiceCallbackOutcomeCallable DescribeCloudStorageAIServiceCallbackCallable(const Model::DescribeCloudStorageAIServiceCallbackRequest& request);
+
+                /**
+                 *查询指定的云存 AI 分析任务
+                 * @param req DescribeCloudStorageAIServiceTaskRequest
+                 * @return DescribeCloudStorageAIServiceTaskOutcome
+                 */
+                DescribeCloudStorageAIServiceTaskOutcome DescribeCloudStorageAIServiceTask(const Model::DescribeCloudStorageAIServiceTaskRequest &request);
+                void DescribeCloudStorageAIServiceTaskAsync(const Model::DescribeCloudStorageAIServiceTaskRequest& request, const DescribeCloudStorageAIServiceTaskAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeCloudStorageAIServiceTaskOutcomeCallable DescribeCloudStorageAIServiceTaskCallable(const Model::DescribeCloudStorageAIServiceTaskRequest& request);
 
                 /**
                  *查询指定设备的云存 AI 分析任务列表
@@ -1345,6 +1388,15 @@ namespace TencentCloud
                 DisableTopicRuleOutcomeCallable DisableTopicRuleCallable(const Model::DisableTopicRuleRequest& request);
 
                 /**
+                 *解散TRTC房间
+                 * @param req DismissRoomByStrRoomIdFromTRTCRequest
+                 * @return DismissRoomByStrRoomIdFromTRTCOutcome
+                 */
+                DismissRoomByStrRoomIdFromTRTCOutcome DismissRoomByStrRoomIdFromTRTC(const Model::DismissRoomByStrRoomIdFromTRTCRequest &request);
+                void DismissRoomByStrRoomIdFromTRTCAsync(const Model::DismissRoomByStrRoomIdFromTRTCRequest& request, const DismissRoomByStrRoomIdFromTRTCAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DismissRoomByStrRoomIdFromTRTCOutcomeCallable DismissRoomByStrRoomIdFromTRTCCallable(const Model::DismissRoomByStrRoomIdFromTRTCRequest& request);
+
+                /**
                  *启用规则
                  * @param req EnableTopicRuleRequest
                  * @return EnableTopicRuleOutcome
@@ -1361,6 +1413,15 @@ namespace TencentCloud
                 GenSingleDeviceSignatureOfPublicOutcome GenSingleDeviceSignatureOfPublic(const Model::GenSingleDeviceSignatureOfPublicRequest &request);
                 void GenSingleDeviceSignatureOfPublicAsync(const Model::GenSingleDeviceSignatureOfPublicRequest& request, const GenSingleDeviceSignatureOfPublicAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 GenSingleDeviceSignatureOfPublicOutcomeCallable GenSingleDeviceSignatureOfPublicCallable(const Model::GenSingleDeviceSignatureOfPublicRequest& request);
+
+                /**
+                 *获取云存 AI 分析任务输出文件的下载地址
+                 * @param req GenerateCloudStorageAIServiceTaskFileURLRequest
+                 * @return GenerateCloudStorageAIServiceTaskFileURLOutcome
+                 */
+                GenerateCloudStorageAIServiceTaskFileURLOutcome GenerateCloudStorageAIServiceTaskFileURL(const Model::GenerateCloudStorageAIServiceTaskFileURLRequest &request);
+                void GenerateCloudStorageAIServiceTaskFileURLAsync(const Model::GenerateCloudStorageAIServiceTaskFileURLRequest& request, const GenerateCloudStorageAIServiceTaskFileURLAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                GenerateCloudStorageAIServiceTaskFileURLOutcomeCallable GenerateCloudStorageAIServiceTaskFileURLCallable(const Model::GenerateCloudStorageAIServiceTaskFileURLRequest& request);
 
                 /**
                  *获取视频防盗链播放URL
@@ -1676,6 +1737,15 @@ namespace TencentCloud
                 ReleaseStudioProductOutcome ReleaseStudioProduct(const Model::ReleaseStudioProductRequest &request);
                 void ReleaseStudioProductAsync(const Model::ReleaseStudioProductRequest& request, const ReleaseStudioProductAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 ReleaseStudioProductOutcomeCallable ReleaseStudioProductCallable(const Model::ReleaseStudioProductRequest& request);
+
+                /**
+                 *TRTC操作，将用户从房间移出
+                 * @param req RemoveUserByRoomIdFromTRTCRequest
+                 * @return RemoveUserByRoomIdFromTRTCOutcome
+                 */
+                RemoveUserByRoomIdFromTRTCOutcome RemoveUserByRoomIdFromTRTC(const Model::RemoveUserByRoomIdFromTRTCRequest &request);
+                void RemoveUserByRoomIdFromTRTCAsync(const Model::RemoveUserByRoomIdFromTRTCRequest& request, const RemoveUserByRoomIdFromTRTCAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                RemoveUserByRoomIdFromTRTCOutcomeCallable RemoveUserByRoomIdFromTRTCCallable(const Model::RemoveUserByRoomIdFromTRTCRequest& request);
 
                 /**
                  *重置云存服务

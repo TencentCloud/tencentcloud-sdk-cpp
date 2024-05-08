@@ -43,15 +43,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取云硬盘类型, 取值: "CLOUD_PREMIUM"。
-                     * @return DiskType 云硬盘类型, 取值: "CLOUD_PREMIUM"。
+                     * 获取云硬盘类型, 取值范围: CLOUD_PREMIUM: 高性能云硬盘，CLOUD_SSD: SSD云硬盘
+                     * @return DiskType 云硬盘类型, 取值范围: CLOUD_PREMIUM: 高性能云硬盘，CLOUD_SSD: SSD云硬盘
                      * 
                      */
                     std::string GetDiskType() const;
 
                     /**
-                     * 设置云硬盘类型, 取值: "CLOUD_PREMIUM"。
-                     * @param _diskType 云硬盘类型, 取值: "CLOUD_PREMIUM"。
+                     * 设置云硬盘类型, 取值范围: CLOUD_PREMIUM: 高性能云硬盘，CLOUD_SSD: SSD云硬盘
+                     * @param _diskType 云硬盘类型, 取值范围: CLOUD_PREMIUM: 高性能云硬盘，CLOUD_SSD: SSD云硬盘
                      * 
                      */
                     void SetDiskType(const std::string& _diskType);
@@ -108,7 +108,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 云硬盘类型, 取值: "CLOUD_PREMIUM"。
+                     * 云硬盘类型, 取值范围: CLOUD_PREMIUM: 高性能云硬盘，CLOUD_SSD: SSD云硬盘
                      */
                     std::string m_diskType;
                     bool m_diskTypeHasBeenSet;

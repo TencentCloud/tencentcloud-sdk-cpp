@@ -475,6 +475,54 @@ namespace TencentCloud
                      */
                     bool QuorumInitialGroupSizeHasBeenSet() const;
 
+                    /**
+                     * 获取是否为独占队列
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return Exclusive 是否为独占队列
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    bool GetExclusive() const;
+
+                    /**
+                     * 判断参数 Exclusive 是否已赋值
+                     * @return Exclusive 是否已赋值
+                     * 
+                     */
+                    bool ExclusiveHasBeenSet() const;
+
+                    /**
+                     * 获取生效的策略名
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return Policy 生效的策略名
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::string GetPolicy() const;
+
+                    /**
+                     * 判断参数 Policy 是否已赋值
+                     * @return Policy 是否已赋值
+                     * 
+                     */
+                    bool PolicyHasBeenSet() const;
+
+                    /**
+                     * 获取扩展参数 key-value
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return Arguments 扩展参数 key-value
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::string GetArguments() const;
+
+                    /**
+                     * 判断参数 Arguments 是否已赋值
+                     * @return Arguments 是否已赋值
+                     * 
+                     */
+                    bool ArgumentsHasBeenSet() const;
+
                 private:
 
                     /**
@@ -665,6 +713,27 @@ namespace TencentCloud
                      */
                     int64_t m_quorumInitialGroupSize;
                     bool m_quorumInitialGroupSizeHasBeenSet;
+
+                    /**
+                     * 是否为独占队列
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    bool m_exclusive;
+                    bool m_exclusiveHasBeenSet;
+
+                    /**
+                     * 生效的策略名
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_policy;
+                    bool m_policyHasBeenSet;
+
+                    /**
+                     * 扩展参数 key-value
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_arguments;
+                    bool m_argumentsHasBeenSet;
 
                 };
             }

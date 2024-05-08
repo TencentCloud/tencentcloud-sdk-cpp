@@ -1223,6 +1223,56 @@ namespace TencentCloud
                      */
                     bool EngineNetworkIdHasBeenSet() const;
 
+                    /**
+                     * 获取标准引擎关联的资源组个数
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return EngineResourceGroupCount 标准引擎关联的资源组个数
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    int64_t GetEngineResourceGroupCount() const;
+
+                    /**
+                     * 设置标准引擎关联的资源组个数
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _engineResourceGroupCount 标准引擎关联的资源组个数
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetEngineResourceGroupCount(const int64_t& _engineResourceGroupCount);
+
+                    /**
+                     * 判断参数 EngineResourceGroupCount 是否已赋值
+                     * @return EngineResourceGroupCount 是否已赋值
+                     * 
+                     */
+                    bool EngineResourceGroupCountHasBeenSet() const;
+
+                    /**
+                     * 获取引擎当前使用量（Cu）
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return EngineResourceUsedCU 引擎当前使用量（Cu）
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    int64_t GetEngineResourceUsedCU() const;
+
+                    /**
+                     * 设置引擎当前使用量（Cu）
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _engineResourceUsedCU 引擎当前使用量（Cu）
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetEngineResourceUsedCU(const int64_t& _engineResourceUsedCU);
+
+                    /**
+                     * 判断参数 EngineResourceUsedCU 是否已赋值
+                     * @return EngineResourceUsedCU 是否已赋值
+                     * 
+                     */
+                    bool EngineResourceUsedCUHasBeenSet() const;
+
                 private:
 
                     /**
@@ -1554,6 +1604,20 @@ namespace TencentCloud
                      */
                     std::string m_engineNetworkId;
                     bool m_engineNetworkIdHasBeenSet;
+
+                    /**
+                     * 标准引擎关联的资源组个数
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    int64_t m_engineResourceGroupCount;
+                    bool m_engineResourceGroupCountHasBeenSet;
+
+                    /**
+                     * 引擎当前使用量（Cu）
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    int64_t m_engineResourceUsedCU;
+                    bool m_engineResourceUsedCUHasBeenSet;
 
                 };
             }
