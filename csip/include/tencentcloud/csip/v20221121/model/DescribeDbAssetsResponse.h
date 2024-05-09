@@ -141,6 +141,22 @@ namespace TencentCloud
                      */
                     bool AppIdListHasBeenSet() const;
 
+                    /**
+                     * 获取公网内网枚举
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return PublicPrivateAttr 公网内网枚举
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::vector<FilterDataObject> GetPublicPrivateAttr() const;
+
+                    /**
+                     * 判断参数 PublicPrivateAttr 是否已赋值
+                     * @return PublicPrivateAttr 是否已赋值
+                     * 
+                     */
+                    bool PublicPrivateAttrHasBeenSet() const;
+
                 private:
 
                     /**
@@ -184,6 +200,13 @@ namespace TencentCloud
                      */
                     std::vector<FilterDataObject> m_appIdList;
                     bool m_appIdListHasBeenSet;
+
+                    /**
+                     * 公网内网枚举
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::vector<FilterDataObject> m_publicPrivateAttr;
+                    bool m_publicPrivateAttrHasBeenSet;
 
                 };
             }

@@ -24,6 +24,7 @@ Task::Task() :
     m_jobIdHasBeenSet(false),
     m_targetHasBeenSet(false),
     m_typeHasBeenSet(false),
+    m_methodHasBeenSet(false),
     m_statusHasBeenSet(false),
     m_createTimeHasBeenSet(false),
     m_updateTimeHasBeenSet(false)
@@ -63,6 +64,16 @@ CoreInternalOutcome Task::Deserialize(const rapidjson::Value &value)
         }
         m_type = string(value["Type"].GetString());
         m_typeHasBeenSet = true;
+    }
+
+    if (value.HasMember("Method") && !value["Method"].IsNull())
+    {
+        if (!value["Method"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `Task.Method` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_method = string(value["Method"].GetString());
+        m_methodHasBeenSet = true;
     }
 
     if (value.HasMember("Status") && !value["Status"].IsNull())
@@ -124,6 +135,14 @@ void Task::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorT
         string key = "Type";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_type.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_methodHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Method";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_method.c_str(), allocator).Move(), allocator);
     }
 
     if (m_statusHasBeenSet)
@@ -199,6 +218,22 @@ void Task::SetType(const string& _type)
 bool Task::TypeHasBeenSet() const
 {
     return m_typeHasBeenSet;
+}
+
+string Task::GetMethod() const
+{
+    return m_method;
+}
+
+void Task::SetMethod(const string& _method)
+{
+    m_method = _method;
+    m_methodHasBeenSet = true;
+}
+
+bool Task::MethodHasBeenSet() const
+{
+    return m_methodHasBeenSet;
 }
 
 string Task::GetStatus() const

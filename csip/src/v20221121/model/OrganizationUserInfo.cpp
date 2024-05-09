@@ -42,7 +42,9 @@ OrganizationUserInfo::OrganizationUserInfo() :
     m_isExpiredHasBeenSet(false),
     m_permissionListHasBeenSet(false),
     m_authTypeHasBeenSet(false),
-    m_tcMemberTypeHasBeenSet(false)
+    m_tcMemberTypeHasBeenSet(false),
+    m_subUserCountHasBeenSet(false),
+    m_joinTypeInfoHasBeenSet(false)
 {
 }
 
@@ -274,6 +276,26 @@ CoreInternalOutcome OrganizationUserInfo::Deserialize(const rapidjson::Value &va
         m_tcMemberTypeHasBeenSet = true;
     }
 
+    if (value.HasMember("SubUserCount") && !value["SubUserCount"].IsNull())
+    {
+        if (!value["SubUserCount"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `OrganizationUserInfo.SubUserCount` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_subUserCount = value["SubUserCount"].GetInt64();
+        m_subUserCountHasBeenSet = true;
+    }
+
+    if (value.HasMember("JoinTypeInfo") && !value["JoinTypeInfo"].IsNull())
+    {
+        if (!value["JoinTypeInfo"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `OrganizationUserInfo.JoinTypeInfo` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_joinTypeInfo = string(value["JoinTypeInfo"].GetString());
+        m_joinTypeInfoHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -460,6 +482,22 @@ void OrganizationUserInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Docu
         string key = "TcMemberType";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_tcMemberType, allocator);
+    }
+
+    if (m_subUserCountHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "SubUserCount";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_subUserCount, allocator);
+    }
+
+    if (m_joinTypeInfoHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "JoinTypeInfo";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_joinTypeInfo.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -815,5 +853,37 @@ void OrganizationUserInfo::SetTcMemberType(const int64_t& _tcMemberType)
 bool OrganizationUserInfo::TcMemberTypeHasBeenSet() const
 {
     return m_tcMemberTypeHasBeenSet;
+}
+
+int64_t OrganizationUserInfo::GetSubUserCount() const
+{
+    return m_subUserCount;
+}
+
+void OrganizationUserInfo::SetSubUserCount(const int64_t& _subUserCount)
+{
+    m_subUserCount = _subUserCount;
+    m_subUserCountHasBeenSet = true;
+}
+
+bool OrganizationUserInfo::SubUserCountHasBeenSet() const
+{
+    return m_subUserCountHasBeenSet;
+}
+
+string OrganizationUserInfo::GetJoinTypeInfo() const
+{
+    return m_joinTypeInfo;
+}
+
+void OrganizationUserInfo::SetJoinTypeInfo(const string& _joinTypeInfo)
+{
+    m_joinTypeInfo = _joinTypeInfo;
+    m_joinTypeInfoHasBeenSet = true;
+}
+
+bool OrganizationUserInfo::JoinTypeInfoHasBeenSet() const
+{
+    return m_joinTypeInfoHasBeenSet;
 }
 

@@ -83,6 +83,7 @@ set(ess_public_header_model
   include/tencentcloud/ess/v20201111/model/DeleteSealPoliciesRequest.h
   include/tencentcloud/ess/v20201111/model/CreateFlowGroupByTemplatesResponse.h
   include/tencentcloud/ess/v20201111/model/CancelFailureFlow.h
+  include/tencentcloud/ess/v20201111/model/CreateUserVerifyUrlResponse.h
   include/tencentcloud/ess/v20201111/model/DescribeBatchOrganizationRegistrationUrlsRequest.h
   include/tencentcloud/ess/v20201111/model/TemplateInfo.h
   include/tencentcloud/ess/v20201111/model/CreateDocumentResponse.h
@@ -192,6 +193,7 @@ set(ess_public_header_model
   include/tencentcloud/ess/v20201111/model/CreateOrganizationBatchSignUrlResponse.h
   include/tencentcloud/ess/v20201111/model/FileInfo.h
   include/tencentcloud/ess/v20201111/model/CreateBatchOrganizationRegistrationTasksRequest.h
+  include/tencentcloud/ess/v20201111/model/CreateUserVerifyUrlRequest.h
   include/tencentcloud/ess/v20201111/model/FailedCreateStaffData.h
   include/tencentcloud/ess/v20201111/model/CreateExtendedServiceAuthInfosResponse.h
   include/tencentcloud/ess/v20201111/model/SubOrgBillUsage.h
@@ -336,6 +338,7 @@ set(ess_src
   src/v20201111/model/DeleteSealPoliciesRequest.cpp
   src/v20201111/model/CreateFlowGroupByTemplatesResponse.cpp
   src/v20201111/model/CancelFailureFlow.cpp
+  src/v20201111/model/CreateUserVerifyUrlResponse.cpp
   src/v20201111/model/DescribeBatchOrganizationRegistrationUrlsRequest.cpp
   src/v20201111/model/TemplateInfo.cpp
   src/v20201111/model/CreateDocumentResponse.cpp
@@ -445,6 +448,7 @@ set(ess_src
   src/v20201111/model/CreateOrganizationBatchSignUrlResponse.cpp
   src/v20201111/model/FileInfo.cpp
   src/v20201111/model/CreateBatchOrganizationRegistrationTasksRequest.cpp
+  src/v20201111/model/CreateUserVerifyUrlRequest.cpp
   src/v20201111/model/FailedCreateStaffData.cpp
   src/v20201111/model/CreateExtendedServiceAuthInfosResponse.cpp
   src/v20201111/model/SubOrgBillUsage.cpp

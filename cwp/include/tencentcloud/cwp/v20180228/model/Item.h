@@ -113,6 +113,31 @@ namespace TencentCloud
                      */
                     bool CustomItemValuesHasBeenSet() const;
 
+                    /**
+                     * 获取检测项所属分类
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return CategoryId 检测项所属分类
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    int64_t GetCategoryId() const;
+
+                    /**
+                     * 设置检测项所属分类
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _categoryId 检测项所属分类
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetCategoryId(const int64_t& _categoryId);
+
+                    /**
+                     * 判断参数 CategoryId 是否已赋值
+                     * @return CategoryId 是否已赋值
+                     * 
+                     */
+                    bool CategoryIdHasBeenSet() const;
+
                 private:
 
                     /**
@@ -133,6 +158,13 @@ namespace TencentCloud
                      */
                     std::vector<uint64_t> m_customItemValues;
                     bool m_customItemValuesHasBeenSet;
+
+                    /**
+                     * 检测项所属分类
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    int64_t m_categoryId;
+                    bool m_categoryIdHasBeenSet;
 
                 };
             }

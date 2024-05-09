@@ -27,7 +27,8 @@ CreatePurgeTaskRequest::CreatePurgeTaskRequest() :
     m_typeHasBeenSet(false),
     m_methodHasBeenSet(false),
     m_targetsHasBeenSet(false),
-    m_encodeUrlHasBeenSet(false)
+    m_encodeUrlHasBeenSet(false),
+    m_cacheTagHasBeenSet(false)
 {
 }
 
@@ -81,6 +82,15 @@ string CreatePurgeTaskRequest::ToJsonString() const
         string key = "EncodeUrl";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_encodeUrl, allocator);
+    }
+
+    if (m_cacheTagHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "CacheTag";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_cacheTag.ToJsonObject(d[key.c_str()], allocator);
     }
 
 
@@ -169,6 +179,22 @@ void CreatePurgeTaskRequest::SetEncodeUrl(const bool& _encodeUrl)
 bool CreatePurgeTaskRequest::EncodeUrlHasBeenSet() const
 {
     return m_encodeUrlHasBeenSet;
+}
+
+CacheTag CreatePurgeTaskRequest::GetCacheTag() const
+{
+    return m_cacheTag;
+}
+
+void CreatePurgeTaskRequest::SetCacheTag(const CacheTag& _cacheTag)
+{
+    m_cacheTag = _cacheTag;
+    m_cacheTagHasBeenSet = true;
+}
+
+bool CreatePurgeTaskRequest::CacheTagHasBeenSet() const
+{
+    return m_cacheTagHasBeenSet;
 }
 
 

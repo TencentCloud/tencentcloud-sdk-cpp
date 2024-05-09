@@ -100,6 +100,31 @@ DISK：存储资源包
                      */
                     bool PackageTypeHasBeenSet() const;
 
+                    /**
+                     * 获取当前资源包绑定在当前实例下的抵扣优先级
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return DeductionPriority 当前资源包绑定在当前实例下的抵扣优先级
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    int64_t GetDeductionPriority() const;
+
+                    /**
+                     * 设置当前资源包绑定在当前实例下的抵扣优先级
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _deductionPriority 当前资源包绑定在当前实例下的抵扣优先级
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetDeductionPriority(const int64_t& _deductionPriority);
+
+                    /**
+                     * 判断参数 DeductionPriority 是否已赋值
+                     * @return DeductionPriority 是否已赋值
+                     * 
+                     */
+                    bool DeductionPriorityHasBeenSet() const;
+
                 private:
 
                     /**
@@ -116,6 +141,13 @@ DISK：存储资源包
                      */
                     std::string m_packageType;
                     bool m_packageTypeHasBeenSet;
+
+                    /**
+                     * 当前资源包绑定在当前实例下的抵扣优先级
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    int64_t m_deductionPriority;
+                    bool m_deductionPriorityHasBeenSet;
 
                 };
             }

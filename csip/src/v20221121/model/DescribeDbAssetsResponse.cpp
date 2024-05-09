@@ -29,7 +29,8 @@ DescribeDbAssetsResponse::DescribeDbAssetsResponse() :
     m_regionListHasBeenSet(false),
     m_assetTypeListHasBeenSet(false),
     m_vpcListHasBeenSet(false),
-    m_appIdListHasBeenSet(false)
+    m_appIdListHasBeenSet(false),
+    m_publicPrivateAttrHasBeenSet(false)
 {
 }
 
@@ -177,6 +178,26 @@ CoreInternalOutcome DescribeDbAssetsResponse::Deserialize(const string &payload)
         m_appIdListHasBeenSet = true;
     }
 
+    if (rsp.HasMember("PublicPrivateAttr") && !rsp["PublicPrivateAttr"].IsNull())
+    {
+        if (!rsp["PublicPrivateAttr"].IsArray())
+            return CoreInternalOutcome(Core::Error("response `PublicPrivateAttr` is not array type"));
+
+        const rapidjson::Value &tmpValue = rsp["PublicPrivateAttr"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            FilterDataObject item;
+            CoreInternalOutcome outcome = item.Deserialize(*itr);
+            if (!outcome.IsSuccess())
+            {
+                outcome.GetError().SetRequestId(requestId);
+                return outcome;
+            }
+            m_publicPrivateAttr.push_back(item);
+        }
+        m_publicPrivateAttrHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -270,6 +291,21 @@ string DescribeDbAssetsResponse::ToJsonString() const
         }
     }
 
+    if (m_publicPrivateAttrHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "PublicPrivateAttr";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_publicPrivateAttr.begin(); itr != m_publicPrivateAttr.end(); ++itr, ++i)
+        {
+            value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(value[key.c_str()][i], allocator);
+        }
+    }
+
     rapidjson::Value iKey(rapidjson::kStringType);
     string key = "RequestId";
     iKey.SetString(key.c_str(), allocator);
@@ -340,6 +376,16 @@ vector<FilterDataObject> DescribeDbAssetsResponse::GetAppIdList() const
 bool DescribeDbAssetsResponse::AppIdListHasBeenSet() const
 {
     return m_appIdListHasBeenSet;
+}
+
+vector<FilterDataObject> DescribeDbAssetsResponse::GetPublicPrivateAttr() const
+{
+    return m_publicPrivateAttr;
+}
+
+bool DescribeDbAssetsResponse::PublicPrivateAttrHasBeenSet() const
+{
+    return m_publicPrivateAttrHasBeenSet;
 }
 
 

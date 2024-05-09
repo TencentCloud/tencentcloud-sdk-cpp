@@ -22,7 +22,8 @@ using namespace std;
 
 ResourcePackage::ResourcePackage() :
     m_packageIdHasBeenSet(false),
-    m_packageTypeHasBeenSet(false)
+    m_packageTypeHasBeenSet(false),
+    m_deductionPriorityHasBeenSet(false)
 {
 }
 
@@ -51,6 +52,16 @@ CoreInternalOutcome ResourcePackage::Deserialize(const rapidjson::Value &value)
         m_packageTypeHasBeenSet = true;
     }
 
+    if (value.HasMember("DeductionPriority") && !value["DeductionPriority"].IsNull())
+    {
+        if (!value["DeductionPriority"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `ResourcePackage.DeductionPriority` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_deductionPriority = value["DeductionPriority"].GetInt64();
+        m_deductionPriorityHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -72,6 +83,14 @@ void ResourcePackage::ToJsonObject(rapidjson::Value &value, rapidjson::Document:
         string key = "PackageType";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_packageType.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_deductionPriorityHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "DeductionPriority";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_deductionPriority, allocator);
     }
 
 }
@@ -107,5 +126,21 @@ void ResourcePackage::SetPackageType(const string& _packageType)
 bool ResourcePackage::PackageTypeHasBeenSet() const
 {
     return m_packageTypeHasBeenSet;
+}
+
+int64_t ResourcePackage::GetDeductionPriority() const
+{
+    return m_deductionPriority;
+}
+
+void ResourcePackage::SetDeductionPriority(const int64_t& _deductionPriority)
+{
+    m_deductionPriority = _deductionPriority;
+    m_deductionPriorityHasBeenSet = true;
+}
+
+bool ResourcePackage::DeductionPriorityHasBeenSet() const
+{
+    return m_deductionPriorityHasBeenSet;
 }
 

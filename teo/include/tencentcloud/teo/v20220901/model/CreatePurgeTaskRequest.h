@@ -21,6 +21,7 @@
 #include <vector>
 #include <map>
 #include <tencentcloud/core/AbstractModel.h>
+#include <tencentcloud/teo/v20220901/model/CacheTag.h>
 
 
 namespace TencentCloud
@@ -171,6 +172,27 @@ namespace TencentCloud
                      */
                     bool EncodeUrlHasBeenSet() const;
 
+                    /**
+                     * 获取节点缓存清除类型取值为 purge_cache_tag 时附带的信息。
+                     * @return CacheTag 节点缓存清除类型取值为 purge_cache_tag 时附带的信息。
+                     * 
+                     */
+                    CacheTag GetCacheTag() const;
+
+                    /**
+                     * 设置节点缓存清除类型取值为 purge_cache_tag 时附带的信息。
+                     * @param _cacheTag 节点缓存清除类型取值为 purge_cache_tag 时附带的信息。
+                     * 
+                     */
+                    void SetCacheTag(const CacheTag& _cacheTag);
+
+                    /**
+                     * 判断参数 CacheTag 是否已赋值
+                     * @return CacheTag 是否已赋值
+                     * 
+                     */
+                    bool CacheTagHasBeenSet() const;
+
                 private:
 
                     /**
@@ -208,6 +230,12 @@ namespace TencentCloud
                      */
                     bool m_encodeUrl;
                     bool m_encodeUrlHasBeenSet;
+
+                    /**
+                     * 节点缓存清除类型取值为 purge_cache_tag 时附带的信息。
+                     */
+                    CacheTag m_cacheTag;
+                    bool m_cacheTagHasBeenSet;
 
                 };
             }

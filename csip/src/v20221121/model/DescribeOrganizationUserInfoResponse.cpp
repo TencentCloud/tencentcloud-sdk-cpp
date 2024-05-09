@@ -25,7 +25,9 @@ using namespace std;
 
 DescribeOrganizationUserInfoResponse::DescribeOrganizationUserInfoResponse() :
     m_totalCountHasBeenSet(false),
-    m_dataHasBeenSet(false)
+    m_dataHasBeenSet(false),
+    m_joinTypeLstHasBeenSet(false),
+    m_cloudTypeLstHasBeenSet(false)
 {
 }
 
@@ -93,6 +95,46 @@ CoreInternalOutcome DescribeOrganizationUserInfoResponse::Deserialize(const stri
         m_dataHasBeenSet = true;
     }
 
+    if (rsp.HasMember("JoinTypeLst") && !rsp["JoinTypeLst"].IsNull())
+    {
+        if (!rsp["JoinTypeLst"].IsArray())
+            return CoreInternalOutcome(Core::Error("response `JoinTypeLst` is not array type"));
+
+        const rapidjson::Value &tmpValue = rsp["JoinTypeLst"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            FilterDataObject item;
+            CoreInternalOutcome outcome = item.Deserialize(*itr);
+            if (!outcome.IsSuccess())
+            {
+                outcome.GetError().SetRequestId(requestId);
+                return outcome;
+            }
+            m_joinTypeLst.push_back(item);
+        }
+        m_joinTypeLstHasBeenSet = true;
+    }
+
+    if (rsp.HasMember("CloudTypeLst") && !rsp["CloudTypeLst"].IsNull())
+    {
+        if (!rsp["CloudTypeLst"].IsArray())
+            return CoreInternalOutcome(Core::Error("response `CloudTypeLst` is not array type"));
+
+        const rapidjson::Value &tmpValue = rsp["CloudTypeLst"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            FilterDataObject item;
+            CoreInternalOutcome outcome = item.Deserialize(*itr);
+            if (!outcome.IsSuccess())
+            {
+                outcome.GetError().SetRequestId(requestId);
+                return outcome;
+            }
+            m_cloudTypeLst.push_back(item);
+        }
+        m_cloudTypeLstHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -120,6 +162,36 @@ string DescribeOrganizationUserInfoResponse::ToJsonString() const
 
         int i=0;
         for (auto itr = m_data.begin(); itr != m_data.end(); ++itr, ++i)
+        {
+            value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(value[key.c_str()][i], allocator);
+        }
+    }
+
+    if (m_joinTypeLstHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "JoinTypeLst";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_joinTypeLst.begin(); itr != m_joinTypeLst.end(); ++itr, ++i)
+        {
+            value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(value[key.c_str()][i], allocator);
+        }
+    }
+
+    if (m_cloudTypeLstHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "CloudTypeLst";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_cloudTypeLst.begin(); itr != m_cloudTypeLst.end(); ++itr, ++i)
         {
             value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
             (*itr).ToJsonObject(value[key.c_str()][i], allocator);
@@ -156,6 +228,26 @@ vector<OrganizationUserInfo> DescribeOrganizationUserInfoResponse::GetData() con
 bool DescribeOrganizationUserInfoResponse::DataHasBeenSet() const
 {
     return m_dataHasBeenSet;
+}
+
+vector<FilterDataObject> DescribeOrganizationUserInfoResponse::GetJoinTypeLst() const
+{
+    return m_joinTypeLst;
+}
+
+bool DescribeOrganizationUserInfoResponse::JoinTypeLstHasBeenSet() const
+{
+    return m_joinTypeLstHasBeenSet;
+}
+
+vector<FilterDataObject> DescribeOrganizationUserInfoResponse::GetCloudTypeLst() const
+{
+    return m_cloudTypeLst;
+}
+
+bool DescribeOrganizationUserInfoResponse::CloudTypeLstHasBeenSet() const
+{
+    return m_cloudTypeLstHasBeenSet;
 }
 
 

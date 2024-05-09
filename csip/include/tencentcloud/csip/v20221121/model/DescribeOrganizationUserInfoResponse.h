@@ -22,6 +22,7 @@
 #include <map>
 #include <tencentcloud/core/AbstractModel.h>
 #include <tencentcloud/csip/v20221121/model/OrganizationUserInfo.h>
+#include <tencentcloud/csip/v20221121/model/FilterDataObject.h>
 
 
 namespace TencentCloud
@@ -76,6 +77,38 @@ namespace TencentCloud
                      */
                     bool DataHasBeenSet() const;
 
+                    /**
+                     * 获取加入方式枚举
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return JoinTypeLst 加入方式枚举
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::vector<FilterDataObject> GetJoinTypeLst() const;
+
+                    /**
+                     * 判断参数 JoinTypeLst 是否已赋值
+                     * @return JoinTypeLst 是否已赋值
+                     * 
+                     */
+                    bool JoinTypeLstHasBeenSet() const;
+
+                    /**
+                     * 获取云厂商枚举
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return CloudTypeLst 云厂商枚举
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::vector<FilterDataObject> GetCloudTypeLst() const;
+
+                    /**
+                     * 判断参数 CloudTypeLst 是否已赋值
+                     * @return CloudTypeLst 是否已赋值
+                     * 
+                     */
+                    bool CloudTypeLstHasBeenSet() const;
+
                 private:
 
                     /**
@@ -91,6 +124,20 @@ namespace TencentCloud
                      */
                     std::vector<OrganizationUserInfo> m_data;
                     bool m_dataHasBeenSet;
+
+                    /**
+                     * 加入方式枚举
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::vector<FilterDataObject> m_joinTypeLst;
+                    bool m_joinTypeLstHasBeenSet;
+
+                    /**
+                     * 云厂商枚举
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::vector<FilterDataObject> m_cloudTypeLst;
+                    bool m_cloudTypeLstHasBeenSet;
 
                 };
             }

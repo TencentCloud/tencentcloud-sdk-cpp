@@ -46,10 +46,10 @@ namespace TencentCloud
                     /**
                      * 获取过滤条件。
 <li>RuleCategory- string- 规则类别  0=系统规则，1=用户规则</li>
-<li>Name- String - 规则名称/li>
+<li>Name- String - 规则名称</li>
                      * @return Filters 过滤条件。
 <li>RuleCategory- string- 规则类别  0=系统规则，1=用户规则</li>
-<li>Name- String - 规则名称/li>
+<li>Name- String - 规则名称</li>
                      * 
                      */
                     std::vector<Filters> GetFilters() const;
@@ -57,10 +57,10 @@ namespace TencentCloud
                     /**
                      * 设置过滤条件。
 <li>RuleCategory- string- 规则类别  0=系统规则，1=用户规则</li>
-<li>Name- String - 规则名称/li>
+<li>Name- String - 规则名称</li>
                      * @param _filters 过滤条件。
 <li>RuleCategory- string- 规则类别  0=系统规则，1=用户规则</li>
-<li>Name- String - 规则名称/li>
+<li>Name- String - 规则名称</li>
                      * 
                      */
                     void SetFilters(const std::vector<Filters>& _filters);
@@ -77,7 +77,7 @@ namespace TencentCloud
                     /**
                      * 过滤条件。
 <li>RuleCategory- string- 规则类别  0=系统规则，1=用户规则</li>
-<li>Name- String - 规则名称/li>
+<li>Name- String - 规则名称</li>
                      */
                     std::vector<Filters> m_filters;
                     bool m_filtersHasBeenSet;

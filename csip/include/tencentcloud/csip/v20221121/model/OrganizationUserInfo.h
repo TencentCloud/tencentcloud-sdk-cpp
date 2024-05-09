@@ -604,6 +604,56 @@ namespace TencentCloud
                      */
                     bool TcMemberTypeHasBeenSet() const;
 
+                    /**
+                     * 获取子账号数量
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return SubUserCount 子账号数量
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    int64_t GetSubUserCount() const;
+
+                    /**
+                     * 设置子账号数量
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _subUserCount 子账号数量
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetSubUserCount(const int64_t& _subUserCount);
+
+                    /**
+                     * 判断参数 SubUserCount 是否已赋值
+                     * @return SubUserCount 是否已赋值
+                     * 
+                     */
+                    bool SubUserCountHasBeenSet() const;
+
+                    /**
+                     * 获取加入方式详细信息
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return JoinTypeInfo 加入方式详细信息
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::string GetJoinTypeInfo() const;
+
+                    /**
+                     * 设置加入方式详细信息
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _joinTypeInfo 加入方式详细信息
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetJoinTypeInfo(const std::string& _joinTypeInfo);
+
+                    /**
+                     * 判断参数 JoinTypeInfo 是否已赋值
+                     * @return JoinTypeInfo 是否已赋值
+                     * 
+                     */
+                    bool JoinTypeInfoHasBeenSet() const;
+
                 private:
 
                     /**
@@ -761,6 +811,20 @@ namespace TencentCloud
                      */
                     int64_t m_tcMemberType;
                     bool m_tcMemberTypeHasBeenSet;
+
+                    /**
+                     * 子账号数量
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    int64_t m_subUserCount;
+                    bool m_subUserCountHasBeenSet;
+
+                    /**
+                     * 加入方式详细信息
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_joinTypeInfo;
+                    bool m_joinTypeInfoHasBeenSet;
 
                 };
             }

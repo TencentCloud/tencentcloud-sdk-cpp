@@ -1717,6 +1717,49 @@ EssClient::CreateUserAutoSignSealUrlOutcomeCallable EssClient::CreateUserAutoSig
     return task->get_future();
 }
 
+EssClient::CreateUserVerifyUrlOutcome EssClient::CreateUserVerifyUrl(const CreateUserVerifyUrlRequest &request)
+{
+    auto outcome = MakeRequest(request, "CreateUserVerifyUrl");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        CreateUserVerifyUrlResponse rsp = CreateUserVerifyUrlResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return CreateUserVerifyUrlOutcome(rsp);
+        else
+            return CreateUserVerifyUrlOutcome(o.GetError());
+    }
+    else
+    {
+        return CreateUserVerifyUrlOutcome(outcome.GetError());
+    }
+}
+
+void EssClient::CreateUserVerifyUrlAsync(const CreateUserVerifyUrlRequest& request, const CreateUserVerifyUrlAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->CreateUserVerifyUrl(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+EssClient::CreateUserVerifyUrlOutcomeCallable EssClient::CreateUserVerifyUrlCallable(const CreateUserVerifyUrlRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<CreateUserVerifyUrlOutcome()>>(
+        [this, request]()
+        {
+            return this->CreateUserVerifyUrl(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 EssClient::CreateWebThemeConfigOutcome EssClient::CreateWebThemeConfig(const CreateWebThemeConfigRequest &request)
 {
     auto outcome = MakeRequest(request, "CreateWebThemeConfig");

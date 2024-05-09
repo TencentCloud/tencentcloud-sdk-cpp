@@ -427,18 +427,18 @@ namespace TencentCloud
                     bool HttpVersionHasBeenSet() const;
 
                     /**
-                     * 获取健康检查源IP类型：0（使用LB的VIP作为源IP），1（使用100.64网段IP作为源IP），默认值：0
+                     * 获取健康检查源IP类型：0（使用LB的VIP作为源IP），1（使用100.64网段IP作为源IP）。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return SourceIpType 健康检查源IP类型：0（使用LB的VIP作为源IP），1（使用100.64网段IP作为源IP），默认值：0
+                     * @return SourceIpType 健康检查源IP类型：0（使用LB的VIP作为源IP），1（使用100.64网段IP作为源IP）。
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetSourceIpType() const;
 
                     /**
-                     * 设置健康检查源IP类型：0（使用LB的VIP作为源IP），1（使用100.64网段IP作为源IP），默认值：0
+                     * 设置健康检查源IP类型：0（使用LB的VIP作为源IP），1（使用100.64网段IP作为源IP）。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _sourceIpType 健康检查源IP类型：0（使用LB的VIP作为源IP），1（使用100.64网段IP作为源IP），默认值：0
+                     * @param _sourceIpType 健康检查源IP类型：0（使用LB的VIP作为源IP），1（使用100.64网段IP作为源IP）。
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -585,7 +585,7 @@ namespace TencentCloud
                     bool m_httpVersionHasBeenSet;
 
                     /**
-                     * 健康检查源IP类型：0（使用LB的VIP作为源IP），1（使用100.64网段IP作为源IP），默认值：0
+                     * 健康检查源IP类型：0（使用LB的VIP作为源IP），1（使用100.64网段IP作为源IP）。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_sourceIpType;

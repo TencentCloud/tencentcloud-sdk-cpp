@@ -368,6 +368,7 @@ set(teo_public_header_model
   include/tencentcloud/teo/v20220901/model/ModifySecurityPolicyResponse.h
   include/tencentcloud/teo/v20220901/model/ModifyOriginGroupRequest.h
   include/tencentcloud/teo/v20220901/model/SecurityTemplateBinding.h
+  include/tencentcloud/teo/v20220901/model/CacheTag.h
   include/tencentcloud/teo/v20220901/model/DescribeDefaultCertificatesResponse.h
   include/tencentcloud/teo/v20220901/model/OwnershipVerification.h
   include/tencentcloud/teo/v20220901/model/DescribeConfigGroupVersionsRequest.h
@@ -758,6 +759,7 @@ set(teo_src
   src/v20220901/model/ModifySecurityPolicyResponse.cpp
   src/v20220901/model/ModifyOriginGroupRequest.cpp
   src/v20220901/model/SecurityTemplateBinding.cpp
+  src/v20220901/model/CacheTag.cpp
   src/v20220901/model/DescribeDefaultCertificatesResponse.cpp
   src/v20220901/model/OwnershipVerification.cpp
   src/v20220901/model/DescribeConfigGroupVersionsRequest.cpp

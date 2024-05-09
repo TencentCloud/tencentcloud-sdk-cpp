@@ -235,18 +235,18 @@ CSIP:云安全中心
                     bool VictimHasBeenSet() const;
 
                     /**
-                     * 获取证据数据(比如攻击内容等)
+                     * 获取证据数据(例如攻击内容等)
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return EvidenceData 证据数据(比如攻击内容等)
+                     * @return EvidenceData 证据数据(例如攻击内容等)
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetEvidenceData() const;
 
                     /**
-                     * 设置证据数据(比如攻击内容等)
+                     * 设置证据数据(例如攻击内容等)
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _evidenceData 证据数据(比如攻击内容等)
+                     * @param _evidenceData 证据数据(例如攻击内容等)
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -260,18 +260,18 @@ CSIP:云安全中心
                     bool EvidenceDataHasBeenSet() const;
 
                     /**
-                     * 获取证据位置(比如协议端口)
+                     * 获取证据位置(例如协议端口)
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return EvidenceLocation 证据位置(比如协议端口)
+                     * @return EvidenceLocation 证据位置(例如协议端口)
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetEvidenceLocation() const;
 
                     /**
-                     * 设置证据位置(比如协议端口)
+                     * 设置证据位置(例如协议端口)
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _evidenceLocation 证据位置(比如协议端口)
+                     * @param _evidenceLocation 证据位置(例如协议端口)
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -817,14 +817,14 @@ CSIP:云安全中心
                     bool m_victimHasBeenSet;
 
                     /**
-                     * 证据数据(比如攻击内容等)
+                     * 证据数据(例如攻击内容等)
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_evidenceData;
                     bool m_evidenceDataHasBeenSet;
 
                     /**
-                     * 证据位置(比如协议端口)
+                     * 证据位置(例如协议端口)
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_evidenceLocation;

@@ -23,7 +23,8 @@ using namespace std;
 Item::Item() :
     m_itemIdHasBeenSet(false),
     m_itemNameHasBeenSet(false),
-    m_customItemValuesHasBeenSet(false)
+    m_customItemValuesHasBeenSet(false),
+    m_categoryIdHasBeenSet(false)
 {
 }
 
@@ -65,6 +66,16 @@ CoreInternalOutcome Item::Deserialize(const rapidjson::Value &value)
         m_customItemValuesHasBeenSet = true;
     }
 
+    if (value.HasMember("CategoryId") && !value["CategoryId"].IsNull())
+    {
+        if (!value["CategoryId"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `Item.CategoryId` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_categoryId = value["CategoryId"].GetInt64();
+        m_categoryIdHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -99,6 +110,14 @@ void Item::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorT
         {
             value[key.c_str()].PushBack(rapidjson::Value().SetUint64(*itr), allocator);
         }
+    }
+
+    if (m_categoryIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "CategoryId";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_categoryId, allocator);
     }
 
 }
@@ -150,5 +169,21 @@ void Item::SetCustomItemValues(const vector<uint64_t>& _customItemValues)
 bool Item::CustomItemValuesHasBeenSet() const
 {
     return m_customItemValuesHasBeenSet;
+}
+
+int64_t Item::GetCategoryId() const
+{
+    return m_categoryId;
+}
+
+void Item::SetCategoryId(const int64_t& _categoryId)
+{
+    m_categoryId = _categoryId;
+    m_categoryIdHasBeenSet = true;
+}
+
+bool Item::CategoryIdHasBeenSet() const
+{
+    return m_categoryIdHasBeenSet;
 }
 

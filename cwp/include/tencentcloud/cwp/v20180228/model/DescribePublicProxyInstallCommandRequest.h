@@ -43,15 +43,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取nginx主机ip列表，逗号分隔
-                     * @return Ip nginx主机ip列表，逗号分隔
+                     * 获取nginx主机IP列表，逗号分隔
+                     * @return Ip nginx主机IP列表，逗号分隔
                      * 
                      */
                     std::string GetIp() const;
 
                     /**
-                     * 设置nginx主机ip列表，逗号分隔
-                     * @param _ip nginx主机ip列表，逗号分隔
+                     * 设置nginx主机IP列表，逗号分隔
+                     * @param _ip nginx主机IP列表，逗号分隔
                      * 
                      */
                     void SetIp(const std::string& _ip);
@@ -66,7 +66,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * nginx主机ip列表，逗号分隔
+                     * nginx主机IP列表，逗号分隔
                      */
                     std::string m_ip;
                     bool m_ipHasBeenSet;

@@ -64,15 +64,15 @@ namespace TencentCloud
                     bool DiskTypeHasBeenSet() const;
 
                     /**
-                     * 获取云硬盘大小。
-                     * @return DiskSize 云硬盘大小。
+                     * 获取云硬盘大小, 单位: GB。
+                     * @return DiskSize 云硬盘大小, 单位: GB。
                      * 
                      */
                     int64_t GetDiskSize() const;
 
                     /**
-                     * 设置云硬盘大小。
-                     * @param _diskSize 云硬盘大小。
+                     * 设置云硬盘大小, 单位: GB。
+                     * @param _diskSize 云硬盘大小, 单位: GB。
                      * 
                      */
                     void SetDiskSize(const int64_t& _diskSize);
@@ -114,7 +114,7 @@ namespace TencentCloud
                     bool m_diskTypeHasBeenSet;
 
                     /**
-                     * 云硬盘大小。
+                     * 云硬盘大小, 单位: GB。
                      */
                     int64_t m_diskSize;
                     bool m_diskSizeHasBeenSet;
