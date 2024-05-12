@@ -68,15 +68,15 @@ namespace TencentCloud
                     bool ExpandThresholdHasBeenSet() const;
 
                     /**
-                     * 获取自动扩容观测周期，单位s，可选值1、3、5、10、15、30。后台会按照配置的周期进行扩容判断。
-                     * @return ExpandPeriod 自动扩容观测周期，单位s，可选值1、3、5、10、15、30。后台会按照配置的周期进行扩容判断。
+                     * 获取自动扩容观测周期，单位是分钟，可选值1、3、5、10、15、30。后台会按照配置的周期进行扩容判断。
+                     * @return ExpandPeriod 自动扩容观测周期，单位是分钟，可选值1、3、5、10、15、30。后台会按照配置的周期进行扩容判断。
                      * 
                      */
                     int64_t GetExpandPeriod() const;
 
                     /**
-                     * 设置自动扩容观测周期，单位s，可选值1、3、5、10、15、30。后台会按照配置的周期进行扩容判断。
-                     * @param _expandPeriod 自动扩容观测周期，单位s，可选值1、3、5、10、15、30。后台会按照配置的周期进行扩容判断。
+                     * 设置自动扩容观测周期，单位是分钟，可选值1、3、5、10、15、30。后台会按照配置的周期进行扩容判断。
+                     * @param _expandPeriod 自动扩容观测周期，单位是分钟，可选值1、3、5、10、15、30。后台会按照配置的周期进行扩容判断。
                      * 
                      */
                     void SetExpandPeriod(const int64_t& _expandPeriod);
@@ -110,15 +110,15 @@ namespace TencentCloud
                     bool ShrinkThresholdHasBeenSet() const;
 
                     /**
-                     * 获取自动缩容观测周期，单位s，可选值5、10、15、30。后台会按照配置的周期进行缩容判断。
-                     * @return ShrinkPeriod 自动缩容观测周期，单位s，可选值5、10、15、30。后台会按照配置的周期进行缩容判断。
+                     * 获取自动缩容观测周期，单位是分钟，可选值5、10、15、30。后台会按照配置的周期进行缩容判断。
+                     * @return ShrinkPeriod 自动缩容观测周期，单位是分钟，可选值5、10、15、30。后台会按照配置的周期进行缩容判断。
                      * 
                      */
                     int64_t GetShrinkPeriod() const;
 
                     /**
-                     * 设置自动缩容观测周期，单位s，可选值5、10、15、30。后台会按照配置的周期进行缩容判断。
-                     * @param _shrinkPeriod 自动缩容观测周期，单位s，可选值5、10、15、30。后台会按照配置的周期进行缩容判断。
+                     * 设置自动缩容观测周期，单位是分钟，可选值5、10、15、30。后台会按照配置的周期进行缩容判断。
+                     * @param _shrinkPeriod 自动缩容观测周期，单位是分钟，可选值5、10、15、30。后台会按照配置的周期进行缩容判断。
                      * 
                      */
                     void SetShrinkPeriod(const int64_t& _shrinkPeriod);
@@ -139,7 +139,7 @@ namespace TencentCloud
                     bool m_expandThresholdHasBeenSet;
 
                     /**
-                     * 自动扩容观测周期，单位s，可选值1、3、5、10、15、30。后台会按照配置的周期进行扩容判断。
+                     * 自动扩容观测周期，单位是分钟，可选值1、3、5、10、15、30。后台会按照配置的周期进行扩容判断。
                      */
                     int64_t m_expandPeriod;
                     bool m_expandPeriodHasBeenSet;
@@ -151,7 +151,7 @@ namespace TencentCloud
                     bool m_shrinkThresholdHasBeenSet;
 
                     /**
-                     * 自动缩容观测周期，单位s，可选值5、10、15、30。后台会按照配置的周期进行缩容判断。
+                     * 自动缩容观测周期，单位是分钟，可选值5、10、15、30。后台会按照配置的周期进行缩容判断。
                      */
                     int64_t m_shrinkPeriod;
                     bool m_shrinkPeriodHasBeenSet;

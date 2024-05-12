@@ -23,8 +23,10 @@ using namespace std;
 NodePool::NodePool() :
     m_clusterIdHasBeenSet(false),
     m_nodePoolIdHasBeenSet(false),
+    m_tagsHasBeenSet(false),
     m_taintsHasBeenSet(false),
     m_deletionProtectionHasBeenSet(false),
+    m_unschedulableHasBeenSet(false),
     m_typeHasBeenSet(false),
     m_labelsHasBeenSet(false),
     m_lifeStateHasBeenSet(false),
@@ -63,6 +65,26 @@ CoreInternalOutcome NodePool::Deserialize(const rapidjson::Value &value)
         m_nodePoolIdHasBeenSet = true;
     }
 
+    if (value.HasMember("Tags") && !value["Tags"].IsNull())
+    {
+        if (!value["Tags"].IsArray())
+            return CoreInternalOutcome(Core::Error("response `NodePool.Tags` is not array type"));
+
+        const rapidjson::Value &tmpValue = value["Tags"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            TagSpecification item;
+            CoreInternalOutcome outcome = item.Deserialize(*itr);
+            if (!outcome.IsSuccess())
+            {
+                outcome.GetError().SetRequestId(requestId);
+                return outcome;
+            }
+            m_tags.push_back(item);
+        }
+        m_tagsHasBeenSet = true;
+    }
+
     if (value.HasMember("Taints") && !value["Taints"].IsNull())
     {
         if (!value["Taints"].IsArray())
@@ -91,6 +113,16 @@ CoreInternalOutcome NodePool::Deserialize(const rapidjson::Value &value)
         }
         m_deletionProtection = value["DeletionProtection"].GetBool();
         m_deletionProtectionHasBeenSet = true;
+    }
+
+    if (value.HasMember("Unschedulable") && !value["Unschedulable"].IsNull())
+    {
+        if (!value["Unschedulable"].IsBool())
+        {
+            return CoreInternalOutcome(Core::Error("response `NodePool.Unschedulable` IsBool=false incorrectly").SetRequestId(requestId));
+        }
+        m_unschedulable = value["Unschedulable"].GetBool();
+        m_unschedulableHasBeenSet = true;
     }
 
     if (value.HasMember("Type") && !value["Type"].IsNull())
@@ -264,6 +296,21 @@ void NodePool::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Alloca
         value.AddMember(iKey, rapidjson::Value(m_nodePoolId.c_str(), allocator).Move(), allocator);
     }
 
+    if (m_tagsHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Tags";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_tags.begin(); itr != m_tags.end(); ++itr, ++i)
+        {
+            value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(value[key.c_str()][i], allocator);
+        }
+    }
+
     if (m_taintsHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
@@ -285,6 +332,14 @@ void NodePool::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Alloca
         string key = "DeletionProtection";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_deletionProtection, allocator);
+    }
+
+    if (m_unschedulableHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Unschedulable";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_unschedulable, allocator);
     }
 
     if (m_typeHasBeenSet)
@@ -420,6 +475,22 @@ bool NodePool::NodePoolIdHasBeenSet() const
     return m_nodePoolIdHasBeenSet;
 }
 
+vector<TagSpecification> NodePool::GetTags() const
+{
+    return m_tags;
+}
+
+void NodePool::SetTags(const vector<TagSpecification>& _tags)
+{
+    m_tags = _tags;
+    m_tagsHasBeenSet = true;
+}
+
+bool NodePool::TagsHasBeenSet() const
+{
+    return m_tagsHasBeenSet;
+}
+
 vector<Taint> NodePool::GetTaints() const
 {
     return m_taints;
@@ -450,6 +521,22 @@ void NodePool::SetDeletionProtection(const bool& _deletionProtection)
 bool NodePool::DeletionProtectionHasBeenSet() const
 {
     return m_deletionProtectionHasBeenSet;
+}
+
+bool NodePool::GetUnschedulable() const
+{
+    return m_unschedulable;
+}
+
+void NodePool::SetUnschedulable(const bool& _unschedulable)
+{
+    m_unschedulable = _unschedulable;
+    m_unschedulableHasBeenSet = true;
+}
+
+bool NodePool::UnschedulableHasBeenSet() const
+{
+    return m_unschedulableHasBeenSet;
 }
 
 string NodePool::GetType() const

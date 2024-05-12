@@ -642,6 +642,49 @@ CynosdbClient::CreateBackupOutcomeCallable CynosdbClient::CreateBackupCallable(c
     return task->get_future();
 }
 
+CynosdbClient::CreateCLSDeliveryOutcome CynosdbClient::CreateCLSDelivery(const CreateCLSDeliveryRequest &request)
+{
+    auto outcome = MakeRequest(request, "CreateCLSDelivery");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        CreateCLSDeliveryResponse rsp = CreateCLSDeliveryResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return CreateCLSDeliveryOutcome(rsp);
+        else
+            return CreateCLSDeliveryOutcome(o.GetError());
+    }
+    else
+    {
+        return CreateCLSDeliveryOutcome(outcome.GetError());
+    }
+}
+
+void CynosdbClient::CreateCLSDeliveryAsync(const CreateCLSDeliveryRequest& request, const CreateCLSDeliveryAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->CreateCLSDelivery(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+CynosdbClient::CreateCLSDeliveryOutcomeCallable CynosdbClient::CreateCLSDeliveryCallable(const CreateCLSDeliveryRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<CreateCLSDeliveryOutcome()>>(
+        [this, request]()
+        {
+            return this->CreateCLSDelivery(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 CynosdbClient::CreateClusterDatabaseOutcome CynosdbClient::CreateClusterDatabase(const CreateClusterDatabaseRequest &request)
 {
     auto outcome = MakeRequest(request, "CreateClusterDatabase");
@@ -1065,6 +1108,49 @@ CynosdbClient::DeleteBackupOutcomeCallable CynosdbClient::DeleteBackupCallable(c
         [this, request]()
         {
             return this->DeleteBackup(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+CynosdbClient::DeleteCLSDeliveryOutcome CynosdbClient::DeleteCLSDelivery(const DeleteCLSDeliveryRequest &request)
+{
+    auto outcome = MakeRequest(request, "DeleteCLSDelivery");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DeleteCLSDeliveryResponse rsp = DeleteCLSDeliveryResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DeleteCLSDeliveryOutcome(rsp);
+        else
+            return DeleteCLSDeliveryOutcome(o.GetError());
+    }
+    else
+    {
+        return DeleteCLSDeliveryOutcome(outcome.GetError());
+    }
+}
+
+void CynosdbClient::DeleteCLSDeliveryAsync(const DeleteCLSDeliveryRequest& request, const DeleteCLSDeliveryAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DeleteCLSDelivery(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+CynosdbClient::DeleteCLSDeliveryOutcomeCallable CynosdbClient::DeleteCLSDeliveryCallable(const DeleteCLSDeliveryRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DeleteCLSDeliveryOutcome()>>(
+        [this, request]()
+        {
+            return this->DeleteCLSDelivery(request);
         }
     );
 
@@ -2269,6 +2355,49 @@ CynosdbClient::DescribeFlowOutcomeCallable CynosdbClient::DescribeFlowCallable(c
         [this, request]()
         {
             return this->DescribeFlow(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+CynosdbClient::DescribeInstanceCLSLogDeliveryOutcome CynosdbClient::DescribeInstanceCLSLogDelivery(const DescribeInstanceCLSLogDeliveryRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeInstanceCLSLogDelivery");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeInstanceCLSLogDeliveryResponse rsp = DescribeInstanceCLSLogDeliveryResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeInstanceCLSLogDeliveryOutcome(rsp);
+        else
+            return DescribeInstanceCLSLogDeliveryOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeInstanceCLSLogDeliveryOutcome(outcome.GetError());
+    }
+}
+
+void CynosdbClient::DescribeInstanceCLSLogDeliveryAsync(const DescribeInstanceCLSLogDeliveryRequest& request, const DescribeInstanceCLSLogDeliveryAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeInstanceCLSLogDelivery(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+CynosdbClient::DescribeInstanceCLSLogDeliveryOutcomeCallable CynosdbClient::DescribeInstanceCLSLogDeliveryCallable(const DescribeInstanceCLSLogDeliveryRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeInstanceCLSLogDeliveryOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeInstanceCLSLogDelivery(request);
         }
     );
 
@@ -5537,6 +5666,92 @@ CynosdbClient::SetRenewFlagOutcomeCallable CynosdbClient::SetRenewFlagCallable(c
         [this, request]()
         {
             return this->SetRenewFlag(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+CynosdbClient::StartCLSDeliveryOutcome CynosdbClient::StartCLSDelivery(const StartCLSDeliveryRequest &request)
+{
+    auto outcome = MakeRequest(request, "StartCLSDelivery");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        StartCLSDeliveryResponse rsp = StartCLSDeliveryResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return StartCLSDeliveryOutcome(rsp);
+        else
+            return StartCLSDeliveryOutcome(o.GetError());
+    }
+    else
+    {
+        return StartCLSDeliveryOutcome(outcome.GetError());
+    }
+}
+
+void CynosdbClient::StartCLSDeliveryAsync(const StartCLSDeliveryRequest& request, const StartCLSDeliveryAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->StartCLSDelivery(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+CynosdbClient::StartCLSDeliveryOutcomeCallable CynosdbClient::StartCLSDeliveryCallable(const StartCLSDeliveryRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<StartCLSDeliveryOutcome()>>(
+        [this, request]()
+        {
+            return this->StartCLSDelivery(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+CynosdbClient::StopCLSDeliveryOutcome CynosdbClient::StopCLSDelivery(const StopCLSDeliveryRequest &request)
+{
+    auto outcome = MakeRequest(request, "StopCLSDelivery");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        StopCLSDeliveryResponse rsp = StopCLSDeliveryResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return StopCLSDeliveryOutcome(rsp);
+        else
+            return StopCLSDeliveryOutcome(o.GetError());
+    }
+    else
+    {
+        return StopCLSDeliveryOutcome(outcome.GetError());
+    }
+}
+
+void CynosdbClient::StopCLSDeliveryAsync(const StopCLSDeliveryRequest& request, const StopCLSDeliveryAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->StopCLSDelivery(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+CynosdbClient::StopCLSDeliveryOutcomeCallable CynosdbClient::StopCLSDeliveryCallable(const StopCLSDeliveryRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<StopCLSDeliveryOutcome()>>(
+        [this, request]()
+        {
+            return this->StopCLSDelivery(request);
         }
     );
 

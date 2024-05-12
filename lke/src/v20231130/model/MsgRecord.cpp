@@ -22,6 +22,7 @@ using namespace std;
 
 MsgRecord::MsgRecord() :
     m_contentHasBeenSet(false),
+    m_sessionIdHasBeenSet(false),
     m_recordIdHasBeenSet(false),
     m_relatedRecordIdHasBeenSet(false),
     m_isFromSelfHasBeenSet(false),
@@ -31,12 +32,16 @@ MsgRecord::MsgRecord() :
     m_hasReadHasBeenSet(false),
     m_scoreHasBeenSet(false),
     m_canRatingHasBeenSet(false),
+    m_canFeedbackHasBeenSet(false),
     m_typeHasBeenSet(false),
     m_referencesHasBeenSet(false),
     m_reasonsHasBeenSet(false),
     m_isLlmGeneratedHasBeenSet(false),
     m_imageUrlsHasBeenSet(false),
-    m_tokenStatHasBeenSet(false)
+    m_tokenStatHasBeenSet(false),
+    m_replyMethodHasBeenSet(false),
+    m_optionCardsHasBeenSet(false),
+    m_taskFlowHasBeenSet(false)
 {
 }
 
@@ -53,6 +58,16 @@ CoreInternalOutcome MsgRecord::Deserialize(const rapidjson::Value &value)
         }
         m_content = string(value["Content"].GetString());
         m_contentHasBeenSet = true;
+    }
+
+    if (value.HasMember("SessionId") && !value["SessionId"].IsNull())
+    {
+        if (!value["SessionId"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `MsgRecord.SessionId` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_sessionId = string(value["SessionId"].GetString());
+        m_sessionIdHasBeenSet = true;
     }
 
     if (value.HasMember("RecordId") && !value["RecordId"].IsNull())
@@ -145,6 +160,16 @@ CoreInternalOutcome MsgRecord::Deserialize(const rapidjson::Value &value)
         m_canRatingHasBeenSet = true;
     }
 
+    if (value.HasMember("CanFeedback") && !value["CanFeedback"].IsNull())
+    {
+        if (!value["CanFeedback"].IsBool())
+        {
+            return CoreInternalOutcome(Core::Error("response `MsgRecord.CanFeedback` IsBool=false incorrectly").SetRequestId(requestId));
+        }
+        m_canFeedback = value["CanFeedback"].GetBool();
+        m_canFeedbackHasBeenSet = true;
+    }
+
     if (value.HasMember("Type") && !value["Type"].IsNull())
     {
         if (!value["Type"].IsUint64())
@@ -228,6 +253,46 @@ CoreInternalOutcome MsgRecord::Deserialize(const rapidjson::Value &value)
         m_tokenStatHasBeenSet = true;
     }
 
+    if (value.HasMember("ReplyMethod") && !value["ReplyMethod"].IsNull())
+    {
+        if (!value["ReplyMethod"].IsUint64())
+        {
+            return CoreInternalOutcome(Core::Error("response `MsgRecord.ReplyMethod` IsUint64=false incorrectly").SetRequestId(requestId));
+        }
+        m_replyMethod = value["ReplyMethod"].GetUint64();
+        m_replyMethodHasBeenSet = true;
+    }
+
+    if (value.HasMember("OptionCards") && !value["OptionCards"].IsNull())
+    {
+        if (!value["OptionCards"].IsArray())
+            return CoreInternalOutcome(Core::Error("response `MsgRecord.OptionCards` is not array type"));
+
+        const rapidjson::Value &tmpValue = value["OptionCards"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            m_optionCards.push_back((*itr).GetString());
+        }
+        m_optionCardsHasBeenSet = true;
+    }
+
+    if (value.HasMember("TaskFlow") && !value["TaskFlow"].IsNull())
+    {
+        if (!value["TaskFlow"].IsObject())
+        {
+            return CoreInternalOutcome(Core::Error("response `MsgRecord.TaskFlow` is not object type").SetRequestId(requestId));
+        }
+
+        CoreInternalOutcome outcome = m_taskFlow.Deserialize(value["TaskFlow"]);
+        if (!outcome.IsSuccess())
+        {
+            outcome.GetError().SetRequestId(requestId);
+            return outcome;
+        }
+
+        m_taskFlowHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -241,6 +306,14 @@ void MsgRecord::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Alloc
         string key = "Content";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_content.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_sessionIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "SessionId";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_sessionId.c_str(), allocator).Move(), allocator);
     }
 
     if (m_recordIdHasBeenSet)
@@ -315,6 +388,14 @@ void MsgRecord::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Alloc
         value.AddMember(iKey, m_canRating, allocator);
     }
 
+    if (m_canFeedbackHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "CanFeedback";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_canFeedback, allocator);
+    }
+
     if (m_typeHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
@@ -381,6 +462,36 @@ void MsgRecord::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Alloc
         m_tokenStat.ToJsonObject(value[key.c_str()], allocator);
     }
 
+    if (m_replyMethodHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ReplyMethod";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_replyMethod, allocator);
+    }
+
+    if (m_optionCardsHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "OptionCards";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        for (auto itr = m_optionCards.begin(); itr != m_optionCards.end(); ++itr)
+        {
+            value[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
+        }
+    }
+
+    if (m_taskFlowHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "TaskFlow";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_taskFlow.ToJsonObject(value[key.c_str()], allocator);
+    }
+
 }
 
 
@@ -398,6 +509,22 @@ void MsgRecord::SetContent(const string& _content)
 bool MsgRecord::ContentHasBeenSet() const
 {
     return m_contentHasBeenSet;
+}
+
+string MsgRecord::GetSessionId() const
+{
+    return m_sessionId;
+}
+
+void MsgRecord::SetSessionId(const string& _sessionId)
+{
+    m_sessionId = _sessionId;
+    m_sessionIdHasBeenSet = true;
+}
+
+bool MsgRecord::SessionIdHasBeenSet() const
+{
+    return m_sessionIdHasBeenSet;
 }
 
 string MsgRecord::GetRecordId() const
@@ -544,6 +671,22 @@ bool MsgRecord::CanRatingHasBeenSet() const
     return m_canRatingHasBeenSet;
 }
 
+bool MsgRecord::GetCanFeedback() const
+{
+    return m_canFeedback;
+}
+
+void MsgRecord::SetCanFeedback(const bool& _canFeedback)
+{
+    m_canFeedback = _canFeedback;
+    m_canFeedbackHasBeenSet = true;
+}
+
+bool MsgRecord::CanFeedbackHasBeenSet() const
+{
+    return m_canFeedbackHasBeenSet;
+}
+
 uint64_t MsgRecord::GetType() const
 {
     return m_type;
@@ -638,5 +781,53 @@ void MsgRecord::SetTokenStat(const TokenStat& _tokenStat)
 bool MsgRecord::TokenStatHasBeenSet() const
 {
     return m_tokenStatHasBeenSet;
+}
+
+uint64_t MsgRecord::GetReplyMethod() const
+{
+    return m_replyMethod;
+}
+
+void MsgRecord::SetReplyMethod(const uint64_t& _replyMethod)
+{
+    m_replyMethod = _replyMethod;
+    m_replyMethodHasBeenSet = true;
+}
+
+bool MsgRecord::ReplyMethodHasBeenSet() const
+{
+    return m_replyMethodHasBeenSet;
+}
+
+vector<string> MsgRecord::GetOptionCards() const
+{
+    return m_optionCards;
+}
+
+void MsgRecord::SetOptionCards(const vector<string>& _optionCards)
+{
+    m_optionCards = _optionCards;
+    m_optionCardsHasBeenSet = true;
+}
+
+bool MsgRecord::OptionCardsHasBeenSet() const
+{
+    return m_optionCardsHasBeenSet;
+}
+
+TaskFlowInfo MsgRecord::GetTaskFlow() const
+{
+    return m_taskFlow;
+}
+
+void MsgRecord::SetTaskFlow(const TaskFlowInfo& _taskFlow)
+{
+    m_taskFlow = _taskFlow;
+    m_taskFlowHasBeenSet = true;
+}
+
+bool MsgRecord::TaskFlowHasBeenSet() const
+{
+    return m_taskFlowHasBeenSet;
 }
 

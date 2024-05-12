@@ -78,11 +78,12 @@ set(live_public_header_model
   include/tencentcloud/live/v20180801/model/BandwidthInfo.h
   include/tencentcloud/live/v20180801/model/LiveStreamMonitorOutputInfo.h
   include/tencentcloud/live/v20180801/model/DeleteLiveTranscodeTemplateRequest.h
+  include/tencentcloud/live/v20180801/model/StopLivePadProcessorRequest.h
   include/tencentcloud/live/v20180801/model/StopRecordTaskResponse.h
   include/tencentcloud/live/v20180801/model/CommonMixControlParams.h
   include/tencentcloud/live/v20180801/model/DescribeTranscodeTaskNumResponse.h
   include/tencentcloud/live/v20180801/model/DescribeLivePullStreamTaskStatusResponse.h
-  include/tencentcloud/live/v20180801/model/ModifyLiveStreamMonitorResponse.h
+  include/tencentcloud/live/v20180801/model/DescribeLivePadProcessorListResponse.h
   include/tencentcloud/live/v20180801/model/DeleteLivePadRuleResponse.h
   include/tencentcloud/live/v20180801/model/DescribeLiveRecordTemplateRequest.h
   include/tencentcloud/live/v20180801/model/HttpStatusInfo.h
@@ -281,11 +282,13 @@ set(live_public_header_model
   include/tencentcloud/live/v20180801/model/DescribeLiveTimeShiftBillInfoListResponse.h
   include/tencentcloud/live/v20180801/model/CertInfo.h
   include/tencentcloud/live/v20180801/model/DescribeLiveCallbackRulesRequest.h
+  include/tencentcloud/live/v20180801/model/DescribeLivePadProcessorListRequest.h
   include/tencentcloud/live/v20180801/model/DescribeConcurrentRecordStreamNumRequest.h
   include/tencentcloud/live/v20180801/model/DeleteScreenshotTaskResponse.h
   include/tencentcloud/live/v20180801/model/DescribePullTransformPushInfoResponse.h
   include/tencentcloud/live/v20180801/model/DescribeLiveStreamStateRequest.h
   include/tencentcloud/live/v20180801/model/CreateLiveRecordTemplateResponse.h
+  include/tencentcloud/live/v20180801/model/StopLivePadProcessorResponse.h
   include/tencentcloud/live/v20180801/model/EnableLiveDomainRequest.h
   include/tencentcloud/live/v20180801/model/DescribeLiveTimeShiftRulesResponse.h
   include/tencentcloud/live/v20180801/model/DescribeLiveTranscodeTemplatesResponse.h
@@ -379,6 +382,7 @@ set(live_public_header_model
   include/tencentcloud/live/v20180801/model/LivePackageInfo.h
   include/tencentcloud/live/v20180801/model/DescribeLiveForbidStreamListRequest.h
   include/tencentcloud/live/v20180801/model/LiveStreamMonitorNotifyPolicy.h
+  include/tencentcloud/live/v20180801/model/ModifyLiveStreamMonitorResponse.h
   include/tencentcloud/live/v20180801/model/LiveStreamMonitorInfo.h
   include/tencentcloud/live/v20180801/model/RecentPullInfo.h
   include/tencentcloud/live/v20180801/model/ForbidLiveStreamResponse.h
@@ -475,11 +479,12 @@ set(live_src
   src/v20180801/model/BandwidthInfo.cpp
   src/v20180801/model/LiveStreamMonitorOutputInfo.cpp
   src/v20180801/model/DeleteLiveTranscodeTemplateRequest.cpp
+  src/v20180801/model/StopLivePadProcessorRequest.cpp
   src/v20180801/model/StopRecordTaskResponse.cpp
   src/v20180801/model/CommonMixControlParams.cpp
   src/v20180801/model/DescribeTranscodeTaskNumResponse.cpp
   src/v20180801/model/DescribeLivePullStreamTaskStatusResponse.cpp
-  src/v20180801/model/ModifyLiveStreamMonitorResponse.cpp
+  src/v20180801/model/DescribeLivePadProcessorListResponse.cpp
   src/v20180801/model/DeleteLivePadRuleResponse.cpp
   src/v20180801/model/DescribeLiveRecordTemplateRequest.cpp
   src/v20180801/model/HttpStatusInfo.cpp
@@ -678,11 +683,13 @@ set(live_src
   src/v20180801/model/DescribeLiveTimeShiftBillInfoListResponse.cpp
   src/v20180801/model/CertInfo.cpp
   src/v20180801/model/DescribeLiveCallbackRulesRequest.cpp
+  src/v20180801/model/DescribeLivePadProcessorListRequest.cpp
   src/v20180801/model/DescribeConcurrentRecordStreamNumRequest.cpp
   src/v20180801/model/DeleteScreenshotTaskResponse.cpp
   src/v20180801/model/DescribePullTransformPushInfoResponse.cpp
   src/v20180801/model/DescribeLiveStreamStateRequest.cpp
   src/v20180801/model/CreateLiveRecordTemplateResponse.cpp
+  src/v20180801/model/StopLivePadProcessorResponse.cpp
   src/v20180801/model/EnableLiveDomainRequest.cpp
   src/v20180801/model/DescribeLiveTimeShiftRulesResponse.cpp
   src/v20180801/model/DescribeLiveTranscodeTemplatesResponse.cpp
@@ -776,6 +783,7 @@ set(live_src
   src/v20180801/model/LivePackageInfo.cpp
   src/v20180801/model/DescribeLiveForbidStreamListRequest.cpp
   src/v20180801/model/LiveStreamMonitorNotifyPolicy.cpp
+  src/v20180801/model/ModifyLiveStreamMonitorResponse.cpp
   src/v20180801/model/LiveStreamMonitorInfo.cpp
   src/v20180801/model/RecentPullInfo.cpp
   src/v20180801/model/ForbidLiveStreamResponse.cpp

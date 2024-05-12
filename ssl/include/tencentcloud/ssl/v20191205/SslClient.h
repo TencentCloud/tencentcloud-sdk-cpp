@@ -69,6 +69,8 @@
 #include <tencentcloud/ssl/v20191205/model/DescribeDeleteCertificatesTaskResultResponse.h>
 #include <tencentcloud/ssl/v20191205/model/DescribeDeployedResourcesRequest.h>
 #include <tencentcloud/ssl/v20191205/model/DescribeDeployedResourcesResponse.h>
+#include <tencentcloud/ssl/v20191205/model/DescribeDownloadCertificateUrlRequest.h>
+#include <tencentcloud/ssl/v20191205/model/DescribeDownloadCertificateUrlResponse.h>
 #include <tencentcloud/ssl/v20191205/model/DescribeHostApiGatewayInstanceListRequest.h>
 #include <tencentcloud/ssl/v20191205/model/DescribeHostApiGatewayInstanceListResponse.h>
 #include <tencentcloud/ssl/v20191205/model/DescribeHostCdnInstanceListRequest.h>
@@ -220,6 +222,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeDeployedResourcesResponse> DescribeDeployedResourcesOutcome;
                 typedef std::future<DescribeDeployedResourcesOutcome> DescribeDeployedResourcesOutcomeCallable;
                 typedef std::function<void(const SslClient*, const Model::DescribeDeployedResourcesRequest&, DescribeDeployedResourcesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeDeployedResourcesAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeDownloadCertificateUrlResponse> DescribeDownloadCertificateUrlOutcome;
+                typedef std::future<DescribeDownloadCertificateUrlOutcome> DescribeDownloadCertificateUrlOutcomeCallable;
+                typedef std::function<void(const SslClient*, const Model::DescribeDownloadCertificateUrlRequest&, DescribeDownloadCertificateUrlOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeDownloadCertificateUrlAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeHostApiGatewayInstanceListResponse> DescribeHostApiGatewayInstanceListOutcome;
                 typedef std::future<DescribeHostApiGatewayInstanceListOutcome> DescribeHostApiGatewayInstanceListOutcomeCallable;
                 typedef std::function<void(const SslClient*, const Model::DescribeHostApiGatewayInstanceListRequest&, DescribeHostApiGatewayInstanceListOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeHostApiGatewayInstanceListAsyncHandler;
@@ -531,6 +536,15 @@ namespace TencentCloud
                 DescribeDeployedResourcesOutcome DescribeDeployedResources(const Model::DescribeDeployedResourcesRequest &request);
                 void DescribeDeployedResourcesAsync(const Model::DescribeDeployedResourcesRequest& request, const DescribeDeployedResourcesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DescribeDeployedResourcesOutcomeCallable DescribeDeployedResourcesCallable(const Model::DescribeDeployedResourcesRequest& request);
+
+                /**
+                 *获取下载证书链接
+                 * @param req DescribeDownloadCertificateUrlRequest
+                 * @return DescribeDownloadCertificateUrlOutcome
+                 */
+                DescribeDownloadCertificateUrlOutcome DescribeDownloadCertificateUrl(const Model::DescribeDownloadCertificateUrlRequest &request);
+                void DescribeDownloadCertificateUrlAsync(const Model::DescribeDownloadCertificateUrlRequest& request, const DescribeDownloadCertificateUrlAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeDownloadCertificateUrlOutcomeCallable DescribeDownloadCertificateUrlCallable(const Model::DescribeDownloadCertificateUrlRequest& request);
 
                 /**
                  *查询证书apiGateway云资源部署实例列表

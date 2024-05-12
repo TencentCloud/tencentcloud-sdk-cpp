@@ -163,6 +163,8 @@ namespace TencentCloud
 
 - APP：
 第三方APP或小程序跳转电子签小程序的path, APP或者小程序跳转适合此类型
+
+如果不传递，默认值是 APP
                      * @return Endpoint 要跳转的链接类型
 
 - HTTP：
@@ -173,6 +175,8 @@ namespace TencentCloud
 
 - APP：
 第三方APP或小程序跳转电子签小程序的path, APP或者小程序跳转适合此类型
+
+如果不传递，默认值是 APP
                      * 
                      */
                     std::string GetEndpoint() const;
@@ -188,6 +192,8 @@ namespace TencentCloud
 
 - APP：
 第三方APP或小程序跳转电子签小程序的path, APP或者小程序跳转适合此类型
+
+如果不传递，默认值是 APP
                      * @param _endpoint 要跳转的链接类型
 
 - HTTP：
@@ -198,6 +204,8 @@ namespace TencentCloud
 
 - APP：
 第三方APP或小程序跳转电子签小程序的path, APP或者小程序跳转适合此类型
+
+如果不传递，默认值是 APP
                      * 
                      */
                     void SetEndpoint(const std::string& _endpoint);
@@ -298,6 +306,8 @@ namespace TencentCloud
 
 - APP：
 第三方APP或小程序跳转电子签小程序的path, APP或者小程序跳转适合此类型
+
+如果不传递，默认值是 APP
                      */
                     std::string m_endpoint;
                     bool m_endpointHasBeenSet;

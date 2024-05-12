@@ -89,15 +89,15 @@ namespace TencentCloud
                     bool RoomIdHasBeenSet() const;
 
                     /**
-                     * 获取房间号类型，0为整形房间号，1为字符串房间号。
-                     * @return RoomIdType 房间号类型，0为整形房间号，1为字符串房间号。
+                     * 获取房间号类型，0为整型房间号，1为字符串房间号。
+                     * @return RoomIdType 房间号类型，0为整型房间号，1为字符串房间号。
                      * 
                      */
                     uint64_t GetRoomIdType() const;
 
                     /**
-                     * 设置房间号类型，0为整形房间号，1为字符串房间号。
-                     * @param _roomIdType 房间号类型，0为整形房间号，1为字符串房间号。
+                     * 设置房间号类型，0为整型房间号，1为字符串房间号。
+                     * @param _roomIdType 房间号类型，0为整型房间号，1为字符串房间号。
                      * 
                      */
                     void SetRoomIdType(const uint64_t& _roomIdType);
@@ -124,7 +124,7 @@ namespace TencentCloud
                     bool m_roomIdHasBeenSet;
 
                     /**
-                     * 房间号类型，0为整形房间号，1为字符串房间号。
+                     * 房间号类型，0为整型房间号，1为字符串房间号。
                      */
                     uint64_t m_roomIdType;
                     bool m_roomIdTypeHasBeenSet;

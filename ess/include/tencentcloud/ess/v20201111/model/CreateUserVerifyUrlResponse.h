@@ -48,7 +48,7 @@ namespace TencentCloud
 如果没有传递，默认值是 HTTP。 链接的有效期均是 7 天。
 
 - 如果EndPoint是APP，
-得到的链接类似于pages/guide/index?to=MP_PERSONAL_VERIFY&shortKey=yDCZHUyOcExAlcOvNod0, 用法可以参加接口描述中的"跳转到小程序的实现"
+得到的链接类似于pages/guide/index?to=MP_PERSONAL_VERIFY&shortKey=yDCZHUyOcExAlcOvNod0, 用法可以参考描述中的"跳转到小程序的实现"
 
 - 如果EndPoint是HTTP，
 得到的链接类似于https://res.ess.tencent.cn/cdn/h5-activity/jump-mp.html?to=TAG_VERIFY&shortKey=yDCZHUyOcChrfpaswT0d，点击后会跳转到腾讯电子签小程序进行签署
@@ -63,7 +63,7 @@ namespace TencentCloud
 如果没有传递，默认值是 HTTP。 链接的有效期均是 7 天。
 
 - 如果EndPoint是APP，
-得到的链接类似于pages/guide/index?to=MP_PERSONAL_VERIFY&shortKey=yDCZHUyOcExAlcOvNod0, 用法可以参加接口描述中的"跳转到小程序的实现"
+得到的链接类似于pages/guide/index?to=MP_PERSONAL_VERIFY&shortKey=yDCZHUyOcExAlcOvNod0, 用法可以参考描述中的"跳转到小程序的实现"
 
 - 如果EndPoint是HTTP，
 得到的链接类似于https://res.ess.tencent.cn/cdn/h5-activity/jump-mp.html?to=TAG_VERIFY&shortKey=yDCZHUyOcChrfpaswT0d，点击后会跳转到腾讯电子签小程序进行签署
@@ -100,8 +100,8 @@ namespace TencentCloud
                     bool ExpireTimeHasBeenSet() const;
 
                     /**
-                     * 获取小程序appid，用于半屏拉起电子签小程序
-                     * @return MiniAppId 小程序appid，用于半屏拉起电子签小程序
+                     * 获取小程序appid，用于半屏拉起电子签小程序， 仅在 Endpoint 设置为 APP 的时候返回
+                     * @return MiniAppId 小程序appid，用于半屏拉起电子签小程序， 仅在 Endpoint 设置为 APP 的时候返回
                      * 
                      */
                     std::string GetMiniAppId() const;
@@ -120,7 +120,7 @@ namespace TencentCloud
 如果没有传递，默认值是 HTTP。 链接的有效期均是 7 天。
 
 - 如果EndPoint是APP，
-得到的链接类似于pages/guide/index?to=MP_PERSONAL_VERIFY&shortKey=yDCZHUyOcExAlcOvNod0, 用法可以参加接口描述中的"跳转到小程序的实现"
+得到的链接类似于pages/guide/index?to=MP_PERSONAL_VERIFY&shortKey=yDCZHUyOcExAlcOvNod0, 用法可以参考描述中的"跳转到小程序的实现"
 
 - 如果EndPoint是HTTP，
 得到的链接类似于https://res.ess.tencent.cn/cdn/h5-activity/jump-mp.html?to=TAG_VERIFY&shortKey=yDCZHUyOcChrfpaswT0d，点击后会跳转到腾讯电子签小程序进行签署
@@ -142,7 +142,7 @@ namespace TencentCloud
                     bool m_expireTimeHasBeenSet;
 
                     /**
-                     * 小程序appid，用于半屏拉起电子签小程序
+                     * 小程序appid，用于半屏拉起电子签小程序， 仅在 Endpoint 设置为 APP 的时候返回
                      */
                     std::string m_miniAppId;
                     bool m_miniAppIdHasBeenSet;

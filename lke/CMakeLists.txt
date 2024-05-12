@@ -64,6 +64,7 @@ set(lke_public_header_model
   include/tencentcloud/lke/v20231130/model/ModifyAppResponse.h
   include/tencentcloud/lke/v20231130/model/ListDocResponse.h
   include/tencentcloud/lke/v20231130/model/ModifyQARequest.h
+  include/tencentcloud/lke/v20231130/model/TaskFlowInfo.h
   include/tencentcloud/lke/v20231130/model/GetDocPreviewRequest.h
   include/tencentcloud/lke/v20231130/model/ListRejectedQuestionPreviewResponse.h
   include/tencentcloud/lke/v20231130/model/DescribeCorpRequest.h
@@ -264,6 +265,7 @@ set(lke_src
   src/v20231130/model/ModifyAppResponse.cpp
   src/v20231130/model/ListDocResponse.cpp
   src/v20231130/model/ModifyQARequest.cpp
+  src/v20231130/model/TaskFlowInfo.cpp
   src/v20231130/model/GetDocPreviewRequest.cpp
   src/v20231130/model/ListRejectedQuestionPreviewResponse.cpp
   src/v20231130/model/DescribeCorpRequest.cpp

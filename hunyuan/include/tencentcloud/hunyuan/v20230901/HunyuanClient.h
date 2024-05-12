@@ -33,6 +33,10 @@
 #include <tencentcloud/hunyuan/v20230901/model/GetEmbeddingResponse.h>
 #include <tencentcloud/hunyuan/v20230901/model/GetTokenCountRequest.h>
 #include <tencentcloud/hunyuan/v20230901/model/GetTokenCountResponse.h>
+#include <tencentcloud/hunyuan/v20230901/model/QueryHunyuanImageJobRequest.h>
+#include <tencentcloud/hunyuan/v20230901/model/QueryHunyuanImageJobResponse.h>
+#include <tencentcloud/hunyuan/v20230901/model/SubmitHunyuanImageJobRequest.h>
+#include <tencentcloud/hunyuan/v20230901/model/SubmitHunyuanImageJobResponse.h>
 
 
 namespace TencentCloud
@@ -62,6 +66,12 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::GetTokenCountResponse> GetTokenCountOutcome;
                 typedef std::future<GetTokenCountOutcome> GetTokenCountOutcomeCallable;
                 typedef std::function<void(const HunyuanClient*, const Model::GetTokenCountRequest&, GetTokenCountOutcome, const std::shared_ptr<const AsyncCallerContext>&)> GetTokenCountAsyncHandler;
+                typedef Outcome<Core::Error, Model::QueryHunyuanImageJobResponse> QueryHunyuanImageJobOutcome;
+                typedef std::future<QueryHunyuanImageJobOutcome> QueryHunyuanImageJobOutcomeCallable;
+                typedef std::function<void(const HunyuanClient*, const Model::QueryHunyuanImageJobRequest&, QueryHunyuanImageJobOutcome, const std::shared_ptr<const AsyncCallerContext>&)> QueryHunyuanImageJobAsyncHandler;
+                typedef Outcome<Core::Error, Model::SubmitHunyuanImageJobResponse> SubmitHunyuanImageJobOutcome;
+                typedef std::future<SubmitHunyuanImageJobOutcome> SubmitHunyuanImageJobOutcomeCallable;
+                typedef std::function<void(const HunyuanClient*, const Model::SubmitHunyuanImageJobRequest&, SubmitHunyuanImageJobOutcome, const std::shared_ptr<const AsyncCallerContext>&)> SubmitHunyuanImageJobAsyncHandler;
 
 
 
@@ -125,6 +135,30 @@ namespace TencentCloud
                 GetTokenCountOutcome GetTokenCount(const Model::GetTokenCountRequest &request);
                 void GetTokenCountAsync(const Model::GetTokenCountRequest& request, const GetTokenCountAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 GetTokenCountOutcomeCallable GetTokenCountCallable(const Model::GetTokenCountRequest& request);
+
+                /**
+                 *混元生图接口基于混元大模型，将根据输入的文本描述，智能生成与之相关的结果图。分为提交任务和查询任务2个接口。
+提交任务：输入文本等，提交一个混元生图异步任务，获得任务 ID。
+查询任务：根据任务 ID 查询任务的处理状态、处理结果，任务处理完成后可获得生成图像结果。
+并发任务数（并发）说明：并发任务数指能同时处理的任务数量。混元生图默认提供1个并发任务数，代表最多能同时处理1个已提交的任务，上一个任务处理完毕后才能开始处理下一个任务。
+                 * @param req QueryHunyuanImageJobRequest
+                 * @return QueryHunyuanImageJobOutcome
+                 */
+                QueryHunyuanImageJobOutcome QueryHunyuanImageJob(const Model::QueryHunyuanImageJobRequest &request);
+                void QueryHunyuanImageJobAsync(const Model::QueryHunyuanImageJobRequest& request, const QueryHunyuanImageJobAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                QueryHunyuanImageJobOutcomeCallable QueryHunyuanImageJobCallable(const Model::QueryHunyuanImageJobRequest& request);
+
+                /**
+                 *混元生图接口基于混元大模型，将根据输入的文本描述，智能生成与之相关的结果图。分为提交任务和查询任务2个接口。
+提交任务：输入文本等，提交一个混元生图异步任务，获得任务 ID。
+查询任务：根据任务 ID 查询任务的处理状态、处理结果，任务处理完成后可获得生成图像结果。
+并发任务数（并发）说明：并发任务数指能同时处理的任务数量。混元生图默认提供1个并发任务数，代表最多能同时处理1个已提交的任务，上一个任务处理完毕后才能开始处理下一个任务。
+                 * @param req SubmitHunyuanImageJobRequest
+                 * @return SubmitHunyuanImageJobOutcome
+                 */
+                SubmitHunyuanImageJobOutcome SubmitHunyuanImageJob(const Model::SubmitHunyuanImageJobRequest &request);
+                void SubmitHunyuanImageJobAsync(const Model::SubmitHunyuanImageJobRequest& request, const SubmitHunyuanImageJobAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                SubmitHunyuanImageJobOutcomeCallable SubmitHunyuanImageJobCallable(const Model::SubmitHunyuanImageJobRequest& request);
 
             };
         }

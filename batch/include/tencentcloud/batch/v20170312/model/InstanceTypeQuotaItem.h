@@ -520,18 +520,34 @@ namespace TencentCloud
                     bool FrequencyHasBeenSet() const;
 
                     /**
-                     * 获取描述库存情况。取值范围： <br><li> UnderStock：表示对应库存即将售罄<br></li> NormalStock：表示对应库存供应有保障<br><li> EnoughStock：表示对应库存非常充足<br></li> WithoutStock：表示对应库存已经售罄
+                     * 获取描述库存情况。取值范围：
+<li> EnoughStock：表示对应库存非常充足</li> 
+<li>NormalStock：表示对应库存供应有保障</li>
+<li> UnderStock：表示对应库存即将售罄</li> 
+<li>WithoutStock：表示对应库存已经售罄</li>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return StatusCategory 描述库存情况。取值范围： <br><li> UnderStock：表示对应库存即将售罄<br></li> NormalStock：表示对应库存供应有保障<br><li> EnoughStock：表示对应库存非常充足<br></li> WithoutStock：表示对应库存已经售罄
+                     * @return StatusCategory 描述库存情况。取值范围：
+<li> EnoughStock：表示对应库存非常充足</li> 
+<li>NormalStock：表示对应库存供应有保障</li>
+<li> UnderStock：表示对应库存即将售罄</li> 
+<li>WithoutStock：表示对应库存已经售罄</li>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetStatusCategory() const;
 
                     /**
-                     * 设置描述库存情况。取值范围： <br><li> UnderStock：表示对应库存即将售罄<br></li> NormalStock：表示对应库存供应有保障<br><li> EnoughStock：表示对应库存非常充足<br></li> WithoutStock：表示对应库存已经售罄
+                     * 设置描述库存情况。取值范围：
+<li> EnoughStock：表示对应库存非常充足</li> 
+<li>NormalStock：表示对应库存供应有保障</li>
+<li> UnderStock：表示对应库存即将售罄</li> 
+<li>WithoutStock：表示对应库存已经售罄</li>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _statusCategory 描述库存情况。取值范围： <br><li> UnderStock：表示对应库存即将售罄<br></li> NormalStock：表示对应库存供应有保障<br><li> EnoughStock：表示对应库存非常充足<br></li> WithoutStock：表示对应库存已经售罄
+                     * @param _statusCategory 描述库存情况。取值范围：
+<li> EnoughStock：表示对应库存非常充足</li> 
+<li>NormalStock：表示对应库存供应有保障</li>
+<li> UnderStock：表示对应库存即将售罄</li> 
+<li>WithoutStock：表示对应库存已经售罄</li>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -681,7 +697,11 @@ namespace TencentCloud
                     bool m_frequencyHasBeenSet;
 
                     /**
-                     * 描述库存情况。取值范围： <br><li> UnderStock：表示对应库存即将售罄<br></li> NormalStock：表示对应库存供应有保障<br><li> EnoughStock：表示对应库存非常充足<br></li> WithoutStock：表示对应库存已经售罄
+                     * 描述库存情况。取值范围：
+<li> EnoughStock：表示对应库存非常充足</li> 
+<li>NormalStock：表示对应库存供应有保障</li>
+<li> UnderStock：表示对应库存即将售罄</li> 
+<li>WithoutStock：表示对应库存已经售罄</li>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_statusCategory;

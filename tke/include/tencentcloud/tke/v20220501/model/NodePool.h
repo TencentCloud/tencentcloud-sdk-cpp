@@ -24,6 +24,7 @@
 #include <tencentcloud/core/utils/rapidjson/writer.h>
 #include <tencentcloud/core/utils/rapidjson/stringbuffer.h>
 #include <tencentcloud/core/AbstractModel.h>
+#include <tencentcloud/tke/v20220501/model/TagSpecification.h>
 #include <tencentcloud/tke/v20220501/model/Taint.h>
 #include <tencentcloud/tke/v20220501/model/Label.h>
 #include <tencentcloud/tke/v20220501/model/NativeNodePoolInfo.h>
@@ -96,6 +97,31 @@ namespace TencentCloud
                     bool NodePoolIdHasBeenSet() const;
 
                     /**
+                     * 获取节点标签
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return Tags 节点标签
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::vector<TagSpecification> GetTags() const;
+
+                    /**
+                     * 设置节点标签
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _tags 节点标签
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetTags(const std::vector<TagSpecification>& _tags);
+
+                    /**
+                     * 判断参数 Tags 是否已赋值
+                     * @return Tags 是否已赋值
+                     * 
+                     */
+                    bool TagsHasBeenSet() const;
+
+                    /**
                      * 获取节点污点
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Taints 节点污点
@@ -144,6 +170,31 @@ namespace TencentCloud
                      * 
                      */
                     bool DeletionProtectionHasBeenSet() const;
+
+                    /**
+                     * 获取节点是否不可调度
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return Unschedulable 节点是否不可调度
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    bool GetUnschedulable() const;
+
+                    /**
+                     * 设置节点是否不可调度
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _unschedulable 节点是否不可调度
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetUnschedulable(const bool& _unschedulable);
+
+                    /**
+                     * 判断参数 Unschedulable 是否已赋值
+                     * @return Unschedulable 是否已赋值
+                     * 
+                     */
+                    bool UnschedulableHasBeenSet() const;
 
                     /**
                      * 获取节点池类型
@@ -394,6 +445,13 @@ namespace TencentCloud
                     bool m_nodePoolIdHasBeenSet;
 
                     /**
+                     * 节点标签
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::vector<TagSpecification> m_tags;
+                    bool m_tagsHasBeenSet;
+
+                    /**
                      * 节点污点
 注意：此字段可能返回 null，表示取不到有效值。
                      */
@@ -406,6 +464,13 @@ namespace TencentCloud
                      */
                     bool m_deletionProtection;
                     bool m_deletionProtectionHasBeenSet;
+
+                    /**
+                     * 节点是否不可调度
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    bool m_unschedulable;
+                    bool m_unschedulableHasBeenSet;
 
                     /**
                      * 节点池类型

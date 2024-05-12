@@ -39,6 +39,7 @@ Instance::Instance() :
     m_latestOperationHasBeenSet(false),
     m_latestOperationStateHasBeenSet(false),
     m_latestOperationRequestIdHasBeenSet(false),
+    m_latestOperationStartedTimeHasBeenSet(false),
     m_isolatedTimeHasBeenSet(false),
     m_createdTimeHasBeenSet(false),
     m_expiredTimeHasBeenSet(false),
@@ -262,6 +263,16 @@ CoreInternalOutcome Instance::Deserialize(const rapidjson::Value &value)
         }
         m_latestOperationRequestId = string(value["LatestOperationRequestId"].GetString());
         m_latestOperationRequestIdHasBeenSet = true;
+    }
+
+    if (value.HasMember("LatestOperationStartedTime") && !value["LatestOperationStartedTime"].IsNull())
+    {
+        if (!value["LatestOperationStartedTime"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `Instance.LatestOperationStartedTime` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_latestOperationStartedTime = string(value["LatestOperationStartedTime"].GetString());
+        m_latestOperationStartedTimeHasBeenSet = true;
     }
 
     if (value.HasMember("IsolatedTime") && !value["IsolatedTime"].IsNull())
@@ -536,6 +547,14 @@ void Instance::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Alloca
         string key = "LatestOperationRequestId";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_latestOperationRequestId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_latestOperationStartedTimeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "LatestOperationStartedTime";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_latestOperationStartedTime.c_str(), allocator).Move(), allocator);
     }
 
     if (m_isolatedTimeHasBeenSet)
@@ -914,6 +933,22 @@ void Instance::SetLatestOperationRequestId(const string& _latestOperationRequest
 bool Instance::LatestOperationRequestIdHasBeenSet() const
 {
     return m_latestOperationRequestIdHasBeenSet;
+}
+
+string Instance::GetLatestOperationStartedTime() const
+{
+    return m_latestOperationStartedTime;
+}
+
+void Instance::SetLatestOperationStartedTime(const string& _latestOperationStartedTime)
+{
+    m_latestOperationStartedTime = _latestOperationStartedTime;
+    m_latestOperationStartedTimeHasBeenSet = true;
+}
+
+bool Instance::LatestOperationStartedTimeHasBeenSet() const
+{
+    return m_latestOperationStartedTimeHasBeenSet;
 }
 
 string Instance::GetIsolatedTime() const

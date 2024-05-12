@@ -473,6 +473,31 @@ FAILED：表示操作失败
                     bool LatestOperationRequestIdHasBeenSet() const;
 
                     /**
+                     * 获取实例最新操作的开始时间。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return LatestOperationStartedTime 实例最新操作的开始时间。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::string GetLatestOperationStartedTime() const;
+
+                    /**
+                     * 设置实例最新操作的开始时间。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _latestOperationStartedTime 实例最新操作的开始时间。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetLatestOperationStartedTime(const std::string& _latestOperationStartedTime);
+
+                    /**
+                     * 判断参数 LatestOperationStartedTime 是否已赋值
+                     * @return LatestOperationStartedTime 是否已赋值
+                     * 
+                     */
+                    bool LatestOperationStartedTimeHasBeenSet() const;
+
+                    /**
                      * 获取隔离时间。按照 ISO8601 标准表示，并且使用 UTC 时间。 
 格式为： YYYY-MM-DDThh:mm:ssZ。
 注意：此字段可能返回 null，表示取不到有效值。
@@ -830,6 +855,13 @@ FAILED：表示操作失败
                      */
                     std::string m_latestOperationRequestId;
                     bool m_latestOperationRequestIdHasBeenSet;
+
+                    /**
+                     * 实例最新操作的开始时间。
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_latestOperationStartedTime;
+                    bool m_latestOperationStartedTimeHasBeenSet;
 
                     /**
                      * 隔离时间。按照 ISO8601 标准表示，并且使用 UTC 时间。 

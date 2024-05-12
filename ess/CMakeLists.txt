@@ -46,6 +46,7 @@ set(ess_public_header_model
   include/tencentcloud/ess/v20201111/model/ReviewerInfo.h
   include/tencentcloud/ess/v20201111/model/FlowBrief.h
   include/tencentcloud/ess/v20201111/model/DescribeThirdPartyAuthCodeResponse.h
+  include/tencentcloud/ess/v20201111/model/DescribeUserVerifyStatusResponse.h
   include/tencentcloud/ess/v20201111/model/HasAuthUser.h
   include/tencentcloud/ess/v20201111/model/DisableUserAutoSignResponse.h
   include/tencentcloud/ess/v20201111/model/OrgBillSummary.h
@@ -61,6 +62,7 @@ set(ess_public_header_model
   include/tencentcloud/ess/v20201111/model/StartFlowResponse.h
   include/tencentcloud/ess/v20201111/model/SealInfo.h
   include/tencentcloud/ess/v20201111/model/StaffRole.h
+  include/tencentcloud/ess/v20201111/model/GroupOrganization.h
   include/tencentcloud/ess/v20201111/model/CreateOrganizationAuthUrlRequest.h
   include/tencentcloud/ess/v20201111/model/CreateBatchQuickSignUrlResponse.h
   include/tencentcloud/ess/v20201111/model/CreateIntegrationRoleRequest.h
@@ -150,7 +152,7 @@ set(ess_public_header_model
   include/tencentcloud/ess/v20201111/model/DetectInfoVideoData.h
   include/tencentcloud/ess/v20201111/model/DescribeFlowComponentsRequest.h
   include/tencentcloud/ess/v20201111/model/CreateIntegrationDepartmentRequest.h
-  include/tencentcloud/ess/v20201111/model/GroupOrganization.h
+  include/tencentcloud/ess/v20201111/model/DescribeUserVerifyStatusRequest.h
   include/tencentcloud/ess/v20201111/model/AuthorizedUser.h
   include/tencentcloud/ess/v20201111/model/Intention.h
   include/tencentcloud/ess/v20201111/model/CreateDocumentRequest.h
@@ -301,6 +303,7 @@ set(ess_src
   src/v20201111/model/ReviewerInfo.cpp
   src/v20201111/model/FlowBrief.cpp
   src/v20201111/model/DescribeThirdPartyAuthCodeResponse.cpp
+  src/v20201111/model/DescribeUserVerifyStatusResponse.cpp
   src/v20201111/model/HasAuthUser.cpp
   src/v20201111/model/DisableUserAutoSignResponse.cpp
   src/v20201111/model/OrgBillSummary.cpp
@@ -316,6 +319,7 @@ set(ess_src
   src/v20201111/model/StartFlowResponse.cpp
   src/v20201111/model/SealInfo.cpp
   src/v20201111/model/StaffRole.cpp
+  src/v20201111/model/GroupOrganization.cpp
   src/v20201111/model/CreateOrganizationAuthUrlRequest.cpp
   src/v20201111/model/CreateBatchQuickSignUrlResponse.cpp
   src/v20201111/model/CreateIntegrationRoleRequest.cpp
@@ -405,7 +409,7 @@ set(ess_src
   src/v20201111/model/DetectInfoVideoData.cpp
   src/v20201111/model/DescribeFlowComponentsRequest.cpp
   src/v20201111/model/CreateIntegrationDepartmentRequest.cpp
-  src/v20201111/model/GroupOrganization.cpp
+  src/v20201111/model/DescribeUserVerifyStatusRequest.cpp
   src/v20201111/model/AuthorizedUser.cpp
   src/v20201111/model/Intention.cpp
   src/v20201111/model/CreateDocumentRequest.cpp

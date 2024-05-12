@@ -26,6 +26,7 @@
 #include <tencentcloud/core/AbstractModel.h>
 #include <tencentcloud/lke/v20231130/model/MsgRecordReference.h>
 #include <tencentcloud/lke/v20231130/model/TokenStat.h>
+#include <tencentcloud/lke/v20231130/model/TaskFlowInfo.h>
 
 
 namespace TencentCloud
@@ -68,6 +69,31 @@ namespace TencentCloud
                      * 
                      */
                     bool ContentHasBeenSet() const;
+
+                    /**
+                     * 获取当前记录所对应的 Session ID
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return SessionId 当前记录所对应的 Session ID
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::string GetSessionId() const;
+
+                    /**
+                     * 设置当前记录所对应的 Session ID
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _sessionId 当前记录所对应的 Session ID
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetSessionId(const std::string& _sessionId);
+
+                    /**
+                     * 判断参数 SessionId 是否已赋值
+                     * @return SessionId 是否已赋值
+                     * 
+                     */
+                    bool SessionIdHasBeenSet() const;
 
                     /**
                      * 获取记录ID
@@ -259,6 +285,31 @@ namespace TencentCloud
                     bool CanRatingHasBeenSet() const;
 
                     /**
+                     * 获取是否展示反馈按钮
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return CanFeedback 是否展示反馈按钮
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    bool GetCanFeedback() const;
+
+                    /**
+                     * 设置是否展示反馈按钮
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _canFeedback 是否展示反馈按钮
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetCanFeedback(const bool& _canFeedback);
+
+                    /**
+                     * 判断参数 CanFeedback 是否已赋值
+                     * @return CanFeedback 是否已赋值
+                     * 
+                     */
+                    bool CanFeedbackHasBeenSet() const;
+
+                    /**
                      * 获取记录类型
                      * @return Type 记录类型
                      * 
@@ -388,6 +439,81 @@ namespace TencentCloud
                      */
                     bool TokenStatHasBeenSet() const;
 
+                    /**
+                     * 获取回复方式
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return ReplyMethod 回复方式
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    uint64_t GetReplyMethod() const;
+
+                    /**
+                     * 设置回复方式
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _replyMethod 回复方式
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetReplyMethod(const uint64_t& _replyMethod);
+
+                    /**
+                     * 判断参数 ReplyMethod 是否已赋值
+                     * @return ReplyMethod 是否已赋值
+                     * 
+                     */
+                    bool ReplyMethodHasBeenSet() const;
+
+                    /**
+                     * 获取选项卡, 用于多轮对话
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return OptionCards 选项卡, 用于多轮对话
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::vector<std::string> GetOptionCards() const;
+
+                    /**
+                     * 设置选项卡, 用于多轮对话
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _optionCards 选项卡, 用于多轮对话
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetOptionCards(const std::vector<std::string>& _optionCards);
+
+                    /**
+                     * 判断参数 OptionCards 是否已赋值
+                     * @return OptionCards 是否已赋值
+                     * 
+                     */
+                    bool OptionCardsHasBeenSet() const;
+
+                    /**
+                     * 获取任务信息
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return TaskFlow 任务信息
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    TaskFlowInfo GetTaskFlow() const;
+
+                    /**
+                     * 设置任务信息
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _taskFlow 任务信息
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetTaskFlow(const TaskFlowInfo& _taskFlow);
+
+                    /**
+                     * 判断参数 TaskFlow 是否已赋值
+                     * @return TaskFlow 是否已赋值
+                     * 
+                     */
+                    bool TaskFlowHasBeenSet() const;
+
                 private:
 
                     /**
@@ -395,6 +521,13 @@ namespace TencentCloud
                      */
                     std::string m_content;
                     bool m_contentHasBeenSet;
+
+                    /**
+                     * 当前记录所对应的 Session ID
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_sessionId;
+                    bool m_sessionIdHasBeenSet;
 
                     /**
                      * 记录ID
@@ -451,6 +584,13 @@ namespace TencentCloud
                     bool m_canRatingHasBeenSet;
 
                     /**
+                     * 是否展示反馈按钮
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    bool m_canFeedback;
+                    bool m_canFeedbackHasBeenSet;
+
+                    /**
                      * 记录类型
                      */
                     uint64_t m_type;
@@ -486,6 +626,27 @@ namespace TencentCloud
                      */
                     TokenStat m_tokenStat;
                     bool m_tokenStatHasBeenSet;
+
+                    /**
+                     * 回复方式
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    uint64_t m_replyMethod;
+                    bool m_replyMethodHasBeenSet;
+
+                    /**
+                     * 选项卡, 用于多轮对话
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::vector<std::string> m_optionCards;
+                    bool m_optionCardsHasBeenSet;
+
+                    /**
+                     * 任务信息
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    TaskFlowInfo m_taskFlow;
+                    bool m_taskFlowHasBeenSet;
 
                 };
             }

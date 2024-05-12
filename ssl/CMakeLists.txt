@@ -102,6 +102,7 @@ set(ssl_public_header_model
   include/tencentcloud/ssl/v20191205/model/DescribeCertificatesResponse.h
   include/tencentcloud/ssl/v20191205/model/CommitCertificateInformationResponse.h
   include/tencentcloud/ssl/v20191205/model/DeleteManagerResponse.h
+  include/tencentcloud/ssl/v20191205/model/SubmitAuditManagerRequest.h
   include/tencentcloud/ssl/v20191205/model/UploadCertificateResponse.h
   include/tencentcloud/ssl/v20191205/model/DeployCertificateInstanceResponse.h
   include/tencentcloud/ssl/v20191205/model/LiveInstanceDetail.h
@@ -127,7 +128,7 @@ set(ssl_public_header_model
   include/tencentcloud/ssl/v20191205/model/TkeSecretDetail.h
   include/tencentcloud/ssl/v20191205/model/DescribeHostDeployRecordResponse.h
   include/tencentcloud/ssl/v20191205/model/Tags.h
-  include/tencentcloud/ssl/v20191205/model/SubmitAuditManagerRequest.h
+  include/tencentcloud/ssl/v20191205/model/DescribeDownloadCertificateUrlResponse.h
   include/tencentcloud/ssl/v20191205/model/DescribeHostTkeInstanceListRequest.h
   include/tencentcloud/ssl/v20191205/model/DeployCertificateRecordRollbackRequest.h
   include/tencentcloud/ssl/v20191205/model/DeleteCertificateResponse.h
@@ -150,6 +151,7 @@ set(ssl_public_header_model
   include/tencentcloud/ssl/v20191205/model/DescribeHostApiGatewayInstanceListRequest.h
   include/tencentcloud/ssl/v20191205/model/TCBAccessService.h
   include/tencentcloud/ssl/v20191205/model/DdosInstanceList.h
+  include/tencentcloud/ssl/v20191205/model/DescribeDownloadCertificateUrlRequest.h
   include/tencentcloud/ssl/v20191205/model/SubmittedData.h
   include/tencentcloud/ssl/v20191205/model/DeployCertificateRecordRollbackResponse.h
   include/tencentcloud/ssl/v20191205/model/TCBInstanceList.h
@@ -289,6 +291,7 @@ set(ssl_src
   src/v20191205/model/DescribeCertificatesResponse.cpp
   src/v20191205/model/CommitCertificateInformationResponse.cpp
   src/v20191205/model/DeleteManagerResponse.cpp
+  src/v20191205/model/SubmitAuditManagerRequest.cpp
   src/v20191205/model/UploadCertificateResponse.cpp
   src/v20191205/model/DeployCertificateInstanceResponse.cpp
   src/v20191205/model/LiveInstanceDetail.cpp
@@ -314,7 +317,7 @@ set(ssl_src
   src/v20191205/model/TkeSecretDetail.cpp
   src/v20191205/model/DescribeHostDeployRecordResponse.cpp
   src/v20191205/model/Tags.cpp
-  src/v20191205/model/SubmitAuditManagerRequest.cpp
+  src/v20191205/model/DescribeDownloadCertificateUrlResponse.cpp
   src/v20191205/model/DescribeHostTkeInstanceListRequest.cpp
   src/v20191205/model/DeployCertificateRecordRollbackRequest.cpp
   src/v20191205/model/DeleteCertificateResponse.cpp
@@ -337,6 +340,7 @@ set(ssl_src
   src/v20191205/model/DescribeHostApiGatewayInstanceListRequest.cpp
   src/v20191205/model/TCBAccessService.cpp
   src/v20191205/model/DdosInstanceList.cpp
+  src/v20191205/model/DescribeDownloadCertificateUrlRequest.cpp
   src/v20191205/model/SubmittedData.cpp
   src/v20191205/model/DeployCertificateRecordRollbackResponse.cpp
   src/v20191205/model/TCBInstanceList.cpp

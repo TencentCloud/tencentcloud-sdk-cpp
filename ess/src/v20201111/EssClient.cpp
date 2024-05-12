@@ -2921,6 +2921,49 @@ EssClient::DescribeUserAutoSignStatusOutcomeCallable EssClient::DescribeUserAuto
     return task->get_future();
 }
 
+EssClient::DescribeUserVerifyStatusOutcome EssClient::DescribeUserVerifyStatus(const DescribeUserVerifyStatusRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeUserVerifyStatus");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeUserVerifyStatusResponse rsp = DescribeUserVerifyStatusResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeUserVerifyStatusOutcome(rsp);
+        else
+            return DescribeUserVerifyStatusOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeUserVerifyStatusOutcome(outcome.GetError());
+    }
+}
+
+void EssClient::DescribeUserVerifyStatusAsync(const DescribeUserVerifyStatusRequest& request, const DescribeUserVerifyStatusAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeUserVerifyStatus(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+EssClient::DescribeUserVerifyStatusOutcomeCallable EssClient::DescribeUserVerifyStatusCallable(const DescribeUserVerifyStatusRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeUserVerifyStatusOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeUserVerifyStatus(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 EssClient::DisableUserAutoSignOutcome EssClient::DisableUserAutoSign(const DisableUserAutoSignRequest &request)
 {
     auto outcome = MakeRequest(request, "DisableUserAutoSign");

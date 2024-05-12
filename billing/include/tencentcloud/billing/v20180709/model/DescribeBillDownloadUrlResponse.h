@@ -58,9 +58,9 @@ namespace TencentCloud
                     bool ReadyHasBeenSet() const;
 
                     /**
-                     * 获取账单文件下载链接，有效时长为一小时
+                     * 获取账单文件下载链接，有效时长为一天
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return DownloadUrl 账单文件下载链接，有效时长为一小时
+                     * @return DownloadUrl 账单文件下载链接，有效时长为一天
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -82,7 +82,7 @@ namespace TencentCloud
                     bool m_readyHasBeenSet;
 
                     /**
-                     * 账单文件下载链接，有效时长为一小时
+                     * 账单文件下载链接，有效时长为一天
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_downloadUrl;

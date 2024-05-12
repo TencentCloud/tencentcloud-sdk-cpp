@@ -534,18 +534,18 @@ FAILED：表示操作失败
                     bool CreateTimeHasBeenSet() const;
 
                     /**
-                     * 获取公网出带宽上限，默认5Mbps
+                     * 获取公网出带宽上限，默认10Mbps
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return MaxOutBandwidth 公网出带宽上限，默认5Mbps
+                     * @return MaxOutBandwidth 公网出带宽上限，默认10Mbps
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetMaxOutBandwidth() const;
 
                     /**
-                     * 设置公网出带宽上限，默认5Mbps
+                     * 设置公网出带宽上限，默认10Mbps
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _maxOutBandwidth 公网出带宽上限，默认5Mbps
+                     * @param _maxOutBandwidth 公网出带宽上限，默认10Mbps
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -795,7 +795,7 @@ FAILED：表示操作失败
                     bool m_createTimeHasBeenSet;
 
                     /**
-                     * 公网出带宽上限，默认5Mbps
+                     * 公网出带宽上限，默认10Mbps
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_maxOutBandwidth;

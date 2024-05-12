@@ -51,6 +51,8 @@
 #include <tencentcloud/cynosdb/v20190107/model/CreateAuditRuleTemplateResponse.h>
 #include <tencentcloud/cynosdb/v20190107/model/CreateBackupRequest.h>
 #include <tencentcloud/cynosdb/v20190107/model/CreateBackupResponse.h>
+#include <tencentcloud/cynosdb/v20190107/model/CreateCLSDeliveryRequest.h>
+#include <tencentcloud/cynosdb/v20190107/model/CreateCLSDeliveryResponse.h>
 #include <tencentcloud/cynosdb/v20190107/model/CreateClusterDatabaseRequest.h>
 #include <tencentcloud/cynosdb/v20190107/model/CreateClusterDatabaseResponse.h>
 #include <tencentcloud/cynosdb/v20190107/model/CreateClustersRequest.h>
@@ -71,6 +73,8 @@
 #include <tencentcloud/cynosdb/v20190107/model/DeleteAuditRuleTemplatesResponse.h>
 #include <tencentcloud/cynosdb/v20190107/model/DeleteBackupRequest.h>
 #include <tencentcloud/cynosdb/v20190107/model/DeleteBackupResponse.h>
+#include <tencentcloud/cynosdb/v20190107/model/DeleteCLSDeliveryRequest.h>
+#include <tencentcloud/cynosdb/v20190107/model/DeleteCLSDeliveryResponse.h>
 #include <tencentcloud/cynosdb/v20190107/model/DeleteClusterDatabaseRequest.h>
 #include <tencentcloud/cynosdb/v20190107/model/DeleteClusterDatabaseResponse.h>
 #include <tencentcloud/cynosdb/v20190107/model/DeleteParamTemplateRequest.h>
@@ -127,6 +131,8 @@
 #include <tencentcloud/cynosdb/v20190107/model/DescribeDBSecurityGroupsResponse.h>
 #include <tencentcloud/cynosdb/v20190107/model/DescribeFlowRequest.h>
 #include <tencentcloud/cynosdb/v20190107/model/DescribeFlowResponse.h>
+#include <tencentcloud/cynosdb/v20190107/model/DescribeInstanceCLSLogDeliveryRequest.h>
+#include <tencentcloud/cynosdb/v20190107/model/DescribeInstanceCLSLogDeliveryResponse.h>
 #include <tencentcloud/cynosdb/v20190107/model/DescribeInstanceDetailRequest.h>
 #include <tencentcloud/cynosdb/v20190107/model/DescribeInstanceDetailResponse.h>
 #include <tencentcloud/cynosdb/v20190107/model/DescribeInstanceErrorLogsRequest.h>
@@ -279,6 +285,10 @@
 #include <tencentcloud/cynosdb/v20190107/model/SearchClusterTablesResponse.h>
 #include <tencentcloud/cynosdb/v20190107/model/SetRenewFlagRequest.h>
 #include <tencentcloud/cynosdb/v20190107/model/SetRenewFlagResponse.h>
+#include <tencentcloud/cynosdb/v20190107/model/StartCLSDeliveryRequest.h>
+#include <tencentcloud/cynosdb/v20190107/model/StartCLSDeliveryResponse.h>
+#include <tencentcloud/cynosdb/v20190107/model/StopCLSDeliveryRequest.h>
+#include <tencentcloud/cynosdb/v20190107/model/StopCLSDeliveryResponse.h>
 #include <tencentcloud/cynosdb/v20190107/model/SwitchClusterVpcRequest.h>
 #include <tencentcloud/cynosdb/v20190107/model/SwitchClusterVpcResponse.h>
 #include <tencentcloud/cynosdb/v20190107/model/SwitchClusterZoneRequest.h>
@@ -351,6 +361,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::CreateBackupResponse> CreateBackupOutcome;
                 typedef std::future<CreateBackupOutcome> CreateBackupOutcomeCallable;
                 typedef std::function<void(const CynosdbClient*, const Model::CreateBackupRequest&, CreateBackupOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateBackupAsyncHandler;
+                typedef Outcome<Core::Error, Model::CreateCLSDeliveryResponse> CreateCLSDeliveryOutcome;
+                typedef std::future<CreateCLSDeliveryOutcome> CreateCLSDeliveryOutcomeCallable;
+                typedef std::function<void(const CynosdbClient*, const Model::CreateCLSDeliveryRequest&, CreateCLSDeliveryOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateCLSDeliveryAsyncHandler;
                 typedef Outcome<Core::Error, Model::CreateClusterDatabaseResponse> CreateClusterDatabaseOutcome;
                 typedef std::future<CreateClusterDatabaseOutcome> CreateClusterDatabaseOutcomeCallable;
                 typedef std::function<void(const CynosdbClient*, const Model::CreateClusterDatabaseRequest&, CreateClusterDatabaseOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateClusterDatabaseAsyncHandler;
@@ -381,6 +394,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DeleteBackupResponse> DeleteBackupOutcome;
                 typedef std::future<DeleteBackupOutcome> DeleteBackupOutcomeCallable;
                 typedef std::function<void(const CynosdbClient*, const Model::DeleteBackupRequest&, DeleteBackupOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteBackupAsyncHandler;
+                typedef Outcome<Core::Error, Model::DeleteCLSDeliveryResponse> DeleteCLSDeliveryOutcome;
+                typedef std::future<DeleteCLSDeliveryOutcome> DeleteCLSDeliveryOutcomeCallable;
+                typedef std::function<void(const CynosdbClient*, const Model::DeleteCLSDeliveryRequest&, DeleteCLSDeliveryOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteCLSDeliveryAsyncHandler;
                 typedef Outcome<Core::Error, Model::DeleteClusterDatabaseResponse> DeleteClusterDatabaseOutcome;
                 typedef std::future<DeleteClusterDatabaseOutcome> DeleteClusterDatabaseOutcomeCallable;
                 typedef std::function<void(const CynosdbClient*, const Model::DeleteClusterDatabaseRequest&, DeleteClusterDatabaseOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteClusterDatabaseAsyncHandler;
@@ -465,6 +481,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeFlowResponse> DescribeFlowOutcome;
                 typedef std::future<DescribeFlowOutcome> DescribeFlowOutcomeCallable;
                 typedef std::function<void(const CynosdbClient*, const Model::DescribeFlowRequest&, DescribeFlowOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeFlowAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeInstanceCLSLogDeliveryResponse> DescribeInstanceCLSLogDeliveryOutcome;
+                typedef std::future<DescribeInstanceCLSLogDeliveryOutcome> DescribeInstanceCLSLogDeliveryOutcomeCallable;
+                typedef std::function<void(const CynosdbClient*, const Model::DescribeInstanceCLSLogDeliveryRequest&, DescribeInstanceCLSLogDeliveryOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeInstanceCLSLogDeliveryAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeInstanceDetailResponse> DescribeInstanceDetailOutcome;
                 typedef std::future<DescribeInstanceDetailOutcome> DescribeInstanceDetailOutcomeCallable;
                 typedef std::function<void(const CynosdbClient*, const Model::DescribeInstanceDetailRequest&, DescribeInstanceDetailOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeInstanceDetailAsyncHandler;
@@ -693,6 +712,12 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::SetRenewFlagResponse> SetRenewFlagOutcome;
                 typedef std::future<SetRenewFlagOutcome> SetRenewFlagOutcomeCallable;
                 typedef std::function<void(const CynosdbClient*, const Model::SetRenewFlagRequest&, SetRenewFlagOutcome, const std::shared_ptr<const AsyncCallerContext>&)> SetRenewFlagAsyncHandler;
+                typedef Outcome<Core::Error, Model::StartCLSDeliveryResponse> StartCLSDeliveryOutcome;
+                typedef std::future<StartCLSDeliveryOutcome> StartCLSDeliveryOutcomeCallable;
+                typedef std::function<void(const CynosdbClient*, const Model::StartCLSDeliveryRequest&, StartCLSDeliveryOutcome, const std::shared_ptr<const AsyncCallerContext>&)> StartCLSDeliveryAsyncHandler;
+                typedef Outcome<Core::Error, Model::StopCLSDeliveryResponse> StopCLSDeliveryOutcome;
+                typedef std::future<StopCLSDeliveryOutcome> StopCLSDeliveryOutcomeCallable;
+                typedef std::function<void(const CynosdbClient*, const Model::StopCLSDeliveryRequest&, StopCLSDeliveryOutcome, const std::shared_ptr<const AsyncCallerContext>&)> StopCLSDeliveryAsyncHandler;
                 typedef Outcome<Core::Error, Model::SwitchClusterVpcResponse> SwitchClusterVpcOutcome;
                 typedef std::future<SwitchClusterVpcOutcome> SwitchClusterVpcOutcomeCallable;
                 typedef std::function<void(const CynosdbClient*, const Model::SwitchClusterVpcRequest&, SwitchClusterVpcOutcome, const std::shared_ptr<const AsyncCallerContext>&)> SwitchClusterVpcAsyncHandler;
@@ -847,6 +872,15 @@ namespace TencentCloud
                 CreateBackupOutcomeCallable CreateBackupCallable(const Model::CreateBackupRequest& request);
 
                 /**
+                 *创建日志投递
+                 * @param req CreateCLSDeliveryRequest
+                 * @return CreateCLSDeliveryOutcome
+                 */
+                CreateCLSDeliveryOutcome CreateCLSDelivery(const Model::CreateCLSDeliveryRequest &request);
+                void CreateCLSDeliveryAsync(const Model::CreateCLSDeliveryRequest& request, const CreateCLSDeliveryAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                CreateCLSDeliveryOutcomeCallable CreateCLSDeliveryCallable(const Model::CreateCLSDeliveryRequest& request);
+
+                /**
                  *创建数据库
                  * @param req CreateClusterDatabaseRequest
                  * @return CreateClusterDatabaseOutcome
@@ -935,6 +969,15 @@ namespace TencentCloud
                 DeleteBackupOutcome DeleteBackup(const Model::DeleteBackupRequest &request);
                 void DeleteBackupAsync(const Model::DeleteBackupRequest& request, const DeleteBackupAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DeleteBackupOutcomeCallable DeleteBackupCallable(const Model::DeleteBackupRequest& request);
+
+                /**
+                 *删除日志投递
+                 * @param req DeleteCLSDeliveryRequest
+                 * @return DeleteCLSDeliveryOutcome
+                 */
+                DeleteCLSDeliveryOutcome DeleteCLSDelivery(const Model::DeleteCLSDeliveryRequest &request);
+                void DeleteCLSDeliveryAsync(const Model::DeleteCLSDeliveryRequest& request, const DeleteCLSDeliveryAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DeleteCLSDeliveryOutcomeCallable DeleteCLSDeliveryCallable(const Model::DeleteCLSDeliveryRequest& request);
 
                 /**
                  *删除数据库
@@ -1187,6 +1230,15 @@ namespace TencentCloud
                 DescribeFlowOutcome DescribeFlow(const Model::DescribeFlowRequest &request);
                 void DescribeFlowAsync(const Model::DescribeFlowRequest& request, const DescribeFlowAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DescribeFlowOutcomeCallable DescribeFlowCallable(const Model::DescribeFlowRequest& request);
+
+                /**
+                 *查询实例日志投递信息
+                 * @param req DescribeInstanceCLSLogDeliveryRequest
+                 * @return DescribeInstanceCLSLogDeliveryOutcome
+                 */
+                DescribeInstanceCLSLogDeliveryOutcome DescribeInstanceCLSLogDelivery(const Model::DescribeInstanceCLSLogDeliveryRequest &request);
+                void DescribeInstanceCLSLogDeliveryAsync(const Model::DescribeInstanceCLSLogDeliveryRequest& request, const DescribeInstanceCLSLogDeliveryAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeInstanceCLSLogDeliveryOutcomeCallable DescribeInstanceCLSLogDeliveryCallable(const Model::DescribeInstanceCLSLogDeliveryRequest& request);
 
                 /**
                  *本接口(DescribeInstanceDetail)用于查询实例详情。
@@ -1871,6 +1923,24 @@ namespace TencentCloud
                 SetRenewFlagOutcome SetRenewFlag(const Model::SetRenewFlagRequest &request);
                 void SetRenewFlagAsync(const Model::SetRenewFlagRequest& request, const SetRenewFlagAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 SetRenewFlagOutcomeCallable SetRenewFlagCallable(const Model::SetRenewFlagRequest& request);
+
+                /**
+                 *开启日志投递
+                 * @param req StartCLSDeliveryRequest
+                 * @return StartCLSDeliveryOutcome
+                 */
+                StartCLSDeliveryOutcome StartCLSDelivery(const Model::StartCLSDeliveryRequest &request);
+                void StartCLSDeliveryAsync(const Model::StartCLSDeliveryRequest& request, const StartCLSDeliveryAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                StartCLSDeliveryOutcomeCallable StartCLSDeliveryCallable(const Model::StartCLSDeliveryRequest& request);
+
+                /**
+                 *停止日志投递
+                 * @param req StopCLSDeliveryRequest
+                 * @return StopCLSDeliveryOutcome
+                 */
+                StopCLSDeliveryOutcome StopCLSDelivery(const Model::StopCLSDeliveryRequest &request);
+                void StopCLSDeliveryAsync(const Model::StopCLSDeliveryRequest& request, const StopCLSDeliveryAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                StopCLSDeliveryOutcomeCallable StopCLSDeliveryCallable(const Model::StopCLSDeliveryRequest& request);
 
                 /**
                  *更换集群vpc

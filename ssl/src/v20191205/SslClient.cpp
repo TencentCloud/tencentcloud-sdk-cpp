@@ -1029,6 +1029,49 @@ SslClient::DescribeDeployedResourcesOutcomeCallable SslClient::DescribeDeployedR
     return task->get_future();
 }
 
+SslClient::DescribeDownloadCertificateUrlOutcome SslClient::DescribeDownloadCertificateUrl(const DescribeDownloadCertificateUrlRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeDownloadCertificateUrl");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeDownloadCertificateUrlResponse rsp = DescribeDownloadCertificateUrlResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeDownloadCertificateUrlOutcome(rsp);
+        else
+            return DescribeDownloadCertificateUrlOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeDownloadCertificateUrlOutcome(outcome.GetError());
+    }
+}
+
+void SslClient::DescribeDownloadCertificateUrlAsync(const DescribeDownloadCertificateUrlRequest& request, const DescribeDownloadCertificateUrlAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeDownloadCertificateUrl(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+SslClient::DescribeDownloadCertificateUrlOutcomeCallable SslClient::DescribeDownloadCertificateUrlCallable(const DescribeDownloadCertificateUrlRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeDownloadCertificateUrlOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeDownloadCertificateUrl(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 SslClient::DescribeHostApiGatewayInstanceListOutcome SslClient::DescribeHostApiGatewayInstanceList(const DescribeHostApiGatewayInstanceListRequest &request)
 {
     auto outcome = MakeRequest(request, "DescribeHostApiGatewayInstanceList");

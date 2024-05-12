@@ -255,3 +255,89 @@ HunyuanClient::GetTokenCountOutcomeCallable HunyuanClient::GetTokenCountCallable
     return task->get_future();
 }
 
+HunyuanClient::QueryHunyuanImageJobOutcome HunyuanClient::QueryHunyuanImageJob(const QueryHunyuanImageJobRequest &request)
+{
+    auto outcome = MakeRequest(request, "QueryHunyuanImageJob");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        QueryHunyuanImageJobResponse rsp = QueryHunyuanImageJobResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return QueryHunyuanImageJobOutcome(rsp);
+        else
+            return QueryHunyuanImageJobOutcome(o.GetError());
+    }
+    else
+    {
+        return QueryHunyuanImageJobOutcome(outcome.GetError());
+    }
+}
+
+void HunyuanClient::QueryHunyuanImageJobAsync(const QueryHunyuanImageJobRequest& request, const QueryHunyuanImageJobAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->QueryHunyuanImageJob(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+HunyuanClient::QueryHunyuanImageJobOutcomeCallable HunyuanClient::QueryHunyuanImageJobCallable(const QueryHunyuanImageJobRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<QueryHunyuanImageJobOutcome()>>(
+        [this, request]()
+        {
+            return this->QueryHunyuanImageJob(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+HunyuanClient::SubmitHunyuanImageJobOutcome HunyuanClient::SubmitHunyuanImageJob(const SubmitHunyuanImageJobRequest &request)
+{
+    auto outcome = MakeRequest(request, "SubmitHunyuanImageJob");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        SubmitHunyuanImageJobResponse rsp = SubmitHunyuanImageJobResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return SubmitHunyuanImageJobOutcome(rsp);
+        else
+            return SubmitHunyuanImageJobOutcome(o.GetError());
+    }
+    else
+    {
+        return SubmitHunyuanImageJobOutcome(outcome.GetError());
+    }
+}
+
+void HunyuanClient::SubmitHunyuanImageJobAsync(const SubmitHunyuanImageJobRequest& request, const SubmitHunyuanImageJobAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->SubmitHunyuanImageJob(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+HunyuanClient::SubmitHunyuanImageJobOutcomeCallable HunyuanClient::SubmitHunyuanImageJobCallable(const SubmitHunyuanImageJobRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<SubmitHunyuanImageJobOutcome()>>(
+        [this, request]()
+        {
+            return this->SubmitHunyuanImageJob(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
