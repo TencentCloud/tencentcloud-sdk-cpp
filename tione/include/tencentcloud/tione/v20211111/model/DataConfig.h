@@ -31,6 +31,7 @@
 #include <tencentcloud/tione/v20211111/model/GooseFS.h>
 #include <tencentcloud/tione/v20211111/model/CFSTurbo.h>
 #include <tencentcloud/tione/v20211111/model/LocalDisk.h>
+#include <tencentcloud/tione/v20211111/model/CBSConfig.h>
 
 
 namespace TencentCloud
@@ -274,6 +275,31 @@ namespace TencentCloud
                      */
                     bool LocalDiskSourceHasBeenSet() const;
 
+                    /**
+                     * 获取CBS配置信息
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return CBSSource CBS配置信息
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    CBSConfig GetCBSSource() const;
+
+                    /**
+                     * 设置CBS配置信息
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _cBSSource CBS配置信息
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetCBSSource(const CBSConfig& _cBSSource);
+
+                    /**
+                     * 判断参数 CBSSource 是否已赋值
+                     * @return CBSSource 是否已赋值
+                     * 
+                     */
+                    bool CBSSourceHasBeenSet() const;
+
                 private:
 
                     /**
@@ -337,6 +363,13 @@ namespace TencentCloud
                      */
                     LocalDisk m_localDiskSource;
                     bool m_localDiskSourceHasBeenSet;
+
+                    /**
+                     * CBS配置信息
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    CBSConfig m_cBSSource;
+                    bool m_cBSSourceHasBeenSet;
 
                 };
             }

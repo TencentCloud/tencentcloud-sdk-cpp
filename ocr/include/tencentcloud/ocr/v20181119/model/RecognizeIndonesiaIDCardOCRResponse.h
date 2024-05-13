@@ -295,6 +295,32 @@ namespace TencentCloud
                      */
                     bool KotaHasBeenSet() const;
 
+                    /**
+                     * 获取告警码
+-9101 证件边框不完整告警
+-9102 证件复印件告警
+-9103 证件翻拍告警
+-9107 证件反光告警
+-9108 证件模糊告警
+-9109 告警能力未开通
+                     * @return WarnCardInfos 告警码
+-9101 证件边框不完整告警
+-9102 证件复印件告警
+-9103 证件翻拍告警
+-9107 证件反光告警
+-9108 证件模糊告警
+-9109 告警能力未开通
+                     * 
+                     */
+                    std::vector<int64_t> GetWarnCardInfos() const;
+
+                    /**
+                     * 判断参数 WarnCardInfos 是否已赋值
+                     * @return WarnCardInfos 是否已赋值
+                     * 
+                     */
+                    bool WarnCardInfosHasBeenSet() const;
+
                 private:
 
                     /**
@@ -404,6 +430,18 @@ namespace TencentCloud
                      */
                     std::string m_kota;
                     bool m_kotaHasBeenSet;
+
+                    /**
+                     * 告警码
+-9101 证件边框不完整告警
+-9102 证件复印件告警
+-9103 证件翻拍告警
+-9107 证件反光告警
+-9108 证件模糊告警
+-9109 告警能力未开通
+                     */
+                    std::vector<int64_t> m_warnCardInfos;
+                    bool m_warnCardInfosHasBeenSet;
 
                 };
             }

@@ -21,6 +21,7 @@
 #include <vector>
 #include <map>
 #include <tencentcloud/core/AbstractModel.h>
+#include <tencentcloud/cynosdb/v20190107/model/CLSInfo.h>
 
 
 namespace TencentCloud
@@ -42,7 +43,61 @@ namespace TencentCloud
                     std::string ToJsonString() const;
 
 
+                    /**
+                     * 获取实例id
+                     * @return InstanceId 实例id
+                     * 
+                     */
+                    std::string GetInstanceId() const;
+
+                    /**
+                     * 设置实例id
+                     * @param _instanceId 实例id
+                     * 
+                     */
+                    void SetInstanceId(const std::string& _instanceId);
+
+                    /**
+                     * 判断参数 InstanceId 是否已赋值
+                     * @return InstanceId 是否已赋值
+                     * 
+                     */
+                    bool InstanceIdHasBeenSet() const;
+
+                    /**
+                     * 获取日志投递配置
+                     * @return CLSInfoList 日志投递配置
+                     * 
+                     */
+                    std::vector<CLSInfo> GetCLSInfoList() const;
+
+                    /**
+                     * 设置日志投递配置
+                     * @param _cLSInfoList 日志投递配置
+                     * 
+                     */
+                    void SetCLSInfoList(const std::vector<CLSInfo>& _cLSInfoList);
+
+                    /**
+                     * 判断参数 CLSInfoList 是否已赋值
+                     * @return CLSInfoList 是否已赋值
+                     * 
+                     */
+                    bool CLSInfoListHasBeenSet() const;
+
                 private:
+
+                    /**
+                     * 实例id
+                     */
+                    std::string m_instanceId;
+                    bool m_instanceIdHasBeenSet;
+
+                    /**
+                     * 日志投递配置
+                     */
+                    std::vector<CLSInfo> m_cLSInfoList;
+                    bool m_cLSInfoListHasBeenSet;
 
                 };
             }

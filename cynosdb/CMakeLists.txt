@@ -84,7 +84,7 @@ set(cynosdb_public_header_model
   include/tencentcloud/cynosdb/v20190107/model/ProxyGroupRwInfo.h
   include/tencentcloud/cynosdb/v20190107/model/DescribeProxyNodesRequest.h
   include/tencentcloud/cynosdb/v20190107/model/InquirePriceCreateResponse.h
-  include/tencentcloud/cynosdb/v20190107/model/CreateClusterDatabaseResponse.h
+  include/tencentcloud/cynosdb/v20190107/model/CreateClustersRequest.h
   include/tencentcloud/cynosdb/v20190107/model/DescribeClusterParamLogsRequest.h
   include/tencentcloud/cynosdb/v20190107/model/CloseProxyResponse.h
   include/tencentcloud/cynosdb/v20190107/model/DescribeResourcePackageSaleSpecRequest.h
@@ -94,6 +94,7 @@ set(cynosdb_public_header_model
   include/tencentcloud/cynosdb/v20190107/model/DescribeClusterInstanceGrpsResponse.h
   include/tencentcloud/cynosdb/v20190107/model/ModifyBackupConfigResponse.h
   include/tencentcloud/cynosdb/v20190107/model/ModifyClusterDatabaseRequest.h
+  include/tencentcloud/cynosdb/v20190107/model/InstanceCLSDeliveryInfo.h
   include/tencentcloud/cynosdb/v20190107/model/ModifyMaintainPeriodConfigResponse.h
   include/tencentcloud/cynosdb/v20190107/model/DisassociateSecurityGroupsRequest.h
   include/tencentcloud/cynosdb/v20190107/model/ModifyBackupNameRequest.h
@@ -152,7 +153,7 @@ set(cynosdb_public_header_model
   include/tencentcloud/cynosdb/v20190107/model/DeleteAccountsResponse.h
   include/tencentcloud/cynosdb/v20190107/model/CreateResourcePackageResponse.h
   include/tencentcloud/cynosdb/v20190107/model/SetRenewFlagResponse.h
-  include/tencentcloud/cynosdb/v20190107/model/CreateClustersRequest.h
+  include/tencentcloud/cynosdb/v20190107/model/CreateClusterDatabaseResponse.h
   include/tencentcloud/cynosdb/v20190107/model/DescribeClustersResponse.h
   include/tencentcloud/cynosdb/v20190107/model/DescribeBackupConfigResponse.h
   include/tencentcloud/cynosdb/v20190107/model/DescribeParamTemplatesResponse.h
@@ -179,6 +180,7 @@ set(cynosdb_public_header_model
   include/tencentcloud/cynosdb/v20190107/model/StartCLSDeliveryRequest.h
   include/tencentcloud/cynosdb/v20190107/model/SlaveZoneAttrItem.h
   include/tencentcloud/cynosdb/v20190107/model/DescribeChangedParamsAfterUpgradeRequest.h
+  include/tencentcloud/cynosdb/v20190107/model/CLSInfo.h
   include/tencentcloud/cynosdb/v20190107/model/SwitchProxyVpcRequest.h
   include/tencentcloud/cynosdb/v20190107/model/RestartInstanceResponse.h
   include/tencentcloud/cynosdb/v20190107/model/DescribeBinlogSaveDaysRequest.h
@@ -469,7 +471,7 @@ set(cynosdb_src
   src/v20190107/model/ProxyGroupRwInfo.cpp
   src/v20190107/model/DescribeProxyNodesRequest.cpp
   src/v20190107/model/InquirePriceCreateResponse.cpp
-  src/v20190107/model/CreateClusterDatabaseResponse.cpp
+  src/v20190107/model/CreateClustersRequest.cpp
   src/v20190107/model/DescribeClusterParamLogsRequest.cpp
   src/v20190107/model/CloseProxyResponse.cpp
   src/v20190107/model/DescribeResourcePackageSaleSpecRequest.cpp
@@ -479,6 +481,7 @@ set(cynosdb_src
   src/v20190107/model/DescribeClusterInstanceGrpsResponse.cpp
   src/v20190107/model/ModifyBackupConfigResponse.cpp
   src/v20190107/model/ModifyClusterDatabaseRequest.cpp
+  src/v20190107/model/InstanceCLSDeliveryInfo.cpp
   src/v20190107/model/ModifyMaintainPeriodConfigResponse.cpp
   src/v20190107/model/DisassociateSecurityGroupsRequest.cpp
   src/v20190107/model/ModifyBackupNameRequest.cpp
@@ -537,7 +540,7 @@ set(cynosdb_src
   src/v20190107/model/DeleteAccountsResponse.cpp
   src/v20190107/model/CreateResourcePackageResponse.cpp
   src/v20190107/model/SetRenewFlagResponse.cpp
-  src/v20190107/model/CreateClustersRequest.cpp
+  src/v20190107/model/CreateClusterDatabaseResponse.cpp
   src/v20190107/model/DescribeClustersResponse.cpp
   src/v20190107/model/DescribeBackupConfigResponse.cpp
   src/v20190107/model/DescribeParamTemplatesResponse.cpp
@@ -564,6 +567,7 @@ set(cynosdb_src
   src/v20190107/model/StartCLSDeliveryRequest.cpp
   src/v20190107/model/SlaveZoneAttrItem.cpp
   src/v20190107/model/DescribeChangedParamsAfterUpgradeRequest.cpp
+  src/v20190107/model/CLSInfo.cpp
   src/v20190107/model/SwitchProxyVpcRequest.cpp
   src/v20190107/model/RestartInstanceResponse.cpp
   src/v20190107/model/DescribeBinlogSaveDaysRequest.cpp

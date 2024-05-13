@@ -32,7 +32,8 @@ NativeGatewayServerGroup::NativeGatewayServerGroup() :
     m_gatewayIdHasBeenSet(false),
     m_internetMaxBandwidthOutHasBeenSet(false),
     m_modifyTimeHasBeenSet(false),
-    m_subnetIdsHasBeenSet(false)
+    m_subnetIdsHasBeenSet(false),
+    m_defaultWeightHasBeenSet(false)
 {
 }
 
@@ -175,6 +176,16 @@ CoreInternalOutcome NativeGatewayServerGroup::Deserialize(const rapidjson::Value
         m_subnetIdsHasBeenSet = true;
     }
 
+    if (value.HasMember("DefaultWeight") && !value["DefaultWeight"].IsNull())
+    {
+        if (!value["DefaultWeight"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `NativeGatewayServerGroup.DefaultWeight` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_defaultWeight = value["DefaultWeight"].GetInt64();
+        m_defaultWeightHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -278,6 +289,14 @@ void NativeGatewayServerGroup::ToJsonObject(rapidjson::Value &value, rapidjson::
         string key = "SubnetIds";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_subnetIds.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_defaultWeightHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "DefaultWeight";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_defaultWeight, allocator);
     }
 
 }
@@ -473,5 +492,21 @@ void NativeGatewayServerGroup::SetSubnetIds(const string& _subnetIds)
 bool NativeGatewayServerGroup::SubnetIdsHasBeenSet() const
 {
     return m_subnetIdsHasBeenSet;
+}
+
+int64_t NativeGatewayServerGroup::GetDefaultWeight() const
+{
+    return m_defaultWeight;
+}
+
+void NativeGatewayServerGroup::SetDefaultWeight(const int64_t& _defaultWeight)
+{
+    m_defaultWeight = _defaultWeight;
+    m_defaultWeightHasBeenSet = true;
+}
+
+bool NativeGatewayServerGroup::DefaultWeightHasBeenSet() const
+{
+    return m_defaultWeightHasBeenSet;
 }
 

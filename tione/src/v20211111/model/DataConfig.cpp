@@ -29,7 +29,8 @@ DataConfig::DataConfig() :
     m_hDFSSourceHasBeenSet(false),
     m_gooseFSSourceHasBeenSet(false),
     m_cFSTurboSourceHasBeenSet(false),
-    m_localDiskSourceHasBeenSet(false)
+    m_localDiskSourceHasBeenSet(false),
+    m_cBSSourceHasBeenSet(false)
 {
 }
 
@@ -177,6 +178,23 @@ CoreInternalOutcome DataConfig::Deserialize(const rapidjson::Value &value)
         m_localDiskSourceHasBeenSet = true;
     }
 
+    if (value.HasMember("CBSSource") && !value["CBSSource"].IsNull())
+    {
+        if (!value["CBSSource"].IsObject())
+        {
+            return CoreInternalOutcome(Core::Error("response `DataConfig.CBSSource` is not object type").SetRequestId(requestId));
+        }
+
+        CoreInternalOutcome outcome = m_cBSSource.Deserialize(value["CBSSource"]);
+        if (!outcome.IsSuccess())
+        {
+            outcome.GetError().SetRequestId(requestId);
+            return outcome;
+        }
+
+        m_cBSSourceHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -261,6 +279,15 @@ void DataConfig::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Allo
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
         m_localDiskSource.ToJsonObject(value[key.c_str()], allocator);
+    }
+
+    if (m_cBSSourceHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "CBSSource";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_cBSSource.ToJsonObject(value[key.c_str()], allocator);
     }
 
 }
@@ -408,5 +435,21 @@ void DataConfig::SetLocalDiskSource(const LocalDisk& _localDiskSource)
 bool DataConfig::LocalDiskSourceHasBeenSet() const
 {
     return m_localDiskSourceHasBeenSet;
+}
+
+CBSConfig DataConfig::GetCBSSource() const
+{
+    return m_cBSSource;
+}
+
+void DataConfig::SetCBSSource(const CBSConfig& _cBSSource)
+{
+    m_cBSSource = _cBSSource;
+    m_cBSSourceHasBeenSet = true;
+}
+
+bool DataConfig::CBSSourceHasBeenSet() const
+{
+    return m_cBSSourceHasBeenSet;
 }
 

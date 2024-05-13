@@ -21,6 +21,7 @@
 #include <vector>
 #include <map>
 #include <tencentcloud/core/AbstractModel.h>
+#include <tencentcloud/cynosdb/v20190107/model/InstanceCLSDeliveryInfo.h>
 
 
 namespace TencentCloud
@@ -43,7 +44,53 @@ namespace TencentCloud
                     std::string ToJsonString() const;
 
 
+                    /**
+                     * 获取总数量
+
+                     * @return TotalCount 总数量
+
+                     * 
+                     */
+                    int64_t GetTotalCount() const;
+
+                    /**
+                     * 判断参数 TotalCount 是否已赋值
+                     * @return TotalCount 是否已赋值
+                     * 
+                     */
+                    bool TotalCountHasBeenSet() const;
+
+                    /**
+                     * 获取实例投递信息
+
+                     * @return InstanceCLSDeliveryInfos 实例投递信息
+
+                     * 
+                     */
+                    std::vector<InstanceCLSDeliveryInfo> GetInstanceCLSDeliveryInfos() const;
+
+                    /**
+                     * 判断参数 InstanceCLSDeliveryInfos 是否已赋值
+                     * @return InstanceCLSDeliveryInfos 是否已赋值
+                     * 
+                     */
+                    bool InstanceCLSDeliveryInfosHasBeenSet() const;
+
                 private:
+
+                    /**
+                     * 总数量
+
+                     */
+                    int64_t m_totalCount;
+                    bool m_totalCountHasBeenSet;
+
+                    /**
+                     * 实例投递信息
+
+                     */
+                    std::vector<InstanceCLSDeliveryInfo> m_instanceCLSDeliveryInfos;
+                    bool m_instanceCLSDeliveryInfosHasBeenSet;
 
                 };
             }

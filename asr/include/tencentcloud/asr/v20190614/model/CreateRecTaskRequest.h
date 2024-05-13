@@ -734,12 +734,12 @@ namespace TencentCloud
                     bool EmotionalEnergyHasBeenSet() const;
 
                     /**
-                     * 获取阿拉伯数字智能转换（目前仅支持8k_zh/16k_zh引擎）
+                     * 获取阿拉伯数字智能转换（目前支持中文普通话引擎）
 0：不转换，直接输出中文数字；
 1：根据场景智能转换为阿拉伯数字；
 3：打开数学相关数字转换（如：阿尔法转写为α）；
 默认值为 1
-                     * @return ConvertNumMode 阿拉伯数字智能转换（目前仅支持8k_zh/16k_zh引擎）
+                     * @return ConvertNumMode 阿拉伯数字智能转换（目前支持中文普通话引擎）
 0：不转换，直接输出中文数字；
 1：根据场景智能转换为阿拉伯数字；
 3：打开数学相关数字转换（如：阿尔法转写为α）；
@@ -749,12 +749,12 @@ namespace TencentCloud
                     int64_t GetConvertNumMode() const;
 
                     /**
-                     * 设置阿拉伯数字智能转换（目前仅支持8k_zh/16k_zh引擎）
+                     * 设置阿拉伯数字智能转换（目前支持中文普通话引擎）
 0：不转换，直接输出中文数字；
 1：根据场景智能转换为阿拉伯数字；
 3：打开数学相关数字转换（如：阿尔法转写为α）；
 默认值为 1
-                     * @param _convertNumMode 阿拉伯数字智能转换（目前仅支持8k_zh/16k_zh引擎）
+                     * @param _convertNumMode 阿拉伯数字智能转换（目前支持中文普通话引擎）
 0：不转换，直接输出中文数字；
 1：根据场景智能转换为阿拉伯数字；
 3：打开数学相关数字转换（如：阿尔法转写为α）；
@@ -771,12 +771,12 @@ namespace TencentCloud
                     bool ConvertNumModeHasBeenSet() const;
 
                     /**
-                     * 获取脏词过滤（目前仅支持8k_zh/16k_zh引擎）
+                     * 获取脏词过滤（目前支持中文普通话引擎）
 0：不过滤脏词；
 1：过滤脏词；
 2：将脏词替换为 * ；
 默认值为 0
-                     * @return FilterDirty 脏词过滤（目前仅支持8k_zh/16k_zh引擎）
+                     * @return FilterDirty 脏词过滤（目前支持中文普通话引擎）
 0：不过滤脏词；
 1：过滤脏词；
 2：将脏词替换为 * ；
@@ -786,12 +786,12 @@ namespace TencentCloud
                     int64_t GetFilterDirty() const;
 
                     /**
-                     * 设置脏词过滤（目前仅支持8k_zh/16k_zh引擎）
+                     * 设置脏词过滤（目前支持中文普通话引擎）
 0：不过滤脏词；
 1：过滤脏词；
 2：将脏词替换为 * ；
 默认值为 0
-                     * @param _filterDirty 脏词过滤（目前仅支持8k_zh/16k_zh引擎）
+                     * @param _filterDirty 脏词过滤（目前支持中文普通话引擎）
 0：不过滤脏词；
 1：过滤脏词；
 2：将脏词替换为 * ；
@@ -808,12 +808,12 @@ namespace TencentCloud
                     bool FilterDirtyHasBeenSet() const;
 
                     /**
-                     * 获取标点符号过滤（目前仅支持8k_zh/16k_zh引擎）
+                     * 获取标点符号过滤（目前支持中文普通话引擎）
 0：不过滤标点；
 1：过滤句末标点；
 2：过滤所有标点；
 默认值为 0
-                     * @return FilterPunc 标点符号过滤（目前仅支持8k_zh/16k_zh引擎）
+                     * @return FilterPunc 标点符号过滤（目前支持中文普通话引擎）
 0：不过滤标点；
 1：过滤句末标点；
 2：过滤所有标点；
@@ -823,12 +823,12 @@ namespace TencentCloud
                     int64_t GetFilterPunc() const;
 
                     /**
-                     * 设置标点符号过滤（目前仅支持8k_zh/16k_zh引擎）
+                     * 设置标点符号过滤（目前支持中文普通话引擎）
 0：不过滤标点；
 1：过滤句末标点；
 2：过滤所有标点；
 默认值为 0
-                     * @param _filterPunc 标点符号过滤（目前仅支持8k_zh/16k_zh引擎）
+                     * @param _filterPunc 标点符号过滤（目前支持中文普通话引擎）
 0：不过滤标点；
 1：过滤句末标点；
 2：过滤所有标点；
@@ -845,12 +845,12 @@ namespace TencentCloud
                     bool FilterPuncHasBeenSet() const;
 
                     /**
-                     * 获取语气词过滤（目前仅支持8k_zh/16k_zh引擎）
+                     * 获取语气词过滤（目前支持中文普通话引擎）
 0：不过滤语气词；
 1：过滤部分语气词；
 2：严格过滤语气词；
 默认值为 0
-                     * @return FilterModal 语气词过滤（目前仅支持8k_zh/16k_zh引擎）
+                     * @return FilterModal 语气词过滤（目前支持中文普通话引擎）
 0：不过滤语气词；
 1：过滤部分语气词；
 2：严格过滤语气词；
@@ -860,12 +860,12 @@ namespace TencentCloud
                     int64_t GetFilterModal() const;
 
                     /**
-                     * 设置语气词过滤（目前仅支持8k_zh/16k_zh引擎）
+                     * 设置语气词过滤（目前支持中文普通话引擎）
 0：不过滤语气词；
 1：过滤部分语气词；
 2：严格过滤语气词；
 默认值为 0
-                     * @param _filterModal 语气词过滤（目前仅支持8k_zh/16k_zh引擎）
+                     * @param _filterModal 语气词过滤（目前支持中文普通话引擎）
 0：不过滤语气词；
 1：过滤部分语气词；
 2：严格过滤语气词；
@@ -882,13 +882,13 @@ namespace TencentCloud
                     bool FilterModalHasBeenSet() const;
 
                     /**
-                     * 获取单标点最多字数（目前仅支持8k_zh/16k_zh引擎）
+                     * 获取单标点最多字数（目前支持中文普通话引擎）
 **可控制单行字幕最大字数，适用于字幕生成场景**，取值范围：[6，40]
 0：不开启该功能；
 默认值为0
 
 注意：需设置ResTextFormat为3，解析返回的ResultDetail列表，通过结构中FinalSentence获取单个标点断句结果
-                     * @return SentenceMaxLength 单标点最多字数（目前仅支持8k_zh/16k_zh引擎）
+                     * @return SentenceMaxLength 单标点最多字数（目前支持中文普通话引擎）
 **可控制单行字幕最大字数，适用于字幕生成场景**，取值范围：[6，40]
 0：不开启该功能；
 默认值为0
@@ -899,13 +899,13 @@ namespace TencentCloud
                     int64_t GetSentenceMaxLength() const;
 
                     /**
-                     * 设置单标点最多字数（目前仅支持8k_zh/16k_zh引擎）
+                     * 设置单标点最多字数（目前支持中文普通话引擎）
 **可控制单行字幕最大字数，适用于字幕生成场景**，取值范围：[6，40]
 0：不开启该功能；
 默认值为0
 
 注意：需设置ResTextFormat为3，解析返回的ResultDetail列表，通过结构中FinalSentence获取单个标点断句结果
-                     * @param _sentenceMaxLength 单标点最多字数（目前仅支持8k_zh/16k_zh引擎）
+                     * @param _sentenceMaxLength 单标点最多字数（目前支持中文普通话引擎）
 **可控制单行字幕最大字数，适用于字幕生成场景**，取值范围：[6，40]
 0：不开启该功能；
 默认值为0
@@ -1130,7 +1130,7 @@ namespace TencentCloud
                     bool m_emotionalEnergyHasBeenSet;
 
                     /**
-                     * 阿拉伯数字智能转换（目前仅支持8k_zh/16k_zh引擎）
+                     * 阿拉伯数字智能转换（目前支持中文普通话引擎）
 0：不转换，直接输出中文数字；
 1：根据场景智能转换为阿拉伯数字；
 3：打开数学相关数字转换（如：阿尔法转写为α）；
@@ -1140,7 +1140,7 @@ namespace TencentCloud
                     bool m_convertNumModeHasBeenSet;
 
                     /**
-                     * 脏词过滤（目前仅支持8k_zh/16k_zh引擎）
+                     * 脏词过滤（目前支持中文普通话引擎）
 0：不过滤脏词；
 1：过滤脏词；
 2：将脏词替换为 * ；
@@ -1150,7 +1150,7 @@ namespace TencentCloud
                     bool m_filterDirtyHasBeenSet;
 
                     /**
-                     * 标点符号过滤（目前仅支持8k_zh/16k_zh引擎）
+                     * 标点符号过滤（目前支持中文普通话引擎）
 0：不过滤标点；
 1：过滤句末标点；
 2：过滤所有标点；
@@ -1160,7 +1160,7 @@ namespace TencentCloud
                     bool m_filterPuncHasBeenSet;
 
                     /**
-                     * 语气词过滤（目前仅支持8k_zh/16k_zh引擎）
+                     * 语气词过滤（目前支持中文普通话引擎）
 0：不过滤语气词；
 1：过滤部分语气词；
 2：严格过滤语气词；
@@ -1170,7 +1170,7 @@ namespace TencentCloud
                     bool m_filterModalHasBeenSet;
 
                     /**
-                     * 单标点最多字数（目前仅支持8k_zh/16k_zh引擎）
+                     * 单标点最多字数（目前支持中文普通话引擎）
 **可控制单行字幕最大字数，适用于字幕生成场景**，取值范围：[6，40]
 0：不开启该功能；
 默认值为0

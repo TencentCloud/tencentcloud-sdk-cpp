@@ -22,7 +22,9 @@
 using namespace TencentCloud::Cynosdb::V20190107::Model;
 using namespace std;
 
-DeleteCLSDeliveryRequest::DeleteCLSDeliveryRequest()
+DeleteCLSDeliveryRequest::DeleteCLSDeliveryRequest() :
+    m_instanceIdHasBeenSet(false),
+    m_cLSTopicIdsHasBeenSet(false)
 {
 }
 
@@ -33,6 +35,27 @@ string DeleteCLSDeliveryRequest::ToJsonString() const
     rapidjson::Document::AllocatorType& allocator = d.GetAllocator();
 
 
+    if (m_instanceIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "InstanceId";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_instanceId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_cLSTopicIdsHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "CLSTopicIds";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        for (auto itr = m_cLSTopicIds.begin(); itr != m_cLSTopicIds.end(); ++itr)
+        {
+            d[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
+        }
+    }
+
 
     rapidjson::StringBuffer buffer;
     rapidjson::Writer<rapidjson::StringBuffer> writer(buffer);
@@ -40,5 +63,37 @@ string DeleteCLSDeliveryRequest::ToJsonString() const
     return buffer.GetString();
 }
 
+
+string DeleteCLSDeliveryRequest::GetInstanceId() const
+{
+    return m_instanceId;
+}
+
+void DeleteCLSDeliveryRequest::SetInstanceId(const string& _instanceId)
+{
+    m_instanceId = _instanceId;
+    m_instanceIdHasBeenSet = true;
+}
+
+bool DeleteCLSDeliveryRequest::InstanceIdHasBeenSet() const
+{
+    return m_instanceIdHasBeenSet;
+}
+
+vector<string> DeleteCLSDeliveryRequest::GetCLSTopicIds() const
+{
+    return m_cLSTopicIds;
+}
+
+void DeleteCLSDeliveryRequest::SetCLSTopicIds(const vector<string>& _cLSTopicIds)
+{
+    m_cLSTopicIds = _cLSTopicIds;
+    m_cLSTopicIdsHasBeenSet = true;
+}
+
+bool DeleteCLSDeliveryRequest::CLSTopicIdsHasBeenSet() const
+{
+    return m_cLSTopicIdsHasBeenSet;
+}
 
 

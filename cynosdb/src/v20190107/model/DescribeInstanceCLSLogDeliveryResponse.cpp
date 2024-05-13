@@ -23,7 +23,9 @@ using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Cynosdb::V20190107::Model;
 using namespace std;
 
-DescribeInstanceCLSLogDeliveryResponse::DescribeInstanceCLSLogDeliveryResponse()
+DescribeInstanceCLSLogDeliveryResponse::DescribeInstanceCLSLogDeliveryResponse() :
+    m_totalCountHasBeenSet(false),
+    m_instanceCLSDeliveryInfosHasBeenSet(false)
 {
 }
 
@@ -61,6 +63,36 @@ CoreInternalOutcome DescribeInstanceCLSLogDeliveryResponse::Deserialize(const st
     }
 
 
+    if (rsp.HasMember("TotalCount") && !rsp["TotalCount"].IsNull())
+    {
+        if (!rsp["TotalCount"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `TotalCount` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_totalCount = rsp["TotalCount"].GetInt64();
+        m_totalCountHasBeenSet = true;
+    }
+
+    if (rsp.HasMember("InstanceCLSDeliveryInfos") && !rsp["InstanceCLSDeliveryInfos"].IsNull())
+    {
+        if (!rsp["InstanceCLSDeliveryInfos"].IsArray())
+            return CoreInternalOutcome(Core::Error("response `InstanceCLSDeliveryInfos` is not array type"));
+
+        const rapidjson::Value &tmpValue = rsp["InstanceCLSDeliveryInfos"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            InstanceCLSDeliveryInfo item;
+            CoreInternalOutcome outcome = item.Deserialize(*itr);
+            if (!outcome.IsSuccess())
+            {
+                outcome.GetError().SetRequestId(requestId);
+                return outcome;
+            }
+            m_instanceCLSDeliveryInfos.push_back(item);
+        }
+        m_instanceCLSDeliveryInfosHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -70,6 +102,29 @@ string DescribeInstanceCLSLogDeliveryResponse::ToJsonString() const
     rapidjson::Document value;
     value.SetObject();
     rapidjson::Document::AllocatorType& allocator = value.GetAllocator();
+
+    if (m_totalCountHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "TotalCount";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_totalCount, allocator);
+    }
+
+    if (m_instanceCLSDeliveryInfosHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "InstanceCLSDeliveryInfos";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_instanceCLSDeliveryInfos.begin(); itr != m_instanceCLSDeliveryInfos.end(); ++itr, ++i)
+        {
+            value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(value[key.c_str()][i], allocator);
+        }
+    }
 
     rapidjson::Value iKey(rapidjson::kStringType);
     string key = "RequestId";
@@ -82,5 +137,25 @@ string DescribeInstanceCLSLogDeliveryResponse::ToJsonString() const
     return buffer.GetString();
 }
 
+
+int64_t DescribeInstanceCLSLogDeliveryResponse::GetTotalCount() const
+{
+    return m_totalCount;
+}
+
+bool DescribeInstanceCLSLogDeliveryResponse::TotalCountHasBeenSet() const
+{
+    return m_totalCountHasBeenSet;
+}
+
+vector<InstanceCLSDeliveryInfo> DescribeInstanceCLSLogDeliveryResponse::GetInstanceCLSDeliveryInfos() const
+{
+    return m_instanceCLSDeliveryInfos;
+}
+
+bool DescribeInstanceCLSLogDeliveryResponse::InstanceCLSDeliveryInfosHasBeenSet() const
+{
+    return m_instanceCLSDeliveryInfosHasBeenSet;
+}
 
 

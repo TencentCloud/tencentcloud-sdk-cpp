@@ -67,8 +67,6 @@
 #include <tencentcloud/tione/v20191022/model/UpdateCodeRepositoryResponse.h>
 #include <tencentcloud/tione/v20191022/model/UpdateNotebookInstanceRequest.h>
 #include <tencentcloud/tione/v20191022/model/UpdateNotebookInstanceResponse.h>
-#include <tencentcloud/tione/v20191022/model/UpdateNotebookLifecycleScriptRequest.h>
-#include <tencentcloud/tione/v20191022/model/UpdateNotebookLifecycleScriptResponse.h>
 
 
 namespace TencentCloud
@@ -149,9 +147,6 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::UpdateNotebookInstanceResponse> UpdateNotebookInstanceOutcome;
                 typedef std::future<UpdateNotebookInstanceOutcome> UpdateNotebookInstanceOutcomeCallable;
                 typedef std::function<void(const TioneClient*, const Model::UpdateNotebookInstanceRequest&, UpdateNotebookInstanceOutcome, const std::shared_ptr<const AsyncCallerContext>&)> UpdateNotebookInstanceAsyncHandler;
-                typedef Outcome<Core::Error, Model::UpdateNotebookLifecycleScriptResponse> UpdateNotebookLifecycleScriptOutcome;
-                typedef std::future<UpdateNotebookLifecycleScriptOutcome> UpdateNotebookLifecycleScriptOutcomeCallable;
-                typedef std::function<void(const TioneClient*, const Model::UpdateNotebookLifecycleScriptRequest&, UpdateNotebookLifecycleScriptOutcome, const std::shared_ptr<const AsyncCallerContext>&)> UpdateNotebookLifecycleScriptAsyncHandler;
 
 
 
@@ -352,15 +347,6 @@ namespace TencentCloud
                 UpdateNotebookInstanceOutcome UpdateNotebookInstance(const Model::UpdateNotebookInstanceRequest &request);
                 void UpdateNotebookInstanceAsync(const Model::UpdateNotebookInstanceRequest& request, const UpdateNotebookInstanceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 UpdateNotebookInstanceOutcomeCallable UpdateNotebookInstanceCallable(const Model::UpdateNotebookInstanceRequest& request);
-
-                /**
-                 *更新notebook生命周期脚本
-                 * @param req UpdateNotebookLifecycleScriptRequest
-                 * @return UpdateNotebookLifecycleScriptOutcome
-                 */
-                UpdateNotebookLifecycleScriptOutcome UpdateNotebookLifecycleScript(const Model::UpdateNotebookLifecycleScriptRequest &request);
-                void UpdateNotebookLifecycleScriptAsync(const Model::UpdateNotebookLifecycleScriptRequest& request, const UpdateNotebookLifecycleScriptAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
-                UpdateNotebookLifecycleScriptOutcomeCallable UpdateNotebookLifecycleScriptCallable(const Model::UpdateNotebookLifecycleScriptRequest& request);
 
             };
         }

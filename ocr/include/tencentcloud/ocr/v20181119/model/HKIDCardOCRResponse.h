@@ -200,14 +200,14 @@ namespace TencentCloud
 1：假；
 2：真。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * 
+                     * @deprecated
                      */
                     int64_t GetFakeDetectResult() const;
 
                     /**
                      * 判断参数 FakeDetectResult 是否已赋值
                      * @return FakeDetectResult 是否已赋值
-                     * 
+                     * @deprecated
                      */
                     bool FakeDetectResultHasBeenSet() const;
 
@@ -234,16 +234,42 @@ namespace TencentCloud
                      * @return WarningCode 多重告警码，当身份证是翻拍、复印件时返回对应告警码。
 -9102：证照复印件告警
 -9103：证照翻拍告警
-                     * 
+                     * @deprecated
                      */
                     std::vector<int64_t> GetWarningCode() const;
 
                     /**
                      * 判断参数 WarningCode 是否已赋值
                      * @return WarningCode 是否已赋值
-                     * 
+                     * @deprecated
                      */
                     bool WarningCodeHasBeenSet() const;
+
+                    /**
+                     * 获取告警码
+-9101 证件边框不完整告警
+-9102 证件复印件告警
+-9103 证件翻拍告警
+-9107 证件反光告警
+-9108 证件模糊告警
+-9109 告警能力未开通
+                     * @return WarnCardInfos 告警码
+-9101 证件边框不完整告警
+-9102 证件复印件告警
+-9103 证件翻拍告警
+-9107 证件反光告警
+-9108 证件模糊告警
+-9109 告警能力未开通
+                     * 
+                     */
+                    std::vector<int64_t> GetWarnCardInfos() const;
+
+                    /**
+                     * 判断参数 WarnCardInfos 是否已赋值
+                     * @return WarnCardInfos 是否已赋值
+                     * 
+                     */
+                    bool WarnCardInfosHasBeenSet() const;
 
                 private:
 
@@ -334,6 +360,18 @@ namespace TencentCloud
                      */
                     std::vector<int64_t> m_warningCode;
                     bool m_warningCodeHasBeenSet;
+
+                    /**
+                     * 告警码
+-9101 证件边框不完整告警
+-9102 证件复印件告警
+-9103 证件翻拍告警
+-9107 证件反光告警
+-9108 证件模糊告警
+-9109 告警能力未开通
+                     */
+                    std::vector<int64_t> m_warnCardInfos;
+                    bool m_warnCardInfosHasBeenSet;
 
                 };
             }

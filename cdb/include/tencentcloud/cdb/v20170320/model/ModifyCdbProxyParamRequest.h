@@ -86,14 +86,18 @@ namespace TencentCloud
 
                     /**
                      * 获取连接池阈值
+注意：如需使用数据库代理连接池能力，MySQL 8.0 主实例的内核小版本要大于等于 MySQL 8.0 20230630。
                      * @return ConnectionPoolLimit 连接池阈值
+注意：如需使用数据库代理连接池能力，MySQL 8.0 主实例的内核小版本要大于等于 MySQL 8.0 20230630。
                      * 
                      */
                     uint64_t GetConnectionPoolLimit() const;
 
                     /**
                      * 设置连接池阈值
+注意：如需使用数据库代理连接池能力，MySQL 8.0 主实例的内核小版本要大于等于 MySQL 8.0 20230630。
                      * @param _connectionPoolLimit 连接池阈值
+注意：如需使用数据库代理连接池能力，MySQL 8.0 主实例的内核小版本要大于等于 MySQL 8.0 20230630。
                      * 
                      */
                     void SetConnectionPoolLimit(const uint64_t& _connectionPoolLimit);
@@ -121,6 +125,7 @@ namespace TencentCloud
 
                     /**
                      * 连接池阈值
+注意：如需使用数据库代理连接池能力，MySQL 8.0 主实例的内核小版本要大于等于 MySQL 8.0 20230630。
                      */
                     uint64_t m_connectionPoolLimit;
                     bool m_connectionPoolLimitHasBeenSet;

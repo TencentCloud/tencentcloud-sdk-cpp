@@ -36,7 +36,8 @@ HKIDCardOCRResponse::HKIDCardOCRResponse() :
     m_currentIssueDateHasBeenSet(false),
     m_fakeDetectResultHasBeenSet(false),
     m_headImageHasBeenSet(false),
-    m_warningCodeHasBeenSet(false)
+    m_warningCodeHasBeenSet(false),
+    m_warnCardInfosHasBeenSet(false)
 {
 }
 
@@ -207,6 +208,19 @@ CoreInternalOutcome HKIDCardOCRResponse::Deserialize(const string &payload)
         m_warningCodeHasBeenSet = true;
     }
 
+    if (rsp.HasMember("WarnCardInfos") && !rsp["WarnCardInfos"].IsNull())
+    {
+        if (!rsp["WarnCardInfos"].IsArray())
+            return CoreInternalOutcome(Core::Error("response `WarnCardInfos` is not array type"));
+
+        const rapidjson::Value &tmpValue = rsp["WarnCardInfos"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            m_warnCardInfos.push_back((*itr).GetInt64());
+        }
+        m_warnCardInfosHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -321,6 +335,19 @@ string HKIDCardOCRResponse::ToJsonString() const
         value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
 
         for (auto itr = m_warningCode.begin(); itr != m_warningCode.end(); ++itr)
+        {
+            value[key.c_str()].PushBack(rapidjson::Value().SetInt64(*itr), allocator);
+        }
+    }
+
+    if (m_warnCardInfosHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "WarnCardInfos";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        for (auto itr = m_warnCardInfos.begin(); itr != m_warnCardInfos.end(); ++itr)
         {
             value[key.c_str()].PushBack(rapidjson::Value().SetInt64(*itr), allocator);
         }
@@ -466,6 +493,16 @@ vector<int64_t> HKIDCardOCRResponse::GetWarningCode() const
 bool HKIDCardOCRResponse::WarningCodeHasBeenSet() const
 {
     return m_warningCodeHasBeenSet;
+}
+
+vector<int64_t> HKIDCardOCRResponse::GetWarnCardInfos() const
+{
+    return m_warnCardInfos;
+}
+
+bool HKIDCardOCRResponse::WarnCardInfosHasBeenSet() const
+{
+    return m_warnCardInfosHasBeenSet;
 }
 
 

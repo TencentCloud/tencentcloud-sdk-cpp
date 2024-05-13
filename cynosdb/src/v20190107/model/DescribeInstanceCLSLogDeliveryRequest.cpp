@@ -22,7 +22,8 @@
 using namespace TencentCloud::Cynosdb::V20190107::Model;
 using namespace std;
 
-DescribeInstanceCLSLogDeliveryRequest::DescribeInstanceCLSLogDeliveryRequest()
+DescribeInstanceCLSLogDeliveryRequest::DescribeInstanceCLSLogDeliveryRequest() :
+    m_instanceIdHasBeenSet(false)
 {
 }
 
@@ -33,6 +34,14 @@ string DescribeInstanceCLSLogDeliveryRequest::ToJsonString() const
     rapidjson::Document::AllocatorType& allocator = d.GetAllocator();
 
 
+    if (m_instanceIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "InstanceId";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_instanceId.c_str(), allocator).Move(), allocator);
+    }
+
 
     rapidjson::StringBuffer buffer;
     rapidjson::Writer<rapidjson::StringBuffer> writer(buffer);
@@ -40,5 +49,21 @@ string DescribeInstanceCLSLogDeliveryRequest::ToJsonString() const
     return buffer.GetString();
 }
 
+
+string DescribeInstanceCLSLogDeliveryRequest::GetInstanceId() const
+{
+    return m_instanceId;
+}
+
+void DescribeInstanceCLSLogDeliveryRequest::SetInstanceId(const string& _instanceId)
+{
+    m_instanceId = _instanceId;
+    m_instanceIdHasBeenSet = true;
+}
+
+bool DescribeInstanceCLSLogDeliveryRequest::InstanceIdHasBeenSet() const
+{
+    return m_instanceIdHasBeenSet;
+}
 
 

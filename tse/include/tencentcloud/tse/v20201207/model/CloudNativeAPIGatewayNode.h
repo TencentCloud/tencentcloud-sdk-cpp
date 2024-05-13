@@ -213,6 +213,56 @@ namespace TencentCloud
                      */
                     bool StatusHasBeenSet() const;
 
+                    /**
+                     * 获取节点权重
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return Weight 节点权重
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    int64_t GetWeight() const;
+
+                    /**
+                     * 设置节点权重
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _weight 节点权重
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetWeight(const int64_t& _weight);
+
+                    /**
+                     * 判断参数 Weight 是否已赋值
+                     * @return Weight 是否已赋值
+                     * 
+                     */
+                    bool WeightHasBeenSet() const;
+
+                    /**
+                     * 获取是否默认权重
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return IsDefaultWeight 是否默认权重
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    bool GetIsDefaultWeight() const;
+
+                    /**
+                     * 设置是否默认权重
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _isDefaultWeight 是否默认权重
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetIsDefaultWeight(const bool& _isDefaultWeight);
+
+                    /**
+                     * 判断参数 IsDefaultWeight 是否已赋值
+                     * @return IsDefaultWeight 是否已赋值
+                     * 
+                     */
+                    bool IsDefaultWeightHasBeenSet() const;
+
                 private:
 
                     /**
@@ -261,6 +311,20 @@ namespace TencentCloud
                      */
                     std::string m_status;
                     bool m_statusHasBeenSet;
+
+                    /**
+                     * 节点权重
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    int64_t m_weight;
+                    bool m_weightHasBeenSet;
+
+                    /**
+                     * 是否默认权重
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    bool m_isDefaultWeight;
+                    bool m_isDefaultWeightHasBeenSet;
 
                 };
             }

@@ -110,14 +110,14 @@ namespace TencentCloud
 -9102	证照复印件告警
 -9106       证件遮挡告警
 -9107       模糊图片告警
-                     * 
+                     * @deprecated
                      */
                     std::vector<int64_t> GetWarn() const;
 
                     /**
                      * 判断参数 Warn 是否已赋值
                      * @return Warn 是否已赋值
-                     * 
+                     * @deprecated
                      */
                     bool WarnHasBeenSet() const;
 
@@ -203,6 +203,32 @@ MyKid 儿童卡
                      */
                     bool BirthdayHasBeenSet() const;
 
+                    /**
+                     * 获取告警码
+-9101 证件边框不完整告警
+-9102 证件复印件告警
+-9103 证件翻拍告警
+-9107 证件反光告警
+-9108 证件模糊告警
+-9109 告警能力未开通
+                     * @return WarnCardInfos 告警码
+-9101 证件边框不完整告警
+-9102 证件复印件告警
+-9103 证件翻拍告警
+-9107 证件反光告警
+-9108 证件模糊告警
+-9109 告警能力未开通
+                     * 
+                     */
+                    std::vector<int64_t> GetWarnCardInfos() const;
+
+                    /**
+                     * 判断参数 WarnCardInfos 是否已赋值
+                     * @return WarnCardInfos 是否已赋值
+                     * 
+                     */
+                    bool WarnCardInfosHasBeenSet() const;
+
                 private:
 
                     /**
@@ -275,6 +301,18 @@ MyKid 儿童卡
                      */
                     std::string m_birthday;
                     bool m_birthdayHasBeenSet;
+
+                    /**
+                     * 告警码
+-9101 证件边框不完整告警
+-9102 证件复印件告警
+-9103 证件翻拍告警
+-9107 证件反光告警
+-9108 证件模糊告警
+-9109 告警能力未开通
+                     */
+                    std::vector<int64_t> m_warnCardInfos;
+                    bool m_warnCardInfosHasBeenSet;
 
                 };
             }

@@ -613,15 +613,19 @@ namespace TencentCloud
                     bool DeviceTypeHasBeenSet() const;
 
                     /**
-                     * 获取参数模板id。
-                     * @return ParamTemplateId 参数模板id。
+                     * 获取参数模板 id。
+备注：如您使用自定义参数模板 id，可传入自定义参数模板 id；如您计划使用默认参数模板，该参数模板 id 传入 id 无效，需设置 ParamTemplateType。
+                     * @return ParamTemplateId 参数模板 id。
+备注：如您使用自定义参数模板 id，可传入自定义参数模板 id；如您计划使用默认参数模板，该参数模板 id 传入 id 无效，需设置 ParamTemplateType。
                      * 
                      */
                     int64_t GetParamTemplateId() const;
 
                     /**
-                     * 设置参数模板id。
-                     * @param _paramTemplateId 参数模板id。
+                     * 设置参数模板 id。
+备注：如您使用自定义参数模板 id，可传入自定义参数模板 id；如您计划使用默认参数模板，该参数模板 id 传入 id 无效，需设置 ParamTemplateType。
+                     * @param _paramTemplateId 参数模板 id。
+备注：如您使用自定义参数模板 id，可传入自定义参数模板 id；如您计划使用默认参数模板，该参数模板 id 传入 id 无效，需设置 ParamTemplateType。
                      * 
                      */
                     void SetParamTemplateId(const int64_t& _paramTemplateId);
@@ -740,14 +744,18 @@ namespace TencentCloud
 
                     /**
                      * 获取默认参数模板类型。支持值包括："HIGH_STABILITY" - 高稳定模板，"HIGH_PERFORMANCE" - 高性能模板。
+备注：如您需使用云数据库 MySQL 默认参数模板，请设置 ParamTemplateType。
                      * @return ParamTemplateType 默认参数模板类型。支持值包括："HIGH_STABILITY" - 高稳定模板，"HIGH_PERFORMANCE" - 高性能模板。
+备注：如您需使用云数据库 MySQL 默认参数模板，请设置 ParamTemplateType。
                      * 
                      */
                     std::string GetParamTemplateType() const;
 
                     /**
                      * 设置默认参数模板类型。支持值包括："HIGH_STABILITY" - 高稳定模板，"HIGH_PERFORMANCE" - 高性能模板。
+备注：如您需使用云数据库 MySQL 默认参数模板，请设置 ParamTemplateType。
                      * @param _paramTemplateType 默认参数模板类型。支持值包括："HIGH_STABILITY" - 高稳定模板，"HIGH_PERFORMANCE" - 高性能模板。
+备注：如您需使用云数据库 MySQL 默认参数模板，请设置 ParamTemplateType。
                      * 
                      */
                     void SetParamTemplateType(const std::string& _paramTemplateType);
@@ -1008,7 +1016,8 @@ namespace TencentCloud
                     bool m_deviceTypeHasBeenSet;
 
                     /**
-                     * 参数模板id。
+                     * 参数模板 id。
+备注：如您使用自定义参数模板 id，可传入自定义参数模板 id；如您计划使用默认参数模板，该参数模板 id 传入 id 无效，需设置 ParamTemplateType。
                      */
                     int64_t m_paramTemplateId;
                     bool m_paramTemplateIdHasBeenSet;
@@ -1045,6 +1054,7 @@ namespace TencentCloud
 
                     /**
                      * 默认参数模板类型。支持值包括："HIGH_STABILITY" - 高稳定模板，"HIGH_PERFORMANCE" - 高性能模板。
+备注：如您需使用云数据库 MySQL 默认参数模板，请设置 ParamTemplateType。
                      */
                     std::string m_paramTemplateType;
                     bool m_paramTemplateTypeHasBeenSet;

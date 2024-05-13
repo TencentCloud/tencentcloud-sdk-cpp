@@ -41,7 +41,8 @@ RecognizeIndonesiaIDCardOCRResponse::RecognizeIndonesiaIDCardOCRResponse() :
     m_issuedDateHasBeenSet(false),
     m_photoHasBeenSet(false),
     m_provinsiHasBeenSet(false),
-    m_kotaHasBeenSet(false)
+    m_kotaHasBeenSet(false),
+    m_warnCardInfosHasBeenSet(false)
 {
 }
 
@@ -259,6 +260,19 @@ CoreInternalOutcome RecognizeIndonesiaIDCardOCRResponse::Deserialize(const strin
         m_kotaHasBeenSet = true;
     }
 
+    if (rsp.HasMember("WarnCardInfos") && !rsp["WarnCardInfos"].IsNull())
+    {
+        if (!rsp["WarnCardInfos"].IsArray())
+            return CoreInternalOutcome(Core::Error("response `WarnCardInfos` is not array type"));
+
+        const rapidjson::Value &tmpValue = rsp["WarnCardInfos"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            m_warnCardInfos.push_back((*itr).GetInt64());
+        }
+        m_warnCardInfosHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -411,6 +425,19 @@ string RecognizeIndonesiaIDCardOCRResponse::ToJsonString() const
         string key = "Kota";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_kota.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_warnCardInfosHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "WarnCardInfos";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        for (auto itr = m_warnCardInfos.begin(); itr != m_warnCardInfos.end(); ++itr)
+        {
+            value[key.c_str()].PushBack(rapidjson::Value().SetInt64(*itr), allocator);
+        }
     }
 
     rapidjson::Value iKey(rapidjson::kStringType);
@@ -603,6 +630,16 @@ string RecognizeIndonesiaIDCardOCRResponse::GetKota() const
 bool RecognizeIndonesiaIDCardOCRResponse::KotaHasBeenSet() const
 {
     return m_kotaHasBeenSet;
+}
+
+vector<int64_t> RecognizeIndonesiaIDCardOCRResponse::GetWarnCardInfos() const
+{
+    return m_warnCardInfos;
+}
+
+bool RecognizeIndonesiaIDCardOCRResponse::WarnCardInfosHasBeenSet() const
+{
+    return m_warnCardInfosHasBeenSet;
 }
 
 

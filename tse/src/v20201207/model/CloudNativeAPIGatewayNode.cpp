@@ -27,7 +27,9 @@ CloudNativeAPIGatewayNode::CloudNativeAPIGatewayNode() :
     m_zoneHasBeenSet(false),
     m_groupIdHasBeenSet(false),
     m_groupNameHasBeenSet(false),
-    m_statusHasBeenSet(false)
+    m_statusHasBeenSet(false),
+    m_weightHasBeenSet(false),
+    m_isDefaultWeightHasBeenSet(false)
 {
 }
 
@@ -106,6 +108,26 @@ CoreInternalOutcome CloudNativeAPIGatewayNode::Deserialize(const rapidjson::Valu
         m_statusHasBeenSet = true;
     }
 
+    if (value.HasMember("Weight") && !value["Weight"].IsNull())
+    {
+        if (!value["Weight"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `CloudNativeAPIGatewayNode.Weight` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_weight = value["Weight"].GetInt64();
+        m_weightHasBeenSet = true;
+    }
+
+    if (value.HasMember("IsDefaultWeight") && !value["IsDefaultWeight"].IsNull())
+    {
+        if (!value["IsDefaultWeight"].IsBool())
+        {
+            return CoreInternalOutcome(Core::Error("response `CloudNativeAPIGatewayNode.IsDefaultWeight` IsBool=false incorrectly").SetRequestId(requestId));
+        }
+        m_isDefaultWeight = value["IsDefaultWeight"].GetBool();
+        m_isDefaultWeightHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -167,6 +189,22 @@ void CloudNativeAPIGatewayNode::ToJsonObject(rapidjson::Value &value, rapidjson:
         string key = "Status";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_status.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_weightHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Weight";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_weight, allocator);
+    }
+
+    if (m_isDefaultWeightHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "IsDefaultWeight";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_isDefaultWeight, allocator);
     }
 
 }
@@ -282,5 +320,37 @@ void CloudNativeAPIGatewayNode::SetStatus(const string& _status)
 bool CloudNativeAPIGatewayNode::StatusHasBeenSet() const
 {
     return m_statusHasBeenSet;
+}
+
+int64_t CloudNativeAPIGatewayNode::GetWeight() const
+{
+    return m_weight;
+}
+
+void CloudNativeAPIGatewayNode::SetWeight(const int64_t& _weight)
+{
+    m_weight = _weight;
+    m_weightHasBeenSet = true;
+}
+
+bool CloudNativeAPIGatewayNode::WeightHasBeenSet() const
+{
+    return m_weightHasBeenSet;
+}
+
+bool CloudNativeAPIGatewayNode::GetIsDefaultWeight() const
+{
+    return m_isDefaultWeight;
+}
+
+void CloudNativeAPIGatewayNode::SetIsDefaultWeight(const bool& _isDefaultWeight)
+{
+    m_isDefaultWeight = _isDefaultWeight;
+    m_isDefaultWeightHasBeenSet = true;
+}
+
+bool CloudNativeAPIGatewayNode::IsDefaultWeightHasBeenSet() const
+{
+    return m_isDefaultWeightHasBeenSet;
 }
 

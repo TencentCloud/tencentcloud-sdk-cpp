@@ -30,7 +30,8 @@ McuWaterMarkText::McuWaterMarkText() :
     m_fontColorHasBeenSet(false),
     m_backGroundColorHasBeenSet(false),
     m_dynamicPosTypeHasBeenSet(false),
-    m_zOrderHasBeenSet(false)
+    m_zOrderHasBeenSet(false),
+    m_fontHasBeenSet(false)
 {
 }
 
@@ -139,6 +140,16 @@ CoreInternalOutcome McuWaterMarkText::Deserialize(const rapidjson::Value &value)
         m_zOrderHasBeenSet = true;
     }
 
+    if (value.HasMember("Font") && !value["Font"].IsNull())
+    {
+        if (!value["Font"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `McuWaterMarkText.Font` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_font = string(value["Font"].GetString());
+        m_fontHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -224,6 +235,14 @@ void McuWaterMarkText::ToJsonObject(rapidjson::Value &value, rapidjson::Document
         string key = "ZOrder";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_zOrder, allocator);
+    }
+
+    if (m_fontHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Font";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_font.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -387,5 +406,21 @@ void McuWaterMarkText::SetZOrder(const uint64_t& _zOrder)
 bool McuWaterMarkText::ZOrderHasBeenSet() const
 {
     return m_zOrderHasBeenSet;
+}
+
+string McuWaterMarkText::GetFont() const
+{
+    return m_font;
+}
+
+void McuWaterMarkText::SetFont(const string& _font)
+{
+    m_font = _font;
+    m_fontHasBeenSet = true;
+}
+
+bool McuWaterMarkText::FontHasBeenSet() const
+{
+    return m_fontHasBeenSet;
 }
 

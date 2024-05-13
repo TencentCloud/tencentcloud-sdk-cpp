@@ -164,18 +164,18 @@ namespace TencentCloud
                     bool ResourceRegionHasBeenSet() const;
 
                     /**
-                     * 获取无
+                     * 获取数据源类型
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return DataSourceType 无
+                     * @return DataSourceType 数据源类型
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetDataSourceType() const;
 
                     /**
-                     * 设置无
+                     * 设置数据源类型
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _dataSourceType 无
+                     * @param _dataSourceType 数据源类型
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -224,7 +224,7 @@ namespace TencentCloud
                     bool m_resourceRegionHasBeenSet;
 
                     /**
-                     * 无
+                     * 数据源类型
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_dataSourceType;

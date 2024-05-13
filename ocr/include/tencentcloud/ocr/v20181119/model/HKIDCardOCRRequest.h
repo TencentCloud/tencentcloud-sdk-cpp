@@ -43,27 +43,6 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取是否鉴伪。
-                     * @return DetectFake 是否鉴伪。
-                     * 
-                     */
-                    bool GetDetectFake() const;
-
-                    /**
-                     * 设置是否鉴伪。
-                     * @param _detectFake 是否鉴伪。
-                     * 
-                     */
-                    void SetDetectFake(const bool& _detectFake);
-
-                    /**
-                     * 判断参数 DetectFake 是否已赋值
-                     * @return DetectFake 是否已赋值
-                     * 
-                     */
-                    bool DetectFakeHasBeenSet() const;
-
-                    /**
                      * 获取是否返回人像照片。
                      * @return ReturnHeadImage 是否返回人像照片。
                      * 
@@ -83,6 +62,27 @@ namespace TencentCloud
                      * 
                      */
                     bool ReturnHeadImageHasBeenSet() const;
+
+                    /**
+                     * 获取是否鉴伪。
+                     * @return DetectFake 是否鉴伪。
+                     * @deprecated
+                     */
+                    bool GetDetectFake() const;
+
+                    /**
+                     * 设置是否鉴伪。
+                     * @param _detectFake 是否鉴伪。
+                     * @deprecated
+                     */
+                    void SetDetectFake(const bool& _detectFake);
+
+                    /**
+                     * 判断参数 DetectFake 是否已赋值
+                     * @return DetectFake 是否已赋值
+                     * @deprecated
+                     */
+                    bool DetectFakeHasBeenSet() const;
 
                     /**
                      * 获取图片的 Base64 值。
@@ -153,16 +153,16 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 是否鉴伪。
-                     */
-                    bool m_detectFake;
-                    bool m_detectFakeHasBeenSet;
-
-                    /**
                      * 是否返回人像照片。
                      */
                     bool m_returnHeadImage;
                     bool m_returnHeadImageHasBeenSet;
+
+                    /**
+                     * 是否鉴伪。
+                     */
+                    bool m_detectFake;
+                    bool m_detectFakeHasBeenSet;
 
                     /**
                      * 图片的 Base64 值。

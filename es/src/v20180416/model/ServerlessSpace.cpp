@@ -37,7 +37,8 @@ ServerlessSpace::ServerlessSpace() :
     m_zoneHasBeenSet(false),
     m_enableKibanaPublicAccessHasBeenSet(false),
     m_enableKibanaPrivateAccessHasBeenSet(false),
-    m_appIdHasBeenSet(false)
+    m_appIdHasBeenSet(false),
+    m_kibanaLanguageHasBeenSet(false)
 {
 }
 
@@ -240,6 +241,16 @@ CoreInternalOutcome ServerlessSpace::Deserialize(const rapidjson::Value &value)
         m_appIdHasBeenSet = true;
     }
 
+    if (value.HasMember("KibanaLanguage") && !value["KibanaLanguage"].IsNull())
+    {
+        if (!value["KibanaLanguage"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `ServerlessSpace.KibanaLanguage` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_kibanaLanguage = string(value["KibanaLanguage"].GetString());
+        m_kibanaLanguageHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -390,6 +401,14 @@ void ServerlessSpace::ToJsonObject(rapidjson::Value &value, rapidjson::Document:
         string key = "AppId";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_appId, allocator);
+    }
+
+    if (m_kibanaLanguageHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "KibanaLanguage";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_kibanaLanguage.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -665,5 +684,21 @@ void ServerlessSpace::SetAppId(const uint64_t& _appId)
 bool ServerlessSpace::AppIdHasBeenSet() const
 {
     return m_appIdHasBeenSet;
+}
+
+string ServerlessSpace::GetKibanaLanguage() const
+{
+    return m_kibanaLanguage;
+}
+
+void ServerlessSpace::SetKibanaLanguage(const string& _kibanaLanguage)
+{
+    m_kibanaLanguage = _kibanaLanguage;
+    m_kibanaLanguageHasBeenSet = true;
+}
+
+bool ServerlessSpace::KibanaLanguageHasBeenSet() const
+{
+    return m_kibanaLanguageHasBeenSet;
 }
 

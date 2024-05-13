@@ -108,15 +108,15 @@ namespace TencentCloud
                     bool ObjectModeHasBeenSet() const;
 
                     /**
-                     * 获取一致性对比对象配置
-                     * @return Objects 一致性对比对象配置
+                     * 获取数据对比对象，当ObjectMode为custom时，此项需要填写。
+                     * @return Objects 数据对比对象，当ObjectMode为custom时，此项需要填写。
                      * 
                      */
                     CompareObject GetObjects() const;
 
                     /**
-                     * 设置一致性对比对象配置
-                     * @param _objects 一致性对比对象配置
+                     * 设置数据对比对象，当ObjectMode为custom时，此项需要填写。
+                     * @param _objects 数据对比对象，当ObjectMode为custom时，此项需要填写。
                      * 
                      */
                     void SetObjects(const CompareObject& _objects);
@@ -170,7 +170,7 @@ namespace TencentCloud
                     bool m_objectModeHasBeenSet;
 
                     /**
-                     * 一致性对比对象配置
+                     * 数据对比对象，当ObjectMode为custom时，此项需要填写。
                      */
                     CompareObject m_objects;
                     bool m_objectsHasBeenSet;

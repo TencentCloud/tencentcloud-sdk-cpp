@@ -24,7 +24,8 @@ TargetGroupAssociation::TargetGroupAssociation() :
     m_loadBalancerIdHasBeenSet(false),
     m_targetGroupIdHasBeenSet(false),
     m_listenerIdHasBeenSet(false),
-    m_locationIdHasBeenSet(false)
+    m_locationIdHasBeenSet(false),
+    m_weightHasBeenSet(false)
 {
 }
 
@@ -73,6 +74,16 @@ CoreInternalOutcome TargetGroupAssociation::Deserialize(const rapidjson::Value &
         m_locationIdHasBeenSet = true;
     }
 
+    if (value.HasMember("Weight") && !value["Weight"].IsNull())
+    {
+        if (!value["Weight"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `TargetGroupAssociation.Weight` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_weight = value["Weight"].GetInt64();
+        m_weightHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -110,6 +121,14 @@ void TargetGroupAssociation::ToJsonObject(rapidjson::Value &value, rapidjson::Do
         string key = "LocationId";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_locationId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_weightHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Weight";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_weight, allocator);
     }
 
 }
@@ -177,5 +196,21 @@ void TargetGroupAssociation::SetLocationId(const string& _locationId)
 bool TargetGroupAssociation::LocationIdHasBeenSet() const
 {
     return m_locationIdHasBeenSet;
+}
+
+int64_t TargetGroupAssociation::GetWeight() const
+{
+    return m_weight;
+}
+
+void TargetGroupAssociation::SetWeight(const int64_t& _weight)
+{
+    m_weight = _weight;
+    m_weightHasBeenSet = true;
+}
+
+bool TargetGroupAssociation::WeightHasBeenSet() const
+{
+    return m_weightHasBeenSet;
 }
 

@@ -32,7 +32,8 @@ RecognizeThaiIDCardOCRResponse::RecognizeThaiIDCardOCRResponse() :
     m_expirationDateHasBeenSet(false),
     m_birthdayHasBeenSet(false),
     m_addressHasBeenSet(false),
-    m_portraitImageHasBeenSet(false)
+    m_portraitImageHasBeenSet(false),
+    m_warnCardInfosHasBeenSet(false)
 {
 }
 
@@ -160,6 +161,19 @@ CoreInternalOutcome RecognizeThaiIDCardOCRResponse::Deserialize(const string &pa
         m_portraitImageHasBeenSet = true;
     }
 
+    if (rsp.HasMember("WarnCardInfos") && !rsp["WarnCardInfos"].IsNull())
+    {
+        if (!rsp["WarnCardInfos"].IsArray())
+            return CoreInternalOutcome(Core::Error("response `WarnCardInfos` is not array type"));
+
+        const rapidjson::Value &tmpValue = rsp["WarnCardInfos"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            m_warnCardInfos.push_back((*itr).GetInt64());
+        }
+        m_warnCardInfosHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -240,6 +254,19 @@ string RecognizeThaiIDCardOCRResponse::ToJsonString() const
         string key = "PortraitImage";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_portraitImage.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_warnCardInfosHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "WarnCardInfos";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        for (auto itr = m_warnCardInfos.begin(); itr != m_warnCardInfos.end(); ++itr)
+        {
+            value[key.c_str()].PushBack(rapidjson::Value().SetInt64(*itr), allocator);
+        }
     }
 
     rapidjson::Value iKey(rapidjson::kStringType);
@@ -342,6 +369,16 @@ string RecognizeThaiIDCardOCRResponse::GetPortraitImage() const
 bool RecognizeThaiIDCardOCRResponse::PortraitImageHasBeenSet() const
 {
     return m_portraitImageHasBeenSet;
+}
+
+vector<int64_t> RecognizeThaiIDCardOCRResponse::GetWarnCardInfos() const
+{
+    return m_warnCardInfos;
+}
+
+bool RecognizeThaiIDCardOCRResponse::WarnCardInfosHasBeenSet() const
+{
+    return m_warnCardInfosHasBeenSet;
 }
 
 

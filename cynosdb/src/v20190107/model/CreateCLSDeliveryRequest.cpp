@@ -22,7 +22,9 @@
 using namespace TencentCloud::Cynosdb::V20190107::Model;
 using namespace std;
 
-CreateCLSDeliveryRequest::CreateCLSDeliveryRequest()
+CreateCLSDeliveryRequest::CreateCLSDeliveryRequest() :
+    m_instanceIdHasBeenSet(false),
+    m_cLSInfoListHasBeenSet(false)
 {
 }
 
@@ -33,6 +35,29 @@ string CreateCLSDeliveryRequest::ToJsonString() const
     rapidjson::Document::AllocatorType& allocator = d.GetAllocator();
 
 
+    if (m_instanceIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "InstanceId";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_instanceId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_cLSInfoListHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "CLSInfoList";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_cLSInfoList.begin(); itr != m_cLSInfoList.end(); ++itr, ++i)
+        {
+            d[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(d[key.c_str()][i], allocator);
+        }
+    }
+
 
     rapidjson::StringBuffer buffer;
     rapidjson::Writer<rapidjson::StringBuffer> writer(buffer);
@@ -40,5 +65,37 @@ string CreateCLSDeliveryRequest::ToJsonString() const
     return buffer.GetString();
 }
 
+
+string CreateCLSDeliveryRequest::GetInstanceId() const
+{
+    return m_instanceId;
+}
+
+void CreateCLSDeliveryRequest::SetInstanceId(const string& _instanceId)
+{
+    m_instanceId = _instanceId;
+    m_instanceIdHasBeenSet = true;
+}
+
+bool CreateCLSDeliveryRequest::InstanceIdHasBeenSet() const
+{
+    return m_instanceIdHasBeenSet;
+}
+
+vector<CLSInfo> CreateCLSDeliveryRequest::GetCLSInfoList() const
+{
+    return m_cLSInfoList;
+}
+
+void CreateCLSDeliveryRequest::SetCLSInfoList(const vector<CLSInfo>& _cLSInfoList)
+{
+    m_cLSInfoList = _cLSInfoList;
+    m_cLSInfoListHasBeenSet = true;
+}
+
+bool CreateCLSDeliveryRequest::CLSInfoListHasBeenSet() const
+{
+    return m_cLSInfoListHasBeenSet;
+}
 
 

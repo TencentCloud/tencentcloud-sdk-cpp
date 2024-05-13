@@ -130,6 +130,27 @@ namespace TencentCloud
                      */
                     bool LocationIdHasBeenSet() const;
 
+                    /**
+                     * 获取目标组权重，范围[0, 100]。仅绑定v2目标组时生效，如果不存在，则默认为10。
+                     * @return Weight 目标组权重，范围[0, 100]。仅绑定v2目标组时生效，如果不存在，则默认为10。
+                     * 
+                     */
+                    int64_t GetWeight() const;
+
+                    /**
+                     * 设置目标组权重，范围[0, 100]。仅绑定v2目标组时生效，如果不存在，则默认为10。
+                     * @param _weight 目标组权重，范围[0, 100]。仅绑定v2目标组时生效，如果不存在，则默认为10。
+                     * 
+                     */
+                    void SetWeight(const int64_t& _weight);
+
+                    /**
+                     * 判断参数 Weight 是否已赋值
+                     * @return Weight 是否已赋值
+                     * 
+                     */
+                    bool WeightHasBeenSet() const;
+
                 private:
 
                     /**
@@ -155,6 +176,12 @@ namespace TencentCloud
                      */
                     std::string m_locationId;
                     bool m_locationIdHasBeenSet;
+
+                    /**
+                     * 目标组权重，范围[0, 100]。仅绑定v2目标组时生效，如果不存在，则默认为10。
+                     */
+                    int64_t m_weight;
+                    bool m_weightHasBeenSet;
 
                 };
             }

@@ -44,7 +44,10 @@ ImpalaQuery::ImpalaQuery() :
     m_estimatedPerHostMemBytesHasBeenSet(false),
     m_numRowsFetchedFromCacheHasBeenSet(false),
     m_sessionIdHasBeenSet(false),
-    m_perNodePeakMemoryBytesSumHasBeenSet(false)
+    m_perNodePeakMemoryBytesSumHasBeenSet(false),
+    m_backendsCountHasBeenSet(false),
+    m_fragmentInstancesCountHasBeenSet(false),
+    m_remainingFragmentCountHasBeenSet(false)
 {
 }
 
@@ -293,6 +296,36 @@ CoreInternalOutcome ImpalaQuery::Deserialize(const rapidjson::Value &value)
         m_perNodePeakMemoryBytesSumHasBeenSet = true;
     }
 
+    if (value.HasMember("BackendsCount") && !value["BackendsCount"].IsNull())
+    {
+        if (!value["BackendsCount"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `ImpalaQuery.BackendsCount` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_backendsCount = value["BackendsCount"].GetInt64();
+        m_backendsCountHasBeenSet = true;
+    }
+
+    if (value.HasMember("FragmentInstancesCount") && !value["FragmentInstancesCount"].IsNull())
+    {
+        if (!value["FragmentInstancesCount"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `ImpalaQuery.FragmentInstancesCount` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_fragmentInstancesCount = value["FragmentInstancesCount"].GetInt64();
+        m_fragmentInstancesCountHasBeenSet = true;
+    }
+
+    if (value.HasMember("RemainingFragmentCount") && !value["RemainingFragmentCount"].IsNull())
+    {
+        if (!value["RemainingFragmentCount"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `ImpalaQuery.RemainingFragmentCount` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_remainingFragmentCount = value["RemainingFragmentCount"].GetInt64();
+        m_remainingFragmentCountHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -490,6 +523,30 @@ void ImpalaQuery::ToJsonObject(rapidjson::Value &value, rapidjson::Document::All
         string key = "PerNodePeakMemoryBytesSum";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_perNodePeakMemoryBytesSum, allocator);
+    }
+
+    if (m_backendsCountHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "BackendsCount";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_backendsCount, allocator);
+    }
+
+    if (m_fragmentInstancesCountHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "FragmentInstancesCount";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_fragmentInstancesCount, allocator);
+    }
+
+    if (m_remainingFragmentCountHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "RemainingFragmentCount";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_remainingFragmentCount, allocator);
     }
 
 }
@@ -877,5 +934,53 @@ void ImpalaQuery::SetPerNodePeakMemoryBytesSum(const int64_t& _perNodePeakMemory
 bool ImpalaQuery::PerNodePeakMemoryBytesSumHasBeenSet() const
 {
     return m_perNodePeakMemoryBytesSumHasBeenSet;
+}
+
+int64_t ImpalaQuery::GetBackendsCount() const
+{
+    return m_backendsCount;
+}
+
+void ImpalaQuery::SetBackendsCount(const int64_t& _backendsCount)
+{
+    m_backendsCount = _backendsCount;
+    m_backendsCountHasBeenSet = true;
+}
+
+bool ImpalaQuery::BackendsCountHasBeenSet() const
+{
+    return m_backendsCountHasBeenSet;
+}
+
+int64_t ImpalaQuery::GetFragmentInstancesCount() const
+{
+    return m_fragmentInstancesCount;
+}
+
+void ImpalaQuery::SetFragmentInstancesCount(const int64_t& _fragmentInstancesCount)
+{
+    m_fragmentInstancesCount = _fragmentInstancesCount;
+    m_fragmentInstancesCountHasBeenSet = true;
+}
+
+bool ImpalaQuery::FragmentInstancesCountHasBeenSet() const
+{
+    return m_fragmentInstancesCountHasBeenSet;
+}
+
+int64_t ImpalaQuery::GetRemainingFragmentCount() const
+{
+    return m_remainingFragmentCount;
+}
+
+void ImpalaQuery::SetRemainingFragmentCount(const int64_t& _remainingFragmentCount)
+{
+    m_remainingFragmentCount = _remainingFragmentCount;
+    m_remainingFragmentCountHasBeenSet = true;
+}
+
+bool ImpalaQuery::RemainingFragmentCountHasBeenSet() const
+{
+    return m_remainingFragmentCountHasBeenSet;
 }
 

@@ -23,8 +23,8 @@ using namespace TencentCloud::Ocr::V20181119::Model;
 using namespace std;
 
 HKIDCardOCRRequest::HKIDCardOCRRequest() :
-    m_detectFakeHasBeenSet(false),
     m_returnHeadImageHasBeenSet(false),
+    m_detectFakeHasBeenSet(false),
     m_imageBase64HasBeenSet(false),
     m_imageUrlHasBeenSet(false)
 {
@@ -37,20 +37,20 @@ string HKIDCardOCRRequest::ToJsonString() const
     rapidjson::Document::AllocatorType& allocator = d.GetAllocator();
 
 
-    if (m_detectFakeHasBeenSet)
-    {
-        rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "DetectFake";
-        iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, m_detectFake, allocator);
-    }
-
     if (m_returnHeadImageHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
         string key = "ReturnHeadImage";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_returnHeadImage, allocator);
+    }
+
+    if (m_detectFakeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "DetectFake";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_detectFake, allocator);
     }
 
     if (m_imageBase64HasBeenSet)
@@ -77,22 +77,6 @@ string HKIDCardOCRRequest::ToJsonString() const
 }
 
 
-bool HKIDCardOCRRequest::GetDetectFake() const
-{
-    return m_detectFake;
-}
-
-void HKIDCardOCRRequest::SetDetectFake(const bool& _detectFake)
-{
-    m_detectFake = _detectFake;
-    m_detectFakeHasBeenSet = true;
-}
-
-bool HKIDCardOCRRequest::DetectFakeHasBeenSet() const
-{
-    return m_detectFakeHasBeenSet;
-}
-
 bool HKIDCardOCRRequest::GetReturnHeadImage() const
 {
     return m_returnHeadImage;
@@ -107,6 +91,22 @@ void HKIDCardOCRRequest::SetReturnHeadImage(const bool& _returnHeadImage)
 bool HKIDCardOCRRequest::ReturnHeadImageHasBeenSet() const
 {
     return m_returnHeadImageHasBeenSet;
+}
+
+bool HKIDCardOCRRequest::GetDetectFake() const
+{
+    return m_detectFake;
+}
+
+void HKIDCardOCRRequest::SetDetectFake(const bool& _detectFake)
+{
+    m_detectFake = _detectFake;
+    m_detectFakeHasBeenSet = true;
+}
+
+bool HKIDCardOCRRequest::DetectFakeHasBeenSet() const
+{
+    return m_detectFakeHasBeenSet;
 }
 
 string HKIDCardOCRRequest::GetImageBase64() const

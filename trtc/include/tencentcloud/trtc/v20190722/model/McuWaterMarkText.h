@@ -256,6 +256,27 @@ namespace TencentCloud
                      */
                     bool ZOrderHasBeenSet() const;
 
+                    /**
+                     * 获取水印字体，不填默认为Tencent。支持设置以下值： Tencent （默认） SourceHanSans
+                     * @return Font 水印字体，不填默认为Tencent。支持设置以下值： Tencent （默认） SourceHanSans
+                     * 
+                     */
+                    std::string GetFont() const;
+
+                    /**
+                     * 设置水印字体，不填默认为Tencent。支持设置以下值： Tencent （默认） SourceHanSans
+                     * @param _font 水印字体，不填默认为Tencent。支持设置以下值： Tencent （默认） SourceHanSans
+                     * 
+                     */
+                    void SetFont(const std::string& _font);
+
+                    /**
+                     * 判断参数 Font 是否已赋值
+                     * @return Font 是否已赋值
+                     * 
+                     */
+                    bool FontHasBeenSet() const;
+
                 private:
 
                     /**
@@ -317,6 +338,12 @@ namespace TencentCloud
                      */
                     uint64_t m_zOrder;
                     bool m_zOrderHasBeenSet;
+
+                    /**
+                     * 水印字体，不填默认为Tencent。支持设置以下值： Tencent （默认） SourceHanSans
+                     */
+                    std::string m_font;
+                    bool m_fontHasBeenSet;
 
                 };
             }

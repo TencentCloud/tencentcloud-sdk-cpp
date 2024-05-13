@@ -646,6 +646,81 @@ namespace TencentCloud
                      */
                     bool PerNodePeakMemoryBytesSumHasBeenSet() const;
 
+                    /**
+                     * 获取后端个数
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return BackendsCount 后端个数
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    int64_t GetBackendsCount() const;
+
+                    /**
+                     * 设置后端个数
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _backendsCount 后端个数
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetBackendsCount(const int64_t& _backendsCount);
+
+                    /**
+                     * 判断参数 BackendsCount 是否已赋值
+                     * @return BackendsCount 是否已赋值
+                     * 
+                     */
+                    bool BackendsCountHasBeenSet() const;
+
+                    /**
+                     * 获取fragment数
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return FragmentInstancesCount fragment数
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    int64_t GetFragmentInstancesCount() const;
+
+                    /**
+                     * 设置fragment数
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _fragmentInstancesCount fragment数
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetFragmentInstancesCount(const int64_t& _fragmentInstancesCount);
+
+                    /**
+                     * 判断参数 FragmentInstancesCount 是否已赋值
+                     * @return FragmentInstancesCount 是否已赋值
+                     * 
+                     */
+                    bool FragmentInstancesCountHasBeenSet() const;
+
+                    /**
+                     * 获取剩余未完成Fragment数
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return RemainingFragmentCount 剩余未完成Fragment数
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    int64_t GetRemainingFragmentCount() const;
+
+                    /**
+                     * 设置剩余未完成Fragment数
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _remainingFragmentCount 剩余未完成Fragment数
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetRemainingFragmentCount(const int64_t& _remainingFragmentCount);
+
+                    /**
+                     * 判断参数 RemainingFragmentCount 是否已赋值
+                     * @return RemainingFragmentCount 是否已赋值
+                     * 
+                     */
+                    bool RemainingFragmentCountHasBeenSet() const;
+
                 private:
 
                     /**
@@ -815,6 +890,27 @@ namespace TencentCloud
                      */
                     int64_t m_perNodePeakMemoryBytesSum;
                     bool m_perNodePeakMemoryBytesSumHasBeenSet;
+
+                    /**
+                     * 后端个数
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    int64_t m_backendsCount;
+                    bool m_backendsCountHasBeenSet;
+
+                    /**
+                     * fragment数
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    int64_t m_fragmentInstancesCount;
+                    bool m_fragmentInstancesCountHasBeenSet;
+
+                    /**
+                     * 剩余未完成Fragment数
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    int64_t m_remainingFragmentCount;
+                    bool m_remainingFragmentCountHasBeenSet;
 
                 };
             }

@@ -328,6 +328,31 @@ namespace TencentCloud
                      */
                     bool SubnetIdsHasBeenSet() const;
 
+                    /**
+                     * 获取分组默认权重
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return DefaultWeight 分组默认权重
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    int64_t GetDefaultWeight() const;
+
+                    /**
+                     * 设置分组默认权重
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _defaultWeight 分组默认权重
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetDefaultWeight(const int64_t& _defaultWeight);
+
+                    /**
+                     * 判断参数 DefaultWeight 是否已赋值
+                     * @return DefaultWeight 是否已赋值
+                     * 
+                     */
+                    bool DefaultWeightHasBeenSet() const;
+
                 private:
 
                     /**
@@ -408,6 +433,13 @@ namespace TencentCloud
                      */
                     std::string m_subnetIds;
                     bool m_subnetIdsHasBeenSet;
+
+                    /**
+                     * 分组默认权重
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    int64_t m_defaultWeight;
+                    bool m_defaultWeightHasBeenSet;
 
                 };
             }

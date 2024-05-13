@@ -64,15 +64,15 @@ namespace TencentCloud
                     bool BusinessHasBeenSet() const;
 
                     /**
-                     * 获取统计开始时间。 例：“2020-09-22 00:00:00”
-                     * @return StartTime 统计开始时间。 例：“2020-09-22 00:00:00”
+                     * 获取统计开始时间。 例：“2020-09-22 00:00:00”，注意该时间必须为5分钟的倍数
+                     * @return StartTime 统计开始时间。 例：“2020-09-22 00:00:00”，注意该时间必须为5分钟的倍数
                      * 
                      */
                     std::string GetStartTime() const;
 
                     /**
-                     * 设置统计开始时间。 例：“2020-09-22 00:00:00”
-                     * @param _startTime 统计开始时间。 例：“2020-09-22 00:00:00”
+                     * 设置统计开始时间。 例：“2020-09-22 00:00:00”，注意该时间必须为5分钟的倍数
+                     * @param _startTime 统计开始时间。 例：“2020-09-22 00:00:00”，注意该时间必须为5分钟的倍数
                      * 
                      */
                     void SetStartTime(const std::string& _startTime);
@@ -85,15 +85,15 @@ namespace TencentCloud
                     bool StartTimeHasBeenSet() const;
 
                     /**
-                     * 获取统计结束时间。 例：“2020-09-22 00:00:00”
-                     * @return EndTime 统计结束时间。 例：“2020-09-22 00:00:00”
+                     * 获取统计结束时间。 例：“2020-09-22 00:00:00”，注意该时间必须为5分钟的倍数
+                     * @return EndTime 统计结束时间。 例：“2020-09-22 00:00:00”，注意该时间必须为5分钟的倍数
                      * 
                      */
                     std::string GetEndTime() const;
 
                     /**
-                     * 设置统计结束时间。 例：“2020-09-22 00:00:00”
-                     * @param _endTime 统计结束时间。 例：“2020-09-22 00:00:00”
+                     * 设置统计结束时间。 例：“2020-09-22 00:00:00”，注意该时间必须为5分钟的倍数
+                     * @param _endTime 统计结束时间。 例：“2020-09-22 00:00:00”，注意该时间必须为5分钟的倍数
                      * 
                      */
                     void SetEndTime(const std::string& _endTime);
@@ -177,13 +177,13 @@ namespace TencentCloud
                     bool m_businessHasBeenSet;
 
                     /**
-                     * 统计开始时间。 例：“2020-09-22 00:00:00”
+                     * 统计开始时间。 例：“2020-09-22 00:00:00”，注意该时间必须为5分钟的倍数
                      */
                     std::string m_startTime;
                     bool m_startTimeHasBeenSet;
 
                     /**
-                     * 统计结束时间。 例：“2020-09-22 00:00:00”
+                     * 统计结束时间。 例：“2020-09-22 00:00:00”，注意该时间必须为5分钟的倍数
                      */
                     std::string m_endTime;
                     bool m_endTimeHasBeenSet;

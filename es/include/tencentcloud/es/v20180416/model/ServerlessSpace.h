@@ -454,6 +454,31 @@ namespace TencentCloud
                      */
                     bool AppIdHasBeenSet() const;
 
+                    /**
+                     * 获取//默认en， 可选zh-CN
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return KibanaLanguage //默认en， 可选zh-CN
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::string GetKibanaLanguage() const;
+
+                    /**
+                     * 设置//默认en， 可选zh-CN
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _kibanaLanguage //默认en， 可选zh-CN
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetKibanaLanguage(const std::string& _kibanaLanguage);
+
+                    /**
+                     * 判断参数 KibanaLanguage 是否已赋值
+                     * @return KibanaLanguage 是否已赋值
+                     * 
+                     */
+                    bool KibanaLanguageHasBeenSet() const;
+
                 private:
 
                     /**
@@ -569,6 +594,13 @@ namespace TencentCloud
                      */
                     uint64_t m_appId;
                     bool m_appIdHasBeenSet;
+
+                    /**
+                     * //默认en， 可选zh-CN
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_kibanaLanguage;
+                    bool m_kibanaLanguageHasBeenSet;
 
                 };
             }

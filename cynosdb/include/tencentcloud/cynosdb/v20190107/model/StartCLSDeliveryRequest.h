@@ -42,7 +42,61 @@ namespace TencentCloud
                     std::string ToJsonString() const;
 
 
+                    /**
+                     * 获取实例id
+                     * @return InstanceId 实例id
+                     * 
+                     */
+                    std::string GetInstanceId() const;
+
+                    /**
+                     * 设置实例id
+                     * @param _instanceId 实例id
+                     * 
+                     */
+                    void SetInstanceId(const std::string& _instanceId);
+
+                    /**
+                     * 判断参数 InstanceId 是否已赋值
+                     * @return InstanceId 是否已赋值
+                     * 
+                     */
+                    bool InstanceIdHasBeenSet() const;
+
+                    /**
+                     * 获取开通的日志主题id
+                     * @return CLSTopicIds 开通的日志主题id
+                     * 
+                     */
+                    std::vector<std::string> GetCLSTopicIds() const;
+
+                    /**
+                     * 设置开通的日志主题id
+                     * @param _cLSTopicIds 开通的日志主题id
+                     * 
+                     */
+                    void SetCLSTopicIds(const std::vector<std::string>& _cLSTopicIds);
+
+                    /**
+                     * 判断参数 CLSTopicIds 是否已赋值
+                     * @return CLSTopicIds 是否已赋值
+                     * 
+                     */
+                    bool CLSTopicIdsHasBeenSet() const;
+
                 private:
+
+                    /**
+                     * 实例id
+                     */
+                    std::string m_instanceId;
+                    bool m_instanceIdHasBeenSet;
+
+                    /**
+                     * 开通的日志主题id
+                     */
+                    std::vector<std::string> m_cLSTopicIds;
+                    bool m_cLSTopicIdsHasBeenSet;
 
                 };
             }
