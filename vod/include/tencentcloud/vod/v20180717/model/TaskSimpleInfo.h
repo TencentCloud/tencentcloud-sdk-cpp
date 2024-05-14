@@ -68,15 +68,15 @@ namespace TencentCloud
                     bool TaskIdHasBeenSet() const;
 
                     /**
-                     * 获取任务状态。取值：WAITING（等待中）、PROCESSING（处理中）、FINISH（已完成）。
-                     * @return Status 任务状态。取值：WAITING（等待中）、PROCESSING（处理中）、FINISH（已完成）。
+                     * 获取任务状态。取值：WAITING（等待中）、PROCESSING（处理中）、FINISH（已完成）、ABORTED（已终止）。
+                     * @return Status 任务状态。取值：WAITING（等待中）、PROCESSING（处理中）、FINISH（已完成）、ABORTED（已终止）。
                      * 
                      */
                     std::string GetStatus() const;
 
                     /**
-                     * 设置任务状态。取值：WAITING（等待中）、PROCESSING（处理中）、FINISH（已完成）。
-                     * @param _status 任务状态。取值：WAITING（等待中）、PROCESSING（处理中）、FINISH（已完成）。
+                     * 设置任务状态。取值：WAITING（等待中）、PROCESSING（处理中）、FINISH（已完成）、ABORTED（已终止）。
+                     * @param _status 任务状态。取值：WAITING（等待中）、PROCESSING（处理中）、FINISH（已完成）、ABORTED（已终止）。
                      * 
                      */
                     void SetStatus(const std::string& _status);
@@ -288,7 +288,7 @@ namespace TencentCloud
                     bool m_taskIdHasBeenSet;
 
                     /**
-                     * 任务状态。取值：WAITING（等待中）、PROCESSING（处理中）、FINISH（已完成）。
+                     * 任务状态。取值：WAITING（等待中）、PROCESSING（处理中）、FINISH（已完成）、ABORTED（已终止）。
                      */
                     std::string m_status;
                     bool m_statusHasBeenSet;

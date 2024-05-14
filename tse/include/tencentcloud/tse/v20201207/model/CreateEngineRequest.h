@@ -628,6 +628,52 @@ zk专业版跨地域部署开启了固定Leader所在地域，需要满足以下
                     bool EngineRegionInfosHasBeenSet() const;
 
                     /**
+                     * 获取zk标准版请填CLOUD_PREMIUM，zk标准版无法选择磁盘类型和磁盘容量，默认为CLOUD_PREMIUM
+zk专业版可以为：CLOUD_SSD,CLOUD_SSD_PLUS,CLOUD_PREMIUM
+                     * @return StorageType zk标准版请填CLOUD_PREMIUM，zk标准版无法选择磁盘类型和磁盘容量，默认为CLOUD_PREMIUM
+zk专业版可以为：CLOUD_SSD,CLOUD_SSD_PLUS,CLOUD_PREMIUM
+                     * 
+                     */
+                    std::string GetStorageType() const;
+
+                    /**
+                     * 设置zk标准版请填CLOUD_PREMIUM，zk标准版无法选择磁盘类型和磁盘容量，默认为CLOUD_PREMIUM
+zk专业版可以为：CLOUD_SSD,CLOUD_SSD_PLUS,CLOUD_PREMIUM
+                     * @param _storageType zk标准版请填CLOUD_PREMIUM，zk标准版无法选择磁盘类型和磁盘容量，默认为CLOUD_PREMIUM
+zk专业版可以为：CLOUD_SSD,CLOUD_SSD_PLUS,CLOUD_PREMIUM
+                     * 
+                     */
+                    void SetStorageType(const std::string& _storageType);
+
+                    /**
+                     * 判断参数 StorageType 是否已赋值
+                     * @return StorageType 是否已赋值
+                     * 
+                     */
+                    bool StorageTypeHasBeenSet() const;
+
+                    /**
+                     * 获取zk标准版请填50，zk标准版无法选择磁盘类型和磁盘容量，磁盘容量默认为50
+                     * @return StorageCapacity zk标准版请填50，zk标准版无法选择磁盘类型和磁盘容量，磁盘容量默认为50
+                     * 
+                     */
+                    int64_t GetStorageCapacity() const;
+
+                    /**
+                     * 设置zk标准版请填50，zk标准版无法选择磁盘类型和磁盘容量，磁盘容量默认为50
+                     * @param _storageCapacity zk标准版请填50，zk标准版无法选择磁盘类型和磁盘容量，磁盘容量默认为50
+                     * 
+                     */
+                    void SetStorageCapacity(const int64_t& _storageCapacity);
+
+                    /**
+                     * 判断参数 StorageCapacity 是否已赋值
+                     * @return StorageCapacity 是否已赋值
+                     * 
+                     */
+                    bool StorageCapacityHasBeenSet() const;
+
+                    /**
                      * 获取zk专业版至多有两个盘，且磁盘的容量在50-3200之间
 如果只有一个磁盘，storageCapacity与storageOption里面的capacity应该一致
                      * @return StorageOption zk专业版至多有两个盘，且磁盘的容量在50-3200之间
@@ -831,6 +877,19 @@ zk专业版跨地域部署开启了固定Leader所在地域，需要满足以下
                      */
                     std::vector<EngineRegionInfo> m_engineRegionInfos;
                     bool m_engineRegionInfosHasBeenSet;
+
+                    /**
+                     * zk标准版请填CLOUD_PREMIUM，zk标准版无法选择磁盘类型和磁盘容量，默认为CLOUD_PREMIUM
+zk专业版可以为：CLOUD_SSD,CLOUD_SSD_PLUS,CLOUD_PREMIUM
+                     */
+                    std::string m_storageType;
+                    bool m_storageTypeHasBeenSet;
+
+                    /**
+                     * zk标准版请填50，zk标准版无法选择磁盘类型和磁盘容量，磁盘容量默认为50
+                     */
+                    int64_t m_storageCapacity;
+                    bool m_storageCapacityHasBeenSet;
 
                     /**
                      * zk专业版至多有两个盘，且磁盘的容量在50-3200之间

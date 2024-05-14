@@ -252,6 +252,90 @@ namespace TencentCloud
                      */
                     bool CatalogNameHasBeenSet() const;
 
+                    /**
+                     * 获取sql名
+                     * @return Sql sql名
+                     * 
+                     */
+                    std::string GetSql() const;
+
+                    /**
+                     * 设置sql名
+                     * @param _sql sql名
+                     * 
+                     */
+                    void SetSql(const std::string& _sql);
+
+                    /**
+                     * 判断参数 Sql 是否已赋值
+                     * @return Sql 是否已赋值
+                     * 
+                     */
+                    bool SqlHasBeenSet() const;
+
+                    /**
+                     * 获取ReadRows排序字段
+                     * @return ReadRows ReadRows排序字段
+                     * 
+                     */
+                    std::string GetReadRows() const;
+
+                    /**
+                     * 设置ReadRows排序字段
+                     * @param _readRows ReadRows排序字段
+                     * 
+                     */
+                    void SetReadRows(const std::string& _readRows);
+
+                    /**
+                     * 判断参数 ReadRows 是否已赋值
+                     * @return ReadRows 是否已赋值
+                     * 
+                     */
+                    bool ReadRowsHasBeenSet() const;
+
+                    /**
+                     * 获取ResultBytes排序字段
+                     * @return ResultBytes ResultBytes排序字段
+                     * 
+                     */
+                    std::string GetResultBytes() const;
+
+                    /**
+                     * 设置ResultBytes排序字段
+                     * @param _resultBytes ResultBytes排序字段
+                     * 
+                     */
+                    void SetResultBytes(const std::string& _resultBytes);
+
+                    /**
+                     * 判断参数 ResultBytes 是否已赋值
+                     * @return ResultBytes 是否已赋值
+                     * 
+                     */
+                    bool ResultBytesHasBeenSet() const;
+
+                    /**
+                     * 获取MemoryUsage排序字段
+                     * @return MemoryUsage MemoryUsage排序字段
+                     * 
+                     */
+                    std::string GetMemoryUsage() const;
+
+                    /**
+                     * 设置MemoryUsage排序字段
+                     * @param _memoryUsage MemoryUsage排序字段
+                     * 
+                     */
+                    void SetMemoryUsage(const std::string& _memoryUsage);
+
+                    /**
+                     * 判断参数 MemoryUsage 是否已赋值
+                     * @return MemoryUsage 是否已赋值
+                     * 
+                     */
+                    bool MemoryUsageHasBeenSet() const;
+
                 private:
 
                     /**
@@ -313,6 +397,30 @@ namespace TencentCloud
                      */
                     std::vector<std::string> m_catalogName;
                     bool m_catalogNameHasBeenSet;
+
+                    /**
+                     * sql名
+                     */
+                    std::string m_sql;
+                    bool m_sqlHasBeenSet;
+
+                    /**
+                     * ReadRows排序字段
+                     */
+                    std::string m_readRows;
+                    bool m_readRowsHasBeenSet;
+
+                    /**
+                     * ResultBytes排序字段
+                     */
+                    std::string m_resultBytes;
+                    bool m_resultBytesHasBeenSet;
+
+                    /**
+                     * MemoryUsage排序字段
+                     */
+                    std::string m_memoryUsage;
+                    bool m_memoryUsageHasBeenSet;
 
                 };
             }

@@ -39,6 +39,8 @@ CreateEngineRequest::CreateEngineRequest() :
     m_prepaidPeriodHasBeenSet(false),
     m_prepaidRenewFlagHasBeenSet(false),
     m_engineRegionInfosHasBeenSet(false),
+    m_storageTypeHasBeenSet(false),
+    m_storageCapacityHasBeenSet(false),
     m_storageOptionHasBeenSet(false),
     m_affinityConstraintHasBeenSet(false)
 {
@@ -199,6 +201,22 @@ string CreateEngineRequest::ToJsonString() const
             d[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
             (*itr).ToJsonObject(d[key.c_str()][i], allocator);
         }
+    }
+
+    if (m_storageTypeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "StorageType";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_storageType.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_storageCapacityHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "StorageCapacity";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_storageCapacity, allocator);
     }
 
     if (m_storageOptionHasBeenSet)
@@ -486,6 +504,38 @@ void CreateEngineRequest::SetEngineRegionInfos(const vector<EngineRegionInfo>& _
 bool CreateEngineRequest::EngineRegionInfosHasBeenSet() const
 {
     return m_engineRegionInfosHasBeenSet;
+}
+
+string CreateEngineRequest::GetStorageType() const
+{
+    return m_storageType;
+}
+
+void CreateEngineRequest::SetStorageType(const string& _storageType)
+{
+    m_storageType = _storageType;
+    m_storageTypeHasBeenSet = true;
+}
+
+bool CreateEngineRequest::StorageTypeHasBeenSet() const
+{
+    return m_storageTypeHasBeenSet;
+}
+
+int64_t CreateEngineRequest::GetStorageCapacity() const
+{
+    return m_storageCapacity;
+}
+
+void CreateEngineRequest::SetStorageCapacity(const int64_t& _storageCapacity)
+{
+    m_storageCapacity = _storageCapacity;
+    m_storageCapacityHasBeenSet = true;
+}
+
+bool CreateEngineRequest::StorageCapacityHasBeenSet() const
+{
+    return m_storageCapacityHasBeenSet;
 }
 
 vector<StorageOption> CreateEngineRequest::GetStorageOption() const

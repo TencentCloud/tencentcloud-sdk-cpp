@@ -32,7 +32,11 @@ DescribeSlowQueryRecordsRequest::DescribeSlowQueryRecordsRequest() :
     m_durationMsHasBeenSet(false),
     m_dbNameHasBeenSet(false),
     m_isQueryHasBeenSet(false),
-    m_catalogNameHasBeenSet(false)
+    m_catalogNameHasBeenSet(false),
+    m_sqlHasBeenSet(false),
+    m_readRowsHasBeenSet(false),
+    m_resultBytesHasBeenSet(false),
+    m_memoryUsageHasBeenSet(false)
 {
 }
 
@@ -131,6 +135,38 @@ string DescribeSlowQueryRecordsRequest::ToJsonString() const
         {
             d[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
         }
+    }
+
+    if (m_sqlHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Sql";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_sql.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_readRowsHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ReadRows";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_readRows.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_resultBytesHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ResultBytes";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_resultBytes.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_memoryUsageHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "MemoryUsage";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_memoryUsage.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -299,6 +335,70 @@ void DescribeSlowQueryRecordsRequest::SetCatalogName(const vector<string>& _cata
 bool DescribeSlowQueryRecordsRequest::CatalogNameHasBeenSet() const
 {
     return m_catalogNameHasBeenSet;
+}
+
+string DescribeSlowQueryRecordsRequest::GetSql() const
+{
+    return m_sql;
+}
+
+void DescribeSlowQueryRecordsRequest::SetSql(const string& _sql)
+{
+    m_sql = _sql;
+    m_sqlHasBeenSet = true;
+}
+
+bool DescribeSlowQueryRecordsRequest::SqlHasBeenSet() const
+{
+    return m_sqlHasBeenSet;
+}
+
+string DescribeSlowQueryRecordsRequest::GetReadRows() const
+{
+    return m_readRows;
+}
+
+void DescribeSlowQueryRecordsRequest::SetReadRows(const string& _readRows)
+{
+    m_readRows = _readRows;
+    m_readRowsHasBeenSet = true;
+}
+
+bool DescribeSlowQueryRecordsRequest::ReadRowsHasBeenSet() const
+{
+    return m_readRowsHasBeenSet;
+}
+
+string DescribeSlowQueryRecordsRequest::GetResultBytes() const
+{
+    return m_resultBytes;
+}
+
+void DescribeSlowQueryRecordsRequest::SetResultBytes(const string& _resultBytes)
+{
+    m_resultBytes = _resultBytes;
+    m_resultBytesHasBeenSet = true;
+}
+
+bool DescribeSlowQueryRecordsRequest::ResultBytesHasBeenSet() const
+{
+    return m_resultBytesHasBeenSet;
+}
+
+string DescribeSlowQueryRecordsRequest::GetMemoryUsage() const
+{
+    return m_memoryUsage;
+}
+
+void DescribeSlowQueryRecordsRequest::SetMemoryUsage(const string& _memoryUsage)
+{
+    m_memoryUsage = _memoryUsage;
+    m_memoryUsageHasBeenSet = true;
+}
+
+bool DescribeSlowQueryRecordsRequest::MemoryUsageHasBeenSet() const
+{
+    return m_memoryUsageHasBeenSet;
 }
 
 
