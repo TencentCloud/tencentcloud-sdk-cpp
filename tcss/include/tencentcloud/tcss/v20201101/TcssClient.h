@@ -353,6 +353,8 @@
 #include <tencentcloud/tcss/v20201101/model/DescribeEscapeSafeStateResponse.h>
 #include <tencentcloud/tcss/v20201101/model/DescribeEscapeWhiteListRequest.h>
 #include <tencentcloud/tcss/v20201101/model/DescribeEscapeWhiteListResponse.h>
+#include <tencentcloud/tcss/v20201101/model/DescribeEventEscapeImageListRequest.h>
+#include <tencentcloud/tcss/v20201101/model/DescribeEventEscapeImageListResponse.h>
 #include <tencentcloud/tcss/v20201101/model/DescribeExportJobDownloadURLRequest.h>
 #include <tencentcloud/tcss/v20201101/model/DescribeExportJobDownloadURLResponse.h>
 #include <tencentcloud/tcss/v20201101/model/DescribeExportJobManageListRequest.h>
@@ -1206,6 +1208,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeEscapeWhiteListResponse> DescribeEscapeWhiteListOutcome;
                 typedef std::future<DescribeEscapeWhiteListOutcome> DescribeEscapeWhiteListOutcomeCallable;
                 typedef std::function<void(const TcssClient*, const Model::DescribeEscapeWhiteListRequest&, DescribeEscapeWhiteListOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeEscapeWhiteListAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeEventEscapeImageListResponse> DescribeEventEscapeImageListOutcome;
+                typedef std::future<DescribeEventEscapeImageListOutcome> DescribeEventEscapeImageListOutcomeCallable;
+                typedef std::function<void(const TcssClient*, const Model::DescribeEventEscapeImageListRequest&, DescribeEventEscapeImageListOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeEventEscapeImageListAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeExportJobDownloadURLResponse> DescribeExportJobDownloadURLOutcome;
                 typedef std::future<DescribeExportJobDownloadURLOutcome> DescribeExportJobDownloadURLOutcomeCallable;
                 typedef std::function<void(const TcssClient*, const Model::DescribeExportJobDownloadURLRequest&, DescribeExportJobDownloadURLOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeExportJobDownloadURLAsyncHandler;
@@ -3212,6 +3217,15 @@ namespace TencentCloud
                 DescribeEscapeWhiteListOutcome DescribeEscapeWhiteList(const Model::DescribeEscapeWhiteListRequest &request);
                 void DescribeEscapeWhiteListAsync(const Model::DescribeEscapeWhiteListRequest& request, const DescribeEscapeWhiteListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DescribeEscapeWhiteListOutcomeCallable DescribeEscapeWhiteListCallable(const Model::DescribeEscapeWhiteListRequest& request);
+
+                /**
+                 *DescribeRiskContainerImageList查询风险容器镜像列表
+                 * @param req DescribeEventEscapeImageListRequest
+                 * @return DescribeEventEscapeImageListOutcome
+                 */
+                DescribeEventEscapeImageListOutcome DescribeEventEscapeImageList(const Model::DescribeEventEscapeImageListRequest &request);
+                void DescribeEventEscapeImageListAsync(const Model::DescribeEventEscapeImageListRequest& request, const DescribeEventEscapeImageListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeEventEscapeImageListOutcomeCallable DescribeEventEscapeImageListCallable(const Model::DescribeEventEscapeImageListRequest& request);
 
                 /**
                  *查询导出任务下载URL

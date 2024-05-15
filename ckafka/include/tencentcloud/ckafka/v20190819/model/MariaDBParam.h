@@ -48,14 +48,18 @@ namespace TencentCloud
 
                     /**
                      * 获取MariaDB的数据库名称，"*"为全数据库
+注意：此字段可能返回 null，表示取不到有效值。
                      * @return Database MariaDB的数据库名称，"*"为全数据库
+注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetDatabase() const;
 
                     /**
                      * 设置MariaDB的数据库名称，"*"为全数据库
+注意：此字段可能返回 null，表示取不到有效值。
                      * @param _database MariaDB的数据库名称，"*"为全数据库
+注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetDatabase(const std::string& _database);
@@ -69,14 +73,18 @@ namespace TencentCloud
 
                     /**
                      * 获取MariaDB的数据表名称，"*"为所监听的所有数据库中的非系统表，可以","间隔，监听多个数据表，但数据表需要以"数据库名.数据表名"的格式进行填写
+注意：此字段可能返回 null，表示取不到有效值。
                      * @return Table MariaDB的数据表名称，"*"为所监听的所有数据库中的非系统表，可以","间隔，监听多个数据表，但数据表需要以"数据库名.数据表名"的格式进行填写
+注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetTable() const;
 
                     /**
                      * 设置MariaDB的数据表名称，"*"为所监听的所有数据库中的非系统表，可以","间隔，监听多个数据表，但数据表需要以"数据库名.数据表名"的格式进行填写
+注意：此字段可能返回 null，表示取不到有效值。
                      * @param _table MariaDB的数据表名称，"*"为所监听的所有数据库中的非系统表，可以","间隔，监听多个数据表，但数据表需要以"数据库名.数据表名"的格式进行填写
+注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetTable(const std::string& _table);
@@ -90,14 +98,18 @@ namespace TencentCloud
 
                     /**
                      * 获取该MariaDB在连接管理内的Id
+注意：此字段可能返回 null，表示取不到有效值。
                      * @return Resource 该MariaDB在连接管理内的Id
+注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetResource() const;
 
                     /**
                      * 设置该MariaDB在连接管理内的Id
+注意：此字段可能返回 null，表示取不到有效值。
                      * @param _resource 该MariaDB在连接管理内的Id
+注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetResource(const std::string& _resource);
@@ -111,14 +123,18 @@ namespace TencentCloud
 
                     /**
                      * 获取复制存量信息(schema_only不复制, initial全量)，默认位initial
+注意：此字段可能返回 null，表示取不到有效值。
                      * @return SnapshotMode 复制存量信息(schema_only不复制, initial全量)，默认位initial
+注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetSnapshotMode() const;
 
                     /**
                      * 设置复制存量信息(schema_only不复制, initial全量)，默认位initial
+注意：此字段可能返回 null，表示取不到有效值。
                      * @param _snapshotMode 复制存量信息(schema_only不复制, initial全量)，默认位initial
+注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetSnapshotMode(const std::string& _snapshotMode);
@@ -132,14 +148,18 @@ namespace TencentCloud
 
                     /**
                      * 获取格式：库1.表1:字段1,字段2;库2.表2:字段2，表之间;（分号）隔开，字段之间,（逗号）隔开。不指定的表默认取表的主键
+注意：此字段可能返回 null，表示取不到有效值。
                      * @return KeyColumns 格式：库1.表1:字段1,字段2;库2.表2:字段2，表之间;（分号）隔开，字段之间,（逗号）隔开。不指定的表默认取表的主键
+注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetKeyColumns() const;
 
                     /**
                      * 设置格式：库1.表1:字段1,字段2;库2.表2:字段2，表之间;（分号）隔开，字段之间,（逗号）隔开。不指定的表默认取表的主键
+注意：此字段可能返回 null，表示取不到有效值。
                      * @param _keyColumns 格式：库1.表1:字段1,字段2;库2.表2:字段2，表之间;（分号）隔开，字段之间,（逗号）隔开。不指定的表默认取表的主键
+注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetKeyColumns(const std::string& _keyColumns);
@@ -153,14 +173,18 @@ namespace TencentCloud
 
                     /**
                      * 获取当Table输入的是前缀时，该项值为true，否则为false
+注意：此字段可能返回 null，表示取不到有效值。
                      * @return IsTablePrefix 当Table输入的是前缀时，该项值为true，否则为false
+注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     bool GetIsTablePrefix() const;
 
                     /**
                      * 设置当Table输入的是前缀时，该项值为true，否则为false
+注意：此字段可能返回 null，表示取不到有效值。
                      * @param _isTablePrefix 当Table输入的是前缀时，该项值为true，否则为false
+注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetIsTablePrefix(const bool& _isTablePrefix);
@@ -174,14 +198,18 @@ namespace TencentCloud
 
                     /**
                      * 获取输出格式，DEFAULT、CANAL_1、CANAL_2
+注意：此字段可能返回 null，表示取不到有效值。
                      * @return OutputFormat 输出格式，DEFAULT、CANAL_1、CANAL_2
+注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetOutputFormat() const;
 
                     /**
                      * 设置输出格式，DEFAULT、CANAL_1、CANAL_2
+注意：此字段可能返回 null，表示取不到有效值。
                      * @param _outputFormat 输出格式，DEFAULT、CANAL_1、CANAL_2
+注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetOutputFormat(const std::string& _outputFormat);
@@ -195,14 +223,18 @@ namespace TencentCloud
 
                     /**
                      * 获取如果该值为all，则DDL数据以及DML数据也会写入到选中的topic；若该值为dml，则只有DML数据写入到选中的topic
+注意：此字段可能返回 null，表示取不到有效值。
                      * @return IncludeContentChanges 如果该值为all，则DDL数据以及DML数据也会写入到选中的topic；若该值为dml，则只有DML数据写入到选中的topic
+注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetIncludeContentChanges() const;
 
                     /**
                      * 设置如果该值为all，则DDL数据以及DML数据也会写入到选中的topic；若该值为dml，则只有DML数据写入到选中的topic
+注意：此字段可能返回 null，表示取不到有效值。
                      * @param _includeContentChanges 如果该值为all，则DDL数据以及DML数据也会写入到选中的topic；若该值为dml，则只有DML数据写入到选中的topic
+注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetIncludeContentChanges(const std::string& _includeContentChanges);
@@ -216,14 +248,18 @@ namespace TencentCloud
 
                     /**
                      * 获取如果该值为true，且MySQL中"binlog_rows_query_log_events"配置项的值为"ON"，则流入到topic的数据包含原SQL语句；若该值为false，流入到topic的数据不包含原SQL语句
+注意：此字段可能返回 null，表示取不到有效值。
                      * @return IncludeQuery 如果该值为true，且MySQL中"binlog_rows_query_log_events"配置项的值为"ON"，则流入到topic的数据包含原SQL语句；若该值为false，流入到topic的数据不包含原SQL语句
+注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     bool GetIncludeQuery() const;
 
                     /**
                      * 设置如果该值为true，且MySQL中"binlog_rows_query_log_events"配置项的值为"ON"，则流入到topic的数据包含原SQL语句；若该值为false，流入到topic的数据不包含原SQL语句
+注意：此字段可能返回 null，表示取不到有效值。
                      * @param _includeQuery 如果该值为true，且MySQL中"binlog_rows_query_log_events"配置项的值为"ON"，则流入到topic的数据包含原SQL语句；若该值为false，流入到topic的数据不包含原SQL语句
+注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetIncludeQuery(const bool& _includeQuery);
@@ -237,14 +273,18 @@ namespace TencentCloud
 
                     /**
                      * 获取如果该值为 true，则消息中会携带消息结构体对应的schema，如果该值为false则不会携带
+注意：此字段可能返回 null，表示取不到有效值。
                      * @return RecordWithSchema 如果该值为 true，则消息中会携带消息结构体对应的schema，如果该值为false则不会携带
+注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     bool GetRecordWithSchema() const;
 
                     /**
                      * 设置如果该值为 true，则消息中会携带消息结构体对应的schema，如果该值为false则不会携带
+注意：此字段可能返回 null，表示取不到有效值。
                      * @param _recordWithSchema 如果该值为 true，则消息中会携带消息结构体对应的schema，如果该值为false则不会携带
+注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetRecordWithSchema(const bool& _recordWithSchema);
@@ -260,60 +300,70 @@ namespace TencentCloud
 
                     /**
                      * MariaDB的数据库名称，"*"为全数据库
+注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_database;
                     bool m_databaseHasBeenSet;
 
                     /**
                      * MariaDB的数据表名称，"*"为所监听的所有数据库中的非系统表，可以","间隔，监听多个数据表，但数据表需要以"数据库名.数据表名"的格式进行填写
+注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_table;
                     bool m_tableHasBeenSet;
 
                     /**
                      * 该MariaDB在连接管理内的Id
+注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_resource;
                     bool m_resourceHasBeenSet;
 
                     /**
                      * 复制存量信息(schema_only不复制, initial全量)，默认位initial
+注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_snapshotMode;
                     bool m_snapshotModeHasBeenSet;
 
                     /**
                      * 格式：库1.表1:字段1,字段2;库2.表2:字段2，表之间;（分号）隔开，字段之间,（逗号）隔开。不指定的表默认取表的主键
+注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_keyColumns;
                     bool m_keyColumnsHasBeenSet;
 
                     /**
                      * 当Table输入的是前缀时，该项值为true，否则为false
+注意：此字段可能返回 null，表示取不到有效值。
                      */
                     bool m_isTablePrefix;
                     bool m_isTablePrefixHasBeenSet;
 
                     /**
                      * 输出格式，DEFAULT、CANAL_1、CANAL_2
+注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_outputFormat;
                     bool m_outputFormatHasBeenSet;
 
                     /**
                      * 如果该值为all，则DDL数据以及DML数据也会写入到选中的topic；若该值为dml，则只有DML数据写入到选中的topic
+注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_includeContentChanges;
                     bool m_includeContentChangesHasBeenSet;
 
                     /**
                      * 如果该值为true，且MySQL中"binlog_rows_query_log_events"配置项的值为"ON"，则流入到topic的数据包含原SQL语句；若该值为false，流入到topic的数据不包含原SQL语句
+注意：此字段可能返回 null，表示取不到有效值。
                      */
                     bool m_includeQuery;
                     bool m_includeQueryHasBeenSet;
 
                     /**
                      * 如果该值为 true，则消息中会携带消息结构体对应的schema，如果该值为false则不会携带
+注意：此字段可能返回 null，表示取不到有效值。
                      */
                     bool m_recordWithSchema;
                     bool m_recordWithSchemaHasBeenSet;

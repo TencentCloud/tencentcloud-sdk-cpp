@@ -37,7 +37,8 @@ DatahubResource::DatahubResource() :
     m_mariaDBParamHasBeenSet(false),
     m_sQLServerParamHasBeenSet(false),
     m_ctsdbParamHasBeenSet(false),
-    m_scfParamHasBeenSet(false)
+    m_scfParamHasBeenSet(false),
+    m_mqttParamHasBeenSet(false)
 {
 }
 
@@ -328,6 +329,23 @@ CoreInternalOutcome DatahubResource::Deserialize(const rapidjson::Value &value)
         m_scfParamHasBeenSet = true;
     }
 
+    if (value.HasMember("MqttParam") && !value["MqttParam"].IsNull())
+    {
+        if (!value["MqttParam"].IsObject())
+        {
+            return CoreInternalOutcome(Core::Error("response `DatahubResource.MqttParam` is not object type").SetRequestId(requestId));
+        }
+
+        CoreInternalOutcome outcome = m_mqttParam.Deserialize(value["MqttParam"]);
+        if (!outcome.IsSuccess())
+        {
+            outcome.GetError().SetRequestId(requestId);
+            return outcome;
+        }
+
+        m_mqttParamHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -485,6 +503,15 @@ void DatahubResource::ToJsonObject(rapidjson::Value &value, rapidjson::Document:
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
         m_scfParam.ToJsonObject(value[key.c_str()], allocator);
+    }
+
+    if (m_mqttParamHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "MqttParam";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_mqttParam.ToJsonObject(value[key.c_str()], allocator);
     }
 
 }
@@ -760,5 +787,21 @@ void DatahubResource::SetScfParam(const ScfParam& _scfParam)
 bool DatahubResource::ScfParamHasBeenSet() const
 {
     return m_scfParamHasBeenSet;
+}
+
+MqttParam DatahubResource::GetMqttParam() const
+{
+    return m_mqttParam;
+}
+
+void DatahubResource::SetMqttParam(const MqttParam& _mqttParam)
+{
+    m_mqttParam = _mqttParam;
+    m_mqttParamHasBeenSet = true;
+}
+
+bool DatahubResource::MqttParamHasBeenSet() const
+{
+    return m_mqttParamHasBeenSet;
 }
 

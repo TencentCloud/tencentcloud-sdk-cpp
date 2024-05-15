@@ -40,6 +40,7 @@
 #include <tencentcloud/ckafka/v20190819/model/SQLServerParam.h>
 #include <tencentcloud/ckafka/v20190819/model/CtsdbParam.h>
 #include <tencentcloud/ckafka/v20190819/model/ScfParam.h>
+#include <tencentcloud/ckafka/v20190819/model/MqttParam.h>
 
 
 namespace TencentCloud
@@ -483,6 +484,31 @@ namespace TencentCloud
                      */
                     bool ScfParamHasBeenSet() const;
 
+                    /**
+                     * 获取MQTT配置，Type为 MQTT 时必填
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return MqttParam MQTT配置，Type为 MQTT 时必填
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    MqttParam GetMqttParam() const;
+
+                    /**
+                     * 设置MQTT配置，Type为 MQTT 时必填
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _mqttParam MQTT配置，Type为 MQTT 时必填
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetMqttParam(const MqttParam& _mqttParam);
+
+                    /**
+                     * 判断参数 MqttParam 是否已赋值
+                     * @return MqttParam 是否已赋值
+                     * 
+                     */
+                    bool MqttParamHasBeenSet() const;
+
                 private:
 
                     /**
@@ -602,6 +628,13 @@ namespace TencentCloud
                      */
                     ScfParam m_scfParam;
                     bool m_scfParamHasBeenSet;
+
+                    /**
+                     * MQTT配置，Type为 MQTT 时必填
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    MqttParam m_mqttParam;
+                    bool m_mqttParamHasBeenSet;
 
                 };
             }

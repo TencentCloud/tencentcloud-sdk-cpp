@@ -7135,6 +7135,49 @@ TcssClient::DescribeEscapeWhiteListOutcomeCallable TcssClient::DescribeEscapeWhi
     return task->get_future();
 }
 
+TcssClient::DescribeEventEscapeImageListOutcome TcssClient::DescribeEventEscapeImageList(const DescribeEventEscapeImageListRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeEventEscapeImageList");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeEventEscapeImageListResponse rsp = DescribeEventEscapeImageListResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeEventEscapeImageListOutcome(rsp);
+        else
+            return DescribeEventEscapeImageListOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeEventEscapeImageListOutcome(outcome.GetError());
+    }
+}
+
+void TcssClient::DescribeEventEscapeImageListAsync(const DescribeEventEscapeImageListRequest& request, const DescribeEventEscapeImageListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeEventEscapeImageList(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+TcssClient::DescribeEventEscapeImageListOutcomeCallable TcssClient::DescribeEventEscapeImageListCallable(const DescribeEventEscapeImageListRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeEventEscapeImageListOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeEventEscapeImageList(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 TcssClient::DescribeExportJobDownloadURLOutcome TcssClient::DescribeExportJobDownloadURL(const DescribeExportJobDownloadURLRequest &request)
 {
     auto outcome = MakeRequest(request, "DescribeExportJobDownloadURL");

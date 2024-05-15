@@ -42,7 +42,8 @@ DescribeConnectResource::DescribeConnectResource() :
     m_sQLServerConnectParamHasBeenSet(false),
     m_ctsdbConnectParamHasBeenSet(false),
     m_dorisConnectParamHasBeenSet(false),
-    m_kafkaConnectParamHasBeenSet(false)
+    m_kafkaConnectParamHasBeenSet(false),
+    m_mqttConnectParamHasBeenSet(false)
 {
 }
 
@@ -351,6 +352,23 @@ CoreInternalOutcome DescribeConnectResource::Deserialize(const rapidjson::Value 
         m_kafkaConnectParamHasBeenSet = true;
     }
 
+    if (value.HasMember("MqttConnectParam") && !value["MqttConnectParam"].IsNull())
+    {
+        if (!value["MqttConnectParam"].IsObject())
+        {
+            return CoreInternalOutcome(Core::Error("response `DescribeConnectResource.MqttConnectParam` is not object type").SetRequestId(requestId));
+        }
+
+        CoreInternalOutcome outcome = m_mqttConnectParam.Deserialize(value["MqttConnectParam"]);
+        if (!outcome.IsSuccess())
+        {
+            outcome.GetError().SetRequestId(requestId);
+            return outcome;
+        }
+
+        m_mqttConnectParamHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -548,6 +566,15 @@ void DescribeConnectResource::ToJsonObject(rapidjson::Value &value, rapidjson::D
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
         m_kafkaConnectParam.ToJsonObject(value[key.c_str()], allocator);
+    }
+
+    if (m_mqttConnectParamHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "MqttConnectParam";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_mqttConnectParam.ToJsonObject(value[key.c_str()], allocator);
     }
 
 }
@@ -903,5 +930,21 @@ void DescribeConnectResource::SetKafkaConnectParam(const KafkaConnectParam& _kaf
 bool DescribeConnectResource::KafkaConnectParamHasBeenSet() const
 {
     return m_kafkaConnectParamHasBeenSet;
+}
+
+MqttConnectParam DescribeConnectResource::GetMqttConnectParam() const
+{
+    return m_mqttConnectParam;
+}
+
+void DescribeConnectResource::SetMqttConnectParam(const MqttConnectParam& _mqttConnectParam)
+{
+    m_mqttConnectParam = _mqttConnectParam;
+    m_mqttConnectParamHasBeenSet = true;
+}
+
+bool DescribeConnectResource::MqttConnectParamHasBeenSet() const
+{
+    return m_mqttConnectParamHasBeenSet;
 }
 

@@ -87,24 +87,28 @@ namespace TencentCloud
 
                     /**
                      * 获取过滤条件。
-<li>IpOrAlias - String - 是否必填：否 - 主机ip或别名筛选</li>
-<li>Uuid - String - 是否必填：否 - 主机安全唯一Uuid</li>
 <li>Quuid - String - 是否必填：否 - 云服务器uuid</li>
+<li>Uuid - String - 是否必填：否 - 主机安全唯一Uuid</li>
+<li>MachineName - String - 是否必填：否 - 主机别名</li>
+<li>Ip - String - 是否必填：否 - 主机ip</li>
+<li>InstanceID - String - 是否必填：否 - 主机实例ID</li>
+<li>SrcIp - String - 是否必填：否 - 来源ip筛选</li>
 <li>UserName - String - 是否必填：否 - 用户名筛选</li>
+<li>Status - int - 是否必填：否 - 状态筛选1:正常登录；5：已加白,14:已处理，15：已忽略</li>
 <li>LoginTimeBegin - String - 是否必填：否 - 按照修改时间段筛选，开始时间</li>
 <li>LoginTimeEnd - String - 是否必填：否 - 按照修改时间段筛选，结束时间</li>
-<li>SrcIp - String - 是否必填：否 - 来源ip筛选</li>
-<li>Status - int - 是否必填：否 - 状态筛选1:正常登录；5：已加白,14:已处理，15：已忽略</li>
 <li>RiskLevel - int - 是否必填：否 - 状态筛选0:高危；1：可疑</li>
                      * @return Filters 过滤条件。
-<li>IpOrAlias - String - 是否必填：否 - 主机ip或别名筛选</li>
-<li>Uuid - String - 是否必填：否 - 主机安全唯一Uuid</li>
 <li>Quuid - String - 是否必填：否 - 云服务器uuid</li>
+<li>Uuid - String - 是否必填：否 - 主机安全唯一Uuid</li>
+<li>MachineName - String - 是否必填：否 - 主机别名</li>
+<li>Ip - String - 是否必填：否 - 主机ip</li>
+<li>InstanceID - String - 是否必填：否 - 主机实例ID</li>
+<li>SrcIp - String - 是否必填：否 - 来源ip筛选</li>
 <li>UserName - String - 是否必填：否 - 用户名筛选</li>
+<li>Status - int - 是否必填：否 - 状态筛选1:正常登录；5：已加白,14:已处理，15：已忽略</li>
 <li>LoginTimeBegin - String - 是否必填：否 - 按照修改时间段筛选，开始时间</li>
 <li>LoginTimeEnd - String - 是否必填：否 - 按照修改时间段筛选，结束时间</li>
-<li>SrcIp - String - 是否必填：否 - 来源ip筛选</li>
-<li>Status - int - 是否必填：否 - 状态筛选1:正常登录；5：已加白,14:已处理，15：已忽略</li>
 <li>RiskLevel - int - 是否必填：否 - 状态筛选0:高危；1：可疑</li>
                      * 
                      */
@@ -112,24 +116,28 @@ namespace TencentCloud
 
                     /**
                      * 设置过滤条件。
-<li>IpOrAlias - String - 是否必填：否 - 主机ip或别名筛选</li>
-<li>Uuid - String - 是否必填：否 - 主机安全唯一Uuid</li>
 <li>Quuid - String - 是否必填：否 - 云服务器uuid</li>
+<li>Uuid - String - 是否必填：否 - 主机安全唯一Uuid</li>
+<li>MachineName - String - 是否必填：否 - 主机别名</li>
+<li>Ip - String - 是否必填：否 - 主机ip</li>
+<li>InstanceID - String - 是否必填：否 - 主机实例ID</li>
+<li>SrcIp - String - 是否必填：否 - 来源ip筛选</li>
 <li>UserName - String - 是否必填：否 - 用户名筛选</li>
+<li>Status - int - 是否必填：否 - 状态筛选1:正常登录；5：已加白,14:已处理，15：已忽略</li>
 <li>LoginTimeBegin - String - 是否必填：否 - 按照修改时间段筛选，开始时间</li>
 <li>LoginTimeEnd - String - 是否必填：否 - 按照修改时间段筛选，结束时间</li>
-<li>SrcIp - String - 是否必填：否 - 来源ip筛选</li>
-<li>Status - int - 是否必填：否 - 状态筛选1:正常登录；5：已加白,14:已处理，15：已忽略</li>
 <li>RiskLevel - int - 是否必填：否 - 状态筛选0:高危；1：可疑</li>
                      * @param _filters 过滤条件。
-<li>IpOrAlias - String - 是否必填：否 - 主机ip或别名筛选</li>
-<li>Uuid - String - 是否必填：否 - 主机安全唯一Uuid</li>
 <li>Quuid - String - 是否必填：否 - 云服务器uuid</li>
+<li>Uuid - String - 是否必填：否 - 主机安全唯一Uuid</li>
+<li>MachineName - String - 是否必填：否 - 主机别名</li>
+<li>Ip - String - 是否必填：否 - 主机ip</li>
+<li>InstanceID - String - 是否必填：否 - 主机实例ID</li>
+<li>SrcIp - String - 是否必填：否 - 来源ip筛选</li>
 <li>UserName - String - 是否必填：否 - 用户名筛选</li>
+<li>Status - int - 是否必填：否 - 状态筛选1:正常登录；5：已加白,14:已处理，15：已忽略</li>
 <li>LoginTimeBegin - String - 是否必填：否 - 按照修改时间段筛选，开始时间</li>
 <li>LoginTimeEnd - String - 是否必填：否 - 按照修改时间段筛选，结束时间</li>
-<li>SrcIp - String - 是否必填：否 - 来源ip筛选</li>
-<li>Status - int - 是否必填：否 - 状态筛选1:正常登录；5：已加白,14:已处理，15：已忽略</li>
 <li>RiskLevel - int - 是否必填：否 - 状态筛选0:高危；1：可疑</li>
                      * 
                      */
@@ -200,14 +208,16 @@ namespace TencentCloud
 
                     /**
                      * 过滤条件。
-<li>IpOrAlias - String - 是否必填：否 - 主机ip或别名筛选</li>
-<li>Uuid - String - 是否必填：否 - 主机安全唯一Uuid</li>
 <li>Quuid - String - 是否必填：否 - 云服务器uuid</li>
+<li>Uuid - String - 是否必填：否 - 主机安全唯一Uuid</li>
+<li>MachineName - String - 是否必填：否 - 主机别名</li>
+<li>Ip - String - 是否必填：否 - 主机ip</li>
+<li>InstanceID - String - 是否必填：否 - 主机实例ID</li>
+<li>SrcIp - String - 是否必填：否 - 来源ip筛选</li>
 <li>UserName - String - 是否必填：否 - 用户名筛选</li>
+<li>Status - int - 是否必填：否 - 状态筛选1:正常登录；5：已加白,14:已处理，15：已忽略</li>
 <li>LoginTimeBegin - String - 是否必填：否 - 按照修改时间段筛选，开始时间</li>
 <li>LoginTimeEnd - String - 是否必填：否 - 按照修改时间段筛选，结束时间</li>
-<li>SrcIp - String - 是否必填：否 - 来源ip筛选</li>
-<li>Status - int - 是否必填：否 - 状态筛选1:正常登录；5：已加白,14:已处理，15：已忽略</li>
 <li>RiskLevel - int - 是否必填：否 - 状态筛选0:高危；1：可疑</li>
                      */
                     std::vector<Filter> m_filters;

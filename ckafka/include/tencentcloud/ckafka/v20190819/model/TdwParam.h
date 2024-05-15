@@ -48,14 +48,18 @@ namespace TencentCloud
 
                     /**
                      * 获取Tdw的bid
+注意：此字段可能返回 null，表示取不到有效值。
                      * @return Bid Tdw的bid
+注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetBid() const;
 
                     /**
                      * 设置Tdw的bid
+注意：此字段可能返回 null，表示取不到有效值。
                      * @param _bid Tdw的bid
+注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetBid(const std::string& _bid);
@@ -69,14 +73,18 @@ namespace TencentCloud
 
                     /**
                      * 获取Tdw的tid
+注意：此字段可能返回 null，表示取不到有效值。
                      * @return Tid Tdw的tid
+注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetTid() const;
 
                     /**
                      * 设置Tdw的tid
+注意：此字段可能返回 null，表示取不到有效值。
                      * @param _tid Tdw的tid
+注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetTid(const std::string& _tid);
@@ -90,14 +98,18 @@ namespace TencentCloud
 
                     /**
                      * 获取默认true
+注意：此字段可能返回 null，表示取不到有效值。
                      * @return IsDomestic 默认true
+注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     bool GetIsDomestic() const;
 
                     /**
                      * 设置默认true
+注意：此字段可能返回 null，表示取不到有效值。
                      * @param _isDomestic 默认true
+注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetIsDomestic(const bool& _isDomestic);
@@ -111,14 +123,18 @@ namespace TencentCloud
 
                     /**
                      * 获取TDW地址，默认tl-tdbank-tdmanager.tencent-distribute.com
+注意：此字段可能返回 null，表示取不到有效值。
                      * @return TdwHost TDW地址，默认tl-tdbank-tdmanager.tencent-distribute.com
+注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetTdwHost() const;
 
                     /**
                      * 设置TDW地址，默认tl-tdbank-tdmanager.tencent-distribute.com
+注意：此字段可能返回 null，表示取不到有效值。
                      * @param _tdwHost TDW地址，默认tl-tdbank-tdmanager.tencent-distribute.com
+注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetTdwHost(const std::string& _tdwHost);
@@ -132,14 +148,18 @@ namespace TencentCloud
 
                     /**
                      * 获取TDW端口，默认8099
+注意：此字段可能返回 null，表示取不到有效值。
                      * @return TdwPort TDW端口，默认8099
+注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetTdwPort() const;
 
                     /**
                      * 设置TDW端口，默认8099
+注意：此字段可能返回 null，表示取不到有效值。
                      * @param _tdwPort TDW端口，默认8099
+注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetTdwPort(const int64_t& _tdwPort);
@@ -155,30 +175,35 @@ namespace TencentCloud
 
                     /**
                      * Tdw的bid
+注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_bid;
                     bool m_bidHasBeenSet;
 
                     /**
                      * Tdw的tid
+注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_tid;
                     bool m_tidHasBeenSet;
 
                     /**
                      * 默认true
+注意：此字段可能返回 null，表示取不到有效值。
                      */
                     bool m_isDomestic;
                     bool m_isDomesticHasBeenSet;
 
                     /**
                      * TDW地址，默认tl-tdbank-tdmanager.tencent-distribute.com
+注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_tdwHost;
                     bool m_tdwHostHasBeenSet;
 
                     /**
                      * TDW端口，默认8099
+注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_tdwPort;
                     bool m_tdwPortHasBeenSet;

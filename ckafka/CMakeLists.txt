@@ -92,6 +92,7 @@ set(ckafka_public_header_model
   include/tencentcloud/ckafka/v20190819/model/DynamicDiskConfig.h
   include/tencentcloud/ckafka/v20190819/model/TopicMessageHeapRanking.h
   include/tencentcloud/ckafka/v20190819/model/DorisConnectParam.h
+  include/tencentcloud/ckafka/v20190819/model/MqttParam.h
   include/tencentcloud/ckafka/v20190819/model/SendMessageRequest.h
   include/tencentcloud/ckafka/v20190819/model/TopicFlowRanking.h
   include/tencentcloud/ckafka/v20190819/model/BrokerTopicFlowData.h
@@ -174,6 +175,7 @@ set(ckafka_public_header_model
   include/tencentcloud/ckafka/v20190819/model/DescribeInstanceAttributesRequest.h
   include/tencentcloud/ckafka/v20190819/model/InquiryPublicNetworkParam.h
   include/tencentcloud/ckafka/v20190819/model/TopicInSyncReplicaInfo.h
+  include/tencentcloud/ckafka/v20190819/model/MqttConnectParam.h
   include/tencentcloud/ckafka/v20190819/model/DeleteConnectResourceResponse.h
   include/tencentcloud/ckafka/v20190819/model/DescribeRegionRequest.h
   include/tencentcloud/ckafka/v20190819/model/InstanceConfigDO.h
@@ -432,6 +434,7 @@ set(ckafka_src
   src/v20190819/model/DynamicDiskConfig.cpp
   src/v20190819/model/TopicMessageHeapRanking.cpp
   src/v20190819/model/DorisConnectParam.cpp
+  src/v20190819/model/MqttParam.cpp
   src/v20190819/model/SendMessageRequest.cpp
   src/v20190819/model/TopicFlowRanking.cpp
   src/v20190819/model/BrokerTopicFlowData.cpp
@@ -514,6 +517,7 @@ set(ckafka_src
   src/v20190819/model/DescribeInstanceAttributesRequest.cpp
   src/v20190819/model/InquiryPublicNetworkParam.cpp
   src/v20190819/model/TopicInSyncReplicaInfo.cpp
+  src/v20190819/model/MqttConnectParam.cpp
   src/v20190819/model/DeleteConnectResourceResponse.cpp
   src/v20190819/model/DescribeRegionRequest.cpp
   src/v20190819/model/InstanceConfigDO.cpp

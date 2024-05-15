@@ -211,15 +211,15 @@ namespace TencentCloud
                     bool MXHasBeenSet() const;
 
                     /**
-                     * 获取TTL，范围1-604800，不同等级域名最小值不同。
-                     * @return TTL TTL，范围1-604800，不同等级域名最小值不同。
+                     * 获取TTL，范围1-604800，不同套餐域名最小值不同。
+                     * @return TTL TTL，范围1-604800，不同套餐域名最小值不同。
                      * 
                      */
                     uint64_t GetTTL() const;
 
                     /**
-                     * 设置TTL，范围1-604800，不同等级域名最小值不同。
-                     * @param _tTL TTL，范围1-604800，不同等级域名最小值不同。
+                     * 设置TTL，范围1-604800，不同套餐域名最小值不同。
+                     * @param _tTL TTL，范围1-604800，不同套餐域名最小值不同。
                      * 
                      */
                     void SetTTL(const uint64_t& _tTL);
@@ -366,7 +366,7 @@ namespace TencentCloud
                     bool m_mXHasBeenSet;
 
                     /**
-                     * TTL，范围1-604800，不同等级域名最小值不同。
+                     * TTL，范围1-604800，不同套餐域名最小值不同。
                      */
                     uint64_t m_tTL;
                     bool m_tTLHasBeenSet;

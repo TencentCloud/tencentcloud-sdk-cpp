@@ -101,6 +101,8 @@
 #include <tencentcloud/csip/v20221121/model/ModifyRiskCenterScanTaskResponse.h>
 #include <tencentcloud/csip/v20221121/model/StopRiskCenterTaskRequest.h>
 #include <tencentcloud/csip/v20221121/model/StopRiskCenterTaskResponse.h>
+#include <tencentcloud/csip/v20221121/model/UpdateAlertStatusListRequest.h>
+#include <tencentcloud/csip/v20221121/model/UpdateAlertStatusListResponse.h>
 
 
 namespace TencentCloud
@@ -232,6 +234,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::StopRiskCenterTaskResponse> StopRiskCenterTaskOutcome;
                 typedef std::future<StopRiskCenterTaskOutcome> StopRiskCenterTaskOutcomeCallable;
                 typedef std::function<void(const CsipClient*, const Model::StopRiskCenterTaskRequest&, StopRiskCenterTaskOutcome, const std::shared_ptr<const AsyncCallerContext>&)> StopRiskCenterTaskAsyncHandler;
+                typedef Outcome<Core::Error, Model::UpdateAlertStatusListResponse> UpdateAlertStatusListOutcome;
+                typedef std::future<UpdateAlertStatusListOutcome> UpdateAlertStatusListOutcomeCallable;
+                typedef std::function<void(const CsipClient*, const Model::UpdateAlertStatusListRequest&, UpdateAlertStatusListOutcome, const std::shared_ptr<const AsyncCallerContext>&)> UpdateAlertStatusListAsyncHandler;
 
 
 
@@ -585,6 +590,15 @@ namespace TencentCloud
                 StopRiskCenterTaskOutcome StopRiskCenterTask(const Model::StopRiskCenterTaskRequest &request);
                 void StopRiskCenterTaskAsync(const Model::StopRiskCenterTaskRequest& request, const StopRiskCenterTaskAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 StopRiskCenterTaskOutcomeCallable StopRiskCenterTaskCallable(const Model::StopRiskCenterTaskRequest& request);
+
+                /**
+                 *批量告警状态处理接口
+                 * @param req UpdateAlertStatusListRequest
+                 * @return UpdateAlertStatusListOutcome
+                 */
+                UpdateAlertStatusListOutcome UpdateAlertStatusList(const Model::UpdateAlertStatusListRequest &request);
+                void UpdateAlertStatusListAsync(const Model::UpdateAlertStatusListRequest& request, const UpdateAlertStatusListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                UpdateAlertStatusListOutcomeCallable UpdateAlertStatusListCallable(const Model::UpdateAlertStatusListRequest& request);
 
             };
         }

@@ -1717,3 +1717,46 @@ CsipClient::StopRiskCenterTaskOutcomeCallable CsipClient::StopRiskCenterTaskCall
     return task->get_future();
 }
 
+CsipClient::UpdateAlertStatusListOutcome CsipClient::UpdateAlertStatusList(const UpdateAlertStatusListRequest &request)
+{
+    auto outcome = MakeRequest(request, "UpdateAlertStatusList");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        UpdateAlertStatusListResponse rsp = UpdateAlertStatusListResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return UpdateAlertStatusListOutcome(rsp);
+        else
+            return UpdateAlertStatusListOutcome(o.GetError());
+    }
+    else
+    {
+        return UpdateAlertStatusListOutcome(outcome.GetError());
+    }
+}
+
+void CsipClient::UpdateAlertStatusListAsync(const UpdateAlertStatusListRequest& request, const UpdateAlertStatusListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->UpdateAlertStatusList(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+CsipClient::UpdateAlertStatusListOutcomeCallable CsipClient::UpdateAlertStatusListCallable(const UpdateAlertStatusListRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<UpdateAlertStatusListOutcome()>>(
+        [this, request]()
+        {
+            return this->UpdateAlertStatusList(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+

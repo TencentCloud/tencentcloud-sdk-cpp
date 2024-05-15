@@ -48,14 +48,18 @@ namespace TencentCloud
 
                     /**
                      * 获取Dts实例Id
+注意：此字段可能返回 null，表示取不到有效值。
                      * @return Resource Dts实例Id
+注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetResource() const;
 
                     /**
                      * 设置Dts实例Id
+注意：此字段可能返回 null，表示取不到有效值。
                      * @param _resource Dts实例Id
+注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetResource(const std::string& _resource);
@@ -69,14 +73,18 @@ namespace TencentCloud
 
                     /**
                      * 获取Dts的连接ip
+注意：此字段可能返回 null，表示取不到有效值。
                      * @return Ip Dts的连接ip
+注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetIp() const;
 
                     /**
                      * 设置Dts的连接ip
+注意：此字段可能返回 null，表示取不到有效值。
                      * @param _ip Dts的连接ip
+注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetIp(const std::string& _ip);
@@ -90,14 +98,18 @@ namespace TencentCloud
 
                     /**
                      * 获取Dts的连接port
+注意：此字段可能返回 null，表示取不到有效值。
                      * @return Port Dts的连接port
+注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetPort() const;
 
                     /**
                      * 设置Dts的连接port
+注意：此字段可能返回 null，表示取不到有效值。
                      * @param _port Dts的连接port
+注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetPort(const int64_t& _port);
@@ -111,14 +123,18 @@ namespace TencentCloud
 
                     /**
                      * 获取Dts订阅的topic
+注意：此字段可能返回 null，表示取不到有效值。
                      * @return Topic Dts订阅的topic
+注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetTopic() const;
 
                     /**
                      * 设置Dts订阅的topic
+注意：此字段可能返回 null，表示取不到有效值。
                      * @param _topic Dts订阅的topic
+注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetTopic(const std::string& _topic);
@@ -132,14 +148,18 @@ namespace TencentCloud
 
                     /**
                      * 获取Dts消费分组的Id
+注意：此字段可能返回 null，表示取不到有效值。
                      * @return GroupId Dts消费分组的Id
+注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetGroupId() const;
 
                     /**
                      * 设置Dts消费分组的Id
+注意：此字段可能返回 null，表示取不到有效值。
                      * @param _groupId Dts消费分组的Id
+注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetGroupId(const std::string& _groupId);
@@ -153,14 +173,18 @@ namespace TencentCloud
 
                     /**
                      * 获取Dts消费分组的账号
+注意：此字段可能返回 null，表示取不到有效值。
                      * @return GroupUser Dts消费分组的账号
+注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetGroupUser() const;
 
                     /**
                      * 设置Dts消费分组的账号
+注意：此字段可能返回 null，表示取不到有效值。
                      * @param _groupUser Dts消费分组的账号
+注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetGroupUser(const std::string& _groupUser);
@@ -174,14 +198,18 @@ namespace TencentCloud
 
                     /**
                      * 获取Dts消费分组的密码
+注意：此字段可能返回 null，表示取不到有效值。
                      * @return GroupPassword Dts消费分组的密码
+注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetGroupPassword() const;
 
                     /**
                      * 设置Dts消费分组的密码
+注意：此字段可能返回 null，表示取不到有效值。
                      * @param _groupPassword Dts消费分组的密码
+注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetGroupPassword(const std::string& _groupPassword);
@@ -195,14 +223,18 @@ namespace TencentCloud
 
                     /**
                      * 获取false同步原始数据，true同步解析后的json格式数据,默认true
+注意：此字段可能返回 null，表示取不到有效值。
                      * @return TranSql false同步原始数据，true同步解析后的json格式数据,默认true
+注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     bool GetTranSql() const;
 
                     /**
                      * 设置false同步原始数据，true同步解析后的json格式数据,默认true
+注意：此字段可能返回 null，表示取不到有效值。
                      * @param _tranSql false同步原始数据，true同步解析后的json格式数据,默认true
+注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetTranSql(const bool& _tranSql);
@@ -218,48 +250,56 @@ namespace TencentCloud
 
                     /**
                      * Dts实例Id
+注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_resource;
                     bool m_resourceHasBeenSet;
 
                     /**
                      * Dts的连接ip
+注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_ip;
                     bool m_ipHasBeenSet;
 
                     /**
                      * Dts的连接port
+注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_port;
                     bool m_portHasBeenSet;
 
                     /**
                      * Dts订阅的topic
+注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_topic;
                     bool m_topicHasBeenSet;
 
                     /**
                      * Dts消费分组的Id
+注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_groupId;
                     bool m_groupIdHasBeenSet;
 
                     /**
                      * Dts消费分组的账号
+注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_groupUser;
                     bool m_groupUserHasBeenSet;
 
                     /**
                      * Dts消费分组的密码
+注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_groupPassword;
                     bool m_groupPasswordHasBeenSet;
 
                     /**
                      * false同步原始数据，true同步解析后的json格式数据,默认true
+注意：此字段可能返回 null，表示取不到有效值。
                      */
                     bool m_tranSql;
                     bool m_tranSqlHasBeenSet;

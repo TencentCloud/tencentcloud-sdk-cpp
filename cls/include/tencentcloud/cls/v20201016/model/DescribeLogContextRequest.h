@@ -64,15 +64,15 @@ namespace TencentCloud
                     bool TopicIdHasBeenSet() const;
 
                     /**
-                     * 获取日志时间,  格式: YYYY-mm-dd HH:MM:SS.FFF
-                     * @return BTime 日志时间,  格式: YYYY-mm-dd HH:MM:SS.FFF
+                     * 获取日志时间,  需按照 UTC+8 时区将日志中的Unix时间戳转换为 YYYY-mm-dd HH:MM:SS.FFF 格式的字符串。
+                     * @return BTime 日志时间,  需按照 UTC+8 时区将日志中的Unix时间戳转换为 YYYY-mm-dd HH:MM:SS.FFF 格式的字符串。
                      * 
                      */
                     std::string GetBTime() const;
 
                     /**
-                     * 设置日志时间,  格式: YYYY-mm-dd HH:MM:SS.FFF
-                     * @param _bTime 日志时间,  格式: YYYY-mm-dd HH:MM:SS.FFF
+                     * 设置日志时间,  需按照 UTC+8 时区将日志中的Unix时间戳转换为 YYYY-mm-dd HH:MM:SS.FFF 格式的字符串。
+                     * @param _bTime 日志时间,  需按照 UTC+8 时区将日志中的Unix时间戳转换为 YYYY-mm-dd HH:MM:SS.FFF 格式的字符串。
                      * 
                      */
                     void SetBTime(const std::string& _bTime);
@@ -181,7 +181,7 @@ SearchLog接口返回信息中Results结构中的PkgLogId。
                     bool m_topicIdHasBeenSet;
 
                     /**
-                     * 日志时间,  格式: YYYY-mm-dd HH:MM:SS.FFF
+                     * 日志时间,  需按照 UTC+8 时区将日志中的Unix时间戳转换为 YYYY-mm-dd HH:MM:SS.FFF 格式的字符串。
                      */
                     std::string m_bTime;
                     bool m_bTimeHasBeenSet;

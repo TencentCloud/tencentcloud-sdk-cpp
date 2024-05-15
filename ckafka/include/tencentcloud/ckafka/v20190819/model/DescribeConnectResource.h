@@ -35,6 +35,7 @@
 #include <tencentcloud/ckafka/v20190819/model/CtsdbConnectParam.h>
 #include <tencentcloud/ckafka/v20190819/model/DorisConnectParam.h>
 #include <tencentcloud/ckafka/v20190819/model/KafkaConnectParam.h>
+#include <tencentcloud/ckafka/v20190819/model/MqttConnectParam.h>
 
 
 namespace TencentCloud
@@ -607,6 +608,31 @@ namespace TencentCloud
                      */
                     bool KafkaConnectParamHasBeenSet() const;
 
+                    /**
+                     * 获取MQTT配置，Type 为 MQTT 时返回
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return MqttConnectParam MQTT配置，Type 为 MQTT 时返回
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    MqttConnectParam GetMqttConnectParam() const;
+
+                    /**
+                     * 设置MQTT配置，Type 为 MQTT 时返回
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _mqttConnectParam MQTT配置，Type 为 MQTT 时返回
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetMqttConnectParam(const MqttConnectParam& _mqttConnectParam);
+
+                    /**
+                     * 判断参数 MqttConnectParam 是否已赋值
+                     * @return MqttConnectParam 是否已赋值
+                     * 
+                     */
+                    bool MqttConnectParamHasBeenSet() const;
+
                 private:
 
                     /**
@@ -762,6 +788,13 @@ namespace TencentCloud
                      */
                     KafkaConnectParam m_kafkaConnectParam;
                     bool m_kafkaConnectParamHasBeenSet;
+
+                    /**
+                     * MQTT配置，Type 为 MQTT 时返回
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    MqttConnectParam m_mqttConnectParam;
+                    bool m_mqttConnectParamHasBeenSet;
 
                 };
             }

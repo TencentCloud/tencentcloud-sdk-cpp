@@ -48,14 +48,18 @@ namespace TencentCloud
 
                     /**
                      * 获取cos 存储桶名称
+注意：此字段可能返回 null，表示取不到有效值。
                      * @return BucketName cos 存储桶名称
+注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetBucketName() const;
 
                     /**
                      * 设置cos 存储桶名称
+注意：此字段可能返回 null，表示取不到有效值。
                      * @param _bucketName cos 存储桶名称
+注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetBucketName(const std::string& _bucketName);
@@ -69,14 +73,18 @@ namespace TencentCloud
 
                     /**
                      * 获取地域代码
+注意：此字段可能返回 null，表示取不到有效值。
                      * @return Region 地域代码
+注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetRegion() const;
 
                     /**
                      * 设置地域代码
+注意：此字段可能返回 null，表示取不到有效值。
                      * @param _region 地域代码
+注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetRegion(const std::string& _region);
@@ -90,14 +98,18 @@ namespace TencentCloud
 
                     /**
                      * 获取对象名称
+注意：此字段可能返回 null，表示取不到有效值。
                      * @return ObjectKey 对象名称
+注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetObjectKey() const;
 
                     /**
                      * 设置对象名称
+注意：此字段可能返回 null，表示取不到有效值。
                      * @param _objectKey 对象名称
+注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetObjectKey(const std::string& _objectKey);
@@ -111,14 +123,18 @@ namespace TencentCloud
 
                     /**
                      * 获取汇聚消息量的大小（单位：MB)
+注意：此字段可能返回 null，表示取不到有效值。
                      * @return AggregateBatchSize 汇聚消息量的大小（单位：MB)
+注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     uint64_t GetAggregateBatchSize() const;
 
                     /**
                      * 设置汇聚消息量的大小（单位：MB)
+注意：此字段可能返回 null，表示取不到有效值。
                      * @param _aggregateBatchSize 汇聚消息量的大小（单位：MB)
+注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetAggregateBatchSize(const uint64_t& _aggregateBatchSize);
@@ -132,14 +148,18 @@ namespace TencentCloud
 
                     /**
                      * 获取汇聚的时间间隔（单位：小时）
+注意：此字段可能返回 null，表示取不到有效值。
                      * @return AggregateInterval 汇聚的时间间隔（单位：小时）
+注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     uint64_t GetAggregateInterval() const;
 
                     /**
                      * 设置汇聚的时间间隔（单位：小时）
+注意：此字段可能返回 null，表示取不到有效值。
                      * @param _aggregateInterval 汇聚的时间间隔（单位：小时）
+注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetAggregateInterval(const uint64_t& _aggregateInterval);
@@ -153,14 +173,18 @@ namespace TencentCloud
 
                     /**
                      * 获取消息汇聚后的文件格式（支持csv, json）
+注意：此字段可能返回 null，表示取不到有效值。
                      * @return FormatOutputType 消息汇聚后的文件格式（支持csv, json）
+注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetFormatOutputType() const;
 
                     /**
                      * 设置消息汇聚后的文件格式（支持csv, json）
+注意：此字段可能返回 null，表示取不到有效值。
                      * @param _formatOutputType 消息汇聚后的文件格式（支持csv, json）
+注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetFormatOutputType(const std::string& _formatOutputType);
@@ -174,14 +198,18 @@ namespace TencentCloud
 
                     /**
                      * 获取转储的对象目录前缀
+注意：此字段可能返回 null，表示取不到有效值。
                      * @return ObjectKeyPrefix 转储的对象目录前缀
+注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetObjectKeyPrefix() const;
 
                     /**
                      * 设置转储的对象目录前缀
+注意：此字段可能返回 null，表示取不到有效值。
                      * @param _objectKeyPrefix 转储的对象目录前缀
+注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetObjectKeyPrefix(const std::string& _objectKeyPrefix);
@@ -195,14 +223,18 @@ namespace TencentCloud
 
                     /**
                      * 获取根据strptime 时间格式化的分区格式
+注意：此字段可能返回 null，表示取不到有效值。
                      * @return DirectoryTimeFormat 根据strptime 时间格式化的分区格式
+注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetDirectoryTimeFormat() const;
 
                     /**
                      * 设置根据strptime 时间格式化的分区格式
+注意：此字段可能返回 null，表示取不到有效值。
                      * @param _directoryTimeFormat 根据strptime 时间格式化的分区格式
+注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetDirectoryTimeFormat(const std::string& _directoryTimeFormat);
@@ -218,48 +250,56 @@ namespace TencentCloud
 
                     /**
                      * cos 存储桶名称
+注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_bucketName;
                     bool m_bucketNameHasBeenSet;
 
                     /**
                      * 地域代码
+注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_region;
                     bool m_regionHasBeenSet;
 
                     /**
                      * 对象名称
+注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_objectKey;
                     bool m_objectKeyHasBeenSet;
 
                     /**
                      * 汇聚消息量的大小（单位：MB)
+注意：此字段可能返回 null，表示取不到有效值。
                      */
                     uint64_t m_aggregateBatchSize;
                     bool m_aggregateBatchSizeHasBeenSet;
 
                     /**
                      * 汇聚的时间间隔（单位：小时）
+注意：此字段可能返回 null，表示取不到有效值。
                      */
                     uint64_t m_aggregateInterval;
                     bool m_aggregateIntervalHasBeenSet;
 
                     /**
                      * 消息汇聚后的文件格式（支持csv, json）
+注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_formatOutputType;
                     bool m_formatOutputTypeHasBeenSet;
 
                     /**
                      * 转储的对象目录前缀
+注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_objectKeyPrefix;
                     bool m_objectKeyPrefixHasBeenSet;
 
                     /**
                      * 根据strptime 时间格式化的分区格式
+注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_directoryTimeFormat;
                     bool m_directoryTimeFormatHasBeenSet;
