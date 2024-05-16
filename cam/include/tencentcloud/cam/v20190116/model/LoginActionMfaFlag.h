@@ -47,15 +47,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取是否设置手机号为登陆和敏感操作安全校验方式， 1: 设置，0: 不设置
-                     * @return Phone 是否设置手机号为登陆和敏感操作安全校验方式， 1: 设置，0: 不设置
+                     * 获取是否设置手机号为登录和敏感操作安全校验方式， 1: 设置，0: 不设置
+                     * @return Phone 是否设置手机号为登录和敏感操作安全校验方式， 1: 设置，0: 不设置
                      * 
                      */
                     uint64_t GetPhone() const;
 
                     /**
-                     * 设置是否设置手机号为登陆和敏感操作安全校验方式， 1: 设置，0: 不设置
-                     * @param _phone 是否设置手机号为登陆和敏感操作安全校验方式， 1: 设置，0: 不设置
+                     * 设置是否设置手机号为登录和敏感操作安全校验方式， 1: 设置，0: 不设置
+                     * @param _phone 是否设置手机号为登录和敏感操作安全校验方式， 1: 设置，0: 不设置
                      * 
                      */
                     void SetPhone(const uint64_t& _phone);
@@ -68,15 +68,15 @@ namespace TencentCloud
                     bool PhoneHasBeenSet() const;
 
                     /**
-                     * 获取是否设置软token为登陆和敏感操作安全校验方式， 1: 设置，0: 不设置
-                     * @return Stoken 是否设置软token为登陆和敏感操作安全校验方式， 1: 设置，0: 不设置
+                     * 获取是否设置软token为登录和敏感操作安全校验方式， 1: 设置，0: 不设置
+                     * @return Stoken 是否设置软token为登录和敏感操作安全校验方式， 1: 设置，0: 不设置
                      * 
                      */
                     uint64_t GetStoken() const;
 
                     /**
-                     * 设置是否设置软token为登陆和敏感操作安全校验方式， 1: 设置，0: 不设置
-                     * @param _stoken 是否设置软token为登陆和敏感操作安全校验方式， 1: 设置，0: 不设置
+                     * 设置是否设置软token为登录和敏感操作安全校验方式， 1: 设置，0: 不设置
+                     * @param _stoken 是否设置软token为登录和敏感操作安全校验方式， 1: 设置，0: 不设置
                      * 
                      */
                     void SetStoken(const uint64_t& _stoken);
@@ -89,15 +89,15 @@ namespace TencentCloud
                     bool StokenHasBeenSet() const;
 
                     /**
-                     * 获取是否设置微信为登陆和敏感操作安全校验方式， 1: 设置，0: 不设置
-                     * @return Wechat 是否设置微信为登陆和敏感操作安全校验方式， 1: 设置，0: 不设置
+                     * 获取是否设置微信为登录和敏感操作安全校验方式， 1: 设置，0: 不设置
+                     * @return Wechat 是否设置微信为登录和敏感操作安全校验方式， 1: 设置，0: 不设置
                      * 
                      */
                     uint64_t GetWechat() const;
 
                     /**
-                     * 设置是否设置微信为登陆和敏感操作安全校验方式， 1: 设置，0: 不设置
-                     * @param _wechat 是否设置微信为登陆和敏感操作安全校验方式， 1: 设置，0: 不设置
+                     * 设置是否设置微信为登录和敏感操作安全校验方式， 1: 设置，0: 不设置
+                     * @param _wechat 是否设置微信为登录和敏感操作安全校验方式， 1: 设置，0: 不设置
                      * 
                      */
                     void SetWechat(const uint64_t& _wechat);
@@ -112,19 +112,19 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 是否设置手机号为登陆和敏感操作安全校验方式， 1: 设置，0: 不设置
+                     * 是否设置手机号为登录和敏感操作安全校验方式， 1: 设置，0: 不设置
                      */
                     uint64_t m_phone;
                     bool m_phoneHasBeenSet;
 
                     /**
-                     * 是否设置软token为登陆和敏感操作安全校验方式， 1: 设置，0: 不设置
+                     * 是否设置软token为登录和敏感操作安全校验方式， 1: 设置，0: 不设置
                      */
                     uint64_t m_stoken;
                     bool m_stokenHasBeenSet;
 
                     /**
-                     * 是否设置微信为登陆和敏感操作安全校验方式， 1: 设置，0: 不设置
+                     * 是否设置微信为登录和敏感操作安全校验方式， 1: 设置，0: 不设置
                      */
                     uint64_t m_wechat;
                     bool m_wechatHasBeenSet;

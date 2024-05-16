@@ -396,6 +396,31 @@ namespace TencentCloud
                      */
                     bool TicketNumHasBeenSet() const;
 
+                    /**
+                     * 获取全局参数
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return GlobalParam 全局参数
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::string GetGlobalParam() const;
+
+                    /**
+                     * 设置全局参数
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _globalParam 全局参数
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetGlobalParam(const std::string& _globalParam);
+
+                    /**
+                     * 判断参数 GlobalParam 是否已赋值
+                     * @return GlobalParam 是否已赋值
+                     * 
+                     */
+                    bool GlobalParamHasBeenSet() const;
+
                 private:
 
                     /**
@@ -495,6 +520,13 @@ namespace TencentCloud
                      */
                     int64_t m_ticketNum;
                     bool m_ticketNumHasBeenSet;
+
+                    /**
+                     * 全局参数
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_globalParam;
+                    bool m_globalParamHasBeenSet;
 
                 };
             }

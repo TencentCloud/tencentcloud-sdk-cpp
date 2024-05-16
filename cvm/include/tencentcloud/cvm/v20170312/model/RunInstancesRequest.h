@@ -32,6 +32,7 @@
 #include <tencentcloud/cvm/v20170312/model/ActionTimer.h>
 #include <tencentcloud/cvm/v20170312/model/TagSpecification.h>
 #include <tencentcloud/cvm/v20170312/model/InstanceMarketOptionsRequest.h>
+#include <tencentcloud/cvm/v20170312/model/CpuTopology.h>
 #include <tencentcloud/cvm/v20170312/model/LaunchTemplate.h>
 
 
@@ -545,6 +546,27 @@ false（默认）：发送正常请求，通过检查后直接创建实例
                     bool DryRunHasBeenSet() const;
 
                     /**
+                     * 获取描述了实例CPU拓扑结构的相关信息。若不指定该参数，则按系统资源情况决定。
+                     * @return CpuTopology 描述了实例CPU拓扑结构的相关信息。若不指定该参数，则按系统资源情况决定。
+                     * 
+                     */
+                    CpuTopology GetCpuTopology() const;
+
+                    /**
+                     * 设置描述了实例CPU拓扑结构的相关信息。若不指定该参数，则按系统资源情况决定。
+                     * @param _cpuTopology 描述了实例CPU拓扑结构的相关信息。若不指定该参数，则按系统资源情况决定。
+                     * 
+                     */
+                    void SetCpuTopology(const CpuTopology& _cpuTopology);
+
+                    /**
+                     * 判断参数 CpuTopology 是否已赋值
+                     * @return CpuTopology 是否已赋值
+                     * 
+                     */
+                    bool CpuTopologyHasBeenSet() const;
+
+                    /**
                      * 获取CAM角色名称。可通过[`DescribeRoleList`](https://cloud.tencent.com/document/product/598/13887)接口返回值中的`roleName`获取。
                      * @return CamRoleName CAM角色名称。可通过[`DescribeRoleList`](https://cloud.tencent.com/document/product/598/13887)接口返回值中的`roleName`获取。
                      * 
@@ -810,6 +832,12 @@ false（默认）：发送正常请求，通过检查后直接创建实例
                      */
                     bool m_dryRun;
                     bool m_dryRunHasBeenSet;
+
+                    /**
+                     * 描述了实例CPU拓扑结构的相关信息。若不指定该参数，则按系统资源情况决定。
+                     */
+                    CpuTopology m_cpuTopology;
+                    bool m_cpuTopologyHasBeenSet;
 
                     /**
                      * CAM角色名称。可通过[`DescribeRoleList`](https://cloud.tencent.com/document/product/598/13887)接口返回值中的`roleName`获取。

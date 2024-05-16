@@ -34,7 +34,8 @@ EmbedTokenInfo::EmbedTokenInfo() :
     m_expireTimeHasBeenSet(false),
     m_userCorpIdHasBeenSet(false),
     m_userIdHasBeenSet(false),
-    m_ticketNumHasBeenSet(false)
+    m_ticketNumHasBeenSet(false),
+    m_globalParamHasBeenSet(false)
 {
 }
 
@@ -183,6 +184,16 @@ CoreInternalOutcome EmbedTokenInfo::Deserialize(const rapidjson::Value &value)
         m_ticketNumHasBeenSet = true;
     }
 
+    if (value.HasMember("GlobalParam") && !value["GlobalParam"].IsNull())
+    {
+        if (!value["GlobalParam"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `EmbedTokenInfo.GlobalParam` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_globalParam = string(value["GlobalParam"].GetString());
+        m_globalParamHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -300,6 +311,14 @@ void EmbedTokenInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Document::
         string key = "TicketNum";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_ticketNum, allocator);
+    }
+
+    if (m_globalParamHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "GlobalParam";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_globalParam.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -527,5 +546,21 @@ void EmbedTokenInfo::SetTicketNum(const int64_t& _ticketNum)
 bool EmbedTokenInfo::TicketNumHasBeenSet() const
 {
     return m_ticketNumHasBeenSet;
+}
+
+string EmbedTokenInfo::GetGlobalParam() const
+{
+    return m_globalParam;
+}
+
+void EmbedTokenInfo::SetGlobalParam(const string& _globalParam)
+{
+    m_globalParam = _globalParam;
+    m_globalParamHasBeenSet = true;
+}
+
+bool EmbedTokenInfo::GlobalParamHasBeenSet() const
+{
+    return m_globalParamHasBeenSet;
 }
 

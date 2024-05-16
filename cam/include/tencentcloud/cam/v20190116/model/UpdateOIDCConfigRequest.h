@@ -64,27 +64,6 @@ namespace TencentCloud
                     bool IdentityUrlHasBeenSet() const;
 
                     /**
-                     * 获取签名公钥，需要base64
-                     * @return IdentityKey 签名公钥，需要base64
-                     * 
-                     */
-                    std::string GetIdentityKey() const;
-
-                    /**
-                     * 设置签名公钥，需要base64
-                     * @param _identityKey 签名公钥，需要base64
-                     * 
-                     */
-                    void SetIdentityKey(const std::string& _identityKey);
-
-                    /**
-                     * 判断参数 IdentityKey 是否已赋值
-                     * @return IdentityKey 是否已赋值
-                     * 
-                     */
-                    bool IdentityKeyHasBeenSet() const;
-
-                    /**
                      * 获取客户端ID
                      * @return ClientId 客户端ID
                      * 
@@ -127,6 +106,27 @@ namespace TencentCloud
                     bool NameHasBeenSet() const;
 
                     /**
+                     * 获取签名公钥，需要base64
+                     * @return IdentityKey 签名公钥，需要base64
+                     * 
+                     */
+                    std::string GetIdentityKey() const;
+
+                    /**
+                     * 设置签名公钥，需要base64
+                     * @param _identityKey 签名公钥，需要base64
+                     * 
+                     */
+                    void SetIdentityKey(const std::string& _identityKey);
+
+                    /**
+                     * 判断参数 IdentityKey 是否已赋值
+                     * @return IdentityKey 是否已赋值
+                     * 
+                     */
+                    bool IdentityKeyHasBeenSet() const;
+
+                    /**
                      * 获取描述
                      * @return Description 描述
                      * 
@@ -156,12 +156,6 @@ namespace TencentCloud
                     bool m_identityUrlHasBeenSet;
 
                     /**
-                     * 签名公钥，需要base64
-                     */
-                    std::string m_identityKey;
-                    bool m_identityKeyHasBeenSet;
-
-                    /**
                      * 客户端ID
                      */
                     std::vector<std::string> m_clientId;
@@ -172,6 +166,12 @@ namespace TencentCloud
                      */
                     std::string m_name;
                     bool m_nameHasBeenSet;
+
+                    /**
+                     * 签名公钥，需要base64
+                     */
+                    std::string m_identityKey;
+                    bool m_identityKeyHasBeenSet;
 
                     /**
                      * 描述

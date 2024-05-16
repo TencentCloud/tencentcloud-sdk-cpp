@@ -14,20 +14,21 @@
  * limitations under the License.
  */
 
-#include <tencentcloud/rce/v20201103/model/DescribeRiskAssessmentResponse.h>
+#include <tencentcloud/vcg/v20240404/model/SubmitVideoStylizationJobResponse.h>
 #include <tencentcloud/core/utils/rapidjson/document.h>
 #include <tencentcloud/core/utils/rapidjson/writer.h>
 #include <tencentcloud/core/utils/rapidjson/stringbuffer.h>
 
 using TencentCloud::CoreInternalOutcome;
-using namespace TencentCloud::Rce::V20201103::Model;
+using namespace TencentCloud::Vcg::V20240404::Model;
 using namespace std;
 
-DescribeRiskAssessmentResponse::DescribeRiskAssessmentResponse()
+SubmitVideoStylizationJobResponse::SubmitVideoStylizationJobResponse() :
+    m_jobIdHasBeenSet(false)
 {
 }
 
-CoreInternalOutcome DescribeRiskAssessmentResponse::Deserialize(const string &payload)
+CoreInternalOutcome SubmitVideoStylizationJobResponse::Deserialize(const string &payload)
 {
     rapidjson::Document d;
     d.Parse(payload.c_str());
@@ -61,15 +62,33 @@ CoreInternalOutcome DescribeRiskAssessmentResponse::Deserialize(const string &pa
     }
 
 
+    if (rsp.HasMember("JobId") && !rsp["JobId"].IsNull())
+    {
+        if (!rsp["JobId"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `JobId` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_jobId = string(rsp["JobId"].GetString());
+        m_jobIdHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
 
-string DescribeRiskAssessmentResponse::ToJsonString() const
+string SubmitVideoStylizationJobResponse::ToJsonString() const
 {
     rapidjson::Document value;
     value.SetObject();
     rapidjson::Document::AllocatorType& allocator = value.GetAllocator();
+
+    if (m_jobIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "JobId";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_jobId.c_str(), allocator).Move(), allocator);
+    }
 
     rapidjson::Value iKey(rapidjson::kStringType);
     string key = "RequestId";
@@ -82,5 +101,15 @@ string DescribeRiskAssessmentResponse::ToJsonString() const
     return buffer.GetString();
 }
 
+
+string SubmitVideoStylizationJobResponse::GetJobId() const
+{
+    return m_jobId;
+}
+
+bool SubmitVideoStylizationJobResponse::JobIdHasBeenSet() const
+{
+    return m_jobIdHasBeenSet;
+}
 
 

@@ -35,7 +35,8 @@ CreateConnectResourceRequest::CreateConnectResourceRequest() :
     m_mariaDBConnectParamHasBeenSet(false),
     m_sQLServerConnectParamHasBeenSet(false),
     m_dorisConnectParamHasBeenSet(false),
-    m_kafkaConnectParamHasBeenSet(false)
+    m_kafkaConnectParamHasBeenSet(false),
+    m_mqttConnectParamHasBeenSet(false)
 {
 }
 
@@ -158,6 +159,15 @@ string CreateConnectResourceRequest::ToJsonString() const
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
         m_kafkaConnectParam.ToJsonObject(d[key.c_str()], allocator);
+    }
+
+    if (m_mqttConnectParamHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "MqttConnectParam";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_mqttConnectParam.ToJsonObject(d[key.c_str()], allocator);
     }
 
 
@@ -374,6 +384,22 @@ void CreateConnectResourceRequest::SetKafkaConnectParam(const KafkaConnectParam&
 bool CreateConnectResourceRequest::KafkaConnectParamHasBeenSet() const
 {
     return m_kafkaConnectParamHasBeenSet;
+}
+
+MqttConnectParam CreateConnectResourceRequest::GetMqttConnectParam() const
+{
+    return m_mqttConnectParam;
+}
+
+void CreateConnectResourceRequest::SetMqttConnectParam(const MqttConnectParam& _mqttConnectParam)
+{
+    m_mqttConnectParam = _mqttConnectParam;
+    m_mqttConnectParamHasBeenSet = true;
+}
+
+bool CreateConnectResourceRequest::MqttConnectParamHasBeenSet() const
+{
+    return m_mqttConnectParamHasBeenSet;
 }
 
 

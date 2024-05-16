@@ -64,19 +64,15 @@ namespace TencentCloud
                     bool SdkAppIdHasBeenSet() const;
 
                     /**
-                     * 获取查询开始时间，本地unix时间戳，单位为秒（如：1590065777）
-注意：支持查询14天内的数据
-                     * @return StartTime 查询开始时间，本地unix时间戳，单位为秒（如：1590065777）
-注意：支持查询14天内的数据
+                     * 获取查询开始时间，本地unix时间戳，单位为秒（如：1590065777）注意：最大支持查询14天内的数据
+                     * @return StartTime 查询开始时间，本地unix时间戳，单位为秒（如：1590065777）注意：最大支持查询14天内的数据
                      * 
                      */
                     uint64_t GetStartTime() const;
 
                     /**
-                     * 设置查询开始时间，本地unix时间戳，单位为秒（如：1590065777）
-注意：支持查询14天内的数据
-                     * @param _startTime 查询开始时间，本地unix时间戳，单位为秒（如：1590065777）
-注意：支持查询14天内的数据
+                     * 设置查询开始时间，本地unix时间戳，单位为秒（如：1590065777）注意：最大支持查询14天内的数据
+                     * @param _startTime 查询开始时间，本地unix时间戳，单位为秒（如：1590065777）注意：最大支持查询14天内的数据
                      * 
                      */
                     void SetStartTime(const uint64_t& _startTime);
@@ -193,8 +189,7 @@ namespace TencentCloud
                     bool m_sdkAppIdHasBeenSet;
 
                     /**
-                     * 查询开始时间，本地unix时间戳，单位为秒（如：1590065777）
-注意：支持查询14天内的数据
+                     * 查询开始时间，本地unix时间戳，单位为秒（如：1590065777）注意：最大支持查询14天内的数据
                      */
                     uint64_t m_startTime;
                     bool m_startTimeHasBeenSet;

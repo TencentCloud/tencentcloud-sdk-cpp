@@ -636,6 +636,48 @@ namespace TencentCloud
                      */
                     bool AutoRenewHasBeenSet() const;
 
+                    /**
+                     * 获取类型为ComputeResource和EMR以及默认，默认为EMR,类型为EMR时,InstanceId生效,类型为ComputeResource时,使用ComputeResourceId标识
+                     * @return ResourceBaseType 类型为ComputeResource和EMR以及默认，默认为EMR,类型为EMR时,InstanceId生效,类型为ComputeResource时,使用ComputeResourceId标识
+                     * 
+                     */
+                    std::string GetResourceBaseType() const;
+
+                    /**
+                     * 设置类型为ComputeResource和EMR以及默认，默认为EMR,类型为EMR时,InstanceId生效,类型为ComputeResource时,使用ComputeResourceId标识
+                     * @param _resourceBaseType 类型为ComputeResource和EMR以及默认，默认为EMR,类型为EMR时,InstanceId生效,类型为ComputeResource时,使用ComputeResourceId标识
+                     * 
+                     */
+                    void SetResourceBaseType(const std::string& _resourceBaseType);
+
+                    /**
+                     * 判断参数 ResourceBaseType 是否已赋值
+                     * @return ResourceBaseType 是否已赋值
+                     * 
+                     */
+                    bool ResourceBaseTypeHasBeenSet() const;
+
+                    /**
+                     * 获取计算资源id
+                     * @return ComputeResourceId 计算资源id
+                     * 
+                     */
+                    std::string GetComputeResourceId() const;
+
+                    /**
+                     * 设置计算资源id
+                     * @param _computeResourceId 计算资源id
+                     * 
+                     */
+                    void SetComputeResourceId(const std::string& _computeResourceId);
+
+                    /**
+                     * 判断参数 ComputeResourceId 是否已赋值
+                     * @return ComputeResourceId 是否已赋值
+                     * 
+                     */
+                    bool ComputeResourceIdHasBeenSet() const;
+
                 private:
 
                     /**
@@ -804,6 +846,18 @@ namespace TencentCloud
                      */
                     int64_t m_autoRenew;
                     bool m_autoRenewHasBeenSet;
+
+                    /**
+                     * 类型为ComputeResource和EMR以及默认，默认为EMR,类型为EMR时,InstanceId生效,类型为ComputeResource时,使用ComputeResourceId标识
+                     */
+                    std::string m_resourceBaseType;
+                    bool m_resourceBaseTypeHasBeenSet;
+
+                    /**
+                     * 计算资源id
+                     */
+                    std::string m_computeResourceId;
+                    bool m_computeResourceIdHasBeenSet;
 
                 };
             }

@@ -32,6 +32,7 @@
 #include <tencentcloud/ckafka/v20190819/model/CtsdbModifyConnectParam.h>
 #include <tencentcloud/ckafka/v20190819/model/DorisModifyConnectParam.h>
 #include <tencentcloud/ckafka/v20190819/model/KafkaConnectParam.h>
+#include <tencentcloud/ckafka/v20190819/model/MqttConnectParam.h>
 
 
 namespace TencentCloud
@@ -368,6 +369,27 @@ namespace TencentCloud
                      */
                     bool KafkaConnectParamHasBeenSet() const;
 
+                    /**
+                     * 获取MQTT配置，Type为 MQTT 时必填
+                     * @return MqttConnectParam MQTT配置，Type为 MQTT 时必填
+                     * 
+                     */
+                    MqttConnectParam GetMqttConnectParam() const;
+
+                    /**
+                     * 设置MQTT配置，Type为 MQTT 时必填
+                     * @param _mqttConnectParam MQTT配置，Type为 MQTT 时必填
+                     * 
+                     */
+                    void SetMqttConnectParam(const MqttConnectParam& _mqttConnectParam);
+
+                    /**
+                     * 判断参数 MqttConnectParam 是否已赋值
+                     * @return MqttConnectParam 是否已赋值
+                     * 
+                     */
+                    bool MqttConnectParamHasBeenSet() const;
+
                 private:
 
                     /**
@@ -459,6 +481,12 @@ namespace TencentCloud
                      */
                     KafkaConnectParam m_kafkaConnectParam;
                     bool m_kafkaConnectParamHasBeenSet;
+
+                    /**
+                     * MQTT配置，Type为 MQTT 时必填
+                     */
+                    MqttConnectParam m_mqttConnectParam;
+                    bool m_mqttConnectParamHasBeenSet;
 
                 };
             }

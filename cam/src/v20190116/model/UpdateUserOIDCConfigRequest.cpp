@@ -24,12 +24,12 @@ using namespace std;
 
 UpdateUserOIDCConfigRequest::UpdateUserOIDCConfigRequest() :
     m_identityUrlHasBeenSet(false),
-    m_identityKeyHasBeenSet(false),
     m_clientIdHasBeenSet(false),
     m_authorizationEndpointHasBeenSet(false),
     m_responseTypeHasBeenSet(false),
     m_responseModeHasBeenSet(false),
     m_mappingFiledHasBeenSet(false),
+    m_identityKeyHasBeenSet(false),
     m_scopeHasBeenSet(false),
     m_descriptionHasBeenSet(false)
 {
@@ -48,14 +48,6 @@ string UpdateUserOIDCConfigRequest::ToJsonString() const
         string key = "IdentityUrl";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_identityUrl.c_str(), allocator).Move(), allocator);
-    }
-
-    if (m_identityKeyHasBeenSet)
-    {
-        rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "IdentityKey";
-        iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, rapidjson::Value(m_identityKey.c_str(), allocator).Move(), allocator);
     }
 
     if (m_clientIdHasBeenSet)
@@ -96,6 +88,14 @@ string UpdateUserOIDCConfigRequest::ToJsonString() const
         string key = "MappingFiled";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_mappingFiled.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_identityKeyHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "IdentityKey";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_identityKey.c_str(), allocator).Move(), allocator);
     }
 
     if (m_scopeHasBeenSet)
@@ -141,22 +141,6 @@ void UpdateUserOIDCConfigRequest::SetIdentityUrl(const string& _identityUrl)
 bool UpdateUserOIDCConfigRequest::IdentityUrlHasBeenSet() const
 {
     return m_identityUrlHasBeenSet;
-}
-
-string UpdateUserOIDCConfigRequest::GetIdentityKey() const
-{
-    return m_identityKey;
-}
-
-void UpdateUserOIDCConfigRequest::SetIdentityKey(const string& _identityKey)
-{
-    m_identityKey = _identityKey;
-    m_identityKeyHasBeenSet = true;
-}
-
-bool UpdateUserOIDCConfigRequest::IdentityKeyHasBeenSet() const
-{
-    return m_identityKeyHasBeenSet;
 }
 
 string UpdateUserOIDCConfigRequest::GetClientId() const
@@ -237,6 +221,22 @@ void UpdateUserOIDCConfigRequest::SetMappingFiled(const string& _mappingFiled)
 bool UpdateUserOIDCConfigRequest::MappingFiledHasBeenSet() const
 {
     return m_mappingFiledHasBeenSet;
+}
+
+string UpdateUserOIDCConfigRequest::GetIdentityKey() const
+{
+    return m_identityKey;
+}
+
+void UpdateUserOIDCConfigRequest::SetIdentityKey(const string& _identityKey)
+{
+    m_identityKey = _identityKey;
+    m_identityKeyHasBeenSet = true;
+}
+
+bool UpdateUserOIDCConfigRequest::IdentityKeyHasBeenSet() const
+{
+    return m_identityKeyHasBeenSet;
 }
 
 vector<string> UpdateUserOIDCConfigRequest::GetScope() const

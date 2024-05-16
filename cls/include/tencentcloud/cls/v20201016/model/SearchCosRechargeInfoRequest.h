@@ -148,15 +148,15 @@ namespace TencentCloud
                     bool BucketRegionHasBeenSet() const;
 
                     /**
-                     * 获取cos文件所在文件夹的前缀
-                     * @return Prefix cos文件所在文件夹的前缀
+                     * 获取COS文件所在文件夹的前缀。默认为空，投递存储桶下所有的文件。
+                     * @return Prefix COS文件所在文件夹的前缀。默认为空，投递存储桶下所有的文件。
                      * 
                      */
                     std::string GetPrefix() const;
 
                     /**
-                     * 设置cos文件所在文件夹的前缀
-                     * @param _prefix cos文件所在文件夹的前缀
+                     * 设置COS文件所在文件夹的前缀。默认为空，投递存储桶下所有的文件。
+                     * @param _prefix COS文件所在文件夹的前缀。默认为空，投递存储桶下所有的文件。
                      * 
                      */
                     void SetPrefix(const std::string& _prefix);
@@ -222,7 +222,7 @@ namespace TencentCloud
                     bool m_bucketRegionHasBeenSet;
 
                     /**
-                     * cos文件所在文件夹的前缀
+                     * COS文件所在文件夹的前缀。默认为空，投递存储桶下所有的文件。
                      */
                     std::string m_prefix;
                     bool m_prefixHasBeenSet;

@@ -85,15 +85,15 @@ namespace TencentCloud
                     bool MsgContentHasBeenSet() const;
 
                     /**
-                     * 获取延迟时间
-                     * @return DelaySeconds 延迟时间
+                     * 获取延迟时间。单位为秒，默认值为0秒，最大不能超过队列配置的消息最长未确认时间。
+                     * @return DelaySeconds 延迟时间。单位为秒，默认值为0秒，最大不能超过队列配置的消息最长未确认时间。
                      * 
                      */
                     int64_t GetDelaySeconds() const;
 
                     /**
-                     * 设置延迟时间
-                     * @param _delaySeconds 延迟时间
+                     * 设置延迟时间。单位为秒，默认值为0秒，最大不能超过队列配置的消息最长未确认时间。
+                     * @param _delaySeconds 延迟时间。单位为秒，默认值为0秒，最大不能超过队列配置的消息最长未确认时间。
                      * 
                      */
                     void SetDelaySeconds(const int64_t& _delaySeconds);
@@ -120,7 +120,7 @@ namespace TencentCloud
                     bool m_msgContentHasBeenSet;
 
                     /**
-                     * 延迟时间
+                     * 延迟时间。单位为秒，默认值为0秒，最大不能超过队列配置的消息最长未确认时间。
                      */
                     int64_t m_delaySeconds;
                     bool m_delaySecondsHasBeenSet;

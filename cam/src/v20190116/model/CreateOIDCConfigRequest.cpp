@@ -24,9 +24,9 @@ using namespace std;
 
 CreateOIDCConfigRequest::CreateOIDCConfigRequest() :
     m_identityUrlHasBeenSet(false),
-    m_identityKeyHasBeenSet(false),
     m_clientIdHasBeenSet(false),
     m_nameHasBeenSet(false),
+    m_identityKeyHasBeenSet(false),
     m_descriptionHasBeenSet(false)
 {
 }
@@ -44,14 +44,6 @@ string CreateOIDCConfigRequest::ToJsonString() const
         string key = "IdentityUrl";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_identityUrl.c_str(), allocator).Move(), allocator);
-    }
-
-    if (m_identityKeyHasBeenSet)
-    {
-        rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "IdentityKey";
-        iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, rapidjson::Value(m_identityKey.c_str(), allocator).Move(), allocator);
     }
 
     if (m_clientIdHasBeenSet)
@@ -73,6 +65,14 @@ string CreateOIDCConfigRequest::ToJsonString() const
         string key = "Name";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_name.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_identityKeyHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "IdentityKey";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_identityKey.c_str(), allocator).Move(), allocator);
     }
 
     if (m_descriptionHasBeenSet)
@@ -107,22 +107,6 @@ bool CreateOIDCConfigRequest::IdentityUrlHasBeenSet() const
     return m_identityUrlHasBeenSet;
 }
 
-string CreateOIDCConfigRequest::GetIdentityKey() const
-{
-    return m_identityKey;
-}
-
-void CreateOIDCConfigRequest::SetIdentityKey(const string& _identityKey)
-{
-    m_identityKey = _identityKey;
-    m_identityKeyHasBeenSet = true;
-}
-
-bool CreateOIDCConfigRequest::IdentityKeyHasBeenSet() const
-{
-    return m_identityKeyHasBeenSet;
-}
-
 vector<string> CreateOIDCConfigRequest::GetClientId() const
 {
     return m_clientId;
@@ -153,6 +137,22 @@ void CreateOIDCConfigRequest::SetName(const string& _name)
 bool CreateOIDCConfigRequest::NameHasBeenSet() const
 {
     return m_nameHasBeenSet;
+}
+
+string CreateOIDCConfigRequest::GetIdentityKey() const
+{
+    return m_identityKey;
+}
+
+void CreateOIDCConfigRequest::SetIdentityKey(const string& _identityKey)
+{
+    m_identityKey = _identityKey;
+    m_identityKeyHasBeenSet = true;
+}
+
+bool CreateOIDCConfigRequest::IdentityKeyHasBeenSet() const
+{
+    return m_identityKeyHasBeenSet;
 }
 
 string CreateOIDCConfigRequest::GetDescription() const

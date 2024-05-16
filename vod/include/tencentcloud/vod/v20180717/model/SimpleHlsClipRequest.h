@@ -260,6 +260,27 @@ namespace TencentCloud
                      */
                     bool SessionContextHasBeenSet() const;
 
+                    /**
+                     * 获取保留字段，特殊用途时使用。 示例值：""
+                     * @return ExtInfo 保留字段，特殊用途时使用。 示例值：""
+                     * 
+                     */
+                    std::string GetExtInfo() const;
+
+                    /**
+                     * 设置保留字段，特殊用途时使用。 示例值：""
+                     * @param _extInfo 保留字段，特殊用途时使用。 示例值：""
+                     * 
+                     */
+                    void SetExtInfo(const std::string& _extInfo);
+
+                    /**
+                     * 判断参数 ExtInfo 是否已赋值
+                     * @return ExtInfo 是否已赋值
+                     * 
+                     */
+                    bool ExtInfoHasBeenSet() const;
+
                 private:
 
                     /**
@@ -323,6 +344,12 @@ namespace TencentCloud
                      */
                     std::string m_sessionContext;
                     bool m_sessionContextHasBeenSet;
+
+                    /**
+                     * 保留字段，特殊用途时使用。 示例值：""
+                     */
+                    std::string m_extInfo;
+                    bool m_extInfoHasBeenSet;
 
                 };
             }

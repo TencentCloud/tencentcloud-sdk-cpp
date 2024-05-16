@@ -24,7 +24,9 @@ using namespace std;
 
 TerminateInstanceRequest::TerminateInstanceRequest() :
     m_instanceIdHasBeenSet(false),
-    m_resourceIdsHasBeenSet(false)
+    m_resourceIdsHasBeenSet(false),
+    m_resourceBaseTypeHasBeenSet(false),
+    m_computeResourceIdHasBeenSet(false)
 {
 }
 
@@ -54,6 +56,22 @@ string TerminateInstanceRequest::ToJsonString() const
         {
             d[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
         }
+    }
+
+    if (m_resourceBaseTypeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ResourceBaseType";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_resourceBaseType.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_computeResourceIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ComputeResourceId";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_computeResourceId.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -94,6 +112,38 @@ void TerminateInstanceRequest::SetResourceIds(const vector<string>& _resourceIds
 bool TerminateInstanceRequest::ResourceIdsHasBeenSet() const
 {
     return m_resourceIdsHasBeenSet;
+}
+
+string TerminateInstanceRequest::GetResourceBaseType() const
+{
+    return m_resourceBaseType;
+}
+
+void TerminateInstanceRequest::SetResourceBaseType(const string& _resourceBaseType)
+{
+    m_resourceBaseType = _resourceBaseType;
+    m_resourceBaseTypeHasBeenSet = true;
+}
+
+bool TerminateInstanceRequest::ResourceBaseTypeHasBeenSet() const
+{
+    return m_resourceBaseTypeHasBeenSet;
+}
+
+string TerminateInstanceRequest::GetComputeResourceId() const
+{
+    return m_computeResourceId;
+}
+
+void TerminateInstanceRequest::SetComputeResourceId(const string& _computeResourceId)
+{
+    m_computeResourceId = _computeResourceId;
+    m_computeResourceIdHasBeenSet = true;
+}
+
+bool TerminateInstanceRequest::ComputeResourceIdHasBeenSet() const
+{
+    return m_computeResourceIdHasBeenSet;
 }
 
 

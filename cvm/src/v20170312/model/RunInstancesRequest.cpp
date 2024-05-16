@@ -45,6 +45,7 @@ RunInstancesRequest::RunInstancesRequest() :
     m_instanceMarketOptionsHasBeenSet(false),
     m_userDataHasBeenSet(false),
     m_dryRunHasBeenSet(false),
+    m_cpuTopologyHasBeenSet(false),
     m_camRoleNameHasBeenSet(false),
     m_hpcClusterIdHasBeenSet(false),
     m_launchTemplateHasBeenSet(false),
@@ -268,6 +269,15 @@ string RunInstancesRequest::ToJsonString() const
         string key = "DryRun";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_dryRun, allocator);
+    }
+
+    if (m_cpuTopologyHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "CpuTopology";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_cpuTopology.ToJsonObject(d[key.c_str()], allocator);
     }
 
     if (m_camRoleNameHasBeenSet)
@@ -682,6 +692,22 @@ void RunInstancesRequest::SetDryRun(const bool& _dryRun)
 bool RunInstancesRequest::DryRunHasBeenSet() const
 {
     return m_dryRunHasBeenSet;
+}
+
+CpuTopology RunInstancesRequest::GetCpuTopology() const
+{
+    return m_cpuTopology;
+}
+
+void RunInstancesRequest::SetCpuTopology(const CpuTopology& _cpuTopology)
+{
+    m_cpuTopology = _cpuTopology;
+    m_cpuTopologyHasBeenSet = true;
+}
+
+bool RunInstancesRequest::CpuTopologyHasBeenSet() const
+{
+    return m_cpuTopologyHasBeenSet;
 }
 
 string RunInstancesRequest::GetCamRoleName() const

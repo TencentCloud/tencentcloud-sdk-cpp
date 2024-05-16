@@ -68,27 +68,6 @@ namespace TencentCloud
                     bool IdentityUrlHasBeenSet() const;
 
                     /**
-                     * 获取签名公钥，需要base64_encode。验证OpenID Connect身份提供商ID Token签名的公钥。为了您的帐号安全，建议您定期轮换签名公钥。
-                     * @return IdentityKey 签名公钥，需要base64_encode。验证OpenID Connect身份提供商ID Token签名的公钥。为了您的帐号安全，建议您定期轮换签名公钥。
-                     * 
-                     */
-                    std::string GetIdentityKey() const;
-
-                    /**
-                     * 设置签名公钥，需要base64_encode。验证OpenID Connect身份提供商ID Token签名的公钥。为了您的帐号安全，建议您定期轮换签名公钥。
-                     * @param _identityKey 签名公钥，需要base64_encode。验证OpenID Connect身份提供商ID Token签名的公钥。为了您的帐号安全，建议您定期轮换签名公钥。
-                     * 
-                     */
-                    void SetIdentityKey(const std::string& _identityKey);
-
-                    /**
-                     * 判断参数 IdentityKey 是否已赋值
-                     * @return IdentityKey 是否已赋值
-                     * 
-                     */
-                    bool IdentityKeyHasBeenSet() const;
-
-                    /**
                      * 获取客户端ID，在OpenID Connect身份提供商注册的客户端ID。
                      * @return ClientId 客户端ID，在OpenID Connect身份提供商注册的客户端ID。
                      * 
@@ -194,6 +173,27 @@ namespace TencentCloud
                     bool MappingFiledHasBeenSet() const;
 
                     /**
+                     * 获取签名公钥，需要base64_encode。验证OpenID Connect身份提供商ID Token签名的公钥。为了您的账号安全，建议您定期轮换签名公钥。
+                     * @return IdentityKey 签名公钥，需要base64_encode。验证OpenID Connect身份提供商ID Token签名的公钥。为了您的账号安全，建议您定期轮换签名公钥。
+                     * 
+                     */
+                    std::string GetIdentityKey() const;
+
+                    /**
+                     * 设置签名公钥，需要base64_encode。验证OpenID Connect身份提供商ID Token签名的公钥。为了您的账号安全，建议您定期轮换签名公钥。
+                     * @param _identityKey 签名公钥，需要base64_encode。验证OpenID Connect身份提供商ID Token签名的公钥。为了您的账号安全，建议您定期轮换签名公钥。
+                     * 
+                     */
+                    void SetIdentityKey(const std::string& _identityKey);
+
+                    /**
+                     * 判断参数 IdentityKey 是否已赋值
+                     * @return IdentityKey 是否已赋值
+                     * 
+                     */
+                    bool IdentityKeyHasBeenSet() const;
+
+                    /**
                      * 获取授权请求Scope。openid; email;profile。授权请求信息范围。默认必选openid。
                      * @return Scope 授权请求Scope。openid; email;profile。授权请求信息范围。默认必选openid。
                      * 
@@ -245,12 +245,6 @@ namespace TencentCloud
                     bool m_identityUrlHasBeenSet;
 
                     /**
-                     * 签名公钥，需要base64_encode。验证OpenID Connect身份提供商ID Token签名的公钥。为了您的帐号安全，建议您定期轮换签名公钥。
-                     */
-                    std::string m_identityKey;
-                    bool m_identityKeyHasBeenSet;
-
-                    /**
                      * 客户端ID，在OpenID Connect身份提供商注册的客户端ID。
                      */
                     std::string m_clientId;
@@ -279,6 +273,12 @@ namespace TencentCloud
                      */
                     std::string m_mappingFiled;
                     bool m_mappingFiledHasBeenSet;
+
+                    /**
+                     * 签名公钥，需要base64_encode。验证OpenID Connect身份提供商ID Token签名的公钥。为了您的账号安全，建议您定期轮换签名公钥。
+                     */
+                    std::string m_identityKey;
+                    bool m_identityKeyHasBeenSet;
 
                     /**
                      * 授权请求Scope。openid; email;profile。授权请求信息范围。默认必选openid。

@@ -162,25 +162,25 @@ namespace TencentCloud
                     bool UserSigHasBeenSet() const;
 
                     /**
-                     * 获取【本字段已废弃，请使用 StreamUrl 字段】源流URL，支持一个地址。
-                     * @return SourceUrl 【本字段已废弃，请使用 StreamUrl 字段】源流URL，支持一个地址。
+                     * 获取源流URL。历史原因本字段【必填】。如果是视频流，分辨率请保持不变。
+                     * @return StreamUrl 源流URL。历史原因本字段【必填】。如果是视频流，分辨率请保持不变。
                      * 
                      */
-                    std::vector<std::string> GetSourceUrl() const;
+                    std::string GetStreamUrl() const;
 
                     /**
-                     * 设置【本字段已废弃，请使用 StreamUrl 字段】源流URL，支持一个地址。
-                     * @param _sourceUrl 【本字段已废弃，请使用 StreamUrl 字段】源流URL，支持一个地址。
+                     * 设置源流URL。历史原因本字段【必填】。如果是视频流，分辨率请保持不变。
+                     * @param _streamUrl 源流URL。历史原因本字段【必填】。如果是视频流，分辨率请保持不变。
                      * 
                      */
-                    void SetSourceUrl(const std::vector<std::string>& _sourceUrl);
+                    void SetStreamUrl(const std::string& _streamUrl);
 
                     /**
-                     * 判断参数 SourceUrl 是否已赋值
-                     * @return SourceUrl 是否已赋值
+                     * 判断参数 StreamUrl 是否已赋值
+                     * @return StreamUrl 是否已赋值
                      * 
                      */
-                    bool SourceUrlHasBeenSet() const;
+                    bool StreamUrlHasBeenSet() const;
 
                     /**
                      * 获取TRTC房间权限加密串，只有在TRTC控制台启用了高级权限控制的时候需要携带，在TRTC控制台如果开启高级权限控制后，TRTC 的后台服务系统会校验一个叫做 [PrivateMapKey] 的“权限票据”，权限票据中包含了一个加密后的 RoomId 和一个加密后的“权限位列表”。由于 PrivateMapKey 中包含 RoomId，所以只提供了 UserSig 没有提供 PrivateMapKey 时，并不能进入指定的房间。
@@ -246,25 +246,46 @@ namespace TencentCloud
                     bool AudioEncodeParamsHasBeenSet() const;
 
                     /**
-                     * 获取源流URL。历史原因本字段【必填】。
-                     * @return StreamUrl 源流URL。历史原因本字段【必填】。
+                     * 获取【本字段已废弃，请使用 StreamUrl 字段】源流URL，支持一个地址。
+                     * @return SourceUrl 【本字段已废弃，请使用 StreamUrl 字段】源流URL，支持一个地址。
                      * 
                      */
-                    std::string GetStreamUrl() const;
+                    std::vector<std::string> GetSourceUrl() const;
 
                     /**
-                     * 设置源流URL。历史原因本字段【必填】。
-                     * @param _streamUrl 源流URL。历史原因本字段【必填】。
+                     * 设置【本字段已废弃，请使用 StreamUrl 字段】源流URL，支持一个地址。
+                     * @param _sourceUrl 【本字段已废弃，请使用 StreamUrl 字段】源流URL，支持一个地址。
                      * 
                      */
-                    void SetStreamUrl(const std::string& _streamUrl);
+                    void SetSourceUrl(const std::vector<std::string>& _sourceUrl);
 
                     /**
-                     * 判断参数 StreamUrl 是否已赋值
-                     * @return StreamUrl 是否已赋值
+                     * 判断参数 SourceUrl 是否已赋值
+                     * @return SourceUrl 是否已赋值
                      * 
                      */
-                    bool StreamUrlHasBeenSet() const;
+                    bool SourceUrlHasBeenSet() const;
+
+                    /**
+                     * 获取指定视频从某个秒时间戳播放
+                     * @return SeekSecond 指定视频从某个秒时间戳播放
+                     * 
+                     */
+                    int64_t GetSeekSecond() const;
+
+                    /**
+                     * 设置指定视频从某个秒时间戳播放
+                     * @param _seekSecond 指定视频从某个秒时间戳播放
+                     * 
+                     */
+                    void SetSeekSecond(const int64_t& _seekSecond);
+
+                    /**
+                     * 判断参数 SeekSecond 是否已赋值
+                     * @return SeekSecond 是否已赋值
+                     * 
+                     */
+                    bool SeekSecondHasBeenSet() const;
 
                 private:
 
@@ -302,10 +323,10 @@ namespace TencentCloud
                     bool m_userSigHasBeenSet;
 
                     /**
-                     * 【本字段已废弃，请使用 StreamUrl 字段】源流URL，支持一个地址。
+                     * 源流URL。历史原因本字段【必填】。如果是视频流，分辨率请保持不变。
                      */
-                    std::vector<std::string> m_sourceUrl;
-                    bool m_sourceUrlHasBeenSet;
+                    std::string m_streamUrl;
+                    bool m_streamUrlHasBeenSet;
 
                     /**
                      * TRTC房间权限加密串，只有在TRTC控制台启用了高级权限控制的时候需要携带，在TRTC控制台如果开启高级权限控制后，TRTC 的后台服务系统会校验一个叫做 [PrivateMapKey] 的“权限票据”，权限票据中包含了一个加密后的 RoomId 和一个加密后的“权限位列表”。由于 PrivateMapKey 中包含 RoomId，所以只提供了 UserSig 没有提供 PrivateMapKey 时，并不能进入指定的房间。
@@ -326,10 +347,16 @@ namespace TencentCloud
                     bool m_audioEncodeParamsHasBeenSet;
 
                     /**
-                     * 源流URL。历史原因本字段【必填】。
+                     * 【本字段已废弃，请使用 StreamUrl 字段】源流URL，支持一个地址。
                      */
-                    std::string m_streamUrl;
-                    bool m_streamUrlHasBeenSet;
+                    std::vector<std::string> m_sourceUrl;
+                    bool m_sourceUrlHasBeenSet;
+
+                    /**
+                     * 指定视频从某个秒时间戳播放
+                     */
+                    int64_t m_seekSecond;
+                    bool m_seekSecondHasBeenSet;
 
                 };
             }

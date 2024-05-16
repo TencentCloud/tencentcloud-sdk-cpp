@@ -149,27 +149,6 @@ namespace TencentCloud
                     bool BucketRegionHasBeenSet() const;
 
                     /**
-                     * 获取COS文件所在文件夹的前缀
-                     * @return Prefix COS文件所在文件夹的前缀
-                     * 
-                     */
-                    std::string GetPrefix() const;
-
-                    /**
-                     * 设置COS文件所在文件夹的前缀
-                     * @param _prefix COS文件所在文件夹的前缀
-                     * 
-                     */
-                    void SetPrefix(const std::string& _prefix);
-
-                    /**
-                     * 判断参数 Prefix 是否已赋值
-                     * @return Prefix 是否已赋值
-                     * 
-                     */
-                    bool PrefixHasBeenSet() const;
-
-                    /**
                      * 获取采集的日志类型，json_log代表json格式日志，delimiter_log代表分隔符格式日志，minimalist_log代表单行全文；
 默认为minimalist_log
                      * @return LogType 采集的日志类型，json_log代表json格式日志，delimiter_log代表分隔符格式日志，minimalist_log代表单行全文；
@@ -193,6 +172,27 @@ namespace TencentCloud
                      * 
                      */
                     bool LogTypeHasBeenSet() const;
+
+                    /**
+                     * 获取COS文件所在文件夹的前缀。默认为空，投递存储桶下所有的文件。
+                     * @return Prefix COS文件所在文件夹的前缀。默认为空，投递存储桶下所有的文件。
+                     * 
+                     */
+                    std::string GetPrefix() const;
+
+                    /**
+                     * 设置COS文件所在文件夹的前缀。默认为空，投递存储桶下所有的文件。
+                     * @param _prefix COS文件所在文件夹的前缀。默认为空，投递存储桶下所有的文件。
+                     * 
+                     */
+                    void SetPrefix(const std::string& _prefix);
+
+                    /**
+                     * 判断参数 Prefix 是否已赋值
+                     * @return Prefix 是否已赋值
+                     * 
+                     */
+                    bool PrefixHasBeenSet() const;
 
                     /**
                      * 获取supported: "", "gzip", "lzop", "snappy"; 默认空
@@ -311,17 +311,17 @@ namespace TencentCloud
                     bool m_bucketRegionHasBeenSet;
 
                     /**
-                     * COS文件所在文件夹的前缀
-                     */
-                    std::string m_prefix;
-                    bool m_prefixHasBeenSet;
-
-                    /**
                      * 采集的日志类型，json_log代表json格式日志，delimiter_log代表分隔符格式日志，minimalist_log代表单行全文；
 默认为minimalist_log
                      */
                     std::string m_logType;
                     bool m_logTypeHasBeenSet;
+
+                    /**
+                     * COS文件所在文件夹的前缀。默认为空，投递存储桶下所有的文件。
+                     */
+                    std::string m_prefix;
+                    bool m_prefixHasBeenSet;
 
                     /**
                      * supported: "", "gzip", "lzop", "snappy"; 默认空

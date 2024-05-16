@@ -193,18 +193,18 @@ namespace TencentCloud
                     bool RemarkHasBeenSet() const;
 
                     /**
-                     * 获取策略关联操作者主帐号
+                     * 获取策略关联操作者主账号
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return OperateOwnerUin 策略关联操作者主帐号
+                     * @return OperateOwnerUin 策略关联操作者主账号
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetOperateOwnerUin() const;
 
                     /**
-                     * 设置策略关联操作者主帐号
+                     * 设置策略关联操作者主账号
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _operateOwnerUin 策略关联操作者主帐号
+                     * @param _operateOwnerUin 策略关联操作者主账号
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -218,18 +218,18 @@ namespace TencentCloud
                     bool OperateOwnerUinHasBeenSet() const;
 
                     /**
-                     * 获取策略关联操作者ID，如果UinType为0表示子帐号Uin，如果UinType为1表示角色ID
+                     * 获取策略关联操作者ID，如果UinType为0表示子账号Uin，如果UinType为1表示角色ID
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return OperateUin 策略关联操作者ID，如果UinType为0表示子帐号Uin，如果UinType为1表示角色ID
+                     * @return OperateUin 策略关联操作者ID，如果UinType为0表示子账号Uin，如果UinType为1表示角色ID
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetOperateUin() const;
 
                     /**
-                     * 设置策略关联操作者ID，如果UinType为0表示子帐号Uin，如果UinType为1表示角色ID
+                     * 设置策略关联操作者ID，如果UinType为0表示子账号Uin，如果UinType为1表示角色ID
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _operateUin 策略关联操作者ID，如果UinType为0表示子帐号Uin，如果UinType为1表示角色ID
+                     * @param _operateUin 策略关联操作者ID，如果UinType为0表示子账号Uin，如果UinType为1表示角色ID
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -243,18 +243,18 @@ namespace TencentCloud
                     bool OperateUinHasBeenSet() const;
 
                     /**
-                     * 获取UinType为0表示OperateUin字段是子帐号Uin，如果UinType为1表示OperateUin字段是角色ID
+                     * 获取UinType为0表示OperateUin字段是子账号Uin，如果UinType为1表示OperateUin字段是角色ID
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return OperateUinType UinType为0表示OperateUin字段是子帐号Uin，如果UinType为1表示OperateUin字段是角色ID
+                     * @return OperateUinType UinType为0表示OperateUin字段是子账号Uin，如果UinType为1表示OperateUin字段是角色ID
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     uint64_t GetOperateUinType() const;
 
                     /**
-                     * 设置UinType为0表示OperateUin字段是子帐号Uin，如果UinType为1表示OperateUin字段是角色ID
+                     * 设置UinType为0表示OperateUin字段是子账号Uin，如果UinType为1表示OperateUin字段是角色ID
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _operateUinType UinType为0表示OperateUin字段是子帐号Uin，如果UinType为1表示OperateUin字段是角色ID
+                     * @param _operateUinType UinType为0表示OperateUin字段是子账号Uin，如果UinType为1表示OperateUin字段是角色ID
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -361,21 +361,21 @@ namespace TencentCloud
                     bool m_remarkHasBeenSet;
 
                     /**
-                     * 策略关联操作者主帐号
+                     * 策略关联操作者主账号
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_operateOwnerUin;
                     bool m_operateOwnerUinHasBeenSet;
 
                     /**
-                     * 策略关联操作者ID，如果UinType为0表示子帐号Uin，如果UinType为1表示角色ID
+                     * 策略关联操作者ID，如果UinType为0表示子账号Uin，如果UinType为1表示角色ID
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_operateUin;
                     bool m_operateUinHasBeenSet;
 
                     /**
-                     * UinType为0表示OperateUin字段是子帐号Uin，如果UinType为1表示OperateUin字段是角色ID
+                     * UinType为0表示OperateUin字段是子账号Uin，如果UinType为1表示OperateUin字段是角色ID
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     uint64_t m_operateUinType;

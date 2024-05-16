@@ -556,6 +556,92 @@ EmrClient::DescribeEmrApplicationStaticsOutcomeCallable EmrClient::DescribeEmrAp
     return task->get_future();
 }
 
+EmrClient::DescribeEmrOverviewMetricsOutcome EmrClient::DescribeEmrOverviewMetrics(const DescribeEmrOverviewMetricsRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeEmrOverviewMetrics");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeEmrOverviewMetricsResponse rsp = DescribeEmrOverviewMetricsResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeEmrOverviewMetricsOutcome(rsp);
+        else
+            return DescribeEmrOverviewMetricsOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeEmrOverviewMetricsOutcome(outcome.GetError());
+    }
+}
+
+void EmrClient::DescribeEmrOverviewMetricsAsync(const DescribeEmrOverviewMetricsRequest& request, const DescribeEmrOverviewMetricsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeEmrOverviewMetrics(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+EmrClient::DescribeEmrOverviewMetricsOutcomeCallable EmrClient::DescribeEmrOverviewMetricsCallable(const DescribeEmrOverviewMetricsRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeEmrOverviewMetricsOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeEmrOverviewMetrics(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+EmrClient::DescribeHBaseTableOverviewOutcome EmrClient::DescribeHBaseTableOverview(const DescribeHBaseTableOverviewRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeHBaseTableOverview");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeHBaseTableOverviewResponse rsp = DescribeHBaseTableOverviewResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeHBaseTableOverviewOutcome(rsp);
+        else
+            return DescribeHBaseTableOverviewOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeHBaseTableOverviewOutcome(outcome.GetError());
+    }
+}
+
+void EmrClient::DescribeHBaseTableOverviewAsync(const DescribeHBaseTableOverviewRequest& request, const DescribeHBaseTableOverviewAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeHBaseTableOverview(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+EmrClient::DescribeHBaseTableOverviewOutcomeCallable EmrClient::DescribeHBaseTableOverviewCallable(const DescribeHBaseTableOverviewRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeHBaseTableOverviewOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeHBaseTableOverview(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 EmrClient::DescribeHiveQueriesOutcome EmrClient::DescribeHiveQueries(const DescribeHiveQueriesRequest &request)
 {
     auto outcome = MakeRequest(request, "DescribeHiveQueries");

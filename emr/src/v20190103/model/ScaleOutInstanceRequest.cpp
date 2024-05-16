@@ -48,7 +48,9 @@ ScaleOutInstanceRequest::ScaleOutInstanceRequest() :
     m_zoneIdHasBeenSet(false),
     m_subnetIdHasBeenSet(false),
     m_scaleOutServiceConfAssignHasBeenSet(false),
-    m_autoRenewHasBeenSet(false)
+    m_autoRenewHasBeenSet(false),
+    m_resourceBaseTypeHasBeenSet(false),
+    m_computeResourceIdHasBeenSet(false)
 {
 }
 
@@ -301,6 +303,22 @@ string ScaleOutInstanceRequest::ToJsonString() const
         string key = "AutoRenew";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_autoRenew, allocator);
+    }
+
+    if (m_resourceBaseTypeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ResourceBaseType";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_resourceBaseType.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_computeResourceIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ComputeResourceId";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_computeResourceId.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -725,6 +743,38 @@ void ScaleOutInstanceRequest::SetAutoRenew(const int64_t& _autoRenew)
 bool ScaleOutInstanceRequest::AutoRenewHasBeenSet() const
 {
     return m_autoRenewHasBeenSet;
+}
+
+string ScaleOutInstanceRequest::GetResourceBaseType() const
+{
+    return m_resourceBaseType;
+}
+
+void ScaleOutInstanceRequest::SetResourceBaseType(const string& _resourceBaseType)
+{
+    m_resourceBaseType = _resourceBaseType;
+    m_resourceBaseTypeHasBeenSet = true;
+}
+
+bool ScaleOutInstanceRequest::ResourceBaseTypeHasBeenSet() const
+{
+    return m_resourceBaseTypeHasBeenSet;
+}
+
+string ScaleOutInstanceRequest::GetComputeResourceId() const
+{
+    return m_computeResourceId;
+}
+
+void ScaleOutInstanceRequest::SetComputeResourceId(const string& _computeResourceId)
+{
+    m_computeResourceId = _computeResourceId;
+    m_computeResourceIdHasBeenSet = true;
+}
+
+bool ScaleOutInstanceRequest::ComputeResourceIdHasBeenSet() const
+{
+    return m_computeResourceIdHasBeenSet;
 }
 
 

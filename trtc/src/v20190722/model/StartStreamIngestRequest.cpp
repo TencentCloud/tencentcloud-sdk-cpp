@@ -28,11 +28,12 @@ StartStreamIngestRequest::StartStreamIngestRequest() :
     m_roomIdTypeHasBeenSet(false),
     m_userIdHasBeenSet(false),
     m_userSigHasBeenSet(false),
-    m_sourceUrlHasBeenSet(false),
+    m_streamUrlHasBeenSet(false),
     m_privateMapKeyHasBeenSet(false),
     m_videoEncodeParamsHasBeenSet(false),
     m_audioEncodeParamsHasBeenSet(false),
-    m_streamUrlHasBeenSet(false)
+    m_sourceUrlHasBeenSet(false),
+    m_seekSecondHasBeenSet(false)
 {
 }
 
@@ -83,17 +84,12 @@ string StartStreamIngestRequest::ToJsonString() const
         d.AddMember(iKey, rapidjson::Value(m_userSig.c_str(), allocator).Move(), allocator);
     }
 
-    if (m_sourceUrlHasBeenSet)
+    if (m_streamUrlHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "SourceUrl";
+        string key = "StreamUrl";
         iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
-
-        for (auto itr = m_sourceUrl.begin(); itr != m_sourceUrl.end(); ++itr)
-        {
-            d[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
-        }
+        d.AddMember(iKey, rapidjson::Value(m_streamUrl.c_str(), allocator).Move(), allocator);
     }
 
     if (m_privateMapKeyHasBeenSet)
@@ -122,12 +118,25 @@ string StartStreamIngestRequest::ToJsonString() const
         m_audioEncodeParams.ToJsonObject(d[key.c_str()], allocator);
     }
 
-    if (m_streamUrlHasBeenSet)
+    if (m_sourceUrlHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "StreamUrl";
+        string key = "SourceUrl";
         iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, rapidjson::Value(m_streamUrl.c_str(), allocator).Move(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        for (auto itr = m_sourceUrl.begin(); itr != m_sourceUrl.end(); ++itr)
+        {
+            d[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
+        }
+    }
+
+    if (m_seekSecondHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "SeekSecond";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_seekSecond, allocator);
     }
 
 
@@ -218,20 +227,20 @@ bool StartStreamIngestRequest::UserSigHasBeenSet() const
     return m_userSigHasBeenSet;
 }
 
-vector<string> StartStreamIngestRequest::GetSourceUrl() const
+string StartStreamIngestRequest::GetStreamUrl() const
 {
-    return m_sourceUrl;
+    return m_streamUrl;
 }
 
-void StartStreamIngestRequest::SetSourceUrl(const vector<string>& _sourceUrl)
+void StartStreamIngestRequest::SetStreamUrl(const string& _streamUrl)
 {
-    m_sourceUrl = _sourceUrl;
-    m_sourceUrlHasBeenSet = true;
+    m_streamUrl = _streamUrl;
+    m_streamUrlHasBeenSet = true;
 }
 
-bool StartStreamIngestRequest::SourceUrlHasBeenSet() const
+bool StartStreamIngestRequest::StreamUrlHasBeenSet() const
 {
-    return m_sourceUrlHasBeenSet;
+    return m_streamUrlHasBeenSet;
 }
 
 string StartStreamIngestRequest::GetPrivateMapKey() const
@@ -282,20 +291,36 @@ bool StartStreamIngestRequest::AudioEncodeParamsHasBeenSet() const
     return m_audioEncodeParamsHasBeenSet;
 }
 
-string StartStreamIngestRequest::GetStreamUrl() const
+vector<string> StartStreamIngestRequest::GetSourceUrl() const
 {
-    return m_streamUrl;
+    return m_sourceUrl;
 }
 
-void StartStreamIngestRequest::SetStreamUrl(const string& _streamUrl)
+void StartStreamIngestRequest::SetSourceUrl(const vector<string>& _sourceUrl)
 {
-    m_streamUrl = _streamUrl;
-    m_streamUrlHasBeenSet = true;
+    m_sourceUrl = _sourceUrl;
+    m_sourceUrlHasBeenSet = true;
 }
 
-bool StartStreamIngestRequest::StreamUrlHasBeenSet() const
+bool StartStreamIngestRequest::SourceUrlHasBeenSet() const
 {
-    return m_streamUrlHasBeenSet;
+    return m_sourceUrlHasBeenSet;
+}
+
+int64_t StartStreamIngestRequest::GetSeekSecond() const
+{
+    return m_seekSecond;
+}
+
+void StartStreamIngestRequest::SetSeekSecond(const int64_t& _seekSecond)
+{
+    m_seekSecond = _seekSecond;
+    m_seekSecondHasBeenSet = true;
+}
+
+bool StartStreamIngestRequest::SeekSecondHasBeenSet() const
+{
+    return m_seekSecondHasBeenSet;
 }
 
 

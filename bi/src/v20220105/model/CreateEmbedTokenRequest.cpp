@@ -30,7 +30,8 @@ CreateEmbedTokenRequest::CreateEmbedTokenRequest() :
     m_extraParamHasBeenSet(false),
     m_userCorpIdHasBeenSet(false),
     m_userIdHasBeenSet(false),
-    m_ticketNumHasBeenSet(false)
+    m_ticketNumHasBeenSet(false),
+    m_globalParamHasBeenSet(false)
 {
 }
 
@@ -103,6 +104,14 @@ string CreateEmbedTokenRequest::ToJsonString() const
         string key = "TicketNum";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_ticketNum, allocator);
+    }
+
+    if (m_globalParamHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "GlobalParam";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_globalParam.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -239,6 +248,22 @@ void CreateEmbedTokenRequest::SetTicketNum(const int64_t& _ticketNum)
 bool CreateEmbedTokenRequest::TicketNumHasBeenSet() const
 {
     return m_ticketNumHasBeenSet;
+}
+
+string CreateEmbedTokenRequest::GetGlobalParam() const
+{
+    return m_globalParam;
+}
+
+void CreateEmbedTokenRequest::SetGlobalParam(const string& _globalParam)
+{
+    m_globalParam = _globalParam;
+    m_globalParamHasBeenSet = true;
+}
+
+bool CreateEmbedTokenRequest::GlobalParamHasBeenSet() const
+{
+    return m_globalParamHasBeenSet;
 }
 
 

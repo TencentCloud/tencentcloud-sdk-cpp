@@ -45,8 +45,8 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取ip状态信息
-                     * @return StatusList ip状态信息
+                     * 获取IP状态信息
+                     * @return StatusList IP状态信息
                      * 
                      */
                     std::vector<IPDefendStatus> GetStatusList() const;
@@ -89,7 +89,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * ip状态信息
+                     * IP状态信息
                      */
                     std::vector<IPDefendStatus> m_statusList;
                     bool m_statusListHasBeenSet;

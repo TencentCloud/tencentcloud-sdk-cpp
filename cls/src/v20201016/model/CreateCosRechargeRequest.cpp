@@ -28,8 +28,8 @@ CreateCosRechargeRequest::CreateCosRechargeRequest() :
     m_nameHasBeenSet(false),
     m_bucketHasBeenSet(false),
     m_bucketRegionHasBeenSet(false),
-    m_prefixHasBeenSet(false),
     m_logTypeHasBeenSet(false),
+    m_prefixHasBeenSet(false),
     m_compressHasBeenSet(false),
     m_extractRuleInfoHasBeenSet(false),
     m_taskTypeHasBeenSet(false),
@@ -84,20 +84,20 @@ string CreateCosRechargeRequest::ToJsonString() const
         d.AddMember(iKey, rapidjson::Value(m_bucketRegion.c_str(), allocator).Move(), allocator);
     }
 
-    if (m_prefixHasBeenSet)
-    {
-        rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "Prefix";
-        iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, rapidjson::Value(m_prefix.c_str(), allocator).Move(), allocator);
-    }
-
     if (m_logTypeHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
         string key = "LogType";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_logType.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_prefixHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Prefix";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_prefix.c_str(), allocator).Move(), allocator);
     }
 
     if (m_compressHasBeenSet)
@@ -226,22 +226,6 @@ bool CreateCosRechargeRequest::BucketRegionHasBeenSet() const
     return m_bucketRegionHasBeenSet;
 }
 
-string CreateCosRechargeRequest::GetPrefix() const
-{
-    return m_prefix;
-}
-
-void CreateCosRechargeRequest::SetPrefix(const string& _prefix)
-{
-    m_prefix = _prefix;
-    m_prefixHasBeenSet = true;
-}
-
-bool CreateCosRechargeRequest::PrefixHasBeenSet() const
-{
-    return m_prefixHasBeenSet;
-}
-
 string CreateCosRechargeRequest::GetLogType() const
 {
     return m_logType;
@@ -256,6 +240,22 @@ void CreateCosRechargeRequest::SetLogType(const string& _logType)
 bool CreateCosRechargeRequest::LogTypeHasBeenSet() const
 {
     return m_logTypeHasBeenSet;
+}
+
+string CreateCosRechargeRequest::GetPrefix() const
+{
+    return m_prefix;
+}
+
+void CreateCosRechargeRequest::SetPrefix(const string& _prefix)
+{
+    m_prefix = _prefix;
+    m_prefixHasBeenSet = true;
+}
+
+bool CreateCosRechargeRequest::PrefixHasBeenSet() const
+{
+    return m_prefixHasBeenSet;
 }
 
 string CreateCosRechargeRequest::GetCompress() const

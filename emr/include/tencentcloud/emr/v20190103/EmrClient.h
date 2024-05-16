@@ -47,6 +47,10 @@
 #include <tencentcloud/emr/v20190103/model/DescribeCvmQuotaResponse.h>
 #include <tencentcloud/emr/v20190103/model/DescribeEmrApplicationStaticsRequest.h>
 #include <tencentcloud/emr/v20190103/model/DescribeEmrApplicationStaticsResponse.h>
+#include <tencentcloud/emr/v20190103/model/DescribeEmrOverviewMetricsRequest.h>
+#include <tencentcloud/emr/v20190103/model/DescribeEmrOverviewMetricsResponse.h>
+#include <tencentcloud/emr/v20190103/model/DescribeHBaseTableOverviewRequest.h>
+#include <tencentcloud/emr/v20190103/model/DescribeHBaseTableOverviewResponse.h>
 #include <tencentcloud/emr/v20190103/model/DescribeHiveQueriesRequest.h>
 #include <tencentcloud/emr/v20190103/model/DescribeHiveQueriesResponse.h>
 #include <tencentcloud/emr/v20190103/model/DescribeImpalaQueriesRequest.h>
@@ -155,6 +159,12 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeEmrApplicationStaticsResponse> DescribeEmrApplicationStaticsOutcome;
                 typedef std::future<DescribeEmrApplicationStaticsOutcome> DescribeEmrApplicationStaticsOutcomeCallable;
                 typedef std::function<void(const EmrClient*, const Model::DescribeEmrApplicationStaticsRequest&, DescribeEmrApplicationStaticsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeEmrApplicationStaticsAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeEmrOverviewMetricsResponse> DescribeEmrOverviewMetricsOutcome;
+                typedef std::future<DescribeEmrOverviewMetricsOutcome> DescribeEmrOverviewMetricsOutcomeCallable;
+                typedef std::function<void(const EmrClient*, const Model::DescribeEmrOverviewMetricsRequest&, DescribeEmrOverviewMetricsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeEmrOverviewMetricsAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeHBaseTableOverviewResponse> DescribeHBaseTableOverviewOutcome;
+                typedef std::future<DescribeHBaseTableOverviewOutcome> DescribeHBaseTableOverviewOutcomeCallable;
+                typedef std::function<void(const EmrClient*, const Model::DescribeHBaseTableOverviewRequest&, DescribeHBaseTableOverviewOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeHBaseTableOverviewAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeHiveQueriesResponse> DescribeHiveQueriesOutcome;
                 typedef std::future<DescribeHiveQueriesOutcome> DescribeHiveQueriesOutcomeCallable;
                 typedef std::function<void(const EmrClient*, const Model::DescribeHiveQueriesRequest&, DescribeHiveQueriesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeHiveQueriesAsyncHandler;
@@ -353,6 +363,24 @@ namespace TencentCloud
                 DescribeEmrApplicationStaticsOutcome DescribeEmrApplicationStatics(const Model::DescribeEmrApplicationStaticsRequest &request);
                 void DescribeEmrApplicationStaticsAsync(const Model::DescribeEmrApplicationStaticsRequest& request, const DescribeEmrApplicationStaticsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DescribeEmrApplicationStaticsOutcomeCallable DescribeEmrApplicationStaticsCallable(const Model::DescribeEmrApplicationStaticsRequest& request);
+
+                /**
+                 *查询监控概览页指标数据
+                 * @param req DescribeEmrOverviewMetricsRequest
+                 * @return DescribeEmrOverviewMetricsOutcome
+                 */
+                DescribeEmrOverviewMetricsOutcome DescribeEmrOverviewMetrics(const Model::DescribeEmrOverviewMetricsRequest &request);
+                void DescribeEmrOverviewMetricsAsync(const Model::DescribeEmrOverviewMetricsRequest& request, const DescribeEmrOverviewMetricsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeEmrOverviewMetricsOutcomeCallable DescribeEmrOverviewMetricsCallable(const Model::DescribeEmrOverviewMetricsRequest& request);
+
+                /**
+                 *获取Hbase表级监控数据概览接口
+                 * @param req DescribeHBaseTableOverviewRequest
+                 * @return DescribeHBaseTableOverviewOutcome
+                 */
+                DescribeHBaseTableOverviewOutcome DescribeHBaseTableOverview(const Model::DescribeHBaseTableOverviewRequest &request);
+                void DescribeHBaseTableOverviewAsync(const Model::DescribeHBaseTableOverviewRequest& request, const DescribeHBaseTableOverviewAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeHBaseTableOverviewOutcomeCallable DescribeHBaseTableOverviewCallable(const Model::DescribeHBaseTableOverviewRequest& request);
 
                 /**
                  *获取hive查询信息
