@@ -222,29 +222,154 @@ namespace TencentCloud
                     bool CorporationIdPicUrlHasBeenSet() const;
 
                     /**
-                     * 获取业务经营范围
+                     * 获取安全合规使用承诺书。(支持jpg、png、gif、jpeg格式的图片，每张图片应大于50K，不超过5MB，模板参见控制台:https://console.cloud.tencent.com/ccc/enterprise/update)
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return BusinessScope 业务经营范围
+                     * @return NetworkCommitmentPicUrl 安全合规使用承诺书。(支持jpg、png、gif、jpeg格式的图片，每张图片应大于50K，不超过5MB，模板参见控制台:https://console.cloud.tencent.com/ccc/enterprise/update)
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
-                    std::string GetBusinessScope() const;
+                    std::string GetNetworkCommitmentPicUrl() const;
 
                     /**
-                     * 设置业务经营范围
+                     * 设置安全合规使用承诺书。(支持jpg、png、gif、jpeg格式的图片，每张图片应大于50K，不超过5MB，模板参见控制台:https://console.cloud.tencent.com/ccc/enterprise/update)
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _businessScope 业务经营范围
+                     * @param _networkCommitmentPicUrl 安全合规使用承诺书。(支持jpg、png、gif、jpeg格式的图片，每张图片应大于50K，不超过5MB，模板参见控制台:https://console.cloud.tencent.com/ccc/enterprise/update)
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
-                    void SetBusinessScope(const std::string& _businessScope);
+                    void SetNetworkCommitmentPicUrl(const std::string& _networkCommitmentPicUrl);
 
                     /**
-                     * 判断参数 BusinessScope 是否已赋值
-                     * @return BusinessScope 是否已赋值
+                     * 判断参数 NetworkCommitmentPicUrl 是否已赋值
+                     * @return NetworkCommitmentPicUrl 是否已赋值
                      * 
                      */
-                    bool BusinessScopeHasBeenSet() const;
+                    bool NetworkCommitmentPicUrlHasBeenSet() const;
+
+                    /**
+                     * 获取是否与腾讯云账号的资质一致,0-不一致,1-一致
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return IsEqualTencentCloud 是否与腾讯云账号的资质一致,0-不一致,1-一致
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    int64_t GetIsEqualTencentCloud() const;
+
+                    /**
+                     * 设置是否与腾讯云账号的资质一致,0-不一致,1-一致
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _isEqualTencentCloud 是否与腾讯云账号的资质一致,0-不一致,1-一致
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetIsEqualTencentCloud(const int64_t& _isEqualTencentCloud);
+
+                    /**
+                     * 判断参数 IsEqualTencentCloud 是否已赋值
+                     * @return IsEqualTencentCloud 是否已赋值
+                     * 
+                     */
+                    bool IsEqualTencentCloudHasBeenSet() const;
+
+                    /**
+                     * 获取法定代表人手机号
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return CorporationMobile 法定代表人手机号
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::string GetCorporationMobile() const;
+
+                    /**
+                     * 设置法定代表人手机号
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _corporationMobile 法定代表人手机号
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetCorporationMobile(const std::string& _corporationMobile);
+
+                    /**
+                     * 判断参数 CorporationMobile 是否已赋值
+                     * @return CorporationMobile 是否已赋值
+                     * 
+                     */
+                    bool CorporationMobileHasBeenSet() const;
+
+                    /**
+                     * 获取法定代表人手机号码实名认证。(支持jpg、png、gif、jpeg格式的图片，每张图片应大于50K，不超过5MB，模板参见控制台:https://console.cloud.tencent.com/ccc/enterprise/update)
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return CorporationMobilePicUrl 法定代表人手机号码实名认证。(支持jpg、png、gif、jpeg格式的图片，每张图片应大于50K，不超过5MB，模板参见控制台:https://console.cloud.tencent.com/ccc/enterprise/update)
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::string GetCorporationMobilePicUrl() const;
+
+                    /**
+                     * 设置法定代表人手机号码实名认证。(支持jpg、png、gif、jpeg格式的图片，每张图片应大于50K，不超过5MB，模板参见控制台:https://console.cloud.tencent.com/ccc/enterprise/update)
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _corporationMobilePicUrl 法定代表人手机号码实名认证。(支持jpg、png、gif、jpeg格式的图片，每张图片应大于50K，不超过5MB，模板参见控制台:https://console.cloud.tencent.com/ccc/enterprise/update)
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetCorporationMobilePicUrl(const std::string& _corporationMobilePicUrl);
+
+                    /**
+                     * 判断参数 CorporationMobilePicUrl 是否已赋值
+                     * @return CorporationMobilePicUrl 是否已赋值
+                     * 
+                     */
+                    bool CorporationMobilePicUrlHasBeenSet() const;
+
+                    /**
+                     * 获取通话话术。(支持doc、docx格式的文档不超过50MB，模板参见控制台:https://console.cloud.tencent.com/ccc/enterprise/update)
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return UseDescribeFileUrl 通话话术。(支持doc、docx格式的文档不超过50MB，模板参见控制台:https://console.cloud.tencent.com/ccc/enterprise/update)
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::string GetUseDescribeFileUrl() const;
+
+                    /**
+                     * 设置通话话术。(支持doc、docx格式的文档不超过50MB，模板参见控制台:https://console.cloud.tencent.com/ccc/enterprise/update)
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _useDescribeFileUrl 通话话术。(支持doc、docx格式的文档不超过50MB，模板参见控制台:https://console.cloud.tencent.com/ccc/enterprise/update)
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetUseDescribeFileUrl(const std::string& _useDescribeFileUrl);
+
+                    /**
+                     * 判断参数 UseDescribeFileUrl 是否已赋值
+                     * @return UseDescribeFileUrl 是否已赋值
+                     * 
+                     */
+                    bool UseDescribeFileUrlHasBeenSet() const;
+
+                    /**
+                     * 获取公司授权函。(支持jpg、png、gif、jpeg格式的图片，每张图片应大于50K，不超过5MB，模板参见控制台:https://console.cloud.tencent.com/ccc/enterprise/update)
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return CompanyAuthLetterPicUrl 公司授权函。(支持jpg、png、gif、jpeg格式的图片，每张图片应大于50K，不超过5MB，模板参见控制台:https://console.cloud.tencent.com/ccc/enterprise/update)
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::string GetCompanyAuthLetterPicUrl() const;
+
+                    /**
+                     * 设置公司授权函。(支持jpg、png、gif、jpeg格式的图片，每张图片应大于50K，不超过5MB，模板参见控制台:https://console.cloud.tencent.com/ccc/enterprise/update)
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _companyAuthLetterPicUrl 公司授权函。(支持jpg、png、gif、jpeg格式的图片，每张图片应大于50K，不超过5MB，模板参见控制台:https://console.cloud.tencent.com/ccc/enterprise/update)
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetCompanyAuthLetterPicUrl(const std::string& _companyAuthLetterPicUrl);
+
+                    /**
+                     * 判断参数 CompanyAuthLetterPicUrl 是否已赋值
+                     * @return CompanyAuthLetterPicUrl 是否已赋值
+                     * 
+                     */
+                    bool CompanyAuthLetterPicUrlHasBeenSet() const;
 
                     /**
                      * 获取电话受理单。(支持jpg、png、gif、jpeg格式的图片，每张图片应大于50K，不超过5MB，模板参见控制台:https://console.cloud.tencent.com/ccc/enterprise/update)
@@ -270,31 +395,6 @@ namespace TencentCloud
                      * 
                      */
                     bool AcceptPicUrlHasBeenSet() const;
-
-                    /**
-                     * 获取电信入网承诺书。(支持jpg、png、gif、jpeg格式的图片，每张图片应大于50K，不超过5MB，模板参见控制台:https://console.cloud.tencent.com/ccc/enterprise/update)
-注意：此字段可能返回 null，表示取不到有效值。
-                     * @return NetworkCommitmentPicUrl 电信入网承诺书。(支持jpg、png、gif、jpeg格式的图片，每张图片应大于50K，不超过5MB，模板参见控制台:https://console.cloud.tencent.com/ccc/enterprise/update)
-注意：此字段可能返回 null，表示取不到有效值。
-                     * 
-                     */
-                    std::string GetNetworkCommitmentPicUrl() const;
-
-                    /**
-                     * 设置电信入网承诺书。(支持jpg、png、gif、jpeg格式的图片，每张图片应大于50K，不超过5MB，模板参见控制台:https://console.cloud.tencent.com/ccc/enterprise/update)
-注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _networkCommitmentPicUrl 电信入网承诺书。(支持jpg、png、gif、jpeg格式的图片，每张图片应大于50K，不超过5MB，模板参见控制台:https://console.cloud.tencent.com/ccc/enterprise/update)
-注意：此字段可能返回 null，表示取不到有效值。
-                     * 
-                     */
-                    void SetNetworkCommitmentPicUrl(const std::string& _networkCommitmentPicUrl);
-
-                    /**
-                     * 判断参数 NetworkCommitmentPicUrl 是否已赋值
-                     * @return NetworkCommitmentPicUrl 是否已赋值
-                     * 
-                     */
-                    bool NetworkCommitmentPicUrlHasBeenSet() const;
 
                     /**
                      * 获取法定代表人手持身份证照，申请人类型为法定代表人时必填。(支持jpg、png、gif、jpeg格式的图片，每张图片应大于50K，不超过5MB，模板参见控制台:https://console.cloud.tencent.com/ccc/enterprise/update)
@@ -446,6 +546,81 @@ namespace TencentCloud
                      */
                     bool CommissionPicUrlHasBeenSet() const;
 
+                    /**
+                     * 获取经办人手机号，申请人类型为经办人时必填。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return OperatorMobile 经办人手机号，申请人类型为经办人时必填。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::string GetOperatorMobile() const;
+
+                    /**
+                     * 设置经办人手机号，申请人类型为经办人时必填。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _operatorMobile 经办人手机号，申请人类型为经办人时必填。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetOperatorMobile(const std::string& _operatorMobile);
+
+                    /**
+                     * 判断参数 OperatorMobile 是否已赋值
+                     * @return OperatorMobile 是否已赋值
+                     * 
+                     */
+                    bool OperatorMobileHasBeenSet() const;
+
+                    /**
+                     * 获取经办人邮箱，申请人类型为经办人时必填。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return OperatorEmail 经办人邮箱，申请人类型为经办人时必填。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::string GetOperatorEmail() const;
+
+                    /**
+                     * 设置经办人邮箱，申请人类型为经办人时必填。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _operatorEmail 经办人邮箱，申请人类型为经办人时必填。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetOperatorEmail(const std::string& _operatorEmail);
+
+                    /**
+                     * 判断参数 OperatorEmail 是否已赋值
+                     * @return OperatorEmail 是否已赋值
+                     * 
+                     */
+                    bool OperatorEmailHasBeenSet() const;
+
+                    /**
+                     * 获取经办人手机号码实名认证，申请人类型为经办人时必填。(支持jpg、png、gif、jpeg格式的图片，每张图片应大于50K，不超过5MB，模板参见控制台:https://console.cloud.tencent.com/ccc/enterprise/update)
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return OperatorMobilePicUrl 经办人手机号码实名认证，申请人类型为经办人时必填。(支持jpg、png、gif、jpeg格式的图片，每张图片应大于50K，不超过5MB，模板参见控制台:https://console.cloud.tencent.com/ccc/enterprise/update)
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::string GetOperatorMobilePicUrl() const;
+
+                    /**
+                     * 设置经办人手机号码实名认证，申请人类型为经办人时必填。(支持jpg、png、gif、jpeg格式的图片，每张图片应大于50K，不超过5MB，模板参见控制台:https://console.cloud.tencent.com/ccc/enterprise/update)
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _operatorMobilePicUrl 经办人手机号码实名认证，申请人类型为经办人时必填。(支持jpg、png、gif、jpeg格式的图片，每张图片应大于50K，不超过5MB，模板参见控制台:https://console.cloud.tencent.com/ccc/enterprise/update)
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetOperatorMobilePicUrl(const std::string& _operatorMobilePicUrl);
+
+                    /**
+                     * 判断参数 OperatorMobilePicUrl 是否已赋值
+                     * @return OperatorMobilePicUrl 是否已赋值
+                     * 
+                     */
+                    bool OperatorMobilePicUrlHasBeenSet() const;
+
                 private:
 
                     /**
@@ -498,11 +673,46 @@ namespace TencentCloud
                     bool m_corporationIdPicUrlHasBeenSet;
 
                     /**
-                     * 业务经营范围
+                     * 安全合规使用承诺书。(支持jpg、png、gif、jpeg格式的图片，每张图片应大于50K，不超过5MB，模板参见控制台:https://console.cloud.tencent.com/ccc/enterprise/update)
 注意：此字段可能返回 null，表示取不到有效值。
                      */
-                    std::string m_businessScope;
-                    bool m_businessScopeHasBeenSet;
+                    std::string m_networkCommitmentPicUrl;
+                    bool m_networkCommitmentPicUrlHasBeenSet;
+
+                    /**
+                     * 是否与腾讯云账号的资质一致,0-不一致,1-一致
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    int64_t m_isEqualTencentCloud;
+                    bool m_isEqualTencentCloudHasBeenSet;
+
+                    /**
+                     * 法定代表人手机号
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_corporationMobile;
+                    bool m_corporationMobileHasBeenSet;
+
+                    /**
+                     * 法定代表人手机号码实名认证。(支持jpg、png、gif、jpeg格式的图片，每张图片应大于50K，不超过5MB，模板参见控制台:https://console.cloud.tencent.com/ccc/enterprise/update)
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_corporationMobilePicUrl;
+                    bool m_corporationMobilePicUrlHasBeenSet;
+
+                    /**
+                     * 通话话术。(支持doc、docx格式的文档不超过50MB，模板参见控制台:https://console.cloud.tencent.com/ccc/enterprise/update)
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_useDescribeFileUrl;
+                    bool m_useDescribeFileUrlHasBeenSet;
+
+                    /**
+                     * 公司授权函。(支持jpg、png、gif、jpeg格式的图片，每张图片应大于50K，不超过5MB，模板参见控制台:https://console.cloud.tencent.com/ccc/enterprise/update)
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_companyAuthLetterPicUrl;
+                    bool m_companyAuthLetterPicUrlHasBeenSet;
 
                     /**
                      * 电话受理单。(支持jpg、png、gif、jpeg格式的图片，每张图片应大于50K，不超过5MB，模板参见控制台:https://console.cloud.tencent.com/ccc/enterprise/update)
@@ -510,13 +720,6 @@ namespace TencentCloud
                      */
                     std::string m_acceptPicUrl;
                     bool m_acceptPicUrlHasBeenSet;
-
-                    /**
-                     * 电信入网承诺书。(支持jpg、png、gif、jpeg格式的图片，每张图片应大于50K，不超过5MB，模板参见控制台:https://console.cloud.tencent.com/ccc/enterprise/update)
-注意：此字段可能返回 null，表示取不到有效值。
-                     */
-                    std::string m_networkCommitmentPicUrl;
-                    bool m_networkCommitmentPicUrlHasBeenSet;
 
                     /**
                      * 法定代表人手持身份证照，申请人类型为法定代表人时必填。(支持jpg、png、gif、jpeg格式的图片，每张图片应大于50K，不超过5MB，模板参见控制台:https://console.cloud.tencent.com/ccc/enterprise/update)
@@ -559,6 +762,27 @@ namespace TencentCloud
                      */
                     std::string m_commissionPicUrl;
                     bool m_commissionPicUrlHasBeenSet;
+
+                    /**
+                     * 经办人手机号，申请人类型为经办人时必填。
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_operatorMobile;
+                    bool m_operatorMobileHasBeenSet;
+
+                    /**
+                     * 经办人邮箱，申请人类型为经办人时必填。
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_operatorEmail;
+                    bool m_operatorEmailHasBeenSet;
+
+                    /**
+                     * 经办人手机号码实名认证，申请人类型为经办人时必填。(支持jpg、png、gif、jpeg格式的图片，每张图片应大于50K，不超过5MB，模板参见控制台:https://console.cloud.tencent.com/ccc/enterprise/update)
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_operatorMobilePicUrl;
+                    bool m_operatorMobilePicUrlHasBeenSet;
 
                 };
             }

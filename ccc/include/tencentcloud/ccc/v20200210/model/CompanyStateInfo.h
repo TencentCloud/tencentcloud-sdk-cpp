@@ -217,6 +217,31 @@ namespace TencentCloud
                      */
                     bool BusinessIdHasBeenSet() const;
 
+                    /**
+                     * 获取修改时间
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return ModifyTime 修改时间
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    int64_t GetModifyTime() const;
+
+                    /**
+                     * 设置修改时间
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _modifyTime 修改时间
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetModifyTime(const int64_t& _modifyTime);
+
+                    /**
+                     * 判断参数 ModifyTime 是否已赋值
+                     * @return ModifyTime 是否已赋值
+                     * 
+                     */
+                    bool ModifyTimeHasBeenSet() const;
+
                 private:
 
                     /**
@@ -266,6 +291,13 @@ namespace TencentCloud
                      */
                     std::string m_businessId;
                     bool m_businessIdHasBeenSet;
+
+                    /**
+                     * 修改时间
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    int64_t m_modifyTime;
+                    bool m_modifyTimeHasBeenSet;
 
                 };
             }

@@ -189,19 +189,15 @@ namespace TencentCloud
                     bool MobilePhoneHasBeenSet() const;
 
                     /**
-                     * 获取用户设备号，支持IMEI、IMEIMD5、IDFA、IDFAMD5
-注释：IMEIMD5、IDFAMD5加密方式，对IMEI、IDFA明文进行MD5加密，加密后取32位小写值。
-                     * @return DeviceId 用户设备号，支持IMEI、IMEIMD5、IDFA、IDFAMD5
-注释：IMEIMD5、IDFAMD5加密方式，对IMEI、IDFA明文进行MD5加密，加密后取32位小写值。
+                     * 获取用户设备号（已不推荐使用）。
+                     * @return DeviceId 用户设备号（已不推荐使用）。
                      * 
                      */
                     std::string GetDeviceId() const;
 
                     /**
-                     * 设置用户设备号，支持IMEI、IMEIMD5、IDFA、IDFAMD5
-注释：IMEIMD5、IDFAMD5加密方式，对IMEI、IDFA明文进行MD5加密，加密后取32位小写值。
-                     * @param _deviceId 用户设备号，支持IMEI、IMEIMD5、IDFA、IDFAMD5
-注释：IMEIMD5、IDFAMD5加密方式，对IMEI、IDFA明文进行MD5加密，加密后取32位小写值。
+                     * 设置用户设备号（已不推荐使用）。
+                     * @param _deviceId 用户设备号（已不推荐使用）。
                      * 
                      */
                     void SetDeviceId(const std::string& _deviceId);
@@ -256,8 +252,7 @@ namespace TencentCloud
                     bool m_mobilePhoneHasBeenSet;
 
                     /**
-                     * 用户设备号，支持IMEI、IMEIMD5、IDFA、IDFAMD5
-注释：IMEIMD5、IDFAMD5加密方式，对IMEI、IDFA明文进行MD5加密，加密后取32位小写值。
+                     * 用户设备号（已不推荐使用）。
                      */
                     std::string m_deviceId;
                     bool m_deviceIdHasBeenSet;

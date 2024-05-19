@@ -48,34 +48,26 @@ namespace TencentCloud
 
                     /**
                      * 获取其他账号信息；
-AccountType是8时，填入设备号（IMEI、IMEIMD5、IDFA、IDFAMD5）
 AccountType是10004时，填入中国大陆标准11位手机号的MD5值
 注释：
-MD5手机号加密方式，中国大陆11位手机号进行MD5加密，加密后取32位小写值
-设备号加密方式，对IMEI、IDFA明文进行MD5加密，加密后取32位小写值。
+MD5手机号加密方式，使用中国大陆11位手机号进行MD5加密，加密后取32位小写值。
                      * @return AccountId 其他账号信息；
-AccountType是8时，填入设备号（IMEI、IMEIMD5、IDFA、IDFAMD5）
 AccountType是10004时，填入中国大陆标准11位手机号的MD5值
 注释：
-MD5手机号加密方式，中国大陆11位手机号进行MD5加密，加密后取32位小写值
-设备号加密方式，对IMEI、IDFA明文进行MD5加密，加密后取32位小写值。
+MD5手机号加密方式，使用中国大陆11位手机号进行MD5加密，加密后取32位小写值。
                      * 
                      */
                     std::string GetAccountId() const;
 
                     /**
                      * 设置其他账号信息；
-AccountType是8时，填入设备号（IMEI、IMEIMD5、IDFA、IDFAMD5）
 AccountType是10004时，填入中国大陆标准11位手机号的MD5值
 注释：
-MD5手机号加密方式，中国大陆11位手机号进行MD5加密，加密后取32位小写值
-设备号加密方式，对IMEI、IDFA明文进行MD5加密，加密后取32位小写值。
+MD5手机号加密方式，使用中国大陆11位手机号进行MD5加密，加密后取32位小写值。
                      * @param _accountId 其他账号信息；
-AccountType是8时，填入设备号（IMEI、IMEIMD5、IDFA、IDFAMD5）
 AccountType是10004时，填入中国大陆标准11位手机号的MD5值
 注释：
-MD5手机号加密方式，中国大陆11位手机号进行MD5加密，加密后取32位小写值
-设备号加密方式，对IMEI、IDFA明文进行MD5加密，加密后取32位小写值。
+MD5手机号加密方式，使用中国大陆11位手机号进行MD5加密，加密后取32位小写值。
                      * 
                      */
                     void SetAccountId(const std::string& _accountId);
@@ -113,19 +105,15 @@ MD5手机号加密方式，中国大陆11位手机号进行MD5加密，加密后
                     bool MobilePhoneHasBeenSet() const;
 
                     /**
-                     * 获取用户设备号，支持IMEI、IMEIMD5、IDFA、IDFAMD5。
-注释：IMEIMD5、IDFAMD5加密方式，对IMEI、IDFA明文进行MD5加密，加密后取32位小写值。
-                     * @return DeviceId 用户设备号，支持IMEI、IMEIMD5、IDFA、IDFAMD5。
-注释：IMEIMD5、IDFAMD5加密方式，对IMEI、IDFA明文进行MD5加密，加密后取32位小写值。
+                     * 获取用户设备号（已不推荐使用）。
+                     * @return DeviceId 用户设备号（已不推荐使用）。
                      * 
                      */
                     std::string GetDeviceId() const;
 
                     /**
-                     * 设置用户设备号，支持IMEI、IMEIMD5、IDFA、IDFAMD5。
-注释：IMEIMD5、IDFAMD5加密方式，对IMEI、IDFA明文进行MD5加密，加密后取32位小写值。
-                     * @param _deviceId 用户设备号，支持IMEI、IMEIMD5、IDFA、IDFAMD5。
-注释：IMEIMD5、IDFAMD5加密方式，对IMEI、IDFA明文进行MD5加密，加密后取32位小写值。
+                     * 设置用户设备号（已不推荐使用）。
+                     * @param _deviceId 用户设备号（已不推荐使用）。
                      * 
                      */
                     void SetDeviceId(const std::string& _deviceId);
@@ -141,11 +129,9 @@ MD5手机号加密方式，中国大陆11位手机号进行MD5加密，加密后
 
                     /**
                      * 其他账号信息；
-AccountType是8时，填入设备号（IMEI、IMEIMD5、IDFA、IDFAMD5）
 AccountType是10004时，填入中国大陆标准11位手机号的MD5值
 注释：
-MD5手机号加密方式，中国大陆11位手机号进行MD5加密，加密后取32位小写值
-设备号加密方式，对IMEI、IDFA明文进行MD5加密，加密后取32位小写值。
+MD5手机号加密方式，使用中国大陆11位手机号进行MD5加密，加密后取32位小写值。
                      */
                     std::string m_accountId;
                     bool m_accountIdHasBeenSet;
@@ -158,8 +144,7 @@ MD5手机号加密方式，中国大陆11位手机号进行MD5加密，加密后
                     bool m_mobilePhoneHasBeenSet;
 
                     /**
-                     * 用户设备号，支持IMEI、IMEIMD5、IDFA、IDFAMD5。
-注释：IMEIMD5、IDFAMD5加密方式，对IMEI、IDFA明文进行MD5加密，加密后取32位小写值。
+                     * 用户设备号（已不推荐使用）。
                      */
                     std::string m_deviceId;
                     bool m_deviceIdHasBeenSet;

@@ -28,15 +28,22 @@ CompanyApplyInfo::CompanyApplyInfo() :
     m_corporationNameHasBeenSet(false),
     m_corporationIdHasBeenSet(false),
     m_corporationIdPicUrlHasBeenSet(false),
-    m_businessScopeHasBeenSet(false),
-    m_acceptPicUrlHasBeenSet(false),
     m_networkCommitmentPicUrlHasBeenSet(false),
+    m_isEqualTencentCloudHasBeenSet(false),
+    m_corporationMobileHasBeenSet(false),
+    m_corporationMobilePicUrlHasBeenSet(false),
+    m_useDescribeFileUrlHasBeenSet(false),
+    m_companyAuthLetterPicUrlHasBeenSet(false),
+    m_acceptPicUrlHasBeenSet(false),
     m_corporationHoldingOnIdPicUrlHasBeenSet(false),
     m_operatorNameHasBeenSet(false),
     m_operatorIdHasBeenSet(false),
     m_operatorIdPicUrlHasBeenSet(false),
     m_operatorHoldingOnIdPicUrlHasBeenSet(false),
-    m_commissionPicUrlHasBeenSet(false)
+    m_commissionPicUrlHasBeenSet(false),
+    m_operatorMobileHasBeenSet(false),
+    m_operatorEmailHasBeenSet(false),
+    m_operatorMobilePicUrlHasBeenSet(false)
 {
 }
 
@@ -115,14 +122,64 @@ CoreInternalOutcome CompanyApplyInfo::Deserialize(const rapidjson::Value &value)
         m_corporationIdPicUrlHasBeenSet = true;
     }
 
-    if (value.HasMember("BusinessScope") && !value["BusinessScope"].IsNull())
+    if (value.HasMember("NetworkCommitmentPicUrl") && !value["NetworkCommitmentPicUrl"].IsNull())
     {
-        if (!value["BusinessScope"].IsString())
+        if (!value["NetworkCommitmentPicUrl"].IsString())
         {
-            return CoreInternalOutcome(Core::Error("response `CompanyApplyInfo.BusinessScope` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `CompanyApplyInfo.NetworkCommitmentPicUrl` IsString=false incorrectly").SetRequestId(requestId));
         }
-        m_businessScope = string(value["BusinessScope"].GetString());
-        m_businessScopeHasBeenSet = true;
+        m_networkCommitmentPicUrl = string(value["NetworkCommitmentPicUrl"].GetString());
+        m_networkCommitmentPicUrlHasBeenSet = true;
+    }
+
+    if (value.HasMember("IsEqualTencentCloud") && !value["IsEqualTencentCloud"].IsNull())
+    {
+        if (!value["IsEqualTencentCloud"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `CompanyApplyInfo.IsEqualTencentCloud` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_isEqualTencentCloud = value["IsEqualTencentCloud"].GetInt64();
+        m_isEqualTencentCloudHasBeenSet = true;
+    }
+
+    if (value.HasMember("CorporationMobile") && !value["CorporationMobile"].IsNull())
+    {
+        if (!value["CorporationMobile"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `CompanyApplyInfo.CorporationMobile` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_corporationMobile = string(value["CorporationMobile"].GetString());
+        m_corporationMobileHasBeenSet = true;
+    }
+
+    if (value.HasMember("CorporationMobilePicUrl") && !value["CorporationMobilePicUrl"].IsNull())
+    {
+        if (!value["CorporationMobilePicUrl"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `CompanyApplyInfo.CorporationMobilePicUrl` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_corporationMobilePicUrl = string(value["CorporationMobilePicUrl"].GetString());
+        m_corporationMobilePicUrlHasBeenSet = true;
+    }
+
+    if (value.HasMember("UseDescribeFileUrl") && !value["UseDescribeFileUrl"].IsNull())
+    {
+        if (!value["UseDescribeFileUrl"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `CompanyApplyInfo.UseDescribeFileUrl` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_useDescribeFileUrl = string(value["UseDescribeFileUrl"].GetString());
+        m_useDescribeFileUrlHasBeenSet = true;
+    }
+
+    if (value.HasMember("CompanyAuthLetterPicUrl") && !value["CompanyAuthLetterPicUrl"].IsNull())
+    {
+        if (!value["CompanyAuthLetterPicUrl"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `CompanyApplyInfo.CompanyAuthLetterPicUrl` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_companyAuthLetterPicUrl = string(value["CompanyAuthLetterPicUrl"].GetString());
+        m_companyAuthLetterPicUrlHasBeenSet = true;
     }
 
     if (value.HasMember("AcceptPicUrl") && !value["AcceptPicUrl"].IsNull())
@@ -133,16 +190,6 @@ CoreInternalOutcome CompanyApplyInfo::Deserialize(const rapidjson::Value &value)
         }
         m_acceptPicUrl = string(value["AcceptPicUrl"].GetString());
         m_acceptPicUrlHasBeenSet = true;
-    }
-
-    if (value.HasMember("NetworkCommitmentPicUrl") && !value["NetworkCommitmentPicUrl"].IsNull())
-    {
-        if (!value["NetworkCommitmentPicUrl"].IsString())
-        {
-            return CoreInternalOutcome(Core::Error("response `CompanyApplyInfo.NetworkCommitmentPicUrl` IsString=false incorrectly").SetRequestId(requestId));
-        }
-        m_networkCommitmentPicUrl = string(value["NetworkCommitmentPicUrl"].GetString());
-        m_networkCommitmentPicUrlHasBeenSet = true;
     }
 
     if (value.HasMember("CorporationHoldingOnIdPicUrl") && !value["CorporationHoldingOnIdPicUrl"].IsNull())
@@ -203,6 +250,36 @@ CoreInternalOutcome CompanyApplyInfo::Deserialize(const rapidjson::Value &value)
         }
         m_commissionPicUrl = string(value["CommissionPicUrl"].GetString());
         m_commissionPicUrlHasBeenSet = true;
+    }
+
+    if (value.HasMember("OperatorMobile") && !value["OperatorMobile"].IsNull())
+    {
+        if (!value["OperatorMobile"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `CompanyApplyInfo.OperatorMobile` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_operatorMobile = string(value["OperatorMobile"].GetString());
+        m_operatorMobileHasBeenSet = true;
+    }
+
+    if (value.HasMember("OperatorEmail") && !value["OperatorEmail"].IsNull())
+    {
+        if (!value["OperatorEmail"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `CompanyApplyInfo.OperatorEmail` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_operatorEmail = string(value["OperatorEmail"].GetString());
+        m_operatorEmailHasBeenSet = true;
+    }
+
+    if (value.HasMember("OperatorMobilePicUrl") && !value["OperatorMobilePicUrl"].IsNull())
+    {
+        if (!value["OperatorMobilePicUrl"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `CompanyApplyInfo.OperatorMobilePicUrl` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_operatorMobilePicUrl = string(value["OperatorMobilePicUrl"].GetString());
+        m_operatorMobilePicUrlHasBeenSet = true;
     }
 
 
@@ -268,12 +345,52 @@ void CompanyApplyInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Document
         value.AddMember(iKey, rapidjson::Value(m_corporationIdPicUrl.c_str(), allocator).Move(), allocator);
     }
 
-    if (m_businessScopeHasBeenSet)
+    if (m_networkCommitmentPicUrlHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "BusinessScope";
+        string key = "NetworkCommitmentPicUrl";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, rapidjson::Value(m_businessScope.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_networkCommitmentPicUrl.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_isEqualTencentCloudHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "IsEqualTencentCloud";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_isEqualTencentCloud, allocator);
+    }
+
+    if (m_corporationMobileHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "CorporationMobile";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_corporationMobile.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_corporationMobilePicUrlHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "CorporationMobilePicUrl";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_corporationMobilePicUrl.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_useDescribeFileUrlHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "UseDescribeFileUrl";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_useDescribeFileUrl.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_companyAuthLetterPicUrlHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "CompanyAuthLetterPicUrl";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_companyAuthLetterPicUrl.c_str(), allocator).Move(), allocator);
     }
 
     if (m_acceptPicUrlHasBeenSet)
@@ -282,14 +399,6 @@ void CompanyApplyInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Document
         string key = "AcceptPicUrl";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_acceptPicUrl.c_str(), allocator).Move(), allocator);
-    }
-
-    if (m_networkCommitmentPicUrlHasBeenSet)
-    {
-        rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "NetworkCommitmentPicUrl";
-        iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, rapidjson::Value(m_networkCommitmentPicUrl.c_str(), allocator).Move(), allocator);
     }
 
     if (m_corporationHoldingOnIdPicUrlHasBeenSet)
@@ -338,6 +447,30 @@ void CompanyApplyInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Document
         string key = "CommissionPicUrl";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_commissionPicUrl.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_operatorMobileHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "OperatorMobile";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_operatorMobile.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_operatorEmailHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "OperatorEmail";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_operatorEmail.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_operatorMobilePicUrlHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "OperatorMobilePicUrl";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_operatorMobilePicUrl.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -455,20 +588,100 @@ bool CompanyApplyInfo::CorporationIdPicUrlHasBeenSet() const
     return m_corporationIdPicUrlHasBeenSet;
 }
 
-string CompanyApplyInfo::GetBusinessScope() const
+string CompanyApplyInfo::GetNetworkCommitmentPicUrl() const
 {
-    return m_businessScope;
+    return m_networkCommitmentPicUrl;
 }
 
-void CompanyApplyInfo::SetBusinessScope(const string& _businessScope)
+void CompanyApplyInfo::SetNetworkCommitmentPicUrl(const string& _networkCommitmentPicUrl)
 {
-    m_businessScope = _businessScope;
-    m_businessScopeHasBeenSet = true;
+    m_networkCommitmentPicUrl = _networkCommitmentPicUrl;
+    m_networkCommitmentPicUrlHasBeenSet = true;
 }
 
-bool CompanyApplyInfo::BusinessScopeHasBeenSet() const
+bool CompanyApplyInfo::NetworkCommitmentPicUrlHasBeenSet() const
 {
-    return m_businessScopeHasBeenSet;
+    return m_networkCommitmentPicUrlHasBeenSet;
+}
+
+int64_t CompanyApplyInfo::GetIsEqualTencentCloud() const
+{
+    return m_isEqualTencentCloud;
+}
+
+void CompanyApplyInfo::SetIsEqualTencentCloud(const int64_t& _isEqualTencentCloud)
+{
+    m_isEqualTencentCloud = _isEqualTencentCloud;
+    m_isEqualTencentCloudHasBeenSet = true;
+}
+
+bool CompanyApplyInfo::IsEqualTencentCloudHasBeenSet() const
+{
+    return m_isEqualTencentCloudHasBeenSet;
+}
+
+string CompanyApplyInfo::GetCorporationMobile() const
+{
+    return m_corporationMobile;
+}
+
+void CompanyApplyInfo::SetCorporationMobile(const string& _corporationMobile)
+{
+    m_corporationMobile = _corporationMobile;
+    m_corporationMobileHasBeenSet = true;
+}
+
+bool CompanyApplyInfo::CorporationMobileHasBeenSet() const
+{
+    return m_corporationMobileHasBeenSet;
+}
+
+string CompanyApplyInfo::GetCorporationMobilePicUrl() const
+{
+    return m_corporationMobilePicUrl;
+}
+
+void CompanyApplyInfo::SetCorporationMobilePicUrl(const string& _corporationMobilePicUrl)
+{
+    m_corporationMobilePicUrl = _corporationMobilePicUrl;
+    m_corporationMobilePicUrlHasBeenSet = true;
+}
+
+bool CompanyApplyInfo::CorporationMobilePicUrlHasBeenSet() const
+{
+    return m_corporationMobilePicUrlHasBeenSet;
+}
+
+string CompanyApplyInfo::GetUseDescribeFileUrl() const
+{
+    return m_useDescribeFileUrl;
+}
+
+void CompanyApplyInfo::SetUseDescribeFileUrl(const string& _useDescribeFileUrl)
+{
+    m_useDescribeFileUrl = _useDescribeFileUrl;
+    m_useDescribeFileUrlHasBeenSet = true;
+}
+
+bool CompanyApplyInfo::UseDescribeFileUrlHasBeenSet() const
+{
+    return m_useDescribeFileUrlHasBeenSet;
+}
+
+string CompanyApplyInfo::GetCompanyAuthLetterPicUrl() const
+{
+    return m_companyAuthLetterPicUrl;
+}
+
+void CompanyApplyInfo::SetCompanyAuthLetterPicUrl(const string& _companyAuthLetterPicUrl)
+{
+    m_companyAuthLetterPicUrl = _companyAuthLetterPicUrl;
+    m_companyAuthLetterPicUrlHasBeenSet = true;
+}
+
+bool CompanyApplyInfo::CompanyAuthLetterPicUrlHasBeenSet() const
+{
+    return m_companyAuthLetterPicUrlHasBeenSet;
 }
 
 string CompanyApplyInfo::GetAcceptPicUrl() const
@@ -485,22 +698,6 @@ void CompanyApplyInfo::SetAcceptPicUrl(const string& _acceptPicUrl)
 bool CompanyApplyInfo::AcceptPicUrlHasBeenSet() const
 {
     return m_acceptPicUrlHasBeenSet;
-}
-
-string CompanyApplyInfo::GetNetworkCommitmentPicUrl() const
-{
-    return m_networkCommitmentPicUrl;
-}
-
-void CompanyApplyInfo::SetNetworkCommitmentPicUrl(const string& _networkCommitmentPicUrl)
-{
-    m_networkCommitmentPicUrl = _networkCommitmentPicUrl;
-    m_networkCommitmentPicUrlHasBeenSet = true;
-}
-
-bool CompanyApplyInfo::NetworkCommitmentPicUrlHasBeenSet() const
-{
-    return m_networkCommitmentPicUrlHasBeenSet;
 }
 
 string CompanyApplyInfo::GetCorporationHoldingOnIdPicUrl() const
@@ -597,5 +794,53 @@ void CompanyApplyInfo::SetCommissionPicUrl(const string& _commissionPicUrl)
 bool CompanyApplyInfo::CommissionPicUrlHasBeenSet() const
 {
     return m_commissionPicUrlHasBeenSet;
+}
+
+string CompanyApplyInfo::GetOperatorMobile() const
+{
+    return m_operatorMobile;
+}
+
+void CompanyApplyInfo::SetOperatorMobile(const string& _operatorMobile)
+{
+    m_operatorMobile = _operatorMobile;
+    m_operatorMobileHasBeenSet = true;
+}
+
+bool CompanyApplyInfo::OperatorMobileHasBeenSet() const
+{
+    return m_operatorMobileHasBeenSet;
+}
+
+string CompanyApplyInfo::GetOperatorEmail() const
+{
+    return m_operatorEmail;
+}
+
+void CompanyApplyInfo::SetOperatorEmail(const string& _operatorEmail)
+{
+    m_operatorEmail = _operatorEmail;
+    m_operatorEmailHasBeenSet = true;
+}
+
+bool CompanyApplyInfo::OperatorEmailHasBeenSet() const
+{
+    return m_operatorEmailHasBeenSet;
+}
+
+string CompanyApplyInfo::GetOperatorMobilePicUrl() const
+{
+    return m_operatorMobilePicUrl;
+}
+
+void CompanyApplyInfo::SetOperatorMobilePicUrl(const string& _operatorMobilePicUrl)
+{
+    m_operatorMobilePicUrl = _operatorMobilePicUrl;
+    m_operatorMobilePicUrlHasBeenSet = true;
+}
+
+bool CompanyApplyInfo::OperatorMobilePicUrlHasBeenSet() const
+{
+    return m_operatorMobilePicUrlHasBeenSet;
 }
 

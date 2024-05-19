@@ -28,7 +28,8 @@ ChatCompletionsRequest::ChatCompletionsRequest() :
     m_streamHasBeenSet(false),
     m_streamModerationHasBeenSet(false),
     m_topPHasBeenSet(false),
-    m_temperatureHasBeenSet(false)
+    m_temperatureHasBeenSet(false),
+    m_enableEnhancementHasBeenSet(false)
 {
 }
 
@@ -92,6 +93,14 @@ string ChatCompletionsRequest::ToJsonString() const
         string key = "Temperature";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_temperature, allocator);
+    }
+
+    if (m_enableEnhancementHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "EnableEnhancement";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_enableEnhancement, allocator);
     }
 
 
@@ -196,6 +205,22 @@ void ChatCompletionsRequest::SetTemperature(const double& _temperature)
 bool ChatCompletionsRequest::TemperatureHasBeenSet() const
 {
     return m_temperatureHasBeenSet;
+}
+
+bool ChatCompletionsRequest::GetEnableEnhancement() const
+{
+    return m_enableEnhancement;
+}
+
+void ChatCompletionsRequest::SetEnableEnhancement(const bool& _enableEnhancement)
+{
+    m_enableEnhancement = _enableEnhancement;
+    m_enableEnhancementHasBeenSet = true;
+}
+
+bool ChatCompletionsRequest::EnableEnhancementHasBeenSet() const
+{
+    return m_enableEnhancementHasBeenSet;
 }
 
 

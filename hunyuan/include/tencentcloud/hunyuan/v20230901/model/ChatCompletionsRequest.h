@@ -301,6 +301,47 @@ namespace TencentCloud
                      */
                     bool TemperatureHasBeenSet() const;
 
+                    /**
+                     * 获取功能增强（如搜索）开关。
+说明：
+1. 仅 hunyuan-pro 模型可用，其它版本不生效。
+2. 未传值时默认打开开关。
+3. 关闭时将直接由主模型生成回复内容，可以降低响应时延（对于流式输出时的首字时延尤为明显）。但在少数场景里，回复效果可能会下降。
+4. 安全审核能力不属于功能增强范围，不受此字段影响。
+                     * @return EnableEnhancement 功能增强（如搜索）开关。
+说明：
+1. 仅 hunyuan-pro 模型可用，其它版本不生效。
+2. 未传值时默认打开开关。
+3. 关闭时将直接由主模型生成回复内容，可以降低响应时延（对于流式输出时的首字时延尤为明显）。但在少数场景里，回复效果可能会下降。
+4. 安全审核能力不属于功能增强范围，不受此字段影响。
+                     * 
+                     */
+                    bool GetEnableEnhancement() const;
+
+                    /**
+                     * 设置功能增强（如搜索）开关。
+说明：
+1. 仅 hunyuan-pro 模型可用，其它版本不生效。
+2. 未传值时默认打开开关。
+3. 关闭时将直接由主模型生成回复内容，可以降低响应时延（对于流式输出时的首字时延尤为明显）。但在少数场景里，回复效果可能会下降。
+4. 安全审核能力不属于功能增强范围，不受此字段影响。
+                     * @param _enableEnhancement 功能增强（如搜索）开关。
+说明：
+1. 仅 hunyuan-pro 模型可用，其它版本不生效。
+2. 未传值时默认打开开关。
+3. 关闭时将直接由主模型生成回复内容，可以降低响应时延（对于流式输出时的首字时延尤为明显）。但在少数场景里，回复效果可能会下降。
+4. 安全审核能力不属于功能增强范围，不受此字段影响。
+                     * 
+                     */
+                    void SetEnableEnhancement(const bool& _enableEnhancement);
+
+                    /**
+                     * 判断参数 EnableEnhancement 是否已赋值
+                     * @return EnableEnhancement 是否已赋值
+                     * 
+                     */
+                    bool EnableEnhancementHasBeenSet() const;
+
                 private:
 
                     /**
@@ -371,6 +412,17 @@ namespace TencentCloud
                      */
                     double m_temperature;
                     bool m_temperatureHasBeenSet;
+
+                    /**
+                     * 功能增强（如搜索）开关。
+说明：
+1. 仅 hunyuan-pro 模型可用，其它版本不生效。
+2. 未传值时默认打开开关。
+3. 关闭时将直接由主模型生成回复内容，可以降低响应时延（对于流式输出时的首字时延尤为明显）。但在少数场景里，回复效果可能会下降。
+4. 安全审核能力不属于功能增强范围，不受此字段影响。
+                     */
+                    bool m_enableEnhancement;
+                    bool m_enableEnhancementHasBeenSet;
 
                 };
             }

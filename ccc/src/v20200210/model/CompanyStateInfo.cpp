@@ -27,7 +27,8 @@ CompanyStateInfo::CompanyStateInfo() :
     m_checkTimeHasBeenSet(false),
     m_checkMsgHasBeenSet(false),
     m_stateHasBeenSet(false),
-    m_businessIdHasBeenSet(false)
+    m_businessIdHasBeenSet(false),
+    m_modifyTimeHasBeenSet(false)
 {
 }
 
@@ -106,6 +107,16 @@ CoreInternalOutcome CompanyStateInfo::Deserialize(const rapidjson::Value &value)
         m_businessIdHasBeenSet = true;
     }
 
+    if (value.HasMember("ModifyTime") && !value["ModifyTime"].IsNull())
+    {
+        if (!value["ModifyTime"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `CompanyStateInfo.ModifyTime` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_modifyTime = value["ModifyTime"].GetInt64();
+        m_modifyTimeHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -167,6 +178,14 @@ void CompanyStateInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Document
         string key = "BusinessId";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_businessId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_modifyTimeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ModifyTime";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_modifyTime, allocator);
     }
 
 }
@@ -282,5 +301,21 @@ void CompanyStateInfo::SetBusinessId(const string& _businessId)
 bool CompanyStateInfo::BusinessIdHasBeenSet() const
 {
     return m_businessIdHasBeenSet;
+}
+
+int64_t CompanyStateInfo::GetModifyTime() const
+{
+    return m_modifyTime;
+}
+
+void CompanyStateInfo::SetModifyTime(const int64_t& _modifyTime)
+{
+    m_modifyTime = _modifyTime;
+    m_modifyTimeHasBeenSet = true;
+}
+
+bool CompanyStateInfo::ModifyTimeHasBeenSet() const
+{
+    return m_modifyTimeHasBeenSet;
 }
 
