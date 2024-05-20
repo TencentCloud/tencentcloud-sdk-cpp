@@ -31,6 +31,8 @@
 #include <tencentcloud/trtc/v20190722/model/DeleteCloudRecordingResponse.h>
 #include <tencentcloud/trtc/v20190722/model/DeletePictureRequest.h>
 #include <tencentcloud/trtc/v20190722/model/DeletePictureResponse.h>
+#include <tencentcloud/trtc/v20190722/model/DescribeAITranscriptionRequest.h>
+#include <tencentcloud/trtc/v20190722/model/DescribeAITranscriptionResponse.h>
 #include <tencentcloud/trtc/v20190722/model/DescribeCallDetailInfoRequest.h>
 #include <tencentcloud/trtc/v20190722/model/DescribeCallDetailInfoResponse.h>
 #include <tencentcloud/trtc/v20190722/model/DescribeCloudRecordingRequest.h>
@@ -93,6 +95,8 @@
 #include <tencentcloud/trtc/v20190722/model/RemoveUserResponse.h>
 #include <tencentcloud/trtc/v20190722/model/RemoveUserByStrRoomIdRequest.h>
 #include <tencentcloud/trtc/v20190722/model/RemoveUserByStrRoomIdResponse.h>
+#include <tencentcloud/trtc/v20190722/model/StartAITranscriptionRequest.h>
+#include <tencentcloud/trtc/v20190722/model/StartAITranscriptionResponse.h>
 #include <tencentcloud/trtc/v20190722/model/StartMCUMixTranscodeRequest.h>
 #include <tencentcloud/trtc/v20190722/model/StartMCUMixTranscodeResponse.h>
 #include <tencentcloud/trtc/v20190722/model/StartMCUMixTranscodeByStrRoomIdRequest.h>
@@ -103,6 +107,8 @@
 #include <tencentcloud/trtc/v20190722/model/StartStreamIngestResponse.h>
 #include <tencentcloud/trtc/v20190722/model/StartWebRecordRequest.h>
 #include <tencentcloud/trtc/v20190722/model/StartWebRecordResponse.h>
+#include <tencentcloud/trtc/v20190722/model/StopAITranscriptionRequest.h>
+#include <tencentcloud/trtc/v20190722/model/StopAITranscriptionResponse.h>
 #include <tencentcloud/trtc/v20190722/model/StopMCUMixTranscodeRequest.h>
 #include <tencentcloud/trtc/v20190722/model/StopMCUMixTranscodeResponse.h>
 #include <tencentcloud/trtc/v20190722/model/StopMCUMixTranscodeByStrRoomIdRequest.h>
@@ -113,6 +119,8 @@
 #include <tencentcloud/trtc/v20190722/model/StopStreamIngestResponse.h>
 #include <tencentcloud/trtc/v20190722/model/StopWebRecordRequest.h>
 #include <tencentcloud/trtc/v20190722/model/StopWebRecordResponse.h>
+#include <tencentcloud/trtc/v20190722/model/SummarizeTranscriptionRequest.h>
+#include <tencentcloud/trtc/v20190722/model/SummarizeTranscriptionResponse.h>
 #include <tencentcloud/trtc/v20190722/model/UpdatePublishCdnStreamRequest.h>
 #include <tencentcloud/trtc/v20190722/model/UpdatePublishCdnStreamResponse.h>
 
@@ -141,6 +149,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DeletePictureResponse> DeletePictureOutcome;
                 typedef std::future<DeletePictureOutcome> DeletePictureOutcomeCallable;
                 typedef std::function<void(const TrtcClient*, const Model::DeletePictureRequest&, DeletePictureOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeletePictureAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeAITranscriptionResponse> DescribeAITranscriptionOutcome;
+                typedef std::future<DescribeAITranscriptionOutcome> DescribeAITranscriptionOutcomeCallable;
+                typedef std::function<void(const TrtcClient*, const Model::DescribeAITranscriptionRequest&, DescribeAITranscriptionOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeAITranscriptionAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeCallDetailInfoResponse> DescribeCallDetailInfoOutcome;
                 typedef std::future<DescribeCallDetailInfoOutcome> DescribeCallDetailInfoOutcomeCallable;
                 typedef std::function<void(const TrtcClient*, const Model::DescribeCallDetailInfoRequest&, DescribeCallDetailInfoOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeCallDetailInfoAsyncHandler;
@@ -234,6 +245,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::RemoveUserByStrRoomIdResponse> RemoveUserByStrRoomIdOutcome;
                 typedef std::future<RemoveUserByStrRoomIdOutcome> RemoveUserByStrRoomIdOutcomeCallable;
                 typedef std::function<void(const TrtcClient*, const Model::RemoveUserByStrRoomIdRequest&, RemoveUserByStrRoomIdOutcome, const std::shared_ptr<const AsyncCallerContext>&)> RemoveUserByStrRoomIdAsyncHandler;
+                typedef Outcome<Core::Error, Model::StartAITranscriptionResponse> StartAITranscriptionOutcome;
+                typedef std::future<StartAITranscriptionOutcome> StartAITranscriptionOutcomeCallable;
+                typedef std::function<void(const TrtcClient*, const Model::StartAITranscriptionRequest&, StartAITranscriptionOutcome, const std::shared_ptr<const AsyncCallerContext>&)> StartAITranscriptionAsyncHandler;
                 typedef Outcome<Core::Error, Model::StartMCUMixTranscodeResponse> StartMCUMixTranscodeOutcome;
                 typedef std::future<StartMCUMixTranscodeOutcome> StartMCUMixTranscodeOutcomeCallable;
                 typedef std::function<void(const TrtcClient*, const Model::StartMCUMixTranscodeRequest&, StartMCUMixTranscodeOutcome, const std::shared_ptr<const AsyncCallerContext>&)> StartMCUMixTranscodeAsyncHandler;
@@ -249,6 +263,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::StartWebRecordResponse> StartWebRecordOutcome;
                 typedef std::future<StartWebRecordOutcome> StartWebRecordOutcomeCallable;
                 typedef std::function<void(const TrtcClient*, const Model::StartWebRecordRequest&, StartWebRecordOutcome, const std::shared_ptr<const AsyncCallerContext>&)> StartWebRecordAsyncHandler;
+                typedef Outcome<Core::Error, Model::StopAITranscriptionResponse> StopAITranscriptionOutcome;
+                typedef std::future<StopAITranscriptionOutcome> StopAITranscriptionOutcomeCallable;
+                typedef std::function<void(const TrtcClient*, const Model::StopAITranscriptionRequest&, StopAITranscriptionOutcome, const std::shared_ptr<const AsyncCallerContext>&)> StopAITranscriptionAsyncHandler;
                 typedef Outcome<Core::Error, Model::StopMCUMixTranscodeResponse> StopMCUMixTranscodeOutcome;
                 typedef std::future<StopMCUMixTranscodeOutcome> StopMCUMixTranscodeOutcomeCallable;
                 typedef std::function<void(const TrtcClient*, const Model::StopMCUMixTranscodeRequest&, StopMCUMixTranscodeOutcome, const std::shared_ptr<const AsyncCallerContext>&)> StopMCUMixTranscodeAsyncHandler;
@@ -264,6 +281,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::StopWebRecordResponse> StopWebRecordOutcome;
                 typedef std::future<StopWebRecordOutcome> StopWebRecordOutcomeCallable;
                 typedef std::function<void(const TrtcClient*, const Model::StopWebRecordRequest&, StopWebRecordOutcome, const std::shared_ptr<const AsyncCallerContext>&)> StopWebRecordAsyncHandler;
+                typedef Outcome<Core::Error, Model::SummarizeTranscriptionResponse> SummarizeTranscriptionOutcome;
+                typedef std::future<SummarizeTranscriptionOutcome> SummarizeTranscriptionOutcomeCallable;
+                typedef std::function<void(const TrtcClient*, const Model::SummarizeTranscriptionRequest&, SummarizeTranscriptionOutcome, const std::shared_ptr<const AsyncCallerContext>&)> SummarizeTranscriptionAsyncHandler;
                 typedef Outcome<Core::Error, Model::UpdatePublishCdnStreamResponse> UpdatePublishCdnStreamOutcome;
                 typedef std::future<UpdatePublishCdnStreamOutcome> UpdatePublishCdnStreamOutcomeCallable;
                 typedef std::function<void(const TrtcClient*, const Model::UpdatePublishCdnStreamRequest&, UpdatePublishCdnStreamOutcome, const std::shared_ptr<const AsyncCallerContext>&)> UpdatePublishCdnStreamAsyncHandler;
@@ -316,6 +336,15 @@ namespace TencentCloud
                 DeletePictureOutcome DeletePicture(const Model::DeletePictureRequest &request);
                 void DeletePictureAsync(const Model::DeletePictureRequest& request, const DeletePictureAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DeletePictureOutcomeCallable DeletePictureCallable(const Model::DeletePictureRequest& request);
+
+                /**
+                 *查询AI转录状态
+                 * @param req DescribeAITranscriptionRequest
+                 * @return DescribeAITranscriptionOutcome
+                 */
+                DescribeAITranscriptionOutcome DescribeAITranscription(const Model::DescribeAITranscriptionRequest &request);
+                void DescribeAITranscriptionAsync(const Model::DescribeAITranscriptionRequest& request, const DescribeAITranscriptionAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeAITranscriptionOutcomeCallable DescribeAITranscriptionCallable(const Model::DescribeAITranscriptionRequest& request);
 
                 /**
                  *查询指定时间内的用户列表及用户通话质量数据，最大可查询14天内数据。DataType 不为null，查询起止时间不超过1个小时，查询用户不超过6个，支持跨天查询。DataType为null时，查询起止时间不超过4个小时， 默认查询6个用户，同时支持每页查询100以内用户个数（PageSize不超过100）。接口用于查询质量问题，不推荐作为计费使用。（同老接口DescribeCallDetail）
@@ -700,6 +729,15 @@ xa0
                 RemoveUserByStrRoomIdOutcomeCallable RemoveUserByStrRoomIdCallable(const Model::RemoveUserByStrRoomIdRequest& request);
 
                 /**
+                 *这个接口调用后，后台会启动机器人，实时进行语音识别并下发字幕和会议记录。
+                 * @param req StartAITranscriptionRequest
+                 * @return StartAITranscriptionOutcome
+                 */
+                StartAITranscriptionOutcome StartAITranscription(const Model::StartAITranscriptionRequest &request);
+                void StartAITranscriptionAsync(const Model::StartAITranscriptionRequest& request, const StartAITranscriptionAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                StartAITranscriptionOutcomeCallable StartAITranscriptionCallable(const Model::StartAITranscriptionRequest& request);
+
+                /**
                  *接口说明：启动云端混流，并指定混流画面中各路画面的布局位置。
 
 TRTC 的一个房间中可能会同时存在多路音视频流，您可以通过此 API 接口，通知腾讯云服务端将多路视频画面合成一路，并指定每一路画面的位置，同时将多路声音进行混音，最终形成一路音视频流，以便用于录制和直播观看。房间销毁后混流自动结束。
@@ -883,6 +921,15 @@ ver：可以忽略。
                 StartWebRecordOutcomeCallable StartWebRecordCallable(const Model::StartWebRecordRequest& request);
 
                 /**
+                 *停止AI转录
+                 * @param req StopAITranscriptionRequest
+                 * @return StopAITranscriptionOutcome
+                 */
+                StopAITranscriptionOutcome StopAITranscription(const Model::StopAITranscriptionRequest &request);
+                void StopAITranscriptionAsync(const Model::StopAITranscriptionRequest& request, const StopAITranscriptionAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                StopAITranscriptionOutcomeCallable StopAITranscriptionCallable(const Model::StopAITranscriptionRequest& request);
+
+                /**
                  *接口说明：结束云端混流
                  * @param req StopMCUMixTranscodeRequest
                  * @return StopMCUMixTranscodeOutcome
@@ -926,6 +973,15 @@ ver：可以忽略。
                 StopWebRecordOutcome StopWebRecord(const Model::StopWebRecordRequest &request);
                 void StopWebRecordAsync(const Model::StopWebRecordRequest& request, const StopWebRecordAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 StopWebRecordOutcomeCallable StopWebRecordCallable(const Model::StopWebRecordRequest& request);
+
+                /**
+                 *对转录的文本进行总结
+                 * @param req SummarizeTranscriptionRequest
+                 * @return SummarizeTranscriptionOutcome
+                 */
+                SummarizeTranscriptionOutcome SummarizeTranscription(const Model::SummarizeTranscriptionRequest &request);
+                void SummarizeTranscriptionAsync(const Model::SummarizeTranscriptionRequest& request, const SummarizeTranscriptionAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                SummarizeTranscriptionOutcomeCallable SummarizeTranscriptionCallable(const Model::SummarizeTranscriptionRequest& request);
 
                 /**
                  *更新转推任务。

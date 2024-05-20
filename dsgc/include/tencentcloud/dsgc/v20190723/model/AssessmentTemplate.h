@@ -35,7 +35,7 @@ namespace TencentCloud
             namespace Model
             {
                 /**
-                * DSPA评估模版
+                * DSPA评估模板
                 */
                 class AssessmentTemplate : public AbstractModel
                 {

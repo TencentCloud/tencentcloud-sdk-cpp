@@ -212,6 +212,49 @@ TrtcClient::DeletePictureOutcomeCallable TrtcClient::DeletePictureCallable(const
     return task->get_future();
 }
 
+TrtcClient::DescribeAITranscriptionOutcome TrtcClient::DescribeAITranscription(const DescribeAITranscriptionRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeAITranscription");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeAITranscriptionResponse rsp = DescribeAITranscriptionResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeAITranscriptionOutcome(rsp);
+        else
+            return DescribeAITranscriptionOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeAITranscriptionOutcome(outcome.GetError());
+    }
+}
+
+void TrtcClient::DescribeAITranscriptionAsync(const DescribeAITranscriptionRequest& request, const DescribeAITranscriptionAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeAITranscription(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+TrtcClient::DescribeAITranscriptionOutcomeCallable TrtcClient::DescribeAITranscriptionCallable(const DescribeAITranscriptionRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeAITranscriptionOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeAITranscription(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 TrtcClient::DescribeCallDetailInfoOutcome TrtcClient::DescribeCallDetailInfo(const DescribeCallDetailInfoRequest &request)
 {
     auto outcome = MakeRequest(request, "DescribeCallDetailInfo");
@@ -1545,6 +1588,49 @@ TrtcClient::RemoveUserByStrRoomIdOutcomeCallable TrtcClient::RemoveUserByStrRoom
     return task->get_future();
 }
 
+TrtcClient::StartAITranscriptionOutcome TrtcClient::StartAITranscription(const StartAITranscriptionRequest &request)
+{
+    auto outcome = MakeRequest(request, "StartAITranscription");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        StartAITranscriptionResponse rsp = StartAITranscriptionResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return StartAITranscriptionOutcome(rsp);
+        else
+            return StartAITranscriptionOutcome(o.GetError());
+    }
+    else
+    {
+        return StartAITranscriptionOutcome(outcome.GetError());
+    }
+}
+
+void TrtcClient::StartAITranscriptionAsync(const StartAITranscriptionRequest& request, const StartAITranscriptionAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->StartAITranscription(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+TrtcClient::StartAITranscriptionOutcomeCallable TrtcClient::StartAITranscriptionCallable(const StartAITranscriptionRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<StartAITranscriptionOutcome()>>(
+        [this, request]()
+        {
+            return this->StartAITranscription(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 TrtcClient::StartMCUMixTranscodeOutcome TrtcClient::StartMCUMixTranscode(const StartMCUMixTranscodeRequest &request)
 {
     auto outcome = MakeRequest(request, "StartMCUMixTranscode");
@@ -1760,6 +1846,49 @@ TrtcClient::StartWebRecordOutcomeCallable TrtcClient::StartWebRecordCallable(con
     return task->get_future();
 }
 
+TrtcClient::StopAITranscriptionOutcome TrtcClient::StopAITranscription(const StopAITranscriptionRequest &request)
+{
+    auto outcome = MakeRequest(request, "StopAITranscription");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        StopAITranscriptionResponse rsp = StopAITranscriptionResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return StopAITranscriptionOutcome(rsp);
+        else
+            return StopAITranscriptionOutcome(o.GetError());
+    }
+    else
+    {
+        return StopAITranscriptionOutcome(outcome.GetError());
+    }
+}
+
+void TrtcClient::StopAITranscriptionAsync(const StopAITranscriptionRequest& request, const StopAITranscriptionAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->StopAITranscription(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+TrtcClient::StopAITranscriptionOutcomeCallable TrtcClient::StopAITranscriptionCallable(const StopAITranscriptionRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<StopAITranscriptionOutcome()>>(
+        [this, request]()
+        {
+            return this->StopAITranscription(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 TrtcClient::StopMCUMixTranscodeOutcome TrtcClient::StopMCUMixTranscode(const StopMCUMixTranscodeRequest &request)
 {
     auto outcome = MakeRequest(request, "StopMCUMixTranscode");
@@ -1968,6 +2097,49 @@ TrtcClient::StopWebRecordOutcomeCallable TrtcClient::StopWebRecordCallable(const
         [this, request]()
         {
             return this->StopWebRecord(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+TrtcClient::SummarizeTranscriptionOutcome TrtcClient::SummarizeTranscription(const SummarizeTranscriptionRequest &request)
+{
+    auto outcome = MakeRequest(request, "SummarizeTranscription");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        SummarizeTranscriptionResponse rsp = SummarizeTranscriptionResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return SummarizeTranscriptionOutcome(rsp);
+        else
+            return SummarizeTranscriptionOutcome(o.GetError());
+    }
+    else
+    {
+        return SummarizeTranscriptionOutcome(outcome.GetError());
+    }
+}
+
+void TrtcClient::SummarizeTranscriptionAsync(const SummarizeTranscriptionRequest& request, const SummarizeTranscriptionAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->SummarizeTranscription(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+TrtcClient::SummarizeTranscriptionOutcomeCallable TrtcClient::SummarizeTranscriptionCallable(const SummarizeTranscriptionRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<SummarizeTranscriptionOutcome()>>(
+        [this, request]()
+        {
+            return this->SummarizeTranscription(request);
         }
     );
 

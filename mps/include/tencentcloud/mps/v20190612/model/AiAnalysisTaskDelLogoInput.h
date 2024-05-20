@@ -35,7 +35,7 @@ namespace TencentCloud
             namespace Model
             {
                 /**
-                * 智能去水印任务输入类型
+                * 智能擦除任务输入类型
                 */
                 class AiAnalysisTaskDelLogoInput : public AbstractModel
                 {
@@ -47,15 +47,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取视频智能去水印模板 ID。
-                     * @return Definition 视频智能去水印模板 ID。
+                     * 获取视频智能擦除模板 ID。
+                     * @return Definition 视频智能擦除模板 ID。
                      * 
                      */
                     uint64_t GetDefinition() const;
 
                     /**
-                     * 设置视频智能去水印模板 ID。
-                     * @param _definition 视频智能去水印模板 ID。
+                     * 设置视频智能擦除模板 ID。
+                     * @param _definition 视频智能擦除模板 ID。
                      * 
                      */
                     void SetDefinition(const uint64_t& _definition);
@@ -70,7 +70,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 视频智能去水印模板 ID。
+                     * 视频智能擦除模板 ID。
                      */
                     uint64_t m_definition;
                     bool m_definitionHasBeenSet;

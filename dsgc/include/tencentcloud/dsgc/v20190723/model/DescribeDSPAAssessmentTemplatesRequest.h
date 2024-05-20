@@ -107,35 +107,15 @@ namespace TencentCloud
                     bool LimitHasBeenSet() const;
 
                     /**
-                     * 获取过滤项。
-支持模糊搜索：（TemplateId，TemplateName）
-支持过滤：
-Source：模版来源，system / user
-UseType：模版类型，auto，semi-auto，law等
-Status：模版启用状态，draft / launched
-                     * @return Filters 过滤项。
-支持模糊搜索：（TemplateId，TemplateName）
-支持过滤：
-Source：模版来源，system / user
-UseType：模版类型，auto，semi-auto，law等
-Status：模版启用状态，draft / launched
+                     * 获取过滤项。支持模糊搜索：（TemplateId，TemplateName）支持过滤：Source：模板来源，system / userUseType：模板类型，auto，semi-auto，law等Status：模板启用状态，draft / launched
+                     * @return Filters 过滤项。支持模糊搜索：（TemplateId，TemplateName）支持过滤：Source：模板来源，system / userUseType：模板类型，auto，semi-auto，law等Status：模板启用状态，draft / launched
                      * 
                      */
                     std::vector<DspaAssessmentFilter> GetFilters() const;
 
                     /**
-                     * 设置过滤项。
-支持模糊搜索：（TemplateId，TemplateName）
-支持过滤：
-Source：模版来源，system / user
-UseType：模版类型，auto，semi-auto，law等
-Status：模版启用状态，draft / launched
-                     * @param _filters 过滤项。
-支持模糊搜索：（TemplateId，TemplateName）
-支持过滤：
-Source：模版来源，system / user
-UseType：模版类型，auto，semi-auto，law等
-Status：模版启用状态，draft / launched
+                     * 设置过滤项。支持模糊搜索：（TemplateId，TemplateName）支持过滤：Source：模板来源，system / userUseType：模板类型，auto，semi-auto，law等Status：模板启用状态，draft / launched
+                     * @param _filters 过滤项。支持模糊搜索：（TemplateId，TemplateName）支持过滤：Source：模板来源，system / userUseType：模板类型，auto，semi-auto，law等Status：模板启用状态，draft / launched
                      * 
                      */
                     void SetFilters(const std::vector<DspaAssessmentFilter>& _filters);
@@ -168,12 +148,7 @@ Status：模版启用状态，draft / launched
                     bool m_limitHasBeenSet;
 
                     /**
-                     * 过滤项。
-支持模糊搜索：（TemplateId，TemplateName）
-支持过滤：
-Source：模版来源，system / user
-UseType：模版类型，auto，semi-auto，law等
-Status：模版启用状态，draft / launched
+                     * 过滤项。支持模糊搜索：（TemplateId，TemplateName）支持过滤：Source：模板来源，system / userUseType：模板类型，auto，semi-auto，law等Status：模板启用状态，draft / launched
                      */
                     std::vector<DspaAssessmentFilter> m_filters;
                     bool m_filtersHasBeenSet;

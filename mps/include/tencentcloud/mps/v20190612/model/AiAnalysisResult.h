@@ -61,7 +61,7 @@ namespace TencentCloud
 <li>Tag：智能标签</li>
 <li>FrameTag：智能按帧标签</li>
 <li>Highlight：智能精彩集锦</li>
-<li>DeLogo：智能去水印</li>
+<li>DeLogo：智能擦除</li>
 <li>Description：大模型摘要</li>
                      * @return Type 任务的类型，可以取的值有：
 <li>Classification：智能分类</li>
@@ -69,7 +69,7 @@ namespace TencentCloud
 <li>Tag：智能标签</li>
 <li>FrameTag：智能按帧标签</li>
 <li>Highlight：智能精彩集锦</li>
-<li>DeLogo：智能去水印</li>
+<li>DeLogo：智能擦除</li>
 <li>Description：大模型摘要</li>
                      * 
                      */
@@ -82,7 +82,7 @@ namespace TencentCloud
 <li>Tag：智能标签</li>
 <li>FrameTag：智能按帧标签</li>
 <li>Highlight：智能精彩集锦</li>
-<li>DeLogo：智能去水印</li>
+<li>DeLogo：智能擦除</li>
 <li>Description：大模型摘要</li>
                      * @param _type 任务的类型，可以取的值有：
 <li>Classification：智能分类</li>
@@ -90,7 +90,7 @@ namespace TencentCloud
 <li>Tag：智能标签</li>
 <li>FrameTag：智能按帧标签</li>
 <li>Highlight：智能精彩集锦</li>
-<li>DeLogo：智能去水印</li>
+<li>DeLogo：智能擦除</li>
 <li>Description：大模型摘要</li>
                      * 
                      */
@@ -229,18 +229,18 @@ namespace TencentCloud
                     bool HighlightTaskHasBeenSet() const;
 
                     /**
-                     * 获取视频内容分析去水印任务的查询结果，当任务类型为 DeLogo 时有效。
+                     * 获取视频内容分析智能擦除任务的查询结果，当任务类型为 DeLogo 时有效。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return DeLogoTask 视频内容分析去水印任务的查询结果，当任务类型为 DeLogo 时有效。
+                     * @return DeLogoTask 视频内容分析智能擦除任务的查询结果，当任务类型为 DeLogo 时有效。
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     AiAnalysisTaskDelLogoResult GetDeLogoTask() const;
 
                     /**
-                     * 设置视频内容分析去水印任务的查询结果，当任务类型为 DeLogo 时有效。
+                     * 设置视频内容分析智能擦除任务的查询结果，当任务类型为 DeLogo 时有效。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _deLogoTask 视频内容分析去水印任务的查询结果，当任务类型为 DeLogo 时有效。
+                     * @param _deLogoTask 视频内容分析智能擦除任务的查询结果，当任务类型为 DeLogo 时有效。
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -312,7 +312,7 @@ namespace TencentCloud
 <li>Tag：智能标签</li>
 <li>FrameTag：智能按帧标签</li>
 <li>Highlight：智能精彩集锦</li>
-<li>DeLogo：智能去水印</li>
+<li>DeLogo：智能擦除</li>
 <li>Description：大模型摘要</li>
                      */
                     std::string m_type;
@@ -354,7 +354,7 @@ namespace TencentCloud
                     bool m_highlightTaskHasBeenSet;
 
                     /**
-                     * 视频内容分析去水印任务的查询结果，当任务类型为 DeLogo 时有效。
+                     * 视频内容分析智能擦除任务的查询结果，当任务类型为 DeLogo 时有效。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     AiAnalysisTaskDelLogoResult m_deLogoTask;

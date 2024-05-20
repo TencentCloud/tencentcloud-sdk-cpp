@@ -128,6 +128,34 @@ namespace TencentCloud
                     bool ExpirationDateHasBeenSet() const;
 
                     /**
+                     * 获取英文签发日期
+                     * @return EnIssueDate 英文签发日期
+                     * 
+                     */
+                    std::string GetEnIssueDate() const;
+
+                    /**
+                     * 判断参数 EnIssueDate 是否已赋值
+                     * @return EnIssueDate 是否已赋值
+                     * 
+                     */
+                    bool EnIssueDateHasBeenSet() const;
+
+                    /**
+                     * 获取英文到期日期
+                     * @return EnExpirationDate 英文到期日期
+                     * 
+                     */
+                    std::string GetEnExpirationDate() const;
+
+                    /**
+                     * 判断参数 EnExpirationDate 是否已赋值
+                     * @return EnExpirationDate 是否已赋值
+                     * 
+                     */
+                    bool EnExpirationDateHasBeenSet() const;
+
+                    /**
                      * 获取泰文出生日期
                      * @return Birthday 泰文出生日期
                      * 
@@ -140,6 +168,48 @@ namespace TencentCloud
                      * 
                      */
                     bool BirthdayHasBeenSet() const;
+
+                    /**
+                     * 获取英文出生日期
+                     * @return EnBirthday 英文出生日期
+                     * 
+                     */
+                    std::string GetEnBirthday() const;
+
+                    /**
+                     * 判断参数 EnBirthday 是否已赋值
+                     * @return EnBirthday 是否已赋值
+                     * 
+                     */
+                    bool EnBirthdayHasBeenSet() const;
+
+                    /**
+                     * 获取宗教信仰
+                     * @return Religion 宗教信仰
+                     * 
+                     */
+                    std::string GetReligion() const;
+
+                    /**
+                     * 判断参数 Religion 是否已赋值
+                     * @return Religion 是否已赋值
+                     * 
+                     */
+                    bool ReligionHasBeenSet() const;
+
+                    /**
+                     * 获取序列号
+                     * @return SerialNumber 序列号
+                     * 
+                     */
+                    std::string GetSerialNumber() const;
+
+                    /**
+                     * 判断参数 SerialNumber 是否已赋值
+                     * @return SerialNumber 是否已赋值
+                     * 
+                     */
+                    bool SerialNumberHasBeenSet() const;
 
                     /**
                      * 获取地址
@@ -234,10 +304,40 @@ namespace TencentCloud
                     bool m_expirationDateHasBeenSet;
 
                     /**
+                     * 英文签发日期
+                     */
+                    std::string m_enIssueDate;
+                    bool m_enIssueDateHasBeenSet;
+
+                    /**
+                     * 英文到期日期
+                     */
+                    std::string m_enExpirationDate;
+                    bool m_enExpirationDateHasBeenSet;
+
+                    /**
                      * 泰文出生日期
                      */
                     std::string m_birthday;
                     bool m_birthdayHasBeenSet;
+
+                    /**
+                     * 英文出生日期
+                     */
+                    std::string m_enBirthday;
+                    bool m_enBirthdayHasBeenSet;
+
+                    /**
+                     * 宗教信仰
+                     */
+                    std::string m_religion;
+                    bool m_religionHasBeenSet;
+
+                    /**
+                     * 序列号
+                     */
+                    std::string m_serialNumber;
+                    bool m_serialNumberHasBeenSet;
 
                     /**
                      * 地址

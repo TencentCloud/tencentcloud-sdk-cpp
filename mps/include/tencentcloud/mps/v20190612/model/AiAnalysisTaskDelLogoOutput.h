@@ -36,7 +36,7 @@ namespace TencentCloud
             namespace Model
             {
                 /**
-                * 智能去水印结果信息
+                * 智能擦除结果信息
                 */
                 class AiAnalysisTaskDelLogoOutput : public AbstractModel
                 {
@@ -48,15 +48,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取去水印后文件的路径。
-                     * @return Path 去水印后文件的路径。
+                     * 获取擦除后文件的路径。
+                     * @return Path 擦除后文件的路径。
                      * 
                      */
                     std::string GetPath() const;
 
                     /**
-                     * 设置去水印后文件的路径。
-                     * @param _path 去水印后文件的路径。
+                     * 设置擦除后文件的路径。
+                     * @param _path 擦除后文件的路径。
                      * 
                      */
                     void SetPath(const std::string& _path);
@@ -69,15 +69,15 @@ namespace TencentCloud
                     bool PathHasBeenSet() const;
 
                     /**
-                     * 获取去水印后文件的存储位置。
-                     * @return OutputStorage 去水印后文件的存储位置。
+                     * 获取擦除后文件的存储位置。
+                     * @return OutputStorage 擦除后文件的存储位置。
                      * 
                      */
                     TaskOutputStorage GetOutputStorage() const;
 
                     /**
-                     * 设置去水印后文件的存储位置。
-                     * @param _outputStorage 去水印后文件的存储位置。
+                     * 设置擦除后文件的存储位置。
+                     * @param _outputStorage 擦除后文件的存储位置。
                      * 
                      */
                     void SetOutputStorage(const TaskOutputStorage& _outputStorage);
@@ -92,13 +92,13 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 去水印后文件的路径。
+                     * 擦除后文件的路径。
                      */
                     std::string m_path;
                     bool m_pathHasBeenSet;
 
                     /**
-                     * 去水印后文件的存储位置。
+                     * 擦除后文件的存储位置。
                      */
                     TaskOutputStorage m_outputStorage;
                     bool m_outputStorageHasBeenSet;

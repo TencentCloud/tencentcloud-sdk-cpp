@@ -37,7 +37,7 @@ namespace TencentCloud
             namespace Model
             {
                 /**
-                * 智能去水印结果类型
+                * 智能擦除结果类型
                 */
                 class AiAnalysisTaskDelLogoResult : public AbstractModel
                 {
@@ -112,15 +112,15 @@ namespace TencentCloud
                     bool MessageHasBeenSet() const;
 
                     /**
-                     * 获取智能去水印任务输入。
-                     * @return Input 智能去水印任务输入。
+                     * 获取智能擦除任务输入。
+                     * @return Input 智能擦除任务输入。
                      * 
                      */
                     AiAnalysisTaskDelLogoInput GetInput() const;
 
                     /**
-                     * 设置智能去水印任务输入。
-                     * @param _input 智能去水印任务输入。
+                     * 设置智能擦除任务输入。
+                     * @param _input 智能擦除任务输入。
                      * 
                      */
                     void SetInput(const AiAnalysisTaskDelLogoInput& _input);
@@ -133,18 +133,18 @@ namespace TencentCloud
                     bool InputHasBeenSet() const;
 
                     /**
-                     * 获取智能去水印任务输出。
+                     * 获取智能擦除任务输出。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return Output 智能去水印任务输出。
+                     * @return Output 智能擦除任务输出。
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     AiAnalysisTaskDelLogoOutput GetOutput() const;
 
                     /**
-                     * 设置智能去水印任务输出。
+                     * 设置智能擦除任务输出。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _output 智能去水印任务输出。
+                     * @param _output 智能擦除任务输出。
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -178,13 +178,13 @@ namespace TencentCloud
                     bool m_messageHasBeenSet;
 
                     /**
-                     * 智能去水印任务输入。
+                     * 智能擦除任务输入。
                      */
                     AiAnalysisTaskDelLogoInput m_input;
                     bool m_inputHasBeenSet;
 
                     /**
-                     * 智能去水印任务输出。
+                     * 智能擦除任务输出。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     AiAnalysisTaskDelLogoOutput m_output;

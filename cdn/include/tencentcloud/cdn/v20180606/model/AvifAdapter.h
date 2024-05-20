@@ -79,6 +79,67 @@ off：关闭
                      */
                     bool SwitchHasBeenSet() const;
 
+                    /**
+                     * 获取当原图是 avif 且客户端 Accept 头包含 image/avif 时，直接返回原图。
+当原图是 avif 且客户端 Accept 头不包含 image/avif 时但包含 image/webp，将 avif 转 webp 格式返回。如果 Accept 头不包含 image/webp, 则转 jpeg 返回。
+
+可用的枚举值： 
+- []
+- ["webp"]
+- ["jpeg"]
+- ["webp", "jpeg"]
+
+"webp"：是否开启  avif 转 webp，"jpeg": 是否开启 avif 转 jpeg。如果 webp 和 jpeg 都开启的情况下，webp 必须在 jpeg 前面。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return FallbackFormats 当原图是 avif 且客户端 Accept 头包含 image/avif 时，直接返回原图。
+当原图是 avif 且客户端 Accept 头不包含 image/avif 时但包含 image/webp，将 avif 转 webp 格式返回。如果 Accept 头不包含 image/webp, 则转 jpeg 返回。
+
+可用的枚举值： 
+- []
+- ["webp"]
+- ["jpeg"]
+- ["webp", "jpeg"]
+
+"webp"：是否开启  avif 转 webp，"jpeg": 是否开启 avif 转 jpeg。如果 webp 和 jpeg 都开启的情况下，webp 必须在 jpeg 前面。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::vector<std::string> GetFallbackFormats() const;
+
+                    /**
+                     * 设置当原图是 avif 且客户端 Accept 头包含 image/avif 时，直接返回原图。
+当原图是 avif 且客户端 Accept 头不包含 image/avif 时但包含 image/webp，将 avif 转 webp 格式返回。如果 Accept 头不包含 image/webp, 则转 jpeg 返回。
+
+可用的枚举值： 
+- []
+- ["webp"]
+- ["jpeg"]
+- ["webp", "jpeg"]
+
+"webp"：是否开启  avif 转 webp，"jpeg": 是否开启 avif 转 jpeg。如果 webp 和 jpeg 都开启的情况下，webp 必须在 jpeg 前面。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _fallbackFormats 当原图是 avif 且客户端 Accept 头包含 image/avif 时，直接返回原图。
+当原图是 avif 且客户端 Accept 头不包含 image/avif 时但包含 image/webp，将 avif 转 webp 格式返回。如果 Accept 头不包含 image/webp, 则转 jpeg 返回。
+
+可用的枚举值： 
+- []
+- ["webp"]
+- ["jpeg"]
+- ["webp", "jpeg"]
+
+"webp"：是否开启  avif 转 webp，"jpeg": 是否开启 avif 转 jpeg。如果 webp 和 jpeg 都开启的情况下，webp 必须在 jpeg 前面。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetFallbackFormats(const std::vector<std::string>& _fallbackFormats);
+
+                    /**
+                     * 判断参数 FallbackFormats 是否已赋值
+                     * @return FallbackFormats 是否已赋值
+                     * 
+                     */
+                    bool FallbackFormatsHasBeenSet() const;
+
                 private:
 
                     /**
@@ -89,6 +150,22 @@ off：关闭
                      */
                     std::string m_switch;
                     bool m_switchHasBeenSet;
+
+                    /**
+                     * 当原图是 avif 且客户端 Accept 头包含 image/avif 时，直接返回原图。
+当原图是 avif 且客户端 Accept 头不包含 image/avif 时但包含 image/webp，将 avif 转 webp 格式返回。如果 Accept 头不包含 image/webp, 则转 jpeg 返回。
+
+可用的枚举值： 
+- []
+- ["webp"]
+- ["jpeg"]
+- ["webp", "jpeg"]
+
+"webp"：是否开启  avif 转 webp，"jpeg": 是否开启 avif 转 jpeg。如果 webp 和 jpeg 都开启的情况下，webp 必须在 jpeg 前面。
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::vector<std::string> m_fallbackFormats;
+                    bool m_fallbackFormatsHasBeenSet;
 
                 };
             }

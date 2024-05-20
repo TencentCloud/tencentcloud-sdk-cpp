@@ -213,42 +213,42 @@ namespace TencentCloud
                     /**
                      * 获取识别模式，该参数已废弃
                      * @return Mode 识别模式，该参数已废弃
-                     * 
+                     * @deprecated
                      */
                     std::string GetMode() const;
 
                     /**
                      * 设置识别模式，该参数已废弃
                      * @param _mode 识别模式，该参数已废弃
-                     * 
+                     * @deprecated
                      */
                     void SetMode(const std::string& _mode);
 
                     /**
                      * 判断参数 Mode 是否已赋值
                      * @return Mode 是否已赋值
-                     * 
+                     * @deprecated
                      */
                     bool ModeHasBeenSet() const;
 
                     /**
                      * 获取该参数已废弃
                      * @return TransType 该参数已废弃
-                     * 
+                     * @deprecated
                      */
                     int64_t GetTransType() const;
 
                     /**
                      * 设置该参数已废弃
                      * @param _transType 该参数已废弃
-                     * 
+                     * @deprecated
                      */
                     void SetTransType(const int64_t& _transType);
 
                     /**
                      * 判断参数 TransType 是否已赋值
                      * @return TransType 是否已赋值
-                     * 
+                     * @deprecated
                      */
                     bool TransTypeHasBeenSet() const;
 
