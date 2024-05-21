@@ -24,6 +24,7 @@
 #include <tencentcloud/core/utils/rapidjson/writer.h>
 #include <tencentcloud/core/utils/rapidjson/stringbuffer.h>
 #include <tencentcloud/core/AbstractModel.h>
+#include <tencentcloud/tione/v20211111/model/ImageSecret.h>
 
 
 namespace TencentCloud
@@ -47,15 +48,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取镜像类型：TCR为腾讯云TCR镜像; CCR为腾讯云TCR个人版镜像，PreSet为平台预置镜像
-                     * @return ImageType 镜像类型：TCR为腾讯云TCR镜像; CCR为腾讯云TCR个人版镜像，PreSet为平台预置镜像
+                     * 获取镜像类型：TCR为腾讯云TCR镜像; CCR为腾讯云TCR个人版镜像，PreSet为平台预置镜像，CUSTOM为第三方自定义镜像
+                     * @return ImageType 镜像类型：TCR为腾讯云TCR镜像; CCR为腾讯云TCR个人版镜像，PreSet为平台预置镜像，CUSTOM为第三方自定义镜像
                      * 
                      */
                     std::string GetImageType() const;
 
                     /**
-                     * 设置镜像类型：TCR为腾讯云TCR镜像; CCR为腾讯云TCR个人版镜像，PreSet为平台预置镜像
-                     * @param _imageType 镜像类型：TCR为腾讯云TCR镜像; CCR为腾讯云TCR个人版镜像，PreSet为平台预置镜像
+                     * 设置镜像类型：TCR为腾讯云TCR镜像; CCR为腾讯云TCR个人版镜像，PreSet为平台预置镜像，CUSTOM为第三方自定义镜像
+                     * @param _imageType 镜像类型：TCR为腾讯云TCR镜像; CCR为腾讯云TCR个人版镜像，PreSet为平台预置镜像，CUSTOM为第三方自定义镜像
                      * 
                      */
                     void SetImageType(const std::string& _imageType);
@@ -213,10 +214,35 @@ namespace TencentCloud
                      */
                     bool SupportDataPipelineHasBeenSet() const;
 
+                    /**
+                     * 获取镜像仓库用户名密码信息(仅当ImageType为CUSTOM第三方镜像的时候需要)
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return ImageSecret 镜像仓库用户名密码信息(仅当ImageType为CUSTOM第三方镜像的时候需要)
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    ImageSecret GetImageSecret() const;
+
+                    /**
+                     * 设置镜像仓库用户名密码信息(仅当ImageType为CUSTOM第三方镜像的时候需要)
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _imageSecret 镜像仓库用户名密码信息(仅当ImageType为CUSTOM第三方镜像的时候需要)
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetImageSecret(const ImageSecret& _imageSecret);
+
+                    /**
+                     * 判断参数 ImageSecret 是否已赋值
+                     * @return ImageSecret 是否已赋值
+                     * 
+                     */
+                    bool ImageSecretHasBeenSet() const;
+
                 private:
 
                     /**
-                     * 镜像类型：TCR为腾讯云TCR镜像; CCR为腾讯云TCR个人版镜像，PreSet为平台预置镜像
+                     * 镜像类型：TCR为腾讯云TCR镜像; CCR为腾讯云TCR个人版镜像，PreSet为平台预置镜像，CUSTOM为第三方自定义镜像
                      */
                     std::string m_imageType;
                     bool m_imageTypeHasBeenSet;
@@ -261,6 +287,13 @@ namespace TencentCloud
                      */
                     bool m_supportDataPipeline;
                     bool m_supportDataPipelineHasBeenSet;
+
+                    /**
+                     * 镜像仓库用户名密码信息(仅当ImageType为CUSTOM第三方镜像的时候需要)
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    ImageSecret m_imageSecret;
+                    bool m_imageSecretHasBeenSet;
 
                 };
             }

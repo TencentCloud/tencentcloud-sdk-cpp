@@ -62,6 +62,7 @@ set(tsf_public_header_model
   include/tencentcloud/tsf/v20180326/model/DeleteConfigTemplateResponse.h
   include/tencentcloud/tsf/v20180326/model/DescribeGroupBindedGatewaysResponse.h
   include/tencentcloud/tsf/v20180326/model/DescribeJvmMonitorRequest.h
+  include/tencentcloud/tsf/v20180326/model/EnableLaneRuleRequest.h
   include/tencentcloud/tsf/v20180326/model/TaskRule.h
   include/tencentcloud/tsf/v20180326/model/UnbindApiGroupRequest.h
   include/tencentcloud/tsf/v20180326/model/TaskRecord.h
@@ -69,8 +70,10 @@ set(tsf_public_header_model
   include/tencentcloud/tsf/v20180326/model/RedoTaskBatchRequest.h
   include/tencentcloud/tsf/v20180326/model/DescribeGroupsResponse.h
   include/tencentcloud/tsf/v20180326/model/ModifyUploadInfoResponse.h
+  include/tencentcloud/tsf/v20180326/model/EnableLaneRuleResponse.h
   include/tencentcloud/tsf/v20180326/model/TsfPageConfig.h
   include/tencentcloud/tsf/v20180326/model/CreateApiRateLimitRuleRequest.h
+  include/tencentcloud/tsf/v20180326/model/DisableLaneRuleResponse.h
   include/tencentcloud/tsf/v20180326/model/TaskRecordPage.h
   include/tencentcloud/tsf/v20180326/model/AssociateBusinessLogConfigRequest.h
   include/tencentcloud/tsf/v20180326/model/DescribeJvmMonitorResponse.h
@@ -549,6 +552,7 @@ set(tsf_public_header_model
   include/tencentcloud/tsf/v20180326/model/WarmupSetting.h
   include/tencentcloud/tsf/v20180326/model/EnableUnitRouteRequest.h
   include/tencentcloud/tsf/v20180326/model/TsfPageApplication.h
+  include/tencentcloud/tsf/v20180326/model/DisableLaneRuleRequest.h
   include/tencentcloud/tsf/v20180326/model/InstanceEnrichedInfo.h
   include/tencentcloud/tsf/v20180326/model/DescribeResourceTaskStatusRequest.h
   include/tencentcloud/tsf/v20180326/model/DescribeInvocationMetricDataCurveResponse.h
@@ -685,6 +689,7 @@ set(tsf_src
   src/v20180326/model/DeleteConfigTemplateResponse.cpp
   src/v20180326/model/DescribeGroupBindedGatewaysResponse.cpp
   src/v20180326/model/DescribeJvmMonitorRequest.cpp
+  src/v20180326/model/EnableLaneRuleRequest.cpp
   src/v20180326/model/TaskRule.cpp
   src/v20180326/model/UnbindApiGroupRequest.cpp
   src/v20180326/model/TaskRecord.cpp
@@ -692,8 +697,10 @@ set(tsf_src
   src/v20180326/model/RedoTaskBatchRequest.cpp
   src/v20180326/model/DescribeGroupsResponse.cpp
   src/v20180326/model/ModifyUploadInfoResponse.cpp
+  src/v20180326/model/EnableLaneRuleResponse.cpp
   src/v20180326/model/TsfPageConfig.cpp
   src/v20180326/model/CreateApiRateLimitRuleRequest.cpp
+  src/v20180326/model/DisableLaneRuleResponse.cpp
   src/v20180326/model/TaskRecordPage.cpp
   src/v20180326/model/AssociateBusinessLogConfigRequest.cpp
   src/v20180326/model/DescribeJvmMonitorResponse.cpp
@@ -1172,6 +1179,7 @@ set(tsf_src
   src/v20180326/model/WarmupSetting.cpp
   src/v20180326/model/EnableUnitRouteRequest.cpp
   src/v20180326/model/TsfPageApplication.cpp
+  src/v20180326/model/DisableLaneRuleRequest.cpp
   src/v20180326/model/InstanceEnrichedInfo.cpp
   src/v20180326/model/DescribeResourceTaskStatusRequest.cpp
   src/v20180326/model/DescribeInvocationMetricDataCurveResponse.cpp

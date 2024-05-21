@@ -841,6 +841,31 @@ HYBRID_PAID:
                      */
                     bool ServiceEIPHasBeenSet() const;
 
+                    /**
+                     * 获取服务端口，默认为8501
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return ServicePort 服务端口，默认为8501
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    int64_t GetServicePort() const;
+
+                    /**
+                     * 设置服务端口，默认为8501
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _servicePort 服务端口，默认为8501
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetServicePort(const int64_t& _servicePort);
+
+                    /**
+                     * 判断参数 ServicePort 是否已赋值
+                     * @return ServicePort 是否已赋值
+                     * 
+                     */
+                    bool ServicePortHasBeenSet() const;
+
                 private:
 
                     /**
@@ -1060,6 +1085,13 @@ HYBRID_PAID:
                      */
                     ServiceEIP m_serviceEIP;
                     bool m_serviceEIPHasBeenSet;
+
+                    /**
+                     * 服务端口，默认为8501
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    int64_t m_servicePort;
+                    bool m_servicePortHasBeenSet;
 
                 };
             }

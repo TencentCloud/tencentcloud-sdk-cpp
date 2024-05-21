@@ -335,6 +335,8 @@
 #include <tencentcloud/tsf/v20180326/model/DescribeUploadInfoResponse.h>
 #include <tencentcloud/tsf/v20180326/model/DescribeUsableUnitNamespacesRequest.h>
 #include <tencentcloud/tsf/v20180326/model/DescribeUsableUnitNamespacesResponse.h>
+#include <tencentcloud/tsf/v20180326/model/DisableLaneRuleRequest.h>
+#include <tencentcloud/tsf/v20180326/model/DisableLaneRuleResponse.h>
 #include <tencentcloud/tsf/v20180326/model/DisableTaskRequest.h>
 #include <tencentcloud/tsf/v20180326/model/DisableTaskResponse.h>
 #include <tencentcloud/tsf/v20180326/model/DisableTaskFlowRequest.h>
@@ -349,6 +351,8 @@
 #include <tencentcloud/tsf/v20180326/model/DisassociateKafkaConfigResponse.h>
 #include <tencentcloud/tsf/v20180326/model/DraftApiGroupRequest.h>
 #include <tencentcloud/tsf/v20180326/model/DraftApiGroupResponse.h>
+#include <tencentcloud/tsf/v20180326/model/EnableLaneRuleRequest.h>
+#include <tencentcloud/tsf/v20180326/model/EnableLaneRuleResponse.h>
 #include <tencentcloud/tsf/v20180326/model/EnableTaskRequest.h>
 #include <tencentcloud/tsf/v20180326/model/EnableTaskResponse.h>
 #include <tencentcloud/tsf/v20180326/model/EnableTaskFlowRequest.h>
@@ -943,6 +947,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeUsableUnitNamespacesResponse> DescribeUsableUnitNamespacesOutcome;
                 typedef std::future<DescribeUsableUnitNamespacesOutcome> DescribeUsableUnitNamespacesOutcomeCallable;
                 typedef std::function<void(const TsfClient*, const Model::DescribeUsableUnitNamespacesRequest&, DescribeUsableUnitNamespacesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeUsableUnitNamespacesAsyncHandler;
+                typedef Outcome<Core::Error, Model::DisableLaneRuleResponse> DisableLaneRuleOutcome;
+                typedef std::future<DisableLaneRuleOutcome> DisableLaneRuleOutcomeCallable;
+                typedef std::function<void(const TsfClient*, const Model::DisableLaneRuleRequest&, DisableLaneRuleOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DisableLaneRuleAsyncHandler;
                 typedef Outcome<Core::Error, Model::DisableTaskResponse> DisableTaskOutcome;
                 typedef std::future<DisableTaskOutcome> DisableTaskOutcomeCallable;
                 typedef std::function<void(const TsfClient*, const Model::DisableTaskRequest&, DisableTaskOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DisableTaskAsyncHandler;
@@ -964,6 +971,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DraftApiGroupResponse> DraftApiGroupOutcome;
                 typedef std::future<DraftApiGroupOutcome> DraftApiGroupOutcomeCallable;
                 typedef std::function<void(const TsfClient*, const Model::DraftApiGroupRequest&, DraftApiGroupOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DraftApiGroupAsyncHandler;
+                typedef Outcome<Core::Error, Model::EnableLaneRuleResponse> EnableLaneRuleOutcome;
+                typedef std::future<EnableLaneRuleOutcome> EnableLaneRuleOutcomeCallable;
+                typedef std::function<void(const TsfClient*, const Model::EnableLaneRuleRequest&, EnableLaneRuleOutcome, const std::shared_ptr<const AsyncCallerContext>&)> EnableLaneRuleAsyncHandler;
                 typedef Outcome<Core::Error, Model::EnableTaskResponse> EnableTaskOutcome;
                 typedef std::future<EnableTaskOutcome> EnableTaskOutcomeCallable;
                 typedef std::function<void(const TsfClient*, const Model::EnableTaskRequest&, EnableTaskOutcome, const std::shared_ptr<const AsyncCallerContext>&)> EnableTaskAsyncHandler;
@@ -2543,6 +2553,15 @@ COS相关文档请查阅：https://cloud.tencent.com/document/product/436
                 DescribeUsableUnitNamespacesOutcomeCallable DescribeUsableUnitNamespacesCallable(const Model::DescribeUsableUnitNamespacesRequest& request);
 
                 /**
+                 *禁用泳道规则
+                 * @param req DisableLaneRuleRequest
+                 * @return DisableLaneRuleOutcome
+                 */
+                DisableLaneRuleOutcome DisableLaneRule(const Model::DisableLaneRuleRequest &request);
+                void DisableLaneRuleAsync(const Model::DisableLaneRuleRequest& request, const DisableLaneRuleAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DisableLaneRuleOutcomeCallable DisableLaneRuleCallable(const Model::DisableLaneRuleRequest& request);
+
+                /**
                  *停用任务
                  * @param req DisableTaskRequest
                  * @return DisableTaskOutcome
@@ -2604,6 +2623,15 @@ COS相关文档请查阅：https://cloud.tencent.com/document/product/436
                 DraftApiGroupOutcome DraftApiGroup(const Model::DraftApiGroupRequest &request);
                 void DraftApiGroupAsync(const Model::DraftApiGroupRequest& request, const DraftApiGroupAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DraftApiGroupOutcomeCallable DraftApiGroupCallable(const Model::DraftApiGroupRequest& request);
+
+                /**
+                 *启用泳道规则
+                 * @param req EnableLaneRuleRequest
+                 * @return EnableLaneRuleOutcome
+                 */
+                EnableLaneRuleOutcome EnableLaneRule(const Model::EnableLaneRuleRequest &request);
+                void EnableLaneRuleAsync(const Model::EnableLaneRuleRequest& request, const EnableLaneRuleAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                EnableLaneRuleOutcomeCallable EnableLaneRuleCallable(const Model::EnableLaneRuleRequest& request);
 
                 /**
                  *启用任务

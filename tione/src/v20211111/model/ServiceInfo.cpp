@@ -50,7 +50,8 @@ ServiceInfo::ServiceInfo() :
     m_volumeMountHasBeenSet(false),
     m_inferCodeInfoHasBeenSet(false),
     m_commandHasBeenSet(false),
-    m_serviceEIPHasBeenSet(false)
+    m_serviceEIPHasBeenSet(false),
+    m_servicePortHasBeenSet(false)
 {
 }
 
@@ -476,6 +477,16 @@ CoreInternalOutcome ServiceInfo::Deserialize(const rapidjson::Value &value)
         m_serviceEIPHasBeenSet = true;
     }
 
+    if (value.HasMember("ServicePort") && !value["ServicePort"].IsNull())
+    {
+        if (!value["ServicePort"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `ServiceInfo.ServicePort` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_servicePort = value["ServicePort"].GetInt64();
+        m_servicePortHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -759,6 +770,14 @@ void ServiceInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Document::All
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
         m_serviceEIP.ToJsonObject(value[key.c_str()], allocator);
+    }
+
+    if (m_servicePortHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ServicePort";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_servicePort, allocator);
     }
 
 }
@@ -1242,5 +1261,21 @@ void ServiceInfo::SetServiceEIP(const ServiceEIP& _serviceEIP)
 bool ServiceInfo::ServiceEIPHasBeenSet() const
 {
     return m_serviceEIPHasBeenSet;
+}
+
+int64_t ServiceInfo::GetServicePort() const
+{
+    return m_servicePort;
+}
+
+void ServiceInfo::SetServicePort(const int64_t& _servicePort)
+{
+    m_servicePort = _servicePort;
+    m_servicePortHasBeenSet = true;
+}
+
+bool ServiceInfo::ServicePortHasBeenSet() const
+{
+    return m_servicePortHasBeenSet;
 }
 

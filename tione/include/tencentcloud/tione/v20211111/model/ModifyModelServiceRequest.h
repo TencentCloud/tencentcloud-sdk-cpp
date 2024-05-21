@@ -629,15 +629,15 @@ HYBRID_PAID:
                     bool ServiceEIPHasBeenSet() const;
 
                     /**
-                     * 获取服务的启动命令，以base64格式进行输入
-                     * @return CommandBase64 服务的启动命令，以base64格式进行输入
+                     * 获取服务的启动命令，以base64格式进行输入，与Command同时配置时，仅当前参数生效
+                     * @return CommandBase64 服务的启动命令，以base64格式进行输入，与Command同时配置时，仅当前参数生效
                      * 
                      */
                     std::string GetCommandBase64() const;
 
                     /**
-                     * 设置服务的启动命令，以base64格式进行输入
-                     * @param _commandBase64 服务的启动命令，以base64格式进行输入
+                     * 设置服务的启动命令，以base64格式进行输入，与Command同时配置时，仅当前参数生效
+                     * @param _commandBase64 服务的启动命令，以base64格式进行输入，与Command同时配置时，仅当前参数生效
                      * 
                      */
                     void SetCommandBase64(const std::string& _commandBase64);
@@ -648,6 +648,27 @@ HYBRID_PAID:
                      * 
                      */
                     bool CommandBase64HasBeenSet() const;
+
+                    /**
+                     * 获取服务端口，仅在非内置镜像时生效，默认8501。不支持输入8501-8510,6006,9092
+                     * @return ServicePort 服务端口，仅在非内置镜像时生效，默认8501。不支持输入8501-8510,6006,9092
+                     * 
+                     */
+                    int64_t GetServicePort() const;
+
+                    /**
+                     * 设置服务端口，仅在非内置镜像时生效，默认8501。不支持输入8501-8510,6006,9092
+                     * @param _servicePort 服务端口，仅在非内置镜像时生效，默认8501。不支持输入8501-8510,6006,9092
+                     * 
+                     */
+                    void SetServicePort(const int64_t& _servicePort);
+
+                    /**
+                     * 判断参数 ServicePort 是否已赋值
+                     * @return ServicePort 是否已赋值
+                     * 
+                     */
+                    bool ServicePortHasBeenSet() const;
 
                 private:
 
@@ -813,10 +834,16 @@ HYBRID_PAID:
                     bool m_serviceEIPHasBeenSet;
 
                     /**
-                     * 服务的启动命令，以base64格式进行输入
+                     * 服务的启动命令，以base64格式进行输入，与Command同时配置时，仅当前参数生效
                      */
                     std::string m_commandBase64;
                     bool m_commandBase64HasBeenSet;
+
+                    /**
+                     * 服务端口，仅在非内置镜像时生效，默认8501。不支持输入8501-8510,6006,9092
+                     */
+                    int64_t m_servicePort;
+                    bool m_servicePortHasBeenSet;
 
                 };
             }

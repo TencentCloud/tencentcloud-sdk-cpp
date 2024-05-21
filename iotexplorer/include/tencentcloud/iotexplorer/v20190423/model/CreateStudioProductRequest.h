@@ -210,6 +210,48 @@ namespace TencentCloud
                      */
                     bool ProjectIdHasBeenSet() const;
 
+                    /**
+                     * 获取平均传输速率
+                     * @return Rate 平均传输速率
+                     * 
+                     */
+                    std::string GetRate() const;
+
+                    /**
+                     * 设置平均传输速率
+                     * @param _rate 平均传输速率
+                     * 
+                     */
+                    void SetRate(const std::string& _rate);
+
+                    /**
+                     * 判断参数 Rate 是否已赋值
+                     * @return Rate 是否已赋值
+                     * 
+                     */
+                    bool RateHasBeenSet() const;
+
+                    /**
+                     * 获取期限
+                     * @return Period 期限
+                     * 
+                     */
+                    std::string GetPeriod() const;
+
+                    /**
+                     * 设置期限
+                     * @param _period 期限
+                     * 
+                     */
+                    void SetPeriod(const std::string& _period);
+
+                    /**
+                     * 判断参数 Period 是否已赋值
+                     * @return Period 是否已赋值
+                     * 
+                     */
+                    bool PeriodHasBeenSet() const;
+
                 private:
 
                     /**
@@ -259,6 +301,18 @@ namespace TencentCloud
                      */
                     std::string m_projectId;
                     bool m_projectIdHasBeenSet;
+
+                    /**
+                     * 平均传输速率
+                     */
+                    std::string m_rate;
+                    bool m_rateHasBeenSet;
+
+                    /**
+                     * 期限
+                     */
+                    std::string m_period;
+                    bool m_periodHasBeenSet;
 
                 };
             }

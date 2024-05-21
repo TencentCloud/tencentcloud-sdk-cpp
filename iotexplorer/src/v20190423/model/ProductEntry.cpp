@@ -39,7 +39,9 @@ ProductEntry::ProductEntry() :
     m_createUserIdHasBeenSet(false),
     m_creatorNickNameHasBeenSet(false),
     m_bindStrategyHasBeenSet(false),
-    m_deviceCountHasBeenSet(false)
+    m_deviceCountHasBeenSet(false),
+    m_rateHasBeenSet(false),
+    m_periodHasBeenSet(false)
 {
 }
 
@@ -238,6 +240,26 @@ CoreInternalOutcome ProductEntry::Deserialize(const rapidjson::Value &value)
         m_deviceCountHasBeenSet = true;
     }
 
+    if (value.HasMember("Rate") && !value["Rate"].IsNull())
+    {
+        if (!value["Rate"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `ProductEntry.Rate` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_rate = string(value["Rate"].GetString());
+        m_rateHasBeenSet = true;
+    }
+
+    if (value.HasMember("Period") && !value["Period"].IsNull())
+    {
+        if (!value["Period"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `ProductEntry.Period` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_period = string(value["Period"].GetString());
+        m_periodHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -395,6 +417,22 @@ void ProductEntry::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Al
         string key = "DeviceCount";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_deviceCount, allocator);
+    }
+
+    if (m_rateHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Rate";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_rate.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_periodHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Period";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_period.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -702,5 +740,37 @@ void ProductEntry::SetDeviceCount(const int64_t& _deviceCount)
 bool ProductEntry::DeviceCountHasBeenSet() const
 {
     return m_deviceCountHasBeenSet;
+}
+
+string ProductEntry::GetRate() const
+{
+    return m_rate;
+}
+
+void ProductEntry::SetRate(const string& _rate)
+{
+    m_rate = _rate;
+    m_rateHasBeenSet = true;
+}
+
+bool ProductEntry::RateHasBeenSet() const
+{
+    return m_rateHasBeenSet;
+}
+
+string ProductEntry::GetPeriod() const
+{
+    return m_period;
+}
+
+void ProductEntry::SetPeriod(const string& _period)
+{
+    m_period = _period;
+    m_periodHasBeenSet = true;
+}
+
+bool ProductEntry::PeriodHasBeenSet() const
+{
+    return m_periodHasBeenSet;
 }
 

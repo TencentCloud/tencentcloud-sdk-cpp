@@ -181,6 +181,7 @@ set(tione_public_header_model
   include/tencentcloud/tione/v20211111/model/GooseFS.h
   include/tencentcloud/tione/v20211111/model/TextLabelDistributionInfo.h
   include/tencentcloud/tione/v20211111/model/Option.h
+  include/tencentcloud/tione/v20211111/model/ImageSecret.h
   include/tencentcloud/tione/v20211111/model/DescribeNotebookImageRecordsRequest.h
   include/tencentcloud/tione/v20211111/model/StopCreatingImageRequest.h
   include/tencentcloud/tione/v20211111/model/DefaultInnerCallInfo.h
@@ -517,6 +518,7 @@ set(tione_src
   src/v20211111/model/GooseFS.cpp
   src/v20211111/model/TextLabelDistributionInfo.cpp
   src/v20211111/model/Option.cpp
+  src/v20211111/model/ImageSecret.cpp
   src/v20211111/model/DescribeNotebookImageRecordsRequest.cpp
   src/v20211111/model/StopCreatingImageRequest.cpp
   src/v20211111/model/DefaultInnerCallInfo.cpp

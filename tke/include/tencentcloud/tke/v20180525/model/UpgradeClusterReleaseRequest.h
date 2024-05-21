@@ -170,15 +170,15 @@ namespace TencentCloud
                     bool ChartFromHasBeenSet() const;
 
                     /**
-                     * 获取制品版本( 从第三安装时，不传这个参数）
-                     * @return ChartVersion 制品版本( 从第三安装时，不传这个参数）
+                     * 获取制品版本( 从第三方安装时，不传这个参数）
+                     * @return ChartVersion 制品版本( 从第三方安装时，不传这个参数）
                      * 
                      */
                     std::string GetChartVersion() const;
 
                     /**
-                     * 设置制品版本( 从第三安装时，不传这个参数）
-                     * @param _chartVersion 制品版本( 从第三安装时，不传这个参数）
+                     * 设置制品版本( 从第三方安装时，不传这个参数）
+                     * @param _chartVersion 制品版本( 从第三方安装时，不传这个参数）
                      * 
                      */
                     void SetChartVersion(const std::string& _chartVersion);
@@ -275,15 +275,15 @@ namespace TencentCloud
                     bool ChartNamespaceHasBeenSet() const;
 
                     /**
-                     * 获取集群类型，支持传 tke, eks, tkeedge, exernal(注册集群）
-                     * @return ClusterType 集群类型，支持传 tke, eks, tkeedge, exernal(注册集群）
+                     * 获取集群类型，支持传 tke, eks, tkeedge, external(注册集群）
+                     * @return ClusterType 集群类型，支持传 tke, eks, tkeedge, external(注册集群）
                      * 
                      */
                     std::string GetClusterType() const;
 
                     /**
-                     * 设置集群类型，支持传 tke, eks, tkeedge, exernal(注册集群）
-                     * @param _clusterType 集群类型，支持传 tke, eks, tkeedge, exernal(注册集群）
+                     * 设置集群类型，支持传 tke, eks, tkeedge, external(注册集群）
+                     * @param _clusterType 集群类型，支持传 tke, eks, tkeedge, external(注册集群）
                      * 
                      */
                     void SetClusterType(const std::string& _clusterType);
@@ -334,7 +334,7 @@ namespace TencentCloud
                     bool m_chartFromHasBeenSet;
 
                     /**
-                     * 制品版本( 从第三安装时，不传这个参数）
+                     * 制品版本( 从第三方安装时，不传这个参数）
                      */
                     std::string m_chartVersion;
                     bool m_chartVersionHasBeenSet;
@@ -364,7 +364,7 @@ namespace TencentCloud
                     bool m_chartNamespaceHasBeenSet;
 
                     /**
-                     * 集群类型，支持传 tke, eks, tkeedge, exernal(注册集群）
+                     * 集群类型，支持传 tke, eks, tkeedge, external(注册集群）
                      */
                     std::string m_clusterType;
                     bool m_clusterTypeHasBeenSet;

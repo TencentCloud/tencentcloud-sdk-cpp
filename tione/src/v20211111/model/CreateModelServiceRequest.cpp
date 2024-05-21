@@ -54,7 +54,8 @@ CreateModelServiceRequest::CreateModelServiceRequest() :
     m_serviceCategoryHasBeenSet(false),
     m_commandHasBeenSet(false),
     m_serviceEIPHasBeenSet(false),
-    m_commandBase64HasBeenSet(false)
+    m_commandBase64HasBeenSet(false),
+    m_servicePortHasBeenSet(false)
 {
 }
 
@@ -349,6 +350,14 @@ string CreateModelServiceRequest::ToJsonString() const
         string key = "CommandBase64";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_commandBase64.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_servicePortHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ServicePort";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_servicePort, allocator);
     }
 
 
@@ -869,6 +878,22 @@ void CreateModelServiceRequest::SetCommandBase64(const string& _commandBase64)
 bool CreateModelServiceRequest::CommandBase64HasBeenSet() const
 {
     return m_commandBase64HasBeenSet;
+}
+
+int64_t CreateModelServiceRequest::GetServicePort() const
+{
+    return m_servicePort;
+}
+
+void CreateModelServiceRequest::SetServicePort(const int64_t& _servicePort)
+{
+    m_servicePort = _servicePort;
+    m_servicePortHasBeenSet = true;
+}
+
+bool CreateModelServiceRequest::ServicePortHasBeenSet() const
+{
+    return m_servicePortHasBeenSet;
 }
 
 

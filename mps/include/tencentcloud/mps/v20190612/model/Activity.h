@@ -60,6 +60,9 @@ namespace TencentCloud
 <li>action-image-sprite：雪碧图</li>
 <li>action-snapshotByTimeOffset: 时间点截图</li>
 <li>action-adaptive-substream：自适应码流</li>
+
+
+
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return ActivityType 原子任务类型：
 <li>input: 起始节点</li>
@@ -73,6 +76,9 @@ namespace TencentCloud
 <li>action-image-sprite：雪碧图</li>
 <li>action-snapshotByTimeOffset: 时间点截图</li>
 <li>action-adaptive-substream：自适应码流</li>
+
+
+
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -91,6 +97,9 @@ namespace TencentCloud
 <li>action-image-sprite：雪碧图</li>
 <li>action-snapshotByTimeOffset: 时间点截图</li>
 <li>action-adaptive-substream：自适应码流</li>
+
+
+
 注意：此字段可能返回 null，表示取不到有效值。
                      * @param _activityType 原子任务类型：
 <li>input: 起始节点</li>
@@ -104,6 +113,9 @@ namespace TencentCloud
 <li>action-image-sprite：雪碧图</li>
 <li>action-snapshotByTimeOffset: 时间点截图</li>
 <li>action-adaptive-substream：自适应码流</li>
+
+
+
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -181,6 +193,9 @@ namespace TencentCloud
 <li>action-image-sprite：雪碧图</li>
 <li>action-snapshotByTimeOffset: 时间点截图</li>
 <li>action-adaptive-substream：自适应码流</li>
+
+
+
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_activityType;

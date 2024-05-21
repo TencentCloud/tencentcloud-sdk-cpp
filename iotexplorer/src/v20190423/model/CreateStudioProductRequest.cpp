@@ -30,7 +30,9 @@ CreateStudioProductRequest::CreateStudioProductRequest() :
     m_netTypeHasBeenSet(false),
     m_dataProtocolHasBeenSet(false),
     m_productDescHasBeenSet(false),
-    m_projectIdHasBeenSet(false)
+    m_projectIdHasBeenSet(false),
+    m_rateHasBeenSet(false),
+    m_periodHasBeenSet(false)
 {
 }
 
@@ -103,6 +105,22 @@ string CreateStudioProductRequest::ToJsonString() const
         string key = "ProjectId";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_projectId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_rateHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Rate";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_rate.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_periodHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Period";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_period.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -239,6 +257,38 @@ void CreateStudioProductRequest::SetProjectId(const string& _projectId)
 bool CreateStudioProductRequest::ProjectIdHasBeenSet() const
 {
     return m_projectIdHasBeenSet;
+}
+
+string CreateStudioProductRequest::GetRate() const
+{
+    return m_rate;
+}
+
+void CreateStudioProductRequest::SetRate(const string& _rate)
+{
+    m_rate = _rate;
+    m_rateHasBeenSet = true;
+}
+
+bool CreateStudioProductRequest::RateHasBeenSet() const
+{
+    return m_rateHasBeenSet;
+}
+
+string CreateStudioProductRequest::GetPeriod() const
+{
+    return m_period;
+}
+
+void CreateStudioProductRequest::SetPeriod(const string& _period)
+{
+    m_period = _period;
+    m_periodHasBeenSet = true;
+}
+
+bool CreateStudioProductRequest::PeriodHasBeenSet() const
+{
+    return m_periodHasBeenSet;
 }
 
 

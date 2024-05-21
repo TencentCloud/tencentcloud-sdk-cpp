@@ -6748,6 +6748,49 @@ TsfClient::DescribeUsableUnitNamespacesOutcomeCallable TsfClient::DescribeUsable
     return task->get_future();
 }
 
+TsfClient::DisableLaneRuleOutcome TsfClient::DisableLaneRule(const DisableLaneRuleRequest &request)
+{
+    auto outcome = MakeRequest(request, "DisableLaneRule");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DisableLaneRuleResponse rsp = DisableLaneRuleResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DisableLaneRuleOutcome(rsp);
+        else
+            return DisableLaneRuleOutcome(o.GetError());
+    }
+    else
+    {
+        return DisableLaneRuleOutcome(outcome.GetError());
+    }
+}
+
+void TsfClient::DisableLaneRuleAsync(const DisableLaneRuleRequest& request, const DisableLaneRuleAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DisableLaneRule(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+TsfClient::DisableLaneRuleOutcomeCallable TsfClient::DisableLaneRuleCallable(const DisableLaneRuleRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DisableLaneRuleOutcome()>>(
+        [this, request]()
+        {
+            return this->DisableLaneRule(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 TsfClient::DisableTaskOutcome TsfClient::DisableTask(const DisableTaskRequest &request)
 {
     auto outcome = MakeRequest(request, "DisableTask");
@@ -7042,6 +7085,49 @@ TsfClient::DraftApiGroupOutcomeCallable TsfClient::DraftApiGroupCallable(const D
         [this, request]()
         {
             return this->DraftApiGroup(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+TsfClient::EnableLaneRuleOutcome TsfClient::EnableLaneRule(const EnableLaneRuleRequest &request)
+{
+    auto outcome = MakeRequest(request, "EnableLaneRule");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        EnableLaneRuleResponse rsp = EnableLaneRuleResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return EnableLaneRuleOutcome(rsp);
+        else
+            return EnableLaneRuleOutcome(o.GetError());
+    }
+    else
+    {
+        return EnableLaneRuleOutcome(outcome.GetError());
+    }
+}
+
+void TsfClient::EnableLaneRuleAsync(const EnableLaneRuleRequest& request, const EnableLaneRuleAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->EnableLaneRule(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+TsfClient::EnableLaneRuleOutcomeCallable TsfClient::EnableLaneRuleCallable(const EnableLaneRuleRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<EnableLaneRuleOutcome()>>(
+        [this, request]()
+        {
+            return this->EnableLaneRule(request);
         }
     );
 

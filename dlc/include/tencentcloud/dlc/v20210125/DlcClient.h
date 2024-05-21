@@ -183,6 +183,8 @@
 #include <tencentcloud/dlc/v20210125/model/DescribeTablesResponse.h>
 #include <tencentcloud/dlc/v20210125/model/DescribeTablesNameRequest.h>
 #include <tencentcloud/dlc/v20210125/model/DescribeTablesNameResponse.h>
+#include <tencentcloud/dlc/v20210125/model/DescribeTaskLogRequest.h>
+#include <tencentcloud/dlc/v20210125/model/DescribeTaskLogResponse.h>
 #include <tencentcloud/dlc/v20210125/model/DescribeTaskResultRequest.h>
 #include <tencentcloud/dlc/v20210125/model/DescribeTaskResultResponse.h>
 #include <tencentcloud/dlc/v20210125/model/DescribeTasksRequest.h>
@@ -525,6 +527,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeTablesNameResponse> DescribeTablesNameOutcome;
                 typedef std::future<DescribeTablesNameOutcome> DescribeTablesNameOutcomeCallable;
                 typedef std::function<void(const DlcClient*, const Model::DescribeTablesNameRequest&, DescribeTablesNameOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeTablesNameAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeTaskLogResponse> DescribeTaskLogOutcome;
+                typedef std::future<DescribeTaskLogOutcome> DescribeTaskLogOutcomeCallable;
+                typedef std::function<void(const DlcClient*, const Model::DescribeTaskLogRequest&, DescribeTaskLogOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeTaskLogAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeTaskResultResponse> DescribeTaskResultOutcome;
                 typedef std::future<DescribeTaskResultOutcome> DescribeTaskResultOutcomeCallable;
                 typedef std::function<void(const DlcClient*, const Model::DescribeTaskResultRequest&, DescribeTaskResultOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeTaskResultAsyncHandler;
@@ -1379,6 +1384,15 @@ namespace TencentCloud
                 DescribeTablesNameOutcome DescribeTablesName(const Model::DescribeTablesNameRequest &request);
                 void DescribeTablesNameAsync(const Model::DescribeTablesNameRequest& request, const DescribeTablesNameAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DescribeTablesNameOutcomeCallable DescribeTablesNameCallable(const Model::DescribeTablesNameRequest& request);
+
+                /**
+                 *本接口（DescribeTaskLog）用于获取spark 作业任务日志详情
+                 * @param req DescribeTaskLogRequest
+                 * @return DescribeTaskLogOutcome
+                 */
+                DescribeTaskLogOutcome DescribeTaskLog(const Model::DescribeTaskLogRequest &request);
+                void DescribeTaskLogAsync(const Model::DescribeTaskLogRequest& request, const DescribeTaskLogAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeTaskLogOutcomeCallable DescribeTaskLogCallable(const Model::DescribeTaskLogRequest& request);
 
                 /**
                  *查询任务结果

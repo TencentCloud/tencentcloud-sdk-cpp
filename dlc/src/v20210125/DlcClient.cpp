@@ -3480,6 +3480,49 @@ DlcClient::DescribeTablesNameOutcomeCallable DlcClient::DescribeTablesNameCallab
     return task->get_future();
 }
 
+DlcClient::DescribeTaskLogOutcome DlcClient::DescribeTaskLog(const DescribeTaskLogRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeTaskLog");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeTaskLogResponse rsp = DescribeTaskLogResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeTaskLogOutcome(rsp);
+        else
+            return DescribeTaskLogOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeTaskLogOutcome(outcome.GetError());
+    }
+}
+
+void DlcClient::DescribeTaskLogAsync(const DescribeTaskLogRequest& request, const DescribeTaskLogAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeTaskLog(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+DlcClient::DescribeTaskLogOutcomeCallable DlcClient::DescribeTaskLogCallable(const DescribeTaskLogRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeTaskLogOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeTaskLog(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 DlcClient::DescribeTaskResultOutcome DlcClient::DescribeTaskResult(const DescribeTaskResultRequest &request)
 {
     auto outcome = MakeRequest(request, "DescribeTaskResult");

@@ -79,6 +79,7 @@ set(dlc_public_header_model
   include/tencentcloud/dlc/v20210125/model/GetOptimizerPolicyResponse.h
   include/tencentcloud/dlc/v20210125/model/DescribeTableRequest.h
   include/tencentcloud/dlc/v20210125/model/Policy.h
+  include/tencentcloud/dlc/v20210125/model/DescribeTaskLogRequest.h
   include/tencentcloud/dlc/v20210125/model/UpdateUserDataEngineConfigResponse.h
   include/tencentcloud/dlc/v20210125/model/CreateTasksRequest.h
   include/tencentcloud/dlc/v20210125/model/SuspendResumeDataEngineRequest.h
@@ -287,6 +288,7 @@ set(dlc_public_header_model
   include/tencentcloud/dlc/v20210125/model/TagInfo.h
   include/tencentcloud/dlc/v20210125/model/DeleteSparkAppRequest.h
   include/tencentcloud/dlc/v20210125/model/TaskResultInfo.h
+  include/tencentcloud/dlc/v20210125/model/DescribeTaskLogResponse.h
   include/tencentcloud/dlc/v20210125/model/DescribeTasksResponse.h
   include/tencentcloud/dlc/v20210125/model/DropDMSPartitionsRequest.h
   include/tencentcloud/dlc/v20210125/model/CommonMetrics.h
@@ -427,6 +429,7 @@ set(dlc_src
   src/v20210125/model/GetOptimizerPolicyResponse.cpp
   src/v20210125/model/DescribeTableRequest.cpp
   src/v20210125/model/Policy.cpp
+  src/v20210125/model/DescribeTaskLogRequest.cpp
   src/v20210125/model/UpdateUserDataEngineConfigResponse.cpp
   src/v20210125/model/CreateTasksRequest.cpp
   src/v20210125/model/SuspendResumeDataEngineRequest.cpp
@@ -635,6 +638,7 @@ set(dlc_src
   src/v20210125/model/TagInfo.cpp
   src/v20210125/model/DeleteSparkAppRequest.cpp
   src/v20210125/model/TaskResultInfo.cpp
+  src/v20210125/model/DescribeTaskLogResponse.cpp
   src/v20210125/model/DescribeTasksResponse.cpp
   src/v20210125/model/DropDMSPartitionsRequest.cpp
   src/v20210125/model/CommonMetrics.cpp

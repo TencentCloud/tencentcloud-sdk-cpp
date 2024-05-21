@@ -469,6 +469,56 @@ wifi、wifi-ble、cellular、5g、lorawan、ble、ethernet、wifi-ethernet、els
                      */
                     bool DeviceCountHasBeenSet() const;
 
+                    /**
+                     * 获取平均传输速率
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return Rate 平均传输速率
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::string GetRate() const;
+
+                    /**
+                     * 设置平均传输速率
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _rate 平均传输速率
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetRate(const std::string& _rate);
+
+                    /**
+                     * 判断参数 Rate 是否已赋值
+                     * @return Rate 是否已赋值
+                     * 
+                     */
+                    bool RateHasBeenSet() const;
+
+                    /**
+                     * 获取有效期
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return Period 有效期
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::string GetPeriod() const;
+
+                    /**
+                     * 设置有效期
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _period 有效期
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetPeriod(const std::string& _period);
+
+                    /**
+                     * 判断参数 Period 是否已赋值
+                     * @return Period 是否已赋值
+                     * 
+                     */
+                    bool PeriodHasBeenSet() const;
+
                 private:
 
                     /**
@@ -590,6 +640,20 @@ wifi、wifi-ble、cellular、5g、lorawan、ble、ethernet、wifi-ethernet、els
                      */
                     int64_t m_deviceCount;
                     bool m_deviceCountHasBeenSet;
+
+                    /**
+                     * 平均传输速率
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_rate;
+                    bool m_rateHasBeenSet;
+
+                    /**
+                     * 有效期
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_period;
+                    bool m_periodHasBeenSet;
 
                 };
             }
