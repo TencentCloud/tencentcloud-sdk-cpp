@@ -275,6 +275,8 @@
 #include <tencentcloud/iotexplorer/v20190423/model/UnbindDevicesResponse.h>
 #include <tencentcloud/iotexplorer/v20190423/model/UnbindProductsRequest.h>
 #include <tencentcloud/iotexplorer/v20190423/model/UnbindProductsResponse.h>
+#include <tencentcloud/iotexplorer/v20190423/model/UpdateDeviceTWeCallAuthorizeStatusRequest.h>
+#include <tencentcloud/iotexplorer/v20190423/model/UpdateDeviceTWeCallAuthorizeStatusResponse.h>
 #include <tencentcloud/iotexplorer/v20190423/model/UpdateDevicesEnableStateRequest.h>
 #include <tencentcloud/iotexplorer/v20190423/model/UpdateDevicesEnableStateResponse.h>
 #include <tencentcloud/iotexplorer/v20190423/model/UpdateFirmwareRequest.h>
@@ -673,6 +675,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::UnbindProductsResponse> UnbindProductsOutcome;
                 typedef std::future<UnbindProductsOutcome> UnbindProductsOutcomeCallable;
                 typedef std::function<void(const IotexplorerClient*, const Model::UnbindProductsRequest&, UnbindProductsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> UnbindProductsAsyncHandler;
+                typedef Outcome<Core::Error, Model::UpdateDeviceTWeCallAuthorizeStatusResponse> UpdateDeviceTWeCallAuthorizeStatusOutcome;
+                typedef std::future<UpdateDeviceTWeCallAuthorizeStatusOutcome> UpdateDeviceTWeCallAuthorizeStatusOutcomeCallable;
+                typedef std::function<void(const IotexplorerClient*, const Model::UpdateDeviceTWeCallAuthorizeStatusRequest&, UpdateDeviceTWeCallAuthorizeStatusOutcome, const std::shared_ptr<const AsyncCallerContext>&)> UpdateDeviceTWeCallAuthorizeStatusAsyncHandler;
                 typedef Outcome<Core::Error, Model::UpdateDevicesEnableStateResponse> UpdateDevicesEnableStateOutcome;
                 typedef std::future<UpdateDevicesEnableStateOutcome> UpdateDevicesEnableStateOutcomeCallable;
                 typedef std::function<void(const IotexplorerClient*, const Model::UpdateDevicesEnableStateRequest&, UpdateDevicesEnableStateOutcome, const std::shared_ptr<const AsyncCallerContext>&)> UpdateDevicesEnableStateAsyncHandler;
@@ -1818,6 +1823,15 @@ namespace TencentCloud
                 UnbindProductsOutcome UnbindProducts(const Model::UnbindProductsRequest &request);
                 void UnbindProductsAsync(const Model::UnbindProductsRequest& request, const UnbindProductsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 UnbindProductsOutcomeCallable UnbindProductsCallable(const Model::UnbindProductsRequest& request);
+
+                /**
+                 *更新用户对设备的TweCall授权状态
+                 * @param req UpdateDeviceTWeCallAuthorizeStatusRequest
+                 * @return UpdateDeviceTWeCallAuthorizeStatusOutcome
+                 */
+                UpdateDeviceTWeCallAuthorizeStatusOutcome UpdateDeviceTWeCallAuthorizeStatus(const Model::UpdateDeviceTWeCallAuthorizeStatusRequest &request);
+                void UpdateDeviceTWeCallAuthorizeStatusAsync(const Model::UpdateDeviceTWeCallAuthorizeStatusRequest& request, const UpdateDeviceTWeCallAuthorizeStatusAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                UpdateDeviceTWeCallAuthorizeStatusOutcomeCallable UpdateDeviceTWeCallAuthorizeStatusCallable(const Model::UpdateDeviceTWeCallAuthorizeStatusRequest& request);
 
                 /**
                  *批量禁用启用设备

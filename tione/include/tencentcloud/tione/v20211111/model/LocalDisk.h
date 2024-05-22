@@ -71,6 +71,31 @@ namespace TencentCloud
                      */
                     bool InstanceIdHasBeenSet() const;
 
+                    /**
+                     * 获取本地路径
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return LocalPath 本地路径
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::string GetLocalPath() const;
+
+                    /**
+                     * 设置本地路径
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _localPath 本地路径
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetLocalPath(const std::string& _localPath);
+
+                    /**
+                     * 判断参数 LocalPath 是否已赋值
+                     * @return LocalPath 是否已赋值
+                     * 
+                     */
+                    bool LocalPathHasBeenSet() const;
+
                 private:
 
                     /**
@@ -79,6 +104,13 @@ namespace TencentCloud
                      */
                     std::string m_instanceId;
                     bool m_instanceIdHasBeenSet;
+
+                    /**
+                     * 本地路径
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_localPath;
+                    bool m_localPathHasBeenSet;
 
                 };
             }

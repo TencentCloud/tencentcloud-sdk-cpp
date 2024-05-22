@@ -21,7 +21,8 @@ using namespace TencentCloud::Tione::V20211111::Model;
 using namespace std;
 
 LocalDisk::LocalDisk() :
-    m_instanceIdHasBeenSet(false)
+    m_instanceIdHasBeenSet(false),
+    m_localPathHasBeenSet(false)
 {
 }
 
@@ -40,6 +41,16 @@ CoreInternalOutcome LocalDisk::Deserialize(const rapidjson::Value &value)
         m_instanceIdHasBeenSet = true;
     }
 
+    if (value.HasMember("LocalPath") && !value["LocalPath"].IsNull())
+    {
+        if (!value["LocalPath"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `LocalDisk.LocalPath` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_localPath = string(value["LocalPath"].GetString());
+        m_localPathHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -53,6 +64,14 @@ void LocalDisk::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Alloc
         string key = "InstanceId";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_instanceId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_localPathHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "LocalPath";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_localPath.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -72,5 +91,21 @@ void LocalDisk::SetInstanceId(const string& _instanceId)
 bool LocalDisk::InstanceIdHasBeenSet() const
 {
     return m_instanceIdHasBeenSet;
+}
+
+string LocalDisk::GetLocalPath() const
+{
+    return m_localPath;
+}
+
+void LocalDisk::SetLocalPath(const string& _localPath)
+{
+    m_localPath = _localPath;
+    m_localPathHasBeenSet = true;
+}
+
+bool LocalDisk::LocalPathHasBeenSet() const
+{
+    return m_localPathHasBeenSet;
 }
 

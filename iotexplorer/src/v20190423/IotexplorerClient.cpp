@@ -5458,6 +5458,49 @@ IotexplorerClient::UnbindProductsOutcomeCallable IotexplorerClient::UnbindProduc
     return task->get_future();
 }
 
+IotexplorerClient::UpdateDeviceTWeCallAuthorizeStatusOutcome IotexplorerClient::UpdateDeviceTWeCallAuthorizeStatus(const UpdateDeviceTWeCallAuthorizeStatusRequest &request)
+{
+    auto outcome = MakeRequest(request, "UpdateDeviceTWeCallAuthorizeStatus");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        UpdateDeviceTWeCallAuthorizeStatusResponse rsp = UpdateDeviceTWeCallAuthorizeStatusResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return UpdateDeviceTWeCallAuthorizeStatusOutcome(rsp);
+        else
+            return UpdateDeviceTWeCallAuthorizeStatusOutcome(o.GetError());
+    }
+    else
+    {
+        return UpdateDeviceTWeCallAuthorizeStatusOutcome(outcome.GetError());
+    }
+}
+
+void IotexplorerClient::UpdateDeviceTWeCallAuthorizeStatusAsync(const UpdateDeviceTWeCallAuthorizeStatusRequest& request, const UpdateDeviceTWeCallAuthorizeStatusAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->UpdateDeviceTWeCallAuthorizeStatus(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+IotexplorerClient::UpdateDeviceTWeCallAuthorizeStatusOutcomeCallable IotexplorerClient::UpdateDeviceTWeCallAuthorizeStatusCallable(const UpdateDeviceTWeCallAuthorizeStatusRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<UpdateDeviceTWeCallAuthorizeStatusOutcome()>>(
+        [this, request]()
+        {
+            return this->UpdateDeviceTWeCallAuthorizeStatus(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 IotexplorerClient::UpdateDevicesEnableStateOutcome IotexplorerClient::UpdateDevicesEnableState(const UpdateDevicesEnableStateRequest &request)
 {
     auto outcome = MakeRequest(request, "UpdateDevicesEnableState");

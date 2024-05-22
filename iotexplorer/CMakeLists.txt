@@ -143,6 +143,7 @@ set(iotexplorer_public_header_model
   include/tencentcloud/iotexplorer/v20190423/model/GetDeviceLocationHistoryRequest.h
   include/tencentcloud/iotexplorer/v20190423/model/CallDeviceActionSyncResponse.h
   include/tencentcloud/iotexplorer/v20190423/model/CreateLoRaGatewayRequest.h
+  include/tencentcloud/iotexplorer/v20190423/model/UpdateDeviceTWeCallAuthorizeStatusRequest.h
   include/tencentcloud/iotexplorer/v20190423/model/TRTCParams.h
   include/tencentcloud/iotexplorer/v20190423/model/ReleaseStudioProductRequest.h
   include/tencentcloud/iotexplorer/v20190423/model/CreateProjectResponse.h
@@ -302,6 +303,7 @@ set(iotexplorer_public_header_model
   include/tencentcloud/iotexplorer/v20190423/model/DescribeModelDefinitionRequest.h
   include/tencentcloud/iotexplorer/v20190423/model/DescribeCloudStorageAIServiceRequest.h
   include/tencentcloud/iotexplorer/v20190423/model/DescribeCloudStorageUsersRequest.h
+  include/tencentcloud/iotexplorer/v20190423/model/UpdateDeviceTWeCallAuthorizeStatusResponse.h
   include/tencentcloud/iotexplorer/v20190423/model/WifiInfo.h
   include/tencentcloud/iotexplorer/v20190423/model/CreateTopicRuleResponse.h
   include/tencentcloud/iotexplorer/v20190423/model/DescribeDeviceDataResponse.h
@@ -453,6 +455,7 @@ set(iotexplorer_src
   src/v20190423/model/GetDeviceLocationHistoryRequest.cpp
   src/v20190423/model/CallDeviceActionSyncResponse.cpp
   src/v20190423/model/CreateLoRaGatewayRequest.cpp
+  src/v20190423/model/UpdateDeviceTWeCallAuthorizeStatusRequest.cpp
   src/v20190423/model/TRTCParams.cpp
   src/v20190423/model/ReleaseStudioProductRequest.cpp
   src/v20190423/model/CreateProjectResponse.cpp
@@ -612,6 +615,7 @@ set(iotexplorer_src
   src/v20190423/model/DescribeModelDefinitionRequest.cpp
   src/v20190423/model/DescribeCloudStorageAIServiceRequest.cpp
   src/v20190423/model/DescribeCloudStorageUsersRequest.cpp
+  src/v20190423/model/UpdateDeviceTWeCallAuthorizeStatusResponse.cpp
   src/v20190423/model/WifiInfo.cpp
   src/v20190423/model/CreateTopicRuleResponse.cpp
   src/v20190423/model/DescribeDeviceDataResponse.cpp

@@ -391,15 +391,35 @@ namespace TencentCloud
                     bool BusinessLicenseHasBeenSet() const;
 
                     /**
-                     * 获取授权书(PNG或JPG或PDF) base64格式, 大小不超过8M
-                     * @return PowerOfAttorneys 授权书(PNG或JPG或PDF) base64格式, 大小不超过8M
+                     * 获取授权书(PNG或JPG或PDF) base64格式, 大小不超过8M 。
+p.s. 如果上传授权书 ，需遵循以下条件
+1. 超管的信息（超管姓名，超管身份证，超管手机号）必须为必填参数。
+2. 超管的个人身份必须在电子签已经实名。
+2. 认证方式AuthorizationTypes必须只能是上传授权书方式 
+
+                     * @return PowerOfAttorneys 授权书(PNG或JPG或PDF) base64格式, 大小不超过8M 。
+p.s. 如果上传授权书 ，需遵循以下条件
+1. 超管的信息（超管姓名，超管身份证，超管手机号）必须为必填参数。
+2. 超管的个人身份必须在电子签已经实名。
+2. 认证方式AuthorizationTypes必须只能是上传授权书方式 
+
                      * 
                      */
                     std::vector<std::string> GetPowerOfAttorneys() const;
 
                     /**
-                     * 设置授权书(PNG或JPG或PDF) base64格式, 大小不超过8M
-                     * @param _powerOfAttorneys 授权书(PNG或JPG或PDF) base64格式, 大小不超过8M
+                     * 设置授权书(PNG或JPG或PDF) base64格式, 大小不超过8M 。
+p.s. 如果上传授权书 ，需遵循以下条件
+1. 超管的信息（超管姓名，超管身份证，超管手机号）必须为必填参数。
+2. 超管的个人身份必须在电子签已经实名。
+2. 认证方式AuthorizationTypes必须只能是上传授权书方式 
+
+                     * @param _powerOfAttorneys 授权书(PNG或JPG或PDF) base64格式, 大小不超过8M 。
+p.s. 如果上传授权书 ，需遵循以下条件
+1. 超管的信息（超管姓名，超管身份证，超管手机号）必须为必填参数。
+2. 超管的个人身份必须在电子签已经实名。
+2. 认证方式AuthorizationTypes必须只能是上传授权书方式 
+
                      * 
                      */
                     void SetPowerOfAttorneys(const std::vector<std::string>& _powerOfAttorneys);
@@ -509,7 +529,12 @@ namespace TencentCloud
                     bool m_businessLicenseHasBeenSet;
 
                     /**
-                     * 授权书(PNG或JPG或PDF) base64格式, 大小不超过8M
+                     * 授权书(PNG或JPG或PDF) base64格式, 大小不超过8M 。
+p.s. 如果上传授权书 ，需遵循以下条件
+1. 超管的信息（超管姓名，超管身份证，超管手机号）必须为必填参数。
+2. 超管的个人身份必须在电子签已经实名。
+2. 认证方式AuthorizationTypes必须只能是上传授权书方式 
+
                      */
                     std::vector<std::string> m_powerOfAttorneys;
                     bool m_powerOfAttorneysHasBeenSet;

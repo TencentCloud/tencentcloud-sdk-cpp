@@ -23,7 +23,8 @@ using namespace std;
 PrometheusDTO::PrometheusDTO() :
     m_typeHasBeenSet(false),
     m_sourceIpHasBeenSet(false),
-    m_sourcePortHasBeenSet(false)
+    m_sourcePortHasBeenSet(false),
+    m_brokerIpHasBeenSet(false)
 {
 }
 
@@ -62,6 +63,16 @@ CoreInternalOutcome PrometheusDTO::Deserialize(const rapidjson::Value &value)
         m_sourcePortHasBeenSet = true;
     }
 
+    if (value.HasMember("BrokerIp") && !value["BrokerIp"].IsNull())
+    {
+        if (!value["BrokerIp"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `PrometheusDTO.BrokerIp` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_brokerIp = string(value["BrokerIp"].GetString());
+        m_brokerIpHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -91,6 +102,14 @@ void PrometheusDTO::ToJsonObject(rapidjson::Value &value, rapidjson::Document::A
         string key = "SourcePort";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_sourcePort, allocator);
+    }
+
+    if (m_brokerIpHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "BrokerIp";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_brokerIp.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -142,5 +161,21 @@ void PrometheusDTO::SetSourcePort(const int64_t& _sourcePort)
 bool PrometheusDTO::SourcePortHasBeenSet() const
 {
     return m_sourcePortHasBeenSet;
+}
+
+string PrometheusDTO::GetBrokerIp() const
+{
+    return m_brokerIp;
+}
+
+void PrometheusDTO::SetBrokerIp(const string& _brokerIp)
+{
+    m_brokerIp = _brokerIp;
+    m_brokerIpHasBeenSet = true;
+}
+
+bool PrometheusDTO::BrokerIpHasBeenSet() const
+{
+    return m_brokerIpHasBeenSet;
 }
 

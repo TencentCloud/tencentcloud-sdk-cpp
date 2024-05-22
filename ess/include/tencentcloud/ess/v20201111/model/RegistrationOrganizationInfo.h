@@ -154,9 +154,11 @@ namespace TencentCloud
                      * 获取组织机构超管姓名。
 在注册流程中，必须是超管本人进行操作。
 如果法人做为超管管理组织机构,超管姓名就是法人姓名
+如果入参中传递超管授权书PowerOfAttorneys，则此参数为必填参数。
                      * @return AdminName 组织机构超管姓名。
 在注册流程中，必须是超管本人进行操作。
 如果法人做为超管管理组织机构,超管姓名就是法人姓名
+如果入参中传递超管授权书PowerOfAttorneys，则此参数为必填参数。
                      * 
                      */
                     std::string GetAdminName() const;
@@ -165,9 +167,11 @@ namespace TencentCloud
                      * 设置组织机构超管姓名。
 在注册流程中，必须是超管本人进行操作。
 如果法人做为超管管理组织机构,超管姓名就是法人姓名
+如果入参中传递超管授权书PowerOfAttorneys，则此参数为必填参数。
                      * @param _adminName 组织机构超管姓名。
 在注册流程中，必须是超管本人进行操作。
 如果法人做为超管管理组织机构,超管姓名就是法人姓名
+如果入参中传递超管授权书PowerOfAttorneys，则此参数为必填参数。
                      * 
                      */
                     void SetAdminName(const std::string& _adminName);
@@ -180,19 +184,23 @@ namespace TencentCloud
                     bool AdminNameHasBeenSet() const;
 
                     /**
-                     * 获取组织机构超管姓名。
+                     * 获取组织机构超管手机号。
 在注册流程中，这个手机号必须跟操作人在电子签注册的个人手机号一致。
-                     * @return AdminMobile 组织机构超管姓名。
+如果入参中传递超管授权书PowerOfAttorneys，则此参数为必填参数
+                     * @return AdminMobile 组织机构超管手机号。
 在注册流程中，这个手机号必须跟操作人在电子签注册的个人手机号一致。
+如果入参中传递超管授权书PowerOfAttorneys，则此参数为必填参数
                      * 
                      */
                     std::string GetAdminMobile() const;
 
                     /**
-                     * 设置组织机构超管姓名。
+                     * 设置组织机构超管手机号。
 在注册流程中，这个手机号必须跟操作人在电子签注册的个人手机号一致。
-                     * @param _adminMobile 组织机构超管姓名。
+如果入参中传递超管授权书PowerOfAttorneys，则此参数为必填参数
+                     * @param _adminMobile 组织机构超管手机号。
 在注册流程中，这个手机号必须跟操作人在电子签注册的个人手机号一致。
+如果入参中传递超管授权书PowerOfAttorneys，则此参数为必填参数
                      * 
                      */
                     void SetAdminMobile(const std::string& _adminMobile);
@@ -262,15 +270,19 @@ namespace TencentCloud
                     bool AuthorizationTypesHasBeenSet() const;
 
                     /**
-                     * 获取认证人身份证号
-                     * @return AdminIdCardNumber 认证人身份证号
+                     * 获取认证人身份证号，如果入参中传递超管授权书PowerOfAttorneys，则此参数为必填参数
+
+                     * @return AdminIdCardNumber 认证人身份证号，如果入参中传递超管授权书PowerOfAttorneys，则此参数为必填参数
+
                      * 
                      */
                     std::string GetAdminIdCardNumber() const;
 
                     /**
-                     * 设置认证人身份证号
-                     * @param _adminIdCardNumber 认证人身份证号
+                     * 设置认证人身份证号，如果入参中传递超管授权书PowerOfAttorneys，则此参数为必填参数
+
+                     * @param _adminIdCardNumber 认证人身份证号，如果入参中传递超管授权书PowerOfAttorneys，则此参数为必填参数
+
                      * 
                      */
                     void SetAdminIdCardNumber(const std::string& _adminIdCardNumber);
@@ -344,6 +356,47 @@ namespace TencentCloud
                      */
                     bool BusinessLicenseHasBeenSet() const;
 
+                    /**
+                     * 获取授权书(PNG或JPG或PDF) base64格式, 大小不超过8M 。
+p.s. 如果上传授权书 ，需遵循以下条件
+1. 超管的信息（超管姓名，超管身份证，超管手机号）必须为必填参数。
+2. 超管的个人身份必须在电子签已经实名。
+2. 认证方式AuthorizationTypes必须只能是上传授权书方式 
+
+                     * @return PowerOfAttorneys 授权书(PNG或JPG或PDF) base64格式, 大小不超过8M 。
+p.s. 如果上传授权书 ，需遵循以下条件
+1. 超管的信息（超管姓名，超管身份证，超管手机号）必须为必填参数。
+2. 超管的个人身份必须在电子签已经实名。
+2. 认证方式AuthorizationTypes必须只能是上传授权书方式 
+
+                     * 
+                     */
+                    std::vector<std::string> GetPowerOfAttorneys() const;
+
+                    /**
+                     * 设置授权书(PNG或JPG或PDF) base64格式, 大小不超过8M 。
+p.s. 如果上传授权书 ，需遵循以下条件
+1. 超管的信息（超管姓名，超管身份证，超管手机号）必须为必填参数。
+2. 超管的个人身份必须在电子签已经实名。
+2. 认证方式AuthorizationTypes必须只能是上传授权书方式 
+
+                     * @param _powerOfAttorneys 授权书(PNG或JPG或PDF) base64格式, 大小不超过8M 。
+p.s. 如果上传授权书 ，需遵循以下条件
+1. 超管的信息（超管姓名，超管身份证，超管手机号）必须为必填参数。
+2. 超管的个人身份必须在电子签已经实名。
+2. 认证方式AuthorizationTypes必须只能是上传授权书方式 
+
+                     * 
+                     */
+                    void SetPowerOfAttorneys(const std::vector<std::string>& _powerOfAttorneys);
+
+                    /**
+                     * 判断参数 PowerOfAttorneys 是否已赋值
+                     * @return PowerOfAttorneys 是否已赋值
+                     * 
+                     */
+                    bool PowerOfAttorneysHasBeenSet() const;
+
                 private:
 
                     /**
@@ -379,13 +432,15 @@ namespace TencentCloud
                      * 组织机构超管姓名。
 在注册流程中，必须是超管本人进行操作。
 如果法人做为超管管理组织机构,超管姓名就是法人姓名
+如果入参中传递超管授权书PowerOfAttorneys，则此参数为必填参数。
                      */
                     std::string m_adminName;
                     bool m_adminNameHasBeenSet;
 
                     /**
-                     * 组织机构超管姓名。
+                     * 组织机构超管手机号。
 在注册流程中，这个手机号必须跟操作人在电子签注册的个人手机号一致。
+如果入参中传递超管授权书PowerOfAttorneys，则此参数为必填参数
                      */
                     std::string m_adminMobile;
                     bool m_adminMobileHasBeenSet;
@@ -406,7 +461,8 @@ namespace TencentCloud
                     bool m_authorizationTypesHasBeenSet;
 
                     /**
-                     * 认证人身份证号
+                     * 认证人身份证号，如果入参中传递超管授权书PowerOfAttorneys，则此参数为必填参数
+
                      */
                     std::string m_adminIdCardNumber;
                     bool m_adminIdCardNumberHasBeenSet;
@@ -427,6 +483,17 @@ namespace TencentCloud
                      */
                     std::string m_businessLicense;
                     bool m_businessLicenseHasBeenSet;
+
+                    /**
+                     * 授权书(PNG或JPG或PDF) base64格式, 大小不超过8M 。
+p.s. 如果上传授权书 ，需遵循以下条件
+1. 超管的信息（超管姓名，超管身份证，超管手机号）必须为必填参数。
+2. 超管的个人身份必须在电子签已经实名。
+2. 认证方式AuthorizationTypes必须只能是上传授权书方式 
+
+                     */
+                    std::vector<std::string> m_powerOfAttorneys;
+                    bool m_powerOfAttorneysHasBeenSet;
 
                 };
             }

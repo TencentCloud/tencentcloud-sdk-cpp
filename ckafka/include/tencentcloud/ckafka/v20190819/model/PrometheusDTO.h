@@ -109,6 +109,31 @@ namespace TencentCloud
                      */
                     bool SourcePortHasBeenSet() const;
 
+                    /**
+                     * 获取broker地址
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return BrokerIp broker地址
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::string GetBrokerIp() const;
+
+                    /**
+                     * 设置broker地址
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _brokerIp broker地址
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetBrokerIp(const std::string& _brokerIp);
+
+                    /**
+                     * 判断参数 BrokerIp 是否已赋值
+                     * @return BrokerIp 是否已赋值
+                     * 
+                     */
+                    bool BrokerIpHasBeenSet() const;
+
                 private:
 
                     /**
@@ -128,6 +153,13 @@ namespace TencentCloud
                      */
                     int64_t m_sourcePort;
                     bool m_sourcePortHasBeenSet;
+
+                    /**
+                     * broker地址
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_brokerIp;
+                    bool m_brokerIpHasBeenSet;
 
                 };
             }
