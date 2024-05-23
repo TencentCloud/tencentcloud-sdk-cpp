@@ -47,15 +47,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取角色
-                     * @return Role 角色
+                     * 获取角色，可选值包括 system、user、assistant。
+                     * @return Role 角色，可选值包括 system、user、assistant。
                      * 
                      */
                     std::string GetRole() const;
 
                     /**
-                     * 设置角色
-                     * @param _role 角色
+                     * 设置角色，可选值包括 system、user、assistant。
+                     * @param _role 角色，可选值包括 system、user、assistant。
                      * 
                      */
                     void SetRole(const std::string& _role);
@@ -91,7 +91,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 角色
+                     * 角色，可选值包括 system、user、assistant。
                      */
                     std::string m_role;
                     bool m_roleHasBeenSet;

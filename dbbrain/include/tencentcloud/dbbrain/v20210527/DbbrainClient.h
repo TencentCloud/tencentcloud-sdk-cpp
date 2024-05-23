@@ -95,6 +95,8 @@
 #include <tencentcloud/dbbrain/v20210527/model/DescribeProxyProcessStatisticsResponse.h>
 #include <tencentcloud/dbbrain/v20210527/model/DescribeProxySessionKillTasksRequest.h>
 #include <tencentcloud/dbbrain/v20210527/model/DescribeProxySessionKillTasksResponse.h>
+#include <tencentcloud/dbbrain/v20210527/model/DescribeRedisBigKeyAnalysisTasksRequest.h>
+#include <tencentcloud/dbbrain/v20210527/model/DescribeRedisBigKeyAnalysisTasksResponse.h>
 #include <tencentcloud/dbbrain/v20210527/model/DescribeRedisProcessListRequest.h>
 #include <tencentcloud/dbbrain/v20210527/model/DescribeRedisProcessListResponse.h>
 #include <tencentcloud/dbbrain/v20210527/model/DescribeRedisTopBigKeysRequest.h>
@@ -267,6 +269,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeProxySessionKillTasksResponse> DescribeProxySessionKillTasksOutcome;
                 typedef std::future<DescribeProxySessionKillTasksOutcome> DescribeProxySessionKillTasksOutcomeCallable;
                 typedef std::function<void(const DbbrainClient*, const Model::DescribeProxySessionKillTasksRequest&, DescribeProxySessionKillTasksOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeProxySessionKillTasksAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeRedisBigKeyAnalysisTasksResponse> DescribeRedisBigKeyAnalysisTasksOutcome;
+                typedef std::future<DescribeRedisBigKeyAnalysisTasksOutcome> DescribeRedisBigKeyAnalysisTasksOutcomeCallable;
+                typedef std::function<void(const DbbrainClient*, const Model::DescribeRedisBigKeyAnalysisTasksRequest&, DescribeRedisBigKeyAnalysisTasksOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeRedisBigKeyAnalysisTasksAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeRedisProcessListResponse> DescribeRedisProcessListOutcome;
                 typedef std::future<DescribeRedisProcessListOutcome> DescribeRedisProcessListOutcomeCallable;
                 typedef std::function<void(const DbbrainClient*, const Model::DescribeRedisProcessListRequest&, DescribeRedisProcessListOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeRedisProcessListAsyncHandler;
@@ -670,6 +675,15 @@ namespace TencentCloud
                 DescribeProxySessionKillTasksOutcomeCallable DescribeProxySessionKillTasksCallable(const Model::DescribeProxySessionKillTasksRequest& request);
 
                 /**
+                 *查询redis大key分析任务列表。
+                 * @param req DescribeRedisBigKeyAnalysisTasksRequest
+                 * @return DescribeRedisBigKeyAnalysisTasksOutcome
+                 */
+                DescribeRedisBigKeyAnalysisTasksOutcome DescribeRedisBigKeyAnalysisTasks(const Model::DescribeRedisBigKeyAnalysisTasksRequest &request);
+                void DescribeRedisBigKeyAnalysisTasksAsync(const Model::DescribeRedisBigKeyAnalysisTasksRequest& request, const DescribeRedisBigKeyAnalysisTasksAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeRedisBigKeyAnalysisTasksOutcomeCallable DescribeRedisBigKeyAnalysisTasksCallable(const Model::DescribeRedisBigKeyAnalysisTasksRequest& request);
+
+                /**
                  *获取 Redis 实例所有 proxy 节点的实时会话详情列表。
                  * @param req DescribeRedisProcessListRequest
                  * @return DescribeRedisProcessListOutcome
@@ -841,7 +855,7 @@ namespace TencentCloud
                 ModifyAuditServiceOutcomeCallable ModifyAuditServiceCallable(const Model::ModifyAuditServiceRequest& request);
 
                 /**
-                 *修改实例巡检开关。
+                 *修改实例的配置信息。
                  * @param req ModifyDiagDBInstanceConfRequest
                  * @return ModifyDiagDBInstanceConfOutcome
                  */

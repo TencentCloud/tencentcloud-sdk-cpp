@@ -63,6 +63,7 @@ set(mps_public_header_model
   include/tencentcloud/mps/v20190612/model/ModifyStreamLinkEventRequest.h
   include/tencentcloud/mps/v20190612/model/OcrWordsConfigureInfo.h
   include/tencentcloud/mps/v20190612/model/DescribeStreamLinkEventRequest.h
+  include/tencentcloud/mps/v20190612/model/MediaTranscodeItem.h
   include/tencentcloud/mps/v20190612/model/DiagnoseResult.h
   include/tencentcloud/mps/v20190612/model/RawWatermarkParameter.h
   include/tencentcloud/mps/v20190612/model/AiReviewTaskPoliticalOcrResult.h
@@ -549,7 +550,7 @@ set(mps_public_header_model
   include/tencentcloud/mps/v20190612/model/AiAnalysisTaskHeadTailOutput.h
   include/tencentcloud/mps/v20190612/model/ModifyPersonSampleResponse.h
   include/tencentcloud/mps/v20190612/model/DeleteTranscodeTemplateResponse.h
-  include/tencentcloud/mps/v20190612/model/MediaTranscodeItem.h
+  include/tencentcloud/mps/v20190612/model/LiveStreamObjectRecognitionResult.h
   include/tencentcloud/mps/v20190612/model/MediaSampleSnapshotItem.h
   include/tencentcloud/mps/v20190612/model/DescribePersonSamplesResponse.h
   include/tencentcloud/mps/v20190612/model/ModifyScheduleResponse.h
@@ -667,6 +668,7 @@ set(mps_src
   src/v20190612/model/ModifyStreamLinkEventRequest.cpp
   src/v20190612/model/OcrWordsConfigureInfo.cpp
   src/v20190612/model/DescribeStreamLinkEventRequest.cpp
+  src/v20190612/model/MediaTranscodeItem.cpp
   src/v20190612/model/DiagnoseResult.cpp
   src/v20190612/model/RawWatermarkParameter.cpp
   src/v20190612/model/AiReviewTaskPoliticalOcrResult.cpp
@@ -1153,7 +1155,7 @@ set(mps_src
   src/v20190612/model/AiAnalysisTaskHeadTailOutput.cpp
   src/v20190612/model/ModifyPersonSampleResponse.cpp
   src/v20190612/model/DeleteTranscodeTemplateResponse.cpp
-  src/v20190612/model/MediaTranscodeItem.cpp
+  src/v20190612/model/LiveStreamObjectRecognitionResult.cpp
   src/v20190612/model/MediaSampleSnapshotItem.cpp
   src/v20190612/model/DescribePersonSamplesResponse.cpp
   src/v20190612/model/ModifyScheduleResponse.cpp

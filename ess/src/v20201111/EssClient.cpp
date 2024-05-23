@@ -1115,6 +1115,49 @@ EssClient::CreateIntegrationRoleOutcomeCallable EssClient::CreateIntegrationRole
     return task->get_future();
 }
 
+EssClient::CreateIntegrationSubOrganizationActiveRecordOutcome EssClient::CreateIntegrationSubOrganizationActiveRecord(const CreateIntegrationSubOrganizationActiveRecordRequest &request)
+{
+    auto outcome = MakeRequest(request, "CreateIntegrationSubOrganizationActiveRecord");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        CreateIntegrationSubOrganizationActiveRecordResponse rsp = CreateIntegrationSubOrganizationActiveRecordResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return CreateIntegrationSubOrganizationActiveRecordOutcome(rsp);
+        else
+            return CreateIntegrationSubOrganizationActiveRecordOutcome(o.GetError());
+    }
+    else
+    {
+        return CreateIntegrationSubOrganizationActiveRecordOutcome(outcome.GetError());
+    }
+}
+
+void EssClient::CreateIntegrationSubOrganizationActiveRecordAsync(const CreateIntegrationSubOrganizationActiveRecordRequest& request, const CreateIntegrationSubOrganizationActiveRecordAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->CreateIntegrationSubOrganizationActiveRecord(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+EssClient::CreateIntegrationSubOrganizationActiveRecordOutcomeCallable EssClient::CreateIntegrationSubOrganizationActiveRecordCallable(const CreateIntegrationSubOrganizationActiveRecordRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<CreateIntegrationSubOrganizationActiveRecordOutcome()>>(
+        [this, request]()
+        {
+            return this->CreateIntegrationSubOrganizationActiveRecord(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 EssClient::CreateIntegrationUserRolesOutcome EssClient::CreateIntegrationUserRoles(const CreateIntegrationUserRolesRequest &request)
 {
     auto outcome = MakeRequest(request, "CreateIntegrationUserRoles");
@@ -1280,6 +1323,49 @@ EssClient::CreateOrganizationBatchSignUrlOutcomeCallable EssClient::CreateOrgani
         [this, request]()
         {
             return this->CreateOrganizationBatchSignUrl(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+EssClient::CreateOrganizationGroupInvitationLinkOutcome EssClient::CreateOrganizationGroupInvitationLink(const CreateOrganizationGroupInvitationLinkRequest &request)
+{
+    auto outcome = MakeRequest(request, "CreateOrganizationGroupInvitationLink");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        CreateOrganizationGroupInvitationLinkResponse rsp = CreateOrganizationGroupInvitationLinkResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return CreateOrganizationGroupInvitationLinkOutcome(rsp);
+        else
+            return CreateOrganizationGroupInvitationLinkOutcome(o.GetError());
+    }
+    else
+    {
+        return CreateOrganizationGroupInvitationLinkOutcome(outcome.GetError());
+    }
+}
+
+void EssClient::CreateOrganizationGroupInvitationLinkAsync(const CreateOrganizationGroupInvitationLinkRequest& request, const CreateOrganizationGroupInvitationLinkAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->CreateOrganizationGroupInvitationLink(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+EssClient::CreateOrganizationGroupInvitationLinkOutcomeCallable EssClient::CreateOrganizationGroupInvitationLinkCallable(const CreateOrganizationGroupInvitationLinkRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<CreateOrganizationGroupInvitationLinkOutcome()>>(
+        [this, request]()
+        {
+            return this->CreateOrganizationGroupInvitationLink(request);
         }
     );
 

@@ -105,6 +105,69 @@ namespace TencentCloud
                      */
                     bool LimitHasBeenSet() const;
 
+                    /**
+                     * 获取用于通过集群id过滤被绑定集群
+                     * @return ClusterIds 用于通过集群id过滤被绑定集群
+                     * 
+                     */
+                    std::vector<std::string> GetClusterIds() const;
+
+                    /**
+                     * 设置用于通过集群id过滤被绑定集群
+                     * @param _clusterIds 用于通过集群id过滤被绑定集群
+                     * 
+                     */
+                    void SetClusterIds(const std::vector<std::string>& _clusterIds);
+
+                    /**
+                     * 判断参数 ClusterIds 是否已赋值
+                     * @return ClusterIds 是否已赋值
+                     * 
+                     */
+                    bool ClusterIdsHasBeenSet() const;
+
+                    /**
+                     * 获取用于通过集群类型过滤被绑定集群
+                     * @return ClusterTypes 用于通过集群类型过滤被绑定集群
+                     * 
+                     */
+                    std::vector<std::string> GetClusterTypes() const;
+
+                    /**
+                     * 设置用于通过集群类型过滤被绑定集群
+                     * @param _clusterTypes 用于通过集群类型过滤被绑定集群
+                     * 
+                     */
+                    void SetClusterTypes(const std::vector<std::string>& _clusterTypes);
+
+                    /**
+                     * 判断参数 ClusterTypes 是否已赋值
+                     * @return ClusterTypes 是否已赋值
+                     * 
+                     */
+                    bool ClusterTypesHasBeenSet() const;
+
+                    /**
+                     * 获取用于通过名称搜索被绑定集群
+                     * @return ClusterName 用于通过名称搜索被绑定集群
+                     * 
+                     */
+                    std::string GetClusterName() const;
+
+                    /**
+                     * 设置用于通过名称搜索被绑定集群
+                     * @param _clusterName 用于通过名称搜索被绑定集群
+                     * 
+                     */
+                    void SetClusterName(const std::string& _clusterName);
+
+                    /**
+                     * 判断参数 ClusterName 是否已赋值
+                     * @return ClusterName 是否已赋值
+                     * 
+                     */
+                    bool ClusterNameHasBeenSet() const;
+
                 private:
 
                     /**
@@ -124,6 +187,24 @@ namespace TencentCloud
                      */
                     uint64_t m_limit;
                     bool m_limitHasBeenSet;
+
+                    /**
+                     * 用于通过集群id过滤被绑定集群
+                     */
+                    std::vector<std::string> m_clusterIds;
+                    bool m_clusterIdsHasBeenSet;
+
+                    /**
+                     * 用于通过集群类型过滤被绑定集群
+                     */
+                    std::vector<std::string> m_clusterTypes;
+                    bool m_clusterTypesHasBeenSet;
+
+                    /**
+                     * 用于通过名称搜索被绑定集群
+                     */
+                    std::string m_clusterName;
+                    bool m_clusterNameHasBeenSet;
 
                 };
             }

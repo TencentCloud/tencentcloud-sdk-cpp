@@ -138,6 +138,31 @@ namespace TencentCloud
                      */
                     bool ShardNumHasBeenSet() const;
 
+                    /**
+                     * 获取是否开启大key周期性分析，仅redis产品有效。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return AnalysisTopKey 是否开启大key周期性分析，仅redis产品有效。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::string GetAnalysisTopKey() const;
+
+                    /**
+                     * 设置是否开启大key周期性分析，仅redis产品有效。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _analysisTopKey 是否开启大key周期性分析，仅redis产品有效。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetAnalysisTopKey(const std::string& _analysisTopKey);
+
+                    /**
+                     * 判断参数 AnalysisTopKey 是否已赋值
+                     * @return AnalysisTopKey 是否已赋值
+                     * 
+                     */
+                    bool AnalysisTopKeyHasBeenSet() const;
+
                 private:
 
                     /**
@@ -165,6 +190,13 @@ namespace TencentCloud
                      */
                     std::string m_shardNum;
                     bool m_shardNumHasBeenSet;
+
+                    /**
+                     * 是否开启大key周期性分析，仅redis产品有效。
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_analysisTopKey;
+                    bool m_analysisTopKeyHasBeenSet;
 
                 };
             }

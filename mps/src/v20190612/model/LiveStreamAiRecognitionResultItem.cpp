@@ -28,6 +28,7 @@ LiveStreamAiRecognitionResultItem::LiveStreamAiRecognitionResultItem() :
     m_asrFullTextRecognitionResultSetHasBeenSet(false),
     m_ocrFullTextRecognitionResultSetHasBeenSet(false),
     m_transTextRecognitionResultSetHasBeenSet(false),
+    m_objectRecognitionResultSetHasBeenSet(false),
     m_tagRecognitionResultSetHasBeenSet(false)
 {
 }
@@ -167,6 +168,26 @@ CoreInternalOutcome LiveStreamAiRecognitionResultItem::Deserialize(const rapidjs
         m_transTextRecognitionResultSetHasBeenSet = true;
     }
 
+    if (value.HasMember("ObjectRecognitionResultSet") && !value["ObjectRecognitionResultSet"].IsNull())
+    {
+        if (!value["ObjectRecognitionResultSet"].IsArray())
+            return CoreInternalOutcome(Core::Error("response `LiveStreamAiRecognitionResultItem.ObjectRecognitionResultSet` is not array type"));
+
+        const rapidjson::Value &tmpValue = value["ObjectRecognitionResultSet"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            LiveStreamObjectRecognitionResult item;
+            CoreInternalOutcome outcome = item.Deserialize(*itr);
+            if (!outcome.IsSuccess())
+            {
+                outcome.GetError().SetRequestId(requestId);
+                return outcome;
+            }
+            m_objectRecognitionResultSet.push_back(item);
+        }
+        m_objectRecognitionResultSetHasBeenSet = true;
+    }
+
     if (value.HasMember("TagRecognitionResultSet") && !value["TagRecognitionResultSet"].IsNull())
     {
         if (!value["TagRecognitionResultSet"].IsArray())
@@ -286,6 +307,21 @@ void LiveStreamAiRecognitionResultItem::ToJsonObject(rapidjson::Value &value, ra
 
         int i=0;
         for (auto itr = m_transTextRecognitionResultSet.begin(); itr != m_transTextRecognitionResultSet.end(); ++itr, ++i)
+        {
+            value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(value[key.c_str()][i], allocator);
+        }
+    }
+
+    if (m_objectRecognitionResultSetHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ObjectRecognitionResultSet";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_objectRecognitionResultSet.begin(); itr != m_objectRecognitionResultSet.end(); ++itr, ++i)
         {
             value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
             (*itr).ToJsonObject(value[key.c_str()][i], allocator);
@@ -420,6 +456,22 @@ void LiveStreamAiRecognitionResultItem::SetTransTextRecognitionResultSet(const v
 bool LiveStreamAiRecognitionResultItem::TransTextRecognitionResultSetHasBeenSet() const
 {
     return m_transTextRecognitionResultSetHasBeenSet;
+}
+
+vector<LiveStreamObjectRecognitionResult> LiveStreamAiRecognitionResultItem::GetObjectRecognitionResultSet() const
+{
+    return m_objectRecognitionResultSet;
+}
+
+void LiveStreamAiRecognitionResultItem::SetObjectRecognitionResultSet(const vector<LiveStreamObjectRecognitionResult>& _objectRecognitionResultSet)
+{
+    m_objectRecognitionResultSet = _objectRecognitionResultSet;
+    m_objectRecognitionResultSetHasBeenSet = true;
+}
+
+bool LiveStreamAiRecognitionResultItem::ObjectRecognitionResultSetHasBeenSet() const
+{
+    return m_objectRecognitionResultSetHasBeenSet;
 }
 
 vector<LiveStreamTagRecognitionResult> LiveStreamAiRecognitionResultItem::GetTagRecognitionResultSet() const

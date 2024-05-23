@@ -1588,6 +1588,49 @@ DbbrainClient::DescribeProxySessionKillTasksOutcomeCallable DbbrainClient::Descr
     return task->get_future();
 }
 
+DbbrainClient::DescribeRedisBigKeyAnalysisTasksOutcome DbbrainClient::DescribeRedisBigKeyAnalysisTasks(const DescribeRedisBigKeyAnalysisTasksRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeRedisBigKeyAnalysisTasks");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeRedisBigKeyAnalysisTasksResponse rsp = DescribeRedisBigKeyAnalysisTasksResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeRedisBigKeyAnalysisTasksOutcome(rsp);
+        else
+            return DescribeRedisBigKeyAnalysisTasksOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeRedisBigKeyAnalysisTasksOutcome(outcome.GetError());
+    }
+}
+
+void DbbrainClient::DescribeRedisBigKeyAnalysisTasksAsync(const DescribeRedisBigKeyAnalysisTasksRequest& request, const DescribeRedisBigKeyAnalysisTasksAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeRedisBigKeyAnalysisTasks(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+DbbrainClient::DescribeRedisBigKeyAnalysisTasksOutcomeCallable DbbrainClient::DescribeRedisBigKeyAnalysisTasksCallable(const DescribeRedisBigKeyAnalysisTasksRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeRedisBigKeyAnalysisTasksOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeRedisBigKeyAnalysisTasks(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 DbbrainClient::DescribeRedisProcessListOutcome DbbrainClient::DescribeRedisProcessList(const DescribeRedisProcessListRequest &request)
 {
     auto outcome = MakeRequest(request, "DescribeRedisProcessList");

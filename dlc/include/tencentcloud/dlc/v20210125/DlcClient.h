@@ -25,6 +25,8 @@
 #include <tencentcloud/core/AsyncCallerContext.h>
 #include <tencentcloud/dlc/v20210125/model/AddDMSPartitionsRequest.h>
 #include <tencentcloud/dlc/v20210125/model/AddDMSPartitionsResponse.h>
+#include <tencentcloud/dlc/v20210125/model/AddOptimizerEnginesRequest.h>
+#include <tencentcloud/dlc/v20210125/model/AddOptimizerEnginesResponse.h>
 #include <tencentcloud/dlc/v20210125/model/AddUsersToWorkGroupRequest.h>
 #include <tencentcloud/dlc/v20210125/model/AddUsersToWorkGroupResponse.h>
 #include <tencentcloud/dlc/v20210125/model/AlterDMSDatabaseRequest.h>
@@ -189,6 +191,8 @@
 #include <tencentcloud/dlc/v20210125/model/DescribeTaskResultResponse.h>
 #include <tencentcloud/dlc/v20210125/model/DescribeTasksRequest.h>
 #include <tencentcloud/dlc/v20210125/model/DescribeTasksResponse.h>
+#include <tencentcloud/dlc/v20210125/model/DescribeTasksCostInfoRequest.h>
+#include <tencentcloud/dlc/v20210125/model/DescribeTasksCostInfoResponse.h>
 #include <tencentcloud/dlc/v20210125/model/DescribeUpdatableDataEnginesRequest.h>
 #include <tencentcloud/dlc/v20210125/model/DescribeUpdatableDataEnginesResponse.h>
 #include <tencentcloud/dlc/v20210125/model/DescribeUserDataEngineConfigRequest.h>
@@ -290,6 +294,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::AddDMSPartitionsResponse> AddDMSPartitionsOutcome;
                 typedef std::future<AddDMSPartitionsOutcome> AddDMSPartitionsOutcomeCallable;
                 typedef std::function<void(const DlcClient*, const Model::AddDMSPartitionsRequest&, AddDMSPartitionsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> AddDMSPartitionsAsyncHandler;
+                typedef Outcome<Core::Error, Model::AddOptimizerEnginesResponse> AddOptimizerEnginesOutcome;
+                typedef std::future<AddOptimizerEnginesOutcome> AddOptimizerEnginesOutcomeCallable;
+                typedef std::function<void(const DlcClient*, const Model::AddOptimizerEnginesRequest&, AddOptimizerEnginesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> AddOptimizerEnginesAsyncHandler;
                 typedef Outcome<Core::Error, Model::AddUsersToWorkGroupResponse> AddUsersToWorkGroupOutcome;
                 typedef std::future<AddUsersToWorkGroupOutcome> AddUsersToWorkGroupOutcomeCallable;
                 typedef std::function<void(const DlcClient*, const Model::AddUsersToWorkGroupRequest&, AddUsersToWorkGroupOutcome, const std::shared_ptr<const AsyncCallerContext>&)> AddUsersToWorkGroupAsyncHandler;
@@ -536,6 +543,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeTasksResponse> DescribeTasksOutcome;
                 typedef std::future<DescribeTasksOutcome> DescribeTasksOutcomeCallable;
                 typedef std::function<void(const DlcClient*, const Model::DescribeTasksRequest&, DescribeTasksOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeTasksAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeTasksCostInfoResponse> DescribeTasksCostInfoOutcome;
+                typedef std::future<DescribeTasksCostInfoOutcome> DescribeTasksCostInfoOutcomeCallable;
+                typedef std::function<void(const DlcClient*, const Model::DescribeTasksCostInfoRequest&, DescribeTasksCostInfoOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeTasksCostInfoAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeUpdatableDataEnginesResponse> DescribeUpdatableDataEnginesOutcome;
                 typedef std::future<DescribeUpdatableDataEnginesOutcome> DescribeUpdatableDataEnginesOutcomeCallable;
                 typedef std::function<void(const DlcClient*, const Model::DescribeUpdatableDataEnginesRequest&, DescribeUpdatableDataEnginesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeUpdatableDataEnginesAsyncHandler;
@@ -673,6 +683,15 @@ namespace TencentCloud
                 AddDMSPartitionsOutcome AddDMSPartitions(const Model::AddDMSPartitionsRequest &request);
                 void AddDMSPartitionsAsync(const Model::AddDMSPartitionsRequest& request, const AddDMSPartitionsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 AddDMSPartitionsOutcomeCallable AddDMSPartitionsCallable(const Model::AddDMSPartitionsRequest& request);
+
+                /**
+                 *添加数据优化资源
+                 * @param req AddOptimizerEnginesRequest
+                 * @return AddOptimizerEnginesOutcome
+                 */
+                AddOptimizerEnginesOutcome AddOptimizerEngines(const Model::AddOptimizerEnginesRequest &request);
+                void AddOptimizerEnginesAsync(const Model::AddOptimizerEnginesRequest& request, const AddOptimizerEnginesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                AddOptimizerEnginesOutcomeCallable AddOptimizerEnginesCallable(const Model::AddOptimizerEnginesRequest& request);
 
                 /**
                  *添加用户到工作组
@@ -1411,6 +1430,15 @@ namespace TencentCloud
                 DescribeTasksOutcome DescribeTasks(const Model::DescribeTasksRequest &request);
                 void DescribeTasksAsync(const Model::DescribeTasksRequest& request, const DescribeTasksAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DescribeTasksOutcomeCallable DescribeTasksCallable(const Model::DescribeTasksRequest& request);
+
+                /**
+                 *该接口（DescribeTasksCostInfo）用于查询任务消耗
+                 * @param req DescribeTasksCostInfoRequest
+                 * @return DescribeTasksCostInfoOutcome
+                 */
+                DescribeTasksCostInfoOutcome DescribeTasksCostInfo(const Model::DescribeTasksCostInfoRequest &request);
+                void DescribeTasksCostInfoAsync(const Model::DescribeTasksCostInfoRequest& request, const DescribeTasksCostInfoAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeTasksCostInfoOutcomeCallable DescribeTasksCostInfoCallable(const Model::DescribeTasksCostInfoRequest& request);
 
                 /**
                  *查询可更新配置的引擎列表

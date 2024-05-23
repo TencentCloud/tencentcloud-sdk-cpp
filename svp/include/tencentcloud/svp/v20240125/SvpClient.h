@@ -25,6 +25,12 @@
 #include <tencentcloud/core/AsyncCallerContext.h>
 #include <tencentcloud/svp/v20240125/model/CreateSavingPlanOrderRequest.h>
 #include <tencentcloud/svp/v20240125/model/CreateSavingPlanOrderResponse.h>
+#include <tencentcloud/svp/v20240125/model/DescribeSavingPlanDeductRequest.h>
+#include <tencentcloud/svp/v20240125/model/DescribeSavingPlanDeductResponse.h>
+#include <tencentcloud/svp/v20240125/model/DescribeSavingPlanOverviewRequest.h>
+#include <tencentcloud/svp/v20240125/model/DescribeSavingPlanOverviewResponse.h>
+#include <tencentcloud/svp/v20240125/model/DescribeSavingPlanUsageRequest.h>
+#include <tencentcloud/svp/v20240125/model/DescribeSavingPlanUsageResponse.h>
 
 
 namespace TencentCloud
@@ -42,6 +48,15 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::CreateSavingPlanOrderResponse> CreateSavingPlanOrderOutcome;
                 typedef std::future<CreateSavingPlanOrderOutcome> CreateSavingPlanOrderOutcomeCallable;
                 typedef std::function<void(const SvpClient*, const Model::CreateSavingPlanOrderRequest&, CreateSavingPlanOrderOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateSavingPlanOrderAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeSavingPlanDeductResponse> DescribeSavingPlanDeductOutcome;
+                typedef std::future<DescribeSavingPlanDeductOutcome> DescribeSavingPlanDeductOutcomeCallable;
+                typedef std::function<void(const SvpClient*, const Model::DescribeSavingPlanDeductRequest&, DescribeSavingPlanDeductOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeSavingPlanDeductAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeSavingPlanOverviewResponse> DescribeSavingPlanOverviewOutcome;
+                typedef std::future<DescribeSavingPlanOverviewOutcome> DescribeSavingPlanOverviewOutcomeCallable;
+                typedef std::function<void(const SvpClient*, const Model::DescribeSavingPlanOverviewRequest&, DescribeSavingPlanOverviewOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeSavingPlanOverviewAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeSavingPlanUsageResponse> DescribeSavingPlanUsageOutcome;
+                typedef std::future<DescribeSavingPlanUsageOutcome> DescribeSavingPlanUsageOutcomeCallable;
+                typedef std::function<void(const SvpClient*, const Model::DescribeSavingPlanUsageRequest&, DescribeSavingPlanUsageOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeSavingPlanUsageAsyncHandler;
 
 
 
@@ -53,6 +68,33 @@ namespace TencentCloud
                 CreateSavingPlanOrderOutcome CreateSavingPlanOrder(const Model::CreateSavingPlanOrderRequest &request);
                 void CreateSavingPlanOrderAsync(const Model::CreateSavingPlanOrderRequest& request, const CreateSavingPlanOrderAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 CreateSavingPlanOrderOutcomeCallable CreateSavingPlanOrderCallable(const Model::CreateSavingPlanOrderRequest& request);
+
+                /**
+                 *查询节省计划抵扣明细
+                 * @param req DescribeSavingPlanDeductRequest
+                 * @return DescribeSavingPlanDeductOutcome
+                 */
+                DescribeSavingPlanDeductOutcome DescribeSavingPlanDeduct(const Model::DescribeSavingPlanDeductRequest &request);
+                void DescribeSavingPlanDeductAsync(const Model::DescribeSavingPlanDeductRequest& request, const DescribeSavingPlanDeductAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeSavingPlanDeductOutcomeCallable DescribeSavingPlanDeductCallable(const Model::DescribeSavingPlanDeductRequest& request);
+
+                /**
+                 *查用当前用户明细节省计划总览查询时段内的使用情况
+                 * @param req DescribeSavingPlanOverviewRequest
+                 * @return DescribeSavingPlanOverviewOutcome
+                 */
+                DescribeSavingPlanOverviewOutcome DescribeSavingPlanOverview(const Model::DescribeSavingPlanOverviewRequest &request);
+                void DescribeSavingPlanOverviewAsync(const Model::DescribeSavingPlanOverviewRequest& request, const DescribeSavingPlanOverviewAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeSavingPlanOverviewOutcomeCallable DescribeSavingPlanOverviewCallable(const Model::DescribeSavingPlanOverviewRequest& request);
+
+                /**
+                 *查用当前用户明细节省计划查询时段内的使用情况
+                 * @param req DescribeSavingPlanUsageRequest
+                 * @return DescribeSavingPlanUsageOutcome
+                 */
+                DescribeSavingPlanUsageOutcome DescribeSavingPlanUsage(const Model::DescribeSavingPlanUsageRequest &request);
+                void DescribeSavingPlanUsageAsync(const Model::DescribeSavingPlanUsageRequest& request, const DescribeSavingPlanUsageAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeSavingPlanUsageOutcomeCallable DescribeSavingPlanUsageCallable(const Model::DescribeSavingPlanUsageRequest& request);
 
             };
         }

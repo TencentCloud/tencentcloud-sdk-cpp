@@ -24,7 +24,8 @@ InstanceConfs::InstanceConfs() :
     m_dailyInspectionHasBeenSet(false),
     m_overviewDisplayHasBeenSet(false),
     m_keyDelimitersHasBeenSet(false),
-    m_shardNumHasBeenSet(false)
+    m_shardNumHasBeenSet(false),
+    m_analysisTopKeyHasBeenSet(false)
 {
 }
 
@@ -76,6 +77,16 @@ CoreInternalOutcome InstanceConfs::Deserialize(const rapidjson::Value &value)
         m_shardNumHasBeenSet = true;
     }
 
+    if (value.HasMember("AnalysisTopKey") && !value["AnalysisTopKey"].IsNull())
+    {
+        if (!value["AnalysisTopKey"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `InstanceConfs.AnalysisTopKey` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_analysisTopKey = string(value["AnalysisTopKey"].GetString());
+        m_analysisTopKeyHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -118,6 +129,14 @@ void InstanceConfs::ToJsonObject(rapidjson::Value &value, rapidjson::Document::A
         string key = "ShardNum";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_shardNum.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_analysisTopKeyHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "AnalysisTopKey";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_analysisTopKey.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -185,5 +204,21 @@ void InstanceConfs::SetShardNum(const string& _shardNum)
 bool InstanceConfs::ShardNumHasBeenSet() const
 {
     return m_shardNumHasBeenSet;
+}
+
+string InstanceConfs::GetAnalysisTopKey() const
+{
+    return m_analysisTopKey;
+}
+
+void InstanceConfs::SetAnalysisTopKey(const string& _analysisTopKey)
+{
+    m_analysisTopKey = _analysisTopKey;
+    m_analysisTopKeyHasBeenSet = true;
+}
+
+bool InstanceConfs::AnalysisTopKeyHasBeenSet() const
+{
+    return m_analysisTopKeyHasBeenSet;
 }
 

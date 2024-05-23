@@ -25,7 +25,10 @@ using namespace std;
 DescribePrometheusClusterAgentsRequest::DescribePrometheusClusterAgentsRequest() :
     m_instanceIdHasBeenSet(false),
     m_offsetHasBeenSet(false),
-    m_limitHasBeenSet(false)
+    m_limitHasBeenSet(false),
+    m_clusterIdsHasBeenSet(false),
+    m_clusterTypesHasBeenSet(false),
+    m_clusterNameHasBeenSet(false)
 {
 }
 
@@ -58,6 +61,40 @@ string DescribePrometheusClusterAgentsRequest::ToJsonString() const
         string key = "Limit";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_limit, allocator);
+    }
+
+    if (m_clusterIdsHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ClusterIds";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        for (auto itr = m_clusterIds.begin(); itr != m_clusterIds.end(); ++itr)
+        {
+            d[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
+        }
+    }
+
+    if (m_clusterTypesHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ClusterTypes";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        for (auto itr = m_clusterTypes.begin(); itr != m_clusterTypes.end(); ++itr)
+        {
+            d[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
+        }
+    }
+
+    if (m_clusterNameHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ClusterName";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_clusterName.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -114,6 +151,54 @@ void DescribePrometheusClusterAgentsRequest::SetLimit(const uint64_t& _limit)
 bool DescribePrometheusClusterAgentsRequest::LimitHasBeenSet() const
 {
     return m_limitHasBeenSet;
+}
+
+vector<string> DescribePrometheusClusterAgentsRequest::GetClusterIds() const
+{
+    return m_clusterIds;
+}
+
+void DescribePrometheusClusterAgentsRequest::SetClusterIds(const vector<string>& _clusterIds)
+{
+    m_clusterIds = _clusterIds;
+    m_clusterIdsHasBeenSet = true;
+}
+
+bool DescribePrometheusClusterAgentsRequest::ClusterIdsHasBeenSet() const
+{
+    return m_clusterIdsHasBeenSet;
+}
+
+vector<string> DescribePrometheusClusterAgentsRequest::GetClusterTypes() const
+{
+    return m_clusterTypes;
+}
+
+void DescribePrometheusClusterAgentsRequest::SetClusterTypes(const vector<string>& _clusterTypes)
+{
+    m_clusterTypes = _clusterTypes;
+    m_clusterTypesHasBeenSet = true;
+}
+
+bool DescribePrometheusClusterAgentsRequest::ClusterTypesHasBeenSet() const
+{
+    return m_clusterTypesHasBeenSet;
+}
+
+string DescribePrometheusClusterAgentsRequest::GetClusterName() const
+{
+    return m_clusterName;
+}
+
+void DescribePrometheusClusterAgentsRequest::SetClusterName(const string& _clusterName)
+{
+    m_clusterName = _clusterName;
+    m_clusterNameHasBeenSet = true;
+}
+
+bool DescribePrometheusClusterAgentsRequest::ClusterNameHasBeenSet() const
+{
+    return m_clusterNameHasBeenSet;
 }
 
 

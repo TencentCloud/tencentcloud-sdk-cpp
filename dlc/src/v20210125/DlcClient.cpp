@@ -83,6 +83,49 @@ DlcClient::AddDMSPartitionsOutcomeCallable DlcClient::AddDMSPartitionsCallable(c
     return task->get_future();
 }
 
+DlcClient::AddOptimizerEnginesOutcome DlcClient::AddOptimizerEngines(const AddOptimizerEnginesRequest &request)
+{
+    auto outcome = MakeRequest(request, "AddOptimizerEngines");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        AddOptimizerEnginesResponse rsp = AddOptimizerEnginesResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return AddOptimizerEnginesOutcome(rsp);
+        else
+            return AddOptimizerEnginesOutcome(o.GetError());
+    }
+    else
+    {
+        return AddOptimizerEnginesOutcome(outcome.GetError());
+    }
+}
+
+void DlcClient::AddOptimizerEnginesAsync(const AddOptimizerEnginesRequest& request, const AddOptimizerEnginesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->AddOptimizerEngines(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+DlcClient::AddOptimizerEnginesOutcomeCallable DlcClient::AddOptimizerEnginesCallable(const AddOptimizerEnginesRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<AddOptimizerEnginesOutcome()>>(
+        [this, request]()
+        {
+            return this->AddOptimizerEngines(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 DlcClient::AddUsersToWorkGroupOutcome DlcClient::AddUsersToWorkGroup(const AddUsersToWorkGroupRequest &request)
 {
     auto outcome = MakeRequest(request, "AddUsersToWorkGroup");
@@ -3602,6 +3645,49 @@ DlcClient::DescribeTasksOutcomeCallable DlcClient::DescribeTasksCallable(const D
         [this, request]()
         {
             return this->DescribeTasks(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+DlcClient::DescribeTasksCostInfoOutcome DlcClient::DescribeTasksCostInfo(const DescribeTasksCostInfoRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeTasksCostInfo");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeTasksCostInfoResponse rsp = DescribeTasksCostInfoResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeTasksCostInfoOutcome(rsp);
+        else
+            return DescribeTasksCostInfoOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeTasksCostInfoOutcome(outcome.GetError());
+    }
+}
+
+void DlcClient::DescribeTasksCostInfoAsync(const DescribeTasksCostInfoRequest& request, const DescribeTasksCostInfoAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeTasksCostInfo(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+DlcClient::DescribeTasksCostInfoOutcomeCallable DlcClient::DescribeTasksCostInfoCallable(const DescribeTasksCostInfoRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeTasksCostInfoOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeTasksCostInfo(request);
         }
     );
 

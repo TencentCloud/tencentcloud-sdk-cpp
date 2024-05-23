@@ -67,31 +67,15 @@ namespace TencentCloud
                     bool NameHasBeenSet() const;
 
                     /**
-                     * 获取实例规格：
-基础型，rocket-vip-basic-1
-标准型，rocket-vip-basic-2
-高阶Ⅰ型，rocket-vip-basic-3
-高阶Ⅱ型，rocket-vip-basic-4
-                     * @return Spec 实例规格：
-基础型，rocket-vip-basic-1
-标准型，rocket-vip-basic-2
-高阶Ⅰ型，rocket-vip-basic-3
-高阶Ⅱ型，rocket-vip-basic-4
+                     * 获取集群规格，支持规格有 1.通用型:rocket-vip-basic-0; 2.基础型:rocket-vip-basic-1; 3.标准型:rocket-vip-basic-2; 4.高阶Ⅰ型:rocket-vip-basic-3; 5.高阶Ⅱ型:rocket-vip-basic-4
+                     * @return Spec 集群规格，支持规格有 1.通用型:rocket-vip-basic-0; 2.基础型:rocket-vip-basic-1; 3.标准型:rocket-vip-basic-2; 4.高阶Ⅰ型:rocket-vip-basic-3; 5.高阶Ⅱ型:rocket-vip-basic-4
                      * 
                      */
                     std::string GetSpec() const;
 
                     /**
-                     * 设置实例规格：
-基础型，rocket-vip-basic-1
-标准型，rocket-vip-basic-2
-高阶Ⅰ型，rocket-vip-basic-3
-高阶Ⅱ型，rocket-vip-basic-4
-                     * @param _spec 实例规格：
-基础型，rocket-vip-basic-1
-标准型，rocket-vip-basic-2
-高阶Ⅰ型，rocket-vip-basic-3
-高阶Ⅱ型，rocket-vip-basic-4
+                     * 设置集群规格，支持规格有 1.通用型:rocket-vip-basic-0; 2.基础型:rocket-vip-basic-1; 3.标准型:rocket-vip-basic-2; 4.高阶Ⅰ型:rocket-vip-basic-3; 5.高阶Ⅱ型:rocket-vip-basic-4
+                     * @param _spec 集群规格，支持规格有 1.通用型:rocket-vip-basic-0; 2.基础型:rocket-vip-basic-1; 3.标准型:rocket-vip-basic-2; 4.高阶Ⅰ型:rocket-vip-basic-3; 5.高阶Ⅱ型:rocket-vip-basic-4
                      * 
                      */
                     void SetSpec(const std::string& _spec);
@@ -322,11 +306,7 @@ namespace TencentCloud
                     bool m_nameHasBeenSet;
 
                     /**
-                     * 实例规格：
-基础型，rocket-vip-basic-1
-标准型，rocket-vip-basic-2
-高阶Ⅰ型，rocket-vip-basic-3
-高阶Ⅱ型，rocket-vip-basic-4
+                     * 集群规格，支持规格有 1.通用型:rocket-vip-basic-0; 2.基础型:rocket-vip-basic-1; 3.标准型:rocket-vip-basic-2; 4.高阶Ⅰ型:rocket-vip-basic-3; 5.高阶Ⅱ型:rocket-vip-basic-4
                      */
                     std::string m_spec;
                     bool m_specHasBeenSet;

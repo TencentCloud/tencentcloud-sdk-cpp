@@ -83,3 +83,132 @@ SvpClient::CreateSavingPlanOrderOutcomeCallable SvpClient::CreateSavingPlanOrder
     return task->get_future();
 }
 
+SvpClient::DescribeSavingPlanDeductOutcome SvpClient::DescribeSavingPlanDeduct(const DescribeSavingPlanDeductRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeSavingPlanDeduct");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeSavingPlanDeductResponse rsp = DescribeSavingPlanDeductResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeSavingPlanDeductOutcome(rsp);
+        else
+            return DescribeSavingPlanDeductOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeSavingPlanDeductOutcome(outcome.GetError());
+    }
+}
+
+void SvpClient::DescribeSavingPlanDeductAsync(const DescribeSavingPlanDeductRequest& request, const DescribeSavingPlanDeductAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeSavingPlanDeduct(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+SvpClient::DescribeSavingPlanDeductOutcomeCallable SvpClient::DescribeSavingPlanDeductCallable(const DescribeSavingPlanDeductRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeSavingPlanDeductOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeSavingPlanDeduct(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+SvpClient::DescribeSavingPlanOverviewOutcome SvpClient::DescribeSavingPlanOverview(const DescribeSavingPlanOverviewRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeSavingPlanOverview");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeSavingPlanOverviewResponse rsp = DescribeSavingPlanOverviewResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeSavingPlanOverviewOutcome(rsp);
+        else
+            return DescribeSavingPlanOverviewOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeSavingPlanOverviewOutcome(outcome.GetError());
+    }
+}
+
+void SvpClient::DescribeSavingPlanOverviewAsync(const DescribeSavingPlanOverviewRequest& request, const DescribeSavingPlanOverviewAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeSavingPlanOverview(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+SvpClient::DescribeSavingPlanOverviewOutcomeCallable SvpClient::DescribeSavingPlanOverviewCallable(const DescribeSavingPlanOverviewRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeSavingPlanOverviewOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeSavingPlanOverview(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+SvpClient::DescribeSavingPlanUsageOutcome SvpClient::DescribeSavingPlanUsage(const DescribeSavingPlanUsageRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeSavingPlanUsage");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeSavingPlanUsageResponse rsp = DescribeSavingPlanUsageResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeSavingPlanUsageOutcome(rsp);
+        else
+            return DescribeSavingPlanUsageOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeSavingPlanUsageOutcome(outcome.GetError());
+    }
+}
+
+void SvpClient::DescribeSavingPlanUsageAsync(const DescribeSavingPlanUsageRequest& request, const DescribeSavingPlanUsageAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeSavingPlanUsage(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+SvpClient::DescribeSavingPlanUsageOutcomeCallable SvpClient::DescribeSavingPlanUsageCallable(const DescribeSavingPlanUsageRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeSavingPlanUsageOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeSavingPlanUsage(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+

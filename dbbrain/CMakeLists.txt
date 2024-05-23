@@ -122,9 +122,11 @@ set(dbbrain_public_header_model
   include/tencentcloud/dbbrain/v20210527/model/CreateSecurityAuditLogExportTaskRequest.h
   include/tencentcloud/dbbrain/v20210527/model/DescribeDBDiagEventResponse.h
   include/tencentcloud/dbbrain/v20210527/model/DescribeSlowLogTopSqlsRequest.h
+  include/tencentcloud/dbbrain/v20210527/model/DescribeRedisBigKeyAnalysisTasksResponse.h
   include/tencentcloud/dbbrain/v20210527/model/DescribeDBDiagReportTasksResponse.h
   include/tencentcloud/dbbrain/v20210527/model/AddUserContactResponse.h
   include/tencentcloud/dbbrain/v20210527/model/AuditInstanceInfo.h
+  include/tencentcloud/dbbrain/v20210527/model/RedisBigKeyTask.h
   include/tencentcloud/dbbrain/v20210527/model/CancelKillTaskResponse.h
   include/tencentcloud/dbbrain/v20210527/model/DescribeRedisTopBigKeysResponse.h
   include/tencentcloud/dbbrain/v20210527/model/DescribeSqlTemplateRequest.h
@@ -220,7 +222,7 @@ set(dbbrain_public_header_model
   include/tencentcloud/dbbrain/v20210527/model/InstanceInfo.h
   include/tencentcloud/dbbrain/v20210527/model/TemplateInfo.h
   include/tencentcloud/dbbrain/v20210527/model/DescribeAuditInstanceListRequest.h
-  include/tencentcloud/dbbrain/v20210527/model/VerifyUserAccountResponse.h
+  include/tencentcloud/dbbrain/v20210527/model/DescribeRedisBigKeyAnalysisTasksRequest.h
   include/tencentcloud/dbbrain/v20210527/model/DescribeSqlFiltersRequest.h
   include/tencentcloud/dbbrain/v20210527/model/DescribeSecurityAuditLogExportTasksRequest.h
   include/tencentcloud/dbbrain/v20210527/model/DeleteSecurityAuditLogExportTasksRequest.h
@@ -248,6 +250,7 @@ set(dbbrain_public_header_model
   include/tencentcloud/dbbrain/v20210527/model/CreateProxySessionKillTaskResponse.h
   include/tencentcloud/dbbrain/v20210527/model/AuditLogFile.h
   include/tencentcloud/dbbrain/v20210527/model/DescribeAlarmTemplateRequest.h
+  include/tencentcloud/dbbrain/v20210527/model/VerifyUserAccountResponse.h
   include/tencentcloud/dbbrain/v20210527/model/DescribeSlowLogTimeSeriesStatsResponse.h
   include/tencentcloud/dbbrain/v20210527/model/DescribeProxyProcessStatisticsRequest.h
   include/tencentcloud/dbbrain/v20210527/model/MonitorFloatMetric.h
@@ -388,9 +391,11 @@ set(dbbrain_src
   src/v20210527/model/CreateSecurityAuditLogExportTaskRequest.cpp
   src/v20210527/model/DescribeDBDiagEventResponse.cpp
   src/v20210527/model/DescribeSlowLogTopSqlsRequest.cpp
+  src/v20210527/model/DescribeRedisBigKeyAnalysisTasksResponse.cpp
   src/v20210527/model/DescribeDBDiagReportTasksResponse.cpp
   src/v20210527/model/AddUserContactResponse.cpp
   src/v20210527/model/AuditInstanceInfo.cpp
+  src/v20210527/model/RedisBigKeyTask.cpp
   src/v20210527/model/CancelKillTaskResponse.cpp
   src/v20210527/model/DescribeRedisTopBigKeysResponse.cpp
   src/v20210527/model/DescribeSqlTemplateRequest.cpp
@@ -486,7 +491,7 @@ set(dbbrain_src
   src/v20210527/model/InstanceInfo.cpp
   src/v20210527/model/TemplateInfo.cpp
   src/v20210527/model/DescribeAuditInstanceListRequest.cpp
-  src/v20210527/model/VerifyUserAccountResponse.cpp
+  src/v20210527/model/DescribeRedisBigKeyAnalysisTasksRequest.cpp
   src/v20210527/model/DescribeSqlFiltersRequest.cpp
   src/v20210527/model/DescribeSecurityAuditLogExportTasksRequest.cpp
   src/v20210527/model/DeleteSecurityAuditLogExportTasksRequest.cpp
@@ -514,6 +519,7 @@ set(dbbrain_src
   src/v20210527/model/CreateProxySessionKillTaskResponse.cpp
   src/v20210527/model/AuditLogFile.cpp
   src/v20210527/model/DescribeAlarmTemplateRequest.cpp
+  src/v20210527/model/VerifyUserAccountResponse.cpp
   src/v20210527/model/DescribeSlowLogTimeSeriesStatsResponse.cpp
   src/v20210527/model/DescribeProxyProcessStatisticsRequest.cpp
   src/v20210527/model/MonitorFloatMetric.cpp

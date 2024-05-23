@@ -25,7 +25,8 @@ using namespace std;
 
 ChannelCreatePrepareFlowResponse::ChannelCreatePrepareFlowResponse() :
     m_prepareFlowUrlHasBeenSet(false),
-    m_previewFlowUrlHasBeenSet(false)
+    m_previewFlowUrlHasBeenSet(false),
+    m_flowIdHasBeenSet(false)
 {
 }
 
@@ -83,6 +84,16 @@ CoreInternalOutcome ChannelCreatePrepareFlowResponse::Deserialize(const string &
         m_previewFlowUrlHasBeenSet = true;
     }
 
+    if (rsp.HasMember("FlowId") && !rsp["FlowId"].IsNull())
+    {
+        if (!rsp["FlowId"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `FlowId` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_flowId = string(rsp["FlowId"].GetString());
+        m_flowIdHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -107,6 +118,14 @@ string ChannelCreatePrepareFlowResponse::ToJsonString() const
         string key = "PreviewFlowUrl";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_previewFlowUrl.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_flowIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "FlowId";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_flowId.c_str(), allocator).Move(), allocator);
     }
 
     rapidjson::Value iKey(rapidjson::kStringType);
@@ -139,6 +158,16 @@ string ChannelCreatePrepareFlowResponse::GetPreviewFlowUrl() const
 bool ChannelCreatePrepareFlowResponse::PreviewFlowUrlHasBeenSet() const
 {
     return m_previewFlowUrlHasBeenSet;
+}
+
+string ChannelCreatePrepareFlowResponse::GetFlowId() const
+{
+    return m_flowId;
+}
+
+bool ChannelCreatePrepareFlowResponse::FlowIdHasBeenSet() const
+{
+    return m_flowIdHasBeenSet;
 }
 
 

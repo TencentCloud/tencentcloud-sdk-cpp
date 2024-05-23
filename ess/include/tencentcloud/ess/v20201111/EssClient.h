@@ -73,6 +73,8 @@
 #include <tencentcloud/ess/v20201111/model/CreateIntegrationEmployeesResponse.h>
 #include <tencentcloud/ess/v20201111/model/CreateIntegrationRoleRequest.h>
 #include <tencentcloud/ess/v20201111/model/CreateIntegrationRoleResponse.h>
+#include <tencentcloud/ess/v20201111/model/CreateIntegrationSubOrganizationActiveRecordRequest.h>
+#include <tencentcloud/ess/v20201111/model/CreateIntegrationSubOrganizationActiveRecordResponse.h>
 #include <tencentcloud/ess/v20201111/model/CreateIntegrationUserRolesRequest.h>
 #include <tencentcloud/ess/v20201111/model/CreateIntegrationUserRolesResponse.h>
 #include <tencentcloud/ess/v20201111/model/CreateMultiFlowSignQRCodeRequest.h>
@@ -81,6 +83,8 @@
 #include <tencentcloud/ess/v20201111/model/CreateOrganizationAuthUrlResponse.h>
 #include <tencentcloud/ess/v20201111/model/CreateOrganizationBatchSignUrlRequest.h>
 #include <tencentcloud/ess/v20201111/model/CreateOrganizationBatchSignUrlResponse.h>
+#include <tencentcloud/ess/v20201111/model/CreateOrganizationGroupInvitationLinkRequest.h>
+#include <tencentcloud/ess/v20201111/model/CreateOrganizationGroupInvitationLinkResponse.h>
 #include <tencentcloud/ess/v20201111/model/CreateOrganizationInfoChangeUrlRequest.h>
 #include <tencentcloud/ess/v20201111/model/CreateOrganizationInfoChangeUrlResponse.h>
 #include <tencentcloud/ess/v20201111/model/CreatePersonAuthCertificateImageRequest.h>
@@ -274,6 +278,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::CreateIntegrationRoleResponse> CreateIntegrationRoleOutcome;
                 typedef std::future<CreateIntegrationRoleOutcome> CreateIntegrationRoleOutcomeCallable;
                 typedef std::function<void(const EssClient*, const Model::CreateIntegrationRoleRequest&, CreateIntegrationRoleOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateIntegrationRoleAsyncHandler;
+                typedef Outcome<Core::Error, Model::CreateIntegrationSubOrganizationActiveRecordResponse> CreateIntegrationSubOrganizationActiveRecordOutcome;
+                typedef std::future<CreateIntegrationSubOrganizationActiveRecordOutcome> CreateIntegrationSubOrganizationActiveRecordOutcomeCallable;
+                typedef std::function<void(const EssClient*, const Model::CreateIntegrationSubOrganizationActiveRecordRequest&, CreateIntegrationSubOrganizationActiveRecordOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateIntegrationSubOrganizationActiveRecordAsyncHandler;
                 typedef Outcome<Core::Error, Model::CreateIntegrationUserRolesResponse> CreateIntegrationUserRolesOutcome;
                 typedef std::future<CreateIntegrationUserRolesOutcome> CreateIntegrationUserRolesOutcomeCallable;
                 typedef std::function<void(const EssClient*, const Model::CreateIntegrationUserRolesRequest&, CreateIntegrationUserRolesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateIntegrationUserRolesAsyncHandler;
@@ -286,6 +293,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::CreateOrganizationBatchSignUrlResponse> CreateOrganizationBatchSignUrlOutcome;
                 typedef std::future<CreateOrganizationBatchSignUrlOutcome> CreateOrganizationBatchSignUrlOutcomeCallable;
                 typedef std::function<void(const EssClient*, const Model::CreateOrganizationBatchSignUrlRequest&, CreateOrganizationBatchSignUrlOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateOrganizationBatchSignUrlAsyncHandler;
+                typedef Outcome<Core::Error, Model::CreateOrganizationGroupInvitationLinkResponse> CreateOrganizationGroupInvitationLinkOutcome;
+                typedef std::future<CreateOrganizationGroupInvitationLinkOutcome> CreateOrganizationGroupInvitationLinkOutcomeCallable;
+                typedef std::function<void(const EssClient*, const Model::CreateOrganizationGroupInvitationLinkRequest&, CreateOrganizationGroupInvitationLinkOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateOrganizationGroupInvitationLinkAsyncHandler;
                 typedef Outcome<Core::Error, Model::CreateOrganizationInfoChangeUrlResponse> CreateOrganizationInfoChangeUrlOutcome;
                 typedef std::future<CreateOrganizationInfoChangeUrlOutcome> CreateOrganizationInfoChangeUrlOutcomeCallable;
                 typedef std::function<void(const EssClient*, const Model::CreateOrganizationInfoChangeUrlRequest&, CreateOrganizationInfoChangeUrlOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateOrganizationInfoChangeUrlAsyncHandler;
@@ -1005,6 +1015,21 @@ namespace TencentCloud
                 CreateIntegrationRoleOutcomeCallable CreateIntegrationRoleCallable(const Model::CreateIntegrationRoleRequest& request);
 
                 /**
+                 *通过此接口，创建子企业激活记录，集团企业管理员可针对未激活的成员企业进行激活。
+激活子企业时请保证子企业 lisence 充足。
+这个操作与页面端激活成员企业操作类似
+![image](https://qcloudimg.tencent-cloud.cn/raw/c4e76fbac92e4ce451a03601c964793b.png)
+
+p.s.
+此接口只能用于激活，不能用于续期。
+                 * @param req CreateIntegrationSubOrganizationActiveRecordRequest
+                 * @return CreateIntegrationSubOrganizationActiveRecordOutcome
+                 */
+                CreateIntegrationSubOrganizationActiveRecordOutcome CreateIntegrationSubOrganizationActiveRecord(const Model::CreateIntegrationSubOrganizationActiveRecordRequest &request);
+                void CreateIntegrationSubOrganizationActiveRecordAsync(const Model::CreateIntegrationSubOrganizationActiveRecordRequest& request, const CreateIntegrationSubOrganizationActiveRecordAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                CreateIntegrationSubOrganizationActiveRecordOutcomeCallable CreateIntegrationSubOrganizationActiveRecordCallable(const Model::CreateIntegrationSubOrganizationActiveRecordRequest& request);
+
+                /**
                  *此接口用于赋予员工指定的角色权限，如需解绑请使用 DeleteIntegrationRoleUsers 接口。
                  * @param req CreateIntegrationUserRolesRequest
                  * @return CreateIntegrationUserRolesOutcome
@@ -1062,6 +1087,16 @@ namespace TencentCloud
                 CreateOrganizationBatchSignUrlOutcome CreateOrganizationBatchSignUrl(const Model::CreateOrganizationBatchSignUrlRequest &request);
                 void CreateOrganizationBatchSignUrlAsync(const Model::CreateOrganizationBatchSignUrlRequest& request, const CreateOrganizationBatchSignUrlAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 CreateOrganizationBatchSignUrlOutcomeCallable CreateOrganizationBatchSignUrlCallable(const Model::CreateOrganizationBatchSignUrlRequest& request);
+
+                /**
+                 *生成集团加入链接，分享至子企业超管或者法人，子企业管理员可通过链接加入集团。
+注意:调用当前接口的企业 必须为集团企业。如何成为集团企业可以参考下面的文档[集团操作文档](https://qian.tencent.com/document/86707)
+                 * @param req CreateOrganizationGroupInvitationLinkRequest
+                 * @return CreateOrganizationGroupInvitationLinkOutcome
+                 */
+                CreateOrganizationGroupInvitationLinkOutcome CreateOrganizationGroupInvitationLink(const Model::CreateOrganizationGroupInvitationLinkRequest &request);
+                void CreateOrganizationGroupInvitationLinkAsync(const Model::CreateOrganizationGroupInvitationLinkRequest& request, const CreateOrganizationGroupInvitationLinkAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                CreateOrganizationGroupInvitationLinkOutcomeCallable CreateOrganizationGroupInvitationLinkCallable(const Model::CreateOrganizationGroupInvitationLinkRequest& request);
 
                 /**
                  *此接口（CreateOrganizationInfoChangeUrl）用于创建企业信息变更链接，支持创建企业超管变更链接或企业基础信息变更链接，通过入参ChangeType指定。

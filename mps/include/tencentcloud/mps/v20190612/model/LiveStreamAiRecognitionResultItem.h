@@ -30,6 +30,7 @@
 #include <tencentcloud/mps/v20190612/model/LiveStreamAsrFullTextRecognitionResult.h>
 #include <tencentcloud/mps/v20190612/model/LiveStreamOcrFullTextRecognitionResult.h>
 #include <tencentcloud/mps/v20190612/model/LiveStreamTransTextRecognitionResult.h>
+#include <tencentcloud/mps/v20190612/model/LiveStreamObjectRecognitionResult.h>
 #include <tencentcloud/mps/v20190612/model/LiveStreamTagRecognitionResult.h>
 
 
@@ -61,6 +62,7 @@ namespace TencentCloud
 <li>AsrFullTextRecognition：语音全文识别，</li>
 <li>OcrFullTextRecognition：文本全文识别。</li>
 <li>TransTextRecognition：语音翻译。</li>
+<li>ObjectRecognition：目标检测。</li>
 <li>TagRecognition：精彩打点。</li>
                      * @return Type 结果的类型，取值范围：
 <li>FaceRecognition：人脸识别，</li>
@@ -69,6 +71,7 @@ namespace TencentCloud
 <li>AsrFullTextRecognition：语音全文识别，</li>
 <li>OcrFullTextRecognition：文本全文识别。</li>
 <li>TransTextRecognition：语音翻译。</li>
+<li>ObjectRecognition：目标检测。</li>
 <li>TagRecognition：精彩打点。</li>
                      * 
                      */
@@ -82,6 +85,7 @@ namespace TencentCloud
 <li>AsrFullTextRecognition：语音全文识别，</li>
 <li>OcrFullTextRecognition：文本全文识别。</li>
 <li>TransTextRecognition：语音翻译。</li>
+<li>ObjectRecognition：目标检测。</li>
 <li>TagRecognition：精彩打点。</li>
                      * @param _type 结果的类型，取值范围：
 <li>FaceRecognition：人脸识别，</li>
@@ -90,6 +94,7 @@ namespace TencentCloud
 <li>AsrFullTextRecognition：语音全文识别，</li>
 <li>OcrFullTextRecognition：文本全文识别。</li>
 <li>TransTextRecognition：语音翻译。</li>
+<li>ObjectRecognition：目标检测。</li>
 <li>TagRecognition：精彩打点。</li>
                      * 
                      */
@@ -249,6 +254,27 @@ OcrFullTextRecognition 时有效。
                     bool TransTextRecognitionResultSetHasBeenSet() const;
 
                     /**
+                     * 获取目标检测结果，当Type为 ObjectRecognition 时有效。
+                     * @return ObjectRecognitionResultSet 目标检测结果，当Type为 ObjectRecognition 时有效。
+                     * 
+                     */
+                    std::vector<LiveStreamObjectRecognitionResult> GetObjectRecognitionResultSet() const;
+
+                    /**
+                     * 设置目标检测结果，当Type为 ObjectRecognition 时有效。
+                     * @param _objectRecognitionResultSet 目标检测结果，当Type为 ObjectRecognition 时有效。
+                     * 
+                     */
+                    void SetObjectRecognitionResultSet(const std::vector<LiveStreamObjectRecognitionResult>& _objectRecognitionResultSet);
+
+                    /**
+                     * 判断参数 ObjectRecognitionResultSet 是否已赋值
+                     * @return ObjectRecognitionResultSet 是否已赋值
+                     * 
+                     */
+                    bool ObjectRecognitionResultSetHasBeenSet() const;
+
+                    /**
                      * 获取打点结果，当Type 为 TagRecognition 时有效。
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return TagRecognitionResultSet 打点结果，当Type 为 TagRecognition 时有效。
@@ -283,6 +309,7 @@ OcrFullTextRecognition 时有效。
 <li>AsrFullTextRecognition：语音全文识别，</li>
 <li>OcrFullTextRecognition：文本全文识别。</li>
 <li>TransTextRecognition：语音翻译。</li>
+<li>ObjectRecognition：目标检测。</li>
 <li>TagRecognition：精彩打点。</li>
                      */
                     std::string m_type;
@@ -328,6 +355,12 @@ OcrFullTextRecognition 时有效。
                      */
                     std::vector<LiveStreamTransTextRecognitionResult> m_transTextRecognitionResultSet;
                     bool m_transTextRecognitionResultSetHasBeenSet;
+
+                    /**
+                     * 目标检测结果，当Type为 ObjectRecognition 时有效。
+                     */
+                    std::vector<LiveStreamObjectRecognitionResult> m_objectRecognitionResultSet;
+                    bool m_objectRecognitionResultSetHasBeenSet;
 
                     /**
                      * 打点结果，当Type 为 TagRecognition 时有效。

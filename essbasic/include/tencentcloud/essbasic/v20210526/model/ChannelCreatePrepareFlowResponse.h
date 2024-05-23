@@ -71,6 +71,20 @@ namespace TencentCloud
                      */
                     bool PreviewFlowUrlHasBeenSet() const;
 
+                    /**
+                     * 获取发起的合同临时Id， 只有当点击进入链接，成功发起合同后， 此Id才有效
+                     * @return FlowId 发起的合同临时Id， 只有当点击进入链接，成功发起合同后， 此Id才有效
+                     * 
+                     */
+                    std::string GetFlowId() const;
+
+                    /**
+                     * 判断参数 FlowId 是否已赋值
+                     * @return FlowId 是否已赋值
+                     * 
+                     */
+                    bool FlowIdHasBeenSet() const;
+
                 private:
 
                     /**
@@ -84,6 +98,12 @@ namespace TencentCloud
                      */
                     std::string m_previewFlowUrl;
                     bool m_previewFlowUrlHasBeenSet;
+
+                    /**
+                     * 发起的合同临时Id， 只有当点击进入链接，成功发起合同后， 此Id才有效
+                     */
+                    std::string m_flowId;
+                    bool m_flowIdHasBeenSet;
 
                 };
             }
