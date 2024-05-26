@@ -4426,6 +4426,49 @@ DlcClient::ListTaskJobLogDetailOutcomeCallable DlcClient::ListTaskJobLogDetailCa
     return task->get_future();
 }
 
+DlcClient::ListTaskJobLogNameOutcome DlcClient::ListTaskJobLogName(const ListTaskJobLogNameRequest &request)
+{
+    auto outcome = MakeRequest(request, "ListTaskJobLogName");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ListTaskJobLogNameResponse rsp = ListTaskJobLogNameResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ListTaskJobLogNameOutcome(rsp);
+        else
+            return ListTaskJobLogNameOutcome(o.GetError());
+    }
+    else
+    {
+        return ListTaskJobLogNameOutcome(outcome.GetError());
+    }
+}
+
+void DlcClient::ListTaskJobLogNameAsync(const ListTaskJobLogNameRequest& request, const ListTaskJobLogNameAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->ListTaskJobLogName(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+DlcClient::ListTaskJobLogNameOutcomeCallable DlcClient::ListTaskJobLogNameCallable(const ListTaskJobLogNameRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<ListTaskJobLogNameOutcome()>>(
+        [this, request]()
+        {
+            return this->ListTaskJobLogName(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 DlcClient::LockMetaDataOutcome DlcClient::LockMetaData(const LockMetaDataRequest &request)
 {
     auto outcome = MakeRequest(request, "LockMetaData");

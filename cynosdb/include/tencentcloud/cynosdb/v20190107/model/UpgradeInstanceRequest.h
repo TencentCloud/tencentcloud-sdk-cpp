@@ -128,6 +128,27 @@ namespace TencentCloud
                     bool UpgradeTypeHasBeenSet() const;
 
                     /**
+                     * 获取实例机器类型
+                     * @return DeviceType 实例机器类型
+                     * 
+                     */
+                    std::string GetDeviceType() const;
+
+                    /**
+                     * 设置实例机器类型
+                     * @param _deviceType 实例机器类型
+                     * 
+                     */
+                    void SetDeviceType(const std::string& _deviceType);
+
+                    /**
+                     * 判断参数 DeviceType 是否已赋值
+                     * @return DeviceType 是否已赋值
+                     * 
+                     */
+                    bool DeviceTypeHasBeenSet() const;
+
+                    /**
                      * 获取该参数已废弃
                      * @return StorageLimit 该参数已废弃
                      * 
@@ -278,6 +299,12 @@ namespace TencentCloud
                      */
                     std::string m_upgradeType;
                     bool m_upgradeTypeHasBeenSet;
+
+                    /**
+                     * 实例机器类型
+                     */
+                    std::string m_deviceType;
+                    bool m_deviceTypeHasBeenSet;
 
                     /**
                      * 该参数已废弃

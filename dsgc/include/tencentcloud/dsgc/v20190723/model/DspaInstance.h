@@ -369,6 +369,31 @@ namespace TencentCloud
                      */
                     bool RenewFlagHasBeenSet() const;
 
+                    /**
+                     * 获取实例渠道
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return Channel 实例渠道
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::string GetChannel() const;
+
+                    /**
+                     * 设置实例渠道
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _channel 实例渠道
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetChannel(const std::string& _channel);
+
+                    /**
+                     * 判断参数 Channel 是否已赋值
+                     * @return Channel 是否已赋值
+                     * 
+                     */
+                    bool ChannelHasBeenSet() const;
+
                 private:
 
                     /**
@@ -462,6 +487,13 @@ namespace TencentCloud
                      */
                     uint64_t m_renewFlag;
                     bool m_renewFlagHasBeenSet;
+
+                    /**
+                     * 实例渠道
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_channel;
+                    bool m_channelHasBeenSet;
 
                 };
             }

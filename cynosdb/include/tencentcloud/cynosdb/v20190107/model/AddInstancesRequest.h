@@ -129,6 +129,27 @@ namespace TencentCloud
                     bool ReadOnlyCountHasBeenSet() const;
 
                     /**
+                     * 获取实例机器类型
+                     * @return DeviceType 实例机器类型
+                     * 
+                     */
+                    std::string GetDeviceType() const;
+
+                    /**
+                     * 设置实例机器类型
+                     * @param _deviceType 实例机器类型
+                     * 
+                     */
+                    void SetDeviceType(const std::string& _deviceType);
+
+                    /**
+                     * 判断参数 DeviceType 是否已赋值
+                     * @return DeviceType 是否已赋值
+                     * 
+                     */
+                    bool DeviceTypeHasBeenSet() const;
+
+                    /**
                      * 获取实例组ID，在已有RO组中新增实例时使用，不传则新增RO组。当前版本不建议传输该值。
                      * @return InstanceGrpId 实例组ID，在已有RO组中新增实例时使用，不传则新增RO组。当前版本不建议传输该值。
                      * @deprecated
@@ -430,6 +451,12 @@ namespace TencentCloud
                      */
                     int64_t m_readOnlyCount;
                     bool m_readOnlyCountHasBeenSet;
+
+                    /**
+                     * 实例机器类型
+                     */
+                    std::string m_deviceType;
+                    bool m_deviceTypeHasBeenSet;
 
                     /**
                      * 实例组ID，在已有RO组中新增实例时使用，不传则新增RO组。当前版本不建议传输该值。

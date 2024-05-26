@@ -227,6 +227,8 @@
 #include <tencentcloud/dlc/v20210125/model/GetOptimizerPolicyResponse.h>
 #include <tencentcloud/dlc/v20210125/model/ListTaskJobLogDetailRequest.h>
 #include <tencentcloud/dlc/v20210125/model/ListTaskJobLogDetailResponse.h>
+#include <tencentcloud/dlc/v20210125/model/ListTaskJobLogNameRequest.h>
+#include <tencentcloud/dlc/v20210125/model/ListTaskJobLogNameResponse.h>
 #include <tencentcloud/dlc/v20210125/model/LockMetaDataRequest.h>
 #include <tencentcloud/dlc/v20210125/model/LockMetaDataResponse.h>
 #include <tencentcloud/dlc/v20210125/model/ModifyAdvancedStoreLocationRequest.h>
@@ -597,6 +599,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::ListTaskJobLogDetailResponse> ListTaskJobLogDetailOutcome;
                 typedef std::future<ListTaskJobLogDetailOutcome> ListTaskJobLogDetailOutcomeCallable;
                 typedef std::function<void(const DlcClient*, const Model::ListTaskJobLogDetailRequest&, ListTaskJobLogDetailOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ListTaskJobLogDetailAsyncHandler;
+                typedef Outcome<Core::Error, Model::ListTaskJobLogNameResponse> ListTaskJobLogNameOutcome;
+                typedef std::future<ListTaskJobLogNameOutcome> ListTaskJobLogNameOutcomeCallable;
+                typedef std::function<void(const DlcClient*, const Model::ListTaskJobLogNameRequest&, ListTaskJobLogNameOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ListTaskJobLogNameAsyncHandler;
                 typedef Outcome<Core::Error, Model::LockMetaDataResponse> LockMetaDataOutcome;
                 typedef std::future<LockMetaDataOutcome> LockMetaDataOutcomeCallable;
                 typedef std::function<void(const DlcClient*, const Model::LockMetaDataRequest&, LockMetaDataOutcome, const std::shared_ptr<const AsyncCallerContext>&)> LockMetaDataAsyncHandler;
@@ -1592,6 +1597,15 @@ namespace TencentCloud
                 ListTaskJobLogDetailOutcome ListTaskJobLogDetail(const Model::ListTaskJobLogDetailRequest &request);
                 void ListTaskJobLogDetailAsync(const Model::ListTaskJobLogDetailRequest& request, const ListTaskJobLogDetailAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 ListTaskJobLogDetailOutcomeCallable ListTaskJobLogDetailCallable(const Model::ListTaskJobLogDetailRequest& request);
+
+                /**
+                 *本接口（ListTaskJobLogName）用于获取spark-jar日志名称列表
+                 * @param req ListTaskJobLogNameRequest
+                 * @return ListTaskJobLogNameOutcome
+                 */
+                ListTaskJobLogNameOutcome ListTaskJobLogName(const Model::ListTaskJobLogNameRequest &request);
+                void ListTaskJobLogNameAsync(const Model::ListTaskJobLogNameRequest& request, const ListTaskJobLogNameAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                ListTaskJobLogNameOutcomeCallable ListTaskJobLogNameCallable(const Model::ListTaskJobLogNameRequest& request);
 
                 /**
                  *元数据锁

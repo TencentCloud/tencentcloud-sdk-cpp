@@ -21,8 +21,8 @@
 #include <vector>
 #include <map>
 #include <tencentcloud/core/AbstractModel.h>
-#include <tencentcloud/cynosdb/v20190107/model/ParamItem.h>
 #include <tencentcloud/cynosdb/v20190107/model/Tag.h>
+#include <tencentcloud/cynosdb/v20190107/model/ParamItem.h>
 #include <tencentcloud/cynosdb/v20190107/model/InstanceInitInfo.h>
 
 
@@ -88,27 +88,6 @@ namespace TencentCloud
                     bool OriginalClusterIdHasBeenSet() const;
 
                     /**
-                     * 获取集群名称，长度小于64个字符，每个字符取值范围：大/小写字母，数字，特殊符号（'-','_','.'）
-                     * @return ClusterName 集群名称，长度小于64个字符，每个字符取值范围：大/小写字母，数字，特殊符号（'-','_','.'）
-                     * 
-                     */
-                    std::string GetClusterName() const;
-
-                    /**
-                     * 设置集群名称，长度小于64个字符，每个字符取值范围：大/小写字母，数字，特殊符号（'-','_','.'）
-                     * @param _clusterName 集群名称，长度小于64个字符，每个字符取值范围：大/小写字母，数字，特殊符号（'-','_','.'）
-                     * 
-                     */
-                    void SetClusterName(const std::string& _clusterName);
-
-                    /**
-                     * 判断参数 ClusterName 是否已赋值
-                     * @return ClusterName 是否已赋值
-                     * 
-                     */
-                    bool ClusterNameHasBeenSet() const;
-
-                    /**
                      * 获取所属VPC网络ID
                      * @return UniqVpcId 所属VPC网络ID
                      * 
@@ -151,6 +130,69 @@ namespace TencentCloud
                     bool UniqSubnetIdHasBeenSet() const;
 
                     /**
+                     * 获取集群名称，长度小于64个字符，每个字符取值范围：大/小写字母，数字，特殊符号（'-','_','.'）
+                     * @return ClusterName 集群名称，长度小于64个字符，每个字符取值范围：大/小写字母，数字，特殊符号（'-','_','.'）
+                     * 
+                     */
+                    std::string GetClusterName() const;
+
+                    /**
+                     * 设置集群名称，长度小于64个字符，每个字符取值范围：大/小写字母，数字，特殊符号（'-','_','.'）
+                     * @param _clusterName 集群名称，长度小于64个字符，每个字符取值范围：大/小写字母，数字，特殊符号（'-','_','.'）
+                     * 
+                     */
+                    void SetClusterName(const std::string& _clusterName);
+
+                    /**
+                     * 判断参数 ClusterName 是否已赋值
+                     * @return ClusterName 是否已赋值
+                     * 
+                     */
+                    bool ClusterNameHasBeenSet() const;
+
+                    /**
+                     * 获取快照回档，表示snapshotId；时间点回档，表示queryId，为0，表示需要判断时间点是否有效
+                     * @return RollbackId 快照回档，表示snapshotId；时间点回档，表示queryId，为0，表示需要判断时间点是否有效
+                     * 
+                     */
+                    uint64_t GetRollbackId() const;
+
+                    /**
+                     * 设置快照回档，表示snapshotId；时间点回档，表示queryId，为0，表示需要判断时间点是否有效
+                     * @param _rollbackId 快照回档，表示snapshotId；时间点回档，表示queryId，为0，表示需要判断时间点是否有效
+                     * 
+                     */
+                    void SetRollbackId(const uint64_t& _rollbackId);
+
+                    /**
+                     * 判断参数 RollbackId 是否已赋值
+                     * @return RollbackId 是否已赋值
+                     * 
+                     */
+                    bool RollbackIdHasBeenSet() const;
+
+                    /**
+                     * 获取时间点回档，指定时间；快照回档，快照时间
+                     * @return ExpectTime 时间点回档，指定时间；快照回档，快照时间
+                     * 
+                     */
+                    std::string GetExpectTime() const;
+
+                    /**
+                     * 设置时间点回档，指定时间；快照回档，快照时间
+                     * @param _expectTime 时间点回档，指定时间；快照回档，快照时间
+                     * 
+                     */
+                    void SetExpectTime(const std::string& _expectTime);
+
+                    /**
+                     * 判断参数 ExpectTime 是否已赋值
+                     * @return ExpectTime 是否已赋值
+                     * 
+                     */
+                    bool ExpectTimeHasBeenSet() const;
+
+                    /**
                      * 获取是否自动选择代金券 1是 0否 默认为0
                      * @return AutoVoucher 是否自动选择代金券 1是 0否 默认为0
                      * 
@@ -170,6 +212,27 @@ namespace TencentCloud
                      * 
                      */
                     bool AutoVoucherHasBeenSet() const;
+
+                    /**
+                     * 获取集群创建需要绑定的tag数组信息
+                     * @return ResourceTags 集群创建需要绑定的tag数组信息
+                     * 
+                     */
+                    std::vector<Tag> GetResourceTags() const;
+
+                    /**
+                     * 设置集群创建需要绑定的tag数组信息
+                     * @param _resourceTags 集群创建需要绑定的tag数组信息
+                     * 
+                     */
+                    void SetResourceTags(const std::vector<Tag>& _resourceTags);
+
+                    /**
+                     * 判断参数 ResourceTags 是否已赋值
+                     * @return ResourceTags 是否已赋值
+                     * 
+                     */
+                    bool ResourceTagsHasBeenSet() const;
 
                     /**
                      * 获取Db类型
@@ -376,27 +439,6 @@ cpu最大值，可选范围参考DescribeServerlessInstanceSpecs接口返回
                     bool ClusterParamsHasBeenSet() const;
 
                     /**
-                     * 获取0-下单并支付 1-下单
-                     * @return DealMode 0-下单并支付 1-下单
-                     * 
-                     */
-                    int64_t GetDealMode() const;
-
-                    /**
-                     * 设置0-下单并支付 1-下单
-                     * @param _dealMode 0-下单并支付 1-下单
-                     * 
-                     */
-                    void SetDealMode(const int64_t& _dealMode);
-
-                    /**
-                     * 判断参数 DealMode 是否已赋值
-                     * @return DealMode 是否已赋值
-                     * 
-                     */
-                    bool DealModeHasBeenSet() const;
-
-                    /**
                      * 获取参数模板ID，可以通过查询参数模板信息DescribeParamTemplates获得参数模板ID
                      * @return ParamTemplateId 参数模板ID，可以通过查询参数模板信息DescribeParamTemplates获得参数模板ID
                      * 
@@ -416,27 +458,6 @@ cpu最大值，可选范围参考DescribeServerlessInstanceSpecs接口返回
                      * 
                      */
                     bool ParamTemplateIdHasBeenSet() const;
-
-                    /**
-                     * 获取集群创建需要绑定的tag数组信息
-                     * @return ResourceTags 集群创建需要绑定的tag数组信息
-                     * 
-                     */
-                    std::vector<Tag> GetResourceTags() const;
-
-                    /**
-                     * 设置集群创建需要绑定的tag数组信息
-                     * @param _resourceTags 集群创建需要绑定的tag数组信息
-                     * 
-                     */
-                    void SetResourceTags(const std::vector<Tag>& _resourceTags);
-
-                    /**
-                     * 判断参数 ResourceTags 是否已赋值
-                     * @return ResourceTags 是否已赋值
-                     * 
-                     */
-                    bool ResourceTagsHasBeenSet() const;
 
                     /**
                      * 获取实例初始化配置信息，主要用于购买集群时选不同规格实例
@@ -460,46 +481,46 @@ cpu最大值，可选范围参考DescribeServerlessInstanceSpecs接口返回
                     bool InstanceInitInfosHasBeenSet() const;
 
                     /**
-                     * 获取快照回档，表示snapshotId；时间点回档，表示queryId，为0，表示需要判断时间点是否有效
-                     * @return RollbackId 快照回档，表示snapshotId；时间点回档，表示queryId，为0，表示需要判断时间点是否有效
+                     * 获取0-下单并支付 1-下单
+                     * @return DealMode 0-下单并支付 1-下单
                      * 
                      */
-                    uint64_t GetRollbackId() const;
+                    int64_t GetDealMode() const;
 
                     /**
-                     * 设置快照回档，表示snapshotId；时间点回档，表示queryId，为0，表示需要判断时间点是否有效
-                     * @param _rollbackId 快照回档，表示snapshotId；时间点回档，表示queryId，为0，表示需要判断时间点是否有效
+                     * 设置0-下单并支付 1-下单
+                     * @param _dealMode 0-下单并支付 1-下单
                      * 
                      */
-                    void SetRollbackId(const uint64_t& _rollbackId);
+                    void SetDealMode(const int64_t& _dealMode);
 
                     /**
-                     * 判断参数 RollbackId 是否已赋值
-                     * @return RollbackId 是否已赋值
+                     * 判断参数 DealMode 是否已赋值
+                     * @return DealMode 是否已赋值
                      * 
                      */
-                    bool RollbackIdHasBeenSet() const;
+                    bool DealModeHasBeenSet() const;
 
                     /**
-                     * 获取时间点回档，指定时间；快照回档，快照时间
-                     * @return ExpectTime 时间点回档，指定时间；快照回档，快照时间
+                     * 获取计算节点付费模式：0-按量计费，1-预付费
+                     * @return PayMode 计算节点付费模式：0-按量计费，1-预付费
                      * 
                      */
-                    std::string GetExpectTime() const;
+                    int64_t GetPayMode() const;
 
                     /**
-                     * 设置时间点回档，指定时间；快照回档，快照时间
-                     * @param _expectTime 时间点回档，指定时间；快照回档，快照时间
+                     * 设置计算节点付费模式：0-按量计费，1-预付费
+                     * @param _payMode 计算节点付费模式：0-按量计费，1-预付费
                      * 
                      */
-                    void SetExpectTime(const std::string& _expectTime);
+                    void SetPayMode(const int64_t& _payMode);
 
                     /**
-                     * 判断参数 ExpectTime 是否已赋值
-                     * @return ExpectTime 是否已赋值
+                     * 判断参数 PayMode 是否已赋值
+                     * @return PayMode 是否已赋值
                      * 
                      */
-                    bool ExpectTimeHasBeenSet() const;
+                    bool PayModeHasBeenSet() const;
 
                 private:
 
@@ -516,12 +537,6 @@ cpu最大值，可选范围参考DescribeServerlessInstanceSpecs接口返回
                     bool m_originalClusterIdHasBeenSet;
 
                     /**
-                     * 集群名称，长度小于64个字符，每个字符取值范围：大/小写字母，数字，特殊符号（'-','_','.'）
-                     */
-                    std::string m_clusterName;
-                    bool m_clusterNameHasBeenSet;
-
-                    /**
                      * 所属VPC网络ID
                      */
                     std::string m_uniqVpcId;
@@ -534,10 +549,34 @@ cpu最大值，可选范围参考DescribeServerlessInstanceSpecs接口返回
                     bool m_uniqSubnetIdHasBeenSet;
 
                     /**
+                     * 集群名称，长度小于64个字符，每个字符取值范围：大/小写字母，数字，特殊符号（'-','_','.'）
+                     */
+                    std::string m_clusterName;
+                    bool m_clusterNameHasBeenSet;
+
+                    /**
+                     * 快照回档，表示snapshotId；时间点回档，表示queryId，为0，表示需要判断时间点是否有效
+                     */
+                    uint64_t m_rollbackId;
+                    bool m_rollbackIdHasBeenSet;
+
+                    /**
+                     * 时间点回档，指定时间；快照回档，快照时间
+                     */
+                    std::string m_expectTime;
+                    bool m_expectTimeHasBeenSet;
+
+                    /**
                      * 是否自动选择代金券 1是 0否 默认为0
                      */
                     int64_t m_autoVoucher;
                     bool m_autoVoucherHasBeenSet;
+
+                    /**
+                     * 集群创建需要绑定的tag数组信息
+                     */
+                    std::vector<Tag> m_resourceTags;
+                    bool m_resourceTagsHasBeenSet;
 
                     /**
                      * Db类型
@@ -597,22 +636,10 @@ cpu最大值，可选范围参考DescribeServerlessInstanceSpecs接口返回
                     bool m_clusterParamsHasBeenSet;
 
                     /**
-                     * 0-下单并支付 1-下单
-                     */
-                    int64_t m_dealMode;
-                    bool m_dealModeHasBeenSet;
-
-                    /**
                      * 参数模板ID，可以通过查询参数模板信息DescribeParamTemplates获得参数模板ID
                      */
                     int64_t m_paramTemplateId;
                     bool m_paramTemplateIdHasBeenSet;
-
-                    /**
-                     * 集群创建需要绑定的tag数组信息
-                     */
-                    std::vector<Tag> m_resourceTags;
-                    bool m_resourceTagsHasBeenSet;
 
                     /**
                      * 实例初始化配置信息，主要用于购买集群时选不同规格实例
@@ -621,16 +648,16 @@ cpu最大值，可选范围参考DescribeServerlessInstanceSpecs接口返回
                     bool m_instanceInitInfosHasBeenSet;
 
                     /**
-                     * 快照回档，表示snapshotId；时间点回档，表示queryId，为0，表示需要判断时间点是否有效
+                     * 0-下单并支付 1-下单
                      */
-                    uint64_t m_rollbackId;
-                    bool m_rollbackIdHasBeenSet;
+                    int64_t m_dealMode;
+                    bool m_dealModeHasBeenSet;
 
                     /**
-                     * 时间点回档，指定时间；快照回档，快照时间
+                     * 计算节点付费模式：0-按量计费，1-预付费
                      */
-                    std::string m_expectTime;
-                    bool m_expectTimeHasBeenSet;
+                    int64_t m_payMode;
+                    bool m_payModeHasBeenSet;
 
                 };
             }

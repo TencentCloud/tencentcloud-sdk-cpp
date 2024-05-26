@@ -28,7 +28,8 @@ InstanceInitInfo::InstanceInitInfo() :
     m_minRoCountHasBeenSet(false),
     m_maxRoCountHasBeenSet(false),
     m_minRoCpuHasBeenSet(false),
-    m_maxRoCpuHasBeenSet(false)
+    m_maxRoCpuHasBeenSet(false),
+    m_deviceTypeHasBeenSet(false)
 {
 }
 
@@ -117,6 +118,16 @@ CoreInternalOutcome InstanceInitInfo::Deserialize(const rapidjson::Value &value)
         m_maxRoCpuHasBeenSet = true;
     }
 
+    if (value.HasMember("DeviceType") && !value["DeviceType"].IsNull())
+    {
+        if (!value["DeviceType"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `InstanceInitInfo.DeviceType` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_deviceType = string(value["DeviceType"].GetString());
+        m_deviceTypeHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -186,6 +197,14 @@ void InstanceInitInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Document
         string key = "MaxRoCpu";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_maxRoCpu, allocator);
+    }
+
+    if (m_deviceTypeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "DeviceType";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_deviceType.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -317,5 +336,21 @@ void InstanceInitInfo::SetMaxRoCpu(const double& _maxRoCpu)
 bool InstanceInitInfo::MaxRoCpuHasBeenSet() const
 {
     return m_maxRoCpuHasBeenSet;
+}
+
+string InstanceInitInfo::GetDeviceType() const
+{
+    return m_deviceType;
+}
+
+void InstanceInitInfo::SetDeviceType(const string& _deviceType)
+{
+    m_deviceType = _deviceType;
+    m_deviceTypeHasBeenSet = true;
+}
+
+bool InstanceInitInfo::DeviceTypeHasBeenSet() const
+{
+    return m_deviceTypeHasBeenSet;
 }
 

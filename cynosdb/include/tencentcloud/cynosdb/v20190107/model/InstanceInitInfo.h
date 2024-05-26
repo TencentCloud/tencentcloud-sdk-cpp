@@ -214,6 +214,27 @@ namespace TencentCloud
                      */
                     bool MaxRoCpuHasBeenSet() const;
 
+                    /**
+                     * 获取实例机器类型
+                     * @return DeviceType 实例机器类型
+                     * 
+                     */
+                    std::string GetDeviceType() const;
+
+                    /**
+                     * 设置实例机器类型
+                     * @param _deviceType 实例机器类型
+                     * 
+                     */
+                    void SetDeviceType(const std::string& _deviceType);
+
+                    /**
+                     * 判断参数 DeviceType 是否已赋值
+                     * @return DeviceType 是否已赋值
+                     * 
+                     */
+                    bool DeviceTypeHasBeenSet() const;
+
                 private:
 
                     /**
@@ -263,6 +284,12 @@ namespace TencentCloud
                      */
                     double m_maxRoCpu;
                     bool m_maxRoCpuHasBeenSet;
+
+                    /**
+                     * 实例机器类型
+                     */
+                    std::string m_deviceType;
+                    bool m_deviceTypeHasBeenSet;
 
                 };
             }

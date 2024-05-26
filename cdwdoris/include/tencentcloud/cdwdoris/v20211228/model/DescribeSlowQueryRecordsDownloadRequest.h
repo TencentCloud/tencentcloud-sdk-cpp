@@ -231,6 +231,27 @@ namespace TencentCloud
                      */
                     bool MemoryUsageHasBeenSet() const;
 
+                    /**
+                     * 获取IsQuery条件
+                     * @return IsQuery IsQuery条件
+                     * 
+                     */
+                    int64_t GetIsQuery() const;
+
+                    /**
+                     * 设置IsQuery条件
+                     * @param _isQuery IsQuery条件
+                     * 
+                     */
+                    void SetIsQuery(const int64_t& _isQuery);
+
+                    /**
+                     * 判断参数 IsQuery 是否已赋值
+                     * @return IsQuery 是否已赋值
+                     * 
+                     */
+                    bool IsQueryHasBeenSet() const;
+
                 private:
 
                     /**
@@ -286,6 +307,12 @@ namespace TencentCloud
                      */
                     std::string m_memoryUsage;
                     bool m_memoryUsageHasBeenSet;
+
+                    /**
+                     * IsQuery条件
+                     */
+                    int64_t m_isQuery;
+                    bool m_isQueryHasBeenSet;
 
                 };
             }

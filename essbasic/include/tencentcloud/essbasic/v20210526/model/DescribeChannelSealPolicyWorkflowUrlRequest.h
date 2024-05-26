@@ -93,15 +93,15 @@ namespace TencentCloud
                     bool AgentHasBeenSet() const;
 
                     /**
-                     * 获取用印审批单的ID，可通过用印申请回调获取。
-                     * @return WorkflowInstanceId 用印审批单的ID，可通过用印申请回调获取。
+                     * 获取用印审批单的ID，可通过用印[申请回调](https://qian.tencent.com/developers/partner/callback_types_seals#%E4%B8%89-%E7%94%A8%E5%8D%B0%E7%94%B3%E8%AF%B7%E5%AE%A1%E6%89%B9%E7%8A%B6%E6%80%81%E9%80%9A%E7%9F%A5)获取。
+                     * @return WorkflowInstanceId 用印审批单的ID，可通过用印[申请回调](https://qian.tencent.com/developers/partner/callback_types_seals#%E4%B8%89-%E7%94%A8%E5%8D%B0%E7%94%B3%E8%AF%B7%E5%AE%A1%E6%89%B9%E7%8A%B6%E6%80%81%E9%80%9A%E7%9F%A5)获取。
                      * 
                      */
                     std::string GetWorkflowInstanceId() const;
 
                     /**
-                     * 设置用印审批单的ID，可通过用印申请回调获取。
-                     * @param _workflowInstanceId 用印审批单的ID，可通过用印申请回调获取。
+                     * 设置用印审批单的ID，可通过用印[申请回调](https://qian.tencent.com/developers/partner/callback_types_seals#%E4%B8%89-%E7%94%A8%E5%8D%B0%E7%94%B3%E8%AF%B7%E5%AE%A1%E6%89%B9%E7%8A%B6%E6%80%81%E9%80%9A%E7%9F%A5)获取。
+                     * @param _workflowInstanceId 用印审批单的ID，可通过用印[申请回调](https://qian.tencent.com/developers/partner/callback_types_seals#%E4%B8%89-%E7%94%A8%E5%8D%B0%E7%94%B3%E8%AF%B7%E5%AE%A1%E6%89%B9%E7%8A%B6%E6%80%81%E9%80%9A%E7%9F%A5)获取。
                      * 
                      */
                     void SetWorkflowInstanceId(const std::string& _workflowInstanceId);
@@ -166,7 +166,7 @@ namespace TencentCloud
                     bool m_agentHasBeenSet;
 
                     /**
-                     * 用印审批单的ID，可通过用印申请回调获取。
+                     * 用印审批单的ID，可通过用印[申请回调](https://qian.tencent.com/developers/partner/callback_types_seals#%E4%B8%89-%E7%94%A8%E5%8D%B0%E7%94%B3%E8%AF%B7%E5%AE%A1%E6%89%B9%E7%8A%B6%E6%80%81%E9%80%9A%E7%9F%A5)获取。
                      */
                     std::string m_workflowInstanceId;
                     bool m_workflowInstanceIdHasBeenSet;

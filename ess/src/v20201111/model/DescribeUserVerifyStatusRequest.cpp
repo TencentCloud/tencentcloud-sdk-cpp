@@ -25,7 +25,8 @@ using namespace std;
 DescribeUserVerifyStatusRequest::DescribeUserVerifyStatusRequest() :
     m_operatorHasBeenSet(false),
     m_nameHasBeenSet(false),
-    m_idCardNumberHasBeenSet(false)
+    m_idCardNumberHasBeenSet(false),
+    m_idCardTypeHasBeenSet(false)
 {
 }
 
@@ -59,6 +60,14 @@ string DescribeUserVerifyStatusRequest::ToJsonString() const
         string key = "IdCardNumber";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_idCardNumber.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_idCardTypeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "IdCardType";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_idCardType.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -115,6 +124,22 @@ void DescribeUserVerifyStatusRequest::SetIdCardNumber(const string& _idCardNumbe
 bool DescribeUserVerifyStatusRequest::IdCardNumberHasBeenSet() const
 {
     return m_idCardNumberHasBeenSet;
+}
+
+string DescribeUserVerifyStatusRequest::GetIdCardType() const
+{
+    return m_idCardType;
+}
+
+void DescribeUserVerifyStatusRequest::SetIdCardType(const string& _idCardType)
+{
+    m_idCardType = _idCardType;
+    m_idCardTypeHasBeenSet = true;
+}
+
+bool DescribeUserVerifyStatusRequest::IdCardTypeHasBeenSet() const
+{
+    return m_idCardTypeHasBeenSet;
 }
 
 

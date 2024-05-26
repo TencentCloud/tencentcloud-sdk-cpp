@@ -35,7 +35,8 @@ DspaInstance::DspaInstance() :
     m_dbTotalQuotaHasBeenSet(false),
     m_cosTotalQuotaHasBeenSet(false),
     m_cosQuotaUnitHasBeenSet(false),
-    m_renewFlagHasBeenSet(false)
+    m_renewFlagHasBeenSet(false),
+    m_channelHasBeenSet(false)
 {
 }
 
@@ -194,6 +195,16 @@ CoreInternalOutcome DspaInstance::Deserialize(const rapidjson::Value &value)
         m_renewFlagHasBeenSet = true;
     }
 
+    if (value.HasMember("Channel") && !value["Channel"].IsNull())
+    {
+        if (!value["Channel"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `DspaInstance.Channel` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_channel = string(value["Channel"].GetString());
+        m_channelHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -319,6 +330,14 @@ void DspaInstance::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Al
         string key = "RenewFlag";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_renewFlag, allocator);
+    }
+
+    if (m_channelHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Channel";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_channel.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -562,5 +581,21 @@ void DspaInstance::SetRenewFlag(const uint64_t& _renewFlag)
 bool DspaInstance::RenewFlagHasBeenSet() const
 {
     return m_renewFlagHasBeenSet;
+}
+
+string DspaInstance::GetChannel() const
+{
+    return m_channel;
+}
+
+void DspaInstance::SetChannel(const string& _channel)
+{
+    m_channel = _channel;
+    m_channelHasBeenSet = true;
+}
+
+bool DspaInstance::ChannelHasBeenSet() const
+{
+    return m_channelHasBeenSet;
 }
 

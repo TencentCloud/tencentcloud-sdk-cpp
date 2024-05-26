@@ -127,6 +127,27 @@ namespace TencentCloud
                     bool StoragePayModeHasBeenSet() const;
 
                     /**
+                     * 获取实例设备类型
+                     * @return DeviceType 实例设备类型
+                     * 
+                     */
+                    std::string GetDeviceType() const;
+
+                    /**
+                     * 设置实例设备类型
+                     * @param _deviceType 实例设备类型
+                     * 
+                     */
+                    void SetDeviceType(const std::string& _deviceType);
+
+                    /**
+                     * 判断参数 DeviceType 是否已赋值
+                     * @return DeviceType 是否已赋值
+                     * 
+                     */
+                    bool DeviceTypeHasBeenSet() const;
+
+                    /**
                      * 获取CPU核数，PREPAID与POSTPAID实例类型必传
                      * @return Cpu CPU核数，PREPAID与POSTPAID实例类型必传
                      * 
@@ -277,6 +298,12 @@ namespace TencentCloud
                      */
                     std::string m_storagePayMode;
                     bool m_storagePayModeHasBeenSet;
+
+                    /**
+                     * 实例设备类型
+                     */
+                    std::string m_deviceType;
+                    bool m_deviceTypeHasBeenSet;
 
                     /**
                      * CPU核数，PREPAID与POSTPAID实例类型必传

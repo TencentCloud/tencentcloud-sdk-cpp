@@ -196,6 +196,7 @@ set(dbbrain_public_header_model
   include/tencentcloud/dbbrain/v20210527/model/MongoDBIndex.h
   include/tencentcloud/dbbrain/v20210527/model/CreateDBDiagReportUrlRequest.h
   include/tencentcloud/dbbrain/v20210527/model/CloseAuditServiceResponse.h
+  include/tencentcloud/dbbrain/v20210527/model/DeleteRedisBigKeyAnalysisTasksResponse.h
   include/tencentcloud/dbbrain/v20210527/model/CloseAuditServiceRequest.h
   include/tencentcloud/dbbrain/v20210527/model/InstanceConfs.h
   include/tencentcloud/dbbrain/v20210527/model/ReceiveInfo.h
@@ -238,6 +239,7 @@ set(dbbrain_public_header_model
   include/tencentcloud/dbbrain/v20210527/model/Process.h
   include/tencentcloud/dbbrain/v20210527/model/ModifyAuditServiceResponse.h
   include/tencentcloud/dbbrain/v20210527/model/DescribeHealthScoreRequest.h
+  include/tencentcloud/dbbrain/v20210527/model/DeleteRedisBigKeyAnalysisTasksRequest.h
   include/tencentcloud/dbbrain/v20210527/model/IssueTypeInfo.h
   include/tencentcloud/dbbrain/v20210527/model/DescribeDiagDBInstancesResponse.h
   include/tencentcloud/dbbrain/v20210527/model/DescribeAllUserGroupRequest.h
@@ -465,6 +467,7 @@ set(dbbrain_src
   src/v20210527/model/MongoDBIndex.cpp
   src/v20210527/model/CreateDBDiagReportUrlRequest.cpp
   src/v20210527/model/CloseAuditServiceResponse.cpp
+  src/v20210527/model/DeleteRedisBigKeyAnalysisTasksResponse.cpp
   src/v20210527/model/CloseAuditServiceRequest.cpp
   src/v20210527/model/InstanceConfs.cpp
   src/v20210527/model/ReceiveInfo.cpp
@@ -507,6 +510,7 @@ set(dbbrain_src
   src/v20210527/model/Process.cpp
   src/v20210527/model/ModifyAuditServiceResponse.cpp
   src/v20210527/model/DescribeHealthScoreRequest.cpp
+  src/v20210527/model/DeleteRedisBigKeyAnalysisTasksRequest.cpp
   src/v20210527/model/IssueTypeInfo.cpp
   src/v20210527/model/DescribeDiagDBInstancesResponse.cpp
   src/v20210527/model/DescribeAllUserGroupRequest.cpp

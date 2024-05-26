@@ -27,6 +27,7 @@ InquirePriceCreateRequest::InquirePriceCreateRequest() :
     m_goodsNumHasBeenSet(false),
     m_instancePayModeHasBeenSet(false),
     m_storagePayModeHasBeenSet(false),
+    m_deviceTypeHasBeenSet(false),
     m_cpuHasBeenSet(false),
     m_memoryHasBeenSet(false),
     m_ccuHasBeenSet(false),
@@ -73,6 +74,14 @@ string InquirePriceCreateRequest::ToJsonString() const
         string key = "StoragePayMode";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_storagePayMode.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_deviceTypeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "DeviceType";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_deviceType.c_str(), allocator).Move(), allocator);
     }
 
     if (m_cpuHasBeenSet)
@@ -193,6 +202,22 @@ void InquirePriceCreateRequest::SetStoragePayMode(const string& _storagePayMode)
 bool InquirePriceCreateRequest::StoragePayModeHasBeenSet() const
 {
     return m_storagePayModeHasBeenSet;
+}
+
+string InquirePriceCreateRequest::GetDeviceType() const
+{
+    return m_deviceType;
+}
+
+void InquirePriceCreateRequest::SetDeviceType(const string& _deviceType)
+{
+    m_deviceType = _deviceType;
+    m_deviceTypeHasBeenSet = true;
+}
+
+bool InquirePriceCreateRequest::DeviceTypeHasBeenSet() const
+{
+    return m_deviceTypeHasBeenSet;
 }
 
 int64_t InquirePriceCreateRequest::GetCpu() const

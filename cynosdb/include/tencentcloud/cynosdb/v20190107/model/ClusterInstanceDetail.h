@@ -24,6 +24,7 @@
 #include <tencentcloud/core/utils/rapidjson/writer.h>
 #include <tencentcloud/core/utils/rapidjson/stringbuffer.h>
 #include <tencentcloud/core/AbstractModel.h>
+#include <tencentcloud/cynosdb/v20190107/model/ObjectTask.h>
 
 
 namespace TencentCloud
@@ -335,6 +336,56 @@ namespace TencentCloud
                      */
                     bool ServerlessStatusHasBeenSet() const;
 
+                    /**
+                     * 获取实例任务信息
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return InstanceTasks 实例任务信息
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::vector<ObjectTask> GetInstanceTasks() const;
+
+                    /**
+                     * 设置实例任务信息
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _instanceTasks 实例任务信息
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetInstanceTasks(const std::vector<ObjectTask>& _instanceTasks);
+
+                    /**
+                     * 判断参数 InstanceTasks 是否已赋值
+                     * @return InstanceTasks 是否已赋值
+                     * 
+                     */
+                    bool InstanceTasksHasBeenSet() const;
+
+                    /**
+                     * 获取实例机器类型
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return InstanceDeviceType 实例机器类型
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::string GetInstanceDeviceType() const;
+
+                    /**
+                     * 设置实例机器类型
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _instanceDeviceType 实例机器类型
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetInstanceDeviceType(const std::string& _instanceDeviceType);
+
+                    /**
+                     * 判断参数 InstanceDeviceType 是否已赋值
+                     * @return InstanceDeviceType 是否已赋值
+                     * 
+                     */
+                    bool InstanceDeviceTypeHasBeenSet() const;
+
                 private:
 
                     /**
@@ -418,6 +469,20 @@ namespace TencentCloud
                      */
                     std::string m_serverlessStatus;
                     bool m_serverlessStatusHasBeenSet;
+
+                    /**
+                     * 实例任务信息
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::vector<ObjectTask> m_instanceTasks;
+                    bool m_instanceTasksHasBeenSet;
+
+                    /**
+                     * 实例机器类型
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_instanceDeviceType;
+                    bool m_instanceDeviceTypeHasBeenSet;
 
                 };
             }

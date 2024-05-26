@@ -27,6 +27,8 @@ ModifyInstanceData::ModifyInstanceData() :
     m_oldCpuHasBeenSet(false),
     m_oldMemoryHasBeenSet(false),
     m_oldStorageLimitHasBeenSet(false),
+    m_oldDeviceTypeHasBeenSet(false),
+    m_deviceTypeHasBeenSet(false),
     m_upgradeTypeHasBeenSet(false)
 {
 }
@@ -96,6 +98,26 @@ CoreInternalOutcome ModifyInstanceData::Deserialize(const rapidjson::Value &valu
         m_oldStorageLimitHasBeenSet = true;
     }
 
+    if (value.HasMember("OldDeviceType") && !value["OldDeviceType"].IsNull())
+    {
+        if (!value["OldDeviceType"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `ModifyInstanceData.OldDeviceType` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_oldDeviceType = string(value["OldDeviceType"].GetString());
+        m_oldDeviceTypeHasBeenSet = true;
+    }
+
+    if (value.HasMember("DeviceType") && !value["DeviceType"].IsNull())
+    {
+        if (!value["DeviceType"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `ModifyInstanceData.DeviceType` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_deviceType = string(value["DeviceType"].GetString());
+        m_deviceTypeHasBeenSet = true;
+    }
+
     if (value.HasMember("UpgradeType") && !value["UpgradeType"].IsNull())
     {
         if (!value["UpgradeType"].IsString())
@@ -159,6 +181,22 @@ void ModifyInstanceData::ToJsonObject(rapidjson::Value &value, rapidjson::Docume
         string key = "OldStorageLimit";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_oldStorageLimit, allocator);
+    }
+
+    if (m_oldDeviceTypeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "OldDeviceType";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_oldDeviceType.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_deviceTypeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "DeviceType";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_deviceType.c_str(), allocator).Move(), allocator);
     }
 
     if (m_upgradeTypeHasBeenSet)
@@ -266,6 +304,38 @@ void ModifyInstanceData::SetOldStorageLimit(const int64_t& _oldStorageLimit)
 bool ModifyInstanceData::OldStorageLimitHasBeenSet() const
 {
     return m_oldStorageLimitHasBeenSet;
+}
+
+string ModifyInstanceData::GetOldDeviceType() const
+{
+    return m_oldDeviceType;
+}
+
+void ModifyInstanceData::SetOldDeviceType(const string& _oldDeviceType)
+{
+    m_oldDeviceType = _oldDeviceType;
+    m_oldDeviceTypeHasBeenSet = true;
+}
+
+bool ModifyInstanceData::OldDeviceTypeHasBeenSet() const
+{
+    return m_oldDeviceTypeHasBeenSet;
+}
+
+string ModifyInstanceData::GetDeviceType() const
+{
+    return m_deviceType;
+}
+
+void ModifyInstanceData::SetDeviceType(const string& _deviceType)
+{
+    m_deviceType = _deviceType;
+    m_deviceTypeHasBeenSet = true;
+}
+
+bool ModifyInstanceData::DeviceTypeHasBeenSet() const
+{
+    return m_deviceTypeHasBeenSet;
 }
 
 string ModifyInstanceData::GetUpgradeType() const

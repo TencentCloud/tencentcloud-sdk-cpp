@@ -74,7 +74,8 @@ CynosdbInstance::CynosdbInstance() :
     m_instanceNetInfoHasBeenSet(false),
     m_resourcePackagesHasBeenSet(false),
     m_instanceIndexModeHasBeenSet(false),
-    m_instanceAbilityHasBeenSet(false)
+    m_instanceAbilityHasBeenSet(false),
+    m_deviceTypeHasBeenSet(false)
 {
 }
 
@@ -673,6 +674,16 @@ CoreInternalOutcome CynosdbInstance::Deserialize(const rapidjson::Value &value)
         m_instanceAbilityHasBeenSet = true;
     }
 
+    if (value.HasMember("DeviceType") && !value["DeviceType"].IsNull())
+    {
+        if (!value["DeviceType"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `CynosdbInstance.DeviceType` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_deviceType = string(value["DeviceType"].GetString());
+        m_deviceTypeHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -1144,6 +1155,14 @@ void CynosdbInstance::ToJsonObject(rapidjson::Value &value, rapidjson::Document:
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
         m_instanceAbility.ToJsonObject(value[key.c_str()], allocator);
+    }
+
+    if (m_deviceTypeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "DeviceType";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_deviceType.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -2011,5 +2030,21 @@ void CynosdbInstance::SetInstanceAbility(const InstanceAbility& _instanceAbility
 bool CynosdbInstance::InstanceAbilityHasBeenSet() const
 {
     return m_instanceAbilityHasBeenSet;
+}
+
+string CynosdbInstance::GetDeviceType() const
+{
+    return m_deviceType;
+}
+
+void CynosdbInstance::SetDeviceType(const string& _deviceType)
+{
+    m_deviceType = _deviceType;
+    m_deviceTypeHasBeenSet = true;
+}
+
+bool CynosdbInstance::DeviceTypeHasBeenSet() const
+{
+    return m_deviceTypeHasBeenSet;
 }
 

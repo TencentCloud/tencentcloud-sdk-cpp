@@ -341,6 +341,49 @@ DasbClient::CreateAssetSyncJobOutcomeCallable DasbClient::CreateAssetSyncJobCall
     return task->get_future();
 }
 
+DasbClient::CreateChangePwdTaskOutcome DasbClient::CreateChangePwdTask(const CreateChangePwdTaskRequest &request)
+{
+    auto outcome = MakeRequest(request, "CreateChangePwdTask");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        CreateChangePwdTaskResponse rsp = CreateChangePwdTaskResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return CreateChangePwdTaskOutcome(rsp);
+        else
+            return CreateChangePwdTaskOutcome(o.GetError());
+    }
+    else
+    {
+        return CreateChangePwdTaskOutcome(outcome.GetError());
+    }
+}
+
+void DasbClient::CreateChangePwdTaskAsync(const CreateChangePwdTaskRequest& request, const CreateChangePwdTaskAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->CreateChangePwdTask(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+DasbClient::CreateChangePwdTaskOutcomeCallable DasbClient::CreateChangePwdTaskCallable(const CreateChangePwdTaskRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<CreateChangePwdTaskOutcome()>>(
+        [this, request]()
+        {
+            return this->CreateChangePwdTask(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 DasbClient::CreateCmdTemplateOutcome DasbClient::CreateCmdTemplate(const CreateCmdTemplateRequest &request)
 {
     auto outcome = MakeRequest(request, "CreateCmdTemplate");
@@ -635,6 +678,49 @@ DasbClient::DeleteAclsOutcomeCallable DasbClient::DeleteAclsCallable(const Delet
         [this, request]()
         {
             return this->DeleteAcls(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+DasbClient::DeleteChangePwdTaskOutcome DasbClient::DeleteChangePwdTask(const DeleteChangePwdTaskRequest &request)
+{
+    auto outcome = MakeRequest(request, "DeleteChangePwdTask");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DeleteChangePwdTaskResponse rsp = DeleteChangePwdTaskResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DeleteChangePwdTaskOutcome(rsp);
+        else
+            return DeleteChangePwdTaskOutcome(o.GetError());
+    }
+    else
+    {
+        return DeleteChangePwdTaskOutcome(outcome.GetError());
+    }
+}
+
+void DasbClient::DeleteChangePwdTaskAsync(const DeleteChangePwdTaskRequest& request, const DeleteChangePwdTaskAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DeleteChangePwdTask(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+DasbClient::DeleteChangePwdTaskOutcomeCallable DasbClient::DeleteChangePwdTaskCallable(const DeleteChangePwdTaskRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DeleteChangePwdTaskOutcome()>>(
+        [this, request]()
+        {
+            return this->DeleteChangePwdTask(request);
         }
     );
 
@@ -1108,6 +1194,92 @@ DasbClient::DescribeAssetSyncStatusOutcomeCallable DasbClient::DescribeAssetSync
         [this, request]()
         {
             return this->DescribeAssetSyncStatus(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+DasbClient::DescribeChangePwdTaskOutcome DasbClient::DescribeChangePwdTask(const DescribeChangePwdTaskRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeChangePwdTask");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeChangePwdTaskResponse rsp = DescribeChangePwdTaskResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeChangePwdTaskOutcome(rsp);
+        else
+            return DescribeChangePwdTaskOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeChangePwdTaskOutcome(outcome.GetError());
+    }
+}
+
+void DasbClient::DescribeChangePwdTaskAsync(const DescribeChangePwdTaskRequest& request, const DescribeChangePwdTaskAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeChangePwdTask(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+DasbClient::DescribeChangePwdTaskOutcomeCallable DasbClient::DescribeChangePwdTaskCallable(const DescribeChangePwdTaskRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeChangePwdTaskOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeChangePwdTask(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+DasbClient::DescribeChangePwdTaskDetailOutcome DasbClient::DescribeChangePwdTaskDetail(const DescribeChangePwdTaskDetailRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeChangePwdTaskDetail");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeChangePwdTaskDetailResponse rsp = DescribeChangePwdTaskDetailResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeChangePwdTaskDetailOutcome(rsp);
+        else
+            return DescribeChangePwdTaskDetailOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeChangePwdTaskDetailOutcome(outcome.GetError());
+    }
+}
+
+void DasbClient::DescribeChangePwdTaskDetailAsync(const DescribeChangePwdTaskDetailRequest& request, const DescribeChangePwdTaskDetailAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeChangePwdTaskDetail(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+DasbClient::DescribeChangePwdTaskDetailOutcomeCallable DasbClient::DescribeChangePwdTaskDetailCallable(const DescribeChangePwdTaskDetailRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeChangePwdTaskDetailOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeChangePwdTaskDetail(request);
         }
     );
 
@@ -1717,6 +1889,49 @@ DasbClient::ModifyAclOutcomeCallable DasbClient::ModifyAclCallable(const ModifyA
     return task->get_future();
 }
 
+DasbClient::ModifyChangePwdTaskOutcome DasbClient::ModifyChangePwdTask(const ModifyChangePwdTaskRequest &request)
+{
+    auto outcome = MakeRequest(request, "ModifyChangePwdTask");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ModifyChangePwdTaskResponse rsp = ModifyChangePwdTaskResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ModifyChangePwdTaskOutcome(rsp);
+        else
+            return ModifyChangePwdTaskOutcome(o.GetError());
+    }
+    else
+    {
+        return ModifyChangePwdTaskOutcome(outcome.GetError());
+    }
+}
+
+void DasbClient::ModifyChangePwdTaskAsync(const ModifyChangePwdTaskRequest& request, const ModifyChangePwdTaskAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->ModifyChangePwdTask(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+DasbClient::ModifyChangePwdTaskOutcomeCallable DasbClient::ModifyChangePwdTaskCallable(const ModifyChangePwdTaskRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<ModifyChangePwdTaskOutcome()>>(
+        [this, request]()
+        {
+            return this->ModifyChangePwdTask(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 DasbClient::ModifyCmdTemplateOutcome DasbClient::ModifyCmdTemplate(const ModifyCmdTemplateRequest &request)
 {
     auto outcome = MakeRequest(request, "ModifyCmdTemplate");
@@ -2140,6 +2355,49 @@ DasbClient::ResetUserOutcomeCallable DasbClient::ResetUserCallable(const ResetUs
         [this, request]()
         {
             return this->ResetUser(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+DasbClient::RunChangePwdTaskOutcome DasbClient::RunChangePwdTask(const RunChangePwdTaskRequest &request)
+{
+    auto outcome = MakeRequest(request, "RunChangePwdTask");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        RunChangePwdTaskResponse rsp = RunChangePwdTaskResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return RunChangePwdTaskOutcome(rsp);
+        else
+            return RunChangePwdTaskOutcome(o.GetError());
+    }
+    else
+    {
+        return RunChangePwdTaskOutcome(outcome.GetError());
+    }
+}
+
+void DasbClient::RunChangePwdTaskAsync(const RunChangePwdTaskRequest& request, const RunChangePwdTaskAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->RunChangePwdTask(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+DasbClient::RunChangePwdTaskOutcomeCallable DasbClient::RunChangePwdTaskCallable(const RunChangePwdTaskRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<RunChangePwdTaskOutcome()>>(
+        [this, request]()
+        {
+            return this->RunChangePwdTask(request);
         }
     );
 

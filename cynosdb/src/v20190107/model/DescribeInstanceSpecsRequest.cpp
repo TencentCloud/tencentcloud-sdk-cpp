@@ -24,7 +24,8 @@ using namespace std;
 
 DescribeInstanceSpecsRequest::DescribeInstanceSpecsRequest() :
     m_dbTypeHasBeenSet(false),
-    m_includeZoneStocksHasBeenSet(false)
+    m_includeZoneStocksHasBeenSet(false),
+    m_deviceTypeHasBeenSet(false)
 {
 }
 
@@ -49,6 +50,14 @@ string DescribeInstanceSpecsRequest::ToJsonString() const
         string key = "IncludeZoneStocks";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_includeZoneStocks, allocator);
+    }
+
+    if (m_deviceTypeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "DeviceType";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_deviceType.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -89,6 +98,22 @@ void DescribeInstanceSpecsRequest::SetIncludeZoneStocks(const bool& _includeZone
 bool DescribeInstanceSpecsRequest::IncludeZoneStocksHasBeenSet() const
 {
     return m_includeZoneStocksHasBeenSet;
+}
+
+string DescribeInstanceSpecsRequest::GetDeviceType() const
+{
+    return m_deviceType;
+}
+
+void DescribeInstanceSpecsRequest::SetDeviceType(const string& _deviceType)
+{
+    m_deviceType = _deviceType;
+    m_deviceTypeHasBeenSet = true;
+}
+
+bool DescribeInstanceSpecsRequest::DeviceTypeHasBeenSet() const
+{
+    return m_deviceTypeHasBeenSet;
 }
 
 

@@ -25,10 +25,13 @@ using namespace std;
 RollbackToNewClusterRequest::RollbackToNewClusterRequest() :
     m_zoneHasBeenSet(false),
     m_originalClusterIdHasBeenSet(false),
-    m_clusterNameHasBeenSet(false),
     m_uniqVpcIdHasBeenSet(false),
     m_uniqSubnetIdHasBeenSet(false),
+    m_clusterNameHasBeenSet(false),
+    m_rollbackIdHasBeenSet(false),
+    m_expectTimeHasBeenSet(false),
     m_autoVoucherHasBeenSet(false),
+    m_resourceTagsHasBeenSet(false),
     m_dbModeHasBeenSet(false),
     m_minCpuHasBeenSet(false),
     m_maxCpuHasBeenSet(false),
@@ -37,12 +40,10 @@ RollbackToNewClusterRequest::RollbackToNewClusterRequest() :
     m_securityGroupIdsHasBeenSet(false),
     m_alarmPolicyIdsHasBeenSet(false),
     m_clusterParamsHasBeenSet(false),
-    m_dealModeHasBeenSet(false),
     m_paramTemplateIdHasBeenSet(false),
-    m_resourceTagsHasBeenSet(false),
     m_instanceInitInfosHasBeenSet(false),
-    m_rollbackIdHasBeenSet(false),
-    m_expectTimeHasBeenSet(false)
+    m_dealModeHasBeenSet(false),
+    m_payModeHasBeenSet(false)
 {
 }
 
@@ -69,14 +70,6 @@ string RollbackToNewClusterRequest::ToJsonString() const
         d.AddMember(iKey, rapidjson::Value(m_originalClusterId.c_str(), allocator).Move(), allocator);
     }
 
-    if (m_clusterNameHasBeenSet)
-    {
-        rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "ClusterName";
-        iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, rapidjson::Value(m_clusterName.c_str(), allocator).Move(), allocator);
-    }
-
     if (m_uniqVpcIdHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
@@ -93,12 +86,51 @@ string RollbackToNewClusterRequest::ToJsonString() const
         d.AddMember(iKey, rapidjson::Value(m_uniqSubnetId.c_str(), allocator).Move(), allocator);
     }
 
+    if (m_clusterNameHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ClusterName";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_clusterName.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_rollbackIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "RollbackId";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_rollbackId, allocator);
+    }
+
+    if (m_expectTimeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ExpectTime";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_expectTime.c_str(), allocator).Move(), allocator);
+    }
+
     if (m_autoVoucherHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
         string key = "AutoVoucher";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_autoVoucher, allocator);
+    }
+
+    if (m_resourceTagsHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ResourceTags";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_resourceTags.begin(); itr != m_resourceTags.end(); ++itr, ++i)
+        {
+            d[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(d[key.c_str()][i], allocator);
+        }
     }
 
     if (m_dbModeHasBeenSet)
@@ -182,35 +214,12 @@ string RollbackToNewClusterRequest::ToJsonString() const
         }
     }
 
-    if (m_dealModeHasBeenSet)
-    {
-        rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "DealMode";
-        iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, m_dealMode, allocator);
-    }
-
     if (m_paramTemplateIdHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
         string key = "ParamTemplateId";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_paramTemplateId, allocator);
-    }
-
-    if (m_resourceTagsHasBeenSet)
-    {
-        rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "ResourceTags";
-        iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
-
-        int i=0;
-        for (auto itr = m_resourceTags.begin(); itr != m_resourceTags.end(); ++itr, ++i)
-        {
-            d[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
-            (*itr).ToJsonObject(d[key.c_str()][i], allocator);
-        }
     }
 
     if (m_instanceInitInfosHasBeenSet)
@@ -228,20 +237,20 @@ string RollbackToNewClusterRequest::ToJsonString() const
         }
     }
 
-    if (m_rollbackIdHasBeenSet)
+    if (m_dealModeHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "RollbackId";
+        string key = "DealMode";
         iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, m_rollbackId, allocator);
+        d.AddMember(iKey, m_dealMode, allocator);
     }
 
-    if (m_expectTimeHasBeenSet)
+    if (m_payModeHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "ExpectTime";
+        string key = "PayMode";
         iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, rapidjson::Value(m_expectTime.c_str(), allocator).Move(), allocator);
+        d.AddMember(iKey, m_payMode, allocator);
     }
 
 
@@ -284,22 +293,6 @@ bool RollbackToNewClusterRequest::OriginalClusterIdHasBeenSet() const
     return m_originalClusterIdHasBeenSet;
 }
 
-string RollbackToNewClusterRequest::GetClusterName() const
-{
-    return m_clusterName;
-}
-
-void RollbackToNewClusterRequest::SetClusterName(const string& _clusterName)
-{
-    m_clusterName = _clusterName;
-    m_clusterNameHasBeenSet = true;
-}
-
-bool RollbackToNewClusterRequest::ClusterNameHasBeenSet() const
-{
-    return m_clusterNameHasBeenSet;
-}
-
 string RollbackToNewClusterRequest::GetUniqVpcId() const
 {
     return m_uniqVpcId;
@@ -332,6 +325,54 @@ bool RollbackToNewClusterRequest::UniqSubnetIdHasBeenSet() const
     return m_uniqSubnetIdHasBeenSet;
 }
 
+string RollbackToNewClusterRequest::GetClusterName() const
+{
+    return m_clusterName;
+}
+
+void RollbackToNewClusterRequest::SetClusterName(const string& _clusterName)
+{
+    m_clusterName = _clusterName;
+    m_clusterNameHasBeenSet = true;
+}
+
+bool RollbackToNewClusterRequest::ClusterNameHasBeenSet() const
+{
+    return m_clusterNameHasBeenSet;
+}
+
+uint64_t RollbackToNewClusterRequest::GetRollbackId() const
+{
+    return m_rollbackId;
+}
+
+void RollbackToNewClusterRequest::SetRollbackId(const uint64_t& _rollbackId)
+{
+    m_rollbackId = _rollbackId;
+    m_rollbackIdHasBeenSet = true;
+}
+
+bool RollbackToNewClusterRequest::RollbackIdHasBeenSet() const
+{
+    return m_rollbackIdHasBeenSet;
+}
+
+string RollbackToNewClusterRequest::GetExpectTime() const
+{
+    return m_expectTime;
+}
+
+void RollbackToNewClusterRequest::SetExpectTime(const string& _expectTime)
+{
+    m_expectTime = _expectTime;
+    m_expectTimeHasBeenSet = true;
+}
+
+bool RollbackToNewClusterRequest::ExpectTimeHasBeenSet() const
+{
+    return m_expectTimeHasBeenSet;
+}
+
 int64_t RollbackToNewClusterRequest::GetAutoVoucher() const
 {
     return m_autoVoucher;
@@ -346,6 +387,22 @@ void RollbackToNewClusterRequest::SetAutoVoucher(const int64_t& _autoVoucher)
 bool RollbackToNewClusterRequest::AutoVoucherHasBeenSet() const
 {
     return m_autoVoucherHasBeenSet;
+}
+
+vector<Tag> RollbackToNewClusterRequest::GetResourceTags() const
+{
+    return m_resourceTags;
+}
+
+void RollbackToNewClusterRequest::SetResourceTags(const vector<Tag>& _resourceTags)
+{
+    m_resourceTags = _resourceTags;
+    m_resourceTagsHasBeenSet = true;
+}
+
+bool RollbackToNewClusterRequest::ResourceTagsHasBeenSet() const
+{
+    return m_resourceTagsHasBeenSet;
 }
 
 string RollbackToNewClusterRequest::GetDbMode() const
@@ -476,22 +533,6 @@ bool RollbackToNewClusterRequest::ClusterParamsHasBeenSet() const
     return m_clusterParamsHasBeenSet;
 }
 
-int64_t RollbackToNewClusterRequest::GetDealMode() const
-{
-    return m_dealMode;
-}
-
-void RollbackToNewClusterRequest::SetDealMode(const int64_t& _dealMode)
-{
-    m_dealMode = _dealMode;
-    m_dealModeHasBeenSet = true;
-}
-
-bool RollbackToNewClusterRequest::DealModeHasBeenSet() const
-{
-    return m_dealModeHasBeenSet;
-}
-
 int64_t RollbackToNewClusterRequest::GetParamTemplateId() const
 {
     return m_paramTemplateId;
@@ -506,22 +547,6 @@ void RollbackToNewClusterRequest::SetParamTemplateId(const int64_t& _paramTempla
 bool RollbackToNewClusterRequest::ParamTemplateIdHasBeenSet() const
 {
     return m_paramTemplateIdHasBeenSet;
-}
-
-vector<Tag> RollbackToNewClusterRequest::GetResourceTags() const
-{
-    return m_resourceTags;
-}
-
-void RollbackToNewClusterRequest::SetResourceTags(const vector<Tag>& _resourceTags)
-{
-    m_resourceTags = _resourceTags;
-    m_resourceTagsHasBeenSet = true;
-}
-
-bool RollbackToNewClusterRequest::ResourceTagsHasBeenSet() const
-{
-    return m_resourceTagsHasBeenSet;
 }
 
 vector<InstanceInitInfo> RollbackToNewClusterRequest::GetInstanceInitInfos() const
@@ -540,36 +565,36 @@ bool RollbackToNewClusterRequest::InstanceInitInfosHasBeenSet() const
     return m_instanceInitInfosHasBeenSet;
 }
 
-uint64_t RollbackToNewClusterRequest::GetRollbackId() const
+int64_t RollbackToNewClusterRequest::GetDealMode() const
 {
-    return m_rollbackId;
+    return m_dealMode;
 }
 
-void RollbackToNewClusterRequest::SetRollbackId(const uint64_t& _rollbackId)
+void RollbackToNewClusterRequest::SetDealMode(const int64_t& _dealMode)
 {
-    m_rollbackId = _rollbackId;
-    m_rollbackIdHasBeenSet = true;
+    m_dealMode = _dealMode;
+    m_dealModeHasBeenSet = true;
 }
 
-bool RollbackToNewClusterRequest::RollbackIdHasBeenSet() const
+bool RollbackToNewClusterRequest::DealModeHasBeenSet() const
 {
-    return m_rollbackIdHasBeenSet;
+    return m_dealModeHasBeenSet;
 }
 
-string RollbackToNewClusterRequest::GetExpectTime() const
+int64_t RollbackToNewClusterRequest::GetPayMode() const
 {
-    return m_expectTime;
+    return m_payMode;
 }
 
-void RollbackToNewClusterRequest::SetExpectTime(const string& _expectTime)
+void RollbackToNewClusterRequest::SetPayMode(const int64_t& _payMode)
 {
-    m_expectTime = _expectTime;
-    m_expectTimeHasBeenSet = true;
+    m_payMode = _payMode;
+    m_payModeHasBeenSet = true;
 }
 
-bool RollbackToNewClusterRequest::ExpectTimeHasBeenSet() const
+bool RollbackToNewClusterRequest::PayModeHasBeenSet() const
 {
-    return m_expectTimeHasBeenSet;
+    return m_payModeHasBeenSet;
 }
 
 

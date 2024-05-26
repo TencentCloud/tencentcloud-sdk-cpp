@@ -53,6 +53,8 @@
 #include <tencentcloud/dbbrain/v20210527/model/DeleteAuditLogFileResponse.h>
 #include <tencentcloud/dbbrain/v20210527/model/DeleteDBDiagReportTasksRequest.h>
 #include <tencentcloud/dbbrain/v20210527/model/DeleteDBDiagReportTasksResponse.h>
+#include <tencentcloud/dbbrain/v20210527/model/DeleteRedisBigKeyAnalysisTasksRequest.h>
+#include <tencentcloud/dbbrain/v20210527/model/DeleteRedisBigKeyAnalysisTasksResponse.h>
 #include <tencentcloud/dbbrain/v20210527/model/DeleteSecurityAuditLogExportTasksRequest.h>
 #include <tencentcloud/dbbrain/v20210527/model/DeleteSecurityAuditLogExportTasksResponse.h>
 #include <tencentcloud/dbbrain/v20210527/model/DeleteSqlFiltersRequest.h>
@@ -206,6 +208,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DeleteDBDiagReportTasksResponse> DeleteDBDiagReportTasksOutcome;
                 typedef std::future<DeleteDBDiagReportTasksOutcome> DeleteDBDiagReportTasksOutcomeCallable;
                 typedef std::function<void(const DbbrainClient*, const Model::DeleteDBDiagReportTasksRequest&, DeleteDBDiagReportTasksOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteDBDiagReportTasksAsyncHandler;
+                typedef Outcome<Core::Error, Model::DeleteRedisBigKeyAnalysisTasksResponse> DeleteRedisBigKeyAnalysisTasksOutcome;
+                typedef std::future<DeleteRedisBigKeyAnalysisTasksOutcome> DeleteRedisBigKeyAnalysisTasksOutcomeCallable;
+                typedef std::function<void(const DbbrainClient*, const Model::DeleteRedisBigKeyAnalysisTasksRequest&, DeleteRedisBigKeyAnalysisTasksOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteRedisBigKeyAnalysisTasksAsyncHandler;
                 typedef Outcome<Core::Error, Model::DeleteSecurityAuditLogExportTasksResponse> DeleteSecurityAuditLogExportTasksOutcome;
                 typedef std::future<DeleteSecurityAuditLogExportTasksOutcome> DeleteSecurityAuditLogExportTasksOutcomeCallable;
                 typedef std::function<void(const DbbrainClient*, const Model::DeleteSecurityAuditLogExportTasksRequest&, DeleteSecurityAuditLogExportTasksOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteSecurityAuditLogExportTasksAsyncHandler;
@@ -484,6 +489,15 @@ namespace TencentCloud
                 DeleteDBDiagReportTasksOutcome DeleteDBDiagReportTasks(const Model::DeleteDBDiagReportTasksRequest &request);
                 void DeleteDBDiagReportTasksAsync(const Model::DeleteDBDiagReportTasksRequest& request, const DeleteDBDiagReportTasksAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DeleteDBDiagReportTasksOutcomeCallable DeleteDBDiagReportTasksCallable(const Model::DeleteDBDiagReportTasksRequest& request);
+
+                /**
+                 *删除Redis实例的大key分析任务。
+                 * @param req DeleteRedisBigKeyAnalysisTasksRequest
+                 * @return DeleteRedisBigKeyAnalysisTasksOutcome
+                 */
+                DeleteRedisBigKeyAnalysisTasksOutcome DeleteRedisBigKeyAnalysisTasks(const Model::DeleteRedisBigKeyAnalysisTasksRequest &request);
+                void DeleteRedisBigKeyAnalysisTasksAsync(const Model::DeleteRedisBigKeyAnalysisTasksRequest& request, const DeleteRedisBigKeyAnalysisTasksAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DeleteRedisBigKeyAnalysisTasksOutcomeCallable DeleteRedisBigKeyAnalysisTasksCallable(const Model::DeleteRedisBigKeyAnalysisTasksRequest& request);
 
                 /**
                  *删除安全审计日志导出任务。

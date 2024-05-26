@@ -33,7 +33,9 @@ ClusterInstanceDetail::ClusterInstanceDetail() :
     m_maintainStartTimeHasBeenSet(false),
     m_maintainDurationHasBeenSet(false),
     m_maintainWeekDaysHasBeenSet(false),
-    m_serverlessStatusHasBeenSet(false)
+    m_serverlessStatusHasBeenSet(false),
+    m_instanceTasksHasBeenSet(false),
+    m_instanceDeviceTypeHasBeenSet(false)
 {
 }
 
@@ -175,6 +177,36 @@ CoreInternalOutcome ClusterInstanceDetail::Deserialize(const rapidjson::Value &v
         m_serverlessStatusHasBeenSet = true;
     }
 
+    if (value.HasMember("InstanceTasks") && !value["InstanceTasks"].IsNull())
+    {
+        if (!value["InstanceTasks"].IsArray())
+            return CoreInternalOutcome(Core::Error("response `ClusterInstanceDetail.InstanceTasks` is not array type"));
+
+        const rapidjson::Value &tmpValue = value["InstanceTasks"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            ObjectTask item;
+            CoreInternalOutcome outcome = item.Deserialize(*itr);
+            if (!outcome.IsSuccess())
+            {
+                outcome.GetError().SetRequestId(requestId);
+                return outcome;
+            }
+            m_instanceTasks.push_back(item);
+        }
+        m_instanceTasksHasBeenSet = true;
+    }
+
+    if (value.HasMember("InstanceDeviceType") && !value["InstanceDeviceType"].IsNull())
+    {
+        if (!value["InstanceDeviceType"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `ClusterInstanceDetail.InstanceDeviceType` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_instanceDeviceType = string(value["InstanceDeviceType"].GetString());
+        m_instanceDeviceTypeHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -289,6 +321,29 @@ void ClusterInstanceDetail::ToJsonObject(rapidjson::Value &value, rapidjson::Doc
         string key = "ServerlessStatus";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_serverlessStatus.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_instanceTasksHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "InstanceTasks";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_instanceTasks.begin(); itr != m_instanceTasks.end(); ++itr, ++i)
+        {
+            value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(value[key.c_str()][i], allocator);
+        }
+    }
+
+    if (m_instanceDeviceTypeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "InstanceDeviceType";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_instanceDeviceType.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -500,5 +555,37 @@ void ClusterInstanceDetail::SetServerlessStatus(const string& _serverlessStatus)
 bool ClusterInstanceDetail::ServerlessStatusHasBeenSet() const
 {
     return m_serverlessStatusHasBeenSet;
+}
+
+vector<ObjectTask> ClusterInstanceDetail::GetInstanceTasks() const
+{
+    return m_instanceTasks;
+}
+
+void ClusterInstanceDetail::SetInstanceTasks(const vector<ObjectTask>& _instanceTasks)
+{
+    m_instanceTasks = _instanceTasks;
+    m_instanceTasksHasBeenSet = true;
+}
+
+bool ClusterInstanceDetail::InstanceTasksHasBeenSet() const
+{
+    return m_instanceTasksHasBeenSet;
+}
+
+string ClusterInstanceDetail::GetInstanceDeviceType() const
+{
+    return m_instanceDeviceType;
+}
+
+void ClusterInstanceDetail::SetInstanceDeviceType(const string& _instanceDeviceType)
+{
+    m_instanceDeviceType = _instanceDeviceType;
+    m_instanceDeviceTypeHasBeenSet = true;
+}
+
+bool ClusterInstanceDetail::InstanceDeviceTypeHasBeenSet() const
+{
+    return m_instanceDeviceTypeHasBeenSet;
 }
 

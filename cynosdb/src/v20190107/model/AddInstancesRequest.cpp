@@ -27,6 +27,7 @@ AddInstancesRequest::AddInstancesRequest() :
     m_cpuHasBeenSet(false),
     m_memoryHasBeenSet(false),
     m_readOnlyCountHasBeenSet(false),
+    m_deviceTypeHasBeenSet(false),
     m_instanceGrpIdHasBeenSet(false),
     m_vpcIdHasBeenSet(false),
     m_subnetIdHasBeenSet(false),
@@ -80,6 +81,14 @@ string AddInstancesRequest::ToJsonString() const
         string key = "ReadOnlyCount";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_readOnlyCount, allocator);
+    }
+
+    if (m_deviceTypeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "DeviceType";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_deviceType.c_str(), allocator).Move(), allocator);
     }
 
     if (m_instanceGrpIdHasBeenSet)
@@ -269,6 +278,22 @@ void AddInstancesRequest::SetReadOnlyCount(const int64_t& _readOnlyCount)
 bool AddInstancesRequest::ReadOnlyCountHasBeenSet() const
 {
     return m_readOnlyCountHasBeenSet;
+}
+
+string AddInstancesRequest::GetDeviceType() const
+{
+    return m_deviceType;
+}
+
+void AddInstancesRequest::SetDeviceType(const string& _deviceType)
+{
+    m_deviceType = _deviceType;
+    m_deviceTypeHasBeenSet = true;
+}
+
+bool AddInstancesRequest::DeviceTypeHasBeenSet() const
+{
+    return m_deviceTypeHasBeenSet;
 }
 
 string AddInstancesRequest::GetInstanceGrpId() const

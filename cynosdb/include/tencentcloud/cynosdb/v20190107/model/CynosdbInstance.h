@@ -1237,6 +1237,31 @@ pause
                      */
                     bool InstanceAbilityHasBeenSet() const;
 
+                    /**
+                     * 获取实例机器类型
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return DeviceType 实例机器类型
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::string GetDeviceType() const;
+
+                    /**
+                     * 设置实例机器类型
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _deviceType 实例机器类型
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetDeviceType(const std::string& _deviceType);
+
+                    /**
+                     * 判断参数 DeviceType 是否已赋值
+                     * @return DeviceType 是否已赋值
+                     * 
+                     */
+                    bool DeviceTypeHasBeenSet() const;
+
                 private:
 
                     /**
@@ -1575,6 +1600,13 @@ pause
                      */
                     InstanceAbility m_instanceAbility;
                     bool m_instanceAbilityHasBeenSet;
+
+                    /**
+                     * 实例机器类型
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_deviceType;
+                    bool m_deviceTypeHasBeenSet;
 
                 };
             }

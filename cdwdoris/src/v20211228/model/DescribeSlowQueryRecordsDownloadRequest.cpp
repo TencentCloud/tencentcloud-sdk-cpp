@@ -31,7 +31,8 @@ DescribeSlowQueryRecordsDownloadRequest::DescribeSlowQueryRecordsDownloadRequest
     m_sqlHasBeenSet(false),
     m_readRowsHasBeenSet(false),
     m_resultBytesHasBeenSet(false),
-    m_memoryUsageHasBeenSet(false)
+    m_memoryUsageHasBeenSet(false),
+    m_isQueryHasBeenSet(false)
 {
 }
 
@@ -112,6 +113,14 @@ string DescribeSlowQueryRecordsDownloadRequest::ToJsonString() const
         string key = "MemoryUsage";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_memoryUsage.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_isQueryHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "IsQuery";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_isQuery, allocator);
     }
 
 
@@ -264,6 +273,22 @@ void DescribeSlowQueryRecordsDownloadRequest::SetMemoryUsage(const string& _memo
 bool DescribeSlowQueryRecordsDownloadRequest::MemoryUsageHasBeenSet() const
 {
     return m_memoryUsageHasBeenSet;
+}
+
+int64_t DescribeSlowQueryRecordsDownloadRequest::GetIsQuery() const
+{
+    return m_isQuery;
+}
+
+void DescribeSlowQueryRecordsDownloadRequest::SetIsQuery(const int64_t& _isQuery)
+{
+    m_isQuery = _isQuery;
+    m_isQueryHasBeenSet = true;
+}
+
+bool DescribeSlowQueryRecordsDownloadRequest::IsQueryHasBeenSet() const
+{
+    return m_isQueryHasBeenSet;
 }
 
 

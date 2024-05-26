@@ -121,6 +121,31 @@ namespace TencentCloud
                      */
                     bool PathHasBeenSet() const;
 
+                    /**
+                     * 获取GooseFS命名空间
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return NameSpace GooseFS命名空间
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::string GetNameSpace() const;
+
+                    /**
+                     * 设置GooseFS命名空间
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _nameSpace GooseFS命名空间
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetNameSpace(const std::string& _nameSpace);
+
+                    /**
+                     * 判断参数 NameSpace 是否已赋值
+                     * @return NameSpace 是否已赋值
+                     * 
+                     */
+                    bool NameSpaceHasBeenSet() const;
+
                 private:
 
                     /**
@@ -143,6 +168,13 @@ namespace TencentCloud
                      */
                     std::string m_path;
                     bool m_pathHasBeenSet;
+
+                    /**
+                     * GooseFS命名空间
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_nameSpace;
+                    bool m_nameSpaceHasBeenSet;
 
                 };
             }

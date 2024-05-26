@@ -65,6 +65,7 @@ set(dlc_public_header_model
   include/tencentcloud/dlc/v20210125/model/HiveInfo.h
   include/tencentcloud/dlc/v20210125/model/DescribeNotebookSessionStatementSqlResultRequest.h
   include/tencentcloud/dlc/v20210125/model/CreateTableResponse.h
+  include/tencentcloud/dlc/v20210125/model/ListTaskJobLogNameRequest.h
   include/tencentcloud/dlc/v20210125/model/DescribeTaskResultRequest.h
   include/tencentcloud/dlc/v20210125/model/UpdateUserDataEngineConfigRequest.h
   include/tencentcloud/dlc/v20210125/model/RollbackDataEngineImageRequest.h
@@ -146,6 +147,7 @@ set(dlc_public_header_model
   include/tencentcloud/dlc/v20210125/model/TextFile.h
   include/tencentcloud/dlc/v20210125/model/WorkGroups.h
   include/tencentcloud/dlc/v20210125/model/CreateNotebookSessionStatementResponse.h
+  include/tencentcloud/dlc/v20210125/model/ListTaskJobLogNameResponse.h
   include/tencentcloud/dlc/v20210125/model/DescribeLakeFsTaskResultRequest.h
   include/tencentcloud/dlc/v20210125/model/AlterDMSTableRequest.h
   include/tencentcloud/dlc/v20210125/model/DescribeDMSPartitionsResponse.h
@@ -419,6 +421,7 @@ set(dlc_src
   src/v20210125/model/HiveInfo.cpp
   src/v20210125/model/DescribeNotebookSessionStatementSqlResultRequest.cpp
   src/v20210125/model/CreateTableResponse.cpp
+  src/v20210125/model/ListTaskJobLogNameRequest.cpp
   src/v20210125/model/DescribeTaskResultRequest.cpp
   src/v20210125/model/UpdateUserDataEngineConfigRequest.cpp
   src/v20210125/model/RollbackDataEngineImageRequest.cpp
@@ -500,6 +503,7 @@ set(dlc_src
   src/v20210125/model/TextFile.cpp
   src/v20210125/model/WorkGroups.cpp
   src/v20210125/model/CreateNotebookSessionStatementResponse.cpp
+  src/v20210125/model/ListTaskJobLogNameResponse.cpp
   src/v20210125/model/DescribeLakeFsTaskResultRequest.cpp
   src/v20210125/model/AlterDMSTableRequest.cpp
   src/v20210125/model/DescribeDMSPartitionsResponse.cpp

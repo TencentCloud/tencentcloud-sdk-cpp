@@ -37,6 +37,8 @@
 #include <tencentcloud/dasb/v20191018/model/CreateAclResponse.h>
 #include <tencentcloud/dasb/v20191018/model/CreateAssetSyncJobRequest.h>
 #include <tencentcloud/dasb/v20191018/model/CreateAssetSyncJobResponse.h>
+#include <tencentcloud/dasb/v20191018/model/CreateChangePwdTaskRequest.h>
+#include <tencentcloud/dasb/v20191018/model/CreateChangePwdTaskResponse.h>
 #include <tencentcloud/dasb/v20191018/model/CreateCmdTemplateRequest.h>
 #include <tencentcloud/dasb/v20191018/model/CreateCmdTemplateResponse.h>
 #include <tencentcloud/dasb/v20191018/model/CreateDeviceAccountRequest.h>
@@ -51,6 +53,8 @@
 #include <tencentcloud/dasb/v20191018/model/CreateUserGroupResponse.h>
 #include <tencentcloud/dasb/v20191018/model/DeleteAclsRequest.h>
 #include <tencentcloud/dasb/v20191018/model/DeleteAclsResponse.h>
+#include <tencentcloud/dasb/v20191018/model/DeleteChangePwdTaskRequest.h>
+#include <tencentcloud/dasb/v20191018/model/DeleteChangePwdTaskResponse.h>
 #include <tencentcloud/dasb/v20191018/model/DeleteCmdTemplatesRequest.h>
 #include <tencentcloud/dasb/v20191018/model/DeleteCmdTemplatesResponse.h>
 #include <tencentcloud/dasb/v20191018/model/DeleteDeviceAccountsRequest.h>
@@ -73,6 +77,10 @@
 #include <tencentcloud/dasb/v20191018/model/DescribeAclsResponse.h>
 #include <tencentcloud/dasb/v20191018/model/DescribeAssetSyncStatusRequest.h>
 #include <tencentcloud/dasb/v20191018/model/DescribeAssetSyncStatusResponse.h>
+#include <tencentcloud/dasb/v20191018/model/DescribeChangePwdTaskRequest.h>
+#include <tencentcloud/dasb/v20191018/model/DescribeChangePwdTaskResponse.h>
+#include <tencentcloud/dasb/v20191018/model/DescribeChangePwdTaskDetailRequest.h>
+#include <tencentcloud/dasb/v20191018/model/DescribeChangePwdTaskDetailResponse.h>
 #include <tencentcloud/dasb/v20191018/model/DescribeCmdTemplatesRequest.h>
 #include <tencentcloud/dasb/v20191018/model/DescribeCmdTemplatesResponse.h>
 #include <tencentcloud/dasb/v20191018/model/DescribeDasbImageIdsRequest.h>
@@ -101,6 +109,8 @@
 #include <tencentcloud/dasb/v20191018/model/ImportExternalDeviceResponse.h>
 #include <tencentcloud/dasb/v20191018/model/ModifyAclRequest.h>
 #include <tencentcloud/dasb/v20191018/model/ModifyAclResponse.h>
+#include <tencentcloud/dasb/v20191018/model/ModifyChangePwdTaskRequest.h>
+#include <tencentcloud/dasb/v20191018/model/ModifyChangePwdTaskResponse.h>
 #include <tencentcloud/dasb/v20191018/model/ModifyCmdTemplateRequest.h>
 #include <tencentcloud/dasb/v20191018/model/ModifyCmdTemplateResponse.h>
 #include <tencentcloud/dasb/v20191018/model/ModifyDeviceRequest.h>
@@ -121,6 +131,8 @@
 #include <tencentcloud/dasb/v20191018/model/ResetDeviceAccountPrivateKeyResponse.h>
 #include <tencentcloud/dasb/v20191018/model/ResetUserRequest.h>
 #include <tencentcloud/dasb/v20191018/model/ResetUserResponse.h>
+#include <tencentcloud/dasb/v20191018/model/RunChangePwdTaskRequest.h>
+#include <tencentcloud/dasb/v20191018/model/RunChangePwdTaskResponse.h>
 #include <tencentcloud/dasb/v20191018/model/SearchAuditLogRequest.h>
 #include <tencentcloud/dasb/v20191018/model/SearchAuditLogResponse.h>
 #include <tencentcloud/dasb/v20191018/model/SearchCommandRequest.h>
@@ -170,6 +182,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::CreateAssetSyncJobResponse> CreateAssetSyncJobOutcome;
                 typedef std::future<CreateAssetSyncJobOutcome> CreateAssetSyncJobOutcomeCallable;
                 typedef std::function<void(const DasbClient*, const Model::CreateAssetSyncJobRequest&, CreateAssetSyncJobOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateAssetSyncJobAsyncHandler;
+                typedef Outcome<Core::Error, Model::CreateChangePwdTaskResponse> CreateChangePwdTaskOutcome;
+                typedef std::future<CreateChangePwdTaskOutcome> CreateChangePwdTaskOutcomeCallable;
+                typedef std::function<void(const DasbClient*, const Model::CreateChangePwdTaskRequest&, CreateChangePwdTaskOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateChangePwdTaskAsyncHandler;
                 typedef Outcome<Core::Error, Model::CreateCmdTemplateResponse> CreateCmdTemplateOutcome;
                 typedef std::future<CreateCmdTemplateOutcome> CreateCmdTemplateOutcomeCallable;
                 typedef std::function<void(const DasbClient*, const Model::CreateCmdTemplateRequest&, CreateCmdTemplateOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateCmdTemplateAsyncHandler;
@@ -191,6 +206,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DeleteAclsResponse> DeleteAclsOutcome;
                 typedef std::future<DeleteAclsOutcome> DeleteAclsOutcomeCallable;
                 typedef std::function<void(const DasbClient*, const Model::DeleteAclsRequest&, DeleteAclsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteAclsAsyncHandler;
+                typedef Outcome<Core::Error, Model::DeleteChangePwdTaskResponse> DeleteChangePwdTaskOutcome;
+                typedef std::future<DeleteChangePwdTaskOutcome> DeleteChangePwdTaskOutcomeCallable;
+                typedef std::function<void(const DasbClient*, const Model::DeleteChangePwdTaskRequest&, DeleteChangePwdTaskOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteChangePwdTaskAsyncHandler;
                 typedef Outcome<Core::Error, Model::DeleteCmdTemplatesResponse> DeleteCmdTemplatesOutcome;
                 typedef std::future<DeleteCmdTemplatesOutcome> DeleteCmdTemplatesOutcomeCallable;
                 typedef std::function<void(const DasbClient*, const Model::DeleteCmdTemplatesRequest&, DeleteCmdTemplatesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteCmdTemplatesAsyncHandler;
@@ -224,6 +242,12 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeAssetSyncStatusResponse> DescribeAssetSyncStatusOutcome;
                 typedef std::future<DescribeAssetSyncStatusOutcome> DescribeAssetSyncStatusOutcomeCallable;
                 typedef std::function<void(const DasbClient*, const Model::DescribeAssetSyncStatusRequest&, DescribeAssetSyncStatusOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeAssetSyncStatusAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeChangePwdTaskResponse> DescribeChangePwdTaskOutcome;
+                typedef std::future<DescribeChangePwdTaskOutcome> DescribeChangePwdTaskOutcomeCallable;
+                typedef std::function<void(const DasbClient*, const Model::DescribeChangePwdTaskRequest&, DescribeChangePwdTaskOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeChangePwdTaskAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeChangePwdTaskDetailResponse> DescribeChangePwdTaskDetailOutcome;
+                typedef std::future<DescribeChangePwdTaskDetailOutcome> DescribeChangePwdTaskDetailOutcomeCallable;
+                typedef std::function<void(const DasbClient*, const Model::DescribeChangePwdTaskDetailRequest&, DescribeChangePwdTaskDetailOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeChangePwdTaskDetailAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeCmdTemplatesResponse> DescribeCmdTemplatesOutcome;
                 typedef std::future<DescribeCmdTemplatesOutcome> DescribeCmdTemplatesOutcomeCallable;
                 typedef std::function<void(const DasbClient*, const Model::DescribeCmdTemplatesRequest&, DescribeCmdTemplatesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeCmdTemplatesAsyncHandler;
@@ -266,6 +290,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::ModifyAclResponse> ModifyAclOutcome;
                 typedef std::future<ModifyAclOutcome> ModifyAclOutcomeCallable;
                 typedef std::function<void(const DasbClient*, const Model::ModifyAclRequest&, ModifyAclOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyAclAsyncHandler;
+                typedef Outcome<Core::Error, Model::ModifyChangePwdTaskResponse> ModifyChangePwdTaskOutcome;
+                typedef std::future<ModifyChangePwdTaskOutcome> ModifyChangePwdTaskOutcomeCallable;
+                typedef std::function<void(const DasbClient*, const Model::ModifyChangePwdTaskRequest&, ModifyChangePwdTaskOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyChangePwdTaskAsyncHandler;
                 typedef Outcome<Core::Error, Model::ModifyCmdTemplateResponse> ModifyCmdTemplateOutcome;
                 typedef std::future<ModifyCmdTemplateOutcome> ModifyCmdTemplateOutcomeCallable;
                 typedef std::function<void(const DasbClient*, const Model::ModifyCmdTemplateRequest&, ModifyCmdTemplateOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyCmdTemplateAsyncHandler;
@@ -296,6 +323,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::ResetUserResponse> ResetUserOutcome;
                 typedef std::future<ResetUserOutcome> ResetUserOutcomeCallable;
                 typedef std::function<void(const DasbClient*, const Model::ResetUserRequest&, ResetUserOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ResetUserAsyncHandler;
+                typedef Outcome<Core::Error, Model::RunChangePwdTaskResponse> RunChangePwdTaskOutcome;
+                typedef std::future<RunChangePwdTaskOutcome> RunChangePwdTaskOutcomeCallable;
+                typedef std::function<void(const DasbClient*, const Model::RunChangePwdTaskRequest&, RunChangePwdTaskOutcome, const std::shared_ptr<const AsyncCallerContext>&)> RunChangePwdTaskAsyncHandler;
                 typedef Outcome<Core::Error, Model::SearchAuditLogResponse> SearchAuditLogOutcome;
                 typedef std::future<SearchAuditLogOutcome> SearchAuditLogOutcomeCallable;
                 typedef std::function<void(const DasbClient*, const Model::SearchAuditLogRequest&, SearchAuditLogOutcome, const std::shared_ptr<const AsyncCallerContext>&)> SearchAuditLogAsyncHandler;
@@ -384,6 +414,15 @@ namespace TencentCloud
                 CreateAssetSyncJobOutcomeCallable CreateAssetSyncJobCallable(const Model::CreateAssetSyncJobRequest& request);
 
                 /**
+                 *创建修改密码任务
+                 * @param req CreateChangePwdTaskRequest
+                 * @return CreateChangePwdTaskOutcome
+                 */
+                CreateChangePwdTaskOutcome CreateChangePwdTask(const Model::CreateChangePwdTaskRequest &request);
+                void CreateChangePwdTaskAsync(const Model::CreateChangePwdTaskRequest& request, const CreateChangePwdTaskAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                CreateChangePwdTaskOutcomeCallable CreateChangePwdTaskCallable(const Model::CreateChangePwdTaskRequest& request);
+
+                /**
                  *新建高危命令模板
                  * @param req CreateCmdTemplateRequest
                  * @return CreateCmdTemplateOutcome
@@ -445,6 +484,15 @@ namespace TencentCloud
                 DeleteAclsOutcome DeleteAcls(const Model::DeleteAclsRequest &request);
                 void DeleteAclsAsync(const Model::DeleteAclsRequest& request, const DeleteAclsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DeleteAclsOutcomeCallable DeleteAclsCallable(const Model::DeleteAclsRequest& request);
+
+                /**
+                 *删除改密任务
+                 * @param req DeleteChangePwdTaskRequest
+                 * @return DeleteChangePwdTaskOutcome
+                 */
+                DeleteChangePwdTaskOutcome DeleteChangePwdTask(const Model::DeleteChangePwdTaskRequest &request);
+                void DeleteChangePwdTaskAsync(const Model::DeleteChangePwdTaskRequest& request, const DeleteChangePwdTaskAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DeleteChangePwdTaskOutcomeCallable DeleteChangePwdTaskCallable(const Model::DeleteChangePwdTaskRequest& request);
 
                 /**
                  *删除高危命令模板
@@ -544,6 +592,24 @@ namespace TencentCloud
                 DescribeAssetSyncStatusOutcome DescribeAssetSyncStatus(const Model::DescribeAssetSyncStatusRequest &request);
                 void DescribeAssetSyncStatusAsync(const Model::DescribeAssetSyncStatusRequest& request, const DescribeAssetSyncStatusAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DescribeAssetSyncStatusOutcomeCallable DescribeAssetSyncStatusCallable(const Model::DescribeAssetSyncStatusRequest& request);
+
+                /**
+                 *查询改密任务列表
+                 * @param req DescribeChangePwdTaskRequest
+                 * @return DescribeChangePwdTaskOutcome
+                 */
+                DescribeChangePwdTaskOutcome DescribeChangePwdTask(const Model::DescribeChangePwdTaskRequest &request);
+                void DescribeChangePwdTaskAsync(const Model::DescribeChangePwdTaskRequest& request, const DescribeChangePwdTaskAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeChangePwdTaskOutcomeCallable DescribeChangePwdTaskCallable(const Model::DescribeChangePwdTaskRequest& request);
+
+                /**
+                 *查询改密任务详情
+                 * @param req DescribeChangePwdTaskDetailRequest
+                 * @return DescribeChangePwdTaskDetailOutcome
+                 */
+                DescribeChangePwdTaskDetailOutcome DescribeChangePwdTaskDetail(const Model::DescribeChangePwdTaskDetailRequest &request);
+                void DescribeChangePwdTaskDetailAsync(const Model::DescribeChangePwdTaskDetailRequest& request, const DescribeChangePwdTaskDetailAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeChangePwdTaskDetailOutcomeCallable DescribeChangePwdTaskDetailCallable(const Model::DescribeChangePwdTaskDetailRequest& request);
 
                 /**
                  *查询命令模板列表
@@ -672,6 +738,15 @@ namespace TencentCloud
                 ModifyAclOutcomeCallable ModifyAclCallable(const Model::ModifyAclRequest& request);
 
                 /**
+                 *更新修改密码任务
+                 * @param req ModifyChangePwdTaskRequest
+                 * @return ModifyChangePwdTaskOutcome
+                 */
+                ModifyChangePwdTaskOutcome ModifyChangePwdTask(const Model::ModifyChangePwdTaskRequest &request);
+                void ModifyChangePwdTaskAsync(const Model::ModifyChangePwdTaskRequest& request, const ModifyChangePwdTaskAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                ModifyChangePwdTaskOutcomeCallable ModifyChangePwdTaskCallable(const Model::ModifyChangePwdTaskRequest& request);
+
+                /**
                  *修改高危命令模板
                  * @param req ModifyCmdTemplateRequest
                  * @return ModifyCmdTemplateOutcome
@@ -760,6 +835,15 @@ namespace TencentCloud
                 ResetUserOutcome ResetUser(const Model::ResetUserRequest &request);
                 void ResetUserAsync(const Model::ResetUserRequest& request, const ResetUserAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 ResetUserOutcomeCallable ResetUserCallable(const Model::ResetUserRequest& request);
+
+                /**
+                 *执行改密任务
+                 * @param req RunChangePwdTaskRequest
+                 * @return RunChangePwdTaskOutcome
+                 */
+                RunChangePwdTaskOutcome RunChangePwdTask(const Model::RunChangePwdTaskRequest &request);
+                void RunChangePwdTaskAsync(const Model::RunChangePwdTaskRequest& request, const RunChangePwdTaskAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                RunChangePwdTaskOutcomeCallable RunChangePwdTaskCallable(const Model::RunChangePwdTaskRequest& request);
 
                 /**
                  *搜索审计日志

@@ -23,7 +23,8 @@ using namespace std;
 GooseFS::GooseFS() :
     m_idHasBeenSet(false),
     m_typeHasBeenSet(false),
-    m_pathHasBeenSet(false)
+    m_pathHasBeenSet(false),
+    m_nameSpaceHasBeenSet(false)
 {
 }
 
@@ -62,6 +63,16 @@ CoreInternalOutcome GooseFS::Deserialize(const rapidjson::Value &value)
         m_pathHasBeenSet = true;
     }
 
+    if (value.HasMember("NameSpace") && !value["NameSpace"].IsNull())
+    {
+        if (!value["NameSpace"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `GooseFS.NameSpace` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_nameSpace = string(value["NameSpace"].GetString());
+        m_nameSpaceHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -91,6 +102,14 @@ void GooseFS::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Allocat
         string key = "Path";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_path.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_nameSpaceHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "NameSpace";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_nameSpace.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -142,5 +161,21 @@ void GooseFS::SetPath(const string& _path)
 bool GooseFS::PathHasBeenSet() const
 {
     return m_pathHasBeenSet;
+}
+
+string GooseFS::GetNameSpace() const
+{
+    return m_nameSpace;
+}
+
+void GooseFS::SetNameSpace(const string& _nameSpace)
+{
+    m_nameSpace = _nameSpace;
+    m_nameSpaceHasBeenSet = true;
+}
+
+bool GooseFS::NameSpaceHasBeenSet() const
+{
+    return m_nameSpaceHasBeenSet;
 }
 

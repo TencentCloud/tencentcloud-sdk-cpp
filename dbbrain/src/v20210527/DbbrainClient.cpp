@@ -685,6 +685,49 @@ DbbrainClient::DeleteDBDiagReportTasksOutcomeCallable DbbrainClient::DeleteDBDia
     return task->get_future();
 }
 
+DbbrainClient::DeleteRedisBigKeyAnalysisTasksOutcome DbbrainClient::DeleteRedisBigKeyAnalysisTasks(const DeleteRedisBigKeyAnalysisTasksRequest &request)
+{
+    auto outcome = MakeRequest(request, "DeleteRedisBigKeyAnalysisTasks");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DeleteRedisBigKeyAnalysisTasksResponse rsp = DeleteRedisBigKeyAnalysisTasksResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DeleteRedisBigKeyAnalysisTasksOutcome(rsp);
+        else
+            return DeleteRedisBigKeyAnalysisTasksOutcome(o.GetError());
+    }
+    else
+    {
+        return DeleteRedisBigKeyAnalysisTasksOutcome(outcome.GetError());
+    }
+}
+
+void DbbrainClient::DeleteRedisBigKeyAnalysisTasksAsync(const DeleteRedisBigKeyAnalysisTasksRequest& request, const DeleteRedisBigKeyAnalysisTasksAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DeleteRedisBigKeyAnalysisTasks(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+DbbrainClient::DeleteRedisBigKeyAnalysisTasksOutcomeCallable DbbrainClient::DeleteRedisBigKeyAnalysisTasksCallable(const DeleteRedisBigKeyAnalysisTasksRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DeleteRedisBigKeyAnalysisTasksOutcome()>>(
+        [this, request]()
+        {
+            return this->DeleteRedisBigKeyAnalysisTasks(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 DbbrainClient::DeleteSecurityAuditLogExportTasksOutcome DbbrainClient::DeleteSecurityAuditLogExportTasks(const DeleteSecurityAuditLogExportTasksRequest &request)
 {
     auto outcome = MakeRequest(request, "DeleteSecurityAuditLogExportTasks");
