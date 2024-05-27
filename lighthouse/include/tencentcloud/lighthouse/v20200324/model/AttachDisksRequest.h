@@ -43,15 +43,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取云硬盘ID列表。
-                     * @return DiskIds 云硬盘ID列表。
+                     * 获取云硬盘ID列表。每次批量请求云硬盘的上限为 100。可通过[DescribeDisks](https://cloud.tencent.com/document/product/1207/66093)接口返回值中的DiskId获取。
+                     * @return DiskIds 云硬盘ID列表。每次批量请求云硬盘的上限为 100。可通过[DescribeDisks](https://cloud.tencent.com/document/product/1207/66093)接口返回值中的DiskId获取。
                      * 
                      */
                     std::vector<std::string> GetDiskIds() const;
 
                     /**
-                     * 设置云硬盘ID列表。
-                     * @param _diskIds 云硬盘ID列表。
+                     * 设置云硬盘ID列表。每次批量请求云硬盘的上限为 100。可通过[DescribeDisks](https://cloud.tencent.com/document/product/1207/66093)接口返回值中的DiskId获取。
+                     * @param _diskIds 云硬盘ID列表。每次批量请求云硬盘的上限为 100。可通过[DescribeDisks](https://cloud.tencent.com/document/product/1207/66093)接口返回值中的DiskId获取。
                      * 
                      */
                     void SetDiskIds(const std::vector<std::string>& _diskIds);
@@ -64,15 +64,15 @@ namespace TencentCloud
                     bool DiskIdsHasBeenSet() const;
 
                     /**
-                     * 获取实例ID。
-                     * @return InstanceId 实例ID。
+                     * 获取实例ID。可通过[DescribeInstances](https://cloud.tencent.com/document/product/1207/47573)接口返回值中的InstanceId获取。
+                     * @return InstanceId 实例ID。可通过[DescribeInstances](https://cloud.tencent.com/document/product/1207/47573)接口返回值中的InstanceId获取。
                      * 
                      */
                     std::string GetInstanceId() const;
 
                     /**
-                     * 设置实例ID。
-                     * @param _instanceId 实例ID。
+                     * 设置实例ID。可通过[DescribeInstances](https://cloud.tencent.com/document/product/1207/47573)接口返回值中的InstanceId获取。
+                     * @param _instanceId 实例ID。可通过[DescribeInstances](https://cloud.tencent.com/document/product/1207/47573)接口返回值中的InstanceId获取。
                      * 
                      */
                     void SetInstanceId(const std::string& _instanceId);
@@ -124,13 +124,13 @@ NOTIFY_AND_AUTO_RENEW：通知过期且自动续费。 NOTIFY_AND_MANUAL_RENEW�
                 private:
 
                     /**
-                     * 云硬盘ID列表。
+                     * 云硬盘ID列表。每次批量请求云硬盘的上限为 100。可通过[DescribeDisks](https://cloud.tencent.com/document/product/1207/66093)接口返回值中的DiskId获取。
                      */
                     std::vector<std::string> m_diskIds;
                     bool m_diskIdsHasBeenSet;
 
                     /**
-                     * 实例ID。
+                     * 实例ID。可通过[DescribeInstances](https://cloud.tencent.com/document/product/1207/47573)接口返回值中的InstanceId获取。
                      */
                     std::string m_instanceId;
                     bool m_instanceIdHasBeenSet;

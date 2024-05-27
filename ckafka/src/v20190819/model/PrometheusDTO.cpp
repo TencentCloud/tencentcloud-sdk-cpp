@@ -24,7 +24,9 @@ PrometheusDTO::PrometheusDTO() :
     m_typeHasBeenSet(false),
     m_sourceIpHasBeenSet(false),
     m_sourcePortHasBeenSet(false),
-    m_brokerIpHasBeenSet(false)
+    m_brokerIpHasBeenSet(false),
+    m_vpcIdHasBeenSet(false),
+    m_subnetIdHasBeenSet(false)
 {
 }
 
@@ -73,6 +75,26 @@ CoreInternalOutcome PrometheusDTO::Deserialize(const rapidjson::Value &value)
         m_brokerIpHasBeenSet = true;
     }
 
+    if (value.HasMember("VpcId") && !value["VpcId"].IsNull())
+    {
+        if (!value["VpcId"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `PrometheusDTO.VpcId` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_vpcId = string(value["VpcId"].GetString());
+        m_vpcIdHasBeenSet = true;
+    }
+
+    if (value.HasMember("SubnetId") && !value["SubnetId"].IsNull())
+    {
+        if (!value["SubnetId"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `PrometheusDTO.SubnetId` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_subnetId = string(value["SubnetId"].GetString());
+        m_subnetIdHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -110,6 +132,22 @@ void PrometheusDTO::ToJsonObject(rapidjson::Value &value, rapidjson::Document::A
         string key = "BrokerIp";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_brokerIp.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_vpcIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "VpcId";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_vpcId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_subnetIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "SubnetId";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_subnetId.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -177,5 +215,37 @@ void PrometheusDTO::SetBrokerIp(const string& _brokerIp)
 bool PrometheusDTO::BrokerIpHasBeenSet() const
 {
     return m_brokerIpHasBeenSet;
+}
+
+string PrometheusDTO::GetVpcId() const
+{
+    return m_vpcId;
+}
+
+void PrometheusDTO::SetVpcId(const string& _vpcId)
+{
+    m_vpcId = _vpcId;
+    m_vpcIdHasBeenSet = true;
+}
+
+bool PrometheusDTO::VpcIdHasBeenSet() const
+{
+    return m_vpcIdHasBeenSet;
+}
+
+string PrometheusDTO::GetSubnetId() const
+{
+    return m_subnetId;
+}
+
+void PrometheusDTO::SetSubnetId(const string& _subnetId)
+{
+    m_subnetId = _subnetId;
+    m_subnetIdHasBeenSet = true;
+}
+
+bool PrometheusDTO::SubnetIdHasBeenSet() const
+{
+    return m_subnetIdHasBeenSet;
 }
 

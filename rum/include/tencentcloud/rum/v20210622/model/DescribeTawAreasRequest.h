@@ -85,15 +85,15 @@ namespace TencentCloud
                     bool AreaKeysHasBeenSet() const;
 
                     /**
-                     * 获取分页Limit
-                     * @return Limit 分页Limit
+                     * 获取分页Limit，默认根据AreaKeys和AreaStatuses参数查询所有。
+                     * @return Limit 分页Limit，默认根据AreaKeys和AreaStatuses参数查询所有。
                      * 
                      */
                     int64_t GetLimit() const;
 
                     /**
-                     * 设置分页Limit
-                     * @param _limit 分页Limit
+                     * 设置分页Limit，默认根据AreaKeys和AreaStatuses参数查询所有。
+                     * @param _limit 分页Limit，默认根据AreaKeys和AreaStatuses参数查询所有。
                      * 
                      */
                     void SetLimit(const int64_t& _limit);
@@ -127,15 +127,15 @@ namespace TencentCloud
                     bool AreaStatusesHasBeenSet() const;
 
                     /**
-                     * 获取分页Offset
-                     * @return Offset 分页Offset
+                     * 获取分页Offset，默认根据AreaKeys和AreaStatuses参数查询所有。
+                     * @return Offset 分页Offset，默认根据AreaKeys和AreaStatuses参数查询所有。
                      * 
                      */
                     int64_t GetOffset() const;
 
                     /**
-                     * 设置分页Offset
-                     * @param _offset 分页Offset
+                     * 设置分页Offset，默认根据AreaKeys和AreaStatuses参数查询所有。
+                     * @param _offset 分页Offset，默认根据AreaKeys和AreaStatuses参数查询所有。
                      * 
                      */
                     void SetOffset(const int64_t& _offset);
@@ -162,7 +162,7 @@ namespace TencentCloud
                     bool m_areaKeysHasBeenSet;
 
                     /**
-                     * 分页Limit
+                     * 分页Limit，默认根据AreaKeys和AreaStatuses参数查询所有。
                      */
                     int64_t m_limit;
                     bool m_limitHasBeenSet;
@@ -174,7 +174,7 @@ namespace TencentCloud
                     bool m_areaStatusesHasBeenSet;
 
                     /**
-                     * 分页Offset
+                     * 分页Offset，默认根据AreaKeys和AreaStatuses参数查询所有。
                      */
                     int64_t m_offset;
                     bool m_offsetHasBeenSet;

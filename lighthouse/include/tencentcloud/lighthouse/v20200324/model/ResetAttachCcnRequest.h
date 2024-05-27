@@ -43,15 +43,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取云联网实例ID。
-                     * @return CcnId 云联网实例ID。
+                     * 获取云联网实例ID。可通过[DescribeCcnAttachedInstances](https://cloud.tencent.com/document/product/1207/58797)接口返回值中的CcnId获取。
+                     * @return CcnId 云联网实例ID。可通过[DescribeCcnAttachedInstances](https://cloud.tencent.com/document/product/1207/58797)接口返回值中的CcnId获取。
                      * 
                      */
                     std::string GetCcnId() const;
 
                     /**
-                     * 设置云联网实例ID。
-                     * @param _ccnId 云联网实例ID。
+                     * 设置云联网实例ID。可通过[DescribeCcnAttachedInstances](https://cloud.tencent.com/document/product/1207/58797)接口返回值中的CcnId获取。
+                     * @param _ccnId 云联网实例ID。可通过[DescribeCcnAttachedInstances](https://cloud.tencent.com/document/product/1207/58797)接口返回值中的CcnId获取。
                      * 
                      */
                     void SetCcnId(const std::string& _ccnId);
@@ -66,7 +66,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 云联网实例ID。
+                     * 云联网实例ID。可通过[DescribeCcnAttachedInstances](https://cloud.tencent.com/document/product/1207/58797)接口返回值中的CcnId获取。
                      */
                     std::string m_ccnId;
                     bool m_ccnIdHasBeenSet;

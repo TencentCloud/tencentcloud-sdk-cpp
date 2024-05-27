@@ -25,8 +25,12 @@
 #include <tencentcloud/core/AsyncCallerContext.h>
 #include <tencentcloud/domain/v20180808/model/BatchModifyDomainInfoRequest.h>
 #include <tencentcloud/domain/v20180808/model/BatchModifyDomainInfoResponse.h>
+#include <tencentcloud/domain/v20180808/model/BidDetailPageRequest.h>
+#include <tencentcloud/domain/v20180808/model/BidDetailPageResponse.h>
 #include <tencentcloud/domain/v20180808/model/BidPreDomainsRequest.h>
 #include <tencentcloud/domain/v20180808/model/BidPreDomainsResponse.h>
+#include <tencentcloud/domain/v20180808/model/BiddingPreReleaseRequest.h>
+#include <tencentcloud/domain/v20180808/model/BiddingPreReleaseResponse.h>
 #include <tencentcloud/domain/v20180808/model/CheckBatchStatusRequest.h>
 #include <tencentcloud/domain/v20180808/model/CheckBatchStatusResponse.h>
 #include <tencentcloud/domain/v20180808/model/CheckDomainRequest.h>
@@ -41,6 +45,8 @@
 #include <tencentcloud/domain/v20180808/model/CreatePhoneEmailResponse.h>
 #include <tencentcloud/domain/v20180808/model/CreateTemplateRequest.h>
 #include <tencentcloud/domain/v20180808/model/CreateTemplateResponse.h>
+#include <tencentcloud/domain/v20180808/model/DeleteBiddingRequest.h>
+#include <tencentcloud/domain/v20180808/model/DeleteBiddingResponse.h>
 #include <tencentcloud/domain/v20180808/model/DeleteCustomDnsHostRequest.h>
 #include <tencentcloud/domain/v20180808/model/DeleteCustomDnsHostResponse.h>
 #include <tencentcloud/domain/v20180808/model/DeletePhoneEmailRequest.h>
@@ -49,10 +55,24 @@
 #include <tencentcloud/domain/v20180808/model/DeleteReservedPreDomainInfoResponse.h>
 #include <tencentcloud/domain/v20180808/model/DeleteTemplateRequest.h>
 #include <tencentcloud/domain/v20180808/model/DeleteTemplateResponse.h>
+#include <tencentcloud/domain/v20180808/model/DescribeAuctionListRequest.h>
+#include <tencentcloud/domain/v20180808/model/DescribeAuctionListResponse.h>
 #include <tencentcloud/domain/v20180808/model/DescribeBatchOperationLogDetailsRequest.h>
 #include <tencentcloud/domain/v20180808/model/DescribeBatchOperationLogDetailsResponse.h>
 #include <tencentcloud/domain/v20180808/model/DescribeBatchOperationLogsRequest.h>
 #include <tencentcloud/domain/v20180808/model/DescribeBatchOperationLogsResponse.h>
+#include <tencentcloud/domain/v20180808/model/DescribeBiddingAppointDetailRequest.h>
+#include <tencentcloud/domain/v20180808/model/DescribeBiddingAppointDetailResponse.h>
+#include <tencentcloud/domain/v20180808/model/DescribeBiddingAppointListRequest.h>
+#include <tencentcloud/domain/v20180808/model/DescribeBiddingAppointListResponse.h>
+#include <tencentcloud/domain/v20180808/model/DescribeBiddingDetailRequest.h>
+#include <tencentcloud/domain/v20180808/model/DescribeBiddingDetailResponse.h>
+#include <tencentcloud/domain/v20180808/model/DescribeBiddingListRequest.h>
+#include <tencentcloud/domain/v20180808/model/DescribeBiddingListResponse.h>
+#include <tencentcloud/domain/v20180808/model/DescribeBiddingSuccessfulDetailRequest.h>
+#include <tencentcloud/domain/v20180808/model/DescribeBiddingSuccessfulDetailResponse.h>
+#include <tencentcloud/domain/v20180808/model/DescribeBiddingSuccessfulListRequest.h>
+#include <tencentcloud/domain/v20180808/model/DescribeBiddingSuccessfulListResponse.h>
 #include <tencentcloud/domain/v20180808/model/DescribeCustomDnsHostSetRequest.h>
 #include <tencentcloud/domain/v20180808/model/DescribeCustomDnsHostSetResponse.h>
 #include <tencentcloud/domain/v20180808/model/DescribeDomainBaseInfoRequest.h>
@@ -63,10 +83,16 @@
 #include <tencentcloud/domain/v20180808/model/DescribeDomainPriceListResponse.h>
 #include <tencentcloud/domain/v20180808/model/DescribeDomainSimpleInfoRequest.h>
 #include <tencentcloud/domain/v20180808/model/DescribeDomainSimpleInfoResponse.h>
+#include <tencentcloud/domain/v20180808/model/DescribePayWaitDetailRequest.h>
+#include <tencentcloud/domain/v20180808/model/DescribePayWaitDetailResponse.h>
 #include <tencentcloud/domain/v20180808/model/DescribePhoneEmailListRequest.h>
 #include <tencentcloud/domain/v20180808/model/DescribePhoneEmailListResponse.h>
+#include <tencentcloud/domain/v20180808/model/DescribePreAuctionListRequest.h>
+#include <tencentcloud/domain/v20180808/model/DescribePreAuctionListResponse.h>
 #include <tencentcloud/domain/v20180808/model/DescribePreDomainListRequest.h>
 #include <tencentcloud/domain/v20180808/model/DescribePreDomainListResponse.h>
+#include <tencentcloud/domain/v20180808/model/DescribePreReleaseListRequest.h>
+#include <tencentcloud/domain/v20180808/model/DescribePreReleaseListResponse.h>
 #include <tencentcloud/domain/v20180808/model/DescribeReservedBidInfoRequest.h>
 #include <tencentcloud/domain/v20180808/model/DescribeReservedBidInfoResponse.h>
 #include <tencentcloud/domain/v20180808/model/DescribeReservedPreDomainInfoRequest.h>
@@ -77,6 +103,8 @@
 #include <tencentcloud/domain/v20180808/model/DescribeTemplateListResponse.h>
 #include <tencentcloud/domain/v20180808/model/DescribeTldListRequest.h>
 #include <tencentcloud/domain/v20180808/model/DescribeTldListResponse.h>
+#include <tencentcloud/domain/v20180808/model/DescribeUnPreDomainDetailRequest.h>
+#include <tencentcloud/domain/v20180808/model/DescribeUnPreDomainDetailResponse.h>
 #include <tencentcloud/domain/v20180808/model/ModifyCustomDnsHostRequest.h>
 #include <tencentcloud/domain/v20180808/model/ModifyCustomDnsHostResponse.h>
 #include <tencentcloud/domain/v20180808/model/ModifyDomainDNSBatchRequest.h>
@@ -122,9 +150,15 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::BatchModifyDomainInfoResponse> BatchModifyDomainInfoOutcome;
                 typedef std::future<BatchModifyDomainInfoOutcome> BatchModifyDomainInfoOutcomeCallable;
                 typedef std::function<void(const DomainClient*, const Model::BatchModifyDomainInfoRequest&, BatchModifyDomainInfoOutcome, const std::shared_ptr<const AsyncCallerContext>&)> BatchModifyDomainInfoAsyncHandler;
+                typedef Outcome<Core::Error, Model::BidDetailPageResponse> BidDetailPageOutcome;
+                typedef std::future<BidDetailPageOutcome> BidDetailPageOutcomeCallable;
+                typedef std::function<void(const DomainClient*, const Model::BidDetailPageRequest&, BidDetailPageOutcome, const std::shared_ptr<const AsyncCallerContext>&)> BidDetailPageAsyncHandler;
                 typedef Outcome<Core::Error, Model::BidPreDomainsResponse> BidPreDomainsOutcome;
                 typedef std::future<BidPreDomainsOutcome> BidPreDomainsOutcomeCallable;
                 typedef std::function<void(const DomainClient*, const Model::BidPreDomainsRequest&, BidPreDomainsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> BidPreDomainsAsyncHandler;
+                typedef Outcome<Core::Error, Model::BiddingPreReleaseResponse> BiddingPreReleaseOutcome;
+                typedef std::future<BiddingPreReleaseOutcome> BiddingPreReleaseOutcomeCallable;
+                typedef std::function<void(const DomainClient*, const Model::BiddingPreReleaseRequest&, BiddingPreReleaseOutcome, const std::shared_ptr<const AsyncCallerContext>&)> BiddingPreReleaseAsyncHandler;
                 typedef Outcome<Core::Error, Model::CheckBatchStatusResponse> CheckBatchStatusOutcome;
                 typedef std::future<CheckBatchStatusOutcome> CheckBatchStatusOutcomeCallable;
                 typedef std::function<void(const DomainClient*, const Model::CheckBatchStatusRequest&, CheckBatchStatusOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CheckBatchStatusAsyncHandler;
@@ -146,6 +180,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::CreateTemplateResponse> CreateTemplateOutcome;
                 typedef std::future<CreateTemplateOutcome> CreateTemplateOutcomeCallable;
                 typedef std::function<void(const DomainClient*, const Model::CreateTemplateRequest&, CreateTemplateOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateTemplateAsyncHandler;
+                typedef Outcome<Core::Error, Model::DeleteBiddingResponse> DeleteBiddingOutcome;
+                typedef std::future<DeleteBiddingOutcome> DeleteBiddingOutcomeCallable;
+                typedef std::function<void(const DomainClient*, const Model::DeleteBiddingRequest&, DeleteBiddingOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteBiddingAsyncHandler;
                 typedef Outcome<Core::Error, Model::DeleteCustomDnsHostResponse> DeleteCustomDnsHostOutcome;
                 typedef std::future<DeleteCustomDnsHostOutcome> DeleteCustomDnsHostOutcomeCallable;
                 typedef std::function<void(const DomainClient*, const Model::DeleteCustomDnsHostRequest&, DeleteCustomDnsHostOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteCustomDnsHostAsyncHandler;
@@ -158,12 +195,33 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DeleteTemplateResponse> DeleteTemplateOutcome;
                 typedef std::future<DeleteTemplateOutcome> DeleteTemplateOutcomeCallable;
                 typedef std::function<void(const DomainClient*, const Model::DeleteTemplateRequest&, DeleteTemplateOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteTemplateAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeAuctionListResponse> DescribeAuctionListOutcome;
+                typedef std::future<DescribeAuctionListOutcome> DescribeAuctionListOutcomeCallable;
+                typedef std::function<void(const DomainClient*, const Model::DescribeAuctionListRequest&, DescribeAuctionListOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeAuctionListAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeBatchOperationLogDetailsResponse> DescribeBatchOperationLogDetailsOutcome;
                 typedef std::future<DescribeBatchOperationLogDetailsOutcome> DescribeBatchOperationLogDetailsOutcomeCallable;
                 typedef std::function<void(const DomainClient*, const Model::DescribeBatchOperationLogDetailsRequest&, DescribeBatchOperationLogDetailsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeBatchOperationLogDetailsAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeBatchOperationLogsResponse> DescribeBatchOperationLogsOutcome;
                 typedef std::future<DescribeBatchOperationLogsOutcome> DescribeBatchOperationLogsOutcomeCallable;
                 typedef std::function<void(const DomainClient*, const Model::DescribeBatchOperationLogsRequest&, DescribeBatchOperationLogsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeBatchOperationLogsAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeBiddingAppointDetailResponse> DescribeBiddingAppointDetailOutcome;
+                typedef std::future<DescribeBiddingAppointDetailOutcome> DescribeBiddingAppointDetailOutcomeCallable;
+                typedef std::function<void(const DomainClient*, const Model::DescribeBiddingAppointDetailRequest&, DescribeBiddingAppointDetailOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeBiddingAppointDetailAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeBiddingAppointListResponse> DescribeBiddingAppointListOutcome;
+                typedef std::future<DescribeBiddingAppointListOutcome> DescribeBiddingAppointListOutcomeCallable;
+                typedef std::function<void(const DomainClient*, const Model::DescribeBiddingAppointListRequest&, DescribeBiddingAppointListOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeBiddingAppointListAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeBiddingDetailResponse> DescribeBiddingDetailOutcome;
+                typedef std::future<DescribeBiddingDetailOutcome> DescribeBiddingDetailOutcomeCallable;
+                typedef std::function<void(const DomainClient*, const Model::DescribeBiddingDetailRequest&, DescribeBiddingDetailOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeBiddingDetailAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeBiddingListResponse> DescribeBiddingListOutcome;
+                typedef std::future<DescribeBiddingListOutcome> DescribeBiddingListOutcomeCallable;
+                typedef std::function<void(const DomainClient*, const Model::DescribeBiddingListRequest&, DescribeBiddingListOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeBiddingListAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeBiddingSuccessfulDetailResponse> DescribeBiddingSuccessfulDetailOutcome;
+                typedef std::future<DescribeBiddingSuccessfulDetailOutcome> DescribeBiddingSuccessfulDetailOutcomeCallable;
+                typedef std::function<void(const DomainClient*, const Model::DescribeBiddingSuccessfulDetailRequest&, DescribeBiddingSuccessfulDetailOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeBiddingSuccessfulDetailAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeBiddingSuccessfulListResponse> DescribeBiddingSuccessfulListOutcome;
+                typedef std::future<DescribeBiddingSuccessfulListOutcome> DescribeBiddingSuccessfulListOutcomeCallable;
+                typedef std::function<void(const DomainClient*, const Model::DescribeBiddingSuccessfulListRequest&, DescribeBiddingSuccessfulListOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeBiddingSuccessfulListAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeCustomDnsHostSetResponse> DescribeCustomDnsHostSetOutcome;
                 typedef std::future<DescribeCustomDnsHostSetOutcome> DescribeCustomDnsHostSetOutcomeCallable;
                 typedef std::function<void(const DomainClient*, const Model::DescribeCustomDnsHostSetRequest&, DescribeCustomDnsHostSetOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeCustomDnsHostSetAsyncHandler;
@@ -179,12 +237,21 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeDomainSimpleInfoResponse> DescribeDomainSimpleInfoOutcome;
                 typedef std::future<DescribeDomainSimpleInfoOutcome> DescribeDomainSimpleInfoOutcomeCallable;
                 typedef std::function<void(const DomainClient*, const Model::DescribeDomainSimpleInfoRequest&, DescribeDomainSimpleInfoOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeDomainSimpleInfoAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribePayWaitDetailResponse> DescribePayWaitDetailOutcome;
+                typedef std::future<DescribePayWaitDetailOutcome> DescribePayWaitDetailOutcomeCallable;
+                typedef std::function<void(const DomainClient*, const Model::DescribePayWaitDetailRequest&, DescribePayWaitDetailOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribePayWaitDetailAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribePhoneEmailListResponse> DescribePhoneEmailListOutcome;
                 typedef std::future<DescribePhoneEmailListOutcome> DescribePhoneEmailListOutcomeCallable;
                 typedef std::function<void(const DomainClient*, const Model::DescribePhoneEmailListRequest&, DescribePhoneEmailListOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribePhoneEmailListAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribePreAuctionListResponse> DescribePreAuctionListOutcome;
+                typedef std::future<DescribePreAuctionListOutcome> DescribePreAuctionListOutcomeCallable;
+                typedef std::function<void(const DomainClient*, const Model::DescribePreAuctionListRequest&, DescribePreAuctionListOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribePreAuctionListAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribePreDomainListResponse> DescribePreDomainListOutcome;
                 typedef std::future<DescribePreDomainListOutcome> DescribePreDomainListOutcomeCallable;
                 typedef std::function<void(const DomainClient*, const Model::DescribePreDomainListRequest&, DescribePreDomainListOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribePreDomainListAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribePreReleaseListResponse> DescribePreReleaseListOutcome;
+                typedef std::future<DescribePreReleaseListOutcome> DescribePreReleaseListOutcomeCallable;
+                typedef std::function<void(const DomainClient*, const Model::DescribePreReleaseListRequest&, DescribePreReleaseListOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribePreReleaseListAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeReservedBidInfoResponse> DescribeReservedBidInfoOutcome;
                 typedef std::future<DescribeReservedBidInfoOutcome> DescribeReservedBidInfoOutcomeCallable;
                 typedef std::function<void(const DomainClient*, const Model::DescribeReservedBidInfoRequest&, DescribeReservedBidInfoOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeReservedBidInfoAsyncHandler;
@@ -200,6 +267,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeTldListResponse> DescribeTldListOutcome;
                 typedef std::future<DescribeTldListOutcome> DescribeTldListOutcomeCallable;
                 typedef std::function<void(const DomainClient*, const Model::DescribeTldListRequest&, DescribeTldListOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeTldListAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeUnPreDomainDetailResponse> DescribeUnPreDomainDetailOutcome;
+                typedef std::future<DescribeUnPreDomainDetailOutcome> DescribeUnPreDomainDetailOutcomeCallable;
+                typedef std::function<void(const DomainClient*, const Model::DescribeUnPreDomainDetailRequest&, DescribeUnPreDomainDetailOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeUnPreDomainDetailAsyncHandler;
                 typedef Outcome<Core::Error, Model::ModifyCustomDnsHostResponse> ModifyCustomDnsHostOutcome;
                 typedef std::future<ModifyCustomDnsHostOutcome> ModifyCustomDnsHostOutcomeCallable;
                 typedef std::function<void(const DomainClient*, const Model::ModifyCustomDnsHostRequest&, ModifyCustomDnsHostOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyCustomDnsHostAsyncHandler;
@@ -255,6 +325,15 @@ namespace TencentCloud
                 BatchModifyDomainInfoOutcomeCallable BatchModifyDomainInfoCallable(const Model::BatchModifyDomainInfoRequest& request);
 
                 /**
+                 *该接口用于用户详情页出价请求
+                 * @param req BidDetailPageRequest
+                 * @return BidDetailPageOutcome
+                 */
+                BidDetailPageOutcome BidDetailPage(const Model::BidDetailPageRequest &request);
+                void BidDetailPageAsync(const Model::BidDetailPageRequest& request, const BidDetailPageAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                BidDetailPageOutcomeCallable BidDetailPageCallable(const Model::BidDetailPageRequest& request);
+
+                /**
                  *用户合作商预释放出价
                  * @param req BidPreDomainsRequest
                  * @return BidPreDomainsOutcome
@@ -262,6 +341,15 @@ namespace TencentCloud
                 BidPreDomainsOutcome BidPreDomains(const Model::BidPreDomainsRequest &request);
                 void BidPreDomainsAsync(const Model::BidPreDomainsRequest& request, const BidPreDomainsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 BidPreDomainsOutcomeCallable BidPreDomainsCallable(const Model::BidPreDomainsRequest& request);
+
+                /**
+                 *用于出价界面出价请求
+                 * @param req BiddingPreReleaseRequest
+                 * @return BiddingPreReleaseOutcome
+                 */
+                BiddingPreReleaseOutcome BiddingPreRelease(const Model::BiddingPreReleaseRequest &request);
+                void BiddingPreReleaseAsync(const Model::BiddingPreReleaseRequest& request, const BiddingPreReleaseAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                BiddingPreReleaseOutcomeCallable BiddingPreReleaseCallable(const Model::BiddingPreReleaseRequest& request);
 
                 /**
                  *本接口 ( CheckBatchStatus ) 用于查询批量操作日志状态 。
@@ -327,6 +415,15 @@ namespace TencentCloud
                 CreateTemplateOutcomeCallable CreateTemplateCallable(const Model::CreateTemplateRequest& request);
 
                 /**
+                 *删除记录。
+                 * @param req DeleteBiddingRequest
+                 * @return DeleteBiddingOutcome
+                 */
+                DeleteBiddingOutcome DeleteBidding(const Model::DeleteBiddingRequest &request);
+                void DeleteBiddingAsync(const Model::DeleteBiddingRequest& request, const DeleteBiddingAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DeleteBiddingOutcomeCallable DeleteBiddingCallable(const Model::DeleteBiddingRequest& request);
+
+                /**
                  *删除自定义DNS Host
                  * @param req DeleteCustomDnsHostRequest
                  * @return DeleteCustomDnsHostOutcome
@@ -363,6 +460,15 @@ namespace TencentCloud
                 DeleteTemplateOutcomeCallable DeleteTemplateCallable(const Model::DeleteTemplateRequest& request);
 
                 /**
+                 *用户控制台获取竞价列表
+                 * @param req DescribeAuctionListRequest
+                 * @return DescribeAuctionListOutcome
+                 */
+                DescribeAuctionListOutcome DescribeAuctionList(const Model::DescribeAuctionListRequest &request);
+                void DescribeAuctionListAsync(const Model::DescribeAuctionListRequest& request, const DescribeAuctionListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeAuctionListOutcomeCallable DescribeAuctionListCallable(const Model::DescribeAuctionListRequest& request);
+
+                /**
                  *本接口 ( DescribeBatchOperationLogDetails ) 用于获取批量操作日志详情。
                  * @param req DescribeBatchOperationLogDetailsRequest
                  * @return DescribeBatchOperationLogDetailsOutcome
@@ -379,6 +485,60 @@ namespace TencentCloud
                 DescribeBatchOperationLogsOutcome DescribeBatchOperationLogs(const Model::DescribeBatchOperationLogsRequest &request);
                 void DescribeBatchOperationLogsAsync(const Model::DescribeBatchOperationLogsRequest& request, const DescribeBatchOperationLogsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DescribeBatchOperationLogsOutcomeCallable DescribeBatchOperationLogsCallable(const Model::DescribeBatchOperationLogsRequest& request);
+
+                /**
+                 *我预约的域名-预约详情。
+                 * @param req DescribeBiddingAppointDetailRequest
+                 * @return DescribeBiddingAppointDetailOutcome
+                 */
+                DescribeBiddingAppointDetailOutcome DescribeBiddingAppointDetail(const Model::DescribeBiddingAppointDetailRequest &request);
+                void DescribeBiddingAppointDetailAsync(const Model::DescribeBiddingAppointDetailRequest& request, const DescribeBiddingAppointDetailAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeBiddingAppointDetailOutcomeCallable DescribeBiddingAppointDetailCallable(const Model::DescribeBiddingAppointDetailRequest& request);
+
+                /**
+                 *我预定的域名。
+                 * @param req DescribeBiddingAppointListRequest
+                 * @return DescribeBiddingAppointListOutcome
+                 */
+                DescribeBiddingAppointListOutcome DescribeBiddingAppointList(const Model::DescribeBiddingAppointListRequest &request);
+                void DescribeBiddingAppointListAsync(const Model::DescribeBiddingAppointListRequest& request, const DescribeBiddingAppointListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeBiddingAppointListOutcomeCallable DescribeBiddingAppointListCallable(const Model::DescribeBiddingAppointListRequest& request);
+
+                /**
+                 *我竞价的域名-竞价详情。
+                 * @param req DescribeBiddingDetailRequest
+                 * @return DescribeBiddingDetailOutcome
+                 */
+                DescribeBiddingDetailOutcome DescribeBiddingDetail(const Model::DescribeBiddingDetailRequest &request);
+                void DescribeBiddingDetailAsync(const Model::DescribeBiddingDetailRequest& request, const DescribeBiddingDetailAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeBiddingDetailOutcomeCallable DescribeBiddingDetailCallable(const Model::DescribeBiddingDetailRequest& request);
+
+                /**
+                 *我竞价的域名。
+                 * @param req DescribeBiddingListRequest
+                 * @return DescribeBiddingListOutcome
+                 */
+                DescribeBiddingListOutcome DescribeBiddingList(const Model::DescribeBiddingListRequest &request);
+                void DescribeBiddingListAsync(const Model::DescribeBiddingListRequest& request, const DescribeBiddingListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeBiddingListOutcomeCallable DescribeBiddingListCallable(const Model::DescribeBiddingListRequest& request);
+
+                /**
+                 *我得标的域名-得标详情。
+                 * @param req DescribeBiddingSuccessfulDetailRequest
+                 * @return DescribeBiddingSuccessfulDetailOutcome
+                 */
+                DescribeBiddingSuccessfulDetailOutcome DescribeBiddingSuccessfulDetail(const Model::DescribeBiddingSuccessfulDetailRequest &request);
+                void DescribeBiddingSuccessfulDetailAsync(const Model::DescribeBiddingSuccessfulDetailRequest& request, const DescribeBiddingSuccessfulDetailAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeBiddingSuccessfulDetailOutcomeCallable DescribeBiddingSuccessfulDetailCallable(const Model::DescribeBiddingSuccessfulDetailRequest& request);
+
+                /**
+                 *我得标的域名。
+                 * @param req DescribeBiddingSuccessfulListRequest
+                 * @return DescribeBiddingSuccessfulListOutcome
+                 */
+                DescribeBiddingSuccessfulListOutcome DescribeBiddingSuccessfulList(const Model::DescribeBiddingSuccessfulListRequest &request);
+                void DescribeBiddingSuccessfulListAsync(const Model::DescribeBiddingSuccessfulListRequest& request, const DescribeBiddingSuccessfulListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeBiddingSuccessfulListOutcomeCallable DescribeBiddingSuccessfulListCallable(const Model::DescribeBiddingSuccessfulListRequest& request);
 
                 /**
                  *查询自定义DNS Host
@@ -426,6 +586,15 @@ namespace TencentCloud
                 DescribeDomainSimpleInfoOutcomeCallable DescribeDomainSimpleInfoCallable(const Model::DescribeDomainSimpleInfoRequest& request);
 
                 /**
+                 *等待支付详情接口
+                 * @param req DescribePayWaitDetailRequest
+                 * @return DescribePayWaitDetailOutcome
+                 */
+                DescribePayWaitDetailOutcome DescribePayWaitDetail(const Model::DescribePayWaitDetailRequest &request);
+                void DescribePayWaitDetailAsync(const Model::DescribePayWaitDetailRequest& request, const DescribePayWaitDetailAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribePayWaitDetailOutcomeCallable DescribePayWaitDetailCallable(const Model::DescribePayWaitDetailRequest& request);
+
+                /**
                  *本接口用于获取已验证的手机邮箱列表
                  * @param req DescribePhoneEmailListRequest
                  * @return DescribePhoneEmailListOutcome
@@ -435,6 +604,15 @@ namespace TencentCloud
                 DescribePhoneEmailListOutcomeCallable DescribePhoneEmailListCallable(const Model::DescribePhoneEmailListRequest& request);
 
                 /**
+                 *用于预释放竞价列表数据查询
+                 * @param req DescribePreAuctionListRequest
+                 * @return DescribePreAuctionListOutcome
+                 */
+                DescribePreAuctionListOutcome DescribePreAuctionList(const Model::DescribePreAuctionListRequest &request);
+                void DescribePreAuctionListAsync(const Model::DescribePreAuctionListRequest& request, const DescribePreAuctionListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribePreAuctionListOutcomeCallable DescribePreAuctionListCallable(const Model::DescribePreAuctionListRequest& request);
+
+                /**
                  *用户服务商提前获取预释放域名数据，查询数据根据结束时间进行倒序。
                  * @param req DescribePreDomainListRequest
                  * @return DescribePreDomainListOutcome
@@ -442,6 +620,15 @@ namespace TencentCloud
                 DescribePreDomainListOutcome DescribePreDomainList(const Model::DescribePreDomainListRequest &request);
                 void DescribePreDomainListAsync(const Model::DescribePreDomainListRequest& request, const DescribePreDomainListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DescribePreDomainListOutcomeCallable DescribePreDomainListCallable(const Model::DescribePreDomainListRequest& request);
+
+                /**
+                 *接口用于预释放页面查询
+                 * @param req DescribePreReleaseListRequest
+                 * @return DescribePreReleaseListOutcome
+                 */
+                DescribePreReleaseListOutcome DescribePreReleaseList(const Model::DescribePreReleaseListRequest &request);
+                void DescribePreReleaseListAsync(const Model::DescribePreReleaseListRequest& request, const DescribePreReleaseListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribePreReleaseListOutcomeCallable DescribePreReleaseListCallable(const Model::DescribePreReleaseListRequest& request);
 
                 /**
                  *接口用于获取合作商竞价过程中竞价详情数据
@@ -487,6 +674,15 @@ namespace TencentCloud
                 DescribeTldListOutcome DescribeTldList(const Model::DescribeTldListRequest &request);
                 void DescribeTldListAsync(const Model::DescribeTldListRequest& request, const DescribeTldListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DescribeTldListOutcomeCallable DescribeTldListCallable(const Model::DescribeTldListRequest& request);
+
+                /**
+                 *查询预释放未预约域名详情接口
+                 * @param req DescribeUnPreDomainDetailRequest
+                 * @return DescribeUnPreDomainDetailOutcome
+                 */
+                DescribeUnPreDomainDetailOutcome DescribeUnPreDomainDetail(const Model::DescribeUnPreDomainDetailRequest &request);
+                void DescribeUnPreDomainDetailAsync(const Model::DescribeUnPreDomainDetailRequest& request, const DescribeUnPreDomainDetailAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeUnPreDomainDetailOutcomeCallable DescribeUnPreDomainDetailCallable(const Model::DescribeUnPreDomainDetailRequest& request);
 
                 /**
                  *修改自定义DNS Host

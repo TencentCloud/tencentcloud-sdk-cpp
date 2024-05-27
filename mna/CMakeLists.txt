@@ -23,18 +23,19 @@ set(mna_public_header_model
   include/tencentcloud/mna/v20210119/model/GetDeviceResponse.h
   include/tencentcloud/mna/v20210119/model/GetDevicePayModeRequest.h
   include/tencentcloud/mna/v20210119/model/Capacity.h
-  include/tencentcloud/mna/v20210119/model/GetFlowStatisticRequest.h
+  include/tencentcloud/mna/v20210119/model/GetFlowAlarmInfoResponse.h
   include/tencentcloud/mna/v20210119/model/DestAddressInfo.h
   include/tencentcloud/mna/v20210119/model/GetNetMonitorResponse.h
   include/tencentcloud/mna/v20210119/model/SlotNetInfo.h
   include/tencentcloud/mna/v20210119/model/DeleteQosRequest.h
   include/tencentcloud/mna/v20210119/model/GetNetMonitorRequest.h
+  include/tencentcloud/mna/v20210119/model/OrderFlowPackageRequest.h
   include/tencentcloud/mna/v20210119/model/GetMultiFlowStatisticResponse.h
   include/tencentcloud/mna/v20210119/model/VendorHardware.h
   include/tencentcloud/mna/v20210119/model/DeviceNetInfo.h
   include/tencentcloud/mna/v20210119/model/GetFlowStatisticResponse.h
   include/tencentcloud/mna/v20210119/model/SrcAddressInfo.h
-  include/tencentcloud/mna/v20210119/model/NetDetails.h
+  include/tencentcloud/mna/v20210119/model/GetFlowAlarmInfoRequest.h
   include/tencentcloud/mna/v20210119/model/CreateQosResponse.h
   include/tencentcloud/mna/v20210119/model/DescribeQosResponse.h
   include/tencentcloud/mna/v20210119/model/GetVendorHardwareRequest.h
@@ -54,6 +55,7 @@ set(mna_public_header_model
   include/tencentcloud/mna/v20210119/model/GetVendorHardwareResponse.h
   include/tencentcloud/mna/v20210119/model/UpdateDeviceRequest.h
   include/tencentcloud/mna/v20210119/model/GetPublicKeyResponse.h
+  include/tencentcloud/mna/v20210119/model/GetFlowStatisticRequest.h
   include/tencentcloud/mna/v20210119/model/ActivateHardwareRequest.h
   include/tencentcloud/mna/v20210119/model/AddHardwareResponse.h
   include/tencentcloud/mna/v20210119/model/ModifyPackageRenewFlagResponse.h
@@ -66,8 +68,9 @@ set(mna_public_header_model
   include/tencentcloud/mna/v20210119/model/GetDevicePayModeResponse.h
   include/tencentcloud/mna/v20210119/model/GetDeviceRequest.h
   include/tencentcloud/mna/v20210119/model/ActivateHardwareResponse.h
-  include/tencentcloud/mna/v20210119/model/OrderFlowPackageRequest.h
+  include/tencentcloud/mna/v20210119/model/NetDetails.h
   include/tencentcloud/mna/v20210119/model/UpdateHardwareResponse.h
+  include/tencentcloud/mna/v20210119/model/GetFlowStatisticByGroupRequest.h
   include/tencentcloud/mna/v20210119/model/HardwareInfo.h
   include/tencentcloud/mna/v20210119/model/GetDevicesResponse.h
   include/tencentcloud/mna/v20210119/model/DescribeQosRequest.h
@@ -77,6 +80,7 @@ set(mna_public_header_model
   include/tencentcloud/mna/v20210119/model/GetStatisticDataResponse.h
   include/tencentcloud/mna/v20210119/model/DeviceInfo.h
   include/tencentcloud/mna/v20210119/model/AddHardwareRequest.h
+  include/tencentcloud/mna/v20210119/model/GetFlowStatisticByGroupResponse.h
   include/tencentcloud/mna/v20210119/model/Hardware.h
   include/tencentcloud/mna/v20210119/model/GetDevicesRequest.h
   include/tencentcloud/mna/v20210119/model/FlowPackageInfo.h
@@ -94,18 +98,19 @@ set(mna_src
   src/v20210119/model/GetDeviceResponse.cpp
   src/v20210119/model/GetDevicePayModeRequest.cpp
   src/v20210119/model/Capacity.cpp
-  src/v20210119/model/GetFlowStatisticRequest.cpp
+  src/v20210119/model/GetFlowAlarmInfoResponse.cpp
   src/v20210119/model/DestAddressInfo.cpp
   src/v20210119/model/GetNetMonitorResponse.cpp
   src/v20210119/model/SlotNetInfo.cpp
   src/v20210119/model/DeleteQosRequest.cpp
   src/v20210119/model/GetNetMonitorRequest.cpp
+  src/v20210119/model/OrderFlowPackageRequest.cpp
   src/v20210119/model/GetMultiFlowStatisticResponse.cpp
   src/v20210119/model/VendorHardware.cpp
   src/v20210119/model/DeviceNetInfo.cpp
   src/v20210119/model/GetFlowStatisticResponse.cpp
   src/v20210119/model/SrcAddressInfo.cpp
-  src/v20210119/model/NetDetails.cpp
+  src/v20210119/model/GetFlowAlarmInfoRequest.cpp
   src/v20210119/model/CreateQosResponse.cpp
   src/v20210119/model/DescribeQosResponse.cpp
   src/v20210119/model/GetVendorHardwareRequest.cpp
@@ -125,6 +130,7 @@ set(mna_src
   src/v20210119/model/GetVendorHardwareResponse.cpp
   src/v20210119/model/UpdateDeviceRequest.cpp
   src/v20210119/model/GetPublicKeyResponse.cpp
+  src/v20210119/model/GetFlowStatisticRequest.cpp
   src/v20210119/model/ActivateHardwareRequest.cpp
   src/v20210119/model/AddHardwareResponse.cpp
   src/v20210119/model/ModifyPackageRenewFlagResponse.cpp
@@ -137,8 +143,9 @@ set(mna_src
   src/v20210119/model/GetDevicePayModeResponse.cpp
   src/v20210119/model/GetDeviceRequest.cpp
   src/v20210119/model/ActivateHardwareResponse.cpp
-  src/v20210119/model/OrderFlowPackageRequest.cpp
+  src/v20210119/model/NetDetails.cpp
   src/v20210119/model/UpdateHardwareResponse.cpp
+  src/v20210119/model/GetFlowStatisticByGroupRequest.cpp
   src/v20210119/model/HardwareInfo.cpp
   src/v20210119/model/GetDevicesResponse.cpp
   src/v20210119/model/DescribeQosRequest.cpp
@@ -148,6 +155,7 @@ set(mna_src
   src/v20210119/model/GetStatisticDataResponse.cpp
   src/v20210119/model/DeviceInfo.cpp
   src/v20210119/model/AddHardwareRequest.cpp
+  src/v20210119/model/GetFlowStatisticByGroupResponse.cpp
   src/v20210119/model/Hardware.cpp
   src/v20210119/model/GetDevicesRequest.cpp
   src/v20210119/model/FlowPackageInfo.cpp

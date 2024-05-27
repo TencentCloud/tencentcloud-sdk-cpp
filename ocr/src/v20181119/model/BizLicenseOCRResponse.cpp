@@ -38,7 +38,13 @@ BizLicenseOCRResponse::BizLicenseOCRResponse() :
     m_recognizeWarnMsgHasBeenSet(false),
     m_isDuplicationHasBeenSet(false),
     m_registrationDateHasBeenSet(false),
-    m_angleHasBeenSet(false)
+    m_angleHasBeenSet(false),
+    m_nationalEmblemHasBeenSet(false),
+    m_qRCodeHasBeenSet(false),
+    m_sealHasBeenSet(false),
+    m_titleHasBeenSet(false),
+    m_serialNumberHasBeenSet(false),
+    m_registrationAuthorityHasBeenSet(false)
 {
 }
 
@@ -232,6 +238,66 @@ CoreInternalOutcome BizLicenseOCRResponse::Deserialize(const string &payload)
         m_angleHasBeenSet = true;
     }
 
+    if (rsp.HasMember("NationalEmblem") && !rsp["NationalEmblem"].IsNull())
+    {
+        if (!rsp["NationalEmblem"].IsBool())
+        {
+            return CoreInternalOutcome(Core::Error("response `NationalEmblem` IsBool=false incorrectly").SetRequestId(requestId));
+        }
+        m_nationalEmblem = rsp["NationalEmblem"].GetBool();
+        m_nationalEmblemHasBeenSet = true;
+    }
+
+    if (rsp.HasMember("QRCode") && !rsp["QRCode"].IsNull())
+    {
+        if (!rsp["QRCode"].IsBool())
+        {
+            return CoreInternalOutcome(Core::Error("response `QRCode` IsBool=false incorrectly").SetRequestId(requestId));
+        }
+        m_qRCode = rsp["QRCode"].GetBool();
+        m_qRCodeHasBeenSet = true;
+    }
+
+    if (rsp.HasMember("Seal") && !rsp["Seal"].IsNull())
+    {
+        if (!rsp["Seal"].IsBool())
+        {
+            return CoreInternalOutcome(Core::Error("response `Seal` IsBool=false incorrectly").SetRequestId(requestId));
+        }
+        m_seal = rsp["Seal"].GetBool();
+        m_sealHasBeenSet = true;
+    }
+
+    if (rsp.HasMember("Title") && !rsp["Title"].IsNull())
+    {
+        if (!rsp["Title"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `Title` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_title = string(rsp["Title"].GetString());
+        m_titleHasBeenSet = true;
+    }
+
+    if (rsp.HasMember("SerialNumber") && !rsp["SerialNumber"].IsNull())
+    {
+        if (!rsp["SerialNumber"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `SerialNumber` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_serialNumber = string(rsp["SerialNumber"].GetString());
+        m_serialNumberHasBeenSet = true;
+    }
+
+    if (rsp.HasMember("RegistrationAuthority") && !rsp["RegistrationAuthority"].IsNull())
+    {
+        if (!rsp["RegistrationAuthority"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `RegistrationAuthority` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_registrationAuthority = string(rsp["RegistrationAuthority"].GetString());
+        m_registrationAuthorityHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -370,6 +436,54 @@ string BizLicenseOCRResponse::ToJsonString() const
         string key = "Angle";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_angle, allocator);
+    }
+
+    if (m_nationalEmblemHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "NationalEmblem";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_nationalEmblem, allocator);
+    }
+
+    if (m_qRCodeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "QRCode";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_qRCode, allocator);
+    }
+
+    if (m_sealHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Seal";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_seal, allocator);
+    }
+
+    if (m_titleHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Title";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_title.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_serialNumberHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "SerialNumber";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_serialNumber.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_registrationAuthorityHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "RegistrationAuthority";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_registrationAuthority.c_str(), allocator).Move(), allocator);
     }
 
     rapidjson::Value iKey(rapidjson::kStringType);
@@ -532,6 +646,66 @@ double BizLicenseOCRResponse::GetAngle() const
 bool BizLicenseOCRResponse::AngleHasBeenSet() const
 {
     return m_angleHasBeenSet;
+}
+
+bool BizLicenseOCRResponse::GetNationalEmblem() const
+{
+    return m_nationalEmblem;
+}
+
+bool BizLicenseOCRResponse::NationalEmblemHasBeenSet() const
+{
+    return m_nationalEmblemHasBeenSet;
+}
+
+bool BizLicenseOCRResponse::GetQRCode() const
+{
+    return m_qRCode;
+}
+
+bool BizLicenseOCRResponse::QRCodeHasBeenSet() const
+{
+    return m_qRCodeHasBeenSet;
+}
+
+bool BizLicenseOCRResponse::GetSeal() const
+{
+    return m_seal;
+}
+
+bool BizLicenseOCRResponse::SealHasBeenSet() const
+{
+    return m_sealHasBeenSet;
+}
+
+string BizLicenseOCRResponse::GetTitle() const
+{
+    return m_title;
+}
+
+bool BizLicenseOCRResponse::TitleHasBeenSet() const
+{
+    return m_titleHasBeenSet;
+}
+
+string BizLicenseOCRResponse::GetSerialNumber() const
+{
+    return m_serialNumber;
+}
+
+bool BizLicenseOCRResponse::SerialNumberHasBeenSet() const
+{
+    return m_serialNumberHasBeenSet;
+}
+
+string BizLicenseOCRResponse::GetRegistrationAuthority() const
+{
+    return m_registrationAuthority;
+}
+
+bool BizLicenseOCRResponse::RegistrationAuthorityHasBeenSet() const
+{
+    return m_registrationAuthorityHasBeenSet;
 }
 
 

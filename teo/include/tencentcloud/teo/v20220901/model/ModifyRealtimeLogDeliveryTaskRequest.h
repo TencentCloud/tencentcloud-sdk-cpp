@@ -254,14 +254,18 @@ namespace TencentCloud
 
                     /**
                      * 获取日志投递的输出格式。不填保持原有配置。
+特别地，当 TaskType 取值为 cls 时，LogFormat.FormatType 的值只能为 json，且 LogFormat 中其他参数将被忽略，建议不传 LogFormat。
                      * @return LogFormat 日志投递的输出格式。不填保持原有配置。
+特别地，当 TaskType 取值为 cls 时，LogFormat.FormatType 的值只能为 json，且 LogFormat 中其他参数将被忽略，建议不传 LogFormat。
                      * 
                      */
                     LogFormat GetLogFormat() const;
 
                     /**
                      * 设置日志投递的输出格式。不填保持原有配置。
+特别地，当 TaskType 取值为 cls 时，LogFormat.FormatType 的值只能为 json，且 LogFormat 中其他参数将被忽略，建议不传 LogFormat。
                      * @param _logFormat 日志投递的输出格式。不填保持原有配置。
+特别地，当 TaskType 取值为 cls 时，LogFormat.FormatType 的值只能为 json，且 LogFormat 中其他参数将被忽略，建议不传 LogFormat。
                      * 
                      */
                     void SetLogFormat(const LogFormat& _logFormat);
@@ -377,6 +381,7 @@ namespace TencentCloud
 
                     /**
                      * 日志投递的输出格式。不填保持原有配置。
+特别地，当 TaskType 取值为 cls 时，LogFormat.FormatType 的值只能为 json，且 LogFormat 中其他参数将被忽略，建议不传 LogFormat。
                      */
                     LogFormat m_logFormat;
                     bool m_logFormatHasBeenSet;

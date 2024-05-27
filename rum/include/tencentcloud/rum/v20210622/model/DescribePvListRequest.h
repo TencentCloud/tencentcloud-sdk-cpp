@@ -106,15 +106,15 @@ namespace TencentCloud
                     bool StartTimeHasBeenSet() const;
 
                     /**
-                     * 获取获取day：d，   获取min则不填
-                     * @return Dimension 获取day：d，   获取min则不填
+                     * 获取对PV指标的查询维度。获取day：d，   获取min则不填。
+                     * @return Dimension 对PV指标的查询维度。获取day：d，   获取min则不填。
                      * 
                      */
                     std::string GetDimension() const;
 
                     /**
-                     * 设置获取day：d，   获取min则不填
-                     * @param _dimension 获取day：d，   获取min则不填
+                     * 设置对PV指标的查询维度。获取day：d，   获取min则不填。
+                     * @param _dimension 对PV指标的查询维度。获取day：d，   获取min则不填。
                      * 
                      */
                     void SetDimension(const std::string& _dimension);
@@ -147,7 +147,7 @@ namespace TencentCloud
                     bool m_startTimeHasBeenSet;
 
                     /**
-                     * 获取day：d，   获取min则不填
+                     * 对PV指标的查询维度。获取day：d，   获取min则不填。
                      */
                     std::string m_dimension;
                     bool m_dimensionHasBeenSet;

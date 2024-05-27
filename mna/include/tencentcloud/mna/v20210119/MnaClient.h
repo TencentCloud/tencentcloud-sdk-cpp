@@ -45,10 +45,14 @@
 #include <tencentcloud/mna/v20210119/model/GetDevicePayModeResponse.h>
 #include <tencentcloud/mna/v20210119/model/GetDevicesRequest.h>
 #include <tencentcloud/mna/v20210119/model/GetDevicesResponse.h>
+#include <tencentcloud/mna/v20210119/model/GetFlowAlarmInfoRequest.h>
+#include <tencentcloud/mna/v20210119/model/GetFlowAlarmInfoResponse.h>
 #include <tencentcloud/mna/v20210119/model/GetFlowPackagesRequest.h>
 #include <tencentcloud/mna/v20210119/model/GetFlowPackagesResponse.h>
 #include <tencentcloud/mna/v20210119/model/GetFlowStatisticRequest.h>
 #include <tencentcloud/mna/v20210119/model/GetFlowStatisticResponse.h>
+#include <tencentcloud/mna/v20210119/model/GetFlowStatisticByGroupRequest.h>
+#include <tencentcloud/mna/v20210119/model/GetFlowStatisticByGroupResponse.h>
 #include <tencentcloud/mna/v20210119/model/GetHardwareListRequest.h>
 #include <tencentcloud/mna/v20210119/model/GetHardwareListResponse.h>
 #include <tencentcloud/mna/v20210119/model/GetMultiFlowStatisticRequest.h>
@@ -116,12 +120,18 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::GetDevicesResponse> GetDevicesOutcome;
                 typedef std::future<GetDevicesOutcome> GetDevicesOutcomeCallable;
                 typedef std::function<void(const MnaClient*, const Model::GetDevicesRequest&, GetDevicesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> GetDevicesAsyncHandler;
+                typedef Outcome<Core::Error, Model::GetFlowAlarmInfoResponse> GetFlowAlarmInfoOutcome;
+                typedef std::future<GetFlowAlarmInfoOutcome> GetFlowAlarmInfoOutcomeCallable;
+                typedef std::function<void(const MnaClient*, const Model::GetFlowAlarmInfoRequest&, GetFlowAlarmInfoOutcome, const std::shared_ptr<const AsyncCallerContext>&)> GetFlowAlarmInfoAsyncHandler;
                 typedef Outcome<Core::Error, Model::GetFlowPackagesResponse> GetFlowPackagesOutcome;
                 typedef std::future<GetFlowPackagesOutcome> GetFlowPackagesOutcomeCallable;
                 typedef std::function<void(const MnaClient*, const Model::GetFlowPackagesRequest&, GetFlowPackagesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> GetFlowPackagesAsyncHandler;
                 typedef Outcome<Core::Error, Model::GetFlowStatisticResponse> GetFlowStatisticOutcome;
                 typedef std::future<GetFlowStatisticOutcome> GetFlowStatisticOutcomeCallable;
                 typedef std::function<void(const MnaClient*, const Model::GetFlowStatisticRequest&, GetFlowStatisticOutcome, const std::shared_ptr<const AsyncCallerContext>&)> GetFlowStatisticAsyncHandler;
+                typedef Outcome<Core::Error, Model::GetFlowStatisticByGroupResponse> GetFlowStatisticByGroupOutcome;
+                typedef std::future<GetFlowStatisticByGroupOutcome> GetFlowStatisticByGroupOutcomeCallable;
+                typedef std::function<void(const MnaClient*, const Model::GetFlowStatisticByGroupRequest&, GetFlowStatisticByGroupOutcome, const std::shared_ptr<const AsyncCallerContext>&)> GetFlowStatisticByGroupAsyncHandler;
                 typedef Outcome<Core::Error, Model::GetHardwareListResponse> GetHardwareListOutcome;
                 typedef std::future<GetHardwareListOutcome> GetHardwareListOutcomeCallable;
                 typedef std::function<void(const MnaClient*, const Model::GetHardwareListRequest&, GetHardwareListOutcome, const std::shared_ptr<const AsyncCallerContext>&)> GetHardwareListAsyncHandler;
@@ -255,6 +265,15 @@ namespace TencentCloud
                 GetDevicesOutcomeCallable GetDevicesCallable(const Model::GetDevicesRequest& request);
 
                 /**
+                 *根据AppId查询用户设置的流量告警信息，包括阈值，回调url和key
+                 * @param req GetFlowAlarmInfoRequest
+                 * @return GetFlowAlarmInfoOutcome
+                 */
+                GetFlowAlarmInfoOutcome GetFlowAlarmInfo(const Model::GetFlowAlarmInfoRequest &request);
+                void GetFlowAlarmInfoAsync(const Model::GetFlowAlarmInfoRequest& request, const GetFlowAlarmInfoAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                GetFlowAlarmInfoOutcomeCallable GetFlowAlarmInfoCallable(const Model::GetFlowAlarmInfoRequest& request);
+
+                /**
                  *获取流量包列表
                  * @param req GetFlowPackagesRequest
                  * @return GetFlowPackagesOutcome
@@ -271,6 +290,15 @@ namespace TencentCloud
                 GetFlowStatisticOutcome GetFlowStatistic(const Model::GetFlowStatisticRequest &request);
                 void GetFlowStatisticAsync(const Model::GetFlowStatisticRequest& request, const GetFlowStatisticAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 GetFlowStatisticOutcomeCallable GetFlowStatisticCallable(const Model::GetFlowStatisticRequest& request);
+
+                /**
+                 *获取指定分组，指定时间数据流量使用情况
+                 * @param req GetFlowStatisticByGroupRequest
+                 * @return GetFlowStatisticByGroupOutcome
+                 */
+                GetFlowStatisticByGroupOutcome GetFlowStatisticByGroup(const Model::GetFlowStatisticByGroupRequest &request);
+                void GetFlowStatisticByGroupAsync(const Model::GetFlowStatisticByGroupRequest& request, const GetFlowStatisticByGroupAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                GetFlowStatisticByGroupOutcomeCallable GetFlowStatisticByGroupCallable(const Model::GetFlowStatisticByGroupRequest& request);
 
                 /**
                  *获取厂商硬件列表

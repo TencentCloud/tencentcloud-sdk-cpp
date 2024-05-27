@@ -64,15 +64,15 @@ namespace TencentCloud
                     bool TaskIdHasBeenSet() const;
 
                     /**
-                     * 获取任务名
-                     * @return Name 任务名
+                     * 获取任务名，该参数为空时不作任何修改。
+                     * @return Name 任务名，该参数为空时不作任何修改。
                      * 
                      */
                     std::string GetName() const;
 
                     /**
-                     * 设置任务名
-                     * @param _name 任务名
+                     * 设置任务名，该参数为空时不作任何修改。
+                     * @param _name 任务名，该参数为空时不作任何修改。
                      * 
                      */
                     void SetName(const std::string& _name);
@@ -93,7 +93,7 @@ namespace TencentCloud
                     bool m_taskIdHasBeenSet;
 
                     /**
-                     * 任务名
+                     * 任务名，该参数为空时不作任何修改。
                      */
                     std::string m_name;
                     bool m_nameHasBeenSet;

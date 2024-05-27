@@ -513,6 +513,49 @@ MnaClient::GetDevicesOutcomeCallable MnaClient::GetDevicesCallable(const GetDevi
     return task->get_future();
 }
 
+MnaClient::GetFlowAlarmInfoOutcome MnaClient::GetFlowAlarmInfo(const GetFlowAlarmInfoRequest &request)
+{
+    auto outcome = MakeRequest(request, "GetFlowAlarmInfo");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        GetFlowAlarmInfoResponse rsp = GetFlowAlarmInfoResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return GetFlowAlarmInfoOutcome(rsp);
+        else
+            return GetFlowAlarmInfoOutcome(o.GetError());
+    }
+    else
+    {
+        return GetFlowAlarmInfoOutcome(outcome.GetError());
+    }
+}
+
+void MnaClient::GetFlowAlarmInfoAsync(const GetFlowAlarmInfoRequest& request, const GetFlowAlarmInfoAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->GetFlowAlarmInfo(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+MnaClient::GetFlowAlarmInfoOutcomeCallable MnaClient::GetFlowAlarmInfoCallable(const GetFlowAlarmInfoRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<GetFlowAlarmInfoOutcome()>>(
+        [this, request]()
+        {
+            return this->GetFlowAlarmInfo(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 MnaClient::GetFlowPackagesOutcome MnaClient::GetFlowPackages(const GetFlowPackagesRequest &request)
 {
     auto outcome = MakeRequest(request, "GetFlowPackages");
@@ -592,6 +635,49 @@ MnaClient::GetFlowStatisticOutcomeCallable MnaClient::GetFlowStatisticCallable(c
         [this, request]()
         {
             return this->GetFlowStatistic(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+MnaClient::GetFlowStatisticByGroupOutcome MnaClient::GetFlowStatisticByGroup(const GetFlowStatisticByGroupRequest &request)
+{
+    auto outcome = MakeRequest(request, "GetFlowStatisticByGroup");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        GetFlowStatisticByGroupResponse rsp = GetFlowStatisticByGroupResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return GetFlowStatisticByGroupOutcome(rsp);
+        else
+            return GetFlowStatisticByGroupOutcome(o.GetError());
+    }
+    else
+    {
+        return GetFlowStatisticByGroupOutcome(outcome.GetError());
+    }
+}
+
+void MnaClient::GetFlowStatisticByGroupAsync(const GetFlowStatisticByGroupRequest& request, const GetFlowStatisticByGroupAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->GetFlowStatisticByGroup(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+MnaClient::GetFlowStatisticByGroupOutcomeCallable MnaClient::GetFlowStatisticByGroupCallable(const GetFlowStatisticByGroupRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<GetFlowStatisticByGroupOutcome()>>(
+        [this, request]()
+        {
+            return this->GetFlowStatisticByGroup(request);
         }
     );
 

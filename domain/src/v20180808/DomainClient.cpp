@@ -83,6 +83,49 @@ DomainClient::BatchModifyDomainInfoOutcomeCallable DomainClient::BatchModifyDoma
     return task->get_future();
 }
 
+DomainClient::BidDetailPageOutcome DomainClient::BidDetailPage(const BidDetailPageRequest &request)
+{
+    auto outcome = MakeRequest(request, "BidDetailPage");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        BidDetailPageResponse rsp = BidDetailPageResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return BidDetailPageOutcome(rsp);
+        else
+            return BidDetailPageOutcome(o.GetError());
+    }
+    else
+    {
+        return BidDetailPageOutcome(outcome.GetError());
+    }
+}
+
+void DomainClient::BidDetailPageAsync(const BidDetailPageRequest& request, const BidDetailPageAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->BidDetailPage(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+DomainClient::BidDetailPageOutcomeCallable DomainClient::BidDetailPageCallable(const BidDetailPageRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<BidDetailPageOutcome()>>(
+        [this, request]()
+        {
+            return this->BidDetailPage(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 DomainClient::BidPreDomainsOutcome DomainClient::BidPreDomains(const BidPreDomainsRequest &request)
 {
     auto outcome = MakeRequest(request, "BidPreDomains");
@@ -119,6 +162,49 @@ DomainClient::BidPreDomainsOutcomeCallable DomainClient::BidPreDomainsCallable(c
         [this, request]()
         {
             return this->BidPreDomains(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+DomainClient::BiddingPreReleaseOutcome DomainClient::BiddingPreRelease(const BiddingPreReleaseRequest &request)
+{
+    auto outcome = MakeRequest(request, "BiddingPreRelease");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        BiddingPreReleaseResponse rsp = BiddingPreReleaseResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return BiddingPreReleaseOutcome(rsp);
+        else
+            return BiddingPreReleaseOutcome(o.GetError());
+    }
+    else
+    {
+        return BiddingPreReleaseOutcome(outcome.GetError());
+    }
+}
+
+void DomainClient::BiddingPreReleaseAsync(const BiddingPreReleaseRequest& request, const BiddingPreReleaseAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->BiddingPreRelease(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+DomainClient::BiddingPreReleaseOutcomeCallable DomainClient::BiddingPreReleaseCallable(const BiddingPreReleaseRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<BiddingPreReleaseOutcome()>>(
+        [this, request]()
+        {
+            return this->BiddingPreRelease(request);
         }
     );
 
@@ -427,6 +513,49 @@ DomainClient::CreateTemplateOutcomeCallable DomainClient::CreateTemplateCallable
     return task->get_future();
 }
 
+DomainClient::DeleteBiddingOutcome DomainClient::DeleteBidding(const DeleteBiddingRequest &request)
+{
+    auto outcome = MakeRequest(request, "DeleteBidding");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DeleteBiddingResponse rsp = DeleteBiddingResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DeleteBiddingOutcome(rsp);
+        else
+            return DeleteBiddingOutcome(o.GetError());
+    }
+    else
+    {
+        return DeleteBiddingOutcome(outcome.GetError());
+    }
+}
+
+void DomainClient::DeleteBiddingAsync(const DeleteBiddingRequest& request, const DeleteBiddingAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DeleteBidding(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+DomainClient::DeleteBiddingOutcomeCallable DomainClient::DeleteBiddingCallable(const DeleteBiddingRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DeleteBiddingOutcome()>>(
+        [this, request]()
+        {
+            return this->DeleteBidding(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 DomainClient::DeleteCustomDnsHostOutcome DomainClient::DeleteCustomDnsHost(const DeleteCustomDnsHostRequest &request)
 {
     auto outcome = MakeRequest(request, "DeleteCustomDnsHost");
@@ -599,6 +728,49 @@ DomainClient::DeleteTemplateOutcomeCallable DomainClient::DeleteTemplateCallable
     return task->get_future();
 }
 
+DomainClient::DescribeAuctionListOutcome DomainClient::DescribeAuctionList(const DescribeAuctionListRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeAuctionList");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeAuctionListResponse rsp = DescribeAuctionListResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeAuctionListOutcome(rsp);
+        else
+            return DescribeAuctionListOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeAuctionListOutcome(outcome.GetError());
+    }
+}
+
+void DomainClient::DescribeAuctionListAsync(const DescribeAuctionListRequest& request, const DescribeAuctionListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeAuctionList(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+DomainClient::DescribeAuctionListOutcomeCallable DomainClient::DescribeAuctionListCallable(const DescribeAuctionListRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeAuctionListOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeAuctionList(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 DomainClient::DescribeBatchOperationLogDetailsOutcome DomainClient::DescribeBatchOperationLogDetails(const DescribeBatchOperationLogDetailsRequest &request)
 {
     auto outcome = MakeRequest(request, "DescribeBatchOperationLogDetails");
@@ -678,6 +850,264 @@ DomainClient::DescribeBatchOperationLogsOutcomeCallable DomainClient::DescribeBa
         [this, request]()
         {
             return this->DescribeBatchOperationLogs(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+DomainClient::DescribeBiddingAppointDetailOutcome DomainClient::DescribeBiddingAppointDetail(const DescribeBiddingAppointDetailRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeBiddingAppointDetail");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeBiddingAppointDetailResponse rsp = DescribeBiddingAppointDetailResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeBiddingAppointDetailOutcome(rsp);
+        else
+            return DescribeBiddingAppointDetailOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeBiddingAppointDetailOutcome(outcome.GetError());
+    }
+}
+
+void DomainClient::DescribeBiddingAppointDetailAsync(const DescribeBiddingAppointDetailRequest& request, const DescribeBiddingAppointDetailAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeBiddingAppointDetail(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+DomainClient::DescribeBiddingAppointDetailOutcomeCallable DomainClient::DescribeBiddingAppointDetailCallable(const DescribeBiddingAppointDetailRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeBiddingAppointDetailOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeBiddingAppointDetail(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+DomainClient::DescribeBiddingAppointListOutcome DomainClient::DescribeBiddingAppointList(const DescribeBiddingAppointListRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeBiddingAppointList");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeBiddingAppointListResponse rsp = DescribeBiddingAppointListResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeBiddingAppointListOutcome(rsp);
+        else
+            return DescribeBiddingAppointListOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeBiddingAppointListOutcome(outcome.GetError());
+    }
+}
+
+void DomainClient::DescribeBiddingAppointListAsync(const DescribeBiddingAppointListRequest& request, const DescribeBiddingAppointListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeBiddingAppointList(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+DomainClient::DescribeBiddingAppointListOutcomeCallable DomainClient::DescribeBiddingAppointListCallable(const DescribeBiddingAppointListRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeBiddingAppointListOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeBiddingAppointList(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+DomainClient::DescribeBiddingDetailOutcome DomainClient::DescribeBiddingDetail(const DescribeBiddingDetailRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeBiddingDetail");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeBiddingDetailResponse rsp = DescribeBiddingDetailResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeBiddingDetailOutcome(rsp);
+        else
+            return DescribeBiddingDetailOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeBiddingDetailOutcome(outcome.GetError());
+    }
+}
+
+void DomainClient::DescribeBiddingDetailAsync(const DescribeBiddingDetailRequest& request, const DescribeBiddingDetailAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeBiddingDetail(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+DomainClient::DescribeBiddingDetailOutcomeCallable DomainClient::DescribeBiddingDetailCallable(const DescribeBiddingDetailRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeBiddingDetailOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeBiddingDetail(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+DomainClient::DescribeBiddingListOutcome DomainClient::DescribeBiddingList(const DescribeBiddingListRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeBiddingList");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeBiddingListResponse rsp = DescribeBiddingListResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeBiddingListOutcome(rsp);
+        else
+            return DescribeBiddingListOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeBiddingListOutcome(outcome.GetError());
+    }
+}
+
+void DomainClient::DescribeBiddingListAsync(const DescribeBiddingListRequest& request, const DescribeBiddingListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeBiddingList(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+DomainClient::DescribeBiddingListOutcomeCallable DomainClient::DescribeBiddingListCallable(const DescribeBiddingListRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeBiddingListOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeBiddingList(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+DomainClient::DescribeBiddingSuccessfulDetailOutcome DomainClient::DescribeBiddingSuccessfulDetail(const DescribeBiddingSuccessfulDetailRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeBiddingSuccessfulDetail");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeBiddingSuccessfulDetailResponse rsp = DescribeBiddingSuccessfulDetailResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeBiddingSuccessfulDetailOutcome(rsp);
+        else
+            return DescribeBiddingSuccessfulDetailOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeBiddingSuccessfulDetailOutcome(outcome.GetError());
+    }
+}
+
+void DomainClient::DescribeBiddingSuccessfulDetailAsync(const DescribeBiddingSuccessfulDetailRequest& request, const DescribeBiddingSuccessfulDetailAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeBiddingSuccessfulDetail(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+DomainClient::DescribeBiddingSuccessfulDetailOutcomeCallable DomainClient::DescribeBiddingSuccessfulDetailCallable(const DescribeBiddingSuccessfulDetailRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeBiddingSuccessfulDetailOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeBiddingSuccessfulDetail(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+DomainClient::DescribeBiddingSuccessfulListOutcome DomainClient::DescribeBiddingSuccessfulList(const DescribeBiddingSuccessfulListRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeBiddingSuccessfulList");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeBiddingSuccessfulListResponse rsp = DescribeBiddingSuccessfulListResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeBiddingSuccessfulListOutcome(rsp);
+        else
+            return DescribeBiddingSuccessfulListOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeBiddingSuccessfulListOutcome(outcome.GetError());
+    }
+}
+
+void DomainClient::DescribeBiddingSuccessfulListAsync(const DescribeBiddingSuccessfulListRequest& request, const DescribeBiddingSuccessfulListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeBiddingSuccessfulList(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+DomainClient::DescribeBiddingSuccessfulListOutcomeCallable DomainClient::DescribeBiddingSuccessfulListCallable(const DescribeBiddingSuccessfulListRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeBiddingSuccessfulListOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeBiddingSuccessfulList(request);
         }
     );
 
@@ -900,6 +1330,49 @@ DomainClient::DescribeDomainSimpleInfoOutcomeCallable DomainClient::DescribeDoma
     return task->get_future();
 }
 
+DomainClient::DescribePayWaitDetailOutcome DomainClient::DescribePayWaitDetail(const DescribePayWaitDetailRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribePayWaitDetail");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribePayWaitDetailResponse rsp = DescribePayWaitDetailResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribePayWaitDetailOutcome(rsp);
+        else
+            return DescribePayWaitDetailOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribePayWaitDetailOutcome(outcome.GetError());
+    }
+}
+
+void DomainClient::DescribePayWaitDetailAsync(const DescribePayWaitDetailRequest& request, const DescribePayWaitDetailAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribePayWaitDetail(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+DomainClient::DescribePayWaitDetailOutcomeCallable DomainClient::DescribePayWaitDetailCallable(const DescribePayWaitDetailRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribePayWaitDetailOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribePayWaitDetail(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 DomainClient::DescribePhoneEmailListOutcome DomainClient::DescribePhoneEmailList(const DescribePhoneEmailListRequest &request)
 {
     auto outcome = MakeRequest(request, "DescribePhoneEmailList");
@@ -943,6 +1416,49 @@ DomainClient::DescribePhoneEmailListOutcomeCallable DomainClient::DescribePhoneE
     return task->get_future();
 }
 
+DomainClient::DescribePreAuctionListOutcome DomainClient::DescribePreAuctionList(const DescribePreAuctionListRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribePreAuctionList");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribePreAuctionListResponse rsp = DescribePreAuctionListResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribePreAuctionListOutcome(rsp);
+        else
+            return DescribePreAuctionListOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribePreAuctionListOutcome(outcome.GetError());
+    }
+}
+
+void DomainClient::DescribePreAuctionListAsync(const DescribePreAuctionListRequest& request, const DescribePreAuctionListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribePreAuctionList(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+DomainClient::DescribePreAuctionListOutcomeCallable DomainClient::DescribePreAuctionListCallable(const DescribePreAuctionListRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribePreAuctionListOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribePreAuctionList(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 DomainClient::DescribePreDomainListOutcome DomainClient::DescribePreDomainList(const DescribePreDomainListRequest &request)
 {
     auto outcome = MakeRequest(request, "DescribePreDomainList");
@@ -979,6 +1495,49 @@ DomainClient::DescribePreDomainListOutcomeCallable DomainClient::DescribePreDoma
         [this, request]()
         {
             return this->DescribePreDomainList(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+DomainClient::DescribePreReleaseListOutcome DomainClient::DescribePreReleaseList(const DescribePreReleaseListRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribePreReleaseList");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribePreReleaseListResponse rsp = DescribePreReleaseListResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribePreReleaseListOutcome(rsp);
+        else
+            return DescribePreReleaseListOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribePreReleaseListOutcome(outcome.GetError());
+    }
+}
+
+void DomainClient::DescribePreReleaseListAsync(const DescribePreReleaseListRequest& request, const DescribePreReleaseListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribePreReleaseList(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+DomainClient::DescribePreReleaseListOutcomeCallable DomainClient::DescribePreReleaseListCallable(const DescribePreReleaseListRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribePreReleaseListOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribePreReleaseList(request);
         }
     );
 
@@ -1194,6 +1753,49 @@ DomainClient::DescribeTldListOutcomeCallable DomainClient::DescribeTldListCallab
         [this, request]()
         {
             return this->DescribeTldList(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+DomainClient::DescribeUnPreDomainDetailOutcome DomainClient::DescribeUnPreDomainDetail(const DescribeUnPreDomainDetailRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeUnPreDomainDetail");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeUnPreDomainDetailResponse rsp = DescribeUnPreDomainDetailResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeUnPreDomainDetailOutcome(rsp);
+        else
+            return DescribeUnPreDomainDetailOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeUnPreDomainDetailOutcome(outcome.GetError());
+    }
+}
+
+void DomainClient::DescribeUnPreDomainDetailAsync(const DescribeUnPreDomainDetailRequest& request, const DescribeUnPreDomainDetailAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeUnPreDomainDetail(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+DomainClient::DescribeUnPreDomainDetailOutcomeCallable DomainClient::DescribeUnPreDomainDetailCallable(const DescribeUnPreDomainDetailRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeUnPreDomainDetailOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeUnPreDomainDetail(request);
         }
     );
 
