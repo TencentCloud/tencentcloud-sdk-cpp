@@ -58,6 +58,22 @@ namespace TencentCloud
                      */
                     bool ResourceSetHasBeenSet() const;
 
+                    /**
+                     * 获取堡垒机资源数量
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return TotalCount 堡垒机资源数量
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    uint64_t GetTotalCount() const;
+
+                    /**
+                     * 判断参数 TotalCount 是否已赋值
+                     * @return TotalCount 是否已赋值
+                     * 
+                     */
+                    bool TotalCountHasBeenSet() const;
+
                 private:
 
                     /**
@@ -65,6 +81,13 @@ namespace TencentCloud
                      */
                     std::vector<Resource> m_resourceSet;
                     bool m_resourceSetHasBeenSet;
+
+                    /**
+                     * 堡垒机资源数量
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    uint64_t m_totalCount;
+                    bool m_totalCountHasBeenSet;
 
                 };
             }

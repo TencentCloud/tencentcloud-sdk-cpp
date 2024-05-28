@@ -24,7 +24,8 @@ using namespace std;
 
 BatchStopOpsTasksRequest::BatchStopOpsTasksRequest() :
     m_taskIdListHasBeenSet(false),
-    m_projectIdHasBeenSet(false)
+    m_projectIdHasBeenSet(false),
+    m_killInstanceHasBeenSet(false)
 {
 }
 
@@ -54,6 +55,14 @@ string BatchStopOpsTasksRequest::ToJsonString() const
         string key = "ProjectId";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_projectId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_killInstanceHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "KillInstance";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_killInstance, allocator);
     }
 
 
@@ -94,6 +103,22 @@ void BatchStopOpsTasksRequest::SetProjectId(const string& _projectId)
 bool BatchStopOpsTasksRequest::ProjectIdHasBeenSet() const
 {
     return m_projectIdHasBeenSet;
+}
+
+bool BatchStopOpsTasksRequest::GetKillInstance() const
+{
+    return m_killInstance;
+}
+
+void BatchStopOpsTasksRequest::SetKillInstance(const bool& _killInstance)
+{
+    m_killInstance = _killInstance;
+    m_killInstanceHasBeenSet = true;
+}
+
+bool BatchStopOpsTasksRequest::KillInstanceHasBeenSet() const
+{
+    return m_killInstanceHasBeenSet;
 }
 
 

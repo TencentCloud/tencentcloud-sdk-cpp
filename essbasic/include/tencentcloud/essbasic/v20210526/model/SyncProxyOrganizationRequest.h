@@ -204,10 +204,10 @@ namespace TencentCloud
 
                     /**
                      * 获取第三方平台子客企业法定代表人的证件类型，支持以下类型
-<ul><li>ID_CARD : 居民身份证 (默认值)</li></ul>
+<ul><li>ID_CARD : 中国大陆居民身份证 (默认值)</li></ul>
 注: `现在仅支持ID_CARD居民身份证类型`
                      * @return ProxyLegalIdCardType 第三方平台子客企业法定代表人的证件类型，支持以下类型
-<ul><li>ID_CARD : 居民身份证 (默认值)</li></ul>
+<ul><li>ID_CARD : 中国大陆居民身份证 (默认值)</li></ul>
 注: `现在仅支持ID_CARD居民身份证类型`
                      * 
                      */
@@ -215,10 +215,10 @@ namespace TencentCloud
 
                     /**
                      * 设置第三方平台子客企业法定代表人的证件类型，支持以下类型
-<ul><li>ID_CARD : 居民身份证 (默认值)</li></ul>
+<ul><li>ID_CARD : 中国大陆居民身份证 (默认值)</li></ul>
 注: `现在仅支持ID_CARD居民身份证类型`
                      * @param _proxyLegalIdCardType 第三方平台子客企业法定代表人的证件类型，支持以下类型
-<ul><li>ID_CARD : 居民身份证 (默认值)</li></ul>
+<ul><li>ID_CARD : 中国大陆居民身份证 (默认值)</li></ul>
 注: `现在仅支持ID_CARD居民身份证类型`
                      * 
                      */
@@ -333,7 +333,7 @@ namespace TencentCloud
 
                     /**
                      * 第三方平台子客企业法定代表人的证件类型，支持以下类型
-<ul><li>ID_CARD : 居民身份证 (默认值)</li></ul>
+<ul><li>ID_CARD : 中国大陆居民身份证 (默认值)</li></ul>
 注: `现在仅支持ID_CARD居民身份证类型`
                      */
                     std::string m_proxyLegalIdCardType;

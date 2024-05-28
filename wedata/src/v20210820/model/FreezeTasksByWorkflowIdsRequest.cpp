@@ -24,7 +24,8 @@ using namespace std;
 
 FreezeTasksByWorkflowIdsRequest::FreezeTasksByWorkflowIdsRequest() :
     m_workflowIdsHasBeenSet(false),
-    m_projectIdHasBeenSet(false)
+    m_projectIdHasBeenSet(false),
+    m_killInstanceHasBeenSet(false)
 {
 }
 
@@ -54,6 +55,14 @@ string FreezeTasksByWorkflowIdsRequest::ToJsonString() const
         string key = "ProjectId";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_projectId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_killInstanceHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "KillInstance";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_killInstance, allocator);
     }
 
 
@@ -94,6 +103,22 @@ void FreezeTasksByWorkflowIdsRequest::SetProjectId(const string& _projectId)
 bool FreezeTasksByWorkflowIdsRequest::ProjectIdHasBeenSet() const
 {
     return m_projectIdHasBeenSet;
+}
+
+bool FreezeTasksByWorkflowIdsRequest::GetKillInstance() const
+{
+    return m_killInstance;
+}
+
+void FreezeTasksByWorkflowIdsRequest::SetKillInstance(const bool& _killInstance)
+{
+    m_killInstance = _killInstance;
+    m_killInstanceHasBeenSet = true;
+}
+
+bool FreezeTasksByWorkflowIdsRequest::KillInstanceHasBeenSet() const
+{
+    return m_killInstanceHasBeenSet;
 }
 
 

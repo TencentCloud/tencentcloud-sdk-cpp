@@ -917,6 +917,31 @@ PullVodPushLive -点播。
                      */
                     bool BackupToUrlHasBeenSet() const;
 
+                    /**
+                     * 获取直播转码模板。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return TranscodeTemplateName 直播转码模板。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::string GetTranscodeTemplateName() const;
+
+                    /**
+                     * 设置直播转码模板。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _transcodeTemplateName 直播转码模板。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetTranscodeTemplateName(const std::string& _transcodeTemplateName);
+
+                    /**
+                     * 判断参数 TranscodeTemplateName 是否已赋值
+                     * @return TranscodeTemplateName 是否已赋值
+                     * 
+                     */
+                    bool TranscodeTemplateNameHasBeenSet() const;
+
                 private:
 
                     /**
@@ -1157,6 +1182,13 @@ PullVodPushLive -点播。
                      */
                     std::string m_backupToUrl;
                     bool m_backupToUrlHasBeenSet;
+
+                    /**
+                     * 直播转码模板。
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_transcodeTemplateName;
+                    bool m_transcodeTemplateNameHasBeenSet;
 
                 };
             }

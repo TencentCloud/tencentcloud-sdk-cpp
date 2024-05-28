@@ -49,7 +49,8 @@ PullStreamTaskInfo::PullStreamTaskInfo() :
     m_watermarkListHasBeenSet(false),
     m_vodLocalModeHasBeenSet(false),
     m_recordTemplateIdHasBeenSet(false),
-    m_backupToUrlHasBeenSet(false)
+    m_backupToUrlHasBeenSet(false),
+    m_transcodeTemplateNameHasBeenSet(false)
 {
 }
 
@@ -371,6 +372,16 @@ CoreInternalOutcome PullStreamTaskInfo::Deserialize(const rapidjson::Value &valu
         m_backupToUrlHasBeenSet = true;
     }
 
+    if (value.HasMember("TranscodeTemplateName") && !value["TranscodeTemplateName"].IsNull())
+    {
+        if (!value["TranscodeTemplateName"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `PullStreamTaskInfo.TranscodeTemplateName` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_transcodeTemplateName = string(value["TranscodeTemplateName"].GetString());
+        m_transcodeTemplateNameHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -626,6 +637,14 @@ void PullStreamTaskInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Docume
         string key = "BackupToUrl";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_backupToUrl.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_transcodeTemplateNameHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "TranscodeTemplateName";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_transcodeTemplateName.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -1093,5 +1112,21 @@ void PullStreamTaskInfo::SetBackupToUrl(const string& _backupToUrl)
 bool PullStreamTaskInfo::BackupToUrlHasBeenSet() const
 {
     return m_backupToUrlHasBeenSet;
+}
+
+string PullStreamTaskInfo::GetTranscodeTemplateName() const
+{
+    return m_transcodeTemplateName;
+}
+
+void PullStreamTaskInfo::SetTranscodeTemplateName(const string& _transcodeTemplateName)
+{
+    m_transcodeTemplateName = _transcodeTemplateName;
+    m_transcodeTemplateNameHasBeenSet = true;
+}
+
+bool PullStreamTaskInfo::TranscodeTemplateNameHasBeenSet() const
+{
+    return m_transcodeTemplateNameHasBeenSet;
 }
 

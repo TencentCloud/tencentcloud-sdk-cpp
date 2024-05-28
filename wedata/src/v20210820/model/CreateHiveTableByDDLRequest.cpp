@@ -29,7 +29,8 @@ CreateHiveTableByDDLRequest::CreateHiveTableByDDLRequest() :
     m_privilegeHasBeenSet(false),
     m_projectIdHasBeenSet(false),
     m_typeHasBeenSet(false),
-    m_inchargeHasBeenSet(false)
+    m_inchargeHasBeenSet(false),
+    m_schemaNameHasBeenSet(false)
 {
 }
 
@@ -94,6 +95,14 @@ string CreateHiveTableByDDLRequest::ToJsonString() const
         string key = "Incharge";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_incharge.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_schemaNameHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "SchemaName";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_schemaName.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -214,6 +223,22 @@ void CreateHiveTableByDDLRequest::SetIncharge(const string& _incharge)
 bool CreateHiveTableByDDLRequest::InchargeHasBeenSet() const
 {
     return m_inchargeHasBeenSet;
+}
+
+string CreateHiveTableByDDLRequest::GetSchemaName() const
+{
+    return m_schemaName;
+}
+
+void CreateHiveTableByDDLRequest::SetSchemaName(const string& _schemaName)
+{
+    m_schemaName = _schemaName;
+    m_schemaNameHasBeenSet = true;
+}
+
+bool CreateHiveTableByDDLRequest::SchemaNameHasBeenSet() const
+{
+    return m_schemaNameHasBeenSet;
 }
 
 

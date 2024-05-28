@@ -280,7 +280,7 @@ namespace TencentCloud
                 CreateConsumerGroupOutcomeCallable CreateConsumerGroupCallable(const Model::CreateConsumerGroupRequest& request);
 
                 /**
-                 *购买新实例
+                 *创建 RocketMQ 5.x 集群
                  * @param req CreateInstanceRequest
                  * @return CreateInstanceOutcome
                  */

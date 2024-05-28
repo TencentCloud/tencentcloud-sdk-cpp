@@ -100,6 +100,7 @@ set(dasb_public_header_model
   include/tencentcloud/dasb/v20191018/model/CreateAssetSyncJobRequest.h
   include/tencentcloud/dasb/v20191018/model/Group.h
   include/tencentcloud/dasb/v20191018/model/DescribeAssetSyncStatusRequest.h
+  include/tencentcloud/dasb/v20191018/model/Clb.h
   include/tencentcloud/dasb/v20191018/model/ResetDeviceAccountPrivateKeyResponse.h
   include/tencentcloud/dasb/v20191018/model/DeleteUsersRequest.h
   include/tencentcloud/dasb/v20191018/model/DeleteDeviceAccountsRequest.h
@@ -255,6 +256,7 @@ set(dasb_src
   src/v20191018/model/CreateAssetSyncJobRequest.cpp
   src/v20191018/model/Group.cpp
   src/v20191018/model/DescribeAssetSyncStatusRequest.cpp
+  src/v20191018/model/Clb.cpp
   src/v20191018/model/ResetDeviceAccountPrivateKeyResponse.cpp
   src/v20191018/model/DeleteUsersRequest.cpp
   src/v20191018/model/DeleteDeviceAccountsRequest.cpp

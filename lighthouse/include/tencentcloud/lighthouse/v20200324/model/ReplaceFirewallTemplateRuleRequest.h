@@ -44,15 +44,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取防火墙模板ID。
-                     * @return TemplateId 防火墙模板ID。
+                     * 获取防火墙模板ID。可通过 [DescribeFirewallTemplates](https://cloud.tencent.com/document/product/1207/96874) 的返回值 TemplateSet 获取。
+                     * @return TemplateId 防火墙模板ID。可通过 [DescribeFirewallTemplates](https://cloud.tencent.com/document/product/1207/96874) 的返回值 TemplateSet 获取。
                      * 
                      */
                     std::string GetTemplateId() const;
 
                     /**
-                     * 设置防火墙模板ID。
-                     * @param _templateId 防火墙模板ID。
+                     * 设置防火墙模板ID。可通过 [DescribeFirewallTemplates](https://cloud.tencent.com/document/product/1207/96874) 的返回值 TemplateSet 获取。
+                     * @param _templateId 防火墙模板ID。可通过 [DescribeFirewallTemplates](https://cloud.tencent.com/document/product/1207/96874) 的返回值 TemplateSet 获取。
                      * 
                      */
                     void SetTemplateId(const std::string& _templateId);
@@ -65,15 +65,15 @@ namespace TencentCloud
                     bool TemplateIdHasBeenSet() const;
 
                     /**
-                     * 获取防火墙模板规则ID。
-                     * @return TemplateRuleId 防火墙模板规则ID。
+                     * 获取防火墙模板规则ID。可通过 [DescribeFirewallTemplateRules](https://cloud.tencent.com/document/product/1207/96875) 的返回值 TemplateRuleSet 获取。
+                     * @return TemplateRuleId 防火墙模板规则ID。可通过 [DescribeFirewallTemplateRules](https://cloud.tencent.com/document/product/1207/96875) 的返回值 TemplateRuleSet 获取。
                      * 
                      */
                     std::string GetTemplateRuleId() const;
 
                     /**
-                     * 设置防火墙模板规则ID。
-                     * @param _templateRuleId 防火墙模板规则ID。
+                     * 设置防火墙模板规则ID。可通过 [DescribeFirewallTemplateRules](https://cloud.tencent.com/document/product/1207/96875) 的返回值 TemplateRuleSet 获取。
+                     * @param _templateRuleId 防火墙模板规则ID。可通过 [DescribeFirewallTemplateRules](https://cloud.tencent.com/document/product/1207/96875) 的返回值 TemplateRuleSet 获取。
                      * 
                      */
                     void SetTemplateRuleId(const std::string& _templateRuleId);
@@ -109,13 +109,13 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 防火墙模板ID。
+                     * 防火墙模板ID。可通过 [DescribeFirewallTemplates](https://cloud.tencent.com/document/product/1207/96874) 的返回值 TemplateSet 获取。
                      */
                     std::string m_templateId;
                     bool m_templateIdHasBeenSet;
 
                     /**
-                     * 防火墙模板规则ID。
+                     * 防火墙模板规则ID。可通过 [DescribeFirewallTemplateRules](https://cloud.tencent.com/document/product/1207/96875) 的返回值 TemplateRuleSet 获取。
                      */
                     std::string m_templateRuleId;
                     bool m_templateRuleIdHasBeenSet;

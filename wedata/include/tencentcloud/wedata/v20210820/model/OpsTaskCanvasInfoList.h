@@ -90,6 +90,31 @@ namespace TencentCloud
                      */
                     bool LinksListHasBeenSet() const;
 
+                    /**
+                     * 获取画布循环依赖任务信息
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return CirculateTaskList 画布循环依赖任务信息
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    OpsTaskCanvasDto GetCirculateTaskList() const;
+
+                    /**
+                     * 设置画布循环依赖任务信息
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _circulateTaskList 画布循环依赖任务信息
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetCirculateTaskList(const OpsTaskCanvasDto& _circulateTaskList);
+
+                    /**
+                     * 判断参数 CirculateTaskList 是否已赋值
+                     * @return CirculateTaskList 是否已赋值
+                     * 
+                     */
+                    bool CirculateTaskListHasBeenSet() const;
+
                 private:
 
                     /**
@@ -103,6 +128,13 @@ namespace TencentCloud
                      */
                     std::vector<OpsTaskLinkInfoDto> m_linksList;
                     bool m_linksListHasBeenSet;
+
+                    /**
+                     * 画布循环依赖任务信息
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    OpsTaskCanvasDto m_circulateTaskList;
+                    bool m_circulateTaskListHasBeenSet;
 
                 };
             }

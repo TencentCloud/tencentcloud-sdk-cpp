@@ -43,15 +43,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取密钥对 ID 列表，每次请求批量密钥对的上限为 10。
-                     * @return KeyIds 密钥对 ID 列表，每次请求批量密钥对的上限为 10。
+                     * 获取密钥对 ID 列表，每次请求批量密钥对的上限为 10。可通过[DescribeKeyPairs](https://cloud.tencent.com/document/api/1207/55540)接口返回值中的KeyId获取。
+                     * @return KeyIds 密钥对 ID 列表，每次请求批量密钥对的上限为 10。可通过[DescribeKeyPairs](https://cloud.tencent.com/document/api/1207/55540)接口返回值中的KeyId获取。
                      * 
                      */
                     std::vector<std::string> GetKeyIds() const;
 
                     /**
-                     * 设置密钥对 ID 列表，每次请求批量密钥对的上限为 10。
-                     * @param _keyIds 密钥对 ID 列表，每次请求批量密钥对的上限为 10。
+                     * 设置密钥对 ID 列表，每次请求批量密钥对的上限为 10。可通过[DescribeKeyPairs](https://cloud.tencent.com/document/api/1207/55540)接口返回值中的KeyId获取。
+                     * @param _keyIds 密钥对 ID 列表，每次请求批量密钥对的上限为 10。可通过[DescribeKeyPairs](https://cloud.tencent.com/document/api/1207/55540)接口返回值中的KeyId获取。
                      * 
                      */
                     void SetKeyIds(const std::vector<std::string>& _keyIds);
@@ -66,7 +66,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 密钥对 ID 列表，每次请求批量密钥对的上限为 10。
+                     * 密钥对 ID 列表，每次请求批量密钥对的上限为 10。可通过[DescribeKeyPairs](https://cloud.tencent.com/document/api/1207/55540)接口返回值中的KeyId获取。
                      */
                     std::vector<std::string> m_keyIds;
                     bool m_keyIdsHasBeenSet;

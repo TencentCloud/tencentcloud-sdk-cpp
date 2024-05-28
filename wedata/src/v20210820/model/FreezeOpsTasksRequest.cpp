@@ -24,7 +24,8 @@ using namespace std;
 
 FreezeOpsTasksRequest::FreezeOpsTasksRequest() :
     m_tasksHasBeenSet(false),
-    m_operateIsInformHasBeenSet(false)
+    m_operateIsInformHasBeenSet(false),
+    m_killInstanceHasBeenSet(false)
 {
 }
 
@@ -56,6 +57,14 @@ string FreezeOpsTasksRequest::ToJsonString() const
         string key = "OperateIsInform";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_operateIsInform, allocator);
+    }
+
+    if (m_killInstanceHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "KillInstance";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_killInstance, allocator);
     }
 
 
@@ -96,6 +105,22 @@ void FreezeOpsTasksRequest::SetOperateIsInform(const bool& _operateIsInform)
 bool FreezeOpsTasksRequest::OperateIsInformHasBeenSet() const
 {
     return m_operateIsInformHasBeenSet;
+}
+
+bool FreezeOpsTasksRequest::GetKillInstance() const
+{
+    return m_killInstance;
+}
+
+void FreezeOpsTasksRequest::SetKillInstance(const bool& _killInstance)
+{
+    m_killInstance = _killInstance;
+    m_killInstanceHasBeenSet = true;
+}
+
+bool FreezeOpsTasksRequest::KillInstanceHasBeenSet() const
+{
+    return m_killInstanceHasBeenSet;
 }
 
 

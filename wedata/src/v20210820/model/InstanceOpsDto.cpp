@@ -80,7 +80,9 @@ InstanceOpsDto::InstanceOpsDto() :
     m_ownerIdHasBeenSet(false),
     m_userIdHasBeenSet(false),
     m_instanceLifeCycleOpsDtoHasBeenSet(false),
-    m_retryAttemptsHasBeenSet(false)
+    m_retryAttemptsHasBeenSet(false),
+    m_deletedFatherListHasBeenSet(false),
+    m_circulateInstanceListHasBeenSet(false)
 {
 }
 
@@ -713,6 +715,39 @@ CoreInternalOutcome InstanceOpsDto::Deserialize(const rapidjson::Value &value)
         m_retryAttemptsHasBeenSet = true;
     }
 
+    if (value.HasMember("DeletedFatherList") && !value["DeletedFatherList"].IsNull())
+    {
+        if (!value["DeletedFatherList"].IsArray())
+            return CoreInternalOutcome(Core::Error("response `InstanceOpsDto.DeletedFatherList` is not array type"));
+
+        const rapidjson::Value &tmpValue = value["DeletedFatherList"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            m_deletedFatherList.push_back((*itr).GetString());
+        }
+        m_deletedFatherListHasBeenSet = true;
+    }
+
+    if (value.HasMember("CirculateInstanceList") && !value["CirculateInstanceList"].IsNull())
+    {
+        if (!value["CirculateInstanceList"].IsArray())
+            return CoreInternalOutcome(Core::Error("response `InstanceOpsDto.CirculateInstanceList` is not array type"));
+
+        const rapidjson::Value &tmpValue = value["CirculateInstanceList"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            InstanceOpsDto item;
+            CoreInternalOutcome outcome = item.Deserialize(*itr);
+            if (!outcome.IsSuccess())
+            {
+                outcome.GetError().SetRequestId(requestId);
+                return outcome;
+            }
+            m_circulateInstanceList.push_back(item);
+        }
+        m_circulateInstanceListHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -1207,6 +1242,34 @@ void InstanceOpsDto::ToJsonObject(rapidjson::Value &value, rapidjson::Document::
         string key = "RetryAttempts";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_retryAttempts, allocator);
+    }
+
+    if (m_deletedFatherListHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "DeletedFatherList";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        for (auto itr = m_deletedFatherList.begin(); itr != m_deletedFatherList.end(); ++itr)
+        {
+            value[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
+        }
+    }
+
+    if (m_circulateInstanceListHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "CirculateInstanceList";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_circulateInstanceList.begin(); itr != m_circulateInstanceList.end(); ++itr, ++i)
+        {
+            value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(value[key.c_str()][i], allocator);
+        }
     }
 
 }
@@ -2170,5 +2233,37 @@ void InstanceOpsDto::SetRetryAttempts(const uint64_t& _retryAttempts)
 bool InstanceOpsDto::RetryAttemptsHasBeenSet() const
 {
     return m_retryAttemptsHasBeenSet;
+}
+
+vector<string> InstanceOpsDto::GetDeletedFatherList() const
+{
+    return m_deletedFatherList;
+}
+
+void InstanceOpsDto::SetDeletedFatherList(const vector<string>& _deletedFatherList)
+{
+    m_deletedFatherList = _deletedFatherList;
+    m_deletedFatherListHasBeenSet = true;
+}
+
+bool InstanceOpsDto::DeletedFatherListHasBeenSet() const
+{
+    return m_deletedFatherListHasBeenSet;
+}
+
+vector<InstanceOpsDto> InstanceOpsDto::GetCirculateInstanceList() const
+{
+    return m_circulateInstanceList;
+}
+
+void InstanceOpsDto::SetCirculateInstanceList(const vector<InstanceOpsDto>& _circulateInstanceList)
+{
+    m_circulateInstanceList = _circulateInstanceList;
+    m_circulateInstanceListHasBeenSet = true;
+}
+
+bool InstanceOpsDto::CirculateInstanceListHasBeenSet() const
+{
+    return m_circulateInstanceListHasBeenSet;
 }
 

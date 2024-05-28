@@ -49,7 +49,8 @@ Resource::Resource() :
     m_extendPointsHasBeenSet(false),
     m_packageBandwidthHasBeenSet(false),
     m_packageNodeHasBeenSet(false),
-    m_logDeliveryArgsHasBeenSet(false)
+    m_logDeliveryArgsHasBeenSet(false),
+    m_clbSetHasBeenSet(false)
 {
 }
 
@@ -357,6 +358,26 @@ CoreInternalOutcome Resource::Deserialize(const rapidjson::Value &value)
         m_logDeliveryArgsHasBeenSet = true;
     }
 
+    if (value.HasMember("ClbSet") && !value["ClbSet"].IsNull())
+    {
+        if (!value["ClbSet"].IsArray())
+            return CoreInternalOutcome(Core::Error("response `Resource.ClbSet` is not array type"));
+
+        const rapidjson::Value &tmpValue = value["ClbSet"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            Clb item;
+            CoreInternalOutcome outcome = item.Deserialize(*itr);
+            if (!outcome.IsSuccess())
+            {
+                outcome.GetError().SetRequestId(requestId);
+                return outcome;
+            }
+            m_clbSet.push_back(item);
+        }
+        m_clbSetHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -609,6 +630,21 @@ void Resource::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Alloca
         string key = "LogDeliveryArgs";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_logDeliveryArgs.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_clbSetHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ClbSet";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_clbSet.begin(); itr != m_clbSet.end(); ++itr, ++i)
+        {
+            value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(value[key.c_str()][i], allocator);
+        }
     }
 
 }
@@ -1076,5 +1112,21 @@ void Resource::SetLogDeliveryArgs(const string& _logDeliveryArgs)
 bool Resource::LogDeliveryArgsHasBeenSet() const
 {
     return m_logDeliveryArgsHasBeenSet;
+}
+
+vector<Clb> Resource::GetClbSet() const
+{
+    return m_clbSet;
+}
+
+void Resource::SetClbSet(const vector<Clb>& _clbSet)
+{
+    m_clbSet = _clbSet;
+    m_clbSetHasBeenSet = true;
+}
+
+bool Resource::ClbSetHasBeenSet() const
+{
+    return m_clbSetHasBeenSet;
 }
 

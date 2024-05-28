@@ -22,7 +22,8 @@ using namespace std;
 
 OpsTaskCanvasInfoList::OpsTaskCanvasInfoList() :
     m_tasksListHasBeenSet(false),
-    m_linksListHasBeenSet(false)
+    m_linksListHasBeenSet(false),
+    m_circulateTaskListHasBeenSet(false)
 {
 }
 
@@ -71,6 +72,23 @@ CoreInternalOutcome OpsTaskCanvasInfoList::Deserialize(const rapidjson::Value &v
         m_linksListHasBeenSet = true;
     }
 
+    if (value.HasMember("CirculateTaskList") && !value["CirculateTaskList"].IsNull())
+    {
+        if (!value["CirculateTaskList"].IsObject())
+        {
+            return CoreInternalOutcome(Core::Error("response `OpsTaskCanvasInfoList.CirculateTaskList` is not object type").SetRequestId(requestId));
+        }
+
+        CoreInternalOutcome outcome = m_circulateTaskList.Deserialize(value["CirculateTaskList"]);
+        if (!outcome.IsSuccess())
+        {
+            outcome.GetError().SetRequestId(requestId);
+            return outcome;
+        }
+
+        m_circulateTaskListHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -108,6 +126,15 @@ void OpsTaskCanvasInfoList::ToJsonObject(rapidjson::Value &value, rapidjson::Doc
         }
     }
 
+    if (m_circulateTaskListHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "CirculateTaskList";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_circulateTaskList.ToJsonObject(value[key.c_str()], allocator);
+    }
+
 }
 
 
@@ -141,5 +168,21 @@ void OpsTaskCanvasInfoList::SetLinksList(const vector<OpsTaskLinkInfoDto>& _link
 bool OpsTaskCanvasInfoList::LinksListHasBeenSet() const
 {
     return m_linksListHasBeenSet;
+}
+
+OpsTaskCanvasDto OpsTaskCanvasInfoList::GetCirculateTaskList() const
+{
+    return m_circulateTaskList;
+}
+
+void OpsTaskCanvasInfoList::SetCirculateTaskList(const OpsTaskCanvasDto& _circulateTaskList)
+{
+    m_circulateTaskList = _circulateTaskList;
+    m_circulateTaskListHasBeenSet = true;
+}
+
+bool OpsTaskCanvasInfoList::CirculateTaskListHasBeenSet() const
+{
+    return m_circulateTaskListHasBeenSet;
 }
 

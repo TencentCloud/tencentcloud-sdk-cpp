@@ -26,7 +26,8 @@ PulsarNetworkAccessPointInfo::PulsarNetworkAccessPointInfo() :
     m_endpointHasBeenSet(false),
     m_instanceIdHasBeenSet(false),
     m_routeTypeHasBeenSet(false),
-    m_operationTypeHasBeenSet(false)
+    m_operationTypeHasBeenSet(false),
+    m_accessPointsTypeHasBeenSet(false)
 {
 }
 
@@ -95,6 +96,16 @@ CoreInternalOutcome PulsarNetworkAccessPointInfo::Deserialize(const rapidjson::V
         m_operationTypeHasBeenSet = true;
     }
 
+    if (value.HasMember("AccessPointsType") && !value["AccessPointsType"].IsNull())
+    {
+        if (!value["AccessPointsType"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `PulsarNetworkAccessPointInfo.AccessPointsType` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_accessPointsType = string(value["AccessPointsType"].GetString());
+        m_accessPointsTypeHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -148,6 +159,14 @@ void PulsarNetworkAccessPointInfo::ToJsonObject(rapidjson::Value &value, rapidjs
         string key = "OperationType";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_operationType, allocator);
+    }
+
+    if (m_accessPointsTypeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "AccessPointsType";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_accessPointsType.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -247,5 +266,21 @@ void PulsarNetworkAccessPointInfo::SetOperationType(const uint64_t& _operationTy
 bool PulsarNetworkAccessPointInfo::OperationTypeHasBeenSet() const
 {
     return m_operationTypeHasBeenSet;
+}
+
+string PulsarNetworkAccessPointInfo::GetAccessPointsType() const
+{
+    return m_accessPointsType;
+}
+
+void PulsarNetworkAccessPointInfo::SetAccessPointsType(const string& _accessPointsType)
+{
+    m_accessPointsType = _accessPointsType;
+    m_accessPointsTypeHasBeenSet = true;
+}
+
+bool PulsarNetworkAccessPointInfo::AccessPointsTypeHasBeenSet() const
+{
+    return m_accessPointsTypeHasBeenSet;
 }
 

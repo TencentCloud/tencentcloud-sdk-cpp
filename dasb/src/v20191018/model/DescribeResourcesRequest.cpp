@@ -25,7 +25,9 @@ using namespace std;
 DescribeResourcesRequest::DescribeResourcesRequest() :
     m_apCodeHasBeenSet(false),
     m_vpcIdHasBeenSet(false),
-    m_resourceIdsHasBeenSet(false)
+    m_resourceIdsHasBeenSet(false),
+    m_limitHasBeenSet(false),
+    m_offsetHasBeenSet(false)
 {
 }
 
@@ -63,6 +65,22 @@ string DescribeResourcesRequest::ToJsonString() const
         {
             d[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
         }
+    }
+
+    if (m_limitHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Limit";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_limit, allocator);
+    }
+
+    if (m_offsetHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Offset";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_offset, allocator);
     }
 
 
@@ -119,6 +137,38 @@ void DescribeResourcesRequest::SetResourceIds(const vector<string>& _resourceIds
 bool DescribeResourcesRequest::ResourceIdsHasBeenSet() const
 {
     return m_resourceIdsHasBeenSet;
+}
+
+uint64_t DescribeResourcesRequest::GetLimit() const
+{
+    return m_limit;
+}
+
+void DescribeResourcesRequest::SetLimit(const uint64_t& _limit)
+{
+    m_limit = _limit;
+    m_limitHasBeenSet = true;
+}
+
+bool DescribeResourcesRequest::LimitHasBeenSet() const
+{
+    return m_limitHasBeenSet;
+}
+
+uint64_t DescribeResourcesRequest::GetOffset() const
+{
+    return m_offset;
+}
+
+void DescribeResourcesRequest::SetOffset(const uint64_t& _offset)
+{
+    m_offset = _offset;
+    m_offsetHasBeenSet = true;
+}
+
+bool DescribeResourcesRequest::OffsetHasBeenSet() const
+{
+    return m_offsetHasBeenSet;
 }
 
 

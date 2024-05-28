@@ -204,15 +204,15 @@ namespace TencentCloud
                     bool PrivateMapKeyHasBeenSet() const;
 
                     /**
-                     * 获取视频编码参数。可选，如果不填，保持原始流的参数。
-                     * @return VideoEncodeParams 视频编码参数。可选，如果不填，保持原始流的参数。
+                     * 获取【本字段已废弃】视频编码参数。可选，如果不填，保持原始流的参数。
+                     * @return VideoEncodeParams 【本字段已废弃】视频编码参数。可选，如果不填，保持原始流的参数。
                      * 
                      */
                     VideoEncodeParams GetVideoEncodeParams() const;
 
                     /**
-                     * 设置视频编码参数。可选，如果不填，保持原始流的参数。
-                     * @param _videoEncodeParams 视频编码参数。可选，如果不填，保持原始流的参数。
+                     * 设置【本字段已废弃】视频编码参数。可选，如果不填，保持原始流的参数。
+                     * @param _videoEncodeParams 【本字段已废弃】视频编码参数。可选，如果不填，保持原始流的参数。
                      * 
                      */
                     void SetVideoEncodeParams(const VideoEncodeParams& _videoEncodeParams);
@@ -225,15 +225,15 @@ namespace TencentCloud
                     bool VideoEncodeParamsHasBeenSet() const;
 
                     /**
-                     * 获取音频编码参数。可选，如果不填，保持原始流的参数。
-                     * @return AudioEncodeParams 音频编码参数。可选，如果不填，保持原始流的参数。
+                     * 获取【本字段已废弃】音频编码参数。可选，如果不填，保持原始流的参数。
+                     * @return AudioEncodeParams 【本字段已废弃】音频编码参数。可选，如果不填，保持原始流的参数。
                      * 
                      */
                     AudioEncodeParams GetAudioEncodeParams() const;
 
                     /**
-                     * 设置音频编码参数。可选，如果不填，保持原始流的参数。
-                     * @param _audioEncodeParams 音频编码参数。可选，如果不填，保持原始流的参数。
+                     * 设置【本字段已废弃】音频编码参数。可选，如果不填，保持原始流的参数。
+                     * @param _audioEncodeParams 【本字段已废弃】音频编码参数。可选，如果不填，保持原始流的参数。
                      * 
                      */
                     void SetAudioEncodeParams(const AudioEncodeParams& _audioEncodeParams);
@@ -335,13 +335,13 @@ namespace TencentCloud
                     bool m_privateMapKeyHasBeenSet;
 
                     /**
-                     * 视频编码参数。可选，如果不填，保持原始流的参数。
+                     * 【本字段已废弃】视频编码参数。可选，如果不填，保持原始流的参数。
                      */
                     VideoEncodeParams m_videoEncodeParams;
                     bool m_videoEncodeParamsHasBeenSet;
 
                     /**
-                     * 音频编码参数。可选，如果不填，保持原始流的参数。
+                     * 【本字段已废弃】音频编码参数。可选，如果不填，保持原始流的参数。
                      */
                     AudioEncodeParams m_audioEncodeParams;
                     bool m_audioEncodeParamsHasBeenSet;

@@ -24,7 +24,8 @@ using namespace std;
 
 BatchStopWorkflowsByIdsRequest::BatchStopWorkflowsByIdsRequest() :
     m_workflowIdsHasBeenSet(false),
-    m_projectIdHasBeenSet(false)
+    m_projectIdHasBeenSet(false),
+    m_killInstanceHasBeenSet(false)
 {
 }
 
@@ -54,6 +55,14 @@ string BatchStopWorkflowsByIdsRequest::ToJsonString() const
         string key = "ProjectId";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_projectId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_killInstanceHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "KillInstance";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_killInstance, allocator);
     }
 
 
@@ -94,6 +103,22 @@ void BatchStopWorkflowsByIdsRequest::SetProjectId(const string& _projectId)
 bool BatchStopWorkflowsByIdsRequest::ProjectIdHasBeenSet() const
 {
     return m_projectIdHasBeenSet;
+}
+
+bool BatchStopWorkflowsByIdsRequest::GetKillInstance() const
+{
+    return m_killInstance;
+}
+
+void BatchStopWorkflowsByIdsRequest::SetKillInstance(const bool& _killInstance)
+{
+    m_killInstance = _killInstance;
+    m_killInstanceHasBeenSet = true;
+}
+
+bool BatchStopWorkflowsByIdsRequest::KillInstanceHasBeenSet() const
+{
+    return m_killInstanceHasBeenSet;
 }
 
 

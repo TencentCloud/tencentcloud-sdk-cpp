@@ -288,6 +288,31 @@ namespace TencentCloud
                      */
                     bool ParamsStringHasBeenSet() const;
 
+                    /**
+                     * 获取区分数据源类型自定义源还是系统源
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return Category 区分数据源类型自定义源还是系统源
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::string GetCategory() const;
+
+                    /**
+                     * 设置区分数据源类型自定义源还是系统源
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _category 区分数据源类型自定义源还是系统源
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetCategory(const std::string& _category);
+
+                    /**
+                     * 判断参数 Category 是否已赋值
+                     * @return Category 是否已赋值
+                     * 
+                     */
+                    bool CategoryHasBeenSet() const;
+
                 private:
 
                     /**
@@ -357,6 +382,13 @@ namespace TencentCloud
                      */
                     std::string m_paramsString;
                     bool m_paramsStringHasBeenSet;
+
+                    /**
+                     * 区分数据源类型自定义源还是系统源
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_category;
+                    bool m_categoryHasBeenSet;
 
                 };
             }

@@ -24,7 +24,8 @@ OpsTaskLinkInfoDto::OpsTaskLinkInfoDto() :
     m_taskToHasBeenSet(false),
     m_taskFromHasBeenSet(false),
     m_linkTypeHasBeenSet(false),
-    m_linkIdHasBeenSet(false)
+    m_linkIdHasBeenSet(false),
+    m_linkStyleHasBeenSet(false)
 {
 }
 
@@ -73,6 +74,16 @@ CoreInternalOutcome OpsTaskLinkInfoDto::Deserialize(const rapidjson::Value &valu
         m_linkIdHasBeenSet = true;
     }
 
+    if (value.HasMember("LinkStyle") && !value["LinkStyle"].IsNull())
+    {
+        if (!value["LinkStyle"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `OpsTaskLinkInfoDto.LinkStyle` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_linkStyle = string(value["LinkStyle"].GetString());
+        m_linkStyleHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -110,6 +121,14 @@ void OpsTaskLinkInfoDto::ToJsonObject(rapidjson::Value &value, rapidjson::Docume
         string key = "LinkId";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_linkId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_linkStyleHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "LinkStyle";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_linkStyle.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -177,5 +196,21 @@ void OpsTaskLinkInfoDto::SetLinkId(const string& _linkId)
 bool OpsTaskLinkInfoDto::LinkIdHasBeenSet() const
 {
     return m_linkIdHasBeenSet;
+}
+
+string OpsTaskLinkInfoDto::GetLinkStyle() const
+{
+    return m_linkStyle;
+}
+
+void OpsTaskLinkInfoDto::SetLinkStyle(const string& _linkStyle)
+{
+    m_linkStyle = _linkStyle;
+    m_linkStyleHasBeenSet = true;
+}
+
+bool OpsTaskLinkInfoDto::LinkStyleHasBeenSet() const
+{
+    return m_linkStyleHasBeenSet;
 }
 

@@ -212,6 +212,31 @@ namespace TencentCloud
                      */
                     bool OperationTypeHasBeenSet() const;
 
+                    /**
+                     * 获取接入点类型
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return AccessPointsType 接入点类型
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::string GetAccessPointsType() const;
+
+                    /**
+                     * 设置接入点类型
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _accessPointsType 接入点类型
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetAccessPointsType(const std::string& _accessPointsType);
+
+                    /**
+                     * 判断参数 AccessPointsType 是否已赋值
+                     * @return AccessPointsType 是否已赋值
+                     * 
+                     */
+                    bool AccessPointsTypeHasBeenSet() const;
+
                 private:
 
                     /**
@@ -259,6 +284,13 @@ namespace TencentCloud
                      */
                     uint64_t m_operationType;
                     bool m_operationTypeHasBeenSet;
+
+                    /**
+                     * 接入点类型
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_accessPointsType;
+                    bool m_accessPointsTypeHasBeenSet;
 
                 };
             }

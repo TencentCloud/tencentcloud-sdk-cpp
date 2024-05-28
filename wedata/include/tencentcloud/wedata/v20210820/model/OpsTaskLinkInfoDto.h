@@ -130,6 +130,31 @@ namespace TencentCloud
                      */
                     bool LinkIdHasBeenSet() const;
 
+                    /**
+                     * 获取为了区分新增的循环依赖新增的类型。默认是normal，循环依赖则是circulate
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return LinkStyle 为了区分新增的循环依赖新增的类型。默认是normal，循环依赖则是circulate
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::string GetLinkStyle() const;
+
+                    /**
+                     * 设置为了区分新增的循环依赖新增的类型。默认是normal，循环依赖则是circulate
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _linkStyle 为了区分新增的循环依赖新增的类型。默认是normal，循环依赖则是circulate
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetLinkStyle(const std::string& _linkStyle);
+
+                    /**
+                     * 判断参数 LinkStyle 是否已赋值
+                     * @return LinkStyle 是否已赋值
+                     * 
+                     */
+                    bool LinkStyleHasBeenSet() const;
+
                 private:
 
                     /**
@@ -155,6 +180,13 @@ namespace TencentCloud
                      */
                     std::string m_linkId;
                     bool m_linkIdHasBeenSet;
+
+                    /**
+                     * 为了区分新增的循环依赖新增的类型。默认是normal，循环依赖则是circulate
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_linkStyle;
+                    bool m_linkStyleHasBeenSet;
 
                 };
             }

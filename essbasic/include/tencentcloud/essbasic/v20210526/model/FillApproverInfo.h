@@ -201,7 +201,7 @@ namespace TencentCloud
 
                     /**
                      * 获取签署方经办人的证件类型，支持以下类型
-<ul><li>ID_CARD 居民身份证</li>
+<ul><li>ID_CARD 中国大陆居民身份证</li>
 <li>HONGKONG_AND_MACAO 港澳居民来往内地通行证</li>
 <li>HONGKONG_MACAO_AND_TAIWAN 港澳台居民居住证(格式同居民身份证)</li>
 <li>OTHER_CARD_TYPE 其他证件</li></ul>
@@ -209,7 +209,7 @@ namespace TencentCloud
 注: `1.其他证件类型为白名单功能，使用前请联系对接的客户经理沟通。`
 `2.补充个人签署方时，若该用户已在电子签完成实名则可通过指定姓名和证件类型、证件号码完成补充。`
                      * @return ApproverIdCardType 签署方经办人的证件类型，支持以下类型
-<ul><li>ID_CARD 居民身份证</li>
+<ul><li>ID_CARD 中国大陆居民身份证</li>
 <li>HONGKONG_AND_MACAO 港澳居民来往内地通行证</li>
 <li>HONGKONG_MACAO_AND_TAIWAN 港澳台居民居住证(格式同居民身份证)</li>
 <li>OTHER_CARD_TYPE 其他证件</li></ul>
@@ -222,7 +222,7 @@ namespace TencentCloud
 
                     /**
                      * 设置签署方经办人的证件类型，支持以下类型
-<ul><li>ID_CARD 居民身份证</li>
+<ul><li>ID_CARD 中国大陆居民身份证</li>
 <li>HONGKONG_AND_MACAO 港澳居民来往内地通行证</li>
 <li>HONGKONG_MACAO_AND_TAIWAN 港澳台居民居住证(格式同居民身份证)</li>
 <li>OTHER_CARD_TYPE 其他证件</li></ul>
@@ -230,7 +230,7 @@ namespace TencentCloud
 注: `1.其他证件类型为白名单功能，使用前请联系对接的客户经理沟通。`
 `2.补充个人签署方时，若该用户已在电子签完成实名则可通过指定姓名和证件类型、证件号码完成补充。`
                      * @param _approverIdCardType 签署方经办人的证件类型，支持以下类型
-<ul><li>ID_CARD 居民身份证</li>
+<ul><li>ID_CARD 中国大陆居民身份证</li>
 <li>HONGKONG_AND_MACAO 港澳居民来往内地通行证</li>
 <li>HONGKONG_MACAO_AND_TAIWAN 港澳台居民居住证(格式同居民身份证)</li>
 <li>OTHER_CARD_TYPE 其他证件</li></ul>
@@ -357,7 +357,7 @@ namespace TencentCloud
 
                     /**
                      * 签署方经办人的证件类型，支持以下类型
-<ul><li>ID_CARD 居民身份证</li>
+<ul><li>ID_CARD 中国大陆居民身份证</li>
 <li>HONGKONG_AND_MACAO 港澳居民来往内地通行证</li>
 <li>HONGKONG_MACAO_AND_TAIWAN 港澳台居民居住证(格式同居民身份证)</li>
 <li>OTHER_CARD_TYPE 其他证件</li></ul>

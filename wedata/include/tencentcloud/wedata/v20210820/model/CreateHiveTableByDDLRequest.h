@@ -189,6 +189,27 @@ namespace TencentCloud
                      */
                     bool InchargeHasBeenSet() const;
 
+                    /**
+                     * 获取schema名称
+                     * @return SchemaName schema名称
+                     * 
+                     */
+                    std::string GetSchemaName() const;
+
+                    /**
+                     * 设置schema名称
+                     * @param _schemaName schema名称
+                     * 
+                     */
+                    void SetSchemaName(const std::string& _schemaName);
+
+                    /**
+                     * 判断参数 SchemaName 是否已赋值
+                     * @return SchemaName 是否已赋值
+                     * 
+                     */
+                    bool SchemaNameHasBeenSet() const;
+
                 private:
 
                     /**
@@ -232,6 +253,12 @@ namespace TencentCloud
                      */
                     std::string m_incharge;
                     bool m_inchargeHasBeenSet;
+
+                    /**
+                     * schema名称
+                     */
+                    std::string m_schemaName;
+                    bool m_schemaNameHasBeenSet;
 
                 };
             }

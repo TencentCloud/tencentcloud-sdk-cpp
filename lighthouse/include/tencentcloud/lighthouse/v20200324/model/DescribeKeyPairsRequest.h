@@ -44,15 +44,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取密钥对 ID 列表。
-                     * @return KeyIds 密钥对 ID 列表。
+                     * 获取密钥对 ID 列表，每次请求批量密钥对的上限为 100。
+                     * @return KeyIds 密钥对 ID 列表，每次请求批量密钥对的上限为 100。
                      * 
                      */
                     std::vector<std::string> GetKeyIds() const;
 
                     /**
-                     * 设置密钥对 ID 列表。
-                     * @param _keyIds 密钥对 ID 列表。
+                     * 设置密钥对 ID 列表，每次请求批量密钥对的上限为 100。
+                     * @param _keyIds 密钥对 ID 列表，每次请求批量密钥对的上限为 100。
                      * 
                      */
                     void SetKeyIds(const std::vector<std::string>& _keyIds);
@@ -158,7 +158,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 密钥对 ID 列表。
+                     * 密钥对 ID 列表，每次请求批量密钥对的上限为 100。
                      */
                     std::vector<std::string> m_keyIds;
                     bool m_keyIdsHasBeenSet;

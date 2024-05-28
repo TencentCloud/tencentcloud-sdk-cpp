@@ -45,7 +45,9 @@ DescribeOperateOpsTasksRequest::DescribeOperateOpsTasksRequest() :
     m_alarmTypeHasBeenSet(false),
     m_executorGroupIdListHasBeenSet(false),
     m_taskTagsHasBeenSet(false),
-    m_keyWordHasBeenSet(false)
+    m_keyWordHasBeenSet(false),
+    m_initStrategyHasBeenSet(false),
+    m_requestResourceTypesHasBeenSet(false)
 {
 }
 
@@ -245,6 +247,27 @@ string DescribeOperateOpsTasksRequest::ToJsonString() const
         string key = "KeyWord";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_keyWord.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_initStrategyHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "InitStrategy";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_initStrategy.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_requestResourceTypesHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "RequestResourceTypes";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        for (auto itr = m_requestResourceTypes.begin(); itr != m_requestResourceTypes.end(); ++itr)
+        {
+            d[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
+        }
     }
 
 
@@ -621,6 +644,38 @@ void DescribeOperateOpsTasksRequest::SetKeyWord(const string& _keyWord)
 bool DescribeOperateOpsTasksRequest::KeyWordHasBeenSet() const
 {
     return m_keyWordHasBeenSet;
+}
+
+string DescribeOperateOpsTasksRequest::GetInitStrategy() const
+{
+    return m_initStrategy;
+}
+
+void DescribeOperateOpsTasksRequest::SetInitStrategy(const string& _initStrategy)
+{
+    m_initStrategy = _initStrategy;
+    m_initStrategyHasBeenSet = true;
+}
+
+bool DescribeOperateOpsTasksRequest::InitStrategyHasBeenSet() const
+{
+    return m_initStrategyHasBeenSet;
+}
+
+vector<string> DescribeOperateOpsTasksRequest::GetRequestResourceTypes() const
+{
+    return m_requestResourceTypes;
+}
+
+void DescribeOperateOpsTasksRequest::SetRequestResourceTypes(const vector<string>& _requestResourceTypes)
+{
+    m_requestResourceTypes = _requestResourceTypes;
+    m_requestResourceTypesHasBeenSet = true;
+}
+
+bool DescribeOperateOpsTasksRequest::RequestResourceTypesHasBeenSet() const
+{
+    return m_requestResourceTypesHasBeenSet;
 }
 
 

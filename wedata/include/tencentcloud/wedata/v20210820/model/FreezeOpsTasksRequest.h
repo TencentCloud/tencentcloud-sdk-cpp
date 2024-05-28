@@ -85,6 +85,27 @@ namespace TencentCloud
                      */
                     bool OperateIsInformHasBeenSet() const;
 
+                    /**
+                     * 获取是否终止已生成的实例
+                     * @return KillInstance 是否终止已生成的实例
+                     * 
+                     */
+                    bool GetKillInstance() const;
+
+                    /**
+                     * 设置是否终止已生成的实例
+                     * @param _killInstance 是否终止已生成的实例
+                     * 
+                     */
+                    void SetKillInstance(const bool& _killInstance);
+
+                    /**
+                     * 判断参数 KillInstance 是否已赋值
+                     * @return KillInstance 是否已赋值
+                     * 
+                     */
+                    bool KillInstanceHasBeenSet() const;
+
                 private:
 
                     /**
@@ -98,6 +119,12 @@ namespace TencentCloud
                      */
                     bool m_operateIsInform;
                     bool m_operateIsInformHasBeenSet;
+
+                    /**
+                     * 是否终止已生成的实例
+                     */
+                    bool m_killInstance;
+                    bool m_killInstanceHasBeenSet;
 
                 };
             }

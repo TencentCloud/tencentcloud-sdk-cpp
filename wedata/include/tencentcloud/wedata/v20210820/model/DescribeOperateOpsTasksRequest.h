@@ -526,6 +526,48 @@ namespace TencentCloud
                      */
                     bool KeyWordHasBeenSet() const;
 
+                    /**
+                     * 获取实例生成方式
+                     * @return InitStrategy 实例生成方式
+                     * 
+                     */
+                    std::string GetInitStrategy() const;
+
+                    /**
+                     * 设置实例生成方式
+                     * @param _initStrategy 实例生成方式
+                     * 
+                     */
+                    void SetInitStrategy(const std::string& _initStrategy);
+
+                    /**
+                     * 判断参数 InitStrategy 是否已赋值
+                     * @return InitStrategy 是否已赋值
+                     * 
+                     */
+                    bool InitStrategyHasBeenSet() const;
+
+                    /**
+                     * 获取额外请求的资源类型
+                     * @return RequestResourceTypes 额外请求的资源类型
+                     * 
+                     */
+                    std::vector<std::string> GetRequestResourceTypes() const;
+
+                    /**
+                     * 设置额外请求的资源类型
+                     * @param _requestResourceTypes 额外请求的资源类型
+                     * 
+                     */
+                    void SetRequestResourceTypes(const std::vector<std::string>& _requestResourceTypes);
+
+                    /**
+                     * 判断参数 RequestResourceTypes 是否已赋值
+                     * @return RequestResourceTypes 是否已赋值
+                     * 
+                     */
+                    bool RequestResourceTypesHasBeenSet() const;
+
                 private:
 
                     /**
@@ -665,6 +707,18 @@ namespace TencentCloud
                      */
                     std::string m_keyWord;
                     bool m_keyWordHasBeenSet;
+
+                    /**
+                     * 实例生成方式
+                     */
+                    std::string m_initStrategy;
+                    bool m_initStrategyHasBeenSet;
+
+                    /**
+                     * 额外请求的资源类型
+                     */
+                    std::vector<std::string> m_requestResourceTypes;
+                    bool m_requestResourceTypesHasBeenSet;
 
                 };
             }

@@ -280,13 +280,13 @@ EndPointType=“H5”或者"SHORT_H5"时，该参数必填
                     /**
                      * 获取认证人证件类型
 支持以下类型
-<ul><li>ID_CARD : 居民身份证  (默认值)</li>
+<ul><li>ID_CARD : 中国大陆居民身份证  (默认值)</li>
 <li>HONGKONG_AND_MACAO : 港澳居民来往内地通行证</li>
 <li>HONGKONG_MACAO_AND_TAIWAN : 港澳台居民居住证(格式同居民身份证)</li></ul>
 
                      * @return AdminIdCardType 认证人证件类型
 支持以下类型
-<ul><li>ID_CARD : 居民身份证  (默认值)</li>
+<ul><li>ID_CARD : 中国大陆居民身份证  (默认值)</li>
 <li>HONGKONG_AND_MACAO : 港澳居民来往内地通行证</li>
 <li>HONGKONG_MACAO_AND_TAIWAN : 港澳台居民居住证(格式同居民身份证)</li></ul>
 
@@ -297,13 +297,13 @@ EndPointType=“H5”或者"SHORT_H5"时，该参数必填
                     /**
                      * 设置认证人证件类型
 支持以下类型
-<ul><li>ID_CARD : 居民身份证  (默认值)</li>
+<ul><li>ID_CARD : 中国大陆居民身份证  (默认值)</li>
 <li>HONGKONG_AND_MACAO : 港澳居民来往内地通行证</li>
 <li>HONGKONG_MACAO_AND_TAIWAN : 港澳台居民居住证(格式同居民身份证)</li></ul>
 
                      * @param _adminIdCardType 认证人证件类型
 支持以下类型
-<ul><li>ID_CARD : 居民身份证  (默认值)</li>
+<ul><li>ID_CARD : 中国大陆居民身份证  (默认值)</li>
 <li>HONGKONG_AND_MACAO : 港澳居民来往内地通行证</li>
 <li>HONGKONG_MACAO_AND_TAIWAN : 港澳台居民居住证(格式同居民身份证)</li></ul>
 
@@ -645,7 +645,7 @@ EndPointType=“H5”或者"SHORT_H5"时，该参数必填
                     /**
                      * 认证人证件类型
 支持以下类型
-<ul><li>ID_CARD : 居民身份证  (默认值)</li>
+<ul><li>ID_CARD : 中国大陆居民身份证  (默认值)</li>
 <li>HONGKONG_AND_MACAO : 港澳居民来往内地通行证</li>
 <li>HONGKONG_MACAO_AND_TAIWAN : 港澳台居民居住证(格式同居民身份证)</li></ul>
 

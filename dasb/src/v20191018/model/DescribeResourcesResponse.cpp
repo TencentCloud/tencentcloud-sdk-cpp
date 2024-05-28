@@ -24,7 +24,8 @@ using namespace TencentCloud::Dasb::V20191018::Model;
 using namespace std;
 
 DescribeResourcesResponse::DescribeResourcesResponse() :
-    m_resourceSetHasBeenSet(false)
+    m_resourceSetHasBeenSet(false),
+    m_totalCountHasBeenSet(false)
 {
 }
 
@@ -82,6 +83,16 @@ CoreInternalOutcome DescribeResourcesResponse::Deserialize(const string &payload
         m_resourceSetHasBeenSet = true;
     }
 
+    if (rsp.HasMember("TotalCount") && !rsp["TotalCount"].IsNull())
+    {
+        if (!rsp["TotalCount"].IsUint64())
+        {
+            return CoreInternalOutcome(Core::Error("response `TotalCount` IsUint64=false incorrectly").SetRequestId(requestId));
+        }
+        m_totalCount = rsp["TotalCount"].GetUint64();
+        m_totalCountHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -107,6 +118,14 @@ string DescribeResourcesResponse::ToJsonString() const
         }
     }
 
+    if (m_totalCountHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "TotalCount";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_totalCount, allocator);
+    }
+
     rapidjson::Value iKey(rapidjson::kStringType);
     string key = "RequestId";
     iKey.SetString(key.c_str(), allocator);
@@ -127,6 +146,16 @@ vector<Resource> DescribeResourcesResponse::GetResourceSet() const
 bool DescribeResourcesResponse::ResourceSetHasBeenSet() const
 {
     return m_resourceSetHasBeenSet;
+}
+
+uint64_t DescribeResourcesResponse::GetTotalCount() const
+{
+    return m_totalCount;
+}
+
+bool DescribeResourcesResponse::TotalCountHasBeenSet() const
+{
+    return m_totalCountHasBeenSet;
 }
 
 

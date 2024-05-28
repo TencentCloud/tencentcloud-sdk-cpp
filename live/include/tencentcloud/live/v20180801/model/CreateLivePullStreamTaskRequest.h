@@ -842,6 +842,27 @@ PullVodPushLive -点播。
                      */
                     bool BackupToUrlHasBeenSet() const;
 
+                    /**
+                     * 获取直播转码模板，使用云直播的转码功能进行转码后再转推出去。转码模板需在云直播控制台创建。
+                     * @return TranscodeTemplateName 直播转码模板，使用云直播的转码功能进行转码后再转推出去。转码模板需在云直播控制台创建。
+                     * 
+                     */
+                    std::string GetTranscodeTemplateName() const;
+
+                    /**
+                     * 设置直播转码模板，使用云直播的转码功能进行转码后再转推出去。转码模板需在云直播控制台创建。
+                     * @param _transcodeTemplateName 直播转码模板，使用云直播的转码功能进行转码后再转推出去。转码模板需在云直播控制台创建。
+                     * 
+                     */
+                    void SetTranscodeTemplateName(const std::string& _transcodeTemplateName);
+
+                    /**
+                     * 判断参数 TranscodeTemplateName 是否已赋值
+                     * @return TranscodeTemplateName 是否已赋值
+                     * 
+                     */
+                    bool TranscodeTemplateNameHasBeenSet() const;
+
                 private:
 
                     /**
@@ -1060,6 +1081,12 @@ PullVodPushLive -点播。
                      */
                     std::string m_backupToUrl;
                     bool m_backupToUrlHasBeenSet;
+
+                    /**
+                     * 直播转码模板，使用云直播的转码功能进行转码后再转推出去。转码模板需在云直播控制台创建。
+                     */
+                    std::string m_transcodeTemplateName;
+                    bool m_transcodeTemplateNameHasBeenSet;
 
                 };
             }

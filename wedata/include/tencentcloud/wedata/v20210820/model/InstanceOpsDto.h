@@ -1549,6 +1549,56 @@ namespace TencentCloud
                      */
                     bool RetryAttemptsHasBeenSet() const;
 
+                    /**
+                     * 获取紧急去除的依赖父实例列表
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return DeletedFatherList 紧急去除的依赖父实例列表
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::vector<std::string> GetDeletedFatherList() const;
+
+                    /**
+                     * 设置紧急去除的依赖父实例列表
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _deletedFatherList 紧急去除的依赖父实例列表
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetDeletedFatherList(const std::vector<std::string>& _deletedFatherList);
+
+                    /**
+                     * 判断参数 DeletedFatherList 是否已赋值
+                     * @return DeletedFatherList 是否已赋值
+                     * 
+                     */
+                    bool DeletedFatherListHasBeenSet() const;
+
+                    /**
+                     * 获取循环依赖关联的实例
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return CirculateInstanceList 循环依赖关联的实例
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::vector<InstanceOpsDto> GetCirculateInstanceList() const;
+
+                    /**
+                     * 设置循环依赖关联的实例
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _circulateInstanceList 循环依赖关联的实例
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetCirculateInstanceList(const std::vector<InstanceOpsDto>& _circulateInstanceList);
+
+                    /**
+                     * 判断参数 CirculateInstanceList 是否已赋值
+                     * @return CirculateInstanceList 是否已赋值
+                     * 
+                     */
+                    bool CirculateInstanceListHasBeenSet() const;
+
                 private:
 
                     /**
@@ -1970,6 +2020,20 @@ namespace TencentCloud
                      */
                     uint64_t m_retryAttempts;
                     bool m_retryAttemptsHasBeenSet;
+
+                    /**
+                     * 紧急去除的依赖父实例列表
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::vector<std::string> m_deletedFatherList;
+                    bool m_deletedFatherListHasBeenSet;
+
+                    /**
+                     * 循环依赖关联的实例
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::vector<InstanceOpsDto> m_circulateInstanceList;
+                    bool m_circulateInstanceListHasBeenSet;
 
                 };
             }

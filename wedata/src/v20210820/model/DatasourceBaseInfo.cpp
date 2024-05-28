@@ -30,7 +30,8 @@ DatasourceBaseInfo::DatasourceBaseInfo() :
     m_typeHasBeenSet(false),
     m_clusterIdHasBeenSet(false),
     m_versionHasBeenSet(false),
-    m_paramsStringHasBeenSet(false)
+    m_paramsStringHasBeenSet(false),
+    m_categoryHasBeenSet(false)
 {
 }
 
@@ -142,6 +143,16 @@ CoreInternalOutcome DatasourceBaseInfo::Deserialize(const rapidjson::Value &valu
         m_paramsStringHasBeenSet = true;
     }
 
+    if (value.HasMember("Category") && !value["Category"].IsNull())
+    {
+        if (!value["Category"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `DatasourceBaseInfo.Category` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_category = string(value["Category"].GetString());
+        m_categoryHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -232,6 +243,14 @@ void DatasourceBaseInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Docume
         string key = "ParamsString";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_paramsString.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_categoryHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Category";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_category.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -395,5 +414,21 @@ void DatasourceBaseInfo::SetParamsString(const string& _paramsString)
 bool DatasourceBaseInfo::ParamsStringHasBeenSet() const
 {
     return m_paramsStringHasBeenSet;
+}
+
+string DatasourceBaseInfo::GetCategory() const
+{
+    return m_category;
+}
+
+void DatasourceBaseInfo::SetCategory(const string& _category)
+{
+    m_category = _category;
+    m_categoryHasBeenSet = true;
+}
+
+bool DatasourceBaseInfo::CategoryHasBeenSet() const
+{
+    return m_categoryHasBeenSet;
 }
 
