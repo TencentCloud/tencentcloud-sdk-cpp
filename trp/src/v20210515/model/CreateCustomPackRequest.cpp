@@ -34,7 +34,8 @@ CreateCustomPackRequest::CreateCustomPackRequest() :
     m_batchIdHasBeenSet(false),
     m_serialTypeHasBeenSet(false),
     m_productIdHasBeenSet(false),
-    m_relateTypeHasBeenSet(false)
+    m_relateTypeHasBeenSet(false),
+    m_sceneCodeHasBeenSet(false)
 {
 }
 
@@ -153,6 +154,14 @@ string CreateCustomPackRequest::ToJsonString() const
         string key = "RelateType";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_relateType, allocator);
+    }
+
+    if (m_sceneCodeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "SceneCode";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_sceneCode, allocator);
     }
 
 
@@ -353,6 +362,22 @@ void CreateCustomPackRequest::SetRelateType(const int64_t& _relateType)
 bool CreateCustomPackRequest::RelateTypeHasBeenSet() const
 {
     return m_relateTypeHasBeenSet;
+}
+
+int64_t CreateCustomPackRequest::GetSceneCode() const
+{
+    return m_sceneCode;
+}
+
+void CreateCustomPackRequest::SetSceneCode(const int64_t& _sceneCode)
+{
+    m_sceneCode = _sceneCode;
+    m_sceneCodeHasBeenSet = true;
+}
+
+bool CreateCustomPackRequest::SceneCodeHasBeenSet() const
+{
+    return m_sceneCodeHasBeenSet;
 }
 
 

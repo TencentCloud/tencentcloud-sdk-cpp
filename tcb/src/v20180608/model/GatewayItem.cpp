@@ -23,6 +23,7 @@ using namespace std;
 GatewayItem::GatewayItem() :
     m_uinHasBeenSet(false),
     m_appIdHasBeenSet(false),
+    m_wxAppIdHasBeenSet(false),
     m_envIdHasBeenSet(false),
     m_gatewayIdHasBeenSet(false),
     m_gatewayNameHasBeenSet(false),
@@ -35,12 +36,17 @@ GatewayItem::GatewayItem() :
     m_statusHasBeenSet(false),
     m_l5AddrHasBeenSet(false),
     m_regionHasBeenSet(false),
+    m_canRenewHasBeenSet(false),
+    m_autoRenewFlagHasBeenSet(false),
     m_isolateTimeHasBeenSet(false),
     m_expireTimeHasBeenSet(false),
     m_createTimeHasBeenSet(false),
     m_updateTimeHasBeenSet(false),
+    m_canDowngradeHasBeenSet(false),
     m_allowUncertifiedHasBeenSet(false),
-    m_versionNumLimitHasBeenSet(false)
+    m_versionNumLimitHasBeenSet(false),
+    m_longAccessIdHasBeenSet(false),
+    m_accessDomainHasBeenSet(false)
 {
 }
 
@@ -67,6 +73,16 @@ CoreInternalOutcome GatewayItem::Deserialize(const rapidjson::Value &value)
         }
         m_appId = value["AppId"].GetUint64();
         m_appIdHasBeenSet = true;
+    }
+
+    if (value.HasMember("WxAppId") && !value["WxAppId"].IsNull())
+    {
+        if (!value["WxAppId"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `GatewayItem.WxAppId` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_wxAppId = string(value["WxAppId"].GetString());
+        m_wxAppIdHasBeenSet = true;
     }
 
     if (value.HasMember("EnvId") && !value["EnvId"].IsNull())
@@ -192,6 +208,26 @@ CoreInternalOutcome GatewayItem::Deserialize(const rapidjson::Value &value)
         m_regionHasBeenSet = true;
     }
 
+    if (value.HasMember("CanRenew") && !value["CanRenew"].IsNull())
+    {
+        if (!value["CanRenew"].IsBool())
+        {
+            return CoreInternalOutcome(Core::Error("response `GatewayItem.CanRenew` IsBool=false incorrectly").SetRequestId(requestId));
+        }
+        m_canRenew = value["CanRenew"].GetBool();
+        m_canRenewHasBeenSet = true;
+    }
+
+    if (value.HasMember("AutoRenewFlag") && !value["AutoRenewFlag"].IsNull())
+    {
+        if (!value["AutoRenewFlag"].IsUint64())
+        {
+            return CoreInternalOutcome(Core::Error("response `GatewayItem.AutoRenewFlag` IsUint64=false incorrectly").SetRequestId(requestId));
+        }
+        m_autoRenewFlag = value["AutoRenewFlag"].GetUint64();
+        m_autoRenewFlagHasBeenSet = true;
+    }
+
     if (value.HasMember("IsolateTime") && !value["IsolateTime"].IsNull())
     {
         if (!value["IsolateTime"].IsString())
@@ -232,6 +268,16 @@ CoreInternalOutcome GatewayItem::Deserialize(const rapidjson::Value &value)
         m_updateTimeHasBeenSet = true;
     }
 
+    if (value.HasMember("CanDowngrade") && !value["CanDowngrade"].IsNull())
+    {
+        if (!value["CanDowngrade"].IsBool())
+        {
+            return CoreInternalOutcome(Core::Error("response `GatewayItem.CanDowngrade` IsBool=false incorrectly").SetRequestId(requestId));
+        }
+        m_canDowngrade = value["CanDowngrade"].GetBool();
+        m_canDowngradeHasBeenSet = true;
+    }
+
     if (value.HasMember("AllowUncertified") && !value["AllowUncertified"].IsNull())
     {
         if (!value["AllowUncertified"].IsInt64())
@@ -250,6 +296,26 @@ CoreInternalOutcome GatewayItem::Deserialize(const rapidjson::Value &value)
         }
         m_versionNumLimit = value["VersionNumLimit"].GetInt64();
         m_versionNumLimitHasBeenSet = true;
+    }
+
+    if (value.HasMember("LongAccessId") && !value["LongAccessId"].IsNull())
+    {
+        if (!value["LongAccessId"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `GatewayItem.LongAccessId` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_longAccessId = string(value["LongAccessId"].GetString());
+        m_longAccessIdHasBeenSet = true;
+    }
+
+    if (value.HasMember("AccessDomain") && !value["AccessDomain"].IsNull())
+    {
+        if (!value["AccessDomain"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `GatewayItem.AccessDomain` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_accessDomain = string(value["AccessDomain"].GetString());
+        m_accessDomainHasBeenSet = true;
     }
 
 
@@ -273,6 +339,14 @@ void GatewayItem::ToJsonObject(rapidjson::Value &value, rapidjson::Document::All
         string key = "AppId";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_appId, allocator);
+    }
+
+    if (m_wxAppIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "WxAppId";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_wxAppId.c_str(), allocator).Move(), allocator);
     }
 
     if (m_envIdHasBeenSet)
@@ -376,6 +450,22 @@ void GatewayItem::ToJsonObject(rapidjson::Value &value, rapidjson::Document::All
         value.AddMember(iKey, rapidjson::Value(m_region.c_str(), allocator).Move(), allocator);
     }
 
+    if (m_canRenewHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "CanRenew";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_canRenew, allocator);
+    }
+
+    if (m_autoRenewFlagHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "AutoRenewFlag";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_autoRenewFlag, allocator);
+    }
+
     if (m_isolateTimeHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
@@ -408,6 +498,14 @@ void GatewayItem::ToJsonObject(rapidjson::Value &value, rapidjson::Document::All
         value.AddMember(iKey, rapidjson::Value(m_updateTime.c_str(), allocator).Move(), allocator);
     }
 
+    if (m_canDowngradeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "CanDowngrade";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_canDowngrade, allocator);
+    }
+
     if (m_allowUncertifiedHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
@@ -422,6 +520,22 @@ void GatewayItem::ToJsonObject(rapidjson::Value &value, rapidjson::Document::All
         string key = "VersionNumLimit";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_versionNumLimit, allocator);
+    }
+
+    if (m_longAccessIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "LongAccessId";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_longAccessId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_accessDomainHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "AccessDomain";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_accessDomain.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -457,6 +571,22 @@ void GatewayItem::SetAppId(const uint64_t& _appId)
 bool GatewayItem::AppIdHasBeenSet() const
 {
     return m_appIdHasBeenSet;
+}
+
+string GatewayItem::GetWxAppId() const
+{
+    return m_wxAppId;
+}
+
+void GatewayItem::SetWxAppId(const string& _wxAppId)
+{
+    m_wxAppId = _wxAppId;
+    m_wxAppIdHasBeenSet = true;
+}
+
+bool GatewayItem::WxAppIdHasBeenSet() const
+{
+    return m_wxAppIdHasBeenSet;
 }
 
 string GatewayItem::GetEnvId() const
@@ -651,6 +781,38 @@ bool GatewayItem::RegionHasBeenSet() const
     return m_regionHasBeenSet;
 }
 
+bool GatewayItem::GetCanRenew() const
+{
+    return m_canRenew;
+}
+
+void GatewayItem::SetCanRenew(const bool& _canRenew)
+{
+    m_canRenew = _canRenew;
+    m_canRenewHasBeenSet = true;
+}
+
+bool GatewayItem::CanRenewHasBeenSet() const
+{
+    return m_canRenewHasBeenSet;
+}
+
+uint64_t GatewayItem::GetAutoRenewFlag() const
+{
+    return m_autoRenewFlag;
+}
+
+void GatewayItem::SetAutoRenewFlag(const uint64_t& _autoRenewFlag)
+{
+    m_autoRenewFlag = _autoRenewFlag;
+    m_autoRenewFlagHasBeenSet = true;
+}
+
+bool GatewayItem::AutoRenewFlagHasBeenSet() const
+{
+    return m_autoRenewFlagHasBeenSet;
+}
+
 string GatewayItem::GetIsolateTime() const
 {
     return m_isolateTime;
@@ -715,6 +877,22 @@ bool GatewayItem::UpdateTimeHasBeenSet() const
     return m_updateTimeHasBeenSet;
 }
 
+bool GatewayItem::GetCanDowngrade() const
+{
+    return m_canDowngrade;
+}
+
+void GatewayItem::SetCanDowngrade(const bool& _canDowngrade)
+{
+    m_canDowngrade = _canDowngrade;
+    m_canDowngradeHasBeenSet = true;
+}
+
+bool GatewayItem::CanDowngradeHasBeenSet() const
+{
+    return m_canDowngradeHasBeenSet;
+}
+
 int64_t GatewayItem::GetAllowUncertified() const
 {
     return m_allowUncertified;
@@ -745,5 +923,37 @@ void GatewayItem::SetVersionNumLimit(const int64_t& _versionNumLimit)
 bool GatewayItem::VersionNumLimitHasBeenSet() const
 {
     return m_versionNumLimitHasBeenSet;
+}
+
+string GatewayItem::GetLongAccessId() const
+{
+    return m_longAccessId;
+}
+
+void GatewayItem::SetLongAccessId(const string& _longAccessId)
+{
+    m_longAccessId = _longAccessId;
+    m_longAccessIdHasBeenSet = true;
+}
+
+bool GatewayItem::LongAccessIdHasBeenSet() const
+{
+    return m_longAccessIdHasBeenSet;
+}
+
+string GatewayItem::GetAccessDomain() const
+{
+    return m_accessDomain;
+}
+
+void GatewayItem::SetAccessDomain(const string& _accessDomain)
+{
+    m_accessDomain = _accessDomain;
+    m_accessDomainHasBeenSet = true;
+}
+
+bool GatewayItem::AccessDomainHasBeenSet() const
+{
+    return m_accessDomainHasBeenSet;
 }
 

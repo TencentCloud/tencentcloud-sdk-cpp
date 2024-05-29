@@ -43,15 +43,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取需要创建快照的实例 ID。
-                     * @return InstanceId 需要创建快照的实例 ID。
+                     * 获取需要创建快照的实例 ID。可通过 [DescribeInstances](https://cloud.tencent.com/document/product/1207/47573) 接口返回值中的 InstanceId	获取。
+                     * @return InstanceId 需要创建快照的实例 ID。可通过 [DescribeInstances](https://cloud.tencent.com/document/product/1207/47573) 接口返回值中的 InstanceId	获取。
                      * 
                      */
                     std::string GetInstanceId() const;
 
                     /**
-                     * 设置需要创建快照的实例 ID。
-                     * @param _instanceId 需要创建快照的实例 ID。
+                     * 设置需要创建快照的实例 ID。可通过 [DescribeInstances](https://cloud.tencent.com/document/product/1207/47573) 接口返回值中的 InstanceId	获取。
+                     * @param _instanceId 需要创建快照的实例 ID。可通过 [DescribeInstances](https://cloud.tencent.com/document/product/1207/47573) 接口返回值中的 InstanceId	获取。
                      * 
                      */
                     void SetInstanceId(const std::string& _instanceId);
@@ -87,7 +87,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 需要创建快照的实例 ID。
+                     * 需要创建快照的实例 ID。可通过 [DescribeInstances](https://cloud.tencent.com/document/product/1207/47573) 接口返回值中的 InstanceId	获取。
                      */
                     std::string m_instanceId;
                     bool m_instanceIdHasBeenSet;

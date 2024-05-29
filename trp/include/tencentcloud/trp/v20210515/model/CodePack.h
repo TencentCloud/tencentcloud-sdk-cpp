@@ -647,6 +647,131 @@ namespace TencentCloud
                      */
                     bool RelateTypeHasBeenSet() const;
 
+                    /**
+                     * 获取场景码
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return SceneCode 场景码
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    int64_t GetSceneCode() const;
+
+                    /**
+                     * 设置场景码
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _sceneCode 场景码
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetSceneCode(const int64_t& _sceneCode);
+
+                    /**
+                     * 判断参数 SceneCode 是否已赋值
+                     * @return SceneCode 是否已赋值
+                     * 
+                     */
+                    bool SceneCodeHasBeenSet() const;
+
+                    /**
+                     * 获取码规则
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return CodeRule 码规则
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::string GetCodeRule() const;
+
+                    /**
+                     * 设置码规则
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _codeRule 码规则
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetCodeRule(const std::string& _codeRule);
+
+                    /**
+                     * 判断参数 CodeRule 是否已赋值
+                     * @return CodeRule 是否已赋值
+                     * 
+                     */
+                    bool CodeRuleHasBeenSet() const;
+
+                    /**
+                     * 获取已使用码数
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return UsedAmount 已使用码数
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    int64_t GetUsedAmount() const;
+
+                    /**
+                     * 设置已使用码数
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _usedAmount 已使用码数
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetUsedAmount(const int64_t& _usedAmount);
+
+                    /**
+                     * 判断参数 UsedAmount 是否已赋值
+                     * @return UsedAmount 是否已赋值
+                     * 
+                     */
+                    bool UsedAmountHasBeenSet() const;
+
+                    /**
+                     * 获取开始流水号
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return SerialStart 开始流水号
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    uint64_t GetSerialStart() const;
+
+                    /**
+                     * 设置开始流水号
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _serialStart 开始流水号
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetSerialStart(const uint64_t& _serialStart);
+
+                    /**
+                     * 判断参数 SerialStart 是否已赋值
+                     * @return SerialStart 是否已赋值
+                     * 
+                     */
+                    bool SerialStartHasBeenSet() const;
+
+                    /**
+                     * 获取结束流水号
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return SerialEnd 结束流水号
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    uint64_t GetSerialEnd() const;
+
+                    /**
+                     * 设置结束流水号
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _serialEnd 结束流水号
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetSerialEnd(const uint64_t& _serialEnd);
+
+                    /**
+                     * 判断参数 SerialEnd 是否已赋值
+                     * @return SerialEnd 是否已赋值
+                     * 
+                     */
+                    bool SerialEndHasBeenSet() const;
+
                 private:
 
                     /**
@@ -816,6 +941,41 @@ namespace TencentCloud
                      */
                     int64_t m_relateType;
                     bool m_relateTypeHasBeenSet;
+
+                    /**
+                     * 场景码
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    int64_t m_sceneCode;
+                    bool m_sceneCodeHasBeenSet;
+
+                    /**
+                     * 码规则
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_codeRule;
+                    bool m_codeRuleHasBeenSet;
+
+                    /**
+                     * 已使用码数
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    int64_t m_usedAmount;
+                    bool m_usedAmountHasBeenSet;
+
+                    /**
+                     * 开始流水号
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    uint64_t m_serialStart;
+                    bool m_serialStartHasBeenSet;
+
+                    /**
+                     * 结束流水号
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    uint64_t m_serialEnd;
+                    bool m_serialEndHasBeenSet;
 
                 };
             }

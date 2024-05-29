@@ -1104,7 +1104,6 @@ namespace TencentCloud
 
                 /**
                  *查看安全网关
-
                  * @param req DescribeWxGatewaysRequest
                  * @return DescribeWxGatewaysOutcome
                  */

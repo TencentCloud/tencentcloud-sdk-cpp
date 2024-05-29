@@ -21,8 +21,8 @@ using namespace TencentCloud::Teo::V20220901::Model;
 using namespace std;
 
 Rule::Rule() :
-    m_actionsHasBeenSet(false),
     m_conditionsHasBeenSet(false),
+    m_actionsHasBeenSet(false),
     m_subRulesHasBeenSet(false)
 {
 }
@@ -31,26 +31,6 @@ CoreInternalOutcome Rule::Deserialize(const rapidjson::Value &value)
 {
     string requestId = "";
 
-
-    if (value.HasMember("Actions") && !value["Actions"].IsNull())
-    {
-        if (!value["Actions"].IsArray())
-            return CoreInternalOutcome(Core::Error("response `Rule.Actions` is not array type"));
-
-        const rapidjson::Value &tmpValue = value["Actions"];
-        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
-        {
-            Action item;
-            CoreInternalOutcome outcome = item.Deserialize(*itr);
-            if (!outcome.IsSuccess())
-            {
-                outcome.GetError().SetRequestId(requestId);
-                return outcome;
-            }
-            m_actions.push_back(item);
-        }
-        m_actionsHasBeenSet = true;
-    }
 
     if (value.HasMember("Conditions") && !value["Conditions"].IsNull())
     {
@@ -70,6 +50,26 @@ CoreInternalOutcome Rule::Deserialize(const rapidjson::Value &value)
             m_conditions.push_back(item);
         }
         m_conditionsHasBeenSet = true;
+    }
+
+    if (value.HasMember("Actions") && !value["Actions"].IsNull())
+    {
+        if (!value["Actions"].IsArray())
+            return CoreInternalOutcome(Core::Error("response `Rule.Actions` is not array type"));
+
+        const rapidjson::Value &tmpValue = value["Actions"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            Action item;
+            CoreInternalOutcome outcome = item.Deserialize(*itr);
+            if (!outcome.IsSuccess())
+            {
+                outcome.GetError().SetRequestId(requestId);
+                return outcome;
+            }
+            m_actions.push_back(item);
+        }
+        m_actionsHasBeenSet = true;
     }
 
     if (value.HasMember("SubRules") && !value["SubRules"].IsNull())
@@ -99,21 +99,6 @@ CoreInternalOutcome Rule::Deserialize(const rapidjson::Value &value)
 void Rule::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const
 {
 
-    if (m_actionsHasBeenSet)
-    {
-        rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "Actions";
-        iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
-
-        int i=0;
-        for (auto itr = m_actions.begin(); itr != m_actions.end(); ++itr, ++i)
-        {
-            value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
-            (*itr).ToJsonObject(value[key.c_str()][i], allocator);
-        }
-    }
-
     if (m_conditionsHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
@@ -123,6 +108,21 @@ void Rule::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorT
 
         int i=0;
         for (auto itr = m_conditions.begin(); itr != m_conditions.end(); ++itr, ++i)
+        {
+            value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(value[key.c_str()][i], allocator);
+        }
+    }
+
+    if (m_actionsHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Actions";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_actions.begin(); itr != m_actions.end(); ++itr, ++i)
         {
             value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
             (*itr).ToJsonObject(value[key.c_str()][i], allocator);
@@ -147,22 +147,6 @@ void Rule::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorT
 }
 
 
-vector<Action> Rule::GetActions() const
-{
-    return m_actions;
-}
-
-void Rule::SetActions(const vector<Action>& _actions)
-{
-    m_actions = _actions;
-    m_actionsHasBeenSet = true;
-}
-
-bool Rule::ActionsHasBeenSet() const
-{
-    return m_actionsHasBeenSet;
-}
-
 vector<RuleAndConditions> Rule::GetConditions() const
 {
     return m_conditions;
@@ -177,6 +161,22 @@ void Rule::SetConditions(const vector<RuleAndConditions>& _conditions)
 bool Rule::ConditionsHasBeenSet() const
 {
     return m_conditionsHasBeenSet;
+}
+
+vector<Action> Rule::GetActions() const
+{
+    return m_actions;
+}
+
+void Rule::SetActions(const vector<Action>& _actions)
+{
+    m_actions = _actions;
+    m_actionsHasBeenSet = true;
+}
+
+bool Rule::ActionsHasBeenSet() const
+{
+    return m_actionsHasBeenSet;
 }
 
 vector<SubRuleItem> Rule::GetSubRules() const

@@ -200,15 +200,15 @@ namespace TencentCloud
                     bool SaleoutHasBeenSet() const;
 
                     /**
-                     * 获取产品引擎。包括：腾讯云 CKV与社区版 Redis。
-                     * @return Engine 产品引擎。包括：腾讯云 CKV与社区版 Redis。
+                     * 获取产品引擎。Redis 或者 CKV。
+                     * @return Engine 产品引擎。Redis 或者 CKV。
                      * 
                      */
                     std::string GetEngine() const;
 
                     /**
-                     * 设置产品引擎。包括：腾讯云 CKV与社区版 Redis。
-                     * @param _engine 产品引擎。包括：腾讯云 CKV与社区版 Redis。
+                     * 设置产品引擎。Redis 或者 CKV。
+                     * @param _engine 产品引擎。Redis 或者 CKV。
                      * 
                      */
                     void SetEngine(const std::string& _engine);
@@ -461,7 +461,7 @@ namespace TencentCloud
                     bool m_saleoutHasBeenSet;
 
                     /**
-                     * 产品引擎。包括：腾讯云 CKV与社区版 Redis。
+                     * 产品引擎。Redis 或者 CKV。
                      */
                     std::string m_engine;
                     bool m_engineHasBeenSet;

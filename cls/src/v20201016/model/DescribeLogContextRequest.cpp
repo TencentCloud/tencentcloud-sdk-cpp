@@ -28,7 +28,10 @@ DescribeLogContextRequest::DescribeLogContextRequest() :
     m_pkgIdHasBeenSet(false),
     m_pkgLogIdHasBeenSet(false),
     m_prevLogsHasBeenSet(false),
-    m_nextLogsHasBeenSet(false)
+    m_nextLogsHasBeenSet(false),
+    m_queryHasBeenSet(false),
+    m_fromHasBeenSet(false),
+    m_toHasBeenSet(false)
 {
 }
 
@@ -85,6 +88,30 @@ string DescribeLogContextRequest::ToJsonString() const
         string key = "NextLogs";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_nextLogs, allocator);
+    }
+
+    if (m_queryHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Query";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_query.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_fromHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "From";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_from, allocator);
+    }
+
+    if (m_toHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "To";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_to, allocator);
     }
 
 
@@ -189,6 +216,54 @@ void DescribeLogContextRequest::SetNextLogs(const int64_t& _nextLogs)
 bool DescribeLogContextRequest::NextLogsHasBeenSet() const
 {
     return m_nextLogsHasBeenSet;
+}
+
+string DescribeLogContextRequest::GetQuery() const
+{
+    return m_query;
+}
+
+void DescribeLogContextRequest::SetQuery(const string& _query)
+{
+    m_query = _query;
+    m_queryHasBeenSet = true;
+}
+
+bool DescribeLogContextRequest::QueryHasBeenSet() const
+{
+    return m_queryHasBeenSet;
+}
+
+uint64_t DescribeLogContextRequest::GetFrom() const
+{
+    return m_from;
+}
+
+void DescribeLogContextRequest::SetFrom(const uint64_t& _from)
+{
+    m_from = _from;
+    m_fromHasBeenSet = true;
+}
+
+bool DescribeLogContextRequest::FromHasBeenSet() const
+{
+    return m_fromHasBeenSet;
+}
+
+uint64_t DescribeLogContextRequest::GetTo() const
+{
+    return m_to;
+}
+
+void DescribeLogContextRequest::SetTo(const uint64_t& _to)
+{
+    m_to = _to;
+    m_toHasBeenSet = true;
+}
+
+bool DescribeLogContextRequest::ToHasBeenSet() const
+{
+    return m_toHasBeenSet;
 }
 
 

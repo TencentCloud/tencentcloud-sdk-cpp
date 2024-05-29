@@ -41,7 +41,8 @@ CloneInstancesRequest::CloneInstancesRequest() :
     m_projectIdHasBeenSet(false),
     m_resourceTagsHasBeenSet(false),
     m_templateIdHasBeenSet(false),
-    m_alarmPolicyListHasBeenSet(false)
+    m_alarmPolicyListHasBeenSet(false),
+    m_cloneTimeHasBeenSet(false)
 {
 }
 
@@ -226,6 +227,14 @@ string CloneInstancesRequest::ToJsonString() const
         {
             d[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
         }
+    }
+
+    if (m_cloneTimeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "CloneTime";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_cloneTime.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -538,6 +547,22 @@ void CloneInstancesRequest::SetAlarmPolicyList(const vector<string>& _alarmPolic
 bool CloneInstancesRequest::AlarmPolicyListHasBeenSet() const
 {
     return m_alarmPolicyListHasBeenSet;
+}
+
+string CloneInstancesRequest::GetCloneTime() const
+{
+    return m_cloneTime;
+}
+
+void CloneInstancesRequest::SetCloneTime(const string& _cloneTime)
+{
+    m_cloneTime = _cloneTime;
+    m_cloneTimeHasBeenSet = true;
+}
+
+bool CloneInstancesRequest::CloneTimeHasBeenSet() const
+{
+    return m_cloneTimeHasBeenSet;
 }
 
 

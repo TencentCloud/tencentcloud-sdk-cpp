@@ -513,6 +513,81 @@ namespace TencentCloud
                      */
                     bool ProductNameHasBeenSet() const;
 
+                    /**
+                     * 获取产品Logo
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return ProductLogo 产品Logo
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::string GetProductLogo() const;
+
+                    /**
+                     * 设置产品Logo
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _productLogo 产品Logo
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetProductLogo(const std::string& _productLogo);
+
+                    /**
+                     * 判断参数 ProductLogo 是否已赋值
+                     * @return ProductLogo 是否已赋值
+                     * 
+                     */
+                    bool ProductLogoHasBeenSet() const;
+
+                    /**
+                     * 获取风险状态
+0: 未知, 1:通过, 2:失败/风险, 3:存疑
+                     * @return Status 风险状态
+0: 未知, 1:通过, 2:失败/风险, 3:存疑
+                     * 
+                     */
+                    int64_t GetStatus() const;
+
+                    /**
+                     * 设置风险状态
+0: 未知, 1:通过, 2:失败/风险, 3:存疑
+                     * @param _status 风险状态
+0: 未知, 1:通过, 2:失败/风险, 3:存疑
+                     * 
+                     */
+                    void SetStatus(const int64_t& _status);
+
+                    /**
+                     * 判断参数 Status 是否已赋值
+                     * @return Status 是否已赋值
+                     * 
+                     */
+                    bool StatusHasBeenSet() const;
+
+                    /**
+                     * 获取是否开启验证
+0:否, 1:是
+                     * @return Verify 是否开启验证
+0:否, 1:是
+                     * 
+                     */
+                    int64_t GetVerify() const;
+
+                    /**
+                     * 设置是否开启验证
+0:否, 1:是
+                     * @param _verify 是否开启验证
+0:否, 1:是
+                     * 
+                     */
+                    void SetVerify(const int64_t& _verify);
+
+                    /**
+                     * 判断参数 Verify 是否已赋值
+                     * @return Verify 是否已赋值
+                     * 
+                     */
+                    bool VerifyHasBeenSet() const;
+
                 private:
 
                     /**
@@ -645,6 +720,27 @@ namespace TencentCloud
                      */
                     std::string m_productName;
                     bool m_productNameHasBeenSet;
+
+                    /**
+                     * 产品Logo
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_productLogo;
+                    bool m_productLogoHasBeenSet;
+
+                    /**
+                     * 风险状态
+0: 未知, 1:通过, 2:失败/风险, 3:存疑
+                     */
+                    int64_t m_status;
+                    bool m_statusHasBeenSet;
+
+                    /**
+                     * 是否开启验证
+0:否, 1:是
+                     */
+                    int64_t m_verify;
+                    bool m_verifyHasBeenSet;
 
                 };
             }

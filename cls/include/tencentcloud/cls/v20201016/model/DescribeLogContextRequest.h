@@ -64,15 +64,15 @@ namespace TencentCloud
                     bool TopicIdHasBeenSet() const;
 
                     /**
-                     * 获取日志时间,  需按照 UTC+8 时区将日志中的Unix时间戳转换为 YYYY-mm-dd HH:MM:SS.FFF 格式的字符串。
-                     * @return BTime 日志时间,  需按照 UTC+8 时区将日志中的Unix时间戳转换为 YYYY-mm-dd HH:MM:SS.FFF 格式的字符串。
+                     * 获取日志时间,  即SearchLog接口返回信息中Results结构体中的Time，需按照 UTC+8 时区将该毫秒级Unix时间戳转换为 YYYY-mm-dd HH:MM:SS.FFF 格式的字符串。
+                     * @return BTime 日志时间,  即SearchLog接口返回信息中Results结构体中的Time，需按照 UTC+8 时区将该毫秒级Unix时间戳转换为 YYYY-mm-dd HH:MM:SS.FFF 格式的字符串。
                      * 
                      */
                     std::string GetBTime() const;
 
                     /**
-                     * 设置日志时间,  需按照 UTC+8 时区将日志中的Unix时间戳转换为 YYYY-mm-dd HH:MM:SS.FFF 格式的字符串。
-                     * @param _bTime 日志时间,  需按照 UTC+8 时区将日志中的Unix时间戳转换为 YYYY-mm-dd HH:MM:SS.FFF 格式的字符串。
+                     * 设置日志时间,  即SearchLog接口返回信息中Results结构体中的Time，需按照 UTC+8 时区将该毫秒级Unix时间戳转换为 YYYY-mm-dd HH:MM:SS.FFF 格式的字符串。
+                     * @param _bTime 日志时间,  即SearchLog接口返回信息中Results结构体中的Time，需按照 UTC+8 时区将该毫秒级Unix时间戳转换为 YYYY-mm-dd HH:MM:SS.FFF 格式的字符串。
                      * 
                      */
                     void SetBTime(const std::string& _bTime);
@@ -85,15 +85,15 @@ namespace TencentCloud
                     bool BTimeHasBeenSet() const;
 
                     /**
-                     * 获取日志包序号。SearchLog接口返回信息中Results结构体中的PkgId。
-                     * @return PkgId 日志包序号。SearchLog接口返回信息中Results结构体中的PkgId。
+                     * 获取日志包序号，即SearchLog接口返回信息中Results结构体中的PkgId。
+                     * @return PkgId 日志包序号，即SearchLog接口返回信息中Results结构体中的PkgId。
                      * 
                      */
                     std::string GetPkgId() const;
 
                     /**
-                     * 设置日志包序号。SearchLog接口返回信息中Results结构体中的PkgId。
-                     * @param _pkgId 日志包序号。SearchLog接口返回信息中Results结构体中的PkgId。
+                     * 设置日志包序号，即SearchLog接口返回信息中Results结构体中的PkgId。
+                     * @param _pkgId 日志包序号，即SearchLog接口返回信息中Results结构体中的PkgId。
                      * 
                      */
                     void SetPkgId(const std::string& _pkgId);
@@ -106,19 +106,15 @@ namespace TencentCloud
                     bool PkgIdHasBeenSet() const;
 
                     /**
-                     * 获取日志包内一条日志的序号。
-SearchLog接口返回信息中Results结构中的PkgLogId。
-                     * @return PkgLogId 日志包内一条日志的序号。
-SearchLog接口返回信息中Results结构中的PkgLogId。
+                     * 获取日志包内一条日志的序号，即SearchLog接口返回信息中Results结构中的PkgLogId。
+                     * @return PkgLogId 日志包内一条日志的序号，即SearchLog接口返回信息中Results结构中的PkgLogId。
                      * 
                      */
                     int64_t GetPkgLogId() const;
 
                     /**
-                     * 设置日志包内一条日志的序号。
-SearchLog接口返回信息中Results结构中的PkgLogId。
-                     * @param _pkgLogId 日志包内一条日志的序号。
-SearchLog接口返回信息中Results结构中的PkgLogId。
+                     * 设置日志包内一条日志的序号，即SearchLog接口返回信息中Results结构中的PkgLogId。
+                     * @param _pkgLogId 日志包内一条日志的序号，即SearchLog接口返回信息中Results结构中的PkgLogId。
                      * 
                      */
                     void SetPkgLogId(const int64_t& _pkgLogId);
@@ -172,6 +168,105 @@ SearchLog接口返回信息中Results结构中的PkgLogId。
                      */
                     bool NextLogsHasBeenSet() const;
 
+                    /**
+                     * 获取检索语句，对日志上下文进行过滤，最大长度为12KB
+语句由 <a href="https://cloud.tencent.com/document/product/614/47044" target="_blank">[检索条件]</a>构成，不支持SQL语句
+                     * @return Query 检索语句，对日志上下文进行过滤，最大长度为12KB
+语句由 <a href="https://cloud.tencent.com/document/product/614/47044" target="_blank">[检索条件]</a>构成，不支持SQL语句
+                     * 
+                     */
+                    std::string GetQuery() const;
+
+                    /**
+                     * 设置检索语句，对日志上下文进行过滤，最大长度为12KB
+语句由 <a href="https://cloud.tencent.com/document/product/614/47044" target="_blank">[检索条件]</a>构成，不支持SQL语句
+                     * @param _query 检索语句，对日志上下文进行过滤，最大长度为12KB
+语句由 <a href="https://cloud.tencent.com/document/product/614/47044" target="_blank">[检索条件]</a>构成，不支持SQL语句
+                     * 
+                     */
+                    void SetQuery(const std::string& _query);
+
+                    /**
+                     * 判断参数 Query 是否已赋值
+                     * @return Query 是否已赋值
+                     * 
+                     */
+                    bool QueryHasBeenSet() const;
+
+                    /**
+                     * 获取上下文检索的开始时间，单位：毫秒级时间戳
+注意：
+- From为空时，表示上下文检索的开始时间不做限制
+- From和To非空时，From < To
+- 暂时仅支持上海 / 弗吉尼亚/ 新加坡地域
+                     * @return From 上下文检索的开始时间，单位：毫秒级时间戳
+注意：
+- From为空时，表示上下文检索的开始时间不做限制
+- From和To非空时，From < To
+- 暂时仅支持上海 / 弗吉尼亚/ 新加坡地域
+                     * 
+                     */
+                    uint64_t GetFrom() const;
+
+                    /**
+                     * 设置上下文检索的开始时间，单位：毫秒级时间戳
+注意：
+- From为空时，表示上下文检索的开始时间不做限制
+- From和To非空时，From < To
+- 暂时仅支持上海 / 弗吉尼亚/ 新加坡地域
+                     * @param _from 上下文检索的开始时间，单位：毫秒级时间戳
+注意：
+- From为空时，表示上下文检索的开始时间不做限制
+- From和To非空时，From < To
+- 暂时仅支持上海 / 弗吉尼亚/ 新加坡地域
+                     * 
+                     */
+                    void SetFrom(const uint64_t& _from);
+
+                    /**
+                     * 判断参数 From 是否已赋值
+                     * @return From 是否已赋值
+                     * 
+                     */
+                    bool FromHasBeenSet() const;
+
+                    /**
+                     * 获取上下文检索的结束时间，单位：毫秒级时间戳。
+注意：
+- To为空时，表示上下文检索的结束时间不做限制
+- From和To非空时，From < To
+- 暂时仅支持上海 / 弗吉尼亚/ 新加坡地域
+                     * @return To 上下文检索的结束时间，单位：毫秒级时间戳。
+注意：
+- To为空时，表示上下文检索的结束时间不做限制
+- From和To非空时，From < To
+- 暂时仅支持上海 / 弗吉尼亚/ 新加坡地域
+                     * 
+                     */
+                    uint64_t GetTo() const;
+
+                    /**
+                     * 设置上下文检索的结束时间，单位：毫秒级时间戳。
+注意：
+- To为空时，表示上下文检索的结束时间不做限制
+- From和To非空时，From < To
+- 暂时仅支持上海 / 弗吉尼亚/ 新加坡地域
+                     * @param _to 上下文检索的结束时间，单位：毫秒级时间戳。
+注意：
+- To为空时，表示上下文检索的结束时间不做限制
+- From和To非空时，From < To
+- 暂时仅支持上海 / 弗吉尼亚/ 新加坡地域
+                     * 
+                     */
+                    void SetTo(const uint64_t& _to);
+
+                    /**
+                     * 判断参数 To 是否已赋值
+                     * @return To 是否已赋值
+                     * 
+                     */
+                    bool ToHasBeenSet() const;
+
                 private:
 
                     /**
@@ -181,20 +276,19 @@ SearchLog接口返回信息中Results结构中的PkgLogId。
                     bool m_topicIdHasBeenSet;
 
                     /**
-                     * 日志时间,  需按照 UTC+8 时区将日志中的Unix时间戳转换为 YYYY-mm-dd HH:MM:SS.FFF 格式的字符串。
+                     * 日志时间,  即SearchLog接口返回信息中Results结构体中的Time，需按照 UTC+8 时区将该毫秒级Unix时间戳转换为 YYYY-mm-dd HH:MM:SS.FFF 格式的字符串。
                      */
                     std::string m_bTime;
                     bool m_bTimeHasBeenSet;
 
                     /**
-                     * 日志包序号。SearchLog接口返回信息中Results结构体中的PkgId。
+                     * 日志包序号，即SearchLog接口返回信息中Results结构体中的PkgId。
                      */
                     std::string m_pkgId;
                     bool m_pkgIdHasBeenSet;
 
                     /**
-                     * 日志包内一条日志的序号。
-SearchLog接口返回信息中Results结构中的PkgLogId。
+                     * 日志包内一条日志的序号，即SearchLog接口返回信息中Results结构中的PkgLogId。
                      */
                     int64_t m_pkgLogId;
                     bool m_pkgLogIdHasBeenSet;
@@ -210,6 +304,33 @@ SearchLog接口返回信息中Results结构中的PkgLogId。
                      */
                     int64_t m_nextLogs;
                     bool m_nextLogsHasBeenSet;
+
+                    /**
+                     * 检索语句，对日志上下文进行过滤，最大长度为12KB
+语句由 <a href="https://cloud.tencent.com/document/product/614/47044" target="_blank">[检索条件]</a>构成，不支持SQL语句
+                     */
+                    std::string m_query;
+                    bool m_queryHasBeenSet;
+
+                    /**
+                     * 上下文检索的开始时间，单位：毫秒级时间戳
+注意：
+- From为空时，表示上下文检索的开始时间不做限制
+- From和To非空时，From < To
+- 暂时仅支持上海 / 弗吉尼亚/ 新加坡地域
+                     */
+                    uint64_t m_from;
+                    bool m_fromHasBeenSet;
+
+                    /**
+                     * 上下文检索的结束时间，单位：毫秒级时间戳。
+注意：
+- To为空时，表示上下文检索的结束时间不做限制
+- From和To非空时，From < To
+- 暂时仅支持上海 / 弗吉尼亚/ 新加坡地域
+                     */
+                    uint64_t m_to;
+                    bool m_toHasBeenSet;
 
                 };
             }

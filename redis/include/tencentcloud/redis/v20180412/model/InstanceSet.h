@@ -1361,6 +1361,31 @@ namespace TencentCloud
                      */
                     bool UpgradeRedisVersionHasBeenSet() const;
 
+                    /**
+                     * 获取备份模式：- SecondLevelBackup   秒级备份- NormalLevelBackup    普通备份
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return BackupMode 备份模式：- SecondLevelBackup   秒级备份- NormalLevelBackup    普通备份
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::string GetBackupMode() const;
+
+                    /**
+                     * 设置备份模式：- SecondLevelBackup   秒级备份- NormalLevelBackup    普通备份
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _backupMode 备份模式：- SecondLevelBackup   秒级备份- NormalLevelBackup    普通备份
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetBackupMode(const std::string& _backupMode);
+
+                    /**
+                     * 判断参数 BackupMode 是否已赋值
+                     * @return BackupMode 是否已赋值
+                     * 
+                     */
+                    bool BackupModeHasBeenSet() const;
+
                 private:
 
                     /**
@@ -1732,6 +1757,13 @@ namespace TencentCloud
                      */
                     std::string m_upgradeRedisVersion;
                     bool m_upgradeRedisVersionHasBeenSet;
+
+                    /**
+                     * 备份模式：- SecondLevelBackup   秒级备份- NormalLevelBackup    普通备份
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_backupMode;
+                    bool m_backupModeHasBeenSet;
 
                 };
             }

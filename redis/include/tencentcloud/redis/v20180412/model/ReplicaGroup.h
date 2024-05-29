@@ -111,15 +111,15 @@ namespace TencentCloud
                     bool ZoneIdHasBeenSet() const;
 
                     /**
-                     * 获取节点组类型，master为主节点，replica为副本节点
-                     * @return Role 节点组类型，master为主节点，replica为副本节点
+                     * 获取节点组类型，master为主节点，replica为副本节点。
+                     * @return Role 节点组类型，master为主节点，replica为副本节点。
                      * 
                      */
                     std::string GetRole() const;
 
                     /**
-                     * 设置节点组类型，master为主节点，replica为副本节点
-                     * @param _role 节点组类型，master为主节点，replica为副本节点
+                     * 设置节点组类型，master为主节点，replica为副本节点。
+                     * @param _role 节点组类型，master为主节点，replica为副本节点。
                      * 
                      */
                     void SetRole(const std::string& _role);
@@ -173,7 +173,7 @@ namespace TencentCloud
                     bool m_zoneIdHasBeenSet;
 
                     /**
-                     * 节点组类型，master为主节点，replica为副本节点
+                     * 节点组类型，master为主节点，replica为副本节点。
                      */
                     std::string m_role;
                     bool m_roleHasBeenSet;

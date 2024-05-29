@@ -48,14 +48,22 @@ namespace TencentCloud
 
                     /**
                      * 获取标识出入数据库的IP与端口是否被允许。
+- ACCEPT：允许。
+- DROP：不允许。
                      * @return Action 标识出入数据库的IP与端口是否被允许。
+- ACCEPT：允许。
+- DROP：不允许。
                      * 
                      */
                     std::string GetAction() const;
 
                     /**
                      * 设置标识出入数据库的IP与端口是否被允许。
+- ACCEPT：允许。
+- DROP：不允许。
                      * @param _action 标识出入数据库的IP与端口是否被允许。
+- ACCEPT：允许。
+- DROP：不允许。
                      * 
                      */
                     void SetAction(const std::string& _action);
@@ -134,6 +142,8 @@ namespace TencentCloud
 
                     /**
                      * 标识出入数据库的IP与端口是否被允许。
+- ACCEPT：允许。
+- DROP：不允许。
                      */
                     std::string m_action;
                     bool m_actionHasBeenSet;

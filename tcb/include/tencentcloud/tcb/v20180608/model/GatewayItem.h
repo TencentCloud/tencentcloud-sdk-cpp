@@ -93,6 +93,31 @@ namespace TencentCloud
                     bool AppIdHasBeenSet() const;
 
                     /**
+                     * 获取WxAppId
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return WxAppId WxAppId
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::string GetWxAppId() const;
+
+                    /**
+                     * 设置WxAppId
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _wxAppId WxAppId
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetWxAppId(const std::string& _wxAppId);
+
+                    /**
+                     * 判断参数 WxAppId 是否已赋值
+                     * @return WxAppId 是否已赋值
+                     * 
+                     */
+                    bool WxAppIdHasBeenSet() const;
+
+                    /**
                      * 获取环境id
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return EnvId 环境id
@@ -393,6 +418,56 @@ namespace TencentCloud
                     bool RegionHasBeenSet() const;
 
                     /**
+                     * 获取是否可以续费
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return CanRenew 是否可以续费
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    bool GetCanRenew() const;
+
+                    /**
+                     * 设置是否可以续费
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _canRenew 是否可以续费
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetCanRenew(const bool& _canRenew);
+
+                    /**
+                     * 判断参数 CanRenew 是否已赋值
+                     * @return CanRenew 是否已赋值
+                     * 
+                     */
+                    bool CanRenewHasBeenSet() const;
+
+                    /**
+                     * 获取自动续费标志
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return AutoRenewFlag 自动续费标志
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    uint64_t GetAutoRenewFlag() const;
+
+                    /**
+                     * 设置自动续费标志
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _autoRenewFlag 自动续费标志
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetAutoRenewFlag(const uint64_t& _autoRenewFlag);
+
+                    /**
+                     * 判断参数 AutoRenewFlag 是否已赋值
+                     * @return AutoRenewFlag 是否已赋值
+                     * 
+                     */
+                    bool AutoRenewFlagHasBeenSet() const;
+
+                    /**
                      * 获取隔离时间
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return IsolateTime 隔离时间
@@ -493,6 +568,31 @@ namespace TencentCloud
                     bool UpdateTimeHasBeenSet() const;
 
                     /**
+                     * 获取是否可以降配
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return CanDowngrade 是否可以降配
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    bool GetCanDowngrade() const;
+
+                    /**
+                     * 设置是否可以降配
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _canDowngrade 是否可以降配
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetCanDowngrade(const bool& _canDowngrade);
+
+                    /**
+                     * 判断参数 CanDowngrade 是否已赋值
+                     * @return CanDowngrade 是否已赋值
+                     * 
+                     */
+                    bool CanDowngradeHasBeenSet() const;
+
+                    /**
                      * 获取允许未登录访问
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return AllowUncertified 允许未登录访问
@@ -542,6 +642,56 @@ namespace TencentCloud
                      */
                     bool VersionNumLimitHasBeenSet() const;
 
+                    /**
+                     * 获取Donut接入ID
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return LongAccessId Donut接入ID
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::string GetLongAccessId() const;
+
+                    /**
+                     * 设置Donut接入ID
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _longAccessId Donut接入ID
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetLongAccessId(const std::string& _longAccessId);
+
+                    /**
+                     * 判断参数 LongAccessId 是否已赋值
+                     * @return LongAccessId 是否已赋值
+                     * 
+                     */
+                    bool LongAccessIdHasBeenSet() const;
+
+                    /**
+                     * 获取Donut接入域名
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return AccessDomain Donut接入域名
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::string GetAccessDomain() const;
+
+                    /**
+                     * 设置Donut接入域名
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _accessDomain Donut接入域名
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetAccessDomain(const std::string& _accessDomain);
+
+                    /**
+                     * 判断参数 AccessDomain 是否已赋值
+                     * @return AccessDomain 是否已赋值
+                     * 
+                     */
+                    bool AccessDomainHasBeenSet() const;
+
                 private:
 
                     /**
@@ -556,6 +706,13 @@ namespace TencentCloud
                      */
                     uint64_t m_appId;
                     bool m_appIdHasBeenSet;
+
+                    /**
+                     * WxAppId
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_wxAppId;
+                    bool m_wxAppIdHasBeenSet;
 
                     /**
                      * 环境id
@@ -642,6 +799,20 @@ namespace TencentCloud
                     bool m_regionHasBeenSet;
 
                     /**
+                     * 是否可以续费
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    bool m_canRenew;
+                    bool m_canRenewHasBeenSet;
+
+                    /**
+                     * 自动续费标志
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    uint64_t m_autoRenewFlag;
+                    bool m_autoRenewFlagHasBeenSet;
+
+                    /**
                      * 隔离时间
 注意：此字段可能返回 null，表示取不到有效值。
                      */
@@ -670,6 +841,13 @@ namespace TencentCloud
                     bool m_updateTimeHasBeenSet;
 
                     /**
+                     * 是否可以降配
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    bool m_canDowngrade;
+                    bool m_canDowngradeHasBeenSet;
+
+                    /**
                      * 允许未登录访问
 注意：此字段可能返回 null，表示取不到有效值。
                      */
@@ -682,6 +860,20 @@ namespace TencentCloud
                      */
                     int64_t m_versionNumLimit;
                     bool m_versionNumLimitHasBeenSet;
+
+                    /**
+                     * Donut接入ID
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_longAccessId;
+                    bool m_longAccessIdHasBeenSet;
+
+                    /**
+                     * Donut接入域名
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_accessDomain;
+                    bool m_accessDomainHasBeenSet;
 
                 };
             }

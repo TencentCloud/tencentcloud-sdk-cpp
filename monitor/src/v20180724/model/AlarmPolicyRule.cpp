@@ -37,7 +37,8 @@ AlarmPolicyRule::AlarmPolicyRule() :
     m_productIdHasBeenSet(false),
     m_valueMaxHasBeenSet(false),
     m_valueMinHasBeenSet(false),
-    m_hierarchicalValueHasBeenSet(false)
+    m_hierarchicalValueHasBeenSet(false),
+    m_isLatenessMetricHasBeenSet(false)
 {
 }
 
@@ -230,6 +231,16 @@ CoreInternalOutcome AlarmPolicyRule::Deserialize(const rapidjson::Value &value)
         m_hierarchicalValueHasBeenSet = true;
     }
 
+    if (value.HasMember("IsLatenessMetric") && !value["IsLatenessMetric"].IsNull())
+    {
+        if (!value["IsLatenessMetric"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `AlarmPolicyRule.IsLatenessMetric` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_isLatenessMetric = value["IsLatenessMetric"].GetInt64();
+        m_isLatenessMetricHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -373,6 +384,14 @@ void AlarmPolicyRule::ToJsonObject(rapidjson::Value &value, rapidjson::Document:
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
         m_hierarchicalValue.ToJsonObject(value[key.c_str()], allocator);
+    }
+
+    if (m_isLatenessMetricHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "IsLatenessMetric";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_isLatenessMetric, allocator);
     }
 
 }
@@ -648,5 +667,21 @@ void AlarmPolicyRule::SetHierarchicalValue(const AlarmHierarchicalValue& _hierar
 bool AlarmPolicyRule::HierarchicalValueHasBeenSet() const
 {
     return m_hierarchicalValueHasBeenSet;
+}
+
+int64_t AlarmPolicyRule::GetIsLatenessMetric() const
+{
+    return m_isLatenessMetric;
+}
+
+void AlarmPolicyRule::SetIsLatenessMetric(const int64_t& _isLatenessMetric)
+{
+    m_isLatenessMetric = _isLatenessMetric;
+    m_isLatenessMetricHasBeenSet = true;
+}
+
+bool AlarmPolicyRule::IsLatenessMetricHasBeenSet() const
+{
+    return m_isLatenessMetricHasBeenSet;
 }
 

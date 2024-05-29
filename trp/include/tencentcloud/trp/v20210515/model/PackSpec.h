@@ -160,6 +160,56 @@ namespace TencentCloud
                      */
                     bool CodePartsHasBeenSet() const;
 
+                    /**
+                     * 获取包装单位
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return Unit 包装单位
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::string GetUnit() const;
+
+                    /**
+                     * 设置包装单位
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _unit 包装单位
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetUnit(const std::string& _unit);
+
+                    /**
+                     * 判断参数 Unit 是否已赋值
+                     * @return Unit 是否已赋值
+                     * 
+                     */
+                    bool UnitHasBeenSet() const;
+
+                    /**
+                     * 获取场景值
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return SceneCode 场景值
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    int64_t GetSceneCode() const;
+
+                    /**
+                     * 设置场景值
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _sceneCode 场景值
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetSceneCode(const int64_t& _sceneCode);
+
+                    /**
+                     * 判断参数 SceneCode 是否已赋值
+                     * @return SceneCode 是否已赋值
+                     * 
+                     */
+                    bool SceneCodeHasBeenSet() const;
+
                 private:
 
                     /**
@@ -193,6 +243,20 @@ namespace TencentCloud
                      */
                     std::vector<CodePart> m_codeParts;
                     bool m_codePartsHasBeenSet;
+
+                    /**
+                     * 包装单位
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_unit;
+                    bool m_unitHasBeenSet;
+
+                    /**
+                     * 场景值
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    int64_t m_sceneCode;
+                    bool m_sceneCodeHasBeenSet;
 
                 };
             }

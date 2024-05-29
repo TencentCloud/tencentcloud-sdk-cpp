@@ -85,15 +85,15 @@ namespace TencentCloud
                     bool FileNameHasBeenSet() const;
 
                     /**
-                     * 获取过期时间 UNIX 时间戳（默认值为当前时间 1 小时后）
-                     * @return ExpireTime 过期时间 UNIX 时间戳（默认值为当前时间 1 小时后）
+                     * 获取过期时间 UNIX 时间戳（默认值为当前时间 1 小时后，最大不超过文件所属任务的过期时间）
+                     * @return ExpireTime 过期时间 UNIX 时间戳（默认值为当前时间 1 小时后，最大不超过文件所属任务的过期时间）
                      * 
                      */
                     uint64_t GetExpireTime() const;
 
                     /**
-                     * 设置过期时间 UNIX 时间戳（默认值为当前时间 1 小时后）
-                     * @param _expireTime 过期时间 UNIX 时间戳（默认值为当前时间 1 小时后）
+                     * 设置过期时间 UNIX 时间戳（默认值为当前时间 1 小时后，最大不超过文件所属任务的过期时间）
+                     * @param _expireTime 过期时间 UNIX 时间戳（默认值为当前时间 1 小时后，最大不超过文件所属任务的过期时间）
                      * 
                      */
                     void SetExpireTime(const uint64_t& _expireTime);
@@ -120,7 +120,7 @@ namespace TencentCloud
                     bool m_fileNameHasBeenSet;
 
                     /**
-                     * 过期时间 UNIX 时间戳（默认值为当前时间 1 小时后）
+                     * 过期时间 UNIX 时间戳（默认值为当前时间 1 小时后，最大不超过文件所属任务的过期时间）
                      */
                     uint64_t m_expireTime;
                     bool m_expireTimeHasBeenSet;

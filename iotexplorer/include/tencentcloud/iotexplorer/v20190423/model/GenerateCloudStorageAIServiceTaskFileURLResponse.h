@@ -58,8 +58,8 @@ namespace TencentCloud
                     bool FileURLHasBeenSet() const;
 
                     /**
-                     * 获取过期时间 UNIX 时间戳
-                     * @return ExpireTime 过期时间 UNIX 时间戳
+                     * 获取过期时间 UNIX 时间戳（最大不超过文件所属任务的过期时间）
+                     * @return ExpireTime 过期时间 UNIX 时间戳（最大不超过文件所属任务的过期时间）
                      * 
                      */
                     uint64_t GetExpireTime() const;
@@ -80,7 +80,7 @@ namespace TencentCloud
                     bool m_fileURLHasBeenSet;
 
                     /**
-                     * 过期时间 UNIX 时间戳
+                     * 过期时间 UNIX 时间戳（最大不超过文件所属任务的过期时间）
                      */
                     uint64_t m_expireTime;
                     bool m_expireTimeHasBeenSet;

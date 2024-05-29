@@ -29,7 +29,9 @@ DescribeCodePacksRequest::DescribeCodePacksRequest() :
     m_corpIdHasBeenSet(false),
     m_serialTypeHasBeenSet(false),
     m_resTypeHasBeenSet(false),
-    m_resIdHasBeenSet(false)
+    m_resIdHasBeenSet(false),
+    m_sceneCodeHasBeenSet(false),
+    m_statusHasBeenSet(false)
 {
 }
 
@@ -94,6 +96,22 @@ string DescribeCodePacksRequest::ToJsonString() const
         string key = "ResId";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_resId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_sceneCodeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "SceneCode";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_sceneCode, allocator);
+    }
+
+    if (m_statusHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Status";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_status.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -214,6 +232,38 @@ void DescribeCodePacksRequest::SetResId(const string& _resId)
 bool DescribeCodePacksRequest::ResIdHasBeenSet() const
 {
     return m_resIdHasBeenSet;
+}
+
+int64_t DescribeCodePacksRequest::GetSceneCode() const
+{
+    return m_sceneCode;
+}
+
+void DescribeCodePacksRequest::SetSceneCode(const int64_t& _sceneCode)
+{
+    m_sceneCode = _sceneCode;
+    m_sceneCodeHasBeenSet = true;
+}
+
+bool DescribeCodePacksRequest::SceneCodeHasBeenSet() const
+{
+    return m_sceneCodeHasBeenSet;
+}
+
+string DescribeCodePacksRequest::GetStatus() const
+{
+    return m_status;
+}
+
+void DescribeCodePacksRequest::SetStatus(const string& _status)
+{
+    m_status = _status;
+    m_statusHasBeenSet = true;
+}
+
+bool DescribeCodePacksRequest::StatusHasBeenSet() const
+{
+    return m_statusHasBeenSet;
 }
 
 

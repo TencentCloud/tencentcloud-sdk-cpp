@@ -43,15 +43,19 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取实例ID列表。
-                     * @return InstanceIds 实例ID列表。
+                     * 获取实例ID列表。每次请求批量实例的上限为 100。
+可通过 <a href="https://cloud.tencent.com/document/product/1207/47573">DescribeInstances</a> 接口返回值中的 InstanceId 获取。
+                     * @return InstanceIds 实例ID列表。每次请求批量实例的上限为 100。
+可通过 <a href="https://cloud.tencent.com/document/product/1207/47573">DescribeInstances</a> 接口返回值中的 InstanceId 获取。
                      * 
                      */
                     std::vector<std::string> GetInstanceIds() const;
 
                     /**
-                     * 设置实例ID列表。
-                     * @param _instanceIds 实例ID列表。
+                     * 设置实例ID列表。每次请求批量实例的上限为 100。
+可通过 <a href="https://cloud.tencent.com/document/product/1207/47573">DescribeInstances</a> 接口返回值中的 InstanceId 获取。
+                     * @param _instanceIds 实例ID列表。每次请求批量实例的上限为 100。
+可通过 <a href="https://cloud.tencent.com/document/product/1207/47573">DescribeInstances</a> 接口返回值中的 InstanceId 获取。
                      * 
                      */
                     void SetInstanceIds(const std::vector<std::string>& _instanceIds);
@@ -66,7 +70,8 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 实例ID列表。
+                     * 实例ID列表。每次请求批量实例的上限为 100。
+可通过 <a href="https://cloud.tencent.com/document/product/1207/47573">DescribeInstances</a> 接口返回值中的 InstanceId 获取。
                      */
                     std::vector<std::string> m_instanceIds;
                     bool m_instanceIdsHasBeenSet;

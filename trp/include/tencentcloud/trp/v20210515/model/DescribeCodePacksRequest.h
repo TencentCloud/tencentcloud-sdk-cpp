@@ -189,6 +189,48 @@ namespace TencentCloud
                      */
                     bool ResIdHasBeenSet() const;
 
+                    /**
+                     * 获取应用场景
+                     * @return SceneCode 应用场景
+                     * 
+                     */
+                    int64_t GetSceneCode() const;
+
+                    /**
+                     * 设置应用场景
+                     * @param _sceneCode 应用场景
+                     * 
+                     */
+                    void SetSceneCode(const int64_t& _sceneCode);
+
+                    /**
+                     * 判断参数 SceneCode 是否已赋值
+                     * @return SceneCode 是否已赋值
+                     * 
+                     */
+                    bool SceneCodeHasBeenSet() const;
+
+                    /**
+                     * 获取码包状态
+                     * @return Status 码包状态
+                     * 
+                     */
+                    std::string GetStatus() const;
+
+                    /**
+                     * 设置码包状态
+                     * @param _status 码包状态
+                     * 
+                     */
+                    void SetStatus(const std::string& _status);
+
+                    /**
+                     * 判断参数 Status 是否已赋值
+                     * @return Status 是否已赋值
+                     * 
+                     */
+                    bool StatusHasBeenSet() const;
+
                 private:
 
                     /**
@@ -232,6 +274,18 @@ namespace TencentCloud
                      */
                     std::string m_resId;
                     bool m_resIdHasBeenSet;
+
+                    /**
+                     * 应用场景
+                     */
+                    int64_t m_sceneCode;
+                    bool m_sceneCodeHasBeenSet;
+
+                    /**
+                     * 码包状态
+                     */
+                    std::string m_status;
+                    bool m_statusHasBeenSet;
 
                 };
             }

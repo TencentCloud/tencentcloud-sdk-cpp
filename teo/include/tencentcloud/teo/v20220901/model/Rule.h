@@ -24,8 +24,8 @@
 #include <tencentcloud/core/utils/rapidjson/writer.h>
 #include <tencentcloud/core/utils/rapidjson/stringbuffer.h>
 #include <tencentcloud/core/AbstractModel.h>
-#include <tencentcloud/teo/v20220901/model/Action.h>
 #include <tencentcloud/teo/v20220901/model/RuleAndConditions.h>
+#include <tencentcloud/teo/v20220901/model/Action.h>
 #include <tencentcloud/teo/v20220901/model/SubRuleItem.h>
 
 
@@ -48,27 +48,6 @@ namespace TencentCloud
                     void ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const;
                     CoreInternalOutcome Deserialize(const rapidjson::Value &value);
 
-
-                    /**
-                     * 获取执行的功能。
-                     * @return Actions 执行的功能。
-                     * 
-                     */
-                    std::vector<Action> GetActions() const;
-
-                    /**
-                     * 设置执行的功能。
-                     * @param _actions 执行的功能。
-                     * 
-                     */
-                    void SetActions(const std::vector<Action>& _actions);
-
-                    /**
-                     * 判断参数 Actions 是否已赋值
-                     * @return Actions 是否已赋值
-                     * 
-                     */
-                    bool ActionsHasBeenSet() const;
 
                     /**
                      * 获取执行功能判断条件。
@@ -96,15 +75,36 @@ namespace TencentCloud
                     bool ConditionsHasBeenSet() const;
 
                     /**
-                     * 获取嵌套规则。
-                     * @return SubRules 嵌套规则。
+                     * 获取执行的功能。注意：Actions 和 SubRules 不可都为空
+                     * @return Actions 执行的功能。注意：Actions 和 SubRules 不可都为空
+                     * 
+                     */
+                    std::vector<Action> GetActions() const;
+
+                    /**
+                     * 设置执行的功能。注意：Actions 和 SubRules 不可都为空
+                     * @param _actions 执行的功能。注意：Actions 和 SubRules 不可都为空
+                     * 
+                     */
+                    void SetActions(const std::vector<Action>& _actions);
+
+                    /**
+                     * 判断参数 Actions 是否已赋值
+                     * @return Actions 是否已赋值
+                     * 
+                     */
+                    bool ActionsHasBeenSet() const;
+
+                    /**
+                     * 获取嵌套规则。注意：SubRules 和 Actions 不可都为空
+                     * @return SubRules 嵌套规则。注意：SubRules 和 Actions 不可都为空
                      * 
                      */
                     std::vector<SubRuleItem> GetSubRules() const;
 
                     /**
-                     * 设置嵌套规则。
-                     * @param _subRules 嵌套规则。
+                     * 设置嵌套规则。注意：SubRules 和 Actions 不可都为空
+                     * @param _subRules 嵌套规则。注意：SubRules 和 Actions 不可都为空
                      * 
                      */
                     void SetSubRules(const std::vector<SubRuleItem>& _subRules);
@@ -119,12 +119,6 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 执行的功能。
-                     */
-                    std::vector<Action> m_actions;
-                    bool m_actionsHasBeenSet;
-
-                    /**
                      * 执行功能判断条件。
 注意：满足该数组内任意一项条件，功能即可执行。
                      */
@@ -132,7 +126,13 @@ namespace TencentCloud
                     bool m_conditionsHasBeenSet;
 
                     /**
-                     * 嵌套规则。
+                     * 执行的功能。注意：Actions 和 SubRules 不可都为空
+                     */
+                    std::vector<Action> m_actions;
+                    bool m_actionsHasBeenSet;
+
+                    /**
+                     * 嵌套规则。注意：SubRules 和 Actions 不可都为空
                      */
                     std::vector<SubRuleItem> m_subRules;
                     bool m_subRulesHasBeenSet;

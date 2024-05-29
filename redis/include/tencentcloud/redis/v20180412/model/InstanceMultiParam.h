@@ -181,15 +181,15 @@ namespace TencentCloud
                     bool TipsHasBeenSet() const;
 
                     /**
-                     * 获取参数说明。
-                     * @return EnumValue 参数说明。
+                     * 获取参数枚举值。
+                     * @return EnumValue 参数枚举值。
                      * 
                      */
                     std::vector<std::string> GetEnumValue() const;
 
                     /**
-                     * 设置参数说明。
-                     * @param _enumValue 参数说明。
+                     * 设置参数枚举值。
+                     * @param _enumValue 参数枚举值。
                      * 
                      */
                     void SetEnumValue(const std::vector<std::string>& _enumValue);
@@ -271,7 +271,7 @@ namespace TencentCloud
                     bool m_tipsHasBeenSet;
 
                     /**
-                     * 参数说明。
+                     * 参数枚举值。
                      */
                     std::vector<std::string> m_enumValue;
                     bool m_enumValueHasBeenSet;

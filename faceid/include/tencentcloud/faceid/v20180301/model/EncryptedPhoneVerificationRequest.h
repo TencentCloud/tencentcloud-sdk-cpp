@@ -109,13 +109,15 @@ namespace TencentCloud
                      * 获取敏感信息的加密方式，目前支持明文、MD5和SHA256加密传输，参数取值：
 
 0：明文，不加密
-1:   使用MD5加密
-2:   使用SHA256
+1：使用MD5加密
+2：使用SHA256
+3：使用SM3加密
                      * @return EncryptionMode 敏感信息的加密方式，目前支持明文、MD5和SHA256加密传输，参数取值：
 
 0：明文，不加密
-1:   使用MD5加密
-2:   使用SHA256
+1：使用MD5加密
+2：使用SHA256
+3：使用SM3加密
                      * 
                      */
                     std::string GetEncryptionMode() const;
@@ -124,13 +126,15 @@ namespace TencentCloud
                      * 设置敏感信息的加密方式，目前支持明文、MD5和SHA256加密传输，参数取值：
 
 0：明文，不加密
-1:   使用MD5加密
-2:   使用SHA256
+1：使用MD5加密
+2：使用SHA256
+3：使用SM3加密
                      * @param _encryptionMode 敏感信息的加密方式，目前支持明文、MD5和SHA256加密传输，参数取值：
 
 0：明文，不加密
-1:   使用MD5加密
-2:   使用SHA256
+1：使用MD5加密
+2：使用SHA256
+3：使用SM3加密
                      * 
                      */
                     void SetEncryptionMode(const std::string& _encryptionMode);
@@ -166,8 +170,9 @@ namespace TencentCloud
                      * 敏感信息的加密方式，目前支持明文、MD5和SHA256加密传输，参数取值：
 
 0：明文，不加密
-1:   使用MD5加密
-2:   使用SHA256
+1：使用MD5加密
+2：使用SHA256
+3：使用SM3加密
                      */
                     std::string m_encryptionMode;
                     bool m_encryptionModeHasBeenSet;

@@ -545,6 +545,31 @@ re=正则匹配
                      */
                     bool HierarchicalValueHasBeenSet() const;
 
+                    /**
+                     * 获取是否延迟指标
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return IsLatenessMetric 是否延迟指标
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    int64_t GetIsLatenessMetric() const;
+
+                    /**
+                     * 设置是否延迟指标
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _isLatenessMetric 是否延迟指标
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetIsLatenessMetric(const int64_t& _isLatenessMetric);
+
+                    /**
+                     * 判断参数 IsLatenessMetric 是否已赋值
+                     * @return IsLatenessMetric 是否已赋值
+                     * 
+                     */
+                    bool IsLatenessMetricHasBeenSet() const;
+
                 private:
 
                     /**
@@ -683,6 +708,13 @@ re=正则匹配
                      */
                     AlarmHierarchicalValue m_hierarchicalValue;
                     bool m_hierarchicalValueHasBeenSet;
+
+                    /**
+                     * 是否延迟指标
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    int64_t m_isLatenessMetric;
+                    bool m_isLatenessMetricHasBeenSet;
 
                 };
             }

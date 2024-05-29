@@ -295,6 +295,27 @@ namespace TencentCloud
                      */
                     bool RelateTypeHasBeenSet() const;
 
+                    /**
+                     * 获取场景值
+                     * @return SceneCode 场景值
+                     * 
+                     */
+                    int64_t GetSceneCode() const;
+
+                    /**
+                     * 设置场景值
+                     * @param _sceneCode 场景值
+                     * 
+                     */
+                    void SetSceneCode(const int64_t& _sceneCode);
+
+                    /**
+                     * 判断参数 SceneCode 是否已赋值
+                     * @return SceneCode 是否已赋值
+                     * 
+                     */
+                    bool SceneCodeHasBeenSet() const;
+
                 private:
 
                     /**
@@ -368,6 +389,12 @@ namespace TencentCloud
                      */
                     int64_t m_relateType;
                     bool m_relateTypeHasBeenSet;
+
+                    /**
+                     * 场景值
+                     */
+                    int64_t m_sceneCode;
+                    bool m_sceneCodeHasBeenSet;
 
                 };
             }

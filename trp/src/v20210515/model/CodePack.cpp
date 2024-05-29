@@ -44,7 +44,12 @@ CodePack::CodePack() :
     m_productNameHasBeenSet(false),
     m_productSpecificationHasBeenSet(false),
     m_productIdHasBeenSet(false),
-    m_relateTypeHasBeenSet(false)
+    m_relateTypeHasBeenSet(false),
+    m_sceneCodeHasBeenSet(false),
+    m_codeRuleHasBeenSet(false),
+    m_usedAmountHasBeenSet(false),
+    m_serialStartHasBeenSet(false),
+    m_serialEndHasBeenSet(false)
 {
 }
 
@@ -303,6 +308,56 @@ CoreInternalOutcome CodePack::Deserialize(const rapidjson::Value &value)
         m_relateTypeHasBeenSet = true;
     }
 
+    if (value.HasMember("SceneCode") && !value["SceneCode"].IsNull())
+    {
+        if (!value["SceneCode"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `CodePack.SceneCode` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_sceneCode = value["SceneCode"].GetInt64();
+        m_sceneCodeHasBeenSet = true;
+    }
+
+    if (value.HasMember("CodeRule") && !value["CodeRule"].IsNull())
+    {
+        if (!value["CodeRule"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `CodePack.CodeRule` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_codeRule = string(value["CodeRule"].GetString());
+        m_codeRuleHasBeenSet = true;
+    }
+
+    if (value.HasMember("UsedAmount") && !value["UsedAmount"].IsNull())
+    {
+        if (!value["UsedAmount"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `CodePack.UsedAmount` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_usedAmount = value["UsedAmount"].GetInt64();
+        m_usedAmountHasBeenSet = true;
+    }
+
+    if (value.HasMember("SerialStart") && !value["SerialStart"].IsNull())
+    {
+        if (!value["SerialStart"].IsUint64())
+        {
+            return CoreInternalOutcome(Core::Error("response `CodePack.SerialStart` IsUint64=false incorrectly").SetRequestId(requestId));
+        }
+        m_serialStart = value["SerialStart"].GetUint64();
+        m_serialStartHasBeenSet = true;
+    }
+
+    if (value.HasMember("SerialEnd") && !value["SerialEnd"].IsNull())
+    {
+        if (!value["SerialEnd"].IsUint64())
+        {
+            return CoreInternalOutcome(Core::Error("response `CodePack.SerialEnd` IsUint64=false incorrectly").SetRequestId(requestId));
+        }
+        m_serialEnd = value["SerialEnd"].GetUint64();
+        m_serialEndHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -507,6 +562,46 @@ void CodePack::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Alloca
         string key = "RelateType";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_relateType, allocator);
+    }
+
+    if (m_sceneCodeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "SceneCode";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_sceneCode, allocator);
+    }
+
+    if (m_codeRuleHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "CodeRule";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_codeRule.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_usedAmountHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "UsedAmount";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_usedAmount, allocator);
+    }
+
+    if (m_serialStartHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "SerialStart";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_serialStart, allocator);
+    }
+
+    if (m_serialEndHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "SerialEnd";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_serialEnd, allocator);
     }
 
 }
@@ -894,5 +989,85 @@ void CodePack::SetRelateType(const int64_t& _relateType)
 bool CodePack::RelateTypeHasBeenSet() const
 {
     return m_relateTypeHasBeenSet;
+}
+
+int64_t CodePack::GetSceneCode() const
+{
+    return m_sceneCode;
+}
+
+void CodePack::SetSceneCode(const int64_t& _sceneCode)
+{
+    m_sceneCode = _sceneCode;
+    m_sceneCodeHasBeenSet = true;
+}
+
+bool CodePack::SceneCodeHasBeenSet() const
+{
+    return m_sceneCodeHasBeenSet;
+}
+
+string CodePack::GetCodeRule() const
+{
+    return m_codeRule;
+}
+
+void CodePack::SetCodeRule(const string& _codeRule)
+{
+    m_codeRule = _codeRule;
+    m_codeRuleHasBeenSet = true;
+}
+
+bool CodePack::CodeRuleHasBeenSet() const
+{
+    return m_codeRuleHasBeenSet;
+}
+
+int64_t CodePack::GetUsedAmount() const
+{
+    return m_usedAmount;
+}
+
+void CodePack::SetUsedAmount(const int64_t& _usedAmount)
+{
+    m_usedAmount = _usedAmount;
+    m_usedAmountHasBeenSet = true;
+}
+
+bool CodePack::UsedAmountHasBeenSet() const
+{
+    return m_usedAmountHasBeenSet;
+}
+
+uint64_t CodePack::GetSerialStart() const
+{
+    return m_serialStart;
+}
+
+void CodePack::SetSerialStart(const uint64_t& _serialStart)
+{
+    m_serialStart = _serialStart;
+    m_serialStartHasBeenSet = true;
+}
+
+bool CodePack::SerialStartHasBeenSet() const
+{
+    return m_serialStartHasBeenSet;
+}
+
+uint64_t CodePack::GetSerialEnd() const
+{
+    return m_serialEnd;
+}
+
+void CodePack::SetSerialEnd(const uint64_t& _serialEnd)
+{
+    m_serialEnd = _serialEnd;
+    m_serialEndHasBeenSet = true;
+}
+
+bool CodePack::SerialEndHasBeenSet() const
+{
+    return m_serialEndHasBeenSet;
 }
 

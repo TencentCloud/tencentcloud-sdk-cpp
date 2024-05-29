@@ -76,7 +76,8 @@ InstanceSet::InstanceSet() :
     m_currentProxyVersionHasBeenSet(false),
     m_currentRedisVersionHasBeenSet(false),
     m_upgradeProxyVersionHasBeenSet(false),
-    m_upgradeRedisVersionHasBeenSet(false)
+    m_upgradeRedisVersionHasBeenSet(false),
+    m_backupModeHasBeenSet(false)
 {
 }
 
@@ -678,6 +679,16 @@ CoreInternalOutcome InstanceSet::Deserialize(const rapidjson::Value &value)
         m_upgradeRedisVersionHasBeenSet = true;
     }
 
+    if (value.HasMember("BackupMode") && !value["BackupMode"].IsNull())
+    {
+        if (!value["BackupMode"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `InstanceSet.BackupMode` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_backupMode = string(value["BackupMode"].GetString());
+        m_backupModeHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -1157,6 +1168,14 @@ void InstanceSet::ToJsonObject(rapidjson::Value &value, rapidjson::Document::All
         string key = "UpgradeRedisVersion";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_upgradeRedisVersion.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_backupModeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "BackupMode";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_backupMode.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -2056,5 +2075,21 @@ void InstanceSet::SetUpgradeRedisVersion(const string& _upgradeRedisVersion)
 bool InstanceSet::UpgradeRedisVersionHasBeenSet() const
 {
     return m_upgradeRedisVersionHasBeenSet;
+}
+
+string InstanceSet::GetBackupMode() const
+{
+    return m_backupMode;
+}
+
+void InstanceSet::SetBackupMode(const string& _backupMode)
+{
+    m_backupMode = _backupMode;
+    m_backupModeHasBeenSet = true;
+}
+
+bool InstanceSet::BackupModeHasBeenSet() const
+{
+    return m_backupModeHasBeenSet;
 }
 

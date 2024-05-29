@@ -33,7 +33,8 @@ Metric::Metric() :
     m_isOpenHasBeenSet(false),
     m_productIdHasBeenSet(false),
     m_operatorsHasBeenSet(false),
-    m_periodsHasBeenSet(false)
+    m_periodsHasBeenSet(false),
+    m_isLatenessMetricHasBeenSet(false)
 {
 }
 
@@ -195,6 +196,16 @@ CoreInternalOutcome Metric::Deserialize(const rapidjson::Value &value)
         m_periodsHasBeenSet = true;
     }
 
+    if (value.HasMember("IsLatenessMetric") && !value["IsLatenessMetric"].IsNull())
+    {
+        if (!value["IsLatenessMetric"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `Metric.IsLatenessMetric` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_isLatenessMetric = value["IsLatenessMetric"].GetInt64();
+        m_isLatenessMetricHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -322,6 +333,14 @@ void Metric::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Allocato
         {
             value[key.c_str()].PushBack(rapidjson::Value().SetInt64(*itr), allocator);
         }
+    }
+
+    if (m_isLatenessMetricHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "IsLatenessMetric";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_isLatenessMetric, allocator);
     }
 
 }
@@ -533,5 +552,21 @@ void Metric::SetPeriods(const vector<int64_t>& _periods)
 bool Metric::PeriodsHasBeenSet() const
 {
     return m_periodsHasBeenSet;
+}
+
+int64_t Metric::GetIsLatenessMetric() const
+{
+    return m_isLatenessMetric;
+}
+
+void Metric::SetIsLatenessMetric(const int64_t& _isLatenessMetric)
+{
+    m_isLatenessMetric = _isLatenessMetric;
+    m_isLatenessMetricHasBeenSet = true;
+}
+
+bool Metric::IsLatenessMetricHasBeenSet() const
+{
+    return m_isLatenessMetricHasBeenSet;
 }
 

@@ -137,6 +137,8 @@
 #include <tencentcloud/dnspod/v20210323/model/ModifyDomainRemarkResponse.h>
 #include <tencentcloud/dnspod/v20210323/model/ModifyDomainStatusRequest.h>
 #include <tencentcloud/dnspod/v20210323/model/ModifyDomainStatusResponse.h>
+#include <tencentcloud/dnspod/v20210323/model/ModifyDomainToGroupRequest.h>
+#include <tencentcloud/dnspod/v20210323/model/ModifyDomainToGroupResponse.h>
 #include <tencentcloud/dnspod/v20210323/model/ModifyDomainUnlockRequest.h>
 #include <tencentcloud/dnspod/v20210323/model/ModifyDomainUnlockResponse.h>
 #include <tencentcloud/dnspod/v20210323/model/ModifyDynamicDNSRequest.h>
@@ -354,6 +356,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::ModifyDomainStatusResponse> ModifyDomainStatusOutcome;
                 typedef std::future<ModifyDomainStatusOutcome> ModifyDomainStatusOutcomeCallable;
                 typedef std::function<void(const DnspodClient*, const Model::ModifyDomainStatusRequest&, ModifyDomainStatusOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyDomainStatusAsyncHandler;
+                typedef Outcome<Core::Error, Model::ModifyDomainToGroupResponse> ModifyDomainToGroupOutcome;
+                typedef std::future<ModifyDomainToGroupOutcome> ModifyDomainToGroupOutcomeCallable;
+                typedef std::function<void(const DnspodClient*, const Model::ModifyDomainToGroupRequest&, ModifyDomainToGroupOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyDomainToGroupAsyncHandler;
                 typedef Outcome<Core::Error, Model::ModifyDomainUnlockResponse> ModifyDomainUnlockOutcome;
                 typedef std::future<ModifyDomainUnlockOutcome> ModifyDomainUnlockOutcomeCallable;
                 typedef std::function<void(const DnspodClient*, const Model::ModifyDomainUnlockRequest&, ModifyDomainUnlockOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyDomainUnlockAsyncHandler;
@@ -925,6 +930,15 @@ namespace TencentCloud
                 ModifyDomainStatusOutcome ModifyDomainStatus(const Model::ModifyDomainStatusRequest &request);
                 void ModifyDomainStatusAsync(const Model::ModifyDomainStatusRequest& request, const ModifyDomainStatusAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 ModifyDomainStatusOutcomeCallable ModifyDomainStatusCallable(const Model::ModifyDomainStatusRequest& request);
+
+                /**
+                 *修改域名所属分组
+                 * @param req ModifyDomainToGroupRequest
+                 * @return ModifyDomainToGroupOutcome
+                 */
+                ModifyDomainToGroupOutcome ModifyDomainToGroup(const Model::ModifyDomainToGroupRequest &request);
+                void ModifyDomainToGroupAsync(const Model::ModifyDomainToGroupRequest& request, const ModifyDomainToGroupAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                ModifyDomainToGroupOutcomeCallable ModifyDomainToGroupCallable(const Model::ModifyDomainToGroupRequest& request);
 
                 /**
                  *域名锁定解锁

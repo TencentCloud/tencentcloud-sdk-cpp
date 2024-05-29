@@ -22,7 +22,8 @@ using namespace std;
 
 Job::Job() :
     m_jobIdHasBeenSet(false),
-    m_statusHasBeenSet(false)
+    m_statusHasBeenSet(false),
+    m_errorMessageHasBeenSet(false)
 {
 }
 
@@ -51,6 +52,16 @@ CoreInternalOutcome Job::Deserialize(const rapidjson::Value &value)
         m_statusHasBeenSet = true;
     }
 
+    if (value.HasMember("ErrorMessage") && !value["ErrorMessage"].IsNull())
+    {
+        if (!value["ErrorMessage"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `Job.ErrorMessage` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_errorMessage = string(value["ErrorMessage"].GetString());
+        m_errorMessageHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -72,6 +83,14 @@ void Job::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorTy
         string key = "Status";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_status.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_errorMessageHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ErrorMessage";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_errorMessage.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -107,5 +126,21 @@ void Job::SetStatus(const string& _status)
 bool Job::StatusHasBeenSet() const
 {
     return m_statusHasBeenSet;
+}
+
+string Job::GetErrorMessage() const
+{
+    return m_errorMessage;
+}
+
+void Job::SetErrorMessage(const string& _errorMessage)
+{
+    m_errorMessage = _errorMessage;
+    m_errorMessageHasBeenSet = true;
+}
+
+bool Job::ErrorMessageHasBeenSet() const
+{
+    return m_errorMessageHasBeenSet;
 }
 

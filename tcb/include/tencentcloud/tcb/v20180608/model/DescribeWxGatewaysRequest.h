@@ -64,6 +64,27 @@ namespace TencentCloud
                     bool EnvIdHasBeenSet() const;
 
                     /**
+                     * 获取网关ID
+                     * @return GatewayId 网关ID
+                     * 
+                     */
+                    std::string GetGatewayId() const;
+
+                    /**
+                     * 设置网关ID
+                     * @param _gatewayId 网关ID
+                     * 
+                     */
+                    void SetGatewayId(const std::string& _gatewayId);
+
+                    /**
+                     * 判断参数 GatewayId 是否已赋值
+                     * @return GatewayId 是否已赋值
+                     * 
+                     */
+                    bool GatewayIdHasBeenSet() const;
+
+                    /**
                      * 获取服务名称，精确匹配
                      * @return GatewayName 服务名称，精确匹配
                      * 
@@ -133,6 +154,12 @@ namespace TencentCloud
                      */
                     std::string m_envId;
                     bool m_envIdHasBeenSet;
+
+                    /**
+                     * 网关ID
+                     */
+                    std::string m_gatewayId;
+                    bool m_gatewayIdHasBeenSet;
 
                     /**
                      * 服务名称，精确匹配

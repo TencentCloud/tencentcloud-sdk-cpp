@@ -169,15 +169,15 @@ namespace TencentCloud
                     bool PrivilegeHasBeenSet() const;
 
                     /**
-                     * 获取true表示将主账号切换为免密账号，这里只适用于主账号，子账号不可免密
-                     * @return NoAuth true表示将主账号切换为免密账号，这里只适用于主账号，子账号不可免密
+                     * 获取true表示将主账号切换为免密账号，这里只适用于主账号，子账号不可免密。
+                     * @return NoAuth true表示将主账号切换为免密账号，这里只适用于主账号，子账号不可免密。
                      * 
                      */
                     bool GetNoAuth() const;
 
                     /**
-                     * 设置true表示将主账号切换为免密账号，这里只适用于主账号，子账号不可免密
-                     * @param _noAuth true表示将主账号切换为免密账号，这里只适用于主账号，子账号不可免密
+                     * 设置true表示将主账号切换为免密账号，这里只适用于主账号，子账号不可免密。
+                     * @param _noAuth true表示将主账号切换为免密账号，这里只适用于主账号，子账号不可免密。
                      * 
                      */
                     void SetNoAuth(const bool& _noAuth);
@@ -228,7 +228,7 @@ namespace TencentCloud
                     bool m_privilegeHasBeenSet;
 
                     /**
-                     * true表示将主账号切换为免密账号，这里只适用于主账号，子账号不可免密
+                     * true表示将主账号切换为免密账号，这里只适用于主账号，子账号不可免密。
                      */
                     bool m_noAuth;
                     bool m_noAuthHasBeenSet;

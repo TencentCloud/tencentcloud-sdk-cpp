@@ -33,7 +33,10 @@ TraceCode::TraceCode() :
     m_merchantNameHasBeenSet(false),
     m_productNameHasBeenSet(false),
     m_agentIdHasBeenSet(false),
-    m_levelHasBeenSet(false)
+    m_levelHasBeenSet(false),
+    m_packSpecHasBeenSet(false),
+    m_sceneCodeHasBeenSet(false),
+    m_serialCodeHasBeenSet(false)
 {
 }
 
@@ -172,6 +175,46 @@ CoreInternalOutcome TraceCode::Deserialize(const rapidjson::Value &value)
         m_levelHasBeenSet = true;
     }
 
+    if (value.HasMember("PackSpec") && !value["PackSpec"].IsNull())
+    {
+        if (!value["PackSpec"].IsArray())
+            return CoreInternalOutcome(Core::Error("response `TraceCode.PackSpec` is not array type"));
+
+        const rapidjson::Value &tmpValue = value["PackSpec"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            PackSpec item;
+            CoreInternalOutcome outcome = item.Deserialize(*itr);
+            if (!outcome.IsSuccess())
+            {
+                outcome.GetError().SetRequestId(requestId);
+                return outcome;
+            }
+            m_packSpec.push_back(item);
+        }
+        m_packSpecHasBeenSet = true;
+    }
+
+    if (value.HasMember("SceneCode") && !value["SceneCode"].IsNull())
+    {
+        if (!value["SceneCode"].IsUint64())
+        {
+            return CoreInternalOutcome(Core::Error("response `TraceCode.SceneCode` IsUint64=false incorrectly").SetRequestId(requestId));
+        }
+        m_sceneCode = value["SceneCode"].GetUint64();
+        m_sceneCodeHasBeenSet = true;
+    }
+
+    if (value.HasMember("SerialCode") && !value["SerialCode"].IsNull())
+    {
+        if (!value["SerialCode"].IsUint64())
+        {
+            return CoreInternalOutcome(Core::Error("response `TraceCode.SerialCode` IsUint64=false incorrectly").SetRequestId(requestId));
+        }
+        m_serialCode = value["SerialCode"].GetUint64();
+        m_serialCodeHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -281,6 +324,37 @@ void TraceCode::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Alloc
         string key = "Level";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_level, allocator);
+    }
+
+    if (m_packSpecHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "PackSpec";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_packSpec.begin(); itr != m_packSpec.end(); ++itr, ++i)
+        {
+            value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(value[key.c_str()][i], allocator);
+        }
+    }
+
+    if (m_sceneCodeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "SceneCode";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_sceneCode, allocator);
+    }
+
+    if (m_serialCodeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "SerialCode";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_serialCode, allocator);
     }
 
 }
@@ -492,5 +566,53 @@ void TraceCode::SetLevel(const uint64_t& _level)
 bool TraceCode::LevelHasBeenSet() const
 {
     return m_levelHasBeenSet;
+}
+
+vector<PackSpec> TraceCode::GetPackSpec() const
+{
+    return m_packSpec;
+}
+
+void TraceCode::SetPackSpec(const vector<PackSpec>& _packSpec)
+{
+    m_packSpec = _packSpec;
+    m_packSpecHasBeenSet = true;
+}
+
+bool TraceCode::PackSpecHasBeenSet() const
+{
+    return m_packSpecHasBeenSet;
+}
+
+uint64_t TraceCode::GetSceneCode() const
+{
+    return m_sceneCode;
+}
+
+void TraceCode::SetSceneCode(const uint64_t& _sceneCode)
+{
+    m_sceneCode = _sceneCode;
+    m_sceneCodeHasBeenSet = true;
+}
+
+bool TraceCode::SceneCodeHasBeenSet() const
+{
+    return m_sceneCodeHasBeenSet;
+}
+
+uint64_t TraceCode::GetSerialCode() const
+{
+    return m_serialCode;
+}
+
+void TraceCode::SetSerialCode(const uint64_t& _serialCode)
+{
+    m_serialCode = _serialCode;
+    m_serialCodeHasBeenSet = true;
+}
+
+bool TraceCode::SerialCodeHasBeenSet() const
+{
+    return m_serialCodeHasBeenSet;
 }
 

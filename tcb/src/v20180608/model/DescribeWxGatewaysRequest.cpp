@@ -24,6 +24,7 @@ using namespace std;
 
 DescribeWxGatewaysRequest::DescribeWxGatewaysRequest() :
     m_envIdHasBeenSet(false),
+    m_gatewayIdHasBeenSet(false),
     m_gatewayNameHasBeenSet(false),
     m_limitHasBeenSet(false),
     m_offsetHasBeenSet(false)
@@ -43,6 +44,14 @@ string DescribeWxGatewaysRequest::ToJsonString() const
         string key = "EnvId";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_envId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_gatewayIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "GatewayId";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_gatewayId.c_str(), allocator).Move(), allocator);
     }
 
     if (m_gatewayNameHasBeenSet)
@@ -91,6 +100,22 @@ void DescribeWxGatewaysRequest::SetEnvId(const string& _envId)
 bool DescribeWxGatewaysRequest::EnvIdHasBeenSet() const
 {
     return m_envIdHasBeenSet;
+}
+
+string DescribeWxGatewaysRequest::GetGatewayId() const
+{
+    return m_gatewayId;
+}
+
+void DescribeWxGatewaysRequest::SetGatewayId(const string& _gatewayId)
+{
+    m_gatewayId = _gatewayId;
+    m_gatewayIdHasBeenSet = true;
+}
+
+bool DescribeWxGatewaysRequest::GatewayIdHasBeenSet() const
+{
+    return m_gatewayIdHasBeenSet;
 }
 
 string DescribeWxGatewaysRequest::GetGatewayName() const

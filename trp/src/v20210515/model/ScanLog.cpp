@@ -39,7 +39,10 @@ ScanLog::ScanLog() :
     m_batchIdHasBeenSet(false),
     m_typeHasBeenSet(false),
     m_merchantNameHasBeenSet(false),
-    m_productNameHasBeenSet(false)
+    m_productNameHasBeenSet(false),
+    m_productLogoHasBeenSet(false),
+    m_statusHasBeenSet(false),
+    m_verifyHasBeenSet(false)
 {
 }
 
@@ -238,6 +241,36 @@ CoreInternalOutcome ScanLog::Deserialize(const rapidjson::Value &value)
         m_productNameHasBeenSet = true;
     }
 
+    if (value.HasMember("ProductLogo") && !value["ProductLogo"].IsNull())
+    {
+        if (!value["ProductLogo"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `ScanLog.ProductLogo` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_productLogo = string(value["ProductLogo"].GetString());
+        m_productLogoHasBeenSet = true;
+    }
+
+    if (value.HasMember("Status") && !value["Status"].IsNull())
+    {
+        if (!value["Status"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `ScanLog.Status` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_status = value["Status"].GetInt64();
+        m_statusHasBeenSet = true;
+    }
+
+    if (value.HasMember("Verify") && !value["Verify"].IsNull())
+    {
+        if (!value["Verify"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `ScanLog.Verify` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_verify = value["Verify"].GetInt64();
+        m_verifyHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -395,6 +428,30 @@ void ScanLog::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Allocat
         string key = "ProductName";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_productName.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_productLogoHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ProductLogo";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_productLogo.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_statusHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Status";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_status, allocator);
+    }
+
+    if (m_verifyHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Verify";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_verify, allocator);
     }
 
 }
@@ -702,5 +759,53 @@ void ScanLog::SetProductName(const string& _productName)
 bool ScanLog::ProductNameHasBeenSet() const
 {
     return m_productNameHasBeenSet;
+}
+
+string ScanLog::GetProductLogo() const
+{
+    return m_productLogo;
+}
+
+void ScanLog::SetProductLogo(const string& _productLogo)
+{
+    m_productLogo = _productLogo;
+    m_productLogoHasBeenSet = true;
+}
+
+bool ScanLog::ProductLogoHasBeenSet() const
+{
+    return m_productLogoHasBeenSet;
+}
+
+int64_t ScanLog::GetStatus() const
+{
+    return m_status;
+}
+
+void ScanLog::SetStatus(const int64_t& _status)
+{
+    m_status = _status;
+    m_statusHasBeenSet = true;
+}
+
+bool ScanLog::StatusHasBeenSet() const
+{
+    return m_statusHasBeenSet;
+}
+
+int64_t ScanLog::GetVerify() const
+{
+    return m_verify;
+}
+
+void ScanLog::SetVerify(const int64_t& _verify)
+{
+    m_verify = _verify;
+    m_verifyHasBeenSet = true;
+}
+
+bool ScanLog::VerifyHasBeenSet() const
+{
+    return m_verifyHasBeenSet;
 }
 

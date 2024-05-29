@@ -459,6 +459,35 @@ namespace TencentCloud
                      */
                     bool AlarmPolicyListHasBeenSet() const;
 
+                    /**
+                     * 获取克隆指定恢复数据的时间。
+仅支持已开通秒级备份的实例
+
+                     * @return CloneTime 克隆指定恢复数据的时间。
+仅支持已开通秒级备份的实例
+
+                     * 
+                     */
+                    std::string GetCloneTime() const;
+
+                    /**
+                     * 设置克隆指定恢复数据的时间。
+仅支持已开通秒级备份的实例
+
+                     * @param _cloneTime 克隆指定恢复数据的时间。
+仅支持已开通秒级备份的实例
+
+                     * 
+                     */
+                    void SetCloneTime(const std::string& _cloneTime);
+
+                    /**
+                     * 判断参数 CloneTime 是否已赋值
+                     * @return CloneTime 是否已赋值
+                     * 
+                     */
+                    bool CloneTimeHasBeenSet() const;
+
                 private:
 
                     /**
@@ -578,6 +607,14 @@ namespace TencentCloud
                      */
                     std::vector<std::string> m_alarmPolicyList;
                     bool m_alarmPolicyListHasBeenSet;
+
+                    /**
+                     * 克隆指定恢复数据的时间。
+仅支持已开通秒级备份的实例
+
+                     */
+                    std::string m_cloneTime;
+                    bool m_cloneTimeHasBeenSet;
 
                 };
             }

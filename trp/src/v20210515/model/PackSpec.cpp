@@ -25,7 +25,9 @@ PackSpec::PackSpec() :
     m_rateHasBeenSet(false),
     m_amountHasBeenSet(false),
     m_customIdHasBeenSet(false),
-    m_codePartsHasBeenSet(false)
+    m_codePartsHasBeenSet(false),
+    m_unitHasBeenSet(false),
+    m_sceneCodeHasBeenSet(false)
 {
 }
 
@@ -94,6 +96,26 @@ CoreInternalOutcome PackSpec::Deserialize(const rapidjson::Value &value)
         m_codePartsHasBeenSet = true;
     }
 
+    if (value.HasMember("Unit") && !value["Unit"].IsNull())
+    {
+        if (!value["Unit"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `PackSpec.Unit` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_unit = string(value["Unit"].GetString());
+        m_unitHasBeenSet = true;
+    }
+
+    if (value.HasMember("SceneCode") && !value["SceneCode"].IsNull())
+    {
+        if (!value["SceneCode"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `PackSpec.SceneCode` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_sceneCode = value["SceneCode"].GetInt64();
+        m_sceneCodeHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -146,6 +168,22 @@ void PackSpec::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Alloca
             value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
             (*itr).ToJsonObject(value[key.c_str()][i], allocator);
         }
+    }
+
+    if (m_unitHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Unit";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_unit.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_sceneCodeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "SceneCode";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_sceneCode, allocator);
     }
 
 }
@@ -229,5 +267,37 @@ void PackSpec::SetCodeParts(const vector<CodePart>& _codeParts)
 bool PackSpec::CodePartsHasBeenSet() const
 {
     return m_codePartsHasBeenSet;
+}
+
+string PackSpec::GetUnit() const
+{
+    return m_unit;
+}
+
+void PackSpec::SetUnit(const string& _unit)
+{
+    m_unit = _unit;
+    m_unitHasBeenSet = true;
+}
+
+bool PackSpec::UnitHasBeenSet() const
+{
+    return m_unitHasBeenSet;
+}
+
+int64_t PackSpec::GetSceneCode() const
+{
+    return m_sceneCode;
+}
+
+void PackSpec::SetSceneCode(const int64_t& _sceneCode)
+{
+    m_sceneCode = _sceneCode;
+    m_sceneCodeHasBeenSet = true;
+}
+
+bool PackSpec::SceneCodeHasBeenSet() const
+{
+    return m_sceneCodeHasBeenSet;
 }
 

@@ -34,7 +34,8 @@ CreateCodePackRequest::CreateCodePackRequest() :
     m_batchIdHasBeenSet(false),
     m_serialTypeHasBeenSet(false),
     m_productIdHasBeenSet(false),
-    m_relateTypeHasBeenSet(false)
+    m_relateTypeHasBeenSet(false),
+    m_sceneCodeHasBeenSet(false)
 {
 }
 
@@ -146,6 +147,14 @@ string CreateCodePackRequest::ToJsonString() const
         string key = "RelateType";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_relateType, allocator);
+    }
+
+    if (m_sceneCodeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "SceneCode";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_sceneCode, allocator);
     }
 
 
@@ -346,6 +355,22 @@ void CreateCodePackRequest::SetRelateType(const int64_t& _relateType)
 bool CreateCodePackRequest::RelateTypeHasBeenSet() const
 {
     return m_relateTypeHasBeenSet;
+}
+
+int64_t CreateCodePackRequest::GetSceneCode() const
+{
+    return m_sceneCode;
+}
+
+void CreateCodePackRequest::SetSceneCode(const int64_t& _sceneCode)
+{
+    m_sceneCode = _sceneCode;
+    m_sceneCodeHasBeenSet = true;
+}
+
+bool CreateCodePackRequest::SceneCodeHasBeenSet() const
+{
+    return m_sceneCodeHasBeenSet;
 }
 
 

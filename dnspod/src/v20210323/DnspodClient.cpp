@@ -2491,6 +2491,49 @@ DnspodClient::ModifyDomainStatusOutcomeCallable DnspodClient::ModifyDomainStatus
     return task->get_future();
 }
 
+DnspodClient::ModifyDomainToGroupOutcome DnspodClient::ModifyDomainToGroup(const ModifyDomainToGroupRequest &request)
+{
+    auto outcome = MakeRequest(request, "ModifyDomainToGroup");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ModifyDomainToGroupResponse rsp = ModifyDomainToGroupResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ModifyDomainToGroupOutcome(rsp);
+        else
+            return ModifyDomainToGroupOutcome(o.GetError());
+    }
+    else
+    {
+        return ModifyDomainToGroupOutcome(outcome.GetError());
+    }
+}
+
+void DnspodClient::ModifyDomainToGroupAsync(const ModifyDomainToGroupRequest& request, const ModifyDomainToGroupAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->ModifyDomainToGroup(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+DnspodClient::ModifyDomainToGroupOutcomeCallable DnspodClient::ModifyDomainToGroupCallable(const ModifyDomainToGroupRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<ModifyDomainToGroupOutcome()>>(
+        [this, request]()
+        {
+            return this->ModifyDomainToGroup(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 DnspodClient::ModifyDomainUnlockOutcome DnspodClient::ModifyDomainUnlock(const ModifyDomainUnlockRequest &request)
 {
     auto outcome = MakeRequest(request, "ModifyDomainUnlock");
