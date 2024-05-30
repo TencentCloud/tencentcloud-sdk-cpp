@@ -84,6 +84,27 @@ namespace TencentCloud
                      */
                     bool ResourceIdHasBeenSet() const;
 
+                    /**
+                     * 获取网络域ID
+                     * @return DomainId 网络域ID
+                     * 
+                     */
+                    std::string GetDomainId() const;
+
+                    /**
+                     * 设置网络域ID
+                     * @param _domainId 网络域ID
+                     * 
+                     */
+                    void SetDomainId(const std::string& _domainId);
+
+                    /**
+                     * 判断参数 DomainId 是否已赋值
+                     * @return DomainId 是否已赋值
+                     * 
+                     */
+                    bool DomainIdHasBeenSet() const;
+
                 private:
 
                     /**
@@ -97,6 +118,12 @@ namespace TencentCloud
                      */
                     std::string m_resourceId;
                     bool m_resourceIdHasBeenSet;
+
+                    /**
+                     * 网络域ID
+                     */
+                    std::string m_domainId;
+                    bool m_domainIdHasBeenSet;
 
                 };
             }

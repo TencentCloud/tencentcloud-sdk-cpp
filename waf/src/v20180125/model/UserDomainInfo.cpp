@@ -30,7 +30,10 @@ UserDomainInfo::UserDomainInfo() :
     m_levelHasBeenSet(false),
     m_writeConfigHasBeenSet(false),
     m_clsHasBeenSet(false),
-    m_cloudTypeHasBeenSet(false)
+    m_cloudTypeHasBeenSet(false),
+    m_albTypeHasBeenSet(false),
+    m_botStatusHasBeenSet(false),
+    m_apiStatusHasBeenSet(false)
 {
 }
 
@@ -139,6 +142,36 @@ CoreInternalOutcome UserDomainInfo::Deserialize(const rapidjson::Value &value)
         m_cloudTypeHasBeenSet = true;
     }
 
+    if (value.HasMember("AlbType") && !value["AlbType"].IsNull())
+    {
+        if (!value["AlbType"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `UserDomainInfo.AlbType` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_albType = string(value["AlbType"].GetString());
+        m_albTypeHasBeenSet = true;
+    }
+
+    if (value.HasMember("BotStatus") && !value["BotStatus"].IsNull())
+    {
+        if (!value["BotStatus"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `UserDomainInfo.BotStatus` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_botStatus = value["BotStatus"].GetInt64();
+        m_botStatusHasBeenSet = true;
+    }
+
+    if (value.HasMember("ApiStatus") && !value["ApiStatus"].IsNull())
+    {
+        if (!value["ApiStatus"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `UserDomainInfo.ApiStatus` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_apiStatus = value["ApiStatus"].GetInt64();
+        m_apiStatusHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -224,6 +257,30 @@ void UserDomainInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Document::
         string key = "CloudType";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_cloudType.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_albTypeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "AlbType";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_albType.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_botStatusHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "BotStatus";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_botStatus, allocator);
+    }
+
+    if (m_apiStatusHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ApiStatus";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_apiStatus, allocator);
     }
 
 }
@@ -387,5 +444,53 @@ void UserDomainInfo::SetCloudType(const string& _cloudType)
 bool UserDomainInfo::CloudTypeHasBeenSet() const
 {
     return m_cloudTypeHasBeenSet;
+}
+
+string UserDomainInfo::GetAlbType() const
+{
+    return m_albType;
+}
+
+void UserDomainInfo::SetAlbType(const string& _albType)
+{
+    m_albType = _albType;
+    m_albTypeHasBeenSet = true;
+}
+
+bool UserDomainInfo::AlbTypeHasBeenSet() const
+{
+    return m_albTypeHasBeenSet;
+}
+
+int64_t UserDomainInfo::GetBotStatus() const
+{
+    return m_botStatus;
+}
+
+void UserDomainInfo::SetBotStatus(const int64_t& _botStatus)
+{
+    m_botStatus = _botStatus;
+    m_botStatusHasBeenSet = true;
+}
+
+bool UserDomainInfo::BotStatusHasBeenSet() const
+{
+    return m_botStatusHasBeenSet;
+}
+
+int64_t UserDomainInfo::GetApiStatus() const
+{
+    return m_apiStatus;
+}
+
+void UserDomainInfo::SetApiStatus(const int64_t& _apiStatus)
+{
+    m_apiStatus = _apiStatus;
+    m_apiStatusHasBeenSet = true;
+}
+
+bool UserDomainInfo::ApiStatusHasBeenSet() const
+{
+    return m_apiStatusHasBeenSet;
 }
 

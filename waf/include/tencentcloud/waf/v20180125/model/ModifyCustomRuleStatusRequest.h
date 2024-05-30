@@ -21,6 +21,7 @@
 #include <vector>
 #include <map>
 #include <tencentcloud/core/AbstractModel.h>
+#include <tencentcloud/waf/v20180125/model/DomainRuleId.h>
 
 
 namespace TencentCloud
@@ -126,6 +127,27 @@ namespace TencentCloud
                      */
                     bool EditionHasBeenSet() const;
 
+                    /**
+                     * 获取规则id
+                     * @return DomainRuleIdList 规则id
+                     * 
+                     */
+                    std::vector<DomainRuleId> GetDomainRuleIdList() const;
+
+                    /**
+                     * 设置规则id
+                     * @param _domainRuleIdList 规则id
+                     * 
+                     */
+                    void SetDomainRuleIdList(const std::vector<DomainRuleId>& _domainRuleIdList);
+
+                    /**
+                     * 判断参数 DomainRuleIdList 是否已赋值
+                     * @return DomainRuleIdList 是否已赋值
+                     * 
+                     */
+                    bool DomainRuleIdListHasBeenSet() const;
+
                 private:
 
                     /**
@@ -151,6 +173,12 @@ namespace TencentCloud
                      */
                     std::string m_edition;
                     bool m_editionHasBeenSet;
+
+                    /**
+                     * 规则id
+                     */
+                    std::vector<DomainRuleId> m_domainRuleIdList;
+                    bool m_domainRuleIdListHasBeenSet;
 
                 };
             }

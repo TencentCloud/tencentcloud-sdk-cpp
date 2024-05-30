@@ -36,7 +36,8 @@ DescribeImageRegistryTimingScanTaskResponse::DescribeImageRegistryTimingScanTask
     m_registryTypeHasBeenSet(false),
     m_containerRunningHasBeenSet(false),
     m_scanScopeHasBeenSet(false),
-    m_namespaceHasBeenSet(false)
+    m_namespaceHasBeenSet(false),
+    m_excludeImageAssetIdsHasBeenSet(false)
 {
 }
 
@@ -226,6 +227,19 @@ CoreInternalOutcome DescribeImageRegistryTimingScanTaskResponse::Deserialize(con
         m_namespaceHasBeenSet = true;
     }
 
+    if (rsp.HasMember("ExcludeImageAssetIds") && !rsp["ExcludeImageAssetIds"].IsNull())
+    {
+        if (!rsp["ExcludeImageAssetIds"].IsArray())
+            return CoreInternalOutcome(Core::Error("response `ExcludeImageAssetIds` is not array type"));
+
+        const rapidjson::Value &tmpValue = rsp["ExcludeImageAssetIds"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            m_excludeImageAssetIds.push_back((*itr).GetUint64());
+        }
+        m_excludeImageAssetIdsHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -364,6 +378,19 @@ string DescribeImageRegistryTimingScanTaskResponse::ToJsonString() const
         for (auto itr = m_namespace.begin(); itr != m_namespace.end(); ++itr)
         {
             value[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
+        }
+    }
+
+    if (m_excludeImageAssetIdsHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ExcludeImageAssetIds";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        for (auto itr = m_excludeImageAssetIds.begin(); itr != m_excludeImageAssetIds.end(); ++itr)
+        {
+            value[key.c_str()].PushBack(rapidjson::Value().SetUint64(*itr), allocator);
         }
     }
 
@@ -507,6 +534,16 @@ vector<string> DescribeImageRegistryTimingScanTaskResponse::GetNamespace() const
 bool DescribeImageRegistryTimingScanTaskResponse::NamespaceHasBeenSet() const
 {
     return m_namespaceHasBeenSet;
+}
+
+vector<uint64_t> DescribeImageRegistryTimingScanTaskResponse::GetExcludeImageAssetIds() const
+{
+    return m_excludeImageAssetIds;
+}
+
+bool DescribeImageRegistryTimingScanTaskResponse::ExcludeImageAssetIdsHasBeenSet() const
+{
+    return m_excludeImageAssetIdsHasBeenSet;
 }
 
 

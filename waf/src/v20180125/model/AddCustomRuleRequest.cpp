@@ -25,14 +25,20 @@ using namespace std;
 AddCustomRuleRequest::AddCustomRuleRequest() :
     m_nameHasBeenSet(false),
     m_sortIdHasBeenSet(false),
-    m_expireTimeHasBeenSet(false),
     m_strategiesHasBeenSet(false),
     m_domainHasBeenSet(false),
     m_actionTypeHasBeenSet(false),
     m_redirectHasBeenSet(false),
+    m_expireTimeHasBeenSet(false),
     m_editionHasBeenSet(false),
     m_bypassHasBeenSet(false),
-    m_eventIdHasBeenSet(false)
+    m_eventIdHasBeenSet(false),
+    m_jobTypeHasBeenSet(false),
+    m_jobDateTimeHasBeenSet(false),
+    m_sourceHasBeenSet(false),
+    m_labelHasBeenSet(false),
+    m_statusHasBeenSet(false),
+    m_pageIdHasBeenSet(false)
 {
 }
 
@@ -57,14 +63,6 @@ string AddCustomRuleRequest::ToJsonString() const
         string key = "SortId";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_sortId.c_str(), allocator).Move(), allocator);
-    }
-
-    if (m_expireTimeHasBeenSet)
-    {
-        rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "ExpireTime";
-        iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, rapidjson::Value(m_expireTime.c_str(), allocator).Move(), allocator);
     }
 
     if (m_strategiesHasBeenSet)
@@ -106,6 +104,14 @@ string AddCustomRuleRequest::ToJsonString() const
         d.AddMember(iKey, rapidjson::Value(m_redirect.c_str(), allocator).Move(), allocator);
     }
 
+    if (m_expireTimeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ExpireTime";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_expireTime.c_str(), allocator).Move(), allocator);
+    }
+
     if (m_editionHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
@@ -128,6 +134,55 @@ string AddCustomRuleRequest::ToJsonString() const
         string key = "EventId";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_eventId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_jobTypeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "JobType";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_jobType.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_jobDateTimeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "JobDateTime";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_jobDateTime.ToJsonObject(d[key.c_str()], allocator);
+    }
+
+    if (m_sourceHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Source";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_source.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_labelHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Label";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_label.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_statusHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Status";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_status, allocator);
+    }
+
+    if (m_pageIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "PageId";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_pageId.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -168,22 +223,6 @@ void AddCustomRuleRequest::SetSortId(const string& _sortId)
 bool AddCustomRuleRequest::SortIdHasBeenSet() const
 {
     return m_sortIdHasBeenSet;
-}
-
-string AddCustomRuleRequest::GetExpireTime() const
-{
-    return m_expireTime;
-}
-
-void AddCustomRuleRequest::SetExpireTime(const string& _expireTime)
-{
-    m_expireTime = _expireTime;
-    m_expireTimeHasBeenSet = true;
-}
-
-bool AddCustomRuleRequest::ExpireTimeHasBeenSet() const
-{
-    return m_expireTimeHasBeenSet;
 }
 
 vector<Strategy> AddCustomRuleRequest::GetStrategies() const
@@ -250,6 +289,22 @@ bool AddCustomRuleRequest::RedirectHasBeenSet() const
     return m_redirectHasBeenSet;
 }
 
+string AddCustomRuleRequest::GetExpireTime() const
+{
+    return m_expireTime;
+}
+
+void AddCustomRuleRequest::SetExpireTime(const string& _expireTime)
+{
+    m_expireTime = _expireTime;
+    m_expireTimeHasBeenSet = true;
+}
+
+bool AddCustomRuleRequest::ExpireTimeHasBeenSet() const
+{
+    return m_expireTimeHasBeenSet;
+}
+
 string AddCustomRuleRequest::GetEdition() const
 {
     return m_edition;
@@ -296,6 +351,102 @@ void AddCustomRuleRequest::SetEventId(const string& _eventId)
 bool AddCustomRuleRequest::EventIdHasBeenSet() const
 {
     return m_eventIdHasBeenSet;
+}
+
+string AddCustomRuleRequest::GetJobType() const
+{
+    return m_jobType;
+}
+
+void AddCustomRuleRequest::SetJobType(const string& _jobType)
+{
+    m_jobType = _jobType;
+    m_jobTypeHasBeenSet = true;
+}
+
+bool AddCustomRuleRequest::JobTypeHasBeenSet() const
+{
+    return m_jobTypeHasBeenSet;
+}
+
+JobDateTime AddCustomRuleRequest::GetJobDateTime() const
+{
+    return m_jobDateTime;
+}
+
+void AddCustomRuleRequest::SetJobDateTime(const JobDateTime& _jobDateTime)
+{
+    m_jobDateTime = _jobDateTime;
+    m_jobDateTimeHasBeenSet = true;
+}
+
+bool AddCustomRuleRequest::JobDateTimeHasBeenSet() const
+{
+    return m_jobDateTimeHasBeenSet;
+}
+
+string AddCustomRuleRequest::GetSource() const
+{
+    return m_source;
+}
+
+void AddCustomRuleRequest::SetSource(const string& _source)
+{
+    m_source = _source;
+    m_sourceHasBeenSet = true;
+}
+
+bool AddCustomRuleRequest::SourceHasBeenSet() const
+{
+    return m_sourceHasBeenSet;
+}
+
+string AddCustomRuleRequest::GetLabel() const
+{
+    return m_label;
+}
+
+void AddCustomRuleRequest::SetLabel(const string& _label)
+{
+    m_label = _label;
+    m_labelHasBeenSet = true;
+}
+
+bool AddCustomRuleRequest::LabelHasBeenSet() const
+{
+    return m_labelHasBeenSet;
+}
+
+int64_t AddCustomRuleRequest::GetStatus() const
+{
+    return m_status;
+}
+
+void AddCustomRuleRequest::SetStatus(const int64_t& _status)
+{
+    m_status = _status;
+    m_statusHasBeenSet = true;
+}
+
+bool AddCustomRuleRequest::StatusHasBeenSet() const
+{
+    return m_statusHasBeenSet;
+}
+
+string AddCustomRuleRequest::GetPageId() const
+{
+    return m_pageId;
+}
+
+void AddCustomRuleRequest::SetPageId(const string& _pageId)
+{
+    m_pageId = _pageId;
+    m_pageIdHasBeenSet = true;
+}
+
+bool AddCustomRuleRequest::PageIdHasBeenSet() const
+{
+    return m_pageIdHasBeenSet;
 }
 
 

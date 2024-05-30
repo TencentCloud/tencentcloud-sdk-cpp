@@ -28,7 +28,9 @@ AddCustomWhiteRuleRequest::AddCustomWhiteRuleRequest() :
     m_expireTimeHasBeenSet(false),
     m_strategiesHasBeenSet(false),
     m_domainHasBeenSet(false),
-    m_bypassHasBeenSet(false)
+    m_bypassHasBeenSet(false),
+    m_jobTypeHasBeenSet(false),
+    m_jobDateTimeHasBeenSet(false)
 {
 }
 
@@ -92,6 +94,23 @@ string AddCustomWhiteRuleRequest::ToJsonString() const
         string key = "Bypass";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_bypass.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_jobTypeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "JobType";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_jobType.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_jobDateTimeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "JobDateTime";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_jobDateTime.ToJsonObject(d[key.c_str()], allocator);
     }
 
 
@@ -196,6 +215,38 @@ void AddCustomWhiteRuleRequest::SetBypass(const string& _bypass)
 bool AddCustomWhiteRuleRequest::BypassHasBeenSet() const
 {
     return m_bypassHasBeenSet;
+}
+
+string AddCustomWhiteRuleRequest::GetJobType() const
+{
+    return m_jobType;
+}
+
+void AddCustomWhiteRuleRequest::SetJobType(const string& _jobType)
+{
+    m_jobType = _jobType;
+    m_jobTypeHasBeenSet = true;
+}
+
+bool AddCustomWhiteRuleRequest::JobTypeHasBeenSet() const
+{
+    return m_jobTypeHasBeenSet;
+}
+
+JobDateTime AddCustomWhiteRuleRequest::GetJobDateTime() const
+{
+    return m_jobDateTime;
+}
+
+void AddCustomWhiteRuleRequest::SetJobDateTime(const JobDateTime& _jobDateTime)
+{
+    m_jobDateTime = _jobDateTime;
+    m_jobDateTimeHasBeenSet = true;
+}
+
+bool AddCustomWhiteRuleRequest::JobDateTimeHasBeenSet() const
+{
+    return m_jobDateTimeHasBeenSet;
 }
 
 

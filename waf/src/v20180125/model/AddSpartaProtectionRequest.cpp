@@ -59,7 +59,8 @@ AddSpartaProtectionRequest::AddSpartaProtectionRequest() :
     m_xFFResetHasBeenSet(false),
     m_noteHasBeenSet(false),
     m_upstreamHostHasBeenSet(false),
-    m_proxyBufferHasBeenSet(false)
+    m_proxyBufferHasBeenSet(false),
+    m_probeStatusHasBeenSet(false)
 {
 }
 
@@ -396,6 +397,14 @@ string AddSpartaProtectionRequest::ToJsonString() const
         string key = "ProxyBuffer";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_proxyBuffer, allocator);
+    }
+
+    if (m_probeStatusHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ProbeStatus";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_probeStatus, allocator);
     }
 
 
@@ -996,6 +1005,22 @@ void AddSpartaProtectionRequest::SetProxyBuffer(const int64_t& _proxyBuffer)
 bool AddSpartaProtectionRequest::ProxyBufferHasBeenSet() const
 {
     return m_proxyBufferHasBeenSet;
+}
+
+int64_t AddSpartaProtectionRequest::GetProbeStatus() const
+{
+    return m_probeStatus;
+}
+
+void AddSpartaProtectionRequest::SetProbeStatus(const int64_t& _probeStatus)
+{
+    m_probeStatus = _probeStatus;
+    m_probeStatusHasBeenSet = true;
+}
+
+bool AddSpartaProtectionRequest::ProbeStatusHasBeenSet() const
+{
+    return m_probeStatusHasBeenSet;
 }
 
 

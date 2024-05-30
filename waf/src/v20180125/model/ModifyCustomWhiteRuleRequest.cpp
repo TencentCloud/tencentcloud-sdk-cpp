@@ -29,7 +29,9 @@ ModifyCustomWhiteRuleRequest::ModifyCustomWhiteRuleRequest() :
     m_bypassHasBeenSet(false),
     m_sortIdHasBeenSet(false),
     m_expireTimeHasBeenSet(false),
-    m_strategiesHasBeenSet(false)
+    m_strategiesHasBeenSet(false),
+    m_jobTypeHasBeenSet(false),
+    m_jobDateTimeHasBeenSet(false)
 {
 }
 
@@ -101,6 +103,23 @@ string ModifyCustomWhiteRuleRequest::ToJsonString() const
             d[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
             (*itr).ToJsonObject(d[key.c_str()][i], allocator);
         }
+    }
+
+    if (m_jobTypeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "JobType";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_jobType.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_jobDateTimeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "JobDateTime";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_jobDateTime.ToJsonObject(d[key.c_str()], allocator);
     }
 
 
@@ -221,6 +240,38 @@ void ModifyCustomWhiteRuleRequest::SetStrategies(const vector<Strategy>& _strate
 bool ModifyCustomWhiteRuleRequest::StrategiesHasBeenSet() const
 {
     return m_strategiesHasBeenSet;
+}
+
+string ModifyCustomWhiteRuleRequest::GetJobType() const
+{
+    return m_jobType;
+}
+
+void ModifyCustomWhiteRuleRequest::SetJobType(const string& _jobType)
+{
+    m_jobType = _jobType;
+    m_jobTypeHasBeenSet = true;
+}
+
+bool ModifyCustomWhiteRuleRequest::JobTypeHasBeenSet() const
+{
+    return m_jobTypeHasBeenSet;
+}
+
+JobDateTime ModifyCustomWhiteRuleRequest::GetJobDateTime() const
+{
+    return m_jobDateTime;
+}
+
+void ModifyCustomWhiteRuleRequest::SetJobDateTime(const JobDateTime& _jobDateTime)
+{
+    m_jobDateTime = _jobDateTime;
+    m_jobDateTimeHasBeenSet = true;
+}
+
+bool ModifyCustomWhiteRuleRequest::JobDateTimeHasBeenSet() const
+{
+    return m_jobDateTimeHasBeenSet;
 }
 
 

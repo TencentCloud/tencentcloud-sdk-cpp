@@ -25,6 +25,7 @@
 #include <tencentcloud/core/utils/rapidjson/stringbuffer.h>
 #include <tencentcloud/core/AbstractModel.h>
 #include <tencentcloud/waf/v20180125/model/Strategy.h>
+#include <tencentcloud/waf/v20180125/model/JobDateTime.h>
 
 
 namespace TencentCloud
@@ -357,6 +358,156 @@ namespace TencentCloud
                      */
                     bool SourceHasBeenSet() const;
 
+                    /**
+                     * 获取定时任务类型
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return JobType 定时任务类型
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::string GetJobType() const;
+
+                    /**
+                     * 设置定时任务类型
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _jobType 定时任务类型
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetJobType(const std::string& _jobType);
+
+                    /**
+                     * 判断参数 JobType 是否已赋值
+                     * @return JobType 是否已赋值
+                     * 
+                     */
+                    bool JobTypeHasBeenSet() const;
+
+                    /**
+                     * 获取定时任务配置信息
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return JobDateTime 定时任务配置信息
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    JobDateTime GetJobDateTime() const;
+
+                    /**
+                     * 设置定时任务配置信息
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _jobDateTime 定时任务配置信息
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetJobDateTime(const JobDateTime& _jobDateTime);
+
+                    /**
+                     * 判断参数 JobDateTime 是否已赋值
+                     * @return JobDateTime 是否已赋值
+                     * 
+                     */
+                    bool JobDateTimeHasBeenSet() const;
+
+                    /**
+                     * 获取周期任务粒度
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return CronType 周期任务粒度
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::string GetCronType() const;
+
+                    /**
+                     * 设置周期任务粒度
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _cronType 周期任务粒度
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetCronType(const std::string& _cronType);
+
+                    /**
+                     * 判断参数 CronType 是否已赋值
+                     * @return CronType 是否已赋值
+                     * 
+                     */
+                    bool CronTypeHasBeenSet() const;
+
+                    /**
+                     * 获取自定义标签，风控规则用，用来表示是内置规则还是用户自定义的
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return Label 自定义标签，风控规则用，用来表示是内置规则还是用户自定义的
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::string GetLabel() const;
+
+                    /**
+                     * 设置自定义标签，风控规则用，用来表示是内置规则还是用户自定义的
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _label 自定义标签，风控规则用，用来表示是内置规则还是用户自定义的
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetLabel(const std::string& _label);
+
+                    /**
+                     * 判断参数 Label 是否已赋值
+                     * @return Label 是否已赋值
+                     * 
+                     */
+                    bool LabelHasBeenSet() const;
+
+                    /**
+                     * 获取拦截页面id
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return PageId 拦截页面id
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::string GetPageId() const;
+
+                    /**
+                     * 设置拦截页面id
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _pageId 拦截页面id
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetPageId(const std::string& _pageId);
+
+                    /**
+                     * 判断参数 PageId 是否已赋值
+                     * @return PageId 是否已赋值
+                     * 
+                     */
+                    bool PageIdHasBeenSet() const;
+
+                    /**
+                     * 获取域名
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return Domain 域名
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::string GetDomain() const;
+
+                    /**
+                     * 设置域名
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _domain 域名
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetDomain(const std::string& _domain);
+
+                    /**
+                     * 判断参数 Domain 是否已赋值
+                     * @return Domain 是否已赋值
+                     * 
+                     */
+                    bool DomainHasBeenSet() const;
+
                 private:
 
                     /**
@@ -446,6 +597,48 @@ namespace TencentCloud
                      */
                     std::string m_source;
                     bool m_sourceHasBeenSet;
+
+                    /**
+                     * 定时任务类型
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_jobType;
+                    bool m_jobTypeHasBeenSet;
+
+                    /**
+                     * 定时任务配置信息
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    JobDateTime m_jobDateTime;
+                    bool m_jobDateTimeHasBeenSet;
+
+                    /**
+                     * 周期任务粒度
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_cronType;
+                    bool m_cronTypeHasBeenSet;
+
+                    /**
+                     * 自定义标签，风控规则用，用来表示是内置规则还是用户自定义的
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_label;
+                    bool m_labelHasBeenSet;
+
+                    /**
+                     * 拦截页面id
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_pageId;
+                    bool m_pageIdHasBeenSet;
+
+                    /**
+                     * 域名
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_domain;
+                    bool m_domainHasBeenSet;
 
                 };
             }

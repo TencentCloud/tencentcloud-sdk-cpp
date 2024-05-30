@@ -556,6 +556,31 @@ namespace TencentCloud
                      */
                     bool InValidateAppRangeHasBeenSet() const;
 
+                    /**
+                     * 获取用户openid
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return AppOpenUserId 用户openid
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::string GetAppOpenUserId() const;
+
+                    /**
+                     * 设置用户openid
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _appOpenUserId 用户openid
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetAppOpenUserId(const std::string& _appOpenUserId);
+
+                    /**
+                     * 判断参数 AppOpenUserId 是否已赋值
+                     * @return AppOpenUserId 是否已赋值
+                     * 
+                     */
+                    bool AppOpenUserIdHasBeenSet() const;
+
                 private:
 
                     /**
@@ -700,6 +725,13 @@ namespace TencentCloud
                      */
                     bool m_inValidateAppRange;
                     bool m_inValidateAppRangeHasBeenSet;
+
+                    /**
+                     * 用户openid
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_appOpenUserId;
+                    bool m_appOpenUserIdHasBeenSet;
 
                 };
             }

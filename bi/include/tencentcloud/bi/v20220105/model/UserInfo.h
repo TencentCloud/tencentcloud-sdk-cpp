@@ -163,6 +163,56 @@ namespace TencentCloud
                      */
                     bool AreaCodeHasBeenSet() const;
 
+                    /**
+                     * 获取企微账号id
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return AppUserId 企微账号id
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::string GetAppUserId() const;
+
+                    /**
+                     * 设置企微账号id
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _appUserId 企微账号id
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetAppUserId(const std::string& _appUserId);
+
+                    /**
+                     * 判断参数 AppUserId 是否已赋值
+                     * @return AppUserId 是否已赋值
+                     * 
+                     */
+                    bool AppUserIdHasBeenSet() const;
+
+                    /**
+                     * 获取企微账号名称
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return AppUserName 企微账号名称
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::string GetAppUserName() const;
+
+                    /**
+                     * 设置企微账号名称
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _appUserName 企微账号名称
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetAppUserName(const std::string& _appUserName);
+
+                    /**
+                     * 判断参数 AppUserName 是否已赋值
+                     * @return AppUserName 是否已赋值
+                     * 
+                     */
+                    bool AppUserNameHasBeenSet() const;
+
                 private:
 
                     /**
@@ -197,6 +247,20 @@ namespace TencentCloud
                      */
                     std::string m_areaCode;
                     bool m_areaCodeHasBeenSet;
+
+                    /**
+                     * 企微账号id
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_appUserId;
+                    bool m_appUserIdHasBeenSet;
+
+                    /**
+                     * 企微账号名称
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_appUserName;
+                    bool m_appUserNameHasBeenSet;
 
                 };
             }

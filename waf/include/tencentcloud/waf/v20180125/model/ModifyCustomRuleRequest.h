@@ -22,6 +22,7 @@
 #include <map>
 #include <tencentcloud/core/AbstractModel.h>
 #include <tencentcloud/waf/v20180125/model/Strategy.h>
+#include <tencentcloud/waf/v20180125/model/JobDateTime.h>
 
 
 namespace TencentCloud
@@ -265,6 +266,111 @@ namespace TencentCloud
                      */
                     bool ExpireTimeHasBeenSet() const;
 
+                    /**
+                     * 获取定时任务类型
+                     * @return JobType 定时任务类型
+                     * 
+                     */
+                    std::string GetJobType() const;
+
+                    /**
+                     * 设置定时任务类型
+                     * @param _jobType 定时任务类型
+                     * 
+                     */
+                    void SetJobType(const std::string& _jobType);
+
+                    /**
+                     * 判断参数 JobType 是否已赋值
+                     * @return JobType 是否已赋值
+                     * 
+                     */
+                    bool JobTypeHasBeenSet() const;
+
+                    /**
+                     * 获取定时任务配置
+                     * @return JobDateTime 定时任务配置
+                     * 
+                     */
+                    JobDateTime GetJobDateTime() const;
+
+                    /**
+                     * 设置定时任务配置
+                     * @param _jobDateTime 定时任务配置
+                     * 
+                     */
+                    void SetJobDateTime(const JobDateTime& _jobDateTime);
+
+                    /**
+                     * 判断参数 JobDateTime 是否已赋值
+                     * @return JobDateTime 是否已赋值
+                     * 
+                     */
+                    bool JobDateTimeHasBeenSet() const;
+
+                    /**
+                     * 获取规则来源，判断是不是小程序的
+                     * @return Source 规则来源，判断是不是小程序的
+                     * 
+                     */
+                    std::string GetSource() const;
+
+                    /**
+                     * 设置规则来源，判断是不是小程序的
+                     * @param _source 规则来源，判断是不是小程序的
+                     * 
+                     */
+                    void SetSource(const std::string& _source);
+
+                    /**
+                     * 判断参数 Source 是否已赋值
+                     * @return Source 是否已赋值
+                     * 
+                     */
+                    bool SourceHasBeenSet() const;
+
+                    /**
+                     * 获取开关状态，小程序风控规则的时候传该值
+                     * @return Status 开关状态，小程序风控规则的时候传该值
+                     * 
+                     */
+                    int64_t GetStatus() const;
+
+                    /**
+                     * 设置开关状态，小程序风控规则的时候传该值
+                     * @param _status 开关状态，小程序风控规则的时候传该值
+                     * 
+                     */
+                    void SetStatus(const int64_t& _status);
+
+                    /**
+                     * 判断参数 Status 是否已赋值
+                     * @return Status 是否已赋值
+                     * 
+                     */
+                    bool StatusHasBeenSet() const;
+
+                    /**
+                     * 获取拦截页面id
+                     * @return PageId 拦截页面id
+                     * 
+                     */
+                    std::string GetPageId() const;
+
+                    /**
+                     * 设置拦截页面id
+                     * @param _pageId 拦截页面id
+                     * 
+                     */
+                    void SetPageId(const std::string& _pageId);
+
+                    /**
+                     * 判断参数 PageId 是否已赋值
+                     * @return PageId 是否已赋值
+                     * 
+                     */
+                    bool PageIdHasBeenSet() const;
+
                 private:
 
                     /**
@@ -329,6 +435,36 @@ namespace TencentCloud
                      */
                     uint64_t m_expireTime;
                     bool m_expireTimeHasBeenSet;
+
+                    /**
+                     * 定时任务类型
+                     */
+                    std::string m_jobType;
+                    bool m_jobTypeHasBeenSet;
+
+                    /**
+                     * 定时任务配置
+                     */
+                    JobDateTime m_jobDateTime;
+                    bool m_jobDateTimeHasBeenSet;
+
+                    /**
+                     * 规则来源，判断是不是小程序的
+                     */
+                    std::string m_source;
+                    bool m_sourceHasBeenSet;
+
+                    /**
+                     * 开关状态，小程序风控规则的时候传该值
+                     */
+                    int64_t m_status;
+                    bool m_statusHasBeenSet;
+
+                    /**
+                     * 拦截页面id
+                     */
+                    std::string m_pageId;
+                    bool m_pageIdHasBeenSet;
 
                 };
             }

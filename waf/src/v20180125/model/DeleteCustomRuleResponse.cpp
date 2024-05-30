@@ -23,7 +23,8 @@ using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Waf::V20180125::Model;
 using namespace std;
 
-DeleteCustomRuleResponse::DeleteCustomRuleResponse()
+DeleteCustomRuleResponse::DeleteCustomRuleResponse() :
+    m_successHasBeenSet(false)
 {
 }
 
@@ -61,6 +62,23 @@ CoreInternalOutcome DeleteCustomRuleResponse::Deserialize(const string &payload)
     }
 
 
+    if (rsp.HasMember("Success") && !rsp["Success"].IsNull())
+    {
+        if (!rsp["Success"].IsObject())
+        {
+            return CoreInternalOutcome(Core::Error("response `Success` is not object type").SetRequestId(requestId));
+        }
+
+        CoreInternalOutcome outcome = m_success.Deserialize(rsp["Success"]);
+        if (!outcome.IsSuccess())
+        {
+            outcome.GetError().SetRequestId(requestId);
+            return outcome;
+        }
+
+        m_successHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -70,6 +88,15 @@ string DeleteCustomRuleResponse::ToJsonString() const
     rapidjson::Document value;
     value.SetObject();
     rapidjson::Document::AllocatorType& allocator = value.GetAllocator();
+
+    if (m_successHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Success";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_success.ToJsonObject(value[key.c_str()], allocator);
+    }
 
     rapidjson::Value iKey(rapidjson::kStringType);
     string key = "RequestId";
@@ -82,5 +109,15 @@ string DeleteCustomRuleResponse::ToJsonString() const
     return buffer.GetString();
 }
 
+
+ResponseCode DeleteCustomRuleResponse::GetSuccess() const
+{
+    return m_success;
+}
+
+bool DeleteCustomRuleResponse::SuccessHasBeenSet() const
+{
+    return m_successHasBeenSet;
+}
 
 

@@ -33,7 +33,8 @@ CreateAssetImageScanSettingRequest::CreateAssetImageScanSettingRequest() :
     m_imagesHasBeenSet(false),
     m_containerRunningHasBeenSet(false),
     m_scanScopeHasBeenSet(false),
-    m_scanEndTimeHasBeenSet(false)
+    m_scanEndTimeHasBeenSet(false),
+    m_excludeImagesHasBeenSet(false)
 {
 }
 
@@ -135,6 +136,19 @@ string CreateAssetImageScanSettingRequest::ToJsonString() const
         string key = "ScanEndTime";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_scanEndTime.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_excludeImagesHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ExcludeImages";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        for (auto itr = m_excludeImages.begin(); itr != m_excludeImages.end(); ++itr)
+        {
+            d[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
+        }
     }
 
 
@@ -319,6 +333,22 @@ void CreateAssetImageScanSettingRequest::SetScanEndTime(const string& _scanEndTi
 bool CreateAssetImageScanSettingRequest::ScanEndTimeHasBeenSet() const
 {
     return m_scanEndTimeHasBeenSet;
+}
+
+vector<string> CreateAssetImageScanSettingRequest::GetExcludeImages() const
+{
+    return m_excludeImages;
+}
+
+void CreateAssetImageScanSettingRequest::SetExcludeImages(const vector<string>& _excludeImages)
+{
+    m_excludeImages = _excludeImages;
+    m_excludeImagesHasBeenSet = true;
+}
+
+bool CreateAssetImageScanSettingRequest::ExcludeImagesHasBeenSet() const
+{
+    return m_excludeImagesHasBeenSet;
 }
 
 

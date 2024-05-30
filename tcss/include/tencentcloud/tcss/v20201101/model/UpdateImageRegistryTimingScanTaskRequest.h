@@ -316,6 +316,27 @@ namespace TencentCloud
                      */
                     bool NamespaceHasBeenSet() const;
 
+                    /**
+                     * 获取排除的镜像资产id
+                     * @return ExcludeImageAssetIds 排除的镜像资产id
+                     * 
+                     */
+                    std::vector<uint64_t> GetExcludeImageAssetIds() const;
+
+                    /**
+                     * 设置排除的镜像资产id
+                     * @param _excludeImageAssetIds 排除的镜像资产id
+                     * 
+                     */
+                    void SetExcludeImageAssetIds(const std::vector<uint64_t>& _excludeImageAssetIds);
+
+                    /**
+                     * 判断参数 ExcludeImageAssetIds 是否已赋值
+                     * @return ExcludeImageAssetIds 是否已赋值
+                     * 
+                     */
+                    bool ExcludeImageAssetIdsHasBeenSet() const;
+
                 private:
 
                     /**
@@ -395,6 +416,12 @@ namespace TencentCloud
                      */
                     std::vector<std::string> m_namespace;
                     bool m_namespaceHasBeenSet;
+
+                    /**
+                     * 排除的镜像资产id
+                     */
+                    std::vector<uint64_t> m_excludeImageAssetIds;
+                    bool m_excludeImageAssetIdsHasBeenSet;
 
                 };
             }

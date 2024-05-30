@@ -30,7 +30,8 @@ IpAccessControlItem::IpAccessControlItem() :
     m_validTsHasBeenSet(false),
     m_validStatusHasBeenSet(false),
     m_ruleIdHasBeenSet(false),
-    m_ipListHasBeenSet(false)
+    m_ipListHasBeenSet(false),
+    m_createTimeHasBeenSet(false)
 {
 }
 
@@ -142,6 +143,16 @@ CoreInternalOutcome IpAccessControlItem::Deserialize(const rapidjson::Value &val
         m_ipListHasBeenSet = true;
     }
 
+    if (value.HasMember("CreateTime") && !value["CreateTime"].IsNull())
+    {
+        if (!value["CreateTime"].IsUint64())
+        {
+            return CoreInternalOutcome(Core::Error("response `IpAccessControlItem.CreateTime` IsUint64=false incorrectly").SetRequestId(requestId));
+        }
+        m_createTime = value["CreateTime"].GetUint64();
+        m_createTimeHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -232,6 +243,14 @@ void IpAccessControlItem::ToJsonObject(rapidjson::Value &value, rapidjson::Docum
         {
             value[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
         }
+    }
+
+    if (m_createTimeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "CreateTime";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_createTime, allocator);
     }
 
 }
@@ -395,5 +414,21 @@ void IpAccessControlItem::SetIpList(const vector<string>& _ipList)
 bool IpAccessControlItem::IpListHasBeenSet() const
 {
     return m_ipListHasBeenSet;
+}
+
+uint64_t IpAccessControlItem::GetCreateTime() const
+{
+    return m_createTime;
+}
+
+void IpAccessControlItem::SetCreateTime(const uint64_t& _createTime)
+{
+    m_createTime = _createTime;
+    m_createTimeHasBeenSet = true;
+}
+
+bool IpAccessControlItem::CreateTimeHasBeenSet() const
+{
+    return m_createTimeHasBeenSet;
 }
 

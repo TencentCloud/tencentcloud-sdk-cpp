@@ -173,15 +173,15 @@ namespace TencentCloud
                     bool EditionHasBeenSet() const;
 
                     /**
-                     * 获取是否为批量防护IP黑白名单，当为批量防护IP黑白名单时，取值为batch，否则为空
-                     * @return SourceType 是否为批量防护IP黑白名单，当为批量防护IP黑白名单时，取值为batch，否则为空
+                     * 获取可选值为：batch（批量添加）、bot、cc、custom（非批量添加时的默认值）
+                     * @return SourceType 可选值为：batch（批量添加）、bot、cc、custom（非批量添加时的默认值）
                      * 
                      */
                     std::string GetSourceType() const;
 
                     /**
-                     * 设置是否为批量防护IP黑白名单，当为批量防护IP黑白名单时，取值为batch，否则为空
-                     * @param _sourceType 是否为批量防护IP黑白名单，当为批量防护IP黑白名单时，取值为batch，否则为空
+                     * 设置可选值为：batch（批量添加）、bot、cc、custom（非批量添加时的默认值）
+                     * @param _sourceType 可选值为：batch（批量添加）、bot、cc、custom（非批量添加时的默认值）
                      * 
                      */
                     void SetSourceType(const std::string& _sourceType);
@@ -254,7 +254,7 @@ namespace TencentCloud
                     bool m_editionHasBeenSet;
 
                     /**
-                     * 是否为批量防护IP黑白名单，当为批量防护IP黑白名单时，取值为batch，否则为空
+                     * 可选值为：batch（批量添加）、bot、cc、custom（非批量添加时的默认值）
                      */
                     std::string m_sourceType;
                     bool m_sourceTypeHasBeenSet;

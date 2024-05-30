@@ -61,7 +61,10 @@ Cluster::Cluster() :
     m_clusterTypeHasBeenSet(false),
     m_ordersHasBeenSet(false),
     m_sqlGatewaysHasBeenSet(false),
-    m_webUITypeHasBeenSet(false)
+    m_webUITypeHasBeenSet(false),
+    m_typeHasBeenSet(false),
+    m_subEksHasBeenSet(false),
+    m_agentSerialIdHasBeenSet(false)
 {
 }
 
@@ -547,6 +550,43 @@ CoreInternalOutcome Cluster::Deserialize(const rapidjson::Value &value)
         m_webUITypeHasBeenSet = true;
     }
 
+    if (value.HasMember("Type") && !value["Type"].IsNull())
+    {
+        if (!value["Type"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `Cluster.Type` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_type = value["Type"].GetInt64();
+        m_typeHasBeenSet = true;
+    }
+
+    if (value.HasMember("SubEks") && !value["SubEks"].IsNull())
+    {
+        if (!value["SubEks"].IsObject())
+        {
+            return CoreInternalOutcome(Core::Error("response `Cluster.SubEks` is not object type").SetRequestId(requestId));
+        }
+
+        CoreInternalOutcome outcome = m_subEks.Deserialize(value["SubEks"]);
+        if (!outcome.IsSuccess())
+        {
+            outcome.GetError().SetRequestId(requestId);
+            return outcome;
+        }
+
+        m_subEksHasBeenSet = true;
+    }
+
+    if (value.HasMember("AgentSerialId") && !value["AgentSerialId"].IsNull())
+    {
+        if (!value["AgentSerialId"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `Cluster.AgentSerialId` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_agentSerialId = string(value["AgentSerialId"].GetString());
+        m_agentSerialIdHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -923,6 +963,31 @@ void Cluster::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Allocat
         string key = "WebUIType";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_webUIType, allocator);
+    }
+
+    if (m_typeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Type";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_type, allocator);
+    }
+
+    if (m_subEksHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "SubEks";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_subEks.ToJsonObject(value[key.c_str()], allocator);
+    }
+
+    if (m_agentSerialIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "AgentSerialId";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_agentSerialId.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -1582,5 +1647,53 @@ void Cluster::SetWebUIType(const int64_t& _webUIType)
 bool Cluster::WebUITypeHasBeenSet() const
 {
     return m_webUITypeHasBeenSet;
+}
+
+int64_t Cluster::GetType() const
+{
+    return m_type;
+}
+
+void Cluster::SetType(const int64_t& _type)
+{
+    m_type = _type;
+    m_typeHasBeenSet = true;
+}
+
+bool Cluster::TypeHasBeenSet() const
+{
+    return m_typeHasBeenSet;
+}
+
+SubEks Cluster::GetSubEks() const
+{
+    return m_subEks;
+}
+
+void Cluster::SetSubEks(const SubEks& _subEks)
+{
+    m_subEks = _subEks;
+    m_subEksHasBeenSet = true;
+}
+
+bool Cluster::SubEksHasBeenSet() const
+{
+    return m_subEksHasBeenSet;
+}
+
+string Cluster::GetAgentSerialId() const
+{
+    return m_agentSerialId;
+}
+
+void Cluster::SetAgentSerialId(const string& _agentSerialId)
+{
+    m_agentSerialId = _agentSerialId;
+    m_agentSerialIdHasBeenSet = true;
+}
+
+bool Cluster::AgentSerialIdHasBeenSet() const
+{
+    return m_agentSerialIdHasBeenSet;
 }
 

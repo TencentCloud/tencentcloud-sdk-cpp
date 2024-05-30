@@ -33,6 +33,7 @@
 #include <tencentcloud/waf/v20180125/model/HybridPkg.h>
 #include <tencentcloud/waf/v20180125/model/ApiPkg.h>
 #include <tencentcloud/waf/v20180125/model/MiniPkg.h>
+#include <tencentcloud/waf/v20180125/model/MiniExtendPkg.h>
 
 
 namespace TencentCloud
@@ -965,6 +966,56 @@ namespace TencentCloud
                      */
                     bool LastQpsExceedTimeHasBeenSet() const;
 
+                    /**
+                     * 获取小程序安全接入ID数量扩张包
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return MiniExtendPkg 小程序安全接入ID数量扩张包
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    MiniExtendPkg GetMiniExtendPkg() const;
+
+                    /**
+                     * 设置小程序安全接入ID数量扩张包
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _miniExtendPkg 小程序安全接入ID数量扩张包
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetMiniExtendPkg(const MiniExtendPkg& _miniExtendPkg);
+
+                    /**
+                     * 判断参数 MiniExtendPkg 是否已赋值
+                     * @return MiniExtendPkg 是否已赋值
+                     * 
+                     */
+                    bool MiniExtendPkgHasBeenSet() const;
+
+                    /**
+                     * 获取计费项
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return BillingItem 计费项
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::string GetBillingItem() const;
+
+                    /**
+                     * 设置计费项
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _billingItem 计费项
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetBillingItem(const std::string& _billingItem);
+
+                    /**
+                     * 判断参数 BillingItem 是否已赋值
+                     * @return BillingItem 是否已赋值
+                     * 
+                     */
+                    bool BillingItemHasBeenSet() const;
+
                 private:
 
                     /**
@@ -1222,6 +1273,20 @@ namespace TencentCloud
                      */
                     std::string m_lastQpsExceedTime;
                     bool m_lastQpsExceedTimeHasBeenSet;
+
+                    /**
+                     * 小程序安全接入ID数量扩张包
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    MiniExtendPkg m_miniExtendPkg;
+                    bool m_miniExtendPkgHasBeenSet;
+
+                    /**
+                     * 计费项
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_billingItem;
+                    bool m_billingItemHasBeenSet;
 
                 };
             }

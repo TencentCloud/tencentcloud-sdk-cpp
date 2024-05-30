@@ -24,7 +24,8 @@ using namespace std;
 
 BindDeviceResourceRequest::BindDeviceResourceRequest() :
     m_deviceIdSetHasBeenSet(false),
-    m_resourceIdHasBeenSet(false)
+    m_resourceIdHasBeenSet(false),
+    m_domainIdHasBeenSet(false)
 {
 }
 
@@ -54,6 +55,14 @@ string BindDeviceResourceRequest::ToJsonString() const
         string key = "ResourceId";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_resourceId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_domainIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "DomainId";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_domainId.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -94,6 +103,22 @@ void BindDeviceResourceRequest::SetResourceId(const string& _resourceId)
 bool BindDeviceResourceRequest::ResourceIdHasBeenSet() const
 {
     return m_resourceIdHasBeenSet;
+}
+
+string BindDeviceResourceRequest::GetDomainId() const
+{
+    return m_domainId;
+}
+
+void BindDeviceResourceRequest::SetDomainId(const string& _domainId)
+{
+    m_domainId = _domainId;
+    m_domainIdHasBeenSet = true;
+}
+
+bool BindDeviceResourceRequest::DomainIdHasBeenSet() const
+{
+    return m_domainIdHasBeenSet;
 }
 
 

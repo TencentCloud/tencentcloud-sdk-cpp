@@ -34,7 +34,8 @@ DescribeAssetImageScanSettingResponse::DescribeAssetImageScanSettingResponse() :
     m_imagesHasBeenSet(false),
     m_containerRunningHasBeenSet(false),
     m_scanScopeHasBeenSet(false),
-    m_scanEndTimeHasBeenSet(false)
+    m_scanEndTimeHasBeenSet(false),
+    m_excludeImagesHasBeenSet(false)
 {
 }
 
@@ -185,6 +186,19 @@ CoreInternalOutcome DescribeAssetImageScanSettingResponse::Deserialize(const str
         m_scanEndTimeHasBeenSet = true;
     }
 
+    if (rsp.HasMember("ExcludeImages") && !rsp["ExcludeImages"].IsNull())
+    {
+        if (!rsp["ExcludeImages"].IsArray())
+            return CoreInternalOutcome(Core::Error("response `ExcludeImages` is not array type"));
+
+        const rapidjson::Value &tmpValue = rsp["ExcludeImages"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            m_excludeImages.push_back((*itr).GetString());
+        }
+        m_excludeImagesHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -286,6 +300,19 @@ string DescribeAssetImageScanSettingResponse::ToJsonString() const
         string key = "ScanEndTime";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_scanEndTime.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_excludeImagesHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ExcludeImages";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        for (auto itr = m_excludeImages.begin(); itr != m_excludeImages.end(); ++itr)
+        {
+            value[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
+        }
     }
 
     rapidjson::Value iKey(rapidjson::kStringType);
@@ -408,6 +435,16 @@ string DescribeAssetImageScanSettingResponse::GetScanEndTime() const
 bool DescribeAssetImageScanSettingResponse::ScanEndTimeHasBeenSet() const
 {
     return m_scanEndTimeHasBeenSet;
+}
+
+vector<string> DescribeAssetImageScanSettingResponse::GetExcludeImages() const
+{
+    return m_excludeImages;
+}
+
+bool DescribeAssetImageScanSettingResponse::ExcludeImagesHasBeenSet() const
+{
+    return m_excludeImagesHasBeenSet;
 }
 
 

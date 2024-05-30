@@ -88,6 +88,7 @@ set(oceanus_public_header_model
   include/tencentcloud/oceanus/v20190422/model/ResourceRef.h
   include/tencentcloud/oceanus/v20190422/model/DescribeSystemResourcesResponse.h
   include/tencentcloud/oceanus/v20190422/model/ClazzLevel.h
+  include/tencentcloud/oceanus/v20190422/model/SubEks.h
   include/tencentcloud/oceanus/v20190422/model/WorkSpaceClusterItem.h
   include/tencentcloud/oceanus/v20190422/model/CheckSavepointRequest.h
   include/tencentcloud/oceanus/v20190422/model/DeleteJobConfigsRequest.h
@@ -220,6 +221,7 @@ set(oceanus_src
   src/v20190422/model/ResourceRef.cpp
   src/v20190422/model/DescribeSystemResourcesResponse.cpp
   src/v20190422/model/ClazzLevel.cpp
+  src/v20190422/model/SubEks.cpp
   src/v20190422/model/WorkSpaceClusterItem.cpp
   src/v20190422/model/CheckSavepointRequest.cpp
   src/v20190422/model/DeleteJobConfigsRequest.cpp

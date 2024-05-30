@@ -32,7 +32,12 @@ ModifyCustomRuleRequest::ModifyCustomRuleRequest() :
     m_redirectHasBeenSet(false),
     m_bypassHasBeenSet(false),
     m_sortIdHasBeenSet(false),
-    m_expireTimeHasBeenSet(false)
+    m_expireTimeHasBeenSet(false),
+    m_jobTypeHasBeenSet(false),
+    m_jobDateTimeHasBeenSet(false),
+    m_sourceHasBeenSet(false),
+    m_statusHasBeenSet(false),
+    m_pageIdHasBeenSet(false)
 {
 }
 
@@ -128,6 +133,47 @@ string ModifyCustomRuleRequest::ToJsonString() const
         string key = "ExpireTime";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_expireTime, allocator);
+    }
+
+    if (m_jobTypeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "JobType";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_jobType.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_jobDateTimeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "JobDateTime";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_jobDateTime.ToJsonObject(d[key.c_str()], allocator);
+    }
+
+    if (m_sourceHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Source";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_source.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_statusHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Status";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_status, allocator);
+    }
+
+    if (m_pageIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "PageId";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_pageId.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -296,6 +342,86 @@ void ModifyCustomRuleRequest::SetExpireTime(const uint64_t& _expireTime)
 bool ModifyCustomRuleRequest::ExpireTimeHasBeenSet() const
 {
     return m_expireTimeHasBeenSet;
+}
+
+string ModifyCustomRuleRequest::GetJobType() const
+{
+    return m_jobType;
+}
+
+void ModifyCustomRuleRequest::SetJobType(const string& _jobType)
+{
+    m_jobType = _jobType;
+    m_jobTypeHasBeenSet = true;
+}
+
+bool ModifyCustomRuleRequest::JobTypeHasBeenSet() const
+{
+    return m_jobTypeHasBeenSet;
+}
+
+JobDateTime ModifyCustomRuleRequest::GetJobDateTime() const
+{
+    return m_jobDateTime;
+}
+
+void ModifyCustomRuleRequest::SetJobDateTime(const JobDateTime& _jobDateTime)
+{
+    m_jobDateTime = _jobDateTime;
+    m_jobDateTimeHasBeenSet = true;
+}
+
+bool ModifyCustomRuleRequest::JobDateTimeHasBeenSet() const
+{
+    return m_jobDateTimeHasBeenSet;
+}
+
+string ModifyCustomRuleRequest::GetSource() const
+{
+    return m_source;
+}
+
+void ModifyCustomRuleRequest::SetSource(const string& _source)
+{
+    m_source = _source;
+    m_sourceHasBeenSet = true;
+}
+
+bool ModifyCustomRuleRequest::SourceHasBeenSet() const
+{
+    return m_sourceHasBeenSet;
+}
+
+int64_t ModifyCustomRuleRequest::GetStatus() const
+{
+    return m_status;
+}
+
+void ModifyCustomRuleRequest::SetStatus(const int64_t& _status)
+{
+    m_status = _status;
+    m_statusHasBeenSet = true;
+}
+
+bool ModifyCustomRuleRequest::StatusHasBeenSet() const
+{
+    return m_statusHasBeenSet;
+}
+
+string ModifyCustomRuleRequest::GetPageId() const
+{
+    return m_pageId;
+}
+
+void ModifyCustomRuleRequest::SetPageId(const string& _pageId)
+{
+    m_pageId = _pageId;
+    m_pageIdHasBeenSet = true;
+}
+
+bool ModifyCustomRuleRequest::PageIdHasBeenSet() const
+{
+    return m_pageIdHasBeenSet;
 }
 
 

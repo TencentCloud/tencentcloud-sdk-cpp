@@ -685,6 +685,56 @@ namespace TencentCloud
                      */
                     bool ClbSetHasBeenSet() const;
 
+                    /**
+                     * 获取网络域个数
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return DomainCount 网络域个数
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    int64_t GetDomainCount() const;
+
+                    /**
+                     * 设置网络域个数
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _domainCount 网络域个数
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetDomainCount(const int64_t& _domainCount);
+
+                    /**
+                     * 判断参数 DomainCount 是否已赋值
+                     * @return DomainCount 是否已赋值
+                     * 
+                     */
+                    bool DomainCountHasBeenSet() const;
+
+                    /**
+                     * 获取已使用网络域个数
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return UsedDomainCount 已使用网络域个数
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    uint64_t GetUsedDomainCount() const;
+
+                    /**
+                     * 设置已使用网络域个数
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _usedDomainCount 已使用网络域个数
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetUsedDomainCount(const uint64_t& _usedDomainCount);
+
+                    /**
+                     * 判断参数 UsedDomainCount 是否已赋值
+                     * @return UsedDomainCount 是否已赋值
+                     * 
+                     */
+                    bool UsedDomainCountHasBeenSet() const;
+
                 private:
 
                     /**
@@ -868,6 +918,20 @@ namespace TencentCloud
                      */
                     std::vector<Clb> m_clbSet;
                     bool m_clbSetHasBeenSet;
+
+                    /**
+                     * 网络域个数
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    int64_t m_domainCount;
+                    bool m_domainCountHasBeenSet;
+
+                    /**
+                     * 已使用网络域个数
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    uint64_t m_usedDomainCount;
+                    bool m_usedDomainCountHasBeenSet;
 
                 };
             }

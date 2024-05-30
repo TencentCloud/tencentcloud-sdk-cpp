@@ -31,6 +31,7 @@
 #include <tencentcloud/oceanus/v20190422/model/ClusterSession.h>
 #include <tencentcloud/oceanus/v20190422/model/Order.h>
 #include <tencentcloud/oceanus/v20190422/model/SqlGatewayItem.h>
+#include <tencentcloud/oceanus/v20190422/model/SubEks.h>
 
 
 namespace TencentCloud
@@ -1010,6 +1011,81 @@ namespace TencentCloud
                      */
                     bool WebUITypeHasBeenSet() const;
 
+                    /**
+                     * 获取2 独享集群
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return Type 2 独享集群
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    int64_t GetType() const;
+
+                    /**
+                     * 设置2 独享集群
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _type 2 独享集群
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetType(const int64_t& _type);
+
+                    /**
+                     * 判断参数 Type 是否已赋值
+                     * @return Type 是否已赋值
+                     * 
+                     */
+                    bool TypeHasBeenSet() const;
+
+                    /**
+                     * 获取子eks集群
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return SubEks 子eks集群
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    SubEks GetSubEks() const;
+
+                    /**
+                     * 设置子eks集群
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _subEks 子eks集群
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetSubEks(const SubEks& _subEks);
+
+                    /**
+                     * 判断参数 SubEks 是否已赋值
+                     * @return SubEks 是否已赋值
+                     * 
+                     */
+                    bool SubEksHasBeenSet() const;
+
+                    /**
+                     * 获取上级集群
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return AgentSerialId 上级集群
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::string GetAgentSerialId() const;
+
+                    /**
+                     * 设置上级集群
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _agentSerialId 上级集群
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetAgentSerialId(const std::string& _agentSerialId);
+
+                    /**
+                     * 判断参数 AgentSerialId 是否已赋值
+                     * @return AgentSerialId 是否已赋值
+                     * 
+                     */
+                    bool AgentSerialIdHasBeenSet() const;
+
                 private:
 
                     /**
@@ -1281,6 +1357,27 @@ namespace TencentCloud
                      */
                     int64_t m_webUIType;
                     bool m_webUITypeHasBeenSet;
+
+                    /**
+                     * 2 独享集群
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    int64_t m_type;
+                    bool m_typeHasBeenSet;
+
+                    /**
+                     * 子eks集群
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    SubEks m_subEks;
+                    bool m_subEksHasBeenSet;
+
+                    /**
+                     * 上级集群
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_agentSerialId;
+                    bool m_agentSerialIdHasBeenSet;
 
                 };
             }

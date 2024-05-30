@@ -25,7 +25,9 @@ UserInfo::UserInfo() :
     m_userNameHasBeenSet(false),
     m_emailHasBeenSet(false),
     m_phoneNumberHasBeenSet(false),
-    m_areaCodeHasBeenSet(false)
+    m_areaCodeHasBeenSet(false),
+    m_appUserIdHasBeenSet(false),
+    m_appUserNameHasBeenSet(false)
 {
 }
 
@@ -84,6 +86,26 @@ CoreInternalOutcome UserInfo::Deserialize(const rapidjson::Value &value)
         m_areaCodeHasBeenSet = true;
     }
 
+    if (value.HasMember("AppUserId") && !value["AppUserId"].IsNull())
+    {
+        if (!value["AppUserId"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `UserInfo.AppUserId` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_appUserId = string(value["AppUserId"].GetString());
+        m_appUserIdHasBeenSet = true;
+    }
+
+    if (value.HasMember("AppUserName") && !value["AppUserName"].IsNull())
+    {
+        if (!value["AppUserName"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `UserInfo.AppUserName` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_appUserName = string(value["AppUserName"].GetString());
+        m_appUserNameHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -129,6 +151,22 @@ void UserInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Alloca
         string key = "AreaCode";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_areaCode.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_appUserIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "AppUserId";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_appUserId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_appUserNameHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "AppUserName";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_appUserName.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -212,5 +250,37 @@ void UserInfo::SetAreaCode(const string& _areaCode)
 bool UserInfo::AreaCodeHasBeenSet() const
 {
     return m_areaCodeHasBeenSet;
+}
+
+string UserInfo::GetAppUserId() const
+{
+    return m_appUserId;
+}
+
+void UserInfo::SetAppUserId(const string& _appUserId)
+{
+    m_appUserId = _appUserId;
+    m_appUserIdHasBeenSet = true;
+}
+
+bool UserInfo::AppUserIdHasBeenSet() const
+{
+    return m_appUserIdHasBeenSet;
+}
+
+string UserInfo::GetAppUserName() const
+{
+    return m_appUserName;
+}
+
+void UserInfo::SetAppUserName(const string& _appUserName)
+{
+    m_appUserName = _appUserName;
+    m_appUserNameHasBeenSet = true;
+}
+
+bool UserInfo::AppUserNameHasBeenSet() const
+{
+    return m_appUserNameHasBeenSet;
 }
 

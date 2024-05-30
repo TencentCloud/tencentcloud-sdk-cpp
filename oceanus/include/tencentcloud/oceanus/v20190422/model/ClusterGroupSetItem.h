@@ -24,6 +24,7 @@
 #include <tencentcloud/core/utils/rapidjson/writer.h>
 #include <tencentcloud/core/utils/rapidjson/stringbuffer.h>
 #include <tencentcloud/core/AbstractModel.h>
+#include <tencentcloud/oceanus/v20190422/model/SubEks.h>
 
 
 namespace TencentCloud
@@ -445,6 +446,31 @@ namespace TencentCloud
                      */
                     bool PayModeHasBeenSet() const;
 
+                    /**
+                     * 获取弹性
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return SubEks 弹性
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    SubEks GetSubEks() const;
+
+                    /**
+                     * 设置弹性
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _subEks 弹性
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetSubEks(const SubEks& _subEks);
+
+                    /**
+                     * 判断参数 SubEks 是否已赋值
+                     * @return SubEks 是否已赋值
+                     * 
+                     */
+                    bool SubEksHasBeenSet() const;
+
                 private:
 
                     /**
@@ -560,6 +586,13 @@ namespace TencentCloud
                      */
                     int64_t m_payMode;
                     bool m_payModeHasBeenSet;
+
+                    /**
+                     * 弹性
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    SubEks m_subEks;
+                    bool m_subEksHasBeenSet;
 
                 };
             }

@@ -21,6 +21,7 @@
 #include <vector>
 #include <map>
 #include <tencentcloud/core/AbstractModel.h>
+#include <tencentcloud/dlc/v20210125/model/LakeFsInfo.h>
 
 
 namespace TencentCloud
@@ -43,7 +44,30 @@ namespace TencentCloud
                     std::string ToJsonString() const;
 
 
+                    /**
+                     * 获取托管存储信息
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return LakeFsInfos 托管存储信息
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::vector<LakeFsInfo> GetLakeFsInfos() const;
+
+                    /**
+                     * 判断参数 LakeFsInfos 是否已赋值
+                     * @return LakeFsInfos 是否已赋值
+                     * 
+                     */
+                    bool LakeFsInfosHasBeenSet() const;
+
                 private:
+
+                    /**
+                     * 托管存储信息
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::vector<LakeFsInfo> m_lakeFsInfos;
+                    bool m_lakeFsInfosHasBeenSet;
 
                 };
             }

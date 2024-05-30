@@ -44,15 +44,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取机器人ID
-                     * @return BotBizId 机器人ID
+                     * 获取应用ID
+                     * @return BotBizId 应用ID
                      * 
                      */
                     std::string GetBotBizId() const;
 
                     /**
-                     * 设置机器人ID
-                     * @param _botBizId 机器人ID
+                     * 设置应用ID
+                     * @param _botBizId 应用ID
                      * 
                      */
                     void SetBotBizId(const std::string& _botBizId);
@@ -107,15 +107,15 @@ namespace TencentCloud
                     bool FileTypeHasBeenSet() const;
 
                     /**
-                     * 获取cos路径
-                     * @return CosUrl cos路径
+                     * 获取平台cos路径，与DescribeStorageCredential接口查询UploadPath参数保持一致
+                     * @return CosUrl 平台cos路径，与DescribeStorageCredential接口查询UploadPath参数保持一致
                      * 
                      */
                     std::string GetCosUrl() const;
 
                     /**
-                     * 设置cos路径
-                     * @param _cosUrl cos路径
+                     * 设置平台cos路径，与DescribeStorageCredential接口查询UploadPath参数保持一致
+                     * @param _cosUrl 平台cos路径，与DescribeStorageCredential接口查询UploadPath参数保持一致
                      * 
                      */
                     void SetCosUrl(const std::string& _cosUrl);
@@ -386,7 +386,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 机器人ID
+                     * 应用ID
                      */
                     std::string m_botBizId;
                     bool m_botBizIdHasBeenSet;
@@ -404,7 +404,7 @@ namespace TencentCloud
                     bool m_fileTypeHasBeenSet;
 
                     /**
-                     * cos路径
+                     * 平台cos路径，与DescribeStorageCredential接口查询UploadPath参数保持一致
                      */
                     std::string m_cosUrl;
                     bool m_cosUrlHasBeenSet;

@@ -39,7 +39,8 @@ UpsertCCRuleRequest::UpsertCCRuleRequest() :
     m_typeHasBeenSet(false),
     m_eventIdHasBeenSet(false),
     m_sessionAppliedHasBeenSet(false),
-    m_ruleIdHasBeenSet(false)
+    m_ruleIdHasBeenSet(false),
+    m_createTimeHasBeenSet(false)
 {
 }
 
@@ -189,6 +190,14 @@ string UpsertCCRuleRequest::ToJsonString() const
         string key = "RuleId";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_ruleId, allocator);
+    }
+
+    if (m_createTimeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "CreateTime";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_createTime, allocator);
     }
 
 
@@ -469,6 +478,22 @@ void UpsertCCRuleRequest::SetRuleId(const int64_t& _ruleId)
 bool UpsertCCRuleRequest::RuleIdHasBeenSet() const
 {
     return m_ruleIdHasBeenSet;
+}
+
+uint64_t UpsertCCRuleRequest::GetCreateTime() const
+{
+    return m_createTime;
+}
+
+void UpsertCCRuleRequest::SetCreateTime(const uint64_t& _createTime)
+{
+    m_createTime = _createTime;
+    m_createTimeHasBeenSet = true;
+}
+
+bool UpsertCCRuleRequest::CreateTimeHasBeenSet() const
+{
+    return m_createTimeHasBeenSet;
 }
 
 

@@ -27,7 +27,8 @@ DescribeAntiLeakageItem::DescribeAntiLeakageItem() :
     m_actionHasBeenSet(false),
     m_createTimeHasBeenSet(false),
     m_strategiesHasBeenSet(false),
-    m_uriHasBeenSet(false)
+    m_uriHasBeenSet(false),
+    m_modifyTimeHasBeenSet(false)
 {
 }
 
@@ -116,6 +117,16 @@ CoreInternalOutcome DescribeAntiLeakageItem::Deserialize(const rapidjson::Value 
         m_uriHasBeenSet = true;
     }
 
+    if (value.HasMember("ModifyTime") && !value["ModifyTime"].IsNull())
+    {
+        if (!value["ModifyTime"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `DescribeAntiLeakageItem.ModifyTime` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_modifyTime = string(value["ModifyTime"].GetString());
+        m_modifyTimeHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -184,6 +195,14 @@ void DescribeAntiLeakageItem::ToJsonObject(rapidjson::Value &value, rapidjson::D
         string key = "Uri";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_uri.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_modifyTimeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ModifyTime";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_modifyTime.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -299,5 +318,21 @@ void DescribeAntiLeakageItem::SetUri(const string& _uri)
 bool DescribeAntiLeakageItem::UriHasBeenSet() const
 {
     return m_uriHasBeenSet;
+}
+
+string DescribeAntiLeakageItem::GetModifyTime() const
+{
+    return m_modifyTime;
+}
+
+void DescribeAntiLeakageItem::SetModifyTime(const string& _modifyTime)
+{
+    m_modifyTime = _modifyTime;
+    m_modifyTimeHasBeenSet = true;
+}
+
+bool DescribeAntiLeakageItem::ModifyTimeHasBeenSet() const
+{
+    return m_modifyTimeHasBeenSet;
 }
 

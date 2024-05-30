@@ -23,7 +23,8 @@ using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Dlc::V20210125::Model;
 using namespace std;
 
-DescribeLakeFsInfoResponse::DescribeLakeFsInfoResponse()
+DescribeLakeFsInfoResponse::DescribeLakeFsInfoResponse() :
+    m_lakeFsInfosHasBeenSet(false)
 {
 }
 
@@ -61,6 +62,26 @@ CoreInternalOutcome DescribeLakeFsInfoResponse::Deserialize(const string &payloa
     }
 
 
+    if (rsp.HasMember("LakeFsInfos") && !rsp["LakeFsInfos"].IsNull())
+    {
+        if (!rsp["LakeFsInfos"].IsArray())
+            return CoreInternalOutcome(Core::Error("response `LakeFsInfos` is not array type"));
+
+        const rapidjson::Value &tmpValue = rsp["LakeFsInfos"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            LakeFsInfo item;
+            CoreInternalOutcome outcome = item.Deserialize(*itr);
+            if (!outcome.IsSuccess())
+            {
+                outcome.GetError().SetRequestId(requestId);
+                return outcome;
+            }
+            m_lakeFsInfos.push_back(item);
+        }
+        m_lakeFsInfosHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -70,6 +91,21 @@ string DescribeLakeFsInfoResponse::ToJsonString() const
     rapidjson::Document value;
     value.SetObject();
     rapidjson::Document::AllocatorType& allocator = value.GetAllocator();
+
+    if (m_lakeFsInfosHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "LakeFsInfos";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_lakeFsInfos.begin(); itr != m_lakeFsInfos.end(); ++itr, ++i)
+        {
+            value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(value[key.c_str()][i], allocator);
+        }
+    }
 
     rapidjson::Value iKey(rapidjson::kStringType);
     string key = "RequestId";
@@ -82,5 +118,15 @@ string DescribeLakeFsInfoResponse::ToJsonString() const
     return buffer.GetString();
 }
 
+
+vector<LakeFsInfo> DescribeLakeFsInfoResponse::GetLakeFsInfos() const
+{
+    return m_lakeFsInfos;
+}
+
+bool DescribeLakeFsInfoResponse::LakeFsInfosHasBeenSet() const
+{
+    return m_lakeFsInfosHasBeenSet;
+}
 
 

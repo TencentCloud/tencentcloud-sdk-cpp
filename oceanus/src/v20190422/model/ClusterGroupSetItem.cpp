@@ -39,7 +39,8 @@ ClusterGroupSetItem::ClusterGroupSetItem() :
     m_freeCuNumHasBeenSet(false),
     m_freeCuHasBeenSet(false),
     m_runningCuHasBeenSet(false),
-    m_payModeHasBeenSet(false)
+    m_payModeHasBeenSet(false),
+    m_subEksHasBeenSet(false)
 {
 }
 
@@ -238,6 +239,23 @@ CoreInternalOutcome ClusterGroupSetItem::Deserialize(const rapidjson::Value &val
         m_payModeHasBeenSet = true;
     }
 
+    if (value.HasMember("SubEks") && !value["SubEks"].IsNull())
+    {
+        if (!value["SubEks"].IsObject())
+        {
+            return CoreInternalOutcome(Core::Error("response `ClusterGroupSetItem.SubEks` is not object type").SetRequestId(requestId));
+        }
+
+        CoreInternalOutcome outcome = m_subEks.Deserialize(value["SubEks"]);
+        if (!outcome.IsSuccess())
+        {
+            outcome.GetError().SetRequestId(requestId);
+            return outcome;
+        }
+
+        m_subEksHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -395,6 +413,15 @@ void ClusterGroupSetItem::ToJsonObject(rapidjson::Value &value, rapidjson::Docum
         string key = "PayMode";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_payMode, allocator);
+    }
+
+    if (m_subEksHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "SubEks";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_subEks.ToJsonObject(value[key.c_str()], allocator);
     }
 
 }
@@ -702,5 +729,21 @@ void ClusterGroupSetItem::SetPayMode(const int64_t& _payMode)
 bool ClusterGroupSetItem::PayModeHasBeenSet() const
 {
     return m_payModeHasBeenSet;
+}
+
+SubEks ClusterGroupSetItem::GetSubEks() const
+{
+    return m_subEks;
+}
+
+void ClusterGroupSetItem::SetSubEks(const SubEks& _subEks)
+{
+    m_subEks = _subEks;
+    m_subEksHasBeenSet = true;
+}
+
+bool ClusterGroupSetItem::SubEksHasBeenSet() const
+{
+    return m_subEksHasBeenSet;
 }
 

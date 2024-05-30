@@ -26,7 +26,8 @@ ModifyDeviceRequest::ModifyDeviceRequest() :
     m_idHasBeenSet(false),
     m_portHasBeenSet(false),
     m_groupIdSetHasBeenSet(false),
-    m_departmentIdHasBeenSet(false)
+    m_departmentIdHasBeenSet(false),
+    m_domainIdHasBeenSet(false)
 {
 }
 
@@ -72,6 +73,14 @@ string ModifyDeviceRequest::ToJsonString() const
         string key = "DepartmentId";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_departmentId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_domainIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "DomainId";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_domainId.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -144,6 +153,22 @@ void ModifyDeviceRequest::SetDepartmentId(const string& _departmentId)
 bool ModifyDeviceRequest::DepartmentIdHasBeenSet() const
 {
     return m_departmentIdHasBeenSet;
+}
+
+string ModifyDeviceRequest::GetDomainId() const
+{
+    return m_domainId;
+}
+
+void ModifyDeviceRequest::SetDomainId(const string& _domainId)
+{
+    m_domainId = _domainId;
+    m_domainIdHasBeenSet = true;
+}
+
+bool ModifyDeviceRequest::DomainIdHasBeenSet() const
+{
+    return m_domainIdHasBeenSet;
 }
 
 

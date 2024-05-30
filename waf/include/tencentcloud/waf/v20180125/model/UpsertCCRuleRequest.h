@@ -399,6 +399,27 @@ namespace TencentCloud
                      */
                     bool RuleIdHasBeenSet() const;
 
+                    /**
+                     * 获取规则创建时间
+                     * @return CreateTime 规则创建时间
+                     * 
+                     */
+                    uint64_t GetCreateTime() const;
+
+                    /**
+                     * 设置规则创建时间
+                     * @param _createTime 规则创建时间
+                     * 
+                     */
+                    void SetCreateTime(const uint64_t& _createTime);
+
+                    /**
+                     * 判断参数 CreateTime 是否已赋值
+                     * @return CreateTime 是否已赋值
+                     * 
+                     */
+                    bool CreateTimeHasBeenSet() const;
+
                 private:
 
                     /**
@@ -502,6 +523,12 @@ namespace TencentCloud
                      */
                     int64_t m_ruleId;
                     bool m_ruleIdHasBeenSet;
+
+                    /**
+                     * 规则创建时间
+                     */
+                    uint64_t m_createTime;
+                    bool m_createTimeHasBeenSet;
 
                 };
             }

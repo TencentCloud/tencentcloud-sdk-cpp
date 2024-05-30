@@ -238,6 +238,22 @@ namespace TencentCloud
                      */
                     bool NamespaceHasBeenSet() const;
 
+                    /**
+                     * 获取排除的镜像资产id
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return ExcludeImageAssetIds 排除的镜像资产id
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::vector<uint64_t> GetExcludeImageAssetIds() const;
+
+                    /**
+                     * 判断参数 ExcludeImageAssetIds 是否已赋值
+                     * @return ExcludeImageAssetIds 是否已赋值
+                     * 
+                     */
+                    bool ExcludeImageAssetIdsHasBeenSet() const;
+
                 private:
 
                     /**
@@ -323,6 +339,13 @@ namespace TencentCloud
                      */
                     std::vector<std::string> m_namespace;
                     bool m_namespaceHasBeenSet;
+
+                    /**
+                     * 排除的镜像资产id
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::vector<uint64_t> m_excludeImageAssetIds;
+                    bool m_excludeImageAssetIdsHasBeenSet;
 
                 };
             }

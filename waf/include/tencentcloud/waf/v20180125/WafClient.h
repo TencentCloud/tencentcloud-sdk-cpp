@@ -926,7 +926,7 @@ namespace TencentCloud
                 DeleteHostOutcomeCallable DeleteHostCallable(const Model::DeleteHostRequest& request);
 
                 /**
-                 *Waf IP黑白名单Delete接口
+                 *Waf IP黑白名单Delete接口（建议使用DeleteIpAccessControlV2来替换当前接口）
                  * @param req DeleteIpAccessControlRequest
                  * @return DeleteIpAccessControlOutcome
                  */
@@ -1948,7 +1948,7 @@ namespace TencentCloud
                 UpsertCCRuleOutcomeCallable UpsertCCRuleCallable(const Model::UpsertCCRuleRequest& request);
 
                 /**
-                 *Waf IP黑白名单Upsert接口
+                 *Waf IP黑白名单Upsert接口（建议使用CreateIpAccessControl、ModifyIpAccessControl来替换当前接口）
                  * @param req UpsertIpAccessControlRequest
                  * @return UpsertIpAccessControlOutcome
                  */

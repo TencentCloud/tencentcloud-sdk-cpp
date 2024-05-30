@@ -272,6 +272,81 @@ namespace TencentCloud
                      */
                     bool CloudTypeHasBeenSet() const;
 
+                    /**
+                     * 获取标记clbwaf类型
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return AlbType 标记clbwaf类型
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::string GetAlbType() const;
+
+                    /**
+                     * 设置标记clbwaf类型
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _albType 标记clbwaf类型
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetAlbType(const std::string& _albType);
+
+                    /**
+                     * 判断参数 AlbType 是否已赋值
+                     * @return AlbType 是否已赋值
+                     * 
+                     */
+                    bool AlbTypeHasBeenSet() const;
+
+                    /**
+                     * 获取BOT开关状态
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return BotStatus BOT开关状态
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    int64_t GetBotStatus() const;
+
+                    /**
+                     * 设置BOT开关状态
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _botStatus BOT开关状态
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetBotStatus(const int64_t& _botStatus);
+
+                    /**
+                     * 判断参数 BotStatus 是否已赋值
+                     * @return BotStatus 是否已赋值
+                     * 
+                     */
+                    bool BotStatusHasBeenSet() const;
+
+                    /**
+                     * 获取API开关状态
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return ApiStatus API开关状态
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    int64_t GetApiStatus() const;
+
+                    /**
+                     * 设置API开关状态
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _apiStatus API开关状态
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetApiStatus(const int64_t& _apiStatus);
+
+                    /**
+                     * 判断参数 ApiStatus 是否已赋值
+                     * @return ApiStatus 是否已赋值
+                     * 
+                     */
+                    bool ApiStatusHasBeenSet() const;
+
                 private:
 
                     /**
@@ -337,6 +412,27 @@ namespace TencentCloud
                      */
                     std::string m_cloudType;
                     bool m_cloudTypeHasBeenSet;
+
+                    /**
+                     * 标记clbwaf类型
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_albType;
+                    bool m_albTypeHasBeenSet;
+
+                    /**
+                     * BOT开关状态
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    int64_t m_botStatus;
+                    bool m_botStatusHasBeenSet;
+
+                    /**
+                     * API开关状态
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    int64_t m_apiStatus;
+                    bool m_apiStatusHasBeenSet;
 
                 };
             }

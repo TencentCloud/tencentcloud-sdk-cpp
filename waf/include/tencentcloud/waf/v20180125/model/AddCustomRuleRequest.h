@@ -22,6 +22,7 @@
 #include <map>
 #include <tencentcloud/core/AbstractModel.h>
 #include <tencentcloud/waf/v20180125/model/Strategy.h>
+#include <tencentcloud/waf/v20180125/model/JobDateTime.h>
 
 
 namespace TencentCloud
@@ -84,27 +85,6 @@ namespace TencentCloud
                      * 
                      */
                     bool SortIdHasBeenSet() const;
-
-                    /**
-                     * 获取过期时间，单位为秒级时间戳，例如1677254399表示过期时间为2023-02-24 23:59:59. 0表示永不过期
-                     * @return ExpireTime 过期时间，单位为秒级时间戳，例如1677254399表示过期时间为2023-02-24 23:59:59. 0表示永不过期
-                     * 
-                     */
-                    std::string GetExpireTime() const;
-
-                    /**
-                     * 设置过期时间，单位为秒级时间戳，例如1677254399表示过期时间为2023-02-24 23:59:59. 0表示永不过期
-                     * @param _expireTime 过期时间，单位为秒级时间戳，例如1677254399表示过期时间为2023-02-24 23:59:59. 0表示永不过期
-                     * 
-                     */
-                    void SetExpireTime(const std::string& _expireTime);
-
-                    /**
-                     * 判断参数 ExpireTime 是否已赋值
-                     * @return ExpireTime 是否已赋值
-                     * 
-                     */
-                    bool ExpireTimeHasBeenSet() const;
 
                     /**
                      * 获取策略详情
@@ -191,6 +171,27 @@ namespace TencentCloud
                     bool RedirectHasBeenSet() const;
 
                     /**
+                     * 获取过期时间，单位为秒级时间戳，例如1677254399表示过期时间为2023-02-24 23:59:59. 0表示永不过期
+                     * @return ExpireTime 过期时间，单位为秒级时间戳，例如1677254399表示过期时间为2023-02-24 23:59:59. 0表示永不过期
+                     * 
+                     */
+                    std::string GetExpireTime() const;
+
+                    /**
+                     * 设置过期时间，单位为秒级时间戳，例如1677254399表示过期时间为2023-02-24 23:59:59. 0表示永不过期
+                     * @param _expireTime 过期时间，单位为秒级时间戳，例如1677254399表示过期时间为2023-02-24 23:59:59. 0表示永不过期
+                     * 
+                     */
+                    void SetExpireTime(const std::string& _expireTime);
+
+                    /**
+                     * 判断参数 ExpireTime 是否已赋值
+                     * @return ExpireTime 是否已赋值
+                     * 
+                     */
+                    bool ExpireTimeHasBeenSet() const;
+
+                    /**
                      * 获取WAF实例类型，sparta-waf表示SAAS型WAF，clb-waf表示负载均衡型WAF
                      * @return Edition WAF实例类型，sparta-waf表示SAAS型WAF，clb-waf表示负载均衡型WAF
                      * 
@@ -253,6 +254,132 @@ namespace TencentCloud
                      */
                     bool EventIdHasBeenSet() const;
 
+                    /**
+                     * 获取规则执行的方式，TimedJob为定时执行，CronJob为周期执行
+                     * @return JobType 规则执行的方式，TimedJob为定时执行，CronJob为周期执行
+                     * 
+                     */
+                    std::string GetJobType() const;
+
+                    /**
+                     * 设置规则执行的方式，TimedJob为定时执行，CronJob为周期执行
+                     * @param _jobType 规则执行的方式，TimedJob为定时执行，CronJob为周期执行
+                     * 
+                     */
+                    void SetJobType(const std::string& _jobType);
+
+                    /**
+                     * 判断参数 JobType 是否已赋值
+                     * @return JobType 是否已赋值
+                     * 
+                     */
+                    bool JobTypeHasBeenSet() const;
+
+                    /**
+                     * 获取规则执行的时间
+                     * @return JobDateTime 规则执行的时间
+                     * 
+                     */
+                    JobDateTime GetJobDateTime() const;
+
+                    /**
+                     * 设置规则执行的时间
+                     * @param _jobDateTime 规则执行的时间
+                     * 
+                     */
+                    void SetJobDateTime(const JobDateTime& _jobDateTime);
+
+                    /**
+                     * 判断参数 JobDateTime 是否已赋值
+                     * @return JobDateTime 是否已赋值
+                     * 
+                     */
+                    bool JobDateTimeHasBeenSet() const;
+
+                    /**
+                     * 获取规则来源，判断是不是小程序的
+                     * @return Source 规则来源，判断是不是小程序的
+                     * 
+                     */
+                    std::string GetSource() const;
+
+                    /**
+                     * 设置规则来源，判断是不是小程序的
+                     * @param _source 规则来源，判断是不是小程序的
+                     * 
+                     */
+                    void SetSource(const std::string& _source);
+
+                    /**
+                     * 判断参数 Source 是否已赋值
+                     * @return Source 是否已赋值
+                     * 
+                     */
+                    bool SourceHasBeenSet() const;
+
+                    /**
+                     * 获取规则标签，小程序规则用，标识是内置规则还是自定义规则
+                     * @return Label 规则标签，小程序规则用，标识是内置规则还是自定义规则
+                     * 
+                     */
+                    std::string GetLabel() const;
+
+                    /**
+                     * 设置规则标签，小程序规则用，标识是内置规则还是自定义规则
+                     * @param _label 规则标签，小程序规则用，标识是内置规则还是自定义规则
+                     * 
+                     */
+                    void SetLabel(const std::string& _label);
+
+                    /**
+                     * 判断参数 Label 是否已赋值
+                     * @return Label 是否已赋值
+                     * 
+                     */
+                    bool LabelHasBeenSet() const;
+
+                    /**
+                     * 获取开关状态，小程序风控规则的时候传该值
+                     * @return Status 开关状态，小程序风控规则的时候传该值
+                     * 
+                     */
+                    int64_t GetStatus() const;
+
+                    /**
+                     * 设置开关状态，小程序风控规则的时候传该值
+                     * @param _status 开关状态，小程序风控规则的时候传该值
+                     * 
+                     */
+                    void SetStatus(const int64_t& _status);
+
+                    /**
+                     * 判断参数 Status 是否已赋值
+                     * @return Status 是否已赋值
+                     * 
+                     */
+                    bool StatusHasBeenSet() const;
+
+                    /**
+                     * 获取拦截页面id
+                     * @return PageId 拦截页面id
+                     * 
+                     */
+                    std::string GetPageId() const;
+
+                    /**
+                     * 设置拦截页面id
+                     * @param _pageId 拦截页面id
+                     * 
+                     */
+                    void SetPageId(const std::string& _pageId);
+
+                    /**
+                     * 判断参数 PageId 是否已赋值
+                     * @return PageId 是否已赋值
+                     * 
+                     */
+                    bool PageIdHasBeenSet() const;
+
                 private:
 
                     /**
@@ -266,12 +393,6 @@ namespace TencentCloud
                      */
                     std::string m_sortId;
                     bool m_sortIdHasBeenSet;
-
-                    /**
-                     * 过期时间，单位为秒级时间戳，例如1677254399表示过期时间为2023-02-24 23:59:59. 0表示永不过期
-                     */
-                    std::string m_expireTime;
-                    bool m_expireTimeHasBeenSet;
 
                     /**
                      * 策略详情
@@ -298,6 +419,12 @@ namespace TencentCloud
                     bool m_redirectHasBeenSet;
 
                     /**
+                     * 过期时间，单位为秒级时间戳，例如1677254399表示过期时间为2023-02-24 23:59:59. 0表示永不过期
+                     */
+                    std::string m_expireTime;
+                    bool m_expireTimeHasBeenSet;
+
+                    /**
                      * WAF实例类型，sparta-waf表示SAAS型WAF，clb-waf表示负载均衡型WAF
                      */
                     std::string m_edition;
@@ -314,6 +441,42 @@ namespace TencentCloud
                      */
                     std::string m_eventId;
                     bool m_eventIdHasBeenSet;
+
+                    /**
+                     * 规则执行的方式，TimedJob为定时执行，CronJob为周期执行
+                     */
+                    std::string m_jobType;
+                    bool m_jobTypeHasBeenSet;
+
+                    /**
+                     * 规则执行的时间
+                     */
+                    JobDateTime m_jobDateTime;
+                    bool m_jobDateTimeHasBeenSet;
+
+                    /**
+                     * 规则来源，判断是不是小程序的
+                     */
+                    std::string m_source;
+                    bool m_sourceHasBeenSet;
+
+                    /**
+                     * 规则标签，小程序规则用，标识是内置规则还是自定义规则
+                     */
+                    std::string m_label;
+                    bool m_labelHasBeenSet;
+
+                    /**
+                     * 开关状态，小程序风控规则的时候传该值
+                     */
+                    int64_t m_status;
+                    bool m_statusHasBeenSet;
+
+                    /**
+                     * 拦截页面id
+                     */
+                    std::string m_pageId;
+                    bool m_pageIdHasBeenSet;
 
                 };
             }

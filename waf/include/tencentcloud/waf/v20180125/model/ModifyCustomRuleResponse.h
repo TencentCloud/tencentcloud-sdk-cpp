@@ -21,6 +21,7 @@
 #include <vector>
 #include <map>
 #include <tencentcloud/core/AbstractModel.h>
+#include <tencentcloud/waf/v20180125/model/ResponseCode.h>
 
 
 namespace TencentCloud
@@ -43,7 +44,27 @@ namespace TencentCloud
                     std::string ToJsonString() const;
 
 
+                    /**
+                     * 获取操作的状态码，如果所有的资源操作成功则返回的是成功的状态码，如果有资源操作失败则需要解析Message的内容来查看哪个资源失败
+                     * @return Success 操作的状态码，如果所有的资源操作成功则返回的是成功的状态码，如果有资源操作失败则需要解析Message的内容来查看哪个资源失败
+                     * 
+                     */
+                    ResponseCode GetSuccess() const;
+
+                    /**
+                     * 判断参数 Success 是否已赋值
+                     * @return Success 是否已赋值
+                     * 
+                     */
+                    bool SuccessHasBeenSet() const;
+
                 private:
+
+                    /**
+                     * 操作的状态码，如果所有的资源操作成功则返回的是成功的状态码，如果有资源操作失败则需要解析Message的内容来查看哪个资源失败
+                     */
+                    ResponseCode m_success;
+                    bool m_successHasBeenSet;
 
                 };
             }

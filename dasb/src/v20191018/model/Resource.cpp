@@ -50,7 +50,9 @@ Resource::Resource() :
     m_packageBandwidthHasBeenSet(false),
     m_packageNodeHasBeenSet(false),
     m_logDeliveryArgsHasBeenSet(false),
-    m_clbSetHasBeenSet(false)
+    m_clbSetHasBeenSet(false),
+    m_domainCountHasBeenSet(false),
+    m_usedDomainCountHasBeenSet(false)
 {
 }
 
@@ -378,6 +380,26 @@ CoreInternalOutcome Resource::Deserialize(const rapidjson::Value &value)
         m_clbSetHasBeenSet = true;
     }
 
+    if (value.HasMember("DomainCount") && !value["DomainCount"].IsNull())
+    {
+        if (!value["DomainCount"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `Resource.DomainCount` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_domainCount = value["DomainCount"].GetInt64();
+        m_domainCountHasBeenSet = true;
+    }
+
+    if (value.HasMember("UsedDomainCount") && !value["UsedDomainCount"].IsNull())
+    {
+        if (!value["UsedDomainCount"].IsUint64())
+        {
+            return CoreInternalOutcome(Core::Error("response `Resource.UsedDomainCount` IsUint64=false incorrectly").SetRequestId(requestId));
+        }
+        m_usedDomainCount = value["UsedDomainCount"].GetUint64();
+        m_usedDomainCountHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -645,6 +667,22 @@ void Resource::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Alloca
             value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
             (*itr).ToJsonObject(value[key.c_str()][i], allocator);
         }
+    }
+
+    if (m_domainCountHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "DomainCount";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_domainCount, allocator);
+    }
+
+    if (m_usedDomainCountHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "UsedDomainCount";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_usedDomainCount, allocator);
     }
 
 }
@@ -1128,5 +1166,37 @@ void Resource::SetClbSet(const vector<Clb>& _clbSet)
 bool Resource::ClbSetHasBeenSet() const
 {
     return m_clbSetHasBeenSet;
+}
+
+int64_t Resource::GetDomainCount() const
+{
+    return m_domainCount;
+}
+
+void Resource::SetDomainCount(const int64_t& _domainCount)
+{
+    m_domainCount = _domainCount;
+    m_domainCountHasBeenSet = true;
+}
+
+bool Resource::DomainCountHasBeenSet() const
+{
+    return m_domainCountHasBeenSet;
+}
+
+uint64_t Resource::GetUsedDomainCount() const
+{
+    return m_usedDomainCount;
+}
+
+void Resource::SetUsedDomainCount(const uint64_t& _usedDomainCount)
+{
+    m_usedDomainCount = _usedDomainCount;
+    m_usedDomainCountHasBeenSet = true;
+}
+
+bool Resource::UsedDomainCountHasBeenSet() const
+{
+    return m_usedDomainCountHasBeenSet;
 }
 

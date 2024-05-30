@@ -397,6 +397,56 @@ namespace TencentCloud
                      */
                     bool IpPortSetHasBeenSet() const;
 
+                    /**
+                     * 获取网络域Id
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return DomainId 网络域Id
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::string GetDomainId() const;
+
+                    /**
+                     * 设置网络域Id
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _domainId 网络域Id
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetDomainId(const std::string& _domainId);
+
+                    /**
+                     * 判断参数 DomainId 是否已赋值
+                     * @return DomainId 是否已赋值
+                     * 
+                     */
+                    bool DomainIdHasBeenSet() const;
+
+                    /**
+                     * 获取网络域名称
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return DomainName 网络域名称
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::string GetDomainName() const;
+
+                    /**
+                     * 设置网络域名称
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _domainName 网络域名称
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetDomainName(const std::string& _domainName);
+
+                    /**
+                     * 判断参数 DomainName 是否已赋值
+                     * @return DomainName 是否已赋值
+                     * 
+                     */
+                    bool DomainNameHasBeenSet() const;
+
                 private:
 
                     /**
@@ -497,6 +547,20 @@ namespace TencentCloud
                      */
                     std::vector<std::string> m_ipPortSet;
                     bool m_ipPortSetHasBeenSet;
+
+                    /**
+                     * 网络域Id
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_domainId;
+                    bool m_domainIdHasBeenSet;
+
+                    /**
+                     * 网络域名称
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_domainName;
+                    bool m_domainNameHasBeenSet;
 
                 };
             }

@@ -26,7 +26,8 @@ ModifyCustomRuleStatusRequest::ModifyCustomRuleStatusRequest() :
     m_domainHasBeenSet(false),
     m_ruleIdHasBeenSet(false),
     m_statusHasBeenSet(false),
-    m_editionHasBeenSet(false)
+    m_editionHasBeenSet(false),
+    m_domainRuleIdListHasBeenSet(false)
 {
 }
 
@@ -67,6 +68,21 @@ string ModifyCustomRuleStatusRequest::ToJsonString() const
         string key = "Edition";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_edition.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_domainRuleIdListHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "DomainRuleIdList";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_domainRuleIdList.begin(); itr != m_domainRuleIdList.end(); ++itr, ++i)
+        {
+            d[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(d[key.c_str()][i], allocator);
+        }
     }
 
 
@@ -139,6 +155,22 @@ void ModifyCustomRuleStatusRequest::SetEdition(const string& _edition)
 bool ModifyCustomRuleStatusRequest::EditionHasBeenSet() const
 {
     return m_editionHasBeenSet;
+}
+
+vector<DomainRuleId> ModifyCustomRuleStatusRequest::GetDomainRuleIdList() const
+{
+    return m_domainRuleIdList;
+}
+
+void ModifyCustomRuleStatusRequest::SetDomainRuleIdList(const vector<DomainRuleId>& _domainRuleIdList)
+{
+    m_domainRuleIdList = _domainRuleIdList;
+    m_domainRuleIdListHasBeenSet = true;
+}
+
+bool ModifyCustomRuleStatusRequest::DomainRuleIdListHasBeenSet() const
+{
+    return m_domainRuleIdListHasBeenSet;
 }
 
 

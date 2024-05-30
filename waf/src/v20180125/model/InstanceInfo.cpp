@@ -58,7 +58,9 @@ InstanceInfo::InstanceInfo() :
     m_miniPkgHasBeenSet(false),
     m_miniQpsStandardHasBeenSet(false),
     m_miniMaxQPSHasBeenSet(false),
-    m_lastQpsExceedTimeHasBeenSet(false)
+    m_lastQpsExceedTimeHasBeenSet(false),
+    m_miniExtendPkgHasBeenSet(false),
+    m_billingItemHasBeenSet(false)
 {
 }
 
@@ -510,6 +512,33 @@ CoreInternalOutcome InstanceInfo::Deserialize(const rapidjson::Value &value)
         m_lastQpsExceedTimeHasBeenSet = true;
     }
 
+    if (value.HasMember("MiniExtendPkg") && !value["MiniExtendPkg"].IsNull())
+    {
+        if (!value["MiniExtendPkg"].IsObject())
+        {
+            return CoreInternalOutcome(Core::Error("response `InstanceInfo.MiniExtendPkg` is not object type").SetRequestId(requestId));
+        }
+
+        CoreInternalOutcome outcome = m_miniExtendPkg.Deserialize(value["MiniExtendPkg"]);
+        if (!outcome.IsSuccess())
+        {
+            outcome.GetError().SetRequestId(requestId);
+            return outcome;
+        }
+
+        m_miniExtendPkgHasBeenSet = true;
+    }
+
+    if (value.HasMember("BillingItem") && !value["BillingItem"].IsNull())
+    {
+        if (!value["BillingItem"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `InstanceInfo.BillingItem` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_billingItem = string(value["BillingItem"].GetString());
+        m_billingItemHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -828,6 +857,23 @@ void InstanceInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Al
         string key = "LastQpsExceedTime";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_lastQpsExceedTime.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_miniExtendPkgHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "MiniExtendPkg";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_miniExtendPkg.ToJsonObject(value[key.c_str()], allocator);
+    }
+
+    if (m_billingItemHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "BillingItem";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_billingItem.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -1439,5 +1485,37 @@ void InstanceInfo::SetLastQpsExceedTime(const string& _lastQpsExceedTime)
 bool InstanceInfo::LastQpsExceedTimeHasBeenSet() const
 {
     return m_lastQpsExceedTimeHasBeenSet;
+}
+
+MiniExtendPkg InstanceInfo::GetMiniExtendPkg() const
+{
+    return m_miniExtendPkg;
+}
+
+void InstanceInfo::SetMiniExtendPkg(const MiniExtendPkg& _miniExtendPkg)
+{
+    m_miniExtendPkg = _miniExtendPkg;
+    m_miniExtendPkgHasBeenSet = true;
+}
+
+bool InstanceInfo::MiniExtendPkgHasBeenSet() const
+{
+    return m_miniExtendPkgHasBeenSet;
+}
+
+string InstanceInfo::GetBillingItem() const
+{
+    return m_billingItem;
+}
+
+void InstanceInfo::SetBillingItem(const string& _billingItem)
+{
+    m_billingItem = _billingItem;
+    m_billingItemHasBeenSet = true;
+}
+
+bool InstanceInfo::BillingItemHasBeenSet() const
+{
+    return m_billingItemHasBeenSet;
 }
 

@@ -35,7 +35,8 @@ UpdateImageRegistryTimingScanTaskRequest::UpdateImageRegistryTimingScanTaskReque
     m_scanEndTimeHasBeenSet(false),
     m_scanScopeHasBeenSet(false),
     m_registryTypeHasBeenSet(false),
-    m_namespaceHasBeenSet(false)
+    m_namespaceHasBeenSet(false),
+    m_excludeImageAssetIdsHasBeenSet(false)
 {
 }
 
@@ -174,6 +175,19 @@ string UpdateImageRegistryTimingScanTaskRequest::ToJsonString() const
         for (auto itr = m_namespace.begin(); itr != m_namespace.end(); ++itr)
         {
             d[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
+        }
+    }
+
+    if (m_excludeImageAssetIdsHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ExcludeImageAssetIds";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        for (auto itr = m_excludeImageAssetIds.begin(); itr != m_excludeImageAssetIds.end(); ++itr)
+        {
+            d[key.c_str()].PushBack(rapidjson::Value().SetUint64(*itr), allocator);
         }
     }
 
@@ -391,6 +405,22 @@ void UpdateImageRegistryTimingScanTaskRequest::SetNamespace(const vector<string>
 bool UpdateImageRegistryTimingScanTaskRequest::NamespaceHasBeenSet() const
 {
     return m_namespaceHasBeenSet;
+}
+
+vector<uint64_t> UpdateImageRegistryTimingScanTaskRequest::GetExcludeImageAssetIds() const
+{
+    return m_excludeImageAssetIds;
+}
+
+void UpdateImageRegistryTimingScanTaskRequest::SetExcludeImageAssetIds(const vector<uint64_t>& _excludeImageAssetIds)
+{
+    m_excludeImageAssetIds = _excludeImageAssetIds;
+    m_excludeImageAssetIdsHasBeenSet = true;
+}
+
+bool UpdateImageRegistryTimingScanTaskRequest::ExcludeImageAssetIdsHasBeenSet() const
+{
+    return m_excludeImageAssetIdsHasBeenSet;
 }
 
 

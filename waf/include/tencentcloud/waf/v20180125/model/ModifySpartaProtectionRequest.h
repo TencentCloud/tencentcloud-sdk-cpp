@@ -935,6 +935,27 @@ https：使用https协议回源
                      */
                     bool ProxyBufferHasBeenSet() const;
 
+                    /**
+                     * 获取0: 禁用拨测, 1: 启用拨测。默认启用拨测
+                     * @return ProbeStatus 0: 禁用拨测, 1: 启用拨测。默认启用拨测
+                     * 
+                     */
+                    int64_t GetProbeStatus() const;
+
+                    /**
+                     * 设置0: 禁用拨测, 1: 启用拨测。默认启用拨测
+                     * @param _probeStatus 0: 禁用拨测, 1: 启用拨测。默认启用拨测
+                     * 
+                     */
+                    void SetProbeStatus(const int64_t& _probeStatus);
+
+                    /**
+                     * 判断参数 ProbeStatus 是否已赋值
+                     * @return ProbeStatus 是否已赋值
+                     * 
+                     */
+                    bool ProbeStatusHasBeenSet() const;
+
                 private:
 
                     /**
@@ -1186,6 +1207,12 @@ https：使用https协议回源
                      */
                     int64_t m_proxyBuffer;
                     bool m_proxyBufferHasBeenSet;
+
+                    /**
+                     * 0: 禁用拨测, 1: 启用拨测。默认启用拨测
+                     */
+                    int64_t m_probeStatus;
+                    bool m_probeStatusHasBeenSet;
 
                 };
             }

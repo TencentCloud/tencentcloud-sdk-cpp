@@ -26,7 +26,8 @@ RuleList::RuleList() :
     m_urlHasBeenSet(false),
     m_functionHasBeenSet(false),
     m_timeHasBeenSet(false),
-    m_statusHasBeenSet(false)
+    m_statusHasBeenSet(false),
+    m_createTimeHasBeenSet(false)
 {
 }
 
@@ -98,6 +99,16 @@ CoreInternalOutcome RuleList::Deserialize(const rapidjson::Value &value)
         m_statusHasBeenSet = true;
     }
 
+    if (value.HasMember("CreateTime") && !value["CreateTime"].IsNull())
+    {
+        if (!value["CreateTime"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `RuleList.CreateTime` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_createTime = string(value["CreateTime"].GetString());
+        m_createTimeHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -156,6 +167,14 @@ void RuleList::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Alloca
         string key = "Status";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_status, allocator);
+    }
+
+    if (m_createTimeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "CreateTime";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_createTime.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -255,5 +274,21 @@ void RuleList::SetStatus(const uint64_t& _status)
 bool RuleList::StatusHasBeenSet() const
 {
     return m_statusHasBeenSet;
+}
+
+string RuleList::GetCreateTime() const
+{
+    return m_createTime;
+}
+
+void RuleList::SetCreateTime(const string& _createTime)
+{
+    m_createTime = _createTime;
+    m_createTimeHasBeenSet = true;
+}
+
+bool RuleList::CreateTimeHasBeenSet() const
+{
+    return m_createTimeHasBeenSet;
 }
 

@@ -169,6 +169,27 @@ namespace TencentCloud
                      */
                     bool ByHasBeenSet() const;
 
+                    /**
+                     * 获取查询的域名列表,访问控制页面不用传
+                     * @return DomainList 查询的域名列表,访问控制页面不用传
+                     * 
+                     */
+                    std::vector<std::string> GetDomainList() const;
+
+                    /**
+                     * 设置查询的域名列表,访问控制页面不用传
+                     * @param _domainList 查询的域名列表,访问控制页面不用传
+                     * 
+                     */
+                    void SetDomainList(const std::vector<std::string>& _domainList);
+
+                    /**
+                     * 判断参数 DomainList 是否已赋值
+                     * @return DomainList 是否已赋值
+                     * 
+                     */
+                    bool DomainListHasBeenSet() const;
+
                 private:
 
                     /**
@@ -206,6 +227,12 @@ namespace TencentCloud
                      */
                     std::string m_by;
                     bool m_byHasBeenSet;
+
+                    /**
+                     * 查询的域名列表,访问控制页面不用传
+                     */
+                    std::vector<std::string> m_domainList;
+                    bool m_domainListHasBeenSet;
 
                 };
             }

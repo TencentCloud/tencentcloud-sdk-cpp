@@ -68,15 +68,15 @@ namespace TencentCloud
                     bool NameHasBeenSet() const;
 
                     /**
-                     * 获取机器人头像
-                     * @return Avatar 机器人头像
+                     * 获取应用头像
+                     * @return Avatar 应用头像
                      * 
                      */
                     std::string GetAvatar() const;
 
                     /**
-                     * 设置机器人头像
-                     * @param _avatar 机器人头像
+                     * 设置应用头像
+                     * @param _avatar 应用头像
                      * 
                      */
                     void SetAvatar(const std::string& _avatar);
@@ -89,15 +89,15 @@ namespace TencentCloud
                     bool AvatarHasBeenSet() const;
 
                     /**
-                     * 获取机器人描述
-                     * @return Desc 机器人描述
+                     * 获取应用描述
+                     * @return Desc 应用描述
                      * 
                      */
                     std::string GetDesc() const;
 
                     /**
-                     * 设置机器人描述
-                     * @param _desc 机器人描述
+                     * 设置应用描述
+                     * @param _desc 应用描述
                      * 
                      */
                     void SetDesc(const std::string& _desc);
@@ -118,13 +118,13 @@ namespace TencentCloud
                     bool m_nameHasBeenSet;
 
                     /**
-                     * 机器人头像
+                     * 应用头像
                      */
                     std::string m_avatar;
                     bool m_avatarHasBeenSet;
 
                     /**
-                     * 机器人描述
+                     * 应用描述
                      */
                     std::string m_desc;
                     bool m_descHasBeenSet;

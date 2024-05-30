@@ -41,7 +41,8 @@ UserRoleListDataUserRoleInfo::UserRoleListDataUserRoleInfo() :
     m_appUserIdHasBeenSet(false),
     m_appUserAliasNameHasBeenSet(false),
     m_appUserNameHasBeenSet(false),
-    m_inValidateAppRangeHasBeenSet(false)
+    m_inValidateAppRangeHasBeenSet(false),
+    m_appOpenUserIdHasBeenSet(false)
 {
 }
 
@@ -273,6 +274,16 @@ CoreInternalOutcome UserRoleListDataUserRoleInfo::Deserialize(const rapidjson::V
         m_inValidateAppRangeHasBeenSet = true;
     }
 
+    if (value.HasMember("AppOpenUserId") && !value["AppOpenUserId"].IsNull())
+    {
+        if (!value["AppOpenUserId"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `UserRoleListDataUserRoleInfo.AppOpenUserId` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_appOpenUserId = string(value["AppOpenUserId"].GetString());
+        m_appOpenUserIdHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -458,6 +469,14 @@ void UserRoleListDataUserRoleInfo::ToJsonObject(rapidjson::Value &value, rapidjs
         string key = "InValidateAppRange";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_inValidateAppRange, allocator);
+    }
+
+    if (m_appOpenUserIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "AppOpenUserId";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_appOpenUserId.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -797,5 +816,21 @@ void UserRoleListDataUserRoleInfo::SetInValidateAppRange(const bool& _inValidate
 bool UserRoleListDataUserRoleInfo::InValidateAppRangeHasBeenSet() const
 {
     return m_inValidateAppRangeHasBeenSet;
+}
+
+string UserRoleListDataUserRoleInfo::GetAppOpenUserId() const
+{
+    return m_appOpenUserId;
+}
+
+void UserRoleListDataUserRoleInfo::SetAppOpenUserId(const string& _appOpenUserId)
+{
+    m_appOpenUserId = _appOpenUserId;
+    m_appOpenUserIdHasBeenSet = true;
+}
+
+bool UserRoleListDataUserRoleInfo::AppOpenUserIdHasBeenSet() const
+{
+    return m_appOpenUserIdHasBeenSet;
 }
 

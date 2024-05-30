@@ -281,6 +281,27 @@ namespace TencentCloud
                      */
                     bool ScanEndTimeHasBeenSet() const;
 
+                    /**
+                     * 获取排除扫描的镜像
+                     * @return ExcludeImages 排除扫描的镜像
+                     * 
+                     */
+                    std::vector<std::string> GetExcludeImages() const;
+
+                    /**
+                     * 设置排除扫描的镜像
+                     * @param _excludeImages 排除扫描的镜像
+                     * 
+                     */
+                    void SetExcludeImages(const std::vector<std::string>& _excludeImages);
+
+                    /**
+                     * 判断参数 ExcludeImages 是否已赋值
+                     * @return ExcludeImages 是否已赋值
+                     * 
+                     */
+                    bool ExcludeImagesHasBeenSet() const;
+
                 private:
 
                     /**
@@ -350,6 +371,12 @@ namespace TencentCloud
                      */
                     std::string m_scanEndTime;
                     bool m_scanEndTimeHasBeenSet;
+
+                    /**
+                     * 排除扫描的镜像
+                     */
+                    std::vector<std::string> m_excludeImages;
+                    bool m_excludeImagesHasBeenSet;
 
                 };
             }

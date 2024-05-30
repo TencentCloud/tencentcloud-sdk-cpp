@@ -35,7 +35,8 @@ CCRuleItems::CCRuleItems() :
     m_optionsHasBeenSet(false),
     m_ruleIdHasBeenSet(false),
     m_eventIdHasBeenSet(false),
-    m_sessionAppliedHasBeenSet(false)
+    m_sessionAppliedHasBeenSet(false),
+    m_createTimeHasBeenSet(false)
 {
 }
 
@@ -197,6 +198,16 @@ CoreInternalOutcome CCRuleItems::Deserialize(const rapidjson::Value &value)
         m_sessionAppliedHasBeenSet = true;
     }
 
+    if (value.HasMember("CreateTime") && !value["CreateTime"].IsNull())
+    {
+        if (!value["CreateTime"].IsUint64())
+        {
+            return CoreInternalOutcome(Core::Error("response `CCRuleItems.CreateTime` IsUint64=false incorrectly").SetRequestId(requestId));
+        }
+        m_createTime = value["CreateTime"].GetUint64();
+        m_createTimeHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -327,6 +338,14 @@ void CCRuleItems::ToJsonObject(rapidjson::Value &value, rapidjson::Document::All
         {
             value[key.c_str()].PushBack(rapidjson::Value().SetInt64(*itr), allocator);
         }
+    }
+
+    if (m_createTimeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "CreateTime";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_createTime, allocator);
     }
 
 }
@@ -570,5 +589,21 @@ void CCRuleItems::SetSessionApplied(const vector<int64_t>& _sessionApplied)
 bool CCRuleItems::SessionAppliedHasBeenSet() const
 {
     return m_sessionAppliedHasBeenSet;
+}
+
+uint64_t CCRuleItems::GetCreateTime() const
+{
+    return m_createTime;
+}
+
+void CCRuleItems::SetCreateTime(const uint64_t& _createTime)
+{
+    m_createTime = _createTime;
+    m_createTimeHasBeenSet = true;
+}
+
+bool CCRuleItems::CreateTimeHasBeenSet() const
+{
+    return m_createTimeHasBeenSet;
 }
 

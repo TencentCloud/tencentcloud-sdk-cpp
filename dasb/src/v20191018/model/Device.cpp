@@ -36,7 +36,9 @@ Device::Device() :
     m_subnetIdHasBeenSet(false),
     m_resourceHasBeenSet(false),
     m_departmentHasBeenSet(false),
-    m_ipPortSetHasBeenSet(false)
+    m_ipPortSetHasBeenSet(false),
+    m_domainIdHasBeenSet(false),
+    m_domainNameHasBeenSet(false)
 {
 }
 
@@ -232,6 +234,26 @@ CoreInternalOutcome Device::Deserialize(const rapidjson::Value &value)
         m_ipPortSetHasBeenSet = true;
     }
 
+    if (value.HasMember("DomainId") && !value["DomainId"].IsNull())
+    {
+        if (!value["DomainId"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `Device.DomainId` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_domainId = string(value["DomainId"].GetString());
+        m_domainIdHasBeenSet = true;
+    }
+
+    if (value.HasMember("DomainName") && !value["DomainName"].IsNull())
+    {
+        if (!value["DomainName"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `Device.DomainName` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_domainName = string(value["DomainName"].GetString());
+        m_domainNameHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -379,6 +401,22 @@ void Device::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Allocato
         {
             value[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
         }
+    }
+
+    if (m_domainIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "DomainId";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_domainId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_domainNameHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "DomainName";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_domainName.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -638,5 +676,37 @@ void Device::SetIpPortSet(const vector<string>& _ipPortSet)
 bool Device::IpPortSetHasBeenSet() const
 {
     return m_ipPortSetHasBeenSet;
+}
+
+string Device::GetDomainId() const
+{
+    return m_domainId;
+}
+
+void Device::SetDomainId(const string& _domainId)
+{
+    m_domainId = _domainId;
+    m_domainIdHasBeenSet = true;
+}
+
+bool Device::DomainIdHasBeenSet() const
+{
+    return m_domainIdHasBeenSet;
+}
+
+string Device::GetDomainName() const
+{
+    return m_domainName;
+}
+
+void Device::SetDomainName(const string& _domainName)
+{
+    m_domainName = _domainName;
+    m_domainNameHasBeenSet = true;
+}
+
+bool Device::DomainNameHasBeenSet() const
+{
+    return m_domainNameHasBeenSet;
 }
 

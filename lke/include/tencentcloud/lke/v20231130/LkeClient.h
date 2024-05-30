@@ -434,7 +434,7 @@ namespace TencentCloud
                 CheckAttributeLabelReferOutcomeCallable CheckAttributeLabelReferCallable(const Model::CheckAttributeLabelReferRequest& request);
 
                 /**
-                 *创建只是引擎应用，包括：知识管理应用、知识摘要应用、标签提取应用。
+                 *创建知识引擎应用。
                  * @param req CreateAppRequest
                  * @return CreateAppOutcome
                  */

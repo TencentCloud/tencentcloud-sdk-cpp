@@ -28,7 +28,8 @@ DescribeCustomRuleListRequest::DescribeCustomRuleListRequest() :
     m_limitHasBeenSet(false),
     m_filtersHasBeenSet(false),
     m_orderHasBeenSet(false),
-    m_byHasBeenSet(false)
+    m_byHasBeenSet(false),
+    m_domainListHasBeenSet(false)
 {
 }
 
@@ -92,6 +93,19 @@ string DescribeCustomRuleListRequest::ToJsonString() const
         string key = "By";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_by.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_domainListHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "DomainList";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        for (auto itr = m_domainList.begin(); itr != m_domainList.end(); ++itr)
+        {
+            d[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
+        }
     }
 
 
@@ -196,6 +210,22 @@ void DescribeCustomRuleListRequest::SetBy(const string& _by)
 bool DescribeCustomRuleListRequest::ByHasBeenSet() const
 {
     return m_byHasBeenSet;
+}
+
+vector<string> DescribeCustomRuleListRequest::GetDomainList() const
+{
+    return m_domainList;
+}
+
+void DescribeCustomRuleListRequest::SetDomainList(const vector<string>& _domainList)
+{
+    m_domainList = _domainList;
+    m_domainListHasBeenSet = true;
+}
+
+bool DescribeCustomRuleListRequest::DomainListHasBeenSet() const
+{
+    return m_domainListHasBeenSet;
 }
 
 

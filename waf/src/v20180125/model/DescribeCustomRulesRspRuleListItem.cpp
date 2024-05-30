@@ -34,7 +34,13 @@ DescribeCustomRulesRspRuleListItem::DescribeCustomRulesRspRuleListItem() :
     m_eventIdHasBeenSet(false),
     m_modifyTimeHasBeenSet(false),
     m_validStatusHasBeenSet(false),
-    m_sourceHasBeenSet(false)
+    m_sourceHasBeenSet(false),
+    m_jobTypeHasBeenSet(false),
+    m_jobDateTimeHasBeenSet(false),
+    m_cronTypeHasBeenSet(false),
+    m_labelHasBeenSet(false),
+    m_pageIdHasBeenSet(false),
+    m_domainHasBeenSet(false)
 {
 }
 
@@ -193,6 +199,73 @@ CoreInternalOutcome DescribeCustomRulesRspRuleListItem::Deserialize(const rapidj
         m_sourceHasBeenSet = true;
     }
 
+    if (value.HasMember("JobType") && !value["JobType"].IsNull())
+    {
+        if (!value["JobType"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `DescribeCustomRulesRspRuleListItem.JobType` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_jobType = string(value["JobType"].GetString());
+        m_jobTypeHasBeenSet = true;
+    }
+
+    if (value.HasMember("JobDateTime") && !value["JobDateTime"].IsNull())
+    {
+        if (!value["JobDateTime"].IsObject())
+        {
+            return CoreInternalOutcome(Core::Error("response `DescribeCustomRulesRspRuleListItem.JobDateTime` is not object type").SetRequestId(requestId));
+        }
+
+        CoreInternalOutcome outcome = m_jobDateTime.Deserialize(value["JobDateTime"]);
+        if (!outcome.IsSuccess())
+        {
+            outcome.GetError().SetRequestId(requestId);
+            return outcome;
+        }
+
+        m_jobDateTimeHasBeenSet = true;
+    }
+
+    if (value.HasMember("CronType") && !value["CronType"].IsNull())
+    {
+        if (!value["CronType"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `DescribeCustomRulesRspRuleListItem.CronType` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_cronType = string(value["CronType"].GetString());
+        m_cronTypeHasBeenSet = true;
+    }
+
+    if (value.HasMember("Label") && !value["Label"].IsNull())
+    {
+        if (!value["Label"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `DescribeCustomRulesRspRuleListItem.Label` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_label = string(value["Label"].GetString());
+        m_labelHasBeenSet = true;
+    }
+
+    if (value.HasMember("PageId") && !value["PageId"].IsNull())
+    {
+        if (!value["PageId"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `DescribeCustomRulesRspRuleListItem.PageId` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_pageId = string(value["PageId"].GetString());
+        m_pageIdHasBeenSet = true;
+    }
+
+    if (value.HasMember("Domain") && !value["Domain"].IsNull())
+    {
+        if (!value["Domain"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `DescribeCustomRulesRspRuleListItem.Domain` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_domain = string(value["Domain"].GetString());
+        m_domainHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -317,6 +390,55 @@ void DescribeCustomRulesRspRuleListItem::ToJsonObject(rapidjson::Value &value, r
         string key = "Source";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_source.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_jobTypeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "JobType";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_jobType.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_jobDateTimeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "JobDateTime";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_jobDateTime.ToJsonObject(value[key.c_str()], allocator);
+    }
+
+    if (m_cronTypeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "CronType";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_cronType.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_labelHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Label";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_label.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_pageIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "PageId";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_pageId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_domainHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Domain";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_domain.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -544,5 +666,101 @@ void DescribeCustomRulesRspRuleListItem::SetSource(const string& _source)
 bool DescribeCustomRulesRspRuleListItem::SourceHasBeenSet() const
 {
     return m_sourceHasBeenSet;
+}
+
+string DescribeCustomRulesRspRuleListItem::GetJobType() const
+{
+    return m_jobType;
+}
+
+void DescribeCustomRulesRspRuleListItem::SetJobType(const string& _jobType)
+{
+    m_jobType = _jobType;
+    m_jobTypeHasBeenSet = true;
+}
+
+bool DescribeCustomRulesRspRuleListItem::JobTypeHasBeenSet() const
+{
+    return m_jobTypeHasBeenSet;
+}
+
+JobDateTime DescribeCustomRulesRspRuleListItem::GetJobDateTime() const
+{
+    return m_jobDateTime;
+}
+
+void DescribeCustomRulesRspRuleListItem::SetJobDateTime(const JobDateTime& _jobDateTime)
+{
+    m_jobDateTime = _jobDateTime;
+    m_jobDateTimeHasBeenSet = true;
+}
+
+bool DescribeCustomRulesRspRuleListItem::JobDateTimeHasBeenSet() const
+{
+    return m_jobDateTimeHasBeenSet;
+}
+
+string DescribeCustomRulesRspRuleListItem::GetCronType() const
+{
+    return m_cronType;
+}
+
+void DescribeCustomRulesRspRuleListItem::SetCronType(const string& _cronType)
+{
+    m_cronType = _cronType;
+    m_cronTypeHasBeenSet = true;
+}
+
+bool DescribeCustomRulesRspRuleListItem::CronTypeHasBeenSet() const
+{
+    return m_cronTypeHasBeenSet;
+}
+
+string DescribeCustomRulesRspRuleListItem::GetLabel() const
+{
+    return m_label;
+}
+
+void DescribeCustomRulesRspRuleListItem::SetLabel(const string& _label)
+{
+    m_label = _label;
+    m_labelHasBeenSet = true;
+}
+
+bool DescribeCustomRulesRspRuleListItem::LabelHasBeenSet() const
+{
+    return m_labelHasBeenSet;
+}
+
+string DescribeCustomRulesRspRuleListItem::GetPageId() const
+{
+    return m_pageId;
+}
+
+void DescribeCustomRulesRspRuleListItem::SetPageId(const string& _pageId)
+{
+    m_pageId = _pageId;
+    m_pageIdHasBeenSet = true;
+}
+
+bool DescribeCustomRulesRspRuleListItem::PageIdHasBeenSet() const
+{
+    return m_pageIdHasBeenSet;
+}
+
+string DescribeCustomRulesRspRuleListItem::GetDomain() const
+{
+    return m_domain;
+}
+
+void DescribeCustomRulesRspRuleListItem::SetDomain(const string& _domain)
+{
+    m_domain = _domain;
+    m_domainHasBeenSet = true;
+}
+
+bool DescribeCustomRulesRspRuleListItem::DomainHasBeenSet() const
+{
+    return m_domainHasBeenSet;
 }
 

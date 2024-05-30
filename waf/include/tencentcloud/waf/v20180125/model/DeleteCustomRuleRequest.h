@@ -21,6 +21,7 @@
 #include <vector>
 #include <map>
 #include <tencentcloud/core/AbstractModel.h>
+#include <tencentcloud/waf/v20180125/model/DomainRuleId.h>
 
 
 namespace TencentCloud
@@ -105,6 +106,27 @@ namespace TencentCloud
                      */
                     bool EditionHasBeenSet() const;
 
+                    /**
+                     * 获取批量删除的规则列表
+                     * @return DomainRuleIdList 批量删除的规则列表
+                     * 
+                     */
+                    std::vector<DomainRuleId> GetDomainRuleIdList() const;
+
+                    /**
+                     * 设置批量删除的规则列表
+                     * @param _domainRuleIdList 批量删除的规则列表
+                     * 
+                     */
+                    void SetDomainRuleIdList(const std::vector<DomainRuleId>& _domainRuleIdList);
+
+                    /**
+                     * 判断参数 DomainRuleIdList 是否已赋值
+                     * @return DomainRuleIdList 是否已赋值
+                     * 
+                     */
+                    bool DomainRuleIdListHasBeenSet() const;
+
                 private:
 
                     /**
@@ -124,6 +146,12 @@ namespace TencentCloud
                      */
                     std::string m_edition;
                     bool m_editionHasBeenSet;
+
+                    /**
+                     * 批量删除的规则列表
+                     */
+                    std::vector<DomainRuleId> m_domainRuleIdList;
+                    bool m_domainRuleIdListHasBeenSet;
 
                 };
             }
