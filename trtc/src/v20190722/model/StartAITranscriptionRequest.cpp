@@ -26,6 +26,7 @@ StartAITranscriptionRequest::StartAITranscriptionRequest() :
     m_sdkAppIdHasBeenSet(false),
     m_roomIdHasBeenSet(false),
     m_transcriptionParamsHasBeenSet(false),
+    m_sessionIdHasBeenSet(false),
     m_roomIdTypeHasBeenSet(false),
     m_recognizeConfigHasBeenSet(false)
 {
@@ -61,6 +62,14 @@ string StartAITranscriptionRequest::ToJsonString() const
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
         m_transcriptionParams.ToJsonObject(d[key.c_str()], allocator);
+    }
+
+    if (m_sessionIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "SessionId";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_sessionId.c_str(), allocator).Move(), allocator);
     }
 
     if (m_roomIdTypeHasBeenSet)
@@ -134,6 +143,22 @@ void StartAITranscriptionRequest::SetTranscriptionParams(const TranscriptionPara
 bool StartAITranscriptionRequest::TranscriptionParamsHasBeenSet() const
 {
     return m_transcriptionParamsHasBeenSet;
+}
+
+string StartAITranscriptionRequest::GetSessionId() const
+{
+    return m_sessionId;
+}
+
+void StartAITranscriptionRequest::SetSessionId(const string& _sessionId)
+{
+    m_sessionId = _sessionId;
+    m_sessionIdHasBeenSet = true;
+}
+
+bool StartAITranscriptionRequest::SessionIdHasBeenSet() const
+{
+    return m_sessionIdHasBeenSet;
 }
 
 uint64_t StartAITranscriptionRequest::GetRoomIdType() const

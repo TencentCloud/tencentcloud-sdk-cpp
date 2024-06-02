@@ -22,6 +22,7 @@ using namespace std;
 
 RecognizeConfig::RecognizeConfig() :
     m_languageHasBeenSet(false),
+    m_modelHasBeenSet(false),
     m_translationLanguageHasBeenSet(false)
 {
 }
@@ -39,6 +40,16 @@ CoreInternalOutcome RecognizeConfig::Deserialize(const rapidjson::Value &value)
         }
         m_language = string(value["Language"].GetString());
         m_languageHasBeenSet = true;
+    }
+
+    if (value.HasMember("Model") && !value["Model"].IsNull())
+    {
+        if (!value["Model"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `RecognizeConfig.Model` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_model = string(value["Model"].GetString());
+        m_modelHasBeenSet = true;
     }
 
     if (value.HasMember("TranslationLanguage") && !value["TranslationLanguage"].IsNull())
@@ -66,6 +77,14 @@ void RecognizeConfig::ToJsonObject(rapidjson::Value &value, rapidjson::Document:
         value.AddMember(iKey, rapidjson::Value(m_language.c_str(), allocator).Move(), allocator);
     }
 
+    if (m_modelHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Model";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_model.c_str(), allocator).Move(), allocator);
+    }
+
     if (m_translationLanguageHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
@@ -91,6 +110,22 @@ void RecognizeConfig::SetLanguage(const string& _language)
 bool RecognizeConfig::LanguageHasBeenSet() const
 {
     return m_languageHasBeenSet;
+}
+
+string RecognizeConfig::GetModel() const
+{
+    return m_model;
+}
+
+void RecognizeConfig::SetModel(const string& _model)
+{
+    m_model = _model;
+    m_modelHasBeenSet = true;
+}
+
+bool RecognizeConfig::ModelHasBeenSet() const
+{
+    return m_modelHasBeenSet;
 }
 
 string RecognizeConfig::GetTranslationLanguage() const

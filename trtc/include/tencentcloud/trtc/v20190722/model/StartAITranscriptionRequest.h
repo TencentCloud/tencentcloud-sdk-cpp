@@ -45,15 +45,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取TRTC的[SdkAppId](https://cloud.tencent.com/document/product/647/46351#sdkappid)，使用该sdkappid开启任务。
-                     * @return SdkAppId TRTC的[SdkAppId](https://cloud.tencent.com/document/product/647/46351#sdkappid)，使用该sdkappid开启任务。
+                     * 获取TRTC的[SdkAppId](https://cloud.tencent.com/document/product/647/46351#sdkappid)，和开启转录任务的房间使用的SdkAppId相同。
+                     * @return SdkAppId TRTC的[SdkAppId](https://cloud.tencent.com/document/product/647/46351#sdkappid)，和开启转录任务的房间使用的SdkAppId相同。
                      * 
                      */
                     uint64_t GetSdkAppId() const;
 
                     /**
-                     * 设置TRTC的[SdkAppId](https://cloud.tencent.com/document/product/647/46351#sdkappid)，使用该sdkappid开启任务。
-                     * @param _sdkAppId TRTC的[SdkAppId](https://cloud.tencent.com/document/product/647/46351#sdkappid)，使用该sdkappid开启任务。
+                     * 设置TRTC的[SdkAppId](https://cloud.tencent.com/document/product/647/46351#sdkappid)，和开启转录任务的房间使用的SdkAppId相同。
+                     * @param _sdkAppId TRTC的[SdkAppId](https://cloud.tencent.com/document/product/647/46351#sdkappid)，和开启转录任务的房间使用的SdkAppId相同。
                      * 
                      */
                     void SetSdkAppId(const uint64_t& _sdkAppId);
@@ -66,15 +66,15 @@ namespace TencentCloud
                     bool SdkAppIdHasBeenSet() const;
 
                     /**
-                     * 获取TRTC的[RoomId](https://cloud.tencent.com/document/product/647/46351#roomid)，使用该roomid开启任务。
-                     * @return RoomId TRTC的[RoomId](https://cloud.tencent.com/document/product/647/46351#roomid)，使用该roomid开启任务。
+                     * 获取TRTC的[RoomId](https://cloud.tencent.com/document/product/647/46351#roomid)，表示开启转录任务的房间号。
+                     * @return RoomId TRTC的[RoomId](https://cloud.tencent.com/document/product/647/46351#roomid)，表示开启转录任务的房间号。
                      * 
                      */
                     std::string GetRoomId() const;
 
                     /**
-                     * 设置TRTC的[RoomId](https://cloud.tencent.com/document/product/647/46351#roomid)，使用该roomid开启任务。
-                     * @param _roomId TRTC的[RoomId](https://cloud.tencent.com/document/product/647/46351#roomid)，使用该roomid开启任务。
+                     * 设置TRTC的[RoomId](https://cloud.tencent.com/document/product/647/46351#roomid)，表示开启转录任务的房间号。
+                     * @param _roomId TRTC的[RoomId](https://cloud.tencent.com/document/product/647/46351#roomid)，表示开启转录任务的房间号。
                      * 
                      */
                     void SetRoomId(const std::string& _roomId);
@@ -87,15 +87,15 @@ namespace TencentCloud
                     bool RoomIdHasBeenSet() const;
 
                     /**
-                     * 获取启动转录机器人和鉴权的参数。
-                     * @return TranscriptionParams 启动转录机器人和鉴权的参数。
+                     * 获取转录机器人的参数。
+                     * @return TranscriptionParams 转录机器人的参数。
                      * 
                      */
                     TranscriptionParams GetTranscriptionParams() const;
 
                     /**
-                     * 设置启动转录机器人和鉴权的参数。
-                     * @param _transcriptionParams 启动转录机器人和鉴权的参数。
+                     * 设置转录机器人的参数。
+                     * @param _transcriptionParams 转录机器人的参数。
                      * 
                      */
                     void SetTranscriptionParams(const TranscriptionParams& _transcriptionParams);
@@ -106,6 +106,47 @@ namespace TencentCloud
                      * 
                      */
                     bool TranscriptionParamsHasBeenSet() const;
+
+                    /**
+                     * 获取调用方传入的唯一Id，服务端用来去重。
+注意：
+如果传入该参数，服务端优先使用该参数来去重。
+如果不传该参数，服务端的去重策略如下：
+- 如果TranscriptionMode字段是0，则一个房间只能开启一个任务
+- 如果TranscriptionMode字段是1，则一个TargetUserId只能开启一个任务
+                     * @return SessionId 调用方传入的唯一Id，服务端用来去重。
+注意：
+如果传入该参数，服务端优先使用该参数来去重。
+如果不传该参数，服务端的去重策略如下：
+- 如果TranscriptionMode字段是0，则一个房间只能开启一个任务
+- 如果TranscriptionMode字段是1，则一个TargetUserId只能开启一个任务
+                     * 
+                     */
+                    std::string GetSessionId() const;
+
+                    /**
+                     * 设置调用方传入的唯一Id，服务端用来去重。
+注意：
+如果传入该参数，服务端优先使用该参数来去重。
+如果不传该参数，服务端的去重策略如下：
+- 如果TranscriptionMode字段是0，则一个房间只能开启一个任务
+- 如果TranscriptionMode字段是1，则一个TargetUserId只能开启一个任务
+                     * @param _sessionId 调用方传入的唯一Id，服务端用来去重。
+注意：
+如果传入该参数，服务端优先使用该参数来去重。
+如果不传该参数，服务端的去重策略如下：
+- 如果TranscriptionMode字段是0，则一个房间只能开启一个任务
+- 如果TranscriptionMode字段是1，则一个TargetUserId只能开启一个任务
+                     * 
+                     */
+                    void SetSessionId(const std::string& _sessionId);
+
+                    /**
+                     * 判断参数 SessionId 是否已赋值
+                     * @return SessionId 是否已赋值
+                     * 
+                     */
+                    bool SessionIdHasBeenSet() const;
 
                     /**
                      * 获取TRTC房间号的类型，0代表数字房间号，1代表字符串房间号。不填默认是数字房间号。
@@ -129,15 +170,15 @@ namespace TencentCloud
                     bool RoomIdTypeHasBeenSet() const;
 
                     /**
-                     * 获取语音识别配置
-                     * @return RecognizeConfig 语音识别配置
+                     * 获取语音识别配置。
+                     * @return RecognizeConfig 语音识别配置。
                      * 
                      */
                     RecognizeConfig GetRecognizeConfig() const;
 
                     /**
-                     * 设置语音识别配置
-                     * @param _recognizeConfig 语音识别配置
+                     * 设置语音识别配置。
+                     * @param _recognizeConfig 语音识别配置。
                      * 
                      */
                     void SetRecognizeConfig(const RecognizeConfig& _recognizeConfig);
@@ -152,22 +193,33 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * TRTC的[SdkAppId](https://cloud.tencent.com/document/product/647/46351#sdkappid)，使用该sdkappid开启任务。
+                     * TRTC的[SdkAppId](https://cloud.tencent.com/document/product/647/46351#sdkappid)，和开启转录任务的房间使用的SdkAppId相同。
                      */
                     uint64_t m_sdkAppId;
                     bool m_sdkAppIdHasBeenSet;
 
                     /**
-                     * TRTC的[RoomId](https://cloud.tencent.com/document/product/647/46351#roomid)，使用该roomid开启任务。
+                     * TRTC的[RoomId](https://cloud.tencent.com/document/product/647/46351#roomid)，表示开启转录任务的房间号。
                      */
                     std::string m_roomId;
                     bool m_roomIdHasBeenSet;
 
                     /**
-                     * 启动转录机器人和鉴权的参数。
+                     * 转录机器人的参数。
                      */
                     TranscriptionParams m_transcriptionParams;
                     bool m_transcriptionParamsHasBeenSet;
+
+                    /**
+                     * 调用方传入的唯一Id，服务端用来去重。
+注意：
+如果传入该参数，服务端优先使用该参数来去重。
+如果不传该参数，服务端的去重策略如下：
+- 如果TranscriptionMode字段是0，则一个房间只能开启一个任务
+- 如果TranscriptionMode字段是1，则一个TargetUserId只能开启一个任务
+                     */
+                    std::string m_sessionId;
+                    bool m_sessionIdHasBeenSet;
 
                     /**
                      * TRTC房间号的类型，0代表数字房间号，1代表字符串房间号。不填默认是数字房间号。
@@ -176,7 +228,7 @@ namespace TencentCloud
                     bool m_roomIdTypeHasBeenSet;
 
                     /**
-                     * 语音识别配置
+                     * 语音识别配置。
                      */
                     RecognizeConfig m_recognizeConfig;
                     bool m_recognizeConfigHasBeenSet;

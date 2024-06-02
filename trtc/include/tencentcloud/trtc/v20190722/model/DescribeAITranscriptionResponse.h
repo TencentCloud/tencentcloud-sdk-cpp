@@ -44,8 +44,8 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取起始时间。
-                     * @return StartTime 起始时间。
+                     * 获取任务开始时间。
+                     * @return StartTime 任务开始时间。
                      * 
                      */
                     std::string GetStartTime() const;
@@ -59,7 +59,17 @@ namespace TencentCloud
 
                     /**
                      * 获取转录任务状态。
+有4个值：
+1、Idle表示任务未开始
+2、Preparing表示任务准备中
+3、InProgress表示任务正在运行
+4、Stopped表示任务已停止，正在清理资源中
                      * @return Status 转录任务状态。
+有4个值：
+1、Idle表示任务未开始
+2、Preparing表示任务准备中
+3、InProgress表示任务正在运行
+4、Stopped表示任务已停止，正在清理资源中
                      * 
                      */
                     std::string GetStatus() const;
@@ -71,19 +81,64 @@ namespace TencentCloud
                      */
                     bool StatusHasBeenSet() const;
 
+                    /**
+                     * 获取唯一标识一次任务。
+                     * @return TaskId 唯一标识一次任务。
+                     * 
+                     */
+                    std::string GetTaskId() const;
+
+                    /**
+                     * 判断参数 TaskId 是否已赋值
+                     * @return TaskId 是否已赋值
+                     * 
+                     */
+                    bool TaskIdHasBeenSet() const;
+
+                    /**
+                     * 获取开启转录任务时填写的SessionId，如果没写则不返回。
+                     * @return SessionId 开启转录任务时填写的SessionId，如果没写则不返回。
+                     * 
+                     */
+                    std::string GetSessionId() const;
+
+                    /**
+                     * 判断参数 SessionId 是否已赋值
+                     * @return SessionId 是否已赋值
+                     * 
+                     */
+                    bool SessionIdHasBeenSet() const;
+
                 private:
 
                     /**
-                     * 起始时间。
+                     * 任务开始时间。
                      */
                     std::string m_startTime;
                     bool m_startTimeHasBeenSet;
 
                     /**
                      * 转录任务状态。
+有4个值：
+1、Idle表示任务未开始
+2、Preparing表示任务准备中
+3、InProgress表示任务正在运行
+4、Stopped表示任务已停止，正在清理资源中
                      */
                     std::string m_status;
                     bool m_statusHasBeenSet;
+
+                    /**
+                     * 唯一标识一次任务。
+                     */
+                    std::string m_taskId;
+                    bool m_taskIdHasBeenSet;
+
+                    /**
+                     * 开启转录任务时填写的SessionId，如果没写则不返回。
+                     */
+                    std::string m_sessionId;
+                    bool m_sessionIdHasBeenSet;
 
                 };
             }

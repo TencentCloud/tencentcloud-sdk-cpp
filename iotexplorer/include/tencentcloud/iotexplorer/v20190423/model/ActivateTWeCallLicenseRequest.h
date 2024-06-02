@@ -44,15 +44,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取voip类型
-                     * @return PkgType voip类型
+                     * 获取TWecall类型： 1-家庭安防场景； 2-穿戴类场景； 3-生活娱乐场景； 4-对讲及其它场景
+                     * @return PkgType TWecall类型： 1-家庭安防场景； 2-穿戴类场景； 3-生活娱乐场景； 4-对讲及其它场景
                      * 
                      */
                     int64_t GetPkgType() const;
 
                     /**
-                     * 设置voip类型
-                     * @param _pkgType voip类型
+                     * 设置TWecall类型： 1-家庭安防场景； 2-穿戴类场景； 3-生活娱乐场景； 4-对讲及其它场景
+                     * @param _pkgType TWecall类型： 1-家庭安防场景； 2-穿戴类场景； 3-生活娱乐场景； 4-对讲及其它场景
                      * 
                      */
                     void SetPkgType(const int64_t& _pkgType);
@@ -109,7 +109,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * voip类型
+                     * TWecall类型： 1-家庭安防场景； 2-穿戴类场景； 3-生活娱乐场景； 4-对讲及其它场景
                      */
                     int64_t m_pkgType;
                     bool m_pkgTypeHasBeenSet;

@@ -25,7 +25,9 @@ using namespace std;
 
 DescribeAITranscriptionResponse::DescribeAITranscriptionResponse() :
     m_startTimeHasBeenSet(false),
-    m_statusHasBeenSet(false)
+    m_statusHasBeenSet(false),
+    m_taskIdHasBeenSet(false),
+    m_sessionIdHasBeenSet(false)
 {
 }
 
@@ -83,6 +85,26 @@ CoreInternalOutcome DescribeAITranscriptionResponse::Deserialize(const string &p
         m_statusHasBeenSet = true;
     }
 
+    if (rsp.HasMember("TaskId") && !rsp["TaskId"].IsNull())
+    {
+        if (!rsp["TaskId"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `TaskId` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_taskId = string(rsp["TaskId"].GetString());
+        m_taskIdHasBeenSet = true;
+    }
+
+    if (rsp.HasMember("SessionId") && !rsp["SessionId"].IsNull())
+    {
+        if (!rsp["SessionId"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `SessionId` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_sessionId = string(rsp["SessionId"].GetString());
+        m_sessionIdHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -107,6 +129,22 @@ string DescribeAITranscriptionResponse::ToJsonString() const
         string key = "Status";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_status.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_taskIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "TaskId";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_taskId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_sessionIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "SessionId";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_sessionId.c_str(), allocator).Move(), allocator);
     }
 
     rapidjson::Value iKey(rapidjson::kStringType);
@@ -139,6 +177,26 @@ string DescribeAITranscriptionResponse::GetStatus() const
 bool DescribeAITranscriptionResponse::StatusHasBeenSet() const
 {
     return m_statusHasBeenSet;
+}
+
+string DescribeAITranscriptionResponse::GetTaskId() const
+{
+    return m_taskId;
+}
+
+bool DescribeAITranscriptionResponse::TaskIdHasBeenSet() const
+{
+    return m_taskIdHasBeenSet;
+}
+
+string DescribeAITranscriptionResponse::GetSessionId() const
+{
+    return m_sessionId;
+}
+
+bool DescribeAITranscriptionResponse::SessionIdHasBeenSet() const
+{
+    return m_sessionIdHasBeenSet;
 }
 
 

@@ -814,6 +814,49 @@ TrocketClient::DescribeConsumerGroupListOutcomeCallable TrocketClient::DescribeC
     return task->get_future();
 }
 
+TrocketClient::DescribeFusionInstanceListOutcome TrocketClient::DescribeFusionInstanceList(const DescribeFusionInstanceListRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeFusionInstanceList");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeFusionInstanceListResponse rsp = DescribeFusionInstanceListResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeFusionInstanceListOutcome(rsp);
+        else
+            return DescribeFusionInstanceListOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeFusionInstanceListOutcome(outcome.GetError());
+    }
+}
+
+void TrocketClient::DescribeFusionInstanceListAsync(const DescribeFusionInstanceListRequest& request, const DescribeFusionInstanceListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeFusionInstanceList(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+TrocketClient::DescribeFusionInstanceListOutcomeCallable TrocketClient::DescribeFusionInstanceListCallable(const DescribeFusionInstanceListRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeFusionInstanceListOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeFusionInstanceList(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 TrocketClient::DescribeInstanceOutcome TrocketClient::DescribeInstance(const DescribeInstanceRequest &request)
 {
     auto outcome = MakeRequest(request, "DescribeInstance");
