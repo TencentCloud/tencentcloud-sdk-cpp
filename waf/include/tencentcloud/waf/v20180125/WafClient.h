@@ -215,6 +215,8 @@
 #include <tencentcloud/waf/v20180125/model/ModifyAntiInfoLeakRulesResponse.h>
 #include <tencentcloud/waf/v20180125/model/ModifyApiAnalyzeStatusRequest.h>
 #include <tencentcloud/waf/v20180125/model/ModifyApiAnalyzeStatusResponse.h>
+#include <tencentcloud/waf/v20180125/model/ModifyApiSecEventChangeRequest.h>
+#include <tencentcloud/waf/v20180125/model/ModifyApiSecEventChangeResponse.h>
 #include <tencentcloud/waf/v20180125/model/ModifyAreaBanStatusRequest.h>
 #include <tencentcloud/waf/v20180125/model/ModifyAreaBanStatusResponse.h>
 #include <tencentcloud/waf/v20180125/model/ModifyAttackWhiteRuleRequest.h>
@@ -599,6 +601,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::ModifyApiAnalyzeStatusResponse> ModifyApiAnalyzeStatusOutcome;
                 typedef std::future<ModifyApiAnalyzeStatusOutcome> ModifyApiAnalyzeStatusOutcomeCallable;
                 typedef std::function<void(const WafClient*, const Model::ModifyApiAnalyzeStatusRequest&, ModifyApiAnalyzeStatusOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyApiAnalyzeStatusAsyncHandler;
+                typedef Outcome<Core::Error, Model::ModifyApiSecEventChangeResponse> ModifyApiSecEventChangeOutcome;
+                typedef std::future<ModifyApiSecEventChangeOutcome> ModifyApiSecEventChangeOutcomeCallable;
+                typedef std::function<void(const WafClient*, const Model::ModifyApiSecEventChangeRequest&, ModifyApiSecEventChangeOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyApiSecEventChangeAsyncHandler;
                 typedef Outcome<Core::Error, Model::ModifyAreaBanStatusResponse> ModifyAreaBanStatusOutcome;
                 typedef std::future<ModifyAreaBanStatusOutcome> ModifyAreaBanStatusOutcomeCallable;
                 typedef std::function<void(const WafClient*, const Model::ModifyAreaBanStatusRequest&, ModifyAreaBanStatusOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyAreaBanStatusAsyncHandler;
@@ -1594,6 +1599,15 @@ namespace TencentCloud
                 ModifyApiAnalyzeStatusOutcome ModifyApiAnalyzeStatus(const Model::ModifyApiAnalyzeStatusRequest &request);
                 void ModifyApiAnalyzeStatusAsync(const Model::ModifyApiAnalyzeStatusRequest& request, const ModifyApiAnalyzeStatusAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 ModifyApiAnalyzeStatusOutcomeCallable ModifyApiAnalyzeStatusCallable(const Model::ModifyApiAnalyzeStatusRequest& request);
+
+                /**
+                 *api安全状态变更接口
+                 * @param req ModifyApiSecEventChangeRequest
+                 * @return ModifyApiSecEventChangeOutcome
+                 */
+                ModifyApiSecEventChangeOutcome ModifyApiSecEventChange(const Model::ModifyApiSecEventChangeRequest &request);
+                void ModifyApiSecEventChangeAsync(const Model::ModifyApiSecEventChangeRequest& request, const ModifyApiSecEventChangeAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                ModifyApiSecEventChangeOutcomeCallable ModifyApiSecEventChangeCallable(const Model::ModifyApiSecEventChangeRequest& request);
 
                 /**
                  *修改防护域名的地域封禁状态

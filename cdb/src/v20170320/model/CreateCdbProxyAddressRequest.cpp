@@ -40,7 +40,9 @@ CreateCdbProxyAddressRequest::CreateCdbProxyAddressRequest() :
     m_vipHasBeenSet(false),
     m_vPortHasBeenSet(false),
     m_securityGroupHasBeenSet(false),
-    m_connectionPoolTypeHasBeenSet(false)
+    m_connectionPoolTypeHasBeenSet(false),
+    m_autoLoadBalanceHasBeenSet(false),
+    m_accessModeHasBeenSet(false)
 {
 }
 
@@ -205,6 +207,22 @@ string CreateCdbProxyAddressRequest::ToJsonString() const
         string key = "ConnectionPoolType";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_connectionPoolType.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_autoLoadBalanceHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "AutoLoadBalance";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_autoLoadBalance, allocator);
+    }
+
+    if (m_accessModeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "AccessMode";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_accessMode.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -501,6 +519,38 @@ void CreateCdbProxyAddressRequest::SetConnectionPoolType(const string& _connecti
 bool CreateCdbProxyAddressRequest::ConnectionPoolTypeHasBeenSet() const
 {
     return m_connectionPoolTypeHasBeenSet;
+}
+
+bool CreateCdbProxyAddressRequest::GetAutoLoadBalance() const
+{
+    return m_autoLoadBalance;
+}
+
+void CreateCdbProxyAddressRequest::SetAutoLoadBalance(const bool& _autoLoadBalance)
+{
+    m_autoLoadBalance = _autoLoadBalance;
+    m_autoLoadBalanceHasBeenSet = true;
+}
+
+bool CreateCdbProxyAddressRequest::AutoLoadBalanceHasBeenSet() const
+{
+    return m_autoLoadBalanceHasBeenSet;
+}
+
+string CreateCdbProxyAddressRequest::GetAccessMode() const
+{
+    return m_accessMode;
+}
+
+void CreateCdbProxyAddressRequest::SetAccessMode(const string& _accessMode)
+{
+    m_accessMode = _accessMode;
+    m_accessModeHasBeenSet = true;
+}
+
+bool CreateCdbProxyAddressRequest::AccessModeHasBeenSet() const
+{
+    return m_accessModeHasBeenSet;
 }
 
 

@@ -41,7 +41,9 @@ KongUpstreamInfo::KongUpstreamInfo() :
     m_sourceNameHasBeenSet(false),
     m_realSourceTypeHasBeenSet(false),
     m_healthStatusHasBeenSet(false),
-    m_scfCamAuthEnableHasBeenSet(false)
+    m_scfCamAuthEnableHasBeenSet(false),
+    m_scfIsBase64EncodedHasBeenSet(false),
+    m_scfIsIntegratedResponseHasBeenSet(false)
 {
 }
 
@@ -270,6 +272,26 @@ CoreInternalOutcome KongUpstreamInfo::Deserialize(const rapidjson::Value &value)
         m_scfCamAuthEnableHasBeenSet = true;
     }
 
+    if (value.HasMember("ScfIsBase64Encoded") && !value["ScfIsBase64Encoded"].IsNull())
+    {
+        if (!value["ScfIsBase64Encoded"].IsBool())
+        {
+            return CoreInternalOutcome(Core::Error("response `KongUpstreamInfo.ScfIsBase64Encoded` IsBool=false incorrectly").SetRequestId(requestId));
+        }
+        m_scfIsBase64Encoded = value["ScfIsBase64Encoded"].GetBool();
+        m_scfIsBase64EncodedHasBeenSet = true;
+    }
+
+    if (value.HasMember("ScfIsIntegratedResponse") && !value["ScfIsIntegratedResponse"].IsNull())
+    {
+        if (!value["ScfIsIntegratedResponse"].IsBool())
+        {
+            return CoreInternalOutcome(Core::Error("response `KongUpstreamInfo.ScfIsIntegratedResponse` IsBool=false incorrectly").SetRequestId(requestId));
+        }
+        m_scfIsIntegratedResponse = value["ScfIsIntegratedResponse"].GetBool();
+        m_scfIsIntegratedResponseHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -450,6 +472,22 @@ void KongUpstreamInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Document
         string key = "ScfCamAuthEnable";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_scfCamAuthEnable, allocator);
+    }
+
+    if (m_scfIsBase64EncodedHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ScfIsBase64Encoded";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_scfIsBase64Encoded, allocator);
+    }
+
+    if (m_scfIsIntegratedResponseHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ScfIsIntegratedResponse";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_scfIsIntegratedResponse, allocator);
     }
 
 }
@@ -789,5 +827,37 @@ void KongUpstreamInfo::SetScfCamAuthEnable(const bool& _scfCamAuthEnable)
 bool KongUpstreamInfo::ScfCamAuthEnableHasBeenSet() const
 {
     return m_scfCamAuthEnableHasBeenSet;
+}
+
+bool KongUpstreamInfo::GetScfIsBase64Encoded() const
+{
+    return m_scfIsBase64Encoded;
+}
+
+void KongUpstreamInfo::SetScfIsBase64Encoded(const bool& _scfIsBase64Encoded)
+{
+    m_scfIsBase64Encoded = _scfIsBase64Encoded;
+    m_scfIsBase64EncodedHasBeenSet = true;
+}
+
+bool KongUpstreamInfo::ScfIsBase64EncodedHasBeenSet() const
+{
+    return m_scfIsBase64EncodedHasBeenSet;
+}
+
+bool KongUpstreamInfo::GetScfIsIntegratedResponse() const
+{
+    return m_scfIsIntegratedResponse;
+}
+
+void KongUpstreamInfo::SetScfIsIntegratedResponse(const bool& _scfIsIntegratedResponse)
+{
+    m_scfIsIntegratedResponse = _scfIsIntegratedResponse;
+    m_scfIsIntegratedResponseHasBeenSet = true;
+}
+
+bool KongUpstreamInfo::ScfIsIntegratedResponseHasBeenSet() const
+{
+    return m_scfIsIntegratedResponseHasBeenSet;
 }
 

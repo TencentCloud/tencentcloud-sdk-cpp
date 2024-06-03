@@ -84,6 +84,48 @@ namespace TencentCloud
                      */
                     bool TemplateIdHasBeenSet() const;
 
+                    /**
+                     * 获取结束后是否自动支付尾款，默认开启 传入1关闭
+                     * @return IsAutoPay 结束后是否自动支付尾款，默认开启 传入1关闭
+                     * 
+                     */
+                    int64_t GetIsAutoPay() const;
+
+                    /**
+                     * 设置结束后是否自动支付尾款，默认开启 传入1关闭
+                     * @param _isAutoPay 结束后是否自动支付尾款，默认开启 传入1关闭
+                     * 
+                     */
+                    void SetIsAutoPay(const int64_t& _isAutoPay);
+
+                    /**
+                     * 判断参数 IsAutoPay 是否已赋值
+                     * @return IsAutoPay 是否已赋值
+                     * 
+                     */
+                    bool IsAutoPayHasBeenSet() const;
+
+                    /**
+                     * 获取结束后是否自动进行梯度保证金扣除，默认开启 传入1关闭
+                     * @return IsBidAutoPay 结束后是否自动进行梯度保证金扣除，默认开启 传入1关闭
+                     * 
+                     */
+                    int64_t GetIsBidAutoPay() const;
+
+                    /**
+                     * 设置结束后是否自动进行梯度保证金扣除，默认开启 传入1关闭
+                     * @param _isBidAutoPay 结束后是否自动进行梯度保证金扣除，默认开启 传入1关闭
+                     * 
+                     */
+                    void SetIsBidAutoPay(const int64_t& _isBidAutoPay);
+
+                    /**
+                     * 判断参数 IsBidAutoPay 是否已赋值
+                     * @return IsBidAutoPay 是否已赋值
+                     * 
+                     */
+                    bool IsBidAutoPayHasBeenSet() const;
+
                 private:
 
                     /**
@@ -97,6 +139,18 @@ namespace TencentCloud
                      */
                     std::string m_templateId;
                     bool m_templateIdHasBeenSet;
+
+                    /**
+                     * 结束后是否自动支付尾款，默认开启 传入1关闭
+                     */
+                    int64_t m_isAutoPay;
+                    bool m_isAutoPayHasBeenSet;
+
+                    /**
+                     * 结束后是否自动进行梯度保证金扣除，默认开启 传入1关闭
+                     */
+                    int64_t m_isBidAutoPay;
+                    bool m_isBidAutoPayHasBeenSet;
 
                 };
             }

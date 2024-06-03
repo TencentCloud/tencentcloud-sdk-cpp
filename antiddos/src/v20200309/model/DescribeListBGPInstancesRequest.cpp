@@ -43,7 +43,8 @@ DescribeListBGPInstancesRequest::DescribeListBGPInstancesRequest() :
     m_filterAssetIpListHasBeenSet(false),
     m_filterBasicPlusFlagHasBeenSet(false),
     m_filterPlanCntFlagHasBeenSet(false),
-    m_filterTransRegionFlagHasBeenSet(false)
+    m_filterTransRegionFlagHasBeenSet(false),
+    m_filterZoneIdListHasBeenSet(false)
 {
 }
 
@@ -231,6 +232,19 @@ string DescribeListBGPInstancesRequest::ToJsonString() const
         string key = "FilterTransRegionFlag";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_filterTransRegionFlag, allocator);
+    }
+
+    if (m_filterZoneIdListHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "FilterZoneIdList";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        for (auto itr = m_filterZoneIdList.begin(); itr != m_filterZoneIdList.end(); ++itr)
+        {
+            d[key.c_str()].PushBack(rapidjson::Value().SetInt64(*itr), allocator);
+        }
     }
 
 
@@ -575,6 +589,22 @@ void DescribeListBGPInstancesRequest::SetFilterTransRegionFlag(const uint64_t& _
 bool DescribeListBGPInstancesRequest::FilterTransRegionFlagHasBeenSet() const
 {
     return m_filterTransRegionFlagHasBeenSet;
+}
+
+vector<int64_t> DescribeListBGPInstancesRequest::GetFilterZoneIdList() const
+{
+    return m_filterZoneIdList;
+}
+
+void DescribeListBGPInstancesRequest::SetFilterZoneIdList(const vector<int64_t>& _filterZoneIdList)
+{
+    m_filterZoneIdList = _filterZoneIdList;
+    m_filterZoneIdListHasBeenSet = true;
+}
+
+bool DescribeListBGPInstancesRequest::FilterZoneIdListHasBeenSet() const
+{
+    return m_filterZoneIdListHasBeenSet;
 }
 
 

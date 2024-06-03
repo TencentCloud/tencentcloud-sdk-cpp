@@ -25,7 +25,9 @@ TsfConfigCenter::TsfConfigCenter() :
     m_configCenterInstanceIdHasBeenSet(false),
     m_configCenterInstanceNameHasBeenSet(false),
     m_regionIdHasBeenSet(false),
-    m_namespaceIdHasBeenSet(false)
+    m_namespaceIdHasBeenSet(false),
+    m_currentVersionHasBeenSet(false),
+    m_targetVersionHasBeenSet(false)
 {
 }
 
@@ -84,6 +86,26 @@ CoreInternalOutcome TsfConfigCenter::Deserialize(const rapidjson::Value &value)
         m_namespaceIdHasBeenSet = true;
     }
 
+    if (value.HasMember("CurrentVersion") && !value["CurrentVersion"].IsNull())
+    {
+        if (!value["CurrentVersion"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `TsfConfigCenter.CurrentVersion` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_currentVersion = string(value["CurrentVersion"].GetString());
+        m_currentVersionHasBeenSet = true;
+    }
+
+    if (value.HasMember("TargetVersion") && !value["TargetVersion"].IsNull())
+    {
+        if (!value["TargetVersion"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `TsfConfigCenter.TargetVersion` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_targetVersion = string(value["TargetVersion"].GetString());
+        m_targetVersionHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -129,6 +151,22 @@ void TsfConfigCenter::ToJsonObject(rapidjson::Value &value, rapidjson::Document:
         string key = "NamespaceId";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_namespaceId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_currentVersionHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "CurrentVersion";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_currentVersion.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_targetVersionHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "TargetVersion";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_targetVersion.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -212,5 +250,37 @@ void TsfConfigCenter::SetNamespaceId(const string& _namespaceId)
 bool TsfConfigCenter::NamespaceIdHasBeenSet() const
 {
     return m_namespaceIdHasBeenSet;
+}
+
+string TsfConfigCenter::GetCurrentVersion() const
+{
+    return m_currentVersion;
+}
+
+void TsfConfigCenter::SetCurrentVersion(const string& _currentVersion)
+{
+    m_currentVersion = _currentVersion;
+    m_currentVersionHasBeenSet = true;
+}
+
+bool TsfConfigCenter::CurrentVersionHasBeenSet() const
+{
+    return m_currentVersionHasBeenSet;
+}
+
+string TsfConfigCenter::GetTargetVersion() const
+{
+    return m_targetVersion;
+}
+
+void TsfConfigCenter::SetTargetVersion(const string& _targetVersion)
+{
+    m_targetVersion = _targetVersion;
+    m_targetVersionHasBeenSet = true;
+}
+
+bool TsfConfigCenter::TargetVersionHasBeenSet() const
+{
+    return m_targetVersionHasBeenSet;
 }
 

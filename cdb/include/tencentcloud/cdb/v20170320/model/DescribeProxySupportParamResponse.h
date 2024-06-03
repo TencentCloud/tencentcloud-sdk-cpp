@@ -171,6 +171,38 @@ namespace TencentCloud
                      */
                     bool SupportReadOnlyHasBeenSet() const;
 
+                    /**
+                     * 获取是否自动均衡负载
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return SupportAutoLoadBalance 是否自动均衡负载
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    bool GetSupportAutoLoadBalance() const;
+
+                    /**
+                     * 判断参数 SupportAutoLoadBalance 是否已赋值
+                     * @return SupportAutoLoadBalance 是否已赋值
+                     * 
+                     */
+                    bool SupportAutoLoadBalanceHasBeenSet() const;
+
+                    /**
+                     * 获取是否支持接入模式
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return SupportAccessMode 是否支持接入模式
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    bool GetSupportAccessMode() const;
+
+                    /**
+                     * 判断参数 SupportAccessMode 是否已赋值
+                     * @return SupportAccessMode 是否已赋值
+                     * 
+                     */
+                    bool SupportAccessModeHasBeenSet() const;
+
                 private:
 
                     /**
@@ -228,6 +260,20 @@ namespace TencentCloud
                      */
                     bool m_supportReadOnly;
                     bool m_supportReadOnlyHasBeenSet;
+
+                    /**
+                     * 是否自动均衡负载
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    bool m_supportAutoLoadBalance;
+                    bool m_supportAutoLoadBalanceHasBeenSet;
+
+                    /**
+                     * 是否支持接入模式
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    bool m_supportAccessMode;
+                    bool m_supportAccessModeHasBeenSet;
 
                 };
             }

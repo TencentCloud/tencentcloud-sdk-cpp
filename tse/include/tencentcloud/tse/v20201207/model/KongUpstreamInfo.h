@@ -572,6 +572,56 @@ namespace TencentCloud
                      */
                     bool ScfCamAuthEnableHasBeenSet() const;
 
+                    /**
+                     * 获取云函数是否开启Base64编码，默认为false
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return ScfIsBase64Encoded 云函数是否开启Base64编码，默认为false
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    bool GetScfIsBase64Encoded() const;
+
+                    /**
+                     * 设置云函数是否开启Base64编码，默认为false
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _scfIsBase64Encoded 云函数是否开启Base64编码，默认为false
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetScfIsBase64Encoded(const bool& _scfIsBase64Encoded);
+
+                    /**
+                     * 判断参数 ScfIsBase64Encoded 是否已赋值
+                     * @return ScfIsBase64Encoded 是否已赋值
+                     * 
+                     */
+                    bool ScfIsBase64EncodedHasBeenSet() const;
+
+                    /**
+                     * 获取云函数是否开启响应集成，默认为false
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return ScfIsIntegratedResponse 云函数是否开启响应集成，默认为false
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    bool GetScfIsIntegratedResponse() const;
+
+                    /**
+                     * 设置云函数是否开启响应集成，默认为false
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _scfIsIntegratedResponse 云函数是否开启响应集成，默认为false
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetScfIsIntegratedResponse(const bool& _scfIsIntegratedResponse);
+
+                    /**
+                     * 判断参数 ScfIsIntegratedResponse 是否已赋值
+                     * @return ScfIsIntegratedResponse 是否已赋值
+                     * 
+                     */
+                    bool ScfIsIntegratedResponseHasBeenSet() const;
+
                 private:
 
                     /**
@@ -720,6 +770,20 @@ namespace TencentCloud
                      */
                     bool m_scfCamAuthEnable;
                     bool m_scfCamAuthEnableHasBeenSet;
+
+                    /**
+                     * 云函数是否开启Base64编码，默认为false
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    bool m_scfIsBase64Encoded;
+                    bool m_scfIsBase64EncodedHasBeenSet;
+
+                    /**
+                     * 云函数是否开启响应集成，默认为false
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    bool m_scfIsIntegratedResponse;
+                    bool m_scfIsIntegratedResponseHasBeenSet;
 
                 };
             }

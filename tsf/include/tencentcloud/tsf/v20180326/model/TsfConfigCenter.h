@@ -171,6 +171,56 @@ namespace TencentCloud
                      */
                     bool NamespaceIdHasBeenSet() const;
 
+                    /**
+                     * 获取当前版本
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return CurrentVersion 当前版本
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::string GetCurrentVersion() const;
+
+                    /**
+                     * 设置当前版本
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _currentVersion 当前版本
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetCurrentVersion(const std::string& _currentVersion);
+
+                    /**
+                     * 判断参数 CurrentVersion 是否已赋值
+                     * @return CurrentVersion 是否已赋值
+                     * 
+                     */
+                    bool CurrentVersionHasBeenSet() const;
+
+                    /**
+                     * 获取需要升级的版本
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return TargetVersion 需要升级的版本
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::string GetTargetVersion() const;
+
+                    /**
+                     * 设置需要升级的版本
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _targetVersion 需要升级的版本
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetTargetVersion(const std::string& _targetVersion);
+
+                    /**
+                     * 判断参数 TargetVersion 是否已赋值
+                     * @return TargetVersion 是否已赋值
+                     * 
+                     */
+                    bool TargetVersionHasBeenSet() const;
+
                 private:
 
                     /**
@@ -207,6 +257,20 @@ namespace TencentCloud
                      */
                     std::string m_namespaceId;
                     bool m_namespaceIdHasBeenSet;
+
+                    /**
+                     * 当前版本
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_currentVersion;
+                    bool m_currentVersionHasBeenSet;
+
+                    /**
+                     * 需要升级的版本
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_targetVersion;
+                    bool m_targetVersionHasBeenSet;
 
                 };
             }

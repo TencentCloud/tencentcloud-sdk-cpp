@@ -34,7 +34,9 @@ AdjustCdbProxyAddressRequest::AdjustCdbProxyAddressRequest() :
     m_proxyAddressIdHasBeenSet(false),
     m_transSplitHasBeenSet(false),
     m_connectionPoolHasBeenSet(false),
-    m_proxyAllocationHasBeenSet(false)
+    m_proxyAllocationHasBeenSet(false),
+    m_autoLoadBalanceHasBeenSet(false),
+    m_accessModeHasBeenSet(false)
 {
 }
 
@@ -146,6 +148,22 @@ string AdjustCdbProxyAddressRequest::ToJsonString() const
             d[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
             (*itr).ToJsonObject(d[key.c_str()][i], allocator);
         }
+    }
+
+    if (m_autoLoadBalanceHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "AutoLoadBalance";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_autoLoadBalance, allocator);
+    }
+
+    if (m_accessModeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "AccessMode";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_accessMode.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -346,6 +364,38 @@ void AdjustCdbProxyAddressRequest::SetProxyAllocation(const vector<ProxyAllocati
 bool AdjustCdbProxyAddressRequest::ProxyAllocationHasBeenSet() const
 {
     return m_proxyAllocationHasBeenSet;
+}
+
+bool AdjustCdbProxyAddressRequest::GetAutoLoadBalance() const
+{
+    return m_autoLoadBalance;
+}
+
+void AdjustCdbProxyAddressRequest::SetAutoLoadBalance(const bool& _autoLoadBalance)
+{
+    m_autoLoadBalance = _autoLoadBalance;
+    m_autoLoadBalanceHasBeenSet = true;
+}
+
+bool AdjustCdbProxyAddressRequest::AutoLoadBalanceHasBeenSet() const
+{
+    return m_autoLoadBalanceHasBeenSet;
+}
+
+string AdjustCdbProxyAddressRequest::GetAccessMode() const
+{
+    return m_accessMode;
+}
+
+void AdjustCdbProxyAddressRequest::SetAccessMode(const string& _accessMode)
+{
+    m_accessMode = _accessMode;
+    m_accessModeHasBeenSet = true;
+}
+
+bool AdjustCdbProxyAddressRequest::AccessModeHasBeenSet() const
+{
+    return m_accessModeHasBeenSet;
 }
 
 

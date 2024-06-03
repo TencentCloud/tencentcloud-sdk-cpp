@@ -161,6 +161,7 @@ set(ess_public_header_model
   include/tencentcloud/ess/v20201111/model/RemindFlowRecords.h
   include/tencentcloud/ess/v20201111/model/CreatePreparedPersonalEsignResponse.h
   include/tencentcloud/ess/v20201111/model/DescribeOrganizationSealsResponse.h
+  include/tencentcloud/ess/v20201111/model/CreateUserMobileChangeUrlRequest.h
   include/tencentcloud/ess/v20201111/model/RegistrationOrganizationInfo.h
   include/tencentcloud/ess/v20201111/model/CreateEmbedWebUrlRequest.h
   include/tencentcloud/ess/v20201111/model/DeleteIntegrationEmployeesRequest.h
@@ -239,6 +240,7 @@ set(ess_public_header_model
   include/tencentcloud/ess/v20201111/model/DescribeFlowBriefsRequest.h
   include/tencentcloud/ess/v20201111/model/CreateSealPolicyRequest.h
   include/tencentcloud/ess/v20201111/model/DescribeBillUsageDetailResponse.h
+  include/tencentcloud/ess/v20201111/model/CreateUserMobileChangeUrlResponse.h
   include/tencentcloud/ess/v20201111/model/CreateUserAutoSignEnableUrlResponse.h
   include/tencentcloud/ess/v20201111/model/DescribeSignFaceVideoResponse.h
   include/tencentcloud/ess/v20201111/model/SignUrl.h
@@ -422,6 +424,7 @@ set(ess_src
   src/v20201111/model/RemindFlowRecords.cpp
   src/v20201111/model/CreatePreparedPersonalEsignResponse.cpp
   src/v20201111/model/DescribeOrganizationSealsResponse.cpp
+  src/v20201111/model/CreateUserMobileChangeUrlRequest.cpp
   src/v20201111/model/RegistrationOrganizationInfo.cpp
   src/v20201111/model/CreateEmbedWebUrlRequest.cpp
   src/v20201111/model/DeleteIntegrationEmployeesRequest.cpp
@@ -500,6 +503,7 @@ set(ess_src
   src/v20201111/model/DescribeFlowBriefsRequest.cpp
   src/v20201111/model/CreateSealPolicyRequest.cpp
   src/v20201111/model/DescribeBillUsageDetailResponse.cpp
+  src/v20201111/model/CreateUserMobileChangeUrlResponse.cpp
   src/v20201111/model/CreateUserAutoSignEnableUrlResponse.cpp
   src/v20201111/model/DescribeSignFaceVideoResponse.cpp
   src/v20201111/model/SignUrl.cpp

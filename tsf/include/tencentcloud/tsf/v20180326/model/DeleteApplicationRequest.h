@@ -63,6 +63,27 @@ namespace TencentCloud
                      */
                     bool ApplicationIdHasBeenSet() const;
 
+                    /**
+                     * 获取是否删除镜像仓库
+                     * @return SyncDeleteImageRepository 是否删除镜像仓库
+                     * 
+                     */
+                    bool GetSyncDeleteImageRepository() const;
+
+                    /**
+                     * 设置是否删除镜像仓库
+                     * @param _syncDeleteImageRepository 是否删除镜像仓库
+                     * 
+                     */
+                    void SetSyncDeleteImageRepository(const bool& _syncDeleteImageRepository);
+
+                    /**
+                     * 判断参数 SyncDeleteImageRepository 是否已赋值
+                     * @return SyncDeleteImageRepository 是否已赋值
+                     * 
+                     */
+                    bool SyncDeleteImageRepositoryHasBeenSet() const;
+
                 private:
 
                     /**
@@ -70,6 +91,12 @@ namespace TencentCloud
                      */
                     std::string m_applicationId;
                     bool m_applicationIdHasBeenSet;
+
+                    /**
+                     * 是否删除镜像仓库
+                     */
+                    bool m_syncDeleteImageRepository;
+                    bool m_syncDeleteImageRepositoryHasBeenSet;
 
                 };
             }

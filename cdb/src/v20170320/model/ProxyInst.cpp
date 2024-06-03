@@ -27,7 +27,9 @@ ProxyInst::ProxyInst() :
     m_statusHasBeenSet(false),
     m_weightHasBeenSet(false),
     m_regionHasBeenSet(false),
-    m_zoneHasBeenSet(false)
+    m_zoneHasBeenSet(false),
+    m_instNodeIdHasBeenSet(false),
+    m_instNodeRoleHasBeenSet(false)
 {
 }
 
@@ -106,6 +108,26 @@ CoreInternalOutcome ProxyInst::Deserialize(const rapidjson::Value &value)
         m_zoneHasBeenSet = true;
     }
 
+    if (value.HasMember("InstNodeId") && !value["InstNodeId"].IsNull())
+    {
+        if (!value["InstNodeId"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `ProxyInst.InstNodeId` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_instNodeId = string(value["InstNodeId"].GetString());
+        m_instNodeIdHasBeenSet = true;
+    }
+
+    if (value.HasMember("InstNodeRole") && !value["InstNodeRole"].IsNull())
+    {
+        if (!value["InstNodeRole"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `ProxyInst.InstNodeRole` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_instNodeRole = string(value["InstNodeRole"].GetString());
+        m_instNodeRoleHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -167,6 +189,22 @@ void ProxyInst::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Alloc
         string key = "Zone";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_zone.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_instNodeIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "InstNodeId";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_instNodeId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_instNodeRoleHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "InstNodeRole";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_instNodeRole.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -282,5 +320,37 @@ void ProxyInst::SetZone(const string& _zone)
 bool ProxyInst::ZoneHasBeenSet() const
 {
     return m_zoneHasBeenSet;
+}
+
+string ProxyInst::GetInstNodeId() const
+{
+    return m_instNodeId;
+}
+
+void ProxyInst::SetInstNodeId(const string& _instNodeId)
+{
+    m_instNodeId = _instNodeId;
+    m_instNodeIdHasBeenSet = true;
+}
+
+bool ProxyInst::InstNodeIdHasBeenSet() const
+{
+    return m_instNodeIdHasBeenSet;
+}
+
+string ProxyInst::GetInstNodeRole() const
+{
+    return m_instNodeRole;
+}
+
+void ProxyInst::SetInstNodeRole(const string& _instNodeRole)
+{
+    m_instNodeRole = _instNodeRole;
+    m_instNodeRoleHasBeenSet = true;
+}
+
+bool ProxyInst::InstNodeRoleHasBeenSet() const
+{
+    return m_instNodeRoleHasBeenSet;
 }
 

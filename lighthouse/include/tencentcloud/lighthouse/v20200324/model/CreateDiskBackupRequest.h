@@ -43,15 +43,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取云硬盘 ID。当前只支持数据盘创建备份点。
-                     * @return DiskId 云硬盘 ID。当前只支持数据盘创建备份点。
+                     * 获取云硬盘ID，可通过 [DescribeDisks](https://cloud.tencent.com/document/api/1207/66093) 接口返回值中的 DiskId 获取。 
+                     * @return DiskId 云硬盘ID，可通过 [DescribeDisks](https://cloud.tencent.com/document/api/1207/66093) 接口返回值中的 DiskId 获取。 
                      * 
                      */
                     std::string GetDiskId() const;
 
                     /**
-                     * 设置云硬盘 ID。当前只支持数据盘创建备份点。
-                     * @param _diskId 云硬盘 ID。当前只支持数据盘创建备份点。
+                     * 设置云硬盘ID，可通过 [DescribeDisks](https://cloud.tencent.com/document/api/1207/66093) 接口返回值中的 DiskId 获取。 
+                     * @param _diskId 云硬盘ID，可通过 [DescribeDisks](https://cloud.tencent.com/document/api/1207/66093) 接口返回值中的 DiskId 获取。 
                      * 
                      */
                     void SetDiskId(const std::string& _diskId);
@@ -64,15 +64,15 @@ namespace TencentCloud
                     bool DiskIdHasBeenSet() const;
 
                     /**
-                     * 获取云硬盘备份点名称，最大长度90。
-                     * @return DiskBackupName 云硬盘备份点名称，最大长度90。
+                     * 获取云硬盘备份点名称，最大长度为 90 。
+                     * @return DiskBackupName 云硬盘备份点名称，最大长度为 90 。
                      * 
                      */
                     std::string GetDiskBackupName() const;
 
                     /**
-                     * 设置云硬盘备份点名称，最大长度90。
-                     * @param _diskBackupName 云硬盘备份点名称，最大长度90。
+                     * 设置云硬盘备份点名称，最大长度为 90 。
+                     * @param _diskBackupName 云硬盘备份点名称，最大长度为 90 。
                      * 
                      */
                     void SetDiskBackupName(const std::string& _diskBackupName);
@@ -87,13 +87,13 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 云硬盘 ID。当前只支持数据盘创建备份点。
+                     * 云硬盘ID，可通过 [DescribeDisks](https://cloud.tencent.com/document/api/1207/66093) 接口返回值中的 DiskId 获取。 
                      */
                     std::string m_diskId;
                     bool m_diskIdHasBeenSet;
 
                     /**
-                     * 云硬盘备份点名称，最大长度90。
+                     * 云硬盘备份点名称，最大长度为 90 。
                      */
                     std::string m_diskBackupName;
                     bool m_diskBackupNameHasBeenSet;

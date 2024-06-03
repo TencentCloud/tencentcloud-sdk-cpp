@@ -43,15 +43,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取防火墙模板ID。
-                     * @return TemplateId 防火墙模板ID。
+                     * 获取防火墙模板ID。可通过[DescribeFirewallTemplates](https://cloud.tencent.com/document/product/1207/96874)接口返回值字段TemplateSet获取。
+                     * @return TemplateId 防火墙模板ID。可通过[DescribeFirewallTemplates](https://cloud.tencent.com/document/product/1207/96874)接口返回值字段TemplateSet获取。
                      * 
                      */
                     std::string GetTemplateId() const;
 
                     /**
-                     * 设置防火墙模板ID。
-                     * @param _templateId 防火墙模板ID。
+                     * 设置防火墙模板ID。可通过[DescribeFirewallTemplates](https://cloud.tencent.com/document/product/1207/96874)接口返回值字段TemplateSet获取。
+                     * @param _templateId 防火墙模板ID。可通过[DescribeFirewallTemplates](https://cloud.tencent.com/document/product/1207/96874)接口返回值字段TemplateSet获取。
                      * 
                      */
                     void SetTemplateId(const std::string& _templateId);
@@ -64,15 +64,15 @@ namespace TencentCloud
                     bool TemplateIdHasBeenSet() const;
 
                     /**
-                     * 获取模板名称。
-                     * @return TemplateName 模板名称。
+                     * 获取防火墙模板名称。可通过[DescribeFirewallTemplates](https://cloud.tencent.com/document/product/1207/96874)接口返回值字段TemplateSet获取。
+                     * @return TemplateName 防火墙模板名称。可通过[DescribeFirewallTemplates](https://cloud.tencent.com/document/product/1207/96874)接口返回值字段TemplateSet获取。
                      * 
                      */
                     std::string GetTemplateName() const;
 
                     /**
-                     * 设置模板名称。
-                     * @param _templateName 模板名称。
+                     * 设置防火墙模板名称。可通过[DescribeFirewallTemplates](https://cloud.tencent.com/document/product/1207/96874)接口返回值字段TemplateSet获取。
+                     * @param _templateName 防火墙模板名称。可通过[DescribeFirewallTemplates](https://cloud.tencent.com/document/product/1207/96874)接口返回值字段TemplateSet获取。
                      * 
                      */
                     void SetTemplateName(const std::string& _templateName);
@@ -87,13 +87,13 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 防火墙模板ID。
+                     * 防火墙模板ID。可通过[DescribeFirewallTemplates](https://cloud.tencent.com/document/product/1207/96874)接口返回值字段TemplateSet获取。
                      */
                     std::string m_templateId;
                     bool m_templateIdHasBeenSet;
 
                     /**
-                     * 模板名称。
+                     * 防火墙模板名称。可通过[DescribeFirewallTemplates](https://cloud.tencent.com/document/product/1207/96874)接口返回值字段TemplateSet获取。
                      */
                     std::string m_templateName;
                     bool m_templateNameHasBeenSet;

@@ -128,15 +128,15 @@ namespace TencentCloud
                     bool LimitHasBeenSet() const;
 
                     /**
-                     * 获取命名空间Id
-                     * @return NamespaceId 命名空间Id
+                     * 获取命名空间Id,此字段，和 NamespaceIdList 或者 MetricDimensionValues 字段包含 namespaceId 维度信息。三者选其一。
+                     * @return NamespaceId 命名空间Id,此字段，和 NamespaceIdList 或者 MetricDimensionValues 字段包含 namespaceId 维度信息。三者选其一。
                      * 
                      */
                     std::string GetNamespaceId() const;
 
                     /**
-                     * 设置命名空间Id
-                     * @param _namespaceId 命名空间Id
+                     * 设置命名空间Id,此字段，和 NamespaceIdList 或者 MetricDimensionValues 字段包含 namespaceId 维度信息。三者选其一。
+                     * @param _namespaceId 命名空间Id,此字段，和 NamespaceIdList 或者 MetricDimensionValues 字段包含 namespaceId 维度信息。三者选其一。
                      * 
                      */
                     void SetNamespaceId(const std::string& _namespaceId);
@@ -191,15 +191,15 @@ namespace TencentCloud
                     bool OrderTypeHasBeenSet() const;
 
                     /**
-                     * 获取开始时间：年月日 时分秒2020-05-12 14:43:12
-                     * @return EndTime 开始时间：年月日 时分秒2020-05-12 14:43:12
+                     * 获取开始时间：年月日 时分秒2020-05-12 14:43:12， 不能为空
+                     * @return EndTime 开始时间：年月日 时分秒2020-05-12 14:43:12， 不能为空
                      * 
                      */
                     std::string GetEndTime() const;
 
                     /**
-                     * 设置开始时间：年月日 时分秒2020-05-12 14:43:12
-                     * @param _endTime 开始时间：年月日 时分秒2020-05-12 14:43:12
+                     * 设置开始时间：年月日 时分秒2020-05-12 14:43:12， 不能为空
+                     * @param _endTime 开始时间：年月日 时分秒2020-05-12 14:43:12， 不能为空
                      * 
                      */
                     void SetEndTime(const std::string& _endTime);
@@ -212,15 +212,15 @@ namespace TencentCloud
                     bool EndTimeHasBeenSet() const;
 
                     /**
-                     * 获取开始时间：年月日 时分秒2020-05-12 14:43:12
-                     * @return StartTime 开始时间：年月日 时分秒2020-05-12 14:43:12
+                     * 获取开始时间：年月日 时分秒2020-05-12 14:43:12， 不能为空
+                     * @return StartTime 开始时间：年月日 时分秒2020-05-12 14:43:12， 不能为空
                      * 
                      */
                     std::string GetStartTime() const;
 
                     /**
-                     * 设置开始时间：年月日 时分秒2020-05-12 14:43:12
-                     * @param _startTime 开始时间：年月日 时分秒2020-05-12 14:43:12
+                     * 设置开始时间：年月日 时分秒2020-05-12 14:43:12， 不能为空
+                     * @param _startTime 开始时间：年月日 时分秒2020-05-12 14:43:12， 不能为空
                      * 
                      */
                     void SetStartTime(const std::string& _startTime);
@@ -358,6 +358,27 @@ namespace TencentCloud
                      */
                     bool NamespaceIdListHasBeenSet() const;
 
+                    /**
+                     * 获取独占配置中心的ID
+                     * @return ConfigCenterInstanceId 独占配置中心的ID
+                     * 
+                     */
+                    std::string GetConfigCenterInstanceId() const;
+
+                    /**
+                     * 设置独占配置中心的ID
+                     * @param _configCenterInstanceId 独占配置中心的ID
+                     * 
+                     */
+                    void SetConfigCenterInstanceId(const std::string& _configCenterInstanceId);
+
+                    /**
+                     * 判断参数 ConfigCenterInstanceId 是否已赋值
+                     * @return ConfigCenterInstanceId 是否已赋值
+                     * 
+                     */
+                    bool ConfigCenterInstanceIdHasBeenSet() const;
+
                 private:
 
                     /**
@@ -385,7 +406,7 @@ namespace TencentCloud
                     bool m_limitHasBeenSet;
 
                     /**
-                     * 命名空间Id
+                     * 命名空间Id,此字段，和 NamespaceIdList 或者 MetricDimensionValues 字段包含 namespaceId 维度信息。三者选其一。
                      */
                     std::string m_namespaceId;
                     bool m_namespaceIdHasBeenSet;
@@ -403,13 +424,13 @@ namespace TencentCloud
                     bool m_orderTypeHasBeenSet;
 
                     /**
-                     * 开始时间：年月日 时分秒2020-05-12 14:43:12
+                     * 开始时间：年月日 时分秒2020-05-12 14:43:12， 不能为空
                      */
                     std::string m_endTime;
                     bool m_endTimeHasBeenSet;
 
                     /**
-                     * 开始时间：年月日 时分秒2020-05-12 14:43:12
+                     * 开始时间：年月日 时分秒2020-05-12 14:43:12， 不能为空
                      */
                     std::string m_startTime;
                     bool m_startTimeHasBeenSet;
@@ -449,6 +470,12 @@ namespace TencentCloud
                      */
                     std::vector<std::string> m_namespaceIdList;
                     bool m_namespaceIdListHasBeenSet;
+
+                    /**
+                     * 独占配置中心的ID
+                     */
+                    std::string m_configCenterInstanceId;
+                    bool m_configCenterInstanceIdHasBeenSet;
 
                 };
             }

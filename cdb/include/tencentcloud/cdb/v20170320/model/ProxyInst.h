@@ -221,6 +221,56 @@ namespace TencentCloud
                      */
                     bool ZoneHasBeenSet() const;
 
+                    /**
+                     * 获取实例节点ID
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return InstNodeId 实例节点ID
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::string GetInstNodeId() const;
+
+                    /**
+                     * 设置实例节点ID
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _instNodeId 实例节点ID
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetInstNodeId(const std::string& _instNodeId);
+
+                    /**
+                     * 判断参数 InstNodeId 是否已赋值
+                     * @return InstNodeId 是否已赋值
+                     * 
+                     */
+                    bool InstNodeIdHasBeenSet() const;
+
+                    /**
+                     * 获取节点角色
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return InstNodeRole 节点角色
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::string GetInstNodeRole() const;
+
+                    /**
+                     * 设置节点角色
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _instNodeRole 节点角色
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetInstNodeRole(const std::string& _instNodeRole);
+
+                    /**
+                     * 判断参数 InstNodeRole 是否已赋值
+                     * @return InstNodeRole 是否已赋值
+                     * 
+                     */
+                    bool InstNodeRoleHasBeenSet() const;
+
                 private:
 
                     /**
@@ -271,6 +321,20 @@ namespace TencentCloud
                      */
                     std::string m_zone;
                     bool m_zoneHasBeenSet;
+
+                    /**
+                     * 实例节点ID
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_instNodeId;
+                    bool m_instNodeIdHasBeenSet;
+
+                    /**
+                     * 节点角色
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_instNodeRole;
+                    bool m_instNodeRoleHasBeenSet;
 
                 };
             }

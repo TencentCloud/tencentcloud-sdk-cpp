@@ -259,14 +259,18 @@ namespace TencentCloud
 
                     /**
                      * 获取是否开启连接池
+注意：如需使用数据库代理连接池能力，MySQL 8.0 主实例的内核小版本要大于等于 MySQL 8.0 20230630。
                      * @return ConnectionPool 是否开启连接池
+注意：如需使用数据库代理连接池能力，MySQL 8.0 主实例的内核小版本要大于等于 MySQL 8.0 20230630。
                      * 
                      */
                     bool GetConnectionPool() const;
 
                     /**
                      * 设置是否开启连接池
+注意：如需使用数据库代理连接池能力，MySQL 8.0 主实例的内核小版本要大于等于 MySQL 8.0 20230630。
                      * @param _connectionPool 是否开启连接池
+注意：如需使用数据库代理连接池能力，MySQL 8.0 主实例的内核小版本要大于等于 MySQL 8.0 20230630。
                      * 
                      */
                     void SetConnectionPool(const bool& _connectionPool);
@@ -298,6 +302,48 @@ namespace TencentCloud
                      * 
                      */
                     bool ProxyAllocationHasBeenSet() const;
+
+                    /**
+                     * 获取是否开启自适应负载均衡
+                     * @return AutoLoadBalance 是否开启自适应负载均衡
+                     * 
+                     */
+                    bool GetAutoLoadBalance() const;
+
+                    /**
+                     * 设置是否开启自适应负载均衡
+                     * @param _autoLoadBalance 是否开启自适应负载均衡
+                     * 
+                     */
+                    void SetAutoLoadBalance(const bool& _autoLoadBalance);
+
+                    /**
+                     * 判断参数 AutoLoadBalance 是否已赋值
+                     * @return AutoLoadBalance 是否已赋值
+                     * 
+                     */
+                    bool AutoLoadBalanceHasBeenSet() const;
+
+                    /**
+                     * 获取访问模式：就近访问，均衡分配
+                     * @return AccessMode 访问模式：就近访问，均衡分配
+                     * 
+                     */
+                    std::string GetAccessMode() const;
+
+                    /**
+                     * 设置访问模式：就近访问，均衡分配
+                     * @param _accessMode 访问模式：就近访问，均衡分配
+                     * 
+                     */
+                    void SetAccessMode(const std::string& _accessMode);
+
+                    /**
+                     * 判断参数 AccessMode 是否已赋值
+                     * @return AccessMode 是否已赋值
+                     * 
+                     */
+                    bool AccessModeHasBeenSet() const;
 
                 private:
 
@@ -364,6 +410,7 @@ namespace TencentCloud
 
                     /**
                      * 是否开启连接池
+注意：如需使用数据库代理连接池能力，MySQL 8.0 主实例的内核小版本要大于等于 MySQL 8.0 20230630。
                      */
                     bool m_connectionPool;
                     bool m_connectionPoolHasBeenSet;
@@ -373,6 +420,18 @@ namespace TencentCloud
                      */
                     std::vector<ProxyAllocation> m_proxyAllocation;
                     bool m_proxyAllocationHasBeenSet;
+
+                    /**
+                     * 是否开启自适应负载均衡
+                     */
+                    bool m_autoLoadBalance;
+                    bool m_autoLoadBalanceHasBeenSet;
+
+                    /**
+                     * 访问模式：就近访问，均衡分配
+                     */
+                    std::string m_accessMode;
+                    bool m_accessModeHasBeenSet;
 
                 };
             }

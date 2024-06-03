@@ -34,7 +34,8 @@ ConfigRelease::ConfigRelease() :
     m_clusterNameHasBeenSet(false),
     m_releaseDescHasBeenSet(false),
     m_applicationIdHasBeenSet(false),
-    m_configCentersHasBeenSet(false)
+    m_configCentersHasBeenSet(false),
+    m_daulStatusHasBeenSet(false)
 {
 }
 
@@ -193,6 +194,16 @@ CoreInternalOutcome ConfigRelease::Deserialize(const rapidjson::Value &value)
         m_configCentersHasBeenSet = true;
     }
 
+    if (value.HasMember("DaulStatus") && !value["DaulStatus"].IsNull())
+    {
+        if (!value["DaulStatus"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `ConfigRelease.DaulStatus` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_daulStatus = string(value["DaulStatus"].GetString());
+        m_daulStatusHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -317,6 +328,14 @@ void ConfigRelease::ToJsonObject(rapidjson::Value &value, rapidjson::Document::A
             value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
             (*itr).ToJsonObject(value[key.c_str()][i], allocator);
         }
+    }
+
+    if (m_daulStatusHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "DaulStatus";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_daulStatus.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -544,5 +563,21 @@ void ConfigRelease::SetConfigCenters(const vector<TsfConfigCenter>& _configCente
 bool ConfigRelease::ConfigCentersHasBeenSet() const
 {
     return m_configCentersHasBeenSet;
+}
+
+string ConfigRelease::GetDaulStatus() const
+{
+    return m_daulStatus;
+}
+
+void ConfigRelease::SetDaulStatus(const string& _daulStatus)
+{
+    m_daulStatus = _daulStatus;
+    m_daulStatusHasBeenSet = true;
+}
+
+bool ConfigRelease::DaulStatusHasBeenSet() const
+{
+    return m_daulStatusHasBeenSet;
 }
 

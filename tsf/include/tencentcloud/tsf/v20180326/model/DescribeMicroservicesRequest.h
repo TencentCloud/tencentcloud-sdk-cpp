@@ -231,6 +231,27 @@ namespace TencentCloud
                      */
                     bool MicroserviceNameListHasBeenSet() const;
 
+                    /**
+                     * 获取注册中心实例id
+                     * @return ConfigCenterInstanceId 注册中心实例id
+                     * 
+                     */
+                    std::string GetConfigCenterInstanceId() const;
+
+                    /**
+                     * 设置注册中心实例id
+                     * @param _configCenterInstanceId 注册中心实例id
+                     * 
+                     */
+                    void SetConfigCenterInstanceId(const std::string& _configCenterInstanceId);
+
+                    /**
+                     * 判断参数 ConfigCenterInstanceId 是否已赋值
+                     * @return ConfigCenterInstanceId 是否已赋值
+                     * 
+                     */
+                    bool ConfigCenterInstanceIdHasBeenSet() const;
+
                 private:
 
                     /**
@@ -286,6 +307,12 @@ namespace TencentCloud
                      */
                     std::vector<std::string> m_microserviceNameList;
                     bool m_microserviceNameListHasBeenSet;
+
+                    /**
+                     * 注册中心实例id
+                     */
+                    std::string m_configCenterInstanceId;
+                    bool m_configCenterInstanceIdHasBeenSet;
 
                 };
             }

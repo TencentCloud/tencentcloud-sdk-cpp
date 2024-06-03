@@ -31,7 +31,8 @@ DescribeMicroservicesRequest::DescribeMicroservicesRequest() :
     m_limitHasBeenSet(false),
     m_statusHasBeenSet(false),
     m_microserviceIdListHasBeenSet(false),
-    m_microserviceNameListHasBeenSet(false)
+    m_microserviceNameListHasBeenSet(false),
+    m_configCenterInstanceIdHasBeenSet(false)
 {
 }
 
@@ -127,6 +128,14 @@ string DescribeMicroservicesRequest::ToJsonString() const
         {
             d[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
         }
+    }
+
+    if (m_configCenterInstanceIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ConfigCenterInstanceId";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_configCenterInstanceId.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -279,6 +288,22 @@ void DescribeMicroservicesRequest::SetMicroserviceNameList(const vector<string>&
 bool DescribeMicroservicesRequest::MicroserviceNameListHasBeenSet() const
 {
     return m_microserviceNameListHasBeenSet;
+}
+
+string DescribeMicroservicesRequest::GetConfigCenterInstanceId() const
+{
+    return m_configCenterInstanceId;
+}
+
+void DescribeMicroservicesRequest::SetConfigCenterInstanceId(const string& _configCenterInstanceId)
+{
+    m_configCenterInstanceId = _configCenterInstanceId;
+    m_configCenterInstanceIdHasBeenSet = true;
+}
+
+bool DescribeMicroservicesRequest::ConfigCenterInstanceIdHasBeenSet() const
+{
+    return m_configCenterInstanceIdHasBeenSet;
 }
 
 

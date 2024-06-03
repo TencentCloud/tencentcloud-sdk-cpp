@@ -4168,6 +4168,49 @@ WafClient::ModifyApiAnalyzeStatusOutcomeCallable WafClient::ModifyApiAnalyzeStat
     return task->get_future();
 }
 
+WafClient::ModifyApiSecEventChangeOutcome WafClient::ModifyApiSecEventChange(const ModifyApiSecEventChangeRequest &request)
+{
+    auto outcome = MakeRequest(request, "ModifyApiSecEventChange");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ModifyApiSecEventChangeResponse rsp = ModifyApiSecEventChangeResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ModifyApiSecEventChangeOutcome(rsp);
+        else
+            return ModifyApiSecEventChangeOutcome(o.GetError());
+    }
+    else
+    {
+        return ModifyApiSecEventChangeOutcome(outcome.GetError());
+    }
+}
+
+void WafClient::ModifyApiSecEventChangeAsync(const ModifyApiSecEventChangeRequest& request, const ModifyApiSecEventChangeAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->ModifyApiSecEventChange(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+WafClient::ModifyApiSecEventChangeOutcomeCallable WafClient::ModifyApiSecEventChangeCallable(const ModifyApiSecEventChangeRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<ModifyApiSecEventChangeOutcome()>>(
+        [this, request]()
+        {
+            return this->ModifyApiSecEventChange(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 WafClient::ModifyAreaBanStatusOutcome WafClient::ModifyAreaBanStatus(const ModifyAreaBanStatusRequest &request)
 {
     auto outcome = MakeRequest(request, "ModifyAreaBanStatus");

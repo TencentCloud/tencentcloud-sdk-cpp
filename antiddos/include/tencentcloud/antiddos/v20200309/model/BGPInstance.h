@@ -654,6 +654,31 @@ namespace TencentCloud
                      */
                     bool SuperPackFlagHasBeenSet() const;
 
+                    /**
+                     * 获取所属ZoneId
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return ZoneId 所属ZoneId
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    int64_t GetZoneId() const;
+
+                    /**
+                     * 设置所属ZoneId
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _zoneId 所属ZoneId
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetZoneId(const int64_t& _zoneId);
+
+                    /**
+                     * 判断参数 ZoneId 是否已赋值
+                     * @return ZoneId 是否已赋值
+                     * 
+                     */
+                    bool ZoneIdHasBeenSet() const;
+
                 private:
 
                     /**
@@ -824,6 +849,13 @@ namespace TencentCloud
                      */
                     uint64_t m_superPackFlag;
                     bool m_superPackFlagHasBeenSet;
+
+                    /**
+                     * 所属ZoneId
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    int64_t m_zoneId;
+                    bool m_zoneIdHasBeenSet;
 
                 };
             }

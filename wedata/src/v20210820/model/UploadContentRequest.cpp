@@ -24,7 +24,8 @@ using namespace std;
 
 UploadContentRequest::UploadContentRequest() :
     m_scriptRequestInfoHasBeenSet(false),
-    m_requestFromSourceHasBeenSet(false)
+    m_requestFromSourceHasBeenSet(false),
+    m_projectIdHasBeenSet(false)
 {
 }
 
@@ -50,6 +51,14 @@ string UploadContentRequest::ToJsonString() const
         string key = "RequestFromSource";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_requestFromSource.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_projectIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ProjectId";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_projectId.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -90,6 +99,22 @@ void UploadContentRequest::SetRequestFromSource(const string& _requestFromSource
 bool UploadContentRequest::RequestFromSourceHasBeenSet() const
 {
     return m_requestFromSourceHasBeenSet;
+}
+
+string UploadContentRequest::GetProjectId() const
+{
+    return m_projectId;
+}
+
+void UploadContentRequest::SetProjectId(const string& _projectId)
+{
+    m_projectId = _projectId;
+    m_projectIdHasBeenSet = true;
+}
+
+bool UploadContentRequest::ProjectIdHasBeenSet() const
+{
+    return m_projectIdHasBeenSet;
 }
 
 

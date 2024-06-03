@@ -43,15 +43,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取防火墙模板ID。
-                     * @return TemplateId 防火墙模板ID。
+                     * 获取防火墙模板ID。可通过[DescribeFirewallTemplates](https://cloud.tencent.com/document/product/1207/96874)接口返回值字段TemplateSet获取。
+                     * @return TemplateId 防火墙模板ID。可通过[DescribeFirewallTemplates](https://cloud.tencent.com/document/product/1207/96874)接口返回值字段TemplateSet获取。
                      * 
                      */
                     std::string GetTemplateId() const;
 
                     /**
-                     * 设置防火墙模板ID。
-                     * @param _templateId 防火墙模板ID。
+                     * 设置防火墙模板ID。可通过[DescribeFirewallTemplates](https://cloud.tencent.com/document/product/1207/96874)接口返回值字段TemplateSet获取。
+                     * @param _templateId 防火墙模板ID。可通过[DescribeFirewallTemplates](https://cloud.tencent.com/document/product/1207/96874)接口返回值字段TemplateSet获取。
                      * 
                      */
                     void SetTemplateId(const std::string& _templateId);
@@ -64,15 +64,15 @@ namespace TencentCloud
                     bool TemplateIdHasBeenSet() const;
 
                     /**
-                     * 获取应用任务ID列表。
-                     * @return TaskIds 应用任务ID列表。
+                     * 获取应用防火墙模版任务ID列表。可通过[ApplyFirewallTemplate](https://cloud.tencent.com/document/product/1207/96883)接口返回值TaskId字段获取。
+                     * @return TaskIds 应用防火墙模版任务ID列表。可通过[ApplyFirewallTemplate](https://cloud.tencent.com/document/product/1207/96883)接口返回值TaskId字段获取。
                      * 
                      */
                     std::vector<std::string> GetTaskIds() const;
 
                     /**
-                     * 设置应用任务ID列表。
-                     * @param _taskIds 应用任务ID列表。
+                     * 设置应用防火墙模版任务ID列表。可通过[ApplyFirewallTemplate](https://cloud.tencent.com/document/product/1207/96883)接口返回值TaskId字段获取。
+                     * @param _taskIds 应用防火墙模版任务ID列表。可通过[ApplyFirewallTemplate](https://cloud.tencent.com/document/product/1207/96883)接口返回值TaskId字段获取。
                      * 
                      */
                     void SetTaskIds(const std::vector<std::string>& _taskIds);
@@ -87,13 +87,13 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 防火墙模板ID。
+                     * 防火墙模板ID。可通过[DescribeFirewallTemplates](https://cloud.tencent.com/document/product/1207/96874)接口返回值字段TemplateSet获取。
                      */
                     std::string m_templateId;
                     bool m_templateIdHasBeenSet;
 
                     /**
-                     * 应用任务ID列表。
+                     * 应用防火墙模版任务ID列表。可通过[ApplyFirewallTemplate](https://cloud.tencent.com/document/product/1207/96883)接口返回值TaskId字段获取。
                      */
                     std::vector<std::string> m_taskIds;
                     bool m_taskIdsHasBeenSet;

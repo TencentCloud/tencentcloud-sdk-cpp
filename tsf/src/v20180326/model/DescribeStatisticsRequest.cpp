@@ -37,7 +37,8 @@ DescribeStatisticsRequest::DescribeStatisticsRequest() :
     m_metricDimensionValuesHasBeenSet(false),
     m_bucketKeyHasBeenSet(false),
     m_dbNameHasBeenSet(false),
-    m_namespaceIdListHasBeenSet(false)
+    m_namespaceIdListHasBeenSet(false),
+    m_configCenterInstanceIdHasBeenSet(false)
 {
 }
 
@@ -178,6 +179,14 @@ string DescribeStatisticsRequest::ToJsonString() const
         {
             d[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
         }
+    }
+
+    if (m_configCenterInstanceIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ConfigCenterInstanceId";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_configCenterInstanceId.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -426,6 +435,22 @@ void DescribeStatisticsRequest::SetNamespaceIdList(const vector<string>& _namesp
 bool DescribeStatisticsRequest::NamespaceIdListHasBeenSet() const
 {
     return m_namespaceIdListHasBeenSet;
+}
+
+string DescribeStatisticsRequest::GetConfigCenterInstanceId() const
+{
+    return m_configCenterInstanceId;
+}
+
+void DescribeStatisticsRequest::SetConfigCenterInstanceId(const string& _configCenterInstanceId)
+{
+    m_configCenterInstanceId = _configCenterInstanceId;
+    m_configCenterInstanceIdHasBeenSet = true;
+}
+
+bool DescribeStatisticsRequest::ConfigCenterInstanceIdHasBeenSet() const
+{
+    return m_configCenterInstanceIdHasBeenSet;
 }
 
 

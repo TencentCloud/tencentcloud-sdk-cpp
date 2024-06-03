@@ -88,6 +88,7 @@ set(waf_public_header_model
   include/tencentcloud/waf/v20180125/model/DescribeHostRequest.h
   include/tencentcloud/waf/v20180125/model/AccessFullTextInfo.h
   include/tencentcloud/waf/v20180125/model/DeleteCustomRuleRequest.h
+  include/tencentcloud/waf/v20180125/model/ModifyApiSecEventChangeRequest.h
   include/tencentcloud/waf/v20180125/model/JobDateTime.h
   include/tencentcloud/waf/v20180125/model/DescribeHostsRequest.h
   include/tencentcloud/waf/v20180125/model/ModifyCustomWhiteRuleStatusRequest.h
@@ -164,6 +165,7 @@ set(waf_public_header_model
   include/tencentcloud/waf/v20180125/model/GoodsDetail.h
   include/tencentcloud/waf/v20180125/model/DeleteIpAccessControlResponse.h
   include/tencentcloud/waf/v20180125/model/BatchIpAccessControlItem.h
+  include/tencentcloud/waf/v20180125/model/ApiSecKey.h
   include/tencentcloud/waf/v20180125/model/UserWhiteRule.h
   include/tencentcloud/waf/v20180125/model/PortInfo.h
   include/tencentcloud/waf/v20180125/model/AddAttackWhiteRuleRequest.h
@@ -342,6 +344,7 @@ set(waf_public_header_model
   include/tencentcloud/waf/v20180125/model/DescribeDomainVerifyResultRequest.h
   include/tencentcloud/waf/v20180125/model/CreateDealsGoods.h
   include/tencentcloud/waf/v20180125/model/ModifySpartaProtectionModeResponse.h
+  include/tencentcloud/waf/v20180125/model/ModifyApiSecEventChangeResponse.h
   include/tencentcloud/waf/v20180125/model/ModifyCustomWhiteRuleStatusResponse.h
   include/tencentcloud/waf/v20180125/model/DescribeTopAttackDomainRequest.h
   include/tencentcloud/waf/v20180125/model/BatchIpAccessControlData.h
@@ -465,6 +468,7 @@ set(waf_src
   src/v20180125/model/DescribeHostRequest.cpp
   src/v20180125/model/AccessFullTextInfo.cpp
   src/v20180125/model/DeleteCustomRuleRequest.cpp
+  src/v20180125/model/ModifyApiSecEventChangeRequest.cpp
   src/v20180125/model/JobDateTime.cpp
   src/v20180125/model/DescribeHostsRequest.cpp
   src/v20180125/model/ModifyCustomWhiteRuleStatusRequest.cpp
@@ -541,6 +545,7 @@ set(waf_src
   src/v20180125/model/GoodsDetail.cpp
   src/v20180125/model/DeleteIpAccessControlResponse.cpp
   src/v20180125/model/BatchIpAccessControlItem.cpp
+  src/v20180125/model/ApiSecKey.cpp
   src/v20180125/model/UserWhiteRule.cpp
   src/v20180125/model/PortInfo.cpp
   src/v20180125/model/AddAttackWhiteRuleRequest.cpp
@@ -719,6 +724,7 @@ set(waf_src
   src/v20180125/model/DescribeDomainVerifyResultRequest.cpp
   src/v20180125/model/CreateDealsGoods.cpp
   src/v20180125/model/ModifySpartaProtectionModeResponse.cpp
+  src/v20180125/model/ModifyApiSecEventChangeResponse.cpp
   src/v20180125/model/ModifyCustomWhiteRuleStatusResponse.cpp
   src/v20180125/model/DescribeTopAttackDomainRequest.cpp
   src/v20180125/model/BatchIpAccessControlData.cpp

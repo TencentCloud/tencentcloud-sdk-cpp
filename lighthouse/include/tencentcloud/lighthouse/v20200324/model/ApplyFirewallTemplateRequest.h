@@ -44,15 +44,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取模板ID。
-                     * @return TemplateId 模板ID。
+                     * 获取防火墙模板ID。可通过[DescribeFirewallTemplates](https://cloud.tencent.com/document/product/1207/96874)接口返回值字段TemplateSet获取。
+                     * @return TemplateId 防火墙模板ID。可通过[DescribeFirewallTemplates](https://cloud.tencent.com/document/product/1207/96874)接口返回值字段TemplateSet获取。
                      * 
                      */
                     std::string GetTemplateId() const;
 
                     /**
-                     * 设置模板ID。
-                     * @param _templateId 模板ID。
+                     * 设置防火墙模板ID。可通过[DescribeFirewallTemplates](https://cloud.tencent.com/document/product/1207/96874)接口返回值字段TemplateSet获取。
+                     * @param _templateId 防火墙模板ID。可通过[DescribeFirewallTemplates](https://cloud.tencent.com/document/product/1207/96874)接口返回值字段TemplateSet获取。
                      * 
                      */
                     void SetTemplateId(const std::string& _templateId);
@@ -65,15 +65,15 @@ namespace TencentCloud
                     bool TemplateIdHasBeenSet() const;
 
                     /**
-                     * 获取应用防火墙模板的实例列表。
-                     * @return ApplyInstances 应用防火墙模板的实例列表。
+                     * 获取应用防火墙模板的实例列表。列表长度最大值是100。
+                     * @return ApplyInstances 应用防火墙模板的实例列表。列表长度最大值是100。
                      * 
                      */
                     std::vector<InstanceIdentifier> GetApplyInstances() const;
 
                     /**
-                     * 设置应用防火墙模板的实例列表。
-                     * @param _applyInstances 应用防火墙模板的实例列表。
+                     * 设置应用防火墙模板的实例列表。列表长度最大值是100。
+                     * @param _applyInstances 应用防火墙模板的实例列表。列表长度最大值是100。
                      * 
                      */
                     void SetApplyInstances(const std::vector<InstanceIdentifier>& _applyInstances);
@@ -88,13 +88,13 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 模板ID。
+                     * 防火墙模板ID。可通过[DescribeFirewallTemplates](https://cloud.tencent.com/document/product/1207/96874)接口返回值字段TemplateSet获取。
                      */
                     std::string m_templateId;
                     bool m_templateIdHasBeenSet;
 
                     /**
-                     * 应用防火墙模板的实例列表。
+                     * 应用防火墙模板的实例列表。列表长度最大值是100。
                      */
                     std::vector<InstanceIdentifier> m_applyInstances;
                     bool m_applyInstancesHasBeenSet;

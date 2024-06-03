@@ -43,15 +43,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取使用场景ID列表。
-                     * @return SceneIds 使用场景ID列表。
+                     * 获取使用场景ID列表。可通过[DescribeScenes](https://cloud.tencent.com/document/product/1207/83512)接口返回值中的SceneId获取。
+                     * @return SceneIds 使用场景ID列表。可通过[DescribeScenes](https://cloud.tencent.com/document/product/1207/83512)接口返回值中的SceneId获取。
                      * 
                      */
                     std::vector<std::string> GetSceneIds() const;
 
                     /**
-                     * 设置使用场景ID列表。
-                     * @param _sceneIds 使用场景ID列表。
+                     * 设置使用场景ID列表。可通过[DescribeScenes](https://cloud.tencent.com/document/product/1207/83512)接口返回值中的SceneId获取。
+                     * @param _sceneIds 使用场景ID列表。可通过[DescribeScenes](https://cloud.tencent.com/document/product/1207/83512)接口返回值中的SceneId获取。
                      * 
                      */
                     void SetSceneIds(const std::vector<std::string>& _sceneIds);
@@ -108,7 +108,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 使用场景ID列表。
+                     * 使用场景ID列表。可通过[DescribeScenes](https://cloud.tencent.com/document/product/1207/83512)接口返回值中的SceneId获取。
                      */
                     std::vector<std::string> m_sceneIds;
                     bool m_sceneIdsHasBeenSet;

@@ -1,0 +1,62 @@
+/*
+ * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *    http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+
+#ifndef TENCENTCLOUD_VDB_V20230616_VDBCLIENT_H_
+#define TENCENTCLOUD_VDB_V20230616_VDBCLIENT_H_
+
+#include <functional>
+#include <future>
+#include <tencentcloud/core/AbstractClient.h>
+#include <tencentcloud/core/Credential.h>
+#include <tencentcloud/core/profile/ClientProfile.h>
+#include <tencentcloud/core/AsyncCallerContext.h>
+#include <tencentcloud/vdb/v20230616/model/DescribeInstancesRequest.h>
+#include <tencentcloud/vdb/v20230616/model/DescribeInstancesResponse.h>
+
+
+namespace TencentCloud
+{
+    namespace Vdb
+    {
+        namespace V20230616
+        {
+            class VdbClient : public AbstractClient
+            {
+            public:
+                VdbClient(const Credential &credential, const std::string &region);
+                VdbClient(const Credential &credential, const std::string &region, const ClientProfile &profile);
+
+                typedef Outcome<Core::Error, Model::DescribeInstancesResponse> DescribeInstancesOutcome;
+                typedef std::future<DescribeInstancesOutcome> DescribeInstancesOutcomeCallable;
+                typedef std::function<void(const VdbClient*, const Model::DescribeInstancesRequest&, DescribeInstancesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeInstancesAsyncHandler;
+
+
+
+                /**
+                 *查询实例列表
+                 * @param req DescribeInstancesRequest
+                 * @return DescribeInstancesOutcome
+                 */
+                DescribeInstancesOutcome DescribeInstances(const Model::DescribeInstancesRequest &request);
+                void DescribeInstancesAsync(const Model::DescribeInstancesRequest& request, const DescribeInstancesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeInstancesOutcomeCallable DescribeInstancesCallable(const Model::DescribeInstancesRequest& request);
+
+            };
+        }
+    }
+}
+
+#endif // !TENCENTCLOUD_VDB_V20230616_VDBCLIENT_H_

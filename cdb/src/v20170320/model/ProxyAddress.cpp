@@ -36,7 +36,9 @@ ProxyAddress::ProxyAddress() :
     m_failOverHasBeenSet(false),
     m_connectionPoolHasBeenSet(false),
     m_descHasBeenSet(false),
-    m_proxyAllocationHasBeenSet(false)
+    m_proxyAllocationHasBeenSet(false),
+    m_accessModeHasBeenSet(false),
+    m_autoLoadBalanceHasBeenSet(false)
 {
 }
 
@@ -215,6 +217,26 @@ CoreInternalOutcome ProxyAddress::Deserialize(const rapidjson::Value &value)
         m_proxyAllocationHasBeenSet = true;
     }
 
+    if (value.HasMember("AccessMode") && !value["AccessMode"].IsNull())
+    {
+        if (!value["AccessMode"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `ProxyAddress.AccessMode` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_accessMode = string(value["AccessMode"].GetString());
+        m_accessModeHasBeenSet = true;
+    }
+
+    if (value.HasMember("AutoLoadBalance") && !value["AutoLoadBalance"].IsNull())
+    {
+        if (!value["AutoLoadBalance"].IsBool())
+        {
+            return CoreInternalOutcome(Core::Error("response `ProxyAddress.AutoLoadBalance` IsBool=false incorrectly").SetRequestId(requestId));
+        }
+        m_autoLoadBalance = value["AutoLoadBalance"].GetBool();
+        m_autoLoadBalanceHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -355,6 +377,22 @@ void ProxyAddress::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Al
             value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
             (*itr).ToJsonObject(value[key.c_str()][i], allocator);
         }
+    }
+
+    if (m_accessModeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "AccessMode";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_accessMode.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_autoLoadBalanceHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "AutoLoadBalance";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_autoLoadBalance, allocator);
     }
 
 }
@@ -614,5 +652,37 @@ void ProxyAddress::SetProxyAllocation(const vector<ProxyAllocation>& _proxyAlloc
 bool ProxyAddress::ProxyAllocationHasBeenSet() const
 {
     return m_proxyAllocationHasBeenSet;
+}
+
+string ProxyAddress::GetAccessMode() const
+{
+    return m_accessMode;
+}
+
+void ProxyAddress::SetAccessMode(const string& _accessMode)
+{
+    m_accessMode = _accessMode;
+    m_accessModeHasBeenSet = true;
+}
+
+bool ProxyAddress::AccessModeHasBeenSet() const
+{
+    return m_accessModeHasBeenSet;
+}
+
+bool ProxyAddress::GetAutoLoadBalance() const
+{
+    return m_autoLoadBalance;
+}
+
+void ProxyAddress::SetAutoLoadBalance(const bool& _autoLoadBalance)
+{
+    m_autoLoadBalance = _autoLoadBalance;
+    m_autoLoadBalanceHasBeenSet = true;
+}
+
+bool ProxyAddress::AutoLoadBalanceHasBeenSet() const
+{
+    return m_autoLoadBalanceHasBeenSet;
 }
 

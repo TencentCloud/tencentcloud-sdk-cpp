@@ -45,7 +45,8 @@ BGPInstance::BGPInstance() :
     m_basicPlusFlagHasBeenSet(false),
     m_planCntFlagHasBeenSet(false),
     m_transRegionFlagHasBeenSet(false),
-    m_superPackFlagHasBeenSet(false)
+    m_superPackFlagHasBeenSet(false),
+    m_zoneIdHasBeenSet(false)
 {
 }
 
@@ -359,6 +360,16 @@ CoreInternalOutcome BGPInstance::Deserialize(const rapidjson::Value &value)
         m_superPackFlagHasBeenSet = true;
     }
 
+    if (value.HasMember("ZoneId") && !value["ZoneId"].IsNull())
+    {
+        if (!value["ZoneId"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `BGPInstance.ZoneId` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_zoneId = value["ZoneId"].GetInt64();
+        m_zoneIdHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -583,6 +594,14 @@ void BGPInstance::ToJsonObject(rapidjson::Value &value, rapidjson::Document::All
         string key = "SuperPackFlag";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_superPackFlag, allocator);
+    }
+
+    if (m_zoneIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ZoneId";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_zoneId, allocator);
     }
 
 }
@@ -986,5 +1005,21 @@ void BGPInstance::SetSuperPackFlag(const uint64_t& _superPackFlag)
 bool BGPInstance::SuperPackFlagHasBeenSet() const
 {
     return m_superPackFlagHasBeenSet;
+}
+
+int64_t BGPInstance::GetZoneId() const
+{
+    return m_zoneId;
+}
+
+void BGPInstance::SetZoneId(const int64_t& _zoneId)
+{
+    m_zoneId = _zoneId;
+    m_zoneIdHasBeenSet = true;
+}
+
+bool BGPInstance::ZoneIdHasBeenSet() const
+{
+    return m_zoneIdHasBeenSet;
 }
 

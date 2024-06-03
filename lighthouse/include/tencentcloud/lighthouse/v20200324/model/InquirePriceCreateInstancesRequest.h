@@ -44,15 +44,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取实例的套餐 ID。
-                     * @return BundleId 实例的套餐 ID。
+                     * 获取实例的套餐 ID。可以通过调用[DescribeBundles](https://cloud.tencent.com/document/api/1207/47575)接口获取。
+                     * @return BundleId 实例的套餐 ID。可以通过调用[DescribeBundles](https://cloud.tencent.com/document/api/1207/47575)接口获取。
                      * 
                      */
                     std::string GetBundleId() const;
 
                     /**
-                     * 设置实例的套餐 ID。
-                     * @param _bundleId 实例的套餐 ID。
+                     * 设置实例的套餐 ID。可以通过调用[DescribeBundles](https://cloud.tencent.com/document/api/1207/47575)接口获取。
+                     * @param _bundleId 实例的套餐 ID。可以通过调用[DescribeBundles](https://cloud.tencent.com/document/api/1207/47575)接口获取。
                      * 
                      */
                     void SetBundleId(const std::string& _bundleId);
@@ -130,7 +130,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 实例的套餐 ID。
+                     * 实例的套餐 ID。可以通过调用[DescribeBundles](https://cloud.tencent.com/document/api/1207/47575)接口获取。
                      */
                     std::string m_bundleId;
                     bool m_bundleIdHasBeenSet;

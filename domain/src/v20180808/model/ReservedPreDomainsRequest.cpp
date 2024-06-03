@@ -24,7 +24,9 @@ using namespace std;
 
 ReservedPreDomainsRequest::ReservedPreDomainsRequest() :
     m_domainListHasBeenSet(false),
-    m_templateIdHasBeenSet(false)
+    m_templateIdHasBeenSet(false),
+    m_isAutoPayHasBeenSet(false),
+    m_isBidAutoPayHasBeenSet(false)
 {
 }
 
@@ -54,6 +56,22 @@ string ReservedPreDomainsRequest::ToJsonString() const
         string key = "TemplateId";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_templateId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_isAutoPayHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "IsAutoPay";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_isAutoPay, allocator);
+    }
+
+    if (m_isBidAutoPayHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "IsBidAutoPay";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_isBidAutoPay, allocator);
     }
 
 
@@ -94,6 +112,38 @@ void ReservedPreDomainsRequest::SetTemplateId(const string& _templateId)
 bool ReservedPreDomainsRequest::TemplateIdHasBeenSet() const
 {
     return m_templateIdHasBeenSet;
+}
+
+int64_t ReservedPreDomainsRequest::GetIsAutoPay() const
+{
+    return m_isAutoPay;
+}
+
+void ReservedPreDomainsRequest::SetIsAutoPay(const int64_t& _isAutoPay)
+{
+    m_isAutoPay = _isAutoPay;
+    m_isAutoPayHasBeenSet = true;
+}
+
+bool ReservedPreDomainsRequest::IsAutoPayHasBeenSet() const
+{
+    return m_isAutoPayHasBeenSet;
+}
+
+int64_t ReservedPreDomainsRequest::GetIsBidAutoPay() const
+{
+    return m_isBidAutoPay;
+}
+
+void ReservedPreDomainsRequest::SetIsBidAutoPay(const int64_t& _isBidAutoPay)
+{
+    m_isBidAutoPay = _isBidAutoPay;
+    m_isBidAutoPayHasBeenSet = true;
+}
+
+bool ReservedPreDomainsRequest::IsBidAutoPayHasBeenSet() const
+{
+    return m_isBidAutoPayHasBeenSet;
 }
 
 

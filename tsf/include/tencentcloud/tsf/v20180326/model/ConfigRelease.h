@@ -397,6 +397,39 @@ namespace TencentCloud
                      */
                     bool ConfigCentersHasBeenSet() const;
 
+                    /**
+                     * 获取DUAL_STATUS_WRITE_REGISTRATION_ON 双写&&双注册开启
+
+DUAL_STATUS_WRITE_REGISTRATION_OFF 双写&&双注册关闭
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return DaulStatus DUAL_STATUS_WRITE_REGISTRATION_ON 双写&&双注册开启
+
+DUAL_STATUS_WRITE_REGISTRATION_OFF 双写&&双注册关闭
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::string GetDaulStatus() const;
+
+                    /**
+                     * 设置DUAL_STATUS_WRITE_REGISTRATION_ON 双写&&双注册开启
+
+DUAL_STATUS_WRITE_REGISTRATION_OFF 双写&&双注册关闭
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _daulStatus DUAL_STATUS_WRITE_REGISTRATION_ON 双写&&双注册开启
+
+DUAL_STATUS_WRITE_REGISTRATION_OFF 双写&&双注册关闭
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetDaulStatus(const std::string& _daulStatus);
+
+                    /**
+                     * 判断参数 DaulStatus 是否已赋值
+                     * @return DaulStatus 是否已赋值
+                     * 
+                     */
+                    bool DaulStatusHasBeenSet() const;
+
                 private:
 
                     /**
@@ -496,6 +529,15 @@ namespace TencentCloud
                      */
                     std::vector<TsfConfigCenter> m_configCenters;
                     bool m_configCentersHasBeenSet;
+
+                    /**
+                     * DUAL_STATUS_WRITE_REGISTRATION_ON 双写&&双注册开启
+
+DUAL_STATUS_WRITE_REGISTRATION_OFF 双写&&双注册关闭
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_daulStatus;
+                    bool m_daulStatusHasBeenSet;
 
                 };
             }

@@ -31,7 +31,9 @@ DescribeProxySupportParamResponse::DescribeProxySupportParamResponse() :
     m_supportTransSplitHasBeenSet(false),
     m_supportPoolMinVersionHasBeenSet(false),
     m_supportTransSplitMinVersionHasBeenSet(false),
-    m_supportReadOnlyHasBeenSet(false)
+    m_supportReadOnlyHasBeenSet(false),
+    m_supportAutoLoadBalanceHasBeenSet(false),
+    m_supportAccessModeHasBeenSet(false)
 {
 }
 
@@ -149,6 +151,26 @@ CoreInternalOutcome DescribeProxySupportParamResponse::Deserialize(const string 
         m_supportReadOnlyHasBeenSet = true;
     }
 
+    if (rsp.HasMember("SupportAutoLoadBalance") && !rsp["SupportAutoLoadBalance"].IsNull())
+    {
+        if (!rsp["SupportAutoLoadBalance"].IsBool())
+        {
+            return CoreInternalOutcome(Core::Error("response `SupportAutoLoadBalance` IsBool=false incorrectly").SetRequestId(requestId));
+        }
+        m_supportAutoLoadBalance = rsp["SupportAutoLoadBalance"].GetBool();
+        m_supportAutoLoadBalanceHasBeenSet = true;
+    }
+
+    if (rsp.HasMember("SupportAccessMode") && !rsp["SupportAccessMode"].IsNull())
+    {
+        if (!rsp["SupportAccessMode"].IsBool())
+        {
+            return CoreInternalOutcome(Core::Error("response `SupportAccessMode` IsBool=false incorrectly").SetRequestId(requestId));
+        }
+        m_supportAccessMode = rsp["SupportAccessMode"].GetBool();
+        m_supportAccessModeHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -221,6 +243,22 @@ string DescribeProxySupportParamResponse::ToJsonString() const
         string key = "SupportReadOnly";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_supportReadOnly, allocator);
+    }
+
+    if (m_supportAutoLoadBalanceHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "SupportAutoLoadBalance";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_supportAutoLoadBalance, allocator);
+    }
+
+    if (m_supportAccessModeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "SupportAccessMode";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_supportAccessMode, allocator);
     }
 
     rapidjson::Value iKey(rapidjson::kStringType);
@@ -313,6 +351,26 @@ bool DescribeProxySupportParamResponse::GetSupportReadOnly() const
 bool DescribeProxySupportParamResponse::SupportReadOnlyHasBeenSet() const
 {
     return m_supportReadOnlyHasBeenSet;
+}
+
+bool DescribeProxySupportParamResponse::GetSupportAutoLoadBalance() const
+{
+    return m_supportAutoLoadBalance;
+}
+
+bool DescribeProxySupportParamResponse::SupportAutoLoadBalanceHasBeenSet() const
+{
+    return m_supportAutoLoadBalanceHasBeenSet;
+}
+
+bool DescribeProxySupportParamResponse::GetSupportAccessMode() const
+{
+    return m_supportAccessMode;
+}
+
+bool DescribeProxySupportParamResponse::SupportAccessModeHasBeenSet() const
+{
+    return m_supportAccessModeHasBeenSet;
 }
 
 

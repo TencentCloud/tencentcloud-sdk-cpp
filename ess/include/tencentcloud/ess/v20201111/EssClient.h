@@ -105,6 +105,8 @@
 #include <tencentcloud/ess/v20201111/model/CreateUserAutoSignEnableUrlResponse.h>
 #include <tencentcloud/ess/v20201111/model/CreateUserAutoSignSealUrlRequest.h>
 #include <tencentcloud/ess/v20201111/model/CreateUserAutoSignSealUrlResponse.h>
+#include <tencentcloud/ess/v20201111/model/CreateUserMobileChangeUrlRequest.h>
+#include <tencentcloud/ess/v20201111/model/CreateUserMobileChangeUrlResponse.h>
 #include <tencentcloud/ess/v20201111/model/CreateUserVerifyUrlRequest.h>
 #include <tencentcloud/ess/v20201111/model/CreateUserVerifyUrlResponse.h>
 #include <tencentcloud/ess/v20201111/model/CreateWebThemeConfigRequest.h>
@@ -326,6 +328,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::CreateUserAutoSignSealUrlResponse> CreateUserAutoSignSealUrlOutcome;
                 typedef std::future<CreateUserAutoSignSealUrlOutcome> CreateUserAutoSignSealUrlOutcomeCallable;
                 typedef std::function<void(const EssClient*, const Model::CreateUserAutoSignSealUrlRequest&, CreateUserAutoSignSealUrlOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateUserAutoSignSealUrlAsyncHandler;
+                typedef Outcome<Core::Error, Model::CreateUserMobileChangeUrlResponse> CreateUserMobileChangeUrlOutcome;
+                typedef std::future<CreateUserMobileChangeUrlOutcome> CreateUserMobileChangeUrlOutcomeCallable;
+                typedef std::function<void(const EssClient*, const Model::CreateUserMobileChangeUrlRequest&, CreateUserMobileChangeUrlOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateUserMobileChangeUrlAsyncHandler;
                 typedef Outcome<Core::Error, Model::CreateUserVerifyUrlResponse> CreateUserVerifyUrlOutcome;
                 typedef std::future<CreateUserVerifyUrlOutcome> CreateUserVerifyUrlOutcomeCallable;
                 typedef std::function<void(const EssClient*, const Model::CreateUserVerifyUrlRequest&, CreateUserVerifyUrlOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateUserVerifyUrlAsyncHandler;
@@ -1279,6 +1284,16 @@ p.s.
                 CreateUserAutoSignSealUrlOutcome CreateUserAutoSignSealUrl(const Model::CreateUserAutoSignSealUrlRequest &request);
                 void CreateUserAutoSignSealUrlAsync(const Model::CreateUserAutoSignSealUrlRequest& request, const CreateUserAutoSignSealUrlAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 CreateUserAutoSignSealUrlOutcomeCallable CreateUserAutoSignSealUrlCallable(const Model::CreateUserAutoSignSealUrlRequest& request);
+
+                /**
+                 *该接口会生成一个手机号变更的链接，用户可以通过该链接进入电子签系统进行手机号的变更。
+该接口支持员工和个人端手机号的变更。
+                 * @param req CreateUserMobileChangeUrlRequest
+                 * @return CreateUserMobileChangeUrlOutcome
+                 */
+                CreateUserMobileChangeUrlOutcome CreateUserMobileChangeUrl(const Model::CreateUserMobileChangeUrlRequest &request);
+                void CreateUserMobileChangeUrlAsync(const Model::CreateUserMobileChangeUrlRequest& request, const CreateUserMobileChangeUrlAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                CreateUserMobileChangeUrlOutcomeCallable CreateUserMobileChangeUrlCallable(const Model::CreateUserMobileChangeUrlRequest& request);
 
                 /**
                  *客户可以主动调用生成实名链接去做C端用户实名，会对实名的用户进行打标记为调用链接客户的用户

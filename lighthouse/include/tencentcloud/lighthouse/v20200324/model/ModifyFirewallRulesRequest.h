@@ -44,15 +44,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取实例 ID。
-                     * @return InstanceId 实例 ID。
+                     * 获取实例 ID。实例的ID可通过[DescribeInstances](https://cloud.tencent.com/document/product/1207/47573)接口返回值中的InstanceId获取。
+                     * @return InstanceId 实例 ID。实例的ID可通过[DescribeInstances](https://cloud.tencent.com/document/product/1207/47573)接口返回值中的InstanceId获取。
                      * 
                      */
                     std::string GetInstanceId() const;
 
                     /**
-                     * 设置实例 ID。
-                     * @param _instanceId 实例 ID。
+                     * 设置实例 ID。实例的ID可通过[DescribeInstances](https://cloud.tencent.com/document/product/1207/47573)接口返回值中的InstanceId获取。
+                     * @param _instanceId 实例 ID。实例的ID可通过[DescribeInstances](https://cloud.tencent.com/document/product/1207/47573)接口返回值中的InstanceId获取。
                      * 
                      */
                     void SetInstanceId(const std::string& _instanceId);
@@ -65,15 +65,15 @@ namespace TencentCloud
                     bool InstanceIdHasBeenSet() const;
 
                     /**
-                     * 获取防火墙规则列表。
-                     * @return FirewallRules 防火墙规则列表。
+                     * 获取防火墙规则列表。列表长度最大值是100。
+                     * @return FirewallRules 防火墙规则列表。列表长度最大值是100。
                      * 
                      */
                     std::vector<FirewallRule> GetFirewallRules() const;
 
                     /**
-                     * 设置防火墙规则列表。
-                     * @param _firewallRules 防火墙规则列表。
+                     * 设置防火墙规则列表。列表长度最大值是100。
+                     * @param _firewallRules 防火墙规则列表。列表长度最大值是100。
                      * 
                      */
                     void SetFirewallRules(const std::vector<FirewallRule>& _firewallRules);
@@ -109,13 +109,13 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 实例 ID。
+                     * 实例 ID。实例的ID可通过[DescribeInstances](https://cloud.tencent.com/document/product/1207/47573)接口返回值中的InstanceId获取。
                      */
                     std::string m_instanceId;
                     bool m_instanceIdHasBeenSet;
 
                     /**
-                     * 防火墙规则列表。
+                     * 防火墙规则列表。列表长度最大值是100。
                      */
                     std::vector<FirewallRule> m_firewallRules;
                     bool m_firewallRulesHasBeenSet;
