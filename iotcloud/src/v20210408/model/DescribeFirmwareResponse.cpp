@@ -31,7 +31,8 @@ DescribeFirmwareResponse::DescribeFirmwareResponse() :
     m_md5sumHasBeenSet(false),
     m_createtimeHasBeenSet(false),
     m_productNameHasBeenSet(false),
-    m_fwTypeHasBeenSet(false)
+    m_fwTypeHasBeenSet(false),
+    m_userDefinedHasBeenSet(false)
 {
 }
 
@@ -149,6 +150,16 @@ CoreInternalOutcome DescribeFirmwareResponse::Deserialize(const string &payload)
         m_fwTypeHasBeenSet = true;
     }
 
+    if (rsp.HasMember("UserDefined") && !rsp["UserDefined"].IsNull())
+    {
+        if (!rsp["UserDefined"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `UserDefined` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_userDefined = string(rsp["UserDefined"].GetString());
+        m_userDefinedHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -221,6 +232,14 @@ string DescribeFirmwareResponse::ToJsonString() const
         string key = "FwType";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_fwType.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_userDefinedHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "UserDefined";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_userDefined.c_str(), allocator).Move(), allocator);
     }
 
     rapidjson::Value iKey(rapidjson::kStringType);
@@ -313,6 +332,16 @@ string DescribeFirmwareResponse::GetFwType() const
 bool DescribeFirmwareResponse::FwTypeHasBeenSet() const
 {
     return m_fwTypeHasBeenSet;
+}
+
+string DescribeFirmwareResponse::GetUserDefined() const
+{
+    return m_userDefined;
+}
+
+bool DescribeFirmwareResponse::UserDefinedHasBeenSet() const
+{
+    return m_userDefinedHasBeenSet;
 }
 
 

@@ -52,11 +52,13 @@ namespace TencentCloud
 <li>Order：顺序播放</li>
 <li>RepeatSingle：单曲循环</li>
 <li>Shuffle：随机播放</li>
+注意：此字段可能返回 null，表示取不到有效值。
                      * @return PlayMode 播放模式，取值有：
 <li>RepeatPlaylist：列表循环</li>
 <li>Order：顺序播放</li>
 <li>RepeatSingle：单曲循环</li>
 <li>Shuffle：随机播放</li>
+注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetPlayMode() const;
@@ -67,11 +69,13 @@ namespace TencentCloud
 <li>Order：顺序播放</li>
 <li>RepeatSingle：单曲循环</li>
 <li>Shuffle：随机播放</li>
+注意：此字段可能返回 null，表示取不到有效值。
                      * @param _playMode 播放模式，取值有：
 <li>RepeatPlaylist：列表循环</li>
 <li>Order：顺序播放</li>
 <li>RepeatSingle：单曲循环</li>
 <li>Shuffle：随机播放</li>
+注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetPlayMode(const std::string& _playMode);
@@ -91,6 +95,7 @@ namespace TencentCloud
 <li>Order：顺序播放</li>
 <li>RepeatSingle：单曲循环</li>
 <li>Shuffle：随机播放</li>
+注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_playMode;
                     bool m_playModeHasBeenSet;

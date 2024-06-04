@@ -25,7 +25,8 @@ using namespace std;
 DescribeKTVMusicAccompanySegmentUrlVipRequest::DescribeKTVMusicAccompanySegmentUrlVipRequest() :
     m_appNameHasBeenSet(false),
     m_userIdHasBeenSet(false),
-    m_musicIdHasBeenSet(false)
+    m_musicIdHasBeenSet(false),
+    m_roomIdHasBeenSet(false)
 {
 }
 
@@ -58,6 +59,14 @@ string DescribeKTVMusicAccompanySegmentUrlVipRequest::ToJsonString() const
         string key = "MusicId";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_musicId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_roomIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "RoomId";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_roomId.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -114,6 +123,22 @@ void DescribeKTVMusicAccompanySegmentUrlVipRequest::SetMusicId(const string& _mu
 bool DescribeKTVMusicAccompanySegmentUrlVipRequest::MusicIdHasBeenSet() const
 {
     return m_musicIdHasBeenSet;
+}
+
+string DescribeKTVMusicAccompanySegmentUrlVipRequest::GetRoomId() const
+{
+    return m_roomId;
+}
+
+void DescribeKTVMusicAccompanySegmentUrlVipRequest::SetRoomId(const string& _roomId)
+{
+    m_roomId = _roomId;
+    m_roomIdHasBeenSet = true;
+}
+
+bool DescribeKTVMusicAccompanySegmentUrlVipRequest::RoomIdHasBeenSet() const
+{
+    return m_roomIdHasBeenSet;
 }
 
 

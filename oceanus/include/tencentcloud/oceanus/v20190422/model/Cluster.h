@@ -1086,6 +1086,31 @@ namespace TencentCloud
                      */
                     bool AgentSerialIdHasBeenSet() const;
 
+                    /**
+                     * 获取资源类型
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return ResourceType 资源类型
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    int64_t GetResourceType() const;
+
+                    /**
+                     * 设置资源类型
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _resourceType 资源类型
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetResourceType(const int64_t& _resourceType);
+
+                    /**
+                     * 判断参数 ResourceType 是否已赋值
+                     * @return ResourceType 是否已赋值
+                     * 
+                     */
+                    bool ResourceTypeHasBeenSet() const;
+
                 private:
 
                     /**
@@ -1378,6 +1403,13 @@ namespace TencentCloud
                      */
                     std::string m_agentSerialId;
                     bool m_agentSerialIdHasBeenSet;
+
+                    /**
+                     * 资源类型
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    int64_t m_resourceType;
+                    bool m_resourceTypeHasBeenSet;
 
                 };
             }

@@ -30,7 +30,8 @@ FirmwareInfo::FirmwareInfo() :
     m_productIdHasBeenSet(false),
     m_fwTypeHasBeenSet(false),
     m_createUserIdHasBeenSet(false),
-    m_creatorNickNameHasBeenSet(false)
+    m_creatorNickNameHasBeenSet(false),
+    m_userDefinedHasBeenSet(false)
 {
 }
 
@@ -139,6 +140,16 @@ CoreInternalOutcome FirmwareInfo::Deserialize(const rapidjson::Value &value)
         m_creatorNickNameHasBeenSet = true;
     }
 
+    if (value.HasMember("UserDefined") && !value["UserDefined"].IsNull())
+    {
+        if (!value["UserDefined"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `FirmwareInfo.UserDefined` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_userDefined = string(value["UserDefined"].GetString());
+        m_userDefinedHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -224,6 +235,14 @@ void FirmwareInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Al
         string key = "CreatorNickName";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_creatorNickName.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_userDefinedHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "UserDefined";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_userDefined.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -387,5 +406,21 @@ void FirmwareInfo::SetCreatorNickName(const string& _creatorNickName)
 bool FirmwareInfo::CreatorNickNameHasBeenSet() const
 {
     return m_creatorNickNameHasBeenSet;
+}
+
+string FirmwareInfo::GetUserDefined() const
+{
+    return m_userDefined;
+}
+
+void FirmwareInfo::SetUserDefined(const string& _userDefined)
+{
+    m_userDefined = _userDefined;
+    m_userDefinedHasBeenSet = true;
+}
+
+bool FirmwareInfo::UserDefinedHasBeenSet() const
+{
+    return m_userDefinedHasBeenSet;
 }
 

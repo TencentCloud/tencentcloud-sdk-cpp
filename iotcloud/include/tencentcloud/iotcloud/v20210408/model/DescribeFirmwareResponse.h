@@ -163,6 +163,22 @@ namespace TencentCloud
                      */
                     bool FwTypeHasBeenSet() const;
 
+                    /**
+                     * 获取固件用户自定义配置信息
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return UserDefined 固件用户自定义配置信息
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::string GetUserDefined() const;
+
+                    /**
+                     * 判断参数 UserDefined 是否已赋值
+                     * @return UserDefined 是否已赋值
+                     * 
+                     */
+                    bool UserDefinedHasBeenSet() const;
+
                 private:
 
                     /**
@@ -216,6 +232,13 @@ namespace TencentCloud
                      */
                     std::string m_fwType;
                     bool m_fwTypeHasBeenSet;
+
+                    /**
+                     * 固件用户自定义配置信息
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_userDefined;
+                    bool m_userDefinedHasBeenSet;
 
                 };
             }

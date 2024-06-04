@@ -259,6 +259,31 @@ namespace TencentCloud
                      */
                     bool CreateUserIdHasBeenSet() const;
 
+                    /**
+                     * 获取固件用户自定义配置信息
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return UserDefined 固件用户自定义配置信息
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::string GetUserDefined() const;
+
+                    /**
+                     * 设置固件用户自定义配置信息
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _userDefined 固件用户自定义配置信息
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetUserDefined(const std::string& _userDefined);
+
+                    /**
+                     * 判断参数 UserDefined 是否已赋值
+                     * @return UserDefined 是否已赋值
+                     * 
+                     */
+                    bool UserDefinedHasBeenSet() const;
+
                 private:
 
                     /**
@@ -320,6 +345,13 @@ namespace TencentCloud
                      */
                     uint64_t m_createUserId;
                     bool m_createUserIdHasBeenSet;
+
+                    /**
+                     * 固件用户自定义配置信息
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_userDefined;
+                    bool m_userDefinedHasBeenSet;
 
                 };
             }

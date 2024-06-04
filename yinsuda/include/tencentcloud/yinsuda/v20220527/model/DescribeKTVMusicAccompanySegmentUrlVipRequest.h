@@ -105,6 +105,27 @@ namespace TencentCloud
                      */
                     bool MusicIdHasBeenSet() const;
 
+                    /**
+                     * 获取房间Id
+                     * @return RoomId 房间Id
+                     * 
+                     */
+                    std::string GetRoomId() const;
+
+                    /**
+                     * 设置房间Id
+                     * @param _roomId 房间Id
+                     * 
+                     */
+                    void SetRoomId(const std::string& _roomId);
+
+                    /**
+                     * 判断参数 RoomId 是否已赋值
+                     * @return RoomId 是否已赋值
+                     * 
+                     */
+                    bool RoomIdHasBeenSet() const;
+
                 private:
 
                     /**
@@ -124,6 +145,12 @@ namespace TencentCloud
                      */
                     std::string m_musicId;
                     bool m_musicIdHasBeenSet;
+
+                    /**
+                     * 房间Id
+                     */
+                    std::string m_roomId;
+                    bool m_roomIdHasBeenSet;
 
                 };
             }

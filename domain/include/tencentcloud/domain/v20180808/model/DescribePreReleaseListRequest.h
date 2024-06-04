@@ -232,15 +232,15 @@ namespace TencentCloud
                     bool PageNumberHasBeenSet() const;
 
                     /**
-                     * 获取没页显示数
-                     * @return PageSize 没页显示数
+                     * 获取每页显示数
+                     * @return PageSize 每页显示数
                      * 
                      */
                     int64_t GetPageSize() const;
 
                     /**
-                     * 设置没页显示数
-                     * @param _pageSize 没页显示数
+                     * 设置每页显示数
+                     * @param _pageSize 每页显示数
                      * 
                      */
                     void SetPageSize(const int64_t& _pageSize);
@@ -561,7 +561,7 @@ namespace TencentCloud
                     bool m_pageNumberHasBeenSet;
 
                     /**
-                     * 没页显示数
+                     * 每页显示数
                      */
                     int64_t m_pageSize;
                     bool m_pageSizeHasBeenSet;

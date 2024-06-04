@@ -64,7 +64,8 @@ Cluster::Cluster() :
     m_webUITypeHasBeenSet(false),
     m_typeHasBeenSet(false),
     m_subEksHasBeenSet(false),
-    m_agentSerialIdHasBeenSet(false)
+    m_agentSerialIdHasBeenSet(false),
+    m_resourceTypeHasBeenSet(false)
 {
 }
 
@@ -587,6 +588,16 @@ CoreInternalOutcome Cluster::Deserialize(const rapidjson::Value &value)
         m_agentSerialIdHasBeenSet = true;
     }
 
+    if (value.HasMember("ResourceType") && !value["ResourceType"].IsNull())
+    {
+        if (!value["ResourceType"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `Cluster.ResourceType` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_resourceType = value["ResourceType"].GetInt64();
+        m_resourceTypeHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -988,6 +999,14 @@ void Cluster::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Allocat
         string key = "AgentSerialId";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_agentSerialId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_resourceTypeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ResourceType";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_resourceType, allocator);
     }
 
 }
@@ -1695,5 +1714,21 @@ void Cluster::SetAgentSerialId(const string& _agentSerialId)
 bool Cluster::AgentSerialIdHasBeenSet() const
 {
     return m_agentSerialIdHasBeenSet;
+}
+
+int64_t Cluster::GetResourceType() const
+{
+    return m_resourceType;
+}
+
+void Cluster::SetResourceType(const int64_t& _resourceType)
+{
+    m_resourceType = _resourceType;
+    m_resourceTypeHasBeenSet = true;
+}
+
+bool Cluster::ResourceTypeHasBeenSet() const
+{
+    return m_resourceTypeHasBeenSet;
 }
 

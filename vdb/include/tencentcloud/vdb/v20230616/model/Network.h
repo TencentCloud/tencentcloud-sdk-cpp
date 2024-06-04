@@ -35,7 +35,7 @@ namespace TencentCloud
             namespace Model
             {
                 /**
-                * 网路信息
+                * 网络信息
                 */
                 class Network : public AbstractModel
                 {
