@@ -27,7 +27,8 @@ AccountCreateInfo::AccountCreateInfo() :
     m_remarkHasBeenSet(false),
     m_isAdminHasBeenSet(false),
     m_authenticationHasBeenSet(false),
-    m_accountTypeHasBeenSet(false)
+    m_accountTypeHasBeenSet(false),
+    m_isCamHasBeenSet(false)
 {
 }
 
@@ -116,6 +117,16 @@ CoreInternalOutcome AccountCreateInfo::Deserialize(const rapidjson::Value &value
         m_accountTypeHasBeenSet = true;
     }
 
+    if (value.HasMember("IsCam") && !value["IsCam"].IsNull())
+    {
+        if (!value["IsCam"].IsBool())
+        {
+            return CoreInternalOutcome(Core::Error("response `AccountCreateInfo.IsCam` IsBool=false incorrectly").SetRequestId(requestId));
+        }
+        m_isCam = value["IsCam"].GetBool();
+        m_isCamHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -184,6 +195,14 @@ void AccountCreateInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Documen
         string key = "AccountType";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_accountType.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_isCamHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "IsCam";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_isCam, allocator);
     }
 
 }
@@ -299,5 +318,21 @@ void AccountCreateInfo::SetAccountType(const string& _accountType)
 bool AccountCreateInfo::AccountTypeHasBeenSet() const
 {
     return m_accountTypeHasBeenSet;
+}
+
+bool AccountCreateInfo::GetIsCam() const
+{
+    return m_isCam;
+}
+
+void AccountCreateInfo::SetIsCam(const bool& _isCam)
+{
+    m_isCam = _isCam;
+    m_isCamHasBeenSet = true;
+}
+
+bool AccountCreateInfo::IsCamHasBeenSet() const
+{
+    return m_isCamHasBeenSet;
 }
 

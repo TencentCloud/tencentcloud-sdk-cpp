@@ -30,6 +30,7 @@ AccountDetail::AccountDetail() :
     m_internalStatusHasBeenSet(false),
     m_dbsHasBeenSet(false),
     m_isAdminHasBeenSet(false),
+    m_isCamHasBeenSet(false),
     m_authenticationHasBeenSet(false),
     m_hostHasBeenSet(false),
     m_accountTypeHasBeenSet(false)
@@ -139,6 +140,16 @@ CoreInternalOutcome AccountDetail::Deserialize(const rapidjson::Value &value)
         }
         m_isAdmin = value["IsAdmin"].GetBool();
         m_isAdminHasBeenSet = true;
+    }
+
+    if (value.HasMember("IsCam") && !value["IsCam"].IsNull())
+    {
+        if (!value["IsCam"].IsBool())
+        {
+            return CoreInternalOutcome(Core::Error("response `AccountDetail.IsCam` IsBool=false incorrectly").SetRequestId(requestId));
+        }
+        m_isCam = value["IsCam"].GetBool();
+        m_isCamHasBeenSet = true;
     }
 
     if (value.HasMember("Authentication") && !value["Authentication"].IsNull())
@@ -255,6 +266,14 @@ void AccountDetail::ToJsonObject(rapidjson::Value &value, rapidjson::Document::A
         string key = "IsAdmin";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_isAdmin, allocator);
+    }
+
+    if (m_isCamHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "IsCam";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_isCam, allocator);
     }
 
     if (m_authenticationHasBeenSet)
@@ -426,6 +445,22 @@ void AccountDetail::SetIsAdmin(const bool& _isAdmin)
 bool AccountDetail::IsAdminHasBeenSet() const
 {
     return m_isAdminHasBeenSet;
+}
+
+bool AccountDetail::GetIsCam() const
+{
+    return m_isCam;
+}
+
+void AccountDetail::SetIsCam(const bool& _isCam)
+{
+    m_isCam = _isCam;
+    m_isCamHasBeenSet = true;
+}
+
+bool AccountDetail::IsCamHasBeenSet() const
+{
+    return m_isCamHasBeenSet;
 }
 
 string AccountDetail::GetAuthentication() const

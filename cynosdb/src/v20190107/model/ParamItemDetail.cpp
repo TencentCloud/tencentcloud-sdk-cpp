@@ -32,7 +32,8 @@ ParamItemDetail::ParamItemDetail() :
     m_paramTypeHasBeenSet(false),
     m_descriptionHasBeenSet(false),
     m_isFuncHasBeenSet(false),
-    m_funcHasBeenSet(false)
+    m_funcHasBeenSet(false),
+    m_funcPatternHasBeenSet(false)
 {
 }
 
@@ -164,6 +165,16 @@ CoreInternalOutcome ParamItemDetail::Deserialize(const rapidjson::Value &value)
         m_funcHasBeenSet = true;
     }
 
+    if (value.HasMember("FuncPattern") && !value["FuncPattern"].IsNull())
+    {
+        if (!value["FuncPattern"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `ParamItemDetail.FuncPattern` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_funcPattern = string(value["FuncPattern"].GetString());
+        m_funcPatternHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -270,6 +281,14 @@ void ParamItemDetail::ToJsonObject(rapidjson::Value &value, rapidjson::Document:
         string key = "Func";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_func.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_funcPatternHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "FuncPattern";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_funcPattern.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -465,5 +484,21 @@ void ParamItemDetail::SetFunc(const string& _func)
 bool ParamItemDetail::FuncHasBeenSet() const
 {
     return m_funcHasBeenSet;
+}
+
+string ParamItemDetail::GetFuncPattern() const
+{
+    return m_funcPattern;
+}
+
+void ParamItemDetail::SetFuncPattern(const string& _funcPattern)
+{
+    m_funcPattern = _funcPattern;
+    m_funcPatternHasBeenSet = true;
+}
+
+bool ParamItemDetail::FuncPatternHasBeenSet() const
+{
+    return m_funcPatternHasBeenSet;
 }
 

@@ -470,6 +470,49 @@ CccClient::CreateExtensionOutcomeCallable CccClient::CreateExtensionCallable(con
     return task->get_future();
 }
 
+CccClient::CreateIVRSessionOutcome CccClient::CreateIVRSession(const CreateIVRSessionRequest &request)
+{
+    auto outcome = MakeRequest(request, "CreateIVRSession");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        CreateIVRSessionResponse rsp = CreateIVRSessionResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return CreateIVRSessionOutcome(rsp);
+        else
+            return CreateIVRSessionOutcome(o.GetError());
+    }
+    else
+    {
+        return CreateIVRSessionOutcome(outcome.GetError());
+    }
+}
+
+void CccClient::CreateIVRSessionAsync(const CreateIVRSessionRequest& request, const CreateIVRSessionAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->CreateIVRSession(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+CccClient::CreateIVRSessionOutcomeCallable CccClient::CreateIVRSessionCallable(const CreateIVRSessionRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<CreateIVRSessionOutcome()>>(
+        [this, request]()
+        {
+            return this->CreateIVRSession(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 CccClient::CreatePredictiveDialingCampaignOutcome CccClient::CreatePredictiveDialingCampaign(const CreatePredictiveDialingCampaignRequest &request)
 {
     auto outcome = MakeRequest(request, "CreatePredictiveDialingCampaign");

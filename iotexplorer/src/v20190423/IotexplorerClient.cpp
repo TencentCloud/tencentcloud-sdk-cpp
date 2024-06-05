@@ -4383,6 +4383,49 @@ IotexplorerClient::GetTopicRuleListOutcomeCallable IotexplorerClient::GetTopicRu
     return task->get_future();
 }
 
+IotexplorerClient::GetWechatDeviceTicketOutcome IotexplorerClient::GetWechatDeviceTicket(const GetWechatDeviceTicketRequest &request)
+{
+    auto outcome = MakeRequest(request, "GetWechatDeviceTicket");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        GetWechatDeviceTicketResponse rsp = GetWechatDeviceTicketResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return GetWechatDeviceTicketOutcome(rsp);
+        else
+            return GetWechatDeviceTicketOutcome(o.GetError());
+    }
+    else
+    {
+        return GetWechatDeviceTicketOutcome(outcome.GetError());
+    }
+}
+
+void IotexplorerClient::GetWechatDeviceTicketAsync(const GetWechatDeviceTicketRequest& request, const GetWechatDeviceTicketAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->GetWechatDeviceTicket(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+IotexplorerClient::GetWechatDeviceTicketOutcomeCallable IotexplorerClient::GetWechatDeviceTicketCallable(const GetWechatDeviceTicketRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<GetWechatDeviceTicketOutcome()>>(
+        [this, request]()
+        {
+            return this->GetWechatDeviceTicket(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 IotexplorerClient::InheritCloudStorageUserOutcome IotexplorerClient::InheritCloudStorageUser(const InheritCloudStorageUserRequest &request)
 {
     auto outcome = MakeRequest(request, "InheritCloudStorageUser");

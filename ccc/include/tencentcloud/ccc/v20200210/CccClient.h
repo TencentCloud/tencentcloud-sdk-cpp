@@ -43,6 +43,8 @@
 #include <tencentcloud/ccc/v20200210/model/CreateCompanyApplyResponse.h>
 #include <tencentcloud/ccc/v20200210/model/CreateExtensionRequest.h>
 #include <tencentcloud/ccc/v20200210/model/CreateExtensionResponse.h>
+#include <tencentcloud/ccc/v20200210/model/CreateIVRSessionRequest.h>
+#include <tencentcloud/ccc/v20200210/model/CreateIVRSessionResponse.h>
 #include <tencentcloud/ccc/v20200210/model/CreatePredictiveDialingCampaignRequest.h>
 #include <tencentcloud/ccc/v20200210/model/CreatePredictiveDialingCampaignResponse.h>
 #include <tencentcloud/ccc/v20200210/model/CreateSDKLoginTokenRequest.h>
@@ -181,6 +183,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::CreateExtensionResponse> CreateExtensionOutcome;
                 typedef std::future<CreateExtensionOutcome> CreateExtensionOutcomeCallable;
                 typedef std::function<void(const CccClient*, const Model::CreateExtensionRequest&, CreateExtensionOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateExtensionAsyncHandler;
+                typedef Outcome<Core::Error, Model::CreateIVRSessionResponse> CreateIVRSessionOutcome;
+                typedef std::future<CreateIVRSessionOutcome> CreateIVRSessionOutcomeCallable;
+                typedef std::function<void(const CccClient*, const Model::CreateIVRSessionRequest&, CreateIVRSessionOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateIVRSessionAsyncHandler;
                 typedef Outcome<Core::Error, Model::CreatePredictiveDialingCampaignResponse> CreatePredictiveDialingCampaignOutcome;
                 typedef std::future<CreatePredictiveDialingCampaignOutcome> CreatePredictiveDialingCampaignOutcomeCallable;
                 typedef std::function<void(const CccClient*, const Model::CreatePredictiveDialingCampaignRequest&, CreatePredictiveDialingCampaignOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreatePredictiveDialingCampaignAsyncHandler;
@@ -414,6 +419,15 @@ namespace TencentCloud
                 CreateExtensionOutcome CreateExtension(const Model::CreateExtensionRequest &request);
                 void CreateExtensionAsync(const Model::CreateExtensionRequest& request, const CreateExtensionAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 CreateExtensionOutcomeCallable CreateExtensionCallable(const Model::CreateExtensionRequest& request);
+
+                /**
+                 *创建关联 IVR 的会话，仅高级版支持，目前支持呼入和自动外呼两种 IVR 类型。收到请求后 TCCC 会先尝试呼通被叫，然后进入 IVR 流程。
+                 * @param req CreateIVRSessionRequest
+                 * @return CreateIVRSessionOutcome
+                 */
+                CreateIVRSessionOutcome CreateIVRSession(const Model::CreateIVRSessionRequest &request);
+                void CreateIVRSessionAsync(const Model::CreateIVRSessionRequest& request, const CreateIVRSessionAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                CreateIVRSessionOutcomeCallable CreateIVRSessionCallable(const Model::CreateIVRSessionRequest& request);
 
                 /**
                  *创建预测式外呼任务

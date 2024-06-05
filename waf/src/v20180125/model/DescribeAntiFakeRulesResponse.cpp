@@ -24,6 +24,7 @@ using namespace TencentCloud::Waf::V20180125::Model;
 using namespace std;
 
 DescribeAntiFakeRulesResponse::DescribeAntiFakeRulesResponse() :
+    m_totalHasBeenSet(false),
     m_dataHasBeenSet(false)
 {
 }
@@ -62,6 +63,16 @@ CoreInternalOutcome DescribeAntiFakeRulesResponse::Deserialize(const string &pay
     }
 
 
+    if (rsp.HasMember("Total") && !rsp["Total"].IsNull())
+    {
+        if (!rsp["Total"].IsUint64())
+        {
+            return CoreInternalOutcome(Core::Error("response `Total` IsUint64=false incorrectly").SetRequestId(requestId));
+        }
+        m_total = rsp["Total"].GetUint64();
+        m_totalHasBeenSet = true;
+    }
+
     if (rsp.HasMember("Data") && !rsp["Data"].IsNull())
     {
         if (!rsp["Data"].IsArray())
@@ -92,6 +103,14 @@ string DescribeAntiFakeRulesResponse::ToJsonString() const
     value.SetObject();
     rapidjson::Document::AllocatorType& allocator = value.GetAllocator();
 
+    if (m_totalHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Total";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_total, allocator);
+    }
+
     if (m_dataHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
@@ -118,6 +137,16 @@ string DescribeAntiFakeRulesResponse::ToJsonString() const
     return buffer.GetString();
 }
 
+
+uint64_t DescribeAntiFakeRulesResponse::GetTotal() const
+{
+    return m_total;
+}
+
+bool DescribeAntiFakeRulesResponse::TotalHasBeenSet() const
+{
+    return m_totalHasBeenSet;
+}
 
 vector<CacheUrlItems> DescribeAntiFakeRulesResponse::GetData() const
 {

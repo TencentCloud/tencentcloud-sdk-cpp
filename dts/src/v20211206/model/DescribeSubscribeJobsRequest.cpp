@@ -26,6 +26,7 @@ DescribeSubscribeJobsRequest::DescribeSubscribeJobsRequest() :
     m_subscribeIdHasBeenSet(false),
     m_subscribeNameHasBeenSet(false),
     m_instanceIdHasBeenSet(false),
+    m_topicHasBeenSet(false),
     m_payTypeHasBeenSet(false),
     m_productHasBeenSet(false),
     m_statusHasBeenSet(false),
@@ -66,6 +67,14 @@ string DescribeSubscribeJobsRequest::ToJsonString() const
         string key = "InstanceId";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_instanceId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_topicHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Topic";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_topic.c_str(), allocator).Move(), allocator);
     }
 
     if (m_payTypeHasBeenSet)
@@ -203,6 +212,22 @@ void DescribeSubscribeJobsRequest::SetInstanceId(const string& _instanceId)
 bool DescribeSubscribeJobsRequest::InstanceIdHasBeenSet() const
 {
     return m_instanceIdHasBeenSet;
+}
+
+string DescribeSubscribeJobsRequest::GetTopic() const
+{
+    return m_topic;
+}
+
+void DescribeSubscribeJobsRequest::SetTopic(const string& _topic)
+{
+    m_topic = _topic;
+    m_topicHasBeenSet = true;
+}
+
+bool DescribeSubscribeJobsRequest::TopicHasBeenSet() const
+{
+    return m_topicHasBeenSet;
 }
 
 int64_t DescribeSubscribeJobsRequest::GetPayType() const

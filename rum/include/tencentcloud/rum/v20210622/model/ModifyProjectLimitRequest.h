@@ -64,15 +64,15 @@ namespace TencentCloud
                     bool ProjectIDHasBeenSet() const;
 
                     /**
-                     * 获取项目接口
-                     * @return ProjectInterface 项目接口
+                     * 获取取值为[log speed performance webvitals pv event custom miniProgramData]其中之一
+                     * @return ProjectInterface 取值为[log speed performance webvitals pv event custom miniProgramData]其中之一
                      * 
                      */
                     std::string GetProjectInterface() const;
 
                     /**
-                     * 设置项目接口
-                     * @param _projectInterface 项目接口
+                     * 设置取值为[log speed performance webvitals pv event custom miniProgramData]其中之一
+                     * @param _projectInterface 取值为[log speed performance webvitals pv event custom miniProgramData]其中之一
                      * 
                      */
                     void SetProjectInterface(const std::string& _projectInterface);
@@ -156,7 +156,7 @@ namespace TencentCloud
                     bool m_projectIDHasBeenSet;
 
                     /**
-                     * 项目接口
+                     * 取值为[log speed performance webvitals pv event custom miniProgramData]其中之一
                      */
                     std::string m_projectInterface;
                     bool m_projectInterfaceHasBeenSet;

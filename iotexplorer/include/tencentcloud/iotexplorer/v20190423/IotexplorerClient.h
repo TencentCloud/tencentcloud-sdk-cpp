@@ -225,6 +225,8 @@
 #include <tencentcloud/iotexplorer/v20190423/model/GetTWeCallPkgListResponse.h>
 #include <tencentcloud/iotexplorer/v20190423/model/GetTopicRuleListRequest.h>
 #include <tencentcloud/iotexplorer/v20190423/model/GetTopicRuleListResponse.h>
+#include <tencentcloud/iotexplorer/v20190423/model/GetWechatDeviceTicketRequest.h>
+#include <tencentcloud/iotexplorer/v20190423/model/GetWechatDeviceTicketResponse.h>
 #include <tencentcloud/iotexplorer/v20190423/model/InheritCloudStorageUserRequest.h>
 #include <tencentcloud/iotexplorer/v20190423/model/InheritCloudStorageUserResponse.h>
 #include <tencentcloud/iotexplorer/v20190423/model/ListEventHistoryRequest.h>
@@ -612,6 +614,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::GetTopicRuleListResponse> GetTopicRuleListOutcome;
                 typedef std::future<GetTopicRuleListOutcome> GetTopicRuleListOutcomeCallable;
                 typedef std::function<void(const IotexplorerClient*, const Model::GetTopicRuleListRequest&, GetTopicRuleListOutcome, const std::shared_ptr<const AsyncCallerContext>&)> GetTopicRuleListAsyncHandler;
+                typedef Outcome<Core::Error, Model::GetWechatDeviceTicketResponse> GetWechatDeviceTicketOutcome;
+                typedef std::future<GetWechatDeviceTicketOutcome> GetWechatDeviceTicketOutcomeCallable;
+                typedef std::function<void(const IotexplorerClient*, const Model::GetWechatDeviceTicketRequest&, GetWechatDeviceTicketOutcome, const std::shared_ptr<const AsyncCallerContext>&)> GetWechatDeviceTicketAsyncHandler;
                 typedef Outcome<Core::Error, Model::InheritCloudStorageUserResponse> InheritCloudStorageUserOutcome;
                 typedef std::future<InheritCloudStorageUserOutcome> InheritCloudStorageUserOutcomeCallable;
                 typedef std::function<void(const IotexplorerClient*, const Model::InheritCloudStorageUserRequest&, InheritCloudStorageUserOutcome, const std::shared_ptr<const AsyncCallerContext>&)> InheritCloudStorageUserAsyncHandler;
@@ -1628,6 +1633,15 @@ namespace TencentCloud
                 GetTopicRuleListOutcome GetTopicRuleList(const Model::GetTopicRuleListRequest &request);
                 void GetTopicRuleListAsync(const Model::GetTopicRuleListRequest& request, const GetTopicRuleListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 GetTopicRuleListOutcomeCallable GetTopicRuleListCallable(const Model::GetTopicRuleListRequest& request);
+
+                /**
+                 *查询微信设备授权票据
+                 * @param req GetWechatDeviceTicketRequest
+                 * @return GetWechatDeviceTicketOutcome
+                 */
+                GetWechatDeviceTicketOutcome GetWechatDeviceTicket(const Model::GetWechatDeviceTicketRequest &request);
+                void GetWechatDeviceTicketAsync(const Model::GetWechatDeviceTicketRequest& request, const GetWechatDeviceTicketAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                GetWechatDeviceTicketOutcomeCallable GetWechatDeviceTicketCallable(const Model::GetWechatDeviceTicketRequest& request);
 
                 /**
                  *继承云存用户

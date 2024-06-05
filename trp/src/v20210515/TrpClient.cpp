@@ -83,6 +83,49 @@ TrpClient::AuthorizedTransferOutcomeCallable TrpClient::AuthorizedTransferCallab
     return task->get_future();
 }
 
+TrpClient::CreateChainBatchOutcome TrpClient::CreateChainBatch(const CreateChainBatchRequest &request)
+{
+    auto outcome = MakeRequest(request, "CreateChainBatch");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        CreateChainBatchResponse rsp = CreateChainBatchResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return CreateChainBatchOutcome(rsp);
+        else
+            return CreateChainBatchOutcome(o.GetError());
+    }
+    else
+    {
+        return CreateChainBatchOutcome(outcome.GetError());
+    }
+}
+
+void TrpClient::CreateChainBatchAsync(const CreateChainBatchRequest& request, const CreateChainBatchAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->CreateChainBatch(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+TrpClient::CreateChainBatchOutcomeCallable TrpClient::CreateChainBatchCallable(const CreateChainBatchRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<CreateChainBatchOutcome()>>(
+        [this, request]()
+        {
+            return this->CreateChainBatch(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 TrpClient::CreateCodeBatchOutcome TrpClient::CreateCodeBatch(const CreateCodeBatchRequest &request)
 {
     auto outcome = MakeRequest(request, "CreateCodeBatch");

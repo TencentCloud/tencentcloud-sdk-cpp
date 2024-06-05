@@ -867,7 +867,9 @@ namespace TencentCloud
                 DeleteVpcFwGroupOutcomeCallable DeleteVpcFwGroupCallable(const Model::DeleteVpcFwGroupRequest& request);
 
                 /**
-                 *删除防火墙实例
+                 *接口废弃
+
+删除防火墙实例
                  * @param req DeleteVpcInstanceRequest
                  * @return DeleteVpcInstanceOutcome
                  */
@@ -1148,7 +1150,7 @@ namespace TencentCloud
                 DescribeSecurityGroupListOutcomeCallable DescribeSecurityGroupListCallable(const Model::DescribeSecurityGroupListRequest& request);
 
                 /**
-                 *DescribeSourceAsset-查询资产组全部资产信息
+                 *DescribeSourceAsset-查询全部资产信息
                  * @param req DescribeSourceAssetRequest
                  * @return DescribeSourceAssetOutcome
                  */

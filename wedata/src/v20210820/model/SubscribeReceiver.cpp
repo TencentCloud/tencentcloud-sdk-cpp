@@ -22,7 +22,8 @@ using namespace std;
 
 SubscribeReceiver::SubscribeReceiver() :
     m_receiverUserIdHasBeenSet(false),
-    m_receiverNameHasBeenSet(false)
+    m_receiverNameHasBeenSet(false),
+    m_receiverUserIdStrHasBeenSet(false)
 {
 }
 
@@ -51,6 +52,16 @@ CoreInternalOutcome SubscribeReceiver::Deserialize(const rapidjson::Value &value
         m_receiverNameHasBeenSet = true;
     }
 
+    if (value.HasMember("ReceiverUserIdStr") && !value["ReceiverUserIdStr"].IsNull())
+    {
+        if (!value["ReceiverUserIdStr"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `SubscribeReceiver.ReceiverUserIdStr` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_receiverUserIdStr = string(value["ReceiverUserIdStr"].GetString());
+        m_receiverUserIdStrHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -72,6 +83,14 @@ void SubscribeReceiver::ToJsonObject(rapidjson::Value &value, rapidjson::Documen
         string key = "ReceiverName";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_receiverName.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_receiverUserIdStrHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ReceiverUserIdStr";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_receiverUserIdStr.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -107,5 +126,21 @@ void SubscribeReceiver::SetReceiverName(const string& _receiverName)
 bool SubscribeReceiver::ReceiverNameHasBeenSet() const
 {
     return m_receiverNameHasBeenSet;
+}
+
+string SubscribeReceiver::GetReceiverUserIdStr() const
+{
+    return m_receiverUserIdStr;
+}
+
+void SubscribeReceiver::SetReceiverUserIdStr(const string& _receiverUserIdStr)
+{
+    m_receiverUserIdStr = _receiverUserIdStr;
+    m_receiverUserIdStrHasBeenSet = true;
+}
+
+bool SubscribeReceiver::ReceiverUserIdStrHasBeenSet() const
+{
+    return m_receiverUserIdStrHasBeenSet;
 }
 

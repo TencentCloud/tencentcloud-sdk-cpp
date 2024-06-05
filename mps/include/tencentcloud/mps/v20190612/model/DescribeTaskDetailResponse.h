@@ -50,16 +50,8 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取任务类型，目前取值有：
-<li>WorkflowTask：视频工作流处理任务。</li>
-<li>EditMediaTask：视频编辑任务。</li>
-<li>LiveStreamProcessTask：直播流处理任务。</li>
-<li>ScheduleTask：编排处理任务。</li>
-                     * @return TaskType 任务类型，目前取值有：
-<li>WorkflowTask：视频工作流处理任务。</li>
-<li>EditMediaTask：视频编辑任务。</li>
-<li>LiveStreamProcessTask：直播流处理任务。</li>
-<li>ScheduleTask：编排处理任务。</li>
+                     * 获取任务类型，目前取值有：<li>WorkflowTask：视频工作流处理任务。</li><li>EditMediaTask：视频编辑任务。</li><li>LiveStreamProcessTask：直播流处理任务。</li><li>ScheduleTask：编排处理任务。</li><li>EvaluationTask：评测任务。</li>
+                     * @return TaskType 任务类型，目前取值有：<li>WorkflowTask：视频工作流处理任务。</li><li>EditMediaTask：视频编辑任务。</li><li>LiveStreamProcessTask：直播流处理任务。</li><li>ScheduleTask：编排处理任务。</li><li>EvaluationTask：评测任务。</li>
                      * 
                      */
                     std::string GetTaskType() const;
@@ -288,11 +280,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 任务类型，目前取值有：
-<li>WorkflowTask：视频工作流处理任务。</li>
-<li>EditMediaTask：视频编辑任务。</li>
-<li>LiveStreamProcessTask：直播流处理任务。</li>
-<li>ScheduleTask：编排处理任务。</li>
+                     * 任务类型，目前取值有：<li>WorkflowTask：视频工作流处理任务。</li><li>EditMediaTask：视频编辑任务。</li><li>LiveStreamProcessTask：直播流处理任务。</li><li>ScheduleTask：编排处理任务。</li><li>EvaluationTask：评测任务。</li>
                      */
                     std::string m_taskType;
                     bool m_taskTypeHasBeenSet;

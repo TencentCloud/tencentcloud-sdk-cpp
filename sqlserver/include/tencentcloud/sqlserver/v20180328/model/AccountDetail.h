@@ -36,7 +36,7 @@ namespace TencentCloud
             namespace Model
             {
                 /**
-                * 账户信息详情
+                * 账号信息详情
                 */
                 class AccountDetail : public AbstractModel
                 {
@@ -237,6 +237,27 @@ namespace TencentCloud
                     bool IsAdminHasBeenSet() const;
 
                     /**
+                     * 获取是否为cam托管账户
+                     * @return IsCam 是否为cam托管账户
+                     * 
+                     */
+                    bool GetIsCam() const;
+
+                    /**
+                     * 设置是否为cam托管账户
+                     * @param _isCam 是否为cam托管账户
+                     * 
+                     */
+                    void SetIsCam(const bool& _isCam);
+
+                    /**
+                     * 判断参数 IsCam 是否已赋值
+                     * @return IsCam 是否已赋值
+                     * 
+                     */
+                    bool IsCamHasBeenSet() const;
+
+                    /**
                      * 获取win-windows鉴权,sql-sqlserver鉴权
                      * @return Authentication win-windows鉴权,sql-sqlserver鉴权
                      * 
@@ -354,6 +375,12 @@ namespace TencentCloud
                      */
                     bool m_isAdmin;
                     bool m_isAdminHasBeenSet;
+
+                    /**
+                     * 是否为cam托管账户
+                     */
+                    bool m_isCam;
+                    bool m_isCamHasBeenSet;
 
                     /**
                      * win-windows鉴权,sql-sqlserver鉴权

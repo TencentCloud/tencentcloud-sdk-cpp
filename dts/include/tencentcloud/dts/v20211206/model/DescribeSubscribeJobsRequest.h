@@ -107,6 +107,27 @@ namespace TencentCloud
                     bool InstanceIdHasBeenSet() const;
 
                     /**
+                     * 获取订阅的topicName
+                     * @return Topic 订阅的topicName
+                     * 
+                     */
+                    std::string GetTopic() const;
+
+                    /**
+                     * 设置订阅的topicName
+                     * @param _topic 订阅的topicName
+                     * 
+                     */
+                    void SetTopic(const std::string& _topic);
+
+                    /**
+                     * 判断参数 Topic 是否已赋值
+                     * @return Topic 是否已赋值
+                     * 
+                     */
+                    bool TopicHasBeenSet() const;
+
+                    /**
                      * 获取计费模式筛选，可能的值：0-包年包月，1-按量计费
                      * @return PayType 计费模式筛选，可能的值：0-包年包月，1-按量计费
                      * 
@@ -293,6 +314,12 @@ namespace TencentCloud
                      */
                     std::string m_instanceId;
                     bool m_instanceIdHasBeenSet;
+
+                    /**
+                     * 订阅的topicName
+                     */
+                    std::string m_topic;
+                    bool m_topicHasBeenSet;
 
                     /**
                      * 计费模式筛选，可能的值：0-包年包月，1-按量计费

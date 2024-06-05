@@ -47,18 +47,18 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取embedding 信息。
+                     * 获取Embedding 信息，目前为 1024 维浮点数。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return Embedding embedding 信息。
+                     * @return Embedding Embedding 信息，目前为 1024 维浮点数。
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<double> GetEmbedding() const;
 
                     /**
-                     * 设置embedding 信息。
+                     * 设置Embedding 信息，目前为 1024 维浮点数。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _embedding embedding 信息。
+                     * @param _embedding Embedding 信息，目前为 1024 维浮点数。
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -72,18 +72,18 @@ namespace TencentCloud
                     bool EmbeddingHasBeenSet() const;
 
                     /**
-                     * 获取下标。
+                     * 获取下标，目前不支持批量，因此固定为 0。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return Index 下标。
+                     * @return Index 下标，目前不支持批量，因此固定为 0。
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetIndex() const;
 
                     /**
-                     * 设置下标。
+                     * 设置下标，目前不支持批量，因此固定为 0。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _index 下标。
+                     * @param _index 下标，目前不支持批量，因此固定为 0。
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -97,18 +97,18 @@ namespace TencentCloud
                     bool IndexHasBeenSet() const;
 
                     /**
-                     * 获取embedding
+                     * 获取目前固定为 "embedding"。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return Object embedding
+                     * @return Object 目前固定为 "embedding"。
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetObject() const;
 
                     /**
-                     * 设置embedding
+                     * 设置目前固定为 "embedding"。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _object embedding
+                     * @param _object 目前固定为 "embedding"。
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -124,21 +124,21 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * embedding 信息。
+                     * Embedding 信息，目前为 1024 维浮点数。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<double> m_embedding;
                     bool m_embeddingHasBeenSet;
 
                     /**
-                     * 下标。
+                     * 下标，目前不支持批量，因此固定为 0。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_index;
                     bool m_indexHasBeenSet;
 
                     /**
-                     * embedding
+                     * 目前固定为 "embedding"。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_object;

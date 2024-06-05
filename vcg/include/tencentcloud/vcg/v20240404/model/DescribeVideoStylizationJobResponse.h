@@ -62,14 +62,14 @@ namespace TencentCloud
 JobInit:  "初始化中"
 JobModerationFailed: "审核失败",
 JobRunning: "处理中",
-JobFailed: "处理完成",
-JobSuccess: "处理失败"。
+JobFailed: "处理失败",
+JobSuccess: "处理完成"。
                      * @return StatusCode 任务状态码：
 JobInit:  "初始化中"
 JobModerationFailed: "审核失败",
 JobRunning: "处理中",
-JobFailed: "处理完成",
-JobSuccess: "处理失败"。
+JobFailed: "处理失败",
+JobSuccess: "处理完成"。
                      * 
                      */
                     std::string GetStatusCode() const;
@@ -122,8 +122,8 @@ JobSuccess: "处理失败"。
 JobInit:  "初始化中"
 JobModerationFailed: "审核失败",
 JobRunning: "处理中",
-JobFailed: "处理完成",
-JobSuccess: "处理失败"。
+JobFailed: "处理失败",
+JobSuccess: "处理完成"。
                      */
                     std::string m_statusCode;
                     bool m_statusCodeHasBeenSet;

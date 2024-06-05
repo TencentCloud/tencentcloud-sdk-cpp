@@ -27,6 +27,8 @@
 #include <tencentcloud/facefusion/v20220927/model/DescribeMaterialListResponse.h>
 #include <tencentcloud/facefusion/v20220927/model/FuseFaceRequest.h>
 #include <tencentcloud/facefusion/v20220927/model/FuseFaceResponse.h>
+#include <tencentcloud/facefusion/v20220927/model/FuseFaceUltraRequest.h>
+#include <tencentcloud/facefusion/v20220927/model/FuseFaceUltraResponse.h>
 
 
 namespace TencentCloud
@@ -47,6 +49,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::FuseFaceResponse> FuseFaceOutcome;
                 typedef std::future<FuseFaceOutcome> FuseFaceOutcomeCallable;
                 typedef std::function<void(const FacefusionClient*, const Model::FuseFaceRequest&, FuseFaceOutcome, const std::shared_ptr<const AsyncCallerContext>&)> FuseFaceAsyncHandler;
+                typedef Outcome<Core::Error, Model::FuseFaceUltraResponse> FuseFaceUltraOutcome;
+                typedef std::future<FuseFaceUltraOutcome> FuseFaceUltraOutcomeCallable;
+                typedef std::function<void(const FacefusionClient*, const Model::FuseFaceUltraRequest&, FuseFaceUltraOutcome, const std::shared_ptr<const AsyncCallerContext>&)> FuseFaceUltraAsyncHandler;
 
 
 
@@ -71,6 +76,16 @@ namespace TencentCloud
                 FuseFaceOutcome FuseFace(const Model::FuseFaceRequest &request);
                 void FuseFaceAsync(const Model::FuseFaceRequest& request, const FuseFaceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 FuseFaceOutcomeCallable FuseFaceCallable(const Model::FuseFaceRequest& request);
+
+                /**
+                 *图片人脸融合（专业版）为同步接口，支持自定义美颜、人脸增强、牙齿增强、拉脸等参数，最高支持8K分辨率，有多个模型类型供选择。查看 <a href="https://cloud.tencent.com/document/product/670/38247" target="_blank">融合接入指引</a>。
+请求频率限制为2次/秒。
+                 * @param req FuseFaceUltraRequest
+                 * @return FuseFaceUltraOutcome
+                 */
+                FuseFaceUltraOutcome FuseFaceUltra(const Model::FuseFaceUltraRequest &request);
+                void FuseFaceUltraAsync(const Model::FuseFaceUltraRequest& request, const FuseFaceUltraAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                FuseFaceUltraOutcomeCallable FuseFaceUltraCallable(const Model::FuseFaceUltraRequest& request);
 
             };
         }

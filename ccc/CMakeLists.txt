@@ -21,6 +21,7 @@ set(ccc_public_header
 set(ccc_public_header_model
   include/tencentcloud/ccc/v20200210/model/DescribeExtensionRequest.h
   include/tencentcloud/ccc/v20200210/model/StopAutoCalloutTaskRequest.h
+  include/tencentcloud/ccc/v20200210/model/CreateIVRSessionRequest.h
   include/tencentcloud/ccc/v20200210/model/CompanyApplyInfo.h
   include/tencentcloud/ccc/v20200210/model/CreateSDKLoginTokenResponse.h
   include/tencentcloud/ccc/v20200210/model/ModifyStaffRequest.h
@@ -141,8 +142,9 @@ set(ccc_public_header_model
   include/tencentcloud/ccc/v20200210/model/DescribeCallInMetricsResponse.h
   include/tencentcloud/ccc/v20200210/model/ModifyCompanyApplyRequest.h
   include/tencentcloud/ccc/v20200210/model/DescribeCompanyListRequest.h
-  include/tencentcloud/ccc/v20200210/model/DescribeActiveCarrierPrivilegeNumberResponse.h
+  include/tencentcloud/ccc/v20200210/model/CreateIVRSessionResponse.h
   include/tencentcloud/ccc/v20200210/model/IMSatisfaction.h
+  include/tencentcloud/ccc/v20200210/model/DescribeActiveCarrierPrivilegeNumberResponse.h
   include/tencentcloud/ccc/v20200210/model/HangUpCallRequest.h
   include/tencentcloud/ccc/v20200210/model/DescribeTelCdrResponse.h
   include/tencentcloud/ccc/v20200210/model/DescribeStaffStatusMetricsRequest.h
@@ -178,6 +180,7 @@ set(ccc_src
   src/v20200210/CccClient.cpp
   src/v20200210/model/DescribeExtensionRequest.cpp
   src/v20200210/model/StopAutoCalloutTaskRequest.cpp
+  src/v20200210/model/CreateIVRSessionRequest.cpp
   src/v20200210/model/CompanyApplyInfo.cpp
   src/v20200210/model/CreateSDKLoginTokenResponse.cpp
   src/v20200210/model/ModifyStaffRequest.cpp
@@ -298,8 +301,9 @@ set(ccc_src
   src/v20200210/model/DescribeCallInMetricsResponse.cpp
   src/v20200210/model/ModifyCompanyApplyRequest.cpp
   src/v20200210/model/DescribeCompanyListRequest.cpp
-  src/v20200210/model/DescribeActiveCarrierPrivilegeNumberResponse.cpp
+  src/v20200210/model/CreateIVRSessionResponse.cpp
   src/v20200210/model/IMSatisfaction.cpp
+  src/v20200210/model/DescribeActiveCarrierPrivilegeNumberResponse.cpp
   src/v20200210/model/HangUpCallRequest.cpp
   src/v20200210/model/DescribeTelCdrResponse.cpp
   src/v20200210/model/DescribeStaffStatusMetricsRequest.cpp

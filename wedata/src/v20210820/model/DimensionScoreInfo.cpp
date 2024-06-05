@@ -27,7 +27,8 @@ DimensionScoreInfo::DimensionScoreInfo() :
     m_userNameHasBeenSet(false),
     m_updateTimeHasBeenSet(false),
     m_joinTableNumberHasBeenSet(false),
-    m_scoreHasBeenSet(false)
+    m_scoreHasBeenSet(false),
+    m_userIdStrHasBeenSet(false)
 {
 }
 
@@ -106,6 +107,16 @@ CoreInternalOutcome DimensionScoreInfo::Deserialize(const rapidjson::Value &valu
         m_scoreHasBeenSet = true;
     }
 
+    if (value.HasMember("UserIdStr") && !value["UserIdStr"].IsNull())
+    {
+        if (!value["UserIdStr"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `DimensionScoreInfo.UserIdStr` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_userIdStr = string(value["UserIdStr"].GetString());
+        m_userIdStrHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -167,6 +178,14 @@ void DimensionScoreInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Docume
         string key = "Score";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_score, allocator);
+    }
+
+    if (m_userIdStrHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "UserIdStr";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_userIdStr.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -282,5 +301,21 @@ void DimensionScoreInfo::SetScore(const double& _score)
 bool DimensionScoreInfo::ScoreHasBeenSet() const
 {
     return m_scoreHasBeenSet;
+}
+
+string DimensionScoreInfo::GetUserIdStr() const
+{
+    return m_userIdStr;
+}
+
+void DimensionScoreInfo::SetUserIdStr(const string& _userIdStr)
+{
+    m_userIdStr = _userIdStr;
+    m_userIdStrHasBeenSet = true;
+}
+
+bool DimensionScoreInfo::UserIdStrHasBeenSet() const
+{
+    return m_userIdStrHasBeenSet;
 }
 

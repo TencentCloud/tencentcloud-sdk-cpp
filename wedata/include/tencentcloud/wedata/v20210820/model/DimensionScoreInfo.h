@@ -213,6 +213,31 @@ namespace TencentCloud
                      */
                     bool ScoreHasBeenSet() const;
 
+                    /**
+                     * 获取设置人idStr
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return UserIdStr 设置人idStr
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::string GetUserIdStr() const;
+
+                    /**
+                     * 设置设置人idStr
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _userIdStr 设置人idStr
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetUserIdStr(const std::string& _userIdStr);
+
+                    /**
+                     * 判断参数 UserIdStr 是否已赋值
+                     * @return UserIdStr 是否已赋值
+                     * 
+                     */
+                    bool UserIdStrHasBeenSet() const;
+
                 private:
 
                     /**
@@ -261,6 +286,13 @@ namespace TencentCloud
                      */
                     double m_score;
                     bool m_scoreHasBeenSet;
+
+                    /**
+                     * 设置人idStr
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_userIdStr;
+                    bool m_userIdStrHasBeenSet;
 
                 };
             }

@@ -40,7 +40,8 @@ RuleTemplate::RuleTemplate() :
     m_sqlExpressionHasBeenSet(false),
     m_subQualityDimHasBeenSet(false),
     m_resolvedSqlExpressionHasBeenSet(false),
-    m_datasourceTypesHasBeenSet(false)
+    m_datasourceTypesHasBeenSet(false),
+    m_userIdStrHasBeenSet(false)
 {
 }
 
@@ -262,6 +263,16 @@ CoreInternalOutcome RuleTemplate::Deserialize(const rapidjson::Value &value)
         m_datasourceTypesHasBeenSet = true;
     }
 
+    if (value.HasMember("UserIdStr") && !value["UserIdStr"].IsNull())
+    {
+        if (!value["UserIdStr"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `RuleTemplate.UserIdStr` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_userIdStr = string(value["UserIdStr"].GetString());
+        m_userIdStrHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -438,6 +449,14 @@ void RuleTemplate::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Al
         {
             value[key.c_str()].PushBack(rapidjson::Value().SetInt64(*itr), allocator);
         }
+    }
+
+    if (m_userIdStrHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "UserIdStr";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_userIdStr.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -761,5 +780,21 @@ void RuleTemplate::SetDatasourceTypes(const vector<int64_t>& _datasourceTypes)
 bool RuleTemplate::DatasourceTypesHasBeenSet() const
 {
     return m_datasourceTypesHasBeenSet;
+}
+
+string RuleTemplate::GetUserIdStr() const
+{
+    return m_userIdStr;
+}
+
+void RuleTemplate::SetUserIdStr(const string& _userIdStr)
+{
+    m_userIdStr = _userIdStr;
+    m_userIdStrHasBeenSet = true;
+}
+
+bool RuleTemplate::UserIdStrHasBeenSet() const
+{
+    return m_userIdStrHasBeenSet;
 }
 

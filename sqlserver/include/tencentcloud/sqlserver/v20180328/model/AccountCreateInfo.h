@@ -132,15 +132,15 @@ namespace TencentCloud
                     bool RemarkHasBeenSet() const;
 
                     /**
-                     * 获取是否为管理员账户，当值为true 等价于基础版AccountType=L0，高可用AccountType=L1，当值为false，等价于AccountType=L3
-                     * @return IsAdmin 是否为管理员账户，当值为true 等价于基础版AccountType=L0，高可用AccountType=L1，当值为false，等价于AccountType=L3
+                     * 获取是否为管理员账户，当值为true 等价于单节点AccountType=L0，双节点AccountType=L1，当值为false，等价于AccountType=L3
+                     * @return IsAdmin 是否为管理员账户，当值为true 等价于单节点AccountType=L0，双节点AccountType=L1，当值为false，等价于AccountType=L3
                      * 
                      */
                     bool GetIsAdmin() const;
 
                     /**
-                     * 设置是否为管理员账户，当值为true 等价于基础版AccountType=L0，高可用AccountType=L1，当值为false，等价于AccountType=L3
-                     * @param _isAdmin 是否为管理员账户，当值为true 等价于基础版AccountType=L0，高可用AccountType=L1，当值为false，等价于AccountType=L3
+                     * 设置是否为管理员账户，当值为true 等价于单节点AccountType=L0，双节点AccountType=L1，当值为false，等价于AccountType=L3
+                     * @param _isAdmin 是否为管理员账户，当值为true 等价于单节点AccountType=L0，双节点AccountType=L1，当值为false，等价于AccountType=L3
                      * 
                      */
                     void SetIsAdmin(const bool& _isAdmin);
@@ -194,6 +194,27 @@ namespace TencentCloud
                      */
                     bool AccountTypeHasBeenSet() const;
 
+                    /**
+                     * 获取是否开启CAM验证
+                     * @return IsCam 是否开启CAM验证
+                     * 
+                     */
+                    bool GetIsCam() const;
+
+                    /**
+                     * 设置是否开启CAM验证
+                     * @param _isCam 是否开启CAM验证
+                     * 
+                     */
+                    void SetIsCam(const bool& _isCam);
+
+                    /**
+                     * 判断参数 IsCam 是否已赋值
+                     * @return IsCam 是否已赋值
+                     * 
+                     */
+                    bool IsCamHasBeenSet() const;
+
                 private:
 
                     /**
@@ -221,7 +242,7 @@ namespace TencentCloud
                     bool m_remarkHasBeenSet;
 
                     /**
-                     * 是否为管理员账户，当值为true 等价于基础版AccountType=L0，高可用AccountType=L1，当值为false，等价于AccountType=L3
+                     * 是否为管理员账户，当值为true 等价于单节点AccountType=L0，双节点AccountType=L1，当值为false，等价于AccountType=L3
                      */
                     bool m_isAdmin;
                     bool m_isAdminHasBeenSet;
@@ -237,6 +258,12 @@ namespace TencentCloud
                      */
                     std::string m_accountType;
                     bool m_accountTypeHasBeenSet;
+
+                    /**
+                     * 是否开启CAM验证
+                     */
+                    bool m_isCam;
+                    bool m_isCamHasBeenSet;
 
                 };
             }

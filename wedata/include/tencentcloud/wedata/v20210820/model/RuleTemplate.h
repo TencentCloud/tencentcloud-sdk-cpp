@@ -523,6 +523,31 @@ namespace TencentCloud
                      */
                     bool DatasourceTypesHasBeenSet() const;
 
+                    /**
+                     * 获取创建人IdStr
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return UserIdStr 创建人IdStr
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::string GetUserIdStr() const;
+
+                    /**
+                     * 设置创建人IdStr
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _userIdStr 创建人IdStr
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetUserIdStr(const std::string& _userIdStr);
+
+                    /**
+                     * 判断参数 UserIdStr 是否已赋值
+                     * @return UserIdStr 是否已赋值
+                     * 
+                     */
+                    bool UserIdStrHasBeenSet() const;
+
                 private:
 
                     /**
@@ -658,6 +683,13 @@ namespace TencentCloud
                      */
                     std::vector<int64_t> m_datasourceTypes;
                     bool m_datasourceTypesHasBeenSet;
+
+                    /**
+                     * 创建人IdStr
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_userIdStr;
+                    bool m_userIdStrHasBeenSet;
 
                 };
             }

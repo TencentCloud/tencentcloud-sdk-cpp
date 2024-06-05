@@ -25,6 +25,8 @@
 #include <tencentcloud/core/AsyncCallerContext.h>
 #include <tencentcloud/trp/v20210515/model/AuthorizedTransferRequest.h>
 #include <tencentcloud/trp/v20210515/model/AuthorizedTransferResponse.h>
+#include <tencentcloud/trp/v20210515/model/CreateChainBatchRequest.h>
+#include <tencentcloud/trp/v20210515/model/CreateChainBatchResponse.h>
 #include <tencentcloud/trp/v20210515/model/CreateCodeBatchRequest.h>
 #include <tencentcloud/trp/v20210515/model/CreateCodeBatchResponse.h>
 #include <tencentcloud/trp/v20210515/model/CreateCodePackRequest.h>
@@ -146,6 +148,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::AuthorizedTransferResponse> AuthorizedTransferOutcome;
                 typedef std::future<AuthorizedTransferOutcome> AuthorizedTransferOutcomeCallable;
                 typedef std::function<void(const TrpClient*, const Model::AuthorizedTransferRequest&, AuthorizedTransferOutcome, const std::shared_ptr<const AsyncCallerContext>&)> AuthorizedTransferAsyncHandler;
+                typedef Outcome<Core::Error, Model::CreateChainBatchResponse> CreateChainBatchOutcome;
+                typedef std::future<CreateChainBatchOutcome> CreateChainBatchOutcomeCallable;
+                typedef std::function<void(const TrpClient*, const Model::CreateChainBatchRequest&, CreateChainBatchOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateChainBatchAsyncHandler;
                 typedef Outcome<Core::Error, Model::CreateCodeBatchResponse> CreateCodeBatchOutcome;
                 typedef std::future<CreateCodeBatchOutcome> CreateCodeBatchOutcomeCallable;
                 typedef std::function<void(const TrpClient*, const Model::CreateCodeBatchRequest&, CreateCodeBatchOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateCodeBatchAsyncHandler;
@@ -313,6 +318,15 @@ namespace TencentCloud
                 AuthorizedTransferOutcome AuthorizedTransfer(const Model::AuthorizedTransferRequest &request);
                 void AuthorizedTransferAsync(const Model::AuthorizedTransferRequest& request, const AuthorizedTransferAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 AuthorizedTransferOutcomeCallable AuthorizedTransferCallable(const Model::AuthorizedTransferRequest& request);
+
+                /**
+                 *批量上链接口
+                 * @param req CreateChainBatchRequest
+                 * @return CreateChainBatchOutcome
+                 */
+                CreateChainBatchOutcome CreateChainBatch(const Model::CreateChainBatchRequest &request);
+                void CreateChainBatchAsync(const Model::CreateChainBatchRequest& request, const CreateChainBatchAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                CreateChainBatchOutcomeCallable CreateChainBatchCallable(const Model::CreateChainBatchRequest& request);
 
                 /**
                  *新增批次
