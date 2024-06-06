@@ -321,6 +321,31 @@ namespace TencentCloud
                     bool ConsumeStartTimeHasBeenSet() const;
 
                     /**
+                     * 获取自动续费标识。0-不自动续费，1-自动续费
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return AutoRenewFlag 自动续费标识。0-不自动续费，1-自动续费
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    int64_t GetAutoRenewFlag() const;
+
+                    /**
+                     * 设置自动续费标识。0-不自动续费，1-自动续费
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _autoRenewFlag 自动续费标识。0-不自动续费，1-自动续费
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetAutoRenewFlag(const int64_t& _autoRenewFlag);
+
+                    /**
+                     * 判断参数 AutoRenewFlag 是否已赋值
+                     * @return AutoRenewFlag 是否已赋值
+                     * 
+                     */
+                    bool AutoRenewFlagHasBeenSet() const;
+
+                    /**
                      * 获取数据订阅实例所属地域
                      * @return Region 数据订阅实例所属地域
                      * 
@@ -514,31 +539,6 @@ namespace TencentCloud
                     bool TagsHasBeenSet() const;
 
                     /**
-                     * 获取自动续费标识。0-不自动续费，1-自动续费
-注意：此字段可能返回 null，表示取不到有效值。
-                     * @return AutoRenewFlag 自动续费标识。0-不自动续费，1-自动续费
-注意：此字段可能返回 null，表示取不到有效值。
-                     * 
-                     */
-                    int64_t GetAutoRenewFlag() const;
-
-                    /**
-                     * 设置自动续费标识。0-不自动续费，1-自动续费
-注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _autoRenewFlag 自动续费标识。0-不自动续费，1-自动续费
-注意：此字段可能返回 null，表示取不到有效值。
-                     * 
-                     */
-                    void SetAutoRenewFlag(const int64_t& _autoRenewFlag);
-
-                    /**
-                     * 判断参数 AutoRenewFlag 是否已赋值
-                     * @return AutoRenewFlag 是否已赋值
-                     * 
-                     */
-                    bool AutoRenewFlagHasBeenSet() const;
-
-                    /**
                      * 获取订阅实例版本；txdts-旧版数据订阅,kafka-kafka版本数据订阅
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return SubscribeVersion 订阅实例版本；txdts-旧版数据订阅,kafka-kafka版本数据订阅
@@ -644,6 +644,13 @@ namespace TencentCloud
                     bool m_consumeStartTimeHasBeenSet;
 
                     /**
+                     * 自动续费标识。0-不自动续费，1-自动续费
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    int64_t m_autoRenewFlag;
+                    bool m_autoRenewFlagHasBeenSet;
+
+                    /**
                      * 数据订阅实例所属地域
                      */
                     std::string m_region;
@@ -697,13 +704,6 @@ namespace TencentCloud
                      */
                     std::vector<TagItem> m_tags;
                     bool m_tagsHasBeenSet;
-
-                    /**
-                     * 自动续费标识。0-不自动续费，1-自动续费
-注意：此字段可能返回 null，表示取不到有效值。
-                     */
-                    int64_t m_autoRenewFlag;
-                    bool m_autoRenewFlagHasBeenSet;
 
                     /**
                      * 订阅实例版本；txdts-旧版数据订阅,kafka-kafka版本数据订阅

@@ -28,7 +28,8 @@ DescribeModelServiceCallInfoResponse::DescribeModelServiceCallInfoResponse() :
     m_inferGatewayCallInfoHasBeenSet(false),
     m_defaultNginxGatewayCallInfoHasBeenSet(false),
     m_tJCallInfoHasBeenSet(false),
-    m_intranetCallInfoHasBeenSet(false)
+    m_intranetCallInfoHasBeenSet(false),
+    m_serviceCallInfoV2HasBeenSet(false)
 {
 }
 
@@ -151,6 +152,23 @@ CoreInternalOutcome DescribeModelServiceCallInfoResponse::Deserialize(const stri
         m_intranetCallInfoHasBeenSet = true;
     }
 
+    if (rsp.HasMember("ServiceCallInfoV2") && !rsp["ServiceCallInfoV2"].IsNull())
+    {
+        if (!rsp["ServiceCallInfoV2"].IsObject())
+        {
+            return CoreInternalOutcome(Core::Error("response `ServiceCallInfoV2` is not object type").SetRequestId(requestId));
+        }
+
+        CoreInternalOutcome outcome = m_serviceCallInfoV2.Deserialize(rsp["ServiceCallInfoV2"]);
+        if (!outcome.IsSuccess())
+        {
+            outcome.GetError().SetRequestId(requestId);
+            return outcome;
+        }
+
+        m_serviceCallInfoV2HasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -204,6 +222,15 @@ string DescribeModelServiceCallInfoResponse::ToJsonString() const
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
         m_intranetCallInfo.ToJsonObject(value[key.c_str()], allocator);
+    }
+
+    if (m_serviceCallInfoV2HasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ServiceCallInfoV2";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_serviceCallInfoV2.ToJsonObject(value[key.c_str()], allocator);
     }
 
     rapidjson::Value iKey(rapidjson::kStringType);
@@ -266,6 +293,16 @@ IntranetCallInfo DescribeModelServiceCallInfoResponse::GetIntranetCallInfo() con
 bool DescribeModelServiceCallInfoResponse::IntranetCallInfoHasBeenSet() const
 {
     return m_intranetCallInfoHasBeenSet;
+}
+
+ServiceCallInfoV2 DescribeModelServiceCallInfoResponse::GetServiceCallInfoV2() const
+{
+    return m_serviceCallInfoV2;
+}
+
+bool DescribeModelServiceCallInfoResponse::ServiceCallInfoV2HasBeenSet() const
+{
+    return m_serviceCallInfoV2HasBeenSet;
 }
 
 

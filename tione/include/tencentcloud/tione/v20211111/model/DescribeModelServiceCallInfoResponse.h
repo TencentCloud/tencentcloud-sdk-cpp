@@ -26,6 +26,7 @@
 #include <tencentcloud/tione/v20211111/model/DefaultNginxGatewayCallInfo.h>
 #include <tencentcloud/tione/v20211111/model/TJCallInfo.h>
 #include <tencentcloud/tione/v20211111/model/IntranetCallInfo.h>
+#include <tencentcloud/tione/v20211111/model/ServiceCallInfoV2.h>
 
 
 namespace TencentCloud
@@ -128,6 +129,22 @@ namespace TencentCloud
                      */
                     bool IntranetCallInfoHasBeenSet() const;
 
+                    /**
+                     * 获取基于新网关的服务调用信息
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return ServiceCallInfoV2 基于新网关的服务调用信息
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    ServiceCallInfoV2 GetServiceCallInfoV2() const;
+
+                    /**
+                     * 判断参数 ServiceCallInfoV2 是否已赋值
+                     * @return ServiceCallInfoV2 是否已赋值
+                     * 
+                     */
+                    bool ServiceCallInfoV2HasBeenSet() const;
+
                 private:
 
                     /**
@@ -164,6 +181,13 @@ namespace TencentCloud
                      */
                     IntranetCallInfo m_intranetCallInfo;
                     bool m_intranetCallInfoHasBeenSet;
+
+                    /**
+                     * 基于新网关的服务调用信息
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    ServiceCallInfoV2 m_serviceCallInfoV2;
+                    bool m_serviceCallInfoV2HasBeenSet;
 
                 };
             }

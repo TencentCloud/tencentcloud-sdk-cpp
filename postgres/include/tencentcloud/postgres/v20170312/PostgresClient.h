@@ -193,6 +193,8 @@
 #include <tencentcloud/postgres/v20170312/model/ResetAccountPasswordResponse.h>
 #include <tencentcloud/postgres/v20170312/model/RestartDBInstanceRequest.h>
 #include <tencentcloud/postgres/v20170312/model/RestartDBInstanceResponse.h>
+#include <tencentcloud/postgres/v20170312/model/RestoreDBInstanceObjectsRequest.h>
+#include <tencentcloud/postgres/v20170312/model/RestoreDBInstanceObjectsResponse.h>
 #include <tencentcloud/postgres/v20170312/model/SetAutoRenewFlagRequest.h>
 #include <tencentcloud/postgres/v20170312/model/SetAutoRenewFlagResponse.h>
 #include <tencentcloud/postgres/v20170312/model/SwitchDBInstancePrimaryRequest.h>
@@ -472,6 +474,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::RestartDBInstanceResponse> RestartDBInstanceOutcome;
                 typedef std::future<RestartDBInstanceOutcome> RestartDBInstanceOutcomeCallable;
                 typedef std::function<void(const PostgresClient*, const Model::RestartDBInstanceRequest&, RestartDBInstanceOutcome, const std::shared_ptr<const AsyncCallerContext>&)> RestartDBInstanceAsyncHandler;
+                typedef Outcome<Core::Error, Model::RestoreDBInstanceObjectsResponse> RestoreDBInstanceObjectsOutcome;
+                typedef std::future<RestoreDBInstanceObjectsOutcome> RestoreDBInstanceObjectsOutcomeCallable;
+                typedef std::function<void(const PostgresClient*, const Model::RestoreDBInstanceObjectsRequest&, RestoreDBInstanceObjectsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> RestoreDBInstanceObjectsAsyncHandler;
                 typedef Outcome<Core::Error, Model::SetAutoRenewFlagResponse> SetAutoRenewFlagOutcome;
                 typedef std::future<SetAutoRenewFlagOutcome> SetAutoRenewFlagOutcomeCallable;
                 typedef std::function<void(const PostgresClient*, const Model::SetAutoRenewFlagRequest&, SetAutoRenewFlagOutcome, const std::shared_ptr<const AsyncCallerContext>&)> SetAutoRenewFlagAsyncHandler;
@@ -555,8 +560,8 @@ namespace TencentCloud
 
                 /**
                  *本接口 (CreateInstances) 用于创建一个或者多个PostgreSQL实例，通过此接口创建的实例无需进行初始化，可直接使用。
-<li>实例创建成功后将自动开机启动，实例状态变为“运行中”。
-<li>预付费实例的购买会预先扣除本次实例购买所需金额，按小时后付费实例购买会预先冻结本次实例购买一小时内所需金额，在调用本接口前请确保账户余额充足。
+<li>实例创建成功后将自动开机启动，实例状态变为“运行中”。</li>
+<li>预付费实例的购买会预先扣除本次实例购买所需金额，按小时后付费实例购买会预先冻结本次实例购买一小时内所需金额，在调用本接口前请确保账户余额充足。</li>
                  * @param req CreateInstancesRequest
                  * @return CreateInstancesOutcome
                  */
@@ -1260,6 +1265,15 @@ namespace TencentCloud
                 RestartDBInstanceOutcome RestartDBInstance(const Model::RestartDBInstanceRequest &request);
                 void RestartDBInstanceAsync(const Model::RestartDBInstanceRequest& request, const RestartDBInstanceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 RestartDBInstanceOutcomeCallable RestartDBInstanceCallable(const Model::RestartDBInstanceRequest& request);
+
+                /**
+                 *根据备份集或恢复目标时间，在原实例上恢复数据库相关对象，例如数据库、表。
+                 * @param req RestoreDBInstanceObjectsRequest
+                 * @return RestoreDBInstanceObjectsOutcome
+                 */
+                RestoreDBInstanceObjectsOutcome RestoreDBInstanceObjects(const Model::RestoreDBInstanceObjectsRequest &request);
+                void RestoreDBInstanceObjectsAsync(const Model::RestoreDBInstanceObjectsRequest& request, const RestoreDBInstanceObjectsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                RestoreDBInstanceObjectsOutcomeCallable RestoreDBInstanceObjectsCallable(const Model::RestoreDBInstanceObjectsRequest& request);
 
                 /**
                  *本接口（SetAutoRenewFlag）用于设置自动续费。

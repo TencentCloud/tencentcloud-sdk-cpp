@@ -85,6 +85,34 @@ namespace TencentCloud
                      */
                     bool SessionIdHasBeenSet() const;
 
+                    /**
+                     * 获取视频转译任务状态
+                     * @return Status 视频转译任务状态
+                     * 
+                     */
+                    int64_t GetStatus() const;
+
+                    /**
+                     * 判断参数 Status 是否已赋值
+                     * @return Status 是否已赋值
+                     * 
+                     */
+                    bool StatusHasBeenSet() const;
+
+                    /**
+                     * 获取视频转译任务信息
+                     * @return Message 视频转译任务信息
+                     * 
+                     */
+                    std::string GetMessage() const;
+
+                    /**
+                     * 判断参数 Message 是否已赋值
+                     * @return Message 是否已赋值
+                     * 
+                     */
+                    bool MessageHasBeenSet() const;
+
                 private:
 
                     /**
@@ -104,6 +132,18 @@ namespace TencentCloud
                      */
                     std::string m_sessionId;
                     bool m_sessionIdHasBeenSet;
+
+                    /**
+                     * 视频转译任务状态
+                     */
+                    int64_t m_status;
+                    bool m_statusHasBeenSet;
+
+                    /**
+                     * 视频转译任务信息
+                     */
+                    std::string m_message;
+                    bool m_messageHasBeenSet;
 
                 };
             }

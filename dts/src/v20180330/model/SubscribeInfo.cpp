@@ -34,6 +34,7 @@ SubscribeInfo::SubscribeInfo() :
     m_expireTimeHasBeenSet(false),
     m_offlineTimeHasBeenSet(false),
     m_consumeStartTimeHasBeenSet(false),
+    m_autoRenewFlagHasBeenSet(false),
     m_regionHasBeenSet(false),
     m_payTypeHasBeenSet(false),
     m_vipHasBeenSet(false),
@@ -43,7 +44,6 @@ SubscribeInfo::SubscribeInfo() :
     m_statusHasBeenSet(false),
     m_sdkConsumedTimeHasBeenSet(false),
     m_tagsHasBeenSet(false),
-    m_autoRenewFlagHasBeenSet(false),
     m_subscribeVersionHasBeenSet(false)
 {
 }
@@ -183,6 +183,16 @@ CoreInternalOutcome SubscribeInfo::Deserialize(const rapidjson::Value &value)
         m_consumeStartTimeHasBeenSet = true;
     }
 
+    if (value.HasMember("AutoRenewFlag") && !value["AutoRenewFlag"].IsNull())
+    {
+        if (!value["AutoRenewFlag"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `SubscribeInfo.AutoRenewFlag` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_autoRenewFlag = value["AutoRenewFlag"].GetInt64();
+        m_autoRenewFlagHasBeenSet = true;
+    }
+
     if (value.HasMember("Region") && !value["Region"].IsNull())
     {
         if (!value["Region"].IsString())
@@ -281,16 +291,6 @@ CoreInternalOutcome SubscribeInfo::Deserialize(const rapidjson::Value &value)
             m_tags.push_back(item);
         }
         m_tagsHasBeenSet = true;
-    }
-
-    if (value.HasMember("AutoRenewFlag") && !value["AutoRenewFlag"].IsNull())
-    {
-        if (!value["AutoRenewFlag"].IsInt64())
-        {
-            return CoreInternalOutcome(Core::Error("response `SubscribeInfo.AutoRenewFlag` IsInt64=false incorrectly").SetRequestId(requestId));
-        }
-        m_autoRenewFlag = value["AutoRenewFlag"].GetInt64();
-        m_autoRenewFlagHasBeenSet = true;
     }
 
     if (value.HasMember("SubscribeVersion") && !value["SubscribeVersion"].IsNull())
@@ -414,6 +414,14 @@ void SubscribeInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Document::A
         value.AddMember(iKey, rapidjson::Value(m_consumeStartTime.c_str(), allocator).Move(), allocator);
     }
 
+    if (m_autoRenewFlagHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "AutoRenewFlag";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_autoRenewFlag, allocator);
+    }
+
     if (m_regionHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
@@ -491,14 +499,6 @@ void SubscribeInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Document::A
             value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
             (*itr).ToJsonObject(value[key.c_str()][i], allocator);
         }
-    }
-
-    if (m_autoRenewFlagHasBeenSet)
-    {
-        rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "AutoRenewFlag";
-        iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, m_autoRenewFlag, allocator);
     }
 
     if (m_subscribeVersionHasBeenSet)
@@ -720,6 +720,22 @@ bool SubscribeInfo::ConsumeStartTimeHasBeenSet() const
     return m_consumeStartTimeHasBeenSet;
 }
 
+int64_t SubscribeInfo::GetAutoRenewFlag() const
+{
+    return m_autoRenewFlag;
+}
+
+void SubscribeInfo::SetAutoRenewFlag(const int64_t& _autoRenewFlag)
+{
+    m_autoRenewFlag = _autoRenewFlag;
+    m_autoRenewFlagHasBeenSet = true;
+}
+
+bool SubscribeInfo::AutoRenewFlagHasBeenSet() const
+{
+    return m_autoRenewFlagHasBeenSet;
+}
+
 string SubscribeInfo::GetRegion() const
 {
     return m_region;
@@ -862,22 +878,6 @@ void SubscribeInfo::SetTags(const vector<TagItem>& _tags)
 bool SubscribeInfo::TagsHasBeenSet() const
 {
     return m_tagsHasBeenSet;
-}
-
-int64_t SubscribeInfo::GetAutoRenewFlag() const
-{
-    return m_autoRenewFlag;
-}
-
-void SubscribeInfo::SetAutoRenewFlag(const int64_t& _autoRenewFlag)
-{
-    m_autoRenewFlag = _autoRenewFlag;
-    m_autoRenewFlagHasBeenSet = true;
-}
-
-bool SubscribeInfo::AutoRenewFlagHasBeenSet() const
-{
-    return m_autoRenewFlagHasBeenSet;
 }
 
 string SubscribeInfo::GetSubscribeVersion() const

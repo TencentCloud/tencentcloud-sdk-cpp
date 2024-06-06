@@ -46,7 +46,9 @@ OrganizationalFunction::OrganizationalFunction() :
     m_commandFormatHasBeenSet(false),
     m_ownerNameHasBeenSet(false),
     m_submitTimestampHasBeenSet(false),
-    m_tagHasBeenSet(false)
+    m_tagHasBeenSet(false),
+    m_operatorUserIdsStrHasBeenSet(false),
+    m_ownerUserIdsStrHasBeenSet(false)
 {
 }
 
@@ -331,6 +333,32 @@ CoreInternalOutcome OrganizationalFunction::Deserialize(const rapidjson::Value &
         m_tagHasBeenSet = true;
     }
 
+    if (value.HasMember("OperatorUserIdsStr") && !value["OperatorUserIdsStr"].IsNull())
+    {
+        if (!value["OperatorUserIdsStr"].IsArray())
+            return CoreInternalOutcome(Core::Error("response `OrganizationalFunction.OperatorUserIdsStr` is not array type"));
+
+        const rapidjson::Value &tmpValue = value["OperatorUserIdsStr"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            m_operatorUserIdsStr.push_back((*itr).GetString());
+        }
+        m_operatorUserIdsStrHasBeenSet = true;
+    }
+
+    if (value.HasMember("OwnerUserIdsStr") && !value["OwnerUserIdsStr"].IsNull())
+    {
+        if (!value["OwnerUserIdsStr"].IsArray())
+            return CoreInternalOutcome(Core::Error("response `OrganizationalFunction.OwnerUserIdsStr` is not array type"));
+
+        const rapidjson::Value &tmpValue = value["OwnerUserIdsStr"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            m_ownerUserIdsStr.push_back((*itr).GetString());
+        }
+        m_ownerUserIdsStrHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -561,6 +589,32 @@ void OrganizationalFunction::ToJsonObject(rapidjson::Value &value, rapidjson::Do
         string key = "Tag";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_tag.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_operatorUserIdsStrHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "OperatorUserIdsStr";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        for (auto itr = m_operatorUserIdsStr.begin(); itr != m_operatorUserIdsStr.end(); ++itr)
+        {
+            value[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
+        }
+    }
+
+    if (m_ownerUserIdsStrHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "OwnerUserIdsStr";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        for (auto itr = m_ownerUserIdsStr.begin(); itr != m_ownerUserIdsStr.end(); ++itr)
+        {
+            value[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
+        }
     }
 
 }
@@ -980,5 +1034,37 @@ void OrganizationalFunction::SetTag(const string& _tag)
 bool OrganizationalFunction::TagHasBeenSet() const
 {
     return m_tagHasBeenSet;
+}
+
+vector<string> OrganizationalFunction::GetOperatorUserIdsStr() const
+{
+    return m_operatorUserIdsStr;
+}
+
+void OrganizationalFunction::SetOperatorUserIdsStr(const vector<string>& _operatorUserIdsStr)
+{
+    m_operatorUserIdsStr = _operatorUserIdsStr;
+    m_operatorUserIdsStrHasBeenSet = true;
+}
+
+bool OrganizationalFunction::OperatorUserIdsStrHasBeenSet() const
+{
+    return m_operatorUserIdsStrHasBeenSet;
+}
+
+vector<string> OrganizationalFunction::GetOwnerUserIdsStr() const
+{
+    return m_ownerUserIdsStr;
+}
+
+void OrganizationalFunction::SetOwnerUserIdsStr(const vector<string>& _ownerUserIdsStr)
+{
+    m_ownerUserIdsStr = _ownerUserIdsStr;
+    m_ownerUserIdsStrHasBeenSet = true;
+}
+
+bool OrganizationalFunction::OwnerUserIdsStrHasBeenSet() const
+{
+    return m_ownerUserIdsStrHasBeenSet;
 }
 

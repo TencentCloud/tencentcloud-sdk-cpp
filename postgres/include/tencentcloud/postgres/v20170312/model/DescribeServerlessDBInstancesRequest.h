@@ -44,15 +44,39 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取查询条件
-                     * @return Filter 查询条件
+                     * 获取查询条件。按照一个或者多个过滤条件进行查询，目前支持的过滤条件类型（name字段指定）有： 
+
+- db-instance-id：按照实例ID过滤，类型为string
+- db-instance-name：按照实例名过滤，类型为string
+- db-tag-key：按照实例的tag过滤，类型为string
+
+value字段指定该类型过滤条件下具体要过滤的实例ID/实例名/实例tag-key。
+                     * @return Filter 查询条件。按照一个或者多个过滤条件进行查询，目前支持的过滤条件类型（name字段指定）有： 
+
+- db-instance-id：按照实例ID过滤，类型为string
+- db-instance-name：按照实例名过滤，类型为string
+- db-tag-key：按照实例的tag过滤，类型为string
+
+value字段指定该类型过滤条件下具体要过滤的实例ID/实例名/实例tag-key。
                      * 
                      */
                     std::vector<Filter> GetFilter() const;
 
                     /**
-                     * 设置查询条件
-                     * @param _filter 查询条件
+                     * 设置查询条件。按照一个或者多个过滤条件进行查询，目前支持的过滤条件类型（name字段指定）有： 
+
+- db-instance-id：按照实例ID过滤，类型为string
+- db-instance-name：按照实例名过滤，类型为string
+- db-tag-key：按照实例的tag过滤，类型为string
+
+value字段指定该类型过滤条件下具体要过滤的实例ID/实例名/实例tag-key。
+                     * @param _filter 查询条件。按照一个或者多个过滤条件进行查询，目前支持的过滤条件类型（name字段指定）有： 
+
+- db-instance-id：按照实例ID过滤，类型为string
+- db-instance-name：按照实例名过滤，类型为string
+- db-tag-key：按照实例的tag过滤，类型为string
+
+value字段指定该类型过滤条件下具体要过滤的实例ID/实例名/实例tag-key。
                      * 
                      */
                     void SetFilter(const std::vector<Filter>& _filter);
@@ -151,7 +175,13 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 查询条件
+                     * 查询条件。按照一个或者多个过滤条件进行查询，目前支持的过滤条件类型（name字段指定）有： 
+
+- db-instance-id：按照实例ID过滤，类型为string
+- db-instance-name：按照实例名过滤，类型为string
+- db-tag-key：按照实例的tag过滤，类型为string
+
+value字段指定该类型过滤条件下具体要过滤的实例ID/实例名/实例tag-key。
                      */
                     std::vector<Filter> m_filter;
                     bool m_filterHasBeenSet;

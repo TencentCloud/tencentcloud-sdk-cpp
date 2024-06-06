@@ -193,15 +193,15 @@ DEPRECATED：已弃用。
                     bool StatusHasBeenSet() const;
 
                     /**
-                     * 获取该数据库版本（DBKernelVersion）可以升级到的版本号列表。
-                     * @return AvailableUpgradeTarget 该数据库版本（DBKernelVersion）可以升级到的版本号列表。
+                     * 获取该数据库版本（DBKernelVersion）可以升级到的版本号列表。其中包含可升级的小版本号和可升级的大版本号（完整内核版本格式示例：v15.1_v1.6）。
+                     * @return AvailableUpgradeTarget 该数据库版本（DBKernelVersion）可以升级到的版本号列表。其中包含可升级的小版本号和可升级的大版本号（完整内核版本格式示例：v15.1_v1.6）。
                      * 
                      */
                     std::vector<std::string> GetAvailableUpgradeTarget() const;
 
                     /**
-                     * 设置该数据库版本（DBKernelVersion）可以升级到的版本号列表。
-                     * @param _availableUpgradeTarget 该数据库版本（DBKernelVersion）可以升级到的版本号列表。
+                     * 设置该数据库版本（DBKernelVersion）可以升级到的版本号列表。其中包含可升级的小版本号和可升级的大版本号（完整内核版本格式示例：v15.1_v1.6）。
+                     * @param _availableUpgradeTarget 该数据库版本（DBKernelVersion）可以升级到的版本号列表。其中包含可升级的小版本号和可升级的大版本号（完整内核版本格式示例：v15.1_v1.6）。
                      * 
                      */
                     void SetAvailableUpgradeTarget(const std::vector<std::string>& _availableUpgradeTarget);
@@ -257,7 +257,7 @@ DEPRECATED：已弃用。
                     bool m_statusHasBeenSet;
 
                     /**
-                     * 该数据库版本（DBKernelVersion）可以升级到的版本号列表。
+                     * 该数据库版本（DBKernelVersion）可以升级到的版本号列表。其中包含可升级的小版本号和可升级的大版本号（完整内核版本格式示例：v15.1_v1.6）。
                      */
                     std::vector<std::string> m_availableUpgradeTarget;
                     bool m_availableUpgradeTargetHasBeenSet;

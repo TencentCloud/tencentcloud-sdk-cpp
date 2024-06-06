@@ -1656,7 +1656,7 @@ namespace TencentCloud
                 DescribePrometheusInstanceInitStatusOutcomeCallable DescribePrometheusInstanceInitStatusCallable(const Model::DescribePrometheusInstanceInitStatusRequest& request);
 
                 /**
-                 * 查询Prometheus按量实例用量
+                 *查询Prometheus按量实例用量
                  * @param req DescribePrometheusInstanceUsageRequest
                  * @return DescribePrometheusInstanceUsageOutcome
                  */

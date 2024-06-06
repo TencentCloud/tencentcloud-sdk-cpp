@@ -26,7 +26,9 @@ using namespace std;
 ConfirmVideoTranslateJobResponse::ConfirmVideoTranslateJobResponse() :
     m_jobIdHasBeenSet(false),
     m_taskIdHasBeenSet(false),
-    m_sessionIdHasBeenSet(false)
+    m_sessionIdHasBeenSet(false),
+    m_statusHasBeenSet(false),
+    m_messageHasBeenSet(false)
 {
 }
 
@@ -94,6 +96,26 @@ CoreInternalOutcome ConfirmVideoTranslateJobResponse::Deserialize(const string &
         m_sessionIdHasBeenSet = true;
     }
 
+    if (rsp.HasMember("Status") && !rsp["Status"].IsNull())
+    {
+        if (!rsp["Status"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `Status` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_status = rsp["Status"].GetInt64();
+        m_statusHasBeenSet = true;
+    }
+
+    if (rsp.HasMember("Message") && !rsp["Message"].IsNull())
+    {
+        if (!rsp["Message"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `Message` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_message = string(rsp["Message"].GetString());
+        m_messageHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -126,6 +148,22 @@ string ConfirmVideoTranslateJobResponse::ToJsonString() const
         string key = "SessionId";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_sessionId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_statusHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Status";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_status, allocator);
+    }
+
+    if (m_messageHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Message";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_message.c_str(), allocator).Move(), allocator);
     }
 
     rapidjson::Value iKey(rapidjson::kStringType);
@@ -168,6 +206,26 @@ string ConfirmVideoTranslateJobResponse::GetSessionId() const
 bool ConfirmVideoTranslateJobResponse::SessionIdHasBeenSet() const
 {
     return m_sessionIdHasBeenSet;
+}
+
+int64_t ConfirmVideoTranslateJobResponse::GetStatus() const
+{
+    return m_status;
+}
+
+bool ConfirmVideoTranslateJobResponse::StatusHasBeenSet() const
+{
+    return m_statusHasBeenSet;
+}
+
+string ConfirmVideoTranslateJobResponse::GetMessage() const
+{
+    return m_message;
+}
+
+bool ConfirmVideoTranslateJobResponse::MessageHasBeenSet() const
+{
+    return m_messageHasBeenSet;
 }
 
 

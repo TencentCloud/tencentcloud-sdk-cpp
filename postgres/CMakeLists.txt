@@ -38,6 +38,7 @@ set(postgres_public_header_model
   include/tencentcloud/postgres/v20170312/model/DescribeCloneDBInstanceSpecRequest.h
   include/tencentcloud/postgres/v20170312/model/DescribeDBInstanceSecurityGroupsResponse.h
   include/tencentcloud/postgres/v20170312/model/BackupPlan.h
+  include/tencentcloud/postgres/v20170312/model/RestoreDBInstanceObjectsResponse.h
   include/tencentcloud/postgres/v20170312/model/SwitchDBInstancePrimaryRequest.h
   include/tencentcloud/postgres/v20170312/model/OpenServerlessDBExtranetAccessRequest.h
   include/tencentcloud/postgres/v20170312/model/RenewInstanceResponse.h
@@ -220,6 +221,7 @@ set(postgres_public_header_model
   include/tencentcloud/postgres/v20170312/model/ModifyDBInstanceParametersRequest.h
   include/tencentcloud/postgres/v20170312/model/RawSlowQuery.h
   include/tencentcloud/postgres/v20170312/model/DescribeDBSlowlogsResponse.h
+  include/tencentcloud/postgres/v20170312/model/RestoreDBInstanceObjectsRequest.h
   include/tencentcloud/postgres/v20170312/model/DescribeAccountsResponse.h
   include/tencentcloud/postgres/v20170312/model/ModifyDBInstanceChargeTypeRequest.h
   include/tencentcloud/postgres/v20170312/model/DescribeParameterTemplateAttributesResponse.h
@@ -264,6 +266,7 @@ set(postgres_src
   src/v20170312/model/DescribeCloneDBInstanceSpecRequest.cpp
   src/v20170312/model/DescribeDBInstanceSecurityGroupsResponse.cpp
   src/v20170312/model/BackupPlan.cpp
+  src/v20170312/model/RestoreDBInstanceObjectsResponse.cpp
   src/v20170312/model/SwitchDBInstancePrimaryRequest.cpp
   src/v20170312/model/OpenServerlessDBExtranetAccessRequest.cpp
   src/v20170312/model/RenewInstanceResponse.cpp
@@ -446,6 +449,7 @@ set(postgres_src
   src/v20170312/model/ModifyDBInstanceParametersRequest.cpp
   src/v20170312/model/RawSlowQuery.cpp
   src/v20170312/model/DescribeDBSlowlogsResponse.cpp
+  src/v20170312/model/RestoreDBInstanceObjectsRequest.cpp
   src/v20170312/model/DescribeAccountsResponse.cpp
   src/v20170312/model/ModifyDBInstanceChargeTypeRequest.cpp
   src/v20170312/model/DescribeParameterTemplateAttributesResponse.cpp

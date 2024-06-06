@@ -64,15 +64,15 @@ namespace TencentCloud
                     bool DBInstanceIdHasBeenSet() const;
 
                     /**
-                     * 获取查询起始时间戳，格式 “YYYY-MM-DD HH:mm:ss” ，日志保留时间默认为7天，起始时间不能超出保留时间范围。
-                     * @return StartTime 查询起始时间戳，格式 “YYYY-MM-DD HH:mm:ss” ，日志保留时间默认为7天，起始时间不能超出保留时间范围。
+                     * 获取查询起始时间，形如2018-01-01 00:00:00。日志保留时间默认为7天，起始时间不能超出保留时间范围。
+                     * @return StartTime 查询起始时间，形如2018-01-01 00:00:00。日志保留时间默认为7天，起始时间不能超出保留时间范围。
                      * 
                      */
                     std::string GetStartTime() const;
 
                     /**
-                     * 设置查询起始时间戳，格式 “YYYY-MM-DD HH:mm:ss” ，日志保留时间默认为7天，起始时间不能超出保留时间范围。
-                     * @param _startTime 查询起始时间戳，格式 “YYYY-MM-DD HH:mm:ss” ，日志保留时间默认为7天，起始时间不能超出保留时间范围。
+                     * 设置查询起始时间，形如2018-01-01 00:00:00。日志保留时间默认为7天，起始时间不能超出保留时间范围。
+                     * @param _startTime 查询起始时间，形如2018-01-01 00:00:00。日志保留时间默认为7天，起始时间不能超出保留时间范围。
                      * 
                      */
                     void SetStartTime(const std::string& _startTime);
@@ -85,15 +85,15 @@ namespace TencentCloud
                     bool StartTimeHasBeenSet() const;
 
                     /**
-                     * 获取查询结束时间戳，格式 “YYYY-MM-DD HH:mm:ss”。
-                     * @return EndTime 查询结束时间戳，格式 “YYYY-MM-DD HH:mm:ss”。
+                     * 获取查询结束时间，形如2018-01-01 00:00:00。
+                     * @return EndTime 查询结束时间，形如2018-01-01 00:00:00。
                      * 
                      */
                     std::string GetEndTime() const;
 
                     /**
-                     * 设置查询结束时间戳，格式 “YYYY-MM-DD HH:mm:ss”。
-                     * @param _endTime 查询结束时间戳，格式 “YYYY-MM-DD HH:mm:ss”。
+                     * 设置查询结束时间，形如2018-01-01 00:00:00。
+                     * @param _endTime 查询结束时间，形如2018-01-01 00:00:00。
                      * 
                      */
                     void SetEndTime(const std::string& _endTime);
@@ -106,15 +106,15 @@ namespace TencentCloud
                     bool EndTimeHasBeenSet() const;
 
                     /**
-                     * 获取根据数据库名进行筛选，可以为空。
-                     * @return DatabaseName 根据数据库名进行筛选，可以为空。
+                     * 获取数据库名字。	
+                     * @return DatabaseName 数据库名字。	
                      * 
                      */
                     std::string GetDatabaseName() const;
 
                     /**
-                     * 设置根据数据库名进行筛选，可以为空。
-                     * @param _databaseName 根据数据库名进行筛选，可以为空。
+                     * 设置数据库名字。	
+                     * @param _databaseName 数据库名字。	
                      * 
                      */
                     void SetDatabaseName(const std::string& _databaseName);
@@ -127,15 +127,15 @@ namespace TencentCloud
                     bool DatabaseNameHasBeenSet() const;
 
                     /**
-                     * 获取排序维度。 可选参数，取值范围[CallNum,CostTime,AvgCostTime]。默认CallNum。
-                     * @return OrderBy 排序维度。 可选参数，取值范围[CallNum,CostTime,AvgCostTime]。默认CallNum。
+                     * 获取排序字段，取值范围[CallNum,CostTime,AvgCostTime]。默认值为CallNum。
+                     * @return OrderBy 排序字段，取值范围[CallNum,CostTime,AvgCostTime]。默认值为CallNum。
                      * 
                      */
                     std::string GetOrderBy() const;
 
                     /**
-                     * 设置排序维度。 可选参数，取值范围[CallNum,CostTime,AvgCostTime]。默认CallNum。
-                     * @param _orderBy 排序维度。 可选参数，取值范围[CallNum,CostTime,AvgCostTime]。默认CallNum。
+                     * 设置排序字段，取值范围[CallNum,CostTime,AvgCostTime]。默认值为CallNum。
+                     * @param _orderBy 排序字段，取值范围[CallNum,CostTime,AvgCostTime]。默认值为CallNum。
                      * 
                      */
                     void SetOrderBy(const std::string& _orderBy);
@@ -148,15 +148,15 @@ namespace TencentCloud
                     bool OrderByHasBeenSet() const;
 
                     /**
-                     * 获取排序类型。升序asc、降序desc。默认desc。
-                     * @return OrderByType 排序类型。升序asc、降序desc。默认desc。
+                     * 获取排序方式，包括升序：asc 降序：desc。默认值为desc。
+                     * @return OrderByType 排序方式，包括升序：asc 降序：desc。默认值为desc。
                      * 
                      */
                     std::string GetOrderByType() const;
 
                     /**
-                     * 设置排序类型。升序asc、降序desc。默认desc。
-                     * @param _orderByType 排序类型。升序asc、降序desc。默认desc。
+                     * 设置排序方式，包括升序：asc 降序：desc。默认值为desc。
+                     * @param _orderByType 排序方式，包括升序：asc 降序：desc。默认值为desc。
                      * 
                      */
                     void SetOrderByType(const std::string& _orderByType);
@@ -169,15 +169,15 @@ namespace TencentCloud
                     bool OrderByTypeHasBeenSet() const;
 
                     /**
-                     * 获取分页大小。取值范围[1,100]。默认50。
-                     * @return Limit 分页大小。取值范围[1,100]。默认50。
+                     * 获取每页显示数量，取值范围为1-100。默认值为50。	
+                     * @return Limit 每页显示数量，取值范围为1-100。默认值为50。	
                      * 
                      */
                     int64_t GetLimit() const;
 
                     /**
-                     * 设置分页大小。取值范围[1,100]。默认50。
-                     * @param _limit 分页大小。取值范围[1,100]。默认50。
+                     * 设置每页显示数量，取值范围为1-100。默认值为50。	
+                     * @param _limit 每页显示数量，取值范围为1-100。默认值为50。	
                      * 
                      */
                     void SetLimit(const int64_t& _limit);
@@ -190,15 +190,15 @@ namespace TencentCloud
                     bool LimitHasBeenSet() const;
 
                     /**
-                     * 获取分页偏移。取值范围[0,INF)。默认0。
-                     * @return Offset 分页偏移。取值范围[0,INF)。默认0。
+                     * 获取数据偏移量，从0开始。默认值为0。
+                     * @return Offset 数据偏移量，从0开始。默认值为0。
                      * 
                      */
                     int64_t GetOffset() const;
 
                     /**
-                     * 设置分页偏移。取值范围[0,INF)。默认0。
-                     * @param _offset 分页偏移。取值范围[0,INF)。默认0。
+                     * 设置数据偏移量，从0开始。默认值为0。
+                     * @param _offset 数据偏移量，从0开始。默认值为0。
                      * 
                      */
                     void SetOffset(const int64_t& _offset);
@@ -219,43 +219,43 @@ namespace TencentCloud
                     bool m_dBInstanceIdHasBeenSet;
 
                     /**
-                     * 查询起始时间戳，格式 “YYYY-MM-DD HH:mm:ss” ，日志保留时间默认为7天，起始时间不能超出保留时间范围。
+                     * 查询起始时间，形如2018-01-01 00:00:00。日志保留时间默认为7天，起始时间不能超出保留时间范围。
                      */
                     std::string m_startTime;
                     bool m_startTimeHasBeenSet;
 
                     /**
-                     * 查询结束时间戳，格式 “YYYY-MM-DD HH:mm:ss”。
+                     * 查询结束时间，形如2018-01-01 00:00:00。
                      */
                     std::string m_endTime;
                     bool m_endTimeHasBeenSet;
 
                     /**
-                     * 根据数据库名进行筛选，可以为空。
+                     * 数据库名字。	
                      */
                     std::string m_databaseName;
                     bool m_databaseNameHasBeenSet;
 
                     /**
-                     * 排序维度。 可选参数，取值范围[CallNum,CostTime,AvgCostTime]。默认CallNum。
+                     * 排序字段，取值范围[CallNum,CostTime,AvgCostTime]。默认值为CallNum。
                      */
                     std::string m_orderBy;
                     bool m_orderByHasBeenSet;
 
                     /**
-                     * 排序类型。升序asc、降序desc。默认desc。
+                     * 排序方式，包括升序：asc 降序：desc。默认值为desc。
                      */
                     std::string m_orderByType;
                     bool m_orderByTypeHasBeenSet;
 
                     /**
-                     * 分页大小。取值范围[1,100]。默认50。
+                     * 每页显示数量，取值范围为1-100。默认值为50。	
                      */
                     int64_t m_limit;
                     bool m_limitHasBeenSet;
 
                     /**
-                     * 分页偏移。取值范围[0,INF)。默认0。
+                     * 数据偏移量，从0开始。默认值为0。
                      */
                     int64_t m_offset;
                     bool m_offsetHasBeenSet;

@@ -48,14 +48,18 @@ namespace TencentCloud
 
                     /**
                      * 获取批量投递最长等待时间
+注意：此字段可能返回 null，表示取不到有效值。
                      * @return BatchTimeout 批量投递最长等待时间
+注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetBatchTimeout() const;
 
                     /**
                      * 设置批量投递最长等待时间
+注意：此字段可能返回 null，表示取不到有效值。
                      * @param _batchTimeout 批量投递最长等待时间
+注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetBatchTimeout(const int64_t& _batchTimeout);
@@ -69,14 +73,18 @@ namespace TencentCloud
 
                     /**
                      * 获取批量投递最大事件条数
+注意：此字段可能返回 null，表示取不到有效值。
                      * @return BatchEventCount 批量投递最大事件条数
+注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetBatchEventCount() const;
 
                     /**
                      * 设置批量投递最大事件条数
+注意：此字段可能返回 null，表示取不到有效值。
                      * @param _batchEventCount 批量投递最大事件条数
+注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetBatchEventCount(const int64_t& _batchEventCount);
@@ -90,14 +98,18 @@ namespace TencentCloud
 
                     /**
                      * 获取开启批量投递使能
+注意：此字段可能返回 null，表示取不到有效值。
                      * @return EnableBatchDelivery 开启批量投递使能
+注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     bool GetEnableBatchDelivery() const;
 
                     /**
                      * 设置开启批量投递使能
+注意：此字段可能返回 null，表示取不到有效值。
                      * @param _enableBatchDelivery 开启批量投递使能
+注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetEnableBatchDelivery(const bool& _enableBatchDelivery);
@@ -113,18 +125,21 @@ namespace TencentCloud
 
                     /**
                      * 批量投递最长等待时间
+注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_batchTimeout;
                     bool m_batchTimeoutHasBeenSet;
 
                     /**
                      * 批量投递最大事件条数
+注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_batchEventCount;
                     bool m_batchEventCountHasBeenSet;
 
                     /**
                      * 开启批量投递使能
+注意：此字段可能返回 null，表示取不到有效值。
                      */
                     bool m_enableBatchDelivery;
                     bool m_enableBatchDeliveryHasBeenSet;

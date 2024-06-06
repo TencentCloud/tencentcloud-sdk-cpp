@@ -45,8 +45,8 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取查询总条数。
-                     * @return TotalCount 查询总条数。
+                     * 获取查询到的总条数，最大值为10000条。
+                     * @return TotalCount 查询到的总条数，最大值为10000条。
                      * 
                      */
                     int64_t GetTotalCount() const;
@@ -59,8 +59,8 @@ namespace TencentCloud
                     bool TotalCountHasBeenSet() const;
 
                     /**
-                     * 获取慢SQL统计分析接口返回详情。
-                     * @return Detail 慢SQL统计分析接口返回详情。
+                     * 获取查询到的慢SQL统计分析详细信息集合。
+                     * @return Detail 查询到的慢SQL统计分析详细信息集合。
                      * 
                      */
                     Detail GetDetail() const;
@@ -75,13 +75,13 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 查询总条数。
+                     * 查询到的总条数，最大值为10000条。
                      */
                     int64_t m_totalCount;
                     bool m_totalCountHasBeenSet;
 
                     /**
-                     * 慢SQL统计分析接口返回详情。
+                     * 查询到的慢SQL统计分析详细信息集合。
                      */
                     Detail m_detail;
                     bool m_detailHasBeenSet;

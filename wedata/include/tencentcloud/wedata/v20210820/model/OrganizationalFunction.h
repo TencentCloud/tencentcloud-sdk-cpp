@@ -681,6 +681,56 @@ namespace TencentCloud
                      */
                     bool TagHasBeenSet() const;
 
+                    /**
+                     * 获取操作人 ID 列表
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return OperatorUserIdsStr 操作人 ID 列表
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::vector<std::string> GetOperatorUserIdsStr() const;
+
+                    /**
+                     * 设置操作人 ID 列表
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _operatorUserIdsStr 操作人 ID 列表
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetOperatorUserIdsStr(const std::vector<std::string>& _operatorUserIdsStr);
+
+                    /**
+                     * 判断参数 OperatorUserIdsStr 是否已赋值
+                     * @return OperatorUserIdsStr 是否已赋值
+                     * 
+                     */
+                    bool OperatorUserIdsStrHasBeenSet() const;
+
+                    /**
+                     * 获取公有云 Owner ID 列表
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return OwnerUserIdsStr 公有云 Owner ID 列表
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::vector<std::string> GetOwnerUserIdsStr() const;
+
+                    /**
+                     * 设置公有云 Owner ID 列表
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _ownerUserIdsStr 公有云 Owner ID 列表
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetOwnerUserIdsStr(const std::vector<std::string>& _ownerUserIdsStr);
+
+                    /**
+                     * 判断参数 OwnerUserIdsStr 是否已赋值
+                     * @return OwnerUserIdsStr 是否已赋值
+                     * 
+                     */
+                    bool OwnerUserIdsStrHasBeenSet() const;
+
                 private:
 
                     /**
@@ -860,6 +910,20 @@ namespace TencentCloud
                      */
                     std::string m_tag;
                     bool m_tagHasBeenSet;
+
+                    /**
+                     * 操作人 ID 列表
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::vector<std::string> m_operatorUserIdsStr;
+                    bool m_operatorUserIdsStrHasBeenSet;
+
+                    /**
+                     * 公有云 Owner ID 列表
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::vector<std::string> m_ownerUserIdsStr;
+                    bool m_ownerUserIdsStrHasBeenSet;
 
                 };
             }

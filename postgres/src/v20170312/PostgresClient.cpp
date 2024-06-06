@@ -3695,6 +3695,49 @@ PostgresClient::RestartDBInstanceOutcomeCallable PostgresClient::RestartDBInstan
     return task->get_future();
 }
 
+PostgresClient::RestoreDBInstanceObjectsOutcome PostgresClient::RestoreDBInstanceObjects(const RestoreDBInstanceObjectsRequest &request)
+{
+    auto outcome = MakeRequest(request, "RestoreDBInstanceObjects");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        RestoreDBInstanceObjectsResponse rsp = RestoreDBInstanceObjectsResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return RestoreDBInstanceObjectsOutcome(rsp);
+        else
+            return RestoreDBInstanceObjectsOutcome(o.GetError());
+    }
+    else
+    {
+        return RestoreDBInstanceObjectsOutcome(outcome.GetError());
+    }
+}
+
+void PostgresClient::RestoreDBInstanceObjectsAsync(const RestoreDBInstanceObjectsRequest& request, const RestoreDBInstanceObjectsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->RestoreDBInstanceObjects(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+PostgresClient::RestoreDBInstanceObjectsOutcomeCallable PostgresClient::RestoreDBInstanceObjectsCallable(const RestoreDBInstanceObjectsRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<RestoreDBInstanceObjectsOutcome()>>(
+        [this, request]()
+        {
+            return this->RestoreDBInstanceObjects(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 PostgresClient::SetAutoRenewFlagOutcome PostgresClient::SetAutoRenewFlag(const SetAutoRenewFlagRequest &request)
 {
     auto outcome = MakeRequest(request, "SetAutoRenewFlag");

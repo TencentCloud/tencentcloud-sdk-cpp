@@ -814,6 +814,49 @@ DlcClient::CheckLockMetaDataOutcomeCallable DlcClient::CheckLockMetaDataCallable
     return task->get_future();
 }
 
+DlcClient::CreateCHDFSBindingProductOutcome DlcClient::CreateCHDFSBindingProduct(const CreateCHDFSBindingProductRequest &request)
+{
+    auto outcome = MakeRequest(request, "CreateCHDFSBindingProduct");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        CreateCHDFSBindingProductResponse rsp = CreateCHDFSBindingProductResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return CreateCHDFSBindingProductOutcome(rsp);
+        else
+            return CreateCHDFSBindingProductOutcome(o.GetError());
+    }
+    else
+    {
+        return CreateCHDFSBindingProductOutcome(outcome.GetError());
+    }
+}
+
+void DlcClient::CreateCHDFSBindingProductAsync(const CreateCHDFSBindingProductRequest& request, const CreateCHDFSBindingProductAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->CreateCHDFSBindingProduct(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+DlcClient::CreateCHDFSBindingProductOutcomeCallable DlcClient::CreateCHDFSBindingProductCallable(const CreateCHDFSBindingProductRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<CreateCHDFSBindingProductOutcome()>>(
+        [this, request]()
+        {
+            return this->CreateCHDFSBindingProduct(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 DlcClient::CreateDMSDatabaseOutcome DlcClient::CreateDMSDatabase(const CreateDMSDatabaseRequest &request)
 {
     auto outcome = MakeRequest(request, "CreateDMSDatabase");
@@ -1760,6 +1803,49 @@ DlcClient::CreateWorkGroupOutcomeCallable DlcClient::CreateWorkGroupCallable(con
     return task->get_future();
 }
 
+DlcClient::DeleteCHDFSBindingProductOutcome DlcClient::DeleteCHDFSBindingProduct(const DeleteCHDFSBindingProductRequest &request)
+{
+    auto outcome = MakeRequest(request, "DeleteCHDFSBindingProduct");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DeleteCHDFSBindingProductResponse rsp = DeleteCHDFSBindingProductResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DeleteCHDFSBindingProductOutcome(rsp);
+        else
+            return DeleteCHDFSBindingProductOutcome(o.GetError());
+    }
+    else
+    {
+        return DeleteCHDFSBindingProductOutcome(outcome.GetError());
+    }
+}
+
+void DlcClient::DeleteCHDFSBindingProductAsync(const DeleteCHDFSBindingProductRequest& request, const DeleteCHDFSBindingProductAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DeleteCHDFSBindingProduct(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+DlcClient::DeleteCHDFSBindingProductOutcomeCallable DlcClient::DeleteCHDFSBindingProductCallable(const DeleteCHDFSBindingProductRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DeleteCHDFSBindingProductOutcome()>>(
+        [this, request]()
+        {
+            return this->DeleteCHDFSBindingProduct(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 DlcClient::DeleteDataEngineOutcome DlcClient::DeleteDataEngine(const DeleteDataEngineRequest &request)
 {
     auto outcome = MakeRequest(request, "DeleteDataEngine");
@@ -1932,6 +2018,49 @@ DlcClient::DeleteSparkAppOutcomeCallable DlcClient::DeleteSparkAppCallable(const
     return task->get_future();
 }
 
+DlcClient::DeleteThirdPartyAccessUserOutcome DlcClient::DeleteThirdPartyAccessUser(const DeleteThirdPartyAccessUserRequest &request)
+{
+    auto outcome = MakeRequest(request, "DeleteThirdPartyAccessUser");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DeleteThirdPartyAccessUserResponse rsp = DeleteThirdPartyAccessUserResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DeleteThirdPartyAccessUserOutcome(rsp);
+        else
+            return DeleteThirdPartyAccessUserOutcome(o.GetError());
+    }
+    else
+    {
+        return DeleteThirdPartyAccessUserOutcome(outcome.GetError());
+    }
+}
+
+void DlcClient::DeleteThirdPartyAccessUserAsync(const DeleteThirdPartyAccessUserRequest& request, const DeleteThirdPartyAccessUserAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DeleteThirdPartyAccessUser(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+DlcClient::DeleteThirdPartyAccessUserOutcomeCallable DlcClient::DeleteThirdPartyAccessUserCallable(const DeleteThirdPartyAccessUserRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DeleteThirdPartyAccessUserOutcome()>>(
+        [this, request]()
+        {
+            return this->DeleteThirdPartyAccessUser(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 DlcClient::DeleteUserOutcome DlcClient::DeleteUser(const DeleteUserRequest &request)
 {
     auto outcome = MakeRequest(request, "DeleteUser");
@@ -2097,6 +2226,49 @@ DlcClient::DescribeAdvancedStoreLocationOutcomeCallable DlcClient::DescribeAdvan
         [this, request]()
         {
             return this->DescribeAdvancedStoreLocation(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+DlcClient::DescribeDLCCatalogAccessOutcome DlcClient::DescribeDLCCatalogAccess(const DescribeDLCCatalogAccessRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeDLCCatalogAccess");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeDLCCatalogAccessResponse rsp = DescribeDLCCatalogAccessResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeDLCCatalogAccessOutcome(rsp);
+        else
+            return DescribeDLCCatalogAccessOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeDLCCatalogAccessOutcome(outcome.GetError());
+    }
+}
+
+void DlcClient::DescribeDLCCatalogAccessAsync(const DescribeDLCCatalogAccessRequest& request, const DescribeDLCCatalogAccessAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeDLCCatalogAccess(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+DlcClient::DescribeDLCCatalogAccessOutcomeCallable DlcClient::DescribeDLCCatalogAccessCallable(const DescribeDLCCatalogAccessRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeDLCCatalogAccessOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeDLCCatalogAccess(request);
         }
     );
 
@@ -3050,6 +3222,49 @@ DlcClient::DescribeNotebookSessionsOutcomeCallable DlcClient::DescribeNotebookSe
     return task->get_future();
 }
 
+DlcClient::DescribeOtherCHDFSBindingListOutcome DlcClient::DescribeOtherCHDFSBindingList(const DescribeOtherCHDFSBindingListRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeOtherCHDFSBindingList");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeOtherCHDFSBindingListResponse rsp = DescribeOtherCHDFSBindingListResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeOtherCHDFSBindingListOutcome(rsp);
+        else
+            return DescribeOtherCHDFSBindingListOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeOtherCHDFSBindingListOutcome(outcome.GetError());
+    }
+}
+
+void DlcClient::DescribeOtherCHDFSBindingListAsync(const DescribeOtherCHDFSBindingListRequest& request, const DescribeOtherCHDFSBindingListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeOtherCHDFSBindingList(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+DlcClient::DescribeOtherCHDFSBindingListOutcomeCallable DlcClient::DescribeOtherCHDFSBindingListCallable(const DescribeOtherCHDFSBindingListRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeOtherCHDFSBindingListOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeOtherCHDFSBindingList(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 DlcClient::DescribeResultDownloadOutcome DlcClient::DescribeResultDownload(const DescribeResultDownloadRequest &request)
 {
     auto outcome = MakeRequest(request, "DescribeResultDownload");
@@ -3394,6 +3609,49 @@ DlcClient::DescribeStoreLocationOutcomeCallable DlcClient::DescribeStoreLocation
     return task->get_future();
 }
 
+DlcClient::DescribeSubUserAccessPolicyOutcome DlcClient::DescribeSubUserAccessPolicy(const DescribeSubUserAccessPolicyRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeSubUserAccessPolicy");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeSubUserAccessPolicyResponse rsp = DescribeSubUserAccessPolicyResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeSubUserAccessPolicyOutcome(rsp);
+        else
+            return DescribeSubUserAccessPolicyOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeSubUserAccessPolicyOutcome(outcome.GetError());
+    }
+}
+
+void DlcClient::DescribeSubUserAccessPolicyAsync(const DescribeSubUserAccessPolicyRequest& request, const DescribeSubUserAccessPolicyAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeSubUserAccessPolicy(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+DlcClient::DescribeSubUserAccessPolicyOutcomeCallable DlcClient::DescribeSubUserAccessPolicyCallable(const DescribeSubUserAccessPolicyRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeSubUserAccessPolicyOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeSubUserAccessPolicy(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 DlcClient::DescribeTableOutcome DlcClient::DescribeTable(const DescribeTableRequest &request)
 {
     auto outcome = MakeRequest(request, "DescribeTable");
@@ -3688,6 +3946,49 @@ DlcClient::DescribeTasksCostInfoOutcomeCallable DlcClient::DescribeTasksCostInfo
         [this, request]()
         {
             return this->DescribeTasksCostInfo(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+DlcClient::DescribeThirdPartyAccessUserOutcome DlcClient::DescribeThirdPartyAccessUser(const DescribeThirdPartyAccessUserRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeThirdPartyAccessUser");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeThirdPartyAccessUserResponse rsp = DescribeThirdPartyAccessUserResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeThirdPartyAccessUserOutcome(rsp);
+        else
+            return DescribeThirdPartyAccessUserOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeThirdPartyAccessUserOutcome(outcome.GetError());
+    }
+}
+
+void DlcClient::DescribeThirdPartyAccessUserAsync(const DescribeThirdPartyAccessUserRequest& request, const DescribeThirdPartyAccessUserAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeThirdPartyAccessUser(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+DlcClient::DescribeThirdPartyAccessUserOutcomeCallable DlcClient::DescribeThirdPartyAccessUserCallable(const DescribeThirdPartyAccessUserRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeThirdPartyAccessUserOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeThirdPartyAccessUser(request);
         }
     );
 
@@ -4383,6 +4684,49 @@ DlcClient::GetOptimizerPolicyOutcomeCallable DlcClient::GetOptimizerPolicyCallab
     return task->get_future();
 }
 
+DlcClient::GrantDLCCatalogAccessOutcome DlcClient::GrantDLCCatalogAccess(const GrantDLCCatalogAccessRequest &request)
+{
+    auto outcome = MakeRequest(request, "GrantDLCCatalogAccess");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        GrantDLCCatalogAccessResponse rsp = GrantDLCCatalogAccessResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return GrantDLCCatalogAccessOutcome(rsp);
+        else
+            return GrantDLCCatalogAccessOutcome(o.GetError());
+    }
+    else
+    {
+        return GrantDLCCatalogAccessOutcome(outcome.GetError());
+    }
+}
+
+void DlcClient::GrantDLCCatalogAccessAsync(const GrantDLCCatalogAccessRequest& request, const GrantDLCCatalogAccessAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->GrantDLCCatalogAccess(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+DlcClient::GrantDLCCatalogAccessOutcomeCallable DlcClient::GrantDLCCatalogAccessCallable(const GrantDLCCatalogAccessRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<GrantDLCCatalogAccessOutcome()>>(
+        [this, request]()
+        {
+            return this->GrantDLCCatalogAccess(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 DlcClient::ListTaskJobLogDetailOutcome DlcClient::ListTaskJobLogDetail(const ListTaskJobLogDetailRequest &request)
 {
     auto outcome = MakeRequest(request, "ListTaskJobLogDetail");
@@ -4942,6 +5286,49 @@ DlcClient::QueryTaskCostDetailOutcomeCallable DlcClient::QueryTaskCostDetailCall
     return task->get_future();
 }
 
+DlcClient::RegisterThirdPartyAccessUserOutcome DlcClient::RegisterThirdPartyAccessUser(const RegisterThirdPartyAccessUserRequest &request)
+{
+    auto outcome = MakeRequest(request, "RegisterThirdPartyAccessUser");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        RegisterThirdPartyAccessUserResponse rsp = RegisterThirdPartyAccessUserResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return RegisterThirdPartyAccessUserOutcome(rsp);
+        else
+            return RegisterThirdPartyAccessUserOutcome(o.GetError());
+    }
+    else
+    {
+        return RegisterThirdPartyAccessUserOutcome(outcome.GetError());
+    }
+}
+
+void DlcClient::RegisterThirdPartyAccessUserAsync(const RegisterThirdPartyAccessUserRequest& request, const RegisterThirdPartyAccessUserAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->RegisterThirdPartyAccessUser(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+DlcClient::RegisterThirdPartyAccessUserOutcomeCallable DlcClient::RegisterThirdPartyAccessUserCallable(const RegisterThirdPartyAccessUserRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<RegisterThirdPartyAccessUserOutcome()>>(
+        [this, request]()
+        {
+            return this->RegisterThirdPartyAccessUser(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 DlcClient::RenewDataEngineOutcome DlcClient::RenewDataEngine(const RenewDataEngineRequest &request)
 {
     auto outcome = MakeRequest(request, "RenewDataEngine");
@@ -5064,6 +5451,49 @@ DlcClient::RestartDataEngineOutcomeCallable DlcClient::RestartDataEngineCallable
         [this, request]()
         {
             return this->RestartDataEngine(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+DlcClient::RevokeDLCCatalogAccessOutcome DlcClient::RevokeDLCCatalogAccess(const RevokeDLCCatalogAccessRequest &request)
+{
+    auto outcome = MakeRequest(request, "RevokeDLCCatalogAccess");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        RevokeDLCCatalogAccessResponse rsp = RevokeDLCCatalogAccessResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return RevokeDLCCatalogAccessOutcome(rsp);
+        else
+            return RevokeDLCCatalogAccessOutcome(o.GetError());
+    }
+    else
+    {
+        return RevokeDLCCatalogAccessOutcome(outcome.GetError());
+    }
+}
+
+void DlcClient::RevokeDLCCatalogAccessAsync(const RevokeDLCCatalogAccessRequest& request, const RevokeDLCCatalogAccessAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->RevokeDLCCatalogAccess(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+DlcClient::RevokeDLCCatalogAccessOutcomeCallable DlcClient::RevokeDLCCatalogAccessCallable(const RevokeDLCCatalogAccessRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<RevokeDLCCatalogAccessOutcome()>>(
+        [this, request]()
+        {
+            return this->RevokeDLCCatalogAccess(request);
         }
     );
 

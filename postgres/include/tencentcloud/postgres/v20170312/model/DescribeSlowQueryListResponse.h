@@ -46,8 +46,8 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取选定时间范围内慢SQL总条数。
-                     * @return TotalCount 选定时间范围内慢SQL总条数。
+                     * 获取查询到的慢日志数量，最大值为10000条。	
+                     * @return TotalCount 查询到的慢日志数量，最大值为10000条。	
                      * 
                      */
                     int64_t GetTotalCount() const;
@@ -60,9 +60,9 @@ namespace TencentCloud
                     bool TotalCountHasBeenSet() const;
 
                     /**
-                     * 获取指定时间范围内，慢SQL耗时分段分析。
+                     * 获取查询到的慢日志耗时分段分析结果。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return DurationAnalysis 指定时间范围内，慢SQL耗时分段分析。
+                     * @return DurationAnalysis 查询到的慢日志耗时分段分析结果。
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -76,9 +76,9 @@ namespace TencentCloud
                     bool DurationAnalysisHasBeenSet() const;
 
                     /**
-                     * 获取指定时间范围内 慢SQL流水。
+                     * 获取查询到的慢日志详细信息集合。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return RawSlowQueryList 指定时间范围内 慢SQL流水。
+                     * @return RawSlowQueryList 查询到的慢日志详细信息集合。
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -94,20 +94,20 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 选定时间范围内慢SQL总条数。
+                     * 查询到的慢日志数量，最大值为10000条。	
                      */
                     int64_t m_totalCount;
                     bool m_totalCountHasBeenSet;
 
                     /**
-                     * 指定时间范围内，慢SQL耗时分段分析。
+                     * 查询到的慢日志耗时分段分析结果。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<DurationAnalysis> m_durationAnalysis;
                     bool m_durationAnalysisHasBeenSet;
 
                     /**
-                     * 指定时间范围内 慢SQL流水。
+                     * 查询到的慢日志详细信息集合。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<RawSlowQuery> m_rawSlowQueryList;

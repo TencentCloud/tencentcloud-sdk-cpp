@@ -48,8 +48,8 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取参数值为枚举类型参数集合。
-                     * @return InstanceEnumParam 参数值为枚举类型参数集合。
+                     * 获取参数值为枚举类型的参数集合。
+                     * @return InstanceEnumParam 参数值为枚举类型的参数集合。
                      * 
                      */
                     std::vector<InstanceEnumParam> GetInstanceEnumParam() const;
@@ -62,8 +62,8 @@ namespace TencentCloud
                     bool InstanceEnumParamHasBeenSet() const;
 
                     /**
-                     * 获取参数值为 Integer 类型参数集合。
-                     * @return InstanceIntegerParam 参数值为 Integer 类型参数集合。
+                     * 获取参数值为 Integer 类型的参数集合。
+                     * @return InstanceIntegerParam 参数值为 Integer 类型的参数集合。
                      * 
                      */
                     std::vector<InstanceIntegerParam> GetInstanceIntegerParam() const;
@@ -104,8 +104,8 @@ namespace TencentCloud
                     bool InstanceMultiParamHasBeenSet() const;
 
                     /**
-                     * 获取当前实例支持修改的参数个数统计 如0
-                     * @return TotalCount 当前实例支持修改的参数个数统计 如0
+                     * 获取当前实例支持修改的参数数量。
+                     * @return TotalCount 当前实例支持修改的参数数量。
                      * 
                      */
                     uint64_t GetTotalCount() const;
@@ -120,13 +120,13 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 参数值为枚举类型参数集合。
+                     * 参数值为枚举类型的参数集合。
                      */
                     std::vector<InstanceEnumParam> m_instanceEnumParam;
                     bool m_instanceEnumParamHasBeenSet;
 
                     /**
-                     * 参数值为 Integer 类型参数集合。
+                     * 参数值为 Integer 类型的参数集合。
                      */
                     std::vector<InstanceIntegerParam> m_instanceIntegerParam;
                     bool m_instanceIntegerParamHasBeenSet;
@@ -144,7 +144,7 @@ namespace TencentCloud
                     bool m_instanceMultiParamHasBeenSet;
 
                     /**
-                     * 当前实例支持修改的参数个数统计 如0
+                     * 当前实例支持修改的参数数量。
                      */
                     uint64_t m_totalCount;
                     bool m_totalCountHasBeenSet;

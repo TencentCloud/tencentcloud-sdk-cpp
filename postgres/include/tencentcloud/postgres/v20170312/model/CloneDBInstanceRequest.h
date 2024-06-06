@@ -109,22 +109,30 @@ namespace TencentCloud
 
                     /**
                      * 获取购买时长，单位：月。
-<li>预付费：支持1,2,3,4,5,6,7,8,9,10,11,12,24,36
-<li>后付费：只支持1
+
+- 预付费：支持1,2,3,4,5,6,7,8,9,10,11,12,24,36
+- 后付费：只支持1
+
                      * @return Period 购买时长，单位：月。
-<li>预付费：支持1,2,3,4,5,6,7,8,9,10,11,12,24,36
-<li>后付费：只支持1
+
+- 预付费：支持1,2,3,4,5,6,7,8,9,10,11,12,24,36
+- 后付费：只支持1
+
                      * 
                      */
                     int64_t GetPeriod() const;
 
                     /**
                      * 设置购买时长，单位：月。
-<li>预付费：支持1,2,3,4,5,6,7,8,9,10,11,12,24,36
-<li>后付费：只支持1
+
+- 预付费：支持1,2,3,4,5,6,7,8,9,10,11,12,24,36
+- 后付费：只支持1
+
                      * @param _period 购买时长，单位：月。
-<li>预付费：支持1,2,3,4,5,6,7,8,9,10,11,12,24,36
-<li>后付费：只支持1
+
+- 预付费：支持1,2,3,4,5,6,7,8,9,10,11,12,24,36
+- 后付费：只支持1
+
                      * 
                      */
                     void SetPeriod(const int64_t& _period);
@@ -138,12 +146,16 @@ namespace TencentCloud
 
                     /**
                      * 获取续费标记：
-<li>0：手动续费
-<li>1：自动续费
+
+- 0：手动续费
+- 1：自动续费
+
 默认值：0
                      * @return AutoRenewFlag 续费标记：
-<li>0：手动续费
-<li>1：自动续费
+
+- 0：手动续费
+- 1：自动续费
+
 默认值：0
                      * 
                      */
@@ -151,12 +163,16 @@ namespace TencentCloud
 
                     /**
                      * 设置续费标记：
-<li>0：手动续费
-<li>1：自动续费
+
+- 0：手动续费
+- 1：自动续费
+
 默认值：0
                      * @param _autoRenewFlag 续费标记：
-<li>0：手动续费
-<li>1：自动续费
+
+- 0：手动续费
+- 1：自动续费
+
 默认值：0
                      * 
                      */
@@ -234,12 +250,16 @@ namespace TencentCloud
 
                     /**
                      * 获取实例计费类型，目前支持：
-<li>PREPAID：预付费，即包年包月
-<li>POSTPAID_BY_HOUR：后付费，即按量计费
+
+- PREPAID：预付费，即包年包月
+- POSTPAID_BY_HOUR：后付费，即按量计费
+
 默认值：PREPAID
                      * @return InstanceChargeType 实例计费类型，目前支持：
-<li>PREPAID：预付费，即包年包月
-<li>POSTPAID_BY_HOUR：后付费，即按量计费
+
+- PREPAID：预付费，即包年包月
+- POSTPAID_BY_HOUR：后付费，即按量计费
+
 默认值：PREPAID
                      * 
                      */
@@ -247,12 +267,16 @@ namespace TencentCloud
 
                     /**
                      * 设置实例计费类型，目前支持：
-<li>PREPAID：预付费，即包年包月
-<li>POSTPAID_BY_HOUR：后付费，即按量计费
+
+- PREPAID：预付费，即包年包月
+- POSTPAID_BY_HOUR：后付费，即按量计费
+
 默认值：PREPAID
                      * @param _instanceChargeType 实例计费类型，目前支持：
-<li>PREPAID：预付费，即包年包月
-<li>POSTPAID_BY_HOUR：后付费，即按量计费
+
+- PREPAID：预付费，即包年包月
+- POSTPAID_BY_HOUR：后付费，即按量计费
+
 默认值：PREPAID
                      * 
                      */
@@ -359,12 +383,16 @@ namespace TencentCloud
 
                     /**
                      * 获取是否自动使用代金券：
-<li>0：否
-<li>1：是
+
+- 0：否
+- 1：是
+
 默认值：0
                      * @return AutoVoucher 是否自动使用代金券：
-<li>0：否
-<li>1：是
+
+- 0：否
+- 1：是
+
 默认值：0
                      * 
                      */
@@ -372,12 +400,16 @@ namespace TencentCloud
 
                     /**
                      * 设置是否自动使用代金券：
-<li>0：否
-<li>1：是
+
+- 0：否
+- 1：是
+
 默认值：0
                      * @param _autoVoucher 是否自动使用代金券：
-<li>0：否
-<li>1：是
+
+- 0：否
+- 1：是
+
 默认值：0
                      * 
                      */
@@ -476,13 +508,13 @@ namespace TencentCloud
 
                     /**
                      * 获取主从同步方式，支持： 
-<li>Semi-sync：半同步
-<li>Async：异步
+<li>Semi-sync：半同步</li>
+<li>Async：异步</li>
 主实例默认值：Semi-sync
 只读实例默认值：Async
                      * @return SyncMode 主从同步方式，支持： 
-<li>Semi-sync：半同步
-<li>Async：异步
+<li>Semi-sync：半同步</li>
+<li>Async：异步</li>
 主实例默认值：Semi-sync
 只读实例默认值：Async
                      * 
@@ -491,13 +523,13 @@ namespace TencentCloud
 
                     /**
                      * 设置主从同步方式，支持： 
-<li>Semi-sync：半同步
-<li>Async：异步
+<li>Semi-sync：半同步</li>
+<li>Async：异步</li>
 主实例默认值：Semi-sync
 只读实例默认值：Async
                      * @param _syncMode 主从同步方式，支持： 
-<li>Semi-sync：半同步
-<li>Async：异步
+<li>Semi-sync：半同步</li>
+<li>Async：异步</li>
 主实例默认值：Semi-sync
 只读实例默认值：Async
                      * 
@@ -533,16 +565,20 @@ namespace TencentCloud
 
                     /**
                      * 购买时长，单位：月。
-<li>预付费：支持1,2,3,4,5,6,7,8,9,10,11,12,24,36
-<li>后付费：只支持1
+
+- 预付费：支持1,2,3,4,5,6,7,8,9,10,11,12,24,36
+- 后付费：只支持1
+
                      */
                     int64_t m_period;
                     bool m_periodHasBeenSet;
 
                     /**
                      * 续费标记：
-<li>0：手动续费
-<li>1：自动续费
+
+- 0：手动续费
+- 1：自动续费
+
 默认值：0
                      */
                     int64_t m_autoRenewFlag;
@@ -568,8 +604,10 @@ namespace TencentCloud
 
                     /**
                      * 实例计费类型，目前支持：
-<li>PREPAID：预付费，即包年包月
-<li>POSTPAID_BY_HOUR：后付费，即按量计费
+
+- PREPAID：预付费，即包年包月
+- POSTPAID_BY_HOUR：后付费，即按量计费
+
 默认值：PREPAID
                      */
                     std::string m_instanceChargeType;
@@ -603,8 +641,10 @@ namespace TencentCloud
 
                     /**
                      * 是否自动使用代金券：
-<li>0：否
-<li>1：是
+
+- 0：否
+- 1：是
+
 默认值：0
                      */
                     int64_t m_autoVoucher;
@@ -636,8 +676,8 @@ namespace TencentCloud
 
                     /**
                      * 主从同步方式，支持： 
-<li>Semi-sync：半同步
-<li>Async：异步
+<li>Semi-sync：半同步</li>
+<li>Async：异步</li>
 主实例默认值：Semi-sync
 只读实例默认值：Async
                      */
