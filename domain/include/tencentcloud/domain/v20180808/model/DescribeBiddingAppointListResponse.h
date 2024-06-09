@@ -21,6 +21,7 @@
 #include <vector>
 #include <map>
 #include <tencentcloud/core/AbstractModel.h>
+#include <tencentcloud/domain/v20180808/model/BiddingAppointResult.h>
 
 
 namespace TencentCloud
@@ -43,7 +44,47 @@ namespace TencentCloud
                     std::string ToJsonString() const;
 
 
+                    /**
+                     * 获取搜索结果条数
+                     * @return Total 搜索结果条数
+                     * 
+                     */
+                    int64_t GetTotal() const;
+
+                    /**
+                     * 判断参数 Total 是否已赋值
+                     * @return Total 是否已赋值
+                     * 
+                     */
+                    bool TotalHasBeenSet() const;
+
+                    /**
+                     * 获取预约列表
+                     * @return AppointList 预约列表
+                     * 
+                     */
+                    std::vector<BiddingAppointResult> GetAppointList() const;
+
+                    /**
+                     * 判断参数 AppointList 是否已赋值
+                     * @return AppointList 是否已赋值
+                     * 
+                     */
+                    bool AppointListHasBeenSet() const;
+
                 private:
+
+                    /**
+                     * 搜索结果条数
+                     */
+                    int64_t m_total;
+                    bool m_totalHasBeenSet;
+
+                    /**
+                     * 预约列表
+                     */
+                    std::vector<BiddingAppointResult> m_appointList;
+                    bool m_appointListHasBeenSet;
 
                 };
             }

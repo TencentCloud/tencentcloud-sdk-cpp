@@ -22,7 +22,8 @@
 using namespace TencentCloud::Domain::V20180808::Model;
 using namespace std;
 
-DescribeBiddingSuccessfulDetailRequest::DescribeBiddingSuccessfulDetailRequest()
+DescribeBiddingSuccessfulDetailRequest::DescribeBiddingSuccessfulDetailRequest() :
+    m_businessIDHasBeenSet(false)
 {
 }
 
@@ -33,6 +34,14 @@ string DescribeBiddingSuccessfulDetailRequest::ToJsonString() const
     rapidjson::Document::AllocatorType& allocator = d.GetAllocator();
 
 
+    if (m_businessIDHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "BusinessID";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_businessID.c_str(), allocator).Move(), allocator);
+    }
+
 
     rapidjson::StringBuffer buffer;
     rapidjson::Writer<rapidjson::StringBuffer> writer(buffer);
@@ -40,5 +49,21 @@ string DescribeBiddingSuccessfulDetailRequest::ToJsonString() const
     return buffer.GetString();
 }
 
+
+string DescribeBiddingSuccessfulDetailRequest::GetBusinessID() const
+{
+    return m_businessID;
+}
+
+void DescribeBiddingSuccessfulDetailRequest::SetBusinessID(const string& _businessID)
+{
+    m_businessID = _businessID;
+    m_businessIDHasBeenSet = true;
+}
+
+bool DescribeBiddingSuccessfulDetailRequest::BusinessIDHasBeenSet() const
+{
+    return m_businessIDHasBeenSet;
+}
 
 

@@ -61,6 +61,8 @@
 #include <tencentcloud/redis/v20180412/model/DeleteReplicationInstanceResponse.h>
 #include <tencentcloud/redis/v20180412/model/DescribeAutoBackupConfigRequest.h>
 #include <tencentcloud/redis/v20180412/model/DescribeAutoBackupConfigResponse.h>
+#include <tencentcloud/redis/v20180412/model/DescribeBackupDetailRequest.h>
+#include <tencentcloud/redis/v20180412/model/DescribeBackupDetailResponse.h>
 #include <tencentcloud/redis/v20180412/model/DescribeBackupDownloadRestrictionRequest.h>
 #include <tencentcloud/redis/v20180412/model/DescribeBackupDownloadRestrictionResponse.h>
 #include <tencentcloud/redis/v20180412/model/DescribeBackupUrlRequest.h>
@@ -288,6 +290,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeAutoBackupConfigResponse> DescribeAutoBackupConfigOutcome;
                 typedef std::future<DescribeAutoBackupConfigOutcome> DescribeAutoBackupConfigOutcomeCallable;
                 typedef std::function<void(const RedisClient*, const Model::DescribeAutoBackupConfigRequest&, DescribeAutoBackupConfigOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeAutoBackupConfigAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeBackupDetailResponse> DescribeBackupDetailOutcome;
+                typedef std::future<DescribeBackupDetailOutcome> DescribeBackupDetailOutcomeCallable;
+                typedef std::function<void(const RedisClient*, const Model::DescribeBackupDetailRequest&, DescribeBackupDetailOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeBackupDetailAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeBackupDownloadRestrictionResponse> DescribeBackupDownloadRestrictionOutcome;
                 typedef std::future<DescribeBackupDownloadRestrictionOutcome> DescribeBackupDownloadRestrictionOutcomeCallable;
                 typedef std::function<void(const RedisClient*, const Model::DescribeBackupDownloadRestrictionRequest&, DescribeBackupDownloadRestrictionOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeBackupDownloadRestrictionAsyncHandler;
@@ -695,6 +700,15 @@ namespace TencentCloud
                 DescribeAutoBackupConfigOutcome DescribeAutoBackupConfig(const Model::DescribeAutoBackupConfigRequest &request);
                 void DescribeAutoBackupConfigAsync(const Model::DescribeAutoBackupConfigRequest& request, const DescribeAutoBackupConfigAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DescribeAutoBackupConfigOutcomeCallable DescribeAutoBackupConfigCallable(const Model::DescribeAutoBackupConfigRequest& request);
+
+                /**
+                 *本接口（DescribeBackupDetail）用于查询实例的备份信息详情。
+                 * @param req DescribeBackupDetailRequest
+                 * @return DescribeBackupDetailOutcome
+                 */
+                DescribeBackupDetailOutcome DescribeBackupDetail(const Model::DescribeBackupDetailRequest &request);
+                void DescribeBackupDetailAsync(const Model::DescribeBackupDetailRequest& request, const DescribeBackupDetailAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeBackupDetailOutcomeCallable DescribeBackupDetailCallable(const Model::DescribeBackupDetailRequest& request);
 
                 /**
                  *本接口（DescribeBackupDownloadRestriction）用于查询当前地域数据库备份文件的下载地址。

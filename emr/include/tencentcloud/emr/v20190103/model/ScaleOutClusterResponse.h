@@ -89,6 +89,22 @@ namespace TencentCloud
                      */
                     bool FlowIdHasBeenSet() const;
 
+                    /**
+                     * 获取查询流程状态，流程额外信息
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return TraceId 查询流程状态，流程额外信息
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::string GetTraceId() const;
+
+                    /**
+                     * 判断参数 TraceId 是否已赋值
+                     * @return TraceId 是否已赋值
+                     * 
+                     */
+                    bool TraceIdHasBeenSet() const;
+
                 private:
 
                     /**
@@ -110,6 +126,13 @@ namespace TencentCloud
                      */
                     int64_t m_flowId;
                     bool m_flowIdHasBeenSet;
+
+                    /**
+                     * 查询流程状态，流程额外信息
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_traceId;
+                    bool m_traceIdHasBeenSet;
 
                 };
             }

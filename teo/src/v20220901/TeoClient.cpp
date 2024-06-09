@@ -470,6 +470,49 @@ TeoClient::CreateConfigGroupVersionOutcomeCallable TeoClient::CreateConfigGroupV
     return task->get_future();
 }
 
+TeoClient::CreateCustomizeErrorPageOutcome TeoClient::CreateCustomizeErrorPage(const CreateCustomizeErrorPageRequest &request)
+{
+    auto outcome = MakeRequest(request, "CreateCustomizeErrorPage");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        CreateCustomizeErrorPageResponse rsp = CreateCustomizeErrorPageResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return CreateCustomizeErrorPageOutcome(rsp);
+        else
+            return CreateCustomizeErrorPageOutcome(o.GetError());
+    }
+    else
+    {
+        return CreateCustomizeErrorPageOutcome(outcome.GetError());
+    }
+}
+
+void TeoClient::CreateCustomizeErrorPageAsync(const CreateCustomizeErrorPageRequest& request, const CreateCustomizeErrorPageAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->CreateCustomizeErrorPage(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+TeoClient::CreateCustomizeErrorPageOutcomeCallable TeoClient::CreateCustomizeErrorPageCallable(const CreateCustomizeErrorPageRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<CreateCustomizeErrorPageOutcome()>>(
+        [this, request]()
+        {
+            return this->CreateCustomizeErrorPage(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 TeoClient::CreateL4ProxyOutcome TeoClient::CreateL4Proxy(const CreateL4ProxyRequest &request)
 {
     auto outcome = MakeRequest(request, "CreateL4Proxy");
@@ -1151,6 +1194,49 @@ TeoClient::DeleteApplicationProxyRuleOutcomeCallable TeoClient::DeleteApplicatio
         [this, request]()
         {
             return this->DeleteApplicationProxyRule(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+TeoClient::DeleteCustomErrorPageOutcome TeoClient::DeleteCustomErrorPage(const DeleteCustomErrorPageRequest &request)
+{
+    auto outcome = MakeRequest(request, "DeleteCustomErrorPage");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DeleteCustomErrorPageResponse rsp = DeleteCustomErrorPageResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DeleteCustomErrorPageOutcome(rsp);
+        else
+            return DeleteCustomErrorPageOutcome(o.GetError());
+    }
+    else
+    {
+        return DeleteCustomErrorPageOutcome(outcome.GetError());
+    }
+}
+
+void TeoClient::DeleteCustomErrorPageAsync(const DeleteCustomErrorPageRequest& request, const DeleteCustomErrorPageAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DeleteCustomErrorPage(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+TeoClient::DeleteCustomErrorPageOutcomeCallable TeoClient::DeleteCustomErrorPageCallable(const DeleteCustomErrorPageRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DeleteCustomErrorPageOutcome()>>(
+        [this, request]()
+        {
+            return this->DeleteCustomErrorPage(request);
         }
     );
 
@@ -1882,6 +1968,49 @@ TeoClient::DescribeContentQuotaOutcomeCallable TeoClient::DescribeContentQuotaCa
         [this, request]()
         {
             return this->DescribeContentQuota(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+TeoClient::DescribeCustomErrorPagesOutcome TeoClient::DescribeCustomErrorPages(const DescribeCustomErrorPagesRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeCustomErrorPages");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeCustomErrorPagesResponse rsp = DescribeCustomErrorPagesResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeCustomErrorPagesOutcome(rsp);
+        else
+            return DescribeCustomErrorPagesOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeCustomErrorPagesOutcome(outcome.GetError());
+    }
+}
+
+void TeoClient::DescribeCustomErrorPagesAsync(const DescribeCustomErrorPagesRequest& request, const DescribeCustomErrorPagesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeCustomErrorPages(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+TeoClient::DescribeCustomErrorPagesOutcomeCallable TeoClient::DescribeCustomErrorPagesCallable(const DescribeCustomErrorPagesRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeCustomErrorPagesOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeCustomErrorPages(request);
         }
     );
 
@@ -3688,6 +3817,49 @@ TeoClient::ModifyApplicationProxyStatusOutcomeCallable TeoClient::ModifyApplicat
         [this, request]()
         {
             return this->ModifyApplicationProxyStatus(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+TeoClient::ModifyCustomErrorPageOutcome TeoClient::ModifyCustomErrorPage(const ModifyCustomErrorPageRequest &request)
+{
+    auto outcome = MakeRequest(request, "ModifyCustomErrorPage");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ModifyCustomErrorPageResponse rsp = ModifyCustomErrorPageResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ModifyCustomErrorPageOutcome(rsp);
+        else
+            return ModifyCustomErrorPageOutcome(o.GetError());
+    }
+    else
+    {
+        return ModifyCustomErrorPageOutcome(outcome.GetError());
+    }
+}
+
+void TeoClient::ModifyCustomErrorPageAsync(const ModifyCustomErrorPageRequest& request, const ModifyCustomErrorPageAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->ModifyCustomErrorPage(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+TeoClient::ModifyCustomErrorPageOutcomeCallable TeoClient::ModifyCustomErrorPageCallable(const ModifyCustomErrorPageRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<ModifyCustomErrorPageOutcome()>>(
+        [this, request]()
+        {
+            return this->ModifyCustomErrorPage(request);
         }
     );
 

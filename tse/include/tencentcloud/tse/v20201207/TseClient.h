@@ -173,6 +173,8 @@
 #include <tencentcloud/tse/v20201207/model/DescribeNativeGatewayServerGroupsResponse.h>
 #include <tencentcloud/tse/v20201207/model/DescribeOneCloudNativeAPIGatewayServiceRequest.h>
 #include <tencentcloud/tse/v20201207/model/DescribeOneCloudNativeAPIGatewayServiceResponse.h>
+#include <tencentcloud/tse/v20201207/model/DescribePublicAddressConfigRequest.h>
+#include <tencentcloud/tse/v20201207/model/DescribePublicAddressConfigResponse.h>
 #include <tencentcloud/tse/v20201207/model/DescribePublicNetworkRequest.h>
 #include <tencentcloud/tse/v20201207/model/DescribePublicNetworkResponse.h>
 #include <tencentcloud/tse/v20201207/model/DescribeSREInstanceAccessAddressRequest.h>
@@ -484,6 +486,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeOneCloudNativeAPIGatewayServiceResponse> DescribeOneCloudNativeAPIGatewayServiceOutcome;
                 typedef std::future<DescribeOneCloudNativeAPIGatewayServiceOutcome> DescribeOneCloudNativeAPIGatewayServiceOutcomeCallable;
                 typedef std::function<void(const TseClient*, const Model::DescribeOneCloudNativeAPIGatewayServiceRequest&, DescribeOneCloudNativeAPIGatewayServiceOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeOneCloudNativeAPIGatewayServiceAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribePublicAddressConfigResponse> DescribePublicAddressConfigOutcome;
+                typedef std::future<DescribePublicAddressConfigOutcome> DescribePublicAddressConfigOutcomeCallable;
+                typedef std::function<void(const TseClient*, const Model::DescribePublicAddressConfigRequest&, DescribePublicAddressConfigOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribePublicAddressConfigAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribePublicNetworkResponse> DescribePublicNetworkOutcome;
                 typedef std::future<DescribePublicNetworkOutcome> DescribePublicNetworkOutcomeCallable;
                 typedef std::function<void(const TseClient*, const Model::DescribePublicNetworkRequest&, DescribePublicNetworkOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribePublicNetworkAsyncHandler;
@@ -1269,6 +1274,15 @@ namespace TencentCloud
                 DescribeOneCloudNativeAPIGatewayServiceOutcome DescribeOneCloudNativeAPIGatewayService(const Model::DescribeOneCloudNativeAPIGatewayServiceRequest &request);
                 void DescribeOneCloudNativeAPIGatewayServiceAsync(const Model::DescribeOneCloudNativeAPIGatewayServiceRequest& request, const DescribeOneCloudNativeAPIGatewayServiceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DescribeOneCloudNativeAPIGatewayServiceOutcomeCallable DescribeOneCloudNativeAPIGatewayServiceCallable(const Model::DescribeOneCloudNativeAPIGatewayServiceRequest& request);
+
+                /**
+                 *查询公网地址信息
+                 * @param req DescribePublicAddressConfigRequest
+                 * @return DescribePublicAddressConfigOutcome
+                 */
+                DescribePublicAddressConfigOutcome DescribePublicAddressConfig(const Model::DescribePublicAddressConfigRequest &request);
+                void DescribePublicAddressConfigAsync(const Model::DescribePublicAddressConfigRequest& request, const DescribePublicAddressConfigAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribePublicAddressConfigOutcomeCallable DescribePublicAddressConfigCallable(const Model::DescribePublicAddressConfigRequest& request);
 
                 /**
                  *查询云原生API网关实例公网详情

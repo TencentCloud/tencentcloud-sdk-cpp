@@ -42,7 +42,34 @@ namespace TencentCloud
                     std::string ToJsonString() const;
 
 
+                    /**
+                     * 获取business_id
+                     * @return BusinessID business_id
+                     * 
+                     */
+                    std::string GetBusinessID() const;
+
+                    /**
+                     * 设置business_id
+                     * @param _businessID business_id
+                     * 
+                     */
+                    void SetBusinessID(const std::string& _businessID);
+
+                    /**
+                     * 判断参数 BusinessID 是否已赋值
+                     * @return BusinessID 是否已赋值
+                     * 
+                     */
+                    bool BusinessIDHasBeenSet() const;
+
                 private:
+
+                    /**
+                     * business_id
+                     */
+                    std::string m_businessID;
+                    bool m_businessIDHasBeenSet;
 
                 };
             }

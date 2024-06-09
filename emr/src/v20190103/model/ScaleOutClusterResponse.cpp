@@ -26,7 +26,8 @@ using namespace std;
 ScaleOutClusterResponse::ScaleOutClusterResponse() :
     m_instanceIdHasBeenSet(false),
     m_clientTokenHasBeenSet(false),
-    m_flowIdHasBeenSet(false)
+    m_flowIdHasBeenSet(false),
+    m_traceIdHasBeenSet(false)
 {
 }
 
@@ -94,6 +95,16 @@ CoreInternalOutcome ScaleOutClusterResponse::Deserialize(const string &payload)
         m_flowIdHasBeenSet = true;
     }
 
+    if (rsp.HasMember("TraceId") && !rsp["TraceId"].IsNull())
+    {
+        if (!rsp["TraceId"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `TraceId` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_traceId = string(rsp["TraceId"].GetString());
+        m_traceIdHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -126,6 +137,14 @@ string ScaleOutClusterResponse::ToJsonString() const
         string key = "FlowId";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_flowId, allocator);
+    }
+
+    if (m_traceIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "TraceId";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_traceId.c_str(), allocator).Move(), allocator);
     }
 
     rapidjson::Value iKey(rapidjson::kStringType);
@@ -168,6 +187,16 @@ int64_t ScaleOutClusterResponse::GetFlowId() const
 bool ScaleOutClusterResponse::FlowIdHasBeenSet() const
 {
     return m_flowIdHasBeenSet;
+}
+
+string ScaleOutClusterResponse::GetTraceId() const
+{
+    return m_traceId;
+}
+
+bool ScaleOutClusterResponse::TraceIdHasBeenSet() const
+{
+    return m_traceIdHasBeenSet;
 }
 
 

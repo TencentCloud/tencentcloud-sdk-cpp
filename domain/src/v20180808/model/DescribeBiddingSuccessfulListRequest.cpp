@@ -23,7 +23,9 @@ using namespace TencentCloud::Domain::V20180808::Model;
 using namespace std;
 
 DescribeBiddingSuccessfulListRequest::DescribeBiddingSuccessfulListRequest() :
+    m_pageNumberHasBeenSet(false),
     m_pageSizeHasBeenSet(false),
+    m_domainHasBeenSet(false),
     m_statusHasBeenSet(false),
     m_sortFieldHasBeenSet(false),
     m_sortOrderHasBeenSet(false)
@@ -37,12 +39,28 @@ string DescribeBiddingSuccessfulListRequest::ToJsonString() const
     rapidjson::Document::AllocatorType& allocator = d.GetAllocator();
 
 
+    if (m_pageNumberHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "PageNumber";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_pageNumber, allocator);
+    }
+
     if (m_pageSizeHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
         string key = "PageSize";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_pageSize, allocator);
+    }
+
+    if (m_domainHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Domain";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_domain.c_str(), allocator).Move(), allocator);
     }
 
     if (m_statusHasBeenSet)
@@ -82,6 +100,22 @@ string DescribeBiddingSuccessfulListRequest::ToJsonString() const
 }
 
 
+uint64_t DescribeBiddingSuccessfulListRequest::GetPageNumber() const
+{
+    return m_pageNumber;
+}
+
+void DescribeBiddingSuccessfulListRequest::SetPageNumber(const uint64_t& _pageNumber)
+{
+    m_pageNumber = _pageNumber;
+    m_pageNumberHasBeenSet = true;
+}
+
+bool DescribeBiddingSuccessfulListRequest::PageNumberHasBeenSet() const
+{
+    return m_pageNumberHasBeenSet;
+}
+
 uint64_t DescribeBiddingSuccessfulListRequest::GetPageSize() const
 {
     return m_pageSize;
@@ -96,6 +130,22 @@ void DescribeBiddingSuccessfulListRequest::SetPageSize(const uint64_t& _pageSize
 bool DescribeBiddingSuccessfulListRequest::PageSizeHasBeenSet() const
 {
     return m_pageSizeHasBeenSet;
+}
+
+string DescribeBiddingSuccessfulListRequest::GetDomain() const
+{
+    return m_domain;
+}
+
+void DescribeBiddingSuccessfulListRequest::SetDomain(const string& _domain)
+{
+    m_domain = _domain;
+    m_domainHasBeenSet = true;
+}
+
+bool DescribeBiddingSuccessfulListRequest::DomainHasBeenSet() const
+{
+    return m_domainHasBeenSet;
 }
 
 vector<uint64_t> DescribeBiddingSuccessfulListRequest::GetStatus() const

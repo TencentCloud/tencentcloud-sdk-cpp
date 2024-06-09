@@ -21,6 +21,7 @@
 #include <vector>
 #include <map>
 #include <tencentcloud/core/AbstractModel.h>
+#include <tencentcloud/domain/v20180808/model/BiddingSuccessfulResult.h>
 
 
 namespace TencentCloud
@@ -43,7 +44,47 @@ namespace TencentCloud
                     std::string ToJsonString() const;
 
 
+                    /**
+                     * 获取搜索结果条数
+                     * @return Total 搜索结果条数
+                     * 
+                     */
+                    int64_t GetTotal() const;
+
+                    /**
+                     * 判断参数 Total 是否已赋值
+                     * @return Total 是否已赋值
+                     * 
+                     */
+                    bool TotalHasBeenSet() const;
+
+                    /**
+                     * 获取得标列表
+                     * @return SuccessfulList 得标列表
+                     * 
+                     */
+                    std::vector<BiddingSuccessfulResult> GetSuccessfulList() const;
+
+                    /**
+                     * 判断参数 SuccessfulList 是否已赋值
+                     * @return SuccessfulList 是否已赋值
+                     * 
+                     */
+                    bool SuccessfulListHasBeenSet() const;
+
                 private:
+
+                    /**
+                     * 搜索结果条数
+                     */
+                    int64_t m_total;
+                    bool m_totalHasBeenSet;
+
+                    /**
+                     * 得标列表
+                     */
+                    std::vector<BiddingSuccessfulResult> m_successfulList;
+                    bool m_successfulListHasBeenSet;
 
                 };
             }

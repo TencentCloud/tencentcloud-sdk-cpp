@@ -857,6 +857,49 @@ RedisClient::DescribeAutoBackupConfigOutcomeCallable RedisClient::DescribeAutoBa
     return task->get_future();
 }
 
+RedisClient::DescribeBackupDetailOutcome RedisClient::DescribeBackupDetail(const DescribeBackupDetailRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeBackupDetail");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeBackupDetailResponse rsp = DescribeBackupDetailResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeBackupDetailOutcome(rsp);
+        else
+            return DescribeBackupDetailOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeBackupDetailOutcome(outcome.GetError());
+    }
+}
+
+void RedisClient::DescribeBackupDetailAsync(const DescribeBackupDetailRequest& request, const DescribeBackupDetailAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeBackupDetail(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+RedisClient::DescribeBackupDetailOutcomeCallable RedisClient::DescribeBackupDetailCallable(const DescribeBackupDetailRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeBackupDetailOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeBackupDetail(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 RedisClient::DescribeBackupDownloadRestrictionOutcome RedisClient::DescribeBackupDownloadRestriction(const DescribeBackupDownloadRestrictionRequest &request)
 {
     auto outcome = MakeRequest(request, "DescribeBackupDownloadRestriction");

@@ -23,7 +23,9 @@ using namespace TencentCloud::Domain::V20180808::Model;
 using namespace std;
 
 DescribeBiddingListRequest::DescribeBiddingListRequest() :
+    m_pageNumberHasBeenSet(false),
     m_pageSizeHasBeenSet(false),
+    m_domainHasBeenSet(false),
     m_statusHasBeenSet(false),
     m_sortFieldHasBeenSet(false),
     m_sortOrderHasBeenSet(false)
@@ -37,12 +39,28 @@ string DescribeBiddingListRequest::ToJsonString() const
     rapidjson::Document::AllocatorType& allocator = d.GetAllocator();
 
 
+    if (m_pageNumberHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "PageNumber";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_pageNumber, allocator);
+    }
+
     if (m_pageSizeHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
         string key = "PageSize";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_pageSize, allocator);
+    }
+
+    if (m_domainHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Domain";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_domain.c_str(), allocator).Move(), allocator);
     }
 
     if (m_statusHasBeenSet)
@@ -82,6 +100,22 @@ string DescribeBiddingListRequest::ToJsonString() const
 }
 
 
+uint64_t DescribeBiddingListRequest::GetPageNumber() const
+{
+    return m_pageNumber;
+}
+
+void DescribeBiddingListRequest::SetPageNumber(const uint64_t& _pageNumber)
+{
+    m_pageNumber = _pageNumber;
+    m_pageNumberHasBeenSet = true;
+}
+
+bool DescribeBiddingListRequest::PageNumberHasBeenSet() const
+{
+    return m_pageNumberHasBeenSet;
+}
+
 uint64_t DescribeBiddingListRequest::GetPageSize() const
 {
     return m_pageSize;
@@ -96,6 +130,22 @@ void DescribeBiddingListRequest::SetPageSize(const uint64_t& _pageSize)
 bool DescribeBiddingListRequest::PageSizeHasBeenSet() const
 {
     return m_pageSizeHasBeenSet;
+}
+
+string DescribeBiddingListRequest::GetDomain() const
+{
+    return m_domain;
+}
+
+void DescribeBiddingListRequest::SetDomain(const string& _domain)
+{
+    m_domain = _domain;
+    m_domainHasBeenSet = true;
+}
+
+bool DescribeBiddingListRequest::DomainHasBeenSet() const
+{
+    return m_domainHasBeenSet;
 }
 
 vector<uint64_t> DescribeBiddingListRequest::GetStatus() const

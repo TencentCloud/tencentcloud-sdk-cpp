@@ -23,7 +23,9 @@ using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Domain::V20180808::Model;
 using namespace std;
 
-DescribeBiddingAppointListResponse::DescribeBiddingAppointListResponse()
+DescribeBiddingAppointListResponse::DescribeBiddingAppointListResponse() :
+    m_totalHasBeenSet(false),
+    m_appointListHasBeenSet(false)
 {
 }
 
@@ -61,6 +63,36 @@ CoreInternalOutcome DescribeBiddingAppointListResponse::Deserialize(const string
     }
 
 
+    if (rsp.HasMember("Total") && !rsp["Total"].IsNull())
+    {
+        if (!rsp["Total"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `Total` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_total = rsp["Total"].GetInt64();
+        m_totalHasBeenSet = true;
+    }
+
+    if (rsp.HasMember("AppointList") && !rsp["AppointList"].IsNull())
+    {
+        if (!rsp["AppointList"].IsArray())
+            return CoreInternalOutcome(Core::Error("response `AppointList` is not array type"));
+
+        const rapidjson::Value &tmpValue = rsp["AppointList"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            BiddingAppointResult item;
+            CoreInternalOutcome outcome = item.Deserialize(*itr);
+            if (!outcome.IsSuccess())
+            {
+                outcome.GetError().SetRequestId(requestId);
+                return outcome;
+            }
+            m_appointList.push_back(item);
+        }
+        m_appointListHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -70,6 +102,29 @@ string DescribeBiddingAppointListResponse::ToJsonString() const
     rapidjson::Document value;
     value.SetObject();
     rapidjson::Document::AllocatorType& allocator = value.GetAllocator();
+
+    if (m_totalHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Total";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_total, allocator);
+    }
+
+    if (m_appointListHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "AppointList";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_appointList.begin(); itr != m_appointList.end(); ++itr, ++i)
+        {
+            value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(value[key.c_str()][i], allocator);
+        }
+    }
 
     rapidjson::Value iKey(rapidjson::kStringType);
     string key = "RequestId";
@@ -82,5 +137,25 @@ string DescribeBiddingAppointListResponse::ToJsonString() const
     return buffer.GetString();
 }
 
+
+int64_t DescribeBiddingAppointListResponse::GetTotal() const
+{
+    return m_total;
+}
+
+bool DescribeBiddingAppointListResponse::TotalHasBeenSet() const
+{
+    return m_totalHasBeenSet;
+}
+
+vector<BiddingAppointResult> DescribeBiddingAppointListResponse::GetAppointList() const
+{
+    return m_appointList;
+}
+
+bool DescribeBiddingAppointListResponse::AppointListHasBeenSet() const
+{
+    return m_appointListHasBeenSet;
+}
 
 

@@ -23,7 +23,9 @@ using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Domain::V20180808::Model;
 using namespace std;
 
-DescribeBiddingSuccessfulListResponse::DescribeBiddingSuccessfulListResponse()
+DescribeBiddingSuccessfulListResponse::DescribeBiddingSuccessfulListResponse() :
+    m_totalHasBeenSet(false),
+    m_successfulListHasBeenSet(false)
 {
 }
 
@@ -61,6 +63,36 @@ CoreInternalOutcome DescribeBiddingSuccessfulListResponse::Deserialize(const str
     }
 
 
+    if (rsp.HasMember("Total") && !rsp["Total"].IsNull())
+    {
+        if (!rsp["Total"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `Total` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_total = rsp["Total"].GetInt64();
+        m_totalHasBeenSet = true;
+    }
+
+    if (rsp.HasMember("SuccessfulList") && !rsp["SuccessfulList"].IsNull())
+    {
+        if (!rsp["SuccessfulList"].IsArray())
+            return CoreInternalOutcome(Core::Error("response `SuccessfulList` is not array type"));
+
+        const rapidjson::Value &tmpValue = rsp["SuccessfulList"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            BiddingSuccessfulResult item;
+            CoreInternalOutcome outcome = item.Deserialize(*itr);
+            if (!outcome.IsSuccess())
+            {
+                outcome.GetError().SetRequestId(requestId);
+                return outcome;
+            }
+            m_successfulList.push_back(item);
+        }
+        m_successfulListHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -70,6 +102,29 @@ string DescribeBiddingSuccessfulListResponse::ToJsonString() const
     rapidjson::Document value;
     value.SetObject();
     rapidjson::Document::AllocatorType& allocator = value.GetAllocator();
+
+    if (m_totalHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Total";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_total, allocator);
+    }
+
+    if (m_successfulListHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "SuccessfulList";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_successfulList.begin(); itr != m_successfulList.end(); ++itr, ++i)
+        {
+            value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(value[key.c_str()][i], allocator);
+        }
+    }
 
     rapidjson::Value iKey(rapidjson::kStringType);
     string key = "RequestId";
@@ -82,5 +137,25 @@ string DescribeBiddingSuccessfulListResponse::ToJsonString() const
     return buffer.GetString();
 }
 
+
+int64_t DescribeBiddingSuccessfulListResponse::GetTotal() const
+{
+    return m_total;
+}
+
+bool DescribeBiddingSuccessfulListResponse::TotalHasBeenSet() const
+{
+    return m_totalHasBeenSet;
+}
+
+vector<BiddingSuccessfulResult> DescribeBiddingSuccessfulListResponse::GetSuccessfulList() const
+{
+    return m_successfulList;
+}
+
+bool DescribeBiddingSuccessfulListResponse::SuccessfulListHasBeenSet() const
+{
+    return m_successfulListHasBeenSet;
+}
 
 

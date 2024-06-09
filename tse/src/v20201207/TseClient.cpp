@@ -3265,6 +3265,49 @@ TseClient::DescribeOneCloudNativeAPIGatewayServiceOutcomeCallable TseClient::Des
     return task->get_future();
 }
 
+TseClient::DescribePublicAddressConfigOutcome TseClient::DescribePublicAddressConfig(const DescribePublicAddressConfigRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribePublicAddressConfig");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribePublicAddressConfigResponse rsp = DescribePublicAddressConfigResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribePublicAddressConfigOutcome(rsp);
+        else
+            return DescribePublicAddressConfigOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribePublicAddressConfigOutcome(outcome.GetError());
+    }
+}
+
+void TseClient::DescribePublicAddressConfigAsync(const DescribePublicAddressConfigRequest& request, const DescribePublicAddressConfigAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribePublicAddressConfig(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+TseClient::DescribePublicAddressConfigOutcomeCallable TseClient::DescribePublicAddressConfigCallable(const DescribePublicAddressConfigRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribePublicAddressConfigOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribePublicAddressConfig(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 TseClient::DescribePublicNetworkOutcome TseClient::DescribePublicNetwork(const DescribePublicNetworkRequest &request)
 {
     auto outcome = MakeRequest(request, "DescribePublicNetwork");

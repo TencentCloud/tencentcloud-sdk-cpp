@@ -44,6 +44,104 @@ namespace TencentCloud
 
 
                     /**
+                     * 获取域名
+                     * @return Domain 域名
+                     * 
+                     */
+                    std::string GetDomain() const;
+
+                    /**
+                     * 判断参数 Domain 是否已赋值
+                     * @return Domain 是否已赋值
+                     * 
+                     */
+                    bool DomainHasBeenSet() const;
+
+                    /**
+                     * 获取得标时间
+                     * @return SuccessfulTime 得标时间
+                     * 
+                     */
+                    std::string GetSuccessfulTime() const;
+
+                    /**
+                     * 判断参数 SuccessfulTime 是否已赋值
+                     * @return SuccessfulTime 是否已赋值
+                     * 
+                     */
+                    bool SuccessfulTimeHasBeenSet() const;
+
+                    /**
+                     * 获取得标价格
+                     * @return SuccessfulPrice 得标价格
+                     * 
+                     */
+                    double GetSuccessfulPrice() const;
+
+                    /**
+                     * 判断参数 SuccessfulPrice 是否已赋值
+                     * @return SuccessfulPrice 是否已赋值
+                     * 
+                     */
+                    bool SuccessfulPriceHasBeenSet() const;
+
+                    /**
+                     * 获取 注册时间
+                     * @return RegTime  注册时间
+                     * 
+                     */
+                    std::string GetRegTime() const;
+
+                    /**
+                     * 判断参数 RegTime 是否已赋值
+                     * @return RegTime 是否已赋值
+                     * 
+                     */
+                    bool RegTimeHasBeenSet() const;
+
+                    /**
+                     * 获取过期时间
+                     * @return ExpireTime 过期时间
+                     * 
+                     */
+                    std::string GetExpireTime() const;
+
+                    /**
+                     * 判断参数 ExpireTime 是否已赋值
+                     * @return ExpireTime 是否已赋值
+                     * 
+                     */
+                    bool ExpireTimeHasBeenSet() const;
+
+                    /**
+                     * 获取删除时间
+                     * @return DeleteTime 删除时间
+                     * 
+                     */
+                    std::string GetDeleteTime() const;
+
+                    /**
+                     * 判断参数 DeleteTime 是否已赋值
+                     * @return DeleteTime 是否已赋值
+                     * 
+                     */
+                    bool DeleteTimeHasBeenSet() const;
+
+                    /**
+                     * 获取付款结束时间
+                     * @return PayEndTime 付款结束时间
+                     * 
+                     */
+                    std::string GetPayEndTime() const;
+
+                    /**
+                     * 判断参数 PayEndTime 是否已赋值
+                     * @return PayEndTime 是否已赋值
+                     * 
+                     */
+                    bool PayEndTimeHasBeenSet() const;
+
+                    /**
                      * 获取保证金，是否退款，yes表示退款，no表示不退款
                      * @return BiddingBondRefund 保证金，是否退款，yes表示退款，no表示不退款
                      * 
@@ -56,6 +154,20 @@ namespace TencentCloud
                      * 
                      */
                     bool BiddingBondRefundHasBeenSet() const;
+
+                    /**
+                     * 获取保证金
+                     * @return BiddingBondPrice 保证金
+                     * 
+                     */
+                    double GetBiddingBondPrice() const;
+
+                    /**
+                     * 判断参数 BiddingBondPrice 是否已赋值
+                     * @return BiddingBondPrice 是否已赋值
+                     * 
+                     */
+                    bool BiddingBondPriceHasBeenSet() const;
 
                     /**
                      * 获取状态：1 竞价中，2 待出价，3 竞价失败， 4 等待支付 5 等待转移， 6 转移中，7 交易成功，8 持有者索回，9 已违约
@@ -74,10 +186,58 @@ namespace TencentCloud
                 private:
 
                     /**
+                     * 域名
+                     */
+                    std::string m_domain;
+                    bool m_domainHasBeenSet;
+
+                    /**
+                     * 得标时间
+                     */
+                    std::string m_successfulTime;
+                    bool m_successfulTimeHasBeenSet;
+
+                    /**
+                     * 得标价格
+                     */
+                    double m_successfulPrice;
+                    bool m_successfulPriceHasBeenSet;
+
+                    /**
+                     *  注册时间
+                     */
+                    std::string m_regTime;
+                    bool m_regTimeHasBeenSet;
+
+                    /**
+                     * 过期时间
+                     */
+                    std::string m_expireTime;
+                    bool m_expireTimeHasBeenSet;
+
+                    /**
+                     * 删除时间
+                     */
+                    std::string m_deleteTime;
+                    bool m_deleteTimeHasBeenSet;
+
+                    /**
+                     * 付款结束时间
+                     */
+                    std::string m_payEndTime;
+                    bool m_payEndTimeHasBeenSet;
+
+                    /**
                      * 保证金，是否退款，yes表示退款，no表示不退款
                      */
                     std::string m_biddingBondRefund;
                     bool m_biddingBondRefundHasBeenSet;
+
+                    /**
+                     * 保证金
+                     */
+                    double m_biddingBondPrice;
+                    bool m_biddingBondPriceHasBeenSet;
 
                     /**
                      * 状态：1 竞价中，2 待出价，3 竞价失败， 4 等待支付 5 等待转移， 6 转移中，7 交易成功，8 持有者索回，9 已违约

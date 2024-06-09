@@ -21,8 +21,9 @@ set(domain_public_header
 set(domain_public_header_model
   include/tencentcloud/domain/v20180808/model/AuctionInfo.h
   include/tencentcloud/domain/v20180808/model/DeleteReservedPreDomainInfoResponse.h
-  include/tencentcloud/domain/v20180808/model/DescribeBiddingAppointDetailResponse.h
+  include/tencentcloud/domain/v20180808/model/DescribeUnPreDomainDetailRequest.h
   include/tencentcloud/domain/v20180808/model/DeleteTemplateResponse.h
+  include/tencentcloud/domain/v20180808/model/BiddingResult.h
   include/tencentcloud/domain/v20180808/model/PriceInfo.h
   include/tencentcloud/domain/v20180808/model/DescribeCustomDnsHostSetResponse.h
   include/tencentcloud/domain/v20180808/model/ModifyTemplateRequest.h
@@ -42,6 +43,7 @@ set(domain_public_header_model
   include/tencentcloud/domain/v20180808/model/ReserveBidInfo.h
   include/tencentcloud/domain/v20180808/model/CreateDomainBatchRequest.h
   include/tencentcloud/domain/v20180808/model/ModifyTemplateResponse.h
+  include/tencentcloud/domain/v20180808/model/BiddingSuccessfulResult.h
   include/tencentcloud/domain/v20180808/model/DescribeBatchOperationLogsRequest.h
   include/tencentcloud/domain/v20180808/model/UploadImageRequest.h
   include/tencentcloud/domain/v20180808/model/ModifyCustomDnsHostResponse.h
@@ -61,7 +63,7 @@ set(domain_public_header_model
   include/tencentcloud/domain/v20180808/model/DomainSimpleInfo.h
   include/tencentcloud/domain/v20180808/model/CreateDomainRedemptionResponse.h
   include/tencentcloud/domain/v20180808/model/DeletePhoneEmailRequest.h
-  include/tencentcloud/domain/v20180808/model/DescribeTldListRequest.h
+  include/tencentcloud/domain/v20180808/model/DescribeReservedPreDomainInfoResponse.h
   include/tencentcloud/domain/v20180808/model/BatchStatus.h
   include/tencentcloud/domain/v20180808/model/DescribePreAuctionListResponse.h
   include/tencentcloud/domain/v20180808/model/RenewDomainBatchResponse.h
@@ -124,10 +126,10 @@ set(domain_public_header_model
   include/tencentcloud/domain/v20180808/model/CreatePhoneEmailRequest.h
   include/tencentcloud/domain/v20180808/model/DescribeBiddingDetailRequest.h
   include/tencentcloud/domain/v20180808/model/DescribeTemplateRequest.h
-  include/tencentcloud/domain/v20180808/model/DescribeUnPreDomainDetailRequest.h
+  include/tencentcloud/domain/v20180808/model/DescribeBiddingAppointDetailResponse.h
   include/tencentcloud/domain/v20180808/model/DescribeReservedBidInfoResponse.h
   include/tencentcloud/domain/v20180808/model/DescribeBiddingSuccessfulDetailResponse.h
-  include/tencentcloud/domain/v20180808/model/DescribeReservedPreDomainInfoResponse.h
+  include/tencentcloud/domain/v20180808/model/DescribeTldListRequest.h
   include/tencentcloud/domain/v20180808/model/DescribeBatchOperationLogDetailsRequest.h
   include/tencentcloud/domain/v20180808/model/DescribeDomainNameListResponse.h
   include/tencentcloud/domain/v20180808/model/SyncCustomDnsHostRequest.h
@@ -141,6 +143,7 @@ set(domain_public_header_model
   include/tencentcloud/domain/v20180808/model/DescribeBiddingAppointListResponse.h
   include/tencentcloud/domain/v20180808/model/DomainBaseInfo.h
   include/tencentcloud/domain/v20180808/model/DescribeTldListResponse.h
+  include/tencentcloud/domain/v20180808/model/DomainBatchLogSet.h
   include/tencentcloud/domain/v20180808/model/CreateCustomDnsHostRequest.h
   include/tencentcloud/domain/v20180808/model/DeleteCustomDnsHostRequest.h
   include/tencentcloud/domain/v20180808/model/CheckBatchStatusResponse.h
@@ -148,15 +151,16 @@ set(domain_public_header_model
   include/tencentcloud/domain/v20180808/model/SetDomainAutoRenewRequest.h
   include/tencentcloud/domain/v20180808/model/SyncCustomDnsHostResponse.h
   include/tencentcloud/domain/v20180808/model/DescribePreReleaseListRequest.h
-  include/tencentcloud/domain/v20180808/model/DomainBatchLogSet.h
+  include/tencentcloud/domain/v20180808/model/BiddingAppointResult.h
   )
 
 set(domain_src
   src/v20180808/DomainClient.cpp
   src/v20180808/model/AuctionInfo.cpp
   src/v20180808/model/DeleteReservedPreDomainInfoResponse.cpp
-  src/v20180808/model/DescribeBiddingAppointDetailResponse.cpp
+  src/v20180808/model/DescribeUnPreDomainDetailRequest.cpp
   src/v20180808/model/DeleteTemplateResponse.cpp
+  src/v20180808/model/BiddingResult.cpp
   src/v20180808/model/PriceInfo.cpp
   src/v20180808/model/DescribeCustomDnsHostSetResponse.cpp
   src/v20180808/model/ModifyTemplateRequest.cpp
@@ -176,6 +180,7 @@ set(domain_src
   src/v20180808/model/ReserveBidInfo.cpp
   src/v20180808/model/CreateDomainBatchRequest.cpp
   src/v20180808/model/ModifyTemplateResponse.cpp
+  src/v20180808/model/BiddingSuccessfulResult.cpp
   src/v20180808/model/DescribeBatchOperationLogsRequest.cpp
   src/v20180808/model/UploadImageRequest.cpp
   src/v20180808/model/ModifyCustomDnsHostResponse.cpp
@@ -195,7 +200,7 @@ set(domain_src
   src/v20180808/model/DomainSimpleInfo.cpp
   src/v20180808/model/CreateDomainRedemptionResponse.cpp
   src/v20180808/model/DeletePhoneEmailRequest.cpp
-  src/v20180808/model/DescribeTldListRequest.cpp
+  src/v20180808/model/DescribeReservedPreDomainInfoResponse.cpp
   src/v20180808/model/BatchStatus.cpp
   src/v20180808/model/DescribePreAuctionListResponse.cpp
   src/v20180808/model/RenewDomainBatchResponse.cpp
@@ -258,10 +263,10 @@ set(domain_src
   src/v20180808/model/CreatePhoneEmailRequest.cpp
   src/v20180808/model/DescribeBiddingDetailRequest.cpp
   src/v20180808/model/DescribeTemplateRequest.cpp
-  src/v20180808/model/DescribeUnPreDomainDetailRequest.cpp
+  src/v20180808/model/DescribeBiddingAppointDetailResponse.cpp
   src/v20180808/model/DescribeReservedBidInfoResponse.cpp
   src/v20180808/model/DescribeBiddingSuccessfulDetailResponse.cpp
-  src/v20180808/model/DescribeReservedPreDomainInfoResponse.cpp
+  src/v20180808/model/DescribeTldListRequest.cpp
   src/v20180808/model/DescribeBatchOperationLogDetailsRequest.cpp
   src/v20180808/model/DescribeDomainNameListResponse.cpp
   src/v20180808/model/SyncCustomDnsHostRequest.cpp
@@ -275,6 +280,7 @@ set(domain_src
   src/v20180808/model/DescribeBiddingAppointListResponse.cpp
   src/v20180808/model/DomainBaseInfo.cpp
   src/v20180808/model/DescribeTldListResponse.cpp
+  src/v20180808/model/DomainBatchLogSet.cpp
   src/v20180808/model/CreateCustomDnsHostRequest.cpp
   src/v20180808/model/DeleteCustomDnsHostRequest.cpp
   src/v20180808/model/CheckBatchStatusResponse.cpp
@@ -282,7 +288,7 @@ set(domain_src
   src/v20180808/model/SetDomainAutoRenewRequest.cpp
   src/v20180808/model/SyncCustomDnsHostResponse.cpp
   src/v20180808/model/DescribePreReleaseListRequest.cpp
-  src/v20180808/model/DomainBatchLogSet.cpp
+  src/v20180808/model/BiddingAppointResult.cpp
   )
 
 set(domain_include

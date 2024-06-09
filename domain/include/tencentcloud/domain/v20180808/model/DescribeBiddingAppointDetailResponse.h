@@ -44,6 +44,132 @@ namespace TencentCloud
 
 
                     /**
+                     * 获取域名
+                     * @return Domain 域名
+                     * 
+                     */
+                    std::string GetDomain() const;
+
+                    /**
+                     * 判断参数 Domain 是否已赋值
+                     * @return Domain 是否已赋值
+                     * 
+                     */
+                    bool DomainHasBeenSet() const;
+
+                    /**
+                     * 获取预约人数
+                     * @return AppointNum 预约人数
+                     * 
+                     */
+                    uint64_t GetAppointNum() const;
+
+                    /**
+                     * 判断参数 AppointNum 是否已赋值
+                     * @return AppointNum 是否已赋值
+                     * 
+                     */
+                    bool AppointNumHasBeenSet() const;
+
+                    /**
+                     * 获取预约开始时间
+                     * @return AppointStartTime 预约开始时间
+                     * 
+                     */
+                    std::string GetAppointStartTime() const;
+
+                    /**
+                     * 判断参数 AppointStartTime 是否已赋值
+                     * @return AppointStartTime 是否已赋值
+                     * 
+                     */
+                    bool AppointStartTimeHasBeenSet() const;
+
+                    /**
+                     * 获取预约结束时间
+                     * @return AppointEndTime 预约结束时间
+                     * 
+                     */
+                    std::string GetAppointEndTime() const;
+
+                    /**
+                     * 判断参数 AppointEndTime 是否已赋值
+                     * @return AppointEndTime 是否已赋值
+                     * 
+                     */
+                    bool AppointEndTimeHasBeenSet() const;
+
+                    /**
+                     * 获取 注册时间
+                     * @return RegTime  注册时间
+                     * 
+                     */
+                    std::string GetRegTime() const;
+
+                    /**
+                     * 判断参数 RegTime 是否已赋值
+                     * @return RegTime 是否已赋值
+                     * 
+                     */
+                    bool RegTimeHasBeenSet() const;
+
+                    /**
+                     * 获取过期时间
+                     * @return ExpireTime 过期时间
+                     * 
+                     */
+                    std::string GetExpireTime() const;
+
+                    /**
+                     * 判断参数 ExpireTime 是否已赋值
+                     * @return ExpireTime 是否已赋值
+                     * 
+                     */
+                    bool ExpireTimeHasBeenSet() const;
+
+                    /**
+                     * 获取删除时间
+                     * @return DeleteTime 删除时间
+                     * 
+                     */
+                    std::string GetDeleteTime() const;
+
+                    /**
+                     * 判断参数 DeleteTime 是否已赋值
+                     * @return DeleteTime 是否已赋值
+                     * 
+                     */
+                    bool DeleteTimeHasBeenSet() const;
+
+                    /**
+                     * 获取当前价格
+                     * @return AppointPrice 当前价格
+                     * 
+                     */
+                    uint64_t GetAppointPrice() const;
+
+                    /**
+                     * 判断参数 AppointPrice 是否已赋值
+                     * @return AppointPrice 是否已赋值
+                     * 
+                     */
+                    bool AppointPriceHasBeenSet() const;
+
+                    /**
+                     * 获取预约保证金
+                     * @return AppointBondPrice 预约保证金
+                     * 
+                     */
+                    uint64_t GetAppointBondPrice() const;
+
+                    /**
+                     * 判断参数 AppointBondPrice 是否已赋值
+                     * @return AppointBondPrice 是否已赋值
+                     * 
+                     */
+                    bool AppointBondPriceHasBeenSet() const;
+
+                    /**
                      * 获取 1 已预约，2 竞价中，3 等待出价 4 等待支付 5 失败 6 转移中，7 转移成功 8 持有者索回
                      * @return Status  1 已预约，2 竞价中，3 等待出价 4 等待支付 5 失败 6 转移中，7 转移成功 8 持有者索回
                      * 
@@ -74,6 +200,60 @@ yes：退回 no: 未退回
                     bool BiddingBondRefundHasBeenSet() const;
 
                 private:
+
+                    /**
+                     * 域名
+                     */
+                    std::string m_domain;
+                    bool m_domainHasBeenSet;
+
+                    /**
+                     * 预约人数
+                     */
+                    uint64_t m_appointNum;
+                    bool m_appointNumHasBeenSet;
+
+                    /**
+                     * 预约开始时间
+                     */
+                    std::string m_appointStartTime;
+                    bool m_appointStartTimeHasBeenSet;
+
+                    /**
+                     * 预约结束时间
+                     */
+                    std::string m_appointEndTime;
+                    bool m_appointEndTimeHasBeenSet;
+
+                    /**
+                     *  注册时间
+                     */
+                    std::string m_regTime;
+                    bool m_regTimeHasBeenSet;
+
+                    /**
+                     * 过期时间
+                     */
+                    std::string m_expireTime;
+                    bool m_expireTimeHasBeenSet;
+
+                    /**
+                     * 删除时间
+                     */
+                    std::string m_deleteTime;
+                    bool m_deleteTimeHasBeenSet;
+
+                    /**
+                     * 当前价格
+                     */
+                    uint64_t m_appointPrice;
+                    bool m_appointPriceHasBeenSet;
+
+                    /**
+                     * 预约保证金
+                     */
+                    uint64_t m_appointBondPrice;
+                    bool m_appointBondPriceHasBeenSet;
 
                     /**
                      *  1 已预约，2 竞价中，3 等待出价 4 等待支付 5 失败 6 转移中，7 转移成功 8 持有者索回

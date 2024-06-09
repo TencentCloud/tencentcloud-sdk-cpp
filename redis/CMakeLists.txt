@@ -115,6 +115,7 @@ set(redis_public_header_model
   include/tencentcloud/redis/v20180412/model/ModifyInstanceAccountResponse.h
   include/tencentcloud/redis/v20180412/model/DelayDistribution.h
   include/tencentcloud/redis/v20180412/model/DescribeProjectSecurityGroupsResponse.h
+  include/tencentcloud/redis/v20180412/model/DescribeBackupDetailRequest.h
   include/tencentcloud/redis/v20180412/model/DescribeInstanceMonitorTookDistResponse.h
   include/tencentcloud/redis/v20180412/model/DescribeBandwidthRangeRequest.h
   include/tencentcloud/redis/v20180412/model/InstanceIntegerParam.h
@@ -134,6 +135,7 @@ set(redis_public_header_model
   include/tencentcloud/redis/v20180412/model/DescribeInstanceParamRecordsRequest.h
   include/tencentcloud/redis/v20180412/model/DescribeTaskListRequest.h
   include/tencentcloud/redis/v20180412/model/ModifyInstanceEventRequest.h
+  include/tencentcloud/redis/v20180412/model/DescribeBackupDetailResponse.h
   include/tencentcloud/redis/v20180412/model/ChangeReplicaToMasterResponse.h
   include/tencentcloud/redis/v20180412/model/CreateInstancesResponse.h
   include/tencentcloud/redis/v20180412/model/DescribeTaskInfoRequest.h
@@ -363,6 +365,7 @@ set(redis_src
   src/v20180412/model/ModifyInstanceAccountResponse.cpp
   src/v20180412/model/DelayDistribution.cpp
   src/v20180412/model/DescribeProjectSecurityGroupsResponse.cpp
+  src/v20180412/model/DescribeBackupDetailRequest.cpp
   src/v20180412/model/DescribeInstanceMonitorTookDistResponse.cpp
   src/v20180412/model/DescribeBandwidthRangeRequest.cpp
   src/v20180412/model/InstanceIntegerParam.cpp
@@ -382,6 +385,7 @@ set(redis_src
   src/v20180412/model/DescribeInstanceParamRecordsRequest.cpp
   src/v20180412/model/DescribeTaskListRequest.cpp
   src/v20180412/model/ModifyInstanceEventRequest.cpp
+  src/v20180412/model/DescribeBackupDetailResponse.cpp
   src/v20180412/model/ChangeReplicaToMasterResponse.cpp
   src/v20180412/model/CreateInstancesResponse.cpp
   src/v20180412/model/DescribeTaskInfoRequest.cpp

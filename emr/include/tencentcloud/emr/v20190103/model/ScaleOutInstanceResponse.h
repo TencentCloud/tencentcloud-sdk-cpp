@@ -121,6 +121,22 @@ namespace TencentCloud
                      */
                     bool BillIdHasBeenSet() const;
 
+                    /**
+                     * 获取扩容TraceId
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return TraceId 扩容TraceId
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::string GetTraceId() const;
+
+                    /**
+                     * 判断参数 TraceId 是否已赋值
+                     * @return TraceId 是否已赋值
+                     * 
+                     */
+                    bool TraceIdHasBeenSet() const;
+
                 private:
 
                     /**
@@ -156,6 +172,13 @@ namespace TencentCloud
                      */
                     std::string m_billId;
                     bool m_billIdHasBeenSet;
+
+                    /**
+                     * 扩容TraceId
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_traceId;
+                    bool m_traceIdHasBeenSet;
 
                 };
             }

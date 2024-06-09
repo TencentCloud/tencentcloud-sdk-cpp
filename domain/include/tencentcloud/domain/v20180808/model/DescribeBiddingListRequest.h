@@ -43,6 +43,27 @@ namespace TencentCloud
 
 
                     /**
+                     * 获取页码
+                     * @return PageNumber 页码
+                     * 
+                     */
+                    uint64_t GetPageNumber() const;
+
+                    /**
+                     * 设置页码
+                     * @param _pageNumber 页码
+                     * 
+                     */
+                    void SetPageNumber(const uint64_t& _pageNumber);
+
+                    /**
+                     * 判断参数 PageNumber 是否已赋值
+                     * @return PageNumber 是否已赋值
+                     * 
+                     */
+                    bool PageNumberHasBeenSet() const;
+
+                    /**
                      * 获取每页数量
                      * @return PageSize 每页数量
                      * 
@@ -62,6 +83,27 @@ namespace TencentCloud
                      * 
                      */
                     bool PageSizeHasBeenSet() const;
+
+                    /**
+                     * 获取域名
+                     * @return Domain 域名
+                     * 
+                     */
+                    std::string GetDomain() const;
+
+                    /**
+                     * 设置域名
+                     * @param _domain 域名
+                     * 
+                     */
+                    void SetDomain(const std::string& _domain);
+
+                    /**
+                     * 判断参数 Domain 是否已赋值
+                     * @return Domain 是否已赋值
+                     * 
+                     */
+                    bool DomainHasBeenSet() const;
 
                     /**
                      * 获取2 竞价中  3 等待出价  4 交易失败  10 竞价阶段持有者赎回
@@ -133,10 +175,22 @@ BiddingPrice 我的价格
                 private:
 
                     /**
+                     * 页码
+                     */
+                    uint64_t m_pageNumber;
+                    bool m_pageNumberHasBeenSet;
+
+                    /**
                      * 每页数量
                      */
                     uint64_t m_pageSize;
                     bool m_pageSizeHasBeenSet;
+
+                    /**
+                     * 域名
+                     */
+                    std::string m_domain;
+                    bool m_domainHasBeenSet;
 
                     /**
                      * 2 竞价中  3 等待出价  4 交易失败  10 竞价阶段持有者赎回

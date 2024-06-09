@@ -43,7 +43,287 @@ namespace TencentCloud
                     std::string ToJsonString() const;
 
 
+                    /**
+                     * 获取域名
+                     * @return Domain 域名
+                     * 
+                     */
+                    std::string GetDomain() const;
+
+                    /**
+                     * 判断参数 Domain 是否已赋值
+                     * @return Domain 是否已赋值
+                     * 
+                     */
+                    bool DomainHasBeenSet() const;
+
+                    /**
+                     * 获取出价次数
+                     * @return BiddingNum 出价次数
+                     * 
+                     */
+                    uint64_t GetBiddingNum() const;
+
+                    /**
+                     * 判断参数 BiddingNum 是否已赋值
+                     * @return BiddingNum 是否已赋值
+                     * 
+                     */
+                    bool BiddingNumHasBeenSet() const;
+
+                    /**
+                     * 获取竞价开始时间
+                     * @return BiddingStartTime 竞价开始时间
+                     * 
+                     */
+                    std::string GetBiddingStartTime() const;
+
+                    /**
+                     * 判断参数 BiddingStartTime 是否已赋值
+                     * @return BiddingStartTime 是否已赋值
+                     * 
+                     */
+                    bool BiddingStartTimeHasBeenSet() const;
+
+                    /**
+                     * 获取竞价结束时间
+                     * @return BiddingEndTime 竞价结束时间
+                     * 
+                     */
+                    std::string GetBiddingEndTime() const;
+
+                    /**
+                     * 判断参数 BiddingEndTime 是否已赋值
+                     * @return BiddingEndTime 是否已赋值
+                     * 
+                     */
+                    bool BiddingEndTimeHasBeenSet() const;
+
+                    /**
+                     * 获取 注册时间
+                     * @return RegTime  注册时间
+                     * 
+                     */
+                    std::string GetRegTime() const;
+
+                    /**
+                     * 判断参数 RegTime 是否已赋值
+                     * @return RegTime 是否已赋值
+                     * 
+                     */
+                    bool RegTimeHasBeenSet() const;
+
+                    /**
+                     * 获取过期时间
+                     * @return ExpireTime 过期时间
+                     * 
+                     */
+                    std::string GetExpireTime() const;
+
+                    /**
+                     * 判断参数 ExpireTime 是否已赋值
+                     * @return ExpireTime 是否已赋值
+                     * 
+                     */
+                    bool ExpireTimeHasBeenSet() const;
+
+                    /**
+                     * 获取删除时间
+                     * @return DeleteTime 删除时间
+                     * 
+                     */
+                    std::string GetDeleteTime() const;
+
+                    /**
+                     * 判断参数 DeleteTime 是否已赋值
+                     * @return DeleteTime 是否已赋值
+                     * 
+                     */
+                    bool DeleteTimeHasBeenSet() const;
+
+                    /**
+                     * 获取当前价格
+                     * @return CurrentPrice 当前价格
+                     * 
+                     */
+                    uint64_t GetCurrentPrice() const;
+
+                    /**
+                     * 判断参数 CurrentPrice 是否已赋值
+                     * @return CurrentPrice 是否已赋值
+                     * 
+                     */
+                    bool CurrentPriceHasBeenSet() const;
+
+                    /**
+                     * 获取当前用户昵称
+                     * @return CurrentNickname 当前用户昵称
+                     * 
+                     */
+                    std::string GetCurrentNickname() const;
+
+                    /**
+                     * 判断参数 CurrentNickname 是否已赋值
+                     * @return CurrentNickname 是否已赋值
+                     * 
+                     */
+                    bool CurrentNicknameHasBeenSet() const;
+
+                    /**
+                     * 获取竞价保证金
+                     * @return BiddingBondPrice 竞价保证金
+                     * 
+                     */
+                    uint64_t GetBiddingBondPrice() const;
+
+                    /**
+                     * 判断参数 BiddingBondPrice 是否已赋值
+                     * @return BiddingBondPrice 是否已赋值
+                     * 
+                     */
+                    bool BiddingBondPriceHasBeenSet() const;
+
+                    /**
+                     * 获取1 已预约，2 竞价中，3 支付尾款 4 交割 5 交易失败 6 交易成功，7 已过期
+                     * @return Status 1 已预约，2 竞价中，3 支付尾款 4 交割 5 交易失败 6 交易成功，7 已过期
+                     * 
+                     */
+                    uint64_t GetStatus() const;
+
+                    /**
+                     * 判断参数 Status 是否已赋值
+                     * @return Status 是否已赋值
+                     * 
+                     */
+                    bool StatusHasBeenSet() const;
+
+                    /**
+                     * 获取竞价标识，1 领先，2 落后
+                     * @return BiddingFlag 竞价标识，1 领先，2 落后
+                     * 
+                     */
+                    uint64_t GetBiddingFlag() const;
+
+                    /**
+                     * 判断参数 BiddingFlag 是否已赋值
+                     * @return BiddingFlag 是否已赋值
+                     * 
+                     */
+                    bool BiddingFlagHasBeenSet() const;
+
+                    /**
+                     * 获取是否退款，yes表示退款，no表示不退款
+                     * @return BiddingBondRefund 是否退款，yes表示退款，no表示不退款
+                     * 
+                     */
+                    std::string GetBiddingBondRefund() const;
+
+                    /**
+                     * 判断参数 BiddingBondRefund 是否已赋值
+                     * @return BiddingBondRefund 是否已赋值
+                     * 
+                     */
+                    bool BiddingBondRefundHasBeenSet() const;
+
+                    /**
+                     * 获取我的出价
+                     * @return BiddingPrice 我的出价
+                     * 
+                     */
+                    uint64_t GetBiddingPrice() const;
+
+                    /**
+                     * 判断参数 BiddingPrice 是否已赋值
+                     * @return BiddingPrice 是否已赋值
+                     * 
+                     */
+                    bool BiddingPriceHasBeenSet() const;
+
                 private:
+
+                    /**
+                     * 域名
+                     */
+                    std::string m_domain;
+                    bool m_domainHasBeenSet;
+
+                    /**
+                     * 出价次数
+                     */
+                    uint64_t m_biddingNum;
+                    bool m_biddingNumHasBeenSet;
+
+                    /**
+                     * 竞价开始时间
+                     */
+                    std::string m_biddingStartTime;
+                    bool m_biddingStartTimeHasBeenSet;
+
+                    /**
+                     * 竞价结束时间
+                     */
+                    std::string m_biddingEndTime;
+                    bool m_biddingEndTimeHasBeenSet;
+
+                    /**
+                     *  注册时间
+                     */
+                    std::string m_regTime;
+                    bool m_regTimeHasBeenSet;
+
+                    /**
+                     * 过期时间
+                     */
+                    std::string m_expireTime;
+                    bool m_expireTimeHasBeenSet;
+
+                    /**
+                     * 删除时间
+                     */
+                    std::string m_deleteTime;
+                    bool m_deleteTimeHasBeenSet;
+
+                    /**
+                     * 当前价格
+                     */
+                    uint64_t m_currentPrice;
+                    bool m_currentPriceHasBeenSet;
+
+                    /**
+                     * 当前用户昵称
+                     */
+                    std::string m_currentNickname;
+                    bool m_currentNicknameHasBeenSet;
+
+                    /**
+                     * 竞价保证金
+                     */
+                    uint64_t m_biddingBondPrice;
+                    bool m_biddingBondPriceHasBeenSet;
+
+                    /**
+                     * 1 已预约，2 竞价中，3 支付尾款 4 交割 5 交易失败 6 交易成功，7 已过期
+                     */
+                    uint64_t m_status;
+                    bool m_statusHasBeenSet;
+
+                    /**
+                     * 竞价标识，1 领先，2 落后
+                     */
+                    uint64_t m_biddingFlag;
+                    bool m_biddingFlagHasBeenSet;
+
+                    /**
+                     * 是否退款，yes表示退款，no表示不退款
+                     */
+                    std::string m_biddingBondRefund;
+                    bool m_biddingBondRefundHasBeenSet;
+
+                    /**
+                     * 我的出价
+                     */
+                    uint64_t m_biddingPrice;
+                    bool m_biddingPriceHasBeenSet;
 
                 };
             }

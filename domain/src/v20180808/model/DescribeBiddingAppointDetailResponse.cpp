@@ -24,6 +24,15 @@ using namespace TencentCloud::Domain::V20180808::Model;
 using namespace std;
 
 DescribeBiddingAppointDetailResponse::DescribeBiddingAppointDetailResponse() :
+    m_domainHasBeenSet(false),
+    m_appointNumHasBeenSet(false),
+    m_appointStartTimeHasBeenSet(false),
+    m_appointEndTimeHasBeenSet(false),
+    m_regTimeHasBeenSet(false),
+    m_expireTimeHasBeenSet(false),
+    m_deleteTimeHasBeenSet(false),
+    m_appointPriceHasBeenSet(false),
+    m_appointBondPriceHasBeenSet(false),
     m_statusHasBeenSet(false),
     m_biddingBondRefundHasBeenSet(false)
 {
@@ -63,6 +72,96 @@ CoreInternalOutcome DescribeBiddingAppointDetailResponse::Deserialize(const stri
     }
 
 
+    if (rsp.HasMember("Domain") && !rsp["Domain"].IsNull())
+    {
+        if (!rsp["Domain"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `Domain` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_domain = string(rsp["Domain"].GetString());
+        m_domainHasBeenSet = true;
+    }
+
+    if (rsp.HasMember("AppointNum") && !rsp["AppointNum"].IsNull())
+    {
+        if (!rsp["AppointNum"].IsUint64())
+        {
+            return CoreInternalOutcome(Core::Error("response `AppointNum` IsUint64=false incorrectly").SetRequestId(requestId));
+        }
+        m_appointNum = rsp["AppointNum"].GetUint64();
+        m_appointNumHasBeenSet = true;
+    }
+
+    if (rsp.HasMember("AppointStartTime") && !rsp["AppointStartTime"].IsNull())
+    {
+        if (!rsp["AppointStartTime"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `AppointStartTime` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_appointStartTime = string(rsp["AppointStartTime"].GetString());
+        m_appointStartTimeHasBeenSet = true;
+    }
+
+    if (rsp.HasMember("AppointEndTime") && !rsp["AppointEndTime"].IsNull())
+    {
+        if (!rsp["AppointEndTime"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `AppointEndTime` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_appointEndTime = string(rsp["AppointEndTime"].GetString());
+        m_appointEndTimeHasBeenSet = true;
+    }
+
+    if (rsp.HasMember("RegTime") && !rsp["RegTime"].IsNull())
+    {
+        if (!rsp["RegTime"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `RegTime` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_regTime = string(rsp["RegTime"].GetString());
+        m_regTimeHasBeenSet = true;
+    }
+
+    if (rsp.HasMember("ExpireTime") && !rsp["ExpireTime"].IsNull())
+    {
+        if (!rsp["ExpireTime"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `ExpireTime` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_expireTime = string(rsp["ExpireTime"].GetString());
+        m_expireTimeHasBeenSet = true;
+    }
+
+    if (rsp.HasMember("DeleteTime") && !rsp["DeleteTime"].IsNull())
+    {
+        if (!rsp["DeleteTime"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `DeleteTime` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_deleteTime = string(rsp["DeleteTime"].GetString());
+        m_deleteTimeHasBeenSet = true;
+    }
+
+    if (rsp.HasMember("AppointPrice") && !rsp["AppointPrice"].IsNull())
+    {
+        if (!rsp["AppointPrice"].IsUint64())
+        {
+            return CoreInternalOutcome(Core::Error("response `AppointPrice` IsUint64=false incorrectly").SetRequestId(requestId));
+        }
+        m_appointPrice = rsp["AppointPrice"].GetUint64();
+        m_appointPriceHasBeenSet = true;
+    }
+
+    if (rsp.HasMember("AppointBondPrice") && !rsp["AppointBondPrice"].IsNull())
+    {
+        if (!rsp["AppointBondPrice"].IsUint64())
+        {
+            return CoreInternalOutcome(Core::Error("response `AppointBondPrice` IsUint64=false incorrectly").SetRequestId(requestId));
+        }
+        m_appointBondPrice = rsp["AppointBondPrice"].GetUint64();
+        m_appointBondPriceHasBeenSet = true;
+    }
+
     if (rsp.HasMember("Status") && !rsp["Status"].IsNull())
     {
         if (!rsp["Status"].IsUint64())
@@ -93,6 +192,78 @@ string DescribeBiddingAppointDetailResponse::ToJsonString() const
     value.SetObject();
     rapidjson::Document::AllocatorType& allocator = value.GetAllocator();
 
+    if (m_domainHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Domain";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_domain.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_appointNumHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "AppointNum";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_appointNum, allocator);
+    }
+
+    if (m_appointStartTimeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "AppointStartTime";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_appointStartTime.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_appointEndTimeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "AppointEndTime";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_appointEndTime.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_regTimeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "RegTime";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_regTime.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_expireTimeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ExpireTime";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_expireTime.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_deleteTimeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "DeleteTime";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_deleteTime.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_appointPriceHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "AppointPrice";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_appointPrice, allocator);
+    }
+
+    if (m_appointBondPriceHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "AppointBondPrice";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_appointBondPrice, allocator);
+    }
+
     if (m_statusHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
@@ -120,6 +291,96 @@ string DescribeBiddingAppointDetailResponse::ToJsonString() const
     return buffer.GetString();
 }
 
+
+string DescribeBiddingAppointDetailResponse::GetDomain() const
+{
+    return m_domain;
+}
+
+bool DescribeBiddingAppointDetailResponse::DomainHasBeenSet() const
+{
+    return m_domainHasBeenSet;
+}
+
+uint64_t DescribeBiddingAppointDetailResponse::GetAppointNum() const
+{
+    return m_appointNum;
+}
+
+bool DescribeBiddingAppointDetailResponse::AppointNumHasBeenSet() const
+{
+    return m_appointNumHasBeenSet;
+}
+
+string DescribeBiddingAppointDetailResponse::GetAppointStartTime() const
+{
+    return m_appointStartTime;
+}
+
+bool DescribeBiddingAppointDetailResponse::AppointStartTimeHasBeenSet() const
+{
+    return m_appointStartTimeHasBeenSet;
+}
+
+string DescribeBiddingAppointDetailResponse::GetAppointEndTime() const
+{
+    return m_appointEndTime;
+}
+
+bool DescribeBiddingAppointDetailResponse::AppointEndTimeHasBeenSet() const
+{
+    return m_appointEndTimeHasBeenSet;
+}
+
+string DescribeBiddingAppointDetailResponse::GetRegTime() const
+{
+    return m_regTime;
+}
+
+bool DescribeBiddingAppointDetailResponse::RegTimeHasBeenSet() const
+{
+    return m_regTimeHasBeenSet;
+}
+
+string DescribeBiddingAppointDetailResponse::GetExpireTime() const
+{
+    return m_expireTime;
+}
+
+bool DescribeBiddingAppointDetailResponse::ExpireTimeHasBeenSet() const
+{
+    return m_expireTimeHasBeenSet;
+}
+
+string DescribeBiddingAppointDetailResponse::GetDeleteTime() const
+{
+    return m_deleteTime;
+}
+
+bool DescribeBiddingAppointDetailResponse::DeleteTimeHasBeenSet() const
+{
+    return m_deleteTimeHasBeenSet;
+}
+
+uint64_t DescribeBiddingAppointDetailResponse::GetAppointPrice() const
+{
+    return m_appointPrice;
+}
+
+bool DescribeBiddingAppointDetailResponse::AppointPriceHasBeenSet() const
+{
+    return m_appointPriceHasBeenSet;
+}
+
+uint64_t DescribeBiddingAppointDetailResponse::GetAppointBondPrice() const
+{
+    return m_appointBondPrice;
+}
+
+bool DescribeBiddingAppointDetailResponse::AppointBondPriceHasBeenSet() const
+{
+    return m_appointBondPriceHasBeenSet;
+}
 
 uint64_t DescribeBiddingAppointDetailResponse::GetStatus() const
 {

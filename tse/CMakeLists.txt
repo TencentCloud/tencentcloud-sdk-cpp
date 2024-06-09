@@ -95,6 +95,7 @@ set(tse_public_header_model
   include/tencentcloud/tse/v20201207/model/SREInstance.h
   include/tencentcloud/tse/v20201207/model/CreateWafDomainsResponse.h
   include/tencentcloud/tse/v20201207/model/RateLimitResponse.h
+  include/tencentcloud/tse/v20201207/model/DescribePublicAddressConfigRequest.h
   include/tencentcloud/tse/v20201207/model/DescribeCloudNativeAPIGatewayServicesRequest.h
   include/tencentcloud/tse/v20201207/model/CreateConfigFileResponse.h
   include/tencentcloud/tse/v20201207/model/DescribeCloudNativeAPIGatewayUpstreamResponse.h
@@ -327,6 +328,7 @@ set(tse_public_header_model
   include/tencentcloud/tse/v20201207/model/ModifyGovernanceInstancesRequest.h
   include/tencentcloud/tse/v20201207/model/CreateEngineRequest.h
   include/tencentcloud/tse/v20201207/model/ModifyCloudNativeAPIGatewayCanaryRuleRequest.h
+  include/tencentcloud/tse/v20201207/model/DescribePublicAddressConfigResponse.h
   include/tencentcloud/tse/v20201207/model/DescribeGatewayInstancePortResult.h
   include/tencentcloud/tse/v20201207/model/PublishConfigFilesRequest.h
   include/tencentcloud/tse/v20201207/model/CreateAutoScalerResourceStrategyResponse.h
@@ -432,6 +434,7 @@ set(tse_src
   src/v20201207/model/SREInstance.cpp
   src/v20201207/model/CreateWafDomainsResponse.cpp
   src/v20201207/model/RateLimitResponse.cpp
+  src/v20201207/model/DescribePublicAddressConfigRequest.cpp
   src/v20201207/model/DescribeCloudNativeAPIGatewayServicesRequest.cpp
   src/v20201207/model/CreateConfigFileResponse.cpp
   src/v20201207/model/DescribeCloudNativeAPIGatewayUpstreamResponse.cpp
@@ -664,6 +667,7 @@ set(tse_src
   src/v20201207/model/ModifyGovernanceInstancesRequest.cpp
   src/v20201207/model/CreateEngineRequest.cpp
   src/v20201207/model/ModifyCloudNativeAPIGatewayCanaryRuleRequest.cpp
+  src/v20201207/model/DescribePublicAddressConfigResponse.cpp
   src/v20201207/model/DescribeGatewayInstancePortResult.cpp
   src/v20201207/model/PublishConfigFilesRequest.cpp
   src/v20201207/model/CreateAutoScalerResourceStrategyResponse.cpp

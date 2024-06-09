@@ -28,7 +28,8 @@ ScaleOutInstanceResponse::ScaleOutInstanceResponse() :
     m_dealNamesHasBeenSet(false),
     m_clientTokenHasBeenSet(false),
     m_flowIdHasBeenSet(false),
-    m_billIdHasBeenSet(false)
+    m_billIdHasBeenSet(false),
+    m_traceIdHasBeenSet(false)
 {
 }
 
@@ -119,6 +120,16 @@ CoreInternalOutcome ScaleOutInstanceResponse::Deserialize(const string &payload)
         m_billIdHasBeenSet = true;
     }
 
+    if (rsp.HasMember("TraceId") && !rsp["TraceId"].IsNull())
+    {
+        if (!rsp["TraceId"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `TraceId` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_traceId = string(rsp["TraceId"].GetString());
+        m_traceIdHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -172,6 +183,14 @@ string ScaleOutInstanceResponse::ToJsonString() const
         string key = "BillId";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_billId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_traceIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "TraceId";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_traceId.c_str(), allocator).Move(), allocator);
     }
 
     rapidjson::Value iKey(rapidjson::kStringType);
@@ -234,6 +253,16 @@ string ScaleOutInstanceResponse::GetBillId() const
 bool ScaleOutInstanceResponse::BillIdHasBeenSet() const
 {
     return m_billIdHasBeenSet;
+}
+
+string ScaleOutInstanceResponse::GetTraceId() const
+{
+    return m_traceId;
+}
+
+bool ScaleOutInstanceResponse::TraceIdHasBeenSet() const
+{
+    return m_traceIdHasBeenSet;
 }
 
 
