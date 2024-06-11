@@ -36,7 +36,8 @@ ProbeTask::ProbeTask() :
     m_createdAtHasBeenSet(false),
     m_cronHasBeenSet(false),
     m_cronStateHasBeenSet(false),
-    m_tagInfoListHasBeenSet(false)
+    m_tagInfoListHasBeenSet(false),
+    m_subSyncFlagHasBeenSet(false)
 {
 }
 
@@ -218,6 +219,16 @@ CoreInternalOutcome ProbeTask::Deserialize(const rapidjson::Value &value)
         m_tagInfoListHasBeenSet = true;
     }
 
+    if (value.HasMember("SubSyncFlag") && !value["SubSyncFlag"].IsNull())
+    {
+        if (!value["SubSyncFlag"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `ProbeTask.SubSyncFlag` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_subSyncFlag = value["SubSyncFlag"].GetInt64();
+        m_subSyncFlagHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -363,6 +374,14 @@ void ProbeTask::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Alloc
             value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
             (*itr).ToJsonObject(value[key.c_str()][i], allocator);
         }
+    }
+
+    if (m_subSyncFlagHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "SubSyncFlag";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_subSyncFlag, allocator);
     }
 
 }
@@ -622,5 +641,21 @@ void ProbeTask::SetTagInfoList(const vector<KeyValuePair>& _tagInfoList)
 bool ProbeTask::TagInfoListHasBeenSet() const
 {
     return m_tagInfoListHasBeenSet;
+}
+
+int64_t ProbeTask::GetSubSyncFlag() const
+{
+    return m_subSyncFlag;
+}
+
+void ProbeTask::SetSubSyncFlag(const int64_t& _subSyncFlag)
+{
+    m_subSyncFlag = _subSyncFlag;
+    m_subSyncFlagHasBeenSet = true;
+}
+
+bool ProbeTask::SubSyncFlagHasBeenSet() const
+{
+    return m_subSyncFlagHasBeenSet;
 }
 

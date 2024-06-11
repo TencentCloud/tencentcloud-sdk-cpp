@@ -507,6 +507,31 @@ namespace TencentCloud
                      */
                     bool TagInfoListHasBeenSet() const;
 
+                    /**
+                     * 获取是否为同步账号
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return SubSyncFlag 是否为同步账号
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    int64_t GetSubSyncFlag() const;
+
+                    /**
+                     * 设置是否为同步账号
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _subSyncFlag 是否为同步账号
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetSubSyncFlag(const int64_t& _subSyncFlag);
+
+                    /**
+                     * 判断参数 SubSyncFlag 是否已赋值
+                     * @return SubSyncFlag 是否已赋值
+                     * 
+                     */
+                    bool SubSyncFlagHasBeenSet() const;
+
                 private:
 
                     /**
@@ -635,6 +660,13 @@ namespace TencentCloud
                      */
                     std::vector<KeyValuePair> m_tagInfoList;
                     bool m_tagInfoListHasBeenSet;
+
+                    /**
+                     * 是否为同步账号
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    int64_t m_subSyncFlag;
+                    bool m_subSyncFlagHasBeenSet;
 
                 };
             }

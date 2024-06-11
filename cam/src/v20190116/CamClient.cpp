@@ -255,6 +255,49 @@ CamClient::AttachUserPolicyOutcomeCallable CamClient::AttachUserPolicyCallable(c
     return task->get_future();
 }
 
+CamClient::BuildDataFlowAuthTokenOutcome CamClient::BuildDataFlowAuthToken(const BuildDataFlowAuthTokenRequest &request)
+{
+    auto outcome = MakeRequest(request, "BuildDataFlowAuthToken");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        BuildDataFlowAuthTokenResponse rsp = BuildDataFlowAuthTokenResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return BuildDataFlowAuthTokenOutcome(rsp);
+        else
+            return BuildDataFlowAuthTokenOutcome(o.GetError());
+    }
+    else
+    {
+        return BuildDataFlowAuthTokenOutcome(outcome.GetError());
+    }
+}
+
+void CamClient::BuildDataFlowAuthTokenAsync(const BuildDataFlowAuthTokenRequest& request, const BuildDataFlowAuthTokenAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->BuildDataFlowAuthToken(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+CamClient::BuildDataFlowAuthTokenOutcomeCallable CamClient::BuildDataFlowAuthTokenCallable(const BuildDataFlowAuthTokenRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<BuildDataFlowAuthTokenOutcome()>>(
+        [this, request]()
+        {
+            return this->BuildDataFlowAuthToken(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 CamClient::ConsumeCustomMFATokenOutcome CamClient::ConsumeCustomMFAToken(const ConsumeCustomMFATokenRequest &request)
 {
     auto outcome = MakeRequest(request, "ConsumeCustomMFAToken");

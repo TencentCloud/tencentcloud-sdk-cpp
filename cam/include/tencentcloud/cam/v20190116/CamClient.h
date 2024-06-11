@@ -33,6 +33,8 @@
 #include <tencentcloud/cam/v20190116/model/AttachRolePolicyResponse.h>
 #include <tencentcloud/cam/v20190116/model/AttachUserPolicyRequest.h>
 #include <tencentcloud/cam/v20190116/model/AttachUserPolicyResponse.h>
+#include <tencentcloud/cam/v20190116/model/BuildDataFlowAuthTokenRequest.h>
+#include <tencentcloud/cam/v20190116/model/BuildDataFlowAuthTokenResponse.h>
 #include <tencentcloud/cam/v20190116/model/ConsumeCustomMFATokenRequest.h>
 #include <tencentcloud/cam/v20190116/model/ConsumeCustomMFATokenResponse.h>
 #include <tencentcloud/cam/v20190116/model/CreateAccessKeyRequest.h>
@@ -226,6 +228,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::AttachUserPolicyResponse> AttachUserPolicyOutcome;
                 typedef std::future<AttachUserPolicyOutcome> AttachUserPolicyOutcomeCallable;
                 typedef std::function<void(const CamClient*, const Model::AttachUserPolicyRequest&, AttachUserPolicyOutcome, const std::shared_ptr<const AsyncCallerContext>&)> AttachUserPolicyAsyncHandler;
+                typedef Outcome<Core::Error, Model::BuildDataFlowAuthTokenResponse> BuildDataFlowAuthTokenOutcome;
+                typedef std::future<BuildDataFlowAuthTokenOutcome> BuildDataFlowAuthTokenOutcomeCallable;
+                typedef std::function<void(const CamClient*, const Model::BuildDataFlowAuthTokenRequest&, BuildDataFlowAuthTokenOutcome, const std::shared_ptr<const AsyncCallerContext>&)> BuildDataFlowAuthTokenAsyncHandler;
                 typedef Outcome<Core::Error, Model::ConsumeCustomMFATokenResponse> ConsumeCustomMFATokenOutcome;
                 typedef std::future<ConsumeCustomMFATokenOutcome> ConsumeCustomMFATokenOutcomeCallable;
                 typedef std::function<void(const CamClient*, const Model::ConsumeCustomMFATokenRequest&, ConsumeCustomMFATokenOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ConsumeCustomMFATokenAsyncHandler;
@@ -519,6 +524,15 @@ namespace TencentCloud
                 AttachUserPolicyOutcome AttachUserPolicy(const Model::AttachUserPolicyRequest &request);
                 void AttachUserPolicyAsync(const Model::AttachUserPolicyRequest& request, const AttachUserPolicyAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 AttachUserPolicyOutcomeCallable AttachUserPolicyCallable(const Model::AttachUserPolicyRequest& request);
+
+                /**
+                 *获取数据流认证Token
+                 * @param req BuildDataFlowAuthTokenRequest
+                 * @return BuildDataFlowAuthTokenOutcome
+                 */
+                BuildDataFlowAuthTokenOutcome BuildDataFlowAuthToken(const Model::BuildDataFlowAuthTokenRequest &request);
+                void BuildDataFlowAuthTokenAsync(const Model::BuildDataFlowAuthTokenRequest& request, const BuildDataFlowAuthTokenAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                BuildDataFlowAuthTokenOutcomeCallable BuildDataFlowAuthTokenCallable(const Model::BuildDataFlowAuthTokenRequest& request);
 
                 /**
                  *验证自定义多因子Token

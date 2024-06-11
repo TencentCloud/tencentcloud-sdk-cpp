@@ -1545,7 +1545,7 @@ namespace TencentCloud
                 GetDeviceLocationHistoryOutcomeCallable GetDeviceLocationHistoryCallable(const Model::GetDeviceLocationHistoryRequest& request);
 
                 /**
-                 *拉取设备统计汇总数据 
+                 *拉取设备统计汇总数据
                  * @param req GetDeviceSumStatisticsRequest
                  * @return GetDeviceSumStatisticsOutcome
                  */

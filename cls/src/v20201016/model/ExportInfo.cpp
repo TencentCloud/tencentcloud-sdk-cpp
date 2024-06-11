@@ -34,7 +34,8 @@ ExportInfo::ExportInfo() :
     m_toHasBeenSet(false),
     m_cosPathHasBeenSet(false),
     m_createTimeHasBeenSet(false),
-    m_syntaxRuleHasBeenSet(false)
+    m_syntaxRuleHasBeenSet(false),
+    m_derivedFieldsHasBeenSet(false)
 {
 }
 
@@ -183,6 +184,19 @@ CoreInternalOutcome ExportInfo::Deserialize(const rapidjson::Value &value)
         m_syntaxRuleHasBeenSet = true;
     }
 
+    if (value.HasMember("DerivedFields") && !value["DerivedFields"].IsNull())
+    {
+        if (!value["DerivedFields"].IsArray())
+            return CoreInternalOutcome(Core::Error("response `ExportInfo.DerivedFields` is not array type"));
+
+        const rapidjson::Value &tmpValue = value["DerivedFields"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            m_derivedFields.push_back((*itr).GetString());
+        }
+        m_derivedFieldsHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -300,6 +314,19 @@ void ExportInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Allo
         string key = "SyntaxRule";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_syntaxRule, allocator);
+    }
+
+    if (m_derivedFieldsHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "DerivedFields";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        for (auto itr = m_derivedFields.begin(); itr != m_derivedFields.end(); ++itr)
+        {
+            value[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
+        }
     }
 
 }
@@ -527,5 +554,21 @@ void ExportInfo::SetSyntaxRule(const uint64_t& _syntaxRule)
 bool ExportInfo::SyntaxRuleHasBeenSet() const
 {
     return m_syntaxRuleHasBeenSet;
+}
+
+vector<string> ExportInfo::GetDerivedFields() const
+{
+    return m_derivedFields;
+}
+
+void ExportInfo::SetDerivedFields(const vector<string>& _derivedFields)
+{
+    m_derivedFields = _derivedFields;
+    m_derivedFieldsHasBeenSet = true;
+}
+
+bool ExportInfo::DerivedFieldsHasBeenSet() const
+{
+    return m_derivedFieldsHasBeenSet;
 }
 

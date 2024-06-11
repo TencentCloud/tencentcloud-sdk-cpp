@@ -30,7 +30,8 @@ CreateExportRequest::CreateExportRequest() :
     m_toHasBeenSet(false),
     m_orderHasBeenSet(false),
     m_formatHasBeenSet(false),
-    m_syntaxRuleHasBeenSet(false)
+    m_syntaxRuleHasBeenSet(false),
+    m_derivedFieldsHasBeenSet(false)
 {
 }
 
@@ -103,6 +104,19 @@ string CreateExportRequest::ToJsonString() const
         string key = "SyntaxRule";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_syntaxRule, allocator);
+    }
+
+    if (m_derivedFieldsHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "DerivedFields";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        for (auto itr = m_derivedFields.begin(); itr != m_derivedFields.end(); ++itr)
+        {
+            d[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
+        }
     }
 
 
@@ -239,6 +253,22 @@ void CreateExportRequest::SetSyntaxRule(const uint64_t& _syntaxRule)
 bool CreateExportRequest::SyntaxRuleHasBeenSet() const
 {
     return m_syntaxRuleHasBeenSet;
+}
+
+vector<string> CreateExportRequest::GetDerivedFields() const
+{
+    return m_derivedFields;
+}
+
+void CreateExportRequest::SetDerivedFields(const vector<string>& _derivedFields)
+{
+    m_derivedFields = _derivedFields;
+    m_derivedFieldsHasBeenSet = true;
+}
+
+bool CreateExportRequest::DerivedFieldsHasBeenSet() const
+{
+    return m_derivedFieldsHasBeenSet;
 }
 
 

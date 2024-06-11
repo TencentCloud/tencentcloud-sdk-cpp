@@ -43,6 +43,8 @@
 #include <tencentcloud/mongodb/v20190725/model/DescribeAsyncRequestInfoResponse.h>
 #include <tencentcloud/mongodb/v20190725/model/DescribeBackupDownloadTaskRequest.h>
 #include <tencentcloud/mongodb/v20190725/model/DescribeBackupDownloadTaskResponse.h>
+#include <tencentcloud/mongodb/v20190725/model/DescribeBackupRulesRequest.h>
+#include <tencentcloud/mongodb/v20190725/model/DescribeBackupRulesResponse.h>
 #include <tencentcloud/mongodb/v20190725/model/DescribeClientConnectionsRequest.h>
 #include <tencentcloud/mongodb/v20190725/model/DescribeClientConnectionsResponse.h>
 #include <tencentcloud/mongodb/v20190725/model/DescribeCurrentOpRequest.h>
@@ -65,6 +67,10 @@
 #include <tencentcloud/mongodb/v20190725/model/DescribeSlowLogsResponse.h>
 #include <tencentcloud/mongodb/v20190725/model/DescribeSpecInfoRequest.h>
 #include <tencentcloud/mongodb/v20190725/model/DescribeSpecInfoResponse.h>
+#include <tencentcloud/mongodb/v20190725/model/DescribeTransparentDataEncryptionStatusRequest.h>
+#include <tencentcloud/mongodb/v20190725/model/DescribeTransparentDataEncryptionStatusResponse.h>
+#include <tencentcloud/mongodb/v20190725/model/EnableTransparentDataEncryptionRequest.h>
+#include <tencentcloud/mongodb/v20190725/model/EnableTransparentDataEncryptionResponse.h>
 #include <tencentcloud/mongodb/v20190725/model/FlashBackDBInstanceRequest.h>
 #include <tencentcloud/mongodb/v20190725/model/FlashBackDBInstanceResponse.h>
 #include <tencentcloud/mongodb/v20190725/model/FlushInstanceRouterConfigRequest.h>
@@ -95,6 +101,8 @@
 #include <tencentcloud/mongodb/v20190725/model/ResetDBInstancePasswordResponse.h>
 #include <tencentcloud/mongodb/v20190725/model/SetAccountUserPrivilegeRequest.h>
 #include <tencentcloud/mongodb/v20190725/model/SetAccountUserPrivilegeResponse.h>
+#include <tencentcloud/mongodb/v20190725/model/SetBackupRulesRequest.h>
+#include <tencentcloud/mongodb/v20190725/model/SetBackupRulesResponse.h>
 #include <tencentcloud/mongodb/v20190725/model/SetInstanceMaintenanceRequest.h>
 #include <tencentcloud/mongodb/v20190725/model/SetInstanceMaintenanceResponse.h>
 #include <tencentcloud/mongodb/v20190725/model/TerminateDBInstancesRequest.h>
@@ -143,6 +151,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeBackupDownloadTaskResponse> DescribeBackupDownloadTaskOutcome;
                 typedef std::future<DescribeBackupDownloadTaskOutcome> DescribeBackupDownloadTaskOutcomeCallable;
                 typedef std::function<void(const MongodbClient*, const Model::DescribeBackupDownloadTaskRequest&, DescribeBackupDownloadTaskOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeBackupDownloadTaskAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeBackupRulesResponse> DescribeBackupRulesOutcome;
+                typedef std::future<DescribeBackupRulesOutcome> DescribeBackupRulesOutcomeCallable;
+                typedef std::function<void(const MongodbClient*, const Model::DescribeBackupRulesRequest&, DescribeBackupRulesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeBackupRulesAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeClientConnectionsResponse> DescribeClientConnectionsOutcome;
                 typedef std::future<DescribeClientConnectionsOutcome> DescribeClientConnectionsOutcomeCallable;
                 typedef std::function<void(const MongodbClient*, const Model::DescribeClientConnectionsRequest&, DescribeClientConnectionsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeClientConnectionsAsyncHandler;
@@ -176,6 +187,12 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeSpecInfoResponse> DescribeSpecInfoOutcome;
                 typedef std::future<DescribeSpecInfoOutcome> DescribeSpecInfoOutcomeCallable;
                 typedef std::function<void(const MongodbClient*, const Model::DescribeSpecInfoRequest&, DescribeSpecInfoOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeSpecInfoAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeTransparentDataEncryptionStatusResponse> DescribeTransparentDataEncryptionStatusOutcome;
+                typedef std::future<DescribeTransparentDataEncryptionStatusOutcome> DescribeTransparentDataEncryptionStatusOutcomeCallable;
+                typedef std::function<void(const MongodbClient*, const Model::DescribeTransparentDataEncryptionStatusRequest&, DescribeTransparentDataEncryptionStatusOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeTransparentDataEncryptionStatusAsyncHandler;
+                typedef Outcome<Core::Error, Model::EnableTransparentDataEncryptionResponse> EnableTransparentDataEncryptionOutcome;
+                typedef std::future<EnableTransparentDataEncryptionOutcome> EnableTransparentDataEncryptionOutcomeCallable;
+                typedef std::function<void(const MongodbClient*, const Model::EnableTransparentDataEncryptionRequest&, EnableTransparentDataEncryptionOutcome, const std::shared_ptr<const AsyncCallerContext>&)> EnableTransparentDataEncryptionAsyncHandler;
                 typedef Outcome<Core::Error, Model::FlashBackDBInstanceResponse> FlashBackDBInstanceOutcome;
                 typedef std::future<FlashBackDBInstanceOutcome> FlashBackDBInstanceOutcomeCallable;
                 typedef std::function<void(const MongodbClient*, const Model::FlashBackDBInstanceRequest&, FlashBackDBInstanceOutcome, const std::shared_ptr<const AsyncCallerContext>&)> FlashBackDBInstanceAsyncHandler;
@@ -221,6 +238,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::SetAccountUserPrivilegeResponse> SetAccountUserPrivilegeOutcome;
                 typedef std::future<SetAccountUserPrivilegeOutcome> SetAccountUserPrivilegeOutcomeCallable;
                 typedef std::function<void(const MongodbClient*, const Model::SetAccountUserPrivilegeRequest&, SetAccountUserPrivilegeOutcome, const std::shared_ptr<const AsyncCallerContext>&)> SetAccountUserPrivilegeAsyncHandler;
+                typedef Outcome<Core::Error, Model::SetBackupRulesResponse> SetBackupRulesOutcome;
+                typedef std::future<SetBackupRulesOutcome> SetBackupRulesOutcomeCallable;
+                typedef std::function<void(const MongodbClient*, const Model::SetBackupRulesRequest&, SetBackupRulesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> SetBackupRulesAsyncHandler;
                 typedef Outcome<Core::Error, Model::SetInstanceMaintenanceResponse> SetInstanceMaintenanceOutcome;
                 typedef std::future<SetInstanceMaintenanceOutcome> SetInstanceMaintenanceOutcomeCallable;
                 typedef std::function<void(const MongodbClient*, const Model::SetInstanceMaintenanceRequest&, SetInstanceMaintenanceOutcome, const std::shared_ptr<const AsyncCallerContext>&)> SetInstanceMaintenanceAsyncHandler;
@@ -322,6 +342,15 @@ namespace TencentCloud
                 DescribeBackupDownloadTaskOutcomeCallable DescribeBackupDownloadTaskCallable(const Model::DescribeBackupDownloadTaskRequest& request);
 
                 /**
+                 *本接口（DescribeBackupRules）用于获取实例自动备份配置信息。
+                 * @param req DescribeBackupRulesRequest
+                 * @return DescribeBackupRulesOutcome
+                 */
+                DescribeBackupRulesOutcome DescribeBackupRules(const Model::DescribeBackupRulesRequest &request);
+                void DescribeBackupRulesAsync(const Model::DescribeBackupRulesRequest& request, const DescribeBackupRulesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeBackupRulesOutcomeCallable DescribeBackupRulesCallable(const Model::DescribeBackupRulesRequest& request);
+
+                /**
                  *本接口（DescribeClientConnections）用于查询实例客户端连接信息，包括连接 IP 和连接数量。
                  * @param req DescribeClientConnectionsRequest
                  * @return DescribeClientConnectionsOutcome
@@ -419,6 +448,24 @@ namespace TencentCloud
                 DescribeSpecInfoOutcome DescribeSpecInfo(const Model::DescribeSpecInfoRequest &request);
                 void DescribeSpecInfoAsync(const Model::DescribeSpecInfoRequest& request, const DescribeSpecInfoAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DescribeSpecInfoOutcomeCallable DescribeSpecInfoCallable(const Model::DescribeSpecInfoRequest& request);
+
+                /**
+                 *获取实例透明加密的开启状态
+                 * @param req DescribeTransparentDataEncryptionStatusRequest
+                 * @return DescribeTransparentDataEncryptionStatusOutcome
+                 */
+                DescribeTransparentDataEncryptionStatusOutcome DescribeTransparentDataEncryptionStatus(const Model::DescribeTransparentDataEncryptionStatusRequest &request);
+                void DescribeTransparentDataEncryptionStatusAsync(const Model::DescribeTransparentDataEncryptionStatusRequest& request, const DescribeTransparentDataEncryptionStatusAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeTransparentDataEncryptionStatusOutcomeCallable DescribeTransparentDataEncryptionStatusCallable(const Model::DescribeTransparentDataEncryptionStatusRequest& request);
+
+                /**
+                 *本接口(EnableTransparentDataEncryption)用于开启云数据库 MongoDB 的透明加密能力。
+                 * @param req EnableTransparentDataEncryptionRequest
+                 * @return EnableTransparentDataEncryptionOutcome
+                 */
+                EnableTransparentDataEncryptionOutcome EnableTransparentDataEncryption(const Model::EnableTransparentDataEncryptionRequest &request);
+                void EnableTransparentDataEncryptionAsync(const Model::EnableTransparentDataEncryptionRequest& request, const EnableTransparentDataEncryptionAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                EnableTransparentDataEncryptionOutcomeCallable EnableTransparentDataEncryptionCallable(const Model::EnableTransparentDataEncryptionRequest& request);
 
                 /**
                  *该接口用于发起按 Key 闪回任务，依据数据的闪回 Key（默认为 id）对数据进行极速回档，快速恢复业务。
@@ -555,6 +602,15 @@ namespace TencentCloud
                 SetAccountUserPrivilegeOutcome SetAccountUserPrivilege(const Model::SetAccountUserPrivilegeRequest &request);
                 void SetAccountUserPrivilegeAsync(const Model::SetAccountUserPrivilegeRequest& request, const SetAccountUserPrivilegeAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 SetAccountUserPrivilegeOutcomeCallable SetAccountUserPrivilegeCallable(const Model::SetAccountUserPrivilegeRequest& request);
+
+                /**
+                 *本接口(SetBackupRules)用于设置 MongoDB 云数据库的自动备份规则。
+                 * @param req SetBackupRulesRequest
+                 * @return SetBackupRulesOutcome
+                 */
+                SetBackupRulesOutcome SetBackupRules(const Model::SetBackupRulesRequest &request);
+                void SetBackupRulesAsync(const Model::SetBackupRulesRequest& request, const SetBackupRulesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                SetBackupRulesOutcomeCallable SetBackupRulesCallable(const Model::SetBackupRulesRequest& request);
 
                 /**
                  *本接口（SetInstanceMaintenance ） 用于设置实例维护时间窗。

@@ -96,15 +96,15 @@ namespace TencentCloud
                     bool MaxDurationLimitHasBeenSet() const;
 
                     /**
-                     * 获取云存储相关的参数，目前支持腾讯云对象存储，不支持第三方云存储以及VOD
-                     * @return StorageParams 云存储相关的参数，目前支持腾讯云对象存储，不支持第三方云存储以及VOD
+                     * 获取云存储相关的参数，目前支持腾讯云对象存储以及腾讯云云点播VOD，不支持第三方云存储
+                     * @return StorageParams 云存储相关的参数，目前支持腾讯云对象存储以及腾讯云云点播VOD，不支持第三方云存储
                      * 
                      */
                     StorageParams GetStorageParams() const;
 
                     /**
-                     * 设置云存储相关的参数，目前支持腾讯云对象存储，不支持第三方云存储以及VOD
-                     * @param _storageParams 云存储相关的参数，目前支持腾讯云对象存储，不支持第三方云存储以及VOD
+                     * 设置云存储相关的参数，目前支持腾讯云对象存储以及腾讯云云点播VOD，不支持第三方云存储
+                     * @param _storageParams 云存储相关的参数，目前支持腾讯云对象存储以及腾讯云云点播VOD，不支持第三方云存储
                      * 
                      */
                     void SetStorageParams(const StorageParams& _storageParams);
@@ -221,7 +221,7 @@ namespace TencentCloud
                     bool m_maxDurationLimitHasBeenSet;
 
                     /**
-                     * 云存储相关的参数，目前支持腾讯云对象存储，不支持第三方云存储以及VOD
+                     * 云存储相关的参数，目前支持腾讯云对象存储以及腾讯云云点播VOD，不支持第三方云存储
                      */
                     StorageParams m_storageParams;
                     bool m_storageParamsHasBeenSet;

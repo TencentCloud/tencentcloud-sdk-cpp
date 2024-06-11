@@ -470,6 +470,49 @@ MongodbClient::DescribeBackupDownloadTaskOutcomeCallable MongodbClient::Describe
     return task->get_future();
 }
 
+MongodbClient::DescribeBackupRulesOutcome MongodbClient::DescribeBackupRules(const DescribeBackupRulesRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeBackupRules");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeBackupRulesResponse rsp = DescribeBackupRulesResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeBackupRulesOutcome(rsp);
+        else
+            return DescribeBackupRulesOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeBackupRulesOutcome(outcome.GetError());
+    }
+}
+
+void MongodbClient::DescribeBackupRulesAsync(const DescribeBackupRulesRequest& request, const DescribeBackupRulesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeBackupRules(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+MongodbClient::DescribeBackupRulesOutcomeCallable MongodbClient::DescribeBackupRulesCallable(const DescribeBackupRulesRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeBackupRulesOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeBackupRules(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 MongodbClient::DescribeClientConnectionsOutcome MongodbClient::DescribeClientConnections(const DescribeClientConnectionsRequest &request)
 {
     auto outcome = MakeRequest(request, "DescribeClientConnections");
@@ -936,6 +979,92 @@ MongodbClient::DescribeSpecInfoOutcomeCallable MongodbClient::DescribeSpecInfoCa
         [this, request]()
         {
             return this->DescribeSpecInfo(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+MongodbClient::DescribeTransparentDataEncryptionStatusOutcome MongodbClient::DescribeTransparentDataEncryptionStatus(const DescribeTransparentDataEncryptionStatusRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeTransparentDataEncryptionStatus");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeTransparentDataEncryptionStatusResponse rsp = DescribeTransparentDataEncryptionStatusResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeTransparentDataEncryptionStatusOutcome(rsp);
+        else
+            return DescribeTransparentDataEncryptionStatusOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeTransparentDataEncryptionStatusOutcome(outcome.GetError());
+    }
+}
+
+void MongodbClient::DescribeTransparentDataEncryptionStatusAsync(const DescribeTransparentDataEncryptionStatusRequest& request, const DescribeTransparentDataEncryptionStatusAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeTransparentDataEncryptionStatus(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+MongodbClient::DescribeTransparentDataEncryptionStatusOutcomeCallable MongodbClient::DescribeTransparentDataEncryptionStatusCallable(const DescribeTransparentDataEncryptionStatusRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeTransparentDataEncryptionStatusOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeTransparentDataEncryptionStatus(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+MongodbClient::EnableTransparentDataEncryptionOutcome MongodbClient::EnableTransparentDataEncryption(const EnableTransparentDataEncryptionRequest &request)
+{
+    auto outcome = MakeRequest(request, "EnableTransparentDataEncryption");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        EnableTransparentDataEncryptionResponse rsp = EnableTransparentDataEncryptionResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return EnableTransparentDataEncryptionOutcome(rsp);
+        else
+            return EnableTransparentDataEncryptionOutcome(o.GetError());
+    }
+    else
+    {
+        return EnableTransparentDataEncryptionOutcome(outcome.GetError());
+    }
+}
+
+void MongodbClient::EnableTransparentDataEncryptionAsync(const EnableTransparentDataEncryptionRequest& request, const EnableTransparentDataEncryptionAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->EnableTransparentDataEncryption(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+MongodbClient::EnableTransparentDataEncryptionOutcomeCallable MongodbClient::EnableTransparentDataEncryptionCallable(const EnableTransparentDataEncryptionRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<EnableTransparentDataEncryptionOutcome()>>(
+        [this, request]()
+        {
+            return this->EnableTransparentDataEncryption(request);
         }
     );
 
@@ -1581,6 +1710,49 @@ MongodbClient::SetAccountUserPrivilegeOutcomeCallable MongodbClient::SetAccountU
         [this, request]()
         {
             return this->SetAccountUserPrivilege(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+MongodbClient::SetBackupRulesOutcome MongodbClient::SetBackupRules(const SetBackupRulesRequest &request)
+{
+    auto outcome = MakeRequest(request, "SetBackupRules");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        SetBackupRulesResponse rsp = SetBackupRulesResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return SetBackupRulesOutcome(rsp);
+        else
+            return SetBackupRulesOutcome(o.GetError());
+    }
+    else
+    {
+        return SetBackupRulesOutcome(outcome.GetError());
+    }
+}
+
+void MongodbClient::SetBackupRulesAsync(const SetBackupRulesRequest& request, const SetBackupRulesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->SetBackupRules(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+MongodbClient::SetBackupRulesOutcomeCallable MongodbClient::SetBackupRulesCallable(const SetBackupRulesRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<SetBackupRulesOutcome()>>(
+        [this, request]()
+        {
+            return this->SetBackupRules(request);
         }
     );
 
