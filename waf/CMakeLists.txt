@@ -134,6 +134,7 @@ set(waf_public_header_model
   include/tencentcloud/waf/v20180125/model/AccessRuleInfo.h
   include/tencentcloud/waf/v20180125/model/CCRuleLists.h
   include/tencentcloud/waf/v20180125/model/PostAttackDownloadTaskRequest.h
+  include/tencentcloud/waf/v20180125/model/ModifyAreaBanAreasResponse.h
   include/tencentcloud/waf/v20180125/model/ModifyAntiFakeUrlStatusRequest.h
   include/tencentcloud/waf/v20180125/model/DescribeCCRuleListRequest.h
   include/tencentcloud/waf/v20180125/model/ResponseCode.h
@@ -150,6 +151,7 @@ set(waf_public_header_model
   include/tencentcloud/waf/v20180125/model/ModifyCustomWhiteRuleResponse.h
   include/tencentcloud/waf/v20180125/model/SearchItem.h
   include/tencentcloud/waf/v20180125/model/ApiPkg.h
+  include/tencentcloud/waf/v20180125/model/DescribeAreaBanSupportAreasResponse.h
   include/tencentcloud/waf/v20180125/model/DescribePortsRequest.h
   include/tencentcloud/waf/v20180125/model/DescribeWafAutoDenyStatusResponse.h
   include/tencentcloud/waf/v20180125/model/DescribeTlsVersionRequest.h
@@ -162,6 +164,7 @@ set(waf_public_header_model
   include/tencentcloud/waf/v20180125/model/ModifyInstanceRenewFlagRequest.h
   include/tencentcloud/waf/v20180125/model/UserWhiteRuleItem.h
   include/tencentcloud/waf/v20180125/model/GoodsDetailNew.h
+  include/tencentcloud/waf/v20180125/model/DescribeAreaBanSupportAreasRequest.h
   include/tencentcloud/waf/v20180125/model/GoodsDetail.h
   include/tencentcloud/waf/v20180125/model/DeleteIpAccessControlResponse.h
   include/tencentcloud/waf/v20180125/model/BatchIpAccessControlItem.h
@@ -335,6 +338,7 @@ set(waf_public_header_model
   include/tencentcloud/waf/v20180125/model/DomainsPartInfo.h
   include/tencentcloud/waf/v20180125/model/DescribeAutoDenyIPRequest.h
   include/tencentcloud/waf/v20180125/model/AddSpartaProtectionRequest.h
+  include/tencentcloud/waf/v20180125/model/ModifyAreaBanAreasRequest.h
   include/tencentcloud/waf/v20180125/model/ModifyModuleStatusResponse.h
   include/tencentcloud/waf/v20180125/model/AttackLogInfo.h
   include/tencentcloud/waf/v20180125/model/DescribeCCAutoStatusResponse.h
@@ -514,6 +518,7 @@ set(waf_src
   src/v20180125/model/AccessRuleInfo.cpp
   src/v20180125/model/CCRuleLists.cpp
   src/v20180125/model/PostAttackDownloadTaskRequest.cpp
+  src/v20180125/model/ModifyAreaBanAreasResponse.cpp
   src/v20180125/model/ModifyAntiFakeUrlStatusRequest.cpp
   src/v20180125/model/DescribeCCRuleListRequest.cpp
   src/v20180125/model/ResponseCode.cpp
@@ -530,6 +535,7 @@ set(waf_src
   src/v20180125/model/ModifyCustomWhiteRuleResponse.cpp
   src/v20180125/model/SearchItem.cpp
   src/v20180125/model/ApiPkg.cpp
+  src/v20180125/model/DescribeAreaBanSupportAreasResponse.cpp
   src/v20180125/model/DescribePortsRequest.cpp
   src/v20180125/model/DescribeWafAutoDenyStatusResponse.cpp
   src/v20180125/model/DescribeTlsVersionRequest.cpp
@@ -542,6 +548,7 @@ set(waf_src
   src/v20180125/model/ModifyInstanceRenewFlagRequest.cpp
   src/v20180125/model/UserWhiteRuleItem.cpp
   src/v20180125/model/GoodsDetailNew.cpp
+  src/v20180125/model/DescribeAreaBanSupportAreasRequest.cpp
   src/v20180125/model/GoodsDetail.cpp
   src/v20180125/model/DeleteIpAccessControlResponse.cpp
   src/v20180125/model/BatchIpAccessControlItem.cpp
@@ -715,6 +722,7 @@ set(waf_src
   src/v20180125/model/DomainsPartInfo.cpp
   src/v20180125/model/DescribeAutoDenyIPRequest.cpp
   src/v20180125/model/AddSpartaProtectionRequest.cpp
+  src/v20180125/model/ModifyAreaBanAreasRequest.cpp
   src/v20180125/model/ModifyModuleStatusResponse.cpp
   src/v20180125/model/AttackLogInfo.cpp
   src/v20180125/model/DescribeCCAutoStatusResponse.cpp

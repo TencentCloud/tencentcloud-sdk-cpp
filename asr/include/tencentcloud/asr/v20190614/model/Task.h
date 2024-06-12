@@ -47,15 +47,19 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取任务ID，可通过此ID在轮询接口获取识别状态与结果。注意：TaskId数据类型为uint64
-                     * @return TaskId 任务ID，可通过此ID在轮询接口获取识别状态与结果。注意：TaskId数据类型为uint64
+                     * 获取任务ID，可通过此ID在轮询接口获取识别状态与结果。TaskId数据类型为**uint64**。
+**注意：TaskId有效期为24小时，不同日期可能出现重复TaskId，请不要依赖TaskId作为您业务系统里的唯一ID。**
+                     * @return TaskId 任务ID，可通过此ID在轮询接口获取识别状态与结果。TaskId数据类型为**uint64**。
+**注意：TaskId有效期为24小时，不同日期可能出现重复TaskId，请不要依赖TaskId作为您业务系统里的唯一ID。**
                      * 
                      */
                     uint64_t GetTaskId() const;
 
                     /**
-                     * 设置任务ID，可通过此ID在轮询接口获取识别状态与结果。注意：TaskId数据类型为uint64
-                     * @param _taskId 任务ID，可通过此ID在轮询接口获取识别状态与结果。注意：TaskId数据类型为uint64
+                     * 设置任务ID，可通过此ID在轮询接口获取识别状态与结果。TaskId数据类型为**uint64**。
+**注意：TaskId有效期为24小时，不同日期可能出现重复TaskId，请不要依赖TaskId作为您业务系统里的唯一ID。**
+                     * @param _taskId 任务ID，可通过此ID在轮询接口获取识别状态与结果。TaskId数据类型为**uint64**。
+**注意：TaskId有效期为24小时，不同日期可能出现重复TaskId，请不要依赖TaskId作为您业务系统里的唯一ID。**
                      * 
                      */
                     void SetTaskId(const uint64_t& _taskId);
@@ -70,7 +74,8 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 任务ID，可通过此ID在轮询接口获取识别状态与结果。注意：TaskId数据类型为uint64
+                     * 任务ID，可通过此ID在轮询接口获取识别状态与结果。TaskId数据类型为**uint64**。
+**注意：TaskId有效期为24小时，不同日期可能出现重复TaskId，请不要依赖TaskId作为您业务系统里的唯一ID。**
                      */
                     uint64_t m_taskId;
                     bool m_taskIdHasBeenSet;

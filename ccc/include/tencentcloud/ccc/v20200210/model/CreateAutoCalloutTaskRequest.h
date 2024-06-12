@@ -213,15 +213,15 @@ namespace TencentCloud
                     bool NotAfterHasBeenSet() const;
 
                     /**
-                     * 获取最大尝试次数
-                     * @return Tries 最大尝试次数
+                     * 获取最大尝试次数，1-3 次
+                     * @return Tries 最大尝试次数，1-3 次
                      * 
                      */
                     uint64_t GetTries() const;
 
                     /**
-                     * 设置最大尝试次数
-                     * @param _tries 最大尝试次数
+                     * 设置最大尝试次数，1-3 次
+                     * @param _tries 最大尝试次数，1-3 次
                      * 
                      */
                     void SetTries(const uint64_t& _tries);
@@ -347,7 +347,7 @@ namespace TencentCloud
                     bool m_notAfterHasBeenSet;
 
                     /**
-                     * 最大尝试次数
+                     * 最大尝试次数，1-3 次
                      */
                     uint64_t m_tries;
                     bool m_triesHasBeenSet;

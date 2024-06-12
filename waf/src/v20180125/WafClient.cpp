@@ -1502,6 +1502,49 @@ WafClient::DescribeAntiInfoLeakageRulesOutcomeCallable WafClient::DescribeAntiIn
     return task->get_future();
 }
 
+WafClient::DescribeAreaBanSupportAreasOutcome WafClient::DescribeAreaBanSupportAreas(const DescribeAreaBanSupportAreasRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeAreaBanSupportAreas");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeAreaBanSupportAreasResponse rsp = DescribeAreaBanSupportAreasResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeAreaBanSupportAreasOutcome(rsp);
+        else
+            return DescribeAreaBanSupportAreasOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeAreaBanSupportAreasOutcome(outcome.GetError());
+    }
+}
+
+void WafClient::DescribeAreaBanSupportAreasAsync(const DescribeAreaBanSupportAreasRequest& request, const DescribeAreaBanSupportAreasAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeAreaBanSupportAreas(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+WafClient::DescribeAreaBanSupportAreasOutcomeCallable WafClient::DescribeAreaBanSupportAreasCallable(const DescribeAreaBanSupportAreasRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeAreaBanSupportAreasOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeAreaBanSupportAreas(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 WafClient::DescribeAttackOverviewOutcome WafClient::DescribeAttackOverview(const DescribeAttackOverviewRequest &request)
 {
     auto outcome = MakeRequest(request, "DescribeAttackOverview");
@@ -4204,6 +4247,49 @@ WafClient::ModifyApiSecEventChangeOutcomeCallable WafClient::ModifyApiSecEventCh
         [this, request]()
         {
             return this->ModifyApiSecEventChange(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+WafClient::ModifyAreaBanAreasOutcome WafClient::ModifyAreaBanAreas(const ModifyAreaBanAreasRequest &request)
+{
+    auto outcome = MakeRequest(request, "ModifyAreaBanAreas");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ModifyAreaBanAreasResponse rsp = ModifyAreaBanAreasResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ModifyAreaBanAreasOutcome(rsp);
+        else
+            return ModifyAreaBanAreasOutcome(o.GetError());
+    }
+    else
+    {
+        return ModifyAreaBanAreasOutcome(outcome.GetError());
+    }
+}
+
+void WafClient::ModifyAreaBanAreasAsync(const ModifyAreaBanAreasRequest& request, const ModifyAreaBanAreasAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->ModifyAreaBanAreas(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+WafClient::ModifyAreaBanAreasOutcomeCallable WafClient::ModifyAreaBanAreasCallable(const ModifyAreaBanAreasRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<ModifyAreaBanAreasOutcome()>>(
+        [this, request]()
+        {
+            return this->ModifyAreaBanAreas(request);
         }
     );
 

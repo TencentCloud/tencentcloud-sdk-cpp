@@ -265,6 +265,27 @@ namespace TencentCloud
                      */
                     bool IsWebTrackingHasBeenSet() const;
 
+                    /**
+                     * 获取日志主题分区数量
+                     * @return PartitionCount 日志主题分区数量
+                     * 
+                     */
+                    uint64_t GetPartitionCount() const;
+
+                    /**
+                     * 设置日志主题分区数量
+                     * @param _partitionCount 日志主题分区数量
+                     * 
+                     */
+                    void SetPartitionCount(const uint64_t& _partitionCount);
+
+                    /**
+                     * 判断参数 PartitionCount 是否已赋值
+                     * @return PartitionCount 是否已赋值
+                     * 
+                     */
+                    bool PartitionCountHasBeenSet() const;
+
                 private:
 
                     /**
@@ -329,6 +350,12 @@ namespace TencentCloud
                      */
                     bool m_isWebTracking;
                     bool m_isWebTrackingHasBeenSet;
+
+                    /**
+                     * 日志主题分区数量
+                     */
+                    uint64_t m_partitionCount;
+                    bool m_partitionCountHasBeenSet;
 
                 };
             }

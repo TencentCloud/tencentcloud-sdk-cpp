@@ -431,13 +431,17 @@ namespace TencentCloud
 回调格式和内容详见：[录音识别回调说明](https://cloud.tencent.com/document/product/1093/52632)
 
 注意：
-如果用户使用轮询方式获取识别结果，则无需提交该参数
+
+- 如果用户使用轮询方式获取识别结果，则无需提交该参数
+- 建议在回调URL中带上您的业务ID等信息，以便处理业务逻辑
                      * @return CallbackUrl 回调 URL
 用户自行搭建的用于接收识别结果的服务URL
 回调格式和内容详见：[录音识别回调说明](https://cloud.tencent.com/document/product/1093/52632)
 
 注意：
-如果用户使用轮询方式获取识别结果，则无需提交该参数
+
+- 如果用户使用轮询方式获取识别结果，则无需提交该参数
+- 建议在回调URL中带上您的业务ID等信息，以便处理业务逻辑
                      * 
                      */
                     std::string GetCallbackUrl() const;
@@ -448,13 +452,17 @@ namespace TencentCloud
 回调格式和内容详见：[录音识别回调说明](https://cloud.tencent.com/document/product/1093/52632)
 
 注意：
-如果用户使用轮询方式获取识别结果，则无需提交该参数
+
+- 如果用户使用轮询方式获取识别结果，则无需提交该参数
+- 建议在回调URL中带上您的业务ID等信息，以便处理业务逻辑
                      * @param _callbackUrl 回调 URL
 用户自行搭建的用于接收识别结果的服务URL
 回调格式和内容详见：[录音识别回调说明](https://cloud.tencent.com/document/product/1093/52632)
 
 注意：
-如果用户使用轮询方式获取识别结果，则无需提交该参数
+
+- 如果用户使用轮询方式获取识别结果，则无需提交该参数
+- 建议在回调URL中带上您的业务ID等信息，以便处理业务逻辑
                      * 
                      */
                     void SetCallbackUrl(const std::string& _callbackUrl);
@@ -1060,7 +1068,9 @@ namespace TencentCloud
 回调格式和内容详见：[录音识别回调说明](https://cloud.tencent.com/document/product/1093/52632)
 
 注意：
-如果用户使用轮询方式获取识别结果，则无需提交该参数
+
+- 如果用户使用轮询方式获取识别结果，则无需提交该参数
+- 建议在回调URL中带上您的业务ID等信息，以便处理业务逻辑
                      */
                     std::string m_callbackUrl;
                     bool m_callbackUrlHasBeenSet;

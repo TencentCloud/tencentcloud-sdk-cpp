@@ -91,6 +91,8 @@
 #include <tencentcloud/waf/v20180125/model/DescribeAntiInfoLeakRulesResponse.h>
 #include <tencentcloud/waf/v20180125/model/DescribeAntiInfoLeakageRulesRequest.h>
 #include <tencentcloud/waf/v20180125/model/DescribeAntiInfoLeakageRulesResponse.h>
+#include <tencentcloud/waf/v20180125/model/DescribeAreaBanSupportAreasRequest.h>
+#include <tencentcloud/waf/v20180125/model/DescribeAreaBanSupportAreasResponse.h>
 #include <tencentcloud/waf/v20180125/model/DescribeAttackOverviewRequest.h>
 #include <tencentcloud/waf/v20180125/model/DescribeAttackOverviewResponse.h>
 #include <tencentcloud/waf/v20180125/model/DescribeAttackTypeRequest.h>
@@ -217,6 +219,8 @@
 #include <tencentcloud/waf/v20180125/model/ModifyApiAnalyzeStatusResponse.h>
 #include <tencentcloud/waf/v20180125/model/ModifyApiSecEventChangeRequest.h>
 #include <tencentcloud/waf/v20180125/model/ModifyApiSecEventChangeResponse.h>
+#include <tencentcloud/waf/v20180125/model/ModifyAreaBanAreasRequest.h>
+#include <tencentcloud/waf/v20180125/model/ModifyAreaBanAreasResponse.h>
 #include <tencentcloud/waf/v20180125/model/ModifyAreaBanStatusRequest.h>
 #include <tencentcloud/waf/v20180125/model/ModifyAreaBanStatusResponse.h>
 #include <tencentcloud/waf/v20180125/model/ModifyAttackWhiteRuleRequest.h>
@@ -415,6 +419,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeAntiInfoLeakageRulesResponse> DescribeAntiInfoLeakageRulesOutcome;
                 typedef std::future<DescribeAntiInfoLeakageRulesOutcome> DescribeAntiInfoLeakageRulesOutcomeCallable;
                 typedef std::function<void(const WafClient*, const Model::DescribeAntiInfoLeakageRulesRequest&, DescribeAntiInfoLeakageRulesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeAntiInfoLeakageRulesAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeAreaBanSupportAreasResponse> DescribeAreaBanSupportAreasOutcome;
+                typedef std::future<DescribeAreaBanSupportAreasOutcome> DescribeAreaBanSupportAreasOutcomeCallable;
+                typedef std::function<void(const WafClient*, const Model::DescribeAreaBanSupportAreasRequest&, DescribeAreaBanSupportAreasOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeAreaBanSupportAreasAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeAttackOverviewResponse> DescribeAttackOverviewOutcome;
                 typedef std::future<DescribeAttackOverviewOutcome> DescribeAttackOverviewOutcomeCallable;
                 typedef std::function<void(const WafClient*, const Model::DescribeAttackOverviewRequest&, DescribeAttackOverviewOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeAttackOverviewAsyncHandler;
@@ -604,6 +611,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::ModifyApiSecEventChangeResponse> ModifyApiSecEventChangeOutcome;
                 typedef std::future<ModifyApiSecEventChangeOutcome> ModifyApiSecEventChangeOutcomeCallable;
                 typedef std::function<void(const WafClient*, const Model::ModifyApiSecEventChangeRequest&, ModifyApiSecEventChangeOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyApiSecEventChangeAsyncHandler;
+                typedef Outcome<Core::Error, Model::ModifyAreaBanAreasResponse> ModifyAreaBanAreasOutcome;
+                typedef std::future<ModifyAreaBanAreasOutcome> ModifyAreaBanAreasOutcomeCallable;
+                typedef std::function<void(const WafClient*, const Model::ModifyAreaBanAreasRequest&, ModifyAreaBanAreasOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyAreaBanAreasAsyncHandler;
                 typedef Outcome<Core::Error, Model::ModifyAreaBanStatusResponse> ModifyAreaBanStatusOutcome;
                 typedef std::future<ModifyAreaBanStatusOutcome> ModifyAreaBanStatusOutcomeCallable;
                 typedef std::function<void(const WafClient*, const Model::ModifyAreaBanStatusRequest&, ModifyAreaBanStatusOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyAreaBanStatusAsyncHandler;
@@ -1041,6 +1051,15 @@ namespace TencentCloud
                 DescribeAntiInfoLeakageRulesOutcome DescribeAntiInfoLeakageRules(const Model::DescribeAntiInfoLeakageRulesRequest &request);
                 void DescribeAntiInfoLeakageRulesAsync(const Model::DescribeAntiInfoLeakageRulesRequest& request, const DescribeAntiInfoLeakageRulesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DescribeAntiInfoLeakageRulesOutcomeCallable DescribeAntiInfoLeakageRulesCallable(const Model::DescribeAntiInfoLeakageRulesRequest& request);
+
+                /**
+                 *获取WAF地域封禁支持的地域列表
+                 * @param req DescribeAreaBanSupportAreasRequest
+                 * @return DescribeAreaBanSupportAreasOutcome
+                 */
+                DescribeAreaBanSupportAreasOutcome DescribeAreaBanSupportAreas(const Model::DescribeAreaBanSupportAreasRequest &request);
+                void DescribeAreaBanSupportAreasAsync(const Model::DescribeAreaBanSupportAreasRequest& request, const DescribeAreaBanSupportAreasAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeAreaBanSupportAreasOutcomeCallable DescribeAreaBanSupportAreasCallable(const Model::DescribeAreaBanSupportAreasRequest& request);
 
                 /**
                  *攻击总览
@@ -1608,6 +1627,15 @@ namespace TencentCloud
                 ModifyApiSecEventChangeOutcome ModifyApiSecEventChange(const Model::ModifyApiSecEventChangeRequest &request);
                 void ModifyApiSecEventChangeAsync(const Model::ModifyApiSecEventChangeRequest& request, const ModifyApiSecEventChangeAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 ModifyApiSecEventChangeOutcomeCallable ModifyApiSecEventChangeCallable(const Model::ModifyApiSecEventChangeRequest& request);
+
+                /**
+                 *修改地域封禁中的地域信息
+                 * @param req ModifyAreaBanAreasRequest
+                 * @return ModifyAreaBanAreasOutcome
+                 */
+                ModifyAreaBanAreasOutcome ModifyAreaBanAreas(const Model::ModifyAreaBanAreasRequest &request);
+                void ModifyAreaBanAreasAsync(const Model::ModifyAreaBanAreasRequest& request, const ModifyAreaBanAreasAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                ModifyAreaBanAreasOutcomeCallable ModifyAreaBanAreasCallable(const Model::ModifyAreaBanAreasRequest& request);
 
                 /**
                  *修改防护域名的地域封禁状态

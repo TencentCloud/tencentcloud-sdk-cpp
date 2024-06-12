@@ -25,10 +25,6 @@
 #include <tencentcloud/core/AsyncCallerContext.h>
 #include <tencentcloud/hunyuan/v20230901/model/ChatCompletionsRequest.h>
 #include <tencentcloud/hunyuan/v20230901/model/ChatCompletionsResponse.h>
-#include <tencentcloud/hunyuan/v20230901/model/ChatProRequest.h>
-#include <tencentcloud/hunyuan/v20230901/model/ChatProResponse.h>
-#include <tencentcloud/hunyuan/v20230901/model/ChatStdRequest.h>
-#include <tencentcloud/hunyuan/v20230901/model/ChatStdResponse.h>
 #include <tencentcloud/hunyuan/v20230901/model/GetEmbeddingRequest.h>
 #include <tencentcloud/hunyuan/v20230901/model/GetEmbeddingResponse.h>
 #include <tencentcloud/hunyuan/v20230901/model/GetTokenCountRequest.h>
@@ -54,12 +50,6 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::ChatCompletionsResponse> ChatCompletionsOutcome;
                 typedef std::future<ChatCompletionsOutcome> ChatCompletionsOutcomeCallable;
                 typedef std::function<void(const HunyuanClient*, const Model::ChatCompletionsRequest&, ChatCompletionsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ChatCompletionsAsyncHandler;
-                typedef Outcome<Core::Error, Model::ChatProResponse> ChatProOutcome;
-                typedef std::future<ChatProOutcome> ChatProOutcomeCallable;
-                typedef std::function<void(const HunyuanClient*, const Model::ChatProRequest&, ChatProOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ChatProAsyncHandler;
-                typedef Outcome<Core::Error, Model::ChatStdResponse> ChatStdOutcome;
-                typedef std::future<ChatStdOutcome> ChatStdOutcomeCallable;
-                typedef std::function<void(const HunyuanClient*, const Model::ChatStdRequest&, ChatStdOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ChatStdAsyncHandler;
                 typedef Outcome<Core::Error, Model::GetEmbeddingResponse> GetEmbeddingOutcome;
                 typedef std::future<GetEmbeddingOutcome> GetEmbeddingOutcomeCallable;
                 typedef std::function<void(const HunyuanClient*, const Model::GetEmbeddingRequest&, GetEmbeddingOutcome, const std::shared_ptr<const AsyncCallerContext>&)> GetEmbeddingAsyncHandler;
@@ -88,36 +78,6 @@ namespace TencentCloud
                 ChatCompletionsOutcome ChatCompletions(const Model::ChatCompletionsRequest &request);
                 void ChatCompletionsAsync(const Model::ChatCompletionsRequest& request, const ChatCompletionsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 ChatCompletionsOutcomeCallable ChatCompletionsCallable(const Model::ChatCompletionsRequest& request);
-
-                /**
-                 *<span style="font-size:1.5em;">注意：本接口将于 5 月 15 日下线；下线后将不再提供文档指引，接口本身可继续调用，建议使用 [hunyuan](https://cloud.tencent.com/document/api/1729/105701) 接入。</span>
-
-腾讯混元大模型（hunyuan-pro）是由腾讯研发的大语言模型，具备强大的中文创作能力，复杂语境下的逻辑推理能力，以及可靠的任务执行能力。本接口支持流式或非流式调用，当使用流式调用时为 SSE 协议。
-
- 1. 本接口暂不支持返回图片内容。
- 2. 默认单账号限制并发数为 5 路，如您有提高并发限制的需求请 [联系我们](https://cloud.tencent.com/act/event/Online_service) 。
- 3. 请使用 SDK 调用本接口，每种开发语言的 SDK Git 仓库 examples/hunyuan/v20230901/ 目录下有提供示例供参考。SDK 链接在文档下方 “**开发者资源 - SDK**” 部分提供。
-                 * @param req ChatProRequest
-                 * @return ChatProOutcome
-                 */
-                ChatProOutcome ChatPro(const Model::ChatProRequest &request);
-                void ChatProAsync(const Model::ChatProRequest& request, const ChatProAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
-                ChatProOutcomeCallable ChatProCallable(const Model::ChatProRequest& request);
-
-                /**
-                 *<span style="font-size:1.5em;">注意：本接口将于 5 月 15 日下线；下线后将不再提供文档指引，接口本身可继续调用，建议使用 [hunyuan](https://cloud.tencent.com/document/api/1729/105701) 接入。</span>
-
-腾讯混元大模型（hunyuan-standard）是由腾讯研发的大语言模型，具备强大的中文创作能力，复杂语境下的逻辑推理能力，以及可靠的任务执行能力。本接口支持流式或非流式调用，当使用流式调用时为 SSE 协议。
-
- 1. 本接口暂不支持返回图片内容。
- 2. 默认单账号限制并发数为 5 路，如您有提高并发限制的需求请 [联系我们](https://cloud.tencent.com/act/event/Online_service) 。
- 3. 请使用 SDK 调用本接口，每种开发语言的 SDK Git 仓库 examples/hunyuan/v20230901/ 目录下有提供示例供参考。SDK 链接在文档下方 “**开发者资源 - SDK**” 部分提供。
-                 * @param req ChatStdRequest
-                 * @return ChatStdOutcome
-                 */
-                ChatStdOutcome ChatStd(const Model::ChatStdRequest &request);
-                void ChatStdAsync(const Model::ChatStdRequest& request, const ChatStdAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
-                ChatStdOutcomeCallable ChatStdCallable(const Model::ChatStdRequest& request);
 
                 /**
                  *腾讯混元 Embedding 接口，可以将文本转化为高质量的向量数据。

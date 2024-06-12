@@ -1512,7 +1512,7 @@ namespace TencentCloud
                 DescribePhoneAlarmFlowTotalCountOutcomeCallable DescribePhoneAlarmFlowTotalCountCallable(const Model::DescribePhoneAlarmFlowTotalCountRequest& request);
 
                 /**
-                 *列出可安装的所有 Grafana 插件
+                 *列出可安装的所有 Grafana 插件。
                  * @param req DescribePluginOverviewsRequest
                  * @return DescribePluginOverviewsOutcome
                  */
@@ -1687,7 +1687,9 @@ namespace TencentCloud
                 DescribePrometheusInstancesOverviewOutcomeCallable DescribePrometheusInstancesOverviewCallable(const Model::DescribePrometheusInstancesOverviewRequest& request);
 
                 /**
-                 *拉取Prometheus聚合规则yaml列表
+                 *DescribePrometheusRecordRules 接口可完全代替该接口。近30天仅有3次调用，且都是报错请求
+
+拉取Prometheus聚合规则yaml列表
                  * @param req DescribePrometheusRecordRuleYamlRequest
                  * @return DescribePrometheusRecordRuleYamlOutcome
                  */
@@ -1750,7 +1752,7 @@ namespace TencentCloud
                 DescribePrometheusTempSyncOutcomeCallable DescribePrometheusTempSyncCallable(const Model::DescribePrometheusTempSyncRequest& request);
 
                 /**
-                 *列出 Prometheus 服务可用区
+                 *列出 Prometheus 服务可用区。
                  * @param req DescribePrometheusZonesRequest
                  * @return DescribePrometheusZonesOutcome
                  */

@@ -159,6 +159,27 @@ DataSourceType 数据源类型，不填默认过滤非自建的所有关系型�
                      */
                     bool FiltersHasBeenSet() const;
 
+                    /**
+                     * 获取casbId
+                     * @return CasbId casbId
+                     * 
+                     */
+                    std::string GetCasbId() const;
+
+                    /**
+                     * 设置casbId
+                     * @param _casbId casbId
+                     * 
+                     */
+                    void SetCasbId(const std::string& _casbId);
+
+                    /**
+                     * 判断参数 CasbId 是否已赋值
+                     * @return CasbId 是否已赋值
+                     * 
+                     */
+                    bool CasbIdHasBeenSet() const;
+
                 private:
 
                     /**
@@ -192,6 +213,12 @@ DataSourceType 数据源类型，不填默认过滤非自建的所有关系型�
                      */
                     std::vector<Filter> m_filters;
                     bool m_filtersHasBeenSet;
+
+                    /**
+                     * casbId
+                     */
+                    std::string m_casbId;
+                    bool m_casbIdHasBeenSet;
 
                 };
             }

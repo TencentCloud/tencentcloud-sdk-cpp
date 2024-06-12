@@ -126,6 +126,27 @@ namespace TencentCloud
                      */
                     bool ModelIdHasBeenSet() const;
 
+                    /**
+                     * 获取小程序APPID
+                     * @return MiniProgramAppId 小程序APPID
+                     * 
+                     */
+                    std::string GetMiniProgramAppId() const;
+
+                    /**
+                     * 设置小程序APPID
+                     * @param _miniProgramAppId 小程序APPID
+                     * 
+                     */
+                    void SetMiniProgramAppId(const std::string& _miniProgramAppId);
+
+                    /**
+                     * 判断参数 MiniProgramAppId 是否已赋值
+                     * @return MiniProgramAppId 是否已赋值
+                     * 
+                     */
+                    bool MiniProgramAppIdHasBeenSet() const;
+
                 private:
 
                     /**
@@ -151,6 +172,12 @@ namespace TencentCloud
                      */
                     std::string m_modelId;
                     bool m_modelIdHasBeenSet;
+
+                    /**
+                     * 小程序APPID
+                     */
+                    std::string m_miniProgramAppId;
+                    bool m_miniProgramAppIdHasBeenSet;
 
                 };
             }

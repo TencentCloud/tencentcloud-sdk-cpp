@@ -64,15 +64,15 @@ namespace TencentCloud
                     bool DomainsHasBeenSet() const;
 
                     /**
-                     * 获取模板ID。
-                     * @return TemplateId 模板ID。
+                     * 获取模板ID(可从模板列表接口获取)
+                     * @return TemplateId 模板ID(可从模板列表接口获取)
                      * 
                      */
                     std::string GetTemplateId() const;
 
                     /**
-                     * 设置模板ID。
-                     * @param _templateId 模板ID。
+                     * 设置模板ID(可从模板列表接口获取)
+                     * @param _templateId 模板ID(可从模板列表接口获取)
                      * 
                      */
                     void SetTemplateId(const std::string& _templateId);
@@ -122,7 +122,7 @@ false：关闭60天内禁止转移注册商锁定
                     bool m_domainsHasBeenSet;
 
                     /**
-                     * 模板ID。
+                     * 模板ID(可从模板列表接口获取)
                      */
                     std::string m_templateId;
                     bool m_templateIdHasBeenSet;

@@ -26,7 +26,8 @@ GetWechatDeviceTicketRequest::GetWechatDeviceTicketRequest() :
     m_productIdHasBeenSet(false),
     m_deviceNameHasBeenSet(false),
     m_isThirdAppHasBeenSet(false),
-    m_modelIdHasBeenSet(false)
+    m_modelIdHasBeenSet(false),
+    m_miniProgramAppIdHasBeenSet(false)
 {
 }
 
@@ -67,6 +68,14 @@ string GetWechatDeviceTicketRequest::ToJsonString() const
         string key = "ModelId";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_modelId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_miniProgramAppIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "MiniProgramAppId";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_miniProgramAppId.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -139,6 +148,22 @@ void GetWechatDeviceTicketRequest::SetModelId(const string& _modelId)
 bool GetWechatDeviceTicketRequest::ModelIdHasBeenSet() const
 {
     return m_modelIdHasBeenSet;
+}
+
+string GetWechatDeviceTicketRequest::GetMiniProgramAppId() const
+{
+    return m_miniProgramAppId;
+}
+
+void GetWechatDeviceTicketRequest::SetMiniProgramAppId(const string& _miniProgramAppId)
+{
+    m_miniProgramAppId = _miniProgramAppId;
+    m_miniProgramAppIdHasBeenSet = true;
+}
+
+bool GetWechatDeviceTicketRequest::MiniProgramAppIdHasBeenSet() const
+{
+    return m_miniProgramAppIdHasBeenSet;
 }
 
 

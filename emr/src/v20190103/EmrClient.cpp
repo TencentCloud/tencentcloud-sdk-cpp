@@ -427,6 +427,49 @@ EmrClient::DescribeAutoScaleStrategiesOutcomeCallable EmrClient::DescribeAutoSca
     return task->get_future();
 }
 
+EmrClient::DescribeClusterFlowStatusDetailOutcome EmrClient::DescribeClusterFlowStatusDetail(const DescribeClusterFlowStatusDetailRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeClusterFlowStatusDetail");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeClusterFlowStatusDetailResponse rsp = DescribeClusterFlowStatusDetailResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeClusterFlowStatusDetailOutcome(rsp);
+        else
+            return DescribeClusterFlowStatusDetailOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeClusterFlowStatusDetailOutcome(outcome.GetError());
+    }
+}
+
+void EmrClient::DescribeClusterFlowStatusDetailAsync(const DescribeClusterFlowStatusDetailRequest& request, const DescribeClusterFlowStatusDetailAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeClusterFlowStatusDetail(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+EmrClient::DescribeClusterFlowStatusDetailOutcomeCallable EmrClient::DescribeClusterFlowStatusDetailCallable(const DescribeClusterFlowStatusDetailRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeClusterFlowStatusDetailOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeClusterFlowStatusDetail(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 EmrClient::DescribeClusterNodesOutcome EmrClient::DescribeClusterNodes(const DescribeClusterNodesRequest &request)
 {
     auto outcome = MakeRequest(request, "DescribeClusterNodes");

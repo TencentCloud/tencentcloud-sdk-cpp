@@ -71,7 +71,8 @@ NodeHardwareInfo::NodeHardwareInfo() :
     m_serviceClientHasBeenSet(false),
     m_disableApiTerminationHasBeenSet(false),
     m_tradeVersionHasBeenSet(false),
-    m_servicesStatusHasBeenSet(false)
+    m_servicesStatusHasBeenSet(false),
+    m_remarkHasBeenSet(false)
 {
 }
 
@@ -624,6 +625,16 @@ CoreInternalOutcome NodeHardwareInfo::Deserialize(const rapidjson::Value &value)
         m_servicesStatusHasBeenSet = true;
     }
 
+    if (value.HasMember("Remark") && !value["Remark"].IsNull())
+    {
+        if (!value["Remark"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `NodeHardwareInfo.Remark` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_remark = string(value["Remark"].GetString());
+        m_remarkHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -1053,6 +1064,14 @@ void NodeHardwareInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Document
         string key = "ServicesStatus";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_servicesStatus.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_remarkHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Remark";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_remark.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -1872,5 +1891,21 @@ void NodeHardwareInfo::SetServicesStatus(const string& _servicesStatus)
 bool NodeHardwareInfo::ServicesStatusHasBeenSet() const
 {
     return m_servicesStatusHasBeenSet;
+}
+
+string NodeHardwareInfo::GetRemark() const
+{
+    return m_remark;
+}
+
+void NodeHardwareInfo::SetRemark(const string& _remark)
+{
+    m_remark = _remark;
+    m_remarkHasBeenSet = true;
+}
+
+bool NodeHardwareInfo::RemarkHasBeenSet() const
+{
+    return m_remarkHasBeenSet;
 }
 

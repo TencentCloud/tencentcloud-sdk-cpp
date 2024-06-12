@@ -86,15 +86,35 @@ namespace TencentCloud
                     bool FlowIdsHasBeenSet() const;
 
                     /**
-                     * 获取第三方应用平台的用户openid。 您可登录腾讯电子签控制台，在 "更多能力"->"组织管理" 中查阅某位员工的OpenId。 OpenId必须是传入合同（FlowId）中的签署人。 - 1. 若OpenId为空，Name和Mobile 必须提供。 - 2. 若OpenId 与 Name，Mobile均存在，将优先采用OpenId对应的员工。	
-                     * @return OpenId 第三方应用平台的用户openid。 您可登录腾讯电子签控制台，在 "更多能力"->"组织管理" 中查阅某位员工的OpenId。 OpenId必须是传入合同（FlowId）中的签署人。 - 1. 若OpenId为空，Name和Mobile 必须提供。 - 2. 若OpenId 与 Name，Mobile均存在，将优先采用OpenId对应的员工。	
+                     * 获取第三方应用平台的用户openid。 您可登录腾讯电子签控制台，在 "更多能力"->"组织管理" 中查阅某位员工的OpenId。 OpenId必须是传入合同（FlowId）中的签署人。
+
+<ul>
+<li>1. 若OpenId为空，Name和Mobile 必须提供。</li>
+<li>2. 若OpenId 与 Name，Mobile均存在，将优先采用OpenId对应的员工。	</li>
+</ul>
+                     * @return OpenId 第三方应用平台的用户openid。 您可登录腾讯电子签控制台，在 "更多能力"->"组织管理" 中查阅某位员工的OpenId。 OpenId必须是传入合同（FlowId）中的签署人。
+
+<ul>
+<li>1. 若OpenId为空，Name和Mobile 必须提供。</li>
+<li>2. 若OpenId 与 Name，Mobile均存在，将优先采用OpenId对应的员工。	</li>
+</ul>
                      * 
                      */
                     std::string GetOpenId() const;
 
                     /**
-                     * 设置第三方应用平台的用户openid。 您可登录腾讯电子签控制台，在 "更多能力"->"组织管理" 中查阅某位员工的OpenId。 OpenId必须是传入合同（FlowId）中的签署人。 - 1. 若OpenId为空，Name和Mobile 必须提供。 - 2. 若OpenId 与 Name，Mobile均存在，将优先采用OpenId对应的员工。	
-                     * @param _openId 第三方应用平台的用户openid。 您可登录腾讯电子签控制台，在 "更多能力"->"组织管理" 中查阅某位员工的OpenId。 OpenId必须是传入合同（FlowId）中的签署人。 - 1. 若OpenId为空，Name和Mobile 必须提供。 - 2. 若OpenId 与 Name，Mobile均存在，将优先采用OpenId对应的员工。	
+                     * 设置第三方应用平台的用户openid。 您可登录腾讯电子签控制台，在 "更多能力"->"组织管理" 中查阅某位员工的OpenId。 OpenId必须是传入合同（FlowId）中的签署人。
+
+<ul>
+<li>1. 若OpenId为空，Name和Mobile 必须提供。</li>
+<li>2. 若OpenId 与 Name，Mobile均存在，将优先采用OpenId对应的员工。	</li>
+</ul>
+                     * @param _openId 第三方应用平台的用户openid。 您可登录腾讯电子签控制台，在 "更多能力"->"组织管理" 中查阅某位员工的OpenId。 OpenId必须是传入合同（FlowId）中的签署人。
+
+<ul>
+<li>1. 若OpenId为空，Name和Mobile 必须提供。</li>
+<li>2. 若OpenId 与 Name，Mobile均存在，将优先采用OpenId对应的员工。	</li>
+</ul>
                      * 
                      */
                     void SetOpenId(const std::string& _openId);
@@ -175,7 +195,12 @@ namespace TencentCloud
                     bool m_flowIdsHasBeenSet;
 
                     /**
-                     * 第三方应用平台的用户openid。 您可登录腾讯电子签控制台，在 "更多能力"->"组织管理" 中查阅某位员工的OpenId。 OpenId必须是传入合同（FlowId）中的签署人。 - 1. 若OpenId为空，Name和Mobile 必须提供。 - 2. 若OpenId 与 Name，Mobile均存在，将优先采用OpenId对应的员工。	
+                     * 第三方应用平台的用户openid。 您可登录腾讯电子签控制台，在 "更多能力"->"组织管理" 中查阅某位员工的OpenId。 OpenId必须是传入合同（FlowId）中的签署人。
+
+<ul>
+<li>1. 若OpenId为空，Name和Mobile 必须提供。</li>
+<li>2. 若OpenId 与 Name，Mobile均存在，将优先采用OpenId对应的员工。	</li>
+</ul>
                      */
                     std::string m_openId;
                     bool m_openIdHasBeenSet;

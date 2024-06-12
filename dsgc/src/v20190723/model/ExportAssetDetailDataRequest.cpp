@@ -26,7 +26,8 @@ ExportAssetDetailDataRequest::ExportAssetDetailDataRequest() :
     m_dspaIdHasBeenSet(false),
     m_complianceIdHasBeenSet(false),
     m_metaDataTypeHasBeenSet(false),
-    m_filtersHasBeenSet(false)
+    m_filtersHasBeenSet(false),
+    m_casbIdHasBeenSet(false)
 {
 }
 
@@ -74,6 +75,14 @@ string ExportAssetDetailDataRequest::ToJsonString() const
             d[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
             (*itr).ToJsonObject(d[key.c_str()][i], allocator);
         }
+    }
+
+    if (m_casbIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "CasbId";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_casbId.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -146,6 +155,22 @@ void ExportAssetDetailDataRequest::SetFilters(const vector<Filter>& _filters)
 bool ExportAssetDetailDataRequest::FiltersHasBeenSet() const
 {
     return m_filtersHasBeenSet;
+}
+
+string ExportAssetDetailDataRequest::GetCasbId() const
+{
+    return m_casbId;
+}
+
+void ExportAssetDetailDataRequest::SetCasbId(const string& _casbId)
+{
+    m_casbId = _casbId;
+    m_casbIdHasBeenSet = true;
+}
+
+bool ExportAssetDetailDataRequest::CasbIdHasBeenSet() const
+{
+    return m_casbIdHasBeenSet;
 }
 
 

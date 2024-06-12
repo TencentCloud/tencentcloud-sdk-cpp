@@ -41,6 +41,8 @@
 #include <tencentcloud/emr/v20190103/model/DescribeAutoScaleRecordsResponse.h>
 #include <tencentcloud/emr/v20190103/model/DescribeAutoScaleStrategiesRequest.h>
 #include <tencentcloud/emr/v20190103/model/DescribeAutoScaleStrategiesResponse.h>
+#include <tencentcloud/emr/v20190103/model/DescribeClusterFlowStatusDetailRequest.h>
+#include <tencentcloud/emr/v20190103/model/DescribeClusterFlowStatusDetailResponse.h>
 #include <tencentcloud/emr/v20190103/model/DescribeClusterNodesRequest.h>
 #include <tencentcloud/emr/v20190103/model/DescribeClusterNodesResponse.h>
 #include <tencentcloud/emr/v20190103/model/DescribeCvmQuotaRequest.h>
@@ -150,6 +152,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeAutoScaleStrategiesResponse> DescribeAutoScaleStrategiesOutcome;
                 typedef std::future<DescribeAutoScaleStrategiesOutcome> DescribeAutoScaleStrategiesOutcomeCallable;
                 typedef std::function<void(const EmrClient*, const Model::DescribeAutoScaleStrategiesRequest&, DescribeAutoScaleStrategiesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeAutoScaleStrategiesAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeClusterFlowStatusDetailResponse> DescribeClusterFlowStatusDetailOutcome;
+                typedef std::future<DescribeClusterFlowStatusDetailOutcome> DescribeClusterFlowStatusDetailOutcomeCallable;
+                typedef std::function<void(const EmrClient*, const Model::DescribeClusterFlowStatusDetailRequest&, DescribeClusterFlowStatusDetailOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeClusterFlowStatusDetailAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeClusterNodesResponse> DescribeClusterNodesOutcome;
                 typedef std::future<DescribeClusterNodesOutcome> DescribeClusterNodesOutcomeCallable;
                 typedef std::function<void(const EmrClient*, const Model::DescribeClusterNodesRequest&, DescribeClusterNodesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeClusterNodesAsyncHandler;
@@ -336,6 +341,15 @@ namespace TencentCloud
                 DescribeAutoScaleStrategiesOutcome DescribeAutoScaleStrategies(const Model::DescribeAutoScaleStrategiesRequest &request);
                 void DescribeAutoScaleStrategiesAsync(const Model::DescribeAutoScaleStrategiesRequest& request, const DescribeAutoScaleStrategiesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DescribeAutoScaleStrategiesOutcomeCallable DescribeAutoScaleStrategiesCallable(const Model::DescribeAutoScaleStrategiesRequest& request);
+
+                /**
+                 *查询EMR任务运行详情状态
+                 * @param req DescribeClusterFlowStatusDetailRequest
+                 * @return DescribeClusterFlowStatusDetailOutcome
+                 */
+                DescribeClusterFlowStatusDetailOutcome DescribeClusterFlowStatusDetail(const Model::DescribeClusterFlowStatusDetailRequest &request);
+                void DescribeClusterFlowStatusDetailAsync(const Model::DescribeClusterFlowStatusDetailRequest& request, const DescribeClusterFlowStatusDetailAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeClusterFlowStatusDetailOutcomeCallable DescribeClusterFlowStatusDetailCallable(const Model::DescribeClusterFlowStatusDetailRequest& request);
 
                 /**
                  *查询集群节点信息
