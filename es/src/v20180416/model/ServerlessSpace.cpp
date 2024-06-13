@@ -38,7 +38,8 @@ ServerlessSpace::ServerlessSpace() :
     m_enableKibanaPublicAccessHasBeenSet(false),
     m_enableKibanaPrivateAccessHasBeenSet(false),
     m_appIdHasBeenSet(false),
-    m_kibanaLanguageHasBeenSet(false)
+    m_kibanaLanguageHasBeenSet(false),
+    m_clusterTypeHasBeenSet(false)
 {
 }
 
@@ -251,6 +252,16 @@ CoreInternalOutcome ServerlessSpace::Deserialize(const rapidjson::Value &value)
         m_kibanaLanguageHasBeenSet = true;
     }
 
+    if (value.HasMember("ClusterType") && !value["ClusterType"].IsNull())
+    {
+        if (!value["ClusterType"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `ServerlessSpace.ClusterType` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_clusterType = value["ClusterType"].GetInt64();
+        m_clusterTypeHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -409,6 +420,14 @@ void ServerlessSpace::ToJsonObject(rapidjson::Value &value, rapidjson::Document:
         string key = "KibanaLanguage";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_kibanaLanguage.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_clusterTypeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ClusterType";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_clusterType, allocator);
     }
 
 }
@@ -700,5 +719,21 @@ void ServerlessSpace::SetKibanaLanguage(const string& _kibanaLanguage)
 bool ServerlessSpace::KibanaLanguageHasBeenSet() const
 {
     return m_kibanaLanguageHasBeenSet;
+}
+
+int64_t ServerlessSpace::GetClusterType() const
+{
+    return m_clusterType;
+}
+
+void ServerlessSpace::SetClusterType(const int64_t& _clusterType)
+{
+    m_clusterType = _clusterType;
+    m_clusterTypeHasBeenSet = true;
+}
+
+bool ServerlessSpace::ClusterTypeHasBeenSet() const
+{
+    return m_clusterTypeHasBeenSet;
 }
 

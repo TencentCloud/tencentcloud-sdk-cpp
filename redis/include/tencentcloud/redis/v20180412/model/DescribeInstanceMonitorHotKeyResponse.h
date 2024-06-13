@@ -45,8 +45,8 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取热Key详细信息
-                     * @return Data 热Key详细信息
+                     * 获取热 Key 详细信息。
+                     * @return Data 热 Key 详细信息。
                      * 
                      */
                     std::vector<HotKeyInfo> GetData() const;
@@ -61,7 +61,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 热Key详细信息
+                     * 热 Key 详细信息。
                      */
                     std::vector<HotKeyInfo> m_data;
                     bool m_dataHasBeenSet;

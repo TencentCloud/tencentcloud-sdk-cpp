@@ -21,7 +21,8 @@ using namespace TencentCloud::Mrs::V20200910::Model;
 using namespace std;
 
 TextTypeListBlock::TextTypeListBlock() :
-    m_textTypeListHasBeenSet(false)
+    m_textTypeListHasBeenSet(false),
+    m_pageHasBeenSet(false)
 {
 }
 
@@ -50,6 +51,16 @@ CoreInternalOutcome TextTypeListBlock::Deserialize(const rapidjson::Value &value
         m_textTypeListHasBeenSet = true;
     }
 
+    if (value.HasMember("Page") && !value["Page"].IsNull())
+    {
+        if (!value["Page"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `TextTypeListBlock.Page` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_page = value["Page"].GetInt64();
+        m_pageHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -72,6 +83,14 @@ void TextTypeListBlock::ToJsonObject(rapidjson::Value &value, rapidjson::Documen
         }
     }
 
+    if (m_pageHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Page";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_page, allocator);
+    }
+
 }
 
 
@@ -89,5 +108,21 @@ void TextTypeListBlock::SetTextTypeList(const vector<TextType>& _textTypeList)
 bool TextTypeListBlock::TextTypeListHasBeenSet() const
 {
     return m_textTypeListHasBeenSet;
+}
+
+int64_t TextTypeListBlock::GetPage() const
+{
+    return m_page;
+}
+
+void TextTypeListBlock::SetPage(const int64_t& _page)
+{
+    m_page = _page;
+    m_pageHasBeenSet = true;
+}
+
+bool TextTypeListBlock::PageHasBeenSet() const
+{
+    return m_pageHasBeenSet;
 }
 

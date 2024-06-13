@@ -23,7 +23,9 @@ using namespace TencentCloud::Wedata::V20210820::Model;
 using namespace std;
 
 DescribeTableMetaRequest::DescribeTableMetaRequest() :
-    m_tableIdHasBeenSet(false)
+    m_tableIdHasBeenSet(false),
+    m_tableNameFilterHasBeenSet(false),
+    m_tableFilterTypeHasBeenSet(false)
 {
 }
 
@@ -40,6 +42,23 @@ string DescribeTableMetaRequest::ToJsonString() const
         string key = "TableId";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_tableId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_tableNameFilterHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "TableNameFilter";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_tableNameFilter.ToJsonObject(d[key.c_str()], allocator);
+    }
+
+    if (m_tableFilterTypeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "TableFilterType";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_tableFilterType, allocator);
     }
 
 
@@ -64,6 +83,38 @@ void DescribeTableMetaRequest::SetTableId(const string& _tableId)
 bool DescribeTableMetaRequest::TableIdHasBeenSet() const
 {
     return m_tableIdHasBeenSet;
+}
+
+TableNameFilter DescribeTableMetaRequest::GetTableNameFilter() const
+{
+    return m_tableNameFilter;
+}
+
+void DescribeTableMetaRequest::SetTableNameFilter(const TableNameFilter& _tableNameFilter)
+{
+    m_tableNameFilter = _tableNameFilter;
+    m_tableNameFilterHasBeenSet = true;
+}
+
+bool DescribeTableMetaRequest::TableNameFilterHasBeenSet() const
+{
+    return m_tableNameFilterHasBeenSet;
+}
+
+uint64_t DescribeTableMetaRequest::GetTableFilterType() const
+{
+    return m_tableFilterType;
+}
+
+void DescribeTableMetaRequest::SetTableFilterType(const uint64_t& _tableFilterType)
+{
+    m_tableFilterType = _tableFilterType;
+    m_tableFilterTypeHasBeenSet = true;
+}
+
+bool DescribeTableMetaRequest::TableFilterTypeHasBeenSet() const
+{
+    return m_tableFilterTypeHasBeenSet;
 }
 
 

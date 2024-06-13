@@ -251,6 +251,31 @@ namespace TencentCloud
                      */
                     bool ShareMemberNumHasBeenSet() const;
 
+                    /**
+                     * 获取共享范围。取值：1-仅允许集团组织内共享 2-允许共享给任意账号
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return ShareScope 共享范围。取值：1-仅允许集团组织内共享 2-允许共享给任意账号
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    uint64_t GetShareScope() const;
+
+                    /**
+                     * 设置共享范围。取值：1-仅允许集团组织内共享 2-允许共享给任意账号
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _shareScope 共享范围。取值：1-仅允许集团组织内共享 2-允许共享给任意账号
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetShareScope(const uint64_t& _shareScope);
+
+                    /**
+                     * 判断参数 ShareScope 是否已赋值
+                     * @return ShareScope 是否已赋值
+                     * 
+                     */
+                    bool ShareScopeHasBeenSet() const;
+
                 private:
 
                     /**
@@ -310,6 +335,13 @@ namespace TencentCloud
                      */
                     int64_t m_shareMemberNum;
                     bool m_shareMemberNumHasBeenSet;
+
+                    /**
+                     * 共享范围。取值：1-仅允许集团组织内共享 2-允许共享给任意账号
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    uint64_t m_shareScope;
+                    bool m_shareScopeHasBeenSet;
 
                 };
             }

@@ -22,7 +22,8 @@ using namespace std;
 
 CovidItemsInfo::CovidItemsInfo() :
     m_covidItemsHasBeenSet(false),
-    m_versionHasBeenSet(false)
+    m_versionHasBeenSet(false),
+    m_pageHasBeenSet(false)
 {
 }
 
@@ -61,6 +62,16 @@ CoreInternalOutcome CovidItemsInfo::Deserialize(const rapidjson::Value &value)
         m_versionHasBeenSet = true;
     }
 
+    if (value.HasMember("Page") && !value["Page"].IsNull())
+    {
+        if (!value["Page"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `CovidItemsInfo.Page` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_page = value["Page"].GetInt64();
+        m_pageHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -89,6 +100,14 @@ void CovidItemsInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Document::
         string key = "Version";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_version.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_pageHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Page";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_page, allocator);
     }
 
 }
@@ -124,5 +143,21 @@ void CovidItemsInfo::SetVersion(const string& _version)
 bool CovidItemsInfo::VersionHasBeenSet() const
 {
     return m_versionHasBeenSet;
+}
+
+int64_t CovidItemsInfo::GetPage() const
+{
+    return m_page;
+}
+
+void CovidItemsInfo::SetPage(const int64_t& _page)
+{
+    m_page = _page;
+    m_pageHasBeenSet = true;
+}
+
+bool CovidItemsInfo::PageHasBeenSet() const
+{
+    return m_pageHasBeenSet;
 }
 

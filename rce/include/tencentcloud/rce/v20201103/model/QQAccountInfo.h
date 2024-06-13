@@ -110,19 +110,23 @@ namespace TencentCloud
                     bool AssociateAccountHasBeenSet() const;
 
                     /**
-                     * 获取账号绑定的MD5手机号，
-注释：只支中国大陆11位手机号MD5加密后位的32位小写字符串。
-                     * @return MobilePhone 账号绑定的MD5手机号，
-注释：只支中国大陆11位手机号MD5加密后位的32位小写字符串。
+                     * 获取账号绑定的MD5或SHA256加密的手机号。
+注释：支持标准中国大陆11位手机号MD5加密后位的32位小写字符串；
+     支持标准中国大陆11位手机号SHA256加密后位的64位小写字符串。
+                     * @return MobilePhone 账号绑定的MD5或SHA256加密的手机号。
+注释：支持标准中国大陆11位手机号MD5加密后位的32位小写字符串；
+     支持标准中国大陆11位手机号SHA256加密后位的64位小写字符串。
                      * 
                      */
                     std::string GetMobilePhone() const;
 
                     /**
-                     * 设置账号绑定的MD5手机号，
-注释：只支中国大陆11位手机号MD5加密后位的32位小写字符串。
-                     * @param _mobilePhone 账号绑定的MD5手机号，
-注释：只支中国大陆11位手机号MD5加密后位的32位小写字符串。
+                     * 设置账号绑定的MD5或SHA256加密的手机号。
+注释：支持标准中国大陆11位手机号MD5加密后位的32位小写字符串；
+     支持标准中国大陆11位手机号SHA256加密后位的64位小写字符串。
+                     * @param _mobilePhone 账号绑定的MD5或SHA256加密的手机号。
+注释：支持标准中国大陆11位手机号MD5加密后位的32位小写字符串；
+     支持标准中国大陆11位手机号SHA256加密后位的64位小写字符串。
                      * 
                      */
                     void SetMobilePhone(const std::string& _mobilePhone);
@@ -180,8 +184,9 @@ namespace TencentCloud
                     bool m_associateAccountHasBeenSet;
 
                     /**
-                     * 账号绑定的MD5手机号，
-注释：只支中国大陆11位手机号MD5加密后位的32位小写字符串。
+                     * 账号绑定的MD5或SHA256加密的手机号。
+注释：支持标准中国大陆11位手机号MD5加密后位的32位小写字符串；
+     支持标准中国大陆11位手机号SHA256加密后位的64位小写字符串。
                      */
                     std::string m_mobilePhone;
                     bool m_mobilePhoneHasBeenSet;

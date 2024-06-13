@@ -22,7 +22,8 @@ using namespace std;
 
 Indicator::Indicator() :
     m_indicatorsHasBeenSet(false),
-    m_blockTitleHasBeenSet(false)
+    m_blockTitleHasBeenSet(false),
+    m_pageHasBeenSet(false)
 {
 }
 
@@ -71,6 +72,16 @@ CoreInternalOutcome Indicator::Deserialize(const rapidjson::Value &value)
         m_blockTitleHasBeenSet = true;
     }
 
+    if (value.HasMember("Page") && !value["Page"].IsNull())
+    {
+        if (!value["Page"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `Indicator.Page` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_page = value["Page"].GetInt64();
+        m_pageHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -108,6 +119,14 @@ void Indicator::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Alloc
         }
     }
 
+    if (m_pageHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Page";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_page, allocator);
+    }
+
 }
 
 
@@ -141,5 +160,21 @@ void Indicator::SetBlockTitle(const vector<BlockTitle>& _blockTitle)
 bool Indicator::BlockTitleHasBeenSet() const
 {
     return m_blockTitleHasBeenSet;
+}
+
+int64_t Indicator::GetPage() const
+{
+    return m_page;
+}
+
+void Indicator::SetPage(const int64_t& _page)
+{
+    m_page = _page;
+    m_pageHasBeenSet = true;
+}
+
+bool Indicator::PageHasBeenSet() const
+{
+    return m_pageHasBeenSet;
 }
 

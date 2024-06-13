@@ -28,6 +28,7 @@ AiAnalysisResult::AiAnalysisResult() :
     m_frameTagTaskHasBeenSet(false),
     m_highlightTaskHasBeenSet(false),
     m_deLogoTaskHasBeenSet(false),
+    m_segmentTaskHasBeenSet(false),
     m_headTailTaskHasBeenSet(false),
     m_descriptionTaskHasBeenSet(false)
 {
@@ -150,6 +151,23 @@ CoreInternalOutcome AiAnalysisResult::Deserialize(const rapidjson::Value &value)
         m_deLogoTaskHasBeenSet = true;
     }
 
+    if (value.HasMember("SegmentTask") && !value["SegmentTask"].IsNull())
+    {
+        if (!value["SegmentTask"].IsObject())
+        {
+            return CoreInternalOutcome(Core::Error("response `AiAnalysisResult.SegmentTask` is not object type").SetRequestId(requestId));
+        }
+
+        CoreInternalOutcome outcome = m_segmentTask.Deserialize(value["SegmentTask"]);
+        if (!outcome.IsSuccess())
+        {
+            outcome.GetError().SetRequestId(requestId);
+            return outcome;
+        }
+
+        m_segmentTaskHasBeenSet = true;
+    }
+
     if (value.HasMember("HeadTailTask") && !value["HeadTailTask"].IsNull())
     {
         if (!value["HeadTailTask"].IsObject())
@@ -251,6 +269,15 @@ void AiAnalysisResult::ToJsonObject(rapidjson::Value &value, rapidjson::Document
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
         m_deLogoTask.ToJsonObject(value[key.c_str()], allocator);
+    }
+
+    if (m_segmentTaskHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "SegmentTask";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_segmentTask.ToJsonObject(value[key.c_str()], allocator);
     }
 
     if (m_headTailTaskHasBeenSet)
@@ -384,6 +411,22 @@ void AiAnalysisResult::SetDeLogoTask(const AiAnalysisTaskDelLogoResult& _deLogoT
 bool AiAnalysisResult::DeLogoTaskHasBeenSet() const
 {
     return m_deLogoTaskHasBeenSet;
+}
+
+AiAnalysisTaskSegmentResult AiAnalysisResult::GetSegmentTask() const
+{
+    return m_segmentTask;
+}
+
+void AiAnalysisResult::SetSegmentTask(const AiAnalysisTaskSegmentResult& _segmentTask)
+{
+    m_segmentTask = _segmentTask;
+    m_segmentTaskHasBeenSet = true;
+}
+
+bool AiAnalysisResult::SegmentTaskHasBeenSet() const
+{
+    return m_segmentTaskHasBeenSet;
 }
 
 AiAnalysisTaskHeadTailResult AiAnalysisResult::GetHeadTailTask() const

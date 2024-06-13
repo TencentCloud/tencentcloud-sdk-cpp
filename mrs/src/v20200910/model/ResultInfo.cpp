@@ -22,7 +22,8 @@ using namespace std;
 
 ResultInfo::ResultInfo() :
     m_textHasBeenSet(false),
-    m_itemsHasBeenSet(false)
+    m_itemsHasBeenSet(false),
+    m_pageHasBeenSet(false)
 {
 }
 
@@ -68,6 +69,16 @@ CoreInternalOutcome ResultInfo::Deserialize(const rapidjson::Value &value)
         m_itemsHasBeenSet = true;
     }
 
+    if (value.HasMember("Page") && !value["Page"].IsNull())
+    {
+        if (!value["Page"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `ResultInfo.Page` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_page = value["Page"].GetInt64();
+        m_pageHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -97,6 +108,14 @@ void ResultInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Allo
             value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
             (*itr).ToJsonObject(value[key.c_str()][i], allocator);
         }
+    }
+
+    if (m_pageHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Page";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_page, allocator);
     }
 
 }
@@ -132,5 +151,21 @@ void ResultInfo::SetItems(const vector<BaseInfo>& _items)
 bool ResultInfo::ItemsHasBeenSet() const
 {
     return m_itemsHasBeenSet;
+}
+
+int64_t ResultInfo::GetPage() const
+{
+    return m_page;
+}
+
+void ResultInfo::SetPage(const int64_t& _page)
+{
+    m_page = _page;
+    m_pageHasBeenSet = true;
+}
+
+bool ResultInfo::PageHasBeenSet() const
+{
+    return m_pageHasBeenSet;
 }
 

@@ -1201,6 +1201,56 @@ Modify 集群变更中；
                      */
                     bool UserNetworkInfosHasBeenSet() const;
 
+                    /**
+                     * 获取是否启用冷热分层。0：未开启 1：已开启
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return EnableCoolDown 是否启用冷热分层。0：未开启 1：已开启
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    int64_t GetEnableCoolDown() const;
+
+                    /**
+                     * 设置是否启用冷热分层。0：未开启 1：已开启
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _enableCoolDown 是否启用冷热分层。0：未开启 1：已开启
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetEnableCoolDown(const int64_t& _enableCoolDown);
+
+                    /**
+                     * 判断参数 EnableCoolDown 是否已赋值
+                     * @return EnableCoolDown 是否已赋值
+                     * 
+                     */
+                    bool EnableCoolDownHasBeenSet() const;
+
+                    /**
+                     * 获取冷热分层使用COS桶
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return CoolDownBucket 冷热分层使用COS桶
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::string GetCoolDownBucket() const;
+
+                    /**
+                     * 设置冷热分层使用COS桶
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _coolDownBucket 冷热分层使用COS桶
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetCoolDownBucket(const std::string& _coolDownBucket);
+
+                    /**
+                     * 判断参数 CoolDownBucket 是否已赋值
+                     * @return CoolDownBucket 是否已赋值
+                     * 
+                     */
+                    bool CoolDownBucketHasBeenSet() const;
+
                 private:
 
                     /**
@@ -1524,6 +1574,20 @@ Modify 集群变更中；
                      */
                     std::string m_userNetworkInfos;
                     bool m_userNetworkInfosHasBeenSet;
+
+                    /**
+                     * 是否启用冷热分层。0：未开启 1：已开启
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    int64_t m_enableCoolDown;
+                    bool m_enableCoolDownHasBeenSet;
+
+                    /**
+                     * 冷热分层使用COS桶
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_coolDownBucket;
+                    bool m_coolDownBucketHasBeenSet;
 
                 };
             }

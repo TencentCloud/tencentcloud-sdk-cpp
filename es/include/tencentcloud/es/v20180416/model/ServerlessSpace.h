@@ -479,6 +479,31 @@ namespace TencentCloud
                      */
                     bool KibanaLanguageHasBeenSet() const;
 
+                    /**
+                     * 获取0
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return ClusterType 0
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    int64_t GetClusterType() const;
+
+                    /**
+                     * 设置0
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _clusterType 0
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetClusterType(const int64_t& _clusterType);
+
+                    /**
+                     * 判断参数 ClusterType 是否已赋值
+                     * @return ClusterType 是否已赋值
+                     * 
+                     */
+                    bool ClusterTypeHasBeenSet() const;
+
                 private:
 
                     /**
@@ -601,6 +626,13 @@ namespace TencentCloud
                      */
                     std::string m_kibanaLanguage;
                     bool m_kibanaLanguageHasBeenSet;
+
+                    /**
+                     * 0
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    int64_t m_clusterType;
+                    bool m_clusterTypeHasBeenSet;
 
                 };
             }

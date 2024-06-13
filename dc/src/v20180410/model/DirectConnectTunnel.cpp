@@ -50,7 +50,8 @@ DirectConnectTunnel::DirectConnectTunnel() :
     m_vpcNameHasBeenSet(false),
     m_tencentBackupAddressHasBeenSet(false),
     m_signLawHasBeenSet(false),
-    m_cloudAttachIdHasBeenSet(false)
+    m_cloudAttachIdHasBeenSet(false),
+    m_shareOrNotHasBeenSet(false)
 {
 }
 
@@ -386,6 +387,16 @@ CoreInternalOutcome DirectConnectTunnel::Deserialize(const rapidjson::Value &val
         m_cloudAttachIdHasBeenSet = true;
     }
 
+    if (value.HasMember("ShareOrNot") && !value["ShareOrNot"].IsNull())
+    {
+        if (!value["ShareOrNot"].IsUint64())
+        {
+            return CoreInternalOutcome(Core::Error("response `DirectConnectTunnel.ShareOrNot` IsUint64=false incorrectly").SetRequestId(requestId));
+        }
+        m_shareOrNot = value["ShareOrNot"].GetUint64();
+        m_shareOrNotHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -646,6 +657,14 @@ void DirectConnectTunnel::ToJsonObject(rapidjson::Value &value, rapidjson::Docum
         string key = "CloudAttachId";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_cloudAttachId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_shareOrNotHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ShareOrNot";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_shareOrNot, allocator);
     }
 
 }
@@ -1129,5 +1148,21 @@ void DirectConnectTunnel::SetCloudAttachId(const string& _cloudAttachId)
 bool DirectConnectTunnel::CloudAttachIdHasBeenSet() const
 {
     return m_cloudAttachIdHasBeenSet;
+}
+
+uint64_t DirectConnectTunnel::GetShareOrNot() const
+{
+    return m_shareOrNot;
+}
+
+void DirectConnectTunnel::SetShareOrNot(const uint64_t& _shareOrNot)
+{
+    m_shareOrNot = _shareOrNot;
+    m_shareOrNotHasBeenSet = true;
+}
+
+bool DirectConnectTunnel::ShareOrNotHasBeenSet() const
+{
+    return m_shareOrNotHasBeenSet;
 }
 

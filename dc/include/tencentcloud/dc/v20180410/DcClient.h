@@ -223,7 +223,7 @@ namespace TencentCloud
                 DescribeDirectConnectTunnelExtraOutcomeCallable DescribeDirectConnectTunnelExtraCallable(const Model::DescribeDirectConnectTunnelExtraRequest& request);
 
                 /**
-                 *用于查询专用通道列表。
+                 *查询专用通道列表。
                  * @param req DescribeDirectConnectTunnelsRequest
                  * @return DescribeDirectConnectTunnelsOutcome
                  */

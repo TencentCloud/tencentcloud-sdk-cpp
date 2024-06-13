@@ -23,6 +23,7 @@
 #include <tencentcloud/core/AbstractModel.h>
 #include <tencentcloud/essbasic/v20210526/model/Agent.h>
 #include <tencentcloud/essbasic/v20210526/model/UserInfo.h>
+#include <tencentcloud/essbasic/v20210526/model/EmbedUrlOption.h>
 
 
 namespace TencentCloud
@@ -314,6 +315,27 @@ namespace TencentCloud
                      */
                     bool UserDataHasBeenSet() const;
 
+                    /**
+                     * 获取个性化参数，用于控制页面展示内容
+                     * @return Option 个性化参数，用于控制页面展示内容
+                     * 
+                     */
+                    EmbedUrlOption GetOption() const;
+
+                    /**
+                     * 设置个性化参数，用于控制页面展示内容
+                     * @param _option 个性化参数，用于控制页面展示内容
+                     * 
+                     */
+                    void SetOption(const EmbedUrlOption& _option);
+
+                    /**
+                     * 判断参数 Option 是否已赋值
+                     * @return Option 是否已赋值
+                     * 
+                     */
+                    bool OptionHasBeenSet() const;
+
                 private:
 
                     /**
@@ -387,6 +409,12 @@ namespace TencentCloud
                      */
                     std::string m_userData;
                     bool m_userDataHasBeenSet;
+
+                    /**
+                     * 个性化参数，用于控制页面展示内容
+                     */
+                    EmbedUrlOption m_option;
+                    bool m_optionHasBeenSet;
 
                 };
             }

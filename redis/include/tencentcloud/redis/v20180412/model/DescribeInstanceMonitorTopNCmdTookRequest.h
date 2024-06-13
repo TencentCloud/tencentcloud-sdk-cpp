@@ -43,15 +43,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取实例ID
-                     * @return InstanceId 实例ID
+                     * 获取实例 ID。
+                     * @return InstanceId 实例 ID。
                      * 
                      */
                     std::string GetInstanceId() const;
 
                     /**
-                     * 设置实例ID
-                     * @param _instanceId 实例ID
+                     * 设置实例 ID。
+                     * @param _instanceId 实例 ID。
                      * 
                      */
                     void SetInstanceId(const std::string& _instanceId);
@@ -64,15 +64,31 @@ namespace TencentCloud
                     bool InstanceIdHasBeenSet() const;
 
                     /**
-                     * 获取时间范围：1——实时，2——近30分钟，3——近6小时，4——近24小时
-                     * @return SpanType 时间范围：1——实时，2——近30分钟，3——近6小时，4——近24小时
+                     * 获取查询时间范围。
+- 1：实时。
+- 2：近30分钟。
+- 3：近6小时。
+- 4：近24小时。
+                     * @return SpanType 查询时间范围。
+- 1：实时。
+- 2：近30分钟。
+- 3：近6小时。
+- 4：近24小时。
                      * 
                      */
                     int64_t GetSpanType() const;
 
                     /**
-                     * 设置时间范围：1——实时，2——近30分钟，3——近6小时，4——近24小时
-                     * @param _spanType 时间范围：1——实时，2——近30分钟，3——近6小时，4——近24小时
+                     * 设置查询时间范围。
+- 1：实时。
+- 2：近30分钟。
+- 3：近6小时。
+- 4：近24小时。
+                     * @param _spanType 查询时间范围。
+- 1：实时。
+- 2：近30分钟。
+- 3：近6小时。
+- 4：近24小时。
                      * 
                      */
                     void SetSpanType(const int64_t& _spanType);
@@ -87,13 +103,17 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 实例ID
+                     * 实例 ID。
                      */
                     std::string m_instanceId;
                     bool m_instanceIdHasBeenSet;
 
                     /**
-                     * 时间范围：1——实时，2——近30分钟，3——近6小时，4——近24小时
+                     * 查询时间范围。
+- 1：实时。
+- 2：近30分钟。
+- 3：近6小时。
+- 4：近24小时。
                      */
                     int64_t m_spanType;
                     bool m_spanTypeHasBeenSet;

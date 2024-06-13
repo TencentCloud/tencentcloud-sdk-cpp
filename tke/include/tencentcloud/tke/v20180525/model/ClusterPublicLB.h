@@ -48,14 +48,18 @@ namespace TencentCloud
 
                     /**
                      * 获取是否开启公网访问LB
+注意：此字段可能返回 null，表示取不到有效值。
                      * @return Enabled 是否开启公网访问LB
+注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     bool GetEnabled() const;
 
                     /**
                      * 设置是否开启公网访问LB
+注意：此字段可能返回 null，表示取不到有效值。
                      * @param _enabled 是否开启公网访问LB
+注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetEnabled(const bool& _enabled);
@@ -69,14 +73,18 @@ namespace TencentCloud
 
                     /**
                      * 获取允许访问的来源CIDR列表
+注意：此字段可能返回 null，表示取不到有效值。
                      * @return AllowFromCidrs 允许访问的来源CIDR列表
+注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<std::string> GetAllowFromCidrs() const;
 
                     /**
                      * 设置允许访问的来源CIDR列表
+注意：此字段可能返回 null，表示取不到有效值。
                      * @param _allowFromCidrs 允许访问的来源CIDR列表
+注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetAllowFromCidrs(const std::vector<std::string>& _allowFromCidrs);
@@ -90,14 +98,18 @@ namespace TencentCloud
 
                     /**
                      * 获取安全策略放通单个IP或CIDR(例如: "192.168.1.0/24",默认为拒绝所有)
+注意：此字段可能返回 null，表示取不到有效值。
                      * @return SecurityPolicies 安全策略放通单个IP或CIDR(例如: "192.168.1.0/24",默认为拒绝所有)
+注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<std::string> GetSecurityPolicies() const;
 
                     /**
                      * 设置安全策略放通单个IP或CIDR(例如: "192.168.1.0/24",默认为拒绝所有)
+注意：此字段可能返回 null，表示取不到有效值。
                      * @param _securityPolicies 安全策略放通单个IP或CIDR(例如: "192.168.1.0/24",默认为拒绝所有)
+注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetSecurityPolicies(const std::vector<std::string>& _securityPolicies);
@@ -111,14 +123,18 @@ namespace TencentCloud
 
                     /**
                      * 获取外网访问相关的扩展参数，格式为json
+注意：此字段可能返回 null，表示取不到有效值。
                      * @return ExtraParam 外网访问相关的扩展参数，格式为json
+注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetExtraParam() const;
 
                     /**
                      * 设置外网访问相关的扩展参数，格式为json
+注意：此字段可能返回 null，表示取不到有效值。
                      * @param _extraParam 外网访问相关的扩展参数，格式为json
+注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetExtraParam(const std::string& _extraParam);
@@ -132,14 +148,18 @@ namespace TencentCloud
 
                     /**
                      * 获取新内外网功能，需要传递安全组
+注意：此字段可能返回 null，表示取不到有效值。
                      * @return SecurityGroup 新内外网功能，需要传递安全组
+注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetSecurityGroup() const;
 
                     /**
                      * 设置新内外网功能，需要传递安全组
+注意：此字段可能返回 null，表示取不到有效值。
                      * @param _securityGroup 新内外网功能，需要传递安全组
+注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetSecurityGroup(const std::string& _securityGroup);
@@ -155,30 +175,35 @@ namespace TencentCloud
 
                     /**
                      * 是否开启公网访问LB
+注意：此字段可能返回 null，表示取不到有效值。
                      */
                     bool m_enabled;
                     bool m_enabledHasBeenSet;
 
                     /**
                      * 允许访问的来源CIDR列表
+注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<std::string> m_allowFromCidrs;
                     bool m_allowFromCidrsHasBeenSet;
 
                     /**
                      * 安全策略放通单个IP或CIDR(例如: "192.168.1.0/24",默认为拒绝所有)
+注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<std::string> m_securityPolicies;
                     bool m_securityPoliciesHasBeenSet;
 
                     /**
                      * 外网访问相关的扩展参数，格式为json
+注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_extraParam;
                     bool m_extraParamHasBeenSet;
 
                     /**
                      * 新内外网功能，需要传递安全组
+注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_securityGroup;
                     bool m_securityGroupHasBeenSet;

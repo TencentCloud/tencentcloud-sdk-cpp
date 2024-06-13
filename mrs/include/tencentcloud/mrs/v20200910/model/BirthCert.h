@@ -149,6 +149,31 @@ namespace TencentCloud
                      */
                     bool IssueInfoHasBeenSet() const;
 
+                    /**
+                     * 获取数据在原PDF文件中的第几页
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return Page 数据在原PDF文件中的第几页
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    int64_t GetPage() const;
+
+                    /**
+                     * 设置数据在原PDF文件中的第几页
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _page 数据在原PDF文件中的第几页
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetPage(const int64_t& _page);
+
+                    /**
+                     * 判断参数 Page 是否已赋值
+                     * @return Page 是否已赋值
+                     * 
+                     */
+                    bool PageHasBeenSet() const;
+
                 private:
 
                     /**
@@ -178,6 +203,13 @@ namespace TencentCloud
                      */
                     IssueInfo m_issueInfo;
                     bool m_issueInfoHasBeenSet;
+
+                    /**
+                     * 数据在原PDF文件中的第几页
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    int64_t m_page;
+                    bool m_pageHasBeenSet;
 
                 };
             }

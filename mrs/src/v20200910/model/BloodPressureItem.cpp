@@ -26,7 +26,8 @@ BloodPressureItem::BloodPressureItem() :
     m_resultHasBeenSet(false),
     m_unitHasBeenSet(false),
     m_timesHasBeenSet(false),
-    m_locationHasBeenSet(false)
+    m_locationHasBeenSet(false),
+    m_pageHasBeenSet(false)
 {
 }
 
@@ -130,6 +131,16 @@ CoreInternalOutcome BloodPressureItem::Deserialize(const rapidjson::Value &value
         m_locationHasBeenSet = true;
     }
 
+    if (value.HasMember("Page") && !value["Page"].IsNull())
+    {
+        if (!value["Page"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `BloodPressureItem.Page` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_page = value["Page"].GetInt64();
+        m_pageHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -188,6 +199,14 @@ void BloodPressureItem::ToJsonObject(rapidjson::Value &value, rapidjson::Documen
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
         m_location.ToJsonObject(value[key.c_str()], allocator);
+    }
+
+    if (m_pageHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Page";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_page, allocator);
     }
 
 }
@@ -287,5 +306,21 @@ void BloodPressureItem::SetLocation(const PhysicalBaseItem& _location)
 bool BloodPressureItem::LocationHasBeenSet() const
 {
     return m_locationHasBeenSet;
+}
+
+int64_t BloodPressureItem::GetPage() const
+{
+    return m_page;
+}
+
+void BloodPressureItem::SetPage(const int64_t& _page)
+{
+    m_page = _page;
+    m_pageHasBeenSet = true;
+}
+
+bool BloodPressureItem::PageHasBeenSet() const
+{
+    return m_pageHasBeenSet;
 }
 

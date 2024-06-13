@@ -47,15 +47,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取命令
-                     * @return Cmd 命令
+                     * 获取命令名称。
+                     * @return Cmd 命令名称。
                      * 
                      */
                     std::string GetCmd() const;
 
                     /**
-                     * 设置命令
-                     * @param _cmd 命令
+                     * 设置命令名称。
+                     * @param _cmd 命令名称。
                      * 
                      */
                     void SetCmd(const std::string& _cmd);
@@ -68,15 +68,15 @@ namespace TencentCloud
                     bool CmdHasBeenSet() const;
 
                     /**
-                     * 获取执行次数
-                     * @return Count 执行次数
+                     * 获取执行次数。
+                     * @return Count 执行次数。
                      * 
                      */
                     int64_t GetCount() const;
 
                     /**
-                     * 设置执行次数
-                     * @param _count 执行次数
+                     * 设置执行次数。
+                     * @param _count 执行次数。
                      * 
                      */
                     void SetCount(const int64_t& _count);
@@ -91,13 +91,13 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 命令
+                     * 命令名称。
                      */
                     std::string m_cmd;
                     bool m_cmdHasBeenSet;
 
                     /**
-                     * 执行次数
+                     * 执行次数。
                      */
                     int64_t m_count;
                     bool m_countHasBeenSet;

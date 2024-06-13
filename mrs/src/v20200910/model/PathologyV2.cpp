@@ -34,7 +34,8 @@ PathologyV2::PathologyV2() :
     m_benigntumorHasBeenSet(false),
     m_sampleTypeHasBeenSet(false),
     m_lymphSizeHasBeenSet(false),
-    m_molecularHasBeenSet(false)
+    m_molecularHasBeenSet(false),
+    m_pageHasBeenSet(false)
 {
 }
 
@@ -289,6 +290,16 @@ CoreInternalOutcome PathologyV2::Deserialize(const rapidjson::Value &value)
         m_molecularHasBeenSet = true;
     }
 
+    if (value.HasMember("Page") && !value["Page"].IsNull())
+    {
+        if (!value["Page"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `PathologyV2.Page` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_page = value["Page"].GetInt64();
+        m_pageHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -449,6 +460,14 @@ void PathologyV2::ToJsonObject(rapidjson::Value &value, rapidjson::Document::All
             value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
             (*itr).ToJsonObject(value[key.c_str()][i], allocator);
         }
+    }
+
+    if (m_pageHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Page";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_page, allocator);
     }
 
 }
@@ -676,5 +695,21 @@ void PathologyV2::SetMolecular(const vector<Molecular>& _molecular)
 bool PathologyV2::MolecularHasBeenSet() const
 {
     return m_molecularHasBeenSet;
+}
+
+int64_t PathologyV2::GetPage() const
+{
+    return m_page;
+}
+
+void PathologyV2::SetPage(const int64_t& _page)
+{
+    m_page = _page;
+    m_pageHasBeenSet = true;
+}
+
+bool PathologyV2::PageHasBeenSet() const
+{
+    return m_pageHasBeenSet;
 }
 

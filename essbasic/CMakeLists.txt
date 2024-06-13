@@ -353,6 +353,7 @@ set(essbasic_public_header_model
   include/tencentcloud/essbasic/v20210526/model/UploadFilesRequest.h
   include/tencentcloud/essbasic/v20210526/model/DescribeChannelOrganizationsResponse.h
   include/tencentcloud/essbasic/v20210526/model/ChannelCreateOrganizationBatchSignUrlResponse.h
+  include/tencentcloud/essbasic/v20210526/model/EmbedUrlOption.h
   include/tencentcloud/essbasic/v20210526/model/UsageDetail.h
   include/tencentcloud/essbasic/v20210526/model/ChannelCreateBatchCancelFlowUrlResponse.h
   include/tencentcloud/essbasic/v20210526/model/OperateChannelTemplateRequest.h
@@ -710,6 +711,7 @@ set(essbasic_src
   src/v20210526/model/UploadFilesRequest.cpp
   src/v20210526/model/DescribeChannelOrganizationsResponse.cpp
   src/v20210526/model/ChannelCreateOrganizationBatchSignUrlResponse.cpp
+  src/v20210526/model/EmbedUrlOption.cpp
   src/v20210526/model/UsageDetail.cpp
   src/v20210526/model/ChannelCreateBatchCancelFlowUrlResponse.cpp
   src/v20210526/model/OperateChannelTemplateRequest.cpp

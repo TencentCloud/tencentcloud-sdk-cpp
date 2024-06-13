@@ -21,6 +21,7 @@
 #include <vector>
 #include <map>
 #include <tencentcloud/core/AbstractModel.h>
+#include <tencentcloud/wedata/v20210820/model/TableNameFilter.h>
 
 
 namespace TencentCloud
@@ -63,6 +64,48 @@ namespace TencentCloud
                      */
                     bool TableIdHasBeenSet() const;
 
+                    /**
+                     * 获取按名称查询的条件
+                     * @return TableNameFilter 按名称查询的条件
+                     * 
+                     */
+                    TableNameFilter GetTableNameFilter() const;
+
+                    /**
+                     * 设置按名称查询的条件
+                     * @param _tableNameFilter 按名称查询的条件
+                     * 
+                     */
+                    void SetTableNameFilter(const TableNameFilter& _tableNameFilter);
+
+                    /**
+                     * 判断参数 TableNameFilter 是否已赋值
+                     * @return TableNameFilter 是否已赋值
+                     * 
+                     */
+                    bool TableNameFilterHasBeenSet() const;
+
+                    /**
+                     * 获取查询条件类型0按id，1按名称，默认为0
+                     * @return TableFilterType 查询条件类型0按id，1按名称，默认为0
+                     * 
+                     */
+                    uint64_t GetTableFilterType() const;
+
+                    /**
+                     * 设置查询条件类型0按id，1按名称，默认为0
+                     * @param _tableFilterType 查询条件类型0按id，1按名称，默认为0
+                     * 
+                     */
+                    void SetTableFilterType(const uint64_t& _tableFilterType);
+
+                    /**
+                     * 判断参数 TableFilterType 是否已赋值
+                     * @return TableFilterType 是否已赋值
+                     * 
+                     */
+                    bool TableFilterTypeHasBeenSet() const;
+
                 private:
 
                     /**
@@ -70,6 +113,18 @@ namespace TencentCloud
                      */
                     std::string m_tableId;
                     bool m_tableIdHasBeenSet;
+
+                    /**
+                     * 按名称查询的条件
+                     */
+                    TableNameFilter m_tableNameFilter;
+                    bool m_tableNameFilterHasBeenSet;
+
+                    /**
+                     * 查询条件类型0按id，1按名称，默认为0
+                     */
+                    uint64_t m_tableFilterType;
+                    bool m_tableFilterTypeHasBeenSet;
 
                 };
             }

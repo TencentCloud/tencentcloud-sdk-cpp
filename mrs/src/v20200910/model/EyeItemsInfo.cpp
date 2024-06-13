@@ -22,7 +22,8 @@ using namespace std;
 
 EyeItemsInfo::EyeItemsInfo() :
     m_eyeItemsHasBeenSet(false),
-    m_versionHasBeenSet(false)
+    m_versionHasBeenSet(false),
+    m_pageHasBeenSet(false)
 {
 }
 
@@ -58,6 +59,16 @@ CoreInternalOutcome EyeItemsInfo::Deserialize(const rapidjson::Value &value)
         m_versionHasBeenSet = true;
     }
 
+    if (value.HasMember("Page") && !value["Page"].IsNull())
+    {
+        if (!value["Page"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `EyeItemsInfo.Page` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_page = value["Page"].GetInt64();
+        m_pageHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -80,6 +91,14 @@ void EyeItemsInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Al
         string key = "Version";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_version.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_pageHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Page";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_page, allocator);
     }
 
 }
@@ -115,5 +134,21 @@ void EyeItemsInfo::SetVersion(const string& _version)
 bool EyeItemsInfo::VersionHasBeenSet() const
 {
     return m_versionHasBeenSet;
+}
+
+int64_t EyeItemsInfo::GetPage() const
+{
+    return m_page;
+}
+
+void EyeItemsInfo::SetPage(const int64_t& _page)
+{
+    m_page = _page;
+    m_pageHasBeenSet = true;
+}
+
+bool EyeItemsInfo::PageHasBeenSet() const
+{
+    return m_pageHasBeenSet;
 }
 

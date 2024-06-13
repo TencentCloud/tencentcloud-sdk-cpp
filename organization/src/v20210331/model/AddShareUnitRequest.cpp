@@ -25,7 +25,8 @@ using namespace std;
 AddShareUnitRequest::AddShareUnitRequest() :
     m_nameHasBeenSet(false),
     m_areaHasBeenSet(false),
-    m_descriptionHasBeenSet(false)
+    m_descriptionHasBeenSet(false),
+    m_shareScopeHasBeenSet(false)
 {
 }
 
@@ -58,6 +59,14 @@ string AddShareUnitRequest::ToJsonString() const
         string key = "Description";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_description.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_shareScopeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ShareScope";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_shareScope, allocator);
     }
 
 
@@ -114,6 +123,22 @@ void AddShareUnitRequest::SetDescription(const string& _description)
 bool AddShareUnitRequest::DescriptionHasBeenSet() const
 {
     return m_descriptionHasBeenSet;
+}
+
+uint64_t AddShareUnitRequest::GetShareScope() const
+{
+    return m_shareScope;
+}
+
+void AddShareUnitRequest::SetShareScope(const uint64_t& _shareScope)
+{
+    m_shareScope = _shareScope;
+    m_shareScopeHasBeenSet = true;
+}
+
+bool AddShareUnitRequest::ShareScopeHasBeenSet() const
+{
+    return m_shareScopeHasBeenSet;
 }
 
 

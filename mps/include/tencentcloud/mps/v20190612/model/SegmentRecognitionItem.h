@@ -134,6 +134,56 @@ namespace TencentCloud
                      */
                     bool SegmentUrlHasBeenSet() const;
 
+                    /**
+                     * 获取分段标题。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return Title 分段标题。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::string GetTitle() const;
+
+                    /**
+                     * 设置分段标题。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _title 分段标题。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetTitle(const std::string& _title);
+
+                    /**
+                     * 判断参数 Title 是否已赋值
+                     * @return Title 是否已赋值
+                     * 
+                     */
+                    bool TitleHasBeenSet() const;
+
+                    /**
+                     * 获取分段概要。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return Summary 分段概要。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::string GetSummary() const;
+
+                    /**
+                     * 设置分段概要。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _summary 分段概要。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetSummary(const std::string& _summary);
+
+                    /**
+                     * 判断参数 Summary 是否已赋值
+                     * @return Summary 是否已赋值
+                     * 
+                     */
+                    bool SummaryHasBeenSet() const;
+
                 private:
 
                     /**
@@ -160,6 +210,20 @@ namespace TencentCloud
                      */
                     std::string m_segmentUrl;
                     bool m_segmentUrlHasBeenSet;
+
+                    /**
+                     * 分段标题。
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_title;
+                    bool m_titleHasBeenSet;
+
+                    /**
+                     * 分段概要。
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_summary;
+                    bool m_summaryHasBeenSet;
 
                 };
             }

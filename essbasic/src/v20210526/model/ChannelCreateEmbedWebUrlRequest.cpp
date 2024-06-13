@@ -28,7 +28,8 @@ ChannelCreateEmbedWebUrlRequest::ChannelCreateEmbedWebUrlRequest() :
     m_businessIdHasBeenSet(false),
     m_hiddenComponentsHasBeenSet(false),
     m_operatorHasBeenSet(false),
-    m_userDataHasBeenSet(false)
+    m_userDataHasBeenSet(false),
+    m_optionHasBeenSet(false)
 {
 }
 
@@ -87,6 +88,15 @@ string ChannelCreateEmbedWebUrlRequest::ToJsonString() const
         string key = "UserData";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_userData.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_optionHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Option";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_option.ToJsonObject(d[key.c_str()], allocator);
     }
 
 
@@ -191,6 +201,22 @@ void ChannelCreateEmbedWebUrlRequest::SetUserData(const string& _userData)
 bool ChannelCreateEmbedWebUrlRequest::UserDataHasBeenSet() const
 {
     return m_userDataHasBeenSet;
+}
+
+EmbedUrlOption ChannelCreateEmbedWebUrlRequest::GetOption() const
+{
+    return m_option;
+}
+
+void ChannelCreateEmbedWebUrlRequest::SetOption(const EmbedUrlOption& _option)
+{
+    m_option = _option;
+    m_optionHasBeenSet = true;
+}
+
+bool ChannelCreateEmbedWebUrlRequest::OptionHasBeenSet() const
+{
+    return m_optionHasBeenSet;
 }
 
 

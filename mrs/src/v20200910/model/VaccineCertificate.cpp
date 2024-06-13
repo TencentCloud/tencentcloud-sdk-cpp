@@ -21,7 +21,8 @@ using namespace TencentCloud::Mrs::V20200910::Model;
 using namespace std;
 
 VaccineCertificate::VaccineCertificate() :
-    m_vaccineListHasBeenSet(false)
+    m_vaccineListHasBeenSet(false),
+    m_pageHasBeenSet(false)
 {
 }
 
@@ -50,6 +51,16 @@ CoreInternalOutcome VaccineCertificate::Deserialize(const rapidjson::Value &valu
         m_vaccineListHasBeenSet = true;
     }
 
+    if (value.HasMember("Page") && !value["Page"].IsNull())
+    {
+        if (!value["Page"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `VaccineCertificate.Page` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_page = value["Page"].GetInt64();
+        m_pageHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -72,6 +83,14 @@ void VaccineCertificate::ToJsonObject(rapidjson::Value &value, rapidjson::Docume
         }
     }
 
+    if (m_pageHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Page";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_page, allocator);
+    }
+
 }
 
 
@@ -89,5 +108,21 @@ void VaccineCertificate::SetVaccineList(const vector<Vaccination>& _vaccineList)
 bool VaccineCertificate::VaccineListHasBeenSet() const
 {
     return m_vaccineListHasBeenSet;
+}
+
+int64_t VaccineCertificate::GetPage() const
+{
+    return m_page;
+}
+
+void VaccineCertificate::SetPage(const int64_t& _page)
+{
+    m_page = _page;
+    m_pageHasBeenSet = true;
+}
+
+bool VaccineCertificate::PageHasBeenSet() const
+{
+    return m_pageHasBeenSet;
 }
 

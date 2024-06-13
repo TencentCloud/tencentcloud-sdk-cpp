@@ -48,14 +48,18 @@ namespace TencentCloud
 
                     /**
                      * 获取用户侧BGP ASN
+注意：此字段可能返回 null，表示取不到有效值。
                      * @return Asn 用户侧BGP ASN
+注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetAsn() const;
 
                     /**
                      * 设置用户侧BGP ASN
+注意：此字段可能返回 null，表示取不到有效值。
                      * @param _asn 用户侧BGP ASN
+注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetAsn(const int64_t& _asn);
@@ -69,14 +73,18 @@ namespace TencentCloud
 
                     /**
                      * 获取用户侧BGP密钥
+注意：此字段可能返回 null，表示取不到有效值。
                      * @return AuthKey 用户侧BGP密钥
+注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetAuthKey() const;
 
                     /**
                      * 设置用户侧BGP密钥
+注意：此字段可能返回 null，表示取不到有效值。
                      * @param _authKey 用户侧BGP密钥
+注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetAuthKey(const std::string& _authKey);
@@ -92,12 +100,14 @@ namespace TencentCloud
 
                     /**
                      * 用户侧BGP ASN
+注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_asn;
                     bool m_asnHasBeenSet;
 
                     /**
                      * 用户侧BGP密钥
+注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_authKey;
                     bool m_authKeyHasBeenSet;

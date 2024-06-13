@@ -3058,7 +3058,7 @@ namespace TencentCloud
                 UpdateClusterVersionOutcomeCallable UpdateClusterVersionCallable(const Model::UpdateClusterVersionRequest& request);
 
                 /**
-                 *修改弹性集群名称等属性 
+                 *修改弹性集群名称等属性
                  * @param req UpdateEKSClusterRequest
                  * @return UpdateEKSClusterOutcome
                  */

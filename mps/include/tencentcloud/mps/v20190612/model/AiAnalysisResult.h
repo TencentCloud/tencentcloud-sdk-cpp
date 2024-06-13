@@ -30,6 +30,7 @@
 #include <tencentcloud/mps/v20190612/model/AiAnalysisTaskFrameTagResult.h>
 #include <tencentcloud/mps/v20190612/model/AiAnalysisTaskHighlightResult.h>
 #include <tencentcloud/mps/v20190612/model/AiAnalysisTaskDelLogoResult.h>
+#include <tencentcloud/mps/v20190612/model/AiAnalysisTaskSegmentResult.h>
 #include <tencentcloud/mps/v20190612/model/AiAnalysisTaskHeadTailResult.h>
 #include <tencentcloud/mps/v20190612/model/AiAnalysisTaskDescriptionResult.h>
 
@@ -254,6 +255,31 @@ namespace TencentCloud
                     bool DeLogoTaskHasBeenSet() const;
 
                     /**
+                     * 获取视频内容分析拆条任务的查询结果，当任务类型为 SegmentRecognition 时有效。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return SegmentTask 视频内容分析拆条任务的查询结果，当任务类型为 SegmentRecognition 时有效。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    AiAnalysisTaskSegmentResult GetSegmentTask() const;
+
+                    /**
+                     * 设置视频内容分析拆条任务的查询结果，当任务类型为 SegmentRecognition 时有效。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _segmentTask 视频内容分析拆条任务的查询结果，当任务类型为 SegmentRecognition 时有效。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetSegmentTask(const AiAnalysisTaskSegmentResult& _segmentTask);
+
+                    /**
+                     * 判断参数 SegmentTask 是否已赋值
+                     * @return SegmentTask 是否已赋值
+                     * 
+                     */
+                    bool SegmentTaskHasBeenSet() const;
+
+                    /**
                      * 获取视频内容分析片头片尾任务的查询结果，当任务类型为 HeadTailRecognition 时有效。
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return HeadTailTask 视频内容分析片头片尾任务的查询结果，当任务类型为 HeadTailRecognition 时有效。
@@ -359,6 +385,13 @@ namespace TencentCloud
                      */
                     AiAnalysisTaskDelLogoResult m_deLogoTask;
                     bool m_deLogoTaskHasBeenSet;
+
+                    /**
+                     * 视频内容分析拆条任务的查询结果，当任务类型为 SegmentRecognition 时有效。
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    AiAnalysisTaskSegmentResult m_segmentTask;
+                    bool m_segmentTaskHasBeenSet;
 
                     /**
                      * 视频内容分析片头片尾任务的查询结果，当任务类型为 HeadTailRecognition 时有效。

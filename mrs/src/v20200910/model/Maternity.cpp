@@ -23,7 +23,8 @@ using namespace std;
 Maternity::Maternity() :
     m_descHasBeenSet(false),
     m_summaryHasBeenSet(false),
-    m_ocrTextHasBeenSet(false)
+    m_ocrTextHasBeenSet(false),
+    m_pageHasBeenSet(false)
 {
 }
 
@@ -76,6 +77,16 @@ CoreInternalOutcome Maternity::Deserialize(const rapidjson::Value &value)
         m_ocrTextHasBeenSet = true;
     }
 
+    if (value.HasMember("Page") && !value["Page"].IsNull())
+    {
+        if (!value["Page"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `Maternity.Page` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_page = value["Page"].GetInt64();
+        m_pageHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -107,6 +118,14 @@ void Maternity::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Alloc
         string key = "OcrText";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_ocrText.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_pageHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Page";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_page, allocator);
     }
 
 }
@@ -158,5 +177,21 @@ void Maternity::SetOcrText(const string& _ocrText)
 bool Maternity::OcrTextHasBeenSet() const
 {
     return m_ocrTextHasBeenSet;
+}
+
+int64_t Maternity::GetPage() const
+{
+    return m_page;
+}
+
+void Maternity::SetPage(const int64_t& _page)
+{
+    m_page = _page;
+    m_pageHasBeenSet = true;
+}
+
+bool Maternity::PageHasBeenSet() const
+{
+    return m_pageHasBeenSet;
 }
 

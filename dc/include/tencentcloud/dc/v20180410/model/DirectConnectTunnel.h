@@ -763,6 +763,31 @@ REJECTED:拒绝
                      */
                     bool CloudAttachIdHasBeenSet() const;
 
+                    /**
+                     * 获取是否共享通道
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return ShareOrNot 是否共享通道
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    uint64_t GetShareOrNot() const;
+
+                    /**
+                     * 设置是否共享通道
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _shareOrNot 是否共享通道
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetShareOrNot(const uint64_t& _shareOrNot);
+
+                    /**
+                     * 判断参数 ShareOrNot 是否已赋值
+                     * @return ShareOrNot 是否已赋值
+                     * 
+                     */
+                    bool ShareOrNotHasBeenSet() const;
+
                 private:
 
                     /**
@@ -965,6 +990,13 @@ REJECTED:拒绝
                      */
                     std::string m_cloudAttachId;
                     bool m_cloudAttachIdHasBeenSet;
+
+                    /**
+                     * 是否共享通道
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    uint64_t m_shareOrNot;
+                    bool m_shareOrNotHasBeenSet;
 
                 };
             }

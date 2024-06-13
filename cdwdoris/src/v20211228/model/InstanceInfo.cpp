@@ -65,7 +65,9 @@ InstanceInfo::InstanceInfo() :
     m_isWhiteSGsHasBeenSet(false),
     m_bindSGsHasBeenSet(false),
     m_enableMultiZonesHasBeenSet(false),
-    m_userNetworkInfosHasBeenSet(false)
+    m_userNetworkInfosHasBeenSet(false),
+    m_enableCoolDownHasBeenSet(false),
+    m_coolDownBucketHasBeenSet(false)
 {
 }
 
@@ -554,6 +556,26 @@ CoreInternalOutcome InstanceInfo::Deserialize(const rapidjson::Value &value)
         m_userNetworkInfosHasBeenSet = true;
     }
 
+    if (value.HasMember("EnableCoolDown") && !value["EnableCoolDown"].IsNull())
+    {
+        if (!value["EnableCoolDown"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `InstanceInfo.EnableCoolDown` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_enableCoolDown = value["EnableCoolDown"].GetInt64();
+        m_enableCoolDownHasBeenSet = true;
+    }
+
+    if (value.HasMember("CoolDownBucket") && !value["CoolDownBucket"].IsNull())
+    {
+        if (!value["CoolDownBucket"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `InstanceInfo.CoolDownBucket` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_coolDownBucket = string(value["CoolDownBucket"].GetString());
+        m_coolDownBucketHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -938,6 +960,22 @@ void InstanceInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Al
         string key = "UserNetworkInfos";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_userNetworkInfos.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_enableCoolDownHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "EnableCoolDown";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_enableCoolDown, allocator);
+    }
+
+    if (m_coolDownBucketHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "CoolDownBucket";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_coolDownBucket.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -1661,5 +1699,37 @@ void InstanceInfo::SetUserNetworkInfos(const string& _userNetworkInfos)
 bool InstanceInfo::UserNetworkInfosHasBeenSet() const
 {
     return m_userNetworkInfosHasBeenSet;
+}
+
+int64_t InstanceInfo::GetEnableCoolDown() const
+{
+    return m_enableCoolDown;
+}
+
+void InstanceInfo::SetEnableCoolDown(const int64_t& _enableCoolDown)
+{
+    m_enableCoolDown = _enableCoolDown;
+    m_enableCoolDownHasBeenSet = true;
+}
+
+bool InstanceInfo::EnableCoolDownHasBeenSet() const
+{
+    return m_enableCoolDownHasBeenSet;
+}
+
+string InstanceInfo::GetCoolDownBucket() const
+{
+    return m_coolDownBucket;
+}
+
+void InstanceInfo::SetCoolDownBucket(const string& _coolDownBucket)
+{
+    m_coolDownBucket = _coolDownBucket;
+    m_coolDownBucketHasBeenSet = true;
+}
+
+bool InstanceInfo::CoolDownBucketHasBeenSet() const
+{
+    return m_coolDownBucketHasBeenSet;
 }
 

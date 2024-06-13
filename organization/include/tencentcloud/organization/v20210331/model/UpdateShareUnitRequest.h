@@ -105,6 +105,27 @@ namespace TencentCloud
                      */
                     bool DescriptionHasBeenSet() const;
 
+                    /**
+                     * 获取共享范围。取值：1-仅允许集团组织内共享 2-允许共享给任意账号，默认值：1
+                     * @return ShareScope 共享范围。取值：1-仅允许集团组织内共享 2-允许共享给任意账号，默认值：1
+                     * 
+                     */
+                    uint64_t GetShareScope() const;
+
+                    /**
+                     * 设置共享范围。取值：1-仅允许集团组织内共享 2-允许共享给任意账号，默认值：1
+                     * @param _shareScope 共享范围。取值：1-仅允许集团组织内共享 2-允许共享给任意账号，默认值：1
+                     * 
+                     */
+                    void SetShareScope(const uint64_t& _shareScope);
+
+                    /**
+                     * 判断参数 ShareScope 是否已赋值
+                     * @return ShareScope 是否已赋值
+                     * 
+                     */
+                    bool ShareScopeHasBeenSet() const;
+
                 private:
 
                     /**
@@ -124,6 +145,12 @@ namespace TencentCloud
                      */
                     std::string m_description;
                     bool m_descriptionHasBeenSet;
+
+                    /**
+                     * 共享范围。取值：1-仅允许集团组织内共享 2-允许共享给任意账号，默认值：1
+                     */
+                    uint64_t m_shareScope;
+                    bool m_shareScopeHasBeenSet;
 
                 };
             }

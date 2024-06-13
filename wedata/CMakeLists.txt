@@ -201,6 +201,7 @@ set(wedata_public_header_model
   include/tencentcloud/wedata/v20210820/model/DescribeRuleExecLogResponse.h
   include/tencentcloud/wedata/v20210820/model/ParamInfo.h
   include/tencentcloud/wedata/v20210820/model/DescribeDsFolderTreeRequest.h
+  include/tencentcloud/wedata/v20210820/model/TableMetaProperty.h
   include/tencentcloud/wedata/v20210820/model/BatchDeleteIntegrationTasksRequest.h
   include/tencentcloud/wedata/v20210820/model/KillOpsMakePlanInstancesResponse.h
   include/tencentcloud/wedata/v20210820/model/TaskLogRequest.h
@@ -346,6 +347,7 @@ set(wedata_public_header_model
   include/tencentcloud/wedata/v20210820/model/BatchOperateResultOpsDto.h
   include/tencentcloud/wedata/v20210820/model/DeleteRuleRequest.h
   include/tencentcloud/wedata/v20210820/model/ApproveType.h
+  include/tencentcloud/wedata/v20210820/model/TableNameFilter.h
   include/tencentcloud/wedata/v20210820/model/RealTimeTaskInstanceNodeInfo.h
   include/tencentcloud/wedata/v20210820/model/DeleteResourceFilesResponse.h
   include/tencentcloud/wedata/v20210820/model/DescribeFieldBasicInfoRequest.h
@@ -872,6 +874,7 @@ set(wedata_src
   src/v20210820/model/DescribeRuleExecLogResponse.cpp
   src/v20210820/model/ParamInfo.cpp
   src/v20210820/model/DescribeDsFolderTreeRequest.cpp
+  src/v20210820/model/TableMetaProperty.cpp
   src/v20210820/model/BatchDeleteIntegrationTasksRequest.cpp
   src/v20210820/model/KillOpsMakePlanInstancesResponse.cpp
   src/v20210820/model/TaskLogRequest.cpp
@@ -1017,6 +1020,7 @@ set(wedata_src
   src/v20210820/model/BatchOperateResultOpsDto.cpp
   src/v20210820/model/DeleteRuleRequest.cpp
   src/v20210820/model/ApproveType.cpp
+  src/v20210820/model/TableNameFilter.cpp
   src/v20210820/model/RealTimeTaskInstanceNodeInfo.cpp
   src/v20210820/model/DeleteResourceFilesResponse.cpp
   src/v20210820/model/DescribeFieldBasicInfoRequest.cpp

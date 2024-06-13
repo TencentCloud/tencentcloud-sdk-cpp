@@ -24,7 +24,9 @@ SegmentRecognitionItem::SegmentRecognitionItem() :
     m_confidenceHasBeenSet(false),
     m_startTimeOffsetHasBeenSet(false),
     m_endTimeOffsetHasBeenSet(false),
-    m_segmentUrlHasBeenSet(false)
+    m_segmentUrlHasBeenSet(false),
+    m_titleHasBeenSet(false),
+    m_summaryHasBeenSet(false)
 {
 }
 
@@ -73,6 +75,26 @@ CoreInternalOutcome SegmentRecognitionItem::Deserialize(const rapidjson::Value &
         m_segmentUrlHasBeenSet = true;
     }
 
+    if (value.HasMember("Title") && !value["Title"].IsNull())
+    {
+        if (!value["Title"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `SegmentRecognitionItem.Title` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_title = string(value["Title"].GetString());
+        m_titleHasBeenSet = true;
+    }
+
+    if (value.HasMember("Summary") && !value["Summary"].IsNull())
+    {
+        if (!value["Summary"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `SegmentRecognitionItem.Summary` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_summary = string(value["Summary"].GetString());
+        m_summaryHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -110,6 +132,22 @@ void SegmentRecognitionItem::ToJsonObject(rapidjson::Value &value, rapidjson::Do
         string key = "SegmentUrl";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_segmentUrl.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_titleHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Title";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_title.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_summaryHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Summary";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_summary.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -177,5 +215,37 @@ void SegmentRecognitionItem::SetSegmentUrl(const string& _segmentUrl)
 bool SegmentRecognitionItem::SegmentUrlHasBeenSet() const
 {
     return m_segmentUrlHasBeenSet;
+}
+
+string SegmentRecognitionItem::GetTitle() const
+{
+    return m_title;
+}
+
+void SegmentRecognitionItem::SetTitle(const string& _title)
+{
+    m_title = _title;
+    m_titleHasBeenSet = true;
+}
+
+bool SegmentRecognitionItem::TitleHasBeenSet() const
+{
+    return m_titleHasBeenSet;
+}
+
+string SegmentRecognitionItem::GetSummary() const
+{
+    return m_summary;
+}
+
+void SegmentRecognitionItem::SetSummary(const string& _summary)
+{
+    m_summary = _summary;
+    m_summaryHasBeenSet = true;
+}
+
+bool SegmentRecognitionItem::SummaryHasBeenSet() const
+{
+    return m_summaryHasBeenSet;
 }
 

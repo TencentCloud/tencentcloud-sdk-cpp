@@ -828,7 +828,7 @@ namespace TencentCloud
                 DescribeInstanceMonitorBigKeyTypeDistOutcomeCallable DescribeInstanceMonitorBigKeyTypeDistCallable(const Model::DescribeInstanceMonitorBigKeyTypeDistRequest& request);
 
                 /**
-                 *查询实例热Key
+                 *本接口（DescribeInstanceMonitorHotKey）用于查询实例热Key。
                  * @param req DescribeInstanceMonitorHotKeyRequest
                  * @return DescribeInstanceMonitorHotKeyOutcome
                  */

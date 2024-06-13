@@ -25,7 +25,8 @@ FirstPage::FirstPage() :
     m_pathologicalDiagnosisHasBeenSet(false),
     m_clinicalDiagnosisHasBeenSet(false),
     m_damagePoiHasBeenSet(false),
-    m_fp2NdItemsHasBeenSet(false)
+    m_fp2NdItemsHasBeenSet(false),
+    m_pageHasBeenSet(false)
 {
 }
 
@@ -125,6 +126,16 @@ CoreInternalOutcome FirstPage::Deserialize(const rapidjson::Value &value)
         m_fp2NdItemsHasBeenSet = true;
     }
 
+    if (value.HasMember("Page") && !value["Page"].IsNull())
+    {
+        if (!value["Page"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `FirstPage.Page` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_page = value["Page"].GetInt64();
+        m_pageHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -187,6 +198,14 @@ void FirstPage::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Alloc
             value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
             (*itr).ToJsonObject(value[key.c_str()][i], allocator);
         }
+    }
+
+    if (m_pageHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Page";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_page, allocator);
     }
 
 }
@@ -270,5 +289,21 @@ void FirstPage::SetFp2NdItems(const vector<Fp2NdItem>& _fp2NdItems)
 bool FirstPage::Fp2NdItemsHasBeenSet() const
 {
     return m_fp2NdItemsHasBeenSet;
+}
+
+int64_t FirstPage::GetPage() const
+{
+    return m_page;
+}
+
+void FirstPage::SetPage(const int64_t& _page)
+{
+    m_page = _page;
+    m_pageHasBeenSet = true;
+}
+
+bool FirstPage::PageHasBeenSet() const
+{
+    return m_pageHasBeenSet;
 }
 

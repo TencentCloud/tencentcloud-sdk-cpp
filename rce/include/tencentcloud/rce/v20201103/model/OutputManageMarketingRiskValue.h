@@ -48,14 +48,16 @@ namespace TencentCloud
 
                     /**
                      * 获取账号ID：对应输入参数。
-当AccountType为1时，对应QQ的OpenId。
-当AccountType为2时，对应微信的OpenId/UnionId。
-当AccountType为10004时，对应手机号的MD5值。
+当AccountType为1时，对应QQ的OpenId；
+当AccountType为2时，对应微信的OpenId/UnionId；
+当AccountType为10004时，对应手机号的MD5值；
+当AccountType为10005时，对应手机号的SHA256值。
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return UserId 账号ID：对应输入参数。
-当AccountType为1时，对应QQ的OpenId。
-当AccountType为2时，对应微信的OpenId/UnionId。
-当AccountType为10004时，对应手机号的MD5值。
+当AccountType为1时，对应QQ的OpenId；
+当AccountType为2时，对应微信的OpenId/UnionId；
+当AccountType为10004时，对应手机号的MD5值；
+当AccountType为10005时，对应手机号的SHA256值。
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -63,14 +65,16 @@ namespace TencentCloud
 
                     /**
                      * 设置账号ID：对应输入参数。
-当AccountType为1时，对应QQ的OpenId。
-当AccountType为2时，对应微信的OpenId/UnionId。
-当AccountType为10004时，对应手机号的MD5值。
+当AccountType为1时，对应QQ的OpenId；
+当AccountType为2时，对应微信的OpenId/UnionId；
+当AccountType为10004时，对应手机号的MD5值；
+当AccountType为10005时，对应手机号的SHA256值。
 注意：此字段可能返回 null，表示取不到有效值。
                      * @param _userId 账号ID：对应输入参数。
-当AccountType为1时，对应QQ的OpenId。
-当AccountType为2时，对应微信的OpenId/UnionId。
-当AccountType为10004时，对应手机号的MD5值。
+当AccountType为1时，对应QQ的OpenId；
+当AccountType为2时，对应微信的OpenId/UnionId；
+当AccountType为10004时，对应手机号的MD5值；
+当AccountType为10005时，对应手机号的SHA256值。
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -346,9 +350,10 @@ reject：高风险，建议拦截
 
                     /**
                      * 账号ID：对应输入参数。
-当AccountType为1时，对应QQ的OpenId。
-当AccountType为2时，对应微信的OpenId/UnionId。
-当AccountType为10004时，对应手机号的MD5值。
+当AccountType为1时，对应QQ的OpenId；
+当AccountType为2时，对应微信的OpenId/UnionId；
+当AccountType为10004时，对应手机号的MD5值；
+当AccountType为10005时，对应手机号的SHA256值。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_userId;

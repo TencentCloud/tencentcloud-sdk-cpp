@@ -45,8 +45,8 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取专用通道列表
-                     * @return DirectConnectTunnelSet 专用通道列表
+                     * 获取专用通道列表。
+                     * @return DirectConnectTunnelSet 专用通道列表。
                      * 
                      */
                     std::vector<DirectConnectTunnel> GetDirectConnectTunnelSet() const;
@@ -59,8 +59,8 @@ namespace TencentCloud
                     bool DirectConnectTunnelSetHasBeenSet() const;
 
                     /**
-                     * 获取符合专用通道数量。
-                     * @return TotalCount 符合专用通道数量。
+                     * 获取专用通道总数量。
+                     * @return TotalCount 专用通道总数量。
                      * 
                      */
                     int64_t GetTotalCount() const;
@@ -75,13 +75,13 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 专用通道列表
+                     * 专用通道列表。
                      */
                     std::vector<DirectConnectTunnel> m_directConnectTunnelSet;
                     bool m_directConnectTunnelSetHasBeenSet;
 
                     /**
-                     * 符合专用通道数量。
+                     * 专用通道总数量。
                      */
                     int64_t m_totalCount;
                     bool m_totalCountHasBeenSet;

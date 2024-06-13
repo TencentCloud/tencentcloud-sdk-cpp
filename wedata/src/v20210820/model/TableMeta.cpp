@@ -73,7 +73,8 @@ TableMeta::TableMeta() :
     m_locationHasBeenSet(false),
     m_isPartitionTableHasBeenSet(false),
     m_partitionColumnsHasBeenSet(false),
-    m_partitionExpireDaysHasBeenSet(false)
+    m_partitionExpireDaysHasBeenSet(false),
+    m_tablePropertiesHasBeenSet(false)
 {
 }
 
@@ -645,6 +646,26 @@ CoreInternalOutcome TableMeta::Deserialize(const rapidjson::Value &value)
         m_partitionExpireDaysHasBeenSet = true;
     }
 
+    if (value.HasMember("TableProperties") && !value["TableProperties"].IsNull())
+    {
+        if (!value["TableProperties"].IsArray())
+            return CoreInternalOutcome(Core::Error("response `TableMeta.TableProperties` is not array type"));
+
+        const rapidjson::Value &tmpValue = value["TableProperties"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            TableMetaProperty item;
+            CoreInternalOutcome outcome = item.Deserialize(*itr);
+            if (!outcome.IsSuccess())
+            {
+                outcome.GetError().SetRequestId(requestId);
+                return outcome;
+            }
+            m_tableProperties.push_back(item);
+        }
+        m_tablePropertiesHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -1098,6 +1119,21 @@ void TableMeta::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Alloc
         string key = "PartitionExpireDays";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_partitionExpireDays, allocator);
+    }
+
+    if (m_tablePropertiesHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "TableProperties";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_tableProperties.begin(); itr != m_tableProperties.end(); ++itr, ++i)
+        {
+            value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(value[key.c_str()][i], allocator);
+        }
     }
 
 }
@@ -1949,5 +1985,21 @@ void TableMeta::SetPartitionExpireDays(const int64_t& _partitionExpireDays)
 bool TableMeta::PartitionExpireDaysHasBeenSet() const
 {
     return m_partitionExpireDaysHasBeenSet;
+}
+
+vector<TableMetaProperty> TableMeta::GetTableProperties() const
+{
+    return m_tableProperties;
+}
+
+void TableMeta::SetTableProperties(const vector<TableMetaProperty>& _tableProperties)
+{
+    m_tableProperties = _tableProperties;
+    m_tablePropertiesHasBeenSet = true;
+}
+
+bool TableMeta::TablePropertiesHasBeenSet() const
+{
+    return m_tablePropertiesHasBeenSet;
 }
 
