@@ -38,7 +38,7 @@ namespace TencentCloud
             {
                 /**
                 * 导入用户信息
-1、UserName，PhoneNumber ，Email ，WechatOpenId ，WechatUnionId ，AlipayUserId ，QqOpenId ，QqUnionId 八个属性中，导入时必须包含其中一个属性并遵守初始化自定义属性的正则表达式规则。UserName，PhoneNumber，Email的正则表达式在控制台的自定义属性中可以查询到。
+1、UserName，PhoneNumber ，Email ，WechatOpenId ，WechatUnionId ，AlipayUserId ，QqOpenId ，QqUnionId ，WeComUserId 九个属性中，导入时必须包含其中一个属性并遵守初始化自定义属性的正则表达式规则。UserName，PhoneNumber，Email的正则表达式在控制台的自定义属性中可以查询到。
 2、对于密码的导入，导入的密码支持明文导入，MD5密文导入，SHA1密文导入，BCRYPT密文导入 ，这个需要在PasswordEncryptTypeEnum 字段中指定。
 3、IdentityVerified，IdentityVerificationMethod 支持导入，
 IdentityVerified 为true，IdentityVerificationMethod必传；
@@ -305,6 +305,27 @@ IdentityVerificationMethod 为nameIdCardAndPhone，Name,PhoneNumber,ResidentIden
                      * 
                      */
                     bool AlipayUserIdHasBeenSet() const;
+
+                    /**
+                     * 获取企业微信weComUserId
+                     * @return WeComUserId 企业微信weComUserId
+                     * 
+                     */
+                    std::string GetWeComUserId() const;
+
+                    /**
+                     * 设置企业微信weComUserId
+                     * @param _weComUserId 企业微信weComUserId
+                     * 
+                     */
+                    void SetWeComUserId(const std::string& _weComUserId);
+
+                    /**
+                     * 判断参数 WeComUserId 是否已赋值
+                     * @return WeComUserId 是否已赋值
+                     * 
+                     */
+                    bool WeComUserIdHasBeenSet() const;
 
                     /**
                      * 获取描述
@@ -778,6 +799,12 @@ IdentityVerificationMethod 为nameIdCardAndPhone，Name,PhoneNumber,ResidentIden
                      */
                     std::string m_alipayUserId;
                     bool m_alipayUserIdHasBeenSet;
+
+                    /**
+                     * 企业微信weComUserId
+                     */
+                    std::string m_weComUserId;
+                    bool m_weComUserIdHasBeenSet;
 
                     /**
                      * 描述

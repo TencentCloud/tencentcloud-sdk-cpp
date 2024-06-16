@@ -532,6 +532,31 @@ namespace TencentCloud
                     bool AlipayUserIdHasBeenSet() const;
 
                     /**
+                     * 获取企业微信的WeComUserId
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return WeComUserId 企业微信的WeComUserId
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::string GetWeComUserId() const;
+
+                    /**
+                     * 设置企业微信的WeComUserId
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _weComUserId 企业微信的WeComUserId
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetWeComUserId(const std::string& _weComUserId);
+
+                    /**
+                     * 判断参数 WeComUserId 是否已赋值
+                     * @return WeComUserId 是否已赋值
+                     * 
+                     */
+                    bool WeComUserIdHasBeenSet() const;
+
+                    /**
                      * 获取描述
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Description 描述
@@ -1193,6 +1218,13 @@ namespace TencentCloud
                      */
                     std::string m_alipayUserId;
                     bool m_alipayUserIdHasBeenSet;
+
+                    /**
+                     * 企业微信的WeComUserId
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_weComUserId;
+                    bool m_weComUserIdHasBeenSet;
 
                     /**
                      * 描述

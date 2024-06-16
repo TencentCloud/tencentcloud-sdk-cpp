@@ -26,7 +26,8 @@ CreatePartnerAutoSignAuthUrlRequest::CreatePartnerAutoSignAuthUrlRequest() :
     m_agentHasBeenSet(false),
     m_authorizedOrganizationIdHasBeenSet(false),
     m_authorizedOrganizationNameHasBeenSet(false),
-    m_platformAppAuthorizationHasBeenSet(false)
+    m_platformAppAuthorizationHasBeenSet(false),
+    m_sealTypesHasBeenSet(false)
 {
 }
 
@@ -68,6 +69,19 @@ string CreatePartnerAutoSignAuthUrlRequest::ToJsonString() const
         string key = "PlatformAppAuthorization";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_platformAppAuthorization, allocator);
+    }
+
+    if (m_sealTypesHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "SealTypes";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        for (auto itr = m_sealTypes.begin(); itr != m_sealTypes.end(); ++itr)
+        {
+            d[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
+        }
     }
 
 
@@ -140,6 +154,22 @@ void CreatePartnerAutoSignAuthUrlRequest::SetPlatformAppAuthorization(const bool
 bool CreatePartnerAutoSignAuthUrlRequest::PlatformAppAuthorizationHasBeenSet() const
 {
     return m_platformAppAuthorizationHasBeenSet;
+}
+
+vector<string> CreatePartnerAutoSignAuthUrlRequest::GetSealTypes() const
+{
+    return m_sealTypes;
+}
+
+void CreatePartnerAutoSignAuthUrlRequest::SetSealTypes(const vector<string>& _sealTypes)
+{
+    m_sealTypes = _sealTypes;
+    m_sealTypesHasBeenSet = true;
+}
+
+bool CreatePartnerAutoSignAuthUrlRequest::SealTypesHasBeenSet() const
+{
+    return m_sealTypesHasBeenSet;
 }
 
 

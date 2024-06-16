@@ -33,6 +33,7 @@ ImportUser::ImportUser() :
     m_wechatOpenIdHasBeenSet(false),
     m_wechatUnionIdHasBeenSet(false),
     m_alipayUserIdHasBeenSet(false),
+    m_weComUserIdHasBeenSet(false),
     m_descriptionHasBeenSet(false),
     m_birthdateHasBeenSet(false),
     m_nameHasBeenSet(false),
@@ -181,6 +182,16 @@ CoreInternalOutcome ImportUser::Deserialize(const rapidjson::Value &value)
         }
         m_alipayUserId = string(value["AlipayUserId"].GetString());
         m_alipayUserIdHasBeenSet = true;
+    }
+
+    if (value.HasMember("WeComUserId") && !value["WeComUserId"].IsNull())
+    {
+        if (!value["WeComUserId"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `ImportUser.WeComUserId` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_weComUserId = string(value["WeComUserId"].GetString());
+        m_weComUserIdHasBeenSet = true;
     }
 
     if (value.HasMember("Description") && !value["Description"].IsNull())
@@ -496,6 +507,14 @@ void ImportUser::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Allo
         string key = "AlipayUserId";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_alipayUserId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_weComUserIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "WeComUserId";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_weComUserId.c_str(), allocator).Move(), allocator);
     }
 
     if (m_descriptionHasBeenSet)
@@ -851,6 +870,22 @@ void ImportUser::SetAlipayUserId(const string& _alipayUserId)
 bool ImportUser::AlipayUserIdHasBeenSet() const
 {
     return m_alipayUserIdHasBeenSet;
+}
+
+string ImportUser::GetWeComUserId() const
+{
+    return m_weComUserId;
+}
+
+void ImportUser::SetWeComUserId(const string& _weComUserId)
+{
+    m_weComUserId = _weComUserId;
+    m_weComUserIdHasBeenSet = true;
+}
+
+bool ImportUser::WeComUserIdHasBeenSet() const
+{
+    return m_weComUserIdHasBeenSet;
 }
 
 string ImportUser::GetDescription() const

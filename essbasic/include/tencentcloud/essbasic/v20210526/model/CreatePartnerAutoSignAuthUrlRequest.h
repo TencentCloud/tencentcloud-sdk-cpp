@@ -183,6 +183,47 @@ namespace TencentCloud
                      */
                     bool PlatformAppAuthorizationHasBeenSet() const;
 
+                    /**
+                     * 获取指定印章类型，指定后只能选择该类型的印章进行授权
+支持以下印章类型：
+- OFFICIAL : 企业公章
+- CONTRACT : 合同专用章
+- FINANCE : 财务专用章
+- PERSONNEL : 人事专用章
+                     * @return SealTypes 指定印章类型，指定后只能选择该类型的印章进行授权
+支持以下印章类型：
+- OFFICIAL : 企业公章
+- CONTRACT : 合同专用章
+- FINANCE : 财务专用章
+- PERSONNEL : 人事专用章
+                     * 
+                     */
+                    std::vector<std::string> GetSealTypes() const;
+
+                    /**
+                     * 设置指定印章类型，指定后只能选择该类型的印章进行授权
+支持以下印章类型：
+- OFFICIAL : 企业公章
+- CONTRACT : 合同专用章
+- FINANCE : 财务专用章
+- PERSONNEL : 人事专用章
+                     * @param _sealTypes 指定印章类型，指定后只能选择该类型的印章进行授权
+支持以下印章类型：
+- OFFICIAL : 企业公章
+- CONTRACT : 合同专用章
+- FINANCE : 财务专用章
+- PERSONNEL : 人事专用章
+                     * 
+                     */
+                    void SetSealTypes(const std::vector<std::string>& _sealTypes);
+
+                    /**
+                     * 判断参数 SealTypes 是否已赋值
+                     * @return SealTypes 是否已赋值
+                     * 
+                     */
+                    bool SealTypesHasBeenSet() const;
+
                 private:
 
                     /**
@@ -222,6 +263,17 @@ namespace TencentCloud
                      */
                     bool m_platformAppAuthorization;
                     bool m_platformAppAuthorizationHasBeenSet;
+
+                    /**
+                     * 指定印章类型，指定后只能选择该类型的印章进行授权
+支持以下印章类型：
+- OFFICIAL : 企业公章
+- CONTRACT : 合同专用章
+- FINANCE : 财务专用章
+- PERSONNEL : 人事专用章
+                     */
+                    std::vector<std::string> m_sealTypes;
+                    bool m_sealTypesHasBeenSet;
 
                 };
             }

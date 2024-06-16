@@ -43,15 +43,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取镜像缓存Id数组
-                     * @return ImageCacheIds 镜像缓存Id数组
+                     * 获取镜像缓存ID数组
+                     * @return ImageCacheIds 镜像缓存ID数组
                      * 
                      */
                     std::vector<std::string> GetImageCacheIds() const;
 
                     /**
-                     * 设置镜像缓存Id数组
-                     * @param _imageCacheIds 镜像缓存Id数组
+                     * 设置镜像缓存ID数组
+                     * @param _imageCacheIds 镜像缓存ID数组
                      * 
                      */
                     void SetImageCacheIds(const std::vector<std::string>& _imageCacheIds);
@@ -66,7 +66,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 镜像缓存Id数组
+                     * 镜像缓存ID数组
                      */
                     std::vector<std::string> m_imageCacheIds;
                     bool m_imageCacheIdsHasBeenSet;

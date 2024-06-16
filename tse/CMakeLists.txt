@@ -188,6 +188,7 @@ set(tse_public_header_model
   include/tencentcloud/tse/v20201207/model/DeleteGovernanceInstancesRequest.h
   include/tencentcloud/tse/v20201207/model/DeleteGovernanceInstancesByHostRequest.h
   include/tencentcloud/tse/v20201207/model/StorageOption.h
+  include/tencentcloud/tse/v20201207/model/ZookeeperRegionInfo.h
   include/tencentcloud/tse/v20201207/model/DescribeConfigFileResponse.h
   include/tencentcloud/tse/v20201207/model/RollbackConfigFileReleasesRequest.h
   include/tencentcloud/tse/v20201207/model/ConfigFileTemplate.h
@@ -205,6 +206,7 @@ set(tse_public_header_model
   include/tencentcloud/tse/v20201207/model/CreateCloudNativeAPIGatewayPublicNetworkResponse.h
   include/tencentcloud/tse/v20201207/model/DescribeWafDomainsResponse.h
   include/tencentcloud/tse/v20201207/model/ModifyNetworkBasicInfoRequest.h
+  include/tencentcloud/tse/v20201207/model/ZookeeperRegionMyIdInfo.h
   include/tencentcloud/tse/v20201207/model/DescribeUpstreamHealthCheckConfigRequest.h
   include/tencentcloud/tse/v20201207/model/DescribeSREInstanceAccessAddressRequest.h
   include/tencentcloud/tse/v20201207/model/DeleteAutoScalerResourceStrategyResponse.h
@@ -527,6 +529,7 @@ set(tse_src
   src/v20201207/model/DeleteGovernanceInstancesRequest.cpp
   src/v20201207/model/DeleteGovernanceInstancesByHostRequest.cpp
   src/v20201207/model/StorageOption.cpp
+  src/v20201207/model/ZookeeperRegionInfo.cpp
   src/v20201207/model/DescribeConfigFileResponse.cpp
   src/v20201207/model/RollbackConfigFileReleasesRequest.cpp
   src/v20201207/model/ConfigFileTemplate.cpp
@@ -544,6 +547,7 @@ set(tse_src
   src/v20201207/model/CreateCloudNativeAPIGatewayPublicNetworkResponse.cpp
   src/v20201207/model/DescribeWafDomainsResponse.cpp
   src/v20201207/model/ModifyNetworkBasicInfoRequest.cpp
+  src/v20201207/model/ZookeeperRegionMyIdInfo.cpp
   src/v20201207/model/DescribeUpstreamHealthCheckConfigRequest.cpp
   src/v20201207/model/DescribeSREInstanceAccessAddressRequest.cpp
   src/v20201207/model/DeleteAutoScalerResourceStrategyResponse.cpp

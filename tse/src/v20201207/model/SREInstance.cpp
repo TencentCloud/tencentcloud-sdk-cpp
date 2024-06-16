@@ -54,7 +54,9 @@ SREInstance::SREInstance() :
     m_eKSTypeHasBeenSet(false),
     m_featureVersionHasBeenSet(false),
     m_enableClientIntranetHasBeenSet(false),
-    m_storageOptionHasBeenSet(false)
+    m_storageOptionHasBeenSet(false),
+    m_zookeeperRegionInfoHasBeenSet(false),
+    m_deployModeHasBeenSet(false)
 {
 }
 
@@ -466,6 +468,33 @@ CoreInternalOutcome SREInstance::Deserialize(const rapidjson::Value &value)
         m_storageOptionHasBeenSet = true;
     }
 
+    if (value.HasMember("ZookeeperRegionInfo") && !value["ZookeeperRegionInfo"].IsNull())
+    {
+        if (!value["ZookeeperRegionInfo"].IsObject())
+        {
+            return CoreInternalOutcome(Core::Error("response `SREInstance.ZookeeperRegionInfo` is not object type").SetRequestId(requestId));
+        }
+
+        CoreInternalOutcome outcome = m_zookeeperRegionInfo.Deserialize(value["ZookeeperRegionInfo"]);
+        if (!outcome.IsSuccess())
+        {
+            outcome.GetError().SetRequestId(requestId);
+            return outcome;
+        }
+
+        m_zookeeperRegionInfoHasBeenSet = true;
+    }
+
+    if (value.HasMember("DeployMode") && !value["DeployMode"].IsNull())
+    {
+        if (!value["DeployMode"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `SREInstance.DeployMode` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_deployMode = string(value["DeployMode"].GetString());
+        m_deployModeHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -790,6 +819,23 @@ void SREInstance::ToJsonObject(rapidjson::Value &value, rapidjson::Document::All
             value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
             (*itr).ToJsonObject(value[key.c_str()][i], allocator);
         }
+    }
+
+    if (m_zookeeperRegionInfoHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ZookeeperRegionInfo";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_zookeeperRegionInfo.ToJsonObject(value[key.c_str()], allocator);
+    }
+
+    if (m_deployModeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "DeployMode";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_deployMode.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -1337,5 +1383,37 @@ void SREInstance::SetStorageOption(const vector<StorageOption>& _storageOption)
 bool SREInstance::StorageOptionHasBeenSet() const
 {
     return m_storageOptionHasBeenSet;
+}
+
+ZookeeperRegionInfo SREInstance::GetZookeeperRegionInfo() const
+{
+    return m_zookeeperRegionInfo;
+}
+
+void SREInstance::SetZookeeperRegionInfo(const ZookeeperRegionInfo& _zookeeperRegionInfo)
+{
+    m_zookeeperRegionInfo = _zookeeperRegionInfo;
+    m_zookeeperRegionInfoHasBeenSet = true;
+}
+
+bool SREInstance::ZookeeperRegionInfoHasBeenSet() const
+{
+    return m_zookeeperRegionInfoHasBeenSet;
+}
+
+string SREInstance::GetDeployMode() const
+{
+    return m_deployMode;
+}
+
+void SREInstance::SetDeployMode(const string& _deployMode)
+{
+    m_deployMode = _deployMode;
+    m_deployModeHasBeenSet = true;
+}
+
+bool SREInstance::DeployModeHasBeenSet() const
+{
+    return m_deployModeHasBeenSet;
 }
 

@@ -23,7 +23,8 @@ using namespace std;
 VpcInfo::VpcInfo() :
     m_vpcIdHasBeenSet(false),
     m_subnetIdHasBeenSet(false),
-    m_intranetAddressHasBeenSet(false)
+    m_intranetAddressHasBeenSet(false),
+    m_lbSubnetIdHasBeenSet(false)
 {
 }
 
@@ -62,6 +63,16 @@ CoreInternalOutcome VpcInfo::Deserialize(const rapidjson::Value &value)
         m_intranetAddressHasBeenSet = true;
     }
 
+    if (value.HasMember("LbSubnetId") && !value["LbSubnetId"].IsNull())
+    {
+        if (!value["LbSubnetId"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `VpcInfo.LbSubnetId` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_lbSubnetId = string(value["LbSubnetId"].GetString());
+        m_lbSubnetIdHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -91,6 +102,14 @@ void VpcInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Allocat
         string key = "IntranetAddress";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_intranetAddress.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_lbSubnetIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "LbSubnetId";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_lbSubnetId.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -142,5 +161,21 @@ void VpcInfo::SetIntranetAddress(const string& _intranetAddress)
 bool VpcInfo::IntranetAddressHasBeenSet() const
 {
     return m_intranetAddressHasBeenSet;
+}
+
+string VpcInfo::GetLbSubnetId() const
+{
+    return m_lbSubnetId;
+}
+
+void VpcInfo::SetLbSubnetId(const string& _lbSubnetId)
+{
+    m_lbSubnetId = _lbSubnetId;
+    m_lbSubnetIdHasBeenSet = true;
+}
+
+bool VpcInfo::LbSubnetIdHasBeenSet() const
+{
+    return m_lbSubnetIdHasBeenSet;
 }
 

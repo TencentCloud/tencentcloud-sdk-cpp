@@ -31,7 +31,9 @@ LoadBalancer::LoadBalancer() :
     m_addressIPVersionHasBeenSet(false),
     m_tagsHasBeenSet(false),
     m_extensiveClustersHasBeenSet(false),
-    m_crossRegionConfigHasBeenSet(false)
+    m_crossRegionConfigHasBeenSet(false),
+    m_masterZoneIDHasBeenSet(false),
+    m_slaveZoneIDHasBeenSet(false)
 {
 }
 
@@ -174,6 +176,26 @@ CoreInternalOutcome LoadBalancer::Deserialize(const rapidjson::Value &value)
         m_crossRegionConfigHasBeenSet = true;
     }
 
+    if (value.HasMember("MasterZoneID") && !value["MasterZoneID"].IsNull())
+    {
+        if (!value["MasterZoneID"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `LoadBalancer.MasterZoneID` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_masterZoneID = string(value["MasterZoneID"].GetString());
+        m_masterZoneIDHasBeenSet = true;
+    }
+
+    if (value.HasMember("SlaveZoneID") && !value["SlaveZoneID"].IsNull())
+    {
+        if (!value["SlaveZoneID"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `LoadBalancer.SlaveZoneID` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_slaveZoneID = string(value["SlaveZoneID"].GetString());
+        m_slaveZoneIDHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -276,6 +298,22 @@ void LoadBalancer::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Al
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
         m_crossRegionConfig.ToJsonObject(value[key.c_str()], allocator);
+    }
+
+    if (m_masterZoneIDHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "MasterZoneID";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_masterZoneID.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_slaveZoneIDHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "SlaveZoneID";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_slaveZoneID.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -455,5 +493,37 @@ void LoadBalancer::SetCrossRegionConfig(const CrossRegionConfig& _crossRegionCon
 bool LoadBalancer::CrossRegionConfigHasBeenSet() const
 {
     return m_crossRegionConfigHasBeenSet;
+}
+
+string LoadBalancer::GetMasterZoneID() const
+{
+    return m_masterZoneID;
+}
+
+void LoadBalancer::SetMasterZoneID(const string& _masterZoneID)
+{
+    m_masterZoneID = _masterZoneID;
+    m_masterZoneIDHasBeenSet = true;
+}
+
+bool LoadBalancer::MasterZoneIDHasBeenSet() const
+{
+    return m_masterZoneIDHasBeenSet;
+}
+
+string LoadBalancer::GetSlaveZoneID() const
+{
+    return m_slaveZoneID;
+}
+
+void LoadBalancer::SetSlaveZoneID(const string& _slaveZoneID)
+{
+    m_slaveZoneID = _slaveZoneID;
+    m_slaveZoneIDHasBeenSet = true;
+}
+
+bool LoadBalancer::SlaveZoneIDHasBeenSet() const
+{
+    return m_slaveZoneIDHasBeenSet;
 }
 

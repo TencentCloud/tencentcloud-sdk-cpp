@@ -316,6 +316,56 @@ OPEN：公网属性， INTERNAL：内网属性。
                      */
                     bool CrossRegionConfigHasBeenSet() const;
 
+                    /**
+                     * 获取设置跨可用区容灾时的主可用区ID
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return MasterZoneID 设置跨可用区容灾时的主可用区ID
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::string GetMasterZoneID() const;
+
+                    /**
+                     * 设置设置跨可用区容灾时的主可用区ID
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _masterZoneID 设置跨可用区容灾时的主可用区ID
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetMasterZoneID(const std::string& _masterZoneID);
+
+                    /**
+                     * 判断参数 MasterZoneID 是否已赋值
+                     * @return MasterZoneID 是否已赋值
+                     * 
+                     */
+                    bool MasterZoneIDHasBeenSet() const;
+
+                    /**
+                     * 获取设置跨可用区容灾时的备可用区ID
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return SlaveZoneID 设置跨可用区容灾时的备可用区ID
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::string GetSlaveZoneID() const;
+
+                    /**
+                     * 设置设置跨可用区容灾时的备可用区ID
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _slaveZoneID 设置跨可用区容灾时的备可用区ID
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetSlaveZoneID(const std::string& _slaveZoneID);
+
+                    /**
+                     * 判断参数 SlaveZoneID 是否已赋值
+                     * @return SlaveZoneID 是否已赋值
+                     * 
+                     */
+                    bool SlaveZoneIDHasBeenSet() const;
+
                 private:
 
                     /**
@@ -392,6 +442,20 @@ OPEN：公网属性， INTERNAL：内网属性。
                      */
                     CrossRegionConfig m_crossRegionConfig;
                     bool m_crossRegionConfigHasBeenSet;
+
+                    /**
+                     * 设置跨可用区容灾时的主可用区ID
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_masterZoneID;
+                    bool m_masterZoneIDHasBeenSet;
+
+                    /**
+                     * 设置跨可用区容灾时的备可用区ID
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_slaveZoneID;
+                    bool m_slaveZoneIDHasBeenSet;
 
                 };
             }

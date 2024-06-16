@@ -261,6 +261,7 @@ set(wedata_public_header_model
   include/tencentcloud/wedata/v20210820/model/DimensionScore.h
   include/tencentcloud/wedata/v20210820/model/SubscribeWebHook.h
   include/tencentcloud/wedata/v20210820/model/DescribeTableLineageInfoRequest.h
+  include/tencentcloud/wedata/v20210820/model/CreateTaskFolderRequest.h
   include/tencentcloud/wedata/v20210820/model/IntegrationNodeDetail.h
   include/tencentcloud/wedata/v20210820/model/DescribeEventResponse.h
   include/tencentcloud/wedata/v20210820/model/DescribeOpsMakePlanInstancesRequest.h
@@ -321,7 +322,7 @@ set(wedata_public_header_model
   include/tencentcloud/wedata/v20210820/model/RuleExecConfig.h
   include/tencentcloud/wedata/v20210820/model/SuspendIntegrationTaskResponse.h
   include/tencentcloud/wedata/v20210820/model/DescribeSchedulerRunTimeInstanceCntByStatusResponse.h
-  include/tencentcloud/wedata/v20210820/model/RecordField.h
+  include/tencentcloud/wedata/v20210820/model/CreateTaskFolderResponse.h
   include/tencentcloud/wedata/v20210820/model/RunForceSucScheduleInstancesRequest.h
   include/tencentcloud/wedata/v20210820/model/DescribeQualityScoreResponse.h
   include/tencentcloud/wedata/v20210820/model/DescribeRulesByPageResponse.h
@@ -570,6 +571,7 @@ set(wedata_public_header_model
   include/tencentcloud/wedata/v20210820/model/CreateDataSourceResponse.h
   include/tencentcloud/wedata/v20210820/model/TaskByStatus.h
   include/tencentcloud/wedata/v20210820/model/DescribeFolderWorkflowListResponse.h
+  include/tencentcloud/wedata/v20210820/model/RecordField.h
   include/tencentcloud/wedata/v20210820/model/DescribeIntegrationVersionNodesInfoResponse.h
   include/tencentcloud/wedata/v20210820/model/DescribeRulesRequest.h
   include/tencentcloud/wedata/v20210820/model/DescribeRuleResponse.h
@@ -934,6 +936,7 @@ set(wedata_src
   src/v20210820/model/DimensionScore.cpp
   src/v20210820/model/SubscribeWebHook.cpp
   src/v20210820/model/DescribeTableLineageInfoRequest.cpp
+  src/v20210820/model/CreateTaskFolderRequest.cpp
   src/v20210820/model/IntegrationNodeDetail.cpp
   src/v20210820/model/DescribeEventResponse.cpp
   src/v20210820/model/DescribeOpsMakePlanInstancesRequest.cpp
@@ -994,7 +997,7 @@ set(wedata_src
   src/v20210820/model/RuleExecConfig.cpp
   src/v20210820/model/SuspendIntegrationTaskResponse.cpp
   src/v20210820/model/DescribeSchedulerRunTimeInstanceCntByStatusResponse.cpp
-  src/v20210820/model/RecordField.cpp
+  src/v20210820/model/CreateTaskFolderResponse.cpp
   src/v20210820/model/RunForceSucScheduleInstancesRequest.cpp
   src/v20210820/model/DescribeQualityScoreResponse.cpp
   src/v20210820/model/DescribeRulesByPageResponse.cpp
@@ -1243,6 +1246,7 @@ set(wedata_src
   src/v20210820/model/CreateDataSourceResponse.cpp
   src/v20210820/model/TaskByStatus.cpp
   src/v20210820/model/DescribeFolderWorkflowListResponse.cpp
+  src/v20210820/model/RecordField.cpp
   src/v20210820/model/DescribeIntegrationVersionNodesInfoResponse.cpp
   src/v20210820/model/DescribeRulesRequest.cpp
   src/v20210820/model/DescribeRuleResponse.cpp

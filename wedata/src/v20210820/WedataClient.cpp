@@ -1588,6 +1588,49 @@ WedataClient::CreateTaskAlarmRegularOutcomeCallable WedataClient::CreateTaskAlar
     return task->get_future();
 }
 
+WedataClient::CreateTaskFolderOutcome WedataClient::CreateTaskFolder(const CreateTaskFolderRequest &request)
+{
+    auto outcome = MakeRequest(request, "CreateTaskFolder");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        CreateTaskFolderResponse rsp = CreateTaskFolderResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return CreateTaskFolderOutcome(rsp);
+        else
+            return CreateTaskFolderOutcome(o.GetError());
+    }
+    else
+    {
+        return CreateTaskFolderOutcome(outcome.GetError());
+    }
+}
+
+void WedataClient::CreateTaskFolderAsync(const CreateTaskFolderRequest& request, const CreateTaskFolderAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->CreateTaskFolder(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+WedataClient::CreateTaskFolderOutcomeCallable WedataClient::CreateTaskFolderCallable(const CreateTaskFolderRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<CreateTaskFolderOutcome()>>(
+        [this, request]()
+        {
+            return this->CreateTaskFolder(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 WedataClient::CreateTaskVersionDsOutcome WedataClient::CreateTaskVersionDs(const CreateTaskVersionDsRequest &request)
 {
     auto outcome = MakeRequest(request, "CreateTaskVersionDs");

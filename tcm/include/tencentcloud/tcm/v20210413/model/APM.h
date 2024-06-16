@@ -117,6 +117,31 @@ namespace TencentCloud
                      */
                     bool InstanceIdHasBeenSet() const;
 
+                    /**
+                     * 获取是否要删除APM实例
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return NeedDelete 是否要删除APM实例
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    bool GetNeedDelete() const;
+
+                    /**
+                     * 设置是否要删除APM实例
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _needDelete 是否要删除APM实例
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetNeedDelete(const bool& _needDelete);
+
+                    /**
+                     * 判断参数 NeedDelete 是否已赋值
+                     * @return NeedDelete 是否已赋值
+                     * 
+                     */
+                    bool NeedDeleteHasBeenSet() const;
+
                 private:
 
                     /**
@@ -138,6 +163,13 @@ namespace TencentCloud
                      */
                     std::string m_instanceId;
                     bool m_instanceIdHasBeenSet;
+
+                    /**
+                     * 是否要删除APM实例
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    bool m_needDelete;
+                    bool m_needDeleteHasBeenSet;
 
                 };
             }

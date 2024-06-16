@@ -96,15 +96,15 @@ namespace TencentCloud
                     bool MaxDurationLimitHasBeenSet() const;
 
                     /**
-                     * 获取云存储相关的参数，目前支持腾讯云对象存储以及腾讯云云点播VOD，不支持第三方云存储
-                     * @return StorageParams 云存储相关的参数，目前支持腾讯云对象存储以及腾讯云云点播VOD，不支持第三方云存储
+                     * 获取【必填】云存储相关的参数，目前支持腾讯云对象存储以及腾讯云云点播VOD，不支持第三方云存储
+                     * @return StorageParams 【必填】云存储相关的参数，目前支持腾讯云对象存储以及腾讯云云点播VOD，不支持第三方云存储
                      * 
                      */
                     StorageParams GetStorageParams() const;
 
                     /**
-                     * 设置云存储相关的参数，目前支持腾讯云对象存储以及腾讯云云点播VOD，不支持第三方云存储
-                     * @param _storageParams 云存储相关的参数，目前支持腾讯云对象存储以及腾讯云云点播VOD，不支持第三方云存储
+                     * 设置【必填】云存储相关的参数，目前支持腾讯云对象存储以及腾讯云云点播VOD，不支持第三方云存储
+                     * @param _storageParams 【必填】云存储相关的参数，目前支持腾讯云对象存储以及腾讯云云点播VOD，不支持第三方云存储
                      * 
                      */
                     void SetStorageParams(const StorageParams& _storageParams);
@@ -138,15 +138,15 @@ namespace TencentCloud
                     bool WebRecordVideoParamsHasBeenSet() const;
 
                     /**
-                     * 获取TRTC的SdkAppId
-                     * @return SdkAppId TRTC的SdkAppId
+                     * 获取【必填】TRTC的SdkAppId
+                     * @return SdkAppId 【必填】TRTC的SdkAppId
                      * 
                      */
                     int64_t GetSdkAppId() const;
 
                     /**
-                     * 设置TRTC的SdkAppId
-                     * @param _sdkAppId TRTC的SdkAppId
+                     * 设置【必填】TRTC的SdkAppId
+                     * @param _sdkAppId 【必填】TRTC的SdkAppId
                      * 
                      */
                     void SetSdkAppId(const int64_t& _sdkAppId);
@@ -221,7 +221,7 @@ namespace TencentCloud
                     bool m_maxDurationLimitHasBeenSet;
 
                     /**
-                     * 云存储相关的参数，目前支持腾讯云对象存储以及腾讯云云点播VOD，不支持第三方云存储
+                     * 【必填】云存储相关的参数，目前支持腾讯云对象存储以及腾讯云云点播VOD，不支持第三方云存储
                      */
                     StorageParams m_storageParams;
                     bool m_storageParamsHasBeenSet;
@@ -233,7 +233,7 @@ namespace TencentCloud
                     bool m_webRecordVideoParamsHasBeenSet;
 
                     /**
-                     * TRTC的SdkAppId
+                     * 【必填】TRTC的SdkAppId
                      */
                     int64_t m_sdkAppId;
                     bool m_sdkAppIdHasBeenSet;

@@ -73,6 +73,8 @@
 #include <tencentcloud/redis/v20180412/model/DescribeCommonDBInstancesResponse.h>
 #include <tencentcloud/redis/v20180412/model/DescribeDBSecurityGroupsRequest.h>
 #include <tencentcloud/redis/v20180412/model/DescribeDBSecurityGroupsResponse.h>
+#include <tencentcloud/redis/v20180412/model/DescribeGlobalReplicationAreaRequest.h>
+#include <tencentcloud/redis/v20180412/model/DescribeGlobalReplicationAreaResponse.h>
 #include <tencentcloud/redis/v20180412/model/DescribeInstanceAccountRequest.h>
 #include <tencentcloud/redis/v20180412/model/DescribeInstanceAccountResponse.h>
 #include <tencentcloud/redis/v20180412/model/DescribeInstanceBackupsRequest.h>
@@ -109,6 +111,8 @@
 #include <tencentcloud/redis/v20180412/model/DescribeInstanceSecurityGroupResponse.h>
 #include <tencentcloud/redis/v20180412/model/DescribeInstanceShardsRequest.h>
 #include <tencentcloud/redis/v20180412/model/DescribeInstanceShardsResponse.h>
+#include <tencentcloud/redis/v20180412/model/DescribeInstanceSpecBandwidthRequest.h>
+#include <tencentcloud/redis/v20180412/model/DescribeInstanceSpecBandwidthResponse.h>
 #include <tencentcloud/redis/v20180412/model/DescribeInstanceSupportFeatureRequest.h>
 #include <tencentcloud/redis/v20180412/model/DescribeInstanceSupportFeatureResponse.h>
 #include <tencentcloud/redis/v20180412/model/DescribeInstanceZoneInfoRequest.h>
@@ -131,6 +135,8 @@
 #include <tencentcloud/redis/v20180412/model/DescribeProxySlowLogResponse.h>
 #include <tencentcloud/redis/v20180412/model/DescribeReplicationGroupRequest.h>
 #include <tencentcloud/redis/v20180412/model/DescribeReplicationGroupResponse.h>
+#include <tencentcloud/redis/v20180412/model/DescribeReplicationGroupInstanceRequest.h>
+#include <tencentcloud/redis/v20180412/model/DescribeReplicationGroupInstanceResponse.h>
 #include <tencentcloud/redis/v20180412/model/DescribeSSLStatusRequest.h>
 #include <tencentcloud/redis/v20180412/model/DescribeSSLStatusResponse.h>
 #include <tencentcloud/redis/v20180412/model/DescribeSlowLogRequest.h>
@@ -189,6 +195,8 @@
 #include <tencentcloud/redis/v20180412/model/ModifyNetworkConfigResponse.h>
 #include <tencentcloud/redis/v20180412/model/ModifyParamTemplateRequest.h>
 #include <tencentcloud/redis/v20180412/model/ModifyParamTemplateResponse.h>
+#include <tencentcloud/redis/v20180412/model/ModifyReplicationGroupRequest.h>
+#include <tencentcloud/redis/v20180412/model/ModifyReplicationGroupResponse.h>
 #include <tencentcloud/redis/v20180412/model/OpenSSLRequest.h>
 #include <tencentcloud/redis/v20180412/model/OpenSSLResponse.h>
 #include <tencentcloud/redis/v20180412/model/ReleaseWanAddressRequest.h>
@@ -308,6 +316,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeDBSecurityGroupsResponse> DescribeDBSecurityGroupsOutcome;
                 typedef std::future<DescribeDBSecurityGroupsOutcome> DescribeDBSecurityGroupsOutcomeCallable;
                 typedef std::function<void(const RedisClient*, const Model::DescribeDBSecurityGroupsRequest&, DescribeDBSecurityGroupsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeDBSecurityGroupsAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeGlobalReplicationAreaResponse> DescribeGlobalReplicationAreaOutcome;
+                typedef std::future<DescribeGlobalReplicationAreaOutcome> DescribeGlobalReplicationAreaOutcomeCallable;
+                typedef std::function<void(const RedisClient*, const Model::DescribeGlobalReplicationAreaRequest&, DescribeGlobalReplicationAreaOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeGlobalReplicationAreaAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeInstanceAccountResponse> DescribeInstanceAccountOutcome;
                 typedef std::future<DescribeInstanceAccountOutcome> DescribeInstanceAccountOutcomeCallable;
                 typedef std::function<void(const RedisClient*, const Model::DescribeInstanceAccountRequest&, DescribeInstanceAccountOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeInstanceAccountAsyncHandler;
@@ -362,6 +373,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeInstanceShardsResponse> DescribeInstanceShardsOutcome;
                 typedef std::future<DescribeInstanceShardsOutcome> DescribeInstanceShardsOutcomeCallable;
                 typedef std::function<void(const RedisClient*, const Model::DescribeInstanceShardsRequest&, DescribeInstanceShardsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeInstanceShardsAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeInstanceSpecBandwidthResponse> DescribeInstanceSpecBandwidthOutcome;
+                typedef std::future<DescribeInstanceSpecBandwidthOutcome> DescribeInstanceSpecBandwidthOutcomeCallable;
+                typedef std::function<void(const RedisClient*, const Model::DescribeInstanceSpecBandwidthRequest&, DescribeInstanceSpecBandwidthOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeInstanceSpecBandwidthAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeInstanceSupportFeatureResponse> DescribeInstanceSupportFeatureOutcome;
                 typedef std::future<DescribeInstanceSupportFeatureOutcome> DescribeInstanceSupportFeatureOutcomeCallable;
                 typedef std::function<void(const RedisClient*, const Model::DescribeInstanceSupportFeatureRequest&, DescribeInstanceSupportFeatureOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeInstanceSupportFeatureAsyncHandler;
@@ -395,6 +409,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeReplicationGroupResponse> DescribeReplicationGroupOutcome;
                 typedef std::future<DescribeReplicationGroupOutcome> DescribeReplicationGroupOutcomeCallable;
                 typedef std::function<void(const RedisClient*, const Model::DescribeReplicationGroupRequest&, DescribeReplicationGroupOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeReplicationGroupAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeReplicationGroupInstanceResponse> DescribeReplicationGroupInstanceOutcome;
+                typedef std::future<DescribeReplicationGroupInstanceOutcome> DescribeReplicationGroupInstanceOutcomeCallable;
+                typedef std::function<void(const RedisClient*, const Model::DescribeReplicationGroupInstanceRequest&, DescribeReplicationGroupInstanceOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeReplicationGroupInstanceAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeSSLStatusResponse> DescribeSSLStatusOutcome;
                 typedef std::future<DescribeSSLStatusOutcome> DescribeSSLStatusOutcomeCallable;
                 typedef std::function<void(const RedisClient*, const Model::DescribeSSLStatusRequest&, DescribeSSLStatusOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeSSLStatusAsyncHandler;
@@ -482,6 +499,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::ModifyParamTemplateResponse> ModifyParamTemplateOutcome;
                 typedef std::future<ModifyParamTemplateOutcome> ModifyParamTemplateOutcomeCallable;
                 typedef std::function<void(const RedisClient*, const Model::ModifyParamTemplateRequest&, ModifyParamTemplateOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyParamTemplateAsyncHandler;
+                typedef Outcome<Core::Error, Model::ModifyReplicationGroupResponse> ModifyReplicationGroupOutcome;
+                typedef std::future<ModifyReplicationGroupOutcome> ModifyReplicationGroupOutcomeCallable;
+                typedef std::function<void(const RedisClient*, const Model::ModifyReplicationGroupRequest&, ModifyReplicationGroupOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyReplicationGroupAsyncHandler;
                 typedef Outcome<Core::Error, Model::OpenSSLResponse> OpenSSLOutcome;
                 typedef std::future<OpenSSLOutcome> OpenSSLOutcomeCallable;
                 typedef std::function<void(const RedisClient*, const Model::OpenSSLRequest&, OpenSSLOutcome, const std::shared_ptr<const AsyncCallerContext>&)> OpenSSLAsyncHandler;
@@ -756,6 +776,15 @@ namespace TencentCloud
                 DescribeDBSecurityGroupsOutcomeCallable DescribeDBSecurityGroupsCallable(const Model::DescribeDBSecurityGroupsRequest& request);
 
                 /**
+                 *查询全球复制支持地域信息
+                 * @param req DescribeGlobalReplicationAreaRequest
+                 * @return DescribeGlobalReplicationAreaOutcome
+                 */
+                DescribeGlobalReplicationAreaOutcome DescribeGlobalReplicationArea(const Model::DescribeGlobalReplicationAreaRequest &request);
+                void DescribeGlobalReplicationAreaAsync(const Model::DescribeGlobalReplicationAreaRequest& request, const DescribeGlobalReplicationAreaAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeGlobalReplicationAreaOutcomeCallable DescribeGlobalReplicationAreaCallable(const Model::DescribeGlobalReplicationAreaRequest& request);
+
+                /**
                  *本接口（DescribeInstanceAccount）用于查看实例子账号信息。
                  * @param req DescribeInstanceAccountRequest
                  * @return DescribeInstanceAccountOutcome
@@ -918,6 +947,15 @@ namespace TencentCloud
                 DescribeInstanceShardsOutcomeCallable DescribeInstanceShardsCallable(const Model::DescribeInstanceShardsRequest& request);
 
                 /**
+                 *本接口（DescribeInstanceSpecBandwidth）用于查询或计算带宽规格。
+                 * @param req DescribeInstanceSpecBandwidthRequest
+                 * @return DescribeInstanceSpecBandwidthOutcome
+                 */
+                DescribeInstanceSpecBandwidthOutcome DescribeInstanceSpecBandwidth(const Model::DescribeInstanceSpecBandwidthRequest &request);
+                void DescribeInstanceSpecBandwidthAsync(const Model::DescribeInstanceSpecBandwidthRequest& request, const DescribeInstanceSpecBandwidthAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeInstanceSpecBandwidthOutcomeCallable DescribeInstanceSpecBandwidthCallable(const Model::DescribeInstanceSpecBandwidthRequest& request);
+
+                /**
                  *本接口（DescribeInstanceSupportFeature）用于查询实例支持的功能特性。
                  * @param req DescribeInstanceSupportFeatureRequest
                  * @return DescribeInstanceSupportFeatureOutcome
@@ -1015,6 +1053,15 @@ namespace TencentCloud
                 DescribeReplicationGroupOutcome DescribeReplicationGroup(const Model::DescribeReplicationGroupRequest &request);
                 void DescribeReplicationGroupAsync(const Model::DescribeReplicationGroupRequest& request, const DescribeReplicationGroupAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DescribeReplicationGroupOutcomeCallable DescribeReplicationGroupCallable(const Model::DescribeReplicationGroupRequest& request);
+
+                /**
+                 *查询复制组信息
+                 * @param req DescribeReplicationGroupInstanceRequest
+                 * @return DescribeReplicationGroupInstanceOutcome
+                 */
+                DescribeReplicationGroupInstanceOutcome DescribeReplicationGroupInstance(const Model::DescribeReplicationGroupInstanceRequest &request);
+                void DescribeReplicationGroupInstanceAsync(const Model::DescribeReplicationGroupInstanceRequest& request, const DescribeReplicationGroupInstanceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeReplicationGroupInstanceOutcomeCallable DescribeReplicationGroupInstanceCallable(const Model::DescribeReplicationGroupInstanceRequest& request);
 
                 /**
                  *本接口（DescribeSSLStatus）用于查询实例 SSL 认证相关信息，包括开启状态、配置状态、证书地址等。
@@ -1276,6 +1323,15 @@ namespace TencentCloud
                 ModifyParamTemplateOutcome ModifyParamTemplate(const Model::ModifyParamTemplateRequest &request);
                 void ModifyParamTemplateAsync(const Model::ModifyParamTemplateRequest& request, const ModifyParamTemplateAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 ModifyParamTemplateOutcomeCallable ModifyParamTemplateCallable(const Model::ModifyParamTemplateRequest& request);
+
+                /**
+                 *修改复制组信息
+                 * @param req ModifyReplicationGroupRequest
+                 * @return ModifyReplicationGroupOutcome
+                 */
+                ModifyReplicationGroupOutcome ModifyReplicationGroup(const Model::ModifyReplicationGroupRequest &request);
+                void ModifyReplicationGroupAsync(const Model::ModifyReplicationGroupRequest& request, const ModifyReplicationGroupAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                ModifyReplicationGroupOutcomeCallable ModifyReplicationGroupCallable(const Model::ModifyReplicationGroupRequest& request);
 
                 /**
                  *开启SSL

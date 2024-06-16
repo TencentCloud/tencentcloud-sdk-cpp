@@ -537,6 +537,31 @@ namespace TencentCloud
                      */
                     bool ClusterVersionHasBeenSet() const;
 
+                    /**
+                     * 获取计费模式，0-后付费，1-预付费
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return PayMode 计费模式，0-后付费，1-预付费
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    uint64_t GetPayMode() const;
+
+                    /**
+                     * 设置计费模式，0-后付费，1-预付费
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _payMode 计费模式，0-后付费，1-预付费
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetPayMode(const uint64_t& _payMode);
+
+                    /**
+                     * 判断参数 PayMode 是否已赋值
+                     * @return PayMode 是否已赋值
+                     * 
+                     */
+                    bool PayModeHasBeenSet() const;
+
                 private:
 
                     /**
@@ -677,6 +702,13 @@ namespace TencentCloud
                      */
                     std::string m_clusterVersion;
                     bool m_clusterVersionHasBeenSet;
+
+                    /**
+                     * 计费模式，0-后付费，1-预付费
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    uint64_t m_payMode;
+                    bool m_payModeHasBeenSet;
 
                 };
             }

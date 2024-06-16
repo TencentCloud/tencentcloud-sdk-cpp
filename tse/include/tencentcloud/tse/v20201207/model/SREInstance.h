@@ -30,6 +30,7 @@
 #include <tencentcloud/tse/v20201207/model/KVPair.h>
 #include <tencentcloud/tse/v20201207/model/DescribeInstanceRegionInfo.h>
 #include <tencentcloud/tse/v20201207/model/StorageOption.h>
+#include <tencentcloud/tse/v20201207/model/ZookeeperRegionInfo.h>
 
 
 namespace TencentCloud
@@ -870,6 +871,56 @@ namespace TencentCloud
                      */
                     bool StorageOptionHasBeenSet() const;
 
+                    /**
+                     * 获取Zookeeper的额外环境数据信息
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return ZookeeperRegionInfo Zookeeper的额外环境数据信息
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    ZookeeperRegionInfo GetZookeeperRegionInfo() const;
+
+                    /**
+                     * 设置Zookeeper的额外环境数据信息
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _zookeeperRegionInfo Zookeeper的额外环境数据信息
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetZookeeperRegionInfo(const ZookeeperRegionInfo& _zookeeperRegionInfo);
+
+                    /**
+                     * 判断参数 ZookeeperRegionInfo 是否已赋值
+                     * @return ZookeeperRegionInfo 是否已赋值
+                     * 
+                     */
+                    bool ZookeeperRegionInfoHasBeenSet() const;
+
+                    /**
+                     * 获取部署架构
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return DeployMode 部署架构
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::string GetDeployMode() const;
+
+                    /**
+                     * 设置部署架构
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _deployMode 部署架构
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetDeployMode(const std::string& _deployMode);
+
+                    /**
+                     * 判断参数 DeployMode 是否已赋值
+                     * @return DeployMode 是否已赋值
+                     * 
+                     */
+                    bool DeployModeHasBeenSet() const;
+
                 private:
 
                     /**
@@ -1101,6 +1152,20 @@ namespace TencentCloud
                      */
                     std::vector<StorageOption> m_storageOption;
                     bool m_storageOptionHasBeenSet;
+
+                    /**
+                     * Zookeeper的额外环境数据信息
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    ZookeeperRegionInfo m_zookeeperRegionInfo;
+                    bool m_zookeeperRegionInfoHasBeenSet;
+
+                    /**
+                     * 部署架构
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_deployMode;
+                    bool m_deployModeHasBeenSet;
 
                 };
             }

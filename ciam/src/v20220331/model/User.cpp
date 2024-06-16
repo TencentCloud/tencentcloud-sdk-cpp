@@ -41,6 +41,7 @@ User::User() :
     m_wechatOpenIdHasBeenSet(false),
     m_wechatUnionIdHasBeenSet(false),
     m_alipayUserIdHasBeenSet(false),
+    m_weComUserIdHasBeenSet(false),
     m_descriptionHasBeenSet(false),
     m_nameHasBeenSet(false),
     m_localeHasBeenSet(false),
@@ -281,6 +282,16 @@ CoreInternalOutcome User::Deserialize(const rapidjson::Value &value)
         }
         m_alipayUserId = string(value["AlipayUserId"].GetString());
         m_alipayUserIdHasBeenSet = true;
+    }
+
+    if (value.HasMember("WeComUserId") && !value["WeComUserId"].IsNull())
+    {
+        if (!value["WeComUserId"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `User.WeComUserId` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_weComUserId = string(value["WeComUserId"].GetString());
+        m_weComUserIdHasBeenSet = true;
     }
 
     if (value.HasMember("Description") && !value["Description"].IsNull())
@@ -670,6 +681,14 @@ void User::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorT
         string key = "AlipayUserId";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_alipayUserId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_weComUserIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "WeComUserId";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_weComUserId.c_str(), allocator).Move(), allocator);
     }
 
     if (m_descriptionHasBeenSet)
@@ -1161,6 +1180,22 @@ void User::SetAlipayUserId(const string& _alipayUserId)
 bool User::AlipayUserIdHasBeenSet() const
 {
     return m_alipayUserIdHasBeenSet;
+}
+
+string User::GetWeComUserId() const
+{
+    return m_weComUserId;
+}
+
+void User::SetWeComUserId(const string& _weComUserId)
+{
+    m_weComUserId = _weComUserId;
+    m_weComUserIdHasBeenSet = true;
+}
+
+bool User::WeComUserIdHasBeenSet() const
+{
+    return m_weComUserIdHasBeenSet;
 }
 
 string User::GetDescription() const

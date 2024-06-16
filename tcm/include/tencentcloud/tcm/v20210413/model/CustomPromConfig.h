@@ -48,14 +48,18 @@ namespace TencentCloud
 
                     /**
                      * 获取Prometheus 访问地址
+注意：此字段可能返回 null，表示取不到有效值。
                      * @return Url Prometheus 访问地址
+注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetUrl() const;
 
                     /**
                      * 设置Prometheus 访问地址
+注意：此字段可能返回 null，表示取不到有效值。
                      * @param _url Prometheus 访问地址
+注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetUrl(const std::string& _url);
@@ -69,14 +73,18 @@ namespace TencentCloud
 
                     /**
                      * 获取认证方式
+注意：此字段可能返回 null，表示取不到有效值。
                      * @return AuthType 认证方式
+注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetAuthType() const;
 
                     /**
                      * 设置认证方式
+注意：此字段可能返回 null，表示取不到有效值。
                      * @param _authType 认证方式
+注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetAuthType(const std::string& _authType);
@@ -90,14 +98,18 @@ namespace TencentCloud
 
                     /**
                      * 获取是否公网地址，缺省为 false
+注意：此字段可能返回 null，表示取不到有效值。
                      * @return IsPublicAddr 是否公网地址，缺省为 false
+注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     bool GetIsPublicAddr() const;
 
                     /**
                      * 设置是否公网地址，缺省为 false
+注意：此字段可能返回 null，表示取不到有效值。
                      * @param _isPublicAddr 是否公网地址，缺省为 false
+注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetIsPublicAddr(const bool& _isPublicAddr);
@@ -111,14 +123,18 @@ namespace TencentCloud
 
                     /**
                      * 获取虚拟网络id
+注意：此字段可能返回 null，表示取不到有效值。
                      * @return VpcId 虚拟网络id
+注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetVpcId() const;
 
                     /**
                      * 设置虚拟网络id
+注意：此字段可能返回 null，表示取不到有效值。
                      * @param _vpcId 虚拟网络id
+注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetVpcId(const std::string& _vpcId);
@@ -132,14 +148,18 @@ namespace TencentCloud
 
                     /**
                      * 获取Prometheus 用户名（用于 basic 认证方式）
+注意：此字段可能返回 null，表示取不到有效值。
                      * @return Username Prometheus 用户名（用于 basic 认证方式）
+注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetUsername() const;
 
                     /**
                      * 设置Prometheus 用户名（用于 basic 认证方式）
+注意：此字段可能返回 null，表示取不到有效值。
                      * @param _username Prometheus 用户名（用于 basic 认证方式）
+注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetUsername(const std::string& _username);
@@ -153,14 +173,18 @@ namespace TencentCloud
 
                     /**
                      * 获取Prometheus 密码（用于 basic 认证方式）
+注意：此字段可能返回 null，表示取不到有效值。
                      * @return Password Prometheus 密码（用于 basic 认证方式）
+注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetPassword() const;
 
                     /**
                      * 设置Prometheus 密码（用于 basic 认证方式）
+注意：此字段可能返回 null，表示取不到有效值。
                      * @param _password Prometheus 密码（用于 basic 认证方式）
+注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetPassword(const std::string& _password);
@@ -176,36 +200,42 @@ namespace TencentCloud
 
                     /**
                      * Prometheus 访问地址
+注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_url;
                     bool m_urlHasBeenSet;
 
                     /**
                      * 认证方式
+注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_authType;
                     bool m_authTypeHasBeenSet;
 
                     /**
                      * 是否公网地址，缺省为 false
+注意：此字段可能返回 null，表示取不到有效值。
                      */
                     bool m_isPublicAddr;
                     bool m_isPublicAddrHasBeenSet;
 
                     /**
                      * 虚拟网络id
+注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_vpcId;
                     bool m_vpcIdHasBeenSet;
 
                     /**
                      * Prometheus 用户名（用于 basic 认证方式）
+注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_username;
                     bool m_usernameHasBeenSet;
 
                     /**
                      * Prometheus 密码（用于 basic 认证方式）
+注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_password;
                     bool m_passwordHasBeenSet;

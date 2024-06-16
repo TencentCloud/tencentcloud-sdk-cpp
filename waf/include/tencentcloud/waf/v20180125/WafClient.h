@@ -91,6 +91,8 @@
 #include <tencentcloud/waf/v20180125/model/DescribeAntiInfoLeakRulesResponse.h>
 #include <tencentcloud/waf/v20180125/model/DescribeAntiInfoLeakageRulesRequest.h>
 #include <tencentcloud/waf/v20180125/model/DescribeAntiInfoLeakageRulesResponse.h>
+#include <tencentcloud/waf/v20180125/model/DescribeAreaBanAreasRequest.h>
+#include <tencentcloud/waf/v20180125/model/DescribeAreaBanAreasResponse.h>
 #include <tencentcloud/waf/v20180125/model/DescribeAreaBanSupportAreasRequest.h>
 #include <tencentcloud/waf/v20180125/model/DescribeAreaBanSupportAreasResponse.h>
 #include <tencentcloud/waf/v20180125/model/DescribeAttackOverviewRequest.h>
@@ -419,6 +421,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeAntiInfoLeakageRulesResponse> DescribeAntiInfoLeakageRulesOutcome;
                 typedef std::future<DescribeAntiInfoLeakageRulesOutcome> DescribeAntiInfoLeakageRulesOutcomeCallable;
                 typedef std::function<void(const WafClient*, const Model::DescribeAntiInfoLeakageRulesRequest&, DescribeAntiInfoLeakageRulesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeAntiInfoLeakageRulesAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeAreaBanAreasResponse> DescribeAreaBanAreasOutcome;
+                typedef std::future<DescribeAreaBanAreasOutcome> DescribeAreaBanAreasOutcomeCallable;
+                typedef std::function<void(const WafClient*, const Model::DescribeAreaBanAreasRequest&, DescribeAreaBanAreasOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeAreaBanAreasAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeAreaBanSupportAreasResponse> DescribeAreaBanSupportAreasOutcome;
                 typedef std::future<DescribeAreaBanSupportAreasOutcome> DescribeAreaBanSupportAreasOutcomeCallable;
                 typedef std::function<void(const WafClient*, const Model::DescribeAreaBanSupportAreasRequest&, DescribeAreaBanSupportAreasOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeAreaBanSupportAreasAsyncHandler;
@@ -1051,6 +1056,15 @@ namespace TencentCloud
                 DescribeAntiInfoLeakageRulesOutcome DescribeAntiInfoLeakageRules(const Model::DescribeAntiInfoLeakageRulesRequest &request);
                 void DescribeAntiInfoLeakageRulesAsync(const Model::DescribeAntiInfoLeakageRulesRequest& request, const DescribeAntiInfoLeakageRulesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DescribeAntiInfoLeakageRulesOutcomeCallable DescribeAntiInfoLeakageRulesCallable(const Model::DescribeAntiInfoLeakageRulesRequest& request);
+
+                /**
+                 *获取地域封禁配置包括地域封禁开关，设置封禁的地区信息
+                 * @param req DescribeAreaBanAreasRequest
+                 * @return DescribeAreaBanAreasOutcome
+                 */
+                DescribeAreaBanAreasOutcome DescribeAreaBanAreas(const Model::DescribeAreaBanAreasRequest &request);
+                void DescribeAreaBanAreasAsync(const Model::DescribeAreaBanAreasRequest& request, const DescribeAreaBanAreasAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeAreaBanAreasOutcomeCallable DescribeAreaBanAreasCallable(const Model::DescribeAreaBanAreasRequest& request);
 
                 /**
                  *获取WAF地域封禁支持的地域列表

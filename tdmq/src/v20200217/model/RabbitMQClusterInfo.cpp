@@ -42,7 +42,8 @@ RabbitMQClusterInfo::RabbitMQClusterInfo() :
     m_autoRenewFlagHasBeenSet(false),
     m_mirrorQueuePolicyFlagHasBeenSet(false),
     m_messageConsumeRateHasBeenSet(false),
-    m_clusterVersionHasBeenSet(false)
+    m_clusterVersionHasBeenSet(false),
+    m_payModeHasBeenSet(false)
 {
 }
 
@@ -284,6 +285,16 @@ CoreInternalOutcome RabbitMQClusterInfo::Deserialize(const rapidjson::Value &val
         m_clusterVersionHasBeenSet = true;
     }
 
+    if (value.HasMember("PayMode") && !value["PayMode"].IsNull())
+    {
+        if (!value["PayMode"].IsUint64())
+        {
+            return CoreInternalOutcome(Core::Error("response `RabbitMQClusterInfo.PayMode` IsUint64=false incorrectly").SetRequestId(requestId));
+        }
+        m_payMode = value["PayMode"].GetUint64();
+        m_payModeHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -477,6 +488,14 @@ void RabbitMQClusterInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Docum
         string key = "ClusterVersion";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_clusterVersion.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_payModeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "PayMode";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_payMode, allocator);
     }
 
 }
@@ -832,5 +851,21 @@ void RabbitMQClusterInfo::SetClusterVersion(const string& _clusterVersion)
 bool RabbitMQClusterInfo::ClusterVersionHasBeenSet() const
 {
     return m_clusterVersionHasBeenSet;
+}
+
+uint64_t RabbitMQClusterInfo::GetPayMode() const
+{
+    return m_payMode;
+}
+
+void RabbitMQClusterInfo::SetPayMode(const uint64_t& _payMode)
+{
+    m_payMode = _payMode;
+    m_payModeHasBeenSet = true;
+}
+
+bool RabbitMQClusterInfo::PayModeHasBeenSet() const
+{
+    return m_payModeHasBeenSet;
 }
 

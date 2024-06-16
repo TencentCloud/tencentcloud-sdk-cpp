@@ -357,15 +357,15 @@ namespace TencentCloud
                     bool EmotionIntensityHasBeenSet() const;
 
                     /**
-                     * 获取一句话复刻音色id，使用一句话复刻音色时需填写。若使用一句话复刻，VoiceType请填入固定值“200000000”
-                     * @return FastVoiceType 一句话复刻音色id，使用一句话复刻音色时需填写。若使用一句话复刻，VoiceType请填入固定值“200000000”
+                     * 获取预留参数，暂未使用
+                     * @return FastVoiceType 预留参数，暂未使用
                      * 
                      */
                     std::string GetFastVoiceType() const;
 
                     /**
-                     * 设置一句话复刻音色id，使用一句话复刻音色时需填写。若使用一句话复刻，VoiceType请填入固定值“200000000”
-                     * @param _fastVoiceType 一句话复刻音色id，使用一句话复刻音色时需填写。若使用一句话复刻，VoiceType请填入固定值“200000000”
+                     * 设置预留参数，暂未使用
+                     * @param _fastVoiceType 预留参数，暂未使用
                      * 
                      */
                     void SetFastVoiceType(const std::string& _fastVoiceType);
@@ -469,7 +469,7 @@ namespace TencentCloud
                     bool m_emotionIntensityHasBeenSet;
 
                     /**
-                     * 一句话复刻音色id，使用一句话复刻音色时需填写。若使用一句话复刻，VoiceType请填入固定值“200000000”
+                     * 预留参数，暂未使用
                      */
                     std::string m_fastVoiceType;
                     bool m_fastVoiceTypeHasBeenSet;
