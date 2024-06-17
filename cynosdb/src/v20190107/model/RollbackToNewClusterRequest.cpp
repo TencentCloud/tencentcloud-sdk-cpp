@@ -43,7 +43,12 @@ RollbackToNewClusterRequest::RollbackToNewClusterRequest() :
     m_paramTemplateIdHasBeenSet(false),
     m_instanceInitInfosHasBeenSet(false),
     m_dealModeHasBeenSet(false),
-    m_payModeHasBeenSet(false)
+    m_payModeHasBeenSet(false),
+    m_timeSpanHasBeenSet(false),
+    m_timeUnitHasBeenSet(false),
+    m_rollbackDatabasesHasBeenSet(false),
+    m_rollbackTablesHasBeenSet(false),
+    m_originalROInstanceListHasBeenSet(false)
 {
 }
 
@@ -251,6 +256,65 @@ string RollbackToNewClusterRequest::ToJsonString() const
         string key = "PayMode";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_payMode, allocator);
+    }
+
+    if (m_timeSpanHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "TimeSpan";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_timeSpan, allocator);
+    }
+
+    if (m_timeUnitHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "TimeUnit";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_timeUnit.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_rollbackDatabasesHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "RollbackDatabases";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_rollbackDatabases.begin(); itr != m_rollbackDatabases.end(); ++itr, ++i)
+        {
+            d[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(d[key.c_str()][i], allocator);
+        }
+    }
+
+    if (m_rollbackTablesHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "RollbackTables";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_rollbackTables.begin(); itr != m_rollbackTables.end(); ++itr, ++i)
+        {
+            d[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(d[key.c_str()][i], allocator);
+        }
+    }
+
+    if (m_originalROInstanceListHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "OriginalROInstanceList";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        for (auto itr = m_originalROInstanceList.begin(); itr != m_originalROInstanceList.end(); ++itr)
+        {
+            d[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
+        }
     }
 
 
@@ -595,6 +659,86 @@ void RollbackToNewClusterRequest::SetPayMode(const int64_t& _payMode)
 bool RollbackToNewClusterRequest::PayModeHasBeenSet() const
 {
     return m_payModeHasBeenSet;
+}
+
+int64_t RollbackToNewClusterRequest::GetTimeSpan() const
+{
+    return m_timeSpan;
+}
+
+void RollbackToNewClusterRequest::SetTimeSpan(const int64_t& _timeSpan)
+{
+    m_timeSpan = _timeSpan;
+    m_timeSpanHasBeenSet = true;
+}
+
+bool RollbackToNewClusterRequest::TimeSpanHasBeenSet() const
+{
+    return m_timeSpanHasBeenSet;
+}
+
+string RollbackToNewClusterRequest::GetTimeUnit() const
+{
+    return m_timeUnit;
+}
+
+void RollbackToNewClusterRequest::SetTimeUnit(const string& _timeUnit)
+{
+    m_timeUnit = _timeUnit;
+    m_timeUnitHasBeenSet = true;
+}
+
+bool RollbackToNewClusterRequest::TimeUnitHasBeenSet() const
+{
+    return m_timeUnitHasBeenSet;
+}
+
+vector<RollbackDatabase> RollbackToNewClusterRequest::GetRollbackDatabases() const
+{
+    return m_rollbackDatabases;
+}
+
+void RollbackToNewClusterRequest::SetRollbackDatabases(const vector<RollbackDatabase>& _rollbackDatabases)
+{
+    m_rollbackDatabases = _rollbackDatabases;
+    m_rollbackDatabasesHasBeenSet = true;
+}
+
+bool RollbackToNewClusterRequest::RollbackDatabasesHasBeenSet() const
+{
+    return m_rollbackDatabasesHasBeenSet;
+}
+
+vector<RollbackTable> RollbackToNewClusterRequest::GetRollbackTables() const
+{
+    return m_rollbackTables;
+}
+
+void RollbackToNewClusterRequest::SetRollbackTables(const vector<RollbackTable>& _rollbackTables)
+{
+    m_rollbackTables = _rollbackTables;
+    m_rollbackTablesHasBeenSet = true;
+}
+
+bool RollbackToNewClusterRequest::RollbackTablesHasBeenSet() const
+{
+    return m_rollbackTablesHasBeenSet;
+}
+
+vector<string> RollbackToNewClusterRequest::GetOriginalROInstanceList() const
+{
+    return m_originalROInstanceList;
+}
+
+void RollbackToNewClusterRequest::SetOriginalROInstanceList(const vector<string>& _originalROInstanceList)
+{
+    m_originalROInstanceList = _originalROInstanceList;
+    m_originalROInstanceListHasBeenSet = true;
+}
+
+bool RollbackToNewClusterRequest::OriginalROInstanceListHasBeenSet() const
+{
+    return m_originalROInstanceListHasBeenSet;
 }
 
 

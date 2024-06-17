@@ -29,7 +29,10 @@ BackupInfo::BackupInfo() :
     m_startTimeHasBeenSet(false),
     m_endTimeHasBeenSet(false),
     m_statusHasBeenSet(false),
-    m_backupMethodHasBeenSet(false)
+    m_backupMethodHasBeenSet(false),
+    m_backIdHasBeenSet(false),
+    m_deleteTimeHasBeenSet(false),
+    m_backupRegionHasBeenSet(false)
 {
 }
 
@@ -128,6 +131,36 @@ CoreInternalOutcome BackupInfo::Deserialize(const rapidjson::Value &value)
         m_backupMethodHasBeenSet = true;
     }
 
+    if (value.HasMember("BackId") && !value["BackId"].IsNull())
+    {
+        if (!value["BackId"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `BackupInfo.BackId` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_backId = value["BackId"].GetInt64();
+        m_backIdHasBeenSet = true;
+    }
+
+    if (value.HasMember("DeleteTime") && !value["DeleteTime"].IsNull())
+    {
+        if (!value["DeleteTime"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `BackupInfo.DeleteTime` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_deleteTime = string(value["DeleteTime"].GetString());
+        m_deleteTimeHasBeenSet = true;
+    }
+
+    if (value.HasMember("BackupRegion") && !value["BackupRegion"].IsNull())
+    {
+        if (!value["BackupRegion"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `BackupInfo.BackupRegion` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_backupRegion = string(value["BackupRegion"].GetString());
+        m_backupRegionHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -205,6 +238,30 @@ void BackupInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Allo
         string key = "BackupMethod";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_backupMethod, allocator);
+    }
+
+    if (m_backIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "BackId";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_backId, allocator);
+    }
+
+    if (m_deleteTimeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "DeleteTime";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_deleteTime.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_backupRegionHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "BackupRegion";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_backupRegion.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -352,5 +409,53 @@ void BackupInfo::SetBackupMethod(const uint64_t& _backupMethod)
 bool BackupInfo::BackupMethodHasBeenSet() const
 {
     return m_backupMethodHasBeenSet;
+}
+
+int64_t BackupInfo::GetBackId() const
+{
+    return m_backId;
+}
+
+void BackupInfo::SetBackId(const int64_t& _backId)
+{
+    m_backId = _backId;
+    m_backIdHasBeenSet = true;
+}
+
+bool BackupInfo::BackIdHasBeenSet() const
+{
+    return m_backIdHasBeenSet;
+}
+
+string BackupInfo::GetDeleteTime() const
+{
+    return m_deleteTime;
+}
+
+void BackupInfo::SetDeleteTime(const string& _deleteTime)
+{
+    m_deleteTime = _deleteTime;
+    m_deleteTimeHasBeenSet = true;
+}
+
+bool BackupInfo::DeleteTimeHasBeenSet() const
+{
+    return m_deleteTimeHasBeenSet;
+}
+
+string BackupInfo::GetBackupRegion() const
+{
+    return m_backupRegion;
+}
+
+void BackupInfo::SetBackupRegion(const string& _backupRegion)
+{
+    m_backupRegion = _backupRegion;
+    m_backupRegionHasBeenSet = true;
+}
+
+bool BackupInfo::BackupRegionHasBeenSet() const
+{
+    return m_backupRegionHasBeenSet;
 }
 

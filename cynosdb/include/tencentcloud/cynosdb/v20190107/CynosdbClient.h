@@ -1403,7 +1403,9 @@ namespace TencentCloud
                 DescribeRollbackTimeRangeOutcomeCallable DescribeRollbackTimeRangeCallable(const Model::DescribeRollbackTimeRangeRequest& request);
 
                 /**
-                 *指定时间和集群查询是否可回滚
+                 *历史废弃接口，从云API下线
+
+指定时间和集群查询是否可回滚
                  * @param req DescribeRollbackTimeValidityRequest
                  * @return DescribeRollbackTimeValidityOutcome
                  */

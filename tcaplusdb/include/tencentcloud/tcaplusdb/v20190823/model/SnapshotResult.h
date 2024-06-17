@@ -297,6 +297,31 @@ namespace TencentCloud
                      */
                     bool SnapshotStatusHasBeenSet() const;
 
+                    /**
+                     * 获取申请单ID
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return ApplicationId 申请单ID
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::string GetApplicationId() const;
+
+                    /**
+                     * 设置申请单ID
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _applicationId 申请单ID
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetApplicationId(const std::string& _applicationId);
+
+                    /**
+                     * 判断参数 ApplicationId 是否已赋值
+                     * @return ApplicationId 是否已赋值
+                     * 
+                     */
+                    bool ApplicationIdHasBeenSet() const;
+
                 private:
 
                     /**
@@ -368,6 +393,13 @@ namespace TencentCloud
                      */
                     uint64_t m_snapshotStatus;
                     bool m_snapshotStatusHasBeenSet;
+
+                    /**
+                     * 申请单ID
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_applicationId;
+                    bool m_applicationIdHasBeenSet;
 
                 };
             }

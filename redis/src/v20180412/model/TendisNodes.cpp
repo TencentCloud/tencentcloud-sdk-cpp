@@ -22,7 +22,8 @@ using namespace std;
 
 TendisNodes::TendisNodes() :
     m_nodeIdHasBeenSet(false),
-    m_nodeRoleHasBeenSet(false)
+    m_nodeRoleHasBeenSet(false),
+    m_zoneIdHasBeenSet(false)
 {
 }
 
@@ -51,6 +52,16 @@ CoreInternalOutcome TendisNodes::Deserialize(const rapidjson::Value &value)
         m_nodeRoleHasBeenSet = true;
     }
 
+    if (value.HasMember("ZoneId") && !value["ZoneId"].IsNull())
+    {
+        if (!value["ZoneId"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `TendisNodes.ZoneId` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_zoneId = value["ZoneId"].GetInt64();
+        m_zoneIdHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -72,6 +83,14 @@ void TendisNodes::ToJsonObject(rapidjson::Value &value, rapidjson::Document::All
         string key = "NodeRole";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_nodeRole.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_zoneIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ZoneId";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_zoneId, allocator);
     }
 
 }
@@ -107,5 +126,21 @@ void TendisNodes::SetNodeRole(const string& _nodeRole)
 bool TendisNodes::NodeRoleHasBeenSet() const
 {
     return m_nodeRoleHasBeenSet;
+}
+
+int64_t TendisNodes::GetZoneId() const
+{
+    return m_zoneId;
+}
+
+void TendisNodes::SetZoneId(const int64_t& _zoneId)
+{
+    m_zoneId = _zoneId;
+    m_zoneIdHasBeenSet = true;
+}
+
+bool TendisNodes::ZoneIdHasBeenSet() const
+{
+    return m_zoneIdHasBeenSet;
 }
 

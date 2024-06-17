@@ -88,6 +88,27 @@ namespace TencentCloud
                      */
                     bool NodeRoleHasBeenSet() const;
 
+                    /**
+                     * 获取可用区 ID。	
+                     * @return ZoneId 可用区 ID。	
+                     * 
+                     */
+                    int64_t GetZoneId() const;
+
+                    /**
+                     * 设置可用区 ID。	
+                     * @param _zoneId 可用区 ID。	
+                     * 
+                     */
+                    void SetZoneId(const int64_t& _zoneId);
+
+                    /**
+                     * 判断参数 ZoneId 是否已赋值
+                     * @return ZoneId 是否已赋值
+                     * 
+                     */
+                    bool ZoneIdHasBeenSet() const;
+
                 private:
 
                     /**
@@ -101,6 +122,12 @@ namespace TencentCloud
                      */
                     std::string m_nodeRole;
                     bool m_nodeRoleHasBeenSet;
+
+                    /**
+                     * 可用区 ID。	
+                     */
+                    int64_t m_zoneId;
+                    bool m_zoneIdHasBeenSet;
 
                 };
             }

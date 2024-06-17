@@ -32,7 +32,8 @@ FileConfigRelease::FileConfigRelease() :
     m_namespaceIdHasBeenSet(false),
     m_namespaceNameHasBeenSet(false),
     m_clusterIdHasBeenSet(false),
-    m_clusterNameHasBeenSet(false)
+    m_clusterNameHasBeenSet(false),
+    m_configCentersHasBeenSet(false)
 {
 }
 
@@ -161,6 +162,26 @@ CoreInternalOutcome FileConfigRelease::Deserialize(const rapidjson::Value &value
         m_clusterNameHasBeenSet = true;
     }
 
+    if (value.HasMember("ConfigCenters") && !value["ConfigCenters"].IsNull())
+    {
+        if (!value["ConfigCenters"].IsArray())
+            return CoreInternalOutcome(Core::Error("response `FileConfigRelease.ConfigCenters` is not array type"));
+
+        const rapidjson::Value &tmpValue = value["ConfigCenters"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            TsfConfigCenter item;
+            CoreInternalOutcome outcome = item.Deserialize(*itr);
+            if (!outcome.IsSuccess())
+            {
+                outcome.GetError().SetRequestId(requestId);
+                return outcome;
+            }
+            m_configCenters.push_back(item);
+        }
+        m_configCentersHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -262,6 +283,21 @@ void FileConfigRelease::ToJsonObject(rapidjson::Value &value, rapidjson::Documen
         string key = "ClusterName";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_clusterName.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_configCentersHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ConfigCenters";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_configCenters.begin(); itr != m_configCenters.end(); ++itr, ++i)
+        {
+            value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(value[key.c_str()][i], allocator);
+        }
     }
 
 }
@@ -457,5 +493,21 @@ void FileConfigRelease::SetClusterName(const string& _clusterName)
 bool FileConfigRelease::ClusterNameHasBeenSet() const
 {
     return m_clusterNameHasBeenSet;
+}
+
+vector<TsfConfigCenter> FileConfigRelease::GetConfigCenters() const
+{
+    return m_configCenters;
+}
+
+void FileConfigRelease::SetConfigCenters(const vector<TsfConfigCenter>& _configCenters)
+{
+    m_configCenters = _configCenters;
+    m_configCentersHasBeenSet = true;
+}
+
+bool FileConfigRelease::ConfigCentersHasBeenSet() const
+{
+    return m_configCentersHasBeenSet;
 }
 

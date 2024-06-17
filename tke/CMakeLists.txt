@@ -15,56 +15,11 @@
 #
 
 set(tke_public_header
-  include/tencentcloud/tke/v20220501/TkeClient.h
   include/tencentcloud/tke/v20180525/TkeClient.h
+  include/tencentcloud/tke/v20220501/TkeClient.h
   )
 
 set(tke_public_header_model
-  include/tencentcloud/tke/v20220501/model/RuntimeConfig.h
-  include/tencentcloud/tke/v20220501/model/Label.h
-  include/tencentcloud/tke/v20220501/model/CreateNodePoolResponse.h
-  include/tencentcloud/tke/v20220501/model/CreateNativeNodePoolParam.h
-  include/tencentcloud/tke/v20220501/model/DescribeNodePoolsResponse.h
-  include/tencentcloud/tke/v20220501/model/ExternalNodeInfo.h
-  include/tencentcloud/tke/v20220501/model/DescribeClusterInstancesResponse.h
-  include/tencentcloud/tke/v20220501/model/AutoUpgradeOptions.h
-  include/tencentcloud/tke/v20220501/model/AutoscalingAdded.h
-  include/tencentcloud/tke/v20220501/model/SuperNodePoolInfo.h
-  include/tencentcloud/tke/v20220501/model/NodeCountSummary.h
-  include/tencentcloud/tke/v20220501/model/RegularNodePoolInfo.h
-  include/tencentcloud/tke/v20220501/model/InstanceExtraArgs.h
-  include/tencentcloud/tke/v20220501/model/MachineUpgradeSettings.h
-  include/tencentcloud/tke/v20220501/model/UpdateNativeNodePoolParam.h
-  include/tencentcloud/tke/v20220501/model/InstanceChargePrepaid.h
-  include/tencentcloud/tke/v20220501/model/DeleteNodePoolResponse.h
-  include/tencentcloud/tke/v20220501/model/Tag.h
-  include/tencentcloud/tke/v20220501/model/MachineSetScaling.h
-  include/tencentcloud/tke/v20220501/model/ModifyNodePoolRequest.h
-  include/tencentcloud/tke/v20220501/model/Annotation.h
-  include/tencentcloud/tke/v20220501/model/DescribeClusterInstancesRequest.h
-  include/tencentcloud/tke/v20220501/model/TagSpecification.h
-  include/tencentcloud/tke/v20220501/model/LifecycleConfig.h
-  include/tencentcloud/tke/v20220501/model/ModifyNodePoolResponse.h
-  include/tencentcloud/tke/v20220501/model/Taint.h
-  include/tencentcloud/tke/v20220501/model/Filter.h
-  include/tencentcloud/tke/v20220501/model/ManagementConfig.h
-  include/tencentcloud/tke/v20220501/model/CreateNodePoolRequest.h
-  include/tencentcloud/tke/v20220501/model/NativeNodePoolInfo.h
-  include/tencentcloud/tke/v20220501/model/DescribeNodePoolsRequest.h
-  include/tencentcloud/tke/v20220501/model/NodePool.h
-  include/tencentcloud/tke/v20220501/model/DeleteNodePoolRequest.h
-  include/tencentcloud/tke/v20220501/model/InstanceAdvancedSettings.h
-  include/tencentcloud/tke/v20220501/model/IntOrString.h
-  include/tencentcloud/tke/v20220501/model/ExternalNodePoolInfo.h
-  include/tencentcloud/tke/v20220501/model/Instance.h
-  include/tencentcloud/tke/v20220501/model/NativeNodeInfo.h
-  include/tencentcloud/tke/v20220501/model/InternetAccessible.h
-  include/tencentcloud/tke/v20220501/model/SuperNodeInfo.h
-  include/tencentcloud/tke/v20220501/model/ManuallyAdded.h
-  include/tencentcloud/tke/v20220501/model/RegularNodeInfo.h
-  include/tencentcloud/tke/v20220501/model/SortBy.h
-  include/tencentcloud/tke/v20220501/model/Disk.h
-  include/tencentcloud/tke/v20220501/model/DataDisk.h
   include/tencentcloud/tke/v20180525/model/DescribeClusterEndpointVipStatusRequest.h
   include/tencentcloud/tke/v20180525/model/DescribeClusterSecurityRequest.h
   include/tencentcloud/tke/v20180525/model/EksCiVolume.h
@@ -676,56 +631,56 @@ set(tke_public_header_model
   include/tencentcloud/tke/v20180525/model/PendingRelease.h
   include/tencentcloud/tke/v20180525/model/DescribeBackupStorageLocationsRequest.h
   include/tencentcloud/tke/v20180525/model/InstanceChargePrepaid.h
+  include/tencentcloud/tke/v20220501/model/RuntimeConfig.h
+  include/tencentcloud/tke/v20220501/model/Label.h
+  include/tencentcloud/tke/v20220501/model/CreateNodePoolResponse.h
+  include/tencentcloud/tke/v20220501/model/CreateNativeNodePoolParam.h
+  include/tencentcloud/tke/v20220501/model/DescribeNodePoolsResponse.h
+  include/tencentcloud/tke/v20220501/model/ExternalNodeInfo.h
+  include/tencentcloud/tke/v20220501/model/DescribeClusterInstancesResponse.h
+  include/tencentcloud/tke/v20220501/model/AutoUpgradeOptions.h
+  include/tencentcloud/tke/v20220501/model/AutoscalingAdded.h
+  include/tencentcloud/tke/v20220501/model/SuperNodePoolInfo.h
+  include/tencentcloud/tke/v20220501/model/NodeCountSummary.h
+  include/tencentcloud/tke/v20220501/model/RegularNodePoolInfo.h
+  include/tencentcloud/tke/v20220501/model/InstanceExtraArgs.h
+  include/tencentcloud/tke/v20220501/model/MachineUpgradeSettings.h
+  include/tencentcloud/tke/v20220501/model/UpdateNativeNodePoolParam.h
+  include/tencentcloud/tke/v20220501/model/InstanceChargePrepaid.h
+  include/tencentcloud/tke/v20220501/model/DeleteNodePoolResponse.h
+  include/tencentcloud/tke/v20220501/model/Tag.h
+  include/tencentcloud/tke/v20220501/model/MachineSetScaling.h
+  include/tencentcloud/tke/v20220501/model/ModifyNodePoolRequest.h
+  include/tencentcloud/tke/v20220501/model/Annotation.h
+  include/tencentcloud/tke/v20220501/model/DescribeClusterInstancesRequest.h
+  include/tencentcloud/tke/v20220501/model/TagSpecification.h
+  include/tencentcloud/tke/v20220501/model/LifecycleConfig.h
+  include/tencentcloud/tke/v20220501/model/ModifyNodePoolResponse.h
+  include/tencentcloud/tke/v20220501/model/Taint.h
+  include/tencentcloud/tke/v20220501/model/Filter.h
+  include/tencentcloud/tke/v20220501/model/ManagementConfig.h
+  include/tencentcloud/tke/v20220501/model/CreateNodePoolRequest.h
+  include/tencentcloud/tke/v20220501/model/NativeNodePoolInfo.h
+  include/tencentcloud/tke/v20220501/model/DescribeNodePoolsRequest.h
+  include/tencentcloud/tke/v20220501/model/NodePool.h
+  include/tencentcloud/tke/v20220501/model/DeleteNodePoolRequest.h
+  include/tencentcloud/tke/v20220501/model/InstanceAdvancedSettings.h
+  include/tencentcloud/tke/v20220501/model/IntOrString.h
+  include/tencentcloud/tke/v20220501/model/ExternalNodePoolInfo.h
+  include/tencentcloud/tke/v20220501/model/Instance.h
+  include/tencentcloud/tke/v20220501/model/NativeNodeInfo.h
+  include/tencentcloud/tke/v20220501/model/InternetAccessible.h
+  include/tencentcloud/tke/v20220501/model/SuperNodeInfo.h
+  include/tencentcloud/tke/v20220501/model/ManuallyAdded.h
+  include/tencentcloud/tke/v20220501/model/RegularNodeInfo.h
+  include/tencentcloud/tke/v20220501/model/SortBy.h
+  include/tencentcloud/tke/v20220501/model/Disk.h
+  include/tencentcloud/tke/v20220501/model/DataDisk.h
   )
 
 set(tke_src
-  src/v20220501/TkeClient.cpp
   src/v20180525/TkeClient.cpp
-  src/v20220501/model/RuntimeConfig.cpp
-  src/v20220501/model/Label.cpp
-  src/v20220501/model/CreateNodePoolResponse.cpp
-  src/v20220501/model/CreateNativeNodePoolParam.cpp
-  src/v20220501/model/DescribeNodePoolsResponse.cpp
-  src/v20220501/model/ExternalNodeInfo.cpp
-  src/v20220501/model/DescribeClusterInstancesResponse.cpp
-  src/v20220501/model/AutoUpgradeOptions.cpp
-  src/v20220501/model/AutoscalingAdded.cpp
-  src/v20220501/model/SuperNodePoolInfo.cpp
-  src/v20220501/model/NodeCountSummary.cpp
-  src/v20220501/model/RegularNodePoolInfo.cpp
-  src/v20220501/model/InstanceExtraArgs.cpp
-  src/v20220501/model/MachineUpgradeSettings.cpp
-  src/v20220501/model/UpdateNativeNodePoolParam.cpp
-  src/v20220501/model/InstanceChargePrepaid.cpp
-  src/v20220501/model/DeleteNodePoolResponse.cpp
-  src/v20220501/model/Tag.cpp
-  src/v20220501/model/MachineSetScaling.cpp
-  src/v20220501/model/ModifyNodePoolRequest.cpp
-  src/v20220501/model/Annotation.cpp
-  src/v20220501/model/DescribeClusterInstancesRequest.cpp
-  src/v20220501/model/TagSpecification.cpp
-  src/v20220501/model/LifecycleConfig.cpp
-  src/v20220501/model/ModifyNodePoolResponse.cpp
-  src/v20220501/model/Taint.cpp
-  src/v20220501/model/Filter.cpp
-  src/v20220501/model/ManagementConfig.cpp
-  src/v20220501/model/CreateNodePoolRequest.cpp
-  src/v20220501/model/NativeNodePoolInfo.cpp
-  src/v20220501/model/DescribeNodePoolsRequest.cpp
-  src/v20220501/model/NodePool.cpp
-  src/v20220501/model/DeleteNodePoolRequest.cpp
-  src/v20220501/model/InstanceAdvancedSettings.cpp
-  src/v20220501/model/IntOrString.cpp
-  src/v20220501/model/ExternalNodePoolInfo.cpp
-  src/v20220501/model/Instance.cpp
-  src/v20220501/model/NativeNodeInfo.cpp
-  src/v20220501/model/InternetAccessible.cpp
-  src/v20220501/model/SuperNodeInfo.cpp
-  src/v20220501/model/ManuallyAdded.cpp
-  src/v20220501/model/RegularNodeInfo.cpp
-  src/v20220501/model/SortBy.cpp
-  src/v20220501/model/Disk.cpp
-  src/v20220501/model/DataDisk.cpp
+  src/v20220501/TkeClient.cpp
   src/v20180525/model/DescribeClusterEndpointVipStatusRequest.cpp
   src/v20180525/model/DescribeClusterSecurityRequest.cpp
   src/v20180525/model/EksCiVolume.cpp
@@ -1337,6 +1292,51 @@ set(tke_src
   src/v20180525/model/PendingRelease.cpp
   src/v20180525/model/DescribeBackupStorageLocationsRequest.cpp
   src/v20180525/model/InstanceChargePrepaid.cpp
+  src/v20220501/model/RuntimeConfig.cpp
+  src/v20220501/model/Label.cpp
+  src/v20220501/model/CreateNodePoolResponse.cpp
+  src/v20220501/model/CreateNativeNodePoolParam.cpp
+  src/v20220501/model/DescribeNodePoolsResponse.cpp
+  src/v20220501/model/ExternalNodeInfo.cpp
+  src/v20220501/model/DescribeClusterInstancesResponse.cpp
+  src/v20220501/model/AutoUpgradeOptions.cpp
+  src/v20220501/model/AutoscalingAdded.cpp
+  src/v20220501/model/SuperNodePoolInfo.cpp
+  src/v20220501/model/NodeCountSummary.cpp
+  src/v20220501/model/RegularNodePoolInfo.cpp
+  src/v20220501/model/InstanceExtraArgs.cpp
+  src/v20220501/model/MachineUpgradeSettings.cpp
+  src/v20220501/model/UpdateNativeNodePoolParam.cpp
+  src/v20220501/model/InstanceChargePrepaid.cpp
+  src/v20220501/model/DeleteNodePoolResponse.cpp
+  src/v20220501/model/Tag.cpp
+  src/v20220501/model/MachineSetScaling.cpp
+  src/v20220501/model/ModifyNodePoolRequest.cpp
+  src/v20220501/model/Annotation.cpp
+  src/v20220501/model/DescribeClusterInstancesRequest.cpp
+  src/v20220501/model/TagSpecification.cpp
+  src/v20220501/model/LifecycleConfig.cpp
+  src/v20220501/model/ModifyNodePoolResponse.cpp
+  src/v20220501/model/Taint.cpp
+  src/v20220501/model/Filter.cpp
+  src/v20220501/model/ManagementConfig.cpp
+  src/v20220501/model/CreateNodePoolRequest.cpp
+  src/v20220501/model/NativeNodePoolInfo.cpp
+  src/v20220501/model/DescribeNodePoolsRequest.cpp
+  src/v20220501/model/NodePool.cpp
+  src/v20220501/model/DeleteNodePoolRequest.cpp
+  src/v20220501/model/InstanceAdvancedSettings.cpp
+  src/v20220501/model/IntOrString.cpp
+  src/v20220501/model/ExternalNodePoolInfo.cpp
+  src/v20220501/model/Instance.cpp
+  src/v20220501/model/NativeNodeInfo.cpp
+  src/v20220501/model/InternetAccessible.cpp
+  src/v20220501/model/SuperNodeInfo.cpp
+  src/v20220501/model/ManuallyAdded.cpp
+  src/v20220501/model/RegularNodeInfo.cpp
+  src/v20220501/model/SortBy.cpp
+  src/v20220501/model/Disk.cpp
+  src/v20220501/model/DataDisk.cpp
   )
 
 set(tke_include
@@ -1365,9 +1365,9 @@ target_link_libraries(tke
   core)
 
 #install(FILES ${tke_public_header}
-#  DESTINATION ${CMAKE_INSTALL_INCLUDEDIR}/tencentcloud/tke/v20180525)
+#  DESTINATION ${CMAKE_INSTALL_INCLUDEDIR}/tencentcloud/tke/v20220501)
 #install(FILES ${tke_public_header_model}
-#  DESTINATION ${CMAKE_INSTALL_INCLUDEDIR}/tencentcloud/tke/v20180525/model)
+#  DESTINATION ${CMAKE_INSTALL_INCLUDEDIR}/tencentcloud/tke/v20220501/model)
 install(DIRECTORY ${tke_include}
   DESTINATION ${CMAKE_INSTALL_INCLUDEDIR}/tencentcloud)
 

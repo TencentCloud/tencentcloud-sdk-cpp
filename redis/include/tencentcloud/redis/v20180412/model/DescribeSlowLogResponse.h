@@ -59,8 +59,8 @@ namespace TencentCloud
                     bool TotalCountHasBeenSet() const;
 
                     /**
-                     * 获取该参数存在命名不规范问题，建议用参数InstanceSlowLogDetail取代。慢查询详情。
-                     * @return InstanceSlowlogDetail 该参数存在命名不规范问题，建议用参数InstanceSlowLogDetail取代。慢查询详情。
+                     * 获取已废弃，该参数存在命名不规范问题，后续用参数InstanceSlowLogDetail取代。慢查询详情。
+                     * @return InstanceSlowlogDetail 已废弃，该参数存在命名不规范问题，后续用参数InstanceSlowLogDetail取代。慢查询详情。
                      * 
                      */
                     std::vector<InstanceSlowlogDetail> GetInstanceSlowlogDetail() const;
@@ -95,7 +95,7 @@ namespace TencentCloud
                     bool m_totalCountHasBeenSet;
 
                     /**
-                     * 该参数存在命名不规范问题，建议用参数InstanceSlowLogDetail取代。慢查询详情。
+                     * 已废弃，该参数存在命名不规范问题，后续用参数InstanceSlowLogDetail取代。慢查询详情。
                      */
                     std::vector<InstanceSlowlogDetail> m_instanceSlowlogDetail;
                     bool m_instanceSlowlogDetailHasBeenSet;

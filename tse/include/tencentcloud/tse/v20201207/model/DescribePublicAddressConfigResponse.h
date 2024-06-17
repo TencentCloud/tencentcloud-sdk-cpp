@@ -21,6 +21,7 @@
 #include <vector>
 #include <map>
 #include <tencentcloud/core/AbstractModel.h>
+#include <tencentcloud/tse/v20201207/model/DescribePublicAddressConfigResult.h>
 
 
 namespace TencentCloud
@@ -43,7 +44,27 @@ namespace TencentCloud
                     std::string ToJsonString() const;
 
 
+                    /**
+                     * 获取公网地址信息
+                     * @return Result 公网地址信息
+                     * 
+                     */
+                    DescribePublicAddressConfigResult GetResult() const;
+
+                    /**
+                     * 判断参数 Result 是否已赋值
+                     * @return Result 是否已赋值
+                     * 
+                     */
+                    bool ResultHasBeenSet() const;
+
                 private:
+
+                    /**
+                     * 公网地址信息
+                     */
+                    DescribePublicAddressConfigResult m_result;
+                    bool m_resultHasBeenSet;
 
                 };
             }

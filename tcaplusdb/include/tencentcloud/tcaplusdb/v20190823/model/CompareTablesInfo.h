@@ -48,14 +48,18 @@ namespace TencentCloud
 
                     /**
                      * 获取源表格的集群id
+注意：此字段可能返回 null，表示取不到有效值。
                      * @return SrcTableClusterId 源表格的集群id
+注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetSrcTableClusterId() const;
 
                     /**
                      * 设置源表格的集群id
+注意：此字段可能返回 null，表示取不到有效值。
                      * @param _srcTableClusterId 源表格的集群id
+注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetSrcTableClusterId(const std::string& _srcTableClusterId);
@@ -69,14 +73,18 @@ namespace TencentCloud
 
                     /**
                      * 获取源表格的表格组id
+注意：此字段可能返回 null，表示取不到有效值。
                      * @return SrcTableGroupId 源表格的表格组id
+注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetSrcTableGroupId() const;
 
                     /**
                      * 设置源表格的表格组id
+注意：此字段可能返回 null，表示取不到有效值。
                      * @param _srcTableGroupId 源表格的表格组id
+注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetSrcTableGroupId(const std::string& _srcTableGroupId);
@@ -90,14 +98,18 @@ namespace TencentCloud
 
                     /**
                      * 获取源表格的表名
+注意：此字段可能返回 null，表示取不到有效值。
                      * @return SrcTableName 源表格的表名
+注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetSrcTableName() const;
 
                     /**
                      * 设置源表格的表名
+注意：此字段可能返回 null，表示取不到有效值。
                      * @param _srcTableName 源表格的表名
+注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetSrcTableName(const std::string& _srcTableName);
@@ -111,14 +123,18 @@ namespace TencentCloud
 
                     /**
                      * 获取目标表格的集群id
+注意：此字段可能返回 null，表示取不到有效值。
                      * @return DstTableClusterId 目标表格的集群id
+注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetDstTableClusterId() const;
 
                     /**
                      * 设置目标表格的集群id
+注意：此字段可能返回 null，表示取不到有效值。
                      * @param _dstTableClusterId 目标表格的集群id
+注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetDstTableClusterId(const std::string& _dstTableClusterId);
@@ -132,14 +148,18 @@ namespace TencentCloud
 
                     /**
                      * 获取目标表格的表格组id
+注意：此字段可能返回 null，表示取不到有效值。
                      * @return DstTableGroupId 目标表格的表格组id
+注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetDstTableGroupId() const;
 
                     /**
                      * 设置目标表格的表格组id
+注意：此字段可能返回 null，表示取不到有效值。
                      * @param _dstTableGroupId 目标表格的表格组id
+注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetDstTableGroupId(const std::string& _dstTableGroupId);
@@ -153,14 +173,18 @@ namespace TencentCloud
 
                     /**
                      * 获取目标表格的表名
+注意：此字段可能返回 null，表示取不到有效值。
                      * @return DstTableName 目标表格的表名
+注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetDstTableName() const;
 
                     /**
                      * 设置目标表格的表名
+注意：此字段可能返回 null，表示取不到有效值。
                      * @param _dstTableName 目标表格的表名
+注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetDstTableName(const std::string& _dstTableName);
@@ -174,14 +198,18 @@ namespace TencentCloud
 
                     /**
                      * 获取源表格的实例id
+注意：此字段可能返回 null，表示取不到有效值。
                      * @return SrcTableInstanceId 源表格的实例id
+注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetSrcTableInstanceId() const;
 
                     /**
                      * 设置源表格的实例id
+注意：此字段可能返回 null，表示取不到有效值。
                      * @param _srcTableInstanceId 源表格的实例id
+注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetSrcTableInstanceId(const std::string& _srcTableInstanceId);
@@ -195,14 +223,18 @@ namespace TencentCloud
 
                     /**
                      * 获取目标表格的实例id
+注意：此字段可能返回 null，表示取不到有效值。
                      * @return DstTableInstanceId 目标表格的实例id
+注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetDstTableInstanceId() const;
 
                     /**
                      * 设置目标表格的实例id
+注意：此字段可能返回 null，表示取不到有效值。
                      * @param _dstTableInstanceId 目标表格的实例id
+注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetDstTableInstanceId(const std::string& _dstTableInstanceId);
@@ -218,48 +250,56 @@ namespace TencentCloud
 
                     /**
                      * 源表格的集群id
+注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_srcTableClusterId;
                     bool m_srcTableClusterIdHasBeenSet;
 
                     /**
                      * 源表格的表格组id
+注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_srcTableGroupId;
                     bool m_srcTableGroupIdHasBeenSet;
 
                     /**
                      * 源表格的表名
+注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_srcTableName;
                     bool m_srcTableNameHasBeenSet;
 
                     /**
                      * 目标表格的集群id
+注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_dstTableClusterId;
                     bool m_dstTableClusterIdHasBeenSet;
 
                     /**
                      * 目标表格的表格组id
+注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_dstTableGroupId;
                     bool m_dstTableGroupIdHasBeenSet;
 
                     /**
                      * 目标表格的表名
+注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_dstTableName;
                     bool m_dstTableNameHasBeenSet;
 
                     /**
                      * 源表格的实例id
+注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_srcTableInstanceId;
                     bool m_srcTableInstanceIdHasBeenSet;
 
                     /**
                      * 目标表格的实例id
+注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_dstTableInstanceId;
                     bool m_dstTableInstanceIdHasBeenSet;

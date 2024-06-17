@@ -106,15 +106,15 @@ namespace TencentCloud
                     bool DomainHasBeenSet() const;
 
                     /**
-                     * 获取2 竞价中  3 等待出价  4 交易失败  10 竞价阶段持有者赎回
-                     * @return Status 2 竞价中  3 等待出价  4 交易失败  10 竞价阶段持有者赎回
+                     * 获取2 竞价中  3 等待出价 4 竞价失败 10 竞价持有者赎回
+                     * @return Status 2 竞价中  3 等待出价 4 竞价失败 10 竞价持有者赎回
                      * 
                      */
                     std::vector<uint64_t> GetStatus() const;
 
                     /**
-                     * 设置2 竞价中  3 等待出价  4 交易失败  10 竞价阶段持有者赎回
-                     * @param _status 2 竞价中  3 等待出价  4 交易失败  10 竞价阶段持有者赎回
+                     * 设置2 竞价中  3 等待出价 4 竞价失败 10 竞价持有者赎回
+                     * @param _status 2 竞价中  3 等待出价 4 竞价失败 10 竞价持有者赎回
                      * 
                      */
                     void SetStatus(const std::vector<uint64_t>& _status);
@@ -193,7 +193,7 @@ BiddingPrice 我的价格
                     bool m_domainHasBeenSet;
 
                     /**
-                     * 2 竞价中  3 等待出价  4 交易失败  10 竞价阶段持有者赎回
+                     * 2 竞价中  3 等待出价 4 竞价失败 10 竞价持有者赎回
                      */
                     std::vector<uint64_t> m_status;
                     bool m_statusHasBeenSet;

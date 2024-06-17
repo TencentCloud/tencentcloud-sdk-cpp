@@ -15,29 +15,11 @@
 #
 
 set(tms_public_header
-  include/tencentcloud/tms/v20200713/TmsClient.h
   include/tencentcloud/tms/v20201229/TmsClient.h
+  include/tencentcloud/tms/v20200713/TmsClient.h
   )
 
 set(tms_public_header_model
-  include/tencentcloud/tms/v20200713/model/Filters.h
-  include/tencentcloud/tms/v20200713/model/Overview.h
-  include/tencentcloud/tms/v20200713/model/RiskDetails.h
-  include/tencentcloud/tms/v20200713/model/DescribeTextStatRequest.h
-  include/tencentcloud/tms/v20200713/model/TextModerationRequest.h
-  include/tencentcloud/tms/v20200713/model/AccountTipoffAccessRequest.h
-  include/tencentcloud/tms/v20200713/model/TextLib.h
-  include/tencentcloud/tms/v20200713/model/TrendCount.h
-  include/tencentcloud/tms/v20200713/model/DescribeTextLibResponse.h
-  include/tencentcloud/tms/v20200713/model/DetailResults.h
-  include/tencentcloud/tms/v20200713/model/EvilCount.h
-  include/tencentcloud/tms/v20200713/model/Device.h
-  include/tencentcloud/tms/v20200713/model/TipoffResponse.h
-  include/tencentcloud/tms/v20200713/model/AccountTipoffAccessResponse.h
-  include/tencentcloud/tms/v20200713/model/DescribeTextLibRequest.h
-  include/tencentcloud/tms/v20200713/model/DescribeTextStatResponse.h
-  include/tencentcloud/tms/v20200713/model/TextModerationResponse.h
-  include/tencentcloud/tms/v20200713/model/User.h
   include/tencentcloud/tms/v20201229/model/AnswerQuestionRequest.h
   include/tencentcloud/tms/v20201229/model/AnswerQuestionResponse.h
   include/tencentcloud/tms/v20201229/model/Tag.h
@@ -57,29 +39,29 @@ set(tms_public_header_model
   include/tencentcloud/tms/v20201229/model/TextModerationResponse.h
   include/tencentcloud/tms/v20201229/model/LibCheckResult.h
   include/tencentcloud/tms/v20201229/model/User.h
+  include/tencentcloud/tms/v20200713/model/Filters.h
+  include/tencentcloud/tms/v20200713/model/Overview.h
+  include/tencentcloud/tms/v20200713/model/RiskDetails.h
+  include/tencentcloud/tms/v20200713/model/DescribeTextStatRequest.h
+  include/tencentcloud/tms/v20200713/model/TextModerationRequest.h
+  include/tencentcloud/tms/v20200713/model/AccountTipoffAccessRequest.h
+  include/tencentcloud/tms/v20200713/model/TextLib.h
+  include/tencentcloud/tms/v20200713/model/TrendCount.h
+  include/tencentcloud/tms/v20200713/model/DescribeTextLibResponse.h
+  include/tencentcloud/tms/v20200713/model/DetailResults.h
+  include/tencentcloud/tms/v20200713/model/EvilCount.h
+  include/tencentcloud/tms/v20200713/model/Device.h
+  include/tencentcloud/tms/v20200713/model/TipoffResponse.h
+  include/tencentcloud/tms/v20200713/model/AccountTipoffAccessResponse.h
+  include/tencentcloud/tms/v20200713/model/DescribeTextLibRequest.h
+  include/tencentcloud/tms/v20200713/model/DescribeTextStatResponse.h
+  include/tencentcloud/tms/v20200713/model/TextModerationResponse.h
+  include/tencentcloud/tms/v20200713/model/User.h
   )
 
 set(tms_src
-  src/v20200713/TmsClient.cpp
   src/v20201229/TmsClient.cpp
-  src/v20200713/model/Filters.cpp
-  src/v20200713/model/Overview.cpp
-  src/v20200713/model/RiskDetails.cpp
-  src/v20200713/model/DescribeTextStatRequest.cpp
-  src/v20200713/model/TextModerationRequest.cpp
-  src/v20200713/model/AccountTipoffAccessRequest.cpp
-  src/v20200713/model/TextLib.cpp
-  src/v20200713/model/TrendCount.cpp
-  src/v20200713/model/DescribeTextLibResponse.cpp
-  src/v20200713/model/DetailResults.cpp
-  src/v20200713/model/EvilCount.cpp
-  src/v20200713/model/Device.cpp
-  src/v20200713/model/TipoffResponse.cpp
-  src/v20200713/model/AccountTipoffAccessResponse.cpp
-  src/v20200713/model/DescribeTextLibRequest.cpp
-  src/v20200713/model/DescribeTextStatResponse.cpp
-  src/v20200713/model/TextModerationResponse.cpp
-  src/v20200713/model/User.cpp
+  src/v20200713/TmsClient.cpp
   src/v20201229/model/AnswerQuestionRequest.cpp
   src/v20201229/model/AnswerQuestionResponse.cpp
   src/v20201229/model/Tag.cpp
@@ -99,6 +81,24 @@ set(tms_src
   src/v20201229/model/TextModerationResponse.cpp
   src/v20201229/model/LibCheckResult.cpp
   src/v20201229/model/User.cpp
+  src/v20200713/model/Filters.cpp
+  src/v20200713/model/Overview.cpp
+  src/v20200713/model/RiskDetails.cpp
+  src/v20200713/model/DescribeTextStatRequest.cpp
+  src/v20200713/model/TextModerationRequest.cpp
+  src/v20200713/model/AccountTipoffAccessRequest.cpp
+  src/v20200713/model/TextLib.cpp
+  src/v20200713/model/TrendCount.cpp
+  src/v20200713/model/DescribeTextLibResponse.cpp
+  src/v20200713/model/DetailResults.cpp
+  src/v20200713/model/EvilCount.cpp
+  src/v20200713/model/Device.cpp
+  src/v20200713/model/TipoffResponse.cpp
+  src/v20200713/model/AccountTipoffAccessResponse.cpp
+  src/v20200713/model/DescribeTextLibRequest.cpp
+  src/v20200713/model/DescribeTextStatResponse.cpp
+  src/v20200713/model/TextModerationResponse.cpp
+  src/v20200713/model/User.cpp
   )
 
 set(tms_include
@@ -127,9 +127,9 @@ target_link_libraries(tms
   core)
 
 #install(FILES ${tms_public_header}
-#  DESTINATION ${CMAKE_INSTALL_INCLUDEDIR}/tencentcloud/tms/v20201229)
+#  DESTINATION ${CMAKE_INSTALL_INCLUDEDIR}/tencentcloud/tms/v20200713)
 #install(FILES ${tms_public_header_model}
-#  DESTINATION ${CMAKE_INSTALL_INCLUDEDIR}/tencentcloud/tms/v20201229/model)
+#  DESTINATION ${CMAKE_INSTALL_INCLUDEDIR}/tencentcloud/tms/v20200713/model)
 install(DIRECTORY ${tms_include}
   DESTINATION ${CMAKE_INSTALL_INCLUDEDIR}/tencentcloud)
 

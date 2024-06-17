@@ -24,6 +24,7 @@
 #include <tencentcloud/core/utils/rapidjson/writer.h>
 #include <tencentcloud/core/utils/rapidjson/stringbuffer.h>
 #include <tencentcloud/core/AbstractModel.h>
+#include <tencentcloud/tsf/v20180326/model/TsfConfigCenter.h>
 
 
 namespace TencentCloud
@@ -346,6 +347,31 @@ namespace TencentCloud
                      */
                     bool ClusterNameHasBeenSet() const;
 
+                    /**
+                     * 获取配置中心发布详情
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return ConfigCenters 配置中心发布详情
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::vector<TsfConfigCenter> GetConfigCenters() const;
+
+                    /**
+                     * 设置配置中心发布详情
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _configCenters 配置中心发布详情
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetConfigCenters(const std::vector<TsfConfigCenter>& _configCenters);
+
+                    /**
+                     * 判断参数 ConfigCenters 是否已赋值
+                     * @return ConfigCenters 是否已赋值
+                     * 
+                     */
+                    bool ConfigCentersHasBeenSet() const;
+
                 private:
 
                     /**
@@ -431,6 +457,13 @@ namespace TencentCloud
                      */
                     std::string m_clusterName;
                     bool m_clusterNameHasBeenSet;
+
+                    /**
+                     * 配置中心发布详情
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::vector<TsfConfigCenter> m_configCenters;
+                    bool m_configCentersHasBeenSet;
 
                 };
             }

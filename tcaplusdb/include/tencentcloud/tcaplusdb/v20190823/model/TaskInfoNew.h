@@ -256,6 +256,81 @@ namespace TencentCloud
                      */
                     bool ContentHasBeenSet() const;
 
+                    /**
+                     * 获取表格组ID
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return TableGroupId 表格组ID
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::string GetTableGroupId() const;
+
+                    /**
+                     * 设置表格组ID
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _tableGroupId 表格组ID
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetTableGroupId(const std::string& _tableGroupId);
+
+                    /**
+                     * 判断参数 TableGroupId 是否已赋值
+                     * @return TableGroupId 是否已赋值
+                     * 
+                     */
+                    bool TableGroupIdHasBeenSet() const;
+
+                    /**
+                     * 获取表格组名称
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return TableGroupName 表格组名称
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::string GetTableGroupName() const;
+
+                    /**
+                     * 设置表格组名称
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _tableGroupName 表格组名称
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetTableGroupName(const std::string& _tableGroupName);
+
+                    /**
+                     * 判断参数 TableGroupName 是否已赋值
+                     * @return TableGroupName 是否已赋值
+                     * 
+                     */
+                    bool TableGroupNameHasBeenSet() const;
+
+                    /**
+                     * 获取表名称
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return TableName 表名称
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::string GetTableName() const;
+
+                    /**
+                     * 设置表名称
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _tableName 表名称
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetTableName(const std::string& _tableName);
+
+                    /**
+                     * 判断参数 TableName 是否已赋值
+                     * @return TableName 是否已赋值
+                     * 
+                     */
+                    bool TableNameHasBeenSet() const;
+
                 private:
 
                     /**
@@ -317,6 +392,27 @@ namespace TencentCloud
                      */
                     std::string m_content;
                     bool m_contentHasBeenSet;
+
+                    /**
+                     * 表格组ID
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_tableGroupId;
+                    bool m_tableGroupIdHasBeenSet;
+
+                    /**
+                     * 表格组名称
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_tableGroupName;
+                    bool m_tableGroupNameHasBeenSet;
+
+                    /**
+                     * 表名称
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_tableName;
+                    bool m_tableNameHasBeenSet;
 
                 };
             }

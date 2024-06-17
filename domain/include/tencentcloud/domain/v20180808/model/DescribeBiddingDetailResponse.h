@@ -184,8 +184,8 @@ namespace TencentCloud
                     bool BiddingBondPriceHasBeenSet() const;
 
                     /**
-                     * 获取1 已预约，2 竞价中，3 支付尾款 4 交割 5 交易失败 6 交易成功，7 已过期
-                     * @return Status 1 已预约，2 竞价中，3 支付尾款 4 交割 5 交易失败 6 交易成功，7 已过期
+                     * 获取2 竞价中  3 等待出价 4 竞价失败 10 竞价持有者赎回
+                     * @return Status 2 竞价中  3 等待出价 4 竞价失败 10 竞价持有者赎回
                      * 
                      */
                     uint64_t GetStatus() const;
@@ -302,7 +302,7 @@ namespace TencentCloud
                     bool m_biddingBondPriceHasBeenSet;
 
                     /**
-                     * 1 已预约，2 竞价中，3 支付尾款 4 交割 5 交易失败 6 交易成功，7 已过期
+                     * 2 竞价中  3 等待出价 4 竞价失败 10 竞价持有者赎回
                      */
                     uint64_t m_status;
                     bool m_statusHasBeenSet;

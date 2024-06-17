@@ -32,8 +32,6 @@ set(cds_public_header_model
   include/tencentcloud/cds/v20180420/model/DbauditTypesInfo.h
   include/tencentcloud/cds/v20180420/model/DescribeDbauditUsedRegionsRequest.h
   include/tencentcloud/cds/v20180420/model/InquiryPriceDbauditInstanceRequest.h
-  include/tencentcloud/cds/v20180420/model/DescribeDasbImageIdsResponse.h
-  include/tencentcloud/cds/v20180420/model/DescribeDasbImageIdsRequest.h
   )
 
 set(cds_src
@@ -51,8 +49,6 @@ set(cds_src
   src/v20180420/model/DbauditTypesInfo.cpp
   src/v20180420/model/DescribeDbauditUsedRegionsRequest.cpp
   src/v20180420/model/InquiryPriceDbauditInstanceRequest.cpp
-  src/v20180420/model/DescribeDasbImageIdsResponse.cpp
-  src/v20180420/model/DescribeDasbImageIdsRequest.cpp
   )
 
 set(cds_include

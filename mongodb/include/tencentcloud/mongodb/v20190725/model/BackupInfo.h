@@ -251,6 +251,73 @@ namespace TencentCloud
                      */
                     bool BackupMethodHasBeenSet() const;
 
+                    /**
+                     * 获取备份记录id
+                     * @return BackId 备份记录id
+                     * 
+                     */
+                    int64_t GetBackId() const;
+
+                    /**
+                     * 设置备份记录id
+                     * @param _backId 备份记录id
+                     * 
+                     */
+                    void SetBackId(const int64_t& _backId);
+
+                    /**
+                     * 判断参数 BackId 是否已赋值
+                     * @return BackId 是否已赋值
+                     * 
+                     */
+                    bool BackIdHasBeenSet() const;
+
+                    /**
+                     * 获取备份删除时间
+                     * @return DeleteTime 备份删除时间
+                     * 
+                     */
+                    std::string GetDeleteTime() const;
+
+                    /**
+                     * 设置备份删除时间
+                     * @param _deleteTime 备份删除时间
+                     * 
+                     */
+                    void SetDeleteTime(const std::string& _deleteTime);
+
+                    /**
+                     * 判断参数 DeleteTime 是否已赋值
+                     * @return DeleteTime 是否已赋值
+                     * 
+                     */
+                    bool DeleteTimeHasBeenSet() const;
+
+                    /**
+                     * 获取异地备份地域
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return BackupRegion 异地备份地域
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::string GetBackupRegion() const;
+
+                    /**
+                     * 设置异地备份地域
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _backupRegion 异地备份地域
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetBackupRegion(const std::string& _backupRegion);
+
+                    /**
+                     * 判断参数 BackupRegion 是否已赋值
+                     * @return BackupRegion 是否已赋值
+                     * 
+                     */
+                    bool BackupRegionHasBeenSet() const;
+
                 private:
 
                     /**
@@ -310,6 +377,25 @@ namespace TencentCloud
                      */
                     uint64_t m_backupMethod;
                     bool m_backupMethodHasBeenSet;
+
+                    /**
+                     * 备份记录id
+                     */
+                    int64_t m_backId;
+                    bool m_backIdHasBeenSet;
+
+                    /**
+                     * 备份删除时间
+                     */
+                    std::string m_deleteTime;
+                    bool m_deleteTimeHasBeenSet;
+
+                    /**
+                     * 异地备份地域
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_backupRegion;
+                    bool m_backupRegionHasBeenSet;
 
                 };
             }

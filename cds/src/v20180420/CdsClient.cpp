@@ -40,49 +40,6 @@ CdsClient::CdsClient(const Credential &credential, const string &region, const C
 }
 
 
-CdsClient::DescribeDasbImageIdsOutcome CdsClient::DescribeDasbImageIds(const DescribeDasbImageIdsRequest &request)
-{
-    auto outcome = MakeRequest(request, "DescribeDasbImageIds");
-    if (outcome.IsSuccess())
-    {
-        auto r = outcome.GetResult();
-        string payload = string(r.Body(), r.BodySize());
-        DescribeDasbImageIdsResponse rsp = DescribeDasbImageIdsResponse();
-        auto o = rsp.Deserialize(payload);
-        if (o.IsSuccess())
-            return DescribeDasbImageIdsOutcome(rsp);
-        else
-            return DescribeDasbImageIdsOutcome(o.GetError());
-    }
-    else
-    {
-        return DescribeDasbImageIdsOutcome(outcome.GetError());
-    }
-}
-
-void CdsClient::DescribeDasbImageIdsAsync(const DescribeDasbImageIdsRequest& request, const DescribeDasbImageIdsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
-{
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeDasbImageIds(request), context);
-    };
-
-    Executor::GetInstance()->Submit(new Runnable(fn));
-}
-
-CdsClient::DescribeDasbImageIdsOutcomeCallable CdsClient::DescribeDasbImageIdsCallable(const DescribeDasbImageIdsRequest &request)
-{
-    auto task = std::make_shared<std::packaged_task<DescribeDasbImageIdsOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeDasbImageIds(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
-}
-
 CdsClient::DescribeDbauditInstanceTypeOutcome CdsClient::DescribeDbauditInstanceType(const DescribeDbauditInstanceTypeRequest &request)
 {
     auto outcome = MakeRequest(request, "DescribeDbauditInstanceType");

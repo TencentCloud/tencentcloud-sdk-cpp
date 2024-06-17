@@ -30,7 +30,8 @@ SnapshotResult::SnapshotResult() :
     m_snapshotDeadTimeHasBeenSet(false),
     m_snapshotCreateTimeHasBeenSet(false),
     m_snapshotSizeHasBeenSet(false),
-    m_snapshotStatusHasBeenSet(false)
+    m_snapshotStatusHasBeenSet(false),
+    m_applicationIdHasBeenSet(false)
 {
 }
 
@@ -146,6 +147,16 @@ CoreInternalOutcome SnapshotResult::Deserialize(const rapidjson::Value &value)
         m_snapshotStatusHasBeenSet = true;
     }
 
+    if (value.HasMember("ApplicationId") && !value["ApplicationId"].IsNull())
+    {
+        if (!value["ApplicationId"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `SnapshotResult.ApplicationId` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_applicationId = string(value["ApplicationId"].GetString());
+        m_applicationIdHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -232,6 +243,14 @@ void SnapshotResult::ToJsonObject(rapidjson::Value &value, rapidjson::Document::
         string key = "SnapshotStatus";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_snapshotStatus, allocator);
+    }
+
+    if (m_applicationIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ApplicationId";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_applicationId.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -395,5 +414,21 @@ void SnapshotResult::SetSnapshotStatus(const uint64_t& _snapshotStatus)
 bool SnapshotResult::SnapshotStatusHasBeenSet() const
 {
     return m_snapshotStatusHasBeenSet;
+}
+
+string SnapshotResult::GetApplicationId() const
+{
+    return m_applicationId;
+}
+
+void SnapshotResult::SetApplicationId(const string& _applicationId)
+{
+    m_applicationId = _applicationId;
+    m_applicationIdHasBeenSet = true;
+}
+
+bool SnapshotResult::ApplicationIdHasBeenSet() const
+{
+    return m_applicationIdHasBeenSet;
 }
 

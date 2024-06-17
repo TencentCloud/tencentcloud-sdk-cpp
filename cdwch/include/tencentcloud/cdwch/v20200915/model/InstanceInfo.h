@@ -1212,6 +1212,81 @@ Modify 集群变更中；
                      */
                     bool HasEsIndexHasBeenSet() const;
 
+                    /**
+                     * 获取true
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return IsSecondaryZone true
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    bool GetIsSecondaryZone() const;
+
+                    /**
+                     * 设置true
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _isSecondaryZone true
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetIsSecondaryZone(const bool& _isSecondaryZone);
+
+                    /**
+                     * 判断参数 IsSecondaryZone 是否已赋值
+                     * @return IsSecondaryZone 是否已赋值
+                     * 
+                     */
+                    bool IsSecondaryZoneHasBeenSet() const;
+
+                    /**
+                     * 获取desc
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return SecondaryZoneInfo desc
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::string GetSecondaryZoneInfo() const;
+
+                    /**
+                     * 设置desc
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _secondaryZoneInfo desc
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetSecondaryZoneInfo(const std::string& _secondaryZoneInfo);
+
+                    /**
+                     * 判断参数 SecondaryZoneInfo 是否已赋值
+                     * @return SecondaryZoneInfo 是否已赋值
+                     * 
+                     */
+                    bool SecondaryZoneInfoHasBeenSet() const;
+
+                    /**
+                     * 获取是否clickhouse-keeper
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return ClickHouseKeeper 是否clickhouse-keeper
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    bool GetClickHouseKeeper() const;
+
+                    /**
+                     * 设置是否clickhouse-keeper
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _clickHouseKeeper 是否clickhouse-keeper
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetClickHouseKeeper(const bool& _clickHouseKeeper);
+
+                    /**
+                     * 判断参数 ClickHouseKeeper 是否已赋值
+                     * @return ClickHouseKeeper 是否已赋值
+                     * 
+                     */
+                    bool ClickHouseKeeperHasBeenSet() const;
+
                 private:
 
                     /**
@@ -1538,6 +1613,27 @@ Modify 集群变更中；
                      */
                     bool m_hasEsIndex;
                     bool m_hasEsIndexHasBeenSet;
+
+                    /**
+                     * true
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    bool m_isSecondaryZone;
+                    bool m_isSecondaryZoneHasBeenSet;
+
+                    /**
+                     * desc
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_secondaryZoneInfo;
+                    bool m_secondaryZoneInfoHasBeenSet;
+
+                    /**
+                     * 是否clickhouse-keeper
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    bool m_clickHouseKeeper;
+                    bool m_clickHouseKeeperHasBeenSet;
 
                 };
             }

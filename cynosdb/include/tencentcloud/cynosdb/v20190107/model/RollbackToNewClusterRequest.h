@@ -24,6 +24,8 @@
 #include <tencentcloud/cynosdb/v20190107/model/Tag.h>
 #include <tencentcloud/cynosdb/v20190107/model/ParamItem.h>
 #include <tencentcloud/cynosdb/v20190107/model/InstanceInitInfo.h>
+#include <tencentcloud/cynosdb/v20190107/model/RollbackDatabase.h>
+#include <tencentcloud/cynosdb/v20190107/model/RollbackTable.h>
 
 
 namespace TencentCloud
@@ -522,6 +524,111 @@ cpu最大值，可选范围参考DescribeServerlessInstanceSpecs接口返回
                      */
                     bool PayModeHasBeenSet() const;
 
+                    /**
+                     * 获取时间
+                     * @return TimeSpan 时间
+                     * 
+                     */
+                    int64_t GetTimeSpan() const;
+
+                    /**
+                     * 设置时间
+                     * @param _timeSpan 时间
+                     * 
+                     */
+                    void SetTimeSpan(const int64_t& _timeSpan);
+
+                    /**
+                     * 判断参数 TimeSpan 是否已赋值
+                     * @return TimeSpan 是否已赋值
+                     * 
+                     */
+                    bool TimeSpanHasBeenSet() const;
+
+                    /**
+                     * 获取单位
+                     * @return TimeUnit 单位
+                     * 
+                     */
+                    std::string GetTimeUnit() const;
+
+                    /**
+                     * 设置单位
+                     * @param _timeUnit 单位
+                     * 
+                     */
+                    void SetTimeUnit(const std::string& _timeUnit);
+
+                    /**
+                     * 判断参数 TimeUnit 是否已赋值
+                     * @return TimeUnit 是否已赋值
+                     * 
+                     */
+                    bool TimeUnitHasBeenSet() const;
+
+                    /**
+                     * 获取回档库信息
+                     * @return RollbackDatabases 回档库信息
+                     * 
+                     */
+                    std::vector<RollbackDatabase> GetRollbackDatabases() const;
+
+                    /**
+                     * 设置回档库信息
+                     * @param _rollbackDatabases 回档库信息
+                     * 
+                     */
+                    void SetRollbackDatabases(const std::vector<RollbackDatabase>& _rollbackDatabases);
+
+                    /**
+                     * 判断参数 RollbackDatabases 是否已赋值
+                     * @return RollbackDatabases 是否已赋值
+                     * 
+                     */
+                    bool RollbackDatabasesHasBeenSet() const;
+
+                    /**
+                     * 获取回档表信息
+                     * @return RollbackTables 回档表信息
+                     * 
+                     */
+                    std::vector<RollbackTable> GetRollbackTables() const;
+
+                    /**
+                     * 设置回档表信息
+                     * @param _rollbackTables 回档表信息
+                     * 
+                     */
+                    void SetRollbackTables(const std::vector<RollbackTable>& _rollbackTables);
+
+                    /**
+                     * 判断参数 RollbackTables 是否已赋值
+                     * @return RollbackTables 是否已赋值
+                     * 
+                     */
+                    bool RollbackTablesHasBeenSet() const;
+
+                    /**
+                     * 获取原ro实例信息
+                     * @return OriginalROInstanceList 原ro实例信息
+                     * 
+                     */
+                    std::vector<std::string> GetOriginalROInstanceList() const;
+
+                    /**
+                     * 设置原ro实例信息
+                     * @param _originalROInstanceList 原ro实例信息
+                     * 
+                     */
+                    void SetOriginalROInstanceList(const std::vector<std::string>& _originalROInstanceList);
+
+                    /**
+                     * 判断参数 OriginalROInstanceList 是否已赋值
+                     * @return OriginalROInstanceList 是否已赋值
+                     * 
+                     */
+                    bool OriginalROInstanceListHasBeenSet() const;
+
                 private:
 
                     /**
@@ -658,6 +765,36 @@ cpu最大值，可选范围参考DescribeServerlessInstanceSpecs接口返回
                      */
                     int64_t m_payMode;
                     bool m_payModeHasBeenSet;
+
+                    /**
+                     * 时间
+                     */
+                    int64_t m_timeSpan;
+                    bool m_timeSpanHasBeenSet;
+
+                    /**
+                     * 单位
+                     */
+                    std::string m_timeUnit;
+                    bool m_timeUnitHasBeenSet;
+
+                    /**
+                     * 回档库信息
+                     */
+                    std::vector<RollbackDatabase> m_rollbackDatabases;
+                    bool m_rollbackDatabasesHasBeenSet;
+
+                    /**
+                     * 回档表信息
+                     */
+                    std::vector<RollbackTable> m_rollbackTables;
+                    bool m_rollbackTablesHasBeenSet;
+
+                    /**
+                     * 原ro实例信息
+                     */
+                    std::vector<std::string> m_originalROInstanceList;
+                    bool m_originalROInstanceListHasBeenSet;
 
                 };
             }

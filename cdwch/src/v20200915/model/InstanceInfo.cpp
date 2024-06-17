@@ -66,7 +66,10 @@ InstanceInfo::InstanceInfo() :
     m_esIndexIdHasBeenSet(false),
     m_esIndexUsernameHasBeenSet(false),
     m_esIndexPasswordHasBeenSet(false),
-    m_hasEsIndexHasBeenSet(false)
+    m_hasEsIndexHasBeenSet(false),
+    m_isSecondaryZoneHasBeenSet(false),
+    m_secondaryZoneInfoHasBeenSet(false),
+    m_clickHouseKeeperHasBeenSet(false)
 {
 }
 
@@ -576,6 +579,36 @@ CoreInternalOutcome InstanceInfo::Deserialize(const rapidjson::Value &value)
         m_hasEsIndexHasBeenSet = true;
     }
 
+    if (value.HasMember("IsSecondaryZone") && !value["IsSecondaryZone"].IsNull())
+    {
+        if (!value["IsSecondaryZone"].IsBool())
+        {
+            return CoreInternalOutcome(Core::Error("response `InstanceInfo.IsSecondaryZone` IsBool=false incorrectly").SetRequestId(requestId));
+        }
+        m_isSecondaryZone = value["IsSecondaryZone"].GetBool();
+        m_isSecondaryZoneHasBeenSet = true;
+    }
+
+    if (value.HasMember("SecondaryZoneInfo") && !value["SecondaryZoneInfo"].IsNull())
+    {
+        if (!value["SecondaryZoneInfo"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `InstanceInfo.SecondaryZoneInfo` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_secondaryZoneInfo = string(value["SecondaryZoneInfo"].GetString());
+        m_secondaryZoneInfoHasBeenSet = true;
+    }
+
+    if (value.HasMember("ClickHouseKeeper") && !value["ClickHouseKeeper"].IsNull())
+    {
+        if (!value["ClickHouseKeeper"].IsBool())
+        {
+            return CoreInternalOutcome(Core::Error("response `InstanceInfo.ClickHouseKeeper` IsBool=false incorrectly").SetRequestId(requestId));
+        }
+        m_clickHouseKeeper = value["ClickHouseKeeper"].GetBool();
+        m_clickHouseKeeperHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -966,6 +999,30 @@ void InstanceInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Al
         string key = "HasEsIndex";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_hasEsIndex, allocator);
+    }
+
+    if (m_isSecondaryZoneHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "IsSecondaryZone";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_isSecondaryZone, allocator);
+    }
+
+    if (m_secondaryZoneInfoHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "SecondaryZoneInfo";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_secondaryZoneInfo.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_clickHouseKeeperHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ClickHouseKeeper";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_clickHouseKeeper, allocator);
     }
 
 }
@@ -1705,5 +1762,53 @@ void InstanceInfo::SetHasEsIndex(const bool& _hasEsIndex)
 bool InstanceInfo::HasEsIndexHasBeenSet() const
 {
     return m_hasEsIndexHasBeenSet;
+}
+
+bool InstanceInfo::GetIsSecondaryZone() const
+{
+    return m_isSecondaryZone;
+}
+
+void InstanceInfo::SetIsSecondaryZone(const bool& _isSecondaryZone)
+{
+    m_isSecondaryZone = _isSecondaryZone;
+    m_isSecondaryZoneHasBeenSet = true;
+}
+
+bool InstanceInfo::IsSecondaryZoneHasBeenSet() const
+{
+    return m_isSecondaryZoneHasBeenSet;
+}
+
+string InstanceInfo::GetSecondaryZoneInfo() const
+{
+    return m_secondaryZoneInfo;
+}
+
+void InstanceInfo::SetSecondaryZoneInfo(const string& _secondaryZoneInfo)
+{
+    m_secondaryZoneInfo = _secondaryZoneInfo;
+    m_secondaryZoneInfoHasBeenSet = true;
+}
+
+bool InstanceInfo::SecondaryZoneInfoHasBeenSet() const
+{
+    return m_secondaryZoneInfoHasBeenSet;
+}
+
+bool InstanceInfo::GetClickHouseKeeper() const
+{
+    return m_clickHouseKeeper;
+}
+
+void InstanceInfo::SetClickHouseKeeper(const bool& _clickHouseKeeper)
+{
+    m_clickHouseKeeper = _clickHouseKeeper;
+    m_clickHouseKeeperHasBeenSet = true;
+}
+
+bool InstanceInfo::ClickHouseKeeperHasBeenSet() const
+{
+    return m_clickHouseKeeperHasBeenSet;
 }
 

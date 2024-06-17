@@ -30,7 +30,10 @@ TaskInfoNew::TaskInfoNew() :
     m_startTimeHasBeenSet(false),
     m_updateTimeHasBeenSet(false),
     m_operatorHasBeenSet(false),
-    m_contentHasBeenSet(false)
+    m_contentHasBeenSet(false),
+    m_tableGroupIdHasBeenSet(false),
+    m_tableGroupNameHasBeenSet(false),
+    m_tableNameHasBeenSet(false)
 {
 }
 
@@ -139,6 +142,36 @@ CoreInternalOutcome TaskInfoNew::Deserialize(const rapidjson::Value &value)
         m_contentHasBeenSet = true;
     }
 
+    if (value.HasMember("TableGroupId") && !value["TableGroupId"].IsNull())
+    {
+        if (!value["TableGroupId"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `TaskInfoNew.TableGroupId` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_tableGroupId = string(value["TableGroupId"].GetString());
+        m_tableGroupIdHasBeenSet = true;
+    }
+
+    if (value.HasMember("TableGroupName") && !value["TableGroupName"].IsNull())
+    {
+        if (!value["TableGroupName"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `TaskInfoNew.TableGroupName` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_tableGroupName = string(value["TableGroupName"].GetString());
+        m_tableGroupNameHasBeenSet = true;
+    }
+
+    if (value.HasMember("TableName") && !value["TableName"].IsNull())
+    {
+        if (!value["TableName"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `TaskInfoNew.TableName` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_tableName = string(value["TableName"].GetString());
+        m_tableNameHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -224,6 +257,30 @@ void TaskInfoNew::ToJsonObject(rapidjson::Value &value, rapidjson::Document::All
         string key = "Content";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_content.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_tableGroupIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "TableGroupId";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_tableGroupId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_tableGroupNameHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "TableGroupName";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_tableGroupName.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_tableNameHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "TableName";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_tableName.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -387,5 +444,53 @@ void TaskInfoNew::SetContent(const string& _content)
 bool TaskInfoNew::ContentHasBeenSet() const
 {
     return m_contentHasBeenSet;
+}
+
+string TaskInfoNew::GetTableGroupId() const
+{
+    return m_tableGroupId;
+}
+
+void TaskInfoNew::SetTableGroupId(const string& _tableGroupId)
+{
+    m_tableGroupId = _tableGroupId;
+    m_tableGroupIdHasBeenSet = true;
+}
+
+bool TaskInfoNew::TableGroupIdHasBeenSet() const
+{
+    return m_tableGroupIdHasBeenSet;
+}
+
+string TaskInfoNew::GetTableGroupName() const
+{
+    return m_tableGroupName;
+}
+
+void TaskInfoNew::SetTableGroupName(const string& _tableGroupName)
+{
+    m_tableGroupName = _tableGroupName;
+    m_tableGroupNameHasBeenSet = true;
+}
+
+bool TaskInfoNew::TableGroupNameHasBeenSet() const
+{
+    return m_tableGroupNameHasBeenSet;
+}
+
+string TaskInfoNew::GetTableName() const
+{
+    return m_tableName;
+}
+
+void TaskInfoNew::SetTableName(const string& _tableName)
+{
+    m_tableName = _tableName;
+    m_tableNameHasBeenSet = true;
+}
+
+bool TaskInfoNew::TableNameHasBeenSet() const
+{
+    return m_tableNameHasBeenSet;
 }
 
