@@ -83,7 +83,9 @@ CVMAssetVO::CVMAssetVO() :
     m_instanceStateHasBeenSet(false),
     m_securityGroupIdsHasBeenSet(false),
     m_agentMemRssHasBeenSet(false),
-    m_agentCpuPerHasBeenSet(false)
+    m_agentCpuPerHasBeenSet(false),
+    m_realAppidHasBeenSet(false),
+    m_cloudTypeHasBeenSet(false)
 {
 }
 
@@ -755,6 +757,26 @@ CoreInternalOutcome CVMAssetVO::Deserialize(const rapidjson::Value &value)
         m_agentCpuPerHasBeenSet = true;
     }
 
+    if (value.HasMember("RealAppid") && !value["RealAppid"].IsNull())
+    {
+        if (!value["RealAppid"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `CVMAssetVO.RealAppid` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_realAppid = value["RealAppid"].GetInt64();
+        m_realAppidHasBeenSet = true;
+    }
+
+    if (value.HasMember("CloudType") && !value["CloudType"].IsNull())
+    {
+        if (!value["CloudType"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `CVMAssetVO.CloudType` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_cloudType = value["CloudType"].GetInt64();
+        m_cloudTypeHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -1290,6 +1312,22 @@ void CVMAssetVO::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Allo
         string key = "AgentCpuPer";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_agentCpuPer, allocator);
+    }
+
+    if (m_realAppidHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "RealAppid";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_realAppid, allocator);
+    }
+
+    if (m_cloudTypeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "CloudType";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_cloudType, allocator);
     }
 
 }
@@ -2301,5 +2339,37 @@ void CVMAssetVO::SetAgentCpuPer(const double& _agentCpuPer)
 bool CVMAssetVO::AgentCpuPerHasBeenSet() const
 {
     return m_agentCpuPerHasBeenSet;
+}
+
+int64_t CVMAssetVO::GetRealAppid() const
+{
+    return m_realAppid;
+}
+
+void CVMAssetVO::SetRealAppid(const int64_t& _realAppid)
+{
+    m_realAppid = _realAppid;
+    m_realAppidHasBeenSet = true;
+}
+
+bool CVMAssetVO::RealAppidHasBeenSet() const
+{
+    return m_realAppidHasBeenSet;
+}
+
+int64_t CVMAssetVO::GetCloudType() const
+{
+    return m_cloudType;
+}
+
+void CVMAssetVO::SetCloudType(const int64_t& _cloudType)
+{
+    m_cloudType = _cloudType;
+    m_cloudTypeHasBeenSet = true;
+}
+
+bool CVMAssetVO::CloudTypeHasBeenSet() const
+{
+    return m_cloudTypeHasBeenSet;
 }
 

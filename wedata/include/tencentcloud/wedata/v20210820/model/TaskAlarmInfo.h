@@ -816,6 +816,31 @@ namespace TencentCloud
                      */
                     bool LarkWebHooksHasBeenSet() const;
 
+                    /**
+                     * 获取钉钉群Hook地址，多个hook地址使用,隔开
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return DingDingWebHooks 钉钉群Hook地址，多个hook地址使用,隔开
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::string GetDingDingWebHooks() const;
+
+                    /**
+                     * 设置钉钉群Hook地址，多个hook地址使用,隔开
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _dingDingWebHooks 钉钉群Hook地址，多个hook地址使用,隔开
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetDingDingWebHooks(const std::string& _dingDingWebHooks);
+
+                    /**
+                     * 判断参数 DingDingWebHooks 是否已赋值
+                     * @return DingDingWebHooks 是否已赋值
+                     * 
+                     */
+                    bool DingDingWebHooksHasBeenSet() const;
+
                 private:
 
                     /**
@@ -1033,6 +1058,13 @@ namespace TencentCloud
                      */
                     std::string m_larkWebHooks;
                     bool m_larkWebHooksHasBeenSet;
+
+                    /**
+                     * 钉钉群Hook地址，多个hook地址使用,隔开
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_dingDingWebHooks;
+                    bool m_dingDingWebHooksHasBeenSet;
 
                 };
             }

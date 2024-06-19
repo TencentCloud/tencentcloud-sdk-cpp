@@ -43,27 +43,6 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取客户要查询的日志主题ID，每个客户都有对应的一个主题
-                     * @return TopicId 客户要查询的日志主题ID，每个客户都有对应的一个主题
-                     * 
-                     */
-                    std::string GetTopicId() const;
-
-                    /**
-                     * 设置客户要查询的日志主题ID，每个客户都有对应的一个主题
-                     * @param _topicId 客户要查询的日志主题ID，每个客户都有对应的一个主题
-                     * 
-                     */
-                    void SetTopicId(const std::string& _topicId);
-
-                    /**
-                     * 判断参数 TopicId 是否已赋值
-                     * @return TopicId 是否已赋值
-                     * 
-                     */
-                    bool TopicIdHasBeenSet() const;
-
-                    /**
                      * 获取要查询的日志的起始时间，Unix时间戳，单位ms
                      * @return From 要查询的日志的起始时间，Unix时间戳，单位ms
                      * 
@@ -148,6 +127,27 @@ namespace TencentCloud
                     bool FieldNameHasBeenSet() const;
 
                     /**
+                     * 获取客户要查询的日志主题ID，每个客户都有对应的一个主题
+                     * @return TopicId 客户要查询的日志主题ID，每个客户都有对应的一个主题
+                     * @deprecated
+                     */
+                    std::string GetTopicId() const;
+
+                    /**
+                     * 设置客户要查询的日志主题ID，每个客户都有对应的一个主题
+                     * @param _topicId 客户要查询的日志主题ID，每个客户都有对应的一个主题
+                     * @deprecated
+                     */
+                    void SetTopicId(const std::string& _topicId);
+
+                    /**
+                     * 判断参数 TopicId 是否已赋值
+                     * @return TopicId 是否已赋值
+                     * @deprecated
+                     */
+                    bool TopicIdHasBeenSet() const;
+
+                    /**
                      * 获取排序字段,升序asc,降序desc，默认降序desc 
                      * @return Sort 排序字段,升序asc,降序desc，默认降序desc 
                      * 
@@ -192,12 +192,6 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 客户要查询的日志主题ID，每个客户都有对应的一个主题
-                     */
-                    std::string m_topicId;
-                    bool m_topicIdHasBeenSet;
-
-                    /**
                      * 要查询的日志的起始时间，Unix时间戳，单位ms
                      */
                     int64_t m_from;
@@ -220,6 +214,12 @@ namespace TencentCloud
                      */
                     std::string m_fieldName;
                     bool m_fieldNameHasBeenSet;
+
+                    /**
+                     * 客户要查询的日志主题ID，每个客户都有对应的一个主题
+                     */
+                    std::string m_topicId;
+                    bool m_topicIdHasBeenSet;
 
                     /**
                      * 排序字段,升序asc,降序desc，默认降序desc 

@@ -24,6 +24,7 @@ BizTaskInfo::BizTaskInfo() :
     m_iDHasBeenSet(false),
     m_appIdHasBeenSet(false),
     m_clusterIdHasBeenSet(false),
+    m_regionHasBeenSet(false),
     m_createTimeHasBeenSet(false),
     m_delayTimeHasBeenSet(false),
     m_errMsgHasBeenSet(false),
@@ -54,7 +55,8 @@ BizTaskInfo::BizTaskInfo() :
     m_clusterSlaveDataHasBeenSet(false),
     m_switchClusterLogBinHasBeenSet(false),
     m_modifyInstanceParamsDataHasBeenSet(false),
-    m_taskMaintainInfoHasBeenSet(false)
+    m_taskMaintainInfoHasBeenSet(false),
+    m_instanceCLSDeliveryInfosHasBeenSet(false)
 {
 }
 
@@ -91,6 +93,16 @@ CoreInternalOutcome BizTaskInfo::Deserialize(const rapidjson::Value &value)
         }
         m_clusterId = string(value["ClusterId"].GetString());
         m_clusterIdHasBeenSet = true;
+    }
+
+    if (value.HasMember("Region") && !value["Region"].IsNull())
+    {
+        if (!value["Region"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `BizTaskInfo.Region` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_region = string(value["Region"].GetString());
+        m_regionHasBeenSet = true;
     }
 
     if (value.HasMember("CreateTime") && !value["CreateTime"].IsNull())
@@ -476,6 +488,26 @@ CoreInternalOutcome BizTaskInfo::Deserialize(const rapidjson::Value &value)
         m_taskMaintainInfoHasBeenSet = true;
     }
 
+    if (value.HasMember("InstanceCLSDeliveryInfos") && !value["InstanceCLSDeliveryInfos"].IsNull())
+    {
+        if (!value["InstanceCLSDeliveryInfos"].IsArray())
+            return CoreInternalOutcome(Core::Error("response `BizTaskInfo.InstanceCLSDeliveryInfos` is not array type"));
+
+        const rapidjson::Value &tmpValue = value["InstanceCLSDeliveryInfos"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            InstanceCLSDeliveryInfo item;
+            CoreInternalOutcome outcome = item.Deserialize(*itr);
+            if (!outcome.IsSuccess())
+            {
+                outcome.GetError().SetRequestId(requestId);
+                return outcome;
+            }
+            m_instanceCLSDeliveryInfos.push_back(item);
+        }
+        m_instanceCLSDeliveryInfosHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -505,6 +537,14 @@ void BizTaskInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Document::All
         string key = "ClusterId";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_clusterId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_regionHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Region";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_region.c_str(), allocator).Move(), allocator);
     }
 
     if (m_createTimeHasBeenSet)
@@ -771,6 +811,21 @@ void BizTaskInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Document::All
         m_taskMaintainInfo.ToJsonObject(value[key.c_str()], allocator);
     }
 
+    if (m_instanceCLSDeliveryInfosHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "InstanceCLSDeliveryInfos";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_instanceCLSDeliveryInfos.begin(); itr != m_instanceCLSDeliveryInfos.end(); ++itr, ++i)
+        {
+            value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(value[key.c_str()][i], allocator);
+        }
+    }
+
 }
 
 
@@ -820,6 +875,22 @@ void BizTaskInfo::SetClusterId(const string& _clusterId)
 bool BizTaskInfo::ClusterIdHasBeenSet() const
 {
     return m_clusterIdHasBeenSet;
+}
+
+string BizTaskInfo::GetRegion() const
+{
+    return m_region;
+}
+
+void BizTaskInfo::SetRegion(const string& _region)
+{
+    m_region = _region;
+    m_regionHasBeenSet = true;
+}
+
+bool BizTaskInfo::RegionHasBeenSet() const
+{
+    return m_regionHasBeenSet;
 }
 
 string BizTaskInfo::GetCreateTime() const
@@ -1316,5 +1387,21 @@ void BizTaskInfo::SetTaskMaintainInfo(const TaskMaintainInfo& _taskMaintainInfo)
 bool BizTaskInfo::TaskMaintainInfoHasBeenSet() const
 {
     return m_taskMaintainInfoHasBeenSet;
+}
+
+vector<InstanceCLSDeliveryInfo> BizTaskInfo::GetInstanceCLSDeliveryInfos() const
+{
+    return m_instanceCLSDeliveryInfos;
+}
+
+void BizTaskInfo::SetInstanceCLSDeliveryInfos(const vector<InstanceCLSDeliveryInfo>& _instanceCLSDeliveryInfos)
+{
+    m_instanceCLSDeliveryInfos = _instanceCLSDeliveryInfos;
+    m_instanceCLSDeliveryInfosHasBeenSet = true;
+}
+
+bool BizTaskInfo::InstanceCLSDeliveryInfosHasBeenSet() const
+{
+    return m_instanceCLSDeliveryInfosHasBeenSet;
 }
 

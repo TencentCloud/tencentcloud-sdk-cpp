@@ -275,6 +275,27 @@ namespace TencentCloud
                      */
                     bool TaskModeHasBeenSet() const;
 
+                    /**
+                     * 获取任务完成回调webhook地址
+                     * @return FinishWebHook 任务完成回调webhook地址
+                     * 
+                     */
+                    std::string GetFinishWebHook() const;
+
+                    /**
+                     * 设置任务完成回调webhook地址
+                     * @param _finishWebHook 任务完成回调webhook地址
+                     * 
+                     */
+                    void SetFinishWebHook(const std::string& _finishWebHook);
+
+                    /**
+                     * 判断参数 FinishWebHook 是否已赋值
+                     * @return FinishWebHook 是否已赋值
+                     * 
+                     */
+                    bool FinishWebHookHasBeenSet() const;
+
                 private:
 
                     /**
@@ -342,6 +363,12 @@ namespace TencentCloud
                      */
                     int64_t m_taskMode;
                     bool m_taskModeHasBeenSet;
+
+                    /**
+                     * 任务完成回调webhook地址
+                     */
+                    std::string m_finishWebHook;
+                    bool m_finishWebHookHasBeenSet;
 
                 };
             }

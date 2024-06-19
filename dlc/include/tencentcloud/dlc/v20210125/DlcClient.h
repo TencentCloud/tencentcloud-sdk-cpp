@@ -205,6 +205,8 @@
 #include <tencentcloud/dlc/v20210125/model/DescribeTasksResponse.h>
 #include <tencentcloud/dlc/v20210125/model/DescribeTasksCostInfoRequest.h>
 #include <tencentcloud/dlc/v20210125/model/DescribeTasksCostInfoResponse.h>
+#include <tencentcloud/dlc/v20210125/model/DescribeTasksOverviewRequest.h>
+#include <tencentcloud/dlc/v20210125/model/DescribeTasksOverviewResponse.h>
 #include <tencentcloud/dlc/v20210125/model/DescribeThirdPartyAccessUserRequest.h>
 #include <tencentcloud/dlc/v20210125/model/DescribeThirdPartyAccessUserResponse.h>
 #include <tencentcloud/dlc/v20210125/model/DescribeUpdatableDataEnginesRequest.h>
@@ -586,6 +588,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeTasksCostInfoResponse> DescribeTasksCostInfoOutcome;
                 typedef std::future<DescribeTasksCostInfoOutcome> DescribeTasksCostInfoOutcomeCallable;
                 typedef std::function<void(const DlcClient*, const Model::DescribeTasksCostInfoRequest&, DescribeTasksCostInfoOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeTasksCostInfoAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeTasksOverviewResponse> DescribeTasksOverviewOutcome;
+                typedef std::future<DescribeTasksOverviewOutcome> DescribeTasksOverviewOutcomeCallable;
+                typedef std::function<void(const DlcClient*, const Model::DescribeTasksOverviewRequest&, DescribeTasksOverviewOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeTasksOverviewAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeThirdPartyAccessUserResponse> DescribeThirdPartyAccessUserOutcome;
                 typedef std::future<DescribeThirdPartyAccessUserOutcome> DescribeThirdPartyAccessUserOutcomeCallable;
                 typedef std::function<void(const DlcClient*, const Model::DescribeThirdPartyAccessUserRequest&, DescribeThirdPartyAccessUserOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeThirdPartyAccessUserAsyncHandler;
@@ -1548,6 +1553,15 @@ namespace TencentCloud
                 DescribeTasksCostInfoOutcome DescribeTasksCostInfo(const Model::DescribeTasksCostInfoRequest &request);
                 void DescribeTasksCostInfoAsync(const Model::DescribeTasksCostInfoRequest& request, const DescribeTasksCostInfoAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DescribeTasksCostInfoOutcomeCallable DescribeTasksCostInfoCallable(const Model::DescribeTasksCostInfoRequest& request);
+
+                /**
+                 *查看任务概览页
+                 * @param req DescribeTasksOverviewRequest
+                 * @return DescribeTasksOverviewOutcome
+                 */
+                DescribeTasksOverviewOutcome DescribeTasksOverview(const Model::DescribeTasksOverviewRequest &request);
+                void DescribeTasksOverviewAsync(const Model::DescribeTasksOverviewRequest& request, const DescribeTasksOverviewAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeTasksOverviewOutcomeCallable DescribeTasksOverviewCallable(const Model::DescribeTasksOverviewRequest& request);
 
                 /**
                  *本接口（RegisterThirdPartyAccessUser）查询开通第三方平台访问的用户信息

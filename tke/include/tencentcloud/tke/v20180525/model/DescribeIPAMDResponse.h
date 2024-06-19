@@ -153,6 +153,22 @@ namespace TencentCloud
                      */
                     bool ClaimExpiredDurationHasBeenSet() const;
 
+                    /**
+                     * 获取是否开启了中继网卡模式
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return EnableTrunkingENI 是否开启了中继网卡模式
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    bool GetEnableTrunkingENI() const;
+
+                    /**
+                     * 判断参数 EnableTrunkingENI 是否已赋值
+                     * @return EnableTrunkingENI 是否已赋值
+                     * 
+                     */
+                    bool EnableTrunkingENIHasBeenSet() const;
+
                 private:
 
                     /**
@@ -202,6 +218,13 @@ namespace TencentCloud
                      */
                     std::string m_claimExpiredDuration;
                     bool m_claimExpiredDurationHasBeenSet;
+
+                    /**
+                     * 是否开启了中继网卡模式
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    bool m_enableTrunkingENI;
+                    bool m_enableTrunkingENIHasBeenSet;
 
                 };
             }

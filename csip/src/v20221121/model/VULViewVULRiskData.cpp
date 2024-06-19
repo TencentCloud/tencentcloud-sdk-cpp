@@ -50,7 +50,9 @@ VULViewVULRiskData::VULViewVULRiskData() :
     m_isSuggestHasBeenSet(false),
     m_handleTaskIdHasBeenSet(false),
     m_engineSourceHasBeenSet(false),
-    m_vulRiskIdHasBeenSet(false)
+    m_vulRiskIdHasBeenSet(false),
+    m_tvdIDHasBeenSet(false),
+    m_isOneClickHasBeenSet(false)
 {
 }
 
@@ -362,6 +364,26 @@ CoreInternalOutcome VULViewVULRiskData::Deserialize(const rapidjson::Value &valu
         m_vulRiskIdHasBeenSet = true;
     }
 
+    if (value.HasMember("TvdID") && !value["TvdID"].IsNull())
+    {
+        if (!value["TvdID"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `VULViewVULRiskData.TvdID` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_tvdID = string(value["TvdID"].GetString());
+        m_tvdIDHasBeenSet = true;
+    }
+
+    if (value.HasMember("IsOneClick") && !value["IsOneClick"].IsNull())
+    {
+        if (!value["IsOneClick"].IsUint64())
+        {
+            return CoreInternalOutcome(Core::Error("response `VULViewVULRiskData.IsOneClick` IsUint64=false incorrectly").SetRequestId(requestId));
+        }
+        m_isOneClick = value["IsOneClick"].GetUint64();
+        m_isOneClickHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -612,6 +634,22 @@ void VULViewVULRiskData::ToJsonObject(rapidjson::Value &value, rapidjson::Docume
         string key = "VulRiskId";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_vulRiskId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_tvdIDHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "TvdID";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_tvdID.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_isOneClickHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "IsOneClick";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_isOneClick, allocator);
     }
 
 }
@@ -1095,5 +1133,37 @@ void VULViewVULRiskData::SetVulRiskId(const string& _vulRiskId)
 bool VULViewVULRiskData::VulRiskIdHasBeenSet() const
 {
     return m_vulRiskIdHasBeenSet;
+}
+
+string VULViewVULRiskData::GetTvdID() const
+{
+    return m_tvdID;
+}
+
+void VULViewVULRiskData::SetTvdID(const string& _tvdID)
+{
+    m_tvdID = _tvdID;
+    m_tvdIDHasBeenSet = true;
+}
+
+bool VULViewVULRiskData::TvdIDHasBeenSet() const
+{
+    return m_tvdIDHasBeenSet;
+}
+
+uint64_t VULViewVULRiskData::GetIsOneClick() const
+{
+    return m_isOneClick;
+}
+
+void VULViewVULRiskData::SetIsOneClick(const uint64_t& _isOneClick)
+{
+    m_isOneClick = _isOneClick;
+    m_isOneClickHasBeenSet = true;
+}
+
+bool VULViewVULRiskData::IsOneClickHasBeenSet() const
+{
+    return m_isOneClickHasBeenSet;
 }
 

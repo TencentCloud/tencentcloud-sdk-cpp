@@ -21,8 +21,8 @@
 #include <vector>
 #include <map>
 #include <tencentcloud/core/AbstractModel.h>
-#include <tencentcloud/wedata/v20210820/model/InstanceOpsDto.h>
 #include <tencentcloud/wedata/v20210820/model/InstanceApiOpsRequest.h>
+#include <tencentcloud/wedata/v20210820/model/InstanceOpsDto.h>
 #include <tencentcloud/wedata/v20210820/model/ProjectBaseInfoOpsRequest.h>
 
 
@@ -44,6 +44,48 @@ namespace TencentCloud
                     ~DiagnoseProRequest() = default;
                     std::string ToJsonString() const;
 
+
+                    /**
+                     * 获取查询条件（当前接口TaskId和CurRunDate需要填充在该字段方可诊断）
+                     * @return SearchCondition 查询条件（当前接口TaskId和CurRunDate需要填充在该字段方可诊断）
+                     * 
+                     */
+                    InstanceApiOpsRequest GetSearchCondition() const;
+
+                    /**
+                     * 设置查询条件（当前接口TaskId和CurRunDate需要填充在该字段方可诊断）
+                     * @param _searchCondition 查询条件（当前接口TaskId和CurRunDate需要填充在该字段方可诊断）
+                     * 
+                     */
+                    void SetSearchCondition(const InstanceApiOpsRequest& _searchCondition);
+
+                    /**
+                     * 判断参数 SearchCondition 是否已赋值
+                     * @return SearchCondition 是否已赋值
+                     * 
+                     */
+                    bool SearchConditionHasBeenSet() const;
+
+                    /**
+                     * 获取项目id
+                     * @return ProjectId 项目id
+                     * 
+                     */
+                    std::string GetProjectId() const;
+
+                    /**
+                     * 设置项目id
+                     * @param _projectId 项目id
+                     * 
+                     */
+                    void SetProjectId(const std::string& _projectId);
+
+                    /**
+                     * 判断参数 ProjectId 是否已赋值
+                     * @return ProjectId 是否已赋值
+                     * 
+                     */
+                    bool ProjectIdHasBeenSet() const;
 
                     /**
                      * 获取实例列表
@@ -172,27 +214,6 @@ namespace TencentCloud
                     bool SonInstanceTypeHasBeenSet() const;
 
                     /**
-                     * 获取查询条件（当前接口TaskId和CurRunDate需要填充在该字段方可诊断）
-                     * @return SearchCondition 查询条件（当前接口TaskId和CurRunDate需要填充在该字段方可诊断）
-                     * 
-                     */
-                    InstanceApiOpsRequest GetSearchCondition() const;
-
-                    /**
-                     * 设置查询条件（当前接口TaskId和CurRunDate需要填充在该字段方可诊断）
-                     * @param _searchCondition 查询条件（当前接口TaskId和CurRunDate需要填充在该字段方可诊断）
-                     * 
-                     */
-                    void SetSearchCondition(const InstanceApiOpsRequest& _searchCondition);
-
-                    /**
-                     * 判断参数 SearchCondition 是否已赋值
-                     * @return SearchCondition 是否已赋值
-                     * 
-                     */
-                    bool SearchConditionHasBeenSet() const;
-
-                    /**
                      * 获取访问类型
                      * @return OptType 访问类型
                      * 
@@ -254,27 +275,6 @@ namespace TencentCloud
                      * 
                      */
                     bool OperatorIdHasBeenSet() const;
-
-                    /**
-                     * 获取项目id
-                     * @return ProjectId 项目id
-                     * 
-                     */
-                    std::string GetProjectId() const;
-
-                    /**
-                     * 设置项目id
-                     * @param _projectId 项目id
-                     * 
-                     */
-                    void SetProjectId(const std::string& _projectId);
-
-                    /**
-                     * 判断参数 ProjectId 是否已赋值
-                     * @return ProjectId 是否已赋值
-                     * 
-                     */
-                    bool ProjectIdHasBeenSet() const;
 
                     /**
                      * 获取项目标志
@@ -426,6 +426,18 @@ namespace TencentCloud
                 private:
 
                     /**
+                     * 查询条件（当前接口TaskId和CurRunDate需要填充在该字段方可诊断）
+                     */
+                    InstanceApiOpsRequest m_searchCondition;
+                    bool m_searchConditionHasBeenSet;
+
+                    /**
+                     * 项目id
+                     */
+                    std::string m_projectId;
+                    bool m_projectIdHasBeenSet;
+
+                    /**
                      * 实例列表
                      */
                     std::vector<InstanceOpsDto> m_instances;
@@ -462,12 +474,6 @@ namespace TencentCloud
                     bool m_sonInstanceTypeHasBeenSet;
 
                     /**
-                     * 查询条件（当前接口TaskId和CurRunDate需要填充在该字段方可诊断）
-                     */
-                    InstanceApiOpsRequest m_searchCondition;
-                    bool m_searchConditionHasBeenSet;
-
-                    /**
                      * 访问类型
                      */
                     std::string m_optType;
@@ -484,12 +490,6 @@ namespace TencentCloud
                      */
                     std::string m_operatorId;
                     bool m_operatorIdHasBeenSet;
-
-                    /**
-                     * 项目id
-                     */
-                    std::string m_projectId;
-                    bool m_projectIdHasBeenSet;
 
                     /**
                      * 项目标志

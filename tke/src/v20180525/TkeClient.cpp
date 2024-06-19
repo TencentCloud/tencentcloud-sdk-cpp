@@ -5243,6 +5243,49 @@ TkeClient::DescribeLogSwitchesOutcomeCallable TkeClient::DescribeLogSwitchesCall
     return task->get_future();
 }
 
+TkeClient::DescribePodChargeInfoOutcome TkeClient::DescribePodChargeInfo(const DescribePodChargeInfoRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribePodChargeInfo");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribePodChargeInfoResponse rsp = DescribePodChargeInfoResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribePodChargeInfoOutcome(rsp);
+        else
+            return DescribePodChargeInfoOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribePodChargeInfoOutcome(outcome.GetError());
+    }
+}
+
+void TkeClient::DescribePodChargeInfoAsync(const DescribePodChargeInfoRequest& request, const DescribePodChargeInfoAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribePodChargeInfo(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+TkeClient::DescribePodChargeInfoOutcomeCallable TkeClient::DescribePodChargeInfoCallable(const DescribePodChargeInfoRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribePodChargeInfoOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribePodChargeInfo(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 TkeClient::DescribePodDeductionRateOutcome TkeClient::DescribePodDeductionRate(const DescribePodDeductionRateRequest &request)
 {
     auto outcome = MakeRequest(request, "DescribePodDeductionRate");

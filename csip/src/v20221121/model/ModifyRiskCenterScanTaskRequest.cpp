@@ -33,7 +33,8 @@ ModifyRiskCenterScanTaskRequest::ModifyRiskCenterScanTaskRequest() :
     m_scanPlanContentHasBeenSet(false),
     m_selfDefiningAssetsHasBeenSet(false),
     m_taskAdvanceCFGHasBeenSet(false),
-    m_taskModeHasBeenSet(false)
+    m_taskModeHasBeenSet(false),
+    m_finishWebHookHasBeenSet(false)
 {
 }
 
@@ -153,6 +154,14 @@ string ModifyRiskCenterScanTaskRequest::ToJsonString() const
         string key = "TaskMode";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_taskMode, allocator);
+    }
+
+    if (m_finishWebHookHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "FinishWebHook";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_finishWebHook.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -337,6 +346,22 @@ void ModifyRiskCenterScanTaskRequest::SetTaskMode(const int64_t& _taskMode)
 bool ModifyRiskCenterScanTaskRequest::TaskModeHasBeenSet() const
 {
     return m_taskModeHasBeenSet;
+}
+
+string ModifyRiskCenterScanTaskRequest::GetFinishWebHook() const
+{
+    return m_finishWebHook;
+}
+
+void ModifyRiskCenterScanTaskRequest::SetFinishWebHook(const string& _finishWebHook)
+{
+    m_finishWebHook = _finishWebHook;
+    m_finishWebHookHasBeenSet = true;
+}
+
+bool ModifyRiskCenterScanTaskRequest::FinishWebHookHasBeenSet() const
+{
+    return m_finishWebHookHasBeenSet;
 }
 
 

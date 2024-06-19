@@ -191,27 +191,6 @@ namespace TencentCloud
                     bool RetentionMsHasBeenSet() const;
 
                     /**
-                     * 获取Segment 分片滚动的时长，单位：ms，当前最小为86400000ms。
-                     * @return SegmentMs Segment 分片滚动的时长，单位：ms，当前最小为86400000ms。
-                     * 
-                     */
-                    int64_t GetSegmentMs() const;
-
-                    /**
-                     * 设置Segment 分片滚动的时长，单位：ms，当前最小为86400000ms。
-                     * @param _segmentMs Segment 分片滚动的时长，单位：ms，当前最小为86400000ms。
-                     * 
-                     */
-                    void SetSegmentMs(const int64_t& _segmentMs);
-
-                    /**
-                     * 判断参数 SegmentMs 是否已赋值
-                     * @return SegmentMs 是否已赋值
-                     * 
-                     */
-                    bool SegmentMsHasBeenSet() const;
-
-                    /**
                      * 获取主题消息最大值，单位为 Byte，最大值为12582912Byte（即12MB）。
                      * @return MaxMessageBytes 主题消息最大值，单位为 Byte，最大值为12582912Byte（即12MB）。
                      * 
@@ -231,6 +210,27 @@ namespace TencentCloud
                      * 
                      */
                     bool MaxMessageBytesHasBeenSet() const;
+
+                    /**
+                     * 获取Segment 分片滚动的时长，单位：ms，当前最小为300000ms。
+                     * @return SegmentMs Segment 分片滚动的时长，单位：ms，当前最小为300000ms。
+                     * 
+                     */
+                    int64_t GetSegmentMs() const;
+
+                    /**
+                     * 设置Segment 分片滚动的时长，单位：ms，当前最小为300000ms。
+                     * @param _segmentMs Segment 分片滚动的时长，单位：ms，当前最小为300000ms。
+                     * 
+                     */
+                    void SetSegmentMs(const int64_t& _segmentMs);
+
+                    /**
+                     * 判断参数 SegmentMs 是否已赋值
+                     * @return SegmentMs 是否已赋值
+                     * 
+                     */
+                    bool SegmentMsHasBeenSet() const;
 
                     /**
                      * 获取消息删除策略，可以选择delete 或者compact
@@ -466,16 +466,16 @@ namespace TencentCloud
                     bool m_retentionMsHasBeenSet;
 
                     /**
-                     * Segment 分片滚动的时长，单位：ms，当前最小为86400000ms。
-                     */
-                    int64_t m_segmentMs;
-                    bool m_segmentMsHasBeenSet;
-
-                    /**
                      * 主题消息最大值，单位为 Byte，最大值为12582912Byte（即12MB）。
                      */
                     int64_t m_maxMessageBytes;
                     bool m_maxMessageBytesHasBeenSet;
+
+                    /**
+                     * Segment 分片滚动的时长，单位：ms，当前最小为300000ms。
+                     */
+                    int64_t m_segmentMs;
+                    bool m_segmentMsHasBeenSet;
 
                     /**
                      * 消息删除策略，可以选择delete 或者compact

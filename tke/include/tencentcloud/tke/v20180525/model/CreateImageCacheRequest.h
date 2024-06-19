@@ -66,15 +66,15 @@ namespace TencentCloud
                     bool ImagesHasBeenSet() const;
 
                     /**
-                     * 获取实例所属子网Id
-                     * @return SubnetId 实例所属子网Id
+                     * 获取实例所属子网 ID
+                     * @return SubnetId 实例所属子网 ID
                      * 
                      */
                     std::string GetSubnetId() const;
 
                     /**
-                     * 设置实例所属子网Id
-                     * @param _subnetId 实例所属子网Id
+                     * 设置实例所属子网 ID
+                     * @param _subnetId 实例所属子网 ID
                      * 
                      */
                     void SetSubnetId(const std::string& _subnetId);
@@ -87,15 +87,15 @@ namespace TencentCloud
                     bool SubnetIdHasBeenSet() const;
 
                     /**
-                     * 获取实例所属VPC Id
-                     * @return VpcId 实例所属VPC Id
+                     * 获取实例所属 VPC ID
+                     * @return VpcId 实例所属 VPC ID
                      * 
                      */
                     std::string GetVpcId() const;
 
                     /**
-                     * 设置实例所属VPC Id
-                     * @param _vpcId 实例所属VPC Id
+                     * 设置实例所属 VPC ID
+                     * @param _vpcId 实例所属 VPC ID
                      * 
                      */
                     void SetVpcId(const std::string& _vpcId);
@@ -129,15 +129,15 @@ namespace TencentCloud
                     bool ImageCacheNameHasBeenSet() const;
 
                     /**
-                     * 获取安全组Id
-                     * @return SecurityGroupIds 安全组Id
+                     * 获取安全组 ID
+                     * @return SecurityGroupIds 安全组 ID
                      * 
                      */
                     std::vector<std::string> GetSecurityGroupIds() const;
 
                     /**
-                     * 设置安全组Id
-                     * @param _securityGroupIds 安全组Id
+                     * 设置安全组 ID
+                     * @param _securityGroupIds 安全组 ID
                      * 
                      */
                     void SetSecurityGroupIds(const std::vector<std::string>& _securityGroupIds);
@@ -355,13 +355,13 @@ namespace TencentCloud
                     bool m_imagesHasBeenSet;
 
                     /**
-                     * 实例所属子网Id
+                     * 实例所属子网 ID
                      */
                     std::string m_subnetId;
                     bool m_subnetIdHasBeenSet;
 
                     /**
-                     * 实例所属VPC Id
+                     * 实例所属 VPC ID
                      */
                     std::string m_vpcId;
                     bool m_vpcIdHasBeenSet;
@@ -373,7 +373,7 @@ namespace TencentCloud
                     bool m_imageCacheNameHasBeenSet;
 
                     /**
-                     * 安全组Id
+                     * 安全组 ID
                      */
                     std::vector<std::string> m_securityGroupIds;
                     bool m_securityGroupIdsHasBeenSet;

@@ -37,6 +37,8 @@
 #include <tencentcloud/lke/v20231130/model/CreateQAResponse.h>
 #include <tencentcloud/lke/v20231130/model/CreateQACateRequest.h>
 #include <tencentcloud/lke/v20231130/model/CreateQACateResponse.h>
+#include <tencentcloud/lke/v20231130/model/CreateReconstructDocumentFlowRequest.h>
+#include <tencentcloud/lke/v20231130/model/CreateReconstructDocumentFlowResponse.h>
 #include <tencentcloud/lke/v20231130/model/CreateRejectedQuestionRequest.h>
 #include <tencentcloud/lke/v20231130/model/CreateRejectedQuestionResponse.h>
 #include <tencentcloud/lke/v20231130/model/CreateReleaseRequest.h>
@@ -93,6 +95,8 @@
 #include <tencentcloud/lke/v20231130/model/GetEmbeddingResponse.h>
 #include <tencentcloud/lke/v20231130/model/GetMsgRecordRequest.h>
 #include <tencentcloud/lke/v20231130/model/GetMsgRecordResponse.h>
+#include <tencentcloud/lke/v20231130/model/GetReconstructDocumentResultRequest.h>
+#include <tencentcloud/lke/v20231130/model/GetReconstructDocumentResultResponse.h>
 #include <tencentcloud/lke/v20231130/model/GetTaskStatusRequest.h>
 #include <tencentcloud/lke/v20231130/model/GetTaskStatusResponse.h>
 #include <tencentcloud/lke/v20231130/model/GetWsTokenRequest.h>
@@ -157,6 +161,8 @@
 #include <tencentcloud/lke/v20231130/model/QueryRewriteResponse.h>
 #include <tencentcloud/lke/v20231130/model/RateMsgRecordRequest.h>
 #include <tencentcloud/lke/v20231130/model/RateMsgRecordResponse.h>
+#include <tencentcloud/lke/v20231130/model/ReconstructDocumentRequest.h>
+#include <tencentcloud/lke/v20231130/model/ReconstructDocumentResponse.h>
 #include <tencentcloud/lke/v20231130/model/ResetSessionRequest.h>
 #include <tencentcloud/lke/v20231130/model/ResetSessionResponse.h>
 #include <tencentcloud/lke/v20231130/model/RetryDocAuditRequest.h>
@@ -208,6 +214,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::CreateQACateResponse> CreateQACateOutcome;
                 typedef std::future<CreateQACateOutcome> CreateQACateOutcomeCallable;
                 typedef std::function<void(const LkeClient*, const Model::CreateQACateRequest&, CreateQACateOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateQACateAsyncHandler;
+                typedef Outcome<Core::Error, Model::CreateReconstructDocumentFlowResponse> CreateReconstructDocumentFlowOutcome;
+                typedef std::future<CreateReconstructDocumentFlowOutcome> CreateReconstructDocumentFlowOutcomeCallable;
+                typedef std::function<void(const LkeClient*, const Model::CreateReconstructDocumentFlowRequest&, CreateReconstructDocumentFlowOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateReconstructDocumentFlowAsyncHandler;
                 typedef Outcome<Core::Error, Model::CreateRejectedQuestionResponse> CreateRejectedQuestionOutcome;
                 typedef std::future<CreateRejectedQuestionOutcome> CreateRejectedQuestionOutcomeCallable;
                 typedef std::function<void(const LkeClient*, const Model::CreateRejectedQuestionRequest&, CreateRejectedQuestionOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateRejectedQuestionAsyncHandler;
@@ -292,6 +301,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::GetMsgRecordResponse> GetMsgRecordOutcome;
                 typedef std::future<GetMsgRecordOutcome> GetMsgRecordOutcomeCallable;
                 typedef std::function<void(const LkeClient*, const Model::GetMsgRecordRequest&, GetMsgRecordOutcome, const std::shared_ptr<const AsyncCallerContext>&)> GetMsgRecordAsyncHandler;
+                typedef Outcome<Core::Error, Model::GetReconstructDocumentResultResponse> GetReconstructDocumentResultOutcome;
+                typedef std::future<GetReconstructDocumentResultOutcome> GetReconstructDocumentResultOutcomeCallable;
+                typedef std::function<void(const LkeClient*, const Model::GetReconstructDocumentResultRequest&, GetReconstructDocumentResultOutcome, const std::shared_ptr<const AsyncCallerContext>&)> GetReconstructDocumentResultAsyncHandler;
                 typedef Outcome<Core::Error, Model::GetTaskStatusResponse> GetTaskStatusOutcome;
                 typedef std::future<GetTaskStatusOutcome> GetTaskStatusOutcomeCallable;
                 typedef std::function<void(const LkeClient*, const Model::GetTaskStatusRequest&, GetTaskStatusOutcome, const std::shared_ptr<const AsyncCallerContext>&)> GetTaskStatusAsyncHandler;
@@ -388,6 +400,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::RateMsgRecordResponse> RateMsgRecordOutcome;
                 typedef std::future<RateMsgRecordOutcome> RateMsgRecordOutcomeCallable;
                 typedef std::function<void(const LkeClient*, const Model::RateMsgRecordRequest&, RateMsgRecordOutcome, const std::shared_ptr<const AsyncCallerContext>&)> RateMsgRecordAsyncHandler;
+                typedef Outcome<Core::Error, Model::ReconstructDocumentResponse> ReconstructDocumentOutcome;
+                typedef std::future<ReconstructDocumentOutcome> ReconstructDocumentOutcomeCallable;
+                typedef std::function<void(const LkeClient*, const Model::ReconstructDocumentRequest&, ReconstructDocumentOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ReconstructDocumentAsyncHandler;
                 typedef Outcome<Core::Error, Model::ResetSessionResponse> ResetSessionOutcome;
                 typedef std::future<ResetSessionOutcome> ResetSessionOutcomeCallable;
                 typedef std::function<void(const LkeClient*, const Model::ResetSessionRequest&, ResetSessionOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ResetSessionAsyncHandler;
@@ -477,6 +492,15 @@ namespace TencentCloud
                 CreateQACateOutcome CreateQACate(const Model::CreateQACateRequest &request);
                 void CreateQACateAsync(const Model::CreateQACateRequest& request, const CreateQACateAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 CreateQACateOutcomeCallable CreateQACateCallable(const Model::CreateQACateRequest& request);
+
+                /**
+                 *文档解析，异步接口。
+                 * @param req CreateReconstructDocumentFlowRequest
+                 * @return CreateReconstructDocumentFlowOutcome
+                 */
+                CreateReconstructDocumentFlowOutcome CreateReconstructDocumentFlow(const Model::CreateReconstructDocumentFlowRequest &request);
+                void CreateReconstructDocumentFlowAsync(const Model::CreateReconstructDocumentFlowRequest& request, const CreateReconstructDocumentFlowAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                CreateReconstructDocumentFlowOutcomeCallable CreateReconstructDocumentFlowCallable(const Model::CreateReconstructDocumentFlowRequest& request);
 
                 /**
                  *创建拒答问题
@@ -730,6 +754,15 @@ namespace TencentCloud
                 GetMsgRecordOutcome GetMsgRecord(const Model::GetMsgRecordRequest &request);
                 void GetMsgRecordAsync(const Model::GetMsgRecordRequest& request, const GetMsgRecordAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 GetMsgRecordOutcomeCallable GetMsgRecordCallable(const Model::GetMsgRecordRequest& request);
+
+                /**
+                 *获取文档解析任务执行结果
+                 * @param req GetReconstructDocumentResultRequest
+                 * @return GetReconstructDocumentResultOutcome
+                 */
+                GetReconstructDocumentResultOutcome GetReconstructDocumentResult(const Model::GetReconstructDocumentResultRequest &request);
+                void GetReconstructDocumentResultAsync(const Model::GetReconstructDocumentResultRequest& request, const GetReconstructDocumentResultAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                GetReconstructDocumentResultOutcomeCallable GetReconstructDocumentResultCallable(const Model::GetReconstructDocumentResultRequest& request);
 
                 /**
                  *获取任务状态
@@ -1019,6 +1052,15 @@ namespace TencentCloud
                 RateMsgRecordOutcome RateMsgRecord(const Model::RateMsgRecordRequest &request);
                 void RateMsgRecordAsync(const Model::RateMsgRecordRequest& request, const RateMsgRecordAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 RateMsgRecordOutcomeCallable RateMsgRecordCallable(const Model::RateMsgRecordRequest& request);
+
+                /**
+                 *支持将图片或PDF文件转换成Markdown格式文件，可解析包括表格、公式、图片、标题、段落、页眉、页脚等内容元素，并将内容智能转换成阅读顺序。
+                 * @param req ReconstructDocumentRequest
+                 * @return ReconstructDocumentOutcome
+                 */
+                ReconstructDocumentOutcome ReconstructDocument(const Model::ReconstructDocumentRequest &request);
+                void ReconstructDocumentAsync(const Model::ReconstructDocumentRequest& request, const ReconstructDocumentAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                ReconstructDocumentOutcomeCallable ReconstructDocumentCallable(const Model::ReconstructDocumentRequest& request);
 
                 /**
                  *重置会话

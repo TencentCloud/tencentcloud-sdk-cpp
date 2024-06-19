@@ -32,7 +32,9 @@ DescribeSlowQueryRecordsDownloadRequest::DescribeSlowQueryRecordsDownloadRequest
     m_readRowsHasBeenSet(false),
     m_resultBytesHasBeenSet(false),
     m_memoryUsageHasBeenSet(false),
-    m_isQueryHasBeenSet(false)
+    m_isQueryHasBeenSet(false),
+    m_dbNameHasBeenSet(false),
+    m_catalogNameHasBeenSet(false)
 {
 }
 
@@ -121,6 +123,32 @@ string DescribeSlowQueryRecordsDownloadRequest::ToJsonString() const
         string key = "IsQuery";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_isQuery, allocator);
+    }
+
+    if (m_dbNameHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "DbName";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        for (auto itr = m_dbName.begin(); itr != m_dbName.end(); ++itr)
+        {
+            d[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
+        }
+    }
+
+    if (m_catalogNameHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "CatalogName";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        for (auto itr = m_catalogName.begin(); itr != m_catalogName.end(); ++itr)
+        {
+            d[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
+        }
     }
 
 
@@ -289,6 +317,38 @@ void DescribeSlowQueryRecordsDownloadRequest::SetIsQuery(const int64_t& _isQuery
 bool DescribeSlowQueryRecordsDownloadRequest::IsQueryHasBeenSet() const
 {
     return m_isQueryHasBeenSet;
+}
+
+vector<string> DescribeSlowQueryRecordsDownloadRequest::GetDbName() const
+{
+    return m_dbName;
+}
+
+void DescribeSlowQueryRecordsDownloadRequest::SetDbName(const vector<string>& _dbName)
+{
+    m_dbName = _dbName;
+    m_dbNameHasBeenSet = true;
+}
+
+bool DescribeSlowQueryRecordsDownloadRequest::DbNameHasBeenSet() const
+{
+    return m_dbNameHasBeenSet;
+}
+
+vector<string> DescribeSlowQueryRecordsDownloadRequest::GetCatalogName() const
+{
+    return m_catalogName;
+}
+
+void DescribeSlowQueryRecordsDownloadRequest::SetCatalogName(const vector<string>& _catalogName)
+{
+    m_catalogName = _catalogName;
+    m_catalogNameHasBeenSet = true;
+}
+
+bool DescribeSlowQueryRecordsDownloadRequest::CatalogNameHasBeenSet() const
+{
+    return m_catalogNameHasBeenSet;
 }
 
 

@@ -24,7 +24,8 @@ using namespace std;
 
 DeleteAlarmPolicyRequest::DeleteAlarmPolicyRequest() :
     m_moduleHasBeenSet(false),
-    m_policyIdsHasBeenSet(false)
+    m_policyIdsHasBeenSet(false),
+    m_promInsIdsHasBeenSet(false)
 {
 }
 
@@ -51,6 +52,19 @@ string DeleteAlarmPolicyRequest::ToJsonString() const
         d.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
 
         for (auto itr = m_policyIds.begin(); itr != m_policyIds.end(); ++itr)
+        {
+            d[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
+        }
+    }
+
+    if (m_promInsIdsHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "PromInsIds";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        for (auto itr = m_promInsIds.begin(); itr != m_promInsIds.end(); ++itr)
         {
             d[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
         }
@@ -94,6 +108,22 @@ void DeleteAlarmPolicyRequest::SetPolicyIds(const vector<string>& _policyIds)
 bool DeleteAlarmPolicyRequest::PolicyIdsHasBeenSet() const
 {
     return m_policyIdsHasBeenSet;
+}
+
+vector<string> DeleteAlarmPolicyRequest::GetPromInsIds() const
+{
+    return m_promInsIds;
+}
+
+void DeleteAlarmPolicyRequest::SetPromInsIds(const vector<string>& _promInsIds)
+{
+    m_promInsIds = _promInsIds;
+    m_promInsIdsHasBeenSet = true;
+}
+
+bool DeleteAlarmPolicyRequest::PromInsIdsHasBeenSet() const
+{
+    return m_promInsIdsHasBeenSet;
 }
 
 

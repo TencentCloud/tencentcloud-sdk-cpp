@@ -1623,6 +1623,56 @@ namespace TencentCloud
                      */
                     bool AgentCpuPerHasBeenSet() const;
 
+                    /**
+                     * 获取cvm真正所属的appid
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return RealAppid cvm真正所属的appid
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    int64_t GetRealAppid() const;
+
+                    /**
+                     * 设置cvm真正所属的appid
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _realAppid cvm真正所属的appid
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetRealAppid(const int64_t& _realAppid);
+
+                    /**
+                     * 判断参数 RealAppid 是否已赋值
+                     * @return RealAppid 是否已赋值
+                     * 
+                     */
+                    bool RealAppidHasBeenSet() const;
+
+                    /**
+                     * 获取云资产类型：0：腾讯云，1：aws，2：azure
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return CloudType 云资产类型：0：腾讯云，1：aws，2：azure
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    int64_t GetCloudType() const;
+
+                    /**
+                     * 设置云资产类型：0：腾讯云，1：aws，2：azure
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _cloudType 云资产类型：0：腾讯云，1：aws，2：azure
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetCloudType(const int64_t& _cloudType);
+
+                    /**
+                     * 判断参数 CloudType 是否已赋值
+                     * @return CloudType 是否已赋值
+                     * 
+                     */
+                    bool CloudTypeHasBeenSet() const;
+
                 private:
 
                     /**
@@ -2065,6 +2115,20 @@ namespace TencentCloud
                      */
                     double m_agentCpuPer;
                     bool m_agentCpuPerHasBeenSet;
+
+                    /**
+                     * cvm真正所属的appid
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    int64_t m_realAppid;
+                    bool m_realAppidHasBeenSet;
+
+                    /**
+                     * 云资产类型：0：腾讯云，1：aws，2：azure
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    int64_t m_cloudType;
+                    bool m_cloudTypeHasBeenSet;
 
                 };
             }

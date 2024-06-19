@@ -52,7 +52,8 @@ TaskAlarmInfo::TaskAlarmInfo() :
     m_latestAlarmInstanceIdHasBeenSet(false),
     m_latestAlarmTimeHasBeenSet(false),
     m_descriptionHasBeenSet(false),
-    m_larkWebHooksHasBeenSet(false)
+    m_larkWebHooksHasBeenSet(false),
+    m_dingDingWebHooksHasBeenSet(false)
 {
 }
 
@@ -404,6 +405,16 @@ CoreInternalOutcome TaskAlarmInfo::Deserialize(const rapidjson::Value &value)
         m_larkWebHooksHasBeenSet = true;
     }
 
+    if (value.HasMember("DingDingWebHooks") && !value["DingDingWebHooks"].IsNull())
+    {
+        if (!value["DingDingWebHooks"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `TaskAlarmInfo.DingDingWebHooks` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_dingDingWebHooks = string(value["DingDingWebHooks"].GetString());
+        m_dingDingWebHooksHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -684,6 +695,14 @@ void TaskAlarmInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Document::A
         string key = "LarkWebHooks";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_larkWebHooks.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_dingDingWebHooksHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "DingDingWebHooks";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_dingDingWebHooks.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -1199,5 +1218,21 @@ void TaskAlarmInfo::SetLarkWebHooks(const string& _larkWebHooks)
 bool TaskAlarmInfo::LarkWebHooksHasBeenSet() const
 {
     return m_larkWebHooksHasBeenSet;
+}
+
+string TaskAlarmInfo::GetDingDingWebHooks() const
+{
+    return m_dingDingWebHooks;
+}
+
+void TaskAlarmInfo::SetDingDingWebHooks(const string& _dingDingWebHooks)
+{
+    m_dingDingWebHooks = _dingDingWebHooks;
+    m_dingDingWebHooksHasBeenSet = true;
+}
+
+bool TaskAlarmInfo::DingDingWebHooksHasBeenSet() const
+{
+    return m_dingDingWebHooksHasBeenSet;
 }
 

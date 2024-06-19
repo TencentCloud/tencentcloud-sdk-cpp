@@ -132,15 +132,15 @@ namespace TencentCloud
                     bool OrderFieldHasBeenSet() const;
 
                     /**
-                     * 获取按照OrderField升序或者降序进行排序。取值范围：<li>0：表示降序。</li><li>1：表示升序。</li>默认值为0。
-                     * @return Asc 按照OrderField升序或者降序进行排序。取值范围：<li>0：表示降序。</li><li>1：表示升序。</li>默认值为0。
+                     * 获取按照OrderField升序或者降序进行排序。取值范围：<li>0：表示升序。</li><li>1：表示降序。</li>默认值为0。
+                     * @return Asc 按照OrderField升序或者降序进行排序。取值范围：<li>0：表示升序。</li><li>1：表示降序。</li>默认值为0。
                      * 
                      */
                     int64_t GetAsc() const;
 
                     /**
-                     * 设置按照OrderField升序或者降序进行排序。取值范围：<li>0：表示降序。</li><li>1：表示升序。</li>默认值为0。
-                     * @param _asc 按照OrderField升序或者降序进行排序。取值范围：<li>0：表示降序。</li><li>1：表示升序。</li>默认值为0。
+                     * 设置按照OrderField升序或者降序进行排序。取值范围：<li>0：表示升序。</li><li>1：表示降序。</li>默认值为0。
+                     * @param _asc 按照OrderField升序或者降序进行排序。取值范围：<li>0：表示升序。</li><li>1：表示降序。</li>默认值为0。
                      * 
                      */
                     void SetAsc(const int64_t& _asc);
@@ -201,7 +201,7 @@ namespace TencentCloud
                     bool m_orderFieldHasBeenSet;
 
                     /**
-                     * 按照OrderField升序或者降序进行排序。取值范围：<li>0：表示降序。</li><li>1：表示升序。</li>默认值为0。
+                     * 按照OrderField升序或者降序进行排序。取值范围：<li>0：表示升序。</li><li>1：表示降序。</li>默认值为0。
                      */
                     int64_t m_asc;
                     bool m_ascHasBeenSet;

@@ -30,8 +30,8 @@ ModifyTopicAttributesRequest::ModifyTopicAttributesRequest() :
     m_minInsyncReplicasHasBeenSet(false),
     m_uncleanLeaderElectionEnableHasBeenSet(false),
     m_retentionMsHasBeenSet(false),
-    m_segmentMsHasBeenSet(false),
     m_maxMessageBytesHasBeenSet(false),
+    m_segmentMsHasBeenSet(false),
     m_cleanUpPolicyHasBeenSet(false),
     m_ipWhiteListHasBeenSet(false),
     m_enableAclRuleHasBeenSet(false),
@@ -107,20 +107,20 @@ string ModifyTopicAttributesRequest::ToJsonString() const
         d.AddMember(iKey, m_retentionMs, allocator);
     }
 
-    if (m_segmentMsHasBeenSet)
-    {
-        rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "SegmentMs";
-        iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, m_segmentMs, allocator);
-    }
-
     if (m_maxMessageBytesHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
         string key = "MaxMessageBytes";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_maxMessageBytes, allocator);
+    }
+
+    if (m_segmentMsHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "SegmentMs";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_segmentMs, allocator);
     }
 
     if (m_cleanUpPolicyHasBeenSet)
@@ -327,22 +327,6 @@ bool ModifyTopicAttributesRequest::RetentionMsHasBeenSet() const
     return m_retentionMsHasBeenSet;
 }
 
-int64_t ModifyTopicAttributesRequest::GetSegmentMs() const
-{
-    return m_segmentMs;
-}
-
-void ModifyTopicAttributesRequest::SetSegmentMs(const int64_t& _segmentMs)
-{
-    m_segmentMs = _segmentMs;
-    m_segmentMsHasBeenSet = true;
-}
-
-bool ModifyTopicAttributesRequest::SegmentMsHasBeenSet() const
-{
-    return m_segmentMsHasBeenSet;
-}
-
 int64_t ModifyTopicAttributesRequest::GetMaxMessageBytes() const
 {
     return m_maxMessageBytes;
@@ -357,6 +341,22 @@ void ModifyTopicAttributesRequest::SetMaxMessageBytes(const int64_t& _maxMessage
 bool ModifyTopicAttributesRequest::MaxMessageBytesHasBeenSet() const
 {
     return m_maxMessageBytesHasBeenSet;
+}
+
+int64_t ModifyTopicAttributesRequest::GetSegmentMs() const
+{
+    return m_segmentMs;
+}
+
+void ModifyTopicAttributesRequest::SetSegmentMs(const int64_t& _segmentMs)
+{
+    m_segmentMs = _segmentMs;
+    m_segmentMsHasBeenSet = true;
+}
+
+bool ModifyTopicAttributesRequest::SegmentMsHasBeenSet() const
+{
+    return m_segmentMsHasBeenSet;
 }
 
 string ModifyTopicAttributesRequest::GetCleanUpPolicy() const

@@ -34,6 +34,7 @@
 #include <tencentcloud/cynosdb/v20190107/model/SwitchClusterLogBin.h>
 #include <tencentcloud/cynosdb/v20190107/model/BizTaskModifyParamsData.h>
 #include <tencentcloud/cynosdb/v20190107/model/TaskMaintainInfo.h>
+#include <tencentcloud/cynosdb/v20190107/model/InstanceCLSDeliveryInfo.h>
 
 
 namespace TencentCloud
@@ -118,6 +119,31 @@ namespace TencentCloud
                      * 
                      */
                     bool ClusterIdHasBeenSet() const;
+
+                    /**
+                     * 获取地域
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return Region 地域
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::string GetRegion() const;
+
+                    /**
+                     * 设置地域
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _region 地域
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetRegion(const std::string& _region);
+
+                    /**
+                     * 判断参数 Region 是否已赋值
+                     * @return Region 是否已赋值
+                     * 
+                     */
+                    bool RegionHasBeenSet() const;
 
                     /**
                      * 获取任务创建时间
@@ -818,6 +844,35 @@ namespace TencentCloud
                      */
                     bool TaskMaintainInfoHasBeenSet() const;
 
+                    /**
+                     * 获取实例日志投递信息
+
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return InstanceCLSDeliveryInfos 实例日志投递信息
+
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::vector<InstanceCLSDeliveryInfo> GetInstanceCLSDeliveryInfos() const;
+
+                    /**
+                     * 设置实例日志投递信息
+
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _instanceCLSDeliveryInfos 实例日志投递信息
+
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetInstanceCLSDeliveryInfos(const std::vector<InstanceCLSDeliveryInfo>& _instanceCLSDeliveryInfos);
+
+                    /**
+                     * 判断参数 InstanceCLSDeliveryInfos 是否已赋值
+                     * @return InstanceCLSDeliveryInfos 是否已赋值
+                     * 
+                     */
+                    bool InstanceCLSDeliveryInfosHasBeenSet() const;
+
                 private:
 
                     /**
@@ -837,6 +892,13 @@ namespace TencentCloud
                      */
                     std::string m_clusterId;
                     bool m_clusterIdHasBeenSet;
+
+                    /**
+                     * 地域
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_region;
+                    bool m_regionHasBeenSet;
 
                     /**
                      * 任务创建时间
@@ -1035,6 +1097,14 @@ namespace TencentCloud
                      */
                     TaskMaintainInfo m_taskMaintainInfo;
                     bool m_taskMaintainInfoHasBeenSet;
+
+                    /**
+                     * 实例日志投递信息
+
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::vector<InstanceCLSDeliveryInfo> m_instanceCLSDeliveryInfos;
+                    bool m_instanceCLSDeliveryInfosHasBeenSet;
 
                 };
             }

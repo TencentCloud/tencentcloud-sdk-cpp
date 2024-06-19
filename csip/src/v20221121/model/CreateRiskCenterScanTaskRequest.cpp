@@ -34,7 +34,8 @@ CreateRiskCenterScanTaskRequest::CreateRiskCenterScanTaskRequest() :
     m_scanFromHasBeenSet(false),
     m_taskAdvanceCFGHasBeenSet(false),
     m_taskModeHasBeenSet(false),
-    m_tagsHasBeenSet(false)
+    m_tagsHasBeenSet(false),
+    m_finishWebHookHasBeenSet(false)
 {
 }
 
@@ -163,6 +164,14 @@ string CreateRiskCenterScanTaskRequest::ToJsonString() const
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
         m_tags.ToJsonObject(d[key.c_str()], allocator);
+    }
+
+    if (m_finishWebHookHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "FinishWebHook";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_finishWebHook.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -363,6 +372,22 @@ void CreateRiskCenterScanTaskRequest::SetTags(const AssetTag& _tags)
 bool CreateRiskCenterScanTaskRequest::TagsHasBeenSet() const
 {
     return m_tagsHasBeenSet;
+}
+
+string CreateRiskCenterScanTaskRequest::GetFinishWebHook() const
+{
+    return m_finishWebHook;
+}
+
+void CreateRiskCenterScanTaskRequest::SetFinishWebHook(const string& _finishWebHook)
+{
+    m_finishWebHook = _finishWebHook;
+    m_finishWebHookHasBeenSet = true;
+}
+
+bool CreateRiskCenterScanTaskRequest::FinishWebHookHasBeenSet() const
+{
+    return m_finishWebHookHasBeenSet;
 }
 
 

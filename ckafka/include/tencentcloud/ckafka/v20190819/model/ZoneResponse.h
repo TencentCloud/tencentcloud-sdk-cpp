@@ -329,6 +329,131 @@ namespace TencentCloud
                      */
                     bool PublicNetworkLimitHasBeenSet() const;
 
+                    /**
+                     * 获取请求ID
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return RequestId 请求ID
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::string GetRequestId() const;
+
+                    /**
+                     * 设置请求ID
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _requestId 请求ID
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetRequestId(const std::string& _requestId);
+
+                    /**
+                     * 判断参数 RequestId 是否已赋值
+                     * @return RequestId 是否已赋值
+                     * 
+                     */
+                    bool RequestIdHasBeenSet() const;
+
+                    /**
+                     * 获取版本
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return Version 版本
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::string GetVersion() const;
+
+                    /**
+                     * 设置版本
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _version 版本
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetVersion(const std::string& _version);
+
+                    /**
+                     * 判断参数 Version 是否已赋值
+                     * @return Version 是否已赋值
+                     * 
+                     */
+                    bool VersionHasBeenSet() const;
+
+                    /**
+                     * 获取分页offset
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return Offset 分页offset
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    int64_t GetOffset() const;
+
+                    /**
+                     * 设置分页offset
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _offset 分页offset
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetOffset(const int64_t& _offset);
+
+                    /**
+                     * 判断参数 Offset 是否已赋值
+                     * @return Offset 是否已赋值
+                     * 
+                     */
+                    bool OffsetHasBeenSet() const;
+
+                    /**
+                     * 获取分页limit
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return Limit 分页limit
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    int64_t GetLimit() const;
+
+                    /**
+                     * 设置分页limit
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _limit 分页limit
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetLimit(const int64_t& _limit);
+
+                    /**
+                     * 判断参数 Limit 是否已赋值
+                     * @return Limit 是否已赋值
+                     * 
+                     */
+                    bool LimitHasBeenSet() const;
+
+                    /**
+                     * 获取是否必须录入tag
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return ForceCheckTag 是否必须录入tag
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    bool GetForceCheckTag() const;
+
+                    /**
+                     * 设置是否必须录入tag
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _forceCheckTag 是否必须录入tag
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetForceCheckTag(const bool& _forceCheckTag);
+
+                    /**
+                     * 判断参数 ForceCheckTag 是否已赋值
+                     * @return ForceCheckTag 是否已赋值
+                     * 
+                     */
+                    bool ForceCheckTagHasBeenSet() const;
+
                 private:
 
                     /**
@@ -409,6 +534,41 @@ namespace TencentCloud
                      */
                     std::string m_publicNetworkLimit;
                     bool m_publicNetworkLimitHasBeenSet;
+
+                    /**
+                     * 请求ID
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_requestId;
+                    bool m_requestIdHasBeenSet;
+
+                    /**
+                     * 版本
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_version;
+                    bool m_versionHasBeenSet;
+
+                    /**
+                     * 分页offset
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    int64_t m_offset;
+                    bool m_offsetHasBeenSet;
+
+                    /**
+                     * 分页limit
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    int64_t m_limit;
+                    bool m_limitHasBeenSet;
+
+                    /**
+                     * 是否必须录入tag
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    bool m_forceCheckTag;
+                    bool m_forceCheckTagHasBeenSet;
 
                 };
             }

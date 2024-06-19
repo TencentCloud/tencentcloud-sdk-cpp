@@ -84,6 +84,27 @@ namespace TencentCloud
                      */
                     bool PolicyIdsHasBeenSet() const;
 
+                    /**
+                     * 获取prom的实例id
+                     * @return PromInsIds prom的实例id
+                     * 
+                     */
+                    std::vector<std::string> GetPromInsIds() const;
+
+                    /**
+                     * 设置prom的实例id
+                     * @param _promInsIds prom的实例id
+                     * 
+                     */
+                    void SetPromInsIds(const std::vector<std::string>& _promInsIds);
+
+                    /**
+                     * 判断参数 PromInsIds 是否已赋值
+                     * @return PromInsIds 是否已赋值
+                     * 
+                     */
+                    bool PromInsIdsHasBeenSet() const;
+
                 private:
 
                     /**
@@ -97,6 +118,12 @@ namespace TencentCloud
                      */
                     std::vector<std::string> m_policyIds;
                     bool m_policyIdsHasBeenSet;
+
+                    /**
+                     * prom的实例id
+                     */
+                    std::vector<std::string> m_promInsIds;
+                    bool m_promInsIdsHasBeenSet;
 
                 };
             }

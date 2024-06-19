@@ -24,6 +24,7 @@ using namespace std;
 
 CreateDomainAndIpRequest::CreateDomainAndIpRequest() :
     m_contentHasBeenSet(false),
+    m_memberIdHasBeenSet(false),
     m_tagsHasBeenSet(false)
 {
 }
@@ -43,6 +44,19 @@ string CreateDomainAndIpRequest::ToJsonString() const
         d.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
 
         for (auto itr = m_content.begin(); itr != m_content.end(); ++itr)
+        {
+            d[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
+        }
+    }
+
+    if (m_memberIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "MemberId";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        for (auto itr = m_memberId.begin(); itr != m_memberId.end(); ++itr)
         {
             d[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
         }
@@ -85,6 +99,22 @@ void CreateDomainAndIpRequest::SetContent(const vector<string>& _content)
 bool CreateDomainAndIpRequest::ContentHasBeenSet() const
 {
     return m_contentHasBeenSet;
+}
+
+vector<string> CreateDomainAndIpRequest::GetMemberId() const
+{
+    return m_memberId;
+}
+
+void CreateDomainAndIpRequest::SetMemberId(const vector<string>& _memberId)
+{
+    m_memberId = _memberId;
+    m_memberIdHasBeenSet = true;
+}
+
+bool CreateDomainAndIpRequest::MemberIdHasBeenSet() const
+{
+    return m_memberIdHasBeenSet;
 }
 
 vector<AssetTag> CreateDomainAndIpRequest::GetTags() const

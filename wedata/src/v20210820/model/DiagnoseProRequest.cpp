@@ -23,17 +23,17 @@ using namespace TencentCloud::Wedata::V20210820::Model;
 using namespace std;
 
 DiagnoseProRequest::DiagnoseProRequest() :
+    m_searchConditionHasBeenSet(false),
+    m_projectIdHasBeenSet(false),
     m_instancesHasBeenSet(false),
     m_checkFatherHasBeenSet(false),
     m_rerunTypeHasBeenSet(false),
     m_dependentWayHasBeenSet(false),
     m_skipEventListeningHasBeenSet(false),
     m_sonInstanceTypeHasBeenSet(false),
-    m_searchConditionHasBeenSet(false),
     m_optTypeHasBeenSet(false),
     m_operatorNameHasBeenSet(false),
     m_operatorIdHasBeenSet(false),
-    m_projectIdHasBeenSet(false),
     m_projectIdentHasBeenSet(false),
     m_projectNameHasBeenSet(false),
     m_pageIndexHasBeenSet(false),
@@ -50,6 +50,23 @@ string DiagnoseProRequest::ToJsonString() const
     d.SetObject();
     rapidjson::Document::AllocatorType& allocator = d.GetAllocator();
 
+
+    if (m_searchConditionHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "SearchCondition";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_searchCondition.ToJsonObject(d[key.c_str()], allocator);
+    }
+
+    if (m_projectIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ProjectId";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_projectId.c_str(), allocator).Move(), allocator);
+    }
 
     if (m_instancesHasBeenSet)
     {
@@ -106,15 +123,6 @@ string DiagnoseProRequest::ToJsonString() const
         d.AddMember(iKey, rapidjson::Value(m_sonInstanceType.c_str(), allocator).Move(), allocator);
     }
 
-    if (m_searchConditionHasBeenSet)
-    {
-        rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "SearchCondition";
-        iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
-        m_searchCondition.ToJsonObject(d[key.c_str()], allocator);
-    }
-
     if (m_optTypeHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
@@ -137,14 +145,6 @@ string DiagnoseProRequest::ToJsonString() const
         string key = "OperatorId";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_operatorId.c_str(), allocator).Move(), allocator);
-    }
-
-    if (m_projectIdHasBeenSet)
-    {
-        rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "ProjectId";
-        iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, rapidjson::Value(m_projectId.c_str(), allocator).Move(), allocator);
     }
 
     if (m_projectIdentHasBeenSet)
@@ -211,6 +211,38 @@ string DiagnoseProRequest::ToJsonString() const
     return buffer.GetString();
 }
 
+
+InstanceApiOpsRequest DiagnoseProRequest::GetSearchCondition() const
+{
+    return m_searchCondition;
+}
+
+void DiagnoseProRequest::SetSearchCondition(const InstanceApiOpsRequest& _searchCondition)
+{
+    m_searchCondition = _searchCondition;
+    m_searchConditionHasBeenSet = true;
+}
+
+bool DiagnoseProRequest::SearchConditionHasBeenSet() const
+{
+    return m_searchConditionHasBeenSet;
+}
+
+string DiagnoseProRequest::GetProjectId() const
+{
+    return m_projectId;
+}
+
+void DiagnoseProRequest::SetProjectId(const string& _projectId)
+{
+    m_projectId = _projectId;
+    m_projectIdHasBeenSet = true;
+}
+
+bool DiagnoseProRequest::ProjectIdHasBeenSet() const
+{
+    return m_projectIdHasBeenSet;
+}
 
 vector<InstanceOpsDto> DiagnoseProRequest::GetInstances() const
 {
@@ -308,22 +340,6 @@ bool DiagnoseProRequest::SonInstanceTypeHasBeenSet() const
     return m_sonInstanceTypeHasBeenSet;
 }
 
-InstanceApiOpsRequest DiagnoseProRequest::GetSearchCondition() const
-{
-    return m_searchCondition;
-}
-
-void DiagnoseProRequest::SetSearchCondition(const InstanceApiOpsRequest& _searchCondition)
-{
-    m_searchCondition = _searchCondition;
-    m_searchConditionHasBeenSet = true;
-}
-
-bool DiagnoseProRequest::SearchConditionHasBeenSet() const
-{
-    return m_searchConditionHasBeenSet;
-}
-
 string DiagnoseProRequest::GetOptType() const
 {
     return m_optType;
@@ -370,22 +386,6 @@ void DiagnoseProRequest::SetOperatorId(const string& _operatorId)
 bool DiagnoseProRequest::OperatorIdHasBeenSet() const
 {
     return m_operatorIdHasBeenSet;
-}
-
-string DiagnoseProRequest::GetProjectId() const
-{
-    return m_projectId;
-}
-
-void DiagnoseProRequest::SetProjectId(const string& _projectId)
-{
-    m_projectId = _projectId;
-    m_projectIdHasBeenSet = true;
-}
-
-bool DiagnoseProRequest::ProjectIdHasBeenSet() const
-{
-    return m_projectIdHasBeenSet;
 }
 
 string DiagnoseProRequest::GetProjectIdent() const

@@ -551,7 +551,9 @@ namespace TencentCloud
 
 
                 /**
-                 *从组件市场选中组件并添加到应用模板列表
+                 *产品停售，预下线
+
+从组件市场选中组件并添加到应用模板列表
                  * @param req ApplyMarketComponentRequest
                  * @return ApplyMarketComponentOutcome
                  */
@@ -569,7 +571,9 @@ namespace TencentCloud
                 BuildMessageRouteOutcomeCallable BuildMessageRouteCallable(const Model::BuildMessageRouteRequest& request);
 
                 /**
-                 *创建可视化创建应用模板
+                 *产品停售，预下线
+
+创建可视化创建应用模板
                  * @param req CreateApplicationVisualizationRequest
                  * @return CreateApplicationVisualizationOutcome
                  */
@@ -623,7 +627,9 @@ namespace TencentCloud
                 CreateEdgeNodeUnitTemplateOutcomeCallable CreateEdgeNodeUnitTemplateCallable(const Model::CreateEdgeNodeUnitTemplateRequest& request);
 
                 /**
-                 *可视化创建应用
+                 *产品停售，预下线
+
+可视化创建应用
                  * @param req CreateEdgeUnitApplicationVisualizationRequest
                  * @return CreateEdgeUnitApplicationVisualizationOutcome
                  */
@@ -632,7 +638,9 @@ namespace TencentCloud
                 CreateEdgeUnitApplicationVisualizationOutcomeCallable CreateEdgeUnitApplicationVisualizationCallable(const Model::CreateEdgeUnitApplicationVisualizationRequest& request);
 
                 /**
-                 *yaml方式创建应用
+                 *产品停售，预下线
+
+yaml方式创建应用
                  * @param req CreateEdgeUnitApplicationYamlRequest
                  * @return CreateEdgeUnitApplicationYamlOutcome
                  */
@@ -713,7 +721,9 @@ namespace TencentCloud
                 CreateUserTokenOutcomeCallable CreateUserTokenCallable(const Model::CreateUserTokenRequest& request);
 
                 /**
-                 *删除应用模板
+                 *产品停售，预下线
+
+删除应用模板
                  * @param req DeleteApplicationsRequest
                  * @return DeleteApplicationsOutcome
                  */
@@ -758,7 +768,9 @@ namespace TencentCloud
                 DeleteEdgeNodesOutcomeCallable DeleteEdgeNodesCallable(const Model::DeleteEdgeNodesRequest& request);
 
                 /**
-                 *删除应用列表
+                 *产品停售，预下线
+
+删除应用列表
                  * @param req DeleteEdgeUnitApplicationsRequest
                  * @return DeleteEdgeUnitApplicationsOutcome
                  */
@@ -857,7 +869,9 @@ namespace TencentCloud
                 DeleteSecretOutcomeCallable DeleteSecretCallable(const Model::DeleteSecretRequest& request);
 
                 /**
-                 *获取应用模板可视化配置信息
+                 *产品停售，预下线
+
+获取应用模板可视化配置信息
                  * @param req DescribeApplicationVisualizationRequest
                  * @return DescribeApplicationVisualizationOutcome
                  */
@@ -866,7 +880,9 @@ namespace TencentCloud
                 DescribeApplicationVisualizationOutcomeCallable DescribeApplicationVisualizationCallable(const Model::DescribeApplicationVisualizationRequest& request);
 
                 /**
-                 *查询应用模板Yaml
+                 *产品停售，预下线
+
+查询应用模板Yaml
                  * @param req DescribeApplicationYamlRequest
                  * @return DescribeApplicationYamlOutcome
                  */
@@ -875,7 +891,9 @@ namespace TencentCloud
                 DescribeApplicationYamlOutcomeCallable DescribeApplicationYamlCallable(const Model::DescribeApplicationYamlRequest& request);
 
                 /**
-                 *检查应用模板的Yaml配置
+                 *产品停售，预下线
+
+检查应用模板的Yaml配置
                  * @param req DescribeApplicationYamlErrorRequest
                  * @return DescribeApplicationYamlErrorOutcome
                  */
@@ -884,7 +902,9 @@ namespace TencentCloud
                 DescribeApplicationYamlErrorOutcomeCallable DescribeApplicationYamlErrorCallable(const Model::DescribeApplicationYamlErrorRequest& request);
 
                 /**
-                 *获取应用模板列表
+                 *产品停售，预下线
+
+获取应用模板列表
                  * @param req DescribeApplicationsRequest
                  * @return DescribeApplicationsOutcome
                  */
@@ -1019,7 +1039,9 @@ namespace TencentCloud
                 DescribeEdgeSnNodesOutcomeCallable DescribeEdgeSnNodesCallable(const Model::DescribeEdgeSnNodesRequest& request);
 
                 /**
-                 *获取应用事件列表
+                 *产品停售，预下线
+
+获取应用事件列表
                  * @param req DescribeEdgeUnitApplicationEventsRequest
                  * @return DescribeEdgeUnitApplicationEventsOutcome
                  */
@@ -1028,7 +1050,9 @@ namespace TencentCloud
                 DescribeEdgeUnitApplicationEventsOutcomeCallable DescribeEdgeUnitApplicationEventsCallable(const Model::DescribeEdgeUnitApplicationEventsRequest& request);
 
                 /**
-                 *获取应用日志
+                 *产品停售，预下线
+
+获取应用日志
                  * @param req DescribeEdgeUnitApplicationLogsRequest
                  * @return DescribeEdgeUnitApplicationLogsOutcome
                  */
@@ -1037,7 +1061,9 @@ namespace TencentCloud
                 DescribeEdgeUnitApplicationLogsOutcomeCallable DescribeEdgeUnitApplicationLogsCallable(const Model::DescribeEdgeUnitApplicationLogsRequest& request);
 
                 /**
-                 *获取应用容器状态
+                 *产品停售，预下线
+
+获取应用容器状态
                  * @param req DescribeEdgeUnitApplicationPodContainersRequest
                  * @return DescribeEdgeUnitApplicationPodContainersOutcome
                  */
@@ -1046,7 +1072,9 @@ namespace TencentCloud
                 DescribeEdgeUnitApplicationPodContainersOutcomeCallable DescribeEdgeUnitApplicationPodContainersCallable(const Model::DescribeEdgeUnitApplicationPodContainersRequest& request);
 
                 /**
-                 *获取应用下Pod状态
+                 *产品停售，预下线
+
+获取应用下Pod状态
                  * @param req DescribeEdgeUnitApplicationPodsRequest
                  * @return DescribeEdgeUnitApplicationPodsOutcome
                  */
@@ -1055,7 +1083,9 @@ namespace TencentCloud
                 DescribeEdgeUnitApplicationPodsOutcomeCallable DescribeEdgeUnitApplicationPodsCallable(const Model::DescribeEdgeUnitApplicationPodsRequest& request);
 
                 /**
-                 *获取单元可视化配置信息
+                 *产品停售，预下线
+
+获取单元可视化配置信息
                  * @param req DescribeEdgeUnitApplicationVisualizationRequest
                  * @return DescribeEdgeUnitApplicationVisualizationOutcome
                  */
@@ -1064,7 +1094,9 @@ namespace TencentCloud
                 DescribeEdgeUnitApplicationVisualizationOutcomeCallable DescribeEdgeUnitApplicationVisualizationCallable(const Model::DescribeEdgeUnitApplicationVisualizationRequest& request);
 
                 /**
-                 *获取应用的Yaml配置
+                 *产品停售，预下线
+
+获取应用的Yaml配置
                  * @param req DescribeEdgeUnitApplicationYamlRequest
                  * @return DescribeEdgeUnitApplicationYamlOutcome
                  */
@@ -1073,7 +1105,9 @@ namespace TencentCloud
                 DescribeEdgeUnitApplicationYamlOutcomeCallable DescribeEdgeUnitApplicationYamlCallable(const Model::DescribeEdgeUnitApplicationYamlRequest& request);
 
                 /**
-                 *检查单元应用的Yaml配置
+                 *产品停售，预下线
+
+检查单元应用的Yaml配置
                  * @param req DescribeEdgeUnitApplicationYamlErrorRequest
                  * @return DescribeEdgeUnitApplicationYamlErrorOutcome
                  */
@@ -1091,7 +1125,9 @@ namespace TencentCloud
                 DescribeEdgeUnitApplicationsOutcomeCallable DescribeEdgeUnitApplicationsCallable(const Model::DescribeEdgeUnitApplicationsRequest& request);
 
                 /**
-                 *查询边缘集群详情
+                 *产品停售，预下线
+
+查询边缘集群详情
                  * @param req DescribeEdgeUnitCloudRequest
                  * @return DescribeEdgeUnitCloudOutcome
                  */
@@ -1325,7 +1361,9 @@ namespace TencentCloud
                 GetMarketComponentListOutcomeCallable GetMarketComponentListCallable(const Model::GetMarketComponentListRequest& request);
 
                 /**
-                 *修改应用模板基本信息
+                 *产品停售，预下线
+
+修改应用模板基本信息
                  * @param req ModifyApplicationBasicInfoRequest
                  * @return ModifyApplicationBasicInfoOutcome
                  */
@@ -1334,7 +1372,9 @@ namespace TencentCloud
                 ModifyApplicationBasicInfoOutcomeCallable ModifyApplicationBasicInfoCallable(const Model::ModifyApplicationBasicInfoRequest& request);
 
                 /**
-                 *修改应用模板配置
+                 *产品停售，预下线
+
+修改应用模板配置
                  * @param req ModifyApplicationVisualizationRequest
                  * @return ModifyApplicationVisualizationOutcome
                  */

@@ -989,7 +989,6 @@ namespace TencentCloud
 
                 /**
                  *获取主题属性
-
                  * @param req DescribeTopicAttributesRequest
                  * @return DescribeTopicAttributesOutcome
                  */

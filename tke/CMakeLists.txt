@@ -295,6 +295,7 @@ set(tke_public_header_model
   include/tencentcloud/tke/v20180525/model/DescribeClusterRoutesRequest.h
   include/tencentcloud/tke/v20180525/model/DeleteECMInstancesRequest.h
   include/tencentcloud/tke/v20180525/model/ClusterLevelAttribute.h
+  include/tencentcloud/tke/v20180525/model/PodChargeInfo.h
   include/tencentcloud/tke/v20180525/model/RemoveNodeFromNodePoolResponse.h
   include/tencentcloud/tke/v20180525/model/SetNodePoolNodeProtectionRequest.h
   include/tencentcloud/tke/v20180525/model/EnableClusterAuditRequest.h
@@ -349,6 +350,7 @@ set(tke_public_header_model
   include/tencentcloud/tke/v20180525/model/ModifyPrometheusTempResponse.h
   include/tencentcloud/tke/v20180525/model/VirtualNode.h
   include/tencentcloud/tke/v20180525/model/PodNodeInfo.h
+  include/tencentcloud/tke/v20180525/model/DescribePodChargeInfoRequest.h
   include/tencentcloud/tke/v20180525/model/ForwardTKEEdgeApplicationRequestV3Response.h
   include/tencentcloud/tke/v20180525/model/CreateClusterVirtualNodePoolRequest.h
   include/tencentcloud/tke/v20180525/model/ModifyPrometheusConfigRequest.h
@@ -609,6 +611,7 @@ set(tke_public_header_model
   include/tencentcloud/tke/v20180525/model/KubeJarvisStateInspectionOverview.h
   include/tencentcloud/tke/v20180525/model/DescribePrometheusOverviewsResponse.h
   include/tencentcloud/tke/v20180525/model/DescribeClusterInspectionResultsOverviewResponse.h
+  include/tencentcloud/tke/v20180525/model/DescribePodChargeInfoResponse.h
   include/tencentcloud/tke/v20180525/model/DeletePrometheusRecordRuleYamlRequest.h
   include/tencentcloud/tke/v20180525/model/InstallAddonRequest.h
   include/tencentcloud/tke/v20180525/model/InstanceUpgradePreCheckResult.h
@@ -956,6 +959,7 @@ set(tke_src
   src/v20180525/model/DescribeClusterRoutesRequest.cpp
   src/v20180525/model/DeleteECMInstancesRequest.cpp
   src/v20180525/model/ClusterLevelAttribute.cpp
+  src/v20180525/model/PodChargeInfo.cpp
   src/v20180525/model/RemoveNodeFromNodePoolResponse.cpp
   src/v20180525/model/SetNodePoolNodeProtectionRequest.cpp
   src/v20180525/model/EnableClusterAuditRequest.cpp
@@ -1010,6 +1014,7 @@ set(tke_src
   src/v20180525/model/ModifyPrometheusTempResponse.cpp
   src/v20180525/model/VirtualNode.cpp
   src/v20180525/model/PodNodeInfo.cpp
+  src/v20180525/model/DescribePodChargeInfoRequest.cpp
   src/v20180525/model/ForwardTKEEdgeApplicationRequestV3Response.cpp
   src/v20180525/model/CreateClusterVirtualNodePoolRequest.cpp
   src/v20180525/model/ModifyPrometheusConfigRequest.cpp
@@ -1270,6 +1275,7 @@ set(tke_src
   src/v20180525/model/KubeJarvisStateInspectionOverview.cpp
   src/v20180525/model/DescribePrometheusOverviewsResponse.cpp
   src/v20180525/model/DescribeClusterInspectionResultsOverviewResponse.cpp
+  src/v20180525/model/DescribePodChargeInfoResponse.cpp
   src/v20180525/model/DeletePrometheusRecordRuleYamlRequest.cpp
   src/v20180525/model/InstallAddonRequest.cpp
   src/v20180525/model/InstanceUpgradePreCheckResult.cpp

@@ -30,7 +30,8 @@ UpstreamHealthCheckConfig::UpstreamHealthCheckConfig() :
     m_timeoutsHasBeenSet(false),
     m_healthyHttpStatusesHasBeenSet(false),
     m_unhealthyHttpStatusesHasBeenSet(false),
-    m_ignoreZeroWeightNodesHasBeenSet(false)
+    m_ignoreZeroWeightNodesHasBeenSet(false),
+    m_zeroWeightHeathCheckHasBeenSet(false)
 {
 }
 
@@ -159,6 +160,16 @@ CoreInternalOutcome UpstreamHealthCheckConfig::Deserialize(const rapidjson::Valu
         m_ignoreZeroWeightNodesHasBeenSet = true;
     }
 
+    if (value.HasMember("ZeroWeightHeathCheck") && !value["ZeroWeightHeathCheck"].IsNull())
+    {
+        if (!value["ZeroWeightHeathCheck"].IsBool())
+        {
+            return CoreInternalOutcome(Core::Error("response `UpstreamHealthCheckConfig.ZeroWeightHeathCheck` IsBool=false incorrectly").SetRequestId(requestId));
+        }
+        m_zeroWeightHeathCheck = value["ZeroWeightHeathCheck"].GetBool();
+        m_zeroWeightHeathCheckHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -256,6 +267,14 @@ void UpstreamHealthCheckConfig::ToJsonObject(rapidjson::Value &value, rapidjson:
         string key = "IgnoreZeroWeightNodes";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_ignoreZeroWeightNodes, allocator);
+    }
+
+    if (m_zeroWeightHeathCheckHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ZeroWeightHeathCheck";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_zeroWeightHeathCheck, allocator);
     }
 
 }
@@ -419,5 +438,21 @@ void UpstreamHealthCheckConfig::SetIgnoreZeroWeightNodes(const bool& _ignoreZero
 bool UpstreamHealthCheckConfig::IgnoreZeroWeightNodesHasBeenSet() const
 {
     return m_ignoreZeroWeightNodesHasBeenSet;
+}
+
+bool UpstreamHealthCheckConfig::GetZeroWeightHeathCheck() const
+{
+    return m_zeroWeightHeathCheck;
+}
+
+void UpstreamHealthCheckConfig::SetZeroWeightHeathCheck(const bool& _zeroWeightHeathCheck)
+{
+    m_zeroWeightHeathCheck = _zeroWeightHeathCheck;
+    m_zeroWeightHeathCheckHasBeenSet = true;
+}
+
+bool UpstreamHealthCheckConfig::ZeroWeightHeathCheckHasBeenSet() const
+{
+    return m_zeroWeightHeathCheckHasBeenSet;
 }
 

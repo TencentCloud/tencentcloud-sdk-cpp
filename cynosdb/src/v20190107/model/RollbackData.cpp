@@ -33,7 +33,8 @@ RollbackData::RollbackData() :
     m_snapShotIdHasBeenSet(false),
     m_rollbackDatabasesHasBeenSet(false),
     m_rollbackTablesHasBeenSet(false),
-    m_backupFileNameHasBeenSet(false)
+    m_backupFileNameHasBeenSet(false),
+    m_rollbackProcessHasBeenSet(false)
 {
 }
 
@@ -192,6 +193,23 @@ CoreInternalOutcome RollbackData::Deserialize(const rapidjson::Value &value)
         m_backupFileNameHasBeenSet = true;
     }
 
+    if (value.HasMember("RollbackProcess") && !value["RollbackProcess"].IsNull())
+    {
+        if (!value["RollbackProcess"].IsObject())
+        {
+            return CoreInternalOutcome(Core::Error("response `RollbackData.RollbackProcess` is not object type").SetRequestId(requestId));
+        }
+
+        CoreInternalOutcome outcome = m_rollbackProcess.Deserialize(value["RollbackProcess"]);
+        if (!outcome.IsSuccess())
+        {
+            outcome.GetError().SetRequestId(requestId);
+            return outcome;
+        }
+
+        m_rollbackProcessHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -315,6 +333,15 @@ void RollbackData::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Al
         string key = "BackupFileName";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_backupFileName.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_rollbackProcessHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "RollbackProcess";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_rollbackProcess.ToJsonObject(value[key.c_str()], allocator);
     }
 
 }
@@ -526,5 +553,21 @@ void RollbackData::SetBackupFileName(const string& _backupFileName)
 bool RollbackData::BackupFileNameHasBeenSet() const
 {
     return m_backupFileNameHasBeenSet;
+}
+
+RollbackProcessInfo RollbackData::GetRollbackProcess() const
+{
+    return m_rollbackProcess;
+}
+
+void RollbackData::SetRollbackProcess(const RollbackProcessInfo& _rollbackProcess)
+{
+    m_rollbackProcess = _rollbackProcess;
+    m_rollbackProcessHasBeenSet = true;
+}
+
+bool RollbackData::RollbackProcessHasBeenSet() const
+{
+    return m_rollbackProcessHasBeenSet;
 }
 

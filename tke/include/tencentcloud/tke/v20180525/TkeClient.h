@@ -265,6 +265,8 @@
 #include <tencentcloud/tke/v20180525/model/DescribeImagesResponse.h>
 #include <tencentcloud/tke/v20180525/model/DescribeLogSwitchesRequest.h>
 #include <tencentcloud/tke/v20180525/model/DescribeLogSwitchesResponse.h>
+#include <tencentcloud/tke/v20180525/model/DescribePodChargeInfoRequest.h>
+#include <tencentcloud/tke/v20180525/model/DescribePodChargeInfoResponse.h>
 #include <tencentcloud/tke/v20180525/model/DescribePodDeductionRateRequest.h>
 #include <tencentcloud/tke/v20180525/model/DescribePodDeductionRateResponse.h>
 #include <tencentcloud/tke/v20180525/model/DescribePodsBySpecRequest.h>
@@ -840,6 +842,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeLogSwitchesResponse> DescribeLogSwitchesOutcome;
                 typedef std::future<DescribeLogSwitchesOutcome> DescribeLogSwitchesOutcomeCallable;
                 typedef std::function<void(const TkeClient*, const Model::DescribeLogSwitchesRequest&, DescribeLogSwitchesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeLogSwitchesAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribePodChargeInfoResponse> DescribePodChargeInfoOutcome;
+                typedef std::future<DescribePodChargeInfoOutcome> DescribePodChargeInfoOutcomeCallable;
+                typedef std::function<void(const TkeClient*, const Model::DescribePodChargeInfoRequest&, DescribePodChargeInfoOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribePodChargeInfoAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribePodDeductionRateResponse> DescribePodDeductionRateOutcome;
                 typedef std::future<DescribePodDeductionRateOutcome> DescribePodDeductionRateOutcomeCallable;
                 typedef std::function<void(const TkeClient*, const Model::DescribePodDeductionRateRequest&, DescribePodDeductionRateOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribePodDeductionRateAsyncHandler;
@@ -2230,6 +2235,15 @@ namespace TencentCloud
                 DescribeLogSwitchesOutcome DescribeLogSwitches(const Model::DescribeLogSwitchesRequest &request);
                 void DescribeLogSwitchesAsync(const Model::DescribeLogSwitchesRequest& request, const DescribeLogSwitchesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DescribeLogSwitchesOutcomeCallable DescribeLogSwitchesCallable(const Model::DescribeLogSwitchesRequest& request);
+
+                /**
+                 *查询正在运行中Pod的计费信息。可以通过 Namespace 和 Name 来查询某个 Pod 的信息，也可以通过 Pod 的 Uid 批量查询。
+                 * @param req DescribePodChargeInfoRequest
+                 * @return DescribePodChargeInfoOutcome
+                 */
+                DescribePodChargeInfoOutcome DescribePodChargeInfo(const Model::DescribePodChargeInfoRequest &request);
+                void DescribePodChargeInfoAsync(const Model::DescribePodChargeInfoRequest& request, const DescribePodChargeInfoAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribePodChargeInfoOutcomeCallable DescribePodChargeInfoCallable(const Model::DescribePodChargeInfoRequest& request);
 
                 /**
                  *查询各个规格的 Pod 的抵扣率

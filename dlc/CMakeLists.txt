@@ -169,6 +169,7 @@ set(dlc_public_header_model
   include/tencentcloud/dlc/v20210125/model/CancelTaskResponse.h
   include/tencentcloud/dlc/v20210125/model/TableInfo.h
   include/tencentcloud/dlc/v20210125/model/DescribeSparkSessionBatchSQLResponse.h
+  include/tencentcloud/dlc/v20210125/model/DescribeTasksOverviewResponse.h
   include/tencentcloud/dlc/v20210125/model/KafkaInfo.h
   include/tencentcloud/dlc/v20210125/model/FavorInfo.h
   include/tencentcloud/dlc/v20210125/model/DeleteDataEngineRequest.h
@@ -227,6 +228,7 @@ set(dlc_public_header_model
   include/tencentcloud/dlc/v20210125/model/CreateUserResponse.h
   include/tencentcloud/dlc/v20210125/model/DescribeNotebookSessionStatementsRequest.h
   include/tencentcloud/dlc/v20210125/model/UpdateDataEngineResponse.h
+  include/tencentcloud/dlc/v20210125/model/DescribeTasksOverviewRequest.h
   include/tencentcloud/dlc/v20210125/model/TPartition.h
   include/tencentcloud/dlc/v20210125/model/LakeFsInfo.h
   include/tencentcloud/dlc/v20210125/model/QueryResultRequest.h
@@ -553,6 +555,7 @@ set(dlc_src
   src/v20210125/model/CancelTaskResponse.cpp
   src/v20210125/model/TableInfo.cpp
   src/v20210125/model/DescribeSparkSessionBatchSQLResponse.cpp
+  src/v20210125/model/DescribeTasksOverviewResponse.cpp
   src/v20210125/model/KafkaInfo.cpp
   src/v20210125/model/FavorInfo.cpp
   src/v20210125/model/DeleteDataEngineRequest.cpp
@@ -611,6 +614,7 @@ set(dlc_src
   src/v20210125/model/CreateUserResponse.cpp
   src/v20210125/model/DescribeNotebookSessionStatementsRequest.cpp
   src/v20210125/model/UpdateDataEngineResponse.cpp
+  src/v20210125/model/DescribeTasksOverviewRequest.cpp
   src/v20210125/model/TPartition.cpp
   src/v20210125/model/LakeFsInfo.cpp
   src/v20210125/model/QueryResultRequest.cpp

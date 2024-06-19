@@ -32,7 +32,12 @@ ZoneResponse::ZoneResponse() :
     m_professionHasBeenSet(false),
     m_physicalHasBeenSet(false),
     m_publicNetworkHasBeenSet(false),
-    m_publicNetworkLimitHasBeenSet(false)
+    m_publicNetworkLimitHasBeenSet(false),
+    m_requestIdHasBeenSet(false),
+    m_versionHasBeenSet(false),
+    m_offsetHasBeenSet(false),
+    m_limitHasBeenSet(false),
+    m_forceCheckTagHasBeenSet(false)
 {
 }
 
@@ -195,6 +200,56 @@ CoreInternalOutcome ZoneResponse::Deserialize(const rapidjson::Value &value)
         m_publicNetworkLimitHasBeenSet = true;
     }
 
+    if (value.HasMember("RequestId") && !value["RequestId"].IsNull())
+    {
+        if (!value["RequestId"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `ZoneResponse.RequestId` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_requestId = string(value["RequestId"].GetString());
+        m_requestIdHasBeenSet = true;
+    }
+
+    if (value.HasMember("Version") && !value["Version"].IsNull())
+    {
+        if (!value["Version"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `ZoneResponse.Version` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_version = string(value["Version"].GetString());
+        m_versionHasBeenSet = true;
+    }
+
+    if (value.HasMember("Offset") && !value["Offset"].IsNull())
+    {
+        if (!value["Offset"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `ZoneResponse.Offset` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_offset = value["Offset"].GetInt64();
+        m_offsetHasBeenSet = true;
+    }
+
+    if (value.HasMember("Limit") && !value["Limit"].IsNull())
+    {
+        if (!value["Limit"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `ZoneResponse.Limit` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_limit = value["Limit"].GetInt64();
+        m_limitHasBeenSet = true;
+    }
+
+    if (value.HasMember("ForceCheckTag") && !value["ForceCheckTag"].IsNull())
+    {
+        if (!value["ForceCheckTag"].IsBool())
+        {
+            return CoreInternalOutcome(Core::Error("response `ZoneResponse.ForceCheckTag` IsBool=false incorrectly").SetRequestId(requestId));
+        }
+        m_forceCheckTag = value["ForceCheckTag"].GetBool();
+        m_forceCheckTagHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -312,6 +367,46 @@ void ZoneResponse::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Al
         string key = "PublicNetworkLimit";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_publicNetworkLimit.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_requestIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "RequestId";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_requestId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_versionHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Version";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_version.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_offsetHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Offset";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_offset, allocator);
+    }
+
+    if (m_limitHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Limit";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_limit, allocator);
+    }
+
+    if (m_forceCheckTagHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ForceCheckTag";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_forceCheckTag, allocator);
     }
 
 }
@@ -507,5 +602,85 @@ void ZoneResponse::SetPublicNetworkLimit(const string& _publicNetworkLimit)
 bool ZoneResponse::PublicNetworkLimitHasBeenSet() const
 {
     return m_publicNetworkLimitHasBeenSet;
+}
+
+string ZoneResponse::GetRequestId() const
+{
+    return m_requestId;
+}
+
+void ZoneResponse::SetRequestId(const string& _requestId)
+{
+    m_requestId = _requestId;
+    m_requestIdHasBeenSet = true;
+}
+
+bool ZoneResponse::RequestIdHasBeenSet() const
+{
+    return m_requestIdHasBeenSet;
+}
+
+string ZoneResponse::GetVersion() const
+{
+    return m_version;
+}
+
+void ZoneResponse::SetVersion(const string& _version)
+{
+    m_version = _version;
+    m_versionHasBeenSet = true;
+}
+
+bool ZoneResponse::VersionHasBeenSet() const
+{
+    return m_versionHasBeenSet;
+}
+
+int64_t ZoneResponse::GetOffset() const
+{
+    return m_offset;
+}
+
+void ZoneResponse::SetOffset(const int64_t& _offset)
+{
+    m_offset = _offset;
+    m_offsetHasBeenSet = true;
+}
+
+bool ZoneResponse::OffsetHasBeenSet() const
+{
+    return m_offsetHasBeenSet;
+}
+
+int64_t ZoneResponse::GetLimit() const
+{
+    return m_limit;
+}
+
+void ZoneResponse::SetLimit(const int64_t& _limit)
+{
+    m_limit = _limit;
+    m_limitHasBeenSet = true;
+}
+
+bool ZoneResponse::LimitHasBeenSet() const
+{
+    return m_limitHasBeenSet;
+}
+
+bool ZoneResponse::GetForceCheckTag() const
+{
+    return m_forceCheckTag;
+}
+
+void ZoneResponse::SetForceCheckTag(const bool& _forceCheckTag)
+{
+    m_forceCheckTag = _forceCheckTag;
+    m_forceCheckTagHasBeenSet = true;
+}
+
+bool ZoneResponse::ForceCheckTagHasBeenSet() const
+{
+    return m_forceCheckTagHasBeenSet;
 }
 

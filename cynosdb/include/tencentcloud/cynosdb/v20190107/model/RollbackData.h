@@ -26,6 +26,7 @@
 #include <tencentcloud/core/AbstractModel.h>
 #include <tencentcloud/cynosdb/v20190107/model/RollbackDatabase.h>
 #include <tencentcloud/cynosdb/v20190107/model/RollbackTable.h>
+#include <tencentcloud/cynosdb/v20190107/model/RollbackProcessInfo.h>
 
 
 namespace TencentCloud
@@ -345,6 +346,31 @@ namespace TencentCloud
                      */
                     bool BackupFileNameHasBeenSet() const;
 
+                    /**
+                     * 获取回档进程
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return RollbackProcess 回档进程
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    RollbackProcessInfo GetRollbackProcess() const;
+
+                    /**
+                     * 设置回档进程
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _rollbackProcess 回档进程
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetRollbackProcess(const RollbackProcessInfo& _rollbackProcess);
+
+                    /**
+                     * 判断参数 RollbackProcess 是否已赋值
+                     * @return RollbackProcess 是否已赋值
+                     * 
+                     */
+                    bool RollbackProcessHasBeenSet() const;
+
                 private:
 
                     /**
@@ -430,6 +456,13 @@ namespace TencentCloud
                      */
                     std::string m_backupFileName;
                     bool m_backupFileNameHasBeenSet;
+
+                    /**
+                     * 回档进程
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    RollbackProcessInfo m_rollbackProcess;
+                    bool m_rollbackProcessHasBeenSet;
 
                 };
             }

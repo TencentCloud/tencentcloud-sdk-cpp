@@ -23,11 +23,11 @@ using namespace TencentCloud::Waf::V20180125::Model;
 using namespace std;
 
 DescribeAccessFastAnalysisRequest::DescribeAccessFastAnalysisRequest() :
-    m_topicIdHasBeenSet(false),
     m_fromHasBeenSet(false),
     m_toHasBeenSet(false),
     m_queryHasBeenSet(false),
     m_fieldNameHasBeenSet(false),
+    m_topicIdHasBeenSet(false),
     m_sortHasBeenSet(false),
     m_countHasBeenSet(false)
 {
@@ -39,14 +39,6 @@ string DescribeAccessFastAnalysisRequest::ToJsonString() const
     d.SetObject();
     rapidjson::Document::AllocatorType& allocator = d.GetAllocator();
 
-
-    if (m_topicIdHasBeenSet)
-    {
-        rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "TopicId";
-        iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, rapidjson::Value(m_topicId.c_str(), allocator).Move(), allocator);
-    }
 
     if (m_fromHasBeenSet)
     {
@@ -80,6 +72,14 @@ string DescribeAccessFastAnalysisRequest::ToJsonString() const
         d.AddMember(iKey, rapidjson::Value(m_fieldName.c_str(), allocator).Move(), allocator);
     }
 
+    if (m_topicIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "TopicId";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_topicId.c_str(), allocator).Move(), allocator);
+    }
+
     if (m_sortHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
@@ -103,22 +103,6 @@ string DescribeAccessFastAnalysisRequest::ToJsonString() const
     return buffer.GetString();
 }
 
-
-string DescribeAccessFastAnalysisRequest::GetTopicId() const
-{
-    return m_topicId;
-}
-
-void DescribeAccessFastAnalysisRequest::SetTopicId(const string& _topicId)
-{
-    m_topicId = _topicId;
-    m_topicIdHasBeenSet = true;
-}
-
-bool DescribeAccessFastAnalysisRequest::TopicIdHasBeenSet() const
-{
-    return m_topicIdHasBeenSet;
-}
 
 int64_t DescribeAccessFastAnalysisRequest::GetFrom() const
 {
@@ -182,6 +166,22 @@ void DescribeAccessFastAnalysisRequest::SetFieldName(const string& _fieldName)
 bool DescribeAccessFastAnalysisRequest::FieldNameHasBeenSet() const
 {
     return m_fieldNameHasBeenSet;
+}
+
+string DescribeAccessFastAnalysisRequest::GetTopicId() const
+{
+    return m_topicId;
+}
+
+void DescribeAccessFastAnalysisRequest::SetTopicId(const string& _topicId)
+{
+    m_topicId = _topicId;
+    m_topicIdHasBeenSet = true;
+}
+
+bool DescribeAccessFastAnalysisRequest::TopicIdHasBeenSet() const
+{
+    return m_topicIdHasBeenSet;
 }
 
 string DescribeAccessFastAnalysisRequest::GetSort() const

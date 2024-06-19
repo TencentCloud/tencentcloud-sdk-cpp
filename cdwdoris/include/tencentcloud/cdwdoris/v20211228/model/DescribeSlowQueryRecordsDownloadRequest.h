@@ -252,6 +252,48 @@ namespace TencentCloud
                      */
                     bool IsQueryHasBeenSet() const;
 
+                    /**
+                     * 获取数据库名称
+                     * @return DbName 数据库名称
+                     * 
+                     */
+                    std::vector<std::string> GetDbName() const;
+
+                    /**
+                     * 设置数据库名称
+                     * @param _dbName 数据库名称
+                     * 
+                     */
+                    void SetDbName(const std::vector<std::string>& _dbName);
+
+                    /**
+                     * 判断参数 DbName 是否已赋值
+                     * @return DbName 是否已赋值
+                     * 
+                     */
+                    bool DbNameHasBeenSet() const;
+
+                    /**
+                     * 获取catalog名称
+                     * @return CatalogName catalog名称
+                     * 
+                     */
+                    std::vector<std::string> GetCatalogName() const;
+
+                    /**
+                     * 设置catalog名称
+                     * @param _catalogName catalog名称
+                     * 
+                     */
+                    void SetCatalogName(const std::vector<std::string>& _catalogName);
+
+                    /**
+                     * 判断参数 CatalogName 是否已赋值
+                     * @return CatalogName 是否已赋值
+                     * 
+                     */
+                    bool CatalogNameHasBeenSet() const;
+
                 private:
 
                     /**
@@ -313,6 +355,18 @@ namespace TencentCloud
                      */
                     int64_t m_isQuery;
                     bool m_isQueryHasBeenSet;
+
+                    /**
+                     * 数据库名称
+                     */
+                    std::vector<std::string> m_dbName;
+                    bool m_dbNameHasBeenSet;
+
+                    /**
+                     * catalog名称
+                     */
+                    std::vector<std::string> m_catalogName;
+                    bool m_catalogNameHasBeenSet;
 
                 };
             }

@@ -625,18 +625,18 @@ namespace TencentCloud
                     bool AttackHeatHasBeenSet() const;
 
                     /**
-                     * 获取是否必修漏洞1是，0不是
+                     * 获取是否必修漏洞，1-是，0-不是
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return IsSuggest 是否必修漏洞1是，0不是
+                     * @return IsSuggest 是否必修漏洞，1-是，0-不是
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetIsSuggest() const;
 
                     /**
-                     * 设置是否必修漏洞1是，0不是
+                     * 设置是否必修漏洞，1-是，0-不是
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _isSuggest 是否必修漏洞1是，0不是
+                     * @param _isSuggest 是否必修漏洞，1-是，0-不是
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -723,6 +723,56 @@ namespace TencentCloud
                      * 
                      */
                     bool VulRiskIdHasBeenSet() const;
+
+                    /**
+                     * 获取新版漏洞id
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return TvdID 新版漏洞id
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::string GetTvdID() const;
+
+                    /**
+                     * 设置新版漏洞id
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _tvdID 新版漏洞id
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetTvdID(const std::string& _tvdID);
+
+                    /**
+                     * 判断参数 TvdID 是否已赋值
+                     * @return TvdID 是否已赋值
+                     * 
+                     */
+                    bool TvdIDHasBeenSet() const;
+
+                    /**
+                     * 获取是否可以一键体检，1-可以，0-不可以
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return IsOneClick 是否可以一键体检，1-可以，0-不可以
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    uint64_t GetIsOneClick() const;
+
+                    /**
+                     * 设置是否可以一键体检，1-可以，0-不可以
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _isOneClick 是否可以一键体检，1-可以，0-不可以
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetIsOneClick(const uint64_t& _isOneClick);
+
+                    /**
+                     * 判断参数 IsOneClick 是否已赋值
+                     * @return IsOneClick 是否已赋值
+                     * 
+                     */
+                    bool IsOneClickHasBeenSet() const;
 
                 private:
 
@@ -891,7 +941,7 @@ namespace TencentCloud
                     bool m_attackHeatHasBeenSet;
 
                     /**
-                     * 是否必修漏洞1是，0不是
+                     * 是否必修漏洞，1-是，0-不是
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_isSuggest;
@@ -917,6 +967,20 @@ namespace TencentCloud
                      */
                     std::string m_vulRiskId;
                     bool m_vulRiskIdHasBeenSet;
+
+                    /**
+                     * 新版漏洞id
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_tvdID;
+                    bool m_tvdIDHasBeenSet;
+
+                    /**
+                     * 是否可以一键体检，1-可以，0-不可以
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    uint64_t m_isOneClick;
+                    bool m_isOneClickHasBeenSet;
 
                 };
             }

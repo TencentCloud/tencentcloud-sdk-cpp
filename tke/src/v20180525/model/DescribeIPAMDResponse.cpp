@@ -30,7 +30,8 @@ DescribeIPAMDResponse::DescribeIPAMDResponse() :
     m_phaseHasBeenSet(false),
     m_reasonHasBeenSet(false),
     m_subnetIdsHasBeenSet(false),
-    m_claimExpiredDurationHasBeenSet(false)
+    m_claimExpiredDurationHasBeenSet(false),
+    m_enableTrunkingENIHasBeenSet(false)
 {
 }
 
@@ -141,6 +142,16 @@ CoreInternalOutcome DescribeIPAMDResponse::Deserialize(const string &payload)
         m_claimExpiredDurationHasBeenSet = true;
     }
 
+    if (rsp.HasMember("EnableTrunkingENI") && !rsp["EnableTrunkingENI"].IsNull())
+    {
+        if (!rsp["EnableTrunkingENI"].IsBool())
+        {
+            return CoreInternalOutcome(Core::Error("response `EnableTrunkingENI` IsBool=false incorrectly").SetRequestId(requestId));
+        }
+        m_enableTrunkingENI = rsp["EnableTrunkingENI"].GetBool();
+        m_enableTrunkingENIHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -210,6 +221,14 @@ string DescribeIPAMDResponse::ToJsonString() const
         string key = "ClaimExpiredDuration";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_claimExpiredDuration.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_enableTrunkingENIHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "EnableTrunkingENI";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_enableTrunkingENI, allocator);
     }
 
     rapidjson::Value iKey(rapidjson::kStringType);
@@ -292,6 +311,16 @@ string DescribeIPAMDResponse::GetClaimExpiredDuration() const
 bool DescribeIPAMDResponse::ClaimExpiredDurationHasBeenSet() const
 {
     return m_claimExpiredDurationHasBeenSet;
+}
+
+bool DescribeIPAMDResponse::GetEnableTrunkingENI() const
+{
+    return m_enableTrunkingENI;
+}
+
+bool DescribeIPAMDResponse::EnableTrunkingENIHasBeenSet() const
+{
+    return m_enableTrunkingENIHasBeenSet;
 }
 
 

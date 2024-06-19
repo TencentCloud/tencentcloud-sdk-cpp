@@ -274,29 +274,54 @@ namespace TencentCloud
                     bool UnhealthyHttpStatusesHasBeenSet() const;
 
                     /**
-                     * 获取健康检查屏蔽权重为0的节点
+                     * 获取健康检查监控上报的数据屏蔽权重为0的节点
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return IgnoreZeroWeightNodes 健康检查屏蔽权重为0的节点
+                     * @return IgnoreZeroWeightNodes 健康检查监控上报的数据屏蔽权重为0的节点
 注意：此字段可能返回 null，表示取不到有效值。
-                     * 
+                     * @deprecated
                      */
                     bool GetIgnoreZeroWeightNodes() const;
 
                     /**
-                     * 设置健康检查屏蔽权重为0的节点
+                     * 设置健康检查监控上报的数据屏蔽权重为0的节点
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _ignoreZeroWeightNodes 健康检查屏蔽权重为0的节点
+                     * @param _ignoreZeroWeightNodes 健康检查监控上报的数据屏蔽权重为0的节点
 注意：此字段可能返回 null，表示取不到有效值。
-                     * 
+                     * @deprecated
                      */
                     void SetIgnoreZeroWeightNodes(const bool& _ignoreZeroWeightNodes);
 
                     /**
                      * 判断参数 IgnoreZeroWeightNodes 是否已赋值
                      * @return IgnoreZeroWeightNodes 是否已赋值
-                     * 
+                     * @deprecated
                      */
                     bool IgnoreZeroWeightNodesHasBeenSet() const;
+
+                    /**
+                     * 获取健康检查支持权重为0节点
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return ZeroWeightHeathCheck 健康检查支持权重为0节点
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    bool GetZeroWeightHeathCheck() const;
+
+                    /**
+                     * 设置健康检查支持权重为0节点
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _zeroWeightHeathCheck 健康检查支持权重为0节点
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetZeroWeightHeathCheck(const bool& _zeroWeightHeathCheck);
+
+                    /**
+                     * 判断参数 ZeroWeightHeathCheck 是否已赋值
+                     * @return ZeroWeightHeathCheck 是否已赋值
+                     * 
+                     */
+                    bool ZeroWeightHeathCheckHasBeenSet() const;
 
                 private:
 
@@ -364,11 +389,18 @@ namespace TencentCloud
                     bool m_unhealthyHttpStatusesHasBeenSet;
 
                     /**
-                     * 健康检查屏蔽权重为0的节点
+                     * 健康检查监控上报的数据屏蔽权重为0的节点
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     bool m_ignoreZeroWeightNodes;
                     bool m_ignoreZeroWeightNodesHasBeenSet;
+
+                    /**
+                     * 健康检查支持权重为0节点
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    bool m_zeroWeightHeathCheck;
+                    bool m_zeroWeightHeathCheckHasBeenSet;
 
                 };
             }

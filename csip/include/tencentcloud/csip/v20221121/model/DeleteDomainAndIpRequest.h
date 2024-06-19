@@ -45,6 +45,27 @@ namespace TencentCloud
 
 
                     /**
+                     * 获取集团账号的成员id
+                     * @return MemberId 集团账号的成员id
+                     * 
+                     */
+                    std::vector<std::string> GetMemberId() const;
+
+                    /**
+                     * 设置集团账号的成员id
+                     * @param _memberId 集团账号的成员id
+                     * 
+                     */
+                    void SetMemberId(const std::vector<std::string>& _memberId);
+
+                    /**
+                     * 判断参数 MemberId 是否已赋值
+                     * @return MemberId 是否已赋值
+                     * 
+                     */
+                    bool MemberIdHasBeenSet() const;
+
+                    /**
                      * 获取-
                      * @return Content -
                      * 
@@ -150,6 +171,12 @@ namespace TencentCloud
                     bool TypeHasBeenSet() const;
 
                 private:
+
+                    /**
+                     * 集团账号的成员id
+                     */
+                    std::vector<std::string> m_memberId;
+                    bool m_memberIdHasBeenSet;
 
                     /**
                      * -
