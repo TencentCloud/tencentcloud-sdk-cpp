@@ -43,15 +43,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取购买时长，单位：月
-                     * @return Period 购买时长，单位：月
+                     * 获取包年包月实例的购买时长，单位：月。
+                     * @return Period 包年包月实例的购买时长，单位：月。
                      * 
                      */
                     uint64_t GetPeriod() const;
 
                     /**
-                     * 设置购买时长，单位：月
-                     * @param _period 购买时长，单位：月
+                     * 设置包年包月实例的购买时长，单位：月。
+                     * @param _period 包年包月实例的购买时长，单位：月。
                      * 
                      */
                     void SetPeriod(const uint64_t& _period);
@@ -64,15 +64,15 @@ namespace TencentCloud
                     bool PeriodHasBeenSet() const;
 
                     /**
-                     * 获取实例ID
-                     * @return InstanceId 实例ID
+                     * 获取指定实例 ID。例如：crs-xjhsdj****。请登录[Redis控制台](https://console.cloud.tencent.com/redis)在实例列表复制实例 ID。
+                     * @return InstanceId 指定实例 ID。例如：crs-xjhsdj****。请登录[Redis控制台](https://console.cloud.tencent.com/redis)在实例列表复制实例 ID。
                      * 
                      */
                     std::string GetInstanceId() const;
 
                     /**
-                     * 设置实例ID
-                     * @param _instanceId 实例ID
+                     * 设置指定实例 ID。例如：crs-xjhsdj****。请登录[Redis控制台](https://console.cloud.tencent.com/redis)在实例列表复制实例 ID。
+                     * @param _instanceId 指定实例 ID。例如：crs-xjhsdj****。请登录[Redis控制台](https://console.cloud.tencent.com/redis)在实例列表复制实例 ID。
                      * 
                      */
                     void SetInstanceId(const std::string& _instanceId);
@@ -87,13 +87,13 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 购买时长，单位：月
+                     * 包年包月实例的购买时长，单位：月。
                      */
                     uint64_t m_period;
                     bool m_periodHasBeenSet;
 
                     /**
-                     * 实例ID
+                     * 指定实例 ID。例如：crs-xjhsdj****。请登录[Redis控制台](https://console.cloud.tencent.com/redis)在实例列表复制实例 ID。
                      */
                     std::string m_instanceId;
                     bool m_instanceIdHasBeenSet;

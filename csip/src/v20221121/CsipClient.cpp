@@ -1502,6 +1502,49 @@ CsipClient::DescribeVULRiskAdvanceCFGListOutcomeCallable CsipClient::DescribeVUL
     return task->get_future();
 }
 
+CsipClient::DescribeVULRiskDetailOutcome CsipClient::DescribeVULRiskDetail(const DescribeVULRiskDetailRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeVULRiskDetail");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeVULRiskDetailResponse rsp = DescribeVULRiskDetailResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeVULRiskDetailOutcome(rsp);
+        else
+            return DescribeVULRiskDetailOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeVULRiskDetailOutcome(outcome.GetError());
+    }
+}
+
+void CsipClient::DescribeVULRiskDetailAsync(const DescribeVULRiskDetailRequest& request, const DescribeVULRiskDetailAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeVULRiskDetail(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+CsipClient::DescribeVULRiskDetailOutcomeCallable CsipClient::DescribeVULRiskDetailCallable(const DescribeVULRiskDetailRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeVULRiskDetailOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeVULRiskDetail(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 CsipClient::DescribeVpcAssetsOutcome CsipClient::DescribeVpcAssets(const DescribeVpcAssetsRequest &request)
 {
     auto outcome = MakeRequest(request, "DescribeVpcAssets");
@@ -1538,6 +1581,49 @@ CsipClient::DescribeVpcAssetsOutcomeCallable CsipClient::DescribeVpcAssetsCallab
         [this, request]()
         {
             return this->DescribeVpcAssets(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+CsipClient::DescribeVulViewVulRiskListOutcome CsipClient::DescribeVulViewVulRiskList(const DescribeVulViewVulRiskListRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeVulViewVulRiskList");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeVulViewVulRiskListResponse rsp = DescribeVulViewVulRiskListResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeVulViewVulRiskListOutcome(rsp);
+        else
+            return DescribeVulViewVulRiskListOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeVulViewVulRiskListOutcome(outcome.GetError());
+    }
+}
+
+void CsipClient::DescribeVulViewVulRiskListAsync(const DescribeVulViewVulRiskListRequest& request, const DescribeVulViewVulRiskListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeVulViewVulRiskList(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+CsipClient::DescribeVulViewVulRiskListOutcomeCallable CsipClient::DescribeVulViewVulRiskListCallable(const DescribeVulViewVulRiskListRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeVulViewVulRiskListOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeVulViewVulRiskList(request);
         }
     );
 

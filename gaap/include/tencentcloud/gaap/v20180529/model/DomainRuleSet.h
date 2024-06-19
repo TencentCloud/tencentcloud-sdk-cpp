@@ -634,6 +634,56 @@ namespace TencentCloud
                      */
                     bool IsDefaultServerHasBeenSet() const;
 
+                    /**
+                     * 获取TLS套件包
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return TLSCiphers TLS套件包
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::string GetTLSCiphers() const;
+
+                    /**
+                     * 设置TLS套件包
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _tLSCiphers TLS套件包
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetTLSCiphers(const std::string& _tLSCiphers);
+
+                    /**
+                     * 判断参数 TLSCiphers 是否已赋值
+                     * @return TLSCiphers 是否已赋值
+                     * 
+                     */
+                    bool TLSCiphersHasBeenSet() const;
+
+                    /**
+                     * 获取TLS版本
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return TLSSupportVersion TLS版本
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::vector<std::string> GetTLSSupportVersion() const;
+
+                    /**
+                     * 设置TLS版本
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _tLSSupportVersion TLS版本
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetTLSSupportVersion(const std::vector<std::string>& _tLSSupportVersion);
+
+                    /**
+                     * 判断参数 TLSSupportVersion 是否已赋值
+                     * @return TLSSupportVersion 是否已赋值
+                     * 
+                     */
+                    bool TLSSupportVersionHasBeenSet() const;
+
                 private:
 
                     /**
@@ -798,6 +848,20 @@ namespace TencentCloud
                      */
                     bool m_isDefaultServer;
                     bool m_isDefaultServerHasBeenSet;
+
+                    /**
+                     * TLS套件包
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_tLSCiphers;
+                    bool m_tLSCiphersHasBeenSet;
+
+                    /**
+                     * TLS版本
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::vector<std::string> m_tLSSupportVersion;
+                    bool m_tLSSupportVersionHasBeenSet;
 
                 };
             }

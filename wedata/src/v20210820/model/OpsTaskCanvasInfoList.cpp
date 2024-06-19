@@ -74,18 +74,21 @@ CoreInternalOutcome OpsTaskCanvasInfoList::Deserialize(const rapidjson::Value &v
 
     if (value.HasMember("CirculateTaskList") && !value["CirculateTaskList"].IsNull())
     {
-        if (!value["CirculateTaskList"].IsObject())
-        {
-            return CoreInternalOutcome(Core::Error("response `OpsTaskCanvasInfoList.CirculateTaskList` is not object type").SetRequestId(requestId));
-        }
+        if (!value["CirculateTaskList"].IsArray())
+            return CoreInternalOutcome(Core::Error("response `OpsTaskCanvasInfoList.CirculateTaskList` is not array type"));
 
-        CoreInternalOutcome outcome = m_circulateTaskList.Deserialize(value["CirculateTaskList"]);
-        if (!outcome.IsSuccess())
+        const rapidjson::Value &tmpValue = value["CirculateTaskList"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
         {
-            outcome.GetError().SetRequestId(requestId);
-            return outcome;
+            OpsTaskCanvasDto item;
+            CoreInternalOutcome outcome = item.Deserialize(*itr);
+            if (!outcome.IsSuccess())
+            {
+                outcome.GetError().SetRequestId(requestId);
+                return outcome;
+            }
+            m_circulateTaskList.push_back(item);
         }
-
         m_circulateTaskListHasBeenSet = true;
     }
 
@@ -131,8 +134,14 @@ void OpsTaskCanvasInfoList::ToJsonObject(rapidjson::Value &value, rapidjson::Doc
         rapidjson::Value iKey(rapidjson::kStringType);
         string key = "CirculateTaskList";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
-        m_circulateTaskList.ToJsonObject(value[key.c_str()], allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_circulateTaskList.begin(); itr != m_circulateTaskList.end(); ++itr, ++i)
+        {
+            value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(value[key.c_str()][i], allocator);
+        }
     }
 
 }
@@ -170,12 +179,12 @@ bool OpsTaskCanvasInfoList::LinksListHasBeenSet() const
     return m_linksListHasBeenSet;
 }
 
-OpsTaskCanvasDto OpsTaskCanvasInfoList::GetCirculateTaskList() const
+vector<OpsTaskCanvasDto> OpsTaskCanvasInfoList::GetCirculateTaskList() const
 {
     return m_circulateTaskList;
 }
 
-void OpsTaskCanvasInfoList::SetCirculateTaskList(const OpsTaskCanvasDto& _circulateTaskList)
+void OpsTaskCanvasInfoList::SetCirculateTaskList(const vector<OpsTaskCanvasDto>& _circulateTaskList)
 {
     m_circulateTaskList = _circulateTaskList;
     m_circulateTaskListHasBeenSet = true;

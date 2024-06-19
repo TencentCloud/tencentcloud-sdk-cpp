@@ -97,7 +97,7 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
-                    OpsTaskCanvasDto GetCirculateTaskList() const;
+                    std::vector<OpsTaskCanvasDto> GetCirculateTaskList() const;
 
                     /**
                      * 设置画布循环依赖任务信息
@@ -106,7 +106,7 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
-                    void SetCirculateTaskList(const OpsTaskCanvasDto& _circulateTaskList);
+                    void SetCirculateTaskList(const std::vector<OpsTaskCanvasDto>& _circulateTaskList);
 
                     /**
                      * 判断参数 CirculateTaskList 是否已赋值
@@ -133,7 +133,7 @@ namespace TencentCloud
                      * 画布循环依赖任务信息
 注意：此字段可能返回 null，表示取不到有效值。
                      */
-                    OpsTaskCanvasDto m_circulateTaskList;
+                    std::vector<OpsTaskCanvasDto> m_circulateTaskList;
                     bool m_circulateTaskListHasBeenSet;
 
                 };

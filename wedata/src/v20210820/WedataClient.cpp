@@ -8511,6 +8511,49 @@ WedataClient::ModifyWorkflowScheduleOutcomeCallable WedataClient::ModifyWorkflow
     return task->get_future();
 }
 
+WedataClient::MoveTasksToFolderOutcome WedataClient::MoveTasksToFolder(const MoveTasksToFolderRequest &request)
+{
+    auto outcome = MakeRequest(request, "MoveTasksToFolder");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        MoveTasksToFolderResponse rsp = MoveTasksToFolderResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return MoveTasksToFolderOutcome(rsp);
+        else
+            return MoveTasksToFolderOutcome(o.GetError());
+    }
+    else
+    {
+        return MoveTasksToFolderOutcome(outcome.GetError());
+    }
+}
+
+void WedataClient::MoveTasksToFolderAsync(const MoveTasksToFolderRequest& request, const MoveTasksToFolderAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->MoveTasksToFolder(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+WedataClient::MoveTasksToFolderOutcomeCallable WedataClient::MoveTasksToFolderCallable(const MoveTasksToFolderRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<MoveTasksToFolderOutcome()>>(
+        [this, request]()
+        {
+            return this->MoveTasksToFolder(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 WedataClient::RegisterEventOutcome WedataClient::RegisterEvent(const RegisterEventRequest &request)
 {
     auto outcome = MakeRequest(request, "RegisterEvent");
