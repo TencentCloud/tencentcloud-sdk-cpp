@@ -642,6 +642,49 @@ EssClient::CreateFlowApproversOutcomeCallable EssClient::CreateFlowApproversCall
     return task->get_future();
 }
 
+EssClient::CreateFlowBlockchainEvidenceUrlOutcome EssClient::CreateFlowBlockchainEvidenceUrl(const CreateFlowBlockchainEvidenceUrlRequest &request)
+{
+    auto outcome = MakeRequest(request, "CreateFlowBlockchainEvidenceUrl");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        CreateFlowBlockchainEvidenceUrlResponse rsp = CreateFlowBlockchainEvidenceUrlResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return CreateFlowBlockchainEvidenceUrlOutcome(rsp);
+        else
+            return CreateFlowBlockchainEvidenceUrlOutcome(o.GetError());
+    }
+    else
+    {
+        return CreateFlowBlockchainEvidenceUrlOutcome(outcome.GetError());
+    }
+}
+
+void EssClient::CreateFlowBlockchainEvidenceUrlAsync(const CreateFlowBlockchainEvidenceUrlRequest& request, const CreateFlowBlockchainEvidenceUrlAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->CreateFlowBlockchainEvidenceUrl(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+EssClient::CreateFlowBlockchainEvidenceUrlOutcomeCallable EssClient::CreateFlowBlockchainEvidenceUrlCallable(const CreateFlowBlockchainEvidenceUrlRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<CreateFlowBlockchainEvidenceUrlOutcome()>>(
+        [this, request]()
+        {
+            return this->CreateFlowBlockchainEvidenceUrl(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 EssClient::CreateFlowByFilesOutcome EssClient::CreateFlowByFiles(const CreateFlowByFilesRequest &request)
 {
     auto outcome = MakeRequest(request, "CreateFlowByFiles");
@@ -1194,6 +1237,49 @@ EssClient::CreateIntegrationUserRolesOutcomeCallable EssClient::CreateIntegratio
         [this, request]()
         {
             return this->CreateIntegrationUserRoles(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+EssClient::CreateLegalSealQrCodeOutcome EssClient::CreateLegalSealQrCode(const CreateLegalSealQrCodeRequest &request)
+{
+    auto outcome = MakeRequest(request, "CreateLegalSealQrCode");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        CreateLegalSealQrCodeResponse rsp = CreateLegalSealQrCodeResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return CreateLegalSealQrCodeOutcome(rsp);
+        else
+            return CreateLegalSealQrCodeOutcome(o.GetError());
+    }
+    else
+    {
+        return CreateLegalSealQrCodeOutcome(outcome.GetError());
+    }
+}
+
+void EssClient::CreateLegalSealQrCodeAsync(const CreateLegalSealQrCodeRequest& request, const CreateLegalSealQrCodeAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->CreateLegalSealQrCode(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+EssClient::CreateLegalSealQrCodeOutcomeCallable EssClient::CreateLegalSealQrCodeCallable(const CreateLegalSealQrCodeRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<CreateLegalSealQrCodeOutcome()>>(
+        [this, request]()
+        {
+            return this->CreateLegalSealQrCode(request);
         }
     );
 

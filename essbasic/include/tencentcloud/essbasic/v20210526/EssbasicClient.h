@@ -121,10 +121,14 @@
 #include <tencentcloud/essbasic/v20210526/model/CreateChannelOrganizationInfoChangeUrlResponse.h>
 #include <tencentcloud/essbasic/v20210526/model/CreateConsoleLoginUrlRequest.h>
 #include <tencentcloud/essbasic/v20210526/model/CreateConsoleLoginUrlResponse.h>
+#include <tencentcloud/essbasic/v20210526/model/CreateFlowBlockchainEvidenceUrlRequest.h>
+#include <tencentcloud/essbasic/v20210526/model/CreateFlowBlockchainEvidenceUrlResponse.h>
 #include <tencentcloud/essbasic/v20210526/model/CreateFlowGroupSignReviewRequest.h>
 #include <tencentcloud/essbasic/v20210526/model/CreateFlowGroupSignReviewResponse.h>
 #include <tencentcloud/essbasic/v20210526/model/CreateFlowsByTemplatesRequest.h>
 #include <tencentcloud/essbasic/v20210526/model/CreateFlowsByTemplatesResponse.h>
+#include <tencentcloud/essbasic/v20210526/model/CreateLegalSealQrCodeRequest.h>
+#include <tencentcloud/essbasic/v20210526/model/CreateLegalSealQrCodeResponse.h>
 #include <tencentcloud/essbasic/v20210526/model/CreatePartnerAutoSignAuthUrlRequest.h>
 #include <tencentcloud/essbasic/v20210526/model/CreatePartnerAutoSignAuthUrlResponse.h>
 #include <tencentcloud/essbasic/v20210526/model/CreateSealByImageRequest.h>
@@ -330,12 +334,18 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::CreateConsoleLoginUrlResponse> CreateConsoleLoginUrlOutcome;
                 typedef std::future<CreateConsoleLoginUrlOutcome> CreateConsoleLoginUrlOutcomeCallable;
                 typedef std::function<void(const EssbasicClient*, const Model::CreateConsoleLoginUrlRequest&, CreateConsoleLoginUrlOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateConsoleLoginUrlAsyncHandler;
+                typedef Outcome<Core::Error, Model::CreateFlowBlockchainEvidenceUrlResponse> CreateFlowBlockchainEvidenceUrlOutcome;
+                typedef std::future<CreateFlowBlockchainEvidenceUrlOutcome> CreateFlowBlockchainEvidenceUrlOutcomeCallable;
+                typedef std::function<void(const EssbasicClient*, const Model::CreateFlowBlockchainEvidenceUrlRequest&, CreateFlowBlockchainEvidenceUrlOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateFlowBlockchainEvidenceUrlAsyncHandler;
                 typedef Outcome<Core::Error, Model::CreateFlowGroupSignReviewResponse> CreateFlowGroupSignReviewOutcome;
                 typedef std::future<CreateFlowGroupSignReviewOutcome> CreateFlowGroupSignReviewOutcomeCallable;
                 typedef std::function<void(const EssbasicClient*, const Model::CreateFlowGroupSignReviewRequest&, CreateFlowGroupSignReviewOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateFlowGroupSignReviewAsyncHandler;
                 typedef Outcome<Core::Error, Model::CreateFlowsByTemplatesResponse> CreateFlowsByTemplatesOutcome;
                 typedef std::future<CreateFlowsByTemplatesOutcome> CreateFlowsByTemplatesOutcomeCallable;
                 typedef std::function<void(const EssbasicClient*, const Model::CreateFlowsByTemplatesRequest&, CreateFlowsByTemplatesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateFlowsByTemplatesAsyncHandler;
+                typedef Outcome<Core::Error, Model::CreateLegalSealQrCodeResponse> CreateLegalSealQrCodeOutcome;
+                typedef std::future<CreateLegalSealQrCodeOutcome> CreateLegalSealQrCodeOutcomeCallable;
+                typedef std::function<void(const EssbasicClient*, const Model::CreateLegalSealQrCodeRequest&, CreateLegalSealQrCodeOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateLegalSealQrCodeAsyncHandler;
                 typedef Outcome<Core::Error, Model::CreatePartnerAutoSignAuthUrlResponse> CreatePartnerAutoSignAuthUrlOutcome;
                 typedef std::future<CreatePartnerAutoSignAuthUrlOutcome> CreatePartnerAutoSignAuthUrlOutcomeCallable;
                 typedef std::function<void(const EssbasicClient*, const Model::CreatePartnerAutoSignAuthUrlRequest&, CreatePartnerAutoSignAuthUrlOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreatePartnerAutoSignAuthUrlAsyncHandler;
@@ -1386,6 +1396,25 @@ Web链接访问后，会根据子客企业(**Agent中ProxyOrganizationOpenId表�
                 CreateConsoleLoginUrlOutcomeCallable CreateConsoleLoginUrlCallable(const Model::CreateConsoleLoginUrlRequest& request);
 
                 /**
+                 *获取区块链存证报告查看链接/二维码接口
+
+适用场景：企业员工可以通过此接口生成合同区块链存证报告的查看链接/二维码，以供他人扫码打开腾讯电子签小程序查看。
+
+[点击查看区块链存证报告样式](https://qcloudimg.tencent-cloud.cn/raw/47d5e9c2ffa90ad4e27b3cd14095aa08.jpg)
+
+注：
+<ul><li>1. 二维码下载链接过期时间为5分钟，请尽快下载保存。二维码/短链的过期时间为<font color="red">7天</font>，超过有效期则不可用。</li>
+<li>2. 合同状态需为<font color="red">签署完成</font> 、<font color="red">已解除</font>才能生成报告查看二维码/短链。</li>
+<li>3. 调用接口时，需确保接口调用身份拥有此合同的访问数据权限或为合同参与方。</li>
+<li>4. 通过扫码或者点击链接，用户无需登录或者鉴权即可查看对应合同的区块链存证报告，请妥善保管好二维码或链接。</li></ul>
+                 * @param req CreateFlowBlockchainEvidenceUrlRequest
+                 * @return CreateFlowBlockchainEvidenceUrlOutcome
+                 */
+                CreateFlowBlockchainEvidenceUrlOutcome CreateFlowBlockchainEvidenceUrl(const Model::CreateFlowBlockchainEvidenceUrlRequest &request);
+                void CreateFlowBlockchainEvidenceUrlAsync(const Model::CreateFlowBlockchainEvidenceUrlRequest& request, const CreateFlowBlockchainEvidenceUrlAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                CreateFlowBlockchainEvidenceUrlOutcomeCallable CreateFlowBlockchainEvidenceUrlCallable(const Model::CreateFlowBlockchainEvidenceUrlRequest& request);
+
+                /**
                  *1. 在使用[通过多文件创建合同组签署流程](https://qian.tencent.com/developers/partnerApis/startFlows/ChannelCreateFlowGroupByFiles)或[通过多模板创建合同组签署流程](https://qian.tencent.com/developers/partnerApis/startFlows/ChannelCreateFlowGroupByTemplates)创建合同组签署流程时，若指定了参数以下参数为true,则可以调用此接口提交企业内部签署审批结果,即使是自动签署也需要进行审核通过才会进行签署。
   - [FlowInfo.NeedSignReview](https://qian.tencent.com/developers/partnerApis/dataTypes/#flowinfo)
   - [FlowFileInfo.NeedSignReview](https://qian.tencent.com/developers/partnerApis/dataTypes/#flowfileinfo)
@@ -1469,6 +1498,15 @@ Web链接访问后，会根据子客企业(**Agent中ProxyOrganizationOpenId表�
                 CreateFlowsByTemplatesOutcome CreateFlowsByTemplates(const Model::CreateFlowsByTemplatesRequest &request);
                 void CreateFlowsByTemplatesAsync(const Model::CreateFlowsByTemplatesRequest& request, const CreateFlowsByTemplatesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 CreateFlowsByTemplatesOutcomeCallable CreateFlowsByTemplatesCallable(const Model::CreateFlowsByTemplatesRequest& request);
+
+                /**
+                 *此接口用于获取创建法人章二维码图片base64
+                 * @param req CreateLegalSealQrCodeRequest
+                 * @return CreateLegalSealQrCodeOutcome
+                 */
+                CreateLegalSealQrCodeOutcome CreateLegalSealQrCode(const Model::CreateLegalSealQrCodeRequest &request);
+                void CreateLegalSealQrCodeAsync(const Model::CreateLegalSealQrCodeRequest& request, const CreateLegalSealQrCodeAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                CreateLegalSealQrCodeOutcomeCallable CreateLegalSealQrCodeCallable(const Model::CreateLegalSealQrCodeRequest& request);
 
                 /**
                  *创建他方自动签授权链接，通过该链接可进入小程序进行合作方企业的自动签授权，若当前企业未开通企业自动签，通过该链接会先引导开通本企业自动签。

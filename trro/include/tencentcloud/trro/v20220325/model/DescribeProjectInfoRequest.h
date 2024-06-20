@@ -43,15 +43,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取目标项目ID
-                     * @return ProjectId 目标项目ID
+                     * 获取目标项目ID，必填参数
+                     * @return ProjectId 目标项目ID，必填参数
                      * 
                      */
                     std::string GetProjectId() const;
 
                     /**
-                     * 设置目标项目ID
-                     * @param _projectId 目标项目ID
+                     * 设置目标项目ID，必填参数
+                     * @param _projectId 目标项目ID，必填参数
                      * 
                      */
                     void SetProjectId(const std::string& _projectId);
@@ -66,7 +66,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 目标项目ID
+                     * 目标项目ID，必填参数
                      */
                     std::string m_projectId;
                     bool m_projectIdHasBeenSet;

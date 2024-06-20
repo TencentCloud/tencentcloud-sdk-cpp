@@ -89,18 +89,18 @@ namespace TencentCloud
                     bool HeightHasBeenSet() const;
 
                     /**
-                     * 获取指定输出格式，可选hls,mp4
+                     * 获取指定输出格式，可选hls,mp4。存储到云点播VOD时此参数无效，存储到VOD时请通过TencentVod（https://cloud.tencent.com/document/api/647/44055#TencentVod）内的MediaType设置。
 
-                     * @return Format 指定输出格式，可选hls,mp4
+                     * @return Format 指定输出格式，可选hls,mp4。存储到云点播VOD时此参数无效，存储到VOD时请通过TencentVod（https://cloud.tencent.com/document/api/647/44055#TencentVod）内的MediaType设置。
 
                      * 
                      */
                     std::string GetFormat() const;
 
                     /**
-                     * 设置指定输出格式，可选hls,mp4
+                     * 设置指定输出格式，可选hls,mp4。存储到云点播VOD时此参数无效，存储到VOD时请通过TencentVod（https://cloud.tencent.com/document/api/647/44055#TencentVod）内的MediaType设置。
 
-                     * @param _format 指定输出格式，可选hls,mp4
+                     * @param _format 指定输出格式，可选hls,mp4。存储到云点播VOD时此参数无效，存储到VOD时请通过TencentVod（https://cloud.tencent.com/document/api/647/44055#TencentVod）内的MediaType设置。
 
                      * 
                      */
@@ -157,7 +157,7 @@ Hls 格式录制此参数不生效。
                     bool m_heightHasBeenSet;
 
                     /**
-                     * 指定输出格式，可选hls,mp4
+                     * 指定输出格式，可选hls,mp4。存储到云点播VOD时此参数无效，存储到VOD时请通过TencentVod（https://cloud.tencent.com/document/api/647/44055#TencentVod）内的MediaType设置。
 
                      */
                     std::string m_format;

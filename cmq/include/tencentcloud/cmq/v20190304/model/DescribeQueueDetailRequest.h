@@ -44,25 +44,25 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取分页时本页获取队列列表的起始位置。如果填写了该值，必须也要填写 limit 。该值缺省时，后台取默认值 0
-                     * @return Offset 分页时本页获取队列列表的起始位置。如果填写了该值，必须也要填写 limit 。该值缺省时，后台取默认值 0
+                     * 获取标签搜索
+                     * @return TagKey 标签搜索
                      * 
                      */
-                    uint64_t GetOffset() const;
+                    std::string GetTagKey() const;
 
                     /**
-                     * 设置分页时本页获取队列列表的起始位置。如果填写了该值，必须也要填写 limit 。该值缺省时，后台取默认值 0
-                     * @param _offset 分页时本页获取队列列表的起始位置。如果填写了该值，必须也要填写 limit 。该值缺省时，后台取默认值 0
+                     * 设置标签搜索
+                     * @param _tagKey 标签搜索
                      * 
                      */
-                    void SetOffset(const uint64_t& _offset);
+                    void SetTagKey(const std::string& _tagKey);
 
                     /**
-                     * 判断参数 Offset 是否已赋值
-                     * @return Offset 是否已赋值
+                     * 判断参数 TagKey 是否已赋值
+                     * @return TagKey 是否已赋值
                      * 
                      */
-                    bool OffsetHasBeenSet() const;
+                    bool TagKeyHasBeenSet() const;
 
                     /**
                      * 获取分页时本页获取队列的个数，如果不传递该参数，则该参数默认为20，最大值为50。
@@ -86,6 +86,27 @@ namespace TencentCloud
                     bool LimitHasBeenSet() const;
 
                     /**
+                     * 获取精确匹配QueueName
+                     * @return QueueName 精确匹配QueueName
+                     * 
+                     */
+                    std::string GetQueueName() const;
+
+                    /**
+                     * 设置精确匹配QueueName
+                     * @param _queueName 精确匹配QueueName
+                     * 
+                     */
+                    void SetQueueName(const std::string& _queueName);
+
+                    /**
+                     * 判断参数 QueueName 是否已赋值
+                     * @return QueueName 是否已赋值
+                     * 
+                     */
+                    bool QueueNameHasBeenSet() const;
+
+                    /**
                      * 获取筛选参数，目前支持QueueName筛选，且仅支持一个关键字
                      * @return Filters 筛选参数，目前支持QueueName筛选，且仅支持一个关键字
                      * 
@@ -107,66 +128,27 @@ namespace TencentCloud
                     bool FiltersHasBeenSet() const;
 
                     /**
-                     * 获取标签搜索
-                     * @return TagKey 标签搜索
+                     * 获取分页时本页获取队列列表的起始位置。如果填写了该值，必须也要填写 limit 。该值缺省时，后台取默认值 0
+                     * @return Offset 分页时本页获取队列列表的起始位置。如果填写了该值，必须也要填写 limit 。该值缺省时，后台取默认值 0
                      * 
                      */
-                    std::string GetTagKey() const;
+                    uint64_t GetOffset() const;
 
                     /**
-                     * 设置标签搜索
-                     * @param _tagKey 标签搜索
+                     * 设置分页时本页获取队列列表的起始位置。如果填写了该值，必须也要填写 limit 。该值缺省时，后台取默认值 0
+                     * @param _offset 分页时本页获取队列列表的起始位置。如果填写了该值，必须也要填写 limit 。该值缺省时，后台取默认值 0
                      * 
                      */
-                    void SetTagKey(const std::string& _tagKey);
+                    void SetOffset(const uint64_t& _offset);
 
                     /**
-                     * 判断参数 TagKey 是否已赋值
-                     * @return TagKey 是否已赋值
+                     * 判断参数 Offset 是否已赋值
+                     * @return Offset 是否已赋值
                      * 
                      */
-                    bool TagKeyHasBeenSet() const;
-
-                    /**
-                     * 获取精确匹配QueueName
-                     * @return QueueName 精确匹配QueueName
-                     * 
-                     */
-                    std::string GetQueueName() const;
-
-                    /**
-                     * 设置精确匹配QueueName
-                     * @param _queueName 精确匹配QueueName
-                     * 
-                     */
-                    void SetQueueName(const std::string& _queueName);
-
-                    /**
-                     * 判断参数 QueueName 是否已赋值
-                     * @return QueueName 是否已赋值
-                     * 
-                     */
-                    bool QueueNameHasBeenSet() const;
+                    bool OffsetHasBeenSet() const;
 
                 private:
-
-                    /**
-                     * 分页时本页获取队列列表的起始位置。如果填写了该值，必须也要填写 limit 。该值缺省时，后台取默认值 0
-                     */
-                    uint64_t m_offset;
-                    bool m_offsetHasBeenSet;
-
-                    /**
-                     * 分页时本页获取队列的个数，如果不传递该参数，则该参数默认为20，最大值为50。
-                     */
-                    uint64_t m_limit;
-                    bool m_limitHasBeenSet;
-
-                    /**
-                     * 筛选参数，目前支持QueueName筛选，且仅支持一个关键字
-                     */
-                    std::vector<Filter> m_filters;
-                    bool m_filtersHasBeenSet;
 
                     /**
                      * 标签搜索
@@ -175,10 +157,28 @@ namespace TencentCloud
                     bool m_tagKeyHasBeenSet;
 
                     /**
+                     * 分页时本页获取队列的个数，如果不传递该参数，则该参数默认为20，最大值为50。
+                     */
+                    uint64_t m_limit;
+                    bool m_limitHasBeenSet;
+
+                    /**
                      * 精确匹配QueueName
                      */
                     std::string m_queueName;
                     bool m_queueNameHasBeenSet;
+
+                    /**
+                     * 筛选参数，目前支持QueueName筛选，且仅支持一个关键字
+                     */
+                    std::vector<Filter> m_filters;
+                    bool m_filtersHasBeenSet;
+
+                    /**
+                     * 分页时本页获取队列列表的起始位置。如果填写了该值，必须也要填写 limit 。该值缺省时，后台取默认值 0
+                     */
+                    uint64_t m_offset;
+                    bool m_offsetHasBeenSet;
 
                 };
             }

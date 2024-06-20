@@ -31,7 +31,8 @@ AdaptiveDynamicStreamingTemplate::AdaptiveDynamicStreamingTemplate() :
     m_disableHigherVideoResolutionHasBeenSet(false),
     m_createTimeHasBeenSet(false),
     m_updateTimeHasBeenSet(false),
-    m_pureAudioHasBeenSet(false)
+    m_pureAudioHasBeenSet(false),
+    m_segmentTypeHasBeenSet(false)
 {
 }
 
@@ -160,6 +161,16 @@ CoreInternalOutcome AdaptiveDynamicStreamingTemplate::Deserialize(const rapidjso
         m_pureAudioHasBeenSet = true;
     }
 
+    if (value.HasMember("SegmentType") && !value["SegmentType"].IsNull())
+    {
+        if (!value["SegmentType"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `AdaptiveDynamicStreamingTemplate.SegmentType` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_segmentType = string(value["SegmentType"].GetString());
+        m_segmentTypeHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -260,6 +271,14 @@ void AdaptiveDynamicStreamingTemplate::ToJsonObject(rapidjson::Value &value, rap
         string key = "PureAudio";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_pureAudio, allocator);
+    }
+
+    if (m_segmentTypeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "SegmentType";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_segmentType.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -439,5 +458,21 @@ void AdaptiveDynamicStreamingTemplate::SetPureAudio(const uint64_t& _pureAudio)
 bool AdaptiveDynamicStreamingTemplate::PureAudioHasBeenSet() const
 {
     return m_pureAudioHasBeenSet;
+}
+
+string AdaptiveDynamicStreamingTemplate::GetSegmentType() const
+{
+    return m_segmentType;
+}
+
+void AdaptiveDynamicStreamingTemplate::SetSegmentType(const string& _segmentType)
+{
+    m_segmentType = _segmentType;
+    m_segmentTypeHasBeenSet = true;
+}
+
+bool AdaptiveDynamicStreamingTemplate::SegmentTypeHasBeenSet() const
+{
+    return m_segmentTypeHasBeenSet;
 }
 

@@ -427,49 +427,6 @@ DtsClient::DescribeMigrateJobsOutcomeCallable DtsClient::DescribeMigrateJobsCall
     return task->get_future();
 }
 
-DtsClient::DescribeRegionConfOutcome DtsClient::DescribeRegionConf(const DescribeRegionConfRequest &request)
-{
-    auto outcome = MakeRequest(request, "DescribeRegionConf");
-    if (outcome.IsSuccess())
-    {
-        auto r = outcome.GetResult();
-        string payload = string(r.Body(), r.BodySize());
-        DescribeRegionConfResponse rsp = DescribeRegionConfResponse();
-        auto o = rsp.Deserialize(payload);
-        if (o.IsSuccess())
-            return DescribeRegionConfOutcome(rsp);
-        else
-            return DescribeRegionConfOutcome(o.GetError());
-    }
-    else
-    {
-        return DescribeRegionConfOutcome(outcome.GetError());
-    }
-}
-
-void DtsClient::DescribeRegionConfAsync(const DescribeRegionConfRequest& request, const DescribeRegionConfAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
-{
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeRegionConf(request), context);
-    };
-
-    Executor::GetInstance()->Submit(new Runnable(fn));
-}
-
-DtsClient::DescribeRegionConfOutcomeCallable DtsClient::DescribeRegionConfCallable(const DescribeRegionConfRequest &request)
-{
-    auto task = std::make_shared<std::packaged_task<DescribeRegionConfOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeRegionConf(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
-}
-
 DtsClient::DescribeSubscribeConfOutcome DtsClient::DescribeSubscribeConf(const DescribeSubscribeConfRequest &request)
 {
     auto outcome = MakeRequest(request, "DescribeSubscribeConf");

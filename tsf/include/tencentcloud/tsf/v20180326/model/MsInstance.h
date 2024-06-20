@@ -671,6 +671,31 @@ namespace TencentCloud
                      */
                     bool HiddenStatusHasBeenSet() const;
 
+                    /**
+                     * 获取json格式的 meta 信息
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return MetaJson json格式的 meta 信息
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::string GetMetaJson() const;
+
+                    /**
+                     * 设置json格式的 meta 信息
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _metaJson json格式的 meta 信息
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetMetaJson(const std::string& _metaJson);
+
+                    /**
+                     * 判断参数 MetaJson 是否已赋值
+                     * @return MetaJson 是否已赋值
+                     * 
+                     */
+                    bool MetaJsonHasBeenSet() const;
+
                 private:
 
                     /**
@@ -847,6 +872,13 @@ namespace TencentCloud
                      */
                     std::string m_hiddenStatus;
                     bool m_hiddenStatusHasBeenSet;
+
+                    /**
+                     * json格式的 meta 信息
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_metaJson;
+                    bool m_metaJsonHasBeenSet;
 
                 };
             }

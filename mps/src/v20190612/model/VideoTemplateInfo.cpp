@@ -29,7 +29,8 @@ VideoTemplateInfo::VideoTemplateInfo() :
     m_heightHasBeenSet(false),
     m_gopHasBeenSet(false),
     m_fillTypeHasBeenSet(false),
-    m_vcrfHasBeenSet(false)
+    m_vcrfHasBeenSet(false),
+    m_segmentTypeHasBeenSet(false)
 {
 }
 
@@ -128,6 +129,16 @@ CoreInternalOutcome VideoTemplateInfo::Deserialize(const rapidjson::Value &value
         m_vcrfHasBeenSet = true;
     }
 
+    if (value.HasMember("SegmentType") && !value["SegmentType"].IsNull())
+    {
+        if (!value["SegmentType"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `VideoTemplateInfo.SegmentType` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_segmentType = value["SegmentType"].GetInt64();
+        m_segmentTypeHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -205,6 +216,14 @@ void VideoTemplateInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Documen
         string key = "Vcrf";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_vcrf, allocator);
+    }
+
+    if (m_segmentTypeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "SegmentType";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_segmentType, allocator);
     }
 
 }
@@ -352,5 +371,21 @@ void VideoTemplateInfo::SetVcrf(const uint64_t& _vcrf)
 bool VideoTemplateInfo::VcrfHasBeenSet() const
 {
     return m_vcrfHasBeenSet;
+}
+
+int64_t VideoTemplateInfo::GetSegmentType() const
+{
+    return m_segmentType;
+}
+
+void VideoTemplateInfo::SetSegmentType(const int64_t& _segmentType)
+{
+    m_segmentType = _segmentType;
+    m_segmentTypeHasBeenSet = true;
+}
+
+bool VideoTemplateInfo::SegmentTypeHasBeenSet() const
+{
+    return m_segmentTypeHasBeenSet;
 }
 

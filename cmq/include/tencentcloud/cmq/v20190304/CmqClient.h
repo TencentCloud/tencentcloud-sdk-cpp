@@ -208,7 +208,7 @@ namespace TencentCloud
                 DescribeDeadLetterSourceQueuesOutcomeCallable DescribeDeadLetterSourceQueuesCallable(const Model::DescribeDeadLetterSourceQueuesRequest& request);
 
                 /**
-                 *枚举队列
+                 *枚举队列列表
                  * @param req DescribeQueueDetailRequest
                  * @return DescribeQueueDetailOutcome
                  */
@@ -226,7 +226,7 @@ namespace TencentCloud
                 DescribeSubscriptionDetailOutcomeCallable DescribeSubscriptionDetailCallable(const Model::DescribeSubscriptionDetailRequest& request);
 
                 /**
-                 *查询主题详情 
+                 *查询主题详情
                  * @param req DescribeTopicDetailRequest
                  * @return DescribeTopicDetailOutcome
                  */

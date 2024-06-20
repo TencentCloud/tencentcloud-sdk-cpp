@@ -45,7 +45,8 @@ MsInstance::MsInstance() :
     m_registrationTimeHasBeenSet(false),
     m_lastHeartbeatTimeHasBeenSet(false),
     m_registrationIdHasBeenSet(false),
-    m_hiddenStatusHasBeenSet(false)
+    m_hiddenStatusHasBeenSet(false),
+    m_metaJsonHasBeenSet(false)
 {
 }
 
@@ -304,6 +305,16 @@ CoreInternalOutcome MsInstance::Deserialize(const rapidjson::Value &value)
         m_hiddenStatusHasBeenSet = true;
     }
 
+    if (value.HasMember("MetaJson") && !value["MetaJson"].IsNull())
+    {
+        if (!value["MetaJson"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `MsInstance.MetaJson` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_metaJson = string(value["MetaJson"].GetString());
+        m_metaJsonHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -509,6 +520,14 @@ void MsInstance::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Allo
         string key = "HiddenStatus";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_hiddenStatus.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_metaJsonHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "MetaJson";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_metaJson.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -912,5 +931,21 @@ void MsInstance::SetHiddenStatus(const string& _hiddenStatus)
 bool MsInstance::HiddenStatusHasBeenSet() const
 {
     return m_hiddenStatusHasBeenSet;
+}
+
+string MsInstance::GetMetaJson() const
+{
+    return m_metaJson;
+}
+
+void MsInstance::SetMetaJson(const string& _metaJson)
+{
+    m_metaJson = _metaJson;
+    m_metaJsonHasBeenSet = true;
+}
+
+bool MsInstance::MetaJsonHasBeenSet() const
+{
+    return m_metaJsonHasBeenSet;
 }
 

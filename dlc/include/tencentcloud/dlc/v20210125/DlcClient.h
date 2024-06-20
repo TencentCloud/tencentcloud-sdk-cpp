@@ -185,6 +185,8 @@
 #include <tencentcloud/dlc/v20210125/model/DescribeSparkAppTasksResponse.h>
 #include <tencentcloud/dlc/v20210125/model/DescribeSparkSessionBatchSQLRequest.h>
 #include <tencentcloud/dlc/v20210125/model/DescribeSparkSessionBatchSQLResponse.h>
+#include <tencentcloud/dlc/v20210125/model/DescribeSparkSessionBatchSQLCostRequest.h>
+#include <tencentcloud/dlc/v20210125/model/DescribeSparkSessionBatchSQLCostResponse.h>
 #include <tencentcloud/dlc/v20210125/model/DescribeSparkSessionBatchSqlLogRequest.h>
 #include <tencentcloud/dlc/v20210125/model/DescribeSparkSessionBatchSqlLogResponse.h>
 #include <tencentcloud/dlc/v20210125/model/DescribeStoreLocationRequest.h>
@@ -558,6 +560,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeSparkSessionBatchSQLResponse> DescribeSparkSessionBatchSQLOutcome;
                 typedef std::future<DescribeSparkSessionBatchSQLOutcome> DescribeSparkSessionBatchSQLOutcomeCallable;
                 typedef std::function<void(const DlcClient*, const Model::DescribeSparkSessionBatchSQLRequest&, DescribeSparkSessionBatchSQLOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeSparkSessionBatchSQLAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeSparkSessionBatchSQLCostResponse> DescribeSparkSessionBatchSQLCostOutcome;
+                typedef std::future<DescribeSparkSessionBatchSQLCostOutcome> DescribeSparkSessionBatchSQLCostOutcomeCallable;
+                typedef std::function<void(const DlcClient*, const Model::DescribeSparkSessionBatchSQLCostRequest&, DescribeSparkSessionBatchSQLCostOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeSparkSessionBatchSQLCostAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeSparkSessionBatchSqlLogResponse> DescribeSparkSessionBatchSqlLogOutcome;
                 typedef std::future<DescribeSparkSessionBatchSqlLogOutcome> DescribeSparkSessionBatchSqlLogOutcomeCallable;
                 typedef std::function<void(const DlcClient*, const Model::DescribeSparkSessionBatchSqlLogRequest&, DescribeSparkSessionBatchSqlLogOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeSparkSessionBatchSqlLogAsyncHandler;
@@ -1463,6 +1468,15 @@ namespace TencentCloud
                 DescribeSparkSessionBatchSQLOutcome DescribeSparkSessionBatchSQL(const Model::DescribeSparkSessionBatchSQLRequest &request);
                 void DescribeSparkSessionBatchSQLAsync(const Model::DescribeSparkSessionBatchSQLRequest& request, const DescribeSparkSessionBatchSQLAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DescribeSparkSessionBatchSQLOutcomeCallable DescribeSparkSessionBatchSQLCallable(const Model::DescribeSparkSessionBatchSQLRequest& request);
+
+                /**
+                 *本接口（DescribeSparkSessionBatchSQLCost）用于查询Spark SQL批任务消耗
+                 * @param req DescribeSparkSessionBatchSQLCostRequest
+                 * @return DescribeSparkSessionBatchSQLCostOutcome
+                 */
+                DescribeSparkSessionBatchSQLCostOutcome DescribeSparkSessionBatchSQLCost(const Model::DescribeSparkSessionBatchSQLCostRequest &request);
+                void DescribeSparkSessionBatchSQLCostAsync(const Model::DescribeSparkSessionBatchSQLCostRequest& request, const DescribeSparkSessionBatchSQLCostAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeSparkSessionBatchSQLCostOutcomeCallable DescribeSparkSessionBatchSQLCostCallable(const Model::DescribeSparkSessionBatchSQLCostRequest& request);
 
                 /**
                  *本接口（DescribeSparkSessionBatchSqlLog）用于查询Spark SQL批任务日志

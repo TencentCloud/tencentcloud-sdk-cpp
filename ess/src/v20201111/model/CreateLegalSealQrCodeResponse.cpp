@@ -14,22 +14,21 @@
  * limitations under the License.
  */
 
-#include <tencentcloud/dts/v20180330/model/DescribeRegionConfResponse.h>
+#include <tencentcloud/ess/v20201111/model/CreateLegalSealQrCodeResponse.h>
 #include <tencentcloud/core/utils/rapidjson/document.h>
 #include <tencentcloud/core/utils/rapidjson/writer.h>
 #include <tencentcloud/core/utils/rapidjson/stringbuffer.h>
 
 using TencentCloud::CoreInternalOutcome;
-using namespace TencentCloud::Dts::V20180330::Model;
+using namespace TencentCloud::Ess::V20201111::Model;
 using namespace std;
 
-DescribeRegionConfResponse::DescribeRegionConfResponse() :
-    m_totalCountHasBeenSet(false),
-    m_itemsHasBeenSet(false)
+CreateLegalSealQrCodeResponse::CreateLegalSealQrCodeResponse() :
+    m_qrcodeBase64HasBeenSet(false)
 {
 }
 
-CoreInternalOutcome DescribeRegionConfResponse::Deserialize(const string &payload)
+CoreInternalOutcome CreateLegalSealQrCodeResponse::Deserialize(const string &payload)
 {
     rapidjson::Document d;
     d.Parse(payload.c_str());
@@ -63,67 +62,32 @@ CoreInternalOutcome DescribeRegionConfResponse::Deserialize(const string &payloa
     }
 
 
-    if (rsp.HasMember("TotalCount") && !rsp["TotalCount"].IsNull())
+    if (rsp.HasMember("QrcodeBase64") && !rsp["QrcodeBase64"].IsNull())
     {
-        if (!rsp["TotalCount"].IsInt64())
+        if (!rsp["QrcodeBase64"].IsString())
         {
-            return CoreInternalOutcome(Core::Error("response `TotalCount` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `QrcodeBase64` IsString=false incorrectly").SetRequestId(requestId));
         }
-        m_totalCount = rsp["TotalCount"].GetInt64();
-        m_totalCountHasBeenSet = true;
-    }
-
-    if (rsp.HasMember("Items") && !rsp["Items"].IsNull())
-    {
-        if (!rsp["Items"].IsArray())
-            return CoreInternalOutcome(Core::Error("response `Items` is not array type"));
-
-        const rapidjson::Value &tmpValue = rsp["Items"];
-        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
-        {
-            SubscribeRegionConf item;
-            CoreInternalOutcome outcome = item.Deserialize(*itr);
-            if (!outcome.IsSuccess())
-            {
-                outcome.GetError().SetRequestId(requestId);
-                return outcome;
-            }
-            m_items.push_back(item);
-        }
-        m_itemsHasBeenSet = true;
+        m_qrcodeBase64 = string(rsp["QrcodeBase64"].GetString());
+        m_qrcodeBase64HasBeenSet = true;
     }
 
 
     return CoreInternalOutcome(true);
 }
 
-string DescribeRegionConfResponse::ToJsonString() const
+string CreateLegalSealQrCodeResponse::ToJsonString() const
 {
     rapidjson::Document value;
     value.SetObject();
     rapidjson::Document::AllocatorType& allocator = value.GetAllocator();
 
-    if (m_totalCountHasBeenSet)
+    if (m_qrcodeBase64HasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "TotalCount";
+        string key = "QrcodeBase64";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, m_totalCount, allocator);
-    }
-
-    if (m_itemsHasBeenSet)
-    {
-        rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "Items";
-        iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
-
-        int i=0;
-        for (auto itr = m_items.begin(); itr != m_items.end(); ++itr, ++i)
-        {
-            value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
-            (*itr).ToJsonObject(value[key.c_str()][i], allocator);
-        }
+        value.AddMember(iKey, rapidjson::Value(m_qrcodeBase64.c_str(), allocator).Move(), allocator);
     }
 
     rapidjson::Value iKey(rapidjson::kStringType);
@@ -138,24 +102,14 @@ string DescribeRegionConfResponse::ToJsonString() const
 }
 
 
-int64_t DescribeRegionConfResponse::GetTotalCount() const
+string CreateLegalSealQrCodeResponse::GetQrcodeBase64() const
 {
-    return m_totalCount;
+    return m_qrcodeBase64;
 }
 
-bool DescribeRegionConfResponse::TotalCountHasBeenSet() const
+bool CreateLegalSealQrCodeResponse::QrcodeBase64HasBeenSet() const
 {
-    return m_totalCountHasBeenSet;
-}
-
-vector<SubscribeRegionConf> DescribeRegionConfResponse::GetItems() const
-{
-    return m_items;
-}
-
-bool DescribeRegionConfResponse::ItemsHasBeenSet() const
-{
-    return m_itemsHasBeenSet;
+    return m_qrcodeBase64HasBeenSet;
 }
 
 

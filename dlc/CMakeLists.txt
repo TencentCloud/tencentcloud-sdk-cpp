@@ -108,6 +108,7 @@ set(dlc_public_header_model
   include/tencentcloud/dlc/v20210125/model/SparkMonitorMetrics.h
   include/tencentcloud/dlc/v20210125/model/CreateDMSDatabaseResponse.h
   include/tencentcloud/dlc/v20210125/model/CreateStoreLocationResponse.h
+  include/tencentcloud/dlc/v20210125/model/BatchSQLCostInfo.h
   include/tencentcloud/dlc/v20210125/model/DescribeTablesNameRequest.h
   include/tencentcloud/dlc/v20210125/model/WorkGroupInfo.h
   include/tencentcloud/dlc/v20210125/model/SwitchDataEngineRequest.h
@@ -169,6 +170,7 @@ set(dlc_public_header_model
   include/tencentcloud/dlc/v20210125/model/CancelTaskResponse.h
   include/tencentcloud/dlc/v20210125/model/TableInfo.h
   include/tencentcloud/dlc/v20210125/model/DescribeSparkSessionBatchSQLResponse.h
+  include/tencentcloud/dlc/v20210125/model/DescribeSparkSessionBatchSQLCostResponse.h
   include/tencentcloud/dlc/v20210125/model/DescribeTasksOverviewResponse.h
   include/tencentcloud/dlc/v20210125/model/KafkaInfo.h
   include/tencentcloud/dlc/v20210125/model/FavorInfo.h
@@ -385,6 +387,7 @@ set(dlc_public_header_model
   include/tencentcloud/dlc/v20210125/model/DescribeViewsResponse.h
   include/tencentcloud/dlc/v20210125/model/DescribeWorkGroupsRequest.h
   include/tencentcloud/dlc/v20210125/model/LockMetaDataRequest.h
+  include/tencentcloud/dlc/v20210125/model/DescribeSparkSessionBatchSQLCostRequest.h
   include/tencentcloud/dlc/v20210125/model/CreateNotebookSessionResponse.h
   include/tencentcloud/dlc/v20210125/model/DescribeDataEngineResponse.h
   include/tencentcloud/dlc/v20210125/model/QueryTaskCostDetailRequest.h
@@ -494,6 +497,7 @@ set(dlc_src
   src/v20210125/model/SparkMonitorMetrics.cpp
   src/v20210125/model/CreateDMSDatabaseResponse.cpp
   src/v20210125/model/CreateStoreLocationResponse.cpp
+  src/v20210125/model/BatchSQLCostInfo.cpp
   src/v20210125/model/DescribeTablesNameRequest.cpp
   src/v20210125/model/WorkGroupInfo.cpp
   src/v20210125/model/SwitchDataEngineRequest.cpp
@@ -555,6 +559,7 @@ set(dlc_src
   src/v20210125/model/CancelTaskResponse.cpp
   src/v20210125/model/TableInfo.cpp
   src/v20210125/model/DescribeSparkSessionBatchSQLResponse.cpp
+  src/v20210125/model/DescribeSparkSessionBatchSQLCostResponse.cpp
   src/v20210125/model/DescribeTasksOverviewResponse.cpp
   src/v20210125/model/KafkaInfo.cpp
   src/v20210125/model/FavorInfo.cpp
@@ -771,6 +776,7 @@ set(dlc_src
   src/v20210125/model/DescribeViewsResponse.cpp
   src/v20210125/model/DescribeWorkGroupsRequest.cpp
   src/v20210125/model/LockMetaDataRequest.cpp
+  src/v20210125/model/DescribeSparkSessionBatchSQLCostRequest.cpp
   src/v20210125/model/CreateNotebookSessionResponse.cpp
   src/v20210125/model/DescribeDataEngineResponse.cpp
   src/v20210125/model/QueryTaskCostDetailRequest.cpp

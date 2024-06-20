@@ -14,24 +14,33 @@
  * limitations under the License.
  */
 
-#include <tencentcloud/dts/v20180330/model/DescribeRegionConfRequest.h>
+#include <tencentcloud/organization/v20210331/model/AcceptJoinShareUnitInvitationRequest.h>
 #include <tencentcloud/core/utils/rapidjson/document.h>
 #include <tencentcloud/core/utils/rapidjson/writer.h>
 #include <tencentcloud/core/utils/rapidjson/stringbuffer.h>
 
-using namespace TencentCloud::Dts::V20180330::Model;
+using namespace TencentCloud::Organization::V20210331::Model;
 using namespace std;
 
-DescribeRegionConfRequest::DescribeRegionConfRequest()
+AcceptJoinShareUnitInvitationRequest::AcceptJoinShareUnitInvitationRequest() :
+    m_unitIdHasBeenSet(false)
 {
 }
 
-string DescribeRegionConfRequest::ToJsonString() const
+string AcceptJoinShareUnitInvitationRequest::ToJsonString() const
 {
     rapidjson::Document d;
     d.SetObject();
     rapidjson::Document::AllocatorType& allocator = d.GetAllocator();
 
+
+    if (m_unitIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "UnitId";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_unitId.c_str(), allocator).Move(), allocator);
+    }
 
 
     rapidjson::StringBuffer buffer;
@@ -40,5 +49,21 @@ string DescribeRegionConfRequest::ToJsonString() const
     return buffer.GetString();
 }
 
+
+string AcceptJoinShareUnitInvitationRequest::GetUnitId() const
+{
+    return m_unitId;
+}
+
+void AcceptJoinShareUnitInvitationRequest::SetUnitId(const string& _unitId)
+{
+    m_unitId = _unitId;
+    m_unitIdHasBeenSet = true;
+}
+
+bool AcceptJoinShareUnitInvitationRequest::UnitIdHasBeenSet() const
+{
+    return m_unitIdHasBeenSet;
+}
 
 

@@ -5286,6 +5286,49 @@ CynosdbClient::RemoveClusterSlaveZoneOutcomeCallable CynosdbClient::RemoveCluste
     return task->get_future();
 }
 
+CynosdbClient::RenewClustersOutcome CynosdbClient::RenewClusters(const RenewClustersRequest &request)
+{
+    auto outcome = MakeRequest(request, "RenewClusters");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        RenewClustersResponse rsp = RenewClustersResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return RenewClustersOutcome(rsp);
+        else
+            return RenewClustersOutcome(o.GetError());
+    }
+    else
+    {
+        return RenewClustersOutcome(outcome.GetError());
+    }
+}
+
+void CynosdbClient::RenewClustersAsync(const RenewClustersRequest& request, const RenewClustersAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->RenewClusters(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+CynosdbClient::RenewClustersOutcomeCallable CynosdbClient::RenewClustersCallable(const RenewClustersRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<RenewClustersOutcome()>>(
+        [this, request]()
+        {
+            return this->RenewClusters(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 CynosdbClient::ResetAccountPasswordOutcome CynosdbClient::ResetAccountPassword(const ResetAccountPasswordRequest &request)
 {
     auto outcome = MakeRequest(request, "ResetAccountPassword");

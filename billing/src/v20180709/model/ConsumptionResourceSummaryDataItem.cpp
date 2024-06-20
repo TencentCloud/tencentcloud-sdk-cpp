@@ -59,7 +59,8 @@ ConsumptionResourceSummaryDataItem::ConsumptionResourceSummaryDataItem() :
     m_instanceTypeNameHasBeenSet(false),
     m_payTimeHasBeenSet(false),
     m_zoneNameHasBeenSet(false),
-    m_componentConfigHasBeenSet(false)
+    m_componentConfigHasBeenSet(false),
+    m_tagsHasBeenSet(false)
 {
 }
 
@@ -458,6 +459,16 @@ CoreInternalOutcome ConsumptionResourceSummaryDataItem::Deserialize(const rapidj
         m_componentConfigHasBeenSet = true;
     }
 
+    if (value.HasMember("Tags") && !value["Tags"].IsNull())
+    {
+        if (!value["Tags"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `ConsumptionResourceSummaryDataItem.Tags` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_tags = string(value["Tags"].GetString());
+        m_tagsHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -775,6 +786,14 @@ void ConsumptionResourceSummaryDataItem::ToJsonObject(rapidjson::Value &value, r
         string key = "ComponentConfig";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_componentConfig.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_tagsHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Tags";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_tags.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -1402,5 +1421,21 @@ void ConsumptionResourceSummaryDataItem::SetComponentConfig(const string& _compo
 bool ConsumptionResourceSummaryDataItem::ComponentConfigHasBeenSet() const
 {
     return m_componentConfigHasBeenSet;
+}
+
+string ConsumptionResourceSummaryDataItem::GetTags() const
+{
+    return m_tags;
+}
+
+void ConsumptionResourceSummaryDataItem::SetTags(const string& _tags)
+{
+    m_tags = _tags;
+    m_tagsHasBeenSet = true;
+}
+
+bool ConsumptionResourceSummaryDataItem::TagsHasBeenSet() const
+{
+    return m_tagsHasBeenSet;
 }
 

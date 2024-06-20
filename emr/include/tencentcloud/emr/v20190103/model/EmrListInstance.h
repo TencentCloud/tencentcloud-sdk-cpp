@@ -70,18 +70,18 @@ namespace TencentCloud
                     bool ClusterIdHasBeenSet() const;
 
                     /**
-                     * 获取状态描述
+                     * 获取常见状态描述：集群生产中,集群运行中,集群创建中,集群已关闭,集群已删除
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return StatusDesc 状态描述
+                     * @return StatusDesc 常见状态描述：集群生产中,集群运行中,集群创建中,集群已关闭,集群已删除
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetStatusDesc() const;
 
                     /**
-                     * 设置状态描述
+                     * 设置常见状态描述：集群生产中,集群运行中,集群创建中,集群已关闭,集群已删除
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _statusDesc 状态描述
+                     * @param _statusDesc 常见状态描述：集群生产中,集群运行中,集群创建中,集群已关闭,集群已删除
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -434,18 +434,18 @@ namespace TencentCloud
                     bool ZoneHasBeenSet() const;
 
                     /**
-                     * 获取状态码
+                     * 获取状态码, 取值为-2(集群已删除), -1(集群已关闭), 0(集群生产中), 2(集群运行中), 3(集群创建中)
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return Status 状态码
+                     * @return Status 状态码, 取值为-2(集群已删除), -1(集群已关闭), 0(集群生产中), 2(集群运行中), 3(集群创建中)
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     uint64_t GetStatus() const;
 
                     /**
-                     * 设置状态码
+                     * 设置状态码, 取值为-2(集群已删除), -1(集群已关闭), 0(集群生产中), 2(集群运行中), 3(集群创建中)
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _status 状态码
+                     * @param _status 状态码, 取值为-2(集群已删除), -1(集群已关闭), 0(集群生产中), 2(集群运行中), 3(集群创建中)
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -792,7 +792,7 @@ namespace TencentCloud
                     bool m_clusterIdHasBeenSet;
 
                     /**
-                     * 状态描述
+                     * 常见状态描述：集群生产中,集群运行中,集群创建中,集群已关闭,集群已删除
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_statusDesc;
@@ -895,7 +895,7 @@ namespace TencentCloud
                     bool m_zoneHasBeenSet;
 
                     /**
-                     * 状态码
+                     * 状态码, 取值为-2(集群已删除), -1(集群已关闭), 0(集群生产中), 2(集群运行中), 3(集群创建中)
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     uint64_t m_status;

@@ -40,6 +40,49 @@ OrganizationClient::OrganizationClient(const Credential &credential, const strin
 }
 
 
+OrganizationClient::AcceptJoinShareUnitInvitationOutcome OrganizationClient::AcceptJoinShareUnitInvitation(const AcceptJoinShareUnitInvitationRequest &request)
+{
+    auto outcome = MakeRequest(request, "AcceptJoinShareUnitInvitation");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        AcceptJoinShareUnitInvitationResponse rsp = AcceptJoinShareUnitInvitationResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return AcceptJoinShareUnitInvitationOutcome(rsp);
+        else
+            return AcceptJoinShareUnitInvitationOutcome(o.GetError());
+    }
+    else
+    {
+        return AcceptJoinShareUnitInvitationOutcome(outcome.GetError());
+    }
+}
+
+void OrganizationClient::AcceptJoinShareUnitInvitationAsync(const AcceptJoinShareUnitInvitationRequest& request, const AcceptJoinShareUnitInvitationAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->AcceptJoinShareUnitInvitation(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+OrganizationClient::AcceptJoinShareUnitInvitationOutcomeCallable OrganizationClient::AcceptJoinShareUnitInvitationCallable(const AcceptJoinShareUnitInvitationRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<AcceptJoinShareUnitInvitationOutcome()>>(
+        [this, request]()
+        {
+            return this->AcceptJoinShareUnitInvitation(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 OrganizationClient::AddOrganizationMemberEmailOutcome OrganizationClient::AddOrganizationMemberEmail(const AddOrganizationMemberEmailRequest &request)
 {
     auto outcome = MakeRequest(request, "AddOrganizationMemberEmail");
@@ -2398,6 +2441,49 @@ OrganizationClient::QuitOrganizationOutcomeCallable OrganizationClient::QuitOrga
         [this, request]()
         {
             return this->QuitOrganization(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+OrganizationClient::RejectJoinShareUnitInvitationOutcome OrganizationClient::RejectJoinShareUnitInvitation(const RejectJoinShareUnitInvitationRequest &request)
+{
+    auto outcome = MakeRequest(request, "RejectJoinShareUnitInvitation");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        RejectJoinShareUnitInvitationResponse rsp = RejectJoinShareUnitInvitationResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return RejectJoinShareUnitInvitationOutcome(rsp);
+        else
+            return RejectJoinShareUnitInvitationOutcome(o.GetError());
+    }
+    else
+    {
+        return RejectJoinShareUnitInvitationOutcome(outcome.GetError());
+    }
+}
+
+void OrganizationClient::RejectJoinShareUnitInvitationAsync(const RejectJoinShareUnitInvitationRequest& request, const RejectJoinShareUnitInvitationAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->RejectJoinShareUnitInvitation(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+OrganizationClient::RejectJoinShareUnitInvitationOutcomeCallable OrganizationClient::RejectJoinShareUnitInvitationCallable(const RejectJoinShareUnitInvitationRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<RejectJoinShareUnitInvitationOutcome()>>(
+        [this, request]()
+        {
+            return this->RejectJoinShareUnitInvitation(request);
         }
     );
 

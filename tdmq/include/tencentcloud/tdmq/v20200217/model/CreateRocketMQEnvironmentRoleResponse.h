@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef TENCENTCLOUD_DTS_V20180330_MODEL_DESCRIBEREGIONCONFREQUEST_H_
-#define TENCENTCLOUD_DTS_V20180330_MODEL_DESCRIBEREGIONCONFREQUEST_H_
+#ifndef TENCENTCLOUD_TDMQ_V20200217_MODEL_CREATEROCKETMQENVIRONMENTROLERESPONSE_H_
+#define TENCENTCLOUD_TDMQ_V20200217_MODEL_CREATEROCKETMQENVIRONMENTROLERESPONSE_H_
 
 #include <string>
 #include <vector>
@@ -25,20 +25,21 @@
 
 namespace TencentCloud
 {
-    namespace Dts
+    namespace Tdmq
     {
-        namespace V20180330
+        namespace V20200217
         {
             namespace Model
             {
                 /**
-                * DescribeRegionConf请求参数结构体
+                * CreateRocketMQEnvironmentRole返回参数结构体
                 */
-                class DescribeRegionConfRequest : public AbstractModel
+                class CreateRocketMQEnvironmentRoleResponse : public AbstractModel
                 {
                 public:
-                    DescribeRegionConfRequest();
-                    ~DescribeRegionConfRequest() = default;
+                    CreateRocketMQEnvironmentRoleResponse();
+                    ~CreateRocketMQEnvironmentRoleResponse() = default;
+                    CoreInternalOutcome Deserialize(const std::string &payload);
                     std::string ToJsonString() const;
 
 
@@ -50,4 +51,4 @@ namespace TencentCloud
     }
 }
 
-#endif // !TENCENTCLOUD_DTS_V20180330_MODEL_DESCRIBEREGIONCONFREQUEST_H_
+#endif // !TENCENTCLOUD_TDMQ_V20200217_MODEL_CREATEROCKETMQENVIRONMENTROLERESPONSE_H_

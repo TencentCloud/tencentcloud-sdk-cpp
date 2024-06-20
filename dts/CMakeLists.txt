@@ -250,7 +250,6 @@ set(dts_public_header_model
   include/tencentcloud/dts/v20180330/model/IsolateSubscribeResponse.h
   include/tencentcloud/dts/v20180330/model/ModifySubscribeObjectsResponse.h
   include/tencentcloud/dts/v20180330/model/CreateMigrateJobRequest.h
-  include/tencentcloud/dts/v20180330/model/SubscribeRegionConf.h
   include/tencentcloud/dts/v20180330/model/ModifySubscribeNameRequest.h
   include/tencentcloud/dts/v20180330/model/ModifySubscribeConsumeTimeResponse.h
   include/tencentcloud/dts/v20180330/model/DstInfo.h
@@ -265,13 +264,12 @@ set(dts_public_header_model
   include/tencentcloud/dts/v20180330/model/DescribeMigrateCheckJobResponse.h
   include/tencentcloud/dts/v20180330/model/ActivateSubscribeRequest.h
   include/tencentcloud/dts/v20180330/model/OfflineIsolatedSubscribeRequest.h
-  include/tencentcloud/dts/v20180330/model/DescribeSubscribesRequest.h
+  include/tencentcloud/dts/v20180330/model/OfflineIsolatedSubscribeResponse.h
   include/tencentcloud/dts/v20180330/model/ResetSubscribeResponse.h
   include/tencentcloud/dts/v20180330/model/DescribeSubscribesResponse.h
   include/tencentcloud/dts/v20180330/model/ModifySubscribeConsumeTimeRequest.h
-  include/tencentcloud/dts/v20180330/model/StopMigrateJobRequest.h
   include/tencentcloud/dts/v20180330/model/MigrateDetailInfo.h
-  include/tencentcloud/dts/v20180330/model/DescribeRegionConfResponse.h
+  include/tencentcloud/dts/v20180330/model/StopMigrateJobRequest.h
   include/tencentcloud/dts/v20180330/model/DescribeAsyncRequestInfoResponse.h
   include/tencentcloud/dts/v20180330/model/SubscribeInfo.h
   include/tencentcloud/dts/v20180330/model/ResetSubscribeRequest.h
@@ -281,12 +279,11 @@ set(dts_public_header_model
   include/tencentcloud/dts/v20180330/model/DescribeMigrateJobsRequest.h
   include/tencentcloud/dts/v20180330/model/ModifySubscribeAutoRenewFlagResponse.h
   include/tencentcloud/dts/v20180330/model/StopMigrateJobResponse.h
-  include/tencentcloud/dts/v20180330/model/OfflineIsolatedSubscribeResponse.h
   include/tencentcloud/dts/v20180330/model/IsolateSubscribeRequest.h
   include/tencentcloud/dts/v20180330/model/ModifySubscribeAutoRenewFlagRequest.h
   include/tencentcloud/dts/v20180330/model/CompleteMigrateJobRequest.h
   include/tencentcloud/dts/v20180330/model/MigrateJobInfo.h
-  include/tencentcloud/dts/v20180330/model/DescribeRegionConfRequest.h
+  include/tencentcloud/dts/v20180330/model/DescribeSubscribesRequest.h
   include/tencentcloud/dts/v20180330/model/CompleteMigrateJobResponse.h
   include/tencentcloud/dts/v20180330/model/SubscribeObject.h
   include/tencentcloud/dts/v20180330/model/CreateMigrateJobResponse.h
@@ -535,7 +532,6 @@ set(dts_src
   src/v20180330/model/IsolateSubscribeResponse.cpp
   src/v20180330/model/ModifySubscribeObjectsResponse.cpp
   src/v20180330/model/CreateMigrateJobRequest.cpp
-  src/v20180330/model/SubscribeRegionConf.cpp
   src/v20180330/model/ModifySubscribeNameRequest.cpp
   src/v20180330/model/ModifySubscribeConsumeTimeResponse.cpp
   src/v20180330/model/DstInfo.cpp
@@ -550,13 +546,12 @@ set(dts_src
   src/v20180330/model/DescribeMigrateCheckJobResponse.cpp
   src/v20180330/model/ActivateSubscribeRequest.cpp
   src/v20180330/model/OfflineIsolatedSubscribeRequest.cpp
-  src/v20180330/model/DescribeSubscribesRequest.cpp
+  src/v20180330/model/OfflineIsolatedSubscribeResponse.cpp
   src/v20180330/model/ResetSubscribeResponse.cpp
   src/v20180330/model/DescribeSubscribesResponse.cpp
   src/v20180330/model/ModifySubscribeConsumeTimeRequest.cpp
-  src/v20180330/model/StopMigrateJobRequest.cpp
   src/v20180330/model/MigrateDetailInfo.cpp
-  src/v20180330/model/DescribeRegionConfResponse.cpp
+  src/v20180330/model/StopMigrateJobRequest.cpp
   src/v20180330/model/DescribeAsyncRequestInfoResponse.cpp
   src/v20180330/model/SubscribeInfo.cpp
   src/v20180330/model/ResetSubscribeRequest.cpp
@@ -566,12 +561,11 @@ set(dts_src
   src/v20180330/model/DescribeMigrateJobsRequest.cpp
   src/v20180330/model/ModifySubscribeAutoRenewFlagResponse.cpp
   src/v20180330/model/StopMigrateJobResponse.cpp
-  src/v20180330/model/OfflineIsolatedSubscribeResponse.cpp
   src/v20180330/model/IsolateSubscribeRequest.cpp
   src/v20180330/model/ModifySubscribeAutoRenewFlagRequest.cpp
   src/v20180330/model/CompleteMigrateJobRequest.cpp
   src/v20180330/model/MigrateJobInfo.cpp
-  src/v20180330/model/DescribeRegionConfRequest.cpp
+  src/v20180330/model/DescribeSubscribesRequest.cpp
   src/v20180330/model/CompleteMigrateJobResponse.cpp
   src/v20180330/model/SubscribeObject.cpp
   src/v20180330/model/CreateMigrateJobResponse.cpp

@@ -30,7 +30,8 @@ ModifyAdaptiveDynamicStreamingTemplateRequest::ModifyAdaptiveDynamicStreamingTem
     m_disableHigherVideoResolutionHasBeenSet(false),
     m_streamInfosHasBeenSet(false),
     m_commentHasBeenSet(false),
-    m_pureAudioHasBeenSet(false)
+    m_pureAudioHasBeenSet(false),
+    m_segmentTypeHasBeenSet(false)
 {
 }
 
@@ -110,6 +111,14 @@ string ModifyAdaptiveDynamicStreamingTemplateRequest::ToJsonString() const
         string key = "PureAudio";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_pureAudio, allocator);
+    }
+
+    if (m_segmentTypeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "SegmentType";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_segmentType.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -246,6 +255,22 @@ void ModifyAdaptiveDynamicStreamingTemplateRequest::SetPureAudio(const uint64_t&
 bool ModifyAdaptiveDynamicStreamingTemplateRequest::PureAudioHasBeenSet() const
 {
     return m_pureAudioHasBeenSet;
+}
+
+string ModifyAdaptiveDynamicStreamingTemplateRequest::GetSegmentType() const
+{
+    return m_segmentType;
+}
+
+void ModifyAdaptiveDynamicStreamingTemplateRequest::SetSegmentType(const string& _segmentType)
+{
+    m_segmentType = _segmentType;
+    m_segmentTypeHasBeenSet = true;
+}
+
+bool ModifyAdaptiveDynamicStreamingTemplateRequest::SegmentTypeHasBeenSet() const
+{
+    return m_segmentTypeHasBeenSet;
 }
 
 

@@ -23,6 +23,8 @@
 #include <tencentcloud/core/Credential.h>
 #include <tencentcloud/core/profile/ClientProfile.h>
 #include <tencentcloud/core/AsyncCallerContext.h>
+#include <tencentcloud/organization/v20210331/model/AcceptJoinShareUnitInvitationRequest.h>
+#include <tencentcloud/organization/v20210331/model/AcceptJoinShareUnitInvitationResponse.h>
 #include <tencentcloud/organization/v20210331/model/AddOrganizationMemberEmailRequest.h>
 #include <tencentcloud/organization/v20210331/model/AddOrganizationMemberEmailResponse.h>
 #include <tencentcloud/organization/v20210331/model/AddOrganizationNodeRequest.h>
@@ -133,6 +135,8 @@
 #include <tencentcloud/organization/v20210331/model/MoveOrganizationNodeMembersResponse.h>
 #include <tencentcloud/organization/v20210331/model/QuitOrganizationRequest.h>
 #include <tencentcloud/organization/v20210331/model/QuitOrganizationResponse.h>
+#include <tencentcloud/organization/v20210331/model/RejectJoinShareUnitInvitationRequest.h>
+#include <tencentcloud/organization/v20210331/model/RejectJoinShareUnitInvitationResponse.h>
 #include <tencentcloud/organization/v20210331/model/UpdateOrganizationIdentityRequest.h>
 #include <tencentcloud/organization/v20210331/model/UpdateOrganizationIdentityResponse.h>
 #include <tencentcloud/organization/v20210331/model/UpdateOrganizationMemberRequest.h>
@@ -159,6 +163,9 @@ namespace TencentCloud
                 OrganizationClient(const Credential &credential, const std::string &region);
                 OrganizationClient(const Credential &credential, const std::string &region, const ClientProfile &profile);
 
+                typedef Outcome<Core::Error, Model::AcceptJoinShareUnitInvitationResponse> AcceptJoinShareUnitInvitationOutcome;
+                typedef std::future<AcceptJoinShareUnitInvitationOutcome> AcceptJoinShareUnitInvitationOutcomeCallable;
+                typedef std::function<void(const OrganizationClient*, const Model::AcceptJoinShareUnitInvitationRequest&, AcceptJoinShareUnitInvitationOutcome, const std::shared_ptr<const AsyncCallerContext>&)> AcceptJoinShareUnitInvitationAsyncHandler;
                 typedef Outcome<Core::Error, Model::AddOrganizationMemberEmailResponse> AddOrganizationMemberEmailOutcome;
                 typedef std::future<AddOrganizationMemberEmailOutcome> AddOrganizationMemberEmailOutcomeCallable;
                 typedef std::function<void(const OrganizationClient*, const Model::AddOrganizationMemberEmailRequest&, AddOrganizationMemberEmailOutcome, const std::shared_ptr<const AsyncCallerContext>&)> AddOrganizationMemberEmailAsyncHandler;
@@ -324,6 +331,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::QuitOrganizationResponse> QuitOrganizationOutcome;
                 typedef std::future<QuitOrganizationOutcome> QuitOrganizationOutcomeCallable;
                 typedef std::function<void(const OrganizationClient*, const Model::QuitOrganizationRequest&, QuitOrganizationOutcome, const std::shared_ptr<const AsyncCallerContext>&)> QuitOrganizationAsyncHandler;
+                typedef Outcome<Core::Error, Model::RejectJoinShareUnitInvitationResponse> RejectJoinShareUnitInvitationOutcome;
+                typedef std::future<RejectJoinShareUnitInvitationOutcome> RejectJoinShareUnitInvitationOutcomeCallable;
+                typedef std::function<void(const OrganizationClient*, const Model::RejectJoinShareUnitInvitationRequest&, RejectJoinShareUnitInvitationOutcome, const std::shared_ptr<const AsyncCallerContext>&)> RejectJoinShareUnitInvitationAsyncHandler;
                 typedef Outcome<Core::Error, Model::UpdateOrganizationIdentityResponse> UpdateOrganizationIdentityOutcome;
                 typedef std::future<UpdateOrganizationIdentityOutcome> UpdateOrganizationIdentityOutcomeCallable;
                 typedef std::function<void(const OrganizationClient*, const Model::UpdateOrganizationIdentityRequest&, UpdateOrganizationIdentityOutcome, const std::shared_ptr<const AsyncCallerContext>&)> UpdateOrganizationIdentityAsyncHandler;
@@ -344,6 +354,15 @@ namespace TencentCloud
                 typedef std::function<void(const OrganizationClient*, const Model::UpdateShareUnitRequest&, UpdateShareUnitOutcome, const std::shared_ptr<const AsyncCallerContext>&)> UpdateShareUnitAsyncHandler;
 
 
+
+                /**
+                 *接受加入共享单元邀请。
+                 * @param req AcceptJoinShareUnitInvitationRequest
+                 * @return AcceptJoinShareUnitInvitationOutcome
+                 */
+                AcceptJoinShareUnitInvitationOutcome AcceptJoinShareUnitInvitation(const Model::AcceptJoinShareUnitInvitationRequest &request);
+                void AcceptJoinShareUnitInvitationAsync(const Model::AcceptJoinShareUnitInvitationRequest& request, const AcceptJoinShareUnitInvitationAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                AcceptJoinShareUnitInvitationOutcomeCallable AcceptJoinShareUnitInvitationCallable(const Model::AcceptJoinShareUnitInvitationRequest& request);
 
                 /**
                  *添加组织成员邮箱
@@ -839,6 +858,15 @@ namespace TencentCloud
                 QuitOrganizationOutcome QuitOrganization(const Model::QuitOrganizationRequest &request);
                 void QuitOrganizationAsync(const Model::QuitOrganizationRequest& request, const QuitOrganizationAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 QuitOrganizationOutcomeCallable QuitOrganizationCallable(const Model::QuitOrganizationRequest& request);
+
+                /**
+                 *拒绝加入共享单元邀请。
+                 * @param req RejectJoinShareUnitInvitationRequest
+                 * @return RejectJoinShareUnitInvitationOutcome
+                 */
+                RejectJoinShareUnitInvitationOutcome RejectJoinShareUnitInvitation(const Model::RejectJoinShareUnitInvitationRequest &request);
+                void RejectJoinShareUnitInvitationAsync(const Model::RejectJoinShareUnitInvitationRequest& request, const RejectJoinShareUnitInvitationAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                RejectJoinShareUnitInvitationOutcomeCallable RejectJoinShareUnitInvitationCallable(const Model::RejectJoinShareUnitInvitationRequest& request);
 
                 /**
                  *更新组织身份

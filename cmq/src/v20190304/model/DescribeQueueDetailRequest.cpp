@@ -23,11 +23,11 @@ using namespace TencentCloud::Cmq::V20190304::Model;
 using namespace std;
 
 DescribeQueueDetailRequest::DescribeQueueDetailRequest() :
-    m_offsetHasBeenSet(false),
-    m_limitHasBeenSet(false),
-    m_filtersHasBeenSet(false),
     m_tagKeyHasBeenSet(false),
-    m_queueNameHasBeenSet(false)
+    m_limitHasBeenSet(false),
+    m_queueNameHasBeenSet(false),
+    m_filtersHasBeenSet(false),
+    m_offsetHasBeenSet(false)
 {
 }
 
@@ -38,12 +38,12 @@ string DescribeQueueDetailRequest::ToJsonString() const
     rapidjson::Document::AllocatorType& allocator = d.GetAllocator();
 
 
-    if (m_offsetHasBeenSet)
+    if (m_tagKeyHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "Offset";
+        string key = "TagKey";
         iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, m_offset, allocator);
+        d.AddMember(iKey, rapidjson::Value(m_tagKey.c_str(), allocator).Move(), allocator);
     }
 
     if (m_limitHasBeenSet)
@@ -52,6 +52,14 @@ string DescribeQueueDetailRequest::ToJsonString() const
         string key = "Limit";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_limit, allocator);
+    }
+
+    if (m_queueNameHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "QueueName";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_queueName.c_str(), allocator).Move(), allocator);
     }
 
     if (m_filtersHasBeenSet)
@@ -69,20 +77,12 @@ string DescribeQueueDetailRequest::ToJsonString() const
         }
     }
 
-    if (m_tagKeyHasBeenSet)
+    if (m_offsetHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "TagKey";
+        string key = "Offset";
         iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, rapidjson::Value(m_tagKey.c_str(), allocator).Move(), allocator);
-    }
-
-    if (m_queueNameHasBeenSet)
-    {
-        rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "QueueName";
-        iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, rapidjson::Value(m_queueName.c_str(), allocator).Move(), allocator);
+        d.AddMember(iKey, m_offset, allocator);
     }
 
 
@@ -93,20 +93,20 @@ string DescribeQueueDetailRequest::ToJsonString() const
 }
 
 
-uint64_t DescribeQueueDetailRequest::GetOffset() const
+string DescribeQueueDetailRequest::GetTagKey() const
 {
-    return m_offset;
+    return m_tagKey;
 }
 
-void DescribeQueueDetailRequest::SetOffset(const uint64_t& _offset)
+void DescribeQueueDetailRequest::SetTagKey(const string& _tagKey)
 {
-    m_offset = _offset;
-    m_offsetHasBeenSet = true;
+    m_tagKey = _tagKey;
+    m_tagKeyHasBeenSet = true;
 }
 
-bool DescribeQueueDetailRequest::OffsetHasBeenSet() const
+bool DescribeQueueDetailRequest::TagKeyHasBeenSet() const
 {
-    return m_offsetHasBeenSet;
+    return m_tagKeyHasBeenSet;
 }
 
 uint64_t DescribeQueueDetailRequest::GetLimit() const
@@ -125,6 +125,22 @@ bool DescribeQueueDetailRequest::LimitHasBeenSet() const
     return m_limitHasBeenSet;
 }
 
+string DescribeQueueDetailRequest::GetQueueName() const
+{
+    return m_queueName;
+}
+
+void DescribeQueueDetailRequest::SetQueueName(const string& _queueName)
+{
+    m_queueName = _queueName;
+    m_queueNameHasBeenSet = true;
+}
+
+bool DescribeQueueDetailRequest::QueueNameHasBeenSet() const
+{
+    return m_queueNameHasBeenSet;
+}
+
 vector<Filter> DescribeQueueDetailRequest::GetFilters() const
 {
     return m_filters;
@@ -141,36 +157,20 @@ bool DescribeQueueDetailRequest::FiltersHasBeenSet() const
     return m_filtersHasBeenSet;
 }
 
-string DescribeQueueDetailRequest::GetTagKey() const
+uint64_t DescribeQueueDetailRequest::GetOffset() const
 {
-    return m_tagKey;
+    return m_offset;
 }
 
-void DescribeQueueDetailRequest::SetTagKey(const string& _tagKey)
+void DescribeQueueDetailRequest::SetOffset(const uint64_t& _offset)
 {
-    m_tagKey = _tagKey;
-    m_tagKeyHasBeenSet = true;
+    m_offset = _offset;
+    m_offsetHasBeenSet = true;
 }
 
-bool DescribeQueueDetailRequest::TagKeyHasBeenSet() const
+bool DescribeQueueDetailRequest::OffsetHasBeenSet() const
 {
-    return m_tagKeyHasBeenSet;
-}
-
-string DescribeQueueDetailRequest::GetQueueName() const
-{
-    return m_queueName;
-}
-
-void DescribeQueueDetailRequest::SetQueueName(const string& _queueName)
-{
-    m_queueName = _queueName;
-    m_queueNameHasBeenSet = true;
-}
-
-bool DescribeQueueDetailRequest::QueueNameHasBeenSet() const
-{
-    return m_queueNameHasBeenSet;
+    return m_offsetHasBeenSet;
 }
 
 

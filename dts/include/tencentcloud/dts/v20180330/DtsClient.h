@@ -41,8 +41,6 @@
 #include <tencentcloud/dts/v20180330/model/DescribeMigrateCheckJobResponse.h>
 #include <tencentcloud/dts/v20180330/model/DescribeMigrateJobsRequest.h>
 #include <tencentcloud/dts/v20180330/model/DescribeMigrateJobsResponse.h>
-#include <tencentcloud/dts/v20180330/model/DescribeRegionConfRequest.h>
-#include <tencentcloud/dts/v20180330/model/DescribeRegionConfResponse.h>
 #include <tencentcloud/dts/v20180330/model/DescribeSubscribeConfRequest.h>
 #include <tencentcloud/dts/v20180330/model/DescribeSubscribeConfResponse.h>
 #include <tencentcloud/dts/v20180330/model/DescribeSubscribesRequest.h>
@@ -110,9 +108,6 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeMigrateJobsResponse> DescribeMigrateJobsOutcome;
                 typedef std::future<DescribeMigrateJobsOutcome> DescribeMigrateJobsOutcomeCallable;
                 typedef std::function<void(const DtsClient*, const Model::DescribeMigrateJobsRequest&, DescribeMigrateJobsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeMigrateJobsAsyncHandler;
-                typedef Outcome<Core::Error, Model::DescribeRegionConfResponse> DescribeRegionConfOutcome;
-                typedef std::future<DescribeRegionConfOutcome> DescribeRegionConfOutcomeCallable;
-                typedef std::function<void(const DtsClient*, const Model::DescribeRegionConfRequest&, DescribeRegionConfOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeRegionConfAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeSubscribeConfResponse> DescribeSubscribeConfOutcome;
                 typedef std::future<DescribeSubscribeConfOutcome> DescribeSubscribeConfOutcomeCallable;
                 typedef std::function<void(const DtsClient*, const Model::DescribeSubscribeConfRequest&, DescribeSubscribeConfOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeSubscribeConfAsyncHandler;
@@ -247,17 +242,6 @@ namespace TencentCloud
                 DescribeMigrateJobsOutcome DescribeMigrateJobs(const Model::DescribeMigrateJobsRequest &request);
                 void DescribeMigrateJobsAsync(const Model::DescribeMigrateJobsRequest& request, const DescribeMigrateJobsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DescribeMigrateJobsOutcomeCallable DescribeMigrateJobsCallable(const Model::DescribeMigrateJobsRequest& request);
-
-                /**
-                 *接口不再使用
-
-本接口（DescribeRegionConf）用于查询可售卖订阅实例的地域
-                 * @param req DescribeRegionConfRequest
-                 * @return DescribeRegionConfOutcome
-                 */
-                DescribeRegionConfOutcome DescribeRegionConf(const Model::DescribeRegionConfRequest &request);
-                void DescribeRegionConfAsync(const Model::DescribeRegionConfRequest& request, const DescribeRegionConfAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
-                DescribeRegionConfOutcomeCallable DescribeRegionConfCallable(const Model::DescribeRegionConfRequest& request);
 
                 /**
                  *本接口（DescribeSubscribeConf）用于查询订阅实例配置

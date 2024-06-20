@@ -3523,6 +3523,49 @@ DlcClient::DescribeSparkSessionBatchSQLOutcomeCallable DlcClient::DescribeSparkS
     return task->get_future();
 }
 
+DlcClient::DescribeSparkSessionBatchSQLCostOutcome DlcClient::DescribeSparkSessionBatchSQLCost(const DescribeSparkSessionBatchSQLCostRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeSparkSessionBatchSQLCost");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeSparkSessionBatchSQLCostResponse rsp = DescribeSparkSessionBatchSQLCostResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeSparkSessionBatchSQLCostOutcome(rsp);
+        else
+            return DescribeSparkSessionBatchSQLCostOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeSparkSessionBatchSQLCostOutcome(outcome.GetError());
+    }
+}
+
+void DlcClient::DescribeSparkSessionBatchSQLCostAsync(const DescribeSparkSessionBatchSQLCostRequest& request, const DescribeSparkSessionBatchSQLCostAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeSparkSessionBatchSQLCost(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+DlcClient::DescribeSparkSessionBatchSQLCostOutcomeCallable DlcClient::DescribeSparkSessionBatchSQLCostCallable(const DescribeSparkSessionBatchSQLCostRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeSparkSessionBatchSQLCostOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeSparkSessionBatchSQLCost(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 DlcClient::DescribeSparkSessionBatchSqlLogOutcome DlcClient::DescribeSparkSessionBatchSqlLog(const DescribeSparkSessionBatchSqlLogRequest &request)
 {
     auto outcome = MakeRequest(request, "DescribeSparkSessionBatchSqlLog");

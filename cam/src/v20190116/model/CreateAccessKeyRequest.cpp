@@ -23,7 +23,8 @@ using namespace TencentCloud::Cam::V20190116::Model;
 using namespace std;
 
 CreateAccessKeyRequest::CreateAccessKeyRequest() :
-    m_targetUinHasBeenSet(false)
+    m_targetUinHasBeenSet(false),
+    m_descriptionHasBeenSet(false)
 {
 }
 
@@ -40,6 +41,14 @@ string CreateAccessKeyRequest::ToJsonString() const
         string key = "TargetUin";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_targetUin, allocator);
+    }
+
+    if (m_descriptionHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Description";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_description.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -64,6 +73,22 @@ void CreateAccessKeyRequest::SetTargetUin(const uint64_t& _targetUin)
 bool CreateAccessKeyRequest::TargetUinHasBeenSet() const
 {
     return m_targetUinHasBeenSet;
+}
+
+string CreateAccessKeyRequest::GetDescription() const
+{
+    return m_description;
+}
+
+void CreateAccessKeyRequest::SetDescription(const string& _description)
+{
+    m_description = _description;
+    m_descriptionHasBeenSet = true;
+}
+
+bool CreateAccessKeyRequest::DescriptionHasBeenSet() const
+{
+    return m_descriptionHasBeenSet;
 }
 
 

@@ -30,7 +30,8 @@ VideoTemplateInfoForUpdate::VideoTemplateInfoForUpdate() :
     m_gopHasBeenSet(false),
     m_fillTypeHasBeenSet(false),
     m_vcrfHasBeenSet(false),
-    m_contentAdaptStreamHasBeenSet(false)
+    m_contentAdaptStreamHasBeenSet(false),
+    m_segmentTypeHasBeenSet(false)
 {
 }
 
@@ -139,6 +140,16 @@ CoreInternalOutcome VideoTemplateInfoForUpdate::Deserialize(const rapidjson::Val
         m_contentAdaptStreamHasBeenSet = true;
     }
 
+    if (value.HasMember("SegmentType") && !value["SegmentType"].IsNull())
+    {
+        if (!value["SegmentType"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `VideoTemplateInfoForUpdate.SegmentType` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_segmentType = value["SegmentType"].GetInt64();
+        m_segmentTypeHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -224,6 +235,14 @@ void VideoTemplateInfoForUpdate::ToJsonObject(rapidjson::Value &value, rapidjson
         string key = "ContentAdaptStream";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_contentAdaptStream, allocator);
+    }
+
+    if (m_segmentTypeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "SegmentType";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_segmentType, allocator);
     }
 
 }
@@ -387,5 +406,21 @@ void VideoTemplateInfoForUpdate::SetContentAdaptStream(const uint64_t& _contentA
 bool VideoTemplateInfoForUpdate::ContentAdaptStreamHasBeenSet() const
 {
     return m_contentAdaptStreamHasBeenSet;
+}
+
+int64_t VideoTemplateInfoForUpdate::GetSegmentType() const
+{
+    return m_segmentType;
+}
+
+void VideoTemplateInfoForUpdate::SetSegmentType(const int64_t& _segmentType)
+{
+    m_segmentType = _segmentType;
+    m_segmentTypeHasBeenSet = true;
+}
+
+bool VideoTemplateInfoForUpdate::SegmentTypeHasBeenSet() const
+{
+    return m_segmentTypeHasBeenSet;
 }
 

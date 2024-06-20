@@ -24,7 +24,8 @@ AccessKeyDetail::AccessKeyDetail() :
     m_accessKeyIdHasBeenSet(false),
     m_secretAccessKeyHasBeenSet(false),
     m_statusHasBeenSet(false),
-    m_createTimeHasBeenSet(false)
+    m_createTimeHasBeenSet(false),
+    m_descriptionHasBeenSet(false)
 {
 }
 
@@ -73,6 +74,16 @@ CoreInternalOutcome AccessKeyDetail::Deserialize(const rapidjson::Value &value)
         m_createTimeHasBeenSet = true;
     }
 
+    if (value.HasMember("Description") && !value["Description"].IsNull())
+    {
+        if (!value["Description"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `AccessKeyDetail.Description` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_description = string(value["Description"].GetString());
+        m_descriptionHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -110,6 +121,14 @@ void AccessKeyDetail::ToJsonObject(rapidjson::Value &value, rapidjson::Document:
         string key = "CreateTime";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_createTime.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_descriptionHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Description";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_description.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -177,5 +196,21 @@ void AccessKeyDetail::SetCreateTime(const string& _createTime)
 bool AccessKeyDetail::CreateTimeHasBeenSet() const
 {
     return m_createTimeHasBeenSet;
+}
+
+string AccessKeyDetail::GetDescription() const
+{
+    return m_description;
+}
+
+void AccessKeyDetail::SetDescription(const string& _description)
+{
+    m_description = _description;
+    m_descriptionHasBeenSet = true;
+}
+
+bool AccessKeyDetail::DescriptionHasBeenSet() const
+{
+    return m_descriptionHasBeenSet;
 }
 

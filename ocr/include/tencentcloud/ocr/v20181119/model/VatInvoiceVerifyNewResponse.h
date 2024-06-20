@@ -27,6 +27,7 @@
 #include <tencentcloud/ocr/v20181119/model/PassInvoiceInfo.h>
 #include <tencentcloud/ocr/v20181119/model/ElectronicTrainTicket.h>
 #include <tencentcloud/ocr/v20181119/model/ElectronicAirTransport.h>
+#include <tencentcloud/ocr/v20181119/model/FinancialBill.h>
 
 
 namespace TencentCloud
@@ -135,6 +136,20 @@ namespace TencentCloud
                      */
                     bool ElectronicAirTransportHasBeenSet() const;
 
+                    /**
+                     * 获取财政发票详细字段信息
+                     * @return FinancialBill 财政发票详细字段信息
+                     * 
+                     */
+                    FinancialBill GetFinancialBill() const;
+
+                    /**
+                     * 判断参数 FinancialBill 是否已赋值
+                     * @return FinancialBill 是否已赋值
+                     * 
+                     */
+                    bool FinancialBillHasBeenSet() const;
+
                 private:
 
                     /**
@@ -173,6 +188,12 @@ namespace TencentCloud
                      */
                     ElectronicAirTransport m_electronicAirTransport;
                     bool m_electronicAirTransportHasBeenSet;
+
+                    /**
+                     * 财政发票详细字段信息
+                     */
+                    FinancialBill m_financialBill;
+                    bool m_financialBillHasBeenSet;
 
                 };
             }

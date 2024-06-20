@@ -65,10 +65,12 @@ set(mongodb_public_header_model
   include/tencentcloud/mongodb/v20190725/model/DescribeSlowLogsRequest.h
   include/tencentcloud/mongodb/v20190725/model/FlushInstanceRouterConfigResponse.h
   include/tencentcloud/mongodb/v20190725/model/InstanceMultiParam.h
+  include/tencentcloud/mongodb/v20190725/model/ModifyInstanceParamsResponse.h
   include/tencentcloud/mongodb/v20190725/model/DescribeBackupRulesResponse.h
   include/tencentcloud/mongodb/v20190725/model/SlowLogPattern.h
   include/tencentcloud/mongodb/v20190725/model/AssignProjectResponse.h
   include/tencentcloud/mongodb/v20190725/model/DescribeDBInstanceDealResponse.h
+  include/tencentcloud/mongodb/v20190725/model/ModifyMongoDBParamType.h
   include/tencentcloud/mongodb/v20190725/model/OfflineIsolatedDBInstanceResponse.h
   include/tencentcloud/mongodb/v20190725/model/IsolateDBInstanceResponse.h
   include/tencentcloud/mongodb/v20190725/model/DescribeSecurityGroupRequest.h
@@ -151,6 +153,7 @@ set(mongodb_public_header_model
   include/tencentcloud/mongodb/v20190725/model/EnableTransparentDataEncryptionResponse.h
   include/tencentcloud/mongodb/v20190725/model/SetBackupRulesRequest.h
   include/tencentcloud/mongodb/v20190725/model/AssignProjectRequest.h
+  include/tencentcloud/mongodb/v20190725/model/ModifyInstanceParamsRequest.h
   include/tencentcloud/mongodb/v20190725/model/CreateBackupDownloadTaskResponse.h
   include/tencentcloud/mongodb/v20190725/model/SpecificationInfo.h
   include/tencentcloud/mongodb/v20190725/model/DescribeSlowLogPatternsRequest.h
@@ -221,10 +224,12 @@ set(mongodb_src
   src/v20190725/model/DescribeSlowLogsRequest.cpp
   src/v20190725/model/FlushInstanceRouterConfigResponse.cpp
   src/v20190725/model/InstanceMultiParam.cpp
+  src/v20190725/model/ModifyInstanceParamsResponse.cpp
   src/v20190725/model/DescribeBackupRulesResponse.cpp
   src/v20190725/model/SlowLogPattern.cpp
   src/v20190725/model/AssignProjectResponse.cpp
   src/v20190725/model/DescribeDBInstanceDealResponse.cpp
+  src/v20190725/model/ModifyMongoDBParamType.cpp
   src/v20190725/model/OfflineIsolatedDBInstanceResponse.cpp
   src/v20190725/model/IsolateDBInstanceResponse.cpp
   src/v20190725/model/DescribeSecurityGroupRequest.cpp
@@ -307,6 +312,7 @@ set(mongodb_src
   src/v20190725/model/EnableTransparentDataEncryptionResponse.cpp
   src/v20190725/model/SetBackupRulesRequest.cpp
   src/v20190725/model/AssignProjectRequest.cpp
+  src/v20190725/model/ModifyInstanceParamsRequest.cpp
   src/v20190725/model/CreateBackupDownloadTaskResponse.cpp
   src/v20190725/model/SpecificationInfo.cpp
   src/v20190725/model/DescribeSlowLogPatternsRequest.cpp

@@ -47,27 +47,31 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取合同详情页面是否展示合同控件信息
-<br/>true:允许在合同详情页展示控件
-<br/>false:不允许在合同详情页展示控件
-<br/>默认false,在合同详情页不展示控件
-                     * @return ShowFlowDetailComponent 合同详情页面是否展示合同控件信息
-<br/>true:允许在合同详情页展示控件
-<br/>false:不允许在合同详情页展示控件
-<br/>默认false,在合同详情页不展示控件
+                     * 获取合同详情预览，允许展示控件信息
+<ul>
+<li><b>true</b>：允许在合同详情页展示控件</li>
+<li><b>false</b>：（默认）不允许在合同详情页展示控件</li>
+</ul>
+                     * @return ShowFlowDetailComponent 合同详情预览，允许展示控件信息
+<ul>
+<li><b>true</b>：允许在合同详情页展示控件</li>
+<li><b>false</b>：（默认）不允许在合同详情页展示控件</li>
+</ul>
                      * 
                      */
                     bool GetShowFlowDetailComponent() const;
 
                     /**
-                     * 设置合同详情页面是否展示合同控件信息
-<br/>true:允许在合同详情页展示控件
-<br/>false:不允许在合同详情页展示控件
-<br/>默认false,在合同详情页不展示控件
-                     * @param _showFlowDetailComponent 合同详情页面是否展示合同控件信息
-<br/>true:允许在合同详情页展示控件
-<br/>false:不允许在合同详情页展示控件
-<br/>默认false,在合同详情页不展示控件
+                     * 设置合同详情预览，允许展示控件信息
+<ul>
+<li><b>true</b>：允许在合同详情页展示控件</li>
+<li><b>false</b>：（默认）不允许在合同详情页展示控件</li>
+</ul>
+                     * @param _showFlowDetailComponent 合同详情预览，允许展示控件信息
+<ul>
+<li><b>true</b>：允许在合同详情页展示控件</li>
+<li><b>false</b>：（默认）不允许在合同详情页展示控件</li>
+</ul>
                      * 
                      */
                     void SetShowFlowDetailComponent(const bool& _showFlowDetailComponent);
@@ -80,27 +84,23 @@ namespace TencentCloud
                     bool ShowFlowDetailComponentHasBeenSet() const;
 
                     /**
-                     * 获取模版预览页面是否展示空间信息
-<br/>true:允许在模版预览页展示控件
-<br/>false:不允许在模版预览页展示控件
-<br/>默认false,在模版预览页不展示控件
-                     * @return ShowTemplateComponent 模版预览页面是否展示空间信息
-<br/>true:允许在模版预览页展示控件
-<br/>false:不允许在模版预览页展示控件
-<br/>默认false,在模版预览页不展示控件
+                     * 获取模板预览，允许展示模板控件信息
+<ul><li> <b>true</b> :允许在模板预览页展示控件</li>
+<li> <b>false</b> :（默认）不允许在模板预览页展示控件</li></ul>
+                     * @return ShowTemplateComponent 模板预览，允许展示模板控件信息
+<ul><li> <b>true</b> :允许在模板预览页展示控件</li>
+<li> <b>false</b> :（默认）不允许在模板预览页展示控件</li></ul>
                      * 
                      */
                     bool GetShowTemplateComponent() const;
 
                     /**
-                     * 设置模版预览页面是否展示空间信息
-<br/>true:允许在模版预览页展示控件
-<br/>false:不允许在模版预览页展示控件
-<br/>默认false,在模版预览页不展示控件
-                     * @param _showTemplateComponent 模版预览页面是否展示空间信息
-<br/>true:允许在模版预览页展示控件
-<br/>false:不允许在模版预览页展示控件
-<br/>默认false,在模版预览页不展示控件
+                     * 设置模板预览，允许展示模板控件信息
+<ul><li> <b>true</b> :允许在模板预览页展示控件</li>
+<li> <b>false</b> :（默认）不允许在模板预览页展示控件</li></ul>
+                     * @param _showTemplateComponent 模板预览，允许展示模板控件信息
+<ul><li> <b>true</b> :允许在模板预览页展示控件</li>
+<li> <b>false</b> :（默认）不允许在模板预览页展示控件</li></ul>
                      * 
                      */
                     void SetShowTemplateComponent(const bool& _showTemplateComponent);
@@ -115,19 +115,19 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 合同详情页面是否展示合同控件信息
-<br/>true:允许在合同详情页展示控件
-<br/>false:不允许在合同详情页展示控件
-<br/>默认false,在合同详情页不展示控件
+                     * 合同详情预览，允许展示控件信息
+<ul>
+<li><b>true</b>：允许在合同详情页展示控件</li>
+<li><b>false</b>：（默认）不允许在合同详情页展示控件</li>
+</ul>
                      */
                     bool m_showFlowDetailComponent;
                     bool m_showFlowDetailComponentHasBeenSet;
 
                     /**
-                     * 模版预览页面是否展示空间信息
-<br/>true:允许在模版预览页展示控件
-<br/>false:不允许在模版预览页展示控件
-<br/>默认false,在模版预览页不展示控件
+                     * 模板预览，允许展示模板控件信息
+<ul><li> <b>true</b> :允许在模板预览页展示控件</li>
+<li> <b>false</b> :（默认）不允许在模板预览页展示控件</li></ul>
                      */
                     bool m_showTemplateComponent;
                     bool m_showTemplateComponentHasBeenSet;

@@ -1502,6 +1502,49 @@ MongodbClient::ModifyDBInstanceSpecOutcomeCallable MongodbClient::ModifyDBInstan
     return task->get_future();
 }
 
+MongodbClient::ModifyInstanceParamsOutcome MongodbClient::ModifyInstanceParams(const ModifyInstanceParamsRequest &request)
+{
+    auto outcome = MakeRequest(request, "ModifyInstanceParams");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ModifyInstanceParamsResponse rsp = ModifyInstanceParamsResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ModifyInstanceParamsOutcome(rsp);
+        else
+            return ModifyInstanceParamsOutcome(o.GetError());
+    }
+    else
+    {
+        return ModifyInstanceParamsOutcome(outcome.GetError());
+    }
+}
+
+void MongodbClient::ModifyInstanceParamsAsync(const ModifyInstanceParamsRequest& request, const ModifyInstanceParamsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->ModifyInstanceParams(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+MongodbClient::ModifyInstanceParamsOutcomeCallable MongodbClient::ModifyInstanceParamsCallable(const ModifyInstanceParamsRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<ModifyInstanceParamsOutcome()>>(
+        [this, request]()
+        {
+            return this->ModifyInstanceParams(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 MongodbClient::OfflineIsolatedDBInstanceOutcome MongodbClient::OfflineIsolatedDBInstance(const OfflineIsolatedDBInstanceRequest &request)
 {
     auto outcome = MakeRequest(request, "OfflineIsolatedDBInstance");

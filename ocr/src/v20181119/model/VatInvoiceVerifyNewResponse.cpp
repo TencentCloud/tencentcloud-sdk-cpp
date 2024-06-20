@@ -29,7 +29,8 @@ VatInvoiceVerifyNewResponse::VatInvoiceVerifyNewResponse() :
     m_usedVehicleInvoiceInfoHasBeenSet(false),
     m_passInvoiceInfoListHasBeenSet(false),
     m_electronicTrainTicketHasBeenSet(false),
-    m_electronicAirTransportHasBeenSet(false)
+    m_electronicAirTransportHasBeenSet(false),
+    m_financialBillHasBeenSet(false)
 {
 }
 
@@ -172,6 +173,23 @@ CoreInternalOutcome VatInvoiceVerifyNewResponse::Deserialize(const string &paylo
         m_electronicAirTransportHasBeenSet = true;
     }
 
+    if (rsp.HasMember("FinancialBill") && !rsp["FinancialBill"].IsNull())
+    {
+        if (!rsp["FinancialBill"].IsObject())
+        {
+            return CoreInternalOutcome(Core::Error("response `FinancialBill` is not object type").SetRequestId(requestId));
+        }
+
+        CoreInternalOutcome outcome = m_financialBill.Deserialize(rsp["FinancialBill"]);
+        if (!outcome.IsSuccess())
+        {
+            outcome.GetError().SetRequestId(requestId);
+            return outcome;
+        }
+
+        m_financialBillHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -240,6 +258,15 @@ string VatInvoiceVerifyNewResponse::ToJsonString() const
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
         m_electronicAirTransport.ToJsonObject(value[key.c_str()], allocator);
+    }
+
+    if (m_financialBillHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "FinancialBill";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_financialBill.ToJsonObject(value[key.c_str()], allocator);
     }
 
     rapidjson::Value iKey(rapidjson::kStringType);
@@ -312,6 +339,16 @@ ElectronicAirTransport VatInvoiceVerifyNewResponse::GetElectronicAirTransport() 
 bool VatInvoiceVerifyNewResponse::ElectronicAirTransportHasBeenSet() const
 {
     return m_electronicAirTransportHasBeenSet;
+}
+
+FinancialBill VatInvoiceVerifyNewResponse::GetFinancialBill() const
+{
+    return m_financialBill;
+}
+
+bool VatInvoiceVerifyNewResponse::FinancialBillHasBeenSet() const
+{
+    return m_financialBillHasBeenSet;
 }
 
 

@@ -23,11 +23,11 @@ using namespace TencentCloud::Cmq::V20190304::Model;
 using namespace std;
 
 DescribeTopicDetailRequest::DescribeTopicDetailRequest() :
-    m_offsetHasBeenSet(false),
-    m_limitHasBeenSet(false),
-    m_filtersHasBeenSet(false),
     m_tagKeyHasBeenSet(false),
-    m_topicNameHasBeenSet(false)
+    m_limitHasBeenSet(false),
+    m_topicNameHasBeenSet(false),
+    m_filtersHasBeenSet(false),
+    m_offsetHasBeenSet(false)
 {
 }
 
@@ -38,12 +38,12 @@ string DescribeTopicDetailRequest::ToJsonString() const
     rapidjson::Document::AllocatorType& allocator = d.GetAllocator();
 
 
-    if (m_offsetHasBeenSet)
+    if (m_tagKeyHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "Offset";
+        string key = "TagKey";
         iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, m_offset, allocator);
+        d.AddMember(iKey, rapidjson::Value(m_tagKey.c_str(), allocator).Move(), allocator);
     }
 
     if (m_limitHasBeenSet)
@@ -52,6 +52,14 @@ string DescribeTopicDetailRequest::ToJsonString() const
         string key = "Limit";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_limit, allocator);
+    }
+
+    if (m_topicNameHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "TopicName";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_topicName.c_str(), allocator).Move(), allocator);
     }
 
     if (m_filtersHasBeenSet)
@@ -69,20 +77,12 @@ string DescribeTopicDetailRequest::ToJsonString() const
         }
     }
 
-    if (m_tagKeyHasBeenSet)
+    if (m_offsetHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "TagKey";
+        string key = "Offset";
         iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, rapidjson::Value(m_tagKey.c_str(), allocator).Move(), allocator);
-    }
-
-    if (m_topicNameHasBeenSet)
-    {
-        rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "TopicName";
-        iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, rapidjson::Value(m_topicName.c_str(), allocator).Move(), allocator);
+        d.AddMember(iKey, m_offset, allocator);
     }
 
 
@@ -93,20 +93,20 @@ string DescribeTopicDetailRequest::ToJsonString() const
 }
 
 
-uint64_t DescribeTopicDetailRequest::GetOffset() const
+string DescribeTopicDetailRequest::GetTagKey() const
 {
-    return m_offset;
+    return m_tagKey;
 }
 
-void DescribeTopicDetailRequest::SetOffset(const uint64_t& _offset)
+void DescribeTopicDetailRequest::SetTagKey(const string& _tagKey)
 {
-    m_offset = _offset;
-    m_offsetHasBeenSet = true;
+    m_tagKey = _tagKey;
+    m_tagKeyHasBeenSet = true;
 }
 
-bool DescribeTopicDetailRequest::OffsetHasBeenSet() const
+bool DescribeTopicDetailRequest::TagKeyHasBeenSet() const
 {
-    return m_offsetHasBeenSet;
+    return m_tagKeyHasBeenSet;
 }
 
 uint64_t DescribeTopicDetailRequest::GetLimit() const
@@ -125,6 +125,22 @@ bool DescribeTopicDetailRequest::LimitHasBeenSet() const
     return m_limitHasBeenSet;
 }
 
+string DescribeTopicDetailRequest::GetTopicName() const
+{
+    return m_topicName;
+}
+
+void DescribeTopicDetailRequest::SetTopicName(const string& _topicName)
+{
+    m_topicName = _topicName;
+    m_topicNameHasBeenSet = true;
+}
+
+bool DescribeTopicDetailRequest::TopicNameHasBeenSet() const
+{
+    return m_topicNameHasBeenSet;
+}
+
 vector<Filter> DescribeTopicDetailRequest::GetFilters() const
 {
     return m_filters;
@@ -141,36 +157,20 @@ bool DescribeTopicDetailRequest::FiltersHasBeenSet() const
     return m_filtersHasBeenSet;
 }
 
-string DescribeTopicDetailRequest::GetTagKey() const
+uint64_t DescribeTopicDetailRequest::GetOffset() const
 {
-    return m_tagKey;
+    return m_offset;
 }
 
-void DescribeTopicDetailRequest::SetTagKey(const string& _tagKey)
+void DescribeTopicDetailRequest::SetOffset(const uint64_t& _offset)
 {
-    m_tagKey = _tagKey;
-    m_tagKeyHasBeenSet = true;
+    m_offset = _offset;
+    m_offsetHasBeenSet = true;
 }
 
-bool DescribeTopicDetailRequest::TagKeyHasBeenSet() const
+bool DescribeTopicDetailRequest::OffsetHasBeenSet() const
 {
-    return m_tagKeyHasBeenSet;
-}
-
-string DescribeTopicDetailRequest::GetTopicName() const
-{
-    return m_topicName;
-}
-
-void DescribeTopicDetailRequest::SetTopicName(const string& _topicName)
-{
-    m_topicName = _topicName;
-    m_topicNameHasBeenSet = true;
-}
-
-bool DescribeTopicDetailRequest::TopicNameHasBeenSet() const
-{
-    return m_topicNameHasBeenSet;
+    return m_offsetHasBeenSet;
 }
 
 

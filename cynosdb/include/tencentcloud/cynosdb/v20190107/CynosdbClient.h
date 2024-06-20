@@ -267,6 +267,8 @@
 #include <tencentcloud/cynosdb/v20190107/model/ReloadBalanceProxyNodeResponse.h>
 #include <tencentcloud/cynosdb/v20190107/model/RemoveClusterSlaveZoneRequest.h>
 #include <tencentcloud/cynosdb/v20190107/model/RemoveClusterSlaveZoneResponse.h>
+#include <tencentcloud/cynosdb/v20190107/model/RenewClustersRequest.h>
+#include <tencentcloud/cynosdb/v20190107/model/RenewClustersResponse.h>
 #include <tencentcloud/cynosdb/v20190107/model/ResetAccountPasswordRequest.h>
 #include <tencentcloud/cynosdb/v20190107/model/ResetAccountPasswordResponse.h>
 #include <tencentcloud/cynosdb/v20190107/model/RestartInstanceRequest.h>
@@ -685,6 +687,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::RemoveClusterSlaveZoneResponse> RemoveClusterSlaveZoneOutcome;
                 typedef std::future<RemoveClusterSlaveZoneOutcome> RemoveClusterSlaveZoneOutcomeCallable;
                 typedef std::function<void(const CynosdbClient*, const Model::RemoveClusterSlaveZoneRequest&, RemoveClusterSlaveZoneOutcome, const std::shared_ptr<const AsyncCallerContext>&)> RemoveClusterSlaveZoneAsyncHandler;
+                typedef Outcome<Core::Error, Model::RenewClustersResponse> RenewClustersOutcome;
+                typedef std::future<RenewClustersOutcome> RenewClustersOutcomeCallable;
+                typedef std::function<void(const CynosdbClient*, const Model::RenewClustersRequest&, RenewClustersOutcome, const std::shared_ptr<const AsyncCallerContext>&)> RenewClustersAsyncHandler;
                 typedef Outcome<Core::Error, Model::ResetAccountPasswordResponse> ResetAccountPasswordOutcome;
                 typedef std::future<ResetAccountPasswordOutcome> ResetAccountPasswordOutcomeCallable;
                 typedef std::function<void(const CynosdbClient*, const Model::ResetAccountPasswordRequest&, ResetAccountPasswordOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ResetAccountPasswordAsyncHandler;
@@ -1844,6 +1849,15 @@ namespace TencentCloud
                 RemoveClusterSlaveZoneOutcome RemoveClusterSlaveZone(const Model::RemoveClusterSlaveZoneRequest &request);
                 void RemoveClusterSlaveZoneAsync(const Model::RemoveClusterSlaveZoneRequest& request, const RemoveClusterSlaveZoneAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 RemoveClusterSlaveZoneOutcomeCallable RemoveClusterSlaveZoneCallable(const Model::RemoveClusterSlaveZoneRequest& request);
+
+                /**
+                 *续费集群
+                 * @param req RenewClustersRequest
+                 * @return RenewClustersOutcome
+                 */
+                RenewClustersOutcome RenewClusters(const Model::RenewClustersRequest &request);
+                void RenewClustersAsync(const Model::RenewClustersRequest& request, const RenewClustersAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                RenewClustersOutcomeCallable RenewClustersCallable(const Model::RenewClustersRequest& request);
 
                 /**
                  *本接口(ResetAccountPassword)用于修改数据库账号密码

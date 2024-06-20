@@ -14,39 +14,39 @@
  * limitations under the License.
  */
 
-#ifndef TENCENTCLOUD_DTS_V20180330_MODEL_DESCRIBEREGIONCONFRESPONSE_H_
-#define TENCENTCLOUD_DTS_V20180330_MODEL_DESCRIBEREGIONCONFRESPONSE_H_
+#ifndef TENCENTCLOUD_TDMQ_V20200217_MODEL_DESCRIBEROCKETMQENVIRONMENTROLESRESPONSE_H_
+#define TENCENTCLOUD_TDMQ_V20200217_MODEL_DESCRIBEROCKETMQENVIRONMENTROLESRESPONSE_H_
 
 #include <string>
 #include <vector>
 #include <map>
 #include <tencentcloud/core/AbstractModel.h>
-#include <tencentcloud/dts/v20180330/model/SubscribeRegionConf.h>
+#include <tencentcloud/tdmq/v20200217/model/EnvironmentRole.h>
 
 
 namespace TencentCloud
 {
-    namespace Dts
+    namespace Tdmq
     {
-        namespace V20180330
+        namespace V20200217
         {
             namespace Model
             {
                 /**
-                * DescribeRegionConf返回参数结构体
+                * DescribeRocketMQEnvironmentRoles返回参数结构体
                 */
-                class DescribeRegionConfResponse : public AbstractModel
+                class DescribeRocketMQEnvironmentRolesResponse : public AbstractModel
                 {
                 public:
-                    DescribeRegionConfResponse();
-                    ~DescribeRegionConfResponse() = default;
+                    DescribeRocketMQEnvironmentRolesResponse();
+                    ~DescribeRocketMQEnvironmentRolesResponse() = default;
                     CoreInternalOutcome Deserialize(const std::string &payload);
                     std::string ToJsonString() const;
 
 
                     /**
-                     * 获取可售卖地域的数量
-                     * @return TotalCount 可售卖地域的数量
+                     * 获取记录数。
+                     * @return TotalCount 记录数。
                      * 
                      */
                     int64_t GetTotalCount() const;
@@ -59,32 +59,32 @@ namespace TencentCloud
                     bool TotalCountHasBeenSet() const;
 
                     /**
-                     * 获取可售卖地域详情
-                     * @return Items 可售卖地域详情
+                     * 获取命名空间角色集合。
+                     * @return EnvironmentRoleSets 命名空间角色集合。
                      * 
                      */
-                    std::vector<SubscribeRegionConf> GetItems() const;
+                    std::vector<EnvironmentRole> GetEnvironmentRoleSets() const;
 
                     /**
-                     * 判断参数 Items 是否已赋值
-                     * @return Items 是否已赋值
+                     * 判断参数 EnvironmentRoleSets 是否已赋值
+                     * @return EnvironmentRoleSets 是否已赋值
                      * 
                      */
-                    bool ItemsHasBeenSet() const;
+                    bool EnvironmentRoleSetsHasBeenSet() const;
 
                 private:
 
                     /**
-                     * 可售卖地域的数量
+                     * 记录数。
                      */
                     int64_t m_totalCount;
                     bool m_totalCountHasBeenSet;
 
                     /**
-                     * 可售卖地域详情
+                     * 命名空间角色集合。
                      */
-                    std::vector<SubscribeRegionConf> m_items;
-                    bool m_itemsHasBeenSet;
+                    std::vector<EnvironmentRole> m_environmentRoleSets;
+                    bool m_environmentRoleSetsHasBeenSet;
 
                 };
             }
@@ -92,4 +92,4 @@ namespace TencentCloud
     }
 }
 
-#endif // !TENCENTCLOUD_DTS_V20180330_MODEL_DESCRIBEREGIONCONFRESPONSE_H_
+#endif // !TENCENTCLOUD_TDMQ_V20200217_MODEL_DESCRIBEROCKETMQENVIRONMENTROLESRESPONSE_H_

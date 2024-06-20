@@ -642,6 +642,49 @@ TdmqClient::CreateRocketMQClusterOutcomeCallable TdmqClient::CreateRocketMQClust
     return task->get_future();
 }
 
+TdmqClient::CreateRocketMQEnvironmentRoleOutcome TdmqClient::CreateRocketMQEnvironmentRole(const CreateRocketMQEnvironmentRoleRequest &request)
+{
+    auto outcome = MakeRequest(request, "CreateRocketMQEnvironmentRole");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        CreateRocketMQEnvironmentRoleResponse rsp = CreateRocketMQEnvironmentRoleResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return CreateRocketMQEnvironmentRoleOutcome(rsp);
+        else
+            return CreateRocketMQEnvironmentRoleOutcome(o.GetError());
+    }
+    else
+    {
+        return CreateRocketMQEnvironmentRoleOutcome(outcome.GetError());
+    }
+}
+
+void TdmqClient::CreateRocketMQEnvironmentRoleAsync(const CreateRocketMQEnvironmentRoleRequest& request, const CreateRocketMQEnvironmentRoleAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->CreateRocketMQEnvironmentRole(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+TdmqClient::CreateRocketMQEnvironmentRoleOutcomeCallable TdmqClient::CreateRocketMQEnvironmentRoleCallable(const CreateRocketMQEnvironmentRoleRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<CreateRocketMQEnvironmentRoleOutcome()>>(
+        [this, request]()
+        {
+            return this->CreateRocketMQEnvironmentRole(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 TdmqClient::CreateRocketMQGroupOutcome TdmqClient::CreateRocketMQGroup(const CreateRocketMQGroupRequest &request)
 {
     auto outcome = MakeRequest(request, "CreateRocketMQGroup");
@@ -721,6 +764,49 @@ TdmqClient::CreateRocketMQNamespaceOutcomeCallable TdmqClient::CreateRocketMQNam
         [this, request]()
         {
             return this->CreateRocketMQNamespace(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+TdmqClient::CreateRocketMQRoleOutcome TdmqClient::CreateRocketMQRole(const CreateRocketMQRoleRequest &request)
+{
+    auto outcome = MakeRequest(request, "CreateRocketMQRole");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        CreateRocketMQRoleResponse rsp = CreateRocketMQRoleResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return CreateRocketMQRoleOutcome(rsp);
+        else
+            return CreateRocketMQRoleOutcome(o.GetError());
+    }
+    else
+    {
+        return CreateRocketMQRoleOutcome(outcome.GetError());
+    }
+}
+
+void TdmqClient::CreateRocketMQRoleAsync(const CreateRocketMQRoleRequest& request, const CreateRocketMQRoleAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->CreateRocketMQRole(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+TdmqClient::CreateRocketMQRoleOutcomeCallable TdmqClient::CreateRocketMQRoleCallable(const CreateRocketMQRoleRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<CreateRocketMQRoleOutcome()>>(
+        [this, request]()
+        {
+            return this->CreateRocketMQRole(request);
         }
     );
 
@@ -1416,6 +1502,49 @@ TdmqClient::DeleteRocketMQClusterOutcomeCallable TdmqClient::DeleteRocketMQClust
     return task->get_future();
 }
 
+TdmqClient::DeleteRocketMQEnvironmentRolesOutcome TdmqClient::DeleteRocketMQEnvironmentRoles(const DeleteRocketMQEnvironmentRolesRequest &request)
+{
+    auto outcome = MakeRequest(request, "DeleteRocketMQEnvironmentRoles");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DeleteRocketMQEnvironmentRolesResponse rsp = DeleteRocketMQEnvironmentRolesResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DeleteRocketMQEnvironmentRolesOutcome(rsp);
+        else
+            return DeleteRocketMQEnvironmentRolesOutcome(o.GetError());
+    }
+    else
+    {
+        return DeleteRocketMQEnvironmentRolesOutcome(outcome.GetError());
+    }
+}
+
+void TdmqClient::DeleteRocketMQEnvironmentRolesAsync(const DeleteRocketMQEnvironmentRolesRequest& request, const DeleteRocketMQEnvironmentRolesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DeleteRocketMQEnvironmentRoles(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+TdmqClient::DeleteRocketMQEnvironmentRolesOutcomeCallable TdmqClient::DeleteRocketMQEnvironmentRolesCallable(const DeleteRocketMQEnvironmentRolesRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DeleteRocketMQEnvironmentRolesOutcome()>>(
+        [this, request]()
+        {
+            return this->DeleteRocketMQEnvironmentRoles(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 TdmqClient::DeleteRocketMQGroupOutcome TdmqClient::DeleteRocketMQGroup(const DeleteRocketMQGroupRequest &request)
 {
     auto outcome = MakeRequest(request, "DeleteRocketMQGroup");
@@ -1495,6 +1624,49 @@ TdmqClient::DeleteRocketMQNamespaceOutcomeCallable TdmqClient::DeleteRocketMQNam
         [this, request]()
         {
             return this->DeleteRocketMQNamespace(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+TdmqClient::DeleteRocketMQRolesOutcome TdmqClient::DeleteRocketMQRoles(const DeleteRocketMQRolesRequest &request)
+{
+    auto outcome = MakeRequest(request, "DeleteRocketMQRoles");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DeleteRocketMQRolesResponse rsp = DeleteRocketMQRolesResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DeleteRocketMQRolesOutcome(rsp);
+        else
+            return DeleteRocketMQRolesOutcome(o.GetError());
+    }
+    else
+    {
+        return DeleteRocketMQRolesOutcome(outcome.GetError());
+    }
+}
+
+void TdmqClient::DeleteRocketMQRolesAsync(const DeleteRocketMQRolesRequest& request, const DeleteRocketMQRolesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DeleteRocketMQRoles(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+TdmqClient::DeleteRocketMQRolesOutcomeCallable TdmqClient::DeleteRocketMQRolesCallable(const DeleteRocketMQRolesRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DeleteRocketMQRolesOutcome()>>(
+        [this, request]()
+        {
+            return this->DeleteRocketMQRoles(request);
         }
     );
 
@@ -3308,6 +3480,49 @@ TdmqClient::DescribeRocketMQConsumerConnectionsOutcomeCallable TdmqClient::Descr
     return task->get_future();
 }
 
+TdmqClient::DescribeRocketMQEnvironmentRolesOutcome TdmqClient::DescribeRocketMQEnvironmentRoles(const DescribeRocketMQEnvironmentRolesRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeRocketMQEnvironmentRoles");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeRocketMQEnvironmentRolesResponse rsp = DescribeRocketMQEnvironmentRolesResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeRocketMQEnvironmentRolesOutcome(rsp);
+        else
+            return DescribeRocketMQEnvironmentRolesOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeRocketMQEnvironmentRolesOutcome(outcome.GetError());
+    }
+}
+
+void TdmqClient::DescribeRocketMQEnvironmentRolesAsync(const DescribeRocketMQEnvironmentRolesRequest& request, const DescribeRocketMQEnvironmentRolesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeRocketMQEnvironmentRoles(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+TdmqClient::DescribeRocketMQEnvironmentRolesOutcomeCallable TdmqClient::DescribeRocketMQEnvironmentRolesCallable(const DescribeRocketMQEnvironmentRolesRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeRocketMQEnvironmentRolesOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeRocketMQEnvironmentRoles(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 TdmqClient::DescribeRocketMQGroupsOutcome TdmqClient::DescribeRocketMQGroups(const DescribeRocketMQGroupsRequest &request)
 {
     auto outcome = MakeRequest(request, "DescribeRocketMQGroups");
@@ -3602,6 +3817,49 @@ TdmqClient::DescribeRocketMQPublicAccessPointOutcomeCallable TdmqClient::Describ
         [this, request]()
         {
             return this->DescribeRocketMQPublicAccessPoint(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+TdmqClient::DescribeRocketMQRolesOutcome TdmqClient::DescribeRocketMQRoles(const DescribeRocketMQRolesRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeRocketMQRoles");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeRocketMQRolesResponse rsp = DescribeRocketMQRolesResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeRocketMQRolesOutcome(rsp);
+        else
+            return DescribeRocketMQRolesOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeRocketMQRolesOutcome(outcome.GetError());
+    }
+}
+
+void TdmqClient::DescribeRocketMQRolesAsync(const DescribeRocketMQRolesRequest& request, const DescribeRocketMQRolesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeRocketMQRoles(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+TdmqClient::DescribeRocketMQRolesOutcomeCallable TdmqClient::DescribeRocketMQRolesCallable(const DescribeRocketMQRolesRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeRocketMQRolesOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeRocketMQRoles(request);
         }
     );
 
@@ -4813,6 +5071,49 @@ TdmqClient::ModifyRocketMQClusterOutcomeCallable TdmqClient::ModifyRocketMQClust
     return task->get_future();
 }
 
+TdmqClient::ModifyRocketMQEnvironmentRoleOutcome TdmqClient::ModifyRocketMQEnvironmentRole(const ModifyRocketMQEnvironmentRoleRequest &request)
+{
+    auto outcome = MakeRequest(request, "ModifyRocketMQEnvironmentRole");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ModifyRocketMQEnvironmentRoleResponse rsp = ModifyRocketMQEnvironmentRoleResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ModifyRocketMQEnvironmentRoleOutcome(rsp);
+        else
+            return ModifyRocketMQEnvironmentRoleOutcome(o.GetError());
+    }
+    else
+    {
+        return ModifyRocketMQEnvironmentRoleOutcome(outcome.GetError());
+    }
+}
+
+void TdmqClient::ModifyRocketMQEnvironmentRoleAsync(const ModifyRocketMQEnvironmentRoleRequest& request, const ModifyRocketMQEnvironmentRoleAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->ModifyRocketMQEnvironmentRole(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+TdmqClient::ModifyRocketMQEnvironmentRoleOutcomeCallable TdmqClient::ModifyRocketMQEnvironmentRoleCallable(const ModifyRocketMQEnvironmentRoleRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<ModifyRocketMQEnvironmentRoleOutcome()>>(
+        [this, request]()
+        {
+            return this->ModifyRocketMQEnvironmentRole(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 TdmqClient::ModifyRocketMQGroupOutcome TdmqClient::ModifyRocketMQGroup(const ModifyRocketMQGroupRequest &request)
 {
     auto outcome = MakeRequest(request, "ModifyRocketMQGroup");
@@ -4935,6 +5236,49 @@ TdmqClient::ModifyRocketMQNamespaceOutcomeCallable TdmqClient::ModifyRocketMQNam
         [this, request]()
         {
             return this->ModifyRocketMQNamespace(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+TdmqClient::ModifyRocketMQRoleOutcome TdmqClient::ModifyRocketMQRole(const ModifyRocketMQRoleRequest &request)
+{
+    auto outcome = MakeRequest(request, "ModifyRocketMQRole");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ModifyRocketMQRoleResponse rsp = ModifyRocketMQRoleResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ModifyRocketMQRoleOutcome(rsp);
+        else
+            return ModifyRocketMQRoleOutcome(o.GetError());
+    }
+    else
+    {
+        return ModifyRocketMQRoleOutcome(outcome.GetError());
+    }
+}
+
+void TdmqClient::ModifyRocketMQRoleAsync(const ModifyRocketMQRoleRequest& request, const ModifyRocketMQRoleAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->ModifyRocketMQRole(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+TdmqClient::ModifyRocketMQRoleOutcomeCallable TdmqClient::ModifyRocketMQRoleCallable(const ModifyRocketMQRoleRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<ModifyRocketMQRoleOutcome()>>(
+        [this, request]()
+        {
+            return this->ModifyRocketMQRole(request);
         }
     );
 
