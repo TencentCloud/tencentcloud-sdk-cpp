@@ -24,6 +24,7 @@
 #include <tencentcloud/core/utils/rapidjson/writer.h>
 #include <tencentcloud/core/utils/rapidjson/stringbuffer.h>
 #include <tencentcloud/core/AbstractModel.h>
+#include <tencentcloud/lke/v20231130/model/MsgFileInfo.h>
 
 
 namespace TencentCloud
@@ -171,6 +172,31 @@ namespace TencentCloud
                      */
                     bool ContentHasBeenSet() const;
 
+                    /**
+                     * 获取文档信息
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return FileInfos 文档信息
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::vector<MsgFileInfo> GetFileInfos() const;
+
+                    /**
+                     * 设置文档信息
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _fileInfos 文档信息
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetFileInfos(const std::vector<MsgFileInfo>& _fileInfos);
+
+                    /**
+                     * 判断参数 FileInfos 是否已赋值
+                     * @return FileInfos 是否已赋值
+                     * 
+                     */
+                    bool FileInfosHasBeenSet() const;
+
                 private:
 
                     /**
@@ -207,6 +233,13 @@ namespace TencentCloud
                      */
                     std::string m_content;
                     bool m_contentHasBeenSet;
+
+                    /**
+                     * 文档信息
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::vector<MsgFileInfo> m_fileInfos;
+                    bool m_fileInfosHasBeenSet;
 
                 };
             }

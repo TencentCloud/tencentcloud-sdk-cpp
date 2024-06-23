@@ -152,6 +152,7 @@ set(lke_public_header_model
   include/tencentcloud/lke/v20231130/model/SaveDocResponse.h
   include/tencentcloud/lke/v20231130/model/DeleteRejectedQuestionResponse.h
   include/tencentcloud/lke/v20231130/model/Credentials.h
+  include/tencentcloud/lke/v20231130/model/MsgFileInfo.h
   include/tencentcloud/lke/v20231130/model/CreateAttributeLabelRequest.h
   include/tencentcloud/lke/v20231130/model/ListAppResponse.h
   include/tencentcloud/lke/v20231130/model/AppInfo.h
@@ -165,6 +166,7 @@ set(lke_public_header_model
   include/tencentcloud/lke/v20231130/model/ModelInfo.h
   include/tencentcloud/lke/v20231130/model/DeleteRejectedQuestionRequest.h
   include/tencentcloud/lke/v20231130/model/Highlight.h
+  include/tencentcloud/lke/v20231130/model/FileInfo.h
   include/tencentcloud/lke/v20231130/model/ExportQAListRequest.h
   include/tencentcloud/lke/v20231130/model/GetDocPreviewResponse.h
   include/tencentcloud/lke/v20231130/model/CreateReleaseResponse.h
@@ -366,6 +368,7 @@ set(lke_src
   src/v20231130/model/SaveDocResponse.cpp
   src/v20231130/model/DeleteRejectedQuestionResponse.cpp
   src/v20231130/model/Credentials.cpp
+  src/v20231130/model/MsgFileInfo.cpp
   src/v20231130/model/CreateAttributeLabelRequest.cpp
   src/v20231130/model/ListAppResponse.cpp
   src/v20231130/model/AppInfo.cpp
@@ -379,6 +382,7 @@ set(lke_src
   src/v20231130/model/ModelInfo.cpp
   src/v20231130/model/DeleteRejectedQuestionRequest.cpp
   src/v20231130/model/Highlight.cpp
+  src/v20231130/model/FileInfo.cpp
   src/v20231130/model/ExportQAListRequest.cpp
   src/v20231130/model/GetDocPreviewResponse.cpp
   src/v20231130/model/CreateReleaseResponse.cpp

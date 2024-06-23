@@ -288,6 +288,48 @@ namespace TencentCloud
                      */
                     bool TriggerTypeHasBeenSet() const;
 
+                    /**
+                     * 获取smtp头中的Message-Id字段
+                     * @return SmtpMessageId smtp头中的Message-Id字段
+                     * 
+                     */
+                    std::string GetSmtpMessageId() const;
+
+                    /**
+                     * 设置smtp头中的Message-Id字段
+                     * @param _smtpMessageId smtp头中的Message-Id字段
+                     * 
+                     */
+                    void SetSmtpMessageId(const std::string& _smtpMessageId);
+
+                    /**
+                     * 判断参数 SmtpMessageId 是否已赋值
+                     * @return SmtpMessageId 是否已赋值
+                     * 
+                     */
+                    bool SmtpMessageIdHasBeenSet() const;
+
+                    /**
+                     * 获取smtp头中可以设置的其它字段
+                     * @return SmtpHeaders smtp头中可以设置的其它字段
+                     * 
+                     */
+                    std::string GetSmtpHeaders() const;
+
+                    /**
+                     * 设置smtp头中可以设置的其它字段
+                     * @param _smtpHeaders smtp头中可以设置的其它字段
+                     * 
+                     */
+                    void SetSmtpHeaders(const std::string& _smtpHeaders);
+
+                    /**
+                     * 判断参数 SmtpHeaders 是否已赋值
+                     * @return SmtpHeaders 是否已赋值
+                     * 
+                     */
+                    bool SmtpHeadersHasBeenSet() const;
+
                 private:
 
                     /**
@@ -358,6 +400,18 @@ namespace TencentCloud
                      */
                     uint64_t m_triggerType;
                     bool m_triggerTypeHasBeenSet;
+
+                    /**
+                     * smtp头中的Message-Id字段
+                     */
+                    std::string m_smtpMessageId;
+                    bool m_smtpMessageIdHasBeenSet;
+
+                    /**
+                     * smtp头中可以设置的其它字段
+                     */
+                    std::string m_smtpHeaders;
+                    bool m_smtpHeadersHasBeenSet;
 
                 };
             }

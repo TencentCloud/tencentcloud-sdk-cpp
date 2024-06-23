@@ -47,10 +47,10 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取高亮启始位置
+                     * 获取高亮起始位置
 
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return StartPos 高亮启始位置
+                     * @return StartPos 高亮起始位置
 
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
@@ -58,10 +58,10 @@ namespace TencentCloud
                     std::string GetStartPos() const;
 
                     /**
-                     * 设置高亮启始位置
+                     * 设置高亮起始位置
 
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _startPos 高亮启始位置
+                     * @param _startPos 高亮起始位置
 
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
@@ -136,7 +136,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 高亮启始位置
+                     * 高亮起始位置
 
 注意：此字段可能返回 null，表示取不到有效值。
                      */

@@ -43,7 +43,9 @@ RocketMQClusterInfo::RocketMQClusterInfo() :
     m_vipHasBeenSet(false),
     m_vpcIdHasBeenSet(false),
     m_supportMigrationHasBeenSet(false),
-    m_instanceStatusHasBeenSet(false)
+    m_instanceStatusHasBeenSet(false),
+    m_zoneIdHasBeenSet(false),
+    m_zoneIdsHasBeenSet(false)
 {
 }
 
@@ -292,6 +294,29 @@ CoreInternalOutcome RocketMQClusterInfo::Deserialize(const rapidjson::Value &val
         m_instanceStatusHasBeenSet = true;
     }
 
+    if (value.HasMember("ZoneId") && !value["ZoneId"].IsNull())
+    {
+        if (!value["ZoneId"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `RocketMQClusterInfo.ZoneId` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_zoneId = value["ZoneId"].GetInt64();
+        m_zoneIdHasBeenSet = true;
+    }
+
+    if (value.HasMember("ZoneIds") && !value["ZoneIds"].IsNull())
+    {
+        if (!value["ZoneIds"].IsArray())
+            return CoreInternalOutcome(Core::Error("response `RocketMQClusterInfo.ZoneIds` is not array type"));
+
+        const rapidjson::Value &tmpValue = value["ZoneIds"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            m_zoneIds.push_back((*itr).GetInt64());
+        }
+        m_zoneIdsHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -488,6 +513,27 @@ void RocketMQClusterInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Docum
         string key = "InstanceStatus";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_instanceStatus, allocator);
+    }
+
+    if (m_zoneIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ZoneId";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_zoneId, allocator);
+    }
+
+    if (m_zoneIdsHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ZoneIds";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        for (auto itr = m_zoneIds.begin(); itr != m_zoneIds.end(); ++itr)
+        {
+            value[key.c_str()].PushBack(rapidjson::Value().SetInt64(*itr), allocator);
+        }
     }
 
 }
@@ -859,5 +905,37 @@ void RocketMQClusterInfo::SetInstanceStatus(const int64_t& _instanceStatus)
 bool RocketMQClusterInfo::InstanceStatusHasBeenSet() const
 {
     return m_instanceStatusHasBeenSet;
+}
+
+int64_t RocketMQClusterInfo::GetZoneId() const
+{
+    return m_zoneId;
+}
+
+void RocketMQClusterInfo::SetZoneId(const int64_t& _zoneId)
+{
+    m_zoneId = _zoneId;
+    m_zoneIdHasBeenSet = true;
+}
+
+bool RocketMQClusterInfo::ZoneIdHasBeenSet() const
+{
+    return m_zoneIdHasBeenSet;
+}
+
+vector<int64_t> RocketMQClusterInfo::GetZoneIds() const
+{
+    return m_zoneIds;
+}
+
+void RocketMQClusterInfo::SetZoneIds(const vector<int64_t>& _zoneIds)
+{
+    m_zoneIds = _zoneIds;
+    m_zoneIdsHasBeenSet = true;
+}
+
+bool RocketMQClusterInfo::ZoneIdsHasBeenSet() const
+{
+    return m_zoneIdsHasBeenSet;
 }
 

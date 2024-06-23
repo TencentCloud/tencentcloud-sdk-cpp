@@ -24,7 +24,9 @@ using namespace TencentCloud::Lke::V20231130::Model;
 using namespace std;
 
 GetWsTokenResponse::GetWsTokenResponse() :
-    m_tokenHasBeenSet(false)
+    m_tokenHasBeenSet(false),
+    m_balanceHasBeenSet(false),
+    m_inputLenLimitHasBeenSet(false)
 {
 }
 
@@ -72,6 +74,26 @@ CoreInternalOutcome GetWsTokenResponse::Deserialize(const string &payload)
         m_tokenHasBeenSet = true;
     }
 
+    if (rsp.HasMember("Balance") && !rsp["Balance"].IsNull())
+    {
+        if (!rsp["Balance"].IsLosslessDouble())
+        {
+            return CoreInternalOutcome(Core::Error("response `Balance` IsLosslessDouble=false incorrectly").SetRequestId(requestId));
+        }
+        m_balance = rsp["Balance"].GetDouble();
+        m_balanceHasBeenSet = true;
+    }
+
+    if (rsp.HasMember("InputLenLimit") && !rsp["InputLenLimit"].IsNull())
+    {
+        if (!rsp["InputLenLimit"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `InputLenLimit` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_inputLenLimit = rsp["InputLenLimit"].GetInt64();
+        m_inputLenLimitHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -88,6 +110,22 @@ string GetWsTokenResponse::ToJsonString() const
         string key = "Token";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_token.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_balanceHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Balance";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_balance, allocator);
+    }
+
+    if (m_inputLenLimitHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "InputLenLimit";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_inputLenLimit, allocator);
     }
 
     rapidjson::Value iKey(rapidjson::kStringType);
@@ -110,6 +148,26 @@ string GetWsTokenResponse::GetToken() const
 bool GetWsTokenResponse::TokenHasBeenSet() const
 {
     return m_tokenHasBeenSet;
+}
+
+double GetWsTokenResponse::GetBalance() const
+{
+    return m_balance;
+}
+
+bool GetWsTokenResponse::BalanceHasBeenSet() const
+{
+    return m_balanceHasBeenSet;
+}
+
+int64_t GetWsTokenResponse::GetInputLenLimit() const
+{
+    return m_inputLenLimit;
+}
+
+bool GetWsTokenResponse::InputLenLimitHasBeenSet() const
+{
+    return m_inputLenLimitHasBeenSet;
 }
 
 

@@ -221,6 +221,31 @@ namespace TencentCloud
                      */
                     bool DocTopNHasBeenSet() const;
 
+                    /**
+                     * 获取检索置信度，针对文档和问答有效，最小0.01，最大0.99
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return Confidence 检索置信度，针对文档和问答有效，最小0.01，最大0.99
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    double GetConfidence() const;
+
+                    /**
+                     * 设置检索置信度，针对文档和问答有效，最小0.01，最大0.99
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _confidence 检索置信度，针对文档和问答有效，最小0.01，最大0.99
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetConfidence(const double& _confidence);
+
+                    /**
+                     * 判断参数 Confidence 是否已赋值
+                     * @return Confidence 是否已赋值
+                     * 
+                     */
+                    bool ConfidenceHasBeenSet() const;
+
                 private:
 
                     /**
@@ -271,6 +296,13 @@ namespace TencentCloud
                      */
                     uint64_t m_docTopN;
                     bool m_docTopNHasBeenSet;
+
+                    /**
+                     * 检索置信度，针对文档和问答有效，最小0.01，最大0.99
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    double m_confidence;
+                    bool m_confidenceHasBeenSet;
 
                 };
             }

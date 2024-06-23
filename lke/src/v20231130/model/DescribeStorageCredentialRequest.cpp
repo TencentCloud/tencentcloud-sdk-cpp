@@ -25,7 +25,8 @@ using namespace std;
 DescribeStorageCredentialRequest::DescribeStorageCredentialRequest() :
     m_botBizIdHasBeenSet(false),
     m_fileTypeHasBeenSet(false),
-    m_isPublicHasBeenSet(false)
+    m_isPublicHasBeenSet(false),
+    m_typeKeyHasBeenSet(false)
 {
 }
 
@@ -58,6 +59,14 @@ string DescribeStorageCredentialRequest::ToJsonString() const
         string key = "IsPublic";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_isPublic, allocator);
+    }
+
+    if (m_typeKeyHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "TypeKey";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_typeKey.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -114,6 +123,22 @@ void DescribeStorageCredentialRequest::SetIsPublic(const bool& _isPublic)
 bool DescribeStorageCredentialRequest::IsPublicHasBeenSet() const
 {
     return m_isPublicHasBeenSet;
+}
+
+string DescribeStorageCredentialRequest::GetTypeKey() const
+{
+    return m_typeKey;
+}
+
+void DescribeStorageCredentialRequest::SetTypeKey(const string& _typeKey)
+{
+    m_typeKey = _typeKey;
+    m_typeKeyHasBeenSet = true;
+}
+
+bool DescribeStorageCredentialRequest::TypeKeyHasBeenSet() const
+{
+    return m_typeKeyHasBeenSet;
 }
 
 

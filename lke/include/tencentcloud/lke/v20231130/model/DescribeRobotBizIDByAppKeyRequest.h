@@ -43,15 +43,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取机器人appkey
-                     * @return AppKey 机器人appkey
+                     * 获取应用appkey
+                     * @return AppKey 应用appkey
                      * 
                      */
                     std::string GetAppKey() const;
 
                     /**
-                     * 设置机器人appkey
-                     * @param _appKey 机器人appkey
+                     * 设置应用appkey
+                     * @param _appKey 应用appkey
                      * 
                      */
                     void SetAppKey(const std::string& _appKey);
@@ -66,7 +66,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 机器人appkey
+                     * 应用appkey
                      */
                     std::string m_appKey;
                     bool m_appKeyHasBeenSet;

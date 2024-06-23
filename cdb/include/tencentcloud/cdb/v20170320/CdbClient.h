@@ -191,6 +191,8 @@
 #include <tencentcloud/cdb/v20170320/model/DescribeInstanceParamRecordsResponse.h>
 #include <tencentcloud/cdb/v20170320/model/DescribeInstanceParamsRequest.h>
 #include <tencentcloud/cdb/v20170320/model/DescribeInstanceParamsResponse.h>
+#include <tencentcloud/cdb/v20170320/model/DescribeInstanceUpgradeTypeRequest.h>
+#include <tencentcloud/cdb/v20170320/model/DescribeInstanceUpgradeTypeResponse.h>
 #include <tencentcloud/cdb/v20170320/model/DescribeLocalBinlogConfigRequest.h>
 #include <tencentcloud/cdb/v20170320/model/DescribeLocalBinlogConfigResponse.h>
 #include <tencentcloud/cdb/v20170320/model/DescribeParamTemplateInfoRequest.h>
@@ -617,6 +619,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeInstanceParamsResponse> DescribeInstanceParamsOutcome;
                 typedef std::future<DescribeInstanceParamsOutcome> DescribeInstanceParamsOutcomeCallable;
                 typedef std::function<void(const CdbClient*, const Model::DescribeInstanceParamsRequest&, DescribeInstanceParamsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeInstanceParamsAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeInstanceUpgradeTypeResponse> DescribeInstanceUpgradeTypeOutcome;
+                typedef std::future<DescribeInstanceUpgradeTypeOutcome> DescribeInstanceUpgradeTypeOutcomeCallable;
+                typedef std::function<void(const CdbClient*, const Model::DescribeInstanceUpgradeTypeRequest&, DescribeInstanceUpgradeTypeOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeInstanceUpgradeTypeAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeLocalBinlogConfigResponse> DescribeLocalBinlogConfigOutcome;
                 typedef std::future<DescribeLocalBinlogConfigOutcome> DescribeLocalBinlogConfigOutcomeCallable;
                 typedef std::function<void(const CdbClient*, const Model::DescribeLocalBinlogConfigRequest&, DescribeLocalBinlogConfigOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeLocalBinlogConfigAsyncHandler;
@@ -1637,6 +1642,15 @@ namespace TencentCloud
                 DescribeInstanceParamsOutcome DescribeInstanceParams(const Model::DescribeInstanceParamsRequest &request);
                 void DescribeInstanceParamsAsync(const Model::DescribeInstanceParamsRequest& request, const DescribeInstanceParamsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DescribeInstanceParamsOutcomeCallable DescribeInstanceParamsCallable(const Model::DescribeInstanceParamsRequest& request);
+
+                /**
+                 *本接口(DescribeInstanceUpgradeType)用于查询数据库实例升级类型。
+                 * @param req DescribeInstanceUpgradeTypeRequest
+                 * @return DescribeInstanceUpgradeTypeOutcome
+                 */
+                DescribeInstanceUpgradeTypeOutcome DescribeInstanceUpgradeType(const Model::DescribeInstanceUpgradeTypeRequest &request);
+                void DescribeInstanceUpgradeTypeAsync(const Model::DescribeInstanceUpgradeTypeRequest& request, const DescribeInstanceUpgradeTypeAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeInstanceUpgradeTypeOutcomeCallable DescribeInstanceUpgradeTypeCallable(const Model::DescribeInstanceUpgradeTypeRequest& request);
 
                 /**
                  *该接口用于查询实例本地binlog保留策略。

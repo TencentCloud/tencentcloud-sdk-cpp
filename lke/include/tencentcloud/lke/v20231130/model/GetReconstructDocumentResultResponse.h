@@ -73,8 +73,8 @@ namespace TencentCloud
                     bool DocumentRecognizeResultUrlHasBeenSet() const;
 
                     /**
-                     * 获取还原失败的页
-                     * @return FailedPages 还原失败的页
+                     * 获取文档解析失败的页码
+                     * @return FailedPages 文档解析失败的页码
                      * 
                      */
                     std::vector<ReconstructDocumentFailedPage> GetFailedPages() const;
@@ -101,7 +101,7 @@ namespace TencentCloud
                     bool m_documentRecognizeResultUrlHasBeenSet;
 
                     /**
-                     * 还原失败的页
+                     * 文档解析失败的页码
                      */
                     std::vector<ReconstructDocumentFailedPage> m_failedPages;
                     bool m_failedPagesHasBeenSet;

@@ -149,15 +149,15 @@ namespace TencentCloud
                     bool ValuesHasBeenSet() const;
 
                     /**
-                     * 获取制品来源，范围：tke-market 或 other
-                     * @return ChartFrom 制品来源，范围：tke-market 或 other
+                     * 获取制品来源，范围：tke-market 或 other默认值：tke-market。
+                     * @return ChartFrom 制品来源，范围：tke-market 或 other默认值：tke-market。
                      * 
                      */
                     std::string GetChartFrom() const;
 
                     /**
-                     * 设置制品来源，范围：tke-market 或 other
-                     * @param _chartFrom 制品来源，范围：tke-market 或 other
+                     * 设置制品来源，范围：tke-market 或 other默认值：tke-market。
+                     * @param _chartFrom 制品来源，范围：tke-market 或 other默认值：tke-market。
                      * 
                      */
                     void SetChartFrom(const std::string& _chartFrom);
@@ -328,7 +328,7 @@ namespace TencentCloud
                     bool m_valuesHasBeenSet;
 
                     /**
-                     * 制品来源，范围：tke-market 或 other
+                     * 制品来源，范围：tke-market 或 other默认值：tke-market。
                      */
                     std::string m_chartFrom;
                     bool m_chartFromHasBeenSet;

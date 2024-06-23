@@ -33,7 +33,9 @@ SendEmailRequest::SendEmailRequest() :
     m_simpleHasBeenSet(false),
     m_attachmentsHasBeenSet(false),
     m_unsubscribeHasBeenSet(false),
-    m_triggerTypeHasBeenSet(false)
+    m_triggerTypeHasBeenSet(false),
+    m_smtpMessageIdHasBeenSet(false),
+    m_smtpHeadersHasBeenSet(false)
 {
 }
 
@@ -154,6 +156,22 @@ string SendEmailRequest::ToJsonString() const
         string key = "TriggerType";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_triggerType, allocator);
+    }
+
+    if (m_smtpMessageIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "SmtpMessageId";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_smtpMessageId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_smtpHeadersHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "SmtpHeaders";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_smtpHeaders.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -338,6 +356,38 @@ void SendEmailRequest::SetTriggerType(const uint64_t& _triggerType)
 bool SendEmailRequest::TriggerTypeHasBeenSet() const
 {
     return m_triggerTypeHasBeenSet;
+}
+
+string SendEmailRequest::GetSmtpMessageId() const
+{
+    return m_smtpMessageId;
+}
+
+void SendEmailRequest::SetSmtpMessageId(const string& _smtpMessageId)
+{
+    m_smtpMessageId = _smtpMessageId;
+    m_smtpMessageIdHasBeenSet = true;
+}
+
+bool SendEmailRequest::SmtpMessageIdHasBeenSet() const
+{
+    return m_smtpMessageIdHasBeenSet;
+}
+
+string SendEmailRequest::GetSmtpHeaders() const
+{
+    return m_smtpHeaders;
+}
+
+void SendEmailRequest::SetSmtpHeaders(const string& _smtpHeaders)
+{
+    m_smtpHeaders = _smtpHeaders;
+    m_smtpHeadersHasBeenSet = true;
+}
+
+bool SendEmailRequest::SmtpHeadersHasBeenSet() const
+{
+    return m_smtpHeadersHasBeenSet;
 }
 
 

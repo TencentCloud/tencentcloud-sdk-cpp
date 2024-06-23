@@ -24,7 +24,8 @@ AppModel::AppModel() :
     m_nameHasBeenSet(false),
     m_descHasBeenSet(false),
     m_contextLimitHasBeenSet(false),
-    m_aliasNameHasBeenSet(false)
+    m_aliasNameHasBeenSet(false),
+    m_tokenBalanceHasBeenSet(false)
 {
 }
 
@@ -73,6 +74,16 @@ CoreInternalOutcome AppModel::Deserialize(const rapidjson::Value &value)
         m_aliasNameHasBeenSet = true;
     }
 
+    if (value.HasMember("TokenBalance") && !value["TokenBalance"].IsNull())
+    {
+        if (!value["TokenBalance"].IsLosslessDouble())
+        {
+            return CoreInternalOutcome(Core::Error("response `AppModel.TokenBalance` IsLosslessDouble=false incorrectly").SetRequestId(requestId));
+        }
+        m_tokenBalance = value["TokenBalance"].GetDouble();
+        m_tokenBalanceHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -110,6 +121,14 @@ void AppModel::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Alloca
         string key = "AliasName";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_aliasName.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_tokenBalanceHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "TokenBalance";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_tokenBalance, allocator);
     }
 
 }
@@ -177,5 +196,21 @@ void AppModel::SetAliasName(const string& _aliasName)
 bool AppModel::AliasNameHasBeenSet() const
 {
     return m_aliasNameHasBeenSet;
+}
+
+double AppModel::GetTokenBalance() const
+{
+    return m_tokenBalance;
+}
+
+void AppModel::SetTokenBalance(const double& _tokenBalance)
+{
+    m_tokenBalance = _tokenBalance;
+    m_tokenBalanceHasBeenSet = true;
+}
+
+bool AppModel::TokenBalanceHasBeenSet() const
+{
+    return m_tokenBalanceHasBeenSet;
 }
 

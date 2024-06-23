@@ -513,15 +513,15 @@ namespace TencentCloud
                     bool EndDelayTimeHasBeenSet() const;
 
                     /**
-                     * 获取直播类型：0 常规（默认）1 伪直播
-                     * @return LiveType 直播类型：0 常规（默认）1 伪直播
+                     * 获取直播类型：0 常规（默认）1 伪直播 2 RTMP推流直播
+                     * @return LiveType 直播类型：0 常规（默认）1 伪直播 2 RTMP推流直播
                      * 
                      */
                     uint64_t GetLiveType() const;
 
                     /**
-                     * 设置直播类型：0 常规（默认）1 伪直播
-                     * @param _liveType 直播类型：0 常规（默认）1 伪直播
+                     * 设置直播类型：0 常规（默认）1 伪直播 2 RTMP推流直播
+                     * @param _liveType 直播类型：0 常规（默认）1 伪直播 2 RTMP推流直播
                      * 
                      */
                     void SetLiveType(const uint64_t& _liveType);
@@ -555,15 +555,15 @@ namespace TencentCloud
                     bool RecordLiveUrlHasBeenSet() const;
 
                     /**
-                     * 获取是否自动开始上课：0 不自动上课（默认） 1 自动上课 live_type=1的时候有效
-                     * @return EnableAutoStart 是否自动开始上课：0 不自动上课（默认） 1 自动上课 live_type=1的时候有效
+                     * 获取是否自动开始上课：0 不自动上课（默认） 1 自动上课 live_type=1或2的时候有效
+                     * @return EnableAutoStart 是否自动开始上课：0 不自动上课（默认） 1 自动上课 live_type=1或2的时候有效
                      * 
                      */
                     uint64_t GetEnableAutoStart() const;
 
                     /**
-                     * 设置是否自动开始上课：0 不自动上课（默认） 1 自动上课 live_type=1的时候有效
-                     * @param _enableAutoStart 是否自动开始上课：0 不自动上课（默认） 1 自动上课 live_type=1的时候有效
+                     * 设置是否自动开始上课：0 不自动上课（默认） 1 自动上课 live_type=1或2的时候有效
+                     * @param _enableAutoStart 是否自动开始上课：0 不自动上课（默认） 1 自动上课 live_type=1或2的时候有效
                      * 
                      */
                     void SetEnableAutoStart(const uint64_t& _enableAutoStart);
@@ -774,7 +774,7 @@ namespace TencentCloud
                     bool m_endDelayTimeHasBeenSet;
 
                     /**
-                     * 直播类型：0 常规（默认）1 伪直播
+                     * 直播类型：0 常规（默认）1 伪直播 2 RTMP推流直播
                      */
                     uint64_t m_liveType;
                     bool m_liveTypeHasBeenSet;
@@ -786,7 +786,7 @@ namespace TencentCloud
                     bool m_recordLiveUrlHasBeenSet;
 
                     /**
-                     * 是否自动开始上课：0 不自动上课（默认） 1 自动上课 live_type=1的时候有效
+                     * 是否自动开始上课：0 不自动上课（默认） 1 自动上课 live_type=1或2的时候有效
                      */
                     uint64_t m_enableAutoStart;
                     bool m_enableAutoStartHasBeenSet;

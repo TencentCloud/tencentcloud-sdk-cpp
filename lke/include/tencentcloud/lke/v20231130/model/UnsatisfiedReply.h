@@ -122,18 +122,18 @@ namespace TencentCloud
                     bool QuestionHasBeenSet() const;
 
                     /**
-                     * 获取机器人回复
+                     * 获取应用回复
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return Answer 机器人回复
+                     * @return Answer 应用回复
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetAnswer() const;
 
                     /**
-                     * 设置机器人回复
+                     * 设置应用回复
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _answer 机器人回复
+                     * @param _answer 应用回复
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -195,7 +195,7 @@ namespace TencentCloud
                     bool m_questionHasBeenSet;
 
                     /**
-                     * 机器人回复
+                     * 应用回复
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_answer;

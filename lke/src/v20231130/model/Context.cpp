@@ -25,7 +25,8 @@ Context::Context() :
     m_isVisitorHasBeenSet(false),
     m_nickNameHasBeenSet(false),
     m_avatarHasBeenSet(false),
-    m_contentHasBeenSet(false)
+    m_contentHasBeenSet(false),
+    m_fileInfosHasBeenSet(false)
 {
 }
 
@@ -84,6 +85,26 @@ CoreInternalOutcome Context::Deserialize(const rapidjson::Value &value)
         m_contentHasBeenSet = true;
     }
 
+    if (value.HasMember("FileInfos") && !value["FileInfos"].IsNull())
+    {
+        if (!value["FileInfos"].IsArray())
+            return CoreInternalOutcome(Core::Error("response `Context.FileInfos` is not array type"));
+
+        const rapidjson::Value &tmpValue = value["FileInfos"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            MsgFileInfo item;
+            CoreInternalOutcome outcome = item.Deserialize(*itr);
+            if (!outcome.IsSuccess())
+            {
+                outcome.GetError().SetRequestId(requestId);
+                return outcome;
+            }
+            m_fileInfos.push_back(item);
+        }
+        m_fileInfosHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -129,6 +150,21 @@ void Context::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Allocat
         string key = "Content";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_content.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_fileInfosHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "FileInfos";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_fileInfos.begin(); itr != m_fileInfos.end(); ++itr, ++i)
+        {
+            value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(value[key.c_str()][i], allocator);
+        }
     }
 
 }
@@ -212,5 +248,21 @@ void Context::SetContent(const string& _content)
 bool Context::ContentHasBeenSet() const
 {
     return m_contentHasBeenSet;
+}
+
+vector<MsgFileInfo> Context::GetFileInfos() const
+{
+    return m_fileInfos;
+}
+
+void Context::SetFileInfos(const vector<MsgFileInfo>& _fileInfos)
+{
+    m_fileInfos = _fileInfos;
+    m_fileInfosHasBeenSet = true;
+}
+
+bool Context::FileInfosHasBeenSet() const
+{
+    return m_fileInfosHasBeenSet;
 }
 

@@ -24,7 +24,8 @@ using namespace std;
 
 GetDocPreviewRequest::GetDocPreviewRequest() :
     m_docBizIdHasBeenSet(false),
-    m_botBizIdHasBeenSet(false)
+    m_botBizIdHasBeenSet(false),
+    m_typeKeyHasBeenSet(false)
 {
 }
 
@@ -49,6 +50,14 @@ string GetDocPreviewRequest::ToJsonString() const
         string key = "BotBizId";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_botBizId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_typeKeyHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "TypeKey";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_typeKey.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -89,6 +98,22 @@ void GetDocPreviewRequest::SetBotBizId(const string& _botBizId)
 bool GetDocPreviewRequest::BotBizIdHasBeenSet() const
 {
     return m_botBizIdHasBeenSet;
+}
+
+string GetDocPreviewRequest::GetTypeKey() const
+{
+    return m_typeKey;
+}
+
+void GetDocPreviewRequest::SetTypeKey(const string& _typeKey)
+{
+    m_typeKey = _typeKey;
+    m_typeKeyHasBeenSet = true;
+}
+
+bool GetDocPreviewRequest::TypeKeyHasBeenSet() const
+{
+    return m_typeKeyHasBeenSet;
 }
 
 

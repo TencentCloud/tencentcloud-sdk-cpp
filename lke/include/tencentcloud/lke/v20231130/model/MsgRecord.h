@@ -27,6 +27,7 @@
 #include <tencentcloud/lke/v20231130/model/MsgRecordReference.h>
 #include <tencentcloud/lke/v20231130/model/TokenStat.h>
 #include <tencentcloud/lke/v20231130/model/TaskFlowInfo.h>
+#include <tencentcloud/lke/v20231130/model/FileInfo.h>
 
 
 namespace TencentCloud
@@ -441,8 +442,36 @@ namespace TencentCloud
 
                     /**
                      * 获取回复方式
+1:大模型直接回复;
+2:保守回复, 未知问题回复;
+3:拒答问题回复;
+4:敏感回复;
+5:问答对直接回复, 已采纳问答对优先回复;
+6:欢迎语回复;
+7:并发超限回复;
+8:全局干预知识;
+9:任务流程过程回复, 当历史记录中 task_flow.type = 0 时, 为大模型回复;
+10:任务流程答案回复;
+11:搜索引擎回复;
+12:知识润色后回复;
+13:图片理解回复;
+14:实时文档回复;
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return ReplyMethod 回复方式
+1:大模型直接回复;
+2:保守回复, 未知问题回复;
+3:拒答问题回复;
+4:敏感回复;
+5:问答对直接回复, 已采纳问答对优先回复;
+6:欢迎语回复;
+7:并发超限回复;
+8:全局干预知识;
+9:任务流程过程回复, 当历史记录中 task_flow.type = 0 时, 为大模型回复;
+10:任务流程答案回复;
+11:搜索引擎回复;
+12:知识润色后回复;
+13:图片理解回复;
+14:实时文档回复;
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -450,8 +479,36 @@ namespace TencentCloud
 
                     /**
                      * 设置回复方式
+1:大模型直接回复;
+2:保守回复, 未知问题回复;
+3:拒答问题回复;
+4:敏感回复;
+5:问答对直接回复, 已采纳问答对优先回复;
+6:欢迎语回复;
+7:并发超限回复;
+8:全局干预知识;
+9:任务流程过程回复, 当历史记录中 task_flow.type = 0 时, 为大模型回复;
+10:任务流程答案回复;
+11:搜索引擎回复;
+12:知识润色后回复;
+13:图片理解回复;
+14:实时文档回复;
 注意：此字段可能返回 null，表示取不到有效值。
                      * @param _replyMethod 回复方式
+1:大模型直接回复;
+2:保守回复, 未知问题回复;
+3:拒答问题回复;
+4:敏感回复;
+5:问答对直接回复, 已采纳问答对优先回复;
+6:欢迎语回复;
+7:并发超限回复;
+8:全局干预知识;
+9:任务流程过程回复, 当历史记录中 task_flow.type = 0 时, 为大模型回复;
+10:任务流程答案回复;
+11:搜索引擎回复;
+12:知识润色后回复;
+13:图片理解回复;
+14:实时文档回复;
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -513,6 +570,31 @@ namespace TencentCloud
                      * 
                      */
                     bool TaskFlowHasBeenSet() const;
+
+                    /**
+                     * 获取用户传入的文件信息
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return FileInfos 用户传入的文件信息
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::vector<FileInfo> GetFileInfos() const;
+
+                    /**
+                     * 设置用户传入的文件信息
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _fileInfos 用户传入的文件信息
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetFileInfos(const std::vector<FileInfo>& _fileInfos);
+
+                    /**
+                     * 判断参数 FileInfos 是否已赋值
+                     * @return FileInfos 是否已赋值
+                     * 
+                     */
+                    bool FileInfosHasBeenSet() const;
 
                 private:
 
@@ -629,6 +711,20 @@ namespace TencentCloud
 
                     /**
                      * 回复方式
+1:大模型直接回复;
+2:保守回复, 未知问题回复;
+3:拒答问题回复;
+4:敏感回复;
+5:问答对直接回复, 已采纳问答对优先回复;
+6:欢迎语回复;
+7:并发超限回复;
+8:全局干预知识;
+9:任务流程过程回复, 当历史记录中 task_flow.type = 0 时, 为大模型回复;
+10:任务流程答案回复;
+11:搜索引擎回复;
+12:知识润色后回复;
+13:图片理解回复;
+14:实时文档回复;
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     uint64_t m_replyMethod;
@@ -647,6 +743,13 @@ namespace TencentCloud
                      */
                     TaskFlowInfo m_taskFlow;
                     bool m_taskFlowHasBeenSet;
+
+                    /**
+                     * 用户传入的文件信息
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::vector<FileInfo> m_fileInfos;
+                    bool m_fileInfosHasBeenSet;
 
                 };
             }

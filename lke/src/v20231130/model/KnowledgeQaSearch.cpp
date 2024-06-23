@@ -27,7 +27,8 @@ KnowledgeQaSearch::KnowledgeQaSearch() :
     m_showSearchEngineHasBeenSet(false),
     m_isEnabledHasBeenSet(false),
     m_qaTopNHasBeenSet(false),
-    m_docTopNHasBeenSet(false)
+    m_docTopNHasBeenSet(false),
+    m_confidenceHasBeenSet(false)
 {
 }
 
@@ -106,6 +107,16 @@ CoreInternalOutcome KnowledgeQaSearch::Deserialize(const rapidjson::Value &value
         m_docTopNHasBeenSet = true;
     }
 
+    if (value.HasMember("Confidence") && !value["Confidence"].IsNull())
+    {
+        if (!value["Confidence"].IsLosslessDouble())
+        {
+            return CoreInternalOutcome(Core::Error("response `KnowledgeQaSearch.Confidence` IsLosslessDouble=false incorrectly").SetRequestId(requestId));
+        }
+        m_confidence = value["Confidence"].GetDouble();
+        m_confidenceHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -167,6 +178,14 @@ void KnowledgeQaSearch::ToJsonObject(rapidjson::Value &value, rapidjson::Documen
         string key = "DocTopN";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_docTopN, allocator);
+    }
+
+    if (m_confidenceHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Confidence";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_confidence, allocator);
     }
 
 }
@@ -282,5 +301,21 @@ void KnowledgeQaSearch::SetDocTopN(const uint64_t& _docTopN)
 bool KnowledgeQaSearch::DocTopNHasBeenSet() const
 {
     return m_docTopNHasBeenSet;
+}
+
+double KnowledgeQaSearch::GetConfidence() const
+{
+    return m_confidence;
+}
+
+void KnowledgeQaSearch::SetConfidence(const double& _confidence)
+{
+    m_confidence = _confidence;
+    m_confidenceHasBeenSet = true;
+}
+
+bool KnowledgeQaSearch::ConfidenceHasBeenSet() const
+{
+    return m_confidenceHasBeenSet;
 }
 

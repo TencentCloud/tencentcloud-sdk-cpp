@@ -43,15 +43,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取机器人ID
-                     * @return BotBizId 机器人ID
+                     * 获取应用ID
+                     * @return BotBizId 应用ID
                      * 
                      */
                     std::string GetBotBizId() const;
 
                     /**
-                     * 设置机器人ID
-                     * @param _botBizId 机器人ID
+                     * 设置应用ID
+                     * @param _botBizId 应用ID
                      * 
                      */
                     void SetBotBizId(const std::string& _botBizId);
@@ -64,15 +64,15 @@ namespace TencentCloud
                     bool BotBizIdHasBeenSet() const;
 
                     /**
-                     * 获取文件类型
-                     * @return FileType 文件类型
+                     * 获取文件类型,正常的文件名类型后缀，例如 xlsx、pdf、 docx、png 等
+                     * @return FileType 文件类型,正常的文件名类型后缀，例如 xlsx、pdf、 docx、png 等
                      * 
                      */
                     std::string GetFileType() const;
 
                     /**
-                     * 设置文件类型
-                     * @param _fileType 文件类型
+                     * 设置文件类型,正常的文件名类型后缀，例如 xlsx、pdf、 docx、png 等
+                     * @param _fileType 文件类型,正常的文件名类型后缀，例如 xlsx、pdf、 docx、png 等
                      * 
                      */
                     void SetFileType(const std::string& _fileType);
@@ -85,15 +85,15 @@ namespace TencentCloud
                     bool FileTypeHasBeenSet() const;
 
                     /**
-                     * 获取权限场景，是否公有权限
-                     * @return IsPublic 权限场景，是否公有权限
+                     * 获取IsPublic为空用于上传文件时选择场景，当上传为图片文件是IsPublic为true，上传文档文件时场景IsPublic为false
+                     * @return IsPublic IsPublic为空用于上传文件时选择场景，当上传为图片文件是IsPublic为true，上传文档文件时场景IsPublic为false
                      * 
                      */
                     bool GetIsPublic() const;
 
                     /**
-                     * 设置权限场景，是否公有权限
-                     * @param _isPublic 权限场景，是否公有权限
+                     * 设置IsPublic为空用于上传文件时选择场景，当上传为图片文件是IsPublic为true，上传文档文件时场景IsPublic为false
+                     * @param _isPublic IsPublic为空用于上传文件时选择场景，当上传为图片文件是IsPublic为true，上传文档文件时场景IsPublic为false
                      * 
                      */
                     void SetIsPublic(const bool& _isPublic);
@@ -105,25 +105,52 @@ namespace TencentCloud
                      */
                     bool IsPublicHasBeenSet() const;
 
+                    /**
+                     * 获取存储类型: offline:离线文件，realtime:实时文件；为空默认为offline
+                     * @return TypeKey 存储类型: offline:离线文件，realtime:实时文件；为空默认为offline
+                     * 
+                     */
+                    std::string GetTypeKey() const;
+
+                    /**
+                     * 设置存储类型: offline:离线文件，realtime:实时文件；为空默认为offline
+                     * @param _typeKey 存储类型: offline:离线文件，realtime:实时文件；为空默认为offline
+                     * 
+                     */
+                    void SetTypeKey(const std::string& _typeKey);
+
+                    /**
+                     * 判断参数 TypeKey 是否已赋值
+                     * @return TypeKey 是否已赋值
+                     * 
+                     */
+                    bool TypeKeyHasBeenSet() const;
+
                 private:
 
                     /**
-                     * 机器人ID
+                     * 应用ID
                      */
                     std::string m_botBizId;
                     bool m_botBizIdHasBeenSet;
 
                     /**
-                     * 文件类型
+                     * 文件类型,正常的文件名类型后缀，例如 xlsx、pdf、 docx、png 等
                      */
                     std::string m_fileType;
                     bool m_fileTypeHasBeenSet;
 
                     /**
-                     * 权限场景，是否公有权限
+                     * IsPublic为空用于上传文件时选择场景，当上传为图片文件是IsPublic为true，上传文档文件时场景IsPublic为false
                      */
                     bool m_isPublic;
                     bool m_isPublicHasBeenSet;
+
+                    /**
+                     * 存储类型: offline:离线文件，realtime:实时文件；为空默认为offline
+                     */
+                    std::string m_typeKey;
+                    bool m_typeKeyHasBeenSet;
 
                 };
             }

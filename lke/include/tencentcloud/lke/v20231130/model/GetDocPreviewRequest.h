@@ -64,15 +64,15 @@ namespace TencentCloud
                     bool DocBizIdHasBeenSet() const;
 
                     /**
-                     * 获取机器人ID
-                     * @return BotBizId 机器人ID
+                     * 获取应用ID
+                     * @return BotBizId 应用ID
                      * 
                      */
                     std::string GetBotBizId() const;
 
                     /**
-                     * 设置机器人ID
-                     * @param _botBizId 机器人ID
+                     * 设置应用ID
+                     * @param _botBizId 应用ID
                      * 
                      */
                     void SetBotBizId(const std::string& _botBizId);
@@ -84,6 +84,27 @@ namespace TencentCloud
                      */
                     bool BotBizIdHasBeenSet() const;
 
+                    /**
+                     * 获取存储类型: offline:离线文件，realtime:实时文件；为空默认为offline
+                     * @return TypeKey 存储类型: offline:离线文件，realtime:实时文件；为空默认为offline
+                     * 
+                     */
+                    std::string GetTypeKey() const;
+
+                    /**
+                     * 设置存储类型: offline:离线文件，realtime:实时文件；为空默认为offline
+                     * @param _typeKey 存储类型: offline:离线文件，realtime:实时文件；为空默认为offline
+                     * 
+                     */
+                    void SetTypeKey(const std::string& _typeKey);
+
+                    /**
+                     * 判断参数 TypeKey 是否已赋值
+                     * @return TypeKey 是否已赋值
+                     * 
+                     */
+                    bool TypeKeyHasBeenSet() const;
+
                 private:
 
                     /**
@@ -93,10 +114,16 @@ namespace TencentCloud
                     bool m_docBizIdHasBeenSet;
 
                     /**
-                     * 机器人ID
+                     * 应用ID
                      */
                     std::string m_botBizId;
                     bool m_botBizIdHasBeenSet;
+
+                    /**
+                     * 存储类型: offline:离线文件，realtime:实时文件；为空默认为offline
+                     */
+                    std::string m_typeKey;
+                    bool m_typeKeyHasBeenSet;
 
                 };
             }

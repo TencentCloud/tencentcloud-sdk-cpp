@@ -146,6 +146,31 @@ namespace TencentCloud
                      */
                     bool AliasNameHasBeenSet() const;
 
+                    /**
+                     * 获取token余量
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return TokenBalance token余量
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    double GetTokenBalance() const;
+
+                    /**
+                     * 设置token余量
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _tokenBalance token余量
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetTokenBalance(const double& _tokenBalance);
+
+                    /**
+                     * 判断参数 TokenBalance 是否已赋值
+                     * @return TokenBalance 是否已赋值
+                     * 
+                     */
+                    bool TokenBalanceHasBeenSet() const;
+
                 private:
 
                     /**
@@ -175,6 +200,13 @@ namespace TencentCloud
                      */
                     std::string m_aliasName;
                     bool m_aliasNameHasBeenSet;
+
+                    /**
+                     * token余量
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    double m_tokenBalance;
+                    bool m_tokenBalanceHasBeenSet;
 
                 };
             }

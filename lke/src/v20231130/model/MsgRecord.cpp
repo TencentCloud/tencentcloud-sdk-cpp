@@ -41,7 +41,8 @@ MsgRecord::MsgRecord() :
     m_tokenStatHasBeenSet(false),
     m_replyMethodHasBeenSet(false),
     m_optionCardsHasBeenSet(false),
-    m_taskFlowHasBeenSet(false)
+    m_taskFlowHasBeenSet(false),
+    m_fileInfosHasBeenSet(false)
 {
 }
 
@@ -293,6 +294,26 @@ CoreInternalOutcome MsgRecord::Deserialize(const rapidjson::Value &value)
         m_taskFlowHasBeenSet = true;
     }
 
+    if (value.HasMember("FileInfos") && !value["FileInfos"].IsNull())
+    {
+        if (!value["FileInfos"].IsArray())
+            return CoreInternalOutcome(Core::Error("response `MsgRecord.FileInfos` is not array type"));
+
+        const rapidjson::Value &tmpValue = value["FileInfos"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            FileInfo item;
+            CoreInternalOutcome outcome = item.Deserialize(*itr);
+            if (!outcome.IsSuccess())
+            {
+                outcome.GetError().SetRequestId(requestId);
+                return outcome;
+            }
+            m_fileInfos.push_back(item);
+        }
+        m_fileInfosHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -490,6 +511,21 @@ void MsgRecord::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Alloc
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
         m_taskFlow.ToJsonObject(value[key.c_str()], allocator);
+    }
+
+    if (m_fileInfosHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "FileInfos";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_fileInfos.begin(); itr != m_fileInfos.end(); ++itr, ++i)
+        {
+            value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(value[key.c_str()][i], allocator);
+        }
     }
 
 }
@@ -829,5 +865,21 @@ void MsgRecord::SetTaskFlow(const TaskFlowInfo& _taskFlow)
 bool MsgRecord::TaskFlowHasBeenSet() const
 {
     return m_taskFlowHasBeenSet;
+}
+
+vector<FileInfo> MsgRecord::GetFileInfos() const
+{
+    return m_fileInfos;
+}
+
+void MsgRecord::SetFileInfos(const vector<FileInfo>& _fileInfos)
+{
+    m_fileInfos = _fileInfos;
+    m_fileInfosHasBeenSet = true;
+}
+
+bool MsgRecord::FileInfosHasBeenSet() const
+{
+    return m_fileInfosHasBeenSet;
 }
 

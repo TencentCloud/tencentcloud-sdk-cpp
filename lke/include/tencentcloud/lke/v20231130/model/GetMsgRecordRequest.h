@@ -127,15 +127,15 @@ namespace TencentCloud
                     bool LastRecordIdHasBeenSet() const;
 
                     /**
-                     * 获取机器人AppKey
-                     * @return BotAppKey 机器人AppKey
+                     * 获取应用AppKey
+                     * @return BotAppKey 应用AppKey
                      * 
                      */
                     std::string GetBotAppKey() const;
 
                     /**
-                     * 设置机器人AppKey
-                     * @param _botAppKey 机器人AppKey
+                     * 设置应用AppKey
+                     * @param _botAppKey 应用AppKey
                      * 
                      */
                     void SetBotAppKey(const std::string& _botAppKey);
@@ -195,7 +195,7 @@ namespace TencentCloud
                     bool m_lastRecordIdHasBeenSet;
 
                     /**
-                     * 机器人AppKey
+                     * 应用AppKey
                      */
                     std::string m_botAppKey;
                     bool m_botAppKeyHasBeenSet;

@@ -171,8 +171,8 @@ namespace TencentCloud
                     bool ImagePathHasBeenSet() const;
 
                     /**
-                     * 获取上传存储目录
-                     * @return UploadPath 上传存储目录
+                     * 获取上传存储路径，到具体文件
+                     * @return UploadPath 上传存储路径，到具体文件
                      * 
                      */
                     std::string GetUploadPath() const;
@@ -241,7 +241,7 @@ namespace TencentCloud
                     bool m_imagePathHasBeenSet;
 
                     /**
-                     * 上传存储目录
+                     * 上传存储路径，到具体文件
                      */
                     std::string m_uploadPath;
                     bool m_uploadPathHasBeenSet;

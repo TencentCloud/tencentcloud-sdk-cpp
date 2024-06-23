@@ -57,6 +57,36 @@ namespace TencentCloud
                      */
                     bool TokenHasBeenSet() const;
 
+                    /**
+                     * 获取余额; 余额大于 0 时表示有效.
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return Balance 余额; 余额大于 0 时表示有效.
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    double GetBalance() const;
+
+                    /**
+                     * 判断参数 Balance 是否已赋值
+                     * @return Balance 是否已赋值
+                     * 
+                     */
+                    bool BalanceHasBeenSet() const;
+
+                    /**
+                     * 获取对话窗输入字符限制
+                     * @return InputLenLimit 对话窗输入字符限制
+                     * 
+                     */
+                    int64_t GetInputLenLimit() const;
+
+                    /**
+                     * 判断参数 InputLenLimit 是否已赋值
+                     * @return InputLenLimit 是否已赋值
+                     * 
+                     */
+                    bool InputLenLimitHasBeenSet() const;
+
                 private:
 
                     /**
@@ -64,6 +94,19 @@ namespace TencentCloud
                      */
                     std::string m_token;
                     bool m_tokenHasBeenSet;
+
+                    /**
+                     * 余额; 余额大于 0 时表示有效.
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    double m_balance;
+                    bool m_balanceHasBeenSet;
+
+                    /**
+                     * 对话窗输入字符限制
+                     */
+                    int64_t m_inputLenLimit;
+                    bool m_inputLenLimitHasBeenSet;
 
                 };
             }

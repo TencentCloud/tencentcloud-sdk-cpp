@@ -206,63 +206,63 @@ namespace TencentCloud
                     /**
                      * 获取【本字段已废弃】视频编码参数。可选，如果不填，保持原始流的参数。
                      * @return VideoEncodeParams 【本字段已废弃】视频编码参数。可选，如果不填，保持原始流的参数。
-                     * 
+                     * @deprecated
                      */
                     VideoEncodeParams GetVideoEncodeParams() const;
 
                     /**
                      * 设置【本字段已废弃】视频编码参数。可选，如果不填，保持原始流的参数。
                      * @param _videoEncodeParams 【本字段已废弃】视频编码参数。可选，如果不填，保持原始流的参数。
-                     * 
+                     * @deprecated
                      */
                     void SetVideoEncodeParams(const VideoEncodeParams& _videoEncodeParams);
 
                     /**
                      * 判断参数 VideoEncodeParams 是否已赋值
                      * @return VideoEncodeParams 是否已赋值
-                     * 
+                     * @deprecated
                      */
                     bool VideoEncodeParamsHasBeenSet() const;
 
                     /**
                      * 获取【本字段已废弃】音频编码参数。可选，如果不填，保持原始流的参数。
                      * @return AudioEncodeParams 【本字段已废弃】音频编码参数。可选，如果不填，保持原始流的参数。
-                     * 
+                     * @deprecated
                      */
                     AudioEncodeParams GetAudioEncodeParams() const;
 
                     /**
                      * 设置【本字段已废弃】音频编码参数。可选，如果不填，保持原始流的参数。
                      * @param _audioEncodeParams 【本字段已废弃】音频编码参数。可选，如果不填，保持原始流的参数。
-                     * 
+                     * @deprecated
                      */
                     void SetAudioEncodeParams(const AudioEncodeParams& _audioEncodeParams);
 
                     /**
                      * 判断参数 AudioEncodeParams 是否已赋值
                      * @return AudioEncodeParams 是否已赋值
-                     * 
+                     * @deprecated
                      */
                     bool AudioEncodeParamsHasBeenSet() const;
 
                     /**
                      * 获取【本字段已废弃，请使用 StreamUrl 字段】源流URL，支持一个地址。
                      * @return SourceUrl 【本字段已废弃，请使用 StreamUrl 字段】源流URL，支持一个地址。
-                     * 
+                     * @deprecated
                      */
                     std::vector<std::string> GetSourceUrl() const;
 
                     /**
                      * 设置【本字段已废弃，请使用 StreamUrl 字段】源流URL，支持一个地址。
                      * @param _sourceUrl 【本字段已废弃，请使用 StreamUrl 字段】源流URL，支持一个地址。
-                     * 
+                     * @deprecated
                      */
                     void SetSourceUrl(const std::vector<std::string>& _sourceUrl);
 
                     /**
                      * 判断参数 SourceUrl 是否已赋值
                      * @return SourceUrl 是否已赋值
-                     * 
+                     * @deprecated
                      */
                     bool SourceUrlHasBeenSet() const;
 

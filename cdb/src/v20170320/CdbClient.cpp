@@ -3652,6 +3652,49 @@ CdbClient::DescribeInstanceParamsOutcomeCallable CdbClient::DescribeInstancePara
     return task->get_future();
 }
 
+CdbClient::DescribeInstanceUpgradeTypeOutcome CdbClient::DescribeInstanceUpgradeType(const DescribeInstanceUpgradeTypeRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeInstanceUpgradeType");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeInstanceUpgradeTypeResponse rsp = DescribeInstanceUpgradeTypeResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeInstanceUpgradeTypeOutcome(rsp);
+        else
+            return DescribeInstanceUpgradeTypeOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeInstanceUpgradeTypeOutcome(outcome.GetError());
+    }
+}
+
+void CdbClient::DescribeInstanceUpgradeTypeAsync(const DescribeInstanceUpgradeTypeRequest& request, const DescribeInstanceUpgradeTypeAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeInstanceUpgradeType(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+CdbClient::DescribeInstanceUpgradeTypeOutcomeCallable CdbClient::DescribeInstanceUpgradeTypeCallable(const DescribeInstanceUpgradeTypeRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeInstanceUpgradeTypeOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeInstanceUpgradeType(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 CdbClient::DescribeLocalBinlogConfigOutcome CdbClient::DescribeLocalBinlogConfig(const DescribeLocalBinlogConfigRequest &request)
 {
     auto outcome = MakeRequest(request, "DescribeLocalBinlogConfig");

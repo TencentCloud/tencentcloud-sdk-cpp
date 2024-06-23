@@ -64,15 +64,15 @@ namespace TencentCloud
                     bool ContentHasBeenSet() const;
 
                     /**
-                     * 获取机器人appKey
-                     * @return BotAppKey 机器人appKey
+                     * 获取应用appKey
+                     * @return BotAppKey 应用appKey
                      * 
                      */
                     std::string GetBotAppKey() const;
 
                     /**
-                     * 设置机器人appKey
-                     * @param _botAppKey 机器人appKey
+                     * 设置应用appKey
+                     * @param _botAppKey 应用appKey
                      * 
                      */
                     void SetBotAppKey(const std::string& _botAppKey);
@@ -93,7 +93,7 @@ namespace TencentCloud
                     bool m_contentHasBeenSet;
 
                     /**
-                     * 机器人appKey
+                     * 应用appKey
                      */
                     std::string m_botAppKey;
                     bool m_botAppKeyHasBeenSet;

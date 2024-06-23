@@ -44,8 +44,8 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取机器人业务ID
-                     * @return BotBizId 机器人业务ID
+                     * 获取应用业务ID
+                     * @return BotBizId 应用业务ID
                      * 
                      */
                     std::string GetBotBizId() const;
@@ -60,7 +60,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 机器人业务ID
+                     * 应用业务ID
                      */
                     std::string m_botBizId;
                     bool m_botBizIdHasBeenSet;
