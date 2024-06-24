@@ -27,6 +27,8 @@
 #include <tencentcloud/lke/v20231130/model/CheckAttributeLabelExistResponse.h>
 #include <tencentcloud/lke/v20231130/model/CheckAttributeLabelReferRequest.h>
 #include <tencentcloud/lke/v20231130/model/CheckAttributeLabelReferResponse.h>
+#include <tencentcloud/lke/v20231130/model/ConvertDocumentRequest.h>
+#include <tencentcloud/lke/v20231130/model/ConvertDocumentResponse.h>
 #include <tencentcloud/lke/v20231130/model/CreateAppRequest.h>
 #include <tencentcloud/lke/v20231130/model/CreateAppResponse.h>
 #include <tencentcloud/lke/v20231130/model/CreateAttributeLabelRequest.h>
@@ -85,6 +87,8 @@
 #include <tencentcloud/lke/v20231130/model/ExportUnsatisfiedReplyResponse.h>
 #include <tencentcloud/lke/v20231130/model/GenerateQARequest.h>
 #include <tencentcloud/lke/v20231130/model/GenerateQAResponse.h>
+#include <tencentcloud/lke/v20231130/model/GetAnswerTypeDataCountRequest.h>
+#include <tencentcloud/lke/v20231130/model/GetAnswerTypeDataCountResponse.h>
 #include <tencentcloud/lke/v20231130/model/GetAppKnowledgeCountRequest.h>
 #include <tencentcloud/lke/v20231130/model/GetAppKnowledgeCountResponse.h>
 #include <tencentcloud/lke/v20231130/model/GetAppSecretRequest.h>
@@ -93,6 +97,8 @@
 #include <tencentcloud/lke/v20231130/model/GetDocPreviewResponse.h>
 #include <tencentcloud/lke/v20231130/model/GetEmbeddingRequest.h>
 #include <tencentcloud/lke/v20231130/model/GetEmbeddingResponse.h>
+#include <tencentcloud/lke/v20231130/model/GetLikeDataCountRequest.h>
+#include <tencentcloud/lke/v20231130/model/GetLikeDataCountResponse.h>
 #include <tencentcloud/lke/v20231130/model/GetMsgRecordRequest.h>
 #include <tencentcloud/lke/v20231130/model/GetMsgRecordResponse.h>
 #include <tencentcloud/lke/v20231130/model/GetReconstructDocumentResultRequest.h>
@@ -199,6 +205,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::CheckAttributeLabelReferResponse> CheckAttributeLabelReferOutcome;
                 typedef std::future<CheckAttributeLabelReferOutcome> CheckAttributeLabelReferOutcomeCallable;
                 typedef std::function<void(const LkeClient*, const Model::CheckAttributeLabelReferRequest&, CheckAttributeLabelReferOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CheckAttributeLabelReferAsyncHandler;
+                typedef Outcome<Core::Error, Model::ConvertDocumentResponse> ConvertDocumentOutcome;
+                typedef std::future<ConvertDocumentOutcome> ConvertDocumentOutcomeCallable;
+                typedef std::function<void(const LkeClient*, const Model::ConvertDocumentRequest&, ConvertDocumentOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ConvertDocumentAsyncHandler;
                 typedef Outcome<Core::Error, Model::CreateAppResponse> CreateAppOutcome;
                 typedef std::future<CreateAppOutcome> CreateAppOutcomeCallable;
                 typedef std::function<void(const LkeClient*, const Model::CreateAppRequest&, CreateAppOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateAppAsyncHandler;
@@ -286,6 +295,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::GenerateQAResponse> GenerateQAOutcome;
                 typedef std::future<GenerateQAOutcome> GenerateQAOutcomeCallable;
                 typedef std::function<void(const LkeClient*, const Model::GenerateQARequest&, GenerateQAOutcome, const std::shared_ptr<const AsyncCallerContext>&)> GenerateQAAsyncHandler;
+                typedef Outcome<Core::Error, Model::GetAnswerTypeDataCountResponse> GetAnswerTypeDataCountOutcome;
+                typedef std::future<GetAnswerTypeDataCountOutcome> GetAnswerTypeDataCountOutcomeCallable;
+                typedef std::function<void(const LkeClient*, const Model::GetAnswerTypeDataCountRequest&, GetAnswerTypeDataCountOutcome, const std::shared_ptr<const AsyncCallerContext>&)> GetAnswerTypeDataCountAsyncHandler;
                 typedef Outcome<Core::Error, Model::GetAppKnowledgeCountResponse> GetAppKnowledgeCountOutcome;
                 typedef std::future<GetAppKnowledgeCountOutcome> GetAppKnowledgeCountOutcomeCallable;
                 typedef std::function<void(const LkeClient*, const Model::GetAppKnowledgeCountRequest&, GetAppKnowledgeCountOutcome, const std::shared_ptr<const AsyncCallerContext>&)> GetAppKnowledgeCountAsyncHandler;
@@ -298,6 +310,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::GetEmbeddingResponse> GetEmbeddingOutcome;
                 typedef std::future<GetEmbeddingOutcome> GetEmbeddingOutcomeCallable;
                 typedef std::function<void(const LkeClient*, const Model::GetEmbeddingRequest&, GetEmbeddingOutcome, const std::shared_ptr<const AsyncCallerContext>&)> GetEmbeddingAsyncHandler;
+                typedef Outcome<Core::Error, Model::GetLikeDataCountResponse> GetLikeDataCountOutcome;
+                typedef std::future<GetLikeDataCountOutcome> GetLikeDataCountOutcomeCallable;
+                typedef std::function<void(const LkeClient*, const Model::GetLikeDataCountRequest&, GetLikeDataCountOutcome, const std::shared_ptr<const AsyncCallerContext>&)> GetLikeDataCountAsyncHandler;
                 typedef Outcome<Core::Error, Model::GetMsgRecordResponse> GetMsgRecordOutcome;
                 typedef std::future<GetMsgRecordOutcome> GetMsgRecordOutcomeCallable;
                 typedef std::function<void(const LkeClient*, const Model::GetMsgRecordRequest&, GetMsgRecordOutcome, const std::shared_ptr<const AsyncCallerContext>&)> GetMsgRecordAsyncHandler;
@@ -447,6 +462,15 @@ namespace TencentCloud
                 CheckAttributeLabelReferOutcome CheckAttributeLabelRefer(const Model::CheckAttributeLabelReferRequest &request);
                 void CheckAttributeLabelReferAsync(const Model::CheckAttributeLabelReferRequest& request, const CheckAttributeLabelReferAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 CheckAttributeLabelReferOutcomeCallable CheckAttributeLabelReferCallable(const Model::CheckAttributeLabelReferRequest& request);
+
+                /**
+                 *接口支持图片和PDF转可编辑word格式文件，将文件中的图片、文本、表格等元素识别，并根据位置进行还原。
+                 * @param req ConvertDocumentRequest
+                 * @return ConvertDocumentOutcome
+                 */
+                ConvertDocumentOutcome ConvertDocument(const Model::ConvertDocumentRequest &request);
+                void ConvertDocumentAsync(const Model::ConvertDocumentRequest& request, const ConvertDocumentAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                ConvertDocumentOutcomeCallable ConvertDocumentCallable(const Model::ConvertDocumentRequest& request);
 
                 /**
                  *创建知识引擎应用。
@@ -713,6 +737,15 @@ namespace TencentCloud
                 GenerateQAOutcomeCallable GenerateQACallable(const Model::GenerateQARequest& request);
 
                 /**
+                 *回答类型数据统计
+                 * @param req GetAnswerTypeDataCountRequest
+                 * @return GetAnswerTypeDataCountOutcome
+                 */
+                GetAnswerTypeDataCountOutcome GetAnswerTypeDataCount(const Model::GetAnswerTypeDataCountRequest &request);
+                void GetAnswerTypeDataCountAsync(const Model::GetAnswerTypeDataCountRequest& request, const GetAnswerTypeDataCountAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                GetAnswerTypeDataCountOutcomeCallable GetAnswerTypeDataCountCallable(const Model::GetAnswerTypeDataCountRequest& request);
+
+                /**
                  *获取模型列表
                  * @param req GetAppKnowledgeCountRequest
                  * @return GetAppKnowledgeCountOutcome
@@ -748,6 +781,15 @@ namespace TencentCloud
                 GetEmbeddingOutcome GetEmbedding(const Model::GetEmbeddingRequest &request);
                 void GetEmbeddingAsync(const Model::GetEmbeddingRequest& request, const GetEmbeddingAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 GetEmbeddingOutcomeCallable GetEmbeddingCallable(const Model::GetEmbeddingRequest& request);
+
+                /**
+                 *点赞点踩数据统计
+                 * @param req GetLikeDataCountRequest
+                 * @return GetLikeDataCountOutcome
+                 */
+                GetLikeDataCountOutcome GetLikeDataCount(const Model::GetLikeDataCountRequest &request);
+                void GetLikeDataCountAsync(const Model::GetLikeDataCountRequest& request, const GetLikeDataCountAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                GetLikeDataCountOutcomeCallable GetLikeDataCountCallable(const Model::GetLikeDataCountRequest& request);
 
                 /**
                  *获取推荐问题

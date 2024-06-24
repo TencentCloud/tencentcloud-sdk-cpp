@@ -25,7 +25,9 @@ GatewayFlowMonitorDetail::GatewayFlowMonitorDetail() :
     m_inPkgHasBeenSet(false),
     m_outPkgHasBeenSet(false),
     m_inTrafficHasBeenSet(false),
-    m_outTrafficHasBeenSet(false)
+    m_outTrafficHasBeenSet(false),
+    m_concurrentConnectionCountHasBeenSet(false),
+    m_newConnectionRateHasBeenSet(false)
 {
 }
 
@@ -84,6 +86,26 @@ CoreInternalOutcome GatewayFlowMonitorDetail::Deserialize(const rapidjson::Value
         m_outTrafficHasBeenSet = true;
     }
 
+    if (value.HasMember("ConcurrentConnectionCount") && !value["ConcurrentConnectionCount"].IsNull())
+    {
+        if (!value["ConcurrentConnectionCount"].IsUint64())
+        {
+            return CoreInternalOutcome(Core::Error("response `GatewayFlowMonitorDetail.ConcurrentConnectionCount` IsUint64=false incorrectly").SetRequestId(requestId));
+        }
+        m_concurrentConnectionCount = value["ConcurrentConnectionCount"].GetUint64();
+        m_concurrentConnectionCountHasBeenSet = true;
+    }
+
+    if (value.HasMember("NewConnectionRate") && !value["NewConnectionRate"].IsNull())
+    {
+        if (!value["NewConnectionRate"].IsUint64())
+        {
+            return CoreInternalOutcome(Core::Error("response `GatewayFlowMonitorDetail.NewConnectionRate` IsUint64=false incorrectly").SetRequestId(requestId));
+        }
+        m_newConnectionRate = value["NewConnectionRate"].GetUint64();
+        m_newConnectionRateHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -129,6 +151,22 @@ void GatewayFlowMonitorDetail::ToJsonObject(rapidjson::Value &value, rapidjson::
         string key = "OutTraffic";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_outTraffic, allocator);
+    }
+
+    if (m_concurrentConnectionCountHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ConcurrentConnectionCount";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_concurrentConnectionCount, allocator);
+    }
+
+    if (m_newConnectionRateHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "NewConnectionRate";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_newConnectionRate, allocator);
     }
 
 }
@@ -212,5 +250,37 @@ void GatewayFlowMonitorDetail::SetOutTraffic(const uint64_t& _outTraffic)
 bool GatewayFlowMonitorDetail::OutTrafficHasBeenSet() const
 {
     return m_outTrafficHasBeenSet;
+}
+
+uint64_t GatewayFlowMonitorDetail::GetConcurrentConnectionCount() const
+{
+    return m_concurrentConnectionCount;
+}
+
+void GatewayFlowMonitorDetail::SetConcurrentConnectionCount(const uint64_t& _concurrentConnectionCount)
+{
+    m_concurrentConnectionCount = _concurrentConnectionCount;
+    m_concurrentConnectionCountHasBeenSet = true;
+}
+
+bool GatewayFlowMonitorDetail::ConcurrentConnectionCountHasBeenSet() const
+{
+    return m_concurrentConnectionCountHasBeenSet;
+}
+
+uint64_t GatewayFlowMonitorDetail::GetNewConnectionRate() const
+{
+    return m_newConnectionRate;
+}
+
+void GatewayFlowMonitorDetail::SetNewConnectionRate(const uint64_t& _newConnectionRate)
+{
+    m_newConnectionRate = _newConnectionRate;
+    m_newConnectionRateHasBeenSet = true;
+}
+
+bool GatewayFlowMonitorDetail::NewConnectionRateHasBeenSet() const
+{
+    return m_newConnectionRateHasBeenSet;
 }
 

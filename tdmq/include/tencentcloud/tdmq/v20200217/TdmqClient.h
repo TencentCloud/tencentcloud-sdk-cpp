@@ -157,6 +157,8 @@
 #include <tencentcloud/tdmq/v20200217/model/DescribePulsarProInstanceDetailResponse.h>
 #include <tencentcloud/tdmq/v20200217/model/DescribePulsarProInstancesRequest.h>
 #include <tencentcloud/tdmq/v20200217/model/DescribePulsarProInstancesResponse.h>
+#include <tencentcloud/tdmq/v20200217/model/DescribeRabbitMQExchangesRequest.h>
+#include <tencentcloud/tdmq/v20200217/model/DescribeRabbitMQExchangesResponse.h>
 #include <tencentcloud/tdmq/v20200217/model/DescribeRabbitMQNodeListRequest.h>
 #include <tencentcloud/tdmq/v20200217/model/DescribeRabbitMQNodeListResponse.h>
 #include <tencentcloud/tdmq/v20200217/model/DescribeRabbitMQQueueDetailRequest.h>
@@ -514,6 +516,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribePulsarProInstancesResponse> DescribePulsarProInstancesOutcome;
                 typedef std::future<DescribePulsarProInstancesOutcome> DescribePulsarProInstancesOutcomeCallable;
                 typedef std::function<void(const TdmqClient*, const Model::DescribePulsarProInstancesRequest&, DescribePulsarProInstancesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribePulsarProInstancesAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeRabbitMQExchangesResponse> DescribeRabbitMQExchangesOutcome;
+                typedef std::future<DescribeRabbitMQExchangesOutcome> DescribeRabbitMQExchangesOutcomeCallable;
+                typedef std::function<void(const TdmqClient*, const Model::DescribeRabbitMQExchangesRequest&, DescribeRabbitMQExchangesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeRabbitMQExchangesAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeRabbitMQNodeListResponse> DescribeRabbitMQNodeListOutcome;
                 typedef std::future<DescribeRabbitMQNodeListOutcome> DescribeRabbitMQNodeListOutcomeCallable;
                 typedef std::function<void(const TdmqClient*, const Model::DescribeRabbitMQNodeListRequest&, DescribeRabbitMQNodeListOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeRabbitMQNodeListAsyncHandler;
@@ -1334,6 +1339,15 @@ namespace TencentCloud
                 DescribePulsarProInstancesOutcome DescribePulsarProInstances(const Model::DescribePulsarProInstancesRequest &request);
                 void DescribePulsarProInstancesAsync(const Model::DescribePulsarProInstancesRequest& request, const DescribePulsarProInstancesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DescribePulsarProInstancesOutcomeCallable DescribePulsarProInstancesCallable(const Model::DescribePulsarProInstancesRequest& request);
+
+                /**
+                 *查询RabbitMQ exchange 列表
+                 * @param req DescribeRabbitMQExchangesRequest
+                 * @return DescribeRabbitMQExchangesOutcome
+                 */
+                DescribeRabbitMQExchangesOutcome DescribeRabbitMQExchanges(const Model::DescribeRabbitMQExchangesRequest &request);
+                void DescribeRabbitMQExchangesAsync(const Model::DescribeRabbitMQExchangesRequest& request, const DescribeRabbitMQExchangesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeRabbitMQExchangesOutcomeCallable DescribeRabbitMQExchangesCallable(const Model::DescribeRabbitMQExchangesRequest& request);
 
                 /**
                  *RabbitMQ专享版查询节点列表

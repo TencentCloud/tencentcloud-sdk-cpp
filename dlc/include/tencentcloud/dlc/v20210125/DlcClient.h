@@ -145,6 +145,8 @@
 #include <tencentcloud/dlc/v20210125/model/DescribeDataEnginePythonSparkImagesResponse.h>
 #include <tencentcloud/dlc/v20210125/model/DescribeDataEnginesRequest.h>
 #include <tencentcloud/dlc/v20210125/model/DescribeDataEnginesResponse.h>
+#include <tencentcloud/dlc/v20210125/model/DescribeDataEnginesScaleDetailRequest.h>
+#include <tencentcloud/dlc/v20210125/model/DescribeDataEnginesScaleDetailResponse.h>
 #include <tencentcloud/dlc/v20210125/model/DescribeDatabasesRequest.h>
 #include <tencentcloud/dlc/v20210125/model/DescribeDatabasesResponse.h>
 #include <tencentcloud/dlc/v20210125/model/DescribeDatasourceConnectionRequest.h>
@@ -500,6 +502,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeDataEnginesResponse> DescribeDataEnginesOutcome;
                 typedef std::future<DescribeDataEnginesOutcome> DescribeDataEnginesOutcomeCallable;
                 typedef std::function<void(const DlcClient*, const Model::DescribeDataEnginesRequest&, DescribeDataEnginesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeDataEnginesAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeDataEnginesScaleDetailResponse> DescribeDataEnginesScaleDetailOutcome;
+                typedef std::future<DescribeDataEnginesScaleDetailOutcome> DescribeDataEnginesScaleDetailOutcomeCallable;
+                typedef std::function<void(const DlcClient*, const Model::DescribeDataEnginesScaleDetailRequest&, DescribeDataEnginesScaleDetailOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeDataEnginesScaleDetailAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeDatabasesResponse> DescribeDatabasesOutcome;
                 typedef std::future<DescribeDatabasesOutcome> DescribeDatabasesOutcomeCallable;
                 typedef std::function<void(const DlcClient*, const Model::DescribeDatabasesRequest&, DescribeDatabasesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeDatabasesAsyncHandler;
@@ -1288,6 +1293,15 @@ namespace TencentCloud
                 DescribeDataEnginesOutcome DescribeDataEngines(const Model::DescribeDataEnginesRequest &request);
                 void DescribeDataEnginesAsync(const Model::DescribeDataEnginesRequest& request, const DescribeDataEnginesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DescribeDataEnginesOutcomeCallable DescribeDataEnginesCallable(const Model::DescribeDataEnginesRequest& request);
+
+                /**
+                 *查询引擎规格详情
+                 * @param req DescribeDataEnginesScaleDetailRequest
+                 * @return DescribeDataEnginesScaleDetailOutcome
+                 */
+                DescribeDataEnginesScaleDetailOutcome DescribeDataEnginesScaleDetail(const Model::DescribeDataEnginesScaleDetailRequest &request);
+                void DescribeDataEnginesScaleDetailAsync(const Model::DescribeDataEnginesScaleDetailRequest& request, const DescribeDataEnginesScaleDetailAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeDataEnginesScaleDetailOutcomeCallable DescribeDataEnginesScaleDetailCallable(const Model::DescribeDataEnginesScaleDetailRequest& request);
 
                 /**
                  *本接口（DescribeDatabases）用于查询数据库列表。

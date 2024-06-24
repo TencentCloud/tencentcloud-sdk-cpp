@@ -126,6 +126,27 @@ namespace TencentCloud
                      */
                     bool SpeakerNickHasBeenSet() const;
 
+                    /**
+                     * 获取分组id, 仅支持大小写字母和下划线的组合，不超过128个字符
+                     * @return GroupId 分组id, 仅支持大小写字母和下划线的组合，不超过128个字符
+                     * 
+                     */
+                    std::string GetGroupId() const;
+
+                    /**
+                     * 设置分组id, 仅支持大小写字母和下划线的组合，不超过128个字符
+                     * @param _groupId 分组id, 仅支持大小写字母和下划线的组合，不超过128个字符
+                     * 
+                     */
+                    void SetGroupId(const std::string& _groupId);
+
+                    /**
+                     * 判断参数 GroupId 是否已赋值
+                     * @return GroupId 是否已赋值
+                     * 
+                     */
+                    bool GroupIdHasBeenSet() const;
+
                 private:
 
                     /**
@@ -151,6 +172,12 @@ namespace TencentCloud
                      */
                     std::string m_speakerNick;
                     bool m_speakerNickHasBeenSet;
+
+                    /**
+                     * 分组id, 仅支持大小写字母和下划线的组合，不超过128个字符
+                     */
+                    std::string m_groupId;
+                    bool m_groupIdHasBeenSet;
 
                 };
             }

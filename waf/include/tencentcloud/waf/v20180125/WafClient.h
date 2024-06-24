@@ -27,6 +27,8 @@
 #include <tencentcloud/waf/v20180125/model/AddAntiFakeUrlResponse.h>
 #include <tencentcloud/waf/v20180125/model/AddAntiInfoLeakRulesRequest.h>
 #include <tencentcloud/waf/v20180125/model/AddAntiInfoLeakRulesResponse.h>
+#include <tencentcloud/waf/v20180125/model/AddAreaBanAreasRequest.h>
+#include <tencentcloud/waf/v20180125/model/AddAreaBanAreasResponse.h>
 #include <tencentcloud/waf/v20180125/model/AddAttackWhiteRuleRequest.h>
 #include <tencentcloud/waf/v20180125/model/AddAttackWhiteRuleResponse.h>
 #include <tencentcloud/waf/v20180125/model/AddCustomRuleRequest.h>
@@ -325,6 +327,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::AddAntiInfoLeakRulesResponse> AddAntiInfoLeakRulesOutcome;
                 typedef std::future<AddAntiInfoLeakRulesOutcome> AddAntiInfoLeakRulesOutcomeCallable;
                 typedef std::function<void(const WafClient*, const Model::AddAntiInfoLeakRulesRequest&, AddAntiInfoLeakRulesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> AddAntiInfoLeakRulesAsyncHandler;
+                typedef Outcome<Core::Error, Model::AddAreaBanAreasResponse> AddAreaBanAreasOutcome;
+                typedef std::future<AddAreaBanAreasOutcome> AddAreaBanAreasOutcomeCallable;
+                typedef std::function<void(const WafClient*, const Model::AddAreaBanAreasRequest&, AddAreaBanAreasOutcome, const std::shared_ptr<const AsyncCallerContext>&)> AddAreaBanAreasAsyncHandler;
                 typedef Outcome<Core::Error, Model::AddAttackWhiteRuleResponse> AddAttackWhiteRuleOutcome;
                 typedef std::future<AddAttackWhiteRuleOutcome> AddAttackWhiteRuleOutcomeCallable;
                 typedef std::function<void(const WafClient*, const Model::AddAttackWhiteRuleRequest&, AddAttackWhiteRuleOutcome, const std::shared_ptr<const AsyncCallerContext>&)> AddAttackWhiteRuleAsyncHandler;
@@ -762,6 +767,15 @@ namespace TencentCloud
                 AddAntiInfoLeakRulesOutcome AddAntiInfoLeakRules(const Model::AddAntiInfoLeakRulesRequest &request);
                 void AddAntiInfoLeakRulesAsync(const Model::AddAntiInfoLeakRulesRequest& request, const AddAntiInfoLeakRulesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 AddAntiInfoLeakRulesOutcomeCallable AddAntiInfoLeakRulesCallable(const Model::AddAntiInfoLeakRulesRequest& request);
+
+                /**
+                 *添加地域封禁中的地域信息
+                 * @param req AddAreaBanAreasRequest
+                 * @return AddAreaBanAreasOutcome
+                 */
+                AddAreaBanAreasOutcome AddAreaBanAreas(const Model::AddAreaBanAreasRequest &request);
+                void AddAreaBanAreasAsync(const Model::AddAreaBanAreasRequest& request, const AddAreaBanAreasAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                AddAreaBanAreasOutcomeCallable AddAreaBanAreasCallable(const Model::AddAreaBanAreasRequest& request);
 
                 /**
                  *供用户控制台调用，增加Tiga规则引擎白名单。

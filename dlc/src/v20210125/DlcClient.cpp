@@ -2663,6 +2663,49 @@ DlcClient::DescribeDataEnginesOutcomeCallable DlcClient::DescribeDataEnginesCall
     return task->get_future();
 }
 
+DlcClient::DescribeDataEnginesScaleDetailOutcome DlcClient::DescribeDataEnginesScaleDetail(const DescribeDataEnginesScaleDetailRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeDataEnginesScaleDetail");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeDataEnginesScaleDetailResponse rsp = DescribeDataEnginesScaleDetailResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeDataEnginesScaleDetailOutcome(rsp);
+        else
+            return DescribeDataEnginesScaleDetailOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeDataEnginesScaleDetailOutcome(outcome.GetError());
+    }
+}
+
+void DlcClient::DescribeDataEnginesScaleDetailAsync(const DescribeDataEnginesScaleDetailRequest& request, const DescribeDataEnginesScaleDetailAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeDataEnginesScaleDetail(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+DlcClient::DescribeDataEnginesScaleDetailOutcomeCallable DlcClient::DescribeDataEnginesScaleDetailCallable(const DescribeDataEnginesScaleDetailRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeDataEnginesScaleDetailOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeDataEnginesScaleDetail(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 DlcClient::DescribeDatabasesOutcome DlcClient::DescribeDatabases(const DescribeDatabasesRequest &request)
 {
     auto outcome = MakeRequest(request, "DescribeDatabases");

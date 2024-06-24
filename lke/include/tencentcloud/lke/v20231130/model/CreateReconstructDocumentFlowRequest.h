@@ -86,15 +86,15 @@ namespace TencentCloud
                     bool FileUrlHasBeenSet() const;
 
                     /**
-                     * 获取当传入文件是PDF类型时，用来指定pdf识别的起始页码，识别的页码包含当前值。
-                     * @return FileStartPageNumber 当传入文件是PDF类型时，用来指定pdf识别的起始页码，识别的页码包含当前值。
+                     * 获取当传入文件是PDF类型时，用来指定pdf识别的起始页码，识别的页码包含当前值。默认为1，表示从pdf文件的第1页开始识别。
+                     * @return FileStartPageNumber 当传入文件是PDF类型时，用来指定pdf识别的起始页码，识别的页码包含当前值。默认为1，表示从pdf文件的第1页开始识别。
                      * 
                      */
                     int64_t GetFileStartPageNumber() const;
 
                     /**
-                     * 设置当传入文件是PDF类型时，用来指定pdf识别的起始页码，识别的页码包含当前值。
-                     * @param _fileStartPageNumber 当传入文件是PDF类型时，用来指定pdf识别的起始页码，识别的页码包含当前值。
+                     * 设置当传入文件是PDF类型时，用来指定pdf识别的起始页码，识别的页码包含当前值。默认为1，表示从pdf文件的第1页开始识别。
+                     * @param _fileStartPageNumber 当传入文件是PDF类型时，用来指定pdf识别的起始页码，识别的页码包含当前值。默认为1，表示从pdf文件的第1页开始识别。
                      * 
                      */
                     void SetFileStartPageNumber(const int64_t& _fileStartPageNumber);
@@ -107,15 +107,15 @@ namespace TencentCloud
                     bool FileStartPageNumberHasBeenSet() const;
 
                     /**
-                     * 获取当传入文件是PDF类型时，用来指定pdf识别的结束页码，识别的页码包含当前值。
-                     * @return FileEndPageNumber 当传入文件是PDF类型时，用来指定pdf识别的结束页码，识别的页码包含当前值。
+                     * 获取当传入文件是PDF类型时，用来指定pdf识别的结束页码，识别的页码包含当前值。默认为100，表示识别到pdf文件的第100页。单次调用最多支持识别100页内容，即FileEndPageNumber-FileStartPageNumber需要不大于100。
+                     * @return FileEndPageNumber 当传入文件是PDF类型时，用来指定pdf识别的结束页码，识别的页码包含当前值。默认为100，表示识别到pdf文件的第100页。单次调用最多支持识别100页内容，即FileEndPageNumber-FileStartPageNumber需要不大于100。
                      * 
                      */
                     int64_t GetFileEndPageNumber() const;
 
                     /**
-                     * 设置当传入文件是PDF类型时，用来指定pdf识别的结束页码，识别的页码包含当前值。
-                     * @param _fileEndPageNumber 当传入文件是PDF类型时，用来指定pdf识别的结束页码，识别的页码包含当前值。
+                     * 设置当传入文件是PDF类型时，用来指定pdf识别的结束页码，识别的页码包含当前值。默认为100，表示识别到pdf文件的第100页。单次调用最多支持识别100页内容，即FileEndPageNumber-FileStartPageNumber需要不大于100。
+                     * @param _fileEndPageNumber 当传入文件是PDF类型时，用来指定pdf识别的结束页码，识别的页码包含当前值。默认为100，表示识别到pdf文件的第100页。单次调用最多支持识别100页内容，即FileEndPageNumber-FileStartPageNumber需要不大于100。
                      * 
                      */
                     void SetFileEndPageNumber(const int64_t& _fileEndPageNumber);
@@ -163,13 +163,13 @@ namespace TencentCloud
                     bool m_fileUrlHasBeenSet;
 
                     /**
-                     * 当传入文件是PDF类型时，用来指定pdf识别的起始页码，识别的页码包含当前值。
+                     * 当传入文件是PDF类型时，用来指定pdf识别的起始页码，识别的页码包含当前值。默认为1，表示从pdf文件的第1页开始识别。
                      */
                     int64_t m_fileStartPageNumber;
                     bool m_fileStartPageNumberHasBeenSet;
 
                     /**
-                     * 当传入文件是PDF类型时，用来指定pdf识别的结束页码，识别的页码包含当前值。
+                     * 当传入文件是PDF类型时，用来指定pdf识别的结束页码，识别的页码包含当前值。默认为100，表示识别到pdf文件的第100页。单次调用最多支持识别100页内容，即FileEndPageNumber-FileStartPageNumber需要不大于100。
                      */
                     int64_t m_fileEndPageNumber;
                     bool m_fileEndPageNumberHasBeenSet;

@@ -66,6 +66,7 @@ set(dlc_public_header_model
   include/tencentcloud/dlc/v20210125/model/ModifyWorkGroupResponse.h
   include/tencentcloud/dlc/v20210125/model/DMSSds.h
   include/tencentcloud/dlc/v20210125/model/OpendThirdAccessUserInfo.h
+  include/tencentcloud/dlc/v20210125/model/DescribeDataEnginesScaleDetailResponse.h
   include/tencentcloud/dlc/v20210125/model/DescribeNotebookSessionStatementSqlResultRequest.h
   include/tencentcloud/dlc/v20210125/model/CreateTableResponse.h
   include/tencentcloud/dlc/v20210125/model/ListTaskJobLogNameRequest.h
@@ -85,11 +86,12 @@ set(dlc_public_header_model
   include/tencentcloud/dlc/v20210125/model/DescribeTableRequest.h
   include/tencentcloud/dlc/v20210125/model/Policy.h
   include/tencentcloud/dlc/v20210125/model/DescribeTaskLogRequest.h
-  include/tencentcloud/dlc/v20210125/model/UpdateUserDataEngineConfigResponse.h
+  include/tencentcloud/dlc/v20210125/model/DescribeDataEnginesScaleDetailRequest.h
   include/tencentcloud/dlc/v20210125/model/CreateTasksRequest.h
   include/tencentcloud/dlc/v20210125/model/SuspendResumeDataEngineRequest.h
   include/tencentcloud/dlc/v20210125/model/DescribeSparkAppJobsResponse.h
   include/tencentcloud/dlc/v20210125/model/TableResponseInfo.h
+  include/tencentcloud/dlc/v20210125/model/UpdateUserDataEngineConfigResponse.h
   include/tencentcloud/dlc/v20210125/model/ModifyUserTypeResponse.h
   include/tencentcloud/dlc/v20210125/model/DescribeDataEnginePythonSparkImagesRequest.h
   include/tencentcloud/dlc/v20210125/model/CancelSparkSessionBatchSQLRequest.h
@@ -207,6 +209,7 @@ set(dlc_public_header_model
   include/tencentcloud/dlc/v20210125/model/AlterDMSTableResponse.h
   include/tencentcloud/dlc/v20210125/model/DescribeUpdatableDataEnginesResponse.h
   include/tencentcloud/dlc/v20210125/model/DeleteUserRequest.h
+  include/tencentcloud/dlc/v20210125/model/DataEngineScaleInfoDetail.h
   include/tencentcloud/dlc/v20210125/model/DeleteDataEngineResponse.h
   include/tencentcloud/dlc/v20210125/model/CosPermission.h
   include/tencentcloud/dlc/v20210125/model/IpPortPair.h
@@ -390,6 +393,7 @@ set(dlc_public_header_model
   include/tencentcloud/dlc/v20210125/model/DescribeSparkSessionBatchSQLCostRequest.h
   include/tencentcloud/dlc/v20210125/model/CreateNotebookSessionResponse.h
   include/tencentcloud/dlc/v20210125/model/DescribeDataEngineResponse.h
+  include/tencentcloud/dlc/v20210125/model/DataEngineScaleInfo.h
   include/tencentcloud/dlc/v20210125/model/QueryTaskCostDetailRequest.h
   include/tencentcloud/dlc/v20210125/model/ModifyDataEngineDescriptionResponse.h
   include/tencentcloud/dlc/v20210125/model/UpdateDataEngineConfigRequest.h
@@ -455,6 +459,7 @@ set(dlc_src
   src/v20210125/model/ModifyWorkGroupResponse.cpp
   src/v20210125/model/DMSSds.cpp
   src/v20210125/model/OpendThirdAccessUserInfo.cpp
+  src/v20210125/model/DescribeDataEnginesScaleDetailResponse.cpp
   src/v20210125/model/DescribeNotebookSessionStatementSqlResultRequest.cpp
   src/v20210125/model/CreateTableResponse.cpp
   src/v20210125/model/ListTaskJobLogNameRequest.cpp
@@ -474,11 +479,12 @@ set(dlc_src
   src/v20210125/model/DescribeTableRequest.cpp
   src/v20210125/model/Policy.cpp
   src/v20210125/model/DescribeTaskLogRequest.cpp
-  src/v20210125/model/UpdateUserDataEngineConfigResponse.cpp
+  src/v20210125/model/DescribeDataEnginesScaleDetailRequest.cpp
   src/v20210125/model/CreateTasksRequest.cpp
   src/v20210125/model/SuspendResumeDataEngineRequest.cpp
   src/v20210125/model/DescribeSparkAppJobsResponse.cpp
   src/v20210125/model/TableResponseInfo.cpp
+  src/v20210125/model/UpdateUserDataEngineConfigResponse.cpp
   src/v20210125/model/ModifyUserTypeResponse.cpp
   src/v20210125/model/DescribeDataEnginePythonSparkImagesRequest.cpp
   src/v20210125/model/CancelSparkSessionBatchSQLRequest.cpp
@@ -596,6 +602,7 @@ set(dlc_src
   src/v20210125/model/AlterDMSTableResponse.cpp
   src/v20210125/model/DescribeUpdatableDataEnginesResponse.cpp
   src/v20210125/model/DeleteUserRequest.cpp
+  src/v20210125/model/DataEngineScaleInfoDetail.cpp
   src/v20210125/model/DeleteDataEngineResponse.cpp
   src/v20210125/model/CosPermission.cpp
   src/v20210125/model/IpPortPair.cpp
@@ -779,6 +786,7 @@ set(dlc_src
   src/v20210125/model/DescribeSparkSessionBatchSQLCostRequest.cpp
   src/v20210125/model/CreateNotebookSessionResponse.cpp
   src/v20210125/model/DescribeDataEngineResponse.cpp
+  src/v20210125/model/DataEngineScaleInfo.cpp
   src/v20210125/model/QueryTaskCostDetailRequest.cpp
   src/v20210125/model/ModifyDataEngineDescriptionResponse.cpp
   src/v20210125/model/UpdateDataEngineConfigRequest.cpp

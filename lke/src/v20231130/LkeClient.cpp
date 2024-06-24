@@ -126,6 +126,49 @@ LkeClient::CheckAttributeLabelReferOutcomeCallable LkeClient::CheckAttributeLabe
     return task->get_future();
 }
 
+LkeClient::ConvertDocumentOutcome LkeClient::ConvertDocument(const ConvertDocumentRequest &request)
+{
+    auto outcome = MakeRequest(request, "ConvertDocument");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ConvertDocumentResponse rsp = ConvertDocumentResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ConvertDocumentOutcome(rsp);
+        else
+            return ConvertDocumentOutcome(o.GetError());
+    }
+    else
+    {
+        return ConvertDocumentOutcome(outcome.GetError());
+    }
+}
+
+void LkeClient::ConvertDocumentAsync(const ConvertDocumentRequest& request, const ConvertDocumentAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->ConvertDocument(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+LkeClient::ConvertDocumentOutcomeCallable LkeClient::ConvertDocumentCallable(const ConvertDocumentRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<ConvertDocumentOutcome()>>(
+        [this, request]()
+        {
+            return this->ConvertDocument(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 LkeClient::CreateAppOutcome LkeClient::CreateApp(const CreateAppRequest &request)
 {
     auto outcome = MakeRequest(request, "CreateApp");
@@ -1373,6 +1416,49 @@ LkeClient::GenerateQAOutcomeCallable LkeClient::GenerateQACallable(const Generat
     return task->get_future();
 }
 
+LkeClient::GetAnswerTypeDataCountOutcome LkeClient::GetAnswerTypeDataCount(const GetAnswerTypeDataCountRequest &request)
+{
+    auto outcome = MakeRequest(request, "GetAnswerTypeDataCount");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        GetAnswerTypeDataCountResponse rsp = GetAnswerTypeDataCountResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return GetAnswerTypeDataCountOutcome(rsp);
+        else
+            return GetAnswerTypeDataCountOutcome(o.GetError());
+    }
+    else
+    {
+        return GetAnswerTypeDataCountOutcome(outcome.GetError());
+    }
+}
+
+void LkeClient::GetAnswerTypeDataCountAsync(const GetAnswerTypeDataCountRequest& request, const GetAnswerTypeDataCountAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->GetAnswerTypeDataCount(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+LkeClient::GetAnswerTypeDataCountOutcomeCallable LkeClient::GetAnswerTypeDataCountCallable(const GetAnswerTypeDataCountRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<GetAnswerTypeDataCountOutcome()>>(
+        [this, request]()
+        {
+            return this->GetAnswerTypeDataCount(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 LkeClient::GetAppKnowledgeCountOutcome LkeClient::GetAppKnowledgeCount(const GetAppKnowledgeCountRequest &request)
 {
     auto outcome = MakeRequest(request, "GetAppKnowledgeCount");
@@ -1538,6 +1624,49 @@ LkeClient::GetEmbeddingOutcomeCallable LkeClient::GetEmbeddingCallable(const Get
         [this, request]()
         {
             return this->GetEmbedding(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+LkeClient::GetLikeDataCountOutcome LkeClient::GetLikeDataCount(const GetLikeDataCountRequest &request)
+{
+    auto outcome = MakeRequest(request, "GetLikeDataCount");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        GetLikeDataCountResponse rsp = GetLikeDataCountResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return GetLikeDataCountOutcome(rsp);
+        else
+            return GetLikeDataCountOutcome(o.GetError());
+    }
+    else
+    {
+        return GetLikeDataCountOutcome(outcome.GetError());
+    }
+}
+
+void LkeClient::GetLikeDataCountAsync(const GetLikeDataCountRequest& request, const GetLikeDataCountAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->GetLikeDataCount(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+LkeClient::GetLikeDataCountOutcomeCallable LkeClient::GetLikeDataCountCallable(const GetLikeDataCountRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<GetLikeDataCountOutcome()>>(
+        [this, request]()
+        {
+            return this->GetLikeDataCount(request);
         }
     );
 

@@ -1072,6 +1072,49 @@ AsrClient::VoicePrintEnrollOutcomeCallable AsrClient::VoicePrintEnrollCallable(c
     return task->get_future();
 }
 
+AsrClient::VoicePrintGroupVerifyOutcome AsrClient::VoicePrintGroupVerify(const VoicePrintGroupVerifyRequest &request)
+{
+    auto outcome = MakeRequest(request, "VoicePrintGroupVerify");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        VoicePrintGroupVerifyResponse rsp = VoicePrintGroupVerifyResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return VoicePrintGroupVerifyOutcome(rsp);
+        else
+            return VoicePrintGroupVerifyOutcome(o.GetError());
+    }
+    else
+    {
+        return VoicePrintGroupVerifyOutcome(outcome.GetError());
+    }
+}
+
+void AsrClient::VoicePrintGroupVerifyAsync(const VoicePrintGroupVerifyRequest& request, const VoicePrintGroupVerifyAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->VoicePrintGroupVerify(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+AsrClient::VoicePrintGroupVerifyOutcomeCallable AsrClient::VoicePrintGroupVerifyCallable(const VoicePrintGroupVerifyRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<VoicePrintGroupVerifyOutcome()>>(
+        [this, request]()
+        {
+            return this->VoicePrintGroupVerify(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 AsrClient::VoicePrintUpdateOutcome AsrClient::VoicePrintUpdate(const VoicePrintUpdateRequest &request)
 {
     auto outcome = MakeRequest(request, "VoicePrintUpdate");

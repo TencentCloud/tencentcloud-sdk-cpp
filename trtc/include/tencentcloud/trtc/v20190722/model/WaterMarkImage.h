@@ -47,15 +47,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取下载的url地址， 只支持jpg， png，大小限制不超过5M。
-                     * @return WaterMarkUrl 下载的url地址， 只支持jpg， png，大小限制不超过5M。
+                     * 获取下载的url地址， 只支持jpg, png, jpeg，大小限制不超过5M。注意，url必须携带格式后缀，url内只支持特定的字符串, 范围是a-z A-Z 0-9 '-', '.', '_', '~', ':', '/', '?', '#', '[', ']' '@', '!', '&', '(', ')', '*', '+', ',', '%', '='
+                     * @return WaterMarkUrl 下载的url地址， 只支持jpg, png, jpeg，大小限制不超过5M。注意，url必须携带格式后缀，url内只支持特定的字符串, 范围是a-z A-Z 0-9 '-', '.', '_', '~', ':', '/', '?', '#', '[', ']' '@', '!', '&', '(', ')', '*', '+', ',', '%', '='
                      * 
                      */
                     std::string GetWaterMarkUrl() const;
 
                     /**
-                     * 设置下载的url地址， 只支持jpg， png，大小限制不超过5M。
-                     * @param _waterMarkUrl 下载的url地址， 只支持jpg， png，大小限制不超过5M。
+                     * 设置下载的url地址， 只支持jpg, png, jpeg，大小限制不超过5M。注意，url必须携带格式后缀，url内只支持特定的字符串, 范围是a-z A-Z 0-9 '-', '.', '_', '~', ':', '/', '?', '#', '[', ']' '@', '!', '&', '(', ')', '*', '+', ',', '%', '='
+                     * @param _waterMarkUrl 下载的url地址， 只支持jpg, png, jpeg，大小限制不超过5M。注意，url必须携带格式后缀，url内只支持特定的字符串, 范围是a-z A-Z 0-9 '-', '.', '_', '~', ':', '/', '?', '#', '[', ']' '@', '!', '&', '(', ')', '*', '+', ',', '%', '='
                      * 
                      */
                     void SetWaterMarkUrl(const std::string& _waterMarkUrl);
@@ -154,7 +154,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 下载的url地址， 只支持jpg， png，大小限制不超过5M。
+                     * 下载的url地址， 只支持jpg, png, jpeg，大小限制不超过5M。注意，url必须携带格式后缀，url内只支持特定的字符串, 范围是a-z A-Z 0-9 '-', '.', '_', '~', ':', '/', '?', '#', '[', ']' '@', '!', '&', '(', ')', '*', '+', ',', '%', '='
                      */
                     std::string m_waterMarkUrl;
                     bool m_waterMarkUrlHasBeenSet;

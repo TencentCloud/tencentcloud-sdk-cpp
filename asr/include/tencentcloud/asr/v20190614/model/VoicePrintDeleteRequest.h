@@ -63,6 +63,60 @@ namespace TencentCloud
                      */
                     bool VoicePrintIdHasBeenSet() const;
 
+                    /**
+                     * 获取说话人分组ID,仅支持大小写字母和下划线的组合，不超过128个字符
+                     * @return GroupId 说话人分组ID,仅支持大小写字母和下划线的组合，不超过128个字符
+                     * 
+                     */
+                    std::string GetGroupId() const;
+
+                    /**
+                     * 设置说话人分组ID,仅支持大小写字母和下划线的组合，不超过128个字符
+                     * @param _groupId 说话人分组ID,仅支持大小写字母和下划线的组合，不超过128个字符
+                     * 
+                     */
+                    void SetGroupId(const std::string& _groupId);
+
+                    /**
+                     * 判断参数 GroupId 是否已赋值
+                     * @return GroupId 是否已赋值
+                     * 
+                     */
+                    bool GroupIdHasBeenSet() const;
+
+                    /**
+                     * 获取删除模式: 
+0.默认值，删除该条声纹
+1.从分组中删除该条声纹，声纹本身不删除
+2.从声纹库中删除分组，仅删除分组信息，不会真正删除分组中的声纹
+                     * @return DelMod 删除模式: 
+0.默认值，删除该条声纹
+1.从分组中删除该条声纹，声纹本身不删除
+2.从声纹库中删除分组，仅删除分组信息，不会真正删除分组中的声纹
+                     * 
+                     */
+                    int64_t GetDelMod() const;
+
+                    /**
+                     * 设置删除模式: 
+0.默认值，删除该条声纹
+1.从分组中删除该条声纹，声纹本身不删除
+2.从声纹库中删除分组，仅删除分组信息，不会真正删除分组中的声纹
+                     * @param _delMod 删除模式: 
+0.默认值，删除该条声纹
+1.从分组中删除该条声纹，声纹本身不删除
+2.从声纹库中删除分组，仅删除分组信息，不会真正删除分组中的声纹
+                     * 
+                     */
+                    void SetDelMod(const int64_t& _delMod);
+
+                    /**
+                     * 判断参数 DelMod 是否已赋值
+                     * @return DelMod 是否已赋值
+                     * 
+                     */
+                    bool DelModHasBeenSet() const;
+
                 private:
 
                     /**
@@ -70,6 +124,21 @@ namespace TencentCloud
                      */
                     std::string m_voicePrintId;
                     bool m_voicePrintIdHasBeenSet;
+
+                    /**
+                     * 说话人分组ID,仅支持大小写字母和下划线的组合，不超过128个字符
+                     */
+                    std::string m_groupId;
+                    bool m_groupIdHasBeenSet;
+
+                    /**
+                     * 删除模式: 
+0.默认值，删除该条声纹
+1.从分组中删除该条声纹，声纹本身不删除
+2.从声纹库中删除分组，仅删除分组信息，不会真正删除分组中的声纹
+                     */
+                    int64_t m_delMod;
+                    bool m_delModHasBeenSet;
 
                 };
             }

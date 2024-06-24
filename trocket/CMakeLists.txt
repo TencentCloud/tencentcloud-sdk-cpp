@@ -19,6 +19,8 @@ set(trocket_public_header
   )
 
 set(trocket_public_header_model
+  include/tencentcloud/trocket/v20230308/model/DescribeProductSKUsRequest.h
+  include/tencentcloud/trocket/v20230308/model/ProductSKU.h
   include/tencentcloud/trocket/v20230308/model/DescribeRoleListResponse.h
   include/tencentcloud/trocket/v20230308/model/DeleteMQTTTopicRequest.h
   include/tencentcloud/trocket/v20230308/model/CreateInstanceResponse.h
@@ -76,6 +78,7 @@ set(trocket_public_header_model
   include/tencentcloud/trocket/v20230308/model/CreateConsumerGroupResponse.h
   include/tencentcloud/trocket/v20230308/model/DescribeMQTTUserListResponse.h
   include/tencentcloud/trocket/v20230308/model/ModifyMQTTUserResponse.h
+  include/tencentcloud/trocket/v20230308/model/PriceTag.h
   include/tencentcloud/trocket/v20230308/model/MQTTUserItem.h
   include/tencentcloud/trocket/v20230308/model/ModifyMQTTInsPublicEndpointRequest.h
   include/tencentcloud/trocket/v20230308/model/ModifyMQTTInstanceCertBindingResponse.h
@@ -138,11 +141,14 @@ set(trocket_public_header_model
   include/tencentcloud/trocket/v20230308/model/DescribeMQTTMessageListRequest.h
   include/tencentcloud/trocket/v20230308/model/DescribeMQTTTopicResponse.h
   include/tencentcloud/trocket/v20230308/model/DescribeInstanceRequest.h
+  include/tencentcloud/trocket/v20230308/model/DescribeProductSKUsResponse.h
   include/tencentcloud/trocket/v20230308/model/IpRule.h
   )
 
 set(trocket_src
   src/v20230308/TrocketClient.cpp
+  src/v20230308/model/DescribeProductSKUsRequest.cpp
+  src/v20230308/model/ProductSKU.cpp
   src/v20230308/model/DescribeRoleListResponse.cpp
   src/v20230308/model/DeleteMQTTTopicRequest.cpp
   src/v20230308/model/CreateInstanceResponse.cpp
@@ -200,6 +206,7 @@ set(trocket_src
   src/v20230308/model/CreateConsumerGroupResponse.cpp
   src/v20230308/model/DescribeMQTTUserListResponse.cpp
   src/v20230308/model/ModifyMQTTUserResponse.cpp
+  src/v20230308/model/PriceTag.cpp
   src/v20230308/model/MQTTUserItem.cpp
   src/v20230308/model/ModifyMQTTInsPublicEndpointRequest.cpp
   src/v20230308/model/ModifyMQTTInstanceCertBindingResponse.cpp
@@ -262,6 +269,7 @@ set(trocket_src
   src/v20230308/model/DescribeMQTTMessageListRequest.cpp
   src/v20230308/model/DescribeMQTTTopicResponse.cpp
   src/v20230308/model/DescribeInstanceRequest.cpp
+  src/v20230308/model/DescribeProductSKUsResponse.cpp
   src/v20230308/model/IpRule.cpp
   )
 

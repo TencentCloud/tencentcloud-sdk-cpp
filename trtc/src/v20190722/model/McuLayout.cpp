@@ -33,7 +33,8 @@ McuLayout::McuLayout() :
     m_customCropHasBeenSet(false),
     m_backgroundRenderModeHasBeenSet(false),
     m_transparentUrlHasBeenSet(false),
-    m_backgroundCustomRenderHasBeenSet(false)
+    m_backgroundCustomRenderHasBeenSet(false),
+    m_backGroundColorModeHasBeenSet(false)
 {
 }
 
@@ -193,6 +194,16 @@ CoreInternalOutcome McuLayout::Deserialize(const rapidjson::Value &value)
         m_backgroundCustomRenderHasBeenSet = true;
     }
 
+    if (value.HasMember("BackGroundColorMode") && !value["BackGroundColorMode"].IsNull())
+    {
+        if (!value["BackGroundColorMode"].IsUint64())
+        {
+            return CoreInternalOutcome(Core::Error("response `McuLayout.BackGroundColorMode` IsUint64=false incorrectly").SetRequestId(requestId));
+        }
+        m_backGroundColorMode = value["BackGroundColorMode"].GetUint64();
+        m_backGroundColorModeHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -305,6 +316,14 @@ void McuLayout::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Alloc
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
         m_backgroundCustomRender.ToJsonObject(value[key.c_str()], allocator);
+    }
+
+    if (m_backGroundColorModeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "BackGroundColorMode";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_backGroundColorMode, allocator);
     }
 
 }
@@ -516,5 +535,21 @@ void McuLayout::SetBackgroundCustomRender(const McuBackgroundCustomRender& _back
 bool McuLayout::BackgroundCustomRenderHasBeenSet() const
 {
     return m_backgroundCustomRenderHasBeenSet;
+}
+
+uint64_t McuLayout::GetBackGroundColorMode() const
+{
+    return m_backGroundColorMode;
+}
+
+void McuLayout::SetBackGroundColorMode(const uint64_t& _backGroundColorMode)
+{
+    m_backGroundColorMode = _backGroundColorMode;
+    m_backGroundColorModeHasBeenSet = true;
+}
+
+bool McuLayout::BackGroundColorModeHasBeenSet() const
+{
+    return m_backGroundColorModeHasBeenSet;
 }
 

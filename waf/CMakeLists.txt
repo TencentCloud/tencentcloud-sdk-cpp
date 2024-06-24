@@ -248,6 +248,7 @@ set(waf_public_header_model
   include/tencentcloud/waf/v20180125/model/GetAttackTotalCountRequest.h
   include/tencentcloud/waf/v20180125/model/DeleteDomainWhiteRulesResponse.h
   include/tencentcloud/waf/v20180125/model/DescribeAttackOverviewResponse.h
+  include/tencentcloud/waf/v20180125/model/AddAreaBanAreasRequest.h
   include/tencentcloud/waf/v20180125/model/CacheUrlItem.h
   include/tencentcloud/waf/v20180125/model/DescribeCCAutoStatusRequest.h
   include/tencentcloud/waf/v20180125/model/DescribeDomainDetailsClbRequest.h
@@ -327,6 +328,7 @@ set(waf_public_header_model
   include/tencentcloud/waf/v20180125/model/CCRuleItems.h
   include/tencentcloud/waf/v20180125/model/ModifyDomainIpv6StatusRequest.h
   include/tencentcloud/waf/v20180125/model/DescribeAntiInfoLeakageRulesResponse.h
+  include/tencentcloud/waf/v20180125/model/AddAreaBanAreasResponse.h
   include/tencentcloud/waf/v20180125/model/GetAttackHistogramRequest.h
   include/tencentcloud/waf/v20180125/model/RuleList.h
   include/tencentcloud/waf/v20180125/model/DescribeAttackTypeRequest.h
@@ -636,6 +638,7 @@ set(waf_src
   src/v20180125/model/GetAttackTotalCountRequest.cpp
   src/v20180125/model/DeleteDomainWhiteRulesResponse.cpp
   src/v20180125/model/DescribeAttackOverviewResponse.cpp
+  src/v20180125/model/AddAreaBanAreasRequest.cpp
   src/v20180125/model/CacheUrlItem.cpp
   src/v20180125/model/DescribeCCAutoStatusRequest.cpp
   src/v20180125/model/DescribeDomainDetailsClbRequest.cpp
@@ -715,6 +718,7 @@ set(waf_src
   src/v20180125/model/CCRuleItems.cpp
   src/v20180125/model/ModifyDomainIpv6StatusRequest.cpp
   src/v20180125/model/DescribeAntiInfoLeakageRulesResponse.cpp
+  src/v20180125/model/AddAreaBanAreasResponse.cpp
   src/v20180125/model/GetAttackHistogramRequest.cpp
   src/v20180125/model/RuleList.cpp
   src/v20180125/model/DescribeAttackTypeRequest.cpp

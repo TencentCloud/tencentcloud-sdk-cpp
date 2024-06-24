@@ -2749,6 +2749,49 @@ IotexplorerClient::DescribeFenceEventListOutcomeCallable IotexplorerClient::Desc
     return task->get_future();
 }
 
+IotexplorerClient::DescribeFirmwareOutcome IotexplorerClient::DescribeFirmware(const DescribeFirmwareRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeFirmware");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeFirmwareResponse rsp = DescribeFirmwareResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeFirmwareOutcome(rsp);
+        else
+            return DescribeFirmwareOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeFirmwareOutcome(outcome.GetError());
+    }
+}
+
+void IotexplorerClient::DescribeFirmwareAsync(const DescribeFirmwareRequest& request, const DescribeFirmwareAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeFirmware(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+IotexplorerClient::DescribeFirmwareOutcomeCallable IotexplorerClient::DescribeFirmwareCallable(const DescribeFirmwareRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeFirmwareOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeFirmware(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 IotexplorerClient::DescribeFirmwareTaskOutcome IotexplorerClient::DescribeFirmwareTask(const DescribeFirmwareTaskRequest &request)
 {
     auto outcome = MakeRequest(request, "DescribeFirmwareTask");

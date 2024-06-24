@@ -358,6 +358,59 @@ namespace TencentCloud
                      */
                     bool BackgroundCustomRenderHasBeenSet() const;
 
+                    /**
+                     * 获取子背景色生效模式，默认值为0表示均不生效。
+bit0:占位图缩放是否生效。
+bit1:上行流缩放是否生效。
+您可以将相应bit位置1启动生效，例如：
+0(00)表示子背景色不生效。
+1(01)表示子背景色只在占位图缩放时生效。
+2(10)表示子背景色只在上行流缩放时生效。
+3(11)表示子背景色在占位图缩放和上行流缩放时均生效。
+
+                     * @return BackGroundColorMode 子背景色生效模式，默认值为0表示均不生效。
+bit0:占位图缩放是否生效。
+bit1:上行流缩放是否生效。
+您可以将相应bit位置1启动生效，例如：
+0(00)表示子背景色不生效。
+1(01)表示子背景色只在占位图缩放时生效。
+2(10)表示子背景色只在上行流缩放时生效。
+3(11)表示子背景色在占位图缩放和上行流缩放时均生效。
+
+                     * 
+                     */
+                    uint64_t GetBackGroundColorMode() const;
+
+                    /**
+                     * 设置子背景色生效模式，默认值为0表示均不生效。
+bit0:占位图缩放是否生效。
+bit1:上行流缩放是否生效。
+您可以将相应bit位置1启动生效，例如：
+0(00)表示子背景色不生效。
+1(01)表示子背景色只在占位图缩放时生效。
+2(10)表示子背景色只在上行流缩放时生效。
+3(11)表示子背景色在占位图缩放和上行流缩放时均生效。
+
+                     * @param _backGroundColorMode 子背景色生效模式，默认值为0表示均不生效。
+bit0:占位图缩放是否生效。
+bit1:上行流缩放是否生效。
+您可以将相应bit位置1启动生效，例如：
+0(00)表示子背景色不生效。
+1(01)表示子背景色只在占位图缩放时生效。
+2(10)表示子背景色只在上行流缩放时生效。
+3(11)表示子背景色在占位图缩放和上行流缩放时均生效。
+
+                     * 
+                     */
+                    void SetBackGroundColorMode(const uint64_t& _backGroundColorMode);
+
+                    /**
+                     * 判断参数 BackGroundColorMode 是否已赋值
+                     * @return BackGroundColorMode 是否已赋值
+                     * 
+                     */
+                    bool BackGroundColorModeHasBeenSet() const;
+
                 private:
 
                     /**
@@ -446,6 +499,20 @@ namespace TencentCloud
                      */
                     McuBackgroundCustomRender m_backgroundCustomRender;
                     bool m_backgroundCustomRenderHasBeenSet;
+
+                    /**
+                     * 子背景色生效模式，默认值为0表示均不生效。
+bit0:占位图缩放是否生效。
+bit1:上行流缩放是否生效。
+您可以将相应bit位置1启动生效，例如：
+0(00)表示子背景色不生效。
+1(01)表示子背景色只在占位图缩放时生效。
+2(10)表示子背景色只在上行流缩放时生效。
+3(11)表示子背景色在占位图缩放和上行流缩放时均生效。
+
+                     */
+                    uint64_t m_backGroundColorMode;
+                    bool m_backGroundColorModeHasBeenSet;
 
                 };
             }

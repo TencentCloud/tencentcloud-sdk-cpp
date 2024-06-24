@@ -105,42 +105,42 @@ namespace TencentCloud
                     /**
                      * 获取操作人信息
                      * @return Operator 操作人信息
-                     * 
+                     * @deprecated
                      */
                     UserInfo GetOperator() const;
 
                     /**
                      * 设置操作人信息
                      * @param _operator 操作人信息
-                     * 
+                     * @deprecated
                      */
                     void SetOperator(const UserInfo& _operator);
 
                     /**
                      * 判断参数 Operator 是否已赋值
                      * @return Operator 是否已赋值
-                     * 
+                     * @deprecated
                      */
                     bool OperatorHasBeenSet() const;
 
                     /**
                      * 获取企业信息
                      * @return Organization 企业信息
-                     * 
+                     * @deprecated
                      */
                     OrganizationInfo GetOrganization() const;
 
                     /**
                      * 设置企业信息
                      * @param _organization 企业信息
-                     * 
+                     * @deprecated
                      */
                     void SetOrganization(const OrganizationInfo& _organization);
 
                     /**
                      * 判断参数 Organization 是否已赋值
                      * @return Organization 是否已赋值
-                     * 
+                     * @deprecated
                      */
                     bool OrganizationHasBeenSet() const;
 

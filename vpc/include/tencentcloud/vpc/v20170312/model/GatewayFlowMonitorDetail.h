@@ -151,6 +151,48 @@ namespace TencentCloud
                      */
                     bool OutTrafficHasBeenSet() const;
 
+                    /**
+                     * 获取并发连接数。仅标准型nat支持此参数。
+                     * @return ConcurrentConnectionCount 并发连接数。仅标准型nat支持此参数。
+                     * 
+                     */
+                    uint64_t GetConcurrentConnectionCount() const;
+
+                    /**
+                     * 设置并发连接数。仅标准型nat支持此参数。
+                     * @param _concurrentConnectionCount 并发连接数。仅标准型nat支持此参数。
+                     * 
+                     */
+                    void SetConcurrentConnectionCount(const uint64_t& _concurrentConnectionCount);
+
+                    /**
+                     * 判断参数 ConcurrentConnectionCount 是否已赋值
+                     * @return ConcurrentConnectionCount 是否已赋值
+                     * 
+                     */
+                    bool ConcurrentConnectionCountHasBeenSet() const;
+
+                    /**
+                     * 获取新建连接速率。仅标准型nat支持此参数。
+                     * @return NewConnectionRate 新建连接速率。仅标准型nat支持此参数。
+                     * 
+                     */
+                    uint64_t GetNewConnectionRate() const;
+
+                    /**
+                     * 设置新建连接速率。仅标准型nat支持此参数。
+                     * @param _newConnectionRate 新建连接速率。仅标准型nat支持此参数。
+                     * 
+                     */
+                    void SetNewConnectionRate(const uint64_t& _newConnectionRate);
+
+                    /**
+                     * 判断参数 NewConnectionRate 是否已赋值
+                     * @return NewConnectionRate 是否已赋值
+                     * 
+                     */
+                    bool NewConnectionRateHasBeenSet() const;
+
                 private:
 
                     /**
@@ -182,6 +224,18 @@ namespace TencentCloud
                      */
                     uint64_t m_outTraffic;
                     bool m_outTrafficHasBeenSet;
+
+                    /**
+                     * 并发连接数。仅标准型nat支持此参数。
+                     */
+                    uint64_t m_concurrentConnectionCount;
+                    bool m_concurrentConnectionCountHasBeenSet;
+
+                    /**
+                     * 新建连接速率。仅标准型nat支持此参数。
+                     */
+                    uint64_t m_newConnectionRate;
+                    bool m_newConnectionRateHasBeenSet;
 
                 };
             }

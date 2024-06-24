@@ -23,7 +23,9 @@ using namespace TencentCloud::Asr::V20190614::Model;
 using namespace std;
 
 VoicePrintDeleteRequest::VoicePrintDeleteRequest() :
-    m_voicePrintIdHasBeenSet(false)
+    m_voicePrintIdHasBeenSet(false),
+    m_groupIdHasBeenSet(false),
+    m_delModHasBeenSet(false)
 {
 }
 
@@ -40,6 +42,22 @@ string VoicePrintDeleteRequest::ToJsonString() const
         string key = "VoicePrintId";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_voicePrintId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_groupIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "GroupId";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_groupId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_delModHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "DelMod";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_delMod, allocator);
     }
 
 
@@ -64,6 +82,38 @@ void VoicePrintDeleteRequest::SetVoicePrintId(const string& _voicePrintId)
 bool VoicePrintDeleteRequest::VoicePrintIdHasBeenSet() const
 {
     return m_voicePrintIdHasBeenSet;
+}
+
+string VoicePrintDeleteRequest::GetGroupId() const
+{
+    return m_groupId;
+}
+
+void VoicePrintDeleteRequest::SetGroupId(const string& _groupId)
+{
+    m_groupId = _groupId;
+    m_groupIdHasBeenSet = true;
+}
+
+bool VoicePrintDeleteRequest::GroupIdHasBeenSet() const
+{
+    return m_groupIdHasBeenSet;
+}
+
+int64_t VoicePrintDeleteRequest::GetDelMod() const
+{
+    return m_delMod;
+}
+
+void VoicePrintDeleteRequest::SetDelMod(const int64_t& _delMod)
+{
+    m_delMod = _delMod;
+    m_delModHasBeenSet = true;
+}
+
+bool VoicePrintDeleteRequest::DelModHasBeenSet() const
+{
+    return m_delModHasBeenSet;
 }
 
 

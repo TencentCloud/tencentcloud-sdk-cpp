@@ -126,6 +126,49 @@ WafClient::AddAntiInfoLeakRulesOutcomeCallable WafClient::AddAntiInfoLeakRulesCa
     return task->get_future();
 }
 
+WafClient::AddAreaBanAreasOutcome WafClient::AddAreaBanAreas(const AddAreaBanAreasRequest &request)
+{
+    auto outcome = MakeRequest(request, "AddAreaBanAreas");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        AddAreaBanAreasResponse rsp = AddAreaBanAreasResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return AddAreaBanAreasOutcome(rsp);
+        else
+            return AddAreaBanAreasOutcome(o.GetError());
+    }
+    else
+    {
+        return AddAreaBanAreasOutcome(outcome.GetError());
+    }
+}
+
+void WafClient::AddAreaBanAreasAsync(const AddAreaBanAreasRequest& request, const AddAreaBanAreasAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->AddAreaBanAreas(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+WafClient::AddAreaBanAreasOutcomeCallable WafClient::AddAreaBanAreasCallable(const AddAreaBanAreasRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<AddAreaBanAreasOutcome()>>(
+        [this, request]()
+        {
+            return this->AddAreaBanAreas(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 WafClient::AddAttackWhiteRuleOutcome WafClient::AddAttackWhiteRule(const AddAttackWhiteRuleRequest &request)
 {
     auto outcome = MakeRequest(request, "AddAttackWhiteRule");

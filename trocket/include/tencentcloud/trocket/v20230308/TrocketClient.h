@@ -89,6 +89,8 @@
 #include <tencentcloud/trocket/v20230308/model/DescribeMQTTTopicListResponse.h>
 #include <tencentcloud/trocket/v20230308/model/DescribeMQTTUserListRequest.h>
 #include <tencentcloud/trocket/v20230308/model/DescribeMQTTUserListResponse.h>
+#include <tencentcloud/trocket/v20230308/model/DescribeProductSKUsRequest.h>
+#include <tencentcloud/trocket/v20230308/model/DescribeProductSKUsResponse.h>
 #include <tencentcloud/trocket/v20230308/model/DescribeRoleListRequest.h>
 #include <tencentcloud/trocket/v20230308/model/DescribeRoleListResponse.h>
 #include <tencentcloud/trocket/v20230308/model/DescribeTopicRequest.h>
@@ -230,6 +232,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeMQTTUserListResponse> DescribeMQTTUserListOutcome;
                 typedef std::future<DescribeMQTTUserListOutcome> DescribeMQTTUserListOutcomeCallable;
                 typedef std::function<void(const TrocketClient*, const Model::DescribeMQTTUserListRequest&, DescribeMQTTUserListOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeMQTTUserListAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeProductSKUsResponse> DescribeProductSKUsOutcome;
+                typedef std::future<DescribeProductSKUsOutcome> DescribeProductSKUsOutcomeCallable;
+                typedef std::function<void(const TrocketClient*, const Model::DescribeProductSKUsRequest&, DescribeProductSKUsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeProductSKUsAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeRoleListResponse> DescribeRoleListOutcome;
                 typedef std::future<DescribeRoleListOutcome> DescribeRoleListOutcomeCallable;
                 typedef std::function<void(const TrocketClient*, const Model::DescribeRoleListRequest&, DescribeRoleListOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeRoleListAsyncHandler;
@@ -596,6 +601,15 @@ namespace TencentCloud
                 DescribeMQTTUserListOutcome DescribeMQTTUserList(const Model::DescribeMQTTUserListRequest &request);
                 void DescribeMQTTUserListAsync(const Model::DescribeMQTTUserListRequest& request, const DescribeMQTTUserListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DescribeMQTTUserListOutcomeCallable DescribeMQTTUserListCallable(const Model::DescribeMQTTUserListRequest& request);
+
+                /**
+                 *查询产品售卖规格，针对 RocketMQ 5.x 集群。
+                 * @param req DescribeProductSKUsRequest
+                 * @return DescribeProductSKUsOutcome
+                 */
+                DescribeProductSKUsOutcome DescribeProductSKUs(const Model::DescribeProductSKUsRequest &request);
+                void DescribeProductSKUsAsync(const Model::DescribeProductSKUsRequest& request, const DescribeProductSKUsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeProductSKUsOutcomeCallable DescribeProductSKUsCallable(const Model::DescribeProductSKUsRequest& request);
 
                 /**
                  *查询角色列表，Filter参数使用说明如下：

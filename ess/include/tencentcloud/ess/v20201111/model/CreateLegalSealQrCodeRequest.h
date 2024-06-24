@@ -98,21 +98,21 @@ namespace TencentCloud
                     /**
                      * 获取机构信息，暂未开放
                      * @return Organization 机构信息，暂未开放
-                     * 
+                     * @deprecated
                      */
                     OrganizationInfo GetOrganization() const;
 
                     /**
                      * 设置机构信息，暂未开放
                      * @param _organization 机构信息，暂未开放
-                     * 
+                     * @deprecated
                      */
                     void SetOrganization(const OrganizationInfo& _organization);
 
                     /**
                      * 判断参数 Organization 是否已赋值
                      * @return Organization 是否已赋值
-                     * 
+                     * @deprecated
                      */
                     bool OrganizationHasBeenSet() const;
 

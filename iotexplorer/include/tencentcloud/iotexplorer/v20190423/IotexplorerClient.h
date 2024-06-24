@@ -149,6 +149,8 @@
 #include <tencentcloud/iotexplorer/v20190423/model/DescribeFenceBindListResponse.h>
 #include <tencentcloud/iotexplorer/v20190423/model/DescribeFenceEventListRequest.h>
 #include <tencentcloud/iotexplorer/v20190423/model/DescribeFenceEventListResponse.h>
+#include <tencentcloud/iotexplorer/v20190423/model/DescribeFirmwareRequest.h>
+#include <tencentcloud/iotexplorer/v20190423/model/DescribeFirmwareResponse.h>
 #include <tencentcloud/iotexplorer/v20190423/model/DescribeFirmwareTaskRequest.h>
 #include <tencentcloud/iotexplorer/v20190423/model/DescribeFirmwareTaskResponse.h>
 #include <tencentcloud/iotexplorer/v20190423/model/DescribeGatewayBindDevicesRequest.h>
@@ -500,6 +502,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeFenceEventListResponse> DescribeFenceEventListOutcome;
                 typedef std::future<DescribeFenceEventListOutcome> DescribeFenceEventListOutcomeCallable;
                 typedef std::function<void(const IotexplorerClient*, const Model::DescribeFenceEventListRequest&, DescribeFenceEventListOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeFenceEventListAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeFirmwareResponse> DescribeFirmwareOutcome;
+                typedef std::future<DescribeFirmwareOutcome> DescribeFirmwareOutcomeCallable;
+                typedef std::function<void(const IotexplorerClient*, const Model::DescribeFirmwareRequest&, DescribeFirmwareOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeFirmwareAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeFirmwareTaskResponse> DescribeFirmwareTaskOutcome;
                 typedef std::future<DescribeFirmwareTaskOutcome> DescribeFirmwareTaskOutcomeCallable;
                 typedef std::function<void(const IotexplorerClient*, const Model::DescribeFirmwareTaskRequest&, DescribeFirmwareTaskOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeFirmwareTaskAsyncHandler;
@@ -1291,6 +1296,15 @@ namespace TencentCloud
                 DescribeFenceEventListOutcome DescribeFenceEventList(const Model::DescribeFenceEventListRequest &request);
                 void DescribeFenceEventListAsync(const Model::DescribeFenceEventListRequest& request, const DescribeFenceEventListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DescribeFenceEventListOutcomeCallable DescribeFenceEventListCallable(const Model::DescribeFenceEventListRequest& request);
+
+                /**
+                 *查询固件信息
+                 * @param req DescribeFirmwareRequest
+                 * @return DescribeFirmwareOutcome
+                 */
+                DescribeFirmwareOutcome DescribeFirmware(const Model::DescribeFirmwareRequest &request);
+                void DescribeFirmwareAsync(const Model::DescribeFirmwareRequest& request, const DescribeFirmwareAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeFirmwareOutcomeCallable DescribeFirmwareCallable(const Model::DescribeFirmwareRequest& request);
 
                 /**
                  *查询固件升级任务列表

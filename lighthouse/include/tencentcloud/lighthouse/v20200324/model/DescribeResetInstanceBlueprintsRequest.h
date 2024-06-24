@@ -44,15 +44,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取实例ID
-                     * @return InstanceId 实例ID
+                     * 获取实例ID。可通过 <a href="https://cloud.tencent.com/document/product/1207/47573">DescribeInstances</a> 接口返回值中的 InstanceId 获取。
+                     * @return InstanceId 实例ID。可通过 <a href="https://cloud.tencent.com/document/product/1207/47573">DescribeInstances</a> 接口返回值中的 InstanceId 获取。
                      * 
                      */
                     std::string GetInstanceId() const;
 
                     /**
-                     * 设置实例ID
-                     * @param _instanceId 实例ID
+                     * 设置实例ID。可通过 <a href="https://cloud.tencent.com/document/product/1207/47573">DescribeInstances</a> 接口返回值中的 InstanceId 获取。
+                     * @param _instanceId 实例ID。可通过 <a href="https://cloud.tencent.com/document/product/1207/47573">DescribeInstances</a> 接口返回值中的 InstanceId 获取。
                      * 
                      */
                     void SetInstanceId(const std::string& _instanceId);
@@ -111,6 +111,7 @@ namespace TencentCloud
 <li>blueprint-id</li>按照【镜像 ID】进行过滤。
 类型：String
 必选：否
+可通过 <a href="https://cloud.tencent.com/document/product/1207/47689">DescribeBlueprints</a> 接口返回值中的 BlueprintId 获取。
 <li>blueprint-type</li>按照【镜像类型】进行过滤。
 取值： APP_OS（应用镜像 ）；PURE_OS（ 系统镜像）；PRIVATE（自定义镜像）。
 类型：String
@@ -122,15 +123,18 @@ namespace TencentCloud
 <li>blueprint-name</li>按照【镜像名称】进行过滤。
 类型：String
 必选：否
+可通过 <a href="https://cloud.tencent.com/document/product/1207/47689">DescribeBlueprints</a> 接口返回值中的 BlueprintName 获取。
 <li>blueprint-state</li>按照【镜像状态】进行过滤。
 类型：String
 必选：否
+可通过 <a href="https://cloud.tencent.com/document/product/1207/47689">DescribeBlueprints</a> 接口返回值中的 BlueprintState 获取。
 
 每次请求的 Filters 的上限为 10，Filter.Values 的上限为 5。参数不支持同时指定 BlueprintIds 和 Filters 。
                      * @return Filters 过滤器列表。
 <li>blueprint-id</li>按照【镜像 ID】进行过滤。
 类型：String
 必选：否
+可通过 <a href="https://cloud.tencent.com/document/product/1207/47689">DescribeBlueprints</a> 接口返回值中的 BlueprintId 获取。
 <li>blueprint-type</li>按照【镜像类型】进行过滤。
 取值： APP_OS（应用镜像 ）；PURE_OS（ 系统镜像）；PRIVATE（自定义镜像）。
 类型：String
@@ -142,9 +146,11 @@ namespace TencentCloud
 <li>blueprint-name</li>按照【镜像名称】进行过滤。
 类型：String
 必选：否
+可通过 <a href="https://cloud.tencent.com/document/product/1207/47689">DescribeBlueprints</a> 接口返回值中的 BlueprintName 获取。
 <li>blueprint-state</li>按照【镜像状态】进行过滤。
 类型：String
 必选：否
+可通过 <a href="https://cloud.tencent.com/document/product/1207/47689">DescribeBlueprints</a> 接口返回值中的 BlueprintState 获取。
 
 每次请求的 Filters 的上限为 10，Filter.Values 的上限为 5。参数不支持同时指定 BlueprintIds 和 Filters 。
                      * 
@@ -156,6 +162,7 @@ namespace TencentCloud
 <li>blueprint-id</li>按照【镜像 ID】进行过滤。
 类型：String
 必选：否
+可通过 <a href="https://cloud.tencent.com/document/product/1207/47689">DescribeBlueprints</a> 接口返回值中的 BlueprintId 获取。
 <li>blueprint-type</li>按照【镜像类型】进行过滤。
 取值： APP_OS（应用镜像 ）；PURE_OS（ 系统镜像）；PRIVATE（自定义镜像）。
 类型：String
@@ -167,15 +174,18 @@ namespace TencentCloud
 <li>blueprint-name</li>按照【镜像名称】进行过滤。
 类型：String
 必选：否
+可通过 <a href="https://cloud.tencent.com/document/product/1207/47689">DescribeBlueprints</a> 接口返回值中的 BlueprintName 获取。
 <li>blueprint-state</li>按照【镜像状态】进行过滤。
 类型：String
 必选：否
+可通过 <a href="https://cloud.tencent.com/document/product/1207/47689">DescribeBlueprints</a> 接口返回值中的 BlueprintState 获取。
 
 每次请求的 Filters 的上限为 10，Filter.Values 的上限为 5。参数不支持同时指定 BlueprintIds 和 Filters 。
                      * @param _filters 过滤器列表。
 <li>blueprint-id</li>按照【镜像 ID】进行过滤。
 类型：String
 必选：否
+可通过 <a href="https://cloud.tencent.com/document/product/1207/47689">DescribeBlueprints</a> 接口返回值中的 BlueprintId 获取。
 <li>blueprint-type</li>按照【镜像类型】进行过滤。
 取值： APP_OS（应用镜像 ）；PURE_OS（ 系统镜像）；PRIVATE（自定义镜像）。
 类型：String
@@ -187,9 +197,11 @@ namespace TencentCloud
 <li>blueprint-name</li>按照【镜像名称】进行过滤。
 类型：String
 必选：否
+可通过 <a href="https://cloud.tencent.com/document/product/1207/47689">DescribeBlueprints</a> 接口返回值中的 BlueprintName 获取。
 <li>blueprint-state</li>按照【镜像状态】进行过滤。
 类型：String
 必选：否
+可通过 <a href="https://cloud.tencent.com/document/product/1207/47689">DescribeBlueprints</a> 接口返回值中的 BlueprintState 获取。
 
 每次请求的 Filters 的上限为 10，Filter.Values 的上限为 5。参数不支持同时指定 BlueprintIds 和 Filters 。
                      * 
@@ -206,7 +218,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 实例ID
+                     * 实例ID。可通过 <a href="https://cloud.tencent.com/document/product/1207/47573">DescribeInstances</a> 接口返回值中的 InstanceId 获取。
                      */
                     std::string m_instanceId;
                     bool m_instanceIdHasBeenSet;
@@ -228,6 +240,7 @@ namespace TencentCloud
 <li>blueprint-id</li>按照【镜像 ID】进行过滤。
 类型：String
 必选：否
+可通过 <a href="https://cloud.tencent.com/document/product/1207/47689">DescribeBlueprints</a> 接口返回值中的 BlueprintId 获取。
 <li>blueprint-type</li>按照【镜像类型】进行过滤。
 取值： APP_OS（应用镜像 ）；PURE_OS（ 系统镜像）；PRIVATE（自定义镜像）。
 类型：String
@@ -239,9 +252,11 @@ namespace TencentCloud
 <li>blueprint-name</li>按照【镜像名称】进行过滤。
 类型：String
 必选：否
+可通过 <a href="https://cloud.tencent.com/document/product/1207/47689">DescribeBlueprints</a> 接口返回值中的 BlueprintName 获取。
 <li>blueprint-state</li>按照【镜像状态】进行过滤。
 类型：String
 必选：否
+可通过 <a href="https://cloud.tencent.com/document/product/1207/47689">DescribeBlueprints</a> 接口返回值中的 BlueprintState 获取。
 
 每次请求的 Filters 的上限为 10，Filter.Values 的上限为 5。参数不支持同时指定 BlueprintIds 和 Filters 。
                      */

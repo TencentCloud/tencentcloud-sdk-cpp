@@ -24,6 +24,7 @@
 #include <tencentcloud/core/utils/rapidjson/writer.h>
 #include <tencentcloud/core/utils/rapidjson/stringbuffer.h>
 #include <tencentcloud/core/AbstractModel.h>
+#include <tencentcloud/asr/v20190614/model/VoicePrintBaseData.h>
 
 
 namespace TencentCloud
@@ -71,6 +72,31 @@ namespace TencentCloud
                      */
                     bool TotalHasBeenSet() const;
 
+                    /**
+                     * 获取说话人id列表
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return VoicePrintList 说话人id列表
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::vector<VoicePrintBaseData> GetVoicePrintList() const;
+
+                    /**
+                     * 设置说话人id列表
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _voicePrintList 说话人id列表
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetVoicePrintList(const std::vector<VoicePrintBaseData>& _voicePrintList);
+
+                    /**
+                     * 判断参数 VoicePrintList 是否已赋值
+                     * @return VoicePrintList 是否已赋值
+                     * 
+                     */
+                    bool VoicePrintListHasBeenSet() const;
+
                 private:
 
                     /**
@@ -79,6 +105,13 @@ namespace TencentCloud
                      */
                     uint64_t m_total;
                     bool m_totalHasBeenSet;
+
+                    /**
+                     * 说话人id列表
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::vector<VoicePrintBaseData> m_voicePrintList;
+                    bool m_voicePrintListHasBeenSet;
 
                 };
             }

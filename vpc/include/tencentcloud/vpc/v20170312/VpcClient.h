@@ -1659,7 +1659,7 @@ namespace TencentCloud
                 AddIp6RulesOutcomeCallable AddIp6RulesCallable(const Model::AddIp6RulesRequest& request);
 
                 /**
-                 *增加模板对象中的IP地址、协议端口、IP地址组、协议端口组。当前仅支持北京、泰国、北美地域请求。
+                 *增加模板对象中的IP地址、协议端口、IP地址组、协议端口组。
                  * @param req AddTemplateMemberRequest
                  * @return AddTemplateMemberOutcome
                  */
@@ -2685,7 +2685,7 @@ namespace TencentCloud
                 DeleteSubnetOutcomeCallable DeleteSubnetCallable(const Model::DeleteSubnetRequest& request);
 
                 /**
-                 *删除模板对象中的IP地址、协议端口、IP地址组、协议端口组。当前仅支持北京、泰国、北美地域请求。
+                 *删除模板对象中的IP地址、协议端口、IP地址组、协议端口组。
                  * @param req DeleteTemplateMemberRequest
                  * @return DeleteTemplateMemberOutcome
                  */
@@ -3419,7 +3419,7 @@ namespace TencentCloud
                 DescribeVpcEndPointOutcomeCallable DescribeVpcEndPointCallable(const Model::DescribeVpcEndPointRequest& request);
 
                 /**
-                 *查询终端节点服务列表。
+                 *本接口（DescribeVpcEndPointService）用于查询终端节点服务列表。
                  * @param req DescribeVpcEndPointServiceRequest
                  * @return DescribeVpcEndPointServiceOutcome
                  */
@@ -4334,7 +4334,7 @@ LimitTypes取值范围：
                 ModifySubnetAttributeOutcomeCallable ModifySubnetAttributeCallable(const Model::ModifySubnetAttributeRequest& request);
 
                 /**
-                 *修改模板对象中的IP地址、协议端口、IP地址组、协议端口组。当前仅支持北京、泰国、北美地域请求。
+                 *修改模板对象中的IP地址、协议端口、IP地址组、协议端口组。
                  * @param req ModifyTemplateMemberRequest
                  * @return ModifyTemplateMemberOutcome
                  */
