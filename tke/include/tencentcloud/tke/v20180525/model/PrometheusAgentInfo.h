@@ -109,6 +109,27 @@ namespace TencentCloud
                      */
                     bool DescribeHasBeenSet() const;
 
+                    /**
+                     * 获取集群所在地域
+                     * @return Region 集群所在地域
+                     * 
+                     */
+                    std::string GetRegion() const;
+
+                    /**
+                     * 设置集群所在地域
+                     * @param _region 集群所在地域
+                     * 
+                     */
+                    void SetRegion(const std::string& _region);
+
+                    /**
+                     * 判断参数 Region 是否已赋值
+                     * @return Region 是否已赋值
+                     * 
+                     */
+                    bool RegionHasBeenSet() const;
+
                 private:
 
                     /**
@@ -128,6 +149,12 @@ namespace TencentCloud
                      */
                     std::string m_describe;
                     bool m_describeHasBeenSet;
+
+                    /**
+                     * 集群所在地域
+                     */
+                    std::string m_region;
+                    bool m_regionHasBeenSet;
 
                 };
             }

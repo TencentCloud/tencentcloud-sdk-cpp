@@ -23,8 +23,14 @@
 #include <tencentcloud/core/Credential.h>
 #include <tencentcloud/core/profile/ClientProfile.h>
 #include <tencentcloud/core/AsyncCallerContext.h>
+#include <tencentcloud/ioa/v20220601/model/DescribeAccountGroupsRequest.h>
+#include <tencentcloud/ioa/v20220601/model/DescribeAccountGroupsResponse.h>
 #include <tencentcloud/ioa/v20220601/model/DescribeDevicesRequest.h>
 #include <tencentcloud/ioa/v20220601/model/DescribeDevicesResponse.h>
+#include <tencentcloud/ioa/v20220601/model/DescribeLocalAccountsRequest.h>
+#include <tencentcloud/ioa/v20220601/model/DescribeLocalAccountsResponse.h>
+#include <tencentcloud/ioa/v20220601/model/DescribeRootAccountGroupRequest.h>
+#include <tencentcloud/ioa/v20220601/model/DescribeRootAccountGroupResponse.h>
 
 
 namespace TencentCloud
@@ -39,11 +45,29 @@ namespace TencentCloud
                 IoaClient(const Credential &credential, const std::string &region);
                 IoaClient(const Credential &credential, const std::string &region, const ClientProfile &profile);
 
+                typedef Outcome<Core::Error, Model::DescribeAccountGroupsResponse> DescribeAccountGroupsOutcome;
+                typedef std::future<DescribeAccountGroupsOutcome> DescribeAccountGroupsOutcomeCallable;
+                typedef std::function<void(const IoaClient*, const Model::DescribeAccountGroupsRequest&, DescribeAccountGroupsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeAccountGroupsAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeDevicesResponse> DescribeDevicesOutcome;
                 typedef std::future<DescribeDevicesOutcome> DescribeDevicesOutcomeCallable;
                 typedef std::function<void(const IoaClient*, const Model::DescribeDevicesRequest&, DescribeDevicesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeDevicesAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeLocalAccountsResponse> DescribeLocalAccountsOutcome;
+                typedef std::future<DescribeLocalAccountsOutcome> DescribeLocalAccountsOutcomeCallable;
+                typedef std::function<void(const IoaClient*, const Model::DescribeLocalAccountsRequest&, DescribeLocalAccountsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeLocalAccountsAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeRootAccountGroupResponse> DescribeRootAccountGroupOutcome;
+                typedef std::future<DescribeRootAccountGroupOutcome> DescribeRootAccountGroupOutcomeCallable;
+                typedef std::function<void(const IoaClient*, const Model::DescribeRootAccountGroupRequest&, DescribeRootAccountGroupOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeRootAccountGroupAsyncHandler;
 
 
+
+                /**
+                 *以分页的方式查询账户目录列表,私有化调用path为：/capi/Assets/DescribeAccountGroups
+                 * @param req DescribeAccountGroupsRequest
+                 * @return DescribeAccountGroupsOutcome
+                 */
+                DescribeAccountGroupsOutcome DescribeAccountGroups(const Model::DescribeAccountGroupsRequest &request);
+                void DescribeAccountGroupsAsync(const Model::DescribeAccountGroupsRequest& request, const DescribeAccountGroupsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeAccountGroupsOutcomeCallable DescribeAccountGroupsCallable(const Model::DescribeAccountGroupsRequest& request);
 
                 /**
                  *查询满足条件的终端数据详情，私有化调用path为：/capi/Assets/Device/DescribeDevices
@@ -53,6 +77,24 @@ namespace TencentCloud
                 DescribeDevicesOutcome DescribeDevices(const Model::DescribeDevicesRequest &request);
                 void DescribeDevicesAsync(const Model::DescribeDevicesRequest& request, const DescribeDevicesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DescribeDevicesOutcomeCallable DescribeDevicesCallable(const Model::DescribeDevicesRequest& request);
+
+                /**
+                 *获取账号列表，支持分页，模糊搜索，私有化调用path为：/capi/Assets/Account/DescribeLocalAccounts
+                 * @param req DescribeLocalAccountsRequest
+                 * @return DescribeLocalAccountsOutcome
+                 */
+                DescribeLocalAccountsOutcome DescribeLocalAccounts(const Model::DescribeLocalAccountsRequest &request);
+                void DescribeLocalAccountsAsync(const Model::DescribeLocalAccountsRequest& request, const DescribeLocalAccountsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeLocalAccountsOutcomeCallable DescribeLocalAccountsCallable(const Model::DescribeLocalAccountsRequest& request);
+
+                /**
+                 *查询账户根分组详情，私有化调用path为：capi/Assets/DescribeRootAccountGroup
+                 * @param req DescribeRootAccountGroupRequest
+                 * @return DescribeRootAccountGroupOutcome
+                 */
+                DescribeRootAccountGroupOutcome DescribeRootAccountGroup(const Model::DescribeRootAccountGroupRequest &request);
+                void DescribeRootAccountGroupAsync(const Model::DescribeRootAccountGroupRequest& request, const DescribeRootAccountGroupAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeRootAccountGroupOutcomeCallable DescribeRootAccountGroupCallable(const Model::DescribeRootAccountGroupRequest& request);
 
             };
         }

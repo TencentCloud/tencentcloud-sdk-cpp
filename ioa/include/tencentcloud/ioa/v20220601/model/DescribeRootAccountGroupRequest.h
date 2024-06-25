@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef TENCENTCLOUD_CWP_V20180228_MODEL_DELETEATTACKLOGSRESPONSE_H_
-#define TENCENTCLOUD_CWP_V20180228_MODEL_DELETEATTACKLOGSRESPONSE_H_
+#ifndef TENCENTCLOUD_IOA_V20220601_MODEL_DESCRIBEROOTACCOUNTGROUPREQUEST_H_
+#define TENCENTCLOUD_IOA_V20220601_MODEL_DESCRIBEROOTACCOUNTGROUPREQUEST_H_
 
 #include <string>
 #include <vector>
@@ -25,21 +25,20 @@
 
 namespace TencentCloud
 {
-    namespace Cwp
+    namespace Ioa
     {
-        namespace V20180228
+        namespace V20220601
         {
             namespace Model
             {
                 /**
-                * DeleteAttackLogs返回参数结构体
+                * DescribeRootAccountGroup请求参数结构体
                 */
-                class DeleteAttackLogsResponse : public AbstractModel
+                class DescribeRootAccountGroupRequest : public AbstractModel
                 {
                 public:
-                    DeleteAttackLogsResponse();
-                    ~DeleteAttackLogsResponse() = default;
-                    CoreInternalOutcome Deserialize(const std::string &payload);
+                    DescribeRootAccountGroupRequest();
+                    ~DescribeRootAccountGroupRequest() = default;
                     std::string ToJsonString() const;
 
 
@@ -51,4 +50,4 @@ namespace TencentCloud
     }
 }
 
-#endif // !TENCENTCLOUD_CWP_V20180228_MODEL_DELETEATTACKLOGSRESPONSE_H_
+#endif // !TENCENTCLOUD_IOA_V20220601_MODEL_DESCRIBEROOTACCOUNTGROUPREQUEST_H_

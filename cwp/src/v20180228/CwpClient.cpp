@@ -1287,49 +1287,6 @@ CwpClient::DeleteAllJavaMemShellsOutcomeCallable CwpClient::DeleteAllJavaMemShel
     return task->get_future();
 }
 
-CwpClient::DeleteAttackLogsOutcome CwpClient::DeleteAttackLogs(const DeleteAttackLogsRequest &request)
-{
-    auto outcome = MakeRequest(request, "DeleteAttackLogs");
-    if (outcome.IsSuccess())
-    {
-        auto r = outcome.GetResult();
-        string payload = string(r.Body(), r.BodySize());
-        DeleteAttackLogsResponse rsp = DeleteAttackLogsResponse();
-        auto o = rsp.Deserialize(payload);
-        if (o.IsSuccess())
-            return DeleteAttackLogsOutcome(rsp);
-        else
-            return DeleteAttackLogsOutcome(o.GetError());
-    }
-    else
-    {
-        return DeleteAttackLogsOutcome(outcome.GetError());
-    }
-}
-
-void CwpClient::DeleteAttackLogsAsync(const DeleteAttackLogsRequest& request, const DeleteAttackLogsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
-{
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DeleteAttackLogs(request), context);
-    };
-
-    Executor::GetInstance()->Submit(new Runnable(fn));
-}
-
-CwpClient::DeleteAttackLogsOutcomeCallable CwpClient::DeleteAttackLogsCallable(const DeleteAttackLogsRequest &request)
-{
-    auto task = std::make_shared<std::packaged_task<DeleteAttackLogsOutcome()>>(
-        [this, request]()
-        {
-            return this->DeleteAttackLogs(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
-}
-
 CwpClient::DeleteBanWhiteListOutcome CwpClient::DeleteBanWhiteList(const DeleteBanWhiteListRequest &request)
 {
     auto outcome = MakeRequest(request, "DeleteBanWhiteList");

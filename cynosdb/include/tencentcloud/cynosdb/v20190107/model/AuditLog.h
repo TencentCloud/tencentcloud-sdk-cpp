@@ -516,6 +516,31 @@ namespace TencentCloud
                      */
                     bool TemplateInfoHasBeenSet() const;
 
+                    /**
+                     * 获取事务ID
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return TrxId 事务ID
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    int64_t GetTrxId() const;
+
+                    /**
+                     * 设置事务ID
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _trxId 事务ID
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetTrxId(const int64_t& _trxId);
+
+                    /**
+                     * 判断参数 TrxId 是否已赋值
+                     * @return TrxId 是否已赋值
+                     * 
+                     */
+                    bool TrxIdHasBeenSet() const;
+
                 private:
 
                     /**
@@ -650,6 +675,13 @@ namespace TencentCloud
                      */
                     std::vector<LogRuleTemplateInfo> m_templateInfo;
                     bool m_templateInfoHasBeenSet;
+
+                    /**
+                     * 事务ID
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    int64_t m_trxId;
+                    bool m_trxIdHasBeenSet;
 
                 };
             }

@@ -184,19 +184,27 @@ namespace TencentCloud
                     bool ReviewMessageHasBeenSet() const;
 
                     /**
-                     * 获取审核节点的签署人标志，用于指定当前审核的签署方
-<ul><li>**如果签署审核节点是个人， 此参数必填**。</li></ul>
-                     * @return RecipientId 审核节点的签署人标志，用于指定当前审核的签署方
-<ul><li>**如果签署审核节点是个人， 此参数必填**。</li></ul>
+                     * 获取审核节点的签署人标志，用于指定当前审核的签署方。
+<font color= "red">注意：以下情况必须传递RecipientId</font>
+<ul><li> **发起签署流程时，指定签署人需要审批（即签署人需要审批
+<a href="https://qian.tencent.com/developers/partnerApis/dataTypes#flowapproverinfo" target="_blank">ApproverNeedSignReview</a>为true），则必须指定RecipientId**</li><li>**如果签署审核节点是个人， 此参数必填**。</li></ul>
+                     * @return RecipientId 审核节点的签署人标志，用于指定当前审核的签署方。
+<font color= "red">注意：以下情况必须传递RecipientId</font>
+<ul><li> **发起签署流程时，指定签署人需要审批（即签署人需要审批
+<a href="https://qian.tencent.com/developers/partnerApis/dataTypes#flowapproverinfo" target="_blank">ApproverNeedSignReview</a>为true），则必须指定RecipientId**</li><li>**如果签署审核节点是个人， 此参数必填**。</li></ul>
                      * 
                      */
                     std::string GetRecipientId() const;
 
                     /**
-                     * 设置审核节点的签署人标志，用于指定当前审核的签署方
-<ul><li>**如果签署审核节点是个人， 此参数必填**。</li></ul>
-                     * @param _recipientId 审核节点的签署人标志，用于指定当前审核的签署方
-<ul><li>**如果签署审核节点是个人， 此参数必填**。</li></ul>
+                     * 设置审核节点的签署人标志，用于指定当前审核的签署方。
+<font color= "red">注意：以下情况必须传递RecipientId</font>
+<ul><li> **发起签署流程时，指定签署人需要审批（即签署人需要审批
+<a href="https://qian.tencent.com/developers/partnerApis/dataTypes#flowapproverinfo" target="_blank">ApproverNeedSignReview</a>为true），则必须指定RecipientId**</li><li>**如果签署审核节点是个人， 此参数必填**。</li></ul>
+                     * @param _recipientId 审核节点的签署人标志，用于指定当前审核的签署方。
+<font color= "red">注意：以下情况必须传递RecipientId</font>
+<ul><li> **发起签署流程时，指定签署人需要审批（即签署人需要审批
+<a href="https://qian.tencent.com/developers/partnerApis/dataTypes#flowapproverinfo" target="_blank">ApproverNeedSignReview</a>为true），则必须指定RecipientId**</li><li>**如果签署审核节点是个人， 此参数必填**。</li></ul>
                      * 
                      */
                     void SetRecipientId(const std::string& _recipientId);
@@ -290,8 +298,10 @@ namespace TencentCloud
                     bool m_reviewMessageHasBeenSet;
 
                     /**
-                     * 审核节点的签署人标志，用于指定当前审核的签署方
-<ul><li>**如果签署审核节点是个人， 此参数必填**。</li></ul>
+                     * 审核节点的签署人标志，用于指定当前审核的签署方。
+<font color= "red">注意：以下情况必须传递RecipientId</font>
+<ul><li> **发起签署流程时，指定签署人需要审批（即签署人需要审批
+<a href="https://qian.tencent.com/developers/partnerApis/dataTypes#flowapproverinfo" target="_blank">ApproverNeedSignReview</a>为true），则必须指定RecipientId**</li><li>**如果签署审核节点是个人， 此参数必填**。</li></ul>
                      */
                     std::string m_recipientId;
                     bool m_recipientIdHasBeenSet;

@@ -121,6 +121,31 @@ namespace TencentCloud
                      */
                     bool PassInputSeiHasBeenSet() const;
 
+                    /**
+                     * 获取取值范围[0,1]
+填1时，图片输入中的透明通道生效。
+                     * @return UsePictureTransparent 取值范围[0,1]
+填1时，图片输入中的透明通道生效。
+                     * 
+                     */
+                    int64_t GetUsePictureTransparent() const;
+
+                    /**
+                     * 设置取值范围[0,1]
+填1时，图片输入中的透明通道生效。
+                     * @param _usePictureTransparent 取值范围[0,1]
+填1时，图片输入中的透明通道生效。
+                     * 
+                     */
+                    void SetUsePictureTransparent(const int64_t& _usePictureTransparent);
+
+                    /**
+                     * 判断参数 UsePictureTransparent 是否已赋值
+                     * @return UsePictureTransparent 是否已赋值
+                     * 
+                     */
+                    bool UsePictureTransparentHasBeenSet() const;
+
                 private:
 
                     /**
@@ -143,6 +168,13 @@ namespace TencentCloud
                      */
                     int64_t m_passInputSei;
                     bool m_passInputSeiHasBeenSet;
+
+                    /**
+                     * 取值范围[0,1]
+填1时，图片输入中的透明通道生效。
+                     */
+                    int64_t m_usePictureTransparent;
+                    bool m_usePictureTransparentHasBeenSet;
 
                 };
             }

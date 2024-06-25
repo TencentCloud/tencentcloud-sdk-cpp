@@ -81,8 +81,6 @@
 #include <tencentcloud/cwp/v20180228/model/CreateWhiteListOrderResponse.h>
 #include <tencentcloud/cwp/v20180228/model/DeleteAllJavaMemShellsRequest.h>
 #include <tencentcloud/cwp/v20180228/model/DeleteAllJavaMemShellsResponse.h>
-#include <tencentcloud/cwp/v20180228/model/DeleteAttackLogsRequest.h>
-#include <tencentcloud/cwp/v20180228/model/DeleteAttackLogsResponse.h>
 #include <tencentcloud/cwp/v20180228/model/DeleteBanWhiteListRequest.h>
 #include <tencentcloud/cwp/v20180228/model/DeleteBanWhiteListResponse.h>
 #include <tencentcloud/cwp/v20180228/model/DeleteBaselinePolicyRequest.h>
@@ -1158,9 +1156,6 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DeleteAllJavaMemShellsResponse> DeleteAllJavaMemShellsOutcome;
                 typedef std::future<DeleteAllJavaMemShellsOutcome> DeleteAllJavaMemShellsOutcomeCallable;
                 typedef std::function<void(const CwpClient*, const Model::DeleteAllJavaMemShellsRequest&, DeleteAllJavaMemShellsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteAllJavaMemShellsAsyncHandler;
-                typedef Outcome<Core::Error, Model::DeleteAttackLogsResponse> DeleteAttackLogsOutcome;
-                typedef std::future<DeleteAttackLogsOutcome> DeleteAttackLogsOutcomeCallable;
-                typedef std::function<void(const CwpClient*, const Model::DeleteAttackLogsRequest&, DeleteAttackLogsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteAttackLogsAsyncHandler;
                 typedef Outcome<Core::Error, Model::DeleteBanWhiteListResponse> DeleteBanWhiteListOutcome;
                 typedef std::future<DeleteBanWhiteListOutcome> DeleteBanWhiteListOutcomeCallable;
                 typedef std::function<void(const CwpClient*, const Model::DeleteBanWhiteListRequest&, DeleteBanWhiteListOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteBanWhiteListAsyncHandler;
@@ -2888,17 +2883,6 @@ namespace TencentCloud
                 DeleteAllJavaMemShellsOutcome DeleteAllJavaMemShells(const Model::DeleteAllJavaMemShellsRequest &request);
                 void DeleteAllJavaMemShellsAsync(const Model::DeleteAllJavaMemShellsRequest& request, const DeleteAllJavaMemShellsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DeleteAllJavaMemShellsOutcomeCallable DeleteAllJavaMemShellsCallable(const Model::DeleteAllJavaMemShellsRequest& request);
-
-                /**
-                 *ModifyEventAttackStatus 接口替代
-
-删除网络攻击日志
-                 * @param req DeleteAttackLogsRequest
-                 * @return DeleteAttackLogsOutcome
-                 */
-                DeleteAttackLogsOutcome DeleteAttackLogs(const Model::DeleteAttackLogsRequest &request);
-                void DeleteAttackLogsAsync(const Model::DeleteAttackLogsRequest& request, const DeleteAttackLogsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
-                DeleteAttackLogsOutcomeCallable DeleteAttackLogsCallable(const Model::DeleteAttackLogsRequest& request);
 
                 /**
                  *删除阻断白名单列表

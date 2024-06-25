@@ -194,15 +194,15 @@ namespace TencentCloud
                     bool RegionHasBeenSet() const;
 
                     /**
-                     * 获取监控组件的状态，为Defender_Uninstall、Defender_Normal、Defender_Error、Defender_Installing
-                     * @return DefenderStatus 监控组件的状态，为Defender_Uninstall、Defender_Normal、Defender_Error、Defender_Installing
+                     * 获取防护状态: 已防护: Defended 未防护: UnDefended
+                     * @return DefenderStatus 防护状态: 已防护: Defended 未防护: UnDefended
                      * 
                      */
                     std::string GetDefenderStatus() const;
 
                     /**
-                     * 设置监控组件的状态，为Defender_Uninstall、Defender_Normal、Defender_Error、Defender_Installing
-                     * @param _defenderStatus 监控组件的状态，为Defender_Uninstall、Defender_Normal、Defender_Error、Defender_Installing
+                     * 设置防护状态: 已防护: Defended 未防护: UnDefended
+                     * @param _defenderStatus 防护状态: 已防护: Defended 未防护: UnDefended
                      * 
                      */
                     void SetDefenderStatus(const std::string& _defenderStatus);
@@ -624,18 +624,18 @@ namespace TencentCloud
                     bool UnInstallAgentNodeCountHasBeenSet() const;
 
                     /**
-                     * 获取计费核数
+                     * 获取计费核数(弹性计费核数+普通计费核数)
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return ChargeCoresCnt 计费核数
+                     * @return ChargeCoresCnt 计费核数(弹性计费核数+普通计费核数)
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     uint64_t GetChargeCoresCnt() const;
 
                     /**
-                     * 设置计费核数
+                     * 设置计费核数(弹性计费核数+普通计费核数)
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _chargeCoresCnt 计费核数
+                     * @param _chargeCoresCnt 计费核数(弹性计费核数+普通计费核数)
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -647,6 +647,48 @@ namespace TencentCloud
                      * 
                      */
                     bool ChargeCoresCntHasBeenSet() const;
+
+                    /**
+                     * 获取master 地址列表
+                     * @return MasterAddresses master 地址列表
+                     * 
+                     */
+                    std::vector<std::string> GetMasterAddresses() const;
+
+                    /**
+                     * 设置master 地址列表
+                     * @param _masterAddresses master 地址列表
+                     * 
+                     */
+                    void SetMasterAddresses(const std::vector<std::string>& _masterAddresses);
+
+                    /**
+                     * 判断参数 MasterAddresses 是否已赋值
+                     * @return MasterAddresses 是否已赋值
+                     * 
+                     */
+                    bool MasterAddressesHasBeenSet() const;
+
+                    /**
+                     * 获取核数
+                     * @return CoresCnt 核数
+                     * 
+                     */
+                    uint64_t GetCoresCnt() const;
+
+                    /**
+                     * 设置核数
+                     * @param _coresCnt 核数
+                     * 
+                     */
+                    void SetCoresCnt(const uint64_t& _coresCnt);
+
+                    /**
+                     * 判断参数 CoresCnt 是否已赋值
+                     * @return CoresCnt 是否已赋值
+                     * 
+                     */
+                    bool CoresCntHasBeenSet() const;
 
                 private:
 
@@ -693,7 +735,7 @@ namespace TencentCloud
                     bool m_regionHasBeenSet;
 
                     /**
-                     * 监控组件的状态，为Defender_Uninstall、Defender_Normal、Defender_Error、Defender_Installing
+                     * 防护状态: 已防护: Defended 未防护: UnDefended
                      */
                     std::string m_defenderStatus;
                     bool m_defenderStatusHasBeenSet;
@@ -814,11 +856,23 @@ namespace TencentCloud
                     bool m_unInstallAgentNodeCountHasBeenSet;
 
                     /**
-                     * 计费核数
+                     * 计费核数(弹性计费核数+普通计费核数)
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     uint64_t m_chargeCoresCnt;
                     bool m_chargeCoresCntHasBeenSet;
+
+                    /**
+                     * master 地址列表
+                     */
+                    std::vector<std::string> m_masterAddresses;
+                    bool m_masterAddressesHasBeenSet;
+
+                    /**
+                     * 核数
+                     */
+                    uint64_t m_coresCnt;
+                    bool m_coresCntHasBeenSet;
 
                 };
             }

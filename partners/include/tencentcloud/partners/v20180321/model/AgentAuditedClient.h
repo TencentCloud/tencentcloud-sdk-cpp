@@ -394,6 +394,31 @@ namespace TencentCloud
                      */
                     bool MailHasBeenSet() const;
 
+                    /**
+                     * 获取交易类型:交易类型 1-原类型 2-代理型  3-代采型
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return TransactionType 交易类型:交易类型 1-原类型 2-代理型  3-代采型
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::string GetTransactionType() const;
+
+                    /**
+                     * 设置交易类型:交易类型 1-原类型 2-代理型  3-代采型
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _transactionType 交易类型:交易类型 1-原类型 2-代理型  3-代采型
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetTransactionType(const std::string& _transactionType);
+
+                    /**
+                     * 判断参数 TransactionType 是否已赋值
+                     * @return TransactionType 是否已赋值
+                     * 
+                     */
+                    bool TransactionTypeHasBeenSet() const;
+
                 private:
 
                     /**
@@ -494,6 +519,13 @@ namespace TencentCloud
                      */
                     std::string m_mail;
                     bool m_mailHasBeenSet;
+
+                    /**
+                     * 交易类型:交易类型 1-原类型 2-代理型  3-代采型
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_transactionType;
+                    bool m_transactionTypeHasBeenSet;
 
                 };
             }

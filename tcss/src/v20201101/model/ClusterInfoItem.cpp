@@ -46,7 +46,9 @@ ClusterInfoItem::ClusterInfoItem() :
     m_nodeCountHasBeenSet(false),
     m_offLineNodeCountHasBeenSet(false),
     m_unInstallAgentNodeCountHasBeenSet(false),
-    m_chargeCoresCntHasBeenSet(false)
+    m_chargeCoresCntHasBeenSet(false),
+    m_masterAddressesHasBeenSet(false),
+    m_coresCntHasBeenSet(false)
 {
 }
 
@@ -315,6 +317,29 @@ CoreInternalOutcome ClusterInfoItem::Deserialize(const rapidjson::Value &value)
         m_chargeCoresCntHasBeenSet = true;
     }
 
+    if (value.HasMember("MasterAddresses") && !value["MasterAddresses"].IsNull())
+    {
+        if (!value["MasterAddresses"].IsArray())
+            return CoreInternalOutcome(Core::Error("response `ClusterInfoItem.MasterAddresses` is not array type"));
+
+        const rapidjson::Value &tmpValue = value["MasterAddresses"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            m_masterAddresses.push_back((*itr).GetString());
+        }
+        m_masterAddressesHasBeenSet = true;
+    }
+
+    if (value.HasMember("CoresCnt") && !value["CoresCnt"].IsNull())
+    {
+        if (!value["CoresCnt"].IsUint64())
+        {
+            return CoreInternalOutcome(Core::Error("response `ClusterInfoItem.CoresCnt` IsUint64=false incorrectly").SetRequestId(requestId));
+        }
+        m_coresCnt = value["CoresCnt"].GetUint64();
+        m_coresCntHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -528,6 +553,27 @@ void ClusterInfoItem::ToJsonObject(rapidjson::Value &value, rapidjson::Document:
         string key = "ChargeCoresCnt";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_chargeCoresCnt, allocator);
+    }
+
+    if (m_masterAddressesHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "MasterAddresses";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        for (auto itr = m_masterAddresses.begin(); itr != m_masterAddresses.end(); ++itr)
+        {
+            value[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
+        }
+    }
+
+    if (m_coresCntHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "CoresCnt";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_coresCnt, allocator);
     }
 
 }
@@ -947,5 +993,37 @@ void ClusterInfoItem::SetChargeCoresCnt(const uint64_t& _chargeCoresCnt)
 bool ClusterInfoItem::ChargeCoresCntHasBeenSet() const
 {
     return m_chargeCoresCntHasBeenSet;
+}
+
+vector<string> ClusterInfoItem::GetMasterAddresses() const
+{
+    return m_masterAddresses;
+}
+
+void ClusterInfoItem::SetMasterAddresses(const vector<string>& _masterAddresses)
+{
+    m_masterAddresses = _masterAddresses;
+    m_masterAddressesHasBeenSet = true;
+}
+
+bool ClusterInfoItem::MasterAddressesHasBeenSet() const
+{
+    return m_masterAddressesHasBeenSet;
+}
+
+uint64_t ClusterInfoItem::GetCoresCnt() const
+{
+    return m_coresCnt;
+}
+
+void ClusterInfoItem::SetCoresCnt(const uint64_t& _coresCnt)
+{
+    m_coresCnt = _coresCnt;
+    m_coresCntHasBeenSet = true;
+}
+
+bool ClusterInfoItem::CoresCntHasBeenSet() const
+{
+    return m_coresCntHasBeenSet;
 }
 

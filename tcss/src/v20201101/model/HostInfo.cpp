@@ -42,7 +42,8 @@ HostInfo::HostInfo() :
     m_clusterNameHasBeenSet(false),
     m_clusterAccessedStatusHasBeenSet(false),
     m_chargeCoresCntHasBeenSet(false),
-    m_defendStatusHasBeenSet(false)
+    m_defendStatusHasBeenSet(false),
+    m_coresCntHasBeenSet(false)
 {
 }
 
@@ -288,6 +289,16 @@ CoreInternalOutcome HostInfo::Deserialize(const rapidjson::Value &value)
         m_defendStatusHasBeenSet = true;
     }
 
+    if (value.HasMember("CoresCnt") && !value["CoresCnt"].IsNull())
+    {
+        if (!value["CoresCnt"].IsUint64())
+        {
+            return CoreInternalOutcome(Core::Error("response `HostInfo.CoresCnt` IsUint64=false incorrectly").SetRequestId(requestId));
+        }
+        m_coresCnt = value["CoresCnt"].GetUint64();
+        m_coresCntHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -477,6 +488,14 @@ void HostInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Alloca
         string key = "DefendStatus";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_defendStatus.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_coresCntHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "CoresCnt";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_coresCnt, allocator);
     }
 
 }
@@ -832,5 +851,21 @@ void HostInfo::SetDefendStatus(const string& _defendStatus)
 bool HostInfo::DefendStatusHasBeenSet() const
 {
     return m_defendStatusHasBeenSet;
+}
+
+uint64_t HostInfo::GetCoresCnt() const
+{
+    return m_coresCnt;
+}
+
+void HostInfo::SetCoresCnt(const uint64_t& _coresCnt)
+{
+    m_coresCnt = _coresCnt;
+    m_coresCntHasBeenSet = true;
+}
+
+bool HostInfo::CoresCntHasBeenSet() const
+{
+    return m_coresCntHasBeenSet;
 }
 

@@ -24,7 +24,8 @@ using namespace TencentCloud::Tcr::V20190924::Model;
 using namespace std;
 
 CheckInstanceNameResponse::CheckInstanceNameResponse() :
-    m_isValidatedHasBeenSet(false)
+    m_isValidatedHasBeenSet(false),
+    m_detailCodeHasBeenSet(false)
 {
 }
 
@@ -72,6 +73,16 @@ CoreInternalOutcome CheckInstanceNameResponse::Deserialize(const string &payload
         m_isValidatedHasBeenSet = true;
     }
 
+    if (rsp.HasMember("DetailCode") && !rsp["DetailCode"].IsNull())
+    {
+        if (!rsp["DetailCode"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `DetailCode` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_detailCode = rsp["DetailCode"].GetInt64();
+        m_detailCodeHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -88,6 +99,14 @@ string CheckInstanceNameResponse::ToJsonString() const
         string key = "IsValidated";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_isValidated, allocator);
+    }
+
+    if (m_detailCodeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "DetailCode";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_detailCode, allocator);
     }
 
     rapidjson::Value iKey(rapidjson::kStringType);
@@ -110,6 +129,16 @@ bool CheckInstanceNameResponse::GetIsValidated() const
 bool CheckInstanceNameResponse::IsValidatedHasBeenSet() const
 {
     return m_isValidatedHasBeenSet;
+}
+
+int64_t CheckInstanceNameResponse::GetDetailCode() const
+{
+    return m_detailCode;
+}
+
+bool CheckInstanceNameResponse::DetailCodeHasBeenSet() const
+{
+    return m_detailCodeHasBeenSet;
 }
 
 

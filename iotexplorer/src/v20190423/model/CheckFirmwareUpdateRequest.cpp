@@ -14,46 +14,41 @@
  * limitations under the License.
  */
 
-#include <tencentcloud/cwp/v20180228/model/DeleteAttackLogsRequest.h>
+#include <tencentcloud/iotexplorer/v20190423/model/CheckFirmwareUpdateRequest.h>
 #include <tencentcloud/core/utils/rapidjson/document.h>
 #include <tencentcloud/core/utils/rapidjson/writer.h>
 #include <tencentcloud/core/utils/rapidjson/stringbuffer.h>
 
-using namespace TencentCloud::Cwp::V20180228::Model;
+using namespace TencentCloud::Iotexplorer::V20190423::Model;
 using namespace std;
 
-DeleteAttackLogsRequest::DeleteAttackLogsRequest() :
-    m_idsHasBeenSet(false),
-    m_isAllHasBeenSet(false)
+CheckFirmwareUpdateRequest::CheckFirmwareUpdateRequest() :
+    m_productIdHasBeenSet(false),
+    m_deviceNameHasBeenSet(false)
 {
 }
 
-string DeleteAttackLogsRequest::ToJsonString() const
+string CheckFirmwareUpdateRequest::ToJsonString() const
 {
     rapidjson::Document d;
     d.SetObject();
     rapidjson::Document::AllocatorType& allocator = d.GetAllocator();
 
 
-    if (m_idsHasBeenSet)
+    if (m_productIdHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "Ids";
+        string key = "ProductId";
         iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
-
-        for (auto itr = m_ids.begin(); itr != m_ids.end(); ++itr)
-        {
-            d[key.c_str()].PushBack(rapidjson::Value().SetUint64(*itr), allocator);
-        }
+        d.AddMember(iKey, rapidjson::Value(m_productId.c_str(), allocator).Move(), allocator);
     }
 
-    if (m_isAllHasBeenSet)
+    if (m_deviceNameHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "IsAll";
+        string key = "DeviceName";
         iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, m_isAll, allocator);
+        d.AddMember(iKey, rapidjson::Value(m_deviceName.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -64,36 +59,36 @@ string DeleteAttackLogsRequest::ToJsonString() const
 }
 
 
-vector<uint64_t> DeleteAttackLogsRequest::GetIds() const
+string CheckFirmwareUpdateRequest::GetProductId() const
 {
-    return m_ids;
+    return m_productId;
 }
 
-void DeleteAttackLogsRequest::SetIds(const vector<uint64_t>& _ids)
+void CheckFirmwareUpdateRequest::SetProductId(const string& _productId)
 {
-    m_ids = _ids;
-    m_idsHasBeenSet = true;
+    m_productId = _productId;
+    m_productIdHasBeenSet = true;
 }
 
-bool DeleteAttackLogsRequest::IdsHasBeenSet() const
+bool CheckFirmwareUpdateRequest::ProductIdHasBeenSet() const
 {
-    return m_idsHasBeenSet;
+    return m_productIdHasBeenSet;
 }
 
-bool DeleteAttackLogsRequest::GetIsAll() const
+string CheckFirmwareUpdateRequest::GetDeviceName() const
 {
-    return m_isAll;
+    return m_deviceName;
 }
 
-void DeleteAttackLogsRequest::SetIsAll(const bool& _isAll)
+void CheckFirmwareUpdateRequest::SetDeviceName(const string& _deviceName)
 {
-    m_isAll = _isAll;
-    m_isAllHasBeenSet = true;
+    m_deviceName = _deviceName;
+    m_deviceNameHasBeenSet = true;
 }
 
-bool DeleteAttackLogsRequest::IsAllHasBeenSet() const
+bool CheckFirmwareUpdateRequest::DeviceNameHasBeenSet() const
 {
-    return m_isAllHasBeenSet;
+    return m_deviceNameHasBeenSet;
 }
 
 

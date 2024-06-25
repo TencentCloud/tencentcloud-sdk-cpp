@@ -1,0 +1,601 @@
+/*
+ * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *    http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+
+#ifndef TENCENTCLOUD_IOA_V20220601_MODEL_GETACCOUNTGROUPDATA_H_
+#define TENCENTCLOUD_IOA_V20220601_MODEL_GETACCOUNTGROUPDATA_H_
+
+#include <string>
+#include <vector>
+#include <map>
+#include <tencentcloud/core/utils/rapidjson/document.h>
+#include <tencentcloud/core/utils/rapidjson/writer.h>
+#include <tencentcloud/core/utils/rapidjson/stringbuffer.h>
+#include <tencentcloud/core/AbstractModel.h>
+
+
+namespace TencentCloud
+{
+    namespace Ioa
+    {
+        namespace V20220601
+        {
+            namespace Model
+            {
+                /**
+                * 账户分组详情响应数据
+                */
+                class GetAccountGroupData : public AbstractModel
+                {
+                public:
+                    GetAccountGroupData();
+                    ~GetAccountGroupData() = default;
+                    void ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const;
+                    CoreInternalOutcome Deserialize(const rapidjson::Value &value);
+
+
+                    /**
+                     * 获取分组Namepath
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return NamePath 分组Namepath
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::string GetNamePath() const;
+
+                    /**
+                     * 设置分组Namepath
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _namePath 分组Namepath
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetNamePath(const std::string& _namePath);
+
+                    /**
+                     * 判断参数 NamePath 是否已赋值
+                     * @return NamePath 是否已赋值
+                     * 
+                     */
+                    bool NamePathHasBeenSet() const;
+
+                    /**
+                     * 获取分组Id path arr(只支持32位)
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return IdPathArr 分组Id path arr(只支持32位)
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::vector<int64_t> GetIdPathArr() const;
+
+                    /**
+                     * 设置分组Id path arr(只支持32位)
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _idPathArr 分组Id path arr(只支持32位)
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetIdPathArr(const std::vector<int64_t>& _idPathArr);
+
+                    /**
+                     * 判断参数 IdPathArr 是否已赋值
+                     * @return IdPathArr 是否已赋值
+                     * 
+                     */
+                    bool IdPathArrHasBeenSet() const;
+
+                    /**
+                     * 获取分组扩展信息
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return ExtraInfo 分组扩展信息
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::string GetExtraInfo() const;
+
+                    /**
+                     * 设置分组扩展信息
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _extraInfo 分组扩展信息
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetExtraInfo(const std::string& _extraInfo);
+
+                    /**
+                     * 判断参数 ExtraInfo 是否已赋值
+                     * @return ExtraInfo 是否已赋值
+                     * 
+                     */
+                    bool ExtraInfoHasBeenSet() const;
+
+                    /**
+                     * 获取最后更新时间
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return Utime 最后更新时间
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::string GetUtime() const;
+
+                    /**
+                     * 设置最后更新时间
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _utime 最后更新时间
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetUtime(const std::string& _utime);
+
+                    /**
+                     * 判断参数 Utime 是否已赋值
+                     * @return Utime 是否已赋值
+                     * 
+                     */
+                    bool UtimeHasBeenSet() const;
+
+                    /**
+                     * 获取父分组id(只支持32位)
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return ParentId 父分组id(只支持32位)
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    uint64_t GetParentId() const;
+
+                    /**
+                     * 设置父分组id(只支持32位)
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _parentId 父分组id(只支持32位)
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetParentId(const uint64_t& _parentId);
+
+                    /**
+                     * 判断参数 ParentId 是否已赋值
+                     * @return ParentId 是否已赋值
+                     * 
+                     */
+                    bool ParentIdHasBeenSet() const;
+
+                    /**
+                     * 获取组织id
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return OrgId 组织id
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::string GetOrgId() const;
+
+                    /**
+                     * 设置组织id
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _orgId 组织id
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetOrgId(const std::string& _orgId);
+
+                    /**
+                     * 判断参数 OrgId 是否已赋值
+                     * @return OrgId 是否已赋值
+                     * 
+                     */
+                    bool OrgIdHasBeenSet() const;
+
+                    /**
+                     * 获取分组名称
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return Name 分组名称
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::string GetName() const;
+
+                    /**
+                     * 设置分组名称
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _name 分组名称
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetName(const std::string& _name);
+
+                    /**
+                     * 判断参数 Name 是否已赋值
+                     * @return Name 是否已赋值
+                     * 
+                     */
+                    bool NameHasBeenSet() const;
+
+                    /**
+                     * 获取分组id(只支持32位)
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return Id 分组id(只支持32位)
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    uint64_t GetId() const;
+
+                    /**
+                     * 设置分组id(只支持32位)
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _id 分组id(只支持32位)
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetId(const uint64_t& _id);
+
+                    /**
+                     * 判断参数 Id 是否已赋值
+                     * @return Id 是否已赋值
+                     * 
+                     */
+                    bool IdHasBeenSet() const;
+
+                    /**
+                     * 获取描述
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return Description 描述
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::string GetDescription() const;
+
+                    /**
+                     * 设置描述
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _description 描述
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetDescription(const std::string& _description);
+
+                    /**
+                     * 判断参数 Description 是否已赋值
+                     * @return Description 是否已赋值
+                     * 
+                     */
+                    bool DescriptionHasBeenSet() const;
+
+                    /**
+                     * 获取分组导入源(只支持32位)
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return Source 分组导入源(只支持32位)
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    uint64_t GetSource() const;
+
+                    /**
+                     * 设置分组导入源(只支持32位)
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _source 分组导入源(只支持32位)
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetSource(const uint64_t& _source);
+
+                    /**
+                     * 判断参数 Source 是否已赋值
+                     * @return Source 是否已赋值
+                     * 
+                     */
+                    bool SourceHasBeenSet() const;
+
+                    /**
+                     * 获取Id Path
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return IdPath Id Path
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::string GetIdPath() const;
+
+                    /**
+                     * 设置Id Path
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _idPath Id Path
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetIdPath(const std::string& _idPath);
+
+                    /**
+                     * 判断参数 IdPath 是否已赋值
+                     * @return IdPath 是否已赋值
+                     * 
+                     */
+                    bool IdPathHasBeenSet() const;
+
+                    /**
+                     * 获取创建时间
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return Itime 创建时间
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::string GetItime() const;
+
+                    /**
+                     * 设置创建时间
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _itime 创建时间
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetItime(const std::string& _itime);
+
+                    /**
+                     * 判断参数 Itime 是否已赋值
+                     * @return Itime 是否已赋值
+                     * 
+                     */
+                    bool ItimeHasBeenSet() const;
+
+                    /**
+                     * 获取父组织id
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return ParentOrgId 父组织id
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::string GetParentOrgId() const;
+
+                    /**
+                     * 设置父组织id
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _parentOrgId 父组织id
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetParentOrgId(const std::string& _parentOrgId);
+
+                    /**
+                     * 判断参数 ParentOrgId 是否已赋值
+                     * @return ParentOrgId 是否已赋值
+                     * 
+                     */
+                    bool ParentOrgIdHasBeenSet() const;
+
+                    /**
+                     * 获取导入信息,json格式
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return Import 导入信息,json格式
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::string GetImport() const;
+
+                    /**
+                     * 设置导入信息,json格式
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _import 导入信息,json格式
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetImport(const std::string& _import);
+
+                    /**
+                     * 判断参数 Import 是否已赋值
+                     * @return Import 是否已赋值
+                     * 
+                     */
+                    bool ImportHasBeenSet() const;
+
+                    /**
+                     * 获取是否开启导入架构
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return ImportEnable 是否开启导入架构
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    bool GetImportEnable() const;
+
+                    /**
+                     * 设置是否开启导入架构
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _importEnable 是否开启导入架构
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetImportEnable(const bool& _importEnable);
+
+                    /**
+                     * 判断参数 ImportEnable 是否已赋值
+                     * @return ImportEnable 是否已赋值
+                     * 
+                     */
+                    bool ImportEnableHasBeenSet() const;
+
+                    /**
+                     * 获取导入类型
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return ImportType 导入类型
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::string GetImportType() const;
+
+                    /**
+                     * 设置导入类型
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _importType 导入类型
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetImportType(const std::string& _importType);
+
+                    /**
+                     * 判断参数 ImportType 是否已赋值
+                     * @return ImportType 是否已赋值
+                     * 
+                     */
+                    bool ImportTypeHasBeenSet() const;
+
+                    /**
+                     * 获取miniIAMId，MiniIAM源才有
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return MiniIamId miniIAMId，MiniIAM源才有
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::string GetMiniIamId() const;
+
+                    /**
+                     * 设置miniIAMId，MiniIAM源才有
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _miniIamId miniIAMId，MiniIAM源才有
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetMiniIamId(const std::string& _miniIamId);
+
+                    /**
+                     * 判断参数 MiniIamId 是否已赋值
+                     * @return MiniIamId 是否已赋值
+                     * 
+                     */
+                    bool MiniIamIdHasBeenSet() const;
+
+                private:
+
+                    /**
+                     * 分组Namepath
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_namePath;
+                    bool m_namePathHasBeenSet;
+
+                    /**
+                     * 分组Id path arr(只支持32位)
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::vector<int64_t> m_idPathArr;
+                    bool m_idPathArrHasBeenSet;
+
+                    /**
+                     * 分组扩展信息
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_extraInfo;
+                    bool m_extraInfoHasBeenSet;
+
+                    /**
+                     * 最后更新时间
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_utime;
+                    bool m_utimeHasBeenSet;
+
+                    /**
+                     * 父分组id(只支持32位)
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    uint64_t m_parentId;
+                    bool m_parentIdHasBeenSet;
+
+                    /**
+                     * 组织id
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_orgId;
+                    bool m_orgIdHasBeenSet;
+
+                    /**
+                     * 分组名称
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_name;
+                    bool m_nameHasBeenSet;
+
+                    /**
+                     * 分组id(只支持32位)
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    uint64_t m_id;
+                    bool m_idHasBeenSet;
+
+                    /**
+                     * 描述
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_description;
+                    bool m_descriptionHasBeenSet;
+
+                    /**
+                     * 分组导入源(只支持32位)
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    uint64_t m_source;
+                    bool m_sourceHasBeenSet;
+
+                    /**
+                     * Id Path
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_idPath;
+                    bool m_idPathHasBeenSet;
+
+                    /**
+                     * 创建时间
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_itime;
+                    bool m_itimeHasBeenSet;
+
+                    /**
+                     * 父组织id
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_parentOrgId;
+                    bool m_parentOrgIdHasBeenSet;
+
+                    /**
+                     * 导入信息,json格式
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_import;
+                    bool m_importHasBeenSet;
+
+                    /**
+                     * 是否开启导入架构
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    bool m_importEnable;
+                    bool m_importEnableHasBeenSet;
+
+                    /**
+                     * 导入类型
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_importType;
+                    bool m_importTypeHasBeenSet;
+
+                    /**
+                     * miniIAMId，MiniIAM源才有
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_miniIamId;
+                    bool m_miniIamIdHasBeenSet;
+
+                };
+            }
+        }
+    }
+}
+
+#endif // !TENCENTCLOUD_IOA_V20220601_MODEL_GETACCOUNTGROUPDATA_H_

@@ -68,15 +68,15 @@ namespace TencentCloud
                     bool AssetHasBeenSet() const;
 
                     /**
-                     * 获取表类型
-                     * @return Type 表类型
+                     * 获取表类型：EXTERNAL_TABLE, VIRTUAL_VIEW, MATERIALIZED_VIEW
+                     * @return Type 表类型：EXTERNAL_TABLE, VIRTUAL_VIEW, MATERIALIZED_VIEW
                      * 
                      */
                     std::string GetType() const;
 
                     /**
-                     * 设置表类型
-                     * @param _type 表类型
+                     * 设置表类型：EXTERNAL_TABLE, VIRTUAL_VIEW, MATERIALIZED_VIEW
+                     * @param _type 表类型：EXTERNAL_TABLE, VIRTUAL_VIEW, MATERIALIZED_VIEW
                      * 
                      */
                     void SetType(const std::string& _type);
@@ -391,7 +391,7 @@ namespace TencentCloud
                     bool m_assetHasBeenSet;
 
                     /**
-                     * 表类型
+                     * 表类型：EXTERNAL_TABLE, VIRTUAL_VIEW, MATERIALIZED_VIEW
                      */
                     std::string m_type;
                     bool m_typeHasBeenSet;

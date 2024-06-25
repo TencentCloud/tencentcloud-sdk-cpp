@@ -23,7 +23,8 @@ using namespace std;
 PrometheusAgentInfo::PrometheusAgentInfo() :
     m_clusterTypeHasBeenSet(false),
     m_clusterIdHasBeenSet(false),
-    m_describeHasBeenSet(false)
+    m_describeHasBeenSet(false),
+    m_regionHasBeenSet(false)
 {
 }
 
@@ -62,6 +63,16 @@ CoreInternalOutcome PrometheusAgentInfo::Deserialize(const rapidjson::Value &val
         m_describeHasBeenSet = true;
     }
 
+    if (value.HasMember("Region") && !value["Region"].IsNull())
+    {
+        if (!value["Region"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `PrometheusAgentInfo.Region` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_region = string(value["Region"].GetString());
+        m_regionHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -91,6 +102,14 @@ void PrometheusAgentInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Docum
         string key = "Describe";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_describe.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_regionHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Region";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_region.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -142,5 +161,21 @@ void PrometheusAgentInfo::SetDescribe(const string& _describe)
 bool PrometheusAgentInfo::DescribeHasBeenSet() const
 {
     return m_describeHasBeenSet;
+}
+
+string PrometheusAgentInfo::GetRegion() const
+{
+    return m_region;
+}
+
+void PrometheusAgentInfo::SetRegion(const string& _region)
+{
+    m_region = _region;
+    m_regionHasBeenSet = true;
+}
+
+bool PrometheusAgentInfo::RegionHasBeenSet() const
+{
+    return m_regionHasBeenSet;
 }
 

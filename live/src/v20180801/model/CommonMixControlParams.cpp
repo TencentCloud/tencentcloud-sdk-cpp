@@ -23,7 +23,8 @@ using namespace std;
 CommonMixControlParams::CommonMixControlParams() :
     m_useMixCropCenterHasBeenSet(false),
     m_allowCopyHasBeenSet(false),
-    m_passInputSeiHasBeenSet(false)
+    m_passInputSeiHasBeenSet(false),
+    m_usePictureTransparentHasBeenSet(false)
 {
 }
 
@@ -62,6 +63,16 @@ CoreInternalOutcome CommonMixControlParams::Deserialize(const rapidjson::Value &
         m_passInputSeiHasBeenSet = true;
     }
 
+    if (value.HasMember("UsePictureTransparent") && !value["UsePictureTransparent"].IsNull())
+    {
+        if (!value["UsePictureTransparent"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `CommonMixControlParams.UsePictureTransparent` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_usePictureTransparent = value["UsePictureTransparent"].GetInt64();
+        m_usePictureTransparentHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -91,6 +102,14 @@ void CommonMixControlParams::ToJsonObject(rapidjson::Value &value, rapidjson::Do
         string key = "PassInputSei";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_passInputSei, allocator);
+    }
+
+    if (m_usePictureTransparentHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "UsePictureTransparent";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_usePictureTransparent, allocator);
     }
 
 }
@@ -142,5 +161,21 @@ void CommonMixControlParams::SetPassInputSei(const int64_t& _passInputSei)
 bool CommonMixControlParams::PassInputSeiHasBeenSet() const
 {
     return m_passInputSeiHasBeenSet;
+}
+
+int64_t CommonMixControlParams::GetUsePictureTransparent() const
+{
+    return m_usePictureTransparent;
+}
+
+void CommonMixControlParams::SetUsePictureTransparent(const int64_t& _usePictureTransparent)
+{
+    m_usePictureTransparent = _usePictureTransparent;
+    m_usePictureTransparentHasBeenSet = true;
+}
+
+bool CommonMixControlParams::UsePictureTransparentHasBeenSet() const
+{
+    return m_usePictureTransparentHasBeenSet;
 }
 

@@ -467,6 +467,8 @@
 #include <tencentcloud/wedata/v20210820/model/UpdateWorkflowOwnerResponse.h>
 #include <tencentcloud/wedata/v20210820/model/UploadContentRequest.h>
 #include <tencentcloud/wedata/v20210820/model/UploadContentResponse.h>
+#include <tencentcloud/wedata/v20210820/model/UploadResourceRequest.h>
+#include <tencentcloud/wedata/v20210820/model/UploadResourceResponse.h>
 
 
 namespace TencentCloud
@@ -1147,6 +1149,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::UploadContentResponse> UploadContentOutcome;
                 typedef std::future<UploadContentOutcome> UploadContentOutcomeCallable;
                 typedef std::function<void(const WedataClient*, const Model::UploadContentRequest&, UploadContentOutcome, const std::shared_ptr<const AsyncCallerContext>&)> UploadContentAsyncHandler;
+                typedef Outcome<Core::Error, Model::UploadResourceResponse> UploadResourceOutcome;
+                typedef std::future<UploadResourceOutcome> UploadResourceOutcomeCallable;
+                typedef std::function<void(const WedataClient*, const Model::UploadResourceRequest&, UploadResourceOutcome, const std::shared_ptr<const AsyncCallerContext>&)> UploadResourceAsyncHandler;
 
 
 
@@ -3158,6 +3163,15 @@ namespace TencentCloud
                 UploadContentOutcome UploadContent(const Model::UploadContentRequest &request);
                 void UploadContentAsync(const Model::UploadContentRequest& request, const UploadContentAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 UploadContentOutcomeCallable UploadContentCallable(const Model::UploadContentRequest& request);
+
+                /**
+                 *资源管理-上传资源
+                 * @param req UploadResourceRequest
+                 * @return UploadResourceOutcome
+                 */
+                UploadResourceOutcome UploadResource(const Model::UploadResourceRequest &request);
+                void UploadResourceAsync(const Model::UploadResourceRequest& request, const UploadResourceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                UploadResourceOutcomeCallable UploadResourceCallable(const Model::UploadResourceRequest& request);
 
             };
         }

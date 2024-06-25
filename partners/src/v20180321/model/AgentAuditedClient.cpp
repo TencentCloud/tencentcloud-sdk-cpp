@@ -36,7 +36,8 @@ AgentAuditedClient::AgentAuditedClient() :
     m_projectTypeHasBeenSet(false),
     m_salesUinHasBeenSet(false),
     m_salesNameHasBeenSet(false),
-    m_mailHasBeenSet(false)
+    m_mailHasBeenSet(false),
+    m_transactionTypeHasBeenSet(false)
 {
 }
 
@@ -205,6 +206,16 @@ CoreInternalOutcome AgentAuditedClient::Deserialize(const rapidjson::Value &valu
         m_mailHasBeenSet = true;
     }
 
+    if (value.HasMember("TransactionType") && !value["TransactionType"].IsNull())
+    {
+        if (!value["TransactionType"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `AgentAuditedClient.TransactionType` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_transactionType = string(value["TransactionType"].GetString());
+        m_transactionTypeHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -338,6 +349,14 @@ void AgentAuditedClient::ToJsonObject(rapidjson::Value &value, rapidjson::Docume
         string key = "Mail";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_mail.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_transactionTypeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "TransactionType";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_transactionType.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -597,5 +616,21 @@ void AgentAuditedClient::SetMail(const string& _mail)
 bool AgentAuditedClient::MailHasBeenSet() const
 {
     return m_mailHasBeenSet;
+}
+
+string AgentAuditedClient::GetTransactionType() const
+{
+    return m_transactionType;
+}
+
+void AgentAuditedClient::SetTransactionType(const string& _transactionType)
+{
+    m_transactionType = _transactionType;
+    m_transactionTypeHasBeenSet = true;
+}
+
+bool AgentAuditedClient::TransactionTypeHasBeenSet() const
+{
+    return m_transactionTypeHasBeenSet;
 }
 

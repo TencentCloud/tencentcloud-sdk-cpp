@@ -14,20 +14,21 @@
  * limitations under the License.
  */
 
-#include <tencentcloud/cwp/v20180228/model/DeleteAttackLogsResponse.h>
+#include <tencentcloud/ioa/v20220601/model/DescribeLocalAccountsResponse.h>
 #include <tencentcloud/core/utils/rapidjson/document.h>
 #include <tencentcloud/core/utils/rapidjson/writer.h>
 #include <tencentcloud/core/utils/rapidjson/stringbuffer.h>
 
 using TencentCloud::CoreInternalOutcome;
-using namespace TencentCloud::Cwp::V20180228::Model;
+using namespace TencentCloud::Ioa::V20220601::Model;
 using namespace std;
 
-DeleteAttackLogsResponse::DeleteAttackLogsResponse()
+DescribeLocalAccountsResponse::DescribeLocalAccountsResponse() :
+    m_dataHasBeenSet(false)
 {
 }
 
-CoreInternalOutcome DeleteAttackLogsResponse::Deserialize(const string &payload)
+CoreInternalOutcome DescribeLocalAccountsResponse::Deserialize(const string &payload)
 {
     rapidjson::Document d;
     d.Parse(payload.c_str());
@@ -61,15 +62,41 @@ CoreInternalOutcome DeleteAttackLogsResponse::Deserialize(const string &payload)
     }
 
 
+    if (rsp.HasMember("Data") && !rsp["Data"].IsNull())
+    {
+        if (!rsp["Data"].IsObject())
+        {
+            return CoreInternalOutcome(Core::Error("response `Data` is not object type").SetRequestId(requestId));
+        }
+
+        CoreInternalOutcome outcome = m_data.Deserialize(rsp["Data"]);
+        if (!outcome.IsSuccess())
+        {
+            outcome.GetError().SetRequestId(requestId);
+            return outcome;
+        }
+
+        m_dataHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
 
-string DeleteAttackLogsResponse::ToJsonString() const
+string DescribeLocalAccountsResponse::ToJsonString() const
 {
     rapidjson::Document value;
     value.SetObject();
     rapidjson::Document::AllocatorType& allocator = value.GetAllocator();
+
+    if (m_dataHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Data";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_data.ToJsonObject(value[key.c_str()], allocator);
+    }
 
     rapidjson::Value iKey(rapidjson::kStringType);
     string key = "RequestId";
@@ -82,5 +109,15 @@ string DeleteAttackLogsResponse::ToJsonString() const
     return buffer.GetString();
 }
 
+
+DescribeLocalAccountsPage DescribeLocalAccountsResponse::GetData() const
+{
+    return m_data;
+}
+
+bool DescribeLocalAccountsResponse::DataHasBeenSet() const
+{
+    return m_dataHasBeenSet;
+}
 
 

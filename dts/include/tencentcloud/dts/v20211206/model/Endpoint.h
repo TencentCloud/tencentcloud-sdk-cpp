@@ -97,18 +97,18 @@ namespace TencentCloud
                     bool RoleHasBeenSet() const;
 
                     /**
-                     * 获取数据库内核类型，tdsql中用于区分不同内核：percona,mariadb,mysql
+                     * 获取数据库内核类型，tdsql中用于区分不同内核：percona,mariadb,mysql。注意TDSQL-C MySQL、TDSQL PostgreSQL无需填写此项值。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return DbKernel 数据库内核类型，tdsql中用于区分不同内核：percona,mariadb,mysql
+                     * @return DbKernel 数据库内核类型，tdsql中用于区分不同内核：percona,mariadb,mysql。注意TDSQL-C MySQL、TDSQL PostgreSQL无需填写此项值。
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetDbKernel() const;
 
                     /**
-                     * 设置数据库内核类型，tdsql中用于区分不同内核：percona,mariadb,mysql
+                     * 设置数据库内核类型，tdsql中用于区分不同内核：percona,mariadb,mysql。注意TDSQL-C MySQL、TDSQL PostgreSQL无需填写此项值。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _dbKernel 数据库内核类型，tdsql中用于区分不同内核：percona,mariadb,mysql
+                     * @param _dbKernel 数据库内核类型，tdsql中用于区分不同内核：percona,mariadb,mysql。注意TDSQL-C MySQL、TDSQL PostgreSQL无需填写此项值。
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -788,7 +788,7 @@ namespace TencentCloud
                     bool m_roleHasBeenSet;
 
                     /**
-                     * 数据库内核类型，tdsql中用于区分不同内核：percona,mariadb,mysql
+                     * 数据库内核类型，tdsql中用于区分不同内核：percona,mariadb,mysql。注意TDSQL-C MySQL、TDSQL PostgreSQL无需填写此项值。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_dbKernel;

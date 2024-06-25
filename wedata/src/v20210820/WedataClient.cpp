@@ -9586,3 +9586,46 @@ WedataClient::UploadContentOutcomeCallable WedataClient::UploadContentCallable(c
     return task->get_future();
 }
 
+WedataClient::UploadResourceOutcome WedataClient::UploadResource(const UploadResourceRequest &request)
+{
+    auto outcome = MakeRequest(request, "UploadResource");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        UploadResourceResponse rsp = UploadResourceResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return UploadResourceOutcome(rsp);
+        else
+            return UploadResourceOutcome(o.GetError());
+    }
+    else
+    {
+        return UploadResourceOutcome(outcome.GetError());
+    }
+}
+
+void WedataClient::UploadResourceAsync(const UploadResourceRequest& request, const UploadResourceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->UploadResource(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+WedataClient::UploadResourceOutcomeCallable WedataClient::UploadResourceCallable(const UploadResourceRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<UploadResourceOutcome()>>(
+        [this, request]()
+        {
+            return this->UploadResource(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+

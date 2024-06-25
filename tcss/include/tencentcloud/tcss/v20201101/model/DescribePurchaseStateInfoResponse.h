@@ -58,9 +58,23 @@ namespace TencentCloud
                     bool StateHasBeenSet() const;
 
                     /**
-                     * 获取总核数
+                     * 获取总资源核数 = 总防护核数 + 未防护核数
+                     * @return AllCoresCnt 总资源核数 = 总防护核数 + 未防护核数
+                     * 
+                     */
+                    uint64_t GetAllCoresCnt() const;
+
+                    /**
+                     * 判断参数 AllCoresCnt 是否已赋值
+                     * @return AllCoresCnt 是否已赋值
+                     * 
+                     */
+                    bool AllCoresCntHasBeenSet() const;
+
+                    /**
+                     * 获取总防护核数 =已购核数+ 试用赠送核数 +弹性计费核数
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return CoresCnt 总核数
+                     * @return CoresCnt 总防护核数 =已购核数+ 试用赠送核数 +弹性计费核数
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -72,6 +86,20 @@ namespace TencentCloud
                      * 
                      */
                     bool CoresCntHasBeenSet() const;
+
+                    /**
+                     * 获取未防护核数(未开启防护资源核数)
+                     * @return UndefendCoresCnt 未防护核数(未开启防护资源核数)
+                     * 
+                     */
+                    uint64_t GetUndefendCoresCnt() const;
+
+                    /**
+                     * 判断参数 UndefendCoresCnt 是否已赋值
+                     * @return UndefendCoresCnt 是否已赋值
+                     * 
+                     */
+                    bool UndefendCoresCntHasBeenSet() const;
 
                     /**
                      * 获取已购买核数
@@ -88,6 +116,36 @@ namespace TencentCloud
                      * 
                      */
                     bool AuthorizedCoresCntHasBeenSet() const;
+
+                    /**
+                     * 获取试用赠送专业版核心数
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return GivenAuthorizedCoresCnt 试用赠送专业版核心数
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    int64_t GetGivenAuthorizedCoresCnt() const;
+
+                    /**
+                     * 判断参数 GivenAuthorizedCoresCnt 是否已赋值
+                     * @return GivenAuthorizedCoresCnt 是否已赋值
+                     * 
+                     */
+                    bool GivenAuthorizedCoresCntHasBeenSet() const;
+
+                    /**
+                     * 获取当前弹性计费核数数量
+                     * @return CurrentFlexibleCoresCnt 当前弹性计费核数数量
+                     * 
+                     */
+                    uint64_t GetCurrentFlexibleCoresCnt() const;
+
+                    /**
+                     * 判断参数 CurrentFlexibleCoresCnt 是否已赋值
+                     * @return CurrentFlexibleCoresCnt 是否已赋值
+                     * 
+                     */
+                    bool CurrentFlexibleCoresCntHasBeenSet() const;
 
                     /**
                      * 获取镜像数
@@ -122,22 +180,6 @@ namespace TencentCloud
                     bool AuthorizedImageCntHasBeenSet() const;
 
                     /**
-                     * 获取已购买镜像授权数
-注意：此字段可能返回 null，表示取不到有效值。
-                     * @return PurchasedAuthorizedCnt 已购买镜像授权数
-注意：此字段可能返回 null，表示取不到有效值。
-                     * 
-                     */
-                    uint64_t GetPurchasedAuthorizedCnt() const;
-
-                    /**
-                     * 判断参数 PurchasedAuthorizedCnt 是否已赋值
-                     * @return PurchasedAuthorizedCnt 是否已赋值
-                     * 
-                     */
-                    bool PurchasedAuthorizedCntHasBeenSet() const;
-
-                    /**
                      * 获取过期时间
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return ExpirationTime 过期时间
@@ -152,6 +194,22 @@ namespace TencentCloud
                      * 
                      */
                     bool ExpirationTimeHasBeenSet() const;
+
+                    /**
+                     * 获取已购买镜像授权数
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return PurchasedAuthorizedCnt 已购买镜像授权数
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    uint64_t GetPurchasedAuthorizedCnt() const;
+
+                    /**
+                     * 判断参数 PurchasedAuthorizedCnt 是否已赋值
+                     * @return PurchasedAuthorizedCnt 是否已赋值
+                     * 
+                     */
+                    bool PurchasedAuthorizedCntHasBeenSet() const;
 
                     /**
                      * 获取0表示默认状态(用户未设置，即初始状态)， 1表示自动续费，2表示明确不自动续费(用户设置)
@@ -235,6 +293,62 @@ State为4时，有效值为: ISOLATE(隔离) DESTROED(已销毁)
                      */
                     bool InquireKeyHasBeenSet() const;
 
+                    /**
+                     * 获取防护策略
+                     * @return DefendPolicy 防护策略
+                     * 
+                     */
+                    std::string GetDefendPolicy() const;
+
+                    /**
+                     * 判断参数 DefendPolicy 是否已赋值
+                     * @return DefendPolicy 是否已赋值
+                     * 
+                     */
+                    bool DefendPolicyHasBeenSet() const;
+
+                    /**
+                     * 获取弹性计费核数上限
+                     * @return FlexibleCoresLimit 弹性计费核数上限
+                     * 
+                     */
+                    uint64_t GetFlexibleCoresLimit() const;
+
+                    /**
+                     * 判断参数 FlexibleCoresLimit 是否已赋值
+                     * @return FlexibleCoresLimit 是否已赋值
+                     * 
+                     */
+                    bool FlexibleCoresLimitHasBeenSet() const;
+
+                    /**
+                     * 获取已防护集群核数
+                     * @return DefendClusterCoresCnt 已防护集群核数
+                     * 
+                     */
+                    uint64_t GetDefendClusterCoresCnt() const;
+
+                    /**
+                     * 判断参数 DefendClusterCoresCnt 是否已赋值
+                     * @return DefendClusterCoresCnt 是否已赋值
+                     * 
+                     */
+                    bool DefendClusterCoresCntHasBeenSet() const;
+
+                    /**
+                     * 获取已防护主机核数
+                     * @return DefendHostCoresCnt 已防护主机核数
+                     * 
+                     */
+                    uint64_t GetDefendHostCoresCnt() const;
+
+                    /**
+                     * 判断参数 DefendHostCoresCnt 是否已赋值
+                     * @return DefendHostCoresCnt 是否已赋值
+                     * 
+                     */
+                    bool DefendHostCoresCntHasBeenSet() const;
+
                 private:
 
                     /**
@@ -244,11 +358,23 @@ State为4时，有效值为: ISOLATE(隔离) DESTROED(已销毁)
                     bool m_stateHasBeenSet;
 
                     /**
-                     * 总核数
+                     * 总资源核数 = 总防护核数 + 未防护核数
+                     */
+                    uint64_t m_allCoresCnt;
+                    bool m_allCoresCntHasBeenSet;
+
+                    /**
+                     * 总防护核数 =已购核数+ 试用赠送核数 +弹性计费核数
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     uint64_t m_coresCnt;
                     bool m_coresCntHasBeenSet;
+
+                    /**
+                     * 未防护核数(未开启防护资源核数)
+                     */
+                    uint64_t m_undefendCoresCnt;
+                    bool m_undefendCoresCntHasBeenSet;
 
                     /**
                      * 已购买核数
@@ -256,6 +382,19 @@ State为4时，有效值为: ISOLATE(隔离) DESTROED(已销毁)
                      */
                     uint64_t m_authorizedCoresCnt;
                     bool m_authorizedCoresCntHasBeenSet;
+
+                    /**
+                     * 试用赠送专业版核心数
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    int64_t m_givenAuthorizedCoresCnt;
+                    bool m_givenAuthorizedCoresCntHasBeenSet;
+
+                    /**
+                     * 当前弹性计费核数数量
+                     */
+                    uint64_t m_currentFlexibleCoresCnt;
+                    bool m_currentFlexibleCoresCntHasBeenSet;
 
                     /**
                      * 镜像数
@@ -272,18 +411,18 @@ State为4时，有效值为: ISOLATE(隔离) DESTROED(已销毁)
                     bool m_authorizedImageCntHasBeenSet;
 
                     /**
-                     * 已购买镜像授权数
-注意：此字段可能返回 null，表示取不到有效值。
-                     */
-                    uint64_t m_purchasedAuthorizedCnt;
-                    bool m_purchasedAuthorizedCntHasBeenSet;
-
-                    /**
                      * 过期时间
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_expirationTime;
                     bool m_expirationTimeHasBeenSet;
+
+                    /**
+                     * 已购买镜像授权数
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    uint64_t m_purchasedAuthorizedCnt;
+                    bool m_purchasedAuthorizedCntHasBeenSet;
 
                     /**
                      * 0表示默认状态(用户未设置，即初始状态)， 1表示自动续费，2表示明确不自动续费(用户设置)
@@ -320,6 +459,30 @@ State为4时，有效值为: ISOLATE(隔离) DESTROED(已销毁)
                      */
                     std::string m_inquireKey;
                     bool m_inquireKeyHasBeenSet;
+
+                    /**
+                     * 防护策略
+                     */
+                    std::string m_defendPolicy;
+                    bool m_defendPolicyHasBeenSet;
+
+                    /**
+                     * 弹性计费核数上限
+                     */
+                    uint64_t m_flexibleCoresLimit;
+                    bool m_flexibleCoresLimitHasBeenSet;
+
+                    /**
+                     * 已防护集群核数
+                     */
+                    uint64_t m_defendClusterCoresCnt;
+                    bool m_defendClusterCoresCntHasBeenSet;
+
+                    /**
+                     * 已防护主机核数
+                     */
+                    uint64_t m_defendHostCoresCnt;
+                    bool m_defendHostCoresCntHasBeenSet;
 
                 };
             }

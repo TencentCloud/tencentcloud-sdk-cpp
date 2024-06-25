@@ -36,6 +36,7 @@ set(wedata_public_header_model
   include/tencentcloud/wedata/v20210820/model/ColumnBasicInfo.h
   include/tencentcloud/wedata/v20210820/model/DescribeWorkflowInfoByIdRequest.h
   include/tencentcloud/wedata/v20210820/model/CreateDataSourceRequest.h
+  include/tencentcloud/wedata/v20210820/model/UserFileDTONew.h
   include/tencentcloud/wedata/v20210820/model/IntegrationNodeSchemaMapping.h
   include/tencentcloud/wedata/v20210820/model/DescribeTrendStatResponse.h
   include/tencentcloud/wedata/v20210820/model/DescribeRealTimeTaskSpeedRequest.h
@@ -107,6 +108,7 @@ set(wedata_public_header_model
   include/tencentcloud/wedata/v20210820/model/MakePlanOpsDtoCollection.h
   include/tencentcloud/wedata/v20210820/model/DescribeTableMetasResponse.h
   include/tencentcloud/wedata/v20210820/model/UploadContentResponse.h
+  include/tencentcloud/wedata/v20210820/model/UploadResourceRequest.h
   include/tencentcloud/wedata/v20210820/model/RuleExecLog.h
   include/tencentcloud/wedata/v20210820/model/RuleTemplate.h
   include/tencentcloud/wedata/v20210820/model/DescribeRuleGroupsByPageRequest.h
@@ -476,6 +478,7 @@ set(wedata_public_header_model
   include/tencentcloud/wedata/v20210820/model/DescribeAlarmEventsRequest.h
   include/tencentcloud/wedata/v20210820/model/CompareResult.h
   include/tencentcloud/wedata/v20210820/model/CheckAlarmRegularNameExistResponse.h
+  include/tencentcloud/wedata/v20210820/model/UploadResourceRequestInfo.h
   include/tencentcloud/wedata/v20210820/model/DeleteProjectParamDsRequest.h
   include/tencentcloud/wedata/v20210820/model/Content.h
   include/tencentcloud/wedata/v20210820/model/SpeedValue.h
@@ -640,6 +643,7 @@ set(wedata_public_header_model
   include/tencentcloud/wedata/v20210820/model/DescribeRuleGroupsByPageResponse.h
   include/tencentcloud/wedata/v20210820/model/TableBasicInfo.h
   include/tencentcloud/wedata/v20210820/model/DescribeIntegrationStatisticsTaskStatusResponse.h
+  include/tencentcloud/wedata/v20210820/model/UploadResourceResponse.h
   include/tencentcloud/wedata/v20210820/model/DescribeOpsMakePlanInstancesResponse.h
   include/tencentcloud/wedata/v20210820/model/DescribeDatabaseInfoListRequest.h
   include/tencentcloud/wedata/v20210820/model/DescribeIntegrationTaskResponse.h
@@ -713,6 +717,7 @@ set(wedata_src
   src/v20210820/model/ColumnBasicInfo.cpp
   src/v20210820/model/DescribeWorkflowInfoByIdRequest.cpp
   src/v20210820/model/CreateDataSourceRequest.cpp
+  src/v20210820/model/UserFileDTONew.cpp
   src/v20210820/model/IntegrationNodeSchemaMapping.cpp
   src/v20210820/model/DescribeTrendStatResponse.cpp
   src/v20210820/model/DescribeRealTimeTaskSpeedRequest.cpp
@@ -784,6 +789,7 @@ set(wedata_src
   src/v20210820/model/MakePlanOpsDtoCollection.cpp
   src/v20210820/model/DescribeTableMetasResponse.cpp
   src/v20210820/model/UploadContentResponse.cpp
+  src/v20210820/model/UploadResourceRequest.cpp
   src/v20210820/model/RuleExecLog.cpp
   src/v20210820/model/RuleTemplate.cpp
   src/v20210820/model/DescribeRuleGroupsByPageRequest.cpp
@@ -1153,6 +1159,7 @@ set(wedata_src
   src/v20210820/model/DescribeAlarmEventsRequest.cpp
   src/v20210820/model/CompareResult.cpp
   src/v20210820/model/CheckAlarmRegularNameExistResponse.cpp
+  src/v20210820/model/UploadResourceRequestInfo.cpp
   src/v20210820/model/DeleteProjectParamDsRequest.cpp
   src/v20210820/model/Content.cpp
   src/v20210820/model/SpeedValue.cpp
@@ -1317,6 +1324,7 @@ set(wedata_src
   src/v20210820/model/DescribeRuleGroupsByPageResponse.cpp
   src/v20210820/model/TableBasicInfo.cpp
   src/v20210820/model/DescribeIntegrationStatisticsTaskStatusResponse.cpp
+  src/v20210820/model/UploadResourceResponse.cpp
   src/v20210820/model/DescribeOpsMakePlanInstancesResponse.cpp
   src/v20210820/model/DescribeDatabaseInfoListRequest.cpp
   src/v20210820/model/DescribeIntegrationTaskResponse.cpp

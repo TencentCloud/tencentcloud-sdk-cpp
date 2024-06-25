@@ -33,7 +33,8 @@ CreateTopicRequest::CreateTopicRequest() :
     m_periodHasBeenSet(false),
     m_describesHasBeenSet(false),
     m_hotPeriodHasBeenSet(false),
-    m_isWebTrackingHasBeenSet(false)
+    m_isWebTrackingHasBeenSet(false),
+    m_extendsHasBeenSet(false)
 {
 }
 
@@ -137,6 +138,15 @@ string CreateTopicRequest::ToJsonString() const
         string key = "IsWebTracking";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_isWebTracking, allocator);
+    }
+
+    if (m_extendsHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Extends";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_extends.ToJsonObject(d[key.c_str()], allocator);
     }
 
 
@@ -321,6 +331,22 @@ void CreateTopicRequest::SetIsWebTracking(const bool& _isWebTracking)
 bool CreateTopicRequest::IsWebTrackingHasBeenSet() const
 {
     return m_isWebTrackingHasBeenSet;
+}
+
+TopicExtendInfo CreateTopicRequest::GetExtends() const
+{
+    return m_extends;
+}
+
+void CreateTopicRequest::SetExtends(const TopicExtendInfo& _extends)
+{
+    m_extends = _extends;
+    m_extendsHasBeenSet = true;
+}
+
+bool CreateTopicRequest::ExtendsHasBeenSet() const
+{
+    return m_extendsHasBeenSet;
 }
 
 

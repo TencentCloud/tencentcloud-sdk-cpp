@@ -39,6 +39,8 @@
 #include <tencentcloud/iotexplorer/v20190423/model/CallDeviceActionSyncResponse.h>
 #include <tencentcloud/iotexplorer/v20190423/model/CancelAssignTWeCallLicenseRequest.h>
 #include <tencentcloud/iotexplorer/v20190423/model/CancelAssignTWeCallLicenseResponse.h>
+#include <tencentcloud/iotexplorer/v20190423/model/CheckFirmwareUpdateRequest.h>
+#include <tencentcloud/iotexplorer/v20190423/model/CheckFirmwareUpdateResponse.h>
 #include <tencentcloud/iotexplorer/v20190423/model/ControlDeviceDataRequest.h>
 #include <tencentcloud/iotexplorer/v20190423/model/ControlDeviceDataResponse.h>
 #include <tencentcloud/iotexplorer/v20190423/model/CreateBatchProductionRequest.h>
@@ -153,6 +155,8 @@
 #include <tencentcloud/iotexplorer/v20190423/model/DescribeFirmwareResponse.h>
 #include <tencentcloud/iotexplorer/v20190423/model/DescribeFirmwareTaskRequest.h>
 #include <tencentcloud/iotexplorer/v20190423/model/DescribeFirmwareTaskResponse.h>
+#include <tencentcloud/iotexplorer/v20190423/model/DescribeFirmwareUpdateStatusRequest.h>
+#include <tencentcloud/iotexplorer/v20190423/model/DescribeFirmwareUpdateStatusResponse.h>
 #include <tencentcloud/iotexplorer/v20190423/model/DescribeGatewayBindDevicesRequest.h>
 #include <tencentcloud/iotexplorer/v20190423/model/DescribeGatewayBindDevicesResponse.h>
 #include <tencentcloud/iotexplorer/v20190423/model/DescribeGatewaySubDeviceListRequest.h>
@@ -267,6 +271,8 @@
 #include <tencentcloud/iotexplorer/v20190423/model/ModifyTopicRuleResponse.h>
 #include <tencentcloud/iotexplorer/v20190423/model/PublishBroadcastMessageRequest.h>
 #include <tencentcloud/iotexplorer/v20190423/model/PublishBroadcastMessageResponse.h>
+#include <tencentcloud/iotexplorer/v20190423/model/PublishFirmwareUpdateMessageRequest.h>
+#include <tencentcloud/iotexplorer/v20190423/model/PublishFirmwareUpdateMessageResponse.h>
 #include <tencentcloud/iotexplorer/v20190423/model/PublishMessageRequest.h>
 #include <tencentcloud/iotexplorer/v20190423/model/PublishMessageResponse.h>
 #include <tencentcloud/iotexplorer/v20190423/model/PublishRRPCMessageRequest.h>
@@ -337,6 +343,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::CancelAssignTWeCallLicenseResponse> CancelAssignTWeCallLicenseOutcome;
                 typedef std::future<CancelAssignTWeCallLicenseOutcome> CancelAssignTWeCallLicenseOutcomeCallable;
                 typedef std::function<void(const IotexplorerClient*, const Model::CancelAssignTWeCallLicenseRequest&, CancelAssignTWeCallLicenseOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CancelAssignTWeCallLicenseAsyncHandler;
+                typedef Outcome<Core::Error, Model::CheckFirmwareUpdateResponse> CheckFirmwareUpdateOutcome;
+                typedef std::future<CheckFirmwareUpdateOutcome> CheckFirmwareUpdateOutcomeCallable;
+                typedef std::function<void(const IotexplorerClient*, const Model::CheckFirmwareUpdateRequest&, CheckFirmwareUpdateOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CheckFirmwareUpdateAsyncHandler;
                 typedef Outcome<Core::Error, Model::ControlDeviceDataResponse> ControlDeviceDataOutcome;
                 typedef std::future<ControlDeviceDataOutcome> ControlDeviceDataOutcomeCallable;
                 typedef std::function<void(const IotexplorerClient*, const Model::ControlDeviceDataRequest&, ControlDeviceDataOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ControlDeviceDataAsyncHandler;
@@ -508,6 +517,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeFirmwareTaskResponse> DescribeFirmwareTaskOutcome;
                 typedef std::future<DescribeFirmwareTaskOutcome> DescribeFirmwareTaskOutcomeCallable;
                 typedef std::function<void(const IotexplorerClient*, const Model::DescribeFirmwareTaskRequest&, DescribeFirmwareTaskOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeFirmwareTaskAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeFirmwareUpdateStatusResponse> DescribeFirmwareUpdateStatusOutcome;
+                typedef std::future<DescribeFirmwareUpdateStatusOutcome> DescribeFirmwareUpdateStatusOutcomeCallable;
+                typedef std::function<void(const IotexplorerClient*, const Model::DescribeFirmwareUpdateStatusRequest&, DescribeFirmwareUpdateStatusOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeFirmwareUpdateStatusAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeGatewayBindDevicesResponse> DescribeGatewayBindDevicesOutcome;
                 typedef std::future<DescribeGatewayBindDevicesOutcome> DescribeGatewayBindDevicesOutcomeCallable;
                 typedef std::function<void(const IotexplorerClient*, const Model::DescribeGatewayBindDevicesRequest&, DescribeGatewayBindDevicesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeGatewayBindDevicesAsyncHandler;
@@ -679,6 +691,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::PublishBroadcastMessageResponse> PublishBroadcastMessageOutcome;
                 typedef std::future<PublishBroadcastMessageOutcome> PublishBroadcastMessageOutcomeCallable;
                 typedef std::function<void(const IotexplorerClient*, const Model::PublishBroadcastMessageRequest&, PublishBroadcastMessageOutcome, const std::shared_ptr<const AsyncCallerContext>&)> PublishBroadcastMessageAsyncHandler;
+                typedef Outcome<Core::Error, Model::PublishFirmwareUpdateMessageResponse> PublishFirmwareUpdateMessageOutcome;
+                typedef std::future<PublishFirmwareUpdateMessageOutcome> PublishFirmwareUpdateMessageOutcomeCallable;
+                typedef std::function<void(const IotexplorerClient*, const Model::PublishFirmwareUpdateMessageRequest&, PublishFirmwareUpdateMessageOutcome, const std::shared_ptr<const AsyncCallerContext>&)> PublishFirmwareUpdateMessageAsyncHandler;
                 typedef Outcome<Core::Error, Model::PublishMessageResponse> PublishMessageOutcome;
                 typedef std::future<PublishMessageOutcome> PublishMessageOutcomeCallable;
                 typedef std::function<void(const IotexplorerClient*, const Model::PublishMessageRequest&, PublishMessageOutcome, const std::shared_ptr<const AsyncCallerContext>&)> PublishMessageAsyncHandler;
@@ -801,6 +816,15 @@ namespace TencentCloud
                 CancelAssignTWeCallLicenseOutcome CancelAssignTWeCallLicense(const Model::CancelAssignTWeCallLicenseRequest &request);
                 void CancelAssignTWeCallLicenseAsync(const Model::CancelAssignTWeCallLicenseRequest& request, const CancelAssignTWeCallLicenseAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 CancelAssignTWeCallLicenseOutcomeCallable CancelAssignTWeCallLicenseCallable(const Model::CancelAssignTWeCallLicenseRequest& request);
+
+                /**
+                 *本接口（CheckFirmwareUpdate）用于查询设备可升级固件版本
+                 * @param req CheckFirmwareUpdateRequest
+                 * @return CheckFirmwareUpdateOutcome
+                 */
+                CheckFirmwareUpdateOutcome CheckFirmwareUpdate(const Model::CheckFirmwareUpdateRequest &request);
+                void CheckFirmwareUpdateAsync(const Model::CheckFirmwareUpdateRequest& request, const CheckFirmwareUpdateAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                CheckFirmwareUpdateOutcomeCallable CheckFirmwareUpdateCallable(const Model::CheckFirmwareUpdateRequest& request);
 
                 /**
                  *根据设备产品ID、设备名称，设置控制设备的属性数据。
@@ -1316,6 +1340,15 @@ namespace TencentCloud
                 DescribeFirmwareTaskOutcomeCallable DescribeFirmwareTaskCallable(const Model::DescribeFirmwareTaskRequest& request);
 
                 /**
+                 *本接口（DescribeFirmwareUpdateStatus）用于查询设备固件升级状态及进度。
+                 * @param req DescribeFirmwareUpdateStatusRequest
+                 * @return DescribeFirmwareUpdateStatusOutcome
+                 */
+                DescribeFirmwareUpdateStatusOutcome DescribeFirmwareUpdateStatus(const Model::DescribeFirmwareUpdateStatusRequest &request);
+                void DescribeFirmwareUpdateStatusAsync(const Model::DescribeFirmwareUpdateStatusRequest& request, const DescribeFirmwareUpdateStatusAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeFirmwareUpdateStatusOutcomeCallable DescribeFirmwareUpdateStatusCallable(const Model::DescribeFirmwareUpdateStatusRequest& request);
+
+                /**
                  *获取网关绑定的子设备列表
                  * @param req DescribeGatewayBindDevicesRequest
                  * @return DescribeGatewayBindDevicesOutcome
@@ -1827,6 +1860,15 @@ namespace TencentCloud
                 PublishBroadcastMessageOutcome PublishBroadcastMessage(const Model::PublishBroadcastMessageRequest &request);
                 void PublishBroadcastMessageAsync(const Model::PublishBroadcastMessageRequest& request, const PublishBroadcastMessageAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 PublishBroadcastMessageOutcomeCallable PublishBroadcastMessageCallable(const Model::PublishBroadcastMessageRequest& request);
+
+                /**
+                 *本接口（PublishFirmwareUpdateMessage）用于用户确认升级后，云端向设备发起固件升级请求。
+                 * @param req PublishFirmwareUpdateMessageRequest
+                 * @return PublishFirmwareUpdateMessageOutcome
+                 */
+                PublishFirmwareUpdateMessageOutcome PublishFirmwareUpdateMessage(const Model::PublishFirmwareUpdateMessageRequest &request);
+                void PublishFirmwareUpdateMessageAsync(const Model::PublishFirmwareUpdateMessageRequest& request, const PublishFirmwareUpdateMessageAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                PublishFirmwareUpdateMessageOutcomeCallable PublishFirmwareUpdateMessageCallable(const Model::PublishFirmwareUpdateMessageRequest& request);
 
                 /**
                  *本接口（PublishMessage）用于使用自定义透传协议进行设备远控

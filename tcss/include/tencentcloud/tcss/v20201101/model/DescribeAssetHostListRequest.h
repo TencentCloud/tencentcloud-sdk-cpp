@@ -86,55 +86,15 @@ namespace TencentCloud
                     bool OffsetHasBeenSet() const;
 
                     /**
-                     * 获取过滤条件。
-<li>Status - String - 是否必填：否 - agent状态筛选，"ALL":"全部"(或不传该字段),"UNINSTALL"："未安装","OFFLINE"："离线", "ONLINE"："防护中"</li>
-<li>HostName - String - 是否必填：否 - 主机名筛选</li>
-<li>Group- String - 是否必填：否 - 主机群组搜索</li>
-<li>HostIP- string - 是否必填：否 - 主机ip搜索</li>
-<li>HostID- string - 是否必填：否 - 主机id搜索</li>
-<li>DockerVersion- string - 是否必填：否 - docker版本搜索</li>
-<li>MachineType- string - 是否必填：否 - 主机来源MachineType搜索，"ALL":"全部"(或不传该字段),主机来源：["CVM", "ECM", "LH", "BM"]  中的之一为腾讯云服务器；["Other"]之一非腾讯云服务器；</li>
-<li>DockerStatus- string - 是否必填：否 - docker安装状态，"ALL":"全部"(或不传该字段),"INSTALL":"已安装","UNINSTALL":"未安装"</li>
-<li>ProjectID- string - 是否必填：否 - 所属项目id搜索</li>
-<li>Tag:xxx(tag:key)- string- 是否必填：否 - 标签键值搜索 示例Filters":[{"Name":"tag:tke-kind","Values":["service"]}]</li>
-                     * @return Filters 过滤条件。
-<li>Status - String - 是否必填：否 - agent状态筛选，"ALL":"全部"(或不传该字段),"UNINSTALL"："未安装","OFFLINE"："离线", "ONLINE"："防护中"</li>
-<li>HostName - String - 是否必填：否 - 主机名筛选</li>
-<li>Group- String - 是否必填：否 - 主机群组搜索</li>
-<li>HostIP- string - 是否必填：否 - 主机ip搜索</li>
-<li>HostID- string - 是否必填：否 - 主机id搜索</li>
-<li>DockerVersion- string - 是否必填：否 - docker版本搜索</li>
-<li>MachineType- string - 是否必填：否 - 主机来源MachineType搜索，"ALL":"全部"(或不传该字段),主机来源：["CVM", "ECM", "LH", "BM"]  中的之一为腾讯云服务器；["Other"]之一非腾讯云服务器；</li>
-<li>DockerStatus- string - 是否必填：否 - docker安装状态，"ALL":"全部"(或不传该字段),"INSTALL":"已安装","UNINSTALL":"未安装"</li>
-<li>ProjectID- string - 是否必填：否 - 所属项目id搜索</li>
-<li>Tag:xxx(tag:key)- string- 是否必填：否 - 标签键值搜索 示例Filters":[{"Name":"tag:tke-kind","Values":["service"]}]</li>
+                     * 获取过滤条件。 <li>Status - String - 是否必填：否 - agent状态筛选，"ALL":"全部"(或不传该字段),"UNINSTALL"："未安装","OFFLINE"："离线", "ONLINE"："防护中"</li> <li>HostName - String - 是否必填：否 - 主机名筛选</li> <li>Group- String - 是否必填：否 - 主机群组搜索</li> <li>HostIP- string - 是否必填：否 - 主机ip搜索</li> <li>HostID- string - 是否必填：否 - 主机id搜索</li> <li>DockerVersion- string - 是否必填：否 - docker版本搜索</li> <li>MachineType- string - 是否必填：否 - 主机来源MachineType搜索，"ALL":"全部"(或不传该字段),主机来源：["CVM", "ECM", "LH", "BM"]  中的之一为腾讯云服务器；["Other"]之一非腾讯云服务器；</li> <li>DockerStatus- string - 是否必填：否 - docker安装状态，"ALL":"全部"(或不传该字段),"INSTALL":"已安装","UNINSTALL":"未安装"</li> <li>ProjectID- string - 是否必填：否 - 所属项目id搜索</li> <li>Tag:xxx(tag:key)- string- 是否必填：否 - 标签键值搜索 示例Filters":[{"Name":"tag:tke-kind","Values":["service"]}]</li> <li>NonClusterNode: 是否查询非集群节点(true: 是,false: 否)</li>
+                     * @return Filters 过滤条件。 <li>Status - String - 是否必填：否 - agent状态筛选，"ALL":"全部"(或不传该字段),"UNINSTALL"："未安装","OFFLINE"："离线", "ONLINE"："防护中"</li> <li>HostName - String - 是否必填：否 - 主机名筛选</li> <li>Group- String - 是否必填：否 - 主机群组搜索</li> <li>HostIP- string - 是否必填：否 - 主机ip搜索</li> <li>HostID- string - 是否必填：否 - 主机id搜索</li> <li>DockerVersion- string - 是否必填：否 - docker版本搜索</li> <li>MachineType- string - 是否必填：否 - 主机来源MachineType搜索，"ALL":"全部"(或不传该字段),主机来源：["CVM", "ECM", "LH", "BM"]  中的之一为腾讯云服务器；["Other"]之一非腾讯云服务器；</li> <li>DockerStatus- string - 是否必填：否 - docker安装状态，"ALL":"全部"(或不传该字段),"INSTALL":"已安装","UNINSTALL":"未安装"</li> <li>ProjectID- string - 是否必填：否 - 所属项目id搜索</li> <li>Tag:xxx(tag:key)- string- 是否必填：否 - 标签键值搜索 示例Filters":[{"Name":"tag:tke-kind","Values":["service"]}]</li> <li>NonClusterNode: 是否查询非集群节点(true: 是,false: 否)</li>
                      * 
                      */
                     std::vector<AssetFilters> GetFilters() const;
 
                     /**
-                     * 设置过滤条件。
-<li>Status - String - 是否必填：否 - agent状态筛选，"ALL":"全部"(或不传该字段),"UNINSTALL"："未安装","OFFLINE"："离线", "ONLINE"："防护中"</li>
-<li>HostName - String - 是否必填：否 - 主机名筛选</li>
-<li>Group- String - 是否必填：否 - 主机群组搜索</li>
-<li>HostIP- string - 是否必填：否 - 主机ip搜索</li>
-<li>HostID- string - 是否必填：否 - 主机id搜索</li>
-<li>DockerVersion- string - 是否必填：否 - docker版本搜索</li>
-<li>MachineType- string - 是否必填：否 - 主机来源MachineType搜索，"ALL":"全部"(或不传该字段),主机来源：["CVM", "ECM", "LH", "BM"]  中的之一为腾讯云服务器；["Other"]之一非腾讯云服务器；</li>
-<li>DockerStatus- string - 是否必填：否 - docker安装状态，"ALL":"全部"(或不传该字段),"INSTALL":"已安装","UNINSTALL":"未安装"</li>
-<li>ProjectID- string - 是否必填：否 - 所属项目id搜索</li>
-<li>Tag:xxx(tag:key)- string- 是否必填：否 - 标签键值搜索 示例Filters":[{"Name":"tag:tke-kind","Values":["service"]}]</li>
-                     * @param _filters 过滤条件。
-<li>Status - String - 是否必填：否 - agent状态筛选，"ALL":"全部"(或不传该字段),"UNINSTALL"："未安装","OFFLINE"："离线", "ONLINE"："防护中"</li>
-<li>HostName - String - 是否必填：否 - 主机名筛选</li>
-<li>Group- String - 是否必填：否 - 主机群组搜索</li>
-<li>HostIP- string - 是否必填：否 - 主机ip搜索</li>
-<li>HostID- string - 是否必填：否 - 主机id搜索</li>
-<li>DockerVersion- string - 是否必填：否 - docker版本搜索</li>
-<li>MachineType- string - 是否必填：否 - 主机来源MachineType搜索，"ALL":"全部"(或不传该字段),主机来源：["CVM", "ECM", "LH", "BM"]  中的之一为腾讯云服务器；["Other"]之一非腾讯云服务器；</li>
-<li>DockerStatus- string - 是否必填：否 - docker安装状态，"ALL":"全部"(或不传该字段),"INSTALL":"已安装","UNINSTALL":"未安装"</li>
-<li>ProjectID- string - 是否必填：否 - 所属项目id搜索</li>
-<li>Tag:xxx(tag:key)- string- 是否必填：否 - 标签键值搜索 示例Filters":[{"Name":"tag:tke-kind","Values":["service"]}]</li>
+                     * 设置过滤条件。 <li>Status - String - 是否必填：否 - agent状态筛选，"ALL":"全部"(或不传该字段),"UNINSTALL"："未安装","OFFLINE"："离线", "ONLINE"："防护中"</li> <li>HostName - String - 是否必填：否 - 主机名筛选</li> <li>Group- String - 是否必填：否 - 主机群组搜索</li> <li>HostIP- string - 是否必填：否 - 主机ip搜索</li> <li>HostID- string - 是否必填：否 - 主机id搜索</li> <li>DockerVersion- string - 是否必填：否 - docker版本搜索</li> <li>MachineType- string - 是否必填：否 - 主机来源MachineType搜索，"ALL":"全部"(或不传该字段),主机来源：["CVM", "ECM", "LH", "BM"]  中的之一为腾讯云服务器；["Other"]之一非腾讯云服务器；</li> <li>DockerStatus- string - 是否必填：否 - docker安装状态，"ALL":"全部"(或不传该字段),"INSTALL":"已安装","UNINSTALL":"未安装"</li> <li>ProjectID- string - 是否必填：否 - 所属项目id搜索</li> <li>Tag:xxx(tag:key)- string- 是否必填：否 - 标签键值搜索 示例Filters":[{"Name":"tag:tke-kind","Values":["service"]}]</li> <li>NonClusterNode: 是否查询非集群节点(true: 是,false: 否)</li>
+                     * @param _filters 过滤条件。 <li>Status - String - 是否必填：否 - agent状态筛选，"ALL":"全部"(或不传该字段),"UNINSTALL"："未安装","OFFLINE"："离线", "ONLINE"："防护中"</li> <li>HostName - String - 是否必填：否 - 主机名筛选</li> <li>Group- String - 是否必填：否 - 主机群组搜索</li> <li>HostIP- string - 是否必填：否 - 主机ip搜索</li> <li>HostID- string - 是否必填：否 - 主机id搜索</li> <li>DockerVersion- string - 是否必填：否 - docker版本搜索</li> <li>MachineType- string - 是否必填：否 - 主机来源MachineType搜索，"ALL":"全部"(或不传该字段),主机来源：["CVM", "ECM", "LH", "BM"]  中的之一为腾讯云服务器；["Other"]之一非腾讯云服务器；</li> <li>DockerStatus- string - 是否必填：否 - docker安装状态，"ALL":"全部"(或不传该字段),"INSTALL":"已安装","UNINSTALL":"未安装"</li> <li>ProjectID- string - 是否必填：否 - 所属项目id搜索</li> <li>Tag:xxx(tag:key)- string- 是否必填：否 - 标签键值搜索 示例Filters":[{"Name":"tag:tke-kind","Values":["service"]}]</li> <li>NonClusterNode: 是否查询非集群节点(true: 是,false: 否)</li>
                      * 
                      */
                     void SetFilters(const std::vector<AssetFilters>& _filters);
@@ -203,17 +163,7 @@ namespace TencentCloud
                     bool m_offsetHasBeenSet;
 
                     /**
-                     * 过滤条件。
-<li>Status - String - 是否必填：否 - agent状态筛选，"ALL":"全部"(或不传该字段),"UNINSTALL"："未安装","OFFLINE"："离线", "ONLINE"："防护中"</li>
-<li>HostName - String - 是否必填：否 - 主机名筛选</li>
-<li>Group- String - 是否必填：否 - 主机群组搜索</li>
-<li>HostIP- string - 是否必填：否 - 主机ip搜索</li>
-<li>HostID- string - 是否必填：否 - 主机id搜索</li>
-<li>DockerVersion- string - 是否必填：否 - docker版本搜索</li>
-<li>MachineType- string - 是否必填：否 - 主机来源MachineType搜索，"ALL":"全部"(或不传该字段),主机来源：["CVM", "ECM", "LH", "BM"]  中的之一为腾讯云服务器；["Other"]之一非腾讯云服务器；</li>
-<li>DockerStatus- string - 是否必填：否 - docker安装状态，"ALL":"全部"(或不传该字段),"INSTALL":"已安装","UNINSTALL":"未安装"</li>
-<li>ProjectID- string - 是否必填：否 - 所属项目id搜索</li>
-<li>Tag:xxx(tag:key)- string- 是否必填：否 - 标签键值搜索 示例Filters":[{"Name":"tag:tke-kind","Values":["service"]}]</li>
+                     * 过滤条件。 <li>Status - String - 是否必填：否 - agent状态筛选，"ALL":"全部"(或不传该字段),"UNINSTALL"："未安装","OFFLINE"："离线", "ONLINE"："防护中"</li> <li>HostName - String - 是否必填：否 - 主机名筛选</li> <li>Group- String - 是否必填：否 - 主机群组搜索</li> <li>HostIP- string - 是否必填：否 - 主机ip搜索</li> <li>HostID- string - 是否必填：否 - 主机id搜索</li> <li>DockerVersion- string - 是否必填：否 - docker版本搜索</li> <li>MachineType- string - 是否必填：否 - 主机来源MachineType搜索，"ALL":"全部"(或不传该字段),主机来源：["CVM", "ECM", "LH", "BM"]  中的之一为腾讯云服务器；["Other"]之一非腾讯云服务器；</li> <li>DockerStatus- string - 是否必填：否 - docker安装状态，"ALL":"全部"(或不传该字段),"INSTALL":"已安装","UNINSTALL":"未安装"</li> <li>ProjectID- string - 是否必填：否 - 所属项目id搜索</li> <li>Tag:xxx(tag:key)- string- 是否必填：否 - 标签键值搜索 示例Filters":[{"Name":"tag:tke-kind","Values":["service"]}]</li> <li>NonClusterNode: 是否查询非集群节点(true: 是,false: 否)</li>
                      */
                     std::vector<AssetFilters> m_filters;
                     bool m_filtersHasBeenSet;

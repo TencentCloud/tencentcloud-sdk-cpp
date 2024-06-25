@@ -526,6 +526,27 @@ namespace TencentCloud
                      */
                     bool DefendStatusHasBeenSet() const;
 
+                    /**
+                     * 获取核数
+                     * @return CoresCnt 核数
+                     * 
+                     */
+                    uint64_t GetCoresCnt() const;
+
+                    /**
+                     * 设置核数
+                     * @param _coresCnt 核数
+                     * 
+                     */
+                    void SetCoresCnt(const uint64_t& _coresCnt);
+
+                    /**
+                     * 判断参数 CoresCnt 是否已赋值
+                     * @return CoresCnt 是否已赋值
+                     * 
+                     */
+                    bool CoresCntHasBeenSet() const;
+
                 private:
 
                     /**
@@ -663,6 +684,12 @@ namespace TencentCloud
                      */
                     std::string m_defendStatus;
                     bool m_defendStatusHasBeenSet;
+
+                    /**
+                     * 核数
+                     */
+                    uint64_t m_coresCnt;
+                    bool m_coresCntHasBeenSet;
 
                 };
             }

@@ -40,6 +40,49 @@ IoaClient::IoaClient(const Credential &credential, const string &region, const C
 }
 
 
+IoaClient::DescribeAccountGroupsOutcome IoaClient::DescribeAccountGroups(const DescribeAccountGroupsRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeAccountGroups");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeAccountGroupsResponse rsp = DescribeAccountGroupsResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeAccountGroupsOutcome(rsp);
+        else
+            return DescribeAccountGroupsOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeAccountGroupsOutcome(outcome.GetError());
+    }
+}
+
+void IoaClient::DescribeAccountGroupsAsync(const DescribeAccountGroupsRequest& request, const DescribeAccountGroupsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeAccountGroups(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+IoaClient::DescribeAccountGroupsOutcomeCallable IoaClient::DescribeAccountGroupsCallable(const DescribeAccountGroupsRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeAccountGroupsOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeAccountGroups(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 IoaClient::DescribeDevicesOutcome IoaClient::DescribeDevices(const DescribeDevicesRequest &request)
 {
     auto outcome = MakeRequest(request, "DescribeDevices");
@@ -76,6 +119,92 @@ IoaClient::DescribeDevicesOutcomeCallable IoaClient::DescribeDevicesCallable(con
         [this, request]()
         {
             return this->DescribeDevices(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+IoaClient::DescribeLocalAccountsOutcome IoaClient::DescribeLocalAccounts(const DescribeLocalAccountsRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeLocalAccounts");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeLocalAccountsResponse rsp = DescribeLocalAccountsResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeLocalAccountsOutcome(rsp);
+        else
+            return DescribeLocalAccountsOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeLocalAccountsOutcome(outcome.GetError());
+    }
+}
+
+void IoaClient::DescribeLocalAccountsAsync(const DescribeLocalAccountsRequest& request, const DescribeLocalAccountsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeLocalAccounts(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+IoaClient::DescribeLocalAccountsOutcomeCallable IoaClient::DescribeLocalAccountsCallable(const DescribeLocalAccountsRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeLocalAccountsOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeLocalAccounts(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+IoaClient::DescribeRootAccountGroupOutcome IoaClient::DescribeRootAccountGroup(const DescribeRootAccountGroupRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeRootAccountGroup");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeRootAccountGroupResponse rsp = DescribeRootAccountGroupResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeRootAccountGroupOutcome(rsp);
+        else
+            return DescribeRootAccountGroupOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeRootAccountGroupOutcome(outcome.GetError());
+    }
+}
+
+void IoaClient::DescribeRootAccountGroupAsync(const DescribeRootAccountGroupRequest& request, const DescribeRootAccountGroupAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeRootAccountGroup(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+IoaClient::DescribeRootAccountGroupOutcomeCallable IoaClient::DescribeRootAccountGroupCallable(const DescribeRootAccountGroupRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeRootAccountGroupOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeRootAccountGroup(request);
         }
     );
 
