@@ -44,6 +44,7 @@ set(ssl_public_header_model
   include/tencentcloud/ssl/v20191205/model/TCBHostInstance.h
   include/tencentcloud/ssl/v20191205/model/UploadRevokeLetterRequest.h
   include/tencentcloud/ssl/v20191205/model/ClbListener.h
+  include/tencentcloud/ssl/v20191205/model/COSInstanceList.h
   include/tencentcloud/ssl/v20191205/model/DescribeCompaniesResponse.h
   include/tencentcloud/ssl/v20191205/model/CheckCertificateChainResponse.h
   include/tencentcloud/ssl/v20191205/model/DescribeHostCosInstanceListResponse.h
@@ -233,6 +234,7 @@ set(ssl_src
   src/v20191205/model/TCBHostInstance.cpp
   src/v20191205/model/UploadRevokeLetterRequest.cpp
   src/v20191205/model/ClbListener.cpp
+  src/v20191205/model/COSInstanceList.cpp
   src/v20191205/model/DescribeCompaniesResponse.cpp
   src/v20191205/model/CheckCertificateChainResponse.cpp
   src/v20191205/model/DescribeHostCosInstanceListResponse.cpp

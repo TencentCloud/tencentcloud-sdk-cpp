@@ -1416,7 +1416,7 @@ namespace TencentCloud
                 CreatePrometheusClusterAgentOutcomeCallable CreatePrometheusClusterAgentCallable(const Model::CreatePrometheusClusterAgentRequest& request);
 
                 /**
-                 *创建prometheus配置
+                 *创建集群采集配置
                  * @param req CreatePrometheusConfigRequest
                  * @return CreatePrometheusConfigOutcome
                  */
@@ -1443,7 +1443,7 @@ namespace TencentCloud
                 CreatePrometheusGlobalNotificationOutcomeCallable CreatePrometheusGlobalNotificationCallable(const Model::CreatePrometheusGlobalNotificationRequest& request);
 
                 /**
-                 *以Yaml的方式创建聚合规则
+                 *创建聚合规则yaml方式
                  * @param req CreatePrometheusRecordRuleYamlRequest
                  * @return CreatePrometheusRecordRuleYamlOutcome
                  */
@@ -1677,7 +1677,7 @@ namespace TencentCloud
                 DeletePrometheusClusterAgentOutcomeCallable DeletePrometheusClusterAgentCallable(const Model::DeletePrometheusClusterAgentRequest& request);
 
                 /**
-                 *删除Prometheus配置，如果目标不存在，将返回成功
+                 *删除集群采集配置
                  * @param req DeletePrometheusConfigRequest
                  * @return DeletePrometheusConfigOutcome
                  */
@@ -1686,7 +1686,7 @@ namespace TencentCloud
                 DeletePrometheusConfigOutcomeCallable DeletePrometheusConfigCallable(const Model::DeletePrometheusConfigRequest& request);
 
                 /**
-                 *删除聚合实例
+                 *删除聚合规则
                  * @param req DeletePrometheusRecordRuleYamlRequest
                  * @return DeletePrometheusRecordRuleYamlOutcome
                  */
@@ -2327,7 +2327,7 @@ namespace TencentCloud
                 DescribePrometheusClusterAgentsOutcomeCallable DescribePrometheusClusterAgentsCallable(const Model::DescribePrometheusClusterAgentsRequest& request);
 
                 /**
-                 *拉取Prometheus配置
+                 *获取集群采集配置
                  * @param req DescribePrometheusConfigRequest
                  * @return DescribePrometheusConfigOutcome
                  */
@@ -2876,7 +2876,7 @@ namespace TencentCloud
                 ModifyPrometheusAlertRuleOutcomeCallable ModifyPrometheusAlertRuleCallable(const Model::ModifyPrometheusAlertRuleRequest& request);
 
                 /**
-                 *修改prometheus配置，如果配置项不存在，则会新增
+                 *修改集群采集配置
                  * @param req ModifyPrometheusConfigRequest
                  * @return ModifyPrometheusConfigOutcome
                  */
@@ -2894,7 +2894,7 @@ namespace TencentCloud
                 ModifyPrometheusGlobalNotificationOutcomeCallable ModifyPrometheusGlobalNotificationCallable(const Model::ModifyPrometheusGlobalNotificationRequest& request);
 
                 /**
-                 *通过yaml的方式修改Prometheus聚合实例
+                 *修改聚合规则yaml方式
                  * @param req ModifyPrometheusRecordRuleYamlRequest
                  * @return ModifyPrometheusRecordRuleYamlOutcome
                  */

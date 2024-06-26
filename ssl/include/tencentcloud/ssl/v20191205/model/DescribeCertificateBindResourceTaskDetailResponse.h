@@ -32,6 +32,7 @@
 #include <tencentcloud/ssl/v20191205/model/TCBInstanceList.h>
 #include <tencentcloud/ssl/v20191205/model/TeoInstanceList.h>
 #include <tencentcloud/ssl/v20191205/model/TSEInstanceList.h>
+#include <tencentcloud/ssl/v20191205/model/COSInstanceList.h>
 
 
 namespace TencentCloud
@@ -258,6 +259,22 @@ namespace TencentCloud
                      */
                     bool TSEHasBeenSet() const;
 
+                    /**
+                     * 获取关联的COS资源详情
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return COS 关联的COS资源详情
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::vector<COSInstanceList> GetCOS() const;
+
+                    /**
+                     * 判断参数 COS 是否已赋值
+                     * @return COS 是否已赋值
+                     * 
+                     */
+                    bool COSHasBeenSet() const;
+
                 private:
 
                     /**
@@ -348,6 +365,13 @@ namespace TencentCloud
                      */
                     std::vector<TSEInstanceList> m_tSE;
                     bool m_tSEHasBeenSet;
+
+                    /**
+                     * 关联的COS资源详情
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::vector<COSInstanceList> m_cOS;
+                    bool m_cOSHasBeenSet;
 
                 };
             }

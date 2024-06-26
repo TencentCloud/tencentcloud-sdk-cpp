@@ -38,7 +38,8 @@ TopicInfo::TopicInfo() :
     m_describesHasBeenSet(false),
     m_hotPeriodHasBeenSet(false),
     m_bizTypeHasBeenSet(false),
-    m_isWebTrackingHasBeenSet(false)
+    m_isWebTrackingHasBeenSet(false),
+    m_extendsHasBeenSet(false)
 {
 }
 
@@ -237,6 +238,23 @@ CoreInternalOutcome TopicInfo::Deserialize(const rapidjson::Value &value)
         m_isWebTrackingHasBeenSet = true;
     }
 
+    if (value.HasMember("Extends") && !value["Extends"].IsNull())
+    {
+        if (!value["Extends"].IsObject())
+        {
+            return CoreInternalOutcome(Core::Error("response `TopicInfo.Extends` is not object type").SetRequestId(requestId));
+        }
+
+        CoreInternalOutcome outcome = m_extends.Deserialize(value["Extends"]);
+        if (!outcome.IsSuccess())
+        {
+            outcome.GetError().SetRequestId(requestId);
+            return outcome;
+        }
+
+        m_extendsHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -393,6 +411,15 @@ void TopicInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Alloc
         string key = "IsWebTracking";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_isWebTracking, allocator);
+    }
+
+    if (m_extendsHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Extends";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_extends.ToJsonObject(value[key.c_str()], allocator);
     }
 
 }
@@ -684,5 +711,21 @@ void TopicInfo::SetIsWebTracking(const bool& _isWebTracking)
 bool TopicInfo::IsWebTrackingHasBeenSet() const
 {
     return m_isWebTrackingHasBeenSet;
+}
+
+TopicExtendInfo TopicInfo::GetExtends() const
+{
+    return m_extends;
+}
+
+void TopicInfo::SetExtends(const TopicExtendInfo& _extends)
+{
+    m_extends = _extends;
+    m_extendsHasBeenSet = true;
+}
+
+bool TopicInfo::ExtendsHasBeenSet() const
+{
+    return m_extendsHasBeenSet;
 }
 

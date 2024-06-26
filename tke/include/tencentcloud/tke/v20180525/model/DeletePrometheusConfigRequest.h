@@ -168,6 +168,27 @@ namespace TencentCloud
                      */
                     bool RawJobsHasBeenSet() const;
 
+                    /**
+                     * 获取要删除的Probe名字列表
+                     * @return Probes 要删除的Probe名字列表
+                     * 
+                     */
+                    std::vector<std::string> GetProbes() const;
+
+                    /**
+                     * 设置要删除的Probe名字列表
+                     * @param _probes 要删除的Probe名字列表
+                     * 
+                     */
+                    void SetProbes(const std::vector<std::string>& _probes);
+
+                    /**
+                     * 判断参数 Probes 是否已赋值
+                     * @return Probes 是否已赋值
+                     * 
+                     */
+                    bool ProbesHasBeenSet() const;
+
                 private:
 
                     /**
@@ -205,6 +226,12 @@ namespace TencentCloud
                      */
                     std::vector<std::string> m_rawJobs;
                     bool m_rawJobsHasBeenSet;
+
+                    /**
+                     * 要删除的Probe名字列表
+                     */
+                    std::vector<std::string> m_probes;
+                    bool m_probesHasBeenSet;
 
                 };
             }

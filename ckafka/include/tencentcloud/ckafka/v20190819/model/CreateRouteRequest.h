@@ -64,15 +64,15 @@ namespace TencentCloud
                     bool InstanceIdHasBeenSet() const;
 
                     /**
-                     * 获取路由网络类型(3:vpc路由;4:标准版支撑路由;7:专业版支撑路由)
-                     * @return VipType 路由网络类型(3:vpc路由;4:标准版支撑路由;7:专业版支撑路由)
+                     * 获取路由网络类型(3:vpc路由;7:内部支撑路由)
+                     * @return VipType 路由网络类型(3:vpc路由;7:内部支撑路由)
                      * 
                      */
                     int64_t GetVipType() const;
 
                     /**
-                     * 设置路由网络类型(3:vpc路由;4:标准版支撑路由;7:专业版支撑路由)
-                     * @param _vipType 路由网络类型(3:vpc路由;4:标准版支撑路由;7:专业版支撑路由)
+                     * 设置路由网络类型(3:vpc路由;7:内部支撑路由)
+                     * @param _vipType 路由网络类型(3:vpc路由;7:内部支撑路由)
                      * 
                      */
                     void SetVipType(const int64_t& _vipType);
@@ -240,7 +240,7 @@ namespace TencentCloud
                     bool m_instanceIdHasBeenSet;
 
                     /**
-                     * 路由网络类型(3:vpc路由;4:标准版支撑路由;7:专业版支撑路由)
+                     * 路由网络类型(3:vpc路由;7:内部支撑路由)
                      */
                     int64_t m_vipType;
                     bool m_vipTypeHasBeenSet;

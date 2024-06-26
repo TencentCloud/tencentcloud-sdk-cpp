@@ -23,7 +23,8 @@ using namespace std;
 ClbInstanceList::ClbInstanceList() :
     m_regionHasBeenSet(false),
     m_instanceListHasBeenSet(false),
-    m_totalCountHasBeenSet(false)
+    m_totalCountHasBeenSet(false),
+    m_errorHasBeenSet(false)
 {
 }
 
@@ -72,6 +73,16 @@ CoreInternalOutcome ClbInstanceList::Deserialize(const rapidjson::Value &value)
         m_totalCountHasBeenSet = true;
     }
 
+    if (value.HasMember("Error") && !value["Error"].IsNull())
+    {
+        if (!value["Error"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `ClbInstanceList.Error` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_error = string(value["Error"].GetString());
+        m_errorHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -108,6 +119,14 @@ void ClbInstanceList::ToJsonObject(rapidjson::Value &value, rapidjson::Document:
         string key = "TotalCount";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_totalCount, allocator);
+    }
+
+    if (m_errorHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Error";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_error.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -159,5 +178,21 @@ void ClbInstanceList::SetTotalCount(const uint64_t& _totalCount)
 bool ClbInstanceList::TotalCountHasBeenSet() const
 {
     return m_totalCountHasBeenSet;
+}
+
+string ClbInstanceList::GetError() const
+{
+    return m_error;
+}
+
+void ClbInstanceList::SetError(const string& _error)
+{
+    m_error = _error;
+    m_errorHasBeenSet = true;
+}
+
+bool ClbInstanceList::ErrorHasBeenSet() const
+{
+    return m_errorHasBeenSet;
 }
 

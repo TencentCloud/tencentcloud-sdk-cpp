@@ -130,6 +130,31 @@ namespace TencentCloud
                      */
                     bool EventIdHasBeenSet() const;
 
+                    /**
+                     * 获取事件录像上传状态，Finished: 全部上传成功 Partial: 部分上传成功 Failed: 上传失败	
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return UploadStatus 事件录像上传状态，Finished: 全部上传成功 Partial: 部分上传成功 Failed: 上传失败	
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::string GetUploadStatus() const;
+
+                    /**
+                     * 设置事件录像上传状态，Finished: 全部上传成功 Partial: 部分上传成功 Failed: 上传失败	
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _uploadStatus 事件录像上传状态，Finished: 全部上传成功 Partial: 部分上传成功 Failed: 上传失败	
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetUploadStatus(const std::string& _uploadStatus);
+
+                    /**
+                     * 判断参数 UploadStatus 是否已赋值
+                     * @return UploadStatus 是否已赋值
+                     * 
+                     */
+                    bool UploadStatusHasBeenSet() const;
+
                 private:
 
                     /**
@@ -155,6 +180,13 @@ namespace TencentCloud
                      */
                     std::string m_eventId;
                     bool m_eventIdHasBeenSet;
+
+                    /**
+                     * 事件录像上传状态，Finished: 全部上传成功 Partial: 部分上传成功 Failed: 上传失败	
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_uploadStatus;
+                    bool m_uploadStatusHasBeenSet;
 
                 };
             }

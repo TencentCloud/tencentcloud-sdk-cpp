@@ -27,6 +27,7 @@ ClusterOverview::ClusterOverview() :
     m_placementHasBeenSet(false),
     m_createTimeHasBeenSet(false),
     m_schedulerTypeHasBeenSet(false),
+    m_schedulerVersionHasBeenSet(false),
     m_computeNodeCountHasBeenSet(false),
     m_computeNodeSetHasBeenSet(false),
     m_managerNodeCountHasBeenSet(false),
@@ -108,6 +109,16 @@ CoreInternalOutcome ClusterOverview::Deserialize(const rapidjson::Value &value)
         }
         m_schedulerType = string(value["SchedulerType"].GetString());
         m_schedulerTypeHasBeenSet = true;
+    }
+
+    if (value.HasMember("SchedulerVersion") && !value["SchedulerVersion"].IsNull())
+    {
+        if (!value["SchedulerVersion"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `ClusterOverview.SchedulerVersion` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_schedulerVersion = string(value["SchedulerVersion"].GetString());
+        m_schedulerVersionHasBeenSet = true;
     }
 
     if (value.HasMember("ComputeNodeCount") && !value["ComputeNodeCount"].IsNull())
@@ -274,6 +285,14 @@ void ClusterOverview::ToJsonObject(rapidjson::Value &value, rapidjson::Document:
         string key = "SchedulerType";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_schedulerType.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_schedulerVersionHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "SchedulerVersion";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_schedulerVersion.c_str(), allocator).Move(), allocator);
     }
 
     if (m_computeNodeCountHasBeenSet)
@@ -458,6 +477,22 @@ void ClusterOverview::SetSchedulerType(const string& _schedulerType)
 bool ClusterOverview::SchedulerTypeHasBeenSet() const
 {
     return m_schedulerTypeHasBeenSet;
+}
+
+string ClusterOverview::GetSchedulerVersion() const
+{
+    return m_schedulerVersion;
+}
+
+void ClusterOverview::SetSchedulerVersion(const string& _schedulerVersion)
+{
+    m_schedulerVersion = _schedulerVersion;
+    m_schedulerVersionHasBeenSet = true;
+}
+
+bool ClusterOverview::SchedulerVersionHasBeenSet() const
+{
+    return m_schedulerVersionHasBeenSet;
 }
 
 int64_t ClusterOverview::GetComputeNodeCount() const

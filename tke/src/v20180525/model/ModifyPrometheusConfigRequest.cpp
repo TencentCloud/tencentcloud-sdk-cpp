@@ -28,7 +28,8 @@ ModifyPrometheusConfigRequest::ModifyPrometheusConfigRequest() :
     m_clusterIdHasBeenSet(false),
     m_serviceMonitorsHasBeenSet(false),
     m_podMonitorsHasBeenSet(false),
-    m_rawJobsHasBeenSet(false)
+    m_rawJobsHasBeenSet(false),
+    m_probesHasBeenSet(false)
 {
 }
 
@@ -102,6 +103,21 @@ string ModifyPrometheusConfigRequest::ToJsonString() const
 
         int i=0;
         for (auto itr = m_rawJobs.begin(); itr != m_rawJobs.end(); ++itr, ++i)
+        {
+            d[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(d[key.c_str()][i], allocator);
+        }
+    }
+
+    if (m_probesHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Probes";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_probes.begin(); itr != m_probes.end(); ++itr, ++i)
         {
             d[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
             (*itr).ToJsonObject(d[key.c_str()][i], allocator);
@@ -210,6 +226,22 @@ void ModifyPrometheusConfigRequest::SetRawJobs(const vector<PrometheusConfigItem
 bool ModifyPrometheusConfigRequest::RawJobsHasBeenSet() const
 {
     return m_rawJobsHasBeenSet;
+}
+
+vector<PrometheusConfigItem> ModifyPrometheusConfigRequest::GetProbes() const
+{
+    return m_probes;
+}
+
+void ModifyPrometheusConfigRequest::SetProbes(const vector<PrometheusConfigItem>& _probes)
+{
+    m_probes = _probes;
+    m_probesHasBeenSet = true;
+}
+
+bool ModifyPrometheusConfigRequest::ProbesHasBeenSet() const
+{
+    return m_probesHasBeenSet;
 }
 
 

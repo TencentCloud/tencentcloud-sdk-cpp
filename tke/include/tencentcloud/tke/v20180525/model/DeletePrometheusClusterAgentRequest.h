@@ -85,6 +85,27 @@ namespace TencentCloud
                      */
                     bool InstanceIdHasBeenSet() const;
 
+                    /**
+                     * 获取在7天可回收期间，强制解除绑定
+                     * @return Force 在7天可回收期间，强制解除绑定
+                     * 
+                     */
+                    bool GetForce() const;
+
+                    /**
+                     * 设置在7天可回收期间，强制解除绑定
+                     * @param _force 在7天可回收期间，强制解除绑定
+                     * 
+                     */
+                    void SetForce(const bool& _force);
+
+                    /**
+                     * 判断参数 Force 是否已赋值
+                     * @return Force 是否已赋值
+                     * 
+                     */
+                    bool ForceHasBeenSet() const;
+
                 private:
 
                     /**
@@ -98,6 +119,12 @@ namespace TencentCloud
                      */
                     std::string m_instanceId;
                     bool m_instanceIdHasBeenSet;
+
+                    /**
+                     * 在7天可回收期间，强制解除绑定
+                     */
+                    bool m_force;
+                    bool m_forceHasBeenSet;
 
                 };
             }

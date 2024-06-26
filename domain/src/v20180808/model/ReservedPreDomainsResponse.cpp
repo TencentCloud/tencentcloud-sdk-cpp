@@ -25,7 +25,8 @@ using namespace std;
 
 ReservedPreDomainsResponse::ReservedPreDomainsResponse() :
     m_sucDomainListHasBeenSet(false),
-    m_failDomainListHasBeenSet(false)
+    m_failDomainListHasBeenSet(false),
+    m_sucDomainsHasBeenSet(false)
 {
 }
 
@@ -96,6 +97,26 @@ CoreInternalOutcome ReservedPreDomainsResponse::Deserialize(const string &payloa
         m_failDomainListHasBeenSet = true;
     }
 
+    if (rsp.HasMember("SucDomains") && !rsp["SucDomains"].IsNull())
+    {
+        if (!rsp["SucDomains"].IsArray())
+            return CoreInternalOutcome(Core::Error("response `SucDomains` is not array type"));
+
+        const rapidjson::Value &tmpValue = rsp["SucDomains"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            SucDomainInfo item;
+            CoreInternalOutcome outcome = item.Deserialize(*itr);
+            if (!outcome.IsSuccess())
+            {
+                outcome.GetError().SetRequestId(requestId);
+                return outcome;
+            }
+            m_sucDomains.push_back(item);
+        }
+        m_sucDomainsHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -134,6 +155,21 @@ string ReservedPreDomainsResponse::ToJsonString() const
         }
     }
 
+    if (m_sucDomainsHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "SucDomains";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_sucDomains.begin(); itr != m_sucDomains.end(); ++itr, ++i)
+        {
+            value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(value[key.c_str()][i], allocator);
+        }
+    }
+
     rapidjson::Value iKey(rapidjson::kStringType);
     string key = "RequestId";
     iKey.SetString(key.c_str(), allocator);
@@ -164,6 +200,16 @@ vector<FailReservedDomainInfo> ReservedPreDomainsResponse::GetFailDomainList() c
 bool ReservedPreDomainsResponse::FailDomainListHasBeenSet() const
 {
     return m_failDomainListHasBeenSet;
+}
+
+vector<SucDomainInfo> ReservedPreDomainsResponse::GetSucDomains() const
+{
+    return m_sucDomains;
+}
+
+bool ReservedPreDomainsResponse::SucDomainsHasBeenSet() const
+{
+    return m_sucDomainsHasBeenSet;
 }
 
 

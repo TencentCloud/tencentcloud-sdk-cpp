@@ -24,7 +24,8 @@ using namespace std;
 
 DeletePrometheusClusterAgentRequest::DeletePrometheusClusterAgentRequest() :
     m_agentsHasBeenSet(false),
-    m_instanceIdHasBeenSet(false)
+    m_instanceIdHasBeenSet(false),
+    m_forceHasBeenSet(false)
 {
 }
 
@@ -56,6 +57,14 @@ string DeletePrometheusClusterAgentRequest::ToJsonString() const
         string key = "InstanceId";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_instanceId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_forceHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Force";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_force, allocator);
     }
 
 
@@ -96,6 +105,22 @@ void DeletePrometheusClusterAgentRequest::SetInstanceId(const string& _instanceI
 bool DeletePrometheusClusterAgentRequest::InstanceIdHasBeenSet() const
 {
     return m_instanceIdHasBeenSet;
+}
+
+bool DeletePrometheusClusterAgentRequest::GetForce() const
+{
+    return m_force;
+}
+
+void DeletePrometheusClusterAgentRequest::SetForce(const bool& _force)
+{
+    m_force = _force;
+    m_forceHasBeenSet = true;
+}
+
+bool DeletePrometheusClusterAgentRequest::ForceHasBeenSet() const
+{
+    return m_forceHasBeenSet;
 }
 
 

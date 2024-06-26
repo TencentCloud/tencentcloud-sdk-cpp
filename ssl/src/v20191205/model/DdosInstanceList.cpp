@@ -22,7 +22,8 @@ using namespace std;
 
 DdosInstanceList::DdosInstanceList() :
     m_totalCountHasBeenSet(false),
-    m_instanceListHasBeenSet(false)
+    m_instanceListHasBeenSet(false),
+    m_errorHasBeenSet(false)
 {
 }
 
@@ -61,6 +62,16 @@ CoreInternalOutcome DdosInstanceList::Deserialize(const rapidjson::Value &value)
         m_instanceListHasBeenSet = true;
     }
 
+    if (value.HasMember("Error") && !value["Error"].IsNull())
+    {
+        if (!value["Error"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `DdosInstanceList.Error` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_error = string(value["Error"].GetString());
+        m_errorHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -89,6 +100,14 @@ void DdosInstanceList::ToJsonObject(rapidjson::Value &value, rapidjson::Document
             value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
             (*itr).ToJsonObject(value[key.c_str()][i], allocator);
         }
+    }
+
+    if (m_errorHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Error";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_error.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -124,5 +143,21 @@ void DdosInstanceList::SetInstanceList(const vector<DdosInstanceDetail>& _instan
 bool DdosInstanceList::InstanceListHasBeenSet() const
 {
     return m_instanceListHasBeenSet;
+}
+
+string DdosInstanceList::GetError() const
+{
+    return m_error;
+}
+
+void DdosInstanceList::SetError(const string& _error)
+{
+    m_error = _error;
+    m_errorHasBeenSet = true;
+}
+
+bool DdosInstanceList::ErrorHasBeenSet() const
+{
+    return m_errorHasBeenSet;
 }
 

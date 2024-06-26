@@ -47,11 +47,11 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取执行周期， 可选值：Period；Fixed。
+                     * 获取执行周期， 可选值：`Period`、`Fixed`。
 
 - Period：固定频率
 - Fixed：固定时间
-                     * @return Type 执行周期， 可选值：Period；Fixed。
+                     * @return Type 执行周期， 可选值：`Period`、`Fixed`。
 
 - Period：固定频率
 - Fixed：固定时间
@@ -60,11 +60,11 @@ namespace TencentCloud
                     std::string GetType() const;
 
                     /**
-                     * 设置执行周期， 可选值：Period；Fixed。
+                     * 设置执行周期， 可选值：`Period`、`Fixed`。
 
 - Period：固定频率
 - Fixed：固定时间
-                     * @param _type 执行周期， 可选值：Period；Fixed。
+                     * @param _type 执行周期， 可选值：`Period`、`Fixed`。
 
 - Period：固定频率
 - Fixed：固定时间
@@ -81,14 +81,18 @@ namespace TencentCloud
 
                     /**
                      * 获取执行的周期，或者定制执行的时间节点。单位为分钟，取值范围为1~1440。
+当type为`Period`,`Fixed`时，time字段生效。
                      * @return Time 执行的周期，或者定制执行的时间节点。单位为分钟，取值范围为1~1440。
+当type为`Period`,`Fixed`时，time字段生效。
                      * 
                      */
                     int64_t GetTime() const;
 
                     /**
                      * 设置执行的周期，或者定制执行的时间节点。单位为分钟，取值范围为1~1440。
+当type为`Period`,`Fixed`时，time字段生效。
                      * @param _time 执行的周期，或者定制执行的时间节点。单位为分钟，取值范围为1~1440。
+当type为`Period`,`Fixed`时，time字段生效。
                      * 
                      */
                     void SetTime(const int64_t& _time);
@@ -103,7 +107,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 执行周期， 可选值：Period；Fixed。
+                     * 执行周期， 可选值：`Period`、`Fixed`。
 
 - Period：固定频率
 - Fixed：固定时间
@@ -113,6 +117,7 @@ namespace TencentCloud
 
                     /**
                      * 执行的周期，或者定制执行的时间节点。单位为分钟，取值范围为1~1440。
+当type为`Period`,`Fixed`时，time字段生效。
                      */
                     int64_t m_time;
                     bool m_timeHasBeenSet;

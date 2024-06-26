@@ -22,6 +22,7 @@
 #include <map>
 #include <tencentcloud/core/AbstractModel.h>
 #include <tencentcloud/cls/v20201016/model/Tag.h>
+#include <tencentcloud/cls/v20201016/model/TopicExtendInfo.h>
 
 
 namespace TencentCloud
@@ -266,6 +267,27 @@ namespace TencentCloud
                     bool IsWebTrackingHasBeenSet() const;
 
                     /**
+                     * 获取日志主题扩展信息
+                     * @return Extends 日志主题扩展信息
+                     * 
+                     */
+                    TopicExtendInfo GetExtends() const;
+
+                    /**
+                     * 设置日志主题扩展信息
+                     * @param _extends 日志主题扩展信息
+                     * 
+                     */
+                    void SetExtends(const TopicExtendInfo& _extends);
+
+                    /**
+                     * 判断参数 Extends 是否已赋值
+                     * @return Extends 是否已赋值
+                     * 
+                     */
+                    bool ExtendsHasBeenSet() const;
+
+                    /**
                      * 获取日志主题分区数量
                      * @return PartitionCount 日志主题分区数量
                      * 
@@ -350,6 +372,12 @@ namespace TencentCloud
                      */
                     bool m_isWebTracking;
                     bool m_isWebTrackingHasBeenSet;
+
+                    /**
+                     * 日志主题扩展信息
+                     */
+                    TopicExtendInfo m_extends;
+                    bool m_extendsHasBeenSet;
 
                     /**
                      * 日志主题分区数量

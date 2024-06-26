@@ -36,7 +36,8 @@ DescribeCertificateBindResourceTaskDetailResponse::DescribeCertificateBindResour
     m_tEOHasBeenSet(false),
     m_statusHasBeenSet(false),
     m_cacheTimeHasBeenSet(false),
-    m_tSEHasBeenSet(false)
+    m_tSEHasBeenSet(false),
+    m_cOSHasBeenSet(false)
 {
 }
 
@@ -314,6 +315,26 @@ CoreInternalOutcome DescribeCertificateBindResourceTaskDetailResponse::Deseriali
         m_tSEHasBeenSet = true;
     }
 
+    if (rsp.HasMember("COS") && !rsp["COS"].IsNull())
+    {
+        if (!rsp["COS"].IsArray())
+            return CoreInternalOutcome(Core::Error("response `COS` is not array type"));
+
+        const rapidjson::Value &tmpValue = rsp["COS"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            COSInstanceList item;
+            CoreInternalOutcome outcome = item.Deserialize(*itr);
+            if (!outcome.IsSuccess())
+            {
+                outcome.GetError().SetRequestId(requestId);
+                return outcome;
+            }
+            m_cOS.push_back(item);
+        }
+        m_cOSHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -505,6 +526,21 @@ string DescribeCertificateBindResourceTaskDetailResponse::ToJsonString() const
         }
     }
 
+    if (m_cOSHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "COS";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_cOS.begin(); itr != m_cOS.end(); ++itr, ++i)
+        {
+            value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(value[key.c_str()][i], allocator);
+        }
+    }
+
     rapidjson::Value iKey(rapidjson::kStringType);
     string key = "RequestId";
     iKey.SetString(key.c_str(), allocator);
@@ -645,6 +681,16 @@ vector<TSEInstanceList> DescribeCertificateBindResourceTaskDetailResponse::GetTS
 bool DescribeCertificateBindResourceTaskDetailResponse::TSEHasBeenSet() const
 {
     return m_tSEHasBeenSet;
+}
+
+vector<COSInstanceList> DescribeCertificateBindResourceTaskDetailResponse::GetCOS() const
+{
+    return m_cOS;
+}
+
+bool DescribeCertificateBindResourceTaskDetailResponse::COSHasBeenSet() const
+{
+    return m_cOSHasBeenSet;
 }
 
 

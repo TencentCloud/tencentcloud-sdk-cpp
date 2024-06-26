@@ -42,6 +42,7 @@ set(domain_public_header_model
   include/tencentcloud/domain/v20180808/model/CheckBatchStatusRequest.h
   include/tencentcloud/domain/v20180808/model/ReserveBidInfo.h
   include/tencentcloud/domain/v20180808/model/CreateDomainBatchRequest.h
+  include/tencentcloud/domain/v20180808/model/SucDomainInfo.h
   include/tencentcloud/domain/v20180808/model/ModifyTemplateResponse.h
   include/tencentcloud/domain/v20180808/model/BiddingSuccessfulResult.h
   include/tencentcloud/domain/v20180808/model/DescribeBatchOperationLogsRequest.h
@@ -179,6 +180,7 @@ set(domain_src
   src/v20180808/model/CheckBatchStatusRequest.cpp
   src/v20180808/model/ReserveBidInfo.cpp
   src/v20180808/model/CreateDomainBatchRequest.cpp
+  src/v20180808/model/SucDomainInfo.cpp
   src/v20180808/model/ModifyTemplateResponse.cpp
   src/v20180808/model/BiddingSuccessfulResult.cpp
   src/v20180808/model/DescribeBatchOperationLogsRequest.cpp

@@ -58,8 +58,8 @@ namespace TencentCloud
                     bool QrCodeHasBeenSet() const;
 
                     /**
-                     * 获取查看短链，可直接点击短链查看报告。
-                     * @return Url 查看短链，可直接点击短链查看报告。
+                     * 获取查看短链，可直接点击短链查看证书。
+                     * @return Url 查看短链，可直接点击短链查看证书。
                      * 
                      */
                     std::string GetUrl() const;
@@ -94,7 +94,7 @@ namespace TencentCloud
                     bool m_qrCodeHasBeenSet;
 
                     /**
-                     * 查看短链，可直接点击短链查看报告。
+                     * 查看短链，可直接点击短链查看证书。
                      */
                     std::string m_url;
                     bool m_urlHasBeenSet;

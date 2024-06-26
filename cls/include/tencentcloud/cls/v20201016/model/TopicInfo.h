@@ -25,6 +25,7 @@
 #include <tencentcloud/core/utils/rapidjson/stringbuffer.h>
 #include <tencentcloud/core/AbstractModel.h>
 #include <tencentcloud/cls/v20201016/model/Tag.h>
+#include <tencentcloud/cls/v20201016/model/TopicExtendInfo.h>
 
 
 namespace TencentCloud
@@ -497,6 +498,31 @@ HotPeriod=0为没有开启日志沉降。
                      */
                     bool IsWebTrackingHasBeenSet() const;
 
+                    /**
+                     * 获取日志主题扩展信息
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return Extends 日志主题扩展信息
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    TopicExtendInfo GetExtends() const;
+
+                    /**
+                     * 设置日志主题扩展信息
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _extends 日志主题扩展信息
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetExtends(const TopicExtendInfo& _extends);
+
+                    /**
+                     * 判断参数 Extends 是否已赋值
+                     * @return Extends 是否已赋值
+                     * 
+                     */
+                    bool ExtendsHasBeenSet() const;
+
                 private:
 
                     /**
@@ -624,6 +650,13 @@ HotPeriod=0为没有开启日志沉降。
                      */
                     bool m_isWebTracking;
                     bool m_isWebTrackingHasBeenSet;
+
+                    /**
+                     * 日志主题扩展信息
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    TopicExtendInfo m_extends;
+                    bool m_extendsHasBeenSet;
 
                 };
             }

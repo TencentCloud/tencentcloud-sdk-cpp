@@ -564,7 +564,7 @@ namespace TencentCloud
                 CreateDatahubTaskOutcomeCallable CreateDatahubTaskCallable(const Model::CreateDatahubTaskRequest& request);
 
                 /**
-                 *创建Datahub主题
+                 *创建DIP主题
                  * @param req CreateDatahubTopicRequest
                  * @return CreateDatahubTopicOutcome
                  */
@@ -690,7 +690,7 @@ namespace TencentCloud
                 DeleteConnectResourceOutcomeCallable DeleteConnectResourceCallable(const Model::DeleteConnectResourceRequest& request);
 
                 /**
-                 *删除Datahub任务
+                 *删除Dip任务
                  * @param req DeleteDatahubTaskRequest
                  * @return DeleteDatahubTaskOutcome
                  */
@@ -870,7 +870,7 @@ namespace TencentCloud
                 DescribeDatahubTasksOutcomeCallable DescribeDatahubTasksCallable(const Model::DescribeDatahubTasksRequest& request);
 
                 /**
-                 *获取Datahub主题属性
+                 *获取DIP主题属性
                  * @param req DescribeDatahubTopicRequest
                  * @return DescribeDatahubTopicOutcome
                  */
@@ -1132,7 +1132,7 @@ namespace TencentCloud
                 ModifyDatahubTaskOutcomeCallable ModifyDatahubTaskCallable(const Model::ModifyDatahubTaskRequest& request);
 
                 /**
-                 *修改Datahub主题属性
+                 *修改DIP主题属性
                  * @param req ModifyDatahubTopicRequest
                  * @return ModifyDatahubTopicOutcome
                  */

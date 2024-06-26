@@ -157,15 +157,15 @@ namespace TencentCloud
                     bool ComputeNodeCountHasBeenSet() const;
 
                     /**
-                     * 获取调度器类型。默认取值：SLURM。<br><li>SGE：SGE调度器。<br><li>SLURM：SLURM调度器。
-                     * @return SchedulerType 调度器类型。默认取值：SLURM。<br><li>SGE：SGE调度器。<br><li>SLURM：SLURM调度器。
+                     * 获取调度器类型。默认取值：SLURM。<li>SGE：SGE调度器。</li><li>SLURM：SLURM调度器。</li>
+                     * @return SchedulerType 调度器类型。默认取值：SLURM。<li>SGE：SGE调度器。</li><li>SLURM：SLURM调度器。</li>
                      * 
                      */
                     std::string GetSchedulerType() const;
 
                     /**
-                     * 设置调度器类型。默认取值：SLURM。<br><li>SGE：SGE调度器。<br><li>SLURM：SLURM调度器。
-                     * @param _schedulerType 调度器类型。默认取值：SLURM。<br><li>SGE：SGE调度器。<br><li>SLURM：SLURM调度器。
+                     * 设置调度器类型。默认取值：SLURM。<li>SGE：SGE调度器。</li><li>SLURM：SLURM调度器。</li>
+                     * @param _schedulerType 调度器类型。默认取值：SLURM。<li>SGE：SGE调度器。</li><li>SLURM：SLURM调度器。</li>
                      * 
                      */
                     void SetSchedulerType(const std::string& _schedulerType);
@@ -176,6 +176,39 @@ namespace TencentCloud
                      * 
                      */
                     bool SchedulerTypeHasBeenSet() const;
+
+                    /**
+                     * 获取创建调度器的版本号，可填写版本号为“latest” 和 各调度器支持的版本号；如果是"latest", 则代表创建的是平台当前支持的该类型调度器最新版本。如果不填写，默认创建的是“latest”版本调度器
+各调度器支持的集群版本：
+<li>SLURM：21.08.8、23.11.7</li>
+<li>SGE：     8.1.9</li>
+                     * @return SchedulerVersion 创建调度器的版本号，可填写版本号为“latest” 和 各调度器支持的版本号；如果是"latest", 则代表创建的是平台当前支持的该类型调度器最新版本。如果不填写，默认创建的是“latest”版本调度器
+各调度器支持的集群版本：
+<li>SLURM：21.08.8、23.11.7</li>
+<li>SGE：     8.1.9</li>
+                     * 
+                     */
+                    std::string GetSchedulerVersion() const;
+
+                    /**
+                     * 设置创建调度器的版本号，可填写版本号为“latest” 和 各调度器支持的版本号；如果是"latest", 则代表创建的是平台当前支持的该类型调度器最新版本。如果不填写，默认创建的是“latest”版本调度器
+各调度器支持的集群版本：
+<li>SLURM：21.08.8、23.11.7</li>
+<li>SGE：     8.1.9</li>
+                     * @param _schedulerVersion 创建调度器的版本号，可填写版本号为“latest” 和 各调度器支持的版本号；如果是"latest", 则代表创建的是平台当前支持的该类型调度器最新版本。如果不填写，默认创建的是“latest”版本调度器
+各调度器支持的集群版本：
+<li>SLURM：21.08.8、23.11.7</li>
+<li>SGE：     8.1.9</li>
+                     * 
+                     */
+                    void SetSchedulerVersion(const std::string& _schedulerVersion);
+
+                    /**
+                     * 判断参数 SchedulerVersion 是否已赋值
+                     * @return SchedulerVersion 是否已赋值
+                     * 
+                     */
+                    bool SchedulerVersionHasBeenSet() const;
 
                     /**
                      * 获取指定有效的[镜像](https://cloud.tencent.com/document/product/213/4940)ID，格式形如`img-xxx`。目前支持部分公有镜像和自定义镜像。
@@ -321,18 +354,18 @@ false（默认）：发送正常请求，通过检查后直接创建实例
 
                     /**
                      * 获取域名字服务类型。默认取值：NIS。
-<li>NIS：NIS域名字服务。
+<li>NIS：NIS域名字服务。</li>
                      * @return AccountType 域名字服务类型。默认取值：NIS。
-<li>NIS：NIS域名字服务。
+<li>NIS：NIS域名字服务。</li>
                      * 
                      */
                     std::string GetAccountType() const;
 
                     /**
                      * 设置域名字服务类型。默认取值：NIS。
-<li>NIS：NIS域名字服务。
+<li>NIS：NIS域名字服务。</li>
                      * @param _accountType 域名字服务类型。默认取值：NIS。
-<li>NIS：NIS域名字服务。
+<li>NIS：NIS域名字服务。</li>
                      * 
                      */
                     void SetAccountType(const std::string& _accountType);
@@ -450,15 +483,15 @@ false（默认）：发送正常请求，通过检查后直接创建实例
                     bool TagsHasBeenSet() const;
 
                     /**
-                     * 获取弹性伸缩类型。默认值：THPC_AS<br><li>THPC_AS：集群自动扩缩容由THPC产品内部实现。<br><li>AS：集群自动扩缩容由[弹性伸缩](https://cloud.tencent.com/document/product/377/3154)产品实现。
-                     * @return AutoScalingType 弹性伸缩类型。默认值：THPC_AS<br><li>THPC_AS：集群自动扩缩容由THPC产品内部实现。<br><li>AS：集群自动扩缩容由[弹性伸缩](https://cloud.tencent.com/document/product/377/3154)产品实现。
+                     * 获取弹性伸缩类型。默认值：THPC_AS<li>THPC_AS：集群自动扩缩容由THPC产品内部实现。</li><li>AS：集群自动扩缩容由[弹性伸缩](https://cloud.tencent.com/document/product/377/3154)产品实现。</li>
+                     * @return AutoScalingType 弹性伸缩类型。默认值：THPC_AS<li>THPC_AS：集群自动扩缩容由THPC产品内部实现。</li><li>AS：集群自动扩缩容由[弹性伸缩](https://cloud.tencent.com/document/product/377/3154)产品实现。</li>
                      * 
                      */
                     std::string GetAutoScalingType() const;
 
                     /**
-                     * 设置弹性伸缩类型。默认值：THPC_AS<br><li>THPC_AS：集群自动扩缩容由THPC产品内部实现。<br><li>AS：集群自动扩缩容由[弹性伸缩](https://cloud.tencent.com/document/product/377/3154)产品实现。
-                     * @param _autoScalingType 弹性伸缩类型。默认值：THPC_AS<br><li>THPC_AS：集群自动扩缩容由THPC产品内部实现。<br><li>AS：集群自动扩缩容由[弹性伸缩](https://cloud.tencent.com/document/product/377/3154)产品实现。
+                     * 设置弹性伸缩类型。默认值：THPC_AS<li>THPC_AS：集群自动扩缩容由THPC产品内部实现。</li><li>AS：集群自动扩缩容由[弹性伸缩](https://cloud.tencent.com/document/product/377/3154)产品实现。</li>
+                     * @param _autoScalingType 弹性伸缩类型。默认值：THPC_AS<li>THPC_AS：集群自动扩缩容由THPC产品内部实现。</li><li>AS：集群自动扩缩容由[弹性伸缩](https://cloud.tencent.com/document/product/377/3154)产品实现。</li>
                      * 
                      */
                     void SetAutoScalingType(const std::string& _autoScalingType);
@@ -545,10 +578,19 @@ false（默认）：发送正常请求，通过检查后直接创建实例
                     bool m_computeNodeCountHasBeenSet;
 
                     /**
-                     * 调度器类型。默认取值：SLURM。<br><li>SGE：SGE调度器。<br><li>SLURM：SLURM调度器。
+                     * 调度器类型。默认取值：SLURM。<li>SGE：SGE调度器。</li><li>SLURM：SLURM调度器。</li>
                      */
                     std::string m_schedulerType;
                     bool m_schedulerTypeHasBeenSet;
+
+                    /**
+                     * 创建调度器的版本号，可填写版本号为“latest” 和 各调度器支持的版本号；如果是"latest", 则代表创建的是平台当前支持的该类型调度器最新版本。如果不填写，默认创建的是“latest”版本调度器
+各调度器支持的集群版本：
+<li>SLURM：21.08.8、23.11.7</li>
+<li>SGE：     8.1.9</li>
+                     */
+                    std::string m_schedulerVersion;
+                    bool m_schedulerVersionHasBeenSet;
 
                     /**
                      * 指定有效的[镜像](https://cloud.tencent.com/document/product/213/4940)ID，格式形如`img-xxx`。目前支持部分公有镜像和自定义镜像。
@@ -592,7 +634,7 @@ false（默认）：发送正常请求，通过检查后直接创建实例
 
                     /**
                      * 域名字服务类型。默认取值：NIS。
-<li>NIS：NIS域名字服务。
+<li>NIS：NIS域名字服务。</li>
                      */
                     std::string m_accountType;
                     bool m_accountTypeHasBeenSet;
@@ -628,7 +670,7 @@ false（默认）：发送正常请求，通过检查后直接创建实例
                     bool m_tagsHasBeenSet;
 
                     /**
-                     * 弹性伸缩类型。默认值：THPC_AS<br><li>THPC_AS：集群自动扩缩容由THPC产品内部实现。<br><li>AS：集群自动扩缩容由[弹性伸缩](https://cloud.tencent.com/document/product/377/3154)产品实现。
+                     * 弹性伸缩类型。默认值：THPC_AS<li>THPC_AS：集群自动扩缩容由THPC产品内部实现。</li><li>AS：集群自动扩缩容由[弹性伸缩](https://cloud.tencent.com/document/product/377/3154)产品实现。</li>
                      */
                     std::string m_autoScalingType;
                     bool m_autoScalingTypeHasBeenSet;

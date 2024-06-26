@@ -22,6 +22,7 @@
 #include <map>
 #include <tencentcloud/core/AbstractModel.h>
 #include <tencentcloud/domain/v20180808/model/FailReservedDomainInfo.h>
+#include <tencentcloud/domain/v20180808/model/SucDomainInfo.h>
 
 
 namespace TencentCloud
@@ -72,6 +73,20 @@ namespace TencentCloud
                      */
                     bool FailDomainListHasBeenSet() const;
 
+                    /**
+                     * 获取域名预定成功详情
+                     * @return SucDomains 域名预定成功详情
+                     * 
+                     */
+                    std::vector<SucDomainInfo> GetSucDomains() const;
+
+                    /**
+                     * 判断参数 SucDomains 是否已赋值
+                     * @return SucDomains 是否已赋值
+                     * 
+                     */
+                    bool SucDomainsHasBeenSet() const;
+
                 private:
 
                     /**
@@ -85,6 +100,12 @@ namespace TencentCloud
                      */
                     std::vector<FailReservedDomainInfo> m_failDomainList;
                     bool m_failDomainListHasBeenSet;
+
+                    /**
+                     * 域名预定成功详情
+                     */
+                    std::vector<SucDomainInfo> m_sucDomains;
+                    bool m_sucDomainsHasBeenSet;
 
                 };
             }

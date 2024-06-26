@@ -43,7 +43,8 @@ CreateRecTaskRequest::CreateRecTaskRequest() :
     m_filterPuncHasBeenSet(false),
     m_filterModalHasBeenSet(false),
     m_sentenceMaxLengthHasBeenSet(false),
-    m_extraHasBeenSet(false)
+    m_extraHasBeenSet(false),
+    m_hotwordListHasBeenSet(false)
 {
 }
 
@@ -220,6 +221,14 @@ string CreateRecTaskRequest::ToJsonString() const
         string key = "Extra";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_extra.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_hotwordListHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "HotwordList";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_hotwordList.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -564,6 +573,22 @@ void CreateRecTaskRequest::SetExtra(const string& _extra)
 bool CreateRecTaskRequest::ExtraHasBeenSet() const
 {
     return m_extraHasBeenSet;
+}
+
+string CreateRecTaskRequest::GetHotwordList() const
+{
+    return m_hotwordList;
+}
+
+void CreateRecTaskRequest::SetHotwordList(const string& _hotwordList)
+{
+    m_hotwordList = _hotwordList;
+    m_hotwordListHasBeenSet = true;
+}
+
+bool CreateRecTaskRequest::HotwordListHasBeenSet() const
+{
+    return m_hotwordListHasBeenSet;
 }
 
 

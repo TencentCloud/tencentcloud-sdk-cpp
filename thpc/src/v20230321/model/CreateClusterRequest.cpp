@@ -29,6 +29,7 @@ CreateClusterRequest::CreateClusterRequest() :
     m_computeNodeHasBeenSet(false),
     m_computeNodeCountHasBeenSet(false),
     m_schedulerTypeHasBeenSet(false),
+    m_schedulerVersionHasBeenSet(false),
     m_imageIdHasBeenSet(false),
     m_virtualPrivateCloudHasBeenSet(false),
     m_loginSettingsHasBeenSet(false),
@@ -103,6 +104,14 @@ string CreateClusterRequest::ToJsonString() const
         string key = "SchedulerType";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_schedulerType.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_schedulerVersionHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "SchedulerVersion";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_schedulerVersion.c_str(), allocator).Move(), allocator);
     }
 
     if (m_imageIdHasBeenSet)
@@ -350,6 +359,22 @@ void CreateClusterRequest::SetSchedulerType(const string& _schedulerType)
 bool CreateClusterRequest::SchedulerTypeHasBeenSet() const
 {
     return m_schedulerTypeHasBeenSet;
+}
+
+string CreateClusterRequest::GetSchedulerVersion() const
+{
+    return m_schedulerVersion;
+}
+
+void CreateClusterRequest::SetSchedulerVersion(const string& _schedulerVersion)
+{
+    m_schedulerVersion = _schedulerVersion;
+    m_schedulerVersionHasBeenSet = true;
+}
+
+bool CreateClusterRequest::SchedulerVersionHasBeenSet() const
+{
+    return m_schedulerVersionHasBeenSet;
 }
 
 string CreateClusterRequest::GetImageId() const
