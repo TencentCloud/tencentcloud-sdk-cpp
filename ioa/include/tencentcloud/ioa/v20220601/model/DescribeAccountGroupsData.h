@@ -35,7 +35,7 @@ namespace TencentCloud
             namespace Model
             {
                 /**
-                * 账户分响应对象集合
+                * 分组名称
                 */
                 class DescribeAccountGroupsData : public AbstractModel
                 {
@@ -47,68 +47,43 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取创建时间
+                     * 获取名称path
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return Itime 创建时间
-注意：此字段可能返回 null，表示取不到有效值。
-                     * 
-                     */
-                    std::string GetItime() const;
-
-                    /**
-                     * 设置创建时间
-注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _itime 创建时间
+                     * @return NamePath 名称path
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
-                    void SetItime(const std::string& _itime);
+                    std::string GetNamePath() const;
 
                     /**
-                     * 判断参数 Itime 是否已赋值
-                     * @return Itime 是否已赋值
-                     * 
-                     */
-                    bool ItimeHasBeenSet() const;
-
-                    /**
-                     * 获取账户组名称
+                     * 设置名称path
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return Name 账户组名称
+                     * @param _namePath 名称path
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
-                    std::string GetName() const;
+                    void SetNamePath(const std::string& _namePath);
 
                     /**
-                     * 设置账户组名称
-注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _name 账户组名称
-注意：此字段可能返回 null，表示取不到有效值。
+                     * 判断参数 NamePath 是否已赋值
+                     * @return NamePath 是否已赋值
                      * 
                      */
-                    void SetName(const std::string& _name);
+                    bool NamePathHasBeenSet() const;
 
                     /**
-                     * 判断参数 Name 是否已赋值
-                     * @return Name 是否已赋值
-                     * 
-                     */
-                    bool NameHasBeenSet() const;
-
-                    /**
-                     * 获取id patch数组
+                     * 获取id patch数组(只支持32位)
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return IdPathArr id patch数组
+                     * @return IdPathArr id patch数组(只支持32位)
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<int64_t> GetIdPathArr() const;
 
                     /**
-                     * 设置id patch数组
+                     * 设置id patch数组(只支持32位)
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _idPathArr id patch数组
+                     * @param _idPathArr id patch数组(只支持32位)
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -120,31 +95,6 @@ namespace TencentCloud
                      * 
                      */
                     bool IdPathArrHasBeenSet() const;
-
-                    /**
-                     * 获取该分组下用户总数
-注意：此字段可能返回 null，表示取不到有效值。
-                     * @return UserTotal 该分组下用户总数
-注意：此字段可能返回 null，表示取不到有效值。
-                     * 
-                     */
-                    int64_t GetUserTotal() const;
-
-                    /**
-                     * 设置该分组下用户总数
-注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _userTotal 该分组下用户总数
-注意：此字段可能返回 null，表示取不到有效值。
-                     * 
-                     */
-                    void SetUserTotal(const int64_t& _userTotal);
-
-                    /**
-                     * 判断参数 UserTotal 是否已赋值
-                     * @return UserTotal 是否已赋值
-                     * 
-                     */
-                    bool UserTotalHasBeenSet() const;
 
                     /**
                      * 获取扩展信息
@@ -172,29 +122,129 @@ namespace TencentCloud
                     bool ExtraInfoHasBeenSet() const;
 
                     /**
-                     * 获取导入类型
+                     * 获取最后更新时间
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return ImportType 导入类型
+                     * @return Utime 最后更新时间
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
-                    std::string GetImportType() const;
+                    std::string GetUtime() const;
 
                     /**
-                     * 设置导入类型
+                     * 设置最后更新时间
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _importType 导入类型
+                     * @param _utime 最后更新时间
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
-                    void SetImportType(const std::string& _importType);
+                    void SetUtime(const std::string& _utime);
 
                     /**
-                     * 判断参数 ImportType 是否已赋值
-                     * @return ImportType 是否已赋值
+                     * 判断参数 Utime 是否已赋值
+                     * @return Utime 是否已赋值
                      * 
                      */
-                    bool ImportTypeHasBeenSet() const;
+                    bool UtimeHasBeenSet() const;
+
+                    /**
+                     * 获取父id
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return ParentId 父id
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    int64_t GetParentId() const;
+
+                    /**
+                     * 设置父id
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _parentId 父id
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetParentId(const int64_t& _parentId);
+
+                    /**
+                     * 判断参数 ParentId 是否已赋值
+                     * @return ParentId 是否已赋值
+                     * 
+                     */
+                    bool ParentIdHasBeenSet() const;
+
+                    /**
+                     * 获取组织id
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return OrgId 组织id
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::string GetOrgId() const;
+
+                    /**
+                     * 设置组织id
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _orgId 组织id
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetOrgId(const std::string& _orgId);
+
+                    /**
+                     * 判断参数 OrgId 是否已赋值
+                     * @return OrgId 是否已赋值
+                     * 
+                     */
+                    bool OrgIdHasBeenSet() const;
+
+                    /**
+                     * 获取账户组名称
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return Name 账户组名称
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::string GetName() const;
+
+                    /**
+                     * 设置账户组名称
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _name 账户组名称
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetName(const std::string& _name);
+
+                    /**
+                     * 判断参数 Name 是否已赋值
+                     * @return Name 是否已赋值
+                     * 
+                     */
+                    bool NameHasBeenSet() const;
+
+                    /**
+                     * 获取id
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return Id id
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    int64_t GetId() const;
+
+                    /**
+                     * 设置id
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _id id
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetId(const int64_t& _id);
+
+                    /**
+                     * 判断参数 Id 是否已赋值
+                     * @return Id 是否已赋值
+                     * 
+                     */
+                    bool IdHasBeenSet() const;
 
                     /**
                      * 获取描述
@@ -247,129 +297,54 @@ namespace TencentCloud
                     bool SourceHasBeenSet() const;
 
                     /**
-                     * 获取miniIAM id
+                     * 获取id path
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return MiniIamId miniIAM id
+                     * @return IdPath id path
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
-                    std::string GetMiniIamId() const;
+                    std::string GetIdPath() const;
 
                     /**
-                     * 设置miniIAM id
+                     * 设置id path
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _miniIamId miniIAM id
+                     * @param _idPath id path
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
-                    void SetMiniIamId(const std::string& _miniIamId);
+                    void SetIdPath(const std::string& _idPath);
 
                     /**
-                     * 判断参数 MiniIamId 是否已赋值
-                     * @return MiniIamId 是否已赋值
+                     * 判断参数 IdPath 是否已赋值
+                     * @return IdPath 是否已赋值
                      * 
                      */
-                    bool MiniIamIdHasBeenSet() const;
+                    bool IdPathHasBeenSet() const;
 
                     /**
-                     * 获取组织id
+                     * 获取创建时间
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return OrgId 组织id
+                     * @return Itime 创建时间
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
-                    std::string GetOrgId() const;
+                    std::string GetItime() const;
 
                     /**
-                     * 设置组织id
+                     * 设置创建时间
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _orgId 组织id
+                     * @param _itime 创建时间
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
-                    void SetOrgId(const std::string& _orgId);
+                    void SetItime(const std::string& _itime);
 
                     /**
-                     * 判断参数 OrgId 是否已赋值
-                     * @return OrgId 是否已赋值
+                     * 判断参数 Itime 是否已赋值
+                     * @return Itime 是否已赋值
                      * 
                      */
-                    bool OrgIdHasBeenSet() const;
-
-                    /**
-                     * 获取是否该账户的直接权限
-注意：此字段可能返回 null，表示取不到有效值。
-                     * @return ReadOnly 是否该账户的直接权限
-注意：此字段可能返回 null，表示取不到有效值。
-                     * 
-                     */
-                    bool GetReadOnly() const;
-
-                    /**
-                     * 设置是否该账户的直接权限
-注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _readOnly 是否该账户的直接权限
-注意：此字段可能返回 null，表示取不到有效值。
-                     * 
-                     */
-                    void SetReadOnly(const bool& _readOnly);
-
-                    /**
-                     * 判断参数 ReadOnly 是否已赋值
-                     * @return ReadOnly 是否已赋值
-                     * 
-                     */
-                    bool ReadOnlyHasBeenSet() const;
-
-                    /**
-                     * 获取父id
-注意：此字段可能返回 null，表示取不到有效值。
-                     * @return ParentId 父id
-注意：此字段可能返回 null，表示取不到有效值。
-                     * 
-                     */
-                    int64_t GetParentId() const;
-
-                    /**
-                     * 设置父id
-注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _parentId 父id
-注意：此字段可能返回 null，表示取不到有效值。
-                     * 
-                     */
-                    void SetParentId(const int64_t& _parentId);
-
-                    /**
-                     * 判断参数 ParentId 是否已赋值
-                     * @return ParentId 是否已赋值
-                     * 
-                     */
-                    bool ParentIdHasBeenSet() const;
-
-                    /**
-                     * 获取名称path
-注意：此字段可能返回 null，表示取不到有效值。
-                     * @return NamePath 名称path
-注意：此字段可能返回 null，表示取不到有效值。
-                     * 
-                     */
-                    std::string GetNamePath() const;
-
-                    /**
-                     * 设置名称path
-注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _namePath 名称path
-注意：此字段可能返回 null，表示取不到有效值。
-                     * 
-                     */
-                    void SetNamePath(const std::string& _namePath);
-
-                    /**
-                     * 判断参数 NamePath 是否已赋值
-                     * @return NamePath 是否已赋值
-                     * 
-                     */
-                    bool NamePathHasBeenSet() const;
+                    bool ItimeHasBeenSet() const;
 
                     /**
                      * 获取父组织id
@@ -397,54 +372,79 @@ namespace TencentCloud
                     bool ParentOrgIdHasBeenSet() const;
 
                     /**
-                     * 获取id path
+                     * 获取导入类型
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return IdPath id path
+                     * @return ImportType 导入类型
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
-                    std::string GetIdPath() const;
+                    std::string GetImportType() const;
 
                     /**
-                     * 设置id path
+                     * 设置导入类型
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _idPath id path
+                     * @param _importType 导入类型
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
-                    void SetIdPath(const std::string& _idPath);
+                    void SetImportType(const std::string& _importType);
 
                     /**
-                     * 判断参数 IdPath 是否已赋值
-                     * @return IdPath 是否已赋值
+                     * 判断参数 ImportType 是否已赋值
+                     * @return ImportType 是否已赋值
                      * 
                      */
-                    bool IdPathHasBeenSet() const;
+                    bool ImportTypeHasBeenSet() const;
 
                     /**
-                     * 获取自增id
+                     * 获取miniIAM id
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return Id 自增id
+                     * @return MiniIamId miniIAM id
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
-                    int64_t GetId() const;
+                    std::string GetMiniIamId() const;
 
                     /**
-                     * 设置自增id
+                     * 设置miniIAM id
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _id 自增id
+                     * @param _miniIamId miniIAM id
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
-                    void SetId(const int64_t& _id);
+                    void SetMiniIamId(const std::string& _miniIamId);
 
                     /**
-                     * 判断参数 Id 是否已赋值
-                     * @return Id 是否已赋值
+                     * 判断参数 MiniIamId 是否已赋值
+                     * @return MiniIamId 是否已赋值
                      * 
                      */
-                    bool IdHasBeenSet() const;
+                    bool MiniIamIdHasBeenSet() const;
+
+                    /**
+                     * 获取该分组下用户总数
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return UserTotal 该分组下用户总数
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    int64_t GetUserTotal() const;
+
+                    /**
+                     * 设置该分组下用户总数
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _userTotal 该分组下用户总数
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetUserTotal(const int64_t& _userTotal);
+
+                    /**
+                     * 判断参数 UserTotal 是否已赋值
+                     * @return UserTotal 是否已赋值
+                     * 
+                     */
+                    bool UserTotalHasBeenSet() const;
 
                     /**
                      * 获取是否叶子节点
@@ -472,59 +472,95 @@ namespace TencentCloud
                     bool IsLeafHasBeenSet() const;
 
                     /**
-                     * 获取最后更新时间
+                     * 获取是否该账户的直接权限
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return Utime 最后更新时间
+                     * @return ReadOnly 是否该账户的直接权限
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
-                    std::string GetUtime() const;
+                    bool GetReadOnly() const;
 
                     /**
-                     * 设置最后更新时间
+                     * 设置是否该账户的直接权限
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _utime 最后更新时间
+                     * @param _readOnly 是否该账户的直接权限
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
-                    void SetUtime(const std::string& _utime);
+                    void SetReadOnly(const bool& _readOnly);
 
                     /**
-                     * 判断参数 Utime 是否已赋值
-                     * @return Utime 是否已赋值
+                     * 判断参数 ReadOnly 是否已赋值
+                     * @return ReadOnly 是否已赋值
                      * 
                      */
-                    bool UtimeHasBeenSet() const;
+                    bool ReadOnlyHasBeenSet() const;
+
+                    /**
+                     * 获取最新一次同步任务的结果
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return LatestSyncResult 最新一次同步任务的结果
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::string GetLatestSyncResult() const;
+
+                    /**
+                     * 设置最新一次同步任务的结果
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _latestSyncResult 最新一次同步任务的结果
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetLatestSyncResult(const std::string& _latestSyncResult);
+
+                    /**
+                     * 判断参数 LatestSyncResult 是否已赋值
+                     * @return LatestSyncResult 是否已赋值
+                     * 
+                     */
+                    bool LatestSyncResultHasBeenSet() const;
+
+                    /**
+                     * 获取最新一次同步任务的结束时间
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return LatestSyncTime 最新一次同步任务的结束时间
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::string GetLatestSyncTime() const;
+
+                    /**
+                     * 设置最新一次同步任务的结束时间
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _latestSyncTime 最新一次同步任务的结束时间
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetLatestSyncTime(const std::string& _latestSyncTime);
+
+                    /**
+                     * 判断参数 LatestSyncTime 是否已赋值
+                     * @return LatestSyncTime 是否已赋值
+                     * 
+                     */
+                    bool LatestSyncTimeHasBeenSet() const;
 
                 private:
 
                     /**
-                     * 创建时间
+                     * 名称path
 注意：此字段可能返回 null，表示取不到有效值。
                      */
-                    std::string m_itime;
-                    bool m_itimeHasBeenSet;
+                    std::string m_namePath;
+                    bool m_namePathHasBeenSet;
 
                     /**
-                     * 账户组名称
-注意：此字段可能返回 null，表示取不到有效值。
-                     */
-                    std::string m_name;
-                    bool m_nameHasBeenSet;
-
-                    /**
-                     * id patch数组
+                     * id patch数组(只支持32位)
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<int64_t> m_idPathArr;
                     bool m_idPathArrHasBeenSet;
-
-                    /**
-                     * 该分组下用户总数
-注意：此字段可能返回 null，表示取不到有效值。
-                     */
-                    int64_t m_userTotal;
-                    bool m_userTotalHasBeenSet;
 
                     /**
                      * 扩展信息
@@ -534,11 +570,39 @@ namespace TencentCloud
                     bool m_extraInfoHasBeenSet;
 
                     /**
-                     * 导入类型
+                     * 最后更新时间
 注意：此字段可能返回 null，表示取不到有效值。
                      */
-                    std::string m_importType;
-                    bool m_importTypeHasBeenSet;
+                    std::string m_utime;
+                    bool m_utimeHasBeenSet;
+
+                    /**
+                     * 父id
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    int64_t m_parentId;
+                    bool m_parentIdHasBeenSet;
+
+                    /**
+                     * 组织id
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_orgId;
+                    bool m_orgIdHasBeenSet;
+
+                    /**
+                     * 账户组名称
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_name;
+                    bool m_nameHasBeenSet;
+
+                    /**
+                     * id
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    int64_t m_id;
+                    bool m_idHasBeenSet;
 
                     /**
                      * 描述
@@ -555,39 +619,18 @@ namespace TencentCloud
                     bool m_sourceHasBeenSet;
 
                     /**
-                     * miniIAM id
+                     * id path
 注意：此字段可能返回 null，表示取不到有效值。
                      */
-                    std::string m_miniIamId;
-                    bool m_miniIamIdHasBeenSet;
+                    std::string m_idPath;
+                    bool m_idPathHasBeenSet;
 
                     /**
-                     * 组织id
+                     * 创建时间
 注意：此字段可能返回 null，表示取不到有效值。
                      */
-                    std::string m_orgId;
-                    bool m_orgIdHasBeenSet;
-
-                    /**
-                     * 是否该账户的直接权限
-注意：此字段可能返回 null，表示取不到有效值。
-                     */
-                    bool m_readOnly;
-                    bool m_readOnlyHasBeenSet;
-
-                    /**
-                     * 父id
-注意：此字段可能返回 null，表示取不到有效值。
-                     */
-                    int64_t m_parentId;
-                    bool m_parentIdHasBeenSet;
-
-                    /**
-                     * 名称path
-注意：此字段可能返回 null，表示取不到有效值。
-                     */
-                    std::string m_namePath;
-                    bool m_namePathHasBeenSet;
+                    std::string m_itime;
+                    bool m_itimeHasBeenSet;
 
                     /**
                      * 父组织id
@@ -597,18 +640,25 @@ namespace TencentCloud
                     bool m_parentOrgIdHasBeenSet;
 
                     /**
-                     * id path
+                     * 导入类型
 注意：此字段可能返回 null，表示取不到有效值。
                      */
-                    std::string m_idPath;
-                    bool m_idPathHasBeenSet;
+                    std::string m_importType;
+                    bool m_importTypeHasBeenSet;
 
                     /**
-                     * 自增id
+                     * miniIAM id
 注意：此字段可能返回 null，表示取不到有效值。
                      */
-                    int64_t m_id;
-                    bool m_idHasBeenSet;
+                    std::string m_miniIamId;
+                    bool m_miniIamIdHasBeenSet;
+
+                    /**
+                     * 该分组下用户总数
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    int64_t m_userTotal;
+                    bool m_userTotalHasBeenSet;
 
                     /**
                      * 是否叶子节点
@@ -618,11 +668,25 @@ namespace TencentCloud
                     bool m_isLeafHasBeenSet;
 
                     /**
-                     * 最后更新时间
+                     * 是否该账户的直接权限
 注意：此字段可能返回 null，表示取不到有效值。
                      */
-                    std::string m_utime;
-                    bool m_utimeHasBeenSet;
+                    bool m_readOnly;
+                    bool m_readOnlyHasBeenSet;
+
+                    /**
+                     * 最新一次同步任务的结果
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_latestSyncResult;
+                    bool m_latestSyncResultHasBeenSet;
+
+                    /**
+                     * 最新一次同步任务的结束时间
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_latestSyncTime;
+                    bool m_latestSyncTimeHasBeenSet;
 
                 };
             }

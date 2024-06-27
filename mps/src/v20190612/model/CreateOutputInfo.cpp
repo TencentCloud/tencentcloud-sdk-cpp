@@ -30,7 +30,8 @@ CreateOutputInfo::CreateOutputInfo() :
     m_rTPSettingsHasBeenSet(false),
     m_allowIpListHasBeenSet(false),
     m_maxConcurrentHasBeenSet(false),
-    m_securityGroupIdsHasBeenSet(false)
+    m_securityGroupIdsHasBeenSet(false),
+    m_zonesHasBeenSet(false)
 {
 }
 
@@ -166,6 +167,19 @@ CoreInternalOutcome CreateOutputInfo::Deserialize(const rapidjson::Value &value)
         m_securityGroupIdsHasBeenSet = true;
     }
 
+    if (value.HasMember("Zones") && !value["Zones"].IsNull())
+    {
+        if (!value["Zones"].IsArray())
+            return CoreInternalOutcome(Core::Error("response `CreateOutputInfo.Zones` is not array type"));
+
+        const rapidjson::Value &tmpValue = value["Zones"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            m_zones.push_back((*itr).GetString());
+        }
+        m_zonesHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -261,6 +275,19 @@ void CreateOutputInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Document
         value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
 
         for (auto itr = m_securityGroupIds.begin(); itr != m_securityGroupIds.end(); ++itr)
+        {
+            value[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
+        }
+    }
+
+    if (m_zonesHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Zones";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        for (auto itr = m_zones.begin(); itr != m_zones.end(); ++itr)
         {
             value[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
         }
@@ -427,5 +454,21 @@ void CreateOutputInfo::SetSecurityGroupIds(const vector<string>& _securityGroupI
 bool CreateOutputInfo::SecurityGroupIdsHasBeenSet() const
 {
     return m_securityGroupIdsHasBeenSet;
+}
+
+vector<string> CreateOutputInfo::GetZones() const
+{
+    return m_zones;
+}
+
+void CreateOutputInfo::SetZones(const vector<string>& _zones)
+{
+    m_zones = _zones;
+    m_zonesHasBeenSet = true;
+}
+
+bool CreateOutputInfo::ZonesHasBeenSet() const
+{
+    return m_zonesHasBeenSet;
 }
 

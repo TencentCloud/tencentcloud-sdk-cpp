@@ -63,6 +63,27 @@ namespace TencentCloud
                      */
                     bool InstanceIdHasBeenSet() const;
 
+                    /**
+                     * 获取是否国际站请求，默认 false
+                     * @return IsIntl 是否国际站请求，默认 false
+                     * 
+                     */
+                    bool GetIsIntl() const;
+
+                    /**
+                     * 设置是否国际站请求，默认 false
+                     * @param _isIntl 是否国际站请求，默认 false
+                     * 
+                     */
+                    void SetIsIntl(const bool& _isIntl);
+
+                    /**
+                     * 判断参数 IsIntl 是否已赋值
+                     * @return IsIntl 是否已赋值
+                     * 
+                     */
+                    bool IsIntlHasBeenSet() const;
+
                 private:
 
                     /**
@@ -70,6 +91,12 @@ namespace TencentCloud
                      */
                     std::string m_instanceId;
                     bool m_instanceIdHasBeenSet;
+
+                    /**
+                     * 是否国际站请求，默认 false
+                     */
+                    bool m_isIntl;
+                    bool m_isIntlHasBeenSet;
 
                 };
             }

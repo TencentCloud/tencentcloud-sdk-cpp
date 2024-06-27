@@ -25,6 +25,7 @@ using namespace std;
 AddMetricScaleStrategyRequest::AddMetricScaleStrategyRequest() :
     m_instanceIdHasBeenSet(false),
     m_strategyTypeHasBeenSet(false),
+    m_loadAutoScaleStrategyHasBeenSet(false),
     m_timeAutoScaleStrategyHasBeenSet(false)
 {
 }
@@ -50,6 +51,15 @@ string AddMetricScaleStrategyRequest::ToJsonString() const
         string key = "StrategyType";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_strategyType, allocator);
+    }
+
+    if (m_loadAutoScaleStrategyHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "LoadAutoScaleStrategy";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_loadAutoScaleStrategy.ToJsonObject(d[key.c_str()], allocator);
     }
 
     if (m_timeAutoScaleStrategyHasBeenSet)
@@ -99,6 +109,22 @@ void AddMetricScaleStrategyRequest::SetStrategyType(const int64_t& _strategyType
 bool AddMetricScaleStrategyRequest::StrategyTypeHasBeenSet() const
 {
     return m_strategyTypeHasBeenSet;
+}
+
+LoadAutoScaleStrategy AddMetricScaleStrategyRequest::GetLoadAutoScaleStrategy() const
+{
+    return m_loadAutoScaleStrategy;
+}
+
+void AddMetricScaleStrategyRequest::SetLoadAutoScaleStrategy(const LoadAutoScaleStrategy& _loadAutoScaleStrategy)
+{
+    m_loadAutoScaleStrategy = _loadAutoScaleStrategy;
+    m_loadAutoScaleStrategyHasBeenSet = true;
+}
+
+bool AddMetricScaleStrategyRequest::LoadAutoScaleStrategyHasBeenSet() const
+{
+    return m_loadAutoScaleStrategyHasBeenSet;
 }
 
 TimeAutoScaleStrategy AddMetricScaleStrategyRequest::GetTimeAutoScaleStrategy() const

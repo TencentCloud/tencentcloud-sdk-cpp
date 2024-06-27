@@ -571,6 +571,27 @@ namespace TencentCloud
                      */
                     bool RefundMarkHasBeenSet() const;
 
+                    /**
+                     * 获取是否有改签费标识（0：没有，1：有）
+                     * @return TicketChangeMark 是否有改签费标识（0：没有，1：有）
+                     * 
+                     */
+                    int64_t GetTicketChangeMark() const;
+
+                    /**
+                     * 设置是否有改签费标识（0：没有，1：有）
+                     * @param _ticketChangeMark 是否有改签费标识（0：没有，1：有）
+                     * 
+                     */
+                    void SetTicketChangeMark(const int64_t& _ticketChangeMark);
+
+                    /**
+                     * 判断参数 TicketChangeMark 是否已赋值
+                     * @return TicketChangeMark 是否已赋值
+                     * 
+                     */
+                    bool TicketChangeMarkHasBeenSet() const;
+
                 private:
 
                     /**
@@ -722,6 +743,12 @@ namespace TencentCloud
                      */
                     int64_t m_refundMark;
                     bool m_refundMarkHasBeenSet;
+
+                    /**
+                     * 是否有改签费标识（0：没有，1：有）
+                     */
+                    int64_t m_ticketChangeMark;
+                    bool m_ticketChangeMarkHasBeenSet;
 
                 };
             }

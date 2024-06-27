@@ -25,7 +25,8 @@ using namespace std;
 BizLicenseOCRRequest::BizLicenseOCRRequest() :
     m_imageBase64HasBeenSet(false),
     m_imageUrlHasBeenSet(false),
-    m_enableCopyWarnHasBeenSet(false)
+    m_enableCopyWarnHasBeenSet(false),
+    m_enablePeriodCompleteHasBeenSet(false)
 {
 }
 
@@ -58,6 +59,14 @@ string BizLicenseOCRRequest::ToJsonString() const
         string key = "EnableCopyWarn";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_enableCopyWarn, allocator);
+    }
+
+    if (m_enablePeriodCompleteHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "EnablePeriodComplete";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_enablePeriodComplete, allocator);
     }
 
 
@@ -114,6 +123,22 @@ void BizLicenseOCRRequest::SetEnableCopyWarn(const bool& _enableCopyWarn)
 bool BizLicenseOCRRequest::EnableCopyWarnHasBeenSet() const
 {
     return m_enableCopyWarnHasBeenSet;
+}
+
+bool BizLicenseOCRRequest::GetEnablePeriodComplete() const
+{
+    return m_enablePeriodComplete;
+}
+
+void BizLicenseOCRRequest::SetEnablePeriodComplete(const bool& _enablePeriodComplete)
+{
+    m_enablePeriodComplete = _enablePeriodComplete;
+    m_enablePeriodCompleteHasBeenSet = true;
+}
+
+bool BizLicenseOCRRequest::EnablePeriodCompleteHasBeenSet() const
+{
+    return m_enablePeriodCompleteHasBeenSet;
 }
 
 

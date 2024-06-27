@@ -127,6 +127,27 @@ namespace TencentCloud
                      */
                     bool LimitHasBeenSet() const;
 
+                    /**
+                     * 获取表示是自动(0)还是托管伸缩(1)
+                     * @return RecordSource 表示是自动(0)还是托管伸缩(1)
+                     * 
+                     */
+                    int64_t GetRecordSource() const;
+
+                    /**
+                     * 设置表示是自动(0)还是托管伸缩(1)
+                     * @param _recordSource 表示是自动(0)还是托管伸缩(1)
+                     * 
+                     */
+                    void SetRecordSource(const int64_t& _recordSource);
+
+                    /**
+                     * 判断参数 RecordSource 是否已赋值
+                     * @return RecordSource 是否已赋值
+                     * 
+                     */
+                    bool RecordSourceHasBeenSet() const;
+
                 private:
 
                     /**
@@ -152,6 +173,12 @@ namespace TencentCloud
                      */
                     int64_t m_limit;
                     bool m_limitHasBeenSet;
+
+                    /**
+                     * 表示是自动(0)还是托管伸缩(1)
+                     */
+                    int64_t m_recordSource;
+                    bool m_recordSourceHasBeenSet;
 
                 };
             }

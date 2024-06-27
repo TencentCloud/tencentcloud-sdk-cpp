@@ -21,6 +21,7 @@
 #include <vector>
 #include <map>
 #include <tencentcloud/core/AbstractModel.h>
+#include <tencentcloud/emr/v20190103/model/LoadAutoScaleStrategy.h>
 #include <tencentcloud/emr/v20190103/model/TimeAutoScaleStrategy.h>
 
 
@@ -86,6 +87,27 @@ namespace TencentCloud
                     bool StrategyTypeHasBeenSet() const;
 
                     /**
+                     * 获取按负载扩缩容的指标。
+                     * @return LoadAutoScaleStrategies 按负载扩缩容的指标。
+                     * 
+                     */
+                    std::vector<LoadAutoScaleStrategy> GetLoadAutoScaleStrategies() const;
+
+                    /**
+                     * 设置按负载扩缩容的指标。
+                     * @param _loadAutoScaleStrategies 按负载扩缩容的指标。
+                     * 
+                     */
+                    void SetLoadAutoScaleStrategies(const std::vector<LoadAutoScaleStrategy>& _loadAutoScaleStrategies);
+
+                    /**
+                     * 判断参数 LoadAutoScaleStrategies 是否已赋值
+                     * @return LoadAutoScaleStrategies 是否已赋值
+                     * 
+                     */
+                    bool LoadAutoScaleStrategiesHasBeenSet() const;
+
+                    /**
                      * 获取按时间扩缩容的规则。
                      * @return TimeAutoScaleStrategies 按时间扩缩容的规则。
                      * 
@@ -140,6 +162,12 @@ namespace TencentCloud
                      */
                     int64_t m_strategyType;
                     bool m_strategyTypeHasBeenSet;
+
+                    /**
+                     * 按负载扩缩容的指标。
+                     */
+                    std::vector<LoadAutoScaleStrategy> m_loadAutoScaleStrategies;
+                    bool m_loadAutoScaleStrategiesHasBeenSet;
 
                     /**
                      * 按时间扩缩容的规则。

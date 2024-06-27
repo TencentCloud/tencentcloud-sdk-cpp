@@ -789,8 +789,6 @@
 #include <tencentcloud/cwp/v20180228/model/ExportAssetWebServiceInfoListResponse.h>
 #include <tencentcloud/cwp/v20180228/model/ExportAttackEventsRequest.h>
 #include <tencentcloud/cwp/v20180228/model/ExportAttackEventsResponse.h>
-#include <tencentcloud/cwp/v20180228/model/ExportAttackLogsRequest.h>
-#include <tencentcloud/cwp/v20180228/model/ExportAttackLogsResponse.h>
 #include <tencentcloud/cwp/v20180228/model/ExportBaselineEffectHostListRequest.h>
 #include <tencentcloud/cwp/v20180228/model/ExportBaselineEffectHostListResponse.h>
 #include <tencentcloud/cwp/v20180228/model/ExportBaselineFixListRequest.h>
@@ -2218,9 +2216,6 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::ExportAttackEventsResponse> ExportAttackEventsOutcome;
                 typedef std::future<ExportAttackEventsOutcome> ExportAttackEventsOutcomeCallable;
                 typedef std::function<void(const CwpClient*, const Model::ExportAttackEventsRequest&, ExportAttackEventsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ExportAttackEventsAsyncHandler;
-                typedef Outcome<Core::Error, Model::ExportAttackLogsResponse> ExportAttackLogsOutcome;
-                typedef std::future<ExportAttackLogsOutcome> ExportAttackLogsOutcomeCallable;
-                typedef std::function<void(const CwpClient*, const Model::ExportAttackLogsRequest&, ExportAttackLogsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ExportAttackLogsAsyncHandler;
                 typedef Outcome<Core::Error, Model::ExportBaselineEffectHostListResponse> ExportBaselineEffectHostListOutcome;
                 typedef std::future<ExportBaselineEffectHostListOutcome> ExportBaselineEffectHostListOutcomeCallable;
                 typedef std::function<void(const CwpClient*, const Model::ExportBaselineEffectHostListRequest&, ExportBaselineEffectHostListOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ExportBaselineEffectHostListAsyncHandler;
@@ -6070,17 +6065,6 @@ namespace TencentCloud
                 ExportAttackEventsOutcome ExportAttackEvents(const Model::ExportAttackEventsRequest &request);
                 void ExportAttackEventsAsync(const Model::ExportAttackEventsRequest& request, const ExportAttackEventsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 ExportAttackEventsOutcomeCallable ExportAttackEventsCallable(const Model::ExportAttackEventsRequest& request);
-
-                /**
-                 *ExportAttackEvents接口替代
-
-导出网络攻击日志
-                 * @param req ExportAttackLogsRequest
-                 * @return ExportAttackLogsOutcome
-                 */
-                ExportAttackLogsOutcome ExportAttackLogs(const Model::ExportAttackLogsRequest &request);
-                void ExportAttackLogsAsync(const Model::ExportAttackLogsRequest& request, const ExportAttackLogsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
-                ExportAttackLogsOutcomeCallable ExportAttackLogsCallable(const Model::ExportAttackLogsRequest& request);
 
                 /**
                  *导出基线影响主机列表

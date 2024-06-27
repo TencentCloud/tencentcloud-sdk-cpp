@@ -28,7 +28,9 @@ RabbitMQUser::RabbitMQUser() :
     m_tagsHasBeenSet(false),
     m_createTimeHasBeenSet(false),
     m_modifyTimeHasBeenSet(false),
-    m_typeHasBeenSet(false)
+    m_typeHasBeenSet(false),
+    m_maxConnectionsHasBeenSet(false),
+    m_maxChannelsHasBeenSet(false)
 {
 }
 
@@ -120,6 +122,26 @@ CoreInternalOutcome RabbitMQUser::Deserialize(const rapidjson::Value &value)
         m_typeHasBeenSet = true;
     }
 
+    if (value.HasMember("MaxConnections") && !value["MaxConnections"].IsNull())
+    {
+        if (!value["MaxConnections"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `RabbitMQUser.MaxConnections` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_maxConnections = value["MaxConnections"].GetInt64();
+        m_maxConnectionsHasBeenSet = true;
+    }
+
+    if (value.HasMember("MaxChannels") && !value["MaxChannels"].IsNull())
+    {
+        if (!value["MaxChannels"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `RabbitMQUser.MaxChannels` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_maxChannels = value["MaxChannels"].GetInt64();
+        m_maxChannelsHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -194,6 +216,22 @@ void RabbitMQUser::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Al
         string key = "Type";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_type.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_maxConnectionsHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "MaxConnections";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_maxConnections, allocator);
+    }
+
+    if (m_maxChannelsHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "MaxChannels";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_maxChannels, allocator);
     }
 
 }
@@ -325,5 +363,37 @@ void RabbitMQUser::SetType(const string& _type)
 bool RabbitMQUser::TypeHasBeenSet() const
 {
     return m_typeHasBeenSet;
+}
+
+int64_t RabbitMQUser::GetMaxConnections() const
+{
+    return m_maxConnections;
+}
+
+void RabbitMQUser::SetMaxConnections(const int64_t& _maxConnections)
+{
+    m_maxConnections = _maxConnections;
+    m_maxConnectionsHasBeenSet = true;
+}
+
+bool RabbitMQUser::MaxConnectionsHasBeenSet() const
+{
+    return m_maxConnectionsHasBeenSet;
+}
+
+int64_t RabbitMQUser::GetMaxChannels() const
+{
+    return m_maxChannels;
+}
+
+void RabbitMQUser::SetMaxChannels(const int64_t& _maxChannels)
+{
+    m_maxChannels = _maxChannels;
+    m_maxChannelsHasBeenSet = true;
+}
+
+bool RabbitMQUser::MaxChannelsHasBeenSet() const
+{
+    return m_maxChannelsHasBeenSet;
 }
 

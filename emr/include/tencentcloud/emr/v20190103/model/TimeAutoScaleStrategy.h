@@ -149,18 +149,18 @@ namespace TencentCloud
                     bool ScaleNumHasBeenSet() const;
 
                     /**
-                     * 获取规则状态，1表示有效，2表示无效，3表示暂停。
+                     * 获取规则状态，1表示有效，2表示无效，3表示暂停。必须填写
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return StrategyStatus 规则状态，1表示有效，2表示无效，3表示暂停。
+                     * @return StrategyStatus 规则状态，1表示有效，2表示无效，3表示暂停。必须填写
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     uint64_t GetStrategyStatus() const;
 
                     /**
-                     * 设置规则状态，1表示有效，2表示无效，3表示暂停。
+                     * 设置规则状态，1表示有效，2表示无效，3表示暂停。必须填写
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _strategyStatus 规则状态，1表示有效，2表示无效，3表示暂停。
+                     * @param _strategyStatus 规则状态，1表示有效，2表示无效，3表示暂停。必须填写
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -465,18 +465,18 @@ namespace TencentCloud
                     bool MaxUseHasBeenSet() const;
 
                     /**
-                     * 获取节点部署服务列表。
+                     * 获取节点部署服务列表。部署服务仅填写HDFS、YARN。[组件名对应的映射关系表](https://cloud.tencent.com/document/product/589/98760)
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return SoftDeployInfo 节点部署服务列表。
+                     * @return SoftDeployInfo 节点部署服务列表。部署服务仅填写HDFS、YARN。[组件名对应的映射关系表](https://cloud.tencent.com/document/product/589/98760)
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<int64_t> GetSoftDeployInfo() const;
 
                     /**
-                     * 设置节点部署服务列表。
+                     * 设置节点部署服务列表。部署服务仅填写HDFS、YARN。[组件名对应的映射关系表](https://cloud.tencent.com/document/product/589/98760)
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _softDeployInfo 节点部署服务列表。
+                     * @param _softDeployInfo 节点部署服务列表。部署服务仅填写HDFS、YARN。[组件名对应的映射关系表](https://cloud.tencent.com/document/product/589/98760)
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -595,7 +595,7 @@ namespace TencentCloud
                     bool m_scaleNumHasBeenSet;
 
                     /**
-                     * 规则状态，1表示有效，2表示无效，3表示暂停。
+                     * 规则状态，1表示有效，2表示无效，3表示暂停。必须填写
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     uint64_t m_strategyStatus;
@@ -683,7 +683,7 @@ namespace TencentCloud
                     bool m_maxUseHasBeenSet;
 
                     /**
-                     * 节点部署服务列表。
+                     * 节点部署服务列表。部署服务仅填写HDFS、YARN。[组件名对应的映射关系表](https://cloud.tencent.com/document/product/589/98760)
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<int64_t> m_softDeployInfo;

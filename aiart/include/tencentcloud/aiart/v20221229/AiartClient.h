@@ -23,6 +23,8 @@
 #include <tencentcloud/core/Credential.h>
 #include <tencentcloud/core/profile/ClientProfile.h>
 #include <tencentcloud/core/AsyncCallerContext.h>
+#include <tencentcloud/aiart/v20221229/model/GenerateAvatarRequest.h>
+#include <tencentcloud/aiart/v20221229/model/GenerateAvatarResponse.h>
 #include <tencentcloud/aiart/v20221229/model/ImageToImageRequest.h>
 #include <tencentcloud/aiart/v20221229/model/ImageToImageResponse.h>
 #include <tencentcloud/aiart/v20221229/model/QueryDrawPortraitJobRequest.h>
@@ -55,6 +57,9 @@ namespace TencentCloud
                 AiartClient(const Credential &credential, const std::string &region);
                 AiartClient(const Credential &credential, const std::string &region, const ClientProfile &profile);
 
+                typedef Outcome<Core::Error, Model::GenerateAvatarResponse> GenerateAvatarOutcome;
+                typedef std::future<GenerateAvatarOutcome> GenerateAvatarOutcomeCallable;
+                typedef std::function<void(const AiartClient*, const Model::GenerateAvatarRequest&, GenerateAvatarOutcome, const std::shared_ptr<const AsyncCallerContext>&)> GenerateAvatarAsyncHandler;
                 typedef Outcome<Core::Error, Model::ImageToImageResponse> ImageToImageOutcome;
                 typedef std::future<ImageToImageOutcome> ImageToImageOutcomeCallable;
                 typedef std::function<void(const AiartClient*, const Model::ImageToImageRequest&, ImageToImageOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ImageToImageAsyncHandler;
@@ -84,6 +89,16 @@ namespace TencentCloud
                 typedef std::function<void(const AiartClient*, const Model::UploadTrainPortraitImagesRequest&, UploadTrainPortraitImagesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> UploadTrainPortraitImagesAsyncHandler;
 
 
+
+                /**
+                 *百变头像接口将根据输入的人像照片，生成风格百变的头像。
+百变头像默认提供1个并发任务数，代表最多能同时处理1个已提交的任务，上一个任务处理完毕后才能开始处理下一个任务。
+                 * @param req GenerateAvatarRequest
+                 * @return GenerateAvatarOutcome
+                 */
+                GenerateAvatarOutcome GenerateAvatar(const Model::GenerateAvatarRequest &request);
+                void GenerateAvatarAsync(const Model::GenerateAvatarRequest& request, const GenerateAvatarAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                GenerateAvatarOutcomeCallable GenerateAvatarCallable(const Model::GenerateAvatarRequest& request);
 
                 /**
                  *图像风格化（图生图）接口提供生成式的图生图风格转化能力，将根据输入的图像及文本描述，智能生成风格转化后的图像。建议避免输入人像过小、姿势复杂、人数较多的人像图片。

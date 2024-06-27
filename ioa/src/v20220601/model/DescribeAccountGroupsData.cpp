@@ -21,24 +21,26 @@ using namespace TencentCloud::Ioa::V20220601::Model;
 using namespace std;
 
 DescribeAccountGroupsData::DescribeAccountGroupsData() :
-    m_itimeHasBeenSet(false),
-    m_nameHasBeenSet(false),
+    m_namePathHasBeenSet(false),
     m_idPathArrHasBeenSet(false),
-    m_userTotalHasBeenSet(false),
     m_extraInfoHasBeenSet(false),
-    m_importTypeHasBeenSet(false),
+    m_utimeHasBeenSet(false),
+    m_parentIdHasBeenSet(false),
+    m_orgIdHasBeenSet(false),
+    m_nameHasBeenSet(false),
+    m_idHasBeenSet(false),
     m_descriptionHasBeenSet(false),
     m_sourceHasBeenSet(false),
-    m_miniIamIdHasBeenSet(false),
-    m_orgIdHasBeenSet(false),
-    m_readOnlyHasBeenSet(false),
-    m_parentIdHasBeenSet(false),
-    m_namePathHasBeenSet(false),
-    m_parentOrgIdHasBeenSet(false),
     m_idPathHasBeenSet(false),
-    m_idHasBeenSet(false),
+    m_itimeHasBeenSet(false),
+    m_parentOrgIdHasBeenSet(false),
+    m_importTypeHasBeenSet(false),
+    m_miniIamIdHasBeenSet(false),
+    m_userTotalHasBeenSet(false),
     m_isLeafHasBeenSet(false),
-    m_utimeHasBeenSet(false)
+    m_readOnlyHasBeenSet(false),
+    m_latestSyncResultHasBeenSet(false),
+    m_latestSyncTimeHasBeenSet(false)
 {
 }
 
@@ -47,24 +49,14 @@ CoreInternalOutcome DescribeAccountGroupsData::Deserialize(const rapidjson::Valu
     string requestId = "";
 
 
-    if (value.HasMember("Itime") && !value["Itime"].IsNull())
+    if (value.HasMember("NamePath") && !value["NamePath"].IsNull())
     {
-        if (!value["Itime"].IsString())
+        if (!value["NamePath"].IsString())
         {
-            return CoreInternalOutcome(Core::Error("response `DescribeAccountGroupsData.Itime` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `DescribeAccountGroupsData.NamePath` IsString=false incorrectly").SetRequestId(requestId));
         }
-        m_itime = string(value["Itime"].GetString());
-        m_itimeHasBeenSet = true;
-    }
-
-    if (value.HasMember("Name") && !value["Name"].IsNull())
-    {
-        if (!value["Name"].IsString())
-        {
-            return CoreInternalOutcome(Core::Error("response `DescribeAccountGroupsData.Name` IsString=false incorrectly").SetRequestId(requestId));
-        }
-        m_name = string(value["Name"].GetString());
-        m_nameHasBeenSet = true;
+        m_namePath = string(value["NamePath"].GetString());
+        m_namePathHasBeenSet = true;
     }
 
     if (value.HasMember("IdPathArr") && !value["IdPathArr"].IsNull())
@@ -80,16 +72,6 @@ CoreInternalOutcome DescribeAccountGroupsData::Deserialize(const rapidjson::Valu
         m_idPathArrHasBeenSet = true;
     }
 
-    if (value.HasMember("UserTotal") && !value["UserTotal"].IsNull())
-    {
-        if (!value["UserTotal"].IsInt64())
-        {
-            return CoreInternalOutcome(Core::Error("response `DescribeAccountGroupsData.UserTotal` IsInt64=false incorrectly").SetRequestId(requestId));
-        }
-        m_userTotal = value["UserTotal"].GetInt64();
-        m_userTotalHasBeenSet = true;
-    }
-
     if (value.HasMember("ExtraInfo") && !value["ExtraInfo"].IsNull())
     {
         if (!value["ExtraInfo"].IsString())
@@ -100,14 +82,54 @@ CoreInternalOutcome DescribeAccountGroupsData::Deserialize(const rapidjson::Valu
         m_extraInfoHasBeenSet = true;
     }
 
-    if (value.HasMember("ImportType") && !value["ImportType"].IsNull())
+    if (value.HasMember("Utime") && !value["Utime"].IsNull())
     {
-        if (!value["ImportType"].IsString())
+        if (!value["Utime"].IsString())
         {
-            return CoreInternalOutcome(Core::Error("response `DescribeAccountGroupsData.ImportType` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `DescribeAccountGroupsData.Utime` IsString=false incorrectly").SetRequestId(requestId));
         }
-        m_importType = string(value["ImportType"].GetString());
-        m_importTypeHasBeenSet = true;
+        m_utime = string(value["Utime"].GetString());
+        m_utimeHasBeenSet = true;
+    }
+
+    if (value.HasMember("ParentId") && !value["ParentId"].IsNull())
+    {
+        if (!value["ParentId"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `DescribeAccountGroupsData.ParentId` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_parentId = value["ParentId"].GetInt64();
+        m_parentIdHasBeenSet = true;
+    }
+
+    if (value.HasMember("OrgId") && !value["OrgId"].IsNull())
+    {
+        if (!value["OrgId"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `DescribeAccountGroupsData.OrgId` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_orgId = string(value["OrgId"].GetString());
+        m_orgIdHasBeenSet = true;
+    }
+
+    if (value.HasMember("Name") && !value["Name"].IsNull())
+    {
+        if (!value["Name"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `DescribeAccountGroupsData.Name` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_name = string(value["Name"].GetString());
+        m_nameHasBeenSet = true;
+    }
+
+    if (value.HasMember("Id") && !value["Id"].IsNull())
+    {
+        if (!value["Id"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `DescribeAccountGroupsData.Id` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_id = value["Id"].GetInt64();
+        m_idHasBeenSet = true;
     }
 
     if (value.HasMember("Description") && !value["Description"].IsNull())
@@ -130,54 +152,24 @@ CoreInternalOutcome DescribeAccountGroupsData::Deserialize(const rapidjson::Valu
         m_sourceHasBeenSet = true;
     }
 
-    if (value.HasMember("MiniIamId") && !value["MiniIamId"].IsNull())
+    if (value.HasMember("IdPath") && !value["IdPath"].IsNull())
     {
-        if (!value["MiniIamId"].IsString())
+        if (!value["IdPath"].IsString())
         {
-            return CoreInternalOutcome(Core::Error("response `DescribeAccountGroupsData.MiniIamId` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `DescribeAccountGroupsData.IdPath` IsString=false incorrectly").SetRequestId(requestId));
         }
-        m_miniIamId = string(value["MiniIamId"].GetString());
-        m_miniIamIdHasBeenSet = true;
+        m_idPath = string(value["IdPath"].GetString());
+        m_idPathHasBeenSet = true;
     }
 
-    if (value.HasMember("OrgId") && !value["OrgId"].IsNull())
+    if (value.HasMember("Itime") && !value["Itime"].IsNull())
     {
-        if (!value["OrgId"].IsString())
+        if (!value["Itime"].IsString())
         {
-            return CoreInternalOutcome(Core::Error("response `DescribeAccountGroupsData.OrgId` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `DescribeAccountGroupsData.Itime` IsString=false incorrectly").SetRequestId(requestId));
         }
-        m_orgId = string(value["OrgId"].GetString());
-        m_orgIdHasBeenSet = true;
-    }
-
-    if (value.HasMember("ReadOnly") && !value["ReadOnly"].IsNull())
-    {
-        if (!value["ReadOnly"].IsBool())
-        {
-            return CoreInternalOutcome(Core::Error("response `DescribeAccountGroupsData.ReadOnly` IsBool=false incorrectly").SetRequestId(requestId));
-        }
-        m_readOnly = value["ReadOnly"].GetBool();
-        m_readOnlyHasBeenSet = true;
-    }
-
-    if (value.HasMember("ParentId") && !value["ParentId"].IsNull())
-    {
-        if (!value["ParentId"].IsInt64())
-        {
-            return CoreInternalOutcome(Core::Error("response `DescribeAccountGroupsData.ParentId` IsInt64=false incorrectly").SetRequestId(requestId));
-        }
-        m_parentId = value["ParentId"].GetInt64();
-        m_parentIdHasBeenSet = true;
-    }
-
-    if (value.HasMember("NamePath") && !value["NamePath"].IsNull())
-    {
-        if (!value["NamePath"].IsString())
-        {
-            return CoreInternalOutcome(Core::Error("response `DescribeAccountGroupsData.NamePath` IsString=false incorrectly").SetRequestId(requestId));
-        }
-        m_namePath = string(value["NamePath"].GetString());
-        m_namePathHasBeenSet = true;
+        m_itime = string(value["Itime"].GetString());
+        m_itimeHasBeenSet = true;
     }
 
     if (value.HasMember("ParentOrgId") && !value["ParentOrgId"].IsNull())
@@ -190,24 +182,34 @@ CoreInternalOutcome DescribeAccountGroupsData::Deserialize(const rapidjson::Valu
         m_parentOrgIdHasBeenSet = true;
     }
 
-    if (value.HasMember("IdPath") && !value["IdPath"].IsNull())
+    if (value.HasMember("ImportType") && !value["ImportType"].IsNull())
     {
-        if (!value["IdPath"].IsString())
+        if (!value["ImportType"].IsString())
         {
-            return CoreInternalOutcome(Core::Error("response `DescribeAccountGroupsData.IdPath` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `DescribeAccountGroupsData.ImportType` IsString=false incorrectly").SetRequestId(requestId));
         }
-        m_idPath = string(value["IdPath"].GetString());
-        m_idPathHasBeenSet = true;
+        m_importType = string(value["ImportType"].GetString());
+        m_importTypeHasBeenSet = true;
     }
 
-    if (value.HasMember("Id") && !value["Id"].IsNull())
+    if (value.HasMember("MiniIamId") && !value["MiniIamId"].IsNull())
     {
-        if (!value["Id"].IsInt64())
+        if (!value["MiniIamId"].IsString())
         {
-            return CoreInternalOutcome(Core::Error("response `DescribeAccountGroupsData.Id` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `DescribeAccountGroupsData.MiniIamId` IsString=false incorrectly").SetRequestId(requestId));
         }
-        m_id = value["Id"].GetInt64();
-        m_idHasBeenSet = true;
+        m_miniIamId = string(value["MiniIamId"].GetString());
+        m_miniIamIdHasBeenSet = true;
+    }
+
+    if (value.HasMember("UserTotal") && !value["UserTotal"].IsNull())
+    {
+        if (!value["UserTotal"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `DescribeAccountGroupsData.UserTotal` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_userTotal = value["UserTotal"].GetInt64();
+        m_userTotalHasBeenSet = true;
     }
 
     if (value.HasMember("IsLeaf") && !value["IsLeaf"].IsNull())
@@ -220,14 +222,34 @@ CoreInternalOutcome DescribeAccountGroupsData::Deserialize(const rapidjson::Valu
         m_isLeafHasBeenSet = true;
     }
 
-    if (value.HasMember("Utime") && !value["Utime"].IsNull())
+    if (value.HasMember("ReadOnly") && !value["ReadOnly"].IsNull())
     {
-        if (!value["Utime"].IsString())
+        if (!value["ReadOnly"].IsBool())
         {
-            return CoreInternalOutcome(Core::Error("response `DescribeAccountGroupsData.Utime` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `DescribeAccountGroupsData.ReadOnly` IsBool=false incorrectly").SetRequestId(requestId));
         }
-        m_utime = string(value["Utime"].GetString());
-        m_utimeHasBeenSet = true;
+        m_readOnly = value["ReadOnly"].GetBool();
+        m_readOnlyHasBeenSet = true;
+    }
+
+    if (value.HasMember("LatestSyncResult") && !value["LatestSyncResult"].IsNull())
+    {
+        if (!value["LatestSyncResult"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `DescribeAccountGroupsData.LatestSyncResult` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_latestSyncResult = string(value["LatestSyncResult"].GetString());
+        m_latestSyncResultHasBeenSet = true;
+    }
+
+    if (value.HasMember("LatestSyncTime") && !value["LatestSyncTime"].IsNull())
+    {
+        if (!value["LatestSyncTime"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `DescribeAccountGroupsData.LatestSyncTime` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_latestSyncTime = string(value["LatestSyncTime"].GetString());
+        m_latestSyncTimeHasBeenSet = true;
     }
 
 
@@ -237,20 +259,12 @@ CoreInternalOutcome DescribeAccountGroupsData::Deserialize(const rapidjson::Valu
 void DescribeAccountGroupsData::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const
 {
 
-    if (m_itimeHasBeenSet)
+    if (m_namePathHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "Itime";
+        string key = "NamePath";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, rapidjson::Value(m_itime.c_str(), allocator).Move(), allocator);
-    }
-
-    if (m_nameHasBeenSet)
-    {
-        rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "Name";
-        iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, rapidjson::Value(m_name.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_namePath.c_str(), allocator).Move(), allocator);
     }
 
     if (m_idPathArrHasBeenSet)
@@ -266,14 +280,6 @@ void DescribeAccountGroupsData::ToJsonObject(rapidjson::Value &value, rapidjson:
         }
     }
 
-    if (m_userTotalHasBeenSet)
-    {
-        rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "UserTotal";
-        iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, m_userTotal, allocator);
-    }
-
     if (m_extraInfoHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
@@ -282,12 +288,44 @@ void DescribeAccountGroupsData::ToJsonObject(rapidjson::Value &value, rapidjson:
         value.AddMember(iKey, rapidjson::Value(m_extraInfo.c_str(), allocator).Move(), allocator);
     }
 
-    if (m_importTypeHasBeenSet)
+    if (m_utimeHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "ImportType";
+        string key = "Utime";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, rapidjson::Value(m_importType.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_utime.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_parentIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ParentId";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_parentId, allocator);
+    }
+
+    if (m_orgIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "OrgId";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_orgId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_nameHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Name";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_name.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_idHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Id";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_id, allocator);
     }
 
     if (m_descriptionHasBeenSet)
@@ -306,44 +344,20 @@ void DescribeAccountGroupsData::ToJsonObject(rapidjson::Value &value, rapidjson:
         value.AddMember(iKey, m_source, allocator);
     }
 
-    if (m_miniIamIdHasBeenSet)
+    if (m_idPathHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "MiniIamId";
+        string key = "IdPath";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, rapidjson::Value(m_miniIamId.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_idPath.c_str(), allocator).Move(), allocator);
     }
 
-    if (m_orgIdHasBeenSet)
+    if (m_itimeHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "OrgId";
+        string key = "Itime";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, rapidjson::Value(m_orgId.c_str(), allocator).Move(), allocator);
-    }
-
-    if (m_readOnlyHasBeenSet)
-    {
-        rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "ReadOnly";
-        iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, m_readOnly, allocator);
-    }
-
-    if (m_parentIdHasBeenSet)
-    {
-        rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "ParentId";
-        iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, m_parentId, allocator);
-    }
-
-    if (m_namePathHasBeenSet)
-    {
-        rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "NamePath";
-        iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, rapidjson::Value(m_namePath.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_itime.c_str(), allocator).Move(), allocator);
     }
 
     if (m_parentOrgIdHasBeenSet)
@@ -354,20 +368,28 @@ void DescribeAccountGroupsData::ToJsonObject(rapidjson::Value &value, rapidjson:
         value.AddMember(iKey, rapidjson::Value(m_parentOrgId.c_str(), allocator).Move(), allocator);
     }
 
-    if (m_idPathHasBeenSet)
+    if (m_importTypeHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "IdPath";
+        string key = "ImportType";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, rapidjson::Value(m_idPath.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_importType.c_str(), allocator).Move(), allocator);
     }
 
-    if (m_idHasBeenSet)
+    if (m_miniIamIdHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "Id";
+        string key = "MiniIamId";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, m_id, allocator);
+        value.AddMember(iKey, rapidjson::Value(m_miniIamId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_userTotalHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "UserTotal";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_userTotal, allocator);
     }
 
     if (m_isLeafHasBeenSet)
@@ -378,47 +400,47 @@ void DescribeAccountGroupsData::ToJsonObject(rapidjson::Value &value, rapidjson:
         value.AddMember(iKey, m_isLeaf, allocator);
     }
 
-    if (m_utimeHasBeenSet)
+    if (m_readOnlyHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "Utime";
+        string key = "ReadOnly";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, rapidjson::Value(m_utime.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, m_readOnly, allocator);
+    }
+
+    if (m_latestSyncResultHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "LatestSyncResult";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_latestSyncResult.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_latestSyncTimeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "LatestSyncTime";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_latestSyncTime.c_str(), allocator).Move(), allocator);
     }
 
 }
 
 
-string DescribeAccountGroupsData::GetItime() const
+string DescribeAccountGroupsData::GetNamePath() const
 {
-    return m_itime;
+    return m_namePath;
 }
 
-void DescribeAccountGroupsData::SetItime(const string& _itime)
+void DescribeAccountGroupsData::SetNamePath(const string& _namePath)
 {
-    m_itime = _itime;
-    m_itimeHasBeenSet = true;
+    m_namePath = _namePath;
+    m_namePathHasBeenSet = true;
 }
 
-bool DescribeAccountGroupsData::ItimeHasBeenSet() const
+bool DescribeAccountGroupsData::NamePathHasBeenSet() const
 {
-    return m_itimeHasBeenSet;
-}
-
-string DescribeAccountGroupsData::GetName() const
-{
-    return m_name;
-}
-
-void DescribeAccountGroupsData::SetName(const string& _name)
-{
-    m_name = _name;
-    m_nameHasBeenSet = true;
-}
-
-bool DescribeAccountGroupsData::NameHasBeenSet() const
-{
-    return m_nameHasBeenSet;
+    return m_namePathHasBeenSet;
 }
 
 vector<int64_t> DescribeAccountGroupsData::GetIdPathArr() const
@@ -437,22 +459,6 @@ bool DescribeAccountGroupsData::IdPathArrHasBeenSet() const
     return m_idPathArrHasBeenSet;
 }
 
-int64_t DescribeAccountGroupsData::GetUserTotal() const
-{
-    return m_userTotal;
-}
-
-void DescribeAccountGroupsData::SetUserTotal(const int64_t& _userTotal)
-{
-    m_userTotal = _userTotal;
-    m_userTotalHasBeenSet = true;
-}
-
-bool DescribeAccountGroupsData::UserTotalHasBeenSet() const
-{
-    return m_userTotalHasBeenSet;
-}
-
 string DescribeAccountGroupsData::GetExtraInfo() const
 {
     return m_extraInfo;
@@ -469,20 +475,84 @@ bool DescribeAccountGroupsData::ExtraInfoHasBeenSet() const
     return m_extraInfoHasBeenSet;
 }
 
-string DescribeAccountGroupsData::GetImportType() const
+string DescribeAccountGroupsData::GetUtime() const
 {
-    return m_importType;
+    return m_utime;
 }
 
-void DescribeAccountGroupsData::SetImportType(const string& _importType)
+void DescribeAccountGroupsData::SetUtime(const string& _utime)
 {
-    m_importType = _importType;
-    m_importTypeHasBeenSet = true;
+    m_utime = _utime;
+    m_utimeHasBeenSet = true;
 }
 
-bool DescribeAccountGroupsData::ImportTypeHasBeenSet() const
+bool DescribeAccountGroupsData::UtimeHasBeenSet() const
 {
-    return m_importTypeHasBeenSet;
+    return m_utimeHasBeenSet;
+}
+
+int64_t DescribeAccountGroupsData::GetParentId() const
+{
+    return m_parentId;
+}
+
+void DescribeAccountGroupsData::SetParentId(const int64_t& _parentId)
+{
+    m_parentId = _parentId;
+    m_parentIdHasBeenSet = true;
+}
+
+bool DescribeAccountGroupsData::ParentIdHasBeenSet() const
+{
+    return m_parentIdHasBeenSet;
+}
+
+string DescribeAccountGroupsData::GetOrgId() const
+{
+    return m_orgId;
+}
+
+void DescribeAccountGroupsData::SetOrgId(const string& _orgId)
+{
+    m_orgId = _orgId;
+    m_orgIdHasBeenSet = true;
+}
+
+bool DescribeAccountGroupsData::OrgIdHasBeenSet() const
+{
+    return m_orgIdHasBeenSet;
+}
+
+string DescribeAccountGroupsData::GetName() const
+{
+    return m_name;
+}
+
+void DescribeAccountGroupsData::SetName(const string& _name)
+{
+    m_name = _name;
+    m_nameHasBeenSet = true;
+}
+
+bool DescribeAccountGroupsData::NameHasBeenSet() const
+{
+    return m_nameHasBeenSet;
+}
+
+int64_t DescribeAccountGroupsData::GetId() const
+{
+    return m_id;
+}
+
+void DescribeAccountGroupsData::SetId(const int64_t& _id)
+{
+    m_id = _id;
+    m_idHasBeenSet = true;
+}
+
+bool DescribeAccountGroupsData::IdHasBeenSet() const
+{
+    return m_idHasBeenSet;
 }
 
 string DescribeAccountGroupsData::GetDescription() const
@@ -517,84 +587,36 @@ bool DescribeAccountGroupsData::SourceHasBeenSet() const
     return m_sourceHasBeenSet;
 }
 
-string DescribeAccountGroupsData::GetMiniIamId() const
+string DescribeAccountGroupsData::GetIdPath() const
 {
-    return m_miniIamId;
+    return m_idPath;
 }
 
-void DescribeAccountGroupsData::SetMiniIamId(const string& _miniIamId)
+void DescribeAccountGroupsData::SetIdPath(const string& _idPath)
 {
-    m_miniIamId = _miniIamId;
-    m_miniIamIdHasBeenSet = true;
+    m_idPath = _idPath;
+    m_idPathHasBeenSet = true;
 }
 
-bool DescribeAccountGroupsData::MiniIamIdHasBeenSet() const
+bool DescribeAccountGroupsData::IdPathHasBeenSet() const
 {
-    return m_miniIamIdHasBeenSet;
+    return m_idPathHasBeenSet;
 }
 
-string DescribeAccountGroupsData::GetOrgId() const
+string DescribeAccountGroupsData::GetItime() const
 {
-    return m_orgId;
+    return m_itime;
 }
 
-void DescribeAccountGroupsData::SetOrgId(const string& _orgId)
+void DescribeAccountGroupsData::SetItime(const string& _itime)
 {
-    m_orgId = _orgId;
-    m_orgIdHasBeenSet = true;
+    m_itime = _itime;
+    m_itimeHasBeenSet = true;
 }
 
-bool DescribeAccountGroupsData::OrgIdHasBeenSet() const
+bool DescribeAccountGroupsData::ItimeHasBeenSet() const
 {
-    return m_orgIdHasBeenSet;
-}
-
-bool DescribeAccountGroupsData::GetReadOnly() const
-{
-    return m_readOnly;
-}
-
-void DescribeAccountGroupsData::SetReadOnly(const bool& _readOnly)
-{
-    m_readOnly = _readOnly;
-    m_readOnlyHasBeenSet = true;
-}
-
-bool DescribeAccountGroupsData::ReadOnlyHasBeenSet() const
-{
-    return m_readOnlyHasBeenSet;
-}
-
-int64_t DescribeAccountGroupsData::GetParentId() const
-{
-    return m_parentId;
-}
-
-void DescribeAccountGroupsData::SetParentId(const int64_t& _parentId)
-{
-    m_parentId = _parentId;
-    m_parentIdHasBeenSet = true;
-}
-
-bool DescribeAccountGroupsData::ParentIdHasBeenSet() const
-{
-    return m_parentIdHasBeenSet;
-}
-
-string DescribeAccountGroupsData::GetNamePath() const
-{
-    return m_namePath;
-}
-
-void DescribeAccountGroupsData::SetNamePath(const string& _namePath)
-{
-    m_namePath = _namePath;
-    m_namePathHasBeenSet = true;
-}
-
-bool DescribeAccountGroupsData::NamePathHasBeenSet() const
-{
-    return m_namePathHasBeenSet;
+    return m_itimeHasBeenSet;
 }
 
 string DescribeAccountGroupsData::GetParentOrgId() const
@@ -613,36 +635,52 @@ bool DescribeAccountGroupsData::ParentOrgIdHasBeenSet() const
     return m_parentOrgIdHasBeenSet;
 }
 
-string DescribeAccountGroupsData::GetIdPath() const
+string DescribeAccountGroupsData::GetImportType() const
 {
-    return m_idPath;
+    return m_importType;
 }
 
-void DescribeAccountGroupsData::SetIdPath(const string& _idPath)
+void DescribeAccountGroupsData::SetImportType(const string& _importType)
 {
-    m_idPath = _idPath;
-    m_idPathHasBeenSet = true;
+    m_importType = _importType;
+    m_importTypeHasBeenSet = true;
 }
 
-bool DescribeAccountGroupsData::IdPathHasBeenSet() const
+bool DescribeAccountGroupsData::ImportTypeHasBeenSet() const
 {
-    return m_idPathHasBeenSet;
+    return m_importTypeHasBeenSet;
 }
 
-int64_t DescribeAccountGroupsData::GetId() const
+string DescribeAccountGroupsData::GetMiniIamId() const
 {
-    return m_id;
+    return m_miniIamId;
 }
 
-void DescribeAccountGroupsData::SetId(const int64_t& _id)
+void DescribeAccountGroupsData::SetMiniIamId(const string& _miniIamId)
 {
-    m_id = _id;
-    m_idHasBeenSet = true;
+    m_miniIamId = _miniIamId;
+    m_miniIamIdHasBeenSet = true;
 }
 
-bool DescribeAccountGroupsData::IdHasBeenSet() const
+bool DescribeAccountGroupsData::MiniIamIdHasBeenSet() const
 {
-    return m_idHasBeenSet;
+    return m_miniIamIdHasBeenSet;
+}
+
+int64_t DescribeAccountGroupsData::GetUserTotal() const
+{
+    return m_userTotal;
+}
+
+void DescribeAccountGroupsData::SetUserTotal(const int64_t& _userTotal)
+{
+    m_userTotal = _userTotal;
+    m_userTotalHasBeenSet = true;
+}
+
+bool DescribeAccountGroupsData::UserTotalHasBeenSet() const
+{
+    return m_userTotalHasBeenSet;
 }
 
 bool DescribeAccountGroupsData::GetIsLeaf() const
@@ -661,19 +699,51 @@ bool DescribeAccountGroupsData::IsLeafHasBeenSet() const
     return m_isLeafHasBeenSet;
 }
 
-string DescribeAccountGroupsData::GetUtime() const
+bool DescribeAccountGroupsData::GetReadOnly() const
 {
-    return m_utime;
+    return m_readOnly;
 }
 
-void DescribeAccountGroupsData::SetUtime(const string& _utime)
+void DescribeAccountGroupsData::SetReadOnly(const bool& _readOnly)
 {
-    m_utime = _utime;
-    m_utimeHasBeenSet = true;
+    m_readOnly = _readOnly;
+    m_readOnlyHasBeenSet = true;
 }
 
-bool DescribeAccountGroupsData::UtimeHasBeenSet() const
+bool DescribeAccountGroupsData::ReadOnlyHasBeenSet() const
 {
-    return m_utimeHasBeenSet;
+    return m_readOnlyHasBeenSet;
+}
+
+string DescribeAccountGroupsData::GetLatestSyncResult() const
+{
+    return m_latestSyncResult;
+}
+
+void DescribeAccountGroupsData::SetLatestSyncResult(const string& _latestSyncResult)
+{
+    m_latestSyncResult = _latestSyncResult;
+    m_latestSyncResultHasBeenSet = true;
+}
+
+bool DescribeAccountGroupsData::LatestSyncResultHasBeenSet() const
+{
+    return m_latestSyncResultHasBeenSet;
+}
+
+string DescribeAccountGroupsData::GetLatestSyncTime() const
+{
+    return m_latestSyncTime;
+}
+
+void DescribeAccountGroupsData::SetLatestSyncTime(const string& _latestSyncTime)
+{
+    m_latestSyncTime = _latestSyncTime;
+    m_latestSyncTimeHasBeenSet = true;
+}
+
+bool DescribeAccountGroupsData::LatestSyncTimeHasBeenSet() const
+{
+    return m_latestSyncTimeHasBeenSet;
 }
 

@@ -64,6 +64,7 @@ https://cloud.tencent.com/document/product/1323/78346#component-.E4.B8.89.E7.A7.
 <li> <b>ATTACHMENT</b> : 附件控件,ComponentValue 填写附件图片的资源 ID列表，以逗号分隔；</li>
 <li> <b>SELECTOR</b> : 选择器控件，ComponentValue填写选择的字符串内容；</li>
 <li> <b>DATE</b> : 日期控件；默认是格式化为xxxx年xx月xx日字符串；</li>
+<li> <b>WATERMARK</b> : 水印控件；只能分配给发起方，必须设置ComponentExtra；</li>
 <li> <b>DISTRICT</b> : 省市区行政区控件，ComponentValue填写省市区行政区字符串内容；</li></ul>
 
 **如果是SignComponent签署控件类型，
@@ -91,6 +92,7 @@ https://cloud.tencent.com/document/product/1323/78346#component-.E4.B8.89.E7.A7.
 <li> <b>ATTACHMENT</b> : 附件控件,ComponentValue 填写附件图片的资源 ID列表，以逗号分隔；</li>
 <li> <b>SELECTOR</b> : 选择器控件，ComponentValue填写选择的字符串内容；</li>
 <li> <b>DATE</b> : 日期控件；默认是格式化为xxxx年xx月xx日字符串；</li>
+<li> <b>WATERMARK</b> : 水印控件；只能分配给发起方，必须设置ComponentExtra；</li>
 <li> <b>DISTRICT</b> : 省市区行政区控件，ComponentValue填写省市区行政区字符串内容；</li></ul>
 
 **如果是SignComponent签署控件类型，
@@ -123,6 +125,7 @@ https://cloud.tencent.com/document/product/1323/78346#component-.E4.B8.89.E7.A7.
 <li> <b>ATTACHMENT</b> : 附件控件,ComponentValue 填写附件图片的资源 ID列表，以逗号分隔；</li>
 <li> <b>SELECTOR</b> : 选择器控件，ComponentValue填写选择的字符串内容；</li>
 <li> <b>DATE</b> : 日期控件；默认是格式化为xxxx年xx月xx日字符串；</li>
+<li> <b>WATERMARK</b> : 水印控件；只能分配给发起方，必须设置ComponentExtra；</li>
 <li> <b>DISTRICT</b> : 省市区行政区控件，ComponentValue填写省市区行政区字符串内容；</li></ul>
 
 **如果是SignComponent签署控件类型，
@@ -150,6 +153,7 @@ https://cloud.tencent.com/document/product/1323/78346#component-.E4.B8.89.E7.A7.
 <li> <b>ATTACHMENT</b> : 附件控件,ComponentValue 填写附件图片的资源 ID列表，以逗号分隔；</li>
 <li> <b>SELECTOR</b> : 选择器控件，ComponentValue填写选择的字符串内容；</li>
 <li> <b>DATE</b> : 日期控件；默认是格式化为xxxx年xx月xx日字符串；</li>
+<li> <b>WATERMARK</b> : 水印控件；只能分配给发起方，必须设置ComponentExtra；</li>
 <li> <b>DISTRICT</b> : 省市区行政区控件，ComponentValue填写省市区行政区字符串内容；</li></ul>
 
 **如果是SignComponent签署控件类型，
@@ -560,6 +564,14 @@ https://cloud.tencent.com/document/product/1323/78346#component-.E4.B8.89.E7.A7.
 <li> <b>FontSize</b>： 范围12 :72</li></ul>
 <b>参数样例</b>：`{"FontColor":"255,0,0","FontSize":12}`
 
+<font color="red">ComponentType为WATERMARK时</font>，支持以下参数：
+<ul><li> <b>Font</b>：目前只支持黑体、宋体</li>
+<li> <b>FontSize</b>： 范围6 :24</li>
+<li> <b>Opacity</b>： 透明度，范围0 :1</li>
+<li> <b>Density</b>： 水印样式，1-宽松，2-标准（默认值），3-密集，</li>
+<li> <b>SubType</b>： 水印类型：CUSTOM_WATERMARK-自定义内容，PERSON_INFO_WATERMARK-访问者信息</li></ul>
+<b>参数样例</b>：`"{\"Font\":\"黑体\",\"FontSize\":20,\"Opacity\":0.1,\"Density\":2,\"SubType\":\"PERSON_INFO_WATERMARK\"}"`
+
 <font color="red">ComponentType为FILL_IMAGE时</font>，支持以下参数：
 <ul><li> <b>NotMakeImageCenter</b>：bool。是否设置图片居中。false：居中（默认）。 true : 不居中</li>
 <li> <b>FillMethod</b> : int. 填充方式。0-铺满（默认）；1-等比例缩放</li></ul>
@@ -614,6 +626,14 @@ https://cloud.tencent.com/document/product/1323/78346#component-.E4.B8.89.E7.A7.
 <ul><li> <b>Font</b>：目前只支持黑体、宋体</li>
 <li> <b>FontSize</b>： 范围12 :72</li></ul>
 <b>参数样例</b>：`{"FontColor":"255,0,0","FontSize":12}`
+
+<font color="red">ComponentType为WATERMARK时</font>，支持以下参数：
+<ul><li> <b>Font</b>：目前只支持黑体、宋体</li>
+<li> <b>FontSize</b>： 范围6 :24</li>
+<li> <b>Opacity</b>： 透明度，范围0 :1</li>
+<li> <b>Density</b>： 水印样式，1-宽松，2-标准（默认值），3-密集，</li>
+<li> <b>SubType</b>： 水印类型：CUSTOM_WATERMARK-自定义内容，PERSON_INFO_WATERMARK-访问者信息</li></ul>
+<b>参数样例</b>：`"{\"Font\":\"黑体\",\"FontSize\":20,\"Opacity\":0.1,\"Density\":2,\"SubType\":\"PERSON_INFO_WATERMARK\"}"`
 
 <font color="red">ComponentType为FILL_IMAGE时</font>，支持以下参数：
 <ul><li> <b>NotMakeImageCenter</b>：bool。是否设置图片居中。false：居中（默认）。 true : 不居中</li>
@@ -675,6 +695,14 @@ https://cloud.tencent.com/document/product/1323/78346#component-.E4.B8.89.E7.A7.
 <li> <b>FontSize</b>： 范围12 :72</li></ul>
 <b>参数样例</b>：`{"FontColor":"255,0,0","FontSize":12}`
 
+<font color="red">ComponentType为WATERMARK时</font>，支持以下参数：
+<ul><li> <b>Font</b>：目前只支持黑体、宋体</li>
+<li> <b>FontSize</b>： 范围6 :24</li>
+<li> <b>Opacity</b>： 透明度，范围0 :1</li>
+<li> <b>Density</b>： 水印样式，1-宽松，2-标准（默认值），3-密集，</li>
+<li> <b>SubType</b>： 水印类型：CUSTOM_WATERMARK-自定义内容，PERSON_INFO_WATERMARK-访问者信息</li></ul>
+<b>参数样例</b>：`"{\"Font\":\"黑体\",\"FontSize\":20,\"Opacity\":0.1,\"Density\":2,\"SubType\":\"PERSON_INFO_WATERMARK\"}"`
+
 <font color="red">ComponentType为FILL_IMAGE时</font>，支持以下参数：
 <ul><li> <b>NotMakeImageCenter</b>：bool。是否设置图片居中。false：居中（默认）。 true : 不居中</li>
 <li> <b>FillMethod</b> : int. 填充方式。0-铺满（默认）；1-等比例缩放</li></ul>
@@ -729,6 +757,14 @@ https://cloud.tencent.com/document/product/1323/78346#component-.E4.B8.89.E7.A7.
 <ul><li> <b>Font</b>：目前只支持黑体、宋体</li>
 <li> <b>FontSize</b>： 范围12 :72</li></ul>
 <b>参数样例</b>：`{"FontColor":"255,0,0","FontSize":12}`
+
+<font color="red">ComponentType为WATERMARK时</font>，支持以下参数：
+<ul><li> <b>Font</b>：目前只支持黑体、宋体</li>
+<li> <b>FontSize</b>： 范围6 :24</li>
+<li> <b>Opacity</b>： 透明度，范围0 :1</li>
+<li> <b>Density</b>： 水印样式，1-宽松，2-标准（默认值），3-密集，</li>
+<li> <b>SubType</b>： 水印类型：CUSTOM_WATERMARK-自定义内容，PERSON_INFO_WATERMARK-访问者信息</li></ul>
+<b>参数样例</b>：`"{\"Font\":\"黑体\",\"FontSize\":20,\"Opacity\":0.1,\"Density\":2,\"SubType\":\"PERSON_INFO_WATERMARK\"}"`
 
 <font color="red">ComponentType为FILL_IMAGE时</font>，支持以下参数：
 <ul><li> <b>NotMakeImageCenter</b>：bool。是否设置图片居中。false：居中（默认）。 true : 不居中</li>
@@ -1220,6 +1256,7 @@ https://cloud.tencent.com/document/product/1323/78346#component-.E4.B8.89.E7.A7.
 <li> <b>ATTACHMENT</b> : 附件控件,ComponentValue 填写附件图片的资源 ID列表，以逗号分隔；</li>
 <li> <b>SELECTOR</b> : 选择器控件，ComponentValue填写选择的字符串内容；</li>
 <li> <b>DATE</b> : 日期控件；默认是格式化为xxxx年xx月xx日字符串；</li>
+<li> <b>WATERMARK</b> : 水印控件；只能分配给发起方，必须设置ComponentExtra；</li>
 <li> <b>DISTRICT</b> : 省市区行政区控件，ComponentValue填写省市区行政区字符串内容；</li></ul>
 
 **如果是SignComponent签署控件类型，
@@ -1355,6 +1392,14 @@ https://cloud.tencent.com/document/product/1323/78346#component-.E4.B8.89.E7.A7.
 <ul><li> <b>Font</b>：目前只支持黑体、宋体</li>
 <li> <b>FontSize</b>： 范围12 :72</li></ul>
 <b>参数样例</b>：`{"FontColor":"255,0,0","FontSize":12}`
+
+<font color="red">ComponentType为WATERMARK时</font>，支持以下参数：
+<ul><li> <b>Font</b>：目前只支持黑体、宋体</li>
+<li> <b>FontSize</b>： 范围6 :24</li>
+<li> <b>Opacity</b>： 透明度，范围0 :1</li>
+<li> <b>Density</b>： 水印样式，1-宽松，2-标准（默认值），3-密集，</li>
+<li> <b>SubType</b>： 水印类型：CUSTOM_WATERMARK-自定义内容，PERSON_INFO_WATERMARK-访问者信息</li></ul>
+<b>参数样例</b>：`"{\"Font\":\"黑体\",\"FontSize\":20,\"Opacity\":0.1,\"Density\":2,\"SubType\":\"PERSON_INFO_WATERMARK\"}"`
 
 <font color="red">ComponentType为FILL_IMAGE时</font>，支持以下参数：
 <ul><li> <b>NotMakeImageCenter</b>：bool。是否设置图片居中。false：居中（默认）。 true : 不居中</li>

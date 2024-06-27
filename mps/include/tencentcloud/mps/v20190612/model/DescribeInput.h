@@ -426,6 +426,27 @@ namespace TencentCloud
                      */
                     bool SecurityGroupIdsHasBeenSet() const;
 
+                    /**
+                     * 获取可用区配置，开启容灾情况下最多有两个，顺序和pipeline 0、1对应，否则最多只有一个可用区。	
+                     * @return Zones 可用区配置，开启容灾情况下最多有两个，顺序和pipeline 0、1对应，否则最多只有一个可用区。	
+                     * 
+                     */
+                    std::vector<std::string> GetZones() const;
+
+                    /**
+                     * 设置可用区配置，开启容灾情况下最多有两个，顺序和pipeline 0、1对应，否则最多只有一个可用区。	
+                     * @param _zones 可用区配置，开启容灾情况下最多有两个，顺序和pipeline 0、1对应，否则最多只有一个可用区。	
+                     * 
+                     */
+                    void SetZones(const std::vector<std::string>& _zones);
+
+                    /**
+                     * 判断参数 Zones 是否已赋值
+                     * @return Zones 是否已赋值
+                     * 
+                     */
+                    bool ZonesHasBeenSet() const;
+
                 private:
 
                     /**
@@ -532,6 +553,12 @@ namespace TencentCloud
                      */
                     std::vector<std::string> m_securityGroupIds;
                     bool m_securityGroupIdsHasBeenSet;
+
+                    /**
+                     * 可用区配置，开启容灾情况下最多有两个，顺序和pipeline 0、1对应，否则最多只有一个可用区。	
+                     */
+                    std::vector<std::string> m_zones;
+                    bool m_zonesHasBeenSet;
 
                 };
             }

@@ -27,7 +27,16 @@ AutoScaleResourceConf::AutoScaleResourceConf() :
     m_scaleUpperBoundHasBeenSet(false),
     m_strategyTypeHasBeenSet(false),
     m_nextTimeCanScaleHasBeenSet(false),
-    m_graceDownFlagHasBeenSet(false)
+    m_graceDownFlagHasBeenSet(false),
+    m_hardwareTypeHasBeenSet(false),
+    m_payModeHasBeenSet(false),
+    m_postPayPercentMinHasBeenSet(false),
+    m_changeToPodHasBeenSet(false),
+    m_groupNameHasBeenSet(false),
+    m_yarnNodeLabelHasBeenSet(false),
+    m_groupStatusHasBeenSet(false),
+    m_parallelHasBeenSet(false),
+    m_enableMNodeHasBeenSet(false)
 {
 }
 
@@ -106,6 +115,96 @@ CoreInternalOutcome AutoScaleResourceConf::Deserialize(const rapidjson::Value &v
         m_graceDownFlagHasBeenSet = true;
     }
 
+    if (value.HasMember("HardwareType") && !value["HardwareType"].IsNull())
+    {
+        if (!value["HardwareType"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `AutoScaleResourceConf.HardwareType` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_hardwareType = string(value["HardwareType"].GetString());
+        m_hardwareTypeHasBeenSet = true;
+    }
+
+    if (value.HasMember("PayMode") && !value["PayMode"].IsNull())
+    {
+        if (!value["PayMode"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `AutoScaleResourceConf.PayMode` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_payMode = string(value["PayMode"].GetString());
+        m_payModeHasBeenSet = true;
+    }
+
+    if (value.HasMember("PostPayPercentMin") && !value["PostPayPercentMin"].IsNull())
+    {
+        if (!value["PostPayPercentMin"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `AutoScaleResourceConf.PostPayPercentMin` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_postPayPercentMin = value["PostPayPercentMin"].GetInt64();
+        m_postPayPercentMinHasBeenSet = true;
+    }
+
+    if (value.HasMember("ChangeToPod") && !value["ChangeToPod"].IsNull())
+    {
+        if (!value["ChangeToPod"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `AutoScaleResourceConf.ChangeToPod` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_changeToPod = value["ChangeToPod"].GetInt64();
+        m_changeToPodHasBeenSet = true;
+    }
+
+    if (value.HasMember("GroupName") && !value["GroupName"].IsNull())
+    {
+        if (!value["GroupName"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `AutoScaleResourceConf.GroupName` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_groupName = string(value["GroupName"].GetString());
+        m_groupNameHasBeenSet = true;
+    }
+
+    if (value.HasMember("YarnNodeLabel") && !value["YarnNodeLabel"].IsNull())
+    {
+        if (!value["YarnNodeLabel"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `AutoScaleResourceConf.YarnNodeLabel` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_yarnNodeLabel = string(value["YarnNodeLabel"].GetString());
+        m_yarnNodeLabelHasBeenSet = true;
+    }
+
+    if (value.HasMember("GroupStatus") && !value["GroupStatus"].IsNull())
+    {
+        if (!value["GroupStatus"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `AutoScaleResourceConf.GroupStatus` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_groupStatus = value["GroupStatus"].GetInt64();
+        m_groupStatusHasBeenSet = true;
+    }
+
+    if (value.HasMember("Parallel") && !value["Parallel"].IsNull())
+    {
+        if (!value["Parallel"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `AutoScaleResourceConf.Parallel` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_parallel = value["Parallel"].GetInt64();
+        m_parallelHasBeenSet = true;
+    }
+
+    if (value.HasMember("EnableMNode") && !value["EnableMNode"].IsNull())
+    {
+        if (!value["EnableMNode"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `AutoScaleResourceConf.EnableMNode` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_enableMNode = value["EnableMNode"].GetInt64();
+        m_enableMNodeHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -167,6 +266,78 @@ void AutoScaleResourceConf::ToJsonObject(rapidjson::Value &value, rapidjson::Doc
         string key = "GraceDownFlag";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_graceDownFlag, allocator);
+    }
+
+    if (m_hardwareTypeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "HardwareType";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_hardwareType.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_payModeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "PayMode";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_payMode.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_postPayPercentMinHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "PostPayPercentMin";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_postPayPercentMin, allocator);
+    }
+
+    if (m_changeToPodHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ChangeToPod";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_changeToPod, allocator);
+    }
+
+    if (m_groupNameHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "GroupName";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_groupName.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_yarnNodeLabelHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "YarnNodeLabel";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_yarnNodeLabel.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_groupStatusHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "GroupStatus";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_groupStatus, allocator);
+    }
+
+    if (m_parallelHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Parallel";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_parallel, allocator);
+    }
+
+    if (m_enableMNodeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "EnableMNode";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_enableMNode, allocator);
     }
 
 }
@@ -282,5 +453,149 @@ void AutoScaleResourceConf::SetGraceDownFlag(const bool& _graceDownFlag)
 bool AutoScaleResourceConf::GraceDownFlagHasBeenSet() const
 {
     return m_graceDownFlagHasBeenSet;
+}
+
+string AutoScaleResourceConf::GetHardwareType() const
+{
+    return m_hardwareType;
+}
+
+void AutoScaleResourceConf::SetHardwareType(const string& _hardwareType)
+{
+    m_hardwareType = _hardwareType;
+    m_hardwareTypeHasBeenSet = true;
+}
+
+bool AutoScaleResourceConf::HardwareTypeHasBeenSet() const
+{
+    return m_hardwareTypeHasBeenSet;
+}
+
+string AutoScaleResourceConf::GetPayMode() const
+{
+    return m_payMode;
+}
+
+void AutoScaleResourceConf::SetPayMode(const string& _payMode)
+{
+    m_payMode = _payMode;
+    m_payModeHasBeenSet = true;
+}
+
+bool AutoScaleResourceConf::PayModeHasBeenSet() const
+{
+    return m_payModeHasBeenSet;
+}
+
+int64_t AutoScaleResourceConf::GetPostPayPercentMin() const
+{
+    return m_postPayPercentMin;
+}
+
+void AutoScaleResourceConf::SetPostPayPercentMin(const int64_t& _postPayPercentMin)
+{
+    m_postPayPercentMin = _postPayPercentMin;
+    m_postPayPercentMinHasBeenSet = true;
+}
+
+bool AutoScaleResourceConf::PostPayPercentMinHasBeenSet() const
+{
+    return m_postPayPercentMinHasBeenSet;
+}
+
+int64_t AutoScaleResourceConf::GetChangeToPod() const
+{
+    return m_changeToPod;
+}
+
+void AutoScaleResourceConf::SetChangeToPod(const int64_t& _changeToPod)
+{
+    m_changeToPod = _changeToPod;
+    m_changeToPodHasBeenSet = true;
+}
+
+bool AutoScaleResourceConf::ChangeToPodHasBeenSet() const
+{
+    return m_changeToPodHasBeenSet;
+}
+
+string AutoScaleResourceConf::GetGroupName() const
+{
+    return m_groupName;
+}
+
+void AutoScaleResourceConf::SetGroupName(const string& _groupName)
+{
+    m_groupName = _groupName;
+    m_groupNameHasBeenSet = true;
+}
+
+bool AutoScaleResourceConf::GroupNameHasBeenSet() const
+{
+    return m_groupNameHasBeenSet;
+}
+
+string AutoScaleResourceConf::GetYarnNodeLabel() const
+{
+    return m_yarnNodeLabel;
+}
+
+void AutoScaleResourceConf::SetYarnNodeLabel(const string& _yarnNodeLabel)
+{
+    m_yarnNodeLabel = _yarnNodeLabel;
+    m_yarnNodeLabelHasBeenSet = true;
+}
+
+bool AutoScaleResourceConf::YarnNodeLabelHasBeenSet() const
+{
+    return m_yarnNodeLabelHasBeenSet;
+}
+
+int64_t AutoScaleResourceConf::GetGroupStatus() const
+{
+    return m_groupStatus;
+}
+
+void AutoScaleResourceConf::SetGroupStatus(const int64_t& _groupStatus)
+{
+    m_groupStatus = _groupStatus;
+    m_groupStatusHasBeenSet = true;
+}
+
+bool AutoScaleResourceConf::GroupStatusHasBeenSet() const
+{
+    return m_groupStatusHasBeenSet;
+}
+
+int64_t AutoScaleResourceConf::GetParallel() const
+{
+    return m_parallel;
+}
+
+void AutoScaleResourceConf::SetParallel(const int64_t& _parallel)
+{
+    m_parallel = _parallel;
+    m_parallelHasBeenSet = true;
+}
+
+bool AutoScaleResourceConf::ParallelHasBeenSet() const
+{
+    return m_parallelHasBeenSet;
+}
+
+int64_t AutoScaleResourceConf::GetEnableMNode() const
+{
+    return m_enableMNode;
+}
+
+void AutoScaleResourceConf::SetEnableMNode(const int64_t& _enableMNode)
+{
+    m_enableMNode = _enableMNode;
+    m_enableMNodeHasBeenSet = true;
+}
+
+bool AutoScaleResourceConf::EnableMNodeHasBeenSet() const
+{
+    return m_enableMNodeHasBeenSet;
 }
 

@@ -335,6 +335,56 @@ namespace TencentCloud
                      */
                     bool RetryInfoHasBeenSet() const;
 
+                    /**
+                     * 获取重试英文描述
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return RetryEnReason 重试英文描述
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::string GetRetryEnReason() const;
+
+                    /**
+                     * 设置重试英文描述
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _retryEnReason 重试英文描述
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetRetryEnReason(const std::string& _retryEnReason);
+
+                    /**
+                     * 判断参数 RetryEnReason 是否已赋值
+                     * @return RetryEnReason 是否已赋值
+                     * 
+                     */
+                    bool RetryEnReasonHasBeenSet() const;
+
+                    /**
+                     * 获取重试描述
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return RetryReason 重试描述
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::string GetRetryReason() const;
+
+                    /**
+                     * 设置重试描述
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _retryReason 重试描述
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetRetryReason(const std::string& _retryReason);
+
+                    /**
+                     * 判断参数 RetryReason 是否已赋值
+                     * @return RetryReason 是否已赋值
+                     * 
+                     */
+                    bool RetryReasonHasBeenSet() const;
+
                 private:
 
                     /**
@@ -418,6 +468,20 @@ namespace TencentCloud
                      */
                     std::string m_retryInfo;
                     bool m_retryInfoHasBeenSet;
+
+                    /**
+                     * 重试英文描述
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_retryEnReason;
+                    bool m_retryEnReasonHasBeenSet;
+
+                    /**
+                     * 重试描述
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_retryReason;
+                    bool m_retryReasonHasBeenSet;
 
                 };
             }

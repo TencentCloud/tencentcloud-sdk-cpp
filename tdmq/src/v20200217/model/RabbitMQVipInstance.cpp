@@ -38,7 +38,8 @@ RabbitMQVipInstance::RabbitMQVipInstance() :
     m_exceptionInformationHasBeenSet(false),
     m_clusterStatusHasBeenSet(false),
     m_publicAccessEndpointHasBeenSet(false),
-    m_vpcsHasBeenSet(false)
+    m_vpcsHasBeenSet(false),
+    m_createTimeHasBeenSet(false)
 {
 }
 
@@ -237,6 +238,16 @@ CoreInternalOutcome RabbitMQVipInstance::Deserialize(const rapidjson::Value &val
         m_vpcsHasBeenSet = true;
     }
 
+    if (value.HasMember("CreateTime") && !value["CreateTime"].IsNull())
+    {
+        if (!value["CreateTime"].IsUint64())
+        {
+            return CoreInternalOutcome(Core::Error("response `RabbitMQVipInstance.CreateTime` IsUint64=false incorrectly").SetRequestId(requestId));
+        }
+        m_createTime = value["CreateTime"].GetUint64();
+        m_createTimeHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -393,6 +404,14 @@ void RabbitMQVipInstance::ToJsonObject(rapidjson::Value &value, rapidjson::Docum
             value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
             (*itr).ToJsonObject(value[key.c_str()][i], allocator);
         }
+    }
+
+    if (m_createTimeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "CreateTime";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_createTime, allocator);
     }
 
 }
@@ -684,5 +703,21 @@ void RabbitMQVipInstance::SetVpcs(const vector<VpcEndpointInfo>& _vpcs)
 bool RabbitMQVipInstance::VpcsHasBeenSet() const
 {
     return m_vpcsHasBeenSet;
+}
+
+uint64_t RabbitMQVipInstance::GetCreateTime() const
+{
+    return m_createTime;
+}
+
+void RabbitMQVipInstance::SetCreateTime(const uint64_t& _createTime)
+{
+    m_createTime = _createTime;
+    m_createTimeHasBeenSet = true;
+}
+
+bool RabbitMQVipInstance::CreateTimeHasBeenSet() const
+{
+    return m_createTimeHasBeenSet;
 }
 

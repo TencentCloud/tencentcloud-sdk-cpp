@@ -21,6 +21,7 @@
 #include <vector>
 #include <map>
 #include <tencentcloud/core/AbstractModel.h>
+#include <tencentcloud/tdmq/v20200217/model/Tag.h>
 
 
 namespace TencentCloud
@@ -211,15 +212,15 @@ namespace TencentCloud
                     bool EnableCreateDefaultHaMirrorQueueHasBeenSet() const;
 
                     /**
-                     * 获取自动续费,不传默认为true
-                     * @return AutoRenewFlag 自动续费,不传默认为true
+                     * 获取预付费使用。自动续费,不传默认为true
+                     * @return AutoRenewFlag 预付费使用。自动续费,不传默认为true
                      * 
                      */
                     bool GetAutoRenewFlag() const;
 
                     /**
-                     * 设置自动续费,不传默认为true
-                     * @param _autoRenewFlag 自动续费,不传默认为true
+                     * 设置预付费使用。自动续费,不传默认为true
+                     * @param _autoRenewFlag 预付费使用。自动续费,不传默认为true
                      * 
                      */
                     void SetAutoRenewFlag(const bool& _autoRenewFlag);
@@ -251,6 +252,111 @@ namespace TencentCloud
                      * 
                      */
                     bool TimeSpanHasBeenSet() const;
+
+                    /**
+                     * 获取付费方式，0 为后付费，即按量计费；1 为预付费，即包年包月。默认包年包月
+                     * @return PayMode 付费方式，0 为后付费，即按量计费；1 为预付费，即包年包月。默认包年包月
+                     * 
+                     */
+                    uint64_t GetPayMode() const;
+
+                    /**
+                     * 设置付费方式，0 为后付费，即按量计费；1 为预付费，即包年包月。默认包年包月
+                     * @param _payMode 付费方式，0 为后付费，即按量计费；1 为预付费，即包年包月。默认包年包月
+                     * 
+                     */
+                    void SetPayMode(const uint64_t& _payMode);
+
+                    /**
+                     * 判断参数 PayMode 是否已赋值
+                     * @return PayMode 是否已赋值
+                     * 
+                     */
+                    bool PayModeHasBeenSet() const;
+
+                    /**
+                     * 获取集群版本，不传默认为 3.8.30，可选值为 3.8.30 和 3.11.8
+                     * @return ClusterVersion 集群版本，不传默认为 3.8.30，可选值为 3.8.30 和 3.11.8
+                     * 
+                     */
+                    std::string GetClusterVersion() const;
+
+                    /**
+                     * 设置集群版本，不传默认为 3.8.30，可选值为 3.8.30 和 3.11.8
+                     * @param _clusterVersion 集群版本，不传默认为 3.8.30，可选值为 3.8.30 和 3.11.8
+                     * 
+                     */
+                    void SetClusterVersion(const std::string& _clusterVersion);
+
+                    /**
+                     * 判断参数 ClusterVersion 是否已赋值
+                     * @return ClusterVersion 是否已赋值
+                     * 
+                     */
+                    bool ClusterVersionHasBeenSet() const;
+
+                    /**
+                     * 获取是否国际站请求，默认 false
+                     * @return IsIntl 是否国际站请求，默认 false
+                     * 
+                     */
+                    bool GetIsIntl() const;
+
+                    /**
+                     * 设置是否国际站请求，默认 false
+                     * @param _isIntl 是否国际站请求，默认 false
+                     * 
+                     */
+                    void SetIsIntl(const bool& _isIntl);
+
+                    /**
+                     * 判断参数 IsIntl 是否已赋值
+                     * @return IsIntl 是否已赋值
+                     * 
+                     */
+                    bool IsIntlHasBeenSet() const;
+
+                    /**
+                     * 获取资源标签列表
+                     * @return ResourceTags 资源标签列表
+                     * 
+                     */
+                    std::vector<Tag> GetResourceTags() const;
+
+                    /**
+                     * 设置资源标签列表
+                     * @param _resourceTags 资源标签列表
+                     * 
+                     */
+                    void SetResourceTags(const std::vector<Tag>& _resourceTags);
+
+                    /**
+                     * 判断参数 ResourceTags 是否已赋值
+                     * @return ResourceTags 是否已赋值
+                     * 
+                     */
+                    bool ResourceTagsHasBeenSet() const;
+
+                    /**
+                     * 获取公网带宽大小，单位 M
+                     * @return Bandwidth 公网带宽大小，单位 M
+                     * 
+                     */
+                    uint64_t GetBandwidth() const;
+
+                    /**
+                     * 设置公网带宽大小，单位 M
+                     * @param _bandwidth 公网带宽大小，单位 M
+                     * 
+                     */
+                    void SetBandwidth(const uint64_t& _bandwidth);
+
+                    /**
+                     * 判断参数 Bandwidth 是否已赋值
+                     * @return Bandwidth 是否已赋值
+                     * 
+                     */
+                    bool BandwidthHasBeenSet() const;
 
                 private:
 
@@ -303,7 +409,7 @@ namespace TencentCloud
                     bool m_enableCreateDefaultHaMirrorQueueHasBeenSet;
 
                     /**
-                     * 自动续费,不传默认为true
+                     * 预付费使用。自动续费,不传默认为true
                      */
                     bool m_autoRenewFlag;
                     bool m_autoRenewFlagHasBeenSet;
@@ -313,6 +419,36 @@ namespace TencentCloud
                      */
                     int64_t m_timeSpan;
                     bool m_timeSpanHasBeenSet;
+
+                    /**
+                     * 付费方式，0 为后付费，即按量计费；1 为预付费，即包年包月。默认包年包月
+                     */
+                    uint64_t m_payMode;
+                    bool m_payModeHasBeenSet;
+
+                    /**
+                     * 集群版本，不传默认为 3.8.30，可选值为 3.8.30 和 3.11.8
+                     */
+                    std::string m_clusterVersion;
+                    bool m_clusterVersionHasBeenSet;
+
+                    /**
+                     * 是否国际站请求，默认 false
+                     */
+                    bool m_isIntl;
+                    bool m_isIntlHasBeenSet;
+
+                    /**
+                     * 资源标签列表
+                     */
+                    std::vector<Tag> m_resourceTags;
+                    bool m_resourceTagsHasBeenSet;
+
+                    /**
+                     * 公网带宽大小，单位 M
+                     */
+                    uint64_t m_bandwidth;
+                    bool m_bandwidthHasBeenSet;
 
                 };
             }

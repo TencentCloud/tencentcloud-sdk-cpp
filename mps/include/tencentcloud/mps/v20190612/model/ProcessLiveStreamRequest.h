@@ -196,15 +196,15 @@ namespace TencentCloud
                     bool AiAnalysisTaskHasBeenSet() const;
 
                     /**
-                     * 获取视频内容质检类型任务参数。
-                     * @return AiQualityControlTask 视频内容质检类型任务参数。
+                     * 获取媒体质检类型任务参数。
+                     * @return AiQualityControlTask 媒体质检类型任务参数。
                      * 
                      */
                     AiQualityControlTaskInput GetAiQualityControlTask() const;
 
                     /**
-                     * 设置视频内容质检类型任务参数。
-                     * @param _aiQualityControlTask 视频内容质检类型任务参数。
+                     * 设置媒体质检类型任务参数。
+                     * @param _aiQualityControlTask 媒体质检类型任务参数。
                      * 
                      */
                     void SetAiQualityControlTask(const AiQualityControlTaskInput& _aiQualityControlTask);
@@ -340,7 +340,7 @@ namespace TencentCloud
                     bool m_aiAnalysisTaskHasBeenSet;
 
                     /**
-                     * 视频内容质检类型任务参数。
+                     * 媒体质检类型任务参数。
                      */
                     AiQualityControlTaskInput m_aiQualityControlTask;
                     bool m_aiQualityControlTaskHasBeenSet;

@@ -33,7 +33,9 @@ AutoScaleRecord::AutoScaleRecord() :
     m_compensateFlagHasBeenSet(false),
     m_compensateCountHasBeenSet(false),
     m_retryCountHasBeenSet(false),
-    m_retryInfoHasBeenSet(false)
+    m_retryInfoHasBeenSet(false),
+    m_retryEnReasonHasBeenSet(false),
+    m_retryReasonHasBeenSet(false)
 {
 }
 
@@ -172,6 +174,26 @@ CoreInternalOutcome AutoScaleRecord::Deserialize(const rapidjson::Value &value)
         m_retryInfoHasBeenSet = true;
     }
 
+    if (value.HasMember("RetryEnReason") && !value["RetryEnReason"].IsNull())
+    {
+        if (!value["RetryEnReason"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `AutoScaleRecord.RetryEnReason` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_retryEnReason = string(value["RetryEnReason"].GetString());
+        m_retryEnReasonHasBeenSet = true;
+    }
+
+    if (value.HasMember("RetryReason") && !value["RetryReason"].IsNull())
+    {
+        if (!value["RetryReason"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `AutoScaleRecord.RetryReason` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_retryReason = string(value["RetryReason"].GetString());
+        m_retryReasonHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -281,6 +303,22 @@ void AutoScaleRecord::ToJsonObject(rapidjson::Value &value, rapidjson::Document:
         string key = "RetryInfo";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_retryInfo.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_retryEnReasonHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "RetryEnReason";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_retryEnReason.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_retryReasonHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "RetryReason";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_retryReason.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -492,5 +530,37 @@ void AutoScaleRecord::SetRetryInfo(const string& _retryInfo)
 bool AutoScaleRecord::RetryInfoHasBeenSet() const
 {
     return m_retryInfoHasBeenSet;
+}
+
+string AutoScaleRecord::GetRetryEnReason() const
+{
+    return m_retryEnReason;
+}
+
+void AutoScaleRecord::SetRetryEnReason(const string& _retryEnReason)
+{
+    m_retryEnReason = _retryEnReason;
+    m_retryEnReasonHasBeenSet = true;
+}
+
+bool AutoScaleRecord::RetryEnReasonHasBeenSet() const
+{
+    return m_retryEnReasonHasBeenSet;
+}
+
+string AutoScaleRecord::GetRetryReason() const
+{
+    return m_retryReason;
+}
+
+void AutoScaleRecord::SetRetryReason(const string& _retryReason)
+{
+    m_retryReason = _retryReason;
+    m_retryReasonHasBeenSet = true;
+}
+
+bool AutoScaleRecord::RetryReasonHasBeenSet() const
+{
+    return m_retryReasonHasBeenSet;
 }
 

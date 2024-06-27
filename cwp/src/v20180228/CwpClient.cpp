@@ -16509,49 +16509,6 @@ CwpClient::ExportAttackEventsOutcomeCallable CwpClient::ExportAttackEventsCallab
     return task->get_future();
 }
 
-CwpClient::ExportAttackLogsOutcome CwpClient::ExportAttackLogs(const ExportAttackLogsRequest &request)
-{
-    auto outcome = MakeRequest(request, "ExportAttackLogs");
-    if (outcome.IsSuccess())
-    {
-        auto r = outcome.GetResult();
-        string payload = string(r.Body(), r.BodySize());
-        ExportAttackLogsResponse rsp = ExportAttackLogsResponse();
-        auto o = rsp.Deserialize(payload);
-        if (o.IsSuccess())
-            return ExportAttackLogsOutcome(rsp);
-        else
-            return ExportAttackLogsOutcome(o.GetError());
-    }
-    else
-    {
-        return ExportAttackLogsOutcome(outcome.GetError());
-    }
-}
-
-void CwpClient::ExportAttackLogsAsync(const ExportAttackLogsRequest& request, const ExportAttackLogsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
-{
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->ExportAttackLogs(request), context);
-    };
-
-    Executor::GetInstance()->Submit(new Runnable(fn));
-}
-
-CwpClient::ExportAttackLogsOutcomeCallable CwpClient::ExportAttackLogsCallable(const ExportAttackLogsRequest &request)
-{
-    auto task = std::make_shared<std::packaged_task<ExportAttackLogsOutcome()>>(
-        [this, request]()
-        {
-            return this->ExportAttackLogs(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
-}
-
 CwpClient::ExportBaselineEffectHostListOutcome CwpClient::ExportBaselineEffectHostList(const ExportBaselineEffectHostListRequest &request)
 {
     auto outcome = MakeRequest(request, "ExportBaselineEffectHostList");

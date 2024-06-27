@@ -304,6 +304,131 @@ namespace TencentCloud
                      */
                     bool MaxQueuesPerTopicHasBeenSet() const;
 
+                    /**
+                     * 获取最大可设置消息保留时间，小时为单位	
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return MaxRetention 最大可设置消息保留时间，小时为单位	
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    int64_t GetMaxRetention() const;
+
+                    /**
+                     * 设置最大可设置消息保留时间，小时为单位	
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _maxRetention 最大可设置消息保留时间，小时为单位	
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetMaxRetention(const int64_t& _maxRetention);
+
+                    /**
+                     * 判断参数 MaxRetention 是否已赋值
+                     * @return MaxRetention 是否已赋值
+                     * 
+                     */
+                    bool MaxRetentionHasBeenSet() const;
+
+                    /**
+                     * 获取最小可设置消息保留时间，小时为单位
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return MinRetention 最小可设置消息保留时间，小时为单位
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    int64_t GetMinRetention() const;
+
+                    /**
+                     * 设置最小可设置消息保留时间，小时为单位
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _minRetention 最小可设置消息保留时间，小时为单位
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetMinRetention(const int64_t& _minRetention);
+
+                    /**
+                     * 判断参数 MinRetention 是否已赋值
+                     * @return MinRetention 是否已赋值
+                     * 
+                     */
+                    bool MinRetentionHasBeenSet() const;
+
+                    /**
+                     * 获取实例消息保留时间，小时为单位
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return Retention 实例消息保留时间，小时为单位
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    int64_t GetRetention() const;
+
+                    /**
+                     * 设置实例消息保留时间，小时为单位
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _retention 实例消息保留时间，小时为单位
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetRetention(const int64_t& _retention);
+
+                    /**
+                     * 判断参数 Retention 是否已赋值
+                     * @return Retention 是否已赋值
+                     * 
+                     */
+                    bool RetentionHasBeenSet() const;
+
+                    /**
+                     * 获取Topic个数最小配额，即免费额度，默认为集群规格单节点最小配额*节点个数
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return TopicNumLowerLimit Topic个数最小配额，即免费额度，默认为集群规格单节点最小配额*节点个数
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    int64_t GetTopicNumLowerLimit() const;
+
+                    /**
+                     * 设置Topic个数最小配额，即免费额度，默认为集群规格单节点最小配额*节点个数
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _topicNumLowerLimit Topic个数最小配额，即免费额度，默认为集群规格单节点最小配额*节点个数
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetTopicNumLowerLimit(const int64_t& _topicNumLowerLimit);
+
+                    /**
+                     * 判断参数 TopicNumLowerLimit 是否已赋值
+                     * @return TopicNumLowerLimit 是否已赋值
+                     * 
+                     */
+                    bool TopicNumLowerLimitHasBeenSet() const;
+
+                    /**
+                     * 获取Topic个数最大配额，默认为集群规格单节点最大配额*节点个数
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return TopicNumUpperLimit Topic个数最大配额，默认为集群规格单节点最大配额*节点个数
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    int64_t GetTopicNumUpperLimit() const;
+
+                    /**
+                     * 设置Topic个数最大配额，默认为集群规格单节点最大配额*节点个数
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _topicNumUpperLimit Topic个数最大配额，默认为集群规格单节点最大配额*节点个数
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetTopicNumUpperLimit(const int64_t& _topicNumUpperLimit);
+
+                    /**
+                     * 判断参数 TopicNumUpperLimit 是否已赋值
+                     * @return TopicNumUpperLimit 是否已赋值
+                     * 
+                     */
+                    bool TopicNumUpperLimitHasBeenSet() const;
+
                 private:
 
                     /**
@@ -378,6 +503,41 @@ namespace TencentCloud
                      */
                     uint64_t m_maxQueuesPerTopic;
                     bool m_maxQueuesPerTopicHasBeenSet;
+
+                    /**
+                     * 最大可设置消息保留时间，小时为单位	
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    int64_t m_maxRetention;
+                    bool m_maxRetentionHasBeenSet;
+
+                    /**
+                     * 最小可设置消息保留时间，小时为单位
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    int64_t m_minRetention;
+                    bool m_minRetentionHasBeenSet;
+
+                    /**
+                     * 实例消息保留时间，小时为单位
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    int64_t m_retention;
+                    bool m_retentionHasBeenSet;
+
+                    /**
+                     * Topic个数最小配额，即免费额度，默认为集群规格单节点最小配额*节点个数
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    int64_t m_topicNumLowerLimit;
+                    bool m_topicNumLowerLimitHasBeenSet;
+
+                    /**
+                     * Topic个数最大配额，默认为集群规格单节点最大配额*节点个数
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    int64_t m_topicNumUpperLimit;
+                    bool m_topicNumUpperLimitHasBeenSet;
 
                 };
             }

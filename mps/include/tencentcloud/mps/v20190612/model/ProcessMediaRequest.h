@@ -251,15 +251,15 @@ namespace TencentCloud
                     bool AiRecognitionTaskHasBeenSet() const;
 
                     /**
-                     * 获取视频质检类型任务参数。
-                     * @return AiQualityControlTask 视频质检类型任务参数。
+                     * 获取媒体质检类型任务参数。
+                     * @return AiQualityControlTask 媒体质检类型任务参数。
                      * 
                      */
                     AiQualityControlTaskInput GetAiQualityControlTask() const;
 
                     /**
-                     * 设置视频质检类型任务参数。
-                     * @param _aiQualityControlTask 视频质检类型任务参数。
+                     * 设置媒体质检类型任务参数。
+                     * @param _aiQualityControlTask 媒体质检类型任务参数。
                      * 
                      */
                     void SetAiQualityControlTask(const AiQualityControlTaskInput& _aiQualityControlTask);
@@ -314,15 +314,15 @@ namespace TencentCloud
                     bool TasksPriorityHasBeenSet() const;
 
                     /**
-                     * 获取用于去重的识别码，如果三天内曾有过相同的识别码的请求，则本次的请求会返回错误。最长 50 个字符，不带或者带空字符串表示不做去重。
-                     * @return SessionId 用于去重的识别码，如果三天内曾有过相同的识别码的请求，则本次的请求会返回错误。最长 50 个字符，不带或者带空字符串表示不做去重。
+                     * 获取用于去重的识别码，如果三天内曾有过相同的识别码的请求，则本次的请求会返回错误。最长 50 个字符，不传该参数或者参数为空字符串则本次请求不做去重操作。
+                     * @return SessionId 用于去重的识别码，如果三天内曾有过相同的识别码的请求，则本次的请求会返回错误。最长 50 个字符，不传该参数或者参数为空字符串则本次请求不做去重操作。
                      * 
                      */
                     std::string GetSessionId() const;
 
                     /**
-                     * 设置用于去重的识别码，如果三天内曾有过相同的识别码的请求，则本次的请求会返回错误。最长 50 个字符，不带或者带空字符串表示不做去重。
-                     * @param _sessionId 用于去重的识别码，如果三天内曾有过相同的识别码的请求，则本次的请求会返回错误。最长 50 个字符，不带或者带空字符串表示不做去重。
+                     * 设置用于去重的识别码，如果三天内曾有过相同的识别码的请求，则本次的请求会返回错误。最长 50 个字符，不传该参数或者参数为空字符串则本次请求不做去重操作。
+                     * @param _sessionId 用于去重的识别码，如果三天内曾有过相同的识别码的请求，则本次的请求会返回错误。最长 50 个字符，不传该参数或者参数为空字符串则本次请求不做去重操作。
                      * 
                      */
                     void SetSessionId(const std::string& _sessionId);
@@ -443,7 +443,7 @@ namespace TencentCloud
                     bool m_aiRecognitionTaskHasBeenSet;
 
                     /**
-                     * 视频质检类型任务参数。
+                     * 媒体质检类型任务参数。
                      */
                     AiQualityControlTaskInput m_aiQualityControlTask;
                     bool m_aiQualityControlTaskHasBeenSet;
@@ -461,7 +461,7 @@ namespace TencentCloud
                     bool m_tasksPriorityHasBeenSet;
 
                     /**
-                     * 用于去重的识别码，如果三天内曾有过相同的识别码的请求，则本次的请求会返回错误。最长 50 个字符，不带或者带空字符串表示不做去重。
+                     * 用于去重的识别码，如果三天内曾有过相同的识别码的请求，则本次的请求会返回错误。最长 50 个字符，不传该参数或者参数为空字符串则本次请求不做去重操作。
                      */
                     std::string m_sessionId;
                     bool m_sessionIdHasBeenSet;

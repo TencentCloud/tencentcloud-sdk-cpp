@@ -32,7 +32,12 @@ CreateRabbitMQVipInstanceRequest::CreateRabbitMQVipInstanceRequest() :
     m_storageSizeHasBeenSet(false),
     m_enableCreateDefaultHaMirrorQueueHasBeenSet(false),
     m_autoRenewFlagHasBeenSet(false),
-    m_timeSpanHasBeenSet(false)
+    m_timeSpanHasBeenSet(false),
+    m_payModeHasBeenSet(false),
+    m_clusterVersionHasBeenSet(false),
+    m_isIntlHasBeenSet(false),
+    m_resourceTagsHasBeenSet(false),
+    m_bandwidthHasBeenSet(false)
 {
 }
 
@@ -126,6 +131,53 @@ string CreateRabbitMQVipInstanceRequest::ToJsonString() const
         string key = "TimeSpan";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_timeSpan, allocator);
+    }
+
+    if (m_payModeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "PayMode";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_payMode, allocator);
+    }
+
+    if (m_clusterVersionHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ClusterVersion";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_clusterVersion.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_isIntlHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "IsIntl";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_isIntl, allocator);
+    }
+
+    if (m_resourceTagsHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ResourceTags";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_resourceTags.begin(); itr != m_resourceTags.end(); ++itr, ++i)
+        {
+            d[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(d[key.c_str()][i], allocator);
+        }
+    }
+
+    if (m_bandwidthHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Bandwidth";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_bandwidth, allocator);
     }
 
 
@@ -294,6 +346,86 @@ void CreateRabbitMQVipInstanceRequest::SetTimeSpan(const int64_t& _timeSpan)
 bool CreateRabbitMQVipInstanceRequest::TimeSpanHasBeenSet() const
 {
     return m_timeSpanHasBeenSet;
+}
+
+uint64_t CreateRabbitMQVipInstanceRequest::GetPayMode() const
+{
+    return m_payMode;
+}
+
+void CreateRabbitMQVipInstanceRequest::SetPayMode(const uint64_t& _payMode)
+{
+    m_payMode = _payMode;
+    m_payModeHasBeenSet = true;
+}
+
+bool CreateRabbitMQVipInstanceRequest::PayModeHasBeenSet() const
+{
+    return m_payModeHasBeenSet;
+}
+
+string CreateRabbitMQVipInstanceRequest::GetClusterVersion() const
+{
+    return m_clusterVersion;
+}
+
+void CreateRabbitMQVipInstanceRequest::SetClusterVersion(const string& _clusterVersion)
+{
+    m_clusterVersion = _clusterVersion;
+    m_clusterVersionHasBeenSet = true;
+}
+
+bool CreateRabbitMQVipInstanceRequest::ClusterVersionHasBeenSet() const
+{
+    return m_clusterVersionHasBeenSet;
+}
+
+bool CreateRabbitMQVipInstanceRequest::GetIsIntl() const
+{
+    return m_isIntl;
+}
+
+void CreateRabbitMQVipInstanceRequest::SetIsIntl(const bool& _isIntl)
+{
+    m_isIntl = _isIntl;
+    m_isIntlHasBeenSet = true;
+}
+
+bool CreateRabbitMQVipInstanceRequest::IsIntlHasBeenSet() const
+{
+    return m_isIntlHasBeenSet;
+}
+
+vector<Tag> CreateRabbitMQVipInstanceRequest::GetResourceTags() const
+{
+    return m_resourceTags;
+}
+
+void CreateRabbitMQVipInstanceRequest::SetResourceTags(const vector<Tag>& _resourceTags)
+{
+    m_resourceTags = _resourceTags;
+    m_resourceTagsHasBeenSet = true;
+}
+
+bool CreateRabbitMQVipInstanceRequest::ResourceTagsHasBeenSet() const
+{
+    return m_resourceTagsHasBeenSet;
+}
+
+uint64_t CreateRabbitMQVipInstanceRequest::GetBandwidth() const
+{
+    return m_bandwidth;
+}
+
+void CreateRabbitMQVipInstanceRequest::SetBandwidth(const uint64_t& _bandwidth)
+{
+    m_bandwidth = _bandwidth;
+    m_bandwidthHasBeenSet = true;
+}
+
+bool CreateRabbitMQVipInstanceRequest::BandwidthHasBeenSet() const
+{
+    return m_bandwidthHasBeenSet;
 }
 
 

@@ -214,6 +214,68 @@ namespace TencentCloud
                      */
                     bool EndTimeOffsetHasBeenSet() const;
 
+                    /**
+                     * 获取检索语法规则，默认值为0。
+0：Lucene语法，1：CQL语法。
+详细说明参见<a href="https://cloud.tencent.com/document/product/614/47044#RetrievesConditionalRules" target="_blank">检索条件语法规则</a>
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return SyntaxRule 检索语法规则，默认值为0。
+0：Lucene语法，1：CQL语法。
+详细说明参见<a href="https://cloud.tencent.com/document/product/614/47044#RetrievesConditionalRules" target="_blank">检索条件语法规则</a>
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    uint64_t GetSyntaxRule() const;
+
+                    /**
+                     * 设置检索语法规则，默认值为0。
+0：Lucene语法，1：CQL语法。
+详细说明参见<a href="https://cloud.tencent.com/document/product/614/47044#RetrievesConditionalRules" target="_blank">检索条件语法规则</a>
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _syntaxRule 检索语法规则，默认值为0。
+0：Lucene语法，1：CQL语法。
+详细说明参见<a href="https://cloud.tencent.com/document/product/614/47044#RetrievesConditionalRules" target="_blank">检索条件语法规则</a>
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetSyntaxRule(const uint64_t& _syntaxRule);
+
+                    /**
+                     * 判断参数 SyntaxRule 是否已赋值
+                     * @return SyntaxRule 是否已赋值
+                     * 
+                     */
+                    bool SyntaxRuleHasBeenSet() const;
+
+                    /**
+                     * 获取主题类型。
+0: 日志主题，1: 指标主题
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return BizType 主题类型。
+0: 日志主题，1: 指标主题
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    uint64_t GetBizType() const;
+
+                    /**
+                     * 设置主题类型。
+0: 日志主题，1: 指标主题
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _bizType 主题类型。
+0: 日志主题，1: 指标主题
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetBizType(const uint64_t& _bizType);
+
+                    /**
+                     * 判断参数 BizType 是否已赋值
+                     * @return BizType 是否已赋值
+                     * 
+                     */
+                    bool BizTypeHasBeenSet() const;
+
                 private:
 
                     /**
@@ -263,6 +325,23 @@ namespace TencentCloud
                      */
                     int64_t m_endTimeOffset;
                     bool m_endTimeOffsetHasBeenSet;
+
+                    /**
+                     * 检索语法规则，默认值为0。
+0：Lucene语法，1：CQL语法。
+详细说明参见<a href="https://cloud.tencent.com/document/product/614/47044#RetrievesConditionalRules" target="_blank">检索条件语法规则</a>
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    uint64_t m_syntaxRule;
+                    bool m_syntaxRuleHasBeenSet;
+
+                    /**
+                     * 主题类型。
+0: 日志主题，1: 指标主题
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    uint64_t m_bizType;
+                    bool m_bizTypeHasBeenSet;
 
                 };
             }

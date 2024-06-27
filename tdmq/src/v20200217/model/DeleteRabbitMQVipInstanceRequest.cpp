@@ -23,7 +23,8 @@ using namespace TencentCloud::Tdmq::V20200217::Model;
 using namespace std;
 
 DeleteRabbitMQVipInstanceRequest::DeleteRabbitMQVipInstanceRequest() :
-    m_instanceIdHasBeenSet(false)
+    m_instanceIdHasBeenSet(false),
+    m_isIntlHasBeenSet(false)
 {
 }
 
@@ -40,6 +41,14 @@ string DeleteRabbitMQVipInstanceRequest::ToJsonString() const
         string key = "InstanceId";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_instanceId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_isIntlHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "IsIntl";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_isIntl, allocator);
     }
 
 
@@ -64,6 +73,22 @@ void DeleteRabbitMQVipInstanceRequest::SetInstanceId(const string& _instanceId)
 bool DeleteRabbitMQVipInstanceRequest::InstanceIdHasBeenSet() const
 {
     return m_instanceIdHasBeenSet;
+}
+
+bool DeleteRabbitMQVipInstanceRequest::GetIsIntl() const
+{
+    return m_isIntl;
+}
+
+void DeleteRabbitMQVipInstanceRequest::SetIsIntl(const bool& _isIntl)
+{
+    m_isIntl = _isIntl;
+    m_isIntlHasBeenSet = true;
+}
+
+bool DeleteRabbitMQVipInstanceRequest::IsIntlHasBeenSet() const
+{
+    return m_isIntlHasBeenSet;
 }
 
 

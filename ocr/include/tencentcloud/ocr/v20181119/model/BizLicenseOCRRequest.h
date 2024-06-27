@@ -133,6 +133,27 @@ namespace TencentCloud
                      */
                     bool EnableCopyWarnHasBeenSet() const;
 
+                    /**
+                     * 获取是否返回自动拼接的有效期，默认为true
+                     * @return EnablePeriodComplete 是否返回自动拼接的有效期，默认为true
+                     * 
+                     */
+                    bool GetEnablePeriodComplete() const;
+
+                    /**
+                     * 设置是否返回自动拼接的有效期，默认为true
+                     * @param _enablePeriodComplete 是否返回自动拼接的有效期，默认为true
+                     * 
+                     */
+                    void SetEnablePeriodComplete(const bool& _enablePeriodComplete);
+
+                    /**
+                     * 判断参数 EnablePeriodComplete 是否已赋值
+                     * @return EnablePeriodComplete 是否已赋值
+                     * 
+                     */
+                    bool EnablePeriodCompleteHasBeenSet() const;
+
                 private:
 
                     /**
@@ -159,6 +180,12 @@ namespace TencentCloud
                      */
                     bool m_enableCopyWarn;
                     bool m_enableCopyWarnHasBeenSet;
+
+                    /**
+                     * 是否返回自动拼接的有效期，默认为true
+                     */
+                    bool m_enablePeriodComplete;
+                    bool m_enablePeriodCompleteHasBeenSet;
 
                 };
             }

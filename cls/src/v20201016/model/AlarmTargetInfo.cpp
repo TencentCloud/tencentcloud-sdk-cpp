@@ -28,7 +28,9 @@ AlarmTargetInfo::AlarmTargetInfo() :
     m_queryHasBeenSet(false),
     m_numberHasBeenSet(false),
     m_startTimeOffsetHasBeenSet(false),
-    m_endTimeOffsetHasBeenSet(false)
+    m_endTimeOffsetHasBeenSet(false),
+    m_syntaxRuleHasBeenSet(false),
+    m_bizTypeHasBeenSet(false)
 {
 }
 
@@ -117,6 +119,26 @@ CoreInternalOutcome AlarmTargetInfo::Deserialize(const rapidjson::Value &value)
         m_endTimeOffsetHasBeenSet = true;
     }
 
+    if (value.HasMember("SyntaxRule") && !value["SyntaxRule"].IsNull())
+    {
+        if (!value["SyntaxRule"].IsUint64())
+        {
+            return CoreInternalOutcome(Core::Error("response `AlarmTargetInfo.SyntaxRule` IsUint64=false incorrectly").SetRequestId(requestId));
+        }
+        m_syntaxRule = value["SyntaxRule"].GetUint64();
+        m_syntaxRuleHasBeenSet = true;
+    }
+
+    if (value.HasMember("BizType") && !value["BizType"].IsNull())
+    {
+        if (!value["BizType"].IsUint64())
+        {
+            return CoreInternalOutcome(Core::Error("response `AlarmTargetInfo.BizType` IsUint64=false incorrectly").SetRequestId(requestId));
+        }
+        m_bizType = value["BizType"].GetUint64();
+        m_bizTypeHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -186,6 +208,22 @@ void AlarmTargetInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Document:
         string key = "EndTimeOffset";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_endTimeOffset, allocator);
+    }
+
+    if (m_syntaxRuleHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "SyntaxRule";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_syntaxRule, allocator);
+    }
+
+    if (m_bizTypeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "BizType";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_bizType, allocator);
     }
 
 }
@@ -317,5 +355,37 @@ void AlarmTargetInfo::SetEndTimeOffset(const int64_t& _endTimeOffset)
 bool AlarmTargetInfo::EndTimeOffsetHasBeenSet() const
 {
     return m_endTimeOffsetHasBeenSet;
+}
+
+uint64_t AlarmTargetInfo::GetSyntaxRule() const
+{
+    return m_syntaxRule;
+}
+
+void AlarmTargetInfo::SetSyntaxRule(const uint64_t& _syntaxRule)
+{
+    m_syntaxRule = _syntaxRule;
+    m_syntaxRuleHasBeenSet = true;
+}
+
+bool AlarmTargetInfo::SyntaxRuleHasBeenSet() const
+{
+    return m_syntaxRuleHasBeenSet;
+}
+
+uint64_t AlarmTargetInfo::GetBizType() const
+{
+    return m_bizType;
+}
+
+void AlarmTargetInfo::SetBizType(const uint64_t& _bizType)
+{
+    m_bizType = _bizType;
+    m_bizTypeHasBeenSet = true;
+}
+
+bool AlarmTargetInfo::BizTypeHasBeenSet() const
+{
+    return m_bizTypeHasBeenSet;
 }
 

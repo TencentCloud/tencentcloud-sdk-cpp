@@ -32,7 +32,12 @@ RocketMQInstanceConfig::RocketMQInstanceConfig() :
     m_nodeCountHasBeenSet(false),
     m_nodeDistributionHasBeenSet(false),
     m_topicDistributionHasBeenSet(false),
-    m_maxQueuesPerTopicHasBeenSet(false)
+    m_maxQueuesPerTopicHasBeenSet(false),
+    m_maxRetentionHasBeenSet(false),
+    m_minRetentionHasBeenSet(false),
+    m_retentionHasBeenSet(false),
+    m_topicNumLowerLimitHasBeenSet(false),
+    m_topicNumUpperLimitHasBeenSet(false)
 {
 }
 
@@ -181,6 +186,56 @@ CoreInternalOutcome RocketMQInstanceConfig::Deserialize(const rapidjson::Value &
         m_maxQueuesPerTopicHasBeenSet = true;
     }
 
+    if (value.HasMember("MaxRetention") && !value["MaxRetention"].IsNull())
+    {
+        if (!value["MaxRetention"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `RocketMQInstanceConfig.MaxRetention` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_maxRetention = value["MaxRetention"].GetInt64();
+        m_maxRetentionHasBeenSet = true;
+    }
+
+    if (value.HasMember("MinRetention") && !value["MinRetention"].IsNull())
+    {
+        if (!value["MinRetention"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `RocketMQInstanceConfig.MinRetention` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_minRetention = value["MinRetention"].GetInt64();
+        m_minRetentionHasBeenSet = true;
+    }
+
+    if (value.HasMember("Retention") && !value["Retention"].IsNull())
+    {
+        if (!value["Retention"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `RocketMQInstanceConfig.Retention` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_retention = value["Retention"].GetInt64();
+        m_retentionHasBeenSet = true;
+    }
+
+    if (value.HasMember("TopicNumLowerLimit") && !value["TopicNumLowerLimit"].IsNull())
+    {
+        if (!value["TopicNumLowerLimit"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `RocketMQInstanceConfig.TopicNumLowerLimit` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_topicNumLowerLimit = value["TopicNumLowerLimit"].GetInt64();
+        m_topicNumLowerLimitHasBeenSet = true;
+    }
+
+    if (value.HasMember("TopicNumUpperLimit") && !value["TopicNumUpperLimit"].IsNull())
+    {
+        if (!value["TopicNumUpperLimit"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `RocketMQInstanceConfig.TopicNumUpperLimit` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_topicNumUpperLimit = value["TopicNumUpperLimit"].GetInt64();
+        m_topicNumUpperLimitHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -296,6 +351,46 @@ void RocketMQInstanceConfig::ToJsonObject(rapidjson::Value &value, rapidjson::Do
         string key = "MaxQueuesPerTopic";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_maxQueuesPerTopic, allocator);
+    }
+
+    if (m_maxRetentionHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "MaxRetention";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_maxRetention, allocator);
+    }
+
+    if (m_minRetentionHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "MinRetention";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_minRetention, allocator);
+    }
+
+    if (m_retentionHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Retention";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_retention, allocator);
+    }
+
+    if (m_topicNumLowerLimitHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "TopicNumLowerLimit";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_topicNumLowerLimit, allocator);
+    }
+
+    if (m_topicNumUpperLimitHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "TopicNumUpperLimit";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_topicNumUpperLimit, allocator);
     }
 
 }
@@ -491,5 +586,85 @@ void RocketMQInstanceConfig::SetMaxQueuesPerTopic(const uint64_t& _maxQueuesPerT
 bool RocketMQInstanceConfig::MaxQueuesPerTopicHasBeenSet() const
 {
     return m_maxQueuesPerTopicHasBeenSet;
+}
+
+int64_t RocketMQInstanceConfig::GetMaxRetention() const
+{
+    return m_maxRetention;
+}
+
+void RocketMQInstanceConfig::SetMaxRetention(const int64_t& _maxRetention)
+{
+    m_maxRetention = _maxRetention;
+    m_maxRetentionHasBeenSet = true;
+}
+
+bool RocketMQInstanceConfig::MaxRetentionHasBeenSet() const
+{
+    return m_maxRetentionHasBeenSet;
+}
+
+int64_t RocketMQInstanceConfig::GetMinRetention() const
+{
+    return m_minRetention;
+}
+
+void RocketMQInstanceConfig::SetMinRetention(const int64_t& _minRetention)
+{
+    m_minRetention = _minRetention;
+    m_minRetentionHasBeenSet = true;
+}
+
+bool RocketMQInstanceConfig::MinRetentionHasBeenSet() const
+{
+    return m_minRetentionHasBeenSet;
+}
+
+int64_t RocketMQInstanceConfig::GetRetention() const
+{
+    return m_retention;
+}
+
+void RocketMQInstanceConfig::SetRetention(const int64_t& _retention)
+{
+    m_retention = _retention;
+    m_retentionHasBeenSet = true;
+}
+
+bool RocketMQInstanceConfig::RetentionHasBeenSet() const
+{
+    return m_retentionHasBeenSet;
+}
+
+int64_t RocketMQInstanceConfig::GetTopicNumLowerLimit() const
+{
+    return m_topicNumLowerLimit;
+}
+
+void RocketMQInstanceConfig::SetTopicNumLowerLimit(const int64_t& _topicNumLowerLimit)
+{
+    m_topicNumLowerLimit = _topicNumLowerLimit;
+    m_topicNumLowerLimitHasBeenSet = true;
+}
+
+bool RocketMQInstanceConfig::TopicNumLowerLimitHasBeenSet() const
+{
+    return m_topicNumLowerLimitHasBeenSet;
+}
+
+int64_t RocketMQInstanceConfig::GetTopicNumUpperLimit() const
+{
+    return m_topicNumUpperLimit;
+}
+
+void RocketMQInstanceConfig::SetTopicNumUpperLimit(const int64_t& _topicNumUpperLimit)
+{
+    m_topicNumUpperLimit = _topicNumUpperLimit;
+    m_topicNumUpperLimitHasBeenSet = true;
+}
+
+bool RocketMQInstanceConfig::TopicNumUpperLimitHasBeenSet() const
+{
+    return m_topicNumUpperLimitHasBeenSet;
 }
 

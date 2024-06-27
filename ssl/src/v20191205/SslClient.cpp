@@ -470,6 +470,49 @@ SslClient::DeleteCertificateOutcomeCallable SslClient::DeleteCertificateCallable
     return task->get_future();
 }
 
+SslClient::DeleteCertificatesOutcome SslClient::DeleteCertificates(const DeleteCertificatesRequest &request)
+{
+    auto outcome = MakeRequest(request, "DeleteCertificates");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DeleteCertificatesResponse rsp = DeleteCertificatesResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DeleteCertificatesOutcome(rsp);
+        else
+            return DeleteCertificatesOutcome(o.GetError());
+    }
+    else
+    {
+        return DeleteCertificatesOutcome(outcome.GetError());
+    }
+}
+
+void SslClient::DeleteCertificatesAsync(const DeleteCertificatesRequest& request, const DeleteCertificatesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DeleteCertificates(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+SslClient::DeleteCertificatesOutcomeCallable SslClient::DeleteCertificatesCallable(const DeleteCertificatesRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DeleteCertificatesOutcome()>>(
+        [this, request]()
+        {
+            return this->DeleteCertificates(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 SslClient::DeleteManagerOutcome SslClient::DeleteManager(const DeleteManagerRequest &request)
 {
     auto outcome = MakeRequest(request, "DeleteManager");

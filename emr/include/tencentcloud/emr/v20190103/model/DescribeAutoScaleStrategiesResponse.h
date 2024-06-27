@@ -21,6 +21,7 @@
 #include <vector>
 #include <map>
 #include <tencentcloud/core/AbstractModel.h>
+#include <tencentcloud/emr/v20190103/model/LoadAutoScaleStrategy.h>
 #include <tencentcloud/emr/v20190103/model/TimeAutoScaleStrategy.h>
 
 
@@ -45,6 +46,22 @@ namespace TencentCloud
 
 
                     /**
+                     * 获取按负载伸缩规则
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return LoadAutoScaleStrategies 按负载伸缩规则
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::vector<LoadAutoScaleStrategy> GetLoadAutoScaleStrategies() const;
+
+                    /**
+                     * 判断参数 LoadAutoScaleStrategies 是否已赋值
+                     * @return LoadAutoScaleStrategies 是否已赋值
+                     * 
+                     */
+                    bool LoadAutoScaleStrategiesHasBeenSet() const;
+
+                    /**
                      * 获取按时间伸缩规则
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return TimeBasedAutoScaleStrategies 按时间伸缩规则
@@ -61,6 +78,13 @@ namespace TencentCloud
                     bool TimeBasedAutoScaleStrategiesHasBeenSet() const;
 
                 private:
+
+                    /**
+                     * 按负载伸缩规则
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::vector<LoadAutoScaleStrategy> m_loadAutoScaleStrategies;
+                    bool m_loadAutoScaleStrategiesHasBeenSet;
 
                     /**
                      * 按时间伸缩规则

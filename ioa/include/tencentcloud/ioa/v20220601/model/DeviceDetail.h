@@ -47,18 +47,18 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取设备ID(只支持32位)
+                     * 获取设备ID
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return Id 设备ID(只支持32位)
+                     * @return Id 设备ID
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetId() const;
 
                     /**
-                     * 设置设备ID(只支持32位)
+                     * 设置设备ID
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _id 设备ID(只支持32位)
+                     * @param _id 设备ID
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -72,18 +72,18 @@ namespace TencentCloud
                     bool IdHasBeenSet() const;
 
                     /**
-                     * 获取设备唯一标识符
+                     * 获取设备唯一标识码，在ioa中每个设备有唯一标识码
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return Mid 设备唯一标识符
+                     * @return Mid 设备唯一标识码，在ioa中每个设备有唯一标识码
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetMid() const;
 
                     /**
-                     * 设置设备唯一标识符
+                     * 设置设备唯一标识码，在ioa中每个设备有唯一标识码
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _mid 设备唯一标识符
+                     * @param _mid 设备唯一标识码，在ioa中每个设备有唯一标识码
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -122,18 +122,18 @@ namespace TencentCloud
                     bool NameHasBeenSet() const;
 
                     /**
-                     * 获取设备所在分组ID(只支持32位)
+                     * 获取设备所在分组ID
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return GroupId 设备所在分组ID(只支持32位)
+                     * @return GroupId 设备所在分组ID
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetGroupId() const;
 
                     /**
-                     * 设置设备所在分组ID(只支持32位)
+                     * 设置设备所在分组ID
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _groupId 设备所在分组ID(只支持32位)
+                     * @param _groupId 设备所在分组ID
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -147,18 +147,18 @@ namespace TencentCloud
                     bool GroupIdHasBeenSet() const;
 
                     /**
-                     * 获取OS平台(只支持32位)
+                     * 获取OS平台，0：Windows 、1： Linux、 2：macOS 、4： Android、 5: iOS。默认是0
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return OsType OS平台(只支持32位)
+                     * @return OsType OS平台，0：Windows 、1： Linux、 2：macOS 、4： Android、 5: iOS。默认是0
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetOsType() const;
 
                     /**
-                     * 设置OS平台(只支持32位)
+                     * 设置OS平台，0：Windows 、1： Linux、 2：macOS 、4： Android、 5: iOS。默认是0
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _osType OS平台(只支持32位)
+                     * @param _osType OS平台，0：Windows 、1： Linux、 2：macOS 、4： Android、 5: iOS。默认是0
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -197,18 +197,18 @@ namespace TencentCloud
                     bool IpHasBeenSet() const;
 
                     /**
-                     * 获取在线状态 2 在线 0，1 离线(只支持32位)
+                     * 获取在线状态，2：在线、0或者1:离线
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return OnlineStatus 在线状态 2 在线 0，1 离线(只支持32位)
+                     * @return OnlineStatus 在线状态，2：在线、0或者1:离线
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetOnlineStatus() const;
 
                     /**
-                     * 设置在线状态 2 在线 0，1 离线(只支持32位)
+                     * 设置在线状态，2：在线、0或者1:离线
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _onlineStatus 在线状态 2 在线 0，1 离线(只支持32位)
+                     * @param _onlineStatus 在线状态，2：在线、0或者1:离线
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -322,18 +322,18 @@ namespace TencentCloud
                     bool ConnActiveTimeHasBeenSet() const;
 
                     /**
-                     * 获取设备是否加锁 1 锁定 0 2 非锁定(只支持32位)
+                     * 获取设备是否加锁 ，1：锁定 0或者2：未锁定。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return Locked 设备是否加锁 1 锁定 0 2 非锁定(只支持32位)
+                     * @return Locked 设备是否加锁 ，1：锁定 0或者2：未锁定。
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetLocked() const;
 
                     /**
-                     * 设置设备是否加锁 1 锁定 0 2 非锁定(只支持32位)
+                     * 设置设备是否加锁 ，1：锁定 0或者2：未锁定。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _locked 设备是否加锁 1 锁定 0 2 非锁定(只支持32位)
+                     * @param _locked 设备是否加锁 ，1：锁定 0或者2：未锁定。
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -472,18 +472,18 @@ namespace TencentCloud
                     bool CriticalVulListCountHasBeenSet() const;
 
                     /**
-                     * 获取设备名 和Name相同，保留参数
+                     * 获取设备名，和Name相同
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return ComputerName 设备名 和Name相同，保留参数
+                     * @return ComputerName 设备名，和Name相同
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetComputerName() const;
 
                     /**
-                     * 设置设备名 和Name相同，保留参数
+                     * 设置设备名，和Name相同
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _computerName 设备名 和Name相同，保留参数
+                     * @param _computerName 设备名，和Name相同
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -547,18 +547,18 @@ namespace TencentCloud
                     bool MacAddrHasBeenSet() const;
 
                     /**
-                     * 获取漏洞数(只支持32位)
+                     * 获取漏洞数
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return VulCount 漏洞数(只支持32位)
+                     * @return VulCount 漏洞数
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetVulCount() const;
 
                     /**
-                     * 设置漏洞数(只支持32位)
+                     * 设置漏洞数
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _vulCount 漏洞数(只支持32位)
+                     * @param _vulCount 漏洞数
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -572,18 +572,18 @@ namespace TencentCloud
                     bool VulCountHasBeenSet() const;
 
                     /**
-                     * 获取病毒风险数(只支持32位)
+                     * 获取病毒风险数
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return RiskCount 病毒风险数(只支持32位)
+                     * @return RiskCount 病毒风险数
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetRiskCount() const;
 
                     /**
-                     * 设置病毒风险数(只支持32位)
+                     * 设置病毒风险数
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _riskCount 病毒风险数(只支持32位)
+                     * @param _riskCount 病毒风险数
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -747,18 +747,18 @@ namespace TencentCloud
                     bool UserNameHasBeenSet() const;
 
                     /**
-                     * 获取防火墙状态(只支持32位)
+                     * 获取防火墙状态，不等于0表示开启
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return FirewallStatus 防火墙状态(只支持32位)
+                     * @return FirewallStatus 防火墙状态，不等于0表示开启
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetFirewallStatus() const;
 
                     /**
-                     * 设置防火墙状态(只支持32位)
+                     * 设置防火墙状态，不等于0表示开启
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _firewallStatus 防火墙状态(只支持32位)
+                     * @param _firewallStatus 防火墙状态，不等于0表示开启
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -847,18 +847,18 @@ namespace TencentCloud
                     bool NGNStrategyVerHasBeenSet() const;
 
                     /**
-                     * 获取最近登录账号
+                     * 获取最近登录账户的账号
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return IOAUserName 最近登录账号
+                     * @return IOAUserName 最近登录账户的账号
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetIOAUserName() const;
 
                     /**
-                     * 设置最近登录账号
+                     * 设置最近登录账户的账号
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _iOAUserName 最近登录账号
+                     * @param _iOAUserName 最近登录账户的账号
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -1072,18 +1072,18 @@ namespace TencentCloud
                     bool AccountGroupNameHasBeenSet() const;
 
                     /**
-                     * 获取登录账号姓名
+                     * 获取最近登录账户的姓名
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return AccountName 登录账号姓名
+                     * @return AccountName 最近登录账户的姓名
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetAccountName() const;
 
                     /**
-                     * 设置登录账号姓名
+                     * 设置最近登录账户的姓名
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _accountName 登录账号姓名
+                     * @param _accountName 最近登录账户的姓名
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -1124,14 +1124,14 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 设备ID(只支持32位)
+                     * 设备ID
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_id;
                     bool m_idHasBeenSet;
 
                     /**
-                     * 设备唯一标识符
+                     * 设备唯一标识码，在ioa中每个设备有唯一标识码
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_mid;
@@ -1145,14 +1145,14 @@ namespace TencentCloud
                     bool m_nameHasBeenSet;
 
                     /**
-                     * 设备所在分组ID(只支持32位)
+                     * 设备所在分组ID
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_groupId;
                     bool m_groupIdHasBeenSet;
 
                     /**
-                     * OS平台(只支持32位)
+                     * OS平台，0：Windows 、1： Linux、 2：macOS 、4： Android、 5: iOS。默认是0
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_osType;
@@ -1166,7 +1166,7 @@ namespace TencentCloud
                     bool m_ipHasBeenSet;
 
                     /**
-                     * 在线状态 2 在线 0，1 离线(只支持32位)
+                     * 在线状态，2：在线、0或者1:离线
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_onlineStatus;
@@ -1201,7 +1201,7 @@ namespace TencentCloud
                     bool m_connActiveTimeHasBeenSet;
 
                     /**
-                     * 设备是否加锁 1 锁定 0 2 非锁定(只支持32位)
+                     * 设备是否加锁 ，1：锁定 0或者2：未锁定。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_locked;
@@ -1243,7 +1243,7 @@ namespace TencentCloud
                     bool m_criticalVulListCountHasBeenSet;
 
                     /**
-                     * 设备名 和Name相同，保留参数
+                     * 设备名，和Name相同
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_computerName;
@@ -1264,14 +1264,14 @@ namespace TencentCloud
                     bool m_macAddrHasBeenSet;
 
                     /**
-                     * 漏洞数(只支持32位)
+                     * 漏洞数
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_vulCount;
                     bool m_vulCountHasBeenSet;
 
                     /**
-                     * 病毒风险数(只支持32位)
+                     * 病毒风险数
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_riskCount;
@@ -1320,7 +1320,7 @@ namespace TencentCloud
                     bool m_userNameHasBeenSet;
 
                     /**
-                     * 防火墙状态(只支持32位)
+                     * 防火墙状态，不等于0表示开启
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_firewallStatus;
@@ -1348,7 +1348,7 @@ namespace TencentCloud
                     bool m_nGNStrategyVerHasBeenSet;
 
                     /**
-                     * 最近登录账号
+                     * 最近登录账户的账号
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_iOAUserName;
@@ -1411,7 +1411,7 @@ namespace TencentCloud
                     bool m_accountGroupNameHasBeenSet;
 
                     /**
-                     * 登录账号姓名
+                     * 最近登录账户的姓名
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_accountName;

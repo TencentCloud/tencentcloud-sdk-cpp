@@ -673,6 +673,56 @@ namespace TencentCloud
                      */
                     bool WanAddressHasBeenSet() const;
 
+                    /**
+                     * 获取隔离时间
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return IsolateAt 隔离时间
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::string GetIsolateAt() const;
+
+                    /**
+                     * 设置隔离时间
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _isolateAt 隔离时间
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetIsolateAt(const std::string& _isolateAt);
+
+                    /**
+                     * 判断参数 IsolateAt 是否已赋值
+                     * @return IsolateAt 是否已赋值
+                     * 
+                     */
+                    bool IsolateAtHasBeenSet() const;
+
+                    /**
+                     * 获取是否自动续费。0: 不自动续费(可以支持特权不停服)；1:自动续费；2:到期不续费.
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return AutoRenew 是否自动续费。0: 不自动续费(可以支持特权不停服)；1:自动续费；2:到期不续费.
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    int64_t GetAutoRenew() const;
+
+                    /**
+                     * 设置是否自动续费。0: 不自动续费(可以支持特权不停服)；1:自动续费；2:到期不续费.
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _autoRenew 是否自动续费。0: 不自动续费(可以支持特权不停服)；1:自动续费；2:到期不续费.
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetAutoRenew(const int64_t& _autoRenew);
+
+                    /**
+                     * 判断参数 AutoRenew 是否已赋值
+                     * @return AutoRenew 是否已赋值
+                     * 
+                     */
+                    bool AutoRenewHasBeenSet() const;
+
                 private:
 
                     /**
@@ -849,6 +899,20 @@ namespace TencentCloud
                      */
                     std::string m_wanAddress;
                     bool m_wanAddressHasBeenSet;
+
+                    /**
+                     * 隔离时间
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_isolateAt;
+                    bool m_isolateAtHasBeenSet;
+
+                    /**
+                     * 是否自动续费。0: 不自动续费(可以支持特权不停服)；1:自动续费；2:到期不续费.
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    int64_t m_autoRenew;
+                    bool m_autoRenewHasBeenSet;
 
                 };
             }

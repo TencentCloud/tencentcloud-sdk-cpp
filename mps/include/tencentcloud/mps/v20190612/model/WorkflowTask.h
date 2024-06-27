@@ -280,18 +280,18 @@ namespace TencentCloud
                     bool AiRecognitionResultSetHasBeenSet() const;
 
                     /**
-                     * 获取视频质检任务的执行状态与结果。
+                     * 获取媒体质检任务的执行状态与结果。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return AiQualityControlTaskResult 视频质检任务的执行状态与结果。
+                     * @return AiQualityControlTaskResult 媒体质检任务的执行状态与结果。
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     ScheduleQualityControlTaskResult GetAiQualityControlTaskResult() const;
 
                     /**
-                     * 设置视频质检任务的执行状态与结果。
+                     * 设置媒体质检任务的执行状态与结果。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _aiQualityControlTaskResult 视频质检任务的执行状态与结果。
+                     * @param _aiQualityControlTaskResult 媒体质检任务的执行状态与结果。
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -371,7 +371,7 @@ namespace TencentCloud
                     bool m_aiRecognitionResultSetHasBeenSet;
 
                     /**
-                     * 视频质检任务的执行状态与结果。
+                     * 媒体质检任务的执行状态与结果。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     ScheduleQualityControlTaskResult m_aiQualityControlTaskResult;

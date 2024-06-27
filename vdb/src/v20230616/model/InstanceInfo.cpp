@@ -45,7 +45,9 @@ InstanceInfo::InstanceInfo() :
     m_extendHasBeenSet(false),
     m_expiredAtHasBeenSet(false),
     m_isNoExpiredHasBeenSet(false),
-    m_wanAddressHasBeenSet(false)
+    m_wanAddressHasBeenSet(false),
+    m_isolateAtHasBeenSet(false),
+    m_autoRenewHasBeenSet(false)
 {
 }
 
@@ -324,6 +326,26 @@ CoreInternalOutcome InstanceInfo::Deserialize(const rapidjson::Value &value)
         m_wanAddressHasBeenSet = true;
     }
 
+    if (value.HasMember("IsolateAt") && !value["IsolateAt"].IsNull())
+    {
+        if (!value["IsolateAt"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `InstanceInfo.IsolateAt` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_isolateAt = string(value["IsolateAt"].GetString());
+        m_isolateAtHasBeenSet = true;
+    }
+
+    if (value.HasMember("AutoRenew") && !value["AutoRenew"].IsNull())
+    {
+        if (!value["AutoRenew"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `InstanceInfo.AutoRenew` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_autoRenew = value["AutoRenew"].GetInt64();
+        m_autoRenewHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -543,6 +565,22 @@ void InstanceInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Al
         string key = "WanAddress";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_wanAddress.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_isolateAtHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "IsolateAt";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_isolateAt.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_autoRenewHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "AutoRenew";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_autoRenew, allocator);
     }
 
 }
@@ -946,5 +984,37 @@ void InstanceInfo::SetWanAddress(const string& _wanAddress)
 bool InstanceInfo::WanAddressHasBeenSet() const
 {
     return m_wanAddressHasBeenSet;
+}
+
+string InstanceInfo::GetIsolateAt() const
+{
+    return m_isolateAt;
+}
+
+void InstanceInfo::SetIsolateAt(const string& _isolateAt)
+{
+    m_isolateAt = _isolateAt;
+    m_isolateAtHasBeenSet = true;
+}
+
+bool InstanceInfo::IsolateAtHasBeenSet() const
+{
+    return m_isolateAtHasBeenSet;
+}
+
+int64_t InstanceInfo::GetAutoRenew() const
+{
+    return m_autoRenew;
+}
+
+void InstanceInfo::SetAutoRenew(const int64_t& _autoRenew)
+{
+    m_autoRenew = _autoRenew;
+    m_autoRenewHasBeenSet = true;
+}
+
+bool InstanceInfo::AutoRenewHasBeenSet() const
+{
+    return m_autoRenewHasBeenSet;
 }
 

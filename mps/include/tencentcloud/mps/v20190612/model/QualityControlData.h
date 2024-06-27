@@ -36,7 +36,7 @@ namespace TencentCloud
             namespace Model
             {
                 /**
-                * 质检结果输出。
+                * 媒体质检结果输出。
                 */
                 class QualityControlData : public AbstractModel
                 {
@@ -123,18 +123,18 @@ namespace TencentCloud
                     bool QualityEvaluationScoreHasBeenSet() const;
 
                     /**
-                     * 获取质检检出异常项。
+                     * 获取内容质检检出异常项。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return QualityControlResultSet 质检检出异常项。
+                     * @return QualityControlResultSet 内容质检检出异常项。
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<QualityControlResult> GetQualityControlResultSet() const;
 
                     /**
-                     * 设置质检检出异常项。
+                     * 设置内容质检检出异常项。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _qualityControlResultSet 质检检出异常项。
+                     * @param _qualityControlResultSet 内容质检检出异常项。
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -171,7 +171,7 @@ namespace TencentCloud
                     bool m_qualityEvaluationScoreHasBeenSet;
 
                     /**
-                     * 质检检出异常项。
+                     * 内容质检检出异常项。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<QualityControlResult> m_qualityControlResultSet;

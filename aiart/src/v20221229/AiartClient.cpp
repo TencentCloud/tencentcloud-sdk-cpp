@@ -40,6 +40,49 @@ AiartClient::AiartClient(const Credential &credential, const string &region, con
 }
 
 
+AiartClient::GenerateAvatarOutcome AiartClient::GenerateAvatar(const GenerateAvatarRequest &request)
+{
+    auto outcome = MakeRequest(request, "GenerateAvatar");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        GenerateAvatarResponse rsp = GenerateAvatarResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return GenerateAvatarOutcome(rsp);
+        else
+            return GenerateAvatarOutcome(o.GetError());
+    }
+    else
+    {
+        return GenerateAvatarOutcome(outcome.GetError());
+    }
+}
+
+void AiartClient::GenerateAvatarAsync(const GenerateAvatarRequest& request, const GenerateAvatarAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->GenerateAvatar(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+AiartClient::GenerateAvatarOutcomeCallable AiartClient::GenerateAvatarCallable(const GenerateAvatarRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<GenerateAvatarOutcome()>>(
+        [this, request]()
+        {
+            return this->GenerateAvatar(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 AiartClient::ImageToImageOutcome AiartClient::ImageToImage(const ImageToImageRequest &request)
 {
     auto outcome = MakeRequest(request, "ImageToImage");

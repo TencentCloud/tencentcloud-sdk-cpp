@@ -85,7 +85,6 @@ namespace TencentCloud
 <li>militant：武装分子；</li>
 <li>explosion：爆炸火灾；</li>
 <li>terrorists：涉敏人物；</li>
-<li>scenario：涉敏画面。</li>
                      * @return LabelSet 画面涉敏过滤标签，审核结果包含选择的标签则返回结果，如果过滤标签为空，则审核结果全部返回，可选值为：
 <li>guns：武器枪支；</li>
 <li>crowd：人群聚集；</li>
@@ -95,7 +94,6 @@ namespace TencentCloud
 <li>militant：武装分子；</li>
 <li>explosion：爆炸火灾；</li>
 <li>terrorists：涉敏人物；</li>
-<li>scenario：涉敏画面。</li>
                      * 
                      */
                     std::vector<std::string> GetLabelSet() const;
@@ -110,7 +108,6 @@ namespace TencentCloud
 <li>militant：武装分子；</li>
 <li>explosion：爆炸火灾；</li>
 <li>terrorists：涉敏人物；</li>
-<li>scenario：涉敏画面。</li>
                      * @param _labelSet 画面涉敏过滤标签，审核结果包含选择的标签则返回结果，如果过滤标签为空，则审核结果全部返回，可选值为：
 <li>guns：武器枪支；</li>
 <li>crowd：人群聚集；</li>
@@ -120,7 +117,6 @@ namespace TencentCloud
 <li>militant：武装分子；</li>
 <li>explosion：爆炸火灾；</li>
 <li>terrorists：涉敏人物；</li>
-<li>scenario：涉敏画面。</li>
                      * 
                      */
                     void SetLabelSet(const std::vector<std::string>& _labelSet);
@@ -194,7 +190,6 @@ namespace TencentCloud
 <li>militant：武装分子；</li>
 <li>explosion：爆炸火灾；</li>
 <li>terrorists：涉敏人物；</li>
-<li>scenario：涉敏画面。</li>
                      */
                     std::vector<std::string> m_labelSet;
                     bool m_labelSetHasBeenSet;

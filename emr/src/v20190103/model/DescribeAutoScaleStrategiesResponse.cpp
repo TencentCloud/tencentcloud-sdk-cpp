@@ -24,6 +24,7 @@ using namespace TencentCloud::Emr::V20190103::Model;
 using namespace std;
 
 DescribeAutoScaleStrategiesResponse::DescribeAutoScaleStrategiesResponse() :
+    m_loadAutoScaleStrategiesHasBeenSet(false),
     m_timeBasedAutoScaleStrategiesHasBeenSet(false)
 {
 }
@@ -62,6 +63,26 @@ CoreInternalOutcome DescribeAutoScaleStrategiesResponse::Deserialize(const strin
     }
 
 
+    if (rsp.HasMember("LoadAutoScaleStrategies") && !rsp["LoadAutoScaleStrategies"].IsNull())
+    {
+        if (!rsp["LoadAutoScaleStrategies"].IsArray())
+            return CoreInternalOutcome(Core::Error("response `LoadAutoScaleStrategies` is not array type"));
+
+        const rapidjson::Value &tmpValue = rsp["LoadAutoScaleStrategies"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            LoadAutoScaleStrategy item;
+            CoreInternalOutcome outcome = item.Deserialize(*itr);
+            if (!outcome.IsSuccess())
+            {
+                outcome.GetError().SetRequestId(requestId);
+                return outcome;
+            }
+            m_loadAutoScaleStrategies.push_back(item);
+        }
+        m_loadAutoScaleStrategiesHasBeenSet = true;
+    }
+
     if (rsp.HasMember("TimeBasedAutoScaleStrategies") && !rsp["TimeBasedAutoScaleStrategies"].IsNull())
     {
         if (!rsp["TimeBasedAutoScaleStrategies"].IsArray())
@@ -92,6 +113,21 @@ string DescribeAutoScaleStrategiesResponse::ToJsonString() const
     value.SetObject();
     rapidjson::Document::AllocatorType& allocator = value.GetAllocator();
 
+    if (m_loadAutoScaleStrategiesHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "LoadAutoScaleStrategies";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_loadAutoScaleStrategies.begin(); itr != m_loadAutoScaleStrategies.end(); ++itr, ++i)
+        {
+            value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(value[key.c_str()][i], allocator);
+        }
+    }
+
     if (m_timeBasedAutoScaleStrategiesHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
@@ -118,6 +154,16 @@ string DescribeAutoScaleStrategiesResponse::ToJsonString() const
     return buffer.GetString();
 }
 
+
+vector<LoadAutoScaleStrategy> DescribeAutoScaleStrategiesResponse::GetLoadAutoScaleStrategies() const
+{
+    return m_loadAutoScaleStrategies;
+}
+
+bool DescribeAutoScaleStrategiesResponse::LoadAutoScaleStrategiesHasBeenSet() const
+{
+    return m_loadAutoScaleStrategiesHasBeenSet;
+}
 
 vector<TimeAutoScaleStrategy> DescribeAutoScaleStrategiesResponse::GetTimeBasedAutoScaleStrategies() const
 {

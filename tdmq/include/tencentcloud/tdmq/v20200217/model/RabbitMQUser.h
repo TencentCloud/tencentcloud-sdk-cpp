@@ -222,6 +222,56 @@ namespace TencentCloud
                      */
                     bool TypeHasBeenSet() const;
 
+                    /**
+                     * 获取单个用户最大可用连接数
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return MaxConnections 单个用户最大可用连接数
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    int64_t GetMaxConnections() const;
+
+                    /**
+                     * 设置单个用户最大可用连接数
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _maxConnections 单个用户最大可用连接数
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetMaxConnections(const int64_t& _maxConnections);
+
+                    /**
+                     * 判断参数 MaxConnections 是否已赋值
+                     * @return MaxConnections 是否已赋值
+                     * 
+                     */
+                    bool MaxConnectionsHasBeenSet() const;
+
+                    /**
+                     * 获取单个用户最大可用通道数
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return MaxChannels 单个用户最大可用通道数
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    int64_t GetMaxChannels() const;
+
+                    /**
+                     * 设置单个用户最大可用通道数
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _maxChannels 单个用户最大可用通道数
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetMaxChannels(const int64_t& _maxChannels);
+
+                    /**
+                     * 判断参数 MaxChannels 是否已赋值
+                     * @return MaxChannels 是否已赋值
+                     * 
+                     */
+                    bool MaxChannelsHasBeenSet() const;
+
                 private:
 
                     /**
@@ -273,6 +323,20 @@ namespace TencentCloud
                      */
                     std::string m_type;
                     bool m_typeHasBeenSet;
+
+                    /**
+                     * 单个用户最大可用连接数
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    int64_t m_maxConnections;
+                    bool m_maxConnectionsHasBeenSet;
+
+                    /**
+                     * 单个用户最大可用通道数
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    int64_t m_maxChannels;
+                    bool m_maxChannelsHasBeenSet;
 
                 };
             }

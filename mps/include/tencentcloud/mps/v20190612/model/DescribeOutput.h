@@ -433,6 +433,27 @@ namespace TencentCloud
                      */
                     bool SecurityGroupIdsHasBeenSet() const;
 
+                    /**
+                     * 获取可用区，output目前最多只支持一个。	
+                     * @return Zones 可用区，output目前最多只支持一个。	
+                     * 
+                     */
+                    std::vector<std::string> GetZones() const;
+
+                    /**
+                     * 设置可用区，output目前最多只支持一个。	
+                     * @param _zones 可用区，output目前最多只支持一个。	
+                     * 
+                     */
+                    void SetZones(const std::vector<std::string>& _zones);
+
+                    /**
+                     * 判断参数 Zones 是否已赋值
+                     * @return Zones 是否已赋值
+                     * 
+                     */
+                    bool ZonesHasBeenSet() const;
+
                 private:
 
                     /**
@@ -541,6 +562,12 @@ namespace TencentCloud
                      */
                     std::vector<std::string> m_securityGroupIds;
                     bool m_securityGroupIdsHasBeenSet;
+
+                    /**
+                     * 可用区，output目前最多只支持一个。	
+                     */
+                    std::vector<std::string> m_zones;
+                    bool m_zonesHasBeenSet;
 
                 };
             }

@@ -25,6 +25,7 @@
 #include <tencentcloud/core/utils/rapidjson/stringbuffer.h>
 #include <tencentcloud/core/AbstractModel.h>
 #include <tencentcloud/mps/v20190612/model/LiveScheduleLiveRecordTaskResult.h>
+#include <tencentcloud/mps/v20190612/model/ScheduleQualityControlTaskResult.h>
 
 
 namespace TencentCloud
@@ -72,6 +73,31 @@ namespace TencentCloud
                      */
                     bool LiveRecordTaskHasBeenSet() const;
 
+                    /**
+                     * 获取媒体质检任务输出
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return LiveQualityControlTask 媒体质检任务输出
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    ScheduleQualityControlTaskResult GetLiveQualityControlTask() const;
+
+                    /**
+                     * 设置媒体质检任务输出
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _liveQualityControlTask 媒体质检任务输出
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetLiveQualityControlTask(const ScheduleQualityControlTaskResult& _liveQualityControlTask);
+
+                    /**
+                     * 判断参数 LiveQualityControlTask 是否已赋值
+                     * @return LiveQualityControlTask 是否已赋值
+                     * 
+                     */
+                    bool LiveQualityControlTaskHasBeenSet() const;
+
                 private:
 
                     /**
@@ -80,6 +106,13 @@ namespace TencentCloud
                      */
                     LiveScheduleLiveRecordTaskResult m_liveRecordTask;
                     bool m_liveRecordTaskHasBeenSet;
+
+                    /**
+                     * 媒体质检任务输出
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    ScheduleQualityControlTaskResult m_liveQualityControlTask;
+                    bool m_liveQualityControlTaskHasBeenSet;
 
                 };
             }

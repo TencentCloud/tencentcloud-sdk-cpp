@@ -43,6 +43,8 @@
 #include <tencentcloud/ssl/v20191205/model/CreateCertificateByPackageResponse.h>
 #include <tencentcloud/ssl/v20191205/model/DeleteCertificateRequest.h>
 #include <tencentcloud/ssl/v20191205/model/DeleteCertificateResponse.h>
+#include <tencentcloud/ssl/v20191205/model/DeleteCertificatesRequest.h>
+#include <tencentcloud/ssl/v20191205/model/DeleteCertificatesResponse.h>
 #include <tencentcloud/ssl/v20191205/model/DeleteManagerRequest.h>
 #include <tencentcloud/ssl/v20191205/model/DeleteManagerResponse.h>
 #include <tencentcloud/ssl/v20191205/model/DeployCertificateInstanceRequest.h>
@@ -183,6 +185,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DeleteCertificateResponse> DeleteCertificateOutcome;
                 typedef std::future<DeleteCertificateOutcome> DeleteCertificateOutcomeCallable;
                 typedef std::function<void(const SslClient*, const Model::DeleteCertificateRequest&, DeleteCertificateOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteCertificateAsyncHandler;
+                typedef Outcome<Core::Error, Model::DeleteCertificatesResponse> DeleteCertificatesOutcome;
+                typedef std::future<DeleteCertificatesOutcome> DeleteCertificatesOutcomeCallable;
+                typedef std::function<void(const SslClient*, const Model::DeleteCertificatesRequest&, DeleteCertificatesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteCertificatesAsyncHandler;
                 typedef Outcome<Core::Error, Model::DeleteManagerResponse> DeleteManagerOutcome;
                 typedef std::future<DeleteManagerOutcome> DeleteManagerOutcomeCallable;
                 typedef std::function<void(const SslClient*, const Model::DeleteManagerRequest&, DeleteManagerOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteManagerAsyncHandler;
@@ -419,6 +424,15 @@ namespace TencentCloud
                 DeleteCertificateOutcome DeleteCertificate(const Model::DeleteCertificateRequest &request);
                 void DeleteCertificateAsync(const Model::DeleteCertificateRequest& request, const DeleteCertificateAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DeleteCertificateOutcomeCallable DeleteCertificateCallable(const Model::DeleteCertificateRequest& request);
+
+                /**
+                 *批量删除证书，删除证书前支持查询证书是否关联了腾讯云云资源 （需自定义配置参数，参数名称：IsSync）
+                 * @param req DeleteCertificatesRequest
+                 * @return DeleteCertificatesOutcome
+                 */
+                DeleteCertificatesOutcome DeleteCertificates(const Model::DeleteCertificatesRequest &request);
+                void DeleteCertificatesAsync(const Model::DeleteCertificatesRequest& request, const DeleteCertificatesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DeleteCertificatesOutcomeCallable DeleteCertificatesCallable(const Model::DeleteCertificatesRequest& request);
 
                 /**
                  *删除管理人

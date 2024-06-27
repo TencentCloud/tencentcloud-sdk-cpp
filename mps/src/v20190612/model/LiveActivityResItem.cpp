@@ -21,7 +21,8 @@ using namespace TencentCloud::Mps::V20190612::Model;
 using namespace std;
 
 LiveActivityResItem::LiveActivityResItem() :
-    m_liveRecordTaskHasBeenSet(false)
+    m_liveRecordTaskHasBeenSet(false),
+    m_liveQualityControlTaskHasBeenSet(false)
 {
 }
 
@@ -47,6 +48,23 @@ CoreInternalOutcome LiveActivityResItem::Deserialize(const rapidjson::Value &val
         m_liveRecordTaskHasBeenSet = true;
     }
 
+    if (value.HasMember("LiveQualityControlTask") && !value["LiveQualityControlTask"].IsNull())
+    {
+        if (!value["LiveQualityControlTask"].IsObject())
+        {
+            return CoreInternalOutcome(Core::Error("response `LiveActivityResItem.LiveQualityControlTask` is not object type").SetRequestId(requestId));
+        }
+
+        CoreInternalOutcome outcome = m_liveQualityControlTask.Deserialize(value["LiveQualityControlTask"]);
+        if (!outcome.IsSuccess())
+        {
+            outcome.GetError().SetRequestId(requestId);
+            return outcome;
+        }
+
+        m_liveQualityControlTaskHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -61,6 +79,15 @@ void LiveActivityResItem::ToJsonObject(rapidjson::Value &value, rapidjson::Docum
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
         m_liveRecordTask.ToJsonObject(value[key.c_str()], allocator);
+    }
+
+    if (m_liveQualityControlTaskHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "LiveQualityControlTask";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_liveQualityControlTask.ToJsonObject(value[key.c_str()], allocator);
     }
 
 }
@@ -80,5 +107,21 @@ void LiveActivityResItem::SetLiveRecordTask(const LiveScheduleLiveRecordTaskResu
 bool LiveActivityResItem::LiveRecordTaskHasBeenSet() const
 {
     return m_liveRecordTaskHasBeenSet;
+}
+
+ScheduleQualityControlTaskResult LiveActivityResItem::GetLiveQualityControlTask() const
+{
+    return m_liveQualityControlTask;
+}
+
+void LiveActivityResItem::SetLiveQualityControlTask(const ScheduleQualityControlTaskResult& _liveQualityControlTask)
+{
+    m_liveQualityControlTask = _liveQualityControlTask;
+    m_liveQualityControlTaskHasBeenSet = true;
+}
+
+bool LiveActivityResItem::LiveQualityControlTaskHasBeenSet() const
+{
+    return m_liveQualityControlTaskHasBeenSet;
 }
 

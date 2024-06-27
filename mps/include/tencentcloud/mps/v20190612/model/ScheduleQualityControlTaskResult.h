@@ -37,7 +37,7 @@ namespace TencentCloud
             namespace Model
             {
                 /**
-                * 质检任务结果类型
+                * 媒体质检任务结果类型
                 */
                 class ScheduleQualityControlTaskResult : public AbstractModel
                 {
@@ -133,15 +133,15 @@ namespace TencentCloud
                     bool MessageHasBeenSet() const;
 
                     /**
-                     * 获取质检任务的输入。
-                     * @return Input 质检任务的输入。
+                     * 获取媒体质检任务的输入。
+                     * @return Input 媒体质检任务的输入。
                      * 
                      */
                     AiQualityControlTaskInput GetInput() const;
 
                     /**
-                     * 设置质检任务的输入。
-                     * @param _input 质检任务的输入。
+                     * 设置媒体质检任务的输入。
+                     * @param _input 媒体质检任务的输入。
                      * 
                      */
                     void SetInput(const AiQualityControlTaskInput& _input);
@@ -154,18 +154,18 @@ namespace TencentCloud
                     bool InputHasBeenSet() const;
 
                     /**
-                     * 获取质检任务的输出。
+                     * 获取媒体质检任务的输出。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return Output 质检任务的输出。
+                     * @return Output 媒体质检任务的输出。
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     QualityControlData GetOutput() const;
 
                     /**
-                     * 设置质检任务的输出。
+                     * 设置媒体质检任务的输出。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _output 质检任务的输出。
+                     * @param _output 媒体质检任务的输出。
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -205,13 +205,13 @@ namespace TencentCloud
                     bool m_messageHasBeenSet;
 
                     /**
-                     * 质检任务的输入。
+                     * 媒体质检任务的输入。
                      */
                     AiQualityControlTaskInput m_input;
                     bool m_inputHasBeenSet;
 
                     /**
-                     * 质检任务的输出。
+                     * 媒体质检任务的输出。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     QualityControlData m_output;

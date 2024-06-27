@@ -14,22 +14,21 @@
  * limitations under the License.
  */
 
-#include <tencentcloud/cwp/v20180228/model/ExportAttackLogsResponse.h>
+#include <tencentcloud/vclm/v20240523/model/SubmitVideoStylizationJobResponse.h>
 #include <tencentcloud/core/utils/rapidjson/document.h>
 #include <tencentcloud/core/utils/rapidjson/writer.h>
 #include <tencentcloud/core/utils/rapidjson/stringbuffer.h>
 
 using TencentCloud::CoreInternalOutcome;
-using namespace TencentCloud::Cwp::V20180228::Model;
+using namespace TencentCloud::Vclm::V20240523::Model;
 using namespace std;
 
-ExportAttackLogsResponse::ExportAttackLogsResponse() :
-    m_downloadUrlHasBeenSet(false),
-    m_taskIdHasBeenSet(false)
+SubmitVideoStylizationJobResponse::SubmitVideoStylizationJobResponse() :
+    m_jobIdHasBeenSet(false)
 {
 }
 
-CoreInternalOutcome ExportAttackLogsResponse::Deserialize(const string &payload)
+CoreInternalOutcome SubmitVideoStylizationJobResponse::Deserialize(const string &payload)
 {
     rapidjson::Document d;
     d.Parse(payload.c_str());
@@ -63,50 +62,32 @@ CoreInternalOutcome ExportAttackLogsResponse::Deserialize(const string &payload)
     }
 
 
-    if (rsp.HasMember("DownloadUrl") && !rsp["DownloadUrl"].IsNull())
+    if (rsp.HasMember("JobId") && !rsp["JobId"].IsNull())
     {
-        if (!rsp["DownloadUrl"].IsString())
+        if (!rsp["JobId"].IsString())
         {
-            return CoreInternalOutcome(Core::Error("response `DownloadUrl` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `JobId` IsString=false incorrectly").SetRequestId(requestId));
         }
-        m_downloadUrl = string(rsp["DownloadUrl"].GetString());
-        m_downloadUrlHasBeenSet = true;
-    }
-
-    if (rsp.HasMember("TaskId") && !rsp["TaskId"].IsNull())
-    {
-        if (!rsp["TaskId"].IsString())
-        {
-            return CoreInternalOutcome(Core::Error("response `TaskId` IsString=false incorrectly").SetRequestId(requestId));
-        }
-        m_taskId = string(rsp["TaskId"].GetString());
-        m_taskIdHasBeenSet = true;
+        m_jobId = string(rsp["JobId"].GetString());
+        m_jobIdHasBeenSet = true;
     }
 
 
     return CoreInternalOutcome(true);
 }
 
-string ExportAttackLogsResponse::ToJsonString() const
+string SubmitVideoStylizationJobResponse::ToJsonString() const
 {
     rapidjson::Document value;
     value.SetObject();
     rapidjson::Document::AllocatorType& allocator = value.GetAllocator();
 
-    if (m_downloadUrlHasBeenSet)
+    if (m_jobIdHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "DownloadUrl";
+        string key = "JobId";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, rapidjson::Value(m_downloadUrl.c_str(), allocator).Move(), allocator);
-    }
-
-    if (m_taskIdHasBeenSet)
-    {
-        rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "TaskId";
-        iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, rapidjson::Value(m_taskId.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_jobId.c_str(), allocator).Move(), allocator);
     }
 
     rapidjson::Value iKey(rapidjson::kStringType);
@@ -121,24 +102,14 @@ string ExportAttackLogsResponse::ToJsonString() const
 }
 
 
-string ExportAttackLogsResponse::GetDownloadUrl() const
+string SubmitVideoStylizationJobResponse::GetJobId() const
 {
-    return m_downloadUrl;
+    return m_jobId;
 }
 
-bool ExportAttackLogsResponse::DownloadUrlHasBeenSet() const
+bool SubmitVideoStylizationJobResponse::JobIdHasBeenSet() const
 {
-    return m_downloadUrlHasBeenSet;
-}
-
-string ExportAttackLogsResponse::GetTaskId() const
-{
-    return m_taskId;
-}
-
-bool ExportAttackLogsResponse::TaskIdHasBeenSet() const
-{
-    return m_taskIdHasBeenSet;
+    return m_jobIdHasBeenSet;
 }
 
 

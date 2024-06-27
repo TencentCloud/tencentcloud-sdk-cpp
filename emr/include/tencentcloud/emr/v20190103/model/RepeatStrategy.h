@@ -51,15 +51,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取取值范围"DAY","DOW","DOM","NONE"，分别表示按天重复、按周重复、按月重复和一次执行。
-                     * @return RepeatType 取值范围"DAY","DOW","DOM","NONE"，分别表示按天重复、按周重复、按月重复和一次执行。
+                     * 获取取值范围"DAY","DOW","DOM","NONE"，分别表示按天重复、按周重复、按月重复和一次执行。必须填写
+                     * @return RepeatType 取值范围"DAY","DOW","DOM","NONE"，分别表示按天重复、按周重复、按月重复和一次执行。必须填写
                      * 
                      */
                     std::string GetRepeatType() const;
 
                     /**
-                     * 设置取值范围"DAY","DOW","DOM","NONE"，分别表示按天重复、按周重复、按月重复和一次执行。
-                     * @param _repeatType 取值范围"DAY","DOW","DOM","NONE"，分别表示按天重复、按周重复、按月重复和一次执行。
+                     * 设置取值范围"DAY","DOW","DOM","NONE"，分别表示按天重复、按周重复、按月重复和一次执行。必须填写
+                     * @param _repeatType 取值范围"DAY","DOW","DOM","NONE"，分别表示按天重复、按周重复、按月重复和一次执行。必须填写
                      * 
                      */
                     void SetRepeatType(const std::string& _repeatType);
@@ -172,18 +172,18 @@ namespace TencentCloud
                     bool NotRepeatHasBeenSet() const;
 
                     /**
-                     * 获取规则过期时间，超过该时间后，规则将自动置为暂停状态，形式为"2020-07-23 00:00:00"。
+                     * 获取规则过期时间，超过该时间后，规则将自动置为暂停状态，形式为"2020-07-23 00:00:00"。必须填写
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return Expire 规则过期时间，超过该时间后，规则将自动置为暂停状态，形式为"2020-07-23 00:00:00"。
+                     * @return Expire 规则过期时间，超过该时间后，规则将自动置为暂停状态，形式为"2020-07-23 00:00:00"。必须填写
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetExpire() const;
 
                     /**
-                     * 设置规则过期时间，超过该时间后，规则将自动置为暂停状态，形式为"2020-07-23 00:00:00"。
+                     * 设置规则过期时间，超过该时间后，规则将自动置为暂停状态，形式为"2020-07-23 00:00:00"。必须填写
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _expire 规则过期时间，超过该时间后，规则将自动置为暂停状态，形式为"2020-07-23 00:00:00"。
+                     * @param _expire 规则过期时间，超过该时间后，规则将自动置为暂停状态，形式为"2020-07-23 00:00:00"。必须填写
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -199,7 +199,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 取值范围"DAY","DOW","DOM","NONE"，分别表示按天重复、按周重复、按月重复和一次执行。
+                     * 取值范围"DAY","DOW","DOM","NONE"，分别表示按天重复、按周重复、按月重复和一次执行。必须填写
                      */
                     std::string m_repeatType;
                     bool m_repeatTypeHasBeenSet;
@@ -233,7 +233,7 @@ namespace TencentCloud
                     bool m_notRepeatHasBeenSet;
 
                     /**
-                     * 规则过期时间，超过该时间后，规则将自动置为暂停状态，形式为"2020-07-23 00:00:00"。
+                     * 规则过期时间，超过该时间后，规则将自动置为暂停状态，形式为"2020-07-23 00:00:00"。必须填写
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_expire;

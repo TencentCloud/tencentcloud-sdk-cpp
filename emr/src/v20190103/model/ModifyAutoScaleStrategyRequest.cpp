@@ -25,6 +25,7 @@ using namespace std;
 ModifyAutoScaleStrategyRequest::ModifyAutoScaleStrategyRequest() :
     m_instanceIdHasBeenSet(false),
     m_strategyTypeHasBeenSet(false),
+    m_loadAutoScaleStrategiesHasBeenSet(false),
     m_timeAutoScaleStrategiesHasBeenSet(false),
     m_groupIdHasBeenSet(false)
 {
@@ -51,6 +52,21 @@ string ModifyAutoScaleStrategyRequest::ToJsonString() const
         string key = "StrategyType";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_strategyType, allocator);
+    }
+
+    if (m_loadAutoScaleStrategiesHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "LoadAutoScaleStrategies";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_loadAutoScaleStrategies.begin(); itr != m_loadAutoScaleStrategies.end(); ++itr, ++i)
+        {
+            d[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(d[key.c_str()][i], allocator);
+        }
     }
 
     if (m_timeAutoScaleStrategiesHasBeenSet)
@@ -114,6 +130,22 @@ void ModifyAutoScaleStrategyRequest::SetStrategyType(const int64_t& _strategyTyp
 bool ModifyAutoScaleStrategyRequest::StrategyTypeHasBeenSet() const
 {
     return m_strategyTypeHasBeenSet;
+}
+
+vector<LoadAutoScaleStrategy> ModifyAutoScaleStrategyRequest::GetLoadAutoScaleStrategies() const
+{
+    return m_loadAutoScaleStrategies;
+}
+
+void ModifyAutoScaleStrategyRequest::SetLoadAutoScaleStrategies(const vector<LoadAutoScaleStrategy>& _loadAutoScaleStrategies)
+{
+    m_loadAutoScaleStrategies = _loadAutoScaleStrategies;
+    m_loadAutoScaleStrategiesHasBeenSet = true;
+}
+
+bool ModifyAutoScaleStrategyRequest::LoadAutoScaleStrategiesHasBeenSet() const
+{
+    return m_loadAutoScaleStrategiesHasBeenSet;
 }
 
 vector<TimeAutoScaleStrategy> ModifyAutoScaleStrategyRequest::GetTimeAutoScaleStrategies() const

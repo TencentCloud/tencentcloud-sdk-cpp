@@ -1,0 +1,343 @@
+/*
+ * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *    http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+
+#include <tencentcloud/vclm/v20240523/VclmClient.h>
+#include <tencentcloud/core/Executor.h>
+#include <tencentcloud/core/Runnable.h>
+
+using namespace TencentCloud;
+using namespace TencentCloud::Vclm::V20240523;
+using namespace TencentCloud::Vclm::V20240523::Model;
+using namespace std;
+
+namespace
+{
+    const string VERSION = "2024-05-23";
+    const string ENDPOINT = "vclm.tencentcloudapi.com";
+}
+
+VclmClient::VclmClient(const Credential &credential, const string &region) :
+    VclmClient(credential, region, ClientProfile())
+{
+}
+
+VclmClient::VclmClient(const Credential &credential, const string &region, const ClientProfile &profile) :
+    AbstractClient(ENDPOINT, VERSION, credential, region, profile)
+{
+}
+
+
+VclmClient::ConfirmVideoTranslateJobOutcome VclmClient::ConfirmVideoTranslateJob(const ConfirmVideoTranslateJobRequest &request)
+{
+    auto outcome = MakeRequest(request, "ConfirmVideoTranslateJob");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ConfirmVideoTranslateJobResponse rsp = ConfirmVideoTranslateJobResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ConfirmVideoTranslateJobOutcome(rsp);
+        else
+            return ConfirmVideoTranslateJobOutcome(o.GetError());
+    }
+    else
+    {
+        return ConfirmVideoTranslateJobOutcome(outcome.GetError());
+    }
+}
+
+void VclmClient::ConfirmVideoTranslateJobAsync(const ConfirmVideoTranslateJobRequest& request, const ConfirmVideoTranslateJobAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->ConfirmVideoTranslateJob(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+VclmClient::ConfirmVideoTranslateJobOutcomeCallable VclmClient::ConfirmVideoTranslateJobCallable(const ConfirmVideoTranslateJobRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<ConfirmVideoTranslateJobOutcome()>>(
+        [this, request]()
+        {
+            return this->ConfirmVideoTranslateJob(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+VclmClient::DescribeImageAnimateJobOutcome VclmClient::DescribeImageAnimateJob(const DescribeImageAnimateJobRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeImageAnimateJob");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeImageAnimateJobResponse rsp = DescribeImageAnimateJobResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeImageAnimateJobOutcome(rsp);
+        else
+            return DescribeImageAnimateJobOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeImageAnimateJobOutcome(outcome.GetError());
+    }
+}
+
+void VclmClient::DescribeImageAnimateJobAsync(const DescribeImageAnimateJobRequest& request, const DescribeImageAnimateJobAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeImageAnimateJob(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+VclmClient::DescribeImageAnimateJobOutcomeCallable VclmClient::DescribeImageAnimateJobCallable(const DescribeImageAnimateJobRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeImageAnimateJobOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeImageAnimateJob(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+VclmClient::DescribeVideoStylizationJobOutcome VclmClient::DescribeVideoStylizationJob(const DescribeVideoStylizationJobRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeVideoStylizationJob");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeVideoStylizationJobResponse rsp = DescribeVideoStylizationJobResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeVideoStylizationJobOutcome(rsp);
+        else
+            return DescribeVideoStylizationJobOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeVideoStylizationJobOutcome(outcome.GetError());
+    }
+}
+
+void VclmClient::DescribeVideoStylizationJobAsync(const DescribeVideoStylizationJobRequest& request, const DescribeVideoStylizationJobAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeVideoStylizationJob(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+VclmClient::DescribeVideoStylizationJobOutcomeCallable VclmClient::DescribeVideoStylizationJobCallable(const DescribeVideoStylizationJobRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeVideoStylizationJobOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeVideoStylizationJob(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+VclmClient::DescribeVideoTranslateJobOutcome VclmClient::DescribeVideoTranslateJob(const DescribeVideoTranslateJobRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeVideoTranslateJob");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeVideoTranslateJobResponse rsp = DescribeVideoTranslateJobResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeVideoTranslateJobOutcome(rsp);
+        else
+            return DescribeVideoTranslateJobOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeVideoTranslateJobOutcome(outcome.GetError());
+    }
+}
+
+void VclmClient::DescribeVideoTranslateJobAsync(const DescribeVideoTranslateJobRequest& request, const DescribeVideoTranslateJobAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeVideoTranslateJob(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+VclmClient::DescribeVideoTranslateJobOutcomeCallable VclmClient::DescribeVideoTranslateJobCallable(const DescribeVideoTranslateJobRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeVideoTranslateJobOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeVideoTranslateJob(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+VclmClient::SubmitImageAnimateJobOutcome VclmClient::SubmitImageAnimateJob(const SubmitImageAnimateJobRequest &request)
+{
+    auto outcome = MakeRequest(request, "SubmitImageAnimateJob");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        SubmitImageAnimateJobResponse rsp = SubmitImageAnimateJobResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return SubmitImageAnimateJobOutcome(rsp);
+        else
+            return SubmitImageAnimateJobOutcome(o.GetError());
+    }
+    else
+    {
+        return SubmitImageAnimateJobOutcome(outcome.GetError());
+    }
+}
+
+void VclmClient::SubmitImageAnimateJobAsync(const SubmitImageAnimateJobRequest& request, const SubmitImageAnimateJobAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->SubmitImageAnimateJob(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+VclmClient::SubmitImageAnimateJobOutcomeCallable VclmClient::SubmitImageAnimateJobCallable(const SubmitImageAnimateJobRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<SubmitImageAnimateJobOutcome()>>(
+        [this, request]()
+        {
+            return this->SubmitImageAnimateJob(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+VclmClient::SubmitVideoStylizationJobOutcome VclmClient::SubmitVideoStylizationJob(const SubmitVideoStylizationJobRequest &request)
+{
+    auto outcome = MakeRequest(request, "SubmitVideoStylizationJob");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        SubmitVideoStylizationJobResponse rsp = SubmitVideoStylizationJobResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return SubmitVideoStylizationJobOutcome(rsp);
+        else
+            return SubmitVideoStylizationJobOutcome(o.GetError());
+    }
+    else
+    {
+        return SubmitVideoStylizationJobOutcome(outcome.GetError());
+    }
+}
+
+void VclmClient::SubmitVideoStylizationJobAsync(const SubmitVideoStylizationJobRequest& request, const SubmitVideoStylizationJobAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->SubmitVideoStylizationJob(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+VclmClient::SubmitVideoStylizationJobOutcomeCallable VclmClient::SubmitVideoStylizationJobCallable(const SubmitVideoStylizationJobRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<SubmitVideoStylizationJobOutcome()>>(
+        [this, request]()
+        {
+            return this->SubmitVideoStylizationJob(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+VclmClient::SubmitVideoTranslateJobOutcome VclmClient::SubmitVideoTranslateJob(const SubmitVideoTranslateJobRequest &request)
+{
+    auto outcome = MakeRequest(request, "SubmitVideoTranslateJob");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        SubmitVideoTranslateJobResponse rsp = SubmitVideoTranslateJobResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return SubmitVideoTranslateJobOutcome(rsp);
+        else
+            return SubmitVideoTranslateJobOutcome(o.GetError());
+    }
+    else
+    {
+        return SubmitVideoTranslateJobOutcome(outcome.GetError());
+    }
+}
+
+void VclmClient::SubmitVideoTranslateJobAsync(const SubmitVideoTranslateJobRequest& request, const SubmitVideoTranslateJobAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->SubmitVideoTranslateJob(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+VclmClient::SubmitVideoTranslateJobOutcomeCallable VclmClient::SubmitVideoTranslateJobCallable(const SubmitVideoTranslateJobRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<SubmitVideoTranslateJobOutcome()>>(
+        [this, request]()
+        {
+            return this->SubmitVideoTranslateJob(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+

@@ -21,6 +21,7 @@
 #include <vector>
 #include <map>
 #include <tencentcloud/core/AbstractModel.h>
+#include <tencentcloud/emr/v20190103/model/LoadAutoScaleStrategy.h>
 #include <tencentcloud/emr/v20190103/model/TimeAutoScaleStrategy.h>
 
 
@@ -65,15 +66,15 @@ namespace TencentCloud
                     bool InstanceIdHasBeenSet() const;
 
                     /**
-                     * 获取1表示按负载规则扩容，2表示按时间规则扩容。
-                     * @return StrategyType 1表示按负载规则扩容，2表示按时间规则扩容。
+                     * 获取1表示按负载规则扩容，2表示按时间规则扩容。必须填写，并且和下面的规则策略匹配
+                     * @return StrategyType 1表示按负载规则扩容，2表示按时间规则扩容。必须填写，并且和下面的规则策略匹配
                      * 
                      */
                     int64_t GetStrategyType() const;
 
                     /**
-                     * 设置1表示按负载规则扩容，2表示按时间规则扩容。
-                     * @param _strategyType 1表示按负载规则扩容，2表示按时间规则扩容。
+                     * 设置1表示按负载规则扩容，2表示按时间规则扩容。必须填写，并且和下面的规则策略匹配
+                     * @param _strategyType 1表示按负载规则扩容，2表示按时间规则扩容。必须填写，并且和下面的规则策略匹配
                      * 
                      */
                     void SetStrategyType(const int64_t& _strategyType);
@@ -84,6 +85,27 @@ namespace TencentCloud
                      * 
                      */
                     bool StrategyTypeHasBeenSet() const;
+
+                    /**
+                     * 获取按负载扩容的规则。
+                     * @return LoadAutoScaleStrategy 按负载扩容的规则。
+                     * 
+                     */
+                    LoadAutoScaleStrategy GetLoadAutoScaleStrategy() const;
+
+                    /**
+                     * 设置按负载扩容的规则。
+                     * @param _loadAutoScaleStrategy 按负载扩容的规则。
+                     * 
+                     */
+                    void SetLoadAutoScaleStrategy(const LoadAutoScaleStrategy& _loadAutoScaleStrategy);
+
+                    /**
+                     * 判断参数 LoadAutoScaleStrategy 是否已赋值
+                     * @return LoadAutoScaleStrategy 是否已赋值
+                     * 
+                     */
+                    bool LoadAutoScaleStrategyHasBeenSet() const;
 
                     /**
                      * 获取按时间扩缩容的规则。
@@ -115,10 +137,16 @@ namespace TencentCloud
                     bool m_instanceIdHasBeenSet;
 
                     /**
-                     * 1表示按负载规则扩容，2表示按时间规则扩容。
+                     * 1表示按负载规则扩容，2表示按时间规则扩容。必须填写，并且和下面的规则策略匹配
                      */
                     int64_t m_strategyType;
                     bool m_strategyTypeHasBeenSet;
+
+                    /**
+                     * 按负载扩容的规则。
+                     */
+                    LoadAutoScaleStrategy m_loadAutoScaleStrategy;
+                    bool m_loadAutoScaleStrategyHasBeenSet;
 
                     /**
                      * 按时间扩缩容的规则。

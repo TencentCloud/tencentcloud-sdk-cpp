@@ -45,7 +45,8 @@ TrainTicket::TrainTicket() :
     m_receiptNumberHasBeenSet(false),
     m_qRCodeMarkHasBeenSet(false),
     m_reimburseOnlyMarkHasBeenSet(false),
-    m_refundMarkHasBeenSet(false)
+    m_refundMarkHasBeenSet(false),
+    m_ticketChangeMarkHasBeenSet(false)
 {
 }
 
@@ -304,6 +305,16 @@ CoreInternalOutcome TrainTicket::Deserialize(const rapidjson::Value &value)
         m_refundMarkHasBeenSet = true;
     }
 
+    if (value.HasMember("TicketChangeMark") && !value["TicketChangeMark"].IsNull())
+    {
+        if (!value["TicketChangeMark"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `TrainTicket.TicketChangeMark` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_ticketChangeMark = value["TicketChangeMark"].GetInt64();
+        m_ticketChangeMarkHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -509,6 +520,14 @@ void TrainTicket::ToJsonObject(rapidjson::Value &value, rapidjson::Document::All
         string key = "RefundMark";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_refundMark, allocator);
+    }
+
+    if (m_ticketChangeMarkHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "TicketChangeMark";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_ticketChangeMark, allocator);
     }
 
 }
@@ -912,5 +931,21 @@ void TrainTicket::SetRefundMark(const int64_t& _refundMark)
 bool TrainTicket::RefundMarkHasBeenSet() const
 {
     return m_refundMarkHasBeenSet;
+}
+
+int64_t TrainTicket::GetTicketChangeMark() const
+{
+    return m_ticketChangeMark;
+}
+
+void TrainTicket::SetTicketChangeMark(const int64_t& _ticketChangeMark)
+{
+    m_ticketChangeMark = _ticketChangeMark;
+    m_ticketChangeMarkHasBeenSet = true;
+}
+
+bool TrainTicket::TicketChangeMarkHasBeenSet() const
+{
+    return m_ticketChangeMarkHasBeenSet;
 }
 
