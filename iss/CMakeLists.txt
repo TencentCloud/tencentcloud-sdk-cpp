@@ -28,13 +28,14 @@ set(iss_public_header_model
   include/tencentcloud/iss/v20230517/model/DescribeDevicePresetData.h
   include/tencentcloud/iss/v20230517/model/ListSubTasksRequest.h
   include/tencentcloud/iss/v20230517/model/DescribeGatewayMonitor.h
-  include/tencentcloud/iss/v20230517/model/DescribeAITaskResultRequest.h
+  include/tencentcloud/iss/v20230517/model/AddRecordBackupPlanResponse.h
   include/tencentcloud/iss/v20230517/model/DescribeCNAMERequest.h
   include/tencentcloud/iss/v20230517/model/DescribeVideoDownloadUrlData.h
   include/tencentcloud/iss/v20230517/model/ControlRecordTimelineRequest.h
   include/tencentcloud/iss/v20230517/model/DeleteOrganizationRequest.h
   include/tencentcloud/iss/v20230517/model/OperTimeSlot.h
   include/tencentcloud/iss/v20230517/model/CheckDomainResponse.h
+  include/tencentcloud/iss/v20230517/model/SetForbidPlayChannelsRequest.h
   include/tencentcloud/iss/v20230517/model/SubTaskData.h
   include/tencentcloud/iss/v20230517/model/DescribeCNAMEResponse.h
   include/tencentcloud/iss/v20230517/model/UpdateOrganizationResponse.h
@@ -93,7 +94,7 @@ set(iss_public_header_model
   include/tencentcloud/iss/v20230517/model/DescribeStreamAuthData.h
   include/tencentcloud/iss/v20230517/model/AddRecordTemplateResponse.h
   include/tencentcloud/iss/v20230517/model/ListRecordPlansRequest.h
-  include/tencentcloud/iss/v20230517/model/AddRecordBackupPlanResponse.h
+  include/tencentcloud/iss/v20230517/model/DescribeAITaskResultRequest.h
   include/tencentcloud/iss/v20230517/model/SnapshotConfig.h
   include/tencentcloud/iss/v20230517/model/ListSubTasksResponse.h
   include/tencentcloud/iss/v20230517/model/ListAITasksRequest.h
@@ -161,6 +162,7 @@ set(iss_public_header_model
   include/tencentcloud/iss/v20230517/model/UpdateUserDeviceResponse.h
   include/tencentcloud/iss/v20230517/model/GatewaysData.h
   include/tencentcloud/iss/v20230517/model/ListGatewayDevicesData.h
+  include/tencentcloud/iss/v20230517/model/ListForbidplayChannelsData.h
   include/tencentcloud/iss/v20230517/model/DescribeDevicePresetRequest.h
   include/tencentcloud/iss/v20230517/model/ListGatewaysResponse.h
   include/tencentcloud/iss/v20230517/model/AddRecordBackupPlanData.h
@@ -173,6 +175,7 @@ set(iss_public_header_model
   include/tencentcloud/iss/v20230517/model/DescribeGatewayProtocolRequest.h
   include/tencentcloud/iss/v20230517/model/AddAITaskRequest.h
   include/tencentcloud/iss/v20230517/model/DescribeGatewayProtocolData.h
+  include/tencentcloud/iss/v20230517/model/QueryForbidPlayChannelListResponse.h
   include/tencentcloud/iss/v20230517/model/DescribeVideoDownloadUrlRequest.h
   include/tencentcloud/iss/v20230517/model/DescribeGatewayVersionResponse.h
   include/tencentcloud/iss/v20230517/model/ListGatewaysRequest.h
@@ -190,6 +193,7 @@ set(iss_public_header_model
   include/tencentcloud/iss/v20230517/model/BitRateInfo.h
   include/tencentcloud/iss/v20230517/model/PlayRecordRequest.h
   include/tencentcloud/iss/v20230517/model/UpdateRecordBackupTemplateModify.h
+  include/tencentcloud/iss/v20230517/model/QueryForbidPlayChannelListRequest.h
   include/tencentcloud/iss/v20230517/model/CheckDomainRequest.h
   include/tencentcloud/iss/v20230517/model/PlateContent.h
   include/tencentcloud/iss/v20230517/model/UpgradeGatewayRequest.h
@@ -213,6 +217,7 @@ set(iss_public_header_model
   include/tencentcloud/iss/v20230517/model/DeleteRecordRetrieveTaskRequest.h
   include/tencentcloud/iss/v20230517/model/DescribeRecordBackupPlanData.h
   include/tencentcloud/iss/v20230517/model/DescribeRecordSliceResponse.h
+  include/tencentcloud/iss/v20230517/model/ChannelAttrInfo.h
   include/tencentcloud/iss/v20230517/model/UpdateRecordPlanResponse.h
   include/tencentcloud/iss/v20230517/model/DescribeTaskResponse.h
   include/tencentcloud/iss/v20230517/model/DescribeGatewayVersion.h
@@ -223,6 +228,7 @@ set(iss_public_header_model
   include/tencentcloud/iss/v20230517/model/AddAITaskResponse.h
   include/tencentcloud/iss/v20230517/model/DescribeDeviceRegion.h
   include/tencentcloud/iss/v20230517/model/RecordPlanChannelInfo.h
+  include/tencentcloud/iss/v20230517/model/SetForbidPlayChannelsResponse.h
   include/tencentcloud/iss/v20230517/model/UpdateRecordTemplateRequest.h
   include/tencentcloud/iss/v20230517/model/DeleteRecordBackupTemplateRequest.h
   include/tencentcloud/iss/v20230517/model/ListGatewayDevicesRequest.h
@@ -271,6 +277,7 @@ set(iss_public_header_model
   include/tencentcloud/iss/v20230517/model/UpdateRecordBackupTemplateData.h
   include/tencentcloud/iss/v20230517/model/UpdateRecordBackupPlanData.h
   include/tencentcloud/iss/v20230517/model/AddDeviceData.h
+  include/tencentcloud/iss/v20230517/model/SetForbidplayChannelParam.h
   )
 
 set(iss_src
@@ -284,13 +291,14 @@ set(iss_src
   src/v20230517/model/DescribeDevicePresetData.cpp
   src/v20230517/model/ListSubTasksRequest.cpp
   src/v20230517/model/DescribeGatewayMonitor.cpp
-  src/v20230517/model/DescribeAITaskResultRequest.cpp
+  src/v20230517/model/AddRecordBackupPlanResponse.cpp
   src/v20230517/model/DescribeCNAMERequest.cpp
   src/v20230517/model/DescribeVideoDownloadUrlData.cpp
   src/v20230517/model/ControlRecordTimelineRequest.cpp
   src/v20230517/model/DeleteOrganizationRequest.cpp
   src/v20230517/model/OperTimeSlot.cpp
   src/v20230517/model/CheckDomainResponse.cpp
+  src/v20230517/model/SetForbidPlayChannelsRequest.cpp
   src/v20230517/model/SubTaskData.cpp
   src/v20230517/model/DescribeCNAMEResponse.cpp
   src/v20230517/model/UpdateOrganizationResponse.cpp
@@ -349,7 +357,7 @@ set(iss_src
   src/v20230517/model/DescribeStreamAuthData.cpp
   src/v20230517/model/AddRecordTemplateResponse.cpp
   src/v20230517/model/ListRecordPlansRequest.cpp
-  src/v20230517/model/AddRecordBackupPlanResponse.cpp
+  src/v20230517/model/DescribeAITaskResultRequest.cpp
   src/v20230517/model/SnapshotConfig.cpp
   src/v20230517/model/ListSubTasksResponse.cpp
   src/v20230517/model/ListAITasksRequest.cpp
@@ -417,6 +425,7 @@ set(iss_src
   src/v20230517/model/UpdateUserDeviceResponse.cpp
   src/v20230517/model/GatewaysData.cpp
   src/v20230517/model/ListGatewayDevicesData.cpp
+  src/v20230517/model/ListForbidplayChannelsData.cpp
   src/v20230517/model/DescribeDevicePresetRequest.cpp
   src/v20230517/model/ListGatewaysResponse.cpp
   src/v20230517/model/AddRecordBackupPlanData.cpp
@@ -429,6 +438,7 @@ set(iss_src
   src/v20230517/model/DescribeGatewayProtocolRequest.cpp
   src/v20230517/model/AddAITaskRequest.cpp
   src/v20230517/model/DescribeGatewayProtocolData.cpp
+  src/v20230517/model/QueryForbidPlayChannelListResponse.cpp
   src/v20230517/model/DescribeVideoDownloadUrlRequest.cpp
   src/v20230517/model/DescribeGatewayVersionResponse.cpp
   src/v20230517/model/ListGatewaysRequest.cpp
@@ -446,6 +456,7 @@ set(iss_src
   src/v20230517/model/BitRateInfo.cpp
   src/v20230517/model/PlayRecordRequest.cpp
   src/v20230517/model/UpdateRecordBackupTemplateModify.cpp
+  src/v20230517/model/QueryForbidPlayChannelListRequest.cpp
   src/v20230517/model/CheckDomainRequest.cpp
   src/v20230517/model/PlateContent.cpp
   src/v20230517/model/UpgradeGatewayRequest.cpp
@@ -469,6 +480,7 @@ set(iss_src
   src/v20230517/model/DeleteRecordRetrieveTaskRequest.cpp
   src/v20230517/model/DescribeRecordBackupPlanData.cpp
   src/v20230517/model/DescribeRecordSliceResponse.cpp
+  src/v20230517/model/ChannelAttrInfo.cpp
   src/v20230517/model/UpdateRecordPlanResponse.cpp
   src/v20230517/model/DescribeTaskResponse.cpp
   src/v20230517/model/DescribeGatewayVersion.cpp
@@ -479,6 +491,7 @@ set(iss_src
   src/v20230517/model/AddAITaskResponse.cpp
   src/v20230517/model/DescribeDeviceRegion.cpp
   src/v20230517/model/RecordPlanChannelInfo.cpp
+  src/v20230517/model/SetForbidPlayChannelsResponse.cpp
   src/v20230517/model/UpdateRecordTemplateRequest.cpp
   src/v20230517/model/DeleteRecordBackupTemplateRequest.cpp
   src/v20230517/model/ListGatewayDevicesRequest.cpp
@@ -527,6 +540,7 @@ set(iss_src
   src/v20230517/model/UpdateRecordBackupTemplateData.cpp
   src/v20230517/model/UpdateRecordBackupPlanData.cpp
   src/v20230517/model/AddDeviceData.cpp
+  src/v20230517/model/SetForbidplayChannelParam.cpp
   )
 
 set(iss_include

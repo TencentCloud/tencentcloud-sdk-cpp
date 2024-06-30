@@ -4079,7 +4079,6 @@ LimitTypes取值范围：
 
                 /**
                  *本接口（ModifyDirectConnectGatewayAttribute）用于修改专线网关属性
-
                  * @param req ModifyDirectConnectGatewayAttributeRequest
                  * @return ModifyDirectConnectGatewayAttributeOutcome
                  */

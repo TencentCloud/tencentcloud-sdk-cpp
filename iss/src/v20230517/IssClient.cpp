@@ -3007,6 +3007,49 @@ IssClient::PlayRecordOutcomeCallable IssClient::PlayRecordCallable(const PlayRec
     return task->get_future();
 }
 
+IssClient::QueryForbidPlayChannelListOutcome IssClient::QueryForbidPlayChannelList(const QueryForbidPlayChannelListRequest &request)
+{
+    auto outcome = MakeRequest(request, "QueryForbidPlayChannelList");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        QueryForbidPlayChannelListResponse rsp = QueryForbidPlayChannelListResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return QueryForbidPlayChannelListOutcome(rsp);
+        else
+            return QueryForbidPlayChannelListOutcome(o.GetError());
+    }
+    else
+    {
+        return QueryForbidPlayChannelListOutcome(outcome.GetError());
+    }
+}
+
+void IssClient::QueryForbidPlayChannelListAsync(const QueryForbidPlayChannelListRequest& request, const QueryForbidPlayChannelListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->QueryForbidPlayChannelList(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+IssClient::QueryForbidPlayChannelListOutcomeCallable IssClient::QueryForbidPlayChannelListCallable(const QueryForbidPlayChannelListRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<QueryForbidPlayChannelListOutcome()>>(
+        [this, request]()
+        {
+            return this->QueryForbidPlayChannelList(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 IssClient::RefreshDeviceChannelOutcome IssClient::RefreshDeviceChannel(const RefreshDeviceChannelRequest &request)
 {
     auto outcome = MakeRequest(request, "RefreshDeviceChannel");
@@ -3043,6 +3086,49 @@ IssClient::RefreshDeviceChannelOutcomeCallable IssClient::RefreshDeviceChannelCa
         [this, request]()
         {
             return this->RefreshDeviceChannel(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+IssClient::SetForbidPlayChannelsOutcome IssClient::SetForbidPlayChannels(const SetForbidPlayChannelsRequest &request)
+{
+    auto outcome = MakeRequest(request, "SetForbidPlayChannels");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        SetForbidPlayChannelsResponse rsp = SetForbidPlayChannelsResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return SetForbidPlayChannelsOutcome(rsp);
+        else
+            return SetForbidPlayChannelsOutcome(o.GetError());
+    }
+    else
+    {
+        return SetForbidPlayChannelsOutcome(outcome.GetError());
+    }
+}
+
+void IssClient::SetForbidPlayChannelsAsync(const SetForbidPlayChannelsRequest& request, const SetForbidPlayChannelsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->SetForbidPlayChannels(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+IssClient::SetForbidPlayChannelsOutcomeCallable IssClient::SetForbidPlayChannelsCallable(const SetForbidPlayChannelsRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<SetForbidPlayChannelsOutcome()>>(
+        [this, request]()
+        {
+            return this->SetForbidPlayChannels(request);
         }
     );
 

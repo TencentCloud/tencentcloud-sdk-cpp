@@ -161,8 +161,12 @@
 #include <tencentcloud/iss/v20230517/model/ListTasksResponse.h>
 #include <tencentcloud/iss/v20230517/model/PlayRecordRequest.h>
 #include <tencentcloud/iss/v20230517/model/PlayRecordResponse.h>
+#include <tencentcloud/iss/v20230517/model/QueryForbidPlayChannelListRequest.h>
+#include <tencentcloud/iss/v20230517/model/QueryForbidPlayChannelListResponse.h>
 #include <tencentcloud/iss/v20230517/model/RefreshDeviceChannelRequest.h>
 #include <tencentcloud/iss/v20230517/model/RefreshDeviceChannelResponse.h>
+#include <tencentcloud/iss/v20230517/model/SetForbidPlayChannelsRequest.h>
+#include <tencentcloud/iss/v20230517/model/SetForbidPlayChannelsResponse.h>
 #include <tencentcloud/iss/v20230517/model/UpdateAITaskRequest.h>
 #include <tencentcloud/iss/v20230517/model/UpdateAITaskResponse.h>
 #include <tencentcloud/iss/v20230517/model/UpdateAITaskStatusRequest.h>
@@ -408,9 +412,15 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::PlayRecordResponse> PlayRecordOutcome;
                 typedef std::future<PlayRecordOutcome> PlayRecordOutcomeCallable;
                 typedef std::function<void(const IssClient*, const Model::PlayRecordRequest&, PlayRecordOutcome, const std::shared_ptr<const AsyncCallerContext>&)> PlayRecordAsyncHandler;
+                typedef Outcome<Core::Error, Model::QueryForbidPlayChannelListResponse> QueryForbidPlayChannelListOutcome;
+                typedef std::future<QueryForbidPlayChannelListOutcome> QueryForbidPlayChannelListOutcomeCallable;
+                typedef std::function<void(const IssClient*, const Model::QueryForbidPlayChannelListRequest&, QueryForbidPlayChannelListOutcome, const std::shared_ptr<const AsyncCallerContext>&)> QueryForbidPlayChannelListAsyncHandler;
                 typedef Outcome<Core::Error, Model::RefreshDeviceChannelResponse> RefreshDeviceChannelOutcome;
                 typedef std::future<RefreshDeviceChannelOutcome> RefreshDeviceChannelOutcomeCallable;
                 typedef std::function<void(const IssClient*, const Model::RefreshDeviceChannelRequest&, RefreshDeviceChannelOutcome, const std::shared_ptr<const AsyncCallerContext>&)> RefreshDeviceChannelAsyncHandler;
+                typedef Outcome<Core::Error, Model::SetForbidPlayChannelsResponse> SetForbidPlayChannelsOutcome;
+                typedef std::future<SetForbidPlayChannelsOutcome> SetForbidPlayChannelsOutcomeCallable;
+                typedef std::function<void(const IssClient*, const Model::SetForbidPlayChannelsRequest&, SetForbidPlayChannelsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> SetForbidPlayChannelsAsyncHandler;
                 typedef Outcome<Core::Error, Model::UpdateAITaskResponse> UpdateAITaskOutcome;
                 typedef std::future<UpdateAITaskOutcome> UpdateAITaskOutcomeCallable;
                 typedef std::function<void(const IssClient*, const Model::UpdateAITaskRequest&, UpdateAITaskOutcome, const std::shared_ptr<const AsyncCallerContext>&)> UpdateAITaskAsyncHandler;
@@ -1076,6 +1086,15 @@ namespace TencentCloud
                 PlayRecordOutcomeCallable PlayRecordCallable(const Model::PlayRecordRequest& request);
 
                 /**
+                 *查询禁播通道列表
+                 * @param req QueryForbidPlayChannelListRequest
+                 * @return QueryForbidPlayChannelListOutcome
+                 */
+                QueryForbidPlayChannelListOutcome QueryForbidPlayChannelList(const Model::QueryForbidPlayChannelListRequest &request);
+                void QueryForbidPlayChannelListAsync(const Model::QueryForbidPlayChannelListRequest& request, const QueryForbidPlayChannelListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                QueryForbidPlayChannelListOutcomeCallable QueryForbidPlayChannelListCallable(const Model::QueryForbidPlayChannelListRequest& request);
+
+                /**
                  *用于刷新国标设备的通道（接口调用后，触发向设备请求通道列表，新增的通道入库，设备上已删除的通道需自行删除、后台不自动删除）。
                  * @param req RefreshDeviceChannelRequest
                  * @return RefreshDeviceChannelOutcome
@@ -1083,6 +1102,15 @@ namespace TencentCloud
                 RefreshDeviceChannelOutcome RefreshDeviceChannel(const Model::RefreshDeviceChannelRequest &request);
                 void RefreshDeviceChannelAsync(const Model::RefreshDeviceChannelRequest& request, const RefreshDeviceChannelAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 RefreshDeviceChannelOutcomeCallable RefreshDeviceChannelCallable(const Model::RefreshDeviceChannelRequest& request);
+
+                /**
+                 *禁止主、子账号对视频通道的实况预览
+                 * @param req SetForbidPlayChannelsRequest
+                 * @return SetForbidPlayChannelsOutcome
+                 */
+                SetForbidPlayChannelsOutcome SetForbidPlayChannels(const Model::SetForbidPlayChannelsRequest &request);
+                void SetForbidPlayChannelsAsync(const Model::SetForbidPlayChannelsRequest& request, const SetForbidPlayChannelsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                SetForbidPlayChannelsOutcomeCallable SetForbidPlayChannelsCallable(const Model::SetForbidPlayChannelsRequest& request);
 
                 /**
                  *更新AI任务

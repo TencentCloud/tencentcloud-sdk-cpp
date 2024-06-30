@@ -335,6 +335,7 @@ set(iotexplorer_public_header_model
   include/tencentcloud/iotexplorer/v20190423/model/DescribeCloudStorageOrderResponse.h
   include/tencentcloud/iotexplorer/v20190423/model/CreateTopicRuleRequest.h
   include/tencentcloud/iotexplorer/v20190423/model/PublishRRPCMessageResponse.h
+  include/tencentcloud/iotexplorer/v20190423/model/TWeCallCategoryPkgInfo.h
   include/tencentcloud/iotexplorer/v20190423/model/CreateTRTCSignaturesWithRoomIdResponse.h
   include/tencentcloud/iotexplorer/v20190423/model/ProductModelDefinition.h
   include/tencentcloud/iotexplorer/v20190423/model/DescribeDevicePackagesResponse.h
@@ -675,6 +676,7 @@ set(iotexplorer_src
   src/v20190423/model/DescribeCloudStorageOrderResponse.cpp
   src/v20190423/model/CreateTopicRuleRequest.cpp
   src/v20190423/model/PublishRRPCMessageResponse.cpp
+  src/v20190423/model/TWeCallCategoryPkgInfo.cpp
   src/v20190423/model/CreateTRTCSignaturesWithRoomIdResponse.cpp
   src/v20190423/model/ProductModelDefinition.cpp
   src/v20190423/model/DescribeDevicePackagesResponse.cpp

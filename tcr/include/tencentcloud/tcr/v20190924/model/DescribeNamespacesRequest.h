@@ -150,14 +150,30 @@ namespace TencentCloud
 
                     /**
                      * 获取过滤条件
+- 按照【标签】过滤
+   Name: Tags
+   Value:   tagKey:tagVal
+
                      * @return Filters 过滤条件
+- 按照【标签】过滤
+   Name: Tags
+   Value:   tagKey:tagVal
+
                      * 
                      */
                     std::vector<Filter> GetFilters() const;
 
                     /**
                      * 设置过滤条件
+- 按照【标签】过滤
+   Name: Tags
+   Value:   tagKey:tagVal
+
                      * @param _filters 过滤条件
+- 按照【标签】过滤
+   Name: Tags
+   Value:   tagKey:tagVal
+
                      * 
                      */
                     void SetFilters(const std::vector<Filter>& _filters);
@@ -224,6 +240,10 @@ namespace TencentCloud
 
                     /**
                      * 过滤条件
+- 按照【标签】过滤
+   Name: Tags
+   Value:   tagKey:tagVal
+
                      */
                     std::vector<Filter> m_filters;
                     bool m_filtersHasBeenSet;

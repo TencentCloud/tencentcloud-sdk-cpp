@@ -170,6 +170,27 @@ namespace TencentCloud
                      */
                     bool StopParamsHasBeenSet() const;
 
+                    /**
+                     * 获取当OpType为<li>StopMonitor</li>才有用，true表示进入维护模式但是仍然监控进程但是不拉起进程
+                     * @return KeepMonitorButNotRecoverProcess 当OpType为<li>StopMonitor</li>才有用，true表示进入维护模式但是仍然监控进程但是不拉起进程
+                     * 
+                     */
+                    bool GetKeepMonitorButNotRecoverProcess() const;
+
+                    /**
+                     * 设置当OpType为<li>StopMonitor</li>才有用，true表示进入维护模式但是仍然监控进程但是不拉起进程
+                     * @param _keepMonitorButNotRecoverProcess 当OpType为<li>StopMonitor</li>才有用，true表示进入维护模式但是仍然监控进程但是不拉起进程
+                     * 
+                     */
+                    void SetKeepMonitorButNotRecoverProcess(const bool& _keepMonitorButNotRecoverProcess);
+
+                    /**
+                     * 判断参数 KeepMonitorButNotRecoverProcess 是否已赋值
+                     * @return KeepMonitorButNotRecoverProcess 是否已赋值
+                     * 
+                     */
+                    bool KeepMonitorButNotRecoverProcessHasBeenSet() const;
+
                 private:
 
                     /**
@@ -206,6 +227,12 @@ namespace TencentCloud
                      */
                     StopParams m_stopParams;
                     bool m_stopParamsHasBeenSet;
+
+                    /**
+                     * 当OpType为<li>StopMonitor</li>才有用，true表示进入维护模式但是仍然监控进程但是不拉起进程
+                     */
+                    bool m_keepMonitorButNotRecoverProcess;
+                    bool m_keepMonitorButNotRecoverProcessHasBeenSet;
 
                 };
             }

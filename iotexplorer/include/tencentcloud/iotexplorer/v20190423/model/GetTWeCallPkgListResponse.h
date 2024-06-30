@@ -22,6 +22,7 @@
 #include <map>
 #include <tencentcloud/core/AbstractModel.h>
 #include <tencentcloud/iotexplorer/v20190423/model/TWeCallPkgInfo.h>
+#include <tencentcloud/iotexplorer/v20190423/model/TWeCallCategoryPkgInfo.h>
 
 
 namespace TencentCloud
@@ -72,6 +73,22 @@ namespace TencentCloud
                      */
                     bool TotalHasBeenSet() const;
 
+                    /**
+                     * 获取分类统计
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return TWeCallCategoryPkgList 分类统计
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::vector<TWeCallCategoryPkgInfo> GetTWeCallCategoryPkgList() const;
+
+                    /**
+                     * 判断参数 TWeCallCategoryPkgList 是否已赋值
+                     * @return TWeCallCategoryPkgList 是否已赋值
+                     * 
+                     */
+                    bool TWeCallCategoryPkgListHasBeenSet() const;
+
                 private:
 
                     /**
@@ -85,6 +102,13 @@ namespace TencentCloud
                      */
                     int64_t m_total;
                     bool m_totalHasBeenSet;
+
+                    /**
+                     * 分类统计
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::vector<TWeCallCategoryPkgInfo> m_tWeCallCategoryPkgList;
+                    bool m_tWeCallCategoryPkgListHasBeenSet;
 
                 };
             }

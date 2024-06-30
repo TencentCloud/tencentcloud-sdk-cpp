@@ -83,6 +83,49 @@ SesClient::BatchSendEmailOutcomeCallable SesClient::BatchSendEmailCallable(const
     return task->get_future();
 }
 
+SesClient::CreateCustomBlacklistOutcome SesClient::CreateCustomBlacklist(const CreateCustomBlacklistRequest &request)
+{
+    auto outcome = MakeRequest(request, "CreateCustomBlacklist");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        CreateCustomBlacklistResponse rsp = CreateCustomBlacklistResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return CreateCustomBlacklistOutcome(rsp);
+        else
+            return CreateCustomBlacklistOutcome(o.GetError());
+    }
+    else
+    {
+        return CreateCustomBlacklistOutcome(outcome.GetError());
+    }
+}
+
+void SesClient::CreateCustomBlacklistAsync(const CreateCustomBlacklistRequest& request, const CreateCustomBlacklistAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->CreateCustomBlacklist(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+SesClient::CreateCustomBlacklistOutcomeCallable SesClient::CreateCustomBlacklistCallable(const CreateCustomBlacklistRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<CreateCustomBlacklistOutcome()>>(
+        [this, request]()
+        {
+            return this->CreateCustomBlacklist(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 SesClient::CreateEmailAddressOutcome SesClient::CreateEmailAddress(const CreateEmailAddressRequest &request)
 {
     auto outcome = MakeRequest(request, "CreateEmailAddress");
@@ -377,6 +420,49 @@ SesClient::DeleteBlackListOutcomeCallable SesClient::DeleteBlackListCallable(con
         [this, request]()
         {
             return this->DeleteBlackList(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+SesClient::DeleteCustomBlackListOutcome SesClient::DeleteCustomBlackList(const DeleteCustomBlackListRequest &request)
+{
+    auto outcome = MakeRequest(request, "DeleteCustomBlackList");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DeleteCustomBlackListResponse rsp = DeleteCustomBlackListResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DeleteCustomBlackListOutcome(rsp);
+        else
+            return DeleteCustomBlackListOutcome(o.GetError());
+    }
+    else
+    {
+        return DeleteCustomBlackListOutcome(outcome.GetError());
+    }
+}
+
+void SesClient::DeleteCustomBlackListAsync(const DeleteCustomBlackListRequest& request, const DeleteCustomBlackListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DeleteCustomBlackList(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+SesClient::DeleteCustomBlackListOutcomeCallable SesClient::DeleteCustomBlackListCallable(const DeleteCustomBlackListRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DeleteCustomBlackListOutcome()>>(
+        [this, request]()
+        {
+            return this->DeleteCustomBlackList(request);
         }
     );
 
@@ -771,6 +857,49 @@ SesClient::ListBlackEmailAddressOutcomeCallable SesClient::ListBlackEmailAddress
     return task->get_future();
 }
 
+SesClient::ListCustomBlacklistOutcome SesClient::ListCustomBlacklist(const ListCustomBlacklistRequest &request)
+{
+    auto outcome = MakeRequest(request, "ListCustomBlacklist");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ListCustomBlacklistResponse rsp = ListCustomBlacklistResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ListCustomBlacklistOutcome(rsp);
+        else
+            return ListCustomBlacklistOutcome(o.GetError());
+    }
+    else
+    {
+        return ListCustomBlacklistOutcome(outcome.GetError());
+    }
+}
+
+void SesClient::ListCustomBlacklistAsync(const ListCustomBlacklistRequest& request, const ListCustomBlacklistAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->ListCustomBlacklist(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+SesClient::ListCustomBlacklistOutcomeCallable SesClient::ListCustomBlacklistCallable(const ListCustomBlacklistRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<ListCustomBlacklistOutcome()>>(
+        [this, request]()
+        {
+            return this->ListCustomBlacklist(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 SesClient::ListEmailAddressOutcome SesClient::ListEmailAddress(const ListEmailAddressRequest &request)
 {
     auto outcome = MakeRequest(request, "ListEmailAddress");
@@ -1065,6 +1194,49 @@ SesClient::SendEmailOutcomeCallable SesClient::SendEmailCallable(const SendEmail
         [this, request]()
         {
             return this->SendEmail(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+SesClient::UpdateCustomBlackListOutcome SesClient::UpdateCustomBlackList(const UpdateCustomBlackListRequest &request)
+{
+    auto outcome = MakeRequest(request, "UpdateCustomBlackList");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        UpdateCustomBlackListResponse rsp = UpdateCustomBlackListResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return UpdateCustomBlackListOutcome(rsp);
+        else
+            return UpdateCustomBlackListOutcome(o.GetError());
+    }
+    else
+    {
+        return UpdateCustomBlackListOutcome(outcome.GetError());
+    }
+}
+
+void SesClient::UpdateCustomBlackListAsync(const UpdateCustomBlackListRequest& request, const UpdateCustomBlackListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->UpdateCustomBlackList(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+SesClient::UpdateCustomBlackListOutcomeCallable SesClient::UpdateCustomBlackListCallable(const UpdateCustomBlackListRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<UpdateCustomBlackListOutcome()>>(
+        [this, request]()
+        {
+            return this->UpdateCustomBlackList(request);
         }
     );
 

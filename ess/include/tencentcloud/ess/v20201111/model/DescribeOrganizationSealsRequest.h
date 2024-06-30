@@ -112,31 +112,23 @@ namespace TencentCloud
                     bool OffsetHasBeenSet() const;
 
                     /**
-                     * 获取查询信息类型，取值如下：
-<ul>
-<li>0不返回授权用户</li>
-<li>1返回授权用户信息</li>
-</ul>
-                     * @return InfoType 查询信息类型，取值如下：
-<ul>
-<li>0不返回授权用户</li>
-<li>1返回授权用户信息</li>
-</ul>
+                     * 获取查询授权用户信息类型，取值如下：
+
+<ul> <li><b>0</b>：（默认）不返回授权用户信息</li> <li><b>1</b>：返回授权用户的信息</li> </ul>
+                     * @return InfoType 查询授权用户信息类型，取值如下：
+
+<ul> <li><b>0</b>：（默认）不返回授权用户信息</li> <li><b>1</b>：返回授权用户的信息</li> </ul>
                      * 
                      */
                     int64_t GetInfoType() const;
 
                     /**
-                     * 设置查询信息类型，取值如下：
-<ul>
-<li>0不返回授权用户</li>
-<li>1返回授权用户信息</li>
-</ul>
-                     * @param _infoType 查询信息类型，取值如下：
-<ul>
-<li>0不返回授权用户</li>
-<li>1返回授权用户信息</li>
-</ul>
+                     * 设置查询授权用户信息类型，取值如下：
+
+<ul> <li><b>0</b>：（默认）不返回授权用户信息</li> <li><b>1</b>：返回授权用户的信息</li> </ul>
+                     * @param _infoType 查询授权用户信息类型，取值如下：
+
+<ul> <li><b>0</b>：（默认）不返回授权用户信息</li> <li><b>1</b>：返回授权用户的信息</li> </ul>
                      * 
                      */
                     void SetInfoType(const int64_t& _infoType);
@@ -149,15 +141,15 @@ namespace TencentCloud
                     bool InfoTypeHasBeenSet() const;
 
                     /**
-                     * 获取印章id（没有输入返回所有）
-                     * @return SealId 印章id（没有输入返回所有）
+                     * 获取印章id，是否查询特定的印章（没有输入返回所有）
+                     * @return SealId 印章id，是否查询特定的印章（没有输入返回所有）
                      * 
                      */
                     std::string GetSealId() const;
 
                     /**
-                     * 设置印章id（没有输入返回所有）
-                     * @param _sealId 印章id（没有输入返回所有）
+                     * 设置印章id，是否查询特定的印章（没有输入返回所有）
+                     * @param _sealId 印章id，是否查询特定的印章（没有输入返回所有）
                      * 
                      */
                     void SetSealId(const std::string& _sealId);
@@ -170,47 +162,31 @@ namespace TencentCloud
                     bool SealIdHasBeenSet() const;
 
                     /**
-                     * 获取印章类型列表（都是组织机构印章）。
-为空时查询所有类型的印章。
-目前支持以下类型：
-<ul>
-<li>OFFICIAL：企业公章；</li>
-<li>CONTRACT：合同专用章；</li>
-<li>ORGANIZATION_SEAL：企业印章(图片上传创建)；</li>
-<li>LEGAL_PERSON_SEAL：法定代表人章</li>
-</ul>
-                     * @return SealTypes 印章类型列表（都是组织机构印章）。
-为空时查询所有类型的印章。
-目前支持以下类型：
-<ul>
-<li>OFFICIAL：企业公章；</li>
-<li>CONTRACT：合同专用章；</li>
-<li>ORGANIZATION_SEAL：企业印章(图片上传创建)；</li>
-<li>LEGAL_PERSON_SEAL：法定代表人章</li>
-</ul>
+                     * 获取印章种类列表（均为组织机构印章）。 若无特定需求，将展示所有类型的印章。 
+
+目前支持以下几种：
+
+<ul> <li><strong>OFFICIAL</strong>：企业公章；</li> <li><strong>CONTRACT</strong>：合同专用章；</li> <li><strong>ORGANIZATION_SEAL</strong>：企业印章（通过图片上传创建）；</li> <li><strong>LEGAL_PERSON_SEAL</strong>：法定代表人章。</li> </ul>
+                     * @return SealTypes 印章种类列表（均为组织机构印章）。 若无特定需求，将展示所有类型的印章。 
+
+目前支持以下几种：
+
+<ul> <li><strong>OFFICIAL</strong>：企业公章；</li> <li><strong>CONTRACT</strong>：合同专用章；</li> <li><strong>ORGANIZATION_SEAL</strong>：企业印章（通过图片上传创建）；</li> <li><strong>LEGAL_PERSON_SEAL</strong>：法定代表人章。</li> </ul>
                      * 
                      */
                     std::vector<std::string> GetSealTypes() const;
 
                     /**
-                     * 设置印章类型列表（都是组织机构印章）。
-为空时查询所有类型的印章。
-目前支持以下类型：
-<ul>
-<li>OFFICIAL：企业公章；</li>
-<li>CONTRACT：合同专用章；</li>
-<li>ORGANIZATION_SEAL：企业印章(图片上传创建)；</li>
-<li>LEGAL_PERSON_SEAL：法定代表人章</li>
-</ul>
-                     * @param _sealTypes 印章类型列表（都是组织机构印章）。
-为空时查询所有类型的印章。
-目前支持以下类型：
-<ul>
-<li>OFFICIAL：企业公章；</li>
-<li>CONTRACT：合同专用章；</li>
-<li>ORGANIZATION_SEAL：企业印章(图片上传创建)；</li>
-<li>LEGAL_PERSON_SEAL：法定代表人章</li>
-</ul>
+                     * 设置印章种类列表（均为组织机构印章）。 若无特定需求，将展示所有类型的印章。 
+
+目前支持以下几种：
+
+<ul> <li><strong>OFFICIAL</strong>：企业公章；</li> <li><strong>CONTRACT</strong>：合同专用章；</li> <li><strong>ORGANIZATION_SEAL</strong>：企业印章（通过图片上传创建）；</li> <li><strong>LEGAL_PERSON_SEAL</strong>：法定代表人章。</li> </ul>
+                     * @param _sealTypes 印章种类列表（均为组织机构印章）。 若无特定需求，将展示所有类型的印章。 
+
+目前支持以下几种：
+
+<ul> <li><strong>OFFICIAL</strong>：企业公章；</li> <li><strong>CONTRACT</strong>：合同专用章；</li> <li><strong>ORGANIZATION_SEAL</strong>：企业印章（通过图片上传创建）；</li> <li><strong>LEGAL_PERSON_SEAL</strong>：法定代表人章。</li> </ul>
                      * 
                      */
                     void SetSealTypes(const std::vector<std::string>& _sealTypes);
@@ -248,58 +224,58 @@ namespace TencentCloud
                     bool AgentHasBeenSet() const;
 
                     /**
-                     * 获取查询的印章状态列表。
+                     * 获取需查询的印章状态列表。
 <ul>
-<li>空，只查询启用状态的印章；</li>
-<li>ALL，查询所有状态的印章；</li>
-<li>CHECKING，查询待审核的印章；</li>
-<li>SUCCESS，查询启用状态的印章；</li>
-<li>FAIL，查询印章审核拒绝的印章；</li>
-<li>DISABLE，查询已停用的印章；</li>
-<li>STOPPED，查询已终止的印章；</li>
-<li>VOID，查询已作废的印章；</li>
-<li>INVALID，查询已失效的印章；</li>
+<li>空：（默认）仅查询启用状态的印章；</li>
+<li><strong>ALL</strong>：查询所有状态的印章；</li>
+<li><strong>CHECKING</strong>：查询待审核的印章；</li>
+<li><strong>SUCCESS</strong>：查询启用状态的印章；</li>
+<li><strong>FAIL</strong>：查询印章审核拒绝的印章；</li>
+<li><strong>DISABLE</strong>：查询已停用的印章；</li>
+<li><strong>STOPPED</strong>：查询已终止的印章；</li>
+<li><strong>VOID</strong>：查询已作废的印章；</li>
+<li><strong>INVALID</strong>：查询已失效的印章。</li>
 </ul>
-                     * @return SealStatuses 查询的印章状态列表。
+                     * @return SealStatuses 需查询的印章状态列表。
 <ul>
-<li>空，只查询启用状态的印章；</li>
-<li>ALL，查询所有状态的印章；</li>
-<li>CHECKING，查询待审核的印章；</li>
-<li>SUCCESS，查询启用状态的印章；</li>
-<li>FAIL，查询印章审核拒绝的印章；</li>
-<li>DISABLE，查询已停用的印章；</li>
-<li>STOPPED，查询已终止的印章；</li>
-<li>VOID，查询已作废的印章；</li>
-<li>INVALID，查询已失效的印章；</li>
+<li>空：（默认）仅查询启用状态的印章；</li>
+<li><strong>ALL</strong>：查询所有状态的印章；</li>
+<li><strong>CHECKING</strong>：查询待审核的印章；</li>
+<li><strong>SUCCESS</strong>：查询启用状态的印章；</li>
+<li><strong>FAIL</strong>：查询印章审核拒绝的印章；</li>
+<li><strong>DISABLE</strong>：查询已停用的印章；</li>
+<li><strong>STOPPED</strong>：查询已终止的印章；</li>
+<li><strong>VOID</strong>：查询已作废的印章；</li>
+<li><strong>INVALID</strong>：查询已失效的印章。</li>
 </ul>
                      * 
                      */
                     std::vector<std::string> GetSealStatuses() const;
 
                     /**
-                     * 设置查询的印章状态列表。
+                     * 设置需查询的印章状态列表。
 <ul>
-<li>空，只查询启用状态的印章；</li>
-<li>ALL，查询所有状态的印章；</li>
-<li>CHECKING，查询待审核的印章；</li>
-<li>SUCCESS，查询启用状态的印章；</li>
-<li>FAIL，查询印章审核拒绝的印章；</li>
-<li>DISABLE，查询已停用的印章；</li>
-<li>STOPPED，查询已终止的印章；</li>
-<li>VOID，查询已作废的印章；</li>
-<li>INVALID，查询已失效的印章；</li>
+<li>空：（默认）仅查询启用状态的印章；</li>
+<li><strong>ALL</strong>：查询所有状态的印章；</li>
+<li><strong>CHECKING</strong>：查询待审核的印章；</li>
+<li><strong>SUCCESS</strong>：查询启用状态的印章；</li>
+<li><strong>FAIL</strong>：查询印章审核拒绝的印章；</li>
+<li><strong>DISABLE</strong>：查询已停用的印章；</li>
+<li><strong>STOPPED</strong>：查询已终止的印章；</li>
+<li><strong>VOID</strong>：查询已作废的印章；</li>
+<li><strong>INVALID</strong>：查询已失效的印章。</li>
 </ul>
-                     * @param _sealStatuses 查询的印章状态列表。
+                     * @param _sealStatuses 需查询的印章状态列表。
 <ul>
-<li>空，只查询启用状态的印章；</li>
-<li>ALL，查询所有状态的印章；</li>
-<li>CHECKING，查询待审核的印章；</li>
-<li>SUCCESS，查询启用状态的印章；</li>
-<li>FAIL，查询印章审核拒绝的印章；</li>
-<li>DISABLE，查询已停用的印章；</li>
-<li>STOPPED，查询已终止的印章；</li>
-<li>VOID，查询已作废的印章；</li>
-<li>INVALID，查询已失效的印章；</li>
+<li>空：（默认）仅查询启用状态的印章；</li>
+<li><strong>ALL</strong>：查询所有状态的印章；</li>
+<li><strong>CHECKING</strong>：查询待审核的印章；</li>
+<li><strong>SUCCESS</strong>：查询启用状态的印章；</li>
+<li><strong>FAIL</strong>：查询印章审核拒绝的印章；</li>
+<li><strong>DISABLE</strong>：查询已停用的印章；</li>
+<li><strong>STOPPED</strong>：查询已终止的印章；</li>
+<li><strong>VOID</strong>：查询已作废的印章；</li>
+<li><strong>INVALID</strong>：查询已失效的印章。</li>
 </ul>
                      * 
                      */
@@ -334,31 +310,25 @@ namespace TencentCloud
                     bool m_offsetHasBeenSet;
 
                     /**
-                     * 查询信息类型，取值如下：
-<ul>
-<li>0不返回授权用户</li>
-<li>1返回授权用户信息</li>
-</ul>
+                     * 查询授权用户信息类型，取值如下：
+
+<ul> <li><b>0</b>：（默认）不返回授权用户信息</li> <li><b>1</b>：返回授权用户的信息</li> </ul>
                      */
                     int64_t m_infoType;
                     bool m_infoTypeHasBeenSet;
 
                     /**
-                     * 印章id（没有输入返回所有）
+                     * 印章id，是否查询特定的印章（没有输入返回所有）
                      */
                     std::string m_sealId;
                     bool m_sealIdHasBeenSet;
 
                     /**
-                     * 印章类型列表（都是组织机构印章）。
-为空时查询所有类型的印章。
-目前支持以下类型：
-<ul>
-<li>OFFICIAL：企业公章；</li>
-<li>CONTRACT：合同专用章；</li>
-<li>ORGANIZATION_SEAL：企业印章(图片上传创建)；</li>
-<li>LEGAL_PERSON_SEAL：法定代表人章</li>
-</ul>
+                     * 印章种类列表（均为组织机构印章）。 若无特定需求，将展示所有类型的印章。 
+
+目前支持以下几种：
+
+<ul> <li><strong>OFFICIAL</strong>：企业公章；</li> <li><strong>CONTRACT</strong>：合同专用章；</li> <li><strong>ORGANIZATION_SEAL</strong>：企业印章（通过图片上传创建）；</li> <li><strong>LEGAL_PERSON_SEAL</strong>：法定代表人章。</li> </ul>
                      */
                     std::vector<std::string> m_sealTypes;
                     bool m_sealTypesHasBeenSet;
@@ -371,17 +341,17 @@ namespace TencentCloud
                     bool m_agentHasBeenSet;
 
                     /**
-                     * 查询的印章状态列表。
+                     * 需查询的印章状态列表。
 <ul>
-<li>空，只查询启用状态的印章；</li>
-<li>ALL，查询所有状态的印章；</li>
-<li>CHECKING，查询待审核的印章；</li>
-<li>SUCCESS，查询启用状态的印章；</li>
-<li>FAIL，查询印章审核拒绝的印章；</li>
-<li>DISABLE，查询已停用的印章；</li>
-<li>STOPPED，查询已终止的印章；</li>
-<li>VOID，查询已作废的印章；</li>
-<li>INVALID，查询已失效的印章；</li>
+<li>空：（默认）仅查询启用状态的印章；</li>
+<li><strong>ALL</strong>：查询所有状态的印章；</li>
+<li><strong>CHECKING</strong>：查询待审核的印章；</li>
+<li><strong>SUCCESS</strong>：查询启用状态的印章；</li>
+<li><strong>FAIL</strong>：查询印章审核拒绝的印章；</li>
+<li><strong>DISABLE</strong>：查询已停用的印章；</li>
+<li><strong>STOPPED</strong>：查询已终止的印章；</li>
+<li><strong>VOID</strong>：查询已作废的印章；</li>
+<li><strong>INVALID</strong>：查询已失效的印章。</li>
 </ul>
                      */
                     std::vector<std::string> m_sealStatuses;

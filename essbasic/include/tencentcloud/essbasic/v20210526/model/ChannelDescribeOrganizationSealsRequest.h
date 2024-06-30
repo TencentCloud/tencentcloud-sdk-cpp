@@ -97,15 +97,15 @@ namespace TencentCloud
                     bool AgentHasBeenSet() const;
 
                     /**
-                     * 获取返回最大数量，最大为100
-                     * @return Limit 返回最大数量，最大为100
+                     * 获取指定分页每页返回的数据条数，单页最大支持 100。
+                     * @return Limit 指定分页每页返回的数据条数，单页最大支持 100。
                      * 
                      */
                     int64_t GetLimit() const;
 
                     /**
-                     * 设置返回最大数量，最大为100
-                     * @param _limit 返回最大数量，最大为100
+                     * 设置指定分页每页返回的数据条数，单页最大支持 100。
+                     * @param _limit 指定分页每页返回的数据条数，单页最大支持 100。
                      * 
                      */
                     void SetLimit(const int64_t& _limit);
@@ -139,31 +139,23 @@ namespace TencentCloud
                     bool OffsetHasBeenSet() const;
 
                     /**
-                     * 获取查询信息类型
-支持的值如下：
-<ul><li>0-默认，不返回授权用户信息</li>
-<li>1-返回授权用户信息</li>
-</ul>
-                     * @return InfoType 查询信息类型
-支持的值如下：
-<ul><li>0-默认，不返回授权用户信息</li>
-<li>1-返回授权用户信息</li>
-</ul>
+                     * 获取查询授权用户信息类型，取值如下：
+
+<ul> <li><b>0</b>：（默认）不返回授权用户信息</li> <li><b>1</b>：返回授权用户的信息</li> </ul>
+                     * @return InfoType 查询授权用户信息类型，取值如下：
+
+<ul> <li><b>0</b>：（默认）不返回授权用户信息</li> <li><b>1</b>：返回授权用户的信息</li> </ul>
                      * 
                      */
                     int64_t GetInfoType() const;
 
                     /**
-                     * 设置查询信息类型
-支持的值如下：
-<ul><li>0-默认，不返回授权用户信息</li>
-<li>1-返回授权用户信息</li>
-</ul>
-                     * @param _infoType 查询信息类型
-支持的值如下：
-<ul><li>0-默认，不返回授权用户信息</li>
-<li>1-返回授权用户信息</li>
-</ul>
+                     * 设置查询授权用户信息类型，取值如下：
+
+<ul> <li><b>0</b>：（默认）不返回授权用户信息</li> <li><b>1</b>：返回授权用户的信息</li> </ul>
+                     * @param _infoType 查询授权用户信息类型，取值如下：
+
+<ul> <li><b>0</b>：（默认）不返回授权用户信息</li> <li><b>1</b>：返回授权用户的信息</li> </ul>
                      * 
                      */
                     void SetInfoType(const int64_t& _infoType);
@@ -176,10 +168,10 @@ namespace TencentCloud
                     bool InfoTypeHasBeenSet() const;
 
                     /**
-                     * 获取印章id（没有输入返回所有）
+                     * 获取印章id，是否查询特定的印章（没有输入返回所有）
 
 注:  `没有输入返回所有记录，最大返回100条。`
-                     * @return SealId 印章id（没有输入返回所有）
+                     * @return SealId 印章id，是否查询特定的印章（没有输入返回所有）
 
 注:  `没有输入返回所有记录，最大返回100条。`
                      * 
@@ -187,10 +179,10 @@ namespace TencentCloud
                     std::string GetSealId() const;
 
                     /**
-                     * 设置印章id（没有输入返回所有）
+                     * 设置印章id，是否查询特定的印章（没有输入返回所有）
 
 注:  `没有输入返回所有记录，最大返回100条。`
-                     * @param _sealId 印章id（没有输入返回所有）
+                     * @param _sealId 印章id，是否查询特定的印章（没有输入返回所有）
 
 注:  `没有输入返回所有记录，最大返回100条。`
                      * 
@@ -206,7 +198,7 @@ namespace TencentCloud
 
                     /**
                      * 获取电子印章类型 , 可选类型如下: 
-<ul><li>**OFFICIAL**: (默认)公章</li>
+<ul><li>**OFFICIAL**: 公章</li>
 <li>**CONTRACT**: 合同专用章;</li>
 <li>**FINANCE**: 财务专用章;</li>
 <li>**PERSONNEL**: 人事专用章</li>
@@ -215,7 +207,7 @@ namespace TencentCloud
 
 注:  `为空时查询所有类型的印章。`
                      * @return SealTypes 电子印章类型 , 可选类型如下: 
-<ul><li>**OFFICIAL**: (默认)公章</li>
+<ul><li>**OFFICIAL**: 公章</li>
 <li>**CONTRACT**: 合同专用章;</li>
 <li>**FINANCE**: 财务专用章;</li>
 <li>**PERSONNEL**: 人事专用章</li>
@@ -229,7 +221,7 @@ namespace TencentCloud
 
                     /**
                      * 设置电子印章类型 , 可选类型如下: 
-<ul><li>**OFFICIAL**: (默认)公章</li>
+<ul><li>**OFFICIAL**: 公章</li>
 <li>**CONTRACT**: 合同专用章;</li>
 <li>**FINANCE**: 财务专用章;</li>
 <li>**PERSONNEL**: 人事专用章</li>
@@ -238,7 +230,7 @@ namespace TencentCloud
 
 注:  `为空时查询所有类型的印章。`
                      * @param _sealTypes 电子印章类型 , 可选类型如下: 
-<ul><li>**OFFICIAL**: (默认)公章</li>
+<ul><li>**OFFICIAL**: 公章</li>
 <li>**CONTRACT**: 合同专用章;</li>
 <li>**FINANCE**: 财务专用章;</li>
 <li>**PERSONNEL**: 人事专用章</li>
@@ -258,15 +250,27 @@ namespace TencentCloud
                     bool SealTypesHasBeenSet() const;
 
                     /**
-                     * 获取查询的印章状态列表。 <ul> <li>空，只查询启用状态的印章；</li> <li>ALL，查询所有状态的印章；</li> <li>CHECKING，查询待审核的印章；</li> <li>SUCCESS，查询启用状态的印章；</li> <li>FAIL，查询印章审核拒绝的印章；</li> <li>DISABLE，查询已停用的印章；</li> <li>STOPPED，查询已终止的印章；</li> <li>VOID，查询已作废的印章；</li> <li>INVALID，查询已失效的印章；</li> </ul>
-                     * @return SealStatuses 查询的印章状态列表。 <ul> <li>空，只查询启用状态的印章；</li> <li>ALL，查询所有状态的印章；</li> <li>CHECKING，查询待审核的印章；</li> <li>SUCCESS，查询启用状态的印章；</li> <li>FAIL，查询印章审核拒绝的印章；</li> <li>DISABLE，查询已停用的印章；</li> <li>STOPPED，查询已终止的印章；</li> <li>VOID，查询已作废的印章；</li> <li>INVALID，查询已失效的印章；</li> </ul>
+                     * 获取
+需查询的印章状态列表。
+
+<ul> <li>空，()仅查询启用状态的印章；</li> <li><strong>ALL</strong>，查询所有状态的印章；</li> <li><strong>CHECKING</strong>，查询待审核的印章；</li> <li><strong>SUCCESS</strong>，查询启用状态的印章；</li> <li><strong>FAIL</strong>，查询印章审核拒绝的印章；</li> <li><strong>DISABLE</strong>，查询已停用的印章；</li> <li><strong>STOPPED</strong>，查询已终止的印章；</li> <li><strong>VOID</strong>，查询已作废的印章；</li> <li><strong>INVALID</strong>，查询已失效的印章。</li> </ul>
+                     * @return SealStatuses 
+需查询的印章状态列表。
+
+<ul> <li>空，()仅查询启用状态的印章；</li> <li><strong>ALL</strong>，查询所有状态的印章；</li> <li><strong>CHECKING</strong>，查询待审核的印章；</li> <li><strong>SUCCESS</strong>，查询启用状态的印章；</li> <li><strong>FAIL</strong>，查询印章审核拒绝的印章；</li> <li><strong>DISABLE</strong>，查询已停用的印章；</li> <li><strong>STOPPED</strong>，查询已终止的印章；</li> <li><strong>VOID</strong>，查询已作废的印章；</li> <li><strong>INVALID</strong>，查询已失效的印章。</li> </ul>
                      * 
                      */
                     std::vector<std::string> GetSealStatuses() const;
 
                     /**
-                     * 设置查询的印章状态列表。 <ul> <li>空，只查询启用状态的印章；</li> <li>ALL，查询所有状态的印章；</li> <li>CHECKING，查询待审核的印章；</li> <li>SUCCESS，查询启用状态的印章；</li> <li>FAIL，查询印章审核拒绝的印章；</li> <li>DISABLE，查询已停用的印章；</li> <li>STOPPED，查询已终止的印章；</li> <li>VOID，查询已作废的印章；</li> <li>INVALID，查询已失效的印章；</li> </ul>
-                     * @param _sealStatuses 查询的印章状态列表。 <ul> <li>空，只查询启用状态的印章；</li> <li>ALL，查询所有状态的印章；</li> <li>CHECKING，查询待审核的印章；</li> <li>SUCCESS，查询启用状态的印章；</li> <li>FAIL，查询印章审核拒绝的印章；</li> <li>DISABLE，查询已停用的印章；</li> <li>STOPPED，查询已终止的印章；</li> <li>VOID，查询已作废的印章；</li> <li>INVALID，查询已失效的印章；</li> </ul>
+                     * 设置
+需查询的印章状态列表。
+
+<ul> <li>空，()仅查询启用状态的印章；</li> <li><strong>ALL</strong>，查询所有状态的印章；</li> <li><strong>CHECKING</strong>，查询待审核的印章；</li> <li><strong>SUCCESS</strong>，查询启用状态的印章；</li> <li><strong>FAIL</strong>，查询印章审核拒绝的印章；</li> <li><strong>DISABLE</strong>，查询已停用的印章；</li> <li><strong>STOPPED</strong>，查询已终止的印章；</li> <li><strong>VOID</strong>，查询已作废的印章；</li> <li><strong>INVALID</strong>，查询已失效的印章。</li> </ul>
+                     * @param _sealStatuses 
+需查询的印章状态列表。
+
+<ul> <li>空，()仅查询启用状态的印章；</li> <li><strong>ALL</strong>，查询所有状态的印章；</li> <li><strong>CHECKING</strong>，查询待审核的印章；</li> <li><strong>SUCCESS</strong>，查询启用状态的印章；</li> <li><strong>FAIL</strong>，查询印章审核拒绝的印章；</li> <li><strong>DISABLE</strong>，查询已停用的印章；</li> <li><strong>STOPPED</strong>，查询已终止的印章；</li> <li><strong>VOID</strong>，查询已作废的印章；</li> <li><strong>INVALID</strong>，查询已失效的印章。</li> </ul>
                      * 
                      */
                     void SetSealStatuses(const std::vector<std::string>& _sealStatuses);
@@ -295,7 +299,7 @@ namespace TencentCloud
                     bool m_agentHasBeenSet;
 
                     /**
-                     * 返回最大数量，最大为100
+                     * 指定分页每页返回的数据条数，单页最大支持 100。
                      */
                     int64_t m_limit;
                     bool m_limitHasBeenSet;
@@ -307,17 +311,15 @@ namespace TencentCloud
                     bool m_offsetHasBeenSet;
 
                     /**
-                     * 查询信息类型
-支持的值如下：
-<ul><li>0-默认，不返回授权用户信息</li>
-<li>1-返回授权用户信息</li>
-</ul>
+                     * 查询授权用户信息类型，取值如下：
+
+<ul> <li><b>0</b>：（默认）不返回授权用户信息</li> <li><b>1</b>：返回授权用户的信息</li> </ul>
                      */
                     int64_t m_infoType;
                     bool m_infoTypeHasBeenSet;
 
                     /**
-                     * 印章id（没有输入返回所有）
+                     * 印章id，是否查询特定的印章（没有输入返回所有）
 
 注:  `没有输入返回所有记录，最大返回100条。`
                      */
@@ -326,7 +328,7 @@ namespace TencentCloud
 
                     /**
                      * 电子印章类型 , 可选类型如下: 
-<ul><li>**OFFICIAL**: (默认)公章</li>
+<ul><li>**OFFICIAL**: 公章</li>
 <li>**CONTRACT**: 合同专用章;</li>
 <li>**FINANCE**: 财务专用章;</li>
 <li>**PERSONNEL**: 人事专用章</li>
@@ -339,7 +341,10 @@ namespace TencentCloud
                     bool m_sealTypesHasBeenSet;
 
                     /**
-                     * 查询的印章状态列表。 <ul> <li>空，只查询启用状态的印章；</li> <li>ALL，查询所有状态的印章；</li> <li>CHECKING，查询待审核的印章；</li> <li>SUCCESS，查询启用状态的印章；</li> <li>FAIL，查询印章审核拒绝的印章；</li> <li>DISABLE，查询已停用的印章；</li> <li>STOPPED，查询已终止的印章；</li> <li>VOID，查询已作废的印章；</li> <li>INVALID，查询已失效的印章；</li> </ul>
+                     * 
+需查询的印章状态列表。
+
+<ul> <li>空，()仅查询启用状态的印章；</li> <li><strong>ALL</strong>，查询所有状态的印章；</li> <li><strong>CHECKING</strong>，查询待审核的印章；</li> <li><strong>SUCCESS</strong>，查询启用状态的印章；</li> <li><strong>FAIL</strong>，查询印章审核拒绝的印章；</li> <li><strong>DISABLE</strong>，查询已停用的印章；</li> <li><strong>STOPPED</strong>，查询已终止的印章；</li> <li><strong>VOID</strong>，查询已作废的印章；</li> <li><strong>INVALID</strong>，查询已失效的印章。</li> </ul>
                      */
                     std::vector<std::string> m_sealStatuses;
                     bool m_sealStatusesHasBeenSet;

@@ -25,7 +25,8 @@ using namespace std;
 
 GetTWeCallPkgListResponse::GetTWeCallPkgListResponse() :
     m_tWeCallPkgListHasBeenSet(false),
-    m_totalHasBeenSet(false)
+    m_totalHasBeenSet(false),
+    m_tWeCallCategoryPkgListHasBeenSet(false)
 {
 }
 
@@ -93,6 +94,26 @@ CoreInternalOutcome GetTWeCallPkgListResponse::Deserialize(const string &payload
         m_totalHasBeenSet = true;
     }
 
+    if (rsp.HasMember("TWeCallCategoryPkgList") && !rsp["TWeCallCategoryPkgList"].IsNull())
+    {
+        if (!rsp["TWeCallCategoryPkgList"].IsArray())
+            return CoreInternalOutcome(Core::Error("response `TWeCallCategoryPkgList` is not array type"));
+
+        const rapidjson::Value &tmpValue = rsp["TWeCallCategoryPkgList"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            TWeCallCategoryPkgInfo item;
+            CoreInternalOutcome outcome = item.Deserialize(*itr);
+            if (!outcome.IsSuccess())
+            {
+                outcome.GetError().SetRequestId(requestId);
+                return outcome;
+            }
+            m_tWeCallCategoryPkgList.push_back(item);
+        }
+        m_tWeCallCategoryPkgListHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -126,6 +147,21 @@ string GetTWeCallPkgListResponse::ToJsonString() const
         value.AddMember(iKey, m_total, allocator);
     }
 
+    if (m_tWeCallCategoryPkgListHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "TWeCallCategoryPkgList";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_tWeCallCategoryPkgList.begin(); itr != m_tWeCallCategoryPkgList.end(); ++itr, ++i)
+        {
+            value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(value[key.c_str()][i], allocator);
+        }
+    }
+
     rapidjson::Value iKey(rapidjson::kStringType);
     string key = "RequestId";
     iKey.SetString(key.c_str(), allocator);
@@ -156,6 +192,16 @@ int64_t GetTWeCallPkgListResponse::GetTotal() const
 bool GetTWeCallPkgListResponse::TotalHasBeenSet() const
 {
     return m_totalHasBeenSet;
+}
+
+vector<TWeCallCategoryPkgInfo> GetTWeCallPkgListResponse::GetTWeCallCategoryPkgList() const
+{
+    return m_tWeCallCategoryPkgList;
+}
+
+bool GetTWeCallPkgListResponse::TWeCallCategoryPkgListHasBeenSet() const
+{
+    return m_tWeCallCategoryPkgListHasBeenSet;
 }
 
 

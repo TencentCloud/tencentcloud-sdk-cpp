@@ -22,7 +22,8 @@ using namespace std;
 
 BindResourceRegionResult::BindResourceRegionResult() :
     m_regionHasBeenSet(false),
-    m_totalCountHasBeenSet(false)
+    m_totalCountHasBeenSet(false),
+    m_errorHasBeenSet(false)
 {
 }
 
@@ -51,6 +52,16 @@ CoreInternalOutcome BindResourceRegionResult::Deserialize(const rapidjson::Value
         m_totalCountHasBeenSet = true;
     }
 
+    if (value.HasMember("Error") && !value["Error"].IsNull())
+    {
+        if (!value["Error"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `BindResourceRegionResult.Error` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_error = string(value["Error"].GetString());
+        m_errorHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -72,6 +83,14 @@ void BindResourceRegionResult::ToJsonObject(rapidjson::Value &value, rapidjson::
         string key = "TotalCount";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_totalCount, allocator);
+    }
+
+    if (m_errorHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Error";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_error.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -107,5 +126,21 @@ void BindResourceRegionResult::SetTotalCount(const uint64_t& _totalCount)
 bool BindResourceRegionResult::TotalCountHasBeenSet() const
 {
     return m_totalCountHasBeenSet;
+}
+
+string BindResourceRegionResult::GetError() const
+{
+    return m_error;
+}
+
+void BindResourceRegionResult::SetError(const string& _error)
+{
+    m_error = _error;
+    m_errorHasBeenSet = true;
+}
+
+bool BindResourceRegionResult::ErrorHasBeenSet() const
+{
+    return m_errorHasBeenSet;
 }
 
