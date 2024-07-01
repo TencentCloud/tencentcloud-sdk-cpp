@@ -209,8 +209,6 @@
 #include <tencentcloud/waf/v20180125/model/GetInstanceQpsLimitResponse.h>
 #include <tencentcloud/waf/v20180125/model/ImportIpAccessControlRequest.h>
 #include <tencentcloud/waf/v20180125/model/ImportIpAccessControlResponse.h>
-#include <tencentcloud/waf/v20180125/model/ModifyAccessPeriodRequest.h>
-#include <tencentcloud/waf/v20180125/model/ModifyAccessPeriodResponse.h>
 #include <tencentcloud/waf/v20180125/model/ModifyAntiFakeUrlRequest.h>
 #include <tencentcloud/waf/v20180125/model/ModifyAntiFakeUrlResponse.h>
 #include <tencentcloud/waf/v20180125/model/ModifyAntiFakeUrlStatusRequest.h>
@@ -600,9 +598,6 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::ImportIpAccessControlResponse> ImportIpAccessControlOutcome;
                 typedef std::future<ImportIpAccessControlOutcome> ImportIpAccessControlOutcomeCallable;
                 typedef std::function<void(const WafClient*, const Model::ImportIpAccessControlRequest&, ImportIpAccessControlOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ImportIpAccessControlAsyncHandler;
-                typedef Outcome<Core::Error, Model::ModifyAccessPeriodResponse> ModifyAccessPeriodOutcome;
-                typedef std::future<ModifyAccessPeriodOutcome> ModifyAccessPeriodOutcomeCallable;
-                typedef std::function<void(const WafClient*, const Model::ModifyAccessPeriodRequest&, ModifyAccessPeriodOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyAccessPeriodAsyncHandler;
                 typedef Outcome<Core::Error, Model::ModifyAntiFakeUrlResponse> ModifyAntiFakeUrlOutcome;
                 typedef std::future<ModifyAntiFakeUrlOutcome> ModifyAntiFakeUrlOutcomeCallable;
                 typedef std::function<void(const WafClient*, const Model::ModifyAntiFakeUrlRequest&, ModifyAntiFakeUrlOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyAntiFakeUrlAsyncHandler;
@@ -1592,15 +1587,6 @@ namespace TencentCloud
                 ImportIpAccessControlOutcome ImportIpAccessControl(const Model::ImportIpAccessControlRequest &request);
                 void ImportIpAccessControlAsync(const Model::ImportIpAccessControlRequest& request, const ImportIpAccessControlAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 ImportIpAccessControlOutcomeCallable ImportIpAccessControlCallable(const Model::ImportIpAccessControlRequest& request);
-
-                /**
-                 *本接口用于修改访问日志保存期限等字段信息
-                 * @param req ModifyAccessPeriodRequest
-                 * @return ModifyAccessPeriodOutcome
-                 */
-                ModifyAccessPeriodOutcome ModifyAccessPeriod(const Model::ModifyAccessPeriodRequest &request);
-                void ModifyAccessPeriodAsync(const Model::ModifyAccessPeriodRequest& request, const ModifyAccessPeriodAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
-                ModifyAccessPeriodOutcomeCallable ModifyAccessPeriodCallable(const Model::ModifyAccessPeriodRequest& request);
 
                 /**
                  *编辑防篡改url

@@ -138,7 +138,6 @@ set(waf_public_header_model
   include/tencentcloud/waf/v20180125/model/ModifyAntiFakeUrlStatusRequest.h
   include/tencentcloud/waf/v20180125/model/DescribeCCRuleListRequest.h
   include/tencentcloud/waf/v20180125/model/ResponseCode.h
-  include/tencentcloud/waf/v20180125/model/ModifyAccessPeriodResponse.h
   include/tencentcloud/waf/v20180125/model/ModifyAttackWhiteRuleResponse.h
   include/tencentcloud/waf/v20180125/model/SearchAccessLogResponse.h
   include/tencentcloud/waf/v20180125/model/DescribeAntiInfoLeakageRulesRequest.h
@@ -359,7 +358,6 @@ set(waf_public_header_model
   include/tencentcloud/waf/v20180125/model/BatchIpAccessControlData.h
   include/tencentcloud/waf/v20180125/model/DescribeAntiInfoLeakRulesRuleItem.h
   include/tencentcloud/waf/v20180125/model/DeleteDownloadRecordResponse.h
-  include/tencentcloud/waf/v20180125/model/ModifyAccessPeriodRequest.h
   include/tencentcloud/waf/v20180125/model/DescribePeakValueRequest.h
   include/tencentcloud/waf/v20180125/model/BotQPS.h
   include/tencentcloud/waf/v20180125/model/DescribeDomainDetailsClbResponse.h
@@ -528,7 +526,6 @@ set(waf_src
   src/v20180125/model/ModifyAntiFakeUrlStatusRequest.cpp
   src/v20180125/model/DescribeCCRuleListRequest.cpp
   src/v20180125/model/ResponseCode.cpp
-  src/v20180125/model/ModifyAccessPeriodResponse.cpp
   src/v20180125/model/ModifyAttackWhiteRuleResponse.cpp
   src/v20180125/model/SearchAccessLogResponse.cpp
   src/v20180125/model/DescribeAntiInfoLeakageRulesRequest.cpp
@@ -749,7 +746,6 @@ set(waf_src
   src/v20180125/model/BatchIpAccessControlData.cpp
   src/v20180125/model/DescribeAntiInfoLeakRulesRuleItem.cpp
   src/v20180125/model/DeleteDownloadRecordResponse.cpp
-  src/v20180125/model/ModifyAccessPeriodRequest.cpp
   src/v20180125/model/DescribePeakValueRequest.cpp
   src/v20180125/model/BotQPS.cpp
   src/v20180125/model/DescribeDomainDetailsClbResponse.cpp

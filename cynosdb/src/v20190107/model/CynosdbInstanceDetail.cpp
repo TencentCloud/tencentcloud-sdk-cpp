@@ -32,6 +32,7 @@ CynosdbInstanceDetail::CynosdbInstanceDetail() :
     m_zoneHasBeenSet(false),
     m_statusHasBeenSet(false),
     m_statusDescHasBeenSet(false),
+    m_serverlessStatusHasBeenSet(false),
     m_dbTypeHasBeenSet(false),
     m_dbVersionHasBeenSet(false),
     m_cpuHasBeenSet(false),
@@ -53,8 +54,7 @@ CynosdbInstanceDetail::CynosdbInstanceDetail() :
     m_cynosVersionHasBeenSet(false),
     m_renewFlagHasBeenSet(false),
     m_minCpuHasBeenSet(false),
-    m_maxCpuHasBeenSet(false),
-    m_serverlessStatusHasBeenSet(false)
+    m_maxCpuHasBeenSet(false)
 {
 }
 
@@ -171,6 +171,16 @@ CoreInternalOutcome CynosdbInstanceDetail::Deserialize(const rapidjson::Value &v
         }
         m_statusDesc = string(value["StatusDesc"].GetString());
         m_statusDescHasBeenSet = true;
+    }
+
+    if (value.HasMember("ServerlessStatus") && !value["ServerlessStatus"].IsNull())
+    {
+        if (!value["ServerlessStatus"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `CynosdbInstanceDetail.ServerlessStatus` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_serverlessStatus = string(value["ServerlessStatus"].GetString());
+        m_serverlessStatusHasBeenSet = true;
     }
 
     if (value.HasMember("DbType") && !value["DbType"].IsNull())
@@ -393,16 +403,6 @@ CoreInternalOutcome CynosdbInstanceDetail::Deserialize(const rapidjson::Value &v
         m_maxCpuHasBeenSet = true;
     }
 
-    if (value.HasMember("ServerlessStatus") && !value["ServerlessStatus"].IsNull())
-    {
-        if (!value["ServerlessStatus"].IsString())
-        {
-            return CoreInternalOutcome(Core::Error("response `CynosdbInstanceDetail.ServerlessStatus` IsString=false incorrectly").SetRequestId(requestId));
-        }
-        m_serverlessStatus = string(value["ServerlessStatus"].GetString());
-        m_serverlessStatusHasBeenSet = true;
-    }
-
 
     return CoreInternalOutcome(true);
 }
@@ -496,6 +496,14 @@ void CynosdbInstanceDetail::ToJsonObject(rapidjson::Value &value, rapidjson::Doc
         string key = "StatusDesc";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_statusDesc.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_serverlessStatusHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ServerlessStatus";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_serverlessStatus.c_str(), allocator).Move(), allocator);
     }
 
     if (m_dbTypeHasBeenSet)
@@ -672,14 +680,6 @@ void CynosdbInstanceDetail::ToJsonObject(rapidjson::Value &value, rapidjson::Doc
         string key = "MaxCpu";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_maxCpu, allocator);
-    }
-
-    if (m_serverlessStatusHasBeenSet)
-    {
-        rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "ServerlessStatus";
-        iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, rapidjson::Value(m_serverlessStatus.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -859,6 +859,22 @@ void CynosdbInstanceDetail::SetStatusDesc(const string& _statusDesc)
 bool CynosdbInstanceDetail::StatusDescHasBeenSet() const
 {
     return m_statusDescHasBeenSet;
+}
+
+string CynosdbInstanceDetail::GetServerlessStatus() const
+{
+    return m_serverlessStatus;
+}
+
+void CynosdbInstanceDetail::SetServerlessStatus(const string& _serverlessStatus)
+{
+    m_serverlessStatus = _serverlessStatus;
+    m_serverlessStatusHasBeenSet = true;
+}
+
+bool CynosdbInstanceDetail::ServerlessStatusHasBeenSet() const
+{
+    return m_serverlessStatusHasBeenSet;
 }
 
 string CynosdbInstanceDetail::GetDbType() const
@@ -1211,21 +1227,5 @@ void CynosdbInstanceDetail::SetMaxCpu(const double& _maxCpu)
 bool CynosdbInstanceDetail::MaxCpuHasBeenSet() const
 {
     return m_maxCpuHasBeenSet;
-}
-
-string CynosdbInstanceDetail::GetServerlessStatus() const
-{
-    return m_serverlessStatus;
-}
-
-void CynosdbInstanceDetail::SetServerlessStatus(const string& _serverlessStatus)
-{
-    m_serverlessStatus = _serverlessStatus;
-    m_serverlessStatusHasBeenSet = true;
-}
-
-bool CynosdbInstanceDetail::ServerlessStatusHasBeenSet() const
-{
-    return m_serverlessStatusHasBeenSet;
 }
 

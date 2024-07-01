@@ -179,6 +179,10 @@
 #include <tencentcloud/wedata/v20210820/model/DescribeDsFolderTreeResponse.h>
 #include <tencentcloud/wedata/v20210820/model/DescribeDsParentFolderTreeRequest.h>
 #include <tencentcloud/wedata/v20210820/model/DescribeDsParentFolderTreeResponse.h>
+#include <tencentcloud/wedata/v20210820/model/DescribeDutyScheduleDetailsRequest.h>
+#include <tencentcloud/wedata/v20210820/model/DescribeDutyScheduleDetailsResponse.h>
+#include <tencentcloud/wedata/v20210820/model/DescribeDutyScheduleListRequest.h>
+#include <tencentcloud/wedata/v20210820/model/DescribeDutyScheduleListResponse.h>
 #include <tencentcloud/wedata/v20210820/model/DescribeEventRequest.h>
 #include <tencentcloud/wedata/v20210820/model/DescribeEventResponse.h>
 #include <tencentcloud/wedata/v20210820/model/DescribeEventCasesRequest.h>
@@ -717,6 +721,12 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeDsParentFolderTreeResponse> DescribeDsParentFolderTreeOutcome;
                 typedef std::future<DescribeDsParentFolderTreeOutcome> DescribeDsParentFolderTreeOutcomeCallable;
                 typedef std::function<void(const WedataClient*, const Model::DescribeDsParentFolderTreeRequest&, DescribeDsParentFolderTreeOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeDsParentFolderTreeAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeDutyScheduleDetailsResponse> DescribeDutyScheduleDetailsOutcome;
+                typedef std::future<DescribeDutyScheduleDetailsOutcome> DescribeDutyScheduleDetailsOutcomeCallable;
+                typedef std::function<void(const WedataClient*, const Model::DescribeDutyScheduleDetailsRequest&, DescribeDutyScheduleDetailsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeDutyScheduleDetailsAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeDutyScheduleListResponse> DescribeDutyScheduleListOutcome;
+                typedef std::future<DescribeDutyScheduleListOutcome> DescribeDutyScheduleListOutcomeCallable;
+                typedef std::function<void(const WedataClient*, const Model::DescribeDutyScheduleListRequest&, DescribeDutyScheduleListOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeDutyScheduleListAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeEventResponse> DescribeEventOutcome;
                 typedef std::future<DescribeEventOutcome> DescribeEventOutcomeCallable;
                 typedef std::function<void(const WedataClient*, const Model::DescribeEventRequest&, DescribeEventOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeEventAsyncHandler;
@@ -1856,6 +1866,24 @@ namespace TencentCloud
                 DescribeDsParentFolderTreeOutcome DescribeDsParentFolderTree(const Model::DescribeDsParentFolderTreeRequest &request);
                 void DescribeDsParentFolderTreeAsync(const Model::DescribeDsParentFolderTreeRequest& request, const DescribeDsParentFolderTreeAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DescribeDsParentFolderTreeOutcomeCallable DescribeDsParentFolderTreeCallable(const Model::DescribeDsParentFolderTreeRequest& request);
+
+                /**
+                 *获取值班日历
+                 * @param req DescribeDutyScheduleDetailsRequest
+                 * @return DescribeDutyScheduleDetailsOutcome
+                 */
+                DescribeDutyScheduleDetailsOutcome DescribeDutyScheduleDetails(const Model::DescribeDutyScheduleDetailsRequest &request);
+                void DescribeDutyScheduleDetailsAsync(const Model::DescribeDutyScheduleDetailsRequest& request, const DescribeDutyScheduleDetailsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeDutyScheduleDetailsOutcomeCallable DescribeDutyScheduleDetailsCallable(const Model::DescribeDutyScheduleDetailsRequest& request);
+
+                /**
+                 *获取值班表列表
+                 * @param req DescribeDutyScheduleListRequest
+                 * @return DescribeDutyScheduleListOutcome
+                 */
+                DescribeDutyScheduleListOutcome DescribeDutyScheduleList(const Model::DescribeDutyScheduleListRequest &request);
+                void DescribeDutyScheduleListAsync(const Model::DescribeDutyScheduleListRequest& request, const DescribeDutyScheduleListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeDutyScheduleListOutcomeCallable DescribeDutyScheduleListCallable(const Model::DescribeDutyScheduleListRequest& request);
 
                 /**
                  *根据项目ID和事件名称查看事件详情

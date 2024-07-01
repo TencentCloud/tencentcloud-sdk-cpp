@@ -382,6 +382,31 @@ namespace TencentCloud
                      */
                     bool FuncHasBeenSet() const;
 
+                    /**
+                     * 获取支持公式的参数的默认公式样式
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return FuncPattern 支持公式的参数的默认公式样式
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::string GetFuncPattern() const;
+
+                    /**
+                     * 设置支持公式的参数的默认公式样式
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _funcPattern 支持公式的参数的默认公式样式
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetFuncPattern(const std::string& _funcPattern);
+
+                    /**
+                     * 判断参数 FuncPattern 是否已赋值
+                     * @return FuncPattern 是否已赋值
+                     * 
+                     */
+                    bool FuncPatternHasBeenSet() const;
+
                 private:
 
                     /**
@@ -478,6 +503,13 @@ namespace TencentCloud
                      */
                     std::string m_func;
                     bool m_funcHasBeenSet;
+
+                    /**
+                     * 支持公式的参数的默认公式样式
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_funcPattern;
+                    bool m_funcPatternHasBeenSet;
 
                 };
             }

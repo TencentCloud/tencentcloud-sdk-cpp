@@ -494,7 +494,7 @@ namespace TencentCloud
                 InvokeOutcomeCallable InvokeCallable(const Model::InvokeRequest& request);
 
                 /**
-                 * SCF同步调用函数接口
+                 *SCF同步调用函数接口。
                  * @param req InvokeFunctionRequest
                  * @return InvokeFunctionOutcome
                  */

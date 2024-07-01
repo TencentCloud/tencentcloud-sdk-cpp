@@ -278,6 +278,35 @@ namespace TencentCloud
                     bool StatusDescHasBeenSet() const;
 
                     /**
+                     * 获取serverless实例状态, 可能值：
+resume
+pause
+                     * @return ServerlessStatus serverless实例状态, 可能值：
+resume
+pause
+                     * 
+                     */
+                    std::string GetServerlessStatus() const;
+
+                    /**
+                     * 设置serverless实例状态, 可能值：
+resume
+pause
+                     * @param _serverlessStatus serverless实例状态, 可能值：
+resume
+pause
+                     * 
+                     */
+                    void SetServerlessStatus(const std::string& _serverlessStatus);
+
+                    /**
+                     * 判断参数 ServerlessStatus 是否已赋值
+                     * @return ServerlessStatus 是否已赋值
+                     * 
+                     */
+                    bool ServerlessStatusHasBeenSet() const;
+
+                    /**
                      * 获取数据库类型
                      * @return DbType 数据库类型
                      * 
@@ -739,35 +768,6 @@ namespace TencentCloud
                      */
                     bool MaxCpuHasBeenSet() const;
 
-                    /**
-                     * 获取serverless实例状态, 可能值：
-resume
-pause
-                     * @return ServerlessStatus serverless实例状态, 可能值：
-resume
-pause
-                     * 
-                     */
-                    std::string GetServerlessStatus() const;
-
-                    /**
-                     * 设置serverless实例状态, 可能值：
-resume
-pause
-                     * @param _serverlessStatus serverless实例状态, 可能值：
-resume
-pause
-                     * 
-                     */
-                    void SetServerlessStatus(const std::string& _serverlessStatus);
-
-                    /**
-                     * 判断参数 ServerlessStatus 是否已赋值
-                     * @return ServerlessStatus 是否已赋值
-                     * 
-                     */
-                    bool ServerlessStatusHasBeenSet() const;
-
                 private:
 
                     /**
@@ -835,6 +835,14 @@ pause
                      */
                     std::string m_statusDesc;
                     bool m_statusDescHasBeenSet;
+
+                    /**
+                     * serverless实例状态, 可能值：
+resume
+pause
+                     */
+                    std::string m_serverlessStatus;
+                    bool m_serverlessStatusHasBeenSet;
 
                     /**
                      * 数据库类型
@@ -967,14 +975,6 @@ pause
                      */
                     double m_maxCpu;
                     bool m_maxCpuHasBeenSet;
-
-                    /**
-                     * serverless实例状态, 可能值：
-resume
-pause
-                     */
-                    std::string m_serverlessStatus;
-                    bool m_serverlessStatusHasBeenSet;
 
                 };
             }

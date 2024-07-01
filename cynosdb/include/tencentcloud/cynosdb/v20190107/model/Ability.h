@@ -163,6 +163,56 @@ namespace TencentCloud
                      */
                     bool IsSupportManualSnapshotHasBeenSet() const;
 
+                    /**
+                     * 获取是否支持透明数据加密
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return IsSupportTransparentDataEncryption 是否支持透明数据加密
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::string GetIsSupportTransparentDataEncryption() const;
+
+                    /**
+                     * 设置是否支持透明数据加密
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _isSupportTransparentDataEncryption 是否支持透明数据加密
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetIsSupportTransparentDataEncryption(const std::string& _isSupportTransparentDataEncryption);
+
+                    /**
+                     * 判断参数 IsSupportTransparentDataEncryption 是否已赋值
+                     * @return IsSupportTransparentDataEncryption 是否已赋值
+                     * 
+                     */
+                    bool IsSupportTransparentDataEncryptionHasBeenSet() const;
+
+                    /**
+                     * 获取不支持透明数据加密原因
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return NoSupportTransparentDataEncryptionReason 不支持透明数据加密原因
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::string GetNoSupportTransparentDataEncryptionReason() const;
+
+                    /**
+                     * 设置不支持透明数据加密原因
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _noSupportTransparentDataEncryptionReason 不支持透明数据加密原因
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetNoSupportTransparentDataEncryptionReason(const std::string& _noSupportTransparentDataEncryptionReason);
+
+                    /**
+                     * 判断参数 NoSupportTransparentDataEncryptionReason 是否已赋值
+                     * @return NoSupportTransparentDataEncryptionReason 是否已赋值
+                     * 
+                     */
+                    bool NoSupportTransparentDataEncryptionReasonHasBeenSet() const;
+
                 private:
 
                     /**
@@ -197,6 +247,20 @@ namespace TencentCloud
                      */
                     std::string m_isSupportManualSnapshot;
                     bool m_isSupportManualSnapshotHasBeenSet;
+
+                    /**
+                     * 是否支持透明数据加密
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_isSupportTransparentDataEncryption;
+                    bool m_isSupportTransparentDataEncryptionHasBeenSet;
+
+                    /**
+                     * 不支持透明数据加密原因
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_noSupportTransparentDataEncryptionReason;
+                    bool m_noSupportTransparentDataEncryptionReasonHasBeenSet;
 
                 };
             }

@@ -28,6 +28,7 @@ CreateUserVerifyUrlRequest::CreateUserVerifyUrlRequest() :
     m_idCardNumberHasBeenSet(false),
     m_idCardTypeHasBeenSet(false),
     m_mobileHasBeenSet(false),
+    m_jumpUrlHasBeenSet(false),
     m_endpointHasBeenSet(false),
     m_autoJumpBackHasBeenSet(false),
     m_userDataHasBeenSet(false)
@@ -80,6 +81,14 @@ string CreateUserVerifyUrlRequest::ToJsonString() const
         string key = "Mobile";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_mobile.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_jumpUrlHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "JumpUrl";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_jumpUrl.c_str(), allocator).Move(), allocator);
     }
 
     if (m_endpointHasBeenSet)
@@ -192,6 +201,22 @@ void CreateUserVerifyUrlRequest::SetMobile(const string& _mobile)
 bool CreateUserVerifyUrlRequest::MobileHasBeenSet() const
 {
     return m_mobileHasBeenSet;
+}
+
+string CreateUserVerifyUrlRequest::GetJumpUrl() const
+{
+    return m_jumpUrl;
+}
+
+void CreateUserVerifyUrlRequest::SetJumpUrl(const string& _jumpUrl)
+{
+    m_jumpUrl = _jumpUrl;
+    m_jumpUrlHasBeenSet = true;
+}
+
+bool CreateUserVerifyUrlRequest::JumpUrlHasBeenSet() const
+{
+    return m_jumpUrlHasBeenSet;
 }
 
 string CreateUserVerifyUrlRequest::GetEndpoint() const

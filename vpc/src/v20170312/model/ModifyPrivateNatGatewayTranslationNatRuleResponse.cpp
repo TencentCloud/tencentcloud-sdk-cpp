@@ -14,20 +14,20 @@
  * limitations under the License.
  */
 
-#include <tencentcloud/waf/v20180125/model/ModifyAccessPeriodResponse.h>
+#include <tencentcloud/vpc/v20170312/model/ModifyPrivateNatGatewayTranslationNatRuleResponse.h>
 #include <tencentcloud/core/utils/rapidjson/document.h>
 #include <tencentcloud/core/utils/rapidjson/writer.h>
 #include <tencentcloud/core/utils/rapidjson/stringbuffer.h>
 
 using TencentCloud::CoreInternalOutcome;
-using namespace TencentCloud::Waf::V20180125::Model;
+using namespace TencentCloud::Vpc::V20170312::Model;
 using namespace std;
 
-ModifyAccessPeriodResponse::ModifyAccessPeriodResponse()
+ModifyPrivateNatGatewayTranslationNatRuleResponse::ModifyPrivateNatGatewayTranslationNatRuleResponse()
 {
 }
 
-CoreInternalOutcome ModifyAccessPeriodResponse::Deserialize(const string &payload)
+CoreInternalOutcome ModifyPrivateNatGatewayTranslationNatRuleResponse::Deserialize(const string &payload)
 {
     rapidjson::Document d;
     d.Parse(payload.c_str());
@@ -65,7 +65,7 @@ CoreInternalOutcome ModifyAccessPeriodResponse::Deserialize(const string &payloa
     return CoreInternalOutcome(true);
 }
 
-string ModifyAccessPeriodResponse::ToJsonString() const
+string ModifyPrivateNatGatewayTranslationNatRuleResponse::ToJsonString() const
 {
     rapidjson::Document value;
     value.SetObject();

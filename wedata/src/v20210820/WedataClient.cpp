@@ -3394,6 +3394,92 @@ WedataClient::DescribeDsParentFolderTreeOutcomeCallable WedataClient::DescribeDs
     return task->get_future();
 }
 
+WedataClient::DescribeDutyScheduleDetailsOutcome WedataClient::DescribeDutyScheduleDetails(const DescribeDutyScheduleDetailsRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeDutyScheduleDetails");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeDutyScheduleDetailsResponse rsp = DescribeDutyScheduleDetailsResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeDutyScheduleDetailsOutcome(rsp);
+        else
+            return DescribeDutyScheduleDetailsOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeDutyScheduleDetailsOutcome(outcome.GetError());
+    }
+}
+
+void WedataClient::DescribeDutyScheduleDetailsAsync(const DescribeDutyScheduleDetailsRequest& request, const DescribeDutyScheduleDetailsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeDutyScheduleDetails(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+WedataClient::DescribeDutyScheduleDetailsOutcomeCallable WedataClient::DescribeDutyScheduleDetailsCallable(const DescribeDutyScheduleDetailsRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeDutyScheduleDetailsOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeDutyScheduleDetails(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+WedataClient::DescribeDutyScheduleListOutcome WedataClient::DescribeDutyScheduleList(const DescribeDutyScheduleListRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeDutyScheduleList");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeDutyScheduleListResponse rsp = DescribeDutyScheduleListResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeDutyScheduleListOutcome(rsp);
+        else
+            return DescribeDutyScheduleListOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeDutyScheduleListOutcome(outcome.GetError());
+    }
+}
+
+void WedataClient::DescribeDutyScheduleListAsync(const DescribeDutyScheduleListRequest& request, const DescribeDutyScheduleListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeDutyScheduleList(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+WedataClient::DescribeDutyScheduleListOutcomeCallable WedataClient::DescribeDutyScheduleListCallable(const DescribeDutyScheduleListRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeDutyScheduleListOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeDutyScheduleList(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 WedataClient::DescribeEventOutcome WedataClient::DescribeEvent(const DescribeEventRequest &request)
 {
     auto outcome = MakeRequest(request, "DescribeEvent");

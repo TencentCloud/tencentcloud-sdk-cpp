@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef TENCENTCLOUD_WAF_V20180125_MODEL_MODIFYACCESSPERIODRESPONSE_H_
-#define TENCENTCLOUD_WAF_V20180125_MODEL_MODIFYACCESSPERIODRESPONSE_H_
+#ifndef TENCENTCLOUD_VPC_V20170312_MODEL_MODIFYPRIVATENATGATEWAYTRANSLATIONNATRULERESPONSE_H_
+#define TENCENTCLOUD_VPC_V20170312_MODEL_MODIFYPRIVATENATGATEWAYTRANSLATIONNATRULERESPONSE_H_
 
 #include <string>
 #include <vector>
@@ -25,20 +25,20 @@
 
 namespace TencentCloud
 {
-    namespace Waf
+    namespace Vpc
     {
-        namespace V20180125
+        namespace V20170312
         {
             namespace Model
             {
                 /**
-                * ModifyAccessPeriod返回参数结构体
+                * ModifyPrivateNatGatewayTranslationNatRule返回参数结构体
                 */
-                class ModifyAccessPeriodResponse : public AbstractModel
+                class ModifyPrivateNatGatewayTranslationNatRuleResponse : public AbstractModel
                 {
                 public:
-                    ModifyAccessPeriodResponse();
-                    ~ModifyAccessPeriodResponse() = default;
+                    ModifyPrivateNatGatewayTranslationNatRuleResponse();
+                    ~ModifyPrivateNatGatewayTranslationNatRuleResponse() = default;
                     CoreInternalOutcome Deserialize(const std::string &payload);
                     std::string ToJsonString() const;
 
@@ -51,4 +51,4 @@ namespace TencentCloud
     }
 }
 
-#endif // !TENCENTCLOUD_WAF_V20180125_MODEL_MODIFYACCESSPERIODRESPONSE_H_
+#endif // !TENCENTCLOUD_VPC_V20170312_MODEL_MODIFYPRIVATENATGATEWAYTRANSLATIONNATRULERESPONSE_H_

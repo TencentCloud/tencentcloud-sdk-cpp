@@ -2233,6 +2233,178 @@ VpcClient::CreateNetworkInterfaceOutcomeCallable VpcClient::CreateNetworkInterfa
     return task->get_future();
 }
 
+VpcClient::CreatePrivateNatGatewayOutcome VpcClient::CreatePrivateNatGateway(const CreatePrivateNatGatewayRequest &request)
+{
+    auto outcome = MakeRequest(request, "CreatePrivateNatGateway");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        CreatePrivateNatGatewayResponse rsp = CreatePrivateNatGatewayResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return CreatePrivateNatGatewayOutcome(rsp);
+        else
+            return CreatePrivateNatGatewayOutcome(o.GetError());
+    }
+    else
+    {
+        return CreatePrivateNatGatewayOutcome(outcome.GetError());
+    }
+}
+
+void VpcClient::CreatePrivateNatGatewayAsync(const CreatePrivateNatGatewayRequest& request, const CreatePrivateNatGatewayAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->CreatePrivateNatGateway(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+VpcClient::CreatePrivateNatGatewayOutcomeCallable VpcClient::CreatePrivateNatGatewayCallable(const CreatePrivateNatGatewayRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<CreatePrivateNatGatewayOutcome()>>(
+        [this, request]()
+        {
+            return this->CreatePrivateNatGateway(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+VpcClient::CreatePrivateNatGatewayDestinationIpPortTranslationNatRuleOutcome VpcClient::CreatePrivateNatGatewayDestinationIpPortTranslationNatRule(const CreatePrivateNatGatewayDestinationIpPortTranslationNatRuleRequest &request)
+{
+    auto outcome = MakeRequest(request, "CreatePrivateNatGatewayDestinationIpPortTranslationNatRule");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        CreatePrivateNatGatewayDestinationIpPortTranslationNatRuleResponse rsp = CreatePrivateNatGatewayDestinationIpPortTranslationNatRuleResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return CreatePrivateNatGatewayDestinationIpPortTranslationNatRuleOutcome(rsp);
+        else
+            return CreatePrivateNatGatewayDestinationIpPortTranslationNatRuleOutcome(o.GetError());
+    }
+    else
+    {
+        return CreatePrivateNatGatewayDestinationIpPortTranslationNatRuleOutcome(outcome.GetError());
+    }
+}
+
+void VpcClient::CreatePrivateNatGatewayDestinationIpPortTranslationNatRuleAsync(const CreatePrivateNatGatewayDestinationIpPortTranslationNatRuleRequest& request, const CreatePrivateNatGatewayDestinationIpPortTranslationNatRuleAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->CreatePrivateNatGatewayDestinationIpPortTranslationNatRule(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+VpcClient::CreatePrivateNatGatewayDestinationIpPortTranslationNatRuleOutcomeCallable VpcClient::CreatePrivateNatGatewayDestinationIpPortTranslationNatRuleCallable(const CreatePrivateNatGatewayDestinationIpPortTranslationNatRuleRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<CreatePrivateNatGatewayDestinationIpPortTranslationNatRuleOutcome()>>(
+        [this, request]()
+        {
+            return this->CreatePrivateNatGatewayDestinationIpPortTranslationNatRule(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+VpcClient::CreatePrivateNatGatewayTranslationAclRuleOutcome VpcClient::CreatePrivateNatGatewayTranslationAclRule(const CreatePrivateNatGatewayTranslationAclRuleRequest &request)
+{
+    auto outcome = MakeRequest(request, "CreatePrivateNatGatewayTranslationAclRule");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        CreatePrivateNatGatewayTranslationAclRuleResponse rsp = CreatePrivateNatGatewayTranslationAclRuleResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return CreatePrivateNatGatewayTranslationAclRuleOutcome(rsp);
+        else
+            return CreatePrivateNatGatewayTranslationAclRuleOutcome(o.GetError());
+    }
+    else
+    {
+        return CreatePrivateNatGatewayTranslationAclRuleOutcome(outcome.GetError());
+    }
+}
+
+void VpcClient::CreatePrivateNatGatewayTranslationAclRuleAsync(const CreatePrivateNatGatewayTranslationAclRuleRequest& request, const CreatePrivateNatGatewayTranslationAclRuleAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->CreatePrivateNatGatewayTranslationAclRule(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+VpcClient::CreatePrivateNatGatewayTranslationAclRuleOutcomeCallable VpcClient::CreatePrivateNatGatewayTranslationAclRuleCallable(const CreatePrivateNatGatewayTranslationAclRuleRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<CreatePrivateNatGatewayTranslationAclRuleOutcome()>>(
+        [this, request]()
+        {
+            return this->CreatePrivateNatGatewayTranslationAclRule(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+VpcClient::CreatePrivateNatGatewayTranslationNatRuleOutcome VpcClient::CreatePrivateNatGatewayTranslationNatRule(const CreatePrivateNatGatewayTranslationNatRuleRequest &request)
+{
+    auto outcome = MakeRequest(request, "CreatePrivateNatGatewayTranslationNatRule");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        CreatePrivateNatGatewayTranslationNatRuleResponse rsp = CreatePrivateNatGatewayTranslationNatRuleResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return CreatePrivateNatGatewayTranslationNatRuleOutcome(rsp);
+        else
+            return CreatePrivateNatGatewayTranslationNatRuleOutcome(o.GetError());
+    }
+    else
+    {
+        return CreatePrivateNatGatewayTranslationNatRuleOutcome(outcome.GetError());
+    }
+}
+
+void VpcClient::CreatePrivateNatGatewayTranslationNatRuleAsync(const CreatePrivateNatGatewayTranslationNatRuleRequest& request, const CreatePrivateNatGatewayTranslationNatRuleAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->CreatePrivateNatGatewayTranslationNatRule(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+VpcClient::CreatePrivateNatGatewayTranslationNatRuleOutcomeCallable VpcClient::CreatePrivateNatGatewayTranslationNatRuleCallable(const CreatePrivateNatGatewayTranslationNatRuleRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<CreatePrivateNatGatewayTranslationNatRuleOutcome()>>(
+        [this, request]()
+        {
+            return this->CreatePrivateNatGatewayTranslationNatRule(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 VpcClient::CreateRouteTableOutcome VpcClient::CreateRouteTable(const CreateRouteTableRequest &request)
 {
     auto outcome = MakeRequest(request, "CreateRouteTable");
@@ -4032,6 +4204,178 @@ VpcClient::DeleteNetworkInterfaceOutcomeCallable VpcClient::DeleteNetworkInterfa
         [this, request]()
         {
             return this->DeleteNetworkInterface(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+VpcClient::DeletePrivateNatGatewayOutcome VpcClient::DeletePrivateNatGateway(const DeletePrivateNatGatewayRequest &request)
+{
+    auto outcome = MakeRequest(request, "DeletePrivateNatGateway");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DeletePrivateNatGatewayResponse rsp = DeletePrivateNatGatewayResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DeletePrivateNatGatewayOutcome(rsp);
+        else
+            return DeletePrivateNatGatewayOutcome(o.GetError());
+    }
+    else
+    {
+        return DeletePrivateNatGatewayOutcome(outcome.GetError());
+    }
+}
+
+void VpcClient::DeletePrivateNatGatewayAsync(const DeletePrivateNatGatewayRequest& request, const DeletePrivateNatGatewayAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DeletePrivateNatGateway(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+VpcClient::DeletePrivateNatGatewayOutcomeCallable VpcClient::DeletePrivateNatGatewayCallable(const DeletePrivateNatGatewayRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DeletePrivateNatGatewayOutcome()>>(
+        [this, request]()
+        {
+            return this->DeletePrivateNatGateway(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+VpcClient::DeletePrivateNatGatewayDestinationIpPortTranslationNatRuleOutcome VpcClient::DeletePrivateNatGatewayDestinationIpPortTranslationNatRule(const DeletePrivateNatGatewayDestinationIpPortTranslationNatRuleRequest &request)
+{
+    auto outcome = MakeRequest(request, "DeletePrivateNatGatewayDestinationIpPortTranslationNatRule");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DeletePrivateNatGatewayDestinationIpPortTranslationNatRuleResponse rsp = DeletePrivateNatGatewayDestinationIpPortTranslationNatRuleResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DeletePrivateNatGatewayDestinationIpPortTranslationNatRuleOutcome(rsp);
+        else
+            return DeletePrivateNatGatewayDestinationIpPortTranslationNatRuleOutcome(o.GetError());
+    }
+    else
+    {
+        return DeletePrivateNatGatewayDestinationIpPortTranslationNatRuleOutcome(outcome.GetError());
+    }
+}
+
+void VpcClient::DeletePrivateNatGatewayDestinationIpPortTranslationNatRuleAsync(const DeletePrivateNatGatewayDestinationIpPortTranslationNatRuleRequest& request, const DeletePrivateNatGatewayDestinationIpPortTranslationNatRuleAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DeletePrivateNatGatewayDestinationIpPortTranslationNatRule(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+VpcClient::DeletePrivateNatGatewayDestinationIpPortTranslationNatRuleOutcomeCallable VpcClient::DeletePrivateNatGatewayDestinationIpPortTranslationNatRuleCallable(const DeletePrivateNatGatewayDestinationIpPortTranslationNatRuleRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DeletePrivateNatGatewayDestinationIpPortTranslationNatRuleOutcome()>>(
+        [this, request]()
+        {
+            return this->DeletePrivateNatGatewayDestinationIpPortTranslationNatRule(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+VpcClient::DeletePrivateNatGatewayTranslationAclRuleOutcome VpcClient::DeletePrivateNatGatewayTranslationAclRule(const DeletePrivateNatGatewayTranslationAclRuleRequest &request)
+{
+    auto outcome = MakeRequest(request, "DeletePrivateNatGatewayTranslationAclRule");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DeletePrivateNatGatewayTranslationAclRuleResponse rsp = DeletePrivateNatGatewayTranslationAclRuleResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DeletePrivateNatGatewayTranslationAclRuleOutcome(rsp);
+        else
+            return DeletePrivateNatGatewayTranslationAclRuleOutcome(o.GetError());
+    }
+    else
+    {
+        return DeletePrivateNatGatewayTranslationAclRuleOutcome(outcome.GetError());
+    }
+}
+
+void VpcClient::DeletePrivateNatGatewayTranslationAclRuleAsync(const DeletePrivateNatGatewayTranslationAclRuleRequest& request, const DeletePrivateNatGatewayTranslationAclRuleAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DeletePrivateNatGatewayTranslationAclRule(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+VpcClient::DeletePrivateNatGatewayTranslationAclRuleOutcomeCallable VpcClient::DeletePrivateNatGatewayTranslationAclRuleCallable(const DeletePrivateNatGatewayTranslationAclRuleRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DeletePrivateNatGatewayTranslationAclRuleOutcome()>>(
+        [this, request]()
+        {
+            return this->DeletePrivateNatGatewayTranslationAclRule(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+VpcClient::DeletePrivateNatGatewayTranslationNatRuleOutcome VpcClient::DeletePrivateNatGatewayTranslationNatRule(const DeletePrivateNatGatewayTranslationNatRuleRequest &request)
+{
+    auto outcome = MakeRequest(request, "DeletePrivateNatGatewayTranslationNatRule");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DeletePrivateNatGatewayTranslationNatRuleResponse rsp = DeletePrivateNatGatewayTranslationNatRuleResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DeletePrivateNatGatewayTranslationNatRuleOutcome(rsp);
+        else
+            return DeletePrivateNatGatewayTranslationNatRuleOutcome(o.GetError());
+    }
+    else
+    {
+        return DeletePrivateNatGatewayTranslationNatRuleOutcome(outcome.GetError());
+    }
+}
+
+void VpcClient::DeletePrivateNatGatewayTranslationNatRuleAsync(const DeletePrivateNatGatewayTranslationNatRuleRequest& request, const DeletePrivateNatGatewayTranslationNatRuleAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DeletePrivateNatGatewayTranslationNatRule(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+VpcClient::DeletePrivateNatGatewayTranslationNatRuleOutcomeCallable VpcClient::DeletePrivateNatGatewayTranslationNatRuleCallable(const DeletePrivateNatGatewayTranslationNatRuleRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DeletePrivateNatGatewayTranslationNatRuleOutcome()>>(
+        [this, request]()
+        {
+            return this->DeletePrivateNatGatewayTranslationNatRule(request);
         }
     );
 
@@ -6827,6 +7171,264 @@ VpcClient::DescribeNetworkInterfacesOutcomeCallable VpcClient::DescribeNetworkIn
         [this, request]()
         {
             return this->DescribeNetworkInterfaces(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+VpcClient::DescribePrivateNatGatewayDestinationIpPortTranslationNatRulesOutcome VpcClient::DescribePrivateNatGatewayDestinationIpPortTranslationNatRules(const DescribePrivateNatGatewayDestinationIpPortTranslationNatRulesRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribePrivateNatGatewayDestinationIpPortTranslationNatRules");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribePrivateNatGatewayDestinationIpPortTranslationNatRulesResponse rsp = DescribePrivateNatGatewayDestinationIpPortTranslationNatRulesResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribePrivateNatGatewayDestinationIpPortTranslationNatRulesOutcome(rsp);
+        else
+            return DescribePrivateNatGatewayDestinationIpPortTranslationNatRulesOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribePrivateNatGatewayDestinationIpPortTranslationNatRulesOutcome(outcome.GetError());
+    }
+}
+
+void VpcClient::DescribePrivateNatGatewayDestinationIpPortTranslationNatRulesAsync(const DescribePrivateNatGatewayDestinationIpPortTranslationNatRulesRequest& request, const DescribePrivateNatGatewayDestinationIpPortTranslationNatRulesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribePrivateNatGatewayDestinationIpPortTranslationNatRules(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+VpcClient::DescribePrivateNatGatewayDestinationIpPortTranslationNatRulesOutcomeCallable VpcClient::DescribePrivateNatGatewayDestinationIpPortTranslationNatRulesCallable(const DescribePrivateNatGatewayDestinationIpPortTranslationNatRulesRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribePrivateNatGatewayDestinationIpPortTranslationNatRulesOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribePrivateNatGatewayDestinationIpPortTranslationNatRules(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+VpcClient::DescribePrivateNatGatewayLimitsOutcome VpcClient::DescribePrivateNatGatewayLimits(const DescribePrivateNatGatewayLimitsRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribePrivateNatGatewayLimits");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribePrivateNatGatewayLimitsResponse rsp = DescribePrivateNatGatewayLimitsResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribePrivateNatGatewayLimitsOutcome(rsp);
+        else
+            return DescribePrivateNatGatewayLimitsOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribePrivateNatGatewayLimitsOutcome(outcome.GetError());
+    }
+}
+
+void VpcClient::DescribePrivateNatGatewayLimitsAsync(const DescribePrivateNatGatewayLimitsRequest& request, const DescribePrivateNatGatewayLimitsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribePrivateNatGatewayLimits(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+VpcClient::DescribePrivateNatGatewayLimitsOutcomeCallable VpcClient::DescribePrivateNatGatewayLimitsCallable(const DescribePrivateNatGatewayLimitsRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribePrivateNatGatewayLimitsOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribePrivateNatGatewayLimits(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+VpcClient::DescribePrivateNatGatewayRegionsOutcome VpcClient::DescribePrivateNatGatewayRegions(const DescribePrivateNatGatewayRegionsRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribePrivateNatGatewayRegions");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribePrivateNatGatewayRegionsResponse rsp = DescribePrivateNatGatewayRegionsResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribePrivateNatGatewayRegionsOutcome(rsp);
+        else
+            return DescribePrivateNatGatewayRegionsOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribePrivateNatGatewayRegionsOutcome(outcome.GetError());
+    }
+}
+
+void VpcClient::DescribePrivateNatGatewayRegionsAsync(const DescribePrivateNatGatewayRegionsRequest& request, const DescribePrivateNatGatewayRegionsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribePrivateNatGatewayRegions(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+VpcClient::DescribePrivateNatGatewayRegionsOutcomeCallable VpcClient::DescribePrivateNatGatewayRegionsCallable(const DescribePrivateNatGatewayRegionsRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribePrivateNatGatewayRegionsOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribePrivateNatGatewayRegions(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+VpcClient::DescribePrivateNatGatewayTranslationAclRulesOutcome VpcClient::DescribePrivateNatGatewayTranslationAclRules(const DescribePrivateNatGatewayTranslationAclRulesRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribePrivateNatGatewayTranslationAclRules");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribePrivateNatGatewayTranslationAclRulesResponse rsp = DescribePrivateNatGatewayTranslationAclRulesResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribePrivateNatGatewayTranslationAclRulesOutcome(rsp);
+        else
+            return DescribePrivateNatGatewayTranslationAclRulesOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribePrivateNatGatewayTranslationAclRulesOutcome(outcome.GetError());
+    }
+}
+
+void VpcClient::DescribePrivateNatGatewayTranslationAclRulesAsync(const DescribePrivateNatGatewayTranslationAclRulesRequest& request, const DescribePrivateNatGatewayTranslationAclRulesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribePrivateNatGatewayTranslationAclRules(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+VpcClient::DescribePrivateNatGatewayTranslationAclRulesOutcomeCallable VpcClient::DescribePrivateNatGatewayTranslationAclRulesCallable(const DescribePrivateNatGatewayTranslationAclRulesRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribePrivateNatGatewayTranslationAclRulesOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribePrivateNatGatewayTranslationAclRules(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+VpcClient::DescribePrivateNatGatewayTranslationNatRulesOutcome VpcClient::DescribePrivateNatGatewayTranslationNatRules(const DescribePrivateNatGatewayTranslationNatRulesRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribePrivateNatGatewayTranslationNatRules");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribePrivateNatGatewayTranslationNatRulesResponse rsp = DescribePrivateNatGatewayTranslationNatRulesResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribePrivateNatGatewayTranslationNatRulesOutcome(rsp);
+        else
+            return DescribePrivateNatGatewayTranslationNatRulesOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribePrivateNatGatewayTranslationNatRulesOutcome(outcome.GetError());
+    }
+}
+
+void VpcClient::DescribePrivateNatGatewayTranslationNatRulesAsync(const DescribePrivateNatGatewayTranslationNatRulesRequest& request, const DescribePrivateNatGatewayTranslationNatRulesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribePrivateNatGatewayTranslationNatRules(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+VpcClient::DescribePrivateNatGatewayTranslationNatRulesOutcomeCallable VpcClient::DescribePrivateNatGatewayTranslationNatRulesCallable(const DescribePrivateNatGatewayTranslationNatRulesRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribePrivateNatGatewayTranslationNatRulesOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribePrivateNatGatewayTranslationNatRules(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+VpcClient::DescribePrivateNatGatewaysOutcome VpcClient::DescribePrivateNatGateways(const DescribePrivateNatGatewaysRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribePrivateNatGateways");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribePrivateNatGatewaysResponse rsp = DescribePrivateNatGatewaysResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribePrivateNatGatewaysOutcome(rsp);
+        else
+            return DescribePrivateNatGatewaysOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribePrivateNatGatewaysOutcome(outcome.GetError());
+    }
+}
+
+void VpcClient::DescribePrivateNatGatewaysAsync(const DescribePrivateNatGatewaysRequest& request, const DescribePrivateNatGatewaysAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribePrivateNatGateways(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+VpcClient::DescribePrivateNatGatewaysOutcomeCallable VpcClient::DescribePrivateNatGatewaysCallable(const DescribePrivateNatGatewaysRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribePrivateNatGatewaysOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribePrivateNatGateways(request);
         }
     );
 
@@ -11471,6 +12073,178 @@ VpcClient::ModifyPrivateIpAddressesAttributeOutcomeCallable VpcClient::ModifyPri
         [this, request]()
         {
             return this->ModifyPrivateIpAddressesAttribute(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+VpcClient::ModifyPrivateNatGatewayAttributeOutcome VpcClient::ModifyPrivateNatGatewayAttribute(const ModifyPrivateNatGatewayAttributeRequest &request)
+{
+    auto outcome = MakeRequest(request, "ModifyPrivateNatGatewayAttribute");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ModifyPrivateNatGatewayAttributeResponse rsp = ModifyPrivateNatGatewayAttributeResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ModifyPrivateNatGatewayAttributeOutcome(rsp);
+        else
+            return ModifyPrivateNatGatewayAttributeOutcome(o.GetError());
+    }
+    else
+    {
+        return ModifyPrivateNatGatewayAttributeOutcome(outcome.GetError());
+    }
+}
+
+void VpcClient::ModifyPrivateNatGatewayAttributeAsync(const ModifyPrivateNatGatewayAttributeRequest& request, const ModifyPrivateNatGatewayAttributeAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->ModifyPrivateNatGatewayAttribute(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+VpcClient::ModifyPrivateNatGatewayAttributeOutcomeCallable VpcClient::ModifyPrivateNatGatewayAttributeCallable(const ModifyPrivateNatGatewayAttributeRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<ModifyPrivateNatGatewayAttributeOutcome()>>(
+        [this, request]()
+        {
+            return this->ModifyPrivateNatGatewayAttribute(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+VpcClient::ModifyPrivateNatGatewayDestinationIpPortTranslationNatRuleOutcome VpcClient::ModifyPrivateNatGatewayDestinationIpPortTranslationNatRule(const ModifyPrivateNatGatewayDestinationIpPortTranslationNatRuleRequest &request)
+{
+    auto outcome = MakeRequest(request, "ModifyPrivateNatGatewayDestinationIpPortTranslationNatRule");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ModifyPrivateNatGatewayDestinationIpPortTranslationNatRuleResponse rsp = ModifyPrivateNatGatewayDestinationIpPortTranslationNatRuleResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ModifyPrivateNatGatewayDestinationIpPortTranslationNatRuleOutcome(rsp);
+        else
+            return ModifyPrivateNatGatewayDestinationIpPortTranslationNatRuleOutcome(o.GetError());
+    }
+    else
+    {
+        return ModifyPrivateNatGatewayDestinationIpPortTranslationNatRuleOutcome(outcome.GetError());
+    }
+}
+
+void VpcClient::ModifyPrivateNatGatewayDestinationIpPortTranslationNatRuleAsync(const ModifyPrivateNatGatewayDestinationIpPortTranslationNatRuleRequest& request, const ModifyPrivateNatGatewayDestinationIpPortTranslationNatRuleAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->ModifyPrivateNatGatewayDestinationIpPortTranslationNatRule(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+VpcClient::ModifyPrivateNatGatewayDestinationIpPortTranslationNatRuleOutcomeCallable VpcClient::ModifyPrivateNatGatewayDestinationIpPortTranslationNatRuleCallable(const ModifyPrivateNatGatewayDestinationIpPortTranslationNatRuleRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<ModifyPrivateNatGatewayDestinationIpPortTranslationNatRuleOutcome()>>(
+        [this, request]()
+        {
+            return this->ModifyPrivateNatGatewayDestinationIpPortTranslationNatRule(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+VpcClient::ModifyPrivateNatGatewayTranslationAclRuleOutcome VpcClient::ModifyPrivateNatGatewayTranslationAclRule(const ModifyPrivateNatGatewayTranslationAclRuleRequest &request)
+{
+    auto outcome = MakeRequest(request, "ModifyPrivateNatGatewayTranslationAclRule");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ModifyPrivateNatGatewayTranslationAclRuleResponse rsp = ModifyPrivateNatGatewayTranslationAclRuleResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ModifyPrivateNatGatewayTranslationAclRuleOutcome(rsp);
+        else
+            return ModifyPrivateNatGatewayTranslationAclRuleOutcome(o.GetError());
+    }
+    else
+    {
+        return ModifyPrivateNatGatewayTranslationAclRuleOutcome(outcome.GetError());
+    }
+}
+
+void VpcClient::ModifyPrivateNatGatewayTranslationAclRuleAsync(const ModifyPrivateNatGatewayTranslationAclRuleRequest& request, const ModifyPrivateNatGatewayTranslationAclRuleAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->ModifyPrivateNatGatewayTranslationAclRule(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+VpcClient::ModifyPrivateNatGatewayTranslationAclRuleOutcomeCallable VpcClient::ModifyPrivateNatGatewayTranslationAclRuleCallable(const ModifyPrivateNatGatewayTranslationAclRuleRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<ModifyPrivateNatGatewayTranslationAclRuleOutcome()>>(
+        [this, request]()
+        {
+            return this->ModifyPrivateNatGatewayTranslationAclRule(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+VpcClient::ModifyPrivateNatGatewayTranslationNatRuleOutcome VpcClient::ModifyPrivateNatGatewayTranslationNatRule(const ModifyPrivateNatGatewayTranslationNatRuleRequest &request)
+{
+    auto outcome = MakeRequest(request, "ModifyPrivateNatGatewayTranslationNatRule");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ModifyPrivateNatGatewayTranslationNatRuleResponse rsp = ModifyPrivateNatGatewayTranslationNatRuleResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ModifyPrivateNatGatewayTranslationNatRuleOutcome(rsp);
+        else
+            return ModifyPrivateNatGatewayTranslationNatRuleOutcome(o.GetError());
+    }
+    else
+    {
+        return ModifyPrivateNatGatewayTranslationNatRuleOutcome(outcome.GetError());
+    }
+}
+
+void VpcClient::ModifyPrivateNatGatewayTranslationNatRuleAsync(const ModifyPrivateNatGatewayTranslationNatRuleRequest& request, const ModifyPrivateNatGatewayTranslationNatRuleAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->ModifyPrivateNatGatewayTranslationNatRule(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+VpcClient::ModifyPrivateNatGatewayTranslationNatRuleOutcomeCallable VpcClient::ModifyPrivateNatGatewayTranslationNatRuleCallable(const ModifyPrivateNatGatewayTranslationNatRuleRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<ModifyPrivateNatGatewayTranslationNatRuleOutcome()>>(
+        [this, request]()
+        {
+            return this->ModifyPrivateNatGatewayTranslationNatRule(request);
         }
     );
 
