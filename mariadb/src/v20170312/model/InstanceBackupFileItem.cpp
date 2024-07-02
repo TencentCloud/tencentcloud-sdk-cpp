@@ -31,7 +31,8 @@ InstanceBackupFileItem::InstanceBackupFileItem() :
     m_backupTypeHasBeenSet(false),
     m_manualBackupHasBeenSet(false),
     m_startTimeHasBeenSet(false),
-    m_endTimeHasBeenSet(false)
+    m_endTimeHasBeenSet(false),
+    m_storageClassHasBeenSet(false)
 {
 }
 
@@ -150,6 +151,16 @@ CoreInternalOutcome InstanceBackupFileItem::Deserialize(const rapidjson::Value &
         m_endTimeHasBeenSet = true;
     }
 
+    if (value.HasMember("StorageClass") && !value["StorageClass"].IsNull())
+    {
+        if (!value["StorageClass"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `InstanceBackupFileItem.StorageClass` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_storageClass = string(value["StorageClass"].GetString());
+        m_storageClassHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -243,6 +254,14 @@ void InstanceBackupFileItem::ToJsonObject(rapidjson::Value &value, rapidjson::Do
         string key = "EndTime";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_endTime.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_storageClassHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "StorageClass";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_storageClass.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -422,5 +441,21 @@ void InstanceBackupFileItem::SetEndTime(const string& _endTime)
 bool InstanceBackupFileItem::EndTimeHasBeenSet() const
 {
     return m_endTimeHasBeenSet;
+}
+
+string InstanceBackupFileItem::GetStorageClass() const
+{
+    return m_storageClass;
+}
+
+void InstanceBackupFileItem::SetStorageClass(const string& _storageClass)
+{
+    m_storageClass = _storageClass;
+    m_storageClassHasBeenSet = true;
+}
+
+bool InstanceBackupFileItem::StorageClassHasBeenSet() const
+{
+    return m_storageClassHasBeenSet;
 }
 

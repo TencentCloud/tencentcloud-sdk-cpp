@@ -229,6 +229,8 @@
 #include <tencentcloud/gaap/v20180529/model/RemoveRealServersResponse.h>
 #include <tencentcloud/gaap/v20180529/model/SetAuthenticationRequest.h>
 #include <tencentcloud/gaap/v20180529/model/SetAuthenticationResponse.h>
+#include <tencentcloud/gaap/v20180529/model/SetTlsVersionRequest.h>
+#include <tencentcloud/gaap/v20180529/model/SetTlsVersionResponse.h>
 
 
 namespace TencentCloud
@@ -552,6 +554,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::SetAuthenticationResponse> SetAuthenticationOutcome;
                 typedef std::future<SetAuthenticationOutcome> SetAuthenticationOutcomeCallable;
                 typedef std::function<void(const GaapClient*, const Model::SetAuthenticationRequest&, SetAuthenticationOutcome, const std::shared_ptr<const AsyncCallerContext>&)> SetAuthenticationAsyncHandler;
+                typedef Outcome<Core::Error, Model::SetTlsVersionResponse> SetTlsVersionOutcome;
+                typedef std::future<SetTlsVersionOutcome> SetTlsVersionOutcomeCallable;
+                typedef std::function<void(const GaapClient*, const Model::SetTlsVersionRequest&, SetTlsVersionOutcome, const std::shared_ptr<const AsyncCallerContext>&)> SetTlsVersionAsyncHandler;
 
 
 
@@ -1484,6 +1489,15 @@ namespace TencentCloud
                 SetAuthenticationOutcome SetAuthentication(const Model::SetAuthenticationRequest &request);
                 void SetAuthenticationAsync(const Model::SetAuthenticationRequest& request, const SetAuthenticationAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 SetAuthenticationOutcomeCallable SetAuthenticationCallable(const Model::SetAuthenticationRequest& request);
+
+                /**
+                 *设置监听器TLS配置
+                 * @param req SetTlsVersionRequest
+                 * @return SetTlsVersionOutcome
+                 */
+                SetTlsVersionOutcome SetTlsVersion(const Model::SetTlsVersionRequest &request);
+                void SetTlsVersionAsync(const Model::SetTlsVersionRequest& request, const SetTlsVersionAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                SetTlsVersionOutcomeCallable SetTlsVersionCallable(const Model::SetTlsVersionRequest& request);
 
             };
         }

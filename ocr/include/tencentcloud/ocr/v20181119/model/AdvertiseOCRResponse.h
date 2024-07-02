@@ -22,6 +22,7 @@
 #include <map>
 #include <tencentcloud/core/AbstractModel.h>
 #include <tencentcloud/ocr/v20181119/model/AdvertiseTextDetection.h>
+#include <tencentcloud/ocr/v20181119/model/ImageSize.h>
 
 
 namespace TencentCloud
@@ -58,6 +59,20 @@ namespace TencentCloud
                      */
                     bool TextDetectionsHasBeenSet() const;
 
+                    /**
+                     * 获取图片分辨率信息，单位 px
+                     * @return ImageSize 图片分辨率信息，单位 px
+                     * 
+                     */
+                    ImageSize GetImageSize() const;
+
+                    /**
+                     * 判断参数 ImageSize 是否已赋值
+                     * @return ImageSize 是否已赋值
+                     * 
+                     */
+                    bool ImageSizeHasBeenSet() const;
+
                 private:
 
                     /**
@@ -65,6 +80,12 @@ namespace TencentCloud
                      */
                     std::vector<AdvertiseTextDetection> m_textDetections;
                     bool m_textDetectionsHasBeenSet;
+
+                    /**
+                     * 图片分辨率信息，单位 px
+                     */
+                    ImageSize m_imageSize;
+                    bool m_imageSizeHasBeenSet;
 
                 };
             }

@@ -49,7 +49,8 @@ Endpoint::Endpoint() :
     m_databaseNetEnvHasBeenSet(false),
     m_ccnOwnerUinHasBeenSet(false),
     m_childInstanceIdHasBeenSet(false),
-    m_childInstanceTypeHasBeenSet(false)
+    m_childInstanceTypeHasBeenSet(false),
+    m_setIdHasBeenSet(false)
 {
 }
 
@@ -348,6 +349,16 @@ CoreInternalOutcome Endpoint::Deserialize(const rapidjson::Value &value)
         m_childInstanceTypeHasBeenSet = true;
     }
 
+    if (value.HasMember("SetId") && !value["SetId"].IsNull())
+    {
+        if (!value["SetId"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `Endpoint.SetId` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_setId = string(value["SetId"].GetString());
+        m_setIdHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -585,6 +596,14 @@ void Endpoint::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Alloca
         string key = "ChildInstanceType";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_childInstanceType.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_setIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "SetId";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_setId.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -1052,5 +1071,21 @@ void Endpoint::SetChildInstanceType(const string& _childInstanceType)
 bool Endpoint::ChildInstanceTypeHasBeenSet() const
 {
     return m_childInstanceTypeHasBeenSet;
+}
+
+string Endpoint::GetSetId() const
+{
+    return m_setId;
+}
+
+void Endpoint::SetSetId(const string& _setId)
+{
+    m_setId = _setId;
+    m_setIdHasBeenSet = true;
+}
+
+bool Endpoint::SetIdHasBeenSet() const
+{
+    return m_setIdHasBeenSet;
 }
 

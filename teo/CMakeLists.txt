@@ -258,6 +258,7 @@ set(teo_public_header_model
   include/tencentcloud/teo/v20220901/model/BindSharedCNAMEMap.h
   include/tencentcloud/teo/v20220901/model/DeleteRealtimeLogDeliveryTaskRequest.h
   include/tencentcloud/teo/v20220901/model/RulesSettingAction.h
+  include/tencentcloud/teo/v20220901/model/MutualTLS.h
   include/tencentcloud/teo/v20220901/model/Ipv6.h
   include/tencentcloud/teo/v20220901/model/ModifyApplicationProxyRuleRequest.h
   include/tencentcloud/teo/v20220901/model/AclConfig.h
@@ -659,6 +660,7 @@ set(teo_src
   src/v20220901/model/BindSharedCNAMEMap.cpp
   src/v20220901/model/DeleteRealtimeLogDeliveryTaskRequest.cpp
   src/v20220901/model/RulesSettingAction.cpp
+  src/v20220901/model/MutualTLS.cpp
   src/v20220901/model/Ipv6.cpp
   src/v20220901/model/ModifyApplicationProxyRuleRequest.cpp
   src/v20220901/model/AclConfig.cpp

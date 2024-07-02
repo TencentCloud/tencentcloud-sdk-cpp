@@ -215,6 +215,31 @@ namespace TencentCloud
                     bool VirtualHostStatisticsHasBeenSet() const;
 
                     /**
+                     * 获取消息轨迹开关,true打开,false关闭
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return TraceFlag 消息轨迹开关,true打开,false关闭
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    bool GetTraceFlag() const;
+
+                    /**
+                     * 设置消息轨迹开关,true打开,false关闭
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _traceFlag 消息轨迹开关,true打开,false关闭
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetTraceFlag(const bool& _traceFlag);
+
+                    /**
+                     * 判断参数 TraceFlag 是否已赋值
+                     * @return TraceFlag 是否已赋值
+                     * 
+                     */
+                    bool TraceFlagHasBeenSet() const;
+
+                    /**
                      * 获取vhost状态，与原生控制台对应，有running、partial、stopped、unknown
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Status vhost状态，与原生控制台对应，有running、partial、stopped、unknown
@@ -387,6 +412,13 @@ namespace TencentCloud
                      */
                     RabbitMQVirtualHostStatistics m_virtualHostStatistics;
                     bool m_virtualHostStatisticsHasBeenSet;
+
+                    /**
+                     * 消息轨迹开关,true打开,false关闭
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    bool m_traceFlag;
+                    bool m_traceFlagHasBeenSet;
 
                     /**
                      * vhost状态，与原生控制台对应，有running、partial、stopped、unknown

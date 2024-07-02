@@ -4469,3 +4469,46 @@ GaapClient::SetAuthenticationOutcomeCallable GaapClient::SetAuthenticationCallab
     return task->get_future();
 }
 
+GaapClient::SetTlsVersionOutcome GaapClient::SetTlsVersion(const SetTlsVersionRequest &request)
+{
+    auto outcome = MakeRequest(request, "SetTlsVersion");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        SetTlsVersionResponse rsp = SetTlsVersionResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return SetTlsVersionOutcome(rsp);
+        else
+            return SetTlsVersionOutcome(o.GetError());
+    }
+    else
+    {
+        return SetTlsVersionOutcome(outcome.GetError());
+    }
+}
+
+void GaapClient::SetTlsVersionAsync(const SetTlsVersionRequest& request, const SetTlsVersionAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->SetTlsVersion(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+GaapClient::SetTlsVersionOutcomeCallable GaapClient::SetTlsVersionCallable(const SetTlsVersionRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<SetTlsVersionOutcome()>>(
+        [this, request]()
+        {
+            return this->SetTlsVersion(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+

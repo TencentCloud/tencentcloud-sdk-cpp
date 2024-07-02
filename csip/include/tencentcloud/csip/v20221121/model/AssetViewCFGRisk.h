@@ -299,15 +299,15 @@ namespace TencentCloud
                     bool StatusHasBeenSet() const;
 
                     /**
-                     * 获取-
-                     * @return CFGSTD -
+                     * 获取相关规范
+                     * @return CFGSTD 相关规范
                      * 
                      */
                     std::string GetCFGSTD() const;
 
                     /**
-                     * 设置-
-                     * @param _cFGSTD -
+                     * 设置相关规范
+                     * @param _cFGSTD 相关规范
                      * 
                      */
                     void SetCFGSTD(const std::string& _cFGSTD);
@@ -549,7 +549,7 @@ namespace TencentCloud
                     bool m_statusHasBeenSet;
 
                     /**
-                     * -
+                     * 相关规范
                      */
                     std::string m_cFGSTD;
                     bool m_cFGSTDHasBeenSet;

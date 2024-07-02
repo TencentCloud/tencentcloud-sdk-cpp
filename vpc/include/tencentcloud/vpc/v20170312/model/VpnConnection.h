@@ -29,6 +29,7 @@
 #include <tencentcloud/vpc/v20170312/model/IPSECOptionsSpecification.h>
 #include <tencentcloud/vpc/v20170312/model/Tag.h>
 #include <tencentcloud/vpc/v20170312/model/BgpConfigAndAsn.h>
+#include <tencentcloud/vpc/v20170312/model/HealthCheckConfig.h>
 
 
 namespace TencentCloud
@@ -596,6 +597,31 @@ namespace TencentCloud
                      */
                     bool BgpConfigHasBeenSet() const;
 
+                    /**
+                     * 获取Nqa配置信息
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return HealthCheckConfig Nqa配置信息
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    HealthCheckConfig GetHealthCheckConfig() const;
+
+                    /**
+                     * 设置Nqa配置信息
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _healthCheckConfig Nqa配置信息
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetHealthCheckConfig(const HealthCheckConfig& _healthCheckConfig);
+
+                    /**
+                     * 判断参数 HealthCheckConfig 是否已赋值
+                     * @return HealthCheckConfig 是否已赋值
+                     * 
+                     */
+                    bool HealthCheckConfigHasBeenSet() const;
+
                 private:
 
                     /**
@@ -752,6 +778,13 @@ namespace TencentCloud
                      */
                     BgpConfigAndAsn m_bgpConfig;
                     bool m_bgpConfigHasBeenSet;
+
+                    /**
+                     * Nqa配置信息
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    HealthCheckConfig m_healthCheckConfig;
+                    bool m_healthCheckConfigHasBeenSet;
 
                 };
             }

@@ -184,7 +184,7 @@ set(ocr_public_header_model
   include/tencentcloud/ocr/v20181119/model/OtherInvoiceList.h
   include/tencentcloud/ocr/v20181119/model/IDCardOCRResponse.h
   include/tencentcloud/ocr/v20181119/model/ShipInvoiceInfo.h
-  include/tencentcloud/ocr/v20181119/model/Polygon.h
+  include/tencentcloud/ocr/v20181119/model/MedicalInvoiceItem.h
   include/tencentcloud/ocr/v20181119/model/GeneralAccurateOCRRequest.h
   include/tencentcloud/ocr/v20181119/model/OrgCodeCertOCRRequest.h
   include/tencentcloud/ocr/v20181119/model/FlightInvoiceOCRResponse.h
@@ -240,9 +240,10 @@ set(ocr_public_header_model
   include/tencentcloud/ocr/v20181119/model/CarInvoiceOCRResponse.h
   include/tencentcloud/ocr/v20181119/model/VehicleRegCertOCRResponse.h
   include/tencentcloud/ocr/v20181119/model/GeneralFastOCRRequest.h
-  include/tencentcloud/ocr/v20181119/model/MedicalInvoiceItem.h
+  include/tencentcloud/ocr/v20181119/model/ImageSize.h
   include/tencentcloud/ocr/v20181119/model/DocumentElement.h
   include/tencentcloud/ocr/v20181119/model/RecognizeGeneralInvoiceResponse.h
+  include/tencentcloud/ocr/v20181119/model/Polygon.h
   include/tencentcloud/ocr/v20181119/model/GetTaskStateResponse.h
   include/tencentcloud/ocr/v20181119/model/InsuranceBillInfo.h
   include/tencentcloud/ocr/v20181119/model/GetTaskStateRequest.h
@@ -478,7 +479,7 @@ set(ocr_src
   src/v20181119/model/OtherInvoiceList.cpp
   src/v20181119/model/IDCardOCRResponse.cpp
   src/v20181119/model/ShipInvoiceInfo.cpp
-  src/v20181119/model/Polygon.cpp
+  src/v20181119/model/MedicalInvoiceItem.cpp
   src/v20181119/model/GeneralAccurateOCRRequest.cpp
   src/v20181119/model/OrgCodeCertOCRRequest.cpp
   src/v20181119/model/FlightInvoiceOCRResponse.cpp
@@ -534,9 +535,10 @@ set(ocr_src
   src/v20181119/model/CarInvoiceOCRResponse.cpp
   src/v20181119/model/VehicleRegCertOCRResponse.cpp
   src/v20181119/model/GeneralFastOCRRequest.cpp
-  src/v20181119/model/MedicalInvoiceItem.cpp
+  src/v20181119/model/ImageSize.cpp
   src/v20181119/model/DocumentElement.cpp
   src/v20181119/model/RecognizeGeneralInvoiceResponse.cpp
+  src/v20181119/model/Polygon.cpp
   src/v20181119/model/GetTaskStateResponse.cpp
   src/v20181119/model/InsuranceBillInfo.cpp
   src/v20181119/model/GetTaskStateRequest.cpp

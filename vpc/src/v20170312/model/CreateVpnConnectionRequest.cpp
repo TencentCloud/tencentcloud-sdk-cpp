@@ -41,7 +41,8 @@ CreateVpnConnectionRequest::CreateVpnConnectionRequest() :
     m_dpdTimeoutHasBeenSet(false),
     m_dpdActionHasBeenSet(false),
     m_routeHasBeenSet(false),
-    m_bgpConfigHasBeenSet(false)
+    m_bgpConfigHasBeenSet(false),
+    m_healthCheckConfigHasBeenSet(false)
 {
 }
 
@@ -220,6 +221,15 @@ string CreateVpnConnectionRequest::ToJsonString() const
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
         m_bgpConfig.ToJsonObject(d[key.c_str()], allocator);
+    }
+
+    if (m_healthCheckConfigHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "HealthCheckConfig";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_healthCheckConfig.ToJsonObject(d[key.c_str()], allocator);
     }
 
 
@@ -532,6 +542,22 @@ void CreateVpnConnectionRequest::SetBgpConfig(const BgpConfig& _bgpConfig)
 bool CreateVpnConnectionRequest::BgpConfigHasBeenSet() const
 {
     return m_bgpConfigHasBeenSet;
+}
+
+HealthCheckConfig CreateVpnConnectionRequest::GetHealthCheckConfig() const
+{
+    return m_healthCheckConfig;
+}
+
+void CreateVpnConnectionRequest::SetHealthCheckConfig(const HealthCheckConfig& _healthCheckConfig)
+{
+    m_healthCheckConfig = _healthCheckConfig;
+    m_healthCheckConfigHasBeenSet = true;
+}
+
+bool CreateVpnConnectionRequest::HealthCheckConfigHasBeenSet() const
+{
+    return m_healthCheckConfigHasBeenSet;
 }
 
 

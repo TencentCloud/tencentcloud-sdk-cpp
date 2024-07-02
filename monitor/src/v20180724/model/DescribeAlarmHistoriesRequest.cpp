@@ -41,7 +41,8 @@ DescribeAlarmHistoriesRequest::DescribeAlarmHistoriesRequest() :
     m_receiverUidsHasBeenSet(false),
     m_receiverGroupsHasBeenSet(false),
     m_policyIdsHasBeenSet(false),
-    m_alarmLevelsHasBeenSet(false)
+    m_alarmLevelsHasBeenSet(false),
+    m_convergenceHistoryIDsHasBeenSet(false)
 {
 }
 
@@ -251,6 +252,19 @@ string DescribeAlarmHistoriesRequest::ToJsonString() const
         d.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
 
         for (auto itr = m_alarmLevels.begin(); itr != m_alarmLevels.end(); ++itr)
+        {
+            d[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
+        }
+    }
+
+    if (m_convergenceHistoryIDsHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ConvergenceHistoryIDs";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        for (auto itr = m_convergenceHistoryIDs.begin(); itr != m_convergenceHistoryIDs.end(); ++itr)
         {
             d[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
         }
@@ -566,6 +580,22 @@ void DescribeAlarmHistoriesRequest::SetAlarmLevels(const vector<string>& _alarmL
 bool DescribeAlarmHistoriesRequest::AlarmLevelsHasBeenSet() const
 {
     return m_alarmLevelsHasBeenSet;
+}
+
+vector<string> DescribeAlarmHistoriesRequest::GetConvergenceHistoryIDs() const
+{
+    return m_convergenceHistoryIDs;
+}
+
+void DescribeAlarmHistoriesRequest::SetConvergenceHistoryIDs(const vector<string>& _convergenceHistoryIDs)
+{
+    m_convergenceHistoryIDs = _convergenceHistoryIDs;
+    m_convergenceHistoryIDsHasBeenSet = true;
+}
+
+bool DescribeAlarmHistoriesRequest::ConvergenceHistoryIDsHasBeenSet() const
+{
+    return m_convergenceHistoryIDsHasBeenSet;
 }
 
 

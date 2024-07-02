@@ -277,6 +277,27 @@ namespace TencentCloud
                      */
                     bool EndTimeHasBeenSet() const;
 
+                    /**
+                     * 获取对象的存储类型，枚举值：STANDARD（标准存储）、ARCHIVE（归档存储）。
+                     * @return StorageClass 对象的存储类型，枚举值：STANDARD（标准存储）、ARCHIVE（归档存储）。
+                     * 
+                     */
+                    std::string GetStorageClass() const;
+
+                    /**
+                     * 设置对象的存储类型，枚举值：STANDARD（标准存储）、ARCHIVE（归档存储）。
+                     * @param _storageClass 对象的存储类型，枚举值：STANDARD（标准存储）、ARCHIVE（归档存储）。
+                     * 
+                     */
+                    void SetStorageClass(const std::string& _storageClass);
+
+                    /**
+                     * 判断参数 StorageClass 是否已赋值
+                     * @return StorageClass 是否已赋值
+                     * 
+                     */
+                    bool StorageClassHasBeenSet() const;
+
                 private:
 
                     /**
@@ -344,6 +365,12 @@ namespace TencentCloud
                      */
                     std::string m_endTime;
                     bool m_endTimeHasBeenSet;
+
+                    /**
+                     * 对象的存储类型，枚举值：STANDARD（标准存储）、ARCHIVE（归档存储）。
+                     */
+                    std::string m_storageClass;
+                    bool m_storageClassHasBeenSet;
 
                 };
             }

@@ -358,6 +358,27 @@ namespace TencentCloud
                      */
                     bool BandwidthHasBeenSet() const;
 
+                    /**
+                     * 获取是否打开公网接入，不传默认为false
+                     * @return EnablePublicAccess 是否打开公网接入，不传默认为false
+                     * 
+                     */
+                    bool GetEnablePublicAccess() const;
+
+                    /**
+                     * 设置是否打开公网接入，不传默认为false
+                     * @param _enablePublicAccess 是否打开公网接入，不传默认为false
+                     * 
+                     */
+                    void SetEnablePublicAccess(const bool& _enablePublicAccess);
+
+                    /**
+                     * 判断参数 EnablePublicAccess 是否已赋值
+                     * @return EnablePublicAccess 是否已赋值
+                     * 
+                     */
+                    bool EnablePublicAccessHasBeenSet() const;
+
                 private:
 
                     /**
@@ -449,6 +470,12 @@ namespace TencentCloud
                      */
                     uint64_t m_bandwidth;
                     bool m_bandwidthHasBeenSet;
+
+                    /**
+                     * 是否打开公网接入，不传默认为false
+                     */
+                    bool m_enablePublicAccess;
+                    bool m_enablePublicAccessHasBeenSet;
 
                 };
             }

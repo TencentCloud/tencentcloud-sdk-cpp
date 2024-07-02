@@ -25,6 +25,7 @@
 #include <tencentcloud/core/utils/rapidjson/stringbuffer.h>
 #include <tencentcloud/core/AbstractModel.h>
 #include <tencentcloud/teo/v20220901/model/CertificateInfo.h>
+#include <tencentcloud/teo/v20220901/model/MutualTLS.h>
 
 
 namespace TencentCloud
@@ -69,18 +70,18 @@ namespace TencentCloud
                     bool ModeHasBeenSet() const;
 
                     /**
-                     * 获取证书列表。
+                     * 获取服务端证书列表。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return List 证书列表。
+                     * @return List 服务端证书列表。
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<CertificateInfo> GetList() const;
 
                     /**
-                     * 设置证书列表。
+                     * 设置服务端证书列表。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _list 证书列表。
+                     * @param _list 服务端证书列表。
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -93,6 +94,27 @@ namespace TencentCloud
                      */
                     bool ListHasBeenSet() const;
 
+                    /**
+                     * 获取边缘双向认证配置。
+                     * @return ClientCertInfo 边缘双向认证配置。
+                     * 
+                     */
+                    MutualTLS GetClientCertInfo() const;
+
+                    /**
+                     * 设置边缘双向认证配置。
+                     * @param _clientCertInfo 边缘双向认证配置。
+                     * 
+                     */
+                    void SetClientCertInfo(const MutualTLS& _clientCertInfo);
+
+                    /**
+                     * 判断参数 ClientCertInfo 是否已赋值
+                     * @return ClientCertInfo 是否已赋值
+                     * 
+                     */
+                    bool ClientCertInfoHasBeenSet() const;
+
                 private:
 
                     /**
@@ -102,11 +124,17 @@ namespace TencentCloud
                     bool m_modeHasBeenSet;
 
                     /**
-                     * 证书列表。
+                     * 服务端证书列表。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<CertificateInfo> m_list;
                     bool m_listHasBeenSet;
+
+                    /**
+                     * 边缘双向认证配置。
+                     */
+                    MutualTLS m_clientCertInfo;
+                    bool m_clientCertInfoHasBeenSet;
 
                 };
             }

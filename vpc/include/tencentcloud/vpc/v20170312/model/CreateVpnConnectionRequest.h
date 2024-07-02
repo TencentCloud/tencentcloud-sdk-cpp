@@ -27,6 +27,7 @@
 #include <tencentcloud/vpc/v20170312/model/Tag.h>
 #include <tencentcloud/vpc/v20170312/model/CreateVpnConnRoute.h>
 #include <tencentcloud/vpc/v20170312/model/BgpConfig.h>
+#include <tencentcloud/vpc/v20170312/model/HealthCheckConfig.h>
 
 
 namespace TencentCloud
@@ -451,6 +452,27 @@ CCN VPN 形的通道 可以不传VPCID
                      */
                     bool BgpConfigHasBeenSet() const;
 
+                    /**
+                     * 获取健康检查NQA配置。
+                     * @return HealthCheckConfig 健康检查NQA配置。
+                     * 
+                     */
+                    HealthCheckConfig GetHealthCheckConfig() const;
+
+                    /**
+                     * 设置健康检查NQA配置。
+                     * @param _healthCheckConfig 健康检查NQA配置。
+                     * 
+                     */
+                    void SetHealthCheckConfig(const HealthCheckConfig& _healthCheckConfig);
+
+                    /**
+                     * 判断参数 HealthCheckConfig 是否已赋值
+                     * @return HealthCheckConfig 是否已赋值
+                     * 
+                     */
+                    bool HealthCheckConfigHasBeenSet() const;
+
                 private:
 
                     /**
@@ -567,6 +589,12 @@ CCN VPN 形的通道 可以不传VPCID
                      */
                     BgpConfig m_bgpConfig;
                     bool m_bgpConfigHasBeenSet;
+
+                    /**
+                     * 健康检查NQA配置。
+                     */
+                    HealthCheckConfig m_healthCheckConfig;
+                    bool m_healthCheckConfigHasBeenSet;
 
                 };
             }

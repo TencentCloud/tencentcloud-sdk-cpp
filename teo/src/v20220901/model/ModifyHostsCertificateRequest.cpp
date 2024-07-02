@@ -27,7 +27,8 @@ ModifyHostsCertificateRequest::ModifyHostsCertificateRequest() :
     m_hostsHasBeenSet(false),
     m_modeHasBeenSet(false),
     m_serverCertInfoHasBeenSet(false),
-    m_applyTypeHasBeenSet(false)
+    m_applyTypeHasBeenSet(false),
+    m_clientCertInfoHasBeenSet(false)
 {
 }
 
@@ -88,6 +89,15 @@ string ModifyHostsCertificateRequest::ToJsonString() const
         string key = "ApplyType";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_applyType.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_clientCertInfoHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ClientCertInfo";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_clientCertInfo.ToJsonObject(d[key.c_str()], allocator);
     }
 
 
@@ -176,6 +186,22 @@ void ModifyHostsCertificateRequest::SetApplyType(const string& _applyType)
 bool ModifyHostsCertificateRequest::ApplyTypeHasBeenSet() const
 {
     return m_applyTypeHasBeenSet;
+}
+
+MutualTLS ModifyHostsCertificateRequest::GetClientCertInfo() const
+{
+    return m_clientCertInfo;
+}
+
+void ModifyHostsCertificateRequest::SetClientCertInfo(const MutualTLS& _clientCertInfo)
+{
+    m_clientCertInfo = _clientCertInfo;
+    m_clientCertInfoHasBeenSet = true;
+}
+
+bool ModifyHostsCertificateRequest::ClientCertInfoHasBeenSet() const
+{
+    return m_clientCertInfoHasBeenSet;
 }
 
 

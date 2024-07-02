@@ -47,15 +47,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取影响资产
-                     * @return NoHandleCount 影响资产
+                     * 获取未处理数量
+                     * @return NoHandleCount 未处理数量
                      * 
                      */
                     int64_t GetNoHandleCount() const;
 
                     /**
-                     * 设置影响资产
-                     * @param _noHandleCount 影响资产
+                     * 设置未处理数量
+                     * @param _noHandleCount 未处理数量
                      * 
                      */
                     void SetNoHandleCount(const int64_t& _noHandleCount);
@@ -215,15 +215,15 @@ namespace TencentCloud
                     bool SuggestionHasBeenSet() const;
 
                     /**
-                     * 获取状态，0未处理、1已处置、2已忽略
-                     * @return AffectAssetCount 状态，0未处理、1已处置、2已忽略
+                     * 获取影响资产数量
+                     * @return AffectAssetCount 影响资产数量
                      * 
                      */
                     std::string GetAffectAssetCount() const;
 
                     /**
-                     * 设置状态，0未处理、1已处置、2已忽略
-                     * @param _affectAssetCount 状态，0未处理、1已处置、2已忽略
+                     * 设置影响资产数量
+                     * @param _affectAssetCount 影响资产数量
                      * 
                      */
                     void SetAffectAssetCount(const std::string& _affectAssetCount);
@@ -236,15 +236,15 @@ namespace TencentCloud
                     bool AffectAssetCountHasBeenSet() const;
 
                     /**
-                     * 获取资产唯一id
-                     * @return Id 资产唯一id
+                     * 获取ID
+                     * @return Id ID
                      * 
                      */
                     std::string GetId() const;
 
                     /**
-                     * 设置资产唯一id
-                     * @param _id 资产唯一id
+                     * 设置ID
+                     * @param _id ID
                      * 
                      */
                     void SetId(const std::string& _id);
@@ -257,15 +257,15 @@ namespace TencentCloud
                     bool IdHasBeenSet() const;
 
                     /**
-                     * 获取资产子类型
-                     * @return From 资产子类型
+                     * 获取识别来源
+                     * @return From 识别来源
                      * 
                      */
                     std::string GetFrom() const;
 
                     /**
-                     * 设置资产子类型
-                     * @param _from 资产子类型
+                     * 设置识别来源
+                     * @param _from 识别来源
                      * 
                      */
                     void SetFrom(const std::string& _from);
@@ -393,7 +393,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 影响资产
+                     * 未处理数量
                      */
                     int64_t m_noHandleCount;
                     bool m_noHandleCountHasBeenSet;
@@ -441,19 +441,19 @@ namespace TencentCloud
                     bool m_suggestionHasBeenSet;
 
                     /**
-                     * 状态，0未处理、1已处置、2已忽略
+                     * 影响资产数量
                      */
                     std::string m_affectAssetCount;
                     bool m_affectAssetCountHasBeenSet;
 
                     /**
-                     * 资产唯一id
+                     * ID
                      */
                     std::string m_id;
                     bool m_idHasBeenSet;
 
                     /**
-                     * 资产子类型
+                     * 识别来源
                      */
                     std::string m_from;
                     bool m_fromHasBeenSet;

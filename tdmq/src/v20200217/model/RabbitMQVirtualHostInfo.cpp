@@ -28,6 +28,7 @@ RabbitMQVirtualHostInfo::RabbitMQVirtualHostInfo() :
     m_createTimeHasBeenSet(false),
     m_modifyTimeHasBeenSet(false),
     m_virtualHostStatisticsHasBeenSet(false),
+    m_traceFlagHasBeenSet(false),
     m_statusHasBeenSet(false),
     m_messageHeapCountHasBeenSet(false),
     m_messageRateInHasBeenSet(false),
@@ -119,6 +120,16 @@ CoreInternalOutcome RabbitMQVirtualHostInfo::Deserialize(const rapidjson::Value 
         }
 
         m_virtualHostStatisticsHasBeenSet = true;
+    }
+
+    if (value.HasMember("TraceFlag") && !value["TraceFlag"].IsNull())
+    {
+        if (!value["TraceFlag"].IsBool())
+        {
+            return CoreInternalOutcome(Core::Error("response `RabbitMQVirtualHostInfo.TraceFlag` IsBool=false incorrectly").SetRequestId(requestId));
+        }
+        m_traceFlag = value["TraceFlag"].GetBool();
+        m_traceFlagHasBeenSet = true;
     }
 
     if (value.HasMember("Status") && !value["Status"].IsNull())
@@ -238,6 +249,14 @@ void RabbitMQVirtualHostInfo::ToJsonObject(rapidjson::Value &value, rapidjson::D
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
         m_virtualHostStatistics.ToJsonObject(value[key.c_str()], allocator);
+    }
+
+    if (m_traceFlagHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "TraceFlag";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_traceFlag, allocator);
     }
 
     if (m_statusHasBeenSet)
@@ -393,6 +412,22 @@ void RabbitMQVirtualHostInfo::SetVirtualHostStatistics(const RabbitMQVirtualHost
 bool RabbitMQVirtualHostInfo::VirtualHostStatisticsHasBeenSet() const
 {
     return m_virtualHostStatisticsHasBeenSet;
+}
+
+bool RabbitMQVirtualHostInfo::GetTraceFlag() const
+{
+    return m_traceFlag;
+}
+
+void RabbitMQVirtualHostInfo::SetTraceFlag(const bool& _traceFlag)
+{
+    m_traceFlag = _traceFlag;
+    m_traceFlagHasBeenSet = true;
+}
+
+bool RabbitMQVirtualHostInfo::TraceFlagHasBeenSet() const
+{
+    return m_traceFlagHasBeenSet;
 }
 
 string RabbitMQVirtualHostInfo::GetStatus() const

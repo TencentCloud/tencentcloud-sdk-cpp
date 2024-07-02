@@ -36,7 +36,8 @@ ModifyVpnConnectionAttributeRequest::ModifyVpnConnectionAttributeRequest() :
     m_dpdEnableHasBeenSet(false),
     m_dpdTimeoutHasBeenSet(false),
     m_dpdActionHasBeenSet(false),
-    m_customerGatewayIdHasBeenSet(false)
+    m_customerGatewayIdHasBeenSet(false),
+    m_healthCheckConfigHasBeenSet(false)
 {
 }
 
@@ -166,6 +167,15 @@ string ModifyVpnConnectionAttributeRequest::ToJsonString() const
         string key = "CustomerGatewayId";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_customerGatewayId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_healthCheckConfigHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "HealthCheckConfig";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_healthCheckConfig.ToJsonObject(d[key.c_str()], allocator);
     }
 
 
@@ -398,6 +408,22 @@ void ModifyVpnConnectionAttributeRequest::SetCustomerGatewayId(const string& _cu
 bool ModifyVpnConnectionAttributeRequest::CustomerGatewayIdHasBeenSet() const
 {
     return m_customerGatewayIdHasBeenSet;
+}
+
+HealthCheckConfig ModifyVpnConnectionAttributeRequest::GetHealthCheckConfig() const
+{
+    return m_healthCheckConfig;
+}
+
+void ModifyVpnConnectionAttributeRequest::SetHealthCheckConfig(const HealthCheckConfig& _healthCheckConfig)
+{
+    m_healthCheckConfig = _healthCheckConfig;
+    m_healthCheckConfigHasBeenSet = true;
+}
+
+bool ModifyVpnConnectionAttributeRequest::HealthCheckConfigHasBeenSet() const
+{
+    return m_healthCheckConfigHasBeenSet;
 }
 
 

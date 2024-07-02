@@ -66,15 +66,15 @@ namespace TencentCloud
                     bool MemberIdHasBeenSet() const;
 
                     /**
-                     * 获取-
-                     * @return Content -
+                     * 获取资产
+                     * @return Content 资产
                      * 
                      */
                     std::vector<PublicIpDomainListKey> GetContent() const;
 
                     /**
-                     * 设置-
-                     * @param _content -
+                     * 设置资产
+                     * @param _content 资产
                      * 
                      */
                     void SetContent(const std::vector<PublicIpDomainListKey>& _content);
@@ -179,7 +179,7 @@ namespace TencentCloud
                     bool m_memberIdHasBeenSet;
 
                     /**
-                     * -
+                     * 资产
                      */
                     std::vector<PublicIpDomainListKey> m_content;
                     bool m_contentHasBeenSet;

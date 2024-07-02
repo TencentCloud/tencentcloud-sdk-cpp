@@ -37,7 +37,8 @@ CreateRabbitMQVipInstanceRequest::CreateRabbitMQVipInstanceRequest() :
     m_clusterVersionHasBeenSet(false),
     m_isIntlHasBeenSet(false),
     m_resourceTagsHasBeenSet(false),
-    m_bandwidthHasBeenSet(false)
+    m_bandwidthHasBeenSet(false),
+    m_enablePublicAccessHasBeenSet(false)
 {
 }
 
@@ -178,6 +179,14 @@ string CreateRabbitMQVipInstanceRequest::ToJsonString() const
         string key = "Bandwidth";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_bandwidth, allocator);
+    }
+
+    if (m_enablePublicAccessHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "EnablePublicAccess";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_enablePublicAccess, allocator);
     }
 
 
@@ -426,6 +435,22 @@ void CreateRabbitMQVipInstanceRequest::SetBandwidth(const uint64_t& _bandwidth)
 bool CreateRabbitMQVipInstanceRequest::BandwidthHasBeenSet() const
 {
     return m_bandwidthHasBeenSet;
+}
+
+bool CreateRabbitMQVipInstanceRequest::GetEnablePublicAccess() const
+{
+    return m_enablePublicAccess;
+}
+
+void CreateRabbitMQVipInstanceRequest::SetEnablePublicAccess(const bool& _enablePublicAccess)
+{
+    m_enablePublicAccess = _enablePublicAccess;
+    m_enablePublicAccessHasBeenSet = true;
+}
+
+bool CreateRabbitMQVipInstanceRequest::EnablePublicAccessHasBeenSet() const
+{
+    return m_enablePublicAccessHasBeenSet;
 }
 
 

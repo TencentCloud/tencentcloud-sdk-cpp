@@ -45,7 +45,8 @@ VpnConnection::VpnConnection() :
     m_dpdActionHasBeenSet(false),
     m_tagSetHasBeenSet(false),
     m_negotiationTypeHasBeenSet(false),
-    m_bgpConfigHasBeenSet(false)
+    m_bgpConfigHasBeenSet(false),
+    m_healthCheckConfigHasBeenSet(false)
 {
 }
 
@@ -345,6 +346,23 @@ CoreInternalOutcome VpnConnection::Deserialize(const rapidjson::Value &value)
         m_bgpConfigHasBeenSet = true;
     }
 
+    if (value.HasMember("HealthCheckConfig") && !value["HealthCheckConfig"].IsNull())
+    {
+        if (!value["HealthCheckConfig"].IsObject())
+        {
+            return CoreInternalOutcome(Core::Error("response `VpnConnection.HealthCheckConfig` is not object type").SetRequestId(requestId));
+        }
+
+        CoreInternalOutcome outcome = m_healthCheckConfig.Deserialize(value["HealthCheckConfig"]);
+        if (!outcome.IsSuccess())
+        {
+            outcome.GetError().SetRequestId(requestId);
+            return outcome;
+        }
+
+        m_healthCheckConfigHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -567,6 +585,15 @@ void VpnConnection::ToJsonObject(rapidjson::Value &value, rapidjson::Document::A
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
         m_bgpConfig.ToJsonObject(value[key.c_str()], allocator);
+    }
+
+    if (m_healthCheckConfigHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "HealthCheckConfig";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_healthCheckConfig.ToJsonObject(value[key.c_str()], allocator);
     }
 
 }
@@ -970,5 +997,21 @@ void VpnConnection::SetBgpConfig(const BgpConfigAndAsn& _bgpConfig)
 bool VpnConnection::BgpConfigHasBeenSet() const
 {
     return m_bgpConfigHasBeenSet;
+}
+
+HealthCheckConfig VpnConnection::GetHealthCheckConfig() const
+{
+    return m_healthCheckConfig;
+}
+
+void VpnConnection::SetHealthCheckConfig(const HealthCheckConfig& _healthCheckConfig)
+{
+    m_healthCheckConfig = _healthCheckConfig;
+    m_healthCheckConfigHasBeenSet = true;
+}
+
+bool VpnConnection::HealthCheckConfigHasBeenSet() const
+{
+    return m_healthCheckConfigHasBeenSet;
 }
 

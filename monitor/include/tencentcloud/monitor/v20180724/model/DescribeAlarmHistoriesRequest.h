@@ -450,6 +450,27 @@ namespace TencentCloud
                      */
                     bool AlarmLevelsHasBeenSet() const;
 
+                    /**
+                     * 获取收敛历史的唯一id
+                     * @return ConvergenceHistoryIDs 收敛历史的唯一id
+                     * 
+                     */
+                    std::vector<std::string> GetConvergenceHistoryIDs() const;
+
+                    /**
+                     * 设置收敛历史的唯一id
+                     * @param _convergenceHistoryIDs 收敛历史的唯一id
+                     * 
+                     */
+                    void SetConvergenceHistoryIDs(const std::vector<std::string>& _convergenceHistoryIDs);
+
+                    /**
+                     * 判断参数 ConvergenceHistoryIDs 是否已赋值
+                     * @return ConvergenceHistoryIDs 是否已赋值
+                     * 
+                     */
+                    bool ConvergenceHistoryIDsHasBeenSet() const;
+
                 private:
 
                     /**
@@ -567,6 +588,12 @@ namespace TencentCloud
                      */
                     std::vector<std::string> m_alarmLevels;
                     bool m_alarmLevelsHasBeenSet;
+
+                    /**
+                     * 收敛历史的唯一id
+                     */
+                    std::vector<std::string> m_convergenceHistoryIDs;
+                    bool m_convergenceHistoryIDsHasBeenSet;
 
                 };
             }

@@ -22,6 +22,7 @@
 #include <map>
 #include <tencentcloud/core/AbstractModel.h>
 #include <tencentcloud/teo/v20220901/model/ServerCertInfo.h>
+#include <tencentcloud/teo/v20220901/model/MutualTLS.h>
 
 
 namespace TencentCloud
@@ -86,27 +87,31 @@ namespace TencentCloud
                     bool HostsHasBeenSet() const;
 
                     /**
-                     * 获取配置证书的模式，取值有：
-<li>disable：不配置证书；</li>
-<li>eofreecert：配置 EdgeOne 免费证书；</li>
-<li>sslcert：配置 SSL 证书。</li>不填时默认取值为 disable。
-                     * @return Mode 配置证书的模式，取值有：
-<li>disable：不配置证书；</li>
-<li>eofreecert：配置 EdgeOne 免费证书；</li>
-<li>sslcert：配置 SSL 证书。</li>不填时默认取值为 disable。
+                     * 获取配置服务端证书的模式，取值有：
+<li>disable：不配置服务端证书；</li>
+<li>eofreecert：配置 EdgeOne 免费服务端证书；</li>
+<li>sslcert：配置 SSL 托管服务端证书；</li>
+不填写表示服务端证书保持原有配置。
+                     * @return Mode 配置服务端证书的模式，取值有：
+<li>disable：不配置服务端证书；</li>
+<li>eofreecert：配置 EdgeOne 免费服务端证书；</li>
+<li>sslcert：配置 SSL 托管服务端证书；</li>
+不填写表示服务端证书保持原有配置。
                      * 
                      */
                     std::string GetMode() const;
 
                     /**
-                     * 设置配置证书的模式，取值有：
-<li>disable：不配置证书；</li>
-<li>eofreecert：配置 EdgeOne 免费证书；</li>
-<li>sslcert：配置 SSL 证书。</li>不填时默认取值为 disable。
-                     * @param _mode 配置证书的模式，取值有：
-<li>disable：不配置证书；</li>
-<li>eofreecert：配置 EdgeOne 免费证书；</li>
-<li>sslcert：配置 SSL 证书。</li>不填时默认取值为 disable。
+                     * 设置配置服务端证书的模式，取值有：
+<li>disable：不配置服务端证书；</li>
+<li>eofreecert：配置 EdgeOne 免费服务端证书；</li>
+<li>sslcert：配置 SSL 托管服务端证书；</li>
+不填写表示服务端证书保持原有配置。
+                     * @param _mode 配置服务端证书的模式，取值有：
+<li>disable：不配置服务端证书；</li>
+<li>eofreecert：配置 EdgeOne 免费服务端证书；</li>
+<li>sslcert：配置 SSL 托管服务端证书；</li>
+不填写表示服务端证书保持原有配置。
                      * 
                      */
                     void SetMode(const std::string& _mode);
@@ -119,15 +124,15 @@ namespace TencentCloud
                     bool ModeHasBeenSet() const;
 
                     /**
-                     * 获取SSL 证书配置，本参数仅在 mode = sslcert 时生效，传入对应证书的 CertId 即可。您可以前往 [SSL 证书列表](https://console.cloud.tencent.com/certoverview) 查看 CertId。
-                     * @return ServerCertInfo SSL 证书配置，本参数仅在 mode = sslcert 时生效，传入对应证书的 CertId 即可。您可以前往 [SSL 证书列表](https://console.cloud.tencent.com/certoverview) 查看 CertId。
+                     * 获取SSL 证书配置，本参数仅在 mode 为 sslcert 时生效，传入对应证书的 CertId 即可。您可以前往 [SSL 证书列表](https://console.cloud.tencent.com/certoverview) 查看 CertId。
+                     * @return ServerCertInfo SSL 证书配置，本参数仅在 mode 为 sslcert 时生效，传入对应证书的 CertId 即可。您可以前往 [SSL 证书列表](https://console.cloud.tencent.com/certoverview) 查看 CertId。
                      * 
                      */
                     std::vector<ServerCertInfo> GetServerCertInfo() const;
 
                     /**
-                     * 设置SSL 证书配置，本参数仅在 mode = sslcert 时生效，传入对应证书的 CertId 即可。您可以前往 [SSL 证书列表](https://console.cloud.tencent.com/certoverview) 查看 CertId。
-                     * @param _serverCertInfo SSL 证书配置，本参数仅在 mode = sslcert 时生效，传入对应证书的 CertId 即可。您可以前往 [SSL 证书列表](https://console.cloud.tencent.com/certoverview) 查看 CertId。
+                     * 设置SSL 证书配置，本参数仅在 mode 为 sslcert 时生效，传入对应证书的 CertId 即可。您可以前往 [SSL 证书列表](https://console.cloud.tencent.com/certoverview) 查看 CertId。
+                     * @param _serverCertInfo SSL 证书配置，本参数仅在 mode 为 sslcert 时生效，传入对应证书的 CertId 即可。您可以前往 [SSL 证书列表](https://console.cloud.tencent.com/certoverview) 查看 CertId。
                      * 
                      */
                     void SetServerCertInfo(const std::vector<ServerCertInfo>& _serverCertInfo);
@@ -172,6 +177,31 @@ namespace TencentCloud
                      */
                     bool ApplyTypeHasBeenSet() const;
 
+                    /**
+                     * 获取边缘双向认证配置。
+不填写表示边缘双向认证保持原有配置。
+                     * @return ClientCertInfo 边缘双向认证配置。
+不填写表示边缘双向认证保持原有配置。
+                     * 
+                     */
+                    MutualTLS GetClientCertInfo() const;
+
+                    /**
+                     * 设置边缘双向认证配置。
+不填写表示边缘双向认证保持原有配置。
+                     * @param _clientCertInfo 边缘双向认证配置。
+不填写表示边缘双向认证保持原有配置。
+                     * 
+                     */
+                    void SetClientCertInfo(const MutualTLS& _clientCertInfo);
+
+                    /**
+                     * 判断参数 ClientCertInfo 是否已赋值
+                     * @return ClientCertInfo 是否已赋值
+                     * 
+                     */
+                    bool ClientCertInfoHasBeenSet() const;
+
                 private:
 
                     /**
@@ -187,16 +217,17 @@ namespace TencentCloud
                     bool m_hostsHasBeenSet;
 
                     /**
-                     * 配置证书的模式，取值有：
-<li>disable：不配置证书；</li>
-<li>eofreecert：配置 EdgeOne 免费证书；</li>
-<li>sslcert：配置 SSL 证书。</li>不填时默认取值为 disable。
+                     * 配置服务端证书的模式，取值有：
+<li>disable：不配置服务端证书；</li>
+<li>eofreecert：配置 EdgeOne 免费服务端证书；</li>
+<li>sslcert：配置 SSL 托管服务端证书；</li>
+不填写表示服务端证书保持原有配置。
                      */
                     std::string m_mode;
                     bool m_modeHasBeenSet;
 
                     /**
-                     * SSL 证书配置，本参数仅在 mode = sslcert 时生效，传入对应证书的 CertId 即可。您可以前往 [SSL 证书列表](https://console.cloud.tencent.com/certoverview) 查看 CertId。
+                     * SSL 证书配置，本参数仅在 mode 为 sslcert 时生效，传入对应证书的 CertId 即可。您可以前往 [SSL 证书列表](https://console.cloud.tencent.com/certoverview) 查看 CertId。
                      */
                     std::vector<ServerCertInfo> m_serverCertInfo;
                     bool m_serverCertInfoHasBeenSet;
@@ -209,6 +240,13 @@ namespace TencentCloud
                      */
                     std::string m_applyType;
                     bool m_applyTypeHasBeenSet;
+
+                    /**
+                     * 边缘双向认证配置。
+不填写表示边缘双向认证保持原有配置。
+                     */
+                    MutualTLS m_clientCertInfo;
+                    bool m_clientCertInfoHasBeenSet;
 
                 };
             }

@@ -24,6 +24,7 @@
 #include <tencentcloud/vpc/v20170312/model/SecurityPolicyDatabase.h>
 #include <tencentcloud/vpc/v20170312/model/IKEOptionsSpecification.h>
 #include <tencentcloud/vpc/v20170312/model/IPSECOptionsSpecification.h>
+#include <tencentcloud/vpc/v20170312/model/HealthCheckConfig.h>
 
 
 namespace TencentCloud
@@ -339,6 +340,27 @@ namespace TencentCloud
                      */
                     bool CustomerGatewayIdHasBeenSet() const;
 
+                    /**
+                     * 获取健康检查配置
+                     * @return HealthCheckConfig 健康检查配置
+                     * 
+                     */
+                    HealthCheckConfig GetHealthCheckConfig() const;
+
+                    /**
+                     * 设置健康检查配置
+                     * @param _healthCheckConfig 健康检查配置
+                     * 
+                     */
+                    void SetHealthCheckConfig(const HealthCheckConfig& _healthCheckConfig);
+
+                    /**
+                     * 判断参数 HealthCheckConfig 是否已赋值
+                     * @return HealthCheckConfig 是否已赋值
+                     * 
+                     */
+                    bool HealthCheckConfigHasBeenSet() const;
+
                 private:
 
                     /**
@@ -424,6 +446,12 @@ namespace TencentCloud
                      */
                     std::string m_customerGatewayId;
                     bool m_customerGatewayIdHasBeenSet;
+
+                    /**
+                     * 健康检查配置
+                     */
+                    HealthCheckConfig m_healthCheckConfig;
+                    bool m_healthCheckConfigHasBeenSet;
 
                 };
             }

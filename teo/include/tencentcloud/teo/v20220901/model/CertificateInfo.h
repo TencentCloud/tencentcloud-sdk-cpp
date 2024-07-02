@@ -35,7 +35,7 @@ namespace TencentCloud
             namespace Model
             {
                 /**
-                * https 服务端证书配置
+                * https 证书配置。
                 */
                 class CertificateInfo : public AbstractModel
                 {
@@ -47,15 +47,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取服务器证书 ID。
-                     * @return CertId 服务器证书 ID。
+                     * 获取证书 ID。
+                     * @return CertId 证书 ID。
                      * 
                      */
                     std::string GetCertId() const;
 
                     /**
-                     * 设置服务器证书 ID。
-                     * @param _certId 服务器证书 ID。
+                     * 设置证书 ID。
+                     * @param _certId 证书 ID。
                      * 
                      */
                     void SetCertId(const std::string& _certId);
@@ -228,7 +228,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 服务器证书 ID。
+                     * 证书 ID。
                      */
                     std::string m_certId;
                     bool m_certIdHasBeenSet;
