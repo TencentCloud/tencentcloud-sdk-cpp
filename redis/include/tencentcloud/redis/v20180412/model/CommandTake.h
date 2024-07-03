@@ -68,15 +68,15 @@ namespace TencentCloud
                     bool CmdHasBeenSet() const;
 
                     /**
-                     * 获取耗时时长。
-                     * @return Took 耗时时长。
+                     * 获取耗时时长。单位：ms。
+                     * @return Took 耗时时长。单位：ms。
                      * 
                      */
                     int64_t GetTook() const;
 
                     /**
-                     * 设置耗时时长。
-                     * @param _took 耗时时长。
+                     * 设置耗时时长。单位：ms。
+                     * @param _took 耗时时长。单位：ms。
                      * 
                      */
                     void SetTook(const int64_t& _took);
@@ -97,7 +97,7 @@ namespace TencentCloud
                     bool m_cmdHasBeenSet;
 
                     /**
-                     * 耗时时长。
+                     * 耗时时长。单位：ms。
                      */
                     int64_t m_took;
                     bool m_tookHasBeenSet;

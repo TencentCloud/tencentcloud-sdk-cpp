@@ -47,15 +47,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取节点名称。
-                     * @return Name 节点名称。
+                     * 获取节点组名称。
+                     * @return Name 节点组名称。
                      * 
                      */
                     std::string GetName() const;
 
                     /**
-                     * 设置节点名称。
-                     * @param _name 节点名称。
+                     * 设置节点组名称。
+                     * @param _name 节点组名称。
                      * 
                      */
                     void SetName(const std::string& _name);
@@ -350,7 +350,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 节点名称。
+                     * 节点组名称。
                      */
                     std::string m_name;
                     bool m_nameHasBeenSet;

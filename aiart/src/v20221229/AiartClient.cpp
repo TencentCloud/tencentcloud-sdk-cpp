@@ -255,6 +255,49 @@ AiartClient::QueryTrainPortraitModelJobOutcomeCallable AiartClient::QueryTrainPo
     return task->get_future();
 }
 
+AiartClient::ReplaceBackgroundOutcome AiartClient::ReplaceBackground(const ReplaceBackgroundRequest &request)
+{
+    auto outcome = MakeRequest(request, "ReplaceBackground");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ReplaceBackgroundResponse rsp = ReplaceBackgroundResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ReplaceBackgroundOutcome(rsp);
+        else
+            return ReplaceBackgroundOutcome(o.GetError());
+    }
+    else
+    {
+        return ReplaceBackgroundOutcome(outcome.GetError());
+    }
+}
+
+void AiartClient::ReplaceBackgroundAsync(const ReplaceBackgroundRequest& request, const ReplaceBackgroundAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->ReplaceBackground(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+AiartClient::ReplaceBackgroundOutcomeCallable AiartClient::ReplaceBackgroundCallable(const ReplaceBackgroundRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<ReplaceBackgroundOutcome()>>(
+        [this, request]()
+        {
+            return this->ReplaceBackground(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 AiartClient::SubmitDrawPortraitJobOutcome AiartClient::SubmitDrawPortraitJob(const SubmitDrawPortraitJobRequest &request)
 {
     auto outcome = MakeRequest(request, "SubmitDrawPortraitJob");

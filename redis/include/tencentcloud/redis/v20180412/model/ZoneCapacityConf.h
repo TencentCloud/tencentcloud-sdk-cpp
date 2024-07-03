@@ -69,15 +69,15 @@ namespace TencentCloud
                     bool ZoneIdHasBeenSet() const;
 
                     /**
-                     * 获取可用区名称
-                     * @return ZoneName 可用区名称
+                     * 获取可用区名称。
+                     * @return ZoneName 可用区名称。
                      * 
                      */
                     std::string GetZoneName() const;
 
                     /**
-                     * 设置可用区名称
-                     * @param _zoneName 可用区名称
+                     * 设置可用区名称。
+                     * @param _zoneName 可用区名称。
                      * 
                      */
                     void SetZoneName(const std::string& _zoneName);
@@ -90,15 +90,15 @@ namespace TencentCloud
                     bool ZoneNameHasBeenSet() const;
 
                     /**
-                     * 获取可用区是否售罄
-                     * @return IsSaleout 可用区是否售罄
+                     * 获取可用区是否售罄。
+                     * @return IsSaleout 可用区是否售罄。
                      * 
                      */
                     bool GetIsSaleout() const;
 
                     /**
-                     * 设置可用区是否售罄
-                     * @param _isSaleout 可用区是否售罄
+                     * 设置可用区是否售罄。
+                     * @param _isSaleout 可用区是否售罄。
                      * 
                      */
                     void SetIsSaleout(const bool& _isSaleout);
@@ -111,15 +111,15 @@ namespace TencentCloud
                     bool IsSaleoutHasBeenSet() const;
 
                     /**
-                     * 获取是否为默认可用区
-                     * @return IsDefault 是否为默认可用区
+                     * 获取是否为默认可用区。
+                     * @return IsDefault 是否为默认可用区。
                      * 
                      */
                     bool GetIsDefault() const;
 
                     /**
-                     * 设置是否为默认可用区
-                     * @param _isDefault 是否为默认可用区
+                     * 设置是否为默认可用区。
+                     * @param _isDefault 是否为默认可用区。
                      * 
                      */
                     void SetIsDefault(const bool& _isDefault);
@@ -132,15 +132,23 @@ namespace TencentCloud
                     bool IsDefaultHasBeenSet() const;
 
                     /**
-                     * 获取网络类型：basenet -- 基础网络；vpcnet -- VPC网络
-                     * @return NetWorkType 网络类型：basenet -- 基础网络；vpcnet -- VPC网络
+                     * 获取网络类型。
+- basenet：基础网络。
+- vpcnet -- VPC网络。
+                     * @return NetWorkType 网络类型。
+- basenet：基础网络。
+- vpcnet -- VPC网络。
                      * 
                      */
                     std::vector<std::string> GetNetWorkType() const;
 
                     /**
-                     * 设置网络类型：basenet -- 基础网络；vpcnet -- VPC网络
-                     * @param _netWorkType 网络类型：basenet -- 基础网络；vpcnet -- VPC网络
+                     * 设置网络类型。
+- basenet：基础网络。
+- vpcnet -- VPC网络。
+                     * @param _netWorkType 网络类型。
+- basenet：基础网络。
+- vpcnet -- VPC网络。
                      * 
                      */
                     void SetNetWorkType(const std::vector<std::string>& _netWorkType);
@@ -203,25 +211,27 @@ namespace TencentCloud
                     bool m_zoneIdHasBeenSet;
 
                     /**
-                     * 可用区名称
+                     * 可用区名称。
                      */
                     std::string m_zoneName;
                     bool m_zoneNameHasBeenSet;
 
                     /**
-                     * 可用区是否售罄
+                     * 可用区是否售罄。
                      */
                     bool m_isSaleout;
                     bool m_isSaleoutHasBeenSet;
 
                     /**
-                     * 是否为默认可用区
+                     * 是否为默认可用区。
                      */
                     bool m_isDefault;
                     bool m_isDefaultHasBeenSet;
 
                     /**
-                     * 网络类型：basenet -- 基础网络；vpcnet -- VPC网络
+                     * 网络类型。
+- basenet：基础网络。
+- vpcnet -- VPC网络。
                      */
                     std::vector<std::string> m_netWorkType;
                     bool m_netWorkTypeHasBeenSet;

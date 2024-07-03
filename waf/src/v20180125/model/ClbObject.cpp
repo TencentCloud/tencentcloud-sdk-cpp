@@ -37,7 +37,12 @@ ClbObject::ClbObject() :
     m_postCLSStatusHasBeenSet(false),
     m_postCKafkaStatusHasBeenSet(false),
     m_typeHasBeenSet(false),
-    m_regionHasBeenSet(false)
+    m_regionHasBeenSet(false),
+    m_proxyHasBeenSet(false),
+    m_ipHeadersHasBeenSet(false),
+    m_botStatusHasBeenSet(false),
+    m_apiStatusHasBeenSet(false),
+    m_objectFlowModeHasBeenSet(false)
 {
 }
 
@@ -225,6 +230,59 @@ CoreInternalOutcome ClbObject::Deserialize(const rapidjson::Value &value)
         m_regionHasBeenSet = true;
     }
 
+    if (value.HasMember("Proxy") && !value["Proxy"].IsNull())
+    {
+        if (!value["Proxy"].IsUint64())
+        {
+            return CoreInternalOutcome(Core::Error("response `ClbObject.Proxy` IsUint64=false incorrectly").SetRequestId(requestId));
+        }
+        m_proxy = value["Proxy"].GetUint64();
+        m_proxyHasBeenSet = true;
+    }
+
+    if (value.HasMember("IpHeaders") && !value["IpHeaders"].IsNull())
+    {
+        if (!value["IpHeaders"].IsArray())
+            return CoreInternalOutcome(Core::Error("response `ClbObject.IpHeaders` is not array type"));
+
+        const rapidjson::Value &tmpValue = value["IpHeaders"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            m_ipHeaders.push_back((*itr).GetString());
+        }
+        m_ipHeadersHasBeenSet = true;
+    }
+
+    if (value.HasMember("BotStatus") && !value["BotStatus"].IsNull())
+    {
+        if (!value["BotStatus"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `ClbObject.BotStatus` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_botStatus = value["BotStatus"].GetInt64();
+        m_botStatusHasBeenSet = true;
+    }
+
+    if (value.HasMember("ApiStatus") && !value["ApiStatus"].IsNull())
+    {
+        if (!value["ApiStatus"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `ClbObject.ApiStatus` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_apiStatus = value["ApiStatus"].GetInt64();
+        m_apiStatusHasBeenSet = true;
+    }
+
+    if (value.HasMember("ObjectFlowMode") && !value["ObjectFlowMode"].IsNull())
+    {
+        if (!value["ObjectFlowMode"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `ClbObject.ObjectFlowMode` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_objectFlowMode = value["ObjectFlowMode"].GetInt64();
+        m_objectFlowModeHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -381,6 +439,51 @@ void ClbObject::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Alloc
         string key = "Region";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_region.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_proxyHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Proxy";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_proxy, allocator);
+    }
+
+    if (m_ipHeadersHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "IpHeaders";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        for (auto itr = m_ipHeaders.begin(); itr != m_ipHeaders.end(); ++itr)
+        {
+            value[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
+        }
+    }
+
+    if (m_botStatusHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "BotStatus";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_botStatus, allocator);
+    }
+
+    if (m_apiStatusHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ApiStatus";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_apiStatus, allocator);
+    }
+
+    if (m_objectFlowModeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ObjectFlowMode";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_objectFlowMode, allocator);
     }
 
 }
@@ -656,5 +759,85 @@ void ClbObject::SetRegion(const string& _region)
 bool ClbObject::RegionHasBeenSet() const
 {
     return m_regionHasBeenSet;
+}
+
+uint64_t ClbObject::GetProxy() const
+{
+    return m_proxy;
+}
+
+void ClbObject::SetProxy(const uint64_t& _proxy)
+{
+    m_proxy = _proxy;
+    m_proxyHasBeenSet = true;
+}
+
+bool ClbObject::ProxyHasBeenSet() const
+{
+    return m_proxyHasBeenSet;
+}
+
+vector<string> ClbObject::GetIpHeaders() const
+{
+    return m_ipHeaders;
+}
+
+void ClbObject::SetIpHeaders(const vector<string>& _ipHeaders)
+{
+    m_ipHeaders = _ipHeaders;
+    m_ipHeadersHasBeenSet = true;
+}
+
+bool ClbObject::IpHeadersHasBeenSet() const
+{
+    return m_ipHeadersHasBeenSet;
+}
+
+int64_t ClbObject::GetBotStatus() const
+{
+    return m_botStatus;
+}
+
+void ClbObject::SetBotStatus(const int64_t& _botStatus)
+{
+    m_botStatus = _botStatus;
+    m_botStatusHasBeenSet = true;
+}
+
+bool ClbObject::BotStatusHasBeenSet() const
+{
+    return m_botStatusHasBeenSet;
+}
+
+int64_t ClbObject::GetApiStatus() const
+{
+    return m_apiStatus;
+}
+
+void ClbObject::SetApiStatus(const int64_t& _apiStatus)
+{
+    m_apiStatus = _apiStatus;
+    m_apiStatusHasBeenSet = true;
+}
+
+bool ClbObject::ApiStatusHasBeenSet() const
+{
+    return m_apiStatusHasBeenSet;
+}
+
+int64_t ClbObject::GetObjectFlowMode() const
+{
+    return m_objectFlowMode;
+}
+
+void ClbObject::SetObjectFlowMode(const int64_t& _objectFlowMode)
+{
+    m_objectFlowMode = _objectFlowMode;
+    m_objectFlowModeHasBeenSet = true;
+}
+
+bool ClbObject::ObjectFlowModeHasBeenSet() const
+{
+    return m_objectFlowModeHasBeenSet;
 }
 

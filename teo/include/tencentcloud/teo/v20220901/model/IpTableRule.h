@@ -35,7 +35,7 @@ namespace TencentCloud
             namespace Model
             {
                 /**
-                * IP黑白名单详细规则
+                * 自定义规则-基础访问管控配置。
                 */
                 class IpTableRule : public AbstractModel
                 {
@@ -81,22 +81,38 @@ namespace TencentCloud
 
                     /**
                      * 获取根据类型匹配，取值有：
-<li>ip：对ip进行匹配；</li>
-<li>area：对ip所属地区匹配。</li>
+<li>ip：客户端 IP 进行匹配；</li>
+<li>area：客户端 IP 所属地区匹配；</li>
+<li>asn：客户端所属的自治系统进行匹配；</li>
+<li>referer：请求头 Referer 进行匹配；</li>
+<li>ua：请求头 User-Agent 进行匹配；</li>
+<li>url：请求 URL 进行匹配。</li>
                      * @return MatchFrom 根据类型匹配，取值有：
-<li>ip：对ip进行匹配；</li>
-<li>area：对ip所属地区匹配。</li>
+<li>ip：客户端 IP 进行匹配；</li>
+<li>area：客户端 IP 所属地区匹配；</li>
+<li>asn：客户端所属的自治系统进行匹配；</li>
+<li>referer：请求头 Referer 进行匹配；</li>
+<li>ua：请求头 User-Agent 进行匹配；</li>
+<li>url：请求 URL 进行匹配。</li>
                      * 
                      */
                     std::string GetMatchFrom() const;
 
                     /**
                      * 设置根据类型匹配，取值有：
-<li>ip：对ip进行匹配；</li>
-<li>area：对ip所属地区匹配。</li>
+<li>ip：客户端 IP 进行匹配；</li>
+<li>area：客户端 IP 所属地区匹配；</li>
+<li>asn：客户端所属的自治系统进行匹配；</li>
+<li>referer：请求头 Referer 进行匹配；</li>
+<li>ua：请求头 User-Agent 进行匹配；</li>
+<li>url：请求 URL 进行匹配。</li>
                      * @param _matchFrom 根据类型匹配，取值有：
-<li>ip：对ip进行匹配；</li>
-<li>area：对ip所属地区匹配。</li>
+<li>ip：客户端 IP 进行匹配；</li>
+<li>area：客户端 IP 所属地区匹配；</li>
+<li>asn：客户端所属的自治系统进行匹配；</li>
+<li>referer：请求头 Referer 进行匹配；</li>
+<li>ua：请求头 User-Agent 进行匹配；</li>
+<li>url：请求 URL 进行匹配。</li>
                      * 
                      */
                     void SetMatchFrom(const std::string& _matchFrom);
@@ -109,47 +125,63 @@ namespace TencentCloud
                     bool MatchFromHasBeenSet() const;
 
                     /**
-                     * 获取规则的匹配方式，默认为空代表等于。
-取值有：
-<li> is_emty：配置为空；</li>
-<li> not_exists：配置为不存在；</li>
-<li> include：包含；</li>
-<li> not_include：不包含；</li>
-<li> equal：等于；</li>
-<li> not_equal：不等于。</li>
-注意：此字段可能返回 null，表示取不到有效值。
-                     * @return Operator 规则的匹配方式，默认为空代表等于。
-取值有：
-<li> is_emty：配置为空；</li>
-<li> not_exists：配置为不存在；</li>
-<li> include：包含；</li>
-<li> not_include：不包含；</li>
-<li> equal：等于；</li>
-<li> not_equal：不等于。</li>
-注意：此字段可能返回 null，表示取不到有效值。
+                     * 获取规则的匹配方式。取值有：
+<li> match：匹配，适用于 MatchFrom 为 ip；</li>
+<li> not_match：不匹配，适用于 MatchFrom 为 ip；</li>
+<li> include_area：地域包含，适用于 MatchFrom 为 area；</li>
+<li> not_include_area：地域不包含，适用于 MatchFrom 为 area；</li>
+<li> asn_match：ASN 包含，适用于 MatchFrom 为 asn；</li>
+<li> asn_not_match：ASN 不包含，适用于 MatchFrom 为 asn；</li>
+<li> equal：等于，适用于 MatchFrom 为 ua , referer；</li>
+<li> not_equal：不等于，适用于 MatchFrom 为 ua , referer；</li>
+<li> include：通配符匹配，适用于 MatchFrom 为 ua , referer , url；</li>
+<li> not_include：通配符不匹配，适用于 MatchFrom 为 ua , referer；</li>
+<li> is_emty：配置内容为空，适用于 MatchFrom 为 ua , referer；</li>
+<li> not_exists：配置内容不存在，适用于 MatchFrom 为 ua , referer。</li>
+                     * @return Operator 规则的匹配方式。取值有：
+<li> match：匹配，适用于 MatchFrom 为 ip；</li>
+<li> not_match：不匹配，适用于 MatchFrom 为 ip；</li>
+<li> include_area：地域包含，适用于 MatchFrom 为 area；</li>
+<li> not_include_area：地域不包含，适用于 MatchFrom 为 area；</li>
+<li> asn_match：ASN 包含，适用于 MatchFrom 为 asn；</li>
+<li> asn_not_match：ASN 不包含，适用于 MatchFrom 为 asn；</li>
+<li> equal：等于，适用于 MatchFrom 为 ua , referer；</li>
+<li> not_equal：不等于，适用于 MatchFrom 为 ua , referer；</li>
+<li> include：通配符匹配，适用于 MatchFrom 为 ua , referer , url；</li>
+<li> not_include：通配符不匹配，适用于 MatchFrom 为 ua , referer；</li>
+<li> is_emty：配置内容为空，适用于 MatchFrom 为 ua , referer；</li>
+<li> not_exists：配置内容不存在，适用于 MatchFrom 为 ua , referer。</li>
                      * 
                      */
                     std::string GetOperator() const;
 
                     /**
-                     * 设置规则的匹配方式，默认为空代表等于。
-取值有：
-<li> is_emty：配置为空；</li>
-<li> not_exists：配置为不存在；</li>
-<li> include：包含；</li>
-<li> not_include：不包含；</li>
-<li> equal：等于；</li>
-<li> not_equal：不等于。</li>
-注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _operator 规则的匹配方式，默认为空代表等于。
-取值有：
-<li> is_emty：配置为空；</li>
-<li> not_exists：配置为不存在；</li>
-<li> include：包含；</li>
-<li> not_include：不包含；</li>
-<li> equal：等于；</li>
-<li> not_equal：不等于。</li>
-注意：此字段可能返回 null，表示取不到有效值。
+                     * 设置规则的匹配方式。取值有：
+<li> match：匹配，适用于 MatchFrom 为 ip；</li>
+<li> not_match：不匹配，适用于 MatchFrom 为 ip；</li>
+<li> include_area：地域包含，适用于 MatchFrom 为 area；</li>
+<li> not_include_area：地域不包含，适用于 MatchFrom 为 area；</li>
+<li> asn_match：ASN 包含，适用于 MatchFrom 为 asn；</li>
+<li> asn_not_match：ASN 不包含，适用于 MatchFrom 为 asn；</li>
+<li> equal：等于，适用于 MatchFrom 为 ua , referer；</li>
+<li> not_equal：不等于，适用于 MatchFrom 为 ua , referer；</li>
+<li> include：通配符匹配，适用于 MatchFrom 为 ua , referer , url；</li>
+<li> not_include：通配符不匹配，适用于 MatchFrom 为 ua , referer；</li>
+<li> is_emty：配置内容为空，适用于 MatchFrom 为 ua , referer；</li>
+<li> not_exists：配置内容不存在，适用于 MatchFrom 为 ua , referer。</li>
+                     * @param _operator 规则的匹配方式。取值有：
+<li> match：匹配，适用于 MatchFrom 为 ip；</li>
+<li> not_match：不匹配，适用于 MatchFrom 为 ip；</li>
+<li> include_area：地域包含，适用于 MatchFrom 为 area；</li>
+<li> not_include_area：地域不包含，适用于 MatchFrom 为 area；</li>
+<li> asn_match：ASN 包含，适用于 MatchFrom 为 asn；</li>
+<li> asn_not_match：ASN 不包含，适用于 MatchFrom 为 asn；</li>
+<li> equal：等于，适用于 MatchFrom 为 ua , referer；</li>
+<li> not_equal：不等于，适用于 MatchFrom 为 ua , referer；</li>
+<li> include：通配符匹配，适用于 MatchFrom 为 ua , referer , url；</li>
+<li> not_include：通配符不匹配，适用于 MatchFrom 为 ua , referer；</li>
+<li> is_emty：配置内容为空，适用于 MatchFrom 为 ua , referer；</li>
+<li> not_exists：配置内容不存在，适用于 MatchFrom 为 ua , referer。</li>
                      * 
                      */
                     void SetOperator(const std::string& _operator);
@@ -204,27 +236,27 @@ namespace TencentCloud
                     bool UpdateTimeHasBeenSet() const;
 
                     /**
-                     * 获取规则启用状态，当返回为null时，为启用。取值有：
+                     * 获取规则启用状态。取值有：
 <li> on：启用；</li>
 <li> off：未启用。</li>
-注意：此字段可能返回 null，表示取不到有效值。
-                     * @return Status 规则启用状态，当返回为null时，为启用。取值有：
+当入参缺省时，按 on 取值。
+                     * @return Status 规则启用状态。取值有：
 <li> on：启用；</li>
 <li> off：未启用。</li>
-注意：此字段可能返回 null，表示取不到有效值。
+当入参缺省时，按 on 取值。
                      * 
                      */
                     std::string GetStatus() const;
 
                     /**
-                     * 设置规则启用状态，当返回为null时，为启用。取值有：
+                     * 设置规则启用状态。取值有：
 <li> on：启用；</li>
 <li> off：未启用。</li>
-注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _status 规则启用状态，当返回为null时，为启用。取值有：
+当入参缺省时，按 on 取值。
+                     * @param _status 规则启用状态。取值有：
 <li> on：启用；</li>
 <li> off：未启用。</li>
-注意：此字段可能返回 null，表示取不到有效值。
+当入参缺省时，按 on 取值。
                      * 
                      */
                     void SetStatus(const std::string& _status);
@@ -262,15 +294,27 @@ namespace TencentCloud
                     bool RuleNameHasBeenSet() const;
 
                     /**
-                     * 获取匹配内容。当 Operator为is_emty 或not_exists时，此值允许为空。
-                     * @return MatchContent 匹配内容。当 Operator为is_emty 或not_exists时，此值允许为空。
+                     * 获取匹配内容。支持多值输入。
+<li>当输入多个匹配值时，请使用英文逗号分隔；</li>
+<li>当 MatchFrom 为 ua 时，不支持多值输入；</li>
+<li>当 Operator 为 is_empty 或 not_exists 时，本字段入参值无效。</li>
+                     * @return MatchContent 匹配内容。支持多值输入。
+<li>当输入多个匹配值时，请使用英文逗号分隔；</li>
+<li>当 MatchFrom 为 ua 时，不支持多值输入；</li>
+<li>当 Operator 为 is_empty 或 not_exists 时，本字段入参值无效。</li>
                      * 
                      */
                     std::string GetMatchContent() const;
 
                     /**
-                     * 设置匹配内容。当 Operator为is_emty 或not_exists时，此值允许为空。
-                     * @param _matchContent 匹配内容。当 Operator为is_emty 或not_exists时，此值允许为空。
+                     * 设置匹配内容。支持多值输入。
+<li>当输入多个匹配值时，请使用英文逗号分隔；</li>
+<li>当 MatchFrom 为 ua 时，不支持多值输入；</li>
+<li>当 Operator 为 is_empty 或 not_exists 时，本字段入参值无效。</li>
+                     * @param _matchContent 匹配内容。支持多值输入。
+<li>当输入多个匹配值时，请使用英文逗号分隔；</li>
+<li>当 MatchFrom 为 ua 时，不支持多值输入；</li>
+<li>当 Operator 为 is_empty 或 not_exists 时，本字段入参值无效。</li>
                      * 
                      */
                     void SetMatchContent(const std::string& _matchContent);
@@ -295,22 +339,30 @@ namespace TencentCloud
 
                     /**
                      * 根据类型匹配，取值有：
-<li>ip：对ip进行匹配；</li>
-<li>area：对ip所属地区匹配。</li>
+<li>ip：客户端 IP 进行匹配；</li>
+<li>area：客户端 IP 所属地区匹配；</li>
+<li>asn：客户端所属的自治系统进行匹配；</li>
+<li>referer：请求头 Referer 进行匹配；</li>
+<li>ua：请求头 User-Agent 进行匹配；</li>
+<li>url：请求 URL 进行匹配。</li>
                      */
                     std::string m_matchFrom;
                     bool m_matchFromHasBeenSet;
 
                     /**
-                     * 规则的匹配方式，默认为空代表等于。
-取值有：
-<li> is_emty：配置为空；</li>
-<li> not_exists：配置为不存在；</li>
-<li> include：包含；</li>
-<li> not_include：不包含；</li>
-<li> equal：等于；</li>
-<li> not_equal：不等于。</li>
-注意：此字段可能返回 null，表示取不到有效值。
+                     * 规则的匹配方式。取值有：
+<li> match：匹配，适用于 MatchFrom 为 ip；</li>
+<li> not_match：不匹配，适用于 MatchFrom 为 ip；</li>
+<li> include_area：地域包含，适用于 MatchFrom 为 area；</li>
+<li> not_include_area：地域不包含，适用于 MatchFrom 为 area；</li>
+<li> asn_match：ASN 包含，适用于 MatchFrom 为 asn；</li>
+<li> asn_not_match：ASN 不包含，适用于 MatchFrom 为 asn；</li>
+<li> equal：等于，适用于 MatchFrom 为 ua , referer；</li>
+<li> not_equal：不等于，适用于 MatchFrom 为 ua , referer；</li>
+<li> include：通配符匹配，适用于 MatchFrom 为 ua , referer , url；</li>
+<li> not_include：通配符不匹配，适用于 MatchFrom 为 ua , referer；</li>
+<li> is_emty：配置内容为空，适用于 MatchFrom 为 ua , referer；</li>
+<li> not_exists：配置内容不存在，适用于 MatchFrom 为 ua , referer。</li>
                      */
                     std::string m_operator;
                     bool m_operatorHasBeenSet;
@@ -328,10 +380,10 @@ namespace TencentCloud
                     bool m_updateTimeHasBeenSet;
 
                     /**
-                     * 规则启用状态，当返回为null时，为启用。取值有：
+                     * 规则启用状态。取值有：
 <li> on：启用；</li>
 <li> off：未启用。</li>
-注意：此字段可能返回 null，表示取不到有效值。
+当入参缺省时，按 on 取值。
                      */
                     std::string m_status;
                     bool m_statusHasBeenSet;
@@ -344,7 +396,10 @@ namespace TencentCloud
                     bool m_ruleNameHasBeenSet;
 
                     /**
-                     * 匹配内容。当 Operator为is_emty 或not_exists时，此值允许为空。
+                     * 匹配内容。支持多值输入。
+<li>当输入多个匹配值时，请使用英文逗号分隔；</li>
+<li>当 MatchFrom 为 ua 时，不支持多值输入；</li>
+<li>当 Operator 为 is_empty 或 not_exists 时，本字段入参值无效。</li>
                      */
                     std::string m_matchContent;
                     bool m_matchContentHasBeenSet;

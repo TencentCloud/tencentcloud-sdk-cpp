@@ -68,15 +68,15 @@ namespace TencentCloud
                     bool FileBodyHasBeenSet() const;
 
                     /**
-                     * 获取文件名
-                     * @return FileName 文件名
+                     * 获取文件名，最大长度不超过200字符
+                     * @return FileName 文件名，最大长度不超过200字符
                      * 
                      */
                     std::string GetFileName() const;
 
                     /**
-                     * 设置文件名
-                     * @param _fileName 文件名
+                     * 设置文件名，最大长度不超过200字符
+                     * @param _fileName 文件名，最大长度不超过200字符
                      * 
                      */
                     void SetFileName(const std::string& _fileName);
@@ -97,7 +97,7 @@ namespace TencentCloud
                     bool m_fileBodyHasBeenSet;
 
                     /**
-                     * 文件名
+                     * 文件名，最大长度不超过200字符
                      */
                     std::string m_fileName;
                     bool m_fileNameHasBeenSet;

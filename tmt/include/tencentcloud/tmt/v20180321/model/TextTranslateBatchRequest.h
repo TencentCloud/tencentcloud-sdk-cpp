@@ -278,6 +278,48 @@ hi：印地语
                      */
                     bool SourceTextListHasBeenSet() const;
 
+                    /**
+                     * 获取需要使用的术语库列表
+                     * @return TermRepoIDList 需要使用的术语库列表
+                     * 
+                     */
+                    std::vector<std::string> GetTermRepoIDList() const;
+
+                    /**
+                     * 设置需要使用的术语库列表
+                     * @param _termRepoIDList 需要使用的术语库列表
+                     * 
+                     */
+                    void SetTermRepoIDList(const std::vector<std::string>& _termRepoIDList);
+
+                    /**
+                     * 判断参数 TermRepoIDList 是否已赋值
+                     * @return TermRepoIDList 是否已赋值
+                     * 
+                     */
+                    bool TermRepoIDListHasBeenSet() const;
+
+                    /**
+                     * 获取需要使用的例句库列表
+                     * @return SentRepoIDList 需要使用的例句库列表
+                     * 
+                     */
+                    std::vector<std::string> GetSentRepoIDList() const;
+
+                    /**
+                     * 设置需要使用的例句库列表
+                     * @param _sentRepoIDList 需要使用的例句库列表
+                     * 
+                     */
+                    void SetSentRepoIDList(const std::vector<std::string>& _sentRepoIDList);
+
+                    /**
+                     * 判断参数 SentRepoIDList 是否已赋值
+                     * @return SentRepoIDList 是否已赋值
+                     * 
+                     */
+                    bool SentRepoIDListHasBeenSet() const;
+
                 private:
 
                     /**
@@ -341,6 +383,18 @@ hi：印地语
                      */
                     std::vector<std::string> m_sourceTextList;
                     bool m_sourceTextListHasBeenSet;
+
+                    /**
+                     * 需要使用的术语库列表
+                     */
+                    std::vector<std::string> m_termRepoIDList;
+                    bool m_termRepoIDListHasBeenSet;
+
+                    /**
+                     * 需要使用的例句库列表
+                     */
+                    std::vector<std::string> m_sentRepoIDList;
+                    bool m_sentRepoIDListHasBeenSet;
 
                 };
             }

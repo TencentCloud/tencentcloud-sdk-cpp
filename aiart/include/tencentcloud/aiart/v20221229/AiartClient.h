@@ -33,6 +33,8 @@
 #include <tencentcloud/aiart/v20221229/model/QueryTextToImageProJobResponse.h>
 #include <tencentcloud/aiart/v20221229/model/QueryTrainPortraitModelJobRequest.h>
 #include <tencentcloud/aiart/v20221229/model/QueryTrainPortraitModelJobResponse.h>
+#include <tencentcloud/aiart/v20221229/model/ReplaceBackgroundRequest.h>
+#include <tencentcloud/aiart/v20221229/model/ReplaceBackgroundResponse.h>
 #include <tencentcloud/aiart/v20221229/model/SubmitDrawPortraitJobRequest.h>
 #include <tencentcloud/aiart/v20221229/model/SubmitDrawPortraitJobResponse.h>
 #include <tencentcloud/aiart/v20221229/model/SubmitTextToImageProJobRequest.h>
@@ -72,6 +74,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::QueryTrainPortraitModelJobResponse> QueryTrainPortraitModelJobOutcome;
                 typedef std::future<QueryTrainPortraitModelJobOutcome> QueryTrainPortraitModelJobOutcomeCallable;
                 typedef std::function<void(const AiartClient*, const Model::QueryTrainPortraitModelJobRequest&, QueryTrainPortraitModelJobOutcome, const std::shared_ptr<const AsyncCallerContext>&)> QueryTrainPortraitModelJobAsyncHandler;
+                typedef Outcome<Core::Error, Model::ReplaceBackgroundResponse> ReplaceBackgroundOutcome;
+                typedef std::future<ReplaceBackgroundOutcome> ReplaceBackgroundOutcomeCallable;
+                typedef std::function<void(const AiartClient*, const Model::ReplaceBackgroundRequest&, ReplaceBackgroundOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ReplaceBackgroundAsyncHandler;
                 typedef Outcome<Core::Error, Model::SubmitDrawPortraitJobResponse> SubmitDrawPortraitJobOutcome;
                 typedef std::future<SubmitDrawPortraitJobOutcome> SubmitDrawPortraitJobOutcomeCallable;
                 typedef std::function<void(const AiartClient*, const Model::SubmitDrawPortraitJobRequest&, SubmitDrawPortraitJobOutcome, const std::shared_ptr<const AsyncCallerContext>&)> SubmitDrawPortraitJobAsyncHandler;
@@ -152,6 +157,17 @@ namespace TencentCloud
                 QueryTrainPortraitModelJobOutcome QueryTrainPortraitModelJob(const Model::QueryTrainPortraitModelJobRequest &request);
                 void QueryTrainPortraitModelJobAsync(const Model::QueryTrainPortraitModelJobRequest& request, const QueryTrainPortraitModelJobAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 QueryTrainPortraitModelJobOutcomeCallable QueryTrainPortraitModelJobCallable(const Model::QueryTrainPortraitModelJobRequest& request);
+
+                /**
+                 *商品背景生成接口根据指定的背景描述 Prompt，将商品图中的原背景替换为自定义的新背景并保留商品主体形象，实现商品背景的自由生成与更换。
+
+商品背景生成默认提供1个并发任务数，代表最多能同时处理1个已提交的任务，上一个任务处理完毕后才能开始处理下一个任务。
+                 * @param req ReplaceBackgroundRequest
+                 * @return ReplaceBackgroundOutcome
+                 */
+                ReplaceBackgroundOutcome ReplaceBackground(const Model::ReplaceBackgroundRequest &request);
+                void ReplaceBackgroundAsync(const Model::ReplaceBackgroundRequest& request, const ReplaceBackgroundAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                ReplaceBackgroundOutcomeCallable ReplaceBackgroundCallable(const Model::ReplaceBackgroundRequest& request);
 
                 /**
                  *AI 写真提供 AI 写真形象照的训练与生成能力，分为上传训练图片、训练模型、生成图片3个环节，需要依次调用对应接口。

@@ -38,6 +38,8 @@ set(aiart_public_header_model
   include/tencentcloud/aiart/v20221229/model/SubmitTrainPortraitModelJobResponse.h
   include/tencentcloud/aiart/v20221229/model/QueryDrawPortraitJobRequest.h
   include/tencentcloud/aiart/v20221229/model/ImageToImageResponse.h
+  include/tencentcloud/aiart/v20221229/model/ReplaceBackgroundRequest.h
+  include/tencentcloud/aiart/v20221229/model/ReplaceBackgroundResponse.h
   include/tencentcloud/aiart/v20221229/model/UploadTrainPortraitImagesResponse.h
   include/tencentcloud/aiart/v20221229/model/QueryTextToImageProJobRequest.h
   include/tencentcloud/aiart/v20221229/model/GenerateAvatarResponse.h
@@ -66,6 +68,8 @@ set(aiart_src
   src/v20221229/model/SubmitTrainPortraitModelJobResponse.cpp
   src/v20221229/model/QueryDrawPortraitJobRequest.cpp
   src/v20221229/model/ImageToImageResponse.cpp
+  src/v20221229/model/ReplaceBackgroundRequest.cpp
+  src/v20221229/model/ReplaceBackgroundResponse.cpp
   src/v20221229/model/UploadTrainPortraitImagesResponse.cpp
   src/v20221229/model/QueryTextToImageProJobRequest.cpp
   src/v20221229/model/GenerateAvatarResponse.cpp

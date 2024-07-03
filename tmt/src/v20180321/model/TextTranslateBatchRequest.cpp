@@ -26,7 +26,9 @@ TextTranslateBatchRequest::TextTranslateBatchRequest() :
     m_sourceHasBeenSet(false),
     m_targetHasBeenSet(false),
     m_projectIdHasBeenSet(false),
-    m_sourceTextListHasBeenSet(false)
+    m_sourceTextListHasBeenSet(false),
+    m_termRepoIDListHasBeenSet(false),
+    m_sentRepoIDListHasBeenSet(false)
 {
 }
 
@@ -69,6 +71,32 @@ string TextTranslateBatchRequest::ToJsonString() const
         d.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
 
         for (auto itr = m_sourceTextList.begin(); itr != m_sourceTextList.end(); ++itr)
+        {
+            d[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
+        }
+    }
+
+    if (m_termRepoIDListHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "TermRepoIDList";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        for (auto itr = m_termRepoIDList.begin(); itr != m_termRepoIDList.end(); ++itr)
+        {
+            d[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
+        }
+    }
+
+    if (m_sentRepoIDListHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "SentRepoIDList";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        for (auto itr = m_sentRepoIDList.begin(); itr != m_sentRepoIDList.end(); ++itr)
         {
             d[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
         }
@@ -144,6 +172,38 @@ void TextTranslateBatchRequest::SetSourceTextList(const vector<string>& _sourceT
 bool TextTranslateBatchRequest::SourceTextListHasBeenSet() const
 {
     return m_sourceTextListHasBeenSet;
+}
+
+vector<string> TextTranslateBatchRequest::GetTermRepoIDList() const
+{
+    return m_termRepoIDList;
+}
+
+void TextTranslateBatchRequest::SetTermRepoIDList(const vector<string>& _termRepoIDList)
+{
+    m_termRepoIDList = _termRepoIDList;
+    m_termRepoIDListHasBeenSet = true;
+}
+
+bool TextTranslateBatchRequest::TermRepoIDListHasBeenSet() const
+{
+    return m_termRepoIDListHasBeenSet;
+}
+
+vector<string> TextTranslateBatchRequest::GetSentRepoIDList() const
+{
+    return m_sentRepoIDList;
+}
+
+void TextTranslateBatchRequest::SetSentRepoIDList(const vector<string>& _sentRepoIDList)
+{
+    m_sentRepoIDList = _sentRepoIDList;
+    m_sentRepoIDListHasBeenSet = true;
+}
+
+bool TextTranslateBatchRequest::SentRepoIDListHasBeenSet() const
+{
+    return m_sentRepoIDListHasBeenSet;
 }
 
 
