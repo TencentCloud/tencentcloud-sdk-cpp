@@ -29,7 +29,8 @@ DescribeMachinesResponse::DescribeMachinesResponse() :
     m_updateStartTimeHasBeenSet(false),
     m_updateEndTimeHasBeenSet(false),
     m_latestAgentVersionHasBeenSet(false),
-    m_serviceLoggingHasBeenSet(false)
+    m_serviceLoggingHasBeenSet(false),
+    m_totalCountHasBeenSet(false)
 {
 }
 
@@ -137,6 +138,16 @@ CoreInternalOutcome DescribeMachinesResponse::Deserialize(const string &payload)
         m_serviceLoggingHasBeenSet = true;
     }
 
+    if (rsp.HasMember("TotalCount") && !rsp["TotalCount"].IsNull())
+    {
+        if (!rsp["TotalCount"].IsUint64())
+        {
+            return CoreInternalOutcome(Core::Error("response `TotalCount` IsUint64=false incorrectly").SetRequestId(requestId));
+        }
+        m_totalCount = rsp["TotalCount"].GetUint64();
+        m_totalCountHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -200,6 +211,14 @@ string DescribeMachinesResponse::ToJsonString() const
         string key = "ServiceLogging";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_serviceLogging, allocator);
+    }
+
+    if (m_totalCountHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "TotalCount";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_totalCount, allocator);
     }
 
     rapidjson::Value iKey(rapidjson::kStringType);
@@ -272,6 +291,16 @@ bool DescribeMachinesResponse::GetServiceLogging() const
 bool DescribeMachinesResponse::ServiceLoggingHasBeenSet() const
 {
     return m_serviceLoggingHasBeenSet;
+}
+
+uint64_t DescribeMachinesResponse::GetTotalCount() const
+{
+    return m_totalCount;
+}
+
+bool DescribeMachinesResponse::TotalCountHasBeenSet() const
+{
+    return m_totalCountHasBeenSet;
 }
 
 

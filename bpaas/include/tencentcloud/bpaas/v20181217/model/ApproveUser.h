@@ -164,6 +164,106 @@ namespace TencentCloud
                      */
                     bool ScfHasBeenSet() const;
 
+                    /**
+                     * 获取审批状态 （取值范围 0:待审批  1:审批通过  2:拒绝  6:其他人已审批）
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return ApproveStatus 审批状态 （取值范围 0:待审批  1:审批通过  2:拒绝  6:其他人已审批）
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    uint64_t GetApproveStatus() const;
+
+                    /**
+                     * 设置审批状态 （取值范围 0:待审批  1:审批通过  2:拒绝  6:其他人已审批）
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _approveStatus 审批状态 （取值范围 0:待审批  1:审批通过  2:拒绝  6:其他人已审批）
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetApproveStatus(const uint64_t& _approveStatus);
+
+                    /**
+                     * 判断参数 ApproveStatus 是否已赋值
+                     * @return ApproveStatus 是否已赋值
+                     * 
+                     */
+                    bool ApproveStatusHasBeenSet() const;
+
+                    /**
+                     * 获取审批意见
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return ApproveMsg 审批意见
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::string GetApproveMsg() const;
+
+                    /**
+                     * 设置审批意见
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _approveMsg 审批意见
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetApproveMsg(const std::string& _approveMsg);
+
+                    /**
+                     * 判断参数 ApproveMsg 是否已赋值
+                     * @return ApproveMsg 是否已赋值
+                     * 
+                     */
+                    bool ApproveMsgHasBeenSet() const;
+
+                    /**
+                     * 获取审批时间
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return ApproveTime 审批时间
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::string GetApproveTime() const;
+
+                    /**
+                     * 设置审批时间
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _approveTime 审批时间
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetApproveTime(const std::string& _approveTime);
+
+                    /**
+                     * 判断参数 ApproveTime 是否已赋值
+                     * @return ApproveTime 是否已赋值
+                     * 
+                     */
+                    bool ApproveTimeHasBeenSet() const;
+
+                    /**
+                     * 获取审批组名称
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return ApproveGroup 审批组名称
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::string GetApproveGroup() const;
+
+                    /**
+                     * 设置审批组名称
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _approveGroup 审批组名称
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetApproveGroup(const std::string& _approveGroup);
+
+                    /**
+                     * 判断参数 ApproveGroup 是否已赋值
+                     * @return ApproveGroup 是否已赋值
+                     * 
+                     */
+                    bool ApproveGroupHasBeenSet() const;
+
                 private:
 
                     /**
@@ -198,6 +298,34 @@ namespace TencentCloud
                      */
                     Scf m_scf;
                     bool m_scfHasBeenSet;
+
+                    /**
+                     * 审批状态 （取值范围 0:待审批  1:审批通过  2:拒绝  6:其他人已审批）
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    uint64_t m_approveStatus;
+                    bool m_approveStatusHasBeenSet;
+
+                    /**
+                     * 审批意见
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_approveMsg;
+                    bool m_approveMsgHasBeenSet;
+
+                    /**
+                     * 审批时间
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_approveTime;
+                    bool m_approveTimeHasBeenSet;
+
+                    /**
+                     * 审批组名称
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_approveGroup;
+                    bool m_approveGroupHasBeenSet;
 
                 };
             }

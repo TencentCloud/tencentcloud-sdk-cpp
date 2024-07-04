@@ -42,7 +42,8 @@ UpdateRecordDetail::UpdateRecordDetail() :
     m_namespaceHasBeenSet(false),
     m_secretNameHasBeenSet(false),
     m_envIdHasBeenSet(false),
-    m_tCBTypeHasBeenSet(false)
+    m_tCBTypeHasBeenSet(false),
+    m_urlHasBeenSet(false)
 {
 }
 
@@ -274,6 +275,16 @@ CoreInternalOutcome UpdateRecordDetail::Deserialize(const rapidjson::Value &valu
         m_tCBTypeHasBeenSet = true;
     }
 
+    if (value.HasMember("Url") && !value["Url"].IsNull())
+    {
+        if (!value["Url"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `UpdateRecordDetail.Url` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_url = string(value["Url"].GetString());
+        m_urlHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -460,6 +471,14 @@ void UpdateRecordDetail::ToJsonObject(rapidjson::Value &value, rapidjson::Docume
         string key = "TCBType";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_tCBType.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_urlHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Url";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_url.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -815,5 +834,21 @@ void UpdateRecordDetail::SetTCBType(const string& _tCBType)
 bool UpdateRecordDetail::TCBTypeHasBeenSet() const
 {
     return m_tCBTypeHasBeenSet;
+}
+
+string UpdateRecordDetail::GetUrl() const
+{
+    return m_url;
+}
+
+void UpdateRecordDetail::SetUrl(const string& _url)
+{
+    m_url = _url;
+    m_urlHasBeenSet = true;
+}
+
+bool UpdateRecordDetail::UrlHasBeenSet() const
+{
+    return m_urlHasBeenSet;
 }
 

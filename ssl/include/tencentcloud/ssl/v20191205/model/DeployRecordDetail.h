@@ -531,6 +531,31 @@ namespace TencentCloud
                      */
                     bool RegionHasBeenSet() const;
 
+                    /**
+                     * 获取部署CLB监听器的Url
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return Url 部署CLB监听器的Url
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::vector<std::string> GetUrl() const;
+
+                    /**
+                     * 设置部署CLB监听器的Url
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _url 部署CLB监听器的Url
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetUrl(const std::vector<std::string>& _url);
+
+                    /**
+                     * 判断参数 Url 是否已赋值
+                     * @return Url 是否已赋值
+                     * 
+                     */
+                    bool UrlHasBeenSet() const;
+
                 private:
 
                     /**
@@ -669,6 +694,13 @@ namespace TencentCloud
                      */
                     std::string m_region;
                     bool m_regionHasBeenSet;
+
+                    /**
+                     * 部署CLB监听器的Url
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::vector<std::string> m_url;
+                    bool m_urlHasBeenSet;
 
                 };
             }

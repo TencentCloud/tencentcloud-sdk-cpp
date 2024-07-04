@@ -23,10 +23,10 @@ using namespace TencentCloud::Trocket::V20230308::Model;
 using namespace std;
 
 DescribeInstanceListRequest::DescribeInstanceListRequest() :
-    m_offsetHasBeenSet(false),
-    m_limitHasBeenSet(false),
     m_filtersHasBeenSet(false),
-    m_tagFiltersHasBeenSet(false)
+    m_tagFiltersHasBeenSet(false),
+    m_offsetHasBeenSet(false),
+    m_limitHasBeenSet(false)
 {
 }
 
@@ -36,22 +36,6 @@ string DescribeInstanceListRequest::ToJsonString() const
     d.SetObject();
     rapidjson::Document::AllocatorType& allocator = d.GetAllocator();
 
-
-    if (m_offsetHasBeenSet)
-    {
-        rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "Offset";
-        iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, m_offset, allocator);
-    }
-
-    if (m_limitHasBeenSet)
-    {
-        rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "Limit";
-        iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, m_limit, allocator);
-    }
 
     if (m_filtersHasBeenSet)
     {
@@ -83,6 +67,22 @@ string DescribeInstanceListRequest::ToJsonString() const
         }
     }
 
+    if (m_offsetHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Offset";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_offset, allocator);
+    }
+
+    if (m_limitHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Limit";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_limit, allocator);
+    }
+
 
     rapidjson::StringBuffer buffer;
     rapidjson::Writer<rapidjson::StringBuffer> writer(buffer);
@@ -90,38 +90,6 @@ string DescribeInstanceListRequest::ToJsonString() const
     return buffer.GetString();
 }
 
-
-int64_t DescribeInstanceListRequest::GetOffset() const
-{
-    return m_offset;
-}
-
-void DescribeInstanceListRequest::SetOffset(const int64_t& _offset)
-{
-    m_offset = _offset;
-    m_offsetHasBeenSet = true;
-}
-
-bool DescribeInstanceListRequest::OffsetHasBeenSet() const
-{
-    return m_offsetHasBeenSet;
-}
-
-int64_t DescribeInstanceListRequest::GetLimit() const
-{
-    return m_limit;
-}
-
-void DescribeInstanceListRequest::SetLimit(const int64_t& _limit)
-{
-    m_limit = _limit;
-    m_limitHasBeenSet = true;
-}
-
-bool DescribeInstanceListRequest::LimitHasBeenSet() const
-{
-    return m_limitHasBeenSet;
-}
 
 vector<Filter> DescribeInstanceListRequest::GetFilters() const
 {
@@ -153,6 +121,38 @@ void DescribeInstanceListRequest::SetTagFilters(const vector<TagFilter>& _tagFil
 bool DescribeInstanceListRequest::TagFiltersHasBeenSet() const
 {
     return m_tagFiltersHasBeenSet;
+}
+
+int64_t DescribeInstanceListRequest::GetOffset() const
+{
+    return m_offset;
+}
+
+void DescribeInstanceListRequest::SetOffset(const int64_t& _offset)
+{
+    m_offset = _offset;
+    m_offsetHasBeenSet = true;
+}
+
+bool DescribeInstanceListRequest::OffsetHasBeenSet() const
+{
+    return m_offsetHasBeenSet;
+}
+
+int64_t DescribeInstanceListRequest::GetLimit() const
+{
+    return m_limit;
+}
+
+void DescribeInstanceListRequest::SetLimit(const int64_t& _limit)
+{
+    m_limit = _limit;
+    m_limitHasBeenSet = true;
+}
+
+bool DescribeInstanceListRequest::LimitHasBeenSet() const
+{
+    return m_limitHasBeenSet;
 }
 
 

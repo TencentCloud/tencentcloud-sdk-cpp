@@ -64,15 +64,15 @@ namespace TencentCloud
                     bool DBInstanceIdHasBeenSet() const;
 
                     /**
-                     * 获取分页返回，每页最大返回数目，默认10，取值范围为1-100
-                     * @return Limit 分页返回，每页最大返回数目，默认10，取值范围为1-100
+                     * 获取分页返回，每页最大返回数目，默认20，取值范围为1-100
+                     * @return Limit 分页返回，每页最大返回数目，默认20，取值范围为1-100
                      * 
                      */
                     int64_t GetLimit() const;
 
                     /**
-                     * 设置分页返回，每页最大返回数目，默认10，取值范围为1-100
-                     * @param _limit 分页返回，每页最大返回数目，默认10，取值范围为1-100
+                     * 设置分页返回，每页最大返回数目，默认20，取值范围为1-100
+                     * @param _limit 分页返回，每页最大返回数目，默认20，取值范围为1-100
                      * 
                      */
                     void SetLimit(const int64_t& _limit);
@@ -106,15 +106,15 @@ namespace TencentCloud
                     bool OffsetHasBeenSet() const;
 
                     /**
-                     * 获取返回数据按照创建时间或者用户名排序。取值只能为createTime或者name。createTime-按照创建时间排序；name-按照用户名排序
-                     * @return OrderBy 返回数据按照创建时间或者用户名排序。取值只能为createTime或者name。createTime-按照创建时间排序；name-按照用户名排序
+                     * 获取返回数据按照创建时间或者用户名排序。取值支持createTime、name、updateTime。createTime-按照创建时间排序；name-按照用户名排序; updateTime-按照更新时间排序。
+                     * @return OrderBy 返回数据按照创建时间或者用户名排序。取值支持createTime、name、updateTime。createTime-按照创建时间排序；name-按照用户名排序; updateTime-按照更新时间排序。
                      * 
                      */
                     std::string GetOrderBy() const;
 
                     /**
-                     * 设置返回数据按照创建时间或者用户名排序。取值只能为createTime或者name。createTime-按照创建时间排序；name-按照用户名排序
-                     * @param _orderBy 返回数据按照创建时间或者用户名排序。取值只能为createTime或者name。createTime-按照创建时间排序；name-按照用户名排序
+                     * 设置返回数据按照创建时间或者用户名排序。取值支持createTime、name、updateTime。createTime-按照创建时间排序；name-按照用户名排序; updateTime-按照更新时间排序。
+                     * @param _orderBy 返回数据按照创建时间或者用户名排序。取值支持createTime、name、updateTime。createTime-按照创建时间排序；name-按照用户名排序; updateTime-按照更新时间排序。
                      * 
                      */
                     void SetOrderBy(const std::string& _orderBy);
@@ -156,7 +156,7 @@ namespace TencentCloud
                     bool m_dBInstanceIdHasBeenSet;
 
                     /**
-                     * 分页返回，每页最大返回数目，默认10，取值范围为1-100
+                     * 分页返回，每页最大返回数目，默认20，取值范围为1-100
                      */
                     int64_t m_limit;
                     bool m_limitHasBeenSet;
@@ -168,7 +168,7 @@ namespace TencentCloud
                     bool m_offsetHasBeenSet;
 
                     /**
-                     * 返回数据按照创建时间或者用户名排序。取值只能为createTime或者name。createTime-按照创建时间排序；name-按照用户名排序
+                     * 返回数据按照创建时间或者用户名排序。取值支持createTime、name、updateTime。createTime-按照创建时间排序；name-按照用户名排序; updateTime-按照更新时间排序。
                      */
                     std::string m_orderBy;
                     bool m_orderByHasBeenSet;

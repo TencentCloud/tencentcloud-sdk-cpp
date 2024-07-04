@@ -24,6 +24,8 @@
 #include <tencentcloud/core/utils/rapidjson/writer.h>
 #include <tencentcloud/core/utils/rapidjson/stringbuffer.h>
 #include <tencentcloud/core/AbstractModel.h>
+#include <tencentcloud/hunyuan/v20230901/model/Content.h>
+#include <tencentcloud/hunyuan/v20230901/model/ToolCall.h>
 
 
 namespace TencentCloud
@@ -47,15 +49,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取角色，可选值包括 system、user、assistant。
-                     * @return Role 角色，可选值包括 system、user、assistant。
+                     * 获取角色，可选值包括 system、user、assistant、 tool。
+                     * @return Role 角色，可选值包括 system、user、assistant、 tool。
                      * 
                      */
                     std::string GetRole() const;
 
                     /**
-                     * 设置角色，可选值包括 system、user、assistant。
-                     * @param _role 角色，可选值包括 system、user、assistant。
+                     * 设置角色，可选值包括 system、user、assistant、 tool。
+                     * @param _role 角色，可选值包括 system、user、assistant、 tool。
                      * 
                      */
                     void SetRole(const std::string& _role);
@@ -88,10 +90,85 @@ namespace TencentCloud
                      */
                     bool ContentHasBeenSet() const;
 
+                    /**
+                     * 获取多种类型内容（目前支持图片和文本），仅 hunyuan-vision 模型支持
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return Contents 多种类型内容（目前支持图片和文本），仅 hunyuan-vision 模型支持
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::vector<Content> GetContents() const;
+
+                    /**
+                     * 设置多种类型内容（目前支持图片和文本），仅 hunyuan-vision 模型支持
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _contents 多种类型内容（目前支持图片和文本），仅 hunyuan-vision 模型支持
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetContents(const std::vector<Content>& _contents);
+
+                    /**
+                     * 判断参数 Contents 是否已赋值
+                     * @return Contents 是否已赋值
+                     * 
+                     */
+                    bool ContentsHasBeenSet() const;
+
+                    /**
+                     * 获取当role为tool时传入，标识具体的函数调用
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return ToolCallId 当role为tool时传入，标识具体的函数调用
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::string GetToolCallId() const;
+
+                    /**
+                     * 设置当role为tool时传入，标识具体的函数调用
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _toolCallId 当role为tool时传入，标识具体的函数调用
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetToolCallId(const std::string& _toolCallId);
+
+                    /**
+                     * 判断参数 ToolCallId 是否已赋值
+                     * @return ToolCallId 是否已赋值
+                     * 
+                     */
+                    bool ToolCallIdHasBeenSet() const;
+
+                    /**
+                     * 获取模型生成的工具调用，仅 hunyuan-functioncall 模型支持
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return ToolCalls 模型生成的工具调用，仅 hunyuan-functioncall 模型支持
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::vector<ToolCall> GetToolCalls() const;
+
+                    /**
+                     * 设置模型生成的工具调用，仅 hunyuan-functioncall 模型支持
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _toolCalls 模型生成的工具调用，仅 hunyuan-functioncall 模型支持
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetToolCalls(const std::vector<ToolCall>& _toolCalls);
+
+                    /**
+                     * 判断参数 ToolCalls 是否已赋值
+                     * @return ToolCalls 是否已赋值
+                     * 
+                     */
+                    bool ToolCallsHasBeenSet() const;
+
                 private:
 
                     /**
-                     * 角色，可选值包括 system、user、assistant。
+                     * 角色，可选值包括 system、user、assistant、 tool。
                      */
                     std::string m_role;
                     bool m_roleHasBeenSet;
@@ -101,6 +178,27 @@ namespace TencentCloud
                      */
                     std::string m_content;
                     bool m_contentHasBeenSet;
+
+                    /**
+                     * 多种类型内容（目前支持图片和文本），仅 hunyuan-vision 模型支持
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::vector<Content> m_contents;
+                    bool m_contentsHasBeenSet;
+
+                    /**
+                     * 当role为tool时传入，标识具体的函数调用
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_toolCallId;
+                    bool m_toolCallIdHasBeenSet;
+
+                    /**
+                     * 模型生成的工具调用，仅 hunyuan-functioncall 模型支持
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::vector<ToolCall> m_toolCalls;
+                    bool m_toolCallsHasBeenSet;
 
                 };
             }

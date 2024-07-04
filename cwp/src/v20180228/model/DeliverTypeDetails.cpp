@@ -28,7 +28,10 @@ DeliverTypeDetails::DeliverTypeDetails() :
     m_switchHasBeenSet(false),
     m_statusHasBeenSet(false),
     m_errInfoHasBeenSet(false),
-    m_statusTimeHasBeenSet(false)
+    m_statusTimeHasBeenSet(false),
+    m_logNameHasBeenSet(false),
+    m_logSetIdHasBeenSet(false),
+    m_regionHasBeenSet(false)
 {
 }
 
@@ -120,6 +123,36 @@ CoreInternalOutcome DeliverTypeDetails::Deserialize(const rapidjson::Value &valu
         m_statusTimeHasBeenSet = true;
     }
 
+    if (value.HasMember("LogName") && !value["LogName"].IsNull())
+    {
+        if (!value["LogName"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `DeliverTypeDetails.LogName` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_logName = string(value["LogName"].GetString());
+        m_logNameHasBeenSet = true;
+    }
+
+    if (value.HasMember("LogSetId") && !value["LogSetId"].IsNull())
+    {
+        if (!value["LogSetId"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `DeliverTypeDetails.LogSetId` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_logSetId = string(value["LogSetId"].GetString());
+        m_logSetIdHasBeenSet = true;
+    }
+
+    if (value.HasMember("Region") && !value["Region"].IsNull())
+    {
+        if (!value["Region"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `DeliverTypeDetails.Region` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_region = string(value["Region"].GetString());
+        m_regionHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -194,6 +227,30 @@ void DeliverTypeDetails::ToJsonObject(rapidjson::Value &value, rapidjson::Docume
         string key = "StatusTime";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_statusTime, allocator);
+    }
+
+    if (m_logNameHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "LogName";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_logName.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_logSetIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "LogSetId";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_logSetId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_regionHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Region";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_region.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -325,5 +382,53 @@ void DeliverTypeDetails::SetStatusTime(const int64_t& _statusTime)
 bool DeliverTypeDetails::StatusTimeHasBeenSet() const
 {
     return m_statusTimeHasBeenSet;
+}
+
+string DeliverTypeDetails::GetLogName() const
+{
+    return m_logName;
+}
+
+void DeliverTypeDetails::SetLogName(const string& _logName)
+{
+    m_logName = _logName;
+    m_logNameHasBeenSet = true;
+}
+
+bool DeliverTypeDetails::LogNameHasBeenSet() const
+{
+    return m_logNameHasBeenSet;
+}
+
+string DeliverTypeDetails::GetLogSetId() const
+{
+    return m_logSetId;
+}
+
+void DeliverTypeDetails::SetLogSetId(const string& _logSetId)
+{
+    m_logSetId = _logSetId;
+    m_logSetIdHasBeenSet = true;
+}
+
+bool DeliverTypeDetails::LogSetIdHasBeenSet() const
+{
+    return m_logSetIdHasBeenSet;
+}
+
+string DeliverTypeDetails::GetRegion() const
+{
+    return m_region;
+}
+
+void DeliverTypeDetails::SetRegion(const string& _region)
+{
+    m_region = _region;
+    m_regionHasBeenSet = true;
+}
+
+bool DeliverTypeDetails::RegionHasBeenSet() const
+{
+    return m_regionHasBeenSet;
 }
 

@@ -25,7 +25,8 @@ ClbListenerRule::ClbListenerRule() :
     m_domainHasBeenSet(false),
     m_isMatchHasBeenSet(false),
     m_certificateHasBeenSet(false),
-    m_noMatchDomainsHasBeenSet(false)
+    m_noMatchDomainsHasBeenSet(false),
+    m_urlHasBeenSet(false)
 {
 }
 
@@ -94,6 +95,16 @@ CoreInternalOutcome ClbListenerRule::Deserialize(const rapidjson::Value &value)
         m_noMatchDomainsHasBeenSet = true;
     }
 
+    if (value.HasMember("Url") && !value["Url"].IsNull())
+    {
+        if (!value["Url"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `ClbListenerRule.Url` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_url = string(value["Url"].GetString());
+        m_urlHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -145,6 +156,14 @@ void ClbListenerRule::ToJsonObject(rapidjson::Value &value, rapidjson::Document:
         {
             value[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
         }
+    }
+
+    if (m_urlHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Url";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_url.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -228,5 +247,21 @@ void ClbListenerRule::SetNoMatchDomains(const vector<string>& _noMatchDomains)
 bool ClbListenerRule::NoMatchDomainsHasBeenSet() const
 {
     return m_noMatchDomainsHasBeenSet;
+}
+
+string ClbListenerRule::GetUrl() const
+{
+    return m_url;
+}
+
+void ClbListenerRule::SetUrl(const string& _url)
+{
+    m_url = _url;
+    m_urlHasBeenSet = true;
+}
+
+bool ClbListenerRule::UrlHasBeenSet() const
+{
+    return m_urlHasBeenSet;
 }
 

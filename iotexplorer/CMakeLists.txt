@@ -46,7 +46,7 @@ set(iotexplorer_public_header_model
   include/tencentcloud/iotexplorer/v20190423/model/GetDeviceListResponse.h
   include/tencentcloud/iotexplorer/v20190423/model/DismissRoomByStrRoomIdFromTRTCResponse.h
   include/tencentcloud/iotexplorer/v20190423/model/DescribeFirmwareUpdateStatusResponse.h
-  include/tencentcloud/iotexplorer/v20190423/model/GenerateSignedVideoURLRequest.h
+  include/tencentcloud/iotexplorer/v20190423/model/DeviceActiveResult.h
   include/tencentcloud/iotexplorer/v20190423/model/TopicRulePayload.h
   include/tencentcloud/iotexplorer/v20190423/model/DeleteLoRaFrequencyResponse.h
   include/tencentcloud/iotexplorer/v20190423/model/DescribeGatewaySubDeviceListResponse.h
@@ -228,6 +228,7 @@ set(iotexplorer_public_header_model
   include/tencentcloud/iotexplorer/v20190423/model/DescribeBindedProductsResponse.h
   include/tencentcloud/iotexplorer/v20190423/model/DeviceSignatureInfo.h
   include/tencentcloud/iotexplorer/v20190423/model/PositionSpaceInfo.h
+  include/tencentcloud/iotexplorer/v20190423/model/GenerateSignedVideoURLRequest.h
   include/tencentcloud/iotexplorer/v20190423/model/TWeCallInfo.h
   include/tencentcloud/iotexplorer/v20190423/model/LoRaGatewayLocation.h
   include/tencentcloud/iotexplorer/v20190423/model/DescribeDeviceRequest.h
@@ -387,7 +388,7 @@ set(iotexplorer_src
   src/v20190423/model/GetDeviceListResponse.cpp
   src/v20190423/model/DismissRoomByStrRoomIdFromTRTCResponse.cpp
   src/v20190423/model/DescribeFirmwareUpdateStatusResponse.cpp
-  src/v20190423/model/GenerateSignedVideoURLRequest.cpp
+  src/v20190423/model/DeviceActiveResult.cpp
   src/v20190423/model/TopicRulePayload.cpp
   src/v20190423/model/DeleteLoRaFrequencyResponse.cpp
   src/v20190423/model/DescribeGatewaySubDeviceListResponse.cpp
@@ -569,6 +570,7 @@ set(iotexplorer_src
   src/v20190423/model/DescribeBindedProductsResponse.cpp
   src/v20190423/model/DeviceSignatureInfo.cpp
   src/v20190423/model/PositionSpaceInfo.cpp
+  src/v20190423/model/GenerateSignedVideoURLRequest.cpp
   src/v20190423/model/TWeCallInfo.cpp
   src/v20190423/model/LoRaGatewayLocation.cpp
   src/v20190423/model/DescribeDeviceRequest.cpp

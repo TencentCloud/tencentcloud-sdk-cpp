@@ -22,7 +22,8 @@ using namespace std;
 
 Delta::Delta() :
     m_roleHasBeenSet(false),
-    m_contentHasBeenSet(false)
+    m_contentHasBeenSet(false),
+    m_toolCallsHasBeenSet(false)
 {
 }
 
@@ -51,6 +52,26 @@ CoreInternalOutcome Delta::Deserialize(const rapidjson::Value &value)
         m_contentHasBeenSet = true;
     }
 
+    if (value.HasMember("ToolCalls") && !value["ToolCalls"].IsNull())
+    {
+        if (!value["ToolCalls"].IsArray())
+            return CoreInternalOutcome(Core::Error("response `Delta.ToolCalls` is not array type"));
+
+        const rapidjson::Value &tmpValue = value["ToolCalls"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            ToolCall item;
+            CoreInternalOutcome outcome = item.Deserialize(*itr);
+            if (!outcome.IsSuccess())
+            {
+                outcome.GetError().SetRequestId(requestId);
+                return outcome;
+            }
+            m_toolCalls.push_back(item);
+        }
+        m_toolCallsHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -72,6 +93,21 @@ void Delta::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Allocator
         string key = "Content";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_content.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_toolCallsHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ToolCalls";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_toolCalls.begin(); itr != m_toolCalls.end(); ++itr, ++i)
+        {
+            value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(value[key.c_str()][i], allocator);
+        }
     }
 
 }
@@ -107,5 +143,21 @@ void Delta::SetContent(const string& _content)
 bool Delta::ContentHasBeenSet() const
 {
     return m_contentHasBeenSet;
+}
+
+vector<ToolCall> Delta::GetToolCalls() const
+{
+    return m_toolCalls;
+}
+
+void Delta::SetToolCalls(const vector<ToolCall>& _toolCalls)
+{
+    m_toolCalls = _toolCalls;
+    m_toolCallsHasBeenSet = true;
+}
+
+bool Delta::ToolCallsHasBeenSet() const
+{
+    return m_toolCallsHasBeenSet;
 }
 

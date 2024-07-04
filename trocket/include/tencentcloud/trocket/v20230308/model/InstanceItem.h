@@ -517,6 +517,31 @@ PREPAID，包年包月
                      */
                     bool MaxMessageDelayHasBeenSet() const;
 
+                    /**
+                     * 获取是否自动续费
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return RenewFlag 是否自动续费
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    int64_t GetRenewFlag() const;
+
+                    /**
+                     * 设置是否自动续费
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _renewFlag 是否自动续费
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetRenewFlag(const int64_t& _renewFlag);
+
+                    /**
+                     * 判断参数 RenewFlag 是否已赋值
+                     * @return RenewFlag 是否已赋值
+                     * 
+                     */
+                    bool RenewFlagHasBeenSet() const;
+
                 private:
 
                     /**
@@ -649,6 +674,13 @@ PREPAID，包年包月
                      */
                     int64_t m_maxMessageDelay;
                     bool m_maxMessageDelayHasBeenSet;
+
+                    /**
+                     * 是否自动续费
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    int64_t m_renewFlag;
+                    bool m_renewFlagHasBeenSet;
 
                 };
             }

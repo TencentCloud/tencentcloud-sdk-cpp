@@ -26,7 +26,8 @@ AccountInfo::AccountInfo() :
     m_remarkHasBeenSet(false),
     m_statusHasBeenSet(false),
     m_createTimeHasBeenSet(false),
-    m_updateTimeHasBeenSet(false)
+    m_updateTimeHasBeenSet(false),
+    m_userTypeHasBeenSet(false)
 {
 }
 
@@ -95,6 +96,16 @@ CoreInternalOutcome AccountInfo::Deserialize(const rapidjson::Value &value)
         m_updateTimeHasBeenSet = true;
     }
 
+    if (value.HasMember("UserType") && !value["UserType"].IsNull())
+    {
+        if (!value["UserType"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `AccountInfo.UserType` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_userType = string(value["UserType"].GetString());
+        m_userTypeHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -148,6 +159,14 @@ void AccountInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Document::All
         string key = "UpdateTime";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_updateTime.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_userTypeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "UserType";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_userType.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -247,5 +266,21 @@ void AccountInfo::SetUpdateTime(const string& _updateTime)
 bool AccountInfo::UpdateTimeHasBeenSet() const
 {
     return m_updateTimeHasBeenSet;
+}
+
+string AccountInfo::GetUserType() const
+{
+    return m_userType;
+}
+
+void AccountInfo::SetUserType(const string& _userType)
+{
+    m_userType = _userType;
+    m_userTypeHasBeenSet = true;
+}
+
+bool AccountInfo::UserTypeHasBeenSet() const
+{
+    return m_userTypeHasBeenSet;
 }
 

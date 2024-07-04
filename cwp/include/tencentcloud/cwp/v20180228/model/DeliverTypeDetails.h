@@ -47,15 +47,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取安全模块类型 1: 入侵检测 2: 漏洞管理 3: 基线管理 4: 高级防御 5:客户端相关 6: 资产指纹
-                     * @return SecurityType 安全模块类型 1: 入侵检测 2: 漏洞管理 3: 基线管理 4: 高级防御 5:客户端相关 6: 资产指纹
+                     * 获取安全模块类型 1: 入侵检测 2: 漏洞管理 3: 基线管理 4: 高级防御 5:客户端相关 6: 资产指纹 7 主机列表 8 客户端上报
+                     * @return SecurityType 安全模块类型 1: 入侵检测 2: 漏洞管理 3: 基线管理 4: 高级防御 5:客户端相关 6: 资产指纹 7 主机列表 8 客户端上报
                      * 
                      */
                     uint64_t GetSecurityType() const;
 
                     /**
-                     * 设置安全模块类型 1: 入侵检测 2: 漏洞管理 3: 基线管理 4: 高级防御 5:客户端相关 6: 资产指纹
-                     * @param _securityType 安全模块类型 1: 入侵检测 2: 漏洞管理 3: 基线管理 4: 高级防御 5:客户端相关 6: 资产指纹
+                     * 设置安全模块类型 1: 入侵检测 2: 漏洞管理 3: 基线管理 4: 高级防御 5:客户端相关 6: 资产指纹 7 主机列表 8 客户端上报
+                     * @param _securityType 安全模块类型 1: 入侵检测 2: 漏洞管理 3: 基线管理 4: 高级防御 5:客户端相关 6: 资产指纹 7 主机列表 8 客户端上报
                      * 
                      */
                     void SetSecurityType(const uint64_t& _securityType);
@@ -68,15 +68,15 @@ namespace TencentCloud
                     bool SecurityTypeHasBeenSet() const;
 
                     /**
-                     * 获取安全模块下的日志类型，http://tapd.woa.com/Teneyes/markdown_wikis/show/#1210131751002328905
-                     * @return LogType 安全模块下的日志类型，http://tapd.woa.com/Teneyes/markdown_wikis/show/#1210131751002328905
+                     * 获取安全模块下的日志类型
+                     * @return LogType 安全模块下的日志类型
                      * 
                      */
                     std::vector<int64_t> GetLogType() const;
 
                     /**
-                     * 设置安全模块下的日志类型，http://tapd.woa.com/Teneyes/markdown_wikis/show/#1210131751002328905
-                     * @param _logType 安全模块下的日志类型，http://tapd.woa.com/Teneyes/markdown_wikis/show/#1210131751002328905
+                     * 设置安全模块下的日志类型
+                     * @param _logType 安全模块下的日志类型
                      * 
                      */
                     void SetLogType(const std::vector<int64_t>& _logType);
@@ -89,15 +89,15 @@ namespace TencentCloud
                     bool LogTypeHasBeenSet() const;
 
                     /**
-                     * 获取kafka topic id
-                     * @return TopicId kafka topic id
+                     * 获取主题ID
+                     * @return TopicId 主题ID
                      * 
                      */
                     std::string GetTopicId() const;
 
                     /**
-                     * 设置kafka topic id
-                     * @param _topicId kafka topic id
+                     * 设置主题ID
+                     * @param _topicId 主题ID
                      * 
                      */
                     void SetTopicId(const std::string& _topicId);
@@ -110,15 +110,15 @@ namespace TencentCloud
                     bool TopicIdHasBeenSet() const;
 
                     /**
-                     * 获取kafka topic name
-                     * @return TopicName kafka topic name
+                     * 获取主题名
+                     * @return TopicName 主题名
                      * 
                      */
                     std::string GetTopicName() const;
 
                     /**
-                     * 设置kafka topic name
-                     * @param _topicName kafka topic name
+                     * 设置主题名
+                     * @param _topicName 主题名
                      * 
                      */
                     void SetTopicName(const std::string& _topicName);
@@ -194,15 +194,15 @@ namespace TencentCloud
                     bool ErrInfoHasBeenSet() const;
 
                     /**
-                     * 获取最近一次状态上报时间戳，s
-                     * @return StatusTime 最近一次状态上报时间戳，s
+                     * 获取最近一次状态上报时间戳
+                     * @return StatusTime 最近一次状态上报时间戳
                      * 
                      */
                     int64_t GetStatusTime() const;
 
                     /**
-                     * 设置最近一次状态上报时间戳，s
-                     * @param _statusTime 最近一次状态上报时间戳，s
+                     * 设置最近一次状态上报时间戳
+                     * @param _statusTime 最近一次状态上报时间戳
                      * 
                      */
                     void SetStatusTime(const int64_t& _statusTime);
@@ -214,28 +214,91 @@ namespace TencentCloud
                      */
                     bool StatusTimeHasBeenSet() const;
 
+                    /**
+                     * 获取日志集名
+                     * @return LogName 日志集名
+                     * 
+                     */
+                    std::string GetLogName() const;
+
+                    /**
+                     * 设置日志集名
+                     * @param _logName 日志集名
+                     * 
+                     */
+                    void SetLogName(const std::string& _logName);
+
+                    /**
+                     * 判断参数 LogName 是否已赋值
+                     * @return LogName 是否已赋值
+                     * 
+                     */
+                    bool LogNameHasBeenSet() const;
+
+                    /**
+                     * 获取日志集ID
+                     * @return LogSetId 日志集ID
+                     * 
+                     */
+                    std::string GetLogSetId() const;
+
+                    /**
+                     * 设置日志集ID
+                     * @param _logSetId 日志集ID
+                     * 
+                     */
+                    void SetLogSetId(const std::string& _logSetId);
+
+                    /**
+                     * 判断参数 LogSetId 是否已赋值
+                     * @return LogSetId 是否已赋值
+                     * 
+                     */
+                    bool LogSetIdHasBeenSet() const;
+
+                    /**
+                     * 获取日志集所在地域
+                     * @return Region 日志集所在地域
+                     * 
+                     */
+                    std::string GetRegion() const;
+
+                    /**
+                     * 设置日志集所在地域
+                     * @param _region 日志集所在地域
+                     * 
+                     */
+                    void SetRegion(const std::string& _region);
+
+                    /**
+                     * 判断参数 Region 是否已赋值
+                     * @return Region 是否已赋值
+                     * 
+                     */
+                    bool RegionHasBeenSet() const;
+
                 private:
 
                     /**
-                     * 安全模块类型 1: 入侵检测 2: 漏洞管理 3: 基线管理 4: 高级防御 5:客户端相关 6: 资产指纹
+                     * 安全模块类型 1: 入侵检测 2: 漏洞管理 3: 基线管理 4: 高级防御 5:客户端相关 6: 资产指纹 7 主机列表 8 客户端上报
                      */
                     uint64_t m_securityType;
                     bool m_securityTypeHasBeenSet;
 
                     /**
-                     * 安全模块下的日志类型，http://tapd.woa.com/Teneyes/markdown_wikis/show/#1210131751002328905
+                     * 安全模块下的日志类型
                      */
                     std::vector<int64_t> m_logType;
                     bool m_logTypeHasBeenSet;
 
                     /**
-                     * kafka topic id
+                     * 主题ID
                      */
                     std::string m_topicId;
                     bool m_topicIdHasBeenSet;
 
                     /**
-                     * kafka topic name
+                     * 主题名
                      */
                     std::string m_topicName;
                     bool m_topicNameHasBeenSet;
@@ -259,10 +322,28 @@ namespace TencentCloud
                     bool m_errInfoHasBeenSet;
 
                     /**
-                     * 最近一次状态上报时间戳，s
+                     * 最近一次状态上报时间戳
                      */
                     int64_t m_statusTime;
                     bool m_statusTimeHasBeenSet;
+
+                    /**
+                     * 日志集名
+                     */
+                    std::string m_logName;
+                    bool m_logNameHasBeenSet;
+
+                    /**
+                     * 日志集ID
+                     */
+                    std::string m_logSetId;
+                    bool m_logSetIdHasBeenSet;
+
+                    /**
+                     * 日志集所在地域
+                     */
+                    std::string m_region;
+                    bool m_regionHasBeenSet;
 
                 };
             }

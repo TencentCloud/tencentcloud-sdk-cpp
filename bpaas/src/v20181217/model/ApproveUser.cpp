@@ -25,7 +25,11 @@ ApproveUser::ApproveUser() :
     m_typeHasBeenSet(false),
     m_descHasBeenSet(false),
     m_nickHasBeenSet(false),
-    m_scfHasBeenSet(false)
+    m_scfHasBeenSet(false),
+    m_approveStatusHasBeenSet(false),
+    m_approveMsgHasBeenSet(false),
+    m_approveTimeHasBeenSet(false),
+    m_approveGroupHasBeenSet(false)
 {
 }
 
@@ -91,6 +95,46 @@ CoreInternalOutcome ApproveUser::Deserialize(const rapidjson::Value &value)
         m_scfHasBeenSet = true;
     }
 
+    if (value.HasMember("ApproveStatus") && !value["ApproveStatus"].IsNull())
+    {
+        if (!value["ApproveStatus"].IsUint64())
+        {
+            return CoreInternalOutcome(Core::Error("response `ApproveUser.ApproveStatus` IsUint64=false incorrectly").SetRequestId(requestId));
+        }
+        m_approveStatus = value["ApproveStatus"].GetUint64();
+        m_approveStatusHasBeenSet = true;
+    }
+
+    if (value.HasMember("ApproveMsg") && !value["ApproveMsg"].IsNull())
+    {
+        if (!value["ApproveMsg"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `ApproveUser.ApproveMsg` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_approveMsg = string(value["ApproveMsg"].GetString());
+        m_approveMsgHasBeenSet = true;
+    }
+
+    if (value.HasMember("ApproveTime") && !value["ApproveTime"].IsNull())
+    {
+        if (!value["ApproveTime"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `ApproveUser.ApproveTime` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_approveTime = string(value["ApproveTime"].GetString());
+        m_approveTimeHasBeenSet = true;
+    }
+
+    if (value.HasMember("ApproveGroup") && !value["ApproveGroup"].IsNull())
+    {
+        if (!value["ApproveGroup"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `ApproveUser.ApproveGroup` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_approveGroup = string(value["ApproveGroup"].GetString());
+        m_approveGroupHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -137,6 +181,38 @@ void ApproveUser::ToJsonObject(rapidjson::Value &value, rapidjson::Document::All
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
         m_scf.ToJsonObject(value[key.c_str()], allocator);
+    }
+
+    if (m_approveStatusHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ApproveStatus";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_approveStatus, allocator);
+    }
+
+    if (m_approveMsgHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ApproveMsg";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_approveMsg.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_approveTimeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ApproveTime";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_approveTime.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_approveGroupHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ApproveGroup";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_approveGroup.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -220,5 +296,69 @@ void ApproveUser::SetScf(const Scf& _scf)
 bool ApproveUser::ScfHasBeenSet() const
 {
     return m_scfHasBeenSet;
+}
+
+uint64_t ApproveUser::GetApproveStatus() const
+{
+    return m_approveStatus;
+}
+
+void ApproveUser::SetApproveStatus(const uint64_t& _approveStatus)
+{
+    m_approveStatus = _approveStatus;
+    m_approveStatusHasBeenSet = true;
+}
+
+bool ApproveUser::ApproveStatusHasBeenSet() const
+{
+    return m_approveStatusHasBeenSet;
+}
+
+string ApproveUser::GetApproveMsg() const
+{
+    return m_approveMsg;
+}
+
+void ApproveUser::SetApproveMsg(const string& _approveMsg)
+{
+    m_approveMsg = _approveMsg;
+    m_approveMsgHasBeenSet = true;
+}
+
+bool ApproveUser::ApproveMsgHasBeenSet() const
+{
+    return m_approveMsgHasBeenSet;
+}
+
+string ApproveUser::GetApproveTime() const
+{
+    return m_approveTime;
+}
+
+void ApproveUser::SetApproveTime(const string& _approveTime)
+{
+    m_approveTime = _approveTime;
+    m_approveTimeHasBeenSet = true;
+}
+
+bool ApproveUser::ApproveTimeHasBeenSet() const
+{
+    return m_approveTimeHasBeenSet;
+}
+
+string ApproveUser::GetApproveGroup() const
+{
+    return m_approveGroup;
+}
+
+void ApproveUser::SetApproveGroup(const string& _approveGroup)
+{
+    m_approveGroup = _approveGroup;
+    m_approveGroupHasBeenSet = true;
+}
+
+bool ApproveUser::ApproveGroupHasBeenSet() const
+{
+    return m_approveGroupHasBeenSet;
 }
 

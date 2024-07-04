@@ -38,7 +38,8 @@ InstanceItem::InstanceItem() :
     m_tpsLimitHasBeenSet(false),
     m_scaledTpsLimitHasBeenSet(false),
     m_messageRetentionHasBeenSet(false),
-    m_maxMessageDelayHasBeenSet(false)
+    m_maxMessageDelayHasBeenSet(false),
+    m_renewFlagHasBeenSet(false)
 {
 }
 
@@ -237,6 +238,16 @@ CoreInternalOutcome InstanceItem::Deserialize(const rapidjson::Value &value)
         m_maxMessageDelayHasBeenSet = true;
     }
 
+    if (value.HasMember("RenewFlag") && !value["RenewFlag"].IsNull())
+    {
+        if (!value["RenewFlag"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `InstanceItem.RenewFlag` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_renewFlag = value["RenewFlag"].GetInt64();
+        m_renewFlagHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -393,6 +404,14 @@ void InstanceItem::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Al
         string key = "MaxMessageDelay";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_maxMessageDelay, allocator);
+    }
+
+    if (m_renewFlagHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "RenewFlag";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_renewFlag, allocator);
     }
 
 }
@@ -684,5 +703,21 @@ void InstanceItem::SetMaxMessageDelay(const int64_t& _maxMessageDelay)
 bool InstanceItem::MaxMessageDelayHasBeenSet() const
 {
     return m_maxMessageDelayHasBeenSet;
+}
+
+int64_t InstanceItem::GetRenewFlag() const
+{
+    return m_renewFlag;
+}
+
+void InstanceItem::SetRenewFlag(const int64_t& _renewFlag)
+{
+    m_renewFlag = _renewFlag;
+    m_renewFlagHasBeenSet = true;
+}
+
+bool InstanceItem::RenewFlagHasBeenSet() const
+{
+    return m_renewFlagHasBeenSet;
 }
 

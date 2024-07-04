@@ -21,6 +21,7 @@
 #include <vector>
 #include <map>
 #include <tencentcloud/core/AbstractModel.h>
+#include <tencentcloud/iotexplorer/v20190423/model/DeviceActiveResult.h>
 
 
 namespace TencentCloud
@@ -43,7 +44,30 @@ namespace TencentCloud
                     std::string ToJsonString() const;
 
 
+                    /**
+                     * 获取设备激活返回数据
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return DeviceList 设备激活返回数据
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::vector<DeviceActiveResult> GetDeviceList() const;
+
+                    /**
+                     * 判断参数 DeviceList 是否已赋值
+                     * @return DeviceList 是否已赋值
+                     * 
+                     */
+                    bool DeviceListHasBeenSet() const;
+
                 private:
+
+                    /**
+                     * 设备激活返回数据
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::vector<DeviceActiveResult> m_deviceList;
+                    bool m_deviceListHasBeenSet;
 
                 };
             }

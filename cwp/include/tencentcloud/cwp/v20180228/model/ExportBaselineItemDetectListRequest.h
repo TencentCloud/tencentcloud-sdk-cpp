@@ -44,27 +44,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取<li>HostId - string - 是否必填：否 - 主机Id</i>
-<li>RuleId - int64 - 是否必填：否 - 规则Id</i>
-<li>IsPassed - int - 是否必填：否 - 是否通过</li>
-<li>RiskTier - int - 是否必填：否 - 风险等级</li>
-                     * @return Filters <li>HostId - string - 是否必填：否 - 主机Id</i>
-<li>RuleId - int64 - 是否必填：否 - 规则Id</i>
-<li>IsPassed - int - 是否必填：否 - 是否通过</li>
-<li>RiskTier - int - 是否必填：否 - 风险等级</li>
+                     * 获取<li>HostId - string - 是否必填：否 - 主机Id</li><li>RuleId - int64 - 是否必填：否 - 规则Id</li><li>IsPassed - int - 是否必填：否 - 是否通过</li><li>RiskTier - int - 是否必填：否 - 风险等级</li>
+                     * @return Filters <li>HostId - string - 是否必填：否 - 主机Id</li><li>RuleId - int64 - 是否必填：否 - 规则Id</li><li>IsPassed - int - 是否必填：否 - 是否通过</li><li>RiskTier - int - 是否必填：否 - 风险等级</li>
                      * 
                      */
                     std::vector<Filter> GetFilters() const;
 
                     /**
-                     * 设置<li>HostId - string - 是否必填：否 - 主机Id</i>
-<li>RuleId - int64 - 是否必填：否 - 规则Id</i>
-<li>IsPassed - int - 是否必填：否 - 是否通过</li>
-<li>RiskTier - int - 是否必填：否 - 风险等级</li>
-                     * @param _filters <li>HostId - string - 是否必填：否 - 主机Id</i>
-<li>RuleId - int64 - 是否必填：否 - 规则Id</i>
-<li>IsPassed - int - 是否必填：否 - 是否通过</li>
-<li>RiskTier - int - 是否必填：否 - 风险等级</li>
+                     * 设置<li>HostId - string - 是否必填：否 - 主机Id</li><li>RuleId - int64 - 是否必填：否 - 规则Id</li><li>IsPassed - int - 是否必填：否 - 是否通过</li><li>RiskTier - int - 是否必填：否 - 风险等级</li>
+                     * @param _filters <li>HostId - string - 是否必填：否 - 主机Id</li><li>RuleId - int64 - 是否必填：否 - 规则Id</li><li>IsPassed - int - 是否必填：否 - 是否通过</li><li>RiskTier - int - 是否必填：否 - 风险等级</li>
                      * 
                      */
                     void SetFilters(const std::vector<Filter>& _filters);
@@ -97,13 +85,31 @@ namespace TencentCloud
                      */
                     bool ExportAllHasBeenSet() const;
 
+                    /**
+                     * 获取0:导出界面展示；1:导出全部结果事件
+                     * @return IsExportDetail 0:导出界面展示；1:导出全部结果事件
+                     * 
+                     */
+                    int64_t GetIsExportDetail() const;
+
+                    /**
+                     * 设置0:导出界面展示；1:导出全部结果事件
+                     * @param _isExportDetail 0:导出界面展示；1:导出全部结果事件
+                     * 
+                     */
+                    void SetIsExportDetail(const int64_t& _isExportDetail);
+
+                    /**
+                     * 判断参数 IsExportDetail 是否已赋值
+                     * @return IsExportDetail 是否已赋值
+                     * 
+                     */
+                    bool IsExportDetailHasBeenSet() const;
+
                 private:
 
                     /**
-                     * <li>HostId - string - 是否必填：否 - 主机Id</i>
-<li>RuleId - int64 - 是否必填：否 - 规则Id</i>
-<li>IsPassed - int - 是否必填：否 - 是否通过</li>
-<li>RiskTier - int - 是否必填：否 - 风险等级</li>
+                     * <li>HostId - string - 是否必填：否 - 主机Id</li><li>RuleId - int64 - 是否必填：否 - 规则Id</li><li>IsPassed - int - 是否必填：否 - 是否通过</li><li>RiskTier - int - 是否必填：否 - 风险等级</li>
                      */
                     std::vector<Filter> m_filters;
                     bool m_filtersHasBeenSet;
@@ -113,6 +119,12 @@ namespace TencentCloud
                      */
                     int64_t m_exportAll;
                     bool m_exportAllHasBeenSet;
+
+                    /**
+                     * 0:导出界面展示；1:导出全部结果事件
+                     */
+                    int64_t m_isExportDetail;
+                    bool m_isExportDetailHasBeenSet;
 
                 };
             }

@@ -29,7 +29,10 @@ ChatCompletionsRequest::ChatCompletionsRequest() :
     m_streamModerationHasBeenSet(false),
     m_topPHasBeenSet(false),
     m_temperatureHasBeenSet(false),
-    m_enableEnhancementHasBeenSet(false)
+    m_enableEnhancementHasBeenSet(false),
+    m_toolsHasBeenSet(false),
+    m_toolChoiceHasBeenSet(false),
+    m_customToolHasBeenSet(false)
 {
 }
 
@@ -101,6 +104,38 @@ string ChatCompletionsRequest::ToJsonString() const
         string key = "EnableEnhancement";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_enableEnhancement, allocator);
+    }
+
+    if (m_toolsHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Tools";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_tools.begin(); itr != m_tools.end(); ++itr, ++i)
+        {
+            d[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(d[key.c_str()][i], allocator);
+        }
+    }
+
+    if (m_toolChoiceHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ToolChoice";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_toolChoice.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_customToolHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "CustomTool";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_customTool.ToJsonObject(d[key.c_str()], allocator);
     }
 
 
@@ -221,6 +256,54 @@ void ChatCompletionsRequest::SetEnableEnhancement(const bool& _enableEnhancement
 bool ChatCompletionsRequest::EnableEnhancementHasBeenSet() const
 {
     return m_enableEnhancementHasBeenSet;
+}
+
+vector<Tool> ChatCompletionsRequest::GetTools() const
+{
+    return m_tools;
+}
+
+void ChatCompletionsRequest::SetTools(const vector<Tool>& _tools)
+{
+    m_tools = _tools;
+    m_toolsHasBeenSet = true;
+}
+
+bool ChatCompletionsRequest::ToolsHasBeenSet() const
+{
+    return m_toolsHasBeenSet;
+}
+
+string ChatCompletionsRequest::GetToolChoice() const
+{
+    return m_toolChoice;
+}
+
+void ChatCompletionsRequest::SetToolChoice(const string& _toolChoice)
+{
+    m_toolChoice = _toolChoice;
+    m_toolChoiceHasBeenSet = true;
+}
+
+bool ChatCompletionsRequest::ToolChoiceHasBeenSet() const
+{
+    return m_toolChoiceHasBeenSet;
+}
+
+Tool ChatCompletionsRequest::GetCustomTool() const
+{
+    return m_customTool;
+}
+
+void ChatCompletionsRequest::SetCustomTool(const Tool& _customTool)
+{
+    m_customTool = _customTool;
+    m_customToolHasBeenSet = true;
+}
+
+bool ChatCompletionsRequest::CustomToolHasBeenSet() const
+{
+    return m_customToolHasBeenSet;
 }
 
 

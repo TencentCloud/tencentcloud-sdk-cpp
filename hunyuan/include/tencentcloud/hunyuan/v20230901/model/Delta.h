@@ -24,6 +24,7 @@
 #include <tencentcloud/core/utils/rapidjson/writer.h>
 #include <tencentcloud/core/utils/rapidjson/stringbuffer.h>
 #include <tencentcloud/core/AbstractModel.h>
+#include <tencentcloud/hunyuan/v20230901/model/ToolCall.h>
 
 
 namespace TencentCloud
@@ -88,6 +89,43 @@ namespace TencentCloud
                      */
                     bool ContentHasBeenSet() const;
 
+                    /**
+                     * 获取模型生成的工具调用，仅 hunyuan-functioncall 模型支持
+说明：
+对于每一次的输出值应该以Id为标识对Type、Name、Arguments字段进行合并。
+
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return ToolCalls 模型生成的工具调用，仅 hunyuan-functioncall 模型支持
+说明：
+对于每一次的输出值应该以Id为标识对Type、Name、Arguments字段进行合并。
+
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::vector<ToolCall> GetToolCalls() const;
+
+                    /**
+                     * 设置模型生成的工具调用，仅 hunyuan-functioncall 模型支持
+说明：
+对于每一次的输出值应该以Id为标识对Type、Name、Arguments字段进行合并。
+
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _toolCalls 模型生成的工具调用，仅 hunyuan-functioncall 模型支持
+说明：
+对于每一次的输出值应该以Id为标识对Type、Name、Arguments字段进行合并。
+
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetToolCalls(const std::vector<ToolCall>& _toolCalls);
+
+                    /**
+                     * 判断参数 ToolCalls 是否已赋值
+                     * @return ToolCalls 是否已赋值
+                     * 
+                     */
+                    bool ToolCallsHasBeenSet() const;
+
                 private:
 
                     /**
@@ -101,6 +139,16 @@ namespace TencentCloud
                      */
                     std::string m_content;
                     bool m_contentHasBeenSet;
+
+                    /**
+                     * 模型生成的工具调用，仅 hunyuan-functioncall 模型支持
+说明：
+对于每一次的输出值应该以Id为标识对Type、Name、Arguments字段进行合并。
+
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::vector<ToolCall> m_toolCalls;
+                    bool m_toolCallsHasBeenSet;
 
                 };
             }

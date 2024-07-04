@@ -41,7 +41,8 @@ DeployRecordDetail::DeployRecordDetail() :
     m_portHasBeenSet(false),
     m_envIdHasBeenSet(false),
     m_tCBTypeHasBeenSet(false),
-    m_regionHasBeenSet(false)
+    m_regionHasBeenSet(false),
+    m_urlHasBeenSet(false)
 {
 }
 
@@ -263,6 +264,19 @@ CoreInternalOutcome DeployRecordDetail::Deserialize(const rapidjson::Value &valu
         m_regionHasBeenSet = true;
     }
 
+    if (value.HasMember("Url") && !value["Url"].IsNull())
+    {
+        if (!value["Url"].IsArray())
+            return CoreInternalOutcome(Core::Error("response `DeployRecordDetail.Url` is not array type"));
+
+        const rapidjson::Value &tmpValue = value["Url"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            m_url.push_back((*itr).GetString());
+        }
+        m_urlHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -441,6 +455,19 @@ void DeployRecordDetail::ToJsonObject(rapidjson::Value &value, rapidjson::Docume
         string key = "Region";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_region.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_urlHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Url";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        for (auto itr = m_url.begin(); itr != m_url.end(); ++itr)
+        {
+            value[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
+        }
     }
 
 }
@@ -780,5 +807,21 @@ void DeployRecordDetail::SetRegion(const string& _region)
 bool DeployRecordDetail::RegionHasBeenSet() const
 {
     return m_regionHasBeenSet;
+}
+
+vector<string> DeployRecordDetail::GetUrl() const
+{
+    return m_url;
+}
+
+void DeployRecordDetail::SetUrl(const vector<string>& _url)
+{
+    m_url = _url;
+    m_urlHasBeenSet = true;
+}
+
+bool DeployRecordDetail::UrlHasBeenSet() const
+{
+    return m_urlHasBeenSet;
 }
 

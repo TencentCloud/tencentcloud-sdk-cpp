@@ -23,7 +23,10 @@ using namespace TencentCloud::Cls::V20201016::Model;
 using namespace std;
 
 DescribeMachinesRequest::DescribeMachinesRequest() :
-    m_groupIdHasBeenSet(false)
+    m_groupIdHasBeenSet(false),
+    m_filtersHasBeenSet(false),
+    m_offsetHasBeenSet(false),
+    m_limitHasBeenSet(false)
 {
 }
 
@@ -40,6 +43,37 @@ string DescribeMachinesRequest::ToJsonString() const
         string key = "GroupId";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_groupId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_filtersHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Filters";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_filters.begin(); itr != m_filters.end(); ++itr, ++i)
+        {
+            d[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(d[key.c_str()][i], allocator);
+        }
+    }
+
+    if (m_offsetHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Offset";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_offset, allocator);
+    }
+
+    if (m_limitHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Limit";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_limit, allocator);
     }
 
 
@@ -64,6 +98,54 @@ void DescribeMachinesRequest::SetGroupId(const string& _groupId)
 bool DescribeMachinesRequest::GroupIdHasBeenSet() const
 {
     return m_groupIdHasBeenSet;
+}
+
+vector<Filter> DescribeMachinesRequest::GetFilters() const
+{
+    return m_filters;
+}
+
+void DescribeMachinesRequest::SetFilters(const vector<Filter>& _filters)
+{
+    m_filters = _filters;
+    m_filtersHasBeenSet = true;
+}
+
+bool DescribeMachinesRequest::FiltersHasBeenSet() const
+{
+    return m_filtersHasBeenSet;
+}
+
+uint64_t DescribeMachinesRequest::GetOffset() const
+{
+    return m_offset;
+}
+
+void DescribeMachinesRequest::SetOffset(const uint64_t& _offset)
+{
+    m_offset = _offset;
+    m_offsetHasBeenSet = true;
+}
+
+bool DescribeMachinesRequest::OffsetHasBeenSet() const
+{
+    return m_offsetHasBeenSet;
+}
+
+uint64_t DescribeMachinesRequest::GetLimit() const
+{
+    return m_limit;
+}
+
+void DescribeMachinesRequest::SetLimit(const uint64_t& _limit)
+{
+    m_limit = _limit;
+    m_limitHasBeenSet = true;
+}
+
+bool DescribeMachinesRequest::LimitHasBeenSet() const
+{
+    return m_limitHasBeenSet;
 }
 
 

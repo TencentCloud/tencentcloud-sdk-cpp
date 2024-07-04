@@ -24,7 +24,8 @@ using namespace std;
 
 ExportBaselineRuleDetectListRequest::ExportBaselineRuleDetectListRequest() :
     m_filtersHasBeenSet(false),
-    m_exportAllHasBeenSet(false)
+    m_exportAllHasBeenSet(false),
+    m_isExportDetailHasBeenSet(false)
 {
 }
 
@@ -56,6 +57,14 @@ string ExportBaselineRuleDetectListRequest::ToJsonString() const
         string key = "ExportAll";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_exportAll, allocator);
+    }
+
+    if (m_isExportDetailHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "IsExportDetail";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_isExportDetail, allocator);
     }
 
 
@@ -96,6 +105,22 @@ void ExportBaselineRuleDetectListRequest::SetExportAll(const int64_t& _exportAll
 bool ExportBaselineRuleDetectListRequest::ExportAllHasBeenSet() const
 {
     return m_exportAllHasBeenSet;
+}
+
+int64_t ExportBaselineRuleDetectListRequest::GetIsExportDetail() const
+{
+    return m_isExportDetail;
+}
+
+void ExportBaselineRuleDetectListRequest::SetIsExportDetail(const int64_t& _isExportDetail)
+{
+    m_isExportDetail = _isExportDetail;
+    m_isExportDetailHasBeenSet = true;
+}
+
+bool ExportBaselineRuleDetectListRequest::IsExportDetailHasBeenSet() const
+{
+    return m_isExportDetailHasBeenSet;
 }
 
 

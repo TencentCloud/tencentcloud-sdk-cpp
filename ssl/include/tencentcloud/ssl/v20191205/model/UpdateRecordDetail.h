@@ -568,6 +568,31 @@ namespace TencentCloud
                      */
                     bool TCBTypeHasBeenSet() const;
 
+                    /**
+                     * 获取监听器Url(clb专属)
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return Url 监听器Url(clb专属)
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::string GetUrl() const;
+
+                    /**
+                     * 设置监听器Url(clb专属)
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _url 监听器Url(clb专属)
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetUrl(const std::string& _url);
+
+                    /**
+                     * 判断参数 Url 是否已赋值
+                     * @return Url 是否已赋值
+                     * 
+                     */
+                    bool UrlHasBeenSet() const;
+
                 private:
 
                     /**
@@ -716,6 +741,13 @@ namespace TencentCloud
                      */
                     std::string m_tCBType;
                     bool m_tCBTypeHasBeenSet;
+
+                    /**
+                     * 监听器Url(clb专属)
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_url;
+                    bool m_urlHasBeenSet;
 
                 };
             }

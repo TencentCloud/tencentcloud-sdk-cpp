@@ -100,7 +100,9 @@ namespace TencentCloud
                 BeautifyPicOutcomeCallable BeautifyPicCallable(const Model::BeautifyPicRequest& request);
 
                 /**
-                 *视频美颜(此接口目前已下线)
+                 *产品不再维护，准备下线。
+
+视频美颜(此接口目前已下线)
                  * @param req BeautifyVideoRequest
                  * @return BeautifyVideoOutcome
                  */
@@ -109,7 +111,9 @@ namespace TencentCloud
                 BeautifyVideoOutcomeCallable BeautifyVideoCallable(const Model::BeautifyVideoRequest& request);
 
                 /**
-                 *撤销视频美颜任务请求
+                 *产品不再维护，准备下线。
+
+撤销视频美颜任务请求
                  * @param req CancelBeautifyVideoJobRequest
                  * @return CancelBeautifyVideoJobOutcome
                  */
@@ -148,7 +152,9 @@ namespace TencentCloud
                 GetModelListOutcomeCallable GetModelListCallable(const Model::GetModelListRequest& request);
 
                 /**
-                 *查询视频美颜处理进度
+                 *产品不再维护，准备下线。
+
+查询视频美颜处理进度
                  * @param req QueryBeautifyVideoJobRequest
                  * @return QueryBeautifyVideoJobOutcome
                  */

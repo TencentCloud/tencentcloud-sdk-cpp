@@ -23,7 +23,8 @@ using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Iotexplorer::V20190423::Model;
 using namespace std;
 
-ActivateTWeCallLicenseResponse::ActivateTWeCallLicenseResponse()
+ActivateTWeCallLicenseResponse::ActivateTWeCallLicenseResponse() :
+    m_deviceListHasBeenSet(false)
 {
 }
 
@@ -61,6 +62,26 @@ CoreInternalOutcome ActivateTWeCallLicenseResponse::Deserialize(const string &pa
     }
 
 
+    if (rsp.HasMember("DeviceList") && !rsp["DeviceList"].IsNull())
+    {
+        if (!rsp["DeviceList"].IsArray())
+            return CoreInternalOutcome(Core::Error("response `DeviceList` is not array type"));
+
+        const rapidjson::Value &tmpValue = rsp["DeviceList"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            DeviceActiveResult item;
+            CoreInternalOutcome outcome = item.Deserialize(*itr);
+            if (!outcome.IsSuccess())
+            {
+                outcome.GetError().SetRequestId(requestId);
+                return outcome;
+            }
+            m_deviceList.push_back(item);
+        }
+        m_deviceListHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -70,6 +91,21 @@ string ActivateTWeCallLicenseResponse::ToJsonString() const
     rapidjson::Document value;
     value.SetObject();
     rapidjson::Document::AllocatorType& allocator = value.GetAllocator();
+
+    if (m_deviceListHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "DeviceList";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_deviceList.begin(); itr != m_deviceList.end(); ++itr, ++i)
+        {
+            value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(value[key.c_str()][i], allocator);
+        }
+    }
 
     rapidjson::Value iKey(rapidjson::kStringType);
     string key = "RequestId";
@@ -82,5 +118,15 @@ string ActivateTWeCallLicenseResponse::ToJsonString() const
     return buffer.GetString();
 }
 
+
+vector<DeviceActiveResult> ActivateTWeCallLicenseResponse::GetDeviceList() const
+{
+    return m_deviceList;
+}
+
+bool ActivateTWeCallLicenseResponse::DeviceListHasBeenSet() const
+{
+    return m_deviceListHasBeenSet;
+}
 
 

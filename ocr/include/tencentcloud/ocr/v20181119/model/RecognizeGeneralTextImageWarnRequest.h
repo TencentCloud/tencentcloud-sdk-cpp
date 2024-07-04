@@ -164,22 +164,22 @@ namespace TencentCloud
 
                     /**
                      * 获取支持的模板类型
-- General 通用告警
-- LicensePlate 车牌告警
+- General 通用告警（支持所有类型告警）
+- LicensePlate 车牌告警（支持翻拍告警）
                      * @return Type 支持的模板类型
-- General 通用告警
-- LicensePlate 车牌告警
+- General 通用告警（支持所有类型告警）
+- LicensePlate 车牌告警（支持翻拍告警）
                      * 
                      */
                     std::string GetType() const;
 
                     /**
                      * 设置支持的模板类型
-- General 通用告警
-- LicensePlate 车牌告警
+- General 通用告警（支持所有类型告警）
+- LicensePlate 车牌告警（支持翻拍告警）
                      * @param _type 支持的模板类型
-- General 通用告警
-- LicensePlate 车牌告警
+- General 通用告警（支持所有类型告警）
+- LicensePlate 车牌告警（支持翻拍告警）
                      * 
                      */
                     void SetType(const std::string& _type);
@@ -228,8 +228,8 @@ namespace TencentCloud
 
                     /**
                      * 支持的模板类型
-- General 通用告警
-- LicensePlate 车牌告警
+- General 通用告警（支持所有类型告警）
+- LicensePlate 车牌告警（支持翻拍告警）
                      */
                     std::string m_type;
                     bool m_typeHasBeenSet;

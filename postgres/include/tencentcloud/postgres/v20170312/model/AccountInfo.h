@@ -68,15 +68,15 @@ namespace TencentCloud
                     bool DBInstanceIdHasBeenSet() const;
 
                     /**
-                     * 获取帐号
-                     * @return UserName 帐号
+                     * 获取账号
+                     * @return UserName 账号
                      * 
                      */
                     std::string GetUserName() const;
 
                     /**
-                     * 设置帐号
-                     * @param _userName 帐号
+                     * 设置账号
+                     * @param _userName 账号
                      * 
                      */
                     void SetUserName(const std::string& _userName);
@@ -89,15 +89,15 @@ namespace TencentCloud
                     bool UserNameHasBeenSet() const;
 
                     /**
-                     * 获取帐号备注
-                     * @return Remark 帐号备注
+                     * 获取账号备注
+                     * @return Remark 账号备注
                      * 
                      */
                     std::string GetRemark() const;
 
                     /**
-                     * 设置帐号备注
-                     * @param _remark 帐号备注
+                     * 设置账号备注
+                     * @param _remark 账号备注
                      * 
                      */
                     void SetRemark(const std::string& _remark);
@@ -110,15 +110,15 @@ namespace TencentCloud
                     bool RemarkHasBeenSet() const;
 
                     /**
-                     * 获取帐号状态。 1-创建中，2-正常，3-修改中，4-密码重置中，-1-删除中
-                     * @return Status 帐号状态。 1-创建中，2-正常，3-修改中，4-密码重置中，-1-删除中
+                     * 获取账号状态。 1-创建中，2-正常，3-修改中，4-密码重置中，5-锁定中，-1-删除中
+                     * @return Status 账号状态。 1-创建中，2-正常，3-修改中，4-密码重置中，5-锁定中，-1-删除中
                      * 
                      */
                     int64_t GetStatus() const;
 
                     /**
-                     * 设置帐号状态。 1-创建中，2-正常，3-修改中，4-密码重置中，-1-删除中
-                     * @param _status 帐号状态。 1-创建中，2-正常，3-修改中，4-密码重置中，-1-删除中
+                     * 设置账号状态。 1-创建中，2-正常，3-修改中，4-密码重置中，5-锁定中，-1-删除中
+                     * @param _status 账号状态。 1-创建中，2-正常，3-修改中，4-密码重置中，5-锁定中，-1-删除中
                      * 
                      */
                     void SetStatus(const int64_t& _status);
@@ -131,15 +131,15 @@ namespace TencentCloud
                     bool StatusHasBeenSet() const;
 
                     /**
-                     * 获取帐号创建时间
-                     * @return CreateTime 帐号创建时间
+                     * 获取账号创建时间
+                     * @return CreateTime 账号创建时间
                      * 
                      */
                     std::string GetCreateTime() const;
 
                     /**
-                     * 设置帐号创建时间
-                     * @param _createTime 帐号创建时间
+                     * 设置账号创建时间
+                     * @param _createTime 账号创建时间
                      * 
                      */
                     void SetCreateTime(const std::string& _createTime);
@@ -152,15 +152,15 @@ namespace TencentCloud
                     bool CreateTimeHasBeenSet() const;
 
                     /**
-                     * 获取帐号最后一次更新时间
-                     * @return UpdateTime 帐号最后一次更新时间
+                     * 获取账号最后一次更新时间
+                     * @return UpdateTime 账号最后一次更新时间
                      * 
                      */
                     std::string GetUpdateTime() const;
 
                     /**
-                     * 设置帐号最后一次更新时间
-                     * @param _updateTime 帐号最后一次更新时间
+                     * 设置账号最后一次更新时间
+                     * @param _updateTime 账号最后一次更新时间
                      * 
                      */
                     void SetUpdateTime(const std::string& _updateTime);
@@ -172,6 +172,27 @@ namespace TencentCloud
                      */
                     bool UpdateTimeHasBeenSet() const;
 
+                    /**
+                     * 获取账号类型
+                     * @return UserType 账号类型
+                     * 
+                     */
+                    std::string GetUserType() const;
+
+                    /**
+                     * 设置账号类型
+                     * @param _userType 账号类型
+                     * 
+                     */
+                    void SetUserType(const std::string& _userType);
+
+                    /**
+                     * 判断参数 UserType 是否已赋值
+                     * @return UserType 是否已赋值
+                     * 
+                     */
+                    bool UserTypeHasBeenSet() const;
+
                 private:
 
                     /**
@@ -181,34 +202,40 @@ namespace TencentCloud
                     bool m_dBInstanceIdHasBeenSet;
 
                     /**
-                     * 帐号
+                     * 账号
                      */
                     std::string m_userName;
                     bool m_userNameHasBeenSet;
 
                     /**
-                     * 帐号备注
+                     * 账号备注
                      */
                     std::string m_remark;
                     bool m_remarkHasBeenSet;
 
                     /**
-                     * 帐号状态。 1-创建中，2-正常，3-修改中，4-密码重置中，-1-删除中
+                     * 账号状态。 1-创建中，2-正常，3-修改中，4-密码重置中，5-锁定中，-1-删除中
                      */
                     int64_t m_status;
                     bool m_statusHasBeenSet;
 
                     /**
-                     * 帐号创建时间
+                     * 账号创建时间
                      */
                     std::string m_createTime;
                     bool m_createTimeHasBeenSet;
 
                     /**
-                     * 帐号最后一次更新时间
+                     * 账号最后一次更新时间
                      */
                     std::string m_updateTime;
                     bool m_updateTimeHasBeenSet;
+
+                    /**
+                     * 账号类型
+                     */
+                    std::string m_userType;
+                    bool m_userTypeHasBeenSet;
 
                 };
             }
