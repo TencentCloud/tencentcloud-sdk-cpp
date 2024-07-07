@@ -29,7 +29,8 @@ ActivityPara::ActivityPara() :
     m_adaptiveDynamicStreamingTaskHasBeenSet(false),
     m_aiContentReviewTaskHasBeenSet(false),
     m_aiAnalysisTaskHasBeenSet(false),
-    m_aiRecognitionTaskHasBeenSet(false)
+    m_aiRecognitionTaskHasBeenSet(false),
+    m_qualityControlTaskHasBeenSet(false)
 {
 }
 
@@ -191,6 +192,23 @@ CoreInternalOutcome ActivityPara::Deserialize(const rapidjson::Value &value)
         m_aiRecognitionTaskHasBeenSet = true;
     }
 
+    if (value.HasMember("QualityControlTask") && !value["QualityControlTask"].IsNull())
+    {
+        if (!value["QualityControlTask"].IsObject())
+        {
+            return CoreInternalOutcome(Core::Error("response `ActivityPara.QualityControlTask` is not object type").SetRequestId(requestId));
+        }
+
+        CoreInternalOutcome outcome = m_qualityControlTask.Deserialize(value["QualityControlTask"]);
+        if (!outcome.IsSuccess())
+        {
+            outcome.GetError().SetRequestId(requestId);
+            return outcome;
+        }
+
+        m_qualityControlTaskHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -277,6 +295,15 @@ void ActivityPara::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Al
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
         m_aiRecognitionTask.ToJsonObject(value[key.c_str()], allocator);
+    }
+
+    if (m_qualityControlTaskHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "QualityControlTask";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_qualityControlTask.ToJsonObject(value[key.c_str()], allocator);
     }
 
 }
@@ -424,5 +451,21 @@ void ActivityPara::SetAiRecognitionTask(const AiRecognitionTaskInput& _aiRecogni
 bool ActivityPara::AiRecognitionTaskHasBeenSet() const
 {
     return m_aiRecognitionTaskHasBeenSet;
+}
+
+AiQualityControlTaskInput ActivityPara::GetQualityControlTask() const
+{
+    return m_qualityControlTask;
+}
+
+void ActivityPara::SetQualityControlTask(const AiQualityControlTaskInput& _qualityControlTask)
+{
+    m_qualityControlTask = _qualityControlTask;
+    m_qualityControlTaskHasBeenSet = true;
+}
+
+bool ActivityPara::QualityControlTaskHasBeenSet() const
+{
+    return m_qualityControlTaskHasBeenSet;
 }
 

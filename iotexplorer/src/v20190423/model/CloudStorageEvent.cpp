@@ -25,7 +25,8 @@ CloudStorageEvent::CloudStorageEvent() :
     m_endTimeHasBeenSet(false),
     m_thumbnailHasBeenSet(false),
     m_eventIdHasBeenSet(false),
-    m_uploadStatusHasBeenSet(false)
+    m_uploadStatusHasBeenSet(false),
+    m_dataHasBeenSet(false)
 {
 }
 
@@ -84,6 +85,16 @@ CoreInternalOutcome CloudStorageEvent::Deserialize(const rapidjson::Value &value
         m_uploadStatusHasBeenSet = true;
     }
 
+    if (value.HasMember("Data") && !value["Data"].IsNull())
+    {
+        if (!value["Data"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `CloudStorageEvent.Data` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_data = string(value["Data"].GetString());
+        m_dataHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -129,6 +140,14 @@ void CloudStorageEvent::ToJsonObject(rapidjson::Value &value, rapidjson::Documen
         string key = "UploadStatus";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_uploadStatus.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_dataHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Data";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_data.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -212,5 +231,21 @@ void CloudStorageEvent::SetUploadStatus(const string& _uploadStatus)
 bool CloudStorageEvent::UploadStatusHasBeenSet() const
 {
     return m_uploadStatusHasBeenSet;
+}
+
+string CloudStorageEvent::GetData() const
+{
+    return m_data;
+}
+
+void CloudStorageEvent::SetData(const string& _data)
+{
+    m_data = _data;
+    m_dataHasBeenSet = true;
+}
+
+bool CloudStorageEvent::DataHasBeenSet() const
+{
+    return m_dataHasBeenSet;
 }
 

@@ -28,6 +28,7 @@
 #include <tencentcloud/dlc/v20210125/model/CrontabResumeSuspendStrategy.h>
 #include <tencentcloud/dlc/v20210125/model/NetworkConnection.h>
 #include <tencentcloud/dlc/v20210125/model/SessionResourceTemplate.h>
+#include <tencentcloud/dlc/v20210125/model/AccessInfo.h>
 
 
 namespace TencentCloud
@@ -1273,6 +1274,56 @@ namespace TencentCloud
                      */
                     bool EngineResourceUsedCUHasBeenSet() const;
 
+                    /**
+                     * 获取引擎的访问信息
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return AccessInfos 引擎的访问信息
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::vector<AccessInfo> GetAccessInfos() const;
+
+                    /**
+                     * 设置引擎的访问信息
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _accessInfos 引擎的访问信息
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetAccessInfos(const std::vector<AccessInfo>& _accessInfos);
+
+                    /**
+                     * 判断参数 AccessInfos 是否已赋值
+                     * @return AccessInfos 是否已赋值
+                     * 
+                     */
+                    bool AccessInfosHasBeenSet() const;
+
+                    /**
+                     * 获取引擎所在网络名称
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return EngineNetworkName 引擎所在网络名称
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::string GetEngineNetworkName() const;
+
+                    /**
+                     * 设置引擎所在网络名称
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _engineNetworkName 引擎所在网络名称
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetEngineNetworkName(const std::string& _engineNetworkName);
+
+                    /**
+                     * 判断参数 EngineNetworkName 是否已赋值
+                     * @return EngineNetworkName 是否已赋值
+                     * 
+                     */
+                    bool EngineNetworkNameHasBeenSet() const;
+
                 private:
 
                     /**
@@ -1618,6 +1669,20 @@ namespace TencentCloud
                      */
                     int64_t m_engineResourceUsedCU;
                     bool m_engineResourceUsedCUHasBeenSet;
+
+                    /**
+                     * 引擎的访问信息
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::vector<AccessInfo> m_accessInfos;
+                    bool m_accessInfosHasBeenSet;
+
+                    /**
+                     * 引擎所在网络名称
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_engineNetworkName;
+                    bool m_engineNetworkNameHasBeenSet;
 
                 };
             }

@@ -470,6 +470,49 @@ MpsClient::CreatePersonSampleOutcomeCallable MpsClient::CreatePersonSampleCallab
     return task->get_future();
 }
 
+MpsClient::CreateQualityControlTemplateOutcome MpsClient::CreateQualityControlTemplate(const CreateQualityControlTemplateRequest &request)
+{
+    auto outcome = MakeRequest(request, "CreateQualityControlTemplate");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        CreateQualityControlTemplateResponse rsp = CreateQualityControlTemplateResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return CreateQualityControlTemplateOutcome(rsp);
+        else
+            return CreateQualityControlTemplateOutcome(o.GetError());
+    }
+    else
+    {
+        return CreateQualityControlTemplateOutcome(outcome.GetError());
+    }
+}
+
+void MpsClient::CreateQualityControlTemplateAsync(const CreateQualityControlTemplateRequest& request, const CreateQualityControlTemplateAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->CreateQualityControlTemplate(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+MpsClient::CreateQualityControlTemplateOutcomeCallable MpsClient::CreateQualityControlTemplateCallable(const CreateQualityControlTemplateRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<CreateQualityControlTemplateOutcome()>>(
+        [this, request]()
+        {
+            return this->CreateQualityControlTemplate(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 MpsClient::CreateSampleSnapshotTemplateOutcome MpsClient::CreateSampleSnapshotTemplate(const CreateSampleSnapshotTemplateRequest &request)
 {
     auto outcome = MakeRequest(request, "CreateSampleSnapshotTemplate");
@@ -1244,6 +1287,49 @@ MpsClient::DeletePersonSampleOutcomeCallable MpsClient::DeletePersonSampleCallab
     return task->get_future();
 }
 
+MpsClient::DeleteQualityControlTemplateOutcome MpsClient::DeleteQualityControlTemplate(const DeleteQualityControlTemplateRequest &request)
+{
+    auto outcome = MakeRequest(request, "DeleteQualityControlTemplate");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DeleteQualityControlTemplateResponse rsp = DeleteQualityControlTemplateResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DeleteQualityControlTemplateOutcome(rsp);
+        else
+            return DeleteQualityControlTemplateOutcome(o.GetError());
+    }
+    else
+    {
+        return DeleteQualityControlTemplateOutcome(outcome.GetError());
+    }
+}
+
+void MpsClient::DeleteQualityControlTemplateAsync(const DeleteQualityControlTemplateRequest& request, const DeleteQualityControlTemplateAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DeleteQualityControlTemplate(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+MpsClient::DeleteQualityControlTemplateOutcomeCallable MpsClient::DeleteQualityControlTemplateCallable(const DeleteQualityControlTemplateRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DeleteQualityControlTemplateOutcome()>>(
+        [this, request]()
+        {
+            return this->DeleteQualityControlTemplate(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 MpsClient::DeleteSampleSnapshotTemplateOutcome MpsClient::DeleteSampleSnapshotTemplate(const DeleteSampleSnapshotTemplateRequest &request)
 {
     auto outcome = MakeRequest(request, "DeleteSampleSnapshotTemplate");
@@ -2011,6 +2097,49 @@ MpsClient::DescribePersonSamplesOutcomeCallable MpsClient::DescribePersonSamples
         [this, request]()
         {
             return this->DescribePersonSamples(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+MpsClient::DescribeQualityControlTemplatesOutcome MpsClient::DescribeQualityControlTemplates(const DescribeQualityControlTemplatesRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeQualityControlTemplates");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeQualityControlTemplatesResponse rsp = DescribeQualityControlTemplatesResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeQualityControlTemplatesOutcome(rsp);
+        else
+            return DescribeQualityControlTemplatesOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeQualityControlTemplatesOutcome(outcome.GetError());
+    }
+}
+
+void MpsClient::DescribeQualityControlTemplatesAsync(const DescribeQualityControlTemplatesRequest& request, const DescribeQualityControlTemplatesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeQualityControlTemplates(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+MpsClient::DescribeQualityControlTemplatesOutcomeCallable MpsClient::DescribeQualityControlTemplatesCallable(const DescribeQualityControlTemplatesRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeQualityControlTemplatesOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeQualityControlTemplates(request);
         }
     );
 
@@ -3516,6 +3645,49 @@ MpsClient::ModifyPersonSampleOutcomeCallable MpsClient::ModifyPersonSampleCallab
         [this, request]()
         {
             return this->ModifyPersonSample(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+MpsClient::ModifyQualityControlTemplateOutcome MpsClient::ModifyQualityControlTemplate(const ModifyQualityControlTemplateRequest &request)
+{
+    auto outcome = MakeRequest(request, "ModifyQualityControlTemplate");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ModifyQualityControlTemplateResponse rsp = ModifyQualityControlTemplateResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ModifyQualityControlTemplateOutcome(rsp);
+        else
+            return ModifyQualityControlTemplateOutcome(o.GetError());
+    }
+    else
+    {
+        return ModifyQualityControlTemplateOutcome(outcome.GetError());
+    }
+}
+
+void MpsClient::ModifyQualityControlTemplateAsync(const ModifyQualityControlTemplateRequest& request, const ModifyQualityControlTemplateAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->ModifyQualityControlTemplate(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+MpsClient::ModifyQualityControlTemplateOutcomeCallable MpsClient::ModifyQualityControlTemplateCallable(const ModifyQualityControlTemplateRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<ModifyQualityControlTemplateOutcome()>>(
+        [this, request]()
+        {
+            return this->ModifyQualityControlTemplate(request);
         }
     );
 

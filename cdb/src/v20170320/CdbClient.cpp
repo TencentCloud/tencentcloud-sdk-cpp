@@ -1244,6 +1244,49 @@ CdbClient::CreateRoInstanceIpOutcomeCallable CdbClient::CreateRoInstanceIpCallab
     return task->get_future();
 }
 
+CdbClient::CreateRotationPasswordOutcome CdbClient::CreateRotationPassword(const CreateRotationPasswordRequest &request)
+{
+    auto outcome = MakeRequest(request, "CreateRotationPassword");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        CreateRotationPasswordResponse rsp = CreateRotationPasswordResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return CreateRotationPasswordOutcome(rsp);
+        else
+            return CreateRotationPasswordOutcome(o.GetError());
+    }
+    else
+    {
+        return CreateRotationPasswordOutcome(outcome.GetError());
+    }
+}
+
+void CdbClient::CreateRotationPasswordAsync(const CreateRotationPasswordRequest& request, const CreateRotationPasswordAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->CreateRotationPassword(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+CdbClient::CreateRotationPasswordOutcomeCallable CdbClient::CreateRotationPasswordCallable(const CreateRotationPasswordRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<CreateRotationPasswordOutcome()>>(
+        [this, request]()
+        {
+            return this->CreateRotationPassword(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 CdbClient::DeleteAccountsOutcome CdbClient::DeleteAccounts(const DeleteAccountsRequest &request)
 {
     auto outcome = MakeRequest(request, "DeleteAccounts");
@@ -1624,6 +1667,49 @@ CdbClient::DeleteParamTemplateOutcomeCallable CdbClient::DeleteParamTemplateCall
         [this, request]()
         {
             return this->DeleteParamTemplate(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+CdbClient::DeleteRotationPasswordOutcome CdbClient::DeleteRotationPassword(const DeleteRotationPasswordRequest &request)
+{
+    auto outcome = MakeRequest(request, "DeleteRotationPassword");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DeleteRotationPasswordResponse rsp = DeleteRotationPasswordResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DeleteRotationPasswordOutcome(rsp);
+        else
+            return DeleteRotationPasswordOutcome(o.GetError());
+    }
+    else
+    {
+        return DeleteRotationPasswordOutcome(outcome.GetError());
+    }
+}
+
+void CdbClient::DeleteRotationPasswordAsync(const DeleteRotationPasswordRequest& request, const DeleteRotationPasswordAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DeleteRotationPassword(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+CdbClient::DeleteRotationPasswordOutcomeCallable CdbClient::DeleteRotationPasswordCallable(const DeleteRotationPasswordRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DeleteRotationPasswordOutcome()>>(
+        [this, request]()
+        {
+            return this->DeleteRotationPassword(request);
         }
     );
 
@@ -6397,6 +6483,49 @@ CdbClient::RenewDBInstanceOutcomeCallable CdbClient::RenewDBInstanceCallable(con
         [this, request]()
         {
             return this->RenewDBInstance(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+CdbClient::ResetPasswordOutcome CdbClient::ResetPassword(const ResetPasswordRequest &request)
+{
+    auto outcome = MakeRequest(request, "ResetPassword");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ResetPasswordResponse rsp = ResetPasswordResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ResetPasswordOutcome(rsp);
+        else
+            return ResetPasswordOutcome(o.GetError());
+    }
+    else
+    {
+        return ResetPasswordOutcome(outcome.GetError());
+    }
+}
+
+void CdbClient::ResetPasswordAsync(const ResetPasswordRequest& request, const ResetPasswordAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->ResetPassword(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+CdbClient::ResetPasswordOutcomeCallable CdbClient::ResetPasswordCallable(const ResetPasswordRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<ResetPasswordOutcome()>>(
+        [this, request]()
+        {
+            return this->ResetPassword(request);
         }
     );
 

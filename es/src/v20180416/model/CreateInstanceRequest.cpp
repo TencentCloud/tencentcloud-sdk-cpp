@@ -57,7 +57,8 @@ CreateInstanceRequest::CreateInstanceRequest() :
     m_enableHybridStorageHasBeenSet(false),
     m_diskEnhanceHasBeenSet(false),
     m_enableDiagnoseHasBeenSet(false),
-    m_cdcIdHasBeenSet(false)
+    m_cdcIdHasBeenSet(false),
+    m_disasterRecoverGroupAffinityHasBeenSet(false)
 {
 }
 
@@ -374,6 +375,14 @@ string CreateInstanceRequest::ToJsonString() const
         string key = "CdcId";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_cdcId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_disasterRecoverGroupAffinityHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "DisasterRecoverGroupAffinity";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_disasterRecoverGroupAffinity, allocator);
     }
 
 
@@ -942,6 +951,22 @@ void CreateInstanceRequest::SetCdcId(const string& _cdcId)
 bool CreateInstanceRequest::CdcIdHasBeenSet() const
 {
     return m_cdcIdHasBeenSet;
+}
+
+uint64_t CreateInstanceRequest::GetDisasterRecoverGroupAffinity() const
+{
+    return m_disasterRecoverGroupAffinity;
+}
+
+void CreateInstanceRequest::SetDisasterRecoverGroupAffinity(const uint64_t& _disasterRecoverGroupAffinity)
+{
+    m_disasterRecoverGroupAffinity = _disasterRecoverGroupAffinity;
+    m_disasterRecoverGroupAffinityHasBeenSet = true;
+}
+
+bool CreateInstanceRequest::DisasterRecoverGroupAffinityHasBeenSet() const
+{
+    return m_disasterRecoverGroupAffinityHasBeenSet;
 }
 
 

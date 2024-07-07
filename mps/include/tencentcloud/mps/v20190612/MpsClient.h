@@ -43,6 +43,8 @@
 #include <tencentcloud/mps/v20190612/model/CreateImageSpriteTemplateResponse.h>
 #include <tencentcloud/mps/v20190612/model/CreatePersonSampleRequest.h>
 #include <tencentcloud/mps/v20190612/model/CreatePersonSampleResponse.h>
+#include <tencentcloud/mps/v20190612/model/CreateQualityControlTemplateRequest.h>
+#include <tencentcloud/mps/v20190612/model/CreateQualityControlTemplateResponse.h>
 #include <tencentcloud/mps/v20190612/model/CreateSampleSnapshotTemplateRequest.h>
 #include <tencentcloud/mps/v20190612/model/CreateSampleSnapshotTemplateResponse.h>
 #include <tencentcloud/mps/v20190612/model/CreateScheduleRequest.h>
@@ -79,6 +81,8 @@
 #include <tencentcloud/mps/v20190612/model/DeleteImageSpriteTemplateResponse.h>
 #include <tencentcloud/mps/v20190612/model/DeletePersonSampleRequest.h>
 #include <tencentcloud/mps/v20190612/model/DeletePersonSampleResponse.h>
+#include <tencentcloud/mps/v20190612/model/DeleteQualityControlTemplateRequest.h>
+#include <tencentcloud/mps/v20190612/model/DeleteQualityControlTemplateResponse.h>
 #include <tencentcloud/mps/v20190612/model/DeleteSampleSnapshotTemplateRequest.h>
 #include <tencentcloud/mps/v20190612/model/DeleteSampleSnapshotTemplateResponse.h>
 #include <tencentcloud/mps/v20190612/model/DeleteScheduleRequest.h>
@@ -115,6 +119,8 @@
 #include <tencentcloud/mps/v20190612/model/DescribeMediaMetaDataResponse.h>
 #include <tencentcloud/mps/v20190612/model/DescribePersonSamplesRequest.h>
 #include <tencentcloud/mps/v20190612/model/DescribePersonSamplesResponse.h>
+#include <tencentcloud/mps/v20190612/model/DescribeQualityControlTemplatesRequest.h>
+#include <tencentcloud/mps/v20190612/model/DescribeQualityControlTemplatesResponse.h>
 #include <tencentcloud/mps/v20190612/model/DescribeSampleSnapshotTemplatesRequest.h>
 #include <tencentcloud/mps/v20190612/model/DescribeSampleSnapshotTemplatesResponse.h>
 #include <tencentcloud/mps/v20190612/model/DescribeSchedulesRequest.h>
@@ -185,6 +191,8 @@
 #include <tencentcloud/mps/v20190612/model/ModifyImageSpriteTemplateResponse.h>
 #include <tencentcloud/mps/v20190612/model/ModifyPersonSampleRequest.h>
 #include <tencentcloud/mps/v20190612/model/ModifyPersonSampleResponse.h>
+#include <tencentcloud/mps/v20190612/model/ModifyQualityControlTemplateRequest.h>
+#include <tencentcloud/mps/v20190612/model/ModifyQualityControlTemplateResponse.h>
 #include <tencentcloud/mps/v20190612/model/ModifySampleSnapshotTemplateRequest.h>
 #include <tencentcloud/mps/v20190612/model/ModifySampleSnapshotTemplateResponse.h>
 #include <tencentcloud/mps/v20190612/model/ModifyScheduleRequest.h>
@@ -267,6 +275,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::CreatePersonSampleResponse> CreatePersonSampleOutcome;
                 typedef std::future<CreatePersonSampleOutcome> CreatePersonSampleOutcomeCallable;
                 typedef std::function<void(const MpsClient*, const Model::CreatePersonSampleRequest&, CreatePersonSampleOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreatePersonSampleAsyncHandler;
+                typedef Outcome<Core::Error, Model::CreateQualityControlTemplateResponse> CreateQualityControlTemplateOutcome;
+                typedef std::future<CreateQualityControlTemplateOutcome> CreateQualityControlTemplateOutcomeCallable;
+                typedef std::function<void(const MpsClient*, const Model::CreateQualityControlTemplateRequest&, CreateQualityControlTemplateOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateQualityControlTemplateAsyncHandler;
                 typedef Outcome<Core::Error, Model::CreateSampleSnapshotTemplateResponse> CreateSampleSnapshotTemplateOutcome;
                 typedef std::future<CreateSampleSnapshotTemplateOutcome> CreateSampleSnapshotTemplateOutcomeCallable;
                 typedef std::function<void(const MpsClient*, const Model::CreateSampleSnapshotTemplateRequest&, CreateSampleSnapshotTemplateOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateSampleSnapshotTemplateAsyncHandler;
@@ -321,6 +332,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DeletePersonSampleResponse> DeletePersonSampleOutcome;
                 typedef std::future<DeletePersonSampleOutcome> DeletePersonSampleOutcomeCallable;
                 typedef std::function<void(const MpsClient*, const Model::DeletePersonSampleRequest&, DeletePersonSampleOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeletePersonSampleAsyncHandler;
+                typedef Outcome<Core::Error, Model::DeleteQualityControlTemplateResponse> DeleteQualityControlTemplateOutcome;
+                typedef std::future<DeleteQualityControlTemplateOutcome> DeleteQualityControlTemplateOutcomeCallable;
+                typedef std::function<void(const MpsClient*, const Model::DeleteQualityControlTemplateRequest&, DeleteQualityControlTemplateOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteQualityControlTemplateAsyncHandler;
                 typedef Outcome<Core::Error, Model::DeleteSampleSnapshotTemplateResponse> DeleteSampleSnapshotTemplateOutcome;
                 typedef std::future<DeleteSampleSnapshotTemplateOutcome> DeleteSampleSnapshotTemplateOutcomeCallable;
                 typedef std::function<void(const MpsClient*, const Model::DeleteSampleSnapshotTemplateRequest&, DeleteSampleSnapshotTemplateOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteSampleSnapshotTemplateAsyncHandler;
@@ -375,6 +389,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribePersonSamplesResponse> DescribePersonSamplesOutcome;
                 typedef std::future<DescribePersonSamplesOutcome> DescribePersonSamplesOutcomeCallable;
                 typedef std::function<void(const MpsClient*, const Model::DescribePersonSamplesRequest&, DescribePersonSamplesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribePersonSamplesAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeQualityControlTemplatesResponse> DescribeQualityControlTemplatesOutcome;
+                typedef std::future<DescribeQualityControlTemplatesOutcome> DescribeQualityControlTemplatesOutcomeCallable;
+                typedef std::function<void(const MpsClient*, const Model::DescribeQualityControlTemplatesRequest&, DescribeQualityControlTemplatesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeQualityControlTemplatesAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeSampleSnapshotTemplatesResponse> DescribeSampleSnapshotTemplatesOutcome;
                 typedef std::future<DescribeSampleSnapshotTemplatesOutcome> DescribeSampleSnapshotTemplatesOutcomeCallable;
                 typedef std::function<void(const MpsClient*, const Model::DescribeSampleSnapshotTemplatesRequest&, DescribeSampleSnapshotTemplatesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeSampleSnapshotTemplatesAsyncHandler;
@@ -480,6 +497,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::ModifyPersonSampleResponse> ModifyPersonSampleOutcome;
                 typedef std::future<ModifyPersonSampleOutcome> ModifyPersonSampleOutcomeCallable;
                 typedef std::function<void(const MpsClient*, const Model::ModifyPersonSampleRequest&, ModifyPersonSampleOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyPersonSampleAsyncHandler;
+                typedef Outcome<Core::Error, Model::ModifyQualityControlTemplateResponse> ModifyQualityControlTemplateOutcome;
+                typedef std::future<ModifyQualityControlTemplateOutcome> ModifyQualityControlTemplateOutcomeCallable;
+                typedef std::function<void(const MpsClient*, const Model::ModifyQualityControlTemplateRequest&, ModifyQualityControlTemplateOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyQualityControlTemplateAsyncHandler;
                 typedef Outcome<Core::Error, Model::ModifySampleSnapshotTemplateResponse> ModifySampleSnapshotTemplateOutcome;
                 typedef std::future<ModifySampleSnapshotTemplateOutcome> ModifySampleSnapshotTemplateOutcomeCallable;
                 typedef std::function<void(const MpsClient*, const Model::ModifySampleSnapshotTemplateRequest&, ModifySampleSnapshotTemplateOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifySampleSnapshotTemplateAsyncHandler;
@@ -629,6 +649,15 @@ namespace TencentCloud
                 CreatePersonSampleOutcome CreatePersonSample(const Model::CreatePersonSampleRequest &request);
                 void CreatePersonSampleAsync(const Model::CreatePersonSampleRequest& request, const CreatePersonSampleAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 CreatePersonSampleOutcomeCallable CreatePersonSampleCallable(const Model::CreatePersonSampleRequest& request);
+
+                /**
+                 *创建媒体质检模板，数量上限：50。
+                 * @param req CreateQualityControlTemplateRequest
+                 * @return CreateQualityControlTemplateOutcome
+                 */
+                CreateQualityControlTemplateOutcome CreateQualityControlTemplate(const Model::CreateQualityControlTemplateRequest &request);
+                void CreateQualityControlTemplateAsync(const Model::CreateQualityControlTemplateRequest& request, const CreateQualityControlTemplateAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                CreateQualityControlTemplateOutcomeCallable CreateQualityControlTemplateCallable(const Model::CreateQualityControlTemplateRequest& request);
 
                 /**
                  *创建用户自定义采样截图模板，数量上限：16。
@@ -817,6 +846,15 @@ namespace TencentCloud
                 DeletePersonSampleOutcomeCallable DeletePersonSampleCallable(const Model::DeletePersonSampleRequest& request);
 
                 /**
+                 *删除媒体质检模板
+                 * @param req DeleteQualityControlTemplateRequest
+                 * @return DeleteQualityControlTemplateOutcome
+                 */
+                DeleteQualityControlTemplateOutcome DeleteQualityControlTemplate(const Model::DeleteQualityControlTemplateRequest &request);
+                void DeleteQualityControlTemplateAsync(const Model::DeleteQualityControlTemplateRequest& request, const DeleteQualityControlTemplateAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DeleteQualityControlTemplateOutcomeCallable DeleteQualityControlTemplateCallable(const Model::DeleteQualityControlTemplateRequest& request);
+
+                /**
                  *删除用户自定义采样截图模板。
                  * @param req DeleteSampleSnapshotTemplateRequest
                  * @return DeleteSampleSnapshotTemplateOutcome
@@ -977,6 +1015,15 @@ namespace TencentCloud
                 DescribePersonSamplesOutcome DescribePersonSamples(const Model::DescribePersonSamplesRequest &request);
                 void DescribePersonSamplesAsync(const Model::DescribePersonSamplesRequest& request, const DescribePersonSamplesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DescribePersonSamplesOutcomeCallable DescribePersonSamplesCallable(const Model::DescribePersonSamplesRequest& request);
+
+                /**
+                 *查询用户自定义媒体质检模板，支持根据条件，分页查询。
+                 * @param req DescribeQualityControlTemplatesRequest
+                 * @return DescribeQualityControlTemplatesOutcome
+                 */
+                DescribeQualityControlTemplatesOutcome DescribeQualityControlTemplates(const Model::DescribeQualityControlTemplatesRequest &request);
+                void DescribeQualityControlTemplatesAsync(const Model::DescribeQualityControlTemplatesRequest& request, const DescribeQualityControlTemplatesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeQualityControlTemplatesOutcomeCallable DescribeQualityControlTemplatesCallable(const Model::DescribeQualityControlTemplatesRequest& request);
 
                 /**
                  *查询采样截图模板，支持根据条件，分页查询。
@@ -1310,6 +1357,15 @@ namespace TencentCloud
                 ModifyPersonSampleOutcome ModifyPersonSample(const Model::ModifyPersonSampleRequest &request);
                 void ModifyPersonSampleAsync(const Model::ModifyPersonSampleRequest& request, const ModifyPersonSampleAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 ModifyPersonSampleOutcomeCallable ModifyPersonSampleCallable(const Model::ModifyPersonSampleRequest& request);
+
+                /**
+                 *修改媒体质检模板。
+                 * @param req ModifyQualityControlTemplateRequest
+                 * @return ModifyQualityControlTemplateOutcome
+                 */
+                ModifyQualityControlTemplateOutcome ModifyQualityControlTemplate(const Model::ModifyQualityControlTemplateRequest &request);
+                void ModifyQualityControlTemplateAsync(const Model::ModifyQualityControlTemplateRequest& request, const ModifyQualityControlTemplateAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                ModifyQualityControlTemplateOutcomeCallable ModifyQualityControlTemplateCallable(const Model::ModifyQualityControlTemplateRequest& request);
 
                 /**
                  *修改用户自定义采样截图模板。

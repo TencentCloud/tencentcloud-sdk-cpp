@@ -71,6 +71,7 @@ set(es_public_header_model
   include/tencentcloud/es/v20180416/model/DescribeIndexMetaResponse.h
   include/tencentcloud/es/v20180416/model/DiagnoseJobMeta.h
   include/tencentcloud/es/v20180416/model/StartLogstashPipelinesRequest.h
+  include/tencentcloud/es/v20180416/model/DescribeServerlessMetricsRequest.h
   include/tencentcloud/es/v20180416/model/GetDiagnoseSettingsResponse.h
   include/tencentcloud/es/v20180416/model/CreateServerlessInstanceRequest.h
   include/tencentcloud/es/v20180416/model/DescribeServerlessSpacesRequest.h
@@ -181,6 +182,7 @@ set(es_public_header_model
   include/tencentcloud/es/v20180416/model/RestartInstanceRequest.h
   include/tencentcloud/es/v20180416/model/ZoneDetail.h
   include/tencentcloud/es/v20180416/model/ServerlessDi.h
+  include/tencentcloud/es/v20180416/model/DescribeServerlessMetricsResponse.h
   include/tencentcloud/es/v20180416/model/StopLogstashPipelinesResponse.h
   include/tencentcloud/es/v20180416/model/DescribeServerlessInstancesRequest.h
   include/tencentcloud/es/v20180416/model/KibanaNodeInfo.h
@@ -252,6 +254,7 @@ set(es_src
   src/v20180416/model/DescribeIndexMetaResponse.cpp
   src/v20180416/model/DiagnoseJobMeta.cpp
   src/v20180416/model/StartLogstashPipelinesRequest.cpp
+  src/v20180416/model/DescribeServerlessMetricsRequest.cpp
   src/v20180416/model/GetDiagnoseSettingsResponse.cpp
   src/v20180416/model/CreateServerlessInstanceRequest.cpp
   src/v20180416/model/DescribeServerlessSpacesRequest.cpp
@@ -362,6 +365,7 @@ set(es_src
   src/v20180416/model/RestartInstanceRequest.cpp
   src/v20180416/model/ZoneDetail.cpp
   src/v20180416/model/ServerlessDi.cpp
+  src/v20180416/model/DescribeServerlessMetricsResponse.cpp
   src/v20180416/model/StopLogstashPipelinesResponse.cpp
   src/v20180416/model/DescribeServerlessInstancesRequest.cpp
   src/v20180416/model/KibanaNodeInfo.cpp

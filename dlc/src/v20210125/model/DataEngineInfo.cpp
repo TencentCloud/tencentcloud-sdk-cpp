@@ -71,7 +71,9 @@ DataEngineInfo::DataEngineInfo() :
     m_engineTypeDetailHasBeenSet(false),
     m_engineNetworkIdHasBeenSet(false),
     m_engineResourceGroupCountHasBeenSet(false),
-    m_engineResourceUsedCUHasBeenSet(false)
+    m_engineResourceUsedCUHasBeenSet(false),
+    m_accessInfosHasBeenSet(false),
+    m_engineNetworkNameHasBeenSet(false)
 {
 }
 
@@ -627,6 +629,36 @@ CoreInternalOutcome DataEngineInfo::Deserialize(const rapidjson::Value &value)
         m_engineResourceUsedCUHasBeenSet = true;
     }
 
+    if (value.HasMember("AccessInfos") && !value["AccessInfos"].IsNull())
+    {
+        if (!value["AccessInfos"].IsArray())
+            return CoreInternalOutcome(Core::Error("response `DataEngineInfo.AccessInfos` is not array type"));
+
+        const rapidjson::Value &tmpValue = value["AccessInfos"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            AccessInfo item;
+            CoreInternalOutcome outcome = item.Deserialize(*itr);
+            if (!outcome.IsSuccess())
+            {
+                outcome.GetError().SetRequestId(requestId);
+                return outcome;
+            }
+            m_accessInfos.push_back(item);
+        }
+        m_accessInfosHasBeenSet = true;
+    }
+
+    if (value.HasMember("EngineNetworkName") && !value["EngineNetworkName"].IsNull())
+    {
+        if (!value["EngineNetworkName"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `DataEngineInfo.EngineNetworkName` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_engineNetworkName = string(value["EngineNetworkName"].GetString());
+        m_engineNetworkNameHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -1061,6 +1093,29 @@ void DataEngineInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Document::
         string key = "EngineResourceUsedCU";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_engineResourceUsedCU, allocator);
+    }
+
+    if (m_accessInfosHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "AccessInfos";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_accessInfos.begin(); itr != m_accessInfos.end(); ++itr, ++i)
+        {
+            value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(value[key.c_str()][i], allocator);
+        }
+    }
+
+    if (m_engineNetworkNameHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "EngineNetworkName";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_engineNetworkName.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -1880,5 +1935,37 @@ void DataEngineInfo::SetEngineResourceUsedCU(const int64_t& _engineResourceUsedC
 bool DataEngineInfo::EngineResourceUsedCUHasBeenSet() const
 {
     return m_engineResourceUsedCUHasBeenSet;
+}
+
+vector<AccessInfo> DataEngineInfo::GetAccessInfos() const
+{
+    return m_accessInfos;
+}
+
+void DataEngineInfo::SetAccessInfos(const vector<AccessInfo>& _accessInfos)
+{
+    m_accessInfos = _accessInfos;
+    m_accessInfosHasBeenSet = true;
+}
+
+bool DataEngineInfo::AccessInfosHasBeenSet() const
+{
+    return m_accessInfosHasBeenSet;
+}
+
+string DataEngineInfo::GetEngineNetworkName() const
+{
+    return m_engineNetworkName;
+}
+
+void DataEngineInfo::SetEngineNetworkName(const string& _engineNetworkName)
+{
+    m_engineNetworkName = _engineNetworkName;
+    m_engineNetworkNameHasBeenSet = true;
+}
+
+bool DataEngineInfo::EngineNetworkNameHasBeenSet() const
+{
+    return m_engineNetworkNameHasBeenSet;
 }
 

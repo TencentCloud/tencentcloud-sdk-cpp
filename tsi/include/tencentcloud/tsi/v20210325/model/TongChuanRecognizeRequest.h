@@ -190,15 +190,15 @@ namespace TencentCloud
                     bool IsEndHasBeenSet() const;
 
                     /**
-                     * 获取翻译时机，0 -不翻译 1 - 句子结束时翻译，2 - 句子实时翻译
-                     * @return TranslateTime 翻译时机，0 -不翻译 1 - 句子结束时翻译，2 - 句子实时翻译
+                     * 获取翻译时机，0-不翻译 2-句子实时翻译
+                     * @return TranslateTime 翻译时机，0-不翻译 2-句子实时翻译
                      * 
                      */
                     uint64_t GetTranslateTime() const;
 
                     /**
-                     * 设置翻译时机，0 -不翻译 1 - 句子结束时翻译，2 - 句子实时翻译
-                     * @param _translateTime 翻译时机，0 -不翻译 1 - 句子结束时翻译，2 - 句子实时翻译
+                     * 设置翻译时机，0-不翻译 2-句子实时翻译
+                     * @param _translateTime 翻译时机，0-不翻译 2-句子实时翻译
                      * 
                      */
                     void SetTranslateTime(const uint64_t& _translateTime);
@@ -276,7 +276,7 @@ namespace TencentCloud
                     bool m_isEndHasBeenSet;
 
                     /**
-                     * 翻译时机，0 -不翻译 1 - 句子结束时翻译，2 - 句子实时翻译
+                     * 翻译时机，0-不翻译 2-句子实时翻译
                      */
                     uint64_t m_translateTime;
                     bool m_translateTimeHasBeenSet;

@@ -21,10 +21,11 @@ set(dlc_public_header
 set(dlc_public_header_model
   include/tencentcloud/dlc/v20210125/model/CheckDataEngineConfigPairsValidityResponse.h
   include/tencentcloud/dlc/v20210125/model/DescribeResultDownloadResponse.h
-  include/tencentcloud/dlc/v20210125/model/PythonSparkImage.h
+  include/tencentcloud/dlc/v20210125/model/AccessInfo.h
   include/tencentcloud/dlc/v20210125/model/DescribeDatabasesRequest.h
   include/tencentcloud/dlc/v20210125/model/Asset.h
   include/tencentcloud/dlc/v20210125/model/CreateUserRequest.h
+  include/tencentcloud/dlc/v20210125/model/PythonSparkImage.h
   include/tencentcloud/dlc/v20210125/model/ModifyGovernEventRuleResponse.h
   include/tencentcloud/dlc/v20210125/model/DescribeNotebookSessionsRequest.h
   include/tencentcloud/dlc/v20210125/model/SmartOptimizerLifecyclePolicy.h
@@ -414,10 +415,11 @@ set(dlc_src
   src/v20210125/DlcClient.cpp
   src/v20210125/model/CheckDataEngineConfigPairsValidityResponse.cpp
   src/v20210125/model/DescribeResultDownloadResponse.cpp
-  src/v20210125/model/PythonSparkImage.cpp
+  src/v20210125/model/AccessInfo.cpp
   src/v20210125/model/DescribeDatabasesRequest.cpp
   src/v20210125/model/Asset.cpp
   src/v20210125/model/CreateUserRequest.cpp
+  src/v20210125/model/PythonSparkImage.cpp
   src/v20210125/model/ModifyGovernEventRuleResponse.cpp
   src/v20210125/model/DescribeNotebookSessionsRequest.cpp
   src/v20210125/model/SmartOptimizerLifecyclePolicy.cpp

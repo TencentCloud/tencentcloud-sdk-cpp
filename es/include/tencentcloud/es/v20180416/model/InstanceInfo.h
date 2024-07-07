@@ -2110,6 +2110,31 @@ RENEW_FLAG_DEFAULT：不自动续费
                      */
                     bool NetConnectSchemeHasBeenSet() const;
 
+                    /**
+                     * 获取置放群组相关参数
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return DisasterRecoverGroupAffinity 置放群组相关参数
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    uint64_t GetDisasterRecoverGroupAffinity() const;
+
+                    /**
+                     * 设置置放群组相关参数
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _disasterRecoverGroupAffinity 置放群组相关参数
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetDisasterRecoverGroupAffinity(const uint64_t& _disasterRecoverGroupAffinity);
+
+                    /**
+                     * 判断参数 DisasterRecoverGroupAffinity 是否已赋值
+                     * @return DisasterRecoverGroupAffinity 是否已赋值
+                     * 
+                     */
+                    bool DisasterRecoverGroupAffinityHasBeenSet() const;
+
                 private:
 
                     /**
@@ -2689,6 +2714,13 @@ RENEW_FLAG_DEFAULT：不自动续费
                      */
                     std::string m_netConnectScheme;
                     bool m_netConnectSchemeHasBeenSet;
+
+                    /**
+                     * 置放群组相关参数
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    uint64_t m_disasterRecoverGroupAffinity;
+                    bool m_disasterRecoverGroupAffinityHasBeenSet;
 
                 };
             }

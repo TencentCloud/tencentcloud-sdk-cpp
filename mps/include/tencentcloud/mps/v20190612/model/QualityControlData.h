@@ -25,6 +25,7 @@
 #include <tencentcloud/core/utils/rapidjson/stringbuffer.h>
 #include <tencentcloud/core/AbstractModel.h>
 #include <tencentcloud/mps/v20190612/model/QualityControlResult.h>
+#include <tencentcloud/mps/v20190612/model/ContainerDiagnoseResultItem.h>
 
 
 namespace TencentCloud
@@ -147,6 +148,31 @@ namespace TencentCloud
                      */
                     bool QualityControlResultSetHasBeenSet() const;
 
+                    /**
+                     * 获取格式诊断检出异常项
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return ContainerDiagnoseResultSet 格式诊断检出异常项
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::vector<ContainerDiagnoseResultItem> GetContainerDiagnoseResultSet() const;
+
+                    /**
+                     * 设置格式诊断检出异常项
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _containerDiagnoseResultSet 格式诊断检出异常项
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetContainerDiagnoseResultSet(const std::vector<ContainerDiagnoseResultItem>& _containerDiagnoseResultSet);
+
+                    /**
+                     * 判断参数 ContainerDiagnoseResultSet 是否已赋值
+                     * @return ContainerDiagnoseResultSet 是否已赋值
+                     * 
+                     */
+                    bool ContainerDiagnoseResultSetHasBeenSet() const;
+
                 private:
 
                     /**
@@ -176,6 +202,13 @@ namespace TencentCloud
                      */
                     std::vector<QualityControlResult> m_qualityControlResultSet;
                     bool m_qualityControlResultSetHasBeenSet;
+
+                    /**
+                     * 格式诊断检出异常项
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::vector<ContainerDiagnoseResultItem> m_containerDiagnoseResultSet;
+                    bool m_containerDiagnoseResultSetHasBeenSet;
 
                 };
             }

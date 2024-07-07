@@ -24,7 +24,8 @@ QualityControlData::QualityControlData() :
     m_noAudioHasBeenSet(false),
     m_noVideoHasBeenSet(false),
     m_qualityEvaluationScoreHasBeenSet(false),
-    m_qualityControlResultSetHasBeenSet(false)
+    m_qualityControlResultSetHasBeenSet(false),
+    m_containerDiagnoseResultSetHasBeenSet(false)
 {
 }
 
@@ -83,6 +84,26 @@ CoreInternalOutcome QualityControlData::Deserialize(const rapidjson::Value &valu
         m_qualityControlResultSetHasBeenSet = true;
     }
 
+    if (value.HasMember("ContainerDiagnoseResultSet") && !value["ContainerDiagnoseResultSet"].IsNull())
+    {
+        if (!value["ContainerDiagnoseResultSet"].IsArray())
+            return CoreInternalOutcome(Core::Error("response `QualityControlData.ContainerDiagnoseResultSet` is not array type"));
+
+        const rapidjson::Value &tmpValue = value["ContainerDiagnoseResultSet"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            ContainerDiagnoseResultItem item;
+            CoreInternalOutcome outcome = item.Deserialize(*itr);
+            if (!outcome.IsSuccess())
+            {
+                outcome.GetError().SetRequestId(requestId);
+                return outcome;
+            }
+            m_containerDiagnoseResultSet.push_back(item);
+        }
+        m_containerDiagnoseResultSetHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -123,6 +144,21 @@ void QualityControlData::ToJsonObject(rapidjson::Value &value, rapidjson::Docume
 
         int i=0;
         for (auto itr = m_qualityControlResultSet.begin(); itr != m_qualityControlResultSet.end(); ++itr, ++i)
+        {
+            value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(value[key.c_str()][i], allocator);
+        }
+    }
+
+    if (m_containerDiagnoseResultSetHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ContainerDiagnoseResultSet";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_containerDiagnoseResultSet.begin(); itr != m_containerDiagnoseResultSet.end(); ++itr, ++i)
         {
             value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
             (*itr).ToJsonObject(value[key.c_str()][i], allocator);
@@ -194,5 +230,21 @@ void QualityControlData::SetQualityControlResultSet(const vector<QualityControlR
 bool QualityControlData::QualityControlResultSetHasBeenSet() const
 {
     return m_qualityControlResultSetHasBeenSet;
+}
+
+vector<ContainerDiagnoseResultItem> QualityControlData::GetContainerDiagnoseResultSet() const
+{
+    return m_containerDiagnoseResultSet;
+}
+
+void QualityControlData::SetContainerDiagnoseResultSet(const vector<ContainerDiagnoseResultItem>& _containerDiagnoseResultSet)
+{
+    m_containerDiagnoseResultSet = _containerDiagnoseResultSet;
+    m_containerDiagnoseResultSetHasBeenSet = true;
+}
+
+bool QualityControlData::ContainerDiagnoseResultSetHasBeenSet() const
+{
+    return m_containerDiagnoseResultSetHasBeenSet;
 }
 

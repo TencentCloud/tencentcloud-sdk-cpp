@@ -814,6 +814,27 @@ namespace TencentCloud
                      */
                     bool CdcIdHasBeenSet() const;
 
+                    /**
+                     * 获取置放群组亲和度，范围[0,10]，0表示不开启
+                     * @return DisasterRecoverGroupAffinity 置放群组亲和度，范围[0,10]，0表示不开启
+                     * 
+                     */
+                    uint64_t GetDisasterRecoverGroupAffinity() const;
+
+                    /**
+                     * 设置置放群组亲和度，范围[0,10]，0表示不开启
+                     * @param _disasterRecoverGroupAffinity 置放群组亲和度，范围[0,10]，0表示不开启
+                     * 
+                     */
+                    void SetDisasterRecoverGroupAffinity(const uint64_t& _disasterRecoverGroupAffinity);
+
+                    /**
+                     * 判断参数 DisasterRecoverGroupAffinity 是否已赋值
+                     * @return DisasterRecoverGroupAffinity 是否已赋值
+                     * 
+                     */
+                    bool DisasterRecoverGroupAffinityHasBeenSet() const;
+
                 private:
 
                     /**
@@ -1033,6 +1054,12 @@ namespace TencentCloud
                      */
                     std::string m_cdcId;
                     bool m_cdcIdHasBeenSet;
+
+                    /**
+                     * 置放群组亲和度，范围[0,10]，0表示不开启
+                     */
+                    uint64_t m_disasterRecoverGroupAffinity;
+                    bool m_disasterRecoverGroupAffinityHasBeenSet;
 
                 };
             }

@@ -79,6 +79,8 @@
 #include <tencentcloud/cdb/v20170320/model/CreateParamTemplateResponse.h>
 #include <tencentcloud/cdb/v20170320/model/CreateRoInstanceIpRequest.h>
 #include <tencentcloud/cdb/v20170320/model/CreateRoInstanceIpResponse.h>
+#include <tencentcloud/cdb/v20170320/model/CreateRotationPasswordRequest.h>
+#include <tencentcloud/cdb/v20170320/model/CreateRotationPasswordResponse.h>
 #include <tencentcloud/cdb/v20170320/model/DeleteAccountsRequest.h>
 #include <tencentcloud/cdb/v20170320/model/DeleteAccountsResponse.h>
 #include <tencentcloud/cdb/v20170320/model/DeleteAuditLogFileRequest.h>
@@ -97,6 +99,8 @@
 #include <tencentcloud/cdb/v20170320/model/DeleteDeployGroupsResponse.h>
 #include <tencentcloud/cdb/v20170320/model/DeleteParamTemplateRequest.h>
 #include <tencentcloud/cdb/v20170320/model/DeleteParamTemplateResponse.h>
+#include <tencentcloud/cdb/v20170320/model/DeleteRotationPasswordRequest.h>
+#include <tencentcloud/cdb/v20170320/model/DeleteRotationPasswordResponse.h>
 #include <tencentcloud/cdb/v20170320/model/DeleteTimeWindowRequest.h>
 #include <tencentcloud/cdb/v20170320/model/DeleteTimeWindowResponse.h>
 #include <tencentcloud/cdb/v20170320/model/DescribeAccountPrivilegesRequest.h>
@@ -319,6 +323,8 @@
 #include <tencentcloud/cdb/v20170320/model/ReloadBalanceProxyNodeResponse.h>
 #include <tencentcloud/cdb/v20170320/model/RenewDBInstanceRequest.h>
 #include <tencentcloud/cdb/v20170320/model/RenewDBInstanceResponse.h>
+#include <tencentcloud/cdb/v20170320/model/ResetPasswordRequest.h>
+#include <tencentcloud/cdb/v20170320/model/ResetPasswordResponse.h>
 #include <tencentcloud/cdb/v20170320/model/ResetRootAccountRequest.h>
 #include <tencentcloud/cdb/v20170320/model/ResetRootAccountResponse.h>
 #include <tencentcloud/cdb/v20170320/model/RestartDBInstancesRequest.h>
@@ -451,6 +457,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::CreateRoInstanceIpResponse> CreateRoInstanceIpOutcome;
                 typedef std::future<CreateRoInstanceIpOutcome> CreateRoInstanceIpOutcomeCallable;
                 typedef std::function<void(const CdbClient*, const Model::CreateRoInstanceIpRequest&, CreateRoInstanceIpOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateRoInstanceIpAsyncHandler;
+                typedef Outcome<Core::Error, Model::CreateRotationPasswordResponse> CreateRotationPasswordOutcome;
+                typedef std::future<CreateRotationPasswordOutcome> CreateRotationPasswordOutcomeCallable;
+                typedef std::function<void(const CdbClient*, const Model::CreateRotationPasswordRequest&, CreateRotationPasswordOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateRotationPasswordAsyncHandler;
                 typedef Outcome<Core::Error, Model::DeleteAccountsResponse> DeleteAccountsOutcome;
                 typedef std::future<DeleteAccountsOutcome> DeleteAccountsOutcomeCallable;
                 typedef std::function<void(const CdbClient*, const Model::DeleteAccountsRequest&, DeleteAccountsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteAccountsAsyncHandler;
@@ -478,6 +487,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DeleteParamTemplateResponse> DeleteParamTemplateOutcome;
                 typedef std::future<DeleteParamTemplateOutcome> DeleteParamTemplateOutcomeCallable;
                 typedef std::function<void(const CdbClient*, const Model::DeleteParamTemplateRequest&, DeleteParamTemplateOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteParamTemplateAsyncHandler;
+                typedef Outcome<Core::Error, Model::DeleteRotationPasswordResponse> DeleteRotationPasswordOutcome;
+                typedef std::future<DeleteRotationPasswordOutcome> DeleteRotationPasswordOutcomeCallable;
+                typedef std::function<void(const CdbClient*, const Model::DeleteRotationPasswordRequest&, DeleteRotationPasswordOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteRotationPasswordAsyncHandler;
                 typedef Outcome<Core::Error, Model::DeleteTimeWindowResponse> DeleteTimeWindowOutcome;
                 typedef std::future<DeleteTimeWindowOutcome> DeleteTimeWindowOutcomeCallable;
                 typedef std::function<void(const CdbClient*, const Model::DeleteTimeWindowRequest&, DeleteTimeWindowOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteTimeWindowAsyncHandler;
@@ -811,6 +823,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::RenewDBInstanceResponse> RenewDBInstanceOutcome;
                 typedef std::future<RenewDBInstanceOutcome> RenewDBInstanceOutcomeCallable;
                 typedef std::function<void(const CdbClient*, const Model::RenewDBInstanceRequest&, RenewDBInstanceOutcome, const std::shared_ptr<const AsyncCallerContext>&)> RenewDBInstanceAsyncHandler;
+                typedef Outcome<Core::Error, Model::ResetPasswordResponse> ResetPasswordOutcome;
+                typedef std::future<ResetPasswordOutcome> ResetPasswordOutcomeCallable;
+                typedef std::function<void(const CdbClient*, const Model::ResetPasswordRequest&, ResetPasswordOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ResetPasswordAsyncHandler;
                 typedef Outcome<Core::Error, Model::ResetRootAccountResponse> ResetRootAccountOutcome;
                 typedef std::future<ResetRootAccountOutcome> ResetRootAccountOutcomeCallable;
                 typedef std::function<void(const CdbClient*, const Model::ResetRootAccountRequest&, ResetRootAccountOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ResetRootAccountAsyncHandler;
@@ -1137,6 +1152,15 @@ namespace TencentCloud
                 CreateRoInstanceIpOutcomeCallable CreateRoInstanceIpCallable(const Model::CreateRoInstanceIpRequest& request);
 
                 /**
+                 *开启密码轮转
+                 * @param req CreateRotationPasswordRequest
+                 * @return CreateRotationPasswordOutcome
+                 */
+                CreateRotationPasswordOutcome CreateRotationPassword(const Model::CreateRotationPasswordRequest &request);
+                void CreateRotationPasswordAsync(const Model::CreateRotationPasswordRequest& request, const CreateRotationPasswordAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                CreateRotationPasswordOutcomeCallable CreateRotationPasswordCallable(const Model::CreateRotationPasswordRequest& request);
+
+                /**
                  *本接口(DeleteAccounts)用于删除云数据库的账户。
                  * @param req DeleteAccountsRequest
                  * @return DeleteAccountsOutcome
@@ -1216,6 +1240,15 @@ namespace TencentCloud
                 DeleteParamTemplateOutcome DeleteParamTemplate(const Model::DeleteParamTemplateRequest &request);
                 void DeleteParamTemplateAsync(const Model::DeleteParamTemplateRequest& request, const DeleteParamTemplateAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DeleteParamTemplateOutcomeCallable DeleteParamTemplateCallable(const Model::DeleteParamTemplateRequest& request);
+
+                /**
+                 *关闭实例账户密码轮转
+                 * @param req DeleteRotationPasswordRequest
+                 * @return DeleteRotationPasswordOutcome
+                 */
+                DeleteRotationPasswordOutcome DeleteRotationPassword(const Model::DeleteRotationPasswordRequest &request);
+                void DeleteRotationPasswordAsync(const Model::DeleteRotationPasswordRequest& request, const DeleteRotationPasswordAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DeleteRotationPasswordOutcomeCallable DeleteRotationPasswordCallable(const Model::DeleteRotationPasswordRequest& request);
 
                 /**
                  *本接口(DeleteTimeWindow)用于删除云数据库实例的维护时间窗口。删除实例维护时间窗口之后，默认的维护时间窗为 03:00-04:00，即当选择在维护时间窗口内切换访问新实例时，默认会在 03:00-04:00 点进行切换访问新实例。
@@ -2240,6 +2273,15 @@ namespace TencentCloud
                 RenewDBInstanceOutcome RenewDBInstance(const Model::RenewDBInstanceRequest &request);
                 void RenewDBInstanceAsync(const Model::RenewDBInstanceRequest& request, const RenewDBInstanceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 RenewDBInstanceOutcomeCallable RenewDBInstanceCallable(const Model::RenewDBInstanceRequest& request);
+
+                /**
+                 *手动刷新轮转密码
+                 * @param req ResetPasswordRequest
+                 * @return ResetPasswordOutcome
+                 */
+                ResetPasswordOutcome ResetPassword(const Model::ResetPasswordRequest &request);
+                void ResetPasswordAsync(const Model::ResetPasswordRequest& request, const ResetPasswordAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                ResetPasswordOutcomeCallable ResetPasswordCallable(const Model::ResetPasswordRequest& request);
 
                 /**
                  *重置实例ROOT账号，初始化账号权限

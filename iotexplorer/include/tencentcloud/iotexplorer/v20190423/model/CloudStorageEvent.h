@@ -155,6 +155,31 @@ namespace TencentCloud
                      */
                     bool UploadStatusHasBeenSet() const;
 
+                    /**
+                     * 获取事件自定义数据	
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return Data 事件自定义数据	
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::string GetData() const;
+
+                    /**
+                     * 设置事件自定义数据	
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _data 事件自定义数据	
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetData(const std::string& _data);
+
+                    /**
+                     * 判断参数 Data 是否已赋值
+                     * @return Data 是否已赋值
+                     * 
+                     */
+                    bool DataHasBeenSet() const;
+
                 private:
 
                     /**
@@ -187,6 +212,13 @@ namespace TencentCloud
                      */
                     std::string m_uploadStatus;
                     bool m_uploadStatusHasBeenSet;
+
+                    /**
+                     * 事件自定义数据	
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_data;
+                    bool m_dataHasBeenSet;
 
                 };
             }

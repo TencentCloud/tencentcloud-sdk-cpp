@@ -66,7 +66,9 @@ namespace TencentCloud
 
 
                 /**
-                 *企业号码认证
+                 *不在使用的API
+
+企业号码认证
                  * @param req CreateSmpnEpaRequest
                  * @return CreateSmpnEpaOutcome
                  */
@@ -75,7 +77,9 @@ namespace TencentCloud
                 CreateSmpnEpaOutcomeCallable CreateSmpnEpaCallable(const Model::CreateSmpnEpaRequest& request);
 
                 /**
-                 *查询号码的标记和标记次数
+                 *不在使用的API
+
+查询号码的标记和标记次数
                  * @param req DescribeSmpnChpRequest
                  * @return DescribeSmpnChpOutcome
                  */
@@ -84,7 +88,9 @@ namespace TencentCloud
                 DescribeSmpnChpOutcomeCallable DescribeSmpnChpCallable(const Model::DescribeSmpnChpRequest& request);
 
                 /**
-                 *虚假号码识别
+                 *不在使用的API
+
+虚假号码识别
                  * @param req DescribeSmpnFnrRequest
                  * @return DescribeSmpnFnrOutcome
                  */
@@ -93,7 +99,9 @@ namespace TencentCloud
                 DescribeSmpnFnrOutcomeCallable DescribeSmpnFnrCallable(const Model::DescribeSmpnFnrRequest& request);
 
                 /**
-                 *号码营销监控
+                 *不在使用的API
+
+号码营销监控
                  * @param req DescribeSmpnMhmRequest
                  * @return DescribeSmpnMhmOutcome
                  */
@@ -102,7 +110,9 @@ namespace TencentCloud
                 DescribeSmpnMhmOutcomeCallable DescribeSmpnMhmCallable(const Model::DescribeSmpnMhmRequest& request);
 
                 /**
-                 *查询号码恶意标记等级
+                 *不在使用的API
+
+查询号码恶意标记等级
                  * @param req DescribeSmpnMrlRequest
                  * @return DescribeSmpnMrlOutcome
                  */

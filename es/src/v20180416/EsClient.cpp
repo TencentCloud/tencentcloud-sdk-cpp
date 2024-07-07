@@ -1115,6 +1115,49 @@ EsClient::DescribeServerlessInstancesOutcomeCallable EsClient::DescribeServerles
     return task->get_future();
 }
 
+EsClient::DescribeServerlessMetricsOutcome EsClient::DescribeServerlessMetrics(const DescribeServerlessMetricsRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeServerlessMetrics");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeServerlessMetricsResponse rsp = DescribeServerlessMetricsResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeServerlessMetricsOutcome(rsp);
+        else
+            return DescribeServerlessMetricsOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeServerlessMetricsOutcome(outcome.GetError());
+    }
+}
+
+void EsClient::DescribeServerlessMetricsAsync(const DescribeServerlessMetricsRequest& request, const DescribeServerlessMetricsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeServerlessMetrics(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+EsClient::DescribeServerlessMetricsOutcomeCallable EsClient::DescribeServerlessMetricsCallable(const DescribeServerlessMetricsRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeServerlessMetricsOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeServerlessMetrics(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 EsClient::DescribeServerlessSpaceUserOutcome EsClient::DescribeServerlessSpaceUser(const DescribeServerlessSpaceUserRequest &request)
 {
     auto outcome = MakeRequest(request, "DescribeServerlessSpaceUser");

@@ -33,6 +33,7 @@
 #include <tencentcloud/mps/v20190612/model/ScheduleRecognitionTaskResult.h>
 #include <tencentcloud/mps/v20190612/model/ScheduleReviewTaskResult.h>
 #include <tencentcloud/mps/v20190612/model/ScheduleAnalysisTaskResult.h>
+#include <tencentcloud/mps/v20190612/model/ScheduleQualityControlTaskResult.h>
 
 
 namespace TencentCloud
@@ -280,6 +281,31 @@ namespace TencentCloud
                      */
                     bool AnalysisTaskHasBeenSet() const;
 
+                    /**
+                     * 获取媒体质检任务输出
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return QualityControlTask 媒体质检任务输出
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    ScheduleQualityControlTaskResult GetQualityControlTask() const;
+
+                    /**
+                     * 设置媒体质检任务输出
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _qualityControlTask 媒体质检任务输出
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetQualityControlTask(const ScheduleQualityControlTaskResult& _qualityControlTask);
+
+                    /**
+                     * 判断参数 QualityControlTask 是否已赋值
+                     * @return QualityControlTask 是否已赋值
+                     * 
+                     */
+                    bool QualityControlTaskHasBeenSet() const;
+
                 private:
 
                     /**
@@ -344,6 +370,13 @@ namespace TencentCloud
                      */
                     ScheduleAnalysisTaskResult m_analysisTask;
                     bool m_analysisTaskHasBeenSet;
+
+                    /**
+                     * 媒体质检任务输出
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    ScheduleQualityControlTaskResult m_qualityControlTask;
+                    bool m_qualityControlTaskHasBeenSet;
 
                 };
             }

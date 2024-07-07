@@ -73,6 +73,8 @@
 #include <tencentcloud/es/v20180416/model/DescribeLogstashPipelinesResponse.h>
 #include <tencentcloud/es/v20180416/model/DescribeServerlessInstancesRequest.h>
 #include <tencentcloud/es/v20180416/model/DescribeServerlessInstancesResponse.h>
+#include <tencentcloud/es/v20180416/model/DescribeServerlessMetricsRequest.h>
+#include <tencentcloud/es/v20180416/model/DescribeServerlessMetricsResponse.h>
 #include <tencentcloud/es/v20180416/model/DescribeServerlessSpaceUserRequest.h>
 #include <tencentcloud/es/v20180416/model/DescribeServerlessSpaceUserResponse.h>
 #include <tencentcloud/es/v20180416/model/DescribeServerlessSpacesRequest.h>
@@ -220,6 +222,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeServerlessInstancesResponse> DescribeServerlessInstancesOutcome;
                 typedef std::future<DescribeServerlessInstancesOutcome> DescribeServerlessInstancesOutcomeCallable;
                 typedef std::function<void(const EsClient*, const Model::DescribeServerlessInstancesRequest&, DescribeServerlessInstancesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeServerlessInstancesAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeServerlessMetricsResponse> DescribeServerlessMetricsOutcome;
+                typedef std::future<DescribeServerlessMetricsOutcome> DescribeServerlessMetricsOutcomeCallable;
+                typedef std::function<void(const EsClient*, const Model::DescribeServerlessMetricsRequest&, DescribeServerlessMetricsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeServerlessMetricsAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeServerlessSpaceUserResponse> DescribeServerlessSpaceUserOutcome;
                 typedef std::future<DescribeServerlessSpaceUserOutcome> DescribeServerlessSpaceUserOutcomeCallable;
                 typedef std::function<void(const EsClient*, const Model::DescribeServerlessSpaceUserRequest&, DescribeServerlessSpaceUserOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeServerlessSpaceUserAsyncHandler;
@@ -534,6 +539,15 @@ namespace TencentCloud
                 DescribeServerlessInstancesOutcome DescribeServerlessInstances(const Model::DescribeServerlessInstancesRequest &request);
                 void DescribeServerlessInstancesAsync(const Model::DescribeServerlessInstancesRequest& request, const DescribeServerlessInstancesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DescribeServerlessInstancesOutcomeCallable DescribeServerlessInstancesCallable(const Model::DescribeServerlessInstancesRequest& request);
+
+                /**
+                 *获取serverless实例对应指标，获取space维度时不需要传入indexid，获取index时不需要传入spaceid
+                 * @param req DescribeServerlessMetricsRequest
+                 * @return DescribeServerlessMetricsOutcome
+                 */
+                DescribeServerlessMetricsOutcome DescribeServerlessMetrics(const Model::DescribeServerlessMetricsRequest &request);
+                void DescribeServerlessMetricsAsync(const Model::DescribeServerlessMetricsRequest& request, const DescribeServerlessMetricsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeServerlessMetricsOutcomeCallable DescribeServerlessMetricsCallable(const Model::DescribeServerlessMetricsRequest& request);
 
                 /**
                  *查看Serverless空间子用户

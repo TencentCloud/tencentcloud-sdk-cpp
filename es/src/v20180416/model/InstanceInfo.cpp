@@ -107,7 +107,8 @@ InstanceInfo::InstanceInfo() :
     m_kibanaPrivateVipHasBeenSet(false),
     m_customKibanaPrivateUrlHasBeenSet(false),
     m_outboundPublicAclsHasBeenSet(false),
-    m_netConnectSchemeHasBeenSet(false)
+    m_netConnectSchemeHasBeenSet(false),
+    m_disasterRecoverGroupAffinityHasBeenSet(false)
 {
 }
 
@@ -1105,6 +1106,16 @@ CoreInternalOutcome InstanceInfo::Deserialize(const rapidjson::Value &value)
         m_netConnectSchemeHasBeenSet = true;
     }
 
+    if (value.HasMember("DisasterRecoverGroupAffinity") && !value["DisasterRecoverGroupAffinity"].IsNull())
+    {
+        if (!value["DisasterRecoverGroupAffinity"].IsUint64())
+        {
+            return CoreInternalOutcome(Core::Error("response `InstanceInfo.DisasterRecoverGroupAffinity` IsUint64=false incorrectly").SetRequestId(requestId));
+        }
+        m_disasterRecoverGroupAffinity = value["DisasterRecoverGroupAffinity"].GetUint64();
+        m_disasterRecoverGroupAffinityHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -1861,6 +1872,14 @@ void InstanceInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Al
         string key = "NetConnectScheme";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_netConnectScheme.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_disasterRecoverGroupAffinityHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "DisasterRecoverGroupAffinity";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_disasterRecoverGroupAffinity, allocator);
     }
 
 }
@@ -3256,5 +3275,21 @@ void InstanceInfo::SetNetConnectScheme(const string& _netConnectScheme)
 bool InstanceInfo::NetConnectSchemeHasBeenSet() const
 {
     return m_netConnectSchemeHasBeenSet;
+}
+
+uint64_t InstanceInfo::GetDisasterRecoverGroupAffinity() const
+{
+    return m_disasterRecoverGroupAffinity;
+}
+
+void InstanceInfo::SetDisasterRecoverGroupAffinity(const uint64_t& _disasterRecoverGroupAffinity)
+{
+    m_disasterRecoverGroupAffinity = _disasterRecoverGroupAffinity;
+    m_disasterRecoverGroupAffinityHasBeenSet = true;
+}
+
+bool InstanceInfo::DisasterRecoverGroupAffinityHasBeenSet() const
+{
+    return m_disasterRecoverGroupAffinityHasBeenSet;
 }
 

@@ -22,6 +22,7 @@ using namespace std;
 
 RecognizeConfig::RecognizeConfig() :
     m_languageHasBeenSet(false),
+    m_alternativeLanguageHasBeenSet(false),
     m_modelHasBeenSet(false),
     m_translationLanguageHasBeenSet(false)
 {
@@ -40,6 +41,19 @@ CoreInternalOutcome RecognizeConfig::Deserialize(const rapidjson::Value &value)
         }
         m_language = string(value["Language"].GetString());
         m_languageHasBeenSet = true;
+    }
+
+    if (value.HasMember("AlternativeLanguage") && !value["AlternativeLanguage"].IsNull())
+    {
+        if (!value["AlternativeLanguage"].IsArray())
+            return CoreInternalOutcome(Core::Error("response `RecognizeConfig.AlternativeLanguage` is not array type"));
+
+        const rapidjson::Value &tmpValue = value["AlternativeLanguage"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            m_alternativeLanguage.push_back((*itr).GetString());
+        }
+        m_alternativeLanguageHasBeenSet = true;
     }
 
     if (value.HasMember("Model") && !value["Model"].IsNull())
@@ -77,6 +91,19 @@ void RecognizeConfig::ToJsonObject(rapidjson::Value &value, rapidjson::Document:
         value.AddMember(iKey, rapidjson::Value(m_language.c_str(), allocator).Move(), allocator);
     }
 
+    if (m_alternativeLanguageHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "AlternativeLanguage";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        for (auto itr = m_alternativeLanguage.begin(); itr != m_alternativeLanguage.end(); ++itr)
+        {
+            value[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
+        }
+    }
+
     if (m_modelHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
@@ -110,6 +137,22 @@ void RecognizeConfig::SetLanguage(const string& _language)
 bool RecognizeConfig::LanguageHasBeenSet() const
 {
     return m_languageHasBeenSet;
+}
+
+vector<string> RecognizeConfig::GetAlternativeLanguage() const
+{
+    return m_alternativeLanguage;
+}
+
+void RecognizeConfig::SetAlternativeLanguage(const vector<string>& _alternativeLanguage)
+{
+    m_alternativeLanguage = _alternativeLanguage;
+    m_alternativeLanguageHasBeenSet = true;
+}
+
+bool RecognizeConfig::AlternativeLanguageHasBeenSet() const
+{
+    return m_alternativeLanguageHasBeenSet;
 }
 
 string RecognizeConfig::GetModel() const
