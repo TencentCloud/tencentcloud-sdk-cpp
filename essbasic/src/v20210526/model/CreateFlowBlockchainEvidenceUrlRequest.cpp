@@ -24,7 +24,8 @@ using namespace std;
 
 CreateFlowBlockchainEvidenceUrlRequest::CreateFlowBlockchainEvidenceUrlRequest() :
     m_agentHasBeenSet(false),
-    m_flowIdHasBeenSet(false)
+    m_flowIdHasBeenSet(false),
+    m_expiredOnHasBeenSet(false)
 {
 }
 
@@ -50,6 +51,14 @@ string CreateFlowBlockchainEvidenceUrlRequest::ToJsonString() const
         string key = "FlowId";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_flowId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_expiredOnHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ExpiredOn";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_expiredOn, allocator);
     }
 
 
@@ -90,6 +99,22 @@ void CreateFlowBlockchainEvidenceUrlRequest::SetFlowId(const string& _flowId)
 bool CreateFlowBlockchainEvidenceUrlRequest::FlowIdHasBeenSet() const
 {
     return m_flowIdHasBeenSet;
+}
+
+uint64_t CreateFlowBlockchainEvidenceUrlRequest::GetExpiredOn() const
+{
+    return m_expiredOn;
+}
+
+void CreateFlowBlockchainEvidenceUrlRequest::SetExpiredOn(const uint64_t& _expiredOn)
+{
+    m_expiredOn = _expiredOn;
+    m_expiredOnHasBeenSet = true;
+}
+
+bool CreateFlowBlockchainEvidenceUrlRequest::ExpiredOnHasBeenSet() const
+{
+    return m_expiredOnHasBeenSet;
 }
 
 

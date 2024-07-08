@@ -726,6 +726,31 @@ namespace TencentCloud
                      */
                     bool ExpireEndHasBeenSet() const;
 
+                    /**
+                     * 获取是否允许重试，0：否，1：是
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return IsAllowRetry 是否允许重试，0：否，1：是
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    bool GetIsAllowRetry() const;
+
+                    /**
+                     * 设置是否允许重试，0：否，1：是
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _isAllowRetry 是否允许重试，0：否，1：是
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetIsAllowRetry(const bool& _isAllowRetry);
+
+                    /**
+                     * 判断参数 IsAllowRetry 是否已赋值
+                     * @return IsAllowRetry 是否已赋值
+                     * 
+                     */
+                    bool IsAllowRetryHasBeenSet() const;
+
                 private:
 
                     /**
@@ -917,6 +942,13 @@ namespace TencentCloud
                      */
                     std::string m_expireEnd;
                     bool m_expireEndHasBeenSet;
+
+                    /**
+                     * 是否允许重试，0：否，1：是
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    bool m_isAllowRetry;
+                    bool m_isAllowRetryHasBeenSet;
 
                 };
             }

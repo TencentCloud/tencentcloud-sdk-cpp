@@ -88,6 +88,27 @@ OfdFileUrl 和 OfdFileBase64 必传其一，若两者都传，只解析OfdFileBa
                      */
                     bool OfdFileBase64HasBeenSet() const;
 
+                    /**
+                     * 获取需要识别的OFD发票页面的对应页码，默认值为1。 示例值：1
+                     * @return OfdPageNumber 需要识别的OFD发票页面的对应页码，默认值为1。 示例值：1
+                     * 
+                     */
+                    int64_t GetOfdPageNumber() const;
+
+                    /**
+                     * 设置需要识别的OFD发票页面的对应页码，默认值为1。 示例值：1
+                     * @param _ofdPageNumber 需要识别的OFD发票页面的对应页码，默认值为1。 示例值：1
+                     * 
+                     */
+                    void SetOfdPageNumber(const int64_t& _ofdPageNumber);
+
+                    /**
+                     * 判断参数 OfdPageNumber 是否已赋值
+                     * @return OfdPageNumber 是否已赋值
+                     * 
+                     */
+                    bool OfdPageNumberHasBeenSet() const;
+
                 private:
 
                     /**
@@ -102,6 +123,12 @@ OfdFileUrl 和 OfdFileBase64 必传其一，若两者都传，只解析OfdFileBa
                      */
                     std::string m_ofdFileBase64;
                     bool m_ofdFileBase64HasBeenSet;
+
+                    /**
+                     * 需要识别的OFD发票页面的对应页码，默认值为1。 示例值：1
+                     */
+                    int64_t m_ofdPageNumber;
+                    bool m_ofdPageNumberHasBeenSet;
 
                 };
             }

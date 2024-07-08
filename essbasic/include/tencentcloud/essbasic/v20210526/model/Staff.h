@@ -71,14 +71,18 @@ namespace TencentCloud
 
                     /**
                      * 获取显示的员工名
+注意：2024-07-08 及之后创建的应用号，该字段返回的是打码信息
                      * @return DisplayName 显示的员工名
+注意：2024-07-08 及之后创建的应用号，该字段返回的是打码信息
                      * 
                      */
                     std::string GetDisplayName() const;
 
                     /**
                      * 设置显示的员工名
+注意：2024-07-08 及之后创建的应用号，该字段返回的是打码信息
                      * @param _displayName 显示的员工名
+注意：2024-07-08 及之后创建的应用号，该字段返回的是打码信息
                      * 
                      */
                     void SetDisplayName(const std::string& _displayName);
@@ -92,14 +96,18 @@ namespace TencentCloud
 
                     /**
                      * 获取员工手机号
+注意：2024-07-08 及之后创建的应用号，该字段返回的是打码信息
                      * @return Mobile 员工手机号
+注意：2024-07-08 及之后创建的应用号，该字段返回的是打码信息
                      * 
                      */
                     std::string GetMobile() const;
 
                     /**
                      * 设置员工手机号
+注意：2024-07-08 及之后创建的应用号，该字段返回的是打码信息
                      * @param _mobile 员工手机号
+注意：2024-07-08 及之后创建的应用号，该字段返回的是打码信息
                      * 
                      */
                     void SetMobile(const std::string& _mobile);
@@ -305,12 +313,14 @@ namespace TencentCloud
 
                     /**
                      * 显示的员工名
+注意：2024-07-08 及之后创建的应用号，该字段返回的是打码信息
                      */
                     std::string m_displayName;
                     bool m_displayNameHasBeenSet;
 
                     /**
                      * 员工手机号
+注意：2024-07-08 及之后创建的应用号，该字段返回的是打码信息
                      */
                     std::string m_mobile;
                     bool m_mobileHasBeenSet;

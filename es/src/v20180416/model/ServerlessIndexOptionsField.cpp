@@ -22,7 +22,8 @@ using namespace std;
 
 ServerlessIndexOptionsField::ServerlessIndexOptionsField() :
     m_expireMaxAgeHasBeenSet(false),
-    m_timestampFieldHasBeenSet(false)
+    m_timestampFieldHasBeenSet(false),
+    m_sinkCycleAgeHasBeenSet(false)
 {
 }
 
@@ -51,6 +52,16 @@ CoreInternalOutcome ServerlessIndexOptionsField::Deserialize(const rapidjson::Va
         m_timestampFieldHasBeenSet = true;
     }
 
+    if (value.HasMember("SinkCycleAge") && !value["SinkCycleAge"].IsNull())
+    {
+        if (!value["SinkCycleAge"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `ServerlessIndexOptionsField.SinkCycleAge` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_sinkCycleAge = string(value["SinkCycleAge"].GetString());
+        m_sinkCycleAgeHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -72,6 +83,14 @@ void ServerlessIndexOptionsField::ToJsonObject(rapidjson::Value &value, rapidjso
         string key = "TimestampField";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_timestampField.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_sinkCycleAgeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "SinkCycleAge";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_sinkCycleAge.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -107,5 +126,21 @@ void ServerlessIndexOptionsField::SetTimestampField(const string& _timestampFiel
 bool ServerlessIndexOptionsField::TimestampFieldHasBeenSet() const
 {
     return m_timestampFieldHasBeenSet;
+}
+
+string ServerlessIndexOptionsField::GetSinkCycleAge() const
+{
+    return m_sinkCycleAge;
+}
+
+void ServerlessIndexOptionsField::SetSinkCycleAge(const string& _sinkCycleAge)
+{
+    m_sinkCycleAge = _sinkCycleAge;
+    m_sinkCycleAgeHasBeenSet = true;
+}
+
+bool ServerlessIndexOptionsField::SinkCycleAgeHasBeenSet() const
+{
+    return m_sinkCycleAgeHasBeenSet;
 }
 

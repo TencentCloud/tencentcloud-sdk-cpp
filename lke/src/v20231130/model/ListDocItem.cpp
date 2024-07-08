@@ -47,7 +47,8 @@ ListDocItem::ListDocItem() :
     m_referUrlTypeHasBeenSet(false),
     m_webUrlHasBeenSet(false),
     m_expireStartHasBeenSet(false),
-    m_expireEndHasBeenSet(false)
+    m_expireEndHasBeenSet(false),
+    m_isAllowRetryHasBeenSet(false)
 {
 }
 
@@ -336,6 +337,16 @@ CoreInternalOutcome ListDocItem::Deserialize(const rapidjson::Value &value)
         m_expireEndHasBeenSet = true;
     }
 
+    if (value.HasMember("IsAllowRetry") && !value["IsAllowRetry"].IsNull())
+    {
+        if (!value["IsAllowRetry"].IsBool())
+        {
+            return CoreInternalOutcome(Core::Error("response `ListDocItem.IsAllowRetry` IsBool=false incorrectly").SetRequestId(requestId));
+        }
+        m_isAllowRetry = value["IsAllowRetry"].GetBool();
+        m_isAllowRetryHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -564,6 +575,14 @@ void ListDocItem::ToJsonObject(rapidjson::Value &value, rapidjson::Document::All
         string key = "ExpireEnd";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_expireEnd.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_isAllowRetryHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "IsAllowRetry";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_isAllowRetry, allocator);
     }
 
 }
@@ -999,5 +1018,21 @@ void ListDocItem::SetExpireEnd(const string& _expireEnd)
 bool ListDocItem::ExpireEndHasBeenSet() const
 {
     return m_expireEndHasBeenSet;
+}
+
+bool ListDocItem::GetIsAllowRetry() const
+{
+    return m_isAllowRetry;
+}
+
+void ListDocItem::SetIsAllowRetry(const bool& _isAllowRetry)
+{
+    m_isAllowRetry = _isAllowRetry;
+    m_isAllowRetryHasBeenSet = true;
+}
+
+bool ListDocItem::IsAllowRetryHasBeenSet() const
+{
+    return m_isAllowRetryHasBeenSet;
 }
 

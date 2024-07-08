@@ -123,6 +123,31 @@ namespace TencentCloud
                      */
                     bool AgentHasBeenSet() const;
 
+                    /**
+                     * 获取链接/二维码的有效截止时间，格式为unix时间戳。最长不超过 2099年12月31日（4102415999）。
+默认值为有效期为当前时间后7天。
+                     * @return ExpiredOn 链接/二维码的有效截止时间，格式为unix时间戳。最长不超过 2099年12月31日（4102415999）。
+默认值为有效期为当前时间后7天。
+                     * 
+                     */
+                    uint64_t GetExpiredOn() const;
+
+                    /**
+                     * 设置链接/二维码的有效截止时间，格式为unix时间戳。最长不超过 2099年12月31日（4102415999）。
+默认值为有效期为当前时间后7天。
+                     * @param _expiredOn 链接/二维码的有效截止时间，格式为unix时间戳。最长不超过 2099年12月31日（4102415999）。
+默认值为有效期为当前时间后7天。
+                     * 
+                     */
+                    void SetExpiredOn(const uint64_t& _expiredOn);
+
+                    /**
+                     * 判断参数 ExpiredOn 是否已赋值
+                     * @return ExpiredOn 是否已赋值
+                     * 
+                     */
+                    bool ExpiredOnHasBeenSet() const;
+
                 private:
 
                     /**
@@ -146,6 +171,13 @@ namespace TencentCloud
                      */
                     Agent m_agent;
                     bool m_agentHasBeenSet;
+
+                    /**
+                     * 链接/二维码的有效截止时间，格式为unix时间戳。最长不超过 2099年12月31日（4102415999）。
+默认值为有效期为当前时间后7天。
+                     */
+                    uint64_t m_expiredOn;
+                    bool m_expiredOnHasBeenSet;
 
                 };
             }

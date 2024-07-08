@@ -96,6 +96,31 @@ namespace TencentCloud
                      */
                     bool TimestampFieldHasBeenSet() const;
 
+                    /**
+                     * 获取标准存储时长
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return SinkCycleAge 标准存储时长
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::string GetSinkCycleAge() const;
+
+                    /**
+                     * 设置标准存储时长
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _sinkCycleAge 标准存储时长
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetSinkCycleAge(const std::string& _sinkCycleAge);
+
+                    /**
+                     * 判断参数 SinkCycleAge 是否已赋值
+                     * @return SinkCycleAge 是否已赋值
+                     * 
+                     */
+                    bool SinkCycleAgeHasBeenSet() const;
+
                 private:
 
                     /**
@@ -111,6 +136,13 @@ namespace TencentCloud
                      */
                     std::string m_timestampField;
                     bool m_timestampFieldHasBeenSet;
+
+                    /**
+                     * 标准存储时长
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_sinkCycleAge;
+                    bool m_sinkCycleAgeHasBeenSet;
 
                 };
             }

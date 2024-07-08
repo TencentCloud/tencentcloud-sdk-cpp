@@ -24,7 +24,8 @@ using namespace std;
 
 VerifyOfdVatInvoiceOCRRequest::VerifyOfdVatInvoiceOCRRequest() :
     m_ofdFileUrlHasBeenSet(false),
-    m_ofdFileBase64HasBeenSet(false)
+    m_ofdFileBase64HasBeenSet(false),
+    m_ofdPageNumberHasBeenSet(false)
 {
 }
 
@@ -49,6 +50,14 @@ string VerifyOfdVatInvoiceOCRRequest::ToJsonString() const
         string key = "OfdFileBase64";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_ofdFileBase64.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_ofdPageNumberHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "OfdPageNumber";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_ofdPageNumber, allocator);
     }
 
 
@@ -89,6 +98,22 @@ void VerifyOfdVatInvoiceOCRRequest::SetOfdFileBase64(const string& _ofdFileBase6
 bool VerifyOfdVatInvoiceOCRRequest::OfdFileBase64HasBeenSet() const
 {
     return m_ofdFileBase64HasBeenSet;
+}
+
+int64_t VerifyOfdVatInvoiceOCRRequest::GetOfdPageNumber() const
+{
+    return m_ofdPageNumber;
+}
+
+void VerifyOfdVatInvoiceOCRRequest::SetOfdPageNumber(const int64_t& _ofdPageNumber)
+{
+    m_ofdPageNumber = _ofdPageNumber;
+    m_ofdPageNumberHasBeenSet = true;
+}
+
+bool VerifyOfdVatInvoiceOCRRequest::OfdPageNumberHasBeenSet() const
+{
+    return m_ofdPageNumberHasBeenSet;
 }
 
 

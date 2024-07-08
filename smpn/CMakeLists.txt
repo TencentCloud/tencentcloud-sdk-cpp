@@ -20,21 +20,9 @@ set(smpn_public_header
 
 set(smpn_public_header_model
   include/tencentcloud/smpn/v20190822/model/DescribeSmpnChpRequest.h
-  include/tencentcloud/smpn/v20190822/model/EPARequest.h
-  include/tencentcloud/smpn/v20190822/model/MHMRequest.h
-  include/tencentcloud/smpn/v20190822/model/MRLRequest.h
-  include/tencentcloud/smpn/v20190822/model/CreateSmpnEpaResponse.h
   include/tencentcloud/smpn/v20190822/model/DescribeSmpnFnrResponse.h
-  include/tencentcloud/smpn/v20190822/model/DescribeSmpnMhmResponse.h
   include/tencentcloud/smpn/v20190822/model/DescribeSmpnFnrRequest.h
-  include/tencentcloud/smpn/v20190822/model/DescribeSmpnMrlRequest.h
   include/tencentcloud/smpn/v20190822/model/CHPRequest.h
-  include/tencentcloud/smpn/v20190822/model/MRLResponse.h
-  include/tencentcloud/smpn/v20190822/model/DescribeSmpnMrlResponse.h
-  include/tencentcloud/smpn/v20190822/model/DescribeSmpnMhmRequest.h
-  include/tencentcloud/smpn/v20190822/model/MHMResponse.h
-  include/tencentcloud/smpn/v20190822/model/CreateSmpnEpaRequest.h
-  include/tencentcloud/smpn/v20190822/model/EPAResponse.h
   include/tencentcloud/smpn/v20190822/model/FNRResponse.h
   include/tencentcloud/smpn/v20190822/model/CHPResponse.h
   include/tencentcloud/smpn/v20190822/model/DescribeSmpnChpResponse.h
@@ -44,21 +32,9 @@ set(smpn_public_header_model
 set(smpn_src
   src/v20190822/SmpnClient.cpp
   src/v20190822/model/DescribeSmpnChpRequest.cpp
-  src/v20190822/model/EPARequest.cpp
-  src/v20190822/model/MHMRequest.cpp
-  src/v20190822/model/MRLRequest.cpp
-  src/v20190822/model/CreateSmpnEpaResponse.cpp
   src/v20190822/model/DescribeSmpnFnrResponse.cpp
-  src/v20190822/model/DescribeSmpnMhmResponse.cpp
   src/v20190822/model/DescribeSmpnFnrRequest.cpp
-  src/v20190822/model/DescribeSmpnMrlRequest.cpp
   src/v20190822/model/CHPRequest.cpp
-  src/v20190822/model/MRLResponse.cpp
-  src/v20190822/model/DescribeSmpnMrlResponse.cpp
-  src/v20190822/model/DescribeSmpnMhmRequest.cpp
-  src/v20190822/model/MHMResponse.cpp
-  src/v20190822/model/CreateSmpnEpaRequest.cpp
-  src/v20190822/model/EPAResponse.cpp
   src/v20190822/model/FNRResponse.cpp
   src/v20190822/model/CHPResponse.cpp
   src/v20190822/model/DescribeSmpnChpResponse.cpp

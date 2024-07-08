@@ -23,16 +23,10 @@
 #include <tencentcloud/core/Credential.h>
 #include <tencentcloud/core/profile/ClientProfile.h>
 #include <tencentcloud/core/AsyncCallerContext.h>
-#include <tencentcloud/smpn/v20190822/model/CreateSmpnEpaRequest.h>
-#include <tencentcloud/smpn/v20190822/model/CreateSmpnEpaResponse.h>
 #include <tencentcloud/smpn/v20190822/model/DescribeSmpnChpRequest.h>
 #include <tencentcloud/smpn/v20190822/model/DescribeSmpnChpResponse.h>
 #include <tencentcloud/smpn/v20190822/model/DescribeSmpnFnrRequest.h>
 #include <tencentcloud/smpn/v20190822/model/DescribeSmpnFnrResponse.h>
-#include <tencentcloud/smpn/v20190822/model/DescribeSmpnMhmRequest.h>
-#include <tencentcloud/smpn/v20190822/model/DescribeSmpnMhmResponse.h>
-#include <tencentcloud/smpn/v20190822/model/DescribeSmpnMrlRequest.h>
-#include <tencentcloud/smpn/v20190822/model/DescribeSmpnMrlResponse.h>
 
 
 namespace TencentCloud
@@ -47,34 +41,14 @@ namespace TencentCloud
                 SmpnClient(const Credential &credential, const std::string &region);
                 SmpnClient(const Credential &credential, const std::string &region, const ClientProfile &profile);
 
-                typedef Outcome<Core::Error, Model::CreateSmpnEpaResponse> CreateSmpnEpaOutcome;
-                typedef std::future<CreateSmpnEpaOutcome> CreateSmpnEpaOutcomeCallable;
-                typedef std::function<void(const SmpnClient*, const Model::CreateSmpnEpaRequest&, CreateSmpnEpaOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateSmpnEpaAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeSmpnChpResponse> DescribeSmpnChpOutcome;
                 typedef std::future<DescribeSmpnChpOutcome> DescribeSmpnChpOutcomeCallable;
                 typedef std::function<void(const SmpnClient*, const Model::DescribeSmpnChpRequest&, DescribeSmpnChpOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeSmpnChpAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeSmpnFnrResponse> DescribeSmpnFnrOutcome;
                 typedef std::future<DescribeSmpnFnrOutcome> DescribeSmpnFnrOutcomeCallable;
                 typedef std::function<void(const SmpnClient*, const Model::DescribeSmpnFnrRequest&, DescribeSmpnFnrOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeSmpnFnrAsyncHandler;
-                typedef Outcome<Core::Error, Model::DescribeSmpnMhmResponse> DescribeSmpnMhmOutcome;
-                typedef std::future<DescribeSmpnMhmOutcome> DescribeSmpnMhmOutcomeCallable;
-                typedef std::function<void(const SmpnClient*, const Model::DescribeSmpnMhmRequest&, DescribeSmpnMhmOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeSmpnMhmAsyncHandler;
-                typedef Outcome<Core::Error, Model::DescribeSmpnMrlResponse> DescribeSmpnMrlOutcome;
-                typedef std::future<DescribeSmpnMrlOutcome> DescribeSmpnMrlOutcomeCallable;
-                typedef std::function<void(const SmpnClient*, const Model::DescribeSmpnMrlRequest&, DescribeSmpnMrlOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeSmpnMrlAsyncHandler;
 
 
-
-                /**
-                 *不在使用的API
-
-企业号码认证
-                 * @param req CreateSmpnEpaRequest
-                 * @return CreateSmpnEpaOutcome
-                 */
-                CreateSmpnEpaOutcome CreateSmpnEpa(const Model::CreateSmpnEpaRequest &request);
-                void CreateSmpnEpaAsync(const Model::CreateSmpnEpaRequest& request, const CreateSmpnEpaAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
-                CreateSmpnEpaOutcomeCallable CreateSmpnEpaCallable(const Model::CreateSmpnEpaRequest& request);
 
                 /**
                  *不在使用的API
@@ -97,28 +71,6 @@ namespace TencentCloud
                 DescribeSmpnFnrOutcome DescribeSmpnFnr(const Model::DescribeSmpnFnrRequest &request);
                 void DescribeSmpnFnrAsync(const Model::DescribeSmpnFnrRequest& request, const DescribeSmpnFnrAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DescribeSmpnFnrOutcomeCallable DescribeSmpnFnrCallable(const Model::DescribeSmpnFnrRequest& request);
-
-                /**
-                 *不在使用的API
-
-号码营销监控
-                 * @param req DescribeSmpnMhmRequest
-                 * @return DescribeSmpnMhmOutcome
-                 */
-                DescribeSmpnMhmOutcome DescribeSmpnMhm(const Model::DescribeSmpnMhmRequest &request);
-                void DescribeSmpnMhmAsync(const Model::DescribeSmpnMhmRequest& request, const DescribeSmpnMhmAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
-                DescribeSmpnMhmOutcomeCallable DescribeSmpnMhmCallable(const Model::DescribeSmpnMhmRequest& request);
-
-                /**
-                 *不在使用的API
-
-查询号码恶意标记等级
-                 * @param req DescribeSmpnMrlRequest
-                 * @return DescribeSmpnMrlOutcome
-                 */
-                DescribeSmpnMrlOutcome DescribeSmpnMrl(const Model::DescribeSmpnMrlRequest &request);
-                void DescribeSmpnMrlAsync(const Model::DescribeSmpnMrlRequest& request, const DescribeSmpnMrlAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
-                DescribeSmpnMrlOutcomeCallable DescribeSmpnMrlCallable(const Model::DescribeSmpnMrlRequest& request);
 
             };
         }
