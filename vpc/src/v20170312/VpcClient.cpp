@@ -12983,6 +12983,49 @@ VpcClient::ModifyVpnGatewayRoutesOutcomeCallable VpcClient::ModifyVpnGatewayRout
     return task->get_future();
 }
 
+VpcClient::ModifyVpnGatewaySslClientCertOutcome VpcClient::ModifyVpnGatewaySslClientCert(const ModifyVpnGatewaySslClientCertRequest &request)
+{
+    auto outcome = MakeRequest(request, "ModifyVpnGatewaySslClientCert");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ModifyVpnGatewaySslClientCertResponse rsp = ModifyVpnGatewaySslClientCertResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ModifyVpnGatewaySslClientCertOutcome(rsp);
+        else
+            return ModifyVpnGatewaySslClientCertOutcome(o.GetError());
+    }
+    else
+    {
+        return ModifyVpnGatewaySslClientCertOutcome(outcome.GetError());
+    }
+}
+
+void VpcClient::ModifyVpnGatewaySslClientCertAsync(const ModifyVpnGatewaySslClientCertRequest& request, const ModifyVpnGatewaySslClientCertAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->ModifyVpnGatewaySslClientCert(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+VpcClient::ModifyVpnGatewaySslClientCertOutcomeCallable VpcClient::ModifyVpnGatewaySslClientCertCallable(const ModifyVpnGatewaySslClientCertRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<ModifyVpnGatewaySslClientCertOutcome()>>(
+        [this, request]()
+        {
+            return this->ModifyVpnGatewaySslClientCert(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 VpcClient::ModifyVpnGatewaySslServerOutcome VpcClient::ModifyVpnGatewaySslServer(const ModifyVpnGatewaySslServerRequest &request)
 {
     auto outcome = MakeRequest(request, "ModifyVpnGatewaySslServer");

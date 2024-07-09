@@ -84,6 +84,27 @@ namespace TencentCloud
                      */
                     bool ExpandedCapacityHasBeenSet() const;
 
+                    /**
+                     * 获取容量修改类型：add/sub
+                     * @return ModifyType 容量修改类型：add/sub
+                     * 
+                     */
+                    std::string GetModifyType() const;
+
+                    /**
+                     * 设置容量修改类型：add/sub
+                     * @param _modifyType 容量修改类型：add/sub
+                     * 
+                     */
+                    void SetModifyType(const std::string& _modifyType);
+
+                    /**
+                     * 判断参数 ModifyType 是否已赋值
+                     * @return ModifyType 是否已赋值
+                     * 
+                     */
+                    bool ModifyTypeHasBeenSet() const;
+
                 private:
 
                     /**
@@ -97,6 +118,12 @@ namespace TencentCloud
                      */
                     uint64_t m_expandedCapacity;
                     bool m_expandedCapacityHasBeenSet;
+
+                    /**
+                     * 容量修改类型：add/sub
+                     */
+                    std::string m_modifyType;
+                    bool m_modifyTypeHasBeenSet;
 
                 };
             }

@@ -24,7 +24,8 @@ using namespace std;
 
 DescribeReleaseFileSignRequest::DescribeReleaseFileSignRequest() :
     m_timeoutHasBeenSet(false),
-    m_fileTypeHasBeenSet(false)
+    m_fileTypeHasBeenSet(false),
+    m_siteHasBeenSet(false)
 {
 }
 
@@ -49,6 +50,14 @@ string DescribeReleaseFileSignRequest::ToJsonString() const
         string key = "FileType";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_fileType, allocator);
+    }
+
+    if (m_siteHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Site";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_site, allocator);
     }
 
 
@@ -89,6 +98,22 @@ void DescribeReleaseFileSignRequest::SetFileType(const int64_t& _fileType)
 bool DescribeReleaseFileSignRequest::FileTypeHasBeenSet() const
 {
     return m_fileTypeHasBeenSet;
+}
+
+int64_t DescribeReleaseFileSignRequest::GetSite() const
+{
+    return m_site;
+}
+
+void DescribeReleaseFileSignRequest::SetSite(const int64_t& _site)
+{
+    m_site = _site;
+    m_siteHasBeenSet = true;
+}
+
+bool DescribeReleaseFileSignRequest::SiteHasBeenSet() const
+{
+    return m_siteHasBeenSet;
 }
 
 

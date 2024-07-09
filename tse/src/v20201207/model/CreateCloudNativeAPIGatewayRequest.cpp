@@ -36,7 +36,8 @@ CreateCloudNativeAPIGatewayRequest::CreateCloudNativeAPIGatewayRequest() :
     m_engineRegionHasBeenSet(false),
     m_ingressClassNameHasBeenSet(false),
     m_tradeTypeHasBeenSet(false),
-    m_internetConfigHasBeenSet(false)
+    m_internetConfigHasBeenSet(false),
+    m_promIdHasBeenSet(false)
 {
 }
 
@@ -167,6 +168,14 @@ string CreateCloudNativeAPIGatewayRequest::ToJsonString() const
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
         m_internetConfig.ToJsonObject(d[key.c_str()], allocator);
+    }
+
+    if (m_promIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "PromId";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_promId.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -399,6 +408,22 @@ void CreateCloudNativeAPIGatewayRequest::SetInternetConfig(const InternetConfig&
 bool CreateCloudNativeAPIGatewayRequest::InternetConfigHasBeenSet() const
 {
     return m_internetConfigHasBeenSet;
+}
+
+string CreateCloudNativeAPIGatewayRequest::GetPromId() const
+{
+    return m_promId;
+}
+
+void CreateCloudNativeAPIGatewayRequest::SetPromId(const string& _promId)
+{
+    m_promId = _promId;
+    m_promIdHasBeenSet = true;
+}
+
+bool CreateCloudNativeAPIGatewayRequest::PromIdHasBeenSet() const
+{
+    return m_promIdHasBeenSet;
 }
 
 

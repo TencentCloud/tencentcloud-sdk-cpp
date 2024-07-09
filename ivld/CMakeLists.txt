@@ -22,6 +22,7 @@ set(ivld_public_header_model
   include/tencentcloud/ivld/v20210903/model/MultiLevelTag.h
   include/tencentcloud/ivld/v20210903/model/AddCustomPersonImageRequest.h
   include/tencentcloud/ivld/v20210903/model/L2Tag.h
+  include/tencentcloud/ivld/v20210903/model/DescribeVideoSummaryDetailRequest.h
   include/tencentcloud/ivld/v20210903/model/DescribeTaskDetailResponse.h
   include/tencentcloud/ivld/v20210903/model/DeleteCustomCategoryRequest.h
   include/tencentcloud/ivld/v20210903/model/MediaFilter.h
@@ -29,7 +30,10 @@ set(ivld_public_header_model
   include/tencentcloud/ivld/v20210903/model/DescribeCustomCategoriesRequest.h
   include/tencentcloud/ivld/v20210903/model/DescribeTasksResponse.h
   include/tencentcloud/ivld/v20210903/model/CustomPersonFilter.h
+  include/tencentcloud/ivld/v20210903/model/DescribeVideoSummaryDetailResponse.h
   include/tencentcloud/ivld/v20210903/model/CreateCustomPersonResponse.h
+  include/tencentcloud/ivld/v20210903/model/VideoRotationMode.h
+  include/tencentcloud/ivld/v20210903/model/DescribeUsageAmountRequest.h
   include/tencentcloud/ivld/v20210903/model/ImportMediaResponse.h
   include/tencentcloud/ivld/v20210903/model/QueryCallbackRequest.h
   include/tencentcloud/ivld/v20210903/model/DescribeMediaRequest.h
@@ -63,10 +67,13 @@ set(ivld_public_header_model
   include/tencentcloud/ivld/v20210903/model/ImportMediaRequest.h
   include/tencentcloud/ivld/v20210903/model/DescribeMediasRequest.h
   include/tencentcloud/ivld/v20210903/model/CreateDefaultCategoriesResponse.h
+  include/tencentcloud/ivld/v20210903/model/AsrResult.h
   include/tencentcloud/ivld/v20210903/model/ClassifiedPersonInfo.h
   include/tencentcloud/ivld/v20210903/model/DescribeCustomPersonsRequest.h
   include/tencentcloud/ivld/v20210903/model/DescribeMediaResponse.h
+  include/tencentcloud/ivld/v20210903/model/TextSegMatchShotScore.h
   include/tencentcloud/ivld/v20210903/model/Data.h
+  include/tencentcloud/ivld/v20210903/model/DescribeUsageAmountResponse.h
   include/tencentcloud/ivld/v20210903/model/AppearInfo.h
   include/tencentcloud/ivld/v20210903/model/PersonInfo.h
   include/tencentcloud/ivld/v20210903/model/AudioInfo.h
@@ -74,10 +81,12 @@ set(ivld_public_header_model
   include/tencentcloud/ivld/v20210903/model/DeleteCustomPersonImageResponse.h
   include/tencentcloud/ivld/v20210903/model/TextInfo.h
   include/tencentcloud/ivld/v20210903/model/CreateCustomCategoryResponse.h
+  include/tencentcloud/ivld/v20210903/model/CreateVideoSummaryTaskRequest.h
   include/tencentcloud/ivld/v20210903/model/QueryCallbackResponse.h
   include/tencentcloud/ivld/v20210903/model/MultiLevelPersonInfo.h
   include/tencentcloud/ivld/v20210903/model/CreateCustomGroupResponse.h
   include/tencentcloud/ivld/v20210903/model/UpdateCustomCategoryResponse.h
+  include/tencentcloud/ivld/v20210903/model/TTSMode.h
   include/tencentcloud/ivld/v20210903/model/DescribeMediasResponse.h
   include/tencentcloud/ivld/v20210903/model/UnknownPerson.h
   include/tencentcloud/ivld/v20210903/model/MediaMetadata.h
@@ -100,8 +109,10 @@ set(ivld_public_header_model
   include/tencentcloud/ivld/v20210903/model/ModifyCallbackResponse.h
   include/tencentcloud/ivld/v20210903/model/ImageLogo.h
   include/tencentcloud/ivld/v20210903/model/L3Tag.h
+  include/tencentcloud/ivld/v20210903/model/CreateVideoSummaryTaskResponse.h
   include/tencentcloud/ivld/v20210903/model/AudioData.h
   include/tencentcloud/ivld/v20210903/model/CreateCustomPersonRequest.h
+  include/tencentcloud/ivld/v20210903/model/ShotInfo.h
   include/tencentcloud/ivld/v20210903/model/MediaInfo.h
   include/tencentcloud/ivld/v20210903/model/DeleteCustomCategoryResponse.h
   include/tencentcloud/ivld/v20210903/model/DescribeCustomGroupRequest.h
@@ -112,6 +123,7 @@ set(ivld_src
   src/v20210903/model/MultiLevelTag.cpp
   src/v20210903/model/AddCustomPersonImageRequest.cpp
   src/v20210903/model/L2Tag.cpp
+  src/v20210903/model/DescribeVideoSummaryDetailRequest.cpp
   src/v20210903/model/DescribeTaskDetailResponse.cpp
   src/v20210903/model/DeleteCustomCategoryRequest.cpp
   src/v20210903/model/MediaFilter.cpp
@@ -119,7 +131,10 @@ set(ivld_src
   src/v20210903/model/DescribeCustomCategoriesRequest.cpp
   src/v20210903/model/DescribeTasksResponse.cpp
   src/v20210903/model/CustomPersonFilter.cpp
+  src/v20210903/model/DescribeVideoSummaryDetailResponse.cpp
   src/v20210903/model/CreateCustomPersonResponse.cpp
+  src/v20210903/model/VideoRotationMode.cpp
+  src/v20210903/model/DescribeUsageAmountRequest.cpp
   src/v20210903/model/ImportMediaResponse.cpp
   src/v20210903/model/QueryCallbackRequest.cpp
   src/v20210903/model/DescribeMediaRequest.cpp
@@ -153,10 +168,13 @@ set(ivld_src
   src/v20210903/model/ImportMediaRequest.cpp
   src/v20210903/model/DescribeMediasRequest.cpp
   src/v20210903/model/CreateDefaultCategoriesResponse.cpp
+  src/v20210903/model/AsrResult.cpp
   src/v20210903/model/ClassifiedPersonInfo.cpp
   src/v20210903/model/DescribeCustomPersonsRequest.cpp
   src/v20210903/model/DescribeMediaResponse.cpp
+  src/v20210903/model/TextSegMatchShotScore.cpp
   src/v20210903/model/Data.cpp
+  src/v20210903/model/DescribeUsageAmountResponse.cpp
   src/v20210903/model/AppearInfo.cpp
   src/v20210903/model/PersonInfo.cpp
   src/v20210903/model/AudioInfo.cpp
@@ -164,10 +182,12 @@ set(ivld_src
   src/v20210903/model/DeleteCustomPersonImageResponse.cpp
   src/v20210903/model/TextInfo.cpp
   src/v20210903/model/CreateCustomCategoryResponse.cpp
+  src/v20210903/model/CreateVideoSummaryTaskRequest.cpp
   src/v20210903/model/QueryCallbackResponse.cpp
   src/v20210903/model/MultiLevelPersonInfo.cpp
   src/v20210903/model/CreateCustomGroupResponse.cpp
   src/v20210903/model/UpdateCustomCategoryResponse.cpp
+  src/v20210903/model/TTSMode.cpp
   src/v20210903/model/DescribeMediasResponse.cpp
   src/v20210903/model/UnknownPerson.cpp
   src/v20210903/model/MediaMetadata.cpp
@@ -190,8 +210,10 @@ set(ivld_src
   src/v20210903/model/ModifyCallbackResponse.cpp
   src/v20210903/model/ImageLogo.cpp
   src/v20210903/model/L3Tag.cpp
+  src/v20210903/model/CreateVideoSummaryTaskResponse.cpp
   src/v20210903/model/AudioData.cpp
   src/v20210903/model/CreateCustomPersonRequest.cpp
+  src/v20210903/model/ShotInfo.cpp
   src/v20210903/model/MediaInfo.cpp
   src/v20210903/model/DeleteCustomCategoryResponse.cpp
   src/v20210903/model/DescribeCustomGroupRequest.cpp

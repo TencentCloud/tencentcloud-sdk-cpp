@@ -625,6 +625,8 @@
 #include <tencentcloud/vpc/v20170312/model/ModifyVpnGatewayCcnRoutesResponse.h>
 #include <tencentcloud/vpc/v20170312/model/ModifyVpnGatewayRoutesRequest.h>
 #include <tencentcloud/vpc/v20170312/model/ModifyVpnGatewayRoutesResponse.h>
+#include <tencentcloud/vpc/v20170312/model/ModifyVpnGatewaySslClientCertRequest.h>
+#include <tencentcloud/vpc/v20170312/model/ModifyVpnGatewaySslClientCertResponse.h>
 #include <tencentcloud/vpc/v20170312/model/ModifyVpnGatewaySslServerRequest.h>
 #include <tencentcloud/vpc/v20170312/model/ModifyVpnGatewaySslServerResponse.h>
 #include <tencentcloud/vpc/v20170312/model/NotifyRoutesRequest.h>
@@ -1608,6 +1610,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::ModifyVpnGatewayRoutesResponse> ModifyVpnGatewayRoutesOutcome;
                 typedef std::future<ModifyVpnGatewayRoutesOutcome> ModifyVpnGatewayRoutesOutcomeCallable;
                 typedef std::function<void(const VpcClient*, const Model::ModifyVpnGatewayRoutesRequest&, ModifyVpnGatewayRoutesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyVpnGatewayRoutesAsyncHandler;
+                typedef Outcome<Core::Error, Model::ModifyVpnGatewaySslClientCertResponse> ModifyVpnGatewaySslClientCertOutcome;
+                typedef std::future<ModifyVpnGatewaySslClientCertOutcome> ModifyVpnGatewaySslClientCertOutcomeCallable;
+                typedef std::function<void(const VpcClient*, const Model::ModifyVpnGatewaySslClientCertRequest&, ModifyVpnGatewaySslClientCertOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyVpnGatewaySslClientCertAsyncHandler;
                 typedef Outcome<Core::Error, Model::ModifyVpnGatewaySslServerResponse> ModifyVpnGatewaySslServerOutcome;
                 typedef std::future<ModifyVpnGatewaySslServerOutcome> ModifyVpnGatewaySslServerOutcomeCallable;
                 typedef std::function<void(const VpcClient*, const Model::ModifyVpnGatewaySslServerRequest&, ModifyVpnGatewaySslServerOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyVpnGatewaySslServerAsyncHandler;
@@ -4675,6 +4680,15 @@ LimitTypes取值范围：
                 ModifyVpnGatewayRoutesOutcome ModifyVpnGatewayRoutes(const Model::ModifyVpnGatewayRoutesRequest &request);
                 void ModifyVpnGatewayRoutesAsync(const Model::ModifyVpnGatewayRoutesRequest& request, const ModifyVpnGatewayRoutesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 ModifyVpnGatewayRoutesOutcomeCallable ModifyVpnGatewayRoutesCallable(const Model::ModifyVpnGatewayRoutesRequest& request);
+
+                /**
+                 *更新SslVpnClient证书
+                 * @param req ModifyVpnGatewaySslClientCertRequest
+                 * @return ModifyVpnGatewaySslClientCertOutcome
+                 */
+                ModifyVpnGatewaySslClientCertOutcome ModifyVpnGatewaySslClientCert(const Model::ModifyVpnGatewaySslClientCertRequest &request);
+                void ModifyVpnGatewaySslClientCertAsync(const Model::ModifyVpnGatewaySslClientCertRequest& request, const ModifyVpnGatewaySslClientCertAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                ModifyVpnGatewaySslClientCertOutcomeCallable ModifyVpnGatewaySslClientCertCallable(const Model::ModifyVpnGatewaySslClientCertRequest& request);
 
                 /**
                  *本接口用于修改 SSL-VPN 服务端属性

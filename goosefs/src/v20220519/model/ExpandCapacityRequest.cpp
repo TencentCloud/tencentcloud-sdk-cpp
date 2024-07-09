@@ -24,7 +24,8 @@ using namespace std;
 
 ExpandCapacityRequest::ExpandCapacityRequest() :
     m_fileSystemIdHasBeenSet(false),
-    m_expandedCapacityHasBeenSet(false)
+    m_expandedCapacityHasBeenSet(false),
+    m_modifyTypeHasBeenSet(false)
 {
 }
 
@@ -49,6 +50,14 @@ string ExpandCapacityRequest::ToJsonString() const
         string key = "ExpandedCapacity";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_expandedCapacity, allocator);
+    }
+
+    if (m_modifyTypeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ModifyType";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_modifyType.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -89,6 +98,22 @@ void ExpandCapacityRequest::SetExpandedCapacity(const uint64_t& _expandedCapacit
 bool ExpandCapacityRequest::ExpandedCapacityHasBeenSet() const
 {
     return m_expandedCapacityHasBeenSet;
+}
+
+string ExpandCapacityRequest::GetModifyType() const
+{
+    return m_modifyType;
+}
+
+void ExpandCapacityRequest::SetModifyType(const string& _modifyType)
+{
+    m_modifyType = _modifyType;
+    m_modifyTypeHasBeenSet = true;
+}
+
+bool ExpandCapacityRequest::ModifyTypeHasBeenSet() const
+{
+    return m_modifyTypeHasBeenSet;
 }
 
 

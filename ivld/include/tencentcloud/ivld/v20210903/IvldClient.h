@@ -35,6 +35,8 @@
 #include <tencentcloud/ivld/v20210903/model/CreateDefaultCategoriesResponse.h>
 #include <tencentcloud/ivld/v20210903/model/CreateTaskRequest.h>
 #include <tencentcloud/ivld/v20210903/model/CreateTaskResponse.h>
+#include <tencentcloud/ivld/v20210903/model/CreateVideoSummaryTaskRequest.h>
+#include <tencentcloud/ivld/v20210903/model/CreateVideoSummaryTaskResponse.h>
 #include <tencentcloud/ivld/v20210903/model/DeleteCustomCategoryRequest.h>
 #include <tencentcloud/ivld/v20210903/model/DeleteCustomCategoryResponse.h>
 #include <tencentcloud/ivld/v20210903/model/DeleteCustomPersonRequest.h>
@@ -63,6 +65,10 @@
 #include <tencentcloud/ivld/v20210903/model/DescribeTaskDetailResponse.h>
 #include <tencentcloud/ivld/v20210903/model/DescribeTasksRequest.h>
 #include <tencentcloud/ivld/v20210903/model/DescribeTasksResponse.h>
+#include <tencentcloud/ivld/v20210903/model/DescribeUsageAmountRequest.h>
+#include <tencentcloud/ivld/v20210903/model/DescribeUsageAmountResponse.h>
+#include <tencentcloud/ivld/v20210903/model/DescribeVideoSummaryDetailRequest.h>
+#include <tencentcloud/ivld/v20210903/model/DescribeVideoSummaryDetailResponse.h>
 #include <tencentcloud/ivld/v20210903/model/ImportMediaRequest.h>
 #include <tencentcloud/ivld/v20210903/model/ImportMediaResponse.h>
 #include <tencentcloud/ivld/v20210903/model/ModifyCallbackRequest.h>
@@ -105,6 +111,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::CreateTaskResponse> CreateTaskOutcome;
                 typedef std::future<CreateTaskOutcome> CreateTaskOutcomeCallable;
                 typedef std::function<void(const IvldClient*, const Model::CreateTaskRequest&, CreateTaskOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateTaskAsyncHandler;
+                typedef Outcome<Core::Error, Model::CreateVideoSummaryTaskResponse> CreateVideoSummaryTaskOutcome;
+                typedef std::future<CreateVideoSummaryTaskOutcome> CreateVideoSummaryTaskOutcomeCallable;
+                typedef std::function<void(const IvldClient*, const Model::CreateVideoSummaryTaskRequest&, CreateVideoSummaryTaskOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateVideoSummaryTaskAsyncHandler;
                 typedef Outcome<Core::Error, Model::DeleteCustomCategoryResponse> DeleteCustomCategoryOutcome;
                 typedef std::future<DeleteCustomCategoryOutcome> DeleteCustomCategoryOutcomeCallable;
                 typedef std::function<void(const IvldClient*, const Model::DeleteCustomCategoryRequest&, DeleteCustomCategoryOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteCustomCategoryAsyncHandler;
@@ -147,6 +156,12 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeTasksResponse> DescribeTasksOutcome;
                 typedef std::future<DescribeTasksOutcome> DescribeTasksOutcomeCallable;
                 typedef std::function<void(const IvldClient*, const Model::DescribeTasksRequest&, DescribeTasksOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeTasksAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeUsageAmountResponse> DescribeUsageAmountOutcome;
+                typedef std::future<DescribeUsageAmountOutcome> DescribeUsageAmountOutcomeCallable;
+                typedef std::function<void(const IvldClient*, const Model::DescribeUsageAmountRequest&, DescribeUsageAmountOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeUsageAmountAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeVideoSummaryDetailResponse> DescribeVideoSummaryDetailOutcome;
+                typedef std::future<DescribeVideoSummaryDetailOutcome> DescribeVideoSummaryDetailOutcomeCallable;
+                typedef std::function<void(const IvldClient*, const Model::DescribeVideoSummaryDetailRequest&, DescribeVideoSummaryDetailOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeVideoSummaryDetailAsyncHandler;
                 typedef Outcome<Core::Error, Model::ImportMediaResponse> ImportMediaOutcome;
                 typedef std::future<ImportMediaOutcome> ImportMediaOutcomeCallable;
                 typedef std::function<void(const IvldClient*, const Model::ImportMediaRequest&, ImportMediaOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ImportMediaAsyncHandler;
@@ -242,6 +257,39 @@ Bucket的格式参考为 `bucketName-123456.cos.ap-shanghai.myqcloud.com`
                 CreateTaskOutcome CreateTask(const Model::CreateTaskRequest &request);
                 void CreateTaskAsync(const Model::CreateTaskRequest& request, const CreateTaskAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 CreateTaskOutcomeCallable CreateTaskCallable(const Model::CreateTaskRequest& request);
+
+                /**
+                 *创建一个视频缩编任务。
+
+### 回调事件消息通知协议
+
+#### 网络协议
+- 回调接口协议目前仅支持http/https协议；
+- 请求：HTTP POST 请求，包体内容为 JSON，每一种消息的具体包体内容参见后文。
+- 应答：HTTP STATUS CODE = 200，服务端忽略应答包具体内容，为了协议友好，建议客户应答内容携带 JSON： `{"code":0}`
+
+#### 通知可靠性
+
+事件通知服务具备重试能力，事件通知失败后会总计重试3次；
+为了避免重试对您的服务器以及网络带宽造成冲击，请保持正常回包。触发重试条件如下：
+- 长时间（5 秒）未回包应答。
+- 应答 HTTP STATUS 不为200。
+
+
+#### 回调接口协议
+
+##### 分析任务完成消息回调
+| 参数名称 | 必选 | 类型 | 描述 |
+|---------|---------|---------|---------|
+| TaskId | 是 | String | 任务ID |
+| TaskStatus | 是 | Integer | 任务执行状态 |
+| FailedReason | 是 | String | 若任务失败，该字段为失败原因 |
+                 * @param req CreateVideoSummaryTaskRequest
+                 * @return CreateVideoSummaryTaskOutcome
+                 */
+                CreateVideoSummaryTaskOutcome CreateVideoSummaryTask(const Model::CreateVideoSummaryTaskRequest &request);
+                void CreateVideoSummaryTaskAsync(const Model::CreateVideoSummaryTaskRequest& request, const CreateVideoSummaryTaskAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                CreateVideoSummaryTaskOutcomeCallable CreateVideoSummaryTaskCallable(const Model::CreateVideoSummaryTaskRequest& request);
 
                 /**
                  *删除自定义分类信息
@@ -388,6 +436,24 @@ Bucket的格式参考为 `bucketName-123456.cos.ap-shanghai.myqcloud.com`
                 DescribeTasksOutcome DescribeTasks(const Model::DescribeTasksRequest &request);
                 void DescribeTasksAsync(const Model::DescribeTasksRequest& request, const DescribeTasksAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DescribeTasksOutcomeCallable DescribeTasksCallable(const Model::DescribeTasksRequest& request);
+
+                /**
+                 *获取用户资源使用量
+                 * @param req DescribeUsageAmountRequest
+                 * @return DescribeUsageAmountOutcome
+                 */
+                DescribeUsageAmountOutcome DescribeUsageAmount(const Model::DescribeUsageAmountRequest &request);
+                void DescribeUsageAmountAsync(const Model::DescribeUsageAmountRequest& request, const DescribeUsageAmountAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeUsageAmountOutcomeCallable DescribeUsageAmountCallable(const Model::DescribeUsageAmountRequest& request);
+
+                /**
+                 *描述任务信息，如果任务成功完成，还将返回任务结果
+                 * @param req DescribeVideoSummaryDetailRequest
+                 * @return DescribeVideoSummaryDetailOutcome
+                 */
+                DescribeVideoSummaryDetailOutcome DescribeVideoSummaryDetail(const Model::DescribeVideoSummaryDetailRequest &request);
+                void DescribeVideoSummaryDetailAsync(const Model::DescribeVideoSummaryDetailRequest& request, const DescribeVideoSummaryDetailAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeVideoSummaryDetailOutcomeCallable DescribeVideoSummaryDetailCallable(const Model::DescribeVideoSummaryDetailRequest& request);
 
                 /**
                  *将URL指向的媒资视频文件导入系统之中。

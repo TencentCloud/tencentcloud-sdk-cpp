@@ -48,14 +48,18 @@ namespace TencentCloud
 
                     /**
                      * 获取新账户的名称
+注意：此字段可能返回 null，表示取不到有效值。
                      * @return User 新账户的名称
+注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetUser() const;
 
                     /**
                      * 设置新账户的名称
+注意：此字段可能返回 null，表示取不到有效值。
                      * @param _user 新账户的名称
+注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetUser(const std::string& _user);
@@ -69,14 +73,18 @@ namespace TencentCloud
 
                     /**
                      * 获取新账户的域名
+注意：此字段可能返回 null，表示取不到有效值。
                      * @return Host 新账户的域名
+注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetHost() const;
 
                     /**
                      * 设置新账户的域名
+注意：此字段可能返回 null，表示取不到有效值。
                      * @param _host 新账户的域名
+注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetHost(const std::string& _host);
@@ -92,12 +100,14 @@ namespace TencentCloud
 
                     /**
                      * 新账户的名称
+注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_user;
                     bool m_userHasBeenSet;
 
                     /**
                      * 新账户的域名
+注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_host;
                     bool m_hostHasBeenSet;

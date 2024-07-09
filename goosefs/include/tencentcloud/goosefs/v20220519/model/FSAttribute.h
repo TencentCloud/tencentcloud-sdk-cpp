@@ -26,6 +26,7 @@
 #include <tencentcloud/core/AbstractModel.h>
 #include <tencentcloud/goosefs/v20220519/model/GooseFSxAttribute.h>
 #include <tencentcloud/goosefs/v20220519/model/Tag.h>
+#include <tencentcloud/goosefs/v20220519/model/ChargeAttribute.h>
 
 
 namespace TencentCloud
@@ -308,6 +309,31 @@ namespace TencentCloud
                      */
                     bool ModifyTimeHasBeenSet() const;
 
+                    /**
+                     * 获取文件系统付费信息
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return ChargeAttribute 文件系统付费信息
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    ChargeAttribute GetChargeAttribute() const;
+
+                    /**
+                     * 设置文件系统付费信息
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _chargeAttribute 文件系统付费信息
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetChargeAttribute(const ChargeAttribute& _chargeAttribute);
+
+                    /**
+                     * 判断参数 ChargeAttribute 是否已赋值
+                     * @return ChargeAttribute 是否已赋值
+                     * 
+                     */
+                    bool ChargeAttributeHasBeenSet() const;
+
                 private:
 
                     /**
@@ -383,6 +409,13 @@ namespace TencentCloud
                      */
                     std::string m_modifyTime;
                     bool m_modifyTimeHasBeenSet;
+
+                    /**
+                     * 文件系统付费信息
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    ChargeAttribute m_chargeAttribute;
+                    bool m_chargeAttributeHasBeenSet;
 
                 };
             }

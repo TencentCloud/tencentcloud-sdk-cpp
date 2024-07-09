@@ -262,6 +262,31 @@ namespace TencentCloud
                      */
                     bool BucketRegionHasBeenSet() const;
 
+                    /**
+                     * 获取自定义Endpoint
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return Endpoint 自定义Endpoint
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::string GetEndpoint() const;
+
+                    /**
+                     * 设置自定义Endpoint
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _endpoint 自定义Endpoint
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetEndpoint(const std::string& _endpoint);
+
+                    /**
+                     * 判断参数 Endpoint 是否已赋值
+                     * @return Endpoint 是否已赋值
+                     * 
+                     */
+                    bool EndpointHasBeenSet() const;
+
                 private:
 
                     /**
@@ -323,6 +348,13 @@ namespace TencentCloud
                      */
                     std::string m_bucketRegion;
                     bool m_bucketRegionHasBeenSet;
+
+                    /**
+                     * 自定义Endpoint
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_endpoint;
+                    bool m_endpointHasBeenSet;
 
                 };
             }

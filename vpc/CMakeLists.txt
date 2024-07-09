@@ -74,6 +74,7 @@ set(vpc_public_header_model
   include/tencentcloud/vpc/v20170312/model/DeleteVpnGatewaySslClientResponse.h
   include/tencentcloud/vpc/v20170312/model/CreateVpcResponse.h
   include/tencentcloud/vpc/v20170312/model/AssistantCidr.h
+  include/tencentcloud/vpc/v20170312/model/ModifyVpnGatewaySslClientCertRequest.h
   include/tencentcloud/vpc/v20170312/model/ModifyNetworkAclEntriesRequest.h
   include/tencentcloud/vpc/v20170312/model/DescribeVpcPrivateIpAddressesRequest.h
   include/tencentcloud/vpc/v20170312/model/AddressTemplate.h
@@ -274,6 +275,7 @@ set(vpc_public_header_model
   include/tencentcloud/vpc/v20170312/model/ModifyServiceTemplateAttributeResponse.h
   include/tencentcloud/vpc/v20170312/model/DescribeCcnsResponse.h
   include/tencentcloud/vpc/v20170312/model/TemplateLimit.h
+  include/tencentcloud/vpc/v20170312/model/PolicyStatistics.h
   include/tencentcloud/vpc/v20170312/model/CreateSubnetResponse.h
   include/tencentcloud/vpc/v20170312/model/DescribeSecurityGroupPoliciesResponse.h
   include/tencentcloud/vpc/v20170312/model/DescribeGatewayFlowQosResponse.h
@@ -495,6 +497,7 @@ set(vpc_public_header_model
   include/tencentcloud/vpc/v20170312/model/DescribeCcnRegionBandwidthLimitsResponse.h
   include/tencentcloud/vpc/v20170312/model/ModifyTemplateMemberRequest.h
   include/tencentcloud/vpc/v20170312/model/EnableSnapshotPoliciesRequest.h
+  include/tencentcloud/vpc/v20170312/model/ModifyVpnGatewaySslClientCertResponse.h
   include/tencentcloud/vpc/v20170312/model/DescribeAddressesResponse.h
   include/tencentcloud/vpc/v20170312/model/GatewayQos.h
   include/tencentcloud/vpc/v20170312/model/DescribePrivateNatGatewayTranslationNatRulesRequest.h
@@ -888,6 +891,7 @@ set(vpc_src
   src/v20170312/model/DeleteVpnGatewaySslClientResponse.cpp
   src/v20170312/model/CreateVpcResponse.cpp
   src/v20170312/model/AssistantCidr.cpp
+  src/v20170312/model/ModifyVpnGatewaySslClientCertRequest.cpp
   src/v20170312/model/ModifyNetworkAclEntriesRequest.cpp
   src/v20170312/model/DescribeVpcPrivateIpAddressesRequest.cpp
   src/v20170312/model/AddressTemplate.cpp
@@ -1088,6 +1092,7 @@ set(vpc_src
   src/v20170312/model/ModifyServiceTemplateAttributeResponse.cpp
   src/v20170312/model/DescribeCcnsResponse.cpp
   src/v20170312/model/TemplateLimit.cpp
+  src/v20170312/model/PolicyStatistics.cpp
   src/v20170312/model/CreateSubnetResponse.cpp
   src/v20170312/model/DescribeSecurityGroupPoliciesResponse.cpp
   src/v20170312/model/DescribeGatewayFlowQosResponse.cpp
@@ -1309,6 +1314,7 @@ set(vpc_src
   src/v20170312/model/DescribeCcnRegionBandwidthLimitsResponse.cpp
   src/v20170312/model/ModifyTemplateMemberRequest.cpp
   src/v20170312/model/EnableSnapshotPoliciesRequest.cpp
+  src/v20170312/model/ModifyVpnGatewaySslClientCertResponse.cpp
   src/v20170312/model/DescribeAddressesResponse.cpp
   src/v20170312/model/GatewayQos.cpp
   src/v20170312/model/DescribePrivateNatGatewayTranslationNatRulesRequest.cpp

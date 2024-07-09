@@ -23,7 +23,8 @@ using namespace std;
 SecurityGroupPolicySet::SecurityGroupPolicySet() :
     m_versionHasBeenSet(false),
     m_egressHasBeenSet(false),
-    m_ingressHasBeenSet(false)
+    m_ingressHasBeenSet(false),
+    m_policyStatisticsHasBeenSet(false)
 {
 }
 
@@ -82,6 +83,23 @@ CoreInternalOutcome SecurityGroupPolicySet::Deserialize(const rapidjson::Value &
         m_ingressHasBeenSet = true;
     }
 
+    if (value.HasMember("PolicyStatistics") && !value["PolicyStatistics"].IsNull())
+    {
+        if (!value["PolicyStatistics"].IsObject())
+        {
+            return CoreInternalOutcome(Core::Error("response `SecurityGroupPolicySet.PolicyStatistics` is not object type").SetRequestId(requestId));
+        }
+
+        CoreInternalOutcome outcome = m_policyStatistics.Deserialize(value["PolicyStatistics"]);
+        if (!outcome.IsSuccess())
+        {
+            outcome.GetError().SetRequestId(requestId);
+            return outcome;
+        }
+
+        m_policyStatisticsHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -125,6 +143,15 @@ void SecurityGroupPolicySet::ToJsonObject(rapidjson::Value &value, rapidjson::Do
             value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
             (*itr).ToJsonObject(value[key.c_str()][i], allocator);
         }
+    }
+
+    if (m_policyStatisticsHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "PolicyStatistics";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_policyStatistics.ToJsonObject(value[key.c_str()], allocator);
     }
 
 }
@@ -176,5 +203,21 @@ void SecurityGroupPolicySet::SetIngress(const vector<SecurityGroupPolicy>& _ingr
 bool SecurityGroupPolicySet::IngressHasBeenSet() const
 {
     return m_ingressHasBeenSet;
+}
+
+PolicyStatistics SecurityGroupPolicySet::GetPolicyStatistics() const
+{
+    return m_policyStatistics;
+}
+
+void SecurityGroupPolicySet::SetPolicyStatistics(const PolicyStatistics& _policyStatistics)
+{
+    m_policyStatistics = _policyStatistics;
+    m_policyStatisticsHasBeenSet = true;
+}
+
+bool SecurityGroupPolicySet::PolicyStatisticsHasBeenSet() const
+{
+    return m_policyStatisticsHasBeenSet;
 }
 

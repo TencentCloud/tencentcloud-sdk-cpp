@@ -171,6 +171,31 @@ namespace TencentCloud
                      */
                     bool NetworkIdHasBeenSet() const;
 
+                    /**
+                     * 获取公网负载均衡描述
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return Description 公网负载均衡描述
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::string GetDescription() const;
+
+                    /**
+                     * 设置公网负载均衡描述
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _description 公网负载均衡描述
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetDescription(const std::string& _description);
+
+                    /**
+                     * 判断参数 Description 是否已赋值
+                     * @return Description 是否已赋值
+                     * 
+                     */
+                    bool DescriptionHasBeenSet() const;
+
                 private:
 
                     /**
@@ -207,6 +232,13 @@ namespace TencentCloud
                      */
                     std::string m_networkId;
                     bool m_networkIdHasBeenSet;
+
+                    /**
+                     * 公网负载均衡描述
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_description;
+                    bool m_descriptionHasBeenSet;
 
                 };
             }

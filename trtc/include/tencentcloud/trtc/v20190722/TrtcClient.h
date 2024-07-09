@@ -31,6 +31,8 @@
 #include <tencentcloud/trtc/v20190722/model/DeleteCloudRecordingResponse.h>
 #include <tencentcloud/trtc/v20190722/model/DeletePictureRequest.h>
 #include <tencentcloud/trtc/v20190722/model/DeletePictureResponse.h>
+#include <tencentcloud/trtc/v20190722/model/DescribeAIConversationRequest.h>
+#include <tencentcloud/trtc/v20190722/model/DescribeAIConversationResponse.h>
 #include <tencentcloud/trtc/v20190722/model/DescribeAITranscriptionRequest.h>
 #include <tencentcloud/trtc/v20190722/model/DescribeAITranscriptionResponse.h>
 #include <tencentcloud/trtc/v20190722/model/DescribeCallDetailInfoRequest.h>
@@ -95,6 +97,8 @@
 #include <tencentcloud/trtc/v20190722/model/RemoveUserResponse.h>
 #include <tencentcloud/trtc/v20190722/model/RemoveUserByStrRoomIdRequest.h>
 #include <tencentcloud/trtc/v20190722/model/RemoveUserByStrRoomIdResponse.h>
+#include <tencentcloud/trtc/v20190722/model/StartAIConversationRequest.h>
+#include <tencentcloud/trtc/v20190722/model/StartAIConversationResponse.h>
 #include <tencentcloud/trtc/v20190722/model/StartAITranscriptionRequest.h>
 #include <tencentcloud/trtc/v20190722/model/StartAITranscriptionResponse.h>
 #include <tencentcloud/trtc/v20190722/model/StartMCUMixTranscodeRequest.h>
@@ -107,6 +111,8 @@
 #include <tencentcloud/trtc/v20190722/model/StartStreamIngestResponse.h>
 #include <tencentcloud/trtc/v20190722/model/StartWebRecordRequest.h>
 #include <tencentcloud/trtc/v20190722/model/StartWebRecordResponse.h>
+#include <tencentcloud/trtc/v20190722/model/StopAIConversationRequest.h>
+#include <tencentcloud/trtc/v20190722/model/StopAIConversationResponse.h>
 #include <tencentcloud/trtc/v20190722/model/StopAITranscriptionRequest.h>
 #include <tencentcloud/trtc/v20190722/model/StopAITranscriptionResponse.h>
 #include <tencentcloud/trtc/v20190722/model/StopMCUMixTranscodeRequest.h>
@@ -149,6 +155,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DeletePictureResponse> DeletePictureOutcome;
                 typedef std::future<DeletePictureOutcome> DeletePictureOutcomeCallable;
                 typedef std::function<void(const TrtcClient*, const Model::DeletePictureRequest&, DeletePictureOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeletePictureAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeAIConversationResponse> DescribeAIConversationOutcome;
+                typedef std::future<DescribeAIConversationOutcome> DescribeAIConversationOutcomeCallable;
+                typedef std::function<void(const TrtcClient*, const Model::DescribeAIConversationRequest&, DescribeAIConversationOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeAIConversationAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeAITranscriptionResponse> DescribeAITranscriptionOutcome;
                 typedef std::future<DescribeAITranscriptionOutcome> DescribeAITranscriptionOutcomeCallable;
                 typedef std::function<void(const TrtcClient*, const Model::DescribeAITranscriptionRequest&, DescribeAITranscriptionOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeAITranscriptionAsyncHandler;
@@ -245,6 +254,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::RemoveUserByStrRoomIdResponse> RemoveUserByStrRoomIdOutcome;
                 typedef std::future<RemoveUserByStrRoomIdOutcome> RemoveUserByStrRoomIdOutcomeCallable;
                 typedef std::function<void(const TrtcClient*, const Model::RemoveUserByStrRoomIdRequest&, RemoveUserByStrRoomIdOutcome, const std::shared_ptr<const AsyncCallerContext>&)> RemoveUserByStrRoomIdAsyncHandler;
+                typedef Outcome<Core::Error, Model::StartAIConversationResponse> StartAIConversationOutcome;
+                typedef std::future<StartAIConversationOutcome> StartAIConversationOutcomeCallable;
+                typedef std::function<void(const TrtcClient*, const Model::StartAIConversationRequest&, StartAIConversationOutcome, const std::shared_ptr<const AsyncCallerContext>&)> StartAIConversationAsyncHandler;
                 typedef Outcome<Core::Error, Model::StartAITranscriptionResponse> StartAITranscriptionOutcome;
                 typedef std::future<StartAITranscriptionOutcome> StartAITranscriptionOutcomeCallable;
                 typedef std::function<void(const TrtcClient*, const Model::StartAITranscriptionRequest&, StartAITranscriptionOutcome, const std::shared_ptr<const AsyncCallerContext>&)> StartAITranscriptionAsyncHandler;
@@ -263,6 +275,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::StartWebRecordResponse> StartWebRecordOutcome;
                 typedef std::future<StartWebRecordOutcome> StartWebRecordOutcomeCallable;
                 typedef std::function<void(const TrtcClient*, const Model::StartWebRecordRequest&, StartWebRecordOutcome, const std::shared_ptr<const AsyncCallerContext>&)> StartWebRecordAsyncHandler;
+                typedef Outcome<Core::Error, Model::StopAIConversationResponse> StopAIConversationOutcome;
+                typedef std::future<StopAIConversationOutcome> StopAIConversationOutcomeCallable;
+                typedef std::function<void(const TrtcClient*, const Model::StopAIConversationRequest&, StopAIConversationOutcome, const std::shared_ptr<const AsyncCallerContext>&)> StopAIConversationAsyncHandler;
                 typedef Outcome<Core::Error, Model::StopAITranscriptionResponse> StopAITranscriptionOutcome;
                 typedef std::future<StopAITranscriptionOutcome> StopAITranscriptionOutcomeCallable;
                 typedef std::function<void(const TrtcClient*, const Model::StopAITranscriptionRequest&, StopAITranscriptionOutcome, const std::shared_ptr<const AsyncCallerContext>&)> StopAITranscriptionAsyncHandler;
@@ -336,6 +351,15 @@ namespace TencentCloud
                 DeletePictureOutcome DeletePicture(const Model::DeletePictureRequest &request);
                 void DeletePictureAsync(const Model::DeletePictureRequest& request, const DeletePictureAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DeletePictureOutcomeCallable DeletePictureCallable(const Model::DeletePictureRequest& request);
+
+                /**
+                 *查询AI对话任务状态。
+                 * @param req DescribeAIConversationRequest
+                 * @return DescribeAIConversationOutcome
+                 */
+                DescribeAIConversationOutcome DescribeAIConversation(const Model::DescribeAIConversationRequest &request);
+                void DescribeAIConversationAsync(const Model::DescribeAIConversationRequest& request, const DescribeAIConversationAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeAIConversationOutcomeCallable DescribeAIConversationCallable(const Model::DescribeAIConversationRequest& request);
 
                 /**
                  *查询AI转录任务状态。
@@ -729,6 +753,15 @@ xa0
                 RemoveUserByStrRoomIdOutcomeCallable RemoveUserByStrRoomIdCallable(const Model::RemoveUserByStrRoomIdRequest& request);
 
                 /**
+                 *启动一个任务，机器人将进入TRTC房间，与指定成员进行AI对话
+                 * @param req StartAIConversationRequest
+                 * @return StartAIConversationOutcome
+                 */
+                StartAIConversationOutcome StartAIConversation(const Model::StartAIConversationRequest &request);
+                void StartAIConversationAsync(const Model::StartAIConversationRequest& request, const StartAIConversationAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                StartAIConversationOutcomeCallable StartAIConversationCallable(const Model::StartAIConversationRequest& request);
+
+                /**
                  *这个接口调用后，后台会启动转录机器人，实时进行语音识别并下发字幕和转录消息。
 转录机器人支持两种拉流方式，通过TranscriptionMode字段控制：
 - 拉取全房间的流。
@@ -960,6 +993,15 @@ ver：可以忽略。
                 StartWebRecordOutcome StartWebRecord(const Model::StartWebRecordRequest &request);
                 void StartWebRecordAsync(const Model::StartWebRecordRequest& request, const StartWebRecordAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 StartWebRecordOutcomeCallable StartWebRecordCallable(const Model::StartWebRecordRequest& request);
+
+                /**
+                 *停止AI对话任务
+                 * @param req StopAIConversationRequest
+                 * @return StopAIConversationOutcome
+                 */
+                StopAIConversationOutcome StopAIConversation(const Model::StopAIConversationRequest &request);
+                void StopAIConversationAsync(const Model::StopAIConversationRequest& request, const StopAIConversationAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                StopAIConversationOutcomeCallable StopAIConversationCallable(const Model::StopAIConversationRequest& request);
 
                 /**
                  *停止AI转录任务。

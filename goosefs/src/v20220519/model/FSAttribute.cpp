@@ -32,7 +32,8 @@ FSAttribute::FSAttribute() :
     m_subnetIdHasBeenSet(false),
     m_zoneHasBeenSet(false),
     m_tagHasBeenSet(false),
-    m_modifyTimeHasBeenSet(false)
+    m_modifyTimeHasBeenSet(false),
+    m_chargeAttributeHasBeenSet(false)
 {
 }
 
@@ -178,6 +179,23 @@ CoreInternalOutcome FSAttribute::Deserialize(const rapidjson::Value &value)
         m_modifyTimeHasBeenSet = true;
     }
 
+    if (value.HasMember("ChargeAttribute") && !value["ChargeAttribute"].IsNull())
+    {
+        if (!value["ChargeAttribute"].IsObject())
+        {
+            return CoreInternalOutcome(Core::Error("response `FSAttribute.ChargeAttribute` is not object type").SetRequestId(requestId));
+        }
+
+        CoreInternalOutcome outcome = m_chargeAttribute.Deserialize(value["ChargeAttribute"]);
+        if (!outcome.IsSuccess())
+        {
+            outcome.GetError().SetRequestId(requestId);
+            return outcome;
+        }
+
+        m_chargeAttributeHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -287,6 +305,15 @@ void FSAttribute::ToJsonObject(rapidjson::Value &value, rapidjson::Document::All
         string key = "ModifyTime";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_modifyTime.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_chargeAttributeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ChargeAttribute";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_chargeAttribute.ToJsonObject(value[key.c_str()], allocator);
     }
 
 }
@@ -482,5 +509,21 @@ void FSAttribute::SetModifyTime(const string& _modifyTime)
 bool FSAttribute::ModifyTimeHasBeenSet() const
 {
     return m_modifyTimeHasBeenSet;
+}
+
+ChargeAttribute FSAttribute::GetChargeAttribute() const
+{
+    return m_chargeAttribute;
+}
+
+void FSAttribute::SetChargeAttribute(const ChargeAttribute& _chargeAttribute)
+{
+    m_chargeAttribute = _chargeAttribute;
+    m_chargeAttributeHasBeenSet = true;
+}
+
+bool FSAttribute::ChargeAttributeHasBeenSet() const
+{
+    return m_chargeAttributeHasBeenSet;
 }
 

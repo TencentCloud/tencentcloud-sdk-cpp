@@ -28,7 +28,8 @@ MappedBucket::MappedBucket() :
     m_ruleDescriptionHasBeenSet(false),
     m_statusHasBeenSet(false),
     m_accelerateFlagHasBeenSet(false),
-    m_bucketRegionHasBeenSet(false)
+    m_bucketRegionHasBeenSet(false),
+    m_endpointHasBeenSet(false)
 {
 }
 
@@ -120,6 +121,16 @@ CoreInternalOutcome MappedBucket::Deserialize(const rapidjson::Value &value)
         m_bucketRegionHasBeenSet = true;
     }
 
+    if (value.HasMember("Endpoint") && !value["Endpoint"].IsNull())
+    {
+        if (!value["Endpoint"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `MappedBucket.Endpoint` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_endpoint = string(value["Endpoint"].GetString());
+        m_endpointHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -194,6 +205,14 @@ void MappedBucket::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Al
         string key = "BucketRegion";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_bucketRegion.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_endpointHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Endpoint";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_endpoint.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -325,5 +344,21 @@ void MappedBucket::SetBucketRegion(const string& _bucketRegion)
 bool MappedBucket::BucketRegionHasBeenSet() const
 {
     return m_bucketRegionHasBeenSet;
+}
+
+string MappedBucket::GetEndpoint() const
+{
+    return m_endpoint;
+}
+
+void MappedBucket::SetEndpoint(const string& _endpoint)
+{
+    m_endpoint = _endpoint;
+    m_endpointHasBeenSet = true;
+}
+
+bool MappedBucket::EndpointHasBeenSet() const
+{
+    return m_endpointHasBeenSet;
 }
 

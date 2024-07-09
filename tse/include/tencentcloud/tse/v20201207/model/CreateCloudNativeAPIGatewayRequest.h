@@ -368,6 +368,27 @@ namespace TencentCloud
                      */
                     bool InternetConfigHasBeenSet() const;
 
+                    /**
+                     * 获取关联的prometheus ID
+                     * @return PromId 关联的prometheus ID
+                     * 
+                     */
+                    std::string GetPromId() const;
+
+                    /**
+                     * 设置关联的prometheus ID
+                     * @param _promId 关联的prometheus ID
+                     * 
+                     */
+                    void SetPromId(const std::string& _promId);
+
+                    /**
+                     * 判断参数 PromId 是否已赋值
+                     * @return PromId 是否已赋值
+                     * 
+                     */
+                    bool PromIdHasBeenSet() const;
+
                 private:
 
                     /**
@@ -460,6 +481,12 @@ namespace TencentCloud
                      */
                     InternetConfig m_internetConfig;
                     bool m_internetConfigHasBeenSet;
+
+                    /**
+                     * 关联的prometheus ID
+                     */
+                    std::string m_promId;
+                    bool m_promIdHasBeenSet;
 
                 };
             }

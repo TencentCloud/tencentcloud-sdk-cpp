@@ -84,6 +84,27 @@ namespace TencentCloud
                      */
                     bool FileTypeHasBeenSet() const;
 
+                    /**
+                     * 获取获取临时签名的bucket是国内站还是国际站（1表示国际站，其它表示国内站）
+                     * @return Site 获取临时签名的bucket是国内站还是国际站（1表示国际站，其它表示国内站）
+                     * 
+                     */
+                    int64_t GetSite() const;
+
+                    /**
+                     * 设置获取临时签名的bucket是国内站还是国际站（1表示国际站，其它表示国内站）
+                     * @param _site 获取临时签名的bucket是国内站还是国际站（1表示国际站，其它表示国内站）
+                     * 
+                     */
+                    void SetSite(const int64_t& _site);
+
+                    /**
+                     * 判断参数 Site 是否已赋值
+                     * @return Site 是否已赋值
+                     * 
+                     */
+                    bool SiteHasBeenSet() const;
+
                 private:
 
                     /**
@@ -97,6 +118,12 @@ namespace TencentCloud
                      */
                     int64_t m_fileType;
                     bool m_fileTypeHasBeenSet;
+
+                    /**
+                     * 获取临时签名的bucket是国内站还是国际站（1表示国际站，其它表示国内站）
+                     */
+                    int64_t m_site;
+                    bool m_siteHasBeenSet;
 
                 };
             }

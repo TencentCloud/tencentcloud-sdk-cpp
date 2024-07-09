@@ -44,15 +44,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取安全组实例ID，例如：sg-33ocnj9n，可通过DescribeSecurityGroups获取。
-                     * @return SecurityGroupId 安全组实例ID，例如：sg-33ocnj9n，可通过DescribeSecurityGroups获取。
+                     * 获取安全组实例ID，例如：sg-33ocnj9n，可通过<a href="https://cloud.tencent.com/document/product/215/15808">DescribeSecurityGroups</a>获取。
+                     * @return SecurityGroupId 安全组实例ID，例如：sg-33ocnj9n，可通过<a href="https://cloud.tencent.com/document/product/215/15808">DescribeSecurityGroups</a>获取。
                      * 
                      */
                     std::string GetSecurityGroupId() const;
 
                     /**
-                     * 设置安全组实例ID，例如：sg-33ocnj9n，可通过DescribeSecurityGroups获取。
-                     * @param _securityGroupId 安全组实例ID，例如：sg-33ocnj9n，可通过DescribeSecurityGroups获取。
+                     * 设置安全组实例ID，例如：sg-33ocnj9n，可通过<a href="https://cloud.tencent.com/document/product/215/15808">DescribeSecurityGroups</a>获取。
+                     * @param _securityGroupId 安全组实例ID，例如：sg-33ocnj9n，可通过<a href="https://cloud.tencent.com/document/product/215/15808">DescribeSecurityGroups</a>获取。
                      * 
                      */
                     void SetSecurityGroupId(const std::string& _securityGroupId);
@@ -124,7 +124,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 安全组实例ID，例如：sg-33ocnj9n，可通过DescribeSecurityGroups获取。
+                     * 安全组实例ID，例如：sg-33ocnj9n，可通过<a href="https://cloud.tencent.com/document/product/215/15808">DescribeSecurityGroups</a>获取。
                      */
                     std::string m_securityGroupId;
                     bool m_securityGroupIdHasBeenSet;

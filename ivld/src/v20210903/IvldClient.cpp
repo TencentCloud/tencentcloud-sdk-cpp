@@ -298,6 +298,49 @@ IvldClient::CreateTaskOutcomeCallable IvldClient::CreateTaskCallable(const Creat
     return task->get_future();
 }
 
+IvldClient::CreateVideoSummaryTaskOutcome IvldClient::CreateVideoSummaryTask(const CreateVideoSummaryTaskRequest &request)
+{
+    auto outcome = MakeRequest(request, "CreateVideoSummaryTask");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        CreateVideoSummaryTaskResponse rsp = CreateVideoSummaryTaskResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return CreateVideoSummaryTaskOutcome(rsp);
+        else
+            return CreateVideoSummaryTaskOutcome(o.GetError());
+    }
+    else
+    {
+        return CreateVideoSummaryTaskOutcome(outcome.GetError());
+    }
+}
+
+void IvldClient::CreateVideoSummaryTaskAsync(const CreateVideoSummaryTaskRequest& request, const CreateVideoSummaryTaskAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->CreateVideoSummaryTask(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+IvldClient::CreateVideoSummaryTaskOutcomeCallable IvldClient::CreateVideoSummaryTaskCallable(const CreateVideoSummaryTaskRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<CreateVideoSummaryTaskOutcome()>>(
+        [this, request]()
+        {
+            return this->CreateVideoSummaryTask(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 IvldClient::DeleteCustomCategoryOutcome IvldClient::DeleteCustomCategory(const DeleteCustomCategoryRequest &request)
 {
     auto outcome = MakeRequest(request, "DeleteCustomCategory");
@@ -893,6 +936,92 @@ IvldClient::DescribeTasksOutcomeCallable IvldClient::DescribeTasksCallable(const
         [this, request]()
         {
             return this->DescribeTasks(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+IvldClient::DescribeUsageAmountOutcome IvldClient::DescribeUsageAmount(const DescribeUsageAmountRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeUsageAmount");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeUsageAmountResponse rsp = DescribeUsageAmountResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeUsageAmountOutcome(rsp);
+        else
+            return DescribeUsageAmountOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeUsageAmountOutcome(outcome.GetError());
+    }
+}
+
+void IvldClient::DescribeUsageAmountAsync(const DescribeUsageAmountRequest& request, const DescribeUsageAmountAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeUsageAmount(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+IvldClient::DescribeUsageAmountOutcomeCallable IvldClient::DescribeUsageAmountCallable(const DescribeUsageAmountRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeUsageAmountOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeUsageAmount(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+IvldClient::DescribeVideoSummaryDetailOutcome IvldClient::DescribeVideoSummaryDetail(const DescribeVideoSummaryDetailRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeVideoSummaryDetail");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeVideoSummaryDetailResponse rsp = DescribeVideoSummaryDetailResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeVideoSummaryDetailOutcome(rsp);
+        else
+            return DescribeVideoSummaryDetailOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeVideoSummaryDetailOutcome(outcome.GetError());
+    }
+}
+
+void IvldClient::DescribeVideoSummaryDetailAsync(const DescribeVideoSummaryDetailRequest& request, const DescribeVideoSummaryDetailAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeVideoSummaryDetail(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+IvldClient::DescribeVideoSummaryDetailOutcomeCallable IvldClient::DescribeVideoSummaryDetailCallable(const DescribeVideoSummaryDetailRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeVideoSummaryDetailOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeVideoSummaryDetail(request);
         }
     );
 

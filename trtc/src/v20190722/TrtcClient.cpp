@@ -212,6 +212,49 @@ TrtcClient::DeletePictureOutcomeCallable TrtcClient::DeletePictureCallable(const
     return task->get_future();
 }
 
+TrtcClient::DescribeAIConversationOutcome TrtcClient::DescribeAIConversation(const DescribeAIConversationRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeAIConversation");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeAIConversationResponse rsp = DescribeAIConversationResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeAIConversationOutcome(rsp);
+        else
+            return DescribeAIConversationOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeAIConversationOutcome(outcome.GetError());
+    }
+}
+
+void TrtcClient::DescribeAIConversationAsync(const DescribeAIConversationRequest& request, const DescribeAIConversationAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeAIConversation(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+TrtcClient::DescribeAIConversationOutcomeCallable TrtcClient::DescribeAIConversationCallable(const DescribeAIConversationRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeAIConversationOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeAIConversation(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 TrtcClient::DescribeAITranscriptionOutcome TrtcClient::DescribeAITranscription(const DescribeAITranscriptionRequest &request)
 {
     auto outcome = MakeRequest(request, "DescribeAITranscription");
@@ -1588,6 +1631,49 @@ TrtcClient::RemoveUserByStrRoomIdOutcomeCallable TrtcClient::RemoveUserByStrRoom
     return task->get_future();
 }
 
+TrtcClient::StartAIConversationOutcome TrtcClient::StartAIConversation(const StartAIConversationRequest &request)
+{
+    auto outcome = MakeRequest(request, "StartAIConversation");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        StartAIConversationResponse rsp = StartAIConversationResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return StartAIConversationOutcome(rsp);
+        else
+            return StartAIConversationOutcome(o.GetError());
+    }
+    else
+    {
+        return StartAIConversationOutcome(outcome.GetError());
+    }
+}
+
+void TrtcClient::StartAIConversationAsync(const StartAIConversationRequest& request, const StartAIConversationAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->StartAIConversation(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+TrtcClient::StartAIConversationOutcomeCallable TrtcClient::StartAIConversationCallable(const StartAIConversationRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<StartAIConversationOutcome()>>(
+        [this, request]()
+        {
+            return this->StartAIConversation(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 TrtcClient::StartAITranscriptionOutcome TrtcClient::StartAITranscription(const StartAITranscriptionRequest &request)
 {
     auto outcome = MakeRequest(request, "StartAITranscription");
@@ -1839,6 +1925,49 @@ TrtcClient::StartWebRecordOutcomeCallable TrtcClient::StartWebRecordCallable(con
         [this, request]()
         {
             return this->StartWebRecord(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+TrtcClient::StopAIConversationOutcome TrtcClient::StopAIConversation(const StopAIConversationRequest &request)
+{
+    auto outcome = MakeRequest(request, "StopAIConversation");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        StopAIConversationResponse rsp = StopAIConversationResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return StopAIConversationOutcome(rsp);
+        else
+            return StopAIConversationOutcome(o.GetError());
+    }
+    else
+    {
+        return StopAIConversationOutcome(outcome.GetError());
+    }
+}
+
+void TrtcClient::StopAIConversationAsync(const StopAIConversationRequest& request, const StopAIConversationAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->StopAIConversation(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+TrtcClient::StopAIConversationOutcomeCallable TrtcClient::StopAIConversationCallable(const StopAIConversationRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<StopAIConversationOutcome()>>(
+        [this, request]()
+        {
+            return this->StopAIConversation(request);
         }
     );
 
