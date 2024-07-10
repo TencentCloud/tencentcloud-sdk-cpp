@@ -83,6 +83,8 @@
 #include <tencentcloud/tsf/v20180326/model/CreatePathRewritesResponse.h>
 #include <tencentcloud/tsf/v20180326/model/CreatePathRewritesWithDetailRespRequest.h>
 #include <tencentcloud/tsf/v20180326/model/CreatePathRewritesWithDetailRespResponse.h>
+#include <tencentcloud/tsf/v20180326/model/CreateProgramRequest.h>
+#include <tencentcloud/tsf/v20180326/model/CreateProgramResponse.h>
 #include <tencentcloud/tsf/v20180326/model/CreatePublicConfigRequest.h>
 #include <tencentcloud/tsf/v20180326/model/CreatePublicConfigResponse.h>
 #include <tencentcloud/tsf/v20180326/model/CreatePublicConfigWithDetailRespRequest.h>
@@ -387,6 +389,8 @@
 #include <tencentcloud/tsf/v20180326/model/ModifyNamespaceResponse.h>
 #include <tencentcloud/tsf/v20180326/model/ModifyPathRewriteRequest.h>
 #include <tencentcloud/tsf/v20180326/model/ModifyPathRewriteResponse.h>
+#include <tencentcloud/tsf/v20180326/model/ModifyProgramRequest.h>
+#include <tencentcloud/tsf/v20180326/model/ModifyProgramResponse.h>
 #include <tencentcloud/tsf/v20180326/model/ModifyTaskRequest.h>
 #include <tencentcloud/tsf/v20180326/model/ModifyTaskResponse.h>
 #include <tencentcloud/tsf/v20180326/model/ModifyUploadInfoRequest.h>
@@ -569,6 +573,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::CreatePathRewritesWithDetailRespResponse> CreatePathRewritesWithDetailRespOutcome;
                 typedef std::future<CreatePathRewritesWithDetailRespOutcome> CreatePathRewritesWithDetailRespOutcomeCallable;
                 typedef std::function<void(const TsfClient*, const Model::CreatePathRewritesWithDetailRespRequest&, CreatePathRewritesWithDetailRespOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreatePathRewritesWithDetailRespAsyncHandler;
+                typedef Outcome<Core::Error, Model::CreateProgramResponse> CreateProgramOutcome;
+                typedef std::future<CreateProgramOutcome> CreateProgramOutcomeCallable;
+                typedef std::function<void(const TsfClient*, const Model::CreateProgramRequest&, CreateProgramOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateProgramAsyncHandler;
                 typedef Outcome<Core::Error, Model::CreatePublicConfigResponse> CreatePublicConfigOutcome;
                 typedef std::future<CreatePublicConfigOutcome> CreatePublicConfigOutcomeCallable;
                 typedef std::function<void(const TsfClient*, const Model::CreatePublicConfigRequest&, CreatePublicConfigOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreatePublicConfigAsyncHandler;
@@ -1025,6 +1032,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::ModifyPathRewriteResponse> ModifyPathRewriteOutcome;
                 typedef std::future<ModifyPathRewriteOutcome> ModifyPathRewriteOutcomeCallable;
                 typedef std::function<void(const TsfClient*, const Model::ModifyPathRewriteRequest&, ModifyPathRewriteOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyPathRewriteAsyncHandler;
+                typedef Outcome<Core::Error, Model::ModifyProgramResponse> ModifyProgramOutcome;
+                typedef std::future<ModifyProgramOutcome> ModifyProgramOutcomeCallable;
+                typedef std::function<void(const TsfClient*, const Model::ModifyProgramRequest&, ModifyProgramOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyProgramAsyncHandler;
                 typedef Outcome<Core::Error, Model::ModifyTaskResponse> ModifyTaskOutcome;
                 typedef std::future<ModifyTaskOutcome> ModifyTaskOutcomeCallable;
                 typedef std::function<void(const TsfClient*, const Model::ModifyTaskRequest&, ModifyTaskOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyTaskAsyncHandler;
@@ -1414,6 +1424,15 @@ namespace TencentCloud
                 CreatePathRewritesWithDetailRespOutcome CreatePathRewritesWithDetailResp(const Model::CreatePathRewritesWithDetailRespRequest &request);
                 void CreatePathRewritesWithDetailRespAsync(const Model::CreatePathRewritesWithDetailRespRequest& request, const CreatePathRewritesWithDetailRespAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 CreatePathRewritesWithDetailRespOutcomeCallable CreatePathRewritesWithDetailRespCallable(const Model::CreatePathRewritesWithDetailRespRequest& request);
+
+                /**
+                 *创建数据集
+                 * @param req CreateProgramRequest
+                 * @return CreateProgramOutcome
+                 */
+                CreateProgramOutcome CreateProgram(const Model::CreateProgramRequest &request);
+                void CreateProgramAsync(const Model::CreateProgramRequest& request, const CreateProgramAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                CreateProgramOutcomeCallable CreateProgramCallable(const Model::CreateProgramRequest& request);
 
                 /**
                  *创建公共配置项
@@ -2787,6 +2806,15 @@ COS相关文档请查阅：https://cloud.tencent.com/document/product/436
                 ModifyPathRewriteOutcome ModifyPathRewrite(const Model::ModifyPathRewriteRequest &request);
                 void ModifyPathRewriteAsync(const Model::ModifyPathRewriteRequest& request, const ModifyPathRewriteAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 ModifyPathRewriteOutcomeCallable ModifyPathRewriteCallable(const Model::ModifyPathRewriteRequest& request);
+
+                /**
+                 *更新数据集
+                 * @param req ModifyProgramRequest
+                 * @return ModifyProgramOutcome
+                 */
+                ModifyProgramOutcome ModifyProgram(const Model::ModifyProgramRequest &request);
+                void ModifyProgramAsync(const Model::ModifyProgramRequest& request, const ModifyProgramAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                ModifyProgramOutcomeCallable ModifyProgramCallable(const Model::ModifyProgramRequest& request);
 
                 /**
                  *修改任务

@@ -35,7 +35,8 @@ CreateRecordRequest::CreateRecordRequest() :
     m_weightHasBeenSet(false),
     m_statusHasBeenSet(false),
     m_remarkHasBeenSet(false),
-    m_dnssecConflictModeHasBeenSet(false)
+    m_dnssecConflictModeHasBeenSet(false),
+    m_groupIdHasBeenSet(false)
 {
 }
 
@@ -148,6 +149,14 @@ string CreateRecordRequest::ToJsonString() const
         string key = "DnssecConflictMode";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_dnssecConflictMode.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_groupIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "GroupId";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_groupId, allocator);
     }
 
 
@@ -364,6 +373,22 @@ void CreateRecordRequest::SetDnssecConflictMode(const string& _dnssecConflictMod
 bool CreateRecordRequest::DnssecConflictModeHasBeenSet() const
 {
     return m_dnssecConflictModeHasBeenSet;
+}
+
+uint64_t CreateRecordRequest::GetGroupId() const
+{
+    return m_groupId;
+}
+
+void CreateRecordRequest::SetGroupId(const uint64_t& _groupId)
+{
+    m_groupId = _groupId;
+    m_groupIdHasBeenSet = true;
+}
+
+bool CreateRecordRequest::GroupIdHasBeenSet() const
+{
+    return m_groupIdHasBeenSet;
 }
 
 

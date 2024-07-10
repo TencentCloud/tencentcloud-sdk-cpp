@@ -29,7 +29,9 @@ ActivateHardware::ActivateHardware() :
     m_accessScopeHasBeenSet(false),
     m_licensePayModeHasBeenSet(false),
     m_groupIdHasBeenSet(false),
-    m_groupNameHasBeenSet(false)
+    m_groupNameHasBeenSet(false),
+    m_flowTruncHasBeenSet(false),
+    m_deviceIdHasBeenSet(false)
 {
 }
 
@@ -128,6 +130,26 @@ CoreInternalOutcome ActivateHardware::Deserialize(const rapidjson::Value &value)
         m_groupNameHasBeenSet = true;
     }
 
+    if (value.HasMember("FlowTrunc") && !value["FlowTrunc"].IsNull())
+    {
+        if (!value["FlowTrunc"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `ActivateHardware.FlowTrunc` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_flowTrunc = value["FlowTrunc"].GetInt64();
+        m_flowTruncHasBeenSet = true;
+    }
+
+    if (value.HasMember("DeviceId") && !value["DeviceId"].IsNull())
+    {
+        if (!value["DeviceId"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `ActivateHardware.DeviceId` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_deviceId = string(value["DeviceId"].GetString());
+        m_deviceIdHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -205,6 +227,22 @@ void ActivateHardware::ToJsonObject(rapidjson::Value &value, rapidjson::Document
         string key = "GroupName";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_groupName.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_flowTruncHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "FlowTrunc";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_flowTrunc, allocator);
+    }
+
+    if (m_deviceIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "DeviceId";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_deviceId.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -352,5 +390,37 @@ void ActivateHardware::SetGroupName(const string& _groupName)
 bool ActivateHardware::GroupNameHasBeenSet() const
 {
     return m_groupNameHasBeenSet;
+}
+
+int64_t ActivateHardware::GetFlowTrunc() const
+{
+    return m_flowTrunc;
+}
+
+void ActivateHardware::SetFlowTrunc(const int64_t& _flowTrunc)
+{
+    m_flowTrunc = _flowTrunc;
+    m_flowTruncHasBeenSet = true;
+}
+
+bool ActivateHardware::FlowTruncHasBeenSet() const
+{
+    return m_flowTruncHasBeenSet;
+}
+
+string ActivateHardware::GetDeviceId() const
+{
+    return m_deviceId;
+}
+
+void ActivateHardware::SetDeviceId(const string& _deviceId)
+{
+    m_deviceId = _deviceId;
+    m_deviceIdHasBeenSet = true;
+}
+
+bool ActivateHardware::DeviceIdHasBeenSet() const
+{
+    return m_deviceIdHasBeenSet;
 }
 

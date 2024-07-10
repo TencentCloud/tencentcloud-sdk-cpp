@@ -1330,6 +1330,49 @@ TsfClient::CreatePathRewritesWithDetailRespOutcomeCallable TsfClient::CreatePath
     return task->get_future();
 }
 
+TsfClient::CreateProgramOutcome TsfClient::CreateProgram(const CreateProgramRequest &request)
+{
+    auto outcome = MakeRequest(request, "CreateProgram");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        CreateProgramResponse rsp = CreateProgramResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return CreateProgramOutcome(rsp);
+        else
+            return CreateProgramOutcome(o.GetError());
+    }
+    else
+    {
+        return CreateProgramOutcome(outcome.GetError());
+    }
+}
+
+void TsfClient::CreateProgramAsync(const CreateProgramRequest& request, const CreateProgramAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->CreateProgram(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+TsfClient::CreateProgramOutcomeCallable TsfClient::CreateProgramCallable(const CreateProgramRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<CreateProgramOutcome()>>(
+        [this, request]()
+        {
+            return this->CreateProgram(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 TsfClient::CreatePublicConfigOutcome TsfClient::CreatePublicConfig(const CreatePublicConfigRequest &request)
 {
     auto outcome = MakeRequest(request, "CreatePublicConfig");
@@ -7859,6 +7902,49 @@ TsfClient::ModifyPathRewriteOutcomeCallable TsfClient::ModifyPathRewriteCallable
         [this, request]()
         {
             return this->ModifyPathRewrite(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+TsfClient::ModifyProgramOutcome TsfClient::ModifyProgram(const ModifyProgramRequest &request)
+{
+    auto outcome = MakeRequest(request, "ModifyProgram");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ModifyProgramResponse rsp = ModifyProgramResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ModifyProgramOutcome(rsp);
+        else
+            return ModifyProgramOutcome(o.GetError());
+    }
+    else
+    {
+        return ModifyProgramOutcome(outcome.GetError());
+    }
+}
+
+void TsfClient::ModifyProgramAsync(const ModifyProgramRequest& request, const ModifyProgramAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->ModifyProgram(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+TsfClient::ModifyProgramOutcomeCallable TsfClient::ModifyProgramCallable(const ModifyProgramRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<ModifyProgramOutcome()>>(
+        [this, request]()
+        {
+            return this->ModifyProgram(request);
         }
     );
 

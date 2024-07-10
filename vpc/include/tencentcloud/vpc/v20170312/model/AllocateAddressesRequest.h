@@ -356,15 +356,15 @@ AnycastEIP是否用于绑定负载均衡。
                     bool AddressNameHasBeenSet() const;
 
                     /**
-                     * 获取静态单线IP网络出口，默认值：center_egress1
-                     * @return Egress 静态单线IP网络出口，默认值：center_egress1
+                     * 获取网络出口，当前仅支持精品BGP、静态单线，这2种IP 地址类型的指定出口传入，默认值：center_egress1，其它可选值：center_egress2、center_egress3
+                     * @return Egress 网络出口，当前仅支持精品BGP、静态单线，这2种IP 地址类型的指定出口传入，默认值：center_egress1，其它可选值：center_egress2、center_egress3
                      * 
                      */
                     std::string GetEgress() const;
 
                     /**
-                     * 设置静态单线IP网络出口，默认值：center_egress1
-                     * @param _egress 静态单线IP网络出口，默认值：center_egress1
+                     * 设置网络出口，当前仅支持精品BGP、静态单线，这2种IP 地址类型的指定出口传入，默认值：center_egress1，其它可选值：center_egress2、center_egress3
+                     * @param _egress 网络出口，当前仅支持精品BGP、静态单线，这2种IP 地址类型的指定出口传入，默认值：center_egress1，其它可选值：center_egress2、center_egress3
                      * 
                      */
                     void SetEgress(const std::string& _egress);
@@ -507,7 +507,7 @@ AnycastEIP是否用于绑定负载均衡。
                     bool m_addressNameHasBeenSet;
 
                     /**
-                     * 静态单线IP网络出口，默认值：center_egress1
+                     * 网络出口，当前仅支持精品BGP、静态单线，这2种IP 地址类型的指定出口传入，默认值：center_egress1，其它可选值：center_egress2、center_egress3
                      */
                     std::string m_egress;
                     bool m_egressHasBeenSet;

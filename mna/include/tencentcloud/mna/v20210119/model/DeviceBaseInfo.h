@@ -272,6 +272,31 @@ namespace TencentCloud
                      */
                     bool GroupNameHasBeenSet() const;
 
+                    /**
+                     * 获取设备无流量包处理方式，0: 按量付费，1: 截断加速
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return FlowTrunc 设备无流量包处理方式，0: 按量付费，1: 截断加速
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    int64_t GetFlowTrunc() const;
+
+                    /**
+                     * 设置设备无流量包处理方式，0: 按量付费，1: 截断加速
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _flowTrunc 设备无流量包处理方式，0: 按量付费，1: 截断加速
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetFlowTrunc(const int64_t& _flowTrunc);
+
+                    /**
+                     * 判断参数 FlowTrunc 是否已赋值
+                     * @return FlowTrunc 是否已赋值
+                     * 
+                     */
+                    bool FlowTruncHasBeenSet() const;
+
                 private:
 
                     /**
@@ -337,6 +362,13 @@ namespace TencentCloud
                      */
                     std::string m_groupName;
                     bool m_groupNameHasBeenSet;
+
+                    /**
+                     * 设备无流量包处理方式，0: 按量付费，1: 截断加速
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    int64_t m_flowTrunc;
+                    bool m_flowTruncHasBeenSet;
 
                 };
             }

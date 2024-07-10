@@ -40,6 +40,49 @@ AiartClient::AiartClient(const Credential &credential, const string &region, con
 }
 
 
+AiartClient::ChangeClothesOutcome AiartClient::ChangeClothes(const ChangeClothesRequest &request)
+{
+    auto outcome = MakeRequest(request, "ChangeClothes");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ChangeClothesResponse rsp = ChangeClothesResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ChangeClothesOutcome(rsp);
+        else
+            return ChangeClothesOutcome(o.GetError());
+    }
+    else
+    {
+        return ChangeClothesOutcome(outcome.GetError());
+    }
+}
+
+void AiartClient::ChangeClothesAsync(const ChangeClothesRequest& request, const ChangeClothesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->ChangeClothes(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+AiartClient::ChangeClothesOutcomeCallable AiartClient::ChangeClothesCallable(const ChangeClothesRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<ChangeClothesOutcome()>>(
+        [this, request]()
+        {
+            return this->ChangeClothes(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 AiartClient::GenerateAvatarOutcome AiartClient::GenerateAvatar(const GenerateAvatarRequest &request)
 {
     auto outcome = MakeRequest(request, "GenerateAvatar");

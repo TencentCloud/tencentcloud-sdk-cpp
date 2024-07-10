@@ -23,6 +23,8 @@
 #include <tencentcloud/core/Credential.h>
 #include <tencentcloud/core/profile/ClientProfile.h>
 #include <tencentcloud/core/AsyncCallerContext.h>
+#include <tencentcloud/aiart/v20221229/model/ChangeClothesRequest.h>
+#include <tencentcloud/aiart/v20221229/model/ChangeClothesResponse.h>
 #include <tencentcloud/aiart/v20221229/model/GenerateAvatarRequest.h>
 #include <tencentcloud/aiart/v20221229/model/GenerateAvatarResponse.h>
 #include <tencentcloud/aiart/v20221229/model/ImageToImageRequest.h>
@@ -59,6 +61,9 @@ namespace TencentCloud
                 AiartClient(const Credential &credential, const std::string &region);
                 AiartClient(const Credential &credential, const std::string &region, const ClientProfile &profile);
 
+                typedef Outcome<Core::Error, Model::ChangeClothesResponse> ChangeClothesOutcome;
+                typedef std::future<ChangeClothesOutcome> ChangeClothesOutcomeCallable;
+                typedef std::function<void(const AiartClient*, const Model::ChangeClothesRequest&, ChangeClothesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ChangeClothesAsyncHandler;
                 typedef Outcome<Core::Error, Model::GenerateAvatarResponse> GenerateAvatarOutcome;
                 typedef std::future<GenerateAvatarOutcome> GenerateAvatarOutcomeCallable;
                 typedef std::function<void(const AiartClient*, const Model::GenerateAvatarRequest&, GenerateAvatarOutcome, const std::shared_ptr<const AsyncCallerContext>&)> GenerateAvatarAsyncHandler;
@@ -94,6 +99,17 @@ namespace TencentCloud
                 typedef std::function<void(const AiartClient*, const Model::UploadTrainPortraitImagesRequest&, UploadTrainPortraitImagesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> UploadTrainPortraitImagesAsyncHandler;
 
 
+
+                /**
+                 *上传正面全身模特照和服装平铺图，生成模特换装后的图片。
+生成的换装图片分辨率和模特照分辨率一致。
+模特换装默认提供1个并发任务数，代表最多能同时处理1个已提交的任务，上一个任务处理完毕后才能开始处理下一个任务。
+                 * @param req ChangeClothesRequest
+                 * @return ChangeClothesOutcome
+                 */
+                ChangeClothesOutcome ChangeClothes(const Model::ChangeClothesRequest &request);
+                void ChangeClothesAsync(const Model::ChangeClothesRequest& request, const ChangeClothesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                ChangeClothesOutcomeCallable ChangeClothesCallable(const Model::ChangeClothesRequest& request);
 
                 /**
                  *百变头像接口将根据输入的人像照片，生成风格百变的头像。

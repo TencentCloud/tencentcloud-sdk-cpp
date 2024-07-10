@@ -126,6 +126,7 @@ set(lke_public_header_model
   include/tencentcloud/lke/v20231130/model/ListReleaseQAPreviewResponse.h
   include/tencentcloud/lke/v20231130/model/ModifyRejectedQuestionResponse.h
   include/tencentcloud/lke/v20231130/model/ListReleaseDocPreviewRequest.h
+  include/tencentcloud/lke/v20231130/model/DocSegment.h
   include/tencentcloud/lke/v20231130/model/DescribeUnsatisfiedReplyContextResponse.h
   include/tencentcloud/lke/v20231130/model/Message.h
   include/tencentcloud/lke/v20231130/model/ExportUnsatisfiedReplyResponse.h
@@ -190,6 +191,7 @@ set(lke_public_header_model
   include/tencentcloud/lke/v20231130/model/DeleteDocResponse.h
   include/tencentcloud/lke/v20231130/model/DocumentElement.h
   include/tencentcloud/lke/v20231130/model/BaseConfig.h
+  include/tencentcloud/lke/v20231130/model/DescribeSegmentsResponse.h
   include/tencentcloud/lke/v20231130/model/ClassifyConfig.h
   include/tencentcloud/lke/v20231130/model/UploadAttributeLabelRequest.h
   include/tencentcloud/lke/v20231130/model/ExportAttributeLabelRequest.h
@@ -232,6 +234,7 @@ set(lke_public_header_model
   include/tencentcloud/lke/v20231130/model/ListRejectedQuestionRequest.h
   include/tencentcloud/lke/v20231130/model/VerifyQAResponse.h
   include/tencentcloud/lke/v20231130/model/ReleaseConfigs.h
+  include/tencentcloud/lke/v20231130/model/DescribeSegmentsRequest.h
   include/tencentcloud/lke/v20231130/model/Filters.h
   include/tencentcloud/lke/v20231130/model/ModifyRejectedQuestionRequest.h
   include/tencentcloud/lke/v20231130/model/IgnoreUnsatisfiedReplyResponse.h
@@ -349,6 +352,7 @@ set(lke_src
   src/v20231130/model/ListReleaseQAPreviewResponse.cpp
   src/v20231130/model/ModifyRejectedQuestionResponse.cpp
   src/v20231130/model/ListReleaseDocPreviewRequest.cpp
+  src/v20231130/model/DocSegment.cpp
   src/v20231130/model/DescribeUnsatisfiedReplyContextResponse.cpp
   src/v20231130/model/Message.cpp
   src/v20231130/model/ExportUnsatisfiedReplyResponse.cpp
@@ -413,6 +417,7 @@ set(lke_src
   src/v20231130/model/DeleteDocResponse.cpp
   src/v20231130/model/DocumentElement.cpp
   src/v20231130/model/BaseConfig.cpp
+  src/v20231130/model/DescribeSegmentsResponse.cpp
   src/v20231130/model/ClassifyConfig.cpp
   src/v20231130/model/UploadAttributeLabelRequest.cpp
   src/v20231130/model/ExportAttributeLabelRequest.cpp
@@ -455,6 +460,7 @@ set(lke_src
   src/v20231130/model/ListRejectedQuestionRequest.cpp
   src/v20231130/model/VerifyQAResponse.cpp
   src/v20231130/model/ReleaseConfigs.cpp
+  src/v20231130/model/DescribeSegmentsRequest.cpp
   src/v20231130/model/Filters.cpp
   src/v20231130/model/ModifyRejectedQuestionRequest.cpp
   src/v20231130/model/IgnoreUnsatisfiedReplyResponse.cpp

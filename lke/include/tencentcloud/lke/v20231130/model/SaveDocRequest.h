@@ -363,15 +363,15 @@ namespace TencentCloud
                     bool IsReferHasBeenSet() const;
 
                     /**
-                     * 获取文档操作类型：1：批量导入；2:文档导入
-                     * @return Opt 文档操作类型：1：批量导入；2:文档导入
+                     * 获取文档操作类型：1：批量导入（批量导入问答对）；2:文档导入（正常导入单个文档）
+                     * @return Opt 文档操作类型：1：批量导入（批量导入问答对）；2:文档导入（正常导入单个文档）
                      * 
                      */
                     uint64_t GetOpt() const;
 
                     /**
-                     * 设置文档操作类型：1：批量导入；2:文档导入
-                     * @param _opt 文档操作类型：1：批量导入；2:文档导入
+                     * 设置文档操作类型：1：批量导入（批量导入问答对）；2:文档导入（正常导入单个文档）
+                     * @param _opt 文档操作类型：1：批量导入（批量导入问答对）；2:文档导入（正常导入单个文档）
                      * 
                      */
                     void SetOpt(const uint64_t& _opt);
@@ -477,7 +477,7 @@ namespace TencentCloud
                     bool m_isReferHasBeenSet;
 
                     /**
-                     * 文档操作类型：1：批量导入；2:文档导入
+                     * 文档操作类型：1：批量导入（批量导入问答对）；2:文档导入（正常导入单个文档）
                      */
                     uint64_t m_opt;
                     bool m_optHasBeenSet;

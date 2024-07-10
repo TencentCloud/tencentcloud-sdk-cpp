@@ -127,6 +127,27 @@ namespace TencentCloud
                      */
                     bool UpdateNetInfoHasBeenSet() const;
 
+                    /**
+                     * 获取设备无流量包处理方式，0: 按量付费，1: 截断加速
+                     * @return FlowTrunc 设备无流量包处理方式，0: 按量付费，1: 截断加速
+                     * 
+                     */
+                    int64_t GetFlowTrunc() const;
+
+                    /**
+                     * 设置设备无流量包处理方式，0: 按量付费，1: 截断加速
+                     * @param _flowTrunc 设备无流量包处理方式，0: 按量付费，1: 截断加速
+                     * 
+                     */
+                    void SetFlowTrunc(const int64_t& _flowTrunc);
+
+                    /**
+                     * 判断参数 FlowTrunc 是否已赋值
+                     * @return FlowTrunc 是否已赋值
+                     * 
+                     */
+                    bool FlowTruncHasBeenSet() const;
+
                 private:
 
                     /**
@@ -152,6 +173,12 @@ namespace TencentCloud
                      */
                     std::vector<UpdateNetInfo> m_updateNetInfo;
                     bool m_updateNetInfoHasBeenSet;
+
+                    /**
+                     * 设备无流量包处理方式，0: 按量付费，1: 截断加速
+                     */
+                    int64_t m_flowTrunc;
+                    bool m_flowTruncHasBeenSet;
 
                 };
             }

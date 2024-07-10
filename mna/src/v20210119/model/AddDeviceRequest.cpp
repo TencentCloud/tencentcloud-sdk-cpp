@@ -30,7 +30,8 @@ AddDeviceRequest::AddDeviceRequest() :
     m_accessScopeHasBeenSet(false),
     m_licensePayModeHasBeenSet(false),
     m_groupNameHasBeenSet(false),
-    m_groupIdHasBeenSet(false)
+    m_groupIdHasBeenSet(false),
+    m_flowTruncHasBeenSet(false)
 {
 }
 
@@ -103,6 +104,14 @@ string AddDeviceRequest::ToJsonString() const
         string key = "GroupId";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_groupId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_flowTruncHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "FlowTrunc";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_flowTrunc, allocator);
     }
 
 
@@ -239,6 +248,22 @@ void AddDeviceRequest::SetGroupId(const string& _groupId)
 bool AddDeviceRequest::GroupIdHasBeenSet() const
 {
     return m_groupIdHasBeenSet;
+}
+
+int64_t AddDeviceRequest::GetFlowTrunc() const
+{
+    return m_flowTrunc;
+}
+
+void AddDeviceRequest::SetFlowTrunc(const int64_t& _flowTrunc)
+{
+    m_flowTrunc = _flowTrunc;
+    m_flowTruncHasBeenSet = true;
+}
+
+bool AddDeviceRequest::FlowTruncHasBeenSet() const
+{
+    return m_flowTruncHasBeenSet;
 }
 
 

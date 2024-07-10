@@ -25,7 +25,8 @@ LiveStreamObjectRecognitionResult::LiveStreamObjectRecognitionResult() :
     m_startPtsOffsetHasBeenSet(false),
     m_endPtsOffsetHasBeenSet(false),
     m_confidenceHasBeenSet(false),
-    m_areaCoordSetHasBeenSet(false)
+    m_areaCoordSetHasBeenSet(false),
+    m_urlHasBeenSet(false)
 {
 }
 
@@ -87,6 +88,16 @@ CoreInternalOutcome LiveStreamObjectRecognitionResult::Deserialize(const rapidjs
         m_areaCoordSetHasBeenSet = true;
     }
 
+    if (value.HasMember("Url") && !value["Url"].IsNull())
+    {
+        if (!value["Url"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `LiveStreamObjectRecognitionResult.Url` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_url = string(value["Url"].GetString());
+        m_urlHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -137,6 +148,14 @@ void LiveStreamObjectRecognitionResult::ToJsonObject(rapidjson::Value &value, ra
         {
             value[key.c_str()].PushBack(rapidjson::Value().SetInt64(*itr), allocator);
         }
+    }
+
+    if (m_urlHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Url";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_url.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -220,5 +239,21 @@ void LiveStreamObjectRecognitionResult::SetAreaCoordSet(const vector<int64_t>& _
 bool LiveStreamObjectRecognitionResult::AreaCoordSetHasBeenSet() const
 {
     return m_areaCoordSetHasBeenSet;
+}
+
+string LiveStreamObjectRecognitionResult::GetUrl() const
+{
+    return m_url;
+}
+
+void LiveStreamObjectRecognitionResult::SetUrl(const string& _url)
+{
+    m_url = _url;
+    m_urlHasBeenSet = true;
+}
+
+bool LiveStreamObjectRecognitionResult::UrlHasBeenSet() const
+{
+    return m_urlHasBeenSet;
 }
 

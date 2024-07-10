@@ -1158,6 +1158,49 @@ LkeClient::DescribeRobotBizIDByAppKeyOutcomeCallable LkeClient::DescribeRobotBiz
     return task->get_future();
 }
 
+LkeClient::DescribeSegmentsOutcome LkeClient::DescribeSegments(const DescribeSegmentsRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeSegments");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeSegmentsResponse rsp = DescribeSegmentsResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeSegmentsOutcome(rsp);
+        else
+            return DescribeSegmentsOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeSegmentsOutcome(outcome.GetError());
+    }
+}
+
+void LkeClient::DescribeSegmentsAsync(const DescribeSegmentsRequest& request, const DescribeSegmentsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeSegments(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+LkeClient::DescribeSegmentsOutcomeCallable LkeClient::DescribeSegmentsCallable(const DescribeSegmentsRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeSegmentsOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeSegments(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 LkeClient::DescribeStorageCredentialOutcome LkeClient::DescribeStorageCredential(const DescribeStorageCredentialRequest &request)
 {
     auto outcome = MakeRequest(request, "DescribeStorageCredential");

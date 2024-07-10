@@ -75,6 +75,8 @@
 #include <tencentcloud/lke/v20231130/model/DescribeReleaseInfoResponse.h>
 #include <tencentcloud/lke/v20231130/model/DescribeRobotBizIDByAppKeyRequest.h>
 #include <tencentcloud/lke/v20231130/model/DescribeRobotBizIDByAppKeyResponse.h>
+#include <tencentcloud/lke/v20231130/model/DescribeSegmentsRequest.h>
+#include <tencentcloud/lke/v20231130/model/DescribeSegmentsResponse.h>
 #include <tencentcloud/lke/v20231130/model/DescribeStorageCredentialRequest.h>
 #include <tencentcloud/lke/v20231130/model/DescribeStorageCredentialResponse.h>
 #include <tencentcloud/lke/v20231130/model/DescribeUnsatisfiedReplyContextRequest.h>
@@ -277,6 +279,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeRobotBizIDByAppKeyResponse> DescribeRobotBizIDByAppKeyOutcome;
                 typedef std::future<DescribeRobotBizIDByAppKeyOutcome> DescribeRobotBizIDByAppKeyOutcomeCallable;
                 typedef std::function<void(const LkeClient*, const Model::DescribeRobotBizIDByAppKeyRequest&, DescribeRobotBizIDByAppKeyOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeRobotBizIDByAppKeyAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeSegmentsResponse> DescribeSegmentsOutcome;
+                typedef std::future<DescribeSegmentsOutcome> DescribeSegmentsOutcomeCallable;
+                typedef std::function<void(const LkeClient*, const Model::DescribeSegmentsRequest&, DescribeSegmentsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeSegmentsAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeStorageCredentialResponse> DescribeStorageCredentialOutcome;
                 typedef std::future<DescribeStorageCredentialOutcome> DescribeStorageCredentialOutcomeCallable;
                 typedef std::function<void(const LkeClient*, const Model::DescribeStorageCredentialRequest&, DescribeStorageCredentialOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeStorageCredentialAsyncHandler;
@@ -681,6 +686,15 @@ namespace TencentCloud
                 DescribeRobotBizIDByAppKeyOutcome DescribeRobotBizIDByAppKey(const Model::DescribeRobotBizIDByAppKeyRequest &request);
                 void DescribeRobotBizIDByAppKeyAsync(const Model::DescribeRobotBizIDByAppKeyRequest& request, const DescribeRobotBizIDByAppKeyAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DescribeRobotBizIDByAppKeyOutcomeCallable DescribeRobotBizIDByAppKeyCallable(const Model::DescribeRobotBizIDByAppKeyRequest& request);
+
+                /**
+                 *获取片段详情
+                 * @param req DescribeSegmentsRequest
+                 * @return DescribeSegmentsOutcome
+                 */
+                DescribeSegmentsOutcome DescribeSegments(const Model::DescribeSegmentsRequest &request);
+                void DescribeSegmentsAsync(const Model::DescribeSegmentsRequest& request, const DescribeSegmentsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeSegmentsOutcomeCallable DescribeSegmentsCallable(const Model::DescribeSegmentsRequest& request);
 
                 /**
                  *获取文件上传临时密钥

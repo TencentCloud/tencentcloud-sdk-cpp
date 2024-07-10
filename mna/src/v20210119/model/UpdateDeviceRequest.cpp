@@ -26,7 +26,8 @@ UpdateDeviceRequest::UpdateDeviceRequest() :
     m_deviceIdHasBeenSet(false),
     m_deviceNameHasBeenSet(false),
     m_remarkHasBeenSet(false),
-    m_updateNetInfoHasBeenSet(false)
+    m_updateNetInfoHasBeenSet(false),
+    m_flowTruncHasBeenSet(false)
 {
 }
 
@@ -74,6 +75,14 @@ string UpdateDeviceRequest::ToJsonString() const
             d[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
             (*itr).ToJsonObject(d[key.c_str()][i], allocator);
         }
+    }
+
+    if (m_flowTruncHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "FlowTrunc";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_flowTrunc, allocator);
     }
 
 
@@ -146,6 +155,22 @@ void UpdateDeviceRequest::SetUpdateNetInfo(const vector<UpdateNetInfo>& _updateN
 bool UpdateDeviceRequest::UpdateNetInfoHasBeenSet() const
 {
     return m_updateNetInfoHasBeenSet;
+}
+
+int64_t UpdateDeviceRequest::GetFlowTrunc() const
+{
+    return m_flowTrunc;
+}
+
+void UpdateDeviceRequest::SetFlowTrunc(const int64_t& _flowTrunc)
+{
+    m_flowTrunc = _flowTrunc;
+    m_flowTruncHasBeenSet = true;
+}
+
+bool UpdateDeviceRequest::FlowTruncHasBeenSet() const
+{
+    return m_flowTruncHasBeenSet;
 }
 
 

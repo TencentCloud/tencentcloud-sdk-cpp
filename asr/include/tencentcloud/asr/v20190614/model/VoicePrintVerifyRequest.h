@@ -85,27 +85,6 @@ namespace TencentCloud
                     bool SampleRateHasBeenSet() const;
 
                     /**
-                     * 获取说话人id, 说话人唯一标识
-                     * @return VoicePrintId 说话人id, 说话人唯一标识
-                     * 
-                     */
-                    std::string GetVoicePrintId() const;
-
-                    /**
-                     * 设置说话人id, 说话人唯一标识
-                     * @param _voicePrintId 说话人id, 说话人唯一标识
-                     * 
-                     */
-                    void SetVoicePrintId(const std::string& _voicePrintId);
-
-                    /**
-                     * 判断参数 VoicePrintId 是否已赋值
-                     * @return VoicePrintId 是否已赋值
-                     * 
-                     */
-                    bool VoicePrintIdHasBeenSet() const;
-
-                    /**
                      * 获取音频数据, base64 编码, 音频时长不能超过30s，数据大小不超过2M	
                      * @return Data 音频数据, base64 编码, 音频时长不能超过30s，数据大小不超过2M	
                      * 
@@ -126,6 +105,27 @@ namespace TencentCloud
                      */
                     bool DataHasBeenSet() const;
 
+                    /**
+                     * 获取说话人id, 说话人唯一标识
+                     * @return VoicePrintId 说话人id, 说话人唯一标识
+                     * 
+                     */
+                    std::string GetVoicePrintId() const;
+
+                    /**
+                     * 设置说话人id, 说话人唯一标识
+                     * @param _voicePrintId 说话人id, 说话人唯一标识
+                     * 
+                     */
+                    void SetVoicePrintId(const std::string& _voicePrintId);
+
+                    /**
+                     * 判断参数 VoicePrintId 是否已赋值
+                     * @return VoicePrintId 是否已赋值
+                     * 
+                     */
+                    bool VoicePrintIdHasBeenSet() const;
+
                 private:
 
                     /**
@@ -141,16 +141,16 @@ namespace TencentCloud
                     bool m_sampleRateHasBeenSet;
 
                     /**
-                     * 说话人id, 说话人唯一标识
-                     */
-                    std::string m_voicePrintId;
-                    bool m_voicePrintIdHasBeenSet;
-
-                    /**
                      * 音频数据, base64 编码, 音频时长不能超过30s，数据大小不超过2M	
                      */
                     std::string m_data;
                     bool m_dataHasBeenSet;
+
+                    /**
+                     * 说话人id, 说话人唯一标识
+                     */
+                    std::string m_voicePrintId;
+                    bool m_voicePrintIdHasBeenSet;
 
                 };
             }

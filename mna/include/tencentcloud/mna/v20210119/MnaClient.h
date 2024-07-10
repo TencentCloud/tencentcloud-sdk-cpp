@@ -27,6 +27,8 @@
 #include <tencentcloud/mna/v20210119/model/ActivateHardwareResponse.h>
 #include <tencentcloud/mna/v20210119/model/AddDeviceRequest.h>
 #include <tencentcloud/mna/v20210119/model/AddDeviceResponse.h>
+#include <tencentcloud/mna/v20210119/model/AddGroupRequest.h>
+#include <tencentcloud/mna/v20210119/model/AddGroupResponse.h>
 #include <tencentcloud/mna/v20210119/model/AddHardwareRequest.h>
 #include <tencentcloud/mna/v20210119/model/AddHardwareResponse.h>
 #include <tencentcloud/mna/v20210119/model/CreateEncryptedKeyRequest.h>
@@ -35,6 +37,8 @@
 #include <tencentcloud/mna/v20210119/model/CreateQosResponse.h>
 #include <tencentcloud/mna/v20210119/model/DeleteDeviceRequest.h>
 #include <tencentcloud/mna/v20210119/model/DeleteDeviceResponse.h>
+#include <tencentcloud/mna/v20210119/model/DeleteGroupRequest.h>
+#include <tencentcloud/mna/v20210119/model/DeleteGroupResponse.h>
 #include <tencentcloud/mna/v20210119/model/DeleteQosRequest.h>
 #include <tencentcloud/mna/v20210119/model/DeleteQosResponse.h>
 #include <tencentcloud/mna/v20210119/model/DescribeQosRequest.h>
@@ -53,6 +57,12 @@
 #include <tencentcloud/mna/v20210119/model/GetFlowStatisticResponse.h>
 #include <tencentcloud/mna/v20210119/model/GetFlowStatisticByGroupRequest.h>
 #include <tencentcloud/mna/v20210119/model/GetFlowStatisticByGroupResponse.h>
+#include <tencentcloud/mna/v20210119/model/GetFlowStatisticByRegionRequest.h>
+#include <tencentcloud/mna/v20210119/model/GetFlowStatisticByRegionResponse.h>
+#include <tencentcloud/mna/v20210119/model/GetGroupDetailRequest.h>
+#include <tencentcloud/mna/v20210119/model/GetGroupDetailResponse.h>
+#include <tencentcloud/mna/v20210119/model/GetGroupListRequest.h>
+#include <tencentcloud/mna/v20210119/model/GetGroupListResponse.h>
 #include <tencentcloud/mna/v20210119/model/GetHardwareListRequest.h>
 #include <tencentcloud/mna/v20210119/model/GetHardwareListResponse.h>
 #include <tencentcloud/mna/v20210119/model/GetMultiFlowStatisticRequest.h>
@@ -65,12 +75,20 @@
 #include <tencentcloud/mna/v20210119/model/GetStatisticDataResponse.h>
 #include <tencentcloud/mna/v20210119/model/GetVendorHardwareRequest.h>
 #include <tencentcloud/mna/v20210119/model/GetVendorHardwareResponse.h>
+#include <tencentcloud/mna/v20210119/model/GroupAddDeviceRequest.h>
+#include <tencentcloud/mna/v20210119/model/GroupAddDeviceResponse.h>
+#include <tencentcloud/mna/v20210119/model/GroupDeleteDeviceRequest.h>
+#include <tencentcloud/mna/v20210119/model/GroupDeleteDeviceResponse.h>
 #include <tencentcloud/mna/v20210119/model/ModifyPackageRenewFlagRequest.h>
 #include <tencentcloud/mna/v20210119/model/ModifyPackageRenewFlagResponse.h>
 #include <tencentcloud/mna/v20210119/model/OrderFlowPackageRequest.h>
 #include <tencentcloud/mna/v20210119/model/OrderFlowPackageResponse.h>
+#include <tencentcloud/mna/v20210119/model/SetNotifyUrlRequest.h>
+#include <tencentcloud/mna/v20210119/model/SetNotifyUrlResponse.h>
 #include <tencentcloud/mna/v20210119/model/UpdateDeviceRequest.h>
 #include <tencentcloud/mna/v20210119/model/UpdateDeviceResponse.h>
+#include <tencentcloud/mna/v20210119/model/UpdateGroupRequest.h>
+#include <tencentcloud/mna/v20210119/model/UpdateGroupResponse.h>
 #include <tencentcloud/mna/v20210119/model/UpdateHardwareRequest.h>
 #include <tencentcloud/mna/v20210119/model/UpdateHardwareResponse.h>
 
@@ -93,6 +111,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::AddDeviceResponse> AddDeviceOutcome;
                 typedef std::future<AddDeviceOutcome> AddDeviceOutcomeCallable;
                 typedef std::function<void(const MnaClient*, const Model::AddDeviceRequest&, AddDeviceOutcome, const std::shared_ptr<const AsyncCallerContext>&)> AddDeviceAsyncHandler;
+                typedef Outcome<Core::Error, Model::AddGroupResponse> AddGroupOutcome;
+                typedef std::future<AddGroupOutcome> AddGroupOutcomeCallable;
+                typedef std::function<void(const MnaClient*, const Model::AddGroupRequest&, AddGroupOutcome, const std::shared_ptr<const AsyncCallerContext>&)> AddGroupAsyncHandler;
                 typedef Outcome<Core::Error, Model::AddHardwareResponse> AddHardwareOutcome;
                 typedef std::future<AddHardwareOutcome> AddHardwareOutcomeCallable;
                 typedef std::function<void(const MnaClient*, const Model::AddHardwareRequest&, AddHardwareOutcome, const std::shared_ptr<const AsyncCallerContext>&)> AddHardwareAsyncHandler;
@@ -105,6 +126,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DeleteDeviceResponse> DeleteDeviceOutcome;
                 typedef std::future<DeleteDeviceOutcome> DeleteDeviceOutcomeCallable;
                 typedef std::function<void(const MnaClient*, const Model::DeleteDeviceRequest&, DeleteDeviceOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteDeviceAsyncHandler;
+                typedef Outcome<Core::Error, Model::DeleteGroupResponse> DeleteGroupOutcome;
+                typedef std::future<DeleteGroupOutcome> DeleteGroupOutcomeCallable;
+                typedef std::function<void(const MnaClient*, const Model::DeleteGroupRequest&, DeleteGroupOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteGroupAsyncHandler;
                 typedef Outcome<Core::Error, Model::DeleteQosResponse> DeleteQosOutcome;
                 typedef std::future<DeleteQosOutcome> DeleteQosOutcomeCallable;
                 typedef std::function<void(const MnaClient*, const Model::DeleteQosRequest&, DeleteQosOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteQosAsyncHandler;
@@ -132,6 +156,15 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::GetFlowStatisticByGroupResponse> GetFlowStatisticByGroupOutcome;
                 typedef std::future<GetFlowStatisticByGroupOutcome> GetFlowStatisticByGroupOutcomeCallable;
                 typedef std::function<void(const MnaClient*, const Model::GetFlowStatisticByGroupRequest&, GetFlowStatisticByGroupOutcome, const std::shared_ptr<const AsyncCallerContext>&)> GetFlowStatisticByGroupAsyncHandler;
+                typedef Outcome<Core::Error, Model::GetFlowStatisticByRegionResponse> GetFlowStatisticByRegionOutcome;
+                typedef std::future<GetFlowStatisticByRegionOutcome> GetFlowStatisticByRegionOutcomeCallable;
+                typedef std::function<void(const MnaClient*, const Model::GetFlowStatisticByRegionRequest&, GetFlowStatisticByRegionOutcome, const std::shared_ptr<const AsyncCallerContext>&)> GetFlowStatisticByRegionAsyncHandler;
+                typedef Outcome<Core::Error, Model::GetGroupDetailResponse> GetGroupDetailOutcome;
+                typedef std::future<GetGroupDetailOutcome> GetGroupDetailOutcomeCallable;
+                typedef std::function<void(const MnaClient*, const Model::GetGroupDetailRequest&, GetGroupDetailOutcome, const std::shared_ptr<const AsyncCallerContext>&)> GetGroupDetailAsyncHandler;
+                typedef Outcome<Core::Error, Model::GetGroupListResponse> GetGroupListOutcome;
+                typedef std::future<GetGroupListOutcome> GetGroupListOutcomeCallable;
+                typedef std::function<void(const MnaClient*, const Model::GetGroupListRequest&, GetGroupListOutcome, const std::shared_ptr<const AsyncCallerContext>&)> GetGroupListAsyncHandler;
                 typedef Outcome<Core::Error, Model::GetHardwareListResponse> GetHardwareListOutcome;
                 typedef std::future<GetHardwareListOutcome> GetHardwareListOutcomeCallable;
                 typedef std::function<void(const MnaClient*, const Model::GetHardwareListRequest&, GetHardwareListOutcome, const std::shared_ptr<const AsyncCallerContext>&)> GetHardwareListAsyncHandler;
@@ -150,15 +183,27 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::GetVendorHardwareResponse> GetVendorHardwareOutcome;
                 typedef std::future<GetVendorHardwareOutcome> GetVendorHardwareOutcomeCallable;
                 typedef std::function<void(const MnaClient*, const Model::GetVendorHardwareRequest&, GetVendorHardwareOutcome, const std::shared_ptr<const AsyncCallerContext>&)> GetVendorHardwareAsyncHandler;
+                typedef Outcome<Core::Error, Model::GroupAddDeviceResponse> GroupAddDeviceOutcome;
+                typedef std::future<GroupAddDeviceOutcome> GroupAddDeviceOutcomeCallable;
+                typedef std::function<void(const MnaClient*, const Model::GroupAddDeviceRequest&, GroupAddDeviceOutcome, const std::shared_ptr<const AsyncCallerContext>&)> GroupAddDeviceAsyncHandler;
+                typedef Outcome<Core::Error, Model::GroupDeleteDeviceResponse> GroupDeleteDeviceOutcome;
+                typedef std::future<GroupDeleteDeviceOutcome> GroupDeleteDeviceOutcomeCallable;
+                typedef std::function<void(const MnaClient*, const Model::GroupDeleteDeviceRequest&, GroupDeleteDeviceOutcome, const std::shared_ptr<const AsyncCallerContext>&)> GroupDeleteDeviceAsyncHandler;
                 typedef Outcome<Core::Error, Model::ModifyPackageRenewFlagResponse> ModifyPackageRenewFlagOutcome;
                 typedef std::future<ModifyPackageRenewFlagOutcome> ModifyPackageRenewFlagOutcomeCallable;
                 typedef std::function<void(const MnaClient*, const Model::ModifyPackageRenewFlagRequest&, ModifyPackageRenewFlagOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyPackageRenewFlagAsyncHandler;
                 typedef Outcome<Core::Error, Model::OrderFlowPackageResponse> OrderFlowPackageOutcome;
                 typedef std::future<OrderFlowPackageOutcome> OrderFlowPackageOutcomeCallable;
                 typedef std::function<void(const MnaClient*, const Model::OrderFlowPackageRequest&, OrderFlowPackageOutcome, const std::shared_ptr<const AsyncCallerContext>&)> OrderFlowPackageAsyncHandler;
+                typedef Outcome<Core::Error, Model::SetNotifyUrlResponse> SetNotifyUrlOutcome;
+                typedef std::future<SetNotifyUrlOutcome> SetNotifyUrlOutcomeCallable;
+                typedef std::function<void(const MnaClient*, const Model::SetNotifyUrlRequest&, SetNotifyUrlOutcome, const std::shared_ptr<const AsyncCallerContext>&)> SetNotifyUrlAsyncHandler;
                 typedef Outcome<Core::Error, Model::UpdateDeviceResponse> UpdateDeviceOutcome;
                 typedef std::future<UpdateDeviceOutcome> UpdateDeviceOutcomeCallable;
                 typedef std::function<void(const MnaClient*, const Model::UpdateDeviceRequest&, UpdateDeviceOutcome, const std::shared_ptr<const AsyncCallerContext>&)> UpdateDeviceAsyncHandler;
+                typedef Outcome<Core::Error, Model::UpdateGroupResponse> UpdateGroupOutcome;
+                typedef std::future<UpdateGroupOutcome> UpdateGroupOutcomeCallable;
+                typedef std::function<void(const MnaClient*, const Model::UpdateGroupRequest&, UpdateGroupOutcome, const std::shared_ptr<const AsyncCallerContext>&)> UpdateGroupAsyncHandler;
                 typedef Outcome<Core::Error, Model::UpdateHardwareResponse> UpdateHardwareOutcome;
                 typedef std::future<UpdateHardwareOutcome> UpdateHardwareOutcomeCallable;
                 typedef std::function<void(const MnaClient*, const Model::UpdateHardwareRequest&, UpdateHardwareOutcome, const std::shared_ptr<const AsyncCallerContext>&)> UpdateHardwareAsyncHandler;
@@ -182,6 +227,15 @@ namespace TencentCloud
                 AddDeviceOutcome AddDevice(const Model::AddDeviceRequest &request);
                 void AddDeviceAsync(const Model::AddDeviceRequest& request, const AddDeviceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 AddDeviceOutcomeCallable AddDeviceCallable(const Model::AddDeviceRequest& request);
+
+                /**
+                 *新建分组
+                 * @param req AddGroupRequest
+                 * @return AddGroupOutcome
+                 */
+                AddGroupOutcome AddGroup(const Model::AddGroupRequest &request);
+                void AddGroupAsync(const Model::AddGroupRequest& request, const AddGroupAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                AddGroupOutcomeCallable AddGroupCallable(const Model::AddGroupRequest& request);
 
                 /**
                  *添加硬件设备，生成未激活的硬件设备，可支持批量添加
@@ -218,6 +272,15 @@ namespace TencentCloud
                 DeleteDeviceOutcome DeleteDevice(const Model::DeleteDeviceRequest &request);
                 void DeleteDeviceAsync(const Model::DeleteDeviceRequest& request, const DeleteDeviceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DeleteDeviceOutcomeCallable DeleteDeviceCallable(const Model::DeleteDeviceRequest& request);
+
+                /**
+                 *删除分组
+                 * @param req DeleteGroupRequest
+                 * @return DeleteGroupOutcome
+                 */
+                DeleteGroupOutcome DeleteGroup(const Model::DeleteGroupRequest &request);
+                void DeleteGroupAsync(const Model::DeleteGroupRequest& request, const DeleteGroupAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DeleteGroupOutcomeCallable DeleteGroupCallable(const Model::DeleteGroupRequest& request);
 
                 /**
                  *移动网络停止Qos加速过程
@@ -301,6 +364,33 @@ namespace TencentCloud
                 GetFlowStatisticByGroupOutcomeCallable GetFlowStatisticByGroupCallable(const Model::GetFlowStatisticByGroupRequest& request);
 
                 /**
+                 *获取指定区域，指定时间点数据流量使用情况
+                 * @param req GetFlowStatisticByRegionRequest
+                 * @return GetFlowStatisticByRegionOutcome
+                 */
+                GetFlowStatisticByRegionOutcome GetFlowStatisticByRegion(const Model::GetFlowStatisticByRegionRequest &request);
+                void GetFlowStatisticByRegionAsync(const Model::GetFlowStatisticByRegionRequest& request, const GetFlowStatisticByRegionAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                GetFlowStatisticByRegionOutcomeCallable GetFlowStatisticByRegionCallable(const Model::GetFlowStatisticByRegionRequest& request);
+
+                /**
+                 *查看分组详细信息
+                 * @param req GetGroupDetailRequest
+                 * @return GetGroupDetailOutcome
+                 */
+                GetGroupDetailOutcome GetGroupDetail(const Model::GetGroupDetailRequest &request);
+                void GetGroupDetailAsync(const Model::GetGroupDetailRequest& request, const GetGroupDetailAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                GetGroupDetailOutcomeCallable GetGroupDetailCallable(const Model::GetGroupDetailRequest& request);
+
+                /**
+                 *获取分组列表
+                 * @param req GetGroupListRequest
+                 * @return GetGroupListOutcome
+                 */
+                GetGroupListOutcome GetGroupList(const Model::GetGroupListRequest &request);
+                void GetGroupListAsync(const Model::GetGroupListRequest& request, const GetGroupListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                GetGroupListOutcomeCallable GetGroupListCallable(const Model::GetGroupListRequest& request);
+
+                /**
                  *获取厂商硬件列表
                  * @param req GetHardwareListRequest
                  * @return GetHardwareListOutcome
@@ -355,6 +445,24 @@ namespace TencentCloud
                 GetVendorHardwareOutcomeCallable GetVendorHardwareCallable(const Model::GetVendorHardwareRequest& request);
 
                 /**
+                 *向已存在分组中添加设备
+                 * @param req GroupAddDeviceRequest
+                 * @return GroupAddDeviceOutcome
+                 */
+                GroupAddDeviceOutcome GroupAddDevice(const Model::GroupAddDeviceRequest &request);
+                void GroupAddDeviceAsync(const Model::GroupAddDeviceRequest& request, const GroupAddDeviceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                GroupAddDeviceOutcomeCallable GroupAddDeviceCallable(const Model::GroupAddDeviceRequest& request);
+
+                /**
+                 *删除分组中的设备
+                 * @param req GroupDeleteDeviceRequest
+                 * @return GroupDeleteDeviceOutcome
+                 */
+                GroupDeleteDeviceOutcome GroupDeleteDevice(const Model::GroupDeleteDeviceRequest &request);
+                void GroupDeleteDeviceAsync(const Model::GroupDeleteDeviceRequest& request, const GroupDeleteDeviceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                GroupDeleteDeviceOutcomeCallable GroupDeleteDeviceCallable(const Model::GroupDeleteDeviceRequest& request);
+
+                /**
                  *可开启/关闭流量包自动续费，不影响当前周期正在生效的流量包。
                  * @param req ModifyPackageRenewFlagRequest
                  * @return ModifyPackageRenewFlagOutcome
@@ -373,6 +481,15 @@ namespace TencentCloud
                 OrderFlowPackageOutcomeCallable OrderFlowPackageCallable(const Model::OrderFlowPackageRequest& request);
 
                 /**
+                 *设置用户流量告警信息接口，通过该接口设置流量包告警阈值以及告警时回调的url和key
+                 * @param req SetNotifyUrlRequest
+                 * @return SetNotifyUrlOutcome
+                 */
+                SetNotifyUrlOutcome SetNotifyUrl(const Model::SetNotifyUrlRequest &request);
+                void SetNotifyUrlAsync(const Model::SetNotifyUrlRequest& request, const SetNotifyUrlAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                SetNotifyUrlOutcomeCallable SetNotifyUrlCallable(const Model::SetNotifyUrlRequest& request);
+
+                /**
                  *更新设备信息
                  * @param req UpdateDeviceRequest
                  * @return UpdateDeviceOutcome
@@ -380,6 +497,15 @@ namespace TencentCloud
                 UpdateDeviceOutcome UpdateDevice(const Model::UpdateDeviceRequest &request);
                 void UpdateDeviceAsync(const Model::UpdateDeviceRequest& request, const UpdateDeviceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 UpdateDeviceOutcomeCallable UpdateDeviceCallable(const Model::UpdateDeviceRequest& request);
+
+                /**
+                 *更新分组备注
+                 * @param req UpdateGroupRequest
+                 * @return UpdateGroupOutcome
+                 */
+                UpdateGroupOutcome UpdateGroup(const Model::UpdateGroupRequest &request);
+                void UpdateGroupAsync(const Model::UpdateGroupRequest& request, const UpdateGroupAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                UpdateGroupOutcomeCallable UpdateGroupCallable(const Model::UpdateGroupRequest& request);
 
                 /**
                  *更新硬件信息

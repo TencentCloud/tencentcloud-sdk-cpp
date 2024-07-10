@@ -315,6 +315,27 @@ namespace TencentCloud
                      */
                     bool DnssecConflictModeHasBeenSet() const;
 
+                    /**
+                     * 获取记录分组 Id。可以通过接口 DescribeRecordGroupList 接口 GroupId 字段获取。
+                     * @return GroupId 记录分组 Id。可以通过接口 DescribeRecordGroupList 接口 GroupId 字段获取。
+                     * 
+                     */
+                    uint64_t GetGroupId() const;
+
+                    /**
+                     * 设置记录分组 Id。可以通过接口 DescribeRecordGroupList 接口 GroupId 字段获取。
+                     * @param _groupId 记录分组 Id。可以通过接口 DescribeRecordGroupList 接口 GroupId 字段获取。
+                     * 
+                     */
+                    void SetGroupId(const uint64_t& _groupId);
+
+                    /**
+                     * 判断参数 GroupId 是否已赋值
+                     * @return GroupId 是否已赋值
+                     * 
+                     */
+                    bool GroupIdHasBeenSet() const;
+
                 private:
 
                     /**
@@ -394,6 +415,12 @@ namespace TencentCloud
                      */
                     std::string m_dnssecConflictMode;
                     bool m_dnssecConflictModeHasBeenSet;
+
+                    /**
+                     * 记录分组 Id。可以通过接口 DescribeRecordGroupList 接口 GroupId 字段获取。
+                     */
+                    uint64_t m_groupId;
+                    bool m_groupIdHasBeenSet;
 
                 };
             }

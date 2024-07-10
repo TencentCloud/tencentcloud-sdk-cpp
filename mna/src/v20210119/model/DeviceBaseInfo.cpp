@@ -30,7 +30,8 @@ DeviceBaseInfo::DeviceBaseInfo() :
     m_licensePayModeHasBeenSet(false),
     m_payerHasBeenSet(false),
     m_groupIdHasBeenSet(false),
-    m_groupNameHasBeenSet(false)
+    m_groupNameHasBeenSet(false),
+    m_flowTruncHasBeenSet(false)
 {
 }
 
@@ -139,6 +140,16 @@ CoreInternalOutcome DeviceBaseInfo::Deserialize(const rapidjson::Value &value)
         m_groupNameHasBeenSet = true;
     }
 
+    if (value.HasMember("FlowTrunc") && !value["FlowTrunc"].IsNull())
+    {
+        if (!value["FlowTrunc"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `DeviceBaseInfo.FlowTrunc` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_flowTrunc = value["FlowTrunc"].GetInt64();
+        m_flowTruncHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -224,6 +235,14 @@ void DeviceBaseInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Document::
         string key = "GroupName";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_groupName.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_flowTruncHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "FlowTrunc";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_flowTrunc, allocator);
     }
 
 }
@@ -387,5 +406,21 @@ void DeviceBaseInfo::SetGroupName(const string& _groupName)
 bool DeviceBaseInfo::GroupNameHasBeenSet() const
 {
     return m_groupNameHasBeenSet;
+}
+
+int64_t DeviceBaseInfo::GetFlowTrunc() const
+{
+    return m_flowTrunc;
+}
+
+void DeviceBaseInfo::SetFlowTrunc(const int64_t& _flowTrunc)
+{
+    m_flowTrunc = _flowTrunc;
+    m_flowTruncHasBeenSet = true;
+}
+
+bool DeviceBaseInfo::FlowTruncHasBeenSet() const
+{
+    return m_flowTruncHasBeenSet;
 }
 

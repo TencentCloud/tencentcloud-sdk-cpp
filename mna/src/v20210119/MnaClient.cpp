@@ -126,6 +126,49 @@ MnaClient::AddDeviceOutcomeCallable MnaClient::AddDeviceCallable(const AddDevice
     return task->get_future();
 }
 
+MnaClient::AddGroupOutcome MnaClient::AddGroup(const AddGroupRequest &request)
+{
+    auto outcome = MakeRequest(request, "AddGroup");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        AddGroupResponse rsp = AddGroupResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return AddGroupOutcome(rsp);
+        else
+            return AddGroupOutcome(o.GetError());
+    }
+    else
+    {
+        return AddGroupOutcome(outcome.GetError());
+    }
+}
+
+void MnaClient::AddGroupAsync(const AddGroupRequest& request, const AddGroupAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->AddGroup(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+MnaClient::AddGroupOutcomeCallable MnaClient::AddGroupCallable(const AddGroupRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<AddGroupOutcome()>>(
+        [this, request]()
+        {
+            return this->AddGroup(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 MnaClient::AddHardwareOutcome MnaClient::AddHardware(const AddHardwareRequest &request)
 {
     auto outcome = MakeRequest(request, "AddHardware");
@@ -291,6 +334,49 @@ MnaClient::DeleteDeviceOutcomeCallable MnaClient::DeleteDeviceCallable(const Del
         [this, request]()
         {
             return this->DeleteDevice(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+MnaClient::DeleteGroupOutcome MnaClient::DeleteGroup(const DeleteGroupRequest &request)
+{
+    auto outcome = MakeRequest(request, "DeleteGroup");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DeleteGroupResponse rsp = DeleteGroupResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DeleteGroupOutcome(rsp);
+        else
+            return DeleteGroupOutcome(o.GetError());
+    }
+    else
+    {
+        return DeleteGroupOutcome(outcome.GetError());
+    }
+}
+
+void MnaClient::DeleteGroupAsync(const DeleteGroupRequest& request, const DeleteGroupAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DeleteGroup(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+MnaClient::DeleteGroupOutcomeCallable MnaClient::DeleteGroupCallable(const DeleteGroupRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DeleteGroupOutcome()>>(
+        [this, request]()
+        {
+            return this->DeleteGroup(request);
         }
     );
 
@@ -685,6 +771,135 @@ MnaClient::GetFlowStatisticByGroupOutcomeCallable MnaClient::GetFlowStatisticByG
     return task->get_future();
 }
 
+MnaClient::GetFlowStatisticByRegionOutcome MnaClient::GetFlowStatisticByRegion(const GetFlowStatisticByRegionRequest &request)
+{
+    auto outcome = MakeRequest(request, "GetFlowStatisticByRegion");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        GetFlowStatisticByRegionResponse rsp = GetFlowStatisticByRegionResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return GetFlowStatisticByRegionOutcome(rsp);
+        else
+            return GetFlowStatisticByRegionOutcome(o.GetError());
+    }
+    else
+    {
+        return GetFlowStatisticByRegionOutcome(outcome.GetError());
+    }
+}
+
+void MnaClient::GetFlowStatisticByRegionAsync(const GetFlowStatisticByRegionRequest& request, const GetFlowStatisticByRegionAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->GetFlowStatisticByRegion(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+MnaClient::GetFlowStatisticByRegionOutcomeCallable MnaClient::GetFlowStatisticByRegionCallable(const GetFlowStatisticByRegionRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<GetFlowStatisticByRegionOutcome()>>(
+        [this, request]()
+        {
+            return this->GetFlowStatisticByRegion(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+MnaClient::GetGroupDetailOutcome MnaClient::GetGroupDetail(const GetGroupDetailRequest &request)
+{
+    auto outcome = MakeRequest(request, "GetGroupDetail");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        GetGroupDetailResponse rsp = GetGroupDetailResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return GetGroupDetailOutcome(rsp);
+        else
+            return GetGroupDetailOutcome(o.GetError());
+    }
+    else
+    {
+        return GetGroupDetailOutcome(outcome.GetError());
+    }
+}
+
+void MnaClient::GetGroupDetailAsync(const GetGroupDetailRequest& request, const GetGroupDetailAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->GetGroupDetail(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+MnaClient::GetGroupDetailOutcomeCallable MnaClient::GetGroupDetailCallable(const GetGroupDetailRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<GetGroupDetailOutcome()>>(
+        [this, request]()
+        {
+            return this->GetGroupDetail(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+MnaClient::GetGroupListOutcome MnaClient::GetGroupList(const GetGroupListRequest &request)
+{
+    auto outcome = MakeRequest(request, "GetGroupList");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        GetGroupListResponse rsp = GetGroupListResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return GetGroupListOutcome(rsp);
+        else
+            return GetGroupListOutcome(o.GetError());
+    }
+    else
+    {
+        return GetGroupListOutcome(outcome.GetError());
+    }
+}
+
+void MnaClient::GetGroupListAsync(const GetGroupListRequest& request, const GetGroupListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->GetGroupList(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+MnaClient::GetGroupListOutcomeCallable MnaClient::GetGroupListCallable(const GetGroupListRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<GetGroupListOutcome()>>(
+        [this, request]()
+        {
+            return this->GetGroupList(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 MnaClient::GetHardwareListOutcome MnaClient::GetHardwareList(const GetHardwareListRequest &request)
 {
     auto outcome = MakeRequest(request, "GetHardwareList");
@@ -943,6 +1158,92 @@ MnaClient::GetVendorHardwareOutcomeCallable MnaClient::GetVendorHardwareCallable
     return task->get_future();
 }
 
+MnaClient::GroupAddDeviceOutcome MnaClient::GroupAddDevice(const GroupAddDeviceRequest &request)
+{
+    auto outcome = MakeRequest(request, "GroupAddDevice");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        GroupAddDeviceResponse rsp = GroupAddDeviceResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return GroupAddDeviceOutcome(rsp);
+        else
+            return GroupAddDeviceOutcome(o.GetError());
+    }
+    else
+    {
+        return GroupAddDeviceOutcome(outcome.GetError());
+    }
+}
+
+void MnaClient::GroupAddDeviceAsync(const GroupAddDeviceRequest& request, const GroupAddDeviceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->GroupAddDevice(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+MnaClient::GroupAddDeviceOutcomeCallable MnaClient::GroupAddDeviceCallable(const GroupAddDeviceRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<GroupAddDeviceOutcome()>>(
+        [this, request]()
+        {
+            return this->GroupAddDevice(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+MnaClient::GroupDeleteDeviceOutcome MnaClient::GroupDeleteDevice(const GroupDeleteDeviceRequest &request)
+{
+    auto outcome = MakeRequest(request, "GroupDeleteDevice");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        GroupDeleteDeviceResponse rsp = GroupDeleteDeviceResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return GroupDeleteDeviceOutcome(rsp);
+        else
+            return GroupDeleteDeviceOutcome(o.GetError());
+    }
+    else
+    {
+        return GroupDeleteDeviceOutcome(outcome.GetError());
+    }
+}
+
+void MnaClient::GroupDeleteDeviceAsync(const GroupDeleteDeviceRequest& request, const GroupDeleteDeviceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->GroupDeleteDevice(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+MnaClient::GroupDeleteDeviceOutcomeCallable MnaClient::GroupDeleteDeviceCallable(const GroupDeleteDeviceRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<GroupDeleteDeviceOutcome()>>(
+        [this, request]()
+        {
+            return this->GroupDeleteDevice(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 MnaClient::ModifyPackageRenewFlagOutcome MnaClient::ModifyPackageRenewFlag(const ModifyPackageRenewFlagRequest &request)
 {
     auto outcome = MakeRequest(request, "ModifyPackageRenewFlag");
@@ -1029,6 +1330,49 @@ MnaClient::OrderFlowPackageOutcomeCallable MnaClient::OrderFlowPackageCallable(c
     return task->get_future();
 }
 
+MnaClient::SetNotifyUrlOutcome MnaClient::SetNotifyUrl(const SetNotifyUrlRequest &request)
+{
+    auto outcome = MakeRequest(request, "SetNotifyUrl");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        SetNotifyUrlResponse rsp = SetNotifyUrlResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return SetNotifyUrlOutcome(rsp);
+        else
+            return SetNotifyUrlOutcome(o.GetError());
+    }
+    else
+    {
+        return SetNotifyUrlOutcome(outcome.GetError());
+    }
+}
+
+void MnaClient::SetNotifyUrlAsync(const SetNotifyUrlRequest& request, const SetNotifyUrlAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->SetNotifyUrl(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+MnaClient::SetNotifyUrlOutcomeCallable MnaClient::SetNotifyUrlCallable(const SetNotifyUrlRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<SetNotifyUrlOutcome()>>(
+        [this, request]()
+        {
+            return this->SetNotifyUrl(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 MnaClient::UpdateDeviceOutcome MnaClient::UpdateDevice(const UpdateDeviceRequest &request)
 {
     auto outcome = MakeRequest(request, "UpdateDevice");
@@ -1065,6 +1409,49 @@ MnaClient::UpdateDeviceOutcomeCallable MnaClient::UpdateDeviceCallable(const Upd
         [this, request]()
         {
             return this->UpdateDevice(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+MnaClient::UpdateGroupOutcome MnaClient::UpdateGroup(const UpdateGroupRequest &request)
+{
+    auto outcome = MakeRequest(request, "UpdateGroup");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        UpdateGroupResponse rsp = UpdateGroupResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return UpdateGroupOutcome(rsp);
+        else
+            return UpdateGroupOutcome(o.GetError());
+    }
+    else
+    {
+        return UpdateGroupOutcome(outcome.GetError());
+    }
+}
+
+void MnaClient::UpdateGroupAsync(const UpdateGroupRequest& request, const UpdateGroupAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->UpdateGroup(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+MnaClient::UpdateGroupOutcomeCallable MnaClient::UpdateGroupCallable(const UpdateGroupRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<UpdateGroupOutcome()>>(
+        [this, request]()
+        {
+            return this->UpdateGroup(request);
         }
     );
 

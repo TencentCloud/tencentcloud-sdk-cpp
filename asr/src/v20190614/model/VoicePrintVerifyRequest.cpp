@@ -25,8 +25,8 @@ using namespace std;
 VoicePrintVerifyRequest::VoicePrintVerifyRequest() :
     m_voiceFormatHasBeenSet(false),
     m_sampleRateHasBeenSet(false),
-    m_voicePrintIdHasBeenSet(false),
-    m_dataHasBeenSet(false)
+    m_dataHasBeenSet(false),
+    m_voicePrintIdHasBeenSet(false)
 {
 }
 
@@ -53,20 +53,20 @@ string VoicePrintVerifyRequest::ToJsonString() const
         d.AddMember(iKey, m_sampleRate, allocator);
     }
 
-    if (m_voicePrintIdHasBeenSet)
-    {
-        rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "VoicePrintId";
-        iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, rapidjson::Value(m_voicePrintId.c_str(), allocator).Move(), allocator);
-    }
-
     if (m_dataHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Data";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_data.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_voicePrintIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "VoicePrintId";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_voicePrintId.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -109,22 +109,6 @@ bool VoicePrintVerifyRequest::SampleRateHasBeenSet() const
     return m_sampleRateHasBeenSet;
 }
 
-string VoicePrintVerifyRequest::GetVoicePrintId() const
-{
-    return m_voicePrintId;
-}
-
-void VoicePrintVerifyRequest::SetVoicePrintId(const string& _voicePrintId)
-{
-    m_voicePrintId = _voicePrintId;
-    m_voicePrintIdHasBeenSet = true;
-}
-
-bool VoicePrintVerifyRequest::VoicePrintIdHasBeenSet() const
-{
-    return m_voicePrintIdHasBeenSet;
-}
-
 string VoicePrintVerifyRequest::GetData() const
 {
     return m_data;
@@ -139,6 +123,22 @@ void VoicePrintVerifyRequest::SetData(const string& _data)
 bool VoicePrintVerifyRequest::DataHasBeenSet() const
 {
     return m_dataHasBeenSet;
+}
+
+string VoicePrintVerifyRequest::GetVoicePrintId() const
+{
+    return m_voicePrintId;
+}
+
+void VoicePrintVerifyRequest::SetVoicePrintId(const string& _voicePrintId)
+{
+    m_voicePrintId = _voicePrintId;
+    m_voicePrintIdHasBeenSet = true;
+}
+
+bool VoicePrintVerifyRequest::VoicePrintIdHasBeenSet() const
+{
+    return m_voicePrintIdHasBeenSet;
 }
 
 
