@@ -3136,3 +3136,46 @@ MariadbClient::UpgradeDedicatedDBInstanceOutcomeCallable MariadbClient::UpgradeD
     return task->get_future();
 }
 
+MariadbClient::UpgradeHourDBInstanceOutcome MariadbClient::UpgradeHourDBInstance(const UpgradeHourDBInstanceRequest &request)
+{
+    auto outcome = MakeRequest(request, "UpgradeHourDBInstance");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        UpgradeHourDBInstanceResponse rsp = UpgradeHourDBInstanceResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return UpgradeHourDBInstanceOutcome(rsp);
+        else
+            return UpgradeHourDBInstanceOutcome(o.GetError());
+    }
+    else
+    {
+        return UpgradeHourDBInstanceOutcome(outcome.GetError());
+    }
+}
+
+void MariadbClient::UpgradeHourDBInstanceAsync(const UpgradeHourDBInstanceRequest& request, const UpgradeHourDBInstanceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->UpgradeHourDBInstance(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+MariadbClient::UpgradeHourDBInstanceOutcomeCallable MariadbClient::UpgradeHourDBInstanceCallable(const UpgradeHourDBInstanceRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<UpgradeHourDBInstanceOutcome()>>(
+        [this, request]()
+        {
+            return this->UpgradeHourDBInstance(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+

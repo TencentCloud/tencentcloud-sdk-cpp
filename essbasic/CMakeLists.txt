@@ -161,6 +161,7 @@ set(essbasic_public_header_model
   include/tencentcloud/essbasic/v20210526/model/CreateLegalSealQrCodeResponse.h
   include/tencentcloud/essbasic/v20210526/model/CommonApproverOption.h
   include/tencentcloud/essbasic/v20210526/model/DescribeCancelFlowsTaskResponse.h
+  include/tencentcloud/essbasic/v20210526/model/CreateEmployeeQualificationSealQrCodeResponse.h
   include/tencentcloud/essbasic/v20210526/model/ChannelCreateFlowGroupByTemplatesResponse.h
   include/tencentcloud/essbasic/v20210526/model/ChannelCreateFlowSignReviewRequest.h
   include/tencentcloud/essbasic/v20210526/model/AuthFailMessage.h
@@ -245,6 +246,7 @@ set(essbasic_public_header_model
   include/tencentcloud/essbasic/v20210526/model/CommonFlowApprover.h
   include/tencentcloud/essbasic/v20210526/model/FillApproverInfo.h
   include/tencentcloud/essbasic/v20210526/model/IntentionActionResultDetail.h
+  include/tencentcloud/essbasic/v20210526/model/CreateEmployeeQualificationSealQrCodeRequest.h
   include/tencentcloud/essbasic/v20210526/model/ChannelCreateUserAutoSignSealUrlRequest.h
   include/tencentcloud/essbasic/v20210526/model/PdfVerifyResult.h
   include/tencentcloud/essbasic/v20210526/model/UserThreeFactor.h
@@ -523,6 +525,7 @@ set(essbasic_src
   src/v20210526/model/CreateLegalSealQrCodeResponse.cpp
   src/v20210526/model/CommonApproverOption.cpp
   src/v20210526/model/DescribeCancelFlowsTaskResponse.cpp
+  src/v20210526/model/CreateEmployeeQualificationSealQrCodeResponse.cpp
   src/v20210526/model/ChannelCreateFlowGroupByTemplatesResponse.cpp
   src/v20210526/model/ChannelCreateFlowSignReviewRequest.cpp
   src/v20210526/model/AuthFailMessage.cpp
@@ -607,6 +610,7 @@ set(essbasic_src
   src/v20210526/model/CommonFlowApprover.cpp
   src/v20210526/model/FillApproverInfo.cpp
   src/v20210526/model/IntentionActionResultDetail.cpp
+  src/v20210526/model/CreateEmployeeQualificationSealQrCodeRequest.cpp
   src/v20210526/model/ChannelCreateUserAutoSignSealUrlRequest.cpp
   src/v20210526/model/PdfVerifyResult.cpp
   src/v20210526/model/UserThreeFactor.cpp

@@ -84,6 +84,27 @@ namespace TencentCloud
                      */
                     bool FileVersionHasBeenSet() const;
 
+                    /**
+                     * 获取查询过滤条件（根据sourcemap的文件名模糊匹配）
+                     * @return FileName 查询过滤条件（根据sourcemap的文件名模糊匹配）
+                     * 
+                     */
+                    std::string GetFileName() const;
+
+                    /**
+                     * 设置查询过滤条件（根据sourcemap的文件名模糊匹配）
+                     * @param _fileName 查询过滤条件（根据sourcemap的文件名模糊匹配）
+                     * 
+                     */
+                    void SetFileName(const std::string& _fileName);
+
+                    /**
+                     * 判断参数 FileName 是否已赋值
+                     * @return FileName 是否已赋值
+                     * 
+                     */
+                    bool FileNameHasBeenSet() const;
+
                 private:
 
                     /**
@@ -97,6 +118,12 @@ namespace TencentCloud
                      */
                     std::string m_fileVersion;
                     bool m_fileVersionHasBeenSet;
+
+                    /**
+                     * 查询过滤条件（根据sourcemap的文件名模糊匹配）
+                     */
+                    std::string m_fileName;
+                    bool m_fileNameHasBeenSet;
 
                 };
             }

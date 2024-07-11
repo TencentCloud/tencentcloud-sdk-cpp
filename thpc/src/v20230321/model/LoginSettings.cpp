@@ -21,7 +21,8 @@ using namespace TencentCloud::Thpc::V20230321::Model;
 using namespace std;
 
 LoginSettings::LoginSettings() :
-    m_passwordHasBeenSet(false)
+    m_passwordHasBeenSet(false),
+    m_keyIdsHasBeenSet(false)
 {
 }
 
@@ -40,6 +41,19 @@ CoreInternalOutcome LoginSettings::Deserialize(const rapidjson::Value &value)
         m_passwordHasBeenSet = true;
     }
 
+    if (value.HasMember("KeyIds") && !value["KeyIds"].IsNull())
+    {
+        if (!value["KeyIds"].IsArray())
+            return CoreInternalOutcome(Core::Error("response `LoginSettings.KeyIds` is not array type"));
+
+        const rapidjson::Value &tmpValue = value["KeyIds"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            m_keyIds.push_back((*itr).GetString());
+        }
+        m_keyIdsHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -53,6 +67,19 @@ void LoginSettings::ToJsonObject(rapidjson::Value &value, rapidjson::Document::A
         string key = "Password";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_password.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_keyIdsHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "KeyIds";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        for (auto itr = m_keyIds.begin(); itr != m_keyIds.end(); ++itr)
+        {
+            value[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
+        }
     }
 
 }
@@ -72,5 +99,21 @@ void LoginSettings::SetPassword(const string& _password)
 bool LoginSettings::PasswordHasBeenSet() const
 {
     return m_passwordHasBeenSet;
+}
+
+vector<string> LoginSettings::GetKeyIds() const
+{
+    return m_keyIds;
+}
+
+void LoginSettings::SetKeyIds(const vector<string>& _keyIds)
+{
+    m_keyIds = _keyIds;
+    m_keyIdsHasBeenSet = true;
+}
+
+bool LoginSettings::KeyIdsHasBeenSet() const
+{
+    return m_keyIdsHasBeenSet;
 }
 

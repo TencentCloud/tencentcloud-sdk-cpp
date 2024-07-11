@@ -840,6 +840,31 @@ namespace TencentCloud
                      */
                     bool WorkspaceNameHasBeenSet() const;
 
+                    /**
+                     * 获取flink 版本
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return FlinkVersion flink 版本
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::string GetFlinkVersion() const;
+
+                    /**
+                     * 设置flink 版本
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _flinkVersion flink 版本
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetFlinkVersion(const std::string& _flinkVersion);
+
+                    /**
+                     * 判断参数 FlinkVersion 是否已赋值
+                     * @return FlinkVersion 是否已赋值
+                     * 
+                     */
+                    bool FlinkVersionHasBeenSet() const;
+
                 private:
 
                     /**
@@ -1062,6 +1087,13 @@ namespace TencentCloud
                      */
                     std::string m_workspaceName;
                     bool m_workspaceNameHasBeenSet;
+
+                    /**
+                     * flink 版本
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_flinkVersion;
+                    bool m_flinkVersionHasBeenSet;
 
                 };
             }

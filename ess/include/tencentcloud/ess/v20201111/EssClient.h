@@ -45,6 +45,8 @@
 #include <tencentcloud/ess/v20201111/model/CreateDocumentResponse.h>
 #include <tencentcloud/ess/v20201111/model/CreateEmbedWebUrlRequest.h>
 #include <tencentcloud/ess/v20201111/model/CreateEmbedWebUrlResponse.h>
+#include <tencentcloud/ess/v20201111/model/CreateEmployeeQualificationSealQrCodeRequest.h>
+#include <tencentcloud/ess/v20201111/model/CreateEmployeeQualificationSealQrCodeResponse.h>
 #include <tencentcloud/ess/v20201111/model/CreateExtendedServiceAuthInfosRequest.h>
 #include <tencentcloud/ess/v20201111/model/CreateExtendedServiceAuthInfosResponse.h>
 #include <tencentcloud/ess/v20201111/model/CreateFlowRequest.h>
@@ -242,6 +244,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::CreateEmbedWebUrlResponse> CreateEmbedWebUrlOutcome;
                 typedef std::future<CreateEmbedWebUrlOutcome> CreateEmbedWebUrlOutcomeCallable;
                 typedef std::function<void(const EssClient*, const Model::CreateEmbedWebUrlRequest&, CreateEmbedWebUrlOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateEmbedWebUrlAsyncHandler;
+                typedef Outcome<Core::Error, Model::CreateEmployeeQualificationSealQrCodeResponse> CreateEmployeeQualificationSealQrCodeOutcome;
+                typedef std::future<CreateEmployeeQualificationSealQrCodeOutcome> CreateEmployeeQualificationSealQrCodeOutcomeCallable;
+                typedef std::function<void(const EssClient*, const Model::CreateEmployeeQualificationSealQrCodeRequest&, CreateEmployeeQualificationSealQrCodeOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateEmployeeQualificationSealQrCodeAsyncHandler;
                 typedef Outcome<Core::Error, Model::CreateExtendedServiceAuthInfosResponse> CreateExtendedServiceAuthInfosOutcome;
                 typedef std::future<CreateExtendedServiceAuthInfosOutcome> CreateExtendedServiceAuthInfosOutcomeCallable;
                 typedef std::function<void(const EssClient*, const Model::CreateExtendedServiceAuthInfosRequest&, CreateExtendedServiceAuthInfosOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateExtendedServiceAuthInfosAsyncHandler;
@@ -694,6 +699,18 @@ namespace TencentCloud
                 CreateEmbedWebUrlOutcome CreateEmbedWebUrl(const Model::CreateEmbedWebUrlRequest &request);
                 void CreateEmbedWebUrlAsync(const Model::CreateEmbedWebUrlRequest& request, const CreateEmbedWebUrlAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 CreateEmbedWebUrlOutcomeCallable CreateEmbedWebUrlCallable(const Model::CreateEmbedWebUrlRequest& request);
+
+                /**
+                 *该接口用于获取个人授权执业章给企业的二维码，需要个人用户通过微信扫码。扫描后将跳转到腾讯电子签小程序，进入到授权执业章的流程。个人用户授权成功后，企业印章管理员需对印章进行审核，审核通过后，即可使用个人授权的执业章进行盖章操作。
+
+**注意**
+1. 该二维码**有效期为7天**，过期后将失效，可重新创建。
+                 * @param req CreateEmployeeQualificationSealQrCodeRequest
+                 * @return CreateEmployeeQualificationSealQrCodeOutcome
+                 */
+                CreateEmployeeQualificationSealQrCodeOutcome CreateEmployeeQualificationSealQrCode(const Model::CreateEmployeeQualificationSealQrCodeRequest &request);
+                void CreateEmployeeQualificationSealQrCodeAsync(const Model::CreateEmployeeQualificationSealQrCodeRequest& request, const CreateEmployeeQualificationSealQrCodeAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                CreateEmployeeQualificationSealQrCodeOutcomeCallable CreateEmployeeQualificationSealQrCodeCallable(const Model::CreateEmployeeQualificationSealQrCodeRequest& request);
 
                 /**
                  *创建企业扩展服务授权，当前仅支持授权 “企业自动签” 和 “批量签署” 给企业员工。

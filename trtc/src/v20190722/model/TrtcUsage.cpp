@@ -22,6 +22,7 @@ using namespace std;
 
 TrtcUsage::TrtcUsage() :
     m_timeKeyHasBeenSet(false),
+    m_timeStampKeyHasBeenSet(false),
     m_usageValueHasBeenSet(false)
 {
 }
@@ -39,6 +40,16 @@ CoreInternalOutcome TrtcUsage::Deserialize(const rapidjson::Value &value)
         }
         m_timeKey = string(value["TimeKey"].GetString());
         m_timeKeyHasBeenSet = true;
+    }
+
+    if (value.HasMember("TimeStampKey") && !value["TimeStampKey"].IsNull())
+    {
+        if (!value["TimeStampKey"].IsUint64())
+        {
+            return CoreInternalOutcome(Core::Error("response `TrtcUsage.TimeStampKey` IsUint64=false incorrectly").SetRequestId(requestId));
+        }
+        m_timeStampKey = value["TimeStampKey"].GetUint64();
+        m_timeStampKeyHasBeenSet = true;
     }
 
     if (value.HasMember("UsageValue") && !value["UsageValue"].IsNull())
@@ -67,6 +78,14 @@ void TrtcUsage::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Alloc
         string key = "TimeKey";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_timeKey.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_timeStampKeyHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "TimeStampKey";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_timeStampKey, allocator);
     }
 
     if (m_usageValueHasBeenSet)
@@ -99,6 +118,22 @@ void TrtcUsage::SetTimeKey(const string& _timeKey)
 bool TrtcUsage::TimeKeyHasBeenSet() const
 {
     return m_timeKeyHasBeenSet;
+}
+
+uint64_t TrtcUsage::GetTimeStampKey() const
+{
+    return m_timeStampKey;
+}
+
+void TrtcUsage::SetTimeStampKey(const uint64_t& _timeStampKey)
+{
+    m_timeStampKey = _timeStampKey;
+    m_timeStampKeyHasBeenSet = true;
+}
+
+bool TrtcUsage::TimeStampKeyHasBeenSet() const
+{
+    return m_timeStampKeyHasBeenSet;
 }
 
 vector<double> TrtcUsage::GetUsageValue() const

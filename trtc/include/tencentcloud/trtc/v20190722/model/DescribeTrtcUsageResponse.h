@@ -59,8 +59,8 @@ namespace TencentCloud
                     bool UsageKeyHasBeenSet() const;
 
                     /**
-                     * 获取各个时间点用量明细。
-                     * @return UsageList 各个时间点用量明细。
+                     * 获取各个时间点用量明细，单位:分钟
+                     * @return UsageList 各个时间点用量明细，单位:分钟
                      * 
                      */
                     std::vector<TrtcUsage> GetUsageList() const;
@@ -81,7 +81,7 @@ namespace TencentCloud
                     bool m_usageKeyHasBeenSet;
 
                     /**
-                     * 各个时间点用量明细。
+                     * 各个时间点用量明细，单位:分钟
                      */
                     std::vector<TrtcUsage> m_usageList;
                     bool m_usageListHasBeenSet;

@@ -23,7 +23,8 @@ using namespace std;
 SlotSharingGroup::SlotSharingGroup() :
     m_nameHasBeenSet(false),
     m_specHasBeenSet(false),
-    m_descriptionHasBeenSet(false)
+    m_descriptionHasBeenSet(false),
+    m_configurationHasBeenSet(false)
 {
 }
 
@@ -69,6 +70,26 @@ CoreInternalOutcome SlotSharingGroup::Deserialize(const rapidjson::Value &value)
         m_descriptionHasBeenSet = true;
     }
 
+    if (value.HasMember("Configuration") && !value["Configuration"].IsNull())
+    {
+        if (!value["Configuration"].IsArray())
+            return CoreInternalOutcome(Core::Error("response `SlotSharingGroup.Configuration` is not array type"));
+
+        const rapidjson::Value &tmpValue = value["Configuration"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            Property item;
+            CoreInternalOutcome outcome = item.Deserialize(*itr);
+            if (!outcome.IsSuccess())
+            {
+                outcome.GetError().SetRequestId(requestId);
+                return outcome;
+            }
+            m_configuration.push_back(item);
+        }
+        m_configurationHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -99,6 +120,21 @@ void SlotSharingGroup::ToJsonObject(rapidjson::Value &value, rapidjson::Document
         string key = "Description";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_description.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_configurationHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Configuration";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_configuration.begin(); itr != m_configuration.end(); ++itr, ++i)
+        {
+            value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(value[key.c_str()][i], allocator);
+        }
     }
 
 }
@@ -150,5 +186,21 @@ void SlotSharingGroup::SetDescription(const string& _description)
 bool SlotSharingGroup::DescriptionHasBeenSet() const
 {
     return m_descriptionHasBeenSet;
+}
+
+vector<Property> SlotSharingGroup::GetConfiguration() const
+{
+    return m_configuration;
+}
+
+void SlotSharingGroup::SetConfiguration(const vector<Property>& _configuration)
+{
+    m_configuration = _configuration;
+    m_configurationHasBeenSet = true;
+}
+
+bool SlotSharingGroup::ConfigurationHasBeenSet() const
+{
+    return m_configurationHasBeenSet;
 }
 

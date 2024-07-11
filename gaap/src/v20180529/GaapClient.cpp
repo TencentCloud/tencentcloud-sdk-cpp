@@ -3308,6 +3308,49 @@ GaapClient::DescribeTCPListenersOutcomeCallable GaapClient::DescribeTCPListeners
     return task->get_future();
 }
 
+GaapClient::DescribeTaskStatusOutcome GaapClient::DescribeTaskStatus(const DescribeTaskStatusRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeTaskStatus");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeTaskStatusResponse rsp = DescribeTaskStatusResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeTaskStatusOutcome(rsp);
+        else
+            return DescribeTaskStatusOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeTaskStatusOutcome(outcome.GetError());
+    }
+}
+
+void GaapClient::DescribeTaskStatusAsync(const DescribeTaskStatusRequest& request, const DescribeTaskStatusAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeTaskStatus(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+GaapClient::DescribeTaskStatusOutcomeCallable GaapClient::DescribeTaskStatusCallable(const DescribeTaskStatusRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeTaskStatusOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeTaskStatus(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 GaapClient::DescribeUDPListenersOutcome GaapClient::DescribeUDPListeners(const DescribeUDPListenersRequest &request)
 {
     auto outcome = MakeRequest(request, "DescribeUDPListeners");

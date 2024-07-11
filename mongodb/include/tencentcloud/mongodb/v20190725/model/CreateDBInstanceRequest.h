@@ -44,15 +44,19 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取指每个副本集内节点个数。具体售卖规格，请通过接口 [DescribeSpecInfo](https://cloud.tencent.com/document/product/240/38567) 获取。
-                     * @return NodeNum 指每个副本集内节点个数。具体售卖规格，请通过接口 [DescribeSpecInfo](https://cloud.tencent.com/document/product/240/38567) 获取。
+                     * 获取- 创建副本集实例，指每个副本集内主从节点数量。每个副本集所支持的的最大节点数与最小节点数，请通过接口 [DescribeSpecInfo](https://cloud.tencent.com/document/product/240/38567) 获取。
+- 创建分片集群实例，指每个分片的主从节点数量。每个分片所支持的最大节点数与最小节点数，请通过接口 [DescribeSpecInfo](https://cloud.tencent.com/document/product/240/38567) 获取。
+                     * @return NodeNum - 创建副本集实例，指每个副本集内主从节点数量。每个副本集所支持的的最大节点数与最小节点数，请通过接口 [DescribeSpecInfo](https://cloud.tencent.com/document/product/240/38567) 获取。
+- 创建分片集群实例，指每个分片的主从节点数量。每个分片所支持的最大节点数与最小节点数，请通过接口 [DescribeSpecInfo](https://cloud.tencent.com/document/product/240/38567) 获取。
                      * 
                      */
                     uint64_t GetNodeNum() const;
 
                     /**
-                     * 设置指每个副本集内节点个数。具体售卖规格，请通过接口 [DescribeSpecInfo](https://cloud.tencent.com/document/product/240/38567) 获取。
-                     * @param _nodeNum 指每个副本集内节点个数。具体售卖规格，请通过接口 [DescribeSpecInfo](https://cloud.tencent.com/document/product/240/38567) 获取。
+                     * 设置- 创建副本集实例，指每个副本集内主从节点数量。每个副本集所支持的的最大节点数与最小节点数，请通过接口 [DescribeSpecInfo](https://cloud.tencent.com/document/product/240/38567) 获取。
+- 创建分片集群实例，指每个分片的主从节点数量。每个分片所支持的最大节点数与最小节点数，请通过接口 [DescribeSpecInfo](https://cloud.tencent.com/document/product/240/38567) 获取。
+                     * @param _nodeNum - 创建副本集实例，指每个副本集内主从节点数量。每个副本集所支持的的最大节点数与最小节点数，请通过接口 [DescribeSpecInfo](https://cloud.tencent.com/document/product/240/38567) 获取。
+- 创建分片集群实例，指每个分片的主从节点数量。每个分片所支持的最大节点数与最小节点数，请通过接口 [DescribeSpecInfo](https://cloud.tencent.com/document/product/240/38567) 获取。
                      * 
                      */
                     void SetNodeNum(const uint64_t& _nodeNum);
@@ -65,15 +69,15 @@ namespace TencentCloud
                     bool NodeNumHasBeenSet() const;
 
                     /**
-                     * 获取实例内存大小，单位：GB。
-                     * @return Memory 实例内存大小，单位：GB。
+                     * 获取实例内存大小，单位：GB。具体售卖的内存规格，请通过接口 [DescribeSpecInfo](https://cloud.tencent.com/document/product/240/38567) 获取。
+                     * @return Memory 实例内存大小，单位：GB。具体售卖的内存规格，请通过接口 [DescribeSpecInfo](https://cloud.tencent.com/document/product/240/38567) 获取。
                      * 
                      */
                     uint64_t GetMemory() const;
 
                     /**
-                     * 设置实例内存大小，单位：GB。
-                     * @param _memory 实例内存大小，单位：GB。
+                     * 设置实例内存大小，单位：GB。具体售卖的内存规格，请通过接口 [DescribeSpecInfo](https://cloud.tencent.com/document/product/240/38567) 获取。
+                     * @param _memory 实例内存大小，单位：GB。具体售卖的内存规格，请通过接口 [DescribeSpecInfo](https://cloud.tencent.com/document/product/240/38567) 获取。
                      * 
                      */
                     void SetMemory(const uint64_t& _memory);
@@ -86,15 +90,15 @@ namespace TencentCloud
                     bool MemoryHasBeenSet() const;
 
                     /**
-                     * 获取实例硬盘大小，单位：GB。
-                     * @return Volume 实例硬盘大小，单位：GB。
+                     * 获取实例硬盘大小，单位：GB。每一个 CPU 规格对应的最大磁盘与最小磁盘范围，请通过接口 [DescribeSpecInfo](https://cloud.tencent.com/document/product/240/38567) 获取。
+                     * @return Volume 实例硬盘大小，单位：GB。每一个 CPU 规格对应的最大磁盘与最小磁盘范围，请通过接口 [DescribeSpecInfo](https://cloud.tencent.com/document/product/240/38567) 获取。
                      * 
                      */
                     uint64_t GetVolume() const;
 
                     /**
-                     * 设置实例硬盘大小，单位：GB。
-                     * @param _volume 实例硬盘大小，单位：GB。
+                     * 设置实例硬盘大小，单位：GB。每一个 CPU 规格对应的最大磁盘与最小磁盘范围，请通过接口 [DescribeSpecInfo](https://cloud.tencent.com/document/product/240/38567) 获取。
+                     * @param _volume 实例硬盘大小，单位：GB。每一个 CPU 规格对应的最大磁盘与最小磁盘范围，请通过接口 [DescribeSpecInfo](https://cloud.tencent.com/document/product/240/38567) 获取。
                      * 
                      */
                     void SetVolume(const uint64_t& _volume);
@@ -107,31 +111,39 @@ namespace TencentCloud
                     bool VolumeHasBeenSet() const;
 
                     /**
-                     * 获取指版本信息。具体售卖规格，请通过接口 [DescribeSpecInfo](https://cloud.tencent.com/document/product/240/38567) 获取。
+                     * 获取指版本信息。具体支持的版本信息 ，请通过接口 [DescribeSpecInfo](https://cloud.tencent.com/document/product/240/38567) 获取。
 - MONGO_36_WT：MongoDB 3.6 WiredTiger存储引擎版本。
 - MONGO_40_WT：MongoDB 4.0 WiredTiger存储引擎版本。
 - MONGO_42_WT：MongoDB 4.2 WiredTiger存储引擎版本。
 - MONGO_44_WT：MongoDB 4.4 WiredTiger存储引擎版本。
-                     * @return MongoVersion 指版本信息。具体售卖规格，请通过接口 [DescribeSpecInfo](https://cloud.tencent.com/document/product/240/38567) 获取。
+- MONGO_50_WT：MongoDB 5.0 WiredTiger存储引擎版本。
+- MONGO_60_WT：MongoDB 6.0 WiredTiger存储引擎版本。
+                     * @return MongoVersion 指版本信息。具体支持的版本信息 ，请通过接口 [DescribeSpecInfo](https://cloud.tencent.com/document/product/240/38567) 获取。
 - MONGO_36_WT：MongoDB 3.6 WiredTiger存储引擎版本。
 - MONGO_40_WT：MongoDB 4.0 WiredTiger存储引擎版本。
 - MONGO_42_WT：MongoDB 4.2 WiredTiger存储引擎版本。
 - MONGO_44_WT：MongoDB 4.4 WiredTiger存储引擎版本。
+- MONGO_50_WT：MongoDB 5.0 WiredTiger存储引擎版本。
+- MONGO_60_WT：MongoDB 6.0 WiredTiger存储引擎版本。
                      * 
                      */
                     std::string GetMongoVersion() const;
 
                     /**
-                     * 设置指版本信息。具体售卖规格，请通过接口 [DescribeSpecInfo](https://cloud.tencent.com/document/product/240/38567) 获取。
+                     * 设置指版本信息。具体支持的版本信息 ，请通过接口 [DescribeSpecInfo](https://cloud.tencent.com/document/product/240/38567) 获取。
 - MONGO_36_WT：MongoDB 3.6 WiredTiger存储引擎版本。
 - MONGO_40_WT：MongoDB 4.0 WiredTiger存储引擎版本。
 - MONGO_42_WT：MongoDB 4.2 WiredTiger存储引擎版本。
 - MONGO_44_WT：MongoDB 4.4 WiredTiger存储引擎版本。
-                     * @param _mongoVersion 指版本信息。具体售卖规格，请通过接口 [DescribeSpecInfo](https://cloud.tencent.com/document/product/240/38567) 获取。
+- MONGO_50_WT：MongoDB 5.0 WiredTiger存储引擎版本。
+- MONGO_60_WT：MongoDB 6.0 WiredTiger存储引擎版本。
+                     * @param _mongoVersion 指版本信息。具体支持的版本信息 ，请通过接口 [DescribeSpecInfo](https://cloud.tencent.com/document/product/240/38567) 获取。
 - MONGO_36_WT：MongoDB 3.6 WiredTiger存储引擎版本。
 - MONGO_40_WT：MongoDB 4.0 WiredTiger存储引擎版本。
 - MONGO_42_WT：MongoDB 4.2 WiredTiger存储引擎版本。
 - MONGO_44_WT：MongoDB 4.4 WiredTiger存储引擎版本。
+- MONGO_50_WT：MongoDB 5.0 WiredTiger存储引擎版本。
+- MONGO_60_WT：MongoDB 6.0 WiredTiger存储引擎版本。
                      * 
                      */
                     void SetMongoVersion(const std::string& _mongoVersion);
@@ -194,15 +206,19 @@ namespace TencentCloud
                     bool ZoneHasBeenSet() const;
 
                     /**
-                     * 获取实例时长，单位：月，可选值包括 [1,2,3,4,5,6,7,8,9,10,11,12,24,36]。
-                     * @return Period 实例时长，单位：月，可选值包括 [1,2,3,4,5,6,7,8,9,10,11,12,24,36]。
+                     * 获取指定购买实例的购买时长。取值可选：[1,2,3,4,5,6,7,8,9,10,11,12,24,36]；单位：月。
+
+                     * @return Period 指定购买实例的购买时长。取值可选：[1,2,3,4,5,6,7,8,9,10,11,12,24,36]；单位：月。
+
                      * 
                      */
                     uint64_t GetPeriod() const;
 
                     /**
-                     * 设置实例时长，单位：月，可选值包括 [1,2,3,4,5,6,7,8,9,10,11,12,24,36]。
-                     * @param _period 实例时长，单位：月，可选值包括 [1,2,3,4,5,6,7,8,9,10,11,12,24,36]。
+                     * 设置指定购买实例的购买时长。取值可选：[1,2,3,4,5,6,7,8,9,10,11,12,24,36]；单位：月。
+
+                     * @param _period 指定购买实例的购买时长。取值可选：[1,2,3,4,5,6,7,8,9,10,11,12,24,36]；单位：月。
+
                      * 
                      */
                     void SetPeriod(const uint64_t& _period);
@@ -215,23 +231,23 @@ namespace TencentCloud
                     bool PeriodHasBeenSet() const;
 
                     /**
-                     * 获取机器类型。
-- HIO：高IO型。
-- HIO10G：高IO万兆。
-                     * @return MachineCode 机器类型。
-- HIO：高IO型。
-- HIO10G：高IO万兆。
+                     * 获取产品规格类型。
+- HIO10G：通用高HIO万兆型。
+- HCD：云盘版类型。
+                     * @return MachineCode 产品规格类型。
+- HIO10G：通用高HIO万兆型。
+- HCD：云盘版类型。
                      * 
                      */
                     std::string GetMachineCode() const;
 
                     /**
-                     * 设置机器类型。
-- HIO：高IO型。
-- HIO10G：高IO万兆。
-                     * @param _machineCode 机器类型。
-- HIO：高IO型。
-- HIO10G：高IO万兆。
+                     * 设置产品规格类型。
+- HIO10G：通用高HIO万兆型。
+- HCD：云盘版类型。
+                     * @param _machineCode 产品规格类型。
+- HIO10G：通用高HIO万兆型。
+- HCD：云盘版类型。
                      * 
                      */
                     void SetMachineCode(const std::string& _machineCode);
@@ -273,23 +289,19 @@ namespace TencentCloud
                     bool ClusterTypeHasBeenSet() const;
 
                     /**
-                     * 获取指副本集数量。
-- 创建副本集实例，该参数只能为1。
-- 创建分片实例，指分片的数量。具体售卖规格，请通过接口 [DescribeSpecInfo](https://cloud.tencent.com/document/product/240/38567) 获取。
-                     * @return ReplicateSetNum 指副本集数量。
-- 创建副本集实例，该参数只能为1。
-- 创建分片实例，指分片的数量。具体售卖规格，请通过接口 [DescribeSpecInfo](https://cloud.tencent.com/document/product/240/38567) 获取。
+                     * 获取- 创建副本集实例，指副本集数量，该参数只能为1。
+- 创建分片集群实例，指分片的数量。请通过接口[DescribeSpecInfo](https://cloud.tencent.com/document/product/240/38567)查询分片数量的取值范围，其返回的数据结构SpecItems中的参数MinReplicateSetNum与MaxReplicateSetNum分别对应其最小值与最大值。
+                     * @return ReplicateSetNum - 创建副本集实例，指副本集数量，该参数只能为1。
+- 创建分片集群实例，指分片的数量。请通过接口[DescribeSpecInfo](https://cloud.tencent.com/document/product/240/38567)查询分片数量的取值范围，其返回的数据结构SpecItems中的参数MinReplicateSetNum与MaxReplicateSetNum分别对应其最小值与最大值。
                      * 
                      */
                     uint64_t GetReplicateSetNum() const;
 
                     /**
-                     * 设置指副本集数量。
-- 创建副本集实例，该参数只能为1。
-- 创建分片实例，指分片的数量。具体售卖规格，请通过接口 [DescribeSpecInfo](https://cloud.tencent.com/document/product/240/38567) 获取。
-                     * @param _replicateSetNum 指副本集数量。
-- 创建副本集实例，该参数只能为1。
-- 创建分片实例，指分片的数量。具体售卖规格，请通过接口 [DescribeSpecInfo](https://cloud.tencent.com/document/product/240/38567) 获取。
+                     * 设置- 创建副本集实例，指副本集数量，该参数只能为1。
+- 创建分片集群实例，指分片的数量。请通过接口[DescribeSpecInfo](https://cloud.tencent.com/document/product/240/38567)查询分片数量的取值范围，其返回的数据结构SpecItems中的参数MinReplicateSetNum与MaxReplicateSetNum分别对应其最小值与最大值。
+                     * @param _replicateSetNum - 创建副本集实例，指副本集数量，该参数只能为1。
+- 创建分片集群实例，指分片的数量。请通过接口[DescribeSpecInfo](https://cloud.tencent.com/document/product/240/38567)查询分片数量的取值范围，其返回的数据结构SpecItems中的参数MinReplicateSetNum与MaxReplicateSetNum分别对应其最小值与最大值。
                      * 
                      */
                     void SetReplicateSetNum(const uint64_t& _replicateSetNum);
@@ -302,15 +314,23 @@ namespace TencentCloud
                     bool ReplicateSetNumHasBeenSet() const;
 
                     /**
-                     * 获取项目ID。若不设置该参数，则为默认项目。
-                     * @return ProjectId 项目ID。若不设置该参数，则为默认项目。
+                     * 获取项目ID。
+- 若不设置该参数，则为默认项目。
+- 在 [MongoDB 控制台项目管理](https://console.cloud.tencent.com/project)页面，可获取项目ID。
+                     * @return ProjectId 项目ID。
+- 若不设置该参数，则为默认项目。
+- 在 [MongoDB 控制台项目管理](https://console.cloud.tencent.com/project)页面，可获取项目ID。
                      * 
                      */
                     int64_t GetProjectId() const;
 
                     /**
-                     * 设置项目ID。若不设置该参数，则为默认项目。
-                     * @param _projectId 项目ID。若不设置该参数，则为默认项目。
+                     * 设置项目ID。
+- 若不设置该参数，则为默认项目。
+- 在 [MongoDB 控制台项目管理](https://console.cloud.tencent.com/project)页面，可获取项目ID。
+                     * @param _projectId 项目ID。
+- 若不设置该参数，则为默认项目。
+- 在 [MongoDB 控制台项目管理](https://console.cloud.tencent.com/project)页面，可获取项目ID。
                      * 
                      */
                     void SetProjectId(const int64_t& _projectId);
@@ -408,10 +428,10 @@ namespace TencentCloud
 
                     /**
                      * 获取自动续费标记。
-- 0：不自动续费。默认为不自动续费。
+- 0：不自动续费。
 - 1：自动续费。
                      * @return AutoRenewFlag 自动续费标记。
-- 0：不自动续费。默认为不自动续费。
+- 0：不自动续费。
 - 1：自动续费。
                      * 
                      */
@@ -419,10 +439,10 @@ namespace TencentCloud
 
                     /**
                      * 设置自动续费标记。
-- 0：不自动续费。默认为不自动续费。
+- 0：不自动续费。
 - 1：自动续费。
                      * @param _autoRenewFlag 自动续费标记。
-- 0：不自动续费。默认为不自动续费。
+- 0：不自动续费。
 - 1：自动续费。
                      * 
                      */
@@ -465,27 +485,15 @@ namespace TencentCloud
                     bool AutoVoucherHasBeenSet() const;
 
                     /**
-                     * 获取实例类型。
-- 1：正式实例。
-- 3：只读实例。
-- 4：灾备实例。
-                     * @return Clone 实例类型。
-- 1：正式实例。
-- 3：只读实例。
-- 4：灾备实例。
+                     * 获取实例类型。- 1：正式实例。- 3：只读实例。- 4：灾备实例。-5：整实例克隆，注意：克隆实例时，RestoreTime为必填项。
+                     * @return Clone 实例类型。- 1：正式实例。- 3：只读实例。- 4：灾备实例。-5：整实例克隆，注意：克隆实例时，RestoreTime为必填项。
                      * 
                      */
                     int64_t GetClone() const;
 
                     /**
-                     * 设置实例类型。
-- 1：正式实例。
-- 3：只读实例。
-- 4：灾备实例。
-                     * @param _clone 实例类型。
-- 1：正式实例。
-- 3：只读实例。
-- 4：灾备实例。
+                     * 设置实例类型。- 1：正式实例。- 3：只读实例。- 4：灾备实例。-5：整实例克隆，注意：克隆实例时，RestoreTime为必填项。
+                     * @param _clone 实例类型。- 1：正式实例。- 3：只读实例。- 4：灾备实例。-5：整实例克隆，注意：克隆实例时，RestoreTime为必填项。
                      * 
                      */
                     void SetClone(const int64_t& _clone);
@@ -519,15 +527,15 @@ namespace TencentCloud
                     bool FatherHasBeenSet() const;
 
                     /**
-                     * 获取安全组。
-                     * @return SecurityGroup 安全组。
+                     * 获取安全组 ID。 
+                     * @return SecurityGroup 安全组 ID。 
                      * 
                      */
                     std::vector<std::string> GetSecurityGroup() const;
 
                     /**
-                     * 设置安全组。
-                     * @param _securityGroup 安全组。
+                     * 设置安全组 ID。 
+                     * @param _securityGroup 安全组 ID。 
                      * 
                      */
                     void SetSecurityGroup(const std::vector<std::string>& _securityGroup);
@@ -540,23 +548,15 @@ namespace TencentCloud
                     bool SecurityGroupHasBeenSet() const;
 
                     /**
-                     * 获取克隆实例回档时间。
-- 若为克隆实例，则必须配置该参数。输入格式示例：2021-08-13 16:30:00。
-- 回档时间范围：仅能回档7天内时间点的数据。
-                     * @return RestoreTime 克隆实例回档时间。
-- 若为克隆实例，则必须配置该参数。输入格式示例：2021-08-13 16:30:00。
-- 回档时间范围：仅能回档7天内时间点的数据。
+                     * 获取克隆实例回档时间，当Clone取值为5或6时为必填。- 若为克隆实例，则必须配置该参数。输入格式示例：2021-08-13 16:30:00。- 回档时间范围：仅能回档7天内时间点的数据。
+                     * @return RestoreTime 克隆实例回档时间，当Clone取值为5或6时为必填。- 若为克隆实例，则必须配置该参数。输入格式示例：2021-08-13 16:30:00。- 回档时间范围：仅能回档7天内时间点的数据。
                      * 
                      */
                     std::string GetRestoreTime() const;
 
                     /**
-                     * 设置克隆实例回档时间。
-- 若为克隆实例，则必须配置该参数。输入格式示例：2021-08-13 16:30:00。
-- 回档时间范围：仅能回档7天内时间点的数据。
-                     * @param _restoreTime 克隆实例回档时间。
-- 若为克隆实例，则必须配置该参数。输入格式示例：2021-08-13 16:30:00。
-- 回档时间范围：仅能回档7天内时间点的数据。
+                     * 设置克隆实例回档时间，当Clone取值为5或6时为必填。- 若为克隆实例，则必须配置该参数。输入格式示例：2021-08-13 16:30:00。- 回档时间范围：仅能回档7天内时间点的数据。
+                     * @param _restoreTime 克隆实例回档时间，当Clone取值为5或6时为必填。- 若为克隆实例，则必须配置该参数。输入格式示例：2021-08-13 16:30:00。- 回档时间范围：仅能回档7天内时间点的数据。
                      * 
                      */
                     void SetRestoreTime(const std::string& _restoreTime);
@@ -627,15 +627,15 @@ namespace TencentCloud
                     bool AvailabilityZoneListHasBeenSet() const;
 
                     /**
-                     * 获取Mongos CPU 核数，购买MongoDB 4.2 及以上WiredTiger存储引擎版本的分片集群时，必须填写。具体售卖规格，请通过接口 [DescribeSpecInfo](https://cloud.tencent.com/document/product/240/38567) 获取。
-                     * @return MongosCpu Mongos CPU 核数，购买MongoDB 4.2 及以上WiredTiger存储引擎版本的分片集群时，必须填写。具体售卖规格，请通过接口 [DescribeSpecInfo](https://cloud.tencent.com/document/product/240/38567) 获取。
+                     * 获取Mongos CPU 核数，支持1、2、4、8、16。购买分片集群时，必须填写。
+                     * @return MongosCpu Mongos CPU 核数，支持1、2、4、8、16。购买分片集群时，必须填写。
                      * 
                      */
                     uint64_t GetMongosCpu() const;
 
                     /**
-                     * 设置Mongos CPU 核数，购买MongoDB 4.2 及以上WiredTiger存储引擎版本的分片集群时，必须填写。具体售卖规格，请通过接口 [DescribeSpecInfo](https://cloud.tencent.com/document/product/240/38567) 获取。
-                     * @param _mongosCpu Mongos CPU 核数，购买MongoDB 4.2 及以上WiredTiger存储引擎版本的分片集群时，必须填写。具体售卖规格，请通过接口 [DescribeSpecInfo](https://cloud.tencent.com/document/product/240/38567) 获取。
+                     * 设置Mongos CPU 核数，支持1、2、4、8、16。购买分片集群时，必须填写。
+                     * @param _mongosCpu Mongos CPU 核数，支持1、2、4、8、16。购买分片集群时，必须填写。
                      * 
                      */
                     void SetMongosCpu(const uint64_t& _mongosCpu);
@@ -648,15 +648,23 @@ namespace TencentCloud
                     bool MongosCpuHasBeenSet() const;
 
                     /**
-                     * 获取Mongos 内存大小。购买MongoDB 4.2 及以上WiredTiger存储引擎版本的分片集群时，必须填写。具体售卖规格，请通过接口 [DescribeSpecInfo](https://cloud.tencent.com/document/product/240/38567) 获取。
-                     * @return MongosMemory Mongos 内存大小。购买MongoDB 4.2 及以上WiredTiger存储引擎版本的分片集群时，必须填写。具体售卖规格，请通过接口 [DescribeSpecInfo](https://cloud.tencent.com/document/product/240/38567) 获取。
+                     * 获取Mongos 内存大小。
+-  购买分片集群时，必须填写。
+- 单位：GB，支持1核2GB、2核4GB、4核8GB、8核16GB、16核32GB。
+                     * @return MongosMemory Mongos 内存大小。
+-  购买分片集群时，必须填写。
+- 单位：GB，支持1核2GB、2核4GB、4核8GB、8核16GB、16核32GB。
                      * 
                      */
                     uint64_t GetMongosMemory() const;
 
                     /**
-                     * 设置Mongos 内存大小。购买MongoDB 4.2 及以上WiredTiger存储引擎版本的分片集群时，必须填写。具体售卖规格，请通过接口 [DescribeSpecInfo](https://cloud.tencent.com/document/product/240/38567) 获取。
-                     * @param _mongosMemory Mongos 内存大小。购买MongoDB 4.2 及以上WiredTiger存储引擎版本的分片集群时，必须填写。具体售卖规格，请通过接口 [DescribeSpecInfo](https://cloud.tencent.com/document/product/240/38567) 获取。
+                     * 设置Mongos 内存大小。
+-  购买分片集群时，必须填写。
+- 单位：GB，支持1核2GB、2核4GB、4核8GB、8核16GB、16核32GB。
+                     * @param _mongosMemory Mongos 内存大小。
+-  购买分片集群时，必须填写。
+- 单位：GB，支持1核2GB、2核4GB、4核8GB、8核16GB、16核32GB。
                      * 
                      */
                     void SetMongosMemory(const uint64_t& _mongosMemory);
@@ -669,15 +677,23 @@ namespace TencentCloud
                     bool MongosMemoryHasBeenSet() const;
 
                     /**
-                     * 获取Mongos 数量。购买MongoDB 4.2 及以上WiredTiger存储引擎版本的分片集群时，必须填写。具体售卖规格，请通过接口 [DescribeSpecInfo](https://cloud.tencent.com/document/product/240/38567) 获取。为了保障高可用，取值范围为[3,32]。
-                     * @return MongosNodeNum Mongos 数量。购买MongoDB 4.2 及以上WiredTiger存储引擎版本的分片集群时，必须填写。具体售卖规格，请通过接口 [DescribeSpecInfo](https://cloud.tencent.com/document/product/240/38567) 获取。为了保障高可用，取值范围为[3,32]。
+                     * 获取Mongos 数量。购买分片集群时，必须填写。
+- 单可用区部署实例，其数量范围为[3,32]。
+- 多可用区部署实例，其数量范围为[6,32]。
+                     * @return MongosNodeNum Mongos 数量。购买分片集群时，必须填写。
+- 单可用区部署实例，其数量范围为[3,32]。
+- 多可用区部署实例，其数量范围为[6,32]。
                      * 
                      */
                     uint64_t GetMongosNodeNum() const;
 
                     /**
-                     * 设置Mongos 数量。购买MongoDB 4.2 及以上WiredTiger存储引擎版本的分片集群时，必须填写。具体售卖规格，请通过接口 [DescribeSpecInfo](https://cloud.tencent.com/document/product/240/38567) 获取。为了保障高可用，取值范围为[3,32]。
-                     * @param _mongosNodeNum Mongos 数量。购买MongoDB 4.2 及以上WiredTiger存储引擎版本的分片集群时，必须填写。具体售卖规格，请通过接口 [DescribeSpecInfo](https://cloud.tencent.com/document/product/240/38567) 获取。为了保障高可用，取值范围为[3,32]。
+                     * 设置Mongos 数量。购买分片集群时，必须填写。
+- 单可用区部署实例，其数量范围为[3,32]。
+- 多可用区部署实例，其数量范围为[6,32]。
+                     * @param _mongosNodeNum Mongos 数量。购买分片集群时，必须填写。
+- 单可用区部署实例，其数量范围为[3,32]。
+- 多可用区部署实例，其数量范围为[6,32]。
                      * 
                      */
                     void SetMongosNodeNum(const uint64_t& _mongosNodeNum);
@@ -711,15 +727,15 @@ namespace TencentCloud
                     bool ReadonlyNodeNumHasBeenSet() const;
 
                     /**
-                     * 获取指只读节点所属可用区。跨可用区部署实例，参数**ReadonlyNodeNum**不为**0**时，必须配置该参数。
-                     * @return ReadonlyNodeAvailabilityZoneList 指只读节点所属可用区。跨可用区部署实例，参数**ReadonlyNodeNum**不为**0**时，必须配置该参数。
+                     * 获取指只读节点所属可用区数组。跨可用区部署实例，参数**ReadonlyNodeNum**不为**0**时，必须配置该参数。
+                     * @return ReadonlyNodeAvailabilityZoneList 指只读节点所属可用区数组。跨可用区部署实例，参数**ReadonlyNodeNum**不为**0**时，必须配置该参数。
                      * 
                      */
                     std::vector<std::string> GetReadonlyNodeAvailabilityZoneList() const;
 
                     /**
-                     * 设置指只读节点所属可用区。跨可用区部署实例，参数**ReadonlyNodeNum**不为**0**时，必须配置该参数。
-                     * @param _readonlyNodeAvailabilityZoneList 指只读节点所属可用区。跨可用区部署实例，参数**ReadonlyNodeNum**不为**0**时，必须配置该参数。
+                     * 设置指只读节点所属可用区数组。跨可用区部署实例，参数**ReadonlyNodeNum**不为**0**时，必须配置该参数。
+                     * @param _readonlyNodeAvailabilityZoneList 指只读节点所属可用区数组。跨可用区部署实例，参数**ReadonlyNodeNum**不为**0**时，必须配置该参数。
                      * 
                      */
                     void SetReadonlyNodeAvailabilityZoneList(const std::vector<std::string>& _readonlyNodeAvailabilityZoneList);
@@ -755,29 +771,32 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 指每个副本集内节点个数。具体售卖规格，请通过接口 [DescribeSpecInfo](https://cloud.tencent.com/document/product/240/38567) 获取。
+                     * - 创建副本集实例，指每个副本集内主从节点数量。每个副本集所支持的的最大节点数与最小节点数，请通过接口 [DescribeSpecInfo](https://cloud.tencent.com/document/product/240/38567) 获取。
+- 创建分片集群实例，指每个分片的主从节点数量。每个分片所支持的最大节点数与最小节点数，请通过接口 [DescribeSpecInfo](https://cloud.tencent.com/document/product/240/38567) 获取。
                      */
                     uint64_t m_nodeNum;
                     bool m_nodeNumHasBeenSet;
 
                     /**
-                     * 实例内存大小，单位：GB。
+                     * 实例内存大小，单位：GB。具体售卖的内存规格，请通过接口 [DescribeSpecInfo](https://cloud.tencent.com/document/product/240/38567) 获取。
                      */
                     uint64_t m_memory;
                     bool m_memoryHasBeenSet;
 
                     /**
-                     * 实例硬盘大小，单位：GB。
+                     * 实例硬盘大小，单位：GB。每一个 CPU 规格对应的最大磁盘与最小磁盘范围，请通过接口 [DescribeSpecInfo](https://cloud.tencent.com/document/product/240/38567) 获取。
                      */
                     uint64_t m_volume;
                     bool m_volumeHasBeenSet;
 
                     /**
-                     * 指版本信息。具体售卖规格，请通过接口 [DescribeSpecInfo](https://cloud.tencent.com/document/product/240/38567) 获取。
+                     * 指版本信息。具体支持的版本信息 ，请通过接口 [DescribeSpecInfo](https://cloud.tencent.com/document/product/240/38567) 获取。
 - MONGO_36_WT：MongoDB 3.6 WiredTiger存储引擎版本。
 - MONGO_40_WT：MongoDB 4.0 WiredTiger存储引擎版本。
 - MONGO_42_WT：MongoDB 4.2 WiredTiger存储引擎版本。
 - MONGO_44_WT：MongoDB 4.4 WiredTiger存储引擎版本。
+- MONGO_50_WT：MongoDB 5.0 WiredTiger存储引擎版本。
+- MONGO_60_WT：MongoDB 6.0 WiredTiger存储引擎版本。
                      */
                     std::string m_mongoVersion;
                     bool m_mongoVersionHasBeenSet;
@@ -797,15 +816,16 @@ namespace TencentCloud
                     bool m_zoneHasBeenSet;
 
                     /**
-                     * 实例时长，单位：月，可选值包括 [1,2,3,4,5,6,7,8,9,10,11,12,24,36]。
+                     * 指定购买实例的购买时长。取值可选：[1,2,3,4,5,6,7,8,9,10,11,12,24,36]；单位：月。
+
                      */
                     uint64_t m_period;
                     bool m_periodHasBeenSet;
 
                     /**
-                     * 机器类型。
-- HIO：高IO型。
-- HIO10G：高IO万兆。
+                     * 产品规格类型。
+- HIO10G：通用高HIO万兆型。
+- HCD：云盘版类型。
                      */
                     std::string m_machineCode;
                     bool m_machineCodeHasBeenSet;
@@ -819,15 +839,16 @@ namespace TencentCloud
                     bool m_clusterTypeHasBeenSet;
 
                     /**
-                     * 指副本集数量。
-- 创建副本集实例，该参数只能为1。
-- 创建分片实例，指分片的数量。具体售卖规格，请通过接口 [DescribeSpecInfo](https://cloud.tencent.com/document/product/240/38567) 获取。
+                     * - 创建副本集实例，指副本集数量，该参数只能为1。
+- 创建分片集群实例，指分片的数量。请通过接口[DescribeSpecInfo](https://cloud.tencent.com/document/product/240/38567)查询分片数量的取值范围，其返回的数据结构SpecItems中的参数MinReplicateSetNum与MaxReplicateSetNum分别对应其最小值与最大值。
                      */
                     uint64_t m_replicateSetNum;
                     bool m_replicateSetNumHasBeenSet;
 
                     /**
-                     * 项目ID。若不设置该参数，则为默认项目。
+                     * 项目ID。
+- 若不设置该参数，则为默认项目。
+- 在 [MongoDB 控制台项目管理](https://console.cloud.tencent.com/project)页面，可获取项目ID。
                      */
                     int64_t m_projectId;
                     bool m_projectIdHasBeenSet;
@@ -858,7 +879,7 @@ namespace TencentCloud
 
                     /**
                      * 自动续费标记。
-- 0：不自动续费。默认为不自动续费。
+- 0：不自动续费。
 - 1：自动续费。
                      */
                     uint64_t m_autoRenewFlag;
@@ -873,10 +894,7 @@ namespace TencentCloud
                     bool m_autoVoucherHasBeenSet;
 
                     /**
-                     * 实例类型。
-- 1：正式实例。
-- 3：只读实例。
-- 4：灾备实例。
+                     * 实例类型。- 1：正式实例。- 3：只读实例。- 4：灾备实例。-5：整实例克隆，注意：克隆实例时，RestoreTime为必填项。
                      */
                     int64_t m_clone;
                     bool m_cloneHasBeenSet;
@@ -888,15 +906,13 @@ namespace TencentCloud
                     bool m_fatherHasBeenSet;
 
                     /**
-                     * 安全组。
+                     * 安全组 ID。 
                      */
                     std::vector<std::string> m_securityGroup;
                     bool m_securityGroupHasBeenSet;
 
                     /**
-                     * 克隆实例回档时间。
-- 若为克隆实例，则必须配置该参数。输入格式示例：2021-08-13 16:30:00。
-- 回档时间范围：仅能回档7天内时间点的数据。
+                     * 克隆实例回档时间，当Clone取值为5或6时为必填。- 若为克隆实例，则必须配置该参数。输入格式示例：2021-08-13 16:30:00。- 回档时间范围：仅能回档7天内时间点的数据。
                      */
                     std::string m_restoreTime;
                     bool m_restoreTimeHasBeenSet;
@@ -918,19 +934,23 @@ namespace TencentCloud
                     bool m_availabilityZoneListHasBeenSet;
 
                     /**
-                     * Mongos CPU 核数，购买MongoDB 4.2 及以上WiredTiger存储引擎版本的分片集群时，必须填写。具体售卖规格，请通过接口 [DescribeSpecInfo](https://cloud.tencent.com/document/product/240/38567) 获取。
+                     * Mongos CPU 核数，支持1、2、4、8、16。购买分片集群时，必须填写。
                      */
                     uint64_t m_mongosCpu;
                     bool m_mongosCpuHasBeenSet;
 
                     /**
-                     * Mongos 内存大小。购买MongoDB 4.2 及以上WiredTiger存储引擎版本的分片集群时，必须填写。具体售卖规格，请通过接口 [DescribeSpecInfo](https://cloud.tencent.com/document/product/240/38567) 获取。
+                     * Mongos 内存大小。
+-  购买分片集群时，必须填写。
+- 单位：GB，支持1核2GB、2核4GB、4核8GB、8核16GB、16核32GB。
                      */
                     uint64_t m_mongosMemory;
                     bool m_mongosMemoryHasBeenSet;
 
                     /**
-                     * Mongos 数量。购买MongoDB 4.2 及以上WiredTiger存储引擎版本的分片集群时，必须填写。具体售卖规格，请通过接口 [DescribeSpecInfo](https://cloud.tencent.com/document/product/240/38567) 获取。为了保障高可用，取值范围为[3,32]。
+                     * Mongos 数量。购买分片集群时，必须填写。
+- 单可用区部署实例，其数量范围为[3,32]。
+- 多可用区部署实例，其数量范围为[6,32]。
                      */
                     uint64_t m_mongosNodeNum;
                     bool m_mongosNodeNumHasBeenSet;
@@ -942,7 +962,7 @@ namespace TencentCloud
                     bool m_readonlyNodeNumHasBeenSet;
 
                     /**
-                     * 指只读节点所属可用区。跨可用区部署实例，参数**ReadonlyNodeNum**不为**0**时，必须配置该参数。
+                     * 指只读节点所属可用区数组。跨可用区部署实例，参数**ReadonlyNodeNum**不为**0**时，必须配置该参数。
                      */
                     std::vector<std::string> m_readonlyNodeAvailabilityZoneList;
                     bool m_readonlyNodeAvailabilityZoneListHasBeenSet;

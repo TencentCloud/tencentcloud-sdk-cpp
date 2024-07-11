@@ -37,6 +37,7 @@ set(mariadb_public_header_model
   include/tencentcloud/mariadb/v20170312/model/DescribeUpgradePriceRequest.h
   include/tencentcloud/mariadb/v20170312/model/TerminateDedicatedDBInstanceResponse.h
   include/tencentcloud/mariadb/v20170312/model/FlushBinlogResponse.h
+  include/tencentcloud/mariadb/v20170312/model/UpgradeHourDBInstanceResponse.h
   include/tencentcloud/mariadb/v20170312/model/DescribeDBSecurityGroupsResponse.h
   include/tencentcloud/mariadb/v20170312/model/CancelDcnJobResponse.h
   include/tencentcloud/mariadb/v20170312/model/DescribeFileDownloadUrlRequest.h
@@ -124,6 +125,7 @@ set(mariadb_public_header_model
   include/tencentcloud/mariadb/v20170312/model/DescribeDatabaseObjectsResponse.h
   include/tencentcloud/mariadb/v20170312/model/ModifyDBInstanceNameRequest.h
   include/tencentcloud/mariadb/v20170312/model/DeleteAccountRequest.h
+  include/tencentcloud/mariadb/v20170312/model/UpgradeHourDBInstanceRequest.h
   include/tencentcloud/mariadb/v20170312/model/TableColumn.h
   include/tencentcloud/mariadb/v20170312/model/CreateTmpInstancesResponse.h
   include/tencentcloud/mariadb/v20170312/model/UpgradeDBInstanceRequest.h
@@ -225,6 +227,7 @@ set(mariadb_src
   src/v20170312/model/DescribeUpgradePriceRequest.cpp
   src/v20170312/model/TerminateDedicatedDBInstanceResponse.cpp
   src/v20170312/model/FlushBinlogResponse.cpp
+  src/v20170312/model/UpgradeHourDBInstanceResponse.cpp
   src/v20170312/model/DescribeDBSecurityGroupsResponse.cpp
   src/v20170312/model/CancelDcnJobResponse.cpp
   src/v20170312/model/DescribeFileDownloadUrlRequest.cpp
@@ -312,6 +315,7 @@ set(mariadb_src
   src/v20170312/model/DescribeDatabaseObjectsResponse.cpp
   src/v20170312/model/ModifyDBInstanceNameRequest.cpp
   src/v20170312/model/DeleteAccountRequest.cpp
+  src/v20170312/model/UpgradeHourDBInstanceRequest.cpp
   src/v20170312/model/TableColumn.cpp
   src/v20170312/model/CreateTmpInstancesResponse.cpp
   src/v20170312/model/UpgradeDBInstanceRequest.cpp

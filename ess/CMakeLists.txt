@@ -84,7 +84,7 @@ set(ess_public_header_model
   include/tencentcloud/ess/v20201111/model/IntentionAction.h
   include/tencentcloud/ess/v20201111/model/CallbackInfo.h
   include/tencentcloud/ess/v20201111/model/DescribeSignFaceVideoRequest.h
-  include/tencentcloud/ess/v20201111/model/DeleteSealPoliciesRequest.h
+  include/tencentcloud/ess/v20201111/model/CreateEmployeeQualificationSealQrCodeResponse.h
   include/tencentcloud/ess/v20201111/model/CreateFlowGroupByTemplatesResponse.h
   include/tencentcloud/ess/v20201111/model/CancelFailureFlow.h
   include/tencentcloud/ess/v20201111/model/CreateUserVerifyUrlResponse.h
@@ -119,6 +119,7 @@ set(ess_public_header_model
   include/tencentcloud/ess/v20201111/model/FillApproverInfo.h
   include/tencentcloud/ess/v20201111/model/OccupiedSeal.h
   include/tencentcloud/ess/v20201111/model/IntentionActionResultDetail.h
+  include/tencentcloud/ess/v20201111/model/CreateEmployeeQualificationSealQrCodeRequest.h
   include/tencentcloud/ess/v20201111/model/CreatePersonAuthCertificateImageResponse.h
   include/tencentcloud/ess/v20201111/model/FailedDeleteStaffData.h
   include/tencentcloud/ess/v20201111/model/PdfVerifyResult.h
@@ -129,6 +130,7 @@ set(ess_public_header_model
   include/tencentcloud/ess/v20201111/model/DisableUserAutoSignRequest.h
   include/tencentcloud/ess/v20201111/model/DescribeIntegrationEmployeesResponse.h
   include/tencentcloud/ess/v20201111/model/SuccessDeleteStaffData.h
+  include/tencentcloud/ess/v20201111/model/DeleteSealPoliciesRequest.h
   include/tencentcloud/ess/v20201111/model/CreateConvertTaskApiResponse.h
   include/tencentcloud/ess/v20201111/model/CreateFlowSignReviewRequest.h
   include/tencentcloud/ess/v20201111/model/CreateOrganizationAuthUrlResponse.h
@@ -351,7 +353,7 @@ set(ess_src
   src/v20201111/model/IntentionAction.cpp
   src/v20201111/model/CallbackInfo.cpp
   src/v20201111/model/DescribeSignFaceVideoRequest.cpp
-  src/v20201111/model/DeleteSealPoliciesRequest.cpp
+  src/v20201111/model/CreateEmployeeQualificationSealQrCodeResponse.cpp
   src/v20201111/model/CreateFlowGroupByTemplatesResponse.cpp
   src/v20201111/model/CancelFailureFlow.cpp
   src/v20201111/model/CreateUserVerifyUrlResponse.cpp
@@ -386,6 +388,7 @@ set(ess_src
   src/v20201111/model/FillApproverInfo.cpp
   src/v20201111/model/OccupiedSeal.cpp
   src/v20201111/model/IntentionActionResultDetail.cpp
+  src/v20201111/model/CreateEmployeeQualificationSealQrCodeRequest.cpp
   src/v20201111/model/CreatePersonAuthCertificateImageResponse.cpp
   src/v20201111/model/FailedDeleteStaffData.cpp
   src/v20201111/model/PdfVerifyResult.cpp
@@ -396,6 +399,7 @@ set(ess_src
   src/v20201111/model/DisableUserAutoSignRequest.cpp
   src/v20201111/model/DescribeIntegrationEmployeesResponse.cpp
   src/v20201111/model/SuccessDeleteStaffData.cpp
+  src/v20201111/model/DeleteSealPoliciesRequest.cpp
   src/v20201111/model/CreateConvertTaskApiResponse.cpp
   src/v20201111/model/CreateFlowSignReviewRequest.cpp
   src/v20201111/model/CreateOrganizationAuthUrlResponse.cpp

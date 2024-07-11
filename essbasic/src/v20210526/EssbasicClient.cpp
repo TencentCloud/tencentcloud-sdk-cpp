@@ -2147,6 +2147,49 @@ EssbasicClient::CreateConsoleLoginUrlOutcomeCallable EssbasicClient::CreateConso
     return task->get_future();
 }
 
+EssbasicClient::CreateEmployeeQualificationSealQrCodeOutcome EssbasicClient::CreateEmployeeQualificationSealQrCode(const CreateEmployeeQualificationSealQrCodeRequest &request)
+{
+    auto outcome = MakeRequest(request, "CreateEmployeeQualificationSealQrCode");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        CreateEmployeeQualificationSealQrCodeResponse rsp = CreateEmployeeQualificationSealQrCodeResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return CreateEmployeeQualificationSealQrCodeOutcome(rsp);
+        else
+            return CreateEmployeeQualificationSealQrCodeOutcome(o.GetError());
+    }
+    else
+    {
+        return CreateEmployeeQualificationSealQrCodeOutcome(outcome.GetError());
+    }
+}
+
+void EssbasicClient::CreateEmployeeQualificationSealQrCodeAsync(const CreateEmployeeQualificationSealQrCodeRequest& request, const CreateEmployeeQualificationSealQrCodeAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->CreateEmployeeQualificationSealQrCode(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+EssbasicClient::CreateEmployeeQualificationSealQrCodeOutcomeCallable EssbasicClient::CreateEmployeeQualificationSealQrCodeCallable(const CreateEmployeeQualificationSealQrCodeRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<CreateEmployeeQualificationSealQrCodeOutcome()>>(
+        [this, request]()
+        {
+            return this->CreateEmployeeQualificationSealQrCode(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 EssbasicClient::CreateFlowBlockchainEvidenceUrlOutcome EssbasicClient::CreateFlowBlockchainEvidenceUrl(const CreateFlowBlockchainEvidenceUrlRequest &request)
 {
     auto outcome = MakeRequest(request, "CreateFlowBlockchainEvidenceUrl");

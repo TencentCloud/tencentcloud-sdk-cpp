@@ -25,6 +25,7 @@
 #include <tencentcloud/core/utils/rapidjson/stringbuffer.h>
 #include <tencentcloud/core/AbstractModel.h>
 #include <tencentcloud/oceanus/v20190422/model/SlotSharingGroupSpec.h>
+#include <tencentcloud/oceanus/v20190422/model/Property.h>
 
 
 namespace TencentCloud
@@ -122,6 +123,31 @@ namespace TencentCloud
                      */
                     bool DescriptionHasBeenSet() const;
 
+                    /**
+                     * 获取SlotSharingGroup的配置
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return Configuration SlotSharingGroup的配置
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::vector<Property> GetConfiguration() const;
+
+                    /**
+                     * 设置SlotSharingGroup的配置
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _configuration SlotSharingGroup的配置
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetConfiguration(const std::vector<Property>& _configuration);
+
+                    /**
+                     * 判断参数 Configuration 是否已赋值
+                     * @return Configuration 是否已赋值
+                     * 
+                     */
+                    bool ConfigurationHasBeenSet() const;
+
                 private:
 
                     /**
@@ -144,6 +170,13 @@ namespace TencentCloud
                      */
                     std::string m_description;
                     bool m_descriptionHasBeenSet;
+
+                    /**
+                     * SlotSharingGroup的配置
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::vector<Property> m_configuration;
+                    bool m_configurationHasBeenSet;
 
                 };
             }

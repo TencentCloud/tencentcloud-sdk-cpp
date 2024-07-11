@@ -383,7 +383,7 @@ namespace TencentCloud
                 AddOrganizationNodeOutcomeCallable AddOrganizationNodeCallable(const Model::AddOrganizationNodeRequest& request);
 
                 /**
-                 *创建共享单元，只有企业组织管理员可创建。
+                 *创建共享单元。
                  * @param req AddShareUnitRequest
                  * @return AddShareUnitOutcome
                  */

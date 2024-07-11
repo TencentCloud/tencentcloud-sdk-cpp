@@ -175,6 +175,8 @@
 #include <tencentcloud/gaap/v20180529/model/DescribeSecurityRulesResponse.h>
 #include <tencentcloud/gaap/v20180529/model/DescribeTCPListenersRequest.h>
 #include <tencentcloud/gaap/v20180529/model/DescribeTCPListenersResponse.h>
+#include <tencentcloud/gaap/v20180529/model/DescribeTaskStatusRequest.h>
+#include <tencentcloud/gaap/v20180529/model/DescribeTaskStatusResponse.h>
 #include <tencentcloud/gaap/v20180529/model/DescribeUDPListenersRequest.h>
 #include <tencentcloud/gaap/v20180529/model/DescribeUDPListenersResponse.h>
 #include <tencentcloud/gaap/v20180529/model/DestroyProxiesRequest.h>
@@ -473,6 +475,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeTCPListenersResponse> DescribeTCPListenersOutcome;
                 typedef std::future<DescribeTCPListenersOutcome> DescribeTCPListenersOutcomeCallable;
                 typedef std::function<void(const GaapClient*, const Model::DescribeTCPListenersRequest&, DescribeTCPListenersOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeTCPListenersAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeTaskStatusResponse> DescribeTaskStatusOutcome;
+                typedef std::future<DescribeTaskStatusOutcome> DescribeTaskStatusOutcomeCallable;
+                typedef std::function<void(const GaapClient*, const Model::DescribeTaskStatusRequest&, DescribeTaskStatusOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeTaskStatusAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeUDPListenersResponse> DescribeUDPListenersOutcome;
                 typedef std::future<DescribeUDPListenersOutcome> DescribeUDPListenersOutcomeCallable;
                 typedef std::function<void(const GaapClient*, const Model::DescribeUDPListenersRequest&, DescribeUDPListenersOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeUDPListenersAsyncHandler;
@@ -1245,6 +1250,15 @@ namespace TencentCloud
                 DescribeTCPListenersOutcome DescribeTCPListeners(const Model::DescribeTCPListenersRequest &request);
                 void DescribeTCPListenersAsync(const Model::DescribeTCPListenersRequest& request, const DescribeTCPListenersAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DescribeTCPListenersOutcomeCallable DescribeTCPListenersCallable(const Model::DescribeTCPListenersRequest& request);
+
+                /**
+                 *查询异步任务执行状态
+                 * @param req DescribeTaskStatusRequest
+                 * @return DescribeTaskStatusOutcome
+                 */
+                DescribeTaskStatusOutcome DescribeTaskStatus(const Model::DescribeTaskStatusRequest &request);
+                void DescribeTaskStatusAsync(const Model::DescribeTaskStatusRequest& request, const DescribeTaskStatusAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeTaskStatusOutcomeCallable DescribeTaskStatusCallable(const Model::DescribeTaskStatusRequest& request);
 
                 /**
                  *该接口（DescribeUDPListeners）用于查询单通道或者通道组下的UDP监听器信息

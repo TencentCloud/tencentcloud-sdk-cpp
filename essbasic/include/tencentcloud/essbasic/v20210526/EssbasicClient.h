@@ -121,6 +121,8 @@
 #include <tencentcloud/essbasic/v20210526/model/CreateChannelOrganizationInfoChangeUrlResponse.h>
 #include <tencentcloud/essbasic/v20210526/model/CreateConsoleLoginUrlRequest.h>
 #include <tencentcloud/essbasic/v20210526/model/CreateConsoleLoginUrlResponse.h>
+#include <tencentcloud/essbasic/v20210526/model/CreateEmployeeQualificationSealQrCodeRequest.h>
+#include <tencentcloud/essbasic/v20210526/model/CreateEmployeeQualificationSealQrCodeResponse.h>
 #include <tencentcloud/essbasic/v20210526/model/CreateFlowBlockchainEvidenceUrlRequest.h>
 #include <tencentcloud/essbasic/v20210526/model/CreateFlowBlockchainEvidenceUrlResponse.h>
 #include <tencentcloud/essbasic/v20210526/model/CreateFlowGroupSignReviewRequest.h>
@@ -334,6 +336,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::CreateConsoleLoginUrlResponse> CreateConsoleLoginUrlOutcome;
                 typedef std::future<CreateConsoleLoginUrlOutcome> CreateConsoleLoginUrlOutcomeCallable;
                 typedef std::function<void(const EssbasicClient*, const Model::CreateConsoleLoginUrlRequest&, CreateConsoleLoginUrlOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateConsoleLoginUrlAsyncHandler;
+                typedef Outcome<Core::Error, Model::CreateEmployeeQualificationSealQrCodeResponse> CreateEmployeeQualificationSealQrCodeOutcome;
+                typedef std::future<CreateEmployeeQualificationSealQrCodeOutcome> CreateEmployeeQualificationSealQrCodeOutcomeCallable;
+                typedef std::function<void(const EssbasicClient*, const Model::CreateEmployeeQualificationSealQrCodeRequest&, CreateEmployeeQualificationSealQrCodeOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateEmployeeQualificationSealQrCodeAsyncHandler;
                 typedef Outcome<Core::Error, Model::CreateFlowBlockchainEvidenceUrlResponse> CreateFlowBlockchainEvidenceUrlOutcome;
                 typedef std::future<CreateFlowBlockchainEvidenceUrlOutcome> CreateFlowBlockchainEvidenceUrlOutcomeCallable;
                 typedef std::function<void(const EssbasicClient*, const Model::CreateFlowBlockchainEvidenceUrlRequest&, CreateFlowBlockchainEvidenceUrlOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateFlowBlockchainEvidenceUrlAsyncHandler;
@@ -1393,6 +1398,18 @@ Web链接访问后，会根据子客企业(**Agent中ProxyOrganizationOpenId表�
                 CreateConsoleLoginUrlOutcome CreateConsoleLoginUrl(const Model::CreateConsoleLoginUrlRequest &request);
                 void CreateConsoleLoginUrlAsync(const Model::CreateConsoleLoginUrlRequest& request, const CreateConsoleLoginUrlAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 CreateConsoleLoginUrlOutcomeCallable CreateConsoleLoginUrlCallable(const Model::CreateConsoleLoginUrlRequest& request);
+
+                /**
+                 *该接口用于获取个人授权执业章给企业的二维码，需要个人用户通过微信扫码。扫描后将跳转到腾讯电子签小程序，进入到授权执业章的流程。个人用户授权成功后，企业印章管理员需对印章进行审核，审核通过后，即可使用个人授权的执业章进行盖章操作。
+
+**注意**
+1. 该二维码**有效期为7天**，过期后将失效，可重新创建。
+                 * @param req CreateEmployeeQualificationSealQrCodeRequest
+                 * @return CreateEmployeeQualificationSealQrCodeOutcome
+                 */
+                CreateEmployeeQualificationSealQrCodeOutcome CreateEmployeeQualificationSealQrCode(const Model::CreateEmployeeQualificationSealQrCodeRequest &request);
+                void CreateEmployeeQualificationSealQrCodeAsync(const Model::CreateEmployeeQualificationSealQrCodeRequest& request, const CreateEmployeeQualificationSealQrCodeAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                CreateEmployeeQualificationSealQrCodeOutcomeCallable CreateEmployeeQualificationSealQrCodeCallable(const Model::CreateEmployeeQualificationSealQrCodeRequest& request);
 
                 /**
                  *获取区块链存证证书查看链接/二维码接口

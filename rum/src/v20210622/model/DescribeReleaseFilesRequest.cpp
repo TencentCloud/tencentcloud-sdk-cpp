@@ -24,7 +24,8 @@ using namespace std;
 
 DescribeReleaseFilesRequest::DescribeReleaseFilesRequest() :
     m_projectIDHasBeenSet(false),
-    m_fileVersionHasBeenSet(false)
+    m_fileVersionHasBeenSet(false),
+    m_fileNameHasBeenSet(false)
 {
 }
 
@@ -49,6 +50,14 @@ string DescribeReleaseFilesRequest::ToJsonString() const
         string key = "FileVersion";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_fileVersion.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_fileNameHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "FileName";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_fileName.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -89,6 +98,22 @@ void DescribeReleaseFilesRequest::SetFileVersion(const string& _fileVersion)
 bool DescribeReleaseFilesRequest::FileVersionHasBeenSet() const
 {
     return m_fileVersionHasBeenSet;
+}
+
+string DescribeReleaseFilesRequest::GetFileName() const
+{
+    return m_fileName;
+}
+
+void DescribeReleaseFilesRequest::SetFileName(const string& _fileName)
+{
+    m_fileName = _fileName;
+    m_fileNameHasBeenSet = true;
+}
+
+bool DescribeReleaseFilesRequest::FileNameHasBeenSet() const
+{
+    return m_fileNameHasBeenSet;
 }
 
 

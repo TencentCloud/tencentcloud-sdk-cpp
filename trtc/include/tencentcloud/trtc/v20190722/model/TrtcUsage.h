@@ -68,15 +68,36 @@ namespace TencentCloud
                     bool TimeKeyHasBeenSet() const;
 
                     /**
-                     * 获取用量数组。每个数值含义与UsageKey对应。单位：分钟。
-                     * @return UsageValue 用量数组。每个数值含义与UsageKey对应。单位：分钟。
+                     * 获取时间点时间戳
+                     * @return TimeStampKey 时间点时间戳
+                     * 
+                     */
+                    uint64_t GetTimeStampKey() const;
+
+                    /**
+                     * 设置时间点时间戳
+                     * @param _timeStampKey 时间点时间戳
+                     * 
+                     */
+                    void SetTimeStampKey(const uint64_t& _timeStampKey);
+
+                    /**
+                     * 判断参数 TimeStampKey 是否已赋值
+                     * @return TimeStampKey 是否已赋值
+                     * 
+                     */
+                    bool TimeStampKeyHasBeenSet() const;
+
+                    /**
+                     * 获取用量数组。每个数值含义与UsageKey对应。单位:分钟。
+                     * @return UsageValue 用量数组。每个数值含义与UsageKey对应。单位:分钟。
                      * 
                      */
                     std::vector<double> GetUsageValue() const;
 
                     /**
-                     * 设置用量数组。每个数值含义与UsageKey对应。单位：分钟。
-                     * @param _usageValue 用量数组。每个数值含义与UsageKey对应。单位：分钟。
+                     * 设置用量数组。每个数值含义与UsageKey对应。单位:分钟。
+                     * @param _usageValue 用量数组。每个数值含义与UsageKey对应。单位:分钟。
                      * 
                      */
                     void SetUsageValue(const std::vector<double>& _usageValue);
@@ -97,7 +118,13 @@ namespace TencentCloud
                     bool m_timeKeyHasBeenSet;
 
                     /**
-                     * 用量数组。每个数值含义与UsageKey对应。单位：分钟。
+                     * 时间点时间戳
+                     */
+                    uint64_t m_timeStampKey;
+                    bool m_timeStampKeyHasBeenSet;
+
+                    /**
+                     * 用量数组。每个数值含义与UsageKey对应。单位:分钟。
                      */
                     std::vector<double> m_usageValue;
                     bool m_usageValueHasBeenSet;

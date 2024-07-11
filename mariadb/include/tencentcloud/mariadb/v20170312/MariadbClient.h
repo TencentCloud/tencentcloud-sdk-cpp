@@ -167,6 +167,8 @@
 #include <tencentcloud/mariadb/v20170312/model/UpgradeDBInstanceResponse.h>
 #include <tencentcloud/mariadb/v20170312/model/UpgradeDedicatedDBInstanceRequest.h>
 #include <tencentcloud/mariadb/v20170312/model/UpgradeDedicatedDBInstanceResponse.h>
+#include <tencentcloud/mariadb/v20170312/model/UpgradeHourDBInstanceRequest.h>
+#include <tencentcloud/mariadb/v20170312/model/UpgradeHourDBInstanceResponse.h>
 
 
 namespace TencentCloud
@@ -397,6 +399,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::UpgradeDedicatedDBInstanceResponse> UpgradeDedicatedDBInstanceOutcome;
                 typedef std::future<UpgradeDedicatedDBInstanceOutcome> UpgradeDedicatedDBInstanceOutcomeCallable;
                 typedef std::function<void(const MariadbClient*, const Model::UpgradeDedicatedDBInstanceRequest&, UpgradeDedicatedDBInstanceOutcome, const std::shared_ptr<const AsyncCallerContext>&)> UpgradeDedicatedDBInstanceAsyncHandler;
+                typedef Outcome<Core::Error, Model::UpgradeHourDBInstanceResponse> UpgradeHourDBInstanceOutcome;
+                typedef std::future<UpgradeHourDBInstanceOutcome> UpgradeHourDBInstanceOutcomeCallable;
+                typedef std::function<void(const MariadbClient*, const Model::UpgradeHourDBInstanceRequest&, UpgradeHourDBInstanceOutcome, const std::shared_ptr<const AsyncCallerContext>&)> UpgradeHourDBInstanceAsyncHandler;
 
 
 
@@ -1063,6 +1068,15 @@ namespace TencentCloud
                 UpgradeDedicatedDBInstanceOutcome UpgradeDedicatedDBInstance(const Model::UpgradeDedicatedDBInstanceRequest &request);
                 void UpgradeDedicatedDBInstanceAsync(const Model::UpgradeDedicatedDBInstanceRequest& request, const UpgradeDedicatedDBInstanceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 UpgradeDedicatedDBInstanceOutcomeCallable UpgradeDedicatedDBInstanceCallable(const Model::UpgradeDedicatedDBInstanceRequest& request);
+
+                /**
+                 *升级MariaDB按量计费实例
+                 * @param req UpgradeHourDBInstanceRequest
+                 * @return UpgradeHourDBInstanceOutcome
+                 */
+                UpgradeHourDBInstanceOutcome UpgradeHourDBInstance(const Model::UpgradeHourDBInstanceRequest &request);
+                void UpgradeHourDBInstanceAsync(const Model::UpgradeHourDBInstanceRequest& request, const UpgradeHourDBInstanceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                UpgradeHourDBInstanceOutcomeCallable UpgradeHourDBInstanceCallable(const Model::UpgradeHourDBInstanceRequest& request);
 
             };
         }

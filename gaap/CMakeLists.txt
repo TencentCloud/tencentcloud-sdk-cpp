@@ -95,6 +95,7 @@ set(gaap_public_header_model
   include/tencentcloud/gaap/v20180529/model/CreateProxyGroupRequest.h
   include/tencentcloud/gaap/v20180529/model/RuleInfo.h
   include/tencentcloud/gaap/v20180529/model/RealServerStatus.h
+  include/tencentcloud/gaap/v20180529/model/DescribeTaskStatusResponse.h
   include/tencentcloud/gaap/v20180529/model/DescribeTCPListenersResponse.h
   include/tencentcloud/gaap/v20180529/model/DescribeRulesRequest.h
   include/tencentcloud/gaap/v20180529/model/DescribeCountryAreaMappingResponse.h
@@ -198,6 +199,7 @@ set(gaap_public_header_model
   include/tencentcloud/gaap/v20180529/model/NewRealServer.h
   include/tencentcloud/gaap/v20180529/model/DescribeFirstLinkSessionResponse.h
   include/tencentcloud/gaap/v20180529/model/DescribeHTTPListenersResponse.h
+  include/tencentcloud/gaap/v20180529/model/DescribeTaskStatusRequest.h
   include/tencentcloud/gaap/v20180529/model/HttpHeaderParam.h
   include/tencentcloud/gaap/v20180529/model/DescribeRealServerStatisticsResponse.h
   include/tencentcloud/gaap/v20180529/model/AccessRegionDomainConf.h
@@ -357,6 +359,7 @@ set(gaap_src
   src/v20180529/model/CreateProxyGroupRequest.cpp
   src/v20180529/model/RuleInfo.cpp
   src/v20180529/model/RealServerStatus.cpp
+  src/v20180529/model/DescribeTaskStatusResponse.cpp
   src/v20180529/model/DescribeTCPListenersResponse.cpp
   src/v20180529/model/DescribeRulesRequest.cpp
   src/v20180529/model/DescribeCountryAreaMappingResponse.cpp
@@ -460,6 +463,7 @@ set(gaap_src
   src/v20180529/model/NewRealServer.cpp
   src/v20180529/model/DescribeFirstLinkSessionResponse.cpp
   src/v20180529/model/DescribeHTTPListenersResponse.cpp
+  src/v20180529/model/DescribeTaskStatusRequest.cpp
   src/v20180529/model/HttpHeaderParam.cpp
   src/v20180529/model/DescribeRealServerStatisticsResponse.cpp
   src/v20180529/model/AccessRegionDomainConf.cpp

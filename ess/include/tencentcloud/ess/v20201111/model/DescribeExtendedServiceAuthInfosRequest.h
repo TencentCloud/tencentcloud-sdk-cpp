@@ -74,6 +74,7 @@ namespace TencentCloud
 默认为空，即查询当前支持的所有扩展服务信息。
 若需查询单个扩展服务的开通情况，请传递相应的值，如下所示：
 <ul><li>OPEN_SERVER_SIGN：企业自动签署</li>
+<li>AUTO_SIGN_CAN_FILL_IN：本企业自动签合同支持签前内容补充</li>
 <li>BATCH_SIGN：批量签署</li>
 <li>OVERSEA_SIGN：企业与港澳台居民签署合同</li>
 <li>AGE_LIMIT_EXPANSION：拓宽签署方年龄限制</li>
@@ -82,12 +83,14 @@ namespace TencentCloud
 <li>ORGANIZATION_OCR_FALLBACK：正楷临摹签名失败后更换其他签名类型</li>
 <li>ORGANIZATION_FLOW_NOTIFY_TYPE：短信通知签署方</li>
 <li>HIDE_ONE_KEY_SIGN：个人签署方手动签字</li>
-<li>PAGING_SEAL：骑缝章</li>
+<li>ORGANIZATION_FLOW_EMAIL_NOTIFY：邮件通知签署方</li>
+<li>FLOW_APPROVAL：合同审批强制开启</li>
 <li>ORGANIZATION_FLOW_PASSWD_NOTIFY：签署密码开通引导</li></ul>
                      * @return ExtendServiceType 要查询的扩展服务类型。
 默认为空，即查询当前支持的所有扩展服务信息。
 若需查询单个扩展服务的开通情况，请传递相应的值，如下所示：
 <ul><li>OPEN_SERVER_SIGN：企业自动签署</li>
+<li>AUTO_SIGN_CAN_FILL_IN：本企业自动签合同支持签前内容补充</li>
 <li>BATCH_SIGN：批量签署</li>
 <li>OVERSEA_SIGN：企业与港澳台居民签署合同</li>
 <li>AGE_LIMIT_EXPANSION：拓宽签署方年龄限制</li>
@@ -96,7 +99,8 @@ namespace TencentCloud
 <li>ORGANIZATION_OCR_FALLBACK：正楷临摹签名失败后更换其他签名类型</li>
 <li>ORGANIZATION_FLOW_NOTIFY_TYPE：短信通知签署方</li>
 <li>HIDE_ONE_KEY_SIGN：个人签署方手动签字</li>
-<li>PAGING_SEAL：骑缝章</li>
+<li>ORGANIZATION_FLOW_EMAIL_NOTIFY：邮件通知签署方</li>
+<li>FLOW_APPROVAL：合同审批强制开启</li>
 <li>ORGANIZATION_FLOW_PASSWD_NOTIFY：签署密码开通引导</li></ul>
                      * 
                      */
@@ -107,6 +111,7 @@ namespace TencentCloud
 默认为空，即查询当前支持的所有扩展服务信息。
 若需查询单个扩展服务的开通情况，请传递相应的值，如下所示：
 <ul><li>OPEN_SERVER_SIGN：企业自动签署</li>
+<li>AUTO_SIGN_CAN_FILL_IN：本企业自动签合同支持签前内容补充</li>
 <li>BATCH_SIGN：批量签署</li>
 <li>OVERSEA_SIGN：企业与港澳台居民签署合同</li>
 <li>AGE_LIMIT_EXPANSION：拓宽签署方年龄限制</li>
@@ -115,12 +120,14 @@ namespace TencentCloud
 <li>ORGANIZATION_OCR_FALLBACK：正楷临摹签名失败后更换其他签名类型</li>
 <li>ORGANIZATION_FLOW_NOTIFY_TYPE：短信通知签署方</li>
 <li>HIDE_ONE_KEY_SIGN：个人签署方手动签字</li>
-<li>PAGING_SEAL：骑缝章</li>
+<li>ORGANIZATION_FLOW_EMAIL_NOTIFY：邮件通知签署方</li>
+<li>FLOW_APPROVAL：合同审批强制开启</li>
 <li>ORGANIZATION_FLOW_PASSWD_NOTIFY：签署密码开通引导</li></ul>
                      * @param _extendServiceType 要查询的扩展服务类型。
 默认为空，即查询当前支持的所有扩展服务信息。
 若需查询单个扩展服务的开通情况，请传递相应的值，如下所示：
 <ul><li>OPEN_SERVER_SIGN：企业自动签署</li>
+<li>AUTO_SIGN_CAN_FILL_IN：本企业自动签合同支持签前内容补充</li>
 <li>BATCH_SIGN：批量签署</li>
 <li>OVERSEA_SIGN：企业与港澳台居民签署合同</li>
 <li>AGE_LIMIT_EXPANSION：拓宽签署方年龄限制</li>
@@ -129,7 +136,8 @@ namespace TencentCloud
 <li>ORGANIZATION_OCR_FALLBACK：正楷临摹签名失败后更换其他签名类型</li>
 <li>ORGANIZATION_FLOW_NOTIFY_TYPE：短信通知签署方</li>
 <li>HIDE_ONE_KEY_SIGN：个人签署方手动签字</li>
-<li>PAGING_SEAL：骑缝章</li>
+<li>ORGANIZATION_FLOW_EMAIL_NOTIFY：邮件通知签署方</li>
+<li>FLOW_APPROVAL：合同审批强制开启</li>
 <li>ORGANIZATION_FLOW_PASSWD_NOTIFY：签署密码开通引导</li></ul>
                      * 
                      */
@@ -181,6 +189,7 @@ namespace TencentCloud
 默认为空，即查询当前支持的所有扩展服务信息。
 若需查询单个扩展服务的开通情况，请传递相应的值，如下所示：
 <ul><li>OPEN_SERVER_SIGN：企业自动签署</li>
+<li>AUTO_SIGN_CAN_FILL_IN：本企业自动签合同支持签前内容补充</li>
 <li>BATCH_SIGN：批量签署</li>
 <li>OVERSEA_SIGN：企业与港澳台居民签署合同</li>
 <li>AGE_LIMIT_EXPANSION：拓宽签署方年龄限制</li>
@@ -189,7 +198,8 @@ namespace TencentCloud
 <li>ORGANIZATION_OCR_FALLBACK：正楷临摹签名失败后更换其他签名类型</li>
 <li>ORGANIZATION_FLOW_NOTIFY_TYPE：短信通知签署方</li>
 <li>HIDE_ONE_KEY_SIGN：个人签署方手动签字</li>
-<li>PAGING_SEAL：骑缝章</li>
+<li>ORGANIZATION_FLOW_EMAIL_NOTIFY：邮件通知签署方</li>
+<li>FLOW_APPROVAL：合同审批强制开启</li>
 <li>ORGANIZATION_FLOW_PASSWD_NOTIFY：签署密码开通引导</li></ul>
                      */
                     std::string m_extendServiceType;

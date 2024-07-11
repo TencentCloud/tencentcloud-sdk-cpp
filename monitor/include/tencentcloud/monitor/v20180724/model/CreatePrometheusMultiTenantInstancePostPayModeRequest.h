@@ -107,15 +107,15 @@ namespace TencentCloud
                     bool SubnetIdHasBeenSet() const;
 
                     /**
-                     * 获取数据存储时间（单位天），限制值为15，30，45之一
-                     * @return DataRetentionTime 数据存储时间（单位天），限制值为15，30，45之一
+                     * 获取数据存储时间（单位天），限制值为15, 30, 45, 90, 180, 365, 730之一
+                     * @return DataRetentionTime 数据存储时间（单位天），限制值为15, 30, 45, 90, 180, 365, 730之一
                      * 
                      */
                     int64_t GetDataRetentionTime() const;
 
                     /**
-                     * 设置数据存储时间（单位天），限制值为15，30，45之一
-                     * @param _dataRetentionTime 数据存储时间（单位天），限制值为15，30，45之一
+                     * 设置数据存储时间（单位天），限制值为15, 30, 45, 90, 180, 365, 730之一
+                     * @param _dataRetentionTime 数据存储时间（单位天），限制值为15, 30, 45, 90, 180, 365, 730之一
                      * 
                      */
                     void SetDataRetentionTime(const int64_t& _dataRetentionTime);
@@ -211,7 +211,7 @@ namespace TencentCloud
                     bool m_subnetIdHasBeenSet;
 
                     /**
-                     * 数据存储时间（单位天），限制值为15，30，45之一
+                     * 数据存储时间（单位天），限制值为15, 30, 45, 90, 180, 365, 730之一
                      */
                     int64_t m_dataRetentionTime;
                     bool m_dataRetentionTimeHasBeenSet;
