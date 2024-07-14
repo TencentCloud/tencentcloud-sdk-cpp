@@ -50,7 +50,8 @@ CreateJobConfigRequest::CreateJobConfigRequest() :
     m_checkpointRetainedNumHasBeenSet(false),
     m_jobGraphHasBeenSet(false),
     m_esServerlessIndexHasBeenSet(false),
-    m_esServerlessSpaceHasBeenSet(false)
+    m_esServerlessSpaceHasBeenSet(false),
+    m_flinkVersionHasBeenSet(false)
 {
 }
 
@@ -307,6 +308,14 @@ string CreateJobConfigRequest::ToJsonString() const
         string key = "EsServerlessSpace";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_esServerlessSpace.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_flinkVersionHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "FlinkVersion";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_flinkVersion.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -763,6 +772,22 @@ void CreateJobConfigRequest::SetEsServerlessSpace(const string& _esServerlessSpa
 bool CreateJobConfigRequest::EsServerlessSpaceHasBeenSet() const
 {
     return m_esServerlessSpaceHasBeenSet;
+}
+
+string CreateJobConfigRequest::GetFlinkVersion() const
+{
+    return m_flinkVersion;
+}
+
+void CreateJobConfigRequest::SetFlinkVersion(const string& _flinkVersion)
+{
+    m_flinkVersion = _flinkVersion;
+    m_flinkVersionHasBeenSet = true;
+}
+
+bool CreateJobConfigRequest::FlinkVersionHasBeenSet() const
+{
+    return m_flinkVersionHasBeenSet;
 }
 
 

@@ -24,7 +24,8 @@ using namespace TencentCloud::Iotexplorer::V20190423::Model;
 using namespace std;
 
 DescribeTopicRuleResponse::DescribeTopicRuleResponse() :
-    m_ruleHasBeenSet(false)
+    m_ruleHasBeenSet(false),
+    m_camTagHasBeenSet(false)
 {
 }
 
@@ -79,6 +80,26 @@ CoreInternalOutcome DescribeTopicRuleResponse::Deserialize(const string &payload
         m_ruleHasBeenSet = true;
     }
 
+    if (rsp.HasMember("CamTag") && !rsp["CamTag"].IsNull())
+    {
+        if (!rsp["CamTag"].IsArray())
+            return CoreInternalOutcome(Core::Error("response `CamTag` is not array type"));
+
+        const rapidjson::Value &tmpValue = rsp["CamTag"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            CamTag item;
+            CoreInternalOutcome outcome = item.Deserialize(*itr);
+            if (!outcome.IsSuccess())
+            {
+                outcome.GetError().SetRequestId(requestId);
+                return outcome;
+            }
+            m_camTag.push_back(item);
+        }
+        m_camTagHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -96,6 +117,21 @@ string DescribeTopicRuleResponse::ToJsonString() const
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
         m_rule.ToJsonObject(value[key.c_str()], allocator);
+    }
+
+    if (m_camTagHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "CamTag";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_camTag.begin(); itr != m_camTag.end(); ++itr, ++i)
+        {
+            value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(value[key.c_str()][i], allocator);
+        }
     }
 
     rapidjson::Value iKey(rapidjson::kStringType);
@@ -118,6 +154,16 @@ TopicRule DescribeTopicRuleResponse::GetRule() const
 bool DescribeTopicRuleResponse::RuleHasBeenSet() const
 {
     return m_ruleHasBeenSet;
+}
+
+vector<CamTag> DescribeTopicRuleResponse::GetCamTag() const
+{
+    return m_camTag;
+}
+
+bool DescribeTopicRuleResponse::CamTagHasBeenSet() const
+{
+    return m_camTagHasBeenSet;
 }
 
 

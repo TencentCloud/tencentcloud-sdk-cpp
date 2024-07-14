@@ -70,23 +70,15 @@ namespace TencentCloud
                     bool InstanceIdHasBeenSet() const;
 
                     /**
-                     * 获取实例配置变更后的内存大小。
-- 单位：GB。
-- 内存和磁盘必须同时升配或同时降配，即 Memory 与 Volume 需同时配置变更。
-                     * @return Memory 实例配置变更后的内存大小。
-- 单位：GB。
-- 内存和磁盘必须同时升配或同时降配，即 Memory 与 Volume 需同时配置变更。
+                     * 获取实例配置变更后的内存大小。- 单位：GB。- 内存和磁盘必须同时升配或同时降配，即 Memory 与 Volume 需同时配置变更。<br>注意：节点变更时，输入实例当前的内存配置。
+                     * @return Memory 实例配置变更后的内存大小。- 单位：GB。- 内存和磁盘必须同时升配或同时降配，即 Memory 与 Volume 需同时配置变更。<br>注意：节点变更时，输入实例当前的内存配置。
                      * 
                      */
                     uint64_t GetMemory() const;
 
                     /**
-                     * 设置实例配置变更后的内存大小。
-- 单位：GB。
-- 内存和磁盘必须同时升配或同时降配，即 Memory 与 Volume 需同时配置变更。
-                     * @param _memory 实例配置变更后的内存大小。
-- 单位：GB。
-- 内存和磁盘必须同时升配或同时降配，即 Memory 与 Volume 需同时配置变更。
+                     * 设置实例配置变更后的内存大小。- 单位：GB。- 内存和磁盘必须同时升配或同时降配，即 Memory 与 Volume 需同时配置变更。<br>注意：节点变更时，输入实例当前的内存配置。
+                     * @param _memory 实例配置变更后的内存大小。- 单位：GB。- 内存和磁盘必须同时升配或同时降配，即 Memory 与 Volume 需同时配置变更。<br>注意：节点变更时，输入实例当前的内存配置。
                      * 
                      */
                     void SetMemory(const uint64_t& _memory);
@@ -99,15 +91,15 @@ namespace TencentCloud
                     bool MemoryHasBeenSet() const;
 
                     /**
-                     * 获取实例配置变更后的硬盘大小，单位：GB。<ul><li>内存和磁盘必须同时升配或同时降配，即 Memory 与 Volume 需同时配置变更。</li><li>降配时，变更后的磁盘容量必须大于已用磁盘容量的1.2倍。</li></ul>
-                     * @return Volume 实例配置变更后的硬盘大小，单位：GB。<ul><li>内存和磁盘必须同时升配或同时降配，即 Memory 与 Volume 需同时配置变更。</li><li>降配时，变更后的磁盘容量必须大于已用磁盘容量的1.2倍。</li></ul>
+                     * 获取实例配置变更后的硬盘大小，单位：GB。<ul><li>内存和磁盘必须同时升配或同时降配，即 Memory 与 Volume 需同时配置变更。</li><li>降配时，变更后的磁盘容量必须大于已用磁盘容量的1.2倍。</li></ul>  注意：节点变更时，输入实例当前的硬盘配置。
+                     * @return Volume 实例配置变更后的硬盘大小，单位：GB。<ul><li>内存和磁盘必须同时升配或同时降配，即 Memory 与 Volume 需同时配置变更。</li><li>降配时，变更后的磁盘容量必须大于已用磁盘容量的1.2倍。</li></ul>  注意：节点变更时，输入实例当前的硬盘配置。
                      * 
                      */
                     uint64_t GetVolume() const;
 
                     /**
-                     * 设置实例配置变更后的硬盘大小，单位：GB。<ul><li>内存和磁盘必须同时升配或同时降配，即 Memory 与 Volume 需同时配置变更。</li><li>降配时，变更后的磁盘容量必须大于已用磁盘容量的1.2倍。</li></ul>
-                     * @param _volume 实例配置变更后的硬盘大小，单位：GB。<ul><li>内存和磁盘必须同时升配或同时降配，即 Memory 与 Volume 需同时配置变更。</li><li>降配时，变更后的磁盘容量必须大于已用磁盘容量的1.2倍。</li></ul>
+                     * 设置实例配置变更后的硬盘大小，单位：GB。<ul><li>内存和磁盘必须同时升配或同时降配，即 Memory 与 Volume 需同时配置变更。</li><li>降配时，变更后的磁盘容量必须大于已用磁盘容量的1.2倍。</li></ul>  注意：节点变更时，输入实例当前的硬盘配置。
+                     * @param _volume 实例配置变更后的硬盘大小，单位：GB。<ul><li>内存和磁盘必须同时升配或同时降配，即 Memory 与 Volume 需同时配置变更。</li><li>降配时，变更后的磁盘容量必须大于已用磁盘容量的1.2倍。</li></ul>  注意：节点变更时，输入实例当前的硬盘配置。
                      * 
                      */
                     void SetVolume(const uint64_t& _volume);
@@ -157,19 +149,15 @@ namespace TencentCloud
                     bool OplogSizeHasBeenSet() const;
 
                     /**
-                     * 获取实例变更后的节点数(mongod节点或mongos节点或readonly节点调整后的节点数，具体类型取决于AddNodeList或RemoveNodeList参数的节点类型)。
-<ul><li>副本集：取值范围请通过云数据库的售卖规格（DescribeSpecInfo）接口返回的参数 MinNodeNum 与 MaxNodeNum 获取。</li><li>分片集群：取值范围请通过云数据库的售卖规格（DescribeSpecInfo）接口返回的参数 MinReplicateSetNodeNum 与 MaxReplicateSetNodeNum 获取。</li></ul>
-                     * @return NodeNum 实例变更后的节点数(mongod节点或mongos节点或readonly节点调整后的节点数，具体类型取决于AddNodeList或RemoveNodeList参数的节点类型)。
-<ul><li>副本集：取值范围请通过云数据库的售卖规格（DescribeSpecInfo）接口返回的参数 MinNodeNum 与 MaxNodeNum 获取。</li><li>分片集群：取值范围请通过云数据库的售卖规格（DescribeSpecInfo）接口返回的参数 MinReplicateSetNodeNum 与 MaxReplicateSetNodeNum 获取。</li></ul>
+                     * 获取实例变更后的节点数。- 变更节点类型包含：mongod节点 或 readonly 节点，mongos节点变更无需填写。变更节点类型，请查询参数**AddNodeList**或**RemoveNodeList**指定的类型。- 副本集节点数：取值范围请通过云数据库的售卖规格 [DescribeSpecInfo](https://cloud.tencent.com/document/product/240/38567) 接口返回的参数**MinNodeNum**与 **MaxNodeNum**获取。- 分片集群每个分片节点数：取值范围请通过云数据库的售卖规格 [DescribeSpecInfo](https://cloud.tencent.com/document/product/240/38567) 接口返回的参数**MinReplicateSetNodeNum**与**MaxReplicateSetNodeNum**获取。
+                     * @return NodeNum 实例变更后的节点数。- 变更节点类型包含：mongod节点 或 readonly 节点，mongos节点变更无需填写。变更节点类型，请查询参数**AddNodeList**或**RemoveNodeList**指定的类型。- 副本集节点数：取值范围请通过云数据库的售卖规格 [DescribeSpecInfo](https://cloud.tencent.com/document/product/240/38567) 接口返回的参数**MinNodeNum**与 **MaxNodeNum**获取。- 分片集群每个分片节点数：取值范围请通过云数据库的售卖规格 [DescribeSpecInfo](https://cloud.tencent.com/document/product/240/38567) 接口返回的参数**MinReplicateSetNodeNum**与**MaxReplicateSetNodeNum**获取。
                      * 
                      */
                     uint64_t GetNodeNum() const;
 
                     /**
-                     * 设置实例变更后的节点数(mongod节点或mongos节点或readonly节点调整后的节点数，具体类型取决于AddNodeList或RemoveNodeList参数的节点类型)。
-<ul><li>副本集：取值范围请通过云数据库的售卖规格（DescribeSpecInfo）接口返回的参数 MinNodeNum 与 MaxNodeNum 获取。</li><li>分片集群：取值范围请通过云数据库的售卖规格（DescribeSpecInfo）接口返回的参数 MinReplicateSetNodeNum 与 MaxReplicateSetNodeNum 获取。</li></ul>
-                     * @param _nodeNum 实例变更后的节点数(mongod节点或mongos节点或readonly节点调整后的节点数，具体类型取决于AddNodeList或RemoveNodeList参数的节点类型)。
-<ul><li>副本集：取值范围请通过云数据库的售卖规格（DescribeSpecInfo）接口返回的参数 MinNodeNum 与 MaxNodeNum 获取。</li><li>分片集群：取值范围请通过云数据库的售卖规格（DescribeSpecInfo）接口返回的参数 MinReplicateSetNodeNum 与 MaxReplicateSetNodeNum 获取。</li></ul>
+                     * 设置实例变更后的节点数。- 变更节点类型包含：mongod节点 或 readonly 节点，mongos节点变更无需填写。变更节点类型，请查询参数**AddNodeList**或**RemoveNodeList**指定的类型。- 副本集节点数：取值范围请通过云数据库的售卖规格 [DescribeSpecInfo](https://cloud.tencent.com/document/product/240/38567) 接口返回的参数**MinNodeNum**与 **MaxNodeNum**获取。- 分片集群每个分片节点数：取值范围请通过云数据库的售卖规格 [DescribeSpecInfo](https://cloud.tencent.com/document/product/240/38567) 接口返回的参数**MinReplicateSetNodeNum**与**MaxReplicateSetNodeNum**获取。
+                     * @param _nodeNum 实例变更后的节点数。- 变更节点类型包含：mongod节点 或 readonly 节点，mongos节点变更无需填写。变更节点类型，请查询参数**AddNodeList**或**RemoveNodeList**指定的类型。- 副本集节点数：取值范围请通过云数据库的售卖规格 [DescribeSpecInfo](https://cloud.tencent.com/document/product/240/38567) 接口返回的参数**MinNodeNum**与 **MaxNodeNum**获取。- 分片集群每个分片节点数：取值范围请通过云数据库的售卖规格 [DescribeSpecInfo](https://cloud.tencent.com/document/product/240/38567) 接口返回的参数**MinReplicateSetNodeNum**与**MaxReplicateSetNodeNum**获取。
                      * 
                      */
                     void SetNodeNum(const uint64_t& _nodeNum);
@@ -182,15 +170,15 @@ namespace TencentCloud
                     bool NodeNumHasBeenSet() const;
 
                     /**
-                     * 获取实例变更后的分片数。<ul><li>取值范围请通过云数据库的售卖规格（DescribeSpecInfo）接口返回的参数MinReplicateSetNum与MaxReplicateSetNum获取。</li><li>该参数只能增加不能减少。</li></ul>
-                     * @return ReplicateSetNum 实例变更后的分片数。<ul><li>取值范围请通过云数据库的售卖规格（DescribeSpecInfo）接口返回的参数MinReplicateSetNum与MaxReplicateSetNum获取。</li><li>该参数只能增加不能减少。</li></ul>
+                     * 获取实例变更后的分片数。<ul><li>取值范围请通过云数据库的售卖规格 [DescribeSpecInfo](https://cloud.tencent.com/document/product/240/38567) 接口返回的参数**MinReplicateSetNum**与**MaxReplicateSetNum**获取。</li><li>该参数只能增加不能减少。</li></ul>
+                     * @return ReplicateSetNum 实例变更后的分片数。<ul><li>取值范围请通过云数据库的售卖规格 [DescribeSpecInfo](https://cloud.tencent.com/document/product/240/38567) 接口返回的参数**MinReplicateSetNum**与**MaxReplicateSetNum**获取。</li><li>该参数只能增加不能减少。</li></ul>
                      * 
                      */
                     uint64_t GetReplicateSetNum() const;
 
                     /**
-                     * 设置实例变更后的分片数。<ul><li>取值范围请通过云数据库的售卖规格（DescribeSpecInfo）接口返回的参数MinReplicateSetNum与MaxReplicateSetNum获取。</li><li>该参数只能增加不能减少。</li></ul>
-                     * @param _replicateSetNum 实例变更后的分片数。<ul><li>取值范围请通过云数据库的售卖规格（DescribeSpecInfo）接口返回的参数MinReplicateSetNum与MaxReplicateSetNum获取。</li><li>该参数只能增加不能减少。</li></ul>
+                     * 设置实例变更后的分片数。<ul><li>取值范围请通过云数据库的售卖规格 [DescribeSpecInfo](https://cloud.tencent.com/document/product/240/38567) 接口返回的参数**MinReplicateSetNum**与**MaxReplicateSetNum**获取。</li><li>该参数只能增加不能减少。</li></ul>
+                     * @param _replicateSetNum 实例变更后的分片数。<ul><li>取值范围请通过云数据库的售卖规格 [DescribeSpecInfo](https://cloud.tencent.com/document/product/240/38567) 接口返回的参数**MinReplicateSetNum**与**MaxReplicateSetNum**获取。</li><li>该参数只能增加不能减少。</li></ul>
                      * 
                      */
                     void SetReplicateSetNum(const uint64_t& _replicateSetNum);
@@ -203,19 +191,27 @@ namespace TencentCloud
                     bool ReplicateSetNumHasBeenSet() const;
 
                     /**
-                     * 获取实例配置变更的切换时间。<ul><li>0：调整完成时，立即执行变配任务。默认为0。</li><li>1：在维护时间窗内，执行变配任务。
-<b>说明</b>：调整节点数和分片数不支持在<b>维护时间窗内</b>变更。</li></ul>
-                     * @return InMaintenance 实例配置变更的切换时间。<ul><li>0：调整完成时，立即执行变配任务。默认为0。</li><li>1：在维护时间窗内，执行变配任务。
-<b>说明</b>：调整节点数和分片数不支持在<b>维护时间窗内</b>变更。</li></ul>
+                     * 获取实例配置变更的切换时间。
+- 0：调整完成时，立即执行变配任务。默认为0。
+- 1：在维护时间窗内，执行变配任务。
+**说明**：调整节点数和分片数不支持在<b>维护时间窗内</b>变更。
+                     * @return InMaintenance 实例配置变更的切换时间。
+- 0：调整完成时，立即执行变配任务。默认为0。
+- 1：在维护时间窗内，执行变配任务。
+**说明**：调整节点数和分片数不支持在<b>维护时间窗内</b>变更。
                      * 
                      */
                     uint64_t GetInMaintenance() const;
 
                     /**
-                     * 设置实例配置变更的切换时间。<ul><li>0：调整完成时，立即执行变配任务。默认为0。</li><li>1：在维护时间窗内，执行变配任务。
-<b>说明</b>：调整节点数和分片数不支持在<b>维护时间窗内</b>变更。</li></ul>
-                     * @param _inMaintenance 实例配置变更的切换时间。<ul><li>0：调整完成时，立即执行变配任务。默认为0。</li><li>1：在维护时间窗内，执行变配任务。
-<b>说明</b>：调整节点数和分片数不支持在<b>维护时间窗内</b>变更。</li></ul>
+                     * 设置实例配置变更的切换时间。
+- 0：调整完成时，立即执行变配任务。默认为0。
+- 1：在维护时间窗内，执行变配任务。
+**说明**：调整节点数和分片数不支持在<b>维护时间窗内</b>变更。
+                     * @param _inMaintenance 实例配置变更的切换时间。
+- 0：调整完成时，立即执行变配任务。默认为0。
+- 1：在维护时间窗内，执行变配任务。
+**说明**：调整节点数和分片数不支持在<b>维护时间窗内</b>变更。
                      * 
                      */
                     void SetInMaintenance(const uint64_t& _inMaintenance);
@@ -228,15 +224,36 @@ namespace TencentCloud
                     bool InMaintenanceHasBeenSet() const;
 
                     /**
-                     * 获取新增节点属性列表。
-                     * @return AddNodeList 新增节点属性列表。
+                     * 获取分片实例配置变更后的mongos内存大小。- 单位：GB。
+                     * @return MongosMemory 分片实例配置变更后的mongos内存大小。- 单位：GB。
+                     * 
+                     */
+                    std::string GetMongosMemory() const;
+
+                    /**
+                     * 设置分片实例配置变更后的mongos内存大小。- 单位：GB。
+                     * @param _mongosMemory 分片实例配置变更后的mongos内存大小。- 单位：GB。
+                     * 
+                     */
+                    void SetMongosMemory(const std::string& _mongosMemory);
+
+                    /**
+                     * 判断参数 MongosMemory 是否已赋值
+                     * @return MongosMemory 是否已赋值
+                     * 
+                     */
+                    bool MongosMemoryHasBeenSet() const;
+
+                    /**
+                     * 获取新增节点列表，节点类型及可用区信息。
+                     * @return AddNodeList 新增节点列表，节点类型及可用区信息。
                      * 
                      */
                     std::vector<AddNodeList> GetAddNodeList() const;
 
                     /**
-                     * 设置新增节点属性列表。
-                     * @param _addNodeList 新增节点属性列表。
+                     * 设置新增节点列表，节点类型及可用区信息。
+                     * @param _addNodeList 新增节点列表，节点类型及可用区信息。
                      * 
                      */
                     void SetAddNodeList(const std::vector<AddNodeList>& _addNodeList);
@@ -249,15 +266,15 @@ namespace TencentCloud
                     bool AddNodeListHasBeenSet() const;
 
                     /**
-                     * 获取删除节点属性列表。
-                     * @return RemoveNodeList 删除节点属性列表。
+                     * 获取删除节点列表，注意：基于分片实例各片节点的一致性原则，删除分片实例节点时，只需指定0分片对应的节点即可，如：cmgo-9nl1czif_0-node-readonly0 将删除每个分片的第1个只读节点。
+                     * @return RemoveNodeList 删除节点列表，注意：基于分片实例各片节点的一致性原则，删除分片实例节点时，只需指定0分片对应的节点即可，如：cmgo-9nl1czif_0-node-readonly0 将删除每个分片的第1个只读节点。
                      * 
                      */
                     std::vector<RemoveNodeList> GetRemoveNodeList() const;
 
                     /**
-                     * 设置删除节点属性列表。
-                     * @param _removeNodeList 删除节点属性列表。
+                     * 设置删除节点列表，注意：基于分片实例各片节点的一致性原则，删除分片实例节点时，只需指定0分片对应的节点即可，如：cmgo-9nl1czif_0-node-readonly0 将删除每个分片的第1个只读节点。
+                     * @param _removeNodeList 删除节点列表，注意：基于分片实例各片节点的一致性原则，删除分片实例节点时，只需指定0分片对应的节点即可，如：cmgo-9nl1czif_0-node-readonly0 将删除每个分片的第1个只读节点。
                      * 
                      */
                     void SetRemoveNodeList(const std::vector<RemoveNodeList>& _removeNodeList);
@@ -279,15 +296,13 @@ namespace TencentCloud
                     bool m_instanceIdHasBeenSet;
 
                     /**
-                     * 实例配置变更后的内存大小。
-- 单位：GB。
-- 内存和磁盘必须同时升配或同时降配，即 Memory 与 Volume 需同时配置变更。
+                     * 实例配置变更后的内存大小。- 单位：GB。- 内存和磁盘必须同时升配或同时降配，即 Memory 与 Volume 需同时配置变更。<br>注意：节点变更时，输入实例当前的内存配置。
                      */
                     uint64_t m_memory;
                     bool m_memoryHasBeenSet;
 
                     /**
-                     * 实例配置变更后的硬盘大小，单位：GB。<ul><li>内存和磁盘必须同时升配或同时降配，即 Memory 与 Volume 需同时配置变更。</li><li>降配时，变更后的磁盘容量必须大于已用磁盘容量的1.2倍。</li></ul>
+                     * 实例配置变更后的硬盘大小，单位：GB。<ul><li>内存和磁盘必须同时升配或同时降配，即 Memory 与 Volume 需同时配置变更。</li><li>降配时，变更后的磁盘容量必须大于已用磁盘容量的1.2倍。</li></ul>  注意：节点变更时，输入实例当前的硬盘配置。
                      */
                     uint64_t m_volume;
                     bool m_volumeHasBeenSet;
@@ -303,33 +318,40 @@ namespace TencentCloud
                     bool m_oplogSizeHasBeenSet;
 
                     /**
-                     * 实例变更后的节点数(mongod节点或mongos节点或readonly节点调整后的节点数，具体类型取决于AddNodeList或RemoveNodeList参数的节点类型)。
-<ul><li>副本集：取值范围请通过云数据库的售卖规格（DescribeSpecInfo）接口返回的参数 MinNodeNum 与 MaxNodeNum 获取。</li><li>分片集群：取值范围请通过云数据库的售卖规格（DescribeSpecInfo）接口返回的参数 MinReplicateSetNodeNum 与 MaxReplicateSetNodeNum 获取。</li></ul>
+                     * 实例变更后的节点数。- 变更节点类型包含：mongod节点 或 readonly 节点，mongos节点变更无需填写。变更节点类型，请查询参数**AddNodeList**或**RemoveNodeList**指定的类型。- 副本集节点数：取值范围请通过云数据库的售卖规格 [DescribeSpecInfo](https://cloud.tencent.com/document/product/240/38567) 接口返回的参数**MinNodeNum**与 **MaxNodeNum**获取。- 分片集群每个分片节点数：取值范围请通过云数据库的售卖规格 [DescribeSpecInfo](https://cloud.tencent.com/document/product/240/38567) 接口返回的参数**MinReplicateSetNodeNum**与**MaxReplicateSetNodeNum**获取。
                      */
                     uint64_t m_nodeNum;
                     bool m_nodeNumHasBeenSet;
 
                     /**
-                     * 实例变更后的分片数。<ul><li>取值范围请通过云数据库的售卖规格（DescribeSpecInfo）接口返回的参数MinReplicateSetNum与MaxReplicateSetNum获取。</li><li>该参数只能增加不能减少。</li></ul>
+                     * 实例变更后的分片数。<ul><li>取值范围请通过云数据库的售卖规格 [DescribeSpecInfo](https://cloud.tencent.com/document/product/240/38567) 接口返回的参数**MinReplicateSetNum**与**MaxReplicateSetNum**获取。</li><li>该参数只能增加不能减少。</li></ul>
                      */
                     uint64_t m_replicateSetNum;
                     bool m_replicateSetNumHasBeenSet;
 
                     /**
-                     * 实例配置变更的切换时间。<ul><li>0：调整完成时，立即执行变配任务。默认为0。</li><li>1：在维护时间窗内，执行变配任务。
-<b>说明</b>：调整节点数和分片数不支持在<b>维护时间窗内</b>变更。</li></ul>
+                     * 实例配置变更的切换时间。
+- 0：调整完成时，立即执行变配任务。默认为0。
+- 1：在维护时间窗内，执行变配任务。
+**说明**：调整节点数和分片数不支持在<b>维护时间窗内</b>变更。
                      */
                     uint64_t m_inMaintenance;
                     bool m_inMaintenanceHasBeenSet;
 
                     /**
-                     * 新增节点属性列表。
+                     * 分片实例配置变更后的mongos内存大小。- 单位：GB。
+                     */
+                    std::string m_mongosMemory;
+                    bool m_mongosMemoryHasBeenSet;
+
+                    /**
+                     * 新增节点列表，节点类型及可用区信息。
                      */
                     std::vector<AddNodeList> m_addNodeList;
                     bool m_addNodeListHasBeenSet;
 
                     /**
-                     * 删除节点属性列表。
+                     * 删除节点列表，注意：基于分片实例各片节点的一致性原则，删除分片实例节点时，只需指定0分片对应的节点即可，如：cmgo-9nl1czif_0-node-readonly0 将删除每个分片的第1个只读节点。
                      */
                     std::vector<RemoveNodeList> m_removeNodeList;
                     bool m_removeNodeListHasBeenSet;

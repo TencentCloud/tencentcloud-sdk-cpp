@@ -47,18 +47,18 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取对比方式：dataCheck(完整数据对比)、sampleDataCheck(抽样数据对比)、rowsCount(行数对比)
+                     * 获取对比方式：dataCheck(完整数据对比)、sampleDataCheck(抽样数据对比)、rowsCount(行数对比), 默认为dataCheck
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return Method 对比方式：dataCheck(完整数据对比)、sampleDataCheck(抽样数据对比)、rowsCount(行数对比)
+                     * @return Method 对比方式：dataCheck(完整数据对比)、sampleDataCheck(抽样数据对比)、rowsCount(行数对比), 默认为dataCheck
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetMethod() const;
 
                     /**
-                     * 设置对比方式：dataCheck(完整数据对比)、sampleDataCheck(抽样数据对比)、rowsCount(行数对比)
+                     * 设置对比方式：dataCheck(完整数据对比)、sampleDataCheck(抽样数据对比)、rowsCount(行数对比), 默认为dataCheck
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _method 对比方式：dataCheck(完整数据对比)、sampleDataCheck(抽样数据对比)、rowsCount(行数对比)
+                     * @param _method 对比方式：dataCheck(完整数据对比)、sampleDataCheck(抽样数据对比)、rowsCount(行数对比), 默认为dataCheck
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -72,18 +72,18 @@ namespace TencentCloud
                     bool MethodHasBeenSet() const;
 
                     /**
-                     * 获取抽样比例;范围0,100
+                     * 获取抽样比例;范围0,100。默认为100
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return SampleRate 抽样比例;范围0,100
+                     * @return SampleRate 抽样比例;范围0,100。默认为100
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetSampleRate() const;
 
                     /**
-                     * 设置抽样比例;范围0,100
+                     * 设置抽样比例;范围0,100。默认为100
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _sampleRate 抽样比例;范围0,100
+                     * @param _sampleRate 抽样比例;范围0,100。默认为100
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -124,14 +124,14 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 对比方式：dataCheck(完整数据对比)、sampleDataCheck(抽样数据对比)、rowsCount(行数对比)
+                     * 对比方式：dataCheck(完整数据对比)、sampleDataCheck(抽样数据对比)、rowsCount(行数对比), 默认为dataCheck
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_method;
                     bool m_methodHasBeenSet;
 
                     /**
-                     * 抽样比例;范围0,100
+                     * 抽样比例;范围0,100。默认为100
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_sampleRate;

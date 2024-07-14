@@ -22,6 +22,7 @@
 #include <map>
 #include <tencentcloud/core/AbstractModel.h>
 #include <tencentcloud/iotexplorer/v20190423/model/TopicRule.h>
+#include <tencentcloud/iotexplorer/v20190423/model/CamTag.h>
 
 
 namespace TencentCloud
@@ -60,6 +61,22 @@ namespace TencentCloud
                      */
                     bool RuleHasBeenSet() const;
 
+                    /**
+                     * 获取规则绑定的标签
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return CamTag 规则绑定的标签
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::vector<CamTag> GetCamTag() const;
+
+                    /**
+                     * 判断参数 CamTag 是否已赋值
+                     * @return CamTag 是否已赋值
+                     * 
+                     */
+                    bool CamTagHasBeenSet() const;
+
                 private:
 
                     /**
@@ -68,6 +85,13 @@ namespace TencentCloud
                      */
                     TopicRule m_rule;
                     bool m_ruleHasBeenSet;
+
+                    /**
+                     * 规则绑定的标签
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::vector<CamTag> m_camTag;
+                    bool m_camTagHasBeenSet;
 
                 };
             }

@@ -23,6 +23,7 @@ using namespace TencentCloud::Lke::V20231130::Model;
 using namespace std;
 
 CreateReconstructDocumentFlowRequest::CreateReconstructDocumentFlowRequest() :
+    m_fileTypeHasBeenSet(false),
     m_fileBase64HasBeenSet(false),
     m_fileUrlHasBeenSet(false),
     m_fileStartPageNumberHasBeenSet(false),
@@ -37,6 +38,14 @@ string CreateReconstructDocumentFlowRequest::ToJsonString() const
     d.SetObject();
     rapidjson::Document::AllocatorType& allocator = d.GetAllocator();
 
+
+    if (m_fileTypeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "FileType";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_fileType.c_str(), allocator).Move(), allocator);
+    }
 
     if (m_fileBase64HasBeenSet)
     {
@@ -86,6 +95,22 @@ string CreateReconstructDocumentFlowRequest::ToJsonString() const
     return buffer.GetString();
 }
 
+
+string CreateReconstructDocumentFlowRequest::GetFileType() const
+{
+    return m_fileType;
+}
+
+void CreateReconstructDocumentFlowRequest::SetFileType(const string& _fileType)
+{
+    m_fileType = _fileType;
+    m_fileTypeHasBeenSet = true;
+}
+
+bool CreateReconstructDocumentFlowRequest::FileTypeHasBeenSet() const
+{
+    return m_fileTypeHasBeenSet;
+}
 
 string CreateReconstructDocumentFlowRequest::GetFileBase64() const
 {

@@ -636,6 +636,27 @@ namespace TencentCloud
                      */
                     bool EsServerlessSpaceHasBeenSet() const;
 
+                    /**
+                     * 获取flink版本
+                     * @return FlinkVersion flink版本
+                     * 
+                     */
+                    std::string GetFlinkVersion() const;
+
+                    /**
+                     * 设置flink版本
+                     * @param _flinkVersion flink版本
+                     * 
+                     */
+                    void SetFlinkVersion(const std::string& _flinkVersion);
+
+                    /**
+                     * 判断参数 FlinkVersion 是否已赋值
+                     * @return FlinkVersion 是否已赋值
+                     * 
+                     */
+                    bool FlinkVersionHasBeenSet() const;
+
                 private:
 
                     /**
@@ -805,6 +826,12 @@ namespace TencentCloud
                      */
                     std::string m_esServerlessSpace;
                     bool m_esServerlessSpaceHasBeenSet;
+
+                    /**
+                     * flink版本
+                     */
+                    std::string m_flinkVersion;
+                    bool m_flinkVersionHasBeenSet;
 
                 };
             }
