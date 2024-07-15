@@ -685,6 +685,49 @@ VpcClient::AssociateDirectConnectGatewayNatGatewayOutcomeCallable VpcClient::Ass
     return task->get_future();
 }
 
+VpcClient::AssociateInstancesToCcnRouteTableOutcome VpcClient::AssociateInstancesToCcnRouteTable(const AssociateInstancesToCcnRouteTableRequest &request)
+{
+    auto outcome = MakeRequest(request, "AssociateInstancesToCcnRouteTable");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        AssociateInstancesToCcnRouteTableResponse rsp = AssociateInstancesToCcnRouteTableResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return AssociateInstancesToCcnRouteTableOutcome(rsp);
+        else
+            return AssociateInstancesToCcnRouteTableOutcome(o.GetError());
+    }
+    else
+    {
+        return AssociateInstancesToCcnRouteTableOutcome(outcome.GetError());
+    }
+}
+
+void VpcClient::AssociateInstancesToCcnRouteTableAsync(const AssociateInstancesToCcnRouteTableRequest& request, const AssociateInstancesToCcnRouteTableAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->AssociateInstancesToCcnRouteTable(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+VpcClient::AssociateInstancesToCcnRouteTableOutcomeCallable VpcClient::AssociateInstancesToCcnRouteTableCallable(const AssociateInstancesToCcnRouteTableRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<AssociateInstancesToCcnRouteTableOutcome()>>(
+        [this, request]()
+        {
+            return this->AssociateInstancesToCcnRouteTable(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 VpcClient::AssociateNatGatewayAddressOutcome VpcClient::AssociateNatGatewayAddress(const AssociateNatGatewayAddressRequest &request)
 {
     auto outcome = MakeRequest(request, "AssociateNatGatewayAddress");
@@ -1158,6 +1201,49 @@ VpcClient::CheckNetDetectStateOutcomeCallable VpcClient::CheckNetDetectStateCall
     return task->get_future();
 }
 
+VpcClient::ClearRouteTableSelectionPoliciesOutcome VpcClient::ClearRouteTableSelectionPolicies(const ClearRouteTableSelectionPoliciesRequest &request)
+{
+    auto outcome = MakeRequest(request, "ClearRouteTableSelectionPolicies");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ClearRouteTableSelectionPoliciesResponse rsp = ClearRouteTableSelectionPoliciesResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ClearRouteTableSelectionPoliciesOutcome(rsp);
+        else
+            return ClearRouteTableSelectionPoliciesOutcome(o.GetError());
+    }
+    else
+    {
+        return ClearRouteTableSelectionPoliciesOutcome(outcome.GetError());
+    }
+}
+
+void VpcClient::ClearRouteTableSelectionPoliciesAsync(const ClearRouteTableSelectionPoliciesRequest& request, const ClearRouteTableSelectionPoliciesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->ClearRouteTableSelectionPolicies(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+VpcClient::ClearRouteTableSelectionPoliciesOutcomeCallable VpcClient::ClearRouteTableSelectionPoliciesCallable(const ClearRouteTableSelectionPoliciesRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<ClearRouteTableSelectionPoliciesOutcome()>>(
+        [this, request]()
+        {
+            return this->ClearRouteTableSelectionPolicies(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 VpcClient::CloneSecurityGroupOutcome VpcClient::CloneSecurityGroup(const CloneSecurityGroupRequest &request)
 {
     auto outcome = MakeRequest(request, "CloneSecurityGroup");
@@ -1452,6 +1538,49 @@ VpcClient::CreateCcnOutcomeCallable VpcClient::CreateCcnCallable(const CreateCcn
         [this, request]()
         {
             return this->CreateCcn(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+VpcClient::CreateCcnRouteTablesOutcome VpcClient::CreateCcnRouteTables(const CreateCcnRouteTablesRequest &request)
+{
+    auto outcome = MakeRequest(request, "CreateCcnRouteTables");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        CreateCcnRouteTablesResponse rsp = CreateCcnRouteTablesResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return CreateCcnRouteTablesOutcome(rsp);
+        else
+            return CreateCcnRouteTablesOutcome(o.GetError());
+    }
+    else
+    {
+        return CreateCcnRouteTablesOutcome(outcome.GetError());
+    }
+}
+
+void VpcClient::CreateCcnRouteTablesAsync(const CreateCcnRouteTablesRequest& request, const CreateCcnRouteTablesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->CreateCcnRouteTables(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+VpcClient::CreateCcnRouteTablesOutcomeCallable VpcClient::CreateCcnRouteTablesCallable(const CreateCcnRouteTablesRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<CreateCcnRouteTablesOutcome()>>(
+        [this, request]()
+        {
+            return this->CreateCcnRouteTables(request);
         }
     );
 
@@ -3516,6 +3645,49 @@ VpcClient::DeleteCcnOutcomeCallable VpcClient::DeleteCcnCallable(const DeleteCcn
         [this, request]()
         {
             return this->DeleteCcn(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+VpcClient::DeleteCcnRouteTablesOutcome VpcClient::DeleteCcnRouteTables(const DeleteCcnRouteTablesRequest &request)
+{
+    auto outcome = MakeRequest(request, "DeleteCcnRouteTables");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DeleteCcnRouteTablesResponse rsp = DeleteCcnRouteTablesResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DeleteCcnRouteTablesOutcome(rsp);
+        else
+            return DeleteCcnRouteTablesOutcome(o.GetError());
+    }
+    else
+    {
+        return DeleteCcnRouteTablesOutcome(outcome.GetError());
+    }
+}
+
+void VpcClient::DeleteCcnRouteTablesAsync(const DeleteCcnRouteTablesRequest& request, const DeleteCcnRouteTablesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DeleteCcnRouteTables(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+VpcClient::DeleteCcnRouteTablesOutcomeCallable VpcClient::DeleteCcnRouteTablesCallable(const DeleteCcnRouteTablesRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DeleteCcnRouteTablesOutcome()>>(
+        [this, request]()
+        {
+            return this->DeleteCcnRouteTables(request);
         }
     );
 
@@ -5759,6 +5931,135 @@ VpcClient::DescribeCcnRegionBandwidthLimitsOutcomeCallable VpcClient::DescribeCc
     return task->get_future();
 }
 
+VpcClient::DescribeCcnRouteTableBroadcastPolicysOutcome VpcClient::DescribeCcnRouteTableBroadcastPolicys(const DescribeCcnRouteTableBroadcastPolicysRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeCcnRouteTableBroadcastPolicys");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeCcnRouteTableBroadcastPolicysResponse rsp = DescribeCcnRouteTableBroadcastPolicysResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeCcnRouteTableBroadcastPolicysOutcome(rsp);
+        else
+            return DescribeCcnRouteTableBroadcastPolicysOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeCcnRouteTableBroadcastPolicysOutcome(outcome.GetError());
+    }
+}
+
+void VpcClient::DescribeCcnRouteTableBroadcastPolicysAsync(const DescribeCcnRouteTableBroadcastPolicysRequest& request, const DescribeCcnRouteTableBroadcastPolicysAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeCcnRouteTableBroadcastPolicys(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+VpcClient::DescribeCcnRouteTableBroadcastPolicysOutcomeCallable VpcClient::DescribeCcnRouteTableBroadcastPolicysCallable(const DescribeCcnRouteTableBroadcastPolicysRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeCcnRouteTableBroadcastPolicysOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeCcnRouteTableBroadcastPolicys(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+VpcClient::DescribeCcnRouteTableInputPolicysOutcome VpcClient::DescribeCcnRouteTableInputPolicys(const DescribeCcnRouteTableInputPolicysRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeCcnRouteTableInputPolicys");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeCcnRouteTableInputPolicysResponse rsp = DescribeCcnRouteTableInputPolicysResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeCcnRouteTableInputPolicysOutcome(rsp);
+        else
+            return DescribeCcnRouteTableInputPolicysOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeCcnRouteTableInputPolicysOutcome(outcome.GetError());
+    }
+}
+
+void VpcClient::DescribeCcnRouteTableInputPolicysAsync(const DescribeCcnRouteTableInputPolicysRequest& request, const DescribeCcnRouteTableInputPolicysAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeCcnRouteTableInputPolicys(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+VpcClient::DescribeCcnRouteTableInputPolicysOutcomeCallable VpcClient::DescribeCcnRouteTableInputPolicysCallable(const DescribeCcnRouteTableInputPolicysRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeCcnRouteTableInputPolicysOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeCcnRouteTableInputPolicys(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+VpcClient::DescribeCcnRouteTablesOutcome VpcClient::DescribeCcnRouteTables(const DescribeCcnRouteTablesRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeCcnRouteTables");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeCcnRouteTablesResponse rsp = DescribeCcnRouteTablesResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeCcnRouteTablesOutcome(rsp);
+        else
+            return DescribeCcnRouteTablesOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeCcnRouteTablesOutcome(outcome.GetError());
+    }
+}
+
+void VpcClient::DescribeCcnRouteTablesAsync(const DescribeCcnRouteTablesRequest& request, const DescribeCcnRouteTablesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeCcnRouteTables(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+VpcClient::DescribeCcnRouteTablesOutcomeCallable VpcClient::DescribeCcnRouteTablesCallable(const DescribeCcnRouteTablesRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeCcnRouteTablesOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeCcnRouteTables(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 VpcClient::DescribeCcnRoutesOutcome VpcClient::DescribeCcnRoutes(const DescribeCcnRoutesRequest &request)
 {
     auto outcome = MakeRequest(request, "DescribeCcnRoutes");
@@ -7515,6 +7816,92 @@ VpcClient::DescribeRouteConflictsOutcomeCallable VpcClient::DescribeRouteConflic
         [this, request]()
         {
             return this->DescribeRouteConflicts(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+VpcClient::DescribeRouteTableAssociatedInstancesOutcome VpcClient::DescribeRouteTableAssociatedInstances(const DescribeRouteTableAssociatedInstancesRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeRouteTableAssociatedInstances");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeRouteTableAssociatedInstancesResponse rsp = DescribeRouteTableAssociatedInstancesResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeRouteTableAssociatedInstancesOutcome(rsp);
+        else
+            return DescribeRouteTableAssociatedInstancesOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeRouteTableAssociatedInstancesOutcome(outcome.GetError());
+    }
+}
+
+void VpcClient::DescribeRouteTableAssociatedInstancesAsync(const DescribeRouteTableAssociatedInstancesRequest& request, const DescribeRouteTableAssociatedInstancesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeRouteTableAssociatedInstances(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+VpcClient::DescribeRouteTableAssociatedInstancesOutcomeCallable VpcClient::DescribeRouteTableAssociatedInstancesCallable(const DescribeRouteTableAssociatedInstancesRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeRouteTableAssociatedInstancesOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeRouteTableAssociatedInstances(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+VpcClient::DescribeRouteTableSelectionPoliciesOutcome VpcClient::DescribeRouteTableSelectionPolicies(const DescribeRouteTableSelectionPoliciesRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeRouteTableSelectionPolicies");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeRouteTableSelectionPoliciesResponse rsp = DescribeRouteTableSelectionPoliciesResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeRouteTableSelectionPoliciesOutcome(rsp);
+        else
+            return DescribeRouteTableSelectionPoliciesOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeRouteTableSelectionPoliciesOutcome(outcome.GetError());
+    }
+}
+
+void VpcClient::DescribeRouteTableSelectionPoliciesAsync(const DescribeRouteTableSelectionPoliciesRequest& request, const DescribeRouteTableSelectionPoliciesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeRouteTableSelectionPolicies(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+VpcClient::DescribeRouteTableSelectionPoliciesOutcomeCallable VpcClient::DescribeRouteTableSelectionPoliciesCallable(const DescribeRouteTableSelectionPoliciesRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeRouteTableSelectionPoliciesOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeRouteTableSelectionPolicies(request);
         }
     );
 
@@ -11177,6 +11564,49 @@ VpcClient::ModifyCcnRegionBandwidthLimitsTypeOutcomeCallable VpcClient::ModifyCc
     return task->get_future();
 }
 
+VpcClient::ModifyCcnRouteTablesOutcome VpcClient::ModifyCcnRouteTables(const ModifyCcnRouteTablesRequest &request)
+{
+    auto outcome = MakeRequest(request, "ModifyCcnRouteTables");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ModifyCcnRouteTablesResponse rsp = ModifyCcnRouteTablesResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ModifyCcnRouteTablesOutcome(rsp);
+        else
+            return ModifyCcnRouteTablesOutcome(o.GetError());
+    }
+    else
+    {
+        return ModifyCcnRouteTablesOutcome(outcome.GetError());
+    }
+}
+
+void VpcClient::ModifyCcnRouteTablesAsync(const ModifyCcnRouteTablesRequest& request, const ModifyCcnRouteTablesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->ModifyCcnRouteTables(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+VpcClient::ModifyCcnRouteTablesOutcomeCallable VpcClient::ModifyCcnRouteTablesCallable(const ModifyCcnRouteTablesRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<ModifyCcnRouteTablesOutcome()>>(
+        [this, request]()
+        {
+            return this->ModifyCcnRouteTables(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 VpcClient::ModifyCustomerGatewayAttributeOutcome VpcClient::ModifyCustomerGatewayAttribute(const ModifyCustomerGatewayAttributeRequest &request)
 {
     auto outcome = MakeRequest(request, "ModifyCustomerGatewayAttribute");
@@ -12288,6 +12718,49 @@ VpcClient::ModifyRouteTableAttributeOutcomeCallable VpcClient::ModifyRouteTableA
         [this, request]()
         {
             return this->ModifyRouteTableAttribute(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+VpcClient::ModifyRouteTableSelectionPoliciesOutcome VpcClient::ModifyRouteTableSelectionPolicies(const ModifyRouteTableSelectionPoliciesRequest &request)
+{
+    auto outcome = MakeRequest(request, "ModifyRouteTableSelectionPolicies");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ModifyRouteTableSelectionPoliciesResponse rsp = ModifyRouteTableSelectionPoliciesResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ModifyRouteTableSelectionPoliciesOutcome(rsp);
+        else
+            return ModifyRouteTableSelectionPoliciesOutcome(o.GetError());
+    }
+    else
+    {
+        return ModifyRouteTableSelectionPoliciesOutcome(outcome.GetError());
+    }
+}
+
+void VpcClient::ModifyRouteTableSelectionPoliciesAsync(const ModifyRouteTableSelectionPoliciesRequest& request, const ModifyRouteTableSelectionPoliciesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->ModifyRouteTableSelectionPolicies(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+VpcClient::ModifyRouteTableSelectionPoliciesOutcomeCallable VpcClient::ModifyRouteTableSelectionPoliciesCallable(const ModifyRouteTableSelectionPoliciesRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<ModifyRouteTableSelectionPoliciesOutcome()>>(
+        [this, request]()
+        {
+            return this->ModifyRouteTableSelectionPolicies(request);
         }
     );
 
@@ -13492,6 +13965,92 @@ VpcClient::RenewVpnGatewayOutcomeCallable VpcClient::RenewVpnGatewayCallable(con
         [this, request]()
         {
             return this->RenewVpnGateway(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+VpcClient::ReplaceCcnRouteTableBroadcastPolicysOutcome VpcClient::ReplaceCcnRouteTableBroadcastPolicys(const ReplaceCcnRouteTableBroadcastPolicysRequest &request)
+{
+    auto outcome = MakeRequest(request, "ReplaceCcnRouteTableBroadcastPolicys");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ReplaceCcnRouteTableBroadcastPolicysResponse rsp = ReplaceCcnRouteTableBroadcastPolicysResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ReplaceCcnRouteTableBroadcastPolicysOutcome(rsp);
+        else
+            return ReplaceCcnRouteTableBroadcastPolicysOutcome(o.GetError());
+    }
+    else
+    {
+        return ReplaceCcnRouteTableBroadcastPolicysOutcome(outcome.GetError());
+    }
+}
+
+void VpcClient::ReplaceCcnRouteTableBroadcastPolicysAsync(const ReplaceCcnRouteTableBroadcastPolicysRequest& request, const ReplaceCcnRouteTableBroadcastPolicysAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->ReplaceCcnRouteTableBroadcastPolicys(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+VpcClient::ReplaceCcnRouteTableBroadcastPolicysOutcomeCallable VpcClient::ReplaceCcnRouteTableBroadcastPolicysCallable(const ReplaceCcnRouteTableBroadcastPolicysRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<ReplaceCcnRouteTableBroadcastPolicysOutcome()>>(
+        [this, request]()
+        {
+            return this->ReplaceCcnRouteTableBroadcastPolicys(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+VpcClient::ReplaceCcnRouteTableInputPolicysOutcome VpcClient::ReplaceCcnRouteTableInputPolicys(const ReplaceCcnRouteTableInputPolicysRequest &request)
+{
+    auto outcome = MakeRequest(request, "ReplaceCcnRouteTableInputPolicys");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ReplaceCcnRouteTableInputPolicysResponse rsp = ReplaceCcnRouteTableInputPolicysResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ReplaceCcnRouteTableInputPolicysOutcome(rsp);
+        else
+            return ReplaceCcnRouteTableInputPolicysOutcome(o.GetError());
+    }
+    else
+    {
+        return ReplaceCcnRouteTableInputPolicysOutcome(outcome.GetError());
+    }
+}
+
+void VpcClient::ReplaceCcnRouteTableInputPolicysAsync(const ReplaceCcnRouteTableInputPolicysRequest& request, const ReplaceCcnRouteTableInputPolicysAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->ReplaceCcnRouteTableInputPolicys(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+VpcClient::ReplaceCcnRouteTableInputPolicysOutcomeCallable VpcClient::ReplaceCcnRouteTableInputPolicysCallable(const ReplaceCcnRouteTableInputPolicysRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<ReplaceCcnRouteTableInputPolicysOutcome()>>(
+        [this, request]()
+        {
+            return this->ReplaceCcnRouteTableInputPolicys(request);
         }
     );
 

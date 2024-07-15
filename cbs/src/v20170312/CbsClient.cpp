@@ -857,6 +857,49 @@ CbsClient::DescribeInstancesDiskNumOutcomeCallable CbsClient::DescribeInstancesD
     return task->get_future();
 }
 
+CbsClient::DescribeSnapshotOverviewOutcome CbsClient::DescribeSnapshotOverview(const DescribeSnapshotOverviewRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeSnapshotOverview");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeSnapshotOverviewResponse rsp = DescribeSnapshotOverviewResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeSnapshotOverviewOutcome(rsp);
+        else
+            return DescribeSnapshotOverviewOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeSnapshotOverviewOutcome(outcome.GetError());
+    }
+}
+
+void CbsClient::DescribeSnapshotOverviewAsync(const DescribeSnapshotOverviewRequest& request, const DescribeSnapshotOverviewAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeSnapshotOverview(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+CbsClient::DescribeSnapshotOverviewOutcomeCallable CbsClient::DescribeSnapshotOverviewCallable(const DescribeSnapshotOverviewRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeSnapshotOverviewOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeSnapshotOverview(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 CbsClient::DescribeSnapshotSharePermissionOutcome CbsClient::DescribeSnapshotSharePermission(const DescribeSnapshotSharePermissionRequest &request)
 {
     auto outcome = MakeRequest(request, "DescribeSnapshotSharePermission");

@@ -25,6 +25,7 @@
 #include <tencentcloud/clb/v20180317/model/TagInfo.h>
 #include <tencentcloud/clb/v20180317/model/ExclusiveCluster.h>
 #include <tencentcloud/clb/v20180317/model/SnatIp.h>
+#include <tencentcloud/clb/v20180317/model/LBChargePrepaid.h>
 
 
 namespace TencentCloud
@@ -637,6 +638,27 @@ OPEN：公网属性， INTERNAL：内网属性。
                      */
                     bool EgressHasBeenSet() const;
 
+                    /**
+                     * 获取负载均衡实例的预付费相关属性
+                     * @return LBChargePrepaid 负载均衡实例的预付费相关属性
+                     * 
+                     */
+                    LBChargePrepaid GetLBChargePrepaid() const;
+
+                    /**
+                     * 设置负载均衡实例的预付费相关属性
+                     * @param _lBChargePrepaid 负载均衡实例的预付费相关属性
+                     * 
+                     */
+                    void SetLBChargePrepaid(const LBChargePrepaid& _lBChargePrepaid);
+
+                    /**
+                     * 判断参数 LBChargePrepaid 是否已赋值
+                     * @return LBChargePrepaid 是否已赋值
+                     * 
+                     */
+                    bool LBChargePrepaidHasBeenSet() const;
+
                 private:
 
                     /**
@@ -806,6 +828,12 @@ OPEN：公网属性， INTERNAL：内网属性。
                      */
                     std::string m_egress;
                     bool m_egressHasBeenSet;
+
+                    /**
+                     * 负载均衡实例的预付费相关属性
+                     */
+                    LBChargePrepaid m_lBChargePrepaid;
+                    bool m_lBChargePrepaidHasBeenSet;
 
                 };
             }

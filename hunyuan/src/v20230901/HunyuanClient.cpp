@@ -255,3 +255,46 @@ HunyuanClient::SubmitHunyuanImageJobOutcomeCallable HunyuanClient::SubmitHunyuan
     return task->get_future();
 }
 
+HunyuanClient::TextToImageLiteOutcome HunyuanClient::TextToImageLite(const TextToImageLiteRequest &request)
+{
+    auto outcome = MakeRequest(request, "TextToImageLite");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        TextToImageLiteResponse rsp = TextToImageLiteResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return TextToImageLiteOutcome(rsp);
+        else
+            return TextToImageLiteOutcome(o.GetError());
+    }
+    else
+    {
+        return TextToImageLiteOutcome(outcome.GetError());
+    }
+}
+
+void HunyuanClient::TextToImageLiteAsync(const TextToImageLiteRequest& request, const TextToImageLiteAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->TextToImageLite(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+HunyuanClient::TextToImageLiteOutcomeCallable HunyuanClient::TextToImageLiteCallable(const TextToImageLiteRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<TextToImageLiteOutcome()>>(
+        [this, request]()
+        {
+            return this->TextToImageLite(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+

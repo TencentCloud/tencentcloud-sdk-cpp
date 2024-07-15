@@ -85,15 +85,15 @@ namespace TencentCloud
                     bool RealNameHasBeenSet() const;
 
                     /**
-                     * 获取大陆手机号直接填写，如果是其他国家、地区号码,按照"国家地区代码|手机号"的格式输入。如: "+852|xxxxxxxx"
-                     * @return Phone 大陆手机号直接填写，如果是其他国家、地区号码,按照"国家地区代码|手机号"的格式输入。如: "+852|xxxxxxxx"
+                     * 获取按照"国家地区代码|手机号"的格式输入。如: "+86|xxxxxxxx"
+                     * @return Phone 按照"国家地区代码|手机号"的格式输入。如: "+86|xxxxxxxx"
                      * 
                      */
                     std::string GetPhone() const;
 
                     /**
-                     * 设置大陆手机号直接填写，如果是其他国家、地区号码,按照"国家地区代码|手机号"的格式输入。如: "+852|xxxxxxxx"
-                     * @param _phone 大陆手机号直接填写，如果是其他国家、地区号码,按照"国家地区代码|手机号"的格式输入。如: "+852|xxxxxxxx"
+                     * 设置按照"国家地区代码|手机号"的格式输入。如: "+86|xxxxxxxx"
+                     * @param _phone 按照"国家地区代码|手机号"的格式输入。如: "+86|xxxxxxxx"
                      * 
                      */
                     void SetPhone(const std::string& _phone);
@@ -275,7 +275,7 @@ namespace TencentCloud
                     bool m_realNameHasBeenSet;
 
                     /**
-                     * 大陆手机号直接填写，如果是其他国家、地区号码,按照"国家地区代码|手机号"的格式输入。如: "+852|xxxxxxxx"
+                     * 按照"国家地区代码|手机号"的格式输入。如: "+86|xxxxxxxx"
                      */
                     std::string m_phone;
                     bool m_phoneHasBeenSet;

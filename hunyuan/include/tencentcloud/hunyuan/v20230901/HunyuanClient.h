@@ -33,6 +33,8 @@
 #include <tencentcloud/hunyuan/v20230901/model/QueryHunyuanImageJobResponse.h>
 #include <tencentcloud/hunyuan/v20230901/model/SubmitHunyuanImageJobRequest.h>
 #include <tencentcloud/hunyuan/v20230901/model/SubmitHunyuanImageJobResponse.h>
+#include <tencentcloud/hunyuan/v20230901/model/TextToImageLiteRequest.h>
+#include <tencentcloud/hunyuan/v20230901/model/TextToImageLiteResponse.h>
 
 
 namespace TencentCloud
@@ -62,6 +64,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::SubmitHunyuanImageJobResponse> SubmitHunyuanImageJobOutcome;
                 typedef std::future<SubmitHunyuanImageJobOutcome> SubmitHunyuanImageJobOutcomeCallable;
                 typedef std::function<void(const HunyuanClient*, const Model::SubmitHunyuanImageJobRequest&, SubmitHunyuanImageJobOutcome, const std::shared_ptr<const AsyncCallerContext>&)> SubmitHunyuanImageJobAsyncHandler;
+                typedef Outcome<Core::Error, Model::TextToImageLiteResponse> TextToImageLiteOutcome;
+                typedef std::future<TextToImageLiteOutcome> TextToImageLiteOutcomeCallable;
+                typedef std::function<void(const HunyuanClient*, const Model::TextToImageLiteRequest&, TextToImageLiteOutcome, const std::shared_ptr<const AsyncCallerContext>&)> TextToImageLiteAsyncHandler;
 
 
 
@@ -120,6 +125,16 @@ namespace TencentCloud
                 SubmitHunyuanImageJobOutcome SubmitHunyuanImageJob(const Model::SubmitHunyuanImageJobRequest &request);
                 void SubmitHunyuanImageJobAsync(const Model::SubmitHunyuanImageJobRequest& request, const SubmitHunyuanImageJobAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 SubmitHunyuanImageJobOutcomeCallable SubmitHunyuanImageJobCallable(const Model::SubmitHunyuanImageJobRequest& request);
+
+                /**
+                 *文生图轻量版接口根据输入的文本描述，智能生成与之相关的结果图。
+文生图轻量版默认提供3个并发任务数，代表最多能同时处理3个已提交的任务，上一个任务处理完毕后才能开始处理下一个任务。
+                 * @param req TextToImageLiteRequest
+                 * @return TextToImageLiteOutcome
+                 */
+                TextToImageLiteOutcome TextToImageLite(const Model::TextToImageLiteRequest &request);
+                void TextToImageLiteAsync(const Model::TextToImageLiteRequest& request, const TextToImageLiteAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                TextToImageLiteOutcomeCallable TextToImageLiteCallable(const Model::TextToImageLiteRequest& request);
 
             };
         }

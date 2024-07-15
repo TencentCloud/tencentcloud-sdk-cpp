@@ -53,6 +53,8 @@
 #include <tencentcloud/vpc/v20170312/model/AssociateDhcpIpWithAddressIpResponse.h>
 #include <tencentcloud/vpc/v20170312/model/AssociateDirectConnectGatewayNatGatewayRequest.h>
 #include <tencentcloud/vpc/v20170312/model/AssociateDirectConnectGatewayNatGatewayResponse.h>
+#include <tencentcloud/vpc/v20170312/model/AssociateInstancesToCcnRouteTableRequest.h>
+#include <tencentcloud/vpc/v20170312/model/AssociateInstancesToCcnRouteTableResponse.h>
 #include <tencentcloud/vpc/v20170312/model/AssociateNatGatewayAddressRequest.h>
 #include <tencentcloud/vpc/v20170312/model/AssociateNatGatewayAddressResponse.h>
 #include <tencentcloud/vpc/v20170312/model/AssociateNetworkAclSubnetsRequest.h>
@@ -75,6 +77,8 @@
 #include <tencentcloud/vpc/v20170312/model/CheckDefaultSubnetResponse.h>
 #include <tencentcloud/vpc/v20170312/model/CheckNetDetectStateRequest.h>
 #include <tencentcloud/vpc/v20170312/model/CheckNetDetectStateResponse.h>
+#include <tencentcloud/vpc/v20170312/model/ClearRouteTableSelectionPoliciesRequest.h>
+#include <tencentcloud/vpc/v20170312/model/ClearRouteTableSelectionPoliciesResponse.h>
 #include <tencentcloud/vpc/v20170312/model/CloneSecurityGroupRequest.h>
 #include <tencentcloud/vpc/v20170312/model/CloneSecurityGroupResponse.h>
 #include <tencentcloud/vpc/v20170312/model/CreateAddressTemplateRequest.h>
@@ -89,6 +93,8 @@
 #include <tencentcloud/vpc/v20170312/model/CreateBandwidthPackageResponse.h>
 #include <tencentcloud/vpc/v20170312/model/CreateCcnRequest.h>
 #include <tencentcloud/vpc/v20170312/model/CreateCcnResponse.h>
+#include <tencentcloud/vpc/v20170312/model/CreateCcnRouteTablesRequest.h>
+#include <tencentcloud/vpc/v20170312/model/CreateCcnRouteTablesResponse.h>
 #include <tencentcloud/vpc/v20170312/model/CreateCustomerGatewayRequest.h>
 #include <tencentcloud/vpc/v20170312/model/CreateCustomerGatewayResponse.h>
 #include <tencentcloud/vpc/v20170312/model/CreateDefaultSecurityGroupRequest.h>
@@ -185,6 +191,8 @@
 #include <tencentcloud/vpc/v20170312/model/DeleteBandwidthPackageResponse.h>
 #include <tencentcloud/vpc/v20170312/model/DeleteCcnRequest.h>
 #include <tencentcloud/vpc/v20170312/model/DeleteCcnResponse.h>
+#include <tencentcloud/vpc/v20170312/model/DeleteCcnRouteTablesRequest.h>
+#include <tencentcloud/vpc/v20170312/model/DeleteCcnRouteTablesResponse.h>
 #include <tencentcloud/vpc/v20170312/model/DeleteCustomerGatewayRequest.h>
 #include <tencentcloud/vpc/v20170312/model/DeleteCustomerGatewayResponse.h>
 #include <tencentcloud/vpc/v20170312/model/DeleteDhcpIpRequest.h>
@@ -289,6 +297,12 @@
 #include <tencentcloud/vpc/v20170312/model/DescribeCcnAttachedInstancesResponse.h>
 #include <tencentcloud/vpc/v20170312/model/DescribeCcnRegionBandwidthLimitsRequest.h>
 #include <tencentcloud/vpc/v20170312/model/DescribeCcnRegionBandwidthLimitsResponse.h>
+#include <tencentcloud/vpc/v20170312/model/DescribeCcnRouteTableBroadcastPolicysRequest.h>
+#include <tencentcloud/vpc/v20170312/model/DescribeCcnRouteTableBroadcastPolicysResponse.h>
+#include <tencentcloud/vpc/v20170312/model/DescribeCcnRouteTableInputPolicysRequest.h>
+#include <tencentcloud/vpc/v20170312/model/DescribeCcnRouteTableInputPolicysResponse.h>
+#include <tencentcloud/vpc/v20170312/model/DescribeCcnRouteTablesRequest.h>
+#include <tencentcloud/vpc/v20170312/model/DescribeCcnRouteTablesResponse.h>
 #include <tencentcloud/vpc/v20170312/model/DescribeCcnRoutesRequest.h>
 #include <tencentcloud/vpc/v20170312/model/DescribeCcnRoutesResponse.h>
 #include <tencentcloud/vpc/v20170312/model/DescribeCcnsRequest.h>
@@ -371,6 +385,10 @@
 #include <tencentcloud/vpc/v20170312/model/DescribeProductQuotaResponse.h>
 #include <tencentcloud/vpc/v20170312/model/DescribeRouteConflictsRequest.h>
 #include <tencentcloud/vpc/v20170312/model/DescribeRouteConflictsResponse.h>
+#include <tencentcloud/vpc/v20170312/model/DescribeRouteTableAssociatedInstancesRequest.h>
+#include <tencentcloud/vpc/v20170312/model/DescribeRouteTableAssociatedInstancesResponse.h>
+#include <tencentcloud/vpc/v20170312/model/DescribeRouteTableSelectionPoliciesRequest.h>
+#include <tencentcloud/vpc/v20170312/model/DescribeRouteTableSelectionPoliciesResponse.h>
 #include <tencentcloud/vpc/v20170312/model/DescribeRouteTablesRequest.h>
 #include <tencentcloud/vpc/v20170312/model/DescribeRouteTablesResponse.h>
 #include <tencentcloud/vpc/v20170312/model/DescribeSecurityGroupAssociationStatisticsRequest.h>
@@ -541,6 +559,8 @@
 #include <tencentcloud/vpc/v20170312/model/ModifyCcnAttributeResponse.h>
 #include <tencentcloud/vpc/v20170312/model/ModifyCcnRegionBandwidthLimitsTypeRequest.h>
 #include <tencentcloud/vpc/v20170312/model/ModifyCcnRegionBandwidthLimitsTypeResponse.h>
+#include <tencentcloud/vpc/v20170312/model/ModifyCcnRouteTablesRequest.h>
+#include <tencentcloud/vpc/v20170312/model/ModifyCcnRouteTablesResponse.h>
 #include <tencentcloud/vpc/v20170312/model/ModifyCustomerGatewayAttributeRequest.h>
 #include <tencentcloud/vpc/v20170312/model/ModifyCustomerGatewayAttributeResponse.h>
 #include <tencentcloud/vpc/v20170312/model/ModifyDhcpIpAttributeRequest.h>
@@ -593,6 +613,8 @@
 #include <tencentcloud/vpc/v20170312/model/ModifyPrivateNatGatewayTranslationNatRuleResponse.h>
 #include <tencentcloud/vpc/v20170312/model/ModifyRouteTableAttributeRequest.h>
 #include <tencentcloud/vpc/v20170312/model/ModifyRouteTableAttributeResponse.h>
+#include <tencentcloud/vpc/v20170312/model/ModifyRouteTableSelectionPoliciesRequest.h>
+#include <tencentcloud/vpc/v20170312/model/ModifyRouteTableSelectionPoliciesResponse.h>
 #include <tencentcloud/vpc/v20170312/model/ModifySecurityGroupAttributeRequest.h>
 #include <tencentcloud/vpc/v20170312/model/ModifySecurityGroupAttributeResponse.h>
 #include <tencentcloud/vpc/v20170312/model/ModifySecurityGroupPoliciesRequest.h>
@@ -649,6 +671,10 @@
 #include <tencentcloud/vpc/v20170312/model/RenewAddressesResponse.h>
 #include <tencentcloud/vpc/v20170312/model/RenewVpnGatewayRequest.h>
 #include <tencentcloud/vpc/v20170312/model/RenewVpnGatewayResponse.h>
+#include <tencentcloud/vpc/v20170312/model/ReplaceCcnRouteTableBroadcastPolicysRequest.h>
+#include <tencentcloud/vpc/v20170312/model/ReplaceCcnRouteTableBroadcastPolicysResponse.h>
+#include <tencentcloud/vpc/v20170312/model/ReplaceCcnRouteTableInputPolicysRequest.h>
+#include <tencentcloud/vpc/v20170312/model/ReplaceCcnRouteTableInputPolicysResponse.h>
 #include <tencentcloud/vpc/v20170312/model/ReplaceDirectConnectGatewayCcnRoutesRequest.h>
 #include <tencentcloud/vpc/v20170312/model/ReplaceDirectConnectGatewayCcnRoutesResponse.h>
 #include <tencentcloud/vpc/v20170312/model/ReplaceRouteTableAssociationRequest.h>
@@ -752,6 +778,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::AssociateDirectConnectGatewayNatGatewayResponse> AssociateDirectConnectGatewayNatGatewayOutcome;
                 typedef std::future<AssociateDirectConnectGatewayNatGatewayOutcome> AssociateDirectConnectGatewayNatGatewayOutcomeCallable;
                 typedef std::function<void(const VpcClient*, const Model::AssociateDirectConnectGatewayNatGatewayRequest&, AssociateDirectConnectGatewayNatGatewayOutcome, const std::shared_ptr<const AsyncCallerContext>&)> AssociateDirectConnectGatewayNatGatewayAsyncHandler;
+                typedef Outcome<Core::Error, Model::AssociateInstancesToCcnRouteTableResponse> AssociateInstancesToCcnRouteTableOutcome;
+                typedef std::future<AssociateInstancesToCcnRouteTableOutcome> AssociateInstancesToCcnRouteTableOutcomeCallable;
+                typedef std::function<void(const VpcClient*, const Model::AssociateInstancesToCcnRouteTableRequest&, AssociateInstancesToCcnRouteTableOutcome, const std::shared_ptr<const AsyncCallerContext>&)> AssociateInstancesToCcnRouteTableAsyncHandler;
                 typedef Outcome<Core::Error, Model::AssociateNatGatewayAddressResponse> AssociateNatGatewayAddressOutcome;
                 typedef std::future<AssociateNatGatewayAddressOutcome> AssociateNatGatewayAddressOutcomeCallable;
                 typedef std::function<void(const VpcClient*, const Model::AssociateNatGatewayAddressRequest&, AssociateNatGatewayAddressOutcome, const std::shared_ptr<const AsyncCallerContext>&)> AssociateNatGatewayAddressAsyncHandler;
@@ -785,6 +814,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::CheckNetDetectStateResponse> CheckNetDetectStateOutcome;
                 typedef std::future<CheckNetDetectStateOutcome> CheckNetDetectStateOutcomeCallable;
                 typedef std::function<void(const VpcClient*, const Model::CheckNetDetectStateRequest&, CheckNetDetectStateOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CheckNetDetectStateAsyncHandler;
+                typedef Outcome<Core::Error, Model::ClearRouteTableSelectionPoliciesResponse> ClearRouteTableSelectionPoliciesOutcome;
+                typedef std::future<ClearRouteTableSelectionPoliciesOutcome> ClearRouteTableSelectionPoliciesOutcomeCallable;
+                typedef std::function<void(const VpcClient*, const Model::ClearRouteTableSelectionPoliciesRequest&, ClearRouteTableSelectionPoliciesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ClearRouteTableSelectionPoliciesAsyncHandler;
                 typedef Outcome<Core::Error, Model::CloneSecurityGroupResponse> CloneSecurityGroupOutcome;
                 typedef std::future<CloneSecurityGroupOutcome> CloneSecurityGroupOutcomeCallable;
                 typedef std::function<void(const VpcClient*, const Model::CloneSecurityGroupRequest&, CloneSecurityGroupOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CloneSecurityGroupAsyncHandler;
@@ -806,6 +838,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::CreateCcnResponse> CreateCcnOutcome;
                 typedef std::future<CreateCcnOutcome> CreateCcnOutcomeCallable;
                 typedef std::function<void(const VpcClient*, const Model::CreateCcnRequest&, CreateCcnOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateCcnAsyncHandler;
+                typedef Outcome<Core::Error, Model::CreateCcnRouteTablesResponse> CreateCcnRouteTablesOutcome;
+                typedef std::future<CreateCcnRouteTablesOutcome> CreateCcnRouteTablesOutcomeCallable;
+                typedef std::function<void(const VpcClient*, const Model::CreateCcnRouteTablesRequest&, CreateCcnRouteTablesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateCcnRouteTablesAsyncHandler;
                 typedef Outcome<Core::Error, Model::CreateCustomerGatewayResponse> CreateCustomerGatewayOutcome;
                 typedef std::future<CreateCustomerGatewayOutcome> CreateCustomerGatewayOutcomeCallable;
                 typedef std::function<void(const VpcClient*, const Model::CreateCustomerGatewayRequest&, CreateCustomerGatewayOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateCustomerGatewayAsyncHandler;
@@ -950,6 +985,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DeleteCcnResponse> DeleteCcnOutcome;
                 typedef std::future<DeleteCcnOutcome> DeleteCcnOutcomeCallable;
                 typedef std::function<void(const VpcClient*, const Model::DeleteCcnRequest&, DeleteCcnOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteCcnAsyncHandler;
+                typedef Outcome<Core::Error, Model::DeleteCcnRouteTablesResponse> DeleteCcnRouteTablesOutcome;
+                typedef std::future<DeleteCcnRouteTablesOutcome> DeleteCcnRouteTablesOutcomeCallable;
+                typedef std::function<void(const VpcClient*, const Model::DeleteCcnRouteTablesRequest&, DeleteCcnRouteTablesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteCcnRouteTablesAsyncHandler;
                 typedef Outcome<Core::Error, Model::DeleteCustomerGatewayResponse> DeleteCustomerGatewayOutcome;
                 typedef std::future<DeleteCustomerGatewayOutcome> DeleteCustomerGatewayOutcomeCallable;
                 typedef std::function<void(const VpcClient*, const Model::DeleteCustomerGatewayRequest&, DeleteCustomerGatewayOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteCustomerGatewayAsyncHandler;
@@ -1106,6 +1144,15 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeCcnRegionBandwidthLimitsResponse> DescribeCcnRegionBandwidthLimitsOutcome;
                 typedef std::future<DescribeCcnRegionBandwidthLimitsOutcome> DescribeCcnRegionBandwidthLimitsOutcomeCallable;
                 typedef std::function<void(const VpcClient*, const Model::DescribeCcnRegionBandwidthLimitsRequest&, DescribeCcnRegionBandwidthLimitsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeCcnRegionBandwidthLimitsAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeCcnRouteTableBroadcastPolicysResponse> DescribeCcnRouteTableBroadcastPolicysOutcome;
+                typedef std::future<DescribeCcnRouteTableBroadcastPolicysOutcome> DescribeCcnRouteTableBroadcastPolicysOutcomeCallable;
+                typedef std::function<void(const VpcClient*, const Model::DescribeCcnRouteTableBroadcastPolicysRequest&, DescribeCcnRouteTableBroadcastPolicysOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeCcnRouteTableBroadcastPolicysAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeCcnRouteTableInputPolicysResponse> DescribeCcnRouteTableInputPolicysOutcome;
+                typedef std::future<DescribeCcnRouteTableInputPolicysOutcome> DescribeCcnRouteTableInputPolicysOutcomeCallable;
+                typedef std::function<void(const VpcClient*, const Model::DescribeCcnRouteTableInputPolicysRequest&, DescribeCcnRouteTableInputPolicysOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeCcnRouteTableInputPolicysAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeCcnRouteTablesResponse> DescribeCcnRouteTablesOutcome;
+                typedef std::future<DescribeCcnRouteTablesOutcome> DescribeCcnRouteTablesOutcomeCallable;
+                typedef std::function<void(const VpcClient*, const Model::DescribeCcnRouteTablesRequest&, DescribeCcnRouteTablesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeCcnRouteTablesAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeCcnRoutesResponse> DescribeCcnRoutesOutcome;
                 typedef std::future<DescribeCcnRoutesOutcome> DescribeCcnRoutesOutcomeCallable;
                 typedef std::function<void(const VpcClient*, const Model::DescribeCcnRoutesRequest&, DescribeCcnRoutesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeCcnRoutesAsyncHandler;
@@ -1229,6 +1276,12 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeRouteConflictsResponse> DescribeRouteConflictsOutcome;
                 typedef std::future<DescribeRouteConflictsOutcome> DescribeRouteConflictsOutcomeCallable;
                 typedef std::function<void(const VpcClient*, const Model::DescribeRouteConflictsRequest&, DescribeRouteConflictsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeRouteConflictsAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeRouteTableAssociatedInstancesResponse> DescribeRouteTableAssociatedInstancesOutcome;
+                typedef std::future<DescribeRouteTableAssociatedInstancesOutcome> DescribeRouteTableAssociatedInstancesOutcomeCallable;
+                typedef std::function<void(const VpcClient*, const Model::DescribeRouteTableAssociatedInstancesRequest&, DescribeRouteTableAssociatedInstancesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeRouteTableAssociatedInstancesAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeRouteTableSelectionPoliciesResponse> DescribeRouteTableSelectionPoliciesOutcome;
+                typedef std::future<DescribeRouteTableSelectionPoliciesOutcome> DescribeRouteTableSelectionPoliciesOutcomeCallable;
+                typedef std::function<void(const VpcClient*, const Model::DescribeRouteTableSelectionPoliciesRequest&, DescribeRouteTableSelectionPoliciesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeRouteTableSelectionPoliciesAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeRouteTablesResponse> DescribeRouteTablesOutcome;
                 typedef std::future<DescribeRouteTablesOutcome> DescribeRouteTablesOutcomeCallable;
                 typedef std::function<void(const VpcClient*, const Model::DescribeRouteTablesRequest&, DescribeRouteTablesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeRouteTablesAsyncHandler;
@@ -1484,6 +1537,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::ModifyCcnRegionBandwidthLimitsTypeResponse> ModifyCcnRegionBandwidthLimitsTypeOutcome;
                 typedef std::future<ModifyCcnRegionBandwidthLimitsTypeOutcome> ModifyCcnRegionBandwidthLimitsTypeOutcomeCallable;
                 typedef std::function<void(const VpcClient*, const Model::ModifyCcnRegionBandwidthLimitsTypeRequest&, ModifyCcnRegionBandwidthLimitsTypeOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyCcnRegionBandwidthLimitsTypeAsyncHandler;
+                typedef Outcome<Core::Error, Model::ModifyCcnRouteTablesResponse> ModifyCcnRouteTablesOutcome;
+                typedef std::future<ModifyCcnRouteTablesOutcome> ModifyCcnRouteTablesOutcomeCallable;
+                typedef std::function<void(const VpcClient*, const Model::ModifyCcnRouteTablesRequest&, ModifyCcnRouteTablesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyCcnRouteTablesAsyncHandler;
                 typedef Outcome<Core::Error, Model::ModifyCustomerGatewayAttributeResponse> ModifyCustomerGatewayAttributeOutcome;
                 typedef std::future<ModifyCustomerGatewayAttributeOutcome> ModifyCustomerGatewayAttributeOutcomeCallable;
                 typedef std::function<void(const VpcClient*, const Model::ModifyCustomerGatewayAttributeRequest&, ModifyCustomerGatewayAttributeOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyCustomerGatewayAttributeAsyncHandler;
@@ -1562,6 +1618,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::ModifyRouteTableAttributeResponse> ModifyRouteTableAttributeOutcome;
                 typedef std::future<ModifyRouteTableAttributeOutcome> ModifyRouteTableAttributeOutcomeCallable;
                 typedef std::function<void(const VpcClient*, const Model::ModifyRouteTableAttributeRequest&, ModifyRouteTableAttributeOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyRouteTableAttributeAsyncHandler;
+                typedef Outcome<Core::Error, Model::ModifyRouteTableSelectionPoliciesResponse> ModifyRouteTableSelectionPoliciesOutcome;
+                typedef std::future<ModifyRouteTableSelectionPoliciesOutcome> ModifyRouteTableSelectionPoliciesOutcomeCallable;
+                typedef std::function<void(const VpcClient*, const Model::ModifyRouteTableSelectionPoliciesRequest&, ModifyRouteTableSelectionPoliciesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyRouteTableSelectionPoliciesAsyncHandler;
                 typedef Outcome<Core::Error, Model::ModifySecurityGroupAttributeResponse> ModifySecurityGroupAttributeOutcome;
                 typedef std::future<ModifySecurityGroupAttributeOutcome> ModifySecurityGroupAttributeOutcomeCallable;
                 typedef std::function<void(const VpcClient*, const Model::ModifySecurityGroupAttributeRequest&, ModifySecurityGroupAttributeOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifySecurityGroupAttributeAsyncHandler;
@@ -1646,6 +1705,12 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::RenewVpnGatewayResponse> RenewVpnGatewayOutcome;
                 typedef std::future<RenewVpnGatewayOutcome> RenewVpnGatewayOutcomeCallable;
                 typedef std::function<void(const VpcClient*, const Model::RenewVpnGatewayRequest&, RenewVpnGatewayOutcome, const std::shared_ptr<const AsyncCallerContext>&)> RenewVpnGatewayAsyncHandler;
+                typedef Outcome<Core::Error, Model::ReplaceCcnRouteTableBroadcastPolicysResponse> ReplaceCcnRouteTableBroadcastPolicysOutcome;
+                typedef std::future<ReplaceCcnRouteTableBroadcastPolicysOutcome> ReplaceCcnRouteTableBroadcastPolicysOutcomeCallable;
+                typedef std::function<void(const VpcClient*, const Model::ReplaceCcnRouteTableBroadcastPolicysRequest&, ReplaceCcnRouteTableBroadcastPolicysOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ReplaceCcnRouteTableBroadcastPolicysAsyncHandler;
+                typedef Outcome<Core::Error, Model::ReplaceCcnRouteTableInputPolicysResponse> ReplaceCcnRouteTableInputPolicysOutcome;
+                typedef std::future<ReplaceCcnRouteTableInputPolicysOutcome> ReplaceCcnRouteTableInputPolicysOutcomeCallable;
+                typedef std::function<void(const VpcClient*, const Model::ReplaceCcnRouteTableInputPolicysRequest&, ReplaceCcnRouteTableInputPolicysOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ReplaceCcnRouteTableInputPolicysAsyncHandler;
                 typedef Outcome<Core::Error, Model::ReplaceDirectConnectGatewayCcnRoutesResponse> ReplaceDirectConnectGatewayCcnRoutesOutcome;
                 typedef std::future<ReplaceDirectConnectGatewayCcnRoutesOutcome> ReplaceDirectConnectGatewayCcnRoutesOutcomeCallable;
                 typedef std::function<void(const VpcClient*, const Model::ReplaceDirectConnectGatewayCcnRoutesRequest&, ReplaceDirectConnectGatewayCcnRoutesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ReplaceDirectConnectGatewayCcnRoutesAsyncHandler;
@@ -1879,6 +1944,15 @@ namespace TencentCloud
                 AssociateDirectConnectGatewayNatGatewayOutcomeCallable AssociateDirectConnectGatewayNatGatewayCallable(const Model::AssociateDirectConnectGatewayNatGatewayRequest& request);
 
                 /**
+                 *本接口（AssociateInstancesToCcnRouteTable）用于将指定的云联网实例关联到指定的云联网路由表。
+                 * @param req AssociateInstancesToCcnRouteTableRequest
+                 * @return AssociateInstancesToCcnRouteTableOutcome
+                 */
+                AssociateInstancesToCcnRouteTableOutcome AssociateInstancesToCcnRouteTable(const Model::AssociateInstancesToCcnRouteTableRequest &request);
+                void AssociateInstancesToCcnRouteTableAsync(const Model::AssociateInstancesToCcnRouteTableRequest& request, const AssociateInstancesToCcnRouteTableAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                AssociateInstancesToCcnRouteTableOutcomeCallable AssociateInstancesToCcnRouteTableCallable(const Model::AssociateInstancesToCcnRouteTableRequest& request);
+
+                /**
                  *本接口(AssociateNatGatewayAddress)用于NAT网关绑定弹性IP（EIP）。
                  * @param req AssociateNatGatewayAddressRequest
                  * @return AssociateNatGatewayAddressOutcome
@@ -1995,6 +2069,15 @@ namespace TencentCloud
                 CheckNetDetectStateOutcomeCallable CheckNetDetectStateCallable(const Model::CheckNetDetectStateRequest& request);
 
                 /**
+                 *本接口（ClearRouteTableSelectionPolicies）用于清空指定云联网的路由表选择策略。
+                 * @param req ClearRouteTableSelectionPoliciesRequest
+                 * @return ClearRouteTableSelectionPoliciesOutcome
+                 */
+                ClearRouteTableSelectionPoliciesOutcome ClearRouteTableSelectionPolicies(const Model::ClearRouteTableSelectionPoliciesRequest &request);
+                void ClearRouteTableSelectionPoliciesAsync(const Model::ClearRouteTableSelectionPoliciesRequest& request, const ClearRouteTableSelectionPoliciesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                ClearRouteTableSelectionPoliciesOutcomeCallable ClearRouteTableSelectionPoliciesCallable(const Model::ClearRouteTableSelectionPoliciesRequest& request);
+
+                /**
                  *本接口（CloneSecurityGroup）用于根据存量的安全组，克隆创建出同样规则配置的安全组。仅克隆安全组及其规则信息，不会克隆安全组标签信息。
                  * @param req CloneSecurityGroupRequest
                  * @return CloneSecurityGroupOutcome
@@ -2065,6 +2148,15 @@ namespace TencentCloud
                 CreateCcnOutcome CreateCcn(const Model::CreateCcnRequest &request);
                 void CreateCcnAsync(const Model::CreateCcnRequest& request, const CreateCcnAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 CreateCcnOutcomeCallable CreateCcnCallable(const Model::CreateCcnRequest& request);
+
+                /**
+                 *本接口（CreateCcnRouteTables）用于给指定的云联网实例新建路由表。
+                 * @param req CreateCcnRouteTablesRequest
+                 * @return CreateCcnRouteTablesOutcome
+                 */
+                CreateCcnRouteTablesOutcome CreateCcnRouteTables(const Model::CreateCcnRouteTablesRequest &request);
+                void CreateCcnRouteTablesAsync(const Model::CreateCcnRouteTablesRequest& request, const CreateCcnRouteTablesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                CreateCcnRouteTablesOutcomeCallable CreateCcnRouteTablesCallable(const Model::CreateCcnRouteTablesRequest& request);
 
                 /**
                  *本接口（CreateCustomerGateway）用于创建对端网关。
@@ -2577,6 +2669,15 @@ namespace TencentCloud
                 DeleteCcnOutcomeCallable DeleteCcnCallable(const Model::DeleteCcnRequest& request);
 
                 /**
+                 *本接口（DeleteCcnRouteTables）用于删除云联网路由表。
+                 * @param req DeleteCcnRouteTablesRequest
+                 * @return DeleteCcnRouteTablesOutcome
+                 */
+                DeleteCcnRouteTablesOutcome DeleteCcnRouteTables(const Model::DeleteCcnRouteTablesRequest &request);
+                void DeleteCcnRouteTablesAsync(const Model::DeleteCcnRouteTablesRequest& request, const DeleteCcnRouteTablesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DeleteCcnRouteTablesOutcomeCallable DeleteCcnRouteTablesCallable(const Model::DeleteCcnRouteTablesRequest& request);
+
+                /**
                  *本接口（DeleteCustomerGateway）用于删除对端网关。
                  * @param req DeleteCustomerGatewayRequest
                  * @return DeleteCustomerGatewayOutcome
@@ -3071,6 +3172,33 @@ namespace TencentCloud
                 DescribeCcnRegionBandwidthLimitsOutcomeCallable DescribeCcnRegionBandwidthLimitsCallable(const Model::DescribeCcnRegionBandwidthLimitsRequest& request);
 
                 /**
+                 *本接口(DescribeCcnRouteTableBroadcastPolicys)用于查询指定云联网路由表的路由传播策略。
+                 * @param req DescribeCcnRouteTableBroadcastPolicysRequest
+                 * @return DescribeCcnRouteTableBroadcastPolicysOutcome
+                 */
+                DescribeCcnRouteTableBroadcastPolicysOutcome DescribeCcnRouteTableBroadcastPolicys(const Model::DescribeCcnRouteTableBroadcastPolicysRequest &request);
+                void DescribeCcnRouteTableBroadcastPolicysAsync(const Model::DescribeCcnRouteTableBroadcastPolicysRequest& request, const DescribeCcnRouteTableBroadcastPolicysAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeCcnRouteTableBroadcastPolicysOutcomeCallable DescribeCcnRouteTableBroadcastPolicysCallable(const Model::DescribeCcnRouteTableBroadcastPolicysRequest& request);
+
+                /**
+                 *本接口(DescribeCcnRouteTableInputPolicys)用于查询指定云联网路由表的路由接收策略。
+                 * @param req DescribeCcnRouteTableInputPolicysRequest
+                 * @return DescribeCcnRouteTableInputPolicysOutcome
+                 */
+                DescribeCcnRouteTableInputPolicysOutcome DescribeCcnRouteTableInputPolicys(const Model::DescribeCcnRouteTableInputPolicysRequest &request);
+                void DescribeCcnRouteTableInputPolicysAsync(const Model::DescribeCcnRouteTableInputPolicysRequest& request, const DescribeCcnRouteTableInputPolicysAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeCcnRouteTableInputPolicysOutcomeCallable DescribeCcnRouteTableInputPolicysCallable(const Model::DescribeCcnRouteTableInputPolicysRequest& request);
+
+                /**
+                 *该接口用于查询指定的云联网实例的路由表信息。
+                 * @param req DescribeCcnRouteTablesRequest
+                 * @return DescribeCcnRouteTablesOutcome
+                 */
+                DescribeCcnRouteTablesOutcome DescribeCcnRouteTables(const Model::DescribeCcnRouteTablesRequest &request);
+                void DescribeCcnRouteTablesAsync(const Model::DescribeCcnRouteTablesRequest& request, const DescribeCcnRouteTablesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeCcnRouteTablesOutcomeCallable DescribeCcnRouteTablesCallable(const Model::DescribeCcnRouteTablesRequest& request);
+
+                /**
                  *本接口（DescribeCcnRoutes）用于查询已加入云联网（CCN）的路由。
                  * @param req DescribeCcnRoutesRequest
                  * @return DescribeCcnRoutesOutcome
@@ -3446,6 +3574,24 @@ namespace TencentCloud
                 DescribeRouteConflictsOutcome DescribeRouteConflicts(const Model::DescribeRouteConflictsRequest &request);
                 void DescribeRouteConflictsAsync(const Model::DescribeRouteConflictsRequest& request, const DescribeRouteConflictsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DescribeRouteConflictsOutcomeCallable DescribeRouteConflictsCallable(const Model::DescribeRouteConflictsRequest& request);
+
+                /**
+                 *本接口（DescribeRouteTableAssociatedInstances）用于查询指定的云联网关联的实例所绑定的路由表信息。
+                 * @param req DescribeRouteTableAssociatedInstancesRequest
+                 * @return DescribeRouteTableAssociatedInstancesOutcome
+                 */
+                DescribeRouteTableAssociatedInstancesOutcome DescribeRouteTableAssociatedInstances(const Model::DescribeRouteTableAssociatedInstancesRequest &request);
+                void DescribeRouteTableAssociatedInstancesAsync(const Model::DescribeRouteTableAssociatedInstancesRequest& request, const DescribeRouteTableAssociatedInstancesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeRouteTableAssociatedInstancesOutcomeCallable DescribeRouteTableAssociatedInstancesCallable(const Model::DescribeRouteTableAssociatedInstancesRequest& request);
+
+                /**
+                 *本接口（DescribeRouteTableSelectionPolicies）用于查询云联网路由表选择策略。
+                 * @param req DescribeRouteTableSelectionPoliciesRequest
+                 * @return DescribeRouteTableSelectionPoliciesOutcome
+                 */
+                DescribeRouteTableSelectionPoliciesOutcome DescribeRouteTableSelectionPolicies(const Model::DescribeRouteTableSelectionPoliciesRequest &request);
+                void DescribeRouteTableSelectionPoliciesAsync(const Model::DescribeRouteTableSelectionPoliciesRequest& request, const DescribeRouteTableSelectionPoliciesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeRouteTableSelectionPoliciesOutcomeCallable DescribeRouteTableSelectionPoliciesCallable(const Model::DescribeRouteTableSelectionPoliciesRequest& request);
 
                 /**
                  *本接口（DescribeRouteTables）用于查询路由表。
@@ -4281,6 +4427,15 @@ LimitTypes取值范围：
                 ModifyCcnRegionBandwidthLimitsTypeOutcomeCallable ModifyCcnRegionBandwidthLimitsTypeCallable(const Model::ModifyCcnRegionBandwidthLimitsTypeRequest& request);
 
                 /**
+                 *该接口用于修改云联网路由表名称和备注。
+                 * @param req ModifyCcnRouteTablesRequest
+                 * @return ModifyCcnRouteTablesOutcome
+                 */
+                ModifyCcnRouteTablesOutcome ModifyCcnRouteTables(const Model::ModifyCcnRouteTablesRequest &request);
+                void ModifyCcnRouteTablesAsync(const Model::ModifyCcnRouteTablesRequest& request, const ModifyCcnRouteTablesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                ModifyCcnRouteTablesOutcomeCallable ModifyCcnRouteTablesCallable(const Model::ModifyCcnRouteTablesRequest& request);
+
+                /**
                  *本接口（ModifyCustomerGatewayAttribute）用于修改对端网关信息。
                  * @param req ModifyCustomerGatewayAttributeRequest
                  * @return ModifyCustomerGatewayAttributeOutcome
@@ -4515,6 +4670,15 @@ LimitTypes取值范围：
                 ModifyRouteTableAttributeOutcome ModifyRouteTableAttribute(const Model::ModifyRouteTableAttributeRequest &request);
                 void ModifyRouteTableAttributeAsync(const Model::ModifyRouteTableAttributeRequest& request, const ModifyRouteTableAttributeAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 ModifyRouteTableAttributeOutcomeCallable ModifyRouteTableAttributeCallable(const Model::ModifyRouteTableAttributeRequest& request);
+
+                /**
+                 *该接口用于编辑云联网路由表选择策略
+                 * @param req ModifyRouteTableSelectionPoliciesRequest
+                 * @return ModifyRouteTableSelectionPoliciesOutcome
+                 */
+                ModifyRouteTableSelectionPoliciesOutcome ModifyRouteTableSelectionPolicies(const Model::ModifyRouteTableSelectionPoliciesRequest &request);
+                void ModifyRouteTableSelectionPoliciesAsync(const Model::ModifyRouteTableSelectionPoliciesRequest& request, const ModifyRouteTableSelectionPoliciesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                ModifyRouteTableSelectionPoliciesOutcomeCallable ModifyRouteTableSelectionPoliciesCallable(const Model::ModifyRouteTableSelectionPoliciesRequest& request);
 
                 /**
                  *本接口（ModifySecurityGroupAttribute）用于修改安全组（SecurityGroupPolicy）属性。
@@ -4792,6 +4956,59 @@ LimitTypes取值范围：
                 RenewVpnGatewayOutcome RenewVpnGateway(const Model::RenewVpnGatewayRequest &request);
                 void RenewVpnGatewayAsync(const Model::RenewVpnGatewayRequest& request, const RenewVpnGatewayAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 RenewVpnGatewayOutcomeCallable RenewVpnGatewayCallable(const Model::RenewVpnGatewayRequest& request);
+
+                /**
+                 *本接口(ReplaceCcnRouteTableBroadcastPolicys)用于替换云联网路由表路由传播策略。
+> 特别注意：是全量覆盖，非增量添加
+
+**路由条件支持以下四种：**
+
+- 实例类型: `instance-type`，可选值：私有网络 `VPC`、专线网关 `DIRECTCONNECT`、专线网关 `VPNGW`
+- 实例ID: `instance-id`，例如：`dcg-8zljkrft`、`vpc-jdevjrup`，暂不支持 `Edge` 实例
+- 实例地域: `instance-region`，例如：`ap-guangzhou`<br />产品支持的所有地域列表可通过接口 [DescribeRegions](https://cloud.tencent.com/document/product/1596/77930) 查询，其中参数 `Product` 设置为 `ccn`
+- 路由前缀: `cidr-block`，例如：`10.1.0.0/16`
+
+
+**传播条件支持以下三种：**
+
+- 实例类型: `instance-type`，格式同路由条件
+- 实例ID: `instance-id`，格式同路由条件
+- 实例地域: `instance-region`，格式同路由条件
+
+
+**使用限制：**
+- 一条策略内的单个条件类型，最大支持设置 `25` 个条件值
+- 一张路由表，最大支持 `100` 条路由传播策略
+- 路由条件类型中，只有 `cidr-block` 类型支持模糊匹配和精确匹配两种，其它类型只支持精确匹配一种模式
+                 * @param req ReplaceCcnRouteTableBroadcastPolicysRequest
+                 * @return ReplaceCcnRouteTableBroadcastPolicysOutcome
+                 */
+                ReplaceCcnRouteTableBroadcastPolicysOutcome ReplaceCcnRouteTableBroadcastPolicys(const Model::ReplaceCcnRouteTableBroadcastPolicysRequest &request);
+                void ReplaceCcnRouteTableBroadcastPolicysAsync(const Model::ReplaceCcnRouteTableBroadcastPolicysRequest& request, const ReplaceCcnRouteTableBroadcastPolicysAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                ReplaceCcnRouteTableBroadcastPolicysOutcomeCallable ReplaceCcnRouteTableBroadcastPolicysCallable(const Model::ReplaceCcnRouteTableBroadcastPolicysRequest& request);
+
+                /**
+                 *本接口(ReplaceRouteTableInputPolicys)用于替换云联网路由表路由接收策略。
+> 特别注意：是全量覆盖，非增量添加
+
+**路由条件支持以下四种：**
+
+- 实例类型: `instance-type`，可选值：私有网络 `VPC`、专线网关 `DIRECTCONNECT`、专线网关 `VPNGW`
+- 实例ID: `instance-id`，例如：`dcg-8zljkrft`、`vpc-jdevjrup`，暂不支持 `Edge` 实例
+- 实例地域: `instance-region`，例如：`ap-guangzhou`<br />产品支持的所有地域列表可通过接口 [DescribeRegions](https://cloud.tencent.com/document/product/1596/77930) 查询，其中参数 `Product` 设置为 `ccn`
+- 路由前缀: `cidr-block`，例如：`10.1.0.0/16`
+
+
+**使用限制：**
+- 一条策略内的单个条件类型，最大支持设置 `25` 个条件值
+- 一张路由表，最大支持 `100` 条路由接收策略
+- 路由条件类型中，只有 `cidr-block` 类型支持模糊匹配和精确匹配两种，其它类型只支持精确匹配一种模式
+                 * @param req ReplaceCcnRouteTableInputPolicysRequest
+                 * @return ReplaceCcnRouteTableInputPolicysOutcome
+                 */
+                ReplaceCcnRouteTableInputPolicysOutcome ReplaceCcnRouteTableInputPolicys(const Model::ReplaceCcnRouteTableInputPolicysRequest &request);
+                void ReplaceCcnRouteTableInputPolicysAsync(const Model::ReplaceCcnRouteTableInputPolicysRequest& request, const ReplaceCcnRouteTableInputPolicysAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                ReplaceCcnRouteTableInputPolicysOutcomeCallable ReplaceCcnRouteTableInputPolicysCallable(const Model::ReplaceCcnRouteTableInputPolicysRequest& request);
 
                 /**
                  *本接口（ReplaceDirectConnectGatewayCcnRoutes）根据路由ID（RouteId）修改指定的路由（Route），支持批量修改。

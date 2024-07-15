@@ -61,6 +61,8 @@
 #include <tencentcloud/cbs/v20170312/model/DescribeDisksResponse.h>
 #include <tencentcloud/cbs/v20170312/model/DescribeInstancesDiskNumRequest.h>
 #include <tencentcloud/cbs/v20170312/model/DescribeInstancesDiskNumResponse.h>
+#include <tencentcloud/cbs/v20170312/model/DescribeSnapshotOverviewRequest.h>
+#include <tencentcloud/cbs/v20170312/model/DescribeSnapshotOverviewResponse.h>
 #include <tencentcloud/cbs/v20170312/model/DescribeSnapshotSharePermissionRequest.h>
 #include <tencentcloud/cbs/v20170312/model/DescribeSnapshotSharePermissionResponse.h>
 #include <tencentcloud/cbs/v20170312/model/DescribeSnapshotsRequest.h>
@@ -176,6 +178,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeInstancesDiskNumResponse> DescribeInstancesDiskNumOutcome;
                 typedef std::future<DescribeInstancesDiskNumOutcome> DescribeInstancesDiskNumOutcomeCallable;
                 typedef std::function<void(const CbsClient*, const Model::DescribeInstancesDiskNumRequest&, DescribeInstancesDiskNumOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeInstancesDiskNumAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeSnapshotOverviewResponse> DescribeSnapshotOverviewOutcome;
+                typedef std::future<DescribeSnapshotOverviewOutcome> DescribeSnapshotOverviewOutcomeCallable;
+                typedef std::function<void(const CbsClient*, const Model::DescribeSnapshotOverviewRequest&, DescribeSnapshotOverviewOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeSnapshotOverviewAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeSnapshotSharePermissionResponse> DescribeSnapshotSharePermissionOutcome;
                 typedef std::future<DescribeSnapshotSharePermissionOutcome> DescribeSnapshotSharePermissionOutcomeCallable;
                 typedef std::function<void(const CbsClient*, const Model::DescribeSnapshotSharePermissionRequest&, DescribeSnapshotSharePermissionOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeSnapshotSharePermissionAsyncHandler;
@@ -462,6 +467,15 @@ namespace TencentCloud
                 DescribeInstancesDiskNumOutcome DescribeInstancesDiskNum(const Model::DescribeInstancesDiskNumRequest &request);
                 void DescribeInstancesDiskNumAsync(const Model::DescribeInstancesDiskNumRequest& request, const DescribeInstancesDiskNumAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DescribeInstancesDiskNumOutcomeCallable DescribeInstancesDiskNumCallable(const Model::DescribeInstancesDiskNumRequest& request);
+
+                /**
+                 *该接口用于查询用户快照使用概览，包括快照总容量、计费容量等信息。
+                 * @param req DescribeSnapshotOverviewRequest
+                 * @return DescribeSnapshotOverviewOutcome
+                 */
+                DescribeSnapshotOverviewOutcome DescribeSnapshotOverview(const Model::DescribeSnapshotOverviewRequest &request);
+                void DescribeSnapshotOverviewAsync(const Model::DescribeSnapshotOverviewRequest& request, const DescribeSnapshotOverviewAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeSnapshotOverviewOutcomeCallable DescribeSnapshotOverviewCallable(const Model::DescribeSnapshotOverviewRequest& request);
 
                 /**
                  *本接口（DescribeSnapshotSharePermission）用于查询快照的分享信息。

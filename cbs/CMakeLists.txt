@@ -24,7 +24,7 @@ set(cbs_public_header_model
   include/tencentcloud/cbs/v20170312/model/DescribeDiskBackupsRequest.h
   include/tencentcloud/cbs/v20170312/model/AutoSnapshotPolicy.h
   include/tencentcloud/cbs/v20170312/model/DetailPrice.h
-  include/tencentcloud/cbs/v20170312/model/CreateDiskBackupRequest.h
+  include/tencentcloud/cbs/v20170312/model/ModifySnapshotsSharePermissionRequest.h
   include/tencentcloud/cbs/v20170312/model/CopySnapshotCrossRegionsResponse.h
   include/tencentcloud/cbs/v20170312/model/ModifyAutoSnapshotPolicyAttributeResponse.h
   include/tencentcloud/cbs/v20170312/model/ModifyDiskBackupQuotaRequest.h
@@ -55,6 +55,7 @@ set(cbs_public_header_model
   include/tencentcloud/cbs/v20170312/model/TerminateDisksResponse.h
   include/tencentcloud/cbs/v20170312/model/ApplySnapshotResponse.h
   include/tencentcloud/cbs/v20170312/model/DetachDisksRequest.h
+  include/tencentcloud/cbs/v20170312/model/DescribeSnapshotOverviewResponse.h
   include/tencentcloud/cbs/v20170312/model/ModifyDisksChargeTypeResponse.h
   include/tencentcloud/cbs/v20170312/model/CreateSnapshotRequest.h
   include/tencentcloud/cbs/v20170312/model/DescribeInstancesDiskNumRequest.h
@@ -90,13 +91,14 @@ set(cbs_public_header_model
   include/tencentcloud/cbs/v20170312/model/InquirePriceModifyDiskBackupQuotaResponse.h
   include/tencentcloud/cbs/v20170312/model/DeleteAutoSnapshotPoliciesRequest.h
   include/tencentcloud/cbs/v20170312/model/DiskChargePrepaid.h
+  include/tencentcloud/cbs/v20170312/model/DescribeSnapshotOverviewRequest.h
   include/tencentcloud/cbs/v20170312/model/Filter.h
   include/tencentcloud/cbs/v20170312/model/InquiryPriceCreateDisksRequest.h
   include/tencentcloud/cbs/v20170312/model/DescribeSnapshotsResponse.h
   include/tencentcloud/cbs/v20170312/model/Snapshot.h
   include/tencentcloud/cbs/v20170312/model/CreateDisksResponse.h
   include/tencentcloud/cbs/v20170312/model/AttachDisksResponse.h
-  include/tencentcloud/cbs/v20170312/model/ModifySnapshotsSharePermissionRequest.h
+  include/tencentcloud/cbs/v20170312/model/CreateDiskBackupRequest.h
   include/tencentcloud/cbs/v20170312/model/BindAutoSnapshotPolicyResponse.h
   include/tencentcloud/cbs/v20170312/model/DiskBackup.h
   include/tencentcloud/cbs/v20170312/model/DescribeDisksRequest.h
@@ -131,7 +133,7 @@ set(cbs_src
   src/v20170312/model/DescribeDiskBackupsRequest.cpp
   src/v20170312/model/AutoSnapshotPolicy.cpp
   src/v20170312/model/DetailPrice.cpp
-  src/v20170312/model/CreateDiskBackupRequest.cpp
+  src/v20170312/model/ModifySnapshotsSharePermissionRequest.cpp
   src/v20170312/model/CopySnapshotCrossRegionsResponse.cpp
   src/v20170312/model/ModifyAutoSnapshotPolicyAttributeResponse.cpp
   src/v20170312/model/ModifyDiskBackupQuotaRequest.cpp
@@ -162,6 +164,7 @@ set(cbs_src
   src/v20170312/model/TerminateDisksResponse.cpp
   src/v20170312/model/ApplySnapshotResponse.cpp
   src/v20170312/model/DetachDisksRequest.cpp
+  src/v20170312/model/DescribeSnapshotOverviewResponse.cpp
   src/v20170312/model/ModifyDisksChargeTypeResponse.cpp
   src/v20170312/model/CreateSnapshotRequest.cpp
   src/v20170312/model/DescribeInstancesDiskNumRequest.cpp
@@ -197,13 +200,14 @@ set(cbs_src
   src/v20170312/model/InquirePriceModifyDiskBackupQuotaResponse.cpp
   src/v20170312/model/DeleteAutoSnapshotPoliciesRequest.cpp
   src/v20170312/model/DiskChargePrepaid.cpp
+  src/v20170312/model/DescribeSnapshotOverviewRequest.cpp
   src/v20170312/model/Filter.cpp
   src/v20170312/model/InquiryPriceCreateDisksRequest.cpp
   src/v20170312/model/DescribeSnapshotsResponse.cpp
   src/v20170312/model/Snapshot.cpp
   src/v20170312/model/CreateDisksResponse.cpp
   src/v20170312/model/AttachDisksResponse.cpp
-  src/v20170312/model/ModifySnapshotsSharePermissionRequest.cpp
+  src/v20170312/model/CreateDiskBackupRequest.cpp
   src/v20170312/model/BindAutoSnapshotPolicyResponse.cpp
   src/v20170312/model/DiskBackup.cpp
   src/v20170312/model/DescribeDisksRequest.cpp

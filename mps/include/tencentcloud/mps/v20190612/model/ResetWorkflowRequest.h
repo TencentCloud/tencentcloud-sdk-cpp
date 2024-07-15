@@ -134,15 +134,19 @@ namespace TencentCloud
                     bool OutputStorageHasBeenSet() const;
 
                     /**
-                     * 获取视频处理生成的文件输出的目标目录，如`/movie/201907/`。如果不填，表示与触发文件所在的目录一致，即`{inputDir}`。
-                     * @return OutputDir 视频处理生成的文件输出的目标目录，如`/movie/201907/`。如果不填，表示与触发文件所在的目录一致，即`{inputDir}`。
+                     * 获取视频处理生成的文件输出的目标目录，必选以 / 开头和结尾，如`/movie/201907/`。
+如果不填，表示与触发文件所在的目录一致，即`{inputDir}`。
+                     * @return OutputDir 视频处理生成的文件输出的目标目录，必选以 / 开头和结尾，如`/movie/201907/`。
+如果不填，表示与触发文件所在的目录一致，即`{inputDir}`。
                      * 
                      */
                     std::string GetOutputDir() const;
 
                     /**
-                     * 设置视频处理生成的文件输出的目标目录，如`/movie/201907/`。如果不填，表示与触发文件所在的目录一致，即`{inputDir}`。
-                     * @param _outputDir 视频处理生成的文件输出的目标目录，如`/movie/201907/`。如果不填，表示与触发文件所在的目录一致，即`{inputDir}`。
+                     * 设置视频处理生成的文件输出的目标目录，必选以 / 开头和结尾，如`/movie/201907/`。
+如果不填，表示与触发文件所在的目录一致，即`{inputDir}`。
+                     * @param _outputDir 视频处理生成的文件输出的目标目录，必选以 / 开头和结尾，如`/movie/201907/`。
+如果不填，表示与触发文件所在的目录一致，即`{inputDir}`。
                      * 
                      */
                     void SetOutputDir(const std::string& _outputDir);
@@ -307,7 +311,8 @@ namespace TencentCloud
                     bool m_outputStorageHasBeenSet;
 
                     /**
-                     * 视频处理生成的文件输出的目标目录，如`/movie/201907/`。如果不填，表示与触发文件所在的目录一致，即`{inputDir}`。
+                     * 视频处理生成的文件输出的目标目录，必选以 / 开头和结尾，如`/movie/201907/`。
+如果不填，表示与触发文件所在的目录一致，即`{inputDir}`。
                      */
                     std::string m_outputDir;
                     bool m_outputDirHasBeenSet;

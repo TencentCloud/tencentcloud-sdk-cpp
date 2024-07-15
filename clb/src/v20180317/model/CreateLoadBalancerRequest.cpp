@@ -49,7 +49,8 @@ CreateLoadBalancerRequest::CreateLoadBalancerRequest() :
     m_eipAddressIdHasBeenSet(false),
     m_loadBalancerPassToTargetHasBeenSet(false),
     m_dynamicVipHasBeenSet(false),
-    m_egressHasBeenSet(false)
+    m_egressHasBeenSet(false),
+    m_lBChargePrepaidHasBeenSet(false)
 {
 }
 
@@ -295,6 +296,15 @@ string CreateLoadBalancerRequest::ToJsonString() const
         string key = "Egress";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_egress.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_lBChargePrepaidHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "LBChargePrepaid";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_lBChargePrepaid.ToJsonObject(d[key.c_str()], allocator);
     }
 
 
@@ -735,6 +745,22 @@ void CreateLoadBalancerRequest::SetEgress(const string& _egress)
 bool CreateLoadBalancerRequest::EgressHasBeenSet() const
 {
     return m_egressHasBeenSet;
+}
+
+LBChargePrepaid CreateLoadBalancerRequest::GetLBChargePrepaid() const
+{
+    return m_lBChargePrepaid;
+}
+
+void CreateLoadBalancerRequest::SetLBChargePrepaid(const LBChargePrepaid& _lBChargePrepaid)
+{
+    m_lBChargePrepaid = _lBChargePrepaid;
+    m_lBChargePrepaidHasBeenSet = true;
+}
+
+bool CreateLoadBalancerRequest::LBChargePrepaidHasBeenSet() const
+{
+    return m_lBChargePrepaidHasBeenSet;
 }
 
 

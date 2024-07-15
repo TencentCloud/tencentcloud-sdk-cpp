@@ -56,7 +56,7 @@ namespace TencentCloud
 • 16k_es：西班牙语；
 • 16k_hi：印地语；
 • 16k_fr：法语；
-• 16k_de：法语；
+• 16k_de：德语；
                      * @return EngineType 引擎模型类型。
 • 16k_zh：中文普通话通用；
 • 16k_en：英语；
@@ -70,7 +70,7 @@ namespace TencentCloud
 • 16k_es：西班牙语；
 • 16k_hi：印地语；
 • 16k_fr：法语；
-• 16k_de：法语；
+• 16k_de：德语；
                      * 
                      */
                     std::string GetEngineType() const;
@@ -89,7 +89,7 @@ namespace TencentCloud
 • 16k_es：西班牙语；
 • 16k_hi：印地语；
 • 16k_fr：法语；
-• 16k_de：法语；
+• 16k_de：德语；
                      * @param _engineType 引擎模型类型。
 • 16k_zh：中文普通话通用；
 • 16k_en：英语；
@@ -103,7 +103,7 @@ namespace TencentCloud
 • 16k_es：西班牙语；
 • 16k_hi：印地语；
 • 16k_fr：法语；
-• 16k_de：法语；
+• 16k_de：德语；
                      * 
                      */
                     void SetEngineType(const std::string& _engineType);
@@ -341,7 +341,7 @@ namespace TencentCloud
 • 16k_es：西班牙语；
 • 16k_hi：印地语；
 • 16k_fr：法语；
-• 16k_de：法语；
+• 16k_de：德语；
                      */
                     std::string m_engineType;
                     bool m_engineTypeHasBeenSet;
