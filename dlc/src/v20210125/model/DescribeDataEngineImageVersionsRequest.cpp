@@ -23,7 +23,9 @@ using namespace TencentCloud::Dlc::V20210125::Model;
 using namespace std;
 
 DescribeDataEngineImageVersionsRequest::DescribeDataEngineImageVersionsRequest() :
-    m_engineTypeHasBeenSet(false)
+    m_engineTypeHasBeenSet(false),
+    m_sortHasBeenSet(false),
+    m_ascHasBeenSet(false)
 {
 }
 
@@ -40,6 +42,22 @@ string DescribeDataEngineImageVersionsRequest::ToJsonString() const
         string key = "EngineType";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_engineType.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_sortHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Sort";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_sort.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_ascHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Asc";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_asc, allocator);
     }
 
 
@@ -64,6 +82,38 @@ void DescribeDataEngineImageVersionsRequest::SetEngineType(const string& _engine
 bool DescribeDataEngineImageVersionsRequest::EngineTypeHasBeenSet() const
 {
     return m_engineTypeHasBeenSet;
+}
+
+string DescribeDataEngineImageVersionsRequest::GetSort() const
+{
+    return m_sort;
+}
+
+void DescribeDataEngineImageVersionsRequest::SetSort(const string& _sort)
+{
+    m_sort = _sort;
+    m_sortHasBeenSet = true;
+}
+
+bool DescribeDataEngineImageVersionsRequest::SortHasBeenSet() const
+{
+    return m_sortHasBeenSet;
+}
+
+bool DescribeDataEngineImageVersionsRequest::GetAsc() const
+{
+    return m_asc;
+}
+
+void DescribeDataEngineImageVersionsRequest::SetAsc(const bool& _asc)
+{
+    m_asc = _asc;
+    m_ascHasBeenSet = true;
+}
+
+bool DescribeDataEngineImageVersionsRequest::AscHasBeenSet() const
+{
+    return m_ascHasBeenSet;
 }
 
 

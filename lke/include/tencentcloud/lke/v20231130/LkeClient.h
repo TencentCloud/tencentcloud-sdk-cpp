@@ -806,7 +806,7 @@ namespace TencentCloud
                 GetLikeDataCountOutcomeCallable GetLikeDataCountCallable(const Model::GetLikeDataCountRequest& request);
 
                 /**
-                 *获取推荐问题
+                 *获取聊天历史请求
                  * @param req GetMsgRecordRequest
                  * @return GetMsgRecordOutcome
                  */

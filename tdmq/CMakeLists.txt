@@ -43,6 +43,7 @@ set(tdmq_public_header_model
   include/tencentcloud/tdmq/v20200217/model/DescribeEnvironmentsRequest.h
   include/tencentcloud/tdmq/v20200217/model/DescribeRocketMQNamespacesRequest.h
   include/tencentcloud/tdmq/v20200217/model/ModifyRocketMQClusterResponse.h
+  include/tencentcloud/tdmq/v20200217/model/DescribeRocketMQTopicStatsResponse.h
   include/tencentcloud/tdmq/v20200217/model/CreateEnvironmentRequest.h
   include/tencentcloud/tdmq/v20200217/model/CreateCmqSubscribeResponse.h
   include/tencentcloud/tdmq/v20200217/model/DescribeClustersRequest.h
@@ -152,6 +153,7 @@ set(tdmq_public_header_model
   include/tencentcloud/tdmq/v20200217/model/RabbitMQQueueListInfo.h
   include/tencentcloud/tdmq/v20200217/model/DescribeMsgResponse.h
   include/tencentcloud/tdmq/v20200217/model/CreateProClusterResponse.h
+  include/tencentcloud/tdmq/v20200217/model/ModifyRocketMQInstanceRequest.h
   include/tencentcloud/tdmq/v20200217/model/Tag.h
   include/tencentcloud/tdmq/v20200217/model/CreateProClusterRequest.h
   include/tencentcloud/tdmq/v20200217/model/DescribeRabbitMQVipInstancesResponse.h
@@ -162,6 +164,7 @@ set(tdmq_public_header_model
   include/tencentcloud/tdmq/v20200217/model/DeleteEnvironmentsResponse.h
   include/tencentcloud/tdmq/v20200217/model/ModifyAMQPClusterRequest.h
   include/tencentcloud/tdmq/v20200217/model/FilterSubscription.h
+  include/tencentcloud/tdmq/v20200217/model/TopicStats.h
   include/tencentcloud/tdmq/v20200217/model/DescribeClustersResponse.h
   include/tencentcloud/tdmq/v20200217/model/ClearCmqSubscriptionFilterTagsRequest.h
   include/tencentcloud/tdmq/v20200217/model/CreateRocketMQGroupResponse.h
@@ -234,6 +237,7 @@ set(tdmq_public_header_model
   include/tencentcloud/tdmq/v20200217/model/RocketMQConsumerTopic.h
   include/tencentcloud/tdmq/v20200217/model/DescribePublishersRequest.h
   include/tencentcloud/tdmq/v20200217/model/ModifyRoleResponse.h
+  include/tencentcloud/tdmq/v20200217/model/DescribeRocketMQTopicStatsRequest.h
   include/tencentcloud/tdmq/v20200217/model/SendRocketMQMessageResponse.h
   include/tencentcloud/tdmq/v20200217/model/PulsarProClusterSpecInfo.h
   include/tencentcloud/tdmq/v20200217/model/Subscription.h
@@ -251,6 +255,7 @@ set(tdmq_public_header_model
   include/tencentcloud/tdmq/v20200217/model/DeleteRolesResponse.h
   include/tencentcloud/tdmq/v20200217/model/ModifyRocketMQTopicRequest.h
   include/tencentcloud/tdmq/v20200217/model/RocketMQClusterInfo.h
+  include/tencentcloud/tdmq/v20200217/model/ModifyRocketMQInstanceResponse.h
   include/tencentcloud/tdmq/v20200217/model/PartitionsTopic.h
   include/tencentcloud/tdmq/v20200217/model/ResetMsgSubOffsetByTimestampResponse.h
   include/tencentcloud/tdmq/v20200217/model/SendMessagesRequest.h
@@ -310,6 +315,7 @@ set(tdmq_public_header_model
   include/tencentcloud/tdmq/v20200217/model/RabbitMQPrivateNode.h
   include/tencentcloud/tdmq/v20200217/model/ModifyPublicNetworkAccessPointRequest.h
   include/tencentcloud/tdmq/v20200217/model/DescribeRocketMQSourceClusterGroupListResponse.h
+  include/tencentcloud/tdmq/v20200217/model/DescribeRocketMQTopicsByGroupRequest.h
   include/tencentcloud/tdmq/v20200217/model/DescribeRocketMQConsumeStatsResponse.h
   include/tencentcloud/tdmq/v20200217/model/DescribeRocketMQPublicAccessMonitorDataResponse.h
   include/tencentcloud/tdmq/v20200217/model/RabbitMQVirtualHostInfo.h
@@ -365,6 +371,7 @@ set(tdmq_public_header_model
   include/tencentcloud/tdmq/v20200217/model/DescribePublishersResponse.h
   include/tencentcloud/tdmq/v20200217/model/DescribeCmqQueueDetailRequest.h
   include/tencentcloud/tdmq/v20200217/model/CreateRocketMQEnvironmentRoleResponse.h
+  include/tencentcloud/tdmq/v20200217/model/DescribeRocketMQTopicsByGroupResponse.h
   include/tencentcloud/tdmq/v20200217/model/DeleteEnvironmentRolesRequest.h
   include/tencentcloud/tdmq/v20200217/model/CreateRocketMQTopicResponse.h
   include/tencentcloud/tdmq/v20200217/model/CreateCmqQueueRequest.h
@@ -411,6 +418,7 @@ set(tdmq_src
   src/v20200217/model/DescribeEnvironmentsRequest.cpp
   src/v20200217/model/DescribeRocketMQNamespacesRequest.cpp
   src/v20200217/model/ModifyRocketMQClusterResponse.cpp
+  src/v20200217/model/DescribeRocketMQTopicStatsResponse.cpp
   src/v20200217/model/CreateEnvironmentRequest.cpp
   src/v20200217/model/CreateCmqSubscribeResponse.cpp
   src/v20200217/model/DescribeClustersRequest.cpp
@@ -520,6 +528,7 @@ set(tdmq_src
   src/v20200217/model/RabbitMQQueueListInfo.cpp
   src/v20200217/model/DescribeMsgResponse.cpp
   src/v20200217/model/CreateProClusterResponse.cpp
+  src/v20200217/model/ModifyRocketMQInstanceRequest.cpp
   src/v20200217/model/Tag.cpp
   src/v20200217/model/CreateProClusterRequest.cpp
   src/v20200217/model/DescribeRabbitMQVipInstancesResponse.cpp
@@ -530,6 +539,7 @@ set(tdmq_src
   src/v20200217/model/DeleteEnvironmentsResponse.cpp
   src/v20200217/model/ModifyAMQPClusterRequest.cpp
   src/v20200217/model/FilterSubscription.cpp
+  src/v20200217/model/TopicStats.cpp
   src/v20200217/model/DescribeClustersResponse.cpp
   src/v20200217/model/ClearCmqSubscriptionFilterTagsRequest.cpp
   src/v20200217/model/CreateRocketMQGroupResponse.cpp
@@ -602,6 +612,7 @@ set(tdmq_src
   src/v20200217/model/RocketMQConsumerTopic.cpp
   src/v20200217/model/DescribePublishersRequest.cpp
   src/v20200217/model/ModifyRoleResponse.cpp
+  src/v20200217/model/DescribeRocketMQTopicStatsRequest.cpp
   src/v20200217/model/SendRocketMQMessageResponse.cpp
   src/v20200217/model/PulsarProClusterSpecInfo.cpp
   src/v20200217/model/Subscription.cpp
@@ -619,6 +630,7 @@ set(tdmq_src
   src/v20200217/model/DeleteRolesResponse.cpp
   src/v20200217/model/ModifyRocketMQTopicRequest.cpp
   src/v20200217/model/RocketMQClusterInfo.cpp
+  src/v20200217/model/ModifyRocketMQInstanceResponse.cpp
   src/v20200217/model/PartitionsTopic.cpp
   src/v20200217/model/ResetMsgSubOffsetByTimestampResponse.cpp
   src/v20200217/model/SendMessagesRequest.cpp
@@ -678,6 +690,7 @@ set(tdmq_src
   src/v20200217/model/RabbitMQPrivateNode.cpp
   src/v20200217/model/ModifyPublicNetworkAccessPointRequest.cpp
   src/v20200217/model/DescribeRocketMQSourceClusterGroupListResponse.cpp
+  src/v20200217/model/DescribeRocketMQTopicsByGroupRequest.cpp
   src/v20200217/model/DescribeRocketMQConsumeStatsResponse.cpp
   src/v20200217/model/DescribeRocketMQPublicAccessMonitorDataResponse.cpp
   src/v20200217/model/RabbitMQVirtualHostInfo.cpp
@@ -733,6 +746,7 @@ set(tdmq_src
   src/v20200217/model/DescribePublishersResponse.cpp
   src/v20200217/model/DescribeCmqQueueDetailRequest.cpp
   src/v20200217/model/CreateRocketMQEnvironmentRoleResponse.cpp
+  src/v20200217/model/DescribeRocketMQTopicsByGroupResponse.cpp
   src/v20200217/model/DeleteEnvironmentRolesRequest.cpp
   src/v20200217/model/CreateRocketMQTopicResponse.cpp
   src/v20200217/model/CreateCmqQueueRequest.cpp

@@ -85,15 +85,15 @@ namespace TencentCloud
                     bool InstanceNameHasBeenSet() const;
 
                     /**
-                     * 获取存储时长（取值为 15、30、45。此参数不适用于包年包月实例）
-                     * @return DataRetentionTime 存储时长（取值为 15、30、45。此参数不适用于包年包月实例）
+                     * 获取数据存储时间（单位天），限制值为15, 30, 45, 90, 180, 365, 730之一
+                     * @return DataRetentionTime 数据存储时间（单位天），限制值为15, 30, 45, 90, 180, 365, 730之一
                      * 
                      */
                     int64_t GetDataRetentionTime() const;
 
                     /**
-                     * 设置存储时长（取值为 15、30、45。此参数不适用于包年包月实例）
-                     * @param _dataRetentionTime 存储时长（取值为 15、30、45。此参数不适用于包年包月实例）
+                     * 设置数据存储时间（单位天），限制值为15, 30, 45, 90, 180, 365, 730之一
+                     * @param _dataRetentionTime 数据存储时间（单位天），限制值为15, 30, 45, 90, 180, 365, 730之一
                      * 
                      */
                     void SetDataRetentionTime(const int64_t& _dataRetentionTime);
@@ -120,7 +120,7 @@ namespace TencentCloud
                     bool m_instanceNameHasBeenSet;
 
                     /**
-                     * 存储时长（取值为 15、30、45。此参数不适用于包年包月实例）
+                     * 数据存储时间（单位天），限制值为15, 30, 45, 90, 180, 365, 730之一
                      */
                     int64_t m_dataRetentionTime;
                     bool m_dataRetentionTimeHasBeenSet;

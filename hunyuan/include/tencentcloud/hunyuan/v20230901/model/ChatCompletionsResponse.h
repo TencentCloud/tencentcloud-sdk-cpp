@@ -136,6 +136,20 @@ namespace TencentCloud
                      */
                     bool ErrorMsgHasBeenSet() const;
 
+                    /**
+                     * 获取多轮会话风险审核，值为1时，表明存在信息安全风险，建议终止客户多轮会话。
+                     * @return ModerationLevel 多轮会话风险审核，值为1时，表明存在信息安全风险，建议终止客户多轮会话。
+                     * 
+                     */
+                    std::string GetModerationLevel() const;
+
+                    /**
+                     * 判断参数 ModerationLevel 是否已赋值
+                     * @return ModerationLevel 是否已赋值
+                     * 
+                     */
+                    bool ModerationLevelHasBeenSet() const;
+
                 private:
 
                     /**
@@ -176,6 +190,12 @@ namespace TencentCloud
                      */
                     ErrorMsg m_errorMsg;
                     bool m_errorMsgHasBeenSet;
+
+                    /**
+                     * 多轮会话风险审核，值为1时，表明存在信息安全风险，建议终止客户多轮会话。
+                     */
+                    std::string m_moderationLevel;
+                    bool m_moderationLevelHasBeenSet;
 
                 };
             }

@@ -31,7 +31,10 @@ HaVip::HaVip() :
     m_addressIpHasBeenSet(false),
     m_stateHasBeenSet(false),
     m_createdTimeHasBeenSet(false),
-    m_businessHasBeenSet(false)
+    m_businessHasBeenSet(false),
+    m_haVipAssociationSetHasBeenSet(false),
+    m_checkAssociateHasBeenSet(false),
+    m_flushedTimeHasBeenSet(false)
 {
 }
 
@@ -150,6 +153,46 @@ CoreInternalOutcome HaVip::Deserialize(const rapidjson::Value &value)
         m_businessHasBeenSet = true;
     }
 
+    if (value.HasMember("HaVipAssociationSet") && !value["HaVipAssociationSet"].IsNull())
+    {
+        if (!value["HaVipAssociationSet"].IsArray())
+            return CoreInternalOutcome(Core::Error("response `HaVip.HaVipAssociationSet` is not array type"));
+
+        const rapidjson::Value &tmpValue = value["HaVipAssociationSet"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            HaVipAssociation item;
+            CoreInternalOutcome outcome = item.Deserialize(*itr);
+            if (!outcome.IsSuccess())
+            {
+                outcome.GetError().SetRequestId(requestId);
+                return outcome;
+            }
+            m_haVipAssociationSet.push_back(item);
+        }
+        m_haVipAssociationSetHasBeenSet = true;
+    }
+
+    if (value.HasMember("CheckAssociate") && !value["CheckAssociate"].IsNull())
+    {
+        if (!value["CheckAssociate"].IsBool())
+        {
+            return CoreInternalOutcome(Core::Error("response `HaVip.CheckAssociate` IsBool=false incorrectly").SetRequestId(requestId));
+        }
+        m_checkAssociate = value["CheckAssociate"].GetBool();
+        m_checkAssociateHasBeenSet = true;
+    }
+
+    if (value.HasMember("FlushedTime") && !value["FlushedTime"].IsNull())
+    {
+        if (!value["FlushedTime"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `HaVip.FlushedTime` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_flushedTime = string(value["FlushedTime"].GetString());
+        m_flushedTimeHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -243,6 +286,37 @@ void HaVip::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Allocator
         string key = "Business";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_business.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_haVipAssociationSetHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "HaVipAssociationSet";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_haVipAssociationSet.begin(); itr != m_haVipAssociationSet.end(); ++itr, ++i)
+        {
+            value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(value[key.c_str()][i], allocator);
+        }
+    }
+
+    if (m_checkAssociateHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "CheckAssociate";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_checkAssociate, allocator);
+    }
+
+    if (m_flushedTimeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "FlushedTime";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_flushedTime.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -422,5 +496,53 @@ void HaVip::SetBusiness(const string& _business)
 bool HaVip::BusinessHasBeenSet() const
 {
     return m_businessHasBeenSet;
+}
+
+vector<HaVipAssociation> HaVip::GetHaVipAssociationSet() const
+{
+    return m_haVipAssociationSet;
+}
+
+void HaVip::SetHaVipAssociationSet(const vector<HaVipAssociation>& _haVipAssociationSet)
+{
+    m_haVipAssociationSet = _haVipAssociationSet;
+    m_haVipAssociationSetHasBeenSet = true;
+}
+
+bool HaVip::HaVipAssociationSetHasBeenSet() const
+{
+    return m_haVipAssociationSetHasBeenSet;
+}
+
+bool HaVip::GetCheckAssociate() const
+{
+    return m_checkAssociate;
+}
+
+void HaVip::SetCheckAssociate(const bool& _checkAssociate)
+{
+    m_checkAssociate = _checkAssociate;
+    m_checkAssociateHasBeenSet = true;
+}
+
+bool HaVip::CheckAssociateHasBeenSet() const
+{
+    return m_checkAssociateHasBeenSet;
+}
+
+string HaVip::GetFlushedTime() const
+{
+    return m_flushedTime;
+}
+
+void HaVip::SetFlushedTime(const string& _flushedTime)
+{
+    m_flushedTime = _flushedTime;
+    m_flushedTimeHasBeenSet = true;
+}
+
+bool HaVip::FlushedTimeHasBeenSet() const
+{
+    return m_flushedTimeHasBeenSet;
 }
 

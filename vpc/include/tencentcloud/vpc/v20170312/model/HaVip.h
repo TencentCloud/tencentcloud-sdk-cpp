@@ -24,6 +24,7 @@
 #include <tencentcloud/core/utils/rapidjson/writer.h>
 #include <tencentcloud/core/utils/rapidjson/stringbuffer.h>
 #include <tencentcloud/core/AbstractModel.h>
+#include <tencentcloud/vpc/v20170312/model/HaVipAssociation.h>
 
 
 namespace TencentCloud
@@ -285,6 +286,81 @@ namespace TencentCloud
                      */
                     bool BusinessHasBeenSet() const;
 
+                    /**
+                     * 获取`HAVIP`的飘移范围。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return HaVipAssociationSet `HAVIP`的飘移范围。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::vector<HaVipAssociation> GetHaVipAssociationSet() const;
+
+                    /**
+                     * 设置`HAVIP`的飘移范围。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _haVipAssociationSet `HAVIP`的飘移范围。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetHaVipAssociationSet(const std::vector<HaVipAssociation>& _haVipAssociationSet);
+
+                    /**
+                     * 判断参数 HaVipAssociationSet 是否已赋值
+                     * @return HaVipAssociationSet 是否已赋值
+                     * 
+                     */
+                    bool HaVipAssociationSetHasBeenSet() const;
+
+                    /**
+                     * 获取是否开启`HAVIP`的飘移范围校验。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return CheckAssociate 是否开启`HAVIP`的飘移范围校验。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    bool GetCheckAssociate() const;
+
+                    /**
+                     * 设置是否开启`HAVIP`的飘移范围校验。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _checkAssociate 是否开启`HAVIP`的飘移范围校验。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetCheckAssociate(const bool& _checkAssociate);
+
+                    /**
+                     * 判断参数 CheckAssociate 是否已赋值
+                     * @return CheckAssociate 是否已赋值
+                     * 
+                     */
+                    bool CheckAssociateHasBeenSet() const;
+
+                    /**
+                     * 获取HAVIP 刷新时间。该参数只作为出参数。以下场景会触发 FlushTime 被刷新：1）子机发出免费 ARP 触发 HAVIP 漂移；2）手动HAVIP解绑网卡; 没有更新时默认值：0000-00-00 00:00:00
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return FlushedTime HAVIP 刷新时间。该参数只作为出参数。以下场景会触发 FlushTime 被刷新：1）子机发出免费 ARP 触发 HAVIP 漂移；2）手动HAVIP解绑网卡; 没有更新时默认值：0000-00-00 00:00:00
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::string GetFlushedTime() const;
+
+                    /**
+                     * 设置HAVIP 刷新时间。该参数只作为出参数。以下场景会触发 FlushTime 被刷新：1）子机发出免费 ARP 触发 HAVIP 漂移；2）手动HAVIP解绑网卡; 没有更新时默认值：0000-00-00 00:00:00
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _flushedTime HAVIP 刷新时间。该参数只作为出参数。以下场景会触发 FlushTime 被刷新：1）子机发出免费 ARP 触发 HAVIP 漂移；2）手动HAVIP解绑网卡; 没有更新时默认值：0000-00-00 00:00:00
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetFlushedTime(const std::string& _flushedTime);
+
+                    /**
+                     * 判断参数 FlushedTime 是否已赋值
+                     * @return FlushedTime 是否已赋值
+                     * 
+                     */
+                    bool FlushedTimeHasBeenSet() const;
+
                 private:
 
                     /**
@@ -354,6 +430,27 @@ namespace TencentCloud
                      */
                     std::string m_business;
                     bool m_businessHasBeenSet;
+
+                    /**
+                     * `HAVIP`的飘移范围。
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::vector<HaVipAssociation> m_haVipAssociationSet;
+                    bool m_haVipAssociationSetHasBeenSet;
+
+                    /**
+                     * 是否开启`HAVIP`的飘移范围校验。
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    bool m_checkAssociate;
+                    bool m_checkAssociateHasBeenSet;
+
+                    /**
+                     * HAVIP 刷新时间。该参数只作为出参数。以下场景会触发 FlushTime 被刷新：1）子机发出免费 ARP 触发 HAVIP 漂移；2）手动HAVIP解绑网卡; 没有更新时默认值：0000-00-00 00:00:00
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_flushedTime;
+                    bool m_flushedTimeHasBeenSet;
 
                 };
             }

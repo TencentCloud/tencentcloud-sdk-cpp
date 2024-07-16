@@ -40,7 +40,14 @@ DedicatedClusterOrder::DedicatedClusterOrder() :
     m_payTypeHasBeenSet(false),
     m_timeUnitHasBeenSet(false),
     m_timeSpanHasBeenSet(false),
-    m_orderTypeHasBeenSet(false)
+    m_orderTypeHasBeenSet(false),
+    m_checkStatusHasBeenSet(false),
+    m_deliverExpectTimeHasBeenSet(false),
+    m_deliverFinishTimeHasBeenSet(false),
+    m_checkExpectTimeHasBeenSet(false),
+    m_checkFinishTimeHasBeenSet(false),
+    m_orderSLAHasBeenSet(false),
+    m_orderPayPlanHasBeenSet(false)
 {
 }
 
@@ -268,6 +275,76 @@ CoreInternalOutcome DedicatedClusterOrder::Deserialize(const rapidjson::Value &v
         m_orderTypeHasBeenSet = true;
     }
 
+    if (value.HasMember("CheckStatus") && !value["CheckStatus"].IsNull())
+    {
+        if (!value["CheckStatus"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `DedicatedClusterOrder.CheckStatus` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_checkStatus = string(value["CheckStatus"].GetString());
+        m_checkStatusHasBeenSet = true;
+    }
+
+    if (value.HasMember("DeliverExpectTime") && !value["DeliverExpectTime"].IsNull())
+    {
+        if (!value["DeliverExpectTime"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `DedicatedClusterOrder.DeliverExpectTime` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_deliverExpectTime = string(value["DeliverExpectTime"].GetString());
+        m_deliverExpectTimeHasBeenSet = true;
+    }
+
+    if (value.HasMember("DeliverFinishTime") && !value["DeliverFinishTime"].IsNull())
+    {
+        if (!value["DeliverFinishTime"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `DedicatedClusterOrder.DeliverFinishTime` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_deliverFinishTime = string(value["DeliverFinishTime"].GetString());
+        m_deliverFinishTimeHasBeenSet = true;
+    }
+
+    if (value.HasMember("CheckExpectTime") && !value["CheckExpectTime"].IsNull())
+    {
+        if (!value["CheckExpectTime"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `DedicatedClusterOrder.CheckExpectTime` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_checkExpectTime = string(value["CheckExpectTime"].GetString());
+        m_checkExpectTimeHasBeenSet = true;
+    }
+
+    if (value.HasMember("CheckFinishTime") && !value["CheckFinishTime"].IsNull())
+    {
+        if (!value["CheckFinishTime"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `DedicatedClusterOrder.CheckFinishTime` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_checkFinishTime = string(value["CheckFinishTime"].GetString());
+        m_checkFinishTimeHasBeenSet = true;
+    }
+
+    if (value.HasMember("OrderSLA") && !value["OrderSLA"].IsNull())
+    {
+        if (!value["OrderSLA"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `DedicatedClusterOrder.OrderSLA` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_orderSLA = string(value["OrderSLA"].GetString());
+        m_orderSLAHasBeenSet = true;
+    }
+
+    if (value.HasMember("OrderPayPlan") && !value["OrderPayPlan"].IsNull())
+    {
+        if (!value["OrderPayPlan"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `DedicatedClusterOrder.OrderPayPlan` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_orderPayPlan = string(value["OrderPayPlan"].GetString());
+        m_orderPayPlanHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -455,6 +532,62 @@ void DedicatedClusterOrder::ToJsonObject(rapidjson::Value &value, rapidjson::Doc
         string key = "OrderType";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_orderType.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_checkStatusHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "CheckStatus";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_checkStatus.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_deliverExpectTimeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "DeliverExpectTime";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_deliverExpectTime.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_deliverFinishTimeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "DeliverFinishTime";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_deliverFinishTime.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_checkExpectTimeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "CheckExpectTime";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_checkExpectTime.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_checkFinishTimeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "CheckFinishTime";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_checkFinishTime.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_orderSLAHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "OrderSLA";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_orderSLA.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_orderPayPlanHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "OrderPayPlan";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_orderPayPlan.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -778,5 +911,117 @@ void DedicatedClusterOrder::SetOrderType(const string& _orderType)
 bool DedicatedClusterOrder::OrderTypeHasBeenSet() const
 {
     return m_orderTypeHasBeenSet;
+}
+
+string DedicatedClusterOrder::GetCheckStatus() const
+{
+    return m_checkStatus;
+}
+
+void DedicatedClusterOrder::SetCheckStatus(const string& _checkStatus)
+{
+    m_checkStatus = _checkStatus;
+    m_checkStatusHasBeenSet = true;
+}
+
+bool DedicatedClusterOrder::CheckStatusHasBeenSet() const
+{
+    return m_checkStatusHasBeenSet;
+}
+
+string DedicatedClusterOrder::GetDeliverExpectTime() const
+{
+    return m_deliverExpectTime;
+}
+
+void DedicatedClusterOrder::SetDeliverExpectTime(const string& _deliverExpectTime)
+{
+    m_deliverExpectTime = _deliverExpectTime;
+    m_deliverExpectTimeHasBeenSet = true;
+}
+
+bool DedicatedClusterOrder::DeliverExpectTimeHasBeenSet() const
+{
+    return m_deliverExpectTimeHasBeenSet;
+}
+
+string DedicatedClusterOrder::GetDeliverFinishTime() const
+{
+    return m_deliverFinishTime;
+}
+
+void DedicatedClusterOrder::SetDeliverFinishTime(const string& _deliverFinishTime)
+{
+    m_deliverFinishTime = _deliverFinishTime;
+    m_deliverFinishTimeHasBeenSet = true;
+}
+
+bool DedicatedClusterOrder::DeliverFinishTimeHasBeenSet() const
+{
+    return m_deliverFinishTimeHasBeenSet;
+}
+
+string DedicatedClusterOrder::GetCheckExpectTime() const
+{
+    return m_checkExpectTime;
+}
+
+void DedicatedClusterOrder::SetCheckExpectTime(const string& _checkExpectTime)
+{
+    m_checkExpectTime = _checkExpectTime;
+    m_checkExpectTimeHasBeenSet = true;
+}
+
+bool DedicatedClusterOrder::CheckExpectTimeHasBeenSet() const
+{
+    return m_checkExpectTimeHasBeenSet;
+}
+
+string DedicatedClusterOrder::GetCheckFinishTime() const
+{
+    return m_checkFinishTime;
+}
+
+void DedicatedClusterOrder::SetCheckFinishTime(const string& _checkFinishTime)
+{
+    m_checkFinishTime = _checkFinishTime;
+    m_checkFinishTimeHasBeenSet = true;
+}
+
+bool DedicatedClusterOrder::CheckFinishTimeHasBeenSet() const
+{
+    return m_checkFinishTimeHasBeenSet;
+}
+
+string DedicatedClusterOrder::GetOrderSLA() const
+{
+    return m_orderSLA;
+}
+
+void DedicatedClusterOrder::SetOrderSLA(const string& _orderSLA)
+{
+    m_orderSLA = _orderSLA;
+    m_orderSLAHasBeenSet = true;
+}
+
+bool DedicatedClusterOrder::OrderSLAHasBeenSet() const
+{
+    return m_orderSLAHasBeenSet;
+}
+
+string DedicatedClusterOrder::GetOrderPayPlan() const
+{
+    return m_orderPayPlan;
+}
+
+void DedicatedClusterOrder::SetOrderPayPlan(const string& _orderPayPlan)
+{
+    m_orderPayPlan = _orderPayPlan;
+    m_orderPayPlanHasBeenSet = true;
+}
+
+bool DedicatedClusterOrder::OrderPayPlanHasBeenSet() const
+{
+    return m_orderPayPlanHasBeenSet;
 }
 

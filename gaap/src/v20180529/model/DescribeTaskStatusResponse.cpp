@@ -23,7 +23,9 @@ using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Gaap::V20180529::Model;
 using namespace std;
 
-DescribeTaskStatusResponse::DescribeTaskStatusResponse()
+DescribeTaskStatusResponse::DescribeTaskStatusResponse() :
+    m_statusHasBeenSet(false),
+    m_taskIdHasBeenSet(false)
 {
 }
 
@@ -61,6 +63,26 @@ CoreInternalOutcome DescribeTaskStatusResponse::Deserialize(const string &payloa
     }
 
 
+    if (rsp.HasMember("Status") && !rsp["Status"].IsNull())
+    {
+        if (!rsp["Status"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `Status` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_status = string(rsp["Status"].GetString());
+        m_statusHasBeenSet = true;
+    }
+
+    if (rsp.HasMember("TaskId") && !rsp["TaskId"].IsNull())
+    {
+        if (!rsp["TaskId"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `TaskId` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_taskId = string(rsp["TaskId"].GetString());
+        m_taskIdHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -70,6 +92,22 @@ string DescribeTaskStatusResponse::ToJsonString() const
     rapidjson::Document value;
     value.SetObject();
     rapidjson::Document::AllocatorType& allocator = value.GetAllocator();
+
+    if (m_statusHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Status";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_status.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_taskIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "TaskId";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_taskId.c_str(), allocator).Move(), allocator);
+    }
 
     rapidjson::Value iKey(rapidjson::kStringType);
     string key = "RequestId";
@@ -82,5 +120,25 @@ string DescribeTaskStatusResponse::ToJsonString() const
     return buffer.GetString();
 }
 
+
+string DescribeTaskStatusResponse::GetStatus() const
+{
+    return m_status;
+}
+
+bool DescribeTaskStatusResponse::StatusHasBeenSet() const
+{
+    return m_statusHasBeenSet;
+}
+
+string DescribeTaskStatusResponse::GetTaskId() const
+{
+    return m_taskId;
+}
+
+bool DescribeTaskStatusResponse::TaskIdHasBeenSet() const
+{
+    return m_taskIdHasBeenSet;
+}
 
 

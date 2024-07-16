@@ -64,119 +64,15 @@ namespace TencentCloud
                     bool InstanceIdHasBeenSet() const;
 
                     /**
-                     * 获取Prometheus 集成项 Code，升级对应的 Dashboard，取值如下：
-<li>qcloud</li>
-<li>cvm_process_exporter</li>
-<li>cvm_node_exporter</li>
-<li>cvm</li>
-<li>kubernetes</li>
-<li>cdwch</li>
-<li>rocketmq</li>
-<li>spring_mvc</li>
-<li>mysql</li>
-<li>go</li>
-<li>redis</li>
-<li>jvm</li>
-<li>pgsql</li>
-<li>mongo</li>
-<li>kafka</li>
-<li>es</li>
-<li>flink</li>
-<li>blackbox</li>
-<li>consule</li>
-<li>memcached</li>
-<li>zk</li>
-<li>tps</li>
-<li>istio</li>
-<li>etcd</li>
-<li>pts</li>
-<li>kong</li>
-                     * @return IntegrationCodes Prometheus 集成项 Code，升级对应的 Dashboard，取值如下：
-<li>qcloud</li>
-<li>cvm_process_exporter</li>
-<li>cvm_node_exporter</li>
-<li>cvm</li>
-<li>kubernetes</li>
-<li>cdwch</li>
-<li>rocketmq</li>
-<li>spring_mvc</li>
-<li>mysql</li>
-<li>go</li>
-<li>redis</li>
-<li>jvm</li>
-<li>pgsql</li>
-<li>mongo</li>
-<li>kafka</li>
-<li>es</li>
-<li>flink</li>
-<li>blackbox</li>
-<li>consule</li>
-<li>memcached</li>
-<li>zk</li>
-<li>tps</li>
-<li>istio</li>
-<li>etcd</li>
-<li>pts</li>
-<li>kong</li>
+                     * 获取Prometheus 集成项 Code，升级对应的 Dashboard，取值如下：<li>qcloud</li><li>cvm_process_exporter</li><li>cvm_node_exporter</li><li>cvm</li><li>tps</li><li>nginx-ingress</li><li>nvidia-gpu</li><li>cdwch</li><li>emr</li><li>apache</li><li>rocketmq</li><li>rabbitmq</li><li>spring_mvc</li><li>mysql</li><li>mssql</li><li>go</li><li>redis</li><li>jvm</li><li>pgsql</li><li>ceph</li><li>docker</li><li>nginx</li><li>oracledb</li><li>mongo</li><li>kafka</li><li>es</li><li>flink</li><li>blackbox</li><li>consule</li><li>memcached</li><li>zk</li><li>tps</li><li>istio</li><li>etcd</li><li>pts</li><li>kong</li>
+                     * @return IntegrationCodes Prometheus 集成项 Code，升级对应的 Dashboard，取值如下：<li>qcloud</li><li>cvm_process_exporter</li><li>cvm_node_exporter</li><li>cvm</li><li>tps</li><li>nginx-ingress</li><li>nvidia-gpu</li><li>cdwch</li><li>emr</li><li>apache</li><li>rocketmq</li><li>rabbitmq</li><li>spring_mvc</li><li>mysql</li><li>mssql</li><li>go</li><li>redis</li><li>jvm</li><li>pgsql</li><li>ceph</li><li>docker</li><li>nginx</li><li>oracledb</li><li>mongo</li><li>kafka</li><li>es</li><li>flink</li><li>blackbox</li><li>consule</li><li>memcached</li><li>zk</li><li>tps</li><li>istio</li><li>etcd</li><li>pts</li><li>kong</li>
                      * 
                      */
                     std::vector<std::string> GetIntegrationCodes() const;
 
                     /**
-                     * 设置Prometheus 集成项 Code，升级对应的 Dashboard，取值如下：
-<li>qcloud</li>
-<li>cvm_process_exporter</li>
-<li>cvm_node_exporter</li>
-<li>cvm</li>
-<li>kubernetes</li>
-<li>cdwch</li>
-<li>rocketmq</li>
-<li>spring_mvc</li>
-<li>mysql</li>
-<li>go</li>
-<li>redis</li>
-<li>jvm</li>
-<li>pgsql</li>
-<li>mongo</li>
-<li>kafka</li>
-<li>es</li>
-<li>flink</li>
-<li>blackbox</li>
-<li>consule</li>
-<li>memcached</li>
-<li>zk</li>
-<li>tps</li>
-<li>istio</li>
-<li>etcd</li>
-<li>pts</li>
-<li>kong</li>
-                     * @param _integrationCodes Prometheus 集成项 Code，升级对应的 Dashboard，取值如下：
-<li>qcloud</li>
-<li>cvm_process_exporter</li>
-<li>cvm_node_exporter</li>
-<li>cvm</li>
-<li>kubernetes</li>
-<li>cdwch</li>
-<li>rocketmq</li>
-<li>spring_mvc</li>
-<li>mysql</li>
-<li>go</li>
-<li>redis</li>
-<li>jvm</li>
-<li>pgsql</li>
-<li>mongo</li>
-<li>kafka</li>
-<li>es</li>
-<li>flink</li>
-<li>blackbox</li>
-<li>consule</li>
-<li>memcached</li>
-<li>zk</li>
-<li>tps</li>
-<li>istio</li>
-<li>etcd</li>
-<li>pts</li>
-<li>kong</li>
+                     * 设置Prometheus 集成项 Code，升级对应的 Dashboard，取值如下：<li>qcloud</li><li>cvm_process_exporter</li><li>cvm_node_exporter</li><li>cvm</li><li>tps</li><li>nginx-ingress</li><li>nvidia-gpu</li><li>cdwch</li><li>emr</li><li>apache</li><li>rocketmq</li><li>rabbitmq</li><li>spring_mvc</li><li>mysql</li><li>mssql</li><li>go</li><li>redis</li><li>jvm</li><li>pgsql</li><li>ceph</li><li>docker</li><li>nginx</li><li>oracledb</li><li>mongo</li><li>kafka</li><li>es</li><li>flink</li><li>blackbox</li><li>consule</li><li>memcached</li><li>zk</li><li>tps</li><li>istio</li><li>etcd</li><li>pts</li><li>kong</li>
+                     * @param _integrationCodes Prometheus 集成项 Code，升级对应的 Dashboard，取值如下：<li>qcloud</li><li>cvm_process_exporter</li><li>cvm_node_exporter</li><li>cvm</li><li>tps</li><li>nginx-ingress</li><li>nvidia-gpu</li><li>cdwch</li><li>emr</li><li>apache</li><li>rocketmq</li><li>rabbitmq</li><li>spring_mvc</li><li>mysql</li><li>mssql</li><li>go</li><li>redis</li><li>jvm</li><li>pgsql</li><li>ceph</li><li>docker</li><li>nginx</li><li>oracledb</li><li>mongo</li><li>kafka</li><li>es</li><li>flink</li><li>blackbox</li><li>consule</li><li>memcached</li><li>zk</li><li>tps</li><li>istio</li><li>etcd</li><li>pts</li><li>kong</li>
                      * 
                      */
                     void SetIntegrationCodes(const std::vector<std::string>& _integrationCodes);
@@ -197,33 +93,7 @@ namespace TencentCloud
                     bool m_instanceIdHasBeenSet;
 
                     /**
-                     * Prometheus 集成项 Code，升级对应的 Dashboard，取值如下：
-<li>qcloud</li>
-<li>cvm_process_exporter</li>
-<li>cvm_node_exporter</li>
-<li>cvm</li>
-<li>kubernetes</li>
-<li>cdwch</li>
-<li>rocketmq</li>
-<li>spring_mvc</li>
-<li>mysql</li>
-<li>go</li>
-<li>redis</li>
-<li>jvm</li>
-<li>pgsql</li>
-<li>mongo</li>
-<li>kafka</li>
-<li>es</li>
-<li>flink</li>
-<li>blackbox</li>
-<li>consule</li>
-<li>memcached</li>
-<li>zk</li>
-<li>tps</li>
-<li>istio</li>
-<li>etcd</li>
-<li>pts</li>
-<li>kong</li>
+                     * Prometheus 集成项 Code，升级对应的 Dashboard，取值如下：<li>qcloud</li><li>cvm_process_exporter</li><li>cvm_node_exporter</li><li>cvm</li><li>tps</li><li>nginx-ingress</li><li>nvidia-gpu</li><li>cdwch</li><li>emr</li><li>apache</li><li>rocketmq</li><li>rabbitmq</li><li>spring_mvc</li><li>mysql</li><li>mssql</li><li>go</li><li>redis</li><li>jvm</li><li>pgsql</li><li>ceph</li><li>docker</li><li>nginx</li><li>oracledb</li><li>mongo</li><li>kafka</li><li>es</li><li>flink</li><li>blackbox</li><li>consule</li><li>memcached</li><li>zk</li><li>tps</li><li>istio</li><li>etcd</li><li>pts</li><li>kong</li>
                      */
                     std::vector<std::string> m_integrationCodes;
                     bool m_integrationCodesHasBeenSet;

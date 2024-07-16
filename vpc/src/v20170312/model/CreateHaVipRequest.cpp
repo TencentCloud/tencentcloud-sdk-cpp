@@ -24,10 +24,11 @@ using namespace std;
 
 CreateHaVipRequest::CreateHaVipRequest() :
     m_vpcIdHasBeenSet(false),
-    m_subnetIdHasBeenSet(false),
     m_haVipNameHasBeenSet(false),
+    m_subnetIdHasBeenSet(false),
     m_vipHasBeenSet(false),
-    m_networkInterfaceIdHasBeenSet(false)
+    m_networkInterfaceIdHasBeenSet(false),
+    m_checkAssociateHasBeenSet(false)
 {
 }
 
@@ -46,20 +47,20 @@ string CreateHaVipRequest::ToJsonString() const
         d.AddMember(iKey, rapidjson::Value(m_vpcId.c_str(), allocator).Move(), allocator);
     }
 
-    if (m_subnetIdHasBeenSet)
-    {
-        rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "SubnetId";
-        iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, rapidjson::Value(m_subnetId.c_str(), allocator).Move(), allocator);
-    }
-
     if (m_haVipNameHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
         string key = "HaVipName";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_haVipName.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_subnetIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "SubnetId";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_subnetId.c_str(), allocator).Move(), allocator);
     }
 
     if (m_vipHasBeenSet)
@@ -76,6 +77,14 @@ string CreateHaVipRequest::ToJsonString() const
         string key = "NetworkInterfaceId";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_networkInterfaceId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_checkAssociateHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "CheckAssociate";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_checkAssociate, allocator);
     }
 
 
@@ -102,22 +111,6 @@ bool CreateHaVipRequest::VpcIdHasBeenSet() const
     return m_vpcIdHasBeenSet;
 }
 
-string CreateHaVipRequest::GetSubnetId() const
-{
-    return m_subnetId;
-}
-
-void CreateHaVipRequest::SetSubnetId(const string& _subnetId)
-{
-    m_subnetId = _subnetId;
-    m_subnetIdHasBeenSet = true;
-}
-
-bool CreateHaVipRequest::SubnetIdHasBeenSet() const
-{
-    return m_subnetIdHasBeenSet;
-}
-
 string CreateHaVipRequest::GetHaVipName() const
 {
     return m_haVipName;
@@ -132,6 +125,22 @@ void CreateHaVipRequest::SetHaVipName(const string& _haVipName)
 bool CreateHaVipRequest::HaVipNameHasBeenSet() const
 {
     return m_haVipNameHasBeenSet;
+}
+
+string CreateHaVipRequest::GetSubnetId() const
+{
+    return m_subnetId;
+}
+
+void CreateHaVipRequest::SetSubnetId(const string& _subnetId)
+{
+    m_subnetId = _subnetId;
+    m_subnetIdHasBeenSet = true;
+}
+
+bool CreateHaVipRequest::SubnetIdHasBeenSet() const
+{
+    return m_subnetIdHasBeenSet;
 }
 
 string CreateHaVipRequest::GetVip() const
@@ -164,6 +173,22 @@ void CreateHaVipRequest::SetNetworkInterfaceId(const string& _networkInterfaceId
 bool CreateHaVipRequest::NetworkInterfaceIdHasBeenSet() const
 {
     return m_networkInterfaceIdHasBeenSet;
+}
+
+bool CreateHaVipRequest::GetCheckAssociate() const
+{
+    return m_checkAssociate;
+}
+
+void CreateHaVipRequest::SetCheckAssociate(const bool& _checkAssociate)
+{
+    m_checkAssociate = _checkAssociate;
+    m_checkAssociateHasBeenSet = true;
+}
+
+bool CreateHaVipRequest::CheckAssociateHasBeenSet() const
+{
+    return m_checkAssociateHasBeenSet;
 }
 
 

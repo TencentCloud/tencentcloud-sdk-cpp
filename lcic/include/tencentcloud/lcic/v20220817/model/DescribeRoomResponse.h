@@ -404,8 +404,8 @@ video 纯视频
                     bool EndDelayTimeHasBeenSet() const;
 
                     /**
-                     * 获取直播类型：0 常规（默认）1 伪直播
-                     * @return LiveType 直播类型：0 常规（默认）1 伪直播
+                     * 获取直播类型：0 常规（默认）1 伪直播 2 RTMP推流直播
+                     * @return LiveType 直播类型：0 常规（默认）1 伪直播 2 RTMP推流直播
                      * 
                      */
                     uint64_t GetLiveType() const;
@@ -661,7 +661,7 @@ video 纯视频
                     bool m_endDelayTimeHasBeenSet;
 
                     /**
-                     * 直播类型：0 常规（默认）1 伪直播
+                     * 直播类型：0 常规（默认）1 伪直播 2 RTMP推流直播
                      */
                     uint64_t m_liveType;
                     bool m_liveTypeHasBeenSet;

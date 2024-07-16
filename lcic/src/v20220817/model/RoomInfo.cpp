@@ -48,7 +48,8 @@ RoomInfo::RoomInfo() :
     m_enableAutoStartHasBeenSet(false),
     m_recordBackgroundHasBeenSet(false),
     m_recordSceneHasBeenSet(false),
-    m_recordLangHasBeenSet(false)
+    m_recordLangHasBeenSet(false),
+    m_recordStreamHasBeenSet(false)
 {
 }
 
@@ -340,6 +341,16 @@ CoreInternalOutcome RoomInfo::Deserialize(const rapidjson::Value &value)
         m_recordLangHasBeenSet = true;
     }
 
+    if (value.HasMember("RecordStream") && !value["RecordStream"].IsNull())
+    {
+        if (!value["RecordStream"].IsUint64())
+        {
+            return CoreInternalOutcome(Core::Error("response `RoomInfo.RecordStream` IsUint64=false incorrectly").SetRequestId(requestId));
+        }
+        m_recordStream = value["RecordStream"].GetUint64();
+        m_recordStreamHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -574,6 +585,14 @@ void RoomInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Alloca
         string key = "RecordLang";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_recordLang.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_recordStreamHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "RecordStream";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_recordStream, allocator);
     }
 
 }
@@ -1025,5 +1044,21 @@ void RoomInfo::SetRecordLang(const string& _recordLang)
 bool RoomInfo::RecordLangHasBeenSet() const
 {
     return m_recordLangHasBeenSet;
+}
+
+uint64_t RoomInfo::GetRecordStream() const
+{
+    return m_recordStream;
+}
+
+void RoomInfo::SetRecordStream(const uint64_t& _recordStream)
+{
+    m_recordStream = _recordStream;
+    m_recordStreamHasBeenSet = true;
+}
+
+bool RoomInfo::RecordStreamHasBeenSet() const
+{
+    return m_recordStreamHasBeenSet;
 }
 

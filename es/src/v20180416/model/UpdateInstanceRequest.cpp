@@ -60,7 +60,9 @@ UpdateInstanceRequest::UpdateInstanceRequest() :
     m_protocolHasBeenSet(false),
     m_outboundPublicAclsHasBeenSet(false),
     m_outboundPublicAccessHasBeenSet(false),
-    m_cvmDelayOnlineTimeHasBeenSet(false)
+    m_cvmDelayOnlineTimeHasBeenSet(false),
+    m_shardAllocationConcurrentsHasBeenSet(false),
+    m_shardAllocationBytesHasBeenSet(false)
 {
 }
 
@@ -400,6 +402,22 @@ string UpdateInstanceRequest::ToJsonString() const
         string key = "CvmDelayOnlineTime";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_cvmDelayOnlineTime, allocator);
+    }
+
+    if (m_shardAllocationConcurrentsHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ShardAllocationConcurrents";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_shardAllocationConcurrents, allocator);
+    }
+
+    if (m_shardAllocationBytesHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ShardAllocationBytes";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_shardAllocationBytes, allocator);
     }
 
 
@@ -1016,6 +1034,38 @@ void UpdateInstanceRequest::SetCvmDelayOnlineTime(const uint64_t& _cvmDelayOnlin
 bool UpdateInstanceRequest::CvmDelayOnlineTimeHasBeenSet() const
 {
     return m_cvmDelayOnlineTimeHasBeenSet;
+}
+
+uint64_t UpdateInstanceRequest::GetShardAllocationConcurrents() const
+{
+    return m_shardAllocationConcurrents;
+}
+
+void UpdateInstanceRequest::SetShardAllocationConcurrents(const uint64_t& _shardAllocationConcurrents)
+{
+    m_shardAllocationConcurrents = _shardAllocationConcurrents;
+    m_shardAllocationConcurrentsHasBeenSet = true;
+}
+
+bool UpdateInstanceRequest::ShardAllocationConcurrentsHasBeenSet() const
+{
+    return m_shardAllocationConcurrentsHasBeenSet;
+}
+
+uint64_t UpdateInstanceRequest::GetShardAllocationBytes() const
+{
+    return m_shardAllocationBytes;
+}
+
+void UpdateInstanceRequest::SetShardAllocationBytes(const uint64_t& _shardAllocationBytes)
+{
+    m_shardAllocationBytes = _shardAllocationBytes;
+    m_shardAllocationBytesHasBeenSet = true;
+}
+
+bool UpdateInstanceRequest::ShardAllocationBytesHasBeenSet() const
+{
+    return m_shardAllocationBytesHasBeenSet;
 }
 
 

@@ -64,27 +64,6 @@ namespace TencentCloud
                     bool VpcIdHasBeenSet() const;
 
                     /**
-                     * 获取`HAVIP`所在子网`ID`。
-                     * @return SubnetId `HAVIP`所在子网`ID`。
-                     * 
-                     */
-                    std::string GetSubnetId() const;
-
-                    /**
-                     * 设置`HAVIP`所在子网`ID`。
-                     * @param _subnetId `HAVIP`所在子网`ID`。
-                     * 
-                     */
-                    void SetSubnetId(const std::string& _subnetId);
-
-                    /**
-                     * 判断参数 SubnetId 是否已赋值
-                     * @return SubnetId 是否已赋值
-                     * 
-                     */
-                    bool SubnetIdHasBeenSet() const;
-
-                    /**
                      * 获取`HAVIP`名称。
                      * @return HaVipName `HAVIP`名称。
                      * 
@@ -104,6 +83,27 @@ namespace TencentCloud
                      * 
                      */
                     bool HaVipNameHasBeenSet() const;
+
+                    /**
+                     * 获取`HAVIP`所在子网`ID`。
+                     * @return SubnetId `HAVIP`所在子网`ID`。
+                     * 
+                     */
+                    std::string GetSubnetId() const;
+
+                    /**
+                     * 设置`HAVIP`所在子网`ID`。
+                     * @param _subnetId `HAVIP`所在子网`ID`。
+                     * 
+                     */
+                    void SetSubnetId(const std::string& _subnetId);
+
+                    /**
+                     * 判断参数 SubnetId 是否已赋值
+                     * @return SubnetId 是否已赋值
+                     * 
+                     */
+                    bool SubnetIdHasBeenSet() const;
 
                     /**
                      * 获取指定虚拟IP地址，必须在`VPC`网段内且未被占用。不指定则自动分配。
@@ -147,6 +147,27 @@ namespace TencentCloud
                      */
                     bool NetworkInterfaceIdHasBeenSet() const;
 
+                    /**
+                     * 获取是否开启`HAVIP`漂移时子机或网卡范围的校验。默认不开启。
+                     * @return CheckAssociate 是否开启`HAVIP`漂移时子机或网卡范围的校验。默认不开启。
+                     * 
+                     */
+                    bool GetCheckAssociate() const;
+
+                    /**
+                     * 设置是否开启`HAVIP`漂移时子机或网卡范围的校验。默认不开启。
+                     * @param _checkAssociate 是否开启`HAVIP`漂移时子机或网卡范围的校验。默认不开启。
+                     * 
+                     */
+                    void SetCheckAssociate(const bool& _checkAssociate);
+
+                    /**
+                     * 判断参数 CheckAssociate 是否已赋值
+                     * @return CheckAssociate 是否已赋值
+                     * 
+                     */
+                    bool CheckAssociateHasBeenSet() const;
+
                 private:
 
                     /**
@@ -156,16 +177,16 @@ namespace TencentCloud
                     bool m_vpcIdHasBeenSet;
 
                     /**
-                     * `HAVIP`所在子网`ID`。
-                     */
-                    std::string m_subnetId;
-                    bool m_subnetIdHasBeenSet;
-
-                    /**
                      * `HAVIP`名称。
                      */
                     std::string m_haVipName;
                     bool m_haVipNameHasBeenSet;
+
+                    /**
+                     * `HAVIP`所在子网`ID`。
+                     */
+                    std::string m_subnetId;
+                    bool m_subnetIdHasBeenSet;
 
                     /**
                      * 指定虚拟IP地址，必须在`VPC`网段内且未被占用。不指定则自动分配。
@@ -178,6 +199,12 @@ namespace TencentCloud
                      */
                     std::string m_networkInterfaceId;
                     bool m_networkInterfaceIdHasBeenSet;
+
+                    /**
+                     * 是否开启`HAVIP`漂移时子机或网卡范围的校验。默认不开启。
+                     */
+                    bool m_checkAssociate;
+                    bool m_checkAssociateHasBeenSet;
 
                 };
             }

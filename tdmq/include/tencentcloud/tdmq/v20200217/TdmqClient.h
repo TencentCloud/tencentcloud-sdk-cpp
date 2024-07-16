@@ -215,8 +215,12 @@
 #include <tencentcloud/tdmq/v20200217/model/DescribeRocketMQSubscriptionsResponse.h>
 #include <tencentcloud/tdmq/v20200217/model/DescribeRocketMQTopicMsgsRequest.h>
 #include <tencentcloud/tdmq/v20200217/model/DescribeRocketMQTopicMsgsResponse.h>
+#include <tencentcloud/tdmq/v20200217/model/DescribeRocketMQTopicStatsRequest.h>
+#include <tencentcloud/tdmq/v20200217/model/DescribeRocketMQTopicStatsResponse.h>
 #include <tencentcloud/tdmq/v20200217/model/DescribeRocketMQTopicsRequest.h>
 #include <tencentcloud/tdmq/v20200217/model/DescribeRocketMQTopicsResponse.h>
+#include <tencentcloud/tdmq/v20200217/model/DescribeRocketMQTopicsByGroupRequest.h>
+#include <tencentcloud/tdmq/v20200217/model/DescribeRocketMQTopicsByGroupResponse.h>
 #include <tencentcloud/tdmq/v20200217/model/DescribeRocketMQVipInstanceDetailRequest.h>
 #include <tencentcloud/tdmq/v20200217/model/DescribeRocketMQVipInstanceDetailResponse.h>
 #include <tencentcloud/tdmq/v20200217/model/DescribeRocketMQVipInstancesRequest.h>
@@ -263,6 +267,8 @@
 #include <tencentcloud/tdmq/v20200217/model/ModifyRocketMQEnvironmentRoleResponse.h>
 #include <tencentcloud/tdmq/v20200217/model/ModifyRocketMQGroupRequest.h>
 #include <tencentcloud/tdmq/v20200217/model/ModifyRocketMQGroupResponse.h>
+#include <tencentcloud/tdmq/v20200217/model/ModifyRocketMQInstanceRequest.h>
+#include <tencentcloud/tdmq/v20200217/model/ModifyRocketMQInstanceResponse.h>
 #include <tencentcloud/tdmq/v20200217/model/ModifyRocketMQInstanceSpecRequest.h>
 #include <tencentcloud/tdmq/v20200217/model/ModifyRocketMQInstanceSpecResponse.h>
 #include <tencentcloud/tdmq/v20200217/model/ModifyRocketMQNamespaceRequest.h>
@@ -603,9 +609,15 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeRocketMQTopicMsgsResponse> DescribeRocketMQTopicMsgsOutcome;
                 typedef std::future<DescribeRocketMQTopicMsgsOutcome> DescribeRocketMQTopicMsgsOutcomeCallable;
                 typedef std::function<void(const TdmqClient*, const Model::DescribeRocketMQTopicMsgsRequest&, DescribeRocketMQTopicMsgsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeRocketMQTopicMsgsAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeRocketMQTopicStatsResponse> DescribeRocketMQTopicStatsOutcome;
+                typedef std::future<DescribeRocketMQTopicStatsOutcome> DescribeRocketMQTopicStatsOutcomeCallable;
+                typedef std::function<void(const TdmqClient*, const Model::DescribeRocketMQTopicStatsRequest&, DescribeRocketMQTopicStatsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeRocketMQTopicStatsAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeRocketMQTopicsResponse> DescribeRocketMQTopicsOutcome;
                 typedef std::future<DescribeRocketMQTopicsOutcome> DescribeRocketMQTopicsOutcomeCallable;
                 typedef std::function<void(const TdmqClient*, const Model::DescribeRocketMQTopicsRequest&, DescribeRocketMQTopicsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeRocketMQTopicsAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeRocketMQTopicsByGroupResponse> DescribeRocketMQTopicsByGroupOutcome;
+                typedef std::future<DescribeRocketMQTopicsByGroupOutcome> DescribeRocketMQTopicsByGroupOutcomeCallable;
+                typedef std::function<void(const TdmqClient*, const Model::DescribeRocketMQTopicsByGroupRequest&, DescribeRocketMQTopicsByGroupOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeRocketMQTopicsByGroupAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeRocketMQVipInstanceDetailResponse> DescribeRocketMQVipInstanceDetailOutcome;
                 typedef std::future<DescribeRocketMQVipInstanceDetailOutcome> DescribeRocketMQVipInstanceDetailOutcomeCallable;
                 typedef std::function<void(const TdmqClient*, const Model::DescribeRocketMQVipInstanceDetailRequest&, DescribeRocketMQVipInstanceDetailOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeRocketMQVipInstanceDetailAsyncHandler;
@@ -675,6 +687,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::ModifyRocketMQGroupResponse> ModifyRocketMQGroupOutcome;
                 typedef std::future<ModifyRocketMQGroupOutcome> ModifyRocketMQGroupOutcomeCallable;
                 typedef std::function<void(const TdmqClient*, const Model::ModifyRocketMQGroupRequest&, ModifyRocketMQGroupOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyRocketMQGroupAsyncHandler;
+                typedef Outcome<Core::Error, Model::ModifyRocketMQInstanceResponse> ModifyRocketMQInstanceOutcome;
+                typedef std::future<ModifyRocketMQInstanceOutcome> ModifyRocketMQInstanceOutcomeCallable;
+                typedef std::function<void(const TdmqClient*, const Model::ModifyRocketMQInstanceRequest&, ModifyRocketMQInstanceOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyRocketMQInstanceAsyncHandler;
                 typedef Outcome<Core::Error, Model::ModifyRocketMQInstanceSpecResponse> ModifyRocketMQInstanceSpecOutcome;
                 typedef std::future<ModifyRocketMQInstanceSpecOutcome> ModifyRocketMQInstanceSpecOutcomeCallable;
                 typedef std::function<void(const TdmqClient*, const Model::ModifyRocketMQInstanceSpecRequest&, ModifyRocketMQInstanceSpecOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyRocketMQInstanceSpecAsyncHandler;
@@ -1602,6 +1617,15 @@ namespace TencentCloud
                 DescribeRocketMQTopicMsgsOutcomeCallable DescribeRocketMQTopicMsgsCallable(const Model::DescribeRocketMQTopicMsgsRequest& request);
 
                 /**
+                 *获取Topic生产详情列表
+                 * @param req DescribeRocketMQTopicStatsRequest
+                 * @return DescribeRocketMQTopicStatsOutcome
+                 */
+                DescribeRocketMQTopicStatsOutcome DescribeRocketMQTopicStats(const Model::DescribeRocketMQTopicStatsRequest &request);
+                void DescribeRocketMQTopicStatsAsync(const Model::DescribeRocketMQTopicStatsRequest& request, const DescribeRocketMQTopicStatsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeRocketMQTopicStatsOutcomeCallable DescribeRocketMQTopicStatsCallable(const Model::DescribeRocketMQTopicStatsRequest& request);
+
+                /**
                  *获取RocketMQ主题列表
                  * @param req DescribeRocketMQTopicsRequest
                  * @return DescribeRocketMQTopicsOutcome
@@ -1609,6 +1633,15 @@ namespace TencentCloud
                 DescribeRocketMQTopicsOutcome DescribeRocketMQTopics(const Model::DescribeRocketMQTopicsRequest &request);
                 void DescribeRocketMQTopicsAsync(const Model::DescribeRocketMQTopicsRequest& request, const DescribeRocketMQTopicsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DescribeRocketMQTopicsOutcomeCallable DescribeRocketMQTopicsCallable(const Model::DescribeRocketMQTopicsRequest& request);
+
+                /**
+                 *获取指定消费组下订阅的主题列表
+                 * @param req DescribeRocketMQTopicsByGroupRequest
+                 * @return DescribeRocketMQTopicsByGroupOutcome
+                 */
+                DescribeRocketMQTopicsByGroupOutcome DescribeRocketMQTopicsByGroup(const Model::DescribeRocketMQTopicsByGroupRequest &request);
+                void DescribeRocketMQTopicsByGroupAsync(const Model::DescribeRocketMQTopicsByGroupRequest& request, const DescribeRocketMQTopicsByGroupAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeRocketMQTopicsByGroupOutcomeCallable DescribeRocketMQTopicsByGroupCallable(const Model::DescribeRocketMQTopicsByGroupRequest& request);
 
                 /**
                  *获取单个RocketMQ专享集群信息
@@ -1816,6 +1849,15 @@ namespace TencentCloud
                 ModifyRocketMQGroupOutcome ModifyRocketMQGroup(const Model::ModifyRocketMQGroupRequest &request);
                 void ModifyRocketMQGroupAsync(const Model::ModifyRocketMQGroupRequest& request, const ModifyRocketMQGroupAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 ModifyRocketMQGroupOutcomeCallable ModifyRocketMQGroupCallable(const Model::ModifyRocketMQGroupRequest& request);
+
+                /**
+                 *修改RocketMQ专享实例
+                 * @param req ModifyRocketMQInstanceRequest
+                 * @return ModifyRocketMQInstanceOutcome
+                 */
+                ModifyRocketMQInstanceOutcome ModifyRocketMQInstance(const Model::ModifyRocketMQInstanceRequest &request);
+                void ModifyRocketMQInstanceAsync(const Model::ModifyRocketMQInstanceRequest& request, const ModifyRocketMQInstanceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                ModifyRocketMQInstanceOutcomeCallable ModifyRocketMQInstanceCallable(const Model::ModifyRocketMQInstanceRequest& request);
 
                 /**
                  *本API用于修改RocketMQ专享实例配置，可以支持实例规格、节点数和存储的升配和实例规格的降配。本API发起订单并成功支付后进入实例配置变更的流程，可通过DescribeRocketMQVipInstances查询实例是否已变更完成。

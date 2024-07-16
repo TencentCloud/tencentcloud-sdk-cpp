@@ -42,7 +42,9 @@ CrossBorderCompliance::CrossBorderCompliance() :
     m_serviceStartDateHasBeenSet(false),
     m_serviceEndDateHasBeenSet(false),
     m_stateHasBeenSet(false),
-    m_createdTimeHasBeenSet(false)
+    m_createdTimeHasBeenSet(false),
+    m_legalPersonIdHasBeenSet(false),
+    m_legalPersonIdCardHasBeenSet(false)
 {
 }
 
@@ -271,6 +273,26 @@ CoreInternalOutcome CrossBorderCompliance::Deserialize(const rapidjson::Value &v
         m_createdTimeHasBeenSet = true;
     }
 
+    if (value.HasMember("LegalPersonId") && !value["LegalPersonId"].IsNull())
+    {
+        if (!value["LegalPersonId"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `CrossBorderCompliance.LegalPersonId` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_legalPersonId = string(value["LegalPersonId"].GetString());
+        m_legalPersonIdHasBeenSet = true;
+    }
+
+    if (value.HasMember("LegalPersonIdCard") && !value["LegalPersonIdCard"].IsNull())
+    {
+        if (!value["LegalPersonIdCard"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `CrossBorderCompliance.LegalPersonIdCard` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_legalPersonIdCard = string(value["LegalPersonIdCard"].GetString());
+        m_legalPersonIdCardHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -452,6 +474,22 @@ void CrossBorderCompliance::ToJsonObject(rapidjson::Value &value, rapidjson::Doc
         string key = "CreatedTime";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_createdTime.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_legalPersonIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "LegalPersonId";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_legalPersonId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_legalPersonIdCardHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "LegalPersonIdCard";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_legalPersonIdCard.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -807,5 +845,37 @@ void CrossBorderCompliance::SetCreatedTime(const string& _createdTime)
 bool CrossBorderCompliance::CreatedTimeHasBeenSet() const
 {
     return m_createdTimeHasBeenSet;
+}
+
+string CrossBorderCompliance::GetLegalPersonId() const
+{
+    return m_legalPersonId;
+}
+
+void CrossBorderCompliance::SetLegalPersonId(const string& _legalPersonId)
+{
+    m_legalPersonId = _legalPersonId;
+    m_legalPersonIdHasBeenSet = true;
+}
+
+bool CrossBorderCompliance::LegalPersonIdHasBeenSet() const
+{
+    return m_legalPersonIdHasBeenSet;
+}
+
+string CrossBorderCompliance::GetLegalPersonIdCard() const
+{
+    return m_legalPersonIdCard;
+}
+
+void CrossBorderCompliance::SetLegalPersonIdCard(const string& _legalPersonIdCard)
+{
+    m_legalPersonIdCard = _legalPersonIdCard;
+    m_legalPersonIdCardHasBeenSet = true;
+}
+
+bool CrossBorderCompliance::LegalPersonIdCardHasBeenSet() const
+{
+    return m_legalPersonIdCardHasBeenSet;
 }
 

@@ -236,6 +236,7 @@ set(vpc_public_header_model
   include/tencentcloud/vpc/v20170312/model/DownloadCustomerGatewayConfigurationResponse.h
   include/tencentcloud/vpc/v20170312/model/DescribeBandwidthPackagesRequest.h
   include/tencentcloud/vpc/v20170312/model/DeleteDirectConnectGatewayCcnRoutesResponse.h
+  include/tencentcloud/vpc/v20170312/model/HaVipAssociation.h
   include/tencentcloud/vpc/v20170312/model/DescribeAssistantCidrResponse.h
   include/tencentcloud/vpc/v20170312/model/DescribeHaVipsRequest.h
   include/tencentcloud/vpc/v20170312/model/IpAddressStates.h
@@ -1091,6 +1092,7 @@ set(vpc_src
   src/v20170312/model/DownloadCustomerGatewayConfigurationResponse.cpp
   src/v20170312/model/DescribeBandwidthPackagesRequest.cpp
   src/v20170312/model/DeleteDirectConnectGatewayCcnRoutesResponse.cpp
+  src/v20170312/model/HaVipAssociation.cpp
   src/v20170312/model/DescribeAssistantCidrResponse.cpp
   src/v20170312/model/DescribeHaVipsRequest.cpp
   src/v20170312/model/IpAddressStates.cpp

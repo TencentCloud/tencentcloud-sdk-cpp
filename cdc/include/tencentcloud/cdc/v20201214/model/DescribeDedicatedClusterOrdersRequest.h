@@ -168,6 +168,27 @@ namespace TencentCloud
                      */
                     bool ActionTypeHasBeenSet() const;
 
+                    /**
+                     * 获取订单类型列表
+                     * @return OrderTypes 订单类型列表
+                     * 
+                     */
+                    std::vector<std::string> GetOrderTypes() const;
+
+                    /**
+                     * 设置订单类型列表
+                     * @param _orderTypes 订单类型列表
+                     * 
+                     */
+                    void SetOrderTypes(const std::vector<std::string>& _orderTypes);
+
+                    /**
+                     * 判断参数 OrderTypes 是否已赋值
+                     * @return OrderTypes 是否已赋值
+                     * 
+                     */
+                    bool OrderTypesHasBeenSet() const;
+
                 private:
 
                     /**
@@ -205,6 +226,12 @@ namespace TencentCloud
                      */
                     std::string m_actionType;
                     bool m_actionTypeHasBeenSet;
+
+                    /**
+                     * 订单类型列表
+                     */
+                    std::vector<std::string> m_orderTypes;
+                    bool m_orderTypesHasBeenSet;
 
                 };
             }

@@ -28,7 +28,8 @@ DescribeDedicatedClusterOrdersRequest::DescribeDedicatedClusterOrdersRequest() :
     m_offsetHasBeenSet(false),
     m_limitHasBeenSet(false),
     m_statusHasBeenSet(false),
-    m_actionTypeHasBeenSet(false)
+    m_actionTypeHasBeenSet(false),
+    m_orderTypesHasBeenSet(false)
 {
 }
 
@@ -90,6 +91,19 @@ string DescribeDedicatedClusterOrdersRequest::ToJsonString() const
         string key = "ActionType";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_actionType.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_orderTypesHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "OrderTypes";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        for (auto itr = m_orderTypes.begin(); itr != m_orderTypes.end(); ++itr)
+        {
+            d[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
+        }
     }
 
 
@@ -194,6 +208,22 @@ void DescribeDedicatedClusterOrdersRequest::SetActionType(const string& _actionT
 bool DescribeDedicatedClusterOrdersRequest::ActionTypeHasBeenSet() const
 {
     return m_actionTypeHasBeenSet;
+}
+
+vector<string> DescribeDedicatedClusterOrdersRequest::GetOrderTypes() const
+{
+    return m_orderTypes;
+}
+
+void DescribeDedicatedClusterOrdersRequest::SetOrderTypes(const vector<string>& _orderTypes)
+{
+    m_orderTypes = _orderTypes;
+    m_orderTypesHasBeenSet = true;
+}
+
+bool DescribeDedicatedClusterOrdersRequest::OrderTypesHasBeenSet() const
+{
+    return m_orderTypesHasBeenSet;
 }
 
 

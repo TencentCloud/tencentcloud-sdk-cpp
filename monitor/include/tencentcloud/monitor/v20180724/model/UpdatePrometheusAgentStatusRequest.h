@@ -65,14 +65,22 @@ namespace TencentCloud
 
                     /**
                      * 获取Agent ID 列表，例如：agent-abcd1234，可在控制台 Agent 管理中获取
+
+示例值：["agent-abcd1234"]
                      * @return AgentIds Agent ID 列表，例如：agent-abcd1234，可在控制台 Agent 管理中获取
+
+示例值：["agent-abcd1234"]
                      * 
                      */
                     std::vector<std::string> GetAgentIds() const;
 
                     /**
                      * 设置Agent ID 列表，例如：agent-abcd1234，可在控制台 Agent 管理中获取
+
+示例值：["agent-abcd1234"]
                      * @param _agentIds Agent ID 列表，例如：agent-abcd1234，可在控制台 Agent 管理中获取
+
+示例值：["agent-abcd1234"]
                      * 
                      */
                     void SetAgentIds(const std::vector<std::string>& _agentIds);
@@ -123,6 +131,8 @@ namespace TencentCloud
 
                     /**
                      * Agent ID 列表，例如：agent-abcd1234，可在控制台 Agent 管理中获取
+
+示例值：["agent-abcd1234"]
                      */
                     std::vector<std::string> m_agentIds;
                     bool m_agentIdsHasBeenSet;

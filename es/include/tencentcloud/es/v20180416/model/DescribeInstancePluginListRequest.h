@@ -106,15 +106,15 @@ namespace TencentCloud
                     bool LimitHasBeenSet() const;
 
                     /**
-                     * 获取排序字段<li>1：插件名 pluginName
-                     * @return OrderBy 排序字段<li>1：插件名 pluginName
+                     * 获取排序字段<li>1：插件名 pluginName</li>
+                     * @return OrderBy 排序字段<li>1：插件名 pluginName</li>
                      * 
                      */
                     std::string GetOrderBy() const;
 
                     /**
-                     * 设置排序字段<li>1：插件名 pluginName
-                     * @param _orderBy 排序字段<li>1：插件名 pluginName
+                     * 设置排序字段<li>1：插件名 pluginName</li>
+                     * @param _orderBy 排序字段<li>1：插件名 pluginName</li>
                      * 
                      */
                     void SetOrderBy(const std::string& _orderBy);
@@ -189,7 +189,7 @@ namespace TencentCloud
                     bool m_limitHasBeenSet;
 
                     /**
-                     * 排序字段<li>1：插件名 pluginName
+                     * 排序字段<li>1：插件名 pluginName</li>
                      */
                     std::string m_orderBy;
                     bool m_orderByHasBeenSet;

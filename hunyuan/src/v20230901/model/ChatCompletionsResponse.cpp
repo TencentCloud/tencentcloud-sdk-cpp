@@ -29,7 +29,8 @@ ChatCompletionsResponse::ChatCompletionsResponse() :
     m_noteHasBeenSet(false),
     m_idHasBeenSet(false),
     m_choicesHasBeenSet(false),
-    m_errorMsgHasBeenSet(false)
+    m_errorMsgHasBeenSet(false),
+    m_moderationLevelHasBeenSet(false)
 {
 }
 
@@ -151,6 +152,16 @@ CoreInternalOutcome ChatCompletionsResponse::Deserialize(const string &payload)
         m_errorMsgHasBeenSet = true;
     }
 
+    if (rsp.HasMember("ModerationLevel") && !rsp["ModerationLevel"].IsNull())
+    {
+        if (!rsp["ModerationLevel"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `ModerationLevel` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_moderationLevel = string(rsp["ModerationLevel"].GetString());
+        m_moderationLevelHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -216,6 +227,14 @@ string ChatCompletionsResponse::ToJsonString() const
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
         m_errorMsg.ToJsonObject(value[key.c_str()], allocator);
+    }
+
+    if (m_moderationLevelHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ModerationLevel";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_moderationLevel.c_str(), allocator).Move(), allocator);
     }
 
     rapidjson::Value iKey(rapidjson::kStringType);
@@ -288,6 +307,16 @@ ErrorMsg ChatCompletionsResponse::GetErrorMsg() const
 bool ChatCompletionsResponse::ErrorMsgHasBeenSet() const
 {
     return m_errorMsgHasBeenSet;
+}
+
+string ChatCompletionsResponse::GetModerationLevel() const
+{
+    return m_moderationLevel;
+}
+
+bool ChatCompletionsResponse::ModerationLevelHasBeenSet() const
+{
+    return m_moderationLevelHasBeenSet;
 }
 
 

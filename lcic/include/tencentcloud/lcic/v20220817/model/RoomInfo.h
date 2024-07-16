@@ -638,6 +638,27 @@ namespace TencentCloud
                      */
                     bool RecordLangHasBeenSet() const;
 
+                    /**
+                     * 获取录制类型 0 仅录制混流（默认） ;1 录制混流+单流，该模式下除混流录制基础上，分别录制老师、台上学生的音视频流，每路录制都会产生相应的录制费用 。示例：0
+                     * @return RecordStream 录制类型 0 仅录制混流（默认） ;1 录制混流+单流，该模式下除混流录制基础上，分别录制老师、台上学生的音视频流，每路录制都会产生相应的录制费用 。示例：0
+                     * 
+                     */
+                    uint64_t GetRecordStream() const;
+
+                    /**
+                     * 设置录制类型 0 仅录制混流（默认） ;1 录制混流+单流，该模式下除混流录制基础上，分别录制老师、台上学生的音视频流，每路录制都会产生相应的录制费用 。示例：0
+                     * @param _recordStream 录制类型 0 仅录制混流（默认） ;1 录制混流+单流，该模式下除混流录制基础上，分别录制老师、台上学生的音视频流，每路录制都会产生相应的录制费用 。示例：0
+                     * 
+                     */
+                    void SetRecordStream(const uint64_t& _recordStream);
+
+                    /**
+                     * 判断参数 RecordStream 是否已赋值
+                     * @return RecordStream 是否已赋值
+                     * 
+                     */
+                    bool RecordStreamHasBeenSet() const;
+
                 private:
 
                     /**
@@ -808,6 +829,12 @@ namespace TencentCloud
                      */
                     std::string m_recordLang;
                     bool m_recordLangHasBeenSet;
+
+                    /**
+                     * 录制类型 0 仅录制混流（默认） ;1 录制混流+单流，该模式下除混流录制基础上，分别录制老师、台上学生的音视频流，每路录制都会产生相应的录制费用 。示例：0
+                     */
+                    uint64_t m_recordStream;
+                    bool m_recordStreamHasBeenSet;
 
                 };
             }

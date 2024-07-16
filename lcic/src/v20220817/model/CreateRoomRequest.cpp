@@ -51,7 +51,8 @@ CreateRoomRequest::CreateRoomRequest() :
     m_enableAutoStartHasBeenSet(false),
     m_recordBackgroundHasBeenSet(false),
     m_recordSceneHasBeenSet(false),
-    m_recordLangHasBeenSet(false)
+    m_recordLangHasBeenSet(false),
+    m_recordStreamHasBeenSet(false)
 {
 }
 
@@ -297,6 +298,14 @@ string CreateRoomRequest::ToJsonString() const
         string key = "RecordLang";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_recordLang.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_recordStreamHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "RecordStream";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_recordStream, allocator);
     }
 
 
@@ -769,6 +778,22 @@ void CreateRoomRequest::SetRecordLang(const string& _recordLang)
 bool CreateRoomRequest::RecordLangHasBeenSet() const
 {
     return m_recordLangHasBeenSet;
+}
+
+uint64_t CreateRoomRequest::GetRecordStream() const
+{
+    return m_recordStream;
+}
+
+void CreateRoomRequest::SetRecordStream(const uint64_t& _recordStream)
+{
+    m_recordStream = _recordStream;
+    m_recordStreamHasBeenSet = true;
+}
+
+bool CreateRoomRequest::RecordStreamHasBeenSet() const
+{
+    return m_recordStreamHasBeenSet;
 }
 
 
