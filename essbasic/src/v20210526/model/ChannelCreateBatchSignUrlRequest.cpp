@@ -33,7 +33,9 @@ ChannelCreateBatchSignUrlRequest::ChannelCreateBatchSignUrlRequest() :
     m_flowIdsHasBeenSet(false),
     m_organizationNameHasBeenSet(false),
     m_jumpToDetailHasBeenSet(false),
-    m_flowBatchUrlInfoHasBeenSet(false)
+    m_flowBatchUrlInfoHasBeenSet(false),
+    m_openIdHasBeenSet(false),
+    m_organizationOpenIdHasBeenSet(false)
 {
 }
 
@@ -138,6 +140,22 @@ string ChannelCreateBatchSignUrlRequest::ToJsonString() const
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
         m_flowBatchUrlInfo.ToJsonObject(d[key.c_str()], allocator);
+    }
+
+    if (m_openIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "OpenId";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_openId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_organizationOpenIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "OrganizationOpenId";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_organizationOpenId.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -322,6 +340,38 @@ void ChannelCreateBatchSignUrlRequest::SetFlowBatchUrlInfo(const FlowBatchUrlInf
 bool ChannelCreateBatchSignUrlRequest::FlowBatchUrlInfoHasBeenSet() const
 {
     return m_flowBatchUrlInfoHasBeenSet;
+}
+
+string ChannelCreateBatchSignUrlRequest::GetOpenId() const
+{
+    return m_openId;
+}
+
+void ChannelCreateBatchSignUrlRequest::SetOpenId(const string& _openId)
+{
+    m_openId = _openId;
+    m_openIdHasBeenSet = true;
+}
+
+bool ChannelCreateBatchSignUrlRequest::OpenIdHasBeenSet() const
+{
+    return m_openIdHasBeenSet;
+}
+
+string ChannelCreateBatchSignUrlRequest::GetOrganizationOpenId() const
+{
+    return m_organizationOpenId;
+}
+
+void ChannelCreateBatchSignUrlRequest::SetOrganizationOpenId(const string& _organizationOpenId)
+{
+    m_organizationOpenId = _organizationOpenId;
+    m_organizationOpenIdHasBeenSet = true;
+}
+
+bool ChannelCreateBatchSignUrlRequest::OrganizationOpenIdHasBeenSet() const
+{
+    return m_organizationOpenIdHasBeenSet;
 }
 
 

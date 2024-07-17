@@ -81,15 +81,15 @@ ID 按templateId过滤
                     bool FiltersHasBeenSet() const;
 
                     /**
-                     * 获取分页偏移
-                     * @return Offset 分页偏移
+                     * 获取分页偏移量，默认为0
+                     * @return Offset 分页偏移量，默认为0
                      * 
                      */
                     uint64_t GetOffset() const;
 
                     /**
-                     * 设置分页偏移
-                     * @param _offset 分页偏移
+                     * 设置分页偏移量，默认为0
+                     * @param _offset 分页偏移量，默认为0
                      * 
                      */
                     void SetOffset(const uint64_t& _offset);
@@ -135,7 +135,7 @@ ID 按templateId过滤
                     bool m_filtersHasBeenSet;
 
                     /**
-                     * 分页偏移
+                     * 分页偏移量，默认为0
                      */
                     uint64_t m_offset;
                     bool m_offsetHasBeenSet;

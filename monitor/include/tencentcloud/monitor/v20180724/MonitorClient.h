@@ -1972,7 +1972,7 @@ namespace TencentCloud
                 ModifyPrometheusAlertPolicyOutcomeCallable ModifyPrometheusAlertPolicyCallable(const Model::ModifyPrometheusAlertPolicyRequest& request);
 
                 /**
-                 *修改prometheus配置，如果配置项不存在，则会新增
+                 *修改prometheus采集配置
                  * @param req ModifyPrometheusConfigRequest
                  * @return ModifyPrometheusConfigOutcome
                  */

@@ -24,7 +24,9 @@ using namespace std;
 
 DescribeDSPATaskResultDataSampleRequest::DescribeDSPATaskResultDataSampleRequest() :
     m_dspaIdHasBeenSet(false),
-    m_fieldResultIdHasBeenSet(false)
+    m_fieldResultIdHasBeenSet(false),
+    m_orderHasBeenSet(false),
+    m_orderFieldHasBeenSet(false)
 {
 }
 
@@ -49,6 +51,22 @@ string DescribeDSPATaskResultDataSampleRequest::ToJsonString() const
         string key = "FieldResultId";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_fieldResultId, allocator);
+    }
+
+    if (m_orderHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Order";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_order.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_orderFieldHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "OrderField";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_orderField.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -89,6 +107,38 @@ void DescribeDSPATaskResultDataSampleRequest::SetFieldResultId(const int64_t& _f
 bool DescribeDSPATaskResultDataSampleRequest::FieldResultIdHasBeenSet() const
 {
     return m_fieldResultIdHasBeenSet;
+}
+
+string DescribeDSPATaskResultDataSampleRequest::GetOrder() const
+{
+    return m_order;
+}
+
+void DescribeDSPATaskResultDataSampleRequest::SetOrder(const string& _order)
+{
+    m_order = _order;
+    m_orderHasBeenSet = true;
+}
+
+bool DescribeDSPATaskResultDataSampleRequest::OrderHasBeenSet() const
+{
+    return m_orderHasBeenSet;
+}
+
+string DescribeDSPATaskResultDataSampleRequest::GetOrderField() const
+{
+    return m_orderField;
+}
+
+void DescribeDSPATaskResultDataSampleRequest::SetOrderField(const string& _orderField)
+{
+    m_orderField = _orderField;
+    m_orderFieldHasBeenSet = true;
+}
+
+bool DescribeDSPATaskResultDataSampleRequest::OrderFieldHasBeenSet() const
+{
+    return m_orderFieldHasBeenSet;
 }
 
 

@@ -43,15 +43,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取Prometheus 实例 ID，例如：prom-abcd1234
-                     * @return InstanceId Prometheus 实例 ID，例如：prom-abcd1234
+                     * 获取Prometheus 实例 ID
+                     * @return InstanceId Prometheus 实例 ID
                      * 
                      */
                     std::string GetInstanceId() const;
 
                     /**
-                     * 设置Prometheus 实例 ID，例如：prom-abcd1234
-                     * @param _instanceId Prometheus 实例 ID，例如：prom-abcd1234
+                     * 设置Prometheus 实例 ID
+                     * @param _instanceId Prometheus 实例 ID
                      * 
                      */
                     void SetInstanceId(const std::string& _instanceId);
@@ -65,22 +65,14 @@ namespace TencentCloud
 
                     /**
                      * 获取Agent ID 列表，例如：agent-abcd1234，可在控制台 Agent 管理中获取
-
-示例值：["agent-abcd1234"]
                      * @return AgentIds Agent ID 列表，例如：agent-abcd1234，可在控制台 Agent 管理中获取
-
-示例值：["agent-abcd1234"]
                      * 
                      */
                     std::vector<std::string> GetAgentIds() const;
 
                     /**
                      * 设置Agent ID 列表，例如：agent-abcd1234，可在控制台 Agent 管理中获取
-
-示例值：["agent-abcd1234"]
                      * @param _agentIds Agent ID 列表，例如：agent-abcd1234，可在控制台 Agent 管理中获取
-
-示例值：["agent-abcd1234"]
                      * 
                      */
                     void SetAgentIds(const std::vector<std::string>& _agentIds);
@@ -124,15 +116,13 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * Prometheus 实例 ID，例如：prom-abcd1234
+                     * Prometheus 实例 ID
                      */
                     std::string m_instanceId;
                     bool m_instanceIdHasBeenSet;
 
                     /**
                      * Agent ID 列表，例如：agent-abcd1234，可在控制台 Agent 管理中获取
-
-示例值：["agent-abcd1234"]
                      */
                     std::vector<std::string> m_agentIds;
                     bool m_agentIdsHasBeenSet;

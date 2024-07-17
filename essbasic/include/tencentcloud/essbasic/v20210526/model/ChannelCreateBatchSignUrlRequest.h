@@ -102,11 +102,11 @@ namespace TencentCloud
                      * 获取签署方经办人的姓名。
 经办人的姓名将用于身份认证和电子签名，请确保填写的姓名为签署方的真实姓名，而非昵称等代名。
 
-注：`请确保和合同中填入的一致`，`除动态签署人场景外，此参数必填`
+注：`请确保和合同中填入的一致`，`除动态签署人或子客员工经办人场景外，此参数必填`
                      * @return Name 签署方经办人的姓名。
 经办人的姓名将用于身份认证和电子签名，请确保填写的姓名为签署方的真实姓名，而非昵称等代名。
 
-注：`请确保和合同中填入的一致`，`除动态签署人场景外，此参数必填`
+注：`请确保和合同中填入的一致`，`除动态签署人或子客员工经办人场景外，此参数必填`
                      * 
                      */
                     std::string GetName() const;
@@ -115,11 +115,11 @@ namespace TencentCloud
                      * 设置签署方经办人的姓名。
 经办人的姓名将用于身份认证和电子签名，请确保填写的姓名为签署方的真实姓名，而非昵称等代名。
 
-注：`请确保和合同中填入的一致`，`除动态签署人场景外，此参数必填`
+注：`请确保和合同中填入的一致`，`除动态签署人或子客员工经办人场景外，此参数必填`
                      * @param _name 签署方经办人的姓名。
 经办人的姓名将用于身份认证和电子签名，请确保填写的姓名为签署方的真实姓名，而非昵称等代名。
 
-注：`请确保和合同中填入的一致`，`除动态签署人场景外，此参数必填`
+注：`请确保和合同中填入的一致`，`除动态签署人或子客员工经办人场景外，此参数必填`
                      * 
                      */
                     void SetName(const std::string& _name);
@@ -135,11 +135,11 @@ namespace TencentCloud
                      * 获取手机号码， 支持国内手机号11位数字(无需加+86前缀或其他字符)。
 请确认手机号所有方为此业务通知方。
 
-注：`请确保和合同中填入的一致,  若无法保持一致，请确保在发起和生成批量签署链接时传入相同的参与方证件信息`，`除动态签署人场景外，此参数必填`
+注：`请确保和合同中填入的一致,  若无法保持一致，请确保在发起和生成批量签署链接时传入相同的参与方证件信息`，`除动态签署人或子客员工经办人场景外，此参数必填`
                      * @return Mobile 手机号码， 支持国内手机号11位数字(无需加+86前缀或其他字符)。
 请确认手机号所有方为此业务通知方。
 
-注：`请确保和合同中填入的一致,  若无法保持一致，请确保在发起和生成批量签署链接时传入相同的参与方证件信息`，`除动态签署人场景外，此参数必填`
+注：`请确保和合同中填入的一致,  若无法保持一致，请确保在发起和生成批量签署链接时传入相同的参与方证件信息`，`除动态签署人或子客员工经办人场景外，此参数必填`
                      * 
                      */
                     std::string GetMobile() const;
@@ -148,11 +148,11 @@ namespace TencentCloud
                      * 设置手机号码， 支持国内手机号11位数字(无需加+86前缀或其他字符)。
 请确认手机号所有方为此业务通知方。
 
-注：`请确保和合同中填入的一致,  若无法保持一致，请确保在发起和生成批量签署链接时传入相同的参与方证件信息`，`除动态签署人场景外，此参数必填`
+注：`请确保和合同中填入的一致,  若无法保持一致，请确保在发起和生成批量签署链接时传入相同的参与方证件信息`，`除动态签署人或子客员工经办人场景外，此参数必填`
                      * @param _mobile 手机号码， 支持国内手机号11位数字(无需加+86前缀或其他字符)。
 请确认手机号所有方为此业务通知方。
 
-注：`请确保和合同中填入的一致,  若无法保持一致，请确保在发起和生成批量签署链接时传入相同的参与方证件信息`，`除动态签署人场景外，此参数必填`
+注：`请确保和合同中填入的一致,  若无法保持一致，请确保在发起和生成批量签署链接时传入相同的参与方证件信息`，`除动态签署人或子客员工经办人场景外，此参数必填`
                      * 
                      */
                     void SetMobile(const std::string& _mobile);
@@ -334,46 +334,46 @@ namespace TencentCloud
                     bool FlowIdsHasBeenSet() const;
 
                     /**
-                     * 获取目标签署人的企业名称，签署人如果是企业员工身份，需要传此参数。
+                     * 获取SaaS平台企业员工签署方的企业名称。目标签署人如果为saas应用企业员工身份，此参数必填。
 
 注：
 <ul>
 <li>请确认该名称与企业营业执照中注册的名称一致。</li>
 <li>如果名称中包含英文括号()，请使用中文括号（）代替。</li>
 <li>请确保此企业已完成腾讯电子签企业认证。</li>
-<li>暂时仅支持给`自建应用集成企业` 生成员工批签链接，不支持子客企业。</li>
+<li>**若为子客企业员工，请使用OpenId，OrganizationOpenId参数，此参数留空即可**</li>
 </ul>
-                     * @return OrganizationName 目标签署人的企业名称，签署人如果是企业员工身份，需要传此参数。
+                     * @return OrganizationName SaaS平台企业员工签署方的企业名称。目标签署人如果为saas应用企业员工身份，此参数必填。
 
 注：
 <ul>
 <li>请确认该名称与企业营业执照中注册的名称一致。</li>
 <li>如果名称中包含英文括号()，请使用中文括号（）代替。</li>
 <li>请确保此企业已完成腾讯电子签企业认证。</li>
-<li>暂时仅支持给`自建应用集成企业` 生成员工批签链接，不支持子客企业。</li>
+<li>**若为子客企业员工，请使用OpenId，OrganizationOpenId参数，此参数留空即可**</li>
 </ul>
                      * 
                      */
                     std::string GetOrganizationName() const;
 
                     /**
-                     * 设置目标签署人的企业名称，签署人如果是企业员工身份，需要传此参数。
+                     * 设置SaaS平台企业员工签署方的企业名称。目标签署人如果为saas应用企业员工身份，此参数必填。
 
 注：
 <ul>
 <li>请确认该名称与企业营业执照中注册的名称一致。</li>
 <li>如果名称中包含英文括号()，请使用中文括号（）代替。</li>
 <li>请确保此企业已完成腾讯电子签企业认证。</li>
-<li>暂时仅支持给`自建应用集成企业` 生成员工批签链接，不支持子客企业。</li>
+<li>**若为子客企业员工，请使用OpenId，OrganizationOpenId参数，此参数留空即可**</li>
 </ul>
-                     * @param _organizationName 目标签署人的企业名称，签署人如果是企业员工身份，需要传此参数。
+                     * @param _organizationName SaaS平台企业员工签署方的企业名称。目标签署人如果为saas应用企业员工身份，此参数必填。
 
 注：
 <ul>
 <li>请确认该名称与企业营业执照中注册的名称一致。</li>
 <li>如果名称中包含英文括号()，请使用中文括号（）代替。</li>
 <li>请确保此企业已完成腾讯电子签企业认证。</li>
-<li>暂时仅支持给`自建应用集成企业` 生成员工批签链接，不支持子客企业。</li>
+<li>**若为子客企业员工，请使用OpenId，OrganizationOpenId参数，此参数留空即可**</li>
 </ul>
                      * 
                      */
@@ -444,6 +444,72 @@ namespace TencentCloud
                      */
                     bool FlowBatchUrlInfoHasBeenSet() const;
 
+                    /**
+                     * 获取第三方平台子客企业员工的标识OpenId，批签合同经办人为子客员工的情况下为必填。
+
+注：
+<ul>
+<li>传入的OpenId对应员工在此子客企业下必须已经实名</li>
+<li>传递了此参数可以无需传递Name，Mobile，IdCardNumber，IdCardType参数。系统会根据员工OpenId自动拉取实名信息。</li>
+</ul>
+                     * @return OpenId 第三方平台子客企业员工的标识OpenId，批签合同经办人为子客员工的情况下为必填。
+
+注：
+<ul>
+<li>传入的OpenId对应员工在此子客企业下必须已经实名</li>
+<li>传递了此参数可以无需传递Name，Mobile，IdCardNumber，IdCardType参数。系统会根据员工OpenId自动拉取实名信息。</li>
+</ul>
+                     * 
+                     */
+                    std::string GetOpenId() const;
+
+                    /**
+                     * 设置第三方平台子客企业员工的标识OpenId，批签合同经办人为子客员工的情况下为必填。
+
+注：
+<ul>
+<li>传入的OpenId对应员工在此子客企业下必须已经实名</li>
+<li>传递了此参数可以无需传递Name，Mobile，IdCardNumber，IdCardType参数。系统会根据员工OpenId自动拉取实名信息。</li>
+</ul>
+                     * @param _openId 第三方平台子客企业员工的标识OpenId，批签合同经办人为子客员工的情况下为必填。
+
+注：
+<ul>
+<li>传入的OpenId对应员工在此子客企业下必须已经实名</li>
+<li>传递了此参数可以无需传递Name，Mobile，IdCardNumber，IdCardType参数。系统会根据员工OpenId自动拉取实名信息。</li>
+</ul>
+                     * 
+                     */
+                    void SetOpenId(const std::string& _openId);
+
+                    /**
+                     * 判断参数 OpenId 是否已赋值
+                     * @return OpenId 是否已赋值
+                     * 
+                     */
+                    bool OpenIdHasBeenSet() const;
+
+                    /**
+                     * 获取第三方平台子客企业的企业的标识, 即OrganizationOpenId，批签合同经办人为子客企业员工是为必填。
+                     * @return OrganizationOpenId 第三方平台子客企业的企业的标识, 即OrganizationOpenId，批签合同经办人为子客企业员工是为必填。
+                     * 
+                     */
+                    std::string GetOrganizationOpenId() const;
+
+                    /**
+                     * 设置第三方平台子客企业的企业的标识, 即OrganizationOpenId，批签合同经办人为子客企业员工是为必填。
+                     * @param _organizationOpenId 第三方平台子客企业的企业的标识, 即OrganizationOpenId，批签合同经办人为子客企业员工是为必填。
+                     * 
+                     */
+                    void SetOrganizationOpenId(const std::string& _organizationOpenId);
+
+                    /**
+                     * 判断参数 OrganizationOpenId 是否已赋值
+                     * @return OrganizationOpenId 是否已赋值
+                     * 
+                     */
+                    bool OrganizationOpenIdHasBeenSet() const;
+
                 private:
 
                     /**
@@ -464,7 +530,7 @@ namespace TencentCloud
                      * 签署方经办人的姓名。
 经办人的姓名将用于身份认证和电子签名，请确保填写的姓名为签署方的真实姓名，而非昵称等代名。
 
-注：`请确保和合同中填入的一致`，`除动态签署人场景外，此参数必填`
+注：`请确保和合同中填入的一致`，`除动态签署人或子客员工经办人场景外，此参数必填`
                      */
                     std::string m_name;
                     bool m_nameHasBeenSet;
@@ -473,7 +539,7 @@ namespace TencentCloud
                      * 手机号码， 支持国内手机号11位数字(无需加+86前缀或其他字符)。
 请确认手机号所有方为此业务通知方。
 
-注：`请确保和合同中填入的一致,  若无法保持一致，请确保在发起和生成批量签署链接时传入相同的参与方证件信息`，`除动态签署人场景外，此参数必填`
+注：`请确保和合同中填入的一致,  若无法保持一致，请确保在发起和生成批量签署链接时传入相同的参与方证件信息`，`除动态签署人或子客员工经办人场景外，此参数必填`
                      */
                     std::string m_mobile;
                     bool m_mobileHasBeenSet;
@@ -525,14 +591,14 @@ namespace TencentCloud
                     bool m_flowIdsHasBeenSet;
 
                     /**
-                     * 目标签署人的企业名称，签署人如果是企业员工身份，需要传此参数。
+                     * SaaS平台企业员工签署方的企业名称。目标签署人如果为saas应用企业员工身份，此参数必填。
 
 注：
 <ul>
 <li>请确认该名称与企业营业执照中注册的名称一致。</li>
 <li>如果名称中包含英文括号()，请使用中文括号（）代替。</li>
 <li>请确保此企业已完成腾讯电子签企业认证。</li>
-<li>暂时仅支持给`自建应用集成企业` 生成员工批签链接，不支持子客企业。</li>
+<li>**若为子客企业员工，请使用OpenId，OrganizationOpenId参数，此参数留空即可**</li>
 </ul>
                      */
                     std::string m_organizationName;
@@ -553,6 +619,24 @@ namespace TencentCloud
                      */
                     FlowBatchUrlInfo m_flowBatchUrlInfo;
                     bool m_flowBatchUrlInfoHasBeenSet;
+
+                    /**
+                     * 第三方平台子客企业员工的标识OpenId，批签合同经办人为子客员工的情况下为必填。
+
+注：
+<ul>
+<li>传入的OpenId对应员工在此子客企业下必须已经实名</li>
+<li>传递了此参数可以无需传递Name，Mobile，IdCardNumber，IdCardType参数。系统会根据员工OpenId自动拉取实名信息。</li>
+</ul>
+                     */
+                    std::string m_openId;
+                    bool m_openIdHasBeenSet;
+
+                    /**
+                     * 第三方平台子客企业的企业的标识, 即OrganizationOpenId，批签合同经办人为子客企业员工是为必填。
+                     */
+                    std::string m_organizationOpenId;
+                    bool m_organizationOpenIdHasBeenSet;
 
                 };
             }

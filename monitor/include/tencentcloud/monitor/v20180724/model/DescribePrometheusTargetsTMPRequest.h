@@ -132,15 +132,15 @@ namespace TencentCloud
                     bool FiltersHasBeenSet() const;
 
                     /**
-                     * 获取targets偏移量，默认为0
-                     * @return Offset targets偏移量，默认为0
+                     * 获取targets分页偏移量，默认为0
+                     * @return Offset targets分页偏移量，默认为0
                      * 
                      */
                     uint64_t GetOffset() const;
 
                     /**
-                     * 设置targets偏移量，默认为0
-                     * @param _offset targets偏移量，默认为0
+                     * 设置targets分页偏移量，默认为0
+                     * @param _offset targets分页偏移量，默认为0
                      * 
                      */
                     void SetOffset(const uint64_t& _offset);
@@ -201,7 +201,7 @@ namespace TencentCloud
                     bool m_filtersHasBeenSet;
 
                     /**
-                     * targets偏移量，默认为0
+                     * targets分页偏移量，默认为0
                      */
                     uint64_t m_offset;
                     bool m_offsetHasBeenSet;

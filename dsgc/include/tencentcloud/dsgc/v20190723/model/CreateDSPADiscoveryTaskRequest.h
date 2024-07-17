@@ -347,6 +347,69 @@ selfbuilt-db 表示自建数据库
                      */
                     bool TimingStartTimeHasBeenSet() const;
 
+                    /**
+                     * 获取random-随机，asc生序，desc降序
+                     * @return Order random-随机，asc生序，desc降序
+                     * 
+                     */
+                    std::string GetOrder() const;
+
+                    /**
+                     * 设置random-随机，asc生序，desc降序
+                     * @param _order random-随机，asc生序，desc降序
+                     * 
+                     */
+                    void SetOrder(const std::string& _order);
+
+                    /**
+                     * 判断参数 Order 是否已赋值
+                     * @return Order 是否已赋值
+                     * 
+                     */
+                    bool OrderHasBeenSet() const;
+
+                    /**
+                     * 获取抽样的条数，范围30-1000
+                     * @return Rows 抽样的条数，范围30-1000
+                     * 
+                     */
+                    int64_t GetRows() const;
+
+                    /**
+                     * 设置抽样的条数，范围30-1000
+                     * @param _rows 抽样的条数，范围30-1000
+                     * 
+                     */
+                    void SetRows(const int64_t& _rows);
+
+                    /**
+                     * 判断参数 Rows 是否已赋值
+                     * @return Rows 是否已赋值
+                     * 
+                     */
+                    bool RowsHasBeenSet() const;
+
+                    /**
+                     * 获取抽样的排序字段
+                     * @return GlobalOrderField 抽样的排序字段
+                     * 
+                     */
+                    std::string GetGlobalOrderField() const;
+
+                    /**
+                     * 设置抽样的排序字段
+                     * @param _globalOrderField 抽样的排序字段
+                     * 
+                     */
+                    void SetGlobalOrderField(const std::string& _globalOrderField);
+
+                    /**
+                     * 判断参数 GlobalOrderField 是否已赋值
+                     * @return GlobalOrderField 是否已赋值
+                     * 
+                     */
+                    bool GlobalOrderFieldHasBeenSet() const;
+
                 private:
 
                     /**
@@ -434,6 +497,24 @@ selfbuilt-db 表示自建数据库
                      */
                     std::string m_timingStartTime;
                     bool m_timingStartTimeHasBeenSet;
+
+                    /**
+                     * random-随机，asc生序，desc降序
+                     */
+                    std::string m_order;
+                    bool m_orderHasBeenSet;
+
+                    /**
+                     * 抽样的条数，范围30-1000
+                     */
+                    int64_t m_rows;
+                    bool m_rowsHasBeenSet;
+
+                    /**
+                     * 抽样的排序字段
+                     */
+                    std::string m_globalOrderField;
+                    bool m_globalOrderFieldHasBeenSet;
 
                 };
             }

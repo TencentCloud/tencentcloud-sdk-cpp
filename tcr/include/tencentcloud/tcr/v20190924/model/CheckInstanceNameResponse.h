@@ -58,9 +58,9 @@ namespace TencentCloud
                     bool IsValidatedHasBeenSet() const;
 
                     /**
-                     * 获取1: Illegal（名子非法）, 2:Reserved（名字保留）, 3:Existed（名字已存在）
+                     * 获取1: Illegal（名称非法）, 2:Reserved（名字保留）, 3:Existed（名字已存在）
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return DetailCode 1: Illegal（名子非法）, 2:Reserved（名字保留）, 3:Existed（名字已存在）
+                     * @return DetailCode 1: Illegal（名称非法）, 2:Reserved（名字保留）, 3:Existed（名字已存在）
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -82,7 +82,7 @@ namespace TencentCloud
                     bool m_isValidatedHasBeenSet;
 
                     /**
-                     * 1: Illegal（名子非法）, 2:Reserved（名字保留）, 3:Existed（名字已存在）
+                     * 1: Illegal（名称非法）, 2:Reserved（名字保留）, 3:Existed（名字已存在）
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_detailCode;

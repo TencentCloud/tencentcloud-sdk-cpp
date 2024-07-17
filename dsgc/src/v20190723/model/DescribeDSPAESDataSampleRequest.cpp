@@ -24,7 +24,9 @@ using namespace std;
 
 DescribeDSPAESDataSampleRequest::DescribeDSPAESDataSampleRequest() :
     m_dspaIdHasBeenSet(false),
-    m_fieldResultIdHasBeenSet(false)
+    m_fieldResultIdHasBeenSet(false),
+    m_orderHasBeenSet(false),
+    m_orderFieldHasBeenSet(false)
 {
 }
 
@@ -49,6 +51,22 @@ string DescribeDSPAESDataSampleRequest::ToJsonString() const
         string key = "FieldResultId";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_fieldResultId, allocator);
+    }
+
+    if (m_orderHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Order";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_order.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_orderFieldHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "OrderField";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_orderField.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -89,6 +107,38 @@ void DescribeDSPAESDataSampleRequest::SetFieldResultId(const int64_t& _fieldResu
 bool DescribeDSPAESDataSampleRequest::FieldResultIdHasBeenSet() const
 {
     return m_fieldResultIdHasBeenSet;
+}
+
+string DescribeDSPAESDataSampleRequest::GetOrder() const
+{
+    return m_order;
+}
+
+void DescribeDSPAESDataSampleRequest::SetOrder(const string& _order)
+{
+    m_order = _order;
+    m_orderHasBeenSet = true;
+}
+
+bool DescribeDSPAESDataSampleRequest::OrderHasBeenSet() const
+{
+    return m_orderHasBeenSet;
+}
+
+string DescribeDSPAESDataSampleRequest::GetOrderField() const
+{
+    return m_orderField;
+}
+
+void DescribeDSPAESDataSampleRequest::SetOrderField(const string& _orderField)
+{
+    m_orderField = _orderField;
+    m_orderFieldHasBeenSet = true;
+}
+
+bool DescribeDSPAESDataSampleRequest::OrderFieldHasBeenSet() const
+{
+    return m_orderFieldHasBeenSet;
 }
 
 

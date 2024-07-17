@@ -84,6 +84,48 @@ namespace TencentCloud
                      */
                     bool FieldResultIdHasBeenSet() const;
 
+                    /**
+                     * 获取排序方式
+                     * @return Order 排序方式
+                     * 
+                     */
+                    std::string GetOrder() const;
+
+                    /**
+                     * 设置排序方式
+                     * @param _order 排序方式
+                     * 
+                     */
+                    void SetOrder(const std::string& _order);
+
+                    /**
+                     * 判断参数 Order 是否已赋值
+                     * @return Order 是否已赋值
+                     * 
+                     */
+                    bool OrderHasBeenSet() const;
+
+                    /**
+                     * 获取排序字段
+                     * @return OrderField 排序字段
+                     * 
+                     */
+                    std::string GetOrderField() const;
+
+                    /**
+                     * 设置排序字段
+                     * @param _orderField 排序字段
+                     * 
+                     */
+                    void SetOrderField(const std::string& _orderField);
+
+                    /**
+                     * 判断参数 OrderField 是否已赋值
+                     * @return OrderField 是否已赋值
+                     * 
+                     */
+                    bool OrderFieldHasBeenSet() const;
+
                 private:
 
                     /**
@@ -97,6 +139,18 @@ namespace TencentCloud
                      */
                     int64_t m_fieldResultId;
                     bool m_fieldResultIdHasBeenSet;
+
+                    /**
+                     * 排序方式
+                     */
+                    std::string m_order;
+                    bool m_orderHasBeenSet;
+
+                    /**
+                     * 排序字段
+                     */
+                    std::string m_orderField;
+                    bool m_orderFieldHasBeenSet;
 
                 };
             }

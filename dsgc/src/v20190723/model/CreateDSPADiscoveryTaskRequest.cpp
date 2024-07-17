@@ -35,7 +35,10 @@ CreateDSPADiscoveryTaskRequest::CreateDSPADiscoveryTaskRequest() :
     m_descriptionHasBeenSet(false),
     m_conditionHasBeenSet(false),
     m_complianceGroupIdsHasBeenSet(false),
-    m_timingStartTimeHasBeenSet(false)
+    m_timingStartTimeHasBeenSet(false),
+    m_orderHasBeenSet(false),
+    m_rowsHasBeenSet(false),
+    m_globalOrderFieldHasBeenSet(false)
 {
 }
 
@@ -153,6 +156,30 @@ string CreateDSPADiscoveryTaskRequest::ToJsonString() const
         string key = "TimingStartTime";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_timingStartTime.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_orderHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Order";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_order.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_rowsHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Rows";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_rows, allocator);
+    }
+
+    if (m_globalOrderFieldHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "GlobalOrderField";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_globalOrderField.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -369,6 +396,54 @@ void CreateDSPADiscoveryTaskRequest::SetTimingStartTime(const string& _timingSta
 bool CreateDSPADiscoveryTaskRequest::TimingStartTimeHasBeenSet() const
 {
     return m_timingStartTimeHasBeenSet;
+}
+
+string CreateDSPADiscoveryTaskRequest::GetOrder() const
+{
+    return m_order;
+}
+
+void CreateDSPADiscoveryTaskRequest::SetOrder(const string& _order)
+{
+    m_order = _order;
+    m_orderHasBeenSet = true;
+}
+
+bool CreateDSPADiscoveryTaskRequest::OrderHasBeenSet() const
+{
+    return m_orderHasBeenSet;
+}
+
+int64_t CreateDSPADiscoveryTaskRequest::GetRows() const
+{
+    return m_rows;
+}
+
+void CreateDSPADiscoveryTaskRequest::SetRows(const int64_t& _rows)
+{
+    m_rows = _rows;
+    m_rowsHasBeenSet = true;
+}
+
+bool CreateDSPADiscoveryTaskRequest::RowsHasBeenSet() const
+{
+    return m_rowsHasBeenSet;
+}
+
+string CreateDSPADiscoveryTaskRequest::GetGlobalOrderField() const
+{
+    return m_globalOrderField;
+}
+
+void CreateDSPADiscoveryTaskRequest::SetGlobalOrderField(const string& _globalOrderField)
+{
+    m_globalOrderField = _globalOrderField;
+    m_globalOrderFieldHasBeenSet = true;
+}
+
+bool CreateDSPADiscoveryTaskRequest::GlobalOrderFieldHasBeenSet() const
+{
+    return m_globalOrderFieldHasBeenSet;
 }
 
 
