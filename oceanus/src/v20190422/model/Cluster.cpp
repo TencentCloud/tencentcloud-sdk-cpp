@@ -65,7 +65,8 @@ Cluster::Cluster() :
     m_typeHasBeenSet(false),
     m_subEksHasBeenSet(false),
     m_agentSerialIdHasBeenSet(false),
-    m_resourceTypeHasBeenSet(false)
+    m_resourceTypeHasBeenSet(false),
+    m_billingResourceModeHasBeenSet(false)
 {
 }
 
@@ -598,6 +599,16 @@ CoreInternalOutcome Cluster::Deserialize(const rapidjson::Value &value)
         m_resourceTypeHasBeenSet = true;
     }
 
+    if (value.HasMember("BillingResourceMode") && !value["BillingResourceMode"].IsNull())
+    {
+        if (!value["BillingResourceMode"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `Cluster.BillingResourceMode` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_billingResourceMode = string(value["BillingResourceMode"].GetString());
+        m_billingResourceModeHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -1007,6 +1018,14 @@ void Cluster::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Allocat
         string key = "ResourceType";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_resourceType, allocator);
+    }
+
+    if (m_billingResourceModeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "BillingResourceMode";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_billingResourceMode.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -1730,5 +1749,21 @@ void Cluster::SetResourceType(const int64_t& _resourceType)
 bool Cluster::ResourceTypeHasBeenSet() const
 {
     return m_resourceTypeHasBeenSet;
+}
+
+string Cluster::GetBillingResourceMode() const
+{
+    return m_billingResourceMode;
+}
+
+void Cluster::SetBillingResourceMode(const string& _billingResourceMode)
+{
+    m_billingResourceMode = _billingResourceMode;
+    m_billingResourceModeHasBeenSet = true;
+}
+
+bool Cluster::BillingResourceModeHasBeenSet() const
+{
+    return m_billingResourceModeHasBeenSet;
 }
 

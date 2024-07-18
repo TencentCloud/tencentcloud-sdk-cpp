@@ -1111,6 +1111,31 @@ namespace TencentCloud
                      */
                     bool ResourceTypeHasBeenSet() const;
 
+                    /**
+                     * 获取集群类型
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return BillingResourceMode 集群类型
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::string GetBillingResourceMode() const;
+
+                    /**
+                     * 设置集群类型
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _billingResourceMode 集群类型
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetBillingResourceMode(const std::string& _billingResourceMode);
+
+                    /**
+                     * 判断参数 BillingResourceMode 是否已赋值
+                     * @return BillingResourceMode 是否已赋值
+                     * 
+                     */
+                    bool BillingResourceModeHasBeenSet() const;
+
                 private:
 
                     /**
@@ -1410,6 +1435,13 @@ namespace TencentCloud
                      */
                     int64_t m_resourceType;
                     bool m_resourceTypeHasBeenSet;
+
+                    /**
+                     * 集群类型
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_billingResourceMode;
+                    bool m_billingResourceModeHasBeenSet;
 
                 };
             }

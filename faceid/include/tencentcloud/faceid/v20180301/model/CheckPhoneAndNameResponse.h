@@ -54,6 +54,7 @@ namespace TencentCloud
 -3:引擎服务异常
 -4:姓名校验不通过
 -5:手机号码不合法
+-6: 认证次数超过当日限制，请次日重试
                      * @return Result 认证结果码，收费情况如下。
 收费结果码：
 0: 验证结果一致
@@ -64,6 +65,7 @@ namespace TencentCloud
 -3:引擎服务异常
 -4:姓名校验不通过
 -5:手机号码不合法
+-6: 认证次数超过当日限制，请次日重试
                      * 
                      */
                     std::string GetResult() const;
@@ -102,6 +104,7 @@ namespace TencentCloud
 -3:引擎服务异常
 -4:姓名校验不通过
 -5:手机号码不合法
+-6: 认证次数超过当日限制，请次日重试
                      */
                     std::string m_result;
                     bool m_resultHasBeenSet;

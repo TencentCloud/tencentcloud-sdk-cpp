@@ -106,15 +106,15 @@ namespace TencentCloud
                     bool GroupIdListHasBeenSet() const;
 
                     /**
-                     * 获取筛选坐席状态列表
-                     * @return StatusList 筛选坐席状态列表
+                     * 获取筛选坐席状态列表 座席状态 free 示闲 | busy 忙碌 | rest 小休 | notReady 示忙 | afterCallWork 话后调整 | offline 离线 
+                     * @return StatusList 筛选坐席状态列表 座席状态 free 示闲 | busy 忙碌 | rest 小休 | notReady 示忙 | afterCallWork 话后调整 | offline 离线 
                      * 
                      */
                     std::vector<std::string> GetStatusList() const;
 
                     /**
-                     * 设置筛选坐席状态列表
-                     * @param _statusList 筛选坐席状态列表
+                     * 设置筛选坐席状态列表 座席状态 free 示闲 | busy 忙碌 | rest 小休 | notReady 示忙 | afterCallWork 话后调整 | offline 离线 
+                     * @param _statusList 筛选坐席状态列表 座席状态 free 示闲 | busy 忙碌 | rest 小休 | notReady 示忙 | afterCallWork 话后调整 | offline 离线 
                      * 
                      */
                     void SetStatusList(const std::vector<std::string>& _statusList);
@@ -147,7 +147,7 @@ namespace TencentCloud
                     bool m_groupIdListHasBeenSet;
 
                     /**
-                     * 筛选坐席状态列表
+                     * 筛选坐席状态列表 座席状态 free 示闲 | busy 忙碌 | rest 小休 | notReady 示忙 | afterCallWork 话后调整 | offline 离线 
                      */
                     std::vector<std::string> m_statusList;
                     bool m_statusListHasBeenSet;

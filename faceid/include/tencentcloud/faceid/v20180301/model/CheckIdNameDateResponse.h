@@ -55,6 +55,7 @@ namespace TencentCloud
 -5: 身份信息无效
 -6: 证件库服务异常
 -7: 证件库中无此身份证记录
+-8: 认证次数超过当日限制，请次日重试
                      * @return Result 认证结果码，收费情况如下。
 收费结果码：
 0: 一致
@@ -66,6 +67,7 @@ namespace TencentCloud
 -5: 身份信息无效
 -6: 证件库服务异常
 -7: 证件库中无此身份证记录
+-8: 认证次数超过当日限制，请次日重试
                      * 
                      */
                     std::string GetResult() const;
@@ -105,6 +107,7 @@ namespace TencentCloud
 -5: 身份信息无效
 -6: 证件库服务异常
 -7: 证件库中无此身份证记录
+-8: 认证次数超过当日限制，请次日重试
                      */
                     std::string m_result;
                     bool m_resultHasBeenSet;

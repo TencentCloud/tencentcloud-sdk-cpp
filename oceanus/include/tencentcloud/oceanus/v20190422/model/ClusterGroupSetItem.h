@@ -471,6 +471,31 @@ namespace TencentCloud
                      */
                     bool SubEksHasBeenSet() const;
 
+                    /**
+                     * 获取默认 "" 包销模式 "exclusiveSale"
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return BillingResourceMode 默认 "" 包销模式 "exclusiveSale"
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::string GetBillingResourceMode() const;
+
+                    /**
+                     * 设置默认 "" 包销模式 "exclusiveSale"
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _billingResourceMode 默认 "" 包销模式 "exclusiveSale"
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetBillingResourceMode(const std::string& _billingResourceMode);
+
+                    /**
+                     * 判断参数 BillingResourceMode 是否已赋值
+                     * @return BillingResourceMode 是否已赋值
+                     * 
+                     */
+                    bool BillingResourceModeHasBeenSet() const;
+
                 private:
 
                     /**
@@ -593,6 +618,13 @@ namespace TencentCloud
                      */
                     SubEks m_subEks;
                     bool m_subEksHasBeenSet;
+
+                    /**
+                     * 默认 "" 包销模式 "exclusiveSale"
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_billingResourceMode;
+                    bool m_billingResourceModeHasBeenSet;
 
                 };
             }

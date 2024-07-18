@@ -149,15 +149,15 @@ namespace TencentCloud
                     bool ValuesHasBeenSet() const;
 
                     /**
-                     * 获取制品来源，范围：tke-market 或 other默认值：tke-market。
-                     * @return ChartFrom 制品来源，范围：tke-market 或 other默认值：tke-market。
+                     * 获取制品来源，范围：tke-market 或 other 默认值：tke-market，示例值：tke-market
+                     * @return ChartFrom 制品来源，范围：tke-market 或 other 默认值：tke-market，示例值：tke-market
                      * 
                      */
                     std::string GetChartFrom() const;
 
                     /**
-                     * 设置制品来源，范围：tke-market 或 other默认值：tke-market。
-                     * @param _chartFrom 制品来源，范围：tke-market 或 other默认值：tke-market。
+                     * 设置制品来源，范围：tke-market 或 other 默认值：tke-market，示例值：tke-market
+                     * @param _chartFrom 制品来源，范围：tke-market 或 other 默认值：tke-market，示例值：tke-market
                      * 
                      */
                     void SetChartFrom(const std::string& _chartFrom);
@@ -254,15 +254,15 @@ namespace TencentCloud
                     bool PasswordHasBeenSet() const;
 
                     /**
-                     * 获取制品命名空间
-                     * @return ChartNamespace 制品命名空间
+                     * 获取制品命名空间，ChartFrom为tke-market时ChartNamespace不为空，值为DescribeProducts接口反馈的Namespace
+                     * @return ChartNamespace 制品命名空间，ChartFrom为tke-market时ChartNamespace不为空，值为DescribeProducts接口反馈的Namespace
                      * 
                      */
                     std::string GetChartNamespace() const;
 
                     /**
-                     * 设置制品命名空间
-                     * @param _chartNamespace 制品命名空间
+                     * 设置制品命名空间，ChartFrom为tke-market时ChartNamespace不为空，值为DescribeProducts接口反馈的Namespace
+                     * @param _chartNamespace 制品命名空间，ChartFrom为tke-market时ChartNamespace不为空，值为DescribeProducts接口反馈的Namespace
                      * 
                      */
                     void SetChartNamespace(const std::string& _chartNamespace);
@@ -328,7 +328,7 @@ namespace TencentCloud
                     bool m_valuesHasBeenSet;
 
                     /**
-                     * 制品来源，范围：tke-market 或 other默认值：tke-market。
+                     * 制品来源，范围：tke-market 或 other 默认值：tke-market，示例值：tke-market
                      */
                     std::string m_chartFrom;
                     bool m_chartFromHasBeenSet;
@@ -358,7 +358,7 @@ namespace TencentCloud
                     bool m_passwordHasBeenSet;
 
                     /**
-                     * 制品命名空间
+                     * 制品命名空间，ChartFrom为tke-market时ChartNamespace不为空，值为DescribeProducts接口反馈的Namespace
                      */
                     std::string m_chartNamespace;
                     bool m_chartNamespaceHasBeenSet;

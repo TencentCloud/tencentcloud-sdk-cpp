@@ -85,7 +85,7 @@ namespace TencentCloud
                 ChatCompletionsOutcomeCallable ChatCompletionsCallable(const Model::ChatCompletionsRequest& request);
 
                 /**
-                 *腾讯混元 Embedding 接口，可以将文本转化为高质量的向量数据。
+                 *腾讯混元 Embedding 接口，可以将文本转化为高质量的向量数据。向量维度为1024维。
                  * @param req GetEmbeddingRequest
                  * @return GetEmbeddingOutcome
                  */

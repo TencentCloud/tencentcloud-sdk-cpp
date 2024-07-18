@@ -162,15 +162,15 @@ namespace TencentCloud
                     bool UserSigHasBeenSet() const;
 
                     /**
-                     * 获取源流URL。历史原因本字段【必填】。如果是视频流，分辨率请保持不变。
-                     * @return StreamUrl 源流URL。历史原因本字段【必填】。如果是视频流，分辨率请保持不变。
+                     * 获取源流URL【必填】。如果是视频流，分辨率请保持不变。
+                     * @return StreamUrl 源流URL【必填】。如果是视频流，分辨率请保持不变。
                      * 
                      */
                     std::string GetStreamUrl() const;
 
                     /**
-                     * 设置源流URL。历史原因本字段【必填】。如果是视频流，分辨率请保持不变。
-                     * @param _streamUrl 源流URL。历史原因本字段【必填】。如果是视频流，分辨率请保持不变。
+                     * 设置源流URL【必填】。如果是视频流，分辨率请保持不变。
+                     * @param _streamUrl 源流URL【必填】。如果是视频流，分辨率请保持不变。
                      * 
                      */
                     void SetStreamUrl(const std::string& _streamUrl);
@@ -323,7 +323,7 @@ namespace TencentCloud
                     bool m_userSigHasBeenSet;
 
                     /**
-                     * 源流URL。历史原因本字段【必填】。如果是视频流，分辨率请保持不变。
+                     * 源流URL【必填】。如果是视频流，分辨率请保持不变。
                      */
                     std::string m_streamUrl;
                     bool m_streamUrlHasBeenSet;

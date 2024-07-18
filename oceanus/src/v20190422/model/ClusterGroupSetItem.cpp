@@ -40,7 +40,8 @@ ClusterGroupSetItem::ClusterGroupSetItem() :
     m_freeCuHasBeenSet(false),
     m_runningCuHasBeenSet(false),
     m_payModeHasBeenSet(false),
-    m_subEksHasBeenSet(false)
+    m_subEksHasBeenSet(false),
+    m_billingResourceModeHasBeenSet(false)
 {
 }
 
@@ -256,6 +257,16 @@ CoreInternalOutcome ClusterGroupSetItem::Deserialize(const rapidjson::Value &val
         m_subEksHasBeenSet = true;
     }
 
+    if (value.HasMember("BillingResourceMode") && !value["BillingResourceMode"].IsNull())
+    {
+        if (!value["BillingResourceMode"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `ClusterGroupSetItem.BillingResourceMode` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_billingResourceMode = string(value["BillingResourceMode"].GetString());
+        m_billingResourceModeHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -422,6 +433,14 @@ void ClusterGroupSetItem::ToJsonObject(rapidjson::Value &value, rapidjson::Docum
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
         m_subEks.ToJsonObject(value[key.c_str()], allocator);
+    }
+
+    if (m_billingResourceModeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "BillingResourceMode";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_billingResourceMode.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -745,5 +764,21 @@ void ClusterGroupSetItem::SetSubEks(const SubEks& _subEks)
 bool ClusterGroupSetItem::SubEksHasBeenSet() const
 {
     return m_subEksHasBeenSet;
+}
+
+string ClusterGroupSetItem::GetBillingResourceMode() const
+{
+    return m_billingResourceMode;
+}
+
+void ClusterGroupSetItem::SetBillingResourceMode(const string& _billingResourceMode)
+{
+    m_billingResourceMode = _billingResourceMode;
+    m_billingResourceModeHasBeenSet = true;
+}
+
+bool ClusterGroupSetItem::BillingResourceModeHasBeenSet() const
+{
+    return m_billingResourceModeHasBeenSet;
 }
 
