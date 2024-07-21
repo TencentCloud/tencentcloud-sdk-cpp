@@ -212,6 +212,49 @@ MnaClient::AddHardwareOutcomeCallable MnaClient::AddHardwareCallable(const AddHa
     return task->get_future();
 }
 
+MnaClient::AddL3ConnOutcome MnaClient::AddL3Conn(const AddL3ConnRequest &request)
+{
+    auto outcome = MakeRequest(request, "AddL3Conn");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        AddL3ConnResponse rsp = AddL3ConnResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return AddL3ConnOutcome(rsp);
+        else
+            return AddL3ConnOutcome(o.GetError());
+    }
+    else
+    {
+        return AddL3ConnOutcome(outcome.GetError());
+    }
+}
+
+void MnaClient::AddL3ConnAsync(const AddL3ConnRequest& request, const AddL3ConnAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->AddL3Conn(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+MnaClient::AddL3ConnOutcomeCallable MnaClient::AddL3ConnCallable(const AddL3ConnRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<AddL3ConnOutcome()>>(
+        [this, request]()
+        {
+            return this->AddL3Conn(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 MnaClient::CreateEncryptedKeyOutcome MnaClient::CreateEncryptedKey(const CreateEncryptedKeyRequest &request)
 {
     auto outcome = MakeRequest(request, "CreateEncryptedKey");
@@ -377,6 +420,49 @@ MnaClient::DeleteGroupOutcomeCallable MnaClient::DeleteGroupCallable(const Delet
         [this, request]()
         {
             return this->DeleteGroup(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+MnaClient::DeleteL3ConnOutcome MnaClient::DeleteL3Conn(const DeleteL3ConnRequest &request)
+{
+    auto outcome = MakeRequest(request, "DeleteL3Conn");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DeleteL3ConnResponse rsp = DeleteL3ConnResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DeleteL3ConnOutcome(rsp);
+        else
+            return DeleteL3ConnOutcome(o.GetError());
+    }
+    else
+    {
+        return DeleteL3ConnOutcome(outcome.GetError());
+    }
+}
+
+void MnaClient::DeleteL3ConnAsync(const DeleteL3ConnRequest& request, const DeleteL3ConnAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DeleteL3Conn(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+MnaClient::DeleteL3ConnOutcomeCallable MnaClient::DeleteL3ConnCallable(const DeleteL3ConnRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DeleteL3ConnOutcome()>>(
+        [this, request]()
+        {
+            return this->DeleteL3Conn(request);
         }
     );
 
@@ -943,6 +1029,49 @@ MnaClient::GetHardwareListOutcomeCallable MnaClient::GetHardwareListCallable(con
     return task->get_future();
 }
 
+MnaClient::GetL3ConnListOutcome MnaClient::GetL3ConnList(const GetL3ConnListRequest &request)
+{
+    auto outcome = MakeRequest(request, "GetL3ConnList");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        GetL3ConnListResponse rsp = GetL3ConnListResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return GetL3ConnListOutcome(rsp);
+        else
+            return GetL3ConnListOutcome(o.GetError());
+    }
+    else
+    {
+        return GetL3ConnListOutcome(outcome.GetError());
+    }
+}
+
+void MnaClient::GetL3ConnListAsync(const GetL3ConnListRequest& request, const GetL3ConnListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->GetL3ConnList(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+MnaClient::GetL3ConnListOutcomeCallable MnaClient::GetL3ConnListCallable(const GetL3ConnListRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<GetL3ConnListOutcome()>>(
+        [this, request]()
+        {
+            return this->GetL3ConnList(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 MnaClient::GetMultiFlowStatisticOutcome MnaClient::GetMultiFlowStatistic(const GetMultiFlowStatisticRequest &request)
 {
     auto outcome = MakeRequest(request, "GetMultiFlowStatistic");
@@ -1495,6 +1624,135 @@ MnaClient::UpdateHardwareOutcomeCallable MnaClient::UpdateHardwareCallable(const
         [this, request]()
         {
             return this->UpdateHardware(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+MnaClient::UpdateL3CidrOutcome MnaClient::UpdateL3Cidr(const UpdateL3CidrRequest &request)
+{
+    auto outcome = MakeRequest(request, "UpdateL3Cidr");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        UpdateL3CidrResponse rsp = UpdateL3CidrResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return UpdateL3CidrOutcome(rsp);
+        else
+            return UpdateL3CidrOutcome(o.GetError());
+    }
+    else
+    {
+        return UpdateL3CidrOutcome(outcome.GetError());
+    }
+}
+
+void MnaClient::UpdateL3CidrAsync(const UpdateL3CidrRequest& request, const UpdateL3CidrAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->UpdateL3Cidr(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+MnaClient::UpdateL3CidrOutcomeCallable MnaClient::UpdateL3CidrCallable(const UpdateL3CidrRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<UpdateL3CidrOutcome()>>(
+        [this, request]()
+        {
+            return this->UpdateL3Cidr(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+MnaClient::UpdateL3ConnOutcome MnaClient::UpdateL3Conn(const UpdateL3ConnRequest &request)
+{
+    auto outcome = MakeRequest(request, "UpdateL3Conn");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        UpdateL3ConnResponse rsp = UpdateL3ConnResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return UpdateL3ConnOutcome(rsp);
+        else
+            return UpdateL3ConnOutcome(o.GetError());
+    }
+    else
+    {
+        return UpdateL3ConnOutcome(outcome.GetError());
+    }
+}
+
+void MnaClient::UpdateL3ConnAsync(const UpdateL3ConnRequest& request, const UpdateL3ConnAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->UpdateL3Conn(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+MnaClient::UpdateL3ConnOutcomeCallable MnaClient::UpdateL3ConnCallable(const UpdateL3ConnRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<UpdateL3ConnOutcome()>>(
+        [this, request]()
+        {
+            return this->UpdateL3Conn(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+MnaClient::UpdateL3SwitchOutcome MnaClient::UpdateL3Switch(const UpdateL3SwitchRequest &request)
+{
+    auto outcome = MakeRequest(request, "UpdateL3Switch");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        UpdateL3SwitchResponse rsp = UpdateL3SwitchResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return UpdateL3SwitchOutcome(rsp);
+        else
+            return UpdateL3SwitchOutcome(o.GetError());
+    }
+    else
+    {
+        return UpdateL3SwitchOutcome(outcome.GetError());
+    }
+}
+
+void MnaClient::UpdateL3SwitchAsync(const UpdateL3SwitchRequest& request, const UpdateL3SwitchAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->UpdateL3Switch(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+MnaClient::UpdateL3SwitchOutcomeCallable MnaClient::UpdateL3SwitchCallable(const UpdateL3SwitchRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<UpdateL3SwitchOutcome()>>(
+        [this, request]()
+        {
+            return this->UpdateL3Switch(request);
         }
     );
 

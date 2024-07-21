@@ -98,19 +98,15 @@ namespace TencentCloud
                     bool AgentHasBeenSet() const;
 
                     /**
-                     * 获取当前应用下子客的组织机构注册信息。
-一次最多支持10条认证流
-                     * @return RegistrationOrganizations 当前应用下子客的组织机构注册信息。
-一次最多支持10条认证流
+                     * 获取当前应用下子企业的组织机构注册信息。最多支持查询10子企业。
+                     * @return RegistrationOrganizations 当前应用下子企业的组织机构注册信息。最多支持查询10子企业。
                      * 
                      */
                     std::vector<RegistrationOrganizationInfo> GetRegistrationOrganizations() const;
 
                     /**
-                     * 设置当前应用下子客的组织机构注册信息。
-一次最多支持10条认证流
-                     * @param _registrationOrganizations 当前应用下子客的组织机构注册信息。
-一次最多支持10条认证流
+                     * 设置当前应用下子企业的组织机构注册信息。最多支持查询10子企业。
+                     * @param _registrationOrganizations 当前应用下子企业的组织机构注册信息。最多支持查询10子企业。
                      * 
                      */
                     void SetRegistrationOrganizations(const std::vector<RegistrationOrganizationInfo>& _registrationOrganizations);
@@ -130,7 +126,7 @@ namespace TencentCloud
 <li>**APP**：第三方APP或小程序跳转电子签小程序链接, 一般用于贵方小程序或者APP跳转过来,  打开后进入腾讯电子签小程序</li>
 <li>**H5**：第三方H5跳转到电子签H5长链接, 一般用于贵方H5跳转过来,  打开后进入腾讯电子签H5页面</li>
 <li>**SHORT_H5**：第三方H5跳转到电子签H5短链接, 一般用于贵方H5跳转过来,  打开后进入腾讯电子签H5页面</li></ul>
-示例值：PC
+
 
                      * @return Endpoint 生成链接的类型：
 <ul><li>**PC**：(默认)web控制台链接, 需要在PC浏览器中打开</li>
@@ -139,7 +135,7 @@ namespace TencentCloud
 <li>**APP**：第三方APP或小程序跳转电子签小程序链接, 一般用于贵方小程序或者APP跳转过来,  打开后进入腾讯电子签小程序</li>
 <li>**H5**：第三方H5跳转到电子签H5长链接, 一般用于贵方H5跳转过来,  打开后进入腾讯电子签H5页面</li>
 <li>**SHORT_H5**：第三方H5跳转到电子签H5短链接, 一般用于贵方H5跳转过来,  打开后进入腾讯电子签H5页面</li></ul>
-示例值：PC
+
 
                      * 
                      */
@@ -153,7 +149,7 @@ namespace TencentCloud
 <li>**APP**：第三方APP或小程序跳转电子签小程序链接, 一般用于贵方小程序或者APP跳转过来,  打开后进入腾讯电子签小程序</li>
 <li>**H5**：第三方H5跳转到电子签H5长链接, 一般用于贵方H5跳转过来,  打开后进入腾讯电子签H5页面</li>
 <li>**SHORT_H5**：第三方H5跳转到电子签H5短链接, 一般用于贵方H5跳转过来,  打开后进入腾讯电子签H5页面</li></ul>
-示例值：PC
+
 
                      * @param _endpoint 生成链接的类型：
 <ul><li>**PC**：(默认)web控制台链接, 需要在PC浏览器中打开</li>
@@ -162,7 +158,7 @@ namespace TencentCloud
 <li>**APP**：第三方APP或小程序跳转电子签小程序链接, 一般用于贵方小程序或者APP跳转过来,  打开后进入腾讯电子签小程序</li>
 <li>**H5**：第三方H5跳转到电子签H5长链接, 一般用于贵方H5跳转过来,  打开后进入腾讯电子签H5页面</li>
 <li>**SHORT_H5**：第三方H5跳转到电子签H5短链接, 一般用于贵方H5跳转过来,  打开后进入腾讯电子签H5页面</li></ul>
-示例值：PC
+
 
                      * 
                      */
@@ -192,8 +188,7 @@ namespace TencentCloud
                     bool m_agentHasBeenSet;
 
                     /**
-                     * 当前应用下子客的组织机构注册信息。
-一次最多支持10条认证流
+                     * 当前应用下子企业的组织机构注册信息。最多支持查询10子企业。
                      */
                     std::vector<RegistrationOrganizationInfo> m_registrationOrganizations;
                     bool m_registrationOrganizationsHasBeenSet;
@@ -206,7 +201,7 @@ namespace TencentCloud
 <li>**APP**：第三方APP或小程序跳转电子签小程序链接, 一般用于贵方小程序或者APP跳转过来,  打开后进入腾讯电子签小程序</li>
 <li>**H5**：第三方H5跳转到电子签H5长链接, 一般用于贵方H5跳转过来,  打开后进入腾讯电子签H5页面</li>
 <li>**SHORT_H5**：第三方H5跳转到电子签H5短链接, 一般用于贵方H5跳转过来,  打开后进入腾讯电子签H5页面</li></ul>
-示例值：PC
+
 
                      */
                     std::string m_endpoint;

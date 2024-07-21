@@ -183,6 +183,8 @@
 #include <tencentcloud/cynosdb/v20190107/model/ExportInstanceErrorLogsResponse.h>
 #include <tencentcloud/cynosdb/v20190107/model/ExportInstanceSlowQueriesRequest.h>
 #include <tencentcloud/cynosdb/v20190107/model/ExportInstanceSlowQueriesResponse.h>
+#include <tencentcloud/cynosdb/v20190107/model/ExportResourcePackageDeductDetailsRequest.h>
+#include <tencentcloud/cynosdb/v20190107/model/ExportResourcePackageDeductDetailsResponse.h>
 #include <tencentcloud/cynosdb/v20190107/model/GrantAccountPrivilegesRequest.h>
 #include <tencentcloud/cynosdb/v20190107/model/GrantAccountPrivilegesResponse.h>
 #include <tencentcloud/cynosdb/v20190107/model/InquirePriceCreateRequest.h>
@@ -243,6 +245,8 @@
 #include <tencentcloud/cynosdb/v20190107/model/ModifyResourcePackageClustersResponse.h>
 #include <tencentcloud/cynosdb/v20190107/model/ModifyResourcePackageNameRequest.h>
 #include <tencentcloud/cynosdb/v20190107/model/ModifyResourcePackageNameResponse.h>
+#include <tencentcloud/cynosdb/v20190107/model/ModifyResourcePackagesDeductionPriorityRequest.h>
+#include <tencentcloud/cynosdb/v20190107/model/ModifyResourcePackagesDeductionPriorityResponse.h>
 #include <tencentcloud/cynosdb/v20190107/model/ModifyVipVportRequest.h>
 #include <tencentcloud/cynosdb/v20190107/model/ModifyVipVportResponse.h>
 #include <tencentcloud/cynosdb/v20190107/model/OfflineClusterRequest.h>
@@ -561,6 +565,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::ExportInstanceSlowQueriesResponse> ExportInstanceSlowQueriesOutcome;
                 typedef std::future<ExportInstanceSlowQueriesOutcome> ExportInstanceSlowQueriesOutcomeCallable;
                 typedef std::function<void(const CynosdbClient*, const Model::ExportInstanceSlowQueriesRequest&, ExportInstanceSlowQueriesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ExportInstanceSlowQueriesAsyncHandler;
+                typedef Outcome<Core::Error, Model::ExportResourcePackageDeductDetailsResponse> ExportResourcePackageDeductDetailsOutcome;
+                typedef std::future<ExportResourcePackageDeductDetailsOutcome> ExportResourcePackageDeductDetailsOutcomeCallable;
+                typedef std::function<void(const CynosdbClient*, const Model::ExportResourcePackageDeductDetailsRequest&, ExportResourcePackageDeductDetailsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ExportResourcePackageDeductDetailsAsyncHandler;
                 typedef Outcome<Core::Error, Model::GrantAccountPrivilegesResponse> GrantAccountPrivilegesOutcome;
                 typedef std::future<GrantAccountPrivilegesOutcome> GrantAccountPrivilegesOutcomeCallable;
                 typedef std::function<void(const CynosdbClient*, const Model::GrantAccountPrivilegesRequest&, GrantAccountPrivilegesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> GrantAccountPrivilegesAsyncHandler;
@@ -651,6 +658,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::ModifyResourcePackageNameResponse> ModifyResourcePackageNameOutcome;
                 typedef std::future<ModifyResourcePackageNameOutcome> ModifyResourcePackageNameOutcomeCallable;
                 typedef std::function<void(const CynosdbClient*, const Model::ModifyResourcePackageNameRequest&, ModifyResourcePackageNameOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyResourcePackageNameAsyncHandler;
+                typedef Outcome<Core::Error, Model::ModifyResourcePackagesDeductionPriorityResponse> ModifyResourcePackagesDeductionPriorityOutcome;
+                typedef std::future<ModifyResourcePackagesDeductionPriorityOutcome> ModifyResourcePackagesDeductionPriorityOutcomeCallable;
+                typedef std::function<void(const CynosdbClient*, const Model::ModifyResourcePackagesDeductionPriorityRequest&, ModifyResourcePackagesDeductionPriorityOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyResourcePackagesDeductionPriorityAsyncHandler;
                 typedef Outcome<Core::Error, Model::ModifyVipVportResponse> ModifyVipVportOutcome;
                 typedef std::future<ModifyVipVportOutcome> ModifyVipVportOutcomeCallable;
                 typedef std::function<void(const CynosdbClient*, const Model::ModifyVipVportRequest&, ModifyVipVportOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyVipVportAsyncHandler;
@@ -1473,6 +1483,15 @@ namespace TencentCloud
                 ExportInstanceSlowQueriesOutcomeCallable ExportInstanceSlowQueriesCallable(const Model::ExportInstanceSlowQueriesRequest& request);
 
                 /**
+                 *资源包使用明细导出
+                 * @param req ExportResourcePackageDeductDetailsRequest
+                 * @return ExportResourcePackageDeductDetailsOutcome
+                 */
+                ExportResourcePackageDeductDetailsOutcome ExportResourcePackageDeductDetails(const Model::ExportResourcePackageDeductDetailsRequest &request);
+                void ExportResourcePackageDeductDetailsAsync(const Model::ExportResourcePackageDeductDetailsRequest& request, const ExportResourcePackageDeductDetailsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                ExportResourcePackageDeductDetailsOutcomeCallable ExportResourcePackageDeductDetailsCallable(const Model::ExportResourcePackageDeductDetailsRequest& request);
+
+                /**
                  *批量授权账号权限
                  * @param req GrantAccountPrivilegesRequest
                  * @return GrantAccountPrivilegesOutcome
@@ -1741,6 +1760,15 @@ namespace TencentCloud
                 ModifyResourcePackageNameOutcome ModifyResourcePackageName(const Model::ModifyResourcePackageNameRequest &request);
                 void ModifyResourcePackageNameAsync(const Model::ModifyResourcePackageNameRequest& request, const ModifyResourcePackageNameAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 ModifyResourcePackageNameOutcomeCallable ModifyResourcePackageNameCallable(const Model::ModifyResourcePackageNameRequest& request);
+
+                /**
+                 *修改已绑定资源包抵扣优先级
+                 * @param req ModifyResourcePackagesDeductionPriorityRequest
+                 * @return ModifyResourcePackagesDeductionPriorityOutcome
+                 */
+                ModifyResourcePackagesDeductionPriorityOutcome ModifyResourcePackagesDeductionPriority(const Model::ModifyResourcePackagesDeductionPriorityRequest &request);
+                void ModifyResourcePackagesDeductionPriorityAsync(const Model::ModifyResourcePackagesDeductionPriorityRequest& request, const ModifyResourcePackagesDeductionPriorityAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                ModifyResourcePackagesDeductionPriorityOutcomeCallable ModifyResourcePackagesDeductionPriorityCallable(const Model::ModifyResourcePackagesDeductionPriorityRequest& request);
 
                 /**
                  *修改实例组ip，端口

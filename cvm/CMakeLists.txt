@@ -51,7 +51,8 @@ set(cvm_public_header_model
   include/tencentcloud/cvm/v20170312/model/DeleteKeyPairsRequest.h
   include/tencentcloud/cvm/v20170312/model/SystemDisk.h
   include/tencentcloud/cvm/v20170312/model/ResetInstanceRequest.h
-  include/tencentcloud/cvm/v20170312/model/LaunchTemplate.h
+  include/tencentcloud/cvm/v20170312/model/ModifyHpcClusterAttributeRequest.h
+  include/tencentcloud/cvm/v20170312/model/ExitRescueModeResponse.h
   include/tencentcloud/cvm/v20170312/model/DescribeChcHostsResponse.h
   include/tencentcloud/cvm/v20170312/model/InstanceTypeConfig.h
   include/tencentcloud/cvm/v20170312/model/RepairTaskControlRequest.h
@@ -86,6 +87,7 @@ set(cvm_public_header_model
   include/tencentcloud/cvm/v20170312/model/DescribeInstancesOperationLimitRequest.h
   include/tencentcloud/cvm/v20170312/model/ResetInstancesPasswordResponse.h
   include/tencentcloud/cvm/v20170312/model/ModifyImageAttributeRequest.h
+  include/tencentcloud/cvm/v20170312/model/EnterRescueModeRequest.h
   include/tencentcloud/cvm/v20170312/model/DescribeInstanceVncUrlRequest.h
   include/tencentcloud/cvm/v20170312/model/StopInstancesResponse.h
   include/tencentcloud/cvm/v20170312/model/ModifyImageSharePermissionRequest.h
@@ -162,6 +164,7 @@ set(cvm_public_header_model
   include/tencentcloud/cvm/v20170312/model/DescribeReservedInstancesOfferingsRequest.h
   include/tencentcloud/cvm/v20170312/model/ReservedInstanceFamilyItem.h
   include/tencentcloud/cvm/v20170312/model/DescribeInternetChargeTypeConfigsRequest.h
+  include/tencentcloud/cvm/v20170312/model/ExitRescueModeRequest.h
   include/tencentcloud/cvm/v20170312/model/DescribeDisasterRecoverGroupsResponse.h
   include/tencentcloud/cvm/v20170312/model/ExportImagesRequest.h
   include/tencentcloud/cvm/v20170312/model/ActionTimer.h
@@ -191,7 +194,7 @@ set(cvm_public_header_model
   include/tencentcloud/cvm/v20170312/model/CreateHpcClusterRequest.h
   include/tencentcloud/cvm/v20170312/model/InquiryPriceResetInstancesInternetMaxBandwidthRequest.h
   include/tencentcloud/cvm/v20170312/model/ModifyHostsAttributeResponse.h
-  include/tencentcloud/cvm/v20170312/model/ModifyHpcClusterAttributeRequest.h
+  include/tencentcloud/cvm/v20170312/model/EnterRescueModeResponse.h
   include/tencentcloud/cvm/v20170312/model/DescribeTaskInfoResponse.h
   include/tencentcloud/cvm/v20170312/model/DescribeDisasterRecoverGroupQuotaRequest.h
   include/tencentcloud/cvm/v20170312/model/StartInstancesResponse.h
@@ -232,6 +235,7 @@ set(cvm_public_header_model
   include/tencentcloud/cvm/v20170312/model/RebootInstancesResponse.h
   include/tencentcloud/cvm/v20170312/model/DescribeChcHostsRequest.h
   include/tencentcloud/cvm/v20170312/model/ModifyInstanceDiskTypeRequest.h
+  include/tencentcloud/cvm/v20170312/model/LaunchTemplate.h
   include/tencentcloud/cvm/v20170312/model/InquiryPriceResetInstancesTypeResponse.h
   include/tencentcloud/cvm/v20170312/model/DeleteHpcClustersRequest.h
   include/tencentcloud/cvm/v20170312/model/ReservedInstancesOffering.h
@@ -320,7 +324,8 @@ set(cvm_src
   src/v20170312/model/DeleteKeyPairsRequest.cpp
   src/v20170312/model/SystemDisk.cpp
   src/v20170312/model/ResetInstanceRequest.cpp
-  src/v20170312/model/LaunchTemplate.cpp
+  src/v20170312/model/ModifyHpcClusterAttributeRequest.cpp
+  src/v20170312/model/ExitRescueModeResponse.cpp
   src/v20170312/model/DescribeChcHostsResponse.cpp
   src/v20170312/model/InstanceTypeConfig.cpp
   src/v20170312/model/RepairTaskControlRequest.cpp
@@ -355,6 +360,7 @@ set(cvm_src
   src/v20170312/model/DescribeInstancesOperationLimitRequest.cpp
   src/v20170312/model/ResetInstancesPasswordResponse.cpp
   src/v20170312/model/ModifyImageAttributeRequest.cpp
+  src/v20170312/model/EnterRescueModeRequest.cpp
   src/v20170312/model/DescribeInstanceVncUrlRequest.cpp
   src/v20170312/model/StopInstancesResponse.cpp
   src/v20170312/model/ModifyImageSharePermissionRequest.cpp
@@ -431,6 +437,7 @@ set(cvm_src
   src/v20170312/model/DescribeReservedInstancesOfferingsRequest.cpp
   src/v20170312/model/ReservedInstanceFamilyItem.cpp
   src/v20170312/model/DescribeInternetChargeTypeConfigsRequest.cpp
+  src/v20170312/model/ExitRescueModeRequest.cpp
   src/v20170312/model/DescribeDisasterRecoverGroupsResponse.cpp
   src/v20170312/model/ExportImagesRequest.cpp
   src/v20170312/model/ActionTimer.cpp
@@ -460,7 +467,7 @@ set(cvm_src
   src/v20170312/model/CreateHpcClusterRequest.cpp
   src/v20170312/model/InquiryPriceResetInstancesInternetMaxBandwidthRequest.cpp
   src/v20170312/model/ModifyHostsAttributeResponse.cpp
-  src/v20170312/model/ModifyHpcClusterAttributeRequest.cpp
+  src/v20170312/model/EnterRescueModeResponse.cpp
   src/v20170312/model/DescribeTaskInfoResponse.cpp
   src/v20170312/model/DescribeDisasterRecoverGroupQuotaRequest.cpp
   src/v20170312/model/StartInstancesResponse.cpp
@@ -501,6 +508,7 @@ set(cvm_src
   src/v20170312/model/RebootInstancesResponse.cpp
   src/v20170312/model/DescribeChcHostsRequest.cpp
   src/v20170312/model/ModifyInstanceDiskTypeRequest.cpp
+  src/v20170312/model/LaunchTemplate.cpp
   src/v20170312/model/InquiryPriceResetInstancesTypeResponse.cpp
   src/v20170312/model/DeleteHpcClustersRequest.cpp
   src/v20170312/model/ReservedInstancesOffering.cpp

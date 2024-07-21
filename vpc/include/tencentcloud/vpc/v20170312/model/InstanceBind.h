@@ -177,14 +177,14 @@ namespace TencentCloud
                      * @return InstanceRegion 实例所在地域。
                      * 
                      */
-                    std::vector<std::string> GetInstanceRegion() const;
+                    std::string GetInstanceRegion() const;
 
                     /**
                      * 设置实例所在地域。
                      * @param _instanceRegion 实例所在地域。
                      * 
                      */
-                    void SetInstanceRegion(const std::vector<std::string>& _instanceRegion);
+                    void SetInstanceRegion(const std::string& _instanceRegion);
 
                     /**
                      * 判断参数 InstanceRegion 是否已赋值
@@ -312,7 +312,7 @@ namespace TencentCloud
                     /**
                      * 实例所在地域。
                      */
-                    std::vector<std::string> m_instanceRegion;
+                    std::string m_instanceRegion;
                     bool m_instanceRegionHasBeenSet;
 
                     /**

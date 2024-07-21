@@ -48,18 +48,18 @@ namespace TencentCloud
 
                     /**
                      * 获取执行本接口操作的员工信息。
-<br/>注: `在调用此接口时，请确保指定的员工已获得所需的接口调用权限，并具备接口传入的相应资源的数据权限。
+<br/>注: `在调用此接口时，请确保指定的员工已获得所需的接口调用权限，并具备接口传入的相应资源的数据权限。`
                      * @return Operator 执行本接口操作的员工信息。
-<br/>注: `在调用此接口时，请确保指定的员工已获得所需的接口调用权限，并具备接口传入的相应资源的数据权限。
+<br/>注: `在调用此接口时，请确保指定的员工已获得所需的接口调用权限，并具备接口传入的相应资源的数据权限。`
                      * 
                      */
                     UserInfo GetOperator() const;
 
                     /**
                      * 设置执行本接口操作的员工信息。
-<br/>注: `在调用此接口时，请确保指定的员工已获得所需的接口调用权限，并具备接口传入的相应资源的数据权限。
+<br/>注: `在调用此接口时，请确保指定的员工已获得所需的接口调用权限，并具备接口传入的相应资源的数据权限。`
                      * @param _operator 执行本接口操作的员工信息。
-<br/>注: `在调用此接口时，请确保指定的员工已获得所需的接口调用权限，并具备接口传入的相应资源的数据权限。
+<br/>注: `在调用此接口时，请确保指定的员工已获得所需的接口调用权限，并具备接口传入的相应资源的数据权限。`
                      * 
                      */
                     void SetOperator(const UserInfo& _operator);
@@ -233,55 +233,15 @@ namespace TencentCloud
                     bool OptionHasBeenSet() const;
 
                     /**
-                     * 获取用户自定义参数
-<ul>
-<li>目前仅支持EmbedType=CREATE_TEMPLATE时传入</li>
-<li>指定后，创建，编辑，删除模板时，回调都会携带该userData</li>
-<li>支持的格式：json字符串的BASE64编码字符串</li>
-<li>示例：<ul>
-                 <li>json字符串：{"ComeFrom":"xxx"}，BASE64编码：eyJDb21lRnJvbSI6Inh4eCJ9</li>
-                 <li>eyJDb21lRnJvbSI6Inh4eCJ9，为符合要求的userData数据格式</li>
-</ul>
-</li>
-</ul>
-                     * @return UserData 用户自定义参数
-<ul>
-<li>目前仅支持EmbedType=CREATE_TEMPLATE时传入</li>
-<li>指定后，创建，编辑，删除模板时，回调都会携带该userData</li>
-<li>支持的格式：json字符串的BASE64编码字符串</li>
-<li>示例：<ul>
-                 <li>json字符串：{"ComeFrom":"xxx"}，BASE64编码：eyJDb21lRnJvbSI6Inh4eCJ9</li>
-                 <li>eyJDb21lRnJvbSI6Inh4eCJ9，为符合要求的userData数据格式</li>
-</ul>
-</li>
-</ul>
+                     * 获取<ul> <li>目前仅支持EmbedType=CREATE_TEMPLATE时传入</li> <li>指定后，创建，编辑，删除模板时，回调都会携带该userData</li> <li>支持的格式：json字符串的BASE64编码字符串</li> <li>示例：<ul>                  <li>json字符串：{"ComeFrom":"xxx"}，BASE64编码：eyJDb21lRnJvbSI6Inh4eCJ9</li>                  <li>eyJDb21lRnJvbSI6Inh4eCJ9，为符合要求的userData数据格式</li> </ul> </li> </ul>
+                     * @return UserData <ul> <li>目前仅支持EmbedType=CREATE_TEMPLATE时传入</li> <li>指定后，创建，编辑，删除模板时，回调都会携带该userData</li> <li>支持的格式：json字符串的BASE64编码字符串</li> <li>示例：<ul>                  <li>json字符串：{"ComeFrom":"xxx"}，BASE64编码：eyJDb21lRnJvbSI6Inh4eCJ9</li>                  <li>eyJDb21lRnJvbSI6Inh4eCJ9，为符合要求的userData数据格式</li> </ul> </li> </ul>
                      * 
                      */
                     std::string GetUserData() const;
 
                     /**
-                     * 设置用户自定义参数
-<ul>
-<li>目前仅支持EmbedType=CREATE_TEMPLATE时传入</li>
-<li>指定后，创建，编辑，删除模板时，回调都会携带该userData</li>
-<li>支持的格式：json字符串的BASE64编码字符串</li>
-<li>示例：<ul>
-                 <li>json字符串：{"ComeFrom":"xxx"}，BASE64编码：eyJDb21lRnJvbSI6Inh4eCJ9</li>
-                 <li>eyJDb21lRnJvbSI6Inh4eCJ9，为符合要求的userData数据格式</li>
-</ul>
-</li>
-</ul>
-                     * @param _userData 用户自定义参数
-<ul>
-<li>目前仅支持EmbedType=CREATE_TEMPLATE时传入</li>
-<li>指定后，创建，编辑，删除模板时，回调都会携带该userData</li>
-<li>支持的格式：json字符串的BASE64编码字符串</li>
-<li>示例：<ul>
-                 <li>json字符串：{"ComeFrom":"xxx"}，BASE64编码：eyJDb21lRnJvbSI6Inh4eCJ9</li>
-                 <li>eyJDb21lRnJvbSI6Inh4eCJ9，为符合要求的userData数据格式</li>
-</ul>
-</li>
-</ul>
+                     * 设置<ul> <li>目前仅支持EmbedType=CREATE_TEMPLATE时传入</li> <li>指定后，创建，编辑，删除模板时，回调都会携带该userData</li> <li>支持的格式：json字符串的BASE64编码字符串</li> <li>示例：<ul>                  <li>json字符串：{"ComeFrom":"xxx"}，BASE64编码：eyJDb21lRnJvbSI6Inh4eCJ9</li>                  <li>eyJDb21lRnJvbSI6Inh4eCJ9，为符合要求的userData数据格式</li> </ul> </li> </ul>
+                     * @param _userData <ul> <li>目前仅支持EmbedType=CREATE_TEMPLATE时传入</li> <li>指定后，创建，编辑，删除模板时，回调都会携带该userData</li> <li>支持的格式：json字符串的BASE64编码字符串</li> <li>示例：<ul>                  <li>json字符串：{"ComeFrom":"xxx"}，BASE64编码：eyJDb21lRnJvbSI6Inh4eCJ9</li>                  <li>eyJDb21lRnJvbSI6Inh4eCJ9，为符合要求的userData数据格式</li> </ul> </li> </ul>
                      * 
                      */
                     void SetUserData(const std::string& _userData);
@@ -297,7 +257,7 @@ namespace TencentCloud
 
                     /**
                      * 执行本接口操作的员工信息。
-<br/>注: `在调用此接口时，请确保指定的员工已获得所需的接口调用权限，并具备接口传入的相应资源的数据权限。
+<br/>注: `在调用此接口时，请确保指定的员工已获得所需的接口调用权限，并具备接口传入的相应资源的数据权限。`
                      */
                     UserInfo m_operator;
                     bool m_operatorHasBeenSet;
@@ -347,17 +307,7 @@ namespace TencentCloud
                     bool m_optionHasBeenSet;
 
                     /**
-                     * 用户自定义参数
-<ul>
-<li>目前仅支持EmbedType=CREATE_TEMPLATE时传入</li>
-<li>指定后，创建，编辑，删除模板时，回调都会携带该userData</li>
-<li>支持的格式：json字符串的BASE64编码字符串</li>
-<li>示例：<ul>
-                 <li>json字符串：{"ComeFrom":"xxx"}，BASE64编码：eyJDb21lRnJvbSI6Inh4eCJ9</li>
-                 <li>eyJDb21lRnJvbSI6Inh4eCJ9，为符合要求的userData数据格式</li>
-</ul>
-</li>
-</ul>
+                     * <ul> <li>目前仅支持EmbedType=CREATE_TEMPLATE时传入</li> <li>指定后，创建，编辑，删除模板时，回调都会携带该userData</li> <li>支持的格式：json字符串的BASE64编码字符串</li> <li>示例：<ul>                  <li>json字符串：{"ComeFrom":"xxx"}，BASE64编码：eyJDb21lRnJvbSI6Inh4eCJ9</li>                  <li>eyJDb21lRnJvbSI6Inh4eCJ9，为符合要求的userData数据格式</li> </ul> </li> </ul>
                      */
                     std::string m_userData;
                     bool m_userDataHasBeenSet;

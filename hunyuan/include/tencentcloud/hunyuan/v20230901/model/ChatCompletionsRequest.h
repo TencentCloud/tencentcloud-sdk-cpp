@@ -422,6 +422,27 @@ namespace TencentCloud
                      */
                     bool CustomToolHasBeenSet() const;
 
+                    /**
+                     * 获取默认是false，在值为true且命中搜索时，接口会返回SearchInfo
+                     * @return SearchInfo 默认是false，在值为true且命中搜索时，接口会返回SearchInfo
+                     * 
+                     */
+                    bool GetSearchInfo() const;
+
+                    /**
+                     * 设置默认是false，在值为true且命中搜索时，接口会返回SearchInfo
+                     * @param _searchInfo 默认是false，在值为true且命中搜索时，接口会返回SearchInfo
+                     * 
+                     */
+                    void SetSearchInfo(const bool& _searchInfo);
+
+                    /**
+                     * 判断参数 SearchInfo 是否已赋值
+                     * @return SearchInfo 是否已赋值
+                     * 
+                     */
+                    bool SearchInfoHasBeenSet() const;
+
                 private:
 
                     /**
@@ -525,6 +546,12 @@ namespace TencentCloud
                      */
                     Tool m_customTool;
                     bool m_customToolHasBeenSet;
+
+                    /**
+                     * 默认是false，在值为true且命中搜索时，接口会返回SearchInfo
+                     */
+                    bool m_searchInfo;
+                    bool m_searchInfoHasBeenSet;
 
                 };
             }

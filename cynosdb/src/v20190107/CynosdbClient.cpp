@@ -3480,6 +3480,49 @@ CynosdbClient::ExportInstanceSlowQueriesOutcomeCallable CynosdbClient::ExportIns
     return task->get_future();
 }
 
+CynosdbClient::ExportResourcePackageDeductDetailsOutcome CynosdbClient::ExportResourcePackageDeductDetails(const ExportResourcePackageDeductDetailsRequest &request)
+{
+    auto outcome = MakeRequest(request, "ExportResourcePackageDeductDetails");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ExportResourcePackageDeductDetailsResponse rsp = ExportResourcePackageDeductDetailsResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ExportResourcePackageDeductDetailsOutcome(rsp);
+        else
+            return ExportResourcePackageDeductDetailsOutcome(o.GetError());
+    }
+    else
+    {
+        return ExportResourcePackageDeductDetailsOutcome(outcome.GetError());
+    }
+}
+
+void CynosdbClient::ExportResourcePackageDeductDetailsAsync(const ExportResourcePackageDeductDetailsRequest& request, const ExportResourcePackageDeductDetailsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->ExportResourcePackageDeductDetails(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+CynosdbClient::ExportResourcePackageDeductDetailsOutcomeCallable CynosdbClient::ExportResourcePackageDeductDetailsCallable(const ExportResourcePackageDeductDetailsRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<ExportResourcePackageDeductDetailsOutcome()>>(
+        [this, request]()
+        {
+            return this->ExportResourcePackageDeductDetails(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 CynosdbClient::GrantAccountPrivilegesOutcome CynosdbClient::GrantAccountPrivileges(const GrantAccountPrivilegesRequest &request)
 {
     auto outcome = MakeRequest(request, "GrantAccountPrivileges");
@@ -4763,6 +4806,49 @@ CynosdbClient::ModifyResourcePackageNameOutcomeCallable CynosdbClient::ModifyRes
         [this, request]()
         {
             return this->ModifyResourcePackageName(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+CynosdbClient::ModifyResourcePackagesDeductionPriorityOutcome CynosdbClient::ModifyResourcePackagesDeductionPriority(const ModifyResourcePackagesDeductionPriorityRequest &request)
+{
+    auto outcome = MakeRequest(request, "ModifyResourcePackagesDeductionPriority");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ModifyResourcePackagesDeductionPriorityResponse rsp = ModifyResourcePackagesDeductionPriorityResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ModifyResourcePackagesDeductionPriorityOutcome(rsp);
+        else
+            return ModifyResourcePackagesDeductionPriorityOutcome(o.GetError());
+    }
+    else
+    {
+        return ModifyResourcePackagesDeductionPriorityOutcome(outcome.GetError());
+    }
+}
+
+void CynosdbClient::ModifyResourcePackagesDeductionPriorityAsync(const ModifyResourcePackagesDeductionPriorityRequest& request, const ModifyResourcePackagesDeductionPriorityAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->ModifyResourcePackagesDeductionPriority(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+CynosdbClient::ModifyResourcePackagesDeductionPriorityOutcomeCallable CynosdbClient::ModifyResourcePackagesDeductionPriorityCallable(const ModifyResourcePackagesDeductionPriorityRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<ModifyResourcePackagesDeductionPriorityOutcome()>>(
+        [this, request]()
+        {
+            return this->ModifyResourcePackagesDeductionPriority(request);
         }
     );
 

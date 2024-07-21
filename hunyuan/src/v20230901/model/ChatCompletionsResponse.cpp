@@ -30,7 +30,8 @@ ChatCompletionsResponse::ChatCompletionsResponse() :
     m_idHasBeenSet(false),
     m_choicesHasBeenSet(false),
     m_errorMsgHasBeenSet(false),
-    m_moderationLevelHasBeenSet(false)
+    m_moderationLevelHasBeenSet(false),
+    m_searchInfoHasBeenSet(false)
 {
 }
 
@@ -162,6 +163,23 @@ CoreInternalOutcome ChatCompletionsResponse::Deserialize(const string &payload)
         m_moderationLevelHasBeenSet = true;
     }
 
+    if (rsp.HasMember("SearchInfo") && !rsp["SearchInfo"].IsNull())
+    {
+        if (!rsp["SearchInfo"].IsObject())
+        {
+            return CoreInternalOutcome(Core::Error("response `SearchInfo` is not object type").SetRequestId(requestId));
+        }
+
+        CoreInternalOutcome outcome = m_searchInfo.Deserialize(rsp["SearchInfo"]);
+        if (!outcome.IsSuccess())
+        {
+            outcome.GetError().SetRequestId(requestId);
+            return outcome;
+        }
+
+        m_searchInfoHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -235,6 +253,15 @@ string ChatCompletionsResponse::ToJsonString() const
         string key = "ModerationLevel";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_moderationLevel.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_searchInfoHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "SearchInfo";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_searchInfo.ToJsonObject(value[key.c_str()], allocator);
     }
 
     rapidjson::Value iKey(rapidjson::kStringType);
@@ -317,6 +344,16 @@ string ChatCompletionsResponse::GetModerationLevel() const
 bool ChatCompletionsResponse::ModerationLevelHasBeenSet() const
 {
     return m_moderationLevelHasBeenSet;
+}
+
+SearchInfo ChatCompletionsResponse::GetSearchInfo() const
+{
+    return m_searchInfo;
+}
+
+bool ChatCompletionsResponse::SearchInfoHasBeenSet() const
+{
+    return m_searchInfoHasBeenSet;
 }
 
 

@@ -45,8 +45,8 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取企业批量注册链接信息
-                     * @return OrganizationAuthUrls 企业批量注册链接信息
+                     * 获取子企业注册认证的的链接列表
+                     * @return OrganizationAuthUrls 子企业注册认证的的链接列表
                      * 
                      */
                     std::vector<OrganizationAuthUrl> GetOrganizationAuthUrls() const;
@@ -61,7 +61,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 企业批量注册链接信息
+                     * 子企业注册认证的的链接列表
                      */
                     std::vector<OrganizationAuthUrl> m_organizationAuthUrls;
                     bool m_organizationAuthUrlsHasBeenSet;

@@ -183,6 +183,8 @@
 #include <tencentcloud/ckafka/v20190819/model/ModifyInstancePreResponse.h>
 #include <tencentcloud/ckafka/v20190819/model/ModifyPasswordRequest.h>
 #include <tencentcloud/ckafka/v20190819/model/ModifyPasswordResponse.h>
+#include <tencentcloud/ckafka/v20190819/model/ModifyRoutineMaintenanceTaskRequest.h>
+#include <tencentcloud/ckafka/v20190819/model/ModifyRoutineMaintenanceTaskResponse.h>
 #include <tencentcloud/ckafka/v20190819/model/ModifyTopicAttributesRequest.h>
 #include <tencentcloud/ckafka/v20190819/model/ModifyTopicAttributesResponse.h>
 #include <tencentcloud/ckafka/v20190819/model/RenewCkafkaInstanceRequest.h>
@@ -443,6 +445,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::ModifyPasswordResponse> ModifyPasswordOutcome;
                 typedef std::future<ModifyPasswordOutcome> ModifyPasswordOutcomeCallable;
                 typedef std::function<void(const CkafkaClient*, const Model::ModifyPasswordRequest&, ModifyPasswordOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyPasswordAsyncHandler;
+                typedef Outcome<Core::Error, Model::ModifyRoutineMaintenanceTaskResponse> ModifyRoutineMaintenanceTaskOutcome;
+                typedef std::future<ModifyRoutineMaintenanceTaskOutcome> ModifyRoutineMaintenanceTaskOutcomeCallable;
+                typedef std::function<void(const CkafkaClient*, const Model::ModifyRoutineMaintenanceTaskRequest&, ModifyRoutineMaintenanceTaskOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyRoutineMaintenanceTaskAsyncHandler;
                 typedef Outcome<Core::Error, Model::ModifyTopicAttributesResponse> ModifyTopicAttributesOutcome;
                 typedef std::future<ModifyTopicAttributesOutcome> ModifyTopicAttributesOutcomeCallable;
                 typedef std::function<void(const CkafkaClient*, const Model::ModifyTopicAttributesRequest&, ModifyTopicAttributesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyTopicAttributesAsyncHandler;
@@ -1175,6 +1180,15 @@ namespace TencentCloud
                 ModifyPasswordOutcome ModifyPassword(const Model::ModifyPasswordRequest &request);
                 void ModifyPasswordAsync(const Model::ModifyPasswordRequest& request, const ModifyPasswordAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 ModifyPasswordOutcomeCallable ModifyPasswordCallable(const Model::ModifyPasswordRequest& request);
+
+                /**
+                 *设置自动化运维属性
+                 * @param req ModifyRoutineMaintenanceTaskRequest
+                 * @return ModifyRoutineMaintenanceTaskOutcome
+                 */
+                ModifyRoutineMaintenanceTaskOutcome ModifyRoutineMaintenanceTask(const Model::ModifyRoutineMaintenanceTaskRequest &request);
+                void ModifyRoutineMaintenanceTaskAsync(const Model::ModifyRoutineMaintenanceTaskRequest& request, const ModifyRoutineMaintenanceTaskAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                ModifyRoutineMaintenanceTaskOutcomeCallable ModifyRoutineMaintenanceTaskCallable(const Model::ModifyRoutineMaintenanceTaskRequest& request);
 
                 /**
                  *本接口用于修改主题属性。

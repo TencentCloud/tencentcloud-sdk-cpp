@@ -102,22 +102,18 @@ namespace TencentCloud
 
                     /**
                      * 获取绘画风格。
-请在 [智能文生图风格列表](https://cloud.tencent.com/document/product/1668/86249) 中选择期望的风格，传入风格编号。
-推荐使用且只使用一种风格。不传默认使用201（日系动漫风格）。
+请在 [文生图轻量版风格列表](https://cloud.tencent.com/document/product/1729/108992) 中选择期望的风格，传入风格编号。不传默认使用201（日系动漫风格）。
                      * @return Style 绘画风格。
-请在 [智能文生图风格列表](https://cloud.tencent.com/document/product/1668/86249) 中选择期望的风格，传入风格编号。
-推荐使用且只使用一种风格。不传默认使用201（日系动漫风格）。
+请在 [文生图轻量版风格列表](https://cloud.tencent.com/document/product/1729/108992) 中选择期望的风格，传入风格编号。不传默认使用201（日系动漫风格）。
                      * 
                      */
                     std::string GetStyle() const;
 
                     /**
                      * 设置绘画风格。
-请在 [智能文生图风格列表](https://cloud.tencent.com/document/product/1668/86249) 中选择期望的风格，传入风格编号。
-推荐使用且只使用一种风格。不传默认使用201（日系动漫风格）。
+请在 [文生图轻量版风格列表](https://cloud.tencent.com/document/product/1729/108992) 中选择期望的风格，传入风格编号。不传默认使用201（日系动漫风格）。
                      * @param _style 绘画风格。
-请在 [智能文生图风格列表](https://cloud.tencent.com/document/product/1668/86249) 中选择期望的风格，传入风格编号。
-推荐使用且只使用一种风格。不传默认使用201（日系动漫风格）。
+请在 [文生图轻量版风格列表](https://cloud.tencent.com/document/product/1729/108992) 中选择期望的风格，传入风格编号。不传默认使用201（日系动漫风格）。
                      * 
                      */
                     void SetStyle(const std::string& _style);
@@ -232,8 +228,7 @@ namespace TencentCloud
 
                     /**
                      * 绘画风格。
-请在 [智能文生图风格列表](https://cloud.tencent.com/document/product/1668/86249) 中选择期望的风格，传入风格编号。
-推荐使用且只使用一种风格。不传默认使用201（日系动漫风格）。
+请在 [文生图轻量版风格列表](https://cloud.tencent.com/document/product/1729/108992) 中选择期望的风格，传入风格编号。不传默认使用201（日系动漫风格）。
                      */
                     std::string m_style;
                     bool m_styleHasBeenSet;

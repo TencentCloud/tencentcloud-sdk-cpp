@@ -135,13 +135,19 @@ namespace TencentCloud
                      * 获取员工在腾讯电子签平台的独特身份标识，为32位字符串。
 您可登录腾讯电子签控制台，在 "更多能力"->"组织管理" 中查阅某位员工的UserId（在页面中显示为用户ID）。
 UserId必须是传入合同（FlowId）中的签署人。
-- 1. 若UserId为空，Name和Mobile 必须提供。
-- 2. 若UserId 与 Name，Mobile均存在，将优先采用UserId对应的员工。
+
+<ul>
+<li>1. 若UserId为空，Name和Mobile 必须提供。</li>
+<li>2. 若UserId 与 Name，Mobile均存在，将优先采用UserId对应的员工。</li>
+</ul>
                      * @return UserId 员工在腾讯电子签平台的独特身份标识，为32位字符串。
 您可登录腾讯电子签控制台，在 "更多能力"->"组织管理" 中查阅某位员工的UserId（在页面中显示为用户ID）。
 UserId必须是传入合同（FlowId）中的签署人。
-- 1. 若UserId为空，Name和Mobile 必须提供。
-- 2. 若UserId 与 Name，Mobile均存在，将优先采用UserId对应的员工。
+
+<ul>
+<li>1. 若UserId为空，Name和Mobile 必须提供。</li>
+<li>2. 若UserId 与 Name，Mobile均存在，将优先采用UserId对应的员工。</li>
+</ul>
                      * 
                      */
                     std::string GetUserId() const;
@@ -150,13 +156,19 @@ UserId必须是传入合同（FlowId）中的签署人。
                      * 设置员工在腾讯电子签平台的独特身份标识，为32位字符串。
 您可登录腾讯电子签控制台，在 "更多能力"->"组织管理" 中查阅某位员工的UserId（在页面中显示为用户ID）。
 UserId必须是传入合同（FlowId）中的签署人。
-- 1. 若UserId为空，Name和Mobile 必须提供。
-- 2. 若UserId 与 Name，Mobile均存在，将优先采用UserId对应的员工。
+
+<ul>
+<li>1. 若UserId为空，Name和Mobile 必须提供。</li>
+<li>2. 若UserId 与 Name，Mobile均存在，将优先采用UserId对应的员工。</li>
+</ul>
                      * @param _userId 员工在腾讯电子签平台的独特身份标识，为32位字符串。
 您可登录腾讯电子签控制台，在 "更多能力"->"组织管理" 中查阅某位员工的UserId（在页面中显示为用户ID）。
 UserId必须是传入合同（FlowId）中的签署人。
-- 1. 若UserId为空，Name和Mobile 必须提供。
-- 2. 若UserId 与 Name，Mobile均存在，将优先采用UserId对应的员工。
+
+<ul>
+<li>1. 若UserId为空，Name和Mobile 必须提供。</li>
+<li>2. 若UserId 与 Name，Mobile均存在，将优先采用UserId对应的员工。</li>
+</ul>
                      * 
                      */
                     void SetUserId(const std::string& _userId);
@@ -277,8 +289,11 @@ UserId必须是传入合同（FlowId）中的签署人。
                      * 员工在腾讯电子签平台的独特身份标识，为32位字符串。
 您可登录腾讯电子签控制台，在 "更多能力"->"组织管理" 中查阅某位员工的UserId（在页面中显示为用户ID）。
 UserId必须是传入合同（FlowId）中的签署人。
-- 1. 若UserId为空，Name和Mobile 必须提供。
-- 2. 若UserId 与 Name，Mobile均存在，将优先采用UserId对应的员工。
+
+<ul>
+<li>1. 若UserId为空，Name和Mobile 必须提供。</li>
+<li>2. 若UserId 与 Name，Mobile均存在，将优先采用UserId对应的员工。</li>
+</ul>
                      */
                     std::string m_userId;
                     bool m_userIdHasBeenSet;

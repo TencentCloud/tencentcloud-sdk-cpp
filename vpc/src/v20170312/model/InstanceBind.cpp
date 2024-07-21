@@ -100,14 +100,11 @@ CoreInternalOutcome InstanceBind::Deserialize(const rapidjson::Value &value)
 
     if (value.HasMember("InstanceRegion") && !value["InstanceRegion"].IsNull())
     {
-        if (!value["InstanceRegion"].IsArray())
-            return CoreInternalOutcome(Core::Error("response `InstanceBind.InstanceRegion` is not array type"));
-
-        const rapidjson::Value &tmpValue = value["InstanceRegion"];
-        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        if (!value["InstanceRegion"].IsString())
         {
-            m_instanceRegion.push_back((*itr).GetString());
+            return CoreInternalOutcome(Core::Error("response `InstanceBind.InstanceRegion` IsString=false incorrectly").SetRequestId(requestId));
         }
+        m_instanceRegion = string(value["InstanceRegion"].GetString());
         m_instanceRegionHasBeenSet = true;
     }
 
@@ -191,12 +188,7 @@ void InstanceBind::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Al
         rapidjson::Value iKey(rapidjson::kStringType);
         string key = "InstanceRegion";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
-
-        for (auto itr = m_instanceRegion.begin(); itr != m_instanceRegion.end(); ++itr)
-        {
-            value[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
-        }
+        value.AddMember(iKey, rapidjson::Value(m_instanceRegion.c_str(), allocator).Move(), allocator);
     }
 
     if (m_instanceUinHasBeenSet)
@@ -314,12 +306,12 @@ bool InstanceBind::InstanceNameHasBeenSet() const
     return m_instanceNameHasBeenSet;
 }
 
-vector<string> InstanceBind::GetInstanceRegion() const
+string InstanceBind::GetInstanceRegion() const
 {
     return m_instanceRegion;
 }
 
-void InstanceBind::SetInstanceRegion(const vector<string>& _instanceRegion)
+void InstanceBind::SetInstanceRegion(const string& _instanceRegion)
 {
     m_instanceRegion = _instanceRegion;
     m_instanceRegionHasBeenSet = true;

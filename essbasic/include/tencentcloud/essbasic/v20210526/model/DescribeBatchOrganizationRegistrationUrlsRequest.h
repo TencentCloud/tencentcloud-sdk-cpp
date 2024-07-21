@@ -97,15 +97,15 @@ namespace TencentCloud
                     bool AgentHasBeenSet() const;
 
                     /**
-                     * 获取通过接口CreateBatchOrganizationRegistrationTasks创建企业批量认证链接任得到的任务Id
-                     * @return TaskId 通过接口CreateBatchOrganizationRegistrationTasks创建企业批量认证链接任得到的任务Id
+                     * 获取通过接口<a href="https://qian.tencent.com/developers/partnerApis/accounts/CreateBatchOrganizationRegistrationTasks" target="_blank">提交子企业批量认证链接创建任务</a>调用得到的任务ID。
+                     * @return TaskId 通过接口<a href="https://qian.tencent.com/developers/partnerApis/accounts/CreateBatchOrganizationRegistrationTasks" target="_blank">提交子企业批量认证链接创建任务</a>调用得到的任务ID。
                      * 
                      */
                     std::string GetTaskId() const;
 
                     /**
-                     * 设置通过接口CreateBatchOrganizationRegistrationTasks创建企业批量认证链接任得到的任务Id
-                     * @param _taskId 通过接口CreateBatchOrganizationRegistrationTasks创建企业批量认证链接任得到的任务Id
+                     * 设置通过接口<a href="https://qian.tencent.com/developers/partnerApis/accounts/CreateBatchOrganizationRegistrationTasks" target="_blank">提交子企业批量认证链接创建任务</a>调用得到的任务ID。
+                     * @param _taskId 通过接口<a href="https://qian.tencent.com/developers/partnerApis/accounts/CreateBatchOrganizationRegistrationTasks" target="_blank">提交子企业批量认证链接创建任务</a>调用得到的任务ID。
                      * 
                      */
                     void SetTaskId(const std::string& _taskId);
@@ -134,7 +134,7 @@ namespace TencentCloud
                     bool m_agentHasBeenSet;
 
                     /**
-                     * 通过接口CreateBatchOrganizationRegistrationTasks创建企业批量认证链接任得到的任务Id
+                     * 通过接口<a href="https://qian.tencent.com/developers/partnerApis/accounts/CreateBatchOrganizationRegistrationTasks" target="_blank">提交子企业批量认证链接创建任务</a>调用得到的任务ID。
                      */
                     std::string m_taskId;
                     bool m_taskIdHasBeenSet;

@@ -24,6 +24,7 @@
 #include <tencentcloud/hunyuan/v20230901/model/Usage.h>
 #include <tencentcloud/hunyuan/v20230901/model/Choice.h>
 #include <tencentcloud/hunyuan/v20230901/model/ErrorMsg.h>
+#include <tencentcloud/hunyuan/v20230901/model/SearchInfo.h>
 
 
 namespace TencentCloud
@@ -150,6 +151,20 @@ namespace TencentCloud
                      */
                     bool ModerationLevelHasBeenSet() const;
 
+                    /**
+                     * 获取搜索结果信息
+                     * @return SearchInfo 搜索结果信息
+                     * 
+                     */
+                    SearchInfo GetSearchInfo() const;
+
+                    /**
+                     * 判断参数 SearchInfo 是否已赋值
+                     * @return SearchInfo 是否已赋值
+                     * 
+                     */
+                    bool SearchInfoHasBeenSet() const;
+
                 private:
 
                     /**
@@ -196,6 +211,12 @@ namespace TencentCloud
                      */
                     std::string m_moderationLevel;
                     bool m_moderationLevelHasBeenSet;
+
+                    /**
+                     * 搜索结果信息
+                     */
+                    SearchInfo m_searchInfo;
+                    bool m_searchInfoHasBeenSet;
 
                 };
             }

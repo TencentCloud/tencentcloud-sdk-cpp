@@ -3480,6 +3480,49 @@ CkafkaClient::ModifyPasswordOutcomeCallable CkafkaClient::ModifyPasswordCallable
     return task->get_future();
 }
 
+CkafkaClient::ModifyRoutineMaintenanceTaskOutcome CkafkaClient::ModifyRoutineMaintenanceTask(const ModifyRoutineMaintenanceTaskRequest &request)
+{
+    auto outcome = MakeRequest(request, "ModifyRoutineMaintenanceTask");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ModifyRoutineMaintenanceTaskResponse rsp = ModifyRoutineMaintenanceTaskResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ModifyRoutineMaintenanceTaskOutcome(rsp);
+        else
+            return ModifyRoutineMaintenanceTaskOutcome(o.GetError());
+    }
+    else
+    {
+        return ModifyRoutineMaintenanceTaskOutcome(outcome.GetError());
+    }
+}
+
+void CkafkaClient::ModifyRoutineMaintenanceTaskAsync(const ModifyRoutineMaintenanceTaskRequest& request, const ModifyRoutineMaintenanceTaskAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->ModifyRoutineMaintenanceTask(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+CkafkaClient::ModifyRoutineMaintenanceTaskOutcomeCallable CkafkaClient::ModifyRoutineMaintenanceTaskCallable(const ModifyRoutineMaintenanceTaskRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<ModifyRoutineMaintenanceTaskOutcome()>>(
+        [this, request]()
+        {
+            return this->ModifyRoutineMaintenanceTask(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 CkafkaClient::ModifyTopicAttributesOutcome CkafkaClient::ModifyTopicAttributes(const ModifyTopicAttributesRequest &request)
 {
     auto outcome = MakeRequest(request, "ModifyTopicAttributes");

@@ -148,6 +148,7 @@ set(ckafka_public_header_model
   include/tencentcloud/ckafka/v20190819/model/DescribeTopicProduceConnectionRequest.h
   include/tencentcloud/ckafka/v20190819/model/CreateAclRequest.h
   include/tencentcloud/ckafka/v20190819/model/DescribeTopicSyncReplicaResponse.h
+  include/tencentcloud/ckafka/v20190819/model/TopicResult.h
   include/tencentcloud/ckafka/v20190819/model/CreateConnectResourceRequest.h
   include/tencentcloud/ckafka/v20190819/model/MariaDBParam.h
   include/tencentcloud/ckafka/v20190819/model/Route.h
@@ -205,6 +206,7 @@ set(ckafka_public_header_model
   include/tencentcloud/ckafka/v20190819/model/AclResponse.h
   include/tencentcloud/ckafka/v20190819/model/PrometheusResult.h
   include/tencentcloud/ckafka/v20190819/model/ZoneResponse.h
+  include/tencentcloud/ckafka/v20190819/model/ModifyRoutineMaintenanceTaskRequest.h
   include/tencentcloud/ckafka/v20190819/model/Instance.h
   include/tencentcloud/ckafka/v20190819/model/DescribeInstanceAttributesResponse.h
   include/tencentcloud/ckafka/v20190819/model/MapParam.h
@@ -311,7 +313,7 @@ set(ckafka_public_header_model
   include/tencentcloud/ckafka/v20190819/model/DescribeDatahubTopicsRequest.h
   include/tencentcloud/ckafka/v20190819/model/CreateDatahubTaskRequest.h
   include/tencentcloud/ckafka/v20190819/model/InquiryPrice.h
-  include/tencentcloud/ckafka/v20190819/model/TopicResult.h
+  include/tencentcloud/ckafka/v20190819/model/ModifyRoutineMaintenanceTaskResponse.h
   include/tencentcloud/ckafka/v20190819/model/DescribeTopicDetailRequest.h
   include/tencentcloud/ckafka/v20190819/model/DescribeGroupOffsetsResponse.h
   include/tencentcloud/ckafka/v20190819/model/CtsdbParam.h
@@ -490,6 +492,7 @@ set(ckafka_src
   src/v20190819/model/DescribeTopicProduceConnectionRequest.cpp
   src/v20190819/model/CreateAclRequest.cpp
   src/v20190819/model/DescribeTopicSyncReplicaResponse.cpp
+  src/v20190819/model/TopicResult.cpp
   src/v20190819/model/CreateConnectResourceRequest.cpp
   src/v20190819/model/MariaDBParam.cpp
   src/v20190819/model/Route.cpp
@@ -547,6 +550,7 @@ set(ckafka_src
   src/v20190819/model/AclResponse.cpp
   src/v20190819/model/PrometheusResult.cpp
   src/v20190819/model/ZoneResponse.cpp
+  src/v20190819/model/ModifyRoutineMaintenanceTaskRequest.cpp
   src/v20190819/model/Instance.cpp
   src/v20190819/model/DescribeInstanceAttributesResponse.cpp
   src/v20190819/model/MapParam.cpp
@@ -653,7 +657,7 @@ set(ckafka_src
   src/v20190819/model/DescribeDatahubTopicsRequest.cpp
   src/v20190819/model/CreateDatahubTaskRequest.cpp
   src/v20190819/model/InquiryPrice.cpp
-  src/v20190819/model/TopicResult.cpp
+  src/v20190819/model/ModifyRoutineMaintenanceTaskResponse.cpp
   src/v20190819/model/DescribeTopicDetailRequest.cpp
   src/v20190819/model/DescribeGroupOffsetsResponse.cpp
   src/v20190819/model/CtsdbParam.cpp

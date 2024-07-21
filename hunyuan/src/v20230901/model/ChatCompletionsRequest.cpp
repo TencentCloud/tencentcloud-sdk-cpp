@@ -32,7 +32,8 @@ ChatCompletionsRequest::ChatCompletionsRequest() :
     m_enableEnhancementHasBeenSet(false),
     m_toolsHasBeenSet(false),
     m_toolChoiceHasBeenSet(false),
-    m_customToolHasBeenSet(false)
+    m_customToolHasBeenSet(false),
+    m_searchInfoHasBeenSet(false)
 {
 }
 
@@ -136,6 +137,14 @@ string ChatCompletionsRequest::ToJsonString() const
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
         m_customTool.ToJsonObject(d[key.c_str()], allocator);
+    }
+
+    if (m_searchInfoHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "SearchInfo";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_searchInfo, allocator);
     }
 
 
@@ -304,6 +313,22 @@ void ChatCompletionsRequest::SetCustomTool(const Tool& _customTool)
 bool ChatCompletionsRequest::CustomToolHasBeenSet() const
 {
     return m_customToolHasBeenSet;
+}
+
+bool ChatCompletionsRequest::GetSearchInfo() const
+{
+    return m_searchInfo;
+}
+
+void ChatCompletionsRequest::SetSearchInfo(const bool& _searchInfo)
+{
+    m_searchInfo = _searchInfo;
+    m_searchInfoHasBeenSet = true;
+}
+
+bool ChatCompletionsRequest::SearchInfoHasBeenSet() const
+{
+    return m_searchInfoHasBeenSet;
 }
 
 

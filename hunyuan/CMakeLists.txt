@@ -27,19 +27,21 @@ set(hunyuan_public_header_model
   include/tencentcloud/hunyuan/v20230901/model/Usage.h
   include/tencentcloud/hunyuan/v20230901/model/QueryHunyuanImageJobRequest.h
   include/tencentcloud/hunyuan/v20230901/model/Tool.h
+  include/tencentcloud/hunyuan/v20230901/model/SearchResult.h
   include/tencentcloud/hunyuan/v20230901/model/Choice.h
   include/tencentcloud/hunyuan/v20230901/model/GetTokenCountResponse.h
   include/tencentcloud/hunyuan/v20230901/model/EmbeddingData.h
   include/tencentcloud/hunyuan/v20230901/model/ToolFunction.h
   include/tencentcloud/hunyuan/v20230901/model/TextToImageLiteResponse.h
-  include/tencentcloud/hunyuan/v20230901/model/ToolCallFunction.h
-  include/tencentcloud/hunyuan/v20230901/model/TextToImageLiteRequest.h
-  include/tencentcloud/hunyuan/v20230901/model/Delta.h
   include/tencentcloud/hunyuan/v20230901/model/ToolCall.h
+  include/tencentcloud/hunyuan/v20230901/model/ToolCallFunction.h
+  include/tencentcloud/hunyuan/v20230901/model/Delta.h
+  include/tencentcloud/hunyuan/v20230901/model/TextToImageLiteRequest.h
   include/tencentcloud/hunyuan/v20230901/model/SubmitHunyuanImageJobResponse.h
   include/tencentcloud/hunyuan/v20230901/model/QueryHunyuanImageJobResponse.h
   include/tencentcloud/hunyuan/v20230901/model/GetEmbeddingResponse.h
   include/tencentcloud/hunyuan/v20230901/model/ErrorMsg.h
+  include/tencentcloud/hunyuan/v20230901/model/SearchInfo.h
   include/tencentcloud/hunyuan/v20230901/model/GetTokenCountRequest.h
   include/tencentcloud/hunyuan/v20230901/model/Message.h
   include/tencentcloud/hunyuan/v20230901/model/ChatCompletionsResponse.h
@@ -56,19 +58,21 @@ set(hunyuan_src
   src/v20230901/model/Usage.cpp
   src/v20230901/model/QueryHunyuanImageJobRequest.cpp
   src/v20230901/model/Tool.cpp
+  src/v20230901/model/SearchResult.cpp
   src/v20230901/model/Choice.cpp
   src/v20230901/model/GetTokenCountResponse.cpp
   src/v20230901/model/EmbeddingData.cpp
   src/v20230901/model/ToolFunction.cpp
   src/v20230901/model/TextToImageLiteResponse.cpp
-  src/v20230901/model/ToolCallFunction.cpp
-  src/v20230901/model/TextToImageLiteRequest.cpp
-  src/v20230901/model/Delta.cpp
   src/v20230901/model/ToolCall.cpp
+  src/v20230901/model/ToolCallFunction.cpp
+  src/v20230901/model/Delta.cpp
+  src/v20230901/model/TextToImageLiteRequest.cpp
   src/v20230901/model/SubmitHunyuanImageJobResponse.cpp
   src/v20230901/model/QueryHunyuanImageJobResponse.cpp
   src/v20230901/model/GetEmbeddingResponse.cpp
   src/v20230901/model/ErrorMsg.cpp
+  src/v20230901/model/SearchInfo.cpp
   src/v20230901/model/GetTokenCountRequest.cpp
   src/v20230901/model/Message.cpp
   src/v20230901/model/ChatCompletionsResponse.cpp

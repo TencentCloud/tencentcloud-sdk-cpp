@@ -31,6 +31,8 @@
 #include <tencentcloud/mna/v20210119/model/AddGroupResponse.h>
 #include <tencentcloud/mna/v20210119/model/AddHardwareRequest.h>
 #include <tencentcloud/mna/v20210119/model/AddHardwareResponse.h>
+#include <tencentcloud/mna/v20210119/model/AddL3ConnRequest.h>
+#include <tencentcloud/mna/v20210119/model/AddL3ConnResponse.h>
 #include <tencentcloud/mna/v20210119/model/CreateEncryptedKeyRequest.h>
 #include <tencentcloud/mna/v20210119/model/CreateEncryptedKeyResponse.h>
 #include <tencentcloud/mna/v20210119/model/CreateQosRequest.h>
@@ -39,6 +41,8 @@
 #include <tencentcloud/mna/v20210119/model/DeleteDeviceResponse.h>
 #include <tencentcloud/mna/v20210119/model/DeleteGroupRequest.h>
 #include <tencentcloud/mna/v20210119/model/DeleteGroupResponse.h>
+#include <tencentcloud/mna/v20210119/model/DeleteL3ConnRequest.h>
+#include <tencentcloud/mna/v20210119/model/DeleteL3ConnResponse.h>
 #include <tencentcloud/mna/v20210119/model/DeleteQosRequest.h>
 #include <tencentcloud/mna/v20210119/model/DeleteQosResponse.h>
 #include <tencentcloud/mna/v20210119/model/DescribeQosRequest.h>
@@ -65,6 +69,8 @@
 #include <tencentcloud/mna/v20210119/model/GetGroupListResponse.h>
 #include <tencentcloud/mna/v20210119/model/GetHardwareListRequest.h>
 #include <tencentcloud/mna/v20210119/model/GetHardwareListResponse.h>
+#include <tencentcloud/mna/v20210119/model/GetL3ConnListRequest.h>
+#include <tencentcloud/mna/v20210119/model/GetL3ConnListResponse.h>
 #include <tencentcloud/mna/v20210119/model/GetMultiFlowStatisticRequest.h>
 #include <tencentcloud/mna/v20210119/model/GetMultiFlowStatisticResponse.h>
 #include <tencentcloud/mna/v20210119/model/GetNetMonitorRequest.h>
@@ -91,6 +97,12 @@
 #include <tencentcloud/mna/v20210119/model/UpdateGroupResponse.h>
 #include <tencentcloud/mna/v20210119/model/UpdateHardwareRequest.h>
 #include <tencentcloud/mna/v20210119/model/UpdateHardwareResponse.h>
+#include <tencentcloud/mna/v20210119/model/UpdateL3CidrRequest.h>
+#include <tencentcloud/mna/v20210119/model/UpdateL3CidrResponse.h>
+#include <tencentcloud/mna/v20210119/model/UpdateL3ConnRequest.h>
+#include <tencentcloud/mna/v20210119/model/UpdateL3ConnResponse.h>
+#include <tencentcloud/mna/v20210119/model/UpdateL3SwitchRequest.h>
+#include <tencentcloud/mna/v20210119/model/UpdateL3SwitchResponse.h>
 
 
 namespace TencentCloud
@@ -117,6 +129,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::AddHardwareResponse> AddHardwareOutcome;
                 typedef std::future<AddHardwareOutcome> AddHardwareOutcomeCallable;
                 typedef std::function<void(const MnaClient*, const Model::AddHardwareRequest&, AddHardwareOutcome, const std::shared_ptr<const AsyncCallerContext>&)> AddHardwareAsyncHandler;
+                typedef Outcome<Core::Error, Model::AddL3ConnResponse> AddL3ConnOutcome;
+                typedef std::future<AddL3ConnOutcome> AddL3ConnOutcomeCallable;
+                typedef std::function<void(const MnaClient*, const Model::AddL3ConnRequest&, AddL3ConnOutcome, const std::shared_ptr<const AsyncCallerContext>&)> AddL3ConnAsyncHandler;
                 typedef Outcome<Core::Error, Model::CreateEncryptedKeyResponse> CreateEncryptedKeyOutcome;
                 typedef std::future<CreateEncryptedKeyOutcome> CreateEncryptedKeyOutcomeCallable;
                 typedef std::function<void(const MnaClient*, const Model::CreateEncryptedKeyRequest&, CreateEncryptedKeyOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateEncryptedKeyAsyncHandler;
@@ -129,6 +144,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DeleteGroupResponse> DeleteGroupOutcome;
                 typedef std::future<DeleteGroupOutcome> DeleteGroupOutcomeCallable;
                 typedef std::function<void(const MnaClient*, const Model::DeleteGroupRequest&, DeleteGroupOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteGroupAsyncHandler;
+                typedef Outcome<Core::Error, Model::DeleteL3ConnResponse> DeleteL3ConnOutcome;
+                typedef std::future<DeleteL3ConnOutcome> DeleteL3ConnOutcomeCallable;
+                typedef std::function<void(const MnaClient*, const Model::DeleteL3ConnRequest&, DeleteL3ConnOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteL3ConnAsyncHandler;
                 typedef Outcome<Core::Error, Model::DeleteQosResponse> DeleteQosOutcome;
                 typedef std::future<DeleteQosOutcome> DeleteQosOutcomeCallable;
                 typedef std::function<void(const MnaClient*, const Model::DeleteQosRequest&, DeleteQosOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteQosAsyncHandler;
@@ -168,6 +186,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::GetHardwareListResponse> GetHardwareListOutcome;
                 typedef std::future<GetHardwareListOutcome> GetHardwareListOutcomeCallable;
                 typedef std::function<void(const MnaClient*, const Model::GetHardwareListRequest&, GetHardwareListOutcome, const std::shared_ptr<const AsyncCallerContext>&)> GetHardwareListAsyncHandler;
+                typedef Outcome<Core::Error, Model::GetL3ConnListResponse> GetL3ConnListOutcome;
+                typedef std::future<GetL3ConnListOutcome> GetL3ConnListOutcomeCallable;
+                typedef std::function<void(const MnaClient*, const Model::GetL3ConnListRequest&, GetL3ConnListOutcome, const std::shared_ptr<const AsyncCallerContext>&)> GetL3ConnListAsyncHandler;
                 typedef Outcome<Core::Error, Model::GetMultiFlowStatisticResponse> GetMultiFlowStatisticOutcome;
                 typedef std::future<GetMultiFlowStatisticOutcome> GetMultiFlowStatisticOutcomeCallable;
                 typedef std::function<void(const MnaClient*, const Model::GetMultiFlowStatisticRequest&, GetMultiFlowStatisticOutcome, const std::shared_ptr<const AsyncCallerContext>&)> GetMultiFlowStatisticAsyncHandler;
@@ -207,6 +228,15 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::UpdateHardwareResponse> UpdateHardwareOutcome;
                 typedef std::future<UpdateHardwareOutcome> UpdateHardwareOutcomeCallable;
                 typedef std::function<void(const MnaClient*, const Model::UpdateHardwareRequest&, UpdateHardwareOutcome, const std::shared_ptr<const AsyncCallerContext>&)> UpdateHardwareAsyncHandler;
+                typedef Outcome<Core::Error, Model::UpdateL3CidrResponse> UpdateL3CidrOutcome;
+                typedef std::future<UpdateL3CidrOutcome> UpdateL3CidrOutcomeCallable;
+                typedef std::function<void(const MnaClient*, const Model::UpdateL3CidrRequest&, UpdateL3CidrOutcome, const std::shared_ptr<const AsyncCallerContext>&)> UpdateL3CidrAsyncHandler;
+                typedef Outcome<Core::Error, Model::UpdateL3ConnResponse> UpdateL3ConnOutcome;
+                typedef std::future<UpdateL3ConnOutcome> UpdateL3ConnOutcomeCallable;
+                typedef std::function<void(const MnaClient*, const Model::UpdateL3ConnRequest&, UpdateL3ConnOutcome, const std::shared_ptr<const AsyncCallerContext>&)> UpdateL3ConnAsyncHandler;
+                typedef Outcome<Core::Error, Model::UpdateL3SwitchResponse> UpdateL3SwitchOutcome;
+                typedef std::future<UpdateL3SwitchOutcome> UpdateL3SwitchOutcomeCallable;
+                typedef std::function<void(const MnaClient*, const Model::UpdateL3SwitchRequest&, UpdateL3SwitchOutcome, const std::shared_ptr<const AsyncCallerContext>&)> UpdateL3SwitchAsyncHandler;
 
 
 
@@ -247,6 +277,15 @@ namespace TencentCloud
                 AddHardwareOutcomeCallable AddHardwareCallable(const Model::AddHardwareRequest& request);
 
                 /**
+                 *新建互通规则
+                 * @param req AddL3ConnRequest
+                 * @return AddL3ConnOutcome
+                 */
+                AddL3ConnOutcome AddL3Conn(const Model::AddL3ConnRequest &request);
+                void AddL3ConnAsync(const Model::AddL3ConnRequest& request, const AddL3ConnAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                AddL3ConnOutcomeCallable AddL3ConnCallable(const Model::AddL3ConnRequest& request);
+
+                /**
                  *通过此接口设置和更新预置密钥
                  * @param req CreateEncryptedKeyRequest
                  * @return CreateEncryptedKeyOutcome
@@ -281,6 +320,15 @@ namespace TencentCloud
                 DeleteGroupOutcome DeleteGroup(const Model::DeleteGroupRequest &request);
                 void DeleteGroupAsync(const Model::DeleteGroupRequest& request, const DeleteGroupAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DeleteGroupOutcomeCallable DeleteGroupCallable(const Model::DeleteGroupRequest& request);
+
+                /**
+                 *删除互通规则
+                 * @param req DeleteL3ConnRequest
+                 * @return DeleteL3ConnOutcome
+                 */
+                DeleteL3ConnOutcome DeleteL3Conn(const Model::DeleteL3ConnRequest &request);
+                void DeleteL3ConnAsync(const Model::DeleteL3ConnRequest& request, const DeleteL3ConnAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DeleteL3ConnOutcomeCallable DeleteL3ConnCallable(const Model::DeleteL3ConnRequest& request);
 
                 /**
                  *移动网络停止Qos加速过程
@@ -400,6 +448,15 @@ namespace TencentCloud
                 GetHardwareListOutcomeCallable GetHardwareListCallable(const Model::GetHardwareListRequest& request);
 
                 /**
+                 *获取互通规则列表
+                 * @param req GetL3ConnListRequest
+                 * @return GetL3ConnListOutcome
+                 */
+                GetL3ConnListOutcome GetL3ConnList(const Model::GetL3ConnListRequest &request);
+                void GetL3ConnListAsync(const Model::GetL3ConnListRequest& request, const GetL3ConnListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                GetL3ConnListOutcomeCallable GetL3ConnListCallable(const Model::GetL3ConnListRequest& request);
+
+                /**
                  *批量获取设备流量统计曲线
                  * @param req GetMultiFlowStatisticRequest
                  * @return GetMultiFlowStatisticOutcome
@@ -515,6 +572,33 @@ namespace TencentCloud
                 UpdateHardwareOutcome UpdateHardware(const Model::UpdateHardwareRequest &request);
                 void UpdateHardwareAsync(const Model::UpdateHardwareRequest& request, const UpdateHardwareAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 UpdateHardwareOutcomeCallable UpdateHardwareCallable(const Model::UpdateHardwareRequest& request);
+
+                /**
+                 *更新互通规则CIDR
+                 * @param req UpdateL3CidrRequest
+                 * @return UpdateL3CidrOutcome
+                 */
+                UpdateL3CidrOutcome UpdateL3Cidr(const Model::UpdateL3CidrRequest &request);
+                void UpdateL3CidrAsync(const Model::UpdateL3CidrRequest& request, const UpdateL3CidrAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                UpdateL3CidrOutcomeCallable UpdateL3CidrCallable(const Model::UpdateL3CidrRequest& request);
+
+                /**
+                 *更新互通规则备注
+                 * @param req UpdateL3ConnRequest
+                 * @return UpdateL3ConnOutcome
+                 */
+                UpdateL3ConnOutcome UpdateL3Conn(const Model::UpdateL3ConnRequest &request);
+                void UpdateL3ConnAsync(const Model::UpdateL3ConnRequest& request, const UpdateL3ConnAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                UpdateL3ConnOutcomeCallable UpdateL3ConnCallable(const Model::UpdateL3ConnRequest& request);
+
+                /**
+                 *更新互通规则开关
+                 * @param req UpdateL3SwitchRequest
+                 * @return UpdateL3SwitchOutcome
+                 */
+                UpdateL3SwitchOutcome UpdateL3Switch(const Model::UpdateL3SwitchRequest &request);
+                void UpdateL3SwitchAsync(const Model::UpdateL3SwitchRequest& request, const UpdateL3SwitchAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                UpdateL3SwitchOutcomeCallable UpdateL3SwitchCallable(const Model::UpdateL3SwitchRequest& request);
 
             };
         }

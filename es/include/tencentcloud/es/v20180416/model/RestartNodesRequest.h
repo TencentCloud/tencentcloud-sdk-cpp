@@ -168,6 +168,48 @@ namespace TencentCloud
                      */
                     bool CvmDelayOnlineTimeHasBeenSet() const;
 
+                    /**
+                     * 获取分片迁移并发数
+                     * @return ShardAllocationConcurrents 分片迁移并发数
+                     * 
+                     */
+                    uint64_t GetShardAllocationConcurrents() const;
+
+                    /**
+                     * 设置分片迁移并发数
+                     * @param _shardAllocationConcurrents 分片迁移并发数
+                     * 
+                     */
+                    void SetShardAllocationConcurrents(const uint64_t& _shardAllocationConcurrents);
+
+                    /**
+                     * 判断参数 ShardAllocationConcurrents 是否已赋值
+                     * @return ShardAllocationConcurrents 是否已赋值
+                     * 
+                     */
+                    bool ShardAllocationConcurrentsHasBeenSet() const;
+
+                    /**
+                     * 获取分片迁移并发速度
+                     * @return ShardAllocationBytes 分片迁移并发速度
+                     * 
+                     */
+                    uint64_t GetShardAllocationBytes() const;
+
+                    /**
+                     * 设置分片迁移并发速度
+                     * @param _shardAllocationBytes 分片迁移并发速度
+                     * 
+                     */
+                    void SetShardAllocationBytes(const uint64_t& _shardAllocationBytes);
+
+                    /**
+                     * 判断参数 ShardAllocationBytes 是否已赋值
+                     * @return ShardAllocationBytes 是否已赋值
+                     * 
+                     */
+                    bool ShardAllocationBytesHasBeenSet() const;
+
                 private:
 
                     /**
@@ -205,6 +247,18 @@ namespace TencentCloud
                      */
                     uint64_t m_cvmDelayOnlineTime;
                     bool m_cvmDelayOnlineTimeHasBeenSet;
+
+                    /**
+                     * 分片迁移并发数
+                     */
+                    uint64_t m_shardAllocationConcurrents;
+                    bool m_shardAllocationConcurrentsHasBeenSet;
+
+                    /**
+                     * 分片迁移并发速度
+                     */
+                    uint64_t m_shardAllocationBytes;
+                    bool m_shardAllocationBytesHasBeenSet;
 
                 };
             }

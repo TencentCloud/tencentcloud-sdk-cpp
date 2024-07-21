@@ -28,7 +28,9 @@ RestartNodesRequest::RestartNodesRequest() :
     m_forceRestartHasBeenSet(false),
     m_restartModeHasBeenSet(false),
     m_isOfflineHasBeenSet(false),
-    m_cvmDelayOnlineTimeHasBeenSet(false)
+    m_cvmDelayOnlineTimeHasBeenSet(false),
+    m_shardAllocationConcurrentsHasBeenSet(false),
+    m_shardAllocationBytesHasBeenSet(false)
 {
 }
 
@@ -90,6 +92,22 @@ string RestartNodesRequest::ToJsonString() const
         string key = "CvmDelayOnlineTime";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_cvmDelayOnlineTime, allocator);
+    }
+
+    if (m_shardAllocationConcurrentsHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ShardAllocationConcurrents";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_shardAllocationConcurrents, allocator);
+    }
+
+    if (m_shardAllocationBytesHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ShardAllocationBytes";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_shardAllocationBytes, allocator);
     }
 
 
@@ -194,6 +212,38 @@ void RestartNodesRequest::SetCvmDelayOnlineTime(const uint64_t& _cvmDelayOnlineT
 bool RestartNodesRequest::CvmDelayOnlineTimeHasBeenSet() const
 {
     return m_cvmDelayOnlineTimeHasBeenSet;
+}
+
+uint64_t RestartNodesRequest::GetShardAllocationConcurrents() const
+{
+    return m_shardAllocationConcurrents;
+}
+
+void RestartNodesRequest::SetShardAllocationConcurrents(const uint64_t& _shardAllocationConcurrents)
+{
+    m_shardAllocationConcurrents = _shardAllocationConcurrents;
+    m_shardAllocationConcurrentsHasBeenSet = true;
+}
+
+bool RestartNodesRequest::ShardAllocationConcurrentsHasBeenSet() const
+{
+    return m_shardAllocationConcurrentsHasBeenSet;
+}
+
+uint64_t RestartNodesRequest::GetShardAllocationBytes() const
+{
+    return m_shardAllocationBytes;
+}
+
+void RestartNodesRequest::SetShardAllocationBytes(const uint64_t& _shardAllocationBytes)
+{
+    m_shardAllocationBytes = _shardAllocationBytes;
+    m_shardAllocationBytesHasBeenSet = true;
+}
+
+bool RestartNodesRequest::ShardAllocationBytesHasBeenSet() const
+{
+    return m_shardAllocationBytesHasBeenSet;
 }
 
 
