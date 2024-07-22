@@ -32,7 +32,12 @@ CCRuleItem::CCRuleItem() :
     m_tsVersionHasBeenSet(false),
     m_urlHasBeenSet(false),
     m_validTimeHasBeenSet(false),
-    m_optionsArrHasBeenSet(false)
+    m_optionsArrHasBeenSet(false),
+    m_lengthHasBeenSet(false),
+    m_ruleIdHasBeenSet(false),
+    m_eventIdHasBeenSet(false),
+    m_sessionAppliedHasBeenSet(false),
+    m_createTimeHasBeenSet(false)
 {
 }
 
@@ -161,6 +166,59 @@ CoreInternalOutcome CCRuleItem::Deserialize(const rapidjson::Value &value)
         m_optionsArrHasBeenSet = true;
     }
 
+    if (value.HasMember("Length") && !value["Length"].IsNull())
+    {
+        if (!value["Length"].IsUint64())
+        {
+            return CoreInternalOutcome(Core::Error("response `CCRuleItem.Length` IsUint64=false incorrectly").SetRequestId(requestId));
+        }
+        m_length = value["Length"].GetUint64();
+        m_lengthHasBeenSet = true;
+    }
+
+    if (value.HasMember("RuleId") && !value["RuleId"].IsNull())
+    {
+        if (!value["RuleId"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `CCRuleItem.RuleId` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_ruleId = value["RuleId"].GetInt64();
+        m_ruleIdHasBeenSet = true;
+    }
+
+    if (value.HasMember("EventId") && !value["EventId"].IsNull())
+    {
+        if (!value["EventId"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `CCRuleItem.EventId` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_eventId = string(value["EventId"].GetString());
+        m_eventIdHasBeenSet = true;
+    }
+
+    if (value.HasMember("SessionApplied") && !value["SessionApplied"].IsNull())
+    {
+        if (!value["SessionApplied"].IsArray())
+            return CoreInternalOutcome(Core::Error("response `CCRuleItem.SessionApplied` is not array type"));
+
+        const rapidjson::Value &tmpValue = value["SessionApplied"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            m_sessionApplied.push_back((*itr).GetInt64());
+        }
+        m_sessionAppliedHasBeenSet = true;
+    }
+
+    if (value.HasMember("CreateTime") && !value["CreateTime"].IsNull())
+    {
+        if (!value["CreateTime"].IsUint64())
+        {
+            return CoreInternalOutcome(Core::Error("response `CCRuleItem.CreateTime` IsUint64=false incorrectly").SetRequestId(requestId));
+        }
+        m_createTime = value["CreateTime"].GetUint64();
+        m_createTimeHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -262,6 +320,51 @@ void CCRuleItem::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Allo
         string key = "OptionsArr";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_optionsArr.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_lengthHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Length";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_length, allocator);
+    }
+
+    if (m_ruleIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "RuleId";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_ruleId, allocator);
+    }
+
+    if (m_eventIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "EventId";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_eventId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_sessionAppliedHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "SessionApplied";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        for (auto itr = m_sessionApplied.begin(); itr != m_sessionApplied.end(); ++itr)
+        {
+            value[key.c_str()].PushBack(rapidjson::Value().SetInt64(*itr), allocator);
+        }
+    }
+
+    if (m_createTimeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "CreateTime";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_createTime, allocator);
     }
 
 }
@@ -457,5 +560,85 @@ void CCRuleItem::SetOptionsArr(const string& _optionsArr)
 bool CCRuleItem::OptionsArrHasBeenSet() const
 {
     return m_optionsArrHasBeenSet;
+}
+
+uint64_t CCRuleItem::GetLength() const
+{
+    return m_length;
+}
+
+void CCRuleItem::SetLength(const uint64_t& _length)
+{
+    m_length = _length;
+    m_lengthHasBeenSet = true;
+}
+
+bool CCRuleItem::LengthHasBeenSet() const
+{
+    return m_lengthHasBeenSet;
+}
+
+int64_t CCRuleItem::GetRuleId() const
+{
+    return m_ruleId;
+}
+
+void CCRuleItem::SetRuleId(const int64_t& _ruleId)
+{
+    m_ruleId = _ruleId;
+    m_ruleIdHasBeenSet = true;
+}
+
+bool CCRuleItem::RuleIdHasBeenSet() const
+{
+    return m_ruleIdHasBeenSet;
+}
+
+string CCRuleItem::GetEventId() const
+{
+    return m_eventId;
+}
+
+void CCRuleItem::SetEventId(const string& _eventId)
+{
+    m_eventId = _eventId;
+    m_eventIdHasBeenSet = true;
+}
+
+bool CCRuleItem::EventIdHasBeenSet() const
+{
+    return m_eventIdHasBeenSet;
+}
+
+vector<int64_t> CCRuleItem::GetSessionApplied() const
+{
+    return m_sessionApplied;
+}
+
+void CCRuleItem::SetSessionApplied(const vector<int64_t>& _sessionApplied)
+{
+    m_sessionApplied = _sessionApplied;
+    m_sessionAppliedHasBeenSet = true;
+}
+
+bool CCRuleItem::SessionAppliedHasBeenSet() const
+{
+    return m_sessionAppliedHasBeenSet;
+}
+
+uint64_t CCRuleItem::GetCreateTime() const
+{
+    return m_createTime;
+}
+
+void CCRuleItem::SetCreateTime(const uint64_t& _createTime)
+{
+    m_createTime = _createTime;
+    m_createTimeHasBeenSet = true;
+}
+
+bool CCRuleItem::CreateTimeHasBeenSet() const
+{
+    return m_createTimeHasBeenSet;
 }
 

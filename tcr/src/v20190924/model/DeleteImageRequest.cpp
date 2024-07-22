@@ -24,9 +24,9 @@ using namespace std;
 
 DeleteImageRequest::DeleteImageRequest() :
     m_registryIdHasBeenSet(false),
+    m_namespaceNameHasBeenSet(false),
     m_repositoryNameHasBeenSet(false),
-    m_imageVersionHasBeenSet(false),
-    m_namespaceNameHasBeenSet(false)
+    m_imageVersionHasBeenSet(false)
 {
 }
 
@@ -45,6 +45,14 @@ string DeleteImageRequest::ToJsonString() const
         d.AddMember(iKey, rapidjson::Value(m_registryId.c_str(), allocator).Move(), allocator);
     }
 
+    if (m_namespaceNameHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "NamespaceName";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_namespaceName.c_str(), allocator).Move(), allocator);
+    }
+
     if (m_repositoryNameHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
@@ -59,14 +67,6 @@ string DeleteImageRequest::ToJsonString() const
         string key = "ImageVersion";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_imageVersion.c_str(), allocator).Move(), allocator);
-    }
-
-    if (m_namespaceNameHasBeenSet)
-    {
-        rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "NamespaceName";
-        iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, rapidjson::Value(m_namespaceName.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -91,6 +91,22 @@ void DeleteImageRequest::SetRegistryId(const string& _registryId)
 bool DeleteImageRequest::RegistryIdHasBeenSet() const
 {
     return m_registryIdHasBeenSet;
+}
+
+string DeleteImageRequest::GetNamespaceName() const
+{
+    return m_namespaceName;
+}
+
+void DeleteImageRequest::SetNamespaceName(const string& _namespaceName)
+{
+    m_namespaceName = _namespaceName;
+    m_namespaceNameHasBeenSet = true;
+}
+
+bool DeleteImageRequest::NamespaceNameHasBeenSet() const
+{
+    return m_namespaceNameHasBeenSet;
 }
 
 string DeleteImageRequest::GetRepositoryName() const
@@ -123,22 +139,6 @@ void DeleteImageRequest::SetImageVersion(const string& _imageVersion)
 bool DeleteImageRequest::ImageVersionHasBeenSet() const
 {
     return m_imageVersionHasBeenSet;
-}
-
-string DeleteImageRequest::GetNamespaceName() const
-{
-    return m_namespaceName;
-}
-
-void DeleteImageRequest::SetNamespaceName(const string& _namespaceName)
-{
-    m_namespaceName = _namespaceName;
-    m_namespaceNameHasBeenSet = true;
-}
-
-bool DeleteImageRequest::NamespaceNameHasBeenSet() const
-{
-    return m_namespaceNameHasBeenSet;
 }
 
 

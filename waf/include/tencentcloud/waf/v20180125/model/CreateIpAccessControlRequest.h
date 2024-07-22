@@ -21,6 +21,7 @@
 #include <vector>
 #include <map>
 #include <tencentcloud/core/AbstractModel.h>
+#include <tencentcloud/waf/v20180125/model/JobDateTime.h>
 
 
 namespace TencentCloud
@@ -173,15 +174,15 @@ namespace TencentCloud
                     bool EditionHasBeenSet() const;
 
                     /**
-                     * 获取可选值为：batch（批量添加）、bot、cc、custom（非批量添加时的默认值）
-                     * @return SourceType 可选值为：batch（批量添加）、bot、cc、custom（非批量添加时的默认值）
+                     * 获取可选值为：batch（批量添加）、bot（BOT流量分析中的BOT详情列表中添加时）、cc（在攻击日志列表中对攻击类型为CC的IP添加时）、custom（非批量添加时的默认值）
+                     * @return SourceType 可选值为：batch（批量添加）、bot（BOT流量分析中的BOT详情列表中添加时）、cc（在攻击日志列表中对攻击类型为CC的IP添加时）、custom（非批量添加时的默认值）
                      * 
                      */
                     std::string GetSourceType() const;
 
                     /**
-                     * 设置可选值为：batch（批量添加）、bot、cc、custom（非批量添加时的默认值）
-                     * @param _sourceType 可选值为：batch（批量添加）、bot、cc、custom（非批量添加时的默认值）
+                     * 设置可选值为：batch（批量添加）、bot（BOT流量分析中的BOT详情列表中添加时）、cc（在攻击日志列表中对攻击类型为CC的IP添加时）、custom（非批量添加时的默认值）
+                     * @param _sourceType 可选值为：batch（批量添加）、bot（BOT流量分析中的BOT详情列表中添加时）、cc（在攻击日志列表中对攻击类型为CC的IP添加时）、custom（非批量添加时的默认值）
                      * 
                      */
                     void SetSourceType(const std::string& _sourceType);
@@ -213,6 +214,48 @@ namespace TencentCloud
                      * 
                      */
                     bool NoteHasBeenSet() const;
+
+                    /**
+                     * 获取定时配置类型
+                     * @return JobType 定时配置类型
+                     * 
+                     */
+                    std::string GetJobType() const;
+
+                    /**
+                     * 设置定时配置类型
+                     * @param _jobType 定时配置类型
+                     * 
+                     */
+                    void SetJobType(const std::string& _jobType);
+
+                    /**
+                     * 判断参数 JobType 是否已赋值
+                     * @return JobType 是否已赋值
+                     * 
+                     */
+                    bool JobTypeHasBeenSet() const;
+
+                    /**
+                     * 获取定时配置详情
+                     * @return JobDateTime 定时配置详情
+                     * 
+                     */
+                    JobDateTime GetJobDateTime() const;
+
+                    /**
+                     * 设置定时配置详情
+                     * @param _jobDateTime 定时配置详情
+                     * 
+                     */
+                    void SetJobDateTime(const JobDateTime& _jobDateTime);
+
+                    /**
+                     * 判断参数 JobDateTime 是否已赋值
+                     * @return JobDateTime 是否已赋值
+                     * 
+                     */
+                    bool JobDateTimeHasBeenSet() const;
 
                 private:
 
@@ -254,7 +297,7 @@ namespace TencentCloud
                     bool m_editionHasBeenSet;
 
                     /**
-                     * 可选值为：batch（批量添加）、bot、cc、custom（非批量添加时的默认值）
+                     * 可选值为：batch（批量添加）、bot（BOT流量分析中的BOT详情列表中添加时）、cc（在攻击日志列表中对攻击类型为CC的IP添加时）、custom（非批量添加时的默认值）
                      */
                     std::string m_sourceType;
                     bool m_sourceTypeHasBeenSet;
@@ -264,6 +307,18 @@ namespace TencentCloud
                      */
                     std::string m_note;
                     bool m_noteHasBeenSet;
+
+                    /**
+                     * 定时配置类型
+                     */
+                    std::string m_jobType;
+                    bool m_jobTypeHasBeenSet;
+
+                    /**
+                     * 定时配置详情
+                     */
+                    JobDateTime m_jobDateTime;
+                    bool m_jobDateTimeHasBeenSet;
 
                 };
             }

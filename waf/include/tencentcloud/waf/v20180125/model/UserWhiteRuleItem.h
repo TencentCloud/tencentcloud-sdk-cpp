@@ -109,6 +109,31 @@ namespace TencentCloud
                      */
                     bool MatchContentHasBeenSet() const;
 
+                    /**
+                     * 获取匹配参数名
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return MatchParams 匹配参数名
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::string GetMatchParams() const;
+
+                    /**
+                     * 设置匹配参数名
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _matchParams 匹配参数名
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetMatchParams(const std::string& _matchParams);
+
+                    /**
+                     * 判断参数 MatchParams 是否已赋值
+                     * @return MatchParams 是否已赋值
+                     * 
+                     */
+                    bool MatchParamsHasBeenSet() const;
+
                 private:
 
                     /**
@@ -128,6 +153,13 @@ namespace TencentCloud
                      */
                     std::string m_matchContent;
                     bool m_matchContentHasBeenSet;
+
+                    /**
+                     * 匹配参数名
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_matchParams;
+                    bool m_matchParamsHasBeenSet;
 
                 };
             }

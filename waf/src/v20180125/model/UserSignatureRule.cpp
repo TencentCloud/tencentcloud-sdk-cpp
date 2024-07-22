@@ -31,7 +31,8 @@ UserSignatureRule::UserSignatureRule() :
     m_mainClassNameHasBeenSet(false),
     m_subClassNameHasBeenSet(false),
     m_descriptionHasBeenSet(false),
-    m_reasonHasBeenSet(false)
+    m_reasonHasBeenSet(false),
+    m_riskLevelHasBeenSet(false)
 {
 }
 
@@ -150,6 +151,16 @@ CoreInternalOutcome UserSignatureRule::Deserialize(const rapidjson::Value &value
         m_reasonHasBeenSet = true;
     }
 
+    if (value.HasMember("RiskLevel") && !value["RiskLevel"].IsNull())
+    {
+        if (!value["RiskLevel"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `UserSignatureRule.RiskLevel` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_riskLevel = value["RiskLevel"].GetInt64();
+        m_riskLevelHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -243,6 +254,14 @@ void UserSignatureRule::ToJsonObject(rapidjson::Value &value, rapidjson::Documen
         string key = "Reason";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_reason, allocator);
+    }
+
+    if (m_riskLevelHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "RiskLevel";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_riskLevel, allocator);
     }
 
 }
@@ -422,5 +441,21 @@ void UserSignatureRule::SetReason(const int64_t& _reason)
 bool UserSignatureRule::ReasonHasBeenSet() const
 {
     return m_reasonHasBeenSet;
+}
+
+int64_t UserSignatureRule::GetRiskLevel() const
+{
+    return m_riskLevel;
+}
+
+void UserSignatureRule::SetRiskLevel(const int64_t& _riskLevel)
+{
+    m_riskLevel = _riskLevel;
+    m_riskLevelHasBeenSet = true;
+}
+
+bool UserSignatureRule::RiskLevelHasBeenSet() const
+{
+    return m_riskLevelHasBeenSet;
 }
 

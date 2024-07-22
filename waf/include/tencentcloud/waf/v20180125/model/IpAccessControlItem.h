@@ -24,6 +24,7 @@
 #include <tencentcloud/core/utils/rapidjson/writer.h>
 #include <tencentcloud/core/utils/rapidjson/stringbuffer.h>
 #include <tencentcloud/core/AbstractModel.h>
+#include <tencentcloud/waf/v20180125/model/JobDateTime.h>
 
 
 namespace TencentCloud
@@ -301,6 +302,81 @@ namespace TencentCloud
                      */
                     bool CreateTimeHasBeenSet() const;
 
+                    /**
+                     * 获取定时任务类型
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return JobType 定时任务类型
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::string GetJobType() const;
+
+                    /**
+                     * 设置定时任务类型
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _jobType 定时任务类型
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetJobType(const std::string& _jobType);
+
+                    /**
+                     * 判断参数 JobType 是否已赋值
+                     * @return JobType 是否已赋值
+                     * 
+                     */
+                    bool JobTypeHasBeenSet() const;
+
+                    /**
+                     * 获取周期任务类型
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return CronType 周期任务类型
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::string GetCronType() const;
+
+                    /**
+                     * 设置周期任务类型
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _cronType 周期任务类型
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetCronType(const std::string& _cronType);
+
+                    /**
+                     * 判断参数 CronType 是否已赋值
+                     * @return CronType 是否已赋值
+                     * 
+                     */
+                    bool CronTypeHasBeenSet() const;
+
+                    /**
+                     * 获取定时任务配置详情
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return JobDateTime 定时任务配置详情
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    JobDateTime GetJobDateTime() const;
+
+                    /**
+                     * 设置定时任务配置详情
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _jobDateTime 定时任务配置详情
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetJobDateTime(const JobDateTime& _jobDateTime);
+
+                    /**
+                     * 判断参数 JobDateTime 是否已赋值
+                     * @return JobDateTime 是否已赋值
+                     * 
+                     */
+                    bool JobDateTimeHasBeenSet() const;
+
                 private:
 
                     /**
@@ -374,6 +450,27 @@ namespace TencentCloud
                      */
                     uint64_t m_createTime;
                     bool m_createTimeHasBeenSet;
+
+                    /**
+                     * 定时任务类型
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_jobType;
+                    bool m_jobTypeHasBeenSet;
+
+                    /**
+                     * 周期任务类型
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_cronType;
+                    bool m_cronTypeHasBeenSet;
+
+                    /**
+                     * 定时任务配置详情
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    JobDateTime m_jobDateTime;
+                    bool m_jobDateTimeHasBeenSet;
 
                 };
             }

@@ -21,6 +21,7 @@
 #include <vector>
 #include <map>
 #include <tencentcloud/core/AbstractModel.h>
+#include <tencentcloud/tcr/v20190924/model/KeyValueString.h>
 
 
 namespace TencentCloud
@@ -71,6 +72,38 @@ namespace TencentCloud
                      */
                     bool ConfigHasBeenSet() const;
 
+                    /**
+                     * 获取镜像的Labels信息
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return Labels 镜像的Labels信息
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::vector<KeyValueString> GetLabels() const;
+
+                    /**
+                     * 判断参数 Labels 是否已赋值
+                     * @return Labels 是否已赋值
+                     * 
+                     */
+                    bool LabelsHasBeenSet() const;
+
+                    /**
+                     * 获取镜像大小，单位：byte
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return Size 镜像大小，单位：byte
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    int64_t GetSize() const;
+
+                    /**
+                     * 判断参数 Size 是否已赋值
+                     * @return Size 是否已赋值
+                     * 
+                     */
+                    bool SizeHasBeenSet() const;
+
                 private:
 
                     /**
@@ -84,6 +117,20 @@ namespace TencentCloud
                      */
                     std::string m_config;
                     bool m_configHasBeenSet;
+
+                    /**
+                     * 镜像的Labels信息
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::vector<KeyValueString> m_labels;
+                    bool m_labelsHasBeenSet;
+
+                    /**
+                     * 镜像大小，单位：byte
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    int64_t m_size;
+                    bool m_sizeHasBeenSet;
 
                 };
             }

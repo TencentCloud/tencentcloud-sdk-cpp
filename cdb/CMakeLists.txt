@@ -342,6 +342,7 @@ set(cdb_public_header_model
   include/tencentcloud/cdb/v20170320/model/ModifyDBInstanceProjectRequest.h
   include/tencentcloud/cdb/v20170320/model/Bucket.h
   include/tencentcloud/cdb/v20170320/model/SwitchForUpgradeResponse.h
+  include/tencentcloud/cdb/v20170320/model/UpgradeEngineVersionParams.h
   include/tencentcloud/cdb/v20170320/model/DescribeAccountPrivilegesRequest.h
   include/tencentcloud/cdb/v20170320/model/CdbSellConfig.h
   include/tencentcloud/cdb/v20170320/model/DescribeSupportedPrivilegesResponse.h
@@ -788,6 +789,7 @@ set(cdb_src
   src/v20170320/model/ModifyDBInstanceProjectRequest.cpp
   src/v20170320/model/Bucket.cpp
   src/v20170320/model/SwitchForUpgradeResponse.cpp
+  src/v20170320/model/UpgradeEngineVersionParams.cpp
   src/v20170320/model/DescribeAccountPrivilegesRequest.cpp
   src/v20170320/model/CdbSellConfig.cpp
   src/v20170320/model/DescribeSupportedPrivilegesResponse.cpp

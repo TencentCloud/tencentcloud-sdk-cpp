@@ -44,31 +44,47 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取模糊过滤条件，支持
-Level 按模板级别过滤
-Name 按名称过滤
-Describe 按描述过滤
-ID 按templateId过滤
-                     * @return Filters 模糊过滤条件，支持
-Level 按模板级别过滤
-Name 按名称过滤
-Describe 按描述过滤
-ID 按templateId过滤
+                     * 获取仅支持按Name, Values字段过滤:
+* Name = Name
+  按照给定的模板名称列表匹配
+* Name = ID
+  按照给定的模板ID列表匹配
+* Name = Describe
+  按照给定的模板描述列表匹配
+* Name = Level
+  按照给定的模板维度(instance, cluster)列表匹配
+                     * @return Filters 仅支持按Name, Values字段过滤:
+* Name = Name
+  按照给定的模板名称列表匹配
+* Name = ID
+  按照给定的模板ID列表匹配
+* Name = Describe
+  按照给定的模板描述列表匹配
+* Name = Level
+  按照给定的模板维度(instance, cluster)列表匹配
                      * 
                      */
                     std::vector<Filter> GetFilters() const;
 
                     /**
-                     * 设置模糊过滤条件，支持
-Level 按模板级别过滤
-Name 按名称过滤
-Describe 按描述过滤
-ID 按templateId过滤
-                     * @param _filters 模糊过滤条件，支持
-Level 按模板级别过滤
-Name 按名称过滤
-Describe 按描述过滤
-ID 按templateId过滤
+                     * 设置仅支持按Name, Values字段过滤:
+* Name = Name
+  按照给定的模板名称列表匹配
+* Name = ID
+  按照给定的模板ID列表匹配
+* Name = Describe
+  按照给定的模板描述列表匹配
+* Name = Level
+  按照给定的模板维度(instance, cluster)列表匹配
+                     * @param _filters 仅支持按Name, Values字段过滤:
+* Name = Name
+  按照给定的模板名称列表匹配
+* Name = ID
+  按照给定的模板ID列表匹配
+* Name = Describe
+  按照给定的模板描述列表匹配
+* Name = Level
+  按照给定的模板维度(instance, cluster)列表匹配
                      * 
                      */
                     void SetFilters(const std::vector<Filter>& _filters);
@@ -102,15 +118,15 @@ ID 按templateId过滤
                     bool OffsetHasBeenSet() const;
 
                     /**
-                     * 获取总数限制
-                     * @return Limit 总数限制
+                     * 获取分页返回数量，默认为20，最大值为100
+                     * @return Limit 分页返回数量，默认为20，最大值为100
                      * 
                      */
                     uint64_t GetLimit() const;
 
                     /**
-                     * 设置总数限制
-                     * @param _limit 总数限制
+                     * 设置分页返回数量，默认为20，最大值为100
+                     * @param _limit 分页返回数量，默认为20，最大值为100
                      * 
                      */
                     void SetLimit(const uint64_t& _limit);
@@ -125,11 +141,15 @@ ID 按templateId过滤
                 private:
 
                     /**
-                     * 模糊过滤条件，支持
-Level 按模板级别过滤
-Name 按名称过滤
-Describe 按描述过滤
-ID 按templateId过滤
+                     * 仅支持按Name, Values字段过滤:
+* Name = Name
+  按照给定的模板名称列表匹配
+* Name = ID
+  按照给定的模板ID列表匹配
+* Name = Describe
+  按照给定的模板描述列表匹配
+* Name = Level
+  按照给定的模板维度(instance, cluster)列表匹配
                      */
                     std::vector<Filter> m_filters;
                     bool m_filtersHasBeenSet;
@@ -141,7 +161,7 @@ ID 按templateId过滤
                     bool m_offsetHasBeenSet;
 
                     /**
-                     * 总数限制
+                     * 分页返回数量，默认为20，最大值为100
                      */
                     uint64_t m_limit;
                     bool m_limitHasBeenSet;

@@ -34,11 +34,11 @@ CoreInternalOutcome SearchResult::Deserialize(const rapidjson::Value &value)
 
     if (value.HasMember("Index") && !value["Index"].IsNull())
     {
-        if (!value["Index"].IsString())
+        if (!value["Index"].IsInt64())
         {
-            return CoreInternalOutcome(Core::Error("response `SearchResult.Index` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `SearchResult.Index` IsInt64=false incorrectly").SetRequestId(requestId));
         }
-        m_index = string(value["Index"].GetString());
+        m_index = value["Index"].GetInt64();
         m_indexHasBeenSet = true;
     }
 
@@ -74,7 +74,7 @@ void SearchResult::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Al
         rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Index";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, rapidjson::Value(m_index.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, m_index, allocator);
     }
 
     if (m_titleHasBeenSet)
@@ -96,12 +96,12 @@ void SearchResult::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Al
 }
 
 
-string SearchResult::GetIndex() const
+int64_t SearchResult::GetIndex() const
 {
     return m_index;
 }
 
-void SearchResult::SetIndex(const string& _index)
+void SearchResult::SetIndex(const int64_t& _index)
 {
     m_index = _index;
     m_indexHasBeenSet = true;

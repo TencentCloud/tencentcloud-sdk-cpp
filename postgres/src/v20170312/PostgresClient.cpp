@@ -212,6 +212,49 @@ PostgresClient::CloseServerlessDBExtranetAccessOutcomeCallable PostgresClient::C
     return task->get_future();
 }
 
+PostgresClient::CreateAccountOutcome PostgresClient::CreateAccount(const CreateAccountRequest &request)
+{
+    auto outcome = MakeRequest(request, "CreateAccount");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        CreateAccountResponse rsp = CreateAccountResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return CreateAccountOutcome(rsp);
+        else
+            return CreateAccountOutcome(o.GetError());
+    }
+    else
+    {
+        return CreateAccountOutcome(outcome.GetError());
+    }
+}
+
+void PostgresClient::CreateAccountAsync(const CreateAccountRequest& request, const CreateAccountAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->CreateAccount(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+PostgresClient::CreateAccountOutcomeCallable PostgresClient::CreateAccountCallable(const CreateAccountRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<CreateAccountOutcome()>>(
+        [this, request]()
+        {
+            return this->CreateAccount(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 PostgresClient::CreateBaseBackupOutcome PostgresClient::CreateBaseBackup(const CreateBaseBackupRequest &request)
 {
     auto outcome = MakeRequest(request, "CreateBaseBackup");
@@ -599,6 +642,49 @@ PostgresClient::CreateServerlessDBInstanceOutcomeCallable PostgresClient::Create
     return task->get_future();
 }
 
+PostgresClient::DeleteAccountOutcome PostgresClient::DeleteAccount(const DeleteAccountRequest &request)
+{
+    auto outcome = MakeRequest(request, "DeleteAccount");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DeleteAccountResponse rsp = DeleteAccountResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DeleteAccountOutcome(rsp);
+        else
+            return DeleteAccountOutcome(o.GetError());
+    }
+    else
+    {
+        return DeleteAccountOutcome(outcome.GetError());
+    }
+}
+
+void PostgresClient::DeleteAccountAsync(const DeleteAccountRequest& request, const DeleteAccountAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DeleteAccount(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+PostgresClient::DeleteAccountOutcomeCallable PostgresClient::DeleteAccountCallable(const DeleteAccountRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DeleteAccountOutcome()>>(
+        [this, request]()
+        {
+            return this->DeleteAccount(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 PostgresClient::DeleteBaseBackupOutcome PostgresClient::DeleteBaseBackup(const DeleteBaseBackupRequest &request)
 {
     auto outcome = MakeRequest(request, "DeleteBaseBackup");
@@ -893,6 +979,49 @@ PostgresClient::DeleteServerlessDBInstanceOutcomeCallable PostgresClient::Delete
         [this, request]()
         {
             return this->DeleteServerlessDBInstance(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+PostgresClient::DescribeAccountPrivilegesOutcome PostgresClient::DescribeAccountPrivileges(const DescribeAccountPrivilegesRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeAccountPrivileges");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeAccountPrivilegesResponse rsp = DescribeAccountPrivilegesResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeAccountPrivilegesOutcome(rsp);
+        else
+            return DescribeAccountPrivilegesOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeAccountPrivilegesOutcome(outcome.GetError());
+    }
+}
+
+void PostgresClient::DescribeAccountPrivilegesAsync(const DescribeAccountPrivilegesRequest& request, const DescribeAccountPrivilegesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeAccountPrivileges(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+PostgresClient::DescribeAccountPrivilegesOutcomeCallable PostgresClient::DescribeAccountPrivilegesCallable(const DescribeAccountPrivilegesRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeAccountPrivilegesOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeAccountPrivileges(request);
         }
     );
 
@@ -1753,6 +1882,49 @@ PostgresClient::DescribeDBXlogsOutcomeCallable PostgresClient::DescribeDBXlogsCa
         [this, request]()
         {
             return this->DescribeDBXlogs(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+PostgresClient::DescribeDatabaseObjectsOutcome PostgresClient::DescribeDatabaseObjects(const DescribeDatabaseObjectsRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeDatabaseObjects");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeDatabaseObjectsResponse rsp = DescribeDatabaseObjectsResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeDatabaseObjectsOutcome(rsp);
+        else
+            return DescribeDatabaseObjectsOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeDatabaseObjectsOutcome(outcome.GetError());
+    }
+}
+
+void PostgresClient::DescribeDatabaseObjectsAsync(const DescribeDatabaseObjectsRequest& request, const DescribeDatabaseObjectsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeDatabaseObjects(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+PostgresClient::DescribeDatabaseObjectsOutcomeCallable PostgresClient::DescribeDatabaseObjectsCallable(const DescribeDatabaseObjectsRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeDatabaseObjectsOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeDatabaseObjects(request);
         }
     );
 
@@ -2699,6 +2871,92 @@ PostgresClient::IsolateDBInstancesOutcomeCallable PostgresClient::IsolateDBInsta
         [this, request]()
         {
             return this->IsolateDBInstances(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+PostgresClient::LockAccountOutcome PostgresClient::LockAccount(const LockAccountRequest &request)
+{
+    auto outcome = MakeRequest(request, "LockAccount");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        LockAccountResponse rsp = LockAccountResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return LockAccountOutcome(rsp);
+        else
+            return LockAccountOutcome(o.GetError());
+    }
+    else
+    {
+        return LockAccountOutcome(outcome.GetError());
+    }
+}
+
+void PostgresClient::LockAccountAsync(const LockAccountRequest& request, const LockAccountAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->LockAccount(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+PostgresClient::LockAccountOutcomeCallable PostgresClient::LockAccountCallable(const LockAccountRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<LockAccountOutcome()>>(
+        [this, request]()
+        {
+            return this->LockAccount(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+PostgresClient::ModifyAccountPrivilegesOutcome PostgresClient::ModifyAccountPrivileges(const ModifyAccountPrivilegesRequest &request)
+{
+    auto outcome = MakeRequest(request, "ModifyAccountPrivileges");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ModifyAccountPrivilegesResponse rsp = ModifyAccountPrivilegesResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ModifyAccountPrivilegesOutcome(rsp);
+        else
+            return ModifyAccountPrivilegesOutcome(o.GetError());
+    }
+    else
+    {
+        return ModifyAccountPrivilegesOutcome(outcome.GetError());
+    }
+}
+
+void PostgresClient::ModifyAccountPrivilegesAsync(const ModifyAccountPrivilegesRequest& request, const ModifyAccountPrivilegesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->ModifyAccountPrivileges(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+PostgresClient::ModifyAccountPrivilegesOutcomeCallable PostgresClient::ModifyAccountPrivilegesCallable(const ModifyAccountPrivilegesRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<ModifyAccountPrivilegesOutcome()>>(
+        [this, request]()
+        {
+            return this->ModifyAccountPrivileges(request);
         }
     );
 
@@ -3817,6 +4075,49 @@ PostgresClient::SwitchDBInstancePrimaryOutcomeCallable PostgresClient::SwitchDBI
         [this, request]()
         {
             return this->SwitchDBInstancePrimary(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+PostgresClient::UnlockAccountOutcome PostgresClient::UnlockAccount(const UnlockAccountRequest &request)
+{
+    auto outcome = MakeRequest(request, "UnlockAccount");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        UnlockAccountResponse rsp = UnlockAccountResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return UnlockAccountOutcome(rsp);
+        else
+            return UnlockAccountOutcome(o.GetError());
+    }
+    else
+    {
+        return UnlockAccountOutcome(outcome.GetError());
+    }
+}
+
+void PostgresClient::UnlockAccountAsync(const UnlockAccountRequest& request, const UnlockAccountAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->UnlockAccount(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+PostgresClient::UnlockAccountOutcomeCallable PostgresClient::UnlockAccountCallable(const UnlockAccountRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<UnlockAccountOutcome()>>(
+        [this, request]()
+        {
+            return this->UnlockAccount(request);
         }
     );
 

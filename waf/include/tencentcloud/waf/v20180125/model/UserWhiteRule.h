@@ -24,6 +24,7 @@
 #include <tencentcloud/core/utils/rapidjson/writer.h>
 #include <tencentcloud/core/utils/rapidjson/stringbuffer.h>
 #include <tencentcloud/core/AbstractModel.h>
+#include <tencentcloud/waf/v20180125/model/UserWhiteRuleItem.h>
 
 
 namespace TencentCloud
@@ -131,6 +132,31 @@ namespace TencentCloud
                     bool MatchFieldHasBeenSet() const;
 
                     /**
+                     * 获取匹配参数
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return MatchParams 匹配参数
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::string GetMatchParams() const;
+
+                    /**
+                     * 设置匹配参数
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _matchParams 匹配参数
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetMatchParams(const std::string& _matchParams);
+
+                    /**
+                     * 判断参数 MatchParams 是否已赋值
+                     * @return MatchParams 是否已赋值
+                     * 
+                     */
+                    bool MatchParamsHasBeenSet() const;
+
+                    /**
                      * 获取匹配方法
                      * @return MatchMethod 匹配方法
                      * 
@@ -214,6 +240,181 @@ namespace TencentCloud
                      */
                     bool ModifyTimeHasBeenSet() const;
 
+                    /**
+                     * 获取规则ID列表
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return SignatureIds 规则ID列表
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::vector<std::string> GetSignatureIds() const;
+
+                    /**
+                     * 设置规则ID列表
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _signatureIds 规则ID列表
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetSignatureIds(const std::vector<std::string>& _signatureIds);
+
+                    /**
+                     * 判断参数 SignatureIds 是否已赋值
+                     * @return SignatureIds 是否已赋值
+                     * 
+                     */
+                    bool SignatureIdsHasBeenSet() const;
+
+                    /**
+                     * 获取大类规则ID列表
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return TypeIds 大类规则ID列表
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::vector<std::string> GetTypeIds() const;
+
+                    /**
+                     * 设置大类规则ID列表
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _typeIds 大类规则ID列表
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetTypeIds(const std::vector<std::string>& _typeIds);
+
+                    /**
+                     * 判断参数 TypeIds 是否已赋值
+                     * @return TypeIds 是否已赋值
+                     * 
+                     */
+                    bool TypeIdsHasBeenSet() const;
+
+                    /**
+                     * 获取大类规则ID
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return TypeId 大类规则ID
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::string GetTypeId() const;
+
+                    /**
+                     * 设置大类规则ID
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _typeId 大类规则ID
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetTypeId(const std::string& _typeId);
+
+                    /**
+                     * 判断参数 TypeId 是否已赋值
+                     * @return TypeId 是否已赋值
+                     * 
+                     */
+                    bool TypeIdHasBeenSet() const;
+
+                    /**
+                     * 获取0:按照特定规则ID加白, 1:按照规则类型加白
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return Mode 0:按照特定规则ID加白, 1:按照规则类型加白
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    int64_t GetMode() const;
+
+                    /**
+                     * 设置0:按照特定规则ID加白, 1:按照规则类型加白
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _mode 0:按照特定规则ID加白, 1:按照规则类型加白
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetMode(const int64_t& _mode);
+
+                    /**
+                     * 判断参数 Mode 是否已赋值
+                     * @return Mode 是否已赋值
+                     * 
+                     */
+                    bool ModeHasBeenSet() const;
+
+                    /**
+                     * 获取规则名
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return Name 规则名
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::string GetName() const;
+
+                    /**
+                     * 设置规则名
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _name 规则名
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetName(const std::string& _name);
+
+                    /**
+                     * 判断参数 Name 是否已赋值
+                     * @return Name 是否已赋值
+                     * 
+                     */
+                    bool NameHasBeenSet() const;
+
+                    /**
+                     * 获取匹配规则列表
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return MatchInfo 匹配规则列表
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::vector<UserWhiteRuleItem> GetMatchInfo() const;
+
+                    /**
+                     * 设置匹配规则列表
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _matchInfo 匹配规则列表
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetMatchInfo(const std::vector<UserWhiteRuleItem>& _matchInfo);
+
+                    /**
+                     * 判断参数 MatchInfo 是否已赋值
+                     * @return MatchInfo 是否已赋值
+                     * 
+                     */
+                    bool MatchInfoHasBeenSet() const;
+
+                    /**
+                     * 获取MatchInfo字符串
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return MatchInfoStr MatchInfo字符串
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::string GetMatchInfoStr() const;
+
+                    /**
+                     * 设置MatchInfo字符串
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _matchInfoStr MatchInfo字符串
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetMatchInfoStr(const std::string& _matchInfoStr);
+
+                    /**
+                     * 判断参数 MatchInfoStr 是否已赋值
+                     * @return MatchInfoStr 是否已赋值
+                     * 
+                     */
+                    bool MatchInfoStrHasBeenSet() const;
+
                 private:
 
                     /**
@@ -241,6 +442,13 @@ namespace TencentCloud
                     bool m_matchFieldHasBeenSet;
 
                     /**
+                     * 匹配参数
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_matchParams;
+                    bool m_matchParamsHasBeenSet;
+
+                    /**
                      * 匹配方法
                      */
                     std::string m_matchMethod;
@@ -263,6 +471,55 @@ namespace TencentCloud
                      */
                     std::string m_modifyTime;
                     bool m_modifyTimeHasBeenSet;
+
+                    /**
+                     * 规则ID列表
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::vector<std::string> m_signatureIds;
+                    bool m_signatureIdsHasBeenSet;
+
+                    /**
+                     * 大类规则ID列表
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::vector<std::string> m_typeIds;
+                    bool m_typeIdsHasBeenSet;
+
+                    /**
+                     * 大类规则ID
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_typeId;
+                    bool m_typeIdHasBeenSet;
+
+                    /**
+                     * 0:按照特定规则ID加白, 1:按照规则类型加白
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    int64_t m_mode;
+                    bool m_modeHasBeenSet;
+
+                    /**
+                     * 规则名
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_name;
+                    bool m_nameHasBeenSet;
+
+                    /**
+                     * 匹配规则列表
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::vector<UserWhiteRuleItem> m_matchInfo;
+                    bool m_matchInfoHasBeenSet;
+
+                    /**
+                     * MatchInfo字符串
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_matchInfoStr;
+                    bool m_matchInfoStrHasBeenSet;
 
                 };
             }

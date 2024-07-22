@@ -2423,7 +2423,7 @@ namespace TencentCloud
                 UpgradeDBInstanceOutcomeCallable UpgradeDBInstanceCallable(const Model::UpgradeDBInstanceRequest& request);
 
                 /**
-                 *本接口(UpgradeDBInstanceEngineVersion)用于升级云数据库实例版本，实例类型支持主实例、灾备实例和只读实例。
+                 *本接口(UpgradeDBInstanceEngineVersion)用于升级云数据库实例版本，实例类型支持主实例、灾备实例和只读实例等。
                  * @param req UpgradeDBInstanceEngineVersionRequest
                  * @return UpgradeDBInstanceEngineVersionOutcome
                  */

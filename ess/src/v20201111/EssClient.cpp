@@ -1545,6 +1545,49 @@ EssClient::CreateOrganizationInfoChangeUrlOutcomeCallable EssClient::CreateOrgan
     return task->get_future();
 }
 
+EssClient::CreatePartnerAutoSignAuthUrlOutcome EssClient::CreatePartnerAutoSignAuthUrl(const CreatePartnerAutoSignAuthUrlRequest &request)
+{
+    auto outcome = MakeRequest(request, "CreatePartnerAutoSignAuthUrl");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        CreatePartnerAutoSignAuthUrlResponse rsp = CreatePartnerAutoSignAuthUrlResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return CreatePartnerAutoSignAuthUrlOutcome(rsp);
+        else
+            return CreatePartnerAutoSignAuthUrlOutcome(o.GetError());
+    }
+    else
+    {
+        return CreatePartnerAutoSignAuthUrlOutcome(outcome.GetError());
+    }
+}
+
+void EssClient::CreatePartnerAutoSignAuthUrlAsync(const CreatePartnerAutoSignAuthUrlRequest& request, const CreatePartnerAutoSignAuthUrlAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->CreatePartnerAutoSignAuthUrl(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+EssClient::CreatePartnerAutoSignAuthUrlOutcomeCallable EssClient::CreatePartnerAutoSignAuthUrlCallable(const CreatePartnerAutoSignAuthUrlRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<CreatePartnerAutoSignAuthUrlOutcome()>>(
+        [this, request]()
+        {
+            return this->CreatePartnerAutoSignAuthUrl(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 EssClient::CreatePersonAuthCertificateImageOutcome EssClient::CreatePersonAuthCertificateImage(const CreatePersonAuthCertificateImageRequest &request)
 {
     auto outcome = MakeRequest(request, "CreatePersonAuthCertificateImage");

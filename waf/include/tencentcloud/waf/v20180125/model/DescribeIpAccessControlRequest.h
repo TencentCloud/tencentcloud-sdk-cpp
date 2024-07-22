@@ -211,15 +211,15 @@ namespace TencentCloud
                     bool OffSetHasBeenSet() const;
 
                     /**
-                     * 获取每页返回的数量
-                     * @return Limit 每页返回的数量
+                     * 获取每页返回的数量，默认为20
+                     * @return Limit 每页返回的数量，默认为20
                      * 
                      */
                     uint64_t GetLimit() const;
 
                     /**
-                     * 设置每页返回的数量
-                     * @param _limit 每页返回的数量
+                     * 设置每页返回的数量，默认为20
+                     * @param _limit 每页返回的数量，默认为20
                      * 
                      */
                     void SetLimit(const uint64_t& _limit);
@@ -378,6 +378,27 @@ namespace TencentCloud
                      */
                     bool RuleIdHasBeenSet() const;
 
+                    /**
+                     * 获取定时任务类型筛选0 1 2 3 4
+                     * @return TimerType 定时任务类型筛选0 1 2 3 4
+                     * 
+                     */
+                    int64_t GetTimerType() const;
+
+                    /**
+                     * 设置定时任务类型筛选0 1 2 3 4
+                     * @param _timerType 定时任务类型筛选0 1 2 3 4
+                     * 
+                     */
+                    void SetTimerType(const int64_t& _timerType);
+
+                    /**
+                     * 判断参数 TimerType 是否已赋值
+                     * @return TimerType 是否已赋值
+                     * 
+                     */
+                    bool TimerTypeHasBeenSet() const;
+
                 private:
 
                     /**
@@ -429,7 +450,7 @@ namespace TencentCloud
                     bool m_offSetHasBeenSet;
 
                     /**
-                     * 每页返回的数量
+                     * 每页返回的数量，默认为20
                      */
                     uint64_t m_limit;
                     bool m_limitHasBeenSet;
@@ -475,6 +496,12 @@ namespace TencentCloud
                      */
                     uint64_t m_ruleId;
                     bool m_ruleIdHasBeenSet;
+
+                    /**
+                     * 定时任务类型筛选0 1 2 3 4
+                     */
+                    int64_t m_timerType;
+                    bool m_timerTypeHasBeenSet;
 
                 };
             }

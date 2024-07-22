@@ -27,7 +27,8 @@ UpgradeDBInstanceEngineVersionRequest::UpgradeDBInstanceEngineVersionRequest() :
     m_engineVersionHasBeenSet(false),
     m_waitSwitchHasBeenSet(false),
     m_upgradeSubversionHasBeenSet(false),
-    m_maxDelayTimeHasBeenSet(false)
+    m_maxDelayTimeHasBeenSet(false),
+    m_paramListHasBeenSet(false)
 {
 }
 
@@ -76,6 +77,21 @@ string UpgradeDBInstanceEngineVersionRequest::ToJsonString() const
         string key = "MaxDelayTime";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_maxDelayTime, allocator);
+    }
+
+    if (m_paramListHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ParamList";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_paramList.begin(); itr != m_paramList.end(); ++itr, ++i)
+        {
+            d[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(d[key.c_str()][i], allocator);
+        }
     }
 
 
@@ -164,6 +180,22 @@ void UpgradeDBInstanceEngineVersionRequest::SetMaxDelayTime(const int64_t& _maxD
 bool UpgradeDBInstanceEngineVersionRequest::MaxDelayTimeHasBeenSet() const
 {
     return m_maxDelayTimeHasBeenSet;
+}
+
+vector<UpgradeEngineVersionParams> UpgradeDBInstanceEngineVersionRequest::GetParamList() const
+{
+    return m_paramList;
+}
+
+void UpgradeDBInstanceEngineVersionRequest::SetParamList(const vector<UpgradeEngineVersionParams>& _paramList)
+{
+    m_paramList = _paramList;
+    m_paramListHasBeenSet = true;
+}
+
+bool UpgradeDBInstanceEngineVersionRequest::ParamListHasBeenSet() const
+{
+    return m_paramListHasBeenSet;
 }
 
 

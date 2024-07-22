@@ -30,7 +30,9 @@ CreateIpAccessControlRequest::CreateIpAccessControlRequest() :
     m_instanceIdHasBeenSet(false),
     m_editionHasBeenSet(false),
     m_sourceTypeHasBeenSet(false),
-    m_noteHasBeenSet(false)
+    m_noteHasBeenSet(false),
+    m_jobTypeHasBeenSet(false),
+    m_jobDateTimeHasBeenSet(false)
 {
 }
 
@@ -108,6 +110,23 @@ string CreateIpAccessControlRequest::ToJsonString() const
         string key = "Note";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_note.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_jobTypeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "JobType";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_jobType.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_jobDateTimeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "JobDateTime";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_jobDateTime.ToJsonObject(d[key.c_str()], allocator);
     }
 
 
@@ -244,6 +263,38 @@ void CreateIpAccessControlRequest::SetNote(const string& _note)
 bool CreateIpAccessControlRequest::NoteHasBeenSet() const
 {
     return m_noteHasBeenSet;
+}
+
+string CreateIpAccessControlRequest::GetJobType() const
+{
+    return m_jobType;
+}
+
+void CreateIpAccessControlRequest::SetJobType(const string& _jobType)
+{
+    m_jobType = _jobType;
+    m_jobTypeHasBeenSet = true;
+}
+
+bool CreateIpAccessControlRequest::JobTypeHasBeenSet() const
+{
+    return m_jobTypeHasBeenSet;
+}
+
+JobDateTime CreateIpAccessControlRequest::GetJobDateTime() const
+{
+    return m_jobDateTime;
+}
+
+void CreateIpAccessControlRequest::SetJobDateTime(const JobDateTime& _jobDateTime)
+{
+    m_jobDateTime = _jobDateTime;
+    m_jobDateTimeHasBeenSet = true;
+}
+
+bool CreateIpAccessControlRequest::JobDateTimeHasBeenSet() const
+{
+    return m_jobDateTimeHasBeenSet;
 }
 
 

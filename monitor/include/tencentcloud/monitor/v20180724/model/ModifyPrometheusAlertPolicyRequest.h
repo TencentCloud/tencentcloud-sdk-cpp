@@ -44,15 +44,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取实例id
-                     * @return InstanceId 实例id
+                     * 获取Prometheus 实例 ID
+                     * @return InstanceId Prometheus 实例 ID
                      * 
                      */
                     std::string GetInstanceId() const;
 
                     /**
-                     * 设置实例id
-                     * @param _instanceId 实例id
+                     * 设置Prometheus 实例 ID
+                     * @param _instanceId Prometheus 实例 ID
                      * 
                      */
                     void SetInstanceId(const std::string& _instanceId);
@@ -65,15 +65,15 @@ namespace TencentCloud
                     bool InstanceIdHasBeenSet() const;
 
                     /**
-                     * 获取告警配置
-                     * @return AlertRule 告警配置
+                     * 获取告警配置，[具体参考](https://cloud.tencent.com/document/api/248/30354#PrometheusAlertPolicyItem)
+                     * @return AlertRule 告警配置，[具体参考](https://cloud.tencent.com/document/api/248/30354#PrometheusAlertPolicyItem)
                      * 
                      */
                     PrometheusAlertPolicyItem GetAlertRule() const;
 
                     /**
-                     * 设置告警配置
-                     * @param _alertRule 告警配置
+                     * 设置告警配置，[具体参考](https://cloud.tencent.com/document/api/248/30354#PrometheusAlertPolicyItem)
+                     * @param _alertRule 告警配置，[具体参考](https://cloud.tencent.com/document/api/248/30354#PrometheusAlertPolicyItem)
                      * 
                      */
                     void SetAlertRule(const PrometheusAlertPolicyItem& _alertRule);
@@ -88,13 +88,13 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 实例id
+                     * Prometheus 实例 ID
                      */
                     std::string m_instanceId;
                     bool m_instanceIdHasBeenSet;
 
                     /**
-                     * 告警配置
+                     * 告警配置，[具体参考](https://cloud.tencent.com/document/api/248/30354#PrometheusAlertPolicyItem)
                      */
                     PrometheusAlertPolicyItem m_alertRule;
                     bool m_alertRuleHasBeenSet;

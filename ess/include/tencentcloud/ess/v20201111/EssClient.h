@@ -93,6 +93,8 @@
 #include <tencentcloud/ess/v20201111/model/CreateOrganizationGroupInvitationLinkResponse.h>
 #include <tencentcloud/ess/v20201111/model/CreateOrganizationInfoChangeUrlRequest.h>
 #include <tencentcloud/ess/v20201111/model/CreateOrganizationInfoChangeUrlResponse.h>
+#include <tencentcloud/ess/v20201111/model/CreatePartnerAutoSignAuthUrlRequest.h>
+#include <tencentcloud/ess/v20201111/model/CreatePartnerAutoSignAuthUrlResponse.h>
 #include <tencentcloud/ess/v20201111/model/CreatePersonAuthCertificateImageRequest.h>
 #include <tencentcloud/ess/v20201111/model/CreatePersonAuthCertificateImageResponse.h>
 #include <tencentcloud/ess/v20201111/model/CreatePrepareFlowRequest.h>
@@ -316,6 +318,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::CreateOrganizationInfoChangeUrlResponse> CreateOrganizationInfoChangeUrlOutcome;
                 typedef std::future<CreateOrganizationInfoChangeUrlOutcome> CreateOrganizationInfoChangeUrlOutcomeCallable;
                 typedef std::function<void(const EssClient*, const Model::CreateOrganizationInfoChangeUrlRequest&, CreateOrganizationInfoChangeUrlOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateOrganizationInfoChangeUrlAsyncHandler;
+                typedef Outcome<Core::Error, Model::CreatePartnerAutoSignAuthUrlResponse> CreatePartnerAutoSignAuthUrlOutcome;
+                typedef std::future<CreatePartnerAutoSignAuthUrlOutcome> CreatePartnerAutoSignAuthUrlOutcomeCallable;
+                typedef std::function<void(const EssClient*, const Model::CreatePartnerAutoSignAuthUrlRequest&, CreatePartnerAutoSignAuthUrlOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreatePartnerAutoSignAuthUrlAsyncHandler;
                 typedef Outcome<Core::Error, Model::CreatePersonAuthCertificateImageResponse> CreatePersonAuthCertificateImageOutcome;
                 typedef std::future<CreatePersonAuthCertificateImageOutcome> CreatePersonAuthCertificateImageOutcomeCallable;
                 typedef std::function<void(const EssClient*, const Model::CreatePersonAuthCertificateImageRequest&, CreatePersonAuthCertificateImageOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreatePersonAuthCertificateImageAsyncHandler;
@@ -1222,6 +1227,22 @@ p.s.
                 CreateOrganizationInfoChangeUrlOutcome CreateOrganizationInfoChangeUrl(const Model::CreateOrganizationInfoChangeUrlRequest &request);
                 void CreateOrganizationInfoChangeUrlAsync(const Model::CreateOrganizationInfoChangeUrlRequest& request, const CreateOrganizationInfoChangeUrlAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 CreateOrganizationInfoChangeUrlOutcomeCallable CreateOrganizationInfoChangeUrlCallable(const Model::CreateOrganizationInfoChangeUrlRequest& request);
+
+                /**
+                 *创建他方自动签授权链接，通过该链接可进入小程序进行合作方企业的自动签授权，若当前企业未开通企业自动签，通过该链接会先引导开通本企业自动签。
+该接口效果同控制台： 企业设置-> 扩展服务 -> 企业自动签署 -> 合作企业方授权
+
+
+
+注: 
+1. <font color='red'>所在企业的超管、法人才有权限调用此接口</font>(Operator.UserId 需要传递超管或者法人的UserId)
+2. 已经在授权中或者授权成功的企业，无法重复授权
+                 * @param req CreatePartnerAutoSignAuthUrlRequest
+                 * @return CreatePartnerAutoSignAuthUrlOutcome
+                 */
+                CreatePartnerAutoSignAuthUrlOutcome CreatePartnerAutoSignAuthUrl(const Model::CreatePartnerAutoSignAuthUrlRequest &request);
+                void CreatePartnerAutoSignAuthUrlAsync(const Model::CreatePartnerAutoSignAuthUrlRequest& request, const CreatePartnerAutoSignAuthUrlAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                CreatePartnerAutoSignAuthUrlOutcomeCallable CreatePartnerAutoSignAuthUrlCallable(const Model::CreatePartnerAutoSignAuthUrlRequest& request);
 
                 /**
                  *获取个人用户认证证书图片下载URL

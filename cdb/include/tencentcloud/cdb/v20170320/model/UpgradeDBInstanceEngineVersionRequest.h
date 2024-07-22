@@ -21,6 +21,7 @@
 #include <vector>
 #include <map>
 #include <tencentcloud/core/AbstractModel.h>
+#include <tencentcloud/cdb/v20170320/model/UpgradeEngineVersionParams.h>
 
 
 namespace TencentCloud
@@ -147,6 +148,27 @@ namespace TencentCloud
                      */
                     bool MaxDelayTimeHasBeenSet() const;
 
+                    /**
+                     * 获取版本升级支持指定参数
+                     * @return ParamList 版本升级支持指定参数
+                     * 
+                     */
+                    std::vector<UpgradeEngineVersionParams> GetParamList() const;
+
+                    /**
+                     * 设置版本升级支持指定参数
+                     * @param _paramList 版本升级支持指定参数
+                     * 
+                     */
+                    void SetParamList(const std::vector<UpgradeEngineVersionParams>& _paramList);
+
+                    /**
+                     * 判断参数 ParamList 是否已赋值
+                     * @return ParamList 是否已赋值
+                     * 
+                     */
+                    bool ParamListHasBeenSet() const;
+
                 private:
 
                     /**
@@ -178,6 +200,12 @@ namespace TencentCloud
                      */
                     int64_t m_maxDelayTime;
                     bool m_maxDelayTimeHasBeenSet;
+
+                    /**
+                     * 版本升级支持指定参数
+                     */
+                    std::vector<UpgradeEngineVersionParams> m_paramList;
+                    bool m_paramListHasBeenSet;
 
                 };
             }

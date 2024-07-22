@@ -31,7 +31,10 @@ IpAccessControlItem::IpAccessControlItem() :
     m_validStatusHasBeenSet(false),
     m_ruleIdHasBeenSet(false),
     m_ipListHasBeenSet(false),
-    m_createTimeHasBeenSet(false)
+    m_createTimeHasBeenSet(false),
+    m_jobTypeHasBeenSet(false),
+    m_cronTypeHasBeenSet(false),
+    m_jobDateTimeHasBeenSet(false)
 {
 }
 
@@ -153,6 +156,43 @@ CoreInternalOutcome IpAccessControlItem::Deserialize(const rapidjson::Value &val
         m_createTimeHasBeenSet = true;
     }
 
+    if (value.HasMember("JobType") && !value["JobType"].IsNull())
+    {
+        if (!value["JobType"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `IpAccessControlItem.JobType` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_jobType = string(value["JobType"].GetString());
+        m_jobTypeHasBeenSet = true;
+    }
+
+    if (value.HasMember("CronType") && !value["CronType"].IsNull())
+    {
+        if (!value["CronType"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `IpAccessControlItem.CronType` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_cronType = string(value["CronType"].GetString());
+        m_cronTypeHasBeenSet = true;
+    }
+
+    if (value.HasMember("JobDateTime") && !value["JobDateTime"].IsNull())
+    {
+        if (!value["JobDateTime"].IsObject())
+        {
+            return CoreInternalOutcome(Core::Error("response `IpAccessControlItem.JobDateTime` is not object type").SetRequestId(requestId));
+        }
+
+        CoreInternalOutcome outcome = m_jobDateTime.Deserialize(value["JobDateTime"]);
+        if (!outcome.IsSuccess())
+        {
+            outcome.GetError().SetRequestId(requestId);
+            return outcome;
+        }
+
+        m_jobDateTimeHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -251,6 +291,31 @@ void IpAccessControlItem::ToJsonObject(rapidjson::Value &value, rapidjson::Docum
         string key = "CreateTime";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_createTime, allocator);
+    }
+
+    if (m_jobTypeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "JobType";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_jobType.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_cronTypeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "CronType";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_cronType.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_jobDateTimeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "JobDateTime";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_jobDateTime.ToJsonObject(value[key.c_str()], allocator);
     }
 
 }
@@ -430,5 +495,53 @@ void IpAccessControlItem::SetCreateTime(const uint64_t& _createTime)
 bool IpAccessControlItem::CreateTimeHasBeenSet() const
 {
     return m_createTimeHasBeenSet;
+}
+
+string IpAccessControlItem::GetJobType() const
+{
+    return m_jobType;
+}
+
+void IpAccessControlItem::SetJobType(const string& _jobType)
+{
+    m_jobType = _jobType;
+    m_jobTypeHasBeenSet = true;
+}
+
+bool IpAccessControlItem::JobTypeHasBeenSet() const
+{
+    return m_jobTypeHasBeenSet;
+}
+
+string IpAccessControlItem::GetCronType() const
+{
+    return m_cronType;
+}
+
+void IpAccessControlItem::SetCronType(const string& _cronType)
+{
+    m_cronType = _cronType;
+    m_cronTypeHasBeenSet = true;
+}
+
+bool IpAccessControlItem::CronTypeHasBeenSet() const
+{
+    return m_cronTypeHasBeenSet;
+}
+
+JobDateTime IpAccessControlItem::GetJobDateTime() const
+{
+    return m_jobDateTime;
+}
+
+void IpAccessControlItem::SetJobDateTime(const JobDateTime& _jobDateTime)
+{
+    m_jobDateTime = _jobDateTime;
+    m_jobDateTimeHasBeenSet = true;
+}
+
+bool IpAccessControlItem::JobDateTimeHasBeenSet() const
+{
+    return m_jobDateTimeHasBeenSet;
 }
 

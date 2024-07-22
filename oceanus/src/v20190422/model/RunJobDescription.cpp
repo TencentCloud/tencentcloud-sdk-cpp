@@ -28,7 +28,8 @@ RunJobDescription::RunJobDescription() :
     m_savepointPathHasBeenSet(false),
     m_savepointIdHasBeenSet(false),
     m_useOldSystemConnectorHasBeenSet(false),
-    m_customTimestampHasBeenSet(false)
+    m_customTimestampHasBeenSet(false),
+    m_kafkaScanModeHasBeenSet(false)
 {
 }
 
@@ -117,6 +118,16 @@ CoreInternalOutcome RunJobDescription::Deserialize(const rapidjson::Value &value
         m_customTimestampHasBeenSet = true;
     }
 
+    if (value.HasMember("KafkaScanMode") && !value["KafkaScanMode"].IsNull())
+    {
+        if (!value["KafkaScanMode"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `RunJobDescription.KafkaScanMode` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_kafkaScanMode = string(value["KafkaScanMode"].GetString());
+        m_kafkaScanModeHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -186,6 +197,14 @@ void RunJobDescription::ToJsonObject(rapidjson::Value &value, rapidjson::Documen
         string key = "CustomTimestamp";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_customTimestamp, allocator);
+    }
+
+    if (m_kafkaScanModeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "KafkaScanMode";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_kafkaScanMode.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -317,5 +336,21 @@ void RunJobDescription::SetCustomTimestamp(const int64_t& _customTimestamp)
 bool RunJobDescription::CustomTimestampHasBeenSet() const
 {
     return m_customTimestampHasBeenSet;
+}
+
+string RunJobDescription::GetKafkaScanMode() const
+{
+    return m_kafkaScanMode;
+}
+
+void RunJobDescription::SetKafkaScanMode(const string& _kafkaScanMode)
+{
+    m_kafkaScanMode = _kafkaScanMode;
+    m_kafkaScanModeHasBeenSet = true;
+}
+
+bool RunJobDescription::KafkaScanModeHasBeenSet() const
+{
+    return m_kafkaScanModeHasBeenSet;
 }
 

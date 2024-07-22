@@ -60,7 +60,8 @@ InstanceInfo::InstanceInfo() :
     m_miniMaxQPSHasBeenSet(false),
     m_lastQpsExceedTimeHasBeenSet(false),
     m_miniExtendPkgHasBeenSet(false),
-    m_billingItemHasBeenSet(false)
+    m_billingItemHasBeenSet(false),
+    m_freeDelayFlagHasBeenSet(false)
 {
 }
 
@@ -539,6 +540,16 @@ CoreInternalOutcome InstanceInfo::Deserialize(const rapidjson::Value &value)
         m_billingItemHasBeenSet = true;
     }
 
+    if (value.HasMember("FreeDelayFlag") && !value["FreeDelayFlag"].IsNull())
+    {
+        if (!value["FreeDelayFlag"].IsUint64())
+        {
+            return CoreInternalOutcome(Core::Error("response `InstanceInfo.FreeDelayFlag` IsUint64=false incorrectly").SetRequestId(requestId));
+        }
+        m_freeDelayFlag = value["FreeDelayFlag"].GetUint64();
+        m_freeDelayFlagHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -874,6 +885,14 @@ void InstanceInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Al
         string key = "BillingItem";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_billingItem.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_freeDelayFlagHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "FreeDelayFlag";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_freeDelayFlag, allocator);
     }
 
 }
@@ -1517,5 +1536,21 @@ void InstanceInfo::SetBillingItem(const string& _billingItem)
 bool InstanceInfo::BillingItemHasBeenSet() const
 {
     return m_billingItemHasBeenSet;
+}
+
+uint64_t InstanceInfo::GetFreeDelayFlag() const
+{
+    return m_freeDelayFlag;
+}
+
+void InstanceInfo::SetFreeDelayFlag(const uint64_t& _freeDelayFlag)
+{
+    m_freeDelayFlag = _freeDelayFlag;
+    m_freeDelayFlagHasBeenSet = true;
+}
+
+bool InstanceInfo::FreeDelayFlagHasBeenSet() const
+{
+    return m_freeDelayFlagHasBeenSet;
 }
 

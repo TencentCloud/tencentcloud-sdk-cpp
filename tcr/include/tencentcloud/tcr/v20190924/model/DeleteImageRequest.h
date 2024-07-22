@@ -64,6 +64,27 @@ namespace TencentCloud
                     bool RegistryIdHasBeenSet() const;
 
                     /**
+                     * 获取命名空间名称
+                     * @return NamespaceName 命名空间名称
+                     * 
+                     */
+                    std::string GetNamespaceName() const;
+
+                    /**
+                     * 设置命名空间名称
+                     * @param _namespaceName 命名空间名称
+                     * 
+                     */
+                    void SetNamespaceName(const std::string& _namespaceName);
+
+                    /**
+                     * 判断参数 NamespaceName 是否已赋值
+                     * @return NamespaceName 是否已赋值
+                     * 
+                     */
+                    bool NamespaceNameHasBeenSet() const;
+
+                    /**
                      * 获取镜像仓库名称
                      * @return RepositoryName 镜像仓库名称
                      * 
@@ -105,27 +126,6 @@ namespace TencentCloud
                      */
                     bool ImageVersionHasBeenSet() const;
 
-                    /**
-                     * 获取命名空间名称
-                     * @return NamespaceName 命名空间名称
-                     * 
-                     */
-                    std::string GetNamespaceName() const;
-
-                    /**
-                     * 设置命名空间名称
-                     * @param _namespaceName 命名空间名称
-                     * 
-                     */
-                    void SetNamespaceName(const std::string& _namespaceName);
-
-                    /**
-                     * 判断参数 NamespaceName 是否已赋值
-                     * @return NamespaceName 是否已赋值
-                     * 
-                     */
-                    bool NamespaceNameHasBeenSet() const;
-
                 private:
 
                     /**
@@ -133,6 +133,12 @@ namespace TencentCloud
                      */
                     std::string m_registryId;
                     bool m_registryIdHasBeenSet;
+
+                    /**
+                     * 命名空间名称
+                     */
+                    std::string m_namespaceName;
+                    bool m_namespaceNameHasBeenSet;
 
                     /**
                      * 镜像仓库名称
@@ -145,12 +151,6 @@ namespace TencentCloud
                      */
                     std::string m_imageVersion;
                     bool m_imageVersionHasBeenSet;
-
-                    /**
-                     * 命名空间名称
-                     */
-                    std::string m_namespaceName;
-                    bool m_namespaceNameHasBeenSet;
 
                 };
             }

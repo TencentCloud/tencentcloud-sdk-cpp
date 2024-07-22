@@ -169,6 +169,69 @@ namespace TencentCloud
                      */
                     bool SignatureIdsHasBeenSet() const;
 
+                    /**
+                     * 获取加白的大类规则ID
+                     * @return TypeIds 加白的大类规则ID
+                     * 
+                     */
+                    std::vector<std::string> GetTypeIds() const;
+
+                    /**
+                     * 设置加白的大类规则ID
+                     * @param _typeIds 加白的大类规则ID
+                     * 
+                     */
+                    void SetTypeIds(const std::vector<std::string>& _typeIds);
+
+                    /**
+                     * 判断参数 TypeIds 是否已赋值
+                     * @return TypeIds 是否已赋值
+                     * 
+                     */
+                    bool TypeIdsHasBeenSet() const;
+
+                    /**
+                     * 获取0:按照特定规则ID加白, 1:按照规则类型加白
+                     * @return Mode 0:按照特定规则ID加白, 1:按照规则类型加白
+                     * 
+                     */
+                    int64_t GetMode() const;
+
+                    /**
+                     * 设置0:按照特定规则ID加白, 1:按照规则类型加白
+                     * @param _mode 0:按照特定规则ID加白, 1:按照规则类型加白
+                     * 
+                     */
+                    void SetMode(const int64_t& _mode);
+
+                    /**
+                     * 判断参数 Mode 是否已赋值
+                     * @return Mode 是否已赋值
+                     * 
+                     */
+                    bool ModeHasBeenSet() const;
+
+                    /**
+                     * 获取规则名
+                     * @return Name 规则名
+                     * 
+                     */
+                    std::string GetName() const;
+
+                    /**
+                     * 设置规则名
+                     * @param _name 规则名
+                     * 
+                     */
+                    void SetName(const std::string& _name);
+
+                    /**
+                     * 判断参数 Name 是否已赋值
+                     * @return Name 是否已赋值
+                     * 
+                     */
+                    bool NameHasBeenSet() const;
+
                 private:
 
                     /**
@@ -206,6 +269,24 @@ namespace TencentCloud
                      */
                     std::vector<std::string> m_signatureIds;
                     bool m_signatureIdsHasBeenSet;
+
+                    /**
+                     * 加白的大类规则ID
+                     */
+                    std::vector<std::string> m_typeIds;
+                    bool m_typeIdsHasBeenSet;
+
+                    /**
+                     * 0:按照特定规则ID加白, 1:按照规则类型加白
+                     */
+                    int64_t m_mode;
+                    bool m_modeHasBeenSet;
+
+                    /**
+                     * 规则名
+                     */
+                    std::string m_name;
+                    bool m_nameHasBeenSet;
 
                 };
             }

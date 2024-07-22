@@ -222,6 +222,27 @@ namespace TencentCloud
                      */
                     bool CustomTimestampHasBeenSet() const;
 
+                    /**
+                     * 获取timestamp; latest-offset;  earliest-offset; 任选一种
+                     * @return KafkaScanMode timestamp; latest-offset;  earliest-offset; 任选一种
+                     * 
+                     */
+                    std::string GetKafkaScanMode() const;
+
+                    /**
+                     * 设置timestamp; latest-offset;  earliest-offset; 任选一种
+                     * @param _kafkaScanMode timestamp; latest-offset;  earliest-offset; 任选一种
+                     * 
+                     */
+                    void SetKafkaScanMode(const std::string& _kafkaScanMode);
+
+                    /**
+                     * 判断参数 KafkaScanMode 是否已赋值
+                     * @return KafkaScanMode 是否已赋值
+                     * 
+                     */
+                    bool KafkaScanModeHasBeenSet() const;
+
                 private:
 
                     /**
@@ -273,6 +294,12 @@ namespace TencentCloud
                      */
                     int64_t m_customTimestamp;
                     bool m_customTimestampHasBeenSet;
+
+                    /**
+                     * timestamp; latest-offset;  earliest-offset; 任选一种
+                     */
+                    std::string m_kafkaScanMode;
+                    bool m_kafkaScanModeHasBeenSet;
 
                 };
             }

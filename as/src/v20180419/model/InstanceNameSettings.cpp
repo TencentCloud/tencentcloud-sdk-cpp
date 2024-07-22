@@ -22,7 +22,8 @@ using namespace std;
 
 InstanceNameSettings::InstanceNameSettings() :
     m_instanceNameHasBeenSet(false),
-    m_instanceNameStyleHasBeenSet(false)
+    m_instanceNameStyleHasBeenSet(false),
+    m_instanceNameSuffixHasBeenSet(false)
 {
 }
 
@@ -51,6 +52,16 @@ CoreInternalOutcome InstanceNameSettings::Deserialize(const rapidjson::Value &va
         m_instanceNameStyleHasBeenSet = true;
     }
 
+    if (value.HasMember("InstanceNameSuffix") && !value["InstanceNameSuffix"].IsNull())
+    {
+        if (!value["InstanceNameSuffix"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `InstanceNameSettings.InstanceNameSuffix` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_instanceNameSuffix = string(value["InstanceNameSuffix"].GetString());
+        m_instanceNameSuffixHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -72,6 +83,14 @@ void InstanceNameSettings::ToJsonObject(rapidjson::Value &value, rapidjson::Docu
         string key = "InstanceNameStyle";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_instanceNameStyle.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_instanceNameSuffixHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "InstanceNameSuffix";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_instanceNameSuffix.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -107,5 +126,21 @@ void InstanceNameSettings::SetInstanceNameStyle(const string& _instanceNameStyle
 bool InstanceNameSettings::InstanceNameStyleHasBeenSet() const
 {
     return m_instanceNameStyleHasBeenSet;
+}
+
+string InstanceNameSettings::GetInstanceNameSuffix() const
+{
+    return m_instanceNameSuffix;
+}
+
+void InstanceNameSettings::SetInstanceNameSuffix(const string& _instanceNameSuffix)
+{
+    m_instanceNameSuffix = _instanceNameSuffix;
+    m_instanceNameSuffixHasBeenSet = true;
+}
+
+bool InstanceNameSettings::InstanceNameSuffixHasBeenSet() const
+{
+    return m_instanceNameSuffixHasBeenSet;
 }
 

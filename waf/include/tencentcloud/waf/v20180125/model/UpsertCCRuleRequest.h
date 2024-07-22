@@ -420,6 +420,27 @@ namespace TencentCloud
                      */
                     bool CreateTimeHasBeenSet() const;
 
+                    /**
+                     * 获取url长度
+                     * @return Length url长度
+                     * 
+                     */
+                    uint64_t GetLength() const;
+
+                    /**
+                     * 设置url长度
+                     * @param _length url长度
+                     * 
+                     */
+                    void SetLength(const uint64_t& _length);
+
+                    /**
+                     * 判断参数 Length 是否已赋值
+                     * @return Length 是否已赋值
+                     * 
+                     */
+                    bool LengthHasBeenSet() const;
+
                 private:
 
                     /**
@@ -529,6 +550,12 @@ namespace TencentCloud
                      */
                     uint64_t m_createTime;
                     bool m_createTimeHasBeenSet;
+
+                    /**
+                     * url长度
+                     */
+                    uint64_t m_length;
+                    bool m_lengthHasBeenSet;
 
                 };
             }

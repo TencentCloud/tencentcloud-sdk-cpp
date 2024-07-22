@@ -234,6 +234,31 @@ namespace TencentCloud
                      */
                     bool SkillGroupTypeHasBeenSet() const;
 
+                    /**
+                     * 获取技能组内线号码
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return Alias 技能组内线号码
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::string GetAlias() const;
+
+                    /**
+                     * 设置技能组内线号码
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _alias 技能组内线号码
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetAlias(const std::string& _alias);
+
+                    /**
+                     * 判断参数 Alias 是否已赋值
+                     * @return Alias 是否已赋值
+                     * 
+                     */
+                    bool AliasHasBeenSet() const;
+
                 private:
 
                     /**
@@ -288,6 +313,13 @@ namespace TencentCloud
                      */
                     int64_t m_skillGroupType;
                     bool m_skillGroupTypeHasBeenSet;
+
+                    /**
+                     * 技能组内线号码
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_alias;
+                    bool m_aliasHasBeenSet;
 
                 };
             }

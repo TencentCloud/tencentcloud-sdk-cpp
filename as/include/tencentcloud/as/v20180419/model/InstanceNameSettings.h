@@ -104,6 +104,39 @@ UNIQUE，入参所填的 InstanceName 相当于实例名前缀，AS 和 CVM 会�
                      */
                     bool InstanceNameStyleHasBeenSet() const;
 
+                    /**
+                     * 获取云服务器实例名后缀。字符长度为[1,105]，且与 InstanceName 的长度和不能超过107。
+
+假设后缀名称为 suffix，原实例名为 test.0，最终实例名为 test.0.suffix。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return InstanceNameSuffix 云服务器实例名后缀。字符长度为[1,105]，且与 InstanceName 的长度和不能超过107。
+
+假设后缀名称为 suffix，原实例名为 test.0，最终实例名为 test.0.suffix。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::string GetInstanceNameSuffix() const;
+
+                    /**
+                     * 设置云服务器实例名后缀。字符长度为[1,105]，且与 InstanceName 的长度和不能超过107。
+
+假设后缀名称为 suffix，原实例名为 test.0，最终实例名为 test.0.suffix。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _instanceNameSuffix 云服务器实例名后缀。字符长度为[1,105]，且与 InstanceName 的长度和不能超过107。
+
+假设后缀名称为 suffix，原实例名为 test.0，最终实例名为 test.0.suffix。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetInstanceNameSuffix(const std::string& _instanceNameSuffix);
+
+                    /**
+                     * 判断参数 InstanceNameSuffix 是否已赋值
+                     * @return InstanceNameSuffix 是否已赋值
+                     * 
+                     */
+                    bool InstanceNameSuffixHasBeenSet() const;
+
                 private:
 
                     /**
@@ -121,6 +154,15 @@ UNIQUE，入参所填的 InstanceName 相当于实例名前缀，AS 和 CVM 会�
                      */
                     std::string m_instanceNameStyle;
                     bool m_instanceNameStyleHasBeenSet;
+
+                    /**
+                     * 云服务器实例名后缀。字符长度为[1,105]，且与 InstanceName 的长度和不能超过107。
+
+假设后缀名称为 suffix，原实例名为 test.0，最终实例名为 test.0.suffix。
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_instanceNameSuffix;
+                    bool m_instanceNameSuffixHasBeenSet;
 
                 };
             }

@@ -23,7 +23,8 @@ using namespace std;
 UserWhiteRuleItem::UserWhiteRuleItem() :
     m_matchFieldHasBeenSet(false),
     m_matchMethodHasBeenSet(false),
-    m_matchContentHasBeenSet(false)
+    m_matchContentHasBeenSet(false),
+    m_matchParamsHasBeenSet(false)
 {
 }
 
@@ -62,6 +63,16 @@ CoreInternalOutcome UserWhiteRuleItem::Deserialize(const rapidjson::Value &value
         m_matchContentHasBeenSet = true;
     }
 
+    if (value.HasMember("MatchParams") && !value["MatchParams"].IsNull())
+    {
+        if (!value["MatchParams"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `UserWhiteRuleItem.MatchParams` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_matchParams = string(value["MatchParams"].GetString());
+        m_matchParamsHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -91,6 +102,14 @@ void UserWhiteRuleItem::ToJsonObject(rapidjson::Value &value, rapidjson::Documen
         string key = "MatchContent";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_matchContent.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_matchParamsHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "MatchParams";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_matchParams.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -142,5 +161,21 @@ void UserWhiteRuleItem::SetMatchContent(const string& _matchContent)
 bool UserWhiteRuleItem::MatchContentHasBeenSet() const
 {
     return m_matchContentHasBeenSet;
+}
+
+string UserWhiteRuleItem::GetMatchParams() const
+{
+    return m_matchParams;
+}
+
+void UserWhiteRuleItem::SetMatchParams(const string& _matchParams)
+{
+    m_matchParams = _matchParams;
+    m_matchParamsHasBeenSet = true;
+}
+
+bool UserWhiteRuleItem::MatchParamsHasBeenSet() const
+{
+    return m_matchParamsHasBeenSet;
 }
 

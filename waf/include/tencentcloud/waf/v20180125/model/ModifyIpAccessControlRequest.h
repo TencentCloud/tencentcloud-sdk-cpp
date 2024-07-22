@@ -21,6 +21,7 @@
 #include <vector>
 #include <map>
 #include <tencentcloud/core/AbstractModel.h>
+#include <tencentcloud/waf/v20180125/model/JobDateTime.h>
 
 
 namespace TencentCloud
@@ -235,6 +236,48 @@ namespace TencentCloud
                      */
                     bool NoteHasBeenSet() const;
 
+                    /**
+                     * 获取定时配置类型
+                     * @return JobType 定时配置类型
+                     * 
+                     */
+                    std::string GetJobType() const;
+
+                    /**
+                     * 设置定时配置类型
+                     * @param _jobType 定时配置类型
+                     * 
+                     */
+                    void SetJobType(const std::string& _jobType);
+
+                    /**
+                     * 判断参数 JobType 是否已赋值
+                     * @return JobType 是否已赋值
+                     * 
+                     */
+                    bool JobTypeHasBeenSet() const;
+
+                    /**
+                     * 获取定时配置详情
+                     * @return JobDateTime 定时配置详情
+                     * 
+                     */
+                    JobDateTime GetJobDateTime() const;
+
+                    /**
+                     * 设置定时配置详情
+                     * @param _jobDateTime 定时配置详情
+                     * 
+                     */
+                    void SetJobDateTime(const JobDateTime& _jobDateTime);
+
+                    /**
+                     * 判断参数 JobDateTime 是否已赋值
+                     * @return JobDateTime 是否已赋值
+                     * 
+                     */
+                    bool JobDateTimeHasBeenSet() const;
+
                 private:
 
                     /**
@@ -291,6 +334,18 @@ namespace TencentCloud
                      */
                     std::string m_note;
                     bool m_noteHasBeenSet;
+
+                    /**
+                     * 定时配置类型
+                     */
+                    std::string m_jobType;
+                    bool m_jobTypeHasBeenSet;
+
+                    /**
+                     * 定时配置详情
+                     */
+                    JobDateTime m_jobDateTime;
+                    bool m_jobDateTimeHasBeenSet;
 
                 };
             }

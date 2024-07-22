@@ -38,7 +38,8 @@ DescribeIpAccessControlRequest::DescribeIpAccessControlRequest() :
     m_validStatusHasBeenSet(false),
     m_validTimeStampMinHasBeenSet(false),
     m_validTimeStampMaxHasBeenSet(false),
-    m_ruleIdHasBeenSet(false)
+    m_ruleIdHasBeenSet(false),
+    m_timerTypeHasBeenSet(false)
 {
 }
 
@@ -175,6 +176,14 @@ string DescribeIpAccessControlRequest::ToJsonString() const
         string key = "RuleId";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_ruleId, allocator);
+    }
+
+    if (m_timerTypeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "TimerType";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_timerType, allocator);
     }
 
 
@@ -439,6 +448,22 @@ void DescribeIpAccessControlRequest::SetRuleId(const uint64_t& _ruleId)
 bool DescribeIpAccessControlRequest::RuleIdHasBeenSet() const
 {
     return m_ruleIdHasBeenSet;
+}
+
+int64_t DescribeIpAccessControlRequest::GetTimerType() const
+{
+    return m_timerType;
+}
+
+void DescribeIpAccessControlRequest::SetTimerType(const int64_t& _timerType)
+{
+    m_timerType = _timerType;
+    m_timerTypeHasBeenSet = true;
+}
+
+bool DescribeIpAccessControlRequest::TimerTypeHasBeenSet() const
+{
+    return m_timerTypeHasBeenSet;
 }
 
 

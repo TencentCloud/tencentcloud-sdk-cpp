@@ -142,6 +142,7 @@ set(ess_public_header_model
   include/tencentcloud/ess/v20201111/model/RegisterInfo.h
   include/tencentcloud/ess/v20201111/model/DescribeFileUrlsRequest.h
   include/tencentcloud/ess/v20201111/model/FormField.h
+  include/tencentcloud/ess/v20201111/model/CreatePartnerAutoSignAuthUrlResponse.h
   include/tencentcloud/ess/v20201111/model/CreateUserAutoSignSealUrlRequest.h
   include/tencentcloud/ess/v20201111/model/ModifyFlowDeadlineRequest.h
   include/tencentcloud/ess/v20201111/model/UserInfo.h
@@ -203,6 +204,7 @@ set(ess_public_header_model
   include/tencentcloud/ess/v20201111/model/FileInfo.h
   include/tencentcloud/ess/v20201111/model/CreateBatchOrganizationRegistrationTasksRequest.h
   include/tencentcloud/ess/v20201111/model/CreateUserVerifyUrlRequest.h
+  include/tencentcloud/ess/v20201111/model/CreatePartnerAutoSignAuthUrlRequest.h
   include/tencentcloud/ess/v20201111/model/FailedCreateStaffData.h
   include/tencentcloud/ess/v20201111/model/CreateExtendedServiceAuthInfosResponse.h
   include/tencentcloud/ess/v20201111/model/SubOrgBillUsage.h
@@ -411,6 +413,7 @@ set(ess_src
   src/v20201111/model/RegisterInfo.cpp
   src/v20201111/model/DescribeFileUrlsRequest.cpp
   src/v20201111/model/FormField.cpp
+  src/v20201111/model/CreatePartnerAutoSignAuthUrlResponse.cpp
   src/v20201111/model/CreateUserAutoSignSealUrlRequest.cpp
   src/v20201111/model/ModifyFlowDeadlineRequest.cpp
   src/v20201111/model/UserInfo.cpp
@@ -472,6 +475,7 @@ set(ess_src
   src/v20201111/model/FileInfo.cpp
   src/v20201111/model/CreateBatchOrganizationRegistrationTasksRequest.cpp
   src/v20201111/model/CreateUserVerifyUrlRequest.cpp
+  src/v20201111/model/CreatePartnerAutoSignAuthUrlRequest.cpp
   src/v20201111/model/FailedCreateStaffData.cpp
   src/v20201111/model/CreateExtendedServiceAuthInfosResponse.cpp
   src/v20201111/model/SubOrgBillUsage.cpp

@@ -31,7 +31,11 @@ BatchIpAccessControlItem::BatchIpAccessControlItem() :
     m_hostsHasBeenSet(false),
     m_ruleIdHasBeenSet(false),
     m_ipListHasBeenSet(false),
-    m_createTimeHasBeenSet(false)
+    m_createTimeHasBeenSet(false),
+    m_jobTypeHasBeenSet(false),
+    m_cronTypeHasBeenSet(false),
+    m_jobDateTimeHasBeenSet(false),
+    m_validStatusHasBeenSet(false)
 {
 }
 
@@ -156,6 +160,53 @@ CoreInternalOutcome BatchIpAccessControlItem::Deserialize(const rapidjson::Value
         m_createTimeHasBeenSet = true;
     }
 
+    if (value.HasMember("JobType") && !value["JobType"].IsNull())
+    {
+        if (!value["JobType"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `BatchIpAccessControlItem.JobType` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_jobType = string(value["JobType"].GetString());
+        m_jobTypeHasBeenSet = true;
+    }
+
+    if (value.HasMember("CronType") && !value["CronType"].IsNull())
+    {
+        if (!value["CronType"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `BatchIpAccessControlItem.CronType` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_cronType = string(value["CronType"].GetString());
+        m_cronTypeHasBeenSet = true;
+    }
+
+    if (value.HasMember("JobDateTime") && !value["JobDateTime"].IsNull())
+    {
+        if (!value["JobDateTime"].IsObject())
+        {
+            return CoreInternalOutcome(Core::Error("response `BatchIpAccessControlItem.JobDateTime` is not object type").SetRequestId(requestId));
+        }
+
+        CoreInternalOutcome outcome = m_jobDateTime.Deserialize(value["JobDateTime"]);
+        if (!outcome.IsSuccess())
+        {
+            outcome.GetError().SetRequestId(requestId);
+            return outcome;
+        }
+
+        m_jobDateTimeHasBeenSet = true;
+    }
+
+    if (value.HasMember("ValidStatus") && !value["ValidStatus"].IsNull())
+    {
+        if (!value["ValidStatus"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `BatchIpAccessControlItem.ValidStatus` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_validStatus = value["ValidStatus"].GetInt64();
+        m_validStatusHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -259,6 +310,39 @@ void BatchIpAccessControlItem::ToJsonObject(rapidjson::Value &value, rapidjson::
         string key = "CreateTime";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_createTime, allocator);
+    }
+
+    if (m_jobTypeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "JobType";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_jobType.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_cronTypeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "CronType";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_cronType.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_jobDateTimeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "JobDateTime";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_jobDateTime.ToJsonObject(value[key.c_str()], allocator);
+    }
+
+    if (m_validStatusHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ValidStatus";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_validStatus, allocator);
     }
 
 }
@@ -438,5 +522,69 @@ void BatchIpAccessControlItem::SetCreateTime(const uint64_t& _createTime)
 bool BatchIpAccessControlItem::CreateTimeHasBeenSet() const
 {
     return m_createTimeHasBeenSet;
+}
+
+string BatchIpAccessControlItem::GetJobType() const
+{
+    return m_jobType;
+}
+
+void BatchIpAccessControlItem::SetJobType(const string& _jobType)
+{
+    m_jobType = _jobType;
+    m_jobTypeHasBeenSet = true;
+}
+
+bool BatchIpAccessControlItem::JobTypeHasBeenSet() const
+{
+    return m_jobTypeHasBeenSet;
+}
+
+string BatchIpAccessControlItem::GetCronType() const
+{
+    return m_cronType;
+}
+
+void BatchIpAccessControlItem::SetCronType(const string& _cronType)
+{
+    m_cronType = _cronType;
+    m_cronTypeHasBeenSet = true;
+}
+
+bool BatchIpAccessControlItem::CronTypeHasBeenSet() const
+{
+    return m_cronTypeHasBeenSet;
+}
+
+JobDateTime BatchIpAccessControlItem::GetJobDateTime() const
+{
+    return m_jobDateTime;
+}
+
+void BatchIpAccessControlItem::SetJobDateTime(const JobDateTime& _jobDateTime)
+{
+    m_jobDateTime = _jobDateTime;
+    m_jobDateTimeHasBeenSet = true;
+}
+
+bool BatchIpAccessControlItem::JobDateTimeHasBeenSet() const
+{
+    return m_jobDateTimeHasBeenSet;
+}
+
+int64_t BatchIpAccessControlItem::GetValidStatus() const
+{
+    return m_validStatus;
+}
+
+void BatchIpAccessControlItem::SetValidStatus(const int64_t& _validStatus)
+{
+    m_validStatus = _validStatus;
+    m_validStatusHasBeenSet = true;
+}
+
+bool BatchIpAccessControlItem::ValidStatusHasBeenSet() const
+{
+    return m_validStatusHasBeenSet;
 }
 

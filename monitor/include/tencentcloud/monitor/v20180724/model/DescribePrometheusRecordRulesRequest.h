@@ -44,15 +44,23 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取实例id
-                     * @return InstanceId 实例id
+                     * 获取实例ID
+
+示例值：prom-343kafd34
+                     * @return InstanceId 实例ID
+
+示例值：prom-343kafd34
                      * 
                      */
                     std::string GetInstanceId() const;
 
                     /**
-                     * 设置实例id
-                     * @param _instanceId 实例id
+                     * 设置实例ID
+
+示例值：prom-343kafd34
+                     * @param _instanceId 实例ID
+
+示例值：prom-343kafd34
                      * 
                      */
                     void SetInstanceId(const std::string& _instanceId);
@@ -65,15 +73,15 @@ namespace TencentCloud
                     bool InstanceIdHasBeenSet() const;
 
                     /**
-                     * 获取分页
-                     * @return Offset 分页
+                     * 获取偏移量，默认为0。 示例值：1
+                     * @return Offset 偏移量，默认为0。 示例值：1
                      * 
                      */
                     uint64_t GetOffset() const;
 
                     /**
-                     * 设置分页
-                     * @param _offset 分页
+                     * 设置偏移量，默认为0。 示例值：1
+                     * @param _offset 偏移量，默认为0。 示例值：1
                      * 
                      */
                     void SetOffset(const uint64_t& _offset);
@@ -86,15 +94,19 @@ namespace TencentCloud
                     bool OffsetHasBeenSet() const;
 
                     /**
-                     * 获取分页
-                     * @return Limit 分页
+                     * 获取返回数量，默认为20，最大值为100。
+示例值：1
+                     * @return Limit 返回数量，默认为20，最大值为100。
+示例值：1
                      * 
                      */
                     uint64_t GetLimit() const;
 
                     /**
-                     * 设置分页
-                     * @param _limit 分页
+                     * 设置返回数量，默认为20，最大值为100。
+示例值：1
+                     * @param _limit 返回数量，默认为20，最大值为100。
+示例值：1
                      * 
                      */
                     void SetLimit(const uint64_t& _limit);
@@ -107,15 +119,23 @@ namespace TencentCloud
                     bool LimitHasBeenSet() const;
 
                     /**
-                     * 获取过滤
-                     * @return Filters 过滤
+                     * 获取仅支持按Name, Values字段过滤:
+- Name = Name
+  按照给定的预聚合名称列表匹配
+                     * @return Filters 仅支持按Name, Values字段过滤:
+- Name = Name
+  按照给定的预聚合名称列表匹配
                      * 
                      */
                     std::vector<Filter> GetFilters() const;
 
                     /**
-                     * 设置过滤
-                     * @param _filters 过滤
+                     * 设置仅支持按Name, Values字段过滤:
+- Name = Name
+  按照给定的预聚合名称列表匹配
+                     * @param _filters 仅支持按Name, Values字段过滤:
+- Name = Name
+  按照给定的预聚合名称列表匹配
                      * 
                      */
                     void SetFilters(const std::vector<Filter>& _filters);
@@ -130,25 +150,30 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 实例id
+                     * 实例ID
+
+示例值：prom-343kafd34
                      */
                     std::string m_instanceId;
                     bool m_instanceIdHasBeenSet;
 
                     /**
-                     * 分页
+                     * 偏移量，默认为0。 示例值：1
                      */
                     uint64_t m_offset;
                     bool m_offsetHasBeenSet;
 
                     /**
-                     * 分页
+                     * 返回数量，默认为20，最大值为100。
+示例值：1
                      */
                     uint64_t m_limit;
                     bool m_limitHasBeenSet;
 
                     /**
-                     * 过滤
+                     * 仅支持按Name, Values字段过滤:
+- Name = Name
+  按照给定的预聚合名称列表匹配
                      */
                     std::vector<Filter> m_filters;
                     bool m_filtersHasBeenSet;

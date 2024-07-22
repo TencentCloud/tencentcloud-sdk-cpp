@@ -1016,6 +1016,31 @@ namespace TencentCloud
                      */
                     bool BillingItemHasBeenSet() const;
 
+                    /**
+                     * 获取实例延期释放标识
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return FreeDelayFlag 实例延期释放标识
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    uint64_t GetFreeDelayFlag() const;
+
+                    /**
+                     * 设置实例延期释放标识
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _freeDelayFlag 实例延期释放标识
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetFreeDelayFlag(const uint64_t& _freeDelayFlag);
+
+                    /**
+                     * 判断参数 FreeDelayFlag 是否已赋值
+                     * @return FreeDelayFlag 是否已赋值
+                     * 
+                     */
+                    bool FreeDelayFlagHasBeenSet() const;
+
                 private:
 
                     /**
@@ -1287,6 +1312,13 @@ namespace TencentCloud
                      */
                     std::string m_billingItem;
                     bool m_billingItemHasBeenSet;
+
+                    /**
+                     * 实例延期释放标识
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    uint64_t m_freeDelayFlag;
+                    bool m_freeDelayFlagHasBeenSet;
 
                 };
             }

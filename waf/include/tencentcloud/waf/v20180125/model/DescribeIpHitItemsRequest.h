@@ -85,15 +85,15 @@ namespace TencentCloud
                     bool CountHasBeenSet() const;
 
                     /**
-                     * 获取类别
-                     * @return Category 类别
+                     * 获取类别，ip封禁传值auto_deny
+                     * @return Category 类别，ip封禁传值auto_deny
                      * 
                      */
                     std::string GetCategory() const;
 
                     /**
-                     * 设置类别
-                     * @param _category 类别
+                     * 设置类别，ip封禁传值auto_deny
+                     * @param _category 类别，ip封禁传值auto_deny
                      * 
                      */
                     void SetCategory(const std::string& _category);
@@ -351,7 +351,7 @@ namespace TencentCloud
                     bool m_countHasBeenSet;
 
                     /**
-                     * 类别
+                     * 类别，ip封禁传值auto_deny
                      */
                     std::string m_category;
                     bool m_categoryHasBeenSet;

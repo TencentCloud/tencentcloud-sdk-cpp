@@ -25,10 +25,18 @@ UserWhiteRule::UserWhiteRule() :
     m_signatureIdHasBeenSet(false),
     m_statusHasBeenSet(false),
     m_matchFieldHasBeenSet(false),
+    m_matchParamsHasBeenSet(false),
     m_matchMethodHasBeenSet(false),
     m_matchContentHasBeenSet(false),
     m_createTimeHasBeenSet(false),
-    m_modifyTimeHasBeenSet(false)
+    m_modifyTimeHasBeenSet(false),
+    m_signatureIdsHasBeenSet(false),
+    m_typeIdsHasBeenSet(false),
+    m_typeIdHasBeenSet(false),
+    m_modeHasBeenSet(false),
+    m_nameHasBeenSet(false),
+    m_matchInfoHasBeenSet(false),
+    m_matchInfoStrHasBeenSet(false)
 {
 }
 
@@ -77,6 +85,16 @@ CoreInternalOutcome UserWhiteRule::Deserialize(const rapidjson::Value &value)
         m_matchFieldHasBeenSet = true;
     }
 
+    if (value.HasMember("MatchParams") && !value["MatchParams"].IsNull())
+    {
+        if (!value["MatchParams"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `UserWhiteRule.MatchParams` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_matchParams = string(value["MatchParams"].GetString());
+        m_matchParamsHasBeenSet = true;
+    }
+
     if (value.HasMember("MatchMethod") && !value["MatchMethod"].IsNull())
     {
         if (!value["MatchMethod"].IsString())
@@ -115,6 +133,92 @@ CoreInternalOutcome UserWhiteRule::Deserialize(const rapidjson::Value &value)
         }
         m_modifyTime = string(value["ModifyTime"].GetString());
         m_modifyTimeHasBeenSet = true;
+    }
+
+    if (value.HasMember("SignatureIds") && !value["SignatureIds"].IsNull())
+    {
+        if (!value["SignatureIds"].IsArray())
+            return CoreInternalOutcome(Core::Error("response `UserWhiteRule.SignatureIds` is not array type"));
+
+        const rapidjson::Value &tmpValue = value["SignatureIds"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            m_signatureIds.push_back((*itr).GetString());
+        }
+        m_signatureIdsHasBeenSet = true;
+    }
+
+    if (value.HasMember("TypeIds") && !value["TypeIds"].IsNull())
+    {
+        if (!value["TypeIds"].IsArray())
+            return CoreInternalOutcome(Core::Error("response `UserWhiteRule.TypeIds` is not array type"));
+
+        const rapidjson::Value &tmpValue = value["TypeIds"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            m_typeIds.push_back((*itr).GetString());
+        }
+        m_typeIdsHasBeenSet = true;
+    }
+
+    if (value.HasMember("TypeId") && !value["TypeId"].IsNull())
+    {
+        if (!value["TypeId"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `UserWhiteRule.TypeId` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_typeId = string(value["TypeId"].GetString());
+        m_typeIdHasBeenSet = true;
+    }
+
+    if (value.HasMember("Mode") && !value["Mode"].IsNull())
+    {
+        if (!value["Mode"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `UserWhiteRule.Mode` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_mode = value["Mode"].GetInt64();
+        m_modeHasBeenSet = true;
+    }
+
+    if (value.HasMember("Name") && !value["Name"].IsNull())
+    {
+        if (!value["Name"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `UserWhiteRule.Name` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_name = string(value["Name"].GetString());
+        m_nameHasBeenSet = true;
+    }
+
+    if (value.HasMember("MatchInfo") && !value["MatchInfo"].IsNull())
+    {
+        if (!value["MatchInfo"].IsArray())
+            return CoreInternalOutcome(Core::Error("response `UserWhiteRule.MatchInfo` is not array type"));
+
+        const rapidjson::Value &tmpValue = value["MatchInfo"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            UserWhiteRuleItem item;
+            CoreInternalOutcome outcome = item.Deserialize(*itr);
+            if (!outcome.IsSuccess())
+            {
+                outcome.GetError().SetRequestId(requestId);
+                return outcome;
+            }
+            m_matchInfo.push_back(item);
+        }
+        m_matchInfoHasBeenSet = true;
+    }
+
+    if (value.HasMember("MatchInfoStr") && !value["MatchInfoStr"].IsNull())
+    {
+        if (!value["MatchInfoStr"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `UserWhiteRule.MatchInfoStr` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_matchInfoStr = string(value["MatchInfoStr"].GetString());
+        m_matchInfoStrHasBeenSet = true;
     }
 
 
@@ -156,6 +260,14 @@ void UserWhiteRule::ToJsonObject(rapidjson::Value &value, rapidjson::Document::A
         value.AddMember(iKey, rapidjson::Value(m_matchField.c_str(), allocator).Move(), allocator);
     }
 
+    if (m_matchParamsHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "MatchParams";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_matchParams.c_str(), allocator).Move(), allocator);
+    }
+
     if (m_matchMethodHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
@@ -186,6 +298,79 @@ void UserWhiteRule::ToJsonObject(rapidjson::Value &value, rapidjson::Document::A
         string key = "ModifyTime";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_modifyTime.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_signatureIdsHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "SignatureIds";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        for (auto itr = m_signatureIds.begin(); itr != m_signatureIds.end(); ++itr)
+        {
+            value[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
+        }
+    }
+
+    if (m_typeIdsHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "TypeIds";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        for (auto itr = m_typeIds.begin(); itr != m_typeIds.end(); ++itr)
+        {
+            value[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
+        }
+    }
+
+    if (m_typeIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "TypeId";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_typeId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_modeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Mode";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_mode, allocator);
+    }
+
+    if (m_nameHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Name";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_name.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_matchInfoHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "MatchInfo";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_matchInfo.begin(); itr != m_matchInfo.end(); ++itr, ++i)
+        {
+            value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(value[key.c_str()][i], allocator);
+        }
+    }
+
+    if (m_matchInfoStrHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "MatchInfoStr";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_matchInfoStr.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -255,6 +440,22 @@ bool UserWhiteRule::MatchFieldHasBeenSet() const
     return m_matchFieldHasBeenSet;
 }
 
+string UserWhiteRule::GetMatchParams() const
+{
+    return m_matchParams;
+}
+
+void UserWhiteRule::SetMatchParams(const string& _matchParams)
+{
+    m_matchParams = _matchParams;
+    m_matchParamsHasBeenSet = true;
+}
+
+bool UserWhiteRule::MatchParamsHasBeenSet() const
+{
+    return m_matchParamsHasBeenSet;
+}
+
 string UserWhiteRule::GetMatchMethod() const
 {
     return m_matchMethod;
@@ -317,5 +518,117 @@ void UserWhiteRule::SetModifyTime(const string& _modifyTime)
 bool UserWhiteRule::ModifyTimeHasBeenSet() const
 {
     return m_modifyTimeHasBeenSet;
+}
+
+vector<string> UserWhiteRule::GetSignatureIds() const
+{
+    return m_signatureIds;
+}
+
+void UserWhiteRule::SetSignatureIds(const vector<string>& _signatureIds)
+{
+    m_signatureIds = _signatureIds;
+    m_signatureIdsHasBeenSet = true;
+}
+
+bool UserWhiteRule::SignatureIdsHasBeenSet() const
+{
+    return m_signatureIdsHasBeenSet;
+}
+
+vector<string> UserWhiteRule::GetTypeIds() const
+{
+    return m_typeIds;
+}
+
+void UserWhiteRule::SetTypeIds(const vector<string>& _typeIds)
+{
+    m_typeIds = _typeIds;
+    m_typeIdsHasBeenSet = true;
+}
+
+bool UserWhiteRule::TypeIdsHasBeenSet() const
+{
+    return m_typeIdsHasBeenSet;
+}
+
+string UserWhiteRule::GetTypeId() const
+{
+    return m_typeId;
+}
+
+void UserWhiteRule::SetTypeId(const string& _typeId)
+{
+    m_typeId = _typeId;
+    m_typeIdHasBeenSet = true;
+}
+
+bool UserWhiteRule::TypeIdHasBeenSet() const
+{
+    return m_typeIdHasBeenSet;
+}
+
+int64_t UserWhiteRule::GetMode() const
+{
+    return m_mode;
+}
+
+void UserWhiteRule::SetMode(const int64_t& _mode)
+{
+    m_mode = _mode;
+    m_modeHasBeenSet = true;
+}
+
+bool UserWhiteRule::ModeHasBeenSet() const
+{
+    return m_modeHasBeenSet;
+}
+
+string UserWhiteRule::GetName() const
+{
+    return m_name;
+}
+
+void UserWhiteRule::SetName(const string& _name)
+{
+    m_name = _name;
+    m_nameHasBeenSet = true;
+}
+
+bool UserWhiteRule::NameHasBeenSet() const
+{
+    return m_nameHasBeenSet;
+}
+
+vector<UserWhiteRuleItem> UserWhiteRule::GetMatchInfo() const
+{
+    return m_matchInfo;
+}
+
+void UserWhiteRule::SetMatchInfo(const vector<UserWhiteRuleItem>& _matchInfo)
+{
+    m_matchInfo = _matchInfo;
+    m_matchInfoHasBeenSet = true;
+}
+
+bool UserWhiteRule::MatchInfoHasBeenSet() const
+{
+    return m_matchInfoHasBeenSet;
+}
+
+string UserWhiteRule::GetMatchInfoStr() const
+{
+    return m_matchInfoStr;
+}
+
+void UserWhiteRule::SetMatchInfoStr(const string& _matchInfoStr)
+{
+    m_matchInfoStr = _matchInfoStr;
+    m_matchInfoStrHasBeenSet = true;
+}
+
+bool UserWhiteRule::MatchInfoStrHasBeenSet() const
+{
+    return m_matchInfoStrHasBeenSet;
 }
 

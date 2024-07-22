@@ -53,7 +53,7 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
-                    std::string GetIndex() const;
+                    int64_t GetIndex() const;
 
                     /**
                      * 设置搜索引文序号
@@ -62,7 +62,7 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
-                    void SetIndex(const std::string& _index);
+                    void SetIndex(const int64_t& _index);
 
                     /**
                      * 判断参数 Index 是否已赋值
@@ -127,7 +127,7 @@ namespace TencentCloud
                      * 搜索引文序号
 注意：此字段可能返回 null，表示取不到有效值。
                      */
-                    std::string m_index;
+                    int64_t m_index;
                     bool m_indexHasBeenSet;
 
                     /**

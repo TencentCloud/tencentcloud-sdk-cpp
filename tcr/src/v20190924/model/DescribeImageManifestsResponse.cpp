@@ -25,7 +25,9 @@ using namespace std;
 
 DescribeImageManifestsResponse::DescribeImageManifestsResponse() :
     m_manifestHasBeenSet(false),
-    m_configHasBeenSet(false)
+    m_configHasBeenSet(false),
+    m_labelsHasBeenSet(false),
+    m_sizeHasBeenSet(false)
 {
 }
 
@@ -83,6 +85,36 @@ CoreInternalOutcome DescribeImageManifestsResponse::Deserialize(const string &pa
         m_configHasBeenSet = true;
     }
 
+    if (rsp.HasMember("Labels") && !rsp["Labels"].IsNull())
+    {
+        if (!rsp["Labels"].IsArray())
+            return CoreInternalOutcome(Core::Error("response `Labels` is not array type"));
+
+        const rapidjson::Value &tmpValue = rsp["Labels"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            KeyValueString item;
+            CoreInternalOutcome outcome = item.Deserialize(*itr);
+            if (!outcome.IsSuccess())
+            {
+                outcome.GetError().SetRequestId(requestId);
+                return outcome;
+            }
+            m_labels.push_back(item);
+        }
+        m_labelsHasBeenSet = true;
+    }
+
+    if (rsp.HasMember("Size") && !rsp["Size"].IsNull())
+    {
+        if (!rsp["Size"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `Size` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_size = rsp["Size"].GetInt64();
+        m_sizeHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -107,6 +139,29 @@ string DescribeImageManifestsResponse::ToJsonString() const
         string key = "Config";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_config.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_labelsHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Labels";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_labels.begin(); itr != m_labels.end(); ++itr, ++i)
+        {
+            value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(value[key.c_str()][i], allocator);
+        }
+    }
+
+    if (m_sizeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Size";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_size, allocator);
     }
 
     rapidjson::Value iKey(rapidjson::kStringType);
@@ -139,6 +194,26 @@ string DescribeImageManifestsResponse::GetConfig() const
 bool DescribeImageManifestsResponse::ConfigHasBeenSet() const
 {
     return m_configHasBeenSet;
+}
+
+vector<KeyValueString> DescribeImageManifestsResponse::GetLabels() const
+{
+    return m_labels;
+}
+
+bool DescribeImageManifestsResponse::LabelsHasBeenSet() const
+{
+    return m_labelsHasBeenSet;
+}
+
+int64_t DescribeImageManifestsResponse::GetSize() const
+{
+    return m_size;
+}
+
+bool DescribeImageManifestsResponse::SizeHasBeenSet() const
+{
+    return m_sizeHasBeenSet;
 }
 
 

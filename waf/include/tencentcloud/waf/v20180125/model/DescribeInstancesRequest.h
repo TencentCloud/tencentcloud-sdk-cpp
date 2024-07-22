@@ -106,6 +106,27 @@ namespace TencentCloud
                      */
                     bool FiltersHasBeenSet() const;
 
+                    /**
+                     * 获取释放延期标识
+                     * @return FreeDelayFlag 释放延期标识
+                     * 
+                     */
+                    uint64_t GetFreeDelayFlag() const;
+
+                    /**
+                     * 设置释放延期标识
+                     * @param _freeDelayFlag 释放延期标识
+                     * 
+                     */
+                    void SetFreeDelayFlag(const uint64_t& _freeDelayFlag);
+
+                    /**
+                     * 判断参数 FreeDelayFlag 是否已赋值
+                     * @return FreeDelayFlag 是否已赋值
+                     * 
+                     */
+                    bool FreeDelayFlagHasBeenSet() const;
+
                 private:
 
                     /**
@@ -125,6 +146,12 @@ namespace TencentCloud
                      */
                     std::vector<FiltersItemNew> m_filters;
                     bool m_filtersHasBeenSet;
+
+                    /**
+                     * 释放延期标识
+                     */
+                    uint64_t m_freeDelayFlag;
+                    bool m_freeDelayFlagHasBeenSet;
 
                 };
             }

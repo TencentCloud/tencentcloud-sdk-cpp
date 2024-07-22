@@ -1142,7 +1142,7 @@ namespace TencentCloud
                 DescribeImmutableTagRulesOutcomeCallable DescribeImmutableTagRulesCallable(const Model::DescribeImmutableTagRulesRequest& request);
 
                 /**
-                 *查询所有实例命名空间列表
+                 *查询所有有实例命名空间列表
                  * @param req DescribeInstanceAllNamespacesRequest
                  * @return DescribeInstanceAllNamespacesOutcome
                  */
@@ -1331,7 +1331,7 @@ namespace TencentCloud
                 DescribeTagRetentionExecutionTaskOutcomeCallable DescribeTagRetentionExecutionTaskCallable(const Model::DescribeTagRetentionExecutionTaskRequest& request);
 
                 /**
-                 *查询版本保留规则
+                 *查询镜像版本保留规则
                  * @param req DescribeTagRetentionRulesRequest
                  * @return DescribeTagRetentionRulesOutcome
                  */

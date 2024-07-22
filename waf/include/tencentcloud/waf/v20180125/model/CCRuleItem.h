@@ -302,6 +302,131 @@ namespace TencentCloud
                      */
                     bool OptionsArrHasBeenSet() const;
 
+                    /**
+                     * 获取url长度
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return Length url长度
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    uint64_t GetLength() const;
+
+                    /**
+                     * 设置url长度
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _length url长度
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetLength(const uint64_t& _length);
+
+                    /**
+                     * 判断参数 Length 是否已赋值
+                     * @return Length 是否已赋值
+                     * 
+                     */
+                    bool LengthHasBeenSet() const;
+
+                    /**
+                     * 获取规则ID
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return RuleId 规则ID
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    int64_t GetRuleId() const;
+
+                    /**
+                     * 设置规则ID
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _ruleId 规则ID
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetRuleId(const int64_t& _ruleId);
+
+                    /**
+                     * 判断参数 RuleId 是否已赋值
+                     * @return RuleId 是否已赋值
+                     * 
+                     */
+                    bool RuleIdHasBeenSet() const;
+
+                    /**
+                     * 获取事件id
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return EventId 事件id
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::string GetEventId() const;
+
+                    /**
+                     * 设置事件id
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _eventId 事件id
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetEventId(const std::string& _eventId);
+
+                    /**
+                     * 判断参数 EventId 是否已赋值
+                     * @return EventId 是否已赋值
+                     * 
+                     */
+                    bool EventIdHasBeenSet() const;
+
+                    /**
+                     * 获取关联的Session规则
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return SessionApplied 关联的Session规则
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::vector<int64_t> GetSessionApplied() const;
+
+                    /**
+                     * 设置关联的Session规则
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _sessionApplied 关联的Session规则
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetSessionApplied(const std::vector<int64_t>& _sessionApplied);
+
+                    /**
+                     * 判断参数 SessionApplied 是否已赋值
+                     * @return SessionApplied 是否已赋值
+                     * 
+                     */
+                    bool SessionAppliedHasBeenSet() const;
+
+                    /**
+                     * 获取创建时间
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return CreateTime 创建时间
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    uint64_t GetCreateTime() const;
+
+                    /**
+                     * 设置创建时间
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _createTime 创建时间
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetCreateTime(const uint64_t& _createTime);
+
+                    /**
+                     * 判断参数 CreateTime 是否已赋值
+                     * @return CreateTime 是否已赋值
+                     * 
+                     */
+                    bool CreateTimeHasBeenSet() const;
+
                 private:
 
                     /**
@@ -376,6 +501,41 @@ namespace TencentCloud
                      */
                     std::string m_optionsArr;
                     bool m_optionsArrHasBeenSet;
+
+                    /**
+                     * url长度
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    uint64_t m_length;
+                    bool m_lengthHasBeenSet;
+
+                    /**
+                     * 规则ID
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    int64_t m_ruleId;
+                    bool m_ruleIdHasBeenSet;
+
+                    /**
+                     * 事件id
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_eventId;
+                    bool m_eventIdHasBeenSet;
+
+                    /**
+                     * 关联的Session规则
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::vector<int64_t> m_sessionApplied;
+                    bool m_sessionAppliedHasBeenSet;
+
+                    /**
+                     * 创建时间
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    uint64_t m_createTime;
+                    bool m_createTimeHasBeenSet;
 
                 };
             }

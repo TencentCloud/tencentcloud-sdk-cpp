@@ -25,7 +25,8 @@ using namespace std;
 DescribeInstancesRequest::DescribeInstancesRequest() :
     m_offsetHasBeenSet(false),
     m_limitHasBeenSet(false),
-    m_filtersHasBeenSet(false)
+    m_filtersHasBeenSet(false),
+    m_freeDelayFlagHasBeenSet(false)
 {
 }
 
@@ -65,6 +66,14 @@ string DescribeInstancesRequest::ToJsonString() const
             d[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
             (*itr).ToJsonObject(d[key.c_str()][i], allocator);
         }
+    }
+
+    if (m_freeDelayFlagHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "FreeDelayFlag";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_freeDelayFlag, allocator);
     }
 
 
@@ -121,6 +130,22 @@ void DescribeInstancesRequest::SetFilters(const vector<FiltersItemNew>& _filters
 bool DescribeInstancesRequest::FiltersHasBeenSet() const
 {
     return m_filtersHasBeenSet;
+}
+
+uint64_t DescribeInstancesRequest::GetFreeDelayFlag() const
+{
+    return m_freeDelayFlag;
+}
+
+void DescribeInstancesRequest::SetFreeDelayFlag(const uint64_t& _freeDelayFlag)
+{
+    m_freeDelayFlag = _freeDelayFlag;
+    m_freeDelayFlagHasBeenSet = true;
+}
+
+bool DescribeInstancesRequest::FreeDelayFlagHasBeenSet() const
+{
+    return m_freeDelayFlagHasBeenSet;
 }
 
 

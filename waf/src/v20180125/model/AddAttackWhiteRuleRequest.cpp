@@ -28,7 +28,10 @@ AddAttackWhiteRuleRequest::AddAttackWhiteRuleRequest() :
     m_rulesHasBeenSet(false),
     m_ruleIdHasBeenSet(false),
     m_signatureIdHasBeenSet(false),
-    m_signatureIdsHasBeenSet(false)
+    m_signatureIdsHasBeenSet(false),
+    m_typeIdsHasBeenSet(false),
+    m_modeHasBeenSet(false),
+    m_nameHasBeenSet(false)
 {
 }
 
@@ -97,6 +100,35 @@ string AddAttackWhiteRuleRequest::ToJsonString() const
         {
             d[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
         }
+    }
+
+    if (m_typeIdsHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "TypeIds";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        for (auto itr = m_typeIds.begin(); itr != m_typeIds.end(); ++itr)
+        {
+            d[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
+        }
+    }
+
+    if (m_modeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Mode";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_mode, allocator);
+    }
+
+    if (m_nameHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Name";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_name.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -201,6 +233,54 @@ void AddAttackWhiteRuleRequest::SetSignatureIds(const vector<string>& _signature
 bool AddAttackWhiteRuleRequest::SignatureIdsHasBeenSet() const
 {
     return m_signatureIdsHasBeenSet;
+}
+
+vector<string> AddAttackWhiteRuleRequest::GetTypeIds() const
+{
+    return m_typeIds;
+}
+
+void AddAttackWhiteRuleRequest::SetTypeIds(const vector<string>& _typeIds)
+{
+    m_typeIds = _typeIds;
+    m_typeIdsHasBeenSet = true;
+}
+
+bool AddAttackWhiteRuleRequest::TypeIdsHasBeenSet() const
+{
+    return m_typeIdsHasBeenSet;
+}
+
+int64_t AddAttackWhiteRuleRequest::GetMode() const
+{
+    return m_mode;
+}
+
+void AddAttackWhiteRuleRequest::SetMode(const int64_t& _mode)
+{
+    m_mode = _mode;
+    m_modeHasBeenSet = true;
+}
+
+bool AddAttackWhiteRuleRequest::ModeHasBeenSet() const
+{
+    return m_modeHasBeenSet;
+}
+
+string AddAttackWhiteRuleRequest::GetName() const
+{
+    return m_name;
+}
+
+void AddAttackWhiteRuleRequest::SetName(const string& _name)
+{
+    m_name = _name;
+    m_nameHasBeenSet = true;
+}
+
+bool AddAttackWhiteRuleRequest::NameHasBeenSet() const
+{
+    return m_nameHasBeenSet;
 }
 
 

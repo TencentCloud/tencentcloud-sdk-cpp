@@ -88,11 +88,13 @@ namespace TencentCloud
                      * 获取默认不根据该字段进行筛选，否则根据设备操作类型进行筛选，目前值有：BatchDeleteUserDevice，BatchDisableDevice，BatchEnableDevice，
 BatchUpgradeDevice，
 BatchResetDevice,
-BatchRebootDevice
+BatchRebootDevice,
+BatchRefreshDeviceChannel
                      * @return Operation 默认不根据该字段进行筛选，否则根据设备操作类型进行筛选，目前值有：BatchDeleteUserDevice，BatchDisableDevice，BatchEnableDevice，
 BatchUpgradeDevice，
 BatchResetDevice,
-BatchRebootDevice
+BatchRebootDevice,
+BatchRefreshDeviceChannel
                      * 
                      */
                     std::string GetOperation() const;
@@ -101,11 +103,13 @@ BatchRebootDevice
                      * 设置默认不根据该字段进行筛选，否则根据设备操作类型进行筛选，目前值有：BatchDeleteUserDevice，BatchDisableDevice，BatchEnableDevice，
 BatchUpgradeDevice，
 BatchResetDevice,
-BatchRebootDevice
+BatchRebootDevice,
+BatchRefreshDeviceChannel
                      * @param _operation 默认不根据该字段进行筛选，否则根据设备操作类型进行筛选，目前值有：BatchDeleteUserDevice，BatchDisableDevice，BatchEnableDevice，
 BatchUpgradeDevice，
 BatchResetDevice,
-BatchRebootDevice
+BatchRebootDevice,
+BatchRefreshDeviceChannel
                      * 
                      */
                     void SetOperation(const std::string& _operation);
@@ -198,7 +202,8 @@ BatchRebootDevice
                      * 默认不根据该字段进行筛选，否则根据设备操作类型进行筛选，目前值有：BatchDeleteUserDevice，BatchDisableDevice，BatchEnableDevice，
 BatchUpgradeDevice，
 BatchResetDevice,
-BatchRebootDevice
+BatchRebootDevice,
+BatchRefreshDeviceChannel
                      */
                     std::string m_operation;
                     bool m_operationHasBeenSet;

@@ -42,7 +42,8 @@ InputManageMarketingRisk::InputManageMarketingRisk() :
     m_detailsHasBeenSet(false),
     m_sponsorHasBeenSet(false),
     m_onlineScamHasBeenSet(false),
-    m_platformHasBeenSet(false)
+    m_platformHasBeenSet(false),
+    m_dataAuthorizationHasBeenSet(false)
 {
 }
 
@@ -302,6 +303,23 @@ CoreInternalOutcome InputManageMarketingRisk::Deserialize(const rapidjson::Value
         m_platformHasBeenSet = true;
     }
 
+    if (value.HasMember("DataAuthorization") && !value["DataAuthorization"].IsNull())
+    {
+        if (!value["DataAuthorization"].IsObject())
+        {
+            return CoreInternalOutcome(Core::Error("response `InputManageMarketingRisk.DataAuthorization` is not object type").SetRequestId(requestId));
+        }
+
+        CoreInternalOutcome outcome = m_dataAuthorization.Deserialize(value["DataAuthorization"]);
+        if (!outcome.IsSuccess())
+        {
+            outcome.GetError().SetRequestId(requestId);
+            return outcome;
+        }
+
+        m_dataAuthorizationHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -493,6 +511,15 @@ void InputManageMarketingRisk::ToJsonObject(rapidjson::Value &value, rapidjson::
         string key = "Platform";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_platform.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_dataAuthorizationHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "DataAuthorization";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_dataAuthorization.ToJsonObject(value[key.c_str()], allocator);
     }
 
 }
@@ -848,5 +875,21 @@ void InputManageMarketingRisk::SetPlatform(const string& _platform)
 bool InputManageMarketingRisk::PlatformHasBeenSet() const
 {
     return m_platformHasBeenSet;
+}
+
+DataAuthorizationInfo InputManageMarketingRisk::GetDataAuthorization() const
+{
+    return m_dataAuthorization;
+}
+
+void InputManageMarketingRisk::SetDataAuthorization(const DataAuthorizationInfo& _dataAuthorization)
+{
+    m_dataAuthorization = _dataAuthorization;
+    m_dataAuthorizationHasBeenSet = true;
+}
+
+bool InputManageMarketingRisk::DataAuthorizationHasBeenSet() const
+{
+    return m_dataAuthorizationHasBeenSet;
 }
 

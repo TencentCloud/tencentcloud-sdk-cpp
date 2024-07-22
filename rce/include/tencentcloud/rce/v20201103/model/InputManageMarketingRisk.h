@@ -28,6 +28,7 @@
 #include <tencentcloud/rce/v20201103/model/InputDetails.h>
 #include <tencentcloud/rce/v20201103/model/SponsorInfo.h>
 #include <tencentcloud/rce/v20201103/model/OnlineScamInfo.h>
+#include <tencentcloud/rce/v20201103/model/DataAuthorizationInfo.h>
 
 
 namespace TencentCloud
@@ -568,6 +569,27 @@ namespace TencentCloud
                      */
                     bool PlatformHasBeenSet() const;
 
+                    /**
+                     * 获取数据授权信息。
+                     * @return DataAuthorization 数据授权信息。
+                     * 
+                     */
+                    DataAuthorizationInfo GetDataAuthorization() const;
+
+                    /**
+                     * 设置数据授权信息。
+                     * @param _dataAuthorization 数据授权信息。
+                     * 
+                     */
+                    void SetDataAuthorization(const DataAuthorizationInfo& _dataAuthorization);
+
+                    /**
+                     * 判断参数 DataAuthorization 是否已赋值
+                     * @return DataAuthorization 是否已赋值
+                     * 
+                     */
+                    bool DataAuthorizationHasBeenSet() const;
+
                 private:
 
                     /**
@@ -715,6 +737,12 @@ namespace TencentCloud
                      */
                     std::string m_platform;
                     bool m_platformHasBeenSet;
+
+                    /**
+                     * 数据授权信息。
+                     */
+                    DataAuthorizationInfo m_dataAuthorization;
+                    bool m_dataAuthorizationHasBeenSet;
 
                 };
             }
