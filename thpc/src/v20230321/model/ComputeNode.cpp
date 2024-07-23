@@ -28,7 +28,8 @@ ComputeNode::ComputeNode() :
     m_dataDisksHasBeenSet(false),
     m_internetAccessibleHasBeenSet(false),
     m_instanceNameHasBeenSet(false),
-    m_projectIdHasBeenSet(false)
+    m_projectIdHasBeenSet(false),
+    m_resourceTypeHasBeenSet(false)
 {
 }
 
@@ -148,6 +149,16 @@ CoreInternalOutcome ComputeNode::Deserialize(const rapidjson::Value &value)
         m_projectIdHasBeenSet = true;
     }
 
+    if (value.HasMember("ResourceType") && !value["ResourceType"].IsNull())
+    {
+        if (!value["ResourceType"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `ComputeNode.ResourceType` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_resourceType = string(value["ResourceType"].GetString());
+        m_resourceTypeHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -227,6 +238,14 @@ void ComputeNode::ToJsonObject(rapidjson::Value &value, rapidjson::Document::All
         string key = "ProjectId";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_projectId, allocator);
+    }
+
+    if (m_resourceTypeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ResourceType";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_resourceType.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -358,5 +377,21 @@ void ComputeNode::SetProjectId(const int64_t& _projectId)
 bool ComputeNode::ProjectIdHasBeenSet() const
 {
     return m_projectIdHasBeenSet;
+}
+
+string ComputeNode::GetResourceType() const
+{
+    return m_resourceType;
+}
+
+void ComputeNode::SetResourceType(const string& _resourceType)
+{
+    m_resourceType = _resourceType;
+    m_resourceTypeHasBeenSet = true;
+}
+
+bool ComputeNode::ResourceTypeHasBeenSet() const
+{
+    return m_resourceTypeHasBeenSet;
 }
 

@@ -67,7 +67,9 @@ DeployApplicationRequest::DeployApplicationRequest() :
     m_enableMetricsHasBeenSet(false),
     m_tcrInstanceIdHasBeenSet(false),
     m_repoServerHasBeenSet(false),
-    m_repoTypeHasBeenSet(false)
+    m_repoTypeHasBeenSet(false),
+    m_postStartEncodedHasBeenSet(false),
+    m_preStopEncodedHasBeenSet(false)
 {
 }
 
@@ -501,6 +503,22 @@ string DeployApplicationRequest::ToJsonString() const
         string key = "RepoType";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_repoType, allocator);
+    }
+
+    if (m_postStartEncodedHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "PostStartEncoded";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_postStartEncoded.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_preStopEncodedHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "PreStopEncoded";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_preStopEncoded.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -1229,6 +1247,38 @@ void DeployApplicationRequest::SetRepoType(const int64_t& _repoType)
 bool DeployApplicationRequest::RepoTypeHasBeenSet() const
 {
     return m_repoTypeHasBeenSet;
+}
+
+string DeployApplicationRequest::GetPostStartEncoded() const
+{
+    return m_postStartEncoded;
+}
+
+void DeployApplicationRequest::SetPostStartEncoded(const string& _postStartEncoded)
+{
+    m_postStartEncoded = _postStartEncoded;
+    m_postStartEncodedHasBeenSet = true;
+}
+
+bool DeployApplicationRequest::PostStartEncodedHasBeenSet() const
+{
+    return m_postStartEncodedHasBeenSet;
+}
+
+string DeployApplicationRequest::GetPreStopEncoded() const
+{
+    return m_preStopEncoded;
+}
+
+void DeployApplicationRequest::SetPreStopEncoded(const string& _preStopEncoded)
+{
+    m_preStopEncoded = _preStopEncoded;
+    m_preStopEncodedHasBeenSet = true;
+}
+
+bool DeployApplicationRequest::PreStopEncodedHasBeenSet() const
+{
+    return m_preStopEncodedHasBeenSet;
 }
 
 

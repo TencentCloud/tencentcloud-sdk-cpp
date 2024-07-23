@@ -86,6 +86,7 @@ set(cdwch_public_header_model
   include/tencentcloud/cdwch/v20200915/model/CreateBackUpScheduleRequest.h
   include/tencentcloud/cdwch/v20200915/model/DeleteBackUpDataRequest.h
   include/tencentcloud/cdwch/v20200915/model/DescribeInstanceRequest.h
+  include/tencentcloud/cdwch/v20200915/model/InstanceDetail.h
   include/tencentcloud/cdwch/v20200915/model/ActionAlterCkUserResponse.h
   include/tencentcloud/cdwch/v20200915/model/AttachCBSSpec.h
   include/tencentcloud/cdwch/v20200915/model/ScheduleStrategy.h
@@ -169,6 +170,7 @@ set(cdwch_src
   src/v20200915/model/CreateBackUpScheduleRequest.cpp
   src/v20200915/model/DeleteBackUpDataRequest.cpp
   src/v20200915/model/DescribeInstanceRequest.cpp
+  src/v20200915/model/InstanceDetail.cpp
   src/v20200915/model/ActionAlterCkUserResponse.cpp
   src/v20200915/model/AttachCBSSpec.cpp
   src/v20200915/model/ScheduleStrategy.cpp

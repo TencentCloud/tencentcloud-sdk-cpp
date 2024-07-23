@@ -28,6 +28,7 @@
 #include <tencentcloud/cdwch/v20200915/model/Tag.h>
 #include <tencentcloud/cdwch/v20200915/model/InstanceStateInfo.h>
 #include <tencentcloud/cdwch/v20200915/model/ServiceInfo.h>
+#include <tencentcloud/cdwch/v20200915/model/InstanceDetail.h>
 
 
 namespace TencentCloud
@@ -1287,6 +1288,31 @@ Modify 集群变更中；
                      */
                     bool ClickHouseKeeperHasBeenSet() const;
 
+                    /**
+                     * 获取实例扩展信息
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return Details 实例扩展信息
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    InstanceDetail GetDetails() const;
+
+                    /**
+                     * 设置实例扩展信息
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _details 实例扩展信息
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetDetails(const InstanceDetail& _details);
+
+                    /**
+                     * 判断参数 Details 是否已赋值
+                     * @return Details 是否已赋值
+                     * 
+                     */
+                    bool DetailsHasBeenSet() const;
+
                 private:
 
                     /**
@@ -1634,6 +1660,13 @@ Modify 集群变更中；
                      */
                     bool m_clickHouseKeeper;
                     bool m_clickHouseKeeperHasBeenSet;
+
+                    /**
+                     * 实例扩展信息
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    InstanceDetail m_details;
+                    bool m_detailsHasBeenSet;
 
                 };
             }

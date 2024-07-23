@@ -386,15 +386,31 @@ namespace TencentCloud
                     bool DeployVersionHasBeenSet() const;
 
                     /**
-                     * 获取包名。使用 JAR 包或者 WAR 包部署的时候必填。
-                     * @return PkgName 包名。使用 JAR 包或者 WAR 包部署的时候必填。
+                     * 获取传入内容为 /jar包名字 的形式。也就是在 jar包名字前增加一个/。
+
+如上传的 jar 包名字为 demo-1.0.0.jar，那么这里传入内容为：/demo-1.0.0.jar
+
+注：jar 包需要通过 tem 页面上传过，tem 后端才能拉到该 jar 包。
+                     * @return PkgName 传入内容为 /jar包名字 的形式。也就是在 jar包名字前增加一个/。
+
+如上传的 jar 包名字为 demo-1.0.0.jar，那么这里传入内容为：/demo-1.0.0.jar
+
+注：jar 包需要通过 tem 页面上传过，tem 后端才能拉到该 jar 包。
                      * 
                      */
                     std::string GetPkgName() const;
 
                     /**
-                     * 设置包名。使用 JAR 包或者 WAR 包部署的时候必填。
-                     * @param _pkgName 包名。使用 JAR 包或者 WAR 包部署的时候必填。
+                     * 设置传入内容为 /jar包名字 的形式。也就是在 jar包名字前增加一个/。
+
+如上传的 jar 包名字为 demo-1.0.0.jar，那么这里传入内容为：/demo-1.0.0.jar
+
+注：jar 包需要通过 tem 页面上传过，tem 后端才能拉到该 jar 包。
+                     * @param _pkgName 传入内容为 /jar包名字 的形式。也就是在 jar包名字前增加一个/。
+
+如上传的 jar 包名字为 demo-1.0.0.jar，那么这里传入内容为：/demo-1.0.0.jar
+
+注：jar 包需要通过 tem 页面上传过，tem 后端才能拉到该 jar 包。
                      * 
                      */
                     void SetPkgName(const std::string& _pkgName);
@@ -1063,6 +1079,48 @@ namespace TencentCloud
                      */
                     bool RepoTypeHasBeenSet() const;
 
+                    /**
+                     * 获取启动后执行的脚本，base64 编码
+                     * @return PostStartEncoded 启动后执行的脚本，base64 编码
+                     * 
+                     */
+                    std::string GetPostStartEncoded() const;
+
+                    /**
+                     * 设置启动后执行的脚本，base64 编码
+                     * @param _postStartEncoded 启动后执行的脚本，base64 编码
+                     * 
+                     */
+                    void SetPostStartEncoded(const std::string& _postStartEncoded);
+
+                    /**
+                     * 判断参数 PostStartEncoded 是否已赋值
+                     * @return PostStartEncoded 是否已赋值
+                     * 
+                     */
+                    bool PostStartEncodedHasBeenSet() const;
+
+                    /**
+                     * 获取停止前执行的脚本，base64 编码
+                     * @return PreStopEncoded 停止前执行的脚本，base64 编码
+                     * 
+                     */
+                    std::string GetPreStopEncoded() const;
+
+                    /**
+                     * 设置停止前执行的脚本，base64 编码
+                     * @param _preStopEncoded 停止前执行的脚本，base64 编码
+                     * 
+                     */
+                    void SetPreStopEncoded(const std::string& _preStopEncoded);
+
+                    /**
+                     * 判断参数 PreStopEncoded 是否已赋值
+                     * @return PreStopEncoded 是否已赋值
+                     * 
+                     */
+                    bool PreStopEncodedHasBeenSet() const;
+
                 private:
 
                     /**
@@ -1160,7 +1218,11 @@ namespace TencentCloud
                     bool m_deployVersionHasBeenSet;
 
                     /**
-                     * 包名。使用 JAR 包或者 WAR 包部署的时候必填。
+                     * 传入内容为 /jar包名字 的形式。也就是在 jar包名字前增加一个/。
+
+如上传的 jar 包名字为 demo-1.0.0.jar，那么这里传入内容为：/demo-1.0.0.jar
+
+注：jar 包需要通过 tem 页面上传过，tem 后端才能拉到该 jar 包。
                      */
                     std::string m_pkgName;
                     bool m_pkgNameHasBeenSet;
@@ -1350,6 +1412,18 @@ namespace TencentCloud
                      */
                     int64_t m_repoType;
                     bool m_repoTypeHasBeenSet;
+
+                    /**
+                     * 启动后执行的脚本，base64 编码
+                     */
+                    std::string m_postStartEncoded;
+                    bool m_postStartEncodedHasBeenSet;
+
+                    /**
+                     * 停止前执行的脚本，base64 编码
+                     */
+                    std::string m_preStopEncoded;
+                    bool m_preStopEncodedHasBeenSet;
 
                 };
             }

@@ -27,7 +27,9 @@ DescribeOrganizationalFunctionsRequest::DescribeOrganizationalFunctionsRequest()
     m_projectIdHasBeenSet(false),
     m_nameHasBeenSet(false),
     m_displayNameHasBeenSet(false),
-    m_envTypeHasBeenSet(false)
+    m_envTypeHasBeenSet(false),
+    m_filtersHasBeenSet(false),
+    m_orderFieldsHasBeenSet(false)
 {
 }
 
@@ -76,6 +78,24 @@ string DescribeOrganizationalFunctionsRequest::ToJsonString() const
         string key = "EnvType";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_envType.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_filtersHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Filters";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_filters.ToJsonObject(d[key.c_str()], allocator);
+    }
+
+    if (m_orderFieldsHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "OrderFields";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_orderFields.ToJsonObject(d[key.c_str()], allocator);
     }
 
 
@@ -164,6 +184,38 @@ void DescribeOrganizationalFunctionsRequest::SetEnvType(const string& _envType)
 bool DescribeOrganizationalFunctionsRequest::EnvTypeHasBeenSet() const
 {
     return m_envTypeHasBeenSet;
+}
+
+Filter DescribeOrganizationalFunctionsRequest::GetFilters() const
+{
+    return m_filters;
+}
+
+void DescribeOrganizationalFunctionsRequest::SetFilters(const Filter& _filters)
+{
+    m_filters = _filters;
+    m_filtersHasBeenSet = true;
+}
+
+bool DescribeOrganizationalFunctionsRequest::FiltersHasBeenSet() const
+{
+    return m_filtersHasBeenSet;
+}
+
+OrderField DescribeOrganizationalFunctionsRequest::GetOrderFields() const
+{
+    return m_orderFields;
+}
+
+void DescribeOrganizationalFunctionsRequest::SetOrderFields(const OrderField& _orderFields)
+{
+    m_orderFields = _orderFields;
+    m_orderFieldsHasBeenSet = true;
+}
+
+bool DescribeOrganizationalFunctionsRequest::OrderFieldsHasBeenSet() const
+{
+    return m_orderFieldsHasBeenSet;
 }
 
 

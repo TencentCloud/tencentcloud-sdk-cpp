@@ -39,6 +39,7 @@ NativeNodePoolInfo::NativeNodePoolInfo() :
     m_enableAutoscalingHasBeenSet(false),
     m_instanceTypesHasBeenSet(false),
     m_replicasHasBeenSet(false),
+    m_readyReplicasHasBeenSet(false),
     m_internetAccessibleHasBeenSet(false),
     m_dataDisksHasBeenSet(false)
 {
@@ -286,6 +287,16 @@ CoreInternalOutcome NativeNodePoolInfo::Deserialize(const rapidjson::Value &valu
         m_replicasHasBeenSet = true;
     }
 
+    if (value.HasMember("ReadyReplicas") && !value["ReadyReplicas"].IsNull())
+    {
+        if (!value["ReadyReplicas"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `NativeNodePoolInfo.ReadyReplicas` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_readyReplicas = value["ReadyReplicas"].GetInt64();
+        m_readyReplicasHasBeenSet = true;
+    }
+
     if (value.HasMember("InternetAccessible") && !value["InternetAccessible"].IsNull())
     {
         if (!value["InternetAccessible"].IsObject())
@@ -503,6 +514,14 @@ void NativeNodePoolInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Docume
         string key = "Replicas";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_replicas, allocator);
+    }
+
+    if (m_readyReplicasHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ReadyReplicas";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_readyReplicas, allocator);
     }
 
     if (m_internetAccessibleHasBeenSet)
@@ -818,6 +837,22 @@ void NativeNodePoolInfo::SetReplicas(const int64_t& _replicas)
 bool NativeNodePoolInfo::ReplicasHasBeenSet() const
 {
     return m_replicasHasBeenSet;
+}
+
+int64_t NativeNodePoolInfo::GetReadyReplicas() const
+{
+    return m_readyReplicas;
+}
+
+void NativeNodePoolInfo::SetReadyReplicas(const int64_t& _readyReplicas)
+{
+    m_readyReplicas = _readyReplicas;
+    m_readyReplicasHasBeenSet = true;
+}
+
+bool NativeNodePoolInfo::ReadyReplicasHasBeenSet() const
+{
+    return m_readyReplicasHasBeenSet;
 }
 
 InternetAccessible NativeNodePoolInfo::GetInternetAccessible() const

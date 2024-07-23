@@ -24,7 +24,8 @@ using namespace std;
 
 StopCompareRequest::StopCompareRequest() :
     m_jobIdHasBeenSet(false),
-    m_compareTaskIdHasBeenSet(false)
+    m_compareTaskIdHasBeenSet(false),
+    m_forceStopHasBeenSet(false)
 {
 }
 
@@ -49,6 +50,14 @@ string StopCompareRequest::ToJsonString() const
         string key = "CompareTaskId";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_compareTaskId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_forceStopHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ForceStop";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_forceStop, allocator);
     }
 
 
@@ -89,6 +98,22 @@ void StopCompareRequest::SetCompareTaskId(const string& _compareTaskId)
 bool StopCompareRequest::CompareTaskIdHasBeenSet() const
 {
     return m_compareTaskIdHasBeenSet;
+}
+
+bool StopCompareRequest::GetForceStop() const
+{
+    return m_forceStop;
+}
+
+void StopCompareRequest::SetForceStop(const bool& _forceStop)
+{
+    m_forceStop = _forceStop;
+    m_forceStopHasBeenSet = true;
+}
+
+bool StopCompareRequest::ForceStopHasBeenSet() const
+{
+    return m_forceStopHasBeenSet;
 }
 
 

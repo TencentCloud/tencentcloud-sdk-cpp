@@ -104,6 +104,35 @@ namespace TencentCloud
                      */
                     bool VideoUrlHasBeenSet() const;
 
+                    /**
+                     * 获取风格化强度 可选参数["low","medium","high"] 
+"low":风格化强度弱,"medium":"风格化强度中等","high":"风格化强度强" 
+默认为medium
+                     * @return StyleStrength 风格化强度 可选参数["low","medium","high"] 
+"low":风格化强度弱,"medium":"风格化强度中等","high":"风格化强度强" 
+默认为medium
+                     * 
+                     */
+                    std::string GetStyleStrength() const;
+
+                    /**
+                     * 设置风格化强度 可选参数["low","medium","high"] 
+"low":风格化强度弱,"medium":"风格化强度中等","high":"风格化强度强" 
+默认为medium
+                     * @param _styleStrength 风格化强度 可选参数["low","medium","high"] 
+"low":风格化强度弱,"medium":"风格化强度中等","high":"风格化强度强" 
+默认为medium
+                     * 
+                     */
+                    void SetStyleStrength(const std::string& _styleStrength);
+
+                    /**
+                     * 判断参数 StyleStrength 是否已赋值
+                     * @return StyleStrength 是否已赋值
+                     * 
+                     */
+                    bool StyleStrengthHasBeenSet() const;
+
                 private:
 
                     /**
@@ -122,6 +151,14 @@ namespace TencentCloud
                      */
                     std::string m_videoUrl;
                     bool m_videoUrlHasBeenSet;
+
+                    /**
+                     * 风格化强度 可选参数["low","medium","high"] 
+"low":风格化强度弱,"medium":"风格化强度中等","high":"风格化强度强" 
+默认为medium
+                     */
+                    std::string m_styleStrength;
+                    bool m_styleStrengthHasBeenSet;
 
                 };
             }

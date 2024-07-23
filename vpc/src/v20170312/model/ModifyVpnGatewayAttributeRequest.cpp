@@ -26,7 +26,8 @@ ModifyVpnGatewayAttributeRequest::ModifyVpnGatewayAttributeRequest() :
     m_vpnGatewayIdHasBeenSet(false),
     m_vpnGatewayNameHasBeenSet(false),
     m_instanceChargeTypeHasBeenSet(false),
-    m_bgpAsnHasBeenSet(false)
+    m_bgpAsnHasBeenSet(false),
+    m_maxConnectionHasBeenSet(false)
 {
 }
 
@@ -67,6 +68,14 @@ string ModifyVpnGatewayAttributeRequest::ToJsonString() const
         string key = "BgpAsn";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_bgpAsn, allocator);
+    }
+
+    if (m_maxConnectionHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "MaxConnection";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_maxConnection, allocator);
     }
 
 
@@ -139,6 +148,22 @@ void ModifyVpnGatewayAttributeRequest::SetBgpAsn(const uint64_t& _bgpAsn)
 bool ModifyVpnGatewayAttributeRequest::BgpAsnHasBeenSet() const
 {
     return m_bgpAsnHasBeenSet;
+}
+
+uint64_t ModifyVpnGatewayAttributeRequest::GetMaxConnection() const
+{
+    return m_maxConnection;
+}
+
+void ModifyVpnGatewayAttributeRequest::SetMaxConnection(const uint64_t& _maxConnection)
+{
+    m_maxConnection = _maxConnection;
+    m_maxConnectionHasBeenSet = true;
+}
+
+bool ModifyVpnGatewayAttributeRequest::MaxConnectionHasBeenSet() const
+{
+    return m_maxConnectionHasBeenSet;
 }
 
 

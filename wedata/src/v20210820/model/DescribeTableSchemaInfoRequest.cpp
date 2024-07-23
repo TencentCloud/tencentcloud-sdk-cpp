@@ -28,7 +28,8 @@ DescribeTableSchemaInfoRequest::DescribeTableSchemaInfoRequest() :
     m_msTypeHasBeenSet(false),
     m_datasourceIdHasBeenSet(false),
     m_connectionTypeHasBeenSet(false),
-    m_schemaNameHasBeenSet(false)
+    m_schemaNameHasBeenSet(false),
+    m_projectIdHasBeenSet(false)
 {
 }
 
@@ -85,6 +86,14 @@ string DescribeTableSchemaInfoRequest::ToJsonString() const
         string key = "SchemaName";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_schemaName.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_projectIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ProjectId";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_projectId.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -189,6 +198,22 @@ void DescribeTableSchemaInfoRequest::SetSchemaName(const string& _schemaName)
 bool DescribeTableSchemaInfoRequest::SchemaNameHasBeenSet() const
 {
     return m_schemaNameHasBeenSet;
+}
+
+string DescribeTableSchemaInfoRequest::GetProjectId() const
+{
+    return m_projectId;
+}
+
+void DescribeTableSchemaInfoRequest::SetProjectId(const string& _projectId)
+{
+    m_projectId = _projectId;
+    m_projectIdHasBeenSet = true;
+}
+
+bool DescribeTableSchemaInfoRequest::ProjectIdHasBeenSet() const
+{
+    return m_projectIdHasBeenSet;
 }
 
 

@@ -69,7 +69,8 @@ InstanceInfo::InstanceInfo() :
     m_hasEsIndexHasBeenSet(false),
     m_isSecondaryZoneHasBeenSet(false),
     m_secondaryZoneInfoHasBeenSet(false),
-    m_clickHouseKeeperHasBeenSet(false)
+    m_clickHouseKeeperHasBeenSet(false),
+    m_detailsHasBeenSet(false)
 {
 }
 
@@ -609,6 +610,23 @@ CoreInternalOutcome InstanceInfo::Deserialize(const rapidjson::Value &value)
         m_clickHouseKeeperHasBeenSet = true;
     }
 
+    if (value.HasMember("Details") && !value["Details"].IsNull())
+    {
+        if (!value["Details"].IsObject())
+        {
+            return CoreInternalOutcome(Core::Error("response `InstanceInfo.Details` is not object type").SetRequestId(requestId));
+        }
+
+        CoreInternalOutcome outcome = m_details.Deserialize(value["Details"]);
+        if (!outcome.IsSuccess())
+        {
+            outcome.GetError().SetRequestId(requestId);
+            return outcome;
+        }
+
+        m_detailsHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -1023,6 +1041,15 @@ void InstanceInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Al
         string key = "ClickHouseKeeper";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_clickHouseKeeper, allocator);
+    }
+
+    if (m_detailsHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Details";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_details.ToJsonObject(value[key.c_str()], allocator);
     }
 
 }
@@ -1810,5 +1837,21 @@ void InstanceInfo::SetClickHouseKeeper(const bool& _clickHouseKeeper)
 bool InstanceInfo::ClickHouseKeeperHasBeenSet() const
 {
     return m_clickHouseKeeperHasBeenSet;
+}
+
+InstanceDetail InstanceInfo::GetDetails() const
+{
+    return m_details;
+}
+
+void InstanceInfo::SetDetails(const InstanceDetail& _details)
+{
+    m_details = _details;
+    m_detailsHasBeenSet = true;
+}
+
+bool InstanceInfo::DetailsHasBeenSet() const
+{
+    return m_detailsHasBeenSet;
 }
 

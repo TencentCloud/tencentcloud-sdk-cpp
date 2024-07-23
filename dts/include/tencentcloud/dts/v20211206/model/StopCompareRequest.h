@@ -84,6 +84,27 @@ namespace TencentCloud
                      */
                     bool CompareTaskIdHasBeenSet() const;
 
+                    /**
+                     * 获取是否强制停止。如果填true，同步任务增量阶段会跳过一致性校验产生的binlog，达到快速恢复任务的效果
+                     * @return ForceStop 是否强制停止。如果填true，同步任务增量阶段会跳过一致性校验产生的binlog，达到快速恢复任务的效果
+                     * 
+                     */
+                    bool GetForceStop() const;
+
+                    /**
+                     * 设置是否强制停止。如果填true，同步任务增量阶段会跳过一致性校验产生的binlog，达到快速恢复任务的效果
+                     * @param _forceStop 是否强制停止。如果填true，同步任务增量阶段会跳过一致性校验产生的binlog，达到快速恢复任务的效果
+                     * 
+                     */
+                    void SetForceStop(const bool& _forceStop);
+
+                    /**
+                     * 判断参数 ForceStop 是否已赋值
+                     * @return ForceStop 是否已赋值
+                     * 
+                     */
+                    bool ForceStopHasBeenSet() const;
+
                 private:
 
                     /**
@@ -97,6 +118,12 @@ namespace TencentCloud
                      */
                     std::string m_compareTaskId;
                     bool m_compareTaskIdHasBeenSet;
+
+                    /**
+                     * 是否强制停止。如果填true，同步任务增量阶段会跳过一致性校验产生的binlog，达到快速恢复任务的效果
+                     */
+                    bool m_forceStop;
+                    bool m_forceStopHasBeenSet;
 
                 };
             }

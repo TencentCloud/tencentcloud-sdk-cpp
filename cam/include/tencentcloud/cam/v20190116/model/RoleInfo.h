@@ -294,6 +294,31 @@ namespace TencentCloud
                      */
                     bool TagsHasBeenSet() const;
 
+                    /**
+                     * 获取角色RoleArn信息
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return RoleArn 角色RoleArn信息
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::string GetRoleArn() const;
+
+                    /**
+                     * 设置角色RoleArn信息
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _roleArn 角色RoleArn信息
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetRoleArn(const std::string& _roleArn);
+
+                    /**
+                     * 判断参数 RoleArn 是否已赋值
+                     * @return RoleArn 是否已赋值
+                     * 
+                     */
+                    bool RoleArnHasBeenSet() const;
+
                 private:
 
                     /**
@@ -365,6 +390,13 @@ namespace TencentCloud
                      */
                     std::vector<RoleTags> m_tags;
                     bool m_tagsHasBeenSet;
+
+                    /**
+                     * 角色RoleArn信息
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_roleArn;
+                    bool m_roleArnHasBeenSet;
 
                 };
             }

@@ -31,7 +31,8 @@ RoleInfo::RoleInfo() :
     m_roleTypeHasBeenSet(false),
     m_sessionDurationHasBeenSet(false),
     m_deletionTaskIdHasBeenSet(false),
-    m_tagsHasBeenSet(false)
+    m_tagsHasBeenSet(false),
+    m_roleArnHasBeenSet(false)
 {
 }
 
@@ -160,6 +161,16 @@ CoreInternalOutcome RoleInfo::Deserialize(const rapidjson::Value &value)
         m_tagsHasBeenSet = true;
     }
 
+    if (value.HasMember("RoleArn") && !value["RoleArn"].IsNull())
+    {
+        if (!value["RoleArn"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `RoleInfo.RoleArn` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_roleArn = string(value["RoleArn"].GetString());
+        m_roleArnHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -260,6 +271,14 @@ void RoleInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Alloca
             value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
             (*itr).ToJsonObject(value[key.c_str()][i], allocator);
         }
+    }
+
+    if (m_roleArnHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "RoleArn";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_roleArn.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -439,5 +458,21 @@ void RoleInfo::SetTags(const vector<RoleTags>& _tags)
 bool RoleInfo::TagsHasBeenSet() const
 {
     return m_tagsHasBeenSet;
+}
+
+string RoleInfo::GetRoleArn() const
+{
+    return m_roleArn;
+}
+
+void RoleInfo::SetRoleArn(const string& _roleArn)
+{
+    m_roleArn = _roleArn;
+    m_roleArnHasBeenSet = true;
+}
+
+bool RoleInfo::RoleArnHasBeenSet() const
+{
+    return m_roleArnHasBeenSet;
 }
 

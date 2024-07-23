@@ -35,7 +35,12 @@ CCN::CCN() :
     m_routeTableCountHasBeenSet(false),
     m_routeTableFlagHasBeenSet(false),
     m_isSecurityLockHasBeenSet(false),
-    m_routeBroadcastPolicyFlagHasBeenSet(false)
+    m_routeBroadcastPolicyFlagHasBeenSet(false),
+    m_routeECMPFlagHasBeenSet(false),
+    m_routeOverlapFlagHasBeenSet(false),
+    m_trafficMarkingPolicyFlagHasBeenSet(false),
+    m_routeSelectPolicyFlagHasBeenSet(false),
+    m_directConnectAccelerateChannelFlagHasBeenSet(false)
 {
 }
 
@@ -204,6 +209,56 @@ CoreInternalOutcome CCN::Deserialize(const rapidjson::Value &value)
         m_routeBroadcastPolicyFlagHasBeenSet = true;
     }
 
+    if (value.HasMember("RouteECMPFlag") && !value["RouteECMPFlag"].IsNull())
+    {
+        if (!value["RouteECMPFlag"].IsBool())
+        {
+            return CoreInternalOutcome(Core::Error("response `CCN.RouteECMPFlag` IsBool=false incorrectly").SetRequestId(requestId));
+        }
+        m_routeECMPFlag = value["RouteECMPFlag"].GetBool();
+        m_routeECMPFlagHasBeenSet = true;
+    }
+
+    if (value.HasMember("RouteOverlapFlag") && !value["RouteOverlapFlag"].IsNull())
+    {
+        if (!value["RouteOverlapFlag"].IsBool())
+        {
+            return CoreInternalOutcome(Core::Error("response `CCN.RouteOverlapFlag` IsBool=false incorrectly").SetRequestId(requestId));
+        }
+        m_routeOverlapFlag = value["RouteOverlapFlag"].GetBool();
+        m_routeOverlapFlagHasBeenSet = true;
+    }
+
+    if (value.HasMember("TrafficMarkingPolicyFlag") && !value["TrafficMarkingPolicyFlag"].IsNull())
+    {
+        if (!value["TrafficMarkingPolicyFlag"].IsBool())
+        {
+            return CoreInternalOutcome(Core::Error("response `CCN.TrafficMarkingPolicyFlag` IsBool=false incorrectly").SetRequestId(requestId));
+        }
+        m_trafficMarkingPolicyFlag = value["TrafficMarkingPolicyFlag"].GetBool();
+        m_trafficMarkingPolicyFlagHasBeenSet = true;
+    }
+
+    if (value.HasMember("RouteSelectPolicyFlag") && !value["RouteSelectPolicyFlag"].IsNull())
+    {
+        if (!value["RouteSelectPolicyFlag"].IsBool())
+        {
+            return CoreInternalOutcome(Core::Error("response `CCN.RouteSelectPolicyFlag` IsBool=false incorrectly").SetRequestId(requestId));
+        }
+        m_routeSelectPolicyFlag = value["RouteSelectPolicyFlag"].GetBool();
+        m_routeSelectPolicyFlagHasBeenSet = true;
+    }
+
+    if (value.HasMember("DirectConnectAccelerateChannelFlag") && !value["DirectConnectAccelerateChannelFlag"].IsNull())
+    {
+        if (!value["DirectConnectAccelerateChannelFlag"].IsBool())
+        {
+            return CoreInternalOutcome(Core::Error("response `CCN.DirectConnectAccelerateChannelFlag` IsBool=false incorrectly").SetRequestId(requestId));
+        }
+        m_directConnectAccelerateChannelFlag = value["DirectConnectAccelerateChannelFlag"].GetBool();
+        m_directConnectAccelerateChannelFlagHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -336,6 +391,46 @@ void CCN::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorTy
         string key = "RouteBroadcastPolicyFlag";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_routeBroadcastPolicyFlag, allocator);
+    }
+
+    if (m_routeECMPFlagHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "RouteECMPFlag";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_routeECMPFlag, allocator);
+    }
+
+    if (m_routeOverlapFlagHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "RouteOverlapFlag";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_routeOverlapFlag, allocator);
+    }
+
+    if (m_trafficMarkingPolicyFlagHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "TrafficMarkingPolicyFlag";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_trafficMarkingPolicyFlag, allocator);
+    }
+
+    if (m_routeSelectPolicyFlagHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "RouteSelectPolicyFlag";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_routeSelectPolicyFlag, allocator);
+    }
+
+    if (m_directConnectAccelerateChannelFlagHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "DirectConnectAccelerateChannelFlag";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_directConnectAccelerateChannelFlag, allocator);
     }
 
 }
@@ -579,5 +674,85 @@ void CCN::SetRouteBroadcastPolicyFlag(const bool& _routeBroadcastPolicyFlag)
 bool CCN::RouteBroadcastPolicyFlagHasBeenSet() const
 {
     return m_routeBroadcastPolicyFlagHasBeenSet;
+}
+
+bool CCN::GetRouteECMPFlag() const
+{
+    return m_routeECMPFlag;
+}
+
+void CCN::SetRouteECMPFlag(const bool& _routeECMPFlag)
+{
+    m_routeECMPFlag = _routeECMPFlag;
+    m_routeECMPFlagHasBeenSet = true;
+}
+
+bool CCN::RouteECMPFlagHasBeenSet() const
+{
+    return m_routeECMPFlagHasBeenSet;
+}
+
+bool CCN::GetRouteOverlapFlag() const
+{
+    return m_routeOverlapFlag;
+}
+
+void CCN::SetRouteOverlapFlag(const bool& _routeOverlapFlag)
+{
+    m_routeOverlapFlag = _routeOverlapFlag;
+    m_routeOverlapFlagHasBeenSet = true;
+}
+
+bool CCN::RouteOverlapFlagHasBeenSet() const
+{
+    return m_routeOverlapFlagHasBeenSet;
+}
+
+bool CCN::GetTrafficMarkingPolicyFlag() const
+{
+    return m_trafficMarkingPolicyFlag;
+}
+
+void CCN::SetTrafficMarkingPolicyFlag(const bool& _trafficMarkingPolicyFlag)
+{
+    m_trafficMarkingPolicyFlag = _trafficMarkingPolicyFlag;
+    m_trafficMarkingPolicyFlagHasBeenSet = true;
+}
+
+bool CCN::TrafficMarkingPolicyFlagHasBeenSet() const
+{
+    return m_trafficMarkingPolicyFlagHasBeenSet;
+}
+
+bool CCN::GetRouteSelectPolicyFlag() const
+{
+    return m_routeSelectPolicyFlag;
+}
+
+void CCN::SetRouteSelectPolicyFlag(const bool& _routeSelectPolicyFlag)
+{
+    m_routeSelectPolicyFlag = _routeSelectPolicyFlag;
+    m_routeSelectPolicyFlagHasBeenSet = true;
+}
+
+bool CCN::RouteSelectPolicyFlagHasBeenSet() const
+{
+    return m_routeSelectPolicyFlagHasBeenSet;
+}
+
+bool CCN::GetDirectConnectAccelerateChannelFlag() const
+{
+    return m_directConnectAccelerateChannelFlag;
+}
+
+void CCN::SetDirectConnectAccelerateChannelFlag(const bool& _directConnectAccelerateChannelFlag)
+{
+    m_directConnectAccelerateChannelFlag = _directConnectAccelerateChannelFlag;
+    m_directConnectAccelerateChannelFlagHasBeenSet = true;
+}
+
+bool CCN::DirectConnectAccelerateChannelFlagHasBeenSet() const
+{
+    return m_directConnectAccelerateChannelFlagHasBeenSet;
 }
 

@@ -42,7 +42,8 @@ AddNodesRequest::AddNodesRequest() :
     m_nodeRoleHasBeenSet(false),
     m_dryRunHasBeenSet(false),
     m_nodeTypeHasBeenSet(false),
-    m_projectIdHasBeenSet(false)
+    m_projectIdHasBeenSet(false),
+    m_resourceTypeHasBeenSet(false)
 {
 }
 
@@ -229,6 +230,14 @@ string AddNodesRequest::ToJsonString() const
         string key = "ProjectId";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_projectId, allocator);
+    }
+
+    if (m_resourceTypeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ResourceType";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_resourceType.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -557,6 +566,22 @@ void AddNodesRequest::SetProjectId(const int64_t& _projectId)
 bool AddNodesRequest::ProjectIdHasBeenSet() const
 {
     return m_projectIdHasBeenSet;
+}
+
+string AddNodesRequest::GetResourceType() const
+{
+    return m_resourceType;
+}
+
+void AddNodesRequest::SetResourceType(const string& _resourceType)
+{
+    m_resourceType = _resourceType;
+    m_resourceTypeHasBeenSet = true;
+}
+
+bool AddNodesRequest::ResourceTypeHasBeenSet() const
+{
+    return m_resourceTypeHasBeenSet;
 }
 
 

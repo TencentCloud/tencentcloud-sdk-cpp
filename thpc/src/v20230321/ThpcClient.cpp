@@ -169,6 +169,49 @@ ThpcClient::AddQueueOutcomeCallable ThpcClient::AddQueueCallable(const AddQueueR
     return task->get_future();
 }
 
+ThpcClient::AttachNodesOutcome ThpcClient::AttachNodes(const AttachNodesRequest &request)
+{
+    auto outcome = MakeRequest(request, "AttachNodes");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        AttachNodesResponse rsp = AttachNodesResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return AttachNodesOutcome(rsp);
+        else
+            return AttachNodesOutcome(o.GetError());
+    }
+    else
+    {
+        return AttachNodesOutcome(outcome.GetError());
+    }
+}
+
+void ThpcClient::AttachNodesAsync(const AttachNodesRequest& request, const AttachNodesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->AttachNodes(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+ThpcClient::AttachNodesOutcomeCallable ThpcClient::AttachNodesCallable(const AttachNodesRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<AttachNodesOutcome()>>(
+        [this, request]()
+        {
+            return this->AttachNodes(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 ThpcClient::CreateClusterOutcome ThpcClient::CreateCluster(const CreateClusterRequest &request)
 {
     auto outcome = MakeRequest(request, "CreateCluster");
@@ -678,6 +721,49 @@ ThpcClient::DescribeQueuesOutcomeCallable ThpcClient::DescribeQueuesCallable(con
         [this, request]()
         {
             return this->DescribeQueues(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+ThpcClient::DetachNodesOutcome ThpcClient::DetachNodes(const DetachNodesRequest &request)
+{
+    auto outcome = MakeRequest(request, "DetachNodes");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DetachNodesResponse rsp = DetachNodesResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DetachNodesOutcome(rsp);
+        else
+            return DetachNodesOutcome(o.GetError());
+    }
+    else
+    {
+        return DetachNodesOutcome(outcome.GetError());
+    }
+}
+
+void ThpcClient::DetachNodesAsync(const DetachNodesRequest& request, const DetachNodesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DetachNodes(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+ThpcClient::DetachNodesOutcomeCallable ThpcClient::DetachNodesCallable(const DetachNodesRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DetachNodesOutcome()>>(
+        [this, request]()
+        {
+            return this->DetachNodes(request);
         }
     );
 

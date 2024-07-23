@@ -155,15 +155,15 @@ namespace TencentCloud
                     bool ImageIdHasBeenSet() const;
 
                     /**
-                     * 获取节点[计费类型](https://cloud.tencent.com/document/product/213/2180)。<br><li>PREPAID：预付费，即包年包月<br><li>POSTPAID_BY_HOUR：按小时后付费<br><li>SPOTPAID：竞价付费<br>默认值：POSTPAID_BY_HOUR。
-                     * @return InstanceChargeType 节点[计费类型](https://cloud.tencent.com/document/product/213/2180)。<br><li>PREPAID：预付费，即包年包月<br><li>POSTPAID_BY_HOUR：按小时后付费<br><li>SPOTPAID：竞价付费<br>默认值：POSTPAID_BY_HOUR。
+                     * 获取节点[计费类型](https://cloud.tencent.com/document/product/213/2180)。<br><li>PREPAID：预付费，即包年包月</li><li>POSTPAID_BY_HOUR：按小时后付费</li><li>SPOTPAID：竞价付费</li>默认值：POSTPAID_BY_HOUR。
+                     * @return InstanceChargeType 节点[计费类型](https://cloud.tencent.com/document/product/213/2180)。<br><li>PREPAID：预付费，即包年包月</li><li>POSTPAID_BY_HOUR：按小时后付费</li><li>SPOTPAID：竞价付费</li>默认值：POSTPAID_BY_HOUR。
                      * 
                      */
                     std::string GetInstanceChargeType() const;
 
                     /**
-                     * 设置节点[计费类型](https://cloud.tencent.com/document/product/213/2180)。<br><li>PREPAID：预付费，即包年包月<br><li>POSTPAID_BY_HOUR：按小时后付费<br><li>SPOTPAID：竞价付费<br>默认值：POSTPAID_BY_HOUR。
-                     * @param _instanceChargeType 节点[计费类型](https://cloud.tencent.com/document/product/213/2180)。<br><li>PREPAID：预付费，即包年包月<br><li>POSTPAID_BY_HOUR：按小时后付费<br><li>SPOTPAID：竞价付费<br>默认值：POSTPAID_BY_HOUR。
+                     * 设置节点[计费类型](https://cloud.tencent.com/document/product/213/2180)。<br><li>PREPAID：预付费，即包年包月</li><li>POSTPAID_BY_HOUR：按小时后付费</li><li>SPOTPAID：竞价付费</li>默认值：POSTPAID_BY_HOUR。
+                     * @param _instanceChargeType 节点[计费类型](https://cloud.tencent.com/document/product/213/2180)。<br><li>PREPAID：预付费，即包年包月</li><li>POSTPAID_BY_HOUR：按小时后付费</li><li>SPOTPAID：竞价付费</li>默认值：POSTPAID_BY_HOUR。
                      * 
                      */
                     void SetInstanceChargeType(const std::string& _instanceChargeType);
@@ -197,15 +197,15 @@ namespace TencentCloud
                     bool InstanceChargePrepaidHasBeenSet() const;
 
                     /**
-                     * 获取节点机型。不同实例机型指定了不同的资源规格。<br><li>具体取值可通过调用接口[DescribeInstanceTypeConfigs](https://cloud.tencent.com/document/api/213/15749)来获得最新的规格表或参见[实例规格](https://cloud.tencent.com/document/product/213/11518)描述。
-                     * @return InstanceType 节点机型。不同实例机型指定了不同的资源规格。<br><li>具体取值可通过调用接口[DescribeInstanceTypeConfigs](https://cloud.tencent.com/document/api/213/15749)来获得最新的规格表或参见[实例规格](https://cloud.tencent.com/document/product/213/11518)描述。
+                     * 获取节点机型。不同实例机型指定了不同的资源规格。<br><li>具体取值可通过调用接口[DescribeInstanceTypeConfigs](https://cloud.tencent.com/document/api/213/15749)来获得最新的规格表或参见[实例规格](https://cloud.tencent.com/document/product/213/11518)描述。</li>
+                     * @return InstanceType 节点机型。不同实例机型指定了不同的资源规格。<br><li>具体取值可通过调用接口[DescribeInstanceTypeConfigs](https://cloud.tencent.com/document/api/213/15749)来获得最新的规格表或参见[实例规格](https://cloud.tencent.com/document/product/213/11518)描述。</li>
                      * 
                      */
                     std::string GetInstanceType() const;
 
                     /**
-                     * 设置节点机型。不同实例机型指定了不同的资源规格。<br><li>具体取值可通过调用接口[DescribeInstanceTypeConfigs](https://cloud.tencent.com/document/api/213/15749)来获得最新的规格表或参见[实例规格](https://cloud.tencent.com/document/product/213/11518)描述。
-                     * @param _instanceType 节点机型。不同实例机型指定了不同的资源规格。<br><li>具体取值可通过调用接口[DescribeInstanceTypeConfigs](https://cloud.tencent.com/document/api/213/15749)来获得最新的规格表或参见[实例规格](https://cloud.tencent.com/document/product/213/11518)描述。
+                     * 设置节点机型。不同实例机型指定了不同的资源规格。<br><li>具体取值可通过调用接口[DescribeInstanceTypeConfigs](https://cloud.tencent.com/document/api/213/15749)来获得最新的规格表或参见[实例规格](https://cloud.tencent.com/document/product/213/11518)描述。</li>
+                     * @param _instanceType 节点机型。不同实例机型指定了不同的资源规格。<br><li>具体取值可通过调用接口[DescribeInstanceTypeConfigs](https://cloud.tencent.com/document/api/213/15749)来获得最新的规格表或参见[实例规格](https://cloud.tencent.com/document/product/213/11518)描述。</li>
                      * 
                      */
                     void SetInstanceType(const std::string& _instanceType);
@@ -373,18 +373,18 @@ namespace TencentCloud
                     bool ClientTokenHasBeenSet() const;
 
                     /**
-                     * 获取队列名称。不指定则为默认队列。<li>SLURM默认队列为：compute。<li>SGE默认队列为：all.q。
+                     * 获取队列名称。不指定则为默认队列。<li>SLURM默认队列为：compute。</li><li>SGE默认队列为：all.q。</li>
 
-                     * @return QueueName 队列名称。不指定则为默认队列。<li>SLURM默认队列为：compute。<li>SGE默认队列为：all.q。
+                     * @return QueueName 队列名称。不指定则为默认队列。<li>SLURM默认队列为：compute。</li><li>SGE默认队列为：all.q。</li>
 
                      * 
                      */
                     std::string GetQueueName() const;
 
                     /**
-                     * 设置队列名称。不指定则为默认队列。<li>SLURM默认队列为：compute。<li>SGE默认队列为：all.q。
+                     * 设置队列名称。不指定则为默认队列。<li>SLURM默认队列为：compute。</li><li>SGE默认队列为：all.q。</li>
 
-                     * @param _queueName 队列名称。不指定则为默认队列。<li>SLURM默认队列为：compute。<li>SGE默认队列为：all.q。
+                     * @param _queueName 队列名称。不指定则为默认队列。<li>SLURM默认队列为：compute。</li><li>SGE默认队列为：all.q。</li>
 
                      * 
                      */
@@ -398,15 +398,15 @@ namespace TencentCloud
                     bool QueueNameHasBeenSet() const;
 
                     /**
-                     * 获取添加节点角色。默认值：Compute<br><li>Compute：计算节点。<br><li>Login：登录节点。
-                     * @return NodeRole 添加节点角色。默认值：Compute<br><li>Compute：计算节点。<br><li>Login：登录节点。
+                     * 获取添加节点角色。默认值：Compute<br><li>Compute：计算节点。</li><li>Login：登录节点。</li>
+                     * @return NodeRole 添加节点角色。默认值：Compute<br><li>Compute：计算节点。</li><li>Login：登录节点。</li>
                      * 
                      */
                     std::string GetNodeRole() const;
 
                     /**
-                     * 设置添加节点角色。默认值：Compute<br><li>Compute：计算节点。<br><li>Login：登录节点。
-                     * @param _nodeRole 添加节点角色。默认值：Compute<br><li>Compute：计算节点。<br><li>Login：登录节点。
+                     * 设置添加节点角色。默认值：Compute<br><li>Compute：计算节点。</li><li>Login：登录节点。</li>
+                     * @param _nodeRole 添加节点角色。默认值：Compute<br><li>Compute：计算节点。</li><li>Login：登录节点。</li>
                      * 
                      */
                     void SetNodeRole(const std::string& _nodeRole);
@@ -456,15 +456,15 @@ false（默认）：发送正常请求，通过检查后直接创建实例
                     bool DryRunHasBeenSet() const;
 
                     /**
-                     * 获取添加节点类型。默认取值：STATIC。<li>STATIC：静态节点，不会参与弹性伸缩流程。<li>DYNAMIC：弹性节点，会被弹性缩容的节点。管控节点和登录节点不支持此参数。
-                     * @return NodeType 添加节点类型。默认取值：STATIC。<li>STATIC：静态节点，不会参与弹性伸缩流程。<li>DYNAMIC：弹性节点，会被弹性缩容的节点。管控节点和登录节点不支持此参数。
+                     * 获取添加节点类型。默认取值：STATIC。<li>STATIC：静态节点，不会参与弹性伸缩流程。</li><li>DYNAMIC：弹性节点，会被弹性缩容的节点。管控节点和登录节点不支持此参数。</li>
+                     * @return NodeType 添加节点类型。默认取值：STATIC。<li>STATIC：静态节点，不会参与弹性伸缩流程。</li><li>DYNAMIC：弹性节点，会被弹性缩容的节点。管控节点和登录节点不支持此参数。</li>
                      * 
                      */
                     std::string GetNodeType() const;
 
                     /**
-                     * 设置添加节点类型。默认取值：STATIC。<li>STATIC：静态节点，不会参与弹性伸缩流程。<li>DYNAMIC：弹性节点，会被弹性缩容的节点。管控节点和登录节点不支持此参数。
-                     * @param _nodeType 添加节点类型。默认取值：STATIC。<li>STATIC：静态节点，不会参与弹性伸缩流程。<li>DYNAMIC：弹性节点，会被弹性缩容的节点。管控节点和登录节点不支持此参数。
+                     * 设置添加节点类型。默认取值：STATIC。<li>STATIC：静态节点，不会参与弹性伸缩流程。</li><li>DYNAMIC：弹性节点，会被弹性缩容的节点。管控节点和登录节点不支持此参数。</li>
+                     * @param _nodeType 添加节点类型。默认取值：STATIC。<li>STATIC：静态节点，不会参与弹性伸缩流程。</li><li>DYNAMIC：弹性节点，会被弹性缩容的节点。管控节点和登录节点不支持此参数。</li>
                      * 
                      */
                     void SetNodeType(const std::string& _nodeType);
@@ -496,6 +496,27 @@ false（默认）：发送正常请求，通过检查后直接创建实例
                      * 
                      */
                     bool ProjectIdHasBeenSet() const;
+
+                    /**
+                     * 获取要新增节点的资源类型。<li>CVM：CVM实例类型资源</li><li>WORKSPACE：工作空间类型实例资源</li>默认值：CVM。
+                     * @return ResourceType 要新增节点的资源类型。<li>CVM：CVM实例类型资源</li><li>WORKSPACE：工作空间类型实例资源</li>默认值：CVM。
+                     * 
+                     */
+                    std::string GetResourceType() const;
+
+                    /**
+                     * 设置要新增节点的资源类型。<li>CVM：CVM实例类型资源</li><li>WORKSPACE：工作空间类型实例资源</li>默认值：CVM。
+                     * @param _resourceType 要新增节点的资源类型。<li>CVM：CVM实例类型资源</li><li>WORKSPACE：工作空间类型实例资源</li>默认值：CVM。
+                     * 
+                     */
+                    void SetResourceType(const std::string& _resourceType);
+
+                    /**
+                     * 判断参数 ResourceType 是否已赋值
+                     * @return ResourceType 是否已赋值
+                     * 
+                     */
+                    bool ResourceTypeHasBeenSet() const;
 
                 private:
 
@@ -530,7 +551,7 @@ false（默认）：发送正常请求，通过检查后直接创建实例
                     bool m_imageIdHasBeenSet;
 
                     /**
-                     * 节点[计费类型](https://cloud.tencent.com/document/product/213/2180)。<br><li>PREPAID：预付费，即包年包月<br><li>POSTPAID_BY_HOUR：按小时后付费<br><li>SPOTPAID：竞价付费<br>默认值：POSTPAID_BY_HOUR。
+                     * 节点[计费类型](https://cloud.tencent.com/document/product/213/2180)。<br><li>PREPAID：预付费，即包年包月</li><li>POSTPAID_BY_HOUR：按小时后付费</li><li>SPOTPAID：竞价付费</li>默认值：POSTPAID_BY_HOUR。
                      */
                     std::string m_instanceChargeType;
                     bool m_instanceChargeTypeHasBeenSet;
@@ -542,7 +563,7 @@ false（默认）：发送正常请求，通过检查后直接创建实例
                     bool m_instanceChargePrepaidHasBeenSet;
 
                     /**
-                     * 节点机型。不同实例机型指定了不同的资源规格。<br><li>具体取值可通过调用接口[DescribeInstanceTypeConfigs](https://cloud.tencent.com/document/api/213/15749)来获得最新的规格表或参见[实例规格](https://cloud.tencent.com/document/product/213/11518)描述。
+                     * 节点机型。不同实例机型指定了不同的资源规格。<br><li>具体取值可通过调用接口[DescribeInstanceTypeConfigs](https://cloud.tencent.com/document/api/213/15749)来获得最新的规格表或参见[实例规格](https://cloud.tencent.com/document/product/213/11518)描述。</li>
                      */
                     std::string m_instanceType;
                     bool m_instanceTypeHasBeenSet;
@@ -592,14 +613,14 @@ false（默认）：发送正常请求，通过检查后直接创建实例
                     bool m_clientTokenHasBeenSet;
 
                     /**
-                     * 队列名称。不指定则为默认队列。<li>SLURM默认队列为：compute。<li>SGE默认队列为：all.q。
+                     * 队列名称。不指定则为默认队列。<li>SLURM默认队列为：compute。</li><li>SGE默认队列为：all.q。</li>
 
                      */
                     std::string m_queueName;
                     bool m_queueNameHasBeenSet;
 
                     /**
-                     * 添加节点角色。默认值：Compute<br><li>Compute：计算节点。<br><li>Login：登录节点。
+                     * 添加节点角色。默认值：Compute<br><li>Compute：计算节点。</li><li>Login：登录节点。</li>
                      */
                     std::string m_nodeRole;
                     bool m_nodeRoleHasBeenSet;
@@ -615,7 +636,7 @@ false（默认）：发送正常请求，通过检查后直接创建实例
                     bool m_dryRunHasBeenSet;
 
                     /**
-                     * 添加节点类型。默认取值：STATIC。<li>STATIC：静态节点，不会参与弹性伸缩流程。<li>DYNAMIC：弹性节点，会被弹性缩容的节点。管控节点和登录节点不支持此参数。
+                     * 添加节点类型。默认取值：STATIC。<li>STATIC：静态节点，不会参与弹性伸缩流程。</li><li>DYNAMIC：弹性节点，会被弹性缩容的节点。管控节点和登录节点不支持此参数。</li>
                      */
                     std::string m_nodeType;
                     bool m_nodeTypeHasBeenSet;
@@ -625,6 +646,12 @@ false（默认）：发送正常请求，通过检查后直接创建实例
                      */
                     int64_t m_projectId;
                     bool m_projectIdHasBeenSet;
+
+                    /**
+                     * 要新增节点的资源类型。<li>CVM：CVM实例类型资源</li><li>WORKSPACE：工作空间类型实例资源</li>默认值：CVM。
+                     */
+                    std::string m_resourceType;
+                    bool m_resourceTypeHasBeenSet;
 
                 };
             }

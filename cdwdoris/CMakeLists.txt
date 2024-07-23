@@ -33,6 +33,7 @@ set(cdwdoris_public_header_model
   include/tencentcloud/cdwdoris/v20211228/model/DescribeInstanceNodesRequest.h
   include/tencentcloud/cdwdoris/v20211228/model/ModifyInstanceRequest.h
   include/tencentcloud/cdwdoris/v20211228/model/ChargeProperties.h
+  include/tencentcloud/cdwdoris/v20211228/model/InstanceDetail.h
   include/tencentcloud/cdwdoris/v20211228/model/ClusterConfigsInfoFromEMR.h
   include/tencentcloud/cdwdoris/v20211228/model/InstanceNode.h
   include/tencentcloud/cdwdoris/v20211228/model/CreateInstanceNewResponse.h
@@ -85,6 +86,7 @@ set(cdwdoris_src
   src/v20211228/model/DescribeInstanceNodesRequest.cpp
   src/v20211228/model/ModifyInstanceRequest.cpp
   src/v20211228/model/ChargeProperties.cpp
+  src/v20211228/model/InstanceDetail.cpp
   src/v20211228/model/ClusterConfigsInfoFromEMR.cpp
   src/v20211228/model/InstanceNode.cpp
   src/v20211228/model/CreateInstanceNewResponse.cpp

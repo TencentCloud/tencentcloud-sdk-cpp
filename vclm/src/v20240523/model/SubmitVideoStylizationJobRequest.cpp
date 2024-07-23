@@ -24,7 +24,8 @@ using namespace std;
 
 SubmitVideoStylizationJobRequest::SubmitVideoStylizationJobRequest() :
     m_styleIdHasBeenSet(false),
-    m_videoUrlHasBeenSet(false)
+    m_videoUrlHasBeenSet(false),
+    m_styleStrengthHasBeenSet(false)
 {
 }
 
@@ -49,6 +50,14 @@ string SubmitVideoStylizationJobRequest::ToJsonString() const
         string key = "VideoUrl";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_videoUrl.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_styleStrengthHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "StyleStrength";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_styleStrength.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -89,6 +98,22 @@ void SubmitVideoStylizationJobRequest::SetVideoUrl(const string& _videoUrl)
 bool SubmitVideoStylizationJobRequest::VideoUrlHasBeenSet() const
 {
     return m_videoUrlHasBeenSet;
+}
+
+string SubmitVideoStylizationJobRequest::GetStyleStrength() const
+{
+    return m_styleStrength;
+}
+
+void SubmitVideoStylizationJobRequest::SetStyleStrength(const string& _styleStrength)
+{
+    m_styleStrength = _styleStrength;
+    m_styleStrengthHasBeenSet = true;
+}
+
+bool SubmitVideoStylizationJobRequest::StyleStrengthHasBeenSet() const
+{
+    return m_styleStrengthHasBeenSet;
 }
 
 

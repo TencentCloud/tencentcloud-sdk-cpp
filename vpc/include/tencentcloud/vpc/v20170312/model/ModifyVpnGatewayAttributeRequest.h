@@ -126,6 +126,27 @@ namespace TencentCloud
                      */
                     bool BgpAsnHasBeenSet() const;
 
+                    /**
+                     * 获取服务端最大连接数个数。
+                     * @return MaxConnection 服务端最大连接数个数。
+                     * 
+                     */
+                    uint64_t GetMaxConnection() const;
+
+                    /**
+                     * 设置服务端最大连接数个数。
+                     * @param _maxConnection 服务端最大连接数个数。
+                     * 
+                     */
+                    void SetMaxConnection(const uint64_t& _maxConnection);
+
+                    /**
+                     * 判断参数 MaxConnection 是否已赋值
+                     * @return MaxConnection 是否已赋值
+                     * 
+                     */
+                    bool MaxConnectionHasBeenSet() const;
+
                 private:
 
                     /**
@@ -151,6 +172,12 @@ namespace TencentCloud
                      */
                     uint64_t m_bgpAsn;
                     bool m_bgpAsnHasBeenSet;
+
+                    /**
+                     * 服务端最大连接数个数。
+                     */
+                    uint64_t m_maxConnection;
+                    bool m_maxConnectionHasBeenSet;
 
                 };
             }

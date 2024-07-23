@@ -97,18 +97,18 @@ namespace TencentCloud
                     bool ZoneHasBeenSet() const;
 
                     /**
-                     * 获取节点状态。<br><li>SUBMITTED：已完成提交。<br><li>CREATING：创建中。<br><li>CREATED：完成创建。<br><li>INITING：初始化中。<br><li>INIT_FAILED：初始化失败。<br><li>RUNNING：运行中。<br><li>DELETING：销毁中。
+                     * 获取节点状态。<li>SUBMITTED：已完成提交。</li><li>CREATING：创建中。</li><li>CREATED：完成创建。</li><li>INITING：初始化中。</li><li>INIT_FAILED：初始化失败。</li><li>RUNNING：运行中。</li><li>DELETING：销毁中。</li>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return NodeState 节点状态。<br><li>SUBMITTED：已完成提交。<br><li>CREATING：创建中。<br><li>CREATED：完成创建。<br><li>INITING：初始化中。<br><li>INIT_FAILED：初始化失败。<br><li>RUNNING：运行中。<br><li>DELETING：销毁中。
+                     * @return NodeState 节点状态。<li>SUBMITTED：已完成提交。</li><li>CREATING：创建中。</li><li>CREATED：完成创建。</li><li>INITING：初始化中。</li><li>INIT_FAILED：初始化失败。</li><li>RUNNING：运行中。</li><li>DELETING：销毁中。</li>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetNodeState() const;
 
                     /**
-                     * 设置节点状态。<br><li>SUBMITTED：已完成提交。<br><li>CREATING：创建中。<br><li>CREATED：完成创建。<br><li>INITING：初始化中。<br><li>INIT_FAILED：初始化失败。<br><li>RUNNING：运行中。<br><li>DELETING：销毁中。
+                     * 设置节点状态。<li>SUBMITTED：已完成提交。</li><li>CREATING：创建中。</li><li>CREATED：完成创建。</li><li>INITING：初始化中。</li><li>INIT_FAILED：初始化失败。</li><li>RUNNING：运行中。</li><li>DELETING：销毁中。</li>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _nodeState 节点状态。<br><li>SUBMITTED：已完成提交。<br><li>CREATING：创建中。<br><li>CREATED：完成创建。<br><li>INITING：初始化中。<br><li>INIT_FAILED：初始化失败。<br><li>RUNNING：运行中。<br><li>DELETING：销毁中。
+                     * @param _nodeState 节点状态。<li>SUBMITTED：已完成提交。</li><li>CREATING：创建中。</li><li>CREATED：完成创建。</li><li>INITING：初始化中。</li><li>INIT_FAILED：初始化失败。</li><li>RUNNING：运行中。</li><li>DELETING：销毁中。</li>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -172,18 +172,18 @@ namespace TencentCloud
                     bool QueueNameHasBeenSet() const;
 
                     /**
-                     * 获取节点角色。<br><li>Manager：管控节点。<br><li>Compute：计算节点。<br><li>Login：登录节点。<br><li>ManagerBackup：备用管控节点。
+                     * 获取节点角色。<li>Manager：管控节点。</li><li>Compute：计算节点。</li><li>Login：登录节点。</li><li>ManagerBackup：备用管控节点。</li>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return NodeRole 节点角色。<br><li>Manager：管控节点。<br><li>Compute：计算节点。<br><li>Login：登录节点。<br><li>ManagerBackup：备用管控节点。
+                     * @return NodeRole 节点角色。<li>Manager：管控节点。</li><li>Compute：计算节点。</li><li>Login：登录节点。</li><li>ManagerBackup：备用管控节点。</li>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetNodeRole() const;
 
                     /**
-                     * 设置节点角色。<br><li>Manager：管控节点。<br><li>Compute：计算节点。<br><li>Login：登录节点。<br><li>ManagerBackup：备用管控节点。
+                     * 设置节点角色。<li>Manager：管控节点。</li><li>Compute：计算节点。</li><li>Login：登录节点。</li><li>ManagerBackup：备用管控节点。</li>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _nodeRole 节点角色。<br><li>Manager：管控节点。<br><li>Compute：计算节点。<br><li>Login：登录节点。<br><li>ManagerBackup：备用管控节点。
+                     * @param _nodeRole 节点角色。<li>Manager：管控节点。</li><li>Compute：计算节点。</li><li>Login：登录节点。</li><li>ManagerBackup：备用管控节点。</li>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -197,18 +197,18 @@ namespace TencentCloud
                     bool NodeRoleHasBeenSet() const;
 
                     /**
-                     * 获取节点类型。<br><li>STATIC：静态节点。<br><li>DYNAMIC：弹性节点。
+                     * 获取节点类型。<li>STATIC：静态节点。</li><li>DYNAMIC：弹性节点。</li>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return NodeType 节点类型。<br><li>STATIC：静态节点。<br><li>DYNAMIC：弹性节点。
+                     * @return NodeType 节点类型。<li>STATIC：静态节点。</li><li>DYNAMIC：弹性节点。</li>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetNodeType() const;
 
                     /**
-                     * 设置节点类型。<br><li>STATIC：静态节点。<br><li>DYNAMIC：弹性节点。
+                     * 设置节点类型。<li>STATIC：静态节点。</li><li>DYNAMIC：弹性节点。</li>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _nodeType 节点类型。<br><li>STATIC：静态节点。<br><li>DYNAMIC：弹性节点。
+                     * @param _nodeType 节点类型。<li>STATIC：静态节点。</li><li>DYNAMIC：弹性节点。</li>
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -220,6 +220,31 @@ namespace TencentCloud
                      * 
                      */
                     bool NodeTypeHasBeenSet() const;
+
+                    /**
+                     * 获取thpc集群节点id
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return NodeId thpc集群节点id
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::string GetNodeId() const;
+
+                    /**
+                     * 设置thpc集群节点id
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _nodeId thpc集群节点id
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetNodeId(const std::string& _nodeId);
+
+                    /**
+                     * 判断参数 NodeId 是否已赋值
+                     * @return NodeId 是否已赋值
+                     * 
+                     */
+                    bool NodeIdHasBeenSet() const;
 
                 private:
 
@@ -238,7 +263,7 @@ namespace TencentCloud
                     bool m_zoneHasBeenSet;
 
                     /**
-                     * 节点状态。<br><li>SUBMITTED：已完成提交。<br><li>CREATING：创建中。<br><li>CREATED：完成创建。<br><li>INITING：初始化中。<br><li>INIT_FAILED：初始化失败。<br><li>RUNNING：运行中。<br><li>DELETING：销毁中。
+                     * 节点状态。<li>SUBMITTED：已完成提交。</li><li>CREATING：创建中。</li><li>CREATED：完成创建。</li><li>INITING：初始化中。</li><li>INIT_FAILED：初始化失败。</li><li>RUNNING：运行中。</li><li>DELETING：销毁中。</li>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_nodeState;
@@ -259,18 +284,25 @@ namespace TencentCloud
                     bool m_queueNameHasBeenSet;
 
                     /**
-                     * 节点角色。<br><li>Manager：管控节点。<br><li>Compute：计算节点。<br><li>Login：登录节点。<br><li>ManagerBackup：备用管控节点。
+                     * 节点角色。<li>Manager：管控节点。</li><li>Compute：计算节点。</li><li>Login：登录节点。</li><li>ManagerBackup：备用管控节点。</li>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_nodeRole;
                     bool m_nodeRoleHasBeenSet;
 
                     /**
-                     * 节点类型。<br><li>STATIC：静态节点。<br><li>DYNAMIC：弹性节点。
+                     * 节点类型。<li>STATIC：静态节点。</li><li>DYNAMIC：弹性节点。</li>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_nodeType;
                     bool m_nodeTypeHasBeenSet;
+
+                    /**
+                     * thpc集群节点id
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_nodeId;
+                    bool m_nodeIdHasBeenSet;
 
                 };
             }

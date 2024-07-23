@@ -27,6 +27,7 @@ set(thpc_public_header_model
   include/tencentcloud/thpc/v20230321/model/QueueOverview.h
   include/tencentcloud/thpc/v20230321/model/DescribeClustersRequest.h
   include/tencentcloud/thpc/v20230321/model/SetAutoScalingConfigurationRequest.h
+  include/tencentcloud/thpc/v20230321/model/DetachNodesRequest.h
   include/tencentcloud/thpc/v20230321/model/NodeOverview.h
   include/tencentcloud/thpc/v20230321/model/DescribeNodesRequest.h
   include/tencentcloud/thpc/v20230321/model/DeleteNodesResponse.h
@@ -37,8 +38,8 @@ set(thpc_public_header_model
   include/tencentcloud/thpc/v20230321/model/NodeActivity.h
   include/tencentcloud/thpc/v20230321/model/Placement.h
   include/tencentcloud/thpc/v20230321/model/AddQueueRequest.h
-  include/tencentcloud/thpc/v20230321/model/LoginNodeOverview.h
-  include/tencentcloud/thpc/v20230321/model/CFSOption.h
+  include/tencentcloud/thpc/v20230321/model/InternetAccessible.h
+  include/tencentcloud/thpc/v20230321/model/AttachNodesResponse.h
   include/tencentcloud/thpc/v20230321/model/ClusterActivity.h
   include/tencentcloud/thpc/v20230321/model/CreateClusterResponse.h
   include/tencentcloud/thpc/v20230321/model/RunSecurityServiceEnabled.h
@@ -47,11 +48,11 @@ set(thpc_public_header_model
   include/tencentcloud/thpc/v20230321/model/CreateClusterRequest.h
   include/tencentcloud/thpc/v20230321/model/AddQueueResponse.h
   include/tencentcloud/thpc/v20230321/model/DescribeClusterStorageOptionResponse.h
-  include/tencentcloud/thpc/v20230321/model/DescribeQueuesResponse.h
+  include/tencentcloud/thpc/v20230321/model/CFSOption.h
   include/tencentcloud/thpc/v20230321/model/GooseFSOptionOverview.h
   include/tencentcloud/thpc/v20230321/model/EnhancedService.h
   include/tencentcloud/thpc/v20230321/model/InstanceChargePrepaid.h
-  include/tencentcloud/thpc/v20230321/model/Tag.h
+  include/tencentcloud/thpc/v20230321/model/LoginNodeOverview.h
   include/tencentcloud/thpc/v20230321/model/LoginNode.h
   include/tencentcloud/thpc/v20230321/model/StorageOptionOverview.h
   include/tencentcloud/thpc/v20230321/model/NodeScript.h
@@ -61,10 +62,12 @@ set(thpc_public_header_model
   include/tencentcloud/thpc/v20230321/model/DeleteClusterRequest.h
   include/tencentcloud/thpc/v20230321/model/ComputeNodeOverview.h
   include/tencentcloud/thpc/v20230321/model/SystemDisk.h
+  include/tencentcloud/thpc/v20230321/model/Tag.h
   include/tencentcloud/thpc/v20230321/model/LoginSettings.h
   include/tencentcloud/thpc/v20230321/model/GooseFSOption.h
   include/tencentcloud/thpc/v20230321/model/RunAutomationServiceEnabled.h
   include/tencentcloud/thpc/v20230321/model/DescribeClusterActivitiesRequest.h
+  include/tencentcloud/thpc/v20230321/model/QueueConfig.h
   include/tencentcloud/thpc/v20230321/model/DeleteQueueRequest.h
   include/tencentcloud/thpc/v20230321/model/Filter.h
   include/tencentcloud/thpc/v20230321/model/AddNodesRequest.h
@@ -74,14 +77,15 @@ set(thpc_public_header_model
   include/tencentcloud/thpc/v20230321/model/GooseFSxOption.h
   include/tencentcloud/thpc/v20230321/model/RunMonitorServiceEnabled.h
   include/tencentcloud/thpc/v20230321/model/QueueConfigOverview.h
+  include/tencentcloud/thpc/v20230321/model/DescribeQueuesResponse.h
   include/tencentcloud/thpc/v20230321/model/VirtualPrivateCloud.h
   include/tencentcloud/thpc/v20230321/model/ExpansionNodeConfigOverview.h
   include/tencentcloud/thpc/v20230321/model/ModifyInitNodeScriptsRequest.h
   include/tencentcloud/thpc/v20230321/model/GooseFSxOptionOverview.h
-  include/tencentcloud/thpc/v20230321/model/QueueConfig.h
+  include/tencentcloud/thpc/v20230321/model/DetachNodesResponse.h
   include/tencentcloud/thpc/v20230321/model/DescribeAutoScalingConfigurationRequest.h
   include/tencentcloud/thpc/v20230321/model/StorageOption.h
-  include/tencentcloud/thpc/v20230321/model/InternetAccessible.h
+  include/tencentcloud/thpc/v20230321/model/AttachNodesRequest.h
   include/tencentcloud/thpc/v20230321/model/ComputeNode.h
   include/tencentcloud/thpc/v20230321/model/DeleteNodesRequest.h
   include/tencentcloud/thpc/v20230321/model/DescribeClustersResponse.h
@@ -192,6 +196,7 @@ set(thpc_src
   src/v20230321/model/QueueOverview.cpp
   src/v20230321/model/DescribeClustersRequest.cpp
   src/v20230321/model/SetAutoScalingConfigurationRequest.cpp
+  src/v20230321/model/DetachNodesRequest.cpp
   src/v20230321/model/NodeOverview.cpp
   src/v20230321/model/DescribeNodesRequest.cpp
   src/v20230321/model/DeleteNodesResponse.cpp
@@ -202,8 +207,8 @@ set(thpc_src
   src/v20230321/model/NodeActivity.cpp
   src/v20230321/model/Placement.cpp
   src/v20230321/model/AddQueueRequest.cpp
-  src/v20230321/model/LoginNodeOverview.cpp
-  src/v20230321/model/CFSOption.cpp
+  src/v20230321/model/InternetAccessible.cpp
+  src/v20230321/model/AttachNodesResponse.cpp
   src/v20230321/model/ClusterActivity.cpp
   src/v20230321/model/CreateClusterResponse.cpp
   src/v20230321/model/RunSecurityServiceEnabled.cpp
@@ -212,11 +217,11 @@ set(thpc_src
   src/v20230321/model/CreateClusterRequest.cpp
   src/v20230321/model/AddQueueResponse.cpp
   src/v20230321/model/DescribeClusterStorageOptionResponse.cpp
-  src/v20230321/model/DescribeQueuesResponse.cpp
+  src/v20230321/model/CFSOption.cpp
   src/v20230321/model/GooseFSOptionOverview.cpp
   src/v20230321/model/EnhancedService.cpp
   src/v20230321/model/InstanceChargePrepaid.cpp
-  src/v20230321/model/Tag.cpp
+  src/v20230321/model/LoginNodeOverview.cpp
   src/v20230321/model/LoginNode.cpp
   src/v20230321/model/StorageOptionOverview.cpp
   src/v20230321/model/NodeScript.cpp
@@ -226,10 +231,12 @@ set(thpc_src
   src/v20230321/model/DeleteClusterRequest.cpp
   src/v20230321/model/ComputeNodeOverview.cpp
   src/v20230321/model/SystemDisk.cpp
+  src/v20230321/model/Tag.cpp
   src/v20230321/model/LoginSettings.cpp
   src/v20230321/model/GooseFSOption.cpp
   src/v20230321/model/RunAutomationServiceEnabled.cpp
   src/v20230321/model/DescribeClusterActivitiesRequest.cpp
+  src/v20230321/model/QueueConfig.cpp
   src/v20230321/model/DeleteQueueRequest.cpp
   src/v20230321/model/Filter.cpp
   src/v20230321/model/AddNodesRequest.cpp
@@ -239,14 +246,15 @@ set(thpc_src
   src/v20230321/model/GooseFSxOption.cpp
   src/v20230321/model/RunMonitorServiceEnabled.cpp
   src/v20230321/model/QueueConfigOverview.cpp
+  src/v20230321/model/DescribeQueuesResponse.cpp
   src/v20230321/model/VirtualPrivateCloud.cpp
   src/v20230321/model/ExpansionNodeConfigOverview.cpp
   src/v20230321/model/ModifyInitNodeScriptsRequest.cpp
   src/v20230321/model/GooseFSxOptionOverview.cpp
-  src/v20230321/model/QueueConfig.cpp
+  src/v20230321/model/DetachNodesResponse.cpp
   src/v20230321/model/DescribeAutoScalingConfigurationRequest.cpp
   src/v20230321/model/StorageOption.cpp
-  src/v20230321/model/InternetAccessible.cpp
+  src/v20230321/model/AttachNodesRequest.cpp
   src/v20230321/model/ComputeNode.cpp
   src/v20230321/model/DeleteNodesRequest.cpp
   src/v20230321/model/DescribeClustersResponse.cpp

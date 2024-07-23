@@ -67,7 +67,8 @@ InstanceInfo::InstanceInfo() :
     m_enableMultiZonesHasBeenSet(false),
     m_userNetworkInfosHasBeenSet(false),
     m_enableCoolDownHasBeenSet(false),
-    m_coolDownBucketHasBeenSet(false)
+    m_coolDownBucketHasBeenSet(false),
+    m_detailsHasBeenSet(false)
 {
 }
 
@@ -576,6 +577,23 @@ CoreInternalOutcome InstanceInfo::Deserialize(const rapidjson::Value &value)
         m_coolDownBucketHasBeenSet = true;
     }
 
+    if (value.HasMember("Details") && !value["Details"].IsNull())
+    {
+        if (!value["Details"].IsObject())
+        {
+            return CoreInternalOutcome(Core::Error("response `InstanceInfo.Details` is not object type").SetRequestId(requestId));
+        }
+
+        CoreInternalOutcome outcome = m_details.Deserialize(value["Details"]);
+        if (!outcome.IsSuccess())
+        {
+            outcome.GetError().SetRequestId(requestId);
+            return outcome;
+        }
+
+        m_detailsHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -976,6 +994,15 @@ void InstanceInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Al
         string key = "CoolDownBucket";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_coolDownBucket.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_detailsHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Details";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_details.ToJsonObject(value[key.c_str()], allocator);
     }
 
 }
@@ -1731,5 +1758,21 @@ void InstanceInfo::SetCoolDownBucket(const string& _coolDownBucket)
 bool InstanceInfo::CoolDownBucketHasBeenSet() const
 {
     return m_coolDownBucketHasBeenSet;
+}
+
+InstanceDetail InstanceInfo::GetDetails() const
+{
+    return m_details;
+}
+
+void InstanceInfo::SetDetails(const InstanceDetail& _details)
+{
+    m_details = _details;
+    m_detailsHasBeenSet = true;
+}
+
+bool InstanceInfo::DetailsHasBeenSet() const
+{
+    return m_detailsHasBeenSet;
 }
 

@@ -29,6 +29,8 @@
 #include <tencentcloud/thpc/v20230321/model/AddNodesResponse.h>
 #include <tencentcloud/thpc/v20230321/model/AddQueueRequest.h>
 #include <tencentcloud/thpc/v20230321/model/AddQueueResponse.h>
+#include <tencentcloud/thpc/v20230321/model/AttachNodesRequest.h>
+#include <tencentcloud/thpc/v20230321/model/AttachNodesResponse.h>
 #include <tencentcloud/thpc/v20230321/model/CreateClusterRequest.h>
 #include <tencentcloud/thpc/v20230321/model/CreateClusterResponse.h>
 #include <tencentcloud/thpc/v20230321/model/DeleteClusterRequest.h>
@@ -53,6 +55,8 @@
 #include <tencentcloud/thpc/v20230321/model/DescribeNodesResponse.h>
 #include <tencentcloud/thpc/v20230321/model/DescribeQueuesRequest.h>
 #include <tencentcloud/thpc/v20230321/model/DescribeQueuesResponse.h>
+#include <tencentcloud/thpc/v20230321/model/DetachNodesRequest.h>
+#include <tencentcloud/thpc/v20230321/model/DetachNodesResponse.h>
 #include <tencentcloud/thpc/v20230321/model/ModifyInitNodeScriptsRequest.h>
 #include <tencentcloud/thpc/v20230321/model/ModifyInitNodeScriptsResponse.h>
 #include <tencentcloud/thpc/v20230321/model/SetAutoScalingConfigurationRequest.h>
@@ -80,6 +84,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::AddQueueResponse> AddQueueOutcome;
                 typedef std::future<AddQueueOutcome> AddQueueOutcomeCallable;
                 typedef std::function<void(const ThpcClient*, const Model::AddQueueRequest&, AddQueueOutcome, const std::shared_ptr<const AsyncCallerContext>&)> AddQueueAsyncHandler;
+                typedef Outcome<Core::Error, Model::AttachNodesResponse> AttachNodesOutcome;
+                typedef std::future<AttachNodesOutcome> AttachNodesOutcomeCallable;
+                typedef std::function<void(const ThpcClient*, const Model::AttachNodesRequest&, AttachNodesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> AttachNodesAsyncHandler;
                 typedef Outcome<Core::Error, Model::CreateClusterResponse> CreateClusterOutcome;
                 typedef std::future<CreateClusterOutcome> CreateClusterOutcomeCallable;
                 typedef std::function<void(const ThpcClient*, const Model::CreateClusterRequest&, CreateClusterOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateClusterAsyncHandler;
@@ -116,6 +123,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeQueuesResponse> DescribeQueuesOutcome;
                 typedef std::future<DescribeQueuesOutcome> DescribeQueuesOutcomeCallable;
                 typedef std::function<void(const ThpcClient*, const Model::DescribeQueuesRequest&, DescribeQueuesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeQueuesAsyncHandler;
+                typedef Outcome<Core::Error, Model::DetachNodesResponse> DetachNodesOutcome;
+                typedef std::future<DetachNodesOutcome> DetachNodesOutcomeCallable;
+                typedef std::function<void(const ThpcClient*, const Model::DetachNodesRequest&, DetachNodesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DetachNodesAsyncHandler;
                 typedef Outcome<Core::Error, Model::ModifyInitNodeScriptsResponse> ModifyInitNodeScriptsOutcome;
                 typedef std::future<ModifyInitNodeScriptsOutcome> ModifyInitNodeScriptsOutcomeCallable;
                 typedef std::function<void(const ThpcClient*, const Model::ModifyInitNodeScriptsRequest&, ModifyInitNodeScriptsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyInitNodeScriptsAsyncHandler;
@@ -153,6 +163,15 @@ namespace TencentCloud
                 AddQueueOutcome AddQueue(const Model::AddQueueRequest &request);
                 void AddQueueAsync(const Model::AddQueueRequest& request, const AddQueueAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 AddQueueOutcomeCallable AddQueueCallable(const Model::AddQueueRequest& request);
+
+                /**
+                 *本接口 (AttachNodes) 用于绑定一个或者多个计算节点指定资源到指定集群中。
+                 * @param req AttachNodesRequest
+                 * @return AttachNodesOutcome
+                 */
+                AttachNodesOutcome AttachNodes(const Model::AttachNodesRequest &request);
+                void AttachNodesAsync(const Model::AttachNodesRequest& request, const AttachNodesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                AttachNodesOutcomeCallable AttachNodesCallable(const Model::AttachNodesRequest& request);
 
                 /**
                  *本接口 (CreateCluster) 用于创建并启动集群。
@@ -266,6 +285,15 @@ namespace TencentCloud
                 DescribeQueuesOutcome DescribeQueues(const Model::DescribeQueuesRequest &request);
                 void DescribeQueuesAsync(const Model::DescribeQueuesRequest& request, const DescribeQueuesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DescribeQueuesOutcomeCallable DescribeQueuesCallable(const Model::DescribeQueuesRequest& request);
+
+                /**
+                 *本接口 (DetachNodes) 用于将一个或者多个计算节点从集群中移除，但是不销毁指定计算资源。
+                 * @param req DetachNodesRequest
+                 * @return DetachNodesOutcome
+                 */
+                DetachNodesOutcome DetachNodes(const Model::DetachNodesRequest &request);
+                void DetachNodesAsync(const Model::DetachNodesRequest& request, const DetachNodesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DetachNodesOutcomeCallable DetachNodesCallable(const Model::DetachNodesRequest& request);
 
                 /**
                  *本接口 (ModifyInitNodeScripts) 用于修改节点初始化脚本。

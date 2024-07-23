@@ -35,6 +35,8 @@
 #include <tencentcloud/mongodb/v20190725/model/CreateDBInstanceResponse.h>
 #include <tencentcloud/mongodb/v20190725/model/CreateDBInstanceHourRequest.h>
 #include <tencentcloud/mongodb/v20190725/model/CreateDBInstanceHourResponse.h>
+#include <tencentcloud/mongodb/v20190725/model/CreateDBInstanceParamTplRequest.h>
+#include <tencentcloud/mongodb/v20190725/model/CreateDBInstanceParamTplResponse.h>
 #include <tencentcloud/mongodb/v20190725/model/DeleteAccountUserRequest.h>
 #include <tencentcloud/mongodb/v20190725/model/DeleteAccountUserResponse.h>
 #include <tencentcloud/mongodb/v20190725/model/DescribeAccountUsersRequest.h>
@@ -55,6 +57,10 @@
 #include <tencentcloud/mongodb/v20190725/model/DescribeDBInstanceDealResponse.h>
 #include <tencentcloud/mongodb/v20190725/model/DescribeDBInstanceNodePropertyRequest.h>
 #include <tencentcloud/mongodb/v20190725/model/DescribeDBInstanceNodePropertyResponse.h>
+#include <tencentcloud/mongodb/v20190725/model/DescribeDBInstanceParamTplRequest.h>
+#include <tencentcloud/mongodb/v20190725/model/DescribeDBInstanceParamTplResponse.h>
+#include <tencentcloud/mongodb/v20190725/model/DescribeDBInstanceParamTplDetailRequest.h>
+#include <tencentcloud/mongodb/v20190725/model/DescribeDBInstanceParamTplDetailResponse.h>
 #include <tencentcloud/mongodb/v20190725/model/DescribeDBInstancesRequest.h>
 #include <tencentcloud/mongodb/v20190725/model/DescribeDBInstancesResponse.h>
 #include <tencentcloud/mongodb/v20190725/model/DescribeInstanceParamsRequest.h>
@@ -69,6 +75,8 @@
 #include <tencentcloud/mongodb/v20190725/model/DescribeSpecInfoResponse.h>
 #include <tencentcloud/mongodb/v20190725/model/DescribeTransparentDataEncryptionStatusRequest.h>
 #include <tencentcloud/mongodb/v20190725/model/DescribeTransparentDataEncryptionStatusResponse.h>
+#include <tencentcloud/mongodb/v20190725/model/DropDBInstanceParamTplRequest.h>
+#include <tencentcloud/mongodb/v20190725/model/DropDBInstanceParamTplResponse.h>
 #include <tencentcloud/mongodb/v20190725/model/EnableTransparentDataEncryptionRequest.h>
 #include <tencentcloud/mongodb/v20190725/model/EnableTransparentDataEncryptionResponse.h>
 #include <tencentcloud/mongodb/v20190725/model/FlashBackDBInstanceRequest.h>
@@ -87,6 +95,8 @@
 #include <tencentcloud/mongodb/v20190725/model/KillOpsResponse.h>
 #include <tencentcloud/mongodb/v20190725/model/ModifyDBInstanceNetworkAddressRequest.h>
 #include <tencentcloud/mongodb/v20190725/model/ModifyDBInstanceNetworkAddressResponse.h>
+#include <tencentcloud/mongodb/v20190725/model/ModifyDBInstanceParamTplRequest.h>
+#include <tencentcloud/mongodb/v20190725/model/ModifyDBInstanceParamTplResponse.h>
 #include <tencentcloud/mongodb/v20190725/model/ModifyDBInstanceSecurityGroupRequest.h>
 #include <tencentcloud/mongodb/v20190725/model/ModifyDBInstanceSecurityGroupResponse.h>
 #include <tencentcloud/mongodb/v20190725/model/ModifyDBInstanceSpecRequest.h>
@@ -141,6 +151,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::CreateDBInstanceHourResponse> CreateDBInstanceHourOutcome;
                 typedef std::future<CreateDBInstanceHourOutcome> CreateDBInstanceHourOutcomeCallable;
                 typedef std::function<void(const MongodbClient*, const Model::CreateDBInstanceHourRequest&, CreateDBInstanceHourOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateDBInstanceHourAsyncHandler;
+                typedef Outcome<Core::Error, Model::CreateDBInstanceParamTplResponse> CreateDBInstanceParamTplOutcome;
+                typedef std::future<CreateDBInstanceParamTplOutcome> CreateDBInstanceParamTplOutcomeCallable;
+                typedef std::function<void(const MongodbClient*, const Model::CreateDBInstanceParamTplRequest&, CreateDBInstanceParamTplOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateDBInstanceParamTplAsyncHandler;
                 typedef Outcome<Core::Error, Model::DeleteAccountUserResponse> DeleteAccountUserOutcome;
                 typedef std::future<DeleteAccountUserOutcome> DeleteAccountUserOutcomeCallable;
                 typedef std::function<void(const MongodbClient*, const Model::DeleteAccountUserRequest&, DeleteAccountUserOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteAccountUserAsyncHandler;
@@ -171,6 +184,12 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeDBInstanceNodePropertyResponse> DescribeDBInstanceNodePropertyOutcome;
                 typedef std::future<DescribeDBInstanceNodePropertyOutcome> DescribeDBInstanceNodePropertyOutcomeCallable;
                 typedef std::function<void(const MongodbClient*, const Model::DescribeDBInstanceNodePropertyRequest&, DescribeDBInstanceNodePropertyOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeDBInstanceNodePropertyAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeDBInstanceParamTplResponse> DescribeDBInstanceParamTplOutcome;
+                typedef std::future<DescribeDBInstanceParamTplOutcome> DescribeDBInstanceParamTplOutcomeCallable;
+                typedef std::function<void(const MongodbClient*, const Model::DescribeDBInstanceParamTplRequest&, DescribeDBInstanceParamTplOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeDBInstanceParamTplAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeDBInstanceParamTplDetailResponse> DescribeDBInstanceParamTplDetailOutcome;
+                typedef std::future<DescribeDBInstanceParamTplDetailOutcome> DescribeDBInstanceParamTplDetailOutcomeCallable;
+                typedef std::function<void(const MongodbClient*, const Model::DescribeDBInstanceParamTplDetailRequest&, DescribeDBInstanceParamTplDetailOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeDBInstanceParamTplDetailAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeDBInstancesResponse> DescribeDBInstancesOutcome;
                 typedef std::future<DescribeDBInstancesOutcome> DescribeDBInstancesOutcomeCallable;
                 typedef std::function<void(const MongodbClient*, const Model::DescribeDBInstancesRequest&, DescribeDBInstancesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeDBInstancesAsyncHandler;
@@ -192,6 +211,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeTransparentDataEncryptionStatusResponse> DescribeTransparentDataEncryptionStatusOutcome;
                 typedef std::future<DescribeTransparentDataEncryptionStatusOutcome> DescribeTransparentDataEncryptionStatusOutcomeCallable;
                 typedef std::function<void(const MongodbClient*, const Model::DescribeTransparentDataEncryptionStatusRequest&, DescribeTransparentDataEncryptionStatusOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeTransparentDataEncryptionStatusAsyncHandler;
+                typedef Outcome<Core::Error, Model::DropDBInstanceParamTplResponse> DropDBInstanceParamTplOutcome;
+                typedef std::future<DropDBInstanceParamTplOutcome> DropDBInstanceParamTplOutcomeCallable;
+                typedef std::function<void(const MongodbClient*, const Model::DropDBInstanceParamTplRequest&, DropDBInstanceParamTplOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DropDBInstanceParamTplAsyncHandler;
                 typedef Outcome<Core::Error, Model::EnableTransparentDataEncryptionResponse> EnableTransparentDataEncryptionOutcome;
                 typedef std::future<EnableTransparentDataEncryptionOutcome> EnableTransparentDataEncryptionOutcomeCallable;
                 typedef std::function<void(const MongodbClient*, const Model::EnableTransparentDataEncryptionRequest&, EnableTransparentDataEncryptionOutcome, const std::shared_ptr<const AsyncCallerContext>&)> EnableTransparentDataEncryptionAsyncHandler;
@@ -219,6 +241,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::ModifyDBInstanceNetworkAddressResponse> ModifyDBInstanceNetworkAddressOutcome;
                 typedef std::future<ModifyDBInstanceNetworkAddressOutcome> ModifyDBInstanceNetworkAddressOutcomeCallable;
                 typedef std::function<void(const MongodbClient*, const Model::ModifyDBInstanceNetworkAddressRequest&, ModifyDBInstanceNetworkAddressOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyDBInstanceNetworkAddressAsyncHandler;
+                typedef Outcome<Core::Error, Model::ModifyDBInstanceParamTplResponse> ModifyDBInstanceParamTplOutcome;
+                typedef std::future<ModifyDBInstanceParamTplOutcome> ModifyDBInstanceParamTplOutcomeCallable;
+                typedef std::function<void(const MongodbClient*, const Model::ModifyDBInstanceParamTplRequest&, ModifyDBInstanceParamTplOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyDBInstanceParamTplAsyncHandler;
                 typedef Outcome<Core::Error, Model::ModifyDBInstanceSecurityGroupResponse> ModifyDBInstanceSecurityGroupOutcome;
                 typedef std::future<ModifyDBInstanceSecurityGroupOutcome> ModifyDBInstanceSecurityGroupOutcomeCallable;
                 typedef std::function<void(const MongodbClient*, const Model::ModifyDBInstanceSecurityGroupRequest&, ModifyDBInstanceSecurityGroupOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyDBInstanceSecurityGroupAsyncHandler;
@@ -311,6 +336,16 @@ namespace TencentCloud
                 CreateDBInstanceHourOutcomeCallable CreateDBInstanceHourCallable(const Model::CreateDBInstanceHourRequest& request);
 
                 /**
+                 *本接口(CreateDBInstanceParamTpl)用于创建云数据库MongoDB实例的参数模板
+**说明：CreateDBInstanceParamTpl API正在公测中，在此期间，该接口仅对公测用户开放**
+                 * @param req CreateDBInstanceParamTplRequest
+                 * @return CreateDBInstanceParamTplOutcome
+                 */
+                CreateDBInstanceParamTplOutcome CreateDBInstanceParamTpl(const Model::CreateDBInstanceParamTplRequest &request);
+                void CreateDBInstanceParamTplAsync(const Model::CreateDBInstanceParamTplRequest& request, const CreateDBInstanceParamTplAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                CreateDBInstanceParamTplOutcomeCallable CreateDBInstanceParamTplCallable(const Model::CreateDBInstanceParamTplRequest& request);
+
+                /**
                  *本接口（DeleteAccountUser）用于删除实例的自定义账号。
                  * @param req DeleteAccountUserRequest
                  * @return DeleteAccountUserOutcome
@@ -401,6 +436,26 @@ namespace TencentCloud
                 DescribeDBInstanceNodePropertyOutcomeCallable DescribeDBInstanceNodePropertyCallable(const Model::DescribeDBInstanceNodePropertyRequest& request);
 
                 /**
+                 *本接口(DescribeDBInstanceParamTpl )用于查询当前账号下所有MongoDB数据库参数模板
+**说明：DescribeDBInstanceParamTpl  API正在公测中，在此期间，该接口仅对公测用户开放**
+                 * @param req DescribeDBInstanceParamTplRequest
+                 * @return DescribeDBInstanceParamTplOutcome
+                 */
+                DescribeDBInstanceParamTplOutcome DescribeDBInstanceParamTpl(const Model::DescribeDBInstanceParamTplRequest &request);
+                void DescribeDBInstanceParamTplAsync(const Model::DescribeDBInstanceParamTplRequest& request, const DescribeDBInstanceParamTplAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeDBInstanceParamTplOutcomeCallable DescribeDBInstanceParamTplCallable(const Model::DescribeDBInstanceParamTplRequest& request);
+
+                /**
+                 *本接口(DescribeDBInstanceParamTplDetail )用于查询MongoDB云数据库实例的参数模板详情。
+**说明：DescribeDBInstanceParamTplDetail  API正在公测中，在此期间，该接口仅对公测用户开放**
+                 * @param req DescribeDBInstanceParamTplDetailRequest
+                 * @return DescribeDBInstanceParamTplDetailOutcome
+                 */
+                DescribeDBInstanceParamTplDetailOutcome DescribeDBInstanceParamTplDetail(const Model::DescribeDBInstanceParamTplDetailRequest &request);
+                void DescribeDBInstanceParamTplDetailAsync(const Model::DescribeDBInstanceParamTplDetailRequest& request, const DescribeDBInstanceParamTplDetailAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeDBInstanceParamTplDetailOutcomeCallable DescribeDBInstanceParamTplDetailCallable(const Model::DescribeDBInstanceParamTplDetailRequest& request);
+
+                /**
                  *本接口（DescribeDBInstances）用于查询云数据库实例列表，支持通过项目ID、实例ID、实例状态等过滤条件来筛选主实例、灾备实例和只读实例信息列表。
                  * @param req DescribeDBInstancesRequest
                  * @return DescribeDBInstancesOutcome
@@ -462,6 +517,16 @@ namespace TencentCloud
                 DescribeTransparentDataEncryptionStatusOutcome DescribeTransparentDataEncryptionStatus(const Model::DescribeTransparentDataEncryptionStatusRequest &request);
                 void DescribeTransparentDataEncryptionStatusAsync(const Model::DescribeTransparentDataEncryptionStatusRequest& request, const DescribeTransparentDataEncryptionStatusAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DescribeTransparentDataEncryptionStatusOutcomeCallable DescribeTransparentDataEncryptionStatusCallable(const Model::DescribeTransparentDataEncryptionStatusRequest& request);
+
+                /**
+                 *本接口(DropDBInstanceParamTpl )用于删除云数据库MongoDB实例的参数模板
+**说明：DropDBInstanceParamTpl  API正在公测中，在此期间，该接口仅对公测用户开放**
+                 * @param req DropDBInstanceParamTplRequest
+                 * @return DropDBInstanceParamTplOutcome
+                 */
+                DropDBInstanceParamTplOutcome DropDBInstanceParamTpl(const Model::DropDBInstanceParamTplRequest &request);
+                void DropDBInstanceParamTplAsync(const Model::DropDBInstanceParamTplRequest& request, const DropDBInstanceParamTplAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DropDBInstanceParamTplOutcomeCallable DropDBInstanceParamTplCallable(const Model::DropDBInstanceParamTplRequest& request);
 
                 /**
                  *本接口(EnableTransparentDataEncryption)用于开启云数据库 MongoDB 的透明加密能力。
@@ -544,6 +609,16 @@ namespace TencentCloud
                 ModifyDBInstanceNetworkAddressOutcome ModifyDBInstanceNetworkAddress(const Model::ModifyDBInstanceNetworkAddressRequest &request);
                 void ModifyDBInstanceNetworkAddressAsync(const Model::ModifyDBInstanceNetworkAddressRequest& request, const ModifyDBInstanceNetworkAddressAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 ModifyDBInstanceNetworkAddressOutcomeCallable ModifyDBInstanceNetworkAddressCallable(const Model::ModifyDBInstanceNetworkAddressRequest& request);
+
+                /**
+                 *本接口(ModifyDBInstanceParamTpl )用于修改MongoDB云数据库实例的参数模板。
+**说明：ModifyDBInstanceParamTpl  API正在公测中，在此期间，该接口仅对公测用户开放**
+                 * @param req ModifyDBInstanceParamTplRequest
+                 * @return ModifyDBInstanceParamTplOutcome
+                 */
+                ModifyDBInstanceParamTplOutcome ModifyDBInstanceParamTpl(const Model::ModifyDBInstanceParamTplRequest &request);
+                void ModifyDBInstanceParamTplAsync(const Model::ModifyDBInstanceParamTplRequest& request, const ModifyDBInstanceParamTplAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                ModifyDBInstanceParamTplOutcomeCallable ModifyDBInstanceParamTplCallable(const Model::ModifyDBInstanceParamTplRequest& request);
 
                 /**
                  *本接口（ModifyDBInstanceSecurityGroup）用于修改实例绑定的安全组

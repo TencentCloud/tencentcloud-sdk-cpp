@@ -489,6 +489,27 @@ namespace TencentCloud
                     bool ReplicasHasBeenSet() const;
 
                     /**
+                     * 获取就绪 Machine 个数
+                     * @return ReadyReplicas 就绪 Machine 个数
+                     * 
+                     */
+                    int64_t GetReadyReplicas() const;
+
+                    /**
+                     * 设置就绪 Machine 个数
+                     * @param _readyReplicas 就绪 Machine 个数
+                     * 
+                     */
+                    void SetReadyReplicas(const int64_t& _readyReplicas);
+
+                    /**
+                     * 判断参数 ReadyReplicas 是否已赋值
+                     * @return ReadyReplicas 是否已赋值
+                     * 
+                     */
+                    bool ReadyReplicasHasBeenSet() const;
+
+                    /**
                      * 获取公网带宽设置
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return InternetAccessible 公网带宽设置
@@ -661,6 +682,12 @@ namespace TencentCloud
                      */
                     int64_t m_replicas;
                     bool m_replicasHasBeenSet;
+
+                    /**
+                     * 就绪 Machine 个数
+                     */
+                    int64_t m_readyReplicas;
+                    bool m_readyReplicasHasBeenSet;
 
                     /**
                      * 公网带宽设置

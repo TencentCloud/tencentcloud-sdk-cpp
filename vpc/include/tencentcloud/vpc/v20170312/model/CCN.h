@@ -386,6 +386,131 @@ namespace TencentCloud
                      */
                     bool RouteBroadcastPolicyFlagHasBeenSet() const;
 
+                    /**
+                     * 获取是否开启等价路由功能。`False` 未开启，`True` 开启。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return RouteECMPFlag 是否开启等价路由功能。`False` 未开启，`True` 开启。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    bool GetRouteECMPFlag() const;
+
+                    /**
+                     * 设置是否开启等价路由功能。`False` 未开启，`True` 开启。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _routeECMPFlag 是否开启等价路由功能。`False` 未开启，`True` 开启。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetRouteECMPFlag(const bool& _routeECMPFlag);
+
+                    /**
+                     * 判断参数 RouteECMPFlag 是否已赋值
+                     * @return RouteECMPFlag 是否已赋值
+                     * 
+                     */
+                    bool RouteECMPFlagHasBeenSet() const;
+
+                    /**
+                     * 获取是否开启路由重叠功能。`False` 未开启，`True` 开启。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return RouteOverlapFlag 是否开启路由重叠功能。`False` 未开启，`True` 开启。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    bool GetRouteOverlapFlag() const;
+
+                    /**
+                     * 设置是否开启路由重叠功能。`False` 未开启，`True` 开启。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _routeOverlapFlag 是否开启路由重叠功能。`False` 未开启，`True` 开启。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetRouteOverlapFlag(const bool& _routeOverlapFlag);
+
+                    /**
+                     * 判断参数 RouteOverlapFlag 是否已赋值
+                     * @return RouteOverlapFlag 是否已赋值
+                     * 
+                     */
+                    bool RouteOverlapFlagHasBeenSet() const;
+
+                    /**
+                     * 获取是否开启QOS。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return TrafficMarkingPolicyFlag 是否开启QOS。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    bool GetTrafficMarkingPolicyFlag() const;
+
+                    /**
+                     * 设置是否开启QOS。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _trafficMarkingPolicyFlag 是否开启QOS。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetTrafficMarkingPolicyFlag(const bool& _trafficMarkingPolicyFlag);
+
+                    /**
+                     * 判断参数 TrafficMarkingPolicyFlag 是否已赋值
+                     * @return TrafficMarkingPolicyFlag 是否已赋值
+                     * 
+                     */
+                    bool TrafficMarkingPolicyFlagHasBeenSet() const;
+
+                    /**
+                     * 获取是否开启路由表选择策略。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return RouteSelectPolicyFlag 是否开启路由表选择策略。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    bool GetRouteSelectPolicyFlag() const;
+
+                    /**
+                     * 设置是否开启路由表选择策略。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _routeSelectPolicyFlag 是否开启路由表选择策略。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetRouteSelectPolicyFlag(const bool& _routeSelectPolicyFlag);
+
+                    /**
+                     * 判断参数 RouteSelectPolicyFlag 是否已赋值
+                     * @return RouteSelectPolicyFlag 是否已赋值
+                     * 
+                     */
+                    bool RouteSelectPolicyFlagHasBeenSet() const;
+
+                    /**
+                     * 获取是否开启二层云联网通道。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return DirectConnectAccelerateChannelFlag 是否开启二层云联网通道。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    bool GetDirectConnectAccelerateChannelFlag() const;
+
+                    /**
+                     * 设置是否开启二层云联网通道。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _directConnectAccelerateChannelFlag 是否开启二层云联网通道。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetDirectConnectAccelerateChannelFlag(const bool& _directConnectAccelerateChannelFlag);
+
+                    /**
+                     * 判断参数 DirectConnectAccelerateChannelFlag 是否已赋值
+                     * @return DirectConnectAccelerateChannelFlag 是否已赋值
+                     * 
+                     */
+                    bool DirectConnectAccelerateChannelFlagHasBeenSet() const;
+
                 private:
 
                     /**
@@ -483,6 +608,41 @@ namespace TencentCloud
                      */
                     bool m_routeBroadcastPolicyFlag;
                     bool m_routeBroadcastPolicyFlagHasBeenSet;
+
+                    /**
+                     * 是否开启等价路由功能。`False` 未开启，`True` 开启。
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    bool m_routeECMPFlag;
+                    bool m_routeECMPFlagHasBeenSet;
+
+                    /**
+                     * 是否开启路由重叠功能。`False` 未开启，`True` 开启。
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    bool m_routeOverlapFlag;
+                    bool m_routeOverlapFlagHasBeenSet;
+
+                    /**
+                     * 是否开启QOS。
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    bool m_trafficMarkingPolicyFlag;
+                    bool m_trafficMarkingPolicyFlagHasBeenSet;
+
+                    /**
+                     * 是否开启路由表选择策略。
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    bool m_routeSelectPolicyFlag;
+                    bool m_routeSelectPolicyFlagHasBeenSet;
+
+                    /**
+                     * 是否开启二层云联网通道。
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    bool m_directConnectAccelerateChannelFlag;
+                    bool m_directConnectAccelerateChannelFlagHasBeenSet;
 
                 };
             }

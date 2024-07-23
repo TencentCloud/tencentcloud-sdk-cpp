@@ -298,6 +298,49 @@ MongodbClient::CreateDBInstanceHourOutcomeCallable MongodbClient::CreateDBInstan
     return task->get_future();
 }
 
+MongodbClient::CreateDBInstanceParamTplOutcome MongodbClient::CreateDBInstanceParamTpl(const CreateDBInstanceParamTplRequest &request)
+{
+    auto outcome = MakeRequest(request, "CreateDBInstanceParamTpl");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        CreateDBInstanceParamTplResponse rsp = CreateDBInstanceParamTplResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return CreateDBInstanceParamTplOutcome(rsp);
+        else
+            return CreateDBInstanceParamTplOutcome(o.GetError());
+    }
+    else
+    {
+        return CreateDBInstanceParamTplOutcome(outcome.GetError());
+    }
+}
+
+void MongodbClient::CreateDBInstanceParamTplAsync(const CreateDBInstanceParamTplRequest& request, const CreateDBInstanceParamTplAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->CreateDBInstanceParamTpl(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+MongodbClient::CreateDBInstanceParamTplOutcomeCallable MongodbClient::CreateDBInstanceParamTplCallable(const CreateDBInstanceParamTplRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<CreateDBInstanceParamTplOutcome()>>(
+        [this, request]()
+        {
+            return this->CreateDBInstanceParamTpl(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 MongodbClient::DeleteAccountUserOutcome MongodbClient::DeleteAccountUser(const DeleteAccountUserRequest &request)
 {
     auto outcome = MakeRequest(request, "DeleteAccountUser");
@@ -728,6 +771,92 @@ MongodbClient::DescribeDBInstanceNodePropertyOutcomeCallable MongodbClient::Desc
     return task->get_future();
 }
 
+MongodbClient::DescribeDBInstanceParamTplOutcome MongodbClient::DescribeDBInstanceParamTpl(const DescribeDBInstanceParamTplRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeDBInstanceParamTpl");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeDBInstanceParamTplResponse rsp = DescribeDBInstanceParamTplResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeDBInstanceParamTplOutcome(rsp);
+        else
+            return DescribeDBInstanceParamTplOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeDBInstanceParamTplOutcome(outcome.GetError());
+    }
+}
+
+void MongodbClient::DescribeDBInstanceParamTplAsync(const DescribeDBInstanceParamTplRequest& request, const DescribeDBInstanceParamTplAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeDBInstanceParamTpl(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+MongodbClient::DescribeDBInstanceParamTplOutcomeCallable MongodbClient::DescribeDBInstanceParamTplCallable(const DescribeDBInstanceParamTplRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeDBInstanceParamTplOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeDBInstanceParamTpl(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+MongodbClient::DescribeDBInstanceParamTplDetailOutcome MongodbClient::DescribeDBInstanceParamTplDetail(const DescribeDBInstanceParamTplDetailRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeDBInstanceParamTplDetail");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeDBInstanceParamTplDetailResponse rsp = DescribeDBInstanceParamTplDetailResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeDBInstanceParamTplDetailOutcome(rsp);
+        else
+            return DescribeDBInstanceParamTplDetailOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeDBInstanceParamTplDetailOutcome(outcome.GetError());
+    }
+}
+
+void MongodbClient::DescribeDBInstanceParamTplDetailAsync(const DescribeDBInstanceParamTplDetailRequest& request, const DescribeDBInstanceParamTplDetailAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeDBInstanceParamTplDetail(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+MongodbClient::DescribeDBInstanceParamTplDetailOutcomeCallable MongodbClient::DescribeDBInstanceParamTplDetailCallable(const DescribeDBInstanceParamTplDetailRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeDBInstanceParamTplDetailOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeDBInstanceParamTplDetail(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 MongodbClient::DescribeDBInstancesOutcome MongodbClient::DescribeDBInstances(const DescribeDBInstancesRequest &request)
 {
     auto outcome = MakeRequest(request, "DescribeDBInstances");
@@ -1022,6 +1151,49 @@ MongodbClient::DescribeTransparentDataEncryptionStatusOutcomeCallable MongodbCli
         [this, request]()
         {
             return this->DescribeTransparentDataEncryptionStatus(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+MongodbClient::DropDBInstanceParamTplOutcome MongodbClient::DropDBInstanceParamTpl(const DropDBInstanceParamTplRequest &request)
+{
+    auto outcome = MakeRequest(request, "DropDBInstanceParamTpl");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DropDBInstanceParamTplResponse rsp = DropDBInstanceParamTplResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DropDBInstanceParamTplOutcome(rsp);
+        else
+            return DropDBInstanceParamTplOutcome(o.GetError());
+    }
+    else
+    {
+        return DropDBInstanceParamTplOutcome(outcome.GetError());
+    }
+}
+
+void MongodbClient::DropDBInstanceParamTplAsync(const DropDBInstanceParamTplRequest& request, const DropDBInstanceParamTplAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DropDBInstanceParamTpl(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+MongodbClient::DropDBInstanceParamTplOutcomeCallable MongodbClient::DropDBInstanceParamTplCallable(const DropDBInstanceParamTplRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DropDBInstanceParamTplOutcome()>>(
+        [this, request]()
+        {
+            return this->DropDBInstanceParamTpl(request);
         }
     );
 
@@ -1409,6 +1581,49 @@ MongodbClient::ModifyDBInstanceNetworkAddressOutcomeCallable MongodbClient::Modi
         [this, request]()
         {
             return this->ModifyDBInstanceNetworkAddress(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+MongodbClient::ModifyDBInstanceParamTplOutcome MongodbClient::ModifyDBInstanceParamTpl(const ModifyDBInstanceParamTplRequest &request)
+{
+    auto outcome = MakeRequest(request, "ModifyDBInstanceParamTpl");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ModifyDBInstanceParamTplResponse rsp = ModifyDBInstanceParamTplResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ModifyDBInstanceParamTplOutcome(rsp);
+        else
+            return ModifyDBInstanceParamTplOutcome(o.GetError());
+    }
+    else
+    {
+        return ModifyDBInstanceParamTplOutcome(outcome.GetError());
+    }
+}
+
+void MongodbClient::ModifyDBInstanceParamTplAsync(const ModifyDBInstanceParamTplRequest& request, const ModifyDBInstanceParamTplAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->ModifyDBInstanceParamTpl(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+MongodbClient::ModifyDBInstanceParamTplOutcomeCallable MongodbClient::ModifyDBInstanceParamTplCallable(const ModifyDBInstanceParamTplRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<ModifyDBInstanceParamTplOutcome()>>(
+        [this, request]()
+        {
+            return this->ModifyDBInstanceParamTpl(request);
         }
     );
 
