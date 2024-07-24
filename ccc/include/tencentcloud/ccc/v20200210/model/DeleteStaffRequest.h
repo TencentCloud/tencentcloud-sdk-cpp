@@ -64,15 +64,15 @@ namespace TencentCloud
                     bool SdkAppIdHasBeenSet() const;
 
                     /**
-                     * 获取待删除客服邮箱列表
-                     * @return StaffList 待删除客服邮箱列表
+                     * 获取待删除客服邮箱列表，一次最大支持200个。
+                     * @return StaffList 待删除客服邮箱列表，一次最大支持200个。
                      * 
                      */
                     std::vector<std::string> GetStaffList() const;
 
                     /**
-                     * 设置待删除客服邮箱列表
-                     * @param _staffList 待删除客服邮箱列表
+                     * 设置待删除客服邮箱列表，一次最大支持200个。
+                     * @param _staffList 待删除客服邮箱列表，一次最大支持200个。
                      * 
                      */
                     void SetStaffList(const std::vector<std::string>& _staffList);
@@ -93,7 +93,7 @@ namespace TencentCloud
                     bool m_sdkAppIdHasBeenSet;
 
                     /**
-                     * 待删除客服邮箱列表
+                     * 待删除客服邮箱列表，一次最大支持200个。
                      */
                     std::vector<std::string> m_staffList;
                     bool m_staffListHasBeenSet;

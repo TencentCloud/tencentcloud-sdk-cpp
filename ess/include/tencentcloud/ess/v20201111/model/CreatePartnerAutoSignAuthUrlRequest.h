@@ -45,48 +45,6 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取被授企业id
-                     * @return AuthorizedOrganizationId 被授企业id
-                     * 
-                     */
-                    std::string GetAuthorizedOrganizationId() const;
-
-                    /**
-                     * 设置被授企业id
-                     * @param _authorizedOrganizationId 被授企业id
-                     * 
-                     */
-                    void SetAuthorizedOrganizationId(const std::string& _authorizedOrganizationId);
-
-                    /**
-                     * 判断参数 AuthorizedOrganizationId 是否已赋值
-                     * @return AuthorizedOrganizationId 是否已赋值
-                     * 
-                     */
-                    bool AuthorizedOrganizationIdHasBeenSet() const;
-
-                    /**
-                     * 获取指定印章类型，指定后只能选择该类型的印章进行授权支持以下印章类型：- OFFICIAL : 企业公章- CONTRACT : 合同专用章- FINANCE : 财务专用章- PERSONNEL : 人事专用章
-                     * @return SealTypes 指定印章类型，指定后只能选择该类型的印章进行授权支持以下印章类型：- OFFICIAL : 企业公章- CONTRACT : 合同专用章- FINANCE : 财务专用章- PERSONNEL : 人事专用章
-                     * 
-                     */
-                    std::vector<std::string> GetSealTypes() const;
-
-                    /**
-                     * 设置指定印章类型，指定后只能选择该类型的印章进行授权支持以下印章类型：- OFFICIAL : 企业公章- CONTRACT : 合同专用章- FINANCE : 财务专用章- PERSONNEL : 人事专用章
-                     * @param _sealTypes 指定印章类型，指定后只能选择该类型的印章进行授权支持以下印章类型：- OFFICIAL : 企业公章- CONTRACT : 合同专用章- FINANCE : 财务专用章- PERSONNEL : 人事专用章
-                     * 
-                     */
-                    void SetSealTypes(const std::vector<std::string>& _sealTypes);
-
-                    /**
-                     * 判断参数 SealTypes 是否已赋值
-                     * @return SealTypes 是否已赋值
-                     * 
-                     */
-                    bool SealTypesHasBeenSet() const;
-
-                    /**
                      * 获取代理企业和员工的信息。<br/>在集团企业代理子企业操作的场景中，需设置此参数。在此情境下，ProxyOrganizationId（子企业的组织ID）为必填项。
                      * @return Agent 代理企业和员工的信息。<br/>在集团企业代理子企业操作的场景中，需设置此参数。在此情境下，ProxyOrganizationId（子企业的组织ID）为必填项。
                      * 
@@ -128,19 +86,99 @@ namespace TencentCloud
                      */
                     bool OperatorHasBeenSet() const;
 
+                    /**
+                     * 获取被授企业id/授权方企业id，和AuthorizedOrganizationName二选一传入
+                     * @return AuthorizedOrganizationId 被授企业id/授权方企业id，和AuthorizedOrganizationName二选一传入
+                     * 
+                     */
+                    std::string GetAuthorizedOrganizationId() const;
+
+                    /**
+                     * 设置被授企业id/授权方企业id，和AuthorizedOrganizationName二选一传入
+                     * @param _authorizedOrganizationId 被授企业id/授权方企业id，和AuthorizedOrganizationName二选一传入
+                     * 
+                     */
+                    void SetAuthorizedOrganizationId(const std::string& _authorizedOrganizationId);
+
+                    /**
+                     * 判断参数 AuthorizedOrganizationId 是否已赋值
+                     * @return AuthorizedOrganizationId 是否已赋值
+                     * 
+                     */
+                    bool AuthorizedOrganizationIdHasBeenSet() const;
+
+                    /**
+                     * 获取被授企业名称/授权方企业名称，和AuthorizedOrganizationId二选一传入
+                     * @return AuthorizedOrganizationName 被授企业名称/授权方企业名称，和AuthorizedOrganizationId二选一传入
+                     * 
+                     */
+                    std::string GetAuthorizedOrganizationName() const;
+
+                    /**
+                     * 设置被授企业名称/授权方企业名称，和AuthorizedOrganizationId二选一传入
+                     * @param _authorizedOrganizationName 被授企业名称/授权方企业名称，和AuthorizedOrganizationId二选一传入
+                     * 
+                     */
+                    void SetAuthorizedOrganizationName(const std::string& _authorizedOrganizationName);
+
+                    /**
+                     * 判断参数 AuthorizedOrganizationName 是否已赋值
+                     * @return AuthorizedOrganizationName 是否已赋值
+                     * 
+                     */
+                    bool AuthorizedOrganizationNameHasBeenSet() const;
+
+                    /**
+                     * 获取指定印章类型，指定后只能选择该类型的印章进行授权支持以下印章类型：- OFFICIAL : 企业公章- CONTRACT : 合同专用章- FINANCE : 财务专用章- PERSONNEL : 人事专用章
+                     * @return SealTypes 指定印章类型，指定后只能选择该类型的印章进行授权支持以下印章类型：- OFFICIAL : 企业公章- CONTRACT : 合同专用章- FINANCE : 财务专用章- PERSONNEL : 人事专用章
+                     * 
+                     */
+                    std::vector<std::string> GetSealTypes() const;
+
+                    /**
+                     * 设置指定印章类型，指定后只能选择该类型的印章进行授权支持以下印章类型：- OFFICIAL : 企业公章- CONTRACT : 合同专用章- FINANCE : 财务专用章- PERSONNEL : 人事专用章
+                     * @param _sealTypes 指定印章类型，指定后只能选择该类型的印章进行授权支持以下印章类型：- OFFICIAL : 企业公章- CONTRACT : 合同专用章- FINANCE : 财务专用章- PERSONNEL : 人事专用章
+                     * 
+                     */
+                    void SetSealTypes(const std::vector<std::string>& _sealTypes);
+
+                    /**
+                     * 判断参数 SealTypes 是否已赋值
+                     * @return SealTypes 是否已赋值
+                     * 
+                     */
+                    bool SealTypesHasBeenSet() const;
+
+                    /**
+                     * 获取他方授权给我方：
+- false：我方授权他方，AuthorizedOrganizationName代表【被授权方】企业名称
+- true：他方授权我方，AuthorizedOrganizationName代表【授权方】企业名称
+                     * @return AuthToMe 他方授权给我方：
+- false：我方授权他方，AuthorizedOrganizationName代表【被授权方】企业名称
+- true：他方授权我方，AuthorizedOrganizationName代表【授权方】企业名称
+                     * 
+                     */
+                    bool GetAuthToMe() const;
+
+                    /**
+                     * 设置他方授权给我方：
+- false：我方授权他方，AuthorizedOrganizationName代表【被授权方】企业名称
+- true：他方授权我方，AuthorizedOrganizationName代表【授权方】企业名称
+                     * @param _authToMe 他方授权给我方：
+- false：我方授权他方，AuthorizedOrganizationName代表【被授权方】企业名称
+- true：他方授权我方，AuthorizedOrganizationName代表【授权方】企业名称
+                     * 
+                     */
+                    void SetAuthToMe(const bool& _authToMe);
+
+                    /**
+                     * 判断参数 AuthToMe 是否已赋值
+                     * @return AuthToMe 是否已赋值
+                     * 
+                     */
+                    bool AuthToMeHasBeenSet() const;
+
                 private:
-
-                    /**
-                     * 被授企业id
-                     */
-                    std::string m_authorizedOrganizationId;
-                    bool m_authorizedOrganizationIdHasBeenSet;
-
-                    /**
-                     * 指定印章类型，指定后只能选择该类型的印章进行授权支持以下印章类型：- OFFICIAL : 企业公章- CONTRACT : 合同专用章- FINANCE : 财务专用章- PERSONNEL : 人事专用章
-                     */
-                    std::vector<std::string> m_sealTypes;
-                    bool m_sealTypesHasBeenSet;
 
                     /**
                      * 代理企业和员工的信息。<br/>在集团企业代理子企业操作的场景中，需设置此参数。在此情境下，ProxyOrganizationId（子企业的组织ID）为必填项。
@@ -153,6 +191,32 @@ namespace TencentCloud
                      */
                     UserInfo m_operator;
                     bool m_operatorHasBeenSet;
+
+                    /**
+                     * 被授企业id/授权方企业id，和AuthorizedOrganizationName二选一传入
+                     */
+                    std::string m_authorizedOrganizationId;
+                    bool m_authorizedOrganizationIdHasBeenSet;
+
+                    /**
+                     * 被授企业名称/授权方企业名称，和AuthorizedOrganizationId二选一传入
+                     */
+                    std::string m_authorizedOrganizationName;
+                    bool m_authorizedOrganizationNameHasBeenSet;
+
+                    /**
+                     * 指定印章类型，指定后只能选择该类型的印章进行授权支持以下印章类型：- OFFICIAL : 企业公章- CONTRACT : 合同专用章- FINANCE : 财务专用章- PERSONNEL : 人事专用章
+                     */
+                    std::vector<std::string> m_sealTypes;
+                    bool m_sealTypesHasBeenSet;
+
+                    /**
+                     * 他方授权给我方：
+- false：我方授权他方，AuthorizedOrganizationName代表【被授权方】企业名称
+- true：他方授权我方，AuthorizedOrganizationName代表【授权方】企业名称
+                     */
+                    bool m_authToMe;
+                    bool m_authToMeHasBeenSet;
 
                 };
             }

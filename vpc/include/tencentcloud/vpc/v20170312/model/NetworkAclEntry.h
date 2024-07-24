@@ -68,15 +68,15 @@ namespace TencentCloud
                     bool ProtocolHasBeenSet() const;
 
                     /**
-                     * 获取端口(all, 单个port,  range)。当Protocol为ALL或ICMP时，不能指定Port。
-                     * @return Port 端口(all, 单个port,  range)。当Protocol为ALL或ICMP时，不能指定Port。
+                     * 获取端口(all, 单个port,  range)。当Protocol为ALL或ICMP时，不能指定Port。使用-指定端口范围，如：10-20。
+                     * @return Port 端口(all, 单个port,  range)。当Protocol为ALL或ICMP时，不能指定Port。使用-指定端口范围，如：10-20。
                      * 
                      */
                     std::string GetPort() const;
 
                     /**
-                     * 设置端口(all, 单个port,  range)。当Protocol为ALL或ICMP时，不能指定Port。
-                     * @param _port 端口(all, 单个port,  range)。当Protocol为ALL或ICMP时，不能指定Port。
+                     * 设置端口(all, 单个port,  range)。当Protocol为ALL或ICMP时，不能指定Port。使用-指定端口范围，如：10-20。
+                     * @param _port 端口(all, 单个port,  range)。当Protocol为ALL或ICMP时，不能指定Port。使用-指定端口范围，如：10-20。
                      * 
                      */
                     void SetPort(const std::string& _port);
@@ -273,7 +273,7 @@ namespace TencentCloud
                     bool m_protocolHasBeenSet;
 
                     /**
-                     * 端口(all, 单个port,  range)。当Protocol为ALL或ICMP时，不能指定Port。
+                     * 端口(all, 单个port,  range)。当Protocol为ALL或ICMP时，不能指定Port。使用-指定端口范围，如：10-20。
                      */
                     std::string m_port;
                     bool m_portHasBeenSet;

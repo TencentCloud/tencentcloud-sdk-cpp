@@ -99,6 +99,22 @@ namespace TencentCloud
                      */
                     bool ReturnMsgHasBeenSet() const;
 
+                    /**
+                     * 获取七层协议，NTA日志有效
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return AppProtocolList 七层协议，NTA日志有效
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::vector<std::string> GetAppProtocolList() const;
+
+                    /**
+                     * 判断参数 AppProtocolList 是否已赋值
+                     * @return AppProtocolList 是否已赋值
+                     * 
+                     */
+                    bool AppProtocolListHasBeenSet() const;
+
                 private:
 
                     /**
@@ -124,6 +140,13 @@ namespace TencentCloud
                      */
                     std::string m_returnMsg;
                     bool m_returnMsgHasBeenSet;
+
+                    /**
+                     * 七层协议，NTA日志有效
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::vector<std::string> m_appProtocolList;
+                    bool m_appProtocolListHasBeenSet;
 
                 };
             }

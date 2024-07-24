@@ -64,23 +64,23 @@ namespace TencentCloud
                     bool TopicIdHasBeenSet() const;
 
                     /**
-                     * 获取根据 hashkey 写入相应范围的主题分区
-                     * @return HashKey 根据 hashkey 写入相应范围的主题分区
-                     * 
+                     * 获取该参数已废弃，请勿使用
+                     * @return HashKey 该参数已废弃，请勿使用
+                     * @deprecated
                      */
                     std::string GetHashKey() const;
 
                     /**
-                     * 设置根据 hashkey 写入相应范围的主题分区
-                     * @param _hashKey 根据 hashkey 写入相应范围的主题分区
-                     * 
+                     * 设置该参数已废弃，请勿使用
+                     * @param _hashKey 该参数已废弃，请勿使用
+                     * @deprecated
                      */
                     void SetHashKey(const std::string& _hashKey);
 
                     /**
                      * 判断参数 HashKey 是否已赋值
                      * @return HashKey 是否已赋值
-                     * 
+                     * @deprecated
                      */
                     bool HashKeyHasBeenSet() const;
 
@@ -114,7 +114,7 @@ namespace TencentCloud
                     bool m_topicIdHasBeenSet;
 
                     /**
-                     * 根据 hashkey 写入相应范围的主题分区
+                     * 该参数已废弃，请勿使用
                      */
                     std::string m_hashKey;
                     bool m_hashKeyHasBeenSet;

@@ -155,6 +155,20 @@ namespace TencentCloud
                      */
                     bool BirthdayHasBeenSet() const;
 
+                    /**
+                     * 获取头像照片的base64
+                     * @return PortraitImage 头像照片的base64
+                     * 
+                     */
+                    std::string GetPortraitImage() const;
+
+                    /**
+                     * 判断参数 PortraitImage 是否已赋值
+                     * @return PortraitImage 是否已赋值
+                     * 
+                     */
+                    bool PortraitImageHasBeenSet() const;
+
                 private:
 
                     /**
@@ -204,6 +218,12 @@ namespace TencentCloud
                      */
                     std::string m_birthday;
                     bool m_birthdayHasBeenSet;
+
+                    /**
+                     * 头像照片的base64
+                     */
+                    std::string m_portraitImage;
+                    bool m_portraitImageHasBeenSet;
 
                 };
             }

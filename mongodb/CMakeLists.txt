@@ -147,7 +147,9 @@ set(mongodb_public_header_model
   include/tencentcloud/mongodb/v20190725/model/DescribeDBInstanceParamTplResponse.h
   include/tencentcloud/mongodb/v20190725/model/DescribeTransparentDataEncryptionStatusRequest.h
   include/tencentcloud/mongodb/v20190725/model/RemoveNodeList.h
+  include/tencentcloud/mongodb/v20190725/model/RestartNodesRequest.h
   include/tencentcloud/mongodb/v20190725/model/SetInstanceMaintenanceRequest.h
+  include/tencentcloud/mongodb/v20190725/model/RestartNodesResponse.h
   include/tencentcloud/mongodb/v20190725/model/DescribeDBInstanceParamTplDetailRequest.h
   include/tencentcloud/mongodb/v20190725/model/InstanceDetail.h
   include/tencentcloud/mongodb/v20190725/model/ModifyDBInstanceSpecResponse.h
@@ -318,7 +320,9 @@ set(mongodb_src
   src/v20190725/model/DescribeDBInstanceParamTplResponse.cpp
   src/v20190725/model/DescribeTransparentDataEncryptionStatusRequest.cpp
   src/v20190725/model/RemoveNodeList.cpp
+  src/v20190725/model/RestartNodesRequest.cpp
   src/v20190725/model/SetInstanceMaintenanceRequest.cpp
+  src/v20190725/model/RestartNodesResponse.cpp
   src/v20190725/model/DescribeDBInstanceParamTplDetailRequest.cpp
   src/v20190725/model/InstanceDetail.cpp
   src/v20190725/model/ModifyDBInstanceSpecResponse.cpp

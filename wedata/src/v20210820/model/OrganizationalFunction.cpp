@@ -48,7 +48,8 @@ OrganizationalFunction::OrganizationalFunction() :
     m_submitTimestampHasBeenSet(false),
     m_tagHasBeenSet(false),
     m_operatorUserIdsStrHasBeenSet(false),
-    m_ownerUserIdsStrHasBeenSet(false)
+    m_ownerUserIdsStrHasBeenSet(false),
+    m_envTypeHasBeenSet(false)
 {
 }
 
@@ -359,6 +360,16 @@ CoreInternalOutcome OrganizationalFunction::Deserialize(const rapidjson::Value &
         m_ownerUserIdsStrHasBeenSet = true;
     }
 
+    if (value.HasMember("EnvType") && !value["EnvType"].IsNull())
+    {
+        if (!value["EnvType"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `OrganizationalFunction.EnvType` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_envType = string(value["EnvType"].GetString());
+        m_envTypeHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -615,6 +626,14 @@ void OrganizationalFunction::ToJsonObject(rapidjson::Value &value, rapidjson::Do
         {
             value[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
         }
+    }
+
+    if (m_envTypeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "EnvType";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_envType.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -1066,5 +1085,21 @@ void OrganizationalFunction::SetOwnerUserIdsStr(const vector<string>& _ownerUser
 bool OrganizationalFunction::OwnerUserIdsStrHasBeenSet() const
 {
     return m_ownerUserIdsStrHasBeenSet;
+}
+
+string OrganizationalFunction::GetEnvType() const
+{
+    return m_envType;
+}
+
+void OrganizationalFunction::SetEnvType(const string& _envType)
+{
+    m_envType = _envType;
+    m_envTypeHasBeenSet = true;
+}
+
+bool OrganizationalFunction::EnvTypeHasBeenSet() const
+{
+    return m_envTypeHasBeenSet;
 }
 

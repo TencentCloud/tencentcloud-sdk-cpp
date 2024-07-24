@@ -112,6 +112,27 @@ namespace TencentCloud
                      */
                     bool ImageUrlHasBeenSet() const;
 
+                    /**
+                     * 获取是否返回头像照片，默认为 false
+                     * @return CropPortrait 是否返回头像照片，默认为 false
+                     * 
+                     */
+                    bool GetCropPortrait() const;
+
+                    /**
+                     * 设置是否返回头像照片，默认为 false
+                     * @param _cropPortrait 是否返回头像照片，默认为 false
+                     * 
+                     */
+                    void SetCropPortrait(const bool& _cropPortrait);
+
+                    /**
+                     * 判断参数 CropPortrait 是否已赋值
+                     * @return CropPortrait 是否已赋值
+                     * 
+                     */
+                    bool CropPortraitHasBeenSet() const;
+
                 private:
 
                     /**
@@ -132,6 +153,12 @@ namespace TencentCloud
                      */
                     std::string m_imageUrl;
                     bool m_imageUrlHasBeenSet;
+
+                    /**
+                     * 是否返回头像照片，默认为 false
+                     */
+                    bool m_cropPortrait;
+                    bool m_cropPortraitHasBeenSet;
 
                 };
             }

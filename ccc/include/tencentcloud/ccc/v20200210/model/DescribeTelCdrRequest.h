@@ -43,15 +43,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取起始时间戳，Unix 秒级时间戳
-                     * @return StartTimeStamp 起始时间戳，Unix 秒级时间戳
+                     * 获取起始时间戳，Unix 秒级时间戳，最大支持近180天。
+                     * @return StartTimeStamp 起始时间戳，Unix 秒级时间戳，最大支持近180天。
                      * 
                      */
                     int64_t GetStartTimeStamp() const;
 
                     /**
-                     * 设置起始时间戳，Unix 秒级时间戳
-                     * @param _startTimeStamp 起始时间戳，Unix 秒级时间戳
+                     * 设置起始时间戳，Unix 秒级时间戳，最大支持近180天。
+                     * @param _startTimeStamp 起始时间戳，Unix 秒级时间戳，最大支持近180天。
                      * 
                      */
                     void SetStartTimeStamp(const int64_t& _startTimeStamp);
@@ -64,15 +64,15 @@ namespace TencentCloud
                     bool StartTimeStampHasBeenSet() const;
 
                     /**
-                     * 获取结束时间戳，Unix 秒级时间戳
-                     * @return EndTimeStamp 结束时间戳，Unix 秒级时间戳
+                     * 获取结束时间戳，Unix 秒级时间戳，结束时间与开始时间的区间范围小于90天。
+                     * @return EndTimeStamp 结束时间戳，Unix 秒级时间戳，结束时间与开始时间的区间范围小于90天。
                      * 
                      */
                     int64_t GetEndTimeStamp() const;
 
                     /**
-                     * 设置结束时间戳，Unix 秒级时间戳
-                     * @param _endTimeStamp 结束时间戳，Unix 秒级时间戳
+                     * 设置结束时间戳，Unix 秒级时间戳，结束时间与开始时间的区间范围小于90天。
+                     * @param _endTimeStamp 结束时间戳，Unix 秒级时间戳，结束时间与开始时间的区间范围小于90天。
                      * 
                      */
                     void SetEndTimeStamp(const int64_t& _endTimeStamp);
@@ -255,13 +255,13 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 起始时间戳，Unix 秒级时间戳
+                     * 起始时间戳，Unix 秒级时间戳，最大支持近180天。
                      */
                     int64_t m_startTimeStamp;
                     bool m_startTimeStampHasBeenSet;
 
                     /**
-                     * 结束时间戳，Unix 秒级时间戳
+                     * 结束时间戳，Unix 秒级时间戳，结束时间与开始时间的区间范围小于90天。
                      */
                     int64_t m_endTimeStamp;
                     bool m_endTimeStampHasBeenSet;

@@ -44,23 +44,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取实例ID
-
-示例值：prom-343kafd34
-                     * @return InstanceId 实例ID
-
-示例值：prom-343kafd34
+                     * 获取Prometheus 实例 ID
+                     * @return InstanceId Prometheus 实例 ID
                      * 
                      */
                     std::string GetInstanceId() const;
 
                     /**
-                     * 设置实例ID
-
-示例值：prom-343kafd34
-                     * @param _instanceId 实例ID
-
-示例值：prom-343kafd34
+                     * 设置Prometheus 实例 ID
+                     * @param _instanceId Prometheus 实例 ID
                      * 
                      */
                     void SetInstanceId(const std::string& _instanceId);
@@ -73,15 +65,15 @@ namespace TencentCloud
                     bool InstanceIdHasBeenSet() const;
 
                     /**
-                     * 获取偏移量，默认为0。 示例值：1
-                     * @return Offset 偏移量，默认为0。 示例值：1
+                     * 获取偏移量，默认为0。
+                     * @return Offset 偏移量，默认为0。
                      * 
                      */
                     uint64_t GetOffset() const;
 
                     /**
-                     * 设置偏移量，默认为0。 示例值：1
-                     * @param _offset 偏移量，默认为0。 示例值：1
+                     * 设置偏移量，默认为0。
+                     * @param _offset 偏移量，默认为0。
                      * 
                      */
                     void SetOffset(const uint64_t& _offset);
@@ -95,18 +87,14 @@ namespace TencentCloud
 
                     /**
                      * 获取返回数量，默认为20，最大值为100。
-示例值：1
                      * @return Limit 返回数量，默认为20，最大值为100。
-示例值：1
                      * 
                      */
                     uint64_t GetLimit() const;
 
                     /**
                      * 设置返回数量，默认为20，最大值为100。
-示例值：1
                      * @param _limit 返回数量，默认为20，最大值为100。
-示例值：1
                      * 
                      */
                     void SetLimit(const uint64_t& _limit);
@@ -119,23 +107,15 @@ namespace TencentCloud
                     bool LimitHasBeenSet() const;
 
                     /**
-                     * 获取仅支持按Name, Values字段过滤:
-- Name = Name
-  按照给定的预聚合名称列表匹配
-                     * @return Filters 仅支持按Name, Values字段过滤:
-- Name = Name
-  按照给定的预聚合名称列表匹配
+                     * 获取仅支持按Name, Values字段过滤。
+                     * @return Filters 仅支持按Name, Values字段过滤。
                      * 
                      */
                     std::vector<Filter> GetFilters() const;
 
                     /**
-                     * 设置仅支持按Name, Values字段过滤:
-- Name = Name
-  按照给定的预聚合名称列表匹配
-                     * @param _filters 仅支持按Name, Values字段过滤:
-- Name = Name
-  按照给定的预聚合名称列表匹配
+                     * 设置仅支持按Name, Values字段过滤。
+                     * @param _filters 仅支持按Name, Values字段过滤。
                      * 
                      */
                     void SetFilters(const std::vector<Filter>& _filters);
@@ -150,30 +130,25 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 实例ID
-
-示例值：prom-343kafd34
+                     * Prometheus 实例 ID
                      */
                     std::string m_instanceId;
                     bool m_instanceIdHasBeenSet;
 
                     /**
-                     * 偏移量，默认为0。 示例值：1
+                     * 偏移量，默认为0。
                      */
                     uint64_t m_offset;
                     bool m_offsetHasBeenSet;
 
                     /**
                      * 返回数量，默认为20，最大值为100。
-示例值：1
                      */
                     uint64_t m_limit;
                     bool m_limitHasBeenSet;
 
                     /**
-                     * 仅支持按Name, Values字段过滤:
-- Name = Name
-  按照给定的预聚合名称列表匹配
+                     * 仅支持按Name, Values字段过滤。
                      */
                     std::vector<Filter> m_filters;
                     bool m_filtersHasBeenSet;

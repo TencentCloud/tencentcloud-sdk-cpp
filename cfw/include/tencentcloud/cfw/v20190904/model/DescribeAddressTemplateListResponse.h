@@ -128,6 +128,34 @@ namespace TencentCloud
                      */
                     bool PortTemplateCountHasBeenSet() const;
 
+                    /**
+                     * 获取已使用的地址模版数
+                     * @return UsedTemplateCount 已使用的地址模版数
+                     * 
+                     */
+                    int64_t GetUsedTemplateCount() const;
+
+                    /**
+                     * 判断参数 UsedTemplateCount 是否已赋值
+                     * @return UsedTemplateCount 是否已赋值
+                     * 
+                     */
+                    bool UsedTemplateCountHasBeenSet() const;
+
+                    /**
+                     * 获取地址模版配额数量
+                     * @return TemplateQuotaCount 地址模版配额数量
+                     * 
+                     */
+                    int64_t GetTemplateQuotaCount() const;
+
+                    /**
+                     * 判断参数 TemplateQuotaCount 是否已赋值
+                     * @return TemplateQuotaCount 是否已赋值
+                     * 
+                     */
+                    bool TemplateQuotaCountHasBeenSet() const;
+
                 private:
 
                     /**
@@ -165,6 +193,18 @@ namespace TencentCloud
                      */
                     int64_t m_portTemplateCount;
                     bool m_portTemplateCountHasBeenSet;
+
+                    /**
+                     * 已使用的地址模版数
+                     */
+                    int64_t m_usedTemplateCount;
+                    bool m_usedTemplateCountHasBeenSet;
+
+                    /**
+                     * 地址模版配额数量
+                     */
+                    int64_t m_templateQuotaCount;
+                    bool m_templateQuotaCountHasBeenSet;
 
                 };
             }

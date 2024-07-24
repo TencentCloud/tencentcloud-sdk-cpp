@@ -169,6 +169,27 @@ namespace TencentCloud
                     bool InfoHasBeenSet() const;
 
                     /**
+                     * 获取任务过滤条件，支持多个关键字匹配，与Info参数互斥。
+                     * @return Infos 任务过滤条件，支持多个关键字匹配，与Info参数互斥。
+                     * 
+                     */
+                    std::vector<std::string> GetInfos() const;
+
+                    /**
+                     * 设置任务过滤条件，支持多个关键字匹配，与Info参数互斥。
+                     * @param _infos 任务过滤条件，支持多个关键字匹配，与Info参数互斥。
+                     * 
+                     */
+                    void SetInfos(const std::vector<std::string>& _infos);
+
+                    /**
+                     * 判断参数 Infos 是否已赋值
+                     * @return Infos 是否已赋值
+                     * 
+                     */
+                    bool InfosHasBeenSet() const;
+
+                    /**
                      * 获取任务过滤条件，用户类型。
                      * @return User 任务过滤条件，用户类型。
                      * 
@@ -268,6 +289,12 @@ namespace TencentCloud
                      */
                     std::string m_info;
                     bool m_infoHasBeenSet;
+
+                    /**
+                     * 任务过滤条件，支持多个关键字匹配，与Info参数互斥。
+                     */
+                    std::vector<std::string> m_infos;
+                    bool m_infosHasBeenSet;
 
                     /**
                      * 任务过滤条件，用户类型。

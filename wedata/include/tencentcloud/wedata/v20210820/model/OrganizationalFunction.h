@@ -731,6 +731,31 @@ namespace TencentCloud
                      */
                     bool OwnerUserIdsStrHasBeenSet() const;
 
+                    /**
+                     * 获取数据库环境
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return EnvType 数据库环境
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::string GetEnvType() const;
+
+                    /**
+                     * 设置数据库环境
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _envType 数据库环境
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetEnvType(const std::string& _envType);
+
+                    /**
+                     * 判断参数 EnvType 是否已赋值
+                     * @return EnvType 是否已赋值
+                     * 
+                     */
+                    bool EnvTypeHasBeenSet() const;
+
                 private:
 
                     /**
@@ -924,6 +949,13 @@ namespace TencentCloud
                      */
                     std::vector<std::string> m_ownerUserIdsStr;
                     bool m_ownerUserIdsStrHasBeenSet;
+
+                    /**
+                     * 数据库环境
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_envType;
+                    bool m_envTypeHasBeenSet;
 
                 };
             }

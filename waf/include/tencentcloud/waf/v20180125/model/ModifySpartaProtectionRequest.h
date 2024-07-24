@@ -107,27 +107,15 @@ namespace TencentCloud
                     bool InstanceIDHasBeenSet() const;
 
                     /**
-                     * 获取必填项。证书类型。
-0：仅配置HTTP监听端口，没有证书
-1：证书来源为自有证书
-2：证书来源为托管证书
-                     * @return CertType 必填项。证书类型。
-0：仅配置HTTP监听端口，没有证书
-1：证书来源为自有证书
-2：证书来源为托管证书
+                     * 获取证书类型。0：仅配置HTTP监听端口，没有证书1：证书来源为自有证书2：证书来源为托管证书
+                     * @return CertType 证书类型。0：仅配置HTTP监听端口，没有证书1：证书来源为自有证书2：证书来源为托管证书
                      * 
                      */
                     int64_t GetCertType() const;
 
                     /**
-                     * 设置必填项。证书类型。
-0：仅配置HTTP监听端口，没有证书
-1：证书来源为自有证书
-2：证书来源为托管证书
-                     * @param _certType 必填项。证书类型。
-0：仅配置HTTP监听端口，没有证书
-1：证书来源为自有证书
-2：证书来源为托管证书
+                     * 设置证书类型。0：仅配置HTTP监听端口，没有证书1：证书来源为自有证书2：证书来源为托管证书
+                     * @param _certType 证书类型。0：仅配置HTTP监听端口，没有证书1：证书来源为自有证书2：证书来源为托管证书
                      * 
                      */
                     void SetCertType(const int64_t& _certType);
@@ -203,31 +191,15 @@ namespace TencentCloud
                     bool SSLIdHasBeenSet() const;
 
                     /**
-                     * 获取必填项。waf前是否部署有七层代理服务。
-0：没有部署代理服务
-1：有部署代理服务，waf将使用XFF获取客户端IP
-2：有部署代理服务，waf将使用remote_addr获取客户端IP
-3：有部署代理服务，waf将使用ip_headers中的自定义header获取客户端IP
-                     * @return IsCdn 必填项。waf前是否部署有七层代理服务。
-0：没有部署代理服务
-1：有部署代理服务，waf将使用XFF获取客户端IP
-2：有部署代理服务，waf将使用remote_addr获取客户端IP
-3：有部署代理服务，waf将使用ip_headers中的自定义header获取客户端IP
+                     * 获取waf前是否部署有七层代理服务。0：没有部署代理服务1：有部署代理服务，waf将使用XFF获取客户端IP2：有部署代理服务，waf将使用remote_addr获取客户端IP3：有部署代理服务，waf将使用ip_headers中的自定义header获取客户端IP
+                     * @return IsCdn waf前是否部署有七层代理服务。0：没有部署代理服务1：有部署代理服务，waf将使用XFF获取客户端IP2：有部署代理服务，waf将使用remote_addr获取客户端IP3：有部署代理服务，waf将使用ip_headers中的自定义header获取客户端IP
                      * 
                      */
                     int64_t GetIsCdn() const;
 
                     /**
-                     * 设置必填项。waf前是否部署有七层代理服务。
-0：没有部署代理服务
-1：有部署代理服务，waf将使用XFF获取客户端IP
-2：有部署代理服务，waf将使用remote_addr获取客户端IP
-3：有部署代理服务，waf将使用ip_headers中的自定义header获取客户端IP
-                     * @param _isCdn 必填项。waf前是否部署有七层代理服务。
-0：没有部署代理服务
-1：有部署代理服务，waf将使用XFF获取客户端IP
-2：有部署代理服务，waf将使用remote_addr获取客户端IP
-3：有部署代理服务，waf将使用ip_headers中的自定义header获取客户端IP
+                     * 设置waf前是否部署有七层代理服务。0：没有部署代理服务1：有部署代理服务，waf将使用XFF获取客户端IP2：有部署代理服务，waf将使用remote_addr获取客户端IP3：有部署代理服务，waf将使用ip_headers中的自定义header获取客户端IP
+                     * @param _isCdn waf前是否部署有七层代理服务。0：没有部署代理服务1：有部署代理服务，waf将使用XFF获取客户端IP2：有部署代理服务，waf将使用remote_addr获取客户端IP3：有部署代理服务，waf将使用ip_headers中的自定义header获取客户端IP
                      * 
                      */
                     void SetIsCdn(const int64_t& _isCdn);
@@ -290,23 +262,15 @@ https：使用https协议回源
                     bool HttpsUpstreamPortHasBeenSet() const;
 
                     /**
-                     * 获取必填项。是否开启HTTP强制跳转到HTTPS。
-0：不强制跳转
-1：开启强制跳转
-                     * @return HttpsRewrite 必填项。是否开启HTTP强制跳转到HTTPS。
-0：不强制跳转
-1：开启强制跳转
+                     * 获取是否开启HTTP强制跳转到HTTPS。0：不强制跳转1：开启强制跳转
+                     * @return HttpsRewrite 是否开启HTTP强制跳转到HTTPS。0：不强制跳转1：开启强制跳转
                      * 
                      */
                     uint64_t GetHttpsRewrite() const;
 
                     /**
-                     * 设置必填项。是否开启HTTP强制跳转到HTTPS。
-0：不强制跳转
-1：开启强制跳转
-                     * @param _httpsRewrite 必填项。是否开启HTTP强制跳转到HTTPS。
-0：不强制跳转
-1：开启强制跳转
+                     * 设置是否开启HTTP强制跳转到HTTPS。0：不强制跳转1：开启强制跳转
+                     * @param _httpsRewrite 是否开启HTTP强制跳转到HTTPS。0：不强制跳转1：开启强制跳转
                      * 
                      */
                     void SetHttpsRewrite(const uint64_t& _httpsRewrite);
@@ -319,23 +283,15 @@ https：使用https协议回源
                     bool HttpsRewriteHasBeenSet() const;
 
                     /**
-                     * 获取必填项。回源类型。
-0：通过IP回源
-1：通过域名回源
-                     * @return UpstreamType 必填项。回源类型。
-0：通过IP回源
-1：通过域名回源
+                     * 获取回源类型。0：通过IP回源1：通过域名回源
+                     * @return UpstreamType 回源类型。0：通过IP回源1：通过域名回源
                      * 
                      */
                     int64_t GetUpstreamType() const;
 
                     /**
-                     * 设置必填项。回源类型。
-0：通过IP回源
-1：通过域名回源
-                     * @param _upstreamType 必填项。回源类型。
-0：通过IP回源
-1：通过域名回源
+                     * 设置回源类型。0：通过IP回源1：通过域名回源
+                     * @param _upstreamType 回源类型。0：通过IP回源1：通过域名回源
                      * 
                      */
                     void SetUpstreamType(const int64_t& _upstreamType);
@@ -390,23 +346,15 @@ https：使用https协议回源
                     bool SrcListHasBeenSet() const;
 
                     /**
-                     * 获取必填项。是否开启HTTP2，需要开启HTTPS协议支持。
-0：关闭
-1：开启
-                     * @return IsHttp2 必填项。是否开启HTTP2，需要开启HTTPS协议支持。
-0：关闭
-1：开启
+                     * 获取是否开启HTTP2，需要开启HTTPS协议支持。0：关闭1：开启
+                     * @return IsHttp2 是否开启HTTP2，需要开启HTTPS协议支持。0：关闭1：开启
                      * 
                      */
                     int64_t GetIsHttp2() const;
 
                     /**
-                     * 设置必填项。是否开启HTTP2，需要开启HTTPS协议支持。
-0：关闭
-1：开启
-                     * @param _isHttp2 必填项。是否开启HTTP2，需要开启HTTPS协议支持。
-0：关闭
-1：开启
+                     * 设置是否开启HTTP2，需要开启HTTPS协议支持。0：关闭1：开启
+                     * @param _isHttp2 是否开启HTTP2，需要开启HTTPS协议支持。0：关闭1：开启
                      * 
                      */
                     void SetIsHttp2(const int64_t& _isHttp2);
@@ -419,23 +367,15 @@ https：使用https协议回源
                     bool IsHttp2HasBeenSet() const;
 
                     /**
-                     * 获取必填项。是否开启WebSocket支持。
-0：关闭
-1：开启
-                     * @return IsWebsocket 必填项。是否开启WebSocket支持。
-0：关闭
-1：开启
+                     * 获取是否开启WebSocket支持。0：关闭1：开启
+                     * @return IsWebsocket 是否开启WebSocket支持。0：关闭1：开启
                      * 
                      */
                     int64_t GetIsWebsocket() const;
 
                     /**
-                     * 设置必填项。是否开启WebSocket支持。
-0：关闭
-1：开启
-                     * @param _isWebsocket 必填项。是否开启WebSocket支持。
-0：关闭
-1：开启
+                     * 设置是否开启WebSocket支持。0：关闭1：开启
+                     * @param _isWebsocket 是否开启WebSocket支持。0：关闭1：开启
                      * 
                      */
                     void SetIsWebsocket(const int64_t& _isWebsocket);
@@ -448,27 +388,15 @@ https：使用https协议回源
                     bool IsWebsocketHasBeenSet() const;
 
                     /**
-                     * 获取必填项。回源负载均衡策略。
-0：轮询
-1：IP hash
-2：加权轮询
-                     * @return LoadBalance 必填项。回源负载均衡策略。
-0：轮询
-1：IP hash
-2：加权轮询
+                     * 获取回源负载均衡策略。0：轮询1：IP hash2：加权轮询
+                     * @return LoadBalance 回源负载均衡策略。0：轮询1：IP hash2：加权轮询
                      * 
                      */
                     int64_t GetLoadBalance() const;
 
                     /**
-                     * 设置必填项。回源负载均衡策略。
-0：轮询
-1：IP hash
-2：加权轮询
-                     * @param _loadBalance 必填项。回源负载均衡策略。
-0：轮询
-1：IP hash
-2：加权轮询
+                     * 设置回源负载均衡策略。0：轮询1：IP hash2：加权轮询
+                     * @param _loadBalance 回源负载均衡策略。0：轮询1：IP hash2：加权轮询
                      * 
                      */
                     void SetLoadBalance(const int64_t& _loadBalance);
@@ -523,15 +451,15 @@ https：使用https协议回源
                     bool EditionHasBeenSet() const;
 
                     /**
-                     * 获取必填项。端口信息，可通过DescribeDomains接口获取具体参数信息。
-                     * @return Ports 必填项。端口信息，可通过DescribeDomains接口获取具体参数信息。
+                     * 获取端口信息，可通过DescribeDomains接口获取具体参数信息。
+                     * @return Ports 端口信息，可通过DescribeDomains接口获取具体参数信息。
                      * 
                      */
                     std::vector<SpartaProtectionPort> GetPorts() const;
 
                     /**
-                     * 设置必填项。端口信息，可通过DescribeDomains接口获取具体参数信息。
-                     * @param _ports 必填项。端口信息，可通过DescribeDomains接口获取具体参数信息。
+                     * 设置端口信息，可通过DescribeDomains接口获取具体参数信息。
+                     * @param _ports 端口信息，可通过DescribeDomains接口获取具体参数信息。
                      * 
                      */
                     void SetPorts(const std::vector<SpartaProtectionPort>& _ports);
@@ -544,23 +472,15 @@ https：使用https协议回源
                     bool PortsHasBeenSet() const;
 
                     /**
-                     * 获取必填项。是否开启长连接。
-0： 短连接
-1： 长连接
-                     * @return IsKeepAlive 必填项。是否开启长连接。
-0： 短连接
-1： 长连接
+                     * 获取是否开启长连接。0： 短连接1： 长连接
+                     * @return IsKeepAlive 是否开启长连接。0： 短连接1： 长连接
                      * 
                      */
                     std::string GetIsKeepAlive() const;
 
                     /**
-                     * 设置必填项。是否开启长连接。
-0： 短连接
-1： 长连接
-                     * @param _isKeepAlive 必填项。是否开启长连接。
-0： 短连接
-1： 长连接
+                     * 设置是否开启长连接。0： 短连接1： 长连接
+                     * @param _isKeepAlive 是否开启长连接。0： 短连接1： 长连接
                      * 
                      */
                     void SetIsKeepAlive(const std::string& _isKeepAlive);
@@ -573,15 +493,15 @@ https：使用https协议回源
                     bool IsKeepAliveHasBeenSet() const;
 
                     /**
-                     * 获取必填项，待废弃。目前填0即可。anycast IP类型开关： 0 普通IP 1 Anycast IP
-                     * @return Anycast 必填项，待废弃。目前填0即可。anycast IP类型开关： 0 普通IP 1 Anycast IP
+                     * 获取待废弃。目前填0即可。anycast IP类型开关： 0 普通IP 1 Anycast IP
+                     * @return Anycast 待废弃。目前填0即可。anycast IP类型开关： 0 普通IP 1 Anycast IP
                      * 
                      */
                     int64_t GetAnycast() const;
 
                     /**
-                     * 设置必填项，待废弃。目前填0即可。anycast IP类型开关： 0 普通IP 1 Anycast IP
-                     * @param _anycast 必填项，待废弃。目前填0即可。anycast IP类型开关： 0 普通IP 1 Anycast IP
+                     * 设置待废弃。目前填0即可。anycast IP类型开关： 0 普通IP 1 Anycast IP
+                     * @param _anycast 待废弃。目前填0即可。anycast IP类型开关： 0 普通IP 1 Anycast IP
                      * 
                      */
                     void SetAnycast(const int64_t& _anycast);
@@ -615,23 +535,15 @@ https：使用https协议回源
                     bool WeightsHasBeenSet() const;
 
                     /**
-                     * 获取必填项，是否开启主动健康检测。
-0：不开启
-1：开启
-                     * @return ActiveCheck 必填项，是否开启主动健康检测。
-0：不开启
-1：开启
+                     * 获取是否开启主动健康检测。0：不开启1：开启
+                     * @return ActiveCheck 是否开启主动健康检测。0：不开启1：开启
                      * 
                      */
                     int64_t GetActiveCheck() const;
 
                     /**
-                     * 设置必填项，是否开启主动健康检测。
-0：不开启
-1：开启
-                     * @param _activeCheck 必填项，是否开启主动健康检测。
-0：不开启
-1：开启
+                     * 设置是否开启主动健康检测。0：不开启1：开启
+                     * @param _activeCheck 是否开启主动健康检测。0：不开启1：开启
                      * 
                      */
                     void SetActiveCheck(const int64_t& _activeCheck);
@@ -686,31 +598,15 @@ https：使用https协议回源
                     bool CiphersHasBeenSet() const;
 
                     /**
-                     * 获取必填项。加密套件模板。
-0：不支持选择，使用默认模板  
-1：通用型模板 
-2：安全型模板
-3：自定义模板
-                     * @return CipherTemplate 必填项。加密套件模板。
-0：不支持选择，使用默认模板  
-1：通用型模板 
-2：安全型模板
-3：自定义模板
+                     * 获取加密套件模板。0：不支持选择，使用默认模板  1：通用型模板 2：安全型模板3：自定义模板
+                     * @return CipherTemplate 加密套件模板。0：不支持选择，使用默认模板  1：通用型模板 2：安全型模板3：自定义模板
                      * 
                      */
                     int64_t GetCipherTemplate() const;
 
                     /**
-                     * 设置必填项。加密套件模板。
-0：不支持选择，使用默认模板  
-1：通用型模板 
-2：安全型模板
-3：自定义模板
-                     * @param _cipherTemplate 必填项。加密套件模板。
-0：不支持选择，使用默认模板  
-1：通用型模板 
-2：安全型模板
-3：自定义模板
+                     * 设置加密套件模板。0：不支持选择，使用默认模板  1：通用型模板 2：安全型模板3：自定义模板
+                     * @param _cipherTemplate 加密套件模板。0：不支持选择，使用默认模板  1：通用型模板 2：安全型模板3：自定义模板
                      * 
                      */
                     void SetCipherTemplate(const int64_t& _cipherTemplate);
@@ -844,23 +740,15 @@ https：使用https协议回源
                     bool IpHeadersHasBeenSet() const;
 
                     /**
-                     * 获取必填项。是否开启XFF重置。
-0：关闭
-1：开启
-                     * @return XFFReset 必填项。是否开启XFF重置。
-0：关闭
-1：开启
+                     * 获取是否开启XFF重置。0：关闭1：开启
+                     * @return XFFReset 是否开启XFF重置。0：关闭1：开启
                      * 
                      */
                     int64_t GetXFFReset() const;
 
                     /**
-                     * 设置必填项。是否开启XFF重置。
-0：关闭
-1：开启
-                     * @param _xFFReset 必填项。是否开启XFF重置。
-0：关闭
-1：开启
+                     * 设置是否开启XFF重置。0：关闭1：开启
+                     * @param _xFFReset 是否开启XFF重置。0：关闭1：开启
                      * 
                      */
                     void SetXFFReset(const int64_t& _xFFReset);
@@ -977,10 +865,7 @@ https：使用https协议回源
                     bool m_instanceIDHasBeenSet;
 
                     /**
-                     * 必填项。证书类型。
-0：仅配置HTTP监听端口，没有证书
-1：证书来源为自有证书
-2：证书来源为托管证书
+                     * 证书类型。0：仅配置HTTP监听端口，没有证书1：证书来源为自有证书2：证书来源为托管证书
                      */
                     int64_t m_certType;
                     bool m_certTypeHasBeenSet;
@@ -1004,11 +889,7 @@ https：使用https协议回源
                     bool m_sSLIdHasBeenSet;
 
                     /**
-                     * 必填项。waf前是否部署有七层代理服务。
-0：没有部署代理服务
-1：有部署代理服务，waf将使用XFF获取客户端IP
-2：有部署代理服务，waf将使用remote_addr获取客户端IP
-3：有部署代理服务，waf将使用ip_headers中的自定义header获取客户端IP
+                     * waf前是否部署有七层代理服务。0：没有部署代理服务1：有部署代理服务，waf将使用XFF获取客户端IP2：有部署代理服务，waf将使用remote_addr获取客户端IP3：有部署代理服务，waf将使用ip_headers中的自定义header获取客户端IP
                      */
                     int64_t m_isCdn;
                     bool m_isCdnHasBeenSet;
@@ -1028,17 +909,13 @@ https：使用https协议回源
                     bool m_httpsUpstreamPortHasBeenSet;
 
                     /**
-                     * 必填项。是否开启HTTP强制跳转到HTTPS。
-0：不强制跳转
-1：开启强制跳转
+                     * 是否开启HTTP强制跳转到HTTPS。0：不强制跳转1：开启强制跳转
                      */
                     uint64_t m_httpsRewrite;
                     bool m_httpsRewriteHasBeenSet;
 
                     /**
-                     * 必填项。回源类型。
-0：通过IP回源
-1：通过域名回源
+                     * 回源类型。0：通过IP回源1：通过域名回源
                      */
                     int64_t m_upstreamType;
                     bool m_upstreamTypeHasBeenSet;
@@ -1056,26 +933,19 @@ https：使用https协议回源
                     bool m_srcListHasBeenSet;
 
                     /**
-                     * 必填项。是否开启HTTP2，需要开启HTTPS协议支持。
-0：关闭
-1：开启
+                     * 是否开启HTTP2，需要开启HTTPS协议支持。0：关闭1：开启
                      */
                     int64_t m_isHttp2;
                     bool m_isHttp2HasBeenSet;
 
                     /**
-                     * 必填项。是否开启WebSocket支持。
-0：关闭
-1：开启
+                     * 是否开启WebSocket支持。0：关闭1：开启
                      */
                     int64_t m_isWebsocket;
                     bool m_isWebsocketHasBeenSet;
 
                     /**
-                     * 必填项。回源负载均衡策略。
-0：轮询
-1：IP hash
-2：加权轮询
+                     * 回源负载均衡策略。0：轮询1：IP hash2：加权轮询
                      */
                     int64_t m_loadBalance;
                     bool m_loadBalanceHasBeenSet;
@@ -1093,21 +963,19 @@ https：使用https协议回源
                     bool m_editionHasBeenSet;
 
                     /**
-                     * 必填项。端口信息，可通过DescribeDomains接口获取具体参数信息。
+                     * 端口信息，可通过DescribeDomains接口获取具体参数信息。
                      */
                     std::vector<SpartaProtectionPort> m_ports;
                     bool m_portsHasBeenSet;
 
                     /**
-                     * 必填项。是否开启长连接。
-0： 短连接
-1： 长连接
+                     * 是否开启长连接。0： 短连接1： 长连接
                      */
                     std::string m_isKeepAlive;
                     bool m_isKeepAliveHasBeenSet;
 
                     /**
-                     * 必填项，待废弃。目前填0即可。anycast IP类型开关： 0 普通IP 1 Anycast IP
+                     * 待废弃。目前填0即可。anycast IP类型开关： 0 普通IP 1 Anycast IP
                      */
                     int64_t m_anycast;
                     bool m_anycastHasBeenSet;
@@ -1119,9 +987,7 @@ https：使用https协议回源
                     bool m_weightsHasBeenSet;
 
                     /**
-                     * 必填项，是否开启主动健康检测。
-0：不开启
-1：开启
+                     * 是否开启主动健康检测。0：不开启1：开启
                      */
                     int64_t m_activeCheck;
                     bool m_activeCheckHasBeenSet;
@@ -1139,11 +1005,7 @@ https：使用https协议回源
                     bool m_ciphersHasBeenSet;
 
                     /**
-                     * 必填项。加密套件模板。
-0：不支持选择，使用默认模板  
-1：通用型模板 
-2：安全型模板
-3：自定义模板
+                     * 加密套件模板。0：不支持选择，使用默认模板  1：通用型模板 2：安全型模板3：自定义模板
                      */
                     int64_t m_cipherTemplate;
                     bool m_cipherTemplateHasBeenSet;
@@ -1183,9 +1045,7 @@ https：使用https协议回源
                     bool m_ipHeadersHasBeenSet;
 
                     /**
-                     * 必填项。是否开启XFF重置。
-0：关闭
-1：开启
+                     * 是否开启XFF重置。0：关闭1：开启
                      */
                     int64_t m_xFFReset;
                     bool m_xFFResetHasBeenSet;

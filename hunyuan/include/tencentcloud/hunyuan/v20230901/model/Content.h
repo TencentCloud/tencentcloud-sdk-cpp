@@ -106,18 +106,22 @@ namespace TencentCloud
                     bool TextHasBeenSet() const;
 
                     /**
-                     * 获取当 Type 为 image_url 时使用，表示具体的图片内容
+                     * 获取图片的url，当 Type 为 image_url 时使用，表示具体的图片内容
+如"https://example.com/1.png" 或 图片的base64（注意 "data:image/jpeg;base64" 为必要部分）："data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAA......"
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return ImageUrl 当 Type 为 image_url 时使用，表示具体的图片内容
+                     * @return ImageUrl 图片的url，当 Type 为 image_url 时使用，表示具体的图片内容
+如"https://example.com/1.png" 或 图片的base64（注意 "data:image/jpeg;base64" 为必要部分）："data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAA......"
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     ImageUrl GetImageUrl() const;
 
                     /**
-                     * 设置当 Type 为 image_url 时使用，表示具体的图片内容
+                     * 设置图片的url，当 Type 为 image_url 时使用，表示具体的图片内容
+如"https://example.com/1.png" 或 图片的base64（注意 "data:image/jpeg;base64" 为必要部分）："data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAA......"
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _imageUrl 当 Type 为 image_url 时使用，表示具体的图片内容
+                     * @param _imageUrl 图片的url，当 Type 为 image_url 时使用，表示具体的图片内容
+如"https://example.com/1.png" 或 图片的base64（注意 "data:image/jpeg;base64" 为必要部分）："data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAA......"
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -149,7 +153,8 @@ namespace TencentCloud
                     bool m_textHasBeenSet;
 
                     /**
-                     * 当 Type 为 image_url 时使用，表示具体的图片内容
+                     * 图片的url，当 Type 为 image_url 时使用，表示具体的图片内容
+如"https://example.com/1.png" 或 图片的base64（注意 "data:image/jpeg;base64" 为必要部分）："data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAA......"
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     ImageUrl m_imageUrl;

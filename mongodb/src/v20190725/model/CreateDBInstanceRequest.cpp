@@ -51,7 +51,8 @@ CreateDBInstanceRequest::CreateDBInstanceRequest() :
     m_mongosNodeNumHasBeenSet(false),
     m_readonlyNodeNumHasBeenSet(false),
     m_readonlyNodeAvailabilityZoneListHasBeenSet(false),
-    m_hiddenZoneHasBeenSet(false)
+    m_hiddenZoneHasBeenSet(false),
+    m_paramTemplateIdHasBeenSet(false)
 {
 }
 
@@ -314,6 +315,14 @@ string CreateDBInstanceRequest::ToJsonString() const
         string key = "HiddenZone";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_hiddenZone.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_paramTemplateIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ParamTemplateId";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_paramTemplateId.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -786,6 +795,22 @@ void CreateDBInstanceRequest::SetHiddenZone(const string& _hiddenZone)
 bool CreateDBInstanceRequest::HiddenZoneHasBeenSet() const
 {
     return m_hiddenZoneHasBeenSet;
+}
+
+string CreateDBInstanceRequest::GetParamTemplateId() const
+{
+    return m_paramTemplateId;
+}
+
+void CreateDBInstanceRequest::SetParamTemplateId(const string& _paramTemplateId)
+{
+    m_paramTemplateId = _paramTemplateId;
+    m_paramTemplateIdHasBeenSet = true;
+}
+
+bool CreateDBInstanceRequest::ParamTemplateIdHasBeenSet() const
+{
+    return m_paramTemplateIdHasBeenSet;
 }
 
 

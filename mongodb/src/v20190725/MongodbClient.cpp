@@ -1932,6 +1932,49 @@ MongodbClient::ResetDBInstancePasswordOutcomeCallable MongodbClient::ResetDBInst
     return task->get_future();
 }
 
+MongodbClient::RestartNodesOutcome MongodbClient::RestartNodes(const RestartNodesRequest &request)
+{
+    auto outcome = MakeRequest(request, "RestartNodes");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        RestartNodesResponse rsp = RestartNodesResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return RestartNodesOutcome(rsp);
+        else
+            return RestartNodesOutcome(o.GetError());
+    }
+    else
+    {
+        return RestartNodesOutcome(outcome.GetError());
+    }
+}
+
+void MongodbClient::RestartNodesAsync(const RestartNodesRequest& request, const RestartNodesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->RestartNodes(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+MongodbClient::RestartNodesOutcomeCallable MongodbClient::RestartNodesCallable(const RestartNodesRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<RestartNodesOutcome()>>(
+        [this, request]()
+        {
+            return this->RestartNodes(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 MongodbClient::SetAccountUserPrivilegeOutcome MongodbClient::SetAccountUserPrivilege(const SetAccountUserPrivilegeRequest &request)
 {
     auto outcome = MakeRequest(request, "SetAccountUserPrivilege");

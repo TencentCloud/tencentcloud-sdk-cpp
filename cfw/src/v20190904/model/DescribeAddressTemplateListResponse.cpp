@@ -29,7 +29,9 @@ DescribeAddressTemplateListResponse::DescribeAddressTemplateListResponse() :
     m_nameListHasBeenSet(false),
     m_ipTemplateCountHasBeenSet(false),
     m_domainTemplateCountHasBeenSet(false),
-    m_portTemplateCountHasBeenSet(false)
+    m_portTemplateCountHasBeenSet(false),
+    m_usedTemplateCountHasBeenSet(false),
+    m_templateQuotaCountHasBeenSet(false)
 {
 }
 
@@ -140,6 +142,26 @@ CoreInternalOutcome DescribeAddressTemplateListResponse::Deserialize(const strin
         m_portTemplateCountHasBeenSet = true;
     }
 
+    if (rsp.HasMember("UsedTemplateCount") && !rsp["UsedTemplateCount"].IsNull())
+    {
+        if (!rsp["UsedTemplateCount"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `UsedTemplateCount` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_usedTemplateCount = rsp["UsedTemplateCount"].GetInt64();
+        m_usedTemplateCountHasBeenSet = true;
+    }
+
+    if (rsp.HasMember("TemplateQuotaCount") && !rsp["TemplateQuotaCount"].IsNull())
+    {
+        if (!rsp["TemplateQuotaCount"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `TemplateQuotaCount` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_templateQuotaCount = rsp["TemplateQuotaCount"].GetInt64();
+        m_templateQuotaCountHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -208,6 +230,22 @@ string DescribeAddressTemplateListResponse::ToJsonString() const
         string key = "PortTemplateCount";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_portTemplateCount, allocator);
+    }
+
+    if (m_usedTemplateCountHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "UsedTemplateCount";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_usedTemplateCount, allocator);
+    }
+
+    if (m_templateQuotaCountHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "TemplateQuotaCount";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_templateQuotaCount, allocator);
     }
 
     rapidjson::Value iKey(rapidjson::kStringType);
@@ -280,6 +318,26 @@ int64_t DescribeAddressTemplateListResponse::GetPortTemplateCount() const
 bool DescribeAddressTemplateListResponse::PortTemplateCountHasBeenSet() const
 {
     return m_portTemplateCountHasBeenSet;
+}
+
+int64_t DescribeAddressTemplateListResponse::GetUsedTemplateCount() const
+{
+    return m_usedTemplateCount;
+}
+
+bool DescribeAddressTemplateListResponse::UsedTemplateCountHasBeenSet() const
+{
+    return m_usedTemplateCountHasBeenSet;
+}
+
+int64_t DescribeAddressTemplateListResponse::GetTemplateQuotaCount() const
+{
+    return m_templateQuotaCount;
+}
+
+bool DescribeAddressTemplateListResponse::TemplateQuotaCountHasBeenSet() const
+{
+    return m_templateQuotaCountHasBeenSet;
 }
 
 

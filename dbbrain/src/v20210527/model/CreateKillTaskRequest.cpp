@@ -29,6 +29,7 @@ CreateKillTaskRequest::CreateKillTaskRequest() :
     m_dBHasBeenSet(false),
     m_commandHasBeenSet(false),
     m_infoHasBeenSet(false),
+    m_infosHasBeenSet(false),
     m_userHasBeenSet(false),
     m_timeHasBeenSet(false),
     m_productHasBeenSet(false)
@@ -88,6 +89,19 @@ string CreateKillTaskRequest::ToJsonString() const
         string key = "Info";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_info.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_infosHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Infos";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        for (auto itr = m_infos.begin(); itr != m_infos.end(); ++itr)
+        {
+            d[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
+        }
     }
 
     if (m_userHasBeenSet)
@@ -216,6 +230,22 @@ void CreateKillTaskRequest::SetInfo(const string& _info)
 bool CreateKillTaskRequest::InfoHasBeenSet() const
 {
     return m_infoHasBeenSet;
+}
+
+vector<string> CreateKillTaskRequest::GetInfos() const
+{
+    return m_infos;
+}
+
+void CreateKillTaskRequest::SetInfos(const vector<string>& _infos)
+{
+    m_infos = _infos;
+    m_infosHasBeenSet = true;
+}
+
+bool CreateKillTaskRequest::InfosHasBeenSet() const
+{
+    return m_infosHasBeenSet;
 }
 
 string CreateKillTaskRequest::GetUser() const
