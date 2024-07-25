@@ -63,6 +63,27 @@ namespace TencentCloud
                      */
                     bool InstanceIdHasBeenSet() const;
 
+                    /**
+                     * 获取日志类型
+                     * @return LogType 日志类型
+                     * 
+                     */
+                    std::string GetLogType() const;
+
+                    /**
+                     * 设置日志类型
+                     * @param _logType 日志类型
+                     * 
+                     */
+                    void SetLogType(const std::string& _logType);
+
+                    /**
+                     * 判断参数 LogType 是否已赋值
+                     * @return LogType 是否已赋值
+                     * 
+                     */
+                    bool LogTypeHasBeenSet() const;
+
                 private:
 
                     /**
@@ -70,6 +91,12 @@ namespace TencentCloud
                      */
                     std::string m_instanceId;
                     bool m_instanceIdHasBeenSet;
+
+                    /**
+                     * 日志类型
+                     */
+                    std::string m_logType;
+                    bool m_logTypeHasBeenSet;
 
                 };
             }

@@ -261,9 +261,9 @@ namespace TencentCloud
                     bool TryInSecondsHasBeenSet() const;
 
                     /**
-                     * 获取该字段用于返回视频中截帧审核的结果，详细返回内容敬请参考ImageSegments数据结构的描述。<br>备注：数据有效期为24小时，如需要延长存储时间，请在已配置的COS储存桶中设置。
+                     * 获取该字段用于返回视频中截帧审核的结果，详细返回内容敬请参考ImageSegments数据结构的描述。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return ImageSegments 该字段用于返回视频中截帧审核的结果，详细返回内容敬请参考ImageSegments数据结构的描述。<br>备注：数据有效期为24小时，如需要延长存储时间，请在已配置的COS储存桶中设置。
+                     * @return ImageSegments 该字段用于返回视频中截帧审核的结果，详细返回内容敬请参考ImageSegments数据结构的描述。
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -277,9 +277,9 @@ namespace TencentCloud
                     bool ImageSegmentsHasBeenSet() const;
 
                     /**
-                     * 获取该字段用于返回视频中音频审核的结果，详细返回内容敬请参考AudioSegments数据结构的描述。<br>备注：数据有效期为24小时，如需要延长存储时间，请在已配置的COS储存桶中设置。
+                     * 获取该字段用于返回视频中音频审核的结果，详细返回内容敬请参考AudioSegments数据结构的描述。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return AudioSegments 该字段用于返回视频中音频审核的结果，详细返回内容敬请参考AudioSegments数据结构的描述。<br>备注：数据有效期为24小时，如需要延长存储时间，请在已配置的COS储存桶中设置。
+                     * @return AudioSegments 该字段用于返回视频中音频审核的结果，详细返回内容敬请参考AudioSegments数据结构的描述。
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -497,14 +497,14 @@ namespace TencentCloud
                     bool m_tryInSecondsHasBeenSet;
 
                     /**
-                     * 该字段用于返回视频中截帧审核的结果，详细返回内容敬请参考ImageSegments数据结构的描述。<br>备注：数据有效期为24小时，如需要延长存储时间，请在已配置的COS储存桶中设置。
+                     * 该字段用于返回视频中截帧审核的结果，详细返回内容敬请参考ImageSegments数据结构的描述。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<ImageSegments> m_imageSegments;
                     bool m_imageSegmentsHasBeenSet;
 
                     /**
-                     * 该字段用于返回视频中音频审核的结果，详细返回内容敬请参考AudioSegments数据结构的描述。<br>备注：数据有效期为24小时，如需要延长存储时间，请在已配置的COS储存桶中设置。
+                     * 该字段用于返回视频中音频审核的结果，详细返回内容敬请参考AudioSegments数据结构的描述。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<AudioSegments> m_audioSegments;

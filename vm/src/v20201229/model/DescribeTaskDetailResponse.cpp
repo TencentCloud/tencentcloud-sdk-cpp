@@ -40,7 +40,11 @@ DescribeTaskDetailResponse::DescribeTaskDetailResponse() :
     m_audioSegmentsHasBeenSet(false),
     m_errorTypeHasBeenSet(false),
     m_errorDescriptionHasBeenSet(false),
-    m_labelHasBeenSet(false)
+    m_labelHasBeenSet(false),
+    m_segmentCosUrlListHasBeenSet(false),
+    m_audioTextHasBeenSet(false),
+    m_tryInSecondsHasBeenSet(false),
+    m_asrsHasBeenSet(false)
 {
 }
 
@@ -292,6 +296,63 @@ CoreInternalOutcome DescribeTaskDetailResponse::Deserialize(const string &payloa
         m_labelHasBeenSet = true;
     }
 
+    if (rsp.HasMember("SegmentCosUrlList") && !rsp["SegmentCosUrlList"].IsNull())
+    {
+        if (!rsp["SegmentCosUrlList"].IsObject())
+        {
+            return CoreInternalOutcome(Core::Error("response `SegmentCosUrlList` is not object type").SetRequestId(requestId));
+        }
+
+        CoreInternalOutcome outcome = m_segmentCosUrlList.Deserialize(rsp["SegmentCosUrlList"]);
+        if (!outcome.IsSuccess())
+        {
+            outcome.GetError().SetRequestId(requestId);
+            return outcome;
+        }
+
+        m_segmentCosUrlListHasBeenSet = true;
+    }
+
+    if (rsp.HasMember("AudioText") && !rsp["AudioText"].IsNull())
+    {
+        if (!rsp["AudioText"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `AudioText` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_audioText = string(rsp["AudioText"].GetString());
+        m_audioTextHasBeenSet = true;
+    }
+
+    if (rsp.HasMember("TryInSeconds") && !rsp["TryInSeconds"].IsNull())
+    {
+        if (!rsp["TryInSeconds"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `TryInSeconds` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_tryInSeconds = rsp["TryInSeconds"].GetInt64();
+        m_tryInSecondsHasBeenSet = true;
+    }
+
+    if (rsp.HasMember("Asrs") && !rsp["Asrs"].IsNull())
+    {
+        if (!rsp["Asrs"].IsArray())
+            return CoreInternalOutcome(Core::Error("response `Asrs` is not array type"));
+
+        const rapidjson::Value &tmpValue = rsp["Asrs"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            RcbAsr item;
+            CoreInternalOutcome outcome = item.Deserialize(*itr);
+            if (!outcome.IsSuccess())
+            {
+                outcome.GetError().SetRequestId(requestId);
+                return outcome;
+            }
+            m_asrs.push_back(item);
+        }
+        m_asrsHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -459,6 +520,46 @@ string DescribeTaskDetailResponse::ToJsonString() const
         string key = "Label";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_label.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_segmentCosUrlListHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "SegmentCosUrlList";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_segmentCosUrlList.ToJsonObject(value[key.c_str()], allocator);
+    }
+
+    if (m_audioTextHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "AudioText";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_audioText.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_tryInSecondsHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "TryInSeconds";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_tryInSeconds, allocator);
+    }
+
+    if (m_asrsHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Asrs";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_asrs.begin(); itr != m_asrs.end(); ++itr, ++i)
+        {
+            value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(value[key.c_str()][i], allocator);
+        }
     }
 
     rapidjson::Value iKey(rapidjson::kStringType);
@@ -641,6 +742,46 @@ string DescribeTaskDetailResponse::GetLabel() const
 bool DescribeTaskDetailResponse::LabelHasBeenSet() const
 {
     return m_labelHasBeenSet;
+}
+
+SegmentCosUrlList DescribeTaskDetailResponse::GetSegmentCosUrlList() const
+{
+    return m_segmentCosUrlList;
+}
+
+bool DescribeTaskDetailResponse::SegmentCosUrlListHasBeenSet() const
+{
+    return m_segmentCosUrlListHasBeenSet;
+}
+
+string DescribeTaskDetailResponse::GetAudioText() const
+{
+    return m_audioText;
+}
+
+bool DescribeTaskDetailResponse::AudioTextHasBeenSet() const
+{
+    return m_audioTextHasBeenSet;
+}
+
+int64_t DescribeTaskDetailResponse::GetTryInSeconds() const
+{
+    return m_tryInSeconds;
+}
+
+bool DescribeTaskDetailResponse::TryInSecondsHasBeenSet() const
+{
+    return m_tryInSecondsHasBeenSet;
+}
+
+vector<RcbAsr> DescribeTaskDetailResponse::GetAsrs() const
+{
+    return m_asrs;
+}
+
+bool DescribeTaskDetailResponse::AsrsHasBeenSet() const
+{
+    return m_asrsHasBeenSet;
 }
 
 

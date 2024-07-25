@@ -6318,6 +6318,49 @@ TkeClient::DescribeRegionsOutcomeCallable TkeClient::DescribeRegionsCallable(con
     return task->get_future();
 }
 
+TkeClient::DescribeReservedInstanceUtilizationRateOutcome TkeClient::DescribeReservedInstanceUtilizationRate(const DescribeReservedInstanceUtilizationRateRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeReservedInstanceUtilizationRate");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeReservedInstanceUtilizationRateResponse rsp = DescribeReservedInstanceUtilizationRateResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeReservedInstanceUtilizationRateOutcome(rsp);
+        else
+            return DescribeReservedInstanceUtilizationRateOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeReservedInstanceUtilizationRateOutcome(outcome.GetError());
+    }
+}
+
+void TkeClient::DescribeReservedInstanceUtilizationRateAsync(const DescribeReservedInstanceUtilizationRateRequest& request, const DescribeReservedInstanceUtilizationRateAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeReservedInstanceUtilizationRate(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+TkeClient::DescribeReservedInstanceUtilizationRateOutcomeCallable TkeClient::DescribeReservedInstanceUtilizationRateCallable(const DescribeReservedInstanceUtilizationRateRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeReservedInstanceUtilizationRateOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeReservedInstanceUtilizationRate(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 TkeClient::DescribeReservedInstancesOutcome TkeClient::DescribeReservedInstances(const DescribeReservedInstancesRequest &request)
 {
     auto outcome = MakeRequest(request, "DescribeReservedInstances");

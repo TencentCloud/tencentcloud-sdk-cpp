@@ -65,6 +65,7 @@
 #include <tencentcloud/cdn/v20180606/model/QnPrivateAccess.h>
 #include <tencentcloud/cdn/v20180606/model/OthersPrivateAccess.h>
 #include <tencentcloud/cdn/v20180606/model/HttpsBilling.h>
+#include <tencentcloud/cdn/v20180606/model/ParamFilter.h>
 
 
 namespace TencentCloud
@@ -1147,6 +1148,27 @@ global：全球加速
                      */
                     bool HttpsBillingHasBeenSet() const;
 
+                    /**
+                     * 获取参数黑名单
+                     * @return ParamFilter 参数黑名单
+                     * 
+                     */
+                    ParamFilter GetParamFilter() const;
+
+                    /**
+                     * 设置参数黑名单
+                     * @param _paramFilter 参数黑名单
+                     * 
+                     */
+                    void SetParamFilter(const ParamFilter& _paramFilter);
+
+                    /**
+                     * 判断参数 ParamFilter 是否已赋值
+                     * @return ParamFilter 是否已赋值
+                     * 
+                     */
+                    bool ParamFilterHasBeenSet() const;
+
                 private:
 
                     /**
@@ -1450,6 +1472,12 @@ global：全球加速
                      */
                     HttpsBilling m_httpsBilling;
                     bool m_httpsBillingHasBeenSet;
+
+                    /**
+                     * 参数黑名单
+                     */
+                    ParamFilter m_paramFilter;
+                    bool m_paramFilterHasBeenSet;
 
                 };
             }

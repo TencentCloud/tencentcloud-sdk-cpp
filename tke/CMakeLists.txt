@@ -277,6 +277,7 @@ set(tke_public_header_model
   include/tencentcloud/tke/v20180525/model/UninstallClusterReleaseResponse.h
   include/tencentcloud/tke/v20180525/model/ClusterCIDRSettings.h
   include/tencentcloud/tke/v20180525/model/Taint.h
+  include/tencentcloud/tke/v20180525/model/ReservedInstanceUtilizationRate.h
   include/tencentcloud/tke/v20180525/model/ModifyNodePoolInstanceTypesRequest.h
   include/tencentcloud/tke/v20180525/model/AddClusterCIDRRequest.h
   include/tencentcloud/tke/v20180525/model/OIDCConfigAuthenticationOptions.h
@@ -367,7 +368,9 @@ set(tke_public_header_model
   include/tencentcloud/tke/v20180525/model/DescribeClusterSecurityResponse.h
   include/tencentcloud/tke/v20180525/model/RouteInfo.h
   include/tencentcloud/tke/v20180525/model/ModifyNodePoolDesiredCapacityAboutAsgResponse.h
+  include/tencentcloud/tke/v20180525/model/DescribeReservedInstanceUtilizationRateRequest.h
   include/tencentcloud/tke/v20180525/model/CreateClusterRouteRequest.h
+  include/tencentcloud/tke/v20180525/model/DescribeReservedInstanceUtilizationRateResponse.h
   include/tencentcloud/tke/v20180525/model/ModifyClusterEndpointSPRequest.h
   include/tencentcloud/tke/v20180525/model/DescribePrometheusConfigResponse.h
   include/tencentcloud/tke/v20180525/model/DeleteClusterEndpointResponse.h
@@ -941,6 +944,7 @@ set(tke_src
   src/v20180525/model/UninstallClusterReleaseResponse.cpp
   src/v20180525/model/ClusterCIDRSettings.cpp
   src/v20180525/model/Taint.cpp
+  src/v20180525/model/ReservedInstanceUtilizationRate.cpp
   src/v20180525/model/ModifyNodePoolInstanceTypesRequest.cpp
   src/v20180525/model/AddClusterCIDRRequest.cpp
   src/v20180525/model/OIDCConfigAuthenticationOptions.cpp
@@ -1031,7 +1035,9 @@ set(tke_src
   src/v20180525/model/DescribeClusterSecurityResponse.cpp
   src/v20180525/model/RouteInfo.cpp
   src/v20180525/model/ModifyNodePoolDesiredCapacityAboutAsgResponse.cpp
+  src/v20180525/model/DescribeReservedInstanceUtilizationRateRequest.cpp
   src/v20180525/model/CreateClusterRouteRequest.cpp
+  src/v20180525/model/DescribeReservedInstanceUtilizationRateResponse.cpp
   src/v20180525/model/ModifyClusterEndpointSPRequest.cpp
   src/v20180525/model/DescribePrometheusConfigResponse.cpp
   src/v20180525/model/DeleteClusterEndpointResponse.cpp

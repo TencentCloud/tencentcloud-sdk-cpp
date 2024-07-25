@@ -60,7 +60,8 @@ CreateDBInstanceRequest::CreateDBInstanceRequest() :
     m_alarmPolicyIdListHasBeenSet(false),
     m_dryRunHasBeenSet(false),
     m_engineTypeHasBeenSet(false),
-    m_vipsHasBeenSet(false)
+    m_vipsHasBeenSet(false),
+    m_clusterTopologyHasBeenSet(false)
 {
 }
 
@@ -408,6 +409,15 @@ string CreateDBInstanceRequest::ToJsonString() const
         {
             d[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
         }
+    }
+
+    if (m_clusterTopologyHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ClusterTopology";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_clusterTopology.ToJsonObject(d[key.c_str()], allocator);
     }
 
 
@@ -1024,6 +1034,22 @@ void CreateDBInstanceRequest::SetVips(const vector<string>& _vips)
 bool CreateDBInstanceRequest::VipsHasBeenSet() const
 {
     return m_vipsHasBeenSet;
+}
+
+ClusterTopology CreateDBInstanceRequest::GetClusterTopology() const
+{
+    return m_clusterTopology;
+}
+
+void CreateDBInstanceRequest::SetClusterTopology(const ClusterTopology& _clusterTopology)
+{
+    m_clusterTopology = _clusterTopology;
+    m_clusterTopologyHasBeenSet = true;
+}
+
+bool CreateDBInstanceRequest::ClusterTopologyHasBeenSet() const
+{
+    return m_clusterTopologyHasBeenSet;
 }
 
 

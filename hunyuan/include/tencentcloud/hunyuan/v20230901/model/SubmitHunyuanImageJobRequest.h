@@ -21,6 +21,7 @@
 #include <vector>
 #include <map>
 #include <tencentcloud/core/AbstractModel.h>
+#include <tencentcloud/hunyuan/v20230901/model/LogoParam.h>
 
 
 namespace TencentCloud
@@ -126,6 +127,93 @@ namespace TencentCloud
                     bool ResolutionHasBeenSet() const;
 
                     /**
+                     * 获取图片生成数量。
+支持1 ~ 4张，默认生成1张。
+                     * @return Num 图片生成数量。
+支持1 ~ 4张，默认生成1张。
+                     * 
+                     */
+                    int64_t GetNum() const;
+
+                    /**
+                     * 设置图片生成数量。
+支持1 ~ 4张，默认生成1张。
+                     * @param _num 图片生成数量。
+支持1 ~ 4张，默认生成1张。
+                     * 
+                     */
+                    void SetNum(const int64_t& _num);
+
+                    /**
+                     * 判断参数 Num 是否已赋值
+                     * @return Num 是否已赋值
+                     * 
+                     */
+                    bool NumHasBeenSet() const;
+
+                    /**
+                     * 获取随机种子，默认随机。
+不传：随机种子生成。
+正数：固定种子生成。
+                     * @return Seed 随机种子，默认随机。
+不传：随机种子生成。
+正数：固定种子生成。
+                     * 
+                     */
+                    int64_t GetSeed() const;
+
+                    /**
+                     * 设置随机种子，默认随机。
+不传：随机种子生成。
+正数：固定种子生成。
+                     * @param _seed 随机种子，默认随机。
+不传：随机种子生成。
+正数：固定种子生成。
+                     * 
+                     */
+                    void SetSeed(const int64_t& _seed);
+
+                    /**
+                     * 判断参数 Seed 是否已赋值
+                     * @return Seed 是否已赋值
+                     * 
+                     */
+                    bool SeedHasBeenSet() const;
+
+                    /**
+                     * 获取prompt 扩写开关。1为开启，0为关闭，不传默认开启。
+开启扩写后，将自动扩写原始输入的 prompt 并使用扩写后的 prompt 生成图片，返回生成图片结果时将一并返回扩写后的 prompt 文本。
+如果关闭扩写，将直接使用原始输入的 prompt 生成图片。
+建议开启，在多数场景下可提升生成图片效果、丰富生成图片细节。
+                     * @return Revise prompt 扩写开关。1为开启，0为关闭，不传默认开启。
+开启扩写后，将自动扩写原始输入的 prompt 并使用扩写后的 prompt 生成图片，返回生成图片结果时将一并返回扩写后的 prompt 文本。
+如果关闭扩写，将直接使用原始输入的 prompt 生成图片。
+建议开启，在多数场景下可提升生成图片效果、丰富生成图片细节。
+                     * 
+                     */
+                    int64_t GetRevise() const;
+
+                    /**
+                     * 设置prompt 扩写开关。1为开启，0为关闭，不传默认开启。
+开启扩写后，将自动扩写原始输入的 prompt 并使用扩写后的 prompt 生成图片，返回生成图片结果时将一并返回扩写后的 prompt 文本。
+如果关闭扩写，将直接使用原始输入的 prompt 生成图片。
+建议开启，在多数场景下可提升生成图片效果、丰富生成图片细节。
+                     * @param _revise prompt 扩写开关。1为开启，0为关闭，不传默认开启。
+开启扩写后，将自动扩写原始输入的 prompt 并使用扩写后的 prompt 生成图片，返回生成图片结果时将一并返回扩写后的 prompt 文本。
+如果关闭扩写，将直接使用原始输入的 prompt 生成图片。
+建议开启，在多数场景下可提升生成图片效果、丰富生成图片细节。
+                     * 
+                     */
+                    void SetRevise(const int64_t& _revise);
+
+                    /**
+                     * 判断参数 Revise 是否已赋值
+                     * @return Revise 是否已赋值
+                     * 
+                     */
+                    bool ReviseHasBeenSet() const;
+
+                    /**
                      * 获取为生成结果图添加显式水印标识的开关，默认为1。  
 1：添加。  
 0：不添加。  
@@ -163,37 +251,29 @@ namespace TencentCloud
                     bool LogoAddHasBeenSet() const;
 
                     /**
-                     * 获取prompt 扩写开关。1为开启，0为关闭，不传默认开启。
-开启扩写后，将自动扩写原始输入的 prompt 并使用扩写后的 prompt 生成图片，返回生成图片结果时将一并返回扩写后的 prompt 文本。
-如果关闭扩写，将直接使用原始输入的 prompt 生成图片。
-建议开启，在多数场景下可提升生成图片效果、丰富生成图片细节。
-                     * @return Revise prompt 扩写开关。1为开启，0为关闭，不传默认开启。
-开启扩写后，将自动扩写原始输入的 prompt 并使用扩写后的 prompt 生成图片，返回生成图片结果时将一并返回扩写后的 prompt 文本。
-如果关闭扩写，将直接使用原始输入的 prompt 生成图片。
-建议开启，在多数场景下可提升生成图片效果、丰富生成图片细节。
+                     * 获取标识内容设置。
+默认在生成结果图右下角添加“图片由 AI 生成”字样，您可根据自身需要替换为其他的标识图片。
+                     * @return LogoParam 标识内容设置。
+默认在生成结果图右下角添加“图片由 AI 生成”字样，您可根据自身需要替换为其他的标识图片。
                      * 
                      */
-                    int64_t GetRevise() const;
+                    LogoParam GetLogoParam() const;
 
                     /**
-                     * 设置prompt 扩写开关。1为开启，0为关闭，不传默认开启。
-开启扩写后，将自动扩写原始输入的 prompt 并使用扩写后的 prompt 生成图片，返回生成图片结果时将一并返回扩写后的 prompt 文本。
-如果关闭扩写，将直接使用原始输入的 prompt 生成图片。
-建议开启，在多数场景下可提升生成图片效果、丰富生成图片细节。
-                     * @param _revise prompt 扩写开关。1为开启，0为关闭，不传默认开启。
-开启扩写后，将自动扩写原始输入的 prompt 并使用扩写后的 prompt 生成图片，返回生成图片结果时将一并返回扩写后的 prompt 文本。
-如果关闭扩写，将直接使用原始输入的 prompt 生成图片。
-建议开启，在多数场景下可提升生成图片效果、丰富生成图片细节。
+                     * 设置标识内容设置。
+默认在生成结果图右下角添加“图片由 AI 生成”字样，您可根据自身需要替换为其他的标识图片。
+                     * @param _logoParam 标识内容设置。
+默认在生成结果图右下角添加“图片由 AI 生成”字样，您可根据自身需要替换为其他的标识图片。
                      * 
                      */
-                    void SetRevise(const int64_t& _revise);
+                    void SetLogoParam(const LogoParam& _logoParam);
 
                     /**
-                     * 判断参数 Revise 是否已赋值
-                     * @return Revise 是否已赋值
+                     * 判断参数 LogoParam 是否已赋值
+                     * @return LogoParam 是否已赋值
                      * 
                      */
-                    bool ReviseHasBeenSet() const;
+                    bool LogoParamHasBeenSet() const;
 
                 private:
 
@@ -221,6 +301,30 @@ namespace TencentCloud
                     bool m_resolutionHasBeenSet;
 
                     /**
+                     * 图片生成数量。
+支持1 ~ 4张，默认生成1张。
+                     */
+                    int64_t m_num;
+                    bool m_numHasBeenSet;
+
+                    /**
+                     * 随机种子，默认随机。
+不传：随机种子生成。
+正数：固定种子生成。
+                     */
+                    int64_t m_seed;
+                    bool m_seedHasBeenSet;
+
+                    /**
+                     * prompt 扩写开关。1为开启，0为关闭，不传默认开启。
+开启扩写后，将自动扩写原始输入的 prompt 并使用扩写后的 prompt 生成图片，返回生成图片结果时将一并返回扩写后的 prompt 文本。
+如果关闭扩写，将直接使用原始输入的 prompt 生成图片。
+建议开启，在多数场景下可提升生成图片效果、丰富生成图片细节。
+                     */
+                    int64_t m_revise;
+                    bool m_reviseHasBeenSet;
+
+                    /**
                      * 为生成结果图添加显式水印标识的开关，默认为1。  
 1：添加。  
 0：不添加。  
@@ -231,13 +335,11 @@ namespace TencentCloud
                     bool m_logoAddHasBeenSet;
 
                     /**
-                     * prompt 扩写开关。1为开启，0为关闭，不传默认开启。
-开启扩写后，将自动扩写原始输入的 prompt 并使用扩写后的 prompt 生成图片，返回生成图片结果时将一并返回扩写后的 prompt 文本。
-如果关闭扩写，将直接使用原始输入的 prompt 生成图片。
-建议开启，在多数场景下可提升生成图片效果、丰富生成图片细节。
+                     * 标识内容设置。
+默认在生成结果图右下角添加“图片由 AI 生成”字样，您可根据自身需要替换为其他的标识图片。
                      */
-                    int64_t m_revise;
-                    bool m_reviseHasBeenSet;
+                    LogoParam m_logoParam;
+                    bool m_logoParamHasBeenSet;
 
                 };
             }

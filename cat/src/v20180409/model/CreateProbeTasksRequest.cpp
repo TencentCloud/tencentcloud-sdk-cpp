@@ -34,7 +34,8 @@ CreateProbeTasksRequest::CreateProbeTasksRequest() :
     m_probeTypeHasBeenSet(false),
     m_pluginSourceHasBeenSet(false),
     m_clientNumHasBeenSet(false),
-    m_nodeIpTypeHasBeenSet(false)
+    m_nodeIpTypeHasBeenSet(false),
+    m_subSyncFlagHasBeenSet(false)
 {
 }
 
@@ -158,6 +159,14 @@ string CreateProbeTasksRequest::ToJsonString() const
         string key = "NodeIpType";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_nodeIpType, allocator);
+    }
+
+    if (m_subSyncFlagHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "SubSyncFlag";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_subSyncFlag, allocator);
     }
 
 
@@ -358,6 +367,22 @@ void CreateProbeTasksRequest::SetNodeIpType(const int64_t& _nodeIpType)
 bool CreateProbeTasksRequest::NodeIpTypeHasBeenSet() const
 {
     return m_nodeIpTypeHasBeenSet;
+}
+
+int64_t CreateProbeTasksRequest::GetSubSyncFlag() const
+{
+    return m_subSyncFlag;
+}
+
+void CreateProbeTasksRequest::SetSubSyncFlag(const int64_t& _subSyncFlag)
+{
+    m_subSyncFlag = _subSyncFlag;
+    m_subSyncFlagHasBeenSet = true;
+}
+
+bool CreateProbeTasksRequest::SubSyncFlagHasBeenSet() const
+{
+    return m_subSyncFlagHasBeenSet;
 }
 
 

@@ -85,6 +85,48 @@ namespace TencentCloud
                      */
                     bool CLSInfoListHasBeenSet() const;
 
+                    /**
+                     * 获取日志类型
+                     * @return LogType 日志类型
+                     * 
+                     */
+                    std::string GetLogType() const;
+
+                    /**
+                     * 设置日志类型
+                     * @param _logType 日志类型
+                     * 
+                     */
+                    void SetLogType(const std::string& _logType);
+
+                    /**
+                     * 判断参数 LogType 是否已赋值
+                     * @return LogType 是否已赋值
+                     * 
+                     */
+                    bool LogTypeHasBeenSet() const;
+
+                    /**
+                     * 获取是否维护时间运行
+                     * @return IsInMaintainPeriod 是否维护时间运行
+                     * 
+                     */
+                    std::string GetIsInMaintainPeriod() const;
+
+                    /**
+                     * 设置是否维护时间运行
+                     * @param _isInMaintainPeriod 是否维护时间运行
+                     * 
+                     */
+                    void SetIsInMaintainPeriod(const std::string& _isInMaintainPeriod);
+
+                    /**
+                     * 判断参数 IsInMaintainPeriod 是否已赋值
+                     * @return IsInMaintainPeriod 是否已赋值
+                     * 
+                     */
+                    bool IsInMaintainPeriodHasBeenSet() const;
+
                 private:
 
                     /**
@@ -98,6 +140,18 @@ namespace TencentCloud
                      */
                     std::vector<CLSInfo> m_cLSInfoList;
                     bool m_cLSInfoListHasBeenSet;
+
+                    /**
+                     * 日志类型
+                     */
+                    std::string m_logType;
+                    bool m_logTypeHasBeenSet;
+
+                    /**
+                     * 是否维护时间运行
+                     */
+                    std::string m_isInMaintainPeriod;
+                    bool m_isInMaintainPeriodHasBeenSet;
 
                 };
             }

@@ -270,6 +270,7 @@ set(cdn_public_header_model
   include/tencentcloud/cdn/v20180606/model/ListScdnLogTasksResponse.h
   include/tencentcloud/cdn/v20180606/model/UrlRedirect.h
   include/tencentcloud/cdn/v20180606/model/CookieKey.h
+  include/tencentcloud/cdn/v20180606/model/ParamFilterRule.h
   include/tencentcloud/cdn/v20180606/model/BandwidthAlert.h
   include/tencentcloud/cdn/v20180606/model/ClsLogObject.h
   include/tencentcloud/cdn/v20180606/model/DescribeWafDataResponse.h
@@ -298,6 +299,7 @@ set(cdn_public_header_model
   include/tencentcloud/cdn/v20180606/model/ScdnSevenLayerRules.h
   include/tencentcloud/cdn/v20180606/model/Https.h
   include/tencentcloud/cdn/v20180606/model/ScdnEventLogConditions.h
+  include/tencentcloud/cdn/v20180606/model/ParamFilter.h
   include/tencentcloud/cdn/v20180606/model/FollowRedirect.h
   include/tencentcloud/cdn/v20180606/model/DescribeScdnBotDataResponse.h
   include/tencentcloud/cdn/v20180606/model/StartScdnDomainRequest.h
@@ -631,6 +633,7 @@ set(cdn_src
   src/v20180606/model/ListScdnLogTasksResponse.cpp
   src/v20180606/model/UrlRedirect.cpp
   src/v20180606/model/CookieKey.cpp
+  src/v20180606/model/ParamFilterRule.cpp
   src/v20180606/model/BandwidthAlert.cpp
   src/v20180606/model/ClsLogObject.cpp
   src/v20180606/model/DescribeWafDataResponse.cpp
@@ -659,6 +662,7 @@ set(cdn_src
   src/v20180606/model/ScdnSevenLayerRules.cpp
   src/v20180606/model/Https.cpp
   src/v20180606/model/ScdnEventLogConditions.cpp
+  src/v20180606/model/ParamFilter.cpp
   src/v20180606/model/FollowRedirect.cpp
   src/v20180606/model/DescribeScdnBotDataResponse.cpp
   src/v20180606/model/StartScdnDomainRequest.cpp

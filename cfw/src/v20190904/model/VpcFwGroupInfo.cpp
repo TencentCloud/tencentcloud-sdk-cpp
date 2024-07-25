@@ -32,7 +32,9 @@ VpcFwGroupInfo::VpcFwGroupInfo() :
     m_fwVpcCidrHasBeenSet(false),
     m_cdcIdHasBeenSet(false),
     m_cdcNameHasBeenSet(false),
-    m_crossUserModeHasBeenSet(false)
+    m_crossUserModeHasBeenSet(false),
+    m_needSwitchCcnOverlapHasBeenSet(false),
+    m_ccnIdHasBeenSet(false)
 {
 }
 
@@ -174,6 +176,26 @@ CoreInternalOutcome VpcFwGroupInfo::Deserialize(const rapidjson::Value &value)
         m_crossUserModeHasBeenSet = true;
     }
 
+    if (value.HasMember("NeedSwitchCcnOverlap") && !value["NeedSwitchCcnOverlap"].IsNull())
+    {
+        if (!value["NeedSwitchCcnOverlap"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `VpcFwGroupInfo.NeedSwitchCcnOverlap` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_needSwitchCcnOverlap = value["NeedSwitchCcnOverlap"].GetInt64();
+        m_needSwitchCcnOverlapHasBeenSet = true;
+    }
+
+    if (value.HasMember("CcnId") && !value["CcnId"].IsNull())
+    {
+        if (!value["CcnId"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `VpcFwGroupInfo.CcnId` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_ccnId = string(value["CcnId"].GetString());
+        m_ccnIdHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -287,6 +309,22 @@ void VpcFwGroupInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Document::
         string key = "CrossUserMode";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_crossUserMode.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_needSwitchCcnOverlapHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "NeedSwitchCcnOverlap";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_needSwitchCcnOverlap, allocator);
+    }
+
+    if (m_ccnIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "CcnId";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_ccnId.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -482,5 +520,37 @@ void VpcFwGroupInfo::SetCrossUserMode(const string& _crossUserMode)
 bool VpcFwGroupInfo::CrossUserModeHasBeenSet() const
 {
     return m_crossUserModeHasBeenSet;
+}
+
+int64_t VpcFwGroupInfo::GetNeedSwitchCcnOverlap() const
+{
+    return m_needSwitchCcnOverlap;
+}
+
+void VpcFwGroupInfo::SetNeedSwitchCcnOverlap(const int64_t& _needSwitchCcnOverlap)
+{
+    m_needSwitchCcnOverlap = _needSwitchCcnOverlap;
+    m_needSwitchCcnOverlapHasBeenSet = true;
+}
+
+bool VpcFwGroupInfo::NeedSwitchCcnOverlapHasBeenSet() const
+{
+    return m_needSwitchCcnOverlapHasBeenSet;
+}
+
+string VpcFwGroupInfo::GetCcnId() const
+{
+    return m_ccnId;
+}
+
+void VpcFwGroupInfo::SetCcnId(const string& _ccnId)
+{
+    m_ccnId = _ccnId;
+    m_ccnIdHasBeenSet = true;
+}
+
+bool VpcFwGroupInfo::CcnIdHasBeenSet() const
+{
+    return m_ccnIdHasBeenSet;
 }
 

@@ -24,6 +24,7 @@
 #include <tencentcloud/cdb/v20170320/model/ParamInfo.h>
 #include <tencentcloud/cdb/v20170320/model/RoGroup.h>
 #include <tencentcloud/cdb/v20170320/model/TagInfo.h>
+#include <tencentcloud/cdb/v20170320/model/ClusterTopology.h>
 
 
 namespace TencentCloud
@@ -575,15 +576,15 @@ namespace TencentCloud
                     bool ClientTokenHasBeenSet() const;
 
                     /**
-                     * 获取实例隔离类型。支持值包括： "UNIVERSAL" - 通用型实例， "EXCLUSIVE" - 独享型实例， "BASIC_V2" - ONTKE单节点实例。 不指定则默认为通用型实例。
-                     * @return DeviceType 实例隔离类型。支持值包括： "UNIVERSAL" - 通用型实例， "EXCLUSIVE" - 独享型实例， "BASIC_V2" - ONTKE单节点实例。 不指定则默认为通用型实例。
+                     * 获取实例隔离类型。支持值包括："UNIVERSAL" - 通用型实例，"EXCLUSIVE" - 独享型实例，"BASIC_V2" - ONTKE 单节点实例，"CLOUD_NATIVE_CLUSTER" - 集群版标准型，"CLOUD_NATIVE_CLUSTER_EXCLUSIVE" - 集群版加强型。不指定则默认为通用型实例。
+                     * @return DeviceType 实例隔离类型。支持值包括："UNIVERSAL" - 通用型实例，"EXCLUSIVE" - 独享型实例，"BASIC_V2" - ONTKE 单节点实例，"CLOUD_NATIVE_CLUSTER" - 集群版标准型，"CLOUD_NATIVE_CLUSTER_EXCLUSIVE" - 集群版加强型。不指定则默认为通用型实例。
                      * 
                      */
                     std::string GetDeviceType() const;
 
                     /**
-                     * 设置实例隔离类型。支持值包括： "UNIVERSAL" - 通用型实例， "EXCLUSIVE" - 独享型实例， "BASIC_V2" - ONTKE单节点实例。 不指定则默认为通用型实例。
-                     * @param _deviceType 实例隔离类型。支持值包括： "UNIVERSAL" - 通用型实例， "EXCLUSIVE" - 独享型实例， "BASIC_V2" - ONTKE单节点实例。 不指定则默认为通用型实例。
+                     * 设置实例隔离类型。支持值包括："UNIVERSAL" - 通用型实例，"EXCLUSIVE" - 独享型实例，"BASIC_V2" - ONTKE 单节点实例，"CLOUD_NATIVE_CLUSTER" - 集群版标准型，"CLOUD_NATIVE_CLUSTER_EXCLUSIVE" - 集群版加强型。不指定则默认为通用型实例。
+                     * @param _deviceType 实例隔离类型。支持值包括："UNIVERSAL" - 通用型实例，"EXCLUSIVE" - 独享型实例，"BASIC_V2" - ONTKE 单节点实例，"CLOUD_NATIVE_CLUSTER" - 集群版标准型，"CLOUD_NATIVE_CLUSTER_EXCLUSIVE" - 集群版加强型。不指定则默认为通用型实例。
                      * 
                      */
                     void SetDeviceType(const std::string& _deviceType);
@@ -834,6 +835,27 @@ namespace TencentCloud
                      */
                     bool VipsHasBeenSet() const;
 
+                    /**
+                     * 获取集群版节点拓扑配置。
+                     * @return ClusterTopology 集群版节点拓扑配置。
+                     * 
+                     */
+                    ClusterTopology GetClusterTopology() const;
+
+                    /**
+                     * 设置集群版节点拓扑配置。
+                     * @param _clusterTopology 集群版节点拓扑配置。
+                     * 
+                     */
+                    void SetClusterTopology(const ClusterTopology& _clusterTopology);
+
+                    /**
+                     * 判断参数 ClusterTopology 是否已赋值
+                     * @return ClusterTopology 是否已赋值
+                     * 
+                     */
+                    bool ClusterTopologyHasBeenSet() const;
+
                 private:
 
                     /**
@@ -988,7 +1010,7 @@ namespace TencentCloud
                     bool m_clientTokenHasBeenSet;
 
                     /**
-                     * 实例隔离类型。支持值包括： "UNIVERSAL" - 通用型实例， "EXCLUSIVE" - 独享型实例， "BASIC_V2" - ONTKE单节点实例。 不指定则默认为通用型实例。
+                     * 实例隔离类型。支持值包括："UNIVERSAL" - 通用型实例，"EXCLUSIVE" - 独享型实例，"BASIC_V2" - ONTKE 单节点实例，"CLOUD_NATIVE_CLUSTER" - 集群版标准型，"CLOUD_NATIVE_CLUSTER_EXCLUSIVE" - 集群版加强型。不指定则默认为通用型实例。
                      */
                     std::string m_deviceType;
                     bool m_deviceTypeHasBeenSet;
@@ -1060,6 +1082,12 @@ namespace TencentCloud
                      */
                     std::vector<std::string> m_vips;
                     bool m_vipsHasBeenSet;
+
+                    /**
+                     * 集群版节点拓扑配置。
+                     */
+                    ClusterTopology m_clusterTopology;
+                    bool m_clusterTopologyHasBeenSet;
 
                 };
             }

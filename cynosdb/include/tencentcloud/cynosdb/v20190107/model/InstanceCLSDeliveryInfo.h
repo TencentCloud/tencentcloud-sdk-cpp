@@ -270,6 +270,31 @@ namespace TencentCloud
                      */
                     bool StatusHasBeenSet() const;
 
+                    /**
+                     * 获取日志类型
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return LogType 日志类型
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::string GetLogType() const;
+
+                    /**
+                     * 设置日志类型
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _logType 日志类型
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetLogType(const std::string& _logType);
+
+                    /**
+                     * 判断参数 LogType 是否已赋值
+                     * @return LogType 是否已赋值
+                     * 
+                     */
+                    bool LogTypeHasBeenSet() const;
+
                 private:
 
                     /**
@@ -333,6 +358,13 @@ namespace TencentCloud
                      */
                     std::string m_status;
                     bool m_statusHasBeenSet;
+
+                    /**
+                     * 日志类型
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_logType;
+                    bool m_logTypeHasBeenSet;
 
                 };
             }

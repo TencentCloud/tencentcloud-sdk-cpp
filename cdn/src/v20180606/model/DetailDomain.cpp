@@ -86,7 +86,8 @@ DetailDomain::DetailDomain() :
     m_hwPrivateAccessHasBeenSet(false),
     m_qnPrivateAccessHasBeenSet(false),
     m_httpsBillingHasBeenSet(false),
-    m_othersPrivateAccessHasBeenSet(false)
+    m_othersPrivateAccessHasBeenSet(false),
+    m_paramFilterHasBeenSet(false)
 {
 }
 
@@ -1121,6 +1122,23 @@ CoreInternalOutcome DetailDomain::Deserialize(const rapidjson::Value &value)
         m_othersPrivateAccessHasBeenSet = true;
     }
 
+    if (value.HasMember("ParamFilter") && !value["ParamFilter"].IsNull())
+    {
+        if (!value["ParamFilter"].IsObject())
+        {
+            return CoreInternalOutcome(Core::Error("response `DetailDomain.ParamFilter` is not object type").SetRequestId(requestId));
+        }
+
+        CoreInternalOutcome outcome = m_paramFilter.Deserialize(value["ParamFilter"]);
+        if (!outcome.IsSuccess())
+        {
+            outcome.GetError().SetRequestId(requestId);
+            return outcome;
+        }
+
+        m_paramFilterHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -1722,6 +1740,15 @@ void DetailDomain::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Al
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
         m_othersPrivateAccess.ToJsonObject(value[key.c_str()], allocator);
+    }
+
+    if (m_paramFilterHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ParamFilter";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_paramFilter.ToJsonObject(value[key.c_str()], allocator);
     }
 
 }
@@ -2781,5 +2808,21 @@ void DetailDomain::SetOthersPrivateAccess(const OthersPrivateAccess& _othersPriv
 bool DetailDomain::OthersPrivateAccessHasBeenSet() const
 {
     return m_othersPrivateAccessHasBeenSet;
+}
+
+ParamFilter DetailDomain::GetParamFilter() const
+{
+    return m_paramFilter;
+}
+
+void DetailDomain::SetParamFilter(const ParamFilter& _paramFilter)
+{
+    m_paramFilter = _paramFilter;
+    m_paramFilterHasBeenSet = true;
+}
+
+bool DetailDomain::ParamFilterHasBeenSet() const
+{
+    return m_paramFilterHasBeenSet;
 }
 

@@ -24,7 +24,6 @@
 #include <tencentcloud/core/utils/rapidjson/writer.h>
 #include <tencentcloud/core/utils/rapidjson/stringbuffer.h>
 #include <tencentcloud/core/AbstractModel.h>
-#include <tencentcloud/emr/v20190103/model/TriggerConditions.h>
 #include <tencentcloud/emr/v20190103/model/Tag.h>
 #include <tencentcloud/emr/v20190103/model/LoadMetricsConditions.h>
 
@@ -175,81 +174,6 @@ namespace TencentCloud
                     bool ScaleNumHasBeenSet() const;
 
                     /**
-                     * 获取扩缩容负载指标。注:不推荐使用此属性，和LoadMetricsConditions属性配置互斥，配置了LoadMetricsConditions，这个属性不生效。请优先使用LoadMetricsConditions属性支持多指标。
-注意：此字段可能返回 null，表示取不到有效值。
-                     * @return LoadMetrics 扩缩容负载指标。注:不推荐使用此属性，和LoadMetricsConditions属性配置互斥，配置了LoadMetricsConditions，这个属性不生效。请优先使用LoadMetricsConditions属性支持多指标。
-注意：此字段可能返回 null，表示取不到有效值。
-                     * 
-                     */
-                    std::string GetLoadMetrics() const;
-
-                    /**
-                     * 设置扩缩容负载指标。注:不推荐使用此属性，和LoadMetricsConditions属性配置互斥，配置了LoadMetricsConditions，这个属性不生效。请优先使用LoadMetricsConditions属性支持多指标。
-注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _loadMetrics 扩缩容负载指标。注:不推荐使用此属性，和LoadMetricsConditions属性配置互斥，配置了LoadMetricsConditions，这个属性不生效。请优先使用LoadMetricsConditions属性支持多指标。
-注意：此字段可能返回 null，表示取不到有效值。
-                     * 
-                     */
-                    void SetLoadMetrics(const std::string& _loadMetrics);
-
-                    /**
-                     * 判断参数 LoadMetrics 是否已赋值
-                     * @return LoadMetrics 是否已赋值
-                     * 
-                     */
-                    bool LoadMetricsHasBeenSet() const;
-
-                    /**
-                     * 获取规则元数据记录ID。注:不推荐使用此属性，和LoadMetricsConditions属性配置互斥，配置了LoadMetricsConditions，这个属性不生效。请优先使用LoadMetricsConditions属性支持多指标。
-注意：此字段可能返回 null，表示取不到有效值。
-                     * @return MetricId 规则元数据记录ID。注:不推荐使用此属性，和LoadMetricsConditions属性配置互斥，配置了LoadMetricsConditions，这个属性不生效。请优先使用LoadMetricsConditions属性支持多指标。
-注意：此字段可能返回 null，表示取不到有效值。
-                     * 
-                     */
-                    int64_t GetMetricId() const;
-
-                    /**
-                     * 设置规则元数据记录ID。注:不推荐使用此属性，和LoadMetricsConditions属性配置互斥，配置了LoadMetricsConditions，这个属性不生效。请优先使用LoadMetricsConditions属性支持多指标。
-注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _metricId 规则元数据记录ID。注:不推荐使用此属性，和LoadMetricsConditions属性配置互斥，配置了LoadMetricsConditions，这个属性不生效。请优先使用LoadMetricsConditions属性支持多指标。
-注意：此字段可能返回 null，表示取不到有效值。
-                     * 
-                     */
-                    void SetMetricId(const int64_t& _metricId);
-
-                    /**
-                     * 判断参数 MetricId 是否已赋值
-                     * @return MetricId 是否已赋值
-                     * 
-                     */
-                    bool MetricIdHasBeenSet() const;
-
-                    /**
-                     * 获取规则统计周期，提供300s,600s,900s。注:不推荐使用此属性，和LoadMetricsConditions属性配置互斥，配置了LoadMetricsConditions，这个属性不生效。请优先使用LoadMetricsConditions属性支持多指标。
-注意：此字段可能返回 null，表示取不到有效值。
-                     * @return StatisticPeriod 规则统计周期，提供300s,600s,900s。注:不推荐使用此属性，和LoadMetricsConditions属性配置互斥，配置了LoadMetricsConditions，这个属性不生效。请优先使用LoadMetricsConditions属性支持多指标。
-注意：此字段可能返回 null，表示取不到有效值。
-                     * 
-                     */
-                    int64_t GetStatisticPeriod() const;
-
-                    /**
-                     * 设置规则统计周期，提供300s,600s,900s。注:不推荐使用此属性，和LoadMetricsConditions属性配置互斥，配置了LoadMetricsConditions，这个属性不生效。请优先使用LoadMetricsConditions属性支持多指标。
-注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _statisticPeriod 规则统计周期，提供300s,600s,900s。注:不推荐使用此属性，和LoadMetricsConditions属性配置互斥，配置了LoadMetricsConditions，这个属性不生效。请优先使用LoadMetricsConditions属性支持多指标。
-注意：此字段可能返回 null，表示取不到有效值。
-                     * 
-                     */
-                    void SetStatisticPeriod(const int64_t& _statisticPeriod);
-
-                    /**
-                     * 判断参数 StatisticPeriod 是否已赋值
-                     * @return StatisticPeriod 是否已赋值
-                     * 
-                     */
-                    bool StatisticPeriodHasBeenSet() const;
-
-                    /**
                      * 获取指标处理方法，1表示MAX，2表示MIN，3表示AVG。
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return ProcessMethod 指标处理方法，1表示MAX，2表示MIN，3表示AVG。
@@ -273,52 +197,6 @@ namespace TencentCloud
                      * 
                      */
                     bool ProcessMethodHasBeenSet() const;
-
-                    /**
-                     * 获取触发次数，当连续触发超过TriggerThreshold次后才开始扩缩容。注:不推荐使用此属性，和LoadMetricsConditions属性配置互斥，配置了LoadMetricsConditions，这个属性不生效。请优先使用LoadMetricsConditions属性支持多指标。
-                     * @return TriggerThreshold 触发次数，当连续触发超过TriggerThreshold次后才开始扩缩容。注:不推荐使用此属性，和LoadMetricsConditions属性配置互斥，配置了LoadMetricsConditions，这个属性不生效。请优先使用LoadMetricsConditions属性支持多指标。
-                     * 
-                     */
-                    int64_t GetTriggerThreshold() const;
-
-                    /**
-                     * 设置触发次数，当连续触发超过TriggerThreshold次后才开始扩缩容。注:不推荐使用此属性，和LoadMetricsConditions属性配置互斥，配置了LoadMetricsConditions，这个属性不生效。请优先使用LoadMetricsConditions属性支持多指标。
-                     * @param _triggerThreshold 触发次数，当连续触发超过TriggerThreshold次后才开始扩缩容。注:不推荐使用此属性，和LoadMetricsConditions属性配置互斥，配置了LoadMetricsConditions，这个属性不生效。请优先使用LoadMetricsConditions属性支持多指标。
-                     * 
-                     */
-                    void SetTriggerThreshold(const int64_t& _triggerThreshold);
-
-                    /**
-                     * 判断参数 TriggerThreshold 是否已赋值
-                     * @return TriggerThreshold 是否已赋值
-                     * 
-                     */
-                    bool TriggerThresholdHasBeenSet() const;
-
-                    /**
-                     * 获取条件触发数组。注:不推荐使用此属性，和LoadMetricsConditions属性配置互斥，配置了LoadMetricsConditions，这个属性不生效。请优先使用LoadMetricsConditions属性支持多指标。
-注意：此字段可能返回 null，表示取不到有效值。
-                     * @return TriggerConditions 条件触发数组。注:不推荐使用此属性，和LoadMetricsConditions属性配置互斥，配置了LoadMetricsConditions，这个属性不生效。请优先使用LoadMetricsConditions属性支持多指标。
-注意：此字段可能返回 null，表示取不到有效值。
-                     * 
-                     */
-                    TriggerConditions GetTriggerConditions() const;
-
-                    /**
-                     * 设置条件触发数组。注:不推荐使用此属性，和LoadMetricsConditions属性配置互斥，配置了LoadMetricsConditions，这个属性不生效。请优先使用LoadMetricsConditions属性支持多指标。
-注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _triggerConditions 条件触发数组。注:不推荐使用此属性，和LoadMetricsConditions属性配置互斥，配置了LoadMetricsConditions，这个属性不生效。请优先使用LoadMetricsConditions属性支持多指标。
-注意：此字段可能返回 null，表示取不到有效值。
-                     * 
-                     */
-                    void SetTriggerConditions(const TriggerConditions& _triggerConditions);
-
-                    /**
-                     * 判断参数 TriggerConditions 是否已赋值
-                     * @return TriggerConditions 是否已赋值
-                     * 
-                     */
-                    bool TriggerConditionsHasBeenSet() const;
 
                     /**
                      * 获取规则优先级，添加时无效，默认为自增。
@@ -612,45 +490,11 @@ namespace TencentCloud
                     bool m_scaleNumHasBeenSet;
 
                     /**
-                     * 扩缩容负载指标。注:不推荐使用此属性，和LoadMetricsConditions属性配置互斥，配置了LoadMetricsConditions，这个属性不生效。请优先使用LoadMetricsConditions属性支持多指标。
-注意：此字段可能返回 null，表示取不到有效值。
-                     */
-                    std::string m_loadMetrics;
-                    bool m_loadMetricsHasBeenSet;
-
-                    /**
-                     * 规则元数据记录ID。注:不推荐使用此属性，和LoadMetricsConditions属性配置互斥，配置了LoadMetricsConditions，这个属性不生效。请优先使用LoadMetricsConditions属性支持多指标。
-注意：此字段可能返回 null，表示取不到有效值。
-                     */
-                    int64_t m_metricId;
-                    bool m_metricIdHasBeenSet;
-
-                    /**
-                     * 规则统计周期，提供300s,600s,900s。注:不推荐使用此属性，和LoadMetricsConditions属性配置互斥，配置了LoadMetricsConditions，这个属性不生效。请优先使用LoadMetricsConditions属性支持多指标。
-注意：此字段可能返回 null，表示取不到有效值。
-                     */
-                    int64_t m_statisticPeriod;
-                    bool m_statisticPeriodHasBeenSet;
-
-                    /**
                      * 指标处理方法，1表示MAX，2表示MIN，3表示AVG。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_processMethod;
                     bool m_processMethodHasBeenSet;
-
-                    /**
-                     * 触发次数，当连续触发超过TriggerThreshold次后才开始扩缩容。注:不推荐使用此属性，和LoadMetricsConditions属性配置互斥，配置了LoadMetricsConditions，这个属性不生效。请优先使用LoadMetricsConditions属性支持多指标。
-                     */
-                    int64_t m_triggerThreshold;
-                    bool m_triggerThresholdHasBeenSet;
-
-                    /**
-                     * 条件触发数组。注:不推荐使用此属性，和LoadMetricsConditions属性配置互斥，配置了LoadMetricsConditions，这个属性不生效。请优先使用LoadMetricsConditions属性支持多指标。
-注意：此字段可能返回 null，表示取不到有效值。
-                     */
-                    TriggerConditions m_triggerConditions;
-                    bool m_triggerConditionsHasBeenSet;
 
                     /**
                      * 规则优先级，添加时无效，默认为自增。

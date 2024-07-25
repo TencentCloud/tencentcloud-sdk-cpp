@@ -2190,6 +2190,49 @@ CfwClient::DescribeNatAcRuleOutcomeCallable CfwClient::DescribeNatAcRuleCallable
     return task->get_future();
 }
 
+CfwClient::DescribeNatFwDnatRuleOutcome CfwClient::DescribeNatFwDnatRule(const DescribeNatFwDnatRuleRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeNatFwDnatRule");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeNatFwDnatRuleResponse rsp = DescribeNatFwDnatRuleResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeNatFwDnatRuleOutcome(rsp);
+        else
+            return DescribeNatFwDnatRuleOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeNatFwDnatRuleOutcome(outcome.GetError());
+    }
+}
+
+void CfwClient::DescribeNatFwDnatRuleAsync(const DescribeNatFwDnatRuleRequest& request, const DescribeNatFwDnatRuleAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeNatFwDnatRule(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+CfwClient::DescribeNatFwDnatRuleOutcomeCallable CfwClient::DescribeNatFwDnatRuleCallable(const DescribeNatFwDnatRuleRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeNatFwDnatRuleOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeNatFwDnatRule(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 CfwClient::DescribeNatFwInfoCountOutcome CfwClient::DescribeNatFwInfoCount(const DescribeNatFwInfoCountRequest &request)
 {
     auto outcome = MakeRequest(request, "DescribeNatFwInfoCount");

@@ -28,7 +28,8 @@ ImageResult::ImageResult() :
     m_resultsHasBeenSet(false),
     m_urlHasBeenSet(false),
     m_extraHasBeenSet(false),
-    m_subLabelHasBeenSet(false)
+    m_subLabelHasBeenSet(false),
+    m_recognitionResultsHasBeenSet(false)
 {
 }
 
@@ -127,6 +128,26 @@ CoreInternalOutcome ImageResult::Deserialize(const rapidjson::Value &value)
         m_subLabelHasBeenSet = true;
     }
 
+    if (value.HasMember("RecognitionResults") && !value["RecognitionResults"].IsNull())
+    {
+        if (!value["RecognitionResults"].IsArray())
+            return CoreInternalOutcome(Core::Error("response `ImageResult.RecognitionResults` is not array type"));
+
+        const rapidjson::Value &tmpValue = value["RecognitionResults"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            RecognitionResult item;
+            CoreInternalOutcome outcome = item.Deserialize(*itr);
+            if (!outcome.IsSuccess())
+            {
+                outcome.GetError().SetRequestId(requestId);
+                return outcome;
+            }
+            m_recognitionResults.push_back(item);
+        }
+        m_recognitionResultsHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -203,6 +224,21 @@ void ImageResult::ToJsonObject(rapidjson::Value &value, rapidjson::Document::All
         string key = "SubLabel";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_subLabel.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_recognitionResultsHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "RecognitionResults";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_recognitionResults.begin(); itr != m_recognitionResults.end(); ++itr, ++i)
+        {
+            value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(value[key.c_str()][i], allocator);
+        }
     }
 
 }
@@ -334,5 +370,21 @@ void ImageResult::SetSubLabel(const string& _subLabel)
 bool ImageResult::SubLabelHasBeenSet() const
 {
     return m_subLabelHasBeenSet;
+}
+
+vector<RecognitionResult> ImageResult::GetRecognitionResults() const
+{
+    return m_recognitionResults;
+}
+
+void ImageResult::SetRecognitionResults(const vector<RecognitionResult>& _recognitionResults)
+{
+    m_recognitionResults = _recognitionResults;
+    m_recognitionResultsHasBeenSet = true;
+}
+
+bool ImageResult::RecognitionResultsHasBeenSet() const
+{
+    return m_recognitionResultsHasBeenSet;
 }
 

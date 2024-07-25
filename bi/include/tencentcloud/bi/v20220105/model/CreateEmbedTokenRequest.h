@@ -85,15 +85,15 @@ namespace TencentCloud
                     bool PageIdHasBeenSet() const;
 
                     /**
-                     * 获取page表示嵌出页面，panel表嵌出整个看板
-                     * @return Scope page表示嵌出页面，panel表嵌出整个看板
+                     * 获取page表示嵌出页面，panel表示嵌出整个看板
+                     * @return Scope page表示嵌出页面，panel表示嵌出整个看板
                      * 
                      */
                     std::string GetScope() const;
 
                     /**
-                     * 设置page表示嵌出页面，panel表嵌出整个看板
-                     * @param _scope page表示嵌出页面，panel表嵌出整个看板
+                     * 设置page表示嵌出页面，panel表示嵌出整个看板
+                     * @param _scope page表示嵌出页面，panel表示嵌出整个看板
                      * 
                      */
                     void SetScope(const std::string& _scope);
@@ -402,7 +402,7 @@ Operator 目前支持
                     bool m_pageIdHasBeenSet;
 
                     /**
-                     * page表示嵌出页面，panel表嵌出整个看板
+                     * page表示嵌出页面，panel表示嵌出整个看板
                      */
                     std::string m_scope;
                     bool m_scopeHasBeenSet;

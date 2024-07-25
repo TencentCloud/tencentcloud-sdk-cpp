@@ -24,7 +24,9 @@ using namespace std;
 
 CreateCLSDeliveryRequest::CreateCLSDeliveryRequest() :
     m_instanceIdHasBeenSet(false),
-    m_cLSInfoListHasBeenSet(false)
+    m_cLSInfoListHasBeenSet(false),
+    m_logTypeHasBeenSet(false),
+    m_isInMaintainPeriodHasBeenSet(false)
 {
 }
 
@@ -56,6 +58,22 @@ string CreateCLSDeliveryRequest::ToJsonString() const
             d[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
             (*itr).ToJsonObject(d[key.c_str()][i], allocator);
         }
+    }
+
+    if (m_logTypeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "LogType";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_logType.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_isInMaintainPeriodHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "IsInMaintainPeriod";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_isInMaintainPeriod.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -96,6 +114,38 @@ void CreateCLSDeliveryRequest::SetCLSInfoList(const vector<CLSInfo>& _cLSInfoLis
 bool CreateCLSDeliveryRequest::CLSInfoListHasBeenSet() const
 {
     return m_cLSInfoListHasBeenSet;
+}
+
+string CreateCLSDeliveryRequest::GetLogType() const
+{
+    return m_logType;
+}
+
+void CreateCLSDeliveryRequest::SetLogType(const string& _logType)
+{
+    m_logType = _logType;
+    m_logTypeHasBeenSet = true;
+}
+
+bool CreateCLSDeliveryRequest::LogTypeHasBeenSet() const
+{
+    return m_logTypeHasBeenSet;
+}
+
+string CreateCLSDeliveryRequest::GetIsInMaintainPeriod() const
+{
+    return m_isInMaintainPeriod;
+}
+
+void CreateCLSDeliveryRequest::SetIsInMaintainPeriod(const string& _isInMaintainPeriod)
+{
+    m_isInMaintainPeriod = _isInMaintainPeriod;
+    m_isInMaintainPeriodHasBeenSet = true;
+}
+
+bool CreateCLSDeliveryRequest::IsInMaintainPeriodHasBeenSet() const
+{
+    return m_isInMaintainPeriodHasBeenSet;
 }
 
 

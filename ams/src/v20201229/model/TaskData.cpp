@@ -31,7 +31,8 @@ TaskData::TaskData() :
     m_mediaInfoHasBeenSet(false),
     m_labelsHasBeenSet(false),
     m_createdAtHasBeenSet(false),
-    m_updatedAtHasBeenSet(false)
+    m_updatedAtHasBeenSet(false),
+    m_inputInfoHasBeenSet(false)
 {
 }
 
@@ -167,6 +168,23 @@ CoreInternalOutcome TaskData::Deserialize(const rapidjson::Value &value)
         m_updatedAtHasBeenSet = true;
     }
 
+    if (value.HasMember("InputInfo") && !value["InputInfo"].IsNull())
+    {
+        if (!value["InputInfo"].IsObject())
+        {
+            return CoreInternalOutcome(Core::Error("response `TaskData.InputInfo` is not object type").SetRequestId(requestId));
+        }
+
+        CoreInternalOutcome outcome = m_inputInfo.Deserialize(value["InputInfo"]);
+        if (!outcome.IsSuccess())
+        {
+            outcome.GetError().SetRequestId(requestId);
+            return outcome;
+        }
+
+        m_inputInfoHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -268,6 +286,15 @@ void TaskData::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Alloca
         string key = "UpdatedAt";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_updatedAt.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_inputInfoHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "InputInfo";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_inputInfo.ToJsonObject(value[key.c_str()], allocator);
     }
 
 }
@@ -447,5 +474,21 @@ void TaskData::SetUpdatedAt(const string& _updatedAt)
 bool TaskData::UpdatedAtHasBeenSet() const
 {
     return m_updatedAtHasBeenSet;
+}
+
+InputInfo TaskData::GetInputInfo() const
+{
+    return m_inputInfo;
+}
+
+void TaskData::SetInputInfo(const InputInfo& _inputInfo)
+{
+    m_inputInfo = _inputInfo;
+    m_inputInfoHasBeenSet = true;
+}
+
+bool TaskData::InputInfoHasBeenSet() const
+{
+    return m_inputInfoHasBeenSet;
 }
 

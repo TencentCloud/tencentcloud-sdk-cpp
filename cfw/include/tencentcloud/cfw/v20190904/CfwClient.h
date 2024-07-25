@@ -123,6 +123,8 @@
 #include <tencentcloud/cfw/v20190904/model/DescribeLogsResponse.h>
 #include <tencentcloud/cfw/v20190904/model/DescribeNatAcRuleRequest.h>
 #include <tencentcloud/cfw/v20190904/model/DescribeNatAcRuleResponse.h>
+#include <tencentcloud/cfw/v20190904/model/DescribeNatFwDnatRuleRequest.h>
+#include <tencentcloud/cfw/v20190904/model/DescribeNatFwDnatRuleResponse.h>
 #include <tencentcloud/cfw/v20190904/model/DescribeNatFwInfoCountRequest.h>
 #include <tencentcloud/cfw/v20190904/model/DescribeNatFwInfoCountResponse.h>
 #include <tencentcloud/cfw/v20190904/model/DescribeNatFwInstanceRequest.h>
@@ -413,6 +415,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeNatAcRuleResponse> DescribeNatAcRuleOutcome;
                 typedef std::future<DescribeNatAcRuleOutcome> DescribeNatAcRuleOutcomeCallable;
                 typedef std::function<void(const CfwClient*, const Model::DescribeNatAcRuleRequest&, DescribeNatAcRuleOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeNatAcRuleAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeNatFwDnatRuleResponse> DescribeNatFwDnatRuleOutcome;
+                typedef std::future<DescribeNatFwDnatRuleOutcome> DescribeNatFwDnatRuleOutcomeCallable;
+                typedef std::function<void(const CfwClient*, const Model::DescribeNatFwDnatRuleRequest&, DescribeNatFwDnatRuleOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeNatFwDnatRuleAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeNatFwInfoCountResponse> DescribeNatFwInfoCountOutcome;
                 typedef std::future<DescribeNatFwInfoCountOutcome> DescribeNatFwInfoCountOutcomeCallable;
                 typedef std::function<void(const CfwClient*, const Model::DescribeNatFwInfoCountRequest&, DescribeNatFwInfoCountOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeNatFwInfoCountAsyncHandler;
@@ -1058,6 +1063,15 @@ namespace TencentCloud
                 DescribeNatAcRuleOutcome DescribeNatAcRule(const Model::DescribeNatAcRuleRequest &request);
                 void DescribeNatAcRuleAsync(const Model::DescribeNatAcRuleRequest& request, const DescribeNatAcRuleAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DescribeNatAcRuleOutcomeCallable DescribeNatAcRuleCallable(const Model::DescribeNatAcRuleRequest& request);
+
+                /**
+                 *查询Nat防火墙Dnat规则
+                 * @param req DescribeNatFwDnatRuleRequest
+                 * @return DescribeNatFwDnatRuleOutcome
+                 */
+                DescribeNatFwDnatRuleOutcome DescribeNatFwDnatRule(const Model::DescribeNatFwDnatRuleRequest &request);
+                void DescribeNatFwDnatRuleAsync(const Model::DescribeNatFwDnatRuleRequest& request, const DescribeNatFwDnatRuleAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeNatFwDnatRuleOutcomeCallable DescribeNatFwDnatRuleCallable(const Model::DescribeNatFwDnatRuleRequest& request);
 
                 /**
                  *获取当前用户接入nat防火墙的所有子网数及natfw实例个数

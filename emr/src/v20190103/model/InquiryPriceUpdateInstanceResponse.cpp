@@ -28,7 +28,8 @@ InquiryPriceUpdateInstanceResponse::InquiryPriceUpdateInstanceResponse() :
     m_discountCostHasBeenSet(false),
     m_timeUnitHasBeenSet(false),
     m_timeSpanHasBeenSet(false),
-    m_priceDetailHasBeenSet(false)
+    m_priceDetailHasBeenSet(false),
+    m_newConfigPriceHasBeenSet(false)
 {
 }
 
@@ -126,6 +127,23 @@ CoreInternalOutcome InquiryPriceUpdateInstanceResponse::Deserialize(const string
         m_priceDetailHasBeenSet = true;
     }
 
+    if (rsp.HasMember("NewConfigPrice") && !rsp["NewConfigPrice"].IsNull())
+    {
+        if (!rsp["NewConfigPrice"].IsObject())
+        {
+            return CoreInternalOutcome(Core::Error("response `NewConfigPrice` is not object type").SetRequestId(requestId));
+        }
+
+        CoreInternalOutcome outcome = m_newConfigPrice.Deserialize(rsp["NewConfigPrice"]);
+        if (!outcome.IsSuccess())
+        {
+            outcome.GetError().SetRequestId(requestId);
+            return outcome;
+        }
+
+        m_newConfigPriceHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -181,6 +199,15 @@ string InquiryPriceUpdateInstanceResponse::ToJsonString() const
             value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
             (*itr).ToJsonObject(value[key.c_str()][i], allocator);
         }
+    }
+
+    if (m_newConfigPriceHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "NewConfigPrice";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_newConfigPrice.ToJsonObject(value[key.c_str()], allocator);
     }
 
     rapidjson::Value iKey(rapidjson::kStringType);
@@ -243,6 +270,16 @@ vector<PriceDetail> InquiryPriceUpdateInstanceResponse::GetPriceDetail() const
 bool InquiryPriceUpdateInstanceResponse::PriceDetailHasBeenSet() const
 {
     return m_priceDetailHasBeenSet;
+}
+
+PriceResult InquiryPriceUpdateInstanceResponse::GetNewConfigPrice() const
+{
+    return m_newConfigPrice;
+}
+
+bool InquiryPriceUpdateInstanceResponse::NewConfigPriceHasBeenSet() const
+{
+    return m_newConfigPriceHasBeenSet;
 }
 
 

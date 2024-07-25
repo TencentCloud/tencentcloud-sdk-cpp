@@ -25,10 +25,10 @@ using namespace std;
 InquiryPriceRenewInstanceRequest::InquiryPriceRenewInstanceRequest() :
     m_timeSpanHasBeenSet(false),
     m_resourceIdsHasBeenSet(false),
-    m_placementHasBeenSet(false),
     m_payModeHasBeenSet(false),
     m_timeUnitHasBeenSet(false),
     m_currencyHasBeenSet(false),
+    m_placementHasBeenSet(false),
     m_modifyPayModeHasBeenSet(false)
 {
 }
@@ -61,15 +61,6 @@ string InquiryPriceRenewInstanceRequest::ToJsonString() const
         }
     }
 
-    if (m_placementHasBeenSet)
-    {
-        rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "Placement";
-        iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
-        m_placement.ToJsonObject(d[key.c_str()], allocator);
-    }
-
     if (m_payModeHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
@@ -92,6 +83,15 @@ string InquiryPriceRenewInstanceRequest::ToJsonString() const
         string key = "Currency";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_currency.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_placementHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Placement";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_placement.ToJsonObject(d[key.c_str()], allocator);
     }
 
     if (m_modifyPayModeHasBeenSet)
@@ -142,22 +142,6 @@ bool InquiryPriceRenewInstanceRequest::ResourceIdsHasBeenSet() const
     return m_resourceIdsHasBeenSet;
 }
 
-Placement InquiryPriceRenewInstanceRequest::GetPlacement() const
-{
-    return m_placement;
-}
-
-void InquiryPriceRenewInstanceRequest::SetPlacement(const Placement& _placement)
-{
-    m_placement = _placement;
-    m_placementHasBeenSet = true;
-}
-
-bool InquiryPriceRenewInstanceRequest::PlacementHasBeenSet() const
-{
-    return m_placementHasBeenSet;
-}
-
 int64_t InquiryPriceRenewInstanceRequest::GetPayMode() const
 {
     return m_payMode;
@@ -204,6 +188,22 @@ void InquiryPriceRenewInstanceRequest::SetCurrency(const string& _currency)
 bool InquiryPriceRenewInstanceRequest::CurrencyHasBeenSet() const
 {
     return m_currencyHasBeenSet;
+}
+
+Placement InquiryPriceRenewInstanceRequest::GetPlacement() const
+{
+    return m_placement;
+}
+
+void InquiryPriceRenewInstanceRequest::SetPlacement(const Placement& _placement)
+{
+    m_placement = _placement;
+    m_placementHasBeenSet = true;
+}
+
+bool InquiryPriceRenewInstanceRequest::PlacementHasBeenSet() const
+{
+    return m_placementHasBeenSet;
 }
 
 int64_t InquiryPriceRenewInstanceRequest::GetModifyPayMode() const

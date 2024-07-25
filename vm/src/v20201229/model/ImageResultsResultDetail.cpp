@@ -30,7 +30,8 @@ ImageResultsResultDetail::ImageResultsResultDetail() :
     m_keywordsHasBeenSet(false),
     m_suggestionHasBeenSet(false),
     m_scoreHasBeenSet(false),
-    m_subLabelCodeHasBeenSet(false)
+    m_subLabelCodeHasBeenSet(false),
+    m_subLabelHasBeenSet(false)
 {
 }
 
@@ -149,6 +150,16 @@ CoreInternalOutcome ImageResultsResultDetail::Deserialize(const rapidjson::Value
         m_subLabelCodeHasBeenSet = true;
     }
 
+    if (value.HasMember("SubLabel") && !value["SubLabel"].IsNull())
+    {
+        if (!value["SubLabel"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `ImageResultsResultDetail.SubLabel` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_subLabel = string(value["SubLabel"].GetString());
+        m_subLabelHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -240,6 +251,14 @@ void ImageResultsResultDetail::ToJsonObject(rapidjson::Value &value, rapidjson::
         string key = "SubLabelCode";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_subLabelCode.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_subLabelHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "SubLabel";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_subLabel.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -403,5 +422,21 @@ void ImageResultsResultDetail::SetSubLabelCode(const string& _subLabelCode)
 bool ImageResultsResultDetail::SubLabelCodeHasBeenSet() const
 {
     return m_subLabelCodeHasBeenSet;
+}
+
+string ImageResultsResultDetail::GetSubLabel() const
+{
+    return m_subLabel;
+}
+
+void ImageResultsResultDetail::SetSubLabel(const string& _subLabel)
+{
+    m_subLabel = _subLabel;
+    m_subLabelHasBeenSet = true;
+}
+
+bool ImageResultsResultDetail::SubLabelHasBeenSet() const
+{
+    return m_subLabelHasBeenSet;
 }
 

@@ -221,18 +221,18 @@ Block 确认违规
                     bool ResultsHasBeenSet() const;
 
                     /**
-                     * 获取图片URL地址
+                     * 获取该字段用于返回审核结果的访问链接（URL）。<br>备注：链接默认有效期为12小时。如果您需要更长时效的链接，请使用[COS预签名](https://cloud.tencent.com/document/product/1265/104001)功能更新签名时效。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return Url 图片URL地址
+                     * @return Url 该字段用于返回审核结果的访问链接（URL）。<br>备注：链接默认有效期为12小时。如果您需要更长时效的链接，请使用[COS预签名](https://cloud.tencent.com/document/product/1265/104001)功能更新签名时效。
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetUrl() const;
 
                     /**
-                     * 设置图片URL地址
+                     * 设置该字段用于返回审核结果的访问链接（URL）。<br>备注：链接默认有效期为12小时。如果您需要更长时效的链接，请使用[COS预签名](https://cloud.tencent.com/document/product/1265/104001)功能更新签名时效。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _url 图片URL地址
+                     * @param _url 该字段用于返回审核结果的访问链接（URL）。<br>备注：链接默认有效期为12小时。如果您需要更长时效的链接，请使用[COS预签名](https://cloud.tencent.com/document/product/1265/104001)功能更新签名时效。
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -320,7 +320,7 @@ Block 确认违规
                     bool m_resultsHasBeenSet;
 
                     /**
-                     * 图片URL地址
+                     * 该字段用于返回审核结果的访问链接（URL）。<br>备注：链接默认有效期为12小时。如果您需要更长时效的链接，请使用[COS预签名](https://cloud.tencent.com/document/product/1265/104001)功能更新签名时效。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_url;

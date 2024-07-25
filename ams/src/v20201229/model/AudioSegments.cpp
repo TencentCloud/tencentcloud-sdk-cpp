@@ -22,7 +22,8 @@ using namespace std;
 
 AudioSegments::AudioSegments() :
     m_offsetTimeHasBeenSet(false),
-    m_resultHasBeenSet(false)
+    m_resultHasBeenSet(false),
+    m_createdAtHasBeenSet(false)
 {
 }
 
@@ -58,6 +59,16 @@ CoreInternalOutcome AudioSegments::Deserialize(const rapidjson::Value &value)
         m_resultHasBeenSet = true;
     }
 
+    if (value.HasMember("CreatedAt") && !value["CreatedAt"].IsNull())
+    {
+        if (!value["CreatedAt"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `AudioSegments.CreatedAt` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_createdAt = string(value["CreatedAt"].GetString());
+        m_createdAtHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -80,6 +91,14 @@ void AudioSegments::ToJsonObject(rapidjson::Value &value, rapidjson::Document::A
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
         m_result.ToJsonObject(value[key.c_str()], allocator);
+    }
+
+    if (m_createdAtHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "CreatedAt";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_createdAt.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -115,5 +134,21 @@ void AudioSegments::SetResult(const AudioResult& _result)
 bool AudioSegments::ResultHasBeenSet() const
 {
     return m_resultHasBeenSet;
+}
+
+string AudioSegments::GetCreatedAt() const
+{
+    return m_createdAt;
+}
+
+void AudioSegments::SetCreatedAt(const string& _createdAt)
+{
+    m_createdAt = _createdAt;
+    m_createdAtHasBeenSet = true;
+}
+
+bool AudioSegments::CreatedAtHasBeenSet() const
+{
+    return m_createdAtHasBeenSet;
 }
 

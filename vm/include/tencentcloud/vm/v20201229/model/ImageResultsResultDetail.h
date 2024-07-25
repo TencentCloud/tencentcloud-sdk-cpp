@@ -301,6 +301,31 @@ namespace TencentCloud
                      */
                     bool SubLabelCodeHasBeenSet() const;
 
+                    /**
+                     * 获取该字段用于返回恶意标签下对应的子标签的检测结果，如：*Porn-SexBehavior*等子标签。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return SubLabel 该字段用于返回恶意标签下对应的子标签的检测结果，如：*Porn-SexBehavior*等子标签。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::string GetSubLabel() const;
+
+                    /**
+                     * 设置该字段用于返回恶意标签下对应的子标签的检测结果，如：*Porn-SexBehavior*等子标签。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _subLabel 该字段用于返回恶意标签下对应的子标签的检测结果，如：*Porn-SexBehavior*等子标签。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetSubLabel(const std::string& _subLabel);
+
+                    /**
+                     * 判断参数 SubLabel 是否已赋值
+                     * @return SubLabel 是否已赋值
+                     * 
+                     */
+                    bool SubLabelHasBeenSet() const;
+
                 private:
 
                     /**
@@ -373,6 +398,13 @@ namespace TencentCloud
                      */
                     std::string m_subLabelCode;
                     bool m_subLabelCodeHasBeenSet;
+
+                    /**
+                     * 该字段用于返回恶意标签下对应的子标签的检测结果，如：*Porn-SexBehavior*等子标签。
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_subLabel;
+                    bool m_subLabelHasBeenSet;
 
                 };
             }

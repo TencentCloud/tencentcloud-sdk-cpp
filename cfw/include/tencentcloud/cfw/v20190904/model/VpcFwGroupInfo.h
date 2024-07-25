@@ -347,6 +347,56 @@ namespace TencentCloud
                      */
                     bool CrossUserModeHasBeenSet() const;
 
+                    /**
+                     * 获取云联网模式下，当前实例是否需要开启重叠路由开关，1：需要开启，0：不需要开启
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return NeedSwitchCcnOverlap 云联网模式下，当前实例是否需要开启重叠路由开关，1：需要开启，0：不需要开启
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    int64_t GetNeedSwitchCcnOverlap() const;
+
+                    /**
+                     * 设置云联网模式下，当前实例是否需要开启重叠路由开关，1：需要开启，0：不需要开启
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _needSwitchCcnOverlap 云联网模式下，当前实例是否需要开启重叠路由开关，1：需要开启，0：不需要开启
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetNeedSwitchCcnOverlap(const int64_t& _needSwitchCcnOverlap);
+
+                    /**
+                     * 判断参数 NeedSwitchCcnOverlap 是否已赋值
+                     * @return NeedSwitchCcnOverlap 是否已赋值
+                     * 
+                     */
+                    bool NeedSwitchCcnOverlapHasBeenSet() const;
+
+                    /**
+                     * 获取云联网模式下，实例关联的云联网id
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return CcnId 云联网模式下，实例关联的云联网id
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::string GetCcnId() const;
+
+                    /**
+                     * 设置云联网模式下，实例关联的云联网id
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _ccnId 云联网模式下，实例关联的云联网id
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetCcnId(const std::string& _ccnId);
+
+                    /**
+                     * 判断参数 CcnId 是否已赋值
+                     * @return CcnId 是否已赋值
+                     * 
+                     */
+                    bool CcnIdHasBeenSet() const;
+
                 private:
 
                     /**
@@ -432,6 +482,20 @@ namespace TencentCloud
                      */
                     std::string m_crossUserMode;
                     bool m_crossUserModeHasBeenSet;
+
+                    /**
+                     * 云联网模式下，当前实例是否需要开启重叠路由开关，1：需要开启，0：不需要开启
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    int64_t m_needSwitchCcnOverlap;
+                    bool m_needSwitchCcnOverlapHasBeenSet;
+
+                    /**
+                     * 云联网模式下，实例关联的云联网id
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_ccnId;
+                    bool m_ccnIdHasBeenSet;
 
                 };
             }

@@ -24,6 +24,7 @@
 #include <tencentcloud/ams/v20201229/model/TaskLabel.h>
 #include <tencentcloud/ams/v20201229/model/InputInfo.h>
 #include <tencentcloud/ams/v20201229/model/AudioSegments.h>
+#include <tencentcloud/ams/v20201229/model/MediaInfo.h>
 
 
 namespace TencentCloud
@@ -304,6 +305,22 @@ namespace TencentCloud
                      */
                     bool LabelHasBeenSet() const;
 
+                    /**
+                     * 获取媒体信息
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return MediaInfo 媒体信息
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    MediaInfo GetMediaInfo() const;
+
+                    /**
+                     * 判断参数 MediaInfo 是否已赋值
+                     * @return MediaInfo 是否已赋值
+                     * 
+                     */
+                    bool MediaInfoHasBeenSet() const;
+
                 private:
 
                     /**
@@ -418,6 +435,13 @@ namespace TencentCloud
                      */
                     std::string m_label;
                     bool m_labelHasBeenSet;
+
+                    /**
+                     * 媒体信息
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    MediaInfo m_mediaInfo;
+                    bool m_mediaInfoHasBeenSet;
 
                 };
             }

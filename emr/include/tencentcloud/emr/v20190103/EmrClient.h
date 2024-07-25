@@ -69,6 +69,8 @@
 #include <tencentcloud/emr/v20190103/model/DescribeJobFlowResponse.h>
 #include <tencentcloud/emr/v20190103/model/DescribeResourceScheduleRequest.h>
 #include <tencentcloud/emr/v20190103/model/DescribeResourceScheduleResponse.h>
+#include <tencentcloud/emr/v20190103/model/DescribeTrinoQueryInfoRequest.h>
+#include <tencentcloud/emr/v20190103/model/DescribeTrinoQueryInfoResponse.h>
 #include <tencentcloud/emr/v20190103/model/DescribeUsersForUserManagerRequest.h>
 #include <tencentcloud/emr/v20190103/model/DescribeUsersForUserManagerResponse.h>
 #include <tencentcloud/emr/v20190103/model/DescribeYarnApplicationsRequest.h>
@@ -194,6 +196,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeResourceScheduleResponse> DescribeResourceScheduleOutcome;
                 typedef std::future<DescribeResourceScheduleOutcome> DescribeResourceScheduleOutcomeCallable;
                 typedef std::function<void(const EmrClient*, const Model::DescribeResourceScheduleRequest&, DescribeResourceScheduleOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeResourceScheduleAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeTrinoQueryInfoResponse> DescribeTrinoQueryInfoOutcome;
+                typedef std::future<DescribeTrinoQueryInfoOutcome> DescribeTrinoQueryInfoOutcomeCallable;
+                typedef std::function<void(const EmrClient*, const Model::DescribeTrinoQueryInfoRequest&, DescribeTrinoQueryInfoOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeTrinoQueryInfoAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeUsersForUserManagerResponse> DescribeUsersForUserManagerOutcome;
                 typedef std::future<DescribeUsersForUserManagerOutcome> DescribeUsersForUserManagerOutcomeCallable;
                 typedef std::function<void(const EmrClient*, const Model::DescribeUsersForUserManagerRequest&, DescribeUsersForUserManagerOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeUsersForUserManagerAsyncHandler;
@@ -467,6 +472,15 @@ namespace TencentCloud
                 DescribeResourceScheduleOutcome DescribeResourceSchedule(const Model::DescribeResourceScheduleRequest &request);
                 void DescribeResourceScheduleAsync(const Model::DescribeResourceScheduleRequest& request, const DescribeResourceScheduleAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DescribeResourceScheduleOutcomeCallable DescribeResourceScheduleCallable(const Model::DescribeResourceScheduleRequest& request);
+
+                /**
+                 *获取trino查询结果
+                 * @param req DescribeTrinoQueryInfoRequest
+                 * @return DescribeTrinoQueryInfoOutcome
+                 */
+                DescribeTrinoQueryInfoOutcome DescribeTrinoQueryInfo(const Model::DescribeTrinoQueryInfoRequest &request);
+                void DescribeTrinoQueryInfoAsync(const Model::DescribeTrinoQueryInfoRequest& request, const DescribeTrinoQueryInfoAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeTrinoQueryInfoOutcomeCallable DescribeTrinoQueryInfoCallable(const Model::DescribeTrinoQueryInfoRequest& request);
 
                 /**
                  *该接口支持安装了OpenLdap组件的集群。

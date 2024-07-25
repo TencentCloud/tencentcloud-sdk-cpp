@@ -28,7 +28,8 @@ InstanceCLSDeliveryInfo::InstanceCLSDeliveryInfo() :
     m_groupIdHasBeenSet(false),
     m_groupNameHasBeenSet(false),
     m_regionHasBeenSet(false),
-    m_statusHasBeenSet(false)
+    m_statusHasBeenSet(false),
+    m_logTypeHasBeenSet(false)
 {
 }
 
@@ -117,6 +118,16 @@ CoreInternalOutcome InstanceCLSDeliveryInfo::Deserialize(const rapidjson::Value 
         m_statusHasBeenSet = true;
     }
 
+    if (value.HasMember("LogType") && !value["LogType"].IsNull())
+    {
+        if (!value["LogType"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `InstanceCLSDeliveryInfo.LogType` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_logType = string(value["LogType"].GetString());
+        m_logTypeHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -186,6 +197,14 @@ void InstanceCLSDeliveryInfo::ToJsonObject(rapidjson::Value &value, rapidjson::D
         string key = "Status";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_status.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_logTypeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "LogType";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_logType.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -317,5 +336,21 @@ void InstanceCLSDeliveryInfo::SetStatus(const string& _status)
 bool InstanceCLSDeliveryInfo::StatusHasBeenSet() const
 {
     return m_statusHasBeenSet;
+}
+
+string InstanceCLSDeliveryInfo::GetLogType() const
+{
+    return m_logType;
+}
+
+void InstanceCLSDeliveryInfo::SetLogType(const string& _logType)
+{
+    m_logType = _logType;
+    m_logTypeHasBeenSet = true;
+}
+
+bool InstanceCLSDeliveryInfo::LogTypeHasBeenSet() const
+{
+    return m_logTypeHasBeenSet;
 }
 

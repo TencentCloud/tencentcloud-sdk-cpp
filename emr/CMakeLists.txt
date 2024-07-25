@@ -42,6 +42,9 @@ set(emr_public_header_model
   include/tencentcloud/emr/v20190103/model/PodNewSpec.h
   include/tencentcloud/emr/v20190103/model/EmrProductConfigDetail.h
   include/tencentcloud/emr/v20190103/model/DayRepeatStrategy.h
+  include/tencentcloud/emr/v20190103/model/DescribeTrinoQueryInfoResponse.h
+  include/tencentcloud/emr/v20190103/model/PriceResult.h
+  include/tencentcloud/emr/v20190103/model/TrinoQueryInfo.h
   include/tencentcloud/emr/v20190103/model/WeekRepeatStrategy.h
   include/tencentcloud/emr/v20190103/model/UserManagerFilter.h
   include/tencentcloud/emr/v20190103/model/DynamicPodSpec.h
@@ -180,7 +183,6 @@ set(emr_public_header_model
   include/tencentcloud/emr/v20190103/model/MultiZoneSetting.h
   include/tencentcloud/emr/v20190103/model/ModifyResourceScheduleConfigRequest.h
   include/tencentcloud/emr/v20190103/model/UserInfoForUserManager.h
-  include/tencentcloud/emr/v20190103/model/TriggerConditions.h
   include/tencentcloud/emr/v20190103/model/DescribeEmrOverviewMetricsRequest.h
   include/tencentcloud/emr/v20190103/model/PodState.h
   include/tencentcloud/emr/v20190103/model/ScaleOutClusterResponse.h
@@ -210,6 +212,7 @@ set(emr_public_header_model
   include/tencentcloud/emr/v20190103/model/ResourceDetail.h
   include/tencentcloud/emr/v20190103/model/SceneSoftwareConfig.h
   include/tencentcloud/emr/v20190103/model/ShortNodeInfo.h
+  include/tencentcloud/emr/v20190103/model/DescribeTrinoQueryInfoRequest.h
   include/tencentcloud/emr/v20190103/model/EmrPrice.h
   include/tencentcloud/emr/v20190103/model/NodeHardwareInfo.h
   include/tencentcloud/emr/v20190103/model/ServiceBasicRestartInfo.h
@@ -246,6 +249,9 @@ set(emr_src
   src/v20190103/model/PodNewSpec.cpp
   src/v20190103/model/EmrProductConfigDetail.cpp
   src/v20190103/model/DayRepeatStrategy.cpp
+  src/v20190103/model/DescribeTrinoQueryInfoResponse.cpp
+  src/v20190103/model/PriceResult.cpp
+  src/v20190103/model/TrinoQueryInfo.cpp
   src/v20190103/model/WeekRepeatStrategy.cpp
   src/v20190103/model/UserManagerFilter.cpp
   src/v20190103/model/DynamicPodSpec.cpp
@@ -384,7 +390,6 @@ set(emr_src
   src/v20190103/model/MultiZoneSetting.cpp
   src/v20190103/model/ModifyResourceScheduleConfigRequest.cpp
   src/v20190103/model/UserInfoForUserManager.cpp
-  src/v20190103/model/TriggerConditions.cpp
   src/v20190103/model/DescribeEmrOverviewMetricsRequest.cpp
   src/v20190103/model/PodState.cpp
   src/v20190103/model/ScaleOutClusterResponse.cpp
@@ -414,6 +419,7 @@ set(emr_src
   src/v20190103/model/ResourceDetail.cpp
   src/v20190103/model/SceneSoftwareConfig.cpp
   src/v20190103/model/ShortNodeInfo.cpp
+  src/v20190103/model/DescribeTrinoQueryInfoRequest.cpp
   src/v20190103/model/EmrPrice.cpp
   src/v20190103/model/NodeHardwareInfo.cpp
   src/v20190103/model/ServiceBasicRestartInfo.cpp

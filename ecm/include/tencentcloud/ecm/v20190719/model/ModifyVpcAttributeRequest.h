@@ -148,6 +148,48 @@ namespace TencentCloud
                      */
                     bool DescriptionHasBeenSet() const;
 
+                    /**
+                     * 获取DNS地址，最多支持4个，第1个默认为主，其余为备。	
+                     * @return DnsServers DNS地址，最多支持4个，第1个默认为主，其余为备。	
+                     * 
+                     */
+                    std::vector<std::string> GetDnsServers() const;
+
+                    /**
+                     * 设置DNS地址，最多支持4个，第1个默认为主，其余为备。	
+                     * @param _dnsServers DNS地址，最多支持4个，第1个默认为主，其余为备。	
+                     * 
+                     */
+                    void SetDnsServers(const std::vector<std::string>& _dnsServers);
+
+                    /**
+                     * 判断参数 DnsServers 是否已赋值
+                     * @return DnsServers 是否已赋值
+                     * 
+                     */
+                    bool DnsServersHasBeenSet() const;
+
+                    /**
+                     * 获取域名。
+                     * @return DomainName 域名。
+                     * 
+                     */
+                    std::string GetDomainName() const;
+
+                    /**
+                     * 设置域名。
+                     * @param _domainName 域名。
+                     * 
+                     */
+                    void SetDomainName(const std::string& _domainName);
+
+                    /**
+                     * 判断参数 DomainName 是否已赋值
+                     * @return DomainName 是否已赋值
+                     * 
+                     */
+                    bool DomainNameHasBeenSet() const;
+
                 private:
 
                     /**
@@ -179,6 +221,18 @@ namespace TencentCloud
                      */
                     std::string m_description;
                     bool m_descriptionHasBeenSet;
+
+                    /**
+                     * DNS地址，最多支持4个，第1个默认为主，其余为备。	
+                     */
+                    std::vector<std::string> m_dnsServers;
+                    bool m_dnsServersHasBeenSet;
+
+                    /**
+                     * 域名。
+                     */
+                    std::string m_domainName;
+                    bool m_domainNameHasBeenSet;
 
                 };
             }

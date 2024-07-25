@@ -89,6 +89,56 @@ namespace TencentCloud
                      */
                     bool ResultHasBeenSet() const;
 
+                    /**
+                     * 获取该字段用于返回视频片段的具体截帧审核时间。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return CreatedAt 该字段用于返回视频片段的具体截帧审核时间。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::string GetCreatedAt() const;
+
+                    /**
+                     * 设置该字段用于返回视频片段的具体截帧审核时间。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _createdAt 该字段用于返回视频片段的具体截帧审核时间。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetCreatedAt(const std::string& _createdAt);
+
+                    /**
+                     * 判断参数 CreatedAt 是否已赋值
+                     * @return CreatedAt 是否已赋值
+                     * 
+                     */
+                    bool CreatedAtHasBeenSet() const;
+
+                    /**
+                     * 获取该字段用于返回视频片段的截帧时间，单位为豪秒。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return OffsetusTime 该字段用于返回视频片段的截帧时间，单位为豪秒。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::string GetOffsetusTime() const;
+
+                    /**
+                     * 设置该字段用于返回视频片段的截帧时间，单位为豪秒。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _offsetusTime 该字段用于返回视频片段的截帧时间，单位为豪秒。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetOffsetusTime(const std::string& _offsetusTime);
+
+                    /**
+                     * 判断参数 OffsetusTime 是否已赋值
+                     * @return OffsetusTime 是否已赋值
+                     * 
+                     */
+                    bool OffsetusTimeHasBeenSet() const;
+
                 private:
 
                     /**
@@ -102,6 +152,20 @@ namespace TencentCloud
                      */
                     ImageResult m_result;
                     bool m_resultHasBeenSet;
+
+                    /**
+                     * 该字段用于返回视频片段的具体截帧审核时间。
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_createdAt;
+                    bool m_createdAtHasBeenSet;
+
+                    /**
+                     * 该字段用于返回视频片段的截帧时间，单位为豪秒。
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_offsetusTime;
+                    bool m_offsetusTimeHasBeenSet;
 
                 };
             }

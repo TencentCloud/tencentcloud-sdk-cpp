@@ -28,6 +28,9 @@
 #include <tencentcloud/ams/v20201229/model/AudioResultDetailMoanResult.h>
 #include <tencentcloud/ams/v20201229/model/AudioResultDetailLanguageResult.h>
 #include <tencentcloud/ams/v20201229/model/RecognitionResult.h>
+#include <tencentcloud/ams/v20201229/model/SpeakerResults.h>
+#include <tencentcloud/ams/v20201229/model/LabelResults.h>
+#include <tencentcloud/ams/v20201229/model/TravelResults.h>
 
 
 namespace TencentCloud
@@ -180,18 +183,18 @@ namespace TencentCloud
                     bool TextHasBeenSet() const;
 
                     /**
-                     * 获取该字段用于返回音频片段存储的链接地址，该地址有效期为1天。
+                     * 获取该字段用于返回审核结果的访问链接（URL）。<br>备注：链接默认有效期为12小时。如果您需要更长时效的链接，请使用[COS预签名](https://cloud.tencent.com/document/product/1265/104001)功能更新签名时效。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return Url 该字段用于返回音频片段存储的链接地址，该地址有效期为1天。
+                     * @return Url 该字段用于返回审核结果的访问链接（URL）。<br>备注：链接默认有效期为12小时。如果您需要更长时效的链接，请使用[COS预签名](https://cloud.tencent.com/document/product/1265/104001)功能更新签名时效。
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetUrl() const;
 
                     /**
-                     * 设置该字段用于返回音频片段存储的链接地址，该地址有效期为1天。
+                     * 设置该字段用于返回审核结果的访问链接（URL）。<br>备注：链接默认有效期为12小时。如果您需要更长时效的链接，请使用[COS预签名](https://cloud.tencent.com/document/product/1265/104001)功能更新签名时效。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _url 该字段用于返回音频片段存储的链接地址，该地址有效期为1天。
+                     * @param _url 该字段用于返回审核结果的访问链接（URL）。<br>备注：链接默认有效期为12小时。如果您需要更长时效的链接，请使用[COS预签名](https://cloud.tencent.com/document/product/1265/104001)功能更新签名时效。
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -359,6 +362,69 @@ namespace TencentCloud
                      */
                     bool RecognitionResultsHasBeenSet() const;
 
+                    /**
+                     * 获取说话人结果
+                     * @return SpeakerResults 说话人结果
+                     * 
+                     */
+                    std::vector<SpeakerResults> GetSpeakerResults() const;
+
+                    /**
+                     * 设置说话人结果
+                     * @param _speakerResults 说话人结果
+                     * 
+                     */
+                    void SetSpeakerResults(const std::vector<SpeakerResults>& _speakerResults);
+
+                    /**
+                     * 判断参数 SpeakerResults 是否已赋值
+                     * @return SpeakerResults 是否已赋值
+                     * 
+                     */
+                    bool SpeakerResultsHasBeenSet() const;
+
+                    /**
+                     * 获取歌曲识别结果
+                     * @return LabelResults 歌曲识别结果
+                     * 
+                     */
+                    std::vector<LabelResults> GetLabelResults() const;
+
+                    /**
+                     * 设置歌曲识别结果
+                     * @param _labelResults 歌曲识别结果
+                     * 
+                     */
+                    void SetLabelResults(const std::vector<LabelResults>& _labelResults);
+
+                    /**
+                     * 判断参数 LabelResults 是否已赋值
+                     * @return LabelResults 是否已赋值
+                     * 
+                     */
+                    bool LabelResultsHasBeenSet() const;
+
+                    /**
+                     * 获取出行结果
+                     * @return TravelResults 出行结果
+                     * 
+                     */
+                    std::vector<TravelResults> GetTravelResults() const;
+
+                    /**
+                     * 设置出行结果
+                     * @param _travelResults 出行结果
+                     * 
+                     */
+                    void SetTravelResults(const std::vector<TravelResults>& _travelResults);
+
+                    /**
+                     * 判断参数 TravelResults 是否已赋值
+                     * @return TravelResults 是否已赋值
+                     * 
+                     */
+                    bool TravelResultsHasBeenSet() const;
+
                 private:
 
                     /**
@@ -398,7 +464,7 @@ namespace TencentCloud
                     bool m_textHasBeenSet;
 
                     /**
-                     * 该字段用于返回音频片段存储的链接地址，该地址有效期为1天。
+                     * 该字段用于返回审核结果的访问链接（URL）。<br>备注：链接默认有效期为12小时。如果您需要更长时效的链接，请使用[COS预签名](https://cloud.tencent.com/document/product/1265/104001)功能更新签名时效。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_url;
@@ -447,6 +513,24 @@ namespace TencentCloud
                      */
                     std::vector<RecognitionResult> m_recognitionResults;
                     bool m_recognitionResultsHasBeenSet;
+
+                    /**
+                     * 说话人结果
+                     */
+                    std::vector<SpeakerResults> m_speakerResults;
+                    bool m_speakerResultsHasBeenSet;
+
+                    /**
+                     * 歌曲识别结果
+                     */
+                    std::vector<LabelResults> m_labelResults;
+                    bool m_labelResultsHasBeenSet;
+
+                    /**
+                     * 出行结果
+                     */
+                    std::vector<TravelResults> m_travelResults;
+                    bool m_travelResultsHasBeenSet;
 
                 };
             }

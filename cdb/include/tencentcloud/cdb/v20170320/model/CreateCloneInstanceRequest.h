@@ -22,6 +22,7 @@
 #include <map>
 #include <tencentcloud/core/AbstractModel.h>
 #include <tencentcloud/cdb/v20170320/model/TagInfo.h>
+#include <tencentcloud/cdb/v20170320/model/ClusterTopology.h>
 
 
 namespace TencentCloud
@@ -359,15 +360,15 @@ namespace TencentCloud
                     bool BackupZoneHasBeenSet() const;
 
                     /**
-                     * 获取克隆实例类型。支持值包括： "UNIVERSAL" - 通用型实例， "EXCLUSIVE" - 独享型实例。 不指定则默认为通用型。
-                     * @return DeviceType 克隆实例类型。支持值包括： "UNIVERSAL" - 通用型实例， "EXCLUSIVE" - 独享型实例。 不指定则默认为通用型。
+                     * 获取克隆实例类型。支持值包括："UNIVERSAL" - 通用型实例，"EXCLUSIVE" - 独享型实例，"CLOUD_NATIVE_CLUSTER" - 集群版标准型，"CLOUD_NATIVE_CLUSTER_EXCLUSIVE" - 集群版加强型。不指定则默认为通用型。
+                     * @return DeviceType 克隆实例类型。支持值包括："UNIVERSAL" - 通用型实例，"EXCLUSIVE" - 独享型实例，"CLOUD_NATIVE_CLUSTER" - 集群版标准型，"CLOUD_NATIVE_CLUSTER_EXCLUSIVE" - 集群版加强型。不指定则默认为通用型。
                      * 
                      */
                     std::string GetDeviceType() const;
 
                     /**
-                     * 设置克隆实例类型。支持值包括： "UNIVERSAL" - 通用型实例， "EXCLUSIVE" - 独享型实例。 不指定则默认为通用型。
-                     * @param _deviceType 克隆实例类型。支持值包括： "UNIVERSAL" - 通用型实例， "EXCLUSIVE" - 独享型实例。 不指定则默认为通用型。
+                     * 设置克隆实例类型。支持值包括："UNIVERSAL" - 通用型实例，"EXCLUSIVE" - 独享型实例，"CLOUD_NATIVE_CLUSTER" - 集群版标准型，"CLOUD_NATIVE_CLUSTER_EXCLUSIVE" - 集群版加强型。不指定则默认为通用型。
+                     * @param _deviceType 克隆实例类型。支持值包括："UNIVERSAL" - 通用型实例，"EXCLUSIVE" - 独享型实例，"CLOUD_NATIVE_CLUSTER" - 集群版标准型，"CLOUD_NATIVE_CLUSTER_EXCLUSIVE" - 集群版加强型。不指定则默认为通用型。
                      * 
                      */
                     void SetDeviceType(const std::string& _deviceType);
@@ -526,6 +527,27 @@ namespace TencentCloud
                      */
                     bool PeriodHasBeenSet() const;
 
+                    /**
+                     * 获取集群版节点拓扑配置。
+                     * @return ClusterTopology 集群版节点拓扑配置。
+                     * 
+                     */
+                    ClusterTopology GetClusterTopology() const;
+
+                    /**
+                     * 设置集群版节点拓扑配置。
+                     * @param _clusterTopology 集群版节点拓扑配置。
+                     * 
+                     */
+                    void SetClusterTopology(const ClusterTopology& _clusterTopology);
+
+                    /**
+                     * 判断参数 ClusterTopology 是否已赋值
+                     * @return ClusterTopology 是否已赋值
+                     * 
+                     */
+                    bool ClusterTopologyHasBeenSet() const;
+
                 private:
 
                     /**
@@ -619,7 +641,7 @@ namespace TencentCloud
                     bool m_backupZoneHasBeenSet;
 
                     /**
-                     * 克隆实例类型。支持值包括： "UNIVERSAL" - 通用型实例， "EXCLUSIVE" - 独享型实例。 不指定则默认为通用型。
+                     * 克隆实例类型。支持值包括："UNIVERSAL" - 通用型实例，"EXCLUSIVE" - 独享型实例，"CLOUD_NATIVE_CLUSTER" - 集群版标准型，"CLOUD_NATIVE_CLUSTER_EXCLUSIVE" - 集群版加强型。不指定则默认为通用型。
                      */
                     std::string m_deviceType;
                     bool m_deviceTypeHasBeenSet;
@@ -665,6 +687,12 @@ namespace TencentCloud
                      */
                     int64_t m_period;
                     bool m_periodHasBeenSet;
+
+                    /**
+                     * 集群版节点拓扑配置。
+                     */
+                    ClusterTopology m_clusterTopology;
+                    bool m_clusterTopologyHasBeenSet;
 
                 };
             }

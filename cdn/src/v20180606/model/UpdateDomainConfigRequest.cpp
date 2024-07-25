@@ -71,7 +71,8 @@ UpdateDomainConfigRequest::UpdateDomainConfigRequest() :
     m_hwPrivateAccessHasBeenSet(false),
     m_qnPrivateAccessHasBeenSet(false),
     m_othersPrivateAccessHasBeenSet(false),
-    m_httpsBillingHasBeenSet(false)
+    m_httpsBillingHasBeenSet(false),
+    m_paramFilterHasBeenSet(false)
 {
 }
 
@@ -521,6 +522,15 @@ string UpdateDomainConfigRequest::ToJsonString() const
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
         m_httpsBilling.ToJsonObject(d[key.c_str()], allocator);
+    }
+
+    if (m_paramFilterHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ParamFilter";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_paramFilter.ToJsonObject(d[key.c_str()], allocator);
     }
 
 
@@ -1313,6 +1323,22 @@ void UpdateDomainConfigRequest::SetHttpsBilling(const HttpsBilling& _httpsBillin
 bool UpdateDomainConfigRequest::HttpsBillingHasBeenSet() const
 {
     return m_httpsBillingHasBeenSet;
+}
+
+ParamFilter UpdateDomainConfigRequest::GetParamFilter() const
+{
+    return m_paramFilter;
+}
+
+void UpdateDomainConfigRequest::SetParamFilter(const ParamFilter& _paramFilter)
+{
+    m_paramFilter = _paramFilter;
+    m_paramFilterHasBeenSet = true;
+}
+
+bool UpdateDomainConfigRequest::ParamFilterHasBeenSet() const
+{
+    return m_paramFilterHasBeenSet;
 }
 
 

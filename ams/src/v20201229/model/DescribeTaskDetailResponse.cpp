@@ -39,7 +39,8 @@ DescribeTaskDetailResponse::DescribeTaskDetailResponse() :
     m_errorDescriptionHasBeenSet(false),
     m_createdAtHasBeenSet(false),
     m_updatedAtHasBeenSet(false),
-    m_labelHasBeenSet(false)
+    m_labelHasBeenSet(false),
+    m_mediaInfoHasBeenSet(false)
 {
 }
 
@@ -264,6 +265,23 @@ CoreInternalOutcome DescribeTaskDetailResponse::Deserialize(const string &payloa
         m_labelHasBeenSet = true;
     }
 
+    if (rsp.HasMember("MediaInfo") && !rsp["MediaInfo"].IsNull())
+    {
+        if (!rsp["MediaInfo"].IsObject())
+        {
+            return CoreInternalOutcome(Core::Error("response `MediaInfo` is not object type").SetRequestId(requestId));
+        }
+
+        CoreInternalOutcome outcome = m_mediaInfo.Deserialize(rsp["MediaInfo"]);
+        if (!outcome.IsSuccess())
+        {
+            outcome.GetError().SetRequestId(requestId);
+            return outcome;
+        }
+
+        m_mediaInfoHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -415,6 +433,15 @@ string DescribeTaskDetailResponse::ToJsonString() const
         string key = "Label";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_label.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_mediaInfoHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "MediaInfo";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_mediaInfo.ToJsonObject(value[key.c_str()], allocator);
     }
 
     rapidjson::Value iKey(rapidjson::kStringType);
@@ -587,6 +614,16 @@ string DescribeTaskDetailResponse::GetLabel() const
 bool DescribeTaskDetailResponse::LabelHasBeenSet() const
 {
     return m_labelHasBeenSet;
+}
+
+MediaInfo DescribeTaskDetailResponse::GetMediaInfo() const
+{
+    return m_mediaInfo;
+}
+
+bool DescribeTaskDetailResponse::MediaInfoHasBeenSet() const
+{
+    return m_mediaInfoHasBeenSet;
 }
 
 

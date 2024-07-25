@@ -27,7 +27,9 @@ ModifyVpcAttributeRequest::ModifyVpcAttributeRequest() :
     m_ecmRegionHasBeenSet(false),
     m_vpcNameHasBeenSet(false),
     m_tagsHasBeenSet(false),
-    m_descriptionHasBeenSet(false)
+    m_descriptionHasBeenSet(false),
+    m_dnsServersHasBeenSet(false),
+    m_domainNameHasBeenSet(false)
 {
 }
 
@@ -83,6 +85,27 @@ string ModifyVpcAttributeRequest::ToJsonString() const
         string key = "Description";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_description.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_dnsServersHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "DnsServers";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        for (auto itr = m_dnsServers.begin(); itr != m_dnsServers.end(); ++itr)
+        {
+            d[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
+        }
+    }
+
+    if (m_domainNameHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "DomainName";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_domainName.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -171,6 +194,38 @@ void ModifyVpcAttributeRequest::SetDescription(const string& _description)
 bool ModifyVpcAttributeRequest::DescriptionHasBeenSet() const
 {
     return m_descriptionHasBeenSet;
+}
+
+vector<string> ModifyVpcAttributeRequest::GetDnsServers() const
+{
+    return m_dnsServers;
+}
+
+void ModifyVpcAttributeRequest::SetDnsServers(const vector<string>& _dnsServers)
+{
+    m_dnsServers = _dnsServers;
+    m_dnsServersHasBeenSet = true;
+}
+
+bool ModifyVpcAttributeRequest::DnsServersHasBeenSet() const
+{
+    return m_dnsServersHasBeenSet;
+}
+
+string ModifyVpcAttributeRequest::GetDomainName() const
+{
+    return m_domainName;
+}
+
+void ModifyVpcAttributeRequest::SetDomainName(const string& _domainName)
+{
+    m_domainName = _domainName;
+    m_domainNameHasBeenSet = true;
+}
+
+bool ModifyVpcAttributeRequest::DomainNameHasBeenSet() const
+{
+    return m_domainNameHasBeenSet;
 }
 
 

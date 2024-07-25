@@ -23,7 +23,8 @@ using namespace TencentCloud::Cynosdb::V20190107::Model;
 using namespace std;
 
 DescribeInstanceCLSLogDeliveryRequest::DescribeInstanceCLSLogDeliveryRequest() :
-    m_instanceIdHasBeenSet(false)
+    m_instanceIdHasBeenSet(false),
+    m_logTypeHasBeenSet(false)
 {
 }
 
@@ -40,6 +41,14 @@ string DescribeInstanceCLSLogDeliveryRequest::ToJsonString() const
         string key = "InstanceId";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_instanceId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_logTypeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "LogType";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_logType.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -64,6 +73,22 @@ void DescribeInstanceCLSLogDeliveryRequest::SetInstanceId(const string& _instanc
 bool DescribeInstanceCLSLogDeliveryRequest::InstanceIdHasBeenSet() const
 {
     return m_instanceIdHasBeenSet;
+}
+
+string DescribeInstanceCLSLogDeliveryRequest::GetLogType() const
+{
+    return m_logType;
+}
+
+void DescribeInstanceCLSLogDeliveryRequest::SetLogType(const string& _logType)
+{
+    m_logType = _logType;
+    m_logTypeHasBeenSet = true;
+}
+
+bool DescribeInstanceCLSLogDeliveryRequest::LogTypeHasBeenSet() const
+{
+    return m_logTypeHasBeenSet;
 }
 
 

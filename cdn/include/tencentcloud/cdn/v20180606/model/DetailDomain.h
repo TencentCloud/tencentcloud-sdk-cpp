@@ -75,6 +75,7 @@
 #include <tencentcloud/cdn/v20180606/model/QnPrivateAccess.h>
 #include <tencentcloud/cdn/v20180606/model/HttpsBilling.h>
 #include <tencentcloud/cdn/v20180606/model/OthersPrivateAccess.h>
+#include <tencentcloud/cdn/v20180606/model/ParamFilter.h>
 
 
 namespace TencentCloud
@@ -1819,6 +1820,31 @@ off：不支持
                      */
                     bool OthersPrivateAccessHasBeenSet() const;
 
+                    /**
+                     * 获取参数黑名单
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return ParamFilter 参数黑名单
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    ParamFilter GetParamFilter() const;
+
+                    /**
+                     * 设置参数黑名单
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _paramFilter 参数黑名单
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetParamFilter(const ParamFilter& _paramFilter);
+
+                    /**
+                     * 判断参数 ParamFilter 是否已赋值
+                     * @return ParamFilter 是否已赋值
+                     * 
+                     */
+                    bool ParamFilterHasBeenSet() const;
+
                 private:
 
                     /**
@@ -2300,6 +2326,13 @@ off：不支持
                      */
                     OthersPrivateAccess m_othersPrivateAccess;
                     bool m_othersPrivateAccessHasBeenSet;
+
+                    /**
+                     * 参数黑名单
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    ParamFilter m_paramFilter;
+                    bool m_paramFilterHasBeenSet;
 
                 };
             }

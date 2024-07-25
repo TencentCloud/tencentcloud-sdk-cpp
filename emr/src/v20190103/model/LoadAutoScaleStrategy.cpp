@@ -26,12 +26,7 @@ LoadAutoScaleStrategy::LoadAutoScaleStrategy() :
     m_calmDownTimeHasBeenSet(false),
     m_scaleActionHasBeenSet(false),
     m_scaleNumHasBeenSet(false),
-    m_loadMetricsHasBeenSet(false),
-    m_metricIdHasBeenSet(false),
-    m_statisticPeriodHasBeenSet(false),
     m_processMethodHasBeenSet(false),
-    m_triggerThresholdHasBeenSet(false),
-    m_triggerConditionsHasBeenSet(false),
     m_priorityHasBeenSet(false),
     m_strategyStatusHasBeenSet(false),
     m_yarnNodeLabelHasBeenSet(false),
@@ -100,36 +95,6 @@ CoreInternalOutcome LoadAutoScaleStrategy::Deserialize(const rapidjson::Value &v
         m_scaleNumHasBeenSet = true;
     }
 
-    if (value.HasMember("LoadMetrics") && !value["LoadMetrics"].IsNull())
-    {
-        if (!value["LoadMetrics"].IsString())
-        {
-            return CoreInternalOutcome(Core::Error("response `LoadAutoScaleStrategy.LoadMetrics` IsString=false incorrectly").SetRequestId(requestId));
-        }
-        m_loadMetrics = string(value["LoadMetrics"].GetString());
-        m_loadMetricsHasBeenSet = true;
-    }
-
-    if (value.HasMember("MetricId") && !value["MetricId"].IsNull())
-    {
-        if (!value["MetricId"].IsInt64())
-        {
-            return CoreInternalOutcome(Core::Error("response `LoadAutoScaleStrategy.MetricId` IsInt64=false incorrectly").SetRequestId(requestId));
-        }
-        m_metricId = value["MetricId"].GetInt64();
-        m_metricIdHasBeenSet = true;
-    }
-
-    if (value.HasMember("StatisticPeriod") && !value["StatisticPeriod"].IsNull())
-    {
-        if (!value["StatisticPeriod"].IsInt64())
-        {
-            return CoreInternalOutcome(Core::Error("response `LoadAutoScaleStrategy.StatisticPeriod` IsInt64=false incorrectly").SetRequestId(requestId));
-        }
-        m_statisticPeriod = value["StatisticPeriod"].GetInt64();
-        m_statisticPeriodHasBeenSet = true;
-    }
-
     if (value.HasMember("ProcessMethod") && !value["ProcessMethod"].IsNull())
     {
         if (!value["ProcessMethod"].IsInt64())
@@ -138,33 +103,6 @@ CoreInternalOutcome LoadAutoScaleStrategy::Deserialize(const rapidjson::Value &v
         }
         m_processMethod = value["ProcessMethod"].GetInt64();
         m_processMethodHasBeenSet = true;
-    }
-
-    if (value.HasMember("TriggerThreshold") && !value["TriggerThreshold"].IsNull())
-    {
-        if (!value["TriggerThreshold"].IsInt64())
-        {
-            return CoreInternalOutcome(Core::Error("response `LoadAutoScaleStrategy.TriggerThreshold` IsInt64=false incorrectly").SetRequestId(requestId));
-        }
-        m_triggerThreshold = value["TriggerThreshold"].GetInt64();
-        m_triggerThresholdHasBeenSet = true;
-    }
-
-    if (value.HasMember("TriggerConditions") && !value["TriggerConditions"].IsNull())
-    {
-        if (!value["TriggerConditions"].IsObject())
-        {
-            return CoreInternalOutcome(Core::Error("response `LoadAutoScaleStrategy.TriggerConditions` is not object type").SetRequestId(requestId));
-        }
-
-        CoreInternalOutcome outcome = m_triggerConditions.Deserialize(value["TriggerConditions"]);
-        if (!outcome.IsSuccess())
-        {
-            outcome.GetError().SetRequestId(requestId);
-            return outcome;
-        }
-
-        m_triggerConditionsHasBeenSet = true;
     }
 
     if (value.HasMember("Priority") && !value["Priority"].IsNull())
@@ -331,53 +269,12 @@ void LoadAutoScaleStrategy::ToJsonObject(rapidjson::Value &value, rapidjson::Doc
         value.AddMember(iKey, m_scaleNum, allocator);
     }
 
-    if (m_loadMetricsHasBeenSet)
-    {
-        rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "LoadMetrics";
-        iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, rapidjson::Value(m_loadMetrics.c_str(), allocator).Move(), allocator);
-    }
-
-    if (m_metricIdHasBeenSet)
-    {
-        rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "MetricId";
-        iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, m_metricId, allocator);
-    }
-
-    if (m_statisticPeriodHasBeenSet)
-    {
-        rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "StatisticPeriod";
-        iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, m_statisticPeriod, allocator);
-    }
-
     if (m_processMethodHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
         string key = "ProcessMethod";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_processMethod, allocator);
-    }
-
-    if (m_triggerThresholdHasBeenSet)
-    {
-        rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "TriggerThreshold";
-        iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, m_triggerThreshold, allocator);
-    }
-
-    if (m_triggerConditionsHasBeenSet)
-    {
-        rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "TriggerConditions";
-        iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
-        m_triggerConditions.ToJsonObject(value[key.c_str()], allocator);
     }
 
     if (m_priorityHasBeenSet)
@@ -551,54 +448,6 @@ bool LoadAutoScaleStrategy::ScaleNumHasBeenSet() const
     return m_scaleNumHasBeenSet;
 }
 
-string LoadAutoScaleStrategy::GetLoadMetrics() const
-{
-    return m_loadMetrics;
-}
-
-void LoadAutoScaleStrategy::SetLoadMetrics(const string& _loadMetrics)
-{
-    m_loadMetrics = _loadMetrics;
-    m_loadMetricsHasBeenSet = true;
-}
-
-bool LoadAutoScaleStrategy::LoadMetricsHasBeenSet() const
-{
-    return m_loadMetricsHasBeenSet;
-}
-
-int64_t LoadAutoScaleStrategy::GetMetricId() const
-{
-    return m_metricId;
-}
-
-void LoadAutoScaleStrategy::SetMetricId(const int64_t& _metricId)
-{
-    m_metricId = _metricId;
-    m_metricIdHasBeenSet = true;
-}
-
-bool LoadAutoScaleStrategy::MetricIdHasBeenSet() const
-{
-    return m_metricIdHasBeenSet;
-}
-
-int64_t LoadAutoScaleStrategy::GetStatisticPeriod() const
-{
-    return m_statisticPeriod;
-}
-
-void LoadAutoScaleStrategy::SetStatisticPeriod(const int64_t& _statisticPeriod)
-{
-    m_statisticPeriod = _statisticPeriod;
-    m_statisticPeriodHasBeenSet = true;
-}
-
-bool LoadAutoScaleStrategy::StatisticPeriodHasBeenSet() const
-{
-    return m_statisticPeriodHasBeenSet;
-}
-
 int64_t LoadAutoScaleStrategy::GetProcessMethod() const
 {
     return m_processMethod;
@@ -613,38 +462,6 @@ void LoadAutoScaleStrategy::SetProcessMethod(const int64_t& _processMethod)
 bool LoadAutoScaleStrategy::ProcessMethodHasBeenSet() const
 {
     return m_processMethodHasBeenSet;
-}
-
-int64_t LoadAutoScaleStrategy::GetTriggerThreshold() const
-{
-    return m_triggerThreshold;
-}
-
-void LoadAutoScaleStrategy::SetTriggerThreshold(const int64_t& _triggerThreshold)
-{
-    m_triggerThreshold = _triggerThreshold;
-    m_triggerThresholdHasBeenSet = true;
-}
-
-bool LoadAutoScaleStrategy::TriggerThresholdHasBeenSet() const
-{
-    return m_triggerThresholdHasBeenSet;
-}
-
-TriggerConditions LoadAutoScaleStrategy::GetTriggerConditions() const
-{
-    return m_triggerConditions;
-}
-
-void LoadAutoScaleStrategy::SetTriggerConditions(const TriggerConditions& _triggerConditions)
-{
-    m_triggerConditions = _triggerConditions;
-    m_triggerConditionsHasBeenSet = true;
-}
-
-bool LoadAutoScaleStrategy::TriggerConditionsHasBeenSet() const
-{
-    return m_triggerConditionsHasBeenSet;
 }
 
 int64_t LoadAutoScaleStrategy::GetPriority() const

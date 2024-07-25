@@ -24,7 +24,9 @@ using namespace std;
 
 StopCLSDeliveryRequest::StopCLSDeliveryRequest() :
     m_instanceIdHasBeenSet(false),
-    m_cLSTopicIdsHasBeenSet(false)
+    m_cLSTopicIdsHasBeenSet(false),
+    m_logTypeHasBeenSet(false),
+    m_isInMaintainPeriodHasBeenSet(false)
 {
 }
 
@@ -54,6 +56,22 @@ string StopCLSDeliveryRequest::ToJsonString() const
         {
             d[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
         }
+    }
+
+    if (m_logTypeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "LogType";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_logType.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_isInMaintainPeriodHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "IsInMaintainPeriod";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_isInMaintainPeriod.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -94,6 +112,38 @@ void StopCLSDeliveryRequest::SetCLSTopicIds(const vector<string>& _cLSTopicIds)
 bool StopCLSDeliveryRequest::CLSTopicIdsHasBeenSet() const
 {
     return m_cLSTopicIdsHasBeenSet;
+}
+
+string StopCLSDeliveryRequest::GetLogType() const
+{
+    return m_logType;
+}
+
+void StopCLSDeliveryRequest::SetLogType(const string& _logType)
+{
+    m_logType = _logType;
+    m_logTypeHasBeenSet = true;
+}
+
+bool StopCLSDeliveryRequest::LogTypeHasBeenSet() const
+{
+    return m_logTypeHasBeenSet;
+}
+
+string StopCLSDeliveryRequest::GetIsInMaintainPeriod() const
+{
+    return m_isInMaintainPeriod;
+}
+
+void StopCLSDeliveryRequest::SetIsInMaintainPeriod(const string& _isInMaintainPeriod)
+{
+    m_isInMaintainPeriod = _isInMaintainPeriod;
+    m_isInMaintainPeriodHasBeenSet = true;
+}
+
+bool StopCLSDeliveryRequest::IsInMaintainPeriodHasBeenSet() const
+{
+    return m_isInMaintainPeriodHasBeenSet;
 }
 
 

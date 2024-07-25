@@ -304,6 +304,27 @@ namespace TencentCloud
                      */
                     bool NodeIpTypeHasBeenSet() const;
 
+                    /**
+                     * 获取供应商子账户同步标志
+                     * @return SubSyncFlag 供应商子账户同步标志
+                     * 
+                     */
+                    int64_t GetSubSyncFlag() const;
+
+                    /**
+                     * 设置供应商子账户同步标志
+                     * @param _subSyncFlag 供应商子账户同步标志
+                     * 
+                     */
+                    void SetSubSyncFlag(const int64_t& _subSyncFlag);
+
+                    /**
+                     * 判断参数 SubSyncFlag 是否已赋值
+                     * @return SubSyncFlag 是否已赋值
+                     * 
+                     */
+                    bool SubSyncFlagHasBeenSet() const;
+
                 private:
 
                     /**
@@ -379,6 +400,12 @@ namespace TencentCloud
                      */
                     int64_t m_nodeIpType;
                     bool m_nodeIpTypeHasBeenSet;
+
+                    /**
+                     * 供应商子账户同步标志
+                     */
+                    int64_t m_subSyncFlag;
+                    bool m_subSyncFlagHasBeenSet;
 
                 };
             }

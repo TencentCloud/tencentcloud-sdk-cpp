@@ -315,6 +315,8 @@
 #include <tencentcloud/tke/v20180525/model/DescribeRIUtilizationDetailResponse.h>
 #include <tencentcloud/tke/v20180525/model/DescribeRegionsRequest.h>
 #include <tencentcloud/tke/v20180525/model/DescribeRegionsResponse.h>
+#include <tencentcloud/tke/v20180525/model/DescribeReservedInstanceUtilizationRateRequest.h>
+#include <tencentcloud/tke/v20180525/model/DescribeReservedInstanceUtilizationRateResponse.h>
 #include <tencentcloud/tke/v20180525/model/DescribeReservedInstancesRequest.h>
 #include <tencentcloud/tke/v20180525/model/DescribeReservedInstancesResponse.h>
 #include <tencentcloud/tke/v20180525/model/DescribeResourceUsageRequest.h>
@@ -917,6 +919,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeRegionsResponse> DescribeRegionsOutcome;
                 typedef std::future<DescribeRegionsOutcome> DescribeRegionsOutcomeCallable;
                 typedef std::function<void(const TkeClient*, const Model::DescribeRegionsRequest&, DescribeRegionsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeRegionsAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeReservedInstanceUtilizationRateResponse> DescribeReservedInstanceUtilizationRateOutcome;
+                typedef std::future<DescribeReservedInstanceUtilizationRateOutcome> DescribeReservedInstanceUtilizationRateOutcomeCallable;
+                typedef std::function<void(const TkeClient*, const Model::DescribeReservedInstanceUtilizationRateRequest&, DescribeReservedInstanceUtilizationRateOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeReservedInstanceUtilizationRateAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeReservedInstancesResponse> DescribeReservedInstancesOutcome;
                 typedef std::future<DescribeReservedInstancesOutcome> DescribeReservedInstancesOutcomeCallable;
                 typedef std::function<void(const TkeClient*, const Model::DescribeReservedInstancesRequest&, DescribeReservedInstancesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeReservedInstancesAsyncHandler;
@@ -2460,6 +2465,15 @@ namespace TencentCloud
                 DescribeRegionsOutcome DescribeRegions(const Model::DescribeRegionsRequest &request);
                 void DescribeRegionsAsync(const Model::DescribeRegionsRequest& request, const DescribeRegionsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DescribeRegionsOutcomeCallable DescribeRegionsCallable(const Model::DescribeRegionsRequest& request);
+
+                /**
+                 *查询各种规格类型的预留券使用率
+                 * @param req DescribeReservedInstanceUtilizationRateRequest
+                 * @return DescribeReservedInstanceUtilizationRateOutcome
+                 */
+                DescribeReservedInstanceUtilizationRateOutcome DescribeReservedInstanceUtilizationRate(const Model::DescribeReservedInstanceUtilizationRateRequest &request);
+                void DescribeReservedInstanceUtilizationRateAsync(const Model::DescribeReservedInstanceUtilizationRateRequest& request, const DescribeReservedInstanceUtilizationRateAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeReservedInstanceUtilizationRateOutcomeCallable DescribeReservedInstanceUtilizationRateCallable(const Model::DescribeReservedInstanceUtilizationRateRequest& request);
 
                 /**
                  *查询预留实例列表

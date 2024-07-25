@@ -137,21 +137,21 @@ namespace TencentCloud
                     /**
                      * 获取*内测中，敬请期待*
                      * @return SubLabelCode *内测中，敬请期待*
-                     * 
+                     * @deprecated
                      */
                     std::string GetSubLabelCode() const;
 
                     /**
                      * 设置*内测中，敬请期待*
                      * @param _subLabelCode *内测中，敬请期待*
-                     * 
+                     * @deprecated
                      */
                     void SetSubLabelCode(const std::string& _subLabelCode);
 
                     /**
                      * 判断参数 SubLabelCode 是否已赋值
                      * @return SubLabelCode 是否已赋值
-                     * 
+                     * @deprecated
                      */
                     bool SubLabelCodeHasBeenSet() const;
 

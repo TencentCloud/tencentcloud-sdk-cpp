@@ -103,27 +103,6 @@ namespace TencentCloud
                     bool TimeSpanHasBeenSet() const;
 
                     /**
-                     * 获取节点变配的目标配置。
-                     * @return UpdateSpec 节点变配的目标配置。
-                     * 
-                     */
-                    UpdateInstanceSettings GetUpdateSpec() const;
-
-                    /**
-                     * 设置节点变配的目标配置。
-                     * @param _updateSpec 节点变配的目标配置。
-                     * 
-                     */
-                    void SetUpdateSpec(const UpdateInstanceSettings& _updateSpec);
-
-                    /**
-                     * 判断参数 UpdateSpec 是否已赋值
-                     * @return UpdateSpec 是否已赋值
-                     * 
-                     */
-                    bool UpdateSpecHasBeenSet() const;
-
-                    /**
                      * 获取实例计费模式。取值范围：
 <li>0：表示按量计费。</li>
 <li>1：表示包年包月。</li>
@@ -151,6 +130,27 @@ namespace TencentCloud
                      * 
                      */
                     bool PayModeHasBeenSet() const;
+
+                    /**
+                     * 获取节点变配的目标配置。
+                     * @return UpdateSpec 节点变配的目标配置。
+                     * 
+                     */
+                    UpdateInstanceSettings GetUpdateSpec() const;
+
+                    /**
+                     * 设置节点变配的目标配置。
+                     * @param _updateSpec 节点变配的目标配置。
+                     * 
+                     */
+                    void SetUpdateSpec(const UpdateInstanceSettings& _updateSpec);
+
+                    /**
+                     * 判断参数 UpdateSpec 是否已赋值
+                     * @return UpdateSpec 是否已赋值
+                     * 
+                     */
+                    bool UpdateSpecHasBeenSet() const;
 
                     /**
                      * 获取实例所在的位置。通过该参数可以指定实例所属可用区，所属项目等属性。
@@ -238,18 +238,18 @@ namespace TencentCloud
                     bool m_timeSpanHasBeenSet;
 
                     /**
-                     * 节点变配的目标配置。
-                     */
-                    UpdateInstanceSettings m_updateSpec;
-                    bool m_updateSpecHasBeenSet;
-
-                    /**
                      * 实例计费模式。取值范围：
 <li>0：表示按量计费。</li>
 <li>1：表示包年包月。</li>
                      */
                     uint64_t m_payMode;
                     bool m_payModeHasBeenSet;
+
+                    /**
+                     * 节点变配的目标配置。
+                     */
+                    UpdateInstanceSettings m_updateSpec;
+                    bool m_updateSpecHasBeenSet;
 
                     /**
                      * 实例所在的位置。通过该参数可以指定实例所属可用区，所属项目等属性。

@@ -22,6 +22,7 @@
 #include <map>
 #include <tencentcloud/core/AbstractModel.h>
 #include <tencentcloud/emr/v20190103/model/PriceDetail.h>
+#include <tencentcloud/emr/v20190103/model/PriceResult.h>
 
 
 namespace TencentCloud
@@ -128,6 +129,22 @@ namespace TencentCloud
                      */
                     bool PriceDetailHasBeenSet() const;
 
+                    /**
+                     * 获取新配置价格
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return NewConfigPrice 新配置价格
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    PriceResult GetNewConfigPrice() const;
+
+                    /**
+                     * 判断参数 NewConfigPrice 是否已赋值
+                     * @return NewConfigPrice 是否已赋值
+                     * 
+                     */
+                    bool NewConfigPriceHasBeenSet() const;
+
                 private:
 
                     /**
@@ -166,6 +183,13 @@ namespace TencentCloud
                      */
                     std::vector<PriceDetail> m_priceDetail;
                     bool m_priceDetailHasBeenSet;
+
+                    /**
+                     * 新配置价格
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    PriceResult m_newConfigPrice;
+                    bool m_newConfigPriceHasBeenSet;
 
                 };
             }

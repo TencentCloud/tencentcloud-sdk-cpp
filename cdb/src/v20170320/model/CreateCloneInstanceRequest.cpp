@@ -45,7 +45,8 @@ CreateCloneInstanceRequest::CreateCloneInstanceRequest() :
     m_cageIdHasBeenSet(false),
     m_projectIdHasBeenSet(false),
     m_payTypeHasBeenSet(false),
-    m_periodHasBeenSet(false)
+    m_periodHasBeenSet(false),
+    m_clusterTopologyHasBeenSet(false)
 {
 }
 
@@ -250,6 +251,15 @@ string CreateCloneInstanceRequest::ToJsonString() const
         string key = "Period";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_period, allocator);
+    }
+
+    if (m_clusterTopologyHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ClusterTopology";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_clusterTopology.ToJsonObject(d[key.c_str()], allocator);
     }
 
 
@@ -626,6 +636,22 @@ void CreateCloneInstanceRequest::SetPeriod(const int64_t& _period)
 bool CreateCloneInstanceRequest::PeriodHasBeenSet() const
 {
     return m_periodHasBeenSet;
+}
+
+ClusterTopology CreateCloneInstanceRequest::GetClusterTopology() const
+{
+    return m_clusterTopology;
+}
+
+void CreateCloneInstanceRequest::SetClusterTopology(const ClusterTopology& _clusterTopology)
+{
+    m_clusterTopology = _clusterTopology;
+    m_clusterTopologyHasBeenSet = true;
+}
+
+bool CreateCloneInstanceRequest::ClusterTopologyHasBeenSet() const
+{
+    return m_clusterTopologyHasBeenSet;
 }
 
 

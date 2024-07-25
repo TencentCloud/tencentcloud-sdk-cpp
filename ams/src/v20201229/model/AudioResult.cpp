@@ -33,7 +33,10 @@ AudioResult::AudioResult() :
     m_moanResultsHasBeenSet(false),
     m_languageResultsHasBeenSet(false),
     m_subLabelHasBeenSet(false),
-    m_recognitionResultsHasBeenSet(false)
+    m_recognitionResultsHasBeenSet(false),
+    m_speakerResultsHasBeenSet(false),
+    m_labelResultsHasBeenSet(false),
+    m_travelResultsHasBeenSet(false)
 {
 }
 
@@ -212,6 +215,66 @@ CoreInternalOutcome AudioResult::Deserialize(const rapidjson::Value &value)
         m_recognitionResultsHasBeenSet = true;
     }
 
+    if (value.HasMember("SpeakerResults") && !value["SpeakerResults"].IsNull())
+    {
+        if (!value["SpeakerResults"].IsArray())
+            return CoreInternalOutcome(Core::Error("response `AudioResult.SpeakerResults` is not array type"));
+
+        const rapidjson::Value &tmpValue = value["SpeakerResults"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            SpeakerResults item;
+            CoreInternalOutcome outcome = item.Deserialize(*itr);
+            if (!outcome.IsSuccess())
+            {
+                outcome.GetError().SetRequestId(requestId);
+                return outcome;
+            }
+            m_speakerResults.push_back(item);
+        }
+        m_speakerResultsHasBeenSet = true;
+    }
+
+    if (value.HasMember("LabelResults") && !value["LabelResults"].IsNull())
+    {
+        if (!value["LabelResults"].IsArray())
+            return CoreInternalOutcome(Core::Error("response `AudioResult.LabelResults` is not array type"));
+
+        const rapidjson::Value &tmpValue = value["LabelResults"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            LabelResults item;
+            CoreInternalOutcome outcome = item.Deserialize(*itr);
+            if (!outcome.IsSuccess())
+            {
+                outcome.GetError().SetRequestId(requestId);
+                return outcome;
+            }
+            m_labelResults.push_back(item);
+        }
+        m_labelResultsHasBeenSet = true;
+    }
+
+    if (value.HasMember("TravelResults") && !value["TravelResults"].IsNull())
+    {
+        if (!value["TravelResults"].IsArray())
+            return CoreInternalOutcome(Core::Error("response `AudioResult.TravelResults` is not array type"));
+
+        const rapidjson::Value &tmpValue = value["TravelResults"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            TravelResults item;
+            CoreInternalOutcome outcome = item.Deserialize(*itr);
+            if (!outcome.IsSuccess())
+            {
+                outcome.GetError().SetRequestId(requestId);
+                return outcome;
+            }
+            m_travelResults.push_back(item);
+        }
+        m_travelResultsHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -345,6 +408,51 @@ void AudioResult::ToJsonObject(rapidjson::Value &value, rapidjson::Document::All
 
         int i=0;
         for (auto itr = m_recognitionResults.begin(); itr != m_recognitionResults.end(); ++itr, ++i)
+        {
+            value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(value[key.c_str()][i], allocator);
+        }
+    }
+
+    if (m_speakerResultsHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "SpeakerResults";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_speakerResults.begin(); itr != m_speakerResults.end(); ++itr, ++i)
+        {
+            value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(value[key.c_str()][i], allocator);
+        }
+    }
+
+    if (m_labelResultsHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "LabelResults";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_labelResults.begin(); itr != m_labelResults.end(); ++itr, ++i)
+        {
+            value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(value[key.c_str()][i], allocator);
+        }
+    }
+
+    if (m_travelResultsHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "TravelResults";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_travelResults.begin(); itr != m_travelResults.end(); ++itr, ++i)
         {
             value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
             (*itr).ToJsonObject(value[key.c_str()][i], allocator);
@@ -560,5 +668,53 @@ void AudioResult::SetRecognitionResults(const vector<RecognitionResult>& _recogn
 bool AudioResult::RecognitionResultsHasBeenSet() const
 {
     return m_recognitionResultsHasBeenSet;
+}
+
+vector<SpeakerResults> AudioResult::GetSpeakerResults() const
+{
+    return m_speakerResults;
+}
+
+void AudioResult::SetSpeakerResults(const vector<SpeakerResults>& _speakerResults)
+{
+    m_speakerResults = _speakerResults;
+    m_speakerResultsHasBeenSet = true;
+}
+
+bool AudioResult::SpeakerResultsHasBeenSet() const
+{
+    return m_speakerResultsHasBeenSet;
+}
+
+vector<LabelResults> AudioResult::GetLabelResults() const
+{
+    return m_labelResults;
+}
+
+void AudioResult::SetLabelResults(const vector<LabelResults>& _labelResults)
+{
+    m_labelResults = _labelResults;
+    m_labelResultsHasBeenSet = true;
+}
+
+bool AudioResult::LabelResultsHasBeenSet() const
+{
+    return m_labelResultsHasBeenSet;
+}
+
+vector<TravelResults> AudioResult::GetTravelResults() const
+{
+    return m_travelResults;
+}
+
+void AudioResult::SetTravelResults(const vector<TravelResults>& _travelResults)
+{
+    m_travelResults = _travelResults;
+    m_travelResultsHasBeenSet = true;
+}
+
+bool AudioResult::TravelResultsHasBeenSet() const
+{
+    return m_travelResultsHasBeenSet;
 }
 

@@ -26,8 +26,11 @@ SubmitHunyuanImageJobRequest::SubmitHunyuanImageJobRequest() :
     m_promptHasBeenSet(false),
     m_styleHasBeenSet(false),
     m_resolutionHasBeenSet(false),
+    m_numHasBeenSet(false),
+    m_seedHasBeenSet(false),
+    m_reviseHasBeenSet(false),
     m_logoAddHasBeenSet(false),
-    m_reviseHasBeenSet(false)
+    m_logoParamHasBeenSet(false)
 {
 }
 
@@ -62,12 +65,20 @@ string SubmitHunyuanImageJobRequest::ToJsonString() const
         d.AddMember(iKey, rapidjson::Value(m_resolution.c_str(), allocator).Move(), allocator);
     }
 
-    if (m_logoAddHasBeenSet)
+    if (m_numHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "LogoAdd";
+        string key = "Num";
         iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, m_logoAdd, allocator);
+        d.AddMember(iKey, m_num, allocator);
+    }
+
+    if (m_seedHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Seed";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_seed, allocator);
     }
 
     if (m_reviseHasBeenSet)
@@ -76,6 +87,23 @@ string SubmitHunyuanImageJobRequest::ToJsonString() const
         string key = "Revise";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_revise, allocator);
+    }
+
+    if (m_logoAddHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "LogoAdd";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_logoAdd, allocator);
+    }
+
+    if (m_logoParamHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "LogoParam";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_logoParam.ToJsonObject(d[key.c_str()], allocator);
     }
 
 
@@ -134,20 +162,36 @@ bool SubmitHunyuanImageJobRequest::ResolutionHasBeenSet() const
     return m_resolutionHasBeenSet;
 }
 
-int64_t SubmitHunyuanImageJobRequest::GetLogoAdd() const
+int64_t SubmitHunyuanImageJobRequest::GetNum() const
 {
-    return m_logoAdd;
+    return m_num;
 }
 
-void SubmitHunyuanImageJobRequest::SetLogoAdd(const int64_t& _logoAdd)
+void SubmitHunyuanImageJobRequest::SetNum(const int64_t& _num)
 {
-    m_logoAdd = _logoAdd;
-    m_logoAddHasBeenSet = true;
+    m_num = _num;
+    m_numHasBeenSet = true;
 }
 
-bool SubmitHunyuanImageJobRequest::LogoAddHasBeenSet() const
+bool SubmitHunyuanImageJobRequest::NumHasBeenSet() const
 {
-    return m_logoAddHasBeenSet;
+    return m_numHasBeenSet;
+}
+
+int64_t SubmitHunyuanImageJobRequest::GetSeed() const
+{
+    return m_seed;
+}
+
+void SubmitHunyuanImageJobRequest::SetSeed(const int64_t& _seed)
+{
+    m_seed = _seed;
+    m_seedHasBeenSet = true;
+}
+
+bool SubmitHunyuanImageJobRequest::SeedHasBeenSet() const
+{
+    return m_seedHasBeenSet;
 }
 
 int64_t SubmitHunyuanImageJobRequest::GetRevise() const
@@ -164,6 +208,38 @@ void SubmitHunyuanImageJobRequest::SetRevise(const int64_t& _revise)
 bool SubmitHunyuanImageJobRequest::ReviseHasBeenSet() const
 {
     return m_reviseHasBeenSet;
+}
+
+int64_t SubmitHunyuanImageJobRequest::GetLogoAdd() const
+{
+    return m_logoAdd;
+}
+
+void SubmitHunyuanImageJobRequest::SetLogoAdd(const int64_t& _logoAdd)
+{
+    m_logoAdd = _logoAdd;
+    m_logoAddHasBeenSet = true;
+}
+
+bool SubmitHunyuanImageJobRequest::LogoAddHasBeenSet() const
+{
+    return m_logoAddHasBeenSet;
+}
+
+LogoParam SubmitHunyuanImageJobRequest::GetLogoParam() const
+{
+    return m_logoParam;
+}
+
+void SubmitHunyuanImageJobRequest::SetLogoParam(const LogoParam& _logoParam)
+{
+    m_logoParam = _logoParam;
+    m_logoParamHasBeenSet = true;
+}
+
+bool SubmitHunyuanImageJobRequest::LogoParamHasBeenSet() const
+{
+    return m_logoParamHasBeenSet;
 }
 
 

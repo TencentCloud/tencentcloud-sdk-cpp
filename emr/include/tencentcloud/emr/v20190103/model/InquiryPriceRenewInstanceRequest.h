@@ -86,27 +86,6 @@ namespace TencentCloud
                     bool ResourceIdsHasBeenSet() const;
 
                     /**
-                     * 获取实例所在的位置。通过该参数可以指定实例所属可用区，所属项目等属性。
-                     * @return Placement 实例所在的位置。通过该参数可以指定实例所属可用区，所属项目等属性。
-                     * 
-                     */
-                    Placement GetPlacement() const;
-
-                    /**
-                     * 设置实例所在的位置。通过该参数可以指定实例所属可用区，所属项目等属性。
-                     * @param _placement 实例所在的位置。通过该参数可以指定实例所属可用区，所属项目等属性。
-                     * 
-                     */
-                    void SetPlacement(const Placement& _placement);
-
-                    /**
-                     * 判断参数 Placement 是否已赋值
-                     * @return Placement 是否已赋值
-                     * 
-                     */
-                    bool PlacementHasBeenSet() const;
-
-                    /**
                      * 获取实例计费模式。此处只支持取值为1，表示包年包月。
                      * @return PayMode 实例计费模式。此处只支持取值为1，表示包年包月。
                      * 
@@ -178,6 +157,27 @@ namespace TencentCloud
                     bool CurrencyHasBeenSet() const;
 
                     /**
+                     * 获取实例所在的位置。通过该参数可以指定实例所属可用区，所属项目等属性。
+                     * @return Placement 实例所在的位置。通过该参数可以指定实例所属可用区，所属项目等属性。
+                     * 
+                     */
+                    Placement GetPlacement() const;
+
+                    /**
+                     * 设置实例所在的位置。通过该参数可以指定实例所属可用区，所属项目等属性。
+                     * @param _placement 实例所在的位置。通过该参数可以指定实例所属可用区，所属项目等属性。
+                     * 
+                     */
+                    void SetPlacement(const Placement& _placement);
+
+                    /**
+                     * 判断参数 Placement 是否已赋值
+                     * @return Placement 是否已赋值
+                     * 
+                     */
+                    bool PlacementHasBeenSet() const;
+
+                    /**
                      * 获取是否按量转包年包月。0：否，1：是。
                      * @return ModifyPayMode 是否按量转包年包月。0：否，1：是。
                      * 
@@ -213,12 +213,6 @@ namespace TencentCloud
                     bool m_resourceIdsHasBeenSet;
 
                     /**
-                     * 实例所在的位置。通过该参数可以指定实例所属可用区，所属项目等属性。
-                     */
-                    Placement m_placement;
-                    bool m_placementHasBeenSet;
-
-                    /**
                      * 实例计费模式。此处只支持取值为1，表示包年包月。
                      */
                     int64_t m_payMode;
@@ -237,6 +231,12 @@ namespace TencentCloud
                      */
                     std::string m_currency;
                     bool m_currencyHasBeenSet;
+
+                    /**
+                     * 实例所在的位置。通过该参数可以指定实例所属可用区，所属项目等属性。
+                     */
+                    Placement m_placement;
+                    bool m_placementHasBeenSet;
 
                     /**
                      * 是否按量转包年包月。0：否，1：是。

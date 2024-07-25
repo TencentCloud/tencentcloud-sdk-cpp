@@ -1029,6 +1029,49 @@ EmrClient::DescribeResourceScheduleOutcomeCallable EmrClient::DescribeResourceSc
     return task->get_future();
 }
 
+EmrClient::DescribeTrinoQueryInfoOutcome EmrClient::DescribeTrinoQueryInfo(const DescribeTrinoQueryInfoRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeTrinoQueryInfo");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeTrinoQueryInfoResponse rsp = DescribeTrinoQueryInfoResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeTrinoQueryInfoOutcome(rsp);
+        else
+            return DescribeTrinoQueryInfoOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeTrinoQueryInfoOutcome(outcome.GetError());
+    }
+}
+
+void EmrClient::DescribeTrinoQueryInfoAsync(const DescribeTrinoQueryInfoRequest& request, const DescribeTrinoQueryInfoAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeTrinoQueryInfo(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+EmrClient::DescribeTrinoQueryInfoOutcomeCallable EmrClient::DescribeTrinoQueryInfoCallable(const DescribeTrinoQueryInfoRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeTrinoQueryInfoOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeTrinoQueryInfo(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 EmrClient::DescribeUsersForUserManagerOutcome EmrClient::DescribeUsersForUserManager(const DescribeUsersForUserManagerRequest &request)
 {
     auto outcome = MakeRequest(request, "DescribeUsersForUserManager");

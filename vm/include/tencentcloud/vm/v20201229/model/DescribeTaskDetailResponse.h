@@ -26,6 +26,8 @@
 #include <tencentcloud/vm/v20201229/model/InputInfo.h>
 #include <tencentcloud/vm/v20201229/model/ImageSegments.h>
 #include <tencentcloud/vm/v20201229/model/AudioSegments.h>
+#include <tencentcloud/vm/v20201229/model/SegmentCosUrlList.h>
+#include <tencentcloud/vm/v20201229/model/RcbAsr.h>
 
 
 namespace TencentCloud
@@ -243,9 +245,9 @@ namespace TencentCloud
                     bool UpdatedAtHasBeenSet() const;
 
                     /**
-                     * 获取该字段用于返回视频中截帧审核的结果，详细返回内容敬请参考ImageSegments数据结构的描述。<br>备注：数据有效期为24小时，如需要延长存储时间，请在已配置的COS储存桶中设置。
+                     * 获取该字段用于返回视频中截帧审核的结果，详细返回内容敬请参考ImageSegments数据结构的描述。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return ImageSegments 该字段用于返回视频中截帧审核的结果，详细返回内容敬请参考ImageSegments数据结构的描述。<br>备注：数据有效期为24小时，如需要延长存储时间，请在已配置的COS储存桶中设置。
+                     * @return ImageSegments 该字段用于返回视频中截帧审核的结果，详细返回内容敬请参考ImageSegments数据结构的描述。
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -259,9 +261,9 @@ namespace TencentCloud
                     bool ImageSegmentsHasBeenSet() const;
 
                     /**
-                     * 获取该字段用于返回视频中音频审核的结果，详细返回内容敬请参考AudioSegments数据结构的描述。<br>备注：数据有效期为24小时，如需要延长存储时间，请在已配置的COS储存桶中设置。
+                     * 获取该字段用于返回视频中音频审核的结果，详细返回内容敬请参考AudioSegments数据结构的描述。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return AudioSegments 该字段用于返回视频中音频审核的结果，详细返回内容敬请参考AudioSegments数据结构的描述。<br>备注：数据有效期为24小时，如需要延长存储时间，请在已配置的COS储存桶中设置。
+                     * @return AudioSegments 该字段用于返回视频中音频审核的结果，详细返回内容敬请参考AudioSegments数据结构的描述。
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -325,6 +327,70 @@ namespace TencentCloud
                      * 
                      */
                     bool LabelHasBeenSet() const;
+
+                    /**
+                     * 获取该字段用于返回检测结果明细数据相关的cos url
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return SegmentCosUrlList 该字段用于返回检测结果明细数据相关的cos url
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    SegmentCosUrlList GetSegmentCosUrlList() const;
+
+                    /**
+                     * 判断参数 SegmentCosUrlList 是否已赋值
+                     * @return SegmentCosUrlList 是否已赋值
+                     * 
+                     */
+                    bool SegmentCosUrlListHasBeenSet() const;
+
+                    /**
+                     * 获取该字段用于返回音频审核的ASR识别结果
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return AudioText 该字段用于返回音频审核的ASR识别结果
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::string GetAudioText() const;
+
+                    /**
+                     * 判断参数 AudioText 是否已赋值
+                     * @return AudioText 是否已赋值
+                     * 
+                     */
+                    bool AudioTextHasBeenSet() const;
+
+                    /**
+                     * 获取在秒后重试
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return TryInSeconds 在秒后重试
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    int64_t GetTryInSeconds() const;
+
+                    /**
+                     * 判断参数 TryInSeconds 是否已赋值
+                     * @return TryInSeconds 是否已赋值
+                     * 
+                     */
+                    bool TryInSecondsHasBeenSet() const;
+
+                    /**
+                     * 获取该字段用于返回音频文件识别出的对应文本内容。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return Asrs 该字段用于返回音频文件识别出的对应文本内容。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::vector<RcbAsr> GetAsrs() const;
+
+                    /**
+                     * 判断参数 Asrs 是否已赋值
+                     * @return Asrs 是否已赋值
+                     * 
+                     */
+                    bool AsrsHasBeenSet() const;
 
                 private:
 
@@ -414,14 +480,14 @@ namespace TencentCloud
                     bool m_updatedAtHasBeenSet;
 
                     /**
-                     * 该字段用于返回视频中截帧审核的结果，详细返回内容敬请参考ImageSegments数据结构的描述。<br>备注：数据有效期为24小时，如需要延长存储时间，请在已配置的COS储存桶中设置。
+                     * 该字段用于返回视频中截帧审核的结果，详细返回内容敬请参考ImageSegments数据结构的描述。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<ImageSegments> m_imageSegments;
                     bool m_imageSegmentsHasBeenSet;
 
                     /**
-                     * 该字段用于返回视频中音频审核的结果，详细返回内容敬请参考AudioSegments数据结构的描述。<br>备注：数据有效期为24小时，如需要延长存储时间，请在已配置的COS储存桶中设置。
+                     * 该字段用于返回视频中音频审核的结果，详细返回内容敬请参考AudioSegments数据结构的描述。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<AudioSegments> m_audioSegments;
@@ -449,6 +515,34 @@ namespace TencentCloud
                      */
                     std::string m_label;
                     bool m_labelHasBeenSet;
+
+                    /**
+                     * 该字段用于返回检测结果明细数据相关的cos url
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    SegmentCosUrlList m_segmentCosUrlList;
+                    bool m_segmentCosUrlListHasBeenSet;
+
+                    /**
+                     * 该字段用于返回音频审核的ASR识别结果
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_audioText;
+                    bool m_audioTextHasBeenSet;
+
+                    /**
+                     * 在秒后重试
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    int64_t m_tryInSeconds;
+                    bool m_tryInSecondsHasBeenSet;
+
+                    /**
+                     * 该字段用于返回音频文件识别出的对应文本内容。
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::vector<RcbAsr> m_asrs;
+                    bool m_asrsHasBeenSet;
 
                 };
             }
