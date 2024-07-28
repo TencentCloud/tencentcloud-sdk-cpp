@@ -224,6 +224,27 @@ namespace TencentCloud
                      */
                     bool SealTypesHasBeenSet() const;
 
+                    /**
+                     * 获取他方授权给我方：- false：我方授权他方，AuthorizedOrganizationName代表【被授权方】企业名称- true：他方授权我方，AuthorizedOrganizationName代表【授权方】企业名称
+                     * @return AuthToMe 他方授权给我方：- false：我方授权他方，AuthorizedOrganizationName代表【被授权方】企业名称- true：他方授权我方，AuthorizedOrganizationName代表【授权方】企业名称
+                     * 
+                     */
+                    bool GetAuthToMe() const;
+
+                    /**
+                     * 设置他方授权给我方：- false：我方授权他方，AuthorizedOrganizationName代表【被授权方】企业名称- true：他方授权我方，AuthorizedOrganizationName代表【授权方】企业名称
+                     * @param _authToMe 他方授权给我方：- false：我方授权他方，AuthorizedOrganizationName代表【被授权方】企业名称- true：他方授权我方，AuthorizedOrganizationName代表【授权方】企业名称
+                     * 
+                     */
+                    void SetAuthToMe(const bool& _authToMe);
+
+                    /**
+                     * 判断参数 AuthToMe 是否已赋值
+                     * @return AuthToMe 是否已赋值
+                     * 
+                     */
+                    bool AuthToMeHasBeenSet() const;
+
                 private:
 
                     /**
@@ -274,6 +295,12 @@ namespace TencentCloud
                      */
                     std::vector<std::string> m_sealTypes;
                     bool m_sealTypesHasBeenSet;
+
+                    /**
+                     * 他方授权给我方：- false：我方授权他方，AuthorizedOrganizationName代表【被授权方】企业名称- true：他方授权我方，AuthorizedOrganizationName代表【授权方】企业名称
+                     */
+                    bool m_authToMe;
+                    bool m_authToMeHasBeenSet;
 
                 };
             }

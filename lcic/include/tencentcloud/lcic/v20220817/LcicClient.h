@@ -143,6 +143,8 @@
 #include <tencentcloud/lcic/v20220817/model/StartRoomResponse.h>
 #include <tencentcloud/lcic/v20220817/model/UnbindDocumentFromRoomRequest.h>
 #include <tencentcloud/lcic/v20220817/model/UnbindDocumentFromRoomResponse.h>
+#include <tencentcloud/lcic/v20220817/model/UnblockKickedUserRequest.h>
+#include <tencentcloud/lcic/v20220817/model/UnblockKickedUserResponse.h>
 
 
 namespace TencentCloud
@@ -337,6 +339,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::UnbindDocumentFromRoomResponse> UnbindDocumentFromRoomOutcome;
                 typedef std::future<UnbindDocumentFromRoomOutcome> UnbindDocumentFromRoomOutcomeCallable;
                 typedef std::function<void(const LcicClient*, const Model::UnbindDocumentFromRoomRequest&, UnbindDocumentFromRoomOutcome, const std::shared_ptr<const AsyncCallerContext>&)> UnbindDocumentFromRoomAsyncHandler;
+                typedef Outcome<Core::Error, Model::UnblockKickedUserResponse> UnblockKickedUserOutcome;
+                typedef std::future<UnblockKickedUserOutcome> UnblockKickedUserOutcomeCallable;
+                typedef std::function<void(const LcicClient*, const Model::UnblockKickedUserRequest&, UnblockKickedUserOutcome, const std::shared_ptr<const AsyncCallerContext>&)> UnblockKickedUserAsyncHandler;
 
 
 
@@ -883,6 +888,15 @@ namespace TencentCloud
                 UnbindDocumentFromRoomOutcome UnbindDocumentFromRoom(const Model::UnbindDocumentFromRoomRequest &request);
                 void UnbindDocumentFromRoomAsync(const Model::UnbindDocumentFromRoomRequest& request, const UnbindDocumentFromRoomAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 UnbindDocumentFromRoomOutcomeCallable UnbindDocumentFromRoomCallable(const Model::UnbindDocumentFromRoomRequest& request);
+
+                /**
+                 *解禁从房间里面踢出的用户
+                 * @param req UnblockKickedUserRequest
+                 * @return UnblockKickedUserOutcome
+                 */
+                UnblockKickedUserOutcome UnblockKickedUser(const Model::UnblockKickedUserRequest &request);
+                void UnblockKickedUserAsync(const Model::UnblockKickedUserRequest& request, const UnblockKickedUserAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                UnblockKickedUserOutcomeCallable UnblockKickedUserCallable(const Model::UnblockKickedUserRequest& request);
 
             };
         }

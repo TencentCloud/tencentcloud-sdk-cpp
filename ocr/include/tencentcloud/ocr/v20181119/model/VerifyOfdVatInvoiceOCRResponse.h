@@ -325,6 +325,20 @@ namespace TencentCloud
                      */
                     bool RailwayTicketInfoHasBeenSet() const;
 
+                    /**
+                     * 获取发票标题
+                     * @return InvoiceTitle 发票标题
+                     * 
+                     */
+                    std::string GetInvoiceTitle() const;
+
+                    /**
+                     * 判断参数 InvoiceTitle 是否已赋值
+                     * @return InvoiceTitle 是否已赋值
+                     * 
+                     */
+                    bool InvoiceTitleHasBeenSet() const;
+
                 private:
 
                     /**
@@ -446,6 +460,12 @@ namespace TencentCloud
                      */
                     RailwayTicketInfo m_railwayTicketInfo;
                     bool m_railwayTicketInfoHasBeenSet;
+
+                    /**
+                     * 发票标题
+                     */
+                    std::string m_invoiceTitle;
+                    bool m_invoiceTitleHasBeenSet;
 
                 };
             }

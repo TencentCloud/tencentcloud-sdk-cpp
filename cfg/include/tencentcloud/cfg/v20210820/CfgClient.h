@@ -23,10 +23,18 @@
 #include <tencentcloud/core/Credential.h>
 #include <tencentcloud/core/profile/ClientProfile.h>
 #include <tencentcloud/core/AsyncCallerContext.h>
+#include <tencentcloud/cfg/v20210820/model/CreateTaskFromActionRequest.h>
+#include <tencentcloud/cfg/v20210820/model/CreateTaskFromActionResponse.h>
 #include <tencentcloud/cfg/v20210820/model/CreateTaskFromTemplateRequest.h>
 #include <tencentcloud/cfg/v20210820/model/CreateTaskFromTemplateResponse.h>
 #include <tencentcloud/cfg/v20210820/model/DeleteTaskRequest.h>
 #include <tencentcloud/cfg/v20210820/model/DeleteTaskResponse.h>
+#include <tencentcloud/cfg/v20210820/model/DescribeActionFieldConfigListRequest.h>
+#include <tencentcloud/cfg/v20210820/model/DescribeActionFieldConfigListResponse.h>
+#include <tencentcloud/cfg/v20210820/model/DescribeActionLibraryListRequest.h>
+#include <tencentcloud/cfg/v20210820/model/DescribeActionLibraryListResponse.h>
+#include <tencentcloud/cfg/v20210820/model/DescribeObjectTypeListRequest.h>
+#include <tencentcloud/cfg/v20210820/model/DescribeObjectTypeListResponse.h>
 #include <tencentcloud/cfg/v20210820/model/DescribeTaskRequest.h>
 #include <tencentcloud/cfg/v20210820/model/DescribeTaskResponse.h>
 #include <tencentcloud/cfg/v20210820/model/DescribeTaskExecuteLogsRequest.h>
@@ -61,12 +69,24 @@ namespace TencentCloud
                 CfgClient(const Credential &credential, const std::string &region);
                 CfgClient(const Credential &credential, const std::string &region, const ClientProfile &profile);
 
+                typedef Outcome<Core::Error, Model::CreateTaskFromActionResponse> CreateTaskFromActionOutcome;
+                typedef std::future<CreateTaskFromActionOutcome> CreateTaskFromActionOutcomeCallable;
+                typedef std::function<void(const CfgClient*, const Model::CreateTaskFromActionRequest&, CreateTaskFromActionOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateTaskFromActionAsyncHandler;
                 typedef Outcome<Core::Error, Model::CreateTaskFromTemplateResponse> CreateTaskFromTemplateOutcome;
                 typedef std::future<CreateTaskFromTemplateOutcome> CreateTaskFromTemplateOutcomeCallable;
                 typedef std::function<void(const CfgClient*, const Model::CreateTaskFromTemplateRequest&, CreateTaskFromTemplateOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateTaskFromTemplateAsyncHandler;
                 typedef Outcome<Core::Error, Model::DeleteTaskResponse> DeleteTaskOutcome;
                 typedef std::future<DeleteTaskOutcome> DeleteTaskOutcomeCallable;
                 typedef std::function<void(const CfgClient*, const Model::DeleteTaskRequest&, DeleteTaskOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteTaskAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeActionFieldConfigListResponse> DescribeActionFieldConfigListOutcome;
+                typedef std::future<DescribeActionFieldConfigListOutcome> DescribeActionFieldConfigListOutcomeCallable;
+                typedef std::function<void(const CfgClient*, const Model::DescribeActionFieldConfigListRequest&, DescribeActionFieldConfigListOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeActionFieldConfigListAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeActionLibraryListResponse> DescribeActionLibraryListOutcome;
+                typedef std::future<DescribeActionLibraryListOutcome> DescribeActionLibraryListOutcomeCallable;
+                typedef std::function<void(const CfgClient*, const Model::DescribeActionLibraryListRequest&, DescribeActionLibraryListOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeActionLibraryListAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeObjectTypeListResponse> DescribeObjectTypeListOutcome;
+                typedef std::future<DescribeObjectTypeListOutcome> DescribeObjectTypeListOutcomeCallable;
+                typedef std::function<void(const CfgClient*, const Model::DescribeObjectTypeListRequest&, DescribeObjectTypeListOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeObjectTypeListAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeTaskResponse> DescribeTaskOutcome;
                 typedef std::future<DescribeTaskOutcome> DescribeTaskOutcomeCallable;
                 typedef std::function<void(const CfgClient*, const Model::DescribeTaskRequest&, DescribeTaskOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeTaskAsyncHandler;
@@ -101,6 +121,15 @@ namespace TencentCloud
 
 
                 /**
+                 *从动作创建演练
+                 * @param req CreateTaskFromActionRequest
+                 * @return CreateTaskFromActionOutcome
+                 */
+                CreateTaskFromActionOutcome CreateTaskFromAction(const Model::CreateTaskFromActionRequest &request);
+                void CreateTaskFromActionAsync(const Model::CreateTaskFromActionRequest& request, const CreateTaskFromActionAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                CreateTaskFromActionOutcomeCallable CreateTaskFromActionCallable(const Model::CreateTaskFromActionRequest& request);
+
+                /**
                  *从经验库创建演练
                  * @param req CreateTaskFromTemplateRequest
                  * @return CreateTaskFromTemplateOutcome
@@ -117,6 +146,33 @@ namespace TencentCloud
                 DeleteTaskOutcome DeleteTask(const Model::DeleteTaskRequest &request);
                 void DeleteTaskAsync(const Model::DeleteTaskRequest& request, const DeleteTaskAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DeleteTaskOutcomeCallable DeleteTaskCallable(const Model::DeleteTaskRequest& request);
+
+                /**
+                 *根据动作ID获取动作栏位动态配置参数信息，里面包含动作自有和通用两部分参数。
+                 * @param req DescribeActionFieldConfigListRequest
+                 * @return DescribeActionFieldConfigListOutcome
+                 */
+                DescribeActionFieldConfigListOutcome DescribeActionFieldConfigList(const Model::DescribeActionFieldConfigListRequest &request);
+                void DescribeActionFieldConfigListAsync(const Model::DescribeActionFieldConfigListRequest& request, const DescribeActionFieldConfigListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeActionFieldConfigListOutcomeCallable DescribeActionFieldConfigListCallable(const Model::DescribeActionFieldConfigListRequest& request);
+
+                /**
+                 *获取混沌演练平台的动作库列表
+                 * @param req DescribeActionLibraryListRequest
+                 * @return DescribeActionLibraryListOutcome
+                 */
+                DescribeActionLibraryListOutcome DescribeActionLibraryList(const Model::DescribeActionLibraryListRequest &request);
+                void DescribeActionLibraryListAsync(const Model::DescribeActionLibraryListRequest& request, const DescribeActionLibraryListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeActionLibraryListOutcomeCallable DescribeActionLibraryListCallable(const Model::DescribeActionLibraryListRequest& request);
+
+                /**
+                 *查询对象类型列表
+                 * @param req DescribeObjectTypeListRequest
+                 * @return DescribeObjectTypeListOutcome
+                 */
+                DescribeObjectTypeListOutcome DescribeObjectTypeList(const Model::DescribeObjectTypeListRequest &request);
+                void DescribeObjectTypeListAsync(const Model::DescribeObjectTypeListRequest& request, const DescribeObjectTypeListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeObjectTypeListOutcomeCallable DescribeObjectTypeListCallable(const Model::DescribeObjectTypeListRequest& request);
 
                 /**
                  *查询任务

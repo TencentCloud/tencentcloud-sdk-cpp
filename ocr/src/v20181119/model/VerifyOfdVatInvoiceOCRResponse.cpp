@@ -42,7 +42,8 @@ VerifyOfdVatInvoiceOCRResponse::VerifyOfdVatInvoiceOCRResponse() :
     m_noteHasBeenSet(false),
     m_goodsInfosHasBeenSet(false),
     m_airTicketInfoHasBeenSet(false),
-    m_railwayTicketInfoHasBeenSet(false)
+    m_railwayTicketInfoHasBeenSet(false),
+    m_invoiceTitleHasBeenSet(false)
 {
 }
 
@@ -308,6 +309,16 @@ CoreInternalOutcome VerifyOfdVatInvoiceOCRResponse::Deserialize(const string &pa
         m_railwayTicketInfoHasBeenSet = true;
     }
 
+    if (rsp.HasMember("InvoiceTitle") && !rsp["InvoiceTitle"].IsNull())
+    {
+        if (!rsp["InvoiceTitle"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `InvoiceTitle` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_invoiceTitle = string(rsp["InvoiceTitle"].GetString());
+        m_invoiceTitleHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -479,6 +490,14 @@ string VerifyOfdVatInvoiceOCRResponse::ToJsonString() const
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
         m_railwayTicketInfo.ToJsonObject(value[key.c_str()], allocator);
+    }
+
+    if (m_invoiceTitleHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "InvoiceTitle";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_invoiceTitle.c_str(), allocator).Move(), allocator);
     }
 
     rapidjson::Value iKey(rapidjson::kStringType);
@@ -681,6 +700,16 @@ RailwayTicketInfo VerifyOfdVatInvoiceOCRResponse::GetRailwayTicketInfo() const
 bool VerifyOfdVatInvoiceOCRResponse::RailwayTicketInfoHasBeenSet() const
 {
     return m_railwayTicketInfoHasBeenSet;
+}
+
+string VerifyOfdVatInvoiceOCRResponse::GetInvoiceTitle() const
+{
+    return m_invoiceTitle;
+}
+
+bool VerifyOfdVatInvoiceOCRResponse::InvoiceTitleHasBeenSet() const
+{
+    return m_invoiceTitleHasBeenSet;
 }
 
 

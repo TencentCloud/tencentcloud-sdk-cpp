@@ -126,6 +126,49 @@ VclmClient::DescribeImageAnimateJobOutcomeCallable VclmClient::DescribeImageAnim
     return task->get_future();
 }
 
+VclmClient::DescribePortraitSingJobOutcome VclmClient::DescribePortraitSingJob(const DescribePortraitSingJobRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribePortraitSingJob");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribePortraitSingJobResponse rsp = DescribePortraitSingJobResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribePortraitSingJobOutcome(rsp);
+        else
+            return DescribePortraitSingJobOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribePortraitSingJobOutcome(outcome.GetError());
+    }
+}
+
+void VclmClient::DescribePortraitSingJobAsync(const DescribePortraitSingJobRequest& request, const DescribePortraitSingJobAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribePortraitSingJob(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+VclmClient::DescribePortraitSingJobOutcomeCallable VclmClient::DescribePortraitSingJobCallable(const DescribePortraitSingJobRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribePortraitSingJobOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribePortraitSingJob(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 VclmClient::DescribeVideoStylizationJobOutcome VclmClient::DescribeVideoStylizationJob(const DescribeVideoStylizationJobRequest &request)
 {
     auto outcome = MakeRequest(request, "DescribeVideoStylizationJob");
@@ -248,6 +291,49 @@ VclmClient::SubmitImageAnimateJobOutcomeCallable VclmClient::SubmitImageAnimateJ
         [this, request]()
         {
             return this->SubmitImageAnimateJob(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+VclmClient::SubmitPortraitSingJobOutcome VclmClient::SubmitPortraitSingJob(const SubmitPortraitSingJobRequest &request)
+{
+    auto outcome = MakeRequest(request, "SubmitPortraitSingJob");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        SubmitPortraitSingJobResponse rsp = SubmitPortraitSingJobResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return SubmitPortraitSingJobOutcome(rsp);
+        else
+            return SubmitPortraitSingJobOutcome(o.GetError());
+    }
+    else
+    {
+        return SubmitPortraitSingJobOutcome(outcome.GetError());
+    }
+}
+
+void VclmClient::SubmitPortraitSingJobAsync(const SubmitPortraitSingJobRequest& request, const SubmitPortraitSingJobAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->SubmitPortraitSingJob(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+VclmClient::SubmitPortraitSingJobOutcomeCallable VclmClient::SubmitPortraitSingJobCallable(const SubmitPortraitSingJobRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<SubmitPortraitSingJobOutcome()>>(
+        [this, request]()
+        {
+            return this->SubmitPortraitSingJob(request);
         }
     );
 

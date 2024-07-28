@@ -40,6 +40,49 @@ CfgClient::CfgClient(const Credential &credential, const string &region, const C
 }
 
 
+CfgClient::CreateTaskFromActionOutcome CfgClient::CreateTaskFromAction(const CreateTaskFromActionRequest &request)
+{
+    auto outcome = MakeRequest(request, "CreateTaskFromAction");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        CreateTaskFromActionResponse rsp = CreateTaskFromActionResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return CreateTaskFromActionOutcome(rsp);
+        else
+            return CreateTaskFromActionOutcome(o.GetError());
+    }
+    else
+    {
+        return CreateTaskFromActionOutcome(outcome.GetError());
+    }
+}
+
+void CfgClient::CreateTaskFromActionAsync(const CreateTaskFromActionRequest& request, const CreateTaskFromActionAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->CreateTaskFromAction(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+CfgClient::CreateTaskFromActionOutcomeCallable CfgClient::CreateTaskFromActionCallable(const CreateTaskFromActionRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<CreateTaskFromActionOutcome()>>(
+        [this, request]()
+        {
+            return this->CreateTaskFromAction(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 CfgClient::CreateTaskFromTemplateOutcome CfgClient::CreateTaskFromTemplate(const CreateTaskFromTemplateRequest &request)
 {
     auto outcome = MakeRequest(request, "CreateTaskFromTemplate");
@@ -119,6 +162,135 @@ CfgClient::DeleteTaskOutcomeCallable CfgClient::DeleteTaskCallable(const DeleteT
         [this, request]()
         {
             return this->DeleteTask(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+CfgClient::DescribeActionFieldConfigListOutcome CfgClient::DescribeActionFieldConfigList(const DescribeActionFieldConfigListRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeActionFieldConfigList");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeActionFieldConfigListResponse rsp = DescribeActionFieldConfigListResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeActionFieldConfigListOutcome(rsp);
+        else
+            return DescribeActionFieldConfigListOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeActionFieldConfigListOutcome(outcome.GetError());
+    }
+}
+
+void CfgClient::DescribeActionFieldConfigListAsync(const DescribeActionFieldConfigListRequest& request, const DescribeActionFieldConfigListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeActionFieldConfigList(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+CfgClient::DescribeActionFieldConfigListOutcomeCallable CfgClient::DescribeActionFieldConfigListCallable(const DescribeActionFieldConfigListRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeActionFieldConfigListOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeActionFieldConfigList(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+CfgClient::DescribeActionLibraryListOutcome CfgClient::DescribeActionLibraryList(const DescribeActionLibraryListRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeActionLibraryList");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeActionLibraryListResponse rsp = DescribeActionLibraryListResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeActionLibraryListOutcome(rsp);
+        else
+            return DescribeActionLibraryListOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeActionLibraryListOutcome(outcome.GetError());
+    }
+}
+
+void CfgClient::DescribeActionLibraryListAsync(const DescribeActionLibraryListRequest& request, const DescribeActionLibraryListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeActionLibraryList(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+CfgClient::DescribeActionLibraryListOutcomeCallable CfgClient::DescribeActionLibraryListCallable(const DescribeActionLibraryListRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeActionLibraryListOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeActionLibraryList(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+CfgClient::DescribeObjectTypeListOutcome CfgClient::DescribeObjectTypeList(const DescribeObjectTypeListRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeObjectTypeList");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeObjectTypeListResponse rsp = DescribeObjectTypeListResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeObjectTypeListOutcome(rsp);
+        else
+            return DescribeObjectTypeListOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeObjectTypeListOutcome(outcome.GetError());
+    }
+}
+
+void CfgClient::DescribeObjectTypeListAsync(const DescribeObjectTypeListRequest& request, const DescribeObjectTypeListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeObjectTypeList(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+CfgClient::DescribeObjectTypeListOutcomeCallable CfgClient::DescribeObjectTypeListCallable(const DescribeObjectTypeListRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeObjectTypeListOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeObjectTypeList(request);
         }
     );
 

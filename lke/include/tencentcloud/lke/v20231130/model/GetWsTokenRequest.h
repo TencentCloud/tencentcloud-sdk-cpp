@@ -65,15 +65,15 @@ namespace TencentCloud
                     bool TypeHasBeenSet() const;
 
                     /**
-                     * 获取应用AppKey
-                     * @return BotAppKey 应用AppKey
+                     * 获取应用AppKey（应用发布后在应用页面[发布管理]-[调用信息]-[API管理]处获取）
+                     * @return BotAppKey 应用AppKey（应用发布后在应用页面[发布管理]-[调用信息]-[API管理]处获取）
                      * 
                      */
                     std::string GetBotAppKey() const;
 
                     /**
-                     * 设置应用AppKey
-                     * @param _botAppKey 应用AppKey
+                     * 设置应用AppKey（应用发布后在应用页面[发布管理]-[调用信息]-[API管理]处获取）
+                     * @param _botAppKey 应用AppKey（应用发布后在应用页面[发布管理]-[调用信息]-[API管理]处获取）
                      * 
                      */
                     void SetBotAppKey(const std::string& _botAppKey);
@@ -86,15 +86,15 @@ namespace TencentCloud
                     bool BotAppKeyHasBeenSet() const;
 
                     /**
-                     * 获取坐席ID
-                     * @return VisitorBizId 坐席ID
+                     * 获取访客ID（外部输入，建议唯一，标识当前接入会话的用户）
+                     * @return VisitorBizId 访客ID（外部输入，建议唯一，标识当前接入会话的用户）
                      * 
                      */
                     std::string GetVisitorBizId() const;
 
                     /**
-                     * 设置坐席ID
-                     * @param _visitorBizId 坐席ID
+                     * 设置访客ID（外部输入，建议唯一，标识当前接入会话的用户）
+                     * @param _visitorBizId 访客ID（外部输入，建议唯一，标识当前接入会话的用户）
                      * 
                      */
                     void SetVisitorBizId(const std::string& _visitorBizId);
@@ -107,15 +107,15 @@ namespace TencentCloud
                     bool VisitorBizIdHasBeenSet() const;
 
                     /**
-                     * 获取坐席标签
-                     * @return VisitorLabels 坐席标签
+                     * 获取知识标签（用于知识库中知识的检索过滤）
+                     * @return VisitorLabels 知识标签（用于知识库中知识的检索过滤）
                      * 
                      */
                     std::vector<GetWsTokenReq_Label> GetVisitorLabels() const;
 
                     /**
-                     * 设置坐席标签
-                     * @param _visitorLabels 坐席标签
+                     * 设置知识标签（用于知识库中知识的检索过滤）
+                     * @param _visitorLabels 知识标签（用于知识库中知识的检索过滤）
                      * 
                      */
                     void SetVisitorLabels(const std::vector<GetWsTokenReq_Label>& _visitorLabels);
@@ -136,19 +136,19 @@ namespace TencentCloud
                     bool m_typeHasBeenSet;
 
                     /**
-                     * 应用AppKey
+                     * 应用AppKey（应用发布后在应用页面[发布管理]-[调用信息]-[API管理]处获取）
                      */
                     std::string m_botAppKey;
                     bool m_botAppKeyHasBeenSet;
 
                     /**
-                     * 坐席ID
+                     * 访客ID（外部输入，建议唯一，标识当前接入会话的用户）
                      */
                     std::string m_visitorBizId;
                     bool m_visitorBizIdHasBeenSet;
 
                     /**
-                     * 坐席标签
+                     * 知识标签（用于知识库中知识的检索过滤）
                      */
                     std::vector<GetWsTokenReq_Label> m_visitorLabels;
                     bool m_visitorLabelsHasBeenSet;

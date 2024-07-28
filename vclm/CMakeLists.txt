@@ -23,17 +23,21 @@ set(vclm_public_header_model
   include/tencentcloud/vclm/v20240523/model/SubmitVideoStylizationJobRequest.h
   include/tencentcloud/vclm/v20240523/model/ConfirmVideoTranslateJobRequest.h
   include/tencentcloud/vclm/v20240523/model/DescribeVideoStylizationJobRequest.h
+  include/tencentcloud/vclm/v20240523/model/DescribePortraitSingJobRequest.h
   include/tencentcloud/vclm/v20240523/model/DescribeImageAnimateJobResponse.h
+  include/tencentcloud/vclm/v20240523/model/SubmitPortraitSingJobRequest.h
+  include/tencentcloud/vclm/v20240523/model/TranslateResult.h
   include/tencentcloud/vclm/v20240523/model/SubmitImageAnimateJobResponse.h
   include/tencentcloud/vclm/v20240523/model/ConfirmVideoTranslateJobResponse.h
   include/tencentcloud/vclm/v20240523/model/SubmitVideoTranslateJobResponse.h
   include/tencentcloud/vclm/v20240523/model/DescribeVideoTranslateJobRequest.h
+  include/tencentcloud/vclm/v20240523/model/SubmitVideoStylizationJobResponse.h
   include/tencentcloud/vclm/v20240523/model/DescribeVideoStylizationJobResponse.h
   include/tencentcloud/vclm/v20240523/model/SubmitImageAnimateJobRequest.h
   include/tencentcloud/vclm/v20240523/model/DescribeImageAnimateJobRequest.h
-  include/tencentcloud/vclm/v20240523/model/SubmitVideoStylizationJobResponse.h
+  include/tencentcloud/vclm/v20240523/model/DescribePortraitSingJobResponse.h
   include/tencentcloud/vclm/v20240523/model/SubmitVideoTranslateJobRequest.h
-  include/tencentcloud/vclm/v20240523/model/TranslateResult.h
+  include/tencentcloud/vclm/v20240523/model/SubmitPortraitSingJobResponse.h
   include/tencentcloud/vclm/v20240523/model/DescribeVideoTranslateJobResponse.h
   )
 
@@ -43,17 +47,21 @@ set(vclm_src
   src/v20240523/model/SubmitVideoStylizationJobRequest.cpp
   src/v20240523/model/ConfirmVideoTranslateJobRequest.cpp
   src/v20240523/model/DescribeVideoStylizationJobRequest.cpp
+  src/v20240523/model/DescribePortraitSingJobRequest.cpp
   src/v20240523/model/DescribeImageAnimateJobResponse.cpp
+  src/v20240523/model/SubmitPortraitSingJobRequest.cpp
+  src/v20240523/model/TranslateResult.cpp
   src/v20240523/model/SubmitImageAnimateJobResponse.cpp
   src/v20240523/model/ConfirmVideoTranslateJobResponse.cpp
   src/v20240523/model/SubmitVideoTranslateJobResponse.cpp
   src/v20240523/model/DescribeVideoTranslateJobRequest.cpp
+  src/v20240523/model/SubmitVideoStylizationJobResponse.cpp
   src/v20240523/model/DescribeVideoStylizationJobResponse.cpp
   src/v20240523/model/SubmitImageAnimateJobRequest.cpp
   src/v20240523/model/DescribeImageAnimateJobRequest.cpp
-  src/v20240523/model/SubmitVideoStylizationJobResponse.cpp
+  src/v20240523/model/DescribePortraitSingJobResponse.cpp
   src/v20240523/model/SubmitVideoTranslateJobRequest.cpp
-  src/v20240523/model/TranslateResult.cpp
+  src/v20240523/model/SubmitPortraitSingJobResponse.cpp
   src/v20240523/model/DescribeVideoTranslateJobResponse.cpp
   )
 

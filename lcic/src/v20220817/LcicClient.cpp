@@ -2620,3 +2620,46 @@ LcicClient::UnbindDocumentFromRoomOutcomeCallable LcicClient::UnbindDocumentFrom
     return task->get_future();
 }
 
+LcicClient::UnblockKickedUserOutcome LcicClient::UnblockKickedUser(const UnblockKickedUserRequest &request)
+{
+    auto outcome = MakeRequest(request, "UnblockKickedUser");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        UnblockKickedUserResponse rsp = UnblockKickedUserResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return UnblockKickedUserOutcome(rsp);
+        else
+            return UnblockKickedUserOutcome(o.GetError());
+    }
+    else
+    {
+        return UnblockKickedUserOutcome(outcome.GetError());
+    }
+}
+
+void LcicClient::UnblockKickedUserAsync(const UnblockKickedUserRequest& request, const UnblockKickedUserAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->UnblockKickedUser(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+LcicClient::UnblockKickedUserOutcomeCallable LcicClient::UnblockKickedUserCallable(const UnblockKickedUserRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<UnblockKickedUserOutcome()>>(
+        [this, request]()
+        {
+            return this->UnblockKickedUser(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+

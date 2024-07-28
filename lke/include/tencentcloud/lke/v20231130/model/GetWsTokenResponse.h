@@ -44,8 +44,8 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取token值
-                     * @return Token token值
+                     * 获取token值（有效期60s）
+                     * @return Token token值（有效期60s）
                      * 
                      */
                     std::string GetToken() const;
@@ -58,9 +58,9 @@ namespace TencentCloud
                     bool TokenHasBeenSet() const;
 
                     /**
-                     * 获取余额; 余额大于 0 时表示有效.
+                     * 获取余额; 余额大于 0 时表示有效
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return Balance 余额; 余额大于 0 时表示有效.
+                     * @return Balance 余额; 余额大于 0 时表示有效
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -90,13 +90,13 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * token值
+                     * token值（有效期60s）
                      */
                     std::string m_token;
                     bool m_tokenHasBeenSet;
 
                     /**
-                     * 余额; 余额大于 0 时表示有效.
+                     * 余额; 余额大于 0 时表示有效
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     double m_balance;

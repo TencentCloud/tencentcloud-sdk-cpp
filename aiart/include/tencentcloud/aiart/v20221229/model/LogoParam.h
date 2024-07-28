@@ -48,15 +48,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取水印url
-                     * @return LogoUrl 水印url
+                     * 获取水印 Url
+                     * @return LogoUrl 水印 Url
                      * 
                      */
                     std::string GetLogoUrl() const;
 
                     /**
-                     * 设置水印url
-                     * @param _logoUrl 水印url
+                     * 设置水印 Url
+                     * @param _logoUrl 水印 Url
                      * 
                      */
                     void SetLogoUrl(const std::string& _logoUrl);
@@ -69,15 +69,15 @@ namespace TencentCloud
                     bool LogoUrlHasBeenSet() const;
 
                     /**
-                     * 获取水印base64，url和base64二选一传入
-                     * @return LogoImage 水印base64，url和base64二选一传入
+                     * 获取水印 Base64，Url 和 Base64 二选一传入，如果都提供以 Url 为准
+                     * @return LogoImage 水印 Base64，Url 和 Base64 二选一传入，如果都提供以 Url 为准
                      * 
                      */
                     std::string GetLogoImage() const;
 
                     /**
-                     * 设置水印base64，url和base64二选一传入
-                     * @param _logoImage 水印base64，url和base64二选一传入
+                     * 设置水印 Base64，Url 和 Base64 二选一传入，如果都提供以 Url 为准
+                     * @param _logoImage 水印 Base64，Url 和 Base64 二选一传入，如果都提供以 Url 为准
                      * 
                      */
                     void SetLogoImage(const std::string& _logoImage);
@@ -90,15 +90,15 @@ namespace TencentCloud
                     bool LogoImageHasBeenSet() const;
 
                     /**
-                     * 获取水印图片位于融合结果图中的坐标，将按照坐标对标识图片进行位置和大小的拉伸匹配
-                     * @return LogoRect 水印图片位于融合结果图中的坐标，将按照坐标对标识图片进行位置和大小的拉伸匹配
+                     * 获取水印图片位于生成结果图中的坐标，将按照坐标对标识图片进行位置和大小的拉伸匹配
+                     * @return LogoRect 水印图片位于生成结果图中的坐标，将按照坐标对标识图片进行位置和大小的拉伸匹配
                      * 
                      */
                     LogoRect GetLogoRect() const;
 
                     /**
-                     * 设置水印图片位于融合结果图中的坐标，将按照坐标对标识图片进行位置和大小的拉伸匹配
-                     * @param _logoRect 水印图片位于融合结果图中的坐标，将按照坐标对标识图片进行位置和大小的拉伸匹配
+                     * 设置水印图片位于生成结果图中的坐标，将按照坐标对标识图片进行位置和大小的拉伸匹配
+                     * @param _logoRect 水印图片位于生成结果图中的坐标，将按照坐标对标识图片进行位置和大小的拉伸匹配
                      * 
                      */
                     void SetLogoRect(const LogoRect& _logoRect);
@@ -113,19 +113,19 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 水印url
+                     * 水印 Url
                      */
                     std::string m_logoUrl;
                     bool m_logoUrlHasBeenSet;
 
                     /**
-                     * 水印base64，url和base64二选一传入
+                     * 水印 Base64，Url 和 Base64 二选一传入，如果都提供以 Url 为准
                      */
                     std::string m_logoImage;
                     bool m_logoImageHasBeenSet;
 
                     /**
-                     * 水印图片位于融合结果图中的坐标，将按照坐标对标识图片进行位置和大小的拉伸匹配
+                     * 水印图片位于生成结果图中的坐标，将按照坐标对标识图片进行位置和大小的拉伸匹配
                      */
                     LogoRect m_logoRect;
                     bool m_logoRectHasBeenSet;

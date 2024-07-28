@@ -30,6 +30,7 @@ set(lcic_public_header_model
   include/tencentcloud/lcic/v20220817/model/DeleteUserResponse.h
   include/tencentcloud/lcic/v20220817/model/BatchDeleteRecordRequest.h
   include/tencentcloud/lcic/v20220817/model/ModifyAppResponse.h
+  include/tencentcloud/lcic/v20220817/model/UnblockKickedUserResponse.h
   include/tencentcloud/lcic/v20220817/model/BatchRegisterRequest.h
   include/tencentcloud/lcic/v20220817/model/DeleteRoomResponse.h
   include/tencentcloud/lcic/v20220817/model/ModifyUserProfileRequest.h
@@ -57,6 +58,7 @@ set(lcic_public_header_model
   include/tencentcloud/lcic/v20220817/model/CreateDocumentResponse.h
   include/tencentcloud/lcic/v20220817/model/DescribeGroupResponse.h
   include/tencentcloud/lcic/v20220817/model/SetAppCustomContentResponse.h
+  include/tencentcloud/lcic/v20220817/model/UnblockKickedUserRequest.h
   include/tencentcloud/lcic/v20220817/model/BatchUserRequest.h
   include/tencentcloud/lcic/v20220817/model/LoginUserResponse.h
   include/tencentcloud/lcic/v20220817/model/ModifyGroupRequest.h
@@ -185,6 +187,7 @@ set(lcic_src
   src/v20220817/model/DeleteUserResponse.cpp
   src/v20220817/model/BatchDeleteRecordRequest.cpp
   src/v20220817/model/ModifyAppResponse.cpp
+  src/v20220817/model/UnblockKickedUserResponse.cpp
   src/v20220817/model/BatchRegisterRequest.cpp
   src/v20220817/model/DeleteRoomResponse.cpp
   src/v20220817/model/ModifyUserProfileRequest.cpp
@@ -212,6 +215,7 @@ set(lcic_src
   src/v20220817/model/CreateDocumentResponse.cpp
   src/v20220817/model/DescribeGroupResponse.cpp
   src/v20220817/model/SetAppCustomContentResponse.cpp
+  src/v20220817/model/UnblockKickedUserRequest.cpp
   src/v20220817/model/BatchUserRequest.cpp
   src/v20220817/model/LoginUserResponse.cpp
   src/v20220817/model/ModifyGroupRequest.cpp

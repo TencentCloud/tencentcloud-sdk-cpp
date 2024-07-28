@@ -27,7 +27,8 @@ CreatePartnerAutoSignAuthUrlRequest::CreatePartnerAutoSignAuthUrlRequest() :
     m_authorizedOrganizationIdHasBeenSet(false),
     m_authorizedOrganizationNameHasBeenSet(false),
     m_platformAppAuthorizationHasBeenSet(false),
-    m_sealTypesHasBeenSet(false)
+    m_sealTypesHasBeenSet(false),
+    m_authToMeHasBeenSet(false)
 {
 }
 
@@ -82,6 +83,14 @@ string CreatePartnerAutoSignAuthUrlRequest::ToJsonString() const
         {
             d[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
         }
+    }
+
+    if (m_authToMeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "AuthToMe";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_authToMe, allocator);
     }
 
 
@@ -170,6 +179,22 @@ void CreatePartnerAutoSignAuthUrlRequest::SetSealTypes(const vector<string>& _se
 bool CreatePartnerAutoSignAuthUrlRequest::SealTypesHasBeenSet() const
 {
     return m_sealTypesHasBeenSet;
+}
+
+bool CreatePartnerAutoSignAuthUrlRequest::GetAuthToMe() const
+{
+    return m_authToMe;
+}
+
+void CreatePartnerAutoSignAuthUrlRequest::SetAuthToMe(const bool& _authToMe)
+{
+    m_authToMe = _authToMe;
+    m_authToMeHasBeenSet = true;
+}
+
+bool CreatePartnerAutoSignAuthUrlRequest::AuthToMeHasBeenSet() const
+{
+    return m_authToMeHasBeenSet;
 }
 
 
