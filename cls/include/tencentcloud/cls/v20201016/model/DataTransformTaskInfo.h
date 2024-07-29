@@ -320,6 +320,31 @@ namespace TencentCloud
                      */
                     bool EtlContentHasBeenSet() const;
 
+                    /**
+                     * 获取数据加工类型。0：标准加工任务；1：前置加工任务。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return DataTransformType 数据加工类型。0：标准加工任务；1：前置加工任务。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    uint64_t GetDataTransformType() const;
+
+                    /**
+                     * 设置数据加工类型。0：标准加工任务；1：前置加工任务。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _dataTransformType 数据加工类型。0：标准加工任务；1：前置加工任务。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetDataTransformType(const uint64_t& _dataTransformType);
+
+                    /**
+                     * 判断参数 DataTransformType 是否已赋值
+                     * @return DataTransformType 是否已赋值
+                     * 
+                     */
+                    bool DataTransformTypeHasBeenSet() const;
+
                 private:
 
                     /**
@@ -399,6 +424,13 @@ namespace TencentCloud
                      */
                     std::string m_etlContent;
                     bool m_etlContentHasBeenSet;
+
+                    /**
+                     * 数据加工类型。0：标准加工任务；1：前置加工任务。
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    uint64_t m_dataTransformType;
+                    bool m_dataTransformTypeHasBeenSet;
 
                 };
             }

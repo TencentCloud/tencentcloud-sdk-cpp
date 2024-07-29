@@ -43,15 +43,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取产品ID
-                     * @return ProductId 产品ID
+                     * 获取产品 ID
+                     * @return ProductId 产品 ID
                      * 
                      */
                     std::string GetProductId() const;
 
                     /**
-                     * 设置产品ID
-                     * @param _productId 产品ID
+                     * 设置产品 ID
+                     * @param _productId 产品 ID
                      * 
                      */
                     void SetProductId(const std::string& _productId);
@@ -86,10 +86,10 @@ namespace TencentCloud
 
                     /**
                      * 获取云存 AI 服务类型。可选值：
-- `PackageDetect`：包裹检测
+- `RealtimeObjectDetect`：目标检测
 - `Highlight`：视频浓缩
                      * @return ServiceType 云存 AI 服务类型。可选值：
-- `PackageDetect`：包裹检测
+- `RealtimeObjectDetect`：目标检测
 - `Highlight`：视频浓缩
                      * 
                      */
@@ -97,10 +97,10 @@ namespace TencentCloud
 
                     /**
                      * 设置云存 AI 服务类型。可选值：
-- `PackageDetect`：包裹检测
+- `RealtimeObjectDetect`：目标检测
 - `Highlight`：视频浓缩
                      * @param _serviceType 云存 AI 服务类型。可选值：
-- `PackageDetect`：包裹检测
+- `RealtimeObjectDetect`：目标检测
 - `Highlight`：视频浓缩
                      * 
                      */
@@ -114,15 +114,15 @@ namespace TencentCloud
                     bool ServiceTypeHasBeenSet() const;
 
                     /**
-                     * 获取启用状态
-                     * @return Enabled 启用状态
+                     * 获取视频分析启用状态
+                     * @return Enabled 视频分析启用状态
                      * 
                      */
                     bool GetEnabled() const;
 
                     /**
-                     * 设置启用状态
-                     * @param _enabled 启用状态
+                     * 设置视频分析启用状态
+                     * @param _enabled 视频分析启用状态
                      * 
                      */
                     void SetEnabled(const bool& _enabled);
@@ -135,15 +135,15 @@ namespace TencentCloud
                     bool EnabledHasBeenSet() const;
 
                     /**
-                     * 获取视频分析区域
-                     * @return ROI 视频分析区域
+                     * 获取视频分析识别区域
+                     * @return ROI 视频分析识别区域
                      * 
                      */
                     std::string GetROI() const;
 
                     /**
-                     * 设置视频分析区域
-                     * @param _rOI 视频分析区域
+                     * 设置视频分析识别区域
+                     * @param _rOI 视频分析识别区域
                      * 
                      */
                     void SetROI(const std::string& _rOI);
@@ -156,15 +156,15 @@ namespace TencentCloud
                     bool ROIHasBeenSet() const;
 
                     /**
-                     * 获取云存 AI 服务的配置参数
-                     * @return Config 云存 AI 服务的配置参数
+                     * 获取视频分析配置参数
+                     * @return Config 视频分析配置参数
                      * 
                      */
                     std::string GetConfig() const;
 
                     /**
-                     * 设置云存 AI 服务的配置参数
-                     * @param _config 云存 AI 服务的配置参数
+                     * 设置视频分析配置参数
+                     * @param _config 视频分析配置参数
                      * 
                      */
                     void SetConfig(const std::string& _config);
@@ -179,7 +179,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 产品ID
+                     * 产品 ID
                      */
                     std::string m_productId;
                     bool m_productIdHasBeenSet;
@@ -192,26 +192,26 @@ namespace TencentCloud
 
                     /**
                      * 云存 AI 服务类型。可选值：
-- `PackageDetect`：包裹检测
+- `RealtimeObjectDetect`：目标检测
 - `Highlight`：视频浓缩
                      */
                     std::string m_serviceType;
                     bool m_serviceTypeHasBeenSet;
 
                     /**
-                     * 启用状态
+                     * 视频分析启用状态
                      */
                     bool m_enabled;
                     bool m_enabledHasBeenSet;
 
                     /**
-                     * 视频分析区域
+                     * 视频分析识别区域
                      */
                     std::string m_rOI;
                     bool m_rOIHasBeenSet;
 
                     /**
-                     * 云存 AI 服务的配置参数
+                     * 视频分析配置参数
                      */
                     std::string m_config;
                     bool m_configHasBeenSet;

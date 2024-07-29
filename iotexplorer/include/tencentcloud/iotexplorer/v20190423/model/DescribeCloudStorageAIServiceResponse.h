@@ -44,8 +44,8 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取启用状态
-                     * @return Enabled 启用状态
+                     * 获取视频分析启用状态
+                     * @return Enabled 视频分析启用状态
                      * 
                      */
                     bool GetEnabled() const;
@@ -58,22 +58,8 @@ namespace TencentCloud
                     bool EnabledHasBeenSet() const;
 
                     /**
-                     * 获取视频分析区域
-                     * @return ROI 视频分析区域
-                     * 
-                     */
-                    std::string GetROI() const;
-
-                    /**
-                     * 判断参数 ROI 是否已赋值
-                     * @return ROI 是否已赋值
-                     * 
-                     */
-                    bool ROIHasBeenSet() const;
-
-                    /**
-                     * 获取云存 AI 服务的配置参数
-                     * @return Config 云存 AI 服务的配置参数
+                     * 获取视频分析配置参数
+                     * @return Config 视频分析配置参数
                      * 
                      */
                     std::string GetConfig() const;
@@ -85,25 +71,39 @@ namespace TencentCloud
                      */
                     bool ConfigHasBeenSet() const;
 
+                    /**
+                     * 获取视频分析识别区域
+                     * @return ROI 视频分析识别区域
+                     * 
+                     */
+                    std::string GetROI() const;
+
+                    /**
+                     * 判断参数 ROI 是否已赋值
+                     * @return ROI 是否已赋值
+                     * 
+                     */
+                    bool ROIHasBeenSet() const;
+
                 private:
 
                     /**
-                     * 启用状态
+                     * 视频分析启用状态
                      */
                     bool m_enabled;
                     bool m_enabledHasBeenSet;
 
                     /**
-                     * 视频分析区域
-                     */
-                    std::string m_rOI;
-                    bool m_rOIHasBeenSet;
-
-                    /**
-                     * 云存 AI 服务的配置参数
+                     * 视频分析配置参数
                      */
                     std::string m_config;
                     bool m_configHasBeenSet;
+
+                    /**
+                     * 视频分析识别区域
+                     */
+                    std::string m_rOI;
+                    bool m_rOIHasBeenSet;
 
                 };
             }

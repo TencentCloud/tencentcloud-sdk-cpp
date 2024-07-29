@@ -40,6 +40,49 @@ TrtcClient::TrtcClient(const Credential &credential, const string &region, const
 }
 
 
+TrtcClient::ControlAIConversationOutcome TrtcClient::ControlAIConversation(const ControlAIConversationRequest &request)
+{
+    auto outcome = MakeRequest(request, "ControlAIConversation");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ControlAIConversationResponse rsp = ControlAIConversationResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ControlAIConversationOutcome(rsp);
+        else
+            return ControlAIConversationOutcome(o.GetError());
+    }
+    else
+    {
+        return ControlAIConversationOutcome(outcome.GetError());
+    }
+}
+
+void TrtcClient::ControlAIConversationAsync(const ControlAIConversationRequest& request, const ControlAIConversationAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->ControlAIConversation(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+TrtcClient::ControlAIConversationOutcomeCallable TrtcClient::ControlAIConversationCallable(const ControlAIConversationRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<ControlAIConversationOutcome()>>(
+        [this, request]()
+        {
+            return this->ControlAIConversation(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 TrtcClient::CreateCloudRecordingOutcome TrtcClient::CreateCloudRecording(const CreateCloudRecordingRequest &request)
 {
     auto outcome = MakeRequest(request, "CreateCloudRecording");

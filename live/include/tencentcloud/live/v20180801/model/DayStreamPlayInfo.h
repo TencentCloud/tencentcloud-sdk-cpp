@@ -143,15 +143,15 @@ namespace TencentCloud
                     bool RequestHasBeenSet() const;
 
                     /**
-                     * 获取在线人数。
-                     * @return Online 在线人数。
+                     * 获取在线人数。当前后端接口数据的统计方式与客户端侧不同，该数据仅供参考，具体数据请以业务客户端侧统计数据为准。
+                     * @return Online 在线人数。当前后端接口数据的统计方式与客户端侧不同，该数据仅供参考，具体数据请以业务客户端侧统计数据为准。
                      * 
                      */
                     uint64_t GetOnline() const;
 
                     /**
-                     * 设置在线人数。
-                     * @param _online 在线人数。
+                     * 设置在线人数。当前后端接口数据的统计方式与客户端侧不同，该数据仅供参考，具体数据请以业务客户端侧统计数据为准。
+                     * @param _online 在线人数。当前后端接口数据的统计方式与客户端侧不同，该数据仅供参考，具体数据请以业务客户端侧统计数据为准。
                      * 
                      */
                     void SetOnline(const uint64_t& _online);
@@ -193,7 +193,7 @@ namespace TencentCloud
                     bool m_requestHasBeenSet;
 
                     /**
-                     * 在线人数。
+                     * 在线人数。当前后端接口数据的统计方式与客户端侧不同，该数据仅供参考，具体数据请以业务客户端侧统计数据为准。
                      */
                     uint64_t m_online;
                     bool m_onlineHasBeenSet;

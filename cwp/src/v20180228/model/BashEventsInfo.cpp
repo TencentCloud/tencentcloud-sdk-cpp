@@ -45,7 +45,8 @@ BashEventsInfo::BashEventsInfo() :
     m_machineWanIpHasBeenSet(false),
     m_machineStatusHasBeenSet(false),
     m_userHasBeenSet(false),
-    m_pidHasBeenSet(false)
+    m_pidHasBeenSet(false),
+    m_detectByHasBeenSet(false)
 {
 }
 
@@ -310,6 +311,16 @@ CoreInternalOutcome BashEventsInfo::Deserialize(const rapidjson::Value &value)
         m_pidHasBeenSet = true;
     }
 
+    if (value.HasMember("DetectBy") && !value["DetectBy"].IsNull())
+    {
+        if (!value["DetectBy"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `BashEventsInfo.DetectBy` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_detectBy = string(value["DetectBy"].GetString());
+        m_detectByHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -525,6 +536,14 @@ void BashEventsInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Document::
         string key = "Pid";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_pid.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_detectByHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "DetectBy";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_detectBy.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -928,5 +947,21 @@ void BashEventsInfo::SetPid(const string& _pid)
 bool BashEventsInfo::PidHasBeenSet() const
 {
     return m_pidHasBeenSet;
+}
+
+string BashEventsInfo::GetDetectBy() const
+{
+    return m_detectBy;
+}
+
+void BashEventsInfo::SetDetectBy(const string& _detectBy)
+{
+    m_detectBy = _detectBy;
+    m_detectByHasBeenSet = true;
+}
+
+bool BashEventsInfo::DetectByHasBeenSet() const
+{
+    return m_detectByHasBeenSet;
 }
 

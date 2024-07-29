@@ -51,7 +51,8 @@ DescAcItem::DescAcItem() :
     m_paramTemplateNameHasBeenSet(false),
     m_paramTemplateIdHasBeenSet(false),
     m_sourceNameHasBeenSet(false),
-    m_targetNameHasBeenSet(false)
+    m_targetNameHasBeenSet(false),
+    m_lastHitTimeHasBeenSet(false)
 {
 }
 
@@ -380,6 +381,16 @@ CoreInternalOutcome DescAcItem::Deserialize(const rapidjson::Value &value)
         m_targetNameHasBeenSet = true;
     }
 
+    if (value.HasMember("LastHitTime") && !value["LastHitTime"].IsNull())
+    {
+        if (!value["LastHitTime"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `DescAcItem.LastHitTime` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_lastHitTime = string(value["LastHitTime"].GetString());
+        m_lastHitTimeHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -640,6 +651,14 @@ void DescAcItem::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Allo
         string key = "TargetName";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_targetName.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_lastHitTimeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "LastHitTime";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_lastHitTime.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -1139,5 +1158,21 @@ void DescAcItem::SetTargetName(const string& _targetName)
 bool DescAcItem::TargetNameHasBeenSet() const
 {
     return m_targetNameHasBeenSet;
+}
+
+string DescAcItem::GetLastHitTime() const
+{
+    return m_lastHitTime;
+}
+
+void DescAcItem::SetLastHitTime(const string& _lastHitTime)
+{
+    m_lastHitTime = _lastHitTime;
+    m_lastHitTimeHasBeenSet = true;
+}
+
+bool DescAcItem::LastHitTimeHasBeenSet() const
+{
+    return m_lastHitTimeHasBeenSet;
 }
 

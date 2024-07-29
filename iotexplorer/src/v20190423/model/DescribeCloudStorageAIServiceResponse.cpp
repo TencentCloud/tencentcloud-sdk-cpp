@@ -25,8 +25,8 @@ using namespace std;
 
 DescribeCloudStorageAIServiceResponse::DescribeCloudStorageAIServiceResponse() :
     m_enabledHasBeenSet(false),
-    m_rOIHasBeenSet(false),
-    m_configHasBeenSet(false)
+    m_configHasBeenSet(false),
+    m_rOIHasBeenSet(false)
 {
 }
 
@@ -74,16 +74,6 @@ CoreInternalOutcome DescribeCloudStorageAIServiceResponse::Deserialize(const str
         m_enabledHasBeenSet = true;
     }
 
-    if (rsp.HasMember("ROI") && !rsp["ROI"].IsNull())
-    {
-        if (!rsp["ROI"].IsString())
-        {
-            return CoreInternalOutcome(Core::Error("response `ROI` IsString=false incorrectly").SetRequestId(requestId));
-        }
-        m_rOI = string(rsp["ROI"].GetString());
-        m_rOIHasBeenSet = true;
-    }
-
     if (rsp.HasMember("Config") && !rsp["Config"].IsNull())
     {
         if (!rsp["Config"].IsString())
@@ -92,6 +82,16 @@ CoreInternalOutcome DescribeCloudStorageAIServiceResponse::Deserialize(const str
         }
         m_config = string(rsp["Config"].GetString());
         m_configHasBeenSet = true;
+    }
+
+    if (rsp.HasMember("ROI") && !rsp["ROI"].IsNull())
+    {
+        if (!rsp["ROI"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `ROI` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_rOI = string(rsp["ROI"].GetString());
+        m_rOIHasBeenSet = true;
     }
 
 
@@ -112,20 +112,20 @@ string DescribeCloudStorageAIServiceResponse::ToJsonString() const
         value.AddMember(iKey, m_enabled, allocator);
     }
 
-    if (m_rOIHasBeenSet)
-    {
-        rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "ROI";
-        iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, rapidjson::Value(m_rOI.c_str(), allocator).Move(), allocator);
-    }
-
     if (m_configHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Config";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_config.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_rOIHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ROI";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_rOI.c_str(), allocator).Move(), allocator);
     }
 
     rapidjson::Value iKey(rapidjson::kStringType);
@@ -150,16 +150,6 @@ bool DescribeCloudStorageAIServiceResponse::EnabledHasBeenSet() const
     return m_enabledHasBeenSet;
 }
 
-string DescribeCloudStorageAIServiceResponse::GetROI() const
-{
-    return m_rOI;
-}
-
-bool DescribeCloudStorageAIServiceResponse::ROIHasBeenSet() const
-{
-    return m_rOIHasBeenSet;
-}
-
 string DescribeCloudStorageAIServiceResponse::GetConfig() const
 {
     return m_config;
@@ -168,6 +158,16 @@ string DescribeCloudStorageAIServiceResponse::GetConfig() const
 bool DescribeCloudStorageAIServiceResponse::ConfigHasBeenSet() const
 {
     return m_configHasBeenSet;
+}
+
+string DescribeCloudStorageAIServiceResponse::GetROI() const
+{
+    return m_rOI;
+}
+
+bool DescribeCloudStorageAIServiceResponse::ROIHasBeenSet() const
+{
+    return m_rOIHasBeenSet;
 }
 
 

@@ -43,15 +43,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取产品ID
-                     * @return ProductId 产品ID
+                     * 获取产品 ID
+                     * @return ProductId 产品 ID
                      * 
                      */
                     std::string GetProductId() const;
 
                     /**
-                     * 设置产品ID
-                     * @param _productId 产品ID
+                     * 设置产品 ID
+                     * @param _productId 产品 ID
                      * 
                      */
                     void SetProductId(const std::string& _productId);
@@ -86,12 +86,10 @@ namespace TencentCloud
 
                     /**
                      * 获取云存 AI 服务类型。可选值：
-
-- `PackageDetect`：包裹检测
+- `RealtimeObjectDetect`：目标检测
 - `Highlight`：视频浓缩
                      * @return ServiceType 云存 AI 服务类型。可选值：
-
-- `PackageDetect`：包裹检测
+- `RealtimeObjectDetect`：目标检测
 - `Highlight`：视频浓缩
                      * 
                      */
@@ -99,12 +97,10 @@ namespace TencentCloud
 
                     /**
                      * 设置云存 AI 服务类型。可选值：
-
-- `PackageDetect`：包裹检测
+- `RealtimeObjectDetect`：目标检测
 - `Highlight`：视频浓缩
                      * @param _serviceType 云存 AI 服务类型。可选值：
-
-- `PackageDetect`：包裹检测
+- `RealtimeObjectDetect`：目标检测
 - `Highlight`：视频浓缩
                      * 
                      */
@@ -120,7 +116,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 产品ID
+                     * 产品 ID
                      */
                     std::string m_productId;
                     bool m_productIdHasBeenSet;
@@ -133,8 +129,7 @@ namespace TencentCloud
 
                     /**
                      * 云存 AI 服务类型。可选值：
-
-- `PackageDetect`：包裹检测
+- `RealtimeObjectDetect`：目标检测
 - `Highlight`：视频浓缩
                      */
                     std::string m_serviceType;

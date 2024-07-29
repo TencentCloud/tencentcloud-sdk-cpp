@@ -129,8 +129,8 @@ namespace TencentCloud
                     bool PortTemplateCountHasBeenSet() const;
 
                     /**
-                     * 获取已使用的地址模版数
-                     * @return UsedTemplateCount 已使用的地址模版数
+                     * 获取已使用的地址模板数
+                     * @return UsedTemplateCount 已使用的地址模板数
                      * 
                      */
                     int64_t GetUsedTemplateCount() const;
@@ -143,8 +143,8 @@ namespace TencentCloud
                     bool UsedTemplateCountHasBeenSet() const;
 
                     /**
-                     * 获取地址模版配额数量
-                     * @return TemplateQuotaCount 地址模版配额数量
+                     * 获取地址模板配额数量
+                     * @return TemplateQuotaCount 地址模板配额数量
                      * 
                      */
                     int64_t GetTemplateQuotaCount() const;
@@ -195,13 +195,13 @@ namespace TencentCloud
                     bool m_portTemplateCountHasBeenSet;
 
                     /**
-                     * 已使用的地址模版数
+                     * 已使用的地址模板数
                      */
                     int64_t m_usedTemplateCount;
                     bool m_usedTemplateCountHasBeenSet;
 
                     /**
-                     * 地址模版配额数量
+                     * 地址模板配额数量
                      */
                     int64_t m_templateQuotaCount;
                     bool m_templateQuotaCountHasBeenSet;

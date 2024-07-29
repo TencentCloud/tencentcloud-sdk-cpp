@@ -37,6 +37,7 @@ set(csip_public_header_model
   include/tencentcloud/csip/v20221121/model/KeyValue.h
   include/tencentcloud/csip/v20221121/model/Vpc.h
   include/tencentcloud/csip/v20221121/model/PortRiskAdvanceCFGParamItem.h
+  include/tencentcloud/csip/v20221121/model/AssetBaseInfoResponse.h
   include/tencentcloud/csip/v20221121/model/DescribeVULRiskDetailRequest.h
   include/tencentcloud/csip/v20221121/model/DataSearchBug.h
   include/tencentcloud/csip/v20221121/model/OrganizationUserInfo.h
@@ -45,11 +46,12 @@ set(csip_public_header_model
   include/tencentcloud/csip/v20221121/model/IpAssetListVO.h
   include/tencentcloud/csip/v20221121/model/DescribeTopAttackInfoResponse.h
   include/tencentcloud/csip/v20221121/model/DescribeVULRiskDetailResponse.h
-  include/tencentcloud/csip/v20221121/model/DescribeVULRiskAdvanceCFGListRequest.h
+  include/tencentcloud/csip/v20221121/model/DescribeDomainAssetsRequest.h
   include/tencentcloud/csip/v20221121/model/ModifyRiskCenterScanTaskResponse.h
   include/tencentcloud/csip/v20221121/model/DescribeRiskCenterAssetViewCFGRiskListRequest.h
-  include/tencentcloud/csip/v20221121/model/DescribeDomainAssetsRequest.h
+  include/tencentcloud/csip/v20221121/model/DescribeRiskCenterWebsiteRiskListResponse.h
   include/tencentcloud/csip/v20221121/model/Tag.h
+  include/tencentcloud/csip/v20221121/model/ModifyRiskCenterRiskStatusResponse.h
   include/tencentcloud/csip/v20221121/model/UpdateAlertStatusListResponse.h
   include/tencentcloud/csip/v20221121/model/DeleteDomainAndIpRequest.h
   include/tencentcloud/csip/v20221121/model/DescribeNICAssetsRequest.h
@@ -58,7 +60,6 @@ set(csip_public_header_model
   include/tencentcloud/csip/v20221121/model/RoleInfo.h
   include/tencentcloud/csip/v20221121/model/TagCount.h
   include/tencentcloud/csip/v20221121/model/GateWayAsset.h
-  include/tencentcloud/csip/v20221121/model/DescribeRiskCenterWebsiteRiskListResponse.h
   include/tencentcloud/csip/v20221121/model/DescribeScanReportListResponse.h
   include/tencentcloud/csip/v20221121/model/DescribeSearchBugInfoRequest.h
   include/tencentcloud/csip/v20221121/model/TaskLogURL.h
@@ -115,12 +116,13 @@ set(csip_public_header_model
   include/tencentcloud/csip/v20221121/model/AlertExtraInfo.h
   include/tencentcloud/csip/v20221121/model/DescribeDbAssetInfoRequest.h
   include/tencentcloud/csip/v20221121/model/DescribeAssetViewVulRiskListRequest.h
+  include/tencentcloud/csip/v20221121/model/DescribeVulViewVulRiskListResponse.h
   include/tencentcloud/csip/v20221121/model/Filter.h
   include/tencentcloud/csip/v20221121/model/DescribeRiskCenterWebsiteRiskListRequest.h
   include/tencentcloud/csip/v20221121/model/ServerRiskSuggestion.h
   include/tencentcloud/csip/v20221121/model/DescribeSubnetAssetsRequest.h
   include/tencentcloud/csip/v20221121/model/DescribeClusterPodAssetsResponse.h
-  include/tencentcloud/csip/v20221121/model/AssetBaseInfoResponse.h
+  include/tencentcloud/csip/v20221121/model/DescribeCFWAssetStatisticsResponse.h
   include/tencentcloud/csip/v20221121/model/DescribeGatewayAssetsResponse.h
   include/tencentcloud/csip/v20221121/model/AssetViewPortRisk.h
   include/tencentcloud/csip/v20221121/model/DescribeRiskCenterPortViewPortRiskListRequest.h
@@ -136,7 +138,7 @@ set(csip_public_header_model
   include/tencentcloud/csip/v20221121/model/ScanTaskInfoList.h
   include/tencentcloud/csip/v20221121/model/DescribeDbAssetsRequest.h
   include/tencentcloud/csip/v20221121/model/TaskLogInfo.h
-  include/tencentcloud/csip/v20221121/model/ModifyRiskCenterRiskStatusResponse.h
+  include/tencentcloud/csip/v20221121/model/DescribeVULRiskAdvanceCFGListRequest.h
   include/tencentcloud/csip/v20221121/model/DescribeRiskCenterAssetViewVULRiskListRequest.h
   include/tencentcloud/csip/v20221121/model/TaskCenterCFGRiskInputParam.h
   include/tencentcloud/csip/v20221121/model/DescribeAlertListRequest.h
@@ -159,7 +161,7 @@ set(csip_public_header_model
   include/tencentcloud/csip/v20221121/model/DescribeListenerListRequest.h
   include/tencentcloud/csip/v20221121/model/DeleteRiskScanTaskResponse.h
   include/tencentcloud/csip/v20221121/model/DescribeGatewayAssetsRequest.h
-  include/tencentcloud/csip/v20221121/model/DescribeVulViewVulRiskListResponse.h
+  include/tencentcloud/csip/v20221121/model/DescribeCFWAssetStatisticsRequest.h
   include/tencentcloud/csip/v20221121/model/CreateDomainAndIpResponse.h
   include/tencentcloud/csip/v20221121/model/DescribeTaskLogListRequest.h
   include/tencentcloud/csip/v20221121/model/DescribeRiskCenterAssetViewPortRiskListResponse.h
@@ -187,6 +189,7 @@ set(csip_src
   src/v20221121/model/KeyValue.cpp
   src/v20221121/model/Vpc.cpp
   src/v20221121/model/PortRiskAdvanceCFGParamItem.cpp
+  src/v20221121/model/AssetBaseInfoResponse.cpp
   src/v20221121/model/DescribeVULRiskDetailRequest.cpp
   src/v20221121/model/DataSearchBug.cpp
   src/v20221121/model/OrganizationUserInfo.cpp
@@ -195,11 +198,12 @@ set(csip_src
   src/v20221121/model/IpAssetListVO.cpp
   src/v20221121/model/DescribeTopAttackInfoResponse.cpp
   src/v20221121/model/DescribeVULRiskDetailResponse.cpp
-  src/v20221121/model/DescribeVULRiskAdvanceCFGListRequest.cpp
+  src/v20221121/model/DescribeDomainAssetsRequest.cpp
   src/v20221121/model/ModifyRiskCenterScanTaskResponse.cpp
   src/v20221121/model/DescribeRiskCenterAssetViewCFGRiskListRequest.cpp
-  src/v20221121/model/DescribeDomainAssetsRequest.cpp
+  src/v20221121/model/DescribeRiskCenterWebsiteRiskListResponse.cpp
   src/v20221121/model/Tag.cpp
+  src/v20221121/model/ModifyRiskCenterRiskStatusResponse.cpp
   src/v20221121/model/UpdateAlertStatusListResponse.cpp
   src/v20221121/model/DeleteDomainAndIpRequest.cpp
   src/v20221121/model/DescribeNICAssetsRequest.cpp
@@ -208,7 +212,6 @@ set(csip_src
   src/v20221121/model/RoleInfo.cpp
   src/v20221121/model/TagCount.cpp
   src/v20221121/model/GateWayAsset.cpp
-  src/v20221121/model/DescribeRiskCenterWebsiteRiskListResponse.cpp
   src/v20221121/model/DescribeScanReportListResponse.cpp
   src/v20221121/model/DescribeSearchBugInfoRequest.cpp
   src/v20221121/model/TaskLogURL.cpp
@@ -265,12 +268,13 @@ set(csip_src
   src/v20221121/model/AlertExtraInfo.cpp
   src/v20221121/model/DescribeDbAssetInfoRequest.cpp
   src/v20221121/model/DescribeAssetViewVulRiskListRequest.cpp
+  src/v20221121/model/DescribeVulViewVulRiskListResponse.cpp
   src/v20221121/model/Filter.cpp
   src/v20221121/model/DescribeRiskCenterWebsiteRiskListRequest.cpp
   src/v20221121/model/ServerRiskSuggestion.cpp
   src/v20221121/model/DescribeSubnetAssetsRequest.cpp
   src/v20221121/model/DescribeClusterPodAssetsResponse.cpp
-  src/v20221121/model/AssetBaseInfoResponse.cpp
+  src/v20221121/model/DescribeCFWAssetStatisticsResponse.cpp
   src/v20221121/model/DescribeGatewayAssetsResponse.cpp
   src/v20221121/model/AssetViewPortRisk.cpp
   src/v20221121/model/DescribeRiskCenterPortViewPortRiskListRequest.cpp
@@ -286,7 +290,7 @@ set(csip_src
   src/v20221121/model/ScanTaskInfoList.cpp
   src/v20221121/model/DescribeDbAssetsRequest.cpp
   src/v20221121/model/TaskLogInfo.cpp
-  src/v20221121/model/ModifyRiskCenterRiskStatusResponse.cpp
+  src/v20221121/model/DescribeVULRiskAdvanceCFGListRequest.cpp
   src/v20221121/model/DescribeRiskCenterAssetViewVULRiskListRequest.cpp
   src/v20221121/model/TaskCenterCFGRiskInputParam.cpp
   src/v20221121/model/DescribeAlertListRequest.cpp
@@ -309,7 +313,7 @@ set(csip_src
   src/v20221121/model/DescribeListenerListRequest.cpp
   src/v20221121/model/DeleteRiskScanTaskResponse.cpp
   src/v20221121/model/DescribeGatewayAssetsRequest.cpp
-  src/v20221121/model/DescribeVulViewVulRiskListResponse.cpp
+  src/v20221121/model/DescribeCFWAssetStatisticsRequest.cpp
   src/v20221121/model/CreateDomainAndIpResponse.cpp
   src/v20221121/model/DescribeTaskLogListRequest.cpp
   src/v20221121/model/DescribeRiskCenterAssetViewPortRiskListResponse.cpp

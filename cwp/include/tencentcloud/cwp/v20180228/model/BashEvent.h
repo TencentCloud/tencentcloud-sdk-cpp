@@ -469,6 +469,31 @@ namespace TencentCloud
                      */
                     bool RegexBashCmdHasBeenSet() const;
 
+                    /**
+                     * 获取主机HostName
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return HostName 主机HostName
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::string GetHostName() const;
+
+                    /**
+                     * 设置主机HostName
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _hostName 主机HostName
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetHostName(const std::string& _hostName);
+
+                    /**
+                     * 判断参数 HostName 是否已赋值
+                     * @return HostName 是否已赋值
+                     * 
+                     */
+                    bool HostNameHasBeenSet() const;
+
                 private:
 
                     /**
@@ -590,6 +615,13 @@ namespace TencentCloud
                      */
                     std::string m_regexBashCmd;
                     bool m_regexBashCmdHasBeenSet;
+
+                    /**
+                     * 主机HostName
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_hostName;
+                    bool m_hostNameHasBeenSet;
 
                 };
             }

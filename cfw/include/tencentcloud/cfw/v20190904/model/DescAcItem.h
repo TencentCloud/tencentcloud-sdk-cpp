@@ -814,6 +814,31 @@ namespace TencentCloud
                      */
                     bool TargetNameHasBeenSet() const;
 
+                    /**
+                     * 获取规则最近命中时间
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return LastHitTime 规则最近命中时间
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::string GetLastHitTime() const;
+
+                    /**
+                     * 设置规则最近命中时间
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _lastHitTime 规则最近命中时间
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetLastHitTime(const std::string& _lastHitTime);
+
+                    /**
+                     * 判断参数 LastHitTime 是否已赋值
+                     * @return LastHitTime 是否已赋值
+                     * 
+                     */
+                    bool LastHitTimeHasBeenSet() const;
+
                 private:
 
                     /**
@@ -1030,6 +1055,13 @@ namespace TencentCloud
                      */
                     std::string m_targetName;
                     bool m_targetNameHasBeenSet;
+
+                    /**
+                     * 规则最近命中时间
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_lastHitTime;
+                    bool m_lastHitTimeHasBeenSet;
 
                 };
             }

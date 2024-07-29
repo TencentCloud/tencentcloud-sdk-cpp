@@ -341,6 +341,49 @@ CsipClient::DescribeAssetViewVulRiskListOutcomeCallable CsipClient::DescribeAsse
     return task->get_future();
 }
 
+CsipClient::DescribeCFWAssetStatisticsOutcome CsipClient::DescribeCFWAssetStatistics(const DescribeCFWAssetStatisticsRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeCFWAssetStatistics");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeCFWAssetStatisticsResponse rsp = DescribeCFWAssetStatisticsResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeCFWAssetStatisticsOutcome(rsp);
+        else
+            return DescribeCFWAssetStatisticsOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeCFWAssetStatisticsOutcome(outcome.GetError());
+    }
+}
+
+void CsipClient::DescribeCFWAssetStatisticsAsync(const DescribeCFWAssetStatisticsRequest& request, const DescribeCFWAssetStatisticsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeCFWAssetStatistics(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+CsipClient::DescribeCFWAssetStatisticsOutcomeCallable CsipClient::DescribeCFWAssetStatisticsCallable(const DescribeCFWAssetStatisticsRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeCFWAssetStatisticsOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeCFWAssetStatistics(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 CsipClient::DescribeCVMAssetInfoOutcome CsipClient::DescribeCVMAssetInfo(const DescribeCVMAssetInfoRequest &request)
 {
     auto outcome = MakeRequest(request, "DescribeCVMAssetInfo");

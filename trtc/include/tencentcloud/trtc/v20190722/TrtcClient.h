@@ -23,6 +23,8 @@
 #include <tencentcloud/core/Credential.h>
 #include <tencentcloud/core/profile/ClientProfile.h>
 #include <tencentcloud/core/AsyncCallerContext.h>
+#include <tencentcloud/trtc/v20190722/model/ControlAIConversationRequest.h>
+#include <tencentcloud/trtc/v20190722/model/ControlAIConversationResponse.h>
 #include <tencentcloud/trtc/v20190722/model/CreateCloudRecordingRequest.h>
 #include <tencentcloud/trtc/v20190722/model/CreateCloudRecordingResponse.h>
 #include <tencentcloud/trtc/v20190722/model/CreatePictureRequest.h>
@@ -143,6 +145,9 @@ namespace TencentCloud
                 TrtcClient(const Credential &credential, const std::string &region);
                 TrtcClient(const Credential &credential, const std::string &region, const ClientProfile &profile);
 
+                typedef Outcome<Core::Error, Model::ControlAIConversationResponse> ControlAIConversationOutcome;
+                typedef std::future<ControlAIConversationOutcome> ControlAIConversationOutcomeCallable;
+                typedef std::function<void(const TrtcClient*, const Model::ControlAIConversationRequest&, ControlAIConversationOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ControlAIConversationAsyncHandler;
                 typedef Outcome<Core::Error, Model::CreateCloudRecordingResponse> CreateCloudRecordingOutcome;
                 typedef std::future<CreateCloudRecordingOutcome> CreateCloudRecordingOutcomeCallable;
                 typedef std::function<void(const TrtcClient*, const Model::CreateCloudRecordingRequest&, CreateCloudRecordingOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateCloudRecordingAsyncHandler;
@@ -304,6 +309,15 @@ namespace TencentCloud
                 typedef std::function<void(const TrtcClient*, const Model::UpdatePublishCdnStreamRequest&, UpdatePublishCdnStreamOutcome, const std::shared_ptr<const AsyncCallerContext>&)> UpdatePublishCdnStreamAsyncHandler;
 
 
+
+                /**
+                 *提供服务端控制机器人的功能
+                 * @param req ControlAIConversationRequest
+                 * @return ControlAIConversationOutcome
+                 */
+                ControlAIConversationOutcome ControlAIConversation(const Model::ControlAIConversationRequest &request);
+                void ControlAIConversationAsync(const Model::ControlAIConversationRequest& request, const ControlAIConversationAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                ControlAIConversationOutcomeCallable ControlAIConversationCallable(const Model::ControlAIConversationRequest& request);
 
                 /**
                  *接口说明：

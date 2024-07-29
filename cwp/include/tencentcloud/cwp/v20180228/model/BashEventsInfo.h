@@ -623,6 +623,31 @@ namespace TencentCloud
                      */
                     bool PidHasBeenSet() const;
 
+                    /**
+                     * 获取数据来源
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return DetectBy 数据来源
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::string GetDetectBy() const;
+
+                    /**
+                     * 设置数据来源
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _detectBy 数据来源
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetDetectBy(const std::string& _detectBy);
+
+                    /**
+                     * 判断参数 DetectBy 是否已赋值
+                     * @return DetectBy 是否已赋值
+                     * 
+                     */
+                    bool DetectByHasBeenSet() const;
+
                 private:
 
                     /**
@@ -787,6 +812,13 @@ namespace TencentCloud
                      */
                     std::string m_pid;
                     bool m_pidHasBeenSet;
+
+                    /**
+                     * 数据来源
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_detectBy;
+                    bool m_detectByHasBeenSet;
 
                 };
             }

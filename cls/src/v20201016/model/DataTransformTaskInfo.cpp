@@ -33,7 +33,8 @@ DataTransformTaskInfo::DataTransformTaskInfo() :
     m_srcTopicNameHasBeenSet(false),
     m_logsetIdHasBeenSet(false),
     m_dstResourcesHasBeenSet(false),
-    m_etlContentHasBeenSet(false)
+    m_etlContentHasBeenSet(false),
+    m_dataTransformTypeHasBeenSet(false)
 {
 }
 
@@ -182,6 +183,16 @@ CoreInternalOutcome DataTransformTaskInfo::Deserialize(const rapidjson::Value &v
         m_etlContentHasBeenSet = true;
     }
 
+    if (value.HasMember("DataTransformType") && !value["DataTransformType"].IsNull())
+    {
+        if (!value["DataTransformType"].IsUint64())
+        {
+            return CoreInternalOutcome(Core::Error("response `DataTransformTaskInfo.DataTransformType` IsUint64=false incorrectly").SetRequestId(requestId));
+        }
+        m_dataTransformType = value["DataTransformType"].GetUint64();
+        m_dataTransformTypeHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -298,6 +309,14 @@ void DataTransformTaskInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Doc
         string key = "EtlContent";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_etlContent.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_dataTransformTypeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "DataTransformType";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_dataTransformType, allocator);
     }
 
 }
@@ -509,5 +528,21 @@ void DataTransformTaskInfo::SetEtlContent(const string& _etlContent)
 bool DataTransformTaskInfo::EtlContentHasBeenSet() const
 {
     return m_etlContentHasBeenSet;
+}
+
+uint64_t DataTransformTaskInfo::GetDataTransformType() const
+{
+    return m_dataTransformType;
+}
+
+void DataTransformTaskInfo::SetDataTransformType(const uint64_t& _dataTransformType)
+{
+    m_dataTransformType = _dataTransformType;
+    m_dataTransformTypeHasBeenSet = true;
+}
+
+bool DataTransformTaskInfo::DataTransformTypeHasBeenSet() const
+{
+    return m_dataTransformTypeHasBeenSet;
 }
 

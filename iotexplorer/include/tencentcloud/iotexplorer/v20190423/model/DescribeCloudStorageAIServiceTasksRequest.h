@@ -86,10 +86,10 @@ namespace TencentCloud
 
                     /**
                      * 获取云存 AI 服务类型。可选值：
-- `PackageDetect`：包裹检测
+- `RealtimeObjectDetect`：目标检测
 - `Highlight`：视频浓缩
                      * @return ServiceType 云存 AI 服务类型。可选值：
-- `PackageDetect`：包裹检测
+- `RealtimeObjectDetect`：目标检测
 - `Highlight`：视频浓缩
                      * 
                      */
@@ -97,10 +97,10 @@ namespace TencentCloud
 
                     /**
                      * 设置云存 AI 服务类型。可选值：
-- `PackageDetect`：包裹检测
+- `RealtimeObjectDetect`：目标检测
 - `Highlight`：视频浓缩
                      * @param _serviceType 云存 AI 服务类型。可选值：
-- `PackageDetect`：包裹检测
+- `RealtimeObjectDetect`：目标检测
 - `Highlight`：视频浓缩
                      * 
                      */
@@ -197,15 +197,15 @@ namespace TencentCloud
                     bool StatusHasBeenSet() const;
 
                     /**
-                     * 获取用户ID
-                     * @return UserId 用户ID
+                     * 获取用户 ID
+                     * @return UserId 用户 ID
                      * 
                      */
                     std::string GetUserId() const;
 
                     /**
-                     * 设置用户ID
-                     * @param _userId 用户ID
+                     * 设置用户 ID
+                     * @param _userId 用户 ID
                      * 
                      */
                     void SetUserId(const std::string& _userId);
@@ -218,15 +218,15 @@ namespace TencentCloud
                     bool UserIdHasBeenSet() const;
 
                     /**
-                     * 获取通道ID 非NVR设备则不填 NVR设备则必填 默认为无
-                     * @return ChannelId 通道ID 非NVR设备则不填 NVR设备则必填 默认为无
+                     * 获取通道 ID
+                     * @return ChannelId 通道 ID
                      * 
                      */
                     uint64_t GetChannelId() const;
 
                     /**
-                     * 设置通道ID 非NVR设备则不填 NVR设备则必填 默认为无
-                     * @param _channelId 通道ID 非NVR设备则不填 NVR设备则必填 默认为无
+                     * 设置通道 ID
+                     * @param _channelId 通道 ID
                      * 
                      */
                     void SetChannelId(const uint64_t& _channelId);
@@ -254,7 +254,7 @@ namespace TencentCloud
 
                     /**
                      * 云存 AI 服务类型。可选值：
-- `PackageDetect`：包裹检测
+- `RealtimeObjectDetect`：目标检测
 - `Highlight`：视频浓缩
                      */
                     std::string m_serviceType;
@@ -284,13 +284,13 @@ namespace TencentCloud
                     bool m_statusHasBeenSet;
 
                     /**
-                     * 用户ID
+                     * 用户 ID
                      */
                     std::string m_userId;
                     bool m_userIdHasBeenSet;
 
                     /**
-                     * 通道ID 非NVR设备则不填 NVR设备则必填 默认为无
+                     * 通道 ID
                      */
                     uint64_t m_channelId;
                     bool m_channelIdHasBeenSet;
